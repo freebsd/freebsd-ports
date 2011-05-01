@@ -31,14 +31,15 @@ OPTIONS=	RC_NG		"install RC_NG script"		off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900000
+BROKEN=		does not compile on FreeBSD 9.X
+.endif
+
 .if defined(WITH_RC_NG)
 USE_RC_SUBR=	vsftpd.sh
 .endif
 
 .if defined(WITH_VSFTPD_SSL) && !defined(WITHOUT_SSL)
-.if ${OSVERSION} < 700000
-WITH_OPENSSL_PORT=	yes
-.endif
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 SSL_SUFFIX=	-ssl
 CFLAGS+=	-I${OPENSSLINC}
