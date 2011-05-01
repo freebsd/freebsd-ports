@@ -19,6 +19,12 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	sbin/pkg_cleanup
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000
+BROKEN=		does not compile on FreeBSD 9.X
+.endif
+
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${CP} -R ${FILESDIR}/* ${WRKSRC}
@@ -30,4 +36,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pkg_cleanup ${PREFIX}/sbin/pkg_cleanup
 	${INSTALL_MAN} ${WRKSRC}/pkg_cleanup.1 ${MAN1PREFIX}/man/man1
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
