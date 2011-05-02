@@ -1,9 +1,0 @@
-#! /bin/sh
-
-# $FreeBSD$
-
-#
-# make majorcool port "PREFIX clean"
-#
-
-perl -pi -e "s|!!PREFIX!!|$PREFIX|" ${WRKSRC}/Configure
