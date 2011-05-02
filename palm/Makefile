@@ -11,7 +11,6 @@
     SUBDIR += iSiloXC
     SUBDIR += imgvtopgm
     SUBDIR += isilo
-    SUBDIR += jfconv
     SUBDIR += jpilot
     SUBDIR += jpilot-db
     SUBDIR += jpilot-picsnvideos
@@ -22,7 +21,6 @@
     SUBDIR += p5-Palm-PalmDoc
     SUBDIR += palm-db-tools
     SUBDIR += palmos-sdk
-    SUBDIR += palmpower
     SUBDIR += pdbar
     SUBDIR += pilot-link
     SUBDIR += pilot_makedoc
@@ -32,7 +30,6 @@
     SUBDIR += ppmtoTbmp
     SUBDIR += py-synce-librapi2
     SUBDIR += py-synce-librra
-    SUBDIR += sitescooper
     SUBDIR += synce-gvfs
     SUBDIR += synce-hal
     SUBDIR += synce-librapi2
@@ -43,6 +40,5 @@
     SUBDIR += synce-trayicon
     SUBDIR += synce-vdccm
     SUBDIR += txt2pdbdoc
-    SUBDIR += uppc-kmod
 
 .include <bsd.port.subdir.mk>
