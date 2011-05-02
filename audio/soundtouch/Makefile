@@ -21,7 +21,7 @@ PORTDOCS=	README.html
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900000
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 900000
 BROKEN=		does not compile on FreeBSD 9.X
 .endif
 
