@@ -232,8 +232,6 @@ grande-KXL-*.tar.gz	games/grande		Possible copyright infringement
 graphviz-*		graphics/graphviz	Needs license before fetching
 groupoffice-com-*	www/groupoffice		Free for personal use only
 gsview*			print/gsview		Can only be distributed for free
-GTL-*			misc/gtl		Non-commercial use only,
-						license forbids redistribution
 himeno/*		benchmarks/himenobench	Uncertain to distribute sources
 						and binaries
 HyperSpec-*		devel/clisp-hyperspec	Commercial redistribution
