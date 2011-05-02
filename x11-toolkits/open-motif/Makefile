@@ -7,28 +7,29 @@
 #
 
 PORTNAME=	open-motif
-PORTVERSION=	2.2.3
-PORTREVISION=	6
+PORTVERSION=	2.3.3
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.ics.com/openmotif/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/${PORTVERSION}/src/
-DISTNAME=	openMotif-${PORTVERSION}
-EXTRACT_SUFX=	.tar.gz
+MASTER_SITES=	ftp://ftp.ics.com/openmotif/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}/${PORTVERSION}/
+DISTNAME=	openmotif-${PORTVERSION}
 DIST_SUBDIR=	openmotif
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Motif X11 Toolkit (industry standard GUI (IEEE 1295))
 
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
+		jpeg.11:${PORTSDIR}/graphics/jpeg
+
 MAKE_JOBS_UNSAFE=	yes
+CONFLICTS=	lesstif-[0-9]*
 
 USE_AUTOTOOLS=	libtool
-CONFLICTS=	lesstif-*
+USE_ICONV=	yes
 USE_GMAKE=	yes
-USE_XORG=	xaw xbitmaps
+USE_XORG=	xaw xbitmaps xft
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-DCSRG_BASED -DXUSE_MTSAFE_API -DXNO_MTSAFE_PWDAPI"
 USE_LDCONFIG=	yes
 MAKE_ENV=	LANG=C
-CFLAGS+=	-fno-strict-aliasing
+CPPFLAGS=	-DCSRG_BASED -DXUSE_MTSAFE_API -DXNO_MTSAFE_PWDAPI
 
 DEMOS_SRC=	${WRKSRC}/demos/programs
 
