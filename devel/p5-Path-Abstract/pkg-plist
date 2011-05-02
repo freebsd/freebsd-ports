@@ -1,0 +1,8 @@
+%%SITE_PERL%%/Path/Abstract/Fast.pm
+%%SITE_PERL%%/Path/Abstract/Underload.pm
+%%SITE_PERL%%/Path/Abstract.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Abstract/.packlist
+@dirrmtry %%SITE_PERL%%/Path/Abstract
+@dirrmtry %%SITE_PERL%%/Path
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path/Abstract
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Path
