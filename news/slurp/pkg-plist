@@ -1,5 +1,0 @@
-news/bin/slurp
-news/lib/slurp.sys.sample
-@dirrmtry news/lib
-@dirrmtry news/bin
-@dirrmtry news
