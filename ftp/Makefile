@@ -6,7 +6,6 @@
     SUBDIR += IglooFTP
     SUBDIR += atftp
     SUBDIR += axel
-    SUBDIR += axyftp
     SUBDIR += bareftp
     SUBDIR += bbftp
     SUBDIR += bftpd
@@ -16,7 +15,6 @@
     SUBDIR += curl
     SUBDIR += curlpp
     SUBDIR += dmachine
-    SUBDIR += emacs-wget
     SUBDIR += fget
     SUBDIR += filezilla
     SUBDIR += fmirror
@@ -53,11 +51,7 @@
     SUBDIR += lftp
     SUBDIR += linux-curl
     SUBDIR += linux-f10-curl
-    SUBDIR += llnlxdir
-    SUBDIR += llnlxftp
     SUBDIR += mget
-    SUBDIR += mirror
-    SUBDIR += moftpd
     SUBDIR += muddleftpd
     SUBDIR += multiget
     SUBDIR += ncftp1
@@ -119,12 +113,9 @@
     SUBDIR += wgetpro
     SUBDIR += wmget
     SUBDIR += wput
-    SUBDIR += wu-ftpd
     SUBDIR += wu-ftpd+ipv6
     SUBDIR += wxdfast
     SUBDIR += wzdftpd
-    SUBDIR += xrmftp
     SUBDIR += yafc
-    SUBDIR += yale-tftpd
 
 .include <bsd.port.subdir.mk>
