@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/:DEFAULT \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 		${MGC_DISTNAME}${EXTRACT_SUFX}:mygpoclient
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	A GTK2 podcast aggregrator written in Python
 
 RUN_DEPENDS=	py*-pysqlite>=2.3:${PORTSDIR}/databases/py-pysqlite23 \
