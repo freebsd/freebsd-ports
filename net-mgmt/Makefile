@@ -104,7 +104,6 @@
     SUBDIR += isic
     SUBDIR += jffnms
     SUBDIR += jnettop
-    SUBDIR += junipoll
     SUBDIR += kismet
     SUBDIR += knowlan
     SUBDIR += lanmap
