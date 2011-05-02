@@ -3,7 +3,6 @@
 
     COMMENT = Instant messaging
 
-    SUBDIR += aim
     SUBDIR += amsn
     SUBDIR += ari-yahoo
     SUBDIR += ayttm
@@ -60,9 +59,7 @@
     SUBDIR += jabberd
     SUBDIR += jarl
     SUBDIR += jggtrans
-    SUBDIR += jit
     SUBDIR += jwchat
-    SUBDIR += kf
     SUBDIR += kmerlin
     SUBDIR += kmess
     SUBDIR += kmess-kde4
