@@ -60,6 +60,7 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/matlab.properties
 %%DATADIR%%/metapost.properties
 %%DATADIR%%/mmixal.properties
+%%DATADIR%%/modula3.properties
 %%DATADIR%%/nimrod.properties
 %%DATADIR%%/nncrontab.properties
 %%DATADIR%%/nsis.properties
