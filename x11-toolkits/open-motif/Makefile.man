@@ -137,7 +137,6 @@ MAN3= \
 	XmCreateMenuShell.3 \
 	XmCreateMessageBox.3 \
 	XmCreateMessageDialog.3 \
-	XmCreateMultiList.3 \
 	XmCreateNotebook.3 \
 	XmCreateOptionMenu.3 \
 	XmCreatePanedWindow.3 \
@@ -198,11 +197,6 @@ MAN3= \
 	XmDrawingArea.3 \
 	XmDrawnButton.3 \
 	XmDropDown.3 \
-	XmDropDownGetArrow.3 \
-	XmDropDownGetLabel.3 \
-	XmDropDownGetList.3 \
-	XmDropDownGetText.3 \
-	XmDropDownGetValue.3 \
 	XmDropSite.3 \
 	XmDropSiteConfigureStackingOrder.3 \
 	XmDropSiteEndUpdate.3 \
@@ -328,9 +322,6 @@ MAN3= \
 	XmMessageBox.3 \
 	XmMessageBoxGetChild.3 \
 	XmMultiList.3 \
-	XmMultiListDeselectAllItems.3 \
-	XmMultiListDeselectItem.3 \
-	XmMultiListDeselectItems.3 \
 	XmMultiListDeselectRow.3 \
 	XmMultiListGetSelectedRowArray.3 \
 	XmMultiListGetSelectedRows.3 \
@@ -594,6 +585,131 @@ MAN3= \
 	XmVaCreateSimplePulldownMenu.3 \
 	XmVaCreateSimpleRadioBox.3 \
 	XmWidgetGetBaselines.3 \
+	XmCreateButtonBox.3 \
+	XmCreateCombinationBox2.3 \
+	XmCreateHierarchy.3 \
+	XmCreateOutline.3 \
+	XmDataFieldCopy.3 \
+	XmDataFieldCut.3 \
+	XmDataFieldGetSelection.3 \
+	XmDataFieldGetSelectionPosition.3 \
+	XmDataFieldGetString.3 \
+	XmDataFieldGetStringWcs.3 \
+	XmDataFieldPaste.3 \
+	XmDataFieldSetAddMode.3 \
+	XmDataFieldSetEditable.3 \
+	XmDataFieldSetHighlight.3 \
+	XmDataFieldSetInsertionPosition.3 \
+	XmDataFieldSetSelection.3 \
+	XmDataFieldSetString.3 \
+	XmDataFieldXYToPos.3 \
+	XmDropDownGetChild.3 \
+	XmExt18List.3 \
+	XmHierarchy.3 \
+	XmHierarchyGetChildNodes.3 \
+	XmHierarchyOpenAllAncestors.3 \
+	XmIconBoxIsCellEmpty.3 \
+	XmMultiListDeselectItems.3 \
+	XmMultiListUnselectAllItems.3 \
+	XmMultiListUnselectItem.3 \
+	XmOutline.3 \
+	XmPaned.3 \
+	XmPanedGetPanes.3 \
+	XmTabStackGetSelectedTab.3 \
+	XmTabStackSelectTab.3 \
+	XmTabStackXYToWidget.3 \
+	XmVaCreateArrowButton.3 \
+	XmVaCreateArrowButtonGadget.3 \
+	XmVaCreateBulletinBoard.3 \
+	XmVaCreateButtonBox.3 \
+	XmVaCreateCascadeButton.3 \
+	XmVaCreateCascadeButtonGadget.3 \
+	XmVaCreateColorSelector.3 \
+	XmVaCreateColumn.3 \
+	XmVaCreateCombinationBox2.3 \
+	XmVaCreateComboBox.3 \
+	XmVaCreateCommand.3 \
+	XmVaCreateContainer.3 \
+	XmVaCreateDataField.3 \
+	XmVaCreateDrawingArea.3 \
+	XmVaCreateDrawnButton.3 \
+	XmVaCreateDropDown.3 \
+	XmVaCreateExt18List.3 \
+	XmVaCreateFileSelectionBox.3 \
+	XmVaCreateForm.3 \
+	XmVaCreateFrame.3 \
+	XmVaCreateHierarchy.3 \
+	XmVaCreateIconGadget.3 \
+	XmVaCreateLabel.3 \
+	XmVaCreateLabelGadget.3 \
+	XmVaCreateList.3 \
+	XmVaCreateMainWindow.3 \
+	XmVaCreateManagedArrowButton.3 \
+	XmVaCreateManagedArrowButtonGadget.3 \
+	XmVaCreateManagedBulletinBoard.3 \
+	XmVaCreateManagedButtonBox.3 \
+	XmVaCreateManagedCascadeButton.3 \
+	XmVaCreateManagedCascadeButtonGadget.3 \
+	XmVaCreateManagedColorSelector.3 \
+	XmVaCreateManagedColumn.3 \
+	XmVaCreateManagedCombinationBox2.3 \
+	XmVaCreateManagedComboBox.3 \
+	XmVaCreateManagedCommand.3 \
+	XmVaCreateManagedContainer.3 \
+	XmVaCreateManagedDataField.3 \
+	XmVaCreateManagedDrawingArea.3 \
+	XmVaCreateManagedDrawnButton.3 \
+	XmVaCreateManagedDropDown.3 \
+	XmVaCreateManagedExt18List.3 \
+	XmVaCreateManagedFileSelectionBox.3 \
+	XmVaCreateManagedForm.3 \
+	XmVaCreateManagedFrame.3 \
+	XmVaCreateManagedHierarchy.3 \
+	XmVaCreateManagedIconGadget.3 \
+	XmVaCreateManagedLabel.3 \
+	XmVaCreateManagedLabelGadget.3 \
+	XmVaCreateManagedList.3 \
+	XmVaCreateManagedMainWindow.3 \
+	XmVaCreateManagedMessageBox.3 \
+	XmVaCreateManagedMultiList.3 \
+	XmVaCreateManagedNotebook.3 \
+	XmVaCreateManagedOutline.3 \
+	XmVaCreateManagedPanedWindow.3 \
+	XmVaCreateManagedPushButton.3 \
+	XmVaCreateManagedPushButtonGadget.3 \
+	XmVaCreateManagedRowColumn.3 \
+	XmVaCreateManagedScale.3 \
+	XmVaCreateManagedScrollBar.3 \
+	XmVaCreateManagedScrolledWindow.3 \
+	XmVaCreateManagedSelectionBox.3 \
+	XmVaCreateManagedSeparatorGadget.3 \
+	XmVaCreateManagedSimpleSpinBox.3 \
+	XmVaCreateManagedSpinBox.3 \
+	XmVaCreateManagedTabStack.3 \
+	XmVaCreateManagedText.3 \
+	XmVaCreateManagedTextField.3 \
+	XmVaCreateManagedToggleButton.3 \
+	XmVaCreateManagedToggleButtonGadget.3 \
+	XmVaCreateMessageBox.3 \
+	XmVaCreateMultiList.3 \
+	XmVaCreateNotebook.3 \
+	XmVaCreateOutline.3 \
+	XmVaCreatePanedWindow.3 \
+	XmVaCreatePushButton.3 \
+	XmVaCreatePushButtonGadget.3 \
+	XmVaCreateRowColumn.3 \
+	XmVaCreateScale.3 \
+	XmVaCreateScrollBar.3 \
+	XmVaCreateScrolledWindow.3 \
+	XmVaCreateSelectionBox.3 \
+	XmVaCreateSeparatorGadget.3 \
+	XmVaCreateSimpleSpinBox.3 \
+	XmVaCreateSpinBox.3 \
+	XmVaCreateTabStack.3 \
+	XmVaCreateText.3 \
+	XmVaCreateTextField.3 \
+	XmVaCreateToggleButton.3 \
+	XmVaCreateToggleButtonGadget.3 \
 	XmWidgetGetDisplayRect.3
 MAN5= \
 	Traits.5 \

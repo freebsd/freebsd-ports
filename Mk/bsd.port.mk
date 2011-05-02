@@ -1971,7 +1971,7 @@ LIB_DEPENDS+=		Xm:${PORTSDIR}/x11-toolkits/lesstif
 NO_OPENMOTIF=		yes
 .endif
 .if !defined(NO_OPENMOTIF)
-LIB_DEPENDS+=		Xm.3:${PORTSDIR}/x11-toolkits/open-motif
+LIB_DEPENDS+=		Xm.4:${PORTSDIR}/x11-toolkits/open-motif
 .endif
 .endif
 
