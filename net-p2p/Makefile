@@ -28,7 +28,6 @@
     SUBDIR += eiskaltdcpp-gtk
     SUBDIR += eiskaltdcpp-lib
     SUBDIR += eiskaltdcpp-qt
-    SUBDIR += fcptools
     SUBDIR += fidelio
     SUBDIR += frost
     SUBDIR += frostwire
@@ -45,7 +44,6 @@
     SUBDIR += gtorrentviewer
     SUBDIR += hagelslag
     SUBDIR += hrktorrent
-    SUBDIR += hx
     SUBDIR += i2p
     SUBDIR += jigdo
     SUBDIR += kmldonkey
@@ -61,9 +59,6 @@
     SUBDIR += libtorrent-rasterbar-15
     SUBDIR += libtorrent-rasterbar-15-python
     SUBDIR += limewire
-    SUBDIR += linux-edonkey-core
-    SUBDIR += linux-edonkey-server
-    SUBDIR += linux-edonkey-tool-recovermet
     SUBDIR += linux-jigdo
     SUBDIR += linuxdcpp
     SUBDIR += lopster
