@@ -5,7 +5,6 @@
 
     SUBDIR += achievo
     SUBDIR += aclgen
-    SUBDIR += acron
     SUBDIR += airoflash
     SUBDIR += alevt
     SUBDIR += amanda-client
@@ -41,7 +40,6 @@
     SUBDIR += cdcollect
     SUBDIR += chef
     SUBDIR += chmlib
-    SUBDIR += chord
     SUBDIR += chord2html
     SUBDIR += clex
     SUBDIR += cloc
@@ -62,7 +60,6 @@
     SUBDIR += cwish
     SUBDIR += dahdi
     SUBDIR += dahdi-kmod
-    SUBDIR += datedif
     SUBDIR += ddate
     SUBDIR += deco
     SUBDIR += dejagnu
@@ -80,13 +77,11 @@
     SUBDIR += dvorakng
     SUBDIR += e2fsprogs-libblkid
     SUBDIR += e2fsprogs-libuuid
-    SUBDIR += earthview
     SUBDIR += elscreen
     SUBDIR += esniper
     SUBDIR += estic
     SUBDIR += ewipe
     SUBDIR += explosions
-    SUBDIR += fcalc
     SUBDIR += felis
     SUBDIR += fep
     SUBDIR += figlet
@@ -147,7 +142,6 @@
     SUBDIR += gkrellmfmonitor2
     SUBDIR += gkrellmlaunch
     SUBDIR += gkrellmlaunch2
-    SUBDIR += gkrellscore
     SUBDIR += gkrellshoot
     SUBDIR += gkrellshoot2
     SUBDIR += gkrellweather2
@@ -166,7 +160,6 @@
     SUBDIR += gnuit
     SUBDIR += gnuls
     SUBDIR += gnustep-examples
-    SUBDIR += goldstr
     SUBDIR += gone
     SUBDIR += gonvert
     SUBDIR += gopod
@@ -181,7 +174,6 @@
     SUBDIR += gtk-gopod
     SUBDIR += gtkfind
     SUBDIR += gtktalog
-    SUBDIR += gtl
     SUBDIR += gwenview-i18n
     SUBDIR += gwhich
     SUBDIR += hb
@@ -333,7 +325,6 @@
     SUBDIR += knewsticker-scripts
     SUBDIR += konq-plugins
     SUBDIR += konq-plugins-kde4
-    SUBDIR += kp
     SUBDIR += krecipes
     SUBDIR += krecipes-kde4
     SUBDIR += ksig
@@ -377,7 +368,6 @@
     SUBDIR += najitool
     SUBDIR += nepomukcontroller
     SUBDIR += newer
-    SUBDIR += nserver
     SUBDIR += nsf
     SUBDIR += numchar
     SUBDIR += nut
@@ -434,7 +424,6 @@
     SUBDIR += p5-Zen-Koans
     SUBDIR += pantry
     SUBDIR += pastebinit
-    SUBDIR += patanjali
     SUBDIR += patchutils
     SUBDIR += pauker
     SUBDIR += pciids
@@ -467,7 +456,6 @@
     SUBDIR += pypanda
     SUBDIR += qbrew
     SUBDIR += qlas
-    SUBDIR += qmc
     SUBDIR += qt4-doc
     SUBDIR += qt4-l10n
     SUBDIR += qt4-qtconfig
@@ -498,7 +486,6 @@
     SUBDIR += sloccount
     SUBDIR += sls
     SUBDIR += smssend
-    SUBDIR += snowflake
     SUBDIR += spamcalc
     SUBDIR += splitvt
     SUBDIR += sshbuddy
@@ -527,7 +514,6 @@
     SUBDIR += toilet
     SUBDIR += tpp
     SUBDIR += translate
-    SUBDIR += translator
     SUBDIR += ttyrec
     SUBDIR += tvbrowser
     SUBDIR += txt2regex
@@ -543,7 +529,6 @@
     SUBDIR += usbrh-libusb
     SUBDIR += utftools
     SUBDIR += vera
-    SUBDIR += videotext
     SUBDIR += vifm
     SUBDIR += viz
     SUBDIR += voltcraft304
@@ -556,10 +541,8 @@
     SUBDIR += wmjulia
     SUBDIR += wmpal
     SUBDIR += wmtunlo
-    SUBDIR += wmweather
     SUBDIR += wmweather+
     SUBDIR += wmwork
-    SUBDIR += wmx10
     SUBDIR += wotsap
     SUBDIR += xbiso
     SUBDIR += xd

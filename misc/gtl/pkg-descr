@@ -1,7 +1,0 @@
-This package provides support for graphs and graph algorithms on top of
-the C++ STL library.  The API is based on that of LEDA.  Classes necessary
-to work with graphs, nodes, and edges are included, as well as basic
-algorithms that can act as building blocks for more complex graph
-algorithms.
-
-WWW: http://infosun.fmi.uni-passau.de/GTL/

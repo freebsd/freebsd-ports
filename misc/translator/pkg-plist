@@ -1,4 +1,0 @@
-bin/translator
-share/pixmaps/translator.png
-%%DATADIR%%/translator.glade
-@dirrm %%DATADIR%%
