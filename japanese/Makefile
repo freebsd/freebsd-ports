@@ -221,9 +221,6 @@
     SUBDIR += ngraph-fonts
     SUBDIR += nhocr
     SUBDIR += nkf
-    SUBDIR += nvi-euc-jp
-    SUBDIR += nvi-iso-2022-jp
-    SUBDIR += nvi-sjis
     SUBDIR += ochusha
     SUBDIR += onew
     SUBDIR += otojiro-fpw

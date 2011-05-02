@@ -1,9 +1,0 @@
-This ports contains nex/nvi with perl5 interpreter linked into.
-
-nex/nvi is a freely redistributable implementation of ex/vi text
-editors originally distributed as part of the Fourth Berkeley
-Software Distribution (4BSD), by the University of California,
-Berkeley.
-
-original distribution site:
-	ftp://ftp.cs.berkeley.edu/ucb/4bsd/nvi-1.79.tar.gz
