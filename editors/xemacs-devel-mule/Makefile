@@ -7,7 +7,7 @@
 
 PORTNAME=	xemacs-devel-mule
 PORTVERSION=	${XEMACS_VER:S/-/./}
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES+=	editors
 MASTER_SITES=	${MASTER_SITE_XEMACS}
 MASTER_SITE_SUBDIR=	xemacs-${XEMACS_REL}
@@ -25,8 +25,8 @@ PKGNAMESUFFIX+=	-canna
 DISTNAME=	xemacs-${XEMACS_VER:S/-b/./}
 DIST_SUBDIR=	xemacs
 
-MAINTAINER?=	ports@FreeBSD.org
-COMMENT?=	XEmacs(beta version) text editor with mule(Only the executables)
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	XEmacs(beta version) text editor with mule(Only the executables)
 
 CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* \
 		xemacs-[0-9]* xemacs-devel-[0-9]* \
@@ -38,13 +38,17 @@ RUN_DEPENDS=	${LOCALBASE}/lib/xemacs/mule-packages/pkginfo/MANIFEST.mule-base:${
 RUN_DEPENDS+=	${LOCALBASE}/lib/xemacs-${XEMACS_VER}/lisp/x-win-xfree86.elc:${PORTSDIR}/editors/xemacs-devel-mule
 .endif
 .if !defined(WITHOUT_X11)
+BUILD_DEPENDS+=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		compface.1:${PORTSDIR}/mail/faces
 
-USE_XORG+=	x11 xpm
-CONFIGURE_ARGS=	--with-xpm
+USE_XORG+=	x11 xft xpm
+CONFIGURE_ARGS=--with-xpm --with-xft=all
+# XXX: needed until port updated to work nicely with autoconf >= 2.64
+#      see files/patch-configure.ac for more details
+CFLAGS+=	-I${LOCALBASE}/include/freetype2
 .endif
 
 XEMACS_REL=	21.5
@@ -106,14 +110,7 @@ CONFIGURE_ARGS+=--disable-debug --disable-error-checking
 CONFIGURE_ARGS+=--disable-kkcc --disable-mc-alloc --disable-newgc
 .endif
 
-.if defined(WITH_XFT)
-BUILD_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
-USE_XORG+=	x11 xft xpm
-CONFIGURE_ARGS+=--with-xft=all
-# XXX: needed until port updated to work nicely with autoconf >= 2.64
-#      see files/patch-configure.ac for more details
-CFLAGS+=	-I${LOCALBASE}/include/freetype2
-.elif defined(WITH_GTK)
+.if defined(WITH_GTK)
 CONFIGURE_ARGS+=--with-gtk
 WITH_XIM=
 WITH_MENUBARS=	--enable-menubars=gtk
@@ -121,8 +118,6 @@ WITH_SCROLLBARS=--enable-scrollbars=gtk
 WITH_DIALOGS=	--enable-dialogs=gtk
 WITH_WIDGETS=	--enable-widgets=gtk
 USE_GNOME+=	gtk12
-.else
-CONFIGURE_ARGS+=--with-xfs
 .endif
 
 PKGDIR=		${.CURDIR}/../../editors/xemacs-devel-mule
@@ -131,7 +126,7 @@ PLIST_SUB=	XEMACS_VER=${XEMACS_VER} XEMACS_ARCH=${XEMACS_ARCH}
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_XFT) && ${OSVERSION} >= 900000
+.if ${OSVERSION} >= 900000
 BROKEN=		does not build on FreeBSD 9.X
 .endif
 
@@ -208,12 +203,12 @@ PLIST_SUB+=	WITH_LDAP="@comment "
 BINNAMEEXT=		-mule
 .if defined(CANNA) && defined(FREEWNN)
 CONFIGURE_ARGS+=	--with-canna --with-wnn --with-wnn6=no
-LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/Canna \
+LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/canna-lib \
 			wnn.0:${PORTSDIR}/japanese/FreeWnn-lib
 .elif defined(CANNA) && defined(WNN6)
 SITE_INCLUDES=		${LOCALBASE}/include/wnn6
 CONFIGURE_ARGS+=	--with-canna --with-wnn6
-LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/Canna \
+LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/canna-lib \
 			wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
 .elif defined(FREEWNN)
 CONFIGURE_ARGS+=	--with-wnn --with-canna=no --with-wnn6=no
@@ -224,7 +219,7 @@ CONFIGURE_ARGS+=	--with-wnn6 --with-canna=no
 LIB_DEPENDS+=		wnn6.2:${PORTSDIR}/japanese/Wnn6-lib
 .elif defined(CANNA)
 CONFIGURE_ARGS+=	--with-canna --with-wnn=no --with-wnn6=no
-LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/Canna
+LIB_DEPENDS+=		canna.1:${PORTSDIR}/japanese/canna-lib
 .else
 CONFIGURE_ARGS+=	--with-canna=no --with-wnn=no --with-wnn6=no
 .endif

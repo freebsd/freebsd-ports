@@ -8,6 +8,7 @@
 
 PORTNAME=	ncbi-toolkit
 PORTVERSION=	2009.03.01	# containing BLAST v2.2.19
+PORTREVISION=	1
 CATEGORIES=	biology
 MASTER_SITES=	ftp://ftp.ncbi.nih.gov/toolbox/ncbi_tools/old/${PORTVERSION:S/.//g}/
 DISTNAME=	ncbi
@@ -42,13 +43,6 @@ BLAST_EXE=	bl2seq blastall blastcl3 blastclust blastpgp copymat \
 X11_EXE=	Nentrez Psequin ddv entrez2 sbtedit udv
 
 # and these are the man pages we have
-MAN1=	asn2asn.1 asn2ff.1 asn2fsa.1 asn2gb.1 asn2idx.1	asn2xml.1 \
-	asndhuff.1 asnval.1 blast.1 blastclust.1 cdscan.1 checksub.1 \
-	copymat.1 ddv.1 debruijn.1 errhdr.1 fa2htgs.1 fastacmd.1 \
-	findspl.1 fmerge.1 formatdb.1 getmesh.1 getpub.1 gil2bin.1 \
-	idfetch.1 indexpub.1 makemat.1 makeset.1 sbtedit.1 tbl2asn.1 \
-	udv.1 vecscreen.1 Psequin.1 asn2all.1 asntool.1 entrez2.1 \
-	formatrpsdb.1
 MAN1=	Psequin.1 asn2all.1 asn2asn.1 asn2ff.1 asn2fsa.1 asn2gb.1 asn2idx.1 \
 	asn2xml.1 asndhuff.1 asntool.1 asnval.1 blast.1 blastclust.1 \
 	cdscan.1 checksub.1 copymat.1 ddv.1 \
