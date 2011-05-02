@@ -3,7 +3,6 @@
 
     COMMENT = Java language support
 
-    SUBDIR += avalon-logkit
     SUBDIR += avis
     SUBDIR += berkeley-db
     SUBDIR += bluej
@@ -57,7 +56,6 @@
     SUBDIR += eclipse-webtools
     SUBDIR += eclipseme
     SUBDIR += gj
-    SUBDIR += gnu-regexp
     SUBDIR += icedtea6-stubs
     SUBDIR += infobus
     SUBDIR += j2sdkee13
@@ -99,7 +97,6 @@
     SUBDIR += jc
     SUBDIR += jcalendar
     SUBDIR += jcckit
-    SUBDIR += jce-aba
     SUBDIR += jcommon
     SUBDIR += jdbcpool
     SUBDIR += jde
@@ -125,7 +122,6 @@
     SUBDIR += jode
     SUBDIR += jomp
     SUBDIR += jrosetta
-    SUBDIR += jsdk
     SUBDIR += jta
     SUBDIR += jtiger
     SUBDIR += jump
