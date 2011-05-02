@@ -1,16 +1,16 @@
 bin/dtplite
+bin/nns
+bin/nnsd
+bin/nnslog
 bin/page
 bin/tcldocstrip
 lib/tcllib/aes/aes.tcl
 lib/tcllib/aes/pkgIndex.tcl
-@dirrm lib/tcllib/aes
-lib/tcllib/amazon-s3/pkgIndex.tcl
 lib/tcllib/amazon-s3/S3.tcl
+lib/tcllib/amazon-s3/pkgIndex.tcl
 lib/tcllib/amazon-s3/xsxp.tcl
-@dirrm lib/tcllib/amazon-s3
 lib/tcllib/asn/asn.tcl
 lib/tcllib/asn/pkgIndex.tcl
-@dirrm lib/tcllib/asn
 lib/tcllib/base32/base32.tcl
 lib/tcllib/base32/base32_c.tcl
 lib/tcllib/base32/base32_tcl.tcl
@@ -19,35 +19,30 @@ lib/tcllib/base32/base32hex.tcl
 lib/tcllib/base32/base32hex_c.tcl
 lib/tcllib/base32/base32hex_tcl.tcl
 lib/tcllib/base32/pkgIndex.tcl
-@dirrm lib/tcllib/base32
+lib/tcllib/base64/ascii85.tcl
 lib/tcllib/base64/base64.tcl
 lib/tcllib/base64/base64c.tcl
 lib/tcllib/base64/pkgIndex.tcl
 lib/tcllib/base64/uuencode.tcl
 lib/tcllib/base64/yencode.tcl
-@dirrm lib/tcllib/base64
 lib/tcllib/bee/bee.tcl
 lib/tcllib/bee/pkgIndex.tcl
-@dirrm lib/tcllib/bee
 lib/tcllib/bench/bench.tcl
 lib/tcllib/bench/bench_read.tcl
 lib/tcllib/bench/bench_wcsv.tcl
 lib/tcllib/bench/bench_wtext.tcl
 lib/tcllib/bench/libbench.tcl
 lib/tcllib/bench/pkgIndex.tcl
-@dirrm lib/tcllib/bench
 lib/tcllib/bibtex/bibtex.tcl
 lib/tcllib/bibtex/pkgIndex.tcl
-@dirrm lib/tcllib/bibtex
 lib/tcllib/blowfish/blowfish.tcl
 lib/tcllib/blowfish/pkgIndex.tcl
-@dirrm lib/tcllib/blowfish
+lib/tcllib/cache/async.tcl
+lib/tcllib/cache/pkgIndex.tcl
 lib/tcllib/cmdline/cmdline.tcl
 lib/tcllib/cmdline/pkgIndex.tcl
-@dirrm lib/tcllib/cmdline
 lib/tcllib/comm/comm.tcl
 lib/tcllib/comm/pkgIndex.tcl
-@dirrm lib/tcllib/comm
 lib/tcllib/control/ascaller.tcl
 lib/tcllib/control/assert.tcl
 lib/tcllib/control/control.tcl
@@ -55,39 +50,34 @@ lib/tcllib/control/do.tcl
 lib/tcllib/control/no-op.tcl
 lib/tcllib/control/pkgIndex.tcl
 lib/tcllib/control/tclIndex
-@dirrm lib/tcllib/control
+lib/tcllib/coroutine/coro_auto.tcl
+lib/tcllib/coroutine/coroutine.tcl
+lib/tcllib/coroutine/pkgIndex.tcl
 lib/tcllib/counter/counter.tcl
 lib/tcllib/counter/pkgIndex.tcl
-@dirrm lib/tcllib/counter
 lib/tcllib/crc/cksum.tcl
 lib/tcllib/crc/crc16.tcl
 lib/tcllib/crc/crc32.tcl
 lib/tcllib/crc/crcc.tcl
 lib/tcllib/crc/pkgIndex.tcl
 lib/tcllib/crc/sum.tcl
-@dirrm lib/tcllib/crc
 lib/tcllib/csv/csv.tcl
 lib/tcllib/csv/pkgIndex.tcl
-@dirrm lib/tcllib/csv
 lib/tcllib/des/des.tcl
 lib/tcllib/des/pkgIndex.tcl
 lib/tcllib/des/tcldes.tcl
 lib/tcllib/des/tcldesjr.tcl
-@dirrm lib/tcllib/des
 lib/tcllib/dns/dns.tcl
 lib/tcllib/dns/ip.tcl
 lib/tcllib/dns/ipMore.tcl
 lib/tcllib/dns/ipMoreC.tcl
 lib/tcllib/dns/msgs/en.msg
-@dirrm lib/tcllib/dns/msgs
 lib/tcllib/dns/pkgIndex.tcl
 lib/tcllib/dns/resolv.tcl
 lib/tcllib/dns/spf.tcl
-@dirrm lib/tcllib/dns
 lib/tcllib/docstrip/docstrip.tcl
 lib/tcllib/docstrip/docstrip_util.tcl
 lib/tcllib/docstrip/pkgIndex.tcl
-@dirrm lib/tcllib/docstrip
 lib/tcllib/doctools/api.tcl
 lib/tcllib/doctools/api_idx.tcl
 lib/tcllib/doctools/api_toc.tcl
@@ -125,103 +115,138 @@ lib/tcllib/doctools/mpformats/idx.nroff
 lib/tcllib/doctools/mpformats/idx.null
 lib/tcllib/doctools/mpformats/idx.text
 lib/tcllib/doctools/mpformats/idx.wiki
+lib/tcllib/doctools/mpformats/man.macros
 lib/tcllib/doctools/mpformats/toc.html
 lib/tcllib/doctools/mpformats/toc.nroff
 lib/tcllib/doctools/mpformats/toc.null
 lib/tcllib/doctools/mpformats/toc.text
 lib/tcllib/doctools/mpformats/toc.tmml
 lib/tcllib/doctools/mpformats/toc.wiki
-@dirrm lib/tcllib/doctools/mpformats
 lib/tcllib/doctools/pkgIndex.tcl
-@dirrm lib/tcllib/doctools
-lib/tcllib/exif/exif.tcl
-lib/tcllib/exif/pkgIndex.tcl
-@dirrm lib/tcllib/exif
+lib/tcllib/doctools2base/config.tcl
+lib/tcllib/doctools2base/html.tcl
+lib/tcllib/doctools2base/html_cssdefaults.tcl
+lib/tcllib/doctools2base/msgcat.tcl
+lib/tcllib/doctools2base/nroff_manmacros.tcl
+lib/tcllib/doctools2base/paths.tcl
+lib/tcllib/doctools2base/pkgIndex.tcl
+lib/tcllib/doctools2base/tcl_parse.tcl
+lib/tcllib/doctools2base/text.tcl
+lib/tcllib/doctools2idx/container.tcl
+lib/tcllib/doctools2idx/export.tcl
+lib/tcllib/doctools2idx/export_docidx.tcl
+lib/tcllib/doctools2idx/export_html.tcl
+lib/tcllib/doctools2idx/export_json.tcl
+lib/tcllib/doctools2idx/export_nroff.tcl
+lib/tcllib/doctools2idx/export_text.tcl
+lib/tcllib/doctools2idx/export_wiki.tcl
+lib/tcllib/doctools2idx/import.tcl
+lib/tcllib/doctools2idx/import_docidx.tcl
+lib/tcllib/doctools2idx/import_json.tcl
+lib/tcllib/doctools2idx/msgcat_c.tcl
+lib/tcllib/doctools2idx/msgcat_de.tcl
+lib/tcllib/doctools2idx/msgcat_en.tcl
+lib/tcllib/doctools2idx/msgcat_fr.tcl
+lib/tcllib/doctools2idx/parse.tcl
+lib/tcllib/doctools2idx/pkgIndex.tcl
+lib/tcllib/doctools2idx/structure.tcl
+lib/tcllib/doctools2toc/container.tcl
+lib/tcllib/doctools2toc/export.tcl
+lib/tcllib/doctools2toc/export_doctoc.tcl
+lib/tcllib/doctools2toc/export_html.tcl
+lib/tcllib/doctools2toc/export_json.tcl
+lib/tcllib/doctools2toc/export_nroff.tcl
+lib/tcllib/doctools2toc/export_text.tcl
+lib/tcllib/doctools2toc/export_wiki.tcl
+lib/tcllib/doctools2toc/import.tcl
+lib/tcllib/doctools2toc/import_doctoc.tcl
+lib/tcllib/doctools2toc/import_json.tcl
+lib/tcllib/doctools2toc/msgcat_c.tcl
+lib/tcllib/doctools2toc/msgcat_de.tcl
+lib/tcllib/doctools2toc/msgcat_en.tcl
+lib/tcllib/doctools2toc/msgcat_fr.tcl
+lib/tcllib/doctools2toc/parse.tcl
+lib/tcllib/doctools2toc/pkgIndex.tcl
+lib/tcllib/doctools2toc/structure.tcl
 lib/tcllib/fileutil/fileutil.tcl
 lib/tcllib/fileutil/multi.tcl
 lib/tcllib/fileutil/multiop.tcl
 lib/tcllib/fileutil/pkgIndex.tcl
 lib/tcllib/fileutil/traverse.tcl
-@dirrm lib/tcllib/fileutil
 lib/tcllib/ftp/ftp.tcl
 lib/tcllib/ftp/ftp_geturl.tcl
 lib/tcllib/ftp/pkgIndex.tcl
-@dirrm lib/tcllib/ftp
 lib/tcllib/ftpd/ftpd.tcl
 lib/tcllib/ftpd/pkgIndex.tcl
-@dirrm lib/tcllib/ftpd
 lib/tcllib/fumagic/cfront.tcl
 lib/tcllib/fumagic/cgen.tcl
 lib/tcllib/fumagic/filetypes.tcl
 lib/tcllib/fumagic/mimetypes.tcl
 lib/tcllib/fumagic/pkgIndex.tcl
 lib/tcllib/fumagic/rtcore.tcl
-@dirrm lib/tcllib/fumagic
+lib/tcllib/gpx/gpx.tcl
+lib/tcllib/gpx/pkgIndex.tcl
+lib/tcllib/grammar_aycock/aycock-build.tcl
+lib/tcllib/grammar_aycock/aycock-debug.tcl
+lib/tcllib/grammar_aycock/aycock-runtime.tcl
+lib/tcllib/grammar_aycock/pkgIndex.tcl
 lib/tcllib/grammar_fa/dacceptor.tcl
 lib/tcllib/grammar_fa/dexec.tcl
 lib/tcllib/grammar_fa/fa.tcl
 lib/tcllib/grammar_fa/faop.tcl
 lib/tcllib/grammar_fa/pkgIndex.tcl
-@dirrm lib/tcllib/grammar_fa
 lib/tcllib/grammar_me/gasm.tcl
 lib/tcllib/grammar_me/me_cpu.tcl
 lib/tcllib/grammar_me/me_cpucore.tcl
 lib/tcllib/grammar_me/me_tcl.tcl
 lib/tcllib/grammar_me/me_util.tcl
 lib/tcllib/grammar_me/pkgIndex.tcl
-@dirrm lib/tcllib/grammar_me
 lib/tcllib/grammar_peg/peg.tcl
 lib/tcllib/grammar_peg/peg_interp.tcl
 lib/tcllib/grammar_peg/pkgIndex.tcl
-@dirrm lib/tcllib/grammar_peg
+lib/tcllib/hook/hook.tcl
+lib/tcllib/hook/pkgIndex.tcl
 lib/tcllib/html/html.tcl
 lib/tcllib/html/pkgIndex.tcl
-@dirrm lib/tcllib/html
 lib/tcllib/htmlparse/htmlparse.tcl
 lib/tcllib/htmlparse/pkgIndex.tcl
-@dirrm lib/tcllib/htmlparse
 lib/tcllib/http/autoproxy.tcl
 lib/tcllib/http/pkgIndex.tcl
-@dirrm lib/tcllib/http
 lib/tcllib/ident/ident.tcl
 lib/tcllib/ident/pkgIndex.tcl
-@dirrm lib/tcllib/ident
+lib/tcllib/imap4/imap4.tcl
+lib/tcllib/imap4/pkgIndex.tcl
 lib/tcllib/inifile/ini.tcl
 lib/tcllib/inifile/pkgIndex.tcl
-@dirrm lib/tcllib/inifile
 lib/tcllib/interp/deleg_method.tcl
 lib/tcllib/interp/deleg_proc.tcl
 lib/tcllib/interp/interp.tcl
 lib/tcllib/interp/pkgIndex.tcl
-@dirrm lib/tcllib/interp
 lib/tcllib/irc/irc.tcl
 lib/tcllib/irc/picoirc.tcl
 lib/tcllib/irc/pkgIndex.tcl
-@dirrm lib/tcllib/irc
 lib/tcllib/javascript/javascript.tcl
 lib/tcllib/javascript/pkgIndex.tcl
-@dirrm lib/tcllib/javascript
 lib/tcllib/jpeg/jpeg.tcl
 lib/tcllib/jpeg/pkgIndex.tcl
-@dirrm lib/tcllib/jpeg
 lib/tcllib/json/json.tcl
+lib/tcllib/json/json_write.tcl
 lib/tcllib/json/pkgIndex.tcl
-@dirrm lib/tcllib/json
 lib/tcllib/ldap/ldap.tcl
 lib/tcllib/ldap/ldapx.tcl
 lib/tcllib/ldap/pkgIndex.tcl
-@dirrm lib/tcllib/ldap
 lib/tcllib/log/log.tcl
 lib/tcllib/log/logger.tcl
 lib/tcllib/log/loggerAppender.tcl
 lib/tcllib/log/loggerUtils.tcl
 lib/tcllib/log/msgs/en.msg
-@dirrm lib/tcllib/log/msgs
 lib/tcllib/log/pkgIndex.tcl
-@dirrm lib/tcllib/log
+lib/tcllib/map/map_slippy.tcl
+lib/tcllib/map/map_slippy_cache.tcl
+lib/tcllib/map/map_slippy_fetcher.tcl
+lib/tcllib/map/pkgIndex.tcl
 lib/tcllib/mapproj/mapproj.tcl
 lib/tcllib/mapproj/pkgIndex.tcl
-@dirrm lib/tcllib/mapproj
 lib/tcllib/math/bessel.tcl
 lib/tcllib/math/bigfloat.tcl
 lib/tcllib/math/bigfloat2.tcl
@@ -236,11 +261,14 @@ lib/tcllib/math/fourier.tcl
 lib/tcllib/math/fuzzy.tcl
 lib/tcllib/math/geometry.tcl
 lib/tcllib/math/interpolate.tcl
+lib/tcllib/math/kruskal.tcl
 lib/tcllib/math/linalg.tcl
 lib/tcllib/math/liststat.tcl
+lib/tcllib/math/machineparameters.tcl
 lib/tcllib/math/math.tcl
 lib/tcllib/math/misc.tcl
 lib/tcllib/math/mvlinreg.tcl
+lib/tcllib/math/numtheory.tcl
 lib/tcllib/math/optimize.tcl
 lib/tcllib/math/pdf_stat.tcl
 lib/tcllib/math/pkgIndex.tcl
@@ -251,49 +279,40 @@ lib/tcllib/math/rational_funcs.tcl
 lib/tcllib/math/romannumerals.tcl
 lib/tcllib/math/special.tcl
 lib/tcllib/math/statistics.tcl
+lib/tcllib/math/symdiff.tcl
 lib/tcllib/math/tclIndex
-@dirrm lib/tcllib/math
 lib/tcllib/md4/md4.tcl
 lib/tcllib/md4/md4c.tcl
 lib/tcllib/md4/pkgIndex.tcl
-@dirrm lib/tcllib/md4
 lib/tcllib/md5/md5.tcl
 lib/tcllib/md5/md5c.tcl
 lib/tcllib/md5/md5x.tcl
 lib/tcllib/md5/pkgIndex.tcl
-@dirrm lib/tcllib/md5
 lib/tcllib/md5crypt/md5crypt.tcl
 lib/tcllib/md5crypt/md5cryptc.tcl
 lib/tcllib/md5crypt/pkgIndex.tcl
-@dirrm lib/tcllib/md5crypt
 lib/tcllib/mime/mime.tcl
 lib/tcllib/mime/pkgIndex.tcl
 lib/tcllib/mime/smtp.tcl
-@dirrm lib/tcllib/mime
 lib/tcllib/multiplexer/multiplexer.tcl
 lib/tcllib/multiplexer/pkgIndex.tcl
-@dirrm lib/tcllib/multiplexer
+lib/tcllib/namespacex/namespacex.tcl
+lib/tcllib/namespacex/pkgIndex.tcl
 lib/tcllib/ncgi/ncgi.tcl
 lib/tcllib/ncgi/pkgIndex.tcl
-@dirrm lib/tcllib/ncgi
 lib/tcllib/nmea/nmea.tcl
 lib/tcllib/nmea/pkgIndex.tcl
-@dirrm lib/tcllib/nmea
 lib/tcllib/nns/common.tcl
 lib/tcllib/nns/nns.tcl
 lib/tcllib/nns/nns_auto.tcl
-lib/tcllib/nns/server.tcl
 lib/tcllib/nns/pkgIndex.tcl
-@dirrm lib/tcllib/nns
+lib/tcllib/nns/server.tcl
 lib/tcllib/nntp/nntp.tcl
 lib/tcllib/nntp/pkgIndex.tcl
-@dirrm lib/tcllib/nntp
 lib/tcllib/ntp/pkgIndex.tcl
 lib/tcllib/ntp/time.tcl
-@dirrm lib/tcllib/ntp
 lib/tcllib/otp/otp.tcl
 lib/tcllib/otp/pkgIndex.tcl
-@dirrm lib/tcllib/otp
 lib/tcllib/page/analysis_peg_emodes.tcl
 lib/tcllib/page/analysis_peg_minimize.tcl
 lib/tcllib/page/analysis_peg_reachable.tcl
@@ -332,64 +351,93 @@ lib/tcllib/page/plugins/writer_peg.tcl
 lib/tcllib/page/plugins/writer_ser.tcl
 lib/tcllib/page/plugins/writer_tpc.tcl
 lib/tcllib/page/plugins/writer_tree.tcl
-@dirrm lib/tcllib/page/plugins
 lib/tcllib/page/util_flow.tcl
 lib/tcllib/page/util_norm_lemon.tcl
 lib/tcllib/page/util_norm_peg.tcl
 lib/tcllib/page/util_peg.tcl
 lib/tcllib/page/util_quote.tcl
-@dirrm lib/tcllib/page
+lib/tcllib/pkgIndex.tcl
+lib/tcllib/pki/pkgIndex.tcl
+lib/tcllib/pki/pki.tcl
 lib/tcllib/pluginmgr/pkgIndex.tcl
 lib/tcllib/pluginmgr/pluginmgr.tcl
-@dirrm lib/tcllib/pluginmgr
 lib/tcllib/png/pkgIndex.tcl
 lib/tcllib/png/png.tcl
-@dirrm lib/tcllib/png
 lib/tcllib/pop3/pkgIndex.tcl
 lib/tcllib/pop3/pop3.tcl
-@dirrm lib/tcllib/pop3
 lib/tcllib/pop3d/pkgIndex.tcl
 lib/tcllib/pop3d/pop3d.tcl
 lib/tcllib/pop3d/pop3d_dbox.tcl
 lib/tcllib/pop3d/pop3d_udb.tcl
-@dirrm lib/tcllib/pop3d
 lib/tcllib/profiler/pkgIndex.tcl
 lib/tcllib/profiler/profiler.tcl
-@dirrm lib/tcllib/profiler
+lib/tcllib/pt/char.tcl
+lib/tcllib/pt/configuration.tcl
+lib/tcllib/pt/paths.tcl
+lib/tcllib/pt/pkgIndex.tcl
+lib/tcllib/pt/pt_astree.tcl
+lib/tcllib/pt/pt_cparam_config_critcl.tcl
+lib/tcllib/pt/pt_parse_peg.tcl
+lib/tcllib/pt/pt_parse_peg_c.tcl
+lib/tcllib/pt/pt_parse_peg_tcl.tcl
+lib/tcllib/pt/pt_peg_container.tcl
+lib/tcllib/pt/pt_peg_container_peg.tcl
+lib/tcllib/pt/pt_peg_export.tcl
+lib/tcllib/pt/pt_peg_export_container.tcl
+lib/tcllib/pt/pt_peg_export_json.tcl
+lib/tcllib/pt/pt_peg_export_peg.tcl
+lib/tcllib/pt/pt_peg_from_json.tcl
+lib/tcllib/pt/pt_peg_from_peg.tcl
+lib/tcllib/pt/pt_peg_import.tcl
+lib/tcllib/pt/pt_peg_import_json.tcl
+lib/tcllib/pt/pt_peg_import_peg.tcl
+lib/tcllib/pt/pt_peg_interp.tcl
+lib/tcllib/pt/pt_peg_op.tcl
+lib/tcllib/pt/pt_peg_to_container.tcl
+lib/tcllib/pt/pt_peg_to_cparam.tcl
+lib/tcllib/pt/pt_peg_to_json.tcl
+lib/tcllib/pt/pt_peg_to_param.tcl
+lib/tcllib/pt/pt_peg_to_peg.tcl
+lib/tcllib/pt/pt_peg_to_tclparam.tcl
+lib/tcllib/pt/pt_pegrammar.tcl
+lib/tcllib/pt/pt_pexpr_op.tcl
+lib/tcllib/pt/pt_pexpression.tcl
+lib/tcllib/pt/pt_pgen.tcl
+lib/tcllib/pt/pt_rdengine.tcl
+lib/tcllib/pt/pt_rdengine_c.tcl
+lib/tcllib/pt/pt_rdengine_oo.tcl
+lib/tcllib/pt/pt_rdengine_tcl.tcl
+lib/tcllib/pt/pt_tclparam_config_snit.tcl
+lib/tcllib/pt/pt_tclparam_config_tcloo.tcl
+lib/tcllib/pt/text_write.tcl
 lib/tcllib/rc4/pkgIndex.tcl
 lib/tcllib/rc4/rc4.tcl
 lib/tcllib/rc4/rc4c.tcl
-@dirrm lib/tcllib/rc4
 lib/tcllib/rcs/pkgIndex.tcl
 lib/tcllib/rcs/rcs.tcl
-@dirrm lib/tcllib/rcs
 lib/tcllib/report/pkgIndex.tcl
 lib/tcllib/report/report.tcl
-@dirrm lib/tcllib/report
+lib/tcllib/rest/pkgIndex.tcl
+lib/tcllib/rest/rest.tcl
 lib/tcllib/ripemd/pkgIndex.tcl
 lib/tcllib/ripemd/ripemd128.tcl
 lib/tcllib/ripemd/ripemd160.tcl
-@dirrm lib/tcllib/ripemd
 lib/tcllib/sasl/gtoken.tcl
 lib/tcllib/sasl/ntlm.tcl
 lib/tcllib/sasl/pkgIndex.tcl
 lib/tcllib/sasl/sasl.tcl
-@dirrm lib/tcllib/sasl
 lib/tcllib/sha1/pkgIndex.tcl
 lib/tcllib/sha1/sha1.tcl
 lib/tcllib/sha1/sha1c.tcl
 lib/tcllib/sha1/sha1v1.tcl
 lib/tcllib/sha1/sha256.tcl
 lib/tcllib/sha1/sha256c.tcl
-@dirrm lib/tcllib/sha1
 lib/tcllib/simulation/annealing.tcl
 lib/tcllib/simulation/montecarlo.tcl
 lib/tcllib/simulation/pkgIndex.tcl
 lib/tcllib/simulation/random.tcl
-@dirrm lib/tcllib/simulation
 lib/tcllib/smtpd/pkgIndex.tcl
 lib/tcllib/smtpd/smtpd.tcl
-@dirrm lib/tcllib/smtpd
 lib/tcllib/snit/main1.tcl
 lib/tcllib/snit/main1_83.tcl
 lib/tcllib/snit/main2.tcl
@@ -398,27 +446,24 @@ lib/tcllib/snit/snit.tcl
 lib/tcllib/snit/snit2.tcl
 lib/tcllib/snit/snit_tcl83_utils.tcl
 lib/tcllib/snit/validate.tcl
-@dirrm lib/tcllib/snit
 lib/tcllib/soundex/pkgIndex.tcl
 lib/tcllib/soundex/soundex.tcl
-@dirrm lib/tcllib/soundex
 lib/tcllib/stooop/mkpkgidx.tcl
 lib/tcllib/stooop/pkgIndex.tcl
 lib/tcllib/stooop/stooop.tcl
 lib/tcllib/stooop/switched.tcl
 lib/tcllib/stooop/xifo.tcl
-@dirrm lib/tcllib/stooop
 lib/tcllib/stringprep/pkgIndex.tcl
 lib/tcllib/stringprep/stringprep.tcl
 lib/tcllib/stringprep/stringprep_data.tcl
 lib/tcllib/stringprep/unicode.tcl
 lib/tcllib/stringprep/unicode_data.tcl
-@dirrm lib/tcllib/stringprep
 lib/tcllib/struct/disjointset.tcl
 lib/tcllib/struct/graph.tcl
 lib/tcllib/struct/graph1.tcl
 lib/tcllib/struct/graph_c.tcl
 lib/tcllib/struct/graph_tcl.tcl
+lib/tcllib/struct/graphops.tcl
 lib/tcllib/struct/list.tcl
 lib/tcllib/struct/matrix.tcl
 lib/tcllib/struct/matrix1.tcl
@@ -427,6 +472,7 @@ lib/tcllib/struct/pool.tcl
 lib/tcllib/struct/prioqueue.tcl
 lib/tcllib/struct/queue.tcl
 lib/tcllib/struct/queue_c.tcl
+lib/tcllib/struct/queue_oo.tcl
 lib/tcllib/struct/queue_tcl.tcl
 lib/tcllib/struct/record.tcl
 lib/tcllib/struct/sets.tcl
@@ -435,6 +481,7 @@ lib/tcllib/struct/sets_tcl.tcl
 lib/tcllib/struct/skiplist.tcl
 lib/tcllib/struct/stack.tcl
 lib/tcllib/struct/stack_c.tcl
+lib/tcllib/struct/stack_oo.tcl
 lib/tcllib/struct/stack_tcl.tcl
 lib/tcllib/struct/struct.tcl
 lib/tcllib/struct/struct1.tcl
@@ -442,18 +489,16 @@ lib/tcllib/struct/tree.tcl
 lib/tcllib/struct/tree1.tcl
 lib/tcllib/struct/tree_c.tcl
 lib/tcllib/struct/tree_tcl.tcl
-@dirrm lib/tcllib/struct
 lib/tcllib/tar/pkgIndex.tcl
 lib/tcllib/tar/tar.tcl
-@dirrm lib/tcllib/tar
+lib/tcllib/tepam/pkgIndex.tcl
+lib/tcllib/tepam/tepam.tcl
 lib/tcllib/term/ansi/code.tcl
 lib/tcllib/term/ansi/code/attr.tcl
 lib/tcllib/term/ansi/code/ctrl.tcl
 lib/tcllib/term/ansi/code/macros.tcl
-@dirrm lib/tcllib/term/ansi/code
 lib/tcllib/term/ansi/ctrlunix.tcl
 lib/tcllib/term/ansi/send.tcl
-@dirrm lib/tcllib/term/ansi
 lib/tcllib/term/bind.tcl
 lib/tcllib/term/imenu.tcl
 lib/tcllib/term/ipager.tcl
@@ -461,7 +506,6 @@ lib/tcllib/term/pkgIndex.tcl
 lib/tcllib/term/receive.tcl
 lib/tcllib/term/send.tcl
 lib/tcllib/term/term.tcl
-@dirrm lib/tcllib/term
 lib/tcllib/textutil/adjust.tcl
 lib/tcllib/textutil/dehypht.tex
 lib/tcllib/textutil/eshyph_vo.tex
@@ -474,7 +518,6 @@ lib/tcllib/textutil/string.tcl
 lib/tcllib/textutil/tabify.tcl
 lib/tcllib/textutil/textutil.tcl
 lib/tcllib/textutil/trim.tcl
-@dirrm lib/tcllib/textutil
 lib/tcllib/tie/pkgIndex.tcl
 lib/tcllib/tie/tie.tcl
 lib/tcllib/tie/tie_array.tcl
@@ -483,10 +526,8 @@ lib/tcllib/tie/tie_file.tcl
 lib/tcllib/tie/tie_growfile.tcl
 lib/tcllib/tie/tie_log.tcl
 lib/tcllib/tie/tie_rarray.tcl
-@dirrm lib/tcllib/tie
 lib/tcllib/tiff/pkgIndex.tcl
 lib/tcllib/tiff/tiff.tcl
-@dirrm lib/tcllib/tiff
 lib/tcllib/transfer/connect.tcl
 lib/tcllib/transfer/copyops.tcl
 lib/tcllib/transfer/ddest.tcl
@@ -495,32 +536,161 @@ lib/tcllib/transfer/pkgIndex.tcl
 lib/tcllib/transfer/receiver.tcl
 lib/tcllib/transfer/tqueue.tcl
 lib/tcllib/transfer/transmitter.tcl
-@dirrm lib/tcllib/transfer
 lib/tcllib/treeql/pkgIndex.tcl
 lib/tcllib/treeql/treeql.tcl
 lib/tcllib/treeql/treeql84.tcl
 lib/tcllib/treeql/treeql85.tcl
-@dirrm lib/tcllib/treeql
 lib/tcllib/uev/pkgIndex.tcl
 lib/tcllib/uev/uevent.tcl
-@dirrm lib/tcllib/uev
+lib/tcllib/uev/uevent_onidle.tcl
 lib/tcllib/units/pkgIndex.tcl
 lib/tcllib/units/units.tcl
-@dirrm lib/tcllib/units
 lib/tcllib/uri/pkgIndex.tcl
 lib/tcllib/uri/uri.tcl
 lib/tcllib/uri/urn-scheme.tcl
-@dirrm lib/tcllib/uri
 lib/tcllib/uuid/pkgIndex.tcl
 lib/tcllib/uuid/uuid.tcl
-@dirrm lib/tcllib/uuid
+lib/tcllib/virtchannel_base/fifo.tcl
+lib/tcllib/virtchannel_base/fifo2.tcl
+lib/tcllib/virtchannel_base/halfpipe.tcl
+lib/tcllib/virtchannel_base/memchan.tcl
+lib/tcllib/virtchannel_base/null.tcl
+lib/tcllib/virtchannel_base/nullzero.tcl
+lib/tcllib/virtchannel_base/pkgIndex.tcl
+lib/tcllib/virtchannel_base/random.tcl
+lib/tcllib/virtchannel_base/randseed.tcl
+lib/tcllib/virtchannel_base/string.tcl
+lib/tcllib/virtchannel_base/textwindow.tcl
+lib/tcllib/virtchannel_base/variable.tcl
+lib/tcllib/virtchannel_base/zero.tcl
+lib/tcllib/virtchannel_core/core.tcl
+lib/tcllib/virtchannel_core/events.tcl
+lib/tcllib/virtchannel_core/pkgIndex.tcl
+lib/tcllib/virtchannel_core/transformcore.tcl
+lib/tcllib/virtchannel_transform/adler32.tcl
+lib/tcllib/virtchannel_transform/base64.tcl
+lib/tcllib/virtchannel_transform/counter.tcl
+lib/tcllib/virtchannel_transform/crc32.tcl
+lib/tcllib/virtchannel_transform/hex.tcl
+lib/tcllib/virtchannel_transform/identity.tcl
+lib/tcllib/virtchannel_transform/limitsize.tcl
+lib/tcllib/virtchannel_transform/observe.tcl
+lib/tcllib/virtchannel_transform/otp.tcl
+lib/tcllib/virtchannel_transform/pkgIndex.tcl
+lib/tcllib/virtchannel_transform/rot.tcl
+lib/tcllib/virtchannel_transform/spacer.tcl
+lib/tcllib/virtchannel_transform/zlib.tcl
 lib/tcllib/wip/pkgIndex.tcl
 lib/tcllib/wip/wip.tcl
 lib/tcllib/wip/wip2.tcl
-@dirrm lib/tcllib/wip
 lib/tcllib/yaml/huddle.tcl
 lib/tcllib/yaml/pkgIndex.tcl
 lib/tcllib/yaml/yaml.tcl
 @dirrm lib/tcllib/yaml
-lib/tcllib/pkgIndex.tcl
+@dirrm lib/tcllib/wip
+@dirrm lib/tcllib/virtchannel_transform
+@dirrm lib/tcllib/virtchannel_core
+@dirrm lib/tcllib/virtchannel_base
+@dirrm lib/tcllib/uuid
+@dirrm lib/tcllib/uri
+@dirrm lib/tcllib/units
+@dirrm lib/tcllib/uev
+@dirrm lib/tcllib/treeql
+@dirrm lib/tcllib/transfer
+@dirrm lib/tcllib/tiff
+@dirrm lib/tcllib/tie
+@dirrm lib/tcllib/textutil
+@dirrm lib/tcllib/term/ansi/code
+@dirrm lib/tcllib/term/ansi
+@dirrm lib/tcllib/term
+@dirrm lib/tcllib/tepam
+@dirrm lib/tcllib/tar
+@dirrm lib/tcllib/struct
+@dirrm lib/tcllib/stringprep
+@dirrm lib/tcllib/stooop
+@dirrm lib/tcllib/soundex
+@dirrm lib/tcllib/snit
+@dirrm lib/tcllib/smtpd
+@dirrm lib/tcllib/simulation
+@dirrm lib/tcllib/sha1
+@dirrm lib/tcllib/sasl
+@dirrm lib/tcllib/ripemd
+@dirrm lib/tcllib/rest
+@dirrm lib/tcllib/report
+@dirrm lib/tcllib/rcs
+@dirrm lib/tcllib/rc4
+@dirrm lib/tcllib/pt
+@dirrm lib/tcllib/profiler
+@dirrm lib/tcllib/pop3d
+@dirrm lib/tcllib/pop3
+@dirrm lib/tcllib/png
+@dirrm lib/tcllib/pluginmgr
+@dirrm lib/tcllib/pki
+@dirrm lib/tcllib/page/plugins
+@dirrm lib/tcllib/page
+@dirrm lib/tcllib/otp
+@dirrm lib/tcllib/ntp
+@dirrm lib/tcllib/nntp
+@dirrm lib/tcllib/nns
+@dirrm lib/tcllib/nmea
+@dirrm lib/tcllib/ncgi
+@dirrm lib/tcllib/namespacex
+@dirrm lib/tcllib/multiplexer
+@dirrm lib/tcllib/mime
+@dirrm lib/tcllib/md5crypt
+@dirrm lib/tcllib/md5
+@dirrm lib/tcllib/md4
+@dirrm lib/tcllib/math
+@dirrm lib/tcllib/mapproj
+@dirrm lib/tcllib/map
+@dirrm lib/tcllib/log/msgs
+@dirrm lib/tcllib/log
+@dirrm lib/tcllib/ldap
+@dirrm lib/tcllib/json
+@dirrm lib/tcllib/jpeg
+@dirrm lib/tcllib/javascript
+@dirrm lib/tcllib/irc
+@dirrm lib/tcllib/interp
+@dirrm lib/tcllib/inifile
+@dirrm lib/tcllib/imap4
+@dirrm lib/tcllib/ident
+@dirrm lib/tcllib/http
+@dirrm lib/tcllib/htmlparse
+@dirrm lib/tcllib/html
+@dirrm lib/tcllib/hook
+@dirrm lib/tcllib/grammar_peg
+@dirrm lib/tcllib/grammar_me
+@dirrm lib/tcllib/grammar_fa
+@dirrm lib/tcllib/grammar_aycock
+@dirrm lib/tcllib/gpx
+@dirrm lib/tcllib/fumagic
+@dirrm lib/tcllib/ftpd
+@dirrm lib/tcllib/ftp
+@dirrm lib/tcllib/fileutil
+@dirrm lib/tcllib/doctools2toc
+@dirrm lib/tcllib/doctools2idx
+@dirrm lib/tcllib/doctools2base
+@dirrm lib/tcllib/doctools/mpformats
+@dirrm lib/tcllib/doctools
+@dirrm lib/tcllib/docstrip
+@dirrm lib/tcllib/dns/msgs
+@dirrm lib/tcllib/dns
+@dirrm lib/tcllib/des
+@dirrm lib/tcllib/csv
+@dirrm lib/tcllib/crc
+@dirrm lib/tcllib/counter
+@dirrm lib/tcllib/coroutine
+@dirrm lib/tcllib/control
+@dirrm lib/tcllib/comm
+@dirrm lib/tcllib/cmdline
+@dirrm lib/tcllib/cache
+@dirrm lib/tcllib/blowfish
+@dirrm lib/tcllib/bibtex
+@dirrm lib/tcllib/bench
+@dirrm lib/tcllib/bee
+@dirrm lib/tcllib/base64
+@dirrm lib/tcllib/base32
+@dirrm lib/tcllib/asn
+@dirrm lib/tcllib/amazon-s3
+@dirrm lib/tcllib/aes
 @dirrm lib/tcllib
