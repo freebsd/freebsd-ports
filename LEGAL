@@ -397,8 +397,6 @@ OMRONWnn6.tgz		japanese/Wnn6		You should buy from Omron
 						Software Co., Ltd.
 oneko-*.tar.gz		games/oneko-sakura	Including derivatives from
 						CARDCAPTOR SAKURA
-fec-*			net/onion-fec		Some uses of FEC technology are
-						patent encumbered
 openssl-*		security/openssl	Crypto; export/import-controlled
 opera-*			www/linux-opera		No redistribution, commercial
 						software
@@ -585,7 +583,6 @@ xmdiary-*		deskutils/xmdiary	Do not sell for profit
 xmms-wavpack-*		audio/xmms-wavpack	Missing license
 xrisk-*			games/xrisk		Possible copyright/trademark
 						violation
-xsmbrowser-*		net/xsmbrowser		Commercial software
 xteddy-*		games/xteddy		Do not sell for profit
 xtr1.50e*		japanese/xtr		Need to obtain permission for
 						commercial redistribution
