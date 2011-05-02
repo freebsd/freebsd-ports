@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ohai
-PORTVERSION=	0.5.8
+PORTVERSION=	0.6.4
 CATEGORIES=	sysutils rubygems
 MASTER_SITES=	RG
 
@@ -17,10 +17,7 @@ RUN_DEPENDS=	rubygem-mixlib-log>=0:${PORTSDIR}/devel/rubygem-mixlib-log \
 		rubygem-mixlib-config>=0:${PORTSDIR}/devel/rubygem-mixlib-config \
 		rubygem-mixlib-cli>=0:${PORTSDIR}/devel/rubygem-mixlib-cli \
 		rubygem-systemu>=0:${PORTSDIR}/devel/rubygem-systemu \
-		rubygem-extlib>=0:${PORTSDIR}/devel/rubygem-extlib \
-		rubygem-json>=1.4.4:${PORTSDIR}/devel/rubygem-json
-
-BROKEN=		does not install
+		rubygem-yajl-ruby>=0:${PORTSDIR}/devel/rubygem-yajl-ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
