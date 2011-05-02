@@ -288,8 +288,6 @@
     SUBDIR += gbrainy
     SUBDIR += gcompris
     SUBDIR += gdado
-    SUBDIR += geki2
-    SUBDIR += geki3
     SUBDIR += gemdropx
     SUBDIR += gemrb
     SUBDIR += ggz-client-libs
@@ -343,7 +341,6 @@
     SUBDIR += gondola
     SUBDIR += goonies
     SUBDIR += gracer
-    SUBDIR += grande
     SUBDIR += greed
     SUBDIR += gretools
     SUBDIR += grhino
@@ -821,7 +818,6 @@
     SUBDIR += solarconquest
     SUBDIR += solarwolf
     SUBDIR += sopwith
-    SUBDIR += spacearyarya
     SUBDIR += spacehulk
     SUBDIR += spacejunk
     SUBDIR += speak
