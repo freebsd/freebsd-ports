@@ -1,0 +1,46 @@
+--- ./Makefile.orig	2008-10-09 04:38:01.000000000 +0200
++++ ./Makefile	2011-05-02 23:43:52.002280937 +0200
+@@ -3,14 +3,12 @@
+ 
+ MAJOR = 1
+ MINOR = 9
+-REVISION = 3
++REVISION = 4
+ LIB = libcli.so
+ 
+ CC = gcc
+-DEBUG = -g
+-OPTIM = -O3
+-CFLAGS += $(DEBUG) $(OPTIM) -Wall -Wformat-security -Wno-format-zero-length
+-LDFLAGS += -shared -Wl,-soname,$(LIB).$(MAJOR).$(MINOR)
++CFLAGS += -Wall -Wformat-security -Wno-format-zero-length
++LDFLAGS += -shared -Wl,-soname,$(LIB).$(MAJOR)$(MINOR)
+ LIBPATH += -L.
+ LIBS = -lcrypt
+ 
+@@ -18,9 +16,10 @@
+ 
+ $(LIB): libcli.o
+ 	$(CC) -o $(LIB).$(MAJOR).$(MINOR).$(REVISION) $^ $(LDFLAGS) $(LIBS)
+-	-rm -f $(LIB) $(LIB).$(MAJOR).$(MINOR)
+-	ln -s $(LIB).$(MAJOR).$(MINOR).$(REVISION) $(LIB).$(MAJOR).$(MINOR)
+-	ln -s $(LIB).$(MAJOR).$(MINOR) $(LIB)
++	-rm -f $(LIB) $(LIB).$(MAJOR).$(MINOR) $(LIB).$(MAJOR)$(MINOR)
++	ln -sf $(LIB).$(MAJOR).$(MINOR).$(REVISION) $(LIB).$(MAJOR)$(MINOR)
++	ln -sf $(LIB).$(MAJOR).$(MINOR).$(REVISION) $(LIB).$(MAJOR).$(MINOR)
++	ln -sf $(LIB).$(MAJOR)$(MINOR) $(LIB)
+ 
+ %.o: %.c
+ 	$(CC) $(CPPFLAGS) $(CFLAGS) -fPIC -o $@ -c $<
+@@ -41,8 +40,9 @@
+ 	install -m 0644 libcli.h $(DESTDIR)$(PREFIX)/include
+ 	install -m 0755 $(LIB).$(MAJOR).$(MINOR).$(REVISION) $(DESTDIR)$(PREFIX)/lib
+ 	cd $(DESTDIR)$(PREFIX)/lib && \
+-	    ln -s $(LIB).$(MAJOR).$(MINOR).$(REVISION) $(LIB).$(MAJOR).$(MINOR) && \
+-	    ln -s $(LIB).$(MAJOR).$(MINOR) $(LIB)
++	    ln -sf $(LIB).$(MAJOR).$(MINOR).$(REVISION) $(LIB).$(MAJOR).$(MINOR) && \
++	    ln -sf $(LIB).$(MAJOR).$(MINOR).$(REVISION) $(LIB).$(MAJOR)$(MINOR) && \
++	    ln -sf $(LIB).$(MAJOR)$(MINOR) $(LIB)
+ 
+ rpm:
+ 	mkdir libcli-$(MAJOR).$(MINOR).$(REVISION)
