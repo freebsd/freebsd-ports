@@ -1,3 +1,0 @@
-bin/rpc
-%%PORTDOCS%%%%DOCSDIR%%/manual
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

@@ -87,7 +87,6 @@
     SUBDIR += freemat
     SUBDIR += freemat-mpi
     SUBDIR += fricas
-    SUBDIR += fudgit
     SUBDIR += fung-calc
     SUBDIR += fxt
     SUBDIR += galculator
@@ -149,7 +148,6 @@
     SUBDIR += jts
     SUBDIR += k3dsurf
     SUBDIR += kash3
-    SUBDIR += kaskade
     SUBDIR += koctave
     SUBDIR += kseg
     SUBDIR += labplot
@@ -485,7 +483,6 @@
     SUBDIR += qgfe
     SUBDIR += qhull
     SUBDIR += qrupdate
-    SUBDIR += qscanplot
     SUBDIR += qtiplot
     SUBDIR += qtiplot-doc
     SUBDIR += qtoctave
@@ -496,7 +493,6 @@
     SUBDIR += rkward
     SUBDIR += rkward-kde4
     SUBDIR += rngstreams
-    SUBDIR += rpc
     SUBDIR += rpcalc
     SUBDIR += rpy
     SUBDIR += rpy2
@@ -530,7 +526,6 @@
     SUBDIR += speedcrunch
     SUBDIR += spooles
     SUBDIR += spooles-mpich
-    SUBDIR += ss
     SUBDIR += stepulator
     SUBDIR += stp
     SUBDIR += suitesparse
@@ -564,7 +559,6 @@
     SUBDIR += wfmath
     SUBDIR += wingz
     SUBDIR += wingz3
-    SUBDIR += wmcalc
     SUBDIR += wxMaxima
     SUBDIR += x12arima
     SUBDIR += xgfe
