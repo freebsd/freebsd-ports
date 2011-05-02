@@ -30,7 +30,6 @@
     SUBDIR += batv-milter
     SUBDIR += bayespam
     SUBDIR += bbmail
-    SUBDIR += biabam
     SUBDIR += biffer
     SUBDIR += bincimap
     SUBDIR += bmf
@@ -76,7 +75,6 @@
     SUBDIR += courier-imap
     SUBDIR += courier-pythonfilter
     SUBDIR += couriergraph
-    SUBDIR += crashecho
     SUBDIR += crm114
     SUBDIR += cucipop
     SUBDIR += cvsmail
@@ -107,7 +105,6 @@
     SUBDIR += dovecot2-pigeonhole
     SUBDIR += drac
     SUBDIR += dracmail
-    SUBDIR += drbl
     SUBDIR += dsbl-testers
     SUBDIR += dspam
     SUBDIR += dspam-devel
@@ -170,7 +167,6 @@
     SUBDIR += getmail
     SUBDIR += gkrellmmailwatch
     SUBDIR += gkrellmmailwatch2
-    SUBDIR += glbiff
     SUBDIR += gld
     SUBDIR += gmail-notify
     SUBDIR += gmime
@@ -235,7 +231,6 @@
     SUBDIR += libspf
     SUBDIR += libspf2
     SUBDIR += libspf2-10
-    SUBDIR += libsrs
     SUBDIR += libsrs2
     SUBDIR += libsrs_alt
     SUBDIR += libvmime
@@ -264,7 +259,6 @@
     SUBDIR += mailsync
     SUBDIR += mailx
     SUBDIR += mairix
-    SUBDIR += majorcool
     SUBDIR += majordomo
     SUBDIR += masqmail
     SUBDIR += mavbiff
@@ -277,7 +271,6 @@
     SUBDIR += mbx2mbox
     SUBDIR += mdpop3d
     SUBDIR += mess822
-    SUBDIR += messagewall
     SUBDIR += meta1
     SUBDIR += metamail
     SUBDIR += mew
@@ -481,7 +474,6 @@
     SUBDIR += pflogstats
     SUBDIR += pflogsumm
     SUBDIR += pfqueue
-    SUBDIR += pgen
     SUBDIR += pgpsendmail
     SUBDIR += php4-imap
     SUBDIR += php5-imap
@@ -586,13 +578,11 @@
     SUBDIR += razor-agents
     SUBDIR += rbl-milter
     SUBDIR += rblcheck
-    SUBDIR += regm
     SUBDIR += relay-ctrl
     SUBDIR += relaydb
     SUBDIR += renattach
     SUBDIR += reply-o-matic
     SUBDIR += rftp
-    SUBDIR += ricochet
     SUBDIR += ripmime
     SUBDIR += rlytest
     SUBDIR += rmilter
@@ -640,15 +630,12 @@
     SUBDIR += smfsav
     SUBDIR += smtp-cli
     SUBDIR += smtp-gated
-    SUBDIR += smtpclient
     SUBDIR += smtpd
     SUBDIR += smtpfeed
     SUBDIR += smtpmail
-    SUBDIR += smtpproxy
     SUBDIR += smtprc
     SUBDIR += smtptrapd
     SUBDIR += softfail
-    SUBDIR += solidpop3d
     SUBDIR += sortmail
     SUBDIR += spamass-ixhash
     SUBDIR += spamass-milter
@@ -667,7 +654,6 @@
     SUBDIR += spmfilter
     SUBDIR += spmfilter-clamav
     SUBDIR += spmfilter-spamassassin
-    SUBDIR += spruce
     SUBDIR += sqlgrey
     SUBDIR += squirrelmail
     SUBDIR += squirrelmail-abook_import_export-plugin
@@ -717,7 +703,6 @@
     SUBDIR += synonym
     SUBDIR += t-prot
     SUBDIR += teapop
-    SUBDIR += teapop-devel
     SUBDIR += textmail
     SUBDIR += thunderbird
     SUBDIR += thunderbird-dictionaries
@@ -754,12 +739,9 @@
     SUBDIR += websieve
     SUBDIR += whoson
     SUBDIR += wmbiff
-    SUBDIR += wmmail
     SUBDIR += wmmaiload
-    SUBDIR += wmmultipop3
     SUBDIR += wmpop3
     SUBDIR += wmpop3lb
-    SUBDIR += wmymail
     SUBDIR += x-face-e21
     SUBDIR += xbuffy
     SUBDIR += xcite
@@ -771,7 +753,6 @@
     SUBDIR += xmail
     SUBDIR += xmailbox
     SUBDIR += xmailwatcher
-    SUBDIR += xpbiff
     SUBDIR += xpi-displayquota
     SUBDIR += zabit
     SUBDIR += zmailer

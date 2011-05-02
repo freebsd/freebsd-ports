@@ -1,8 +1,0 @@
-bin/glbiff
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.last-minute
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%EXAMPLESDIR%%/dot.glbiffrc.sample
-@dirrm %%EXAMPLESDIR%%
-@dirrm %%DOCSDIR%%
