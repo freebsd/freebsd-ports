@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.mutt.org/mutt/contrib/ \
 #PATCH_SITES=	http://feeding.frenzy.com/~rainking/
 #PATCHFILES=	urlview.diff
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mexas@bristol.ac.uk
 COMMENT=	URL extractor/launcher
 
 GNU_CONFIGURE=	yes
