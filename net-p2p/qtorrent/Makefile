@@ -9,7 +9,7 @@ PORTNAME=	qtorrent
 PORTVERSION=	0.9.6.1
 PORTREVISION=	9
 CATEGORIES=	net-p2p python
-MASTER_SITES=	http://thegraveyard.org/files/
+MASTER_SITES=	http://cdn.thegraveyard.org/releases/qtorrent/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BitTorrent client that uses the Qt widget-set

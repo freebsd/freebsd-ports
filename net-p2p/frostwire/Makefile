@@ -8,7 +8,7 @@
 PORTNAME=	frostwire
 PORTVERSION=	4.17.0
 CATEGORIES=	net-p2p java
-MASTER_SITES=	http://main2.frostwire.com/frostwire/${PORTVERSION}/
+MASTER_SITES=	http://newyork1.frostwire.com/frostwire/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}.noarch
 
 MAINTAINER=	ports@FreeBSD.org
