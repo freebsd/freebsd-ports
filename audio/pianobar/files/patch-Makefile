@@ -1,46 +1,16 @@
---- Makefile.orig	2011-01-24 04:00:25.000000000 -0800
-+++ Makefile	2011-04-07 14:26:46.000000000 -0700
-@@ -3,8 +3,8 @@
- PREFIX:=/usr/local
+--- Makefile.orig	2011-04-27 14:11:06.000000000 -0500
++++ Makefile	2011-04-30 09:03:16.000000000 -0500
+@@ -4,11 +4,10 @@
  BINDIR:=${PREFIX}/bin
  LIBDIR:=${PREFIX}/lib
+ INCDIR:=${PREFIX}/include
 -MANDIR:=${PREFIX}/share/man
--CFLAGS:=-std=c99 -O2 -DNDEBUG
 +MANDIR:=${PREFIX}/man
-+CFLAGS:=-Wall -std=c99 -O2 -DNDEBUG -pedantic -I/usr/local/include
+ DYNLINK:=0
+-CFLAGS:=-O2 -DNDEBUG
++CFLAGS:=-Wall -std=c99 -O2 -DNDEBUG -pedantic -I/usr/local/include -L/usr/local/lib -lao
+ LDFLAGS:=
+-CC:=c99
  
  PIANOBAR_DIR=src
  PIANOBAR_SRC=\
-@@ -59,8 +59,8 @@
- LIBEZXML_RELOBJ=${LIBEZXML_SRC:.c=.lo}
- LIBEZXML_INCLUDE=${LIBEZXML_DIR}
- 
--LIBAO_INCLUDE=/usr/include
--LIBAO_LIB=-lao
-+LIBAO_INCLUDE=/usr/local/include
-+LIBAO_LIB=-L/usr/local/lib -lao
- 
- LIBM_LIB=-lm
- 
-@@ -68,8 +68,8 @@
- 	LIBFAAD_CFLAGS=
- 	LIBFAAD_LDFLAGS=
- else
--	LIBFAAD_INCLUDE:=/usr/include
--	LIBFAAD_LIB:=-lfaad
-+	LIBFAAD_INCLUDE:=/usr/local/include
-+	LIBFAAD_LIB:=-L/usr/local/lib -lfaad
- 	LIBFAAD_CFLAGS=-I ${LIBFAAD_INCLUDE} -DENABLE_FAAD
- 	LIBFAAD_LDFLAGS=${LIBFAAD_LIB}
- endif
-@@ -78,8 +78,8 @@
- 	LIBMAD_CFLAGS=
- 	LIBMAD_LDFLAGS=
- else
--	LIBMAD_INCLUDE:=/usr/include
--	LIBMAD_LIB:=-lmad
-+	LIBMAD_INCLUDE:=/usr/local/include
-+	LIBMAD_LIB:=-L/usr/local/lib -lmad
- 	LIBMAD_CFLAGS=-I ${LIBMAD_INCLUDE} -DENABLE_MAD
- 	LIBMAD_LDFLAGS=${LIBMAD_LIB}
- endif
