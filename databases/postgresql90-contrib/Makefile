@@ -8,6 +8,7 @@
 PORTNAME=	postgresql
 PKGNAMESUFFIX=	-contrib
 CATEGORIES=	databases
+PORTREVISION=	1
 
 MAINTAINER=	girgen@FreeBSD.org
 COMMENT=	The contrib utilities from the PostgreSQL distribution

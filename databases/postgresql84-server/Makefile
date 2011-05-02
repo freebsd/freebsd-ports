@@ -7,6 +7,7 @@
 
 PORTNAME?=	postgresql
 DISTVERSION?=	8.4.8
+PORTREVISION?=	1
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -255,7 +256,7 @@ MAN7=		abort.7 alter_aggregate.7 alter_conversion.7 alter_database.7 \
 
 .if defined(SERVER_ONLY)
 pre-everything::
-	@${SH} ${FILESDIR}/pkg-install${PKGNAMESUFFIX} ${PORTNAME} BACKUPWARNING
+	@${SH} ${FILESDIR}/pkg-install${PKGNAMESUFFIX}.in ${PORTNAME} BACKUPWARNING
 .endif
 
 .if !defined(NO_BUILD)
@@ -278,21 +279,20 @@ SUB_FILES+=	pkg-message${PKGNAMESUFFIX}
 PKGMESSAGE=	${WRKSRC}/pkg-message${PKGNAMESUFFIX}
 .  endif
 
-.  if exists(${FILESDIR}/pkg-install${PKGNAMESUFFIX})
+.  if exists(${FILESDIR}/pkg-install${PKGNAMESUFFIX}.in)
+SUB_FILES+=     pkg-install${PKGNAMESUFFIX}
 SUB_LIST=	PG_GROUP=$(PG_GROUP) \
 		PG_USER=$(PG_USER) \
 		PG_UID=$(PG_UID)
 PLIST_SUB+=	PG_USER=$(PG_USER)
-PKGINSTALL=	${FILESDIR}/pkg-install${PKGNAMESUFFIX}
+PKGINSTALL=	${WRKDIR}/pkg-install${PKGNAMESUFFIX}
 .  endif
 
 .endif
 
 .if defined(SERVER_ONLY)
 pre-su-install:
-	@ ${SETENV} PKG_PREFIX=${PREFIX} PG_USER=$(PG_USER) PG_GROUP=$(PG_GROUP) \
-		PG_UID=$(PG_UID) \
-		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+	@ ${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
 
 .if !defined(NO_BUILD)
