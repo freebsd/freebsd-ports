@@ -19,6 +19,9 @@ COMMENT=	Interactive program for solving partial differential equations in 2D
 BUILD_DEPENDS=	${LOCALBASE}/lib/libsx.a:${PORTSDIR}/x11/libsx \
 		imake:${PORTSDIR}/devel/imake
 
+DEPRECATED=	No more distfile, looks like abandonware
+EXPIRATION_DATE=	2011-07-01
+
 USE_XORG=	xaw
 USE_FORTRAN=	yes
 
