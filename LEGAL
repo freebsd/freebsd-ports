@@ -238,8 +238,6 @@ homard-*		french/homard		Only free for use in
 						conjunction with french/aster.
 						For any other purpose, you have
 						to acquire a license
-hptools-src*		devel/hptools		Not made or distributed for
-						resale
 httprint_freebsd_*.zip	security/httprint	No cost for personal, education
 						and non-commercial use
 huludesktop-i386.rpm	multimedia/linux-huludesktop No redistribution allowed,
@@ -261,7 +259,6 @@ ICON-Stylish.*		x11-themes/gnome-icons-stylish Author rights unclear
 ICON-Ximian-South-*	x11-themes/gnome-icons-ximian-south Author rights unclear
 idea.V*.tar.Z		security/idea		A patented algorithm that
 						requires proper licensing
-invitationtoruby.tgz	devel/invitation_to_ruby No commercial use
 install40.jar		games/sfbol		Commercial software.  License
 						does not allow redistribution
 iperf-*			benchmarks/iperf	Cannot charge a fee for the
@@ -440,7 +437,6 @@ rkive3.1.tar.Z		news/rkive		Restrictive copyright
 rman-3.*		textproc/rman		Do not sell for profit
 RealPlayer-*.rpm	multimedia/linux-realplayer Redistribution not allowed
 ruby/ruby_cast_256.zip	security/ruby-cast_256	Crypto; export-controlled
-runrev/linux.tgz	devel/linux-runrev	Do not sell for profit
 savage/Samuraiwars*	games/linux-savage-samuraiwars	Freeware, but license
 						terms are unclear
 savage/SFE*		games/linux-savage	Freeware, but license terms

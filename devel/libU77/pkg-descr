@@ -1,3 +1,0 @@
-This library adds commonly used Fortran intrinsic functions to
-allow a greater range of Fortran code to be compiled with f77,
-ie., f2c/gcc.

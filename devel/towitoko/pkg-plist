@@ -1,7 +1,0 @@
-bin/tester
-include/ctapi.h
-include/ctbcs.h
-lib/libtowitoko.a
-lib/libtowitoko.la
-lib/libtowitoko.so
-lib/libtowitoko.so.2

@@ -10,7 +10,6 @@
     SUBDIR += ORBit2-reference
     SUBDIR += SpecTcl
     SUBDIR += ZendOptimizer
-    SUBDIR += a2dev
     SUBDIR += aap
     SUBDIR += abi-compliance-checker
     SUBDIR += ace
@@ -147,12 +146,8 @@
     SUBDIR += bzr-svn
     SUBDIR += bzr-upload
     SUBDIR += bzrtools
-    SUBDIR += c2lib
-    SUBDIR += c2man
-    SUBDIR += c2mdoc
     SUBDIR += c4
     SUBDIR += c_c++_reference
-    SUBDIR += c_parser
     SUBDIR += calibrator
     SUBDIR += cbind
     SUBDIR += cbrowser
@@ -164,7 +159,6 @@
     SUBDIR += cdecl
     SUBDIR += cdialog
     SUBDIR += cdk
-    SUBDIR += cdoc
     SUBDIR += cedet
     SUBDIR += cflow
     SUBDIR += cflow2vcg
@@ -303,7 +297,6 @@
     SUBDIR += devtodo
     SUBDIR += dfuife-curses
     SUBDIR += dia2code
-    SUBDIR += diffconvert
     SUBDIR += diffuse
     SUBDIR += directfb
     SUBDIR += dissy
@@ -340,7 +333,6 @@
     SUBDIR += ebnf2yacc
     SUBDIR += eboxy
     SUBDIR += ecb
-    SUBDIR += ecgi
     SUBDIR += eclipse-eclemma
     SUBDIR += ecore
     SUBDIR += ecore-file
@@ -367,7 +359,6 @@
     SUBDIR += eric4
     SUBDIR += eris
     SUBDIR += erlang-thrift
-    SUBDIR += error
     SUBDIR += esdl
     SUBDIR += esvn
     SUBDIR += etl
@@ -378,7 +369,6 @@
     SUBDIR += etoile-unitkit
     SUBDIR += eventxx
     SUBDIR += evolution-gconf-tools
-    SUBDIR += excalibur-configuration
     SUBDIR += f77flow
     SUBDIR += fam
     SUBDIR += fampp
@@ -433,7 +423,6 @@
     SUBDIR += fpc-symbolic
     SUBDIR += fpc-zlib
     SUBDIR += fpp
-    SUBDIR += freelibiberty
     SUBDIR += frink
     SUBDIR += fsmgenerator
     SUBDIR += ftjam
@@ -469,7 +458,6 @@
     SUBDIR += gearmand
     SUBDIR += gecode
     SUBDIR += generate
-    SUBDIR += gengameng
     SUBDIR += gengetopt
     SUBDIR += genproto
     SUBDIR += gettext
@@ -567,7 +555,6 @@
     SUBDIR += horde-whups
     SUBDIR += hp48cc
     SUBDIR += hp48xgcc
-    SUBDIR += hptools
     SUBDIR += hs-Boolean
     SUBDIR += hs-DeepArrow
     SUBDIR += hs-FileManip
@@ -656,7 +643,6 @@
     SUBDIR += inilib
     SUBDIR += initutil
     SUBDIR += insight
-    SUBDIR += invitation_to_ruby
     SUBDIR += ioncube
     SUBDIR += ipython
     SUBDIR += ireport
@@ -714,7 +700,6 @@
     SUBDIR += kdevelop-php-docs
     SUBDIR += kdevplatform
     SUBDIR += kimwitu
-    SUBDIR += kimwitu++
     SUBDIR += klassmodeler
     SUBDIR += kodos
     SUBDIR += kprof
@@ -732,7 +717,6 @@
     SUBDIR += lhs2TeX
     SUBDIR += libIDL
     SUBDIR += libPropList
-    SUBDIR += libU77
     SUBDIR += libXGP
     SUBDIR += libYGP
     SUBDIR += libafterbase
@@ -762,7 +746,6 @@
     SUBDIR += libcli
     SUBDIR += libconfig
     SUBDIR += libconfuse
-    SUBDIR += libcoro
     SUBDIR += libcoyotl
     SUBDIR += libcwd
     SUBDIR += libdaemon
@@ -862,7 +845,6 @@
     SUBDIR += libphish
     SUBDIR += libphk
     SUBDIR += libplist
-    SUBDIR += libpperl
     SUBDIR += libpthread-stubs
     SUBDIR += librcc
     SUBDIR += librcd
@@ -917,7 +899,6 @@
     SUBDIR += libzrtpcpp
     SUBDIR += libzvbi
     SUBDIR += lightning
-    SUBDIR += lincvs
     SUBDIR += linux-allegro
     SUBDIR += linux-f10-allegro
     SUBDIR += linux-f10-dbus-glib
@@ -932,7 +913,6 @@
     SUBDIR += linux-libglade
     SUBDIR += linux-libglade2
     SUBDIR += linux-libsigc++20
-    SUBDIR += linux-runrev
     SUBDIR += linux-sdl12
     SUBDIR += linux_kdump
     SUBDIR += linuxthreads
@@ -985,8 +965,6 @@
     SUBDIR += magit
     SUBDIR += make++
     SUBDIR += makedepend
-    SUBDIR += makeplus
-    SUBDIR += maketool
     SUBDIR += maven-ant-tasks
     SUBDIR += maven2
     SUBDIR += mcpp
@@ -1016,7 +994,6 @@
     SUBDIR += ml-doc
     SUBDIR += mm
     SUBDIR += mm-common
-    SUBDIR += mob
     SUBDIR += mono-addins
     SUBDIR += mono-tools
     SUBDIR += monodevelop
@@ -1029,7 +1006,6 @@
     SUBDIR += motor
     SUBDIR += mpatrol
     SUBDIR += mph
-    SUBDIR += mprof
     SUBDIR += mq4cpp
     SUBDIR += msgpack
     SUBDIR += msp430-binutils
@@ -1053,7 +1029,6 @@
     SUBDIR += netscape-java40
     SUBDIR += newfile
     SUBDIR += newt
-    SUBDIR += ngpt
     SUBDIR += nini
     SUBDIR += ninja
     SUBDIR += noweb
@@ -2668,7 +2643,6 @@
     SUBDIR += pecl-uuid
     SUBDIR += pecl-vld
     SUBDIR += pecl-xhprof
-    SUBDIR += pedisassem
     SUBDIR += pep8
     SUBDIR += performance
     SUBDIR += perlconsole
@@ -3101,7 +3075,6 @@
     SUBDIR += replay
     SUBDIR += rhtvision
     SUBDIR += ri-emacs
-    SUBDIR += rinfo
     SUBDIR += rlog
     SUBDIR += rlwrap
     SUBDIR += roboctl
@@ -3422,7 +3395,6 @@
     SUBDIR += tcltls
     SUBDIR += tclxml
     SUBDIR += tdl
-    SUBDIR += templ
     SUBDIR += terminality
     SUBDIR += tevent
     SUBDIR += thrift
@@ -3445,7 +3417,6 @@
     SUBDIR += toh
     SUBDIR += tokamak
     SUBDIR += tortoisehg1
-    SUBDIR += towitoko
     SUBDIR += tpasm
     SUBDIR += tpg
     SUBDIR += trio
