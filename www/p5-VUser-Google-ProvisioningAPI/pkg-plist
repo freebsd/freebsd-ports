@@ -1,0 +1,13 @@
+%%SITE_PERL%%/VUser/Google/ProvisioningAPI.pm
+%%SITE_PERL%%/VUser/Google/ProvisioningAPI/V2_0.pm
+%%SITE_PERL%%/VUser/Google/ProvisioningAPI/V1_0.pm
+%%SITE_PERL%%/VUser/Google/ProvisioningAPI/V2_0/EmailListEntry.pm
+%%SITE_PERL%%/VUser/Google/ProvisioningAPI/V2_0/NicknameEntry.pm
+%%SITE_PERL%%/VUser/Google/ProvisioningAPI/V2_0/EmailListRecipientEntry.pm
+%%SITE_PERL%%/VUser/Google/ProvisioningAPI/V2_0/UserEntry.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/VUser-Google-ProvisioningAPI/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/VUser-Google-ProvisioningAPI
+@dirrm %%SITE_PERL%%/VUser/Google/ProvisioningAPI/V2_0
+@dirrm %%SITE_PERL%%/VUser/Google/ProvisioningAPI
+@dirrmtry %%SITE_PERL%%/VUser/Google
+@dirrmtry %%SITE_PERL%%/VUser
