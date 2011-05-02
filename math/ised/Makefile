@@ -11,7 +11,7 @@ PORTVERSION=	2.2.3
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@eitanadler.com
 COMMENT=	A tool for generating number sequences and arithmetic evaluation
 
 USE_BZIP2=	yes

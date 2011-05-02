@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
 DISTNAME=	moreutils_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@eitanadler.com
 COMMENT=	Run programs in parallel
 
 CONFLICTS=	parallel-[0-9]*
