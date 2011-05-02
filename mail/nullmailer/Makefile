@@ -7,7 +7,7 @@
 
 PORTNAME=	nullmailer
 PORTVERSION=	1.05
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://untroubled.org/nullmailer/ \
@@ -48,8 +48,7 @@ MAN7=	nullmailer.7
 MAN8=	nullmailer-queue.8 nullmailer-send.8
 
 post-install:
-	@cd ${WRKSRC} && make install-root
-	@${INSTALL_DATA} -c ${FILESDIR}/remotes.sample ${PREFIX}/etc/nullmailer/
+	@cd ${WRKSRC} && make install-root install-data
 
 # Append commands that reference the nullmailer user to the plist, because
 # we need to ensure that the account has been created by bsd.port.mk by
@@ -63,6 +62,7 @@ post-install:
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${USERS} ${LOCALSTATEDIR}/nullmailer' >> ${TMPPLIST}
 
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@${INSTALL_DATA} -c ${FILESDIR}/remotes.sample ${PREFIX}/etc/nullmailer/
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

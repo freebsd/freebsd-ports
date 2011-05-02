@@ -7,10 +7,10 @@ bin/nullmailer-inject
 sbin/nullmailer-queue
 @exec chmod u+s %D/sbin/nullmailer-queue
 sbin/nullmailer-send
-@ignore etc/nullmailer/me.sample
-etc/nullmailer/remotes.sample
+%%ETCDIR%%/me.sample
+%%ETCDIR%%/remotes.sample
 @dirrm libexec/nullmailer
-@dirrmtry etc/nullmailer
+@dirrmtry %%ETCDIR%%
 @cwd /
 @exec mkdir -p %%LOCALSTATEDIR%%/nullmailer/queue
 @exec chmod 700 %%LOCALSTATEDIR%%/nullmailer/queue
@@ -21,5 +21,6 @@ etc/nullmailer/remotes.sample
 @exec mkfifo %%LOCALSTATEDIR%%/nullmailer/trigger
 @exec chmod 600 %%LOCALSTATEDIR%%/nullmailer/trigger
 @unexec rm -f %%LOCALSTATEDIR%%/nullmailer/trigger
-@ignore %%LOCALSTATEDIR%%/nullmailer/trigger
+@ignore
+%%LOCALSTATEDIR%%/nullmailer/trigger
 @dirrmtry %%LOCALSTATEDIR%%/nullmailer
