@@ -110,7 +110,6 @@ CONFIGURE_ARGS+=	--disable-lame
 
 .if defined(WITH_XVID)
 LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
-RUN_DEPENDS+=	xvid4conf:${PORTSDIR}/multimedia/xvid4conf
 CONFIGURE_ARGS+=	--with-xvid-prefix=${LOCALBASE} --enable-xvid
 .else
 CONFIGURE_ARGS+=	--disable-xvid
