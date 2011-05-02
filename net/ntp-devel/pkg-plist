@@ -1,3 +1,4 @@
+bin/event_rpcgen.py
 %%SSL%%bin/ntp-keygen
 bin/ntp-wait
 bin/ntpd
