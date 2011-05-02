@@ -45,7 +45,6 @@
     SUBDIR += klibido
     SUBDIR += knews
     SUBDIR += leafnode
-    SUBDIR += leafnode+
     SUBDIR += lottanzb
     SUBDIR += lusernet
     SUBDIR += mmail
@@ -83,7 +82,6 @@
     SUBDIR += py-pynzb
     SUBDIR += py-twistedNews
     SUBDIR += py-yenc
-    SUBDIR += pyne
     SUBDIR += rawdog
     SUBDIR += rkive
     SUBDIR += s-news
@@ -92,7 +90,6 @@
     SUBDIR += slrn
     SUBDIR += slrnconf
     SUBDIR += slrnface
-    SUBDIR += slurp
     SUBDIR += sn
     SUBDIR += suck
     SUBDIR += suck-cnews
@@ -100,7 +97,6 @@
     SUBDIR += trn
     SUBDIR += trn4
     SUBDIR += ubh
-    SUBDIR += unpost
     SUBDIR += xmitbin
     SUBDIR += xpn
     SUBDIR += xrn
