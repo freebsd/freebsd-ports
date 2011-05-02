@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.coyotegulch.com/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ front-end to ACOVEA
 
+DEPRECATED=	Looks like abandonware.
+EXPIRATION_DATE=	2011-07-01
+
 LIB_DEPENDS=	acovea-5.1.5:${PORTSDIR}/devel/acovea \
 		evocosm-3.1.1:${PORTSDIR}/devel/libevocosm \
 		coyotl-3.1.4:${PORTSDIR}/devel/libcoyotl \

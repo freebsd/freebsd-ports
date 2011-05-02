@@ -14,6 +14,9 @@ DISTNAME=	AMB-plugins-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of ambisonics plugins, mainly to be used within Ardour
 
+DEPRECATED=	No more distfiles available, looks like an abandonware
+EXPIRATION_DATE=	2011-07-01
+
 BUILD_DEPENDS=	${LOCALBASE}/include/ladspa.h:${PORTSDIR}/audio/ladspa
 RUN_DEPENDS=	${BUILD_DEPENDS}
 

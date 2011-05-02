@@ -15,6 +15,9 @@ DISTNAME=	libacovea-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to find the "best" compiler options using genetic algorithm
 
+DEPRECATED=	Looks like abandonware.
+EXPIRATION_DATE=	2011-07-01
+
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2 \
 		evocosm-3.1.1:${PORTSDIR}/devel/libevocosm
 

@@ -14,6 +14,10 @@ MASTER_SITES=		http://www.naney.org/comp/distrib/WiKicker/archive/
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Wiki like system by perl5
 
+
+DEPRECATED=	Looks like an abandonware
+EXPIRATION_DATE=	2011-07-01
+
 USE_PERL5=		yes
 PERL_CONFIGURE=		yes
 
