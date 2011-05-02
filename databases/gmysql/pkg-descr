@@ -1,8 +1,0 @@
-gmysql is a program that allows the user to connect to a MySQL
-database and modify its design in the following ways:
-
-* add or remove tables;
-* add or remove columns or indices;
-* modify columns or indices while preserving the data in them where possible.
-
-It is also possible to add and remove databases.

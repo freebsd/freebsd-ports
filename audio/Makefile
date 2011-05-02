@@ -124,7 +124,6 @@
     SUBDIR += cymbaline
     SUBDIR += cynthiune
     SUBDIR += dagrab
-    SUBDIR += dap
     SUBDIR += darkice
     SUBDIR += dcd
     SUBDIR += deadbeef
@@ -210,7 +209,6 @@
     SUBDIR += gbemol
     SUBDIR += gbsplay
     SUBDIR += gdam
-    SUBDIR += gdrdao
     SUBDIR += gervill
     SUBDIR += ghostess
     SUBDIR += gigedit
