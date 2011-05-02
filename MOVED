@@ -2139,3 +2139,4 @@ deskutils/kuake||2011-05-02|Has expired: Upstream disapear and distfile is no mo
 finance/xinvest||2011-05-02|Has expired: Outdated, abandoned
 finance/xquote||2011-05-02|Has expired: Outdated, abandoned
 french/plgrenouille||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+editors/xemacs-devel-mule-xft||2011-05-02|Remove, editors/xemacs-devel-mule builds with xft support now
