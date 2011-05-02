@@ -17,6 +17,8 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple Kana to Kanji conversion program on Emacsen
 
+BROKEN=	Does not fetch
+
 USE_EMACS=      yes
 
 .include <bsd.port.pre.mk>

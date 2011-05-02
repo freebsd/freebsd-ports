@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.linuxftw.com/ezbounce/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A highly configurable IRC Proxy
 
+BROKEN=	Does not fetch
+
 GNU_CONFIGURE=	yes
 
 SUB_FILES=	pkg-message
