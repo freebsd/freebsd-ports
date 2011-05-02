@@ -7,7 +7,7 @@
 
 PORTNAME=	eclipse
 PORTVERSION=	3.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/technology/linuxtools/eclipse-build/3.6.x_Helios/:1 \
 		http://download.eclipse.org/tools/orbit/downloads/drops/R20100519200754/bundles/:2 \

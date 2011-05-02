@@ -7,7 +7,7 @@
 
 PORTNAME=	dinotrace
 DISTVERSION=	9.3f
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://www.veripool.org/ftp/
 EXTRACT_SUFX=	.tgz

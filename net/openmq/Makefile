@@ -7,6 +7,7 @@
 
 PORTNAME=	openmq
 PORTVERSION=	4.5.b.29
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net java
 MASTER_SITES=	http://download.java.net/mq/open-mq/4.5/b29/ \

@@ -7,6 +7,7 @@
 
 PORTNAME=	eclemma
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	devel java editors
 MASTER_SITES=	SF/${PORTNAME}/01_EclEmma_Releases/${PORTVERSION}
 

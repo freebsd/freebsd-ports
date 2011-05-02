@@ -7,7 +7,7 @@
 
 PORTNAME=	polygraph
 PORTVERSION=	3.0.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	benchmarks www
 MASTER_SITES=	http://www.web-polygraph.org/downloads/srcs/ \
 				http://people.bsdgroup.de/~as/freebsd/distfiles/

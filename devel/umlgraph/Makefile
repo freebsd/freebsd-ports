@@ -7,6 +7,7 @@
 
 PORTNAME=	umlgraph
 PORTVERSION=	5.4
+PORTREVISION=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.umlgraph.org/
 DISTNAME=	UMLGraph-${PORTVERSION}

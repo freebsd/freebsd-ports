@@ -7,6 +7,7 @@
 
 PORTNAME=	fdmf
 DISTVERSION=	0.0.9s
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://w140.com/audio/ CENKES
 

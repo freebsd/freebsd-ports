@@ -7,6 +7,7 @@
 
 PORTNAME=	movingmotif
 PORTVERSION=	2.3.0
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}_2_1/movingmotiv-2.3.1
 

@@ -6,7 +6,7 @@
 
 PORTNAME=	alliance
 PORTVERSION=	5.0.20090901
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	cad
 MASTER_SITES=	http://www-asim.lip6.fr/pub/alliance/distribution/5.0/ \
 		${MASTER_SITE_LOCAL}

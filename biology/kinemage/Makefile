@@ -7,7 +7,7 @@
 
 PORTNAME=	kinemage
 PORTVERSION=	5.79
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 # There is no distfile to fetch here, just a dir of badly formatted sources
 #MASTER_SITES=	ftp://kinemage.biochem.duke.edu/OPEN_SOURCE/

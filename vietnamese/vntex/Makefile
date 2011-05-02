@@ -8,7 +8,7 @@
 
 PORTNAME=	vntex
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	vietnamese print
 MASTER_SITES=	http://www.fi.muni.cz/~thanh/download/
 DISTNAME=	vntex

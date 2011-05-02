@@ -7,6 +7,7 @@
 
 PORTNAME=	xpdf
 PORTVERSION=	3.02
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	chinese graphics print
 MASTER_SITES=	ftp://ftp.foolabs.com/pub/xpdf/ \

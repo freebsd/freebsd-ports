@@ -7,7 +7,7 @@
 
 PORTNAME=	xmbase-grok
 PORTVERSION=	1.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	ftp://grok.ftp.fu-berlin.de/ \
 		ftp://bitrot.de/pub/grok/

@@ -7,7 +7,7 @@
 
 PORTNAME=	mpeg2play
 PORTVERSION=	1.1b
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.funet.fi/pub/graphics/packages/mpeg/mpeg2play/
 
