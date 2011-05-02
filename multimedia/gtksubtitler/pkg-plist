@@ -1,8 +1,0 @@
-bin/GTKsubtitler
-share/GTKsubtitler/conf
-share/GTKsubtitler/lang.en
-share/GTKsubtitler/lang.hu
-share/GTKsubtitler/lang.pl
-share/pixmaps/GTKsubtitler/GTKsubtitler.xpm
-@dirrm share/pixmaps/GTKsubtitler
-@dirrm share/GTKsubtitler

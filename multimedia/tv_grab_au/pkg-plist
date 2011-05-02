@@ -1,4 +1,0 @@
-bin/tv_grab_au
-share/xmltv/tv_grab_au/channel_ids
-@dirrm share/xmltv/tv_grab_au
-@dirrmtry share/xmltv

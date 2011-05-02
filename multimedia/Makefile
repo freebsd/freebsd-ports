@@ -117,12 +117,10 @@
     SUBDIR += gstreamermm
     SUBDIR += gsubedit
     SUBDIR += gtk-recordmydesktop
-    SUBDIR += gtksubtitler
     SUBDIR += gxanim
     SUBDIR += gxine
     SUBDIR += gxmms
     SUBDIR += handbrake
-    SUBDIR += hayes
     SUBDIR += imagination
     SUBDIR += iriverter
     SUBDIR += iso2mkv
@@ -177,7 +175,6 @@
     SUBDIR += linux-f10-libv4l
     SUBDIR += linux-gspca-kmod
     SUBDIR += linux-huludesktop
-    SUBDIR += linux-libtheora
     SUBDIR += linux-ov511-kmod
     SUBDIR += linux-realplayer
     SUBDIR += linux-tsmuxer
@@ -224,7 +221,6 @@
     SUBDIR += mythtv
     SUBDIR += mythtv-frontend
     SUBDIR += mythtv-themes
-    SUBDIR += netshow
     SUBDIR += noatun-plugins
     SUBDIR += nxtvepg
     SUBDIR += oggvideotools
@@ -294,16 +290,13 @@
     SUBDIR += shell-fm
     SUBDIR += smile
     SUBDIR += smpeg
-    SUBDIR += smpeg-xmms
     SUBDIR += smplayer
     SUBDIR += smplayer-themes
     SUBDIR += sms1xxx-kmod
     SUBDIR += spigot
     SUBDIR += spook
     SUBDIR += streamanalyze
-    SUBDIR += streamdvd
     SUBDIR += subconv
-    SUBDIR += sublib
     SUBDIR += subtitlecomposer
     SUBDIR += subtitlecomposer-kde4
     SUBDIR += subtitleeditor
@@ -314,8 +307,6 @@
     SUBDIR += szap-s2
     SUBDIR += tcmplex-panteltje
     SUBDIR += tivodecode
-    SUBDIR += tkxanim
-    SUBDIR += tosvcd
     SUBDIR += totem
     SUBDIR += totem-pl-parser
     SUBDIR += tovid
@@ -323,7 +314,6 @@
     SUBDIR += transkode
     SUBDIR += tstools
     SUBDIR += tunapie
-    SUBDIR += tv_grab_au
     SUBDIR += umph
     SUBDIR += umr
     SUBDIR += v4l_compat
@@ -366,7 +356,6 @@
     SUBDIR += xanim
     SUBDIR += xawtv
     SUBDIR += xbmc
-    SUBDIR += xdvshow
     SUBDIR += xfce4-media
     SUBDIR += xfce4-parole
     SUBDIR += xfce4-xmms-plugin
@@ -374,15 +363,11 @@
     SUBDIR += xine
     SUBDIR += xine_artsplugin
     SUBDIR += xmms
-    SUBDIR += xmms-avi
-    SUBDIR += xmms-skins
     SUBDIR += xmms-status-plugin
     SUBDIR += xmms-weasel
-    SUBDIR += xmps
     SUBDIR += xporthdmv
     SUBDIR += xtheater
     SUBDIR += xvid
-    SUBDIR += xvid4conf
     SUBDIR += y4mscaler
     SUBDIR += yamdi
     SUBDIR += youtube-viewer
