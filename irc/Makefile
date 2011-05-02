@@ -27,7 +27,6 @@
     SUBDIR += ezbounce
     SUBDIR += ezbounce-devel
     SUBDIR += fisg
-    SUBDIR += garnaxfs
     SUBDIR += gdesklets-irc
     SUBDIR += gruftistats
     SUBDIR += gseen.mod
@@ -97,7 +96,6 @@
     SUBDIR += p5-POE-Filter-IRCD
     SUBDIR += p5-POE-Session-Irssi
     SUBDIR += p5-Parse-IRC
-    SUBDIR += party
     SUBDIR += pear-Net_SmartIRC
     SUBDIR += pircbot
     SUBDIR += pisg
