@@ -8,7 +8,7 @@
 PORTNAME=	joe
 PORTVERSION=	3.7
 PORTEPOCH=	1
-CATEGORIES=	editors
+CATEGORIES?=	editors
 MASTER_SITES=	SF/joe-editor/JOE%20sources/joe-${PORTVERSION}
 
 MAINTAINER=	sylvio@FreeBSD.org
