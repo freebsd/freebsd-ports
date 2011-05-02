@@ -9,8 +9,7 @@ PORTNAME=	zangband
 PORTVERSION=	2.6.2
 PORTREVISION=	5
 CATEGORIES+=	games
-MASTER_SITES=	ftp://clockwork.dementia.org/angband/Variant/ZAngband/ \
-		ftp://ftp.sunet.se/pub/games/Angband/Variant/ZAngband/
+MASTER_SITES=	ftp://ftp.sunet.se/pub/games/Angband/Variant/ZAngband/
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
