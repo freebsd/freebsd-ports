@@ -149,7 +149,6 @@
     SUBDIR += ksmoothdock
     SUBDIR += ksshaskpass
     SUBDIR += ktagebuch
-    SUBDIR += kuake
     SUBDIR += labyrinth
     SUBDIR += launchy
     SUBDIR += libgcal

@@ -101,7 +101,6 @@
     SUBDIR += geoserver-mysql-plugin
     SUBDIR += gigabase
     SUBDIR += glom
-    SUBDIR += gmysql
     SUBDIR += gnats
     SUBDIR += gnats4
     SUBDIR += gnatsweb4

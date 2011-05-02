@@ -29,7 +29,6 @@
     SUBDIR += koffice-kde4-l10n
     SUBDIR += med
     SUBDIR += php_doc
-    SUBDIR += plgrenouille
     SUBDIR += tvdownloader
     SUBDIR += verbiste
 

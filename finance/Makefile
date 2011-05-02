@@ -94,8 +94,6 @@
     SUBDIR += venice
     SUBDIR += weberp
     SUBDIR += wmstock
-    SUBDIR += xinvest
-    SUBDIR += xquote
     SUBDIR += xtrader
 
 .include <bsd.port.subdir.mk>
