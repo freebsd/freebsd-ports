@@ -26,6 +26,7 @@ RUN_DEPENDS=	rubygem-redcloth>=4.2:${PORTSDIR}/www/rubygem-redcloth \
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+USE_RAKE=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/webby bin/webby-gen
 
