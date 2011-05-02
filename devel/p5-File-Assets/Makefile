@@ -1,0 +1,44 @@
+# New ports collection makefile for:	p5-File-Assets
+# Date created:		2011-05-01
+# Whom:			Steve Wills <swills@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	File-Assets
+PORTVERSION=	0.064
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:RKRIMEN
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	swills@FreeBSD.org
+COMMENT=	Perl module to Manage .css and .js assets
+
+BUILD_DEPENDS=	p5-Test-Memory-Cycle>0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
+	p5-Directory-Scratch>0:${PORTSDIR}/devel/p5-Directory-Scratch \
+	p5-MIME-Types>0:${PORTSDIR}/mail/p5-MIME-Types \
+	p5-Path-Resource>0:${PORTSDIR}/devel/p5-Path-Resource \
+	p5-Tie-LLHash>0:${PORTSDIR}/devel/p5-Tie-LLHash \
+	p5-Carp-Clan-Share>0:${PORTSDIR}/devel/p5-Carp-Clan-Share \
+	p5-Object-Tiny>0:${PORTSDIR}/devel/p5-Object-Tiny \
+	p5-HTML-Declare>0:${PORTSDIR}/www/p5-HTML-Declare \
+	p5-XML-Tiny>0:${PORTSDIR}/textproc/p5-XML-Tiny \
+	p5-IO-stringy>0:${PORTSDIR}/devel/p5-IO-stringy
+RUN_DEPENDS=	p5-Test-Memory-Cycle>0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
+	p5-Directory-Scratch>0:${PORTSDIR}/devel/p5-Directory-Scratch \
+	p5-MIME-Types>0:${PORTSDIR}/mail/p5-MIME-Types \
+	p5-Path-Resource>0:${PORTSDIR}/devel/p5-Path-Resource \
+	p5-Tie-LLHash>0:${PORTSDIR}/devel/p5-Tie-LLHash \
+	p5-Carp-Clan-Share>0:${PORTSDIR}/devel/p5-Carp-Clan-Share \
+	p5-Object-Tiny>0:${PORTSDIR}/devel/p5-Object-Tiny \
+	p5-HTML-Declare>0:${PORTSDIR}/www/p5-HTML-Declare \
+	p5-XML-Tiny>0:${PORTSDIR}/textproc/p5-XML-Tiny \
+	p5-IO-stringy>0:${PORTSDIR}/devel/p5-IO-stringy
+
+USE_PERL=	yes
+PERL_CONFIGURE=	yes
+
+MAN3=	File::Assets.3 File::Assets::Asset.3
+
+.include <bsd.port.mk>

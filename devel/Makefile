@@ -1644,6 +1644,7 @@
     SUBDIR += p5-FSA-Rules
     SUBDIR += p5-Fennec-Lite
     SUBDIR += p5-File-Append-TempFile
+    SUBDIR += p5-File-Assets
     SUBDIR += p5-File-Attributes
     SUBDIR += p5-File-Attributes-Recursive
     SUBDIR += p5-File-BOM
