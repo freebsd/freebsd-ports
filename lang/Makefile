@@ -27,11 +27,9 @@
     SUBDIR += cduce
     SUBDIR += cfortran
     SUBDIR += chicken
-    SUBDIR += cim
     SUBDIR += cint
     SUBDIR += clang
     SUBDIR += clang-devel
-    SUBDIR += clips
     SUBDIR += clisp
     SUBDIR += clojure
     SUBDIR += clojure-contrib
@@ -49,7 +47,6 @@
     SUBDIR += dmd
     SUBDIR += dmd2
     SUBDIR += ecl
-    SUBDIR += eiffel
     SUBDIR += elan
     SUBDIR += elisp-manual
     SUBDIR += elk
@@ -148,12 +145,10 @@
     SUBDIR += librep
     SUBDIR += libstdc++_stldoc_3.4.0
     SUBDIR += libstdc++_stldoc_4.2.2
-    SUBDIR += libutils
     SUBDIR += linux-f10-libg2c
     SUBDIR += linux-f10-tcl85
     SUBDIR += linux-j
     SUBDIR += linux-libg2c
-    SUBDIR += linux-libperl5.8
     SUBDIR += llvm-gcc4
     SUBDIR += logo
     SUBDIR += lua
@@ -207,7 +202,6 @@
     SUBDIR += open-cobol
     SUBDIR += open-cobol-devel
     SUBDIR += opendylan
-    SUBDIR += osb-jscore
     SUBDIR += otcl
     SUBDIR += p2c
     SUBDIR += p5-Data-JavaScript
