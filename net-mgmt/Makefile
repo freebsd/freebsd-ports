@@ -10,7 +10,6 @@
     SUBDIR += aircrack-ng
     SUBDIR += airport
     SUBDIR += angst
-    SUBDIR += annextools
     SUBDIR += ap-utils
     SUBDIR += argus
     SUBDIR += argus-clients
@@ -22,7 +21,6 @@
     SUBDIR += arpwatch
     SUBDIR += arts++
     SUBDIR += aspathtree
-    SUBDIR += asused
     SUBDIR += bandwidthd
     SUBDIR += bgpq
     SUBDIR += bgpq3
@@ -80,7 +78,6 @@
     SUBDIR += glpi-plugins-tracker-server
     SUBDIR += gps
     SUBDIR += grepcidr
-    SUBDIR += grepip
     SUBDIR += gsnmp
     SUBDIR += hastmon
     SUBDIR += horde-nic
@@ -97,7 +94,6 @@
     SUBDIR += ipcalc
     SUBDIR += ipfm
     SUBDIR += ipplan
-    SUBDIR += ipsectrace
     SUBDIR += ipv6calc
     SUBDIR += ipv6gen
     SUBDIR += irrtoolset
@@ -105,7 +101,6 @@
     SUBDIR += jffnms
     SUBDIR += jnettop
     SUBDIR += kismet
-    SUBDIR += knowlan
     SUBDIR += lanmap
     SUBDIR += libsmi
     SUBDIR += macroscope
@@ -184,7 +179,6 @@
     SUBDIR += openvmps
     SUBDIR += ourmon
     SUBDIR += p0f
-    SUBDIR += p5-Altoids
     SUBDIR += p5-Cflow
     SUBDIR += p5-Cisco-Reconfig
     SUBDIR += p5-Data-Validate-IP
@@ -230,7 +224,6 @@
     SUBDIR += phpip
     SUBDIR += phpweathermap
     SUBDIR += pixilate
-    SUBDIR += pktstat
     SUBDIR += pmacct
     SUBDIR += pnp
     SUBDIR += portmon
@@ -262,7 +255,6 @@
     SUBDIR += sblim-wbemcli
     SUBDIR += scdp
     SUBDIR += scli
-    SUBDIR += scotty3
     SUBDIR += sdig
     SUBDIR += send
     SUBDIR += sendip
