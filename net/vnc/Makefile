@@ -44,9 +44,8 @@ PREFIX=${REALVNC_BASE}
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SERVER)
-.if ${OSVERSION} < 900000
-# The vnc supplied zlib seg. faults if compiled with -O
-CONFIGURE_ARGS=	--with-installed-zlib
+.if ${OSVERSION} >= 900000
+BROKEN=		VNC server part does not build on 9.x
 .endif
 
 # This is a placeholder MASTER_SITES entry -- see the pre-fetch target.
