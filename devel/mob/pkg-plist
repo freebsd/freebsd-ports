@@ -1,3 +1,0 @@
-bin/inspector
-%%PORTDOCS%%share/doc/mob/mob.ps
-%%PORTDOCS%%@dirrm share/doc/mob

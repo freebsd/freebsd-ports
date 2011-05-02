@@ -1,8 +1,0 @@
-Make+ is a set of scripts which enhance GNU make. 
-
-The scripts replace the functionality of autoconf, automake, rpm, 
-dpkg and more, allowing you to build, install, make RPMs, 
-make Debian packages and more, all from a single maintainable 
-'Makefile+' script. 
-
-WWW:	http://www.annexia.org/freeware/makeplus/

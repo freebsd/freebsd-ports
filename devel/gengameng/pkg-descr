@@ -1,4 +1,0 @@
-The Generic Game Engine library. It supports the double-buffering
-animation technique: one invisible pixmap where an image is prepared,
-and one visible window to which a prepared image is copied at every
-animation period.

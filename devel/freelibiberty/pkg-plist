@@ -1,6 +1,0 @@
-include/freelibiberty/libiberty.h
-include/freelibiberty/getopt.h
-lib/libiberty.a
-lib/libiberty.so
-lib/libiberty.so.1
-@dirrm include/freelibiberty
