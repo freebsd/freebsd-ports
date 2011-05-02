@@ -22,6 +22,9 @@ PLIST_SUB+=	PROFLIB="@comment "
 PLIST_SUB+=	PROFLIB=""
 .endif
 
+SRCCONF=	${NONEXISTENT}
+MAKE_ENV+=	SRCCONF=${SRCCONF}
+
 post-extract:
 	@${CP} ${FILESDIR}/${MAKEFILE} ${WRKSRC}
 
