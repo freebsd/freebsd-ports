@@ -2104,6 +2104,7 @@
     SUBDIR += p5-ParseLex
     SUBDIR += p5-ParseTemplate
     SUBDIR += p5-PatchReader
+    SUBDIR += p5-Path-Abstract
     SUBDIR += p5-Path-Class
     SUBDIR += p5-Path-Dispatcher
     SUBDIR += p5-Path-Dispatcher-Declarative
