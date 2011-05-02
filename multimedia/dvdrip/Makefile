@@ -22,7 +22,6 @@ RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		pstree:${PORTSDIR}/sysutils/pstree \
 		transcode:${PORTSDIR}/multimedia/transcode \
 		vcdimager:${PORTSDIR}/multimedia/vcdimager \
-		xvid4conf:${PORTSDIR}/multimedia/xvid4conf \
 		rar:${PORTSDIR}/archivers/rar \
 		${LOCALBASE}/sbin/fping:${PORTSDIR}/net/fping \
 		${BUILD_DEPENDS}
