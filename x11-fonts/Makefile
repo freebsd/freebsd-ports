@@ -9,10 +9,8 @@
     SUBDIR += artwiz-aleczapka-de
     SUBDIR += artwiz-aleczapka-se
     SUBDIR += artwiz-fonts
-    SUBDIR += avifonts
     SUBDIR += bdfresize
     SUBDIR += bdftopcf
-    SUBDIR += bitmap-fonts
     SUBDIR += bitstream-vera
     SUBDIR += c64bdf
     SUBDIR += charis
@@ -115,7 +113,6 @@
     SUBDIR += mondulkiri
     SUBDIR += montecarlo_fonts
     SUBDIR += moveable-type-fonts
-    SUBDIR += mozilla-fonts
     SUBDIR += nexfontsel
     SUBDIR += nucleus
     SUBDIR += p5-Font-AFM
@@ -146,12 +143,10 @@
     SUBDIR += webfonts
     SUBDIR += wqy
     SUBDIR += xf86bigfontproto
-    SUBDIR += xfed
     SUBDIR += xfontsel
     SUBDIR += xfs
     SUBDIR += xfsinfo
     SUBDIR += xlsfonts
-    SUBDIR += xmbdfed
     SUBDIR += xorg-fonts
     SUBDIR += xorg-fonts-100dpi
     SUBDIR += xorg-fonts-75dpi
