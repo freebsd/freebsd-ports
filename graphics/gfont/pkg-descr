@@ -1,6 +1,0 @@
-The gFONT program creates a GIF image for a given ASCII string by the use
-of an arbitrary TeX-available font (Postscript or METAFONT). The used font
-is converted from TeX's PK format to gFONT's own GdF format (Gd Font) and
-rendered into the resulting GIF image by the use of its own enhanced Gd
-library. The result is intended to be included into HTML pages with an IMG
-tag.

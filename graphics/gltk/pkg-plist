@@ -1,4 +1,0 @@
-include/GL/gltk.h
-lib/libgltk.a
-share/doc/gltk/README
-@dirrm share/doc/gltk

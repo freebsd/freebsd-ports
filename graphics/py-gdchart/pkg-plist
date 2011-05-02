@@ -1,7 +1,0 @@
-%%PYTHON_SITELIBDIR%%/chart.py
-%%PYTHON_SITELIBDIR%%/chart.pyc
-%%PYTHON_SITELIBDIR%%/chart.pyo
-%%PYTHON_SITELIBDIR%%/gdchart.so
-%%PORTDOCS%%share/examples/py-gdchart/test.html
-%%PORTDOCS%%share/examples/py-gdchart/test.py
-%%PORTDOCS%%@dirrm share/examples/py-gdchart

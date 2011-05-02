@@ -86,7 +86,6 @@
     SUBDIR += compupic
     SUBDIR += corona
     SUBDIR += cosmoplayer
-    SUBDIR += cqcam
     SUBDIR += crw
     SUBDIR += crystalentitylayer
     SUBDIR += crystalspace
@@ -100,7 +99,6 @@
     SUBDIR += dataplot
     SUBDIR += dc20ctrl
     SUBDIR += dc20pack
-    SUBDIR += dc3play
     SUBDIR += dcraw
     SUBDIR += deegree-csw
     SUBDIR += deegree-igeoportal
@@ -119,7 +117,6 @@
     SUBDIR += djview4
     SUBDIR += djvulibre
     SUBDIR += djvulibre-nox11
-    SUBDIR += dore
     SUBDIR += dri
     SUBDIR += driconf
     SUBDIR += duhdraw
@@ -172,7 +169,6 @@
     SUBDIR += fbm
     SUBDIR += feh
     SUBDIR += ffff
-    SUBDIR += fig2pstricks
     SUBDIR += fig2sxd
     SUBDIR += figurine
     SUBDIR += flam3
@@ -231,14 +227,12 @@
     SUBDIR += geeqie
     SUBDIR += gegl
     SUBDIR += geglmm
-    SUBDIR += geist
     SUBDIR += geoapi
     SUBDIR += geomorph
     SUBDIR += geomview
     SUBDIR += geos
     SUBDIR += geoserver
     SUBDIR += gexiv2
-    SUBDIR += gfont
     SUBDIR += giblib
     SUBDIR += gif2png
     SUBDIR += giflib
@@ -254,7 +248,6 @@
     SUBDIR += gimp-focusblur-plugin
     SUBDIR += gimp-gap
     SUBDIR += gimp-gmic-plugin
-    SUBDIR += gimp-greycstoration
     SUBDIR += gimp-help
     SUBDIR += gimp-lqr-plugin
     SUBDIR += gimp-manual-html
@@ -270,7 +263,6 @@
     SUBDIR += gkrellkam2
     SUBDIR += gle
     SUBDIR += gle-graphics
-    SUBDIR += glean
     SUBDIR += glew
     SUBDIR += glexcess
     SUBDIR += glfw
@@ -279,7 +271,6 @@
     SUBDIR += gliv
     SUBDIR += glosm
     SUBDIR += glpng
-    SUBDIR += gltk
     SUBDIR += gltt
     SUBDIR += gmt
     SUBDIR += gnash
@@ -307,7 +298,6 @@
     SUBDIR += grafx2
     SUBDIR += graphopt
     SUBDIR += graphviz
-    SUBDIR += gridpix
     SUBDIR += grx
     SUBDIR += gscan2pdf
     SUBDIR += gsculpt
@@ -324,12 +314,10 @@
     SUBDIR += gthumb
     SUBDIR += gtkam
     SUBDIR += gtkdps
-    SUBDIR += gtkfig
     SUBDIR += gtkgraph
     SUBDIR += gtksee
     SUBDIR += gts
     SUBDIR += guilib
-    SUBDIR += gview
     SUBDIR += gwenview
     SUBDIR += gx
     SUBDIR += hobbes-icons-xpm
@@ -339,7 +327,6 @@
     SUBDIR += hsetroot
     SUBDIR += hugin
     SUBDIR += icoconvert
-    SUBDIR += icod
     SUBDIR += icon-slicer
     SUBDIR += icontact
     SUBDIR += icoutils
@@ -363,7 +350,6 @@
     SUBDIR += intergif
     SUBDIR += inventor
     SUBDIR += ipe
-    SUBDIR += isreal
     SUBDIR += iulib
     SUBDIR += ivtools
     SUBDIR += jalbum
@@ -569,7 +555,6 @@
     SUBDIR += ocrad
     SUBDIR += ocre
     SUBDIR += ocropus
-    SUBDIR += oglext
     SUBDIR += ogre3d
     SUBDIR += openclipart
     SUBDIR += opencv
@@ -581,7 +566,6 @@
     SUBDIR += openjpeg
     SUBDIR += openjump
     SUBDIR += openrm
-    SUBDIR += ophoto
     SUBDIR += optar
     SUBDIR += optipng
     SUBDIR += orca
@@ -771,8 +755,6 @@
     SUBDIR += py-freeimagepy
     SUBDIR += py-gchartwrapper
     SUBDIR += py-gd
-    SUBDIR += py-gdchart
-    SUBDIR += py-gdchart2
     SUBDIR += py-gimp
     SUBDIR += py-glewpy
     SUBDIR += py-goocanvas
@@ -807,7 +789,6 @@
     SUBDIR += qcomicbook
     SUBDIR += qcread
     SUBDIR += qgis
-    SUBDIR += qglviewer
     SUBDIR += qiv
     SUBDIR += qiviewer
     SUBDIR += qslim
@@ -830,7 +811,6 @@
     SUBDIR += repng2jpeg
     SUBDIR += rgbpaint
     SUBDIR += ristretto
-    SUBDIR += robot
     SUBDIR += ruby-cairo
     SUBDIR += ruby-gd
     SUBDIR += ruby-gdk_pixbuf2
@@ -863,7 +843,6 @@
     SUBDIR += rubygem-turing
     SUBDIR += rubyphoto
     SUBDIR += s10sh
-    SUBDIR += s3switch
     SUBDIR += sage
     SUBDIR += sam2p
     SUBDIR += sane-backends
@@ -871,7 +850,6 @@
     SUBDIR += sane-frontends
     SUBDIR += scale2x
     SUBDIR += scantailor
-    SUBDIR += sced
     SUBDIR += scr2png
     SUBDIR += scrot
     SUBDIR += scwm-icons
@@ -883,7 +861,6 @@
     SUBDIR += seom
     SUBDIR += separate
     SUBDIR += sharpconstruct
-    SUBDIR += shim
     SUBDIR += shiva-collections
     SUBDIR += shotwell
     SUBDIR += show
@@ -896,7 +873,6 @@
     SUBDIR += skencil
     SUBDIR += sketch
     SUBDIR += sng
-    SUBDIR += snx101util
     SUBDIR += sodipodi
     SUBDIR += solang
     SUBDIR += spcaview
@@ -916,7 +892,6 @@
     SUBDIR += swftools
     SUBDIR += synaesthesia
     SUBDIR += synfigstudio
-    SUBDIR += tcm
     SUBDIR += telak
     SUBDIR += tesseract
     SUBDIR += tesseract-data
@@ -941,7 +916,6 @@
     SUBDIR += unpaper
     SUBDIR += urt
     SUBDIR += vcg
-    SUBDIR += vertex
     SUBDIR += vid
     SUBDIR += view3ds
     SUBDIR += vigra
@@ -951,7 +925,6 @@
     SUBDIR += visprint
     SUBDIR += vp
     SUBDIR += vrml2pov
-    SUBDIR += vvv
     SUBDIR += webp
     SUBDIR += whirlgif
     SUBDIR += white_dune
@@ -965,7 +938,6 @@
     SUBDIR += xbmbrowser
     SUBDIR += xd3d
     SUBDIR += xdgagrab
-    SUBDIR += xdl
     SUBDIR += xenomorph
     SUBDIR += xface.el
     SUBDIR += xfig
@@ -989,8 +961,6 @@
     SUBDIR += xmms-finespectrum
     SUBDIR += xmms-fishmatic
     SUBDIR += xmms-gdancer
-    SUBDIR += xmms-goom
-    SUBDIR += xmms-infinity
     SUBDIR += xmms-iris
     SUBDIR += xmms-jess
     SUBDIR += xmms-msa
