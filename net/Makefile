@@ -4,7 +4,6 @@
     COMMENT = Networking tools
 
     SUBDIR += 3proxy
-    SUBDIR += 44bsd-rdist
     SUBDIR += 6tunnel
     SUBDIR += AquaGatekeeper
     SUBDIR += AquaGatekeeper2
@@ -48,13 +47,11 @@
     SUBDIR += avahi-sharp
     SUBDIR += babeld
     SUBDIR += balance
-    SUBDIR += bbsnet
     SUBDIR += bcusdk-eibd
     SUBDIR += beacon
     SUBDIR += beanstalkd
     SUBDIR += bfilter
     SUBDIR += bindtest
-    SUBDIR += bing
     SUBDIR += binkd
     SUBDIR += bird
     SUBDIR += bird6
@@ -67,7 +64,6 @@
     SUBDIR += boinc_curses
     SUBDIR += bounce
     SUBDIR += bpfstat
-    SUBDIR += brutecopy
     SUBDIR += bsdproxy
     SUBDIR += bwi-firmware-kmod
     SUBDIR += bwn-firmware-kmod
@@ -90,7 +86,6 @@
     SUBDIR += corkscrew
     SUBDIR += courier-authlib-ldap
     SUBDIR += cphone
-    SUBDIR += crescendo
     SUBDIR += crtmpserver
     SUBDIR += cryptcat
     SUBDIR += csocks
@@ -104,7 +99,6 @@
     SUBDIR += cvsync
     SUBDIR += cyphesis
     SUBDIR += daemonlogger
-    SUBDIR += danamics
     SUBDIR += dante
     SUBDIR += daq
     SUBDIR += datapipe
@@ -142,7 +136,6 @@
     SUBDIR += erlyvideo
     SUBDIR += etherboot
     SUBDIR += etrace
-    SUBDIR += etunnel
     SUBDIR += findmtu
     SUBDIR += flowgrep
     SUBDIR += fonulator
@@ -172,25 +165,19 @@
     SUBDIR += ftelnetd
     SUBDIR += g2ipmsg
     SUBDIR += gambas2-gb-net
-    SUBDIR += gastman
     SUBDIR += gatekeeper
     SUBDIR += gateway6
-    SUBDIR += generic-nqs
     SUBDIR += get_iplayer
     SUBDIR += gini
-    SUBDIR += gkrellmmultiping2
     SUBDIR += gkrellmqst
-    SUBDIR += gkrellmwireless
     SUBDIR += gkrellmwireless2
     SUBDIR += glflow
     SUBDIR += gnet2
     SUBDIR += gnetcat
-    SUBDIR += gnoemoe
     SUBDIR += gnome-mud
     SUBDIR += gnome-netstatus
     SUBDIR += gnome-nettool
     SUBDIR += gnome-vnc
-    SUBDIR += gnosamba
     SUBDIR += gnu-dico
     SUBDIR += gnu-radius
     SUBDIR += gofish
@@ -380,7 +367,6 @@
     SUBDIR += mcl
     SUBDIR += mediaproxy
     SUBDIR += mediatomb
-    SUBDIR += merlinmon
     SUBDIR += mgen
     SUBDIR += micro_inetd
     SUBDIR += micro_proxy
@@ -402,7 +388,6 @@
     SUBDIR += mping
     SUBDIR += mrouted
     SUBDIR += msend
-    SUBDIR += msntp
     SUBDIR += mtr
     SUBDIR += mtr-nox11
     SUBDIR += mudix
@@ -451,13 +436,11 @@
     SUBDIR += nss-pam-ldapd
     SUBDIR += nss_ldap
     SUBDIR += nstxd
-    SUBDIR += ntalk
     SUBDIR += ntlmaps
     SUBDIR += ntop
     SUBDIR += ntp
     SUBDIR += ntp-devel
     SUBDIR += ntp-rc
-    SUBDIR += ntraceroute
     SUBDIR += nusoap
     SUBDIR += nxproxy
     SUBDIR += nxserver
@@ -467,7 +450,6 @@
     SUBDIR += omcmd
     SUBDIR += omnitty
     SUBDIR += onenetd
-    SUBDIR += onion-fec
     SUBDIR += onioncat
     SUBDIR += online-desktop
     SUBDIR += opal
@@ -492,7 +474,6 @@
     SUBDIR += openser
     SUBDIR += openslp
     SUBDIR += opentracker
-    SUBDIR += openverse
     SUBDIR += ortp
     SUBDIR += osrtspproxy
     SUBDIR += ossp-sa
@@ -836,7 +817,6 @@
     SUBDIR += pload
     SUBDIR += plugdaemon
     SUBDIR += pmf
-    SUBDIR += poink
     SUBDIR += poptop
     SUBDIR += portfwd
     SUBDIR += pppd23
@@ -943,7 +923,6 @@
     SUBDIR += ripe-whois
     SUBDIR += ris
     SUBDIR += rmsg
-    SUBDIR += roadrunner
     SUBDIR += rp-pppoe
     SUBDIR += rqm
     SUBDIR += rshell
@@ -997,10 +976,8 @@
     SUBDIR += samba35
     SUBDIR += samba4-devel
     SUBDIR += samba4wins
-    SUBDIR += sambasentinel
     SUBDIR += sbd
     SUBDIR += scamper
-    SUBDIR += scand
     SUBDIR += scapy
     SUBDIR += scnc
     SUBDIR += scr_ipfm
@@ -1074,7 +1051,6 @@
     SUBDIR += tableutil
     SUBDIR += tac_plus-libradius
     SUBDIR += tac_plus4
-    SUBDIR += tacshell
     SUBDIR += tapidbus
     SUBDIR += tcludp
     SUBDIR += tcpcat
@@ -1100,7 +1076,6 @@
     SUBDIR += tcpxd
     SUBDIR += tcpxtract
     SUBDIR += tdetect
-    SUBDIR += telserv
     SUBDIR += tftpgrab
     SUBDIR += thcrut
     SUBDIR += throttled
@@ -1120,7 +1095,6 @@
     SUBDIR += trafshow3
     SUBDIR += tramp
     SUBDIR += trickle
-    SUBDIR += tridiavnc
     SUBDIR += tryst
     SUBDIR += tryst-examples
     SUBDIR += tsclient
@@ -1131,7 +1105,6 @@
     SUBDIR += ttlscan
     SUBDIR += ttt
     SUBDIR += tucan
-    SUBDIR += tvark
     SUBDIR += twinkle
     SUBDIR += twitux
     SUBDIR += ucarp
@@ -1169,7 +1142,6 @@
     SUBDIR += wackamole
     SUBDIR += wackford-squeers
     SUBDIR += wakeonlan
-    SUBDIR += warppipe
     SUBDIR += wb
     SUBDIR += whois
     SUBDIR += widentd
@@ -1178,7 +1150,6 @@
     SUBDIR += wired-tracker
     SUBDIR += wireshark
     SUBDIR += wireshark-lite
-    SUBDIR += wistumbler2
     SUBDIR += wizd
     SUBDIR += wmlj
     SUBDIR += wmnd
@@ -1188,7 +1159,6 @@
     SUBDIR += wmnetmon
     SUBDIR += wmpiki
     SUBDIR += wmping
-    SUBDIR += wmq3
     SUBDIR += wmwave
     SUBDIR += wmwifi
     SUBDIR += wmwlmon
@@ -1200,7 +1170,6 @@
     SUBDIR += x2goclient
     SUBDIR += x2goclient-cli
     SUBDIR += xbone
-    SUBDIR += xbone-gui
     SUBDIR += xboxproxy
     SUBDIR += xferstats
     SUBDIR += xipdump
@@ -1215,8 +1184,6 @@
     SUBDIR += xpvm
     SUBDIR += xrdesktop
     SUBDIR += xrdp
-    SUBDIR += xsmbrowser
-    SUBDIR += xtraceroute
     SUBDIR += xwhois
     SUBDIR += yaph
     SUBDIR += yate-devel
@@ -1225,11 +1192,9 @@
     SUBDIR += yazproxy
     SUBDIR += yconalyzer
     SUBDIR += yptransitd
-    SUBDIR += ytalk
     SUBDIR += zebra
     SUBDIR += zebra-server
     SUBDIR += zillion
-    SUBDIR += zniper
     SUBDIR += zsync
 
 .include <bsd.port.subdir.mk>

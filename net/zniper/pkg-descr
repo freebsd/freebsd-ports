@@ -1,5 +1,0 @@
-Zniper displays active TCP connections seen by the selected interface.
-The spotted connections can be killed by injecting RST packets into the
-stream.
-
-WWW: http://www.signedness.org/tools/
