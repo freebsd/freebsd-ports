@@ -9,6 +9,7 @@
 
 PORTNAME=	lilypond
 PORTVERSION=	2.13.61
+PORTREVISION=	1
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.13/
 

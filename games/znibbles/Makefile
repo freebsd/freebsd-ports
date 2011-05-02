@@ -7,7 +7,7 @@
 
 PORTNAME=	znibbles
 PORTVERSION=	0.0.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
 MASTER_SITES=	http://koala.ilog.fr/ftp/pub/games/znibbles/
 

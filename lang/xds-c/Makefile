@@ -7,7 +7,7 @@
 
 PORTNAME=	xds-c
 PORTVERSION=	2.51
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang linux devel
 MASTER_SITES=	http://www.excelsior-usa.com/download/xds25x/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//}-enduser-linux

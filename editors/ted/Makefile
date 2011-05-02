@@ -7,7 +7,7 @@
 
 PORTNAME=	ted
 PORTVERSION=	2.21
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.nluug.nl/pub/editors/ted/
 EXTRACT_SUFX=	.src.tar.gz

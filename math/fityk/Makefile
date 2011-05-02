@@ -8,6 +8,7 @@
 
 PORTNAME=	fityk
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF \
 		SF/xylib:xylib

@@ -7,7 +7,7 @@
 
 PORTNAME=	ml
 PORTVERSION=	3.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	http://ftp.uni-koeln.de/windows/xcontrib/
 

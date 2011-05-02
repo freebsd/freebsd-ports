@@ -7,7 +7,7 @@
 
 PORTNAME=	njplot
 PORTVERSION=	2.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
 MASTER_SITES=	ftp://pbil.univ-lyon1.fr/pub/mol_phylogeny/njplot/archive/
 

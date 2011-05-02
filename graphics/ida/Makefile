@@ -7,7 +7,7 @@
 
 PORTNAME=	ida
 PORTVERSION=	2.07
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	http://dl.bytesex.org/releases/fbida/
 DISTNAME=	fbida-${PORTVERSION}
