@@ -10,7 +10,6 @@
     SUBDIR += aftp
     SUBDIR += aqemu
     SUBDIR += atari800
-    SUBDIR += basiliskII
     SUBDIR += bfe
     SUBDIR += bochs
     SUBDIR += bsnes
@@ -153,15 +152,12 @@
     SUBDIR += tiemu2
     SUBDIR += tiemu3
     SUBDIR += tilem
-    SUBDIR += tkhfs
     SUBDIR += tme
     SUBDIR += tpm-emulator
     SUBDIR += tuxnes
-    SUBDIR += twin
     SUBDIR += uae
     SUBDIR += vMac
     SUBDIR += vba
-    SUBDIR += vgb
     SUBDIR += vgb-bin
     SUBDIR += vgba-bin
     SUBDIR += vice
@@ -180,7 +176,6 @@
     SUBDIR += vmware-tools5
     SUBDIR += vmware-tools6
     SUBDIR += vmware3
-    SUBDIR += vpce
     SUBDIR += vxtools
     SUBDIR += wahcade
     SUBDIR += wine

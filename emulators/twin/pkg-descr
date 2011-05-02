@@ -1,9 +1,0 @@
-The Willows TWIN libraries are both a set of native platform
-libraries and an emulator program to emulate the Microsoft Win32
-API. The emulator program allows executing Windows binary programs
-on supported Unix platforms, on native Intel x86 processors, and
-through the built-in intstruction set interpreter. The native
-libraries allow programmers to natively build Win32 and MFC
-applications from source code.
-
-WWW: http://www.willows.com/
