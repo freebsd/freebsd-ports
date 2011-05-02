@@ -704,7 +704,6 @@
     SUBDIR += kodos
     SUBDIR += kprof
     SUBDIR += kscope
-    SUBDIR += kxl
     SUBDIR += kyra
     SUBDIR += lasi
     SUBDIR += lbpp

@@ -226,7 +226,6 @@ GoogleEarthLinux-*	astro/google-earth	Not really sure about the
 						redistribution terms
 goPod-*			misc/*gopod		Unclear legal status in EU
 						countries
-grande-KXL-*.tar.gz	games/grande		Possible copyright infringement
 graphviz-*		graphics/graphviz	Needs license before fetching
 groupoffice-com-*	www/groupoffice		Free for personal use only
 gsview*			print/gsview		Can only be distributed for free
@@ -466,7 +465,6 @@ squeezeboxserver-*	audio/squeezeboxserver	Contains non-redistributable
 						images
 socks5-*		net/socks5		No commercial use
 sof-*-cdrom-x86.run	games/linux-sof		Redistribution is limited
-SpaceAryarya-KXL-*	games/spacearyarya	Possible copyright infringement
 speedmgmt*		net/pppoa		Not for redistribution -- see
 						http://www.alcatel.com/consumer-
 						/dsl/disclaimer_lx.htm
