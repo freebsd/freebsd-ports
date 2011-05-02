@@ -39,7 +39,7 @@
 # from a (non-root) cron job.
 #
 # If you just call it with no preparation, it will compare all port versions
-# with their INDEX entries and complain if they have gone backwards. You need
+# with their INDEX entries and complain if they have gone backwards.
 # You need an old INDEX for this, of course. An up-to-date INDEX will accomplish
 # nothing.
 #
