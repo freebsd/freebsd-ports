@@ -48,8 +48,6 @@
     SUBDIR += nabi
     SUBDIR += nh2ps
     SUBDIR += nhpf
-    SUBDIR += nvi-euc-kr
-    SUBDIR += nvi-iso-2022-kr
     SUBDIR += pgp.language
     SUBDIR += php_doc
     SUBDIR += pinetreefonts
