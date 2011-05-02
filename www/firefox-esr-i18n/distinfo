@@ -1,5 +1,5 @@
-SHA256 (firefox-3.5.19.source.tar.bz2) = 5811682464eced37a1d73652dd8931c30c44331e3003e95ebad191e3d41cd8e7
-SIZE (firefox-3.5.19.source.tar.bz2) = 47580375
+SHA256 (xpi/firefox-i18n-4.0.1/af.xpi) = 6b3529b78e6643578d407d454a70bce423742206d13f69bdd97871da9c533688
+SIZE (xpi/firefox-i18n-4.0.1/af.xpi) = 220422
 SHA256 (xpi/firefox-i18n-4.0.1/ar.xpi) = f2d19b19c1d817d935bbe3df0531ae9ff95a801109c65e1230f4f3bae60a0662
 SIZE (xpi/firefox-i18n-4.0.1/ar.xpi) = 241601
 SHA256 (xpi/firefox-i18n-4.0.1/be.xpi) = edb4b777f2b36937b8f48662e8cf5c1a709e742205c3adcf4460d34b3c51ff56
