@@ -1,6 +1,0 @@
-bin/sced
-%%PORTDOCS%%share/doc/sced/guide.dvi
-%%PORTDOCS%%share/doc/sced/guide.tex
-share/sced/sample.scenerc
-@dirrm share/sced
-%%PORTDOCS%%@dirrm share/doc/sced
