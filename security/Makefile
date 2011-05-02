@@ -739,6 +739,7 @@
     SUBDIR += rubygem-net-sftp
     SUBDIR += rubygem-net-ssh
     SUBDIR += rubygem-net-ssh-gateway
+    SUBDIR += rubygem-net-ssh-multi
     SUBDIR += rubygem-nmap-parser
     SUBDIR += rubygem-roauth
     SUBDIR += saferpay
