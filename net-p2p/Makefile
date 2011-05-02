@@ -23,8 +23,6 @@
     SUBDIR += dctc-gui-qt
     SUBDIR += deluge
     SUBDIR += ed2k
-    SUBDIR += edonkey-gui-gtk
-    SUBDIR += edonkey-gui-gtk-urlslave
     SUBDIR += edonkey-tool-hash
     SUBDIR += eiskaltdcpp-data
     SUBDIR += eiskaltdcpp-gtk
