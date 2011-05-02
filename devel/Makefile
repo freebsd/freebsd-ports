@@ -2411,6 +2411,7 @@
     SUBDIR += p5-Tie-Hash-Sorted
     SUBDIR += p5-Tie-Hash-TwoWay
     SUBDIR += p5-Tie-IxHash
+    SUBDIR += p5-Tie-LLHash
     SUBDIR += p5-Tie-RefHash
     SUBDIR += p5-Tie-RefHash-Weak
     SUBDIR += p5-Tie-RegexpHash
