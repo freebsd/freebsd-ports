@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.coyotegulch.com/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of tools for creating a variety of evolutionary algorithms
 
+DEPRECATED=	Looks like and abandonware
+EXPIRATION_DATE=	2011-07-01
+
 LIB_DEPENDS=	coyotl-3.1.4:${PORTSDIR}/devel/libcoyotl \
 		png.6:${PORTSDIR}/graphics/png
 
