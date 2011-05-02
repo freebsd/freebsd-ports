@@ -18,6 +18,8 @@ PKGNAMEPREFIX=	linux-enemyterritory-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jaymod - An Enemy Territory Modification
 
+BROKEN=	Does not fetch
+
 RUN_DEPENDS=	et:${PORTSDIR}/games/linux-enemyterritory
 
 USE_LINUX=	yes
