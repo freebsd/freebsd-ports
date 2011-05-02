@@ -7,7 +7,7 @@
 
 PORTNAME=	praat
 PORTVERSION=	4.6.39
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio science
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/
 DISTNAME=	praat4639_sources
