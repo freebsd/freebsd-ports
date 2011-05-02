@@ -4,7 +4,6 @@
     COMMENT = Editors
 
     SUBDIR += 2bsd-vi
-    SUBDIR += MathPlanner
     SUBDIR += abiword
     SUBDIR += abiword-docs
     SUBDIR += aee
@@ -17,14 +16,11 @@
     SUBDIR += beav
     SUBDIR += biew
     SUBDIR += bitedit
-    SUBDIR += bitmap
-    SUBDIR += bitmap-emacs21
     SUBDIR += bless
     SUBDIR += boiling-egg
     SUBDIR += bpatch
     SUBDIR += bvi
     SUBDIR += chexedit
-    SUBDIR += cle
     SUBDIR += code-browser
     SUBDIR += codeeditor
     SUBDIR += codelite
@@ -32,7 +28,6 @@
     SUBDIR += conglomerate
     SUBDIR += cooledit
     SUBDIR += cream
-    SUBDIR += dedit
     SUBDIR += dhex
     SUBDIR += diakonos
     SUBDIR += dkns
@@ -42,7 +37,6 @@
     SUBDIR += e93
     SUBDIR += edith
     SUBDIR += elvis
-    SUBDIR += em
     SUBDIR += emacs
     SUBDIR += emacs-devel
     SUBDIR += emacs-nox11
@@ -165,11 +159,9 @@
     SUBDIR += le
     SUBDIR += leafpad
     SUBDIR += led
-    SUBDIR += leim21
     SUBDIR += leo
     SUBDIR += lfhex
     SUBDIR += libreoffice
-    SUBDIR += lpe
     SUBDIR += madedit
     SUBDIR += manedit
     SUBDIR += mg
@@ -243,7 +235,6 @@
     SUBDIR += ved
     SUBDIR += vigor
     SUBDIR += vile
-    SUBDIR += vilearn
     SUBDIR += vim
     SUBDIR += vim-lite
     SUBDIR += wily
@@ -258,7 +249,6 @@
     SUBDIR += xemacs-mule-packages
     SUBDIR += xemacs-packages
     SUBDIR += xemacs21-mule
-    SUBDIR += xenon
     SUBDIR += xml2rfc-xxe
     SUBDIR += xmlcopyeditor
     SUBDIR += xmleditor

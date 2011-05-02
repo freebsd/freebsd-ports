@@ -1,3 +1,0 @@
-bin/xe
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.xerc
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
