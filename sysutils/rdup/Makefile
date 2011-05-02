@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://miek.nl/projects/rdup/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	A tool to generate an (incremental) backup file list
 
 LIB_DEPENDS=	glib-2.0:${PORTSDIR}/devel/glib20 \
