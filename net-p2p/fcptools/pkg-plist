@@ -1,6 +1,0 @@
-bin/fcpget
-bin/fcpput
-bin/fcpx
-include/fcptools/ezFCPlib.h
-lib/libezfcp.a
-@dirrm include/fcptools

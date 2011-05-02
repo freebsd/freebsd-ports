@@ -1919,3 +1919,8 @@ news/slurp||2011-05-02|Has expired: Upstream disapear and distfile is no more av
 news/unpost||2011-05-02|Has expired: Upstream disapear and distfile is no more available
 net-p2p/edonkey-gui-gtk||2011-05-02|Removed, depends on linux-edonkey-core which has expired
 net-p2p/edonkey-gui-gtk-urlslave||2011-05-02|Removed, depends on linux-edonkey-core which has expired
+net-p2p/fcptools||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+net-p2p/hx||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+net-p2p/linux-edonkey-core||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+net-p2p/linux-edonkey-server||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+net-p2p/linux-edonkey-tool-recovermet||2011-05-02|Has expired: Upstream disapear and distfile is no more available
