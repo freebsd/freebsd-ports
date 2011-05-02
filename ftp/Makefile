@@ -32,7 +32,6 @@
     SUBDIR += ftpproxy
     SUBDIR += ftpsesame
     SUBDIR += ftpsync
-    SUBDIR += ftptool
     SUBDIR += gambas2-gb-net-curl
     SUBDIR += gftp
     SUBDIR += gnusget
