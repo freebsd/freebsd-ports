@@ -1,0 +1,32 @@
+%%SITE_PERL%%/File/Assets/Asset/Content.pm
+%%SITE_PERL%%/File/Assets/Filter/Minifier/CSS/XS.pm
+%%SITE_PERL%%/File/Assets/Filter/Minifier/JavaScript/XS.pm
+%%SITE_PERL%%/File/Assets/Filter/Minifier/Base.pm
+%%SITE_PERL%%/File/Assets/Filter/Minifier/XS.pm
+%%SITE_PERL%%/File/Assets/Filter/Minifier/Best.pm
+%%SITE_PERL%%/File/Assets/Filter/Minifier/CSS.pm
+%%SITE_PERL%%/File/Assets/Filter/Minifier/JavaScript.pm
+%%SITE_PERL%%/File/Assets/Filter/Minifier/JS.pm
+%%SITE_PERL%%/File/Assets/Filter/Concat.pm
+%%SITE_PERL%%/File/Assets/Filter/Minifier.pm
+%%SITE_PERL%%/File/Assets/Filter/YUICompressor.pm
+%%SITE_PERL%%/File/Assets/Filter/CSS.pm
+%%SITE_PERL%%/File/Assets/Filter/Collect.pm
+%%SITE_PERL%%/File/Assets/Filter.pm
+%%SITE_PERL%%/File/Assets/Carp.pm
+%%SITE_PERL%%/File/Assets/Cache.pm
+%%SITE_PERL%%/File/Assets/Kind.pm
+%%SITE_PERL%%/File/Assets/Asset.pm
+%%SITE_PERL%%/File/Assets/Util.pm
+%%SITE_PERL%%/File/Assets/Bucket.pm
+%%SITE_PERL%%/File/Assets.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Assets/.packlist
+@dirrmtry %%SITE_PERL%%/File/Assets/Filter/Minifier/CSS
+@dirrmtry %%SITE_PERL%%/File/Assets/Filter/Minifier/JavaScript
+@dirrmtry %%SITE_PERL%%/File/Assets/Filter/Minifier
+@dirrmtry %%SITE_PERL%%/File/Assets/Filter
+@dirrmtry %%SITE_PERL%%/File/Assets/Asset
+@dirrmtry %%SITE_PERL%%/File/Assets
+@dirrmtry %%SITE_PERL%%/File
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File/Assets
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/File
