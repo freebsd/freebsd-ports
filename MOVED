@@ -2156,3 +2156,9 @@ editors/textedit||2011-05-02|Has expired: Upstream disapear and distfile is no m
 security/libfwbuilder||2011-05-02|libfwbuilder merged into fwbuilder
 games/monopd||2011-05-03|Removed, depends on an expired library: devel/libcapsinetwork
 devel/libcapsinetwork||2011-05-03|Has expired: Upstream disapear and distfile is no more available
+audio/albumart||2011-05-03|Has expired: Upstream disapear and distfile is no more available
+audio/aylet||2011-05-03|Has expired: Upstream disapear and distfile is no more available
+audio/cantus||2011-05-03|Has expired: Upstream disapear and distfile is no more available
+audio/xaylet||2011-05-03|Has expired: Upstream disapear and distfile is no more available
+science/oases||2011-05-03|Has expired: Upstream disapear and distfile is no more available
+shells/pash||2011-05-03|Has expired: Upstream disapear and distfile is no more available

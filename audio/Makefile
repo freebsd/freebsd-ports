@@ -25,7 +25,6 @@
     SUBDIR += akode-plugins-resampler
     SUBDIR += akode-plugins-xiph
     SUBDIR += alac
-    SUBDIR += albumart
     SUBDIR += alienwah
     SUBDIR += alsa-lib
     SUBDIR += alsa-plugins
@@ -62,7 +61,6 @@
     SUBDIR += autocd
     SUBDIR += autotalent
     SUBDIR += autozen
-    SUBDIR += aylet
     SUBDIR += baudline
     SUBDIR += beast
     SUBDIR += bebocd
@@ -85,7 +83,6 @@
     SUBDIR += btc
     SUBDIR += calf
     SUBDIR += cam
-    SUBDIR += cantus
     SUBDIR += cantus_3
     SUBDIR += caps-plugins
     SUBDIR += ccaudio2
@@ -810,7 +807,6 @@
     SUBDIR += wxguitar
     SUBDIR += x11amp
     SUBDIR += xanalyser
-    SUBDIR += xaylet
     SUBDIR += xcd
     SUBDIR += xcdplayer
     SUBDIR += xfce4-mixer
