@@ -6,28 +6,29 @@
 #
 
 PORTNAME=	chef
-PORTVERSION=	0.9.12
-PORTREVISION=	1
+PORTVERSION=	0.10.0
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
 MAINTAINER=	renchap@cocoa-x.com
 COMMENT=	A systems integration framework. Client part
 
-BUILD_DEPENDS=	rubygem-mixlib-log>=1.1.0:${PORTSDIR}/devel/rubygem-mixlib-log \
+RUN_DEPENDS=	ruby18-iconv>=0.0.0:${PORTSDIR}/converters/ruby-iconv \
+		rubygem-mixlib-log>=1.3.0:${PORTSDIR}/devel/rubygem-mixlib-log \
 		rubygem-mixlib-config>=1.1.2:${PORTSDIR}/devel/rubygem-mixlib-config \
 		rubygem-mixlib-cli>=1.1.0:${PORTSDIR}/devel/rubygem-mixlib-cli \
 		rubygem-mixlib-authentication>=1.1.2:${PORTSDIR}/devel/rubygem-mixlib-authentication \
-		rubygem-extlib>=0.9.14:${PORTSDIR}/devel/rubygem-extlib \
-		rubygem-json>=1.4.4:${PORTSDIR}/devel/rubygem-json \
+		rubygem-json=1.5.1:${PORTSDIR}/devel/rubygem-json \
 		rubygem-uuidtools>=0.0.0:${PORTSDIR}/devel/rubygem-uuidtools \
 		rubygem-highline>=0.0.0:${PORTSDIR}/devel/rubygem-highline \
 		rubygem-moneta>=0.6.0:${PORTSDIR}/devel/rubygem-moneta \
 		rubygem-erubis>=0.0.0:${PORTSDIR}/www/rubygem-erubis \
 		rubygem-rest-client>=1.0.4:${PORTSDIR}/www/rubygem-rest-client \
 		rubygem-bunny>=0.6.0:${PORTSDIR}/net/rubygem-bunny \
-		rubygem-ohai>=0.5.7:${PORTSDIR}/sysutils/rubygem-ohai
-RUN_DEPENDS=	${BUILD_DEPENDS}
+		rubygem-ohai>=0.6.4:${PORTSDIR}/sysutils/rubygem-ohai \
+		rubygem-net-ssh>=2.1.3:${PORTSDIR}/security/rubygem-net-ssh \
+		rubygem-net-ssh-multi>=1.0.1:${PORTSDIR}/security/rubygem-net-ssh-multi \
+		rubygem-treetop>=1.4.9:${PORTSDIR}/devel/rubygem-treetop
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
