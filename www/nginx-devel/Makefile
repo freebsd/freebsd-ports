@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -97,7 +97,7 @@ HTTP_PORT?=	80
 NGINX_ACCESSLOG?=	${NGINX_LOGDIR}/nginx-access.log
 NGINX_ERRORLOG?=	${NGINX_LOGDIR}/nginx-error.log
 
-CONFLICTS?=	nginx-0.*
+CONFLICTS?=	nginx-1.*
 USE_RC_SUBR=	nginx.sh
 SUB_LIST+=	WWWOWN=${WWWOWN}
 .if !defined(NO_INSTALL_MANPAGES)
@@ -187,7 +187,7 @@ CONFIGURE_ARGS+=--without-http-cache
 .endif
 
 .if defined(WITH_CACHE_PURGE_MODULE)
-NGINX_CACHE_PURGE_MODULE_VERSION=	1.2
+NGINX_CACHE_PURGE_MODULE_VERSION=	1.3
 MASTER_SITES+=	http://labs.frickle.com/files/:cache_purge
 DISTFILES+=	ngx_cache_purge-${NGINX_CACHE_PURGE_MODULE_VERSION}.tar.gz:cache_purge
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_cache_purge-${NGINX_CACHE_PURGE_MODULE_VERSION}
@@ -417,7 +417,7 @@ CFLAGS+=	-DNDEBUG
 .endif
 
 .if defined(WITH_SLOWFS_CACHE_MODULE)
-NGINX_SLOWFS_CACHE_MODULE_VERSION=	1.5
+NGINX_SLOWFS_CACHE_MODULE_VERSION=	1.6
 MASTER_SITES+=	http://labs.frickle.com/files/:slowfs_cache
 DISTFILES+=	ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_MODULE_VERSION}.tar.gz:slowfs_cache
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_MODULE_VERSION}
