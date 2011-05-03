@@ -1,14 +1,14 @@
-# New ports collection makefile for: common_msgs
+# New ports collection makefile for: ros-common_msgs
 # Date created:	2010-11-22
 # Whom: Rene Ladan <rene@FreeBSD.org>
 #
 # $FreeBSD$
 
-PORTNAME=	common_msgs
+PORTNAME=	ros-common_msgs
 PORTVERSION=	1.2.2
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
+DISTNAME=	common_msgs-${PORTVERSION}
 DIST_SUBDIR=	ros
 
 MAINTAINER=	rene@FreeBSD.org
@@ -16,7 +16,8 @@ COMMENT=	Robot Operating System - common messages
 
 LICENSE=	BSD
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+STACKNAME=	${PORTNAME:S/ros-//}
+WRKSRC=		${WRKDIR}/${STACKNAME}
 
 BUILD_DEPENDS=	rosmake:${PORTSDIR}/devel/ros
 RUN_DEPENDS=	roscore:${PORTSDIR}/devel/ros
@@ -41,26 +42,26 @@ do-build:
 	(cd ${WRKSRC} ; ${MAKE_ENV} ${LOCALBASE}/bin/rosmake ${MAKE_ARGS})
 
 do-install:
-	${MKDIR} ${PREFIX}/ros/stacks/${PORTNAME}
+	${MKDIR} ${PREFIX}/ros/stacks/${STACKNAME}
 # delete files explicitly because negation in find (for COPYTREE_SHARE) is bogus
 .for d in actionlib_msgs diagnostic_msgs geometry_msgs nav_msgs sensor_msgs \
     test_common_msgs
 	${FIND} ${WRKSRC}/${d} -name build -type d -or -name \*.bak -type f \
 	    -or -name .svnignore -type f -or -name .cvsignore -type f \
 	    -or -name \*.orig | ${XARGS} ${RM} -rf
-	(cd ${WRKSRC} ; ${COPYTREE_SHARE} ${d} ${PREFIX}/ros/stacks/${PORTNAME})
+	(cd ${WRKSRC} ; ${COPYTREE_SHARE} ${d} ${PREFIX}/ros/stacks/${STACKNAME})
 .endfor
 .for f in CMakeLists.txt Makefile stack.xml
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/ros/stacks/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/ros/stacks/${STACKNAME}
 .endfor
 #strip and symlink ELF libraries
-	${STRIP_CMD} ${PREFIX}/ros/stacks/${PORTNAME}/sensor_msgs/lib/libsensor_msgs.so
-	${LN} -s ${PREFIX}/ros/stacks/${PORTNAME}/sensor_msgs/lib/libsensor_msgs.so \
+	${STRIP_CMD} ${PREFIX}/ros/stacks/${STACKNAME}/sensor_msgs/lib/libsensor_msgs.so
+	${LN} -s ${PREFIX}/ros/stacks/${STACKNAME}/sensor_msgs/lib/libsensor_msgs.so \
 	    ${PREFIX}/lib
 # make scripts executable
 .for f in actionlib_msgs/genaction.py \
     test_common_msgs/test/test_common_msgs_migration.py
-	${CHMOD} 0555 ${PREFIX}/ros/stacks/${PORTNAME}/${f}
+	${CHMOD} 0555 ${PREFIX}/ros/stacks/${STACKNAME}/${f}
 .endfor
 
 .include <bsd.port.mk>

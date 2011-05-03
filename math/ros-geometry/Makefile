@@ -1,12 +1,11 @@
-# New ports collection makefile for: geometry
+# New ports collection makefile for: ros-geometry
 # Date created:	2010-11-22
 # Whom: Rene Ladan <rene@FreeBSD.org>
 #
 # $FreeBSD$
 
-PORTNAME=	geometry
+PORTNAME=	ros-geometry
 PORTVERSION=	1.2.0
-PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
 DISTFILES=	geometry-${PORTVERSION}.tar.bz2 bullet-2.76-patched2.tar.gz \
@@ -20,14 +19,15 @@ COMMENT=	Robot Operating System - geometric and math libraries
 #LICENSE_COMB=	multi
 #LICENSE=	BSD LGPL* Zlib # which LGPL and Zlib not defined yet
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+STACKNAME=	${PORTNAME:S/ros-//}
+WRKSRC=		${WRKDIR}/${STACKNAME}
 
 BUILD_DEPENDS=	rosmake:${PORTSDIR}/devel/ros \
-		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/common_msgs \
+		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/ros-common_msgs \
 		chrpath:${PORTSDIR}/devel/chrpath \
 		${PYTHON_SITELIBDIR}/sipconfig.py:${PORTSDIR}/devel/py-sip
 RUN_DEPENDS=	roscore:${PORTSDIR}/devel/ros \
-		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/common_msgs
+		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/ros-common_msgs
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
@@ -58,9 +58,9 @@ do-build:
 	(cd ${WRKSRC} ; ${MAKE_ENV} ${LOCALBASE}/bin/rosmake ${MAKE_ARGS})
 
 do-install:
-	${MKDIR} ${PREFIX}/ros/stacks/${PORTNAME}
+	${MKDIR} ${PREFIX}/ros/stacks/${STACKNAME}
 # update .pc file
-	${REINPLACE_CMD} -E -e "s|${WRKSRC}|${PREFIX}/ros/stacks/${PORTNAME}|" \
+	${REINPLACE_CMD} -E -e "s|${WRKSRC}|${PREFIX}/ros/stacks/${STACKNAME}|" \
 	    ${WRKSRC}/kdl/lib/pkgconfig/orocos-kdl.pc
 	${INSTALL_DATA} ${WRKSRC}/kdl/lib/pkgconfig/orocos-kdl.pc ${PREFIX}/libdata/pkgconfig
 # delete files explicitly because negation in find (for COPYTREE_SHARE) is bogus
@@ -68,19 +68,19 @@ do-install:
 	${FIND} ${WRKSRC}/${d} -name build -type d -or -name \*.bak -type f \
 	    -or -name .svnignore -type f -or -name .cvsignore -type f \
 	    -or -name \*.orig -type f -or -name \*.pc -type f | ${XARGS} ${RM} -rf
-	(cd ${WRKSRC} ; ${COPYTREE_SHARE} ${d} ${PREFIX}/ros/stacks/${PORTNAME})
+	(cd ${WRKSRC} ; ${COPYTREE_SHARE} ${d} ${PREFIX}/ros/stacks/${STACKNAME})
 .endfor
 .for f in CMakeLists.txt Makefile stack.xml rosdep.yaml
-	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/ros/stacks/${PORTNAME}
+	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/ros/stacks/${STACKNAME}
 .endfor
 
 # strip ELF programs and make them executable
 .for f in tf/bin/change_notifier tf/bin/static_transform_publisher \
     tf/bin/tf_echo tf/bin/tf_monitor tf/test/btTest tf/test/testBroadcaster \
     tf/test/testListener tf/test/transform_listener_unittest
-	${STRIP_CMD} ${PREFIX}/ros/stacks/${PORTNAME}/${f}
-	${LOCALBASE}/bin/chrpath -d ${PREFIX}/ros/stacks/${PORTNAME}/${f}
-	${CHMOD} 0555 ${PREFIX}/ros/stacks/${PORTNAME}/${f}
+	${STRIP_CMD} ${PREFIX}/ros/stacks/${STACKNAME}/${f}
+	${LOCALBASE}/bin/chrpath -d ${PREFIX}/ros/stacks/${STACKNAME}/${f}
+	${CHMOD} 0555 ${PREFIX}/ros/stacks/${STACKNAME}/${f}
 .endfor
 # strip and symlink ELF libaries
 .for f in bullet/lib/libBulletCollision.so.2.76 \
@@ -89,21 +89,21 @@ do-install:
     eigen_conversions/lib/libeigen_conversions.so \
     kdl/lib/liborocos-kdl.so.1.0.99 kdl/lib/PyKDL.so tf/lib/_tf.so \
     tf/lib/libtf.so tf_conversions/lib/libtf_conversions.so
-	${STRIP_CMD} ${PREFIX}/ros/stacks/${PORTNAME}/${f}
-	${LOCALBASE}/bin/chrpath -d ${PREFIX}/ros/stacks/${PORTNAME}/${f}
-	${LN} -s ${PREFIX}/ros/stacks/${PORTNAME}/${f} ${PREFIX}/lib
+	${STRIP_CMD} ${PREFIX}/ros/stacks/${STACKNAME}/${f}
+	${LOCALBASE}/bin/chrpath -d ${PREFIX}/ros/stacks/${STACKNAME}/${f}
+	${LN} -s ${PREFIX}/ros/stacks/${STACKNAME}/${f} ${PREFIX}/lib
 .endfor
 # symbolic links
 .for f in bullet/lib/libBulletCollision.so bullet/lib/libBulletDynamics.so \
     bullet/lib/libBulletSoftBody.so bullet/lib/libLinearMath.so \
     kdl/lib/liborocos-kdl.so kdl/lib/liborocos-kdl.so.1.0
-	${LN} -s ${PREFIX}/ros/stacks/${PORTNAME}/${f} ${PREFIX}/lib
+	${LN} -s ${PREFIX}/ros/stacks/${STACKNAME}/${f} ${PREFIX}/lib
 .endfor
 # make scripts executable
 .for f in tf/scripts/python_benchmark.py tf/scripts/reset_time.py \
     tf/scripts/tf_remap tf/scripts/view_frames \
     tf/test/test_datatype_conversion.py
-	${CHMOD} 0555 ${PREFIX}/ros/stacks/${PORTNAME}/${f}
+	${CHMOD} 0555 ${PREFIX}/ros/stacks/${STACKNAME}/${f}
 .endfor
 
 .include <bsd.port.mk>
