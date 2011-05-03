@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE
-PORTVERSION=	1.310
+PORTVERSION=	1.311
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN/${PORTNAME}/RCAPUTO
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,7 @@ LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1
 
 BUILD_DEPENDS=	p5-IO-Tty>=1.08:${PORTSDIR}/devel/p5-IO-Tty \
-		p5-POE-Test-Loops>=1.050:${PORTSDIR}/devel/p5-POE-Test-Loops
+		p5-POE-Test-Loops>=1.311:${PORTSDIR}/devel/p5-POE-Test-Loops
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -51,7 +51,6 @@ MAN3=		POE.3 POE::Component.3 POE::Component::Client::TCP.3 \
 BUILD_DEPENDS+=	p5-IO>=1.24:${PORTSDIR}/devel/p5-IO
 RUN_DEPENDS+=	p5-IO>=1.24:${PORTSDIR}/devel/p5-IO
 .endif
-
 
 post-install:
 .ifndef(NOPORTEXAMPLES)
