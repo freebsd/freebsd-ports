@@ -1496,6 +1496,7 @@
     SUBDIR += py-django12
     SUBDIR += py-djblets
     SUBDIR += py-dojango
+    SUBDIR += py-dotcloud.cli
     SUBDIR += py-dtflickr
     SUBDIR += py-fcgi
     SUBDIR += py-feedfinder
