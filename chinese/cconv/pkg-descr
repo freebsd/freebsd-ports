@@ -1,0 +1,13 @@
+cconv (pronunciation: see-conv.) is iconv based simplified-traditional chinese
+conversion tool. It is NOT only transcoding programm, but also TRANSLATE tools
+between the Simplified Chinese and Traditional Chinese.
+
+We stand on the shoulders of giants, cconv source code is based on iconv a
+excellent program converts text from one encoding to another encoding.
+
+Features:
+- iconv liked usage.
+- language level simplified-traditional chinese.
+- idioms can be translated.
+
+WWW: http://code.google.com/p/cconv/

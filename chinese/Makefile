@@ -22,6 +22,7 @@
     SUBDIR += bug5
     SUBDIR += c2t
     SUBDIR += cce
+    SUBDIR += cconv
     SUBDIR += celvis
     SUBDIR += chm2html
     SUBDIR += cless
