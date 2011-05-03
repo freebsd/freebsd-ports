@@ -601,6 +601,7 @@ lib/R/library/rkwardtests/NAMESPACE
 lib/R/library/rkwardtests/R/rkwardtests
 lib/R/library/rkwardtests/R/rkwardtests.rdb
 lib/R/library/rkwardtests/R/rkwardtests.rdx
+lib/R/library/rkwardtests/doc/.empty
 lib/R/library/rkwardtests/help/AnIndex
 lib/R/library/rkwardtests/help/aliases.rds
 lib/R/library/rkwardtests/help/paths.rds
