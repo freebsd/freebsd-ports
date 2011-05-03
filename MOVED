@@ -2153,3 +2153,4 @@ games/grande||2011-05-02|Removed, Upstream disapear and distfile is no more avai
 games/spacearyarya||2011-05-02|Removed, Upstream disapear and distfile is no more available
 ftp/ftptool||2011-05-02|Removed, depend on this expired editors/textedit
 editors/textedit||2011-05-02|Has expired: Upstream disapear and distfile is no more available
+security/libfwbuilder||2011-05-02|libfwbuilder merged into fwbuilder
