@@ -80,6 +80,7 @@
 %%WWWDIR%%/core/FrontController.php
 %%WWWDIR%%/core/HTMLPurifier.php
 %%WWWDIR%%/core/Http.php
+%%WWWDIR%%/core/IP.php
 %%WWWDIR%%/core/Loader.php
 %%WWWDIR%%/core/Log.php
 %%WWWDIR%%/core/Log/APICall.php
@@ -106,6 +107,9 @@
 %%WWWDIR%%/core/PluginsManager.php
 %%WWWDIR%%/core/ProxyHeaders.php
 %%WWWDIR%%/core/QuickForm2.php
+%%WWWDIR%%/core/ReportRenderer/Pdf.php
+%%WWWDIR%%/core/ReportRenderer/Html.php
+%%WWWDIR%%/core/ReportRenderer.php
 %%WWWDIR%%/core/ScheduledTask.php
 %%WWWDIR%%/core/ScheduledTime.php
 %%WWWDIR%%/core/ScheduledTime/Daily.php
@@ -191,6 +195,8 @@
 %%WWWDIR%%/core/Updates/1.2.3.php
 %%WWWDIR%%/core/Updates/1.2.5-rc1.php
 %%WWWDIR%%/core/Updates/1.2.5-rc7.php
+%%WWWDIR%%/core/Updates/1.4-rc1.php
+%%WWWDIR%%/core/Updates/1.4-rc2.php
 %%WWWDIR%%/core/Url.php
 %%WWWDIR%%/core/Version.php
 %%WWWDIR%%/core/View.php
@@ -342,6 +348,13 @@
 %%WWWDIR%%/libs/PEAR5.php
 %%WWWDIR%%/libs/PclZip/lgpl-2.1.txt
 %%WWWDIR%%/libs/PclZip/pclzip.lib.php
+%%WWWDIR%%/libs/PiwikTracker/java/pom.xml
+%%WWWDIR%%/libs/PiwikTracker/java/src/main/java/org/piwik/EBrowserPlugins.java
+%%WWWDIR%%/libs/PiwikTracker/java/src/main/java/org/piwik/IPiwikTracker.java
+%%WWWDIR%%/libs/PiwikTracker/java/src/main/java/org/piwik/PiwikException.java
+%%WWWDIR%%/libs/PiwikTracker/java/src/main/java/org/piwik/ResponseData.java
+%%WWWDIR%%/libs/PiwikTracker/java/src/main/java/org/piwik/SimplePiwikTracker.java
+%%WWWDIR%%/libs/PiwikTracker/java/src/test/java/org/piwik/SimplePiwikTrackerTest.java
 %%WWWDIR%%/libs/PiwikTracker/LICENSE.txt
 %%WWWDIR%%/libs/PiwikTracker/PiwikTracker.php
 %%WWWDIR%%/libs/README_LIBS
@@ -978,8 +991,6 @@
 %%WWWDIR%%/libs/upgradephp/upgrade.php
 %%WWWDIR%%/misc/ExamplePiwikTracker.php
 %%WWWDIR%%/misc/How to install Piwik.html
-%%WWWDIR%%/misc/api_community_sticker.php
-%%WWWDIR%%/misc/api_example_marketing.php
 %%WWWDIR%%/misc/api_internal_call.php
 %%WWWDIR%%/misc/api_rest_call.php
 %%WWWDIR%%/misc/cron/archive.sh
@@ -1038,6 +1049,9 @@
 %%WWWDIR%%/plugins/CoreHome/templates/graph.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/header.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/header_message.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/html_report_footer.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/html_report_header.tpl
+%%WWWDIR%%/plugins/CoreHome/templates/html_report_body.tpl
 %%WWWDIR%%/plugins/CoreHome/templates/images/bg_header.jpg
 %%WWWDIR%%/plugins/CoreHome/templates/images/bullet1.gif
 %%WWWDIR%%/plugins/CoreHome/templates/images/bullet2.gif
@@ -1212,7 +1226,6 @@
 %%WWWDIR%%/plugins/MultiSites/templates/styles.css
 %%WWWDIR%%/plugins/PDFReports/API.php
 %%WWWDIR%%/plugins/PDFReports/Controller.php
-%%WWWDIR%%/plugins/PDFReports/PDFRenderer.php
 %%WWWDIR%%/plugins/PDFReports/PDFReports.php
 %%WWWDIR%%/plugins/PDFReports/config/tcpdf_config.php
 %%WWWDIR%%/plugins/PDFReports/templates/add.tpl
@@ -1272,6 +1285,7 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/infospace.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/iwon.ask.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/ixquick.com.png
+%%WWWDIR%%/plugins/Referers/images/searchEngines/junglekey.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/jyxo.1188.cz.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/ko.search.need2find.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/lo.st.png
@@ -1521,6 +1535,7 @@
 %%WWWDIR%%/plugins/UserCountry/flags/bm.png
 %%WWWDIR%%/plugins/UserCountry/flags/bn.png
 %%WWWDIR%%/plugins/UserCountry/flags/bo.png
+%%WWWDIR%%/plugins/UserCountry/flags/bq.png
 %%WWWDIR%%/plugins/UserCountry/flags/br.png
 %%WWWDIR%%/plugins/UserCountry/flags/bs.png
 %%WWWDIR%%/plugins/UserCountry/flags/bt.png
@@ -1547,6 +1562,7 @@
 %%WWWDIR%%/plugins/UserCountry/flags/cs.png
 %%WWWDIR%%/plugins/UserCountry/flags/cu.png
 %%WWWDIR%%/plugins/UserCountry/flags/cv.png
+%%WWWDIR%%/plugins/UserCountry/flags/cw.png
 %%WWWDIR%%/plugins/UserCountry/flags/cx.png
 %%WWWDIR%%/plugins/UserCountry/flags/cy.png
 %%WWWDIR%%/plugins/UserCountry/flags/cz.png
@@ -1712,6 +1728,7 @@
 %%WWWDIR%%/plugins/UserCountry/flags/st.png
 %%WWWDIR%%/plugins/UserCountry/flags/su.png
 %%WWWDIR%%/plugins/UserCountry/flags/sv.png
+%%WWWDIR%%/plugins/UserCountry/flags/sx.png
 %%WWWDIR%%/plugins/UserCountry/flags/sy.png
 %%WWWDIR%%/plugins/UserCountry/flags/sz.png
 %%WWWDIR%%/plugins/UserCountry/flags/ta.png
@@ -1946,6 +1963,7 @@
 %%WWWDIR%%/themes/default/images/export.png
 %%WWWDIR%%/themes/default/images/feed.png
 %%WWWDIR%%/themes/default/images/goal.png
+%%WWWDIR%%/themes/default/images/html_icon.png
 %%WWWDIR%%/themes/default/images/ico_alert.png
 %%WWWDIR%%/themes/default/images/ico_delete.png
 %%WWWDIR%%/themes/default/images/ico_edit.png
@@ -2230,6 +2248,17 @@
 @dirrm %%WWWDIR%%/libs/Smarty/plugins
 @dirrm %%WWWDIR%%/libs/Smarty/internals
 @dirrm %%WWWDIR%%/libs/Smarty
+@dirrm %%WWWDIR%%/libs/PiwikTracker/java/src/test/java/org/piwik
+@dirrm %%WWWDIR%%/libs/PiwikTracker/java/src/test/java/org
+@dirrm %%WWWDIR%%/libs/PiwikTracker/java/src/test/java
+@dirrm %%WWWDIR%%/libs/PiwikTracker/java/src/test
+@dirrm %%WWWDIR%%/libs/PiwikTracker/java/src/main/resources
+@dirrm %%WWWDIR%%/libs/PiwikTracker/java/src/main/java/org/piwik
+@dirrm %%WWWDIR%%/libs/PiwikTracker/java/src/main/java/org
+@dirrm %%WWWDIR%%/libs/PiwikTracker/java/src/main/java
+@dirrm %%WWWDIR%%/libs/PiwikTracker/java/src/main
+@dirrm %%WWWDIR%%/libs/PiwikTracker/java/src
+@dirrm %%WWWDIR%%/libs/PiwikTracker/java
 @dirrm %%WWWDIR%%/libs/PiwikTracker
 @dirrm %%WWWDIR%%/libs/PclZip
 @dirrm %%WWWDIR%%/libs/PEAR
@@ -2261,6 +2290,7 @@
 @dirrm %%WWWDIR%%/core/SmartyPlugins
 @dirrm %%WWWDIR%%/core/Session
 @dirrm %%WWWDIR%%/core/ScheduledTime
+@dirrm %%WWWDIR%%/core/ReportRenderer
 @dirrm %%WWWDIR%%/core/PluginsFunctions
 @dirrm %%WWWDIR%%/core/Period
 @dirrm %%WWWDIR%%/core/Menu
