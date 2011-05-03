@@ -3283,6 +3283,7 @@
     SUBDIR += rubygem-uuid
     SUBDIR += rubygem-uuidtools
     SUBDIR += rubygem-validatable
+    SUBDIR += rubygem-vmc
     SUBDIR += rubygem-warbler
     SUBDIR += rubygem-webby
     SUBDIR += rubygem-yajl-ruby
