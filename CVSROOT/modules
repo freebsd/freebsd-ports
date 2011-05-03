@@ -395,7 +395,6 @@ alabastra                       ports/devel/alabastra
 alac                            ports/audio/alac
 alacarte                        ports/deskutils/alacarte
 alarm-clock                     ports/x11-clocks/alarm-clock
-albumart                        ports/audio/albumart
 albumshaper                     ports/graphics/albumshaper
 ald                             ports/devel/ald
 aldo                            ports/comms/aldo
@@ -852,7 +851,6 @@ axel                            ports/ftp/axel
 axis                            ports/www/axis
 axpoint                         ports/print/axpoint
 ayam                            ports/graphics/ayam
-aylet                           ports/audio/aylet
 ayttm                           ports/net-im/ayttm
 az-aspell                       ports/textproc/az-aspell
 azureus                         ports/net-p2p/azureus
@@ -986,6 +984,7 @@ bgpq3                           ports/net-mgmt/bgpq3
 bgrab                           ports/news/bgrab
 bgrot                           ports/x11/bgrot
 bgs                             ports/x11/bgs
+biabam                          ports/mail/biabam
 bib2html                        ports/textproc/bib2html
 bibcursed                       ports/print/bibcursed
 bibelot                         ports/palm/bibelot
@@ -1372,7 +1371,6 @@ camerakit                       ports/graphics/camerakit
 caml-light                      ports/lang/caml-light
 campsite                        ports/www/campsite
 camserv                         ports/multimedia/camserv
-cantus                          ports/audio/cantus
 cantus_3                        ports/audio/cantus_3
 caph                            ports/games/caph
 caps-plugins                    ports/audio/caps-plugins
@@ -1760,7 +1758,7 @@ code2html                       ports/textproc/code2html
 codeblocks                      ports/devel/codeblocks
 codeeditor                      ports/editors/codeeditor
 codeigniter                     ports/www/codeigniter
-codeigniter-devel               ports/www/codeigniter-devel
+codeigniter17                   ports/www/codeigniter17
 codelite                        ports/editors/codelite
 codeworker                      ports/devel/codeworker
 cog                             ports/sysutils/cog
@@ -3962,7 +3960,6 @@ ftpmirror                       ports/ftp/ftpmirror
 ftpproxy                        ports/ftp/ftpproxy
 ftpsesame                       ports/ftp/ftpsesame
 ftpsync                         ports/ftp/ftpsync
-ftptool                         ports/ftp/ftptool
 ftrack                          ports/mail/ftrack
 ftwin                           ports/sysutils/ftwin
 fugu                            ports/net-im/fugu
@@ -4236,8 +4233,6 @@ geeqie                          ports/graphics/geeqie
 geg                             ports/math/geg
 gegl                            ports/graphics/gegl
 geglmm                          ports/graphics/geglmm
-geki2                           ports/games/geki2
-geki3                           ports/games/geki3
 gemcal                          ports/deskutils/gemcal
 gemdropx                        ports/games/gemdropx
 geminifonts                     ports/x11-fonts/geminifonts
@@ -4884,7 +4879,6 @@ grails                          ports/www/grails
 grake                           ports/multimedia/grake
 gramofile                       ports/audio/gramofile
 gramps                          ports/science/gramps
-grande                          ports/games/grande
 grantlee                        ports/devel/grantlee
 granulate                       ports/misc/granulate
 grap                            ports/textproc/grap
@@ -7407,7 +7401,6 @@ kwatch                          ports/misc/kwatch
 kwebkitpart                     ports/www/kwebkitpart
 kwirc                           ports/irc/kwirc
 kwooty                          ports/net/kwooty
-kxl                             ports/devel/kxl
 kxmleditor                      ports/editors/kxmleditor
 ky-aspell                       ports/textproc/ky-aspell
 kyotocabinet                    ports/databases/kyotocabinet
@@ -7667,7 +7660,6 @@ libburn                         ports/devel/libburn
 libcabinet                      ports/archivers/libcabinet
 libcaca                         ports/graphics/libcaca
 libcanberra                     ports/audio/libcanberra
-libcapsinetwork                 ports/devel/libcapsinetwork
 libccid                         ports/devel/libccid
 libcdaudio                      ports/audio/libcdaudio
 libcddb                         ports/audio/libcddb
@@ -7776,7 +7768,6 @@ libfreefare                     ports/devel/libfreefare
 libfs                           ports/x11-fonts/libFS
 libfs++                         ports/devel/libfs++
 libftdi                         ports/devel/libftdi
-libfwbuilder                    ports/security/libfwbuilder
 libfwbuilder-devel              ports/security/libfwbuilder-devel
 libgail-gnome                   ports/x11-toolkits/libgail-gnome
 libgal                          ports/astro/libgal
@@ -9193,6 +9184,7 @@ mkfontscale                     ports/x11-fonts/mkfontscale
 mkfwimage                       ports/sysutils/mkfwimage
 mkgichessclub                   ports/games/mkgichessclub
 mkgmap                          ports/astro/mkgmap
+mkgmap-splitter                 ports/astro/mkgmap-splitter
 mkhexgrid                       ports/games/mkhexgrid
 mkitalic                        ports/x11-fonts/mkitalic
 mkmf                            ports/devel/mkmf
@@ -9417,7 +9409,6 @@ monodevelop-boo                 ports/devel/monodevelop-boo
 monodevelop-database            ports/devel/monodevelop-database
 monodevelop-java                ports/devel/monodevelop-java
 monodevelop-vala                ports/devel/monodevelop-vala
-monopd                          ports/games/monopd
 monotone                        ports/devel/monotone
 monotone-viz                    ports/devel/monotone-viz
 monster-masher                  ports/games/monster-masher
@@ -10157,7 +10148,6 @@ o2sms                           ports/comms/o2sms
 o3read                          ports/converters/o3read
 oaf                             ports/devel/oaf
 oak                             ports/sysutils/oak
-oases                           ports/science/oases
 obby                            ports/devel/obby
 obconf                          ports/x11-wm/obconf
 obexapp                         ports/comms/obexapp
@@ -19157,7 +19147,6 @@ parmgridgen                     ports/math/parmgridgen
 paros                           ports/www/paros
 parrot                          ports/lang/parrot
 pas2dox                         ports/devel/pas2dox
-pash                            ports/shells/pash
 passage                         ports/games/passage
 passepartout                    ports/graphics/passepartout
 passivetex                      ports/print/passivetex
@@ -19179,6 +19168,7 @@ pawm                            ports/x11-wm/pawm
 pax-utils                       ports/sysutils/pax-utils
 pbasic                          ports/lang/pbasic
 pbc                             ports/security/pbc
+pbi-manager                     ports/ports-mgmt/pbi-manager
 pbi-thumbnailer                 ports/x11-fm/pbi-thumbnailer
 pbnc                            ports/net/pbnc
 pbnj                            ports/security/pbnj
@@ -20873,6 +20863,7 @@ prosper                         ports/textproc/prosper
 protobuf                        ports/devel/protobuf
 protomol                        ports/biology/protomol
 prototype                       ports/devel/prototype
+protovis                        ports/www/protovis
 proxsmtp                        ports/mail/proxsmtp
 proxy-connect                   ports/net/proxy-connect
 proxy-suite                     ports/net/proxy-suite
@@ -21194,6 +21185,7 @@ py-dnspython                    ports/dns/py-dnspython
 py-docutils                     ports/textproc/py-docutils
 py-dojango                      ports/www/py-dojango
 py-dosage                       ports/deskutils/py-dosage
+py-dotcloud.cli                 ports/www/py-dotcloud.cli
 py-dpkt                         ports/net/py-dpkt
 py-drmaa                        ports/sysutils/py-drmaa
 py-dsv                          ports/textproc/py-dsv
@@ -23181,6 +23173,7 @@ rubygem-mixlib-log              ports/devel/rubygem-mixlib-log
 rubygem-mkrf                    ports/devel/rubygem-mkrf
 rubygem-mocha                   ports/devel/rubygem-mocha
 rubygem-moneta                  ports/devel/rubygem-moneta
+rubygem-money                   ports/finance/rubygem-money
 rubygem-mongrel                 ports/www/rubygem-mongrel
 rubygem-mongrel_cluster         ports/www/rubygem-mongrel_cluster
 rubygem-msgpack                 ports/devel/rubygem-msgpack
@@ -23199,6 +23192,7 @@ rubygem-net-scp                 ports/security/rubygem-net-scp
 rubygem-net-sftp                ports/security/rubygem-net-sftp
 rubygem-net-ssh                 ports/security/rubygem-net-ssh
 rubygem-net-ssh-gateway         ports/security/rubygem-net-ssh-gateway
+rubygem-net-ssh-multi           ports/security/rubygem-net-ssh-multi
 rubygem-newgem                  ports/devel/rubygem-newgem
 rubygem-nice-ffi                ports/devel/rubygem-nice-ffi
 rubygem-nicovideo               ports/www/rubygem-nicovideo
@@ -23248,6 +23242,7 @@ rubygem-rake                    ports/devel/rubygem-rake
 rubygem-ramaze                  ports/www/rubygem-ramaze
 rubygem-rapt                    ports/devel/rubygem-rapt
 rubygem-rascut                  ports/devel/rubygem-rascut
+rubygem-rash                    ports/devel/rubygem-rash
 rubygem-rbase                   ports/databases/rubygem-rbase
 rubygem-rchardet                ports/textproc/rubygem-rchardet
 rubygem-rcov                    ports/devel/rubygem-rcov
@@ -23284,6 +23279,7 @@ rubygem-rubyfulsoup             ports/www/rubygem-rubyfulsoup
 rubygem-rubygame                ports/devel/rubygem-rubygame
 rubygem-rubyinlineaccel         ports/devel/rubygem-rubyinlineaccel
 rubygem-rubytter                ports/net/rubygem-rubytter
+rubygem-rubyzip2                ports/archivers/rubygem-rubyzip2
 rubygem-runt                    ports/devel/rubygem-runt
 rubygem-ruport                  ports/devel/rubygem-ruport
 rubygem-sax-machine             ports/textproc/rubygem-sax-machine
@@ -23304,12 +23300,14 @@ rubygem-soap4r                  ports/devel/rubygem-soap4r
 rubygem-spreadsheet             ports/textproc/rubygem-spreadsheet
 rubygem-spruz                   ports/devel/rubygem-spruz
 rubygem-sqlite3                 ports/databases/rubygem-sqlite3
+rubygem-state_machine           ports/devel/rubygem-state_machine
 rubygem-staticmatic             ports/www/rubygem-staticmatic
 rubygem-stemmer                 ports/devel/rubygem-stemmer
 rubygem-stomp                   ports/devel/rubygem-stomp
 rubygem-stream                  ports/devel/rubygem-stream
 rubygem-streetaddress           ports/devel/rubygem-streetaddress
 rubygem-stringex                ports/devel/rubygem-stringex
+rubygem-sundawg_country_codes   ports/devel/rubygem-sundawg_country_codes
 rubygem-syntax                  ports/textproc/rubygem-syntax
 rubygem-sys-admin               ports/sysutils/rubygem-sys-admin
 rubygem-sys-cpu                 ports/sysutils/rubygem-sys-cpu
@@ -23322,6 +23320,7 @@ rubygem-systemu                 ports/devel/rubygem-systemu
 rubygem-taggable                ports/www/rubygem-taggable
 rubygem-templater               ports/devel/rubygem-templater
 rubygem-termcolor               ports/textproc/rubygem-termcolor
+rubygem-terminal-table          ports/textproc/rubygem-terminal-table
 rubygem-termtter                ports/net-im/rubygem-termtter
 rubygem-test-unit               ports/devel/rubygem-test-unit
 rubygem-thin                    ports/www/rubygem-thin
@@ -23343,6 +23342,7 @@ rubygem-uuid                    ports/devel/rubygem-uuid
 rubygem-uuidtools               ports/devel/rubygem-uuidtools
 rubygem-validatable             ports/devel/rubygem-validatable
 rubygem-vmail                   ports/mail/rubygem-vmail
+rubygem-vmc                     ports/devel/rubygem-vmc
 rubygem-warbler                 ports/devel/rubygem-warbler
 rubygem-webby                   ports/devel/rubygem-webby
 rubygem-webmock                 ports/www/rubygem-webmock
@@ -24026,7 +24026,6 @@ sourcenav                       ports/devel/sourcenav
 sowing                          ports/textproc/sowing
 sox                             ports/audio/sox
 soxt                            ports/x11-toolkits/SoXt
-spacearyarya                    ports/games/spacearyarya
 spacechart                      ports/astro/spacechart
 spacehulk                       ports/games/spacehulk
 spacejunk                       ports/games/spacejunk
@@ -24715,7 +24714,6 @@ texmacs                         ports/editors/texmacs
 texmaker                        ports/editors/texmaker
 texmakerx                       ports/editors/texmakerx
 texpower                        ports/print/texpower
-textedit                        ports/editors/textedit
 textedit.app                    ports/editors/textedit.app
 textmail                        ports/mail/textmail
 textmaze                        ports/games/textmaze
@@ -26122,7 +26120,6 @@ xautomation                     ports/x11/xautomation
 xaw3d                           ports/x11-toolkits/Xaw3d
 xawplus                         ports/x11-toolkits/XawPlus
 xawtv                           ports/multimedia/xawtv
-xaylet                          ports/audio/xaylet
 xbaby                           ports/games/xbaby
 xbacklight                      ports/x11/xbacklight
 xbae                            ports/x11-toolkits/xbae
@@ -26719,6 +26716,7 @@ xpaint                          ports/graphics/xpaint
 xpanex                          ports/games/xpanex
 xparam                          ports/devel/xparam
 xpat2                           ports/games/xpat2
+xpbiff                          ports/mail/xpbiff
 xpdf                            ports/graphics/xpdf
 xpenguins                       ports/games/xpenguins
 xphoon                          ports/astro/xphoon
@@ -27149,6 +27147,7 @@ zh-bitchx                       ports/chinese/bitchx
 zh-bug5                         ports/chinese/bug5
 zh-c2t                          ports/chinese/c2t
 zh-cce                          ports/chinese/cce
+zh-cconv                        ports/chinese/cconv
 zh-celvis                       ports/chinese/celvis
 zh-chm2html                     ports/chinese/chm2html
 zh-cjkunifonts                  ports/chinese/CJKUnifonts
