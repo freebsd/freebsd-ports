@@ -49,10 +49,13 @@ include/vmime/net/folder.hpp
 include/vmime/net/imap/IMAPConnection.hpp
 include/vmime/net/imap/IMAPFolder.hpp
 include/vmime/net/imap/IMAPMessage.hpp
+include/vmime/net/imap/IMAPMessagePartContentHandler.hpp
 include/vmime/net/imap/IMAPParser.hpp
+include/vmime/net/imap/IMAPPart.hpp
 include/vmime/net/imap/IMAPSStore.hpp
 include/vmime/net/imap/IMAPServiceInfos.hpp
 include/vmime/net/imap/IMAPStore.hpp
+include/vmime/net/imap/IMAPStructure.hpp
 include/vmime/net/imap/IMAPTag.hpp
 include/vmime/net/imap/IMAPUtils.hpp
 include/vmime/net/maildir/maildirFolder.hpp
