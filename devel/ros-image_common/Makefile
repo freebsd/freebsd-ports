@@ -6,6 +6,7 @@
 
 PORTNAME=	ros-image_common
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
 DISTNAME=	image_common-${PORTVERSION}
@@ -21,11 +22,11 @@ WRKSRC=		${WRKDIR}/${STACKNAME}
 
 BUILD_DEPENDS=	rosmake:${PORTSDIR}/devel/ros \
 		${LOCALBASE}/ros/stacks/common/stack.xml:${PORTSDIR}/devel/ros-common \
-		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/common_msgs \
+		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/ros-common_msgs \
 		chrpath:${PORTSDIR}/devel/chrpath
 RUN_DEPENDS=	roscore:${PORTSDIR}/devel/ros \
 		${LOCALBASE}/ros/stacks/common/stack.xml:${PORTSDIR}/devel/ros-common \
-		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/common_msgs
+		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/ros-common_msgs
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes

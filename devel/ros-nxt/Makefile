@@ -6,7 +6,7 @@
 
 PORTNAME=	ros-nxt
 PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
 DISTFILES=	nxt-${PORTVERSION}.tar.bz2 nxt-python-1.1.2.zip
@@ -26,12 +26,12 @@ WRKSRC=		${WRKDIR}/${STACKNAME}
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS=	rosmake:${PORTSDIR}/devel/ros \
-		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/common_msgs \
-		${LOCALBASE}/ros/stacks/geometry/stack.xml:${PORTSDIR}/math/geometry \
+		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/ros-common_msgs \
+		${LOCALBASE}/ros/stacks/geometry/stack.xml:${PORTSDIR}/math/ros-geometry \
 		chrpath:${PORTSDIR}/devel/chrpath
 RUN_DEPENDS=	roscore:${PORTSDIR}/devel/ros \
-		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/common_msgs \
-		${LOCALBASE}/ros/stacks/geometry/stack.xml:${PORTSDIR}/math/geometry \
+		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/ros-common_msgs \
+		${LOCALBASE}/ros/stacks/geometry/stack.xml:${PORTSDIR}/math/ros-geometry \
 		${PYTHON_SITELIBDIR}/usb.so:${PORTSDIR}/devel/py-usb
 USE_PYTHON=	yes
 USE_BZIP2=	yes
@@ -52,7 +52,6 @@ MAKE_ARGS=	-i --no-rosdep --status-rate=0 --disable-logging
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800069
-IGNORE=		USB stack cannot locate NXT
 LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 .endif
 
