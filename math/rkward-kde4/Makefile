@@ -65,6 +65,9 @@ pre-configure:
 		${WRKSRC}/CMakeLists.txt
 .endif
 
+post-install:
+	${TOUCH} ${LOCALBASE}/lib/R/library/rkwardtests/doc/.empty
+
 .if defined(MAINTAINER_MODE)
 regression-test:	install
 	@${ECHO_MSG} "To pass the tests, somme CRAN packages like R2HTML"
