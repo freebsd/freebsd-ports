@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rest-client
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.2.a
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
