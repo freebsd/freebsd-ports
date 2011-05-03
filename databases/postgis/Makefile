@@ -20,7 +20,6 @@ RUN_DEPENDS=	postmaster:${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
 USE_BISON=	build
 USE_PGSQL=	yes
-DEFAULT_PGSQL_VER=	83
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
