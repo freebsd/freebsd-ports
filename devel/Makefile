@@ -3080,6 +3080,7 @@
     SUBDIR += root-doc
     SUBDIR += ros
     SUBDIR += ros-common
+    SUBDIR += ros-common_msgs
     SUBDIR += ros-image_common
     SUBDIR += ros-laser_pipeline
     SUBDIR += ros-nxt
