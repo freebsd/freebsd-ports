@@ -24,6 +24,8 @@ pidprefix="/var/run/uhidd"
 
 load_rc_config $name
 
+: ${uhidd_enable="NO"}
+
 if [ -n "$2" ]; then
 	pidfile="${pidprefix}.`basename $2`.pid"
 else
