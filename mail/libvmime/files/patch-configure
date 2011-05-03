@@ -1,6 +1,6 @@
---- ./configure.orig	2008-10-19 05:36:19.000000000 -0700
-+++ ./configure	2009-08-19 16:22:34.333460257 -0700
-@@ -3486,13 +3486,13 @@
+--- ./configure.orig	2010-11-16 04:56:00.000000000 -0800
++++ ./configure	2011-05-03 11:24:44.023730993 -0700
+@@ -4120,13 +4120,13 @@
    CFLAGS=$ac_save_CFLAGS
  elif test $ac_cv_prog_cc_g = yes; then
    if test "$GCC" = yes; then
@@ -16,7 +16,7 @@
    else
      CFLAGS=
    fi
-@@ -4135,13 +4135,13 @@
+@@ -4657,13 +4657,13 @@
    CXXFLAGS=$ac_save_CXXFLAGS
  elif test $ac_cv_prog_cxx_g = yes; then
    if test "$GXX" = yes; then
@@ -32,37 +32,28 @@
    else
      CXXFLAGS=
    fi
-@@ -7156,13 +7156,13 @@
-   FFLAGS=$ac_save_FFLAGS
- elif test $ac_cv_prog_f77_g = yes; then
-   if test "x$ac_cv_f77_compiler_gnu" = xyes; then
--    FFLAGS="-g -O2"
-+    FFLAGS="-g"
+@@ -15610,13 +15610,13 @@
+   CFLAGS=$ac_save_CFLAGS
+ elif test $ac_cv_prog_cc_g = yes; then
+   if test "$GCC" = yes; then
+-    CFLAGS="-g -O2"
++    CFLAGS="-g"
    else
-     FFLAGS="-g"
+     CFLAGS="-g"
    fi
  else
-   if test "x$ac_cv_f77_compiler_gnu" = xyes; then
--    FFLAGS="-O2"
-+    FFLAGS=""
+   if test "$GCC" = yes; then
+-    CFLAGS="-O2"
++    CFLAGS=""
    else
-     FFLAGS=
+     CFLAGS=
    fi
-@@ -30797,7 +30797,7 @@
-   else
-     LIBGNUTLS_CFLAGS=`$LIBGNUTLS_CONFIG $libgnutls_config_args --cflags`
-     LIBGNUTLS_LIBS=`$LIBGNUTLS_CONFIG $libgnutls_config_args --libs`
--    libgnutls_config_version=`$LIBGNUTLS_CONFIG $libgnutls_config_args --version`
-+    libgnutls_config_version=`$LIBGNUTLS_CONFIG $libgnutls_config_args --modversion`
- 
- 
-       ac_save_CFLAGS="$CFLAGS"
-@@ -32278,7 +32278,7 @@
+@@ -21047,7 +21047,7 @@
  else
  	# -O2
  	OLD_CXXFLAGS="$CXXFLAGS"
 -	CXXFLAGS="$CXXFLAGS -O2"
 +	CXXFLAGS="$CXXFLAGS"
- 	{ echo "$as_me:$LINENO: checking whether cc accepts -O2" >&5
- echo $ECHO_N "checking whether cc accepts -O2... $ECHO_C" >&6; }
- 	cat >conftest.$ac_ext <<_ACEOF
+ 	{ $as_echo "$as_me:${as_lineno-$LINENO}: checking whether cc accepts -O2" >&5
+ $as_echo_n "checking whether cc accepts -O2... " >&6; }
+ 	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
