@@ -1,0 +1,83 @@
+--- biabam.orig	Tue Dec 21 00:08:38 2004
++++ biabam	Tue Dec 21 00:10:02 2004
+@@ -33,15 +33,15 @@
+   exit 1
+ fi
+ 
+-if ! which uuencode > /dev/null; then
+-  echo "This program needs the uuencode utility to perform base64 encoding."
++if ! which b64encode > /dev/null; then
++  echo "This program needs the b64encode utility to perform base64 encoding."
+   exit 1
+ fi
+ 
+ # Find out the number of files to attach
+ TOTAL_ATTACHMENTS=`echo "$1" | awk -F$SP '{print NF}'`
+ 
+-for i in `seq 1 $TOTAL_ATTACHMENTS`;
++for i in `jot $TOTAL_ATTACHMENTS 1`;
+ do
+   STR="'{print \$$i}'"
+   # store filenames in an array
+@@ -55,7 +55,7 @@
+ 
+ BASETEMP="`basename $TEMPFILE`"
+ 
+-for i in `seq 1 $TOTAL_ATTACHMENTS`; do
++for i in `jot $TOTAL_ATTACHMENTS 1`; do
+   # array for attachments basename
+   BASEATTACHMENT[$i]="`basename \"${ARR_ATTACHMENTS[$i]}\"`"
+   # test if file exists
+@@ -78,7 +78,7 @@
+     TYPE[$i]=${MIME:-application/unknown}
+   fi
+ 
+-  uuencode --base64 -- "${ARR_ATTACHMENTS[$i]}" "${BASEATTACHMENT[$i]}" | \
++  b64encode -- "${ARR_ATTACHMENTS[$i]}" "${BASEATTACHMENT[$i]}" | \
+   sed '1d;$d' > ${TEMPUUENCODED[$i]}
+ done
+ 
+@@ -97,7 +97,7 @@
+ # Find out the number of recipients to send the email
+ TOTAL_EMAILS=`echo "$1" | awk -F$SP '{print NF}'`
+ 
+-for i in `seq 1 $TOTAL_EMAILS`; do
++for i in `jot $TOTAL_EMAILS 1`; do
+   STR="'{print \$$i}'"
+   # store recipients in an array
+   ARR_EMAILS[$i]=`sh -c "echo "$1" | awk -F$SP $STR" `
+@@ -105,7 +105,7 @@
+ 
+ TO="To:"
+ 
+-for i in `seq 1 $TOTAL_EMAILS`; do
++for i in `jot $TOTAL_EMAILS 1`; do
+   # write the 'To:' field with all recipients previously stored in the array
+   TO="$TO <${ARR_EMAILS[$i]}>,"
+ done
+@@ -129,7 +129,7 @@
+ cat >> $TEMPFILE
+ echo >> $TEMPFILE
+ 
+-for i in `seq 1 $TOTAL_ATTACHMENTS`; do
++for i in `jot $TOTAL_ATTACHMENTS 1`; do
+   echo "--$BOUNDARY" >> $TEMPFILE
+   echo "Content-Type: ${TYPE[$i]}" >> $TEMPFILE
+   echo "Content-Disposition: attachment; filename=\"${BASEATTACHMENT[$i]}\"" >> $TEMPFILE
+@@ -143,14 +143,14 @@
+ echo "--$BOUNDARY--" >> $TEMPFILE
+ echo >> $TEMPFILE
+ 
+-for i in `seq 1 $TOTAL_EMAILS`; do
++for i in `jot $TOTAL_EMAILS 1`; do
+   # put all recipients together to call sendmail below
+   RECIPIENTS="$RECIPIENTS ${ARR_EMAILS[$i]}"
+ done
+ 
+ cat $TEMPFILE | $SENDMAIL $SENDMAIL_OPTS $RECIPIENTS # here we call sendmail
+ 
+-for i in `seq 1 $TOTAL_ATTACHMENTS`; do
++for i in `jot $TOTAL_ATTACHMENTS 1`; do
+   /bin/rm -f ${TEMPUUENCODED[$i]} # remove all temp files created
+ done
+ 

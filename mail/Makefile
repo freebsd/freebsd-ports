@@ -30,6 +30,7 @@
     SUBDIR += batv-milter
     SUBDIR += bayespam
     SUBDIR += bbmail
+    SUBDIR += biabam
     SUBDIR += biffer
     SUBDIR += bincimap
     SUBDIR += bmf
