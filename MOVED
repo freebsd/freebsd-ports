@@ -2163,3 +2163,4 @@ audio/xaylet||2011-05-03|Has expired: Upstream disapear and distfile is no more 
 science/oases||2011-05-03|Has expired: Upstream disapear and distfile is no more available
 shells/pash||2011-05-03|Has expired: Upstream disapear and distfile is no more available
 www/codeigniter|www/codeigniter17|2011-05-03|Renamed to track deprecated branch
+www/codeigniter-devel||2011-05-03|Removed
