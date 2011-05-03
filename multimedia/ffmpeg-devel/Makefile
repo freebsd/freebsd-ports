@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ffmpeg
-DISTVERSION=	2011-03-21
+DISTVERSION=	2011-05-03
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mm
@@ -27,7 +27,7 @@ LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.GPLv2
 LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPLv2.1
 LICENSE_COMB=	multi
 
-GIT_SNAPSHOT=	cf740790677b5101b59e33f4f40d375068c04ada
+GIT_SNAPSHOT=	c402ce418a9e7b456c383e097ad772f218a004c7
 GIT_SUFFIX=	${GIT_SNAPSHOT:C/^(.......).*$/\1/g}
 
 USE_XZ=		yes
@@ -85,7 +85,6 @@ COMPAT_HEADERS=libavcodec/avcodec.h \
 	libavutil/mem.h \
 	libavutil/pixfmt.h \
 	libavutil/rational.h \
-	libavutil/sha1.h \
 	libpostproc/postprocess.h \
 	libswscale/swscale.h
 
