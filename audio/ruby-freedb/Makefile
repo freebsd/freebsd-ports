@@ -25,6 +25,9 @@ INSTALL_TARGET=	site-install
 DOCS=		CHANGELOG	README	doc
 EXAMPLES=	examples/*.rb
 
+post-patch:
+	${REINPLACE_CMD} -E -e "s,RSTRING\(([^)]+)\)->ptr,RSTRING_PTR(\1),g" ${WRKSRC}/freedb_cdrom.c
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
