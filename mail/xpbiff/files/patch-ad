@@ -1,0 +1,8 @@
+--- Imakefile.org	Thu Sep 21 23:42:04 2000
++++ Imakefile	Thu Sep 21 23:42:16 2000
+@@ -62,4 +62,4 @@
+            SRCS = xpbiff.c $(CONVSRC)
+            OBJS = xpbiff.o $(CONVOBJ)
+ 
+-ComplexProgramTarget(xpbiff)
++ComplexProgramTargetNoMan(xpbiff)

@@ -753,6 +753,7 @@
     SUBDIR += xmail
     SUBDIR += xmailbox
     SUBDIR += xmailwatcher
+    SUBDIR += xpbiff
     SUBDIR += xpi-displayquota
     SUBDIR += zabit
     SUBDIR += zmailer
