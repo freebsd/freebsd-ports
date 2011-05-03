@@ -17,6 +17,9 @@ COMMENT=	A framework for developing PHP web applications
 
 USE_ZIP=	yes
 
+LATEST_LINK=	codeigniter17
+CONFLICTS=	codeigniter-2.[0-9]*
+
 NO_BUILD=	yes
 USE_PHP=	session pcre
 WANT_PHP_WEB=	yes
