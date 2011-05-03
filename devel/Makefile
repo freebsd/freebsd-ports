@@ -211,7 +211,6 @@
     SUBDIR += codeworker
     SUBDIR += colorer
     SUBDIR += colorgcc
-    SUBDIR += common_msgs
     SUBDIR += commoncpp
     SUBDIR += compiler-rt
     SUBDIR += compiz-bcop
