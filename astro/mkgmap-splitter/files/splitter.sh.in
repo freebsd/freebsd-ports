@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+JAVA="%%LOCALBASE%%/bin/java"
+
+exec "${JAVA}" -Xmx1024m -jar %%DATADIR%%/splitter.jar "$@"
