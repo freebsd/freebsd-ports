@@ -42,6 +42,7 @@
     SUBDIR += match
     SUBDIR += merkaartor
     SUBDIR += mkgmap
+    SUBDIR += mkgmap-splitter
     SUBDIR += mymoon
     SUBDIR += nightfall
     SUBDIR += nova
