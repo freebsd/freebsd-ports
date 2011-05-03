@@ -27,6 +27,12 @@ INSTALL_TARGET=	site-install
 
 DOCS=		README TODO doc
 
+post-patch:
+	${REINPLACE_CMD} -E \
+		-e 's|RSTRING\(([^)]+)\)->len|RSTRING_LEN(\1)|g' \
+		-e 's|RSTRING\(([^)]+)\)->ptr|RSTRING_PTR(\1)|g' \
+		${WRKSRC}/musicbrainz.c
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
