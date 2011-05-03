@@ -337,6 +337,7 @@
     SUBDIR += librsync
     SUBDIR += libsocket++
     SUBDIR += libsocketcpp
+    SUBDIR += libsrtp
     SUBDIR += libtcp4u
     SUBDIR += libtnl
     SUBDIR += libtrace
