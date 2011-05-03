@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	multi_json
-PORTVERSION=	0.0.5
+PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
