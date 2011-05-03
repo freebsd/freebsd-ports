@@ -3237,6 +3237,7 @@
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rapt
     SUBDIR += rubygem-rascut
+    SUBDIR += rubygem-rash
     SUBDIR += rubygem-rcov
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-rparsec
