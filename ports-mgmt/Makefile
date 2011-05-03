@@ -25,6 +25,7 @@
     SUBDIR += p5-FreeBSD-Ports-INDEXhash
     SUBDIR += packagekit
     SUBDIR += packagekit-qt4
+    SUBDIR += pbi-manager
     SUBDIR += pib
     SUBDIR += pkg-orphan
     SUBDIR += pkg_add_it
