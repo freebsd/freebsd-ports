@@ -395,6 +395,7 @@
 %%WWWDIR%%/lang/strings_turkish.txt
 %%WWWDIR%%/lang/strings_ukrainian.txt
 %%WWWDIR%%/lang/strings_urdu.txt
+%%WWWDIR%%/lang/strings_vietnamese.txt
 %%WWWDIR%%/lang/strings_volapuk.txt
 %%WWWDIR%%/library/README.libs
 %%WWWDIR%%/library/adodb/adodb-active-record.inc.php
@@ -924,8 +925,11 @@
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_russian.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_slovak.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_spanish.txt
+%%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_swedish.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_swissgerman.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_tagalog.txt
+%%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_turkish.txt
+%%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_vietnamese.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/pages/config.php
 %%WWWDIR%%/plugins/MantisCoreFormatting/pages/config_edit.php
 %%WWWDIR%%/plugins/MantisGraph/MantisGraph.php
@@ -965,6 +969,7 @@
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_swedish.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_swissgerman.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_tagalog.txt
+%%WWWDIR%%/plugins/MantisGraph/lang/strings_vietnamese.txt
 %%WWWDIR%%/plugins/MantisGraph/pages/bug_graph_bycategory.php
 %%WWWDIR%%/plugins/MantisGraph/pages/bug_graph_bystatus.php
 %%WWWDIR%%/plugins/MantisGraph/pages/bug_graph_page.php
@@ -998,6 +1003,7 @@
 %%WWWDIR%%/plugins/XmlImportExport/ImportXml/Issue.php
 %%WWWDIR%%/plugins/XmlImportExport/ImportXml/Mapper.php
 %%WWWDIR%%/plugins/XmlImportExport/XmlImportExport.php
+%%WWWDIR%%/plugins/XmlImportExport/lang/strings_afrikaans.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_arabic.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_breton.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_catalan.txt
@@ -1024,6 +1030,8 @@
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_spanish.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_swissgerman.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_tagalog.txt
+%%WWWDIR%%/plugins/XmlImportExport/lang/strings_turkish.txt
+%%WWWDIR%%/plugins/XmlImportExport/lang/strings_vietnamese.txt
 %%WWWDIR%%/plugins/XmlImportExport/mantis.dtd
 %%WWWDIR%%/plugins/XmlImportExport/pages/export.php
 %%WWWDIR%%/plugins/XmlImportExport/pages/import.php
@@ -1079,6 +1087,7 @@
 %%WWWDIR%%/tests/soap/EnumTest.php
 %%WWWDIR%%/tests/soap/FilterTest.php
 %%WWWDIR%%/tests/soap/IssueAddTest.php
+%%WWWDIR%%/tests/soap/IssueMonitorTest.php
 %%WWWDIR%%/tests/soap/IssueNoteTest.php
 %%WWWDIR%%/tests/soap/IssueUpdateTest.php
 %%WWWDIR%%/tests/soap/LoginTest.php
