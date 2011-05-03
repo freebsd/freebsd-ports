@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sdparm
-PORTVERSION=	1.05
+PORTVERSION=	1.06
 CATEGORIES=	sysutils
 MASTER_SITES=	http://sg.danny.cz/sg/p/
 EXTRACT_SUFX=	.tgz
