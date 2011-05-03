@@ -49,6 +49,7 @@ lib/openvpn-down-root.so
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/sign-req
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/vars
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/whichopensslcnf
+%%PORTDOCS%%%%DOCSDIR%%/management-notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/README
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/client.conf
 %%PORTDOCS%%%%DOCSDIR%%/sample-config-files/firewall.sh
