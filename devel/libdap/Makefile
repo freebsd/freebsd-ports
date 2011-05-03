@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdap
-PORTVERSION=	3.11.0
+PORTVERSION=	3.11.1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.opendap.org/pub/source/ \
 		LOCAL/sunpoet
