@@ -25,6 +25,9 @@ COMMENT=	A secure alternative to widely-used Sendmail
 CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-35-9].* postfix-current-2.* \
 		sendmail-8.* sendmail-*-8.* smail-3.* zmailer-2.*
 
+DEPRECATED=	no further upstream development; please consider upgrading
+EXPIRATION_DATE=2011-06-02
+
 MAKE_JOBS_SAFE=	yes
 NO_LATEST_LINK=	yes
 USE_SUBMAKE=	yes
