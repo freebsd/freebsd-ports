@@ -34,6 +34,10 @@ post-patch:
 	${REINPLACE_CMD} -E \
 		-e "s,^(require[[:space:]]+')./esd.so('.*),\1esd\2," \
 		${WRKSRC}/test/*.rb
+	${REINPLACE_CMD} -E \
+		-e 's|RSTRING\(([^)]+)\)->len|RSTRING_LEN(\1)|g' \
+		-e 's|RSTRING\(([^)]+)\)->ptr|RSTRING_PTR(\1)|g' \
+		${WRKSRC}/esd.c
 
 post-install:
 .if !defined(NOPORTDOCS)
