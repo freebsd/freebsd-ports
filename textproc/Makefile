@@ -1140,6 +1140,7 @@
     SUBDIR += rubygem-spreadsheet
     SUBDIR += rubygem-syntax
     SUBDIR += rubygem-termcolor
+    SUBDIR += rubygem-terminal-table
     SUBDIR += rubygem-tidy
     SUBDIR += rubygem-xml-simple
     SUBDIR += rubygem-xslt
