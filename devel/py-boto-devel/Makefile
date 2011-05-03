@@ -7,6 +7,7 @@
 
 PORTNAME=	boto
 PORTVERSION=	2.0b4
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		CHEESESHOP
@@ -19,6 +20,6 @@ COMMENT=	Python interface to Amazon Web Services
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
-CONFLICTS=	py2[0-9]-boto-[0-9]*
+CONFLICTS=	p5-Net-Amazon-Route53-[0-9]* py2[0-9]-boto-[0-9]*
 
 .include <bsd.port.mk>

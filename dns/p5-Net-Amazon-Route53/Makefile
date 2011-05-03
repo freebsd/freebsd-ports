@@ -7,12 +7,15 @@
 
 PORTNAME=	Net-Amazon-Route53
 PORTVERSION=	0.110310
+PORTREVISION=	1
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	Manage your DNS entries on Amazon's Route53 service
+
+CONFLICTS=	py[23][0-9]-boto-devel-[0-9]*
 
 RUN_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
