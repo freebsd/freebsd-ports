@@ -90,10 +90,6 @@ RUN_DEPENDS+=	${FONTSCALE}:${X_FONTS_TTF_PORT} \
 CFLAGS+=	-mminimal-toc
 .endif
 
-.if ${ARCH} == "amd64" && ${OSVERSION} >= 900000
-BROKEN=		does not compile on FreeBSD 9.X
-.endif
-
 pre-configure:
 	${MKDIR} ${WRKSRC}/mkspecs
 	${LN} -sf ${LOCALBASE}/bin/qmake-qt4 ${WRKSRC}/bin/qmake
