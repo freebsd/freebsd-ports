@@ -20,6 +20,9 @@ DISTFILES=	VMware-workstation-${PORTVERSION:R}-${PORTVERSION:E}${EXTRACT_SUFX}:v
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	A virtual machine emulator - a full PC in a window
 
+DEPRECATED=	No more distfiles available. emulators/virtualbox-ose can be used as a replacement
+EXPIRATION_DATE=	2011-07-01
+
 RUN_DEPENDS=	/dev/rtc:${PORTSDIR}/emulators/rtc
 
 RESTRICTED=	Not sure if we can redistribute it
