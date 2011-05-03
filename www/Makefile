@@ -109,7 +109,7 @@
     SUBDIR += cmsmadesimple
     SUBDIR += cntlm
     SUBDIR += cocoon
-    SUBDIR += codeigniter-devel
+    SUBDIR += codeigniter
     SUBDIR += codeigniter17
     SUBDIR += comclear
     SUBDIR += commonist
