@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	iplike
-PORTVERSION=	1.0.9
+PORTVERSION=	2.0.0
 CATEGORIES=	databases
-MASTER_SITES=	SF/opennms/IPLIKE/stable-1.0/
+MASTER_SITES=	SF/opennms/IPLIKE/stable-2.0/
 
 MAINTAINER=	venture37@geeklan.co.uk
 COMMENT=	C implementation of the OpenNMS iplike stored procedure
