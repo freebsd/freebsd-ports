@@ -537,7 +537,6 @@
     SUBDIR += mkgichessclub
     SUBDIR += mkhexgrid
     SUBDIR += monkeybubble
-    SUBDIR += monopd
     SUBDIR += monster-masher
     SUBDIR += monsterz
     SUBDIR += moon-buggy
