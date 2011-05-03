@@ -1,5 +1,4 @@
-The server for Team Speak a voice chat program which supports multiple
-channels with different rate codecs and several people on each channel.
-Primarily aimed at team gamers but can be used as an IP phone as well.
+A proprietary software which allows groups of people to speak over
+the Internet.  This port contains the TeamSpeak 3 server part.
 
 WWW: http://www.teamspeak.com

@@ -202,3 +202,4 @@ vdr:*:938:938::0:0:vdr user:/nonexistent:/usr/sbin/nologin
 noip:*:939:939::0:0:noip user:/nonexistent:/usr/sbin/nologin
 _tcpproxy:*:940:940::0:0:tcpproxy user:/nonexistent:/usr/sbin/nologin
 cego:*:941:941::0:0:cego user:/usr/local/cego:/usr/sbin/nologin
+teamspeak:*:942:942::0:0:TeamSpeak user:/nonexistent:/sbin/nologin

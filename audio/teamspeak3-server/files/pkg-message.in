@@ -1,0 +1,12 @@
+
+To enable the TeamSpeak server, set
+
+  teamspeak_enable="YES"
+
+in your /etc/rc.conf and then use it like any other service.
+
+If you have a license file (licensekey.dat) and/or ts3server.ini,
+put it into %%PREFIX%%/etc/teamspeak
+
+To see the admin token after the first start, have a look
+into the logs in /var/log/teamspeak
