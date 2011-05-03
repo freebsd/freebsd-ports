@@ -489,6 +489,7 @@ systemsim-cell-*	emulators/linux-systemsimcell	Redistribution of pre-compiled
 						binaries is not permitted
 scv-1.0p2-sysc*		cad/scv			License agreement required
 tcetest_*		games/linux-enemyterritory-tce	Redistribution limited
+teamspeak*		audio/teamspeak3_server	No redistribution
 texcm-ttf-20010117/*	x11-fonts/texcm-ttf	Cannot be sold or distributed
 						with any commercial product
 timidity-*		audio/timidity		Uses copyrighted patches

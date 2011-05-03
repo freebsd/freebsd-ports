@@ -1,46 +1,81 @@
-# New ports collection makefile for:	teamspeak_server
+# Ports collection Makefile for:	teamspeak3-server
 # Date created:				22 January 2003
 # Whom:					Daniel O'Connor
 #
 # $FreeBSD$
 #
 
-PORTNAME=	teamspeak_server
-PORTVERSION=	2.0.24.01
+PORTNAME=	teamspeak3-server
+PORTVERSION=	3.0.0.b30
 CATEGORIES=	audio net
-MASTER_SITES=	ftp://ftp.freenet.de/pub/4players/teamspeak.org/releases/:0 \
-		ftp://ftp.freenet.de/pub/4players/teamspeak.org/developer/server/202401/:1
-DISTFILES=	ts2_server_rc2_202319.tar.bz2:0 server_linux:1
-DIST_SUBDIR=	teamspeak
-EXTRACT_ONLY=	ts2_server_rc2_202319.tar.bz2
+MASTER_SITES=	http://teamspeak.gameserver.gamed.de/ts3/releases/beta-30/ \
+		http://ftp.4players.de/pub/hosted/ts3/releases/beta-30/
+DISTNAME=	${PORTNAME}_freebsd-${TEAMSPEAK_ARCH}-3.0.0-beta30
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hirner@bitfire.at
 COMMENT=	Server side of the TeamSpeak group voice chat system
 
-WRKSRC=		${WRKDIR}/tss2_rc2
-ONLY_FOR_ARCHS=	i386
+USE_ICONV=	yes
+USE_LDCONFIG=	${PREFIX}/lib/teamspeak/server
+USE_RC_SUBR=	teamspeak
+SUB_FILES=	pkg-message
+
+RESTRICTED=	No redistribution
+ONLY_FOR_ARCHS=	amd64 i386
+
 NO_BUILD=	yes
-USE_LINUX=	yes
-PKGDEINSTALL=	${PKGINSTALL}
 
-USE_RC_SUBR=	teamspeak-server
+USERS=	teamspeak
+GROUPS=	teamspeak
 
-pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
+LICENSE=	teamspeak
+LICENSE_NAME=	TeamSpeak 3.x End User License Agreement
+LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
+LICENSE_FILE=	${FILESDIR}/LICENSE
+
+CONFLICTS=	teamspeak_server-[0-9]*
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} ==	"i386"
+TEAMSPEAK_ARCH=	x86
+.endif
+.if ${ARCH} ==	"amd64"
+TEAMSPEAK_ARCH=	amd64
+.endif
+WRKSRC=	${WRKDIR}/${PORTNAME}_freebsd-${TEAMSPEAK_ARCH}
+
+DBDIR=	/var/db/teamspeak
+ETCDIR=	${PREFIX}/etc/teamspeak
+LIBDIR=	${PREFIX}/lib/teamspeak/server
+LIBEXECDIR=	${PREFIX}/libexec/
+LOGDIR=	/var/log/teamspeak
+SHAREDIR=	${PREFIX}/share/teamspeak/server
+PORTDOCS=	ts3_serverquery_manual.pdf \
+		permissiondoc.txt \
+		server_quickstart.txt \
+		token_guide.txt \
+		server_upgrade.txt
 
 do-install:
-	@${MKDIR} ${PREFIX}/lib/teamspeak_server
-	${TAR} -C ${WRKSRC} -cf - . | ${TAR} -C ${PREFIX}/lib/teamspeak_server -xf -
-	@${INSTALL_PROGRAM} ${DISTDIR}/${DIST_SUBDIR}/server_linux \
-                 ${PREFIX}/lib/teamspeak_server
+	@${MKDIR} ${LIBDIR} ${SHAREDIR}
+	@${INSTALL_DATA} ${WRKSRC}/CHANGELOG ${SHAREDIR}
+	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${SHAREDIR}
+	@${INSTALL_LIB} ${WRKSRC}/*.so ${LIBDIR}
+	@${INSTALL_PROGRAM} ${WRKSRC}/ts3server_freebsd_${TEAMSPEAK_ARCH} \
+		${LIBEXECDIR}/teamspeak_server
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "sql serverquerydocs" ${SHAREDIR})
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.   for DOCFILE in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/doc/${DOCFILE} ${DOCSDIR}
+.   endfor
+.endif
 
 post-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
+	@${MKDIR} ${DBDIR} && ${CHOWN} -R ${USERS}:${GROUPS} ${DBDIR}
+	@${MKDIR} ${ETCDIR}
+	@${MKDIR} ${LOGDIR} && ${CHOWN} -R ${USERS}:${BINGRP} ${LOGDIR}
+	@${CAT} ${WRKDIR}/pkg-message
 
-post-deinstall:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGDEINSTALL} ${PORTNAME} POST-DEINSTALL
-
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
