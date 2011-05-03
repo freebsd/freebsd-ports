@@ -28,6 +28,12 @@ INSTALL_TARGET=	site-install
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+	${REINPLACE_CMD} -E \
+		-e 's|RSTRING\(([^)]+)\)->len|RSTRING_LEN(\1)|g' \
+		-e 's|RSTRING\(([^)]+)\)->ptr|RSTRING_PTR(\1)|g' \
+		${WRKSRC}/cdb.c
+
 post-extract:
 	${RM} -f ${WRKSRC}/cdb
 	${LN} -s `cd ${CDB_PORTDIR}; ${MAKE} -V WRKSRC` ${WRKSRC}/cdb
