@@ -16,5 +16,5 @@ lib/libvpx.a
 %%SHARED%%lib/libvpx.so
 %%SHARED%%lib/libvpx.so.0
 %%SHARED%%lib/libvpx.so.0.9
-%%SHARED%%lib/libvpx.so.0.9.5
+%%SHARED%%lib/libvpx.so.0.9.6
 @dirrm include/vpx
