@@ -1,5 +1,6 @@
 bin/rkward
 bin/rkward.bin
+bin/rkward.rbackend
 share/applications/kde4/rkward.desktop
 share/apps/katepart/syntax/rkward.xml
 share/apps/rkward/00saveload/import/import_csv.js
@@ -505,6 +506,7 @@ share/apps/rkward/x11device/export.xml
 share/apps/rkward/x11device/grid.js
 share/apps/rkward/x11device/grid.rkh
 share/apps/rkward/x11device/grid.xml
+share/config/rkward.knsrc
 %%PORTDOCS%%%%DOCSDIR%%/common
 %%PORTDOCS%%%%DOCSDIR%%/index.cache.bz2
 %%PORTDOCS%%%%DOCSDIR%%/index.docbook
@@ -588,6 +590,29 @@ lib/R/library/rkward/help/paths.rds
 lib/R/library/rkward/help/rkward.rdb
 lib/R/library/rkward/help/rkward.rdx
 lib/R/library/rkward/html/00Index.html
+lib/R/library/rkwardtests/DESCRIPTION
+lib/R/library/rkwardtests/INDEX
+lib/R/library/rkwardtests/Meta/Rd.rds
+lib/R/library/rkwardtests/Meta/hsearch.rds
+lib/R/library/rkwardtests/Meta/links.rds
+lib/R/library/rkwardtests/Meta/nsInfo.rds
+lib/R/library/rkwardtests/Meta/package.rds
+lib/R/library/rkwardtests/NAMESPACE
+lib/R/library/rkwardtests/R/rkwardtests
+lib/R/library/rkwardtests/R/rkwardtests.rdb
+lib/R/library/rkwardtests/R/rkwardtests.rdx
+lib/R/library/rkwardtests/help/AnIndex
+lib/R/library/rkwardtests/help/aliases.rds
+lib/R/library/rkwardtests/help/paths.rds
+lib/R/library/rkwardtests/help/rkwardtests.rdb
+lib/R/library/rkwardtests/help/rkwardtests.rdx
+lib/R/library/rkwardtests/html/00Index.html
+@dirrm lib/R/library/rkwardtests/html
+@dirrm lib/R/library/rkwardtests/help
+@dirrm lib/R/library/rkwardtests/doc
+@dirrm lib/R/library/rkwardtests/R
+@dirrm lib/R/library/rkwardtests/Meta
+@dirrm lib/R/library/rkwardtests
 @dirrm lib/R/library/rkward/html
 @dirrm lib/R/library/rkward/help
 @dirrm lib/R/library/rkward/R
