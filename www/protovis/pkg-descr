@@ -1,0 +1,20 @@
+Protovis - A Graphical Toolkit for Data Visualization
+
+Protovis composes custom views of data with simple marks such as bars and dots.
+Unlike low-level graphics libraries that quickly become tedious for
+visualization, Protovis defines marks through dynamic properties that encode
+data, allowing inheritance, scales and layouts to simplify construction.
+
+Protovis is free and open-source, provided under the BSD License. It uses
+JavaScript and SVG for web-native visualizations; no plugin required (though you
+will need a modern web browser)! Although programming experience is helpful,
+Protovis is mostly declarative and designed to be learned by example.
+
+This project is led by Mike Bostock and Jeff Heer of the Stanford Visualization
+Group, with significant help from Vadim Ogievetsky. We welcome your
+contributions and suggestions.
+
+See http://vis.stanford.edu/protovis/ for examples and documentation.
+See http://gitorious.org/protovis/ for source code and development.
+
+WWW: http://code.google.com/p/protovis-js/
