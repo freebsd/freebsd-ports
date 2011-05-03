@@ -8,7 +8,7 @@
 PORTNAME=	exact-image
 PORTVERSION=	0.8.5
 CATEGORIES=	graphics perl5 python
-MASTER_SITES=	http://dl.exactcode.de/oss/${PORTNAME}/
+MASTER_SITES=	http://dl.exactcode.de/oss/${PORTNAME}/ LOCAL/bf
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Fast image processing library
