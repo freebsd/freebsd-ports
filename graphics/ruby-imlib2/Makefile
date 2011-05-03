@@ -30,6 +30,9 @@ DOCSDIR=	${RUBY_MODDOCDIR}
 PORTDOCS=	*
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -E -e 's|RSTRING\(([^)]+)\)->len|RSTRING_LEN(\1)|g' ${WRKSRC}/imlib2.c
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODDOCDIR}
