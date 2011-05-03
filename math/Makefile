@@ -493,6 +493,7 @@
     SUBDIR += rkward
     SUBDIR += rkward-kde4
     SUBDIR += rngstreams
+    SUBDIR += ros-geometry
     SUBDIR += rpcalc
     SUBDIR += rpy
     SUBDIR += rpy2
