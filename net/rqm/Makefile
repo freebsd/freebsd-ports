@@ -15,7 +15,7 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	A graphical RTP quality monitor
 
 DEPRECATED=	Unmaintained, anachronistic, mail freebsd-ports@FreeBSD.org or ${MAINTAINER} if interested
-EXPIRATION=	2011-06-30
+EXPIRATION_DATE=	2011-06-30
 
 USE_TK=		yes
 LIB_DEPENDS=	uclmmbase:${PORTSDIR}/devel/uclmmbase
