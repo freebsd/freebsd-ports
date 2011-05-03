@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Chameleon
-DISTVERSION=	2.0-rc7
+DISTVERSION=	2.0-rc8
 CATEGORIES=	textproc www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -16,6 +16,6 @@ COMMENT=	A Python HTML/XML template language compiler
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGVERSION=	2.0_rc7
+PYDISTUTILS_PKGVERSION=	2.0_rc8
 
 .include <bsd.port.mk>
