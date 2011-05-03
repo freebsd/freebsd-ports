@@ -11,14 +11,3 @@ diff -urPN --exclude=CVS --exclude=.svn --exclude=00_TRANS.TBL export/home/cy/fr
      {
  	PolicyRule *r= compiler->dbcopy->createPolicyRule();
  	compiler->temp_ruleset->add(r);
-@@ -1080,9 +1079,7 @@
- 	add( new fillDirection("determine directions"               ));
- 
- // commented out for bug #2828602
--// ... and put back per #2844561
--// both bug reports/patches are by Tom Judge (tomjudge on sourceforge)
--	add( new SplitDirection("split rules with direction 'both'"  ));
-+//	add( new SplitDirection("split rules with direction 'both'"  ));
- 
-         add( new addLoopbackForRedirect(
-                  "add loopback to rules that permit redirected services" ) );
