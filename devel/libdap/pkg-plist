@@ -43,6 +43,7 @@ include/libdap/HTTPResponse.h
 include/libdap/Int16.h
 include/libdap/Int32.h
 include/libdap/InternalErr.h
+include/libdap/Keywords2.h
 include/libdap/Marshaller.h
 include/libdap/ObjectType.h
 include/libdap/PipeResponse.h
@@ -50,6 +51,7 @@ include/libdap/RCReader.h
 include/libdap/RValue.h
 include/libdap/Resource.h
 include/libdap/Response.h
+include/libdap/ResponseBuilder.h
 include/libdap/ResponseTooBigErr.h
 include/libdap/Sequence.h
 include/libdap/SignalHandler.h
@@ -84,7 +86,7 @@ include/libdap/xdr-datatypes.h
 lib/libdap.a
 lib/libdap.la
 lib/libdap.so
-lib/libdap.so.13
+lib/libdap.so.14
 lib/libdapclient.a
 lib/libdapclient.la
 lib/libdapclient.so
@@ -92,7 +94,7 @@ lib/libdapclient.so.4
 lib/libdapserver.a
 lib/libdapserver.la
 lib/libdapserver.so
-lib/libdapserver.so.8
+lib/libdapserver.so.9
 libdata/pkgconfig/libdap.pc
 libdata/pkgconfig/libdapclient.pc
 libdata/pkgconfig/libdapserver.pc
