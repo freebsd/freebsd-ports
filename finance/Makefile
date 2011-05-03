@@ -86,6 +86,7 @@
     SUBDIR += qhacc
     SUBDIR += qtstalker
     SUBDIR += quantlib
+    SUBDIR += rubygem-money
     SUBDIR += sabernetdcs-client
     SUBDIR += skrooge
     SUBDIR += sql-ledger
