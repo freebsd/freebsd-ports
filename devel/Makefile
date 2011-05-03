@@ -3263,6 +3263,7 @@
     SUBDIR += rubygem-shoulda
     SUBDIR += rubygem-soap4r
     SUBDIR += rubygem-spruz
+    SUBDIR += rubygem-state_machine
     SUBDIR += rubygem-stemmer
     SUBDIR += rubygem-stomp
     SUBDIR += rubygem-stream
