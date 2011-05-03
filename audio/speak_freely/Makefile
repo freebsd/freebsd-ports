@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Voice communication over data networks
 
 DEPRECATED=	Unmaintained, anachronistic, mail freebsd-ports@FreeBSD.org if interested
-EXPIRATION=	2011-06-30
+EXPIRATION_DATE=	2011-06-30
 
 LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm
 
