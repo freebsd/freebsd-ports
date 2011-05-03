@@ -65,7 +65,8 @@ PLIST_SUB+=	SHLIB_VER=${QT4_VERSION:C/-.*//} \
 		SHLIB_SHVER=${QT4_VERSION:R}
 
 .if defined(PACKAGE_BUILDING)
-CONFIGURE_ARGS+=-no-mmx -no-3dnow -no-sse -no-sse2
+CONFIGURE_ARGS+=-no-mmx -no-3dnow -no-sse -no-sse2 -no-sse3 \
+		-no-ssse3 -no-sse4.1 -no-sse4.2
 .endif #defined(PACKAGE_BUILDING)
 
 # .if defined(PORTNAME) && ${PORTNAME} != "xmlpatterns"
