@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	htmlentities
-PORTVERSION=	4.2.4
+PORTVERSION=	4.3.0
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
