@@ -5,6 +5,29 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110503
+  AFFECTS: users of www/codeigniter and www/codeigniter-devel
+  AUTHOR: glarkin@FreeBSD.org
+
+  www/codeigniter has been renamed to www/codeigniter17 to track the
+  legacy 1.7.* branch of Codeigniter development. www/codeigniter-devel
+  has been renamed to www/codeigniter to track the recommended 2.0.*
+  branch of Codeigniter development.
+
+  If you have Codeigniter 1.7.x installed and would like to continue using
+  it, please run one of the following commands to update its origin:
+
+  # portmaster -o www/codeigniter17 www/codeigniter
+  or
+  # portupgrade -o www/codeigniter17 www/codeigniter
+
+  If you have Codeigniter 2.0.x installed, please run one of the following
+  commands to update its origin:
+
+  # portmaster -o www/codeigniter www/codeigniter-devel
+  or
+  # portupgrade -o www/codeigniter www/codeigniter-devel
+
 20110427
   AFFECTS: users of mail/ezmlm-idx
   AUTHOR: glarkin@FreeBSD.org
