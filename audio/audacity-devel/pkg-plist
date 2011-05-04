@@ -1,5 +1,7 @@
 bin/audacity
+man/man1/audacity.1.gz
 share/applications/audacity.desktop
+%%DATADIR%%/EQDefaultCurves.xml
 %%DATADIR%%/nyquist/bug.lsp
 %%DATADIR%%/nyquist/dspprims.lsp
 %%DATADIR%%/nyquist/envelopes.lsp
@@ -11,9 +13,25 @@ share/applications/audacity.desktop
 %%DATADIR%%/nyquist/misc.lsp
 %%DATADIR%%/nyquist/nyinit.lsp
 %%DATADIR%%/nyquist/nyqmisc.lsp
+%%DATADIR%%/nyquist/nyquist-plot.txt
 %%DATADIR%%/nyquist/nyquist.lsp
 %%DATADIR%%/nyquist/printrec.lsp
 %%DATADIR%%/nyquist/profile.lsp
+%%DATADIR%%/nyquist/rawwaves/mand1.raw
+%%DATADIR%%/nyquist/rawwaves/mand10.raw
+%%DATADIR%%/nyquist/rawwaves/mand11.raw
+%%DATADIR%%/nyquist/rawwaves/mand12.raw
+%%DATADIR%%/nyquist/rawwaves/mand2.raw
+%%DATADIR%%/nyquist/rawwaves/mand3.raw
+%%DATADIR%%/nyquist/rawwaves/mand4.raw
+%%DATADIR%%/nyquist/rawwaves/mand5.raw
+%%DATADIR%%/nyquist/rawwaves/mand6.raw
+%%DATADIR%%/nyquist/rawwaves/mand7.raw
+%%DATADIR%%/nyquist/rawwaves/mand8.raw
+%%DATADIR%%/nyquist/rawwaves/mand9.raw
+%%DATADIR%%/nyquist/rawwaves/mandpluk.raw
+%%DATADIR%%/nyquist/rawwaves/marmstk1.raw
+%%DATADIR%%/nyquist/rawwaves/sinewave.raw
 %%DATADIR%%/nyquist/sal-parse.lsp
 %%DATADIR%%/nyquist/sal.lsp
 %%DATADIR%%/nyquist/seq.lsp
@@ -35,6 +53,7 @@ share/applications/audacity.desktop
 %%DATADIR%%/plug-ins/equalabel.ny
 %%DATADIR%%/plug-ins/highpass.ny
 %%DATADIR%%/plug-ins/lowpass.ny
+%%DATADIR%%/plug-ins/notch.ny
 %%DATADIR%%/plug-ins/pluck.ny
 %%DATADIR%%/plug-ins/rissetdrum.ny
 %%DATADIR%%/plug-ins/tremolo.ny
@@ -48,6 +67,7 @@ share/icons/hicolor/48x48/apps/audacity.png
 share/icons/hicolor/scalable/apps/audacity.svg
 share/locale/af/LC_MESSAGES/audacity.mo
 share/locale/ar/LC_MESSAGES/audacity.mo
+share/locale/be/LC_MESSAGES/audacity.mo
 share/locale/bg/LC_MESSAGES/audacity.mo
 share/locale/bn/LC_MESSAGES/audacity.mo
 share/locale/bs/LC_MESSAGES/audacity.mo
@@ -99,31 +119,32 @@ share/pixmaps/audacity.xpm
 share/pixmaps/audacity16.xpm
 share/pixmaps/audacity32.xpm
 share/pixmaps/gnome-mime-application-x-audacity-project.xpm
-@dirrmtry share/mime/packages
-@dirrmtry share/mime
-@dirrmtry share/locale/oc/LC_MESSAGES
-@dirrmtry share/locale/oc
-@dirrmtry share/locale/my/LC_MESSAGES
-@dirrmtry share/locale/my
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/ca@valencia/LC_MESSAGES
-@dirrmtry share/locale/ca@valencia
-@dirrmtry share/icons/hicolor/scalable/apps
-@dirrmtry share/icons/hicolor/scalable
-@dirrmtry share/icons/hicolor/48x48/apps
-@dirrmtry share/icons/hicolor/48x48
-@dirrmtry share/icons/hicolor/32x32/apps
-@dirrmtry share/icons/hicolor/32x32
-@dirrmtry share/icons/hicolor/24x24/apps
-@dirrmtry share/icons/hicolor/24x24
-@dirrmtry share/icons/hicolor/22x22/apps
-@dirrmtry share/icons/hicolor/22x22
-@dirrmtry share/icons/hicolor/16x16/apps
-@dirrmtry share/icons/hicolor/16x16
-@dirrmtry share/icons/hicolor
-@dirrmtry share/icons
+@dirrm share/mime/packages
+@dirrm share/mime
+@dirrm share/locale/oc/LC_MESSAGES
+@dirrm share/locale/oc
+@dirrm share/locale/my/LC_MESSAGES
+@dirrm share/locale/my
+@dirrm share/locale/km/LC_MESSAGES
+@dirrm share/locale/km
+@dirrm share/locale/ca@valencia/LC_MESSAGES
+@dirrm share/locale/ca@valencia
+@dirrm share/icons/hicolor/scalable/apps
+@dirrm share/icons/hicolor/scalable
+@dirrm share/icons/hicolor/48x48/apps
+@dirrm share/icons/hicolor/48x48
+@dirrm share/icons/hicolor/32x32/apps
+@dirrm share/icons/hicolor/32x32
+@dirrm share/icons/hicolor/24x24/apps
+@dirrm share/icons/hicolor/24x24
+@dirrm share/icons/hicolor/22x22/apps
+@dirrm share/icons/hicolor/22x22
+@dirrm share/icons/hicolor/16x16/apps
+@dirrm share/icons/hicolor/16x16
+@dirrm share/icons/hicolor
+@dirrm share/icons
 @dirrm %%DATADIR%%/plug-ins
+@dirrm %%DATADIR%%/nyquist/rawwaves
 @dirrm %%DATADIR%%/nyquist
 @dirrm share/audacity
 @dirrmtry share/applications
