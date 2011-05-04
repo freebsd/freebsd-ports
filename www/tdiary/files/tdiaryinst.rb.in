@@ -66,7 +66,6 @@ usage() if defined?($OPT_HELP)
 class TdiaryInstall
   attr_accessor :tdiarymaster
   attr_accessor :tdiarydocdir
-  attr_accessor :tdconfig
   attr_accessor :lang
   attr_reader   :euid
   attr_accessor :username
@@ -98,15 +97,12 @@ class TdiaryInstall
 
   def lang=(value)
     case value
-    when 'tdiary.conf-en' , 'en'
+    when 'en'
       @lang = 'en'
-      @tdconfig = 'tdiary.conf-en'
-    when 'tdiary.conf-ja' , 'ja'
+    when 'ja'
       @lang = 'ja'
-      @tdconfig = 'tdiary.conf-ja'
     when 'zh'
       @lang = 'zh'
-      @tdconfig = 'tdiary.conf-en'
     else
       raise "Unknown Language : #{value}"
     end
@@ -170,7 +166,6 @@ class TdiaryInstall
     FileUtils.cp_r("#{@tdiarymaster}/misc", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", opts)
     FileUtils.cp_r("#{@tdiarymaster}/plugin", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", opts)
     FileUtils.cp_r("#{@tdiarymaster}/skel", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", opts)
-    FileUtils.cp_r("#{@tdiarymaster}/spec", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", opts)
     FileUtils.cp_r("#{@tdiarymaster}/tdiary", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", opts)
     FileUtils.cp_r("#{@tdiarymaster}/theme", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}", opts)
     FileUtils.cp("#{@tdiarymaster}/index.rb", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/index.rb", @fileutilOptions)
@@ -181,18 +176,18 @@ class TdiaryInstall
   end
 
   def installConfig
-    tempfile = Tempfile.new("tdiary.conf-ja")
+    tempfile = Tempfile.new("tdiary.conf.beginner")
+    tempfile.write tdiaryConfReplace("#{@tdiarymaster}/tdiary.conf.beginner")
+    tempfile.close
+    FileUtils.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf.beginner", @fileutilOptions)
+
+    tempfile = Tempfile.new("tdiary.conf.sample")
     tempfile.write tdiaryConfReplace("#{@tdiarymaster}/tdiary.conf.sample")
     tempfile.close
-    FileUtils.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf-ja", @fileutilOptions)
-
-    tempfile = Tempfile.new("tdiary.conf-en") # sample configuration for English Environment
-    tempfile.write tdiaryConfReplace("#{@tdiarymaster}/misc/i18n/tdiary.conf.sample-en")
-    tempfile.close
-    FileUtils.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf-en", @fileutilOptions)
+    FileUtils.cp(tempfile.path, "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf.sample", @fileutilOptions)
 
     if ! FileTest.exist?("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf")
-      FileUtils.cp("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/#{@tdconfig}", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf", @fileutilOptions)
+      FileUtils.cp("#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf.sample", "#{@passwd.dir}/#{@httpdir}/#{@diarydir}/tdiary.conf", @fileutilOptions)
     end
 
     tempfile = Tempfile.new("dot.htaccess")
