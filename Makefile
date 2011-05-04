@@ -101,6 +101,10 @@ INDEX_SHELL=		/rescue/sh
 INDEX_SHELL=		/bin/sh
 .endif
 
+.if !defined(INDEX_PORTS)
+INDEX_PORTS=.
+.endif
+
 ${INDEXDIR}/${INDEXFILE}:
 	@${INDEX_ECHO_1ST} "Generating ${INDEXFILE} - please wait.."; \
 	if [ "${INDEX_PRISTINE}" != "" ]; then \
@@ -108,9 +112,9 @@ ${INDEXDIR}/${INDEXFILE}:
 	fi; \
 	tmpdir=`/usr/bin/mktemp -d -t index` || exit 1; \
 	trap "rm -rf $${tmpdir}; exit 1" 1 2 3 5 10 13 15; \
-	( cd ${.CURDIR} && make -j${INDEX_JOBS} INDEX_TMPDIR=$${tmpdir} BUILDING_INDEX=1 \
+	( cd ${.CURDIR}; for i in ${INDEX_PORTS}; do (cd $${i} && make -j${INDEX_JOBS} INDEX_TMPDIR=$${tmpdir} BUILDING_INDEX=1 \
 		__MAKE_SHELL=${INDEX_SHELL} \
-		ECHO_MSG="${INDEX_ECHO_MSG}" describe ) || \
+		ECHO_MSG="${INDEX_ECHO_MSG}" describe); done ) || \
 		(rm -rf $${tmpdir} ; \
 		if [ "${INDEX_QUIET}" = "" ]; then \
 			echo; \

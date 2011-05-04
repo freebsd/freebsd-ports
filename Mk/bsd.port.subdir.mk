@@ -50,11 +50,6 @@ README=			${TEMPLATES}/README.category
 MOVEDDIR?=		${PORTSDIR}
 MOVEDFILE?=		MOVED
 
-# XXX Are these needed here?  DESCR was set wrong for a few years
-MASTERDIR?=     ${.CURDIR}
-PKGDIR?=		${MASTERDIR}
-DESCR?=			${PKGDIR}/pkg-descr
-
 .include "${PORTSDIR}/Mk/bsd.commands.mk"
 
 .MAIN: all

@@ -137,11 +137,7 @@ QMAKESPEC?=	${QT_PREFIX}/share/qt4/mkspecs/freebsd-${QMAKE_COMPILER}
 QMAKESPEC?=	${QT_PREFIX}/share/qt4/mkspecs/freebsd-${QMAKE_BASE_COMPILER}
 .endif
 
-.if ${OSVERSION} < 700042 && ${ARCH} == "amd64"
-QTCPPFLAGS?=	-fno-gcse
-.else
 QTCPPFLAGS?=
-.endif
 QTCGFLIBS?=
 
 .endif # !defined(_POSTMKINCLUDED) && !defined(Qt_Pre_Include)

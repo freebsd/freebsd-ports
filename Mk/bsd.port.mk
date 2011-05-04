@@ -1276,6 +1276,10 @@ GID_FILES?=	${PORTSDIR}/GIDs
 UID_OFFSET?=	0
 GID_OFFSET?=	0
 
+# predefined accounts from src/etc/master.passwd
+# alpha numeric sort order
+USERS_BLACKLIST=	_dhcp _pflogd bin bind daemon games kmem mailnull man news nobody operator pop proxy root smmsp sshd toor tty uucp www
+
 LDCONFIG_DIR=	libdata/ldconfig
 LDCONFIG32_DIR=	libdata/ldconfig32
 
@@ -2480,6 +2484,7 @@ PKGREQ?=		${PKGDIR}/pkg-req
 PKGMESSAGE?=	${PKGDIR}/pkg-message
 
 TMPPLIST?=	${WRKDIR}/.PLIST.mktmp
+TMPGUCMD?=	${WRKDIR}/.PLIST.gucmd
 
 .for _CATEGORY in ${CATEGORIES}
 PKGCATEGORY?=	${_CATEGORY}
@@ -4178,6 +4183,7 @@ create-users-groups:
 .endif
 .endfor
 	@${ECHO_MSG} "===> Creating users and/or groups."
+	@${ECHO_CMD} "@exec echo \"===> Creating users and/or groups.\"" >> ${TMPPLIST}
 .for _group in ${GROUPS}
 # _bgpd:*:130:
 	@if ! ${GREP} -h ^${_group}: ${GID_FILES} >/dev/null 2>&1; then \
@@ -4192,7 +4198,9 @@ create-users-groups:
 		else \
 			${ECHO_MSG} "Using existing group \`$$group'."; \
 		fi; \
-		${ECHO_CMD} "@exec if ! ${PW} groupshow $$group >/dev/null 2>&1; then ${PW} groupadd $$group -g $$gid; fi" >> ${TMPPLIST}; \
+		${ECHO_CMD} "@exec if ! ${PW} groupshow $$group >/dev/null 2>&1; then \
+			echo \"Creating group '$$group' with gid '$$gid'.\"; \
+			${PW} groupadd $$group -g $$gid; else echo \"Using existing group '$$group'.\"; fi" >> ${TMPPLIST}; \
 	done
 .endfor
 .endif
@@ -4220,27 +4228,59 @@ create-users-groups:
 		else \
 			${ECHO_MSG} "Using existing user \`$$login'."; \
 		fi; \
-		${ECHO_CMD} "@exec if ! ${PW} usershow $$login >/dev/null 2>&1; then ${PW} useradd $$login -u $$uid -g $$gid $$class -c \"$$gecos\" -d $$homedir -s $$shell; fi" >> ${TMPPLIST}; \
+		${ECHO_CMD} "@exec if ! ${PW} usershow $$login >/dev/null 2>&1; then \
+			echo \"Creating user '$$login' with uid '$$uid'.\"; \
+			${PW} useradd $$login -u $$uid -g $$gid $$class -c \"$$gecos\" -d $$homedir -s $$shell; \
+			else echo \"Using existing user '$$login'.\"; fi" >> ${TMPPLIST}; \
 		case $$homedir in /nonexistent|/var/empty) ;; *) ${ECHO_CMD} "@exec ${INSTALL} -d -g $$gid -o $$uid $$homedir" >> ${TMPPLIST};; esac; \
 	done
 .endfor
 .if defined(GROUPS)
 .for _group in ${GROUPS}
-# _bgpd:*:130:
+# mail:*:6:postfix,clamav
 	@IFS=":"; ${GREP} -h ^${_group}: ${GID_FILES} | head -n 1 | while read group foo gid members; do \
 		gid=$$(($$gid+${GID_OFFSET})); \
 		IFS=","; for _login in $$members; do \
-			list=`${PW} usershow $${_login} -P | ${SED} -ne 's/.*Groups: //p'`; \
-			${ECHO_MSG} "Setting \`$${_login}' groups to \`$$list$${list:+,}${_group}'."; \
-			${PW} usermod $${_login} -G $$list$${list:+,}${_group}; \
-			${ECHO_CMD} "@exec list=\`${PW} usershow $${_login} -P | ${SED} -ne 's/.*Groups: //p'\`; ${PW} usermod $${_login} -G \$${list},${_group}" >> ${TMPPLIST}; \
+			for _user in ${USERS}; do \
+				if [ "x$${_user}" = "x$${_login}" ]; then \
+					list=`${PW} usershow $${_login} -P | ${SED} -ne 's/.*Groups: //p'`; \
+					${ECHO_MSG} "Setting \`$${_login}' groups to \`$$list$${list:+,}${_group}'."; \
+					${PW} usermod $${_login} -G $$list$${list:+,}${_group}; \
+					${ECHO_CMD} "@exec list=\`${PW} usershow $${_login} -P | ${SED} -ne 's/.*Groups: //p'\`; \
+					echo \"Setting '$${_login}' groups to '$$list$${list:+,}${_group}'.\";  \
+					${PW} usermod $${_login} -G $${list},${_group}" >> ${TMPPLIST}; \
+				else \
+					${ECHO_MSG} "==> DEBUG skip login $${_login} =>  not defined in USERS \"( ${USERS} )\""; \
+				fi; \
+			done; \
 		done; \
 	done
+.endfor
+.endif
+.if defined(USERS)
+.for _user in ${USERS}
+	@if [ ! ${USERS_BLACKLIST:M${_user}} ]; then \
+		${ECHO_CMD} "@unexec if ${PW} usershow ${_user} >/dev/null 2>&1; then \
+		echo \"==> You should manually remove the \\\"${_user}\\\" user. \"; fi" >> ${TMPPLIST}; \
+	fi
 .endfor
 .endif
 .endif
 .else
 	@${DO_NADA}
+.endif
+.endif
+
+# PR ports/152498
+# XXX Make sure the commands to create group(s) 
+# and user(s) are the first in pkg-plist
+.if !target(fix-plist-sequence)
+fix-plist-sequence: ${TMPPLIST}
+.if defined(GROUPS) || defined(USERS)
+	@${ECHO_CMD} "===> Correct pkg-plist sequence to create group(s) and user(s)"
+	@${EGREP} -e '^@exec echo.*Creating users and' -e '^@exec.*${PW}' -e '^@exec ${INSTALL} -d -g' ${TMPPLIST} > ${TMPGUCMD}
+	@${EGREP} -v -e '^@exec echo.*Creating users and' -e '^@exec.*${PW}' -e '^@exec ${INSTALL} -d -g' ${TMPPLIST} >> ${TMPGUCMD}
+	@${MV} -f ${TMPGUCMD} ${TMPPLIST}
 .endif
 .endif
 
@@ -4428,10 +4468,10 @@ _INSTALL_SEQ=	install-message check-install-conflicts run-depends lib-depends ap
 				pre-install-script generate-plist check-already-installed
 _INSTALL_SUSEQ= check-umask install-mtree pre-su-install \
 				pre-su-install-script create-users-groups do-install \
-				install-desktop-entries install-license \
+				install-desktop-entries install-license install-rc-script \
 				post-install post-install-script add-plist-info \
 				add-plist-docs add-plist-examples add-plist-data \
-				add-plist-post install-rc-script compress-man \
+				add-plist-post fix-plist-sequence compress-man \
 				install-ldconfig-file fake-pkg security-check
 _PACKAGE_DEP=	install
 _PACKAGE_SEQ=	package-message pre-package pre-package-script \
@@ -5638,8 +5678,14 @@ _DESCR=${DESCR}
 _DESCR=/dev/null
 . endif
 
+.  if defined(BUILDING_INDEX) && defined(INDEX_PORTS)
+INDEX_OUT=${INDEX_TMPDIR}/${INDEXFILE}.desc.aggr
+.  else
+INDEX_OUT=/dev/stdout
+.  endif
+
 describe:
-	@${ECHO_CMD} -n "${PKGNAME}|${.CURDIR}|${PREFIX}|"; \
+	@(${ECHO_CMD} -n "${PKGNAME}|${.CURDIR}|${PREFIX}|"; \
 	${ECHO_CMD} -n ${COMMENT:Q}; \
 	${ECHO_CMD} -n "|${_DESCR}|${MAINTAINER}|${CATEGORIES}|${_EXTRACT_DEPENDS}|${_PATCH_DEPENDS}|${_FETCH_DEPENDS}|${_BUILD_DEPENDS:O:u}|${_RUN_DEPENDS:O:u}|"; \
 	while read one two discard; do \
@@ -5651,7 +5697,7 @@ describe:
 			break; \
 			;; \
 		esac; \
-	done < ${DESCR}; ${ECHO_CMD}
+	done < ${DESCR}; ${ECHO_CMD}) >>${INDEX_OUT}
 . endif
 
 www-site:

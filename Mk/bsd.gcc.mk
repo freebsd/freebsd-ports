@@ -87,17 +87,9 @@ F77:=	${LOCALBASE}/intel_fc_80/bin/ifort
 # In some case we want to use g77 from lang/gcc34 (FreeBSD>=7) or f77
 # (FreeBSD<=6).
 . elif ${USE_FORTRAN} == g77
-.  if (${OSVERSION} > 700042)
 _USE_GCC:=	3.4
 FC:=	g77-34
 F77:=	g77-34
-.  else
-F77:=	f77
-FC:=	f77
-CC:=	gcc
-CXX:=	g++
-.  endif
-
 . else
 IGNORE=	specifies unknown value "${USE_FORTRAN}" for USE_FORTRAN
 . endif
