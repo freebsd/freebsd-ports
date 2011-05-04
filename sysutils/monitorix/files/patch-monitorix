@@ -1,24 +1,6 @@
---- monitorix.orig	2011-03-09 16:59:52.000000000 +0000
-+++ monitorix	2011-03-27 15:57:13.322625798 +0100
-@@ -47,7 +47,7 @@
- use constant RELDATE	=> "09-Mar-2011";
- 
- my $pid;
--my ($opt_config, $opt_debug, $opt_version);
-+my ($opt_config, $opt_pidfile, $opt_debug, $opt_version);
- my @graphs;
- my $root_disk;
- my $root_disk_p;
-@@ -138,7 +138,7 @@
- 
- sub usage {
- 	print(STDERR << "EOF");
--usage: monitorix -c|--config <config_file> [-d|--debug] [-v|--version]
-+usage: monitorix -c|--config <config_file> [-p|--pidfile <pidfile>] [-d|--debug] [-v|--version]
- 
- EOF
- 	exit(1);
-@@ -1609,10 +1609,8 @@
+--- monitorix.orig	2011-05-04 18:19:58.792045586 +0100
++++ monitorix	2011-05-04 18:46:51.729913889 +0100
+@@ -1654,10 +1654,8 @@
  		alarm $TIMEOUT;
  		open(IN, "df -P / |");
  		while(<IN>) {
@@ -27,70 +9,28 @@
 -				last;
 -			}
 +			next if /Filesystem/;
-+			@tmp = split;
++			($root_disk) = split;
  		}
  		close(IN);
  		alarm 0;
-@@ -1693,7 +1691,7 @@
+@@ -1734,9 +1732,8 @@
+ 			}
  		}
  	} elsif($os eq "FreeBSD") {
- 		$root_disk =~ s/.*\///;		# removes /dev/
+-		$root_disk =~ s/^.*dev\///;	# remove the /dev/ prefix
+-#		$root_disk =~ s/.*\///;		# removes /dev/
 -		$root_disk =~ s/...$//;		# removes part number
++		$root_disk =~ s/^.dev.//;	# remove the /dev/ prefix
 +		$root_disk =~ s/[sp][0-9][a-z]?$//;	# removes part number
  	}
- 	our $fs_hist = 0;
  
-@@ -1710,10 +1708,8 @@
- 		alarm $TIMEOUT;
- 		open(IN, "df -P / |");
- 		while(<IN>) {
--			if(/dev/ && /\//) {
--				@tmp = split(' ', $_);
--				last;
--			}
-+			next if /Filesystem/;
-+			@tmp = split;
- 		}
- 		close(IN);
- 		alarm 0;
-@@ -3661,6 +3657,7 @@
- # ----------------------------------------------------------------------------
- GetOptions(
- 	"config=s"	=> \$opt_config,
-+	"pidfile=s"	=> \$opt_pidfile,
- 	"debug"		=> \$opt_debug,
- 	"version"	=> \$opt_version,
- 	);
-@@ -3681,7 +3678,7 @@
+ 	# do exists in /proc/diskstats?
+@@ -3766,7 +3763,7 @@
  }
  
  # check configuration file syntax
--if(system("perl -wc $opt_config >/dev/null 2>&1")) {
-+if(!system("perl -wc $opt_config >/dev/null 2>&1")) {
- 	print("FATAL: configuration file '$opt_config' had compilation errors.\n");
+-if(system("perl -wc $opt_c >/dev/null 2>&1")) {
++if(!system("perl -wc $opt_c >/dev/null 2>&1")) {
+ 	print("FATAL: configuration file '$opt_c' had compilation errors.\n");
  	exit(1);
  }
-@@ -3698,14 +3695,22 @@
- 	exit(1);
- }
- 
--$0 = sprintf("%s %s%s%s",
-+$0 = sprintf("%s %s%s%s%s",
- 	$^V lt 5.6.2 ? monitorix : abs_path($0),
- 	$opt_config ? "-c $opt_config" : "",
-+	$opt_pidfile ? "-p $opt_pidfile" : "",
- 	$opt_debug ? " -d" : "",
- 	$opt_version ? " -v" : "");
- daemonize();
- logger("Starting Monitorix version " . VERSION . " (pid $pid).");
- 
-+if($opt_pidfile = abs_path($opt_pidfile)) {
-+	open(PIDFILE, ">", $opt_pidfile) 
-+		|| die("could not open $opt_pidfile for writing.");
-+	print(PIDFILE "$pid");
-+	close(PIDFILE);
-+}
-+
- if($opt_debug) {
- 	logger("Entering in debug mode.");
- 	logger("Changed process name to '$0'.");
