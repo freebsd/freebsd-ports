@@ -1,5 +1,5 @@
---- core/roscpp/src/libros/CMakeLists.txt.orig	2010-03-13 00:27:34.000000000 +0100
-+++ core/roscpp/src/libros/CMakeLists.txt	2010-12-03 18:53:09.000000000 +0100
+--- ./clients/cpp/roscpp/src/libros/CMakeLists.txt.orig	2011-03-02 01:15:17.000000000 +0100
++++ ./clients/cpp/roscpp/src/libros/CMakeLists.txt	2011-03-20 15:22:54.000000000 +0100
 @@ -2,9 +2,12 @@
  include(CheckFunctionExists)
  

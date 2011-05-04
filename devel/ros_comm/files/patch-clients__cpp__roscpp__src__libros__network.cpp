@@ -1,5 +1,5 @@
---- core/roscpp/src/libros/network.cpp.orig	2010-07-21 01:48:07.000000000 +0200
-+++ core/roscpp/src/libros/network.cpp	2010-12-03 20:18:21.000000000 +0100
+--- ./clients/cpp/roscpp/src/libros/network.cpp.orig	2011-03-02 01:15:17.000000000 +0100
++++ ./clients/cpp/roscpp/src/libros/network.cpp	2011-03-20 15:22:54.000000000 +0100
 @@ -34,6 +34,9 @@
  #include <ros/assert.h>
  
