@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libcli
-PORTVERSION=	1.9.4
-PORTREVISION=	1
+PORTVERSION=	1.9.5
 CATEGORIES=	devel
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	 http://cloud.github.com/downloads/dparrish/libcli/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Emulates a cisco style command-line interface
@@ -20,7 +19,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	lib/libcli.so \
-		lib/libcli.so.1.9.4 \
+		lib/libcli.so.1.9.5 \
 		lib/libcli.so.1.9 \
 		lib/libcli.so.19 \
 		include/libcli.h
