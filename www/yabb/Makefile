@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	yabb
-PORTVERSION=	2.4
-PORTREVISION=	2
+PORTVERSION=	2.5
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/YaBB%202/${PORTVERSION}
-DISTNAME=	YaBB_${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/YaBB%202/${PORTVERSION}%20AE
+DISTNAME=	YaBB_${PORTVERSION}_AE
 
 MAINTAINER=	rodrigo@bebik.net
 COMMENT=	The original free open-source forum written in Perl
@@ -33,6 +32,11 @@ SUB_LIST=	DIR=${DIR}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 ISOFILES=	Setup.pl Admin/ManageTemplates.pl Languages/English/Admin.lng \
 	Languages/English/Main.lng Templates/default/AdminCentre.template
+
+LICENSE=	YABB_PUBLIC_LICENCE
+LICENSE_NAME=	YABB PUBLIC LICENCE
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_TEXT=	Description of the license can be obtained from the following URL: http://www.yabbforum.com/licenses.php
 
 .include <bsd.port.pre.mk>
 

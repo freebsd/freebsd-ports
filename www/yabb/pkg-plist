@@ -1,6 +1,6 @@
 %%YABBDIR%%/AJS.js
 %%YABBDIR%%/AJS_fx.js
-%%YABBDIR%%/Admin/ViewMembers.pl
+%%YABBDIR%%/Admin/.htaccess
 %%YABBDIR%%/Admin/Admin.pl
 %%YABBDIR%%/Admin/AdminEdit.pl
 %%YABBDIR%%/Admin/AdminSubList.pl
@@ -10,7 +10,6 @@
 %%YABBDIR%%/Admin/EditHelpCentre.pl
 %%YABBDIR%%/Admin/ErrorLog.pl
 %%YABBDIR%%/Admin/GuardianAdmin.pl
-%%YABBDIR%%/Admin/index.html
 %%YABBDIR%%/Admin/MailMembers.pl
 %%YABBDIR%%/Admin/Maintenance.pl
 %%YABBDIR%%/Admin/ManageBoards.pl
@@ -29,10 +28,11 @@
 %%YABBDIR%%/Admin/Settings_News.pl
 %%YABBDIR%%/Admin/Settings_Security.pl
 %%YABBDIR%%/Admin/Smilies.pl
-%%YABBDIR%%/Admin/.htaccess
+%%YABBDIR%%/Admin/ViewMembers.pl
+%%YABBDIR%%/Admin/index.html
 %%YABBDIR%%/AdminIndex.pl
 %%YABBDIR%%/Backups/.htaccess
-%%YABBDIR%%/Boards/test.txt
+%%YABBDIR%%/Boards/.htaccess
 %%YABBDIR%%/Boards/announcements.txt
 %%YABBDIR%%/Boards/forum.control
 %%YABBDIR%%/Boards/forum.master
@@ -40,8 +40,8 @@
 %%YABBDIR%%/Boards/general.txt
 %%YABBDIR%%/Boards/index.html
 %%YABBDIR%%/Boards/recycle.txt
-%%YABBDIR%%/Boards/.htaccess
-%%YABBDIR%%/Buttons/English/yim.png
+%%YABBDIR%%/Boards/test.txt
+%%YABBDIR%%/Buttons/English/add_notify.png
 %%YABBDIR%%/Buttons/English/addbuddy.png
 %%YABBDIR%%/Buttons/English/addfav.png
 %%YABBDIR%%/Buttons/English/admin.png
@@ -62,12 +62,12 @@
 %%YABBDIR%%/Buttons/English/forward.png
 %%YABBDIR%%/Buttons/English/go_down.png
 %%YABBDIR%%/Buttons/English/go_up.png
-%%YABBDIR%%/Buttons/English/icq.png
 %%YABBDIR%%/Buttons/English/gtalk.png
 %%YABBDIR%%/Buttons/English/guest.png
 %%YABBDIR%%/Buttons/English/help.png
 %%YABBDIR%%/Buttons/English/hide.png
 %%YABBDIR%%/Buttons/English/home.png
+%%YABBDIR%%/Buttons/English/icq.png
 %%YABBDIR%%/Buttons/English/ignored.png
 %%YABBDIR%%/Buttons/English/locked.png
 %%YABBDIR%%/Buttons/English/login.png
@@ -114,11 +114,12 @@
 %%YABBDIR%%/Buttons/English/sticky.png
 %%YABBDIR%%/Buttons/English/thread.png
 %%YABBDIR%%/Buttons/English/www.png
-%%YABBDIR%%/Buttons/English/add_notify.png
-%%YABBDIR%%/Help/English/Admin/admin03_members.help
+%%YABBDIR%%/Buttons/English/yim.png
+%%YABBDIR%%/Help/.htaccess
+%%YABBDIR%%/Help/English/Admin/001.help
 %%YABBDIR%%/Help/English/Admin/admin01_cats.help
 %%YABBDIR%%/Help/English/Admin/admin02_boards.help
-%%YABBDIR%%/Help/English/Admin/001.help
+%%YABBDIR%%/Help/English/Admin/admin03_members.help
 %%YABBDIR%%/Help/English/Admin/admin04_security.help
 %%YABBDIR%%/Help/English/Admin/admin05_misc.help
 %%YABBDIR%%/Help/English/Admin/admin06_index.help
@@ -130,18 +131,18 @@
 %%YABBDIR%%/Help/English/Moderator/moderator01_threads.help
 %%YABBDIR%%/Help/English/Moderator/moderator02_posts.help
 %%YABBDIR%%/Help/English/User/001.help
+%%YABBDIR%%/Help/English/User/user00_agreement.help
 %%YABBDIR%%/Help/English/User/user01_begin.help
 %%YABBDIR%%/Help/English/User/user02_profile.help
 %%YABBDIR%%/Help/English/User/user03_posting.help
 %%YABBDIR%%/Help/English/User/user04_im.help
 %%YABBDIR%%/Help/English/User/user05_gloss.help
-%%YABBDIR%%/Help/.htaccess
 %%YABBDIR%%/Help/index.html
-%%YABBDIR%%/Languages/English/version.txt
-%%YABBDIR%%/Languages/English/agreement.txt
+%%YABBDIR%%/Languages/.htaccess
+%%YABBDIR%%/Languages/English/Admin.lng
 %%YABBDIR%%/Languages/English/Backup.lng
 %%YABBDIR%%/Languages/English/BoardIndex.lng
-%%YABBDIR%%/Languages/English/censor.txt
+%%YABBDIR%%/Languages/English/ContextHelp.lng
 %%YABBDIR%%/Languages/English/Debug.lng
 %%YABBDIR%%/Languages/English/Display.lng
 %%YABBDIR%%/Languages/English/Email.lng
@@ -172,15 +173,12 @@
 %%YABBDIR%%/Languages/English/TabMenu.lng
 %%YABBDIR%%/Languages/English/Templates.lng
 %%YABBDIR%%/Languages/English/UserSelect.lng
-%%YABBDIR%%/Languages/English/Admin.lng
-%%YABBDIR%%/Languages/.htaccess
+%%YABBDIR%%/Languages/English/agreement.txt
+%%YABBDIR%%/Languages/English/censor.txt
+%%YABBDIR%%/Languages/English/version.txt
 %%YABBDIR%%/Languages/index.html
-%%YABBDIR%%/Members/index.html
-%%YABBDIR%%/Members/.htaccess
-%%YABBDIR%%/Messages/.htaccess
-%%YABBDIR%%/Messages/index.html
-@unexec rm -f %D/%%YABBDIR%%/Setup.pl
-%%YABBDIR%%/Smilies/wink.gif
+%%YABBDIR%%/Setup.pl
+%%YABBDIR%%/Smilies/2vrolijk_08.gif
 %%YABBDIR%%/Smilies/angry.gif
 %%YABBDIR%%/Smilies/bath.gif
 %%YABBDIR%%/Smilies/beer.gif
@@ -203,21 +201,22 @@
 %%YABBDIR%%/Smilies/sad.gif
 %%YABBDIR%%/Smilies/shocked.gif
 %%YABBDIR%%/Smilies/smiley.gif
-%%YABBDIR%%/Smilies/thumbup.gif
 %%YABBDIR%%/Smilies/smiley_down.gif
 %%YABBDIR%%/Smilies/smiley_up.gif
 %%YABBDIR%%/Smilies/tekst-toppie.gif
 %%YABBDIR%%/Smilies/thumbdown.gif
 %%YABBDIR%%/Smilies/thumbsup.gif
+%%YABBDIR%%/Smilies/thumbup.gif
 %%YABBDIR%%/Smilies/tongue.gif
 %%YABBDIR%%/Smilies/undecided.gif
 %%YABBDIR%%/Smilies/vrolijk_1.gif
 %%YABBDIR%%/Smilies/vrolijk_26.gif
-%%YABBDIR%%/Smilies/2vrolijk_08.gif
-%%YABBDIR%%/Sources/YaBBC.pl
+%%YABBDIR%%/Smilies/wink.gif
+%%YABBDIR%%/Sources/.htaccess
 %%YABBDIR%%/Sources/AdvancedTabs.pl
 %%YABBDIR%%/Sources/BoardIndex.pl
 %%YABBDIR%%/Sources/Captcha.pl
+%%YABBDIR%%/Sources/ContextHelp.pl
 %%YABBDIR%%/Sources/DateTime.pl
 %%YABBDIR%%/Sources/Debug.pl
 %%YABBDIR%%/Sources/Decoder.pl
@@ -228,7 +227,6 @@
 %%YABBDIR%%/Sources/Favorites.pl
 %%YABBDIR%%/Sources/Guardian.pl
 %%YABBDIR%%/Sources/HelpCentre.pl
-%%YABBDIR%%/Sources/index.html
 %%YABBDIR%%/Sources/InstantMessage.pl
 %%YABBDIR%%/Sources/Load.pl
 %%YABBDIR%%/Sources/LogInOut.pl
@@ -245,10 +243,10 @@
 %%YABBDIR%%/Sources/Post.pl
 %%YABBDIR%%/Sources/Printpage.pl
 %%YABBDIR%%/Sources/Profile.pl
+%%YABBDIR%%/Sources/RSS.pl
 %%YABBDIR%%/Sources/Recent.pl
 %%YABBDIR%%/Sources/Register.pl
 %%YABBDIR%%/Sources/RemoveTopic.pl
-%%YABBDIR%%/Sources/RSS.pl
 %%YABBDIR%%/Sources/Search.pl
 %%YABBDIR%%/Sources/Security.pl
 %%YABBDIR%%/Sources/SendTopic.pl
@@ -262,19 +260,17 @@
 %%YABBDIR%%/Sources/System.pl
 %%YABBDIR%%/Sources/TabMenu.pl
 %%YABBDIR%%/Sources/UserSelect.pl
-%%YABBDIR%%/Sources/.htaccess
-%%YABBDIR%%/Templates/default/default.html
-%%YABBDIR%%/Templates/yabb21/yabb21.html
-%%YABBDIR%%/Templates/.htaccess
-%%YABBDIR%%/Templates/index.html
+%%YABBDIR%%/Sources/YaBBC.pl
+%%YABBDIR%%/Sources/index.html
 %%YABBDIR%%/Templates/Admin/default/adminbg.gif
 %%YABBDIR%%/Templates/Admin/default/admincatbg.gif
 %%YABBDIR%%/Templates/Admin/default/adminlogo.gif
 %%YABBDIR%%/Templates/Admin/default/admintopbg.gif
 %%YABBDIR%%/Templates/Admin/default/css.gif
 %%YABBDIR%%/Templates/Admin/default/xhtml.gif
-%%YABBDIR%%/Templates/Admin/default.css
-%%YABBDIR%%/Templates/Forum/default/zip.gif
+%%YABBDIR%%/Templates/Forum/default/7z.gif
+%%YABBDIR%%/Templates/Forum/default/Rotate.gif
+%%YABBDIR%%/Templates/Forum/default/RotateStop.gif
 %%YABBDIR%%/Templates/Forum/default/aarea.jpg
 %%YABBDIR%%/Templates/Forum/default/addbuddy.gif
 %%YABBDIR%%/Templates/Forum/default/addfav.gif
@@ -283,7 +279,6 @@
 %%YABBDIR%%/Templates/Forum/default/admin_move_split_splice.gif
 %%YABBDIR%%/Templates/Forum/default/admin_rem.gif
 %%YABBDIR%%/Templates/Forum/default/admin_split.gif
-%%YABBDIR%%/Templates/Forum/default/administrator.gif
 %%YABBDIR%%/Templates/Forum/default/aim.gif
 %%YABBDIR%%/Templates/Forum/default/alert.gif
 %%YABBDIR%%/Templates/Forum/default/alertmod.gif
@@ -295,7 +290,6 @@
 %%YABBDIR%%/Templates/Forum/default/arrow.gif
 %%YABBDIR%%/Templates/Forum/default/arrow_down.gif
 %%YABBDIR%%/Templates/Forum/default/arrow_up.gif
-%%YABBDIR%%/Templates/Forum/default/balloon2.gif
 %%YABBDIR%%/Templates/Forum/default/ban.gif
 %%YABBDIR%%/Templates/Forum/default/bar.gif
 %%YABBDIR%%/Templates/Forum/default/bars.gif
@@ -306,19 +300,42 @@
 %%YABBDIR%%/Templates/Forum/default/boards.gif
 %%YABBDIR%%/Templates/Forum/default/bold.gif
 %%YABBDIR%%/Templates/Forum/default/buddylist.gif
+%%YABBDIR%%/Templates/Forum/default/bull-blackarrow.gif
+%%YABBDIR%%/Templates/Forum/default/bull-blackball.gif
+%%YABBDIR%%/Templates/Forum/default/bull-blackcheck.gif
+%%YABBDIR%%/Templates/Forum/default/bull-blackpin.gif
+%%YABBDIR%%/Templates/Forum/default/bull-blacksq.gif
+%%YABBDIR%%/Templates/Forum/default/bull-bluearrow.gif
+%%YABBDIR%%/Templates/Forum/default/bull-blueball.gif
+%%YABBDIR%%/Templates/Forum/default/bull-bluecheck.gif
+%%YABBDIR%%/Templates/Forum/default/bull-bluepin.gif
+%%YABBDIR%%/Templates/Forum/default/bull-bluesq.gif
+%%YABBDIR%%/Templates/Forum/default/bull-greenarrow.gif
+%%YABBDIR%%/Templates/Forum/default/bull-greenball.gif
+%%YABBDIR%%/Templates/Forum/default/bull-greencheck.gif
+%%YABBDIR%%/Templates/Forum/default/bull-greenpin.gif
+%%YABBDIR%%/Templates/Forum/default/bull-greensq.gif
+%%YABBDIR%%/Templates/Forum/default/bull-redarrow.gif
+%%YABBDIR%%/Templates/Forum/default/bull-redball.gif
+%%YABBDIR%%/Templates/Forum/default/bull-redcheck.gif
+%%YABBDIR%%/Templates/Forum/default/bull-redpin.gif
+%%YABBDIR%%/Templates/Forum/default/bull-redsq.gif
 %%YABBDIR%%/Templates/Forum/default/cat.gif
 %%YABBDIR%%/Templates/Forum/default/cat_collall.gif
 %%YABBDIR%%/Templates/Forum/default/cat_collapse.gif
 %%YABBDIR%%/Templates/Forum/default/cat_expand.gif
-%%YABBDIR%%/Templates/Forum/default/catbg.jpg
 %%YABBDIR%%/Templates/Forum/default/catbg.png
+%%YABBDIR%%/Templates/Forum/default/catbg2.jpg
+%%YABBDIR%%/Templates/Forum/default/catbg2.png
 %%YABBDIR%%/Templates/Forum/default/center.gif
+%%YABBDIR%%/Templates/Forum/default/check.png
 %%YABBDIR%%/Templates/Forum/default/cheesy.gif
 %%YABBDIR%%/Templates/Forum/default/closed.gif
 %%YABBDIR%%/Templates/Forum/default/code.gif
 %%YABBDIR%%/Templates/Forum/default/code1.gif
 %%YABBDIR%%/Templates/Forum/default/confidential.gif
 %%YABBDIR%%/Templates/Forum/default/cool.gif
+%%YABBDIR%%/Templates/Forum/default/cross.png
 %%YABBDIR%%/Templates/Forum/default/cry.gif
 %%YABBDIR%%/Templates/Forum/default/css.gif
 %%YABBDIR%%/Templates/Forum/default/cssbold.gif
@@ -345,13 +362,9 @@
 %%YABBDIR%%/Templates/Forum/default/ftp.gif
 %%YABBDIR%%/Templates/Forum/default/gender.gif
 %%YABBDIR%%/Templates/Forum/default/gif.gif
-%%YABBDIR%%/Templates/Forum/default/grad_bottom.jpg
 %%YABBDIR%%/Templates/Forum/default/grad_bottom.png
-%%YABBDIR%%/Templates/Forum/default/grad_top.png
 %%YABBDIR%%/Templates/Forum/default/green0.gif
 %%YABBDIR%%/Templates/Forum/default/green1.gif
-%%YABBDIR%%/Templates/Forum/default/greenon.gif
-%%YABBDIR%%/Templates/Forum/default/grey1.gif
 %%YABBDIR%%/Templates/Forum/default/grin.gif
 %%YABBDIR%%/Templates/Forum/default/gtalk2.gif
 %%YABBDIR%%/Templates/Forum/default/guardian.gif
@@ -359,7 +372,6 @@
 %%YABBDIR%%/Templates/Forum/default/guest.gif
 %%YABBDIR%%/Templates/Forum/default/guestpm.gif
 %%YABBDIR%%/Templates/Forum/default/guestpmreply.gif
-%%YABBDIR%%/Templates/Forum/default/headerbg.png
 %%YABBDIR%%/Templates/Forum/default/help.gif
 %%YABBDIR%%/Templates/Forum/default/help1.gif
 %%YABBDIR%%/Templates/Forum/default/hide.gif
@@ -390,13 +402,14 @@
 %%YABBDIR%%/Templates/Forum/default/imopen3.gif
 %%YABBDIR%%/Templates/Forum/default/imstore.gif
 %%YABBDIR%%/Templates/Forum/default/index_drop.gif
-%%YABBDIR%%/Templates/Forum/default/info.gif
 %%YABBDIR%%/Templates/Forum/default/index_left.gif
 %%YABBDIR%%/Templates/Forum/default/index_left0.gif
 %%YABBDIR%%/Templates/Forum/default/index_right.gif
 %%YABBDIR%%/Templates/Forum/default/index_right0.gif
 %%YABBDIR%%/Templates/Forum/default/index_text.gif
 %%YABBDIR%%/Templates/Forum/default/index_togl.gif
+%%YABBDIR%%/Templates/Forum/default/info.gif
+%%YABBDIR%%/Templates/Forum/default/inputbutton.png
 %%YABBDIR%%/Templates/Forum/default/ip.gif
 %%YABBDIR%%/Templates/Forum/default/italicize.gif
 %%YABBDIR%%/Templates/Forum/default/jpe.gif
@@ -425,8 +438,6 @@
 %%YABBDIR%%/Templates/Forum/default/markunread.gif
 %%YABBDIR%%/Templates/Forum/default/me.gif
 %%YABBDIR%%/Templates/Forum/default/media.gif
-%%YABBDIR%%/Templates/Forum/default/mediacenter.jpg
-%%YABBDIR%%/Templates/Forum/default/menutop.jpg
 %%YABBDIR%%/Templates/Forum/default/menutop.png
 %%YABBDIR%%/Templates/Forum/default/message.gif
 %%YABBDIR%%/Templates/Forum/default/modify.gif
@@ -434,16 +445,6 @@
 %%YABBDIR%%/Templates/Forum/default/mozilla_blu.gif
 %%YABBDIR%%/Templates/Forum/default/mozilla_gray.gif
 %%YABBDIR%%/Templates/Forum/default/msn.gif
-%%YABBDIR%%/Templates/Forum/default/msn0.gif
-%%YABBDIR%%/Templates/Forum/default/msn1.gif
-%%YABBDIR%%/Templates/Forum/default/msn10.gif
-%%YABBDIR%%/Templates/Forum/default/msn14.gif
-%%YABBDIR%%/Templates/Forum/default/msn18.gif
-%%YABBDIR%%/Templates/Forum/default/msn2.gif
-%%YABBDIR%%/Templates/Forum/default/msn3.gif
-%%YABBDIR%%/Templates/Forum/default/msn34.gif
-%%YABBDIR%%/Templates/Forum/default/msn50.gif
-%%YABBDIR%%/Templates/Forum/default/msn66.gif
 %%YABBDIR%%/Templates/Forum/default/mycenter.gif
 %%YABBDIR%%/Templates/Forum/default/myspace.gif
 %%YABBDIR%%/Templates/Forum/default/new.gif
@@ -452,18 +453,17 @@
 %%YABBDIR%%/Templates/Forum/default/news.gif
 %%YABBDIR%%/Templates/Forum/default/next.gif
 %%YABBDIR%%/Templates/Forum/default/nn.gif
+%%YABBDIR%%/Templates/Forum/default/no_postcount.gif
 %%YABBDIR%%/Templates/Forum/default/noimg.gif
 %%YABBDIR%%/Templates/Forum/default/none.gif
 %%YABBDIR%%/Templates/Forum/default/notify.gif
 %%YABBDIR%%/Templates/Forum/default/off.gif
-%%YABBDIR%%/Templates/Forum/default/off_led.png
 %%YABBDIR%%/Templates/Forum/default/on.gif
-%%YABBDIR%%/Templates/Forum/default/on_led.png
 %%YABBDIR%%/Templates/Forum/default/online.gif
 %%YABBDIR%%/Templates/Forum/default/open.gif
 %%YABBDIR%%/Templates/Forum/default/palette.gif
-%%YABBDIR%%/Templates/Forum/default/palette_help.gif
 %%YABBDIR%%/Templates/Forum/default/palette1.gif
+%%YABBDIR%%/Templates/Forum/default/palette_help.gif
 %%YABBDIR%%/Templates/Forum/default/paperclip.gif
 %%YABBDIR%%/Templates/Forum/default/pdf.gif
 %%YABBDIR%%/Templates/Forum/default/perl.gif
@@ -483,8 +483,6 @@
 %%YABBDIR%%/Templates/Forum/default/poll_middle.gif
 %%YABBDIR%%/Templates/Forum/default/poll_mod.gif
 %%YABBDIR%%/Templates/Forum/default/poll_new.gif
-%%YABBDIR%%/Templates/Forum/default/poll_new2.gif
-%%YABBDIR%%/Templates/Forum/default/poll_new3.gif
 %%YABBDIR%%/Templates/Forum/default/poll_open.gif
 %%YABBDIR%%/Templates/Forum/default/poll_right.gif
 %%YABBDIR%%/Templates/Forum/default/poll_vvote.gif
@@ -504,10 +502,8 @@
 %%YABBDIR%%/Templates/Forum/default/quote2.gif
 %%YABBDIR%%/Templates/Forum/default/rar.gif
 %%YABBDIR%%/Templates/Forum/default/recycle.gif
-%%YABBDIR%%/Templates/Forum/default/red_folder.gif
 %%YABBDIR%%/Templates/Forum/default/red0.gif
 %%YABBDIR%%/Templates/Forum/default/red1.gif
-%%YABBDIR%%/Templates/Forum/default/redoff.gif
 %%YABBDIR%%/Templates/Forum/default/register.gif
 %%YABBDIR%%/Templates/Forum/default/remfav.gif
 %%YABBDIR%%/Templates/Forum/default/remove.gif
@@ -516,13 +512,12 @@
 %%YABBDIR%%/Templates/Forum/default/resize_hb.gif
 %%YABBDIR%%/Templates/Forum/default/resize_wb.gif
 %%YABBDIR%%/Templates/Forum/default/right.gif
+%%YABBDIR%%/Templates/Forum/default/rndcorner.png
+%%YABBDIR%%/Templates/Forum/default/rndcorner2.png
 %%YABBDIR%%/Templates/Forum/default/rolleyes.gif
-%%YABBDIR%%/Templates/Forum/default/Rotate.gif
-%%YABBDIR%%/Templates/Forum/default/RotateStop.gif
 %%YABBDIR%%/Templates/Forum/default/rss.png
 %%YABBDIR%%/Templates/Forum/default/sad.gif
 %%YABBDIR%%/Templates/Forum/default/search.gif
-%%YABBDIR%%/Templates/Forum/default/searchbg211.jpg
 %%YABBDIR%%/Templates/Forum/default/searchbg211.png
 %%YABBDIR%%/Templates/Forum/default/sendtopic.gif
 %%YABBDIR%%/Templates/Forum/default/session.gif
@@ -550,23 +545,20 @@
 %%YABBDIR%%/Templates/Forum/default/sub.gif
 %%YABBDIR%%/Templates/Forum/default/sup.gif
 %%YABBDIR%%/Templates/Forum/default/swf.gif
-%%YABBDIR%%/Templates/Forum/default/tab.gif
-%%YABBDIR%%/Templates/Forum/default/tab_selected.gif
-%%YABBDIR%%/Templates/Forum/default/tab_selected211.png
 %%YABBDIR%%/Templates/Forum/default/tab211.png
+%%YABBDIR%%/Templates/Forum/default/tab_selected211.png
 %%YABBDIR%%/Templates/Forum/default/tabadd.gif
 %%YABBDIR%%/Templates/Forum/default/tabdelete.gif
-%%YABBDIR%%/Templates/Forum/default/tar.gif
 %%YABBDIR%%/Templates/Forum/default/tabedit.gif
 %%YABBDIR%%/Templates/Forum/default/tabfill.gif
 %%YABBDIR%%/Templates/Forum/default/table.gif
-%%YABBDIR%%/Templates/Forum/default/tableft.gif
 %%YABBDIR%%/Templates/Forum/default/tableft211.png
 %%YABBDIR%%/Templates/Forum/default/tabright211.png
 %%YABBDIR%%/Templates/Forum/default/tabsave.gif
 %%YABBDIR%%/Templates/Forum/default/tabsep.gif
 %%YABBDIR%%/Templates/Forum/default/tabsep211.png
 %%YABBDIR%%/Templates/Forum/default/tabstart211.png
+%%YABBDIR%%/Templates/Forum/default/tar.gif
 %%YABBDIR%%/Templates/Forum/default/tar.gz.gif
 %%YABBDIR%%/Templates/Forum/default/td.gif
 %%YABBDIR%%/Templates/Forum/default/tele.gif
@@ -581,26 +573,29 @@
 %%YABBDIR%%/Templates/Forum/default/tr.gif
 %%YABBDIR%%/Templates/Forum/default/txt.gif
 %%YABBDIR%%/Templates/Forum/default/undecided.gif
-%%YABBDIR%%/Templates/Forum/default/url.gif
 %%YABBDIR%%/Templates/Forum/default/underline.gif
 %%YABBDIR%%/Templates/Forum/default/urgent.gif
+%%YABBDIR%%/Templates/Forum/default/url.gif
 %%YABBDIR%%/Templates/Forum/default/usage.gif
 %%YABBDIR%%/Templates/Forum/default/usagebar.gif
 %%YABBDIR%%/Templates/Forum/default/usageempty.gif
+%%YABBDIR%%/Templates/Forum/default/usrinfobg.png
 %%YABBDIR%%/Templates/Forum/default/valid-rss.png
 %%YABBDIR%%/Templates/Forum/default/valid-xhtml10.gif
 %%YABBDIR%%/Templates/Forum/default/vcss.gif
 %%YABBDIR%%/Templates/Forum/default/veryhotthread.gif
+%%YABBDIR%%/Templates/Forum/default/windowbgds.png
 %%YABBDIR%%/Templates/Forum/default/wink.gif
 %%YABBDIR%%/Templates/Forum/default/www.gif
 %%YABBDIR%%/Templates/Forum/default/xhtml.gif
 %%YABBDIR%%/Templates/Forum/default/xls.gif
 %%YABBDIR%%/Templates/Forum/default/xx.gif
-%%YABBDIR%%/Templates/Forum/default/yabbchelp.swf
 %%YABBDIR%%/Templates/Forum/default/yabblogo.png
 %%YABBDIR%%/Templates/Forum/default/yim.gif
-%%YABBDIR%%/Templates/Forum/default/7z.gif
-%%YABBDIR%%/Templates/Forum/yabb21/zip.gif
+%%YABBDIR%%/Templates/Forum/default/zip.gif
+%%YABBDIR%%/Templates/Forum/yabb21/7z.gif
+%%YABBDIR%%/Templates/Forum/yabb21/Rotate.gif
+%%YABBDIR%%/Templates/Forum/yabb21/RotateStop.gif
 %%YABBDIR%%/Templates/Forum/yabb21/addbuddy.gif
 %%YABBDIR%%/Templates/Forum/yabb21/addfav.gif
 %%YABBDIR%%/Templates/Forum/yabb21/alert.gif
@@ -613,8 +608,10 @@
 %%YABBDIR%%/Templates/Forum/yabb21/boards.gif
 %%YABBDIR%%/Templates/Forum/yabb21/cat_collapse.gif
 %%YABBDIR%%/Templates/Forum/yabb21/cat_expand.gif
+%%YABBDIR%%/Templates/Forum/yabb21/check.png
 %%YABBDIR%%/Templates/Forum/yabb21/cheesy.gif
 %%YABBDIR%%/Templates/Forum/yabb21/cool.gif
+%%YABBDIR%%/Templates/Forum/yabb21/cross.png
 %%YABBDIR%%/Templates/Forum/yabb21/cry.gif
 %%YABBDIR%%/Templates/Forum/yabb21/del_notify.gif
 %%YABBDIR%%/Templates/Forum/yabb21/doc.gif
@@ -648,9 +645,7 @@
 %%YABBDIR%%/Templates/Forum/yabb21/noimg.gif
 %%YABBDIR%%/Templates/Forum/yabb21/notify.gif
 %%YABBDIR%%/Templates/Forum/yabb21/off.gif
-%%YABBDIR%%/Templates/Forum/yabb21/off_led.png
 %%YABBDIR%%/Templates/Forum/yabb21/on.gif
-%%YABBDIR%%/Templates/Forum/yabb21/on_led.png
 %%YABBDIR%%/Templates/Forum/yabb21/online.gif
 %%YABBDIR%%/Templates/Forum/yabb21/pdf.gif
 %%YABBDIR%%/Templates/Forum/yabb21/pmadmin.gif
@@ -661,8 +656,6 @@
 %%YABBDIR%%/Templates/Forum/yabb21/recycle.gif
 %%YABBDIR%%/Templates/Forum/yabb21/remfav.gif
 %%YABBDIR%%/Templates/Forum/yabb21/rolleyes.gif
-%%YABBDIR%%/Templates/Forum/yabb21/Rotate.gif
-%%YABBDIR%%/Templates/Forum/yabb21/RotateStop.gif
 %%YABBDIR%%/Templates/Forum/yabb21/sad.gif
 %%YABBDIR%%/Templates/Forum/yabb21/shocked.gif
 %%YABBDIR%%/Templates/Forum/yabb21/smiley.gif
@@ -673,18 +666,17 @@
 %%YABBDIR%%/Templates/Forum/yabb21/thumbsup.gif
 %%YABBDIR%%/Templates/Forum/yabb21/thumbup.gif
 %%YABBDIR%%/Templates/Forum/yabb21/txt.gif
-%%YABBDIR%%/Templates/Forum/yabb21/usage.gif
 %%YABBDIR%%/Templates/Forum/yabb21/undecided.gif
+%%YABBDIR%%/Templates/Forum/yabb21/usage.gif
 %%YABBDIR%%/Templates/Forum/yabb21/usagebar.gif
 %%YABBDIR%%/Templates/Forum/yabb21/usageempty.gif
 %%YABBDIR%%/Templates/Forum/yabb21/wink.gif
 %%YABBDIR%%/Templates/Forum/yabb21/xls.gif
-%%YABBDIR%%/Templates/Forum/yabb21/7z.gif
-%%YABBDIR%%/Variables/index.html
-%%YABBDIR%%/Variables/.htaccess
+%%YABBDIR%%/Templates/Forum/yabb21/zip.gif
 %%YABBDIR%%/YaBB.js
 %%YABBDIR%%/YaBB.pl
 %%YABBDIR%%/ajax.js
+%%YABBDIR%%/avatars/angryboy.gif
 %%YABBDIR%%/avatars/baby.gif
 %%YABBDIR%%/avatars/bart.gif
 %%YABBDIR%%/avatars/batman.gif
@@ -729,20 +721,19 @@
 %%YABBDIR%%/avatars/tigger.gif
 %%YABBDIR%%/avatars/wacko.gif
 %%YABBDIR%%/avatars/winnie.gif
-%%YABBDIR%%/avatars/angryboy.gif
 %%YABBDIR%%/avatars/xena.gif
-%%YABBDIR%%/googiespell/spellc.gif
+%%YABBDIR%%/googiespell/GPL.txt
+%%YABBDIR%%/googiespell/blank.gif
 %%YABBDIR%%/googiespell/change_lang.gif
 %%YABBDIR%%/googiespell/cookiesupport.js
 %%YABBDIR%%/googiespell/googiespell.css
 %%YABBDIR%%/googiespell/googiespell.js
 %%YABBDIR%%/googiespell/googiespell_multiple.js
-%%YABBDIR%%/googiespell/GPL.txt
 %%YABBDIR%%/googiespell/indicator.gif
 %%YABBDIR%%/googiespell/logo.png
 %%YABBDIR%%/googiespell/ok.gif
-%%YABBDIR%%/googiespell/blank.gif
-%%YABBDIR%%/greybox/w_close.gif
+%%YABBDIR%%/googiespell/spellc.gif
+%%YABBDIR%%/greybox/g_close.gif
 %%YABBDIR%%/greybox/gb_scripts.js
 %%YABBDIR%%/greybox/gb_styles.css
 %%YABBDIR%%/greybox/header_bg.gif
@@ -750,48 +741,72 @@
 %%YABBDIR%%/greybox/loader_frame.html
 %%YABBDIR%%/greybox/next.gif
 %%YABBDIR%%/greybox/prev.gif
-%%YABBDIR%%/greybox/g_close.gif
+%%YABBDIR%%/greybox/w_close.gif
 %%YABBDIR%%/index.html
 %%YABBDIR%%/mediaplayer.swf
 %%YABBDIR%%/palette.js
 %%YABBDIR%%/piechart.js
+%%YABBDIR%%/shjs/sh_cpp.js
+%%YABBDIR%%/shjs/sh_css.js
+%%YABBDIR%%/shjs/sh_html.js
+%%YABBDIR%%/shjs/sh_java.js
+%%YABBDIR%%/shjs/sh_javascript.js
+%%YABBDIR%%/shjs/sh_main.js
+%%YABBDIR%%/shjs/sh_pascal.js
+%%YABBDIR%%/shjs/sh_perl.js
+%%YABBDIR%%/shjs/sh_php.js
+%%YABBDIR%%/shjs/sh_sql.js
+%%YABBDIR%%/shjs/styles/sh_style.css
 %%YABBDIR%%/ubbc.js
 %%YABBDIR%%/yabbc.js
-
-@unexec i='Members/admin.ims'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Members/admin.imstore'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Members/admin.log'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Members/admin.outbox'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Members/admin.rlog'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Members/admin.vars'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Members/broadcast.messages'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Members/memberinfo.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Members/memberlist.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Messages/1239494700.ctb'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Messages/1239494700.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Members/members.ttl'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Paths.pl'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/Forum/default.css'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/Forum/yabb21.css'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/default/AdminCentre.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/default/BoardIndex.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/default/Display.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/default/HelpCentre.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/default/MessageIndex.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/default/MyCenter.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/yabb21/AdminCentre.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/yabb21/BoardIndex.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/yabb21/Display.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/yabb21/HelpCentre.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/yabb21/MessageIndex.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Templates/yabb21/MyCenter.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Variables/Menu0.def'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Variables/Menu1.def'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Variables/Menu2.def'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Variables/bots.hosts'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Variables/email_domain_filter.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
-@unexec i='Variables/spamrules.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256| cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/members.ttl'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/admin.ims'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/admin.imstore'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/admin.log'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/admin.outbox'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/admin.rlog'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/admin.vars'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/broadcast.messages'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/index.html'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/memberinfo.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/memberlist.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Members/.htaccess'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Messages/.htaccess'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Messages/1278201900.ctb'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Messages/1278201900.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Messages/index.html'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Paths.pl'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/default/Display.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/default/BoardIndex.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/default/default.html'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/default/AdminCentre.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/default/HelpCentre.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/default/MessageIndex.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/default/MyCenter.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/yabb21/HelpCentre.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/yabb21/BoardIndex.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/yabb21/Display.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/yabb21/AdminCentre.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/yabb21/MessageIndex.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/yabb21/MyCenter.template'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/yabb21/yabb21.html'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/.htaccess'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/index.html'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/Admin/default.css'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/Forum/default/yabbchelp.swf'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/Forum/default.css'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Templates/Forum/yabb21.css'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Variables/spamrules.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Variables/bots.hosts'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Variables/email_domain_filter.txt'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Variables/index.html'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Variables/Menu0.def'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Variables/Menu1.def'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Variables/Menu2.def'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
+@unexec i='Variables/.htaccess'; cd %D/%%YABBDIR%% && if [ k`sha256 -q $i` = k`grep "$i\$" checksum.sha256 | cut -c-64` ]; then rm -f $i; fi
 %%YABBDIR%%/checksum.sha256
+@dirrmtry %%YABBDIR%%/shjs/styles
+@dirrmtry %%YABBDIR%%/shjs
 @dirrmtry %%YABBDIR%%/greybox
 @dirrmtry %%YABBDIR%%/googiespell
 @dirrmtry %%YABBDIR%%/avatars/UserAvatars
