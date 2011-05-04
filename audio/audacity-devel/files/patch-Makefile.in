@@ -5,7 +5,6 @@
  
  	# install docs
 +ifeq ($(DOC),yes)
- 	$(INSTALL) -d $(DESTDIR)$(DATADIR)/$(AUDACITY_NAME)
  	$(INSTALL) -d $(DESTDIR)$(DATADIR)/doc/$(AUDACITY_NAME)
  	$(INSTALL) -m 644 README.txt $(DESTDIR)$(DATADIR)/doc/$(AUDACITY_NAME)/README.txt
  	$(INSTALL) -m 644 LICENSE.txt $(DESTDIR)$(DATADIR)/doc/$(AUDACITY_NAME)/LICENSE.txt

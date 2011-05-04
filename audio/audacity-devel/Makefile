@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	audacity
-PORTVERSION=	1.3.12
-PORTREVISION=	4
+PORTVERSION=	1.3.13
 CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		SF/${PORTNAME}/${PORTNAME}-unstable/${PORTVERSION}
@@ -25,33 +24,33 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}-beta
 USE_AUTOTOOLS=	aclocal autoconf
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GCC=	4.2+
+USE_GCC=	4.6+
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_WX=		2.8
+USE_WX=		2.8+
 WX_COMPS=	wx
 MAKE_JOBS_SAFE=	yes
 PORTDOCS=	README.txt LICENSE.txt
 MAN1=		audacity.1
 MANCOMPRESSED=	yes
 
-OPTIONS=	DEBUG		"enable debug support" off \
+OPTIONS=	DEBUG		"Debug support" off \
 		FFMPEG		"Use ffmpeg for import and export support" on \
 		FLAC		"Use libFLAC for FLAC support" on \
 		ID3TAG		"Use libid3tag for mp3 id3 tag support" on \
-		LADSPA		"enable LADSPA plug-in support" on \
+		LADSPA		"LADSPA plug-in support" on \
 		MAD		"Use libmad for mp2/3 decoding support"	on \
 		MIDI		"Use portSMF for Midi support" on \
-		NYQUIST		"enable Nyquist plug-in support" on \
-		PORTMIXER	"compile with PortMixer" on \
+		NYQUIST		"Nyquist plug-in support" on \
+		PORTMIXER	"Compile with PortMixer" on \
 		SAMPLERATE	"Use libresample for sample rate conversion" on \
 		SBSMS		"Use libsbsms for pitch and tempo changing" on \
 		SOUNDTOUCH 	"Use libSoundTouch for pitch and tempo changing" on\
-		TAGLIB		"use TagLib for metadata support" on \
+		TAGLIB		"Use TagLib for metadata support" on \
 		TWOLAME		"Use libtwolame for MP2 export support" on \
-		UNICODE		"enable unicode support" on \
+		UNICODE		"Unicode support" on \
 		VORBIS		"Use libvorbis for Ogg Vorbis support"	on \
-		VAMP		"use libvamp for Vamp plug-in support" on
+		VAMP		"Use libvamp for Vamp plug-in support" on
 
 .include <bsd.port.pre.mk>
 
@@ -76,8 +75,10 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
 MAKE_ENV=	DOC=yes
 .endif
 
+CONFIGURE_ARGS+=	--with-lib-preference="local system"
+CONFIGURE_ARGS+=	--with-portaudio
 .if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--with-debug
+CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 .if defined(WITH_FFMPEG)
@@ -93,7 +94,7 @@ CONFIGURE_ARGS+=	--with-libid3tag
 .endif
 
 .if defined(WITH_LADSPA)
-CONFIGURE_ARGS+=	--with-ladspa
+CONFIGURE_ARGS+=	--enable-ladspa
 .endif
 
 .if defined(WITH_MAD)
@@ -105,7 +106,7 @@ CONFIGURE_ARGS+=	--with-midi
 .endif
 
 .if defined(WITH_NYQUIST)
-CONFIGURE_ARGS+=	--with-nyquist
+CONFIGURE_ARGS+=	--enable-nyquist
 .endif
 
 .if defined(WITH_PORTMIXER)
