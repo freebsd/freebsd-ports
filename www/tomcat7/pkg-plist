@@ -43,7 +43,7 @@
 %%T%%/lib/catalina-ha.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
-%%T%%/lib/ecj-3.6.jar
+%%T%%/lib/ecj-3.6.2.jar
 %%T%%/lib/el-api.jar
 %%T%%/lib/jasper-el.jar
 %%T%%/lib/jasper.jar
@@ -197,6 +197,7 @@
 %%T%%/webapps/docs/tribes/status.html
 %%T%%/webapps/docs/tribes/transport.html
 %%T%%/webapps/docs/virtual-hosting-howto.html
+%%T%%/webapps/docs/windows-auth-howto.html
 %%T%%/webapps/docs/windows-service-howto.html
 %%T%%/webapps/examples/WEB-INF/classes/CookieExample.class
 %%T%%/webapps/examples/WEB-INF/classes/CookieExample.java
@@ -213,6 +214,8 @@
 %%T%%/webapps/examples/WEB-INF/classes/RequestInfoExample.java
 %%T%%/webapps/examples/WEB-INF/classes/RequestParamExample.class
 %%T%%/webapps/examples/WEB-INF/classes/RequestParamExample.java
+%%T%%/webapps/examples/WEB-INF/classes/ServletToJsp.class
+%%T%%/webapps/examples/WEB-INF/classes/ServletToJsp.java
 %%T%%/webapps/examples/WEB-INF/classes/SessionExample.class
 %%T%%/webapps/examples/WEB-INF/classes/SessionExample.java
 %%T%%/webapps/examples/WEB-INF/classes/async/Async0$1.class
@@ -301,8 +304,6 @@
 %%T%%/webapps/examples/WEB-INF/classes/listeners/SessionListener.java
 %%T%%/webapps/examples/WEB-INF/classes/num/NumberGuessBean.class
 %%T%%/webapps/examples/WEB-INF/classes/num/NumberGuessBean.java
-%%T%%/webapps/examples/WEB-INF/classes/servletToJsp.class
-%%T%%/webapps/examples/WEB-INF/classes/servletToJsp.java
 %%T%%/webapps/examples/WEB-INF/classes/sessions/DummyCart.class
 %%T%%/webapps/examples/WEB-INF/classes/sessions/DummyCart.java
 %%T%%/webapps/examples/WEB-INF/classes/util/HTMLFilter.class
@@ -453,12 +454,12 @@
 %%T%%/webapps/examples/jsp/jsp2/tagfiles/products.jsp
 %%T%%/webapps/examples/jsp/jsp2/tagfiles/products.jsp.html
 %%T%%/webapps/examples/jsp/jsp2/tagfiles/xhtmlbasic.tag.html
+%%T%%/webapps/examples/jsp/jsptoserv/ServletToJsp.java.html
 %%T%%/webapps/examples/jsp/jsptoserv/hello.jsp
 %%T%%/webapps/examples/jsp/jsptoserv/hello.jsp.html
 %%T%%/webapps/examples/jsp/jsptoserv/jsptoservlet.jsp
 %%T%%/webapps/examples/jsp/jsptoserv/jsptoservlet.jsp.html
 %%T%%/webapps/examples/jsp/jsptoserv/jts.html
-%%T%%/webapps/examples/jsp/jsptoserv/servletToJsp.java.html
 %%T%%/webapps/examples/jsp/num/numguess.html
 %%T%%/webapps/examples/jsp/num/numguess.jsp
 %%T%%/webapps/examples/jsp/num/numguess.jsp.html
@@ -510,10 +511,10 @@
 %%T%%/webapps/examples/servlets/reqinfo.html
 %%T%%/webapps/examples/servlets/reqparams.html
 %%T%%/webapps/examples/servlets/sessions.html
-%%T%%/webapps/host-manager/401.jsp
-%%T%%/webapps/host-manager/403.jsp
-%%T%%/webapps/host-manager/404.jsp
 %%T%%/webapps/host-manager/META-INF/context.xml
+%%T%%/webapps/host-manager/WEB-INF/jsp/401.jsp
+%%T%%/webapps/host-manager/WEB-INF/jsp/403.jsp
+%%T%%/webapps/host-manager/WEB-INF/jsp/404.jsp
 %%T%%/webapps/host-manager/WEB-INF/web.xml
 %%T%%/webapps/host-manager/images/add.gif
 %%T%%/webapps/host-manager/images/asf-logo.gif
@@ -526,10 +527,10 @@
 %%T%%/webapps/host-manager/images/void.gif
 %%T%%/webapps/host-manager/index.jsp
 %%T%%/webapps/host-manager/manager.xml
-%%T%%/webapps/manager/401.jsp
-%%T%%/webapps/manager/403.jsp
-%%T%%/webapps/manager/404.jsp
 %%T%%/webapps/manager/META-INF/context.xml
+%%T%%/webapps/manager/WEB-INF/jsp/401.jsp
+%%T%%/webapps/manager/WEB-INF/jsp/403.jsp
+%%T%%/webapps/manager/WEB-INF/jsp/404.jsp
 %%T%%/webapps/manager/WEB-INF/jsp/sessionDetail.jsp
 %%T%%/webapps/manager/WEB-INF/jsp/sessionsList.jsp
 %%T%%/webapps/manager/WEB-INF/web.xml
@@ -556,6 +557,7 @@
 @dirrm %%T%%/webapps/manager/META-INF
 @dirrm %%T%%/webapps/manager
 @dirrm %%T%%/webapps/host-manager/images
+@dirrm %%T%%/webapps/host-manager/WEB-INF/jsp
 @dirrm %%T%%/webapps/host-manager/WEB-INF
 @dirrm %%T%%/webapps/host-manager/META-INF
 @dirrm %%T%%/webapps/host-manager
