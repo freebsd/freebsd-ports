@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	monitorix
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 PORTREVISION?=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.monitorix.org/ \
+		http://www.monitorix.org/old_versions/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
 
 MAINTAINER=	utisoft@gmail.com
@@ -33,8 +34,8 @@ MANCOMPRESSED=	no
 NO_BUILD=	yes
 USE_RC_SUBR=	${PORTNAME}
 
-CGIDIR?=	${PREFIX}/www/cgi-bin
-CGIPATH?=	${CGIDIR:C,^.*/,/,}
+CGIDIR?=	www/cgi-bin
+CGIPATH?=	cgi-bin
 WWW_OWNER?=	${WWWOWN}
 WWW_GROUP?=	${WWWGRP}
 REPORT_LANG=	ca de en it
@@ -43,7 +44,7 @@ WWWROOT=	${WWWDIR:S,/${PORTNAME}$,,}
 SUB_FILES=	pkg-message
 SUB_LIST=	PERL=${PERL}
 
-PLIST_SUB+=	CGIDIR=${CGIDIR:C,^${PREFIX}/,,} \
+PLIST_SUB+=	CGIDIR=${CGIDIR} \
 		WWW_OWNER=${WWW_OWNER} \
 		WWW_GROUP=${WWW_GROUP}
 
@@ -80,7 +81,7 @@ post-patch:
 # in cgi-bin
 .for f in monitorix.cgi monitorix.conf monitorix reports/send_reports
 	@${REINPLACE_CMD} -e "1s|^\(#!\).*|\1${PERL}|" \
-		-e 's|"\(sysctl\)|"/sbin/\1|' \
+		-e 's|"\([^/]sysctl\)|"/sbin/\1|' \
 		${WRKSRC}/${f}
 .endfor
 # eth0 doesn't exist in FreeBSD! Also let's set our own paths.
@@ -102,8 +103,8 @@ do-install:
 	@for f in ${WWW_FILES}; do \
 		${INSTALL_DATA} ${WRKSRC}/$${f} ${WWWDIR}/; \
 	done
-	@${MKDIR} ${CGIDIR}
-	@${INSTALL_SCRIPT} ${WRKSRC}/monitorix.cgi ${CGIDIR}/
+	@${MKDIR} ${PREFIX}/${CGIDIR}
+	@${INSTALL_SCRIPT} ${WRKSRC}/monitorix.cgi ${PREFIX}/${CGIDIR}/
 .for m in ${MAN5}
 	@${INSTALL_MAN} ${WRKSRC}/man/man5/$m ${MAN5PREFIX}/man/man5/
 .endfor

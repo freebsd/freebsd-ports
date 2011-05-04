@@ -1,3 +1,4 @@
+@stopdaemon monitorix
 @exec mkdir -p %D/%%WWWDIR%%/imgs
 @exec chown %%WWW_OWNER%%:%%WWW_GROUP%% %D/%%WWWDIR%%/imgs
 @unexec if cmp -s %D/etc/monitorix.conf %D/etc/monitorix.conf.sample; then rm -f %D/etc/monitorix.conf; fi
