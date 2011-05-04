@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqldeveloper
-PORTVERSION=	2.1.1.64.45
+PORTVERSION=	3.0.04.34
 DISTVERSIONSUFFIX=-no-jre
 CATEGORIES=	databases java
 MASTER_SITES=	#http://www.oracle.com/technology/software/products/sql/index.html
@@ -30,6 +30,10 @@ RESTRICTED=	Packaging prohibited by Oracle license
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 WRKSRC=		${WRKDIR}/${PORTNAME}
 SUB_FILES=	pkg-message
+
+.if !defined(NOPORTDOCS)
+PORTDOCS=	readme.html
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -64,7 +68,8 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/sqldeveloper.sh ${PREFIX}/bin/sqldeveloper
 	@${ECHO_MSG} " [ DONE ]"
 
-.for d in ide j2ee jdbc jdev jlib lib modules rdbms sleepycat sqldeveloper timingframework
+.for d in dataminer ide j2ee jdbc jdev jlib jviews lib modules rdbms sleepycat \
+    sqldeveloper sqlj timingframework
 	@${ECHO_MSG} -n ">> Installing data directory '${d}'..."
 	@cd ${WRKSRC} && ${FIND} ${d} -type d \
 		-not -path "jdev/extensions/oracle.jdeveloper.subversion/licenses" \
@@ -80,9 +85,18 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 .endfor
 
+.for f in jdev.label view-source-paths.lis
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}/${f}
+.endfor
+
 	@${ECHO_MSG} -n ">> Installing icon ..."
 	@${INSTALL_DATA} ${WRKSRC}/icon.png ${DATADIR}/icon.png
 	@${ECHO_MSG} " [ DONE ]"
+
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} readme.html ${DOCSDIR}
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
