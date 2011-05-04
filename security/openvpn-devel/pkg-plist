@@ -10,6 +10,7 @@ lib/openvpn-down-root.so
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.openvpn-auth-pam
 %%PORTDOCS%%%%DOCSDIR%%/README.openvpn-down-root
+%%PORTDOCS%%%%DOCSDIR%%/management-notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/README
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-ca
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/1.0/build-dh
