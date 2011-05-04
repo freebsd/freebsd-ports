@@ -9,7 +9,7 @@ CATEGORIES=	chinese
 
 MAINTAINER=	ports@FreeBSD.org
 
-CONFLICTS=	unzip-[0-9]* ko-unzip-[0-9]* ru-unzip-[0-9]*
+CONFLICTS=	unzip-[0-9]* unzip-iconv-[0-9]* ko-unzip-[0-9]* ru-unzip-[0-9]*
 
 MASTERDIR=	${.CURDIR}/../../archivers/unzip
 
