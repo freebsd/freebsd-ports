@@ -1,0 +1,7 @@
+--- ./rosdep.yaml.orig	2011-02-15 21:21:47.000000000 +0100
++++ ./rosdep.yaml	2011-03-19 23:21:12.000000000 +0100
+@@ -18,3 +18,4 @@
+   ubuntu: python-sphinx
+   macports: py26-sphinx
+   debian: python-sphinx
++  freebsd: py27-sphinx
