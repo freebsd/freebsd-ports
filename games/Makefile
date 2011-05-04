@@ -228,6 +228,7 @@
     SUBDIR += exult
     SUBDIR += ezquake
     SUBDIR += f1spirit-remake
+    SUBDIR += fairymax
     SUBDIR += falconseye
     SUBDIR += farblazer
     SUBDIR += fargoal
