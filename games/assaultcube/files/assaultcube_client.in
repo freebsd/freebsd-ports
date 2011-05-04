@@ -6,7 +6,7 @@
 # are copied, and write permission for the user is added to them.
 
 APPNAME="assaultcube"
-CUBE_OPTIONS="--home=~/.${APPNAME} --init"
+CUBE_OPTIONS="--home=${HOME}/.${APPNAME} --init"
 
 if [ -d ~/.$APPNAME ]
 then

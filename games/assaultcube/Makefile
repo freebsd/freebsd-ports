@@ -7,6 +7,7 @@
 
 PORTNAME=	assaultcube
 PORTVERSION=	1.1.0.4
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/actiongame/AssaultCube%20Version%20${PORTVERSION}
 DISTFILES=	AssaultCube_v${PORTVERSION}_source${EXTRACT_SUFX} \
@@ -14,6 +15,18 @@ DISTFILES=	AssaultCube_v${PORTVERSION}_source${EXTRACT_SUFX} \
 
 MAINTAINER=	lightside@safebox.ru
 COMMENT=	Total conversion of the FPS game called Cube
+
+LICENSE_COMB=	multi
+LICENSE=	ACUBE CUBE MIT OTHER
+LICENSE_NAME_ACUBE=	AssaultCube ZLIB-like license with additions
+LICENSE_FILE_ACUBE=	${WRKSRC}/source/README.txt
+LICENSE_PERMS_ACUBE=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_NAME_CUBE=	Cube game engine ZLIB-like license with additions
+LICENSE_FILE_CUBE=	${WRKSRC}/source/README_CUBEENGINE.txt
+LICENSE_PERMS_CUBE=	${_LICENSE_PERMS_DEFAULT}
+LICENSE_NAME_OTHER=	various package licences
+LICENSE_FILE_OTHER=	${WRKSRC}/docs/package_copyrights.txt
+LICENSE_PERMS_OTHER=	dist-mirror pkg-mirror auto-accept
 
 USE_BZIP2=	yes
 USE_OPENAL=	al
@@ -29,12 +42,9 @@ MAKE_JOBS_SAFE=	yes
 PORTDATA=	config demos packages
 PORTDOCS=	*
 
-CFLAGS+=	-DFREEBSD
-
 OPTIONS=	CLIENT "Build client" on \
 		DEDICATED "Build dedicated server" on \
-		MASTER "Build master server" off \
-		OPTIMIZED_CFLAGS "Enable compilation optimizations" on
+		MASTER "Build master server" off
 
 .include <bsd.port.pre.mk>
 
@@ -43,11 +53,16 @@ IGNORE=		needs at least one executable (CLIENT, DEDICATED or MASTER)
 .endif
 
 .if !defined(WITHOUT_CLIENT)
+USE_GETTEXT=	yes
 USE_GL=		yes
 USE_SDL=	image mixer sdl
 ALL_TARGET+=	client
 SUB_FILES+=	${PORTNAME}_client
 ACUBE_BIN+=	client
+
+DESKTOP_ENTRIES="AssaultCube" "${COMMENT}" \
+	"${DATADIR}/packages/misc/startscreen.png" "${PORTNAME}_client" \
+	"Application;Game;" ${FALSE}
 .endif
 
 .if !defined(WITHOUT_DEDICATED)
@@ -60,11 +75,6 @@ ACUBE_BIN+=	server
 ALL_TARGET+=	master
 SUB_FILES+=	${PORTNAME}_master
 ACUBE_BIN+=	master
-.endif
-
-.if defined(WITHOUT_OPTIMIZED_CFLAGS)
-post-patch:
-	@${REINPLACE_CMD} -e 's|$$(CXXOPTFLAGS)||' ${WRKSRC}/source/src/Makefile
 .endif
 
 do-install:
