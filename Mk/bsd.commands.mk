@@ -102,18 +102,8 @@ XZ_CMD?=	/usr/bin/xz ${XZ}
 XZ_CMD?=	${LOCALBASE}/bin/xz ${XZ}
 .endif
 
-.if exists(/sbin/md5)
 MD5?=		/sbin/md5
-.else
-MD5?=		md5
-.endif
-.if exists(/sbin/sha256)
 SHA256?=	/sbin/sha256
-.elif exists(${LOCALBASE}/sbin/sha256)
-SHA256?=	${LOCALBASE}/sbin/sha256
-.else
-SHA256?=	NO
-.endif
 
 # ECHO is defined in /usr/share/mk/sys.mk, which can either be "echo",
 # or "true" if the make flag -s is given.  Use ECHO_CMD where you mean
