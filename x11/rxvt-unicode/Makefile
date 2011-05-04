@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rxvt-unicode
-PORTVERSION=	9.10
-PORTREVISION=	1
+PORTVERSION=	9.11
 CATEGORIES=	x11
 MASTER_SITES=	http://dist.schmorp.de/rxvt-unicode/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. Attic
@@ -23,8 +22,9 @@ RUN_DEPENDS=	${LOCALBASE}/bin/fc-cache:${PORTSDIR}/x11-fonts/fontconfig	\
 USE_GNOME=		pkgconfig
 USE_XORG=		xpm xft xrender
 GNU_CONFIGURE=		yes
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" LIBS="-lutil"
-CONFIGURE_ARGS=		--enable-shared --enable-everything --with-term=rxvt	\
+CPPFLAGS=		-I${LOCALBASE}/include
+CONFIGURE_ENV=		LIBS="-lutil"
+CONFIGURE_ARGS=		--enable-everything --with-term=rxvt	\
 			--with-terminfo=${LOCALBASE}/share/misc/terminfo.db
 USE_BZIP2=		yes
 WANT_PERL=		yes
@@ -43,7 +43,8 @@ OPTIONS=	\
 	MOUSEWHEEL	"Support for scrolling via mouse wheel"		On	\
 	SMART_RESIZE	"Smart growth/shrink behaviour"			On	\
 	IMLOCALE_FIX	"imlocale encoding conversion fix" 		On	\
-	AFTERIMAGE	"Use libAfterImage for background images"	On	\
+	GDK_PIXBUF	"Use gdk-pixbuf for background images"		On	\
+	AFTERIMAGE	"Use libAfterImage for background images"	Off	\
 	256_COLOR	"Support for 256 colors"			Off
 
 .include <bsd.port.pre.mk>
@@ -129,12 +130,18 @@ CONFIGURE_ARGS+=	--disable-smart-resize
 CONFIGURE_ARGS+=	--enable-smart-resize
 .endif
 
-# enable integration with libAfterImage for background images
-.if defined(WITHOUT_AFTERIMAGE)
+# enable integration with gdk-pixbuf / or libAfterImage for background images
+.if defined(WITHOUT_GDK_PIXBUF)
+CONFIGURE_ARGS+=	--disable-pixbuf
+. if defined(WITHOUT_AFTERIMAGE)
 CONFIGURE_ARGS+=	--disable-afterimage	# To be upgraded
-.else
+. else
 LIB_DEPENDS+=		AfterImage.0:${PORTSDIR}/graphics/libafterimage
 CONFIGURE_ARGS+=	--enable-afterimage
+. endif
+.else
+USE_GNOME+=		gdkpixbuf2
+CONFIGURE_ARGS+=	--enable-pixbuf
 .endif
 
 # enable support for 256 colors
