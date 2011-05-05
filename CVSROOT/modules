@@ -1781,7 +1781,6 @@ comconsole                      ports/sysutils/comconsole
 comical                         ports/graphics/comical
 comiccron                       ports/sysutils/comiccron
 comix                           ports/graphics/comix
-common_msgs                     ports/devel/common_msgs
 commonclipse                    ports/java/commonclipse
 commoncpp                       ports/devel/commoncpp
 commonist                       ports/www/commonist
@@ -4258,7 +4257,6 @@ geoid                           ports/comms/geoid
 geoip                           ports/net/GeoIP
 geolizer                        ports/www/geolizer
 geomWatch                       ports/sysutils/geomWatch
-geometry                        ports/math/geometry
 geomgui                         ports/sysutils/geomgui
 geomorph                        ports/graphics/geomorph
 geomview                        ports/graphics/geomview
@@ -8138,6 +8136,7 @@ libspf2-10                      ports/mail/libspf2-10
 libspiro                        ports/graphics/libspiro
 libsrs2                         ports/mail/libsrs2
 libsrs_alt                      ports/mail/libsrs_alt
+libsrtp                         ports/net/libsrtp
 libssh                          ports/security/libssh
 libssh2                         ports/security/libssh2
 libstatgrab                     ports/devel/libstatgrab
@@ -22537,6 +22536,8 @@ root-doc                        ports/devel/root-doc
 roottail                        ports/sysutils/roottail
 ros                             ports/devel/ros
 ros-common                      ports/devel/ros-common
+ros-common_msgs                 ports/devel/ros-common_msgs
+ros-geometry                    ports/math/ros-geometry
 ros-image_common                ports/devel/ros-image_common
 ros-laser_pipeline              ports/devel/ros-laser_pipeline
 ros-nxt                         ports/devel/ros-nxt
@@ -24632,6 +24633,7 @@ teTeX-base                      ports/print/teTeX-base
 teTeX-texmf                     ports/print/teTeX-texmf
 tea                             ports/editors/tea
 team                            ports/misc/team
+teamspeak3-server               ports/audio/teamspeak3-server
 teamspeak_client                ports/audio/teamspeak_client
 teamspeak_server                ports/audio/teamspeak_server
 teapop                          ports/mail/teapop
