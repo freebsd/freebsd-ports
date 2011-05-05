@@ -288,6 +288,7 @@
     SUBDIR += kbedic
     SUBDIR += kdiff3
     SUBDIR += kmflcomp
+    SUBDIR += kn-aspell
     SUBDIR += ku-aspell
     SUBDIR += ky-aspell
     SUBDIR += l2a
