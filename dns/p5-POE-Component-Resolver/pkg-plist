@@ -1,7 +1,9 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Resolver/.packlist
+%%SITE_PERL%%/POE/Component/Resolver/Sidecar.pm
 %%SITE_PERL%%/POE/Component/Resolver.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Resolver
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/Resolver
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE
+@dirrm %%SITE_PERL%%/POE/Component/Resolver
 @dirrmtry %%SITE_PERL%%/POE/Component
 @dirrmtry %%SITE_PERL%%/POE
