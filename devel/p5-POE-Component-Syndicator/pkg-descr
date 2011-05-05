@@ -1,0 +1,13 @@
+POE::Component::Syndicator is a base class for POE components which need to
+handle a persistent resource (e.g. a connection to an IRC server) for one or
+more sessions in an extendable way.
+
+This module (as well as Object::Pluggable, which this module inherits from)
+was born out of POE::Component::IRC, the guts of which quickly spread to
+other POE components. Now they can all inherit from this module instead.
+
+The component provides an event queue, which can be managed with the methods
+documented below. It handles delivery of events to the object itself, all
+interested plugins, and all interested sessions.
+
+WWW: http://search.cpan.org/dist/POE-Component-Syndicator/
