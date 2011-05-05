@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
 DISTNAME=	ocaml${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	johans@FreeBSD.org
+MAINTAINER=	jaapb@kerguelen.org
 COMMENT=	OCaml modules for Internet applications
 
 BUILD_DEPENDS=	${SA_DIR}/pcre/pcre.a:${PORTSDIR}/devel/ocaml-pcre \
