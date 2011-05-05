@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	yuicompressor
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.6
 CATEGORIES=	www java
-MASTER_SITES=	http://www.julienlecomte.net/yuicompressor/
+MASTER_SITES=	http://yui.zenfs.com/releases/yuicompressor/
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	The Yahoo! JavaScript and CSS Compressor
