@@ -1,0 +1,43 @@
+#!/bin/sh
+#
+# $FreeBSD$
+# PROVIDE: starman
+# REQUIRE: NETWORKING 
+# KEYWORD:  shutdown
+
+# starman_enable (bool): Set to "NO" by default.
+#
+# starman_flags (str):  Optional flags to starman
+#   Default is ""
+#   example: starman_flags="--workers 5 --port 3000"
+#
+# starman_config (str): ".psgi" script to run
+#   Default is "%%PREFIX%%/etc/starman.psgi"
+#
+# starman_user (str):   Setuid to group
+#   Default is "www"
+#
+# starman_group (str):  Setgid to group
+#   Default is "www"
+#
+# starman_pidfile (str):    PID file
+#   Default is "/var/run/starman/starman.pid""
+
+. /etc/rc.subr
+
+name=starman
+rcvar=`set_rcvar`
+command="%%PREFIX%%/bin/${name}"
+load_rc_config $name
+
+starman_enable=${starman_enable-"NO"}
+starman_config=${starman_config-"%%PREFIX%%/etc/starman.psgi"}
+starman_user=${starman_user-"www"}
+starman_group=${starman_group-"www"}
+
+pidfile=${starman_pidfile:-/var/run/starman/starman.pid}
+command_args="--daemonize --user ${starman_user} --group ${starman_group} --pid ${pidfile} --app ${starman_config}"
+required_files="${starman_config}"
+extra_commands="reload"
+
+run_rc_command "$1"
