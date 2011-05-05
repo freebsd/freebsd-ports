@@ -92,6 +92,8 @@ COMPAT_HEADERS=libavcodec/avcodec.h \
 
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
+.elif ${ARCH} == "i386"
+BROKEN=		does not build
 .endif
 
 CONFIGURE_ARGS+=--prefix="${PREFIX}" \
