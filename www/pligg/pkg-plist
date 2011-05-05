@@ -1,6 +1,7 @@
 %%WWWDIR%%/3rdparty/API/Pligg-API-Installation.txt
 %%WWWDIR%%/3rdparty/API/api.php
 %%WWWDIR%%/3rdparty/index.html
+%%WWWDIR%%/3rdparty/kmessaging/.htaccess
 %%WWWDIR%%/3rdparty/kmessaging/class.KMessaging.php
 %%WWWDIR%%/3rdparty/kmessaging/class.KMessaging_v1.2.3.php
 %%WWWDIR%%/3rdparty/kmessaging/index.html
@@ -32,6 +33,7 @@
 %%WWWDIR%%/admin/admin_group.php
 %%WWWDIR%%/admin/admin_index.php
 %%WWWDIR%%/admin/admin_links.php
+%%WWWDIR%%/admin/admin_log.php
 %%WWWDIR%%/admin/admin_modules.php
 %%WWWDIR%%/admin/admin_optimize_database.php
 %%WWWDIR%%/admin/admin_page.php
@@ -54,6 +56,7 @@
 %%WWWDIR%%/avatars/user_uploaded/index.htm
 %%WWWDIR%%/bannedips.txt.default
 %%WWWDIR%%/begin_gzip.php
+%%WWWDIR%%/cache/.htaccess
 %%WWWDIR%%/cache/admin_c/index.html
 %%WWWDIR%%/cache/index.html
 %%WWWDIR%%/cache/templates_c/index.html
@@ -95,6 +98,7 @@
 %%WWWDIR%%/install/upgrade.php
 %%WWWDIR%%/install/upgrade_config_table.sql
 %%WWWDIR%%/install/utf8.sql
+%%WWWDIR%%/internal/.htaccess
 %%WWWDIR%%/internal/compile.compile_config.php
 %%WWWDIR%%/internal/compile.compile_custom_block.php
 %%WWWDIR%%/internal/compile.compile_custom_function.php
@@ -111,6 +115,7 @@
 %%WWWDIR%%/internal/template.fetch_compile_include.php
 %%WWWDIR%%/internal/template.generate_debug_output.php
 %%WWWDIR%%/join_group.php
+%%WWWDIR%%/languages/.htaccess
 %%WWWDIR%%/languages/index.html
 %%WWWDIR%%/languages/installer_lang.php
 %%WWWDIR%%/languages/installer_lang_default.php
@@ -125,6 +130,7 @@
 %%WWWDIR%%/languages/lang_turkmen.conf.default
 %%WWWDIR%%/languages/readme_thai.html
 %%WWWDIR%%/languages/translit.txt
+%%WWWDIR%%/libs/.htaccess
 %%WWWDIR%%/libs/admin_config.php
 %%WWWDIR%%/libs/backup/file_backup/PEAR.php
 %%WWWDIR%%/libs/backup/file_backup/backup.php
@@ -392,6 +398,7 @@
 %%WWWDIR%%/modules/captcha/captchas/reCaptcha/libs/index.html
 %%WWWDIR%%/modules/captcha/captchas/reCaptcha/libs/recaptchalib.php
 %%WWWDIR%%/modules/captcha/captchas/reCaptcha/main.php
+%%WWWDIR%%/modules/captcha/images/.htaccess
 %%WWWDIR%%/modules/captcha/images/eye.png
 %%WWWDIR%%/modules/captcha/images/index.html
 %%WWWDIR%%/modules/captcha/index.html
@@ -434,6 +441,16 @@
 %%WWWDIR%%/modules/codemirror/templates/codemirror_end.tpl
 %%WWWDIR%%/modules/codemirror/templates/codemirror_start.tpl
 %%WWWDIR%%/modules/codemirror/templates/index.html
+%%WWWDIR%%/modules/hc/hc_init.php
+%%WWWDIR%%/modules/hc/hc_install.php
+%%WWWDIR%%/modules/hc/hc_main.php
+%%WWWDIR%%/modules/hc/hc_readme.htm
+%%WWWDIR%%/modules/hc/hc_settings.php
+%%WWWDIR%%/modules/hc/index.html
+%%WWWDIR%%/modules/hc/lang.conf
+%%WWWDIR%%/modules/hc/templates/hc_admin_main_link.tpl
+%%WWWDIR%%/modules/hc/templates/hc_incorrect.tpl
+%%WWWDIR%%/modules/hc/templates/index.html
 %%WWWDIR%%/modules/hello_world/hello_world_init.php
 %%WWWDIR%%/modules/hello_world/hello_world_install.php
 %%WWWDIR%%/modules/hello_world/hello_world_main.php
@@ -445,6 +462,7 @@
 %%WWWDIR%%/modules/hello_world/templates/hello_world_admin_main_link.tpl
 %%WWWDIR%%/modules/hello_world/templates/index.html
 %%WWWDIR%%/modules/hello_world/templates/smiley.png
+%%WWWDIR%%/modules/htaccess.default
 %%WWWDIR%%/modules/index.html
 %%WWWDIR%%/modules/karma/index.html
 %%WWWDIR%%/modules/karma/karma.gif
@@ -454,6 +472,8 @@
 %%WWWDIR%%/modules/karma/karma_readme.htm
 %%WWWDIR%%/modules/karma/karma_settings.php
 %%WWWDIR%%/modules/karma/lang.conf
+%%WWWDIR%%/modules/karma/templates/images/.htaccess
+%%WWWDIR%%/modules/karma/templates/images/karma.gif
 %%WWWDIR%%/modules/karma/templates/index.html
 %%WWWDIR%%/modules/karma/templates/karma_admin_link.tpl
 %%WWWDIR%%/modules/karma/templates/karma_admin_main_link.tpl
@@ -525,6 +545,8 @@
 %%WWWDIR%%/modules/simple_messaging/images/cross.png
 %%WWWDIR%%/modules/simple_messaging/images/delete.png
 %%WWWDIR%%/modules/simple_messaging/images/email.png
+%%WWWDIR%%/modules/simple_messaging/images/friends.png
+%%WWWDIR%%/modules/simple_messaging/images/friends2.png
 %%WWWDIR%%/modules/simple_messaging/images/gotoinbox.png
 %%WWWDIR%%/modules/simple_messaging/images/index.html
 %%WWWDIR%%/modules/simple_messaging/images/new.png
@@ -548,6 +570,7 @@
 %%WWWDIR%%/modules/simple_messaging/templates/sent.tpl
 %%WWWDIR%%/modules/simple_messaging/templates/show_message.tpl
 %%WWWDIR%%/modules/simple_messaging/templates/show_sent_message.tpl
+%%WWWDIR%%/modules/social_bookmark/images/.htaccess
 %%WWWDIR%%/modules/social_bookmark/images/ask.gif
 %%WWWDIR%%/modules/social_bookmark/images/delicious.png
 %%WWWDIR%%/modules/social_bookmark/images/digg.png
@@ -578,8 +601,9 @@
 %%WWWDIR%%/modules/spam_trigger/spam_trigger_readme.htm
 %%WWWDIR%%/modules/spam_trigger/spam_trigger_settings.php
 %%WWWDIR%%/modules/spam_trigger/templates/comments.tpl
+%%WWWDIR%%/modules/spam_trigger/templates/images/.htaccess
+%%WWWDIR%%/modules/spam_trigger/templates/images/spam_trigger.gif
 %%WWWDIR%%/modules/spam_trigger/templates/index.html
-%%WWWDIR%%/modules/spam_trigger/templates/spam_trigger.gif
 %%WWWDIR%%/modules/spam_trigger/templates/spam_trigger_admin_link.tpl
 %%WWWDIR%%/modules/spam_trigger/templates/spam_trigger_admin_main_link.tpl
 %%WWWDIR%%/modules/spam_trigger/templates/spam_trigger_css.tpl
@@ -650,6 +674,7 @@
 %%WWWDIR%%/modules/welcome_privmsg/welcome_privmsg_settings.php
 %%WWWDIR%%/out.php
 %%WWWDIR%%/page.php
+%%WWWDIR%%/plugins/.htaccess
 %%WWWDIR%%/plugins/block.capture.php
 %%WWWDIR%%/plugins/block.strip.php
 %%WWWDIR%%/plugins/block.textformat.php
@@ -732,6 +757,7 @@
 %%WWWDIR%%/storyrss.php
 %%WWWDIR%%/submit.php
 %%WWWDIR%%/submit_groups.php
+%%WWWDIR%%/templates/.htaccess
 %%WWWDIR%%/templates/404error.tpl
 %%WWWDIR%%/templates/admin/admin.tpl
 %%WWWDIR%%/templates/admin/admin_access_denied.tpl
@@ -938,6 +964,7 @@
 %%WWWDIR%%/templates/wistie/js/index.html
 %%WWWDIR%%/templates/wistie/js/jquery/jquery.dropdown.js
 %%WWWDIR%%/templates/wistie/js/jquery/jquery.js
+%%WWWDIR%%/templates/wistie/js/story_preview.js
 %%WWWDIR%%/templates/wistie/js/tag_data.js
 %%WWWDIR%%/templates/wistie/js/wick.js
 %%WWWDIR%%/templates/wistie/link_summary.tpl
@@ -992,6 +1019,7 @@
 %%WWWDIR%%/validation.php
 %%WWWDIR%%/vote.php
 %%WWWDIR%%/vote_total.php
+%%WWWDIR%%/widgets/.htaccess
 %%WWWDIR%%/widgets/akismet/index.html
 %%WWWDIR%%/widgets/akismet/init.php
 %%WWWDIR%%/widgets/akismet/lang.conf
@@ -1103,8 +1131,11 @@
 @dirrm %%WWWDIR%%/modules/codemirror/source
 @dirrm %%WWWDIR%%/modules/codemirror/templates
 @dirrm %%WWWDIR%%/modules/codemirror
+@dirrm %%WWWDIR%%/modules/hc/templates
+@dirrm %%WWWDIR%%/modules/hc
 @dirrm %%WWWDIR%%/modules/hello_world/templates
 @dirrm %%WWWDIR%%/modules/hello_world
+@dirrm %%WWWDIR%%/modules/karma/templates/images
 @dirrm %%WWWDIR%%/modules/karma/templates
 @dirrm %%WWWDIR%%/modules/karma
 @dirrm %%WWWDIR%%/modules/links/templates
@@ -1129,6 +1160,7 @@
 @dirrm %%WWWDIR%%/modules/social_bookmark/images
 @dirrm %%WWWDIR%%/modules/social_bookmark/templates
 @dirrm %%WWWDIR%%/modules/social_bookmark
+@dirrm %%WWWDIR%%/modules/spam_trigger/templates/images
 @dirrm %%WWWDIR%%/modules/spam_trigger/templates
 @dirrm %%WWWDIR%%/modules/spam_trigger
 @dirrm %%WWWDIR%%/modules/upload/attachments/thumbs

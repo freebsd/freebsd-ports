@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	pligg
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://forums.pligg.com/attachments/current-version/
-DISTNAME=	2911d1293126720-pligg-content-management-system-1-1-3-pligg-cms-1.1.3
+DISTNAME=	2966d1300972240-pligg-content-management-system-${PORTVERSION:S/./-/g}-pligg-cms-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An Open Source Web2.0 CMS
