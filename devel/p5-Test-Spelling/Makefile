@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Spelling
-PORTVERSION=	0.11
+PORTVERSION=	0.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Check for spelling errors in POD files
 
 BUILD_DEPENDS=	${SITE_PERL}/Pod/Spell.pm:${PORTSDIR}/textproc/p5-Pod-Spell
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${SITE_PERL}/Pod/Spell.pm:${PORTSDIR}/textproc/p5-Pod-Spell
 
 PERL_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
