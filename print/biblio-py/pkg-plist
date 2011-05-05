@@ -28,5 +28,8 @@ bin/get_papers.py
 %%PYTHON_SITELIBDIR%%/yapbib/latex.py
 %%PYTHON_SITELIBDIR%%/yapbib/latex.pyc
 %%PYTHON_SITELIBDIR%%/yapbib/latex.pyo
+%%PYTHON_SITELIBDIR%%/yapbib/version.py
+%%PYTHON_SITELIBDIR%%/yapbib/version.pyc
+%%PYTHON_SITELIBDIR%%/yapbib/version.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/yapbib
 @dirrm %%PYTHON_SITELIBDIR%%/query_ads
