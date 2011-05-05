@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Section
-PORTVERSION=	0.101620
+PORTVERSION=	0.101621
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Read multiple hunks of data out of your DATA section
 
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
+
 BUILD_DEPENDS=	p5-Sub-Exporter>=0.979:${PORTSDIR}/devel/p5-Sub-Exporter
 RUN_DEPENDS=	p5-Sub-Exporter>=0.979:${PORTSDIR}/devel/p5-Sub-Exporter \
-		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat
+		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat
 TEST_DEPENDS=	p5-Test-Simple>=0.90:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	YES
