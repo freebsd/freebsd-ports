@@ -7,6 +7,7 @@
 
 PORTNAME=	tor
 DISTVERSION=	0.2.2.25-alpha
+PORTREVISION=	1
 CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \

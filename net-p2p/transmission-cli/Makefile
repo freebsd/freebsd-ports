@@ -7,7 +7,7 @@
 
 PORTNAME=	transmission
 PORTVERSION=	2.22
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	net-p2p
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
 PKGNAMESUFFIX?=	-cli
@@ -21,7 +21,7 @@ LIB_DEPENDS?=	${GEN_LIB_DEPENDS}
 
 # General dependencies
 GEN_LIB_DEPENDS=curl.6:${PORTSDIR}/ftp/curl \
-		event-2.0.5:${PORTSDIR}/devel/libevent2
+		event-2.0.6:${PORTSDIR}/devel/libevent2
 GEN_RUN_DEPENDS=${LOCALBASE}/share/transmission/web/index.html:${PORTSDIR}/www/transmission-web
 
 USE_GMAKE=	yes
