@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Class-Accessor-Grouped
-PORTVERSION=	0.10002
+PORTVERSION=	0.10003
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lets you build groups of accessors
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 RUN_DEPENDS=	p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
