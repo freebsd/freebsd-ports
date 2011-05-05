@@ -1,0 +1,4 @@
+%%WWWDIR%%/index.php
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+@dirrm %%WWWDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
