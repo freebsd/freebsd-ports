@@ -31,7 +31,7 @@ post-extract:
 	@${CHMOD} a+x ${WRKSRC}/Configure
 
 post-patch:
-	@${REINPLACE_CMD} -i '' -e 's/5.00\[4/5.0[01][04/' \
+	@${REINPLACE_CMD} -i '' -e 's/5.00\[4/5.0[01][01234/' \
 		${WRKSRC}/Configure
 	@${REINPLACE_CMD} -i '' -e 's=/usr/local=${PREFIX}=; s=/usr/bin/perl=${PERL}=' \
 		${WRKSRC}/Make.config
