@@ -657,8 +657,8 @@ lib/R/library/grid/libs/grid.so
 %%NLS%%lib/R/library/grid/po/ja/LC_MESSAGES/grid.mo
 %%NLS%%lib/R/library/grid/po/ko/LC_MESSAGES/R-grid.mo
 %%NLS%%lib/R/library/grid/po/ko/LC_MESSAGES/grid.mo
-%%NLS%%lib/R/library/grid/po/pt_BR/LC_MESSAGES/grid.mo
 %%NLS%%lib/R/library/grid/po/pt_BR/LC_MESSAGES/R-grid.mo
+%%NLS%%lib/R/library/grid/po/pt_BR/LC_MESSAGES/grid.mo
 %%NLS%%lib/R/library/grid/po/ru/LC_MESSAGES/R-grid.mo
 %%NLS%%lib/R/library/grid/po/ru/LC_MESSAGES/grid.mo
 %%NLS%%lib/R/library/grid/po/zh_CN/LC_MESSAGES/R-grid.mo
@@ -1017,8 +1017,8 @@ lib/R/library/survival/R/survival.rdx
 lib/R/library/survival/data/Rdata.rdb
 lib/R/library/survival/data/Rdata.rds
 lib/R/library/survival/data/Rdata.rdx
-lib/R/library/survival/doc/validate.tex
 lib/R/library/survival/doc/index.html
+lib/R/library/survival/doc/validate.tex
 lib/R/library/survival/help/AnIndex
 lib/R/library/survival/help/aliases.rds
 lib/R/library/survival/help/paths.rds

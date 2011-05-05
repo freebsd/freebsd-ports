@@ -6,6 +6,10 @@
 # $FreeBSD$
 #
 
+PORTNAME=	libRmath
+
+COMMENT=	The standalone math library from R
+
 DESCR=	${.CURDIR}/pkg-descr
 LIBRMATH_SLAVEPORT=	yes
 MASTERDIR=	${.CURDIR}/../R
