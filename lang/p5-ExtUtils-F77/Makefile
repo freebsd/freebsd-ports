@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ExtUtils-F77
-PORTVERSION=	1.16
-PORTREVISION=	1
+PORTVERSION=	1.17
 CATEGORIES=	lang perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,11 +18,12 @@ PERL_CONFIGURE=	yes
 
 MAN3=		ExtUtils::F77.3
 
-F2CLIB=		-lg2c
+GCCLIBDIR_CMDS=	${FC} -print-file-name=libgfortran.so | ${SED} -e s/libgfortran.so//
+F2CLIB=		-lgfortran
 
 post-patch:
-	@cd ${WRKSRC}; ${PERL5} -i.orig -pe \
-		's/(.*Freebsd.*lib )(-lf2c)(.*)/$$1 ${F2CLIB} $$3/' F77.pm
-	@${REINPLACE_CMD} -e "s/'f77',/'f77','g77-34',/" ${WRKSRC}/F77.pm
+	@${REINPLACE_CMD} -e "s/'gfortran44'/'${FC}'/" \
+			  -e "s/'-O2'/'${CFLAGS}'/" \
+			  ${WRKSRC}/F77.pm
 
 .include <bsd.port.mk>
