@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xterm
-PORTVERSION=	269
-PORTREVISION=	3
+PORTVERSION=	270
 CATEGORIES=	x11
 MASTER_SITES=	ftp://invisible-island.net/xterm/ \
 		CRITICAL
@@ -27,7 +26,8 @@ CONFIGURE_ARGS+=--with-utempter --enable-narrowproto
 
 OPTIONS=	WIDE_CHARS "enable wide-character support" on \
 		256_COLOR "enable 256-color support" off \
-		DEC_LOCATOR "enable DECterm Locator support" off
+		DEC_LOCATOR "enable DECterm Locator support" off \
+		PCRE "use PCRE for regular-expressions" off
 
 .include <bsd.port.options.mk>
 
@@ -41,6 +41,11 @@ CONFIGURE_ARGS+=	--enable-256-color
 
 .if defined(WITH_DEC_LOCATOR)
 CONFIGURE_ARGS+=	--enable-dec-locator
+.endif
+
+.if defined(WITH_PCRE)
+CONFIGURE_ARGS+=	--with-pcre
+LIB_DEPENDS=		pcre.0:${PORTSDIR}/devel/pcre
 .endif
 
 MAN1=		resize.1 koi8rxterm.1 uxterm.1 xterm.1
