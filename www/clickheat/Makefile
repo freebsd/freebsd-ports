@@ -4,9 +4,9 @@
 # $FreeBSD$
 
 PORTNAME=	clickheat
-PORTVERSION=	1.12
+PORTVERSION=	1.13
 CATEGORIES=	www
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	ClickHeat is a visual heatmap of clicks on a HTML page
