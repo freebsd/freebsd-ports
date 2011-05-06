@@ -147,7 +147,7 @@ LINK_USRBIN=	yes
 LINK_USRBIN=	no
 .endif
 
-NO_LATEST_LINK=	yes
+LATEST_LINK=	perl
 
 .if defined(WITH_GDBM)
 MAN3+=	GDBM_File.3
