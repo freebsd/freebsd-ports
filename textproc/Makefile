@@ -1137,6 +1137,7 @@
     SUBDIR += rubygem-rak
     SUBDIR += rubygem-rchardet
     SUBDIR += rubygem-rdiscount
+    SUBDIR += rubygem-sass
     SUBDIR += rubygem-sax-machine
     SUBDIR += rubygem-spreadsheet
     SUBDIR += rubygem-syntax
