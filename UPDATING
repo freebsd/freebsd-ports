@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110506:
+  AFFECTS: users of lang/perl*
+  AUTHOR: skv@FreeBSD.org
+
+  Default version of Perl was bumped to 5.12.
+
+  If you already have lang/perl5.10 or lang/perl5.8 installed, and want to
+  switch to lang/perl5.12 please follow instructions in the entry 20100715
+  in this file.
+
 20110503
   AFFECTS: users of www/codeigniter and www/codeigniter-devel
   AUTHOR: glarkin@FreeBSD.org
