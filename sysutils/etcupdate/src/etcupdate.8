@@ -25,7 +25,7 @@
 .\"
 .\" $FreeBSD$
 .\"
-.Dd April 26, 2010
+.Dd May 6, 2011
 .Dt ETCUPDATE 8
 .Os
 .Sh NAME
@@ -228,10 +228,14 @@ is invoked to update
 if
 .Pa /etc/login.conf
 is changed,
-and
 .Xr newaliases 1
 is invoked if
 .Pa /etc/mail/aliases
+is changed,
+and
+.Pa /etc/rc.d/motd
+is invoked if
+.Pa /etc/motd
 is changed.
 One exception is that if
 .Pa /etc/mail/aliases
@@ -240,6 +244,16 @@ then a warning will be issued instead.
 This is due to a limitation of the
 .Xr newaliases 1
 command.
+Similarly,
+if
+.Pa /etc/motd
+is changed and the destination directory is not the default,
+then
+.Pa /etc/rc.d/motd
+will not be executed due to a limitation of that script.
+In this case no warning is issued as the result of
+.Pa /etc/rc.d/motd
+is merely cosmetic and will be corrected on the next reboot.
 .Ss Build Mode
 The
 .Cm build
