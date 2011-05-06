@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	PDL
-PORTVERSION=	2.4.4
-PORTREVISION=	8
+PORTVERSION=	2.4.7
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN/${PORTNAME}:cpan \
 		SF/pdl/PDL/${PORTVERSION}:sf
@@ -17,19 +16,12 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:cpan,sf
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Data Language
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl \
-		${SITE_PERL}/ExtUtils/F77.pm:${PORTSDIR}/lang/p5-F77 \
-		${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline \
+BUILD_DEPENDS=	${SITE_PERL}/Inline.pm:${PORTSDIR}/devel/p5-Inline \
 		${SITE_PERL}/${PERL_ARCH}/Filter/Util/Call.pm:${PORTSDIR}/devel/p5-Filter \
-		${SITE_PERL}/Astro/FITS/Header.pm:${PORTSDIR}/astro/p5-Astro-FITS-Header \
-		${SITE_PERL}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl \
-		${SITE_PERL}/Term/ReadLine/readline.pm:${PORTSDIR}/devel/p5-ReadLine-Perl
-LIB_DEPENDS=	plplotd.10:${PORTSDIR}/math/plplot \
-		fftw.2:${PORTSDIR}/math/fftw \
-		gsl.15:${PORTSDIR}/math/gsl
-RUN_DEPENDS=	${BUILD_DEPENDS}
+		${SITE_PERL}/Astro/FITS/Header.pm:${PORTSDIR}/astro/p5-Astro-FITS-Header
 
-USE_GL=		yes
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 PERL_CONFIGURE=	yes
 USE_GMAKE=	yes
 MAKE_ENV+=	PERL5LIB=${WRKSRC}/blib/lib
@@ -39,23 +31,66 @@ PLIST_FILES=	bin/pdl bin/pdldoc bin/perldl bin/pptemplate \
 		${SITE_PERL_REL}/${PERL_ARCH}/Inline/MakePdlppInstallable.pm
 MAKE_JOBS_UNSAFE=	yes
 
-.if defined(KITCHEN_SINK)
+OPTIONS=	PGPLOT "Enable PDL::Graphics::PGPLOT" on \
+		PLPLOT "Enable PDL::Graphics::PLplot" off \
+		GL "Enable PDL::Graphics::TriD and OpenGL" on \
+		GD "Enable PDL::IO::GD" off \
+		FFTW "Enable PDL::FFTW" on \
+		GSL "Enable PDL::GSL interface" off \
+		HDF "Enable PDL::IO::HDF interface" off \
+		PROJ "Enable PDL::GIS::Proj interface" off \
+		F77 "Enable PDL::Minuit and PDL::Slatec" on \
+		READLINE "Use GNU readline" off \
+		SINK "Include PDL kitchen sink" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_PGPLOT)
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/PGPLOT.pm:${PORTSDIR}/graphics/pgperl
+.endif
+
+.if defined(WITH_PLPLOT)
+LIB_DEPENDS+=	plplotd.10:${PORTSDIR}/math/plplot
+.endif
+
+.if defined(WITH_GL)
+USE_GL=		yes
+.endif
+
+.if defined(WITH_GD)
+LIB_DEPENDS+=	gd:${PORTSDIR}/graphics/gd
+.endif
+
+.if defined(WITH_F77)
+BUILD_DEPENDS+=	${SITE_PERL}/ExtUtils/F77.pm:${PORTSDIR}/lang/p5-F77
+.endif
+
+.if defined(WITH_FFTW)
+LIB_DEPENDS+=	fftw.2:${PORTSDIR}/math/fftw
+.endif
+
+.if defined(WITH_GSL)
+LIB_DEPENDS+=	gsl:${PORTSDIR}/math/gsl
+.endif
+
+.if defined(WITH_HDF)
+LIB_DEPENDS+=	df:${PORTSDIR}/science/hdf
+.endif
+
+.if defined(WITH_PROJ)
+LIB_DEPENDS+=	proj:${PORTSDIR}/graphics/proj
+.endif
+
+.if defined(WITH_READLINE)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu
+.else
+RUN_DEPENDS+=	${SITE_PERL}/Term/ReadLine/readline.pm:${PORTSDIR}/devel/p5-ReadLine-Perl
+.endif
+
+.if defined(WITH_SINK)
 RUN_DEPENDS+=	ppmtogif:${PORTSDIR}/graphics/netpbm \
 		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
 		saoimage:${PORTSDIR}/astro/saoimage
-.endif
-
-.SILENT:
-
-.if !defined(KITCHEN_SINK)
-pre-extract:
-	${ECHO} "You can build additional functionality into PDL by defining KITCHEN_SINK"
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "alpha"
-BROKEN=	test script t/flexraw.t fails all 26 tests
 .endif
 
 post-patch:
@@ -84,4 +119,4 @@ post-install:
 	  ${FIND} ${SITE_PERL}/${PERL_ARCH}/auto/PDL -type d | ${SORT} -r | \
 		${SED} "s,^${PREFIX}/,@dirrm ," >> ${TMPPLIST})
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
