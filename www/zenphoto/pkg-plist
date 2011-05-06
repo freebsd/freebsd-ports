@@ -490,6 +490,10 @@
 %%WWWDIR%%/zp-core/locale/pl_PL/LC_MESSAGES/zenphoto.po
 %%WWWDIR%%/zp-core/locale/pl_PL/flag.png
 %%WWWDIR%%/zp-core/locale/pl_PL/select_files_button.png
+%%WWWDIR%%/zp-core/locale/sk_SK/LC_MESSAGES/zenphoto.mo
+%%WWWDIR%%/zp-core/locale/sk_SK/LC_MESSAGES/zenphoto.po
+%%WWWDIR%%/zp-core/locale/sk_SK/flag.png
+%%WWWDIR%%/zp-core/locale/sk_SK/select_files_button.png
 %%WWWDIR%%/zp-core/locale/sv_SE/LC_MESSAGES/zenphoto.mo
 %%WWWDIR%%/zp-core/locale/sv_SE/LC_MESSAGES/zenphoto.po
 %%WWWDIR%%/zp-core/locale/sv_SE/flag.png
@@ -1629,6 +1633,8 @@
 @dirrm %%WWWDIR%%/zp-core/locale/zh_CN
 @dirrm %%WWWDIR%%/zp-core/locale/sv_SE/LC_MESSAGES
 @dirrm %%WWWDIR%%/zp-core/locale/sv_SE
+@dirrm %%WWWDIR%%/zp-core/locale/sk_SK/LC_MESSAGES
+@dirrm %%WWWDIR%%/zp-core/locale/sk_SK
 @dirrm %%WWWDIR%%/zp-core/locale/pl_PL/LC_MESSAGES
 @dirrm %%WWWDIR%%/zp-core/locale/pl_PL
 @dirrm %%WWWDIR%%/zp-core/locale/nl_NL/LC_MESSAGES
