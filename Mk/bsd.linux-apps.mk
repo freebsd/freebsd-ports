@@ -68,7 +68,7 @@ _LINUX_APPS_ALL+=
 
 # 2.6.16 components
 _LINUX_26_APPS=		alsa-plugins-oss blt cyrus-sasl2 dbusglib dbuslibs \
-			libidn libssh2 libv4l nspr nss openal-soft \
+			libasyncns libidn libssh2 libv4l nspr nss openal-soft \
 			openldap pulseaudio-libs sqlite3 tcl84 tk84
 
 _LINUX_APPS_ALL+=	${_LINUX_26_APPS}
@@ -223,6 +223,11 @@ jpeg_FILE=			${LINUXBASE}/usr/lib/libjpeg.so.62.0.0
 jpeg_f10_FILE=		${LINUXBASE}/usr/lib/libjpeg.so.62.0.0
 jpeg_DETECT=		${jpeg${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
 jpeg_PORT=			${PORTSDIR}/graphics/linux${LINUX_DIST_SUFFIX}-jpeg
+
+# no libasyncns_FILE (there is no libasyncns port for Fedora 4 distribution)
+libasyncns_f10_FILE=	${LINUXBASE}/usr/lib/libasyncns.so.0.3.1
+libasyncns_DETECT=	${libasyncns${LINUX_DIST_SUFFIX:S/-/_/}_FILE}
+libasyncns_PORT=	${PORTSDIR}/dns/linux${LINUX_DIST_SUFFIX}-libasyncns
 
 libaudiofile_FILE=	${LINUXBASE}/usr/lib/libaudiofile.so.0.0.2
 libaudiofile_f10_FILE=	${LINUXBASE}/usr/lib/libaudiofile.so.0.0.2
