@@ -246,6 +246,7 @@ share/git-core/templates/info/exclude
 %%GUI%%share/git-gui/lib/msgs/it.msg
 %%GUI%%share/git-gui/lib/msgs/ja.msg
 %%GUI%%share/git-gui/lib/msgs/nb.msg
+%%GUI%%share/git-gui/lib/msgs/pt_br.msg
 %%GUI%%share/git-gui/lib/msgs/ru.msg
 %%GUI%%share/git-gui/lib/msgs/sv.msg
 %%GUI%%share/git-gui/lib/msgs/zh_cn.msg
@@ -811,6 +812,8 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.4.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.4.4.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.4.5.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.5.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.5.1.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.cgi
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.js
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.css
