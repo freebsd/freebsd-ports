@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	etcupdate
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	sysutils
 MASTER_SITES=	# none
 DISTFILES=	# none
