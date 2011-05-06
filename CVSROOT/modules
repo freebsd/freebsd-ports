@@ -3022,6 +3022,7 @@ en-aspell                       ports/textproc/en-aspell
 enblend                         ports/graphics/enblend
 enca                            ports/converters/enca
 enchant                         ports/textproc/enchant
+encode-explorer                 ports/www/encode-explorer
 encodings                       ports/x11-fonts/encodings
 endgame-singularity             ports/games/endgame-singularity
 endgame-singularity-music       ports/games/endgame-singularity-music
@@ -3309,6 +3310,7 @@ faad                            ports/audio/faad
 faces                           ports/mail/faces
 facile                          ports/math/facile
 facter                          ports/sysutils/facter
+fairymax                        ports/games/fairymax
 fakebo                          ports/security/fakebo
 fakeident                       ports/security/fakeident
 fakeroot                        ports/security/fakeroot
@@ -7149,6 +7151,7 @@ kmyirc                          ports/irc/kmyirc
 kmymoney-kde4                   ports/finance/kmymoney-kde4
 kmymoney2                       ports/finance/kmymoney2
 kmysqladmin                     ports/databases/kmysqladmin
+kn-aspell                       ports/textproc/kn-aspell
 knemo                           ports/net/knemo
 knemo-kde4                      ports/net/knemo-kde4
 knews                           ports/news/knews
@@ -12811,6 +12814,7 @@ p5-Mail-ListDetector            ports/mail/p5-Mail-ListDetector
 p5-Mail-MailStats               ports/mail/p5-Mail-MailStats
 p5-Mail-Mbox-MessageParser      ports/mail/p5-Mail-Mbox-MessageParser
 p5-Mail-MboxParser              ports/mail/p5-Mail-MboxParser
+p5-Mail-OpenDKIM                ports/mail/p5-Mail-OpenDKIM
 p5-Mail-OpenRelay-Simple        ports/mail/p5-Mail-OpenRelay-Simple
 p5-Mail-POP3Client              ports/mail/p5-Mail-POP3Client
 p5-Mail-Procmail                ports/mail/p5-Mail-Procmail
@@ -13471,6 +13475,7 @@ p5-POE-Component-Server-SimpleHTTP  ports/www/p5-POE-Component-Server-SimpleHTTP
 p5-POE-Component-Server-Twirc   ports/net/p5-POE-Component-Server-Twirc
 p5-POE-Component-Server-XMLRPC  ports/devel/p5-POE-Component-Server-XMLRPC
 p5-POE-Component-Spread         ports/net/p5-POE-Component-Spread
+p5-POE-Component-Syndicator     ports/devel/p5-POE-Component-Syndicator
 p5-POE-Component-TSTP           ports/devel/p5-POE-Component-TSTP
 p5-POE-Devel-Profiler           ports/devel/p5-POE-Devel-Profiler
 p5-POE-Exceptions               ports/devel/p5-POE-Exceptions
@@ -13970,6 +13975,7 @@ p5-String-Format                ports/textproc/p5-String-Format
 p5-String-Fraction              ports/textproc/p5-String-Fraction
 p5-String-Koremutake            ports/textproc/p5-String-Koremutake
 p5-String-LRC                   ports/devel/p5-String-LRC
+p5-String-MkPasswd              ports/security/p5-String-MkPasswd
 p5-String-Multibyte             ports/converters/p5-String-Multibyte
 p5-String-Parity                ports/devel/p5-String-Parity
 p5-String-Random                ports/devel/p5-String-Random
@@ -17008,6 +17014,7 @@ p5-mail-lmlm                    ports/mail/p5-Mail-LMLM
 p5-mail-mailstats               ports/mail/p5-Mail-MailStats
 p5-mail-mbox-messageparser      ports/mail/p5-Mail-Mbox-MessageParser
 p5-mail-mboxparser              ports/mail/p5-Mail-MboxParser
+p5-mail-opendkim                ports/mail/p5-Mail-OpenDKIM
 p5-mail-openrelay-simple        ports/mail/p5-Mail-OpenRelay-Simple
 p5-mail-pop3client              ports/mail/p5-Mail-POP3Client
 p5-mail-procmail                ports/mail/p5-Mail-Procmail
@@ -17878,6 +17885,7 @@ p5-poe-component-smtp           ports/mail/p5-POE-Component-SMTP
 p5-poe-component-snmp           ports/net-mgmt/p5-POE-Component-SNMP
 p5-poe-component-spread         ports/net/p5-POE-Component-Spread
 p5-poe-component-sslify         ports/security/p5-POE-Component-SSLify
+p5-poe-component-syndicator     ports/devel/p5-POE-Component-Syndicator
 p5-poe-component-tstp           ports/devel/p5-POE-Component-TSTP
 p5-poe-devel-profiler           ports/devel/p5-POE-Devel-Profiler
 p5-poe-exceptions               ports/devel/p5-POE-Exceptions
@@ -18204,6 +18212,7 @@ p5-string-format                ports/textproc/p5-String-Format
 p5-string-fraction              ports/textproc/p5-String-Fraction
 p5-string-koremutake            ports/textproc/p5-String-Koremutake
 p5-string-lrc                   ports/devel/p5-String-LRC
+p5-string-mkpasswd              ports/security/p5-String-MkPasswd
 p5-string-multibyte             ports/converters/p5-String-Multibyte
 p5-string-parity                ports/devel/p5-String-Parity
 p5-string-random                ports/devel/p5-String-Random
@@ -25410,6 +25419,7 @@ untar                           ports/archivers/untar
 unuran                          ports/math/unuran
 unworkable                      ports/net-p2p/unworkable
 unzip                           ports/archivers/unzip
+unzip-iconv                     ports/archivers/unzip-iconv
 unzoo                           ports/archivers/unzoo
 uox3                            ports/games/uox3
 up-imapproxy                    ports/mail/up-imapproxy
