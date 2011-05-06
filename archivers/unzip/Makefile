@@ -7,6 +7,7 @@
 
 PORTNAME=	unzip
 PORTVERSION=	6.0
+PORTREVISION=	1
 CATEGORIES?=	archivers
 MASTER_SITES=	SF/infozip/UnZip%206.x%20%28latest%29/UnZip%20${PORTVERSION}/:main \
 		SF/infozip/UnZip%205.x%20and%20earlier/5.51/:unreduce
@@ -21,7 +22,7 @@ LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 LICENSE_NAME=	Info-ZIP license
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-CONFLICTS?=	zh-unzip-[0-9]* ko-unzip-[0-9]* ru-unzip-[0-9]*
+CONFLICTS?=	unzip-iconv-[0-9]* zh-unzip-[0-9]* ko-unzip-[0-9]* ru-unzip-[0-9]*
 
 MAKEFILE=	unix/Makefile
 .if defined(INSTALL_AS_INFOUNZIP)
