@@ -45,6 +45,10 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
 EXTRA_PATCHES=	${.CURDIR}/../../devel/qt4/files/patch-configure
 
+.if defined(PACKAGE_BUILDING)
+WITH_QT_PHONON=	yes
+.endif
+
 .if !defined(WITH_QT_PHONON)
 IGNORE=		conflicts with multimedia/phonon-gstreamer. Define WITH_QT_PHONON to install Qt 4 phonon
 .endif
