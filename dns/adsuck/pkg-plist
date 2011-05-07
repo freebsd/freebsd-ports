@@ -1,0 +1,11 @@
+sbin/adsuck
+%%EXAMPLESDIR%%/Hosts.blc
+%%EXAMPLESDIR%%/Hosts.pub
+%%EXAMPLESDIR%%/Hosts.rsk
+%%EXAMPLESDIR%%/Hosts.trc
+%%EXAMPLESDIR%%/README
+%%EXAMPLESDIR%%/hosts.small
+%%EXAMPLESDIR%%/hosts.yoyo
+%%EXAMPLESDIR%%/regex
+%%EXAMPLESDIR%%/resolv.conf
+@dirrm %%EXAMPLESDIR%%
