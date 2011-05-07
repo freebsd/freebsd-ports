@@ -1,0 +1,58 @@
+--- Makefile.in.orig	2011-01-22 06:36:17.000000000 +0100
++++ Makefile.in	2011-04-15 21:25:36.000000000 +0200
+@@ -512,16 +512,6 @@
+ 	cd "$(DESTDIR)$(povconfdir)" && rm -f $$files
+ install-povdocDATA: $(povdoc_DATA)
+ 	@$(NORMAL_INSTALL)
+-	test -z "$(povdocdir)" || $(MKDIR_P) "$(DESTDIR)$(povdocdir)"
+-	@list='$(povdoc_DATA)'; test -n "$(povdocdir)" || list=; \
+-	for p in $$list; do \
+-	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
+-	  echo "$$d$$p"; \
+-	done | $(am__base_list) | \
+-	while read files; do \
+-	  echo " $(INSTALL_DATA) $$files '$(DESTDIR)$(povdocdir)'"; \
+-	  $(INSTALL_DATA) $$files "$(DESTDIR)$(povdocdir)" || exit $$?; \
+-	done
+ 
+ uninstall-povdocDATA:
+ 	@$(NORMAL_UNINSTALL)
+@@ -1018,7 +1008,7 @@
+ install-data-local:
+ 	cat /dev/null > $(povinstall);
+ 	@echo "Creating data directories..."; \
+-	list='$(top_srcdir)/icons $(top_srcdir)/include $(top_srcdir)/ini $(top_srcdir)/scenes'; \
++	list='$(top_srcdir)/include $(top_srcdir)/ini'; \
+ 	dirlist=`find $$list -type d | sed s,$(top_srcdir)/,,`; \
+ 	for p in "" $$dirlist ; do \
+ 	  $(mkdir_p) $(DESTDIR)$(povlibdir)/$$p && printf "%s\n" "$(DESTDIR)$(povlibdir)/$$p" "`cat $(povinstall)`" > $(povinstall); \
+@@ -1028,29 +1018,6 @@
+ 	for f in $$filelist ; do \
+ 	  $(INSTALL_DATA) $(top_srcdir)/$$f $(DESTDIR)$(povlibdir)/$$f && echo "$(DESTDIR)$(povlibdir)/$$f" >> $(povinstall); \
+ 	done
+-	@echo "Creating documentation directories..."; \
+-	dirlist=`find $(top_srcdir)/doc/ -type d | sed s,$(top_srcdir)/doc/,,`; \
+-	for p in "" $$dirlist ; do \
+-	  $(mkdir_p) $(DESTDIR)$(povdocdir)/$$p && printf "%s\n" "$(DESTDIR)$(povdocdir)/$$p" "`cat $(povinstall)`" > $(povinstall); \
+-	done
+-	@echo "Copying documentation files..."; \
+-	filelist=`find $(top_srcdir)/doc/ -type f | sed s,$(top_srcdir)/doc/,,`; \
+-	for f in $$filelist ; do \
+-	  $(INSTALL_DATA) $(top_srcdir)/doc/$$f $(DESTDIR)$(povdocdir)/$$f && echo "$(DESTDIR)$(povdocdir)/$$f" >> $(povinstall); \
+-	done
+-	@echo "Creating user directories..."; \
+-	for p in $(povuser) $(povconfuser) ; do \
+-	  $(mkdir_p) $$p && chown $(povowner) $$p && chgrp $(povgroup) $$p && printf "%s\n" "$$p" "`cat $(povinstall)`" > $(povinstall); \
+-	done
+-	@echo "Copying user configuration and INI files..."; \
+-	for f in povray.conf povray.ini ; do \
+-	  if test -f $(povconfuser)/$$f; then \
+-	    echo "Creating backup of $(povconfuser)/$$f"; \
+-	    mv -f $(povconfuser)/$$f $(povconfuser)/$$f.bak; \
+-	  fi; \
+-	done; \
+-	$(INSTALL_DATA) $(top_srcdir)/povray.conf $(povconfuser)/povray.conf && chown $(povowner) $(povconfuser)/povray.conf && chgrp $(povgroup) $(povconfuser)/povray.conf  && echo "$(povconfuser)/povray.conf" >> $(povinstall); \
+-	$(INSTALL_DATA) $(top_builddir)/povray.ini $(povconfuser)/povray.ini && chown $(povowner) $(povconfuser)/povray.ini && chgrp $(povgroup) $(povconfuser)/povray.ini  && echo "$(povconfuser)/povray.ini" >> $(povinstall)
+ 
+ # Remove data, config, and empty folders for 'make uninstall'.
+ # Use 'hook' instead of 'local' so as to properly remove *empty* folders (e.g. scripts).
