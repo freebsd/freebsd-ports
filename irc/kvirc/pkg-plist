@@ -70,7 +70,7 @@ lib/kvirc/%%VER%%/modules/libkviurl.so
 lib/kvirc/%%VER%%/modules/libkviwindow.so
 lib/libkvilib.so
 lib/libkvilib.so.4
-lib/libkvilib.so.4.0.2
+lib/libkvilib.so.4.0.4
 share/applications/kvirc.desktop
 share/icons/hicolor/128x128/apps/kvirc.png
 share/icons/hicolor/128x128/mimetypes/application-x-kva.png
@@ -819,7 +819,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/doc_widget_index_all.html
 %%DATADIR%%/%%VER%%/help/en/doc_window.html
 %%DATADIR%%/%%VER%%/help/en/doc_window_naming_conventions.html
-%%DATADIR%%/%%VER%%/help/en/documentation.%%VER%%.2.4740.tag
+%%DATADIR%%/%%VER%%/help/en/documentation.4.0.4.5646.tag
 %%DATADIR%%/%%VER%%/help/en/event_onaccelkeypressed.html
 %%DATADIR%%/%%VER%%/help/en/event_onaction.html
 %%DATADIR%%/%%VER%%/help/en/event_onban.html
@@ -1385,6 +1385,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/help/en/module_reguser.html
 %%DATADIR%%/%%VER%%/help/en/module_rijndael.html
 %%DATADIR%%/%%VER%%/help/en/module_rot13.html
+%%DATADIR%%/%%VER%%/help/en/module_serverdb.html
 %%DATADIR%%/%%VER%%/help/en/module_url.html
 %%DATADIR%%/%%VER%%/help/en/nohelpavailable.html
 %%DATADIR%%/%%VER%%/help/en/widget_ctcpfloodprotectionoptions.html
@@ -1412,6 +1413,8 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/locale/about_uk.mo
 %%DATADIR%%/%%VER%%/locale/addon_de.mo
 %%DATADIR%%/%%VER%%/locale/addon_es.mo
+%%DATADIR%%/%%VER%%/locale/addon_fr.mo
+%%DATADIR%%/%%VER%%/locale/addon_hu.mo
 %%DATADIR%%/%%VER%%/locale/addon_it.mo
 %%DATADIR%%/%%VER%%/locale/addon_ja.mo
 %%DATADIR%%/%%VER%%/locale/addon_pl.mo
@@ -1436,6 +1439,8 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/locale/dcc_uk.mo
 %%DATADIR%%/%%VER%%/locale/defscript_de.mo
 %%DATADIR%%/%%VER%%/locale/defscript_es.mo
+%%DATADIR%%/%%VER%%/locale/defscript_fr.mo
+%%DATADIR%%/%%VER%%/locale/defscript_hu.mo
 %%DATADIR%%/%%VER%%/locale/defscript_it.mo
 %%DATADIR%%/%%VER%%/locale/defscript_ja.mo
 %%DATADIR%%/%%VER%%/locale/defscript_pl.mo
@@ -1492,6 +1497,8 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/locale/kvirc_sr.mo
 %%DATADIR%%/%%VER%%/locale/kvirc_uk.mo
 %%DATADIR%%/%%VER%%/locale/kvs_de.mo
+%%DATADIR%%/%%VER%%/locale/kvs_fr.mo
+%%DATADIR%%/%%VER%%/locale/kvs_hu.mo
 %%DATADIR%%/%%VER%%/locale/kvs_it.mo
 %%DATADIR%%/%%VER%%/locale/kvs_ja.mo
 %%DATADIR%%/%%VER%%/locale/kvs_pt.mo
@@ -1551,6 +1558,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/locale/notifier_uk.mo
 %%DATADIR%%/%%VER%%/locale/objects_de.mo
 %%DATADIR%%/%%VER%%/locale/objects_es.mo
+%%DATADIR%%/%%VER%%/locale/objects_fr.mo
 %%DATADIR%%/%%VER%%/locale/objects_it.mo
 %%DATADIR%%/%%VER%%/locale/objects_pt.mo
 %%DATADIR%%/%%VER%%/locale/objects_ru.mo
@@ -1591,11 +1599,15 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/locale/perl_uk.mo
 %%DATADIR%%/%%VER%%/locale/python_de.mo
 %%DATADIR%%/%%VER%%/locale/python_es.mo
+%%DATADIR%%/%%VER%%/locale/python_fr.mo
+%%DATADIR%%/%%VER%%/locale/python_hu.mo
 %%DATADIR%%/%%VER%%/locale/python_it.mo
 %%DATADIR%%/%%VER%%/locale/python_pt.mo
 %%DATADIR%%/%%VER%%/locale/python_ru.mo
 %%DATADIR%%/%%VER%%/locale/register_de.mo
 %%DATADIR%%/%%VER%%/locale/register_es.mo
+%%DATADIR%%/%%VER%%/locale/register_fr.mo
+%%DATADIR%%/%%VER%%/locale/register_hu.mo
 %%DATADIR%%/%%VER%%/locale/register_it.mo
 %%DATADIR%%/%%VER%%/locale/register_pl.mo
 %%DATADIR%%/%%VER%%/locale/register_pt.mo
@@ -2146,11 +2158,7 @@ share/icons/hicolor/scalable/mimetypes/text-x-kvs.svgz
 %%DATADIR%%/%%VER%%/themes/YellowIRC-1.0.0/themedata.kvc
 %%DATADIR%%/%%VER%%/themes/YellowIRC-1.0.0/themeinfo.kvc
 share/pixmaps/kvirc.png
-%%KDE%%share/mime/application/x-kva.xml
-%%KDE%%share/mime/application/x-kvt.xml
 %%KDE%%share/mime/packages/kvirc.xml
-%%KDE%%share/mime/text/x-kvc.xml
-%%KDE%%share/mime/text/x-kvs.xml
 @dirrm %%DATADIR%%/%%VER%%/themes/YellowIRC-1.0.0
 @dirrm %%DATADIR%%/%%VER%%/themes/MinimalDark-1.0.0
 @dirrm %%DATADIR%%/%%VER%%/themes
@@ -2196,6 +2204,8 @@ share/pixmaps/kvirc.png
 %%QT%%@dirrmtry share/applications
 @dirrmtry man/it/man1
 @dirrmtry man/it
+@dirrmtry man/fr/man1
+@dirrmtry man/fr
 @dirrmtry man/de/man1
 @dirrmtry man/de
 @dirrm lib/kvirc/%%VER%%/modules
