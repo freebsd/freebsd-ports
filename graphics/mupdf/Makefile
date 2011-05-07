@@ -5,13 +5,12 @@
 # $FreeBSD$
 
 PORTNAME=	mupdf
-PORTVERSION=	0.8.15
+PORTVERSION=	0.8.165
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE \
 		http://www.mupdf.com/download/
-
-DISTFILES=	${PORTNAME}-${DISTVERSION}-source.tar.gz
+EXTRACT_SUFX=	-source.tar.gz
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Lightweight PDF viewer and toolkit
@@ -22,7 +21,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		openjpeg.2:${PORTSDIR}/graphics/openjpeg
 
 USE_GMAKE=	yes
-MAKE_ARGS+=	build=release prefix=${PREFIX} verbose=1 MANDIR=${PREFIX}/man/man1 APPS_MAN="${MAN1:S@^@apps/man/@}" LIBDIR=${PREFIX}/lib
+MAKE_ARGS+=	build=native prefix=${PREFIX} verbose=1 mandir=${PREFIX}/man
 USE_XORG=	x11 xext
 USE_GNOME=	pkgconfig
 MAN1=		mupdf.1 mu_pdfclean.1 mu_pdfdraw.1 mu_pdfshow.1
@@ -33,17 +32,22 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 post-patch:	.SILENT
-	${REINPLACE_CMD} -e 's#\(PDF.*_EXE=.*DIR./\)#\1mu_#g' \
+	${REINPLACE_CMD} \
+		-e 's#\(PDF_APPS :=.*/\)#\1mu_#' \
+		-e 's#\(XPS_APPS :=.*/\)#\1mu_#' \
+		-e 's#\(MUPDF) :.*/\)#\1mu_#' \
+		-e 's#\(OUT)/\).*: apps/#\1mu_%.o : apps/#' \
 		-e '/install:/,/^$$/ { /-d/d; }' \
-		-e '/install.*bin$$/s/install/$$(BSD_INSTALL_PROGRAM)/' \
-		-e '/install.*lib$$/s/install/$$(BSD_INSTALL_PROGRAM)/' \
-		-e '/install.*include$$/s/install/$$(BSD_INSTALL_DATA)/' \
+		-e '/install.*bindir)$$/s/install/$$(BSD_INSTALL_PROGRAM)/' \
+		-e '/install.*libdir)$$/s/install/$$(BSD_INSTALL_LIB)/' \
+		-e '/install.*incdir)$$/s/install/$$(BSD_INSTALL_DATA)/' \
+		-e '/install.*man1$$/s/install/$$(BSD_INSTALL_MAN)/' \
 		${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's/-O2//' \
 		-e 's|/usr/local|${LOCALBASE}|' \
 		${WRKSRC}/Makerules
 
 pre-install:	.SILENT
-	find ${WRKSRC} -name pdf\*.1 -exec sh -c 'mv {} $$(dirname {})/mu_$$(basename {})' \;
+	${FIND} ${WRKSRC} -name pdf\*.1 -exec ${SH} -c 'mv {} $$(dirname {})/mu_$$(basename {})' \;
 
 .include <bsd.port.mk>
