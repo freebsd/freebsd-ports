@@ -6,32 +6,28 @@
 #
 
 PORTNAME=	vacuum
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 CATEGORIES=	net-im
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-im
-DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Crossplatform Jabber client
 
 PROJECTHOST=	${PORTNAME}${PKGNAMESUFFIX}
 
+LICENSE=	GPLv3
+
+USE_XZ=	yes
+USE_CMAKE=	yes
+USE_XORG=	xscrnsaver
 USE_QT_VER=	4
 USE_LDCONFIG=	yes
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build \
 		network linguist_build webkit
 
 DESKTOP_ENTRIES="Vacuum-IM" "Modular, crossplatform Jabber client" \
-		"${DATADIR}/resources/menuicons/shared/mainwindowlogo96.png" "${PORTNAME}" \
-		"Qt;Network;InstantMessaging;" ${FALSE}
-
-QMAKEFLAGS+=	INSTALL_PREFIX="${PREFIX}"
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
-		${QMAKE} ${QMAKEFLAGS} ${PORTNAME}.pro
+		"${PREFIX}/share/pixmaps/vacuum.png" "${PORTNAME}" \
+		"Qt;Network;InstantMessaging;" false
 
 .include <bsd.port.mk>
