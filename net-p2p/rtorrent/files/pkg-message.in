@@ -3,8 +3,6 @@ An example configuration file for rtorrent has been installed in
 %%EXAMPLESDIR%%. Read it for more information on
 how to tweak rtorrent configuration.
 
-Note that there are hash performance issues on *BSD.
-Please refer to these links for further information :
-- http://libtorrent.rakshasa.no/ticket/14
+Note that there are hash performance issues on *BSD:
 - http://libtorrent.rakshasa.no/wiki/RTorrentPerformanceTuning
 ------------------------------------------------------------------
