@@ -186,6 +186,7 @@
     SUBDIR += lxdvdrip
     SUBDIR += m2tstoavi
     SUBDIR += mandvd
+    SUBDIR += mediadownloader
     SUBDIR += mediainfo
     SUBDIR += mencoder
     SUBDIR += mimms
