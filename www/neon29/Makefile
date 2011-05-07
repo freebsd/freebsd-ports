@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	neon29
-PORTVERSION=	0.29.5
+PORTVERSION=	0.29.6
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 DISTNAME=	neon-${PORTVERSION}
