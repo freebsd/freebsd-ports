@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kvirc
-PORTVERSION=	4.0.2
+PORTVERSION=	4.0.4
 CATEGORIES=	irc kde
 MASTER_SITES=	ftp://ftp.kvirc.de/pub/kvirc/%SUBDIR%/ \
 		http://kvirc.gmake.de/pub/kvirc/%SUBDIR%/ \
