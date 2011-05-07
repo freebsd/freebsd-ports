@@ -7,6 +7,7 @@
 
 PORTNAME=	kvirc
 PORTVERSION=	4.0.4
+PORTREVISION=	1
 CATEGORIES=	irc kde
 MASTER_SITES=	ftp://ftp.kvirc.de/pub/kvirc/%SUBDIR%/ \
 		http://kvirc.gmake.de/pub/kvirc/%SUBDIR%/ \
@@ -40,7 +41,7 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		kvirc.1
-MANLANG=	"" de it
+MANLANG=	"" de fr it
 
 OPTIONS=	AUDIOFILE "Support for various audio formats" off \
 		DEBUG "Build with debug support" off \
