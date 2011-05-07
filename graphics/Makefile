@@ -730,6 +730,7 @@
     SUBDIR += potracegui
     SUBDIR += povray
     SUBDIR += povray31
+    SUBDIR += povray37
     SUBDIR += ppmcaption
     SUBDIR += ppminfo
     SUBDIR += pqiv
