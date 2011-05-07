@@ -7,7 +7,7 @@
 
 PORTNAME=	rkward
 PORTVERSION=	0.5.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/Current_Stable_Releases
 PKGNAMESUFFIX=	-kde4
@@ -15,8 +15,9 @@ PKGNAMESUFFIX=	-kde4
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	IDE/GUI for the R-project
 
-LIB_DEPENDS=	R.0:${PORTSDIR}/math/R
-RUN_DEPENDS=	seq2:${PORTSDIR}/misc/seq2
+BUILD_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R
+RUN_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R \
+		seq2:${PORTSDIR}/misc/seq2
 
 LICENSE=	GPLv2
 
@@ -64,13 +65,16 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|ADD_SUBDIRECTORY(po)|#ADD_SUBDIRECTORY(po)|'	\
 		${WRKSRC}/CMakeLists.txt
 .endif
+	@(if [ ! -e ${LOCALBASE}/lib/R/lib/libR.so ] ; then \
+	${ECHO_MSG} "==> ${PKGNAME} requires math/R to be built WITH_LIBR" ; \
+	exit 1; fi)
 
 post-install:
 	${TOUCH} ${LOCALBASE}/lib/R/library/rkwardtests/doc/.empty
 
 .if defined(MAINTAINER_MODE)
 regression-test:	install
-	@${ECHO_MSG} "To pass the tests, somme CRAN packages like R2HTML"
+	@${ECHO_MSG} "To pass the tests, some CRAN packages like R2HTML"
 	@${ECHO_MSG} "must be installed."
 	(cd ${WRKSRC}/tests && make plugintests)
 .endif

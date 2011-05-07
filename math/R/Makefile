@@ -7,7 +7,7 @@
 #
 
 PORTNAME?=	R
-PORTVERSION=	2.12.2
+PORTVERSION=	2.13.0
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -36,54 +36,74 @@ BUILD_WRKSRC=		${WRKSRC}/src/nmath/standalone
 CONFIGURE_ARGS =	--disable-nls --with-ICU=no --with-cairo=no --with-iconv=no \
 			--with-jpeglib=no --with-libpng=no --with-readline=no \
 			--with-tcltk=no --with-x=no --without-libintl-prefix
-USE_PERL5_BUILD=	yes
+PLIST_SUB=		RMATH_SOVERSION="${RMATH_SOVERSION}"
+USE_LDCONFIG=		yes
 .else # LIBRMATH_SLAVEPORT
 ALL_TARGET=		all
 CONFIGURE_ARGS =	--enable-memory-profiling rdocdir=${DOCSDIR} \
 			--with-system-bzlib --with-system-zlib
 CONFIGURE_ENV=		FCFLAGS="${FFLAGS}" \
 			INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644" \
-			LDFLAGS="${LDFLAGS}"  \
 			R_LD_LIBRARY_PATH="${R_LD_LIBRARY_PATH}" TAR="${TAR}"
-INSTALL_TARGET=		install install-libR
 MAN1=		R.1 Rscript.1
 OPTIONS=	ATLAS		"Use ATLAS instead of BLAS/LAPACK" off \
 		GHOSTSCRIPT	"Enable the [dev2]bitmap() graphics devices" on \
 		ICU		"Improve collation in multibyte locales with ICU" on \
 		JPEG		"Enable the jpeg() graphics device" on \
 		LETTER_PAPER	"Use US Letter paper" off \
+		LIBR		"Install libR, and a dynamically-linked, rather than a static R" on \
 		NLS		"Build with NLS support" on \
+		PANGOCAIRO	"Enable cairo and pango in the X11() graphics device" on \
 		PCRE_PORT	"Use PCRE port instead of bundled source" on \
 		PNG		"Enable the png() graphics device" on \
-		STATIC_LIBR	"Build a static, rather than a shared, libR" off \
 		TCLTK		"Use Tcl/Tk (for the tcltk package)" on \
 		THREADS		"Build a multithreaded R" on \
 		X11		"Enable the X11() graphics device" on \
 		DVI_MANUALS	"Install DVI manuals (requires TeX)" off \
 		INFO_MANUALS	"Install GNU info manuals" on
-R_LD_LIBRARY_PATH=	${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}
+PLIST_SUB=		R_SOVERSION="${R_SOVERSION}" \
+			RBLAS_SOVERSION="${RBLAS_SOVERSION}" \
+			RLAPACK_SOVERSION="${RLAPACK_SOVERSION}"
+R_LD_LIBRARY_PATH=	${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}:${LOCALBASE}/lib
 USE_ICONV=		yes
-USE_PERL5=		yes
+USE_LDCONFIG=		${PREFIX}/lib/R/lib
+WANT_GNOME=		yes
 .endif # LIBRMATH_SLAVEPORT
+CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS}"
 GNU_CONFIGURE=		yes
 MAKE_JOBS_UNSAFE=	yes
+R_SOVERSION=		0
+RBLAS_SOVERSION=	2
+RLAPACK_SOVERSION=	4
+RMATH_SOVERSION=	0
 USE_FORTRAN=		yes
-USE_LDCONFIG=		yes
+USE_PERL5_BUILD=	yes
 
 .include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64" || ${ARCH} == "powerpc64"
+PICFLAG?=		-fPIC
+.else
+PICFLAG?=		-fpic
+.endif
+.for flag in LD CXXLD
+CONFIGURE_ENV +=	SHLIB_${flag}FLAGS="${PICFLAG}"
+.endfor
 
 .if !defined(LIBRMATH_SLAVEPORT)
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=		atlas.2:${PORTSDIR}/math/atlas
-CONFIGURE_ARGS+=	--with-blas="-lf77blas -latlas"
-# A workaround to prevent hangs during the build.
-.if ${ARCH} != "i386"
-CONFIGURE_ARGS+=	--with-lapack="-lalapack -lcblas"
-.endif
+BLAS?=			"-lf77blas -latlas"
+LAPACK?=		"-lalapack -lcblas"
 .else
-LIB_DEPENDS+=		blas.2:${PORTSDIR}/math/blas \
-			lapack.4:${PORTSDIR}/math/lapack
-CONFIGURE_ARGS+=	--with-blas="-lblas" --with-lapack="-llapack -lblas"
+BLAS?=			no
+LAPACK?=		no
+.endif
+CONFIGURE_ARGS+=	--with-blas="${BLAS}" --with-lapack="${LAPACK}"
+.if ${BLAS} == "no" || ${LAPACK} == "no"
+PLIST_SUB+=		LAPACK=""
+.else
+PLIST_SUB+=		LAPACK="@comment "
 .endif
 
 .if !defined(WITHOUT_GHOSTSCRIPT)
@@ -108,12 +128,25 @@ CONFIGURE_ARGS+=	--with-jpeglib
 CONFIGURE_ENV +=	R_PAPERSIZE=letter
 .endif
 
+.if defined(WITHOUT_LIBR)
+PLIST_SUB+=		LIBR="@comment "
+.else
+CONFIGURE_ARGS+=	--enable-R-shlib
+PLIST_SUB+=		LIBR=""
+.endif
+
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
+.endif
+
+.if defined(WITHOUT_PANGOCAIRO)
+CONFIGURE_ARGS+=	--with-cairo=no
+.else
+USE_GNOME+=		pango
 .endif
 
 .if defined(WITHOUT_PCRE_PORT)
@@ -128,14 +161,6 @@ CONFIGURE_ARGS+=	--without-libpng
 .else
 LIB_DEPENDS+=		png.6:${PORTSDIR}/graphics/png
 CONFIGURE_ARGS+=	--with-libpng
-.endif
-
-.if defined(WITH_STATIC_LIBR)
-CONFIGURE_ARGS+=	--enable-R-static-lib
-PLIST_SUB+=		STATIC_LIBR="" SHARED_LIBR="@comment "
-.else
-CONFIGURE_ARGS+=	--enable-R-shlib
-PLIST_SUB+=		STATIC_LIBR="@comment " SHARED_LIBR=""
 .endif
 
 .if defined(WITHOUT_TCLTK)
@@ -162,7 +187,7 @@ CONFIGURE_ARGS+=	--without-x
 PLIST_SUB+=		X11="@comment "
 .else
 CONFIGURE_ARGS+=	--with-x
-USE_XORG=		x11 xt
+USE_XORG=		x11 xmu xt
 PLIST_SUB+=		X11=""
 .endif
 
@@ -202,19 +227,31 @@ post-patch:
 	done)
 .endif
 
+.if defined(WITH_LIBR)
+post-build:
+	@(cd ${WRKSRC}/src/main; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
+	${MAKE_ARGS} libR.a)
+
+.endif
+
 check regression-test test: build
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
-	${MAKE_ARGS} check)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} LANGUAGE=en \
+	LC_COLLATE=C LC_TIME=C ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} \
+	check)
 
 check-all: build
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
-	${MAKE_ARGS} check-all)
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} LANGUAGE=en \
+	LC_COLLATE=C LC_TIME=C ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} \
+	check-all)
 
 post-install:
-.if !defined(WITH_STATIC_LIBR)
-	${MV} ${PREFIX}/lib/libR.so ${PREFIX}/lib/libR.so.0
-	${LN} -sf ${PREFIX}/lib/libR.so.0 ${PREFIX}/lib/libR.so
+.if defined(WITH_LIBR)
+	@${INSTALL_LIB} ${WRKSRC}/src/main/libR.a ${PREFIX}/lib/R/lib
 .endif
+.for L in R Rblas Rlapack
+	@(cd ${PREFIX}/lib/R/lib; if [ -f lib${L}.so ] ; then \
+	${LN} -sf lib${L}.so lib${L}.so.${${L:U}_SOVERSION} ; fi)
+.endfor
 .if defined(WITH_INFO_MANUALS) && !defined(NOPORTDOCS)
 	@(cd ${WRKSRC}/doc/manual; \
 	for infofile in ${INFO}; do \
@@ -224,14 +261,16 @@ post-install:
 
 .else # !LIBRMATH_SLAVEPORT
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/src/include/Rmath.h ${PREFIX}/include
-	${INSTALL_DATA} ${BUILD_WRKSRC}/libRmath.a ${PREFIX}/lib
-	${INSTALL_DATA} ${BUILD_WRKSRC}/libRmath.so ${PREFIX}/lib/libRmath.so.0
-	(cd ${PREFIX}/lib; ${LN} -sf libRmath.so.0 libRmath.so)
+	@${INSTALL_DATA} ${WRKSRC}/src/include/Rmath.h ${PREFIX}/include
+	@${INSTALL_LIB} ${BUILD_WRKSRC}/libRmath.a ${PREFIX}/lib
+	@${INSTALL_LIB} ${BUILD_WRKSRC}/libRmath.so \
+	${PREFIX}/lib/libRmath.so.${RMATH_SOVERSION}
+	@(cd ${PREFIX}/lib; ${LN} -sf libRmath.so.${RMATH_SOVERSION} libRmath.so)
 
-test: install
-	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
-	${MAKE_ARGS} test && ${BUILD_WRKSRC}/test)
+check regression-test test: build
+	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} LANGUAGE=en \
+	LC_COLLATE=C LC_TIME=C ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} test; \
+	${SETENV} LD_LIBRARY_PATH="${BUILD_WRKSRC}" ${BUILD_WRKSRC}/test)
 
 .endif # !LIBRMATH_SLAVEPORT
 

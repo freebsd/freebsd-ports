@@ -590,6 +590,7 @@ lib/R/library/rkward/help/paths.rds
 lib/R/library/rkward/help/rkward.rdb
 lib/R/library/rkward/help/rkward.rdx
 lib/R/library/rkward/html/00Index.html
+lib/R/library/rkward/html/R.css
 lib/R/library/rkwardtests/DESCRIPTION
 lib/R/library/rkwardtests/INDEX
 lib/R/library/rkwardtests/Meta/Rd.rds
@@ -608,6 +609,7 @@ lib/R/library/rkwardtests/help/paths.rds
 lib/R/library/rkwardtests/help/rkwardtests.rdb
 lib/R/library/rkwardtests/help/rkwardtests.rdx
 lib/R/library/rkwardtests/html/00Index.html
+lib/R/library/rkwardtests/html/R.css
 @dirrm lib/R/library/rkwardtests/html
 @dirrm lib/R/library/rkwardtests/help
 @dirrm lib/R/library/rkwardtests/doc
