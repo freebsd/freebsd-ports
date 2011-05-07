@@ -7,7 +7,7 @@
 
 PORTNAME=	syslog-ng
 PORTVERSION=	3.2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/$(PORTVERSION)/source/
 PKGNAMESUFFIX=	3
@@ -57,7 +57,7 @@ CONFIGURE_ENV+=         OPENSSL_CFLAGS="${OPENSSL_CFLAGS}" \
                         OPENSSL_LIBS="${OPENSSL_LDFLAGS} -lcrypto -lssl"
 PLIST_FILES=		lib/syslog-ng//libafsocket-tls.la lib/syslog-ng//libafsocket-tls.so
 .else
-CONFIGURE_args+=        --disable-ssl
+CONFIGURE_ARGS+=        --disable-ssl
 .endif
 
 .if defined(WITH_PORTS_SSL)
