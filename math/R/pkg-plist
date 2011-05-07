@@ -43,7 +43,6 @@ lib/R/bin/Rdiff
 lib/R/bin/Rprof
 lib/R/bin/Rscript
 lib/R/bin/SHLIB
-lib/R/bin/Sd2Rd
 lib/R/bin/Stangle
 lib/R/bin/Sweave
 lib/R/bin/build
@@ -76,6 +75,7 @@ lib/R/include/R_ext/GraphicsDevice.h
 lib/R/include/R_ext/GraphicsEngine.h
 lib/R/include/R_ext/Lapack.h
 lib/R/include/R_ext/Linpack.h
+lib/R/include/R_ext/MathThreads.h
 lib/R/include/R_ext/Memory.h
 lib/R/include/R_ext/Parse.h
 lib/R/include/R_ext/Print.h
@@ -101,8 +101,13 @@ lib/R/include/Rinternals.h
 lib/R/include/Rmath.h
 lib/R/include/Rversion.h
 lib/R/include/S.h
-%%STATIC_LIBR%%lib/R/lib/libR.a
-%%SHARED_LIBR%%lib/R/lib/libR.so
+%%LIBR%%lib/R/lib/libR.a
+%%LIBR%%lib/R/lib/libR.so
+%%LIBR%%lib/R/lib/libR.so.%%R_SOVERSION%%
+%%LAPACK%%lib/R/lib/libRblas.so
+%%LAPACK%%lib/R/lib/libRblas.so.%%RBLAS_SOVERSION%%
+%%LAPACK%%lib/R/lib/libRlapack.so
+%%LAPACK%%lib/R/lib/libRlapack.so.%%RLAPACK_SOVERSION%%
 lib/R/library/KernSmooth/DESCRIPTION
 lib/R/library/KernSmooth/INDEX
 lib/R/library/KernSmooth/LICENCE
@@ -121,6 +126,7 @@ lib/R/library/KernSmooth/help/KernSmooth.rdx
 lib/R/library/KernSmooth/help/aliases.rds
 lib/R/library/KernSmooth/help/paths.rds
 lib/R/library/KernSmooth/html/00Index.html
+lib/R/library/KernSmooth/html/R.css
 lib/R/library/KernSmooth/libs/KernSmooth.so
 %%NLS%%lib/R/library/KernSmooth/po/de/LC_MESSAGES/R-KernSmooth.mo
 %%NLS%%lib/R/library/KernSmooth/po/en@quot/LC_MESSAGES/R-KernSmooth.mo
@@ -148,6 +154,7 @@ lib/R/library/MASS/help/MASS.rdx
 lib/R/library/MASS/help/aliases.rds
 lib/R/library/MASS/help/paths.rds
 lib/R/library/MASS/html/00Index.html
+lib/R/library/MASS/html/R.css
 lib/R/library/MASS/libs/MASS.so
 %%NLS%%lib/R/library/MASS/po/de/LC_MESSAGES/R-MASS.mo
 %%NLS%%lib/R/library/MASS/po/en@quot/LC_MESSAGES/R-MASS.mo
@@ -230,6 +237,7 @@ lib/R/library/Matrix/help/Matrix.rdx
 lib/R/library/Matrix/help/aliases.rds
 lib/R/library/Matrix/help/paths.rds
 lib/R/library/Matrix/html/00Index.html
+lib/R/library/Matrix/html/R.css
 lib/R/library/Matrix/include/Matrix.h
 lib/R/library/Matrix/include/Matrix_stubs.c
 lib/R/library/Matrix/include/cholmod.h
@@ -239,7 +247,6 @@ lib/R/library/Matrix/libs/Matrix.so
 %%NLS%%lib/R/library/Matrix/po/en@quot/LC_MESSAGES/Matrix.mo
 %%NLS%%lib/R/library/Matrix/po/en@quot/LC_MESSAGES/R-Matrix.mo
 lib/R/library/Matrix/test-tools.R
-lib/R/library/R.css
 lib/R/library/base/CITATION
 lib/R/library/base/DESCRIPTION
 lib/R/library/base/INDEX
@@ -252,6 +259,7 @@ lib/R/library/base/R/Rprofile
 lib/R/library/base/R/base
 lib/R/library/base/R/base.rdb
 lib/R/library/base/R/base.rdx
+lib/R/library/base/demo/error.catching.R
 lib/R/library/base/demo/is.things.R
 lib/R/library/base/demo/recursion.R
 lib/R/library/base/demo/scoping.R
@@ -261,6 +269,7 @@ lib/R/library/base/help/base.rdb
 lib/R/library/base/help/base.rdx
 lib/R/library/base/help/paths.rds
 lib/R/library/base/html/00Index.html
+lib/R/library/base/html/R.css
 %%NLS%%lib/R/library/base/po/de/LC_MESSAGES/R-base.mo
 %%NLS%%lib/R/library/base/po/en@quot/LC_MESSAGES/R-base.mo
 %%NLS%%lib/R/library/base/po/fr/LC_MESSAGES/R-base.mo
@@ -269,6 +278,7 @@ lib/R/library/base/html/00Index.html
 %%NLS%%lib/R/library/base/po/ko/LC_MESSAGES/R-base.mo
 %%NLS%%lib/R/library/base/po/pt_BR/LC_MESSAGES/R-base.mo
 %%NLS%%lib/R/library/base/po/ru/LC_MESSAGES/R-base.mo
+%%NLS%%lib/R/library/base/po/tr/LC_MESSAGES/R-base.mo
 %%NLS%%lib/R/library/base/po/zh_CN/LC_MESSAGES/R-base.mo
 lib/R/library/boot/CITATION
 lib/R/library/boot/DESCRIPTION
@@ -292,6 +302,7 @@ lib/R/library/boot/help/boot.rdb
 lib/R/library/boot/help/boot.rdx
 lib/R/library/boot/help/paths.rds
 lib/R/library/boot/html/00Index.html
+lib/R/library/boot/html/R.css
 %%NLS%%lib/R/library/boot/po/de/LC_MESSAGES/R-boot.mo
 %%NLS%%lib/R/library/boot/po/en@quot/LC_MESSAGES/R-boot.mo
 %%NLS%%lib/R/library/boot/po/fr/LC_MESSAGES/R-boot.mo
@@ -316,6 +327,7 @@ lib/R/library/class/help/class.rdb
 lib/R/library/class/help/class.rdx
 lib/R/library/class/help/paths.rds
 lib/R/library/class/html/00Index.html
+lib/R/library/class/html/R.css
 lib/R/library/class/libs/class.so
 %%NLS%%lib/R/library/class/po/de/LC_MESSAGES/R-class.mo
 %%NLS%%lib/R/library/class/po/en@quot/LC_MESSAGES/R-class.mo
@@ -342,6 +354,7 @@ lib/R/library/cluster/help/cluster.rdb
 lib/R/library/cluster/help/cluster.rdx
 lib/R/library/cluster/help/paths.rds
 lib/R/library/cluster/html/00Index.html
+lib/R/library/cluster/html/R.css
 lib/R/library/cluster/libs/cluster.so
 lib/R/library/codetools/DESCRIPTION
 lib/R/library/codetools/INDEX
@@ -360,6 +373,32 @@ lib/R/library/codetools/help/codetools.rdb
 lib/R/library/codetools/help/codetools.rdx
 lib/R/library/codetools/help/paths.rds
 lib/R/library/codetools/html/00Index.html
+lib/R/library/codetools/html/R.css
+lib/R/library/compiler/DESCRIPTION
+lib/R/library/compiler/INDEX
+lib/R/library/compiler/Meta/Rd.rds
+lib/R/library/compiler/Meta/hsearch.rds
+lib/R/library/compiler/Meta/links.rds
+lib/R/library/compiler/Meta/nsInfo.rds
+lib/R/library/compiler/Meta/package.rds
+lib/R/library/compiler/NAMESPACE
+lib/R/library/compiler/R/compiler
+lib/R/library/compiler/R/compiler.rdb
+lib/R/library/compiler/R/compiler.rdx
+lib/R/library/compiler/help/AnIndex
+lib/R/library/compiler/help/aliases.rds
+lib/R/library/compiler/help/compiler.rdb
+lib/R/library/compiler/help/compiler.rdx
+lib/R/library/compiler/help/paths.rds
+lib/R/library/compiler/html/00Index.html
+lib/R/library/compiler/html/R.css
+%%NLS%%lib/R/library/compiler/po/de/LC_MESSAGES/R-compiler.mo
+%%NLS%%lib/R/library/compiler/po/en@quot/LC_MESSAGES/R-compiler.mo
+%%NLS%%lib/R/library/compiler/po/fr/LC_MESSAGES/R-compiler.mo
+%%NLS%%lib/R/library/compiler/po/ja/LC_MESSAGES/R-compiler.mo
+%%NLS%%lib/R/library/compiler/po/pt_BR/LC_MESSAGES/R-compiler.mo
+%%NLS%%lib/R/library/compiler/po/ru/LC_MESSAGES/R-compiler.mo
+%%NLS%%lib/R/library/compiler/po/zh_CN/LC_MESSAGES/R-compiler.mo
 lib/R/library/datasets/DESCRIPTION
 lib/R/library/datasets/INDEX
 lib/R/library/datasets/Meta/Rd.rds
@@ -378,6 +417,7 @@ lib/R/library/datasets/help/datasets.rdb
 lib/R/library/datasets/help/datasets.rdx
 lib/R/library/datasets/help/paths.rds
 lib/R/library/datasets/html/00Index.html
+lib/R/library/datasets/html/R.css
 lib/R/library/foreign/COPYING
 lib/R/library/foreign/DESCRIPTION
 lib/R/library/foreign/INDEX
@@ -400,6 +440,7 @@ lib/R/library/foreign/help/foreign.rdb
 lib/R/library/foreign/help/foreign.rdx
 lib/R/library/foreign/help/paths.rds
 lib/R/library/foreign/html/00Index.html
+lib/R/library/foreign/html/R.css
 lib/R/library/foreign/libs/foreign.so
 %%NLS%%lib/R/library/foreign/po/de/LC_MESSAGES/R-foreign.mo
 %%NLS%%lib/R/library/foreign/po/de/LC_MESSAGES/foreign.mo
@@ -531,6 +572,8 @@ lib/R/library/grDevices/help/grDevices.rdb
 lib/R/library/grDevices/help/grDevices.rdx
 lib/R/library/grDevices/help/paths.rds
 lib/R/library/grDevices/html/00Index.html
+lib/R/library/grDevices/html/R.css
+lib/R/library/grDevices/icc/srgb
 lib/R/library/grDevices/libs/grDevices.so
 %%NLS%%lib/R/library/grDevices/po/de/LC_MESSAGES/R-grDevices.mo
 %%NLS%%lib/R/library/grDevices/po/de/LC_MESSAGES/grDevices.mo
@@ -576,6 +619,7 @@ lib/R/library/graphics/help/graphics.rdb
 lib/R/library/graphics/help/graphics.rdx
 lib/R/library/graphics/help/paths.rds
 lib/R/library/graphics/html/00Index.html
+lib/R/library/graphics/html/R.css
 %%NLS%%lib/R/library/graphics/po/de/LC_MESSAGES/R-graphics.mo
 %%NLS%%lib/R/library/graphics/po/en@quot/LC_MESSAGES/R-graphics.mo
 %%NLS%%lib/R/library/graphics/po/fr/LC_MESSAGES/R-graphics.mo
@@ -645,6 +689,7 @@ lib/R/library/grid/help/grid.rdb
 lib/R/library/grid/help/grid.rdx
 lib/R/library/grid/help/paths.rds
 lib/R/library/grid/html/00Index.html
+lib/R/library/grid/html/R.css
 lib/R/library/grid/libs/grid.so
 %%NLS%%lib/R/library/grid/po/de/LC_MESSAGES/R-grid.mo
 %%NLS%%lib/R/library/grid/po/de/LC_MESSAGES/grid.mo
@@ -692,6 +737,7 @@ lib/R/library/lattice/help/lattice.rdb
 lib/R/library/lattice/help/lattice.rdx
 lib/R/library/lattice/help/paths.rds
 lib/R/library/lattice/html/00Index.html
+lib/R/library/lattice/html/R.css
 lib/R/library/lattice/libs/lattice.so
 %%NLS%%lib/R/library/lattice/po/de/LC_MESSAGES/R-lattice.mo
 %%NLS%%lib/R/library/lattice/po/en@quot/LC_MESSAGES/R-lattice.mo
@@ -713,6 +759,7 @@ lib/R/library/methods/help/methods.rdb
 lib/R/library/methods/help/methods.rdx
 lib/R/library/methods/help/paths.rds
 lib/R/library/methods/html/00Index.html
+lib/R/library/methods/html/R.css
 lib/R/library/methods/libs/methods.so
 %%NLS%%lib/R/library/methods/po/de/LC_MESSAGES/R-methods.mo
 %%NLS%%lib/R/library/methods/po/de/LC_MESSAGES/methods.mo
@@ -750,6 +797,7 @@ lib/R/library/mgcv/help/mgcv.rdb
 lib/R/library/mgcv/help/mgcv.rdx
 lib/R/library/mgcv/help/paths.rds
 lib/R/library/mgcv/html/00Index.html
+lib/R/library/mgcv/html/R.css
 lib/R/library/mgcv/libs/mgcv.so
 lib/R/library/nlme/CITATION
 lib/R/library/nlme/COPYING
@@ -775,6 +823,7 @@ lib/R/library/nlme/help/nlme.rdb
 lib/R/library/nlme/help/nlme.rdx
 lib/R/library/nlme/help/paths.rds
 lib/R/library/nlme/html/00Index.html
+lib/R/library/nlme/html/R.css
 lib/R/library/nlme/libs/nlme.so
 lib/R/library/nlme/mlbook/README
 lib/R/library/nlme/mlbook/ch04.R
@@ -813,6 +862,7 @@ lib/R/library/nnet/help/nnet.rdb
 lib/R/library/nnet/help/nnet.rdx
 lib/R/library/nnet/help/paths.rds
 lib/R/library/nnet/html/00Index.html
+lib/R/library/nnet/html/R.css
 lib/R/library/nnet/libs/nnet.so
 %%NLS%%lib/R/library/nnet/po/de/LC_MESSAGES/R-nnet.mo
 %%NLS%%lib/R/library/nnet/po/en@quot/LC_MESSAGES/R-nnet.mo
@@ -839,6 +889,7 @@ lib/R/library/rpart/help/paths.rds
 lib/R/library/rpart/help/rpart.rdb
 lib/R/library/rpart/help/rpart.rdx
 lib/R/library/rpart/html/00Index.html
+lib/R/library/rpart/html/R.css
 lib/R/library/rpart/libs/rpart.so
 %%NLS%%lib/R/library/rpart/po/de/LC_MESSAGES/R-rpart.mo
 %%NLS%%lib/R/library/rpart/po/de/LC_MESSAGES/rpart.mo
@@ -869,6 +920,7 @@ lib/R/library/spatial/help/paths.rds
 lib/R/library/spatial/help/spatial.rdb
 lib/R/library/spatial/help/spatial.rdx
 lib/R/library/spatial/html/00Index.html
+lib/R/library/spatial/html/R.css
 lib/R/library/spatial/libs/spatial.so
 %%NLS%%lib/R/library/spatial/po/de/LC_MESSAGES/R-spatial.mo
 %%NLS%%lib/R/library/spatial/po/en@quot/LC_MESSAGES/R-spatial.mo
@@ -914,6 +966,7 @@ lib/R/library/splines/help/paths.rds
 lib/R/library/splines/help/splines.rdb
 lib/R/library/splines/help/splines.rdx
 lib/R/library/splines/html/00Index.html
+lib/R/library/splines/html/R.css
 lib/R/library/splines/libs/splines.so
 %%NLS%%lib/R/library/splines/po/de/LC_MESSAGES/R-splines.mo
 %%NLS%%lib/R/library/splines/po/de/LC_MESSAGES/splines.mo
@@ -948,6 +1001,7 @@ lib/R/library/stats4/help/paths.rds
 lib/R/library/stats4/help/stats4.rdb
 lib/R/library/stats4/help/stats4.rdx
 lib/R/library/stats4/html/00Index.html
+lib/R/library/stats4/html/R.css
 %%NLS%%lib/R/library/stats4/po/de/LC_MESSAGES/R-stats4.mo
 %%NLS%%lib/R/library/stats4/po/en@quot/LC_MESSAGES/R-stats4.mo
 %%NLS%%lib/R/library/stats4/po/fr/LC_MESSAGES/R-stats4.mo
@@ -956,6 +1010,7 @@ lib/R/library/stats4/html/00Index.html
 %%NLS%%lib/R/library/stats4/po/ko/LC_MESSAGES/R-stats4.mo
 %%NLS%%lib/R/library/stats4/po/pt_BR/LC_MESSAGES/R-stats4.mo
 %%NLS%%lib/R/library/stats4/po/ru/LC_MESSAGES/R-stats4.mo
+%%NLS%%lib/R/library/stats4/po/tr/LC_MESSAGES/R-stats4.mo
 %%NLS%%lib/R/library/stats4/po/zh_CN/LC_MESSAGES/R-stats4.mo
 lib/R/library/stats/COPYRIGHTS.modreg
 lib/R/library/stats/DESCRIPTION
@@ -981,6 +1036,7 @@ lib/R/library/stats/help/paths.rds
 lib/R/library/stats/help/stats.rdb
 lib/R/library/stats/help/stats.rdx
 lib/R/library/stats/html/00Index.html
+lib/R/library/stats/html/R.css
 lib/R/library/stats/libs/stats.so
 %%NLS%%lib/R/library/stats/po/de/LC_MESSAGES/R-stats.mo
 %%NLS%%lib/R/library/stats/po/de/LC_MESSAGES/stats.mo
@@ -998,6 +1054,7 @@ lib/R/library/stats/libs/stats.so
 %%NLS%%lib/R/library/stats/po/pt_BR/LC_MESSAGES/stats.mo
 %%NLS%%lib/R/library/stats/po/ru/LC_MESSAGES/R-stats.mo
 %%NLS%%lib/R/library/stats/po/ru/LC_MESSAGES/stats.mo
+%%NLS%%lib/R/library/stats/po/tr/LC_MESSAGES/R-stats.mo
 %%NLS%%lib/R/library/stats/po/zh_CN/LC_MESSAGES/R-stats.mo
 %%NLS%%lib/R/library/stats/po/zh_CN/LC_MESSAGES/stats.mo
 lib/R/library/survival/COPYING
@@ -1025,6 +1082,7 @@ lib/R/library/survival/help/paths.rds
 lib/R/library/survival/help/survival.rdb
 lib/R/library/survival/help/survival.rdx
 lib/R/library/survival/html/00Index.html
+lib/R/library/survival/html/R.css
 lib/R/library/survival/libs/survival.so
 lib/R/library/tcltk/DESCRIPTION
 lib/R/library/tcltk/INDEX
@@ -1060,6 +1118,7 @@ lib/R/library/tcltk/help/paths.rds
 lib/R/library/tcltk/help/tcltk.rdb
 lib/R/library/tcltk/help/tcltk.rdx
 lib/R/library/tcltk/html/00Index.html
+lib/R/library/tcltk/html/R.css
 %%TCLTK%%lib/R/library/tcltk/libs/tcltk.so
 %%NLS%%lib/R/library/tcltk/po/de/LC_MESSAGES/R-tcltk.mo
 %%NLS%%lib/R/library/tcltk/po/de/LC_MESSAGES/tcltk.mo
@@ -1094,6 +1153,7 @@ lib/R/library/tools/help/paths.rds
 lib/R/library/tools/help/tools.rdb
 lib/R/library/tools/help/tools.rdx
 lib/R/library/tools/html/00Index.html
+lib/R/library/tools/html/R.css
 lib/R/library/tools/libs/tools.so
 %%NLS%%lib/R/library/tools/po/de/LC_MESSAGES/R-tools.mo
 %%NLS%%lib/R/library/tools/po/de/LC_MESSAGES/tools.mo
@@ -1111,6 +1171,7 @@ lib/R/library/tools/libs/tools.so
 %%NLS%%lib/R/library/tools/po/pt_BR/LC_MESSAGES/tools.mo
 %%NLS%%lib/R/library/tools/po/ru/LC_MESSAGES/R-tools.mo
 %%NLS%%lib/R/library/tools/po/ru/LC_MESSAGES/tools.mo
+%%NLS%%lib/R/library/tools/po/tr/LC_MESSAGES/R-tools.mo
 %%NLS%%lib/R/library/tools/po/zh_CN/LC_MESSAGES/R-tools.mo
 %%NLS%%lib/R/library/tools/po/zh_CN/LC_MESSAGES/tools.mo
 lib/R/library/utils/DESCRIPTION
@@ -1120,17 +1181,24 @@ lib/R/library/utils/Meta/hsearch.rds
 lib/R/library/utils/Meta/links.rds
 lib/R/library/utils/Meta/nsInfo.rds
 lib/R/library/utils/Meta/package.rds
+lib/R/library/utils/Meta/vignette.rds
 lib/R/library/utils/NAMESPACE
 lib/R/library/utils/R/utils
 lib/R/library/utils/R/utils.rdb
 lib/R/library/utils/R/utils.rdx
 lib/R/library/utils/Sweave/Sweave-test-1.Rnw
+lib/R/library/utils/Sweave/example-1.Rnw
+lib/R/library/utils/doc/Sweave.R
+lib/R/library/utils/doc/Sweave.Rnw
+lib/R/library/utils/doc/Sweave.pdf
+lib/R/library/utils/doc/index.html
 lib/R/library/utils/help/AnIndex
 lib/R/library/utils/help/aliases.rds
 lib/R/library/utils/help/paths.rds
 lib/R/library/utils/help/utils.rdb
 lib/R/library/utils/help/utils.rdx
 lib/R/library/utils/html/00Index.html
+lib/R/library/utils/html/R.css
 lib/R/library/utils/iconvlist
 lib/R/library/utils/misc/exDIF.csv
 lib/R/library/utils/misc/exDIF.dif
@@ -1141,6 +1209,7 @@ lib/R/library/utils/misc/exDIF.dif
 %%NLS%%lib/R/library/utils/po/ko/LC_MESSAGES/R-utils.mo
 %%NLS%%lib/R/library/utils/po/pt_BR/LC_MESSAGES/R-utils.mo
 %%NLS%%lib/R/library/utils/po/ru/LC_MESSAGES/R-utils.mo
+%%NLS%%lib/R/library/utils/po/tr/LC_MESSAGES/R-utils.mo
 %%NLS%%lib/R/library/utils/po/zh_CN/LC_MESSAGES/R-utils.mo
 %%X11%%lib/R/modules/R_X11.so
 lib/R/modules/internet.so
@@ -1176,6 +1245,7 @@ lib/R/share/licenses/license.db
 %%NLS%%lib/R/share/locale/nn/LC_MESSAGES/R.mo
 %%NLS%%lib/R/share/locale/pt_BR/LC_MESSAGES/R.mo
 %%NLS%%lib/R/share/locale/ru/LC_MESSAGES/R.mo
+%%NLS%%lib/R/share/locale/tr/LC_MESSAGES/R.mo
 %%NLS%%lib/R/share/locale/zh_CN/LC_MESSAGES/R.mo
 %%NLS%%lib/R/share/locale/zh_TW/LC_MESSAGES/R.mo
 lib/R/share/make/basepkg.mk
@@ -1198,9 +1268,7 @@ lib/R/share/texmf/tex/latex/omscmtt.fd
 lib/R/share/texmf/tex/latex/ts1aer.fd
 lib/R/share/texmf/tex/latex/ts1aett.fd
 lib/R/share/texmf/tex/latex/upquote.sty
-libdata/pkgconfig/libR.pc
-%%SHARED_LIBR%%lib/libR.so
-%%SHARED_LIBR%%lib/libR.so.0
+%%LIBR%%libdata/pkgconfig/libR.pc
 %%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/R-FAQ.dvi
 %%DOCSDIR%%/manual/R-FAQ.html
 %%PORTDOCS%%%%DVI_MANUAL%%%%DOCSDIR%%/manual/R-admin.dvi
@@ -1234,6 +1302,8 @@ libdata/pkgconfig/libR.pc
 %%NLS%%@dirrm lib/R/share/locale/zh_TW
 %%NLS%%@dirrm lib/R/share/locale/zh_CN/LC_MESSAGES
 %%NLS%%@dirrm lib/R/share/locale/zh_CN
+%%NLS%%@dirrm lib/R/share/locale/tr/LC_MESSAGES
+%%NLS%%@dirrm lib/R/share/locale/tr
 %%NLS%%@dirrm lib/R/share/locale/ru/LC_MESSAGES
 %%NLS%%@dirrm lib/R/share/locale/ru
 %%NLS%%@dirrm lib/R/share/locale/pt_BR/LC_MESSAGES
@@ -1267,6 +1337,8 @@ libdata/pkgconfig/libR.pc
 @dirrm lib/R/modules
 %%NLS%%@dirrm lib/R/library/utils/po/zh_CN/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/utils/po/zh_CN
+%%NLS%%@dirrm lib/R/library/utils/po/tr/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/utils/po/tr
 %%NLS%%@dirrm lib/R/library/utils/po/ru/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/utils/po/ru
 %%NLS%%@dirrm lib/R/library/utils/po/pt_BR/LC_MESSAGES
@@ -1285,12 +1357,15 @@ libdata/pkgconfig/libR.pc
 @dirrm lib/R/library/utils/misc
 @dirrm lib/R/library/utils/html
 @dirrm lib/R/library/utils/help
+@dirrm lib/R/library/utils/doc
 @dirrm lib/R/library/utils/Sweave
 @dirrm lib/R/library/utils/R
 @dirrm lib/R/library/utils/Meta
 @dirrm lib/R/library/utils
 %%NLS%%@dirrm lib/R/library/tools/po/zh_CN/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/tools/po/zh_CN
+%%NLS%%@dirrm lib/R/library/tools/po/tr/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/tools/po/tr
 %%NLS%%@dirrm lib/R/library/tools/po/ru/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/tools/po/ru
 %%NLS%%@dirrm lib/R/library/tools/po/pt_BR/LC_MESSAGES
@@ -1351,6 +1426,8 @@ libdata/pkgconfig/libR.pc
 @dirrm lib/R/library/survival
 %%NLS%%@dirrm lib/R/library/stats/po/zh_CN/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/stats/po/zh_CN
+%%NLS%%@dirrm lib/R/library/stats/po/tr/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/stats/po/tr
 %%NLS%%@dirrm lib/R/library/stats/po/ru/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/stats/po/ru
 %%NLS%%@dirrm lib/R/library/stats/po/pt_BR/LC_MESSAGES
@@ -1376,6 +1453,8 @@ libdata/pkgconfig/libR.pc
 @dirrm lib/R/library/stats/Meta
 %%NLS%%@dirrm lib/R/library/stats4/po/zh_CN/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/stats4/po/zh_CN
+%%NLS%%@dirrm lib/R/library/stats4/po/tr/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/stats4/po/tr
 %%NLS%%@dirrm lib/R/library/stats4/po/ru/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/stats4/po/ru
 %%NLS%%@dirrm lib/R/library/stats4/po/pt_BR/LC_MESSAGES
@@ -1599,6 +1678,7 @@ libdata/pkgconfig/libR.pc
 %%NLS%%@dirrm lib/R/library/grDevices/po/de
 %%NLS%%@dirrm lib/R/library/grDevices/po
 @dirrm lib/R/library/grDevices/libs
+@dirrm lib/R/library/grDevices/icc
 @dirrm lib/R/library/grDevices/html
 @dirrm lib/R/library/grDevices/help
 @dirrm lib/R/library/grDevices/enc
@@ -1626,6 +1706,26 @@ libdata/pkgconfig/libR.pc
 @dirrm lib/R/library/datasets/R
 @dirrm lib/R/library/datasets/Meta
 @dirrm lib/R/library/datasets
+%%NLS%%@dirrm lib/R/library/compiler/po/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/compiler/po/zh_CN
+%%NLS%%@dirrm lib/R/library/compiler/po/ru/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/compiler/po/ru
+%%NLS%%@dirrm lib/R/library/compiler/po/pt_BR/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/compiler/po/pt_BR
+%%NLS%%@dirrm lib/R/library/compiler/po/ja/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/compiler/po/ja
+%%NLS%%@dirrm lib/R/library/compiler/po/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/compiler/po/fr
+%%NLS%%@dirrm lib/R/library/compiler/po/en@quot/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/compiler/po/en@quot
+%%NLS%%@dirrm lib/R/library/compiler/po/de/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/compiler/po/de
+%%NLS%%@dirrm lib/R/library/compiler/po
+@dirrm lib/R/library/compiler/html
+@dirrm lib/R/library/compiler/help
+@dirrm lib/R/library/compiler/R
+@dirrm lib/R/library/compiler/Meta
+@dirrm lib/R/library/compiler
 @dirrm lib/R/library/codetools/html
 @dirrm lib/R/library/codetools/help
 @dirrm lib/R/library/codetools/R
@@ -1668,6 +1768,8 @@ libdata/pkgconfig/libR.pc
 @dirrm lib/R/library/boot
 %%NLS%%@dirrm lib/R/library/base/po/zh_CN/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/base/po/zh_CN
+%%NLS%%@dirrm lib/R/library/base/po/tr/LC_MESSAGES
+%%NLS%%@dirrm lib/R/library/base/po/tr
 %%NLS%%@dirrm lib/R/library/base/po/ru/LC_MESSAGES
 %%NLS%%@dirrm lib/R/library/base/po/ru
 %%NLS%%@dirrm lib/R/library/base/po/pt_BR/LC_MESSAGES

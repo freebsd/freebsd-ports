@@ -8,7 +8,7 @@
 
 PORTNAME=	rpy
 PORTVERSION=	1.0.3
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	math
 MASTER_SITES=	SF
 
@@ -17,7 +17,8 @@ COMMENT=	Python interface to the R Programming Language
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
 		R:${PORTSDIR}/math/R
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
+		R:${PORTSDIR}/math/R
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
@@ -26,5 +27,10 @@ MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib/R/modules -L${LOCALBASE}/lib/R/lib"
 post-patch:
 	@${REINPLACE_CMD} -e 's,^statichere ,,' ${WRKSRC}/src/rpymodule.c
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/setup.py
+
+pre-configure:
+	@(if [ ! -e ${LOCALBASE}/lib/R/lib/libR.so ] ; then \
+	${ECHO_MSG} "==> ${PKGNAME} requires math/R to be built WITH_LIBR" ; \
+	exit 1; fi)
 
 .include <bsd.port.mk>

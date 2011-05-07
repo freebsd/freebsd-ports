@@ -7,7 +7,7 @@
 
 PORTNAME=	rkward
 DISTVERSION=	0.4.9a
-PORTREVISION=	9
+PORTREVISION=	10
 PORTEPOCH=	3
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/Historical_Releases/0.4.x_and_earlier/0.4.9a%20%28KDE3%29
@@ -15,7 +15,8 @@ MASTER_SITES=	SF/${PORTNAME}/Historical_Releases/0.4.x_and_earlier/0.4.9a%20%28K
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	IDE/GUI for the R-project
 
-LIB_DEPENDS=	R.0:${PORTSDIR}/math/R
+BUILD_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R
+RUN_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R
 
 CONFLICTS=	rkward-kde4-0.5.*
 
@@ -57,5 +58,8 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|SUBDIRS = rkward po|SUBDIRS = rkward|'	\
 		${WRKSRC}/Makefile.in
 .endif
+	@(if [ ! -e ${LOCALBASE}/lib/R/lib/libR.so ] ; then \
+	${ECHO_MSG} "==> ${PKGNAME} requires math/R to be built WITH_LIBR" ; \
+	exit 1; fi)
 
 .include <bsd.port.mk>

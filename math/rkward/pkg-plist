@@ -487,6 +487,7 @@ lib/R/library/rkward/help/paths.rds
 lib/R/library/rkward/help/rkward.rdb
 lib/R/library/rkward/help/rkward.rdx
 lib/R/library/rkward/html/00Index.html
+lib/R/library/rkward/html/R.css
 lib/R/library/rkward/libs/rkward.so
 @dirrm lib/R/library/rkward/libs
 @dirrm lib/R/library/rkward/html
