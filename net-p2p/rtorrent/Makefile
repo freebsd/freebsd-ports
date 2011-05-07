@@ -7,6 +7,7 @@
 
 PORTNAME?=	rtorrent
 PORTVERSION?=	0.8.7
+PORTREVISION?=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://libtorrent.rakshasa.no/downloads/ \
 		${MASTER_SITE_LOCAL}
@@ -32,7 +33,7 @@ SUB_FILES=	pkg-message
 PORTDOCS=	README
 
 OPTIONS=	XMLRPC "Compile with xmlrpc-c support" on \
-		IPV6 "Enable IPv6 support" off
+		IPV6 "Enable IPv6 support" on
 
 .include <bsd.port.pre.mk>
 
