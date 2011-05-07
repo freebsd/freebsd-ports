@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Encode-Locale
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	converters perl5
 MASTER_SITES=	CPAN/../../authors/id/G/GA/GAAS
 PKGNAMEPREFIX=	p5-
