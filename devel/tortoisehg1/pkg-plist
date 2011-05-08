@@ -247,8 +247,6 @@ share/tortoisehg/mergetools.rc
 @dirrm %%PYTHON_SITELIBDIR%%/tortoisehg/hgtk/logview
 @dirrm %%PYTHON_SITELIBDIR%%/tortoisehg/hgtk
 @dirrm %%PYTHON_SITELIBDIR%%/tortoisehg
-@dirrm %%PYTHON_SITELIBDIR%%
-@dirrm %%PYTHON_LIBDIR%%
 %%NAUTILUS%%@dirrmtry lib/nautilus/extensions-2.0/python
 %%NAUTILUS%%@dirrmtry lib/nautilus/extensions-2.0
 %%NAUTILUS%%@dirrmtry lib/nautilus
