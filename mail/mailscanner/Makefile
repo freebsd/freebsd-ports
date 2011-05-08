@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	utisoft@gmail.com
 COMMENT=	Powerful virus/spam scanning framework for mail gateways
 
 BUILD_DEPENDS=	\
@@ -34,7 +34,7 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/OLE/Storage_Lite.pm:${PORTSDIR}/devel/p5-OLE-Storage_Lite \
 	${SITE_PERL}/Sys/SigAction.pm:${PORTSDIR}/devel/p5-Sys-SigAction
 
-RUN_DEPENDS+=	${BUILD_DEPENDS} \
+RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		bash:${PORTSDIR}/shells/bash \
 		tnef:${PORTSDIR}/converters/tnef \
 		wget:${PORTSDIR}/ftp/wget
@@ -121,115 +121,78 @@ USRLOCAL_FILES_LIB=	\
 USE_RC_SUBR=	mailscanner mta
 
 post-extract:
-	cd ${WRKSRC} && ${TAR} xvzf perl-tar/MailScanner-${PORTVERSION}-${PATCHLEVEL}.tar.gz > /dev/null && ${MV} MailScanner-${PORTVERSION}-${PATCHLEVEL}/* .
+	@cd ${WRKSRC} \
+		&& ${TAR} xzf \
+		   perl-tar/MailScanner-${PORTVERSION}-${PATCHLEVEL}.tar.gz \
+		&& ${MV} MailScanner-${PORTVERSION}-${PATCHLEVEL}/* .
 
 do-build:
-	${PERL} -pi -e \
-		's,/opt/MailScanner/lib,${PREFIX}/lib/MailScanner,g; \
-		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g; \
-		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g;' \
-		${WRKSRC}/bin/MailScanner
-	${PERL} -pi -e \
-		's,/opt/MailScanner/lib,${PREFIX}/libexec/MailScanner,g;' \
-		${WRKSRC}/bin/mailscanner_create_locks
-	${PERL} -pi -e \
-		's,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g; \
-		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
-		${WRKSRC}/bin/processing_messages_alert
-	${PERL} -pi -e \
-		's,/opt/MailScanner/var/MailScanner.pid,/var/run/MailScanner.pid,g; \
-		s,/usr/lib/sendmail,/usr/sbin/sendmail,g; \
-		s,/opt/MailScanner/bin,${PREFIX}/bin,g; \
-		s,/opt/MailScanner/etc/reports,${DATADIR}/reports,g; \
-		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g; \
-		s,/opt/MailScanner/lib,${PREFIX}/lib/MailScanner,g; \
-		s,/usr/bin/unrar,${LOCALBASE}/bin/unrar,g; \
-		s,/bin/gunzip,/usr/bin/gunzip,g; \
-		s,/etc/mail/spamassassin,${LOCALBASE}/etc/mail/spamassassin,g; \
-		s,/tmp/clamd.socket,/var/run/clamav/clamd.sock,g; \
-		s,/usr/local/share/clamav,/var/db/clamav,g;' \
+	@${REINPLACE_CMD} \
+		-e 's,/bin/bash,${LOCALBASE}/bin/bash,g' \
+		-e 's,/bin/sed,/usr/bin/sed,g' \
+		-e 's,/etc/MailScanner/MailScanner.conf,${PREFIX}/etc/MailScanner/MailScanner.conf,g' \
+		-e 's,/etc/init.d/MailScanner,${LOCALBASE}/etc/rc.d/mailscanner,g' \
+		-e 's,/etc/mail/,${LOCALBASE}/etc/mail/,g'		\
+		-e 's,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g' \
+		-e 's,/opt/MailScanner/etc/reports,${DATADIR}/reports,g' \
+		-e 's,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g'	\
+		-e 's,/opt/MailScanner/lib,${PREFIX}/lib/MailScanner,g'	\
+		-e 's,/opt/MailScanner/var/MailScanner.pid,/var/run/MailScanner.pid,g' \
+		-e 's,/usr/bin/clamscan,${LOCALBASE}/bin/clamscan,g'	\
+		-e 's,/usr/bin/sa-compile,${LOCALBASE}/bin/sa-compile,g' \
+		-e 's,/usr/bin/sa-update,${LOCALBASE}/bin/sa-update,g'	\
+		-e 's,/usr/bin/unzip,${LOCALBASE}/bin/unzip,g'		\
+		-e 's,/usr/bin/wget,${LOCALBASE}/bin/wget,g'		\
+		-e 's,/usr/lib/sendmail,/usr/sbin/sendmail,g'		\
+		${WRKSRC}/bin/MailScanner				\
+		${WRKSRC}/bin/mailscanner_create_locks			\
+		${WRKSRC}/bin/processing_messages_alert			\
+		${WRKSRC}/bin/update_virus_scanners			\
+		${WRKSRC}/bin/cron/update_virus_scanners.cron		\
+		${WRKSRC}/bin/update_bad_phishing_emails		\
+		${WRKSRC}/bin/update_phishing_sites			\
+		${WRKSRC}/bin/update_bad_phishing_sites			\
+		${WRKSRC}/bin/cron/update_phishing_sites.cron		\
+		${WRKSRC}/bin/cron/update_bad_phishing_sites.cron	\
+		${WRKSRC}/bin/cron/update_spamassassin.cron		\
+		${WRKSRC}/bin/update_spamassassin			\
+		${WRKSRC}/bin/clean.SA.cache				\
+		${WRKSRC}/lib/MailScanner/ConfigDefs.pl			\
+		${WRKSRC}/lib/MailScanner/SystemDefs.pm			\
+		${WRKSRC}/lib/clamav-wrapper				\
+		${WRKSRC}/lib/sophos-autoupdate
+
+	@${REINPLACE_CMD} \
+		-e 's,/opt/MailScanner/var/MailScanner.pid,/var/run/MailScanner.pid,g' \
+		-e 's,/usr/lib/sendmail,/usr/sbin/sendmail,g' \
+		-e 's,/opt/MailScanner/bin,${PREFIX}/bin,g' \
+		-e 's,/opt/MailScanner/etc/reports,${DATADIR}/reports,g' \
+		-e 's,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g' \
+		-e 's,/opt/MailScanner/lib,${PREFIX}/lib/MailScanner,g' \
+		-e 's,/usr/bin/unrar,${LOCALBASE}/bin/unrar,g' \
+		-e 's,/bin/gunzip,/usr/bin/gunzip,g' \
+		-e 's,/etc/mail/spamassassin,${LOCALBASE}/etc/mail/spamassassin,g' \
+		-e 's,/tmp/clamd.socket,/var/run/clamav/clamd.sock,g' \
+		-e 's,/usr/local/share/clamav,/var/db/clamav,g' \
 		${WRKSRC}/etc/MailScanner.conf
-	${PERL} -pi -e \
-		's,/opt/MailScanner/lib,${PREFIX}/libexec/MailScanner,g; \
-		s,/bin/false,/usr/bin/false,;' ${WRKSRC}/etc/virus.scanners.conf
-	${PERL} -pi -e \
-		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
-		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g; \
-		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g;' \
-		${WRKSRC}/bin/update_virus_scanners
-	${PERL} -pi -e \
-		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
-		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g; \
-		s,%%RC_SUBR%%,/etc/rc.subr,g;' \
-		${WRKSRC}/bin/cron/update_virus_scanners.cron
-	${PERL} -pi -e \
-		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
-		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
-		${WRKSRC}/bin/update_bad_phishing_emails
-	${PERL} -pi -e \
-		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
-		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
-		${WRKSRC}/bin/update_phishing_sites
-	${PERL} -pi -e \
-		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
-		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
-		${WRKSRC}/bin/update_bad_phishing_sites
-	${PERL} -pi -e \
-		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
-		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g; \
-		s,%%RC_SUBR%%,/etc/rc.subr,g;' \
-		${WRKSRC}/bin/cron/update_phishing_sites.cron
-	${PERL} -pi -e \
-		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
-		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g; \
-		s,%%RC_SUBR%%,/etc/rc.subr,g;' \
-		${WRKSRC}/bin/cron/update_bad_phishing_sites.cron
-	${PERL} -pi -e \
-		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
-		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g; \
-		s,%%RC_SUBR%%,/etc/rc.subr,g;' \
-		${WRKSRC}/bin/cron/update_spamassassin.cron
-	${PERL} -pi -e \
-		's,/bin/bash,${LOCALBASE}/bin/bash,g; \
-		s,/etc/init.d/MailScanner,${LOCALBASE}/etc/rc.d/mailscanner,g; \
-		s,/etc/mail/,${LOCALBASE}/etc/mail/,g; \
-		s,/usr/bin/sa-compile,${LOCALBASE}/bin/sa-compile,g; \
-		s,/usr/bin/sa-update,${LOCALBASE}/bin/sa-update,g;' \
-		${WRKSRC}/bin/update_spamassassin
-	${PERL} -pi -e \
-		's,/etc/MailScanner/MailScanner.conf,${PREFIX}/etc/MailScanner/MailScanner.conf,g; \
-		s,/opt/MailScanner/bin,${PREFIX}/libexec/MailScanner,g;' \
-		${WRKSRC}/bin/clean.SA.cache
-	${PERL} -pi -e \
-		's,/opt/MailScanner/var/MailScanner.pid,/var/run/MailScanner.pid,g; \
-		s,/usr/lib/sendmail,/usr/sbin/sendmail,g; \
-		s,/opt/MailScanner/bin,${PREFIX}/bin,g; \
-		s,/opt/MailScanner/etc/reports,${DATADIR}/reports,g; \
-		s,/opt/MailScanner/etc,${PREFIX}/etc/MailScanner,g;' \
-		${WRKSRC}/lib/MailScanner/ConfigDefs.pl
-	${PERL} -pi -e \
-		's,/bin/sed,/usr/bin/sed,g;' ${WRKSRC}/lib/MailScanner/SystemDefs.pm
-	${PERL} -pi -e \
-		's,/usr/bin/clamscan,${LOCALBASE}/bin/clamscan,g;' \
-		${WRKSRC}/lib/clamav-wrapper
-	${PERL} -pi -e \
-		's,/usr/bin/wget,${LOCALBASE}/bin/wget,g;' \
-		${WRKSRC}/lib/sophos-autoupdate
-	${PERL} -pi -e \
-		's,/usr/bin/unzip,${LOCALBASE}/bin/unzip,g;' \
-		${WRKSRC}/lib/sophos-autoupdate
+
+	@${REINPLACE_CMD} \
+		-e 's,/opt/MailScanner/lib,${PREFIX}/libexec/MailScanner,g' \
+		-e 's,/bin/false,/usr/bin/false,' \
+		${WRKSRC}/etc/virus.scanners.conf
+
 .for FILE in ${USRLOCAL_FILES_LIB}
-	${PERL} -pi -e \
-		's,/usr/local,${LOCALBASE},g;' \
+	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
 		${WRKSRC}/lib/${FILE}
 .endfor
+	@${FIND} ${WRKSRC} \( -name "*.bak" -or -name "*.orig" \) -delete
 
 do-install:
 	#
 	# Step 1: Install bin files
 	#
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/MailScanner ${PREFIX}/sbin/mailscanner
-	${LN} -s ${LOCALBASE}/sbin/mailscanner ${PREFIX}/sbin/MailScanner
+	${LN} -s ${PREFIX}/sbin/mailscanner ${PREFIX}/sbin/MailScanner
 	#
 	# Step 2: Install libexec files
 	#
