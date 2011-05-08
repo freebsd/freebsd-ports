@@ -203,6 +203,7 @@ PicMonger                       ports/news/PicMonger
 R                               ports/math/R
 R-cran-AMORE                    ports/science/R-cran-AMORE
 R-cran-RSvgDevice               ports/math/R-cran-RSvgDevice
+R-cran-SuppDists                ports/math/R-cran-SuppDists
 R-cran-Zelig                    ports/math/R-cran-Zelig
 R-cran-bayesm                   ports/science/R-cran-bayesm
 R-cran-car                      ports/math/R-cran-car
@@ -322,6 +323,7 @@ adonthell                       ports/games/adonthell
 adpcm                           ports/audio/adpcm
 adplay                          ports/audio/adplay
 adstudio                        ports/databases/adstudio
+adsuck                          ports/dns/adsuck
 adtool                          ports/sysutils/adtool
 adun                            ports/biology/adun
 advancecomp                     ports/archivers/advancecomp
@@ -8980,6 +8982,7 @@ mdocml                          ports/textproc/mdocml
 mdpop3d                         ports/mail/mdpop3d
 mdtest                          ports/benchmarks/mdtest
 meanwhile                       ports/net-im/meanwhile
+mediadownloader                 ports/multimedia/mediadownloader
 mediainfo                       ports/multimedia/mediainfo
 mediaproxy                      ports/net/mediaproxy
 mediatomb                       ports/net/mediatomb
@@ -20777,6 +20780,7 @@ pound                           ports/www/pound
 povchem                         ports/biology/povchem
 povray                          ports/graphics/povray
 povray31                        ports/graphics/povray31
+povray37                        ports/graphics/povray37
 powder                          ports/games/powder
 poweradmin                      ports/dns/poweradmin
 powerarchitect                  ports/databases/powerarchitect
@@ -22292,6 +22296,7 @@ r-cran-psych                    ports/math/R-cran-psych
 r-cran-rsvgdevice               ports/math/R-cran-RSvgDevice
 r-cran-sm                       ports/math/R-cran-sm
 r-cran-sp                       ports/math/R-cran-sp
+r-cran-suppdists                ports/math/R-cran-SuppDists
 r-cran-zelig                    ports/math/R-cran-Zelig
 r1q2                            ports/games/r1q2
 rabbit                          ports/misc/rabbit
@@ -23292,6 +23297,7 @@ rubygem-rubytter                ports/net/rubygem-rubytter
 rubygem-rubyzip2                ports/archivers/rubygem-rubyzip2
 rubygem-runt                    ports/devel/rubygem-runt
 rubygem-ruport                  ports/devel/rubygem-ruport
+rubygem-sass                    ports/textproc/rubygem-sass
 rubygem-sax-machine             ports/textproc/rubygem-sax-machine
 rubygem-scrapi                  ports/www/rubygem-scrapi
 rubygem-scrubyt                 ports/www/rubygem-scrubyt
