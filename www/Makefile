@@ -900,6 +900,7 @@
     SUBDIR += p5-Catalyst-View-XML-Simple
     SUBDIR += p5-Catalyst-View-XSLT
     SUBDIR += p5-CatalystX-Component-Traits
+    SUBDIR += p5-CatalystX-LeakChecker
     SUBDIR += p5-CatalystX-RoleApplicator
     SUBDIR += p5-Class-DBI-FromForm
     SUBDIR += p5-ClearSilver
