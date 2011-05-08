@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.2.25-alpha
-PORTREVISION=	1
+DISTVERSION=	0.2.3.1-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
@@ -33,8 +32,6 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	An anonymizing overlay network for TCP
 
-LIB_DEPENDS=	event-2.0:${PORTSDIR}/devel/libevent2
-
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-openssl-dir="${OPENSSLBASE}" --disable-asciidoc
 CPPFLAGS+=	-I${LOCALBASE}/include/event2
@@ -43,14 +40,19 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	BUFFREELISTS "freelists for buffer RAM" on \
+OPTIONS=	BUFFEREVENTS "use libevent's buffered IO" on \
+		BUFFREELISTS "freelists for buffer RAM" on \
 		INSTR_DOWNLOADS "instrument downloads for analysis" off \
+		STATIC_TOR "build a static tor" off \
 		TCMALLOC "use the tcmalloc memory allocation library" off \
 		THREADS "multi-threading support" on \
 		TRANSPARENT "transparent proxy support" on
 
 USE_RC_SUBR=	tor
 SUB_FILES=	pkg-message
+
+GROUPS =	_tor
+USERS=		_tor
 
 CONFLICTS=	tor-[0-9]*
 CONFLICTS_BUILD=	libevent-[01]*
@@ -70,6 +72,12 @@ WITH_OPENSSL_PORT=	yes
 .endif
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 
+.if defined(WITH_BUFFEREVENTS)
+CONFIGURE_ARGS+=	--enable-bufferevents
+.else
+CONFIGURE_ARGS+=	--disable-bufferevents
+.endif
+
 .if defined(WITH_BUFFREELISTS)
 CONFIGURE_ARGS+=	--enable-buf-freelists
 .else
@@ -82,9 +90,22 @@ CONFIGURE_ARGS+=	--enable-instrument-downloads
 CONFIGURE_ARGS+=	--disable-instrument-downloads
 .endif
 
+.if defined(WITH_STATIC_TOR)
+BUILD_DEPENDS +=	${LOCALBASE}/lib/event2/libevent.a:${PORTSDIR}/devel/libevent2
+CONFIGURE_ARGS+=	--enable-static-tor --with-libevent-dir=${LOCALBASE}/lib/event2 \
+			--with-zlib-dir=/usr/lib
+.else
+CONFIGURE_ARGS+=	--enable-linker-hardening
+LIB_DEPENDS+=		event-2.0:${PORTSDIR}/devel/libevent2
+.endif
+
 .if defined(WITH_TCMALLOC)
 CONFIGURE_ARGS+=	--with-tcmalloc
+.if defined(WITH_STATIC_TOR)
+BUILD_DEPENDS +=	${LOCALBASE}/lib/libtcmalloc.so:${PORTSDIR}/devel/google-perftools
+.else
 LIB_DEPENDS+=		tcmalloc:${PORTSDIR}/devel/google-perftools
+.endif
 .endif
 
 .if defined(WITH_THREADS)
@@ -114,17 +135,14 @@ post-configure:
 	@${REINPLACE_CMD} -e '\|^nodist_man_MANS =|s|$$|${MAN1}|' \
 		${WRKSRC}/doc/Makefile
 
-pre-su-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
-		${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 post-install:
 	${MKDIR} /var/run/tor
-	${CHOWN} _tor:_tor /var/run/tor
+	${CHOWN} -R _tor:_tor /var/run/tor
 	${TOUCH} /var/log/tor
 	${CHOWN} _tor:_tor /var/log/tor
 	${MKDIR} /var/db/tor/data
-	${CHOWN} _tor:_tor /var/db/tor
+	${CHOWN} -R _tor:_tor /var/db/tor
+	${CHMOD} -R 700 /var/db/tor
 	${CAT} ${PKGMESSAGE}
 
 check regression-test test: build
