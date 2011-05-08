@@ -1,0 +1,7 @@
+WebKit is a web content engine, derived from KHTML and KJS from KDE, and
+used primarily in Apple's Safari browser.  It is made to be embedded in
+other applications, such as mail readers, or web browsers.
+It is able to display content such as HTML, SVG, XML, and others. It also
+supports DOM, XMLHttpRequest, XSLT, CSS, Javascript/ECMAscript and more.
+
+WWW: http://www.haskell.org/gtk2hs/
