@@ -1,0 +1,10 @@
+This kld adds V4L2 ioctl handling to the Linux compatibility layer
+so that Linux apps like Skype or Flash can talk to V4L2 devices
+(like webcams) via /dev/videoX.  The patches this kld is based on
+have been committed to FreeBSD 9.0-current now (r221426) so this
+port is only needed on eaerlier versions.
+
+Note this port does not contain actual V4L2 drivers, those are
+provided by e.g. the multimedia/webcamd port.
+
+WWW: http://people.freebsd.org/~nox/dvb/
