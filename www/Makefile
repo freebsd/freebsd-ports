@@ -902,6 +902,7 @@
     SUBDIR += p5-CatalystX-Component-Traits
     SUBDIR += p5-CatalystX-InjectComponent
     SUBDIR += p5-CatalystX-LeakChecker
+    SUBDIR += p5-CatalystX-Profile
     SUBDIR += p5-CatalystX-RoleApplicator
     SUBDIR += p5-Class-DBI-FromForm
     SUBDIR += p5-ClearSilver
