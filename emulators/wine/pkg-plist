@@ -175,6 +175,7 @@ include/wine/windows/d3drmwin.h
 include/wine/windows/d3dtypes.h
 include/wine/windows/d3dvec.inl
 include/wine/windows/d3dx9.h
+include/wine/windows/d3dx9anim.h
 include/wine/windows/d3dx9core.h
 include/wine/windows/d3dx9effect.h
 include/wine/windows/d3dx9math.h
@@ -183,6 +184,7 @@ include/wine/windows/d3dx9mesh.h
 include/wine/windows/d3dx9shader.h
 include/wine/windows/d3dx9shape.h
 include/wine/windows/d3dx9tex.h
+include/wine/windows/d3dx9xof.h
 include/wine/windows/dbccmd.idl
 include/wine/windows/dbcses.idl
 include/wine/windows/dbdsad.idl
@@ -1041,6 +1043,7 @@ lib/wine/fakedlls/mssip32.dll
 lib/wine/fakedlls/mstask.dll
 lib/wine/fakedlls/msvcirt.dll
 lib/wine/fakedlls/msvcp100.dll
+lib/wine/fakedlls/msvcp60.dll
 lib/wine/fakedlls/msvcp80.dll
 lib/wine/fakedlls/msvcp90.dll
 lib/wine/fakedlls/msvcr100.dll
@@ -1526,6 +1529,7 @@ lib/wine/mssip32.dll.so
 lib/wine/mstask.dll.so
 lib/wine/msvcirt.dll.so
 lib/wine/msvcp100.dll.so
+lib/wine/msvcp60.dll.so
 lib/wine/msvcp80.dll.so
 lib/wine/msvcp90.dll.so
 lib/wine/msvcr100.dll.so
