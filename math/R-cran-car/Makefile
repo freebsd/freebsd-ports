@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	car
-DISTVERSION=	1.2-16
-PORTREVISION=	3
+DISTVERSION=	2.0-10
 CATEGORIES=	math
 PKGNAMEPREFIX=	R-cran-
 DISTNAME=	${PORTNAME}_${DISTVERSION}
 
 MAINTAINER=	naylor.b.david@gmail.com
 COMMENT=	Companion to Applied Regression for R
+
+LICENSE=	GPLv2
 
 USE_R_MOD=	yes
 R_MOD_AUTOPLIST=	yes
