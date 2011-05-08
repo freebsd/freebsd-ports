@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-DISTVERSION=	1.3.18
+DISTVERSION=	1.3.19
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -33,8 +33,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--datadir=${DATADIR} --verbose --disable-tests \
 		--with-glu --with-opengl --with-xrandr \
 		--without-capi --without-gphoto --without-gsm \
-		--without-v4l --without-mpg123 --without-sane \
-		--without-xcomposite --without-xinerama
+		--without-mpg123 --without-sane \
+		--without-v4l --without-xcomposite --without-xinerama
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		FLEX="${LOCALBASE}/bin/flex"
 WINELIBDIR?=	${PREFIX}/lib
