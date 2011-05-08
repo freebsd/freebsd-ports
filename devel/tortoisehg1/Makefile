@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tortoisehg
-PORTVERSION=	1.1.9.1
-PORTREVISION=	1
+PORTVERSION=	1.1.10
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
 
@@ -61,6 +60,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/contrib/mergetools.rc ${PREFIX}/share/tortoisehg/
 
 post-install:
+	@${ECHO_MSG}
 	@${CAT} pkg-message
+	@${ECHO_MSG}
 
 .include <bsd.port.mk>
