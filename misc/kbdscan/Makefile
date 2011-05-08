@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	kbdscan
-PORTVERSION=	20100427
+PORTVERSION=	20110507
 CATEGORIES=	misc
 MASTER_SITES=	http://hack.org/mc/hacks/${PORTNAME}/
 
