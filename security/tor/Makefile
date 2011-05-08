@@ -46,6 +46,9 @@ OPTIONS=	BUFFREELISTS "freelists for buffer RAM" on \
 USE_RC_SUBR=	tor
 SUB_FILES=	pkg-message
 
+GROUPS =	_tor
+USERS=		_tor
+
 CONFLICTS=	tor-devel-[0-9]*
 
 MANCOMPRESSED=	no
@@ -111,17 +114,14 @@ post-configure:
 	@${FIND} -X ${WRKSRC} -type f -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
 		"s|-lpthread|${PTHREAD_LIBS}|g"
 
-pre-su-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
-		${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 post-install:
 	${MKDIR} /var/run/tor
-	${CHOWN} _tor:_tor /var/run/tor
+	${CHOWN} -R _tor:_tor /var/run/tor
 	${TOUCH} /var/log/tor
 	${CHOWN} _tor:_tor /var/log/tor
 	${MKDIR} /var/db/tor/data
-	${CHOWN} _tor:_tor /var/db/tor
+	${CHOWN} -R _tor:_tor /var/db/tor
+	${CHMOD} -R 700 /var/db/tor
 	${CAT} ${PKGMESSAGE}
 
 check regression-test test: build
