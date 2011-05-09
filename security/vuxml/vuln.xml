@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3eb2c100-738b-11e0-89f4-001e90d46635">
+    <topic>postfix -- memory corruption vulnerability</topic>
+    <affects>
+      <package>
+	<name>postfix</name>
+	<name>postfix-base</name>
+	<range><ge>2.8.*,1</ge><lt>2.8.3,1</lt></range>
+	<range><ge>2.7.*,1</ge><lt>2.7.4,1</lt></range>
+	<range><ge>2.6.*,1</ge><lt>2.6.10,1</lt></range>
+	<range><ge>2.5.*,2</ge><lt>2.5.13,2</lt></range>
+	<range><le>2.4.16,1</le></range>
+      </package>
+      <package>
+	<name>postfix-current</name>
+	<name>postfix-current-base</name>
+	<range><lt>2.9.20110501,4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Postfix SMTP server has a memory corruption error,
+	   when the Cyrus SASL library is used with authentication
+	   mechanisms other than PLAIN and LOGIN (ANONYMOUS is not
+	   affected, but should not be used for other reasons).
+	   This memory corruption is known to result in a program
+	   crash (SIGSEV).</p>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-1720</cvename>
+      <url>http://www.postfix.org/CVE-2011-1720.html</url>
+    </references>
+    <dates>
+      <discovery>2011-05-09</discovery>
+      <entry>2011-05-09</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="04b7d46c-7226-11e0-813a-6c626dd55a41">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
