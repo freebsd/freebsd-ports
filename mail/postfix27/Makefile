@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	2.7.3
+PORTVERSION=	2.7.4
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -340,9 +340,15 @@ pre-su-install:
 
 do-install:
 	@cd ${WRKSRC} && ${SH} postfix-install -non-interactive install_root=/ tempdir=/tmp \
+		config_directory=${ETCDIR} \
+		command_directory=${PREFIX}/sbin \
 		daemon_directory=${DAEMONDIR} \
 		html_directory=${READMEDIR} \
-		readme_directory=${READMEDIR}
+		mailq_path=${PREFIX}/bin/mailq \
+		manpage_directory=${MANPREFIX}/man \
+		newaliases_path=${PREFIX}/bin/newaliases \
+		readme_directory=${READMEDIR} \
+		sendmail_path=${PREFIX}/sbin/sendmail
 	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/rmail/rmail ${PREFIX}/bin/rmail
 	${INSTALL_SCRIPT} ${WRKSRC}/auxiliary/qshape/qshape.pl ${PREFIX}/bin/qshape
 	${INSTALL_MAN} ${WRKSRC}/man/man1/qshape.1 ${MANPREFIX}/man/man1
