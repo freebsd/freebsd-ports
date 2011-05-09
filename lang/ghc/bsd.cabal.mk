@@ -9,13 +9,27 @@
 # Maintained by: haskell@FreeBSD.org
 #
 
-PKGNAMEPREFIX?=	hs-
+HSPREFIX=	hs-
+PKGNAMEPREFIX?=	${HSPREFIX}
 
+.if !defined(METAPORT)
 MASTER_SITES?=	http://hackage.haskell.org/packages/archive/${PORTNAME}/${PORTVERSION}/
+.else
+MASTER_SITES=	# empty
+DISTFILES=	# empty
+EXTRACT_ONLY=	# empty
+NO_FETCH=	yes
+NO_BUILD=	yes
+.endif # !METAPORT
+
 DIST_SUBDIR?=	cabal
 
+FILE_LICENSE?=	LICENSE
+
 .if !defined(DOCUMENTATION) && \
-    (${PORTNAME} == haddock || ${PORTNAME} == ghc-paths || ${PORTNAME} == hscolour)
+    (${PORTNAME} == haddock || ${PORTNAME} == ghc-paths || \
+     ${PORTNAME} == hscolour || ${PORTNAME} == mtl || \
+     ${PORTNAME} == transformers)
 NOPORTDOCS=	yes
 .endif
 
@@ -23,33 +37,50 @@ NOPORTDOCS=	yes
 IGNORE+=	is a documentation-only port, do not install if no documentation needed
 .endif
 
-.if !defined(SLAVE) && !defined(DOCUMENTATION) && !defined(STANDALONE)
+.if !defined(DOCUMENTATION) && !defined(STANDALONE)
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS+=	ghc>=${GHC_VERSION}:${PORTSDIR}/lang/ghc
 RUN_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
+RUN_DEPENDS+=	ghc>=${GHC_VERSION}:${PORTSDIR}/lang/ghc
 .elif defined(STANDALONE)
 BUILD_DEPENDS+=	ghc:${PORTSDIR}/lang/ghc
+BUILD_DEPENDS+=	ghc>=${GHC_VERSION}:${PORTSDIR}/lang/ghc
 .endif
 
-.if defined(SLAVE)
-NO_PKG_REGISTER=
-.endif
-
-GHC_VERSION?=	6.10.4
+GHC_VERSION?=	7.0.3
+GHC_VERSION_N=	${GHC_VERSION:S/./0/g}
 
 GHC_CMD?=	${LOCALBASE}/bin/ghc
 CABAL_SETUP?=	Setup.lhs
 SETUP_CMD?=	./setup
 
-DATADIR=	${PREFIX}/share/${DISTNAME}
-DOCSDIR=	${PREFIX}/share/doc/${DISTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/${DISTNAME}
+ALEX_CMD?=	${LOCALBASE}/bin/alex
+HAPPY_CMD?=	${LOCALBASE}/bin/happy
+HADDOCK_CMD?=	${LOCALBASE}/bin/haddock
 
-LIBDIR_REL=	lib/${DISTNAME}
+GHC_HADDOCK_CMD=${LOCALBASE}/bin/haddock-ghc-${GHC_VERSION}
+
+HADDOCK_PORT=	${PORTSDIR}/lang/ghc
+
+CABAL_DOCSDIR=		${PREFIX}/share/doc/ghc-${GHC_VERSION}/cabal
+CABAL_DOCSDIR_REL=	${CABAL_DOCSDIR:S,^${PREFIX}/,,}
+
+DATADIR=	${PREFIX}/share/ghc-${GHC_VERSION}/cabal/${DISTNAME}
+DOCSDIR=	${CABAL_DOCSDIR}/${DISTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/ghc-${GHC_VERSION}/cabal/${DISTNAME}
+
+GHC_LIB_DOCSDIR_REL=	share/doc/ghc-${GHC_VERSION}/html/libraries
+
+CABAL_LIBDIR=		${PREFIX}/lib/ghc-${GHC_VERSION}/cabal
+CABAL_LIBSUBDIR=	${DISTNAME}
+CABAL_LIBDIR_REL=	${CABAL_LIBDIR:S,^${PREFIX}/,,}
+
+CONFIGURE_ARGS+=	--libdir=${CABAL_LIBDIR} --libsubdir=${CABAL_LIBSUBDIR}
 
 PLIST_SUB+=	GHC_VERSION=${GHC_VERSION} \
 		PORTNAME=${PORTNAME} \
 		PORTVERSION=${PORTVERSION} \
-		LIBDIR_REL=${LIBDIR_REL}
+		LIBDIR_REL=${CABAL_LIBDIR_REL}/${CABAL_LIBSUBDIR}
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -59,15 +90,18 @@ INSTALL_PORTDATA?=
 INSTALL_PORTEXAMPLES?=
 
 .if defined(USE_ALEX)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/alex:${PORTSDIR}/devel/hs-alex
+BUILD_DEPENDS+=	${ALEX_CMD}:${PORTSDIR}/devel/hs-alex
+CONFIGURE_ARGS+=	 --with-alex=${ALEX_CMD}
 .endif
 
 .if defined(USE_HAPPY)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/happy:${PORTSDIR}/devel/hs-happy
+BUILD_DEPENDS+=	${HAPPY_CMD}:${PORTSDIR}/devel/hs-happy
+CONFIGURE_ARGS+=	 --with-happy=${HAPPY_CMD}
 .endif
 
 .if defined(EXECUTABLE)
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
+USE_ICONV=	yes
 .endif
 
 .if defined(EXECUTABLE) || defined(DOCUMENTATION)
@@ -87,36 +121,37 @@ _SUF2=	,${PORTEPOCH}
 PKGVERSION=	${PORTVERSION:C/[-_,]/./g}${_SUF1}${_SUF2}
 
 PKGNAMESUFFIX=	-docs
-USE_HACKAGE+=	${PORTNAME}==${PKGVERSION}
+USE_CABAL+=	${PORTNAME}==${PKGVERSION}
 .endif
 
-.if !defined(SLAVE)
-.if defined(USE_HACKAGE)
+.if defined(USE_CABAL)
 .include "bsd.hackage.mk"
 
-.for hackage in ${USE_HACKAGE}
-__u_h_r_package=	${hackage:C/[<=>].*$//g}
+.for cabal_package in ${USE_CABAL}
+__u_h_r_package=	${cabal_package:C/[<=>].*$//g}
 __u_h_r_port=		${${__u_h_r_package}_port}
 __u_h_r_name=		${__u_h_r_port:C/.*\///g}
 
-.if ${__u_h_r_package} == ${hackage}
+.if ${__u_h_r_package} == ${cabal_package}
 __u_h_r_version:=	>=0
 .else
-__u_h_r_version:=	${hackage:C/^[^<=>]*//g}
+__u_h_r_version:=	${cabal_package:C/^[^<=>]*//g}
 .endif
 
 dependencies:=	${dependencies} \
-${__u_h_r_name}${__u_h_r_version}:${PORTSDIR}/${__u_h_r_port}
+${HSPREFIX}${__u_h_r_package}${__u_h_r_version}:${PORTSDIR}/${__u_h_r_port}
 .endfor
 
-.if !defined(DOCUMENTATION)
 BUILD_DEPENDS+=	${dependencies}
-.endif
+
 .if !defined(STANDALONE)
 RUN_DEPENDS+=	${dependencies}
 .endif
 
 .endif
+
+.if defined(USE_GHC_NATIVE)
+USE_PERL5_BUILD=	5.8+
 .endif
 
 .if defined(NOPORTDOCS)
@@ -127,15 +162,17 @@ PLIST_SUB+=	NOPORTDOCS="@comment "
 
 .if !defined(NOPORTDOCS)
 .if !defined(XMLDOCS) || defined(DOCUMENTATION)
-PORT_HADDOCK!=	(cd  ${.CURDIR}/../../lang/ghc && ${MAKE} -V PORT_HADDOCK)
-.if !empty(PORT_HADDOCK:M?0)
-BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
-.endif
+BUILD_DEPENDS+=	${HADDOCK_CMD}:${HADDOCK_PORT}
 
+HADDOCK_OPTS=	${HADDOCK_EXE}
+
+.if defined(WITH_HSCOLOUR_DOCS)
 BUILD_DEPENDS+=	HsColour:${PORTSDIR}/print/hs-hscolour
 
-HSCOLOUR_VERSION=	1.15
-HSCOLOUR_DATADIR=	${LOCALBASE}/share/hscolour-${HSCOLOUR_VERSION}
+HSCOLOUR_VERSION=	1.17
+HSCOLOUR_DATADIR=	${LOCALBASE}/share/ghc-${GHC_VERSION}/cabal/hscolour-${HSCOLOUR_VERSION}
+HADDOCK_OPTS+=		--hyperlink-source --hscolour-css=${HSCOLOUR_DATADIR}/hscolour.css
+.endif
 
 .endif
 
@@ -147,18 +184,13 @@ USE_GMAKE=	yes
 
 .endif # !XMLDOCS
 
-.if !defined(DOCUMENTATION)
-PORTDOCS=	*
-.else
-PORTDOCS=	html
-
-.if !empty(XMLDOCS)
-.for xmldoc in ${XMLDOCS}
-PORTDOCS+=	${xmldoc:C/^.*://g}
-.endfor
+.if defined(DOCUMENTATION)
+DOCSDIR=	${CABAL_DOCSDIR}/${DISTNAME}/html
 .endif
 
-.endif # !DOCUMENTATION
+.if !defined(METAPORT)
+PORTDOCS=	*
+.endif # !METAPORT
 
 .endif # !NOPORTDOCS
 
@@ -168,63 +200,82 @@ __handle_datadir__=	--datadir='' --datasubdir='' --docdir='${DOCSDIR}'
 __handle_datadir__=	--datadir='${DATADIR}' --datasubdir='' --docdir='${DOCSDIR}'
 .endif
 
-MAN1SRC?=	man/man1
-
-
 .if (!defined(XMLDOCS) || defined(DOCUMENTATION)) && !defined(NOPORTDOCS)
-CONFIGURE_ARGS+=	--haddock-options=-w
+CONFIGURE_ARGS+=	--haddock-options=-w --with-haddock=${HADDOCK_CMD}
+.endif
+
+.if !defined(WITHOUT_DYNAMIC)
+CONFIGURE_ARGS+=	--enable-shared
+PLIST_SUB+=	DYNAMIC=""
+.else
+CONFIGURE_ARGS+=	--disable-shared
+PLIST_SUB+=	DYNAMIC="@comment "
+.endif
+
+.if defined(WITH_PROFILE)
+CONFIGURE_ARGS+=	--enable-executable-profiling --enable-library-profiling
+PLIST_SUB+=	PROFILE=""
+.else
+CONFIGURE_ARGS+=	--disable-executable-profiling --disable-library-profiling
+PLIST_SUB+=	PROFILE="@comment "
 .endif
 
 .SILENT:
 
-.if !target(post-patch)
-post-patch:
+post-patch::
 .if defined(XMLDOCS) && defined(USE_AUTOTOOLS)
 	@${REINPLACE_CMD} -e 's|/usr/local/share/xsl/docbook|${LOCALBASE}/share/xsl/docbook|' \
 		${WRKSRC}/doc/configure.ac
 .endif
-.endif # target(post-patch)
 
 .if !target(do-configure)
 do-configure:
+.if !defined(METAPORT)
 	cd ${WRKSRC} && ${GHC_CMD} --make ${CABAL_SETUP} -o setup -package Cabal
 	cd ${WRKSRC} && ${SETENV} CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}" \
-				${SETUP_CMD} configure --ghc --prefix=${PREFIX} --extra-include-dirs="${LOCALBASE}/include" --extra-lib-dirs="${LOCALBASE}/lib" ${__handle_datadir__} ${CONFIGURE_ARGS}
+			${SETUP_CMD} configure --ghc --prefix=${PREFIX} --extra-include-dirs="${LOCALBASE}/include" --extra-lib-dirs="${LOCALBASE}/lib" ${__handle_datadir__} ${CONFIGURE_ARGS}
 
 .if !defined(NOPORTDOCS)
 .if defined(XMLDOCS) && defined(USE_AUTOTOOLS)
 	cd ${WRKSRC}/doc && ${AUTOCONF} && ./configure --prefix=${PREFIX}
 .endif
 .endif # !NOPORTDOCS
+.else
+	${DO_NADA}
+.endif # !METAPORT
 .endif # target(do-configure)
 
 .if !target(do-build)
 do-build:
+.if !defined(METAPORT)
 .if !defined(DOCUMENTATION)
 	cd ${WRKSRC} && ${SETUP_CMD} build
-.if !defined(SLAVE) && !defined(STANDALONE)
+.if !defined(STANDALONE)
 	cd ${WRKSRC} && ${SETUP_CMD} register --gen-script
 .endif
 .endif # !DOCUMENTATION
 
 .if !defined(NOPORTDOCS)
 .if (!defined(XMLDOCS) && !defined(STANDALONE)) || defined(DOCUMENTATION)
-	cd ${WRKSRC} && ${SETUP_CMD} haddock --hyperlink-source ${HADDOCK_EXE} \
-					     --hscolour-css=${HSCOLOUR_DATADIR}/hscolour.css
+	cd ${WRKSRC} && ${SETUP_CMD} haddock ${HADDOCK_OPTS}
 .endif # STANDALONE
 .if defined(XMLDOCS)
 	@(cd ${WRKSRC}/doc && ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} html)
 .endif # XMLDOCS
 .endif # !NOPORTDOCS
+.else
+	${DO_NADA}
+.endif # !METAPORT
 .endif # target(do-build)
 
 .if !target(do-install)
 do-install:
+.if !defined(METAPORT)
 .if !defined(DOCUMENTATION)
 	cd ${WRKSRC} && ${SETUP_CMD} install
 
-.if !defined(SLAVE) && !defined(STANDALONE)
-	cd ${WRKSRC} && ${INSTALL_SCRIPT} register.sh ${PREFIX}/${LIBDIR_REL}/register.sh
+.if !defined(STANDALONE)
+	cd ${WRKSRC} && ${INSTALL_SCRIPT} register.sh ${CABAL_LIBDIR}/${CABAL_LIBSUBDIR}/register.sh
 .endif
 
 .if !empty(INSTALL_PORTDATA) && !defined(NOPORTDATA)
@@ -237,11 +288,11 @@ do-install:
 	${INSTALL_PORTEXAMPLES}
 .endif
 
-.if defined(MAN1)
+.if defined(MAN1SRC)
 .for man in ${MAN1}
 	@${INSTALL_MAN} ${WRKSRC}/${MAN1SRC}/${man} ${PREFIX}/man/man1
 .endfor
-.endif # MAN1
+.endif # MAN1SRC
 
 .else
 
@@ -256,11 +307,59 @@ do-install:
 .endfor
 .endif # XMLDOCS
 .endif
+.else
+	${DO_NADA}
+.endif # !METAPORT
 .endif # target(do-install)
 
-.if !target(post-install)
-post-install:
-.if !defined(SLAVE) && !defined(STANDALONE) && !defined(DOCUMENTATION)
+.if !target(post-install-script)
+post-install-script:
+.if !defined(DOCUMENTATION)
+	@if [ -d ${CABAL_LIBDIR}/${CABAL_LIBSUBDIR} ]; then ${FIND} -ds ${CABAL_LIBDIR}/${CABAL_LIBSUBDIR} \
+		-type f -print | ${SED} -E -e 's,^${PREFIX}/?,,' >> ${TMPPLIST}; fi
+	@if [ -d ${CABAL_LIBDIR}/${CABAL_LIBSUBDIR} ]; then ${FIND} -ds ${CABAL_LIBDIR}/${CABAL_LIBSUBDIR} \
+		-type d -print | ${SED} -E -e 's,^${PREFIX}/?,@dirrm ,' >> ${TMPPLIST}; fi
+.endif
+.if defined(EXECUTABLE)
+.for exe in ${EXECUTABLE}
+	@${ECHO_CMD} 'bin/${exe}' >>${TMPPLIST}
+.endfor
+.endif
+
+.endif # target(post-install-script)
+
+add-plist-post: add-plist-cabal
+add-plist-cabal:
+.if !defined(METAPORT)
+.if !defined(DOCUMENTATION)
+	@if [ -f ${CABAL_LIBDIR}/${CABAL_LIBSUBDIR}/register.sh ]; then \
+		(${ECHO_CMD} '@exec ${SH} %D/${CABAL_LIBDIR_REL}/${CABAL_LIBSUBDIR}/register.sh'; \
+		 ${ECHO_CMD} '@exec ${RM} -f %D/lib/ghc-${GHC_VERSION}/package.conf.old'; \
+		 ${ECHO_CMD} '@unexec %D/bin/ghc-pkg unregister ${PORTNAME}-${PORTVERSION}'; \
+		 ${ECHO_CMD} '@unexec ${RM} -f %D/lib/ghc-${GHC_VERSION}/package.conf.old') >> ${TMPPLIST}; fi
+.endif
+.if defined(NOPORTDOCS)
+	@if [ -f ${DOCSDIR}/${FILE_LICENSE} ]; then \
+		(${ECHO_CMD} '${DOCSDIR_REL}/${FILE_LICENSE}'; \
+		 ${ECHO_CMD} '@unexec ${RMDIR} "%D/${DOCSDIR_REL}" 2>/dev/null || true') >>${TMPPLIST}; fi
+.else
+	@(${ECHO_CMD} '@exec [ -f %D/${GHC_LIB_DOCSDIR_REL}/gen_contents_index ] && ${LN} -s ${DOCSDIR}/html %D/${GHC_LIB_DOCSDIR_REL}/${DISTNAME}' ; \
+	  ${ECHO_CMD} '@exec ${SH} -c "[ -f %D/${GHC_LIB_DOCSDIR_REL}/gen_contents_index ] && cd %D/${GHC_LIB_DOCSDIR_REL} && ${RM} -f doc-index*.html && ./gen_contents_index"' ; \
+	  ${ECHO_CMD} '@unexec ${RM} -f %D/${GHC_LIB_DOCSDIR_REL}/${DISTNAME}' ; \
+	  ${ECHO_CMD} '@unexec ${SH} -c "[ -f %D/${GHC_LIB_DOCSDIR_REL}/gen_contents_index ] && cd %D/${GHC_LIB_DOCSDIR_REL} && ${RM} -f doc-index*.html && ./gen_contents_index"') >>${TMPPLIST};
+.endif
+.else
+	${DO_NADA}
+.endif # !METAPORT
+
+post-install::
+.if !defined(METAPORT)
+.if !defined(NOPORTDOCS)
+	[ -f ${PREFIX}/${GHC_LIB_DOCSDIR_REL}/gen_contents_index ] && ${LN} -s ${DOCSDIR}/html ${PREFIX}/${GHC_LIB_DOCSDIR_REL}/${DISTNAME} && \
+		cd ${PREFIX}/${GHC_LIB_DOCSDIR_REL} && ${RM} -f doc-index*.html && ./gen_contents_index
+.endif
+
+.if !defined(STANDALONE) && !defined(DOCUMENTATION)
 	${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 .endif
 
@@ -278,4 +377,6 @@ post-install:
 	@${ECHO_MSG} "================================================================="
 	@${ECHO_MSG}
 .endif # SHOW_PKGMSG
-.endif # target(post-install)
+.else
+	${DO_NADA}
+.endif # !METAPORT

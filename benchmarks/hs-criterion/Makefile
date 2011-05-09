@@ -6,21 +6,23 @@
 #
 
 PORTNAME=	criterion
-PORTVERSION=	0.5.0.3
+PORTVERSION=	0.5.0.7
 CATEGORIES=	benchmarks haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Robust, reliable performance measurement and analysis for Haskell
 
-USE_HACKAGE=	deepseq>=1.1.0.0 mwc-random>=0.7.0.0 statistics>=0.6.0.0 \
-		vector>=0.6.0.2 vector-algorithms>=0.3.2
+LICENSE=	BSD
+
+USE_CABAL=	deepseq>=1.1 mtl mwc-random>=0.8.0.3 parallel parsec>=3.1 \
+		statistics>=0.8.0.5 vector>=0.7 vector-algorithms>=0.4
 
 PORTEXAMPLES=		*
 INSTALL_PORTEXAMPLES=	\
 	cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
 
 PORTDATA=		*
-INSTALL_PORTDATA= 	${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}
+INSTALL_PORTDATA= 	${INSTALL_DATA} ${WRKSRC}/README.markdown ${DATADIR}
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

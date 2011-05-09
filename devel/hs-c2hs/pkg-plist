@@ -1,4 +1,0 @@
-@comment $FreeBSD$
-bin/c2hs
-%%NOPORTDOCS%%%%DOCSDIR%%/COPYING
-%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%

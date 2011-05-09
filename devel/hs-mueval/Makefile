@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	mueval
-PORTVERSION=	0.8
+PORTVERSION=	0.8.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Safely evaluate Haskell expressions
 
+LICENSE=	BSD
+
 CABAL_SETUP=	Setup.hs
-USE_HACKAGE=	hint>=0.3.1 show>=0.3 utf8-string
+USE_CABAL=	hint>=0.3.1 mtl show>=0.3 utf8-string
 
 EXECUTABLE=	mueval mueval-core
 

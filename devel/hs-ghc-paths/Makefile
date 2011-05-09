@@ -5,18 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	ghc-paths
-PORTVERSION=	0.1.0.5
-PORTREVISION=	1
+PORTVERSION=	0.1.0.8
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Utility looking for GHC installation directories
 
-CABAL_SETUP=	Setup.hs
+LICENSE=	BSD
 
-.if defined(SLAVE)
-GHC_CMD=	ghc
-.endif
+CABAL_SETUP=	Setup.hs
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

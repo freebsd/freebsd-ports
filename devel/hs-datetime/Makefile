@@ -7,12 +7,16 @@
 
 PORTNAME=	datetime
 PORTVERSION=	0.2
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Utilities to make Data.Time.* easier to use in Haskell
 
-USE_HACKAGE=	QuickCheck>=2
+LICENSE=	GPLv3
+FILE_LICENSE=	COPYING
+
+USE_CABAL=	QuickCheck>=2
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

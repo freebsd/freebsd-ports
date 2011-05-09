@@ -7,6 +7,7 @@
 
 PORTNAME=	pure-gen
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://pure-lang.googlecode.com/files/
 
@@ -14,7 +15,7 @@ MAINTAINER=	lichray@gmail.com
 COMMENT=	A C interface generator for the Pure language
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
-		${LOCALBASE}/lib/language-c-0.3.2/:${PORTSDIR}/devel/hs-language-c
+		hs-language-c>=0.3.2:${PORTSDIR}/devel/hs-language-c
 LIB_DEPENDS=	pure.7:${PORTSDIR}/lang/pure
 
 MAN1=		pure-gen.1

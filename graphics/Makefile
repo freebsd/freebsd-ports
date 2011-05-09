@@ -322,8 +322,10 @@
     SUBDIR += gx
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hppsmtools
+    SUBDIR += hs-cairo
     SUBDIR += hs-HGL
-    SUBDIR += hs-hgl
+    SUBDIR += hs-soegtk
+    SUBDIR += hs-svgcairo
     SUBDIR += hsetroot
     SUBDIR += hugin
     SUBDIR += icoconvert

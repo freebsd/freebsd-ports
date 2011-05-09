@@ -5,39 +5,29 @@
 # $FreeBSD$
 
 PORTNAME=	haddock
-PORTVERSION=	2.4.2
-PORTREVISION=	2
+PORTVERSION=	2.9.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A documentation tool for Haskell
 
-USE_HACKAGE=	ghc-paths
+LICENSE=	BSD
 
-EXECUTABLE=	haddock
+USE_CABAL=	xhtml>=3000.2 ghc-paths
+USE_ALEX=	true
+USE_HAPPY=	true
+
+EXECUTABLE=	haddock-${PORTVERSION}
 
 PORTDATA=	*
 
-.include <bsd.port.pre.mk>
+SUB_FILES=	pkg-deinstall
+SUB_LIST=	GHC_HADDOCK_CMD=${GHC_HADDOCK_CMD} HADDOCK=${PREFIX}/bin/haddock
 
-.if !defined(SLAVE)
-PORT_HADDOCK!=	(cd  ${.CURDIR}/../../lang/ghc && ${MAKE} -V PORT_HADDOCK)
-.if ${PORT_HADDOCK} == 11
-ECHO_MSG=	${PRINTF} "%b"
-IGNORE+=	\n\t The ${LOCALBASE}/bin/haddock executable was already installed\n
-IGNORE+=	\t by the lang/ghc port, setting the option WITH_HADDOCK.\n
-IGNORE+=	\t You have to reinstall this last one with the right option\n
-IGNORE+=	\t WITHOUT_HADDOCK.\n\c
-.elif ${PORT_HADDOCK} == 01
-ECHO_MSG=	${PRINTF} "%b"
-IGNORE+=	\n\t This port depends on the lang/ghc port, which will install\n
-IGNORE+=	\t the ${LOCALBASE}/bin/haddock executable, for the WITH_HADDOCK\n
-IGNORE+=	\t option was set in it. You have to set the WITHOUT_HADDOCK\n
-IGNORE+=	\t options in lang/ghc before to install devel/hs-haddock.\n\c
-.endif
-.else
-GHC_CMD=	ghc
-.endif
+CONFIGURE_ARGS=	--program-suffix=-${PORTVERSION}
+
+post-install::
+	@${LN} -sf ${PREFIX}/bin/${EXECUTABLE} ${PREFIX}/bin/haddock
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

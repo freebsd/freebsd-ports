@@ -1,4 +1,6 @@
-bin/lhs2TeX
+@comment $FreeBSD$
+%%NOPORTDOCS%%%%DOCSDIR%%/doc/Guide2.pdf
+%%NOPORTDOCS%%@dirrmtry %%DOCSDIR%%/doc
 share/texmf-local/tex/latex/polytable/lazylist.sty
 share/texmf-local/tex/latex/polytable/polytable.sty
 @dirrm share/texmf-local/tex/latex/polytable

@@ -6,74 +6,64 @@
 #
 
 PORTNAME=	gtk2hs
-PORTVERSION=	0.10.0
-PORTREVISION=	7
+PORTVERSION=	0.12.0
 PORTEPOCH=	1
 CATEGORIES=	x11-toolkits haskell
-MASTER_SITES=	SF
-PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A GTK2 Binding for Haskell
 
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
-		gstreamer-plugins>=0.10:${PORTSDIR}/multimedia/gstreamer-plugins
-LIB_DEPENDS=	gstreamer-0.10:${PORTSDIR}/multimedia/gstreamer \
-		gtkglext-x11-1.0:${PORTSDIR}/x11-toolkits/gtkglext
-RUN_DEPENDS=	${BUILD_DEPENDS}
+METAPORT=	yes
+USE_CABAL=	glib gio cairo pango gtk
 
-USE_GNOME=	gtk20 libglade2 gtksourceview2 gconf2 librsvg2 gnomevfs2
-USE_GECKO=	libxul
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-SUB_FILES=	pkg-install
-PKGDEINSTALL=	${PKGINSTALL}
+OPTIONS=	GCONF          "GConf2 configuration system" off \
+		GLADE          "libglade UI loader"          off \
+		GSTREAMER      "Media codec library"         off \
+		GTKGLEXT       "Gtk+ OpenGL extension"       off \
+		GTKSOURCEVIEW2 "Source code editor"          off \
+		SVGCAIRO       "Cairo SVG loader"            off \
+		VTE            "Terminal emulator"           off \
+		WEBKIT         "WebKit rendering engine"     off \
+		SOEGTK         "Examples for Haskell SoE"    off
 
-GHC_VERSION=	6.10.4
-GTK2HS_VERSION=	${PORTVERSION}
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
+.include <bsd.port.options.mk>
 
-GTK2HS_LIBDIR_REL=	lib/${PORTNAME}
-
-PLIST_SUB=	GHC_VERSION=${GHC_VERSION} \
-		GTK2HS_VERSION=${GTK2HS_VERSION} \
-		GTK2HS_LIBDIR_REL=${GTK2HS_LIBDIR_REL}
-
-SUB_LIST+=	GHC_VERSION="${GHC_VERSION}" \
-		PORTVERSION=${PORTVERSION} \
-		PKGS="${PKGS}"
-
-PKGS=		glib cairo gstreamer gnomevfs gio \
-		gtk glade svgcairo gtkglext gconf \
-		gtksourceview2 mozembed soegtk
-
-CONFIGURE_ENV+=	GIO_CFLAGS="-I${LOCALBASE}/include/gio-unix-2.0"
-
-.if defined(NOPORTDOCS)
-PLIST_SUB+=		NOPORTDOCS=""
-.else
-PLIST_SUB+=		NOPORTDOCS="@comment "
+.if defined(WITH_GCONF)
+USE_CABAL+=		gconf
 .endif
 
-.if !defined(NOPORTDOCS)
-
-PORT_HADDOCK!=	(cd  ${.CURDIR}/../../lang/ghc && ${MAKE} -V PORT_HADDOCK)
-.if !empty(PORT_HADDOCK:M?0)
-BUILD_DEPENDS+=	haddock:${PORTSDIR}/devel/hs-haddock
+.if defined(WITH_GLADE)
+USE_CABAL+=		glade
 .endif
 
-CONFIGURE_ARGS+=	--enable-docs
-
-PORTDOCS=	*
+.if defined(WITH_GSTREAMER)
+USE_CABAL+=		gstreamer
 .endif
 
-post-install:
-.if defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
+.if defined(WITH_GTKGLEXT)
+USE_CABAL+=		gtkglext
 .endif
-	@${INSTALL_DATA} ${WRKSRC}/docs/prologue.txt ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/AUTHORS ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/COPYING ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/COPYING.GPLv3 ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/COPYING.LGPLv3 ${DOCSDIR}
 
+.if defined(WITH_GSOURCEVIEW2)
+USE_CABAL+=		gsourceview2
+.endif
+
+.if defined(WITH_SVGCAIRO)
+USE_CABAL+=		svgcairo
+.endif
+
+.if defined(WITH_VTE)
+USE_CABAL+=		vte
+.endif
+
+.if defined(WITH_WEBKIT)
+USE_CABAL+=		webkit
+.endif
+
+.if defined(WITH_SOEGTK)
+USE_CABAL+=		soegtk
+.endif
+
+.include "../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

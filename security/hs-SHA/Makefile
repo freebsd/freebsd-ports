@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	SHA
-PORTVERSION=	1.4.1.1
+PORTVERSION=	1.4.1.3
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell implementations of the SHA suite of message digest functions
 
-CABAL_SETUP=	Setup.hs
+LICENSE=	BSD
 
-USE_HACKAGE=	binary
+CABAL_SETUP=	Setup.hs
+USE_CABAL=	binary
 
 OPTIONS=	TEST "Build the SHA test suite" off \
 		EXE  "Build a SHA2-384 executable similar to 'md5sum'" off
@@ -24,21 +25,17 @@ OPTIONS=	TEST "Build the SHA test suite" off \
 
 .if defined(WITH_TEST)
 CONFIGURE_ARGS+=	--flags="Test"
-USE_HACKAGE+=		QuickCheck>=2.0.0.0
+USE_CABAL+=		QuickCheck>=2 test-framework>=0.3 test-framework-quickcheck2>=0.2
 EXECUTABLE+=		test_sha
-PLIST_SUB+=		MAYBE_TEST=""
 .else
 CONFIGURE_ARGS+=	--flags="-Test"
-PLIST_SUB+=		MAYBE_TEST="@comment "
 .endif
 
 .if defined(WITH_EXE)
 CONFIGURE_ARGS+=	--flags="exe"
 EXECUTABLE+=		sha1 sha384
-PLIST_SUB+=		MAYBE_EXE=""
 .else
 CONFIGURE_ARGS+=	--flags="-exe"
-PLIST_SUB+=		MAYBE_EXE="@comment "
 .endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

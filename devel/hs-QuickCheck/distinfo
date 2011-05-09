@@ -1,3 +1,2 @@
-MD5 (cabal/QuickCheck-2.1.1.1.tar.gz) = a9e9170599223dc21c21a0190aadb195
-SHA256 (cabal/QuickCheck-2.1.1.1.tar.gz) = 626a6f7a69e2bea3b4fe7c573d0bc8da8c77f97035cb2d3a5e1c9fca382b59c9
-SIZE (cabal/QuickCheck-2.1.1.1.tar.gz) = 19486
+SHA256 (cabal/QuickCheck-2.4.0.1.tar.gz) = 19057c71c9fc154735b6d2a8b285930ceb5470815caf3c31a274f5bbb560f2f4
+SIZE (cabal/QuickCheck-2.4.0.1.tar.gz) = 23556

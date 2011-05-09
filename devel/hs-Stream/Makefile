@@ -5,14 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	Stream
-PORTVERSION=	0.4.1
-PORTREVISION=	1
+PORTVERSION=	0.4.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell library for manipulating infinite lists
 
-USE_HACKAGE=	lazysmallcheck>=0.3 QuickCheck>=2.0
+LICENSE=	BSD
+
+USE_CABAL=	lazysmallcheck>=0.3 QuickCheck>=2.0
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

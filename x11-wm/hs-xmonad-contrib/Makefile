@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	xmonad-contrib
-PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTVERSION=	0.9.2
 CATEGORIES=	x11-wm haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Third party tiling algorithms, configurations and scripts to xmonad
 
-USE_HACKAGE=	xmonad utf8-string
+LICENSE=	BSD
+
+USE_CABAL=	mtl xmonad>=0.9.1 X11>=1.5 utf8-string
 USE_XORG=	x11
 
 OPTIONS=	XFT "Enable Xft support for fonts" On
@@ -23,7 +24,7 @@ OPTIONS=	XFT "Enable Xft support for fonts" On
 
 .if defined(WITH_XFT)
 CONFIGURE_ARGS+=	--flags="use_xft"
-USE_HACKAGE+=		X11-xft>=0.2
+USE_CABAL+=		X11-xft>=0.2
 .endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

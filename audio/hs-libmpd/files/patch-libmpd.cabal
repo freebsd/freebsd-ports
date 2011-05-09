@@ -1,0 +1,18 @@
+--- ./libmpd.cabal.orig	2010-09-08 15:47:02.000000000 +0200
++++ ./libmpd.cabal	2011-03-13 04:15:05.157038443 +0100
+@@ -41,11 +41,11 @@
+     else
+         Build-Depends: base >= 4 && < 5
+ 
+-    Build-Depends:      network >= 2.1 && < 2.3,
+-                        mtl >= 1.1 && < 1.2, filepath >= 1.0 && < 1.2,
++    Build-Depends:      network >= 2.1,
++                        mtl >= 1.1, filepath >= 1.0,
+                         utf8-string >= 0.3.1 && < 0.4,
+-                        containers >= 0.3 && < 0.4,
+-                        time >= 1.1 && < 1.2,
++                        containers >= 0.3,
++                        time >= 1.1,
+                         old-locale >= 1.0 && < 1.1
+     Exposed-Modules:    Network.MPD, Network.MPD.Commands.Extensions,
+                         Network.MPD.Core

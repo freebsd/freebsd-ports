@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	hashed-storage
-PORTVERSION=	0.5.2
+PORTVERSION=	0.5.5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Hashed file storage support code
 
-CABAL_SETUP=	Setup.hs
+LICENSE=	BSD
 
-USE_HACKAGE=	binary dataenc mmap>=0.5 zlib
+CABAL_SETUP=	Setup.hs
+USE_CABAL=	binary dataenc mmap>=0.5 mtl zlib
 
 OPTIONS=	TEST "Build tests" off
 
@@ -23,12 +24,12 @@ OPTIONS=	TEST "Build tests" off
 
 .if defined(WITH_TEST)
 CONFIGURE_ARGS+=	--flags="test"
-USE_HACKAGE+=		test-framework test-framework-hunit test-framework-quickcheck2 QuickCheck>=2.0.0.0 zip-archive
+USE_CABAL+=		test-framework test-framework-hunit \
+			test-framework-quickcheck2 HUnit \
+			QuickCheck>=2.3 zip-archive
 EXECUTABLE+=		hashed-storage-test
-PLIST_SUB+=		MAYBE_TEST=""
 .else
 CONFIGURE_ARGS+=	--flags="-test"
-PLIST_SUB+=		MAYBE_TEST="@comment "
 .endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

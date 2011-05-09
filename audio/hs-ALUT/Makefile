@@ -7,14 +7,16 @@
 
 PORTNAME=	ALUT
 PORTVERSION=	2.2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell binding for the OpenAL Utility Toolkit
 
+LICENSE=	BSD
+
 CABAL_SETUP=	Setup.hs
-USE_HACKAGE=	OpenAL StateVar
+USE_CABAL=	OpenAL StateVar
 USE_OPENAL=	al alut
 
 PORTEXAMPLES=		*

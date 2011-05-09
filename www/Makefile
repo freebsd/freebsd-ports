@@ -317,6 +317,9 @@
     SUBDIR += hs-oeis
     SUBDIR += hs-scgi
     SUBDIR += hs-url
+    SUBDIR += hs-wai
+    SUBDIR += hs-warp
+    SUBDIR += hs-webkit
     SUBDIR += htdump
     SUBDIR += html2hdml
     SUBDIR += html2wml

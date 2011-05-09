@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	mwc-random
-PORTVERSION=	0.7.0.1
+PORTVERSION=	0.8.0.3
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Fast, high quality pseudo random number generation in Haskell
 
-USE_HACKAGE=	primitive vector>=0.5
+LICENSE=	BSD
+
+USE_CABAL=	primitive vector>=0.5
 
 PORTDATA=		*
-INSTALL_PORTDATA=	${INSTALL_DATA} ${WRKSRC}/README ${DATADIR}
+INSTALL_PORTDATA=	${INSTALL_DATA} ${WRKSRC}/README.markdown ${DATADIR}
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

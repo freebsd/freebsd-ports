@@ -5,14 +5,16 @@
 # $FreeBSD$
 #
 
-PORTNAME=	FileManip
-PORTVERSION=	0.3.3
+PORTNAME=	filemanip
+PORTVERSION=	0.3.5.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Expressive file and directory manipulation for Haskell
 
-CONFIGURE_ARGS+=	--constraint='base<4'
+LICENSE=	BSD
+
+USE_CABAL=	mtl unix-compat
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

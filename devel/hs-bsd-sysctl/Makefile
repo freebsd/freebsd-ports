@@ -7,10 +7,13 @@
 
 PORTNAME=	bsd-sysctl
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	jupengfei@gmail.com
 COMMENT=	Access to the BSD sysctl(3) interface
+
+LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 

@@ -6,32 +6,19 @@
 #
 
 PORTNAME=	tagsoup
-PORTVERSION=	0.10.1
+PORTVERSION=	0.12
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell library for extracting information from HTML documents
+
+LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 
 PORTDATA=		*
 INSTALL_PORTDATA=	cd ${WRKSRC} && \
 			  ${INSTALL_DATA} ${WRKSRC}/tagsoup.htm ${DATADIR}
-
-OPTIONS=	TESTPROG "Build the test program" on
-
-.include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
-.include <bsd.port.options.mk>
-
-.if defined(WITH_TESTPROG)
-CONFIGURE_ARGS+=	--flags="testprog"
-EXECUTABLE+=		tagsoup
-USE_HACKAGE+=		deepseq==1.1.0.0 HTTP QuickCheck>=2.1.0.0
-PLIST_SUB+=		MAYBE_TESTPROG=""
-.else
-CONFIGURE_ARGS+=	--flags="-testprog"
-PLIST_SUB+=		MAYBE_TESTPROG="@comment "
-.endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

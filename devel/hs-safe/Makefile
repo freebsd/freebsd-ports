@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	safe
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell library for safe (pattern match free) functions
+
+LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 

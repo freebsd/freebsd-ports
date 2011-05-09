@@ -6,27 +6,22 @@
 #
 
 PORTNAME=	haddock
-PORTVERSION=	2.4.2
-PORTREVISION=	2
+PORTVERSION=	2.9.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Documentation for Haddock
 
+LICENSE=	BSD
+
 USE_AUTOTOOLS=	autoconf:env
+USE_CABAL=	xhtml>=3000.2 ghc-paths
+USE_ALEX=	true
+USE_HAPPY=	true
 
 DOCUMENTATION=	yes
 XMLDOCS=	doc/haddock:users_guide
 SHOW_PKGMSG=	yes
-
-PORT_HADDOCK!=	(cd  ${.CURDIR}/../../lang/ghc && ${MAKE} -V PORT_HADDOCK)
-.if ${PORT_HADDOCK} == 11
-ECHO_MSG=	${PRINTF} "%b"
-IGNORE+=	\n\t The ${LOCALBASE}/bin/haddock executable was already installed\n
-IGNORE+=	\t by the lang/ghc port, setting the option WITH_HADDOCK.\n
-IGNORE+=	\t You have to reinstall this last one with the right option\n
-IGNORE+=	\t WITHOUT_HADDOCK.\n\c
-.endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

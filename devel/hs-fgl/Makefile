@@ -7,12 +7,16 @@
 
 PORTNAME=	fgl
 PORTVERSION=	5.4.2.3
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Martin Erwig Functional Graph Library
 
+LICENSE=	BSD
+
 CABAL_SETUP=	Setup.hs
+USE_CABAL=	mtl
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

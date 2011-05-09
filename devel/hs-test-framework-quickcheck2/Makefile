@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	test-framework-quickcheck2
-PORTVERSION=	0.2.7
+PORTVERSION=	0.2.9
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	QuickCheck2 support for the test-framework package
 
-USE_HACKAGE=	QuickCheck>=2.1.0.3 test-framework>=0.2.0
+LICENSE=	BSD
+
+USE_CABAL=	QuickCheck>=2.4 test-framework>=0.2
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

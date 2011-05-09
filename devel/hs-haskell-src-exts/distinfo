@@ -1,3 +1,2 @@
-MD5 (cabal/haskell-src-exts-1.9.0.tar.gz) = 1caa8d81c9f12d14ddb8a02dc9e6df1a
-SHA256 (cabal/haskell-src-exts-1.9.0.tar.gz) = dedb529217dfe393f75f26b735f7dd09eea50006481f60d06e169de6f328d1da
-SIZE (cabal/haskell-src-exts-1.9.0.tar.gz) = 176438
+SHA256 (cabal/haskell-src-exts-1.10.2.tar.gz) = 34bad3970f3602cfdd0cd0d4a51b5a68abec61b3969632eeb57ff61880cf1026
+SIZE (cabal/haskell-src-exts-1.10.2.tar.gz) = 285949

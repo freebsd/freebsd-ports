@@ -6,13 +6,15 @@
 
 PORTNAME=	bytestring-csv
 PORTVERSION=	0.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Parse CSV formatted data efficiently with Haskell
 
-USE_HACKAGE=	dlist
+LICENSE=	BSD
+
+USE_CABAL=	dlist
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

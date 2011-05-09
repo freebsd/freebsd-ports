@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	pcap
-PORTVERSION=	0.4.5
+PORTVERSION=	0.4.5.1
 CATEGORIES=	net haskell
 
 MAINTAINER=	jupengfei@gmail.com
 COMMENT=	A system-independent interface for user-level packet capture
 
+LICENSE=	BSD
+
 CABAL_SETUP=	Setup.lhs
+USE_CABAL=	network
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

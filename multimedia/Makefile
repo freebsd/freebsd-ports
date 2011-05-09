@@ -121,6 +121,7 @@
     SUBDIR += gxine
     SUBDIR += gxmms
     SUBDIR += handbrake
+    SUBDIR += hs-gstreamer
     SUBDIR += imagination
     SUBDIR += iriverter
     SUBDIR += iso2mkv

@@ -1,4 +1,3 @@
-lhs2TeX is a preprocessor to generate LaTeX code from literate Haskell
-sources. It is released under the GPL.
+Preprocessor for typesetting Haskell sources with LaTeX.
 
-WWW: http://people.cs.uu.nl/andres/
+WWW:	http://www.andres-loeh.de/lhs2tex/

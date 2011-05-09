@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	show
-PORTVERSION=	0.3.4
+PORTVERSION=	0.4.1.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell Show instances for Lambdabot
 
-CABAL_SETUP=	Setup.hs
-USE_HACKAGE=	smallcheck>=0.4
+LICENSE=	GPLv2
 
-CONFIGURE_ARGS+=	--constraint='base<4'
+CABAL_SETUP=	Setup.hs
+USE_CABAL=	QuickCheck>=2.4 smallcheck>=0.4 syb>=0.3
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

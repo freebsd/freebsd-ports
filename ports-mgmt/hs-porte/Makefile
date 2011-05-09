@@ -5,15 +5,16 @@
 # $FreeBSD$
 
 PORTNAME=	porte
-PORTVERSION=	0.0.3
-PORTREVISION=	4
+PORTVERSION=	0.0.4
 CATEGORIES=	ports-mgmt haskell
 
 MAINTAINER=	sbahra@repnop.org
 COMMENT=	FreeBSD ports index search and statistical analysis tool
 
+LICENSE=	BSD
+
 CABAL_SETUP=	Setup.hs
-USE_HACKAGE=	stringsearch
+USE_CABAL=	stringsearch
 
 EXECUTABLE=	porte
 

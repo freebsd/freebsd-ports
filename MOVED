@@ -2165,3 +2165,12 @@ www/codeigniter|www/codeigniter17|2011-05-03|Renamed to track deprecated branch
 www/codeigniter-devel||2011-05-03|Removed
 devel/common_msgs|devel/ros-common_msgs|2011-05-03|Renamed
 math/geometry|math/ros-geometry|2011-05-03|Renamed
+devel/hs-FileManip|devel/hs-filemanip|2011-05-08|Renamed: Cabal package has been renamed.
+devel/lhs2TeX|textproc/hs-lhs2tex|2011-05-08|Renamed: It has become a Cabal transcript.
+devel/bnfc|devel/hs-BNFC|2011-05-08|Renamed: It has become a Cabal transcript.
+graphics/hs-hgl||2011-05-08|deleted: overriden by graphics/hs-HGL
+x11-toolkits/hs-GLURaw|2011-05-08|Removed: It has become obsoleted by Haskell Platform.
+x11-toolkits/hs-OpenGLRaw|2011-05-08|Removed: It has become obsoleted by Haskell Platform.
+net/hs-network-bytestring|2011-05-08|Removed: It is deprecated by net/hs-network.
+devel/hs-uvector|2011-05-08|Removed: It is deprecated by devel/hs-vector.
+devel/hs-uvector-algorithms|2011-05-08|Removed: It is deprecated by devel/hs-vector-algorithms.

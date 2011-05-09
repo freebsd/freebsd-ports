@@ -1,6 +1,0 @@
-bin/lhs2TeX
-share/texmf-local/tex/latex/polytable/lazylist.sty
-share/texmf-local/tex/latex/polytable/polytable.sty
-@dirrm share/texmf-local/tex/latex/polytable
-@exec %D/bin/mktexlsr
-@unexec %D/bin/mktexlsr

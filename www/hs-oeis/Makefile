@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	oeis
-PORTVERSION=	0.2.2
+PORTVERSION=	0.3.0
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell interface to the Online Encyclopedia of Integer Sequences
 
-USE_HACKAGE=	HTTP>=4000.0.2
+LICENSE=	BSD
+
+CABAL_SETUP=	Setup.hs
+USE_CABAL=	HTTP>=4000.0.2 network>=2
 
 PORTDATA=	*
 

@@ -7,12 +7,15 @@
 
 PORTNAME=	test-framework-hunit
 PORTVERSION=	0.2.6
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	HUnit support for the test-framework package
 
-USE_HACKAGE=	test-framework>=0.2.0
+LICENSE=	BSD
+
+USE_CABAL=	HUnit>=1.2 test-framework>=0.2
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

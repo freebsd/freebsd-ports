@@ -6,11 +6,14 @@
 #
 
 PORTNAME=	uulib
-PORTVERSION=	0.9.12
+PORTVERSION=	0.9.13
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell Utrecht Tools Library
+
+LICENSE=	LGPL21
+FILE_LICENSE=	COPYRIGHT
 
 CABAL_SETUP=	Setup.hs
 

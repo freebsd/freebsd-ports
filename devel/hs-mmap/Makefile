@@ -5,11 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	mmap
-PORTVERSION=	0.5.6
+PORTVERSION=	0.5.7
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	Memory mapped files for POSIX and Windows
+COMMENT=	Memory-mapped files for POSIX and Windows
+
+LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 
