@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	virtuoso
-PORTVERSION=	6.1.2
-PORTREVISION=	1
+PORTVERSION=	6.1.3
+PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-opensource-${PORTVERSION}
@@ -30,6 +30,7 @@ CONFIGURE_ARGS=	--with-readline\
 		--localstatedir="${PREFIX}"
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"\
 		LDFLAGS="-L${LOCALBASE}/lib"
+USE_RC_SUBR=	virtuoso.sh
 ONLY_FOR_ARCHS=	i386 amd64
 USERS=		virtuoso
 GROUPS=		virtuoso
@@ -58,6 +59,9 @@ post-patch:
 	${FIND} -E ${WRKSRC} -type f -name "mkvad.sh" -o -name "make_vad.sh" -o -name "mkdoc.sh" |\
 	    ${XARGS} ${REINPLACE_CMD}\
 		-e 's,-isql,-isql-vt,'
+
+post-install:
+	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.pre.mk>
 
