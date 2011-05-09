@@ -64,6 +64,7 @@ QT_COMPONENTS=	corelib dbus gui network opengl qt3support \
 		assistant svg qdbusviewer makeqpf imageformats \
 		qmake_build moc_build rcc_build uic_build
 USE_GNOME=	libxml2 libxslt
+USE_XORG=	xscrnsaver
 USE_FAM=	yes
 MAKE_JOBS_SAFE=	yes
 

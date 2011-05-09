@@ -52,6 +52,7 @@ QT_COMPONENTS=	assistant corelib dbus designer gui network opengl  \
 		script svg sql qt3support qtestlib xml webkit \
 		qmake_build moc_build rcc_build uic_build \
 		porting_build uic3_build phonon
+USE_XORG=	xtst xscrnsaver
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 MAKE_JOBS_SAFE=	yes
