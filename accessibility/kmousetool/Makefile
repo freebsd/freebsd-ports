@@ -23,6 +23,7 @@ USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	opengl gui qmake_build moc_build rcc_build uic_build
+USE_XORG=	xtst
 MAKE_JOBS_SAFE=	yes
 
 MAN1=	kmag.1 \
