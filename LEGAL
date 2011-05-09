@@ -309,7 +309,7 @@ jre-1_5*-linux-*.bin	java/linux-sun-jre15	License does not allow
 jre-6*-linux-*.bin	java/linux-sun-jre16	License does not allow
 						distribution with fee
 jta-*.zip		java/jta		See the license
-jude-community-*.zip	devel/jude-community	License restrictions
+astah-community-*.zip	devel/astah-community	License restrictions
 kaffe-*			java/kaffe		Restrictive copyright
 komodo-*		editors/komodo-edit	Distribution not permitted
 KASH3-*			math/kash3		Not for commercial distribution

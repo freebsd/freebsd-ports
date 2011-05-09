@@ -2174,3 +2174,4 @@ x11-toolkits/hs-OpenGLRaw||2011-05-08|Removed: It has become obsoleted by Haskel
 net/hs-network-bytestring||2011-05-08|Removed: It is deprecated by net/hs-network.
 devel/hs-uvector||2011-05-08|Removed: It is deprecated by devel/hs-vector.
 devel/hs-uvector-algorithms||2011-05-08|Removed: It is deprecated by devel/hs-vector-algorithms.
+devel/jude-community|devel/astah-community|2011-05-09|Project was renamed
