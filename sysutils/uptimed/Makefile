@@ -6,7 +6,7 @@
 
 PORTNAME=	uptimed
 PORTVERSION=	0.3.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://podgorny.cz/uptimed/releases/ \
 		http://www.predatorlabs.net/dl/
