@@ -7,10 +7,13 @@
 
 PORTNAME=	xml
 PORTVERSION=	1.3.7
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A simple XML library for Haskell
+
+LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 
