@@ -55,6 +55,7 @@
     SUBDIR += asl
     SUBDIR += asmutils
     SUBDIR += asmx
+    SUBDIR += astah-community
     SUBDIR += astyle
     SUBDIR += atlas
     SUBDIR += atlas-devel
@@ -688,7 +689,6 @@
     SUBDIR += json-c
     SUBDIR += json-glib
     SUBDIR += jtag
-    SUBDIR += jude-community
     SUBDIR += judy
     SUBDIR += jwasm
     SUBDIR += jzmq

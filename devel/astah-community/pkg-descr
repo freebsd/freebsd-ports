@@ -1,21 +1,19 @@
-JUDE/Community is the free edition with basic features.
-It is rich in functionality, offering features, such as editing and printing
-UML1.4 diagrams, import/export of Java source code, graphics output, and
-auto layout. (A restriction is that the JUDE logo always appears in the header
-of printed documents.)
+astah* community is a simple and user-friendly UML modeling tool.
 
-Basic Features
-JUDE supports the following basic UML 1.4 diagrams:
-- Class (Object, Package, Robustness)
-- Usecase
-- Sequence
-- Collaboration
-- Statechart
-- Activity
-- Component
-- Deployment
-- Template Generation of Java Source Files
-- Import of Java Source Files
-- Automatic Generation of Class Diagrams with Model Information
+astah* community features:
+- UML 2.x (Class, UseCase, Sequence, Activity, Communication, Statemachine,
+  Component, Deployment, Composite Structure, Object and Package Diagrams)
+- Suggest Feature
+- Alignment Guide
+- Customizing Keybinds
+- Oval, TextBox, Filled Rectangle, Corner-rounded Rectangle and Texts
+- Alignment, Size adjustment
+- Print
+- Export diagram images (PNG, JPEG) *1
+- astah* API (Models of Class, UseCase, Activity, Sequence and Statemachine
+  Diagrames)
+- GUI Localization
 
-WWW: http://jude.change-vision.com/jude-web/index.html
+*1 The product name is displayed on the corner.
+
+WWW: http://astah.change-vision.com/en/product/astah-community.html
