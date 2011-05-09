@@ -6,6 +6,7 @@
 
 PORTNAME=	kdeedu
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -23,7 +24,7 @@ LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
 		openbabel.3:${PORTSDIR}/science/openbabel \
 		cfitsio.0:${PORTSDIR}/astro/cfitsio \
 		qalculate.5:${PORTSDIR}/math/libqalculate \
-		gsl.15:${PORTSDIR}/math/gsl \
+		gsl.16:${PORTSDIR}/math/gsl \
 		spectre.1:${PORTSDIR}/print/libspectre
 RUN_DEPENDS=	xplanet:${PORTSDIR}/astro/xplanet
 

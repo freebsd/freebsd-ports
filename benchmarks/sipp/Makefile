@@ -33,7 +33,7 @@ OPTIONS=	OPENSSL		"OpenSSL support (for digest auth and SIP over TLS)" on \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GSL)
-LIB_DEPENDS+=	gsl.15:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=	gsl.16:${PORTSDIR}/math/gsl
 
 MAKE_ENV+=	EXTRACPPFLAGS=-DHAVE_GSL \
 		EXTRACFLAGS=-DHAVE_GSL \

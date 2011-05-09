@@ -7,6 +7,7 @@
 
 PORTNAME=	inkscape
 PORTVERSION=	0.48.1
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=${PORTNAME:L}/${PORTNAME:L}/0.48.1
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/boost/concept_check.hpp:${PORTSDIR}/devel/bo
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		gc.1:${PORTSDIR}/devel/boehm-gc \
-		gsl.15:${PORTSDIR}/math/gsl \
+		gsl.16:${PORTSDIR}/math/gsl \
 		gtkspell.0:${PORTSDIR}/textproc/gtkspell \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		wpg-0.1.1:${PORTSDIR}/graphics/libwpg01 \

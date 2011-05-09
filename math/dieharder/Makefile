@@ -7,6 +7,7 @@
 
 PORTNAME=	dieharder
 PORTVERSION=	3.31.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://www.phy.duke.edu/~rgb/General/dieharder/
 EXTRACT_SUFX=	.tgz

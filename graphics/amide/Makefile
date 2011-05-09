@@ -7,6 +7,7 @@
 
 PORTNAME=	amide
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
@@ -54,7 +55,7 @@ CONFIGUE_ARGS+=	--disable-ffmpeg
 .endif
 
 .if !defined(WITHOUT_GSL)
-LIB_DEPENDS+=	gsl.15:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=	gsl.16:${PORTSDIR}/math/gsl
 CONFIGUE_ARGS+=	--enable-libgsl
 .else
 CONFIGUE_ARGS+=	--disable-libgsl

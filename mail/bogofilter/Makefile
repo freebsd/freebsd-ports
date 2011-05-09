@@ -7,7 +7,7 @@
 
 PORTNAME=	bogofilter
 PORTVERSION=	1.2.2
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	mail
 MASTER_SITES=	SF/bogofilter/bogofilter-current/bogofilter-${PORTVERSION}
 
@@ -46,7 +46,7 @@ USE_ICONV=		yes
 BF_LIBS+=		-liconv
 .endif
 .if !defined(WITHOUT_GSL)
-LIB_DEPENDS+=		gsl.15:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=		gsl.16:${PORTSDIR}/math/gsl
 .else
 CONFIGURE_ARGS+=	--with-included-gsl
 .endif

@@ -7,6 +7,7 @@
 
 PORTNAME=	koffice
 PORTVERSION=	2.3.3
+PORTREVISION=	1
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KOFFICE2_BRANCH}/${PORTNAME}-${PORTVERSION}/
@@ -31,7 +32,7 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		png.6:${PORTSDIR}/graphics/png \
 		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4 \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		gsl.15:${PORTSDIR}/math/gsl \
+		gsl.16:${PORTSDIR}/math/gsl \
 		wv2.4:${PORTSDIR}/textproc/wv2 \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gsl
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU:S/$/:gsl/} \
 		http://www.gnu.org/software/${PORTNAME}/manual/:gslref
@@ -19,6 +19,8 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	The GNU Scientific Library - mathematical libs
+
+LICENSE=	GPLv3
 
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
@@ -41,8 +43,9 @@ post-install:
 	${GUNZIP_CMD} ${PREFIX}/share/doc/gsl/${GSLREF}
 .endif
 
-regression-test:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} check
+check regression-test test: build
+	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
+	${MAKE_ARGS} check)
 
 .include <bsd.port.pre.mk>
 

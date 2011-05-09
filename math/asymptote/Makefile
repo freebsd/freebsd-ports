@@ -18,7 +18,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A powerful script-based vector graphics language
 
 .if defined(WITH_GSL)
-LIB_DEPENDS+=	gsl.15:${PORTSDIR}/math/gsl
+LIB_DEPENDS+=	gsl.16:${PORTSDIR}/math/gsl
 .endif
 .if defined(WITH_FFTW)
 LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3
