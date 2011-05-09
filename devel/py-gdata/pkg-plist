@@ -217,6 +217,9 @@
 %%PYTHON_SITELIBDIR%%/gdata/calendar/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/calendar/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/calendar/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gdata/calendar/client.py
+%%PYTHON_SITELIBDIR%%/gdata/calendar/client.pyc
+%%PYTHON_SITELIBDIR%%/gdata/calendar/client.pyo
 %%PYTHON_SITELIBDIR%%/gdata/calendar/data.py
 %%PYTHON_SITELIBDIR%%/gdata/calendar/data.pyc
 %%PYTHON_SITELIBDIR%%/gdata/calendar/data.pyo
@@ -304,15 +307,6 @@
 %%PYTHON_SITELIBDIR%%/gdata/health/service.py
 %%PYTHON_SITELIBDIR%%/gdata/health/service.pyc
 %%PYTHON_SITELIBDIR%%/gdata/health/service.pyo
-%%PYTHON_SITELIBDIR%%/gdata/maps/__init__.py
-%%PYTHON_SITELIBDIR%%/gdata/maps/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gdata/maps/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gdata/maps/client.py
-%%PYTHON_SITELIBDIR%%/gdata/maps/client.pyc
-%%PYTHON_SITELIBDIR%%/gdata/maps/client.pyo
-%%PYTHON_SITELIBDIR%%/gdata/maps/data.py
-%%PYTHON_SITELIBDIR%%/gdata/maps/data.pyc
-%%PYTHON_SITELIBDIR%%/gdata/maps/data.pyo
 %%PYTHON_SITELIBDIR%%/gdata/media/__init__.py
 %%PYTHON_SITELIBDIR%%/gdata/media/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gdata/media/__init__.pyo
@@ -609,7 +603,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/oauth
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/notebook
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/media
-@dirrm %%PYTHON_SITELIBDIR%%/gdata/maps
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/health
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/geo
 @dirrm %%PYTHON_SITELIBDIR%%/gdata/finance
@@ -668,10 +661,14 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/codesearch/CodesearchExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contacts/contacts_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contacts/profiles_example.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contentforshopping/add_batch_products.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contentforshopping/add_product.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contentforshopping/ca_insert.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contentforshopping/ca_list.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contentforshopping/list_products.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/docs/docs_example.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/docs/resumable_upload_sample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/finance/test_finance.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/maps/MapsExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mashups/birthdaySample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/2_legged_oauth.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth/TwoLeggedOAuthExample.py
@@ -714,9 +711,9 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth/oauth_on_appengine
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mashups
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/maps
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/finance
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/docs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contentforshopping
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/contacts
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/codesearch
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/calendar
