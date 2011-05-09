@@ -7,7 +7,7 @@
 
 PORTNAME=	luminance
 DISTVERSION=	2.0.1-1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/qtpfsgui/luminance/${DISTVERSION:S/-1//}/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}
@@ -21,7 +21,7 @@ LIB_DEPENDS=	exiv2.10:${PORTSDIR}/graphics/exiv2 \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		fftw3f.5:${PORTSDIR}/math/fftw3-float \
-		gsl.15:${PORTSDIR}/math/gsl
+		gsl.16:${PORTSDIR}/math/gsl
 
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml webkit imageformats_run linguist_build \

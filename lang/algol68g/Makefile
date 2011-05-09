@@ -7,7 +7,7 @@
 
 PORTNAME=	algol68g
 PORTVERSION=	2.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://www.xs4all.nl/~jmvdveer/
 EXTRACT_SUFX=	.tgz
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Alogol 68 Genie compiler
 
-LIB_DEPENDS=	gsl.15:${PORTSDIR}/math/gsl
+LIB_DEPENDS=	gsl.16:${PORTSDIR}/math/gsl
 
 OPTIONS=	PLOT "GNU plot support" On \
 		PGSQL "Postgresql support" On

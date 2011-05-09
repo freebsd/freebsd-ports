@@ -88,6 +88,7 @@ include/gsl/gsl_multiset.h
 include/gsl/gsl_nan.h
 include/gsl/gsl_ntuple.h
 include/gsl/gsl_odeiv.h
+include/gsl/gsl_odeiv2.h
 include/gsl/gsl_permutation.h
 include/gsl/gsl_permute.h
 include/gsl/gsl_permute_char.h
@@ -222,7 +223,7 @@ include/gsl/gsl_wavelet2d.h
 lib/libgsl.a
 lib/libgsl.la
 lib/libgsl.so
-lib/libgsl.so.15
+lib/libgsl.so.16
 lib/libgslcblas.a
 lib/libgslcblas.la
 lib/libgslcblas.so
