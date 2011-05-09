@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	Text-Xslate
-PORTVERSION=	1.0000
+PORTVERSION=	1.1005
 CATEGORIES=	textproc perl5
-MASTER_SITES=	CPAN/../../authors/id/G/GF/GFUJI
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:GFUJI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	High performance template engine
 
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 BUILD_DEPENDS=	p5-parent>=0.221:${PORTSDIR}/devel/p5-parent \
 		p5-Mouse>=0.61:${PORTSDIR}/devel/p5-Mouse \
 		p5-Any-Moose>=0.13:${PORTSDIR}/devel/p5-Any-Moose \
-		p5-MouseX-Getopt>=0.2601:${PORTSDIR}/devel/p5-MouseX-Getopt \
 		p5-Data-MessagePack>=0.30:${PORTSDIR}/devel/p5-Data-MessagePack
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
 
@@ -38,9 +40,6 @@ MAN3=	Text::Xslate.3 \
 	Text::Xslate::Manual::Debugging.3 \
 	Text::Xslate::Manual::FAQ.3 \
 	Text::Xslate::PP.3 \
-	Text::Xslate::PP::Booster.3 \
-	Text::Xslate::PP::Compiler.3 \
-	Text::Xslate::PP::Compiler::CodeGenerator.3 \
 	Text::Xslate::PP::Const.3 \
 	Text::Xslate::PP::Method.3 \
 	Text::Xslate::PP::Opcode.3 \
