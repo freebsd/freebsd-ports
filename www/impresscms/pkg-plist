@@ -3534,31 +3534,6 @@
 %%WWWDIR%%/htdocs/userinfo.php
 %%WWWDIR%%/htdocs/viewpmsg.php
 %%WWWDIR%%/htdocs/xmlrpc.php
-%%WWWDIR%%/upgrade/check_version.php
-%%WWWDIR%%/upgrade/cnt-2.2.x-to-2.0.x/index.php
-%%WWWDIR%%/upgrade/cnt-2.3.x-to-2.0.x/index.php
-%%WWWDIR%%/upgrade/img/logo.png
-%%WWWDIR%%/upgrade/img/no.png
-%%WWWDIR%%/upgrade/img/top_bg.png
-%%WWWDIR%%/upgrade/img/yes.png
-%%WWWDIR%%/upgrade/index.php
-%%WWWDIR%%/upgrade/language/english/login.tpl
-%%WWWDIR%%/upgrade/language/english/upgrade.php
-%%WWWDIR%%/upgrade/login.php
-%%WWWDIR%%/upgrade/readme.txt
-%%WWWDIR%%/upgrade/style.css
-%%WWWDIR%%/upgrade/style_rtl.css
-%%WWWDIR%%/upgrade/upd-2.0.13-to-2.0.14/index.php
-%%WWWDIR%%/upgrade/upd-2.0.15-to-2.0.16/index.php
-%%WWWDIR%%/upgrade/upd-2.0.16-to-2.0.17/index.php
-%%WWWDIR%%/upgrade/upd-2.0.17-to-2.0.18/index.php
-%%WWWDIR%%/upgrade/upd-2.0.18-to-impresscms-1.0/index.php
-%%WWWDIR%%/upgrade/upd-icms-1.0-to-1.1/index.php
-%%WWWDIR%%/upgrade/upd-icms-1.0-to-1.1/mainfile.dist.php
-%%WWWDIR%%/upgrade/upd-icms-1.0-to-1.1/settings_db.php
-%%WWWDIR%%/upgrade/upd-icms-1.0-to-1.1/settings_salt.php
-%%WWWDIR%%/upgrade/upd-icms-1.0-to-1.1/settings_trust_path.php
-%%WWWDIR%%/upgrade/upgrade_tpl.php
 @dirrm %%WWWDIR%%/extras/editors/FCKeditor/editor/filemanager/connectors
 @dirrm %%WWWDIR%%/extras/editors/FCKeditor/editor/filemanager
 @dirrm %%WWWDIR%%/extras/editors/FCKeditor/editor
@@ -3802,10 +3777,12 @@
 @dirrm %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/admin
 @dirrm %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/blocks
 @dirrm %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/images
+@dirrm %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector/preload
 @dirrm %%WWWDIR%%/htdocs/install/modules/protector/root/modules/protector
 @dirrm %%WWWDIR%%/htdocs/install/modules/protector/root/modules
 @dirrm %%WWWDIR%%/htdocs/install/modules/protector/root
 @dirrm %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/admin
+@dirrm %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/blocks
 @dirrm %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/class
 @dirrm %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/configs
 @dirrm %%WWWDIR%%/htdocs/install/modules/protector/trust_path/modules/protector/doc
@@ -3842,6 +3819,10 @@
 @dirrm %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/Interchange
 @dirrm %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema/schema
 @dirrm %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/ConfigSchema
+@dirrm %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/DefinitionCache/Serializer/CSS
+@dirrm %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/DefinitionCache/Serializer/HTML
+@dirrm %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/DefinitionCache/Serializer/Test
+@dirrm %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/DefinitionCache/Serializer/URI
 @dirrm %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/DefinitionCache/Serializer
 @dirrm %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/DefinitionCache
 @dirrm %%WWWDIR%%/htdocs/libraries/htmlpurifier/standalone/HTMLPurifier/EntityLookup
@@ -3927,6 +3908,8 @@
 @dirrm %%WWWDIR%%/htdocs/libraries
 @dirrm %%WWWDIR%%/htdocs/modules/content/admin
 @dirrm %%WWWDIR%%/htdocs/modules/content/blocks
+@dirrm %%WWWDIR%%/htdocs/modules/content/class/form/elements
+@dirrm %%WWWDIR%%/htdocs/modules/content/class/form
 @dirrm %%WWWDIR%%/htdocs/modules/content/class
 @dirrm %%WWWDIR%%/htdocs/modules/content/images
 @dirrm %%WWWDIR%%/htdocs/modules/content/include
@@ -4005,6 +3988,7 @@
 @dirrm %%WWWDIR%%/htdocs/modules/system/admin/userrank
 @dirrm %%WWWDIR%%/htdocs/modules/system/admin/users/images
 @dirrm %%WWWDIR%%/htdocs/modules/system/admin/users
+@dirrm %%WWWDIR%%/htdocs/modules/system/admin/version/class
 @dirrm %%WWWDIR%%/htdocs/modules/system/admin/version/images
 @dirrm %%WWWDIR%%/htdocs/modules/system/admin/version
 @dirrm %%WWWDIR%%/htdocs/modules/system/admin
@@ -4122,16 +4106,4 @@
 @dirrm %%WWWDIR%%/htdocs/uploads/system
 @dirrm %%WWWDIR%%/htdocs/uploads
 @dirrm %%WWWDIR%%/htdocs
-@dirrm %%WWWDIR%%/upgrade/cnt-2.2.x-to-2.0.x
-@dirrm %%WWWDIR%%/upgrade/cnt-2.3.x-to-2.0.x
-@dirrm %%WWWDIR%%/upgrade/img
-@dirrm %%WWWDIR%%/upgrade/language/english
-@dirrm %%WWWDIR%%/upgrade/language
-@dirrm %%WWWDIR%%/upgrade/upd-2.0.13-to-2.0.14
-@dirrm %%WWWDIR%%/upgrade/upd-2.0.15-to-2.0.16
-@dirrm %%WWWDIR%%/upgrade/upd-2.0.16-to-2.0.17
-@dirrm %%WWWDIR%%/upgrade/upd-2.0.17-to-2.0.18
-@dirrm %%WWWDIR%%/upgrade/upd-2.0.18-to-impresscms-1.0
-@dirrm %%WWWDIR%%/upgrade/upd-icms-1.0-to-1.1
-@dirrm %%WWWDIR%%/upgrade
 @dirrm %%WWWDIR%%
