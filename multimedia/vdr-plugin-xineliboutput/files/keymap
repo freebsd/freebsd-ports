@@ -1143,6 +1143,13 @@ Alias {
 	modifier = none
 }
 
+# VDR Play
+Alias {
+	entry = VDRPlay
+	key = y
+	modifier = none
+}
+
 ##
 # End of xine key bindings.
 ##
