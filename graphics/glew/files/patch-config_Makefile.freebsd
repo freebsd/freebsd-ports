@@ -1,16 +1,12 @@
---- config/Makefile.freebsd.orig	2008-11-03 07:25:19.000000000 +0100
-+++ config/Makefile.freebsd	2009-05-04 22:03:30.000000000 +0200
-@@ -1,20 +1,20 @@
+--- config/Makefile.freebsd.orig	2011-04-27 18:16:34.000000000 +0200
++++ config/Makefile.freebsd	2011-05-09 19:43:51.000000000 +0200
+@@ -1,22 +1,22 @@
  NAME = $(GLEW_NAME)
 -CC = cc
 -LD = ld
+-LDFLAGS.EXTRA = -L/usr/X11R6/lib
 +CC ?= cc
 +LD ?= ld
- ifneq (undefined, $(origin GLEW_MX))
- CFLAGS.EXTRA = -DGLEW_MX
- endif
- LDFLAGS.SO = -shared -soname $(LIB.SONAME)
--LDFLAGS.EXTRA = -L/usr/X11R6/lib
 +LDFLAGS.EXTRA = -L${LOCALBASE}/lib
  LDFLAGS.GL = -lXmu -lXi -lGLU -lGL -lXext -lX11
  LDFLAGS.STATIC = -Wl,-Bstatic
@@ -21,9 +17,17 @@
  WARN = -Wall -W
  POPT = -O2
  BIN.SUFFIX =
--LIB.SONAME = lib$(NAME).so.$(SO_MAJOR)
-+LIB.SONAME = lib$(NAME).so.$(GLEW_MAJOR)
- LIB.DEVLNK = lib$(NAME).so
--LIB.SHARED = lib$(NAME).so.$(SO_VERSION)
-+LIB.SHARED = lib$(NAME).so.$(GLEW_VERSION)
- LIB.STATIC = lib$(NAME).a
+-LIB.SONAME    = lib$(NAME).so.$(SO_MAJOR)
++LIB.SONAME    = lib$(NAME).so.$(GLEW_MAJOR)
+ LIB.DEVLNK    = lib$(NAME).so
+-LIB.SHARED    = lib$(NAME).so.$(SO_VERSION)
++LIB.SHARED    = lib$(NAME).so.$(GLEW_VERSION)
+ LIB.STATIC    = lib$(NAME).a
+ LDFLAGS.SO    = -shared -soname $(LIB.SONAME)
+-LIB.SONAME.MX = lib$(NAME)mx.so.$(SO_MAJOR)
++LIB.SONAME.MX = lib$(NAME)mx.so.$(GLEW_MAJOR)
+ LIB.DEVLNK.MX = lib$(NAME)mx.so
+-LIB.SHARED.MX = lib$(NAME)mx.so.$(SO_VERSION)
++LIB.SHARED.MX = lib$(NAME)mx.so.$(GLEW_VERSION)
+ LIB.STATIC.MX = lib$(NAME)mx.a
+ LDFLAGS.SO.MX = -shared -soname $(LIB.SONAME.MX)

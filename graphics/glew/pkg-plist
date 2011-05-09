@@ -4,7 +4,10 @@ include/GL/glew.h
 include/GL/glxew.h
 include/GL/wglew.h
 lib/libGLEW.a
+lib/libGLEWmx.a
+lib/libGLEWmx.so
 lib/libGLEW.so
+lib/libGLEWmx.so.1
 lib/libGLEW.so.1
 libdata/pkgconfig/glew.pc
 %%PORTDOCS%%%%DOCSDIR%%/advanced.html
