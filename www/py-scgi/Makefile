@@ -11,7 +11,7 @@ CATEGORIES=	www python
 MASTER_SITES=	http://python.ca/scgi/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	dryice@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python server implementation of the Simple Common Gateway Protocol
 
 USE_PYTHON=	yes
