@@ -102,6 +102,7 @@
     SUBDIR += p5-Lingua-ZH-WordSegmenter
     SUBDIR += p5-Lingua-ZH-Wrap
     SUBDIR += p5-Text-Greeking-zh_TW
+    SUBDIR += p5-cconv
     SUBDIR += pcmanx
     SUBDIR += phpbb-tw
     SUBDIR += phpbb3-tw
