@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	impresscms
-PORTVERSION=	1.2.4
+PORTVERSION=	1.2.5
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/ImpressCMS%20Official%20Releases/ImpressCMS%20${PORTVERSION}%20Final
 DISTNAME=	${PORTNAME}_${PORTVERSION}_final
@@ -22,13 +22,12 @@ SUB_FILES=	pkg-message
 .include <bsd.port.pre.mk>
 do-install:
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} htdocs ${WWWDIR}
-	@cd ${WRKSRC} && ${COPYTREE_SHARE} upgrade ${WWWDIR}
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} extras ${WWWDIR}
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	@${CHMOD} -R 755 ${WWWDIR}
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' \
 		>> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHMOD} 755 -R ${WWWDIR}' \
+	@${ECHO_CMD} '@exec ${CHMOD} -R 755 ${WWWDIR}' \
 		>> ${TMPPLIST}
 
 post-install:
