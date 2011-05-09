@@ -1223,6 +1223,7 @@
     SUBDIR += p5-Carp-Clan
     SUBDIR += p5-Carp-Clan-Share
     SUBDIR += p5-Carp-Datum
+    SUBDIR += p5-Carp-REPL
     SUBDIR += p5-Cdk
     SUBDIR += p5-Check-ISA
     SUBDIR += p5-Child
