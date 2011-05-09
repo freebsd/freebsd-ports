@@ -7,12 +7,15 @@
 
 PORTNAME=	skype12
 PORTVERSION=	1.2.0.18
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	NETBSD
 DISTNAME=	skype_staticQT-${PORTVERSION}
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Legacy version P2P VoIP software
+
+DEPRECATED=	very old version
+EXPIRATION_DATE=	2011-07-09
 
 USE_BZIP2=	yes
 USE_LINUX=	yes
