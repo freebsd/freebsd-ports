@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	moodle
-PORTVERSION=	2.0.2
-PORTREVISION=	1
+PORTVERSION=	2.0.3
 CATEGORIES=	www
 MASTER_SITES=	http://download.moodle.org/stable20/ \
 		http://download2.moodle.org/stable20/ \
@@ -32,7 +31,7 @@ OPTIONS=	MYSQL   "Add support for a MySQL database server" On \
 		PGSQL   "Add support for a PostgreSQL database server" Off \
 		MSSQL   "Add support for a MS SQL Server" Off \
 		LDAP    "Add LDAP authentication functionality" Off \
-		MIMETEX "Add mimeTeX filter functionality" On
+		MIMETEX "Add mimeTeX filter functionality" Off
 
 .include <bsd.port.pre.mk>
 
@@ -52,7 +51,7 @@ USE_PHP+=	mssql
 USE_PHP+=	ldap
 .endif
 
-.if !defined(WITHOUT_MIMETEX)
+.if defined(WITH_MIMETEX)
 RUN_DEPENDS+=	${LOCALBASE}/www/mimetex/cgi-bin/mimetex.cgi:${PORTSDIR}/www/mimetex
 .endif
 
