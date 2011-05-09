@@ -18,12 +18,12 @@ RUN_DEPENDS=	${PYNUMERIC} \
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
-VERSION=	1.3r1
-SVNREVISION=	3913
+VERSION=	1.4.1
+SVNREVISION=	3946
 
 USE_BZIP2=	yes
 WRKSRC=		${WRKDIR}/pymol-${PORTVERSION}
-USE_GL=		glut
+USE_GL=		glut glew
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
@@ -44,7 +44,7 @@ do-fetch-svn:
 	#svn ls https://pymol.svn.sourceforge.net/svnroot/pymol/tags
 	#http://pymol.svn.sourceforge.net/viewvc/pymol/trunk/
 	${RM} -rf pymol-${VERSION}.${SVNREVISION}
-	svn -r ${SVNREVISION} export https://pymol.svn.sourceforge.net/svnroot/pymol/trunk/pymol pymol-${VERSION}.${SVNREVISION}
+	svn -r ${SVNREVISION} export http://pymol.svn.sourceforge.net/svnroot/pymol/trunk/pymol pymol-${VERSION}.${SVNREVISION}
 	tar cvfj pymol-${VERSION}.${SVNREVISION}.tar.bz2 pymol-${VERSION}.${SVNREVISION}
 	scp pymol-${VERSION}.${SVNREVISION}.tar.bz2 freefall.freebsd.org:public_distfiles/pymol/
 
