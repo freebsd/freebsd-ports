@@ -447,6 +447,7 @@
     SUBDIR += p5-POE-Filter-Transparent-SMTP
     SUBDIR += p5-Parse-Syslog-Mail
     SUBDIR += p5-Qmail-Envelope
+    SUBDIR += p5-SES
     SUBDIR += p5-Sendmail-AccessDB
     SUBDIR += p5-Sendmail-Milter
     SUBDIR += p5-URI-imap
