@@ -7,11 +7,14 @@
 
 PORTNAME=	cvs2darcs
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ab-initio.mit.edu/${PORTNAME}/
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Convert CVS module to darcs repository
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	darcs:${PORTSDIR}/devel/hs-darcs \
 		cvsps:${PORTSDIR}/devel/cvsps \
