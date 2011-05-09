@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PCSC-Card
-PORTVERSION=	1.4.10
+PORTVERSION=	1.4.12
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://ludovic.rousseau.free.fr/softwares/pcsc-perl/
 PKGNAMEPREFIX=	p5-
@@ -17,8 +17,9 @@ COMMENT=	Perl bindings for the PC/SC Lite Framework
 
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 
+USE_BZIP2=	yes
 PERL_CONFIGURE=	yes
-MAKE_ENV=	"LOCALBASE=$(LOCALBASE)"
+MAKE_ENV=	"LOCALBASE=${LOCALBASE}"
 
 MAN3=		Chipcard::PCSC::Card.3 Chipcard::PCSC.3
 
