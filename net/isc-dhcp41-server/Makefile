@@ -31,8 +31,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-${PATCHLEVEL}
 
 UNIQUENAME=	${PKGNAMEPREFIX}${PORTNAME}${PKGNAMESUFFIX}
 
+OPTIONS=	DHCP_IPV6 "Enable support for IPv6" on
+
 .if ${SUBSYS} == server
-OPTIONS=	DHCP_PARANOIA "Enable support for chroot" on \
+OPTIONS+=	DHCP_PARANOIA "Enable support for chroot" on \
 		DHCP_LDAP "Experimental LDAP backend support" off \
 		DHCP_LDAP_SSL "Support LDAP connection over SSL/TLS" on
 .endif
@@ -50,16 +52,16 @@ DHCP_PORTREVISION=	${PORTREVISION_SERVER}
 .endif
 
 .if ${SUBSYS} == server
-USERS=	dhcpd
-GROUPS=	dhcpd
+USERS=		dhcpd
+GROUPS=		dhcpd
 .endif
-
-.include <bsd.port.pre.mk>
 
 MAN_COMPRESSED=	no
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-D_PATH_DHCLIENT_SCRIPT='\"${PREFIX}/sbin/dhclient-script\"' -D_PATH_DHCLIENT_CONF='\"${PREFIX}/etc/dhclient.conf\"' -D_PATH_DHCPD_CONF='\"${PREFIX}/etc/dhcpd.conf\"'"
+CPPFLAGS+=	-D_PATH_DHCLIENT_SCRIPT='\"${PREFIX}/sbin/dhclient-script\"' -D_PATH_DHCLIENT_CONF='\"${PREFIX}/etc/dhclient.conf\"' -D_PATH_DHCPD_CONF='\"${PREFIX}/etc/dhcpd.conf\"'
 SCRIPTS_ENV+=	PKG_PREFIX=${PREFIX}
+
+.include <bsd.port.options.mk>
 
 .if ${SUBSYS} == client
 MAN5+=		dhclient.conf.5 dhclient.leases.5
@@ -72,7 +74,10 @@ MAN8+=		dhcpd.8
 MAN1=		omshell.1
 MAN3=		dhcpctl.3 omapi.3
 CFLAGS+=	-fPIC
-CONF_FILE=	dhcpd.conf dhcpd6.conf
+CONF_FILE=	dhcpd.conf
+.if defined(WITH_DHCP_IPV6)
+CONF_FILE+=	dhcpd6.conf
+.endif
 .else
 MAN8+=		dhcrelay.8
 .endif
@@ -135,6 +140,14 @@ SUB_LIST+=	PARANOIA=yes
 SUB_LIST+=	PARANOIA=no
 .endif
 
+.if defined(WITH_DHCP_IPV6)
+CONFIGURE_ARGS+=	--enable-dhcpv6
+PLIST_SUB+=		IPV6=""
+.else
+CONFIGURE_ARGS+=	--disable-dhcpv6
+PLIST_SUB+=		IPV6="@comment "
+.endif
+
 pre-patch:
 .if ${SUBSYS} == server && defined(WITH_DHCP_LDAP)
 	@cd ${WRKSRC} && ${PATCH} -p1 < ${WRKDIR}/${LDAPPATCHDIST}/${LDAPPATCHFILE}
@@ -155,8 +168,10 @@ do-install:
 	${MAKE} -C ${WRKSRC}/includes install
 	${MAKE} -C ${WRKSRC}/common install
 	${INSTALL_DATA} ${WRKSRC}/dhcpctl/dhcpctl.h ${PREFIX}/include
+.if defined(WITH_DHCP_IPV6)
 	${INSTALL_DATA} ${WRKSRC}/doc/examples/dhcpd-dhcpv6.conf \
 		${PREFIX}/etc/dhcpd6.conf.sample
+.endif
 .endif
 .if defined(WITH_DHCP_LDAP)
 	@${MKDIR} ${SCHEMA_DIR}
@@ -180,7 +195,9 @@ post-install:
 .if ${SUBSYS} == client
 	${INSTALL_SCRIPT} ${WRKSRC}/client/scripts/freebsd ${PREFIX}/sbin/dhclient-script
 .elif ${SUBSYS} == server
+.if defined(WITH_DHCP_IPV6)
 	@${LN} -sf isc-dhcpd ${PREFIX}/etc/rc.d/isc-dhcpd6
+.endif
 .endif
 	@${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${MSG_FILE} > ${PKGMESSAGE}
@@ -193,4 +210,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
