@@ -7,12 +7,16 @@
 
 PORTNAME=	probability
 PORTVERSION=	0.2.2.1
+PORTREVISION=	1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Probabilistic Functional Programming in Haskell
 
-USE_HACKAGE=	transformers>=0.0.1
+LICENSE=	BSD
+FILE_LICENSE=	COPYRIGHT
+
+USE_CABAL=	transformers>=0.0.1
 
 PORTDATA=	*
 
