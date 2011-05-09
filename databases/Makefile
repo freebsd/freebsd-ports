@@ -675,6 +675,7 @@
     SUBDIR += py-south
     SUBDIR += py-sqlalchemy
     SUBDIR += py-sqlite3
+    SUBDIR += py-sqlkit
     SUBDIR += py-sqlobject
     SUBDIR += py-sqlrelay
     SUBDIR += py-swift
