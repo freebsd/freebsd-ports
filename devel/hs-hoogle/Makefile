@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	hoogle
-PORTVERSION=	4.0.7
-PORTREVISION=	1
+PORTVERSION=	4.2.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell API Search
 
-CABAL_SETUP=	Setup.hs
-USE_HACKAGE=	safe uniplate
+LICENSE=	GPLv2
 
-STANDALONE=	yes
+CABAL_SETUP=	Setup.hs
+USE_CABAL=	binary blaze-builder>=0.2 cmdargs>=0.6 enumerator>=0.4 \
+		haskell-src-exts>=1.9 parsec safe tagsoup>=0.11 \
+		transformers>=0.2 uniplate>=1.6 wai>=0.3 warp>=0.3
+
 EXECUTABLE=	hoogle
 
 PORTDATA=	*

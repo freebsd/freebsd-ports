@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	zip-archive
-PORTVERSION=	0.1.1.6
+PORTVERSION=	0.1.1.7
 CATEGORIES=	archivers haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell library for working with zip archives
 
-USE_HACKAGE=	binary digest>=0.0.0.1 utf8-string>=0.3.1 zlib
+LICENSE=	GPLv2
+
+USE_CABAL=	binary digest>=0.0.0.1 mtl utf8-string>=0.3.1 zlib
 
 OPTIONS=	EXECUTABLE "Build the Zip executable" off
 

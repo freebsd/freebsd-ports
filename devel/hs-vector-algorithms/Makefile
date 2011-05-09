@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	vector-algorithms
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Efficient algorithms for vector arrays
 
-USE_HACKAGE=	primitive>=0.2 vector>=0.5
+LICENSE=	BSD
+
+USE_CABAL=	primitive>=0.3 vector>=0.6
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -1,3 +1,2 @@
-MD5 (lhs2tex-1.15.tar.gz) = 13c886a829e71e895fa172c617f31bd0
-SHA256 (lhs2tex-1.15.tar.gz) = 77f25c1f22823587ceca6eead133a403540319a0ae3bf03a369b3e8c86baf124
-SIZE (lhs2tex-1.15.tar.gz) = 580361
+SHA256 (cabal/lhs2tex-1.16.tar.gz) = aa43ec92e8d7c94213365a7211d605314476977155e36420caa3cfb394f7c76f
+SIZE (cabal/lhs2tex-1.16.tar.gz) = 581362

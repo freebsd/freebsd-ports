@@ -5,32 +5,21 @@
 # $FreeBSD$
 #
 
-PORTNAME=	bnfc
-PORTVERSION=	2.4b
-PORTREVISION=	1
-CATEGORIES=	devel
-MASTER_SITES=	http://www.cs.chalmers.se/Cs/Research/Language-technology/BNFC/download/ \
-		http://web.student.chalmers.se/~kaiw/FreeBSD/disfiles/
-DISTNAME=	BNFC-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+PORTNAME=	BNFC
+PORTVERSION=	2.4.2.0
+CATEGORIES=	devel haskell
 
 MAINTAINER=	kaiw27@gmail.com
 COMMENT=	A Labelled BNF converter
 
-BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc
+LICENSE=	GPLv2
+FILE_LICENSE=	COPYING
 
-WRKSRC=		${WRKDIR}/BNFC
-USE_GMAKE=	yes
+USE_CABAL=	mtl
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/bnfc ${PREFIX}/bin
+STANDALONE=	yes
+EXECUTABLE=	bnfc
+PORTDATA=	*
 
-post-install:
-	${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${CP} -R ${WRKSRC}/doc/* ${DOCSDIR}
-.endif
-
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -6,13 +6,16 @@
 
 PORTNAME=	X11
 PORTVERSION=	1.5.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11 haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	X11 bindings for Haskell programs
 
+LICENSE=	BSD
+
 CABAL_SETUP=	Setup.hs
+USE_CABAL=	syb
 USE_XORG=	x11 xext sm
 
 OPTIONS=	XINERAMA "Build with Xinerama support" off

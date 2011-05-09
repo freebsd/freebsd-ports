@@ -6,21 +6,25 @@
 #
 
 PORTNAME=	darcs
-PORTVERSION=	2.4.4
+PORTVERSION=	2.5.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A distributed, interactive, smart revision control system
 
-USE_HACKAGE=	hashed-storage haskeline>=0.6.1 utf8-string>=0.3 zlib>=0.5.1.0
+LICENSE=	GPLv2
+FILE_LICENSE=	COPYING
+
+USE_CABAL=	hashed-storage>=0.5.2 haskeline>=0.6.2.2 html>=1.0 HUnit>=1 \
+		mtl>=1 parsec>=2 QuickCheck>=2.1 regex-compat>=0.71 tar>=0.3 \
+		test-framework>=0.2.2 test-framework-hunit>=0.2.2 \
+		test-framework-quickcheck2>=0.2.2 text>=0.11 zlib>=0.5.1
 
 EXECUTABLE=	darcs
 
 MAN1=		darcs.1
-MAN1SRC=	dist/build/darcs
 
 OPTIONS=	CURL            "Use libcurl for HTTP support" on \
-		CURL_PIPELINING "Use libcurl's HTTP pipelining" off \
 		HTTP            "Use the pure HTTP package" off \
 		STATIC          "Build static binary" off \
 		TERMINFO        "Use the terminfo package" off \
@@ -33,6 +37,8 @@ OPTIONS=	CURL            "Use libcurl for HTTP support" on \
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 .include <bsd.port.options.mk>
 
+CONFIGURE_ARGS+=	--flags="library"
+
 .if defined(WITH_CURL)
 CONFIGURE_ARGS+=	--flags="curl"
 LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl
@@ -40,19 +46,9 @@ LIB_DEPENDS+=		curl:${PORTSDIR}/ftp/curl
 CONFIGURE_ARGS+=	--flags="-curl"
 .endif
 
-.if defined(WITH_CURL_PIPELINING)
-CONFIGURE_ARGS+=	--flags="curl-pipelining"
-BUILD_DEPENDS+=		pkg-config>=0.9.0:${PORTSDIR}/devel/pkg-config
-.if !defined(WITH_CURL)
-IGNORE=	cannot be compiled without CURL in this configuration.  Please (re)run 'make config' and choose CURL too
-.endif
-.else
-CONFIGURE_ARGS+=	--flags="-curl-pipelining"
-.endif
-
 .if defined(WITH_HTTP)
 CONFIGURE_ARGS+=	--flags="http"
-USE_HACKAGE+=		HTTP>=3000.0
+USE_CABAL+=		HTTP>=3000.0 network>=2.2
 .else
 CONFIGURE_ARGS+=	--flags="-http"
 .endif
@@ -69,7 +65,7 @@ CONFIGURE_ARGS+=	--flags="-static"
 
 .if defined(WITH_TERMINFO)
 CONFIGURE_ARGS+=	--flags="terminfo"
-USE_HACKAGE+=		terminfo>=0.3
+USE_CABAL+=		terminfo>=0.3
 .else
 CONFIGURE_ARGS+=	--flags="-terminfo"
 .endif
@@ -83,10 +79,8 @@ CONFIGURE_ARGS+=	--flags="-threaded"
 .if defined(WITH_TYPE_WITNESSES)
 CONFIGURE_ARGS+=	--flags="type-witnesses"
 EXECUTABLE+=		witnesses
-PLIST_SUB+=		MAYBE_TYPE_WITNESSES=""
 .else
 CONFIGURE_ARGS+=	--flags="-type-witnesses"
-PLIST_SUB+=		MAYBE_TYPE_WITNESSES="@comment "
 .endif
 
 .if defined(WITH_COLOR)
@@ -97,19 +91,16 @@ CONFIGURE_ARGS+=	--flags="-color"
 
 .if defined(WITH_MMAP)
 CONFIGURE_ARGS+=	--flags="mmap"
-USE_HACKAGE+=		mmap>=0.2
+USE_CABAL+=		mmap>=0.5
 .else
 CONFIGURE_ARGS+=	--flags="-mmap"
 .endif
 
 .if defined(WITH_TEST)
 CONFIGURE_ARGS+=	--flags="test"
-USE_HACKAGE+=		QuickCheck>=2.1.0.0 test-framework>=0.2.2 test-framework-hunit>=0.2.2 test-framework-quickcheck2>=0.2.2
 EXECUTABLE+=		unit
-PLIST_SUB+=		MAYBE_TEST=""
 .else
 CONFIGURE_ARGS+=	--flags="-test"
-PLIST_SUB+=		MAYBE_TEST="@comment "
 .endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

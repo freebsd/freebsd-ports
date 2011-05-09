@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	highlighting-kate
-PORTVERSION=	0.2.7.1
+PORTVERSION=	0.2.9
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell syntax highlighting library for 50+ languages
 
-USE_HACKAGE=	pcre-light
+LICENSE=	GPLv2
+
+USE_CABAL=	parsec regex-pcre-builtin xhtml
 
 OPTIONS=	EXECUTABLE "Build the Highlight executable" off
 
@@ -22,10 +24,8 @@ OPTIONS=	EXECUTABLE "Build the Highlight executable" off
 .if defined(WITH_EXECUTABLE)
 CONFIGURE_ARGS+=	--flags="executable"
 EXECUTABLE+=		Highlight
-PLIST_SUB+=		MAYBE_EXECUTABLE=""
 .else
 CONFIGURE_ARGS+=	--flags="-executable"
-PLIST_SUB+=		MAYBE_EXECUTABLE="@comment "
 .endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

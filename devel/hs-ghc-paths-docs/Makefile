@@ -5,12 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	ghc-paths
-PORTVERSION=	0.1.0.5
-PORTREVISION=	1
+PORTVERSION=	0.1.0.8
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Documentation for ghc-paths
+
+LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 

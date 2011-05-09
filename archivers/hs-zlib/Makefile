@@ -5,12 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	zlib
-PORTVERSION=	0.5.2.0
-PORTREVISION=	1
+PORTVERSION=	0.5.3.1
 CATEGORIES=	archivers haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Pure Haskell interface to the C zlib library
+
+LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 

@@ -7,10 +7,13 @@
 
 PORTNAME=	smallcheck
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Another lightweight testing library in Haskell
+
+LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 

@@ -7,14 +7,16 @@
 
 PORTNAME=	OpenAL
 PORTVERSION=	1.4.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell binding to the OpenAL cross-platform 3D audio API
 
+LICENSE=	BSD
+
 CABAL_SETUP=	Setup.hs
-USE_HACKAGE=	ObjectName StateVar Tensor
+USE_CABAL=	ObjectName StateVar Tensor
 USE_OPENAL=	al
 
 PORTEXAMPLES=		*

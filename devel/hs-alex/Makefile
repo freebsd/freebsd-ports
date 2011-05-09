@@ -5,12 +5,13 @@
 # $FreeBSD$
 
 PORTNAME=	alex
-PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTVERSION=	2.3.5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Alex is a tool for generating lexical analysers in Haskell
+
+LICENSE=	BSD
 
 XMLDOCS=	doc/alex:html
 USE_AUTOTOOLS=	autoconf:env
@@ -18,9 +19,12 @@ USE_AUTOTOOLS=	autoconf:env
 STANDALONE=	yes
 EXECUTABLE=	alex
 
-PORTDATA=		*
 PORTEXAMPLES=		*
 INSTALL_PORTEXAMPLES=	cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}
+
+.if defined(SLAVE)
+GHC_CMD=	ghc
+.endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

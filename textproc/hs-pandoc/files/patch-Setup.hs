@@ -1,5 +1,5 @@
---- ./Setup.hs.orig	2010-03-29 16:24:56.000000000 +0200
-+++ ./Setup.hs	2010-05-15 13:39:12.000000000 +0200
+--- ./Setup.hs.orig	2011-02-13 18:03:00.000000000 +0100
++++ ./Setup.hs	2011-03-13 01:14:26.580023488 +0100
 @@ -6,7 +6,7 @@
  import Distribution.Simple.LocalBuildInfo
           (LocalBuildInfo(..), absoluteInstallDirs)
@@ -9,12 +9,12 @@
  import Distribution.Simple.Utils (copyFiles)
  import Control.Exception ( bracket_ )
  import Control.Monad ( unless )
-@@ -86,7 +86,7 @@
+@@ -85,7 +85,7 @@
  installManpages :: PackageDescription -> LocalBuildInfo
                  -> Verbosity -> CopyDest -> IO ()
  installManpages pkg lbi verbosity copy =
--  copyFiles verbosity (mandir (absoluteInstallDirs pkg lbi copy) </> "man1")
-+  copyFiles verbosity (prefix (absoluteInstallDirs pkg lbi copy) </> "man/man1")
+-  copyFiles verbosity (mandir (absoluteInstallDirs pkg lbi copy))
++  copyFiles verbosity (prefix (absoluteInstallDirs pkg lbi copy) </> "man")
               (zip (repeat manDir) manpages)
  
  -- | Returns a list of 'dependencies' that have been modified after 'file'.

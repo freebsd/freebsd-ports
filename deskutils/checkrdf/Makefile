@@ -7,12 +7,14 @@
 
 PORTNAME=	checkrdf
 PORTVERSION=	39.4444
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A tool for RDF site summaries based news-check
+
+LICENSE=	BSD
 
 BUILD_DEPENDS=	hs-HaXml>=1.19:${PORTSDIR}/textproc/hs-HaXml
 

@@ -12,5 +12,7 @@ CATEGORIES=	math haskell
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Various Haskell modules and constructs inspired by category theory
 
+BROKEN=		obsolete
+
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

@@ -7,7 +7,7 @@
 
 PORTNAME=	hmake
 PORTVERSION=	3.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://www.haskell.org/hmake/ \
 		ftp://ftp.cs.york.ac.uk/pub/haskell/hmake/ \
@@ -16,6 +16,8 @@ PKGNAMEPREFIX=	hs-
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Intelligent compilation management tool for Haskell programs
+
+BROKEN=		does not compile
 
 BUILD_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		hs-readline>=1.0.1.0:${PORTSDIR}/devel/hs-readline

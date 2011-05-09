@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	primitive
-PORTVERSION=	0.3
+PORTVERSION=	0.3.1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Wrappers for primitive operations
+
+LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 

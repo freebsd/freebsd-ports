@@ -5,14 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=	OpenGL
-PORTVERSION=	2.4.0.1
+PORTVERSION=	2.2.3.0
+PORTEPOCH=	1
 CATEGORIES=	x11-toolkits haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	OpenGL bindings for Haskell programs
 
+LICENSE=	BSD
+
 CABAL_SETUP=	Setup.hs
-USE_HACKAGE=	GLURaw>=1.1.0.0 ObjectName OpenGLRaw>=1.1.0.0 StateVar Tensor
+USE_GL=		gl glut
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

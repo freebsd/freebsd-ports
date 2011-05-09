@@ -1,3 +1,2 @@
-MD5 (BNFC-2.4b.tgz) = 8eac71d4883e5209a6c78fbad2c2c5fd
-SHA256 (BNFC-2.4b.tgz) = fba3ae8546f37bed3ca224db336e6417b5ead442570f09e15be0507334c01772
-SIZE (BNFC-2.4b.tgz) = 1073563
+SHA256 (cabal/BNFC-2.4.2.0.tar.gz) = c0c69b50f17e13cf5afd9c9d8ce2cabab1273c14bebc91f4f065068af5a7ca5a
+SIZE (cabal/BNFC-2.4.2.0.tar.gz) = 182328

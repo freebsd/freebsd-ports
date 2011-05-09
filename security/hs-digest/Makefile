@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	digest
-PORTVERSION=	0.0.0.8
+PORTVERSION=	0.0.0.9
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Efficient cryptographic hash implementations in Haskell
+
+LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 

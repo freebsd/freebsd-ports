@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	transformers
-PORTVERSION=	0.2.1.0
+PORTVERSION=	0.2.2.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Concrete Haskell monad transformers
+
+LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 

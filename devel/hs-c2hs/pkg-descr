@@ -8,6 +8,3 @@ information from the corresponding C header file. Another noteworthy property
 is the lightweight nature of the approach.
 
 WWW: http://www.cse.unsw.edu.au/~chak/haskell/c2hs/
-
--- Oliver Braun
-obraun@FreeBSD.org

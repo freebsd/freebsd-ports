@@ -7,44 +7,25 @@
 #
 
 PORTNAME=	lhs2tex
-PORTVERSION=	1.15
-PORTREVISION=	2
-CATEGORIES=	devel haskell
-MASTER_SITES=	http://people.cs.uu.nl/andres/${PORTNAME}/
+PORTVERSION=	1.16
+CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
-COMMENT=	A preprocessor to generate LaTeX code from literate Haskell sources
+COMMENT=	Preprocessor for typesetting Haskell sources with LaTeX
 
-BUILD_DEPENDS=	ghc>=6.8:${PORTSDIR}/lang/ghc \
-		mktexlsr:${PORTSDIR}/print/teTeX-base \
-		hs-utf8-string>=0.3:${PORTSDIR}/devel/hs-utf8-string
+LICENSE=	GPLv2
 
-RUN_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
+CABAL_SETUP=	Setup.hs
+USE_CABAL=	regex-compat
+BUILD_DEPENDS+=	mktexlsr:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS+=	mktexlsr:${PORTSDIR}/print/teTeX-base
 
-USE_GMAKE=	yes
-HAS_CONFIGURE=	yes
-CONFIGURE_ARGS=	--prefix=${PREFIX} \
-		--datadir=${PREFIX}/share \
-		--docdir=${DOCSDIR} \
-		--mandir=${MANPREFIX}/man
-
-DOCSDIR=${PREFIX}/share/doc/${PORTNAME}-${PORTVERSION}
-PORTDOCS=	*
-DATADIR=${PREFIX}/share/${PORTNAME}-${PORTVERSION}
-PORTDATA=	*
-
-.include <bsd.port.pre.mk>
-
-INSTALL_TARGET=	install
-
-.if !defined(NOPORTDOCS)
-INSTALL_TARGET+=	install-doc
-.endif
-
-.if !defined(NOPORTDATA)
-INSTALL_TARGET+=	install-data
-.endif
+STANDALONE=	yes
+EXECUTABLE=	lhs2TeX
 
 MAN1=		lhs2TeX.1
 
-.include <bsd.port.post.mk>
+PORTDATA=	*
+
+.include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
+.include <bsd.port.mk>

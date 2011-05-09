@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	split
-PORTVERSION=	0.1.2
+PORTVERSION=	0.1.3
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Haskell combinator library for splitting lists
+
+LICENSE=	BSD
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

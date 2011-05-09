@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	bio
-PORTVERSION=	0.4.6
+PORTVERSION=	0.5
 CATEGORIES=	science haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell bioinformatics library
 
+LICENSE=	LGPL21
+
 CABAL_SETUP=	Setup.hs
-USE_HACKAGE=	binary tagsoup>=0.4
+USE_CABAL=	binary>=0.4 mtl parallel parsec QuickCheck>=2 tagsoup>=0.8
+
+EXECUTABLE=	fastout flx frecover frename
 
 PORTDATA=	*
 

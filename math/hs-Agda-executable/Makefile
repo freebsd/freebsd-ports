@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	Agda-executable
-PORTVERSION=	2.2.6
-PORTREVISION=	1
+PORTVERSION=	2.2.10
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Command-line program for type-checking and compiling Agda programs
 
 CABAL_SETUP=	Setup.hs
-USE_HACKAGE=	Agda>=2.2.6
+USE_CABAL=	Agda==2.2.10
 
 USE_ICONV=	yes
 

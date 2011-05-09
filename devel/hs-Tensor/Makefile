@@ -7,10 +7,13 @@
 
 PORTNAME=	Tensor
 PORTVERSION=	1.0.0.1
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Tensor data types for Haskell
+
+LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 

@@ -6,11 +6,13 @@
 #
 
 PORTNAME=	deepseq
-PORTVERSION=	1.1.0.0
+PORTVERSION=	1.1.0.2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Fully evaluate Haskell data structures
+
+LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
 

@@ -7,13 +7,17 @@
 
 PORTNAME=	c2hs
 PORTVERSION=	0.16.2
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	C->Haskell, an Interface Generator for Haskell
 
+LICENSE=	GPLv2
+FILE_LICENSE=	COPYING
+
 CABAL_SETUP=	Setup.hs
-USE_HACKAGE=	language-c>=0.3.1.1
+USE_CABAL=	language-c>=0.3.1.1
 
 XMLDOCS=	doc/users_guide:html
 

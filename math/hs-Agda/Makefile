@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	Agda
-PORTVERSION=	2.2.6
-PORTREVISION=	1
+PORTVERSION=	2.2.10
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A functional programming language and proof assistant
 
 CABAL_SETUP=	Setup.hs
-USE_HACKAGE=	binary>=0.4.4 haskeline>=0.3 QuickCheck>=2.1.0.2 \
+USE_CABAL=	binary>=0.4.4 haskeline>=0.6.3.2 haskell-src-exts>=1.9.6 \
+		mtl>=2 QuickCheck>=2.3 syb utf8-string>=0.3 xhtml>=3000.2 \
 		zlib>=0.4.0.1
 
 USE_ALEX=	yes

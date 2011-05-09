@@ -5,12 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	happy
-PORTVERSION=	1.18.5
-PORTREVISION=	1
+PORTVERSION=	1.18.6
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	An LALR(1) parser generator for the functional language Haskell
+
+LICENSE=	BSD
+
+USE_CABAL=	mtl
 
 XMLDOCS=	doc/happy:html
 USE_AUTOTOOLS=	autoconf:env
@@ -18,9 +21,14 @@ USE_AUTOTOOLS=	autoconf:env
 STANDALONE=	yes
 EXECUTABLE=	happy
 
-PORTDATA=		*
+USE_PERL5_BUILD=	5.8+
+
 PORTEXAMPLES=		*
 INSTALL_PORTEXAMPLES=	@(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+
+.if defined(SLAVE)
+GHC_CMD=	ghc
+.endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

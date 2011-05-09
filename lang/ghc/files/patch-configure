@@ -1,0 +1,83 @@
+
+$FreeBSD$
+
+--- configure.orig
++++ configure
+@@ -3312,6 +3312,9 @@
+   vax)
+     BuildArch="vax"
+     ;;
++  amd64)
++    BuildArch="x86_64"
++    ;;
+   x86_64)
+     BuildArch="x86_64"
+     ;;
+@@ -3330,7 +3333,7 @@
+     BuildOS="linux"
+     ;;
+   # As far as I'm aware, none of these have relevant variants
+-  freebsd|netbsd|openbsd|dragonfly|osf1|osf3|hpux|linuxaout|kfreebsdgnu|freebsd2|solaris2|cygwin32|mingw32|darwin|gnu|nextstep2|nextstep3|sunos4|ultrix|irix|aix|haiku)
++  freebsd*|netbsd|openbsd|dragonfly|osf1|osf3|hpux|linuxaout|kfreebsdgnu|freebsd2|solaris2|cygwin32|mingw32|darwin|gnu|nextstep2|nextstep3|sunos4|ultrix|irix|aix|haiku)
+     BuildOS="$build_os"
+     ;;
+   *)
+@@ -3560,7 +3563,7 @@
+ 
+ checkArch() {
+     case $1 in
+-    alpha|arm|hppa|hppa1_1|i386|ia64|m68k|mips|mipseb|mipsel|powerpc|powerpc64|rs6000|s390|sparc|sparc64|vax|x86_64)
++    alpha|arm|hppa|hppa1_1|i386|ia64|m68k|mips|mipseb|mipsel|powerpc|powerpc64|rs6000|s390|sparc|sparc64|vax|x86_64|amd64)
+         ;;
+     *)
+         echo "Unknown arch $1"
+@@ -3571,7 +3574,7 @@
+ 
+ checkVendor() {
+     case $1 in
+-    dec|unknown|hp|apple|next|sun|sgi|ibm)
++    dec|unknown|hp|apple|next|sun|sgi|ibm|portbld)
+         ;;
+     *)
+         echo "Unknown vendor $1"
+@@ -3582,7 +3585,7 @@
+ 
+ checkOS() {
+     case $1 in
+-    linux|freebsd|netbsd|openbsd|dragonfly|osf1|osf3|hpux|linuxaout|kfreebsdgnu|freebsd2|solaris2|cygwin32|mingw32|darwin|gnu|nextstep2|nextstep3|sunos4|ultrix|irix|aix|haiku)
++    linux|freebsd*|netbsd|openbsd|dragonfly|osf1|osf3|hpux|linuxaout|kfreebsdgnu|freebsd2|solaris2|cygwin32|mingw32|darwin|gnu|nextstep2|nextstep3|sunos4|ultrix|irix|aix|haiku)
+         ;;
+     *)
+         echo "Unknown OS '$1'"
+@@ -3621,6 +3624,9 @@
+ checkVendor "$TargetVendor"
+ checkOS "$TargetOS"
+ 
++bootstrap_target=`echo "$bootstrap_target" |sed -e 's/-unknown-/-portbld-/g' -e 's/x86_64/amd64/g'`
++build=`echo "$build" |sed -e 's/\(freebsd\)[[:digit:].]*$/\1/g'`
++
+ # Verify that the installed (bootstrap) GHC is capable of generating
+ # code for the requested build platform.
+ if test "$build" != "$bootstrap_target"
+@@ -9533,7 +9539,7 @@
+   $as_echo_n "(cached) " >&6
+ else
+   ac_check_lib_save_LIBS=$LIBS
+-LIBS="-lrt  $LIBS"
++LIBS="$LIBS"
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -9564,11 +9570,7 @@
+ { $as_echo "$as_me:${as_lineno-$LINENO}: result: $ac_cv_lib_rt_clock_gettime" >&5
+ $as_echo "$ac_cv_lib_rt_clock_gettime" >&6; }
+ if test "x$ac_cv_lib_rt_clock_gettime" = x""yes; then :
+-  cat >>confdefs.h <<_ACEOF
+-#define HAVE_LIBRT 1
+-_ACEOF
+-
+-  LIBS="-lrt $LIBS"
++    LIBS="$LIBS"
+ 
+ fi
+ 

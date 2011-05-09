@@ -14,5 +14,7 @@ COMMENT=	Check properties on standard Haskell classes and data structures
 
 USE_HACKAGE=	QuickCheck>=2.1.0.2
 
+BROKEN=		does not compile
+
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

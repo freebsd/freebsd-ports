@@ -7,12 +7,15 @@
 
 PORTNAME=	url
 PORTVERSION=	2.1.2
+PORTREVISION=	1
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	A Haskell library for working with URLs
 
-USE_HACKAGE=	utf8-string>=0.3.4
+LICENSE=	BSD
+
+USE_CABAL=	utf8-string>=0.3.4
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>

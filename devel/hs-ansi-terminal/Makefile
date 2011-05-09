@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ansi-terminal
-PORTVERSION=	0.5.3
+PORTVERSION=	0.5.5
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -14,16 +14,16 @@ COMMENT=	Simple ANSI terminal support, with Windows compatibility
 
 OPTIONS=	EXAMPLE "Build the example application" off
 
+LICENSE=	BSD
+
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.options.mk"
 .include <bsd.port.options.mk>
 
 .if defined(WITH_EXAMPLE)
 CONFIGURE_ARGS+=	--flags="Example"
 EXECUTABLE=		ansi-terminal-example
-PLIST_SUB+=		MAYBE_EXAMPLE=""
 .else
 CONFIGURE_ARGS+=	--flags="-Example"
-PLIST_SUB+=		MAYBE_EXAMPLE="@comment "
 .endif
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"

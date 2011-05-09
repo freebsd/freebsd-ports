@@ -1,0 +1,22 @@
+--- ./hoogle.cabal.orig	2011-01-26 12:16:52.000000000 +0100
++++ ./hoogle.cabal	2011-03-13 06:06:29.686517189 +0100
+@@ -35,7 +35,7 @@
+         array, bytestring, containers, directory, filepath, process, random,
+         safe,
+         binary,
+-        parsec == 2.1.*,
++        parsec,
+         transformers == 0.2.*,
+         uniplate == 1.6.*,
+         haskell-src-exts >= 1.9 && < 1.11
+@@ -108,8 +108,8 @@
+         tagsoup >= 0.11 && < 0.13,
+         enumerator == 0.4.*,
+         blaze-builder == 0.2.*,
+-        wai == 0.3.0,
+-        warp == 0.3.0,
++        wai == 0.3.*,
++        warp == 0.3.*,
+         Cabal >= 1.8 && < 1.11
+ 
+     other-modules:
