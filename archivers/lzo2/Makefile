@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lzo2
-PORTVERSION=	2.04
+PORTVERSION=	2.05
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/ \
 		http://ftp.uni-koeln.de/util/arc/
@@ -16,9 +16,11 @@ DISTNAME=	lzo-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Portable speedy, lossless data compression library
 
+LICENSE=	GPLv2
+
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--enable-shared
+CONFIGURE_ARGS=	--enable-shared --docdir=${DOCSDIR}
 USE_LDCONFIG=	yes
 
 post-build:
