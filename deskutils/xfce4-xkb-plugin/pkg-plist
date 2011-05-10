@@ -1,5 +1,6 @@
 libexec/xfce4/panel-plugins/xfce4-xkb-plugin
 share/locale/ar/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/locale/ast/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/be/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/bg/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/ca/LC_MESSAGES/xfce4-xkb-plugin.mo
@@ -26,6 +27,7 @@ share/locale/sv/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/tr/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/uk/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/ur/LC_MESSAGES/xfce4-xkb-plugin.mo
+share/locale/ur_PK/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-xkb-plugin.mo
 share/xfce4/panel-plugins/xkb-plugin.desktop
@@ -94,6 +96,7 @@ share/xfce4/xkb/flags/pl.svg
 share/xfce4/xkb/flags/pt.svg
 share/xfce4/xkb/flags/qa.svg
 share/xfce4/xkb/flags/ro.svg
+share/xfce4/xkb/flags/rs.svg
 share/xfce4/xkb/flags/ru.svg
 share/xfce4/xkb/flags/sa.svg
 share/xfce4/xkb/flags/sd.svg
@@ -112,7 +115,6 @@ share/xfce4/xkb/flags/uy.svg
 share/xfce4/xkb/flags/uz.svg
 share/xfce4/xkb/flags/vn.svg
 share/xfce4/xkb/flags/ye.svg
-share/xfce4/xkb/flags/yu.svg
 @dirrmtry libexec/xfce4/panel-plugins
 @dirrmtry libexec/xfce4
 @dirrmtry share/xfce4/panel-plugins
