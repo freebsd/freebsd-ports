@@ -89,7 +89,7 @@ bin/pamtotga
 bin/pamtotiff
 bin/pamtouil
 bin/pamtoxvmini
-bin/pamx
+%%X11%%bin/pamx
 bin/pbmclean
 bin/pbmlife
 bin/pbmmake
