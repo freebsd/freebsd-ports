@@ -573,6 +573,7 @@
     SUBDIR += hs-arrows
     SUBDIR += hs-binary
     SUBDIR += hs-blaze-builder
+    SUBDIR += hs-blaze-builder-enumerator
     SUBDIR += hs-bsd-sysctl
     SUBDIR += hs-cmdargs
     SUBDIR += hs-c2hs
