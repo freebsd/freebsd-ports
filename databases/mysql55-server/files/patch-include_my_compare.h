@@ -1,5 +1,5 @@
---- include/my_handler.h.orig	2009-02-16 23:09:40.000000000 +0100
-+++ include/my_handler.h	2009-02-16 23:09:55.000000000 +0100
+--- include/my_compare.h.orig	2011-05-10 09:46:46.000000000 +0200
++++ include/my_compare.h	2011-05-10 09:47:01.000000000 +0200
 @@ -39,7 +39,7 @@
    But beware the dependency of MI_MAX_POSSIBLE_KEY_BUFF and HA_MAX_KEY_LENGTH.
  */
