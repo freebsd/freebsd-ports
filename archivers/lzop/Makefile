@@ -9,7 +9,7 @@ PORTNAME=	lzop
 DISTVERSION=	1.03
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.lzop.org/download/ \
-		http://ftp.uni-koeln.de/util/arc/
+		${MASTER_SITE_LOCAL:S,$,mandree/,}
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Fast file compressor similar to gzip, using the LZO library
