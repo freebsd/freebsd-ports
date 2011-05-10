@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmp
-PORTVERSION=	5.0.1
+PORTVERSION=	5.0.2
 CATEGORIES=	math devel
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gmp
@@ -18,6 +18,9 @@ COMMENT=	A free library for arbitrary precision arithmetic
 CONFLICTS=	libgmp-4.*
 
 OPTIONS=	CPU_OPTS "Enable assembly optimizations for your CPU" off
+
+LICENSE=	LGPL3
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
@@ -45,7 +48,7 @@ post-extract:
 	@${RM} -f ${WRKSRC}/doc/gmp.info*
 
 post-patch:
-	${REINPLACE_CMD} "s/\(athlon64\-\*\-\*\)/amd64-*-* | \1/;s/\(x86_64)\)/amd64 | \1/" \
+	@${REINPLACE_CMD} "s/\(athlon64\-\*\-\*\)/amd64-*-* | \1/;s/\(x86_64)\)/amd64 | \1/" \
 		${WRKSRC}/configure
 
 regression-test check: build
