@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	duff
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
@@ -17,12 +17,30 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
+
 MAN1=		duff.1
-PLIST_FILES=	bin/duff \
-		share/duff/join-duplicates.sh
-PLIST_DIRS=	share/duff
+
+OPTIONS=	NLS "Native Language Support" on
+
+PORTDOCS=	README.SHA
+
+.include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB=	NLS="@comment "
+.endif
 
 post-patch:
-	${CHMOD} +x ${WRKSRC}/install-sh
+.if defined(NOPORTDOCS)
+	@${REINPLACE_CMD} '/^install-data-am:/s/install-dist_docDATA//' \
+		${WRKSRC}/Makefile.in
+.endif
 
 .include <bsd.port.mk>
