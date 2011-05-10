@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.8.3.3
+PORTVERSION=	1.8.4
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -60,7 +60,9 @@ OPTIONS=	OGGVORBIS	"Enable Ogg Vorbis support" on \
 		ILBC		"Enable iLBC codec" off \
 		SPANDSP		"Enable Spandsp faxing support" off \
 		EXCHANGE	"Enable Exchange calendar support" off \
-		NEWG711		"Enable new G711 Codec" off
+		NEWG711		"Enable new G711 Codec" off	\
+		SRTP		"Enable SecureRTP support" off	\
+		LUA		"Enable LUA extensions support" off
 
 ASTERISK_USER?=		asterisk
 ASTERISK_GROUP?=	asterisk
@@ -255,6 +257,26 @@ PLIST_SUB+=	WITH_EXCHANGE=""
 
 .if defined(WITH_NEWG711)
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-menuselect-tree-g711-new-codec.diff
+.endif
+
+.if !defined(WITH_SRTP)
+PLIST_SUB+=    WITH_SRTP="@comment "
+CONFIGURE_ARGS+=       --without-srtp
+.else
+PLIST_SUB+=    WITH_SRTP=""
+BUILD_DEPENDS+=        libsrtp>=1.4.4:${PORTSDIR}/net/libsrtp
+CONFIGURE_ARGS+=       --with-srtp
+.endif
+
+.if defined(WITH_LUA)
+CONFIGURE_ARGS+=	--with-lua
+CFLAGS+=	-I${LUA_INCDIR}
+USE_LUA=	yes
+LDFLAGS+=	-L${LUA_LIBDIR}
+PLIST_SUB+=	WITH_LUA=""
+.else
+CONFIGURE_ARGS+=	--without-lua
+PLIST_SUB+=	WITH_LUA="@comment "
 .endif
 
 .if defined(WITH_MISC_PATCHES)

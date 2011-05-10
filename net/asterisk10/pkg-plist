@@ -471,6 +471,7 @@ lib/asterisk/modules/res_clialiases.so
 lib/asterisk/modules/res_limit.so
 lib/asterisk/modules/res_phoneprov.so
 lib/asterisk/modules/res_realtime.so
+%%WITH_SRTP%%lib/asterisk/modules/res_srtp.so
 %%WITH_DAHDI%%lib/asterisk/modules/res_timing_dahdi.so
 lib/asterisk/modules/res_timing_pthread.so
 lib/asterisk/modules/app_adsiprog.so
@@ -658,6 +659,7 @@ share/asterisk/phoneprov/000000000000-phone.cfg
 share/asterisk/phoneprov/000000000000.cfg
 share/asterisk/phoneprov/polycom.xml
 share/asterisk/phoneprov/polycom_line.xml
+share/asterisk/phoneprov/snom-mac.xml
 share/asterisk/sounds/en/CHANGES-asterisk-core-en-1.4.20
 share/asterisk/sounds/en/CREDITS-asterisk-core-en-1.4.20
 share/asterisk/sounds/en/LICENSE-asterisk-core-en-1.4.20
@@ -1132,6 +1134,7 @@ share/asterisk/static-http/mantest.html
 %%WITH_DAHDI%%lib/asterisk/modules/codec_dahdi.so
 %%WITH_ODBC%%lib/asterisk/modules/res_config_odbc.so
 %%WITH_ODBC%%lib/asterisk/modules/res_odbc.so
+%%WITH_LUA%%lib/asterisk/modules/pbx_lua.so
 %%DOCSDIR%%/images/asterisk-intro.jpg
 %%DOCSDIR%%/images/kpad2.jpg
 @dirrm %%DOCSDIR%%/images
