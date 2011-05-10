@@ -11083,8 +11083,10 @@ p5-Carp-Assert-More             ports/devel/p5-Carp-Assert-More
 p5-Carp-Clan                    ports/devel/p5-Carp-Clan
 p5-Carp-Clan-Share              ports/devel/p5-Carp-Clan-Share
 p5-Carp-Datum                   ports/devel/p5-Carp-Datum
+p5-Carp-REPL                    ports/devel/p5-Carp-REPL
 p5-Catalyst-Action-REST         ports/www/p5-Catalyst-Action-REST
 p5-Catalyst-Action-RenderView   ports/www/p5-Catalyst-Action-RenderView
+p5-Catalyst-ActionRole-ACL      ports/www/p5-Catalyst-ActionRole-ACL
 p5-Catalyst-Authentication-Credential-HTTP  ports/www/p5-Catalyst-Authentication-Credential-HTTP
 p5-Catalyst-Authentication-Credential-OpenID  ports/www/p5-Catalyst-Authentication-Credential-OpenID
 p5-Catalyst-Authentication-Store-DBIx-Class  ports/www/p5-Catalyst-Authentication-Store-DBIx-Class
@@ -11203,6 +11205,10 @@ p5-Catalyst-View-Templated      ports/www/p5-Catalyst-View-Templated
 p5-Catalyst-View-XML-Simple     ports/www/p5-Catalyst-View-XML-Simple
 p5-Catalyst-View-XSLT           ports/www/p5-Catalyst-View-XSLT
 p5-CatalystX-Component-Traits   ports/www/p5-CatalystX-Component-Traits
+p5-CatalystX-InjectComponent    ports/www/p5-CatalystX-InjectComponent
+p5-CatalystX-LeakChecker        ports/www/p5-CatalystX-LeakChecker
+p5-CatalystX-Profile            ports/www/p5-CatalystX-Profile
+p5-CatalystX-REPL               ports/www/p5-CatalystX-REPL
 p5-CatalystX-RoleApplicator     ports/www/p5-CatalystX-RoleApplicator
 p5-Cdk                          ports/devel/p5-Cdk
 p5-Cflow                        ports/net-mgmt/p5-Cflow
@@ -15181,8 +15187,10 @@ p5-carp-assert-more             ports/devel/p5-Carp-Assert-More
 p5-carp-clan                    ports/devel/p5-Carp-Clan
 p5-carp-clan-share              ports/devel/p5-Carp-Clan-Share
 p5-carp-datum                   ports/devel/p5-Carp-Datum
+p5-carp-repl                    ports/devel/p5-Carp-REPL
 p5-catalyst-action-renderview   ports/www/p5-Catalyst-Action-RenderView
 p5-catalyst-action-rest         ports/www/p5-Catalyst-Action-REST
+p5-catalyst-actionrole-acl      ports/www/p5-Catalyst-ActionRole-ACL
 p5-catalyst-authentication-credential-http  ports/www/p5-Catalyst-Authentication-Credential-HTTP
 p5-catalyst-authentication-credential-openid  ports/www/p5-Catalyst-Authentication-Credential-OpenID
 p5-catalyst-authentication-store-dbix-class  ports/www/p5-Catalyst-Authentication-Store-DBIx-Class
@@ -15301,6 +15309,10 @@ p5-catalyst-view-tt-controllerlocal  ports/www/p5-Catalyst-View-TT-ControllerLoc
 p5-catalyst-view-xml-simple     ports/www/p5-Catalyst-View-XML-Simple
 p5-catalyst-view-xslt           ports/www/p5-Catalyst-View-XSLT
 p5-catalystx-component-traits   ports/www/p5-CatalystX-Component-Traits
+p5-catalystx-injectcomponent    ports/www/p5-CatalystX-InjectComponent
+p5-catalystx-leakchecker        ports/www/p5-CatalystX-LeakChecker
+p5-catalystx-profile            ports/www/p5-CatalystX-Profile
+p5-catalystx-repl               ports/www/p5-CatalystX-REPL
 p5-catalystx-roleapplicator     ports/www/p5-CatalystX-RoleApplicator
 p5-cdb_file                     ports/databases/p5-CDB_File
 p5-cdb_file-generator           ports/databases/p5-CDB_File-Generator
