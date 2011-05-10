@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	octave
-PORTVERSION=	3.2.4
-PORTREVISION=	4
+PORTVERSION=	3.4.0
 CATEGORIES=	math
-MASTER_SITES=	ftp://ftp.octave.org/pub/octave/ \
+MASTER_SITES=	ftp://ftp.gnu.org/gnu/octave/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/bleeding-edge/
 
 MAINTAINER=	maho@FreeBSD.org
@@ -18,11 +17,12 @@ COMMENT=	High-level interactive language for numerical computations
 BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		gsed:${PORTSDIR}/textproc/gsed \
-		dvips:${PORTSDIR}/print/dvipsk-tetex
+		dvips:${PORTSDIR}/print/dvipsk-tetex \
+		${PREFIX}/bin/makeinfo:${PORTSDIR}/print/texinfo
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
-		gsed:${PORTSDIR}/textproc/gsed
-LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
-		glpk.28:${PORTSDIR}/math/glpk \
+		gsed:${PORTSDIR}/textproc/gsed \
+		${PREFIX}/bin/makeinfo:${PORTSDIR}/print/texinfo
+LIB_DEPENDS=	glpk.28:${PORTSDIR}/math/glpk \
 		umfpack.1:${PORTSDIR}/math/suitesparse \
 		qhull:${PORTSDIR}/math/qhull \
 		arpack:${PORTSDIR}/math/arpack \
@@ -31,16 +31,17 @@ LIB_DEPENDS=	fftw3:${PORTSDIR}/math/fftw3 \
 		fftw3:${PORTSDIR}/math/fftw3 \
 		ftgl:${PORTSDIR}/graphics/ftgl \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
-		GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick
+		GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick \
+		curl:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf
+#USE_AUTOTOOLS=	autoconf
 
-INFO=		octave liboctave
-MAN1=		octave.1 octave-bug.1 mkoctfile.1 octave-config.1
+INFO=		octave liboctave OctaveFAQ
+MAN1=		octave.1 mkoctfile.1 octave-config.1
 
 OPTIONS=	LEGACY_HDF5 "Build with HDF5 v1.6 (otherwise with HDF5 v1.8)" on
 
@@ -90,14 +91,11 @@ CONFIGURE_ENV+=	GPERF="${LOCALBASE}/bin/gperf" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 		CC="${CC}" \
 		CXX="${CXX}" \
-		TERMIOS_H="termios.h"
+		MAKEINFO=${PREFIX}/bin/makeinfo
 CONFIGURE_ARGS=	--host=${GNU_HOST} \
 		--with-blas="-L${LOCALBASE}/lib ${BLAS}" \
 		--with-lapack="${LAPACK}" \
 		--enable-shared
-
-SUB_FILES=	octave
-SUB_LIST=	OCTAVE_VERSION="${OCTAVE_VERSION}" GNU_HOST="${GNU_HOST}"
 
 .if (${OSVERSION} <= 700000)
 WITH_PTMALLOC=yes
@@ -108,27 +106,30 @@ LIB_DEPENDS+=	ptmalloc:${PORTSDIR}/devel/ptmalloc
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib -lptmalloc"
 .endif
 
+post-patch:
+	${REINPLACE_CMD} 's+"makeinfo"+"${PREFIX}/bin/makeinfo"+' ${WRKSRC}/src/help.cc
+
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/doc/liboctave/liboctave.info ${PREFIX}/info
-	${MV} ${PREFIX}/bin/${PORTNAME}-${PORTVERSION} ${PREFIX}/libexec/${PORTNAME}/${PORTVERSION}/exec/${GNU_HOST}
-	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}-${PORTVERSION}
-	${LN} -fs ${PREFIX}/bin/${PORTNAME}-${PORTVERSION} ${PREFIX}/bin/${PORTNAME}
 	${MKDIR} ${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/octave.desktop \
+	${INSTALL_DATA} ${WRKSRC}/doc/icons/octave.desktop \
 	${DESKTOPDIR}/www.octave.org-octave.desktop
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in faq/Octave-FAQ.ps liboctave/liboctave.ps \
-	refcard/refcard-a4.ps refcard/refcard-legal.ps refcard/refcard-letter.ps
+.for file in faq/OctaveFAQ.ps liboctave/liboctave.ps \
+	refcard/refcard-a4.ps refcard/refcard-legal.ps \
+	refcard/refcard-letter.ps interpreter/octave.ps
 	${INSTALL_DATA} ${WRKSRC}/doc/${file} ${DOCSDIR}
 .endfor
 .endif
-	 ${RM} -f ${WRKDIR}/PLIST
+	${RM} -f ${WRKDIR}/PLIST
 .for d in ${PREFIX}/include/octave-${OCTAVE_VERSION} ${PREFIX}/share/octave ${PREFIX}/libexec/octave ${PREFIX}/lib/octave-${OCTAVE_VERSION}
 	@${FIND} -s $d -not -type d | \
-	${SED} -e 's#^${PREFIX}/##' >> ${WRKDIR}/PLIST
-	@${FIND} $d -type d | ${SORT} -r | \
-		${SED} 's,^${PREFIX}/,@dirrm ,' >> ${WRKDIR}/PLIST
+		${SED} -e 's#^${PREFIX}/##' >> ${WRKDIR}/PLIST
+	@${FIND} -s $d -type d -empty | \
+		${SED} -e 's,^${PREFIX}/,@exec mkdir -p %D/,' \
+		-e 's,$$, 2>/dev/null || true,' >> ${WRKDIR}/PLIST
+	@${FIND} -s $d -type d -depth | \
+		${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${WRKDIR}/PLIST
 .endfor
 	cd ${WRKDIR} ; ${SED} -i -e "/PLIST/ r PLIST" ${TMPPLIST}
 

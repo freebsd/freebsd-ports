@@ -2,38 +2,15 @@ bin/mkoctfile
 bin/mkoctfile-%%OCTAVE_VERSION%%
 bin/octave
 bin/octave-%%OCTAVE_VERSION%%
-bin/octave-bug
-bin/octave-bug-%%OCTAVE_VERSION%%
 bin/octave-config
 bin/octave-config-%%OCTAVE_VERSION%%
 share/applications/www.octave.org-octave.desktop
-%%PORTDOCS%%%%DOCSDIR%%/Octave-FAQ.ps
+%%PORTDOCS%%%%DOCSDIR%%/OctaveFAQ.ps
 %%PORTDOCS%%%%DOCSDIR%%/liboctave.ps
 %%PORTDOCS%%%%DOCSDIR%%/refcard-a4.ps
 %%PORTDOCS%%%%DOCSDIR%%/refcard-legal.ps
 %%PORTDOCS%%%%DOCSDIR%%/refcard-letter.ps
+%%PORTDOCS%%%%DOCSDIR%%/octave.ps
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@comment octave diggs some empty directories
-@exec mkdir -p %D/share/octave/site/m/startup/octaverc 2>/dev/null || true
-@exec mkdir -p %D/share/octave/site/api-v37/m 2>/dev/null || true
-@exec mkdir -p %D/share/octave/site/api-v37 2>/dev/null || true
-@exec mkdir -p %D/share/octave/%%OCTAVE_VERSION%%/site/m 2>/dev/null || true
-@exec mkdir -p %D/share/octave/%%OCTAVE_VERSION%%/site 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/site/oct/%%GNU_HOST%% 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/site/oct/api-v37/%%GNU_HOST%% 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/site/oct/api-v37 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/site/oct 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/site/exec/%%GNU_HOST%% 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/site/exec 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/site 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/api-v37/site/exec/%%GNU_HOST%% 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/api-v37/site/exec 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/api-v37/site 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/api-v37 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/%%OCTAVE_VERSION%%/site/oct/%%GNU_HOST%% 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/%%OCTAVE_VERSION%%/site/oct 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/%%OCTAVE_VERSION%%/site/exec/%%GNU_HOST%% 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/%%OCTAVE_VERSION%%/site/exec 2>/dev/null || true
-@exec mkdir -p %D/libexec/octave/%%OCTAVE_VERSION%%/site 2>/dev/null || true
 @comment Insert PLIST here
 @dirrmtry share/applications
