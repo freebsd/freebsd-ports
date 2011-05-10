@@ -7,10 +7,9 @@
 
 PORTNAME=	netpbm
 PORTVERSION=	10.35.80
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/netpbm/super_stable/${PORTVERSION}
-PKGNAMESUFFIX=	${NETPBM_SUFFIX}${PKGNAMESUFFIX2}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	dinoex@FreeBSD.org
@@ -27,7 +26,6 @@ MAKE_JOBS_UNSAFE=	yes
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_XORG=	x11
 CFLAGS+=	-DPNG_DEPSTRUCT= -Iutil
 MAKE_ENV=	LN="${LN}" RANLIB="${RANLIB}"
 MAKEFILE=	GNUmakefile
@@ -35,6 +33,14 @@ INSTALL_TARGET=	install.bin install.lib install.data install-dev
 USE_LDCONFIG=	yes
 
 MAN1=		netpbm.1
+
+.if defined(WITH_X11)
+USE_XORG=	x11
+MAKE_ENV+=	WITH_X11="${WITH_X11}"
+PLIST_SUB+=	X11=''
+.else
+PLIST_SUB+=	X11='@comment '
+.endif
 
 pre-configure:
 	@if [ -e ${DESTDIR}/${LOCALBASE}/include/pm.h ]; then \
