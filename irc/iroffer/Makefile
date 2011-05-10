@@ -21,6 +21,10 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	Configure
 CONFLICTS=	iroffer-lamm-1.* iroffer-dinoex-3.*
 
+post-patch:
+	${REINPLACE_CMD} -e 's|cctype="gcc"|cctype="${CC}"|' \
+		${WRKSRC}/Configure
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/convertxdccfile ${PREFIX}/bin/
 	${INSTALL_PROGRAM} ${WRKSRC}/iroffer ${PREFIX}/bin/
