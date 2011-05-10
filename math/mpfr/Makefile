@@ -6,15 +6,21 @@
 #
 
 PORTNAME=	mpfr
-PORTVERSION=	3.0.0
+PORTVERSION=	3.0.1
 CATEGORIES=	math devel
 MASTER_SITES=	http://www.mpfr.org/mpfr-current/
 DIST_SUBDIR=	mpfr
+
+PATCH_SITES=	${MASTER_SITES}
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	A library for multiple-precision floating-point computations
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
+
+PATCHLEVEL=	4
+PATCHFILES!=	/usr/bin/jot -s " " -w patch%02d ${PATCHLEVEL} 1 ${PATCHLEVEL}
 
 LICENSE=	LGPL3
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
