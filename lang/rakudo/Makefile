@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rakudo
-PORTVERSION=	2011.01
+PORTVERSION=	2011.04
 PORTEPOCH=	2
 CATEGORIES=	lang
 MASTER_SITES=	http://cloud.github.com/downloads/rakudo/star/
@@ -24,7 +24,7 @@ LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
 LICENSE=	ART20
 CONFLICTS=	parrot-[0-9]*
 
-PARROT_VERSION=3.0.0
+PARROT_VERSION=3.3.0
 INSTALL_TARGET=	install
 CONFIGURE_SCRIPT=	Configure.pl
 CONFIGURE_PARROT_ARGS=	--cc=${CC} --cxx=${CXX} --ld=${CC} --ccflags="${CFLAGS}" \
