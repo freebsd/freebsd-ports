@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xfce4-xkb-plugin
-PORTVERSION=	0.5.3.3
+PORTVERSION=	0.5.4.0
 CATEGORIES=	deskutils xfce
-MASTER_SITES=	CRITICAL/.
-DIST_SUBDIR=	xfce4
+MASTER_SITES=	${MASTER_SITE_XFCE}
+MASTER_SITE_SUBDIR=	src/panel-plugins/${PORTNAME}/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Keyboard layout switching plugin for XFce4
