@@ -1,14 +1,6 @@
---- configure.orig	2011-01-09 22:40:34.000000000 +0100
-+++ configure	2011-03-02 00:16:16.000000000 +0100
-@@ -600,7 +600,6 @@
- ac_default_prefix=/usr/local
- ac_default_prefix=/usr/local
- ac_default_prefix=/usr/local
--ac_default_prefix=/usr
- ac_header_list=
- ac_subst_vars='LTLIBOBJS
- PBX_SYSLOG
-@@ -4677,9 +4676,9 @@
+--- configure.orig	2011-01-27 18:03:01.000000000 +0100
++++ configure	2011-05-10 20:10:47.007174008 +0200
+@@ -4681,9 +4681,9 @@
  astheaderdir='${includedir}/asterisk'
  astlibdir='${libdir}/asterisk'
  astmandir='${mandir}'
@@ -20,17 +12,16 @@
  astkeydir='${astvarlibdir}'
  astspooldir='${localstatedir}/spool/asterisk'
  astlogdir='${localstatedir}/log/asterisk'
-@@ -4701,9 +4700,6 @@
- 
+@@ -4706,8 +4706,6 @@
  case "${host_os}" in
       freebsd*)
--
+      ac_default_prefix=/usr/local
 -     CPPFLAGS=-I/usr/local/include
 -     LDFLAGS=-L/usr/local/lib
       ;;
       openbsd*)
- 
-@@ -17558,6 +17554,8 @@
+      ac_default_prefix=/usr/local
+@@ -17540,6 +17538,8 @@
  
  	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
@@ -39,7 +30,7 @@
   #include <ifaddrs.h>
  int
  main ()
-@@ -25364,7 +25362,7 @@
+@@ -25290,7 +25290,7 @@
  
  	fi
  
