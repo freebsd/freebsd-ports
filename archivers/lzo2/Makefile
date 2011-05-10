@@ -9,8 +9,8 @@ PORTNAME=	lzo2
 PORTVERSION=	2.05
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/ \
-		http://ftp.uni-koeln.de/util/arc/
-MASTER_SITE_SUBDIR=	libs/compression
+		${MASTER_SITE_LOCAL:S,$,mandree/,}
+
 DISTNAME=	lzo-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	mandree@FreeBSD.org

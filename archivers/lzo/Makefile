@@ -11,8 +11,7 @@ PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/LZO-v1/ \
-		http://ftp.uni-koeln.de/util/arc/
-MASTER_SITE_SUBDIR=	libs/compression
+		${MASTER_SITE_LOCAL:S,$,mandree/,}
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Portable speedy, lossless data compression library
