@@ -13,7 +13,7 @@ MASTER_SITES=	SF/math-${PORTNAME}/Developer%20%28unstable%29/${PORTVERSION}
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Development version of math/atlas
 
 MANUAL_PACKAGE_BUILD=	Optimizes for the local machine.

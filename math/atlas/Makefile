@@ -13,7 +13,7 @@ CATEGORIES=	math
 MASTER_SITES=	SF/math-${PORTNAME}/Stable/${PORTVERSION}
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	maho@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Automatically Tuned Linear Algebra Software (ATLAS)
 
 MANUAL_PACKAGE_BUILD=	Optimizes for the local machine.
