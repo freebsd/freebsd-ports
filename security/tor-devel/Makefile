@@ -7,6 +7,7 @@
 
 PORTNAME=	tor
 DISTVERSION=	0.2.3.1-alpha
+PORTREVISION=	1
 CATEGORIES=	security net ipv6
 MASTER_SITES=	http://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
@@ -40,7 +41,7 @@ CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	BUFFEREVENTS "use libevent's buffered IO" on \
+OPTIONS=	BUFFEREVENTS "use libevent's buffered IO" off \
 		BUFFREELISTS "freelists for buffer RAM" on \
 		INSTR_DOWNLOADS "instrument downloads for analysis" off \
 		STATIC_TOR "build a static tor" off \
@@ -54,7 +55,7 @@ SUB_FILES=	pkg-message
 GROUPS =	_tor
 USERS=		_tor
 
-CONFLICTS=	tor-[0-9]*
+CONFLICTS=		tor-[0-9]*
 CONFLICTS_BUILD=	libevent-[01]*
 
 MANCOMPRESSED=	no
