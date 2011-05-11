@@ -1032,8 +1032,11 @@ include/ruby-1.9/ruby.h
 %%GEMS_DIR%%/cache/.keep_me
 %%GEMS_DIR%%/doc/.keep_me
 %%GEMS_DIR%%/gems/.keep_me
+%%GEMS_DIR%%/specifications/minitest-1.6.0.gemspec
 %%GEMS_DIR%%/specifications/minitest.gemspec
+%%GEMS_DIR%%/specifications/rake-0.8.7.gemspec
 %%GEMS_DIR%%/specifications/rake.gemspec
+%%GEMS_DIR%%/specifications/rdoc-2.5.8.gemspec
 %%GEMS_DIR%%/specifications/rdoc.gemspec
 @dirrm %%GEMS_DIR%%/specifications
 @dirrm %%GEMS_DIR%%/gems
@@ -1043,10 +1046,10 @@ include/ruby-1.9/ruby.h
 %%RUBY_SITEARCHLIBDIR%%/.keep_me
 @dirrm %%RUBY_SITEARCHLIBDIR%%
 @dirrm %%RUBY_SITELIBDIR%%
-@dirrm lib/ruby/site_ruby
+@dirrmtry lib/ruby/site_ruby
 %%RUBY_VENDORARCHLIBDIR%%/.keep_me
 @dirrm %%RUBY_VENDORARCHLIBDIR%%
 @dirrm %%RUBY_VENDORLIBDIR%%
-@dirrm lib/ruby/vendor_ruby
-@dirrm lib/ruby/gems
-@dirrm lib/ruby
+@dirrmtry lib/ruby/vendor_ruby
+@dirrmtry lib/ruby/gems
+@dirrmtry lib/ruby
