@@ -17,6 +17,7 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		gig.10:${PORTSDIR}/audio/libgig \
 
 RESTRICTED=	no commercial use
+BROKEN=		unfetchable
 
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	"not yet ported"
