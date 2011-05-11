@@ -7,7 +7,6 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -25,7 +24,7 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-24.* \
 
 INSTALLS_ICONS=	yes
 
-EMACS_VER=	23.2
+EMACS_VER=	23.3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
@@ -39,7 +38,8 @@ MAN1=		b2m.1 ctags.1 ebrowse.1 emacs.1 emacsclient.1 etags.1 \
 		grep-changelog.1 rcs-checkin.1
 PLIST_SUB=	EMACS_VER=${EMACS_VER}
 
-EMACS_DIRS=	${DATADIR}/${EMACS_VER} ${PREFIX}/libexec/${PORTNAME}
+EMACS_DIRS=	${DATADIR}/${EMACS_VER}/leim ${DATADIR}/${EMACS_VER}/lisp ${DATADIR}/${EMACS_VER}/src \
+		${PREFIX}/libexec/${PORTNAME}
 
 MAKE_ENV=	LC_ALL=C
 
@@ -194,9 +194,9 @@ CONFIGURE_ARGS+=	--without-xim
 .endif
 
 .if defined(WITH_CANNA)
-PATCH_SITES+=	${MASTER_SITE_LOCAL}
-PATCH_SITE_SUBDIR+=	nork
-PATCHFILES+=	emacs232canna-20100608.patch.gz
+PATCH_SITES+=	http://wahjava.users.sourceforge.net/%SUBDIR%/ ${MASTER_SITE_LOCAL}
+PATCH_SITE_SUBDIR+=	ashish
+PATCHFILES+=	emacs23.3canna-20110316.diff.gz
 PATCH_DIST_STRIP=	-p1
 CONFIGURE_ARGS+=	--with-canna \
 			--with-canna-includes=${LOCALBASE}/include \
@@ -231,17 +231,24 @@ post-configure:
 
 add-plist-data:
 .for i in ${EMACS_DIRS}
-	@${FIND} ${i} -type f |${SED} -e 's,${PREFIX}/,,g' >>${TMPPLIST}
+	@${FIND} ${i} -type f |${SED} -E -e 's,^${PREFIX}/,,g'  >>${TMPPLIST}
 .endfor
+	@${FIND} ${WRKSRC}/etc -type f |${SED} -E -e 's,^${WRKSRC},${DATADIR_REL}/${EMACS_VER},g' -e '/etc\/(\..*|ChangeLog|DOC)$$/d' >>${TMPPLIST}
+	@${FIND} ${WRKSRC}/etc -type d -depth |${SED} -E -e 's,^${WRKSRC},@dirrm ${DATADIR_REL}/${EMACS_VER},g' >>${TMPPLIST}
 .for i in ${EMACS_DIRS}
-	@${FIND} ${i} -type d -depth |${SED} -e 's,^${PREFIX}/,@dirrm ,g' >>${TMPPLIST}
+	@${FIND} ${i} -type d -depth |${SED} -E -e 's,^${PREFIX}/,@dirrm ,g' >>${TMPPLIST}
 .endfor
+	@${ECHO} "@unexec rmdir %D/${DATADIR_REL}/${EMACS_VER} 2>/dev/null || true" >>${TMPPLIST}
 
 .if defined(WITH_SOURCES)
+PLIST_SUB+=	SOURCES=""
+
 post-install:
 	@${MKDIR} ${DATADIR}/${EMACS_VER}/src
 	@${INSTALL_DATA} ${WRKSRC}/src/*.[ch] ${DATADIR}/${EMACS_VER}/src
 	@${INSTALL_DATA} ${WRKSRC}/sources.el ${DATADIR}/${EMACS_VER}/site-lisp/site-start.el
+.else
+PLIST_SUB+=	SOURCES="@comment "
 .endif
 
 pre-everything::
