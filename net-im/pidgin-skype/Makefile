@@ -16,7 +16,7 @@ MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Plugin to use Skype chat from Pidgin (with Skype running)
 
 BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin \
-    ${LOCALBASE}/bin/skype:${PORTSDIR}/net-m/skype
+    ${LOCALBASE}/bin/skype:${PORTSDIR}/net-im/skype
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin \
     ${LOCALBASE}/bin/skype:${PORTSDIR}/net-im/skype
 
