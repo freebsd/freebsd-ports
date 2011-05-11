@@ -68,6 +68,7 @@ include/gstreamer-%%VERSION%%/gst/sdp/gstsdp.h
 include/gstreamer-%%VERSION%%/gst/sdp/gstsdpmessage.h
 include/gstreamer-%%VERSION%%/gst/tag/gsttagdemux.h
 include/gstreamer-%%VERSION%%/gst/tag/tag.h
+include/gstreamer-%%VERSION%%/gst/tag/xmpwriter.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideofilter.h
 include/gstreamer-%%VERSION%%/gst/video/gstvideosink.h
 include/gstreamer-%%VERSION%%/gst/video/video.h

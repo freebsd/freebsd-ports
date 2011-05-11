@@ -11,6 +11,7 @@ bin/gst-xmlinspect-%%VERSION%%
 bin/gst-xmllaunch
 bin/gst-xmllaunch-%%VERSION%%
 include/gstreamer-%%VERSION%%/gst/base/gstadapter.h
+include/gstreamer-%%VERSION%%/gst/base/gstbaseparse.h
 include/gstreamer-%%VERSION%%/gst/base/gstbasesink.h
 include/gstreamer-%%VERSION%%/gst/base/gstbasesrc.h
 include/gstreamer-%%VERSION%%/gst/base/gstbasetransform.h
@@ -32,6 +33,7 @@ include/gstreamer-%%VERSION%%/gst/controller/gstlfocontrolsource.h
 include/gstreamer-%%VERSION%%/gst/dataprotocol/dataprotocol.h
 include/gstreamer-%%VERSION%%/gst/glib-compat.h
 include/gstreamer-%%VERSION%%/gst/gst.h
+include/gstreamer-%%VERSION%%/gst/gstatomicqueue.h
 include/gstreamer-%%VERSION%%/gst/gstbin.h
 include/gstreamer-%%VERSION%%/gst/gstbuffer.h
 include/gstreamer-%%VERSION%%/gst/gstbufferlist.h

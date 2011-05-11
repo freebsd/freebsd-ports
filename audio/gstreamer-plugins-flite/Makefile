@@ -12,6 +12,8 @@ COMMENT=	Gstreamer flite run-time speech synthesis engine plugin
 
 GST_PLUGIN=	flite
 
+BROKEN=		Doesn't work due to link problem in audio/flite
+
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
 .include "${MASTERDIR}/Makefile"
