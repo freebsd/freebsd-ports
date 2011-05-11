@@ -282,8 +282,11 @@ share/garlic/residues.pdb
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/changes
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/bugfixes
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%EXAMPLESDIR%%/adrenaline.pdb
+%%PORTDOCS%%%%EXAMPLESDIR%%/22porins.script
+%%PORTDOCS%%%%EXAMPLESDIR%%/backup-hyd.script
+%%PORTDOCS%%%%EXAMPLESDIR%%/patt.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/18-porins.script
-%%PORTDOCS%%%%EXAMPLESDIR%%/18porins.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/18porins2.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/1mal.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/2fcp.script
@@ -293,7 +296,6 @@ share/garlic/residues.pdb
 %%PORTDOCS%%%%EXAMPLESDIR%%/arrow.pdb
 %%PORTDOCS%%%%EXAMPLESDIR%%/ascorbic-acid.pdb
 %%PORTDOCS%%%%EXAMPLESDIR%%/atoms.script
-%%PORTDOCS%%%%EXAMPLESDIR%%/b.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/barrel.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/bonds.script
 %%PORTDOCS%%%%EXAMPLESDIR%%/borneol.pdb

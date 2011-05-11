@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	garlic
-PORTVERSION=	1.5
-PORTREVISION=	2
+PORTVERSION=	1.6
 CATEGORIES=	biology
-MASTER_SITES=	http://garlic.mefos.hr/sources/garlic-${PORTVERSION}/
+MASTER_SITES=	http://www.zucic.org/sources/garlic-${PORTVERSION}/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${DISTNAME}-doc${EXTRACT_SUFX}
