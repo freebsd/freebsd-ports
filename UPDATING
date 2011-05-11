@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110511:
+  AFFECTS: users of editors/emacs
+  AUTHOR: ashish@FreeBSD.org
+
+  Due to a bug when upgrading from 23.2 or later versions, everything
+  installed by other ports in "${PREFIX}/share/emacs" gets removed.
+
+  Before upgrading:
+
+  * Please backup custom configurations in "${PREFIX}/share/emacs".
+  * After upgrading reinstall any ports that may have had files in the
+    "${PREFIX}/share/emacs" directory.
+
 20110509:
   AFFECTS: users of lang/ghc and */hs-*
   AUTHOR: ashish@FreeBSD.org
