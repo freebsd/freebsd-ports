@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	satchmo
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.9.1
 CATEGORIES=	www python
-MASTER_SITES=	http://bitbucket.org/chris1610/satchmo/get/
+MASTER_SITES=	http://www.caomhin.org/geek/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	v${PORTVERSION:C/([[:digit:]]\.[[:digit:]])\.[[:digit:]]/\1/g}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@caomhin.org
-COMMENT=	Shopping cart application for Django.
+COMMENT=	Shopping cart application for Django
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django \
 		${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto \
@@ -25,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-
 		${LOCALBASE}/bin/pildriver.py:${PORTSDIR}/graphics/py-imaging \
 		${PYTHON_SITELIBDIR}/sorl/thumbnail/__init__.py:${PORTSDIR}/graphics/py-sorl-thumbnail
 
-WRKSRC=	${WRKDIR}/${PORTNAME}
+WRKSRC=	${WRKDIR}/chris1610-satchmo-86134417a87b
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_EGG=	Satchmo-${PORTVERSION:C/([[:digit:]]\.[[:digit:]])\./\1_/g}-${PYTHON_VERSION:S/thon//}.egg
@@ -34,9 +33,11 @@ PYEASYINSTALL_UNINSTALLARGS=	-q -m -S ${PYTHON_SITELIBDIR} \
 
 .include <bsd.port.pre.mk>
 
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}django-threaded-multihost>=0:${PORTSDIR}/www/py-django-threaded-multihost \
-	${PYTHON_PKGNAMEPREFIX}django-app-plugins>=0:${PORTSDIR}/www/py-django-app-plugins \
-	${PYTHON_PKGNAMEPREFIX}django-signals-ahoy>=0:${PORTSDIR}/www/py-django-signals-ahoy
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}django-app-plugins>=0:${PORTSDIR}/www/py-django-app-plugins \
+		${PYTHON_PKGNAMEPREFIX}django-keyedcache>=0:${PORTSDIR}/www/py-django-keyedcache \
+		${PYTHON_PKGNAMEPREFIX}django-livesettings>=0:${PORTSDIR}/www/py-django-livesettings \
+	${PYTHON_PKGNAMEPREFIX}django-signals-ahoy>=0:${PORTSDIR}/www/py-django-signals-ahoy \
+		${PYTHON_PKGNAMEPREFIX}django-threaded-multihost>=0:${PORTSDIR}/www/py-django-threaded-multihost
 
 .if defined(WITH_DOCS)
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sphinx>0:${PORTSDIR}/textproc/py-sphinx
