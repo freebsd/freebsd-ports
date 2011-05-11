@@ -8,6 +8,8 @@ lib/gstreamer-%%VERSION%%/libgstapetag.la
 lib/gstreamer-%%VERSION%%/libgstapetag.so
 lib/gstreamer-%%VERSION%%/libgstaudiofx.la
 lib/gstreamer-%%VERSION%%/libgstaudiofx.so
+lib/gstreamer-%%VERSION%%/libgstaudioparsers.la
+lib/gstreamer-%%VERSION%%/libgstaudioparsers.so
 lib/gstreamer-%%VERSION%%/libgstauparse.la
 lib/gstreamer-%%VERSION%%/libgstauparse.so
 lib/gstreamer-%%VERSION%%/libgstautodetect.la
@@ -58,8 +60,8 @@ lib/gstreamer-%%VERSION%%/libgstoss4audio.la
 lib/gstreamer-%%VERSION%%/libgstoss4audio.so
 lib/gstreamer-%%VERSION%%/libgstossaudio.la
 lib/gstreamer-%%VERSION%%/libgstossaudio.so
-lib/gstreamer-%%VERSION%%/libgstqtdemux.la
-lib/gstreamer-%%VERSION%%/libgstqtdemux.so
+lib/gstreamer-%%VERSION%%/libgstisomp4.la
+lib/gstreamer-%%VERSION%%/libgstisomp4.so
 lib/gstreamer-%%VERSION%%/libgstreplaygain.la
 lib/gstreamer-%%VERSION%%/libgstreplaygain.so
 lib/gstreamer-%%VERSION%%/libgstrtp.la

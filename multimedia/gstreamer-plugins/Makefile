@@ -21,23 +21,23 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT?=	GStreamer written collection of plugins handling several media types
 
 BUILD_DEPENDS+=	v4l_compat>=1.0.20100321:${PORTSDIR}/multimedia/v4l_compat \
-		gstreamer>=0.10.32:${PORTSDIR}/multimedia/gstreamer \
+		gstreamer>=0.10.33:${PORTSDIR}/multimedia/gstreamer \
 		orc>=0.4.11:${PORTSDIR}/devel/orc
 LIB_DEPENDS+=	gstreamer-0.10.0:${PORTSDIR}/multimedia/gstreamer \
 		orc-0.4.0:${PORTSDIR}/devel/orc
 
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
 
-BASE_PORTVERSION=	0.10.32
+BASE_PORTVERSION=	0.10.33
 BASE_DISTNAME=		gst-plugins-base-${BASE_PORTVERSION}
 BASE_DISTFILE=		${BASE_DISTNAME}${EXTRACT_SUFX}
-BAD_PORTVERSION=	0.10.21
+BAD_PORTVERSION=	0.10.22
 BAD_DISTNAME=		gst-plugins-bad-${BAD_PORTVERSION}
 BAD_DISTFILE=		${BAD_DISTNAME}${EXTRACT_SUFX}
-GOOD_PORTVERSION=	0.10.27
+GOOD_PORTVERSION=	0.10.29
 GOOD_DISTNAME=		gst-plugins-good-${GOOD_PORTVERSION}
 GOOD_DISTFILE=		${GOOD_DISTNAME}${EXTRACT_SUFX}
-UGLY_PORTVERSION=	0.10.17
+UGLY_PORTVERSION=	0.10.18
 UGLY_DISTNAME=		gst-plugins-ugly-${UGLY_PORTVERSION}
 UGLY_DISTFILE=		${UGLY_DISTNAME}${EXTRACT_SUFX}
 DIST?=		good
