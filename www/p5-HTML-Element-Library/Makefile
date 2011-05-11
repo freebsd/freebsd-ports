@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Element-Library
-PORTVERSION=	4.2.b
+PORTVERSION=	4.3
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +18,7 @@ RUN_DEPENDS=	p5-Array-Group>=1:${PORTSDIR}/devel/p5-Array-Group \
 		p5-File-Slurp>=9999.06:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-HTML-FillInForm>=0:${PORTSDIR}/www/p5-HTML-FillInForm \
 		p5-HTML-PrettyPrinter>=0.03:${PORTSDIR}/www/p5-HTML-PrettyPrinter \
-		p5-HTML-Tree>=3.19:${PORTSDIR}/www/p5-HTML-Tree \
+		p5-HTML-Tree>=4.1:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-List-MoreUtils>=0.09:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-List-Rotation-Cycle>=1.003:${PORTSDIR}/devel/p5-List-Rotation-Cycle \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
