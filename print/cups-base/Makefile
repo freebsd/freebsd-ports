@@ -37,6 +37,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var			\
 			--with-icondir=${PREFIX}/share/icons	\
 			--with-menudir=${DESKTOPDIR}		\
 			--with-domainsocket=${CUPS_SOCKET}	\
+			--with-cachedir=${CUPS_CACHEDIR}	\
 			--with-pam-module="unix"		\
 			--enable-ssl
 
@@ -54,6 +55,7 @@ OPTIONS?=	GNUTLS		"Build with GNUTLS library" on \
 		XDG_OPEN	"Build with XDG_OPEN as browser" off
 
 CUPS_ETCDIR=	${PREFIX}/etc/cups
+CUPS_CACHEDIR?=	/var/db/cups
 CUPS_SPOOLDIR=	/var/spool/cups
 CUPS_SOCKET?=	/var/run/cups.sock
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
@@ -74,7 +76,7 @@ CUPS_SUFFIX=	-client
 CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
 .else
-PORTREVISION=	3
+PORTREVISION=	2
 CUPS_SUFFIX=	-base
 CONFLICTS+=	cupsddk-*
 .endif
@@ -107,6 +109,7 @@ LIB_DEPENDS+=	cups.2:${PORTSDIR}/${PKGCATEGORY}/cups-client \
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libcups.a:${PORTSDIR}/${PKGCATEGORY}/cups-client
 COMMENT2=	Server
 USE_RC_SUBR=	cupsd
+PLIST_SUB+=	CACHEDIR="${CUPS_CACHEDIR}"
 .if ${ARCH} == "ia64"
 BROKEN=		stack-protector not supported on ia64
 .endif
@@ -377,8 +380,7 @@ post-install:
 	${INSTALL} -d ${CUPS_SPOOLDIR}/tmp/
 	${CHOWN} -R ${CUPSOWN}:${CUPSGRP} ${CUPS_SPOOLDIR}/
 	${CHMOD} -R g+w ${CUPS_SPOOLDIR}/
-	${INSTALL} -d /var/cache/cups/
-	${CHOWN} root:${CUPSGRP} /var/cache/cups/
+	${INSTALL} -d -m 775 -g ${CUPSGRP} ${CUPS_CACHEDIR}
 .endif
 
 .if defined(CUPS_CLIENT)

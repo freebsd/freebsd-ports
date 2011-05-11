@@ -3,15 +3,15 @@
 @unexec if pw usershow cups; then pw userdel cups; fi
 @exec mkdir -p /var/spool/cups/tmp || true
 @exec chown -R root:daemon /var/spool/cups
-@exec mkdir -p /var/cache/cups || true
-@exec chown root:cups /var/cache/cups
+@exec mkdir -p %%CACHEDIR%% || true
+@exec chown root:cups %%CACHEDIR%%
+@exec chmod 775 %%CACHEDIR%%
 @exec mkdir -p /var/log/cups || true
 @exec chown cups:daemon /var/log/cups
 @exec mkdir -p %D/etc/cups/ppd || true
 @exec mkdir -p %D/etc/cups/interfaces || true
 @unexec rm -rf /var/spool/cups 2>/dev/null || true
-@unexec rm -rf /var/cache/cups 2>/dev/null || true
-@unexec rmdir /var/cache 2>/dev/null || true
+@unexec rm -rf %%CACHEDIR%% 2>/dev/null || true
 @unexec rmdir /var/log/cups 2>/dev/null || true
 @unexec rmdir /var/run/cups/certs 2>/dev/null || true
 @unexec rmdir /var/run/cups 2>/dev/null || true
