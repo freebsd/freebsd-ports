@@ -19,23 +19,13 @@ COMMENT=	Rotating Object on the screen (Zalgaller polyhedra)
 USE_IMAKE=	yes
 USE_XORG=	x11 xext
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAN6=		mxico.6
-
-BROKEN=		bad plist
-
-pre-build:
-	@cd ${WRKSRC} && ${MV} Makefile Makefile~  && ${SED} \
-	 -e 's: BINDIR .*:BINDIR=${PREFIX}/bin:' \
-	 -e 's: MANDIR .*:MANDIR=${PREFIX}/man/man6:' \
-	 -e 's: MANSUFFIX .*:MANSUFFIX=6:' <Makefile~ >Makefile
-
-pre-install:
-	@${MKDIR} ${PREFIX}/bin
-	@${MKDIR} ${PREFIX}/man/man6
-	@${MKDIR} ${DOCSDIR}
+MAN1=		mxico.1
 
 post-install:
-	@(cd ${WRKSRC}; ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} install.man)
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
 	@(cd ${WRKSRC}; ${INSTALL_DATA} polyhedron/READMEj ${DOCSDIR})
 	@(cd ${WRKSRC}; ${INSTALL_DATA} polyhedron/README ${DOCSDIR})
+.endif
+
 .include <bsd.port.mk>
