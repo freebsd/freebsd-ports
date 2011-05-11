@@ -1,0 +1,22 @@
+%%SITE_PERL%%/Catalyst/ActionRole/NeedsLogin.pm
+%%SITE_PERL%%/CatalystX/SimpleLogin/Controller/Login.pm
+%%SITE_PERL%%/CatalystX/SimpleLogin/Form/LoginOpenID.pm
+%%SITE_PERL%%/CatalystX/SimpleLogin/Form/Login.pm
+%%SITE_PERL%%/CatalystX/SimpleLogin/TraitFor/Controller/Login/RenderAsTTTemplate.pm
+%%SITE_PERL%%/CatalystX/SimpleLogin/TraitFor/Controller/Login/Logout.pm
+%%SITE_PERL%%/CatalystX/SimpleLogin/TraitFor/Controller/Login/OpenID.pm
+%%SITE_PERL%%/CatalystX/SimpleLogin/TraitFor/Controller/Login/WithRedirect.pm
+%%SITE_PERL%%/CatalystX/SimpleLogin/Manual.pod
+%%SITE_PERL%%/CatalystX/SimpleLogin.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CatalystX/SimpleLogin/.packlist
+@dirrmtry %%SITE_PERL%%/Catalyst/ActionRole
+@dirrmtry %%SITE_PERL%%/Catalyst
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CatalystX/SimpleLogin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CatalystX
+@dirrmtry %%SITE_PERL%%/CatalystX/SimpleLogin/Controller
+@dirrmtry %%SITE_PERL%%/CatalystX/SimpleLogin/Form
+@dirrmtry %%SITE_PERL%%/CatalystX/SimpleLogin/TraitFor/Controller/Login
+@dirrmtry %%SITE_PERL%%/CatalystX/SimpleLogin/TraitFor/Controller
+@dirrmtry %%SITE_PERL%%/CatalystX/SimpleLogin/TraitFor
+@dirrmtry %%SITE_PERL%%/CatalystX/SimpleLogin
+@dirrmtry %%SITE_PERL%%/CatalystX

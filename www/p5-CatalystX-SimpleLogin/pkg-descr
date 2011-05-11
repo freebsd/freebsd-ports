@@ -1,0 +1,7 @@
+CatalystX::SimpleLogin is an application class Moose::Role which will inject a
+Catalyst::Controller which is an instance of
+CatalystX::SimpleLogin::Controller::Login into your application. This provides
+a simple login and logout page with the adition of only one line of code and
+one template to your application.
+
+WWW:	http://search.cpan.org/dist/CatalystX-SimpleLogin/
