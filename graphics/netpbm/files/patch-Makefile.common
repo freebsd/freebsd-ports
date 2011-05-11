@@ -1,6 +1,15 @@
---- Makefile.common.orig	Wed Oct  9 11:17:24 2002
-+++ Makefile.common	Sat Oct 12 00:00:00 2002
-@@ -231,19 +231,19 @@
+--- ./Makefile.common.orig	2006-11-13 05:14:19.000000000 +0100
++++ ./Makefile.common	2011-05-10 15:44:47.000000000 +0200
+@@ -68,7 +68,7 @@
+ 
+ include $(SRCDIR)/Makefile.version
+ 
+-INCLUDES2 := $(INCLUDES) -I$(SRCDIR)/$(SUBDIR) -I. -I importinc
++INCLUDES2 := $(PREINCLUDES) -I$(SRCDIR)/$(SUBDIR) -I. -Iimportinc $(INCLUDES)
+ 
+ ifeq ($(NETPBMLIBTYPE),unixstatic)
+   NETPBMLIBFNAME = libnetpbm.$(STATICLIBSUFFIX)
+@@ -408,19 +408,19 @@
  INSTALLBIN_TARGETS = $(BINARIES:%=%_installbin) netpbm_installbin
  .PHONY: $(INSTALLBIN_TARGETS)
  $(INSTALLBIN_TARGETS): $(PKGDIR)/bin

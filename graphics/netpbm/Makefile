@@ -29,6 +29,7 @@ USE_GMAKE=	yes
 CFLAGS+=	-DPNG_DEPSTRUCT= -Iutil
 MAKE_ENV=	LN="${LN}" RANLIB="${RANLIB}"
 MAKEFILE=	GNUmakefile
+MAKEFILE2=	Makefile
 INSTALL_TARGET=	install.bin install.lib install.data install-dev
 USE_LDCONFIG=	yes
 
@@ -43,9 +44,6 @@ PLIST_SUB+=	X11='@comment '
 .endif
 
 pre-configure:
-	@if [ -e ${DESTDIR}/${LOCALBASE}/include/pm.h ]; then \
-		(${ECHO_MSG} "===> Cannot build with netpbm installed, please deinstall first"; exit 1) \
-	fi
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		 -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		 ${WRKSRC}/pm_config.in.h
