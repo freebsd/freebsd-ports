@@ -21,6 +21,9 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared
 USE_LDCONFIG=	yes
 
+DEPRECATED=	use lzo2 instead for new installs
+EXPIRATION_DATE=	2011-05-31
+
 post-build:
 	@${ECHO_MSG} "===>  Running self-tests for ${PKGNAME} (can take a few minutes)"
 	@# override MALLOC_OPTIONS, else tests take excessively long
