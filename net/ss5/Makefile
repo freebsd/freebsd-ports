@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ss5
-PORTVERSION=	3.6.4
-PORTREVISION=	2
+PORTVERSION=	3.8.5
 CATEGORIES=	net security
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-3
-DISTNAME=	${PORTNAME}-${PORTVERSION}-3
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-1
+DISTNAME=	${PORTNAME}-${PORTVERSION}-1
 
 MAINTAINER=	raffaele.delorenzo@libero.it
 COMMENT=	SOCKS v4/v5 application layer gateway with many features
@@ -29,8 +28,8 @@ CONFIGURE_ARGS=	--with-binpathbase=${PREFIX}/sbin \
 MAKE_ENV=	DATADIR=${DATADIR} EXAMPLESDIR=${EXAMPLESDIR}
 CFLAGS+=	-DLDAP_DEPRECATED
 
-MAN1=		ss5.1
-MAN5=		ss5.conf.5 ss5.pam.5 ss5.passwd.5 ss5.ha.5
+MAN1=		ss5.1 ss5srv.1
+MAN5=		ss5.conf.5 ss5.pam.5 ss5.passwd.5 ss5.ha.5 ss5_gss.5 ss5_supa.5
 MANCOMPRESSED=	yes
 
 post-patch:
@@ -39,9 +38,13 @@ post-patch:
 		${WRKSRC}/include/config.h.in
 
 post-install:
-	${TOUCH} ${PREFIX}/etc/ss5/ss5.ha.default
-.if !exists(${PREFIX}/etc/ss5/ss5.ha)
-	${TOUCH} ${PREFIX}/etc/ss5/ss5.ha
-.endif
+#	${TOUCH} ${PREFIX}/etc/ss5/ss5.ha.default
+#.if !exists(${PREFIX}/etc/ss5/ss5.ha)
+#	${TOUCH} ${PREFIX}/etc/ss5/ss5.ha
+#.endif
+	${INSTALL_DATA} ${WRKSRC}/conf/examples/ss5.ha ${PREFIX}/etc/${PORTNAME}/ss5.ha.default
+	if [ ! -f ${PREFIX}/etc/${PORTNAME}.ha ]; then \
+		${INSTALL_DATA} ${WRKSRC}/conf/examples/ss5.ha ${PREFIX}/etc/${PORTNAME}/ss5.ha ; \
+	fi
 
 .include <bsd.port.mk>
