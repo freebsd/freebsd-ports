@@ -1,10 +1,10 @@
---- ./util.c.orig	2010-11-17 11:23:54.000000000 +0100
-+++ ./util.c	2010-11-17 11:24:10.000000000 +0100
-@@ -29,6 +29,7 @@
+--- ./util.c.orig	2011-05-11 20:12:27.000000000 +0200
++++ ./util.c	2011-05-11 20:12:53.000000000 +0200
+@@ -32,6 +32,7 @@
+ #include <stdio.h>
  #include <stdlib.h>
- #include <netdb.h>
- #include <sys/types.h>
+ #include <string.h>
 +#include <sys/socket.h>
- #include <unistd.h>
  #include <sys/stat.h>
- #include <errno.h>
+ #include <sys/types.h>
+ #include <time.h>
