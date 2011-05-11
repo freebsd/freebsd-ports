@@ -1,5 +1,5 @@
---- cgx_2.2/src/Makefile.orig	2010-02-27 06:46:21.000000000 +0900
-+++ cgx_2.2/src/Makefile	2010-06-06 08:44:12.000000000 +0900
+--- cgx_2.3/src/Makefile.orig	2011-03-23 06:14:10.000000000 +0900
++++ cgx_2.3/src/Makefile	2011-05-11 11:56:10.000000000 +0900
 @@ -1,14 +1,14 @@
  CFLAGS = -O3 -Wall \
    -I./ \
@@ -13,9 +13,9 @@
  
  LFLAGS = \
 -  -L/usr/lib64 -lGL -lGLU \
--  -L/usr/X11R6/lib64 -lX11 -lXext -lXi -lXmu -lXt -lSM -lICE \
-+  -L$(LOCALBASE)/lib -lGL -lGLU -lglut \
-+  -L$(LOCALBASE)/lib -lX11 -lXext -lXi -lXmu -lXt -lSM -lICE \
+-  -L/usr/X11R6/lib64 -lX11 -lXi -lXmu -lXext -lXt -lSM -lICE \
++  -L$(LOCALBASE)/lib -lGL -lGLU \
++  -lX11 -lXi -lXmu -lXext -lXt -lSM -lICE \
    -lm 
  
  # on 32bit systems change lib64 to lib
