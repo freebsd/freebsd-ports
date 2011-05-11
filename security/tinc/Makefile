@@ -8,6 +8,7 @@
 
 PORTNAME=	tinc
 PORTVERSION=	1.0.13
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.tinc-vpn.org/packages/ \
 		ftp://ftp.wiretapped.net/pub/security/network-security/tinc/ \
@@ -16,7 +17,7 @@ MASTER_SITES=	http://www.tinc-vpn.org/packages/ \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A Virtual Private Network (VPN) daemon
 
-LIB_DEPENDS=	lzo.1:${PORTSDIR}/archivers/lzo
+LIB_DEPENDS=	lzo2.2:${PORTSDIR}/archivers/lzo2
 
 LICENSE=	GPLv3
 
