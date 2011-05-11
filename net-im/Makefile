@@ -159,6 +159,8 @@
     SUBDIR += sendxmpp
     SUBDIR += sim-im
     SUBDIR += sim-im-devel
+    SUBDIR += skype
+    SUBDIR += skype20
     SUBDIR += skype12
     SUBDIR += tapioca-qt
     SUBDIR += telepathy-butterfly

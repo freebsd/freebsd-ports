@@ -101,6 +101,8 @@ share/applications/skype.desktop
 %%SKYPEDIR%%/lang/skype_th.ts
 %%SKYPEDIR%%/lang/skype_tr.qm
 %%SKYPEDIR%%/lang/skype_tr.ts
+%%SKYPEDIR%%/lang/skype_uk.qm
+%%SKYPEDIR%%/lang/skype_uk.ts
 %%SKYPEDIR%%/lang/skype_zh_s.qm
 %%SKYPEDIR%%/lang/skype_zh_s.ts
 %%SKYPEDIR%%/lang/skype_zh_t.qm

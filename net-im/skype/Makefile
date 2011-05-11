@@ -9,32 +9,27 @@
 #
 
 PORTNAME=	skype
-PORTVERSION=	2.0.0.72
+PORTVERSION=	2.1.0.81
 PORTEPOCH=	1
-CATEGORIES=	net
+CATEGORIES=	net-im
 MASTER_SITES=	http://download.skype.com/linux/
-DISTNAME=	skype_static-${DISTVERSION}-oss
+DISTNAME=	skype_static-${DISTVERSION}
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	P2P VoIP software
 
-.ifdef WITH_NVIDIA_GL
-RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
-USE_LINUX_APPS+=xorglibs
-.else
-USE_LINUX_APPS+=dri
-.endif
+OPTIONS=	VIDEO	"Video sending support via multimedia/webcamd"	on \
+		NVIDIA_GL "Use libGL provided by NVidia binary drivers" off
 
-BROKEN=		This is the last version of skype that works on FreeBSD, but the distfile is no longer available from the vendor, and won't be in the future. We are working on alternative solutions.
-DEPRECATED=	has been broken for a year
-EXPIRATION_DATE=2011-04-17
+NO_BUILD=	yes
 
 USE_BZIP2=	yes
 USE_LINUX=	yes
-USE_LINUX_APPS+=alsalib expat fontconfig libsigcpp20
+USE_LINUX_APPS+=alsalib alsa-plugins-oss expat fontconfig libasyncns \
+		libsigcpp20
 RESTRICTED=	Redistribution prohibited.
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_static-${DISTVERSION}-oss
+WRKSRC=		${WRKDIR}/${PORTNAME}_static-${DISTVERSION}
 SKYPEDIR=	share/skype
 PORTDOCS=	LICENSE README
 PLIST_SUB+=	SKYPEDIR=${SKYPEDIR}
@@ -43,23 +38,44 @@ SUB_LIST+=	SKYPEDIR=${SKYPEDIR}
 
 .include <bsd.port.pre.mk>
 
-pre-fetch:
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"* * * * * * * * * * * * * * * * * * * * * * * * * * * *"
-	@${ECHO_MSG}	"ATTENTION!"
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"Skype requires at least linux_base-fc6"
-	@${ECHO_MSG}	"which is NOT default at this time."
-	@${ECHO_MSG}	"If you don't have that version or above installed,"
-	@${ECHO_MSG}	"hit 'control c' now!"
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"Please read ${PORTSDIR}/UPDATING 20080318"
-	@${ECHO_MSG}	"for update and install instructions."
-	@${ECHO_MSG}	"* * * * * * * * * * * * * * * * * * * * * * * * * * * *"
-	@${ECHO_MSG}	""
+.ifdef WITH_NVIDIA_GL
+RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
+USE_LINUX_APPS+=xorglibs
+.else
+USE_LINUX_APPS+=dri
+.endif
 
-do-build:
-	@${BRANDELF} -t Linux ${WRKSRC}/skype
+.ifdef WITH_VIDEO
+RUN_DEPENDS+=	webcamd>0:${PORTSDIR}/multimedia/webcamd
+USE_LINUX_APPS+=libv4l
+SUB_LIST+=	VIDEO="LD_PRELOAD=/usr/lib/libv4l/v4l2convert.so "
+. if ${OSVERSION} < 900036
+RUN_DEPENDS+=	linux_v4l2wrapper-kmod>=1.0:${PORTSDIR}/multimedia/linux_v4l2wrapper-kmod
+. endif
+.else
+SUB_LIST+=	VIDEO=""
+.endif
+
+### FIX ME, once they get bumped:
+# for 7: 704102
+# for 8: 802504
+# for HEAD: 900037
+# we need src/sys/dev/sound/pcm/dsp.c r221388
+IGNORE_MSG=	needs sys/dev/sound/pcm/dsp.c r221388 (and other changes).\
+		Please update your system post 
+.if ${OSVERSION} < 704102
+OUTDATED=	true
+IGNORE_MSG+=	r221584 / Sat May 7 09:33:37 2011 UTC
+.elif (${OSVERSION} > 800000 && ${OSVERSION} < 802503)
+OUTDATED=	true
+IGNORE_MSG+=	r221583 / Sat May 7 09:26:11 2011 UTC
+.elif (${OSVERSION} > 900000 && ${OSVERSION} < 900036)
+OUTDATED=	true
+IGNORE_MSG+=	r221388 / Tue May 3 15:50:22 2011 UTC
+.endif
+.ifdef OUTDATED
+IGNORE=	${IGNORE_MSG}
+.endif
 
 do-install:
 	@${INSTALL} -d ${PREFIX}/share/applications

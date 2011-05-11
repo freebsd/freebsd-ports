@@ -11,8 +11,8 @@
 PORTNAME=	skype
 PORTVERSION=	2.0.0.72
 PORTEPOCH=	1
-CATEGORIES=	net
-MASTER_SITES=	http://download.skype.com/linux/
+CATEGORIES=	net-im
+MASTER_SITES=	# the distfile is not available from vendor anymore
 DISTNAME=	skype_static-${DISTVERSION}-oss
 
 MAINTAINER=	itetcu@FreeBSD.org
@@ -25,9 +25,8 @@ USE_LINUX_APPS+=xorglibs
 USE_LINUX_APPS+=dri
 .endif
 
-BROKEN=		This is the last version of skype that works on FreeBSD, but the distfile is no longer available from the vendor, and won't be in the future. We are working on alternative solutions.
-DEPRECATED=	has been broken for a year
-EXPIRATION_DATE=2011-04-17
+DEPRECATED=	old version without many of the newer features; please try net-im/skype instead
+EXPIRATION_DATE=2011-12-01
 
 USE_BZIP2=	yes
 USE_LINUX=	yes
@@ -43,20 +42,24 @@ SUB_LIST+=	SKYPEDIR=${SKYPEDIR}
 
 .include <bsd.port.pre.mk>
 
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
+IGNORE=	is the last version of skype that has OSS support, but the distfile is no longer available from the vendor, and won't be in the future. If you have a copy of
+.endif
+
 pre-fetch:
+.if ${OSVERSION} < 800076
 	@${ECHO_MSG}	""
 	@${ECHO_MSG}	"* * * * * * * * * * * * * * * * * * * * * * * * * * * *"
 	@${ECHO_MSG}	"ATTENTION!"
 	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"Skype requires at least linux_base-fc6"
-	@${ECHO_MSG}	"which is NOT default at this time."
+	@${ECHO_MSG}	"Skype requires at least linux_base-fc10"
+	@${ECHO_MSG}	"which is NOT default on your system."
 	@${ECHO_MSG}	"If you don't have that version or above installed,"
-	@${ECHO_MSG}	"hit 'control c' now!"
-	@${ECHO_MSG}	""
-	@${ECHO_MSG}	"Please read ${PORTSDIR}/UPDATING 20080318"
-	@${ECHO_MSG}	"for update and install instructions."
+	@${ECHO_MSG}	"hit 'control c' now!, install it and come back."
 	@${ECHO_MSG}	"* * * * * * * * * * * * * * * * * * * * * * * * * * * *"
 	@${ECHO_MSG}	""
+	@sleep 10
+.endif
 
 do-build:
 	@${BRANDELF} -t Linux ${WRKSRC}/skype

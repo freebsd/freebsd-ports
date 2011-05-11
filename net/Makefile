@@ -1010,7 +1010,6 @@
     SUBDIR += sixxs-aiccu
     SUBDIR += skstream
     SUBDIR += skyfish
-    SUBDIR += skype
     SUBDIR += skype-devel
     SUBDIR += skystar2
     SUBDIR += sl2tps
