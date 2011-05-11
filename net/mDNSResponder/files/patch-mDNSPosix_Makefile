@@ -1,6 +1,6 @@
---- mDNSPosix/Makefile.orig	2009-02-03 03:44:06.000000000 +0800
-+++ mDNSPosix/Makefile	2010-08-17 23:23:31.000000000 +0800
-@@ -380,7 +380,7 @@
+--- mDNSPosix/Makefile.orig	2009-08-11 09:13:47.000000000 +0800
++++ mDNSPosix/Makefile	2011-01-11 11:51:28.000000000 +0800
+@@ -118,7 +118,7 @@
  LOCALBASE?=/usr/local
  INSTBASE=$(LOCALBASE)
  STARTUPSCRIPTNAME=mdns.sh
@@ -9,7 +9,7 @@
  # FreeBSD 4 requires threaded code to be compiled and linked using the "-pthread" option,
  # and requires that the "-lpthread" link option NOT be used
  # This appies only to FreeBSD -- "man cc" on FreeBSD says:
-@@ -473,7 +473,7 @@
+@@ -211,7 +211,7 @@
  
  all: setup Daemon libdns_sd Clients SAClient SAResponder SAProxyResponder Identify NetMonitor dnsextd $(OPTIONALTARG)
  
@@ -18,7 +18,7 @@
  
  # 'setup' sets up the build directory structure the way we want
  setup:
-@@ -514,10 +514,10 @@
+@@ -252,10 +252,10 @@
  	@$(LD) $(LINKOPTS) -o $@ $+
  	@$(STRIP) $@
  
@@ -31,7 +31,7 @@
  	@$(MAKE) -C ../Clients
  
  # nss_mdns target builds the Name Service Switch module
-@@ -592,7 +592,7 @@
+@@ -330,7 +330,7 @@
  	cp $< $@
  	chmod 444 $@
  
@@ -40,7 +40,7 @@
  	cp $< $@
  	chmod 444 $@
  
-@@ -744,6 +744,8 @@
+@@ -482,6 +482,8 @@
  $(BUILDDIR)/dnsextd:                 $(DNSEXTDOBJ) $(OBJDIR)/dnsextd.c.threadsafe.o
  	$(CC) $+ -o $@ $(LINKOPTS) $(LINKOPTS_PTHREAD)
  
