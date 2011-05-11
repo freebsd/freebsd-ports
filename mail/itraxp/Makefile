@@ -13,6 +13,8 @@ MASTER_SITES=	SF/${PORTNAME}l/${PORTNAME}%201.03/Itraxp%201.03%2020050513
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced Perl supporting FTN messages tracker
 
+BROKEN=		does not build
+
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
