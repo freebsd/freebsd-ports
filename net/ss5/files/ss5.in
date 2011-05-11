@@ -14,7 +14,7 @@
 
 name="ss5"
 rcvar=${name}_enable
-
+pidfile="/var/run/ss5/ss5.pid"
 command=%%PREFIX%%/sbin/${name}
 
 load_rc_config $name

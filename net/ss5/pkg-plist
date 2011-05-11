@@ -1,6 +1,6 @@
 @unexec if cmp -s %D/etc/ss5/ss5.ha %D/etc/ss5/ss5.ha.default; then rm -f %D/etc/ss5/ss5.ha; fi
 etc/ss5/ss5.ha.default
-@exec [ -f %B/ss5.ha ] || cp %B/%f %B/ss5.ha
+@exec if [ ! -f %D/etc/ss5/ss5.ha ]; then cp %B/%f %D/etc/ss5/ss5.ha; fi
 etc/ss5/ss5.conf
 etc/ss5/ss5.passwd
 lib/ss5/mod_authentication.so
@@ -15,6 +15,7 @@ lib/ss5/mod_socks4.so
 lib/ss5/mod_socks5.so
 lib/ss5/mod_statistics.so
 sbin/ss5
+sbin/ss5srv
 %%DATADIR%%/SS5Logo.jpg
 %%DATADIR%%/balamgr.cgi
 %%DATADIR%%/statmgr.cgi
