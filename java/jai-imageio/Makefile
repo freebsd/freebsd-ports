@@ -21,7 +21,7 @@ NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386
 
-RESTRICTED=	"Redistribution is not permitted"
+RESTRICTED=	Redistribution is not permitted
 
 DOWNLOAD_URL=	http://java.sun.com/products/java-media/jai/downloads/download-iio.html
 
@@ -32,7 +32,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-IGNORE=		"You must manually fetch the \"Linux Install\" distribution \(${DISTNAME}${EXTRACT_SUFX}\) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again"
+IGNORE=		you must manually fetch the "Linux Install" distribution (${DISTNAME}${EXTRACT_SUFX}) from ${DOWNLOAD_URL}, place it in ${DISTDIR} and then run make again
 .endif
 
 .if ${JAVA_PORT_OS} == "native"
@@ -48,14 +48,15 @@ PLIST_SUB+=	INSTALL_IN_JRE=""
 
 pre-install:
 .if defined(NOINSTALL_IN_JRE)
-		@${SED} -e "s:%%TARGET_DIR%%:${TARGET_DIR}:g" ${MASTERDIR}/pkg-message-jre > ${PKGMESSAGE}
+SUB_FILES=	pkg-message-jre
+SUB_LIST=	TARGET_DIR=${TARGET_DIR}
 .endif
 .if defined(WITH_PLUGINWRAPPER)
+SUB_FILES=	pkg-message-libmap
 .if defined(NOINSTALL_IN_JRE)
-		@${ECHO_CMD} >> ${PKGMESSAGE}
-		@${SED} -e "s:%%LIBDIR%%:${TARGET_DIR}/lib:g" ${MASTERDIR}/pkg-message-libmap >> ${PKGMESSAGE}
+SUB_LIST=	LIBDIR=${TARGET_DIR}/lib
 .else
-		@${SED} -e "s:%%LIBDIR%%:${JAVA_HOME}/jre/lib/i386:g" ${MASTERDIR}/pkg-message-libmap > ${PKGMESSAGE}
+SUB_LIST=	LIBDIR=${JAVA_HOME}/jre/lib/i386
 .endif
 .endif
 
