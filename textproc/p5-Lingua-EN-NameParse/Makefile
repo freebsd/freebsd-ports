@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Lingua-EN-NameParse
-PORTVERSION=	1.27
+PORTVERSION=	1.30
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,7 +19,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Lingua::EN::NameGrammar.3 \
-	Lingua::EN::NameParse.3
+MAN3=		Lingua::EN::NameParse.3 \
+		Lingua::EN::NameParse::Grammar.3
 
 .include <bsd.port.mk>
