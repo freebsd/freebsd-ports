@@ -7,6 +7,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	3.4.0
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gnu.org/gnu/octave/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/bleeding-edge/
@@ -32,7 +33,8 @@ LIB_DEPENDS=	glpk.28:${PORTSDIR}/math/glpk \
 		ftgl:${PORTSDIR}/graphics/ftgl \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick \
-		curl:${PORTSDIR}/ftp/curl
+		curl:${PORTSDIR}/ftp/curl \
+		hdf5:${PORTSDIR}/science/hdf5-18
 
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
@@ -43,15 +45,7 @@ GNU_CONFIGURE=	yes
 INFO=		octave liboctave OctaveFAQ
 MAN1=		octave.1 mkoctfile.1 octave-config.1
 
-OPTIONS=	LEGACY_HDF5 "Build with HDF5 v1.6 (otherwise with HDF5 v1.8)" on
-
 .include <bsd.port.pre.mk>
-
-.if defined(WITHOUT_LEGACY_HDF5)
-LIB_DEPENDS+=	hdf5:${PORTSDIR}/science/hdf5-18
-.else
-LIB_DEPENDS+=	hdf5:${PORTSDIR}/science/hdf5
-.endif
 
 USE_BLAS?=	reference
 
