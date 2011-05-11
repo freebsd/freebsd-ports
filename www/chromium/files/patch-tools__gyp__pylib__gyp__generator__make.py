@@ -1,5 +1,5 @@
---- tools/gyp/pylib/gyp/generator/make.py.orig	2011-03-01 10:47:14.000000000 +0100
-+++ tools/gyp/pylib/gyp/generator/make.py	2011-03-01 21:25:10.000000000 +0100
+--- tools/gyp/pylib/gyp/generator/make.py.orig	2011-04-26 11:14:32.000000000 +0300
++++ tools/gyp/pylib/gyp/generator/make.py	2011-05-04 21:12:47.761273429 +0300
 @@ -114,7 +114,7 @@
  #   export LINK="$(CXX)"
  #
@@ -30,3 +30,12 @@
  ARFLAGS.host := %(ARFLAGS.host)s
  
  # Flags to make gcc output dependency info.  Note that you need to be
+@@ -249,7 +249,7 @@
+ # so we can check their command lines.
+ #   $? -- new prerequisites
+ #   $| -- order-only dependencies
+-prereq_changed = $(filter-out $|,$?)
++prereq_changed = $(filter-out FORCE_DO_CMD $|,$?)
+ 
+ # do_cmd: run a command via the above cmd_foo names, if necessary.
+ # Should always run for a given target to handle command-line changes.

@@ -1,5 +1,5 @@
---- net/proxy/proxy_config_service_linux.cc.orig	2011-04-04 10:01:16.000000000 +0200
-+++ net/proxy/proxy_config_service_linux.cc	2011-04-11 00:23:55.000000000 +0200
+--- net/proxy/proxy_config_service_linux.cc.orig	2011-04-26 11:01:15.000000000 +0300
++++ net/proxy/proxy_config_service_linux.cc	2011-05-04 23:52:01.546273478 +0300
 @@ -12,7 +12,13 @@
  #include <limits.h>
  #include <stdio.h>
@@ -23,7 +23,7 @@
          auto_no_pac_(false), reversed_bypass_list_(false),
          env_var_getter_(env_var_getter), file_loop_(NULL) {
      // This has to be called on the UI thread (http://crbug.com/69057).
-@@ -492,33 +498,37 @@
+@@ -492,35 +498,43 @@
    }
  
    virtual ~GConfSettingGetterImplKDE() {
@@ -61,7 +61,10 @@
      }
 -    int flags = fcntl(inotify_fd_, F_GETFL);
 -    if (fcntl(inotify_fd_, F_SETFL, flags | O_NONBLOCK) < 0) {
++#if !defined(OS_FREEBSD)
 +    int flags = fcntl(notify_fd_, F_GETFL);
++    
++    // This call to fcntl returns ENOTTY on FreeBSD.
 +    if (fcntl(notify_fd_, F_SETFL, flags | O_NONBLOCK) < 0) {
        PLOG(ERROR) << "fcntl failed";
 -      close(inotify_fd_);
@@ -70,8 +73,11 @@
 +      notify_fd_ = -1;
        return false;
      }
++#endif
      file_loop_ = file_loop;
-@@ -529,28 +539,41 @@
+     // The initial read is done on the current thread, not |file_loop_|,
+     // since we will need to have it for SetupAndFetchInitialConfig().
+@@ -529,28 +543,42 @@
    }
  
    void Shutdown() {
@@ -92,14 +98,15 @@
 +    DCHECK(notify_fd_ >= 0);
      DCHECK(file_loop_);
 +#if defined(OS_FREEBSD)
-+    // catch the deletion event of kioslaverc
-+    int kioslavercfd = open(kde_config_dir_.Append("kioslaverc").value().c_str(), O_RDONLY);
-+    if (kioslavercfd == -1)
++    // Catch the deletion event of kioslaverc.
++    int fd = open(kde_config_dir_.Append("kioslaverc").value().c_str(),
++                  O_RDONLY);
++    if (fd == -1)
 +      return false;
 +
 +    struct kevent ke;
-+    EV_SET(&ke, kioslavercfd, EVFILT_VNODE, EV_ADD | EV_ONESHOT, NOTE_DELETE | NOTE_RENAME, 0, NULL);
-+
++    EV_SET(&ke, fd, EVFILT_VNODE, (EV_ADD | EV_CLEAR),
++           (NOTE_DELETE | NOTE_RENAME), 0, NULL);
 +    if (kevent(notify_fd_, &ke, 1, NULL, 0, NULL) == -1)
 +      return false;
 +#else
@@ -121,7 +128,7 @@
    }
  
    virtual MessageLoop* GetNotificationLoop() {
-@@ -559,7 +582,7 @@
+@@ -559,7 +587,7 @@
  
    // Implement base::MessagePumpLibevent::Delegate.
    void OnFileCanReadWithoutBlocking(int fd) {
@@ -130,35 +137,44 @@
      DCHECK(MessageLoop::current() == file_loop_);
      OnChangeNotification();
    }
-@@ -830,12 +853,24 @@
+@@ -830,12 +858,28 @@
    // from the inotify file descriptor and starts up a debounce timer if
    // an event for kioslaverc is seen.
    void OnChangeNotification() {
 -    DCHECK(inotify_fd_ >= 0);
 +    DCHECK(notify_fd_ >= 0);
      DCHECK(MessageLoop::current() == file_loop_);
+-    char event_buf[(sizeof(inotify_event) + NAME_MAX + 1) * 4];
+     bool kioslaverc_touched = false;
 +#if defined(OS_FREEBSD)
-+    bool kioslaverc_touched = true;
++    // TODO(gliaskos): We never get here so we don't get events when the
++    // KDE proxy settings change. Find out why :/
 +    struct kevent ke;
-+    if (kevent(notify_fd_, NULL, 0, &ke, 1, NULL) == -1) {
-+      LOG(ERROR) << "kevent() failure: no longer watching kioslaverc";
++    int rv = kevent(notify_fd_, NULL, 0, &ke, 1, NULL);
++    
++    if (rv != -1) {
++      kioslaverc_touched = true;
++    } else {
++      LOG(ERROR) << "kevent() failure; no longer watching kioslaverc!";
 +      notify_watcher_.StopWatchingFileDescriptor();
 +      close(notify_fd_);
 +      notify_fd_ = -1;
-+      kioslaverc_touched = false;
 +    }
 +    close(ke.ident);
 +#else
-     char event_buf[(sizeof(inotify_event) + NAME_MAX + 1) * 4];
-     bool kioslaverc_touched = false;
++    char event_buf[(sizeof(inotify_event) + NAME_MAX + 1) * 4];
      ssize_t r;
 -    while ((r = read(inotify_fd_, event_buf, sizeof(event_buf))) > 0) {
 +    while ((r = read(notify_fd_, event_buf, sizeof(event_buf))) > 0) {
        // inotify returns variable-length structures, which is why we have
        // this strange-looking loop instead of iterating through an array.
        char* event_ptr = event_buf;
-@@ -865,9 +900,9 @@
-         // large), but if it does we'd warn continuously since |inotify_fd_|
+@@ -862,14 +906,15 @@
+       if (errno == EINVAL) {
+         // Our buffer is not large enough to read the next event. This should
+         // not happen (because its size is calculated to always be sufficiently
+-        // large), but if it does we'd warn continuously since |inotify_fd_|
++        // large), but if it does we'd warn continuously since |notify_fd_|
          // would be forever ready to read. Close it and stop watching instead.
          LOG(ERROR) << "inotify failure; no longer watching kioslaverc!";
 -        inotify_watcher_.StopWatchingFileDescriptor();
@@ -169,8 +185,11 @@
 +        notify_fd_ = -1;
        }
      }
++#endif
      if (kioslaverc_touched) {
-@@ -883,8 +918,8 @@
+       // We don't use Reset() because the timer may not yet be running.
+       // (In that case Stop() is a no-op.)
+@@ -883,8 +928,8 @@
    typedef std::map<std::string, std::string> string_map_type;
    typedef std::map<std::string, std::vector<std::string> > strings_map_type;
  
