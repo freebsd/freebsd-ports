@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	fwbuilder
-DISTVERSION=	4.2.0
+DISTVERSION=	4.2.1
 PORTVERSION=	${DISTVERSION}
 CATEGORIES=	security
-BUILD=		3530
+BUILD=		3540
 .if defined(DEVEL)
 MASTER_SITES=	http://www.fwbuilder.org/nightly_builds/fwbuilder-4.0/build-${BUILD}/
 PKGNAMESUFFIX=	-devel
