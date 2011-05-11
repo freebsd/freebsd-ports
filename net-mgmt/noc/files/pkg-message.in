@@ -4,16 +4,12 @@
 
    noc_enable="YES"
 
- Configuration defaults are available in %%NOCDIR%%/etc as *.defaults
- files.  Copy them to *.cfg files where required and
- edit to suit your needs.
-
  Don't forget create DB in postgresql (see Documentation for NOC).
  and run createlang after createdb:
    createlang plpgsql noc
 
  After create db (or if you updating from previous version) please
- don't forget run following commnds under user '%%NOCUSER%%':
+ run following commnds under user '%%NOCUSER%%':
    cd %%NOCDIR%%
    ./scripts/post-update
 
