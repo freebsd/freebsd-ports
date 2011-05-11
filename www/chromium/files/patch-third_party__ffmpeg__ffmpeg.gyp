@@ -1,5 +1,5 @@
---- third_party/ffmpeg/ffmpeg.gyp.orig	2011-04-26 11:02:53.000000000 +0300
-+++ third_party/ffmpeg/ffmpeg.gyp	2011-04-29 01:18:16.629475671 +0300
+--- third_party/ffmpeg/ffmpeg.gyp.orig	2011-05-08 00:21:12.884604466 +0300
++++ third_party/ffmpeg/ffmpeg.gyp	2011-05-08 00:23:54.819604306 +0300
 @@ -50,7 +50,7 @@
        }, {
          'ffmpeg_config%': '<(target_arch)',
@@ -39,16 +39,14 @@
                  'obj_format': 'elf',
                  'conditions': [
                    [ 'target_arch=="ia32"', {
-@@ -720,6 +730,12 @@
-               },
-             }],
- 
-+            ['OS=="freebsd" and use_system_vpx==1', {
-+              'include_dirs': [
-+                '/usr/local/include',
-+              ],
-+            }],
-+
-             ['use_system_vpx==0', {
+@@ -754,6 +764,10 @@
                'include_dirs': [
-                 # TODO(fischman): when both mac & linux are building from
+                 'config',
+                 'patched-ffmpeg-mt',
++                # gliaskos: The following include is needed for libvpx,
++                # should remain _after_ patched-ffmpeg-mt or else
++                # ffmpeg_stubs.cc picks up system headers. 
++                '/usr/local/include',
+               ],
+               'direct_dependent_settings': {
+                 'include_dirs': [
