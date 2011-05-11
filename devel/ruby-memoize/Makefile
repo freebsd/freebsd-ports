@@ -16,7 +16,6 @@ DIST_SUBDIR=	${RUBY_PKGNAMEPREFIX:S|${RUBY_SUFFIX}-||}
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A method that speeds methods up at the cost of memory
 
-USE_RUBY=	yes
 FETCH_ARGS=	-Fpr
 
 USE_RUBY=	yes
