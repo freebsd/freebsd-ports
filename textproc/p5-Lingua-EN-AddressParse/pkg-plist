@@ -1,8 +1,9 @@
-%%SITE_PERL%%/Lingua/EN/AddressGrammar.pm
 %%SITE_PERL%%/Lingua/EN/AddressParse.pm
+%%SITE_PERL%%/Lingua/EN/AddressParse/Grammar.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/AddressParse/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN/AddressParse
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua/EN
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Lingua
+@dirrm %%SITE_PERL%%/Lingua/EN/AddressParse
 @dirrmtry %%SITE_PERL%%/Lingua/EN
 @dirrmtry %%SITE_PERL%%/Lingua
