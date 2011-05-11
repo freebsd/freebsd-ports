@@ -1,6 +1,6 @@
---- mDNSShared/CommonServices.h.orig	2009-03-31 04:51:29.000000000 +0900
-+++ mDNSShared/CommonServices.h	2010-01-21 16:07:24.000000000 +0900
-@@ -92,6 +92,15 @@
+--- mDNSShared/CommonServices.h.orig	2009-08-11 09:13:47.000000000 +0800
++++ mDNSShared/CommonServices.h	2011-01-11 11:51:28.000000000 +0800
+@@ -54,6 +54,15 @@
  	#endif
  #endif
  
@@ -16,7 +16,7 @@
  // Linux
  
  #if( !defined( TARGET_OS_LINUX ) )
-@@ -128,7 +137,7 @@
+@@ -90,7 +99,7 @@
  	
  	// No predefined macro for VxWorks so just assume VxWorks if nothing else is set.
  	
@@ -25,7 +25,7 @@
  		#define	TARGET_OS_VXWORKS		1
  	#else
  		#define	TARGET_OS_VXWORKS		0
-@@ -217,6 +226,15 @@
+@@ -179,6 +188,15 @@
  	#include	<libkern/OSTypes.h>
  	#include	<sys/types.h>
  	
@@ -41,7 +41,7 @@
  #elif( TARGET_OS_LINUX )
  	
  	// Linux
-@@ -493,7 +511,7 @@
+@@ -455,7 +473,7 @@
  // - Windows
  
  #if( TARGET_LANGUAGE_C_LIKE )

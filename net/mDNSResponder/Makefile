@@ -1,14 +1,12 @@
-# ex:ts=8
 # Ports collection makefile for:  mDNSResponder
-# Date created:			  Tues Mar 2, 2004
-# Whom:				  Alfred Perlstein <alfred@freebsd.org>
+# Date created:		Tues Mar 2, 2004
+# Whom:			Alfred Perlstein <alfred@freebsd.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	mDNSResponder
-PORTVERSION=	214.3.2
-PORTREVISION=	1
+PORTVERSION=	258.14
 CATEGORIES=	net dns
 MASTER_SITES=	http://opensource.apple.com/tarballs/mDNSResponder/
 

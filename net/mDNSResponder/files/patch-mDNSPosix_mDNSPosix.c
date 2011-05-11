@@ -1,6 +1,6 @@
---- mDNSPosix/mDNSPosix.c.orig	2009-01-25 04:16:46.000000000 +0100
-+++ mDNSPosix/mDNSPosix.c	2010-06-20 21:03:33.000000000 +0200
-@@ -581,7 +581,7 @@
+--- mDNSPosix/mDNSPosix.c.orig	2010-05-21 06:35:08.000000000 +0800
++++ mDNSPosix/mDNSPosix.c	2011-01-11 11:51:28.000000000 +0800
+@@ -467,7 +467,7 @@
  	{
  	char line[256];
  	char nameserver[16];
@@ -9,7 +9,7 @@
  	int  numOfServers = 0;
  	FILE *fp = fopen(filePath, "r");
  	if (fp == NULL) return -1;
-@@ -600,6 +600,7 @@
+@@ -486,6 +486,7 @@
  			numOfServers++;
  			}
  		}  
