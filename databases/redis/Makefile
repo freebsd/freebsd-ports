@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	redis
-PORTVERSION=	2.2.5
+PORTVERSION=	2.2.7
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
@@ -22,25 +22,19 @@ USE_RC_SUBR=	redis.sh
 BIN_FILES=	redis-benchmark redis-check-aof redis-check-dump \
 		redis-cli redis-server
 
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-install
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-REDIS_USER?=	redis
-REDIS_UID?=	535
-REDIS_GROUP?=	redis
-REDIS_GID?=	535
+USERS=	redis
+GROUPS=	redis
 
 REDIS_DBDIR?=	/var/db/redis
 REDIS_RUNDIR?=	/var/run/redis
 REDIS_LOGDIR?=	/var/log/redis
 
-SUB_FILES=	pkg-message pkg-install
+SUB_FILES=	pkg-message
 SUB_LIST+=	PORTNAME="${PORTNAME}" \
-	REDIS_USER="${REDIS_USER}" \
-	REDIS_UID="${REDIS_UID}" \
-	REDIS_GROUP="${REDIS_GROUP}" \
-	REDIS_GID="${REDIS_GID}" \
+	REDIS_USER="${USERS}" \
+	REDIS_GROUP="${GROUPS}" \
 	REDIS_LOGDIR="${REDIS_LOGDIR}" \
 	REDIS_DBDIR="${REDIS_DBDIR}" \
 	REDIS_RUNDIR="${REDIS_RUNDIR}"
@@ -50,9 +44,7 @@ post-build:
 		${WRKSRC}/redis.conf > ${WRKDIR}/redis.conf
 
 do-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	${INSTALL_PROGRAM} ${BIN_FILES:C!^!${WRKSRC}/src/!} ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKDIR}/redis.conf ${PREFIX}/etc/redis.conf.sample
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
