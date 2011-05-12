@@ -1,0 +1,14 @@
+Check Email Delivery is a plugin for Nagios that allows you to
+check functionality within your email environment.
+
+Some typical uses of this plugin include:
+* check SMTP server
+* check IMAP server
+* check email delivery loop
+* check auto-responder function
+* keep an eye on email lag
+* monitor automated mailboxes
+* aggregate check results of multiple plugins
+* check email-to-FTP or other special email gateways
+
+WWW: http://buhacoff.net/software/check_email_delivery/
