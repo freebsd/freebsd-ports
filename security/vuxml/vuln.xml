@@ -1190,8 +1190,7 @@ Note:  Please add new entries to the beginning of this file.
 	    This vulnerability is being exploited in the wild
 	    and users should immediately upgrade to 2.2.5 or
 	    later.  Mitigation steps for users that have been
-	    compromised have been posted to the <a
-	      href="http://forum.pivotx.net/viewtopic.php?f=2&amp;t=1967">PivotX
+	    compromised have been posted to the <a href="http://forum.pivotx.net/viewtopic.php?f=2&amp;t=1967">PivotX
 	    Support Community</a>.</p>
 	</blockquote>
       </body>
@@ -1829,7 +1828,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="dc9f8335-2b3b-11e0-a91b-00e0815b8da8">
-    <topic>isc-dhcp-server -- </topic>
+    <topic>isc-dhcp-server -- DHCPv6 crash</topic>
     <affects>
       <package>
 	<name>isc-dhcp41-server</name>
@@ -1936,8 +1935,7 @@ Note:  Please add new entries to the beginning of this file.
 	    This only affects users who have enabled the XMLRPC
 	    interface (default is off) and have enabled XMLRPC
 	    access for users who can't access/write all content
-	    anyway (default is nobody, see <a
-	      href="http://www.dokuwiki.org/config:xmlrpcuser">http://www.dokuwiki.org/config:xmlrpcuser</a>
+	    anyway (default is nobody, see <a href="http://www.dokuwiki.org/config:xmlrpcuser">http://www.dokuwiki.org/config:xmlrpcuser</a>
 	    for details).</p>
 	  <p>This update also includes a fix for a problem in
 	    the general ACL checking function that could be exploited
@@ -1994,7 +1992,6 @@ Note:  Please add new entries to the beginning of this file.
       <entry>2011-01-19</entry>
     </dates>
   </vuln>
-
 
   <vuln vid="2c2d4e83-2370-11e0-a91b-00e0815b8da8">
     <topic>tarsnap -- cryptographic nonce reuse</topic>
@@ -2786,7 +2783,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="b2a6fc0e-070f-11e0-a6e9-00215c6a37bb">
-    <cancelled />
+    <cancelled/>
   </vuln>
 
   <vuln vid="1d8ff4a2-0445-11e0-8e32-000f20797ede">
@@ -3980,7 +3977,6 @@ Note:  Please add new entries to the beginning of this file.
       <p>The vulnerability is caused due to an integer overflow in the
         "BZ2_decompress()" function in decompress.c and can be exploited to
         cause a crash or potentially execute arbitrary code.</p>
-      <p></p>
     </blockquote>
       </body>
     </description>
