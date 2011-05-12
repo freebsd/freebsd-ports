@@ -45,6 +45,43 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/stack_context.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/stack_context.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/stack_context.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/simple_httpclient.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/simple_httpclient.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/simple_httpclient.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/ca-certificates.crt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/README
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/escape_test.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/escape_test.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/escape_test.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/httpserver_test.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/httpserver_test.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/httpserver_test.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/ioloop_test.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/ioloop_test.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/ioloop_test.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/iostream_test.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/iostream_test.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/iostream_test.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/runtests.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/runtests.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/runtests.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/simple_httpclient_test.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/simple_httpclient_test.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/simple_httpclient_test.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/stack_context_test.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/stack_context_test.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/stack_context_test.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/test.crt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/test.key
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/testing_test.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/testing_test.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/testing_test.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/web_test.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/web_test.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test/web_test.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/template.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/template.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/template.pyo
@@ -63,6 +100,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/wsgi.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/wsgi.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/wsgi.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado/test
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/tornado
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
