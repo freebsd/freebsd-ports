@@ -9,7 +9,7 @@ PORTNAME=	mtasc
 PORTVERSION=	1.14
 PORTREVISION=	1
 CATEGORIES=	lang www
-MASTER_SITES=	http://saper.info/distfiles/ LOCAL/chinsan
+MASTER_SITES=	LOCAL/chinsan
 
 MAINTAINER=	saper@saper.info
 COMMENT=	Motion-Twin ActionScript 2 Compiler
