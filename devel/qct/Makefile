@@ -15,6 +15,8 @@ MASTER_SITES=	http://qct.sourceforge.net/ \
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	QCT GUI commit tool
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
