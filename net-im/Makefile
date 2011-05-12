@@ -160,6 +160,7 @@
     SUBDIR += sim-im
     SUBDIR += sim-im-devel
     SUBDIR += skype
+    SUBDIR += skype-devel
     SUBDIR += skype20
     SUBDIR += skype12
     SUBDIR += tapioca-qt
