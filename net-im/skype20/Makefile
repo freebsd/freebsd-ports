@@ -18,6 +18,8 @@ DISTNAME=	skype_static-${DISTVERSION}-oss
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	P2P VoIP software
 
+LATEST_LINK=	skype20
+
 .ifdef WITH_NVIDIA_GL
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
 USE_LINUX_APPS+=xorglibs
