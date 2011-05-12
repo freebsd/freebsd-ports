@@ -40,3 +40,16 @@
  #else
  #define DEFAULT_DIR "C:\\ASTROLOG"
  #endif
+@@ -1046,9 +1050,9 @@
+ */
+ 
+ #define byte  unsigned char
+-#define word  unsigned short
+-#define dword unsigned long
+-#define word4 long
++#define word  u_int16_t
++#define dword u_int32_t
++#define word4 int32_t
+ #define real  double
+ #define _char unsigned char
+ #define _int  unsigned int
