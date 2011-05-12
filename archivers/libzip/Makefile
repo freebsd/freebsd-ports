@@ -15,6 +15,7 @@ COMMENT=	A C library for reading, creating, and modifying zip archives
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
+MAKE_ENV=	LC_ALL="C"
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
