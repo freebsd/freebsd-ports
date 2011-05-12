@@ -24,6 +24,7 @@ COMMENT=	Formats an ascii file for printing on a postscript printer
 LICENSE=	GPLv2
 
 USE_PERL5=	yes
+USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAN1=		a2ps.1 ogonkify.1 card.1 psmandup.1 fixps.1 pdiff.1 psset.1 texi2dvi4a2ps.1
