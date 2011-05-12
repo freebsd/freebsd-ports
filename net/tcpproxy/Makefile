@@ -7,6 +7,7 @@
 
 PORTNAME=	tcpproxy
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://www.spreadspace.org/tcpproxy/releases/ \
 		http://alex.bmg.gv.at/programs/

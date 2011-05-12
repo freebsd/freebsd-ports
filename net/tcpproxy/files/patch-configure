@@ -1,0 +1,13 @@
+--- configure.org	2011-05-04 20:30:40.000000000 +0200
++++ configure	2011-05-04 20:31:06.000000000 +0200
+@@ -29,8 +29,8 @@
+ TARGET=`uname -s`
+ EBUILD_COMPAT=0
+ 
+-CFLAGS='-g -O2'
+-LDFLAGS='-g -Wall -O2'
++CFLAGS="${CFLAGS} -g -O2"
++LDFLAGS="${LDFLAGS} -g -Wall -O2"
+ 
+ PREFIX='/usr/local'
+ BINDIR=''
