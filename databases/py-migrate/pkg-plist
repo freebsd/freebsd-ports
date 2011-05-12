@@ -40,12 +40,12 @@ bin/migrate-repository
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/changeset/databases/visitor.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/changeset/databases/visitor.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/changeset/databases/visitor.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/changeset/exceptions.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/changeset/exceptions.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/changeset/exceptions.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/changeset/schema.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/changeset/schema.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/changeset/schema.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/exceptions.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/exceptions.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/exceptions.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/tests/__init__.pyo
@@ -76,6 +76,9 @@ bin/migrate-repository
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/tests/fixture/shell.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/tests/fixture/shell.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/tests/fixture/shell.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/tests/fixture/warnings.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/tests/fixture/warnings.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/tests/fixture/warnings.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/tests/integrated/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/tests/integrated/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/tests/integrated/__init__.pyo
@@ -142,9 +145,6 @@ bin/migrate-repository
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/versioning/config.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/versioning/config.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/versioning/config.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/versioning/exceptions.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/versioning/exceptions.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/versioning/exceptions.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/versioning/genmodel.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/versioning/genmodel.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/migrate/versioning/genmodel.pyo
