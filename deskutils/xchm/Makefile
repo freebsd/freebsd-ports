@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xchm
-PORTVERSION=	1.18
+PORTVERSION=	1.20
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/xCHM/${PORTNAME}-${PORTVERSION}
 
@@ -19,11 +19,20 @@ GNU_CONFIGURE=	yes
 USE_WX=		2.6+
 WX_UNICODE=	yes
 WX_CONF_ARGS=	absolute
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS=	"-I${LOCALBASE}/include"
 
 LICENSE=	GPLv2
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|@REZ_COMMAND@||' ${WRKSRC}/src/Makefile.in
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.mk>
