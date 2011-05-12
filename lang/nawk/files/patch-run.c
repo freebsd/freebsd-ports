@@ -1,6 +1,6 @@
---- run.c.orig	2009-11-26 23:59:16.000000000 +0000
-+++ run.c	2010-04-29 22:50:49.000000000 +0000
-@@ -1504,20 +1504,78 @@
+--- run.c.orig	2011-04-30 20:09:59.000000000 +0000
++++ run.c	2011-05-08 11:35:23.000000000 +0000
+@@ -1506,13 +1506,71 @@
  			nextarg = nextarg->nnext;
  		}
  		break;
@@ -74,11 +74,12 @@
  		break;
  	case FSRAND:
  		if (isrec(x))	/* no argument provided */
- 			u = time((time_t *)0);
+@@ -1520,7 +1578,7 @@
  		else
  			u = getfval(x);
+ 		tmp = u;
 -		srand((unsigned int) u);
 +		srandom((unsigned int) u);
+ 		u = srand_seed;
+ 		srand_seed = tmp;
  		break;
- 	case FTOUPPER:
- 	case FTOLOWER:

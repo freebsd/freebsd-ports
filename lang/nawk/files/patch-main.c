@@ -1,5 +1,5 @@
---- main.c.orig	2007-05-01 16:05:28.000000000 -0500
-+++ main.c	2008-07-08 15:33:37.000000000 -0500
+--- main.c.orig	2011-05-06 12:27:59.000000000 +0000
++++ main.c	2011-05-08 11:25:32.000000000 +0000
 @@ -34,6 +34,8 @@
  #include "awk.h"
  #include "ytab.h"
@@ -9,11 +9,11 @@
  extern	char	**environ;
  extern	int	nfields;
  
-@@ -67,6 +69,7 @@
+@@ -68,6 +70,7 @@
  		exit(1);
  	}
  	signal(SIGFPE, fpecatch);
 +	feenableexcept(FE_DIVBYZERO|FE_INEXACT|FE_OVERFLOW);
- 	yyin = NULL;
- 	symtab = makesymtab(NSYMTAB/NSYMTAB);
- 	while (argc > 1 && argv[1][0] == '-' && argv[1][1] != '\0') {
+ 
+ 	srand_seed = 1;
+ 	srand(srand_seed);
