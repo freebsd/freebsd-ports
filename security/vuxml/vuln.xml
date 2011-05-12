@@ -3068,13 +3068,19 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>chromium</name>
-	<range><lt>11.0.696.57</lt></range>
+	<range><lt>11.0.696.68</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
 	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>Fixed in 11.0.696.68:<br/>
+	    [64046] High CVE-2011-1799: Bad casts in Chromium WebKit glue.
+	      Credit to Google Chrome Security Team (SkyLined).<br/>
+	    [80608] High CVE-2011-1800: Integer overflows in SVG filters.
+	      Credit to Google Chrome Security Team (Cris Neckar).</p>
+
 	  <p>Fixed in 11.0.696.57:<br/>
 	    [61502] High CVE-2011-1303: Stale pointer in floating object
 	      handling. Credit to Scott Hess of the Chromium development
@@ -3439,11 +3445,13 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2011-1454</cvename>
       <cvename>CVE-2011-1455</cvename>
       <cvename>CVE-2011-1456</cvename>
+      <cvename>CVE-2011-1799</cvename>
+      <cvename>CVE-2011-1800</cvename>
     </references>
     <dates>
       <discovery>2010-10-19</discovery>
       <entry>2010-12-07</entry>
-      <modified>2011-04-30</modified>
+      <modified>2011-05-12</modified>
     </dates>
   </vuln>
 
