@@ -76,7 +76,7 @@ CUPS_SUFFIX=	-client
 CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
 .else
-PORTREVISION=	2
+PORTREVISION=	4
 CUPS_SUFFIX=	-base
 CONFLICTS+=	cupsddk-*
 .endif
