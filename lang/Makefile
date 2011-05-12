@@ -363,6 +363,7 @@
     SUBDIR += tuareg-mode.el
     SUBDIR += twelf
     SUBDIR += ucc
+    SUBDIR += v8
     SUBDIR += vala
     SUBDIR += vala-vapigen
     SUBDIR += visualworks
