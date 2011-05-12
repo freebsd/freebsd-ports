@@ -1,0 +1,3 @@
+#!/compat/linux/bin/sh
+%%VIDEO%%%%PREFIX%%/%%SKYPEDIR%%/skype --resources=%%PREFIX%%/%%SKYPEDIR%% $@
+

@@ -2177,3 +2177,4 @@ devel/hs-uvector-algorithms||2011-05-08|Removed: It is deprecated by devel/hs-ve
 devel/jude-community|devel/astah-community|2011-05-09|Project was renamed
 net/skype12|net-im/skype12|2011-05-09|Moved to better category
 net/skype|net-im/skype|2011-05-09|Moved to better category
+net/skype-devel|net-im/skype-devel|2011-05-12|Moved to better category
