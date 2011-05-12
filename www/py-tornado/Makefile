@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	tornado
-PORTVERSION=	1.1
+PORTVERSION=	1.2.1
 CATEGORIES=	www python
-MASTER_SITES=	http://github.com/downloads/facebook/tornado/
+MASTER_SITES=	CHEESESHOP \
+		http://github.com/downloads/facebook/tornado/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DIST_SUBDIR=	python
 
 MAINTAINER=	khsing.cn@gmail.com
 COMMENT=	Python Web Server from FriendFeed
