@@ -8,7 +8,7 @@
 PORTNAME=	adabooch
 PORTVERSION=	20030309
 CATEGORIES=	devel
-MASTER_SITES=	http://www.adapower.net/booch/download/
+MASTER_SITES=	${MASTER_SITE}
 DISTNAME=	bc-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
