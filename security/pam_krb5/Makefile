@@ -8,7 +8,8 @@
 PORTNAME=		pam_krb5
 PORTVERSION=		4.4
 CATEGORIES=		security
-MASTER_SITES=		http://archives.eyrie.org/software/kerberos/
+MASTER_SITES=		http://archives.eyrie.org/software/kerberos/ \
+			http://archives.eyrie.org/software/ARCHIVE/pam-krb5/
 DISTNAME=		pam-krb5-${PORTVERSION:S/.r/-rc/}
 
 MAINTAINER=		cy@FreeBSD.org
