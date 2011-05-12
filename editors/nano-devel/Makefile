@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nano
-PORTVERSION=	2.3.0
-PORTREVISION=	1
+PORTVERSION=	2.3.1
 CATEGORIES=	editors
 MASTER_SITES=	http://www.nano-editor.org/dist/v${PORTVERSION:R}/ \
 		http://www.ewtoo.org/~astyanax/nano/dist/v${PORTVERSION:R}/
@@ -20,8 +19,6 @@ COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
 CONFLICTS=	nano-2*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
