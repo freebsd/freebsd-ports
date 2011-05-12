@@ -2957,6 +2957,7 @@
     SUBDIR += py-resourcepackage
     SUBDIR += py-reverse
     SUBDIR += py-rlcompleter2
+    SUBDIR += py-rope
     SUBDIR += py-roxlib
     SUBDIR += py-rtree
     SUBDIR += py-ruledispatch
