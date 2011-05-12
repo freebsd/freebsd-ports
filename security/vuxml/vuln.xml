@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3fadb7c6-7b0a-11e0-89b4-001ec9578670">
+    <topic>mediawiki -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>mediawiki</name>
+	<range><lt>1.16.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Mediawiki reports:</p>
+	<blockquote cite="http://lists.wikimedia.org/pipermail/mediawiki-announce/2011-May/000098.html">
+	  <p>(bug 28534) XSS vulnerability for IE 6 clients. This is the third attempt at fixing bug 28235.</p>
+	  <p>(bug 28639) Potential privilege escalation when $wgBlockDisablesLogin is enabled</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://bugzilla.wikimedia.org/show_bug.cgi?id=28534</url>
+      <url>https://bugzilla.wikimedia.org/show_bug.cgi?id=28639</url>
+      <url>http://lists.wikimedia.org/pipermail/mediawiki-announce/2011-May/000098.html</url>
+      <url>http://svn.wikimedia.org/svnroot/mediawiki/tags/REL1_16_5/phase3/RELEASE-NOTES</url>
+    </references>
+    <dates>
+      <discovery>2011-04-14</discovery>
+      <entry>2011-05-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3eb2c100-738b-11e0-89f4-001e90d46635">
     <topic>postfix -- memory corruption vulnerability</topic>
     <affects>
