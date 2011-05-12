@@ -18,7 +18,7 @@ bin/zmx10.pl
 @unexec if cmp -s %D/etc/zm.conf.sample %D/etc/zm.conf; then rm -f %D/etc/zm.conf; fi
 etc/zm.conf.sample
 @exec if [ ! -f %D/etc/zm.conf ] ; then cp -p %D/%F %B/zm.conf; fi
-lib/perl5/5.10.1/mach/perllocal.pod
+lib/perl5/%%PERL_VERSION%%/%%PERL_ARCH%%/perllocal.pod
 %%SITE_PERL%%/ZoneMinder.pm
 %%SITE_PERL%%/ZoneMinder/Base.pm
 %%SITE_PERL%%/ZoneMinder/Config.pm
