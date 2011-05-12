@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		mediainfo
-PORTVERSION=		0.7.35
+PORTVERSION=		0.7.44
 DISTVERSIONSUFFIX=	_AllInclusive
 CATEGORIES=		multimedia
 MASTER_SITES=		SF/${PORTNAME}/source/${PORTNAME}/${PORTVERSION}
@@ -17,6 +17,10 @@ MAINTAINER=	freebsd-ports@evilcode.net
 COMMENT=	Supplies technical and tag information about a video or audio file
 
 EXTRACT_DEPENDS=	p7zip>=0:${PORTSDIR}/archivers/p7zip
+
+LICENSE=	GPLv3 LGPL3
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/MediaInfo/License.html
 
 PLIST_FILES=	bin/mediainfo
 
