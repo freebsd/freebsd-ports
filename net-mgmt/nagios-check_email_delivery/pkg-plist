@@ -1,0 +1,14 @@
+libexec/nagios/check_email_delivery
+libexec/nagios/check_email_delivery_epn
+libexec/nagios/check_imap_receive
+libexec/nagios/check_imap_receive_epn
+libexec/nagios/check_smtp_send
+libexec/nagios/check_smtp_send_epn
+%%PORTDOCS%%%%DOCSDIR%%/check_email_delivery.html
+%%PORTDOCS%%%%DOCSDIR%%/check_email_delivery.pod
+%%PORTDOCS%%%%DOCSDIR%%/check_imap_receive.html
+%%PORTDOCS%%%%DOCSDIR%%/check_imap_receive.pod
+%%PORTDOCS%%%%DOCSDIR%%/check_smtp_send.html
+%%PORTDOCS%%%%DOCSDIR%%/check_smtp_send.pod
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry libexec/nagios
