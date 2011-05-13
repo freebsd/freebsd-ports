@@ -10,11 +10,8 @@ DISTVERSION=	1.0alpha4-2
 PORTREVISION=	2
 CATEGORIES=	multimedia linux
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Video codec
-
-DEPRECATED=     please use linux-f[89]-libtheora, but required for FreeBSD 7
-EXPIRATION_DATE=        2011-06-01
 
 CONFLICTS=	linux-f8-libtheora-[0-9]* linux-f10-libtheora-[0-9]*
 
