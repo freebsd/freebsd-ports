@@ -10,6 +10,7 @@ sbin/dt
 %%DATADIR%%/pattern_8
 %%DATADIR%%/pattern_9
 %%DATADIR%%/pattern_all
+%%DATADIR%%/pattern_dedup
 @dirrm %%DATADIR%%
 %%EXAMPLESDIR%%/dta
 %%EXAMPLESDIR%%/dtc
@@ -17,6 +18,10 @@ sbin/dt
 %%EXAMPLESDIR%%/dtr
 %%EXAMPLESDIR%%/dts
 %%EXAMPLESDIR%%/dtt
+%%EXAMPLESDIR%%/dt_noprog_script.ksh
+%%EXAMPLESDIR%%/trigger-AIX.ksh
+%%EXAMPLESDIR%%/DiskTests.ksh
+%%EXAMPLESDIR%%/butterfly_file.ksh
+%%EXAMPLESDIR%%/butterfly.ksh
 %%EXAMPLESDIR%%/dtw
-%%EXAMPLESDIR%%/MakeTestDisc
 @dirrm %%EXAMPLESDIR%%
