@@ -7,6 +7,7 @@
 
 PORTNAME=	neon29
 PORTVERSION=	0.29.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 DISTNAME=	neon-${PORTVERSION}
@@ -56,7 +57,8 @@ MAN1=	neon-config.1
 MAN3=	ne_add_request_header.3 ne_addr_resolve.3 ne_buffer.3 \
 	ne_buffer_append.3 ne_buffer_clear.3 ne_buffer_create.3 \
 	ne_buffer_destroy.3 ne_get_error.3 ne_get_response_header.3 \
-	ne_get_status.3 ne_i18n_init.3 ne_iaddr_make.3 ne_has_support.3 \
+	ne_get_status.3 ne_i18n_init.3 ne_iaddr_make.3 ne_iaddr_parse.3 \
+	ne_iaddr_raw.3 ne_iaddr_reverse.3 ne_has_support.3 \
 	ne_malloc.3 ne_request_create.3 ne_session_create.3 \
 	ne_set_request_body_buffer.3 ne_get_request_flag.3 \
 	ne_get_session_flag.3 ne_set_request_flag.3 ne_set_session_flag.3 \
