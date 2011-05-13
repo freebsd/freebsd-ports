@@ -263,6 +263,7 @@
     SUBDIR += stalonetray
     SUBDIR += startup-notification
     SUBDIR += sterm
+    SUBDIR += stjerm
     SUBDIR += swarp
     SUBDIR += sxpc
     SUBDIR += tabbed
