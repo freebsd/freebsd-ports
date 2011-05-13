@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	knemo
-PORTVERSION=	0.6.80
+PORTVERSION=	0.7.1
 CATEGORIES=	net kde
 MASTER_SITES=	http://kde-apps.org/CONTENT/content-files/
 DISTNAME=	12956-${PORTNAME}-${PORTVERSION}
