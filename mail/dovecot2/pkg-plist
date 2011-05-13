@@ -129,6 +129,7 @@ include/dovecot/ioloop-iolist.h
 include/dovecot/ioloop-notify-fd.h
 include/dovecot/ioloop.h
 include/dovecot/iostream-internal.h
+include/dovecot/ipwd.h
 include/dovecot/istream-attachment.h
 include/dovecot/istream-base64-encoder.h
 include/dovecot/istream-concat.h
