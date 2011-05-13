@@ -29,8 +29,8 @@ OPTIONS=	THREADS "Enable Threads in apr"				on  \
 		SQLITE  "Enable SQLite3 support in apr-util"		off \
 		DEVRANDOM "Use /dev/random or compatible in apr"	on
 
-APR_VERSION=	1.4.2
-APU_VERSION=	1.3.10
+APR_VERSION=	1.4.4
+APU_VERSION=	1.3.11
 
 USE_ICONV=		yes
 USE_AUTOTOOLS=	automake autoconf libtool:env
