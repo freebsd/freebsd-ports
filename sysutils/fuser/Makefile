@@ -24,6 +24,10 @@ PLIST_FILES=	bin/fuser
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900037
+IGNORE=	fuser(1) utility is already present in the base system
+.endif
+
 .if (${OSVERSION} > 800000)
 EXTRA_PATCHES+=	${FILESDIR}/extra::patch-fuser.c \
 		${FILESDIR}/extra::patch-fuser.h
