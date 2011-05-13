@@ -3,6 +3,12 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/algorithms/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/algorithms/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/algorithms/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/algorithms/cga.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/algorithms/cga.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/algorithms/cga.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/__init__.pyo
@@ -81,6 +87,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/geometry/proxy.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/geometry/proxy.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/geometry/proxy.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/algorithms
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely/geometry
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/shapely
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
