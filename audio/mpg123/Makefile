@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mpg123
-PORTVERSION=	1.13.2
+PORTVERSION=	1.13.3
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF \
 		http://www.mpg123.de/download/
@@ -24,7 +24,6 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-audio=oss \
 		--with-default-audio=oss
-CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 CONFIGURE_ENV=	CONFIG_SHELL=${SH} CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 	       	LDFLAGS="-L${LOCALBASE}/lib"
 
