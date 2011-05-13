@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	eventlog
-PORTVERSION=	0.2.10
+PORTVERSION=	0.2.12
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/3.0.4/source/
+MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/3.2.2/source/
 DISTFILES=	$(PORTNAME)_$(PORTVERSION).tar.gz
 
-MAINTAINER=	ivan.lago@ifom-ieo-campus.it
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Replacement of the simple syslog() API providing structure to messages
 
 GNU_CONFIGURE=	yes
