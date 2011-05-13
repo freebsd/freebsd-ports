@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="00b296b6-7db1-11e0-96b7-00300582f9fc">
+    <topic>Apache APR -- DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apr1</name>
+	<range><ge>1.4.0</ge><lt>1.4.4</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache Portable Runtime Project reports:</p>
+	<blockquote cite="http://www.apache.org/dist/apr/CHANGES-APR-1.4">
+	  <p>Note especially a security fix to APR 1.4.4, excessive CPU
+           consumption was possible due to an unconstrained, recursive
+           invocation of apr_fnmatch, as apr_fnmatch processed '*' wildcards.
+           Reimplement apr_fnmatch() from scratch using a non-recursive algorithm
+           now has improved compliance with the fnmatch() spec. (William Rowe)</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0419</cvename>
+      <url>http://www.apache.org/dist/apr/Announcement1.x.html</url>
+    </references>
+    <dates>
+      <discovery>2011-05-10</discovery>
+      <entry>2011-05-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="34e8ccf5-7d71-11e0-9d83-000c29cc39d3">
     <topic>Zend Framework -- potential SQL injection when using PDO_MySql</topic>
     <affects>
