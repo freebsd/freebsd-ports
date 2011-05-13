@@ -6,7 +6,7 @@
 
 PORTNAME=	scribe
 PORTVERSION=	2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://cloud.github.com/downloads/facebook/scribe/
 
@@ -18,7 +18,8 @@ LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs \
 		event:${PORTSDIR}/devel/libevent \
 		thrift:${PORTSDIR}/devel/thrift
 RUN_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-Thrift>0:${PORTSDIR}/devel/p5-Thrift
+		p5-Thrift>0:${PORTSDIR}/devel/p5-Thrift \
+		py-thrift>0:${PORTSDIR}/devel/py-thrift
 
 ACLOCAL_ARGS=	-I ./aclocal
 AUTOMAKE_ARGS=	-a
@@ -31,6 +32,7 @@ USE_AUTOTOOLS=	aclocal automake autoconf
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_RC_SUBR=	${PORTNAME}
+SUB_LIST+=	RM=${RM}
 
 post-extract:
 	${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}

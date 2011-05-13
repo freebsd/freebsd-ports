@@ -9,12 +9,25 @@
 . /etc/rc.subr
 
 name="scribe"
+rcvar=`set_rcvar`
 pidfile="/var/run/${name}.pid"
-command="/usr/sbin/daemon -p ${pidfile} %%PREFIX%%/bin/scribed"
-procname="%%PREFIX%%/bin/scribed"
+command="%%PREFIX%%/bin/scribed"
+
+start_cmd=scribe_start
+stop_postcmd=scribe_cleanup
 
 load_rc_config "$name"
 : ${scribe_enable="NO"}
 : ${scribe_flags=""}
+
+scribe_start()
+{
+    echo "Starting ${name}."
+    /usr/sbin/daemon -cf -p ${pidfile} ${command} ${scribe_flags}
+}
+
+scribe_cleanup() {
+    [ -f ${pidfile} ] && %%RM%% ${pidfile}
+}
 
 run_rc_command "$1"
