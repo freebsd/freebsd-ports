@@ -87,13 +87,7 @@ Doesn't work and it is likely not very probable it  will ever work since it
 uses a lot of Linux-specific things.
 
 
-7. Next version ...
-
-.. is in net-im/skype-devel. It probably works worse that this version. Use it
-at your own risk.
-
-
-8. Problems and bug reports
+7. Problems and bug reports
 
 First of all, please understand that this is a closed, binary Linux application
 that makes use for some more-or-less cutting edge Linux features/interfaces,

@@ -78,7 +78,7 @@ IGNORE=	${IGNORE_MSG}
 
 do-install:
 	@${INSTALL} -d ${PREFIX}/share/applications
-	@${INSTALL_DATA} ${WRKSRC}/skype-devel.desktop ${PREFIX}/share/applications/
+	@${INSTALL_DATA} ${WRKSRC}/skype.desktop ${PREFIX}/share/applications/
 	@${INSTALL_DATA} ${WRKSRC}/icons/SkypeBlue_48x48.png ${PREFIX}/share/pixmaps/skype.png
 	@cd ${WRKSRC}/ && ${MKDIR} ${PREFIX}/${SKYPEDIR} && ${COPYTREE_SHARE} "avatars icons sounds lang" ${PREFIX}/${SKYPEDIR}/
 
