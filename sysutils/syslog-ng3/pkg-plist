@@ -11,9 +11,6 @@ bin/pdbtool
 lib/libsyslog-ng.la
 lib/libsyslog-ng.so
 lib/libsyslog-ng.so.0
-lib/libsyslog-ng-patterndb.la
-lib/libsyslog-ng-patterndb.so
-lib/libsyslog-ng-patterndb.so.0
 lib/syslog-ng/libaffile.la
 lib/syslog-ng/libaffile.so
 lib/syslog-ng/libafprog.la
