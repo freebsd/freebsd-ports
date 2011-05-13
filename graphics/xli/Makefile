@@ -7,11 +7,11 @@
 
 PORTNAME=	xli
 PORTVERSION=	1.17.0
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics
-#MASTER_SITES=	${MASTER_SITE_XCONTRIB}
-#MASTER_SITE_SUBDIR=	applications
-DISTNAME=	xli-2005-09-04
+MASTER_SITES=	${MASTER_SITE_DEBIAN}
+MASTER_SITE_SUBDIR=	pool/main/x/${PORTNAME}
+DISTNAME=	xli_${PORTVERSION}+${XLI_SNAPVER:C/-//g}.orig
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Utilities to display images in X11
@@ -21,9 +21,12 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 
 USE_XORG=	xi
 USE_IMAKE=	yes
+WRKSRC=		${WRKDIR}/xli-${XLI_SNAPVER}
 
 MAN1=		xli.1 xlito.1
 MLINKS=		xli.1 xview.1 xli.1 xsetbg.1
 PLIST_FILES=	bin/xli bin/xlito bin/xview bin/xsetbg lib/X11/app-defaults/Xli
+
+XLI_SNAPVER=	2006-11-10
 
 .include <bsd.port.mk>
