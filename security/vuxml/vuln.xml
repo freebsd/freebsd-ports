@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="34e8ccf5-7d71-11e0-9d83-000c29cc39d3">
+    <topic>Zend Framework -- potential SQL injection when using PDO_MySql</topic>
+    <affects>
+      <package>
+	<name>ZendFramework</name>
+	<range><lt>1.11.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Zend Framework team reports:</p>
+	<blockquote cite="http://framework.zend.com/security/advisory/ZF2011-02">
+	  <p>Developers using non-ASCII-compatible encodings in conjunction
+            with the MySQL PDO driver of PHP may be vulnerable to SQL
+            injection attacks. Developers using ASCII-compatible encodings
+            like UTF8 or latin1 are not affected by this PHP issue.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://framework.zend.com/security/advisory/ZF2011-02</url>
+      <url>http://zend-framework-community.634137.n4.nabble.com/Zend-Framework-1-11-6-and-1-10-9-released-td3503741.html</url>
+    </references>
+    <dates>
+      <discovery>2011-05-06</discovery>
+      <entry>2011-05-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3fadb7c6-7b0a-11e0-89b4-001ec9578670">
     <topic>mediawiki -- multiple vulnerabilities</topic>
     <affects>
