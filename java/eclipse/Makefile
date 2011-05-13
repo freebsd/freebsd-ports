@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	eclipse
-PORTVERSION=	3.6.1
-PORTREVISION=	2
+PORTVERSION=	3.6.2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/technology/linuxtools/eclipse-build/3.6.x_Helios/:1 \
 		http://download.eclipse.org/tools/orbit/downloads/drops/R20100519200754/bundles/:2 \
@@ -61,11 +60,11 @@ ECLIPSE_JAR_BUNDLES=	com.ibm.icu_4.2.1.v20100412.jar \
 			com.jcraft.jsch_0.1.41.v200903070017.jar \
 			javax.servlet_2.5.0.v200910301333.jar \
 			javax.servlet.jsp_2.0.0.v200806031607.jar \
-			org.apache.commons.codec_1.3.0.v20080530-1600.jar \
-			org.apache.commons.el_1.0.0.v200806031608.jar \
+			org.apache.commons.codec_1.3.0.v20100518-1140.jar \
+			org.apache.commons.el_1.0.0.v201004212143.jar \
 			org.apache.commons.httpclient_3.1.0.v201005080502.jar \
 			org.apache.commons.logging_1.0.4.v201005080501.jar \
-			org.apache.jasper_5.5.17.v200903231320.jar \
+			org.apache.jasper_5.5.17.v201004212143.jar \
 			org.apache.lucene_1.9.1.v20100518-1140.jar \
 			org.apache.lucene.analysis_1.9.1.v20100518-1140.jar \
 			org.mortbay.jetty.util_6.1.23.v201004211559.jar \
@@ -147,6 +146,11 @@ post-extract:
 	@${UNZIP_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/${JUNIT3_SRCFILE} -d ${WRKDIR}/junit
 	@${CP} ${WRKDIR}/junit/junit${JUNIT3_VERSION}/junit.jar ${BUILD_WRKSRC}/bundles/
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${JUNIT4_SRCFILE} ${BUILD_WRKSRC}/bundles/junit4.jar
+
+	@${MV} ${BUILD_WRKSRC}/dependencyManifests/org.apache.commons.codec_1.3.0.v20080530-1600.jar ${BUILD_WRKSRC}/dependencyManifests/org.apache.commons.codec_1.3.0.v20100518-1140.jar
+	@${MV} ${BUILD_WRKSRC}/dependencyManifests/org.apache.commons.el_1.0.0.v200806031608.jar ${BUILD_WRKSRC}/dependencyManifests/org.apache.commons.el_1.0.0.v201004212143.jar
+	@${MV} ${BUILD_WRKSRC}/dependencyManifests/org.apache.jasper_5.5.17.v200903231320.jar ${BUILD_WRKSRC}/dependencyManifests/org.apache.jasper_5.5.17.v201004212143.jar
+
 .if defined(WITH_TESTS)
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${ECLIPSE_TEST_SRCFILE} ${BUILD_WRKSRC}
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${ECLIPSE_TEST_SCRIPTFILE} ${BUILD_WRKSRC}
