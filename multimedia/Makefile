@@ -283,6 +283,7 @@
     SUBDIR += quark
     SUBDIR += quodlibet
     SUBDIR += quvi
+    SUBDIR += rebot3
     SUBDIR += recmpeg
     SUBDIR += recordmydesktop
     SUBDIR += replex
