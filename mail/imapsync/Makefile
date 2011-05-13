@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imapsync
-PORTVERSION=	1.404
+PORTVERSION=	1.411
 CATEGORIES=	mail perl5
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
@@ -17,7 +17,9 @@ COMMENT=	IMAP synchronization copy or migration tool
 BUILD_DEPENDS=	p5-Mail-IMAPClient>0:${PORTSDIR}/mail/p5-Mail-IMAPClient \
 		p5-Term-ReadKey>0:${PORTSDIR}/devel/p5-Term-ReadKey \
 		p5-IO-Socket-SSL>0:${PORTSDIR}/security/p5-IO-Socket-SSL
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Mail-IMAPClient>0:${PORTSDIR}/mail/p5-Mail-IMAPClient \
+		p5-Term-ReadKey>0:${PORTSDIR}/devel/p5-Term-ReadKey \
+		p5-IO-Socket-SSL>0:${PORTSDIR}/security/p5-IO-Socket-SSL
 
 USE_PERL5=	yes
 NO_BUILD=	yes
