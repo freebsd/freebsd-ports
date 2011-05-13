@@ -25502,6 +25502,7 @@ uz-aspell                       ports/textproc/uz-aspell
 uzap                            ports/editors/uzap
 uzbl                            ports/www/uzbl
 v                               ports/x11-toolkits/v
+v8				ports/lang/v8
 v4l_compat                      ports/multimedia/v4l_compat
 v6eval                          ports/net/v6eval
 v7sh                            ports/shells/v7sh
