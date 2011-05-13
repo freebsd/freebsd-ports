@@ -63,7 +63,8 @@ OPTIONS=	LDAP "With LDAP support" off \
 		INSULTS "With all insults" off \
 		DISABLE_ROOT_SUDO "Disable root sudo" off \
 		DISABLE_AUTH "Disable authentication" off \
-		NOARGS_SHELL "Enable no arguments shell" off
+		NOARGS_SHELL "Enable no arguments shell" off \
+		AUDIT "Enable BSM audit support" off
 
 LOGFAC?=	local2
 CONFIGURE_ARGS+=	--with-logfac=${LOGFAC}
@@ -102,6 +103,10 @@ CONFIGURE_ARGS+=--disable-authentication
 
 .if defined(WITH_NOARGS_SHELL)
 CONFIGURE_ARGS+=--enable-noargs-shell
+.endif
+
+.if defined(WITH_AUDIT)
+CONFIGURE_ARGS+=--with-bsm-audit
 .endif
 
 MAN5+=		sudoers.5
