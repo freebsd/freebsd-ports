@@ -176,6 +176,7 @@
     SUBDIR += linux-f10-libv4l
     SUBDIR += linux-gspca-kmod
     SUBDIR += linux-huludesktop
+    SUBDIR += linux-libtheora
     SUBDIR += linux-ov511-kmod
     SUBDIR += linux-realplayer
     SUBDIR += linux-tsmuxer
