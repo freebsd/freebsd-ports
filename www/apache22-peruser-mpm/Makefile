@@ -9,8 +9,6 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	5
-
 MAINTAINER=		jille@quis.cx
 
 MASTERDIR=		${.CURDIR}/../apache22
@@ -21,7 +19,7 @@ EXTRA_PATCHES+=		${.CURDIR}/files/httpd-2.2.3-peruser-0.3.0-dc3.patch
 EXTRA_PATCHES+=		${.CURDIR}/files/httpd-2.2.3-peruser-0.3.0-dc3-r57.patch
 WITH_MPM=		${SLAVE_PORT_MPM}
 
-LATEST_LINK=	apache22-peruser-mpm
+LATEST_LINK=		apache22-peruser-mpm
 DESCR=			${.CURDIR}/pkg-descr
 
 .include "${MASTERDIR}/Makefile"
