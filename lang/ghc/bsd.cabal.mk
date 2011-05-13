@@ -132,6 +132,10 @@ __u_h_r_package=	${cabal_package:C/[<=>].*$//g}
 __u_h_r_port=		${${__u_h_r_package}_port}
 __u_h_r_name=		${__u_h_r_port:C/.*\///g}
 
+.if empty(__u_h_r_port)
+IGNORE?=	dependency fails: ${cabal_package:C/[<=>].*$//g} is not known as a port
+.endif
+
 .if ${__u_h_r_package} == ${cabal_package}
 __u_h_r_version:=	>=0
 .else
