@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTNAME}-${PORTVERSION}-${GITVERSION}
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	Google\'s open source JavaScript engine
 
+LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+
 GITVERSION=	0-ga00b3e8
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-a00b3e8
