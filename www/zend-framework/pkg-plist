@@ -6944,6 +6944,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/config.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/config.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/constants.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/inlinecomments.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/invalid.ini
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/invalid.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/invalid.xml
@@ -8155,6 +8156,8 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/_files/encryption.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/_files/evil.zip
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/_files/file.1
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/_files/latin-1-dash-only.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/_files/latin-1-text.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/_files/privatekey.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/_files/publickey.pem
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Filter/_files/testfile.txt
@@ -8673,6 +8676,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/AutoloadableClass.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/ResourceTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/forms/ZendLoaderAutoloaderResourceTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/models/Baz.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/models/ZendLoaderAutoloaderResourceMethodOverloading.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/models/ZendLoaderAutoloaderResourceTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Loader/Autoloader/_files/services/ZendLoaderAutoloaderResourceTest.php
@@ -8943,6 +8947,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Rest/RouteTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Rest/ServerTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Rest/responses/returnArray.xml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Rest/responses/returnEmptyStatus.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Rest/responses/returnError.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Rest/responses/returnFalse.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Rest/responses/returnInt.xml
