@@ -2998,7 +2998,7 @@ $FreeBSD$
 @@ -114,7 +116,13 @@
  fi
  
- if [ -z "${MOZILLA_INCLUDES}" -a -z "${MOZILLA_LIBS}" ]; then
+ if [ -z "${MOZILLA_INCLUDES}" -a -z "${MOZILLA_LIBS}" -a ${MODEL} != 'sparc64' ]; then
 -	if [ x`pkg-config --exists mozilla-xpcom && echo YES` = "xYES" ]; then
 +	if [ x`pkg-config --exists libxul && echo YES` = "xYES" ]; then
 +		XULRUNNER_INCLUDES=`pkg-config --cflags libxul`
@@ -3232,7 +3232,7 @@ $FreeBSD$
 +Bundle-Name: %fragmentName
 +Bundle-Vendor: %providerName
 +Bundle-SymbolicName: org.eclipse.swt.gtk.freebsd.x86; singleton:=true
-+Bundle-Version: 3.6.1.qualifier
++Bundle-Version: 3.6.2.qualifier
 +Bundle-ManifestVersion: 2
 +Bundle-Localization: fragment
 +Export-Package: 
@@ -5055,7 +5055,7 @@ $FreeBSD$
 +	<property name="swt.arch" value="x86" />
 +
 +	<!-- These properties are used by eclipse when exporting as Deployable plugin and fragments -->
-+	<property name="version.suffix" value="3.6.1" />
++	<property name="version.suffix" value="3.6.2" />
 +
 +	<import file="../org.eclipse.swt/buildFragment.xml"/>
 +</project>
@@ -5113,7 +5113,7 @@ $FreeBSD$
 +Bundle-Name: %fragmentName
 +Bundle-Vendor: %providerName
 +Bundle-SymbolicName: org.eclipse.swt.gtk.freebsd.x86_64; singleton:=true
-+Bundle-Version: 3.5.0.qualifier
++Bundle-Version: 3.6.2.qualifier
 +Bundle-ManifestVersion: 2
 +Bundle-Localization: fragment
 +Export-Package: 
@@ -6936,7 +6936,7 @@ $FreeBSD$
 +	<property name="swt.arch" value="x86_64" />
 +
 +	<!-- These properties are used by eclipse when exporting as Deployable plugin and fragments -->
-+	<property name="version.suffix" value="3.6.1" />
++	<property name="version.suffix" value="3.6.2" />
 +
 +	<import file="../org.eclipse.swt/buildFragment.xml"/>
 +</project>
@@ -7504,19 +7504,19 @@ $FreeBSD$
 +}
 --- build/eclipse-3.6.1-src/pluginVersions.properties~	Fri Oct  1 17:18:03 2010
 +++ build/eclipse-3.6.1-src/pluginVersions.properties	Wed Oct 20 20:19:42 2010
-@@ -33,6 +33,7 @@
- org.eclipse.equinox.launcher.motif.hpux.ia64_32,0.0.0=R36x_v20100810
+@@ -34,6 +34,7 @@
+ org.eclipse.equinox.launcher.motif.hpux.ia64_32,0.0.0=R36x_v20101019_1345
  org.eclipse.equinox.http,0.0.0=v20100503
- org.eclipse.swt.gtk.linux.x86_64,0.0.0=v3655c
-+org.eclipse.swt.gtk.freebsd.x86_64,0.0.0=v3655c
- org.eclipse.swt.photon.qnx.x86,0.0.0=v3655c
+ org.eclipse.swt.gtk.linux.x86_64,0.0.0=v3659b
++org.eclipse.swt.gtk.freebsd.x86_64,0.0.0=v3659b
+ org.eclipse.swt.photon.qnx.x86,0.0.0=v3659b
  org.eclipse.equinox.p2.ui.admin,0.0.0=v20100503
  org.eclipse.equinox.weaving.caching.j9,0.0.0=v20100503
-@@ -244,6 +245,7 @@
- org.eclipse.swt.examples,0.0.0=v3655c
+@@ -245,6 +246,7 @@
+ org.eclipse.swt.examples,0.0.0=v3659b
  org.eclipse.cvs,0.0.0=v20100414
- org.eclipse.swt.gtk.linux.x86,0.0.0=v3655c
-+org.eclipse.swt.gtk.freebsd.x86,0.0.0=v3655c
+ org.eclipse.swt.gtk.linux.x86,0.0.0=v3659b
++org.eclipse.swt.gtk.freebsd.x86,0.0.0=v3659b
  org.eclipse.equinox.log,0.0.0=v20100503
  org.eclipse.equinox.jmx.client,0.0.0=v20100503
  org.eclipse.ui.win32,0.0.0=I20100509-0800

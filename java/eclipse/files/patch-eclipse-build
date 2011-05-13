@@ -241,7 +241,7 @@ $FreeBSD$
  buildTag=vM20100211-1343
 -label=3.6.0
 -bootclasspath=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
-+label=3.6.1
++label=3.6.2
 +bootclasspath=%%BOOTCLASSPATH%%
  #build.compiler=org.eclipse.jdt.core.JDTCompilerAdapter
  
@@ -309,3 +309,20 @@ $FreeBSD$
 +Exec=%%PORTNAME%%
  Terminal=false
  Categories=Development;IDE;Java;
+--- eclipse-build-0.6.1/dependencies.properties.orig	2010-08-11 22:29:29.000000000 +0200
++++ eclipse-build-0.6.1/dependencies.properties	2011-04-28 09:23:04.000000000 +0200
+@@ -2,11 +2,11 @@
+ com.jcraft.jsch_0.1.41.v200903070017.jar=/usr/share/java/jsch.jar
+ javax.servlet_2.5.0.v200910301333.jar=/usr/share/java/tomcat6-servlet-2.5-api.jar:/usr/share/java/servlet-api-2.5.jar
+ javax.servlet.jsp_2.0.0.v200806031607.jar=/usr/share/java/tomcat5-jsp-2.0-api.jar:/usr/share/java/jsp-api-2.0.jar
+-org.apache.commons.codec_1.3.0.v20080530-1600.jar=/usr/share/java/commons-codec.jar
+-org.apache.commons.el_1.0.0.v200806031608.jar=/usr/share/java/commons-el.jar
++org.apache.commons.codec_1.3.0.v20100518-1140.jar=/usr/share/java/commons-codec.jar
++org.apache.commons.el_1.0.0.v201004212143.jar=/usr/share/java/commons-el.jar
+ org.apache.commons.httpclient_3.1.0.v201005080502.jar=/usr/share/java/commons-httpclient.jar
+ org.apache.commons.logging_1.0.4.v201005080501.jar=/usr/share/java/commons-logging.jar
+-org.apache.jasper_5.5.17.v200903231320.jar=/usr/share/eclipse/plugins/org.apache.jasper_5.5.17.v200706111724.jar:/usr/share/java/jasper-5.5.26.jar
++org.apache.jasper_5.5.17.v201004212143.jar=/usr/share/eclipse/plugins/org.apache.jasper_5.5.17.v200706111724.jar:/usr/share/java/jasper-5.5.26.jar
+ org.apache.lucene_1.9.1.v20100518-1140.jar=/usr/share/java/lucene.jar:/usr/share/java/lucene-core.jar
+ org.apache.lucene.analysis_1.9.1.v20100518-1140.jar=/usr/share/java/lucene-contrib/lucene-analyzers.jar:/usr/share/java/lucene-analyzers.jar
+ org.mortbay.jetty.util_6.1.23.v201004211559.jar=/usr/share/java/jetty/jetty-util.jar:/usr/share/java/jetty-util.jar
