@@ -11,6 +11,7 @@ share/pixmaps/recoll.png
 %%DATADIR%%/examples/mimeview
 %%DATADIR%%/examples/rclmon.sh
 %%DATADIR%%/examples/recoll.conf
+%%DATADIR%%/filters/hotrecoll.py
 %%DATADIR%%/filters/rclabw
 %%DATADIR%%/filters/rclaptosidman
 %%DATADIR%%/filters/rclaudio
@@ -25,7 +26,11 @@ share/pixmaps/recoll.png
 %%DATADIR%%/filters/rclics
 %%DATADIR%%/filters/rclid3
 %%DATADIR%%/filters/rclimg
+%%DATADIR%%/filters/rclinfo
+%%DATADIR%%/filters/rclkar
 %%DATADIR%%/filters/rclkwd
+%%DATADIR%%/filters/rcllatinclass.py
+%%DATADIR%%/filters/rcllatinstops.zip
 %%DATADIR%%/filters/rcllyx
 %%DATADIR%%/filters/rclman
 %%DATADIR%%/filters/rclnull
@@ -38,6 +43,7 @@ share/pixmaps/recoll.png
 %%DATADIR%%/filters/rclps
 %%DATADIR%%/filters/rclrtf
 %%DATADIR%%/filters/rclscribus
+%%DATADIR%%/filters/rclshowinfo
 %%DATADIR%%/filters/rclsiduxman
 %%DATADIR%%/filters/rclsoff
 %%DATADIR%%/filters/rclsvg
@@ -48,6 +54,7 @@ share/pixmaps/recoll.png
 %%DATADIR%%/filters/rclxls
 %%DATADIR%%/filters/rclzip
 %%DATADIR%%/filters/xdg-open
+%%DATADIR%%/images/aptosid-book.png
 %%DATADIR%%/images/aptosid-manual.png
 %%DATADIR%%/images/document.png
 %%DATADIR%%/images/drawing.png
@@ -70,6 +77,7 @@ share/pixmaps/recoll.png
 %%DATADIR%%/images/wordprocessing.png
 %%DATADIR%%/translations/recoll_fr.qm
 %%DATADIR%%/translations/recoll_it.qm
+%%DATADIR%%/translations/recoll_lt.qm
 %%DATADIR%%/translations/recoll_de.qm
 %%DATADIR%%/translations/recoll_uk.qm
 %%DATADIR%%/translations/recoll_ru.qm
