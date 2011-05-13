@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-${RPMVERSION}
 MAINTAINER=	emulation@FreeBSD.org
 COMMENT=	Theora Video Compression Codec (Linux Fedora 10)
 
+CONFLICTS=	linux-libtheora-[0-9]* 
+
 ONLY_FOR_ARCHS=	i386 amd64
 USE_LINUX_RPM=	yes
 LINUX_DIST_VER=	10
