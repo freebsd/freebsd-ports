@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	nagvis
-PORTVERSION=	1.5.8
+PORTVERSION=	1.5.9
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF/${PORTNAME}/NagVis%201.5/
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=${PORTNAME}/NagVis%201.5
 
 MAINTAINER=	derfi@vei.ru
 COMMENT=	NagVis is a visualization addon for Nagios
@@ -20,7 +21,7 @@ OPTIONS=	MKLIVESTATUS 	"depend on mk-livestatus broker (preferred)" on \
 		GRAPHVIZ	"graphviz is needed for automaps" off
 
 NO_BUILD=	yes
-USE_PHP=	gd gettext mbstring mysql session json pdo pdo_sqlite
+USE_PHP=	gd gettext mbstring session json pdo pdo_sqlite
 WANT_PHP_WEB=	yes
 DEFAULT_PHP_VER=5
 
@@ -28,10 +29,15 @@ DEFAULT_PHP_VER=5
 
 WWW_OWNER?=	${WWWOWN}
 WWW_GROUP?=	${WWWGRP}
-SUB_LIST+=	WWW_OWNER=${WWW_OWNER} WWW_GROUP=${WWW_GROUP}
+DIRMODE?=	750
+FILEMODE?=	640
+
+SUB_LIST+=	WWW_OWNER=${WWW_OWNER} WWW_GROUP=${WWW_GROUP} \
+		DIRMODE=${DIRMODE} FILEMODE=${FILEMODE}
 SUB_FILES+=	pkg-install pkg-deinstall
 
 .if defined(WITH_NDO2DB)
+USE_PHP+=	mysql
 RUN_DEPENDS+=	ndo2db-3x:${PORTSDIR}/net-mgmt/ndoutils
 .endif
 
@@ -45,7 +51,7 @@ RUN_DEPENDS+=	dot:${PORTSDIR}/graphics/graphviz
 
 check-sanity:
 .if !defined(WITH_NDO2DB) && !defined(WITH_MKLIVESTATUS)
-IGNORE= please choose at least one nagios broker module
+IGNORE=	please choose at least one nagios broker module
 .endif
 
 post-extract:
@@ -59,10 +65,7 @@ post-patch:
 		${WRKSRC}/etc/nagvis.ini.php-sample
 
 do-install:
-	@${CP} -R ${WRKSRC} ${WWWDIR}
-	@${MKDIR} ${WWWDIR}/var/tmpl/cache
-	@${MKDIR} ${WWWDIR}/var/tmpl/compile
-	@${MKDIR} ${WWWDIR}/share/var
+	@( cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${WWWDIR}/ )
 
 post-install:
 	@${SH} ${PKGINSTALL} ${DISTNAME} POST-INSTALL

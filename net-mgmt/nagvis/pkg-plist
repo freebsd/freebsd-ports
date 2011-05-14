@@ -820,7 +820,7 @@
 @dirrm %%WWWDIR%%/share/frontend/nagvis-js/classes
 @dirrm %%WWWDIR%%/share/frontend/nagvis-js
 @dirrm %%WWWDIR%%/share/frontend
-@dirrm %%WWWDIR%%/share
+@dirrmtry %%WWWDIR%%/share
 @dirrmtry %%WWWDIR%%/etc/maps
 @dirrmtry %%WWWDIR%%/etc/geomap
 @dirrmtry %%WWWDIR%%/etc/automaps
