@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.6.7
+PORTVERSION=	1.7.2
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/3516/
+MASTER_SITES=	https://alioth.debian.org/frs/download.php/3533/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A smartcard development library
@@ -38,10 +38,9 @@ MAN8=		pcscd.8
 
 .if !defined(WITHOUT_USB) && ${OSVERSION} >= 800069
 CONFIGURE_ENV+=	LIBUSB_LIBS="-lusb"
-CONFIGURE_ARGS+=--enable-libusb=/usr \
-		--disable-libhal
+CONFIGURE_ARGS+=--enable-libusb=/usr
 .else
-LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+BROKEN=		FreeBSD 7.x does not ship with a supported libusb
 .endif
 
 post-patch:
