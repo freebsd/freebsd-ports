@@ -2179,3 +2179,4 @@ net/skype12|net-im/skype12|2011-05-09|Moved to better category
 net/skype|net-im/skype|2011-05-09|Moved to better category
 net/skype-devel|net-im/skype-devel|2011-05-12|Moved to better category
 devel/libchipcard-kde||2011-05-14|obsolete
+sysutils/libgksuui|sysutils/libgksu|2011-05-14|Removed: It is a part of sysutils/libgksu now

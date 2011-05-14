@@ -427,7 +427,6 @@
     SUBDIR += libcdio
     SUBDIR += libchk
     SUBDIR += libgksu
-    SUBDIR += libgksuui
     SUBDIR += libieee1284
     SUBDIR += libpcbsd
     SUBDIR += libretto-config
