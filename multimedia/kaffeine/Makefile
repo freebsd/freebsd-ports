@@ -28,6 +28,7 @@ QT_COMPONENTS=	corelib gui phonon svg network dbus xml sql \
 USE_CMAKE=	yes
 CMAKE_VERBOSE=	yes
 USE_LDCONFIG=		yes
+USE_XORG=	xscrnsaver
 
 post-patch:
 	${REINPLACE_CMD} -e 's,add_subdirectory(x-test),,' ${WRKSRC}/po/CMakeLists.txt
