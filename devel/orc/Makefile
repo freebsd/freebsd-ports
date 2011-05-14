@@ -6,6 +6,7 @@
 
 PORTNAME=	orc
 PORTVERSION=	0.4.14
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://code.entropywave.com/download/orc/
 
@@ -23,6 +24,10 @@ USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--disable-gtk-doc
 
 SUBDIRS=	orc orc-test tools
+
+EXAMPLES_DATA=	example1orc.orc example2orc.orc example3orc.orc \
+		mt19937arorc.orc
+EXAMPLES_EXEC=	example1 example2 example3 mt19937ar volscale
 
 OPTIONS=	DOCS "Include gtk-doc documentation" off \
 		EXAMPLES "Install example files" off
@@ -48,5 +53,16 @@ post-patch:
 		-E -e '/LIBS/s/-lrt(\ )*//; /LIBRT/s/-lrt//' \
 		-e 's|pkgconfigdir=.*|pkgconfigdir=\"\\$$(prefix)/libdata/pkgconfig\"|g' \
 		${WRKSRC}/configure 
+
+post-install:
+.if defined(WITH_EXAMPLES) && !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+.for FILE in ${EXAMPLES_DATA}
+	@${INSTALL_DATA} ${WRKSRC}/examples/${FILE} ${EXAMPLESDIR}/${FILE}
+.endfor
+.for FILE in ${EXAMPLES_EXEC}
+	@${INSTALL_SCRIPT} ${WRKSRC}/examples/${FILE} ${EXAMPLESDIR}/${FILE}
+.endfor
+.endif
 
 .include <bsd.port.post.mk>
