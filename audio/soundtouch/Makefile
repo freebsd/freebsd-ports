@@ -13,17 +13,13 @@ MASTER_SITES=	http://www.surina.net/soundtouch/
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An open-source audio processing library
 
+LICENSE=	LGPL21
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared=yes
 USE_LDCONFIG=	yes
 PORTDOCS=	README.html
-
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" && ${OSVERSION} >= 900000
-BROKEN=		does not compile on FreeBSD 9.X
-.endif
 
 post-patch: .SILENT
 # Adjust some paths for FreeBSD, respect CFLAGS, and get rid of GPL
@@ -39,4 +35,4 @@ post-patch: .SILENT
 		${WRKSRC}/Makefile.in
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
