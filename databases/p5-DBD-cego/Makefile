@@ -11,7 +11,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	http://www.lemke-it.com/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	A Cego DBI driver for Perl 5
 
 BUILD_DEPENDS=	p5-DBI>=1.61:${PORTSDIR}/databases/p5-DBI

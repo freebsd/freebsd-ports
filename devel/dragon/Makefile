@@ -9,7 +9,7 @@ PORTVERSION=	1.3.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	Combined C++ scanner/parser generator for LR compliant grammars
 
 LIB_DEPENDS=	lfc.1:${PORTSDIR}/devel/lfc

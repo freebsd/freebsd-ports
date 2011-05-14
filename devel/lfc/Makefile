@@ -9,7 +9,7 @@ PORTVERSION=	1.1.36
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	A collection of basic c++ classes, used for databases/cego
 
 LICENSE=	GPLv2
