@@ -26,6 +26,7 @@ Boolean_port=			devel/hs-Boolean
 brainfuck_port=			lang/hs-brainfuck	# executable
 bsd-sysctl_port=		devel/hs-bsd-sysctl
 c2hs_port=			devel/hs-c2hs		# executable
+cabal-install_port=		devel/hs-cabal-install	# executable
 cairo_port=			graphics/hs-cairo
 category-extras_port=		math/hs-category-extras # BROKEN
 cgi_port=			www/hs-cgi
