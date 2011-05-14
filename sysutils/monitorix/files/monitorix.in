@@ -5,7 +5,7 @@
 # PROVIDE: monitorix
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
-# KEYWORD: FreeBSD shutdown
+# KEYWORD: shutdown
 
 monitorix_enable=${monitorix_enable:-"NO"}
 
