@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	dradis
-DISTVERSION=	2.6.0
+DISTVERSION=	2.6.1
 CATEGORIES=	security
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}/v${DISTVERSION:R}
+MASTER_SITE_SUBDIR=${PORTNAME:L}/${PORTNAME:L}/v${PORTVERSION}
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
-MAINTAINER=	semprix@bsdmail.org
+MAINTAINER=	semprix@gmx.com
 COMMENT=	Opensource framework to enable effective information gathering
 
 RUN_DEPENDS=	ruby18-gems>=1.3.6:${PORTSDIR}/devel/ruby-gems \
 		ruby18-iconv>=1.8.7.302,1:${PORTSDIR}/converters/ruby-iconv \
 		ruby18-wirble>=0.1.3:${PORTSDIR}/devel/ruby-wirble \
 		rubygem-rake>=0.8.7:${PORTSDIR}/devel/rubygem-rake \
-		rubygem-rails>=3.0.3:${PORTSDIR}/www/rubygem-rails \
+		rubygem-rails>=3.0.5:${PORTSDIR}/www/rubygem-rails \
 		rubygem-activesupport>=3.0.2:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-bundler>=1.0.7:${PORTSDIR}/sysutils/rubygem-bundler \
-		rubygem-redcloth>=4.2.0:${PORTSDIR}/www/rubygem-redcloth \
+		rubygem-redcloth>=4.2.7:${PORTSDIR}/www/rubygem-redcloth \
 		rubygem-sqlite3>=1.3.2:${PORTSDIR}/databases/rubygem-sqlite3
 
 LICENSE=	GPLv2
