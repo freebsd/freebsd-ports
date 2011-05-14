@@ -752,7 +752,6 @@
     SUBDIR += libcfg
     SUBDIR += libcheck
     SUBDIR += libchipcard
-    SUBDIR += libchipcard-kde
     SUBDIR += libcii
     SUBDIR += libclaw
     SUBDIR += libcli
