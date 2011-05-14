@@ -16,9 +16,12 @@ DISTNAME=	${PORTNAME:S/2$//}-${PORTVERSION}
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that works as a Netscape Roaming Access server
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	2.0+
+DEPRECATED=	Works only with Netscape version 4 see PR 73383
+EXPIRATION=	2011-06-01
+
+USE_APACHE=	2.0
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 MODULENAME=	${PORTNAME:S/2$//}
