@@ -7,8 +7,10 @@
 
 PORTNAME=	mod_xsendfile
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	www
-MASTER_SITES=	https://tn123.org/mod_xsendfile/
+MASTER_SITES=	https://tn123.org/mod_xsendfile/ \
+		http://cloud.github.com/downloads/potatosalad/mod_xsendfile/
 
 MAINTAINER=	potatosaladx@gmail.com
 COMMENT=	An Apache2 module that processes X-SENDFILE headers
