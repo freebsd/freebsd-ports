@@ -8,13 +8,11 @@ include/pygda-4.0/pygdavalue_conversions.h
 %%PYTHON_SITELIBDIR%%/gtk-2.0/egg/trayicon.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gda.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gda.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gksu/__init__.py
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gksu/__init__.pyc
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gksu/__init__.pyo
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gksu/_gksu.la
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gksu/_gksu.so
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gksu/ui.la
-%%PYTHON_SITELIBDIR%%/gtk-2.0/gksu/ui.so
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gksu2/__init__.py
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gksu2/__init__.pyc
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gksu2/__init__.pyo
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gksu2/_gksu2.la
+%%PYTHON_SITELIBDIR%%/gtk-2.0/gksu2/_gksu2.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtkhtml2.la
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtkhtml2.so
 %%PYTHON_SITELIBDIR%%/gtk-2.0/gtkmozembed.la
@@ -48,6 +46,6 @@ share/pygtk/2.0/defs/trayicon.defs
 %%PORTDOCS%%@dirrm share/examples/py-gnome/gdl
 %%PORTDOCS%%@dirrm share/examples/py-gnome/egg/recent
 %%PORTDOCS%%@dirrm share/examples/py-gnome/egg
-@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gksu
+@dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/gksu2
 @dirrm %%PYTHON_SITELIBDIR%%/gtk-2.0/egg
 @dirrm include/pygda-4.0
