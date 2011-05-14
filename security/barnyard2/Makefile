@@ -17,7 +17,8 @@ COMMENT=	An output system for Snort or Suricata that parses unified2 files
 OPTIONS=	MYSQL "Enable MySQL support" on \
 		POSTGRESQL "Enable PostgreSQL support" off \
 		SNORT "Depend on security/snort" off \
-		SURICATA "Depend on security/suricata" off
+		SURICATA "Depend on security/suricata" off \
+		TCL "Enable TCL support" off 
 
 USE_RC_SUBR=	barnyard2.sh
 GNU_CONFIGURE=	yes
@@ -29,6 +30,12 @@ PORTDOCS2=	INSTALL README.aruba README.database README.sguil
 PORTDOCS=	${PORTDOCS1} ${PORTDOCS2}
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_TCL)
+USE_TCL=		yes
+CONFIGURE_ARGS+=	--with-tcl=${PREFIX}/lib/tcl8.4
+LIB_DEPENDS+=   	tcl84.1:${PORTSDIR}/lang/tcl84
+.endif
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=		yes
