@@ -17,7 +17,7 @@ COMMENT=	Library for terminal-independent, full-screen output
 
 CONFLICTS=	ncurses-devel-*
 
-RELEASE=	5.8
+RELEASE=	5.9
 
 GNU_CONFIGURE=	yes
 CONFIGURE_SCRIPT=../configure
@@ -142,9 +142,9 @@ post-configure:
 .endif
 .for d in test c++
 .if !defined(WITHOUT_WIDEC)
-	${CP} ${WRKSRC}/${d}/* ${WIDEC_WRKSRC}/${d}/
+	${CP} -R ${WRKSRC}/${d}/* ${WIDEC_WRKSRC}/${d}/
 .endif
-	${CP} ${WRKSRC}/${d}/* ${NOWIDEC_WRKSRC}/${d}/
+	${CP} -R ${WRKSRC}/${d}/* ${NOWIDEC_WRKSRC}/${d}/
 .endfor
 
 post-build:
