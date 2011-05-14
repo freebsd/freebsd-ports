@@ -775,6 +775,10 @@ lib/ruby/rubinius/rubinius/1.2/lib/rubinius/debugger.rb
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/debugger.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2010/12/15/rubinius-has-a-blog/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/02/17/rubinius-what-s-next/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/02/22/rubinius-multiple-branches-with-rvm/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/02/23/introduction-to-fancy/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/02/25/why-use-rubinius/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/03/11/making-rubinius-rbc-files-disappear/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/404.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/422.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/500.html
@@ -877,6 +881,7 @@ lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/how-to/translat
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/how-to/write-a-blog-post/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/how-to/write-a-ruby-spec/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/how-to/write-a-ticket/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/how-to/write-benchmarks/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/how-to/write-documentation/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/index-of-terms/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/index.html
@@ -1169,6 +1174,7 @@ lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/1.1.1/index.h
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/1.2.0/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/1.2.1/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/1.2.2/index.html
+lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/1.2.3/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/roadmap/index.html
 lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/robots.txt
@@ -1308,8 +1314,12 @@ lib/ruby/rubinius/rubinius/1.2/lib/rubygems/install_update_options.rb
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/install_update_options.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/installer.rb
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/installer.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rubygems/installer_test_case.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rubygems/installer_test_case.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/local_remote_options.rb
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/local_remote_options.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rubygems/mock_gem_ui.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rubygems/mock_gem_ui.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/old_format.rb
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/old_format.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/package/f_sync_dir.rb
@@ -1324,6 +1334,8 @@ lib/ruby/rubinius/rubinius/1.2/lib/rubygems/package/tar_reader/entry.rb
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/package/tar_reader/entry.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/package/tar_reader.rb
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/package/tar_reader.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rubygems/package/tar_test_case.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rubygems/package/tar_test_case.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/package/tar_writer.rb
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/package/tar_writer.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/package.rb
@@ -1356,6 +1368,8 @@ lib/ruby/rubinius/rubinius/1.2/lib/rubygems/spec_fetcher.rb
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/spec_fetcher.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/specification.rb
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/specification.rbc
+lib/ruby/rubinius/rubinius/1.2/lib/rubygems/test_case.rb
+lib/ruby/rubinius/rubinius/1.2/lib/rubygems/test_case.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/test_utilities.rb
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/test_utilities.rbc
 lib/ruby/rubinius/rubinius/1.2/lib/rubygems/text.rb
@@ -1739,6 +1753,7 @@ lib/ruby/rubinius/rubinius/1.2/runtime/common/type.rbc
 lib/ruby/rubinius/rubinius/1.2/runtime/common/undefined.rbc
 lib/ruby/rubinius/rubinius/1.2/runtime/common/variable_scope.rbc
 lib/ruby/rubinius/rubinius/1.2/runtime/common/vm.rbc
+lib/ruby/rubinius/rubinius/1.2/runtime/delta/agent.rbc
 lib/ruby/rubinius/rubinius/1.2/runtime/delta/class.rbc
 lib/ruby/rubinius/rubinius/1.2/runtime/delta/codeloader.rbc
 lib/ruby/rubinius/rubinius/1.2/runtime/delta/ctype.rbc
@@ -1844,7 +1859,16 @@ lib/ruby/rubinius/rubinius/1.2/runtime/signature.rbc
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2010
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/02/17/rubinius-what-s-next
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/02/17
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/02/22/rubinius-multiple-branches-with-rvm
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/02/22
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/02/23/introduction-to-fancy
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/02/23
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/02/25/why-use-rubinius
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/02/25
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/02
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/03/11/making-rubinius-rbc-files-disappear
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/03/11
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011/03
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/2011
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/about/1.1.1
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/about/one_one
@@ -1945,6 +1969,7 @@ lib/ruby/rubinius/rubinius/1.2/runtime/signature.rbc
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/how-to/write-a-blog-post
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/how-to/write-a-ruby-spec
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/how-to/write-a-ticket
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/how-to/write-benchmarks
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/how-to/write-documentation
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/how-to
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/doc/en/index-of-terms
@@ -2229,6 +2254,7 @@ lib/ruby/rubinius/rubinius/1.2/runtime/signature.rbc
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/1.2.0
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/1.2.1
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/1.2.2
+@dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases/1.2.3
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/releases
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/roadmap
 @dirrm lib/ruby/rubinius/rubinius/1.2/lib/rubinius/documentation/stylesheets/blueprint
