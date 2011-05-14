@@ -79,6 +79,10 @@ bin/enable-app-engine-project
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/uritemplate/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/uritemplate/__init__.pyo
 %%PORTDOCS%%%%DOCSDIR%%/apiclient.anyjson.html
+%%PORTDOCS%%%%DOCSDIR%%/apiclient.contrib.buzz.html
+%%PORTDOCS%%%%DOCSDIR%%/apiclient.contrib.html
+%%PORTDOCS%%%%DOCSDIR%%/apiclient.contrib.latitude.html
+%%PORTDOCS%%%%DOCSDIR%%/apiclient.contrib.moderator.html
 %%PORTDOCS%%%%DOCSDIR%%/apiclient.discovery.html
 %%PORTDOCS%%%%DOCSDIR%%/apiclient.errors.html
 %%PORTDOCS%%%%DOCSDIR%%/apiclient.ext.appengine.html
@@ -105,6 +109,8 @@ bin/enable-app-engine-project
 %%PORTDOCS%%%%DOCSDIR%%/dyn/diacritize.v1.diacritize.corpus.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/diacritize.v1.diacritize.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/diacritize.v1.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/discovery.v1.apis.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/discovery.v1.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/latitude.v1.currentLocation.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/latitude.v1.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/latitude.v1.location.html
@@ -129,8 +135,16 @@ bin/enable-app-engine-project
 %%PORTDOCS%%%%DOCSDIR%%/dyn/moderator.v1.votes.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/prediction.v1.1.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/prediction.v1.1.training.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/prediction.v1.2.hostedmodels.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/prediction.v1.2.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/prediction.v1.2.training.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/shopping.v1.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/shopping.v1.products.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/siteVerification.v1.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/siteVerification.v1.webResource.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/taskqueue.v1beta1.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/taskqueue.v1beta1.taskqueues.html
+%%PORTDOCS%%%%DOCSDIR%%/dyn/taskqueue.v1beta1.tasks.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/translate.v2.detections.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/translate.v2.html
 %%PORTDOCS%%%%DOCSDIR%%/dyn/translate.v2.languages.html
@@ -313,6 +327,13 @@ bin/enable-app-engine-project
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/templates/buzz/login.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/templates/buzz/welcome.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/django_sample/urls.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/client_task.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/task_cmds.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/taskqueue_client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/taskqueue_cmd_base.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/taskqueue_cmds.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue/taskqueue_logger.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gtaskqueue_sample/setup.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/latitude/latitude.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/local/main.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/localdiscovery/buzz.json
@@ -349,7 +370,14 @@ bin/enable-app-engine-project
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/oauth2/clients/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/oauth2/clients/imap.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/oauth2/clients/smtp.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/oauth2client/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/oauth2client/appengine.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/oauth2client/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/oauth2client/django_orm.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/oauth2client/file.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/oauth2client/tools.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/uritemplate/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/new_project_template/welcome.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/anyjson.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/dailymotion/apiclient/contrib/__init__.py
@@ -435,7 +463,7 @@ bin/enable-app-engine-project
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/django_sample/templates/buzz/login.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/django_sample/templates/buzz/welcome.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/oauth2/django_sample/urls.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prediction/main.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/prediction/prediction.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/searchforshopping/basic.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/searchforshopping/crowding.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/searchforshopping/fulltextsearch.py
@@ -444,12 +472,17 @@ bin/enable-app-engine-project
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/searchforshopping/pagination.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/searchforshopping/ranking.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/searchforshopping/restricting.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/buzz.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/moderator.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/prediction.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/src/urlshortener.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/threadqueue/main.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/translate/main.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/urlshortener/main.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/urlshortener/urlshortener.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/urlshortener
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/translate
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/threadqueue
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/src
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/searchforshopping
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/prediction
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2/django_sample/templates/buzz
@@ -471,6 +504,7 @@ bin/enable-app-engine-project
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2/dailymotion
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oauth2
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/new_project_template/uritemplate
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/new_project_template/oauth2client
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/new_project_template/oauth2/clients
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/new_project_template/oauth2
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/new_project_template/httplib2
@@ -485,6 +519,8 @@ bin/enable-app-engine-project
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/localdiscovery
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/local
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/latitude
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gtaskqueue_sample/gtaskqueue
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/gtaskqueue_sample
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/django_sample/templates/buzz
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/django_sample/templates
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/django_sample/static
