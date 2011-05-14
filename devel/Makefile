@@ -602,6 +602,7 @@
     SUBDIR += hs-happy
     SUBDIR += hs-hashed-storage
     SUBDIR += hs-haskeline
+    SUBDIR += hs-haskell-platform
     SUBDIR += hs-haskell-src
     SUBDIR += hs-haskell-src-exts
     SUBDIR += hs-hat
