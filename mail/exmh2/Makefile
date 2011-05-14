@@ -9,7 +9,7 @@
 
 PORTNAME=	exmh
 PORTVERSION=	2.7.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES+=	mail tk
 MASTER_SITES=	${MASTER_SITE_TCLTK} \
 		SF
@@ -23,10 +23,10 @@ BUILD_DEPENDS=	tclsh8.0jp:${PORTSDIR}/japanese/tcl80
 WISH=		wish8.0jp
 TCLSH=		tclsh8.0jp
 .else
-RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
-BUILD_DEPENDS=	tclsh8.4:${PORTSDIR}/lang/tcl84
-WISH=		wish8.4
-TCLSH=		tclsh8.4
+RUN_DEPENDS=	wish8.5:${PORTSDIR}/x11-toolkits/tk85
+BUILD_DEPENDS=	tclsh8.5:${PORTSDIR}/lang/tcl85
+WISH=		wish8.5
+TCLSH=		tclsh8.5
 .endif
 
 # exmh is pretty useless without this, but it's not needed to build it.
