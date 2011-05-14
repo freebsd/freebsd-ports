@@ -9,21 +9,13 @@ PORTNAME=	Apache-Peek
 PORTVERSION=	1.02
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/S/ST/STAS
+MASTER_SITE_SUBDIR=	CPAN:STAS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	A data debugging tool for the XS programmer (under mod_perl)
 
-.if defined(WITH_MODPERL2)
-BROKEN=		Broken due the new mod_perl2 API
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2/mod_perl.pm:${PORTSDIR}/www/mod_perl2
-MOD_PERL=	2
-.else
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
-		${SITE_PERL}/${PERL_ARCH}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test
-MOD_PERL=	1
-.endif
+USE_APACHE=	13+
 
 PERL_CONFIGURE=	YES
 
@@ -33,7 +25,17 @@ MAN3=		Apache::Peek.3
 
 .include <bsd.port.pre.mk>
 
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+.if defined(WITH_MODPERL2) || ${APACHE_VERSION} > 13
+BROKEN=		Broken due the new mod_perl2 API
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2/mod_perl.pm:${PORTSDIR}/www/mod_perl2
+MOD_PERL=	2
+.else
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
+		${SITE_PERL}/${PERL_ARCH}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test
+MOD_PERL=	1
+.endif
 
 post-patch:
 	@${PERL} -pi -e '$$_="" if /^test_configure\(/;' ${WRKSRC}/Makefile.PL
