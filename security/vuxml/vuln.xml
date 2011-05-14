@@ -34,6 +34,52 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="36594c54-7be7-11e0-9838-0022156e8794">
+    <topic>exim -- remote code execution and information disclosure</topic>
+    <affects>
+      <package>
+	<name>exim</name>
+	<range><ge>4.70</ge><lt>4.76</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Release notes for Exim 4.76 says:</p>
+	<blockquote
+	  cite="ftp://ftp.exim.org/pub/exim/ChangeLogs/ChangeLog-4.76">
+	  <p>Bugzilla 1106: CVE-2011-1764 - DKIM log line was subject
+	    to a format-string attack -- SECURITY: remote arbitrary code
+	    execution.</p>
+	  <p>DKIM signature header parsing was double-expanded, second
+	    time unintentionally subject to list matching rules, letting
+	    the header cause arbitrary Exim lookups (of items which can
+	    occur in lists, *not* arbitrary string expansion). This
+	    allowed for information disclosure.</p>
+	</blockquote>
+        <p>Also, impact assessment was redone shortly after the original
+          announcement:</p>
+	<blockquote
+	  cite="https://lists.exim.org/lurker/message/20110512.102909.8136175a.en.html">
+          <p>Further analysis revealed that the second security was
+            more severe than I realised at the time that I wrote the
+            announcement.  The second security issue has been assigned
+            CVE-2011-1407 and is also a remote code execution flaw.
+            For clarity: both issues were introduced with 4.70.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-1764</cvename>
+      <cvename>CVE-2011-1407</cvename>
+      <mlist msgid="20110512102909.GA58484@redoubt.spodhuis.org">https://lists.exim.org/lurker/message/20110512.102909.8136175a.en.html</mlist>
+      <url>http://bugs.exim.org/show_bug.cgi?id=1106</url>
+    </references>
+    <dates>
+      <discovery>2011-05-10</discovery>
+      <entry>2011-05-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="00b296b6-7db1-11e0-96b7-00300582f9fc">
     <topic>Apache APR -- DoS vulnerabilities</topic>
     <affects>
