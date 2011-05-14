@@ -6,25 +6,23 @@
 #
 
 PORTNAME=	gksu
-PORTVERSION=	1.3.7
-PORTREVISION=	6
+PORTVERSION=	2.0.2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://people.debian.org/~kov/gksu/old_stuff/gksu/
+MASTER_SITES=	http://people.debian.org/~kov/gksu/
 
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	Graphical frontend to su
 
-LIB_DEPENDS=	gksu1.2.0:${PORTSDIR}/sysutils/libgksu \
-		gksuui1.0.1:${PORTSDIR}/sysutils/libgksuui \
+LIB_DEPENDS=	gksu2:${PORTSDIR}/sysutils/libgksu \
+		nautilus-extension.1:${PORTSDIR}/x11-fm/nautilus \
 		gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
 
 USE_GNOME=	gtk20 pkgconfig gnomeprefix gnomehack gconf2 intlhack
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
-GCONF_SCHEMAS=	gksu.schemas
-MAN1=		gksu.1 gksuexec.1
-MLINKS=		gksu.1 gksudo.1
+MAN1=		gksu.1
 
 .include <bsd.port.mk>

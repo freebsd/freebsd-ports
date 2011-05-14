@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome-extras
 PORTVERSION=	2.25.3
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11-toolkits python gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gnome-python-extras/${PORTVERSION:C/..$//}
@@ -20,8 +20,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings for GNOME 2
 
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell \
-		gksu1.2.0:${PORTSDIR}/sysutils/libgksu \
-		gksuui1.0.1:${PORTSDIR}/sysutils/libgksuui
+		gksu2.0:${PORTSDIR}/sysutils/libgksu \
 #		gdl-1.2:${PORTSDIR}/x11-toolkits/gdl
 
 USE_GECKO=	libxul

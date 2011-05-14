@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110514:
+  AFFECTS: users of sysutils/gksu, sysutils/libgksu, sysutils/libgksuui
+  AUTHOR: bsam@FreeBSD.org
+
+  sysutils/gksu has been updated to 2.0.2. sysutils/libgksuui has been
+  deprecated since it has become a part of sysutils/libgksu.
+
+  Before upgrading remove sysutils/libgksuui.
+
 20110511:
   AFFECTS: users of editors/emacs
   AUTHOR: ashish@FreeBSD.org
