@@ -575,10 +575,10 @@
     SUBDIR += hs-blaze-builder
     SUBDIR += hs-blaze-builder-enumerator
     SUBDIR += hs-bsd-sysctl
-    SUBDIR += hs-cmdargs
     SUBDIR += hs-c2hs
     SUBDIR += hs-cabal-install
     SUBDIR += hs-checkers
+    SUBDIR += hs-cmdargs
     SUBDIR += hs-convertible
     SUBDIR += hs-cpphs
     SUBDIR += hs-darcs
