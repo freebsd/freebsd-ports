@@ -6,35 +6,36 @@
 #
 
 PORTNAME=	libchipcard
-PORTVERSION=	0.9.1
+DISTVERSION=	5.0.1test
 CATEGORIES=	devel
-MASTER_SITES=	SF
+MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=02&release=25&file=01&dummy=
 
-MAINTAINER=	martin@libchipcard.de
+MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	A library for easy access to chipcards
 
-LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
+LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite \
+		gwenhywfar.60:${PORTSDIR}/devel/gwenhywfar
 
+FETCH_ARGS+=	-o ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS+=--with-distri=freebsd
+CONFIGURE_ENV+=	PTHREAD_LIBS="${PTHREAD_LIBS}" aq_distrib_name="FreeBSD"
+CONFIGURE_ARGS+=--with-pcsc-includes=${LOCALBASE}/include \
+			--with-pcsc-libs=${LOCALBASE}/lib
+PLIST_SUB=	GWEN_PLUGINS="${GWEN_PLUGINS}"
+USE_LDCONFIG=	yes
 
-MAN1=		ctfstool.1 chipcardd.1 geldkarte.1 hbcicard.1 \
-		kvkd.1 memcard.1 libchipcard-config.1 readertest.1
-
-MAN5=		libchipcard.conf.5 chipcardc.conf.5 chipcardd.conf.5
+GWEN_SHLIB_VER=	60
+GWEN_PLUGINS=	${LOCALBASE}/lib/gwenhywfar/plugins/${GWEN_SHLIB_VER}
 
 post-patch:
-	${REINPLACE_CMD} -e "s,LPCSTR,LPCTSTR," ${WRKSRC}/src/libchipcard/engine/reader/ctdriver_pcsc.h
-	${REINPLACE_CMD} -e "s,libpcsclite.so.0,libpcsclite.so.1,; \
-		s,/usr/local/pcsc/include,${LOCALBASE}/include/PCSC," ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|aq_endian\" ==|aq_endian\" =|g' \
+		${WRKSRC}/configure
 
 post-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/freebsd/chipcardd.sh ${PREFIX}/etc/rc.d
 	@${SED} -e 's,%%PREFIX%%,${PREFIX},' ${PKGMESSAGE}
 
 .include <bsd.port.mk>

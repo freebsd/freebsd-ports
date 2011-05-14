@@ -1,74 +1,93 @@
+bin/kvkcard
 bin/cardcommander
-bin/ctfstool
-bin/geldkarte
-bin/hbcicard
-bin/libchipcard-config
 bin/memcard
-bin/readertest
-etc/rc.d/chipcardd.sh
-include/chameleon/chameleon.h
-include/chameleon/conf.h
-include/chameleon/cryp.h
-include/chameleon/debug.h
-include/chameleon/directory.h
-include/chameleon/error.h
-include/chameleon/inetaddr.h
-include/chameleon/inetsocket.h
-include/chameleon/ipcmessage.h
-include/chameleon/ipcmessagelayer.h
-include/chameleon/ipcservicelayer.h
-include/chameleon/ipctransportlayer.h
-include/chameleon/libloader.h
-include/chameleon/logger.h
-include/chipcard.h
-include/chipcard/ctcard.h
-include/chipcard/ctcardbase.h
-include/chipcard/ctcardtrader.h
-include/chipcard/ctcommand.h
-include/chipcard/ctcore_public.h
-include/chipcard/ctdatacache.h
-include/chipcard/cterror.h
-include/chipcard/ctfilesystem2.h
-include/chipcard/ctgeldkarte.h
-include/chipcard/ctinitializer.h
-include/chipcard/ctkvkcard.h
-include/chipcard/ctmemorycard.h
-include/chipcard/ctmisc.h
-include/chipcard/ctpointer.h
-include/chipcard/ctprocessorcard.h
-include/chipcard/ctreadercontext.h
-include/chipcard/ctreadertrader.h
-include/chipcard/cttlv.h
-include/chipcard/ctversion.h
-include/chipcard/hbcicard.h
-include/chipcard/libchipcard.h
-include/chipcard/rsacard.h
-include/ctversion.h
+bin/geldkarte
+bin/chipcard-tool
+bin/chipcard-config
+etc/chipcard/chipcardc.conf.default
+etc/chipcard/chipcardc.conf.example
+include/libchipcard5/chipcard/card.h
+include/libchipcard5/chipcard/card_imp.h
+include/libchipcard5/chipcard/card_l.h
+include/libchipcard5/chipcard/cards/ddvcard.h
+include/libchipcard5/chipcard/cards/egkcard.h
+include/libchipcard5/chipcard/cards/geldkarte.h
+include/libchipcard5/chipcard/cards/geldkarte_blog.h
+include/libchipcard5/chipcard/cards/geldkarte_llog.h
+include/libchipcard5/chipcard/cards/geldkarte_values.h
+include/libchipcard5/chipcard/cards/hiinsurancedata.h
+include/libchipcard5/chipcard/cards/hipersonaldata.h
+include/libchipcard5/chipcard/cards/kvkcard.h
+include/libchipcard5/chipcard/cards/memorycard.h
+include/libchipcard5/chipcard/cards/processorcard.h
+include/libchipcard5/chipcard/cards/starcos.h
+include/libchipcard5/chipcard/cards/starcos_keydescr.h
+include/libchipcard5/chipcard/cards/zkacard.h
+include/libchipcard5/chipcard/chipcard.h
+include/libchipcard5/chipcard/client.h
+include/libchipcard5/chipcard/ct/ct_card.h
+include/libchipcard5/chipcard/sharedstuff/driverinfo.h
+include/libchipcard5/chipcard/sharedstuff/misc.h
+include/libchipcard5/chipcard/sharedstuff/msgengine.h
+include/libchipcard5/chipcard/sharedstuff/pininfo.h
+include/libchipcard5/chipcard/tlv.h
+include/libchipcard5/chipcard/version.h
 lib/libchipcard.a
 lib/libchipcard.la
 lib/libchipcard.so
-lib/libchipcard.so.20
-sbin/chipcardd
-sbin/kvkd
-share/aclocal/libchipcard.m4
-share/libchipcard/commands/ctcard.cmd
-share/libchipcard/commands/ctgeldkarte.cmd
-share/libchipcard/commands/ctkvkcard.cmd
-share/libchipcard/commands/ctmemorycard.cmd
-share/libchipcard/commands/ctprocessorcard.cmd
-share/libchipcard/commands/hbcicard.cmd
-share/libchipcard/commands/rsacard.cmd
-share/libchipcard/drivers/README
-share/libchipcard/drivers/ctapi-fake.dsc
-share/libchipcard/drivers/cyberjack.dsc
-share/libchipcard/drivers/kobil.dsc
-share/libchipcard/drivers/orga.dsc
-share/libchipcard/drivers/towitoko.dsc
-share/libchipcard/examples/chipcardc.conf
-share/libchipcard/examples/chipcardd.conf
-@dirrm share/libchipcard/examples
-@dirrm share/libchipcard/drivers
-@dirrm share/libchipcard/commands
-@dirrm share/libchipcard
-@dirrm include/chipcard
-@dirrm include/chameleon
+lib/libchipcard.so.6
+share/aclocal/chipcard.m4
+share/chipcard/apps/README
+share/chipcard/apps/ddv.xml
+share/chipcard/apps/ddv0.xml
+share/chipcard/apps/ddv1.xml
+share/chipcard/apps/egk.xml
+share/chipcard/apps/examplecard.xml
+share/chipcard/apps/geldkarte.xml
+share/chipcard/apps/kvkcard.xml
+share/chipcard/apps/memorycard.xml
+share/chipcard/apps/processorcard.xml
+share/chipcard/apps/starcoscard-hvb.xml
+share/chipcard/apps/starcoscard-vr.xml
+share/chipcard/apps/starcoscard.xml
+share/chipcard/apps/zkacard.xml
+share/chipcard/cards/README
+share/chipcard/cards/card.xml
+share/chipcard/cards/cyberjack_pcsc/card.xml
+share/chipcard/cards/cyberjack_pcsc/kvk.xml
+share/chipcard/cards/cyberjack_pcsc/processorcard.xml
+share/chipcard/cards/ddv0.xml
+share/chipcard/cards/ddv1.xml
+share/chipcard/cards/egk.xml
+share/chipcard/cards/geldkarte.xml
+share/chipcard/cards/generic_pcsc/card.xml
+share/chipcard/cards/generic_pcsc/kvk.xml
+share/chipcard/cards/generic_pcsc/processorcard.xml
+share/chipcard/cards/kvkcard.xml
+share/chipcard/cards/memorycard.xml
+share/chipcard/cards/processorcard.xml
+share/chipcard/cards/starcoscard.xml
+share/chipcard/cards/zkacard.xml
+share/chipcard/drivers/cyberjack_pcsc.xml
+share/chipcard/drivers/generic_pcsc.xml
+@dirrmtry share/chipcard/drivers
+@dirrmtry share/chipcard/cards/generic_pcsc
+@dirrmtry share/chipcard/cards/cyberjack_pcsc
+@dirrmtry share/chipcard/cards
+@dirrmtry share/chipcard/apps
+@dirrmtry share/chipcard
+@dirrmtry include/libchipcard5/chipcard/sharedstuff
+@dirrmtry include/libchipcard5/chipcard/ct
+@dirrmtry include/libchipcard5/chipcard/cards
+@dirrmtry include/libchipcard5/chipcard
+@dirrmtry include/libchipcard5
+@dirrmtry etc/chipcard
+@cwd %%GWEN_PLUGINS%%
+ct/ddvcard.a
+ct/ddvcard.la
+ct/ddvcard.so
+ct/ddvcard.xml
+ct/starcoscard.a
+ct/starcoscard.la
+ct/starcoscard.so
+ct/starcoscard.xml

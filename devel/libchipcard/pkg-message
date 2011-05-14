@@ -1,8 +1,7 @@
 *******************************************************************************
 *								      	      *
-* Example configurations have been installed to:			      *
+* Example configuration has been installed in:				      *
 *  									      *
-* %%PREFIX%%/share/libchipcard/examples/chipcardc.conf (client configuration) *
-* %%PREFIX%%/share/libchipcard/examples/chipcardd.conf (daemon configuration) *
+* %%PREFIX%%/etc/chipcard/chipcardc.conf				      *
 *  								      	      *
 *******************************************************************************
