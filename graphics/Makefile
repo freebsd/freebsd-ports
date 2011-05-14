@@ -13,6 +13,7 @@
     SUBDIR += Hermes
     SUBDIR += IPA
     SUBDIR += ImageMagick
+    SUBDIR += ImageMagick-nox11
     SUBDIR += O2-tools
     SUBDIR += OpenEXR
     SUBDIR += SciPlot
