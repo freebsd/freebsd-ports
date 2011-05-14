@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ccid
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.4
 CATEGORIES=	devel
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/3518/
+MASTER_SITES=	https://alioth.debian.org/frs/download.php/3579/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	Generic USB CCID (Chip/Smart Card Interface Devices) driver
@@ -28,8 +28,6 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBUSB_LIBS="-L${LOCALBASE}/lib -lusb"
 
 PLIST_SUB=	VER=${PORTVERSION}
-MAN1=		RSA_SecurID_getpasswd.1
-MAN8=		Kobil_mIDentity_switch.8
 
 .include <bsd.port.pre.mk>
 
