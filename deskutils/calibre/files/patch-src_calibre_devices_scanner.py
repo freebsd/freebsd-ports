@@ -1,5 +1,5 @@
---- src/calibre/devices/scanner.py.orig	2010-10-06 22:06:18.000000000 -0700
-+++ src/calibre/devices/scanner.py	2010-10-06 22:07:36.000000000 -0700
+--- src/calibre/devices/scanner.py.orig	2011-05-02 11:35:14.000000000 -0500
++++ src/calibre/devices/scanner.py	2011-05-02 11:38:07.000000000 -0500
 @@ -5,10 +5,10 @@
  manner.
  '''
@@ -8,12 +8,12 @@
 +import sys, os, re, subprocess
  from threading import RLock
  
--from calibre import iswindows, isosx, plugins, islinux
-+from calibre import iswindows, isosx, plugins, islinux, isfreebsd
+-from calibre.constants import iswindows, isosx, plugins, islinux
++from calibre.constants import iswindows, isosx, plugins, islinux, isfreebsd
  
  osx_scanner = win_scanner = linux_scanner = None
  
-@@ -140,17 +140,65 @@
+@@ -155,17 +155,66 @@
              ans.add(tuple(dev))
          return ans
  
@@ -25,7 +25,7 @@
 +        try:
 +            out = subprocess.Popen("/usr/sbin/usbconfig dump_device_desc | /usr/bin/awk 'function get_str(s) { split(s, a, /<|>/); if (a[2] != \"no string\") { return a[2]; } else { return \"\";} } BEGIN {state=0;} /^[[:space:]]+idVendor/ {state = 1; vendor = $3; next;} /idProduct/ {productid = $3; next;} /bcdDevice/ {bcd = $3; next;} /iManufacturer/ { manufacturer = get_str($0); next; }  /iProduct/ { product = get_str($0); next;} /iSerialNumber/ { sn = get_str($0); next;} /^$/ {if (state == 1) { state = 0; printf(\"%s%%%%%s%%%%%s%%%%%s%%%%%s%%%%%s\\n\",vendor, productid, bcd, manufacturer, product, sn);} }'", shell=True, stdout=subprocess.PIPE).communicate()[0]
 +        except OSError, e:
-+	    print >>sys.stderr, "Execution failed:", e
++           print >>sys.stderr, "Execution failed:", e
 +
 +        if out.strip() == "":
 +            return ans
@@ -59,6 +59,7 @@
 +
 +            ans.add(tuple(dev))
 +        return ans
++
 +
  linux_scanner = None
  
