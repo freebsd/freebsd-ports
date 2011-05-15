@@ -54,7 +54,6 @@ freevo_stop() {
 	[ ${freevo_recordserver_enable} = "YES" ] && su ${freevo_user} -c "${command} --stop recordserver" && msg Stopping freevo recordserver.
 }
 
-no_msg=""
 
 case "$1" in
 start|faststart|onestart)

@@ -17,10 +17,11 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
+# noattach_flags Flags to noattach
+
 noattach_enable=${noattach_enable:-"NO"}      # Enable noattach
 noattach_pidfile=${noattach_pidfile:-"/var/run/noattach.pid"} # Path to pidfile
 noattach_socket=${noattach_socket:-"/var/run/noattach"} # Path to socket
-# noattach_flags="" # Flags to noattach
 
 . /etc/rc.subr
 

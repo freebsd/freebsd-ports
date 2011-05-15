@@ -21,7 +21,7 @@ name=spread
 rcvar=`set_rcvar`
 
 command="%%PREFIX%%/sbin/spread"
-command_args=""
+
 pidfile=/var/run/${name}.pid
 required_files=%%PREFIX%%/etc/${name}.conf
 

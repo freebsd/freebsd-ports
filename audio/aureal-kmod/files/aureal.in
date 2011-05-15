@@ -31,7 +31,6 @@ stop_cmd="aureal_stop"
 load_rc_config $name
 
 : ${aureal_enable="NO"}
-: ${aureal_card=""}
 : ${aureal_viakx133fix="NO"}
 
 aureal_detect()

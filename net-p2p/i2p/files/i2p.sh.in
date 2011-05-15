@@ -11,9 +11,8 @@
 #
 # Add the following lines to /etc/rc.conf to enable i2p:
 #
-#i2p_enable="YES"
-#i2p_user=""
-#
+# i2p_enable="YES"
+# i2p_user
 
 . /etc/rc.subr
 

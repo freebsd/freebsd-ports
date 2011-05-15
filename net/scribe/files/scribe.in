@@ -18,7 +18,6 @@ stop_postcmd=scribe_cleanup
 
 load_rc_config "$name"
 : ${scribe_enable="NO"}
-: ${scribe_flags=""}
 
 scribe_start()
 {

@@ -16,8 +16,8 @@
 # softflowd_em1_timeouts="-t maxlife=600"
 # softflowd_em0_max_states="16000"
 # softflowd_em1_max_states="17000"
-# softflowd_em0_extra_args=""
-# softflowd_em1_extra_args=""
+# softflowd_em0_extra_args
+# softflowd_em1_extra_args
 
 . /etc/rc.subr
 

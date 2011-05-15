@@ -55,7 +55,6 @@ restart_cmd="zope211_restart"
 load_rc_config $name
 
 : ${zope211_enable="NO"}
-: ${zope211_instances=""}
 
 cmd="$1"
 [ $# -gt 0 ] && shift

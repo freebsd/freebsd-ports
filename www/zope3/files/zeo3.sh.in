@@ -56,7 +56,6 @@ restart_cmd="zeo3_restart"
 load_rc_config $name
 
 : ${zeo3_enable="NO"}
-: ${zeo3_instances=""}
 
 cmd="$1"
 [ $# -gt 0 ] && shift

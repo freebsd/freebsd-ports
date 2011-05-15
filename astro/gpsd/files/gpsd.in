@@ -56,8 +56,6 @@ load_rc_config $name
 
 # Set defaults
 : ${gpsd_enable:="NO"}
-: ${gpsd_flags:=""}
-: ${gpsd_devices:=""}
 : ${gpxlogger_enable:="NO"}
 : ${gpxlogger_flags:="-i 600"}
 : ${gpxlogger_logdir:="/var/log"}

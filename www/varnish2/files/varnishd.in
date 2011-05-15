@@ -64,7 +64,6 @@ load_rc_config ${name}
 : ${varnishd_listen:=":80"}
 : ${varnishd_admin:="localhost:81"}
 : ${varnishd_backend:="localhost:8080"}
-: ${varnishd_config:=""}
 : ${varnishd_storage:="file,/tmp,50%"}
 : ${varnishd_hash:="classic,16383"}
 : ${varnishd_user:="www"}

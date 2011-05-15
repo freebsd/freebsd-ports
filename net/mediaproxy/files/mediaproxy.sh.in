@@ -1,4 +1,6 @@
 #!/bin/sh
+
+# $FreeBSD$
 #
 # mediaproxy   starts and stops the SER MediaProxy server
 

@@ -50,7 +50,6 @@ fi
 : ${slapd_owner="ldap:ldap"}
 : ${slapd_sockets_mode="666"}
 : ${slapd_cn_config="NO"}
-: ${slapd_krb5_ktname=""}
 
 command="%%PREFIX%%/libexec/slapd"
 pidfile="%%LDAP_RUN_DIR%%/slapd.pid"

@@ -30,7 +30,6 @@ rcvar=${name}_enable
 load_rc_config ${name}
 
 : ${tstatd_enable="NO"}
-: ${tstatd_profiles=""}
 
 command=%%PREFIX%%/bin/tstatd
 

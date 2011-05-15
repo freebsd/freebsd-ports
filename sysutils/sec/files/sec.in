@@ -39,7 +39,6 @@ load_rc_config "${name}"
 [ -z "${sec_enable}" ]       && sec_enable="NO"
 [ -z "${sec_flags}" ]        && sec_flags="-log=/var/log/sec.log"
 [ -z "${sec_configfile}" ]   && sec_configfile="%%PREFIX%%/etc/sec.conf"
-[ -z "${sec_instances}" ]    && sec_instances=""
 
 sec_checkconfig() {
   if [ -z $instance ]

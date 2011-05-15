@@ -1,15 +1,15 @@
 #!/bin/sh
-#
 
+# $FreeBSD$
+#
 # PROVIDE: watchquagga
 # REQUIRE: NETWORKING quagga
-
 #
 # Add the following line to /etc/rc.conf to enable quagga:
-#watchquagga_enable="YES"
+# watchquagga_enable="YES"
 #
 # You may also wish to use the following variables to fine-tune startup:
-#watchquagga_flags=""
+# watchquagga_flags
 #
 #
 

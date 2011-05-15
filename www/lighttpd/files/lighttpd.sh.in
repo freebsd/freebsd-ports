@@ -34,9 +34,7 @@ rcvar=`set_rcvar`
 load_rc_config $name
 
 : ${lighttpd_enable="NO"}
-: ${lighttpd_conf=""}
 : ${lighttpd_pidfile="/var/run/${name}.pid"}
-: ${lighttpd_instances=""}
 
 # Compatibility for old configuration file location
 deprecated_conf=

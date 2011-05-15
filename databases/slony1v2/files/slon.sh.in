@@ -24,7 +24,6 @@ procname="%%PREFIX%%/bin/slon"
 
 # From global rc.conf(5); if unset, set them here
 [ -z "$slon_enable" ]   && slon_enable="NO"
-[ -z "$slon_profiles" ] && slon_profiles=""
 
 configfile_path="%%PREFIX%%/etc/${name}.conf"
 command_args="-f ${configfile_path}"

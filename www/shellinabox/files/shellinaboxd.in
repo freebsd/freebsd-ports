@@ -20,9 +20,9 @@
 # shellinaboxd_group="%%GROUPS%%"
 # shellinaboxd_port="4200"
 # shellinaboxd_certdir="%%ETCDIR%%"
-# shellinaboxd_certfile=""
+# shellinaboxd_certfile=
 # 	Example: shellinaboxd_certfile="/your/cert.pem"
-# shellinaboxd_flags=""
+# shellinaboxd_flags=
 
 shellinaboxd_setfib() {
 	sysctl net.fibs >/dev/null 2>&1 || return 0

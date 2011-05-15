@@ -1,6 +1,7 @@
 #!/bin/sh
-# 
 
+# $FreeBSD$
+#
 # PROVIDE: sancp
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
@@ -73,7 +74,6 @@ load_rc_config $name
 : ${sancp_enable="NO"}
 : ${sancp_flags="-D"}
 : ${sancp_conf="%%PREFIX%%/etc/sancp.conf"}
-: ${sancp_interface=""}
 
 command_args="-c ${sancp_conf} -i ${sancp_interface}"
 

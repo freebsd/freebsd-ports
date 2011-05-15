@@ -21,6 +21,5 @@ command="%%PREFIX%%/sbin/VBoxService"
 load_rc_config $name
 
 : ${vboxservice_enable="NO"}
-: ${vboxservice_flags=""}
 
 run_rc_command "$1"

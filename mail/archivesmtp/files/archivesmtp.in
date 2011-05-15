@@ -18,7 +18,6 @@ load_rc_config "$name"
 : ${archivesmtp_socket="unix:%%SOCKETBASE%%/%%SOCKETDIR%%/mta.sock"}
 : ${archivesmtp_config="%%PREFIX%%/etc/archivesmtp.conf"}
 : ${archivesmtp_pidfile="%%SOCKETBASE%%/%%SOCKETDIR%%/run.pid"}
-: ${archivesmtp_flags=""}
 
 pidfile="${archivesmtp_pidfile}"
 

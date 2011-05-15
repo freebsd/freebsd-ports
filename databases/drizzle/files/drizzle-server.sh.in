@@ -34,7 +34,6 @@ load_rc_config $name
 : ${drizzle_limits="NO"}
 : ${drizzle_dbdir="/var/db/drizzle"}
 : ${drizzle_log="${drizzle_dbdir}/`/bin/hostname`.log"}
-: ${drizzle_args=""}
 
 drizzle_user="%%USERS%%"
 drizzle_limits_args="-e -U ${drizzle_user}"

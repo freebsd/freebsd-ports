@@ -44,10 +44,10 @@
 # /etc/rc.conf, /etc/rc.conf.local or /etc/rc.conf.d/NAME
 #
 # NAME_enable="NO"	# set to YES to enable openvpn
-# NAME_if=""		# driver(s) to load, set to "tun", "tap" or "tun tap"
+# NAME_if=		# driver(s) to load, set to "tun", "tap" or "tun tap"
 #
 # # optional:
-# NAME_flags=""				# additional command line arguments
+# NAME_flags=				# additional command line arguments
 # NAME_configfile="%%PREFIX%%/etc/openvpn/NAME.conf"	# --config file
 # NAME_dir="%%PREFIX%%/etc/openvpn"	# --cd directory
 #

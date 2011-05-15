@@ -17,7 +17,7 @@
 # darkstat_dir="/var/run/darkstat"
 # darkstat_pidname="darkstat.pid"
 # darkstat_dropuser="nobody"
-# darkstat_flags=""
+# darkstat_flags
 #
 #   - examples: [ --no-promisc ] [ --no-dns ] [ -p port ]
 #     [ -b bindaddr ] [ -f filter ] [ -l network/netmask ]

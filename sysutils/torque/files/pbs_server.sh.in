@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# $FreeBSD$
+#
 # PROVIDE: pbs_server
 # REQUIRE: 
 #
@@ -21,7 +23,5 @@ command=%%PREFIX%%/sbin/${name}
 load_rc_config $name
 
 : ${pbs_server_enable="NO"}
-
-command_args=""
 
 run_rc_command "$1"

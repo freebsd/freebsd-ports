@@ -52,7 +52,6 @@ load_rc_config "${name}"
 : ${hudson_home="%%HUDSON_HOME%%"}
 : ${hudson_args="--webroot=${hudson_home}/war --httpListenAddress=127.0.0.1 --httpPort=8180 --ajp13ListenAddress=127.0.0.1 --ajp13Port=8009 --prefix=/hudson"}
 : ${hudson_java_home="%%JAVA_HOME%%"}
-: ${hudson_java_opts=""}
 : ${hudson_user="%%HUDSON_USER%%"}
 : ${hudson_group="%%HUDSON_GROUP%%"}
 

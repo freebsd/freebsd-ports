@@ -18,8 +18,9 @@ spooldir=%%SPOOLDIR%%
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
+# milterregex_flags Flags to milter-regex program
+
 [ -z "$milterregex_enable" ] && milterregex_enable="NO"	# Enable milter-regex
-# milterregex_flags="" # Flags to milter-regex program
 
 . /etc/rc.subr
 

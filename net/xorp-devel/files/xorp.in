@@ -11,9 +11,10 @@
 
 # Add the following lines to /etc/rc.conf to enable xorp:
 #
-#xorp_enable="YES"
-#xorp_conf="%%PREFIX%%/etc/xorp.conf.sample"
+# xorp_enable="YES"
+# xorp_conf="%%PREFIX%%/etc/xorp.conf.sample"
 #
+# xorp_flags	(Set as needed)
 
 . /etc/rc.subr
 
@@ -24,7 +25,6 @@ load_rc_config $name
 
 : ${xorp_enable="NO"}
 : ${xorp_conf="%%PREFIX%%/etc/xorp.conf"}
-: ${xorp_flags=""}
 : ${xorp_rtrmgr_pidfile="/var/run/xorp_rtrmgr.pid"}
 : ${xorp_rtrmgr_logfile="/var/log/xorp_rtrmgr.log"}
 : ${xorp_rtrmgr_poll_enable=true}

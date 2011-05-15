@@ -48,13 +48,8 @@ load_rc_config $name
 #
 : ${milterbatv_enable="NO"}
 : ${milterbatv_uid="mailnull"}
-: ${milterbatv_profiles=""}
 : ${milterbatv_cfgfile="%%PREFIX%%/etc/mail/batv-filter.conf"}
 
-: ${milterbatv_socket=""}
-: ${milterbatv_domain=""}
-: ${milterbatv_allowlist=""}
-: ${milterbatv_key=""}
 # Options other than above can be set with $milterbatv_flags.
 # see batv-milter documentation for detail.
 

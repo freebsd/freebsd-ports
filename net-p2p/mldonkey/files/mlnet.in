@@ -11,11 +11,10 @@
 #
 # Add the following lines to /etc/rc.conf to enable mlnet:
 #
-#mlnet_enable="YES"
-#mlnet_user=""
-#mlnet_flags=""
-#mlnet_logfile=""
-#
+# mlnet_enable="YES"
+# mlnet_user="user"
+# mlnet_logfile="file"
+# mlnet_flags	(Set as needed)
 
 . /etc/rc.subr
 

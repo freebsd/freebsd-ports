@@ -17,9 +17,10 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
+# vbsfilter_flags Flags to vbsfilter
+
 vbsfilter_enable=${vbsfilter_enable:-"NO"}      # Enable vbsfilter-milter
 vbsfilter_socket=${vbsfilter_socket:-"/var/run/vbsfilter"} # Path to socket
-# vbsfilter_flags="" # Flags to vbsfilter
 
 . /etc/rc.subr
 

@@ -10,9 +10,9 @@
 #
 # trafd_enable="YES"
 # trafd_ifaces="fxp0 fxp1 fxp2"
-# trafd_flags=""
 # trafd_log="/var/log/traffic.log"
 #
+# trafd_flags	(Set as needed)
 
 . /etc/rc.subr
 

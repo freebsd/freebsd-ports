@@ -49,14 +49,8 @@ load_rc_config $name
 #
 : ${milterdkim_enable="NO"}
 : ${milterdkim_uid="mailnull"}
-: ${milterdkim_profiles=""}
 : ${milterdkim_cfgfile="%%PREFIX%%/etc/mail/dkim-filter.conf"}
 
-: ${milterdkim_socket=""}
-: ${milterdkim_domain=""}
-: ${milterdkim_key=""}
-: ${milterdkim_selector=""}
-: ${milterdkim_alg=""}
 # Options other than above can be set with $milterdkim_flags.
 # see dkim-milter documentation for detail.
 
