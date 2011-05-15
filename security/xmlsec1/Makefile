@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmlsec1
-PORTVERSION=	1.2.17
+PORTVERSION=	1.2.18
 CATEGORIES=	security
 MASTER_SITES=	http://www.aleksey.com/xmlsec/download/ \
 		ftp://ftp.aleksey.com/pub/xmlsec/releases/ \
