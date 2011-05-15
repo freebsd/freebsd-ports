@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.49b
-PORTREVISION=	5
+PORTVERSION=	2.57b
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -15,242 +14,251 @@ MASTER_SITES=	http://download.blender.org/source/ \
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	3D modeling/rendering/animation/gaming package
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libode.a:${PORTSDIR}/devel/ode
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		IlmThread.6:${PORTSDIR}/graphics/ilmbase
+		freetype.9:${PORTSDIR}/print/freetype2
 
-USE_XORG=	x11 xext xmu xi
-USE_PYTHON=	2.5+
-USE_SDL=	sdl
+USE_XORG=	x11 xext xmu
 USE_GL=		glew
-USE_GMAKE=	yes
-MAKE_JOBS_UNSAFE=	yes
+USE_CMAKE=	yes
+USE_PYTHON=	3.2
+WANT_GNOME=	yes
 
-SUB_FILES=	blender
+MAKE_JOBS_SAFE=	yes
 
-PORTDOCS=	README bf-members.txt blender-scons.txt  python-dev-guide.txt \
-		blender-cmake.txt blender-guardedalloc.txt \
-		interface_API.txt blender-scons-dev.txt oldbugs.txt
+CMAKE_OUTSOURCE=	yes
+CMAKE_ARGS+=	-DWITH_BUILTIN_GLEW:BOOL=OFF -DWITH_PYTHON_INSTALL:BOOL=OFF
+
+SUB_FILES=	blender blenderplayer
+MAN1=		blender.1
+
+OUTDIR=		${INSTALL_WRKSRC}/bin/2.57
 
 LANG=		ar bg ca cs de el es fi fr hr hr_HR it ja ko nl pl pt_BR ro \
 		ru sr sr@Latn sv uk zh_CN
 
-LANG=		ar bg ca cs de el es fi fr hr hr_HR it ja ko nl pl pt_BR ro \
-		ru sr sr@Latn sv uk zh_CN
-
-OPTIONS=	DDS		"DDS file format support" on \
+OPTIONS=	BULLET		"Enable bullet physics engine" on \
+		CINEON		"CINEON and DPX graphics format support" on \
+		DDS		"DDS graphics format support" on \
 		FFMPEG		"Audio and video support using ffmpeg" on \
-		FREETYPE	"Improved font rendering support" on \
-		ICONV		"Iconv support for localisation (only with NLS)" off \
-		KETSJI		"Build GameEngine and BlenderPlayer" off \
+		FFTW3		"Floating point support using fftw" off \
+		GAMEENGINE	"Enable game engine" on \
+		HDR		"Generic high dynamic-range (HDR) support" on \
+		JACK		"Audio support using JackAudio" off \
 		NLS		"Native language support" on \
-		OCFLAGS		"Optimized Cflags" off \
-		OPENAL		"3D sound support using OpenAL" off \
+		MENU		"Install desktop menu" on \
+		OPENAL		"3D sound support using OpenAL" on \
 		OPENEXR		"High dynamic-range (HDR) support using OpenEXR" on \
 		OPENJPEG	"Enhanced JPEG graphics support using OpenJPEG" on \
-		OPENMP		"Parallel processing support" off \
-		VERSE		"Shared networking support using Verse" on
+		OPENMP		"Parallel processing support" on \
+		PLAYER		"Enable blender player" off \
+		REDCODE		"RedCode graphics format support" off \
+		SAMPLERATE	"Enable samplerate conversion" on \
+		SDL		"Audio and Joystick support using SDL" on \
+		SNDFILE		"Audio support using libsndfile" off \
+		TIFF		"Tiff graphics format support using LibTiff" on \
+		XINPUT		"Enable X11 Xinput (tablet) support" on
 
 .include <bsd.port.pre.mk>
 
-BDSUFFIX=	${OSREL}-${ARCH}
-.if ${ARCH} == "amd64"
-BDSUFFIX=	${OSREL}-x86_64
+.if defined(WITHOUT_BULLET)
+CMAKE_ARGS+=	-DWITH_BULLET:BOOL=OFF
+.else
+CMAKE_ARGS+=	-DWITH_BULLET:BOOL=ON
 .endif
 
-MAKE_ENV+=	NAN_FMOD="${LOCALBASE}/"
-MAKE_ENV+=	NAN_PYTHON="${LOCALBASE}/"
-MAKE_ENV+=	NAN_PYTHON_VERSION=${PYTHON_VER}
-MAKE_ENV+=	NAN_JPEG="${LOCALBASE}/"
-MAKE_ENV+=	NAN_OPENJPEG="${LOCALBASE}/"
-MAKE_ENV+=	NAN_PNG="${LOCALBASE}/"
-MAKE_ENV+=	NAN_ZLIB="${LOCALBASE}/"
-MAKE_ENV+=	NAN_ODE="${LOCALBASE}/"
-MAKE_ENV+=	NAN_GLEW="${LOCALBASE}/"
-MAKE_ENV+=	NAN_JUST_BLENDERDYNAMIC="true"
-MAKE_ENV+=	WITH_BF_DYNAMICOPENGL="true"
-
-CFLAGS+=	"-I${LOCALBASE}/include"
-NANCPPFLAGS=
-
-.if !defined(WITHOUT_DDS)
-MAKE_ENV+=	WITH_DDS="true"
+.if defined(WITHOUT_CINEON)
+CMAKE_ARGS+=	-DWITH_IMAGE_CINEON:BOOL=OFF
 .else
-MAKE_ENV+=	WITH_DDS="false"
+CMAKE_ARGS+=	-DWITH_IMAGE_CINEON:BOOL=ON
+.endif
+
+.if defined(WITHOUT_DDS)
+CMAKE_ARGS+=	-DWITH_IMAGE_DDS:BOOL=OFF
+.else
+CMAKE_ARGS+=	-DWITH_IMAGE_DDS:BOOL=ON
 .endif
 
 .if defined(WITHOUT_FFMPEG)
-MAKE_ENV+=	WITH_FFMPEG="false"
+CMAKE_ARGS+=	-DWITH_CODEC_FFMPEG:BOOL=OFF
 .else
-MAKE_ENV+=	WITH_FFMPEG="true"
-MAKE_ENV+=	NAN_USE_FFMPEG_CONFIG="true"
-MAKE_ENV+=	NAN_FFMPEG="${LOCALBASE}/"
 LIB_DEPENDS+=	avutil.1:${PORTSDIR}/multimedia/ffmpeg
+CMAKE_ARGS+=	-DWITH_CODEC_FFMPEG:BOOL=ON
 .endif
 
-.if defined(WITHOUT_FREETYPE)
-MAKE_ENV+=	WITH_FREETYPE2="false"
+.if defined(WITH_FFTW3)
+LIB_DEPENDS+=	fftw3.5:${PORTSDIR}/math/fftw3
+CMAKE_ARGS+=	-DWITH_FFTW3:BOOL=ON
 .else
-MAKE_ENV+=	WITH_FREETYPE2="true"
-MAKE_ENV+=	NAN_FREETYPE="${LOCALBASE}/"
-MAKE_ENV+=	NAN_FTGL="${LOCALBASE}/"
-NANCPPFLAGS+=	"-I${LOCALBASE}/include/freetype2"
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
-LIB_DEPENDS+=	ftgl.2:${PORTSDIR}/graphics/ftgl
+CMAKE_ARGS+=	-DWITH_FFTW3:BOOL=OFF
 .endif
 
-.if defined(WITH_KETSJI)
-MAKE_ENV+=	NAN_NO_KETSJI="false"
-MAKE_ENV+=	NAN_USE_BULLET="true"
-MAKE_ENV+=	WITH_BF_BLENDERGAMEENGINE="true"
-MAKE_ENV+=	WITH_BF_BLENDERPLAYER="true"
-PLIST_SUB+=	KETSJI=""
+.if defined(WITHOUT_GAMEENGINE)
+CMAKE_ARGS+=	-DWITH_GAMEENGINE:BOOL=OFF
 .else
-MAKE_ENV+=	NAN_NO_KETSJI="true"
-MAKE_ENV+=	WITH_BF_BLENDERGAMEENGINE="false"
-MAKE_ENV+=	WITH_BF_BLENDERPLAYER="false"
-PLIST_SUB+=	KETSJI="@comment "
+CMAKE_ARGS+=	-DWITH_GAMEENGINE:BOOL=ON
 .endif
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
-MAKE_ENV+=	INTERNATIONAL="true"
-
-# Iconv support?
-.if defined(WITH_ICONV)
-USE_ICONV=	yes
-MAKE_ENV+=	WITH_ICONV="true"
+.if defined(WITHOUT_HDR)
+CMAKE_ARGS+=	-DWITH_IMAGE_HDR:BOOL=OFF
 .else
-MAKE_ENV+=	WITH_ICONV="false"
+CMAKE_ARGS+=	-DWITH_IMAGE_HDR:BOOL=ON
 .endif
 
-.if defined(WITHOUT_FREETYPE)
-# Implies Freetype2 - ignore the without knob.
-MAKE_ENV+=	WITH_FREETYPE2="true"
-MAKE_ENV+=	NAN_FREETYPE="${LOCALBASE}/"
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
-LIB_DEPENDS+=	ftgl.2:${PORTSDIR}/graphics/ftgl
+.if defined(WITH_JACK)
+.if defined(WITHOUT_SAMPLERATE)
+BROKEN=		WITH_JACK requires WITH_SAMPLERATE
 .endif
-
-PLIST_SUB+=	NLS=""
+LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+CMAKE_ARGS+=	-DWITH_JACK:BOOL=ON
 .else
-MAKE_ENV+=	WITH_ICONV="false"
+CMAKE_ARGS+=	-DWITH_JACK:BOOL=OFF
+.endif
+
+.if defined(WITHOUT_MENU)
+PLIST_SUB+=	MENU="@comment "
+.else
+USE_GNOME=	desktopfileutils
+PLIST_SUB+=	MENU=""
+.endif
+
+.if defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS="@comment "
-.endif
-
-.if defined(WITH_OCFLAGS)
-CFLAGS+=	-O3 -ffast-math
-.endif
-
-.if defined(WITH_OPENAL)
-MAKE_ENV+=	NAN_NO_OPENAL="false"
-MAKE_ENV+=	NAN_OPENAL="${LOCALBASE}/"
-USE_OPENAL=	al alut
+CMAKE_ARGS+=	-DWITH_INTERNATIONAL:BOOL=OFF
 .else
-MAKE_ENV+=	NAN_NO_OPENAL="true"
+USE_GETTEXT=	yes
+USE_ICONV=	yes
+PLIST_SUB+=	NLS=""
+CMAKE_ARGS+=	-DWITH_INTERNATIONAL:BOOL=ON
+.endif
+
+.if defined(WITHOUT_OPENAL)
+CMAKE_ARGS+=	-DWITH_OPENAL:BOOL=OFF
+.else
+.if defined(WITHOUT_SAMPLERATE)
+BROKEN=		WITH_OPENAL requires WITH_SAMPLERATE
+.endif
+USE_OPENAL=	al alut
+CMAKE_ARGS+=	-DWITH_OPENAL:BOOL=ON
 .endif
 
 .if defined(WITHOUT_OPENEXR)
-MAKE_ENV+=	WITH_OPENEXR="false"
+CMAKGE_ARGS+=	-DWITH_IMAGE_OPENEXR:BOOL=OFF
 .else
-MAKE_ENV+=	WITH_OPENEXR="true"
-MAKE_ENV+=	NAN_OPENEXR="${LOCALBASE}/"
 LIB_DEPENDS+=	IlmImf.6:${PORTSDIR}/graphics/OpenEXR
-NANCPPFLAGS+=	"-I${LOCALBASE}/include/OpenEXR"
+CMAKGE_ARGS+=	-DWITH_IMAGE_OPENEXR:BOOL=ON
 .endif
 
 .if defined(WITHOUT_OPENJPEG)
-MAKE_ENV+=	WITH_OPENJPEG="false"
+CMAKE_ARGS+=	-DWITH_IMAGE_OPENJPEG:BOOL=OFF
 .else
-MAKE_ENV+=	WITH_OPENJPEG="true"
-MAKE_ENV+=	NAN_OPENJPEG="${LOCALBASE}/"
 LIB_DEPENDS+=	openjpeg.2:${PORTSDIR}/graphics/openjpeg
+CMAKE_ARGS+=	-DWITH_IMAGE_OPENJPEG:BOOL=ON
 .endif
 
-.if defined(WITH_OPENMP)
-.if ${OSVERSION} < 700000
-BROKEN=		OpenMP support is not available for FreeBSD 6.x and below
+.if defined(WITHOUT_OPENMP)
+CMAKE_ARGS+=	-DWITH_OPENMP:BOOL=OFF
 .else
-MAKE_ENV+=	WITH_BF_OPENMP="true"
+CMAKE_ARGS+=	-DWITH_OPENMP:BOOL=ON
 .endif
+
+.if defined(WITH_PLAYER)
+.if defined(WITHOUT_GAMEENGINE)
+BROKEN=		WITH_PLAYER requires WITH_GAMEENGINE
+.endif
+PLIST_SUB+=	PLAYER=""
+CMAKE_ARGS+=	-DWITH_PLAYER:BOOL=ON
 .else
-MAKE_ENV+=	WITH_BF_OPENMP="false"
+PLIST_SUB+=	PLAYER="@comment "
+CMAKE_ARGS+=	-DWITH_PLAYER:BOOL=OFF
 .endif
 
-.if defined(WITHOUT_VERSE)
-MAKE_ENV+=	WITH_VERSE="false"
-PLIST_SUB+=	VERSE="@comment "
+.if defined(WITH_REDCODE)
+.if defined(WITHOUT_OPENJPEG)
+BROKEN=		WITH_REDCODE requires WITH_OPENJPEG
+.endif
+CMAKE_ARGS+=	-DWITH_IMAGE_REDCODE:BOOL=ON
 .else
-MAKE_ENV+=	WITH_VERSE="true"
-PLIST_SUB+=	VERSE=""
+CMAKE_ARGS+=	-DWITH_IMAGE_REDCODE:BOOL=OFF
 .endif
 
-MAKE_ENV+=	NAN_CPPFLAGS="-I${LOCALBASE}/include -I${PYTHON_INCLUDEDIR} \
-			${NANCPPFLAGS}"
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Fails to link
-.endif
-
-pre-configure:
-	@${REINPLACE_CMD} -e 's|2.5|${PYTHON_VER}|' \
-		${WRKSRC}/source/nan_definitions.mk
-
-.if defined(WITHOUT_FFMPEG)
-	@${REINPLACE_CMD} -e 's|%%FFMPEGCFLAGS%%||;s|%%FFMPEGLIBS%%||;' \
-		${WRKSRC}/user-def.mk
+.if defined(WITHOUT_SAMPLERATE)
+CMAKE_ARGS+=	-DWITH_SAMPLERATE:BOOL=OFF
 .else
-	@${REINPLACE_CMD} -e \
-		's|%%FFMPEGCFLAGS%%|$$\(shell pkg-config --cflags libavcodec libavformat libavdevice libswscale\)|; \
-		s|%%FFMPEGLIBS%%|$$\(shell pkg-config --libs libavcodec libavformat libavdevice libswscale\)|;' \
-		${WRKSRC}/user-def.mk
+LIB_DEPENDS+=	samplerate.1:${PORTSDIR}/audio/libsamplerate
+CMAKE_ARGS+=	-DWITH_SAMPLERATE:BOOL=ON
 .endif
 
-	@${REINPLACE_CMD} -e \
-		's|gcc|${CC}|; \
-		s|g++|${CXX}|; \
-		s|-pipe||; \
-		s|-O2|${CFLAGS}|; \
-		s|-D_THREAD_SAFE|${PTHREAD_CFLAGS}|; \
-		s|/usr/X11R6|${LOCALBASE}|' \
-		${WRKSRC}/source/nan_compile.mk
+.if defined(WITHOUT_SDL)
+CMAKE_ARGS+=	-DWITH_SDL:BOOL=OFF
+.else
+.if defined(WITHOUT_SAMPLERATE)
+BROKEN=		WITH_SDL requires WITH_SAMPLERATE
+.endif
+USE_SDL=	sdl
+CMAKE_ARGS+=	-DWITH_SDL:BOOL=ON
+.endif
 
-	@${REINPLACE_CMD} -e \
-		's|-lc_r||; \
-		s|-pthread|-lintl -lIlmThread ${PTHREAD_LIBS}|' \
-		${WRKSRC}/source/nan_link.mk
+.if defined(WITH_SNDFILE)
+LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
+CMAKE_ARGS+=	-DWITH_CODEC_SNDFILE:BOOL=ON
+.else
+CMAKE_ARGS+=	-DWITH_CODEC_SNDFILE:BOOL=OFF
+.endif
 
-	@${REINPLACE_CMD} -e 's|-FIX_NAN_WARN||' \
-		${WRKSRC}/source/nan_warn.mk
+.if defined(WITHOUT_TIFF)
+CMAKE_ARGS+=	-DWITH_IMAGE_TIFF:BOOL=OFF
+.else
+LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
+CMAKE_ARGS+=	-DWITH_IMAGE_TIFF:BOOL=ON
+.endif
 
-do-install:
+.if defined(WITHOUT_XINPUT)
+CMAKE_ARGS+=	-DWITH_X11_XINPUT:BOOL=OFF
+.else
+USE_XORG+=	xi
+CMAKE_ARGS+=	-DWITH_X11_XINPUT:BOOL=ON
+.endif
+
+post-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/blender ${PREFIX}/bin/blender
-	@${INSTALL_PROGRAM} ${WRKSRC}/obj/freebsd-${BDSUFFIX}/bin/blender ${PREFIX}/bin/blender-bin
-.if defined(WITH_KETSJI)
-	@${INSTALL_PROGRAM} ${WRKSRC}/obj/freebsd-${BDSUFFIX}/bin/blenderplayer ${PREFIX}/bin/blenderplayer
-.endif
-.if !defined(WITHOUT_VERSE)
-	@${INSTALL_PROGRAM} ${WRKSRC}/obj/freebsd-${BDSUFFIX}/bin/verse ${PREFIX}/bin/verse
+	@${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bin/blender \
+		${PREFIX}/bin/blender-bin
+	@${MKDIR} ${DATADIR}
+	@${INSTALL_SCRIPT} ${INSTALL_WRKSRC}/bin/blender-thumbnailer.py \
+		${PREFIX}/bin/blender-thumbnailer.py
+
+.if defined(WITH_PLAYER)
+	@${INSTALL_SCRIPT} ${WRKDIR}/blenderplayer ${PREFIX}/bin/blenderplayer
+	@${INSTALL_PROGRAM} ${INSTALL_WRKSRC}/bin/blenderplayer \
+		${PREFIX}/bin/blenderplayer-bin
 .endif
 
-	@${MKDIR} ${DATADIR}
-	@${CP} -R ${WRKSRC}/release/scripts ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/bin/.blender/.Blanguages ${DATADIR}
-	@${INSTALL_DATA} ${WRKSRC}/bin/.blender/.bfont.ttf ${DATADIR}
+	@${CP} -R ${OUTDIR}/scripts ${DATADIR}
+	@${INSTALL_DATA} ${OUTDIR}/config/.Blanguages ${DATADIR}
+	@${INSTALL_DATA} ${OUTDIR}/config/.bfont.ttf ${DATADIR}
+	@${INSTALL_DATA} ${INSTALL_WRKSRC}/bin/${PORTNAME}.svg \
+		${PREFIX}/share/pixmaps/${PORTNAME}.svg
+
 .if !defined(WITHOUT_NLS)
 .for ii in ${LANG}
-	@${MKDIR} ${DATADIR}/locale/${ii}/LC_MESSAGES
-	@${INSTALL_DATA} ${WRKSRC}/bin/.blender/locale/${ii}/LC_MESSAGES/blender.mo \
-		${DATADIR}/locale/${ii}/LC_MESSAGES/blender.mo
+	@${MKDIR} ${DATADIR}/datafiles/locale/${ii}/LC_MESSAGES
+	@${INSTALL_DATA} \
+		${OUTDIR}/datafiles/locale/${ii}/LC_MESSAGES/${PORTNAME}.mo \
+		${DATADIR}/datafiles/locale/${ii}/LC_MESSAGES/${PORTNAME}.mo
 .endfor
 .endif
 
-.if !defined(NOPORTDOCS)
-	@${CP} -p ${WRKSRC}/README ${WRKSRC}/doc/
-	@${INSTALL} -d ${DOCSDIR}/
-	@cd ${WRKSRC}/doc/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+.if !defined(NO_INSTALL_MANPAGES)
+	@${INSTALL_MAN} ${INSTALL_WRKSRC}/bin/${PORTNAME}.1 \
+		${MAN1PREFIX}/man/man1
+.endif
+
+.if !defined(WITHOUT_MENU)
+	@${MKDIR} ${DESKTOPDIR}
+	@${INSTALL_DATA} ${INSTALL_WRKSRC}/bin/${PORTNAME}.desktop \
+		${DESKTOPDIR}
+	@-update-desktop-database -q
 .endif
 
 .include <bsd.port.post.mk>
