@@ -56,7 +56,6 @@ restart_cmd="zope3_restart"
 load_rc_config $name
 
 : ${zope3_enable="NO"}
-: ${zope3_instances=""}
 
 cmd="$1"
 [ $# -gt 0 ] && shift

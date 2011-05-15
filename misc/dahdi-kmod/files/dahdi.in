@@ -44,7 +44,6 @@ load_rc_config $name
 
 kmod_dir=%%PREFIX%%/lib/dahdi
 # reverse list
-dahdi_modules_unload=""
 for m in ${dahdi_modules}; do
 	dahdi_modules_unload="$m ${dahdi_modules_unload}"
 done

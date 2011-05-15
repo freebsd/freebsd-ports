@@ -9,8 +9,8 @@
 #
 # dhcprelay_enable="YES"
 #
-# dhcprelay_server=""	# dhcprelay server(s)
-# dhcprelay_ifaces=""	# ethernet interface(s)
+# dhcprelay_server	dhcprelay server(s)
+# dhcprelay_ifaces	ethernet interface(s)
 
 . /etc/rc.subr
 

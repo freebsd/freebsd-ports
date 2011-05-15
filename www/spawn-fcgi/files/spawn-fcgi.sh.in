@@ -1,10 +1,19 @@
 #!/bin/sh
-#
 
+# $FreeBSD$
+#
 # PROVIDE: spawn_fcgi
 # REQUIRE: %%REQUIRE%%
 # BEFORE:  LOGIN
 # KEYWORD: shutdown
+#
+# Optional settings:
+#
+# spawn_fcgi_app_args
+# spawn_fcgi_chroot_dir
+# spawn_fcgi_bindsocket
+# spawn_fcgi_web_server_addrs
+# spawn_fcgi_allowed_env
 
 . /etc/rc.subr
 
@@ -15,19 +24,14 @@ load_rc_config $name
 
 : ${spawn_fcgi_enable="NO"}
 : ${spawn_fcgi_app="%%LOCALBASE%%/bin/php-cgi"}
-: ${spawn_fcgi_app_args=""}
 : ${spawn_fcgi_pidfile="/var/run/spawn-fcgi.pid"}
 : ${spawn_fcgi_username="www"}
 : ${spawn_fcgi_groupname="www"}
-: ${spawn_fcgi_chroot_dir=""}
 : ${spawn_fcgi_bindaddr="127.0.0.1"}
 : ${spawn_fcgi_bindport="9000"}
-: ${spawn_fcgi_bindsocket=""}
 : ${spawn_fcgi_bindsocket_mode="0777"}
 : ${spawn_fcgi_children="5"}
 : ${spawn_fcgi_max_requests="1000"}
-: ${spawn_fcgi_web_server_addrs=""}
-: ${spawn_fcgi_allowed_env=""}
 : ${spawn_fcgi_path_env="/sbin:/bin:/usr/sbin:/usr/bin:/usr/games:/usr/local/sbin:/usr/local/bin"}
 
 if [ -z "${spawn_fcgi_bindsocket}" ]; then

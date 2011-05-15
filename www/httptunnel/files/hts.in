@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# $FreeBSD$
+#
 # PROVIDE: hts
 # REQUIRE: LOGIN
 #
@@ -41,8 +43,6 @@ load_rc_config $name
 : ${hts_user="httptunnel"}
 
 : ${hts_port="8888"}
-: ${hts_device=""}
-: ${hts_forward=""}
 
 [ -n "$hts_device" ] && command_args="-d $hts_device"
 [ -n "$hts_forward" ] && command_args="-F $hts_forward"

@@ -29,8 +29,6 @@ command=%%PREFIX%%/sbin/${name}
 load_rc_config $name
 
 : ${iodined_enable="NO"}
-: ${iodined_password=""}
-: ${iodined_domain=""}
 : ${iodined_addr="172.16.0.1"}
 : ${iodined_flags="-u _iodined -t /var/empty"}
 

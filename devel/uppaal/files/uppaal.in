@@ -1,8 +1,5 @@
 #!/bin/sh 
 
-# Default options if needed.
-JAVA_DEF=""
-
 # Force language if LANG is defined.
 if [ ! -z "$LANG" ]; then
   LANGLANG=${LANG##*_}

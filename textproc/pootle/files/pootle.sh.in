@@ -33,7 +33,6 @@ load_rc_config $name
 : ${pootle_enable="NO"}
 : ${pootle_user="%%POOTLEUSER%%"}
 : ${pootle_logdir="%%POOTLELOGDIR%%"}
-: ${pootle_flags=""}
 
 if [ -n "${pootle_logdir}" ]; then
 	pootle_stdout="${pootle_logdir}/access.log"

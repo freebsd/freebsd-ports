@@ -65,11 +65,8 @@ fi
 
 : ${daily_sa_enable="YES"}
 : ${daily_sa_quiet="NO"}
-: ${daily_sa_update_flags=""}
 : ${daily_sa_compile="%%SACOMPILE%%"}
-: ${daily_sa_compile_flags=""}
 : ${daily_sa_compile_nice="YES"}
-: ${daily_sa_compile_nice_flags=""}
 : ${daily_sa_restart_spamd="YES"}
 
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:%%LOCALBASE%%/bin:%%LOCALBASE%%/sbin

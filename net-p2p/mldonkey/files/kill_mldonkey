@@ -34,7 +34,7 @@
 # like this:
 #
 #MLNETUSER="admin"
-#MLNETPASS=""
+#MLNETPASS="pass"
 #MLNETHOST="127.0.0.1"
 #MLNETPORT="4080"
 

@@ -37,7 +37,6 @@ load_rc_config $name
 : ${p4d_port="1666"}
 : ${p4d_debug="server=3"}
 : ${p4d_log="%%P4LOG%%"}
-: ${p4d_args=""}
 
 command="%%PREFIX%%/sbin/p4d"
 command_args="-r ${p4d_root} -p ${p4d_port} -v ${p4d_debug} -L ${p4d_log} -d ${p4d_args} > /dev/null 2>&1 &"

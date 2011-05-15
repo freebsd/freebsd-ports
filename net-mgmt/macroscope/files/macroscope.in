@@ -12,7 +12,7 @@
 # macroscope_enable="NO"	# set to YES to enable macroscope
 #
 # # optional:
-# macroscope_flags=""		# additional command line arguments
+# macroscope_flags		# additional command line arguments
 #
 
 . /etc/rc.subr

@@ -1,6 +1,7 @@
 #!/bin/sh
-#
 
+# $FreeBSD$
+#
 # PROVIDE: quagga
 # REQUIRE: netif routing 
 # KEYWORD: nojail
@@ -81,8 +82,6 @@ load_rc_config $name
 : ${quagga_enable="NO"}
 : ${quagga_flags="-d"}
 : ${quagga_daemons="zebra ripd ripngd ospfd ospf6d bgpd isisd"}
-: ${quagga_extralibs_path=""}
-: ${quagga_wait_for=""}
 
 quagga_cmd=$1
 

@@ -42,7 +42,6 @@ pidfile="${_pidprefix}.pid"
 required_files=%%PREFIX%%/etc/apache/httpd.conf
 
 [ -z "$apache_enable" ]       && apache_enable="NO"
-[ -z "$apache_profiles" ]     && apache_profiles=""
 [ -z "$apache_flags" ]        && apache_flags="-DSSL"
 [ -z "$apachelimits_enable" ] && apachelimits_enable="NO"
 [ -z "$apachelimits_args" ]   && apachelimits_args="-e -C daemon"

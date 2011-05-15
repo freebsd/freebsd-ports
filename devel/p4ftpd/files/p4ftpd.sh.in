@@ -37,7 +37,6 @@ load_rc_config $name
 : ${p4ftpd_port="1666"}
 : ${p4ftpd_debug="4"}
 : ${p4ftpd_log="%%P4LOG%%"}
-: ${p4ftpd_args=""}
 
 command="%%PREFIX%%/sbin/p4ftpd"
 command_args="-l ${p4ftpd_listen} -p ${p4ftpd_port} -v ${p4ftpd_debug} -L ${p4ftpd_log} -d -u p4admin ${p4ftpd_args} > /dev/null 2>&1 &"

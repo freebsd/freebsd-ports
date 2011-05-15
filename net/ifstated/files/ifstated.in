@@ -48,8 +48,6 @@ command_args="-p \"${pidfile}\""
 load_rc_config $name
 
 : ${ifstated_enable:="NO"}
-: ${ifstated_flags:=""}
-: ${ifstated_profiles:=""}
 
 if [ -n "$2" ]
 then

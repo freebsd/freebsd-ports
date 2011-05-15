@@ -26,7 +26,6 @@ name=radmind
 rcvar=`set_rcvar`
 
 command=%%PREFIX%%/sbin/radmind
-command_args=""
 required_files=%%RADMIND_BASE_DIR%%/config
 
 # set defaults

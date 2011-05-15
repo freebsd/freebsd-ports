@@ -33,7 +33,6 @@ load_rc_config $name
 command="%%PREFIX%%/bin/${name}"
 pidfile="/var/run/${name}/${name}.pid"
 etcdir="%%PREFIX%%/etc/${name}"
-respawn=""
 
 if [ "$couchdb_respawn" -gt 0 ]
     then

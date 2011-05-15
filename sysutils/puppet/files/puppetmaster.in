@@ -21,7 +21,6 @@ load_rc_config "${name}"
 : ${puppetmaster_enable="NO"}
 : ${puppetmaster_rundir="%%PUPPET_RUNDIR%%"}
 : ${puppetmaster_flags="--rundir=${puppetmaster_rundir}"}
-: ${puppetmaster_mongrel_ports=""}
 
 command_interpreter="%%PREFIX%%/bin/ruby18"
 command="%%PREFIX%%/bin/puppet"

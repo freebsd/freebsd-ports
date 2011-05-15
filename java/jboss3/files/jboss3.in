@@ -28,7 +28,6 @@ procname="%%JAVA%%"
 
 [ -z "$%%APP_SHORTNAME%%_enable" ]	&& %%APP_SHORTNAME%%_enable="NO"
 [ -z "$%%APP_SHORTNAME%%_flags" ]	&& %%APP_SHORTNAME%%_flags="-server"
-[ -z "$%%APP_SHORTNAME%%_config" ]	&& %%APP_SHORTNAME%%_config=""
 
 %%APP_SHORTNAME%%_start ()
 {

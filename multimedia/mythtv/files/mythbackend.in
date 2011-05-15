@@ -25,7 +25,6 @@ load_rc_config $name
 
 : ${mythbackend_enable="NO"}
 : ${mythbackend_logfile="/var/log/${name}.log"}
-: ${mythbackend_flags=""}
 
 command_args="-d -l ${mythbackend_logfile}"
 

@@ -13,7 +13,7 @@
 #
 # Yes, here you can pass arguments to daemon
 #
-# msyslogd_flags=""
+# msyslogd_flags=
 #
 
 . /etc/rc.subr

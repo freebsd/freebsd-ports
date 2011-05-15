@@ -19,7 +19,7 @@
 # this could also be:
 # - tcp:[ipv4_addr]:port (for ipv4)
 # - tcp6:[ipv6_addr]:port (for ipv6)
-# fcgiwrap_flags=""
+# fcgiwrap_flags=
 # Use fcgiwrap_user to run fcgiwrap as user
 
 fcgiwrap_setfib() {

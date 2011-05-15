@@ -30,6 +30,5 @@ required_files="${config_file}"
 load_rc_config "$name"
 : ${redis_enable="NO"}
 : ${redis_user="%%REDIS_USER%%"}
-: ${redis_flags=""}
 
 run_rc_command "$1"

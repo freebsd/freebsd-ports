@@ -1,5 +1,7 @@
 #!/bin/sh
 
+# $FreeBSD$
+#
 # PROVIDE: htc
 # REQUIRE: LOGIN
 #
@@ -47,12 +49,6 @@ load_rc_config $name
 : ${htc_enable="NO"}
 : ${htc_user="httptunnel"}
 
-: ${htc_port=""}
-: ${htc_forward=""}
-: ${htc_device=""}
-
-: ${htc_proxy=""}
-: ${htc_proxyauth=""}
 : ${htc_proxybuffer="1K"}
 : ${htc_browser="Mozilla/4.7 [en] (X11; I; Linux 2.2.12 i386)"}
 : ${htc_flags="-S"}

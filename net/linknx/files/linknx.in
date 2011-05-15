@@ -29,7 +29,6 @@ start_precmd="linknx_precmd"
 
 : ${linknx_enable:="NO"}
 : ${linknx_console:="/var/log/linknx.log"}
-: ${linknx_config:=""}
 : ${linknx_pidfile:="/var/run/linknx.pid"}
 : ${linknx_flags:="--pid-file=${linknx_pidfile}"}
 

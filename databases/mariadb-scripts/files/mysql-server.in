@@ -30,7 +30,6 @@ load_rc_config $name
 : ${mysql_enable="NO"}
 : ${mysql_limits="NO"}
 : ${mysql_dbdir="/var/db/mysql"}
-: ${mysql_args=""}
 
 mysql_user="mysql"
 mysql_limits_args="-e -U ${mysql_user}"

@@ -20,7 +20,6 @@
 # Set some defaults
 : ${murmur_enable="NO"}
 : ${murmur_user="murmur"}
-: ${murmur_flags=""}
 
 name=murmur
 rcvar=${name}_enable

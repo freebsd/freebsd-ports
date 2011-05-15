@@ -51,14 +51,8 @@ load_rc_config $name
 #
 : ${milteropendkim_enable="NO"}
 : ${milteropendkim_uid="mailnull"}
-: ${milteropendkim_profiles=""}
 : ${milteropendkim_cfgfile="%%PREFIX%%/etc/mail/opendkim.conf"}
 
-: ${milteropendkim_socket=""}
-: ${milteropendkim_domain=""}
-: ${milteropendkim_key=""}
-: ${milteropendkim_selector=""}
-: ${milteropendkim_alg=""}
 # Options other than above can be set with $milteropendkim_flags.
 # see dkim-milter documentation for detail.
 

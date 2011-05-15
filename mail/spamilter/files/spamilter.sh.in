@@ -17,8 +17,9 @@
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
+# spamilter_flags Flags to spamilter
+
 spamilter_enable=${spamilter_enable:-"NO"}      # Enable spamilter-milter
-# spamilter_flags="" # Flags to spamilter
 
 . /etc/rc.subr
 

@@ -12,8 +12,8 @@
 # Add the following lines to /etc/rc.conf to enable amphetadesk:
 #
 #amphetadesk_enable="YES"
-#amphetadesk_user=""
-#amphetadesk_pidfile=""
+#amphetadesk_user=
+#amphetadesk_pidfile=
 #
 
 . /etc/rc.subr
@@ -25,7 +25,6 @@ procname="%%PERL%%"
 
 load_rc_config "${name}"
 : ${amphetadesk_enable="NO"}
-: ${amphetadesk_user=""}
 
 if [ -n "${amphetadesk_user}" ]; then
   eval realpath ~${amphetadesk_user} >/dev/null 2>&1 &&

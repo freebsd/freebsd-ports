@@ -56,7 +56,6 @@ restart_cmd="zope28_restart"
 load_rc_config $name
 
 : ${zope28_enable="NO"}
-: ${zope28_instances=""}
 
 cmd="$1"
 [ $# -gt 0 ] && shift

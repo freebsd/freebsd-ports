@@ -1,4 +1,6 @@
 #!/bin/sh
+
+# $FreeBSD$
 #
 # PROVIDE: qmailsmtpd
 # REQUIRE: LOGIN cleanvar
@@ -8,6 +10,8 @@
 # security/checkpassword or security checkpassword-pam).
 #
 # Note: tcpserver can be found in the sysutils/ucspi-tcp package.
+#
+# qmailsmtpd_checkpassword could be set to e.g. /usr/local/bin/checkpassword-pam
 
 . /etc/rc.subr
 
@@ -24,7 +28,6 @@ load_rc_config $name
 : ${qmailsmtpd_port="smtp"}
 : ${qmailsmtpd_smtpd="/var/qmail/bin/qmail-smtpd"}
 : ${qmailsmtpd_fqdn=`hostname`}
-: ${qmailsmtpd_checkpassword=""} # e.g. /usr/local/bin/checkpassword-pam
 : ${qmailsmtpd_checksubprogram="/usr/bin/true"}
 
 qmailsmtpd_start() {

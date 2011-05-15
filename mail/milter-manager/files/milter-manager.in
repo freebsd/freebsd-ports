@@ -48,12 +48,10 @@ load_rc_config $name
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 #
 : ${miltermanager_enable="NO"}
-: ${miltermanager_profiles=""}
 : ${miltermanager_cfgdir="%%PREFIX%%/etc/milter-manager"}
 : ${miltermanager_uid="mailnull"}
 : ${miltermanager_gid="mail"}
 : ${miltermanager_socket_gid="mail"}
-: ${miltermanager_socket=""}
 : ${miltermanager_debug="NO"}
 # Options other than above can be set with $miltermanager_flags.
 # see milter-manager documentation for detail.

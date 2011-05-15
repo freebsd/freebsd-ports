@@ -24,7 +24,6 @@ lvwimax_enable=${lvwimax_enable-"NO"}
 lvwimax_mac_address=${lvwimax_mac_address-"00:00:00:00:00:00"}
 
 command=%%PREFIX%%/sbin/${name}
-command_args=""
 
 start_precmd="lvwimax_prestart"
 start_postcmd="lvwimax_poststart"

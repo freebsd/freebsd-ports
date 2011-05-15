@@ -27,7 +27,6 @@ command="%%PREFIX%%/bin/cego"
 : ${cego_enable="NO"}
 : ${cego_conf="%%PREFIX%%/cego"}
 : ${cego_root="%%PREFIX%%/cego"}
-: ${cego_tablespc=""}
 : ${cego_user="%%USER%%"}
 
 flags="--mode=daemon"
