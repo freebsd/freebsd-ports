@@ -11,8 +11,10 @@ etc/portscout.conf.sample
 %%DATADIR%%/sql/pgsql_upgrade_0.7.1_to_0.7.2.sql
 %%DATADIR%%/sql/pgsql_upgrade_0.7.3_to_0.7.4.sql
 %%DATADIR%%/sql/pgsql_upgrade_0.7.4_to_0.8.sql
+%%DATADIR%%/sql/pgsql_upgrade_0.8_to_0.8.1.sql
 %%DATADIR%%/sql/sqlite_init.sql
 %%DATADIR%%/sql/sqlite_destroy.sql
+%%DATADIR%%/sql/sqlite_upgrade_0.8_to_0.8.1.sql
 %%SITE_PERL%%/Portscout/SQL/SQLite.pm
 %%SITE_PERL%%/Portscout/SQL/Pg.pm
 %%SITE_PERL%%/Portscout/SiteHandler/SourceForge.pm
