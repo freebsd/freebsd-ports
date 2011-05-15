@@ -25,10 +25,6 @@ PORTDOCS=	README COPYING ChangeLog
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not build on 6.x yet
-.endif
-
 post-patch:
 	@${REINPLACE_CMD} -e 's:"skipfish.wl":"${DATADIR}/dictionaries/complete.wl":' \
 		-e 's:"assets":"${DATADIR}/assets":' ${WRKSRC}/config.h
