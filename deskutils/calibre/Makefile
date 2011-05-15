@@ -6,19 +6,19 @@
 #
 
 PORTNAME=	calibre
-PORTVERSION=	0.7.23
-PORTREVISION=	1
+PORTVERSION=	0.8.1
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
-MAINTAINER=	stas@FreeBSD.org
+MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	Ebook management application
 
 LIB_DEPENDS=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4 \
 		wmflite:${PORTSDIR}/graphics/libwmf \
-		chm.0:${PORTSDIR}/misc/chmlib
+		chm.0:${PORTSDIR}/misc/chmlib \
+		icudata.46:${PORTSDIR}/devel/icu
 BUILD_DEPENDS=	py*-setuptools>=0:${PORTSDIR}/devel/py-setuptools \
 		py*-sip>=0:${PORTSDIR}/devel/py-sip \
 		py*-qt4-core>=0:${PORTSDIR}/devel/py-qt4-core \
@@ -45,9 +45,10 @@ OPTIONS=	PODOFO "PDF support via PoDoFo library" on \
 		MOUNTHELPER_SUID "Install mount helper as suid binary" off
 
 USE_GETTEXT=	yes
-USE_PYTHON=	2.6+
+USE_PYTHON=	2.7+
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build
+INSTALLS_ICONS=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 PYSETUP=	setup.py
 CFLAGS+=	"-I${LOCALBASE}/include"
@@ -58,10 +59,20 @@ MAKE_ENV+=	LDFLAGS="${LDFLAGS}" \
 		OVERRIDE_CFLAGS="${CFLAGS}" \
 		OVERRIDE_LDFLAGS="${LDFLAGS}"
 
-MAN1=	calibre-customize.1 calibre-debug.1 calibre-server.1 calibre-smtp.1 \
-	calibredb.1 ebook-convert.1 ebook-meta.1 epub-fix.1 \
-	fetch-ebook-metadata.1 librarything.1 lrf2lrs.1 lrs2lrf.1 \
-	pdfmanipulate.1 web2disk.1
+MAN1=	calibre-customize.1 \
+	calibre-debug.1 \
+	calibre-server.1 \
+	calibre-smtp.1 \
+	calibredb.1 \
+	ebook-convert.1 \
+	ebook-meta.1 \
+	epub-fix.1 \
+	fetch-ebook-metadata.1 \
+	librarything.1 \
+	lrf2lrs.1 \
+	lrs2lrf.1 \
+	pdfmanipulate.1 \
+	web2disk.1
 MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
@@ -87,6 +98,11 @@ do-build:
 		${PYSETUP} build)
 
 do-install:
+	${MKDIR} ${PREFIX}/share/desktop-directories
+	${MKDIR} ${PREFIX}/share/applications
+	${MKDIR} ${PREFIX}/share/gnome/apps
+	${MKDIR} ${PREFIX}/share/mime/packages
+	${MKDIR} ${PREFIX}/share/icons/hicolor/128x128/apps
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} \
 		${PYSETUP} install --prefix ${PREFIX})
 
