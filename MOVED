@@ -1675,6 +1675,7 @@ databases/postgresql74-contrib||2011-04-04|Removed
 databases/postgresql80-client||2011-04-04|Removed
 databases/postgresql80-contrib||2011-04-04|Removed
 databases/postgresql81-client||2011-04-04|Removed
+security/barnyard||2011-04-04|Has expired: use barnyard2 instead
 graphics/linux_dri-devel|graphics/linux_dri|2011-04-07|Retire: is older than non-devel port
 math/linux-SHA-1_collision_search_graz||2011-04-07|Has expired: Project discontinued
 lang/compaq-cc||2011-04-09|Does not work on a supported platform
@@ -2180,3 +2181,4 @@ net/skype|net-im/skype|2011-05-09|Moved to better category
 net/skype-devel|net-im/skype-devel|2011-05-12|Moved to better category
 devel/libchipcard-kde||2011-05-14|obsolete
 sysutils/libgksuui|sysutils/libgksu|2011-05-14|Removed: It is a part of sysutils/libgksu now
+barnyard-sguil|barnyard2-sguil|2011-05-15|barnyard2 has build in sguil support

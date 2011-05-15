@@ -27,8 +27,8 @@
     SUBDIR += authforce
     SUBDIR += autossh
     SUBDIR += avcheck
-    SUBDIR += barnyard-sguil
     SUBDIR += barnyard2
+    SUBDIR += barnyard2-sguil
     SUBDIR += base
     SUBDIR += bcrypt
     SUBDIR += bcwipe
