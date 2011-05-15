@@ -1,0 +1,36 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+# PROVIDE: pmacctd
+# REQUIRE: NETWORKING
+# KEYWORD: shutdown
+
+#
+# Add the following lines to /etc/rc.conf to enable pmacctd:
+#
+# pmacctd_enable="YES"
+#
+# You can define flags for pmacctd running. See pmacctd(8) for details.
+#
+# Example:
+# pmacctd_flags="-Df %%PREFIX%%/etc/pmacctd.conf -i em0"
+#
+# Default flags: -Df %%PREFIX%%/etc/pmacctd.conf
+#
+
+. /etc/rc.subr
+
+name=pmacctd
+rcvar=`set_rcvar`
+
+command=%%PREFIX%%/$name
+
+# set defaults
+
+pmacctd_enable=${pmacctd_enable:-"NO"}
+pmacctd_flags=${pmacctd_flags:-"-Df %%PREFIX%%/etc/pmacctd.conf"}
+
+load_rc_config $name
+run_rc_command "$1"

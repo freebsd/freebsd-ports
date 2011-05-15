@@ -7,15 +7,19 @@
 
 PORTNAME=	pmacct
 DISTVERSION=	0.12.5
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.pmacct.net/
+MASTER_SITES=	http://www.pmacct.net/ \
+		http://people.rit.edu/rpsfa/
 
 MAINTAINER=	rpsfa@rit.edu
 COMMENT=	Accounting and aggregation tool for IPv4 and IPv6 traffic
 
+USE_RC_SUBR=	pmacctd
+SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS=	"-I${LOCALBASE}/include"
+LDFLAGS=	"-L${LOCALBASE}/lib"
 
 OPTIONS=	MYSQL "Enable MySQL support." Off \
 		PGSQL "Enable PostgreSQL support." Off \
@@ -93,5 +97,8 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/sql/* ${DATADIR}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
