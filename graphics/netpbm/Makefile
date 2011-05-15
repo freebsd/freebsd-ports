@@ -22,7 +22,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 		jasper.4:${PORTSDIR}/graphics/jasper \
 		xml2.5:${PORTSDIR}/textproc/libxml2
 
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 USE_PERL5=	yes
 USE_GMAKE=	yes
