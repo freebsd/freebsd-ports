@@ -180,6 +180,7 @@
     SUBDIR += wahcade
     SUBDIR += wine
     SUBDIR += wine-doors
+    SUBDIR += wine-gecko
     SUBDIR += x48
     SUBDIR += xbraitenberg
     SUBDIR += xcpc
