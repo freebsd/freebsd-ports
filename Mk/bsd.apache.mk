@@ -10,6 +10,20 @@
 # Please view me with 4 column tabs!
 
 # =========================================================================
+# Parameter APACHE_PORT (user controlled):
+#
+# The parameter APACHE_PORT can be used in /etc/make.conf to
+# overwrite the default apache port.
+#
+# This parameter should never be used in the Makefile of a port!
+#
+# Example entry in /etc/make.conf:
+#  APACHE_PORT=	www/apache22
+#
+# To get a list of "possible" valid values execute the command:
+#  $> egrep 'apache[12]' ports/www/Makefile | awk '{print "www/" $3}'
+#
+# =========================================================================
 #
 # This script will be included if one of the following parameter
 # is defined in the Makefile of the port
