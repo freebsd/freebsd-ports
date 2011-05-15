@@ -32,6 +32,9 @@ MAN1=		nfc-anticol.1 nfc-dep-initiator.1 nfc-dep-target.1 \
 		nfc-relay.1 nfc-relay-picc.1 pn53x-diagnose.1 pn53x-sam.1 \
 		pn53x-tamashell.1
 
+# Restrict to stable (even) versions, indicated by the second component.
+PORTSCOUT=	limitw:1,even
+
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_ACR122)
