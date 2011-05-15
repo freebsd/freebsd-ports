@@ -18,6 +18,8 @@ COMMENT=	D frontend for llvm, with the Tango standard library
 BUILD_DEPENDS=	llvm>=2.8:${PORTSDIR}/devel/llvm
 LIB_DEPENDS=	config.9:${PORTSDIR}/devel/libconfig
 
+BROKEN=		does not compile
+
 LICENSE_COMB=	multi
 LICENSE=	BSD ART10
 ONLY_FOR_ARCHS=	i386 amd64
