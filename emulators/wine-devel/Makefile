@@ -114,8 +114,8 @@ CONFIGURE_ARGS+=	--without-openal
 RUN_DEPENDS+=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
 .endif
 
-.if ${OSVERSION} < 603000
-IGNORE=		fails to properly work on versions of FreeBSD before 6.3
+.if ${OSVERSION} < 800000
+IGNORE=		lacks required sound support on FreeBSD before 8.0
 .endif
 
 post-patch:
