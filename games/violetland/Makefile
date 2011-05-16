@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	violetland
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4.0
 CATEGORIES=	games
 MASTER_SITES=	GOOGLE_CODE \
 		http://mirror.amdmi3.ru/distfiles/
@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Top-down survival shoot 'em up
+
+LIB_DEPENDS=	boost_filesystem.4:${PORTSDIR}/devel/boost-libs
 
 USE_ZIP=	yes
 USE_SDL=	sdl mixer image ttf
