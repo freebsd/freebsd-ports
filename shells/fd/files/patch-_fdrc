@@ -1,5 +1,5 @@
---- _fdrc.orig	2008-07-27 00:00:00.000000000 +0900
-+++ _fdrc	2008-10-08 16:44:12.000000000 +0900
+--- _fdrc.orig	2010-09-25 00:00:00.000000000 +0900
++++ _fdrc	2011-05-16 18:40:53.987863891 +0900
 @@ -17,6 +17,7 @@
  #	200-213: preserve previous sort type also in the archive browser
  #		(the least 2 digits are effective just after initialize)
@@ -63,7 +63,7 @@
  
  # system default Kanji code
  #	Default: No convert
-@@ -507,13 +515,52 @@
+@@ -507,13 +515,58 @@
  #NOCONVPATH=""
  
  #PAGER=more%K
@@ -95,6 +95,11 @@
 +  launch "$ext"		"$tar jtvf %C"		"$tar_format"
 +done
 +
++for ext in .tar.xz /.txz; do
++#  launch "$ext"		"$tar Jtvf %C"		"$tar_format"
++  launch "$ext"		"xz -cd %C | $tar tvf -"	"$tar_format"
++done
++
 +launch "/.lzh"		"lha -lq"		"%a %u/%g %s %x %m %d %{yt} %f"
 +
 +for ext in /.zip /.jar; do
@@ -106,6 +111,7 @@
 +done
 +
 +launch "/.bz2"		"bzip2 -cd %C | $PAGER"
++launch "/.xz"		"xz -cd %C | $PAGER"
 +
 +# RCS/CVS files
 +launch ",v"		"rlog %C | $PAGER"
@@ -117,7 +123,7 @@
  #(Default)
  #launch ".lzh"		"lha l" \
  #		-f "%a %u/%g %s %x %m %d %{yt} %*f" \
-@@ -634,6 +681,43 @@
+@@ -634,6 +687,49 @@
  #launch ".zip"	"pkunzip -vb %S"	" %s %x %x %x %y-%m-%d %t %*f" 14 2
  
  # archiver definition
@@ -138,9 +144,15 @@
 +  arch	"$ext"	"$tar cf - %T | bzip2 -9c > %C"	"$tar jxf %C %TA"
 +done
 +
++for ext in .tar.xz /.txz; do
++#  arch	"$ext"	"$tar cf - %T | xz -9c > %C"	"$tar Jxf %C %TA"
++  arch	"$ext"	"$tar cf - %T | xz -9c > %C"	"xz -cd %C | $tar xf - %TA"
++done
++
 +arch	".Z"	"compress %M"			"uncompress %C"
 +arch	"/.gz"	"gzip -9 %M"			"gzip -d %C"
 +arch	"/.bz2"	"bzip2 -9 %M"			"bzip2 -d %C"
++arch	"/.xz"	"xz -9 %M"			"xz -d %C"
 +
 +arch	"/.lzh"	"lha aq %C %TA"			"lha xq %C %TA"
 +
@@ -161,7 +173,7 @@
  #(Default)
  #arch ".lzh"	"lha aq %C %TA"			"lha xq %C %TA"
  #arch ".tar"	"tar cf %C %T"			"tar xf %C %TA"
-@@ -727,3 +811,7 @@
+@@ -727,3 +823,7 @@
  # keymap definition
  #(Example)
  #keymap DEL	"\033[3~"
