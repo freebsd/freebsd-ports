@@ -12,7 +12,7 @@ CATEGORIES=	dns net perl5 ipv6
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	DougB@FreeBSD.org
+MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Perl5 interface to the DNS resolver, and dynamic updates
 
 # Warnings during build are harmless, the port does not need these to build

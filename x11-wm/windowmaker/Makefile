@@ -1,6 +1,6 @@
-# New ports collection makefile for:	WindowMaker
-# Date created:		August 13, 1997
-# Whom:			handy@physics.montana.edu
+# New ports collection makefile for:	Window Maker
+# Date created:				August 13, 1997
+# Whom:					Brian Handy <handy@physics.montana.edu>
 #
 # $FreeBSD$
 #
@@ -14,13 +14,12 @@ MASTER_SITES=	${MASTER_SITE_WINDOWMAKER} \
 MASTER_SITE_SUBDIR=	source/release
 DISTNAME=	WindowMaker-${PORTVERSION}
 
-MAINTAINER=	DougB@FreeBSD.org
+MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	GNUstep-compliant NeXTstep window manager clone
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.6:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		Xft.2:${PORTSDIR}/x11-fonts/libXft
+		tiff.4:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	${LOCALBASE}/share/WindowMaker/Themes/LeetWM.themed/style:${PORTSDIR}/graphics/wmicons
 
 MAKE_JOBS_SAFE=	yes
@@ -28,7 +27,7 @@ MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget pkgconfig
-USE_XORG=	xpm
+USE_XORG=	xpm xft
 USE_PERL5=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
@@ -48,13 +47,16 @@ MANLANG=	"" sk
 MAN1=		geticonset.1x getstyle.1x seticons.1x setstyle.1x wdwrite.1x \
 		wmaker.1x wmsetbg.1x wxcopy.1x wxpaste.1x
 
-OPTIONS=	XINERAMA "Enable xinerama support" off \
+PORTDOCS=	AUTHORS BUGFORM BUGS ChangeLog FAQ INSTALL NEWS README \
+		README.definable-cursor TODO
+
+OPTIONS=	WM_SINGLE_CLICK "Add single-click option to WPrefs menu" on \
+		XINERAMA "Enable xinerama support" off \
 		XKB_STATUS "XKB keyboard language status support" off \
-		WM_SINGLE_CLICK "Add single-click option to WPrefs menu" on \
 		WM_LINGUAS "Enable support for additional locales" off \
 		DOCKHOTKEYS "Enable support for hotkeys on docks" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if ${ARCH} == amd64
 CONFIGURE_ENV+=	ac_cv_c_inline_asm=no
@@ -97,15 +99,12 @@ post-patch:
 post-install:
 	@${MKDIR} ${PREFIX}/share/WindowMaker/Sounds
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${CP} ${WRKSRC}/AUTHORS ${WRKSRC}/BUGFORM ${WRKSRC}/BUGS \
-	${WRKSRC}/ChangeLog ${WRKSRC}/FAQ ${WRKSRC}/INSTALL \
-	${WRKSRC}/NEWS ${WRKSRC}/README \
-	${WRKSRC}/README.definable-cursor ${WRKSRC}/TODO ${DOCSDIR}/
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
 .endif
 
 update-LINGUAS: extract
 	cd ${WRKSRC}/po && \
 		${ECHO_CMD} *.po | ${SED} 's|\.po||g' > ${FILESDIR}/LINGUAS
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

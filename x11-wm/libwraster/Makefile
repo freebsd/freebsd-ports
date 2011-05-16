@@ -1,6 +1,6 @@
 # New ports collection makefile for:	libwraster
 # Date created:				August 17, 2009
-# Whom:					dougb@FreeBSD.org
+# Whom:					Doug Barton <dougb@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -19,15 +19,14 @@ COMMENT=	libwraster from Window Maker
 
 LIB_DEPENDS=	ungif.5:${PORTSDIR}/graphics/libungif \
 		png.6:${PORTSDIR}/graphics/png \
-		tiff.4:${PORTSDIR}/graphics/tiff \
-		Xft.2:${PORTSDIR}/x11-fonts/libXft
+		tiff.4:${PORTSDIR}/graphics/tiff
 
 MAKE_JOBS_SAFE=	yes
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GNOME=	pkgconfig
-USE_XORG=	xpm
+USE_XORG=	xpm xft
 USE_PERL5=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
