@@ -82,6 +82,7 @@ lib/libespeak.so.1.1.45
 %%DATADIR%%/espeak-data/mbrola_ph/us3_phtrans
 %%DATADIR%%/espeak-data/mbrola_ph/us_phtrans
 %%DATADIR%%/espeak-data/mk_dict
+%%DATADIR%%/espeak-data/ml_dict
 %%DATADIR%%/espeak-data/nci_dict
 %%DATADIR%%/espeak-data/nl_dict
 %%DATADIR%%/espeak-data/no_dict
@@ -201,6 +202,7 @@ lib/libespeak.so.1.1.45
 %%DATADIR%%/espeak-data/voices/mb/mb-us2
 %%DATADIR%%/espeak-data/voices/mb/mb-us3
 %%DATADIR%%/espeak-data/voices/mk
+%%DATADIR%%/espeak-data/voices/ml
 %%DATADIR%%/espeak-data/voices/nl
 %%DATADIR%%/espeak-data/voices/no
 %%DATADIR%%/espeak-data/voices/pl
