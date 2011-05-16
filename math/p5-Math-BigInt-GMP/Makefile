@@ -16,6 +16,9 @@ COMMENT=	Math::BigInt::GMP - Use the GMP library for Math::BigInt routines
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
+
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS+=	INC="-I${LOCALBASE}/include"
 
