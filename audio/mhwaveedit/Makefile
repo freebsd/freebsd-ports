@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mhwaveedit
-PORTVERSION=	1.4.20
+PORTVERSION=	1.4.21
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/mhwaveedit/
 
@@ -28,6 +28,7 @@ PLIST_FILES=	bin/mhwaveedit \
 		share/locale/es/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/fr/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/it/LC_MESSAGES/mhwaveedit.mo \
+		share/locale/pl/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/ru/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/sv/LC_MESSAGES/mhwaveedit.mo \
 		share/locale/zh_CN/LC_MESSAGES/mhwaveedit.mo \
@@ -47,6 +48,7 @@ OPTIONS=	DOUBLE_SAMPLES "increase quality for 24/32-bit samplerates" off \
 		ARTS "arts sound driver" off \
 		JACK "JACK sound driver" off \
 		ESD "EsounD sound driver" off \
+		PULSEAUDIO "PULSEAUDIO support" off \
 		LADSPA "LADSPA support" off
 
 .include <bsd.port.pre.mk>
@@ -103,6 +105,13 @@ CONFIGURE_ARGS+=	--without-jack
 USE_GNOME+=	esound
 .else
 CONFIGURE_ARGS+=	--without-esound
+.endif
+
+.if defined(WITH_PULSEAUDIO)
+LIBS_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
+CONFIGURE_ARGS+=	--with-pulse
+.else
+CONFIGURE_ARGS+=	--without-pulse
 .endif
 
 .if defined(WITH_LADSPA)
