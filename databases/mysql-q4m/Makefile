@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	q4m
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.5
 CATEGORIES=	databases
-MASTER_SITES=	http://q4m.31tools.com/dist/
+MASTER_SITES=	http://q4m.kazuhooku.com/dist/
 PKGNAMEPREFIX=	mysql${MYSQL_VER}-
 
 MAINTAINER=	knu@FreeBSD.org
