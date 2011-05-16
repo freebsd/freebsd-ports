@@ -1,6 +1,8 @@
 bin/pushover
 share/locale/cs/LC_MESSAGES/pushover.mo
 share/locale/de/LC_MESSAGES/pushover.mo
+share/locale/es/LC_MESSAGES/pushover.mo
+share/locale/fr/LC_MESSAGES/pushover.mo
 share/locale/ru/LC_MESSAGES/pushover.mo
 %%DATADIR%%/data/01_StandardFalling.ogg
 %%DATADIR%%/data/02_StopperHit.ogg
@@ -26,6 +28,7 @@ share/locale/ru/LC_MESSAGES/pushover.mo
 %%DATADIR%%/data/dominos.png
 %%DATADIR%%/levels/av.gz
 %%DATADIR%%/levels/original.gz
+%%DATADIR%%/pushover.ico
 %%DATADIR%%/themes/aztec.lua
 %%DATADIR%%/themes/aztec.ogg
 %%DATADIR%%/themes/aztec.png
