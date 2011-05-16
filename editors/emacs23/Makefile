@@ -7,6 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -139,7 +140,11 @@ LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 .if defined(WITHOUT_GIF)
 CONFIGURE_ARGS+=	--without-gif
 .else
+. if exists(${LOCALBASE}/lib/libgif.so)
+LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
+. else
 LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
+. endif
 .endif
 
 .if defined(WITHOUT_PNG)
@@ -225,6 +230,9 @@ BROKEN=	Emacs 23.X does not currently build on ia64
 post-patch:
 	@${RM} -f ${WRKSRC}/info/*
 	@${REINPLACE_CMD} -e "s/%%EMACS_VER%%/${EMACS_VER}/g" -e "s/%%DATADIR%%/${DATADIR:C/\//\\\//g}/g" ${WRKSRC}/sources.el
+.if defined(WITHOUT_X11)
+	@${REINPLACE_CMD} -e 's/^Terminal=.*$$/Terminal=true/' ${WRKSRC}/etc/emacs.desktop
+.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e "s/^\(DBUS_LIBS.*\)-pthread\(.*\)$$/\1$$(${DBUS_PTHREAD_LIBS})\2/" ${WRKSRC}/src/Makefile
