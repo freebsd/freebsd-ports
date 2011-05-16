@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pushover
-PORTVERSION=	0.0.2
-PORTREVISION=	2
+PORTVERSION=	0.0.3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Pushover/${PORTVERSION}
 
@@ -22,6 +21,7 @@ USE_SDL=	sdl mixer ttf
 USE_LUA=	5.1
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
@@ -34,8 +34,6 @@ DESKTOP_ENTRIES="Pushover" \
 		false
 
 post-patch:
-	@${REINPLACE_CMD} -e '/PKG_CONFIG/ s|lua5.1|lua-5.1|' \
-		${WRKSRC}/configure
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/install-data-am/ s|install-dist_docDATA||' \
 		${WRKSRC}/Makefile.in
