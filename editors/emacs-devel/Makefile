@@ -26,7 +26,7 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
 INSTALLS_ICONS=	yes
 
 EMACS_VER=	24.0.50
-EMACS_REV=	104000
+EMACS_REV=	104238
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XZ=		yes
@@ -148,7 +148,11 @@ LIB_DEPENDS+=	tiff.4:${PORTSDIR}/graphics/tiff
 .if defined(WITHOUT_GIF)
 CONFIGURE_ARGS+=	--without-gif
 .else
-LIB_DEPENDS+=	ungif.5:${PORTSDIR}/graphics/libungif
+. if exists(${LOCALBASE}/lib/libgif.so)
+LIB_DEPENDS+=   gif.5:${PORTSDIR}/graphics/giflib
+. else
+LIB_DEPENDS+=   ungif.5:${PORTSDIR}/graphics/libungif
+. endif
 .endif
 
 .if defined(WITHOUT_PNG)
@@ -241,6 +245,9 @@ BROKEN=	Emacs 24.X does not currently build on ia64
 post-patch:
 	@${RM} -f ${WRKSRC}/info/*
 	@${REINPLACE_CMD} -e "s/%%EMACS_VER%%/${EMACS_VER}/g" -e "s/%%DATADIR%%/${DATADIR:C/\//\\\//g}/g" ${WRKSRC}/sources.el
+.if defined(WITHOUT_X11)
+	@${REINPLACE_CMD} -e 's/^Terminal=.*$$/Terminal=true/' ${WRKSRC}/etc/emacs.desktop
+.endif
 
 post-configure:
 	@${REINPLACE_CMD} -e "s/^\(DBUS_LIBS.*\)-pthread\(.*\)$$/\1$$(${DBUS_PTHREAD_LIBS})\2/" ${WRKSRC}/src/Makefile

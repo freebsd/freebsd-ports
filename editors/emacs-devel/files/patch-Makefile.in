@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -509,14 +509,6 @@
+@@ -517,14 +517,6 @@
  
  install-arch-indep: mkdir info install-etc
  	-set ${COPYDESTS} ; \
@@ -18,10 +18,10 @@ $FreeBSD$
  	mkdir ${COPYDESTS} ; \
  	chmod ugo+rx ${COPYDESTS} ; \
  	unset CDPATH; \
-@@ -616,9 +608,9 @@
+@@ -624,9 +616,9 @@
  	   cd ${srcdir}/info ; \
  	   for elt in $(INFO_FILES); do \
- 	      test "$(HAVE_MAKEINFO)" = "no" && ! test -e $$elt && continue; \
+ 	      test "$(HAVE_MAKEINFO)" = "no" && test ! -f $$elt && continue; \
 -	      for f in `ls $$elt $$elt-[1-9] $$elt-[1-9][0-9] 2>/dev/null`; do \
 -	        ${INSTALL_DATA} $$f $(DESTDIR)${infodir}/$$f; \
 -	        chmod a+r $(DESTDIR)${infodir}/$$f; \
@@ -31,9 +31,9 @@ $FreeBSD$
  	        if [ -n "${GZIP_INFO}" ] && [ -n "${GZIP_PROG}" ]; then \
  	          rm -f $(DESTDIR)${infodir}/$$f.gz; \
  	          ${GZIP_PROG} -9n $(DESTDIR)${infodir}/$$f; \
-@@ -633,7 +625,7 @@
+@@ -641,7 +633,7 @@
  	  for elt in $(INFO_FILES); do \
- 	    test "$(HAVE_MAKEINFO)" = "no" && ! test -e $$elt && continue; \
+ 	    test "$(HAVE_MAKEINFO)" = "no" && test ! -f $$elt && continue; \
  	    (cd $${thisdir}; \
 -	     ${INSTALL_INFO} --info-dir=$(DESTDIR)${infodir} $(DESTDIR)${infodir}/$$elt); \
 +	     ${INSTALL_INFO} --info-dir=$(DESTDIR)${infodir} $(DESTDIR)${infodir}/$$elt.info); \
