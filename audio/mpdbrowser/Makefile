@@ -31,7 +31,7 @@ OPTIONS=		MPD	"Install Music Player Daemon" on
 .include <bsd.port.pre.mk>
 
 .if defined (WITH_MPD)
-RUN_DEPENDS+=	mpd:${PORTSDIR}/audio/musicpd
+RUN_DEPENDS+=	musicpd:${PORTSDIR}/audio/musicpd
 .endif
 
 .include <bsd.port.post.mk>

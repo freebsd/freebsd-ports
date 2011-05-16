@@ -48,7 +48,7 @@ post-patch:
 .include <bsd.port.pre.mk>
 
 .if defined (WITH_MPD)
-RUN_DEPENDS+=	mpd:${PORTSDIR}/audio/musicpd
+RUN_DEPENDS+=	musicpd:${PORTSDIR}/audio/musicpd
 .endif
 
 .if defined (WITH_MMKEYS)
