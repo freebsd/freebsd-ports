@@ -5,6 +5,21 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110516:
+  AFFECTS: users of audio/musicpd
+  AUTHOR: Chris Rees <utisoft@gmail.com>
+
+  Musicpd now installs the binary for the server as bin/musicpd, rather than
+  mpd, to remove a conflict with net/mpich2; before upgrade you should run:
+
+  # /usr/local/etc/rc.d/musicpd stop
+
+  Likewise, mpd.conf has been renamed musicpd.conf-- if you want to keep it
+  as mpd.conf then place MPDCONF="mpd.conf" into /etc/make.conf, otherwise
+  after upgrade run:
+
+  # mv /usr/local/etc/mpd.conf /usr/local/etc/musicpd.conf
+
 20110514:
   AFFECTS: users of sysutils/gksu, sysutils/libgksu, sysutils/libgksuui
   AUTHOR: bsam@FreeBSD.org
