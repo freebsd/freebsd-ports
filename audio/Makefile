@@ -647,6 +647,7 @@
     SUBDIR += raul
     SUBDIR += rawrec
     SUBDIR += rbscrobbler
+    SUBDIR += rebot3
     SUBDIR += resid
     SUBDIR += rexima
     SUBDIR += rezound
