@@ -101,6 +101,7 @@ lib/eaglemode/doc/html/images/ModelClassesAndMore.png
 lib/eaglemode/doc/html/images/MouseFunc1.png
 lib/eaglemode/doc/html/images/MouseFunc2.png
 lib/eaglemode/doc/html/images/MouseFunc3.png
+lib/eaglemode/doc/html/images/MouseFunc4.png
 lib/eaglemode/doc/html/images/ToolkitClasses.png
 lib/eaglemode/doc/html/images/emFileManOverview.png
 lib/eaglemode/doc/html/index.html
@@ -378,6 +379,7 @@ lib/eaglemode/include/emFileMan/emFileManConfig.h
 lib/eaglemode/include/emFileMan/emFileManControlPanel.h
 lib/eaglemode/include/emFileMan/emFileManModel.h
 lib/eaglemode/include/emFileMan/emFileManSelInfoPanel.h
+lib/eaglemode/include/emFileMan/emFileManTheme.h
 lib/eaglemode/include/emFileMan/emFileManViewConfig.h
 lib/eaglemode/include/emFractal/emFractalFileModel.h
 lib/eaglemode/include/emFractal/emFractalFilePanel.h
@@ -422,6 +424,7 @@ lib/eaglemode/include/emTmpConv/emTmpConvFramePanel.h
 lib/eaglemode/include/emTmpConv/emTmpConvModel.h
 lib/eaglemode/include/emTmpConv/emTmpConvModelClient.h
 lib/eaglemode/include/emTmpConv/emTmpConvPanel.h
+lib/eaglemode/include/emTreeDump/emTreeDumpControlPanel.h
 lib/eaglemode/include/emTreeDump/emTreeDumpFileModel.h
 lib/eaglemode/include/emTreeDump/emTreeDumpFilePanel.h
 lib/eaglemode/include/emTreeDump/emTreeDumpRec.h
@@ -502,10 +505,21 @@ lib/eaglemode/res/emCore/toolkit/RadioBoxPressed.tga
 lib/eaglemode/res/emCore/toolkit/Splitter.tga
 lib/eaglemode/res/emCore/toolkit/SplitterPressed.tga
 lib/eaglemode/res/emCore/toolkit/Tunnel.tga
-lib/eaglemode/res/emFileMan/images/InnerBorder.tga
-lib/eaglemode/res/emFileMan/images/OuterBorder.tga
 lib/eaglemode/res/emFileMan/scripts/cmd-util.pl
 lib/eaglemode/res/emFileMan/scripts/emArch.sh
+lib/eaglemode/res/emFileMan/themes/Cloud.emFileManTheme
+lib/eaglemode/res/emFileMan/themes/CloudInnerBorder.tga
+lib/eaglemode/res/emFileMan/themes/CloudOuterBorder.tga
+lib/eaglemode/res/emFileMan/themes/Metal1.emFileManTheme
+lib/eaglemode/res/emFileMan/themes/Metal2.emFileManTheme
+lib/eaglemode/res/emFileMan/themes/Metal3.emFileManTheme
+lib/eaglemode/res/emFileMan/themes/MetalInnerBorder.tga
+lib/eaglemode/res/emFileMan/themes/MetalOuterBorder.tga
+lib/eaglemode/res/emFileMan/themes/Paper1.emFileManTheme
+lib/eaglemode/res/emFileMan/themes/Paper2.emFileManTheme
+lib/eaglemode/res/emFileMan/themes/Paper3.emFileManTheme
+lib/eaglemode/res/emFileMan/themes/PaperBorder.tga
+lib/eaglemode/res/emFileMan/themes/Simple.emFileManTheme
 lib/eaglemode/res/emLKC/README
 lib/eaglemode/res/emLKC/emLKC.patch.bz2
 lib/eaglemode/res/emLKC/screenshot-1.jpg
@@ -539,8 +553,8 @@ lib/eaglemode/res/icons/em-error-unknown-icon.tga
 @dirrm lib/eaglemode/res/emNetwalk
 @dirrm lib/eaglemode/res/emMain
 @dirrm lib/eaglemode/res/emLKC
+@dirrm lib/eaglemode/res/emFileMan/themes
 @dirrm lib/eaglemode/res/emFileMan/scripts
-@dirrm lib/eaglemode/res/emFileMan/images
 @dirrm lib/eaglemode/res/emFileMan
 @dirrm lib/eaglemode/res/emCore/toolkit
 @dirrm lib/eaglemode/res/emCore/font
