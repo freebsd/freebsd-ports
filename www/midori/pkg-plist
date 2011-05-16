@@ -10,7 +10,6 @@ lib/midori/libfeed-panel.so
 lib/midori/libformhistory.so
 lib/midori/libhistory-list.so
 lib/midori/libmouse-gestures.so
-lib/midori/libpage-holder.so
 lib/midori/libshortcuts.so
 lib/midori/libstatus-clock.so
 lib/midori/libstatusbar-features.so
@@ -137,7 +136,6 @@ share/icons/hicolor/scalable/status/news-feed.svg
 %%DATADIR%%/res/logo-shade.png
 %%DATADIR%%/res/mootools.js
 %%DATADIR%%/res/speeddial-head.html
-%%DATADIR%%/res/speeddial.json
 share/vala/vapi/history-list.deps
 share/vala/vapi/history-list.vapi
 @dirrmtry share/vala/vapi
