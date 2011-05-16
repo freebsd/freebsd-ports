@@ -3,7 +3,7 @@
 # $FreeBSD$
 #
 # PROVIDE: musicpd
-# REQUIRE: mixer LOGIN
+# REQUIRE: mixer LOGIN avahi_daemon
 # KEYWORD: shutdown
 
 # Add the following line to /etc/rc.conf to enable mpd:
@@ -17,7 +17,7 @@ rcvar=`set_rcvar`
 stop_cmd="${name}_stop"
 
 config=%%PREFIX%%/etc/%%MPDCONF%%
-command=%%PREFIX%%/bin/mpd
+command=%%PREFIX%%/bin/musicpd
 required_files=$config
 
 musicpd_stop()
