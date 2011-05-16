@@ -7,14 +7,13 @@
 
 PORTNAME=	kde4
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	# empty
 DISTFILES=	# none
 EXTRACT_ONLY=	# empty
 
 MAINTAINER=	kde@FreeBSD.org
-COMMENT=	The "meta-port" for KDE
+COMMENT=	The "meta-port" for KDE Software Compilation
 
 OPTIONS=	KDEACCESSIBILITY "Accessibility applications" on \
 		KDEADMIN "KDE Administration applications" on \

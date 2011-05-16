@@ -28,6 +28,19 @@ share/apps/klettres/ar/alpha/a-27.ogg
 share/apps/klettres/ar/alpha/a-28.ogg
 share/apps/klettres/ar/sounds.xml
 share/locale/ar/LC_MESSAGES/adblock.mo
+share/locale/ar/LC_MESSAGES/akonadi_birthdays_resource.mo
+share/locale/ar/LC_MESSAGES/akonadi_ical_resource.mo
+share/locale/ar/LC_MESSAGES/akonadi_kabc_resource.mo
+share/locale/ar/LC_MESSAGES/akonadi_kcal_resource.mo
+share/locale/ar/LC_MESSAGES/akonadi_knut_resource.mo
+share/locale/ar/LC_MESSAGES/akonadi_kolabproxy_resource.mo
+share/locale/ar/LC_MESSAGES/akonadi_localbookmarks_resource.mo
+share/locale/ar/LC_MESSAGES/akonadi_nepomuktag_resource.mo
+share/locale/ar/LC_MESSAGES/akonadi_nntp_resource.mo
+share/locale/ar/LC_MESSAGES/akonadi_singlefile_resource.mo
+share/locale/ar/LC_MESSAGES/akonadi_vcard_resource.mo
+share/locale/ar/LC_MESSAGES/akonadi_vcarddir_resource.mo
+share/locale/ar/LC_MESSAGES/akonaditray.mo
 share/locale/ar/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/ar/LC_MESSAGES/amor.mo
 share/locale/ar/LC_MESSAGES/ark.mo
@@ -59,6 +72,7 @@ share/locale/ar/LC_MESSAGES/jovie.mo
 share/locale/ar/LC_MESSAGES/joystick.mo
 share/locale/ar/LC_MESSAGES/juk.mo
 share/locale/ar/LC_MESSAGES/kabc.mo
+share/locale/ar/LC_MESSAGES/kabc_akonadi.mo
 share/locale/ar/LC_MESSAGES/kabc_dir.mo
 share/locale/ar/LC_MESSAGES/kabc_file.mo
 share/locale/ar/LC_MESSAGES/kabc_ldapkio.mo
@@ -96,9 +110,11 @@ share/locale/ar/LC_MESSAGES/kbounce.mo
 share/locale/ar/LC_MESSAGES/kbreakout.mo
 share/locale/ar/LC_MESSAGES/kbruch.mo
 share/locale/ar/LC_MESSAGES/kcachegrind.mo
+share/locale/ar/LC_MESSAGES/kcal_akonadi.mo
 share/locale/ar/LC_MESSAGES/kcalc.mo
 share/locale/ar/LC_MESSAGES/kcertpart.mo
 share/locale/ar/LC_MESSAGES/kcharselect.mo
+share/locale/ar/LC_MESSAGES/kcm_akonadi.mo
 share/locale/ar/LC_MESSAGES/kcm_autostart.mo
 share/locale/ar/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/ar/LC_MESSAGES/kcm_desktopthemedetails.mo
@@ -229,6 +245,7 @@ share/locale/ar/LC_MESSAGES/kimagemapeditor.mo
 share/locale/ar/LC_MESSAGES/kinetd.mo
 share/locale/ar/LC_MESSAGES/kinfocenter.mo
 share/locale/ar/LC_MESSAGES/kio4.mo
+share/locale/ar/LC_MESSAGES/kio_akonadi.mo
 share/locale/ar/LC_MESSAGES/kio_applications.mo
 share/locale/ar/LC_MESSAGES/kio_archive.mo
 share/locale/ar/LC_MESSAGES/kio_audiocd.mo

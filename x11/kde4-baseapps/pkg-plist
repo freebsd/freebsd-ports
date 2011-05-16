@@ -76,7 +76,6 @@ lib/libkonq.so.7.0.1
 lib/libkonqsidebarplugin.so
 lib/libkonqsidebarplugin.so.5
 lib/libkonqsidebarplugin.so.5.0.1
-lib/libkonquerorprivate.so
 lib/libkonquerorprivate.so.5
 lib/libkonquerorprivate.so.5.0.1
 lib/libkonsoleprivate.so

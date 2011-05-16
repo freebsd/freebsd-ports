@@ -18,8 +18,7 @@ COMMENT=	Basic applications for the KDE system
 
 LIB_DEPENDS=	searchclient:${PORTSDIR}/deskutils/strigi \
 		soprano.4:${PORTSDIR}/textproc/soprano \
-		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
-		kwebkit.1:${PORTSDIR}/www/kwebkitpart
+		qimageblitz.4:${PORTSDIR}/x11/qimageblitz
 
 LATEST_LINK=	${PORTNAME}4
 

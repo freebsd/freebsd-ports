@@ -579,6 +579,7 @@ share/icons/oxygen/128x128/places/bookmarks.png
 share/icons/oxygen/128x128/places/certificate-server.png
 share/icons/oxygen/128x128/places/document-multiple.png
 share/icons/oxygen/128x128/places/favorites.png
+share/icons/oxygen/128x128/places/folder-black.png
 share/icons/oxygen/128x128/places/folder-blue.png
 share/icons/oxygen/128x128/places/folder-bookmark.png
 share/icons/oxygen/128x128/places/folder-brown.png
@@ -594,6 +595,7 @@ share/icons/oxygen/128x128/places/folder-image-people.png
 share/icons/oxygen/128x128/places/folder-image.png
 share/icons/oxygen/128x128/places/folder-important.png
 share/icons/oxygen/128x128/places/folder-locked.png
+share/icons/oxygen/128x128/places/folder-network.png
 share/icons/oxygen/128x128/places/folder-orange.png
 share/icons/oxygen/128x128/places/folder-print.png
 share/icons/oxygen/128x128/places/folder-red.png
@@ -607,6 +609,7 @@ share/icons/oxygen/128x128/places/folder-yellow.png
 share/icons/oxygen/128x128/places/folder.png
 share/icons/oxygen/128x128/places/mail-folder-outbox.png
 share/icons/oxygen/128x128/places/mail-folder-sent.png
+share/icons/oxygen/128x128/places/mail-message.png
 share/icons/oxygen/128x128/places/network-server-database.png
 share/icons/oxygen/128x128/places/network-server.png
 share/icons/oxygen/128x128/places/network-workgroup.png
@@ -3082,6 +3085,10 @@ share/icons/oxygen/22x22/places/user-desktop.png
 share/icons/oxygen/22x22/places/user-home.png
 share/icons/oxygen/22x22/places/user-identity.png
 share/icons/oxygen/22x22/places/user-trash.png
+share/icons/oxygen/22x22/special/zoom-in.png
+share/icons/oxygen/22x22/special/zoom-mag-in.png
+share/icons/oxygen/22x22/special/zoom-mag-out.png
+share/icons/oxygen/22x22/special/zoom-out.png
 share/icons/oxygen/22x22/status/appointment-recurring.png
 share/icons/oxygen/22x22/status/appointment-reminder.png
 share/icons/oxygen/22x22/status/audio-volume-high.png
@@ -3529,7 +3536,9 @@ share/icons/oxygen/256x256/mimetypes/x-office-document.png
 share/icons/oxygen/256x256/mimetypes/x-office-spreadsheet.png
 share/icons/oxygen/256x256/places/certificate-server.png
 share/icons/oxygen/256x256/places/favorites.png
+share/icons/oxygen/256x256/places/folder-black.png
 share/icons/oxygen/256x256/places/folder-blue.png
+share/icons/oxygen/256x256/places/folder-bookmark.png
 share/icons/oxygen/256x256/places/folder-brown.png
 share/icons/oxygen/256x256/places/folder-cyan.png
 share/icons/oxygen/256x256/places/folder-development.png
@@ -3543,6 +3552,7 @@ share/icons/oxygen/256x256/places/folder-image-people.png
 share/icons/oxygen/256x256/places/folder-image.png
 share/icons/oxygen/256x256/places/folder-important.png
 share/icons/oxygen/256x256/places/folder-locked.png
+share/icons/oxygen/256x256/places/folder-network.png
 share/icons/oxygen/256x256/places/folder-orange.png
 share/icons/oxygen/256x256/places/folder-print.png
 share/icons/oxygen/256x256/places/folder-red.png
@@ -3553,7 +3563,10 @@ share/icons/oxygen/256x256/places/folder-txt.png
 share/icons/oxygen/256x256/places/folder-video.png
 share/icons/oxygen/256x256/places/folder-violet.png
 share/icons/oxygen/256x256/places/folder-yellow.png
+share/icons/oxygen/256x256/places/folder.png
 share/icons/oxygen/256x256/places/mail-folder-sent.png
+share/icons/oxygen/256x256/places/mail-message.png
+share/icons/oxygen/256x256/places/network-server-database.png
 share/icons/oxygen/256x256/places/network-server.png
 share/icons/oxygen/256x256/places/network-workgroup.png
 share/icons/oxygen/256x256/places/repository.png
@@ -4144,8 +4157,8 @@ share/icons/oxygen/32x32/actions/view-web-browser-dom-tree.png
 share/icons/oxygen/32x32/actions/window-close.png
 share/icons/oxygen/32x32/actions/window-duplicate.png
 share/icons/oxygen/32x32/actions/window-new.png
-share/icons/oxygen/32x32/actions/zoom-1-to2.png
-share/icons/oxygen/32x32/actions/zoom-2-to1.png
+share/icons/oxygen/32x32/actions/zoom-1-to-2.png
+share/icons/oxygen/32x32/actions/zoom-2-to-1.png
 share/icons/oxygen/32x32/actions/zoom-draw.png
 share/icons/oxygen/32x32/actions/zoom-fit-best.png
 share/icons/oxygen/32x32/actions/zoom-fit-height.png
@@ -4681,6 +4694,7 @@ share/icons/oxygen/32x32/places/bookmarks.png
 share/icons/oxygen/32x32/places/certificate-server.png
 share/icons/oxygen/32x32/places/document-multiple.png
 share/icons/oxygen/32x32/places/favorites.png
+share/icons/oxygen/32x32/places/folder-black.png
 share/icons/oxygen/32x32/places/folder-blue.png
 share/icons/oxygen/32x32/places/folder-bookmark.png
 share/icons/oxygen/32x32/places/folder-brown.png
@@ -4696,6 +4710,7 @@ share/icons/oxygen/32x32/places/folder-image-people.png
 share/icons/oxygen/32x32/places/folder-image.png
 share/icons/oxygen/32x32/places/folder-important.png
 share/icons/oxygen/32x32/places/folder-locked.png
+share/icons/oxygen/32x32/places/folder-network.png
 share/icons/oxygen/32x32/places/folder-orange.png
 share/icons/oxygen/32x32/places/folder-print.png
 share/icons/oxygen/32x32/places/folder-red.png
@@ -5882,6 +5897,8 @@ share/icons/oxygen/48x48/places/bookmarks.png
 share/icons/oxygen/48x48/places/certificate-server.png
 share/icons/oxygen/48x48/places/document-multiple.png
 share/icons/oxygen/48x48/places/favorites.png
+share/icons/oxygen/48x48/places/folder-add.png
+share/icons/oxygen/48x48/places/folder-black.png
 share/icons/oxygen/48x48/places/folder-blue.png
 share/icons/oxygen/48x48/places/folder-bookmark.png
 share/icons/oxygen/48x48/places/folder-brown.png
@@ -5897,6 +5914,7 @@ share/icons/oxygen/48x48/places/folder-image-people.png
 share/icons/oxygen/48x48/places/folder-image.png
 share/icons/oxygen/48x48/places/folder-important.png
 share/icons/oxygen/48x48/places/folder-locked.png
+share/icons/oxygen/48x48/places/folder-network.png
 share/icons/oxygen/48x48/places/folder-orange.png
 share/icons/oxygen/48x48/places/folder-print.png
 share/icons/oxygen/48x48/places/folder-red.png
@@ -6052,17 +6070,7 @@ share/icons/oxygen/64x64/actions/insert-horizontal-rule.png
 share/icons/oxygen/64x64/actions/insert-link.png
 share/icons/oxygen/64x64/actions/list-add-user.png
 share/icons/oxygen/64x64/actions/list-remove.png
-share/icons/oxygen/64x64/actions/mail-forward.png
-share/icons/oxygen/64x64/actions/mail-mark-junk.png
-share/icons/oxygen/64x64/actions/mail-mark-unread-new.png
-share/icons/oxygen/64x64/actions/mail-message-new.png
-share/icons/oxygen/64x64/actions/mail-queue.png
 share/icons/oxygen/64x64/actions/mail-receive.png
-share/icons/oxygen/64x64/actions/mail-reply-all.png
-share/icons/oxygen/64x64/actions/mail-reply-list.png
-share/icons/oxygen/64x64/actions/mail-reply-sender.png
-share/icons/oxygen/64x64/actions/mail-send.png
-share/icons/oxygen/64x64/actions/page-zoom.png
 share/icons/oxygen/64x64/actions/resource-group.png
 share/icons/oxygen/64x64/actions/roll.png
 share/icons/oxygen/64x64/actions/svn-commit.png
@@ -6586,6 +6594,7 @@ share/icons/oxygen/64x64/places/bookmarks.png
 share/icons/oxygen/64x64/places/certificate-server.png
 share/icons/oxygen/64x64/places/document-multiple.png
 share/icons/oxygen/64x64/places/favorites.png
+share/icons/oxygen/64x64/places/folder-black.png
 share/icons/oxygen/64x64/places/folder-blue.png
 share/icons/oxygen/64x64/places/folder-bookmark.png
 share/icons/oxygen/64x64/places/folder-brown.png
@@ -6601,6 +6610,7 @@ share/icons/oxygen/64x64/places/folder-image-people.png
 share/icons/oxygen/64x64/places/folder-image.png
 share/icons/oxygen/64x64/places/folder-important.png
 share/icons/oxygen/64x64/places/folder-locked.png
+share/icons/oxygen/64x64/places/folder-network.png
 share/icons/oxygen/64x64/places/folder-orange.png
 share/icons/oxygen/64x64/places/folder-print.png
 share/icons/oxygen/64x64/places/folder-red.png
@@ -6614,6 +6624,7 @@ share/icons/oxygen/64x64/places/folder-yellow.png
 share/icons/oxygen/64x64/places/folder.png
 share/icons/oxygen/64x64/places/mail-folder-outbox.png
 share/icons/oxygen/64x64/places/mail-folder-sent.png
+share/icons/oxygen/64x64/places/mail-message.png
 share/icons/oxygen/64x64/places/network-server-database.png
 share/icons/oxygen/64x64/places/network-server.png
 share/icons/oxygen/64x64/places/network-workgroup.png

@@ -26,8 +26,8 @@ QT_COMPONENTS=	corelib opengl dbus qt3support designer network svg qtestlib \
 		uic_build uic3_build
 MAKE_JOBS_SAFE=	yes
 
-CMAKE_ARGS+=	-DBUILD_kpackage:BOOL=Off \
-		-DBUILD_lilo-config:BOOL=Off
+#disable system-config-printer-kde, it comes with print/kdeadmin4-system-config-printer-kde
+CMAKE_ARGS+=	-DBUILD_system-config-printer-kde:BOOL=Off
 
 OPTIONS=	PRINTER_CONFIG "Install printer configuration utility" off
 
@@ -36,10 +36,5 @@ OPTIONS=	PRINTER_CONFIG "Install printer configuration utility" off
 .if defined(WITH_PRINTER_CONFIG)
 RUN_DEPENDS+=	${KDE4_PREFIX}/share/apps/system-config-printer-kde/system-config-printer-kde.py:${PORTSDIR}/print/system-config-printer-kde
 .endif
-
-post-patch:
-#disable system-config-printer-kde, it comes with print/kdeadmin4-system-config-printer-kde
-	${REINPLACE_CMD} -e '/add_subdirectory.*system-config-printer-kde/d' \
-		${PATCH_WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.mk>

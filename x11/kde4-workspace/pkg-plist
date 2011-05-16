@@ -399,7 +399,6 @@ lib/libkfontinst.so.5.0.1
 lib/libkfontinstui.so
 lib/libkfontinstui.so.5
 lib/libkfontinstui.so.5.0.1
-lib/libkhotkeysprivate.so
 lib/libkhotkeysprivate.so.5
 lib/libkhotkeysprivate.so.5.0.1
 lib/libkickoff.so

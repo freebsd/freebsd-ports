@@ -8,7 +8,6 @@
 
 PORTNAME=	kdebase-runtime
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	x11 kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -32,6 +31,7 @@ CONFLICTS=	kdebase-workspace-4.5.[0-5]
 
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 KDE4_BUILDENV=	yes
+USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib opengl dbus phonon \

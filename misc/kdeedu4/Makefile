@@ -6,7 +6,6 @@
 
 PORTNAME=	kdeedu
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -51,6 +50,7 @@ MAN6=		khangman.6
 CMAKE_ARGS+=	-DCMAKE_REQUIRED_INCLUDES:STRING="${LOCALBASE}/include" \
 		-DBOOST_PYTHON_INCLUDES="${LOCALBASE}/include;${PYTHON_INCLUDEDIR}" \
 		-DBOOST_PYTHON_LIBS="-L${LOCALBASE}/lib -lboost_python -l${PYTHON_VERSION}" \
+		-DBUILD_marble=OFF \
 		-DWITH_R:BOOL=OFF
 
 OPTIONS=	MARBLE "Install Marble - Virtual globe and world atlas" off
@@ -62,8 +62,6 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/bin/marble:${PORTSDIR}/astro/marble
 .endif
 
 pre-configure:
-	${REINPLACE_CMD} -e '/macro_optional_add_subdirectory(marble)/d' \
-		${WRKSRC}/CMakeLists.txt
 	${REINPLACE_CMD} -e '/macro_optional_find_package(Avogadro 1.0.0)/d' \
 		${WRKSRC}/kalzium/KalziumConfigureChecks.cmake
 

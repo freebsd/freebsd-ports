@@ -16,7 +16,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Extra plasmoids for KDE4
 
 BUILD_DEPENDS=	eigen>=2.0.b3:${PORTSDIR}/math/eigen2
-LIB_DEPENDS=	kipi.8:${PORTSDIR}/graphics/kdegraphics4 \
+LIB_DEPENDS=	kexiv2:${PORTSDIR}/graphics/kdegraphics4 \
 		qalculate.5:${PORTSDIR}/math/libqalculate \
 		qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
 		marblewidget.11:${PORTSDIR}/astro/marble
