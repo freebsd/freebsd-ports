@@ -12,7 +12,7 @@ CATEGORIES=	net parallel
 MASTER_SITES=	http://www.mcs.anl.gov/research/projects/mpich2/downloads/tarballs/${DISTVERSION}/
 DIST_SUBDIR=	mpich
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	utisoft@gmail.com
 COMMENT=	A portable implementation of MPI-1 and MPI-2
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
@@ -57,7 +57,7 @@ MAKE_ENV+=	VERBOSE=1
 .endif
 MAKE_JOBS_UNSAFE=	yes
 
-CONFLICTS=	lam-7.* mpiexec-0.* musicpd-0.*
+CONFLICTS=	lam-7.* mpiexec-0.*
 
 USE_FORTRAN=	yes
 FCFLAGS+=	${FFLAGS}
