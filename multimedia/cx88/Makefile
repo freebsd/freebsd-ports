@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cx88
-PORTVERSION=	1.3.0
+PORTVERSION=	1.3.1
 CATEGORIES=	multimedia kld
 MASTER_SITES=	ftp://corona.homeunix.net/ports/cx88/
 
