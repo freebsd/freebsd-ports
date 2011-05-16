@@ -1,4 +1,13 @@
+share/locale/th/LC_MESSAGES/accountwizard.mo
+share/locale/th/LC_MESSAGES/accountwizard_imap.mo
+share/locale/th/LC_MESSAGES/accountwizard_kolab.mo
+share/locale/th/LC_MESSAGES/accountwizard_mailbox.mo
+share/locale/th/LC_MESSAGES/accountwizard_maildir.mo
+share/locale/th/LC_MESSAGES/accountwizard_pop3.mo
 share/locale/th/LC_MESSAGES/adblock.mo
+share/locale/th/LC_MESSAGES/akonadi_birthdays_resource.mo
+share/locale/th/LC_MESSAGES/akonadi_contacts_resource.mo
+share/locale/th/LC_MESSAGES/akonadi_ical_resource.mo
 share/locale/th/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/th/LC_MESSAGES/amor.mo
 share/locale/th/LC_MESSAGES/ark.mo

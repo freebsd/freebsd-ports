@@ -54,7 +54,7 @@ Kde_Include_MAINTAINER=	kde@FreeBSD.org
 #		but this could be changed in a future.
 #
 
-KDE4_VERSION=		4.6.2
+KDE4_VERSION=		4.6.3
 KDE4_BRANCH?=		stable
 KDEPIM4_VERSION=	4.4.11.1
 KDEPIM4_BRANCH?=	stable
@@ -127,10 +127,6 @@ KDE4_PYTHON_SITELIBDIR=	${PYTHON_SITELIBDIR:S;${PYTHONBASE};${KDE4_PREFIX};}
 #
 .if defined(KDE4_BUILDENV)
 
-.if ${OSVERSION} < 700042
-BROKEN=		does not build on 6.x. See http://miwi.bsdcrew.de/2009/01/30/status-report-kde-42-and-freebsd-64-support/
-.endif
-
 .if ${KDE4_BRANCH} == "unstable"
 WITH_DEBUG=yes
 .endif
@@ -144,7 +140,6 @@ PLIST_SUB+=	KDE4_VERSION="${KDE4_VERSION}"
 USE_LDCONFIG=	yes
 
 USE_CMAKE=	yes
-USE_GMAKE=	yes
 CMAKE_SOURCE_PATH=	${WRKSRC}
 CONFIGURE_WRKSRC=	${CMAKE_SOURCE_PATH}/build
 BUILD_WRKSRC=		${CONFIGURE_WRKSRC}

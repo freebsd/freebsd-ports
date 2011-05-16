@@ -30,6 +30,8 @@ MAN1=	kmag.1 \
 	kmousetool.1 \
 	kmouth.1
 
+CMAKE_ARGS+=	-DBUILD_jovie=OFF
+
 OPTIONS=	KTTS "Enable KTTS speech service" off
 
 .include <bsd.port.options.mk>
@@ -39,10 +41,6 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/bin/jovie:${PORTSDIR}/accessibility/ktts
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e '/macro_optional_add_subdirectory.*jovie/d' \
-		${PATCH_WRKSRC}/CMakeLists.txt
-	${REINPLACE_CMD} -e '/add_subdirectory.*jovie/d' \
-		${PATCH_WRKSRC}/doc/CMakeLists.txt
 	${REINPLACE_CMD} -e 's/speechd/$$$\{SPEECHD_LIBRARY}/g' \
 		${PATCH_WRKSRC}/kaccessible/CMakeLists.txt
 

@@ -197,7 +197,6 @@ lib/libkopetestatusmenu.so.1.0.0
 lib/libkrdccore.so
 lib/libkrdccore.so.5
 lib/libkrdccore.so.5.0.1
-lib/libkrfbprivate.so
 lib/libkrfbprivate.so.5.0.1
 lib/libkyahoo.so
 lib/libkyahoo.so.1

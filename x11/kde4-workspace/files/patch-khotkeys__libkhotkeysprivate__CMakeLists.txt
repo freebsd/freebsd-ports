@@ -1,9 +1,0 @@
---- ./khotkeys/libkhotkeysprivate/CMakeLists.txt.orig	2010-12-02 10:16:38.017500408 +1000
-+++ ./khotkeys/libkhotkeysprivate/CMakeLists.txt	2010-12-02 10:16:45.839492868 +1000
-@@ -75,5 +75,5 @@
-   target_link_libraries(khotkeysprivate ${X11_XTest_LIB})
- endif(X11_XTest_FOUND)
- set_target_properties(khotkeysprivate PROPERTIES VERSION ${GENERIC_LIB_VERSION} SOVERSION ${GENERIC_LIB_SOVERSION})
--install(TARGETS khotkeysprivate ${INSTALL_TARGETS_DEFAULT_ARGS} LIBRARY NAMELINK_SKIP)
-+install(TARGETS khotkeysprivate ${INSTALL_TARGETS_DEFAULT_ARGS})
- 

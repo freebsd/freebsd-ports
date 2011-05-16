@@ -33,6 +33,9 @@ MAKE_JOBS_SAFE=	yes
 
 MAN1=		ark.1
 
+# Disable printer-applet, it comes with print/kdeutils4-printer-applet.
+CMAKE_ARGS+=	-DBUILD_printer-applet=OFF
+
 OPTIONS=	7ZIP "Support for 7-Zip archives in Ark" off \
 		PRINTER_APPLET "Install printer system tray utility" off \
 		RAR "Support for RAR archives in Ark" off \
@@ -75,10 +78,5 @@ INSTALL_RAR=	YES
 RUN_DEPENDS+=	rar:${PORTSDIR}/archivers/rar
 .endif
 .endif
-
-post-patch:
-# Disable printer-applet, it comes with print/kdeutils4-printer-applet.
-	${REINPLACE_CMD} -e '/add_subdirectory.*printer-applet/d' \
-		${PATCH_WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.post.mk>

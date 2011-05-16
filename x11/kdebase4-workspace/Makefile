@@ -42,10 +42,11 @@ RUN_DEPENDS=	${KDE4_PREFIX}/env/xdg-env.sh:${PORTSDIR}/misc/kde4-xdg-env \
 		${KDE4_PREFIX}/lib/kde4/libexec/polkit-kde-authentication-agent-1:${PORTSDIR}/sysutils/polkit-kde \
 		${KDE4_PREFIX}/bin/nepomukcontroller:${PORTSDIR}/misc/nepomukcontroller
 
-SUB_FILES=	kdm layout.js
+SUB_FILES=	kdm layout.js pkg-message
 USE_RC_SUBR=	kdm4
 USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4 oxygen
 KDE4_BUILDENV=	yes
+USE_GMAKE=	yes
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	assistant corelib dbus designer gui network opengl  \
@@ -65,10 +66,8 @@ CMAKE_ARGS+=	-DCMAKE_REQUIRED_FLAGS:STRING="-L${LOCALBASE}/lib" \
 		-DWITH_NetworkManager:BOOL=OFF \
 		-DWITH_Xmms:BOOL=OFF \
 		-DWITH_Googlegadgets:BOOL=OFF \
-		-DWITH_QEdje:BOOL=OFF \
 		-DWITH_PyKDE4:BOOL=OFF
 #PyKDE4, Xmms and Googlegadgets could be enabled,
-#QEdje has not been ported yet.
 
 OPTIONS=	PLASMA_PYTHON "Support for plasmoids written in Python" off \
 		PLASMA_RUBY "Support for plasmoids written in Ruby" off
@@ -92,9 +91,6 @@ LIB_DEPENDS+=	utempter:${PORTSDIR}/sysutils/libutempter
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/lib/X11,${LOCALBASE}/lib/X11,g' \
-			  -e 's,/usr/share/X11,${LOCALBASE}/share/X11,g' \
-		${PATCH_WRKSRC}/kcontrol/keyboard/xkb_rules.cpp
 	@${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g' \
 		${PATCH_WRKSRC}/startkde.cmake \
 		${PATCH_WRKSRC}/kcontrol/kfontinst/lib/KfiConstants.h \
@@ -103,8 +99,6 @@ post-patch:
 		${PATCH_WRKSRC}/kdm/backend/client.c \
 		${PATCH_WRKSRC}/kdm/kfrontend/genkdmconf.c \
 		${PATCH_WRKSRC}/CMakeLists.txt
-	@${REINPLACE_CMD} -e 's,resolv,c,g' \
-		${PATCH_WRKSRC}/cmake/modules/FindPCIUTILS.cmake
 
 pre-configure:
 	${REINPLACE_CMD} -e '/ksysguardd/ d' \
@@ -124,5 +118,6 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/layout.js ${PREFIX}/share/apps/plasma/layout-templates/org.kde.freebsd.defaultWallpaper/contents
 	cd ${WRKDIR}/stripes-freebsd-1.0 && \
 		${COPYTREE_SHARE} . ${PREFIX}/share/wallpapers
+	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

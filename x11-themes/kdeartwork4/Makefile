@@ -28,7 +28,8 @@ QT_COMPONENTS=	opengl gui svg qt3support \
 		qmake_build moc_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	GNOME "Use Gnome screensavers" off
+OPTIONS=	GNOME "Use Gnome screensavers" off \
+		KDEGRAPHICS "Rotate photos with exif data" off
 
 .include <bsd.port.pre.mk>
 
@@ -38,6 +39,12 @@ RUN_DEPENDS+=	${LOCALBASE}/share/applications/xscreensaver-properties.desktop:${
 .else
 BUILD_DEPENDS+=	xscreensaver:${PORTSDIR}/x11/xscreensaver
 RUN_DEPENDS+=	xscreensaver:${PORTSDIR}/x11/xscreensaver
+.endif
+
+.if defined(WITH_KDEGRAPHICS)
+LIB_DEPENDS+=	kexiv2:${PORTSDIR}/graphics/kdegraphics4
+.else
+CMAKE_ARGS+=	-DWITH_Kexiv2:bool=off
 .endif
 
 post-patch:

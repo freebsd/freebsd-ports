@@ -1,4 +1,10 @@
+share/locale/mai/LC_MESSAGES/accountwizard.mo
+share/locale/mai/LC_MESSAGES/accountwizard_imap.mo
+share/locale/mai/LC_MESSAGES/accountwizard_kolab.mo
 share/locale/mai/LC_MESSAGES/adblock.mo
+share/locale/mai/LC_MESSAGES/akonadi_birthdays_resource.mo
+share/locale/mai/LC_MESSAGES/akonadi_imap_resource.mo
+share/locale/mai/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/mai/LC_MESSAGES/akonadicontact.mo
 share/locale/mai/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/mai/LC_MESSAGES/attica_kde.mo
@@ -179,6 +185,7 @@ share/locale/mai/LC_MESSAGES/klines.mo
 share/locale/mai/LC_MESSAGES/klipper.mo
 share/locale/mai/LC_MESSAGES/klock.mo
 share/locale/mai/LC_MESSAGES/kmahjongg.mo
+share/locale/mai/LC_MESSAGES/kmail-migrator.mo
 share/locale/mai/LC_MESSAGES/kmenuedit.mo
 share/locale/mai/LC_MESSAGES/kmimetypefinder.mo
 share/locale/mai/LC_MESSAGES/kmines.mo

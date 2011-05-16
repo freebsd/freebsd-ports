@@ -1,4 +1,7 @@
 share/locale/hr/LC_MESSAGES/adblock.mo
+share/locale/hr/LC_MESSAGES/akonadi_birthdays_resource.mo
+share/locale/hr/LC_MESSAGES/akonadi_contacts_resource.mo
+share/locale/hr/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/hr/LC_MESSAGES/akonadicontact.mo
 share/locale/hr/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/hr/LC_MESSAGES/amor.mo

@@ -1,3 +1,9 @@
+share/locale/ia/LC_MESSAGES/accountwizard.mo
+share/locale/ia/LC_MESSAGES/accountwizard_imap.mo
+share/locale/ia/LC_MESSAGES/accountwizard_kolab.mo
+share/locale/ia/LC_MESSAGES/accountwizard_mailbox.mo
+share/locale/ia/LC_MESSAGES/accountwizard_maildir.mo
+share/locale/ia/LC_MESSAGES/accountwizard_pop3.mo
 share/locale/ia/LC_MESSAGES/adblock.mo
 share/locale/ia/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/ia/LC_MESSAGES/attica_kde.mo
@@ -119,6 +125,7 @@ share/locale/ia/LC_MESSAGES/kiconfinder.mo
 share/locale/ia/LC_MESSAGES/kinetd.mo
 share/locale/ia/LC_MESSAGES/kinfocenter.mo
 share/locale/ia/LC_MESSAGES/kio4.mo
+share/locale/ia/LC_MESSAGES/kio_akonadi.mo
 share/locale/ia/LC_MESSAGES/kio_applications.mo
 share/locale/ia/LC_MESSAGES/kio_archive.mo
 share/locale/ia/LC_MESSAGES/kio_bookmarks.mo

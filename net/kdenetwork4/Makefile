@@ -6,7 +6,6 @@
 
 PORTNAME=	kdenetwork
 PORTVERSION=	${KDE4_VERSION}
-PORTREVISION=	1
 CATEGORIES=	net kde ipv6
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -30,7 +29,6 @@ LIB_DEPENDS=	slp.1:${PORTSDIR}/net/openslp \
 		meanwhile.1:${PORTSDIR}/net-im/meanwhile \
 		speex.1:${PORTSDIR}/audio/speex \
 		v4l2.0:${PORTSDIR}/multimedia/libv4l \
-		kwebkit.1:${PORTSDIR}/www/kwebkitpart \
 		ktorrent.3:${PORTSDIR}/net-p2p/libktorrent
 RUN_DEPENDS=	qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
 
