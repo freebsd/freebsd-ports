@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	qiv
-PORTVERSION=	2.2.3
-PORTREVISION=	3
+PORTVERSION=	2.2.4
 CATEGORIES=	graphics
 MASTER_SITES=	http://spiegl.de/qiv/download/ \
 		http://www.predatorlabs.net/dl/
@@ -17,8 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	Small, fast GDK/Imlib2 image viewer
 
-LIB_DEPENDS=	Imlib2.5:${PORTSDIR}/graphics/imlib2 \
-		exif.12:${PORTSDIR}/graphics/libexif
+LIB_DEPENDS=	Imlib2.5:${PORTSDIR}/graphics/imlib2
+
+LICENSE=	GPLv2
 
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
