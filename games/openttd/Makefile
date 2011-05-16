@@ -6,11 +6,14 @@
 #
 
 PORTNAME=	openttd
-PORTVERSION=	1.0.5
+PORTVERSION=	1.1.0
 CATEGORIES=	games
 MASTER_SITES=	http://gb.binaries.openttd.org/binaries/releases/${PORTVERSION}/ \
 		http://ftp.snt.utwente.nl/pub/games/openttd/binaries/releases/${PORTVERSION}/ \
-		#SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+		http://cz.binaries.openttd.org/openttd/binaries/releases/${PORTVERSION}/ \
+		http://de.binaries.openttd.org/binaries/releases/${PORTVERSION}/ \
+		http://us.binaries.openttd.org/binaries/releases/${PORTVERSION}/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	An open source clone of Microprose Transport Tycoon Deluxe
@@ -22,7 +25,7 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix-dir="${PREFIX}" --data-dir="${DATADIR_REL}"
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 MAKE_JOBS_SAFE=	yes
@@ -53,11 +56,13 @@ MAN6=		${PORTNAME}.6
 DESKTOP_ENTRIES="OpenTTD" "${COMMENT}" "${PORTNAME}" "${PORTNAME}" \
 		"Game;Simulation;StrategyGame;" ${FALSE}
 
-PORTDOCS=	32bpp.txt HOWTO_compile_lang_files.txt elrail.svg \
-		elrail_tile.png elrail_track.png landscape.html \
+PORTDOCS=	32bpp.txt HOWTO_compile_lang_files.txt admin_network.txt \
+		elrail.svg elrail_tile.png elrail_track.png landscape.html \
 		landscape_externals.html landscape_grid.html multiplayer.txt \
 		obg_format.txt obm_format.txt obs_format.txt \
-		ottd-colour-palette.gif ottd-colourtext-palette.png tileh.png
+		ottd-colourtext-palette.png tileh.png
+
+.include <bsd.port.pre.mk>
 
 pre-everything::
 .if !defined(WITH_MIDI_PLAYER)
@@ -73,12 +78,16 @@ pre-everything::
 post-patch:
 # Remove extra (vendor-provided) CFLAGS and LDFLAGS and make the port more
 # LOCALBASE safe
-	@${REINPLACE_CMD} -e '1250,1252d ; s,/usr/local,${LOCALBASE},' \
+	@${REINPLACE_CMD} -e '1355,1355d ; s,/usr/local,${LOCALBASE},' \
 		${WRKSRC}/config.lib
-# FreeBSD has strndup(3) since 701101
-	@${REINPLACE_CMD} -e '/__NetBSD_Version__/s,$$, || (defined(__FreeBSD_version) \&\& __FreeBSD_version > 701100),' \
-	-e 's,def __NetBSD__, defined(__NetBSD__) || defined(__FreeBSD__),' \
-		${WRKSRC}/src/string_func.h
+# Use custom libzma.pc for when we use libzma from base.
+.if ${OSVERSION} >= 900012 || (${OSVERSION} >= 800505 && ${OSVERSION} < 900000)
+	@${REINPLACE_CMD} \
+		-e 's|pkg-config liblzma|pkg-config ${FILESDIR}/liblzma.pc|g' \
+		${WRKSRC}/config.lib
+.else
+LIB_DEPEND+=	lzma.5:${PORTSDIR}/archivers/xz
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
@@ -106,4 +115,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

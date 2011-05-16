@@ -2,12 +2,12 @@ bin/openttd
 share/pixmaps/openttd.32.xpm
 %%DATADIR%%/ai/compat_0.7.nut
 %%DATADIR%%/ai/compat_1.0.nut
+%%DATADIR%%/ai/compat_1.1.nut
 @dirrm %%DATADIR%%/ai
 %%DATADIR%%/gm/no_music.obm
 %%DATADIR%%/gm/orig_win.obm
 @dirrm %%DATADIR%%/gm
-%%DATADIR%%/data/openttdd.grf
-%%DATADIR%%/data/openttdw.grf
+%%DATADIR%%/data/openttd.grf
 %%DATADIR%%/data/opntitle.dat
 %%DATADIR%%/data/orig_dos.obg
 %%DATADIR%%/data/orig_dos.obs
