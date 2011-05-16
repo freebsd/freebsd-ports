@@ -7,6 +7,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.16.2
+PORTREVISION=	1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
@@ -19,8 +20,6 @@ LIB_DEPENDS+=	mad.2:${PORTSDIR}/audio/libmad \
 
 LICENSE=	GPLv2
 
-CONFLICTS_INSTALL=	mpich2-[1-9]*
-
 USE_GMAKE=	yes
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
@@ -32,16 +31,17 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 CFLAGS+=	-I${PREFIX}/include
 
-MAN1=		mpd.1
-MAN5=		mpd.conf.5
+MAN1=		${PORTNAME}.1
+MAN5=		${MPDCONF}.5
 
-DOCSDIR=	${PREFIX}/share/doc/mpd
-PORTDOCS=	mpdconf.example AUTHORS README COPYING NEWS UPGRADING
+DOCSDIR?=	${PREFIX}/share/doc/mpd
+PORTDOCS=	AUTHORS README COPYING NEWS UPGRADING
 
 SUB_FILES=	pkg-message
 
 OPTIONS=	ID3TAG          "Support ID3 v1/v2 tags"                on \
 		IPV6            "Support IPv6 protocol"                 on \
+		AVAHI		"Support Zeroconf through Avahi"	off \
 		FLAC            "Support FLAC audio format"             on \
 		VORBIS          "Support OGG Vorbis audio format"       on \
 		WAV             "Support WAV audio format"              on \
@@ -65,7 +65,7 @@ OPTIONS=	ID3TAG          "Support ID3 v1/v2 tags"                on \
 MPDDIR?=	/var/mpd
 MPDUSER=	mpd
 MPDGROUP=	mpd
-MPDCONF?=	mpd.conf
+MPDCONF?=	musicpd.conf
 
 USERS=	${MPDUSER}
 GROUPS=	${MPDGROUP}
@@ -188,6 +188,13 @@ LIB_DEPENDS+=	id3tag.0:${PORTSDIR}/audio/libid3tag
 CONFIGURE_ARGS+=--disable-ipv6
 .endif
 
+.if defined(WITHOUT_AVAHI)
+CONFIGURE_ARGS+=--with-zeroconf=no
+.else
+CONFIGURE_ARGS+=--with-zeroconf=avahi
+LIB_DEPENDS+=	avahi-client.3:${PORTSDIR}/net/avahi-app
+.endif
+
 .if defined(WITH_AO)
 CONFIGURE_ARGS+=--enable-ao
 LIB_DEPENDS+=	ao.4:${PORTSDIR}/audio/libao
@@ -229,15 +236,29 @@ post-patch:
 	@${REINPLACE_CMD} -e 's,^#\([^"]*"\)~/,\1${MPDDIR}/,g' \
 		-e 's,^#\(user[^"]*"\)nobody,\1${MPDUSER},g' \
 		${WRKSRC}/doc/mpdconf.example
+# Fix man pages for executable names
+	@${REINPLACE_CMD} -e 's/^\(\.B m\)/\1usic/' \
+		-e 's#^\(\.BI \)/etc/mpd.conf#\1${PREFIX}/etc/${MPDCONF}#' \
+		-e 's#^mpd.conf#${MPDCONF}#' \
+		-e 's#^mpd(1)#musicpd(1)#' \
+		${WRKSRC}/doc/mpd.1 ${WRKSRC}/doc/mpd.conf.5
 .if (${OSVERSION} < 800000)
 	${REINPLACE_CMD} -e 's/nan[f]\{0,1\}(\"\")/NAN/g' \
 		${WRKSRC}/src/crossfade.c \
 		${WRKSRC}/src/player_thread.c \
 		${WRKSRC}/src/player_control.c
 .endif
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|install-docDATA ||' \
-		${WRKSRC}/Makefile.in
+
+do-install:
+	@${INSTALL_PROGRAM} ${WRKSRC}/src/mpd ${PREFIX}/bin/${PORTNAME}
+	@${INSTALL_MAN} ${WRKSRC}/doc/mpd.1 ${MAN1PREFIX}/man/man1/${PORTNAME}.1
+	@${INSTALL_MAN} ${WRKSRC}/doc/mpd.conf.5 \
+		${MAN5PREFIX}/man/man5/${MPDCONF}.5
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+.   for doc in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}/
+.   endfor
 .endif
 
 post-install:
