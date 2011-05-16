@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/3.2.0b6
 DISTNAME=	htdig-3.2.0b6
 
-MAINTAINER=	DougB@FreeBSD.org
+MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	A www indexing and searching system
 
 MAKE_JOBS_SAFE=	yes

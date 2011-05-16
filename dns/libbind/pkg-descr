@@ -16,4 +16,4 @@ translations, and utilizing /etc/resolv.conf for resolver configuration.
 WWW: https://www.isc.org/software/libbind
 
 - Doug Barton
-DougB@FreeBSD.org
+dougb@FreeBSD.org

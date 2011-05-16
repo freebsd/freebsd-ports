@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	print
 MASTER_SITES=	SF/hpinkjet/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	DougB@FreeBSD.org
+MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	Drivers and support resources for HP Inkjet Printers
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
