@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpMyAdmin
-DISTVERSION=	3.3.10
+DISTVERSION=	3.4.0
 CATEGORIES=	databases www
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-all-languages
@@ -16,28 +16,29 @@ COMMENT=	A set of PHP-scripts to manage MySQL over the web
 
 LICENSE=	GPLv2
 
-USE_MYSQL=	yes
+USE_MYSQL=	compat
 IGNORE_WITH_PHP=	4
 IGNORE_WITH_MYSQL=	323 40 41
 USE_BZIP2=	yes
 NO_BUILD=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)
-USE_PHP=	ctype mysql session filter mbstring
+USE_PHP=	ctype mysql session filter mbstring json
 .endif
 
 # Note: default settings will pull in X11 client support.  If you don't
 # want this, either turn off GD in the config dialog, or else turn off
 # FONTCONFIG in the graphics/gd port options.
 
-OPTIONS=	SUPHP	 "suPHP support" off \
-		BZ2	 "bzip2 library support" on \
-		GD	 "GD library support (requires X11)" on \
-		MYSQLI	 "Improved MySQL support" off \
-		OPENSSL	 "OpenSSL support" on \
-		PDF	 "PDFlib support" on \
-		ZLIB	 "ZLIB support" on \
-		MCRYPT	 "MCrypt library support" on \
-		ZIP	 "Zip compression support" on
+OPTIONS=	SUPHP	"suPHP support"			      off \
+		BZ2	"bzip2 library support" 	      on  \
+		GD	"GD library support (requires X11)"   on  \
+		MYSQLI	"Improved MySQL support" 	      off \
+		OPENSSL	"OpenSSL support" 		      on  \
+		PDF	"PDFlib support" 		      on  \
+		ZLIB	"ZLIB support" 			      on  \
+		MCRYPT	"MCrypt library support" 	      on  \
+		ZIP	"Zip compression support" 	      on  \
+		APC	"APC (animated progress bar) support" on
 
 .include <bsd.port.options.mk>
 
@@ -78,7 +79,7 @@ LATEST_LINK=	${PORTNAME}${PKGNAMESUFFIX}
 .if !defined(WITHOUT_PHP_DEPENDS)
 
 # Options that default to on:
-.for opt in BZ2 GD OPENSSL PDF ZLIB MCRYPT MBSTRING ZIP
+.for opt in BZ2 GD OPENSSL PDF ZLIB MCRYPT MBSTRING ZIP APC
 .    if !defined(WITHOUT_${opt}) || defined(WITH_${opt})
 USE_PHP+=	${opt:L}
 .    endif
