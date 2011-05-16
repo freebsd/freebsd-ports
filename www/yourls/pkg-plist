@@ -1,11 +1,13 @@
+%%WWWDIR%%/admin/admin-ajax.php
 %%WWWDIR%%/admin/index.php
-%%WWWDIR%%/admin/index_ajax.php
 %%WWWDIR%%/admin/install.php
+%%WWWDIR%%/admin/plugins.php
 %%WWWDIR%%/admin/tools.php
 %%WWWDIR%%/admin/upgrade.php
 %%WWWDIR%%/changelog.txt
 %%WWWDIR%%/css/cal.css
 %%WWWDIR%%/css/infos.css
+%%WWWDIR%%/css/palette.png
 %%WWWDIR%%/css/share.css
 %%WWWDIR%%/css/style.css
 %%WWWDIR%%/css/tablesorter.css
@@ -16,25 +18,31 @@
 %%WWWDIR%%/images/cancel.png
 %%WWWDIR%%/images/chart_bar.png
 %%WWWDIR%%/images/chart_bar_add.png
+%%WWWDIR%%/images/copy-large.png
+%%WWWDIR%%/images/copy.png
 %%WWWDIR%%/images/delete.png
 %%WWWDIR%%/images/desc.gif
 %%WWWDIR%%/images/error.png
 %%WWWDIR%%/images/facebook.png
 %%WWWDIR%%/images/favicon.gif
+%%WWWDIR%%/images/filter.gif
 %%WWWDIR%%/images/friendfeed.png
 %%WWWDIR%%/images/loading.gif
 %%WWWDIR%%/images/pencil.png
+%%WWWDIR%%/images/share.png
 %%WWWDIR%%/images/twitter.png
 %%WWWDIR%%/images/yourls-logo.png
 %%WWWDIR%%/includes/auth.php
 %%WWWDIR%%/includes/class-mysql.php
 %%WWWDIR%%/includes/config-sample.php
 %%WWWDIR%%/includes/functions-auth.php
-%%WWWDIR%%/includes/functions-baseconvert.php
+%%WWWDIR%%/includes/functions-compat.php
 %%WWWDIR%%/includes/functions-html.php
+%%WWWDIR%%/includes/functions-http.php
 %%WWWDIR%%/includes/functions-infos.php
 %%WWWDIR%%/includes/functions-install.php
 %%WWWDIR%%/includes/functions-json.php
+%%WWWDIR%%/includes/functions-plugins.php
 %%WWWDIR%%/includes/functions-upgrade.php
 %%WWWDIR%%/includes/functions-xml.php
 %%WWWDIR%%/includes/functions.php
@@ -306,10 +314,14 @@
 %%WWWDIR%%/includes/geo/readme.txt
 %%WWWDIR%%/includes/load-yourls.php
 %%WWWDIR%%/includes/version.php
+%%WWWDIR%%/js/ZeroClipboard.js
+%%WWWDIR%%/js/ZeroClipboard.swf
+%%WWWDIR%%/js/common.js
 %%WWWDIR%%/js/infos.js
 %%WWWDIR%%/js/insert.js
-%%WWWDIR%%/js/jquery-1.3.2.min.js
+%%WWWDIR%%/js/jquery-1.4.3.min.js
 %%WWWDIR%%/js/jquery.cal.js
+%%WWWDIR%%/js/jquery.notifybar.js
 %%WWWDIR%%/js/jquery.tablesorter.min.js
 %%WWWDIR%%/js/share.js
 %%WWWDIR%%/pages/about.php
@@ -318,9 +330,43 @@
 %%WWWDIR%%/sample-public-api.php.txt
 %%WWWDIR%%/sample-public-front-page.php.txt
 %%WWWDIR%%/sample-remote-api-call.php.txt
+%%WWWDIR%%/user/plugins/hyphens-in-urls/README.txt
+%%WWWDIR%%/user/plugins/hyphens-in-urls/plugin.php
+%%WWWDIR%%/user/plugins/random-bg/README.txt
+%%WWWDIR%%/user/plugins/random-bg/img/bg_ants.png
+%%WWWDIR%%/user/plugins/random-bg/img/bg_circles.png
+%%WWWDIR%%/user/plugins/random-bg/img/bg_cross.png
+%%WWWDIR%%/user/plugins/random-bg/img/bg_diag.png
+%%WWWDIR%%/user/plugins/random-bg/img/bg_fuzzy.png
+%%WWWDIR%%/user/plugins/random-bg/img/bg_yourls.png
+%%WWWDIR%%/user/plugins/random-bg/plugin.php
+%%WWWDIR%%/user/plugins/sample-page/README.txt
+%%WWWDIR%%/user/plugins/sample-page/plugin.php
+%%WWWDIR%%/user/plugins/sample-plugin/README.txt
+%%WWWDIR%%/user/plugins/sample-plugin/plugin.php
+%%WWWDIR%%/user/plugins/sample-toolbar/README.txt
+%%WWWDIR%%/user/plugins/sample-toolbar/css/toolbar.css
+%%WWWDIR%%/user/plugins/sample-toolbar/img/close_button.gif
+%%WWWDIR%%/user/plugins/sample-toolbar/img/close_button_red.gif
+%%WWWDIR%%/user/plugins/sample-toolbar/img/favicon.gif
+%%WWWDIR%%/user/plugins/sample-toolbar/img/toolbar_bg.png
+%%WWWDIR%%/user/plugins/sample-toolbar/js/toolbar.js
+%%WWWDIR%%/user/plugins/sample-toolbar/plugin.php
 %%WWWDIR%%/yourls-api.php
 %%WWWDIR%%/yourls-go.php
 %%WWWDIR%%/yourls-infos.php
+%%WWWDIR%%/yourls-loader.php
+@dirrm %%WWWDIR%%/user/plugins/sample-toolbar/js
+@dirrm %%WWWDIR%%/user/plugins/sample-toolbar/img
+@dirrm %%WWWDIR%%/user/plugins/sample-toolbar/css
+@dirrm %%WWWDIR%%/user/plugins/sample-toolbar
+@dirrm %%WWWDIR%%/user/plugins/sample-plugin
+@dirrm %%WWWDIR%%/user/plugins/sample-page
+@dirrm %%WWWDIR%%/user/plugins/random-bg/img
+@dirrm %%WWWDIR%%/user/plugins/random-bg
+@dirrm %%WWWDIR%%/user/plugins/hyphens-in-urls
+@dirrm %%WWWDIR%%/user/plugins
+@dirrm %%WWWDIR%%/user
 @dirrm %%WWWDIR%%/pages
 @dirrm %%WWWDIR%%/js
 @dirrm %%WWWDIR%%/includes/geo/flags
