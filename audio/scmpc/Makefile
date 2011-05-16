@@ -6,28 +6,31 @@
 #
 
 PORTNAME=	scmpc
-PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTVERSION=	0.3.1
 CATEGORIES=	audio
-MASTER_SITES=	BERLIOS
+MASTER_SITES=	http://cloud.github.com/downloads/cmende/${PORTNAME}/
 
 MAINTAINER=	legioner.r@gmail.com
 COMMENT=	An Audioscrobbler client for MPD
 
-LIB_DEPENDS=	argtable2.1:${PORTSDIR}/devel/argtable \
-		confuse.0:${PORTSDIR}/devel/libconfuse \
-		daemon.0:${PORTSDIR}/devel/libdaemon \
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	confuse.0:${PORTSDIR}/devel/libconfuse \
 		curl.6:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+USE_GMAKE=	yes
+USE_GNOME=	glib20
 
 MAN1=		scmpc.1
-PLIST_FILES=	bin/scmpc share/scmpc/scmpc.conf
-PLIST_DIRS=	share/scmpc
+PLIST_FILES=	bin/scmpc
+PORTDOCS=	NEWS README scmpc.conf.example
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
