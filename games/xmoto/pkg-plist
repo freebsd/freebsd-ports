@@ -26,6 +26,7 @@ bin/xmoto
 %%NLS%%share/locale/tr_TR/LC_MESSAGES/xmoto.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/xmoto.mo
 %%DATADIR%%/Textures/Fonts/DejaVuSans.ttf
+%%DATADIR%%/Textures/Fonts/DejaVuSansMono.ttf
 %%DATADIR%%/Textures/Musics/MadeiraStew.ogg
 %%DATADIR%%/Textures/Musics/batcave.ogg
 %%DATADIR%%/Textures/Musics/foxrun.ogg
