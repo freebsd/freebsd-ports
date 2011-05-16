@@ -2,6 +2,10 @@
 %%WWWDIR%%/CHANGES.html
 %%WWWDIR%%/INSTALL.html
 %%WWWDIR%%/LICENSE.html
+%%WWWDIR%%/_samples/adobeair/application.xml
+%%WWWDIR%%/_samples/adobeair/run.bat
+%%WWWDIR%%/_samples/adobeair/run.sh
+%%WWWDIR%%/_samples/adobeair/sample.html
 %%WWWDIR%%/_samples/ajax.html
 %%WWWDIR%%/_samples/api.html
 %%WWWDIR%%/_samples/api_dialog.html
@@ -13,20 +17,31 @@
 %%WWWDIR%%/_samples/asp/replaceall.asp
 %%WWWDIR%%/_samples/asp/sample_posteddata.asp
 %%WWWDIR%%/_samples/asp/standalone.asp
+%%WWWDIR%%/_samples/assets/_posteddata.php
+%%WWWDIR%%/_samples/assets/output_for_flash.fla
+%%WWWDIR%%/_samples/assets/output_for_flash.swf
 %%WWWDIR%%/_samples/assets/output_xhtml.css
+%%WWWDIR%%/_samples/assets/parsesample.css
+%%WWWDIR%%/_samples/assets/swfobject.js
 %%WWWDIR%%/_samples/autogrow.html
+%%WWWDIR%%/_samples/bbcode.html
+%%WWWDIR%%/_samples/devtools.html
 %%WWWDIR%%/_samples/divreplace.html
 %%WWWDIR%%/_samples/enterkey.html
 %%WWWDIR%%/_samples/fullpage.html
 %%WWWDIR%%/_samples/index.html
 %%WWWDIR%%/_samples/jqueryadapter.html
+%%WWWDIR%%/_samples/output_for_flash.html
 %%WWWDIR%%/_samples/output_html.html
 %%WWWDIR%%/_samples/output_xhtml.html
 %%WWWDIR%%/_samples/php/advanced.php
 %%WWWDIR%%/_samples/php/events.php
+%%WWWDIR%%/_samples/php/index.html
 %%WWWDIR%%/_samples/php/replace.php
 %%WWWDIR%%/_samples/php/replaceall.php
 %%WWWDIR%%/_samples/php/standalone.php
+%%WWWDIR%%/_samples/placeholder.html
+%%WWWDIR%%/_samples/readonly.html
 %%WWWDIR%%/_samples/replacebyclass.html
 %%WWWDIR%%/_samples/replacebycode.html
 %%WWWDIR%%/_samples/sample.css
@@ -34,11 +49,12 @@
 %%WWWDIR%%/_samples/sample_posteddata.php
 %%WWWDIR%%/_samples/sharedspaces.html
 %%WWWDIR%%/_samples/skins.html
+%%WWWDIR%%/_samples/stylesheetparser.html
+%%WWWDIR%%/_samples/tableresize.html
 %%WWWDIR%%/_samples/ui_color.html
 %%WWWDIR%%/_samples/ui_languages.html
 %%WWWDIR%%/_source/adapters/jquery.js
 %%WWWDIR%%/_source/core/_bootstrap.js
-%%WWWDIR%%/_source/core/ajax.js
 %%WWWDIR%%/_source/core/ckeditor.js
 %%WWWDIR%%/_source/core/ckeditor_base.js
 %%WWWDIR%%/_source/core/ckeditor_basic.js
@@ -76,7 +92,6 @@
 %%WWWDIR%%/_source/core/htmlparser/filter.js
 %%WWWDIR%%/_source/core/htmlparser/fragment.js
 %%WWWDIR%%/_source/core/htmlparser/text.js
-%%WWWDIR%%/_source/core/imagecacher.js
 %%WWWDIR%%/_source/core/lang.js
 %%WWWDIR%%/_source/core/loader.js
 %%WWWDIR%%/_source/core/plugindefinition.js
@@ -87,7 +102,6 @@
 %%WWWDIR%%/_source/core/themes.js
 %%WWWDIR%%/_source/core/tools.js
 %%WWWDIR%%/_source/core/ui.js
-%%WWWDIR%%/_source/core/xml.js
 %%WWWDIR%%/_source/lang/_languages.js
 %%WWWDIR%%/_source/lang/_translationstatus.txt
 %%WWWDIR%%/_source/lang/af.js
@@ -123,6 +137,7 @@
 %%WWWDIR%%/_source/lang/is.js
 %%WWWDIR%%/_source/lang/it.js
 %%WWWDIR%%/_source/lang/ja.js
+%%WWWDIR%%/_source/lang/ka.js
 %%WWWDIR%%/_source/lang/km.js
 %%WWWDIR%%/_source/lang/ko.js
 %%WWWDIR%%/_source/lang/lt.js
@@ -155,8 +170,11 @@
 %%WWWDIR%%/_source/plugins/about/dialogs/about.js
 %%WWWDIR%%/_source/plugins/about/dialogs/logo_ckeditor.png
 %%WWWDIR%%/_source/plugins/about/plugin.js
+%%WWWDIR%%/_source/plugins/adobeair/plugin.js
+%%WWWDIR%%/_source/plugins/ajax/plugin.js
 %%WWWDIR%%/_source/plugins/autogrow/plugin.js
 %%WWWDIR%%/_source/plugins/basicstyles/plugin.js
+%%WWWDIR%%/_source/plugins/bbcode/plugin.js
 %%WWWDIR%%/_source/plugins/bidi/plugin.js
 %%WWWDIR%%/_source/plugins/blockquote/plugin.js
 %%WWWDIR%%/_source/plugins/button/plugin.js
@@ -166,12 +184,16 @@
 %%WWWDIR%%/_source/plugins/colordialog/dialogs/colordialog.js
 %%WWWDIR%%/_source/plugins/colordialog/plugin.js
 %%WWWDIR%%/_source/plugins/contextmenu/plugin.js
+%%WWWDIR%%/_source/plugins/devtools/lang/en.js
+%%WWWDIR%%/_source/plugins/devtools/plugin.js
 %%WWWDIR%%/_source/plugins/dialog/dialogDefinition.js
 %%WWWDIR%%/_source/plugins/dialog/plugin.js
 %%WWWDIR%%/_source/plugins/dialogadvtab/plugin.js
 %%WWWDIR%%/_source/plugins/dialogui/plugin.js
 %%WWWDIR%%/_source/plugins/div/dialogs/div.js
 %%WWWDIR%%/_source/plugins/div/plugin.js
+%%WWWDIR%%/_source/plugins/docprops/dialogs/docprops.js
+%%WWWDIR%%/_source/plugins/docprops/plugin.js
 %%WWWDIR%%/_source/plugins/domiterator/plugin.js
 %%WWWDIR%%/_source/plugins/editingblock/plugin.js
 %%WWWDIR%%/_source/plugins/elementspath/plugin.js
@@ -200,6 +222,9 @@
 %%WWWDIR%%/_source/plugins/horizontalrule/plugin.js
 %%WWWDIR%%/_source/plugins/htmldataprocessor/plugin.js
 %%WWWDIR%%/_source/plugins/htmlwriter/plugin.js
+%%WWWDIR%%/_source/plugins/iframe/dialogs/iframe.js
+%%WWWDIR%%/_source/plugins/iframe/images/placeholder.png
+%%WWWDIR%%/_source/plugins/iframe/plugin.js
 %%WWWDIR%%/_source/plugins/iframedialog/plugin.js
 %%WWWDIR%%/_source/plugins/image/dialogs/image.js
 %%WWWDIR%%/_source/plugins/image/plugin.js
@@ -226,6 +251,11 @@
 %%WWWDIR%%/_source/plugins/pastefromword/plugin.js
 %%WWWDIR%%/_source/plugins/pastetext/dialogs/pastetext.js
 %%WWWDIR%%/_source/plugins/pastetext/plugin.js
+%%WWWDIR%%/_source/plugins/placeholder/dialogs/placeholder.js
+%%WWWDIR%%/_source/plugins/placeholder/lang/en.js
+%%WWWDIR%%/_source/plugins/placeholder/lang/he.js
+%%WWWDIR%%/_source/plugins/placeholder/placeholder.gif
+%%WWWDIR%%/_source/plugins/placeholder/plugin.js
 %%WWWDIR%%/_source/plugins/popup/plugin.js
 %%WWWDIR%%/_source/plugins/preview/plugin.js
 %%WWWDIR%%/_source/plugins/print/plugin.js
@@ -275,10 +305,12 @@
 %%WWWDIR%%/_source/plugins/smiley/plugin.js
 %%WWWDIR%%/_source/plugins/sourcearea/plugin.js
 %%WWWDIR%%/_source/plugins/specialchar/dialogs/specialchar.js
+%%WWWDIR%%/_source/plugins/specialchar/lang/en.js
 %%WWWDIR%%/_source/plugins/specialchar/plugin.js
 %%WWWDIR%%/_source/plugins/styles/plugin.js
 %%WWWDIR%%/_source/plugins/styles/styles/default.js
 %%WWWDIR%%/_source/plugins/stylescombo/plugin.js
+%%WWWDIR%%/_source/plugins/stylesheetparser/plugin.js
 %%WWWDIR%%/_source/plugins/tab/plugin.js
 %%WWWDIR%%/_source/plugins/table/dialogs/table.js
 %%WWWDIR%%/_source/plugins/table/plugin.js
@@ -294,6 +326,7 @@
 %%WWWDIR%%/_source/plugins/toolbar/plugin.js
 %%WWWDIR%%/_source/plugins/uicolor/dialogs/uicolor.js
 %%WWWDIR%%/_source/plugins/uicolor/lang/en.js
+%%WWWDIR%%/_source/plugins/uicolor/lang/he.js
 %%WWWDIR%%/_source/plugins/uicolor/plugin.js
 %%WWWDIR%%/_source/plugins/uicolor/uicolor.gif
 %%WWWDIR%%/_source/plugins/uicolor/yui/assets/hue_bg.png
@@ -309,11 +342,13 @@
 %%WWWDIR%%/_source/plugins/wsc/dialogs/wsc.js
 %%WWWDIR%%/_source/plugins/wsc/plugin.js
 %%WWWDIR%%/_source/plugins/wysiwygarea/plugin.js
+%%WWWDIR%%/_source/plugins/xml/plugin.js
 %%WWWDIR%%/_source/skins/kama/dialog.css
 %%WWWDIR%%/_source/skins/kama/editor.css
 %%WWWDIR%%/_source/skins/kama/elementspath.css
 %%WWWDIR%%/_source/skins/kama/icons.css
 %%WWWDIR%%/_source/skins/kama/icons.png
+%%WWWDIR%%/_source/skins/kama/icons_rtl.png
 %%WWWDIR%%/_source/skins/kama/images/dialog_sides.gif
 %%WWWDIR%%/_source/skins/kama/images/dialog_sides.png
 %%WWWDIR%%/_source/skins/kama/images/dialog_sides_rtl.png
@@ -336,6 +371,7 @@
 %%WWWDIR%%/_source/skins/office2003/elementspath.css
 %%WWWDIR%%/_source/skins/office2003/icons.css
 %%WWWDIR%%/_source/skins/office2003/icons.png
+%%WWWDIR%%/_source/skins/office2003/icons_rtl.png
 %%WWWDIR%%/_source/skins/office2003/images/dialog_sides.gif
 %%WWWDIR%%/_source/skins/office2003/images/dialog_sides.png
 %%WWWDIR%%/_source/skins/office2003/images/dialog_sides_rtl.png
@@ -357,6 +393,7 @@
 %%WWWDIR%%/_source/skins/v2/elementspath.css
 %%WWWDIR%%/_source/skins/v2/icons.css
 %%WWWDIR%%/_source/skins/v2/icons.png
+%%WWWDIR%%/_source/skins/v2/icons_rtl.png
 %%WWWDIR%%/_source/skins/v2/images/dialog_sides.gif
 %%WWWDIR%%/_source/skins/v2/images/dialog_sides.png
 %%WWWDIR%%/_source/skins/v2/images/dialog_sides_rtl.png
@@ -423,6 +460,7 @@
 %%WWWDIR%%/lang/is.js
 %%WWWDIR%%/lang/it.js
 %%WWWDIR%%/lang/ja.js
+%%WWWDIR%%/lang/ka.js
 %%WWWDIR%%/lang/km.js
 %%WWWDIR%%/lang/ko.js
 %%WWWDIR%%/lang/lt.js
@@ -453,11 +491,18 @@
 %%WWWDIR%%/plugins/a11yhelp/lang/he.js
 %%WWWDIR%%/plugins/about/dialogs/about.js
 %%WWWDIR%%/plugins/about/dialogs/logo_ckeditor.png
+%%WWWDIR%%/plugins/adobeair/plugin.js
+%%WWWDIR%%/plugins/ajax/plugin.js
 %%WWWDIR%%/plugins/autogrow/plugin.js
+%%WWWDIR%%/plugins/bbcode/plugin.js
 %%WWWDIR%%/plugins/clipboard/dialogs/paste.js
 %%WWWDIR%%/plugins/colordialog/dialogs/colordialog.js
+%%WWWDIR%%/plugins/devtools/lang/en.js
+%%WWWDIR%%/plugins/devtools/plugin.js
 %%WWWDIR%%/plugins/dialog/dialogDefinition.js
 %%WWWDIR%%/plugins/div/dialogs/div.js
+%%WWWDIR%%/plugins/docprops/dialogs/docprops.js
+%%WWWDIR%%/plugins/docprops/plugin.js
 %%WWWDIR%%/plugins/find/dialogs/find.js
 %%WWWDIR%%/plugins/flash/dialogs/flash.js
 %%WWWDIR%%/plugins/flash/images/placeholder.png
@@ -470,6 +515,8 @@
 %%WWWDIR%%/plugins/forms/dialogs/textarea.js
 %%WWWDIR%%/plugins/forms/dialogs/textfield.js
 %%WWWDIR%%/plugins/forms/images/hiddenfield.gif
+%%WWWDIR%%/plugins/iframe/dialogs/iframe.js
+%%WWWDIR%%/plugins/iframe/images/placeholder.png
 %%WWWDIR%%/plugins/iframedialog/plugin.js
 %%WWWDIR%%/plugins/image/dialogs/image.js
 %%WWWDIR%%/plugins/link/dialogs/anchor.js
@@ -479,6 +526,11 @@
 %%WWWDIR%%/plugins/pagebreak/images/pagebreak.gif
 %%WWWDIR%%/plugins/pastefromword/filter/default.js
 %%WWWDIR%%/plugins/pastetext/dialogs/pastetext.js
+%%WWWDIR%%/plugins/placeholder/dialogs/placeholder.js
+%%WWWDIR%%/plugins/placeholder/lang/en.js
+%%WWWDIR%%/plugins/placeholder/lang/he.js
+%%WWWDIR%%/plugins/placeholder/placeholder.gif
+%%WWWDIR%%/plugins/placeholder/plugin.js
 %%WWWDIR%%/plugins/scayt/dialogs/options.js
 %%WWWDIR%%/plugins/scayt/dialogs/toolbar.css
 %%WWWDIR%%/plugins/showblocks/images/block_address.png
@@ -515,7 +567,9 @@
 %%WWWDIR%%/plugins/smiley/images/whatchutalkingabout_smile.gif
 %%WWWDIR%%/plugins/smiley/images/wink_smile.gif
 %%WWWDIR%%/plugins/specialchar/dialogs/specialchar.js
+%%WWWDIR%%/plugins/specialchar/lang/en.js
 %%WWWDIR%%/plugins/styles/styles/default.js
+%%WWWDIR%%/plugins/stylesheetparser/plugin.js
 %%WWWDIR%%/plugins/table/dialogs/table.js
 %%WWWDIR%%/plugins/tableresize/plugin.js
 %%WWWDIR%%/plugins/tabletools/dialogs/tableCell.js
@@ -526,6 +580,7 @@
 %%WWWDIR%%/plugins/templates/templates/images/template3.gif
 %%WWWDIR%%/plugins/uicolor/dialogs/uicolor.js
 %%WWWDIR%%/plugins/uicolor/lang/en.js
+%%WWWDIR%%/plugins/uicolor/lang/he.js
 %%WWWDIR%%/plugins/uicolor/plugin.js
 %%WWWDIR%%/plugins/uicolor/uicolor.gif
 %%WWWDIR%%/plugins/uicolor/yui/assets/hue_bg.png
@@ -538,9 +593,11 @@
 %%WWWDIR%%/plugins/wsc/dialogs/tmpFrameset.html
 %%WWWDIR%%/plugins/wsc/dialogs/wsc.css
 %%WWWDIR%%/plugins/wsc/dialogs/wsc.js
+%%WWWDIR%%/plugins/xml/plugin.js
 %%WWWDIR%%/skins/kama/dialog.css
 %%WWWDIR%%/skins/kama/editor.css
 %%WWWDIR%%/skins/kama/icons.png
+%%WWWDIR%%/skins/kama/icons_rtl.png
 %%WWWDIR%%/skins/kama/images/dialog_sides.gif
 %%WWWDIR%%/skins/kama/images/dialog_sides.png
 %%WWWDIR%%/skins/kama/images/dialog_sides_rtl.png
@@ -554,6 +611,7 @@
 %%WWWDIR%%/skins/office2003/dialog.css
 %%WWWDIR%%/skins/office2003/editor.css
 %%WWWDIR%%/skins/office2003/icons.png
+%%WWWDIR%%/skins/office2003/icons_rtl.png
 %%WWWDIR%%/skins/office2003/images/dialog_sides.gif
 %%WWWDIR%%/skins/office2003/images/dialog_sides.png
 %%WWWDIR%%/skins/office2003/images/dialog_sides_rtl.png
@@ -566,6 +624,7 @@
 %%WWWDIR%%/skins/v2/dialog.css
 %%WWWDIR%%/skins/v2/editor.css
 %%WWWDIR%%/skins/v2/icons.png
+%%WWWDIR%%/skins/v2/icons_rtl.png
 %%WWWDIR%%/skins/v2/images/dialog_sides.gif
 %%WWWDIR%%/skins/v2/images/dialog_sides.png
 %%WWWDIR%%/skins/v2/images/dialog_sides_rtl.png
@@ -586,6 +645,7 @@
 @dirrm %%WWWDIR%%/skins/kama/images
 @dirrm %%WWWDIR%%/skins/kama
 @dirrm %%WWWDIR%%/skins
+@dirrm %%WWWDIR%%/plugins/xml
 @dirrm %%WWWDIR%%/plugins/wsc/dialogs
 @dirrm %%WWWDIR%%/plugins/wsc
 @dirrm %%WWWDIR%%/plugins/uicolor/yui/assets
@@ -602,8 +662,10 @@
 @dirrm %%WWWDIR%%/plugins/tableresize
 @dirrm %%WWWDIR%%/plugins/table/dialogs
 @dirrm %%WWWDIR%%/plugins/table
+@dirrm %%WWWDIR%%/plugins/stylesheetparser
 @dirrm %%WWWDIR%%/plugins/styles/styles
 @dirrm %%WWWDIR%%/plugins/styles
+@dirrm %%WWWDIR%%/plugins/specialchar/lang
 @dirrm %%WWWDIR%%/plugins/specialchar/dialogs
 @dirrm %%WWWDIR%%/plugins/specialchar
 @dirrm %%WWWDIR%%/plugins/smiley/images
@@ -613,6 +675,9 @@
 @dirrm %%WWWDIR%%/plugins/showblocks
 @dirrm %%WWWDIR%%/plugins/scayt/dialogs
 @dirrm %%WWWDIR%%/plugins/scayt
+@dirrm %%WWWDIR%%/plugins/placeholder/lang
+@dirrm %%WWWDIR%%/plugins/placeholder/dialogs
+@dirrm %%WWWDIR%%/plugins/placeholder
 @dirrm %%WWWDIR%%/plugins/pastetext/dialogs
 @dirrm %%WWWDIR%%/plugins/pastetext
 @dirrm %%WWWDIR%%/plugins/pastefromword/filter
@@ -627,6 +692,9 @@
 @dirrm %%WWWDIR%%/plugins/image/dialogs
 @dirrm %%WWWDIR%%/plugins/image
 @dirrm %%WWWDIR%%/plugins/iframedialog
+@dirrm %%WWWDIR%%/plugins/iframe/images
+@dirrm %%WWWDIR%%/plugins/iframe/dialogs
+@dirrm %%WWWDIR%%/plugins/iframe
 @dirrm %%WWWDIR%%/plugins/forms/images
 @dirrm %%WWWDIR%%/plugins/forms/dialogs
 @dirrm %%WWWDIR%%/plugins/forms
@@ -635,14 +703,21 @@
 @dirrm %%WWWDIR%%/plugins/flash
 @dirrm %%WWWDIR%%/plugins/find/dialogs
 @dirrm %%WWWDIR%%/plugins/find
+@dirrm %%WWWDIR%%/plugins/docprops/dialogs
+@dirrm %%WWWDIR%%/plugins/docprops
 @dirrm %%WWWDIR%%/plugins/div/dialogs
 @dirrm %%WWWDIR%%/plugins/div
 @dirrm %%WWWDIR%%/plugins/dialog
+@dirrm %%WWWDIR%%/plugins/devtools/lang
+@dirrm %%WWWDIR%%/plugins/devtools
 @dirrm %%WWWDIR%%/plugins/colordialog/dialogs
 @dirrm %%WWWDIR%%/plugins/colordialog
 @dirrm %%WWWDIR%%/plugins/clipboard/dialogs
 @dirrm %%WWWDIR%%/plugins/clipboard
+@dirrm %%WWWDIR%%/plugins/bbcode
 @dirrm %%WWWDIR%%/plugins/autogrow
+@dirrm %%WWWDIR%%/plugins/ajax
+@dirrm %%WWWDIR%%/plugins/adobeair
 @dirrm %%WWWDIR%%/plugins/about/dialogs
 @dirrm %%WWWDIR%%/plugins/about
 @dirrm %%WWWDIR%%/plugins/a11yhelp/lang
@@ -661,6 +736,7 @@
 @dirrm %%WWWDIR%%/_source/skins/kama/images
 @dirrm %%WWWDIR%%/_source/skins/kama
 @dirrm %%WWWDIR%%/_source/skins
+@dirrm %%WWWDIR%%/_source/plugins/xml
 @dirrm %%WWWDIR%%/_source/plugins/wysiwygarea
 @dirrm %%WWWDIR%%/_source/plugins/wsc/dialogs
 @dirrm %%WWWDIR%%/_source/plugins/wsc
@@ -681,9 +757,11 @@
 @dirrm %%WWWDIR%%/_source/plugins/table/dialogs
 @dirrm %%WWWDIR%%/_source/plugins/table
 @dirrm %%WWWDIR%%/_source/plugins/tab
+@dirrm %%WWWDIR%%/_source/plugins/stylesheetparser
 @dirrm %%WWWDIR%%/_source/plugins/stylescombo
 @dirrm %%WWWDIR%%/_source/plugins/styles/styles
 @dirrm %%WWWDIR%%/_source/plugins/styles
+@dirrm %%WWWDIR%%/_source/plugins/specialchar/lang
 @dirrm %%WWWDIR%%/_source/plugins/specialchar/dialogs
 @dirrm %%WWWDIR%%/_source/plugins/specialchar
 @dirrm %%WWWDIR%%/_source/plugins/sourcearea
@@ -703,6 +781,9 @@
 @dirrm %%WWWDIR%%/_source/plugins/print
 @dirrm %%WWWDIR%%/_source/plugins/preview
 @dirrm %%WWWDIR%%/_source/plugins/popup
+@dirrm %%WWWDIR%%/_source/plugins/placeholder/lang
+@dirrm %%WWWDIR%%/_source/plugins/placeholder/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/placeholder
 @dirrm %%WWWDIR%%/_source/plugins/pastetext/dialogs
 @dirrm %%WWWDIR%%/_source/plugins/pastetext
 @dirrm %%WWWDIR%%/_source/plugins/pastefromword/filter
@@ -728,6 +809,9 @@
 @dirrm %%WWWDIR%%/_source/plugins/image/dialogs
 @dirrm %%WWWDIR%%/_source/plugins/image
 @dirrm %%WWWDIR%%/_source/plugins/iframedialog
+@dirrm %%WWWDIR%%/_source/plugins/iframe/images
+@dirrm %%WWWDIR%%/_source/plugins/iframe/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/iframe
 @dirrm %%WWWDIR%%/_source/plugins/htmlwriter
 @dirrm %%WWWDIR%%/_source/plugins/htmldataprocessor
 @dirrm %%WWWDIR%%/_source/plugins/horizontalrule
@@ -749,11 +833,15 @@
 @dirrm %%WWWDIR%%/_source/plugins/elementspath
 @dirrm %%WWWDIR%%/_source/plugins/editingblock
 @dirrm %%WWWDIR%%/_source/plugins/domiterator
+@dirrm %%WWWDIR%%/_source/plugins/docprops/dialogs
+@dirrm %%WWWDIR%%/_source/plugins/docprops
 @dirrm %%WWWDIR%%/_source/plugins/div/dialogs
 @dirrm %%WWWDIR%%/_source/plugins/div
 @dirrm %%WWWDIR%%/_source/plugins/dialogui
 @dirrm %%WWWDIR%%/_source/plugins/dialogadvtab
 @dirrm %%WWWDIR%%/_source/plugins/dialog
+@dirrm %%WWWDIR%%/_source/plugins/devtools/lang
+@dirrm %%WWWDIR%%/_source/plugins/devtools
 @dirrm %%WWWDIR%%/_source/plugins/contextmenu
 @dirrm %%WWWDIR%%/_source/plugins/colordialog/dialogs
 @dirrm %%WWWDIR%%/_source/plugins/colordialog
@@ -763,8 +851,11 @@
 @dirrm %%WWWDIR%%/_source/plugins/button
 @dirrm %%WWWDIR%%/_source/plugins/blockquote
 @dirrm %%WWWDIR%%/_source/plugins/bidi
+@dirrm %%WWWDIR%%/_source/plugins/bbcode
 @dirrm %%WWWDIR%%/_source/plugins/basicstyles
 @dirrm %%WWWDIR%%/_source/plugins/autogrow
+@dirrm %%WWWDIR%%/_source/plugins/ajax
+@dirrm %%WWWDIR%%/_source/plugins/adobeair
 @dirrm %%WWWDIR%%/_source/plugins/about/dialogs
 @dirrm %%WWWDIR%%/_source/plugins/about
 @dirrm %%WWWDIR%%/_source/plugins/a11yhelp/lang
@@ -781,5 +872,6 @@
 @dirrm %%WWWDIR%%/_samples/assets
 @dirrm %%WWWDIR%%/_samples/asp
 @dirrm %%WWWDIR%%/_samples/api_dialog
+@dirrm %%WWWDIR%%/_samples/adobeair
 @dirrm %%WWWDIR%%/_samples
 @dirrm %%WWWDIR%%
