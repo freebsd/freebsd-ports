@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	soundconverter
-PORTVERSION=	1.4.4
-PORTREVISION=	4
+PORTVERSION=	1.5.4
 CATEGORIES=	audio python
 MASTER_SITES=	BERLIOS
 
@@ -16,7 +15,7 @@ COMMENT=	The sound conversion application for the GNOME environment
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer
 
-USE_BZIP2=	yes
+#USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
