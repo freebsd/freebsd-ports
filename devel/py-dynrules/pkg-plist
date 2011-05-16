@@ -47,6 +47,8 @@ include/%%PYTHON_VERSION%%/dynrules/dynrules.h
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/plus.png
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/pygments.css
 %%PORTDOCS%%%%DOCSDIR%%/html/_static/searchtools.js
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/sidebar.js
+%%PORTDOCS%%%%DOCSDIR%%/html/_static/underscore.js
 %%PORTDOCS%%%%DOCSDIR%%/html/.buildinfo
 %%PORTDOCS%%%%DOCSDIR%%/html/genindex.html
 %%PORTDOCS%%%%DOCSDIR%%/html/capi.html
