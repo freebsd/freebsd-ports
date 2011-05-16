@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmoto
-PORTVERSION=	0.5.5
+PORTVERSION=	0.5.7
 CATEGORIES=	games
 MASTER_SITES=	http://download.tuxfamily.org/xmoto/xmoto/${PORTVERSION}/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -51,6 +51,10 @@ DESKTOP_ENTRIES="XMoto" \
 		false
 
 .include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800067
+BROKEN=		does not compile due to missing getline()
+.endif
 
 .if defined(WITH_ASIAN_TTF)
 RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/TrueType/bkai00mp.ttf:${PORTSDIR}/chinese/arphicttf
