@@ -15,9 +15,9 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Turn Moose class into a singleton
 
 BUILD_DEPENDS=	p5-Moose>=1.10:${PORTSDIR}/devel/p5-Moose \
-		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Fatal \
+		p5-Test-Fatal>=0:${PORTSDIR}/devel/p5-Test-Fatal \
 		p5-Test-Requires>=0:${PORTSDIR}/devel/p5-Test-Requires
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
