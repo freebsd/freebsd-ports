@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	tinymce
-PORTVERSION=	3.3.9.3
+PORTVERSION=	3.4.2
 CATEGORIES=	www
 MASTER_SITES=	http://cloud.github.com/downloads/${PORTNAME}/${PORTNAME}/
-DISTNAME=	${PORTNAME}_${PORTVERSION:S/./_/g}
+DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	An open source Javascript HTML WYSIWYG editor for web sites
