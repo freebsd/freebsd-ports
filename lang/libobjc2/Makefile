@@ -34,8 +34,8 @@ MAKE_ARGS+=	-DWITH_NSOBJECT_ROOT
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
+.if ${OSVERSION} >= 900000
+BROKEN=		does not compile on 9.X
 .endif
 
 .if (${ARCH} == i386) || (${ARCH} == i486)
