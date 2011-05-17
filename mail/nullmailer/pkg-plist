@@ -2,10 +2,12 @@ libexec/nullmailer/smtp
 libexec/nullmailer/qmqp
 libexec/nullmailer/mailq
 @exec chmod u+s %D/libexec/nullmailer/mailq
+@exec chown %%NULLMAIL_USER%% %D/libexec/nullmailer/mailq
 libexec/nullmailer/sendmail
 bin/nullmailer-inject
 sbin/nullmailer-queue
 @exec chmod u+s %D/sbin/nullmailer-queue
+@exec chown %%NULLMAIL_USER%% %D/sbin/nullmailer-queue
 sbin/nullmailer-send
 %%ETCDIR%%/me.sample
 %%ETCDIR%%/remotes.sample
@@ -13,13 +15,17 @@ sbin/nullmailer-send
 @dirrmtry %%ETCDIR%%
 @cwd /
 @exec mkdir -p %%LOCALSTATEDIR%%/nullmailer/queue
+@exec chown %%NULLMAIL_USER%%:%%NULLMAIL_USER%% %%LOCALSTATEDIR%%/nullmailer
 @exec chmod 700 %%LOCALSTATEDIR%%/nullmailer/queue
+@exec chown %%NULLMAIL_USER%%:%%NULLMAIL_USER%% %%LOCALSTATEDIR%%/nullmailer/queue
 @dirrmtry %%LOCALSTATEDIR%%/nullmailer/queue
 @exec mkdir -p %%LOCALSTATEDIR%%/nullmailer/tmp
 @exec chmod 700 %%LOCALSTATEDIR%%/nullmailer/tmp
+@exec chown %%NULLMAIL_USER%%:%%NULLMAIL_USER%% %%LOCALSTATEDIR%%/nullmailer/tmp
 @dirrmtry %%LOCALSTATEDIR%%/nullmailer/tmp
 @exec mkfifo %%LOCALSTATEDIR%%/nullmailer/trigger
 @exec chmod 600 %%LOCALSTATEDIR%%/nullmailer/trigger
+@exec chown %%NULLMAIL_USER%%:%%NULLMAIL_USER%% %%LOCALSTATEDIR%%/nullmailer/trigger
 @unexec rm -f %%LOCALSTATEDIR%%/nullmailer/trigger
 @ignore
 %%LOCALSTATEDIR%%/nullmailer/trigger
