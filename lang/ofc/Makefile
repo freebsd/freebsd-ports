@@ -38,4 +38,10 @@ LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000
+BROKEN=		does not compile on FreeBSD 9.X
+.endif
+
+.include <bsd.port.post.mk>
