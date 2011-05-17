@@ -167,8 +167,11 @@ INSTALL_TARGET=	install
 INSTALL_TARGET=	install-strip
 .  endif
 
-.if (${OSVERSION} >= 700000) && !defined(WITHOUT_GSSAPI)
+.if !defined(WITHOUT_GSSAPI)
 CONFIGURE_ARGS+=--with-gssapi
+.if ${OSVERSION} >= 900000
+BROKEN=		does not link on FreeBSD 9.X
+.endif
 .else
 CONFIGURE_ARGS+=--without-gssapi
 .endif
