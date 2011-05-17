@@ -7,6 +7,7 @@
 
 PORTNAME=	fcrackzip
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	security archivers
 MASTER_SITES=	http://oldhome.schmorp.de/data/marc/ \
 		http://distfiles.macports.org/${PORTNAME}/
