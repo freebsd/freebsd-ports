@@ -13,6 +13,8 @@ MASTER_SITES=	SAVANNAH/lzip
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Is a lossless data compressor based on the LZMA algorithm
 
+LICENSE=	GPLv3
+
 PLIST_FILES=	bin/lzip \
 		bin/lziprecover
 
