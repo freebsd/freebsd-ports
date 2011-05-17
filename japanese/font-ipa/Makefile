@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	font-ipa
-PORTVERSION=	00302
+PORTVERSION=	00303
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	http://info.openlab.ipa.go.jp/ipafont/fontdata/
 DISTNAME=	IPAfont${PORTVERSION}
