@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	memtest86
-PORTVERSION=	3.5
+PORTVERSION=	4.0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.memtest86.com/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${DISTNAME}.iso.zip
@@ -22,7 +22,7 @@ ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 
 PORTDOCS=	README
-PLIST_FILES=	%%DATADIR%%/floppy.bin %%DATADIR%%/Memtest86_3.5.iso
+PLIST_FILES=	%%DATADIR%%/floppy.bin %%DATADIR%%/Memtest86_4.0.iso
 PLIST_DIRS=	%%DATADIR%%
 
 SUB_FILES=	pkg-message
