@@ -25,6 +25,10 @@ lib/collectd/csv.la
 lib/collectd/csv.so
 %%CURL%%lib/collectd/curl.la
 %%CURL%%lib/collectd/curl.so
+%%CURL_JSON%%lib/collectd/curl_json.la
+%%CURL_JSON%%lib/collectd/curl_json.so
+%%CURL_XML%%lib/collectd/curl_xml.la
+%%CURL_XML%%lib/collectd/curl_xml.so
 %%DBI%%lib/collectd/dbi.la
 %%DBI%%lib/collectd/dbi.so
 %%DISK%%lib/collectd/disk.la

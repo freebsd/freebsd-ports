@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	collectd
-PORTVERSION=	4.9.5
+PORTVERSION=	4.10.3
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -24,6 +24,8 @@ OPTIONS=	CGI		"Install collection.cgi (requires RRDTOOL)" 	Off \
 		APACHE		"Input: Apache mod_status (libcurl)" 		Off \
 		APCUPS		"Input: APC UPS (apcupsd)" 			Off \
 		CURL		"Input: CURL generic web statistics" 		Off \
+		CURL_JSON	"Input: CURL JSON generic web statistics"	Off \
+		CURL_XML	"Input: CURL XML generic web statistics"	Off \
 		DBI		"Input: database abstraction library"		Off \
 		DISK		"Input: Disk performance statistics"		Off \
 		NUTUPS		"Input: NUT UPS daemon" 			Off \
@@ -47,8 +49,9 @@ USE_RC_SUBR=	collectd collectdmon
 
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS=	-I${LOCALBASE}/include
+
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.pre.mk>
 
@@ -73,7 +76,6 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-conntrack \
 		--disable-contextswitch \
 		--disable-cpufreq \
-		--disable-curl_json \
 		--disable-entropy \
 		--disable-fscache \
 		--disable-gmond \
@@ -91,6 +93,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-match_timediff \
 		--disable-match_value \
 		--disable-memcachec \
+		--disable-modbus \
 		--disable-multimeter \
 		--disable-netapp \
 		--disable-netlink \
@@ -101,6 +104,7 @@ CONFIGURE_ARGS=	--localstatedir=/var \
 		--disable-onewire \
 		--disable-oracle \
 		--disable-perl \
+		--disable-pinba \
 		--disable-python \
 		--disable-protocols \
 		--disable-routeros \
@@ -183,6 +187,30 @@ PLIST_SUB+=	CURL=""
 .else
 CONFIGURE_ARGS+=--disable-curl
 PLIST_SUB+=	CURL="@comment "
+.endif
+
+.if defined(WITH_CURL_JSON)
+.if !defined(WITH_CURL)
+IGNORE=	using CURL_JSON requires CURL support
+.endif
+CONFIGURE_ARGS+=--enable-curl_json
+LIB_DEPENDS+=	yajl:${PORTSDIR}/devel/yajl
+PLIST_SUB+=	CURL_JSON=""
+.else
+CONFIGURE_ARGS+=--disable-curl_json
+PLIST_SUB+=	CURL_JSON="@comment "
+.endif
+
+.if defined(WITH_CURL_XML)
+.if !defined(WITH_CURL)
+IGNORE=	using CURL_XML requires CURL support
+.endif
+CONFIGURE_ARGS+=--enable-curl_xml
+LIB_DEPENDS+=	xml2:${PORTSDIR}/textproc/libxml2
+PLIST_SUB+=	CURL_XML=""
+.else
+CONFIGURE_ARGS+=--disable-curl_xml
+PLIST_SUB+=	CURL_XML="@comment "
 .endif
 
 .if defined(WITH_DBI)
