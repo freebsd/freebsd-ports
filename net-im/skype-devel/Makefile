@@ -86,8 +86,8 @@ do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/skype ${PREFIX}/${SKYPEDIR}/
 
 # The wrapper for main program
-	@${INSTALL_SCRIPT} ${WRKDIR}/skype.sh ${PREFIX}/bin/skype-devel
-	@${CHMOD} a+rx ${PREFIX}/bin/skype_devel
+	@${INSTALL_SCRIPT} ${WRKDIR}/skype.sh ${PREFIX}/bin/skype
+	@${CHMOD} a+rx ${PREFIX}/bin/skype
 
 .if !defined(NOPORTDOCS)
 	@${INSTALL} -d ${DOCSDIR}
