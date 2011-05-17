@@ -9,8 +9,7 @@ PORTNAME=	linuxdcpp
 PORTVERSION=	1.0.3
 PORTREVISION=	4
 CATEGORIES=	net-p2p
-MASTER_SITES=	${MASTER_SITE_LOCAL} http://freebsd.nsu.ru/distfiles/
-MASTER_SITE_SUBDIR=	danfe
+MASTER_SITES=	http://launchpadlibrarian.net/21888715/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A port of the DC++ direct connect client to POSIX-like systems
@@ -20,6 +19,7 @@ USE_GNOME=	libglade2
 USE_ICONV=	yes
 USE_SCONS=	yes
 USE_OPENSSL=	yes
+PORTDOCS=	*
 
 SCONS_BUILDENV=	${SCONS_ENV}
 

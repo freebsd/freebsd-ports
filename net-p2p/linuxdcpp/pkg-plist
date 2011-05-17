@@ -1,8 +1,4 @@
 bin/linuxdcpp
-%%DOCSDIR%%/Changelog.txt
-%%DOCSDIR%%/Credits.txt
-%%DOCSDIR%%/License.txt
-%%DOCSDIR%%/Readme.txt
 %%DATADIR%%/glade/downloadqueue.glade
 %%DATADIR%%/glade/favoritehubs.glade
 %%DATADIR%%/glade/finishedtransfers.glade
@@ -39,4 +35,3 @@ bin/linuxdcpp
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%
