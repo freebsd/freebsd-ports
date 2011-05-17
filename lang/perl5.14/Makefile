@@ -24,7 +24,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 CONFLICTS=	perl-5.6.* perl-5.8.* perl-threaded-5.8.* \
-		perl-5.10.* perl-threaded-5.10.*
+		perl-5.10.* perl-threaded-5.10.* \
+		perl-5.12.* perl-threaded-5.12.*
 
 OPTIONS=	DEBUGGING	"Build with debugging support"		off \
 		GDBM		"Build GDBM_File extension"		off \
@@ -37,7 +38,7 @@ OPTIONS=	DEBUGGING	"Build with debugging support"		off \
 
 PORTSCOUT=	limitw:1,even
 
-PERL_VERSION=	5.12.3
+PERL_VERSION=	5.14.0
 PERL_ARCH=	mach
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VERSION}
 SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
@@ -147,7 +148,7 @@ LINK_USRBIN=	yes
 LINK_USRBIN=	no
 .endif
 
-LATEST_LINK=	perl
+NO_LATEST_LINK=	yes
 
 .if defined(WITH_GDBM)
 MAN3+=	GDBM_File.3

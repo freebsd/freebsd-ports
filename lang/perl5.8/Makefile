@@ -29,7 +29,8 @@ LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
 CONFLICTS=	perl-5.6.* perl-5.10.* perl-threaded-5.10.* \
-		perl-5.12.* perl-threaded-5.12.*
+		perl-5.12.* perl-threaded-5.12.* \
+		perl-5.14.* perl-threaded-5.14.*
 
 OPTIONS=	DEBUGGING	"Build with debugging support"		off \
 		GDBM		"Build GDBM_File extension"		off \
