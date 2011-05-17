@@ -6,6 +6,43 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20110516:
+  AFFECTS: users of net/skype, net/skype-devel, net-im/skype, net-im/skype-devel
+  AUTHOR: Ion-Mihai Tetcu <itetcu@FreeBSD.org>
+
+  All skype ports were moved to net-im/:
+  - skype12: unchanged, very old version (for FreeBSD 6)
+  - skype20: last version with OSS support, that used to live in net/skype; the
+  DISTFILE is gone from the vendor but if you happen to have it it would be a
+  way of having sound w/o needing to upgrade your base OS
+  - [RECOMMENDED] skype: currently at 2.1.0.81 and the best supported
+  - skype-devel: currently at 2.2.0.25, sounds is OK, video doesn't work
+
+  To run either skype or skype-devel with fully working sound you need:
+  - to run fc10 (most probably, please report what you can do with fc4):
+  (OVERRIDE_LINUX_BASE_PORT=f10,OVERRIDE_LINUX_NONBASE_PORTS=f10
+  in /etc/make.conf for systems that doesn't have it as default)
+  - In order for Skype to work OK, you need your kernel and modules to be:
+	- post 2011-05-03 in on HEAD
+	- post 2011-05-08 in on 7,8-STABLE
+  The port tries to catch if your system version is too old, but there's a
+  ~3months window where because of a lack of OSVERSION bump, this is not
+  possible. So please check; and PLEASE READ THE PKGMESSAGE for setup details.
+  For how to update your kernel/world, see:
+  http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/kernelconfig.html
+
+  IF YOUR OSVERSION IS NOT NEW ENOUGH, SOUND (ESPECIALLY MIC) WON'T WORK.
+
+  If you run into problems, at very least we need to know the output of:
+  $ uname -a; sysctl compat.linux | head -2; \
+    grep OVERRIDE_LINUX_ /etc/make.conf; \
+    cat /compat/linux/etc/alsa/pcm/pcm-oss.conf
+  the skype version you are using and hardware details (eg. webcam, if related)
+  I most probably will ignore any mail not containing this info since without
+  it it's impossible to help.
+  Please test your sound /video setup outside skype before blaming skype /
+  mailing me.
+
+20110516:
   AFFECTS: users of audio/musicpd
   AUTHOR: Chris Rees <utisoft@gmail.com>
 
