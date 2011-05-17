@@ -34,6 +34,8 @@ libdata/pkgconfig/libgsasl.pc
 %%PORTDOCS%%%%DOCSDIR%%/reference/up.png
 %%NLS%%share/locale/de/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/gsasl.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/gsasl.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/gsasl.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/libgsasl.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gsasl.mo
