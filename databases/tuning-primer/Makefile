@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	tuning-primer
-PORTVERSION=	1.5.r5
-PORTREVISION=	1
+PORTVERSION=	1.6.r0
 CATEGORIES=	databases
-MASTER_SITES=	http://launchpadlibrarian.net/36004840/
+MASTER_SITES=	http://launchpadlibrarian.net/71733465/
 DISTNAME=	${PORTNAME}.sh
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
 MAINTAINER=	joehorn@gmail.com
 COMMENT=	MySQL performance tuning primer script
+
+LICENSE=	GPLv2
 
 NO_BUILD=	yes
 USE_MYSQL=	yes
