@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qrq
-PORTVERSION=	0.1.4
+PORTVERSION=	0.2.0
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://fkurz.net/ham/qrq/ \
 		${MASTER_SITE_LOCAL}

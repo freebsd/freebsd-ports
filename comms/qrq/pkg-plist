@@ -1,6 +1,7 @@
 bin/qrq
 bin/qrqscore
-%%DATADIR%%/callbase
+%%DATADIR%%/callbase.qcb
+%%DATADIR%%/english.qcb
 %%DATADIR%%/qrqrc
 %%DATADIR%%/toplist
 @dirrm %%DATADIR%%
