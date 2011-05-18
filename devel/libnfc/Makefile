@@ -77,7 +77,7 @@ CONFIGURE_ARGS+=--disable-serial-autoprobe
 
 .if defined(WITH_ACR122)
 LIB_DEPENDS+=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
-RUN_DEPENDS+=	RSA_SecurID_getpasswd:${PORTSDIR}/devel/libccid
+RUN_DEPENDS+=	${LOCALBASE}/lib/pcsc/drivers/ifd-ccid.bundle/Contents/FreeBSD/libccid.so:${PORTSDIR}/devel/libccid
 .endif
 
 .if defined(WITH_PN531USB) || defined(WITH_PN533USB)
