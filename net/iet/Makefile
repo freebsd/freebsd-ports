@@ -35,8 +35,7 @@ KMODDIR=	${PREFIX}/modules
 PLIST_SUB+=	KMODDIR=${KMODDIR}
 MAKE_ENV+=	KMODDIR=${KMODDIR} DATADIR=${DATADIR} SYSDIR="${SRC_BASE}/sys"
 
-CONFDIR=	${PREFIX}/etc/iet
-CONF_FILES=	ietd.conf initiators.allow initiators.deny targets.allow
+IET_CONF_FILES=	ietd.conf initiators.allow initiators.deny targets.allow
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel sources to build
@@ -49,11 +48,11 @@ BROKEN=		requires 8.0-RELEASE or higher
 .endif
 
 pre-install:
-	${MKDIR} ${DATADIR} ${KMODDIR} ${CONFDIR}
+	${MKDIR} ${DATADIR} ${KMODDIR} ${ETCDIR}
 
 post-install:
-.for f in ${CONF_FILES}
-	@[ -f ${CONFDIR}/${f} ] || ${CP} ${DATADIR}/${f} ${CONFDIR}/
+.for f in ${IET_CONF_FILES}
+	@[ -f ${ETCDIR}/${f} ] || ${CP} ${DATADIR}/${f} ${ETCDIR}/
 .endfor
 
 .include <bsd.port.post.mk>
