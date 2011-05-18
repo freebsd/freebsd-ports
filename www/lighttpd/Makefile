@@ -63,15 +63,16 @@ DOCS=		AUTHORS COPYING INSTALL NEWS README
 PORTDOCS=	${DOCS}
 .endif
 
-CONF_FILES=	lighttpd.conf modules.conf
+LIGHTTPD_CONF_FILES=	lighttpd.conf modules.conf
 
-CONFD_FILES=	access_log.conf auth.conf cgi.conf cml.conf \
-		compress.conf debug.conf dirlisting.conf \
-		evhost.conf expire.conf fastcgi.conf \
-		magnet.conf mime.conf mysql_vhost.conf proxy.conf \
-		rrdtool.conf scgi.conf secdownload.conf \
-		simple_vhost.conf ssi.conf status.conf \
-		trigger_b4_dl.conf userdir.conf webdav.conf
+LIGHTTPD_CONF_D_FILES=	access_log.conf \
+	auth.conf cgi.conf cml.conf \
+	compress.conf debug.conf dirlisting.conf \
+	evhost.conf expire.conf fastcgi.conf \
+	magnet.conf mime.conf mysql_vhost.conf proxy.conf \
+	rrdtool.conf scgi.conf secdownload.conf \
+	simple_vhost.conf ssi.conf status.conf \
+	trigger_b4_dl.conf userdir.conf webdav.conf
 
 LIGHTTPD_LOGROOT?=	/var/log/lighttpd
 LIGHTTPD_WEBROOT?=	${PREFIX}/www/data
@@ -147,7 +148,7 @@ _REQUIRE+=		mysql
 .endif
 
 .if defined(WITH_MYSQLAUTH) && !defined(WITH_MYSQL)
-IGNORE=		WITH_MYSQLAUTH requires WITH_MYSQL
+IGNORE=		option WITH_MYSQLAUTH requires WITH_MYSQL
 .endif
 
 .if defined(WITH_MYSQLAUTH)
@@ -208,7 +209,7 @@ post-patch:
 
 post-install:
 	@${MKDIR} ${PREFIX}/etc/lighttpd/conf.d ${PREFIX}/etc/lighttpd/vhosts.d
-.for FILE in ${CONF_FILES}
+.for FILE in ${LIGHTTPD_CONF_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/doc/config/${FILE} \
 		${PREFIX}/etc/lighttpd/${FILE}.sample
 .if !exists(${PREFIX}/etc/lighttpd/${FILE})
@@ -216,7 +217,7 @@ post-install:
 		${PREFIX}/etc/lighttpd/${FILE}
 .endif
 .endfor
-.for FILE in ${CONFD_FILES}
+.for FILE in ${LIGHTTPD_CONF_D_FILES}
 	@${INSTALL_DATA} ${WRKSRC}/doc/config/conf.d/${FILE} \
 		${PREFIX}/etc/lighttpd/conf.d/${FILE}.sample
 .if !exists(${PREFIX}/etc/lighttpd/conf.d/${FILE})
