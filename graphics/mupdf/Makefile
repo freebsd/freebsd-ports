@@ -6,6 +6,7 @@
 
 PORTNAME=	mupdf
 PORTVERSION=	0.8.165
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE \
@@ -30,6 +31,14 @@ MAKE_JOBS_SAFE=	yes
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+OPTIONS=	SCROLL	"Build with scroll hacks" on \
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_SCROLL)
+EXTRA_PATCHES+=	${FILESDIR}/scroll_hack-apps_pdfapp.c
+.endif
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} \
