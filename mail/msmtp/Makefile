@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	msmtp
-PORTVERSION=	1.4.23
-PORTREVISION=	2
+PORTVERSION=	1.4.24
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
@@ -25,7 +24,7 @@ INFO=	msmtp
 LICENSE=	GPLv3
 
 OPTIONS=	GNUTLS "Adds GnuTLS support" off \
-		OPENSSL "Adds support for SSL (Secure Socket Layer)" off \
+		OPENSSL "Adds support for SSL (Secure Socket Layer)" on \
 		GSASL "Adds GSASL support" off \
 		NLS "Native Language Support via gettext utilities" on \
 		IDN "Enable Internationalized Domain Names" on \
@@ -38,6 +37,7 @@ CONFIGURE_ARGS+=	--with-ssl=gnutls
 .elif defined(WITH_OPENSSL)
 USE_OPENSSL=	yes
 CONFIGURE_ARGS+=	--with-ssl=openssl
+CONFIGURE_ENV+=		libssl_CFLAGS="-I${OPENSSLINC}" libssl_LIBS="-L${OPENSSLLIB} -lssl"
 .else
 CONFIGURE_ARGS+=	--without-ssl
 .endif
