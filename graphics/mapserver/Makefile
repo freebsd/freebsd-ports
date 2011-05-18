@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		mapserver
-PORTVERSION=		5.6.6
-PORTREVISION=	3
+PORTVERSION=		6.0.0
 CATEGORIES=		graphics www geography
 MASTER_SITES=		http://download.osgeo.org/mapserver/
 
@@ -15,20 +14,26 @@ MAINTAINER=		wen@FreeBSD.org
 COMMENT=		System for developing web-based GIS applications
 
 LIB_DEPENDS=		gd.4:${PORTSDIR}/graphics/gd \
-			proj.6:${PORTSDIR}/graphics/proj
+			proj.6:${PORTSDIR}/graphics/proj \
+			png.6:${PORTSDIR}/graphics/png \
+			jpeg.11:${PORTSDIR}/graphics/jpeg \
+			gif.5:${PORTSDIR}/graphics/giflib
 
 USE_GMAKE=		yes
 GNU_CONFIGURE=		yes
 CONFIGURE_ARGS=		--enable-runpath \
 			--with-gd=${LOCALBASE} \
+			--with-png=${LOCALBASE} \
+			--with-jpeg=${LOCALBASE} \
+			--with-gif=${LOCALBASE} \
 			--with-proj=${LOCALBASE}
 MAKE_JOBS_UNSAFE=	yes
 
 OPTIONS=		AGG "Support for AGG image rendering (req: FreeType)" off \
 			TIFF "Support for TIFF (but not GeoTIFF) files" off \
 			PDF "Support for PDF output via pdflib" off \
-			GDAL "Support for a number of input raster formats" off \
-			GEOS "Use GEOS engine where possible" off \
+			GDAL "Support for a number of input raster formats" on \
+			GEOS "Use GEOS engine where possible" on \
 			MING "Support for Macromedia Flash output" off \
 			MYGIS "Support for MyGIS" off \
 			POSTGIS "Support for PostGIS" off \
@@ -64,7 +69,6 @@ CONFIGURE_ARGS+=	--with-ming=${LOCALBASE}
 
 .if defined(WITH_PDF)
 LIB_DEPENDS+=		pdf.8:${PORTSDIR}/print/pdflib \
-			png.6:${PORTSDIR}/graphics/png \
 			tiff.4:${PORTSDIR}/graphics/tiff
 CONFIGURE_ARGS+=	--with-pdf=${LOCALBASE} --with-tiff=${LOCALBASE} --with-png=${LOCALBASE}
 .endif
@@ -80,13 +84,13 @@ WITH_GDAL=		YES
 CONFIGURE_ARGS+=	--with-wfs --with-wfsclient
 .endif
 
-.if defined(WITH_GDAL)
+.if !defined(WITHOUT_GDAL)
 LIB_DEPENDS+=		gdal.16:${PORTSDIR}/graphics/gdal
 CONFIGURE_ARGS+=	--with-gdal=${LOCALBASE}/bin/gdal-config \
 			--with-ogr=${LOCALBASE}/bin/gdal-config
 .endif
 
-.if defined(WITH_GEOS)
+.if !defined(WITHOUT_GEOS)
 LIB_DEPENDS+=		geos.0:${PORTSDIR}/graphics/geos
 CONFIGURE_ARGS+=	--with-geos=${LOCALBASE}/bin/geos-config
 .endif
@@ -156,7 +160,7 @@ CONFIGURE_ARGS+=	--with-fastcgi=${LOCALBASE}
 CONFIGURE_ARGS+=	--enable-debug
 .endif
 
-PROG_FILES=		legend scalebar shp2img shp2pdf shptree shptreetst shptreevis sortshp
+PROG_FILES=		legend scalebar shp2img shptree shptreetst shptreevis sortshp
 
 post-patch:
 .if defined(WITH_MING)
