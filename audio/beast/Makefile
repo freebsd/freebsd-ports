@@ -18,6 +18,8 @@ LIB_DEPENDS=	vorbisfile:${PORTSDIR}/audio/libvorbis \
 		guile:${PORTSDIR}/lang/guile \
 		asound.2:${PORTSDIR}/audio/alsa-lib
 
+BROKEN=		does not deinstall
+
 USE_XORG=	x11
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack libgnomecanvas
