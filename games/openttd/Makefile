@@ -86,7 +86,7 @@ post-patch:
 		-e 's|pkg-config liblzma|pkg-config ${FILESDIR}/liblzma.pc|g' \
 		${WRKSRC}/config.lib
 .else
-LIB_DEPEND+=	lzma.5:${PORTSDIR}/archivers/xz
+LIB_DEPENDS+=	lzma.5:${PORTSDIR}/archivers/xz
 .endif
 
 do-install:
