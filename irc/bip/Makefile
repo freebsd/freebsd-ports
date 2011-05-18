@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	bip
-PORTVERSION=	0.8.6
+PORTVERSION=	0.8.8
 CATEGORIES=	irc
-MASTER_SITES=	http://bip.t1r.net/downloads/ \
-		http://distfiles.gentoo.org/distfiles/
+MASTER_SITES=	https://projects.duckcorp.org/attachments/download/39/
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A simple IRC proxy with SSL support
