@@ -7,7 +7,7 @@
 
 PORTNAME=	xrestop
 PORTVERSION=	0.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://projects.o-hand.com/sources/${PORTNAME}/
 
@@ -17,6 +17,7 @@ COMMENT=	X11 server side resource usage statistics monitor
 USE_XORG=	x11 xext xrender xt xres xproto
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget pkgconfig
+USE_NCURSES=	yes
 GNU_CONFIGURE=	yes
 
 CONFIGURE_ENV=	CFLAGS=-I${LOCALBASE}/include \
