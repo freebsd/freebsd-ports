@@ -19,7 +19,7 @@ LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs \
 		thrift:${PORTSDIR}/devel/thrift
 RUN_DEPENDS=	p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Thrift>0:${PORTSDIR}/devel/p5-Thrift \
-		py-thrift>0:${PORTSDIR}/devel/py-thrift
+		${PYTHON_SITELIBDIR}/thrift/__init__.py:${PORTSDIR}/devel/py-thrift
 
 ACLOCAL_ARGS=	-I ./aclocal
 AUTOMAKE_ARGS=	-a
