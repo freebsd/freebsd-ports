@@ -13,11 +13,12 @@ MASTER_SITES=	SF/${PORTNAME}/Gnocl-Nightly-Build/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	GTK+ and Gnome extension for Tcl
 
-LIB_DEPENDS=	canberra.0:${PORTSDIR}/audio/libcanberra
+LIB_DEPENDS=	canberra.0:${PORTSDIR}/audio/libcanberra \
+   		notify.1:${PORTSDIR}/devel/libnotify
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gtk20 libglade2
+USE_GNOME=	gtk20 libglade2 pkgconfig
 USE_TCL=	84+
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${TCL_INCLUDEDIR} -L${TCL_LIBDIR} `pkg-config --cflags libglade-2.0`
