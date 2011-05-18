@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	check_mysql_health
-PORTVERSION=	2.1.3
+PORTVERSION=	2.1.5.1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://labs.consol.de/wp-content/uploads/2010/10/
+MASTER_SITES=	http://labs.consol.de/wp-content/uploads/2011/04/
 
 MAINTAINER=	ssanders@taximagic.com
 COMMENT=	Nagios plugin to check various parameters of a MySQL database
@@ -33,6 +33,6 @@ NAGIOSGROUP?=	nagios
 NAGIOSDIR?=	/var/spool/nagios
 
 PLIST_FILES=	libexec/nagios/check_mysql_health
-PLIST_DIRS=		libexec/nagios
+PLIST_DIRS=	libexec/nagios
 
 .include <bsd.port.mk>
