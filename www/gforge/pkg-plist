@@ -3,473 +3,473 @@ etc/gforge/gforge-multi-host-httpd.conf.example
 etc/gforge/local.inc-dist
 etc/gforge/local.inc.example
 etc/gforge/sample-apache.vhost-dist
-share/doc/gforge/README.ConvertToUTF8
-share/doc/gforge/README.Custom
-share/doc/gforge/README.KnownBugs
-share/doc/gforge/README.Plugins
-share/doc/gforge/README.Soap
-share/doc/gforge/README.Themes
-share/doc/gforge/README.TuningLDAP
-share/doc/gforge/architecture/stats/stats-process.sda
-share/doc/gforge/debian-guide.html
-share/doc/gforge/debian-installguidefornewbies.html
-share/doc/gforge/doc_utils.php
-share/doc/gforge/docbook/INSTALL
-share/doc/gforge/docbook/Makefile
-share/doc/gforge/docbook/README
-share/doc/gforge/docbook/build/.keepme
-share/doc/gforge/docbook/docbook/administration_guide/administration_guide.xml
-share/doc/gforge/docbook/docbook/contribution_guide/contribution_guide.xml
-share/doc/gforge/docbook/docbook/contribution_guide/include/coding_standards.xml
-share/doc/gforge/docbook/docbook/contribution_guide/include/cvs_repository.xml
-share/doc/gforge/docbook/docbook/contribution_guide/include/howto_contribute.xml
-share/doc/gforge/docbook/docbook/contribution_guide/include/howto_documentation.xml
-share/doc/gforge/docbook/docbook/contribution_guide/include/howto_localization.xml
-share/doc/gforge/docbook/docbook/contribution_guide/include/howto_xhtml.xml
-share/doc/gforge/docbook/docbook/contribution_guide/include/templating.xml
-share/doc/gforge/docbook/docbook/entities/authors.ent
-share/doc/gforge/docbook/docbook/entities/authors/guillaume_smet.xml
-share/doc/gforge/docbook/docbook/entities/authors/ken_mccullagh.xml
-share/doc/gforge/docbook/docbook/entities/authors/ognyan_kulev.xml
-share/doc/gforge/docbook/docbook/entities/authors/reinhard_spisser.xml
-share/doc/gforge/docbook/docbook/entities/authors/roland_mas.xml
-share/doc/gforge/docbook/docbook/entities/authors/tim_perdue.xml
-share/doc/gforge/docbook/docbook/entities/authors/tom_copeland.xml
-share/doc/gforge/docbook/docbook/entities/xinclude.ent
-share/doc/gforge/docbook/docbook/gforge_manual.xml
-share/doc/gforge/docbook/docbook/installation_guide/installation_guide.xml
-share/doc/gforge/docbook/docbook/introduction/introduction.xml
-share/doc/gforge/docbook/docbook/user_guide/getting_started/getting_started.xml
-share/doc/gforge/docbook/docbook/user_guide/introduction/introduction.xml
-share/doc/gforge/docbook/docbook/user_guide/project_functions/cvs.xml
-share/doc/gforge/docbook/docbook/user_guide/project_functions/docman.xml
-share/doc/gforge/docbook/docbook/user_guide/project_functions/file_releases.xml
-share/doc/gforge/docbook/docbook/user_guide/project_functions/forums.xml
-share/doc/gforge/docbook/docbook/user_guide/project_functions/index.xml
-share/doc/gforge/docbook/docbook/user_guide/project_functions/mailing_lists.xml
-share/doc/gforge/docbook/docbook/user_guide/project_functions/news.xml
-share/doc/gforge/docbook/docbook/user_guide/project_functions/project_admin.xml
-share/doc/gforge/docbook/docbook/user_guide/project_functions/project_summary.xml
-share/doc/gforge/docbook/docbook/user_guide/project_functions/surveys.xml
-share/doc/gforge/docbook/docbook/user_guide/project_functions/task_manager.xml
-share/doc/gforge/docbook/docbook/user_guide/project_functions/tracker.xml
-share/doc/gforge/docbook/docbook/user_guide/sitewide_functions/index.xml
-share/doc/gforge/docbook/docbook/user_guide/sitewide_functions/project_help.xml
-share/doc/gforge/docbook/docbook/user_guide/sitewide_functions/search.xml
-share/doc/gforge/docbook/docbook/user_guide/sitewide_functions/snippet.xml
-share/doc/gforge/docbook/docbook/user_guide/sitewide_functions/trove.xml
-share/doc/gforge/docbook/docbook/user_guide/user_functions/index.xml
-share/doc/gforge/docbook/docbook/user_guide/user_guide.xml
-share/doc/gforge/docbook/xsl/article_html.xsl
-share/doc/gforge/docbook/xsl/article_html_chunk.xsl
-share/doc/gforge/docbook/xsl/article_pdf.xsl
-share/doc/gforge/docbook/xsl/book_html.xsl
-share/doc/gforge/docbook/xsl/book_html_chunk.xsl
-share/doc/gforge/docbook/xsl/book_pdf.xsl
-share/doc/gforge/docbook/xsl/include/common_html.xsl
-share/doc/gforge/docbook/xsl/include/common_html_chunk.xsl
-share/doc/gforge/docbook/xsl/include/common_pdf.xsl
-share/doc/gforge/gforge-themes-HOWTO.html
-share/doc/gforge/images/sflogo2-105a.png
-share/doc/gforge/index.php
-share/doc/gforge/log_formats.txt
-share/doc/gforge/migrating-to-gforge-HOWTO.html
-share/doc/gforge/migrating-to-gforge-REPORT.txt
-share/doc/gforge/phpdoc/makedoc.sh
-share/doc/gforge/phpdoc/manageclass.patch
-share/doc/gforge/webalizer-HOWTO.html
-share/gforge/backends/backend/DatabaseDump.pl
-share/gforge/backends/backend/include.pl
-share/gforge/backends/backend/shell/apache.sh
-share/gforge/backends/backend/zones/aliases.zone
-share/gforge/backends/backend/zones/dns.zone
-share/gforge/backends/backend/zones/sendmail.cw.zone
-share/gforge/backends/cronjobs/README.root
-share/gforge/backends/cronjobs/calculate_user_metric.php
-share/gforge/backends/cronjobs/check_stale_tracker_items.php
-share/gforge/backends/cronjobs/crontab.in
-share/gforge/backends/cronjobs/cvs-cron/cvs.php
-share/gforge/backends/cronjobs/cvs-cron/cvscreate.sh
-share/gforge/backends/cronjobs/cvs-cron/cvssh.pl
-share/gforge/backends/cronjobs/cvs-cron/default_page.php
-share/gforge/backends/cronjobs/cvs-cron/ftp_create.php
-share/gforge/backends/cronjobs/cvs-cron/grap.c
-share/gforge/backends/cronjobs/cvs-cron/history_parse.php
-share/gforge/backends/cronjobs/cvs-cron/ssh_create.php
-share/gforge/backends/cronjobs/cvs-cron/syncmail
-share/gforge/backends/cronjobs/cvs-cron/usergroup.php
-share/gforge/backends/cronjobs/cvs-cron/www/index.php
-share/gforge/backends/cronjobs/daily_task_email.php
-share/gforge/backends/cronjobs/dav-svn/README
-share/gforge/backends/cronjobs/dav-svn/commit-email_pl
-share/gforge/backends/cronjobs/dav-svn/create_docman.php
-share/gforge/backends/cronjobs/dav-svn/create_group_home.php
-share/gforge/backends/cronjobs/dav-svn/create_groups.php
-share/gforge/backends/cronjobs/dav-svn/create_svn.php
-share/gforge/backends/cronjobs/dav-svn/create_users.php
-share/gforge/backends/cronjobs/dav-svn/crontab.in
-share/gforge/backends/cronjobs/dav-svn/default_page.php
-share/gforge/backends/cronjobs/dav-svn/svn-index.php
-share/gforge/backends/cronjobs/dav-svn/www/index.php
-share/gforge/backends/cronjobs/dav-svn/www/svnindex.css
-share/gforge/backends/cronjobs/dav-svn/www/svnindex.xsl
-share/gforge/backends/cronjobs/db_project_sums.php
-share/gforge/backends/cronjobs/db_stats_agg.php
-share/gforge/backends/cronjobs/db_trove_maint.php
-share/gforge/backends/cronjobs/forum_gateway.php
-share/gforge/backends/cronjobs/mail/mailaliases.php
-share/gforge/backends/cronjobs/mail/mailing_lists_create.php
-share/gforge/backends/cronjobs/mail/privatize_list.py
-share/gforge/backends/cronjobs/massmail.php
-share/gforge/backends/cronjobs/project_cleanup.php
-share/gforge/backends/cronjobs/project_weekly_metric-backfill.php
-share/gforge/backends/cronjobs/project_weekly_metric.php
-share/gforge/backends/cronjobs/rating_stats.php
-share/gforge/backends/cronjobs/reporting_cron.php
-share/gforge/backends/cronjobs/rotate_activity.php
-share/gforge/backends/cronjobs/send_pending_items_mail.php
-share/gforge/backends/cronjobs/site_stats.php
-share/gforge/backends/cronjobs/stats_projects-backfill.php
-share/gforge/backends/cronjobs/stats_projects.inc
-share/gforge/backends/cronjobs/stats_site.inc
-share/gforge/backends/cronjobs/tracker_gateway.php
-share/gforge/backends/cronjobs/update_filesize.php
-share/gforge/backends/cronjobs/vacuum.php
-share/gforge/backends/monitor/check-system.pl
-share/gforge/backends/monitor/systemdaemon
-share/gforge/backends/plugins/cvssyncmail/INSTALL
-share/gforge/backends/plugins/cvssyncmail/common/CVSSyncMailPlugin.class
-share/gforge/backends/plugins/cvssyncmail/common/cvssyncmail-init.php
-share/gforge/backends/plugins/cvssyncmail/common/languages/Base.tab
-share/gforge/backends/plugins/cvssyncmail/db/cvssyncmail-init.sql
-share/gforge/backends/plugins/cvssyncmail/include/cvssyncmail-init.php
-share/gforge/backends/plugins/cvstracker/AUTHORS
-share/gforge/backends/plugins/cvstracker/COPYING
-share/gforge/backends/plugins/cvstracker/Makefile
-share/gforge/backends/plugins/cvstracker/README
-share/gforge/backends/plugins/cvstracker/bin/db-delete.pl
-share/gforge/backends/plugins/cvstracker/bin/db-upgrade.pl
-share/gforge/backends/plugins/cvstracker/bin/post.php
-share/gforge/backends/plugins/cvstracker/bin/update_loginfo.php
-share/gforge/backends/plugins/cvstracker/etc/plugins/cvstracker/config.php
-share/gforge/backends/plugins/cvstracker/httpd.conf
-share/gforge/backends/plugins/cvstracker/include/Snoopy.class
-share/gforge/backends/plugins/cvstracker/include/cvstracker-init.php
-share/gforge/backends/plugins/cvstracker/include/cvstrackerPlugin.class
-share/gforge/backends/plugins/cvstracker/include/languages/Base.tab
-share/gforge/backends/plugins/cvstracker/include/languages/French.tab
-share/gforge/backends/plugins/cvstracker/include/languages/Spanish.tab
-share/gforge/backends/plugins/cvstracker/lib/20050305.sql
-share/gforge/backends/plugins/cvstracker/lib/20051003.sql
-share/gforge/backends/plugins/cvstracker/lib/cvstracker-init.sql
-share/gforge/backends/plugins/cvstracker/www/newcommit.php
-share/gforge/backends/plugins/scmcvs/AUTHORS
-share/gforge/backends/plugins/scmcvs/COPYING
-share/gforge/backends/plugins/scmcvs/README
-share/gforge/backends/plugins/scmcvs/TODO
-share/gforge/backends/plugins/scmcvs/bin/README
-share/gforge/backends/plugins/scmcvs/bin/aclcheck.php
-share/gforge/backends/plugins/scmcvs/bin/cvs-pserver
-share/gforge/backends/plugins/scmcvs/bin/cvs_dump.pl
-share/gforge/backends/plugins/scmcvs/bin/cvs_update.pl
-share/gforge/backends/plugins/scmcvs/bin/db-delete.pl
-share/gforge/backends/plugins/scmcvs/bin/db-upgrade.pl
-share/gforge/backends/plugins/scmcvs/bin/install-cvs.sh
-share/gforge/backends/plugins/scmcvs/bin/snapshots.sh
-share/gforge/backends/plugins/scmcvs/bin/stats_cvs.pl
-share/gforge/backends/plugins/scmcvs/bin/syncmail
-share/gforge/backends/plugins/scmcvs/bin/syncmail-cvs-1.11
-share/gforge/backends/plugins/scmcvs/bin/syncmail-cvs-1.12
-share/gforge/backends/plugins/scmcvs/cgi-bin/cvsweb
-share/gforge/backends/plugins/scmcvs/cgi-bin/cvsweb.ori
-share/gforge/backends/plugins/scmcvs/cronjobs/syncmail
-share/gforge/backends/plugins/scmcvs/cronjobs/tarballs.php
-share/gforge/backends/plugins/scmcvs/etc/httpd.d/11scm50cvs
-share/gforge/backends/plugins/scmcvs/etc/httpd.d/12scm50cvs.ssl
-share/gforge/backends/plugins/scmcvs/etc/httpd.d/30virtualcvs
-share/gforge/backends/plugins/scmcvs/etc/httpd.d/31virtualcvs.ssl
-share/gforge/backends/plugins/scmcvs/etc/plugins/scmcvs/config.php
-share/gforge/backends/plugins/scmcvs/etc/plugins/scmcvs/cvsweb.conf
-share/gforge/backends/plugins/scmcvs/include/CVSPlugin.class
-share/gforge/backends/plugins/scmcvs/include/Snoopy.class
-share/gforge/backends/plugins/scmcvs/include/languages/Base.tab
-share/gforge/backends/plugins/scmcvs/include/languages/Basque.tab
-share/gforge/backends/plugins/scmcvs/include/languages/Chinese.tab
-share/gforge/backends/plugins/scmcvs/include/languages/Dutch.tab
-share/gforge/backends/plugins/scmcvs/include/languages/French.tab
-share/gforge/backends/plugins/scmcvs/include/languages/German.tab
-share/gforge/backends/plugins/scmcvs/include/languages/Italian.tab
-share/gforge/backends/plugins/scmcvs/include/languages/Korean.tab
-share/gforge/backends/plugins/scmcvs/include/languages/PortugueseBrazilian.tab
-share/gforge/backends/plugins/scmcvs/include/languages/Spanish.tab
-share/gforge/backends/plugins/scmcvs/include/languages/Swedish.tab
-share/gforge/backends/plugins/scmcvs/include/scmcvs-init.php
-share/gforge/backends/plugins/scmcvs/lib/scmcvs-init.sql
-share/gforge/backends/plugins/scmcvs/www/acl.php
-share/gforge/backends/plugins/scmcvs/www/cvsweb.php
-share/gforge/backends/plugins/scmcvs/www/cvsweb/css/cvsweb.css
-share/gforge/backends/plugins/scmcvs/www/cvsweb/icons/back.gif
-share/gforge/backends/plugins/scmcvs/www/cvsweb/icons/binary.gif
-share/gforge/backends/plugins/scmcvs/www/cvsweb/icons/dir.gif
-share/gforge/backends/plugins/scmcvs/www/cvsweb/icons/miniback.gif
-share/gforge/backends/plugins/scmcvs/www/cvsweb/icons/minidir.gif
-share/gforge/backends/plugins/scmcvs/www/cvsweb/icons/minigraph.png
-share/gforge/backends/plugins/scmcvs/www/cvsweb/icons/minitext.gif
-share/gforge/backends/plugins/scmcvs/www/cvsweb/icons/text.gif
-share/gforge/backends/plugins/scmsvn/README
-share/gforge/backends/plugins/scmsvn/bin/db-delete.pl
-share/gforge/backends/plugins/scmsvn/bin/db-upgrade.pl
-share/gforge/backends/plugins/scmsvn/bin/install-svn.sh
-share/gforge/backends/plugins/scmsvn/bin/install-viewcvs.sh
-share/gforge/backends/plugins/scmsvn/bin/snapshots.sh
-share/gforge/backends/plugins/scmsvn/bin/svn-create.php
-share/gforge/backends/plugins/scmsvn/bin/svn_dump.pl
-share/gforge/backends/plugins/scmsvn/bin/svn_update.pl
-share/gforge/backends/plugins/scmsvn/cgi-bin/viewcvs.cgi
-share/gforge/backends/plugins/scmsvn/cronjobs/svn-stats.php
-share/gforge/backends/plugins/scmsvn/cronjobs/tarballs.php
-share/gforge/backends/plugins/scmsvn/etc/plugins/scmsvn/config.php
-share/gforge/backends/plugins/scmsvn/gforge-plugin-scmsvn.spec
-share/gforge/backends/plugins/scmsvn/include/SVNPlugin.class
-share/gforge/backends/plugins/scmsvn/include/languages/Base.tab
-share/gforge/backends/plugins/scmsvn/include/languages/French.tab
-share/gforge/backends/plugins/scmsvn/include/languages/Korean.tab
-share/gforge/backends/plugins/scmsvn/include/scmsvn-init.php
-share/gforge/backends/plugins/scmsvn/lib/scmsvn-init.sql
-share/gforge/backends/plugins/scmsvn/rpm-specific/cron.d/gforge-plugin-scmsvn
-share/gforge/backends/plugins/scmsvn/rpm-specific/languages/.keepme
-share/gforge/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-hotbackup.py-path.patch
-share/gforge/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-nogroupdircheck.patch
-share/gforge/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-styles.css.patch
-share/gforge/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-svn-host.patch
-share/gforge/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-svn_dav_authz.patch
-share/gforge/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-templates.patch
-share/gforge/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-viewcvs.cgi.patch
-share/gforge/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-viewcvs.php.patch
-share/gforge/backends/plugins/scmsvn/rpm-specific/scripts/create_authz_svn.php
-share/gforge/backends/plugins/scmsvn/rpm-specific/viewcvs/icons/small/dir.gif
-share/gforge/backends/plugins/scmsvn/rpm-specific/viewcvs/icons/small/text.gif
-share/gforge/backends/plugins/scmsvn/www/styles.css
-share/gforge/backends/plugins/scmsvn/www/viewcvs.php
-share/gforge/backends/plugins/scmsvn/www/viewcvs_utils.php
-share/gforge/backends/plugins/svncommitemail/bin/commit-email.pl
-share/gforge/backends/plugins/svncommitemail/include/SVNCommitEmailPlugin.class
-share/gforge/backends/plugins/svncommitemail/include/svncommitemail-init.php
-share/gforge/backends/plugins/svntracker/AUTHORS
-share/gforge/backends/plugins/svntracker/COPYING
-share/gforge/backends/plugins/svntracker/README
-share/gforge/backends/plugins/svntracker/bin/db-delete.pl
-share/gforge/backends/plugins/svntracker/bin/db-upgrade.pl
-share/gforge/backends/plugins/svntracker/bin/post.php
-share/gforge/backends/plugins/svntracker/bin/update_postcommit.php
-share/gforge/backends/plugins/svntracker/etc/plugins/svntracker/config.php
-share/gforge/backends/plugins/svntracker/etc/plugins/svntracker/svntracker.conf
-share/gforge/backends/plugins/svntracker/httpd.conf
-share/gforge/backends/plugins/svntracker/include/Snoopy.class
-share/gforge/backends/plugins/svntracker/include/languages/Base.tab
-share/gforge/backends/plugins/svntracker/include/languages/French.tab
-share/gforge/backends/plugins/svntracker/include/languages/Spanish.tab
-share/gforge/backends/plugins/svntracker/include/svntracker-init.php
-share/gforge/backends/plugins/svntracker/include/svntrackerPlugin.class
-share/gforge/backends/plugins/svntracker/lib/20051011.sql
-share/gforge/backends/plugins/svntracker/lib/svntracker-init.sql
-share/gforge/backends/plugins/svntracker/postcommit.example
-share/gforge/backends/plugins/svntracker/rpm-specific/cron.d/gforge-plugin-svntracker
-share/gforge/backends/plugins/svntracker/www/newcommit.php
-share/gforge/backends/utils/change_default_shell
-share/gforge/backends/utils/cvs1/cvscreate.sh
-share/gforge/backends/utils/cvs1/cvstar_genlist.pl
-share/gforge/backends/utils/cvs1/cvstar_superscript.pl
-share/gforge/backends/utils/decode_images.sh
-share/gforge/backends/utils/default_page.php
-share/gforge/backends/utils/fill-in-the-blanks.pl
-share/gforge/backends/utils/fixscripts/fix_broken_uids.php
-share/gforge/backends/utils/fixscripts/fix_image_data.php
-share/gforge/backends/utils/fixscripts/tools_data_cleanup.php
-share/gforge/backends/utils/fixscripts/upgrade_bug_data.php
-share/gforge/backends/utils/fixscripts/upgrade_filerelease_data.php
-share/gforge/backends/utils/fixscripts/upgrade_forum_data.php
-share/gforge/backends/utils/fixscripts/upgrade_task_data.php
-share/gforge/backends/utils/grap.c
-share/gforge/backends/utils/include.pl
-share/gforge/backends/utils/install-apache.sh
-share/gforge/backends/utils/ldap/ldap-check-replica
-share/gforge/backends/utils/ldap/ldap-clean
-share/gforge/backends/utils/ldap/ldap-del-user
-share/gforge/backends/utils/ldap/ldap-dump
-share/gforge/backends/utils/ldap/ldap-import
-share/gforge/backends/utils/ldap/sql2ldif.pl
-share/gforge/backends/utils/sffingerd.c
-share/gforge/backends/utils/underworld-dummy/aliases.zone
-share/gforge/backends/utils/underworld-dummy/dns_conf.pl
-share/gforge/backends/utils/underworld-dummy/dump_database.pl
-share/gforge/backends/utils/underworld-dummy/ia64_dump.pl
-share/gforge/backends/utils/underworld-dummy/mail_aliases.pl
-share/gforge/backends/utils/underworld-dummy/mailing_lists_dump.pl
-share/gforge/backends/utils/underworld-dummy/new_aliases.pl
-share/gforge/backends/utils/underworld-dummy/ssh_dump.pl
-share/gforge/contrib/autoconf/README.configure
-share/gforge/contrib/autoconf/config.status
-share/gforge/contrib/autoconf/configure
-share/gforge/contrib/autoconf/configure.ac
-share/gforge/contrib/autoconf/local.inc
-share/gforge/contrib/autoconf/local.inc.in
-share/gforge/contrib/autoconf/sample-apache.vhost
-share/gforge/contrib/autoconf/sample-apache.vhost.in
-share/gforge/contrib/beta1_install_from_scratch.txt
-share/gforge/contrib/beta1_install_from_scratch_install.php
-share/gforge/contrib/cmd-line-prototype.tar.gz
-share/gforge/contrib/gforge-3.0-cronjobs.patch
-share/gforge/contrib/gforge-3.0-init_sql.patch
-share/gforge/contrib/gforge-3.0-local_config.patch
-share/gforge/contrib/gforge.conf
-share/gforge/contrib/rh8_apache20_config/httpd.conf
-share/gforge/contrib/rh8_apache20_config/local.inc
-share/gforge/contrib/rh8_apache20_config/php.conf
-share/gforge/contrib/rh8_apache20_config/php.ini
-share/gforge/contrib/rh8_apache20_config/readme.txt
-share/gforge/contrib/tracker-cc.README
-share/gforge/contrib/tracker-cc.patch
-share/gforge/contrib/userlist.README
-share/gforge/contrib/userlist.patch
-share/gforge/db/20001209.sql
-share/gforge/db/20001214.sql
-share/gforge/db/20001219-sourceforge-2.5
-share/gforge/db/20001220.sql
-share/gforge/db/20010109.sql
-share/gforge/db/20010112.sql
-share/gforge/db/20010126.sql
-share/gforge/db/20010206.sql
-share/gforge/db/20010301.sql
-share/gforge/db/20010304-1.sql
-share/gforge/db/20010304-2.sql
-share/gforge/db/20010304-3.sql
-share/gforge/db/20010304-4-artifact-convert-files.php
-share/gforge/db/20010305.sql
-share/gforge/db/20010313.sql
-share/gforge/db/20010317.sql
-share/gforge/db/20010409.sql
-share/gforge/db/20010412.sql
-share/gforge/db/20010507.sql
-share/gforge/db/20010509.sql
-share/gforge/db/20010511.sql
-share/gforge/db/20010601-sourceforge-2.6
-share/gforge/db/20021124-1_drop_foundry.sql
-share/gforge/db/20021124-2_theming.sql
-share/gforge/db/20021124-3_gforge-debian-sf-sync.sql
-share/gforge/db/20021125.sql
-share/gforge/db/20021212.sql
-share/gforge/db/20021213.sql
-share/gforge/db/20021213_doc_data-migrate.php
-share/gforge/db/20021214.sql
-share/gforge/db/20021215.sql
-share/gforge/db/20021216.sql
-share/gforge/db/20021223-drops.sql
-share/gforge/db/20021223.sql
-share/gforge/db/20021230.sql
-share/gforge/db/20030102-drops.sql
-share/gforge/db/20030102.sql
-share/gforge/db/20030105.sql
-share/gforge/db/20030107.sql
-share/gforge/db/20030109.sql
-share/gforge/db/20030112.sql
-share/gforge/db/20030113-drops.sql
-share/gforge/db/20030113.sql
-share/gforge/db/20030115.sql
-share/gforge/db/20030131.sql
-share/gforge/db/20030209.sql
-share/gforge/db/20030312.sql
-share/gforge/db/20030513.sql
-share/gforge/db/20030701-gforge-3.0
-share/gforge/db/20030822.sql
-share/gforge/db/20031026-gforge-3.1
-share/gforge/db/20031105.sql
-share/gforge/db/20031124.sql
-share/gforge/db/20031126.sql
-share/gforge/db/20031129.sql
-share/gforge/db/20031205.sql
-share/gforge/db/20040108-gforge-3.21
-share/gforge/db/20040130.sql
-share/gforge/db/20040204.sql
-share/gforge/db/20040315.sql
-share/gforge/db/200403251.sql
-share/gforge/db/200403252.sql
-share/gforge/db/20040326-gforge-3.3
-share/gforge/db/20040329.sql
-share/gforge/db/20040507.sql
-share/gforge/db/20040722.sql
-share/gforge/db/20040729.sql
-share/gforge/db/20040804.sql
-share/gforge/db/20040826.sql
-share/gforge/db/20040826_migrateforum.php
-share/gforge/db/20040826_migraterbac.php
-share/gforge/db/20040914.sql
-share/gforge/db/20041001.sql
-share/gforge/db/20041005.sql
-share/gforge/db/20041006.sql
-share/gforge/db/20041014.sql
-share/gforge/db/20041020.sql
-share/gforge/db/20041025-gforge-4.0
-share/gforge/db/20041031.sql
-share/gforge/db/20041104.sql
-share/gforge/db/20041107-gforge-4.0.1
-share/gforge/db/20041108.sql
-share/gforge/db/20041124.sql
-share/gforge/db/20041211-syncmail.php
-share/gforge/db/20041215-gforge-4.0.2
-share/gforge/db/20041222-1-delete-task-artifact.php
-share/gforge/db/20041222-2.sql
-share/gforge/db/20041222-debian.sql
-share/gforge/db/20050115.sql
-share/gforge/db/20050127-frs-reorg.php
-share/gforge/db/20050130.sql
-share/gforge/db/20050212.sql
-share/gforge/db/20050214-nss.sql
-share/gforge/db/20050224-drop.sql
-share/gforge/db/20050224.sql
-share/gforge/db/20050225-nsssetup.sql
-share/gforge/db/20050227.sql
-share/gforge/db/20050311.sql
-share/gforge/db/20050315-drop.sql
-share/gforge/db/20050315.sql
-share/gforge/db/20050325-1-drop.sql
-share/gforge/db/20050325-1.sql
-share/gforge/db/20050325-2.php
-share/gforge/db/20050325-3-drop.sql
-share/gforge/db/20050325-3.sql
-share/gforge/db/20050605.sql
-share/gforge/db/20050617.php
-share/gforge/db/20050628.sql
-share/gforge/db/20050711.sql
-share/gforge/db/20050906.sql
-share/gforge/db/20051003.sql
-share/gforge/db/20051027-1.sql
-share/gforge/db/20051027-2.php
-share/gforge/db/FTI-20050315.sql
-share/gforge/db/FTI-20050401.sql
-share/gforge/db/FTI-20050530.sql
-share/gforge/db/FTI-20060130.sql
-share/gforge/db/FTI.sql
-share/gforge/db/README
-share/gforge/db/SQL_2.5/DefaultValues_2_5.sql
-share/gforge/db/SQL_2.5/SourceForge_2_5.sql
-share/gforge/db/SQL_2.6/DefaultValues.sql
-share/gforge/db/SQL_2.6/SourceForge.sql
-share/gforge/db/SQL_2.6/dbusers.sql
-share/gforge/db/SQL_2.6/languages.tab
-share/gforge/db/SQL_2.6/replicate.sh
-share/gforge/db/SQL_2.6/replication-master.sql
-share/gforge/db/SQL_2.6/replication-reset-master.sql
-share/gforge/db/SQL_2.6/replication-reset-slave.sql
-share/gforge/db/SQL_2.6/replication-slave.sql
-share/gforge/db/SQL_2.6/replication.plan
-share/gforge/db/SQL_2.6/trove_cat.tab
-share/gforge/db/SQL_2.6/user_rating.sql
-share/gforge/db/gforge-pgsql7.3.sql
-share/gforge/db/gforge.sql
-share/gforge/db/gforge2.6.sql
-share/gforge/db/nss-pgsql.sql
-share/gforge/db/timetracking-init.sql
+%%DOCSDIR%%/README.ConvertToUTF8
+%%DOCSDIR%%/README.Custom
+%%DOCSDIR%%/README.KnownBugs
+%%DOCSDIR%%/README.Plugins
+%%DOCSDIR%%/README.Soap
+%%DOCSDIR%%/README.Themes
+%%DOCSDIR%%/README.TuningLDAP
+%%DOCSDIR%%/architecture/stats/stats-process.sda
+%%DOCSDIR%%/debian-guide.html
+%%DOCSDIR%%/debian-installguidefornewbies.html
+%%DOCSDIR%%/doc_utils.php
+%%DOCSDIR%%/docbook/INSTALL
+%%DOCSDIR%%/docbook/Makefile
+%%DOCSDIR%%/docbook/README
+%%DOCSDIR%%/docbook/build/.keepme
+%%DOCSDIR%%/docbook/docbook/administration_guide/administration_guide.xml
+%%DOCSDIR%%/docbook/docbook/contribution_guide/contribution_guide.xml
+%%DOCSDIR%%/docbook/docbook/contribution_guide/include/coding_standards.xml
+%%DOCSDIR%%/docbook/docbook/contribution_guide/include/cvs_repository.xml
+%%DOCSDIR%%/docbook/docbook/contribution_guide/include/howto_contribute.xml
+%%DOCSDIR%%/docbook/docbook/contribution_guide/include/howto_documentation.xml
+%%DOCSDIR%%/docbook/docbook/contribution_guide/include/howto_localization.xml
+%%DOCSDIR%%/docbook/docbook/contribution_guide/include/howto_xhtml.xml
+%%DOCSDIR%%/docbook/docbook/contribution_guide/include/templating.xml
+%%DOCSDIR%%/docbook/docbook/entities/authors.ent
+%%DOCSDIR%%/docbook/docbook/entities/authors/guillaume_smet.xml
+%%DOCSDIR%%/docbook/docbook/entities/authors/ken_mccullagh.xml
+%%DOCSDIR%%/docbook/docbook/entities/authors/ognyan_kulev.xml
+%%DOCSDIR%%/docbook/docbook/entities/authors/reinhard_spisser.xml
+%%DOCSDIR%%/docbook/docbook/entities/authors/roland_mas.xml
+%%DOCSDIR%%/docbook/docbook/entities/authors/tim_perdue.xml
+%%DOCSDIR%%/docbook/docbook/entities/authors/tom_copeland.xml
+%%DOCSDIR%%/docbook/docbook/entities/xinclude.ent
+%%DOCSDIR%%/docbook/docbook/gforge_manual.xml
+%%DOCSDIR%%/docbook/docbook/installation_guide/installation_guide.xml
+%%DOCSDIR%%/docbook/docbook/introduction/introduction.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/getting_started/getting_started.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/introduction/introduction.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/project_functions/cvs.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/project_functions/docman.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/project_functions/file_releases.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/project_functions/forums.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/project_functions/index.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/project_functions/mailing_lists.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/project_functions/news.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/project_functions/project_admin.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/project_functions/project_summary.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/project_functions/surveys.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/project_functions/task_manager.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/project_functions/tracker.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/sitewide_functions/index.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/sitewide_functions/project_help.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/sitewide_functions/search.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/sitewide_functions/snippet.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/sitewide_functions/trove.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/user_functions/index.xml
+%%DOCSDIR%%/docbook/docbook/user_guide/user_guide.xml
+%%DOCSDIR%%/docbook/xsl/article_html.xsl
+%%DOCSDIR%%/docbook/xsl/article_html_chunk.xsl
+%%DOCSDIR%%/docbook/xsl/article_pdf.xsl
+%%DOCSDIR%%/docbook/xsl/book_html.xsl
+%%DOCSDIR%%/docbook/xsl/book_html_chunk.xsl
+%%DOCSDIR%%/docbook/xsl/book_pdf.xsl
+%%DOCSDIR%%/docbook/xsl/include/common_html.xsl
+%%DOCSDIR%%/docbook/xsl/include/common_html_chunk.xsl
+%%DOCSDIR%%/docbook/xsl/include/common_pdf.xsl
+%%DOCSDIR%%/gforge-themes-HOWTO.html
+%%DOCSDIR%%/images/sflogo2-105a.png
+%%DOCSDIR%%/index.php
+%%DOCSDIR%%/log_formats.txt
+%%DOCSDIR%%/migrating-to-gforge-HOWTO.html
+%%DOCSDIR%%/migrating-to-gforge-REPORT.txt
+%%DOCSDIR%%/phpdoc/makedoc.sh
+%%DOCSDIR%%/phpdoc/manageclass.patch
+%%DOCSDIR%%/webalizer-HOWTO.html
+%%DATADIR%%/backends/backend/DatabaseDump.pl
+%%DATADIR%%/backends/backend/include.pl
+%%DATADIR%%/backends/backend/shell/apache.sh
+%%DATADIR%%/backends/backend/zones/aliases.zone
+%%DATADIR%%/backends/backend/zones/dns.zone
+%%DATADIR%%/backends/backend/zones/sendmail.cw.zone
+%%DATADIR%%/backends/cronjobs/README.root
+%%DATADIR%%/backends/cronjobs/calculate_user_metric.php
+%%DATADIR%%/backends/cronjobs/check_stale_tracker_items.php
+%%DATADIR%%/backends/cronjobs/crontab.in
+%%DATADIR%%/backends/cronjobs/cvs-cron/cvs.php
+%%DATADIR%%/backends/cronjobs/cvs-cron/cvscreate.sh
+%%DATADIR%%/backends/cronjobs/cvs-cron/cvssh.pl
+%%DATADIR%%/backends/cronjobs/cvs-cron/default_page.php
+%%DATADIR%%/backends/cronjobs/cvs-cron/ftp_create.php
+%%DATADIR%%/backends/cronjobs/cvs-cron/grap.c
+%%DATADIR%%/backends/cronjobs/cvs-cron/history_parse.php
+%%DATADIR%%/backends/cronjobs/cvs-cron/ssh_create.php
+%%DATADIR%%/backends/cronjobs/cvs-cron/syncmail
+%%DATADIR%%/backends/cronjobs/cvs-cron/usergroup.php
+%%DATADIR%%/backends/cronjobs/cvs-cron/www/index.php
+%%DATADIR%%/backends/cronjobs/daily_task_email.php
+%%DATADIR%%/backends/cronjobs/dav-svn/README
+%%DATADIR%%/backends/cronjobs/dav-svn/commit-email_pl
+%%DATADIR%%/backends/cronjobs/dav-svn/create_docman.php
+%%DATADIR%%/backends/cronjobs/dav-svn/create_group_home.php
+%%DATADIR%%/backends/cronjobs/dav-svn/create_groups.php
+%%DATADIR%%/backends/cronjobs/dav-svn/create_svn.php
+%%DATADIR%%/backends/cronjobs/dav-svn/create_users.php
+%%DATADIR%%/backends/cronjobs/dav-svn/crontab.in
+%%DATADIR%%/backends/cronjobs/dav-svn/default_page.php
+%%DATADIR%%/backends/cronjobs/dav-svn/svn-index.php
+%%DATADIR%%/backends/cronjobs/dav-svn/www/index.php
+%%DATADIR%%/backends/cronjobs/dav-svn/www/svnindex.css
+%%DATADIR%%/backends/cronjobs/dav-svn/www/svnindex.xsl
+%%DATADIR%%/backends/cronjobs/db_project_sums.php
+%%DATADIR%%/backends/cronjobs/db_stats_agg.php
+%%DATADIR%%/backends/cronjobs/db_trove_maint.php
+%%DATADIR%%/backends/cronjobs/forum_gateway.php
+%%DATADIR%%/backends/cronjobs/mail/mailaliases.php
+%%DATADIR%%/backends/cronjobs/mail/mailing_lists_create.php
+%%DATADIR%%/backends/cronjobs/mail/privatize_list.py
+%%DATADIR%%/backends/cronjobs/massmail.php
+%%DATADIR%%/backends/cronjobs/project_cleanup.php
+%%DATADIR%%/backends/cronjobs/project_weekly_metric-backfill.php
+%%DATADIR%%/backends/cronjobs/project_weekly_metric.php
+%%DATADIR%%/backends/cronjobs/rating_stats.php
+%%DATADIR%%/backends/cronjobs/reporting_cron.php
+%%DATADIR%%/backends/cronjobs/rotate_activity.php
+%%DATADIR%%/backends/cronjobs/send_pending_items_mail.php
+%%DATADIR%%/backends/cronjobs/site_stats.php
+%%DATADIR%%/backends/cronjobs/stats_projects-backfill.php
+%%DATADIR%%/backends/cronjobs/stats_projects.inc
+%%DATADIR%%/backends/cronjobs/stats_site.inc
+%%DATADIR%%/backends/cronjobs/tracker_gateway.php
+%%DATADIR%%/backends/cronjobs/update_filesize.php
+%%DATADIR%%/backends/cronjobs/vacuum.php
+%%DATADIR%%/backends/monitor/check-system.pl
+%%DATADIR%%/backends/monitor/systemdaemon
+%%DATADIR%%/backends/plugins/cvssyncmail/INSTALL
+%%DATADIR%%/backends/plugins/cvssyncmail/common/CVSSyncMailPlugin.class
+%%DATADIR%%/backends/plugins/cvssyncmail/common/cvssyncmail-init.php
+%%DATADIR%%/backends/plugins/cvssyncmail/common/languages/Base.tab
+%%DATADIR%%/backends/plugins/cvssyncmail/db/cvssyncmail-init.sql
+%%DATADIR%%/backends/plugins/cvssyncmail/include/cvssyncmail-init.php
+%%DATADIR%%/backends/plugins/cvstracker/AUTHORS
+%%DATADIR%%/backends/plugins/cvstracker/COPYING
+%%DATADIR%%/backends/plugins/cvstracker/Makefile
+%%DATADIR%%/backends/plugins/cvstracker/README
+%%DATADIR%%/backends/plugins/cvstracker/bin/db-delete.pl
+%%DATADIR%%/backends/plugins/cvstracker/bin/db-upgrade.pl
+%%DATADIR%%/backends/plugins/cvstracker/bin/post.php
+%%DATADIR%%/backends/plugins/cvstracker/bin/update_loginfo.php
+%%DATADIR%%/backends/plugins/cvstracker/etc/plugins/cvstracker/config.php
+%%DATADIR%%/backends/plugins/cvstracker/httpd.conf
+%%DATADIR%%/backends/plugins/cvstracker/include/Snoopy.class
+%%DATADIR%%/backends/plugins/cvstracker/include/cvstracker-init.php
+%%DATADIR%%/backends/plugins/cvstracker/include/cvstrackerPlugin.class
+%%DATADIR%%/backends/plugins/cvstracker/include/languages/Base.tab
+%%DATADIR%%/backends/plugins/cvstracker/include/languages/French.tab
+%%DATADIR%%/backends/plugins/cvstracker/include/languages/Spanish.tab
+%%DATADIR%%/backends/plugins/cvstracker/lib/20050305.sql
+%%DATADIR%%/backends/plugins/cvstracker/lib/20051003.sql
+%%DATADIR%%/backends/plugins/cvstracker/lib/cvstracker-init.sql
+%%DATADIR%%/backends/plugins/cvstracker/www/newcommit.php
+%%DATADIR%%/backends/plugins/scmcvs/AUTHORS
+%%DATADIR%%/backends/plugins/scmcvs/COPYING
+%%DATADIR%%/backends/plugins/scmcvs/README
+%%DATADIR%%/backends/plugins/scmcvs/TODO
+%%DATADIR%%/backends/plugins/scmcvs/bin/README
+%%DATADIR%%/backends/plugins/scmcvs/bin/aclcheck.php
+%%DATADIR%%/backends/plugins/scmcvs/bin/cvs-pserver
+%%DATADIR%%/backends/plugins/scmcvs/bin/cvs_dump.pl
+%%DATADIR%%/backends/plugins/scmcvs/bin/cvs_update.pl
+%%DATADIR%%/backends/plugins/scmcvs/bin/db-delete.pl
+%%DATADIR%%/backends/plugins/scmcvs/bin/db-upgrade.pl
+%%DATADIR%%/backends/plugins/scmcvs/bin/install-cvs.sh
+%%DATADIR%%/backends/plugins/scmcvs/bin/snapshots.sh
+%%DATADIR%%/backends/plugins/scmcvs/bin/stats_cvs.pl
+%%DATADIR%%/backends/plugins/scmcvs/bin/syncmail
+%%DATADIR%%/backends/plugins/scmcvs/bin/syncmail-cvs-1.11
+%%DATADIR%%/backends/plugins/scmcvs/bin/syncmail-cvs-1.12
+%%DATADIR%%/backends/plugins/scmcvs/cgi-bin/cvsweb
+%%DATADIR%%/backends/plugins/scmcvs/cgi-bin/cvsweb.ori
+%%DATADIR%%/backends/plugins/scmcvs/cronjobs/syncmail
+%%DATADIR%%/backends/plugins/scmcvs/cronjobs/tarballs.php
+%%DATADIR%%/backends/plugins/scmcvs/etc/httpd.d/11scm50cvs
+%%DATADIR%%/backends/plugins/scmcvs/etc/httpd.d/12scm50cvs.ssl
+%%DATADIR%%/backends/plugins/scmcvs/etc/httpd.d/30virtualcvs
+%%DATADIR%%/backends/plugins/scmcvs/etc/httpd.d/31virtualcvs.ssl
+%%DATADIR%%/backends/plugins/scmcvs/etc/plugins/scmcvs/config.php
+%%DATADIR%%/backends/plugins/scmcvs/etc/plugins/scmcvs/cvsweb.conf
+%%DATADIR%%/backends/plugins/scmcvs/include/CVSPlugin.class
+%%DATADIR%%/backends/plugins/scmcvs/include/Snoopy.class
+%%DATADIR%%/backends/plugins/scmcvs/include/languages/Base.tab
+%%DATADIR%%/backends/plugins/scmcvs/include/languages/Basque.tab
+%%DATADIR%%/backends/plugins/scmcvs/include/languages/Chinese.tab
+%%DATADIR%%/backends/plugins/scmcvs/include/languages/Dutch.tab
+%%DATADIR%%/backends/plugins/scmcvs/include/languages/French.tab
+%%DATADIR%%/backends/plugins/scmcvs/include/languages/German.tab
+%%DATADIR%%/backends/plugins/scmcvs/include/languages/Italian.tab
+%%DATADIR%%/backends/plugins/scmcvs/include/languages/Korean.tab
+%%DATADIR%%/backends/plugins/scmcvs/include/languages/PortugueseBrazilian.tab
+%%DATADIR%%/backends/plugins/scmcvs/include/languages/Spanish.tab
+%%DATADIR%%/backends/plugins/scmcvs/include/languages/Swedish.tab
+%%DATADIR%%/backends/plugins/scmcvs/include/scmcvs-init.php
+%%DATADIR%%/backends/plugins/scmcvs/lib/scmcvs-init.sql
+%%DATADIR%%/backends/plugins/scmcvs/www/acl.php
+%%DATADIR%%/backends/plugins/scmcvs/www/cvsweb.php
+%%DATADIR%%/backends/plugins/scmcvs/www/cvsweb/css/cvsweb.css
+%%DATADIR%%/backends/plugins/scmcvs/www/cvsweb/icons/back.gif
+%%DATADIR%%/backends/plugins/scmcvs/www/cvsweb/icons/binary.gif
+%%DATADIR%%/backends/plugins/scmcvs/www/cvsweb/icons/dir.gif
+%%DATADIR%%/backends/plugins/scmcvs/www/cvsweb/icons/miniback.gif
+%%DATADIR%%/backends/plugins/scmcvs/www/cvsweb/icons/minidir.gif
+%%DATADIR%%/backends/plugins/scmcvs/www/cvsweb/icons/minigraph.png
+%%DATADIR%%/backends/plugins/scmcvs/www/cvsweb/icons/minitext.gif
+%%DATADIR%%/backends/plugins/scmcvs/www/cvsweb/icons/text.gif
+%%DATADIR%%/backends/plugins/scmsvn/README
+%%DATADIR%%/backends/plugins/scmsvn/bin/db-delete.pl
+%%DATADIR%%/backends/plugins/scmsvn/bin/db-upgrade.pl
+%%DATADIR%%/backends/plugins/scmsvn/bin/install-svn.sh
+%%DATADIR%%/backends/plugins/scmsvn/bin/install-viewcvs.sh
+%%DATADIR%%/backends/plugins/scmsvn/bin/snapshots.sh
+%%DATADIR%%/backends/plugins/scmsvn/bin/svn-create.php
+%%DATADIR%%/backends/plugins/scmsvn/bin/svn_dump.pl
+%%DATADIR%%/backends/plugins/scmsvn/bin/svn_update.pl
+%%DATADIR%%/backends/plugins/scmsvn/cgi-bin/viewcvs.cgi
+%%DATADIR%%/backends/plugins/scmsvn/cronjobs/svn-stats.php
+%%DATADIR%%/backends/plugins/scmsvn/cronjobs/tarballs.php
+%%DATADIR%%/backends/plugins/scmsvn/etc/plugins/scmsvn/config.php
+%%DATADIR%%/backends/plugins/scmsvn/gforge-plugin-scmsvn.spec
+%%DATADIR%%/backends/plugins/scmsvn/include/SVNPlugin.class
+%%DATADIR%%/backends/plugins/scmsvn/include/languages/Base.tab
+%%DATADIR%%/backends/plugins/scmsvn/include/languages/French.tab
+%%DATADIR%%/backends/plugins/scmsvn/include/languages/Korean.tab
+%%DATADIR%%/backends/plugins/scmsvn/include/scmsvn-init.php
+%%DATADIR%%/backends/plugins/scmsvn/lib/scmsvn-init.sql
+%%DATADIR%%/backends/plugins/scmsvn/rpm-specific/cron.d/gforge-plugin-scmsvn
+%%DATADIR%%/backends/plugins/scmsvn/rpm-specific/languages/.keepme
+%%DATADIR%%/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-hotbackup.py-path.patch
+%%DATADIR%%/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-nogroupdircheck.patch
+%%DATADIR%%/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-styles.css.patch
+%%DATADIR%%/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-svn-host.patch
+%%DATADIR%%/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-svn_dav_authz.patch
+%%DATADIR%%/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-templates.patch
+%%DATADIR%%/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-viewcvs.cgi.patch
+%%DATADIR%%/backends/plugins/scmsvn/rpm-specific/patches/gforge-plugin-scmsvn-4.5.14-viewcvs.php.patch
+%%DATADIR%%/backends/plugins/scmsvn/rpm-specific/scripts/create_authz_svn.php
+%%DATADIR%%/backends/plugins/scmsvn/rpm-specific/viewcvs/icons/small/dir.gif
+%%DATADIR%%/backends/plugins/scmsvn/rpm-specific/viewcvs/icons/small/text.gif
+%%DATADIR%%/backends/plugins/scmsvn/www/styles.css
+%%DATADIR%%/backends/plugins/scmsvn/www/viewcvs.php
+%%DATADIR%%/backends/plugins/scmsvn/www/viewcvs_utils.php
+%%DATADIR%%/backends/plugins/svncommitemail/bin/commit-email.pl
+%%DATADIR%%/backends/plugins/svncommitemail/include/SVNCommitEmailPlugin.class
+%%DATADIR%%/backends/plugins/svncommitemail/include/svncommitemail-init.php
+%%DATADIR%%/backends/plugins/svntracker/AUTHORS
+%%DATADIR%%/backends/plugins/svntracker/COPYING
+%%DATADIR%%/backends/plugins/svntracker/README
+%%DATADIR%%/backends/plugins/svntracker/bin/db-delete.pl
+%%DATADIR%%/backends/plugins/svntracker/bin/db-upgrade.pl
+%%DATADIR%%/backends/plugins/svntracker/bin/post.php
+%%DATADIR%%/backends/plugins/svntracker/bin/update_postcommit.php
+%%DATADIR%%/backends/plugins/svntracker/etc/plugins/svntracker/config.php
+%%DATADIR%%/backends/plugins/svntracker/etc/plugins/svntracker/svntracker.conf
+%%DATADIR%%/backends/plugins/svntracker/httpd.conf
+%%DATADIR%%/backends/plugins/svntracker/include/Snoopy.class
+%%DATADIR%%/backends/plugins/svntracker/include/languages/Base.tab
+%%DATADIR%%/backends/plugins/svntracker/include/languages/French.tab
+%%DATADIR%%/backends/plugins/svntracker/include/languages/Spanish.tab
+%%DATADIR%%/backends/plugins/svntracker/include/svntracker-init.php
+%%DATADIR%%/backends/plugins/svntracker/include/svntrackerPlugin.class
+%%DATADIR%%/backends/plugins/svntracker/lib/20051011.sql
+%%DATADIR%%/backends/plugins/svntracker/lib/svntracker-init.sql
+%%DATADIR%%/backends/plugins/svntracker/postcommit.example
+%%DATADIR%%/backends/plugins/svntracker/rpm-specific/cron.d/gforge-plugin-svntracker
+%%DATADIR%%/backends/plugins/svntracker/www/newcommit.php
+%%DATADIR%%/backends/utils/change_default_shell
+%%DATADIR%%/backends/utils/cvs1/cvscreate.sh
+%%DATADIR%%/backends/utils/cvs1/cvstar_genlist.pl
+%%DATADIR%%/backends/utils/cvs1/cvstar_superscript.pl
+%%DATADIR%%/backends/utils/decode_images.sh
+%%DATADIR%%/backends/utils/default_page.php
+%%DATADIR%%/backends/utils/fill-in-the-blanks.pl
+%%DATADIR%%/backends/utils/fixscripts/fix_broken_uids.php
+%%DATADIR%%/backends/utils/fixscripts/fix_image_data.php
+%%DATADIR%%/backends/utils/fixscripts/tools_data_cleanup.php
+%%DATADIR%%/backends/utils/fixscripts/upgrade_bug_data.php
+%%DATADIR%%/backends/utils/fixscripts/upgrade_filerelease_data.php
+%%DATADIR%%/backends/utils/fixscripts/upgrade_forum_data.php
+%%DATADIR%%/backends/utils/fixscripts/upgrade_task_data.php
+%%DATADIR%%/backends/utils/grap.c
+%%DATADIR%%/backends/utils/include.pl
+%%DATADIR%%/backends/utils/install-apache.sh
+%%DATADIR%%/backends/utils/ldap/ldap-check-replica
+%%DATADIR%%/backends/utils/ldap/ldap-clean
+%%DATADIR%%/backends/utils/ldap/ldap-del-user
+%%DATADIR%%/backends/utils/ldap/ldap-dump
+%%DATADIR%%/backends/utils/ldap/ldap-import
+%%DATADIR%%/backends/utils/ldap/sql2ldif.pl
+%%DATADIR%%/backends/utils/sffingerd.c
+%%DATADIR%%/backends/utils/underworld-dummy/aliases.zone
+%%DATADIR%%/backends/utils/underworld-dummy/dns_conf.pl
+%%DATADIR%%/backends/utils/underworld-dummy/dump_database.pl
+%%DATADIR%%/backends/utils/underworld-dummy/ia64_dump.pl
+%%DATADIR%%/backends/utils/underworld-dummy/mail_aliases.pl
+%%DATADIR%%/backends/utils/underworld-dummy/mailing_lists_dump.pl
+%%DATADIR%%/backends/utils/underworld-dummy/new_aliases.pl
+%%DATADIR%%/backends/utils/underworld-dummy/ssh_dump.pl
+%%DATADIR%%/contrib/autoconf/README.configure
+%%DATADIR%%/contrib/autoconf/config.status
+%%DATADIR%%/contrib/autoconf/configure
+%%DATADIR%%/contrib/autoconf/configure.ac
+%%DATADIR%%/contrib/autoconf/local.inc
+%%DATADIR%%/contrib/autoconf/local.inc.in
+%%DATADIR%%/contrib/autoconf/sample-apache.vhost
+%%DATADIR%%/contrib/autoconf/sample-apache.vhost.in
+%%DATADIR%%/contrib/beta1_install_from_scratch.txt
+%%DATADIR%%/contrib/beta1_install_from_scratch_install.php
+%%DATADIR%%/contrib/cmd-line-prototype.tar.gz
+%%DATADIR%%/contrib/gforge-3.0-cronjobs.patch
+%%DATADIR%%/contrib/gforge-3.0-init_sql.patch
+%%DATADIR%%/contrib/gforge-3.0-local_config.patch
+%%DATADIR%%/contrib/gforge.conf
+%%DATADIR%%/contrib/rh8_apache20_config/httpd.conf
+%%DATADIR%%/contrib/rh8_apache20_config/local.inc
+%%DATADIR%%/contrib/rh8_apache20_config/php.conf
+%%DATADIR%%/contrib/rh8_apache20_config/php.ini
+%%DATADIR%%/contrib/rh8_apache20_config/readme.txt
+%%DATADIR%%/contrib/tracker-cc.README
+%%DATADIR%%/contrib/tracker-cc.patch
+%%DATADIR%%/contrib/userlist.README
+%%DATADIR%%/contrib/userlist.patch
+%%DATADIR%%/db/20001209.sql
+%%DATADIR%%/db/20001214.sql
+%%DATADIR%%/db/20001219-sourceforge-2.5
+%%DATADIR%%/db/20001220.sql
+%%DATADIR%%/db/20010109.sql
+%%DATADIR%%/db/20010112.sql
+%%DATADIR%%/db/20010126.sql
+%%DATADIR%%/db/20010206.sql
+%%DATADIR%%/db/20010301.sql
+%%DATADIR%%/db/20010304-1.sql
+%%DATADIR%%/db/20010304-2.sql
+%%DATADIR%%/db/20010304-3.sql
+%%DATADIR%%/db/20010304-4-artifact-convert-files.php
+%%DATADIR%%/db/20010305.sql
+%%DATADIR%%/db/20010313.sql
+%%DATADIR%%/db/20010317.sql
+%%DATADIR%%/db/20010409.sql
+%%DATADIR%%/db/20010412.sql
+%%DATADIR%%/db/20010507.sql
+%%DATADIR%%/db/20010509.sql
+%%DATADIR%%/db/20010511.sql
+%%DATADIR%%/db/20010601-sourceforge-2.6
+%%DATADIR%%/db/20021124-1_drop_foundry.sql
+%%DATADIR%%/db/20021124-2_theming.sql
+%%DATADIR%%/db/20021124-3_gforge-debian-sf-sync.sql
+%%DATADIR%%/db/20021125.sql
+%%DATADIR%%/db/20021212.sql
+%%DATADIR%%/db/20021213.sql
+%%DATADIR%%/db/20021213_doc_data-migrate.php
+%%DATADIR%%/db/20021214.sql
+%%DATADIR%%/db/20021215.sql
+%%DATADIR%%/db/20021216.sql
+%%DATADIR%%/db/20021223-drops.sql
+%%DATADIR%%/db/20021223.sql
+%%DATADIR%%/db/20021230.sql
+%%DATADIR%%/db/20030102-drops.sql
+%%DATADIR%%/db/20030102.sql
+%%DATADIR%%/db/20030105.sql
+%%DATADIR%%/db/20030107.sql
+%%DATADIR%%/db/20030109.sql
+%%DATADIR%%/db/20030112.sql
+%%DATADIR%%/db/20030113-drops.sql
+%%DATADIR%%/db/20030113.sql
+%%DATADIR%%/db/20030115.sql
+%%DATADIR%%/db/20030131.sql
+%%DATADIR%%/db/20030209.sql
+%%DATADIR%%/db/20030312.sql
+%%DATADIR%%/db/20030513.sql
+%%DATADIR%%/db/20030701-gforge-3.0
+%%DATADIR%%/db/20030822.sql
+%%DATADIR%%/db/20031026-gforge-3.1
+%%DATADIR%%/db/20031105.sql
+%%DATADIR%%/db/20031124.sql
+%%DATADIR%%/db/20031126.sql
+%%DATADIR%%/db/20031129.sql
+%%DATADIR%%/db/20031205.sql
+%%DATADIR%%/db/20040108-gforge-3.21
+%%DATADIR%%/db/20040130.sql
+%%DATADIR%%/db/20040204.sql
+%%DATADIR%%/db/20040315.sql
+%%DATADIR%%/db/200403251.sql
+%%DATADIR%%/db/200403252.sql
+%%DATADIR%%/db/20040326-gforge-3.3
+%%DATADIR%%/db/20040329.sql
+%%DATADIR%%/db/20040507.sql
+%%DATADIR%%/db/20040722.sql
+%%DATADIR%%/db/20040729.sql
+%%DATADIR%%/db/20040804.sql
+%%DATADIR%%/db/20040826.sql
+%%DATADIR%%/db/20040826_migrateforum.php
+%%DATADIR%%/db/20040826_migraterbac.php
+%%DATADIR%%/db/20040914.sql
+%%DATADIR%%/db/20041001.sql
+%%DATADIR%%/db/20041005.sql
+%%DATADIR%%/db/20041006.sql
+%%DATADIR%%/db/20041014.sql
+%%DATADIR%%/db/20041020.sql
+%%DATADIR%%/db/20041025-gforge-4.0
+%%DATADIR%%/db/20041031.sql
+%%DATADIR%%/db/20041104.sql
+%%DATADIR%%/db/20041107-gforge-4.0.1
+%%DATADIR%%/db/20041108.sql
+%%DATADIR%%/db/20041124.sql
+%%DATADIR%%/db/20041211-syncmail.php
+%%DATADIR%%/db/20041215-gforge-4.0.2
+%%DATADIR%%/db/20041222-1-delete-task-artifact.php
+%%DATADIR%%/db/20041222-2.sql
+%%DATADIR%%/db/20041222-debian.sql
+%%DATADIR%%/db/20050115.sql
+%%DATADIR%%/db/20050127-frs-reorg.php
+%%DATADIR%%/db/20050130.sql
+%%DATADIR%%/db/20050212.sql
+%%DATADIR%%/db/20050214-nss.sql
+%%DATADIR%%/db/20050224-drop.sql
+%%DATADIR%%/db/20050224.sql
+%%DATADIR%%/db/20050225-nsssetup.sql
+%%DATADIR%%/db/20050227.sql
+%%DATADIR%%/db/20050311.sql
+%%DATADIR%%/db/20050315-drop.sql
+%%DATADIR%%/db/20050315.sql
+%%DATADIR%%/db/20050325-1-drop.sql
+%%DATADIR%%/db/20050325-1.sql
+%%DATADIR%%/db/20050325-2.php
+%%DATADIR%%/db/20050325-3-drop.sql
+%%DATADIR%%/db/20050325-3.sql
+%%DATADIR%%/db/20050605.sql
+%%DATADIR%%/db/20050617.php
+%%DATADIR%%/db/20050628.sql
+%%DATADIR%%/db/20050711.sql
+%%DATADIR%%/db/20050906.sql
+%%DATADIR%%/db/20051003.sql
+%%DATADIR%%/db/20051027-1.sql
+%%DATADIR%%/db/20051027-2.php
+%%DATADIR%%/db/FTI-20050315.sql
+%%DATADIR%%/db/FTI-20050401.sql
+%%DATADIR%%/db/FTI-20050530.sql
+%%DATADIR%%/db/FTI-20060130.sql
+%%DATADIR%%/db/FTI.sql
+%%DATADIR%%/db/README
+%%DATADIR%%/db/SQL_2.5/DefaultValues_2_5.sql
+%%DATADIR%%/db/SQL_2.5/SourceForge_2_5.sql
+%%DATADIR%%/db/SQL_2.6/DefaultValues.sql
+%%DATADIR%%/db/SQL_2.6/SourceForge.sql
+%%DATADIR%%/db/SQL_2.6/dbusers.sql
+%%DATADIR%%/db/SQL_2.6/languages.tab
+%%DATADIR%%/db/SQL_2.6/replicate.sh
+%%DATADIR%%/db/SQL_2.6/replication-master.sql
+%%DATADIR%%/db/SQL_2.6/replication-reset-master.sql
+%%DATADIR%%/db/SQL_2.6/replication-reset-slave.sql
+%%DATADIR%%/db/SQL_2.6/replication-slave.sql
+%%DATADIR%%/db/SQL_2.6/replication.plan
+%%DATADIR%%/db/SQL_2.6/trove_cat.tab
+%%DATADIR%%/db/SQL_2.6/user_rating.sql
+%%DATADIR%%/db/gforge-pgsql7.3.sql
+%%DATADIR%%/db/gforge.sql
+%%DATADIR%%/db/gforge2.6.sql
+%%DATADIR%%/db/nss-pgsql.sql
+%%DATADIR%%/db/timetracking-init.sql
 www/gforge/common/docman/Document.class
 www/gforge/common/docman/DocumentFactory.class
 www/gforge/common/docman/DocumentGroup.class
@@ -1236,113 +1236,113 @@ www/gforge/www/users
 @dirrm www/gforge/common/docman
 @dirrm www/gforge/common
 @dirrm www/gforge
-@dirrm share/gforge/db/SQL_2.6
-@dirrm share/gforge/db/SQL_2.5
-@dirrm share/gforge/db
-@dirrm share/gforge/contrib/rh8_apache20_config
-@dirrm share/gforge/contrib/autoconf
-@dirrm share/gforge/contrib
-@dirrm share/gforge/backends/utils/underworld-dummy
-@dirrm share/gforge/backends/utils/ldap
-@dirrm share/gforge/backends/utils/fixscripts
-@dirrm share/gforge/backends/utils/cvs1
-@dirrm share/gforge/backends/utils
-@dirrm share/gforge/backends/plugins/svntracker/www
-@dirrm share/gforge/backends/plugins/svntracker/rpm-specific/cron.d
-@dirrm share/gforge/backends/plugins/svntracker/rpm-specific
-@dirrm share/gforge/backends/plugins/svntracker/lib
-@dirrm share/gforge/backends/plugins/svntracker/include/languages
-@dirrm share/gforge/backends/plugins/svntracker/include
-@dirrm share/gforge/backends/plugins/svntracker/etc/plugins/svntracker
-@dirrm share/gforge/backends/plugins/svntracker/etc/plugins
-@dirrm share/gforge/backends/plugins/svntracker/etc
-@dirrm share/gforge/backends/plugins/svntracker/bin
-@dirrm share/gforge/backends/plugins/svntracker
-@dirrm share/gforge/backends/plugins/svncommitemail/include
-@dirrm share/gforge/backends/plugins/svncommitemail/bin
-@dirrm share/gforge/backends/plugins/svncommitemail
-@dirrm share/gforge/backends/plugins/scmsvn/www
-@dirrm share/gforge/backends/plugins/scmsvn/rpm-specific/viewcvs/icons/small
-@dirrm share/gforge/backends/plugins/scmsvn/rpm-specific/viewcvs/icons
-@dirrm share/gforge/backends/plugins/scmsvn/rpm-specific/viewcvs
-@dirrm share/gforge/backends/plugins/scmsvn/rpm-specific/scripts
-@dirrm share/gforge/backends/plugins/scmsvn/rpm-specific/patches
-@dirrm share/gforge/backends/plugins/scmsvn/rpm-specific/languages
-@dirrm share/gforge/backends/plugins/scmsvn/rpm-specific/cron.d
-@dirrm share/gforge/backends/plugins/scmsvn/rpm-specific
-@dirrm share/gforge/backends/plugins/scmsvn/lib
-@dirrm share/gforge/backends/plugins/scmsvn/include/languages
-@dirrm share/gforge/backends/plugins/scmsvn/include
-@dirrm share/gforge/backends/plugins/scmsvn/etc/plugins/scmsvn
-@dirrm share/gforge/backends/plugins/scmsvn/etc/plugins
-@dirrm share/gforge/backends/plugins/scmsvn/etc
-@dirrm share/gforge/backends/plugins/scmsvn/cronjobs
-@dirrm share/gforge/backends/plugins/scmsvn/cgi-bin
-@dirrm share/gforge/backends/plugins/scmsvn/bin
-@dirrm share/gforge/backends/plugins/scmsvn
-@dirrm share/gforge/backends/plugins/scmcvs/www/cvsweb/icons
-@dirrm share/gforge/backends/plugins/scmcvs/www/cvsweb/css
-@dirrm share/gforge/backends/plugins/scmcvs/www/cvsweb
-@dirrm share/gforge/backends/plugins/scmcvs/www
-@dirrm share/gforge/backends/plugins/scmcvs/lib
-@dirrm share/gforge/backends/plugins/scmcvs/include/languages
-@dirrm share/gforge/backends/plugins/scmcvs/include
-@dirrm share/gforge/backends/plugins/scmcvs/etc/plugins/scmcvs
-@dirrm share/gforge/backends/plugins/scmcvs/etc/plugins
-@dirrm share/gforge/backends/plugins/scmcvs/etc/httpd.d
-@dirrm share/gforge/backends/plugins/scmcvs/etc
-@dirrm share/gforge/backends/plugins/scmcvs/cronjobs
-@dirrm share/gforge/backends/plugins/scmcvs/cgi-bin
-@dirrm share/gforge/backends/plugins/scmcvs/bin
-@dirrm share/gforge/backends/plugins/scmcvs
-@dirrm share/gforge/backends/plugins/cvstracker/www
-@dirrm share/gforge/backends/plugins/cvstracker/lib
-@dirrm share/gforge/backends/plugins/cvstracker/include/languages
-@dirrm share/gforge/backends/plugins/cvstracker/include
-@dirrm share/gforge/backends/plugins/cvstracker/etc/plugins/cvstracker
-@dirrm share/gforge/backends/plugins/cvstracker/etc/plugins
-@dirrm share/gforge/backends/plugins/cvstracker/etc
-@dirrm share/gforge/backends/plugins/cvstracker/bin
-@dirrm share/gforge/backends/plugins/cvstracker
-@dirrm share/gforge/backends/plugins/cvssyncmail/include
-@dirrm share/gforge/backends/plugins/cvssyncmail/db
-@dirrm share/gforge/backends/plugins/cvssyncmail/common/languages
-@dirrm share/gforge/backends/plugins/cvssyncmail/common
-@dirrm share/gforge/backends/plugins/cvssyncmail
-@dirrm share/gforge/backends/plugins
-@dirrm share/gforge/backends/monitor
-@dirrm share/gforge/backends/cronjobs/mail
-@dirrm share/gforge/backends/cronjobs/dav-svn/www
-@dirrm share/gforge/backends/cronjobs/dav-svn
-@dirrm share/gforge/backends/cronjobs/cvs-cron/www
-@dirrm share/gforge/backends/cronjobs/cvs-cron
-@dirrm share/gforge/backends/cronjobs
-@dirrm share/gforge/backends/backend/zones
-@dirrm share/gforge/backends/backend/shell
-@dirrm share/gforge/backends/backend
-@dirrm share/gforge/backends
-@dirrm share/gforge
-@dirrm share/doc/gforge/phpdoc
-@dirrm share/doc/gforge/images
-@dirrm share/doc/gforge/docbook/xsl/include
-@dirrm share/doc/gforge/docbook/xsl
-@dirrm share/doc/gforge/docbook/docbook/user_guide/user_functions
-@dirrm share/doc/gforge/docbook/docbook/user_guide/sitewide_functions
-@dirrm share/doc/gforge/docbook/docbook/user_guide/project_functions
-@dirrm share/doc/gforge/docbook/docbook/user_guide/introduction
-@dirrm share/doc/gforge/docbook/docbook/user_guide/getting_started
-@dirrm share/doc/gforge/docbook/docbook/user_guide
-@dirrm share/doc/gforge/docbook/docbook/introduction
-@dirrm share/doc/gforge/docbook/docbook/installation_guide
-@dirrm share/doc/gforge/docbook/docbook/entities/authors
-@dirrm share/doc/gforge/docbook/docbook/entities
-@dirrm share/doc/gforge/docbook/docbook/contribution_guide/include
-@dirrm share/doc/gforge/docbook/docbook/contribution_guide
-@dirrm share/doc/gforge/docbook/docbook/administration_guide
-@dirrm share/doc/gforge/docbook/docbook
-@dirrm share/doc/gforge/docbook/build
-@dirrm share/doc/gforge/docbook
-@dirrm share/doc/gforge/architecture/stats
-@dirrm share/doc/gforge/architecture
-@dirrm share/doc/gforge
+@dirrm %%DATADIR%%/db/SQL_2.6
+@dirrm %%DATADIR%%/db/SQL_2.5
+@dirrm %%DATADIR%%/db
+@dirrm %%DATADIR%%/contrib/rh8_apache20_config
+@dirrm %%DATADIR%%/contrib/autoconf
+@dirrm %%DATADIR%%/contrib
+@dirrm %%DATADIR%%/backends/utils/underworld-dummy
+@dirrm %%DATADIR%%/backends/utils/ldap
+@dirrm %%DATADIR%%/backends/utils/fixscripts
+@dirrm %%DATADIR%%/backends/utils/cvs1
+@dirrm %%DATADIR%%/backends/utils
+@dirrm %%DATADIR%%/backends/plugins/svntracker/www
+@dirrm %%DATADIR%%/backends/plugins/svntracker/rpm-specific/cron.d
+@dirrm %%DATADIR%%/backends/plugins/svntracker/rpm-specific
+@dirrm %%DATADIR%%/backends/plugins/svntracker/lib
+@dirrm %%DATADIR%%/backends/plugins/svntracker/include/languages
+@dirrm %%DATADIR%%/backends/plugins/svntracker/include
+@dirrm %%DATADIR%%/backends/plugins/svntracker/etc/plugins/svntracker
+@dirrm %%DATADIR%%/backends/plugins/svntracker/etc/plugins
+@dirrm %%DATADIR%%/backends/plugins/svntracker/etc
+@dirrm %%DATADIR%%/backends/plugins/svntracker/bin
+@dirrm %%DATADIR%%/backends/plugins/svntracker
+@dirrm %%DATADIR%%/backends/plugins/svncommitemail/include
+@dirrm %%DATADIR%%/backends/plugins/svncommitemail/bin
+@dirrm %%DATADIR%%/backends/plugins/svncommitemail
+@dirrm %%DATADIR%%/backends/plugins/scmsvn/www
+@dirrm %%DATADIR%%/backends/plugins/scmsvn/rpm-specific/viewcvs/icons/small
+@dirrm %%DATADIR%%/backends/plugins/scmsvn/rpm-specific/viewcvs/icons
+@dirrm %%DATADIR%%/backends/plugins/scmsvn/rpm-specific/viewcvs
+@dirrm %%DATADIR%%/backends/plugins/scmsvn/rpm-specific/scripts
+@dirrm %%DATADIR%%/backends/plugins/scmsvn/rpm-specific/patches
+@dirrm %%DATADIR%%/backends/plugins/scmsvn/rpm-specific/languages
+@dirrm %%DATADIR%%/backends/plugins/scmsvn/rpm-specific/cron.d
+@dirrm %%DATADIR%%/backends/plugins/scmsvn/rpm-specific
+@dirrm %%DATADIR%%/backends/plugins/scmsvn/lib
+@dirrm %%DATADIR%%/backends/plugins/scmsvn/include/languages
+@dirrm %%DATADIR%%/backends/plugins/scmsvn/include
+@dirrm %%DATADIR%%/backends/plugins/scmsvn/etc/plugins/scmsvn
+@dirrm %%DATADIR%%/backends/plugins/scmsvn/etc/plugins
+@dirrm %%DATADIR%%/backends/plugins/scmsvn/etc
+@dirrm %%DATADIR%%/backends/plugins/scmsvn/cronjobs
+@dirrm %%DATADIR%%/backends/plugins/scmsvn/cgi-bin
+@dirrm %%DATADIR%%/backends/plugins/scmsvn/bin
+@dirrm %%DATADIR%%/backends/plugins/scmsvn
+@dirrm %%DATADIR%%/backends/plugins/scmcvs/www/cvsweb/icons
+@dirrm %%DATADIR%%/backends/plugins/scmcvs/www/cvsweb/css
+@dirrm %%DATADIR%%/backends/plugins/scmcvs/www/cvsweb
+@dirrm %%DATADIR%%/backends/plugins/scmcvs/www
+@dirrm %%DATADIR%%/backends/plugins/scmcvs/lib
+@dirrm %%DATADIR%%/backends/plugins/scmcvs/include/languages
+@dirrm %%DATADIR%%/backends/plugins/scmcvs/include
+@dirrm %%DATADIR%%/backends/plugins/scmcvs/etc/plugins/scmcvs
+@dirrm %%DATADIR%%/backends/plugins/scmcvs/etc/plugins
+@dirrm %%DATADIR%%/backends/plugins/scmcvs/etc/httpd.d
+@dirrm %%DATADIR%%/backends/plugins/scmcvs/etc
+@dirrm %%DATADIR%%/backends/plugins/scmcvs/cronjobs
+@dirrm %%DATADIR%%/backends/plugins/scmcvs/cgi-bin
+@dirrm %%DATADIR%%/backends/plugins/scmcvs/bin
+@dirrm %%DATADIR%%/backends/plugins/scmcvs
+@dirrm %%DATADIR%%/backends/plugins/cvstracker/www
+@dirrm %%DATADIR%%/backends/plugins/cvstracker/lib
+@dirrm %%DATADIR%%/backends/plugins/cvstracker/include/languages
+@dirrm %%DATADIR%%/backends/plugins/cvstracker/include
+@dirrm %%DATADIR%%/backends/plugins/cvstracker/etc/plugins/cvstracker
+@dirrm %%DATADIR%%/backends/plugins/cvstracker/etc/plugins
+@dirrm %%DATADIR%%/backends/plugins/cvstracker/etc
+@dirrm %%DATADIR%%/backends/plugins/cvstracker/bin
+@dirrm %%DATADIR%%/backends/plugins/cvstracker
+@dirrm %%DATADIR%%/backends/plugins/cvssyncmail/include
+@dirrm %%DATADIR%%/backends/plugins/cvssyncmail/db
+@dirrm %%DATADIR%%/backends/plugins/cvssyncmail/common/languages
+@dirrm %%DATADIR%%/backends/plugins/cvssyncmail/common
+@dirrm %%DATADIR%%/backends/plugins/cvssyncmail
+@dirrm %%DATADIR%%/backends/plugins
+@dirrm %%DATADIR%%/backends/monitor
+@dirrm %%DATADIR%%/backends/cronjobs/mail
+@dirrm %%DATADIR%%/backends/cronjobs/dav-svn/www
+@dirrm %%DATADIR%%/backends/cronjobs/dav-svn
+@dirrm %%DATADIR%%/backends/cronjobs/cvs-cron/www
+@dirrm %%DATADIR%%/backends/cronjobs/cvs-cron
+@dirrm %%DATADIR%%/backends/cronjobs
+@dirrm %%DATADIR%%/backends/backend/zones
+@dirrm %%DATADIR%%/backends/backend/shell
+@dirrm %%DATADIR%%/backends/backend
+@dirrm %%DATADIR%%/backends
+@dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%/phpdoc
+@dirrm %%DOCSDIR%%/images
+@dirrm %%DOCSDIR%%/docbook/xsl/include
+@dirrm %%DOCSDIR%%/docbook/xsl
+@dirrm %%DOCSDIR%%/docbook/docbook/user_guide/user_functions
+@dirrm %%DOCSDIR%%/docbook/docbook/user_guide/sitewide_functions
+@dirrm %%DOCSDIR%%/docbook/docbook/user_guide/project_functions
+@dirrm %%DOCSDIR%%/docbook/docbook/user_guide/introduction
+@dirrm %%DOCSDIR%%/docbook/docbook/user_guide/getting_started
+@dirrm %%DOCSDIR%%/docbook/docbook/user_guide
+@dirrm %%DOCSDIR%%/docbook/docbook/introduction
+@dirrm %%DOCSDIR%%/docbook/docbook/installation_guide
+@dirrm %%DOCSDIR%%/docbook/docbook/entities/authors
+@dirrm %%DOCSDIR%%/docbook/docbook/entities
+@dirrm %%DOCSDIR%%/docbook/docbook/contribution_guide/include
+@dirrm %%DOCSDIR%%/docbook/docbook/contribution_guide
+@dirrm %%DOCSDIR%%/docbook/docbook/administration_guide
+@dirrm %%DOCSDIR%%/docbook/docbook
+@dirrm %%DOCSDIR%%/docbook/build
+@dirrm %%DOCSDIR%%/docbook
+@dirrm %%DOCSDIR%%/architecture/stats
+@dirrm %%DOCSDIR%%/architecture
+@dirrm %%DOCSDIR%%
 @dirrm etc/gforge
