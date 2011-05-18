@@ -1,34 +1,42 @@
---- configure.orig	1998-08-02 22:48:40.000000000 +0900
-+++ configure	2010-02-06 14:30:44.165551147 +0900
-@@ -571,7 +571,8 @@
+--- configure.orig	1998-08-02 09:48:40.000000000 -0400
++++ configure	2011-05-18 14:18:27.000000000 -0400
+@@ -571,7 +571,7 @@
  if test "${with_perl+set}" = set; then
    withval="$with_perl"
    perlprog=$with_perl
 -perlvers=`$perlprog -v | grep version | sed -e 's/.* version //' -e 's/ built.*//' -e 's/ with.*//'`
-+perlvers=`$perlprog -v | grep "This is perl" | sed -e 's/^.* version //' -e 's/^.* v//' -e 's/ built.*//' -e 's/ with.*//'`
-+perlvers=`echo ${perlvers} | sed -e 's/ (\*)//'`
++perlvers=%%PERL_VERSION%%
  
  else
    TMPFILE=/tmp/x.$$
-@@ -600,7 +601,7 @@
+@@ -583,7 +583,7 @@
+          if test -f "$dir/$perl"; then
+              if test -x "$dir/$perl"; then
+                  perl="$dir/$perl"
+-                 version=`$perl -v | grep version | sed -e 's/.* version //' -e 's/ built.*//' -e 's/ with.*//'`
++                 version=%%PERL_VERSION%%
+                  versionnum="`echo $version | sed -e 's/\.//g' -e 's/_//g'`"
+                  versionnum=`expr $versionnum - $c`
+                  echo "$versionnum $version $perl" >>$TMPFILE
+@@ -600,7 +600,7 @@
  PATH_PERL=$perlprog
  echo "$ac_t""$perlprog v$perlvers" 1>&6
  case $perlvers in
 -    5.003* | 5.004* | 5.005* | 5.006* )
-+    5.003* | 5.004* | 5.005* | 5.006* | 5.6.* | 5.8.* | 5.10.* )
++    5.003* | 5.004* | 5.005* | 5.006* | 5.6.* | 5.8.* | 5.10.* | 5.12.* | 5.14.* )
          ;;
      * ) echo ""
          echo "Latest Perl found on your system is $perlvers,"
-@@ -617,6 +618,8 @@
+@@ -617,6 +617,8 @@
  	    perlvnum=`echo $perlvers | sed -e 's/\.//' -e 's/_//'` ;; 
      5.00[3-6] ) 
  	    perlvnum=`echo $perlvers | sed -e 's/\.//' -e 's/$/00/'` ;; 
-+    5.[68].* | 5.10.* ) 
++    5.[68].* | 5.10.* | 5.12.* | 5.14.* ) 
 +	    perlvnum=`echo $perlvers | sed -e 's/\.//' -e 's/\./0/' -e 's/$/00/'` ;; 
  	* ) 
  	    perlvnum=`echo $perlvers | sed -e 's/\.//' -e 's/_//'` ;; 
  esac
-@@ -708,7 +711,9 @@
+@@ -708,7 +710,9 @@
  #define HAVE_PERL_DYNALOADER 1
  EOF
  
@@ -39,7 +47,7 @@
          ;;
      * )
          rc=no
-@@ -1028,7 +1033,7 @@
+@@ -1028,7 +1032,7 @@
      CFLAGS="-Wall -g -ggdb3"
      LDFLAGS="-g -ggdb3"
  else
@@ -48,7 +56,7 @@
      LDFLAGS="-g"
  fi
  x="enabled"
-@@ -1039,7 +1044,7 @@
+@@ -1039,7 +1043,7 @@
  
  
  else

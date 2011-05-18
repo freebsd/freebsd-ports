@@ -7,15 +7,13 @@
 
 PORTNAME=	eperl
 PORTVERSION=	2.2.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang www perl5
 MASTER_SITES=	${MASTER_SITE_OSSP}
 MASTER_SITE_SUBDIR=	tool/${PORTNAME}
 
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	Embedded Perl 5 Language
-
-BROKEN=		does not configure
 
 # User-controlled variables list
 # INSTALL_ALSO_AS_SSSL
@@ -48,6 +46,11 @@ BROKEN=		Does not compile on sparc64: duplicate definition of strndup
 .endif
 .endif
 
+# Perl 5.14 changed some symbol names
+.if ${PERL_LEVEL} >= 501400
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-eperl_perl5.c
+.endif
+
 test:
 	@(cd ${WRKSRC}; ${MAKE} test)
 
@@ -55,6 +58,8 @@ post-patch:
 	@${FIND} ${WRKSRC} -type f -name "*.[ch]" | \
 		${XARGS} ${GREP} -l strnstr | \
 		${XARGS} ${PERL} -pi -e 's|strnstr|ePerl_strnstr|g'
+	@${REINPLACE_CMD} -e 's#%%PERL_VERSION%%#${PERL_VERSION}#g' \
+		${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/eperl ${PREFIX}/bin/eperl
