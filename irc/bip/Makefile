@@ -13,6 +13,7 @@ MASTER_SITES=	https://projects.duckcorp.org/attachments/download/39/
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A simple IRC proxy with SSL support
 
+LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
