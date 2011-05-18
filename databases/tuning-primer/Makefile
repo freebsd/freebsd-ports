@@ -7,6 +7,7 @@
 
 PORTNAME=	tuning-primer
 PORTVERSION=	1.6.r0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://launchpadlibrarian.net/71733465/
 DISTNAME=	${PORTNAME}.sh
