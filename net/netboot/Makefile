@@ -14,6 +14,8 @@ COMMENT=	Netboot with Packet or NDIS-2 drivers
 
 LIB_DEPENDS=	lzo2.2:${PORTSDIR}/archivers/lzo2
 
+BROKEN=		does not build
+
 USE_BDB=	42+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
