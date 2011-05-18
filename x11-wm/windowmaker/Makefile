@@ -56,7 +56,7 @@ OPTIONS=	WM_SINGLE_CLICK "Add single-click option to WPrefs menu" on \
 		WM_LINGUAS "Enable support for additional locales" off \
 		DOCKHOTKEYS "Enable support for hotkeys on docks" off
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
 CONFIGURE_ENV+=	ac_cv_c_inline_asm=no
