@@ -489,6 +489,7 @@
     SUBDIR += mixer
     SUBDIR += mkfile
     SUBDIR += mkfwimage
+    SUBDIR += mkntpwd
     SUBDIR += mksunbootcd
     SUBDIR += mktool
     SUBDIR += mmore
