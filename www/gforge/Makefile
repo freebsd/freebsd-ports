@@ -16,10 +16,12 @@ COMMENT=	Open Source collaborative software development tool
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
+LICENSE=		GPLv2
+
 USE_BZIP2=		YES
 USE_PERL5=		YES
 HAS_CONFIGURE=		YES
-USE_APACHE=		13
+USE_APACHE=		1.3+
 USE_AUTOTOOLS=	autoconf
 NO_BUILD=		YES
 USE_PHP=		pgsql session pcre
@@ -31,9 +33,9 @@ NO_PACKAGE=	The configure process uses hostname
 .include <bsd.port.pre.mk>
 
 .if ${PHP_VER} == 4
-RUN_DEPENDS+=	${LOCALBASE}/share/jpgraph/imgdata_balls.inc:${PORTSDIR}/graphics/jpgraph
+RUN_DEPENDS+=	${LOCALBASE}/share/jpgraph/imgdata_balls.inc.php:${PORTSDIR}/graphics/jpgraph
 .else
-RUN_DEPENDS+=	${LOCALBASE}/share/jpgraph/imgdata_balls.inc:${PORTSDIR}/graphics/jpgraph2
+RUN_DEPENDS+=	${LOCALBASE}/share/jpgraph/imgdata_balls.inc.php:${PORTSDIR}/graphics/jpgraph2
 .endif
 
 .if defined(WITH_JABBER)
