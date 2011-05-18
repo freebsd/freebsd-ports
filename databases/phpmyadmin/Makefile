@@ -22,7 +22,7 @@ IGNORE_WITH_MYSQL=	323 40 41
 USE_BZIP2=	yes
 NO_BUILD=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)
-USE_PHP=	ctype mysql session filter mbstring json
+USE_PHP=	ctype mysql session filter mbstring json spl
 .endif
 
 # Note: default settings will pull in X11 client support.  If you don't
