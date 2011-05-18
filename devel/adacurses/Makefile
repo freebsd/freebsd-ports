@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		adacurses
-PORTVERSION=		5.8
+PORTVERSION=		5.9
 CATEGORIES=		devel
 MASTER_SITES=		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	ncurses
@@ -14,6 +14,8 @@ DISTNAME=		ncurses-${PORTVERSION}
 
 MAINTAINER=		sylvio@FreeBSD.org
 COMMENT=		Curses library for Ada
+
+LICENSE=	MIT
 
 BUILD_DEPENDS=		gnat:${PORTSDIR}/lang/gnat
 
