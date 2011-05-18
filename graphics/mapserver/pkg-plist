@@ -2,7 +2,6 @@ bin/legend
 bin/scalebar
 bin/shp2img
 bin/shp2mysql
-bin/shp2pdf
 bin/shptree
 bin/shptreetst
 bin/shptreevis
