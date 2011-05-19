@@ -6,7 +6,7 @@
 
 PORTNAME=	scribe
 PORTVERSION=	2.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://cloud.github.com/downloads/facebook/scribe/
 
@@ -32,7 +32,6 @@ USE_AUTOTOOLS=	aclocal automake autoconf
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_RC_SUBR=	${PORTNAME}
-SUB_LIST+=	RM=${RM}
 
 post-extract:
 	${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
