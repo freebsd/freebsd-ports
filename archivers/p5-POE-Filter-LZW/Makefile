@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A POE filter wrapped around Compress::LZW
 
+BUILD_DEPENDS=	p5-Compress-LZW>=0:${PORTSDIR}/archivers/p5-Compress-LZW \
+		p5-POE>=0.38:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS=	p5-Compress-LZW>=0:${PORTSDIR}/archivers/p5-Compress-LZW \
 		p5-POE>=0.38:${PORTSDIR}/devel/p5-POE
 
