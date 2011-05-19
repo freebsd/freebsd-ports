@@ -9235,6 +9235,7 @@ mkitalic                        ports/x11-fonts/mkitalic
 mkmf                            ports/devel/mkmf
 mknbi                           ports/net/mknbi
 mknmz-wwwoffle                  ports/www/mknmz-wwwoffle
+mkntpwd                         ports/sysutils/mkntpwd
 mksh                            ports/shells/mksh
 mksunbootcd                     ports/sysutils/mksunbootcd
 mktool                          ports/sysutils/mktool
