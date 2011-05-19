@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Teng
-PORTVERSION=	0.10
+PORTVERSION=	0.11
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:NEKOKAK
@@ -23,7 +23,7 @@ RUN_DEPENDS=	\
 	p5-DBIx-TransactionManager>=1.06:${PORTSDIR}/databases/p5-DBIx-TransactionManager \
 	p5-Data-Page>0:${PORTSDIR}/databases/p5-Data-Page \
 	p5-Data-Page-NoTotalEntries>=0.02:${PORTSDIR}/devel/p5-Data-Page-NoTotalEntries \
-	p5-SQL-Maker>=0.08:${PORTSDIR}/databases/p5-SQL-Maker
+	p5-SQL-Maker>=0.14:${PORTSDIR}/databases/p5-SQL-Maker
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
