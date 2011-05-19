@@ -7,6 +7,7 @@
 
 PORTNAME=	cx88
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	multimedia kld
 MASTER_SITES=	ftp://corona.homeunix.net/ports/cx88/
 
@@ -30,6 +31,12 @@ IGNORE=		requires FreeBSD 7.0-RELEASE or later
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source files
+.endif
+
+KMEM_ALLOC_ATTR != ${GREP} -r "kmem_alloc_attr" ${SRC_BASE}/sys
+
+.if ${KMEM_ALLOC_ATTR} == ""
+IGNORE=	requires kernel support for kmem_alloc_attr() (FreeBSD 7.4+, FreeBSD 8.1+)
 .endif
 
 .include <bsd.port.post.mk>
