@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	free-sa
-PORTVERSION=	2.0.0b4.p7
+PORTVERSION=	2.0.0b4.8
 CATEGORIES=	www
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	free-sa/free-sa-dev/2.0.0b4p6/
+MASTER_SITE_SUBDIR=	free-sa/free-sa-dev/2.0.0b4p8/
 PKGNAMESUFFIX=	-devel
-DISTNAME=	free-sa-2.0.0b4p6
+DISTNAME=	free-sa-2.0.0b4p8
 
 MAINTAINER=	moiseev@mezonplus.ru
 COMMENT=	Statistic analyzer for daemons log files similar to SARG
