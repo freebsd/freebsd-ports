@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Any-Moose
-PORTVERSION=	0.13
+PORTVERSION=	0.14
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/S/SA/SARTAK
+MASTER_SITE_SUBDIR=	CPAN:SARTAK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -24,12 +24,14 @@ OPTIONS=	MOOSE "Use Moose" off \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MOOSE)
+.if !defined(WITHOUT_MOOSE)
 RUN_DEPENDS+=	p5-Moose>0:${PORTSDIR}/devel/p5-Moose
 .endif
 
 .if defined(WITH_MOUSE)
 RUN_DEPENDS+=	p5-Mouse>=0.40:${PORTSDIR}/devel/p5-Mouse
 .endif
+
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.post.mk>
