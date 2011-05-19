@@ -1,11 +1,11 @@
---- libgammu/device/devfunc.c.orig	Fri Feb 23 23:50:01 2007
-+++ libgammu/device/devfunc.c	Tue Apr 10 23:46:39 2007
-@@ -19,6 +19,8 @@
+--- libgammu/device/devfunc.c.orig	2010-07-12 15:51:05.000000000 +0400
++++ libgammu/device/devfunc.c	2011-01-28 13:21:17.938543134 +0300
+@@ -15,6 +15,8 @@
  #include <string.h>
  #include <fcntl.h>
  #include <stdlib.h>
 +#include <sys/stat.h>
 +#include <sys/socket.h>
  #ifdef WIN32
+ #  include <winsock2.h>
  #  include <io.h>
- #else

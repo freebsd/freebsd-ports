@@ -1,6 +1,6 @@
---- CMakeLists.txt.orig	2009-02-25 19:46:07.000000000 +0300
-+++ CMakeLists.txt	2009-03-11 13:04:48.000000000 +0300
-@@ -547,7 +547,7 @@
+--- CMakeLists.txt.orig	2011-03-15 13:15:29.000000000 -0300
++++ CMakeLists.txt	2011-05-19 10:21:23.000000000 -0300
+@@ -640,7 +640,7 @@
  set (INSTALL_DOC_DIR "share/doc/gammu" CACHE STRING "Path for documentation installation")
  mark_as_advanced (INSTALL_DOC_DIR)
  
