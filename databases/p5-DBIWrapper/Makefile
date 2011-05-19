@@ -7,6 +7,7 @@
 
 PORTNAME=	DBIWrapper
 PORTVERSION=	0.24
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	SF
 PKGNAMEPREFIX=	p5-
@@ -17,7 +18,9 @@ COMMENT=	Perl extension for generic DBI database access
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
 		${SITE_PERL}/XML/SAX.pm:${PORTSDIR}/textproc/p5-XML-SAX \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
+		${SITE_PERL}/Spreadsheet/WriteExcel.pm:${PORTSDIR}/textproc/p5-Spreadsheet-WriteExcel \
+		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
