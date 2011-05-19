@@ -1,0 +1,10 @@
+There are a lot of XSS, a security hole typically found in web
+applications, caused by incorrect (or lack of) JavaScript
+escaping.  This module is aimed to provide a secure JavaScript
+escaping to avoid XSS with JavaScript values.
+
+The escaping routine JavaScript::Value::Escape provides escapes q!"!,
+q!'!, q!&!, q!=!, q!-!, q!+!, q!;!, q!<!, q!>!, q!/!, q!\! and control
+characters to JavaScript unicode entities like "\u0026".
+
+WWW: http://search.cpan.org/dist/JavaScript-Value-Escape/
