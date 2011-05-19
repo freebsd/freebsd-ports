@@ -24,6 +24,8 @@ LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
 OPTIONS=	FAAD "Include FAAD mpeg4 codec support" on \
 		VORBIS "Include Ogg Vorbis codec support" on
 
+LICENSE=	GPLv2
+
 USE_GNOME=	glib20 gnometarget
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes

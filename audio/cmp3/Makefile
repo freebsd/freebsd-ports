@@ -17,6 +17,8 @@ COMMENT=	An ncurses based frontend to mpg123
 
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
+LICENSE=	GPLv2
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-kenrevs
 
 USE_GMAKE=	yes

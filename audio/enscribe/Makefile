@@ -21,6 +21,8 @@ LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 		png.6:${PORTSDIR}/graphics/png \
 		freetype.9:${PORTSDIR}/print/freetype2
 
+LICENSE=	GPLv2
+
 PORTDOCS=	README
 PLIST_FILES=	bin/enscribe
 

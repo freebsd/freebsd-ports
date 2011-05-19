@@ -14,6 +14,8 @@ DISTNAME=	abcMIDI-${PORTVERSION:S/./-/g}
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Convert abc music files to MIDI and PostScript
 
+LICENSE=	GPLv2
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 EXTRACT_BEFORE_ARGS=	-aqo

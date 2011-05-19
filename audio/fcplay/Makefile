@@ -18,6 +18,8 @@ COMMENT=	Future Composer Reference Player
 
 BUILD_DEPENDS=	${LOCALBASE}/include/sidplay/compconf.h:${PORTSDIR}/audio/libsidplay
 
+LICENSE=	GPLv2
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CXXFLAGS+=	-I${LOCALBASE}/include

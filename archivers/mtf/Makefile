@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A Unix reader for the Microsoft Tape Format used by NT Backup
 
+LICENSE=	GPLv2
+
 ALL_TARGET=	# empty
 PLIST_FILES=	bin/mtf
 PORTDOCS=	README

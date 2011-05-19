@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	OpenDarwin XML eXtensible ARchiver
 
+LICENSE=	BSD
+
 USE_LDCONFIG=	yes
 
 USE_GNOME=	libxml2

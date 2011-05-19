@@ -27,6 +27,8 @@ LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 .endif
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib" \
 		CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include ${DB_INC}"
