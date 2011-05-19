@@ -34,7 +34,7 @@ OPTIONS=	LPR	"Use lpr as printing system"		on \
 
 .if defined(WITH_CUPS)
 CONFIGURE_ARGS+=--enable-cups
-LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
+LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
 PLIST_SUB+=	CUPS=""
 .else
 CONFIGURE_ARGS+=--disable-cups
