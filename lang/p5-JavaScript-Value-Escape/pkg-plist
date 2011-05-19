@@ -1,0 +1,7 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript/Value/Escape/.packlist
+%%SITE_PERL%%/JavaScript/Value/Escape.pm
+@dirrm %%SITE_PERL%%/JavaScript/Value
+@dirrm %%SITE_PERL%%/JavaScript
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript/Value/Escape
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript/Value
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript
