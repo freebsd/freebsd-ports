@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	A POE filter wrapped around Compress::LZO
 
+BUILD_DEPENDS=	p5-Compress-LZO>=1.08:${PORTSDIR}/archivers/p5-Compress-LZO \
+		p5-POE>=0.38:${PORTSDIR}/devel/p5-POE
 RUN_DEPENDS=	p5-Compress-LZO>=1.08:${PORTSDIR}/archivers/p5-Compress-LZO \
 		p5-POE>=0.38:${PORTSDIR}/devel/p5-POE
 
