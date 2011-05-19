@@ -7,6 +7,7 @@
 
 PORTNAME=	parallel
 PORTVERSION=	20110422
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU
 
@@ -27,6 +28,7 @@ PLIST_FILES=	bin/parallel bin/sem bin/sql bin/niceload
 PORTDOCS=	parallel.html sem.html sql.html niceload.html
 
 post-patch:
+	@${REINPLACE_CMD} -e '1 s|/usr/bin/perl|${PERL}|' ${WRKSRC}/src/parallel
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/^install-data-am:/ s|install-docDATA||' ${WRKSRC}/src/Makefile.in
 .endif
