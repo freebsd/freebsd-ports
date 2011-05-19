@@ -562,6 +562,7 @@
     SUBDIR += pam_authsrv
     SUBDIR += pam_bsdbioapi
     SUBDIR += pam_fprint
+    SUBDIR += pam_google_authenticator
     SUBDIR += pam_helper
     SUBDIR += pam_jail
     SUBDIR += pam_krb5
