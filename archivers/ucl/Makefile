@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.oberhumer.com/opensource/ucl/download/
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A data compression library with low memory usage
 
+LICENSE=	GPLv2
+
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

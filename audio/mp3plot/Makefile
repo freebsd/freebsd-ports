@@ -19,6 +19,8 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 OPTIONS=	GD "Enable support for GD library" on \
 		IMAGEMAGICK "Enable support for Magick++" off
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--with-boost-program-options=boost_program_options \

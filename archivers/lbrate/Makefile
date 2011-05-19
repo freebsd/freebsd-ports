@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	utils/compress
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Extract/decompress CP/M LBR archives
 
+LICENSE=	GPLv2
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CPPFLAGS} ${CFLAGS} ${LDFLAGS}"
 
 MAN1=		lbrate.1

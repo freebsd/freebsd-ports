@@ -14,6 +14,8 @@ MASTER_SITES=	http://download.gna.org/mhwaveedit/
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A graphical program for editing sound files
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnometarget gtk20
 WANT_GNOME=	yes

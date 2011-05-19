@@ -20,6 +20,8 @@ RUN_DEPENDS=	httperf:${PORTSDIR}/benchmarks/httperf \
 		gawk:${PORTSDIR}/lang/gawk \
 		gnuplot:${PORTSDIR}/math/gnuplot
 
+LICENSE=	GPLv2
+
 USE_PERL5=	yes
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" DEBUG_FLAGS= \

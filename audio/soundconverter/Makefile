@@ -15,7 +15,8 @@ COMMENT=	The sound conversion application for the GNOME environment
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gst-0.10/gst/__init__.py:${PORTSDIR}/multimedia/py-gstreamer
 
-#USE_BZIP2=	yes
+LICENSE=	GPLv3
+
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes

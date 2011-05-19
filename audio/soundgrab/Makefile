@@ -23,6 +23,8 @@ RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox \
 		${SITE_PERL}/${PERL_ARCH}/Term/ReadLine/Gnu.pm:${PORTSDIR}/devel/p5-ReadLine-Gnu \
 		${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
 
+LICENSE=	GPLv2
+
 USE_PERL5=	yes
 NO_BUILD=	yes
 

@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Tool to manipulate ID3 tags for MP3 files
 
+LICENSE=	GPLv2
+
 WANT_GNOME=	yes
 
 PORTDOCS=	ChangeLog README mp3info.txt
