@@ -31,7 +31,7 @@ GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
-CONF_FILES=	clamd freshclam
+CLAM_CONF_FILES=	clamd freshclam
 
 LICENSE=	GPLv2
 
@@ -159,7 +159,7 @@ CONFIGURE_ARGS+=--disable-llvm
 
 .if defined(WITH_MILTER)
 USE_RC_SUBR+=	clamav-milter
-CONF_FILES+=	clamav-milter
+CLAM_CONF_FILES+=	clamav-milter
 . if defined(WITH_LDAP) && exists(${LOCALBASE}/lib/libldap.so)
 USE_OPENLDAP=	yes
 LDFLAGS+=	-lldap
@@ -236,7 +236,7 @@ pre-su-install:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/clamav-config.h ${PREFIX}/include
-.for c in ${CONF_FILES}
+.for c in ${CLAM_CONF_FILES}
 	@[ -f ${PREFIX}/etc/${c}.conf ] || \
 		${CP} -v ${PREFIX}/etc/${c}.conf.default ${PREFIX}/etc/${c}.conf
 .endfor
