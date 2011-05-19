@@ -10,7 +10,7 @@ MASTERDIR=	${.CURDIR}/../../x11/eterm
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	X11 terminal emulator based on rxvt/xterm that supports traditional Chinese (Big5)
 
-EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-configure.in
+EXTRA_PATCHES=	${.CURDIR}/files/extra-patch-configure
 
 CONFIGURE_ARGS=	--enable-trans --enable-utmp \
 		--enable-xim --with-theme-update \
