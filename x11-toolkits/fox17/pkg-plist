@@ -5,8 +5,7 @@ bin/Adie.stx
 bin/PathFinder
 bin/calculator
 bin/ControlPanel
-bin/fox-config
-libdata/pkgconfig/fox.pc
+libdata/pkgconfig/fox17.pc
 lib/libCHART-%%MAJORVER%%.a
 lib/libCHART-%%MAJORVER%%.la
 lib/libCHART-%%MAJORVER%%.so
@@ -149,6 +148,7 @@ include/fox-%%MAJORVER%%/FXGLTriangleMesh.h
 include/fox-%%MAJORVER%%/FXGLViewer.h
 include/fox-%%MAJORVER%%/FXGLVisual.h
 include/fox-%%MAJORVER%%/FXGZFileStream.h
+include/fox-%%MAJORVER%%/FXGauge.h
 include/fox-%%MAJORVER%%/FXGradientBar.h
 include/fox-%%MAJORVER%%/FXGroupBox.h
 include/fox-%%MAJORVER%%/FXHash.h
@@ -203,6 +203,7 @@ include/fox-%%MAJORVER%%/FXMenuSeparator.h
 include/fox-%%MAJORVER%%/FXMenuTitle.h
 include/fox-%%MAJORVER%%/FXMessageBox.h
 include/fox-%%MAJORVER%%/FXMessageChannel.h
+include/fox-%%MAJORVER%%/FXMetaClass.h
 include/fox-%%MAJORVER%%/FXObject.h
 include/fox-%%MAJORVER%%/FXObjectList.h
 include/fox-%%MAJORVER%%/FXOptionMenu.h
@@ -431,8 +432,6 @@ include/fox-%%MAJORVER%%/xincs.h
 %%PORTDOCS%%%%DOCSDIR%%/html/screenshots/cometassay.jpg
 %%PORTDOCS%%%%DOCSDIR%%/html/screenshots/contact.gif
 %%PORTDOCS%%%%DOCSDIR%%/html/screenshots/dirdialog.png
-%%PORTDOCS%%%%DOCSDIR%%/html/screenshots/dlgedit1.png
-%%PORTDOCS%%%%DOCSDIR%%/html/screenshots/dlgedit2.png
 %%PORTDOCS%%%%DOCSDIR%%/html/screenshots/emso_screen.png
 %%PORTDOCS%%%%DOCSDIR%%/html/screenshots/emso_screen_small.jpg
 %%PORTDOCS%%%%DOCSDIR%%/html/screenshots/filedialog.png
