@@ -5,3 +5,4 @@ Only the routines relating the solving of polynomials are exported.
 It exists to provide that function to "tkscope" in Audio::Data.
 
 WWW:	http://sources.redhat.com/gsl/
+	http://search.cpan.org/dist/Math-GSL/
