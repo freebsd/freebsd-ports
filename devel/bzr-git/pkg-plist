@@ -117,6 +117,12 @@ bin/bzr-upload-pack
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_transportgit.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_transportgit.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_transportgit.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_versionedfiles.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_versionedfiles.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_versionedfiles.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_workingtree.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_workingtree.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_workingtree.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/transportgit.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/transportgit.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/transportgit.pyo
