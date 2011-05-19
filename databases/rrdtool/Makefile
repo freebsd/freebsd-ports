@@ -19,8 +19,11 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		xml2:${PORTSDIR}/textproc/libxml2 \
 		pangocairo-1\.0.0:${PORTSDIR}/x11-toolkits/pango
 
+LICENSE=	GPLv2
+
 CONFLICTS=	rrdtool-1.0* rrdtool-1.2*
 
+USE_RC_SUBR=	rrdcached
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
