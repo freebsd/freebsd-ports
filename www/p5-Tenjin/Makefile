@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Tenjin
-PORTVERSION=	0.062
+PORTVERSION=	0.070001
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,6 +15,7 @@ MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for fast templating engine with support for embedded
 
 RUN_DEPENDS=	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
