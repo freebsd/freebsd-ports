@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	gtk-
 PKGNAMESUFFIX=	-engine
 DISTNAME=	${PORTNAME}-gtk-${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	kubito@gmail.com
 COMMENT=	Oxygen-Gtk engine and theme
 
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
