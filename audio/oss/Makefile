@@ -41,7 +41,7 @@ MAN7=		oss_ali5455.7 oss_atiaudio.7 oss_audigyls.7 \
 		oss_via97.7 oss_ymf7xx.7 osscore.7
 MAN8=		ossdetect.8 ossdevlinks.8 savemixer.8 vmixctl.8
 
-CONF_FILES=	oss_audigyls oss_audioloop oss_cs461x oss_emu10k1x \
+OSS_CONF_FILES=	oss_audigyls oss_audioloop oss_cs461x oss_emu10k1x \
 		oss_envy24 oss_envy24ht oss_fmedia oss_hdaudio \
 		oss_ich oss_imux oss_madi oss_midiloop oss_sblive \
 		oss_sbpci oss_sbxfi oss_trident oss_usb oss_userdev \
@@ -93,7 +93,7 @@ do-install:
 	${INSTALL_DATA} ${PROTO_OSSLIBDIR}/sysfiles.list ${PREFIX}/lib/oss/
 	${INSTALL_DATA} ${PROTO_OSSLIBDIR}/version.dat ${PREFIX}/lib/oss/
 	-@${MKDIR} ${PREFIX}/lib/oss/conf 2>/dev/null
-.for CONF_FILE in ${CONF_FILES}
+.for CONF_FILE in ${OSS_CONF_FILES}
 	${INSTALL_DATA} ${PROTO_OSSLIBDIR}/conf/${CONF_FILE}.conf \
 	    ${PREFIX}/lib/oss/conf/${CONF_FILE}.conf.sample
 .endfor
