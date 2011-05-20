@@ -1,0 +1,14 @@
+
+$FreeBSD$
+
+--- lib/default_conf.h.in.orig
++++ lib/default_conf.h.in
+@@ -111,7 +111,7 @@
+   }\n\
+ }\n\
+ \n\
+-include ('" SYSCONFDIR "/conf.d/*.conf')\n\
++include ('" SYSCONFDIR "/%%GMONDCONFDIR%%/*.conf')\n\
+ \n\
+ /* The old internal 2.5.x metric array has been replaced by the following\n\
+    collection_group directives.  What follows is the default behavior for\n\

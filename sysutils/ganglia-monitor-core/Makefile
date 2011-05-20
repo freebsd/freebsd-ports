@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	monitor-core
-PORTVERSION=	3.1.1
-PORTREVISION=	7
+PORTVERSION=	3.1.7
 CATEGORIES=	sysutils net parallel
 MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}%20%28Wien%29
 PKGNAMEPREFIX=	ganglia-
@@ -31,9 +30,10 @@ USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure libmetrics/configure
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${_CFLAGS}" LDFLAGS="${_LDFLAGS}"
-_CFLAGS=	${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-_LDFLAGS=	${LDFLAGS} -L${LOCALBASE}/lib
+CONFIGURE_ARGS=	--enable-setuid=ganglia --enable-setgid=ganglia
+CONFIGURE_ENV=	GANGLIA_ACK_SYSCONFDIR=1 LDFLAGS="${LDFLAGS}"
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 SUB_FILES=	pkg-install
 
@@ -55,16 +55,9 @@ GMOND_CONF=	${WRKDIR}/gmond.conf
 
 .include <bsd.port.pre.mk>
 
-# The daemons should use seperate scripts, but prior to 6.1 they won't
-# run in the right order.  In those cases we use the old monolythic
-# script.
-.if (${OSVERSION} >= 700007 || ( ${OSVERSION} < 700000 && ${OSVERSION} >= 600101))
 USE_RC_SUBR=	gmond.sh
 .if defined (WITH_GMETAD)
 USE_RC_SUBR+=	gmetad.sh
-.endif
-.else
-USE_RC_SUBR=	ganglia.sh
 .endif
 
 .if defined (WITH_GMETAD)
@@ -88,30 +81,18 @@ MAN5=		gmond.conf.5
 CONF_DIR=	${PREFIX}/etc
 
 FIX_CONF_FILES=	README \
-		ganglia.pod \
 		mans/gmetad.1 \
-		mans/gmond.1 \
-		gmetad/cmdline.c \
-		gmetad/cmdline.h \
-		gmond/g25_config.h \
-		gmetric/cmdline.c \
-		gmetric/cmdline.h \
-		gmond/cmdline.c \
-		gmond/cmdline.h
-FIX_DB_FILES=	ganglia.pod \
-		gmetad/conf.c \
-		gmetad/gmetad.conf
-FIX_USER_FILES=	ganglia.pod \
-		gmetad/conf.c.in \
-		gmetad/conf.c \
-		gmetad/gmetad.conf \
-		gmetad/gmetad.conf.in \
+		mans/gmond.1
+FIX_GMOND_CONF_DIR=	\
+		gmond/modules/conf.d/modpython.conf.in \
+		gmond/modules/python/Makefile.in \
+		lib/default_conf.h.in
+# gmond.conf.5 and gmond.conf.html can be generated from conf.pod, but
+# doing so requires perl installed in the build stage.
+FIX_USER_FILES=	gmetad/gmetad.conf.in \
 		gmond/conf.pod \
 		gmond/gmond.conf.5 \
-		gmond/gmond.conf.html \
-		gmond/g25_config.c \
-		lib/libgmond.c \
-		lib/default_conf.h.in
+		gmond/gmond.conf.html
 
 MODULES=	modcpu.so \
 		moddisk.so \
@@ -126,8 +107,8 @@ MODULES=	modcpu.so \
 post-patch:
 	${REINPLACE_CMD} -e "s|/etc/ganglia/\(gm[a-z]*d.conf\)|${PREFIX}/etc/\1|g" \
 	    ${FIX_CONF_FILES:S|^|${WRKSRC}/|}
-	${REINPLACE_CMD} -e "s|/var/lib/ganglia|/var/db/ganglia|g" \
-	    ${FIX_DB_FILES:S|^|${WRKSRC}/|}
+	${REINPLACE_CMD} -e "s|%%GMONDCONFDIR%%|gmond.conf.d|g" \
+	    ${FIX_GMOND_CONF_DIR:S|^|${WRKSRC}/|}
 	${REINPLACE_CMD} -e "s|nobody|ganglia|g" \
 	    ${FIX_USER_FILES:S|^|${WRKSRC}/|}
 

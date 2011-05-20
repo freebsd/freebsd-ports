@@ -1,0 +1,13 @@
+
+$FreeBSD$
+
+--- gmond/modules/conf.d/modpython.conf.in.orig
++++ gmond/modules/conf.d/modpython.conf.in
+@@ -13,6 +13,6 @@
+   }
+ }
+ 
+-include ('@sysconfdir@/conf.d/*.pyconf')
++include ('@sysconfdir@/%%GMONDCONFDIR%%/*.pyconf')
+ 
+ 
