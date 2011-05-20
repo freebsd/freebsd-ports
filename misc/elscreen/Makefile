@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	elscreen
-PORTVERSION=	1.4.5
-PORTREVISION=	6
+PORTVERSION=	1.4.6
 CATEGORIES=	misc elisp
 MASTER_SITES=	ftp://ftp.morishima.net/pub/morishima.net/naoto/ElScreen/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	GNU screen like utility on Emacsen
 
 USE_EMACS=	yes
