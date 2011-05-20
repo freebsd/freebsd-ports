@@ -1,0 +1,14 @@
+--- Xvnc/config/cf/Imake.cf.orig	Thu Feb  8 03:49:57 2001
++++ Xvnc/config/cf/Imake.cf	Wed Nov 20 21:32:23 2002
+@@ -154,6 +154,11 @@
+ #  define i386Architecture
+ #  undef i386
+ # endif
++# ifdef __alpha__
++#  define AlphaBsdArchitecture
++#  define AlphaArchitecture
++#  undef __alpha__
++# endif
+ #endif /* __FreeBSD__ */
+ 
+ #ifdef AMOEBA
