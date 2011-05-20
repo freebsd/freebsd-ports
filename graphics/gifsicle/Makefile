@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	gifsicle
-PORTVERSION=	1.61
+PORTVERSION=	1.62
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.lcdf.org/gifsicle/
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Manipulates GIF images and animations
+
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 
