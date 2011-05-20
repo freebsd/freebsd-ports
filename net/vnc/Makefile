@@ -14,7 +14,7 @@ DISTNAME=	vnc-4_1_3-unixsrc
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:vnc
 DIST_SUBDIR=	xc
 
-MAINTAINER=	m.tsatsenko@gmail.com
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
 
 RUN_DEPENDS=	xorg-fonts>=7.2:${PORTSDIR}/x11-fonts/xorg-fonts \
