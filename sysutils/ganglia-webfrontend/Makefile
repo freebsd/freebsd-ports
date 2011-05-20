@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	webfrontend
-PORTVERSION=	3.1.1
-PORTREVISION=	3
+PORTVERSION=	3.1.7
 CATEGORIES=	sysutils net parallel www
 MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}%20%28Wien%29
 PKGNAMEPREFIX=	ganglia-
@@ -28,6 +27,7 @@ SUB_LIST+=	WEBFRONTDIR="${WEBFRONTDIR}"
 PLIST_SUB+=	WEBFRONTDIR="${WEBFRONTDIR}"
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	GANGLIA_ACK_SYSCONFDIR=1
 CONFIGURE_WRKSRC=	${WRKDIR}/${DISTNAME}
 
 USE_PHP=	gd pcre xml ctype
@@ -45,7 +45,9 @@ PKGOPTS=	${FILESDIR}/pkg-opts
 EXCEPTFILES=	AUTHORS \
 		ChangeLog \
 		COPYING \
+		Makefile \
 		Makefile.am \
+		Makefile.in \
 		addons \
 		webfrontend.spec \
 		version.php.in
@@ -65,9 +67,10 @@ post-extract:
 .endif
 
 post-patch:
-	@ ${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/conf.php
+	@ ${REINPLACE_CMD} -e "s|%%LOCALBASE%%|${LOCALBASE}|g" ${WRKSRC}/conf.php.in
 
 do-build:
+	@cd ${WRKSRC} && make install
 	@${MKDIR} -m 0755 ${TMP_WEBFRONTDIR}
 	@cd ${WRKSRC} && ${FIND} * \( -name conf.php\* \
 	    ${EXCEPTFILES:S/^/-o -name /} -o -name \*.orig \) \
@@ -87,7 +90,7 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 build-plist:
-	${RM} ${PLIST}
+	@${RM} ${PLIST}
 	@${ECHO_CMD} '@unexec cmp -s %D/%%WEBFRONTDIR%%/conf.php %D/%%WEBFRONTDIR%%/conf.php.sample && rm -f %D/%%WEBFRONTDIR%%/conf.php' >> ${PLIST}
 	@${FIND} ${TMP_WEBFRONTDIR}/* -type f | \
 	    ${SED} -e 's|${TMP_WEBFRONTDIR}|%%WEBFRONTDIR%%|' | \
