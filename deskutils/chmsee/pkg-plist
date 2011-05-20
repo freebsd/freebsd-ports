@@ -4,13 +4,16 @@ share/applications/chmsee.desktop
 %%DATADIR%%/book-closed.png
 %%DATADIR%%/book-open.png
 %%DATADIR%%/chmsee-icon.png
-%%DATADIR%%/chmsee-splash.png
 %%DATADIR%%/default-prefs.js
 %%DATADIR%%/helpdoc.png
 %%DATADIR%%/hide-pane.png
 %%DATADIR%%/openfile-dialog.ui
 %%DATADIR%%/setup-window.ui
 %%DATADIR%%/show-pane.png
+share/icons/hicolor/16x16/mimetypes/chm.png
+share/icons/hicolor/32x32/mimetypes/chm.png
+share/icons/hicolor/48x48/mimetypes/chm.png
+share/icons/hicolor/scalable/mimetypes/chm.svg
 share/locale/bn/LC_MESSAGES/chmsee.mo
 share/locale/ca/LC_MESSAGES/chmsee.mo
 share/locale/cs/LC_MESSAGES/chmsee.mo
