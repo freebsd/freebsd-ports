@@ -114,11 +114,10 @@ lib/Net/FTP/RetrHandle.pm
 %%WWWDIR%%/icon-symlink.png
 %%WWWDIR%%/logo.gif
 %%WWWDIR%%/sorttable.js
-www/cgi-bin/BackupPC_Admin
+%%BPC_CGIDIR%%/BackupPC_Admin
 @rmtry %%ETCDIR%%/hosts.sample
 %%ETCDIR%%/config.pl.sample
-@dirrmtry %%ETCDIR%%
-@dirrmtry www/cgi-bin
+@dirrmtry %%BPC_CGIDIR%%
 @dirrmtry %%WWWDIR%%
 @dirrmtry share/doc/backuppc
 @dirrmtry lib/Net/FTP
@@ -133,8 +132,12 @@ www/cgi-bin/BackupPC_Admin
 @unexec echo
 @unexec echo "If you are permanently removing BackupPC, you should manually delete:"
 @unexec echo
-@unexec echo "	1) the backuppc user/group:	pw userdel backuppc"
-@unexec echo "	2) BackupPC configuration:	rm -rf %%PREFIX%%/%%ETCDIR%%"
-@unexec echo "	3) BackupPC data directory:	rm -rf /var/db/BackupPC"
-@unexec echo "	4) BackupPC logs directory:	rm -rf /var/log/BackupPC"
+@unexec echo "	- the backuppc user/group:	pw userdel backuppc"
+@unexec rmdir %D/%%ETCDIR%% 2>/dev/null || echo "	- BackupPC configuration:	rm -rf %D/%%ETCDIR%%"
+@unexec rmdir %%BPC_DATADIR%%/cpool 2>/dev/null || true
+@unexec rmdir %%BPC_DATADIR%%/pc 2>/dev/null || true
+@unexec rmdir %%BPC_DATADIR%%/pool 2>/dev/null || true
+@unexec rmdir %%BPC_DATADIR%%/trash 2>/dev/null || true
+@unexec rmdir %%BPC_DATADIR%% 2>/dev/null || echo "	- BackupPC data directory:	rm -rf %%BPC_DATADIR%%"
+@unexec rmdir /var/log/BackupPC 2>/dev/null || echo "	- BackupPC logs directory:	rm -rf /var/log/BackupPC"
 @unexec echo
