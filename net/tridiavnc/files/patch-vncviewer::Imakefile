@@ -1,0 +1,32 @@
+--- vncviewer/Imakefile.orig	Wed Oct 11 23:53:21 2000
++++ vncviewer/Imakefile	Wed Nov 20 22:16:14 2002
+@@ -8,9 +8,9 @@
+ 
+ #if defined(HPArchitecture)
+ INCLUDES = -I/usr/include/X11R6 -I/usr/contrib/X11R6/include \
+-	-I../include -I. -I../zlib
++	-I../include -I. -I/usr/local/include
+ #else
+-INCLUDES = -I../include -I. -I../zlib
++INCLUDES = -I../include -I. -I/usr/local/include
+ #endif
+ 
+ #if defined(AIXArchitecture)
+@@ -18,9 +18,9 @@
+ #endif
+ 
+ VNCAUTH_LIB = ../libvncauth/libvncauth.a
+-ZLIB_LIB = ../zlib/libz.a
++ZLIB_LIB = -lz
+ 
+-DEPLIBS = XawClientDepLibs $(VNCAUTH_LIB) $(ZLIB_LIB)
++DEPLIBS = XawClientDepLibs $(VNCAUTH_LIB)
+ LOCAL_LIBRARIES = XawClientLibs $(VNCAUTH_LIB) $(ZLIB_LIB) $(LOCAL_LIBPATH_OPTION)
+ 
+ SRCS = \
+@@ -41,4 +41,4 @@
+ 
+ OBJS = $(SRCS:.c=.o)
+ 
+-ComplexProgramTarget(vncviewer)
++ComplexProgramTargetNoMan(vncviewer)
