@@ -21,11 +21,11 @@ LIB_DEPENDS=	kdevplatforminterfaces.3:${PORTSDIR}/devel/kdevplatform
 BUILD_DEPENDS=	${KDE4_PREFIX}/bin/kdev-pg-qt:${PORTSDIR}/devel/kdevelop-pg-qt
 
 USE_BZIP2=	yes
+USE_CMAKE=	yes
+USE_GMAKE=	yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
-KDE4_BUILDENV=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib qtestlib \
-		moc_build qmake_build rcc_build uic_build
+QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	DOCS	"Integrate with PHP.net online documentation" on

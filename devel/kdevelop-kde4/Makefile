@@ -17,14 +17,11 @@ COMMENT=	Opensource IDE based on KDevPlatform, KDE and Qt libraries
 LIB_DEPENDS+=	kdevplatforminterfaces.3:${PORTSDIR}/devel/kdevplatform
 
 USE_BZIP2=	yes
+USE_CMAKE=	yes
+USE_GMAKE=	yes
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix workspace
-KDE4_BUILDENV=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib assistant assistantclient clucene \
-		dbus designer help gui multimedia network \
-		opengl qt3support qtestlib script sql svg \
-		scripttools webkit xml xmlpatterns phonon \
-		qmake_build moc_build uic_build rcc_build
+QT_COMPONENTS=	qmake_build moc_build uic_build rcc_build
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	OKTETA	"Install Okteta plugin" on \
