@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Dir/Self.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Dir/Self/.packlist
+@dirrmtry %%SITE_PERL%%/Dir
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dir/Self
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dir
