@@ -12676,6 +12676,7 @@ p5-JavaScript-Minifier-XS       ports/textproc/p5-JavaScript-Minifier-XS
 p5-JavaScript-RPC               ports/net/p5-JavaScript-RPC
 p5-JavaScript-SpiderMonkey      ports/lang/p5-JavaScript-SpiderMonkey
 p5-JavaScript-Squish            ports/lang/p5-JavaScript-Squish
+p5-JavaScript-Value-Escape      ports/lang/p5-JavaScript-Value-Escape
 p5-Jemplate                     ports/www/p5-Jemplate
 p5-Jifty                        ports/www/p5-Jifty
 p5-Jifty-DBI                    ports/databases/p5-Jifty-DBI
@@ -12687,6 +12688,7 @@ p5-Kwalify                      ports/textproc/p5-Kwalify
 p5-Kwiki                        ports/www/p5-Kwiki
 p5-LEGO-RCX                     ports/misc/p5-LEGO-RCX
 p5-LMAP-CID2SPF                 ports/mail/p5-LMAP-CID2SPF
+p5-LWP-Authen-OAuth             ports/www/p5-LWP-Authen-OAuth
 p5-LWP-Authen-Wsse              ports/www/p5-LWP-Authen-Wsse
 p5-LWP-ConnCache-MaxKeepAliveRequests  ports/www/p5-LWP-ConnCache-MaxKeepAliveRequests
 p5-LWP-MediaTypes               ports/www/p5-LWP-MediaTypes
@@ -13118,6 +13120,7 @@ p5-MouseX-ConfigFromFile        ports/devel/p5-MouseX-ConfigFromFile
 p5-MouseX-Getopt                ports/devel/p5-MouseX-Getopt
 p5-MouseX-Types                 ports/devel/p5-MouseX-Types
 p5-MouseX-Types-Path-Class      ports/devel/p5-MouseX-Types-Path-Class
+p5-Mozilla-CA                   ports/www/p5-Mozilla-CA
 p5-Multiplex-CMD                ports/devel/p5-Multiplex-CMD
 p5-Music-Audioscrobbler-MPD     ports/audio/p5-Music-Audioscrobbler-MPD
 p5-Music-Audioscrobbler-Submit  ports/audio/p5-Music-Audioscrobbler-Submit
@@ -13445,6 +13448,7 @@ p5-OpenCA-REQ                   ports/security/p5-OpenCA-REQ
 p5-OpenGL                       ports/graphics/p5-OpenGL
 p5-OpenOffice-OODoc             ports/textproc/p5-OpenOffice-OODoc
 p5-Oryx                         ports/databases/p5-Oryx
+p5-Ouch                         ports/devel/p5-Ouch
 p5-OurNet-BBS                   ports/net/p5-OurNet-BBS
 p5-OurNet-BBSAgent              ports/net/p5-OurNet-BBSAgent
 p5-PAR                          ports/devel/p5-PAR
@@ -16890,6 +16894,7 @@ p5-javascript-minifier-xs       ports/textproc/p5-JavaScript-Minifier-XS
 p5-javascript-rpc               ports/net/p5-JavaScript-RPC
 p5-javascript-spidermonkey      ports/lang/p5-JavaScript-SpiderMonkey
 p5-javascript-squish            ports/lang/p5-JavaScript-Squish
+p5-javascript-value-escape      ports/lang/p5-JavaScript-Value-Escape
 p5-je                           ports/www/p5-JE
 p5-jemplate                     ports/www/p5-Jemplate
 p5-jifty                        ports/www/p5-Jifty
@@ -17035,6 +17040,7 @@ p5-log-tracemessages            ports/devel/p5-Log-TraceMessages
 p5-logfile-rotate               ports/devel/p5-Logfile-Rotate
 p5-lucene                       ports/textproc/p5-Lucene
 p5-luka                         ports/devel/p5-Luka
+p5-lwp-authen-oauth             ports/www/p5-LWP-Authen-OAuth
 p5-lwp-authen-wsse              ports/www/p5-LWP-Authen-Wsse
 p5-lwp-conncache-maxkeepaliverequests  ports/www/p5-LWP-ConnCache-MaxKeepAliveRequests
 p5-lwp-mediatypes               ports/www/p5-LWP-MediaTypes
@@ -17353,6 +17359,7 @@ p5-mousex-configfromfile        ports/devel/p5-MouseX-ConfigFromFile
 p5-mousex-getopt                ports/devel/p5-MouseX-Getopt
 p5-mousex-types                 ports/devel/p5-MouseX-Types
 p5-mousex-types-path-class      ports/devel/p5-MouseX-Types-Path-Class
+p5-mozilla-ca                   ports/www/p5-Mozilla-CA
 p5-mp3-find                     ports/audio/p5-MP3-Find
 p5-mp3-id3v1tag                 ports/audio/p5-MP3-ID3v1Tag
 p5-mp3-info                     ports/audio/p5-MP3-Info
@@ -17698,6 +17705,7 @@ p5-orlite                       ports/databases/p5-ORLite
 p5-orlite-migrate               ports/databases/p5-ORLite-Migrate
 p5-oryx                         ports/databases/p5-Oryx
 p5-orz                          ports/devel/p5-orz
+p5-ouch                         ports/devel/p5-Ouch
 p5-ournet-bbs                   ports/net/p5-OurNet-BBS
 p5-ournet-bbsagent              ports/net/p5-OurNet-BBSAgent
 p5-pQuery                       ports/www/p5-pQuery
@@ -19160,6 +19168,7 @@ pam_alreadyloggedin             ports/security/pam_alreadyloggedin
 pam_authsrv                     ports/security/pam_authsrv
 pam_bsdbioapi                   ports/security/pam_bsdbioapi
 pam_fprint                      ports/security/pam_fprint
+pam_google_authenticator        ports/security/pam_google_authenticator
 pam_helper                      ports/security/pam_helper
 pam_jail                        ports/security/pam_jail
 pam_ldap                        ports/security/pam_ldap
