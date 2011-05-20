@@ -8,6 +8,7 @@
     SUBDIR += apollon
     SUBDIR += azureus
     SUBDIR += azureus2
+    SUBDIR += bitcoin
     SUBDIR += bitflu
     SUBDIR += bittyrant
     SUBDIR += bnbt
