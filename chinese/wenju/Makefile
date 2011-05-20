@@ -17,6 +17,10 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
 USE_LDCONFIG=	yes
 
+OPTIONS=	NLS	"Build with Native Language Support"	on
+
+.include <bsd.port.options.mk>
+
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
