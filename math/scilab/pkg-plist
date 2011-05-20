@@ -8,6 +8,11 @@ bin/scilab-bin
 bin/scilab-cli
 bin/scilab-cli-bin
 libdata/pkgconfig/scilab.pc
+share/applications/scilab-adv-cli.desktop
+share/applications/scilab-cli.desktop
+share/applications/scilab.desktop
+%%DATADIR%%/contrib/toolbox_skeleton/DESCRIPTION
+%%DATADIR%%/contrib/toolbox_skeleton/DESCRIPTION-FUNCTIONS
 %%DATADIR%%/contrib/toolbox_skeleton/builder.sce
 %%DATADIR%%/contrib/toolbox_skeleton/changelog.txt
 %%DATADIR%%/contrib/toolbox_skeleton/demos/c_sum.dem.sce
@@ -21,6 +26,7 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/contrib/toolbox_skeleton/help/en_US/build_help.sce
 %%DATADIR%%/contrib/toolbox_skeleton/help/en_US/c_sub.xml
 %%DATADIR%%/contrib/toolbox_skeleton/help/en_US/c_sum.xml
+%%DATADIR%%/contrib/toolbox_skeleton/help/en_US/c_multiplybypi.xml
 %%DATADIR%%/contrib/toolbox_skeleton/help/en_US/fortran_sum.xml
 %%DATADIR%%/contrib/toolbox_skeleton/help/en_US/scilab_sum.xml
 %%DATADIR%%/contrib/toolbox_skeleton/help/fr_FR/build_help.sce
@@ -30,12 +36,14 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/contrib/toolbox_skeleton/help/fr_FR/scilab_sum.xml
 %%DATADIR%%/contrib/toolbox_skeleton/license.txt
 %%DATADIR%%/contrib/toolbox_skeleton/macros/buildmacros.sce
+%%DATADIR%%/contrib/toolbox_skeleton/macros/cleanmacros.sce
 %%DATADIR%%/contrib/toolbox_skeleton/macros/scilab_sum.sci
 %%DATADIR%%/contrib/toolbox_skeleton/readme.txt
 %%DATADIR%%/contrib/toolbox_skeleton/sci_gateway/builder_gateway.sce
 %%DATADIR%%/contrib/toolbox_skeleton/sci_gateway/c/builder_gateway_c.sce
 %%DATADIR%%/contrib/toolbox_skeleton/sci_gateway/c/sci_csub.c
 %%DATADIR%%/contrib/toolbox_skeleton/sci_gateway/c/sci_csum.c
+%%DATADIR%%/contrib/toolbox_skeleton/sci_gateway/c/sci_multiplybypi.c
 %%DATADIR%%/contrib/toolbox_skeleton/sci_gateway/fortran/builder_gateway_fortran.sce
 %%DATADIR%%/contrib/toolbox_skeleton/sci_gateway/fortran/sci_fsum.c
 %%DATADIR%%/contrib/toolbox_skeleton/sci_gateway/cpp/builder_gateway_cpp.sce
@@ -43,20 +51,53 @@ libdata/pkgconfig/scilab.pc
 %%DATADIR%%/contrib/toolbox_skeleton/src/builder_src.sce
 %%DATADIR%%/contrib/toolbox_skeleton/src/c/builder_c.sce
 %%DATADIR%%/contrib/toolbox_skeleton/src/c/csub.c
-%%DATADIR%%/contrib/toolbox_skeleton/src/c/csum.c
 %%DATADIR%%/contrib/toolbox_skeleton/src/c/csub.h
+%%DATADIR%%/contrib/toolbox_skeleton/src/c/csum.c
 %%DATADIR%%/contrib/toolbox_skeleton/src/c/csum.h
+%%DATADIR%%/contrib/toolbox_skeleton/src/c/multiplybypi.c
+%%DATADIR%%/contrib/toolbox_skeleton/src/c/multiplybypi.h
+%%DATADIR%%/contrib/toolbox_skeleton/src/cleaner_src.sce
 %%DATADIR%%/contrib/toolbox_skeleton/src/fortran/builder_fortran.sce
 %%DATADIR%%/contrib/toolbox_skeleton/src/fortran/fsum.f
+%%DATADIR%%/contrib/toolbox_skeleton/tests/unit_tests/c_sum.dia.ref
 %%DATADIR%%/contrib/toolbox_skeleton/tests/unit_tests/c_sum.tst
+%%DATADIR%%/contrib/toolbox_skeleton/tests/unit_tests/fortran_sum.dia.ref
 %%DATADIR%%/contrib/toolbox_skeleton/tests/unit_tests/fortran_sum.tst
+%%DATADIR%%/contrib/toolbox_skeleton/tests/unit_tests/scilab_sum.dia.ref
 %%DATADIR%%/contrib/toolbox_skeleton/tests/unit_tests/scilab_sum.tst
-%%DATADIR%%/contrib/toolbox_skeleton/toolbox_skeleton.iss
 %%DATADIR%%/contrib/toolbox_skeleton/toolbox_skeleton_redist.iss
-%%DATADIR%%/contrib/loader.sce
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/builder.sce
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/changelog.txt
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/demos/xcos_toolbox_skeleton.dem.gateway.sce
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/DESCRIPTION
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/DESCRIPTION-FUNCTIONS
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/etc/xcos_toolbox_skeleton.quit
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/etc/xcos_toolbox_skeleton.start
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/help/builder_help.sce
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/help/cleaner_help.sce
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/help/en_US/build_help.sce
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/help/en_US/TBX_SUM_c.xml
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/help/en_US/tbx_sum.xml
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/help/fr_FR/build_help.sce
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/images/gif/TBX_SUM_c.gif
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/images/svg/TBX_SUM_c.svg
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/license.txt
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/macros/buildmacros.sce
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/macros/cleanmacros.sce
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/macros/TBX_SUM_c.sci
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/sci_gateway/builder_gateway.sce
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/sci_gateway/c/builder_gateway_c.sce
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/sci_gateway/c/sci_tbx_sum.c
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/sci_gateway/loader_gateway.sce
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/src/builder_src.sce
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/src/c/block_sum.c
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/src/c/builder_c.sce
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/src/c/business.h
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/src/c/business_sum.c
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/src/cleaner_src.sce
+%%DATADIR%%/contrib/xcos_toolbox_skeleton/tests/unit_tests/tbx_sum.tst
 %%NLS%%share/locale/ca_ES/LC_MESSAGES/scilab.mo
 %%NLS%%share/locale/de_DE/LC_MESSAGES/scilab.mo
-%%NLS%%share/locale/en_US/LC_MESSAGES/scilab.mo
 %%NLS%%share/locale/es_ES/LC_MESSAGES/scilab.mo
 %%NLS%%share/locale/fr_FR/LC_MESSAGES/scilab.mo
 %%NLS%%share/locale/it_IT/LC_MESSAGES/scilab.mo
@@ -67,6 +108,23 @@ libdata/pkgconfig/scilab.pc
 %%NLS%%share/locale/uk_UA/LC_MESSAGES/scilab.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/scilab.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/scilab.mo
+@dirrm %%DATADIR%%/contrib/xcos_toolbox_skeleton/tests/unit_tests
+@dirrm %%DATADIR%%/contrib/xcos_toolbox_skeleton/tests
+@dirrm %%DATADIR%%/contrib/xcos_toolbox_skeleton/src/c
+@dirrm %%DATADIR%%/contrib/xcos_toolbox_skeleton/src
+@dirrm %%DATADIR%%/contrib/xcos_toolbox_skeleton/sci_gateway/c
+@dirrm %%DATADIR%%/contrib/xcos_toolbox_skeleton/sci_gateway
+@dirrm %%DATADIR%%/contrib/xcos_toolbox_skeleton/macros
+@dirrm %%DATADIR%%/contrib/xcos_toolbox_skeleton/images/svg
+@dirrm %%DATADIR%%/contrib/xcos_toolbox_skeleton/images/h5
+@dirrm %%DATADIR%%/contrib/xcos_toolbox_skeleton/images/gif
+@dirrm %%DATADIR%%/contrib/xcos_toolbox_skeleton/images
+@dirrm %%DATADIR%%/contrib/xcos_toolbox_skeleton/help/fr_FR
+@dirrm %%DATADIR%%/contrib/xcos_toolbox_skeleton/help/en_US
+@dirrm %%DATADIR%%/contrib/xcos_toolbox_skeleton/help
+@dirrm %%DATADIR%%/contrib/xcos_toolbox_skeleton/etc
+@dirrm %%DATADIR%%/contrib/xcos_toolbox_skeleton/demos
+@dirrm %%DATADIR%%/contrib/xcos_toolbox_skeleton
 @dirrm %%DATADIR%%/contrib/toolbox_skeleton/tests/unit_tests
 @dirrm %%DATADIR%%/contrib/toolbox_skeleton/tests
 @dirrm %%DATADIR%%/contrib/toolbox_skeleton/src/fortran
@@ -87,7 +145,6 @@ libdata/pkgconfig/scilab.pc
 @dirrmtry %%DATADIR%%/.atoms
 %%NLS%%@dirrmtry share/locale/ca_ES/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ja_JP/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/pl_PL/LC_MESSAGES
@@ -98,7 +155,6 @@ libdata/pkgconfig/scilab.pc
 %%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ca_ES
 %%NLS%%@dirrmtry share/locale/de_DE
-%%NLS%%@dirrmtry share/locale/en_US
 %%NLS%%@dirrmtry share/locale/it_IT
 %%NLS%%@dirrmtry share/locale/ja_JP
 %%NLS%%@dirrmtry share/locale/pl_PL

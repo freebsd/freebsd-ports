@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scilab
-PORTVERSION=	5.3.1
-PORTREVISION=	1
+PORTVERSION=	5.3.2
 CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/:scilab \
 		http://www.predatorlabs.net/dl/:jgraphx \
@@ -80,6 +79,7 @@ CONFIGURE_ARGS+=	--with-tk-library=${LOCALBASE}/lib \
 CONFIGURE_ARGS+=	--without-gui \
 			--without-javasci \
 			--without-hdf5 \
+			--without-xcos \
 			--disable-build-help
 .else
 DISTFILES+=	${JGRAPHX_JAR}:jgraphx
@@ -131,12 +131,6 @@ USE_XORG=	x11
 CONFIGURE_ARGS+=	--with-jdk=${JAVA_HOME} \
 			--with-docbook=${LOCALBASE}/share/xsl/docbook \
 			--enable-build-help
-
-DESKTOP_ENTRIES=	"SciLab" \
-			"${COMMENT}" \
-			"${DATADIR}/icons/scilab.xpm" "scilab" \
-			"Application;Education;Math;" false
-
 .endif
 
 .if !defined(WITHOUT_HELP)
@@ -177,7 +171,7 @@ LIB_DEPENDS+=	matio.1:${PORTSDIR}/math/matio
 .endif
 
 .if defined(WITHOUT_OCAML)
-CONFIGURE_ARGS+=	--without-ocaml
+CONFIGURE_ARGS+=	--without-modelica
 PLIST_SUB+=	OCAML="@comment "
 .else
 BUILD_DEPENDS+=	ocaml:${PORTSDIR}/lang/ocaml
@@ -225,6 +219,9 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|' ${WRKSRC}/etc/librarypath.xml
 	@${REINPLACE_CMD} -e 's|%%JAVA_HOME%%|${JAVA_HOME}|' ${WRKSRC}/bin/scilab \
 		${WRKSRC}/bin/scilab-adv-cli ${WRKSRC}/bin/scilab-cli
+	@${REINPLACE_CMD} -e 's|/usr/share/scilab|${DATADIR}|' ${WRKSRC}/desktop/scilab.desktop
+	@${REINPLACE_CMD} -e 's|/usr/share/scilab-cli|${DATADIR}|' \
+		${WRKSRC}/desktop/scilab-adv-cli.desktop ${WRKSRC}/desktop/scilab-cli.desktop 
 .endif
 
 pre-install:
