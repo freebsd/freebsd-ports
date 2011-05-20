@@ -15,6 +15,8 @@ COMMENT=	Problem reporting system
 
 RUN_DEPENDS=	postgres:${PORTSDIR}/databases/postgresql${DEFAULT_PGSQL_VER}-server
 
+LICENSE=	GPLv2
+
 USE_AUTOTOOLS=	libtool
 USE_PGSQL=	yes
 USE_GMAKE=	yes

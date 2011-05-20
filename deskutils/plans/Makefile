@@ -31,6 +31,8 @@ COMMENT=	A Good Web Calendar
 BUILD_DEPENDS=	p5-CGI-Session>=0:${PORTSDIR}/www/p5-CGI-Session
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+LICENSE=	GPLv2
+
 USE_ZIP=	yes
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes

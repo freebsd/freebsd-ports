@@ -17,6 +17,8 @@ COMMENT=	LDAP-backed DNS server
 RUN_DEPENDS=	setuidgid:${PORTSDIR}/sysutils/daemontools \
 		tcpserver:${PORTSDIR}/sysutils/ucspi-tcp
 
+LICENSE=	GPLv2
+
 USE_OPENLDAP=	yes
 HAS_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"

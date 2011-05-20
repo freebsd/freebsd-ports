@@ -18,6 +18,8 @@ BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 LIB_DEPENDS=	mpfr.4:${PORTSDIR}/math/mpfr
 RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
+LICENSE=	GPLv3
+
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gnomevfs2 gtksourceview2 intlhack vte
 USE_GMAKE=	yes

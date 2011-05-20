@@ -18,6 +18,8 @@ COMMENT=	A lightweight PDF document viewer
 BUILD_DEPENDS=	cppunit-config:${PORTSDIR}/devel/cppunit
 LIB_DEPENDS=	poppler-glib.5:${PORTSDIR}/graphics/poppler-gtk
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

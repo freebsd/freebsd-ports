@@ -17,13 +17,13 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	An enhanced version of 'dialog' to work with ncurses
 
+LICENSE=	LGPL21
+
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--includedir=${PREFIX}/include/${PORTNAME} --with-libtool
 MAKEFILE=	makefile
-
-#WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION:S|^1.1.|1.1-|}
 
 MAN1=		cdialog.1
 MAN3=		cdialog.3

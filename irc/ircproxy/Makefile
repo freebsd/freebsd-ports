@@ -15,6 +15,8 @@ COMMENT=	An IRC proxy/bouncer daemon
 
 LIB_DEPENDS=	cares.2:${PORTSDIR}/dns/c-ares
 
+LICENSE=	GPLv3
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
