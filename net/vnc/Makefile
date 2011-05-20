@@ -7,7 +7,7 @@
 
 PORTNAME=	vnc
 PORTVERSION=	4.1.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.realvnc.com/:vnc
 DISTNAME=	vnc-4_1_3-unixsrc
@@ -44,10 +44,6 @@ PREFIX=${REALVNC_BASE}
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SERVER)
-.if ${OSVERSION} >= 900000
-BROKEN=		VNC server part does not build on 9.x
-.endif
-
 # This is a placeholder MASTER_SITES entry -- see the pre-fetch target.
 MASTER_SITES+=	${MASTER_SITE_XFREE:S/$/:x/}
 MASTER_SITE_SUBDIR+=	4.3.0/:x
