@@ -126,9 +126,6 @@
 %%WWWDIR%%/modules/_shared/tmpl/default/footer.php
 %%WWWDIR%%/modules/_shared/tmpl/default/header.php
 %%WWWDIR%%/modules/_shared/tmpl/default/welcome.php
-%%WWWDIR%%/modules/_shared/tmpl/iPod/footer.php
-%%WWWDIR%%/modules/_shared/tmpl/iPod/header.php
-%%WWWDIR%%/modules/_shared/tmpl/iPod/welcome.php
 %%WWWDIR%%/modules/_shared/tmpl/lite/footer.php
 %%WWWDIR%%/modules/_shared/tmpl/lite/header.php
 %%WWWDIR%%/modules/_shared/tmpl/lite/welcome.php
@@ -188,8 +185,6 @@
 %%WWWDIR%%/modules/remote/tmpl/default/query.php
 %%WWWDIR%%/modules/remote/tmpl/default/remote.php
 %%WWWDIR%%/modules/remote/tmpl/default/welcome.php
-%%WWWDIR%%/modules/remote/tmpl/iPod/play_program_on_frontend.php
-%%WWWDIR%%/modules/remote/tmpl/iPod/welcome.php
 %%WWWDIR%%/modules/settings/handler.php
 %%WWWDIR%%/modules/settings/init.php
 %%WWWDIR%%/modules/settings/tmpl/default/footer.php
@@ -278,14 +273,6 @@
 %%WWWDIR%%/modules/tv/tmpl/default/set_session.php
 %%WWWDIR%%/modules/tv/tmpl/default/upcoming.php
 %%WWWDIR%%/modules/tv/tmpl/default/welcome.php
-%%WWWDIR%%/modules/tv/tmpl/iPod/detail.php
-%%WWWDIR%%/modules/tv/tmpl/iPod/list_recording_groups.php
-%%WWWDIR%%/modules/tv/tmpl/iPod/list_shows_in_title_and_group.php
-%%WWWDIR%%/modules/tv/tmpl/iPod/list_titles_in_group.php
-%%WWWDIR%%/modules/tv/tmpl/iPod/search.php
-%%WWWDIR%%/modules/tv/tmpl/iPod/submenu.php
-%%WWWDIR%%/modules/tv/tmpl/iPod/upcoming.php
-%%WWWDIR%%/modules/tv/tmpl/iPod/welcome.php
 %%WWWDIR%%/modules/tv/tmpl/ical/upcoming.php
 %%WWWDIR%%/modules/tv/tmpl/lite/channel.php
 %%WWWDIR%%/modules/tv/tmpl/lite/detail.php
@@ -734,43 +721,12 @@
 %%WWWDIR%%/skins/haze_light/tv_upcoming.css
 %%WWWDIR%%/skins/haze_light/weather.css
 %%WWWDIR%%/skins/haze_light/welcome.css
-%%WWWDIR%%/skins/iPod-default/AppPanel.css
-%%WWWDIR%%/skins/iPod-default/ListPanel.css
-%%WWWDIR%%/skins/iPod-default/header.css
-%%WWWDIR%%/skins/iPod-default/img/Icons/cal.png
-%%WWWDIR%%/skins/iPod-default/img/Icons/clock.png
-%%WWWDIR%%/skins/iPod-default/img/Icons/logs.png
-%%WWWDIR%%/skins/iPod-default/img/Icons/music.png
-%%WWWDIR%%/skins/iPod-default/img/Icons/photos.png
-%%WWWDIR%%/skins/iPod-default/img/Icons/remote.png
-%%WWWDIR%%/skins/iPod-default/img/Icons/status.png
-%%WWWDIR%%/skins/iPod-default/img/Icons/tv.png
-%%WWWDIR%%/skins/iPod-default/img/Icons/video.png
-%%WWWDIR%%/skins/iPod-default/img/Icons/weather.png
-%%WWWDIR%%/skins/iPod-default/img/Search Background.tiff
-%%WWWDIR%%/skins/iPod-default/img/back_button.png
-%%WWWDIR%%/skins/iPod-default/img/back_button_clicked.png
-%%WWWDIR%%/skins/iPod-default/img/button_darkgray.png
-%%WWWDIR%%/skins/iPod-default/img/button_darkgray_pressed.png
-%%WWWDIR%%/skins/iPod-default/img/chevron.png
-%%WWWDIR%%/skins/iPod-default/img/chevron_touched.png
-%%WWWDIR%%/skins/iPod-default/img/favicon.ico
-%%WWWDIR%%/skins/iPod-default/img/header_middle.png
-%%WWWDIR%%/skins/iPod-default/img/item_background_touched.png
-%%WWWDIR%%/skins/iPod-default/img/off.png
-%%WWWDIR%%/skins/iPod-default/img/on.png
-%%WWWDIR%%/skins/iPod-default/img/pinstripes.png
-%%WWWDIR%%/skins/iPod-default/img/spinner.gif
-%%WWWDIR%%/skins/iPod-default/style.css
 %%WWWDIR%%/skins/wap/handheld.css
 %%WWWDIR%%/skins/wap/img/mythtv-logo.gif
 %%WWWDIR%%/skins/wap/img/spacer.gif
 %%WWWDIR%%/skins/wap/style.css
 @dirrm %%WWWDIR%%/skins/wap/img
 @dirrm %%WWWDIR%%/skins/wap
-@dirrm %%WWWDIR%%/skins/iPod-default/img/Icons
-@dirrm %%WWWDIR%%/skins/iPod-default/img
-@dirrm %%WWWDIR%%/skins/iPod-default
 @dirrm %%WWWDIR%%/skins/haze_light/img/weather
 @dirrm %%WWWDIR%%/skins/haze_light/img
 @dirrm %%WWWDIR%%/skins/haze_light
@@ -809,7 +765,6 @@
 @dirrm %%WWWDIR%%/modules/tv/tmpl/rss
 @dirrm %%WWWDIR%%/modules/tv/tmpl/lite
 @dirrm %%WWWDIR%%/modules/tv/tmpl/ical
-@dirrm %%WWWDIR%%/modules/tv/tmpl/iPod
 @dirrm %%WWWDIR%%/modules/tv/tmpl/default
 @dirrm %%WWWDIR%%/modules/tv/tmpl
 @dirrm %%WWWDIR%%/modules/tv/includes
@@ -832,7 +787,6 @@
 @dirrm %%WWWDIR%%/modules/settings/tmpl/default
 @dirrm %%WWWDIR%%/modules/settings/tmpl
 @dirrm %%WWWDIR%%/modules/settings
-@dirrm %%WWWDIR%%/modules/remote/tmpl/iPod
 @dirrm %%WWWDIR%%/modules/remote/tmpl/default
 @dirrm %%WWWDIR%%/modules/remote/tmpl
 @dirrm %%WWWDIR%%/modules/remote
@@ -858,7 +812,6 @@
 @dirrm %%WWWDIR%%/modules/_shared/tmpl/wap
 @dirrm %%WWWDIR%%/modules/_shared/tmpl/tmpl
 @dirrm %%WWWDIR%%/modules/_shared/tmpl/lite
-@dirrm %%WWWDIR%%/modules/_shared/tmpl/iPod
 @dirrm %%WWWDIR%%/modules/_shared/tmpl/default
 @dirrm %%WWWDIR%%/modules/_shared/tmpl/_errors
 @dirrm %%WWWDIR%%/modules/_shared/tmpl
