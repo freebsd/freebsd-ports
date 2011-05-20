@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sslstrip
-PORTVERSION=	0.7
+PORTVERSION=	0.9
 CATEGORIES=	security python
 MASTER_SITES=	http://www.thoughtcrime.org/software/sslstrip/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,5 +17,5 @@ COMMENT=	Python program for ssl stripping
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	sslstrip
-
+RUN_DEPENDS =	${LOCALBASE}/lib/python2.7/site-packages/twisted/web:${PORTSDIR}/www/py-twistedWeb
 .include <bsd.port.mk>

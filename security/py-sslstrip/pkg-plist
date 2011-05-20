@@ -20,6 +20,9 @@ bin/sslstrip
 %%PYTHON_SITELIBDIR%%/sslstrip/URLMonitor.py
 %%PYTHON_SITELIBDIR%%/sslstrip/URLMonitor.pyc
 %%PYTHON_SITELIBDIR%%/sslstrip/URLMonitor.pyo
+%%PYTHON_SITELIBDIR%%/sslstrip/DnsCache.py
+%%PYTHON_SITELIBDIR%%/sslstrip/DnsCache.pyc
+%%PYTHON_SITELIBDIR%%/sslstrip/DnsCache.pyo
 %%PYTHON_SITELIBDIR%%/sslstrip/__init__.py
 %%PYTHON_SITELIBDIR%%/sslstrip/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sslstrip/__init__.pyo
