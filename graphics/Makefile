@@ -114,6 +114,7 @@
     SUBDIR += digikam
     SUBDIR += digikam-doc
     SUBDIR += digikam-kde4
+    SUBDIR += ditaa
     SUBDIR += divxcalc
     SUBDIR += djview4
     SUBDIR += djvulibre
