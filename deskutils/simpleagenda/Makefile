@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	simpleagenda
-PORTVERSION=	0.41.1
+PORTVERSION=	0.42
 CATEGORIES=	deskutils gnustep
 MASTER_SITES=	http://coyote.octets.fr/pub/gnustep/
 DISTNAME=	SimpleAgenda-${PORTVERSION}
@@ -27,6 +27,7 @@ USE_GNUSTEP_INSTALL=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}"
+ADDITIONAL_OBJCFLAGS=	'-Dsel_isEqual(x,y) (x==y)'
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|SimpleAgenda|SimpleAgenda.m|' ${WRKSRC}/configure

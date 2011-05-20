@@ -25,12 +25,14 @@ GNUstep/Local/Applications/SimpleAgenda.app/Resources/SimpleAgenda.desktop
 GNUstep/Local/Applications/SimpleAgenda.app/Resources/Task.gorm/data.classes
 GNUstep/Local/Applications/SimpleAgenda.app/Resources/Task.gorm/data.info
 GNUstep/Local/Applications/SimpleAgenda.app/Resources/Task.gorm/objects.gorm
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/bell.tiff
 GNUstep/Local/Applications/SimpleAgenda.app/Resources/iCalendar.gorm/data.classes
 GNUstep/Local/Applications/SimpleAgenda.app/Resources/iCalendar.gorm/data.info
 GNUstep/Local/Applications/SimpleAgenda.app/Resources/iCalendar.gorm/objects.gorm
 GNUstep/Local/Applications/SimpleAgenda.app/Resources/iCalendar.gorm/warning.tiff
 GNUstep/Local/Applications/SimpleAgenda.app/Resources/ical-file.tiff
 GNUstep/Local/Applications/SimpleAgenda.app/Resources/repeat.tiff
+GNUstep/Local/Applications/SimpleAgenda.app/Resources/small-bell.tiff
 GNUstep/Local/Applications/SimpleAgenda.app/SimpleAgenda
 GNUstep/Local/Applications/SimpleAgenda.app/stamp.make
 GNUstep/Local/Tools/SimpleAgenda
