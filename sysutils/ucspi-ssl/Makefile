@@ -9,7 +9,8 @@ PORTNAME=	ucspi-ssl
 PORTVERSION?=	0.70
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.superscript.com/ucspi-ssl/ \
+MASTER_SITES=	LOCAL/garga/ucspi-ssl \
+		http://www.superscript.com/ucspi-ssl/ \
 		http://dev.qmailrocks.org/downloads/qmailrocks_3.0-beta/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
