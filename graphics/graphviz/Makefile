@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	graphviz
-PORTVERSION=	2.26.3
-PORTREVISION=	3
+PORTVERSION=	2.28.0
 CATEGORIES=	graphics tk
 MASTER_SITES=	http://www.graphviz.org/pub/graphviz/ARCHIVE/
 
@@ -32,11 +31,12 @@ PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
 MAKE_ENV=	EXPR_COMPAT=yes MISSING=${TRUE}
 
-MAN1=		acyclic.1 bcomps.1 ccomps.1 dijkstra.1 dot.1 dotty.1 gc.1 \
-		gml2gv.1 gv2gxl.1 gvgen.1 mm2gv.1 gvcolor.1 gvpack.1 gvpr.1 \
-		lneato.1 nop.1 osage.1 prune.1 sccmap.1 smyrna.1 tred.1 \
-		unflatten.1
-MAN3=		cdt.3 cgraph.3 graph.3 gvc.3 pathplan.3 xdot.3
+MAN1=		acyclic.1 bcomps.1 ccomps.1 cluster.1 diffimg.1 dijkstra.1 \
+		dot.1 dotty.1 gc.1 gml2gv.1 gv2gxl.1 gvedit.1 gvmap.1 \
+		gvmap.sh.1 gvgen.1 mm2gv.1 gvcolor.1 gvpack.1 gvpr.1 \
+		lneato.1 nop.1 osage.1 patchwork.1 prune.1 sccmap.1 smyrna.1 \
+		tred.1 unflatten.1 vimdot.1
+MAN3=		cdt.3 expr.3 cgraph.3 graph.3 gvc.3 pack.3 pathplan.3 xdot.3
 MAN7=		graphviz.7
 MLINKS=		dot.1 circo.1 \
 		dot.1 fdp.1 \
@@ -78,6 +78,7 @@ OPTIONS=	ICONV "Build with ICONV support" on \
 		GDK_PIXBUF  "build with gdk pixbuf support" off \
 		GNOMEUI  "build with libgnomeui support" off \
 		SMYRNA "SMYRNA large graph viewer (GTK is required)" off \
+		GVEDIT "gvedit (qt is required)" off \
 		MING "Build with ming plugin" off \
 		DEVIL "Build with devil plugin" off \
 		GHOSTSCRIPT "Build with ghostscript plugin" off \
@@ -88,6 +89,13 @@ OPTIONS=	ICONV "Build with ICONV support" on \
 		LUA "Lua bindings (swig)" off \
 		TCL "TCL bindings (swig)" off \
 		GUILE "Guile bindings (swig)" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_GVEDIT)
+USE_QT_VER=		4
+QT_COMPONENTS=		qmake_build moc_build rcc_build uic_build linguist_build
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -266,6 +274,14 @@ PLIST_SUB+=		WITH_SMYRNA="@comment "
 CONFIGURE_ARGS+=	--without-smyrna
 .endif
 
+.if defined(WITH_GVEDIT)
+CONFIGURE_ARGS+=	--with-gvedit=yes
+PLIST_SUB+=		WITH_GVEDIT=""
+.else
+PLIST_SUB+=		WITH_GVEDIT="@comment "
+CONFIGURE_ARGS+=	--without-gvedit
+.endif
+
 .if defined(WITH_MING)
 CONFIGURE_ARGS+=	--with-ming
 PLIST_SUB+=		WITH_MING=""
@@ -410,8 +426,6 @@ post-patch:
 		-e "s|-lruby|-lruby${RUBY_SUFFIX}|g" ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|#include "gui.h"|#include "gui/gui.h"|' \
 		${WRKSRC}/cmd/smyrna/tvnodes.h
-	@${REINPLACE_CMD} -e 's|#include "regex_win32.h"|#include <regex.h>|' \
-		${WRKSRC}/cmd/smyrna/btree.c
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's| install-txtDATA$$||' \
 		${WRKSRC}/Makefile.in
