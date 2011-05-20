@@ -7,7 +7,7 @@
 
 PORTNAME=	irssi
 PORTVERSION=	0.8.15
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES?=	irc
 MASTER_SITES=	http://mirror.irssi.org/
 
@@ -21,6 +21,7 @@ CONFLICTS=	irssi-devel-[0-9]* zh-irssi-[0-9]*
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_NCURSES=	yes
 WANT_PERL=	yes
 
 MAN1=		irssi.1
