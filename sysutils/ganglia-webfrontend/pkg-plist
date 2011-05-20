@@ -4,6 +4,7 @@
 %%WEBFRONTDIR%%/cluster_legend.html
 %%WEBFRONTDIR%%/cluster_view.php
 %%WEBFRONTDIR%%/conf.php.sample
+%%WEBFRONTDIR%%/eval_config.php
 %%WEBFRONTDIR%%/footer.php
 %%WEBFRONTDIR%%/functions.php
 %%WEBFRONTDIR%%/ganglia.php
@@ -64,5 +65,5 @@
 @dirrm %%WEBFRONTDIR%%/templates/default
 @dirrm %%WEBFRONTDIR%%/templates
 @dirrm %%WEBFRONTDIR%%/graph.d
-@dirrmtry %%WEBFRONTDIR%%
+@dirrmtry /bin/rmdir %D/%%WEBFRONTDIR%%
 @unexec (test -d %D/%%WEBFRONTDIR%% && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%WEBFRONTDIR%% and its contents manually.")) || true
