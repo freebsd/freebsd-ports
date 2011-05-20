@@ -7,9 +7,10 @@
 
 PORTNAME=	DBIx-Class
 PORTVERSION=	0.08127
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/A/AB/ABRAXXA
+MASTER_SITE_SUBDIR=	CPAN:ABRAXXA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -18,25 +19,67 @@ COMMENT=	Extensible and flexible object <-> relational mapper
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Simple>=0.90:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Test-Warn>=0.21:${PORTSDIR}/devel/p5-Test-Warn \
-		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite
-RUN_DEPENDS=	p5-Carp-Clan>=6.0:${PORTSDIR}/devel/p5-Carp-Clan \
+		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-SQL-Translator>=0.09.004:${PORTSDIR}/databases/p5-SQL-Translator \
+		p5-DateTime>=0.55:${PORTSDIR}/devel/p5-DateTime \
+		p5-DateTime-Format-Strptime>0:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
+		p5-DateTime-Format-SQLite>0:${PORTSDIR}/devel/p5-DateTime-Format-SQLite \
+		p5-JSON-Any>0:${PORTSDIR}/converters/p5-JSON-Any \
+		p5-Moose>0:${PORTSDIR}/devel/p5-Moose \
+		p5-MooseX-Types>0:${PORTSDIR}/devel/p5-MooseX-Types \
+		p5-MooseX-Types-JSON>0:${PORTSDIR}/devel/p5-MooseX-Types-JSON \
+		p5-MooseX-Types-Path-Class>=0.04:${PORTSDIR}/devel/p5-MooseX-Types-Path-Class \
+		p5-namespace-autoclean>0:${PORTSDIR}/devel/p5-namespace-autoclean \
+		p5-Class-Trigger>=0.12:${PORTSDIR}/devel/p5-Class-Trigger \
+		p5-DBIx-ContextualFetch>0:${PORTSDIR}/databases/p5-DBIx-ContextualFetch \
+		p5-Time-Piece>0:${PORTSDIR}/devel/p5-Time-Piece \
+		p5-Time-Piece-MySQL>0:${PORTSDIR}/databases/p5-Time-Piece-MySQL \
+		p5-Clone>=0.30:${PORTSDIR}/devel/p5-Clone \
+		p5-Math-Base36>=0.07:${PORTSDIR}/math/p5-Math-Base36 \
+		p5-Text-CSV>=0:${PORTSDIR}/textproc/p5-Text-CSV \
+		p5-Class-DBI-Plugin-DeepAbstractSearch>=0:${PORTSDIR}/databases/p5-Class-DBI-Plugin-DeepAbstractSearch \
+		p5-DateTime-Format-MySQL>0:${PORTSDIR}/devel/p5-DateTime-Format-MySQL \
+		p5-DateTime-Format-Pg>0:${PORTSDIR}/devel/p5-DateTime-Format-Pg
+BUILD_DEPENDS=	p5-Carp-Clan>=6.0:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-Class-Accessor-Grouped>=0.09003:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
 		p5-Class-C3-Componentised>=1.0005:${PORTSDIR}/devel/p5-Class-C3-Componentised \
 		p5-Class-Inspector>=1.24:${PORTSDIR}/devel/p5-Class-Inspector \
-		p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
+		p5-Config-Any>0:${PORTSDIR}/devel/p5-Config-Any \
+		p5-Context-Preserve>=0.01:${PORTSDIR}/devel/p5-Context-Preserve \
+		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-DBI>=1.60.9:${PORTSDIR}/databases/p5-DBI \
+		p5-Data-Dumper-Concise>=1.000:${PORTSDIR}/devel/p5-Data-Dumper-Concise \
+		p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
+		p5-Hash-Merge>0:${PORTSDIR}/textproc/p5-Hash-Merge \
 		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Module-Find>=0.06:${PORTSDIR}/devel/p5-Module-Find \
 		p5-Path-Class>=0.18:${PORTSDIR}/devel/p5-Path-Class \
 		p5-SQL-Abstract>=1.67:${PORTSDIR}/databases/p5-SQL-Abstract \
-		p5-SQL-Abstract-Limit>=0.13:${PORTSDIR}/databases/p5-SQL-Abstract-Limit \
-		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
-		p5-Data-Dumper-Concise>=1.000:${PORTSDIR}/devel/p5-Data-Dumper-Concise \
 		p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard \
-		p5-Context-Preserve>=0.01:${PORTSDIR}/devel/p5-Context-Preserve \
+		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
 		p5-Try-Tiny>=0.04:${PORTSDIR}/lang/p5-Try-Tiny \
-		p5-namespace-clean>=0.20:${PORTSDIR}/devel/p5-namespace-clean \
-		p5-Math-Base36>=0.07:${PORTSDIR}/math/p5-Math-Base36
+		p5-Variable-Magic>=0.28:${PORTSDIR}/devel/p5-Variable-Magic \
+		p5-namespace-clean>=0.20:${PORTSDIR}/devel/p5-namespace-clean
+RUN_DEPENDS=	p5-Carp-Clan>=6.0:${PORTSDIR}/devel/p5-Carp-Clan \
+		p5-Class-Accessor-Grouped>=0.09003:${PORTSDIR}/devel/p5-Class-Accessor-Grouped \
+		p5-Class-C3-Componentised>=1.0005:${PORTSDIR}/devel/p5-Class-C3-Componentised \
+		p5-Class-Inspector>=1.24:${PORTSDIR}/devel/p5-Class-Inspector \
+		p5-Config-Any>0:${PORTSDIR}/devel/p5-Config-Any \
+		p5-Context-Preserve>=0.01:${PORTSDIR}/devel/p5-Context-Preserve \
+		p5-DBD-SQLite>=0:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-DBI>=1.60.9:${PORTSDIR}/databases/p5-DBI \
+		p5-Data-Dumper-Concise>=1.000:${PORTSDIR}/devel/p5-Data-Dumper-Concise \
+		p5-Data-Page>=2.00:${PORTSDIR}/databases/p5-Data-Page \
+		p5-Hash-Merge>0:${PORTSDIR}/textproc/p5-Hash-Merge \
+		p5-MRO-Compat>=0.09:${PORTSDIR}/devel/p5-MRO-Compat \
+		p5-Module-Find>=0.06:${PORTSDIR}/devel/p5-Module-Find \
+		p5-Path-Class>=0.18:${PORTSDIR}/devel/p5-Path-Class \
+		p5-SQL-Abstract>=1.67:${PORTSDIR}/databases/p5-SQL-Abstract \
+		p5-Scope-Guard>=0.03:${PORTSDIR}/devel/p5-Scope-Guard \
+		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
+		p5-Try-Tiny>=0.04:${PORTSDIR}/lang/p5-Try-Tiny \
+		p5-Variable-Magic>=0.28:${PORTSDIR}/devel/p5-Variable-Magic \
+		p5-namespace-clean>=0.20:${PORTSDIR}/devel/p5-namespace-clean
 
 OPTIONS=	SQLT "SQL::Translator (generate DDL from schema)" Off
 
