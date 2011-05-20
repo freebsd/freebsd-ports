@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	backuppc
-PORTVERSION=	3.2.0
-PORTREVISION=	4
+PORTVERSION=	3.2.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
@@ -28,6 +27,8 @@ GROUPS=		backuppc
 
 BPC_CGIDIR?=	${PREFIX}/www/cgi-bin
 BPC_DATADIR?=	/var/db/BackupPC
+
+PLIST_SUB=	BPC_CGIDIR=${BPC_CGIDIR:S,^${PREFIX}/,,} BPC_DATADIR=${BPC_DATADIR}
 
 PORTDOCS=	ChangeLog LICENSE README BackupPC.html BackupPC.pod
 
@@ -69,6 +70,14 @@ post-patch:
 	@${REINPLACE_CMD} \
 		-e 's,"/doc/BackupPC.html","/${DOCSDIR_REL}/BackupPC.html",' \
 		${WRKSRC}/lib/BackupPC/CGI/View.pm
+	@${REINPLACE_CMD} \
+		-e 's,STDERR "Please su ,STDERR "Please su [-m] ,' \
+		${WRKSRC}/lib/BackupPC/Lib.pm
+	@${REINPLACE_CMD} \
+		-e 's, you can use the -s, you can use the -m,' \
+		-e 's,option to su to explicitly run,option to su to run,' \
+		-e 's,su -s /bin/bash __BACKUPPCUSER__,su -m __BACKUPPCUSER__,' \
+		${WRKSRC}/doc/BackupPC.html ${WRKSRC}/doc/BackupPC.pod
 
 pre-install:
 	@${ECHO_MSG}
