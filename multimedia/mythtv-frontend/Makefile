@@ -6,7 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	mythtv-frontend
-PORTVERSION=	0.24
+PORTVERSION=	0.24.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
@@ -24,6 +24,7 @@ LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 CONFLICTS=	mythtv-[0-9]*
 
 ONLY_FOR_ARCHS=	i386 amd64
+WRKSRC=		${WRKDIR}/${DISTNAME}/mythtv
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui sql network script linguist_build l10n sql-mysql_run \
@@ -39,7 +40,8 @@ DATADIR=	${PREFIX}/share/mythtv
 MAKE_ENV=	QTDIR="${QT_PREFIX}" \
 		QMAKESPEC="${QMAKESPEC}"
 
-CONFIGURE_ENV+=	QMAKESPEC="${QMAKESPEC}" MOC="${MOC}" CPPFLAGS="${CPPFLAGS} ${QTCPPFLAGS}" \
+CPPFLAGS+=	${QTCPPFLAGS}
+CONFIGURE_ENV+=	QMAKESPEC="${QMAKESPEC}" MOC="${MOC}" \
 		QTDIR="${QT_PREFIX}" LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=	--prefix="${PREFIX}" --disable-audio-alsa --disable-firewire --disable-iptv \

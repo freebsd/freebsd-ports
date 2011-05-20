@@ -1,7 +1,8 @@
-@comment $FreeBSD: /tmp/pcvs/ports/multimedia/mythtv/pkg-plist,v 1.9 2011-01-04 17:45:25 decke Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/multimedia/mythtv/pkg-plist,v 1.10 2011-05-20 12:40:29 decke Exp $
 bin/mythavtest
 bin/mythbackend
 bin/mythcommflag
+bin/mythffmpeg
 bin/mythfilldatabase
 bin/mythfrontend
 bin/mythjobqueue
@@ -543,6 +544,7 @@ lib/mythtv/filters/libyadif.so
 %%DATADIR%%/internetcontent/nv_python_libs/configs/HTML/comedycentral.html
 %%DATADIR%%/internetcontent/nv_python_libs/configs/HTML/hubble.html
 %%DATADIR%%/internetcontent/nv_python_libs/configs/HTML/mevio.html
+%%DATADIR%%/internetcontent/nv_python_libs/configs/HTML/mtv.html
 %%DATADIR%%/internetcontent/nv_python_libs/configs/HTML/nasa.html
 %%DATADIR%%/internetcontent/nv_python_libs/configs/HTML/pbs.html
 %%DATADIR%%/internetcontent/nv_python_libs/configs/HTML/spitzer.html
