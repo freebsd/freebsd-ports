@@ -7,7 +7,7 @@
 
 PORTNAME=	kgraphviewer
 PORTVERSION=	${APP_VER}.${EXTRA_VER}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${EXTRA_VER}/src/extragear
@@ -17,7 +17,7 @@ DIST_SUBDIR=	KDE/extragear
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	GraphViz dot graph viewer for KDE
 
-LIB_DEPENDS=	gvc.5:${PORTSDIR}/graphics/graphviz
+LIB_DEPENDS=	gvc:${PORTSDIR}/graphics/graphviz
 
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs pimlibs kdeprefix kdehier automoc4
