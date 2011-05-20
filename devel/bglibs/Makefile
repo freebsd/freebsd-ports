@@ -15,6 +15,8 @@ MASTER_SITES=	http://untroubled.org/${PORTNAME}/archive/ \
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	One stop library package by Bruce Guenter
 
+LICENSE=	LGPLv21
+
 NOT_FOR_ARCHS=	alpha
 
 USE_PERL5=	yes

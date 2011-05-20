@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.zip
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Manual for adabooch
 
+LICENSE=	GPLv2
+
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_MTREE=	yes

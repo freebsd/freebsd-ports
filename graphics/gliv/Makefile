@@ -15,6 +15,8 @@ COMMENT=	An image viewer that uses Gdk-Pixbuf and OpenGL
 
 LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20
 USE_GL=		yes

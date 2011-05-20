@@ -14,6 +14,8 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	CVS to Perforce Converter
 
+LICENSE=	MIT
+
 REINPLACE_ARGS=	-i ""
 NO_BUILD=	yes
 SUB_FILES=	pkg-message

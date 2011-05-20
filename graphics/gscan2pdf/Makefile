@@ -45,6 +45,8 @@ RUN_DEPENDS=	${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
 		p5-Gtk2-Ex-Simple-List>=0.50:${PORTSDIR}/x11-toolkits/p5-Gtk2-Ex-Simple-List \
 		p5-Gtk2-ImageView>=0:${PORTSDIR}/x11-toolkits/p5-Gtk2-ImageView
 
+LICENSE=	GPLv3
+
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 librsvg2
 PERL_CONFIGURE=	yes

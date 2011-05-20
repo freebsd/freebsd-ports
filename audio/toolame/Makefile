@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Optimized mpeg 1/2 layer 2 audio encoder
 
-LICENSE=	LGPLv21
+LICENSE=	LGPL21
 
 USE_GMAKE=	yes
 ALL_TARGET=	${PORTNAME}
