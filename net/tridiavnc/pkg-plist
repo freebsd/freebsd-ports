@@ -1,0 +1,18 @@
+bin/Xvnc
+bin/vncviewer
+bin/vncpasswd
+bin/vncserver
+bin/vncconnect
+share/vnc/classes/DesCipher.class
+share/vnc/classes/animatedMemoryImageSource.class
+share/vnc/classes/authenticationPanel.class
+share/vnc/classes/clipboardFrame.class
+share/vnc/classes/index.vnc
+share/vnc/classes/optionsFrame.class
+share/vnc/classes/rfbProto.class
+share/vnc/classes/shared.vnc
+share/vnc/classes/vncCanvas.class
+share/vnc/classes/vncviewer.class
+share/vnc/classes/vncviewer.jar
+@dirrm share/vnc/classes
+@dirrm share/vnc
