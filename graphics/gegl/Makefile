@@ -7,6 +7,7 @@
 
 PORTNAME=	gegl
 PORTVERSION=	0.1.6
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.gimp.org/pub/gegl/0.1/
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	flowcanvas
 PORTVERSION=	0.5.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.drobilla.net/
 
@@ -17,7 +17,7 @@ COMMENT=	FlowCanvas is an interactive Gtkmm/Gnomecanvasmm widget
 LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		gnomecanvasmm-2.6:${PORTSDIR}/graphics/libgnomecanvasmm26 \
-		gvc.5:${PORTSDIR}/graphics/graphviz
+		gvc:${PORTSDIR}/graphics/graphviz
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

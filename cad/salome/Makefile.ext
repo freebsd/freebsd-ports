@@ -259,7 +259,7 @@ LIB_DEPENDS+=		gd.4:${PORTSDIR}/graphics/gd
 .if ${SAL_MODULE} == "yacs"
 LIB_DEPENDS+=		argp.0:${PORTSDIR}/devel/argp-standalone
 LIB_DEPENDS+=		expat.6:${PORTSDIR}/textproc/expat2
-LIB_DEPENDS+=		gvc.5:${PORTSDIR}/graphics/graphviz
+LIB_DEPENDS+=		gvc:${PORTSDIR}/graphics/graphviz
 LDFLAGS+=		-largp
 .endif
 
