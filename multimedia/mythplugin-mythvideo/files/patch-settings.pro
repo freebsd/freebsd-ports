@@ -2,7 +2,7 @@
 +++ settings.pro	2010-03-13 11:07:02.000000000 +0100
 @@ -2,7 +2,7 @@
  
- LIBVERSION = 0.22
+ LIBVERSION = 0.24
  
 -INCLUDEPATH += $${SYSROOT}$${PREFIX}/include
 +#INCLUDEPATH += $${SYSROOT}$${PREFIX}/include
