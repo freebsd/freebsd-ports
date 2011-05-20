@@ -1,0 +1,359 @@
+@comment $FreeBSD$
+bin/virsh
+bin/virt-pki-validate
+bin/virt-xml-validate
+@unexec if cmp -s %D/%%ETCDIR%%/libvirtd.conf.sample %D/%%ETCDIR%%/libvirtd.conf; then rm -f %D/%%ETCDIR%%/libvirtd.conf; fi
+%%ETCDIR%%/libvirtd.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/libvirtd.conf ] ; then cp -p %D/%%ETCDIR%%/libvirtd.conf.sample %D/%%ETCDIR%%/libvirtd.conf; fi
+%%ETCDIR%%/nwfilter/allow-arp.xml
+%%ETCDIR%%/nwfilter/allow-dhcp-server.xml
+%%ETCDIR%%/nwfilter/allow-dhcp.xml
+%%ETCDIR%%/nwfilter/allow-incoming-ipv4.xml
+%%ETCDIR%%/nwfilter/allow-ipv4.xml
+%%ETCDIR%%/nwfilter/clean-traffic.xml
+%%ETCDIR%%/nwfilter/no-arp-spoofing.xml
+%%ETCDIR%%/nwfilter/no-ip-multicast.xml
+%%ETCDIR%%/nwfilter/no-ip-spoofing.xml
+%%ETCDIR%%/nwfilter/no-mac-broadcast.xml
+%%ETCDIR%%/nwfilter/no-mac-spoofing.xml
+%%ETCDIR%%/nwfilter/no-other-l2-traffic.xml
+%%ETCDIR%%/nwfilter/no-other-rarp-traffic.xml
+%%ETCDIR%%/nwfilter/qemu-announce-self-rarp.xml
+%%ETCDIR%%/nwfilter/qemu-announce-self.xml
+etc/logrotate.d/libvirtd
+etc/logrotate.d/libvirtd.lxc
+etc/logrotate.d/libvirtd.qemu
+etc/logrotate.d/libvirtd.uml
+include/libvirt/libvirt-qemu.h
+include/libvirt/libvirt.h
+include/libvirt/virterror.h
+%%LIB32DIR%%/libvirt-qemu.a
+%%LIB32DIR%%/libvirt-qemu.la
+%%LIB32DIR%%/libvirt-qemu.so
+%%LIB32DIR%%/libvirt-qemu.so.9
+%%LIB32DIR%%/libvirt.a
+%%LIB32DIR%%/libvirt.la
+%%LIB32DIR%%/libvirt.so
+%%LIB32DIR%%/libvirt.so.9
+%%LIB32DIR%%/pkgconfig/libvirt.pc
+%%LIB32DIR%%/python2.7/site-packages/libvirt.py
+%%LIB32DIR%%/python2.7/site-packages/libvirtmod.la
+%%LIB32DIR%%/python2.7/site-packages/libvirtmod.so
+libexec/libvirt_iohelper
+sbin/libvirtd
+share/augeas/lenses/libvirtd.aug
+share/augeas/lenses/tests/test_libvirtd.aug
+%%DOCSDIR%%%%PORTVERSION%%/html/32favicon.png
+%%DOCSDIR%%%%PORTVERSION%%/html/api.html
+%%DOCSDIR%%%%PORTVERSION%%/html/api_extension.html
+%%DOCSDIR%%%%PORTVERSION%%/html/apps.html
+%%DOCSDIR%%%%PORTVERSION%%/html/archdomain.html
+%%DOCSDIR%%%%PORTVERSION%%/html/architecture.gif
+%%DOCSDIR%%%%PORTVERSION%%/html/architecture.html
+%%DOCSDIR%%%%PORTVERSION%%/html/archnetwork.html
+%%DOCSDIR%%%%PORTVERSION%%/html/archnode.html
+%%DOCSDIR%%%%PORTVERSION%%/html/archstorage.html
+%%DOCSDIR%%%%PORTVERSION%%/html/auth.html
+%%DOCSDIR%%%%PORTVERSION%%/html/bindings.html
+%%DOCSDIR%%%%PORTVERSION%%/html/bugs.html
+%%DOCSDIR%%%%PORTVERSION%%/html/command.html
+%%DOCSDIR%%%%PORTVERSION%%/html/compiling.html
+%%DOCSDIR%%%%PORTVERSION%%/html/contact.html
+%%DOCSDIR%%%%PORTVERSION%%/html/csharp.html
+%%DOCSDIR%%%%PORTVERSION%%/html/deployment.html
+%%DOCSDIR%%%%PORTVERSION%%/html/devguide.html
+%%DOCSDIR%%%%PORTVERSION%%/html/docs.html
+%%DOCSDIR%%%%PORTVERSION%%/html/downloads.html
+%%DOCSDIR%%%%PORTVERSION%%/html/drivers.html
+%%DOCSDIR%%%%PORTVERSION%%/html/drvesx.html
+%%DOCSDIR%%%%PORTVERSION%%/html/drvlxc.html
+%%DOCSDIR%%%%PORTVERSION%%/html/drvopenvz.html
+%%DOCSDIR%%%%PORTVERSION%%/html/drvqemu.html
+%%DOCSDIR%%%%PORTVERSION%%/html/drvremote.html
+%%DOCSDIR%%%%PORTVERSION%%/html/drvtest.html
+%%DOCSDIR%%%%PORTVERSION%%/html/drvuml.html
+%%DOCSDIR%%%%PORTVERSION%%/html/drvvbox.html
+%%DOCSDIR%%%%PORTVERSION%%/html/drvvmware.html
+%%DOCSDIR%%%%PORTVERSION%%/html/drvxen.html
+%%DOCSDIR%%%%PORTVERSION%%/html/errors.html
+%%DOCSDIR%%%%PORTVERSION%%/html/et.png
+%%DOCSDIR%%%%PORTVERSION%%/html/firewall.html
+%%DOCSDIR%%%%PORTVERSION%%/html/footer_corner.png
+%%DOCSDIR%%%%PORTVERSION%%/html/footer_pattern.png
+%%DOCSDIR%%%%PORTVERSION%%/html/format.html
+%%DOCSDIR%%%%PORTVERSION%%/html/formatcaps.html
+%%DOCSDIR%%%%PORTVERSION%%/html/formatdomain.html
+%%DOCSDIR%%%%PORTVERSION%%/html/formatnetwork.html
+%%DOCSDIR%%%%PORTVERSION%%/html/formatnode.html
+%%DOCSDIR%%%%PORTVERSION%%/html/formatnwfilter.html
+%%DOCSDIR%%%%PORTVERSION%%/html/formatsecret.html
+%%DOCSDIR%%%%PORTVERSION%%/html/formatsnapshot.html
+%%DOCSDIR%%%%PORTVERSION%%/html/formatstorage.html
+%%DOCSDIR%%%%PORTVERSION%%/html/formatstorageencryption.html
+%%DOCSDIR%%%%PORTVERSION%%/html/generic.css
+%%DOCSDIR%%%%PORTVERSION%%/html/goals.html
+%%DOCSDIR%%%%PORTVERSION%%/html/hacking.html
+%%DOCSDIR%%%%PORTVERSION%%/html/hooks.html
+%%DOCSDIR%%%%PORTVERSION%%/html/html/home.png
+%%DOCSDIR%%%%PORTVERSION%%/html/html/index.html
+%%DOCSDIR%%%%PORTVERSION%%/html/html/left.png
+%%DOCSDIR%%%%PORTVERSION%%/html/html/libvirt-libvirt.html
+%%DOCSDIR%%%%PORTVERSION%%/html/html/libvirt-virterror.html
+%%DOCSDIR%%%%PORTVERSION%%/html/html/right.png
+%%DOCSDIR%%%%PORTVERSION%%/html/html/up.png
+%%DOCSDIR%%%%PORTVERSION%%/html/hvsupport.html
+%%DOCSDIR%%%%PORTVERSION%%/html/index.html
+%%DOCSDIR%%%%PORTVERSION%%/html/internals.html
+%%DOCSDIR%%%%PORTVERSION%%/html/intro.html
+%%DOCSDIR%%%%PORTVERSION%%/html/java.html
+%%DOCSDIR%%%%PORTVERSION%%/html/libvirt-daemon-arch.png
+%%DOCSDIR%%%%PORTVERSION%%/html/libvirt-driver-arch.png
+%%DOCSDIR%%%%PORTVERSION%%/html/libvirt-header-bg.png
+%%DOCSDIR%%%%PORTVERSION%%/html/libvirt-header-logo.png
+%%DOCSDIR%%%%PORTVERSION%%/html/libvirt-net-logical.png
+%%DOCSDIR%%%%PORTVERSION%%/html/libvirt-net-physical.png
+%%DOCSDIR%%%%PORTVERSION%%/html/libvirt-object-model.png
+%%DOCSDIR%%%%PORTVERSION%%/html/libvirt.css
+%%DOCSDIR%%%%PORTVERSION%%/html/libvirtLogo.png
+%%DOCSDIR%%%%PORTVERSION%%/html/logging.html
+%%DOCSDIR%%%%PORTVERSION%%/html/madeWith.png
+%%DOCSDIR%%%%PORTVERSION%%/html/main.css
+%%DOCSDIR%%%%PORTVERSION%%/html/news.html
+%%DOCSDIR%%%%PORTVERSION%%/html/node.gif
+%%DOCSDIR%%%%PORTVERSION%%/html/php.html
+%%DOCSDIR%%%%PORTVERSION%%/html/python.html
+%%DOCSDIR%%%%PORTVERSION%%/html/relatedlinks.html
+%%DOCSDIR%%%%PORTVERSION%%/html/remote.html
+%%DOCSDIR%%%%PORTVERSION%%/html/sitemap.html
+%%DOCSDIR%%%%PORTVERSION%%/html/storage.html
+%%DOCSDIR%%%%PORTVERSION%%/html/todo.html
+%%DOCSDIR%%%%PORTVERSION%%/html/uri.html
+%%DOCSDIR%%%%PORTVERSION%%/html/virshcmdref.html
+%%DOCSDIR%%%%PORTVERSION%%/html/windows.html
+%%DOCSDIR%%-python%%PORTVERSION%%/TODO
+%%DOCSDIR%%-python%%PORTVERSION%%/examples/basic.py
+%%DOCSDIR%%-python%%PORTVERSION%%/examples/create.py
+%%DOCSDIR%%-python%%PORTVERSION%%/examples/error.py
+%%DOCSDIR%%-python%%PORTVERSION%%/examples/node.py
+%%DOCSDIR%%-python%%PORTVERSION%%/examples/uuid.py
+share/gtk-doc/html/libvirt/general.html
+share/gtk-doc/html/libvirt/home.png
+share/gtk-doc/html/libvirt/index.html
+share/gtk-doc/html/libvirt/left.png
+share/gtk-doc/html/libvirt/libvirt-libvirt.html
+share/gtk-doc/html/libvirt/libvirt-virterror.html
+share/gtk-doc/html/libvirt/libvirt.devhelp
+share/gtk-doc/html/libvirt/right.png
+share/gtk-doc/html/libvirt/style.css
+share/gtk-doc/html/libvirt/up.png
+%%DATADIR%%/cpu_map.xml
+%%DATADIR%%/schemas/capability.rng
+%%DATADIR%%/schemas/domain.rng
+%%DATADIR%%/schemas/domainsnapshot.rng
+%%DATADIR%%/schemas/interface.rng
+%%DATADIR%%/schemas/network.rng
+%%DATADIR%%/schemas/nodedev.rng
+%%DATADIR%%/schemas/nwfilter.rng
+%%DATADIR%%/schemas/secret.rng
+%%DATADIR%%/schemas/storageencryption.rng
+%%DATADIR%%/schemas/storagepool.rng
+%%DATADIR%%/schemas/storagevol.rng
+%%NLS%%share/locale/af/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/am/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/as/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/be/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/bn/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/bn_IN/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/bs/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/da/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/de/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/el/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/es/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/et/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/eu_ES/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/gu/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/he/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/hy/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/id/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/is/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/it/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/kn/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/ku/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/lo/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/mk/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/ml/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/mr/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/ms/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/my/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/nn/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/nso/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/or/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/si/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/sr/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/sr@latin/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/te/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/th/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/ur/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/vi_VN/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/libvirt.mo
+%%NLS%%share/locale/zu/LC_MESSAGES/libvirt.mo
+@dirrmtry etc/logrotate.d
+@dirrm include/libvirt
+@dirrmtry %%LIB32DIR%%/pkgconfig
+@dirrm %%LIB32DIR%%/libvirt/connection-driver
+@dirrm %%LIB32DIR%%/libvirt
+@dirrm %%DOCSDIR%%%%PORTVERSION%%/html/html
+@dirrm %%DOCSDIR%%%%PORTVERSION%%/html
+@dirrm %%DOCSDIR%%%%PORTVERSION%%
+@dirrm %%DOCSDIR%%-python%%PORTVERSION%%/examples
+@dirrm %%DOCSDIR%%-python%%PORTVERSION%%
+@dirrm share/augeas/lenses/tests
+@dirrm share/augeas/lenses
+@dirrm share/augeas
+@dirrm share/gtk-doc/html/libvirt
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+@dirrm share/libvirt/schemas
+@dirrm share/libvirt
+%%NLS%%@dirrmtry share/locale/as/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/as
+%%NLS%%@dirrmtry share/locale/be/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/be
+%%NLS%%@dirrmtry share/locale/bg/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/bg
+%%NLS%%@dirrmtry share/locale/bn_IN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/bn_IN
+%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ca
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
+%%NLS%%@dirrmtry share/locale/da/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/da
+%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de
+%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/el
+%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es
+%%NLS%%@dirrmtry share/locale/et/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/et
+%%NLS%%@dirrmtry share/locale/eu_ES/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/eu_ES
+%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi
+%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fr
+%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/gl
+%%NLS%%@dirrmtry share/locale/he/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/he
+%%NLS%%@dirrmtry share/locale/hr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/hr
+%%NLS%%@dirrmtry share/locale/hy/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/hy
+%%NLS%%@dirrmtry share/locale/id/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/id
+%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it
+%%NLS%%@dirrmtry share/locale/ja/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ja
+%%NLS%%@dirrmtry share/locale/ko/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ko
+%%NLS%%@dirrmtry share/locale/ku/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ku
+%%NLS%%@dirrmtry share/locale/lo/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lo
+%%NLS%%@dirrmtry share/locale/lt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lt
+%%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/mr
+%%NLS%%@dirrmtry share/locale/ms/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ms
+%%NLS%%@dirrmtry share/locale/my/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/my
+%%NLS%%@dirrmtry share/locale/nb/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nb
+%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl
+%%NLS%%@dirrmtry share/locale/nn/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nn
+%%NLS%%@dirrmtry share/locale/nso/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nso
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt
+%%NLS%%@dirrmtry share/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt_BR
+%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ro
+%%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru
+%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/si
+%%NLS%%@dirrmtry share/locale/sk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sk
+%%NLS%%@dirrmtry share/locale/sl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sl
+%%NLS%%@dirrmtry share/locale/sr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sr
+%%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sr@latin
+%%NLS%%@dirrmtry share/locale/sv/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sv
+%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/te
+%%NLS%%@dirrmtry share/locale/tr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tr
+%%NLS%%@dirrmtry share/locale/uk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/uk
+%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur
+%%NLS%%@dirrmtry share/locale/vi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/vi
+%%NLS%%@dirrmtry share/locale/vi_VN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/vi_VN
+%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_CN
+%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_TW
+%%NLS%%@dirrmtry share/locale/zu/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zu
+@dirrm var/run/libvirt
+@dirrm %%ETCDIR%%/nwfilter
+@dirrm %%ETCDIR%%
