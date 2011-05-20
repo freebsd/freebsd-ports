@@ -3,6 +3,7 @@ bin/ganglia-config
 bin/gstat
 bin/gmetric
 @unexec if cmp -s %D/etc/gmond.conf %D/etc/gmond.conf.sample; then rm -f %D/etc/gmond.conf; fi
+etc/gmond.conf.d/modpython.conf
 etc/gmond.conf.sample
 %%GMETAD%%@unexec if cmp -s %D/etc/gmetad.conf %D/etc/gmetad.conf.sample; then rm -f %D/etc/gmetad.conf; fi
 %%GMETAD%%etc/gmetad.conf.sample
@@ -13,8 +14,8 @@ include/gm_metric.h
 include/gm_msg.h
 include/gm_protocol.h
 include/gm_value.h
-lib/libganglia-3.1.1.so
-lib/libganglia-3.1.1.so.0
+lib/libganglia-3.1.7.so
+lib/libganglia-3.1.7.so.0
 lib/libganglia.a
 lib/libganglia.la
 lib/libganglia.so
@@ -30,6 +31,7 @@ lib/ganglia/modsys.so
 %%GMETAD%%sbin/gmetad
 %%GMETAD%%sbin/gmetasnap
 sbin/gmond
+@dirrmtry etc/gmond.conf.d
 @dirrm lib/ganglia
 @dirrmtry var/db/ganglia/rrds
 @dirrmtry var/db/ganglia
