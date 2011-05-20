@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	bftpd
-PORTVERSION=	3.1
+PORTVERSION=	3.4
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Very configurable FTP server that can do chroot easily
 
-GNU_CONFIGURE=		yes
+LICENSE=	GPLv2
+
+USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS+=	--enable-pam
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
@@ -25,7 +27,7 @@ PORTDOCS=	en pl sk
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/bftpd.conf,${PREFIX}/etc/bftpd.conf,' \
 		${WRKSRC}/mypaths.h
-	@${REINPLACE_CMD} -e "s@-ldl@@" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's, -ldl,,g' ${WRKSRC}/configure.in
 	@${FIND} ${WRKSRC} -name CVS | ${XARGS} ${RM} -rf
 
 do-install:
