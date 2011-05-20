@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	chmsee
-PORTVERSION=	1.1.0
-PORTREVISION=	3
+PORTVERSION=	1.3.1.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -17,12 +16,15 @@ COMMENT=	A viewer for Microsoft Help "CHM" files
 LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib \
 		gcrypt.17:${PORTSDIR}/security/libgcrypt
 
+LICENSE=	GPLv2
+
 USE_GNOME=	gnomehier libglade2
 USE_GECKO=	libxul
 USE_GETTEXT=	yes
 USE_CMAKE=	yes
 CMAKE_USE_PTHREAD=	yes
 CMAKE_ARGS=	-DCMAKE_INSTALL_RPATH_USE_LINK_PATH:BOOL=TRUE
+INSTALLS_ICONS=	yes
 
 MAN1=		chmsee.1
 
