@@ -29,6 +29,7 @@ CONFLICTS=	tightvnc-[0-9]* vnc-[0-9]*
 
 .ifdef(TRIDIAVNC_BASE)
 PREFIX=${TRIDIAVNC_BASE}
+MAKE_ENV+=      DESTDIR=${TRIDIAVNC_BASE}
 .endif
 
 .include <bsd.port.pre.mk>
