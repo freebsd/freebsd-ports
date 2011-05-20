@@ -5,7 +5,7 @@
  CPPFLAGS = @CPPFLAGS@
  LDFLAGS = @LDFLAGS@
 -LIBS = @LIBS@
-+LIBS = -L%%LOCALBASE%%/lib -lgetline @LIBS@
++LIBS = -L%%LOCALBASE%%/lib @LIBS@
  depcomp =
  am__depfiles_maybe =
  COMPILE = $(CC) $(DEFS) $(DEFAULT_INCLUDES) $(INCLUDES) $(AM_CPPFLAGS) \

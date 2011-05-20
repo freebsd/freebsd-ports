@@ -14,7 +14,6 @@ MASTER_SITES=	SF
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A cgi-based Virtual Qmail Domains Administrator
 
-LIB_DEPENDS=	getline.1:${PORTSDIR}/devel/libgetline
 BUILD_DEPENDS=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 RUN_DEPENDS=	${LOCALBASE}/vpopmail/lib/libvpopmail.a:${PORTSDIR}/mail/vpopmail
 
