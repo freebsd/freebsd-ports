@@ -1,6 +1,7 @@
 @comment $FreeBSD$
 bin/mythavtest
 bin/mythcommflag
+bin/mythffmpeg
 bin/mythfrontend
 bin/mythjobqueue
 bin/mythlcdserver
