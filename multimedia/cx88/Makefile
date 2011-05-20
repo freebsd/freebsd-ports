@@ -25,18 +25,12 @@ MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700055
-IGNORE=		requires FreeBSD 7.0-RELEASE or later
+.if (${OSVERSION} < 704000) || ((${OSVERSION} >= 800000) && (${OSVERSION} < 801000))
+IGNORE=	requires kernel support for kmem_alloc_attr() (FreeBSD 7.4+, FreeBSD 8.1+)
 .endif
 
 .if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=		requires kernel source files
-.endif
-
-KMEM_ALLOC_ATTR != ${GREP} -r "kmem_alloc_attr" ${SRC_BASE}/sys
-
-.if ${KMEM_ALLOC_ATTR} == ""
-IGNORE=	requires kernel support for kmem_alloc_attr() (FreeBSD 7.4+, FreeBSD 8.1+)
 .endif
 
 .include <bsd.port.post.mk>
