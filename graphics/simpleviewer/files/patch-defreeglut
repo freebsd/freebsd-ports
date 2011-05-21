@@ -70,18 +70,20 @@
  }
  
  void CWindow::fnKeyboard(unsigned char key, int x, int y) {
-@@ -245,8 +253,8 @@
+@@ -245,8 +253,10 @@
  
  	switch(key) {
  	case 27:	// ESC
 -//		exit(0);
 -		glutLeaveMainLoop();
++	case 'q':
++	case 'Q':
 +		exit(0);
 +//		glutLeaveMainLoop();
  		break;
  	case 127:	// Delete
  		if(mod == GLUT_ACTIVE_CTRL) {
-@@ -639,9 +647,11 @@
+@@ -639,9 +649,11 @@
  	g_window->fnMouseButtons(button, state, x, y);
  }
  
