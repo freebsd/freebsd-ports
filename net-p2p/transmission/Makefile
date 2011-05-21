@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	2.22
+PORTVERSION=	2.31
 CATEGORIES=	net-p2p
 MASTER_SITES=	# empty
 DISTFILES=	# empty
