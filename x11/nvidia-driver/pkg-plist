@@ -1,14 +1,10 @@
-@comment I can't add the below files to the package because pkg_delete
-@comment will complain when removing this package:
-@comment     %%MODULESDIR%%/extensions/XXX-libglx.la.%%%%.%%XSERVVERSION%%
-@comment     %%MODULESDIR%%/extensions/XXX-libglx.so.%%%%.%%XSERVVERSION%%
-@comment     lib/XXX-libGL.so.1.%%%%.%%LIBGLVERSION%%
-@comment They are however restored when this package is removed:
 @exec mv -f %D/%%MODULESDIR%%/extensions/libglx.la %D/%%MODULESDIR%%/extensions/XXX-libglx.la.%%%%.%%XSERVVERSION%%
 @unexec mv -f %D/%%MODULESDIR%%/extensions/XXX-libglx.la.%%%%.%%XSERVVERSION%% %D/%%MODULESDIR%%/extensions/libglx.la
 @exec mv -f %D/%%MODULESDIR%%/extensions/libglx.so %D/%%MODULESDIR%%/extensions/XXX-libglx.so.%%%%.%%XSERVVERSION%%
+%%MODULESDIR%%/extensions/libglx.so
 @unexec mv -f %D/%%MODULESDIR%%/extensions/XXX-libglx.so.%%%%.%%XSERVVERSION%% %D/%%MODULESDIR%%/extensions/libglx.so
 @exec mv -f %D/lib/libGL.so.1 %D/lib/XXX-libGL.so.1.%%%%.%%LIBGLVERSION%%
+lib/libGL.so.1
 @unexec mv -f %D/lib/XXX-libGL.so.1.%%%%.%%LIBGLVERSION%% %D/lib/libGL.so.1
 lib/libnvidia-tls.so.1
 lib/libnvidia-tls.so
