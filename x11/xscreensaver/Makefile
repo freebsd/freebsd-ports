@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xscreensaver
-PORTVERSION=	5.13
+PORTVERSION=	5.14
 CATEGORIES?=	x11
 MASTER_SITES=	http://www.jwz.org/xscreensaver/ \
 		http://dougbarton.us/Downloads/
