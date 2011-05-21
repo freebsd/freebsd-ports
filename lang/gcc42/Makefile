@@ -80,7 +80,7 @@ pre-everything::
 	@${ECHO_MSG} "Making GCC ${PORTVERSION} for ${OPSYS} ${OSREL}  target=${CONFIGURE_TARGET}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|\(const char version_string.*\)";|\1 [FreeBSD]";|' \
+	@${REINPLACE_CMD} -e 's|\(#define VERSUFFIX.*\)"|\1 [FreeBSD Ports Collection]"|' \
 	    ${SRCDIR}/gcc/version.c
 
 pre-configure:
