@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dmidecode
-PORTVERSION=	2.10
+PORTVERSION=	2.11
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		ftp://ftp.nuug.no/pub/anders/distfiles/
@@ -18,27 +18,22 @@ COMMENT=	A tool for dumping DMI (SMBIOS) contents in human-readable format
 ONLY_FOR_ARCHS=	i386 amd64 ia64
 
 USE_BZIP2=	yes
-MAKE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" DOCSDIR="${DOCSDIR}"
+MAKE_ENV+=	DOCSDIR="${DOCSDIR}" LDFLAGS="${LDFLAGS}"
+LICENSE=	GPLv2
 
-PORTDOCS=	AUTHORS CHANGELOG README
-
-post-patch:
 .if defined(NOPORTDOCS)
+post-patch:
 	@${REINPLACE_CMD} -e '/^install.*:/s,install-doc,,' ${WRKSRC}/Makefile
-.endif
 
-post-install:
-.if !defined(NOPORTDOCS)
-	${INSTALL} -d -o root -g wheel -m 0755 ${DOCSDIR}
-.for f in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
-.endfor
+.else
+PORTDOCS=	AUTHORS CHANGELOG README
 .endif
-
-.include <bsd.port.pre.mk>
 
 MAN8=		dmidecode.8
 PLIST_FILES=	sbin/dmidecode
+
+.include <bsd.port.pre.mk>
+
 .if ${ARCH} == "amd64" || ${ARCH} == "i386"
 MAN8+=		biosdecode.8 ownership.8 vpddecode.8
 PLIST_FILES+=	sbin/biosdecode sbin/ownership sbin/vpddecode
