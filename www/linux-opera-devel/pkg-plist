@@ -84,8 +84,6 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/files_old.sig
 %%DATADIR%%/html40_entities.dtd
 %%DATADIR%%/lngcode.txt
-%%DATADIR%%/locale/af/af.lng
-%%DATADIR%%/locale/az/az.lng
 %%DATADIR%%/locale/be/be.lng
 %%DATADIR%%/locale/be/bookmarks.adr
 %%DATADIR%%/locale/be/search.ini
@@ -150,9 +148,7 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/locale/ka/ka.lng
 %%DATADIR%%/locale/ko/ko.lng
 %%DATADIR%%/locale/lt/lt.lng
-%%DATADIR%%/locale/me/me.lng
 %%DATADIR%%/locale/mk/mk.lng
-%%DATADIR%%/locale/ms/ms.lng
 %%DATADIR%%/locale/nb/bookmarks.adr
 %%DATADIR%%/locale/nb/nb.lng
 %%DATADIR%%/locale/nb/search.ini
@@ -187,14 +183,11 @@ share/icons/hicolor/scalable/mimetypes/linux-opera-widget.svg
 %%DATADIR%%/locale/sv/sv.lng
 %%DATADIR%%/locale/ta/ta.lng
 %%DATADIR%%/locale/te/te.lng
-%%DATADIR%%/locale/th/th.lng
-%%DATADIR%%/locale/tl/tl.lng
 %%DATADIR%%/locale/tr/tr.lng
 %%DATADIR%%/locale/uk/bookmarks.adr
 %%DATADIR%%/locale/uk/search.ini
 %%DATADIR%%/locale/uk/standard_speeddial.ini
 %%DATADIR%%/locale/uk/uk.lng
-%%DATADIR%%/locale/uz/uz.lng
 %%DATADIR%%/locale/vi/vi.lng
 %%DATADIR%%/locale/zh-cn/bookmarks.adr
 %%DATADIR%%/locale/zh-cn/browser.js
@@ -324,11 +317,8 @@ share/mime/packages/linux-opera-widget.xml
 @dirrm %%DATADIR%%/locale/zh-tw
 @dirrm %%DATADIR%%/locale/zh-cn
 @dirrm %%DATADIR%%/locale/vi
-@dirrm %%DATADIR%%/locale/uz
 @dirrm %%DATADIR%%/locale/uk
 @dirrm %%DATADIR%%/locale/tr
-@dirrm %%DATADIR%%/locale/tl
-@dirrm %%DATADIR%%/locale/th
 @dirrm %%DATADIR%%/locale/te
 @dirrm %%DATADIR%%/locale/ta
 @dirrm %%DATADIR%%/locale/sv
@@ -342,9 +332,7 @@ share/mime/packages/linux-opera-widget.xml
 @dirrm %%DATADIR%%/locale/nn
 @dirrm %%DATADIR%%/locale/nl
 @dirrm %%DATADIR%%/locale/nb
-@dirrm %%DATADIR%%/locale/ms
 @dirrm %%DATADIR%%/locale/mk
-@dirrm %%DATADIR%%/locale/me
 @dirrm %%DATADIR%%/locale/lt
 @dirrm %%DATADIR%%/locale/ko
 @dirrm %%DATADIR%%/locale/ka
@@ -370,8 +358,6 @@ share/mime/packages/linux-opera-widget.xml
 @dirrm %%DATADIR%%/locale/cs
 @dirrm %%DATADIR%%/locale/bg
 @dirrm %%DATADIR%%/locale/be
-@dirrm %%DATADIR%%/locale/az
-@dirrm %%DATADIR%%/locale/af
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%/extra
 @dirrm %%DATADIR%%/defaults
