@@ -1,17 +1,18 @@
 # New ports collection makefile for:	ocfpcsc
 # Date created:		2009-01-07
-# Whom:			Marcin Cieslak <saper@SYSTEM.PL>
+# Whom:			Marcin Cieslak <saper@saper.info>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	ocfpcsc
 PORTVERSION=	0.0.1
+PORTREVISION=	1
 CATEGORIES=	devel security java
 MASTER_SITES=	http://www.musclecard.com/middleware/files/
 DISTNAME=	OCFPCSC1-${PORTVERSION}
 
-MAINTAINER=	saper@SYSTEM.PL
+MAINTAINER=	saper@saper.info
 COMMENT=	Open Card Framework to PC/SC bridge
 
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
