@@ -1,14 +1,14 @@
 include/snappy.h
+include/snappy-c.h
 include/snappy-sinksource.h
 include/snappy-stubs-public.h
 lib/libsnappy.a
 lib/libsnappy.la
 lib/libsnappy.so
-lib/libsnappy.so.1
+lib/libsnappy.so.2
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-share/
