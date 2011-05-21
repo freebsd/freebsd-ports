@@ -51,20 +51,12 @@ CONFIGURE_ARGS+=--disable-pcre
 .endif
 
 .ifdef(WITH_SETUID)
-KISMET_GROUP?=	kismet
-CONFIGURE_ARGS+=--with-suidgroup=${KISMET_GROUP}
+GROUPS =	kismet
+CONFIGURE_ARGS+=--with-suidgroup=${GROUPS}
 INSTALL_TARGET =	suidinstall
 PLIST_SUB+=	SUID=""
-PKGINSTALL=	${PKGDIR}/suid_pkg-install
-PKGDEINSTALL =	${PKGDIR}/suid_pkg-deinstall
 PKGMESSAGE=	${WRKDIR}/suid_pkg-message
 SUB_FILES+=	suid_pkg-message
-SUB_LIST+=	KISMET_GROUP=${KISMET_GROUP}
-
-pre-su-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
-		${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 .else
 INSTALL_TARGET =	install
 CONFIGURE_ARGS+=--without-suidgroup
