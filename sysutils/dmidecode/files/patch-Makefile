@@ -1,7 +1,7 @@
---- Makefile.orig	Tue Feb  7 09:45:21 2006
-+++ Makefile	Tue Feb  7 09:47:11 2006
-@@ -8,25 +8,25 @@
- #	Licensed under the GNU Public License.
+--- Makefile.orig	2010-10-11 10:08:16.000000000 -0400
++++ Makefile	2011-03-18 12:55:54.000000000 -0400
+@@ -12,30 +12,30 @@
+ #   (at your option) any later version.
  #
  
 -CC      = gcc
@@ -20,7 +20,7 @@
  
  # Pass linker flags here
 -LDFLAGS =
-+LDFLAGS+=
++LDFLAGS+= $(CFLAGS)
  
  DESTDIR =
 -prefix  = /usr/local
@@ -33,4 +33,11 @@
 +docdir  = $(DOCSDIR)
  
  INSTALL         := install
- INSTALL_DATA    := $(INSTALL) -m 644
+-INSTALL_DATA    := $(INSTALL) -m 644
++INSTALL_DATA    := $(BSD_INSTALL_DATA)
+ INSTALL_DIR     := $(INSTALL) -m 755 -d
+-INSTALL_PROGRAM := $(INSTALL) -m 755
++INSTALL_PROGRAM := $(BSD_INSTALL_PROGRAM)
+ RM              := rm -f
+ 
+ # BSD make provides $MACHINE, but GNU make doesn't
