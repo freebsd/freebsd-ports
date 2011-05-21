@@ -30,7 +30,6 @@
 %%SITE_PERL%%/Module/Build/YAML.pm
 %%SITE_PERL%%/inc/latest.pm
 %%SITE_PERL%%/inc/latest/private.pm
-%%EXE_FILES%%bin/config_data
 @dirrm %%SITE_PERL%%/inc/latest
 @dirrm %%SITE_PERL%%/inc
 @dirrm %%SITE_PERL%%/Module/Build/Platform
