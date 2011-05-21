@@ -124,12 +124,14 @@ share/pixmaps/ggobi.png
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%
-@dirrm share/applications
 @dirrmtry libdata/pkgconfig
 @dirrm include/ggobi
 @unexec if cmp -s %D/etc/xdg/ggobi/ggobirc.sample %D/etc/xdg/ggobi/ggobirc; then rm -f %D/etc/xdg/ggobi/ggobirc; fi
 etc/xdg/ggobi/ggobirc.sample
 @exec if [ ! -f %B/ggobirc ]; then cp -p %D/%F %B/ggobirc; fi
+share/doc/ggobi/XML.pdf
+share/doc/ggobi/manual.pdf
+@dirrm share/doc/ggobi
 @dirrmtry share/applications
 @dirrmtry etc/xdg/ggobi
 @dirrmtry etc/xdg
