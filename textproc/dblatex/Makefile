@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	dblatex
-PORTVERSION=	0.2.12
-PORTREVISION=	3
+PORTVERSION=	0.3.1
+#PORTREVISION=	0
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -31,7 +31,7 @@ MANCOMPRESSED=	yes
 post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e '/pdfdocs),/d' ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} -e '/docs\/html/d' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e '/htmldoc)/d' ${WRKSRC}/setup.py
 .endif
 	@${REINPLACE_CMD} -e "s,share/man/man1,man/man1,g" ${WRKSRC}/setup.py
 
