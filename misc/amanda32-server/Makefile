@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	amanda
-PORTVERSION=	3.2.1
+PORTVERSION=	3.2.2
 PORTEPOCH=	1
 CATEGORIES=	misc
 MASTER_SITES=	SF/amanda/amanda%20-%20stable/${PORTVERSION}
@@ -189,6 +189,9 @@ pre-fetch:
 
 CONFLICTS=	amanda-client-2.5.* amanda-client-2.6.*
 CONFIGURE_ARGS+=--without-server --with-amandates=${AMANDA_DATES}
+.if defined(AMANDA_NO_SNAPSHOT_DUMP)
+CFLAGS=		-DFreeBSD_NO_SNAPSHOT_DUMP=t
+.endif
 
 MAN5=		amanda-archive-format.5 \
 		amanda-client.conf.5 \
