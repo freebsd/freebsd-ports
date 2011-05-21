@@ -28,6 +28,10 @@ OPTIONS=	NVIDIA  "Install support for nvidia"    off
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 800076
+BROKEN=		does not build
+.endif
+
 .if defined(WITH_NVIDIA)
 .	if !exists(${LINUXBASE}/usr/lib/libGL.so.1)
 RUN_DEPENDS+=	${LINUXBASE}/usr/lib/libGL.so.1:${PORTSDIR}/x11/nvidia-driver
