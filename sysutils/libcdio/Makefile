@@ -6,7 +6,7 @@
 
 PORTNAME=	libcdio
 PORTVERSION=	0.82
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	libcdio
@@ -26,6 +26,7 @@ USE_GNOME=	gnometarget pkgconfig gnomehack
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
+USE_NCURSES=	yes
 CONFIGURE_ARGS+=	--with-libpopt-prefix=${LOCALBASE} \
 			--with-libiconv-prefix=${LOCALBASE} \
 USE_PERL5_BUILD=yes
