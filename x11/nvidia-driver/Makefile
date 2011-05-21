@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	256.53
-PORTREVISION?=	1			# As a reminder it can be overridden
+DISTVERSION?=	270.41.19
+PORTREVISION?=	0			# As a reminder it can be overridden
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
 # MASTER_SITE_SUBDIR has to be set later because it depends on NVVERSION
@@ -22,7 +22,7 @@ LICENSE_FILE=	${WRKSRC}/doc/license.txt
 LICENSE_PERMS=	dist-mirror no-dist-sell pkg-mirror no-pkg-sell auto-accept
 
 ARCH_SUFX=	${ARCH:S/i386//:S/amd/_/}
-NO_PACKAGE=	should be recompiled for a particular FreeBSD kernel
+USE_XORG=	xorg-server
 USE_GL=		gl
 USE_LDCONFIG=	yes
 SUB_FILES=	pkg-message
@@ -64,10 +64,6 @@ OPTIONS+=	WBINVD		"Enable heavy-weight cache-flush logic" off
 
 XSERVVERSION!=	${PKG_INFO} -qO x11-servers/xorg-server 2>/dev/null || true
 LIBGLVERSION!=	${PKG_INFO} -qO graphics/libGL 2>/dev/null || true
-
-.if empty(XSERVVERSION)
-IGNORE=		needs an X server implementation installed
-.endif
 
 PLIST_SUB+=	XSERVVERSION=${XSERVVERSION} LIBGLVERSION=${LIBGLVERSION} \
 		LINUXBASE=${LINUXBASE} SHLIB_VERSION=${PORTVERSION} \
@@ -139,8 +135,9 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e 's/afterinstall/dontexecute/' ${WRKSRC}/Makefile
 
 pre-su-install:
-# XXX This port silently assumes PREFIX == LOCALBASE XXX
-	@${MKDIR} ${PREFIX}/${MODULESDIR}/drivers
+# While this port silently assumes PREFIX == LOCALBASE, at least try to
+# pretend we support different paths thereof
+	@cd ${PREFIX}/${MODULESDIR} && ${MKDIR} drivers extensions
 
 post-install: .SILENT
 # pkg-plist is already overbloated, so use these hacks instead of PLIST_SUB's
