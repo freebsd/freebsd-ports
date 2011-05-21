@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	saga
-PORTVERSION=	2.0.6
-PORTREVISION=	1
+PORTVERSION=	2.0.7
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -66,11 +65,6 @@ post-patch:
 		${WRKSRC}/configure; do \
 		${REINPLACE_CMD} -e's|wx-config |${WX_CONFIG} |g' "$$f"; \
 	done
-	@${REINPLACE_CMD} -e 's|#if !defined(__APPLE__) && !defined(__BSD__)|#ifdef HAVE_MALLOC_H|' \
-		${WRKSRC}/src/saga_core/saga_api/api_core.h \
-		${WRKSRC}/src/modules_projection/pj_georeference/pj_georeference/lmdif0.c
-	@${REINPLACE_CMD} -e 's,<cv.h>,<opencv/cv.h>,' \
-		${WRKSRC}/src/modules_images/modules_opencv/opencv/opencv.h
 .if ${ARCH} == "i386"
 	@${REINPLACE_CMD} -e 's|typedef unsigned long	DWORD;|typedef unsigned int	DWORD;|' \
 		${WRKSRC}/src/saga_core/saga_api/api_core.h

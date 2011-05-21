@@ -1,12 +1,12 @@
 bin/saga_cmd
 bin/saga_gui
-lib/libsaga_api-2.0.6.so
+lib/libsaga_api-2.0.7.so
 lib/libsaga_api.la
 lib/libsaga_api.so
-lib/libsaga_gdi-2.0.6.so
+lib/libsaga_gdi-2.0.7.so
 lib/libsaga_gdi.la
 lib/libsaga_gdi.so
-lib/libsaga_odbc-2.0.6.so
+lib/libsaga_odbc-2.0.7.so
 lib/libsaga_odbc.a
 lib/libsaga_odbc.la
 lib/libsaga_odbc.so
@@ -16,6 +16,8 @@ lib/saga/libdocs_html.la
 lib/saga/libdocs_html.so
 %%HARU%%lib/saga/libdocs_pdf.la
 %%HARU%%lib/saga/libdocs_pdf.so
+lib/saga/libgarden_3d_viewer.la
+lib/saga/libgarden_3d_viewer.so
 lib/saga/libgeostatistics_grid.la
 lib/saga/libgeostatistics_grid.so
 lib/saga/libgeostatistics_kriging.la
@@ -30,8 +32,6 @@ lib/saga/libgrid_calculus.la
 lib/saga/libgrid_calculus.so
 lib/saga/libgrid_calculus_bsl.la
 lib/saga/libgrid_calculus_bsl.so
-lib/saga/libgrid_discretisation.la
-lib/saga/libgrid_discretisation.so
 lib/saga/libgrid_filter.la
 lib/saga/libgrid_filter.so
 lib/saga/libgrid_gridding.la
@@ -44,8 +44,14 @@ lib/saga/libgrid_visualisation.la
 lib/saga/libgrid_visualisation.so
 lib/saga/libihacres.la
 lib/saga/libihacres.so
+lib/saga/libimagery_classification.la
+lib/saga/libimagery_classification.so
+lib/saga/libimagery_rga.la
+lib/saga/libimagery_rga.so
 lib/saga/libimagery_segmentation.la
 lib/saga/libimagery_segmentation.so
+lib/saga/libimagery_tools.la
+lib/saga/libimagery_tools.so
 lib/saga/libio_esri_e00.la
 lib/saga/libio_esri_e00.so
 lib/saga/libio_gdal.la
@@ -121,6 +127,8 @@ lib/saga/libtable_tools.la
 lib/saga/libtable_tools.so
 lib/saga/libtin_tools.la
 lib/saga/libtin_tools.so
+lib/saga/libtin_viewer.la
+lib/saga/libtin_viewer.so
 lib/saga/libtransect.la
 lib/saga/libtransect.so
 share/saga/saga_icon_32.xpm
