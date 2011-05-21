@@ -2426,6 +2426,7 @@ distel                          ports/devel/distel
 distilator                      ports/ports-mgmt/distilator
 distorm                         ports/devel/distorm
 distribfold                     ports/biology/distribfold
+ditaa                           ports/graphics/ditaa
 ditrack                         ports/devel/ditrack
 dits                            ports/devel/dits
 diveintopython                  ports/lang/diveintopython
@@ -11961,6 +11962,7 @@ p5-Digest-TransformPath         ports/devel/p5-Digest-TransformPath
 p5-Digest-Whirlpool             ports/security/p5-Digest-Whirlpool
 p5-Dir-Project                  ports/devel/p5-Dir-Project
 p5-Dir-Purge                    ports/sysutils/p5-Dir-Purge
+p5-Dir-Self                     ports/devel/p5-Dir-Self
 p5-Dir-Watch                    ports/devel/p5-Dir-Watch
 p5-Directory-Queue              ports/devel/p5-Directory-Queue
 p5-Directory-Scratch            ports/devel/p5-Directory-Scratch
@@ -16174,6 +16176,7 @@ p5-digest-transformpath         ports/devel/p5-Digest-TransformPath
 p5-digest-whirlpool             ports/security/p5-Digest-Whirlpool
 p5-dir-project                  ports/devel/p5-Dir-Project
 p5-dir-purge                    ports/sysutils/p5-Dir-Purge
+p5-dir-self                     ports/devel/p5-Dir-Self
 p5-dir-watch                    ports/devel/p5-Dir-Watch
 p5-directory-queue              ports/devel/p5-Directory-Queue
 p5-directory-scratch            ports/devel/p5-Directory-Scratch
