@@ -182,6 +182,7 @@
     SUBDIR += gnumail
     SUBDIR += gotmail
     SUBDIR += grepmail
+    SUBDIR += greyfix
     SUBDIR += greylite
     SUBDIR += gtray
     SUBDIR += gubby

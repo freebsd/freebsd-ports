@@ -1,0 +1,4 @@
+@exec mkdir -m 700 -p /var/db/greyfix && chown nobody /var/db/greyfix
+sbin/greyfix
+@cwd /
+@dirrmtry /var/db/greyfix
