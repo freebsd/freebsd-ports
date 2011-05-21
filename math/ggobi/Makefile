@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ggobi
-PORTVERSION=	2.1.8
-PORTREVISION=	1
+PORTVERSION=	2.1.9
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.ggobi.org/downloads/
 
