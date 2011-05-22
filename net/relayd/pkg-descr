@@ -8,4 +8,9 @@ firmed, Layer 3 and/or layer 7 forwarding services are set up by relayd.
 Layer 3 redirection happens at the packet level; to configure it, relayd
 communicates with pf(4). 
 
+The following relayd functionality is not (yet) implemented in FreeBSD:
+carp
+routers
+snmp
+
 WWW: http://spootnik.org/relayd/
