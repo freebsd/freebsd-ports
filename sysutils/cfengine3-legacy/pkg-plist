@@ -1,6 +1,5 @@
 sbin/cf-agent
 sbin/cf-execd
-sbin/cf-hub
 sbin/cf-key
 sbin/cf-know
 sbin/cf-monitord
@@ -160,6 +159,7 @@ lib/libpromises.so.1
 %%DOCSDIR%%/unit_package_yum.cf
 %%DOCSDIR%%/unit_package_zypper.cf
 %%DOCSDIR%%/unit_parallel_exec.cf
+%%DOCSDIR%%/unit_parsestringarray.cf
 %%DOCSDIR%%/unit_pathtype.cf
 %%DOCSDIR%%/unit_pattern_and_edit.cf
 %%DOCSDIR%%/unit_peers.cf
@@ -193,6 +193,7 @@ lib/libpromises.so.1
 %%DOCSDIR%%/unit_resolveconf.cf
 %%DOCSDIR%%/unit_returnszero.cf
 %%DOCSDIR%%/unit_root_passwd.cf
+%%DOCSDIR%%/unit_select_class.cf
 %%DOCSDIR%%/unit_select_mode.cf
 %%DOCSDIR%%/unit_select_region.cf
 %%DOCSDIR%%/unit_select_size.cf
