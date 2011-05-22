@@ -201,6 +201,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kerberos.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-building.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-config.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-custom-kernel.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-nodes.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig-trouble.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/kernelconfig.html
@@ -294,11 +295,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-xdm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11-wm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x12918.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x28853.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x28897.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x28941.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x8990.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x12979.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x28908.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x28952.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x28996.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/LEGALNOTICE.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/changes.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-after-port-mk.html
