@@ -1,0 +1,20 @@
+--- Makefile.in.orig	2011-05-22 13:58:34.738173251 +0200
++++ Makefile.in	2011-05-22 13:59:26.136171443 +0200
+@@ -228,17 +228,9 @@
+ 	done
+ 	@for i in $(GENS) ; do \
+ 	    install -m 0644 $$i "$(DESTDIR)$(incdir)/" ; \
+-	done
+-	@mkdir -p "$(DESTDIR)$(docdir)/api/" && \
+-	for i in $(DOCS) ; do \
+-	    install -m 0644 @srcdir@/$$i "$(DESTDIR)$(docdir)/" ; \
+ 	done ;
+ 
+ install-api: $(APIDOCS)
+-	@mkdir -p "$(DESTDIR)$(docdir)/api/" && \
+-	install -m 0644 @srcdir@/docs/*.html "$(DESTDIR)$(docdir)/" && \
+-	test -z "$(APIDOCS)" || \
+-	install -m 0644 @srcdir@/docs/api/*.* "$(DESTDIR)$(docdir)/api/"
+ 
+ uninstall uninstall-root:
+ 	@-for i in $(SLIBS) ; do \

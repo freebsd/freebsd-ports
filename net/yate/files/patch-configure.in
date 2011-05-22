@@ -1,0 +1,47 @@
+--- ./configure.in.orig	2011-04-12 18:04:04.000000000 +0400
++++ ./configure.in	2011-04-13 15:25:28.000000000 +0400
+@@ -476,7 +476,7 @@
+ AC_SUBST(MYSQL_VER)
+ 
+ HAVE_ZAP=no
+-ZAP_FLAGS=""
++ZAP_FLAGS="-I/usr/local/include"
+ AC_ARG_ENABLE(dahdi,AC_HELP_STRING([--enable-dahdi],[Enable Dahdi driver (default: yes)]),want_dahdi=$enableval,want_dahdi=yes)
+ if [[ "x$want_dahdi" = "xyes" ]]; then
+ AC_MSG_CHECKING([for Dahdi generic headers])
+@@ -494,7 +494,7 @@
+ #include <zaptel/zaptel.h>
+ ],[],
+ HAVE_ZAP="yes"
+-ZAP_FLAGS="-DNEW_ZAPTEL_LOCATION -DHAVE_ZAP"
++ZAP_FLAGS="-DNEW_ZAPTEL_LOCATION -DHAVE_ZAP -I/usr/local/include"
+ )
+ AC_MSG_RESULT([$HAVE_ZAP])
+ if [[ "x$HAVE_ZAP" = "xno" ]]; then
+@@ -503,7 +503,7 @@
+ #include <linux/zaptel.h>
+ ],[],
+ HAVE_ZAP="yes"
+-ZAP_FLAGS="-DHAVE_ZAP"
++ZAP_FLAGS="-DHAVE_ZAP -I/usr/local/include"
+ )
+ AC_MSG_RESULT([$HAVE_ZAP])
+ fi
+@@ -731,7 +731,7 @@
+ )
+ CFLAGS="$SAVE_CFLAGS"
+ if [[ "x$HAVE_SPEEX" = "xyes" ]]; then
+-    SPEEX_INC="-I$ac_cv_use_libspeex"
++    SPEEX_INC="-I$ac_cv_use_libspeex -I/usr/local/include"
+ fi
+ fi
+ AC_MSG_RESULT([$HAVE_SPEEX])
+@@ -911,7 +911,7 @@
+ PWLIB_INC="-I$ac_cv_use_pwlib/include" # Base dir, ok for ptlib
+ if [[ "$vpw" '<' "02.00.00" ]]; then
+     # Pwlib-1.xm no ptlib (2.x) install into ptlib
+-    PWLIB_INC="$PWLIB_INC/ptlib"
++    PWLIB_INC="$PWLIB_INC $PWLIB_INC/ptlib"
+     if [[ "$vpw" '<' "01.06.00" ]]; then
+         # Very old pwlib needs more includes.
+         PWLIB_INC="$PWLIB_INC/unix/ptlib $PWLIB_INC/unix $PWLIB_INC"
