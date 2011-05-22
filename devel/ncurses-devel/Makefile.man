@@ -18,6 +18,7 @@ MAN1=	\
 	tset.1
 MLINKS+=\
 	adacursesw-config.1 adacurses-config.1 \
+	adacursesw-config.1 adacurses.1 \
 	tset.1 reset.1
 
 .if !defined(WITHOUT_WIDEC)
