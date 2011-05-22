@@ -48,7 +48,6 @@ etc/asterisk/alsa.conf-dist
 etc/asterisk/asterisk.adsi-dist
 @unexec if cmp -s %D/etc/asterisk/asterisk.conf %D/etc/asterisk/asterisk.conf-dist; then rm -f %D/etc/asterisk/asterisk.conf; fi
 etc/asterisk/asterisk.conf-dist
-etc/asterisk/asterisk.conf
 @unexec if cmp -s %D/etc/asterisk/calendar.conf %D/etc/asterisk/calendar.conf-dist; then rm -f %D/etc/asterisk/calendar.conf; fi
 etc/asterisk/calendar.conf-dist
 @unexec if cmp -s %D/etc/asterisk/ccss.conf %D/etc/asterisk/ccss.conf-dist; then rm -f %D/etc/asterisk/ccss.conf; fi
