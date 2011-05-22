@@ -5,6 +5,23 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110522:
+  AFFECTS: users of emulators/virtualbox-ose
+  AUTHOR: vbox@FreeBSD.org
+
+  The emulators/virtualbox-ose port has been updated to 4.0.8. If you
+  want to stay with VirtualBox 3.2.x please run:
+
+  # portmaster -o emulators/virtualbox-ose-kmod-legacy emulators/virtualbox-ose-kmod
+  # portmaster -o emulators/virtualbox-ose-legacy emulators/virtualbox-ose
+  or
+  # portupgrade -o emulators/virtualbox-ose-kmod-legacy emulators/virtualbox-ose-kmod
+  # portupgrade -o emulators/virtualbox-ose-legacy emulators/virtualbox-ose
+
+  The emulators/virtualbox-ose-legacy port will always include the
+  latest legacy version as a fallback if you hit a serious regression
+  in the latest version.
+
 20110517:
   AFFECTS: users of lang/perl*
   AUTHOR: skv@FreeBSD.org
