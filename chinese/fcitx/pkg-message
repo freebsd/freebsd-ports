@@ -1,29 +1,29 @@
-**********************************************************
+************************************************************************
+
 Remember to set environment variable XMODIFIERS:
 
 	csh/tcsh:	setenv XMODIFIERS @im=fcitx
 	sh/bash:	export XMODIFIERS='@im=fcitx'
 
-Additionally for GTK/Qt programs, you must also set:
+Additionally, for GTK/Qt programs, you must also set:
 
 	csh/tcsh:	setenv GTK_IM_MODULE xim
-				setenv QT_IM_MODULE xim
+			setenv QT_IM_MODULE xim
 	sh/bash:	export GTK_IM_MODULE=xim
-				export QT_IM_MODULE=xim
+			export QT_IM_MODULE=xim
 
-For the first use, follow these steps before starting
-the program:
+Xterm users should also add ``XTerm.VT100.inputMethod:fcitx'' or similar
+line to their ~/.Xdefaults file.
 
-	mkdir $HOME/.config/fcitx
-	touch $HOME/.config/fcitx/config
+For the first time use, run the program with -c switch to create default
+configuration file (~/.config/fcitx/config).
 
-For users migrating from 3.x to 4.0, just execute:
+For users migrating from 3.x to 4.0, just copy existing configuration to
+the new location:
 
-	mv $HOME/.fcitx $HOME/.config/fcitx
+	mv ~/.fcitx ~/.config/fcitx
 
-If there are any problems starting up, remove the old
-configuraiton file and create a new one using touch(1):
+If there are any problems starting up, remove the old configuration file
+(optionally) and create a new one by running ``fcitx -c'' again.
 
-	rm $HOME/.config/fcitx/config
-	touch $HOME/.config/fcitx/config
-************************************************************
+************************************************************************
