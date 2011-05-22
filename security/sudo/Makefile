@@ -7,7 +7,7 @@
 
 PORTNAME=	sudo
 PORTVERSION=	1.8.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		http://www.signal42.com/mirrors/sudo_ftp/ \
@@ -43,7 +43,7 @@ MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		ftp://sunsite.icm.edu.pl/packages/sudo/ \
 		ftp://mirror.cdmon.com/pub/sudo/ \
 		ftp://ftp.twaren.net/Unix/Security/Sudo/
-DISTNAME=	${PORTNAME}-1.8.1p1
+DISTNAME=	${PORTNAME}-1.8.1p2
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Allow others to run commands as root
@@ -64,7 +64,7 @@ OPTIONS=	LDAP "With LDAP support" off \
 		DISABLE_ROOT_SUDO "Disable root sudo" off \
 		DISABLE_AUTH "Disable authentication" off \
 		NOARGS_SHELL "Enable no arguments shell" off \
-		AUDIT "Enable BSM audit support" off
+		AUDIT "Enable BSM audit support" on
 
 LOGFAC?=	local2
 CONFIGURE_ARGS+=	--with-logfac=${LOGFAC}
