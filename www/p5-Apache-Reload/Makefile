@@ -7,6 +7,7 @@
 
 PORTNAME=	Apache-Reload
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,6 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Reload changed modules
 
+CONFLICTS=	ap2[02]-mod_perl2-2.0.[5-9]*
 MAKE_JOBS_SAFE=	yes
 
 PERL_CONFIGURE=	yes
@@ -24,6 +26,7 @@ MAN3=		Apache2::Reload.3 Apache::Reload.3
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MODPERL2) || ${APACHE_VERSION} > 13
+FORBIDDEN=	Apache-Reload is included again in mod_perl2
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
 MAKE_ENV+=	MOD_PERL=2
