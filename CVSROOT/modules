@@ -1045,6 +1045,7 @@ bison                           ports/devel/bison
 bisoncpp                        ports/devel/bisoncpp
 bisongen                        ports/devel/bisongen
 bitchx                          ports/irc/bitchx
+bitcoin                         ports/net-p2p/bitcoin
 bitcollider                     ports/deskutils/bitcollider
 bitedit                         ports/editors/bitedit
 bitefusion                      ports/games/bitefusion
@@ -4912,6 +4913,7 @@ grepmail                        ports/mail/grepmail
 gresolver                       ports/dns/gresolver
 gretl                           ports/math/gretl
 gretools                        ports/games/gretools
+greyfix                         ports/mail/greyfix
 greylite                        ports/mail/greylite
 grhino                          ports/games/grhino
 gri                             ports/math/gri
