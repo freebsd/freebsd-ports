@@ -23,9 +23,9 @@ COMMENT=	Library for terminal-independent, full-screen output (development versi
 
 CONFLICTS=	ncurses-[0-9]*
 
-PATCHES=	20110305
+PATCHES=	20110409 20110416 20110423 20110430 20110507
 
-RELEASE=	5.8
+RELEASE=	5.9
 
 .for i in ${PATCHES}
 PATCHFILES+=	${PORTNAME}-${RELEASE}-${i}.patch.gz:DEFAULT,local
@@ -155,9 +155,9 @@ post-configure:
 .endif
 .for d in test c++
 .if !defined(WITHOUT_WIDEC)
-	${CP} ${WRKSRC}/${d}/* ${WIDEC_WRKSRC}/${d}/
+	${CP} -R ${WRKSRC}/${d}/* ${WIDEC_WRKSRC}/${d}/
 .endif
-	${CP} ${WRKSRC}/${d}/* ${NOWIDEC_WRKSRC}/${d}/
+	${CP} -R ${WRKSRC}/${d}/* ${NOWIDEC_WRKSRC}/${d}/
 .endfor
 
 post-build:
