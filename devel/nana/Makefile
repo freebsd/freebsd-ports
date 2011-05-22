@@ -22,4 +22,6 @@ INFO=		nana
 MAN1=		nana.1 nana-clg.1
 MAN3=		nana.3 I.3 DI.3 L.3 DL.3 Q.3 Qstl.3
 
+BROKEN=		does not fetch
+
 .include <bsd.port.mk>
