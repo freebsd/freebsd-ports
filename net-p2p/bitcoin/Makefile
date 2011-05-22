@@ -38,7 +38,7 @@ USE_GNOME=	gtk20
 
 #USE_WX=		2.9+
 
-BUILD_DEPENDS+=	include/wx-2.9/wx/aboutdlg.h:${PORTSDIR}/x11-toolkits/wxgtk29
+BUILD_DEPENDS+=	${LOCALBASE}/include/wx-2.9/wx/aboutdlg.h:${PORTSDIR}/x11-toolkits/wxgtk29
 WX_CONFIG=	${LOCALBASE}/bin/wxgtk2u-2.9-config
 
 PLIST_FILES=	bitcoin
