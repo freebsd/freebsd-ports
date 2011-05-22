@@ -1,4 +1,4 @@
-# New ports collection makefile for:	virtualbox-ose-kmod
+# New ports collection makefile for:	virtualbox-ose-kmod-legacy
 # Date created:		2009-09-21
 # Whom:			Bernhard Froehlich <decke@bluelife.at>
 #
@@ -11,9 +11,8 @@ PORTREVISION=	1
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
-		http://disasterarea.chruetertee.ch/ \
-		http://mirror.4bit.ws/
-PKGNAMESUFFIX=	-kmod
+		http://disasterarea.chruetertee.ch/
+PKGNAMESUFFIX=	-kmod-legacy
 DISTNAME=	VirtualBox-${DISTVERSION}-OSE
 
 MAINTAINER=	vbox@FreeBSD.org
@@ -38,7 +37,8 @@ CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal \
 		--disable-alsa --disable-dbus --disable-python \
 		--build-headless
 
-CONFLICTS=	bcc-[0-9]* virtualbox-ose-kmod-devel-3*
+CONFLICTS=	bcc-[0-9]*
+CONFLICTS_INSTALL=	virtualbox-ose-kmod-[3,4]* virtualbox-ose-kmod-devel-[3,4]*
 
 OPTIONS=	DEBUG "Build with debugging symbols" off
 
