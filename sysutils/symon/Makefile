@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	symon
-PORTVERSION=	2.82
+PORTVERSION=	2.83
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.xs4all.nl/~wpd/symon/philes/ \
 		${MASTER_SITE_LOCAL}
