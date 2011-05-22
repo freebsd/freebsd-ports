@@ -15,9 +15,10 @@ MAKE_JOBS_SAFE=  yes
 MASTERDIR=	${.CURDIR}/../p5-Apache-DBI
 
 .if defined(WITH_MODPERL) || defined(WITHOUT_MODPERL2)
-IGNORE=	This port is only for use with www/mod_perl2
+IGNORE=	this port is only for use with www/mod_perl2
 .endif
 
 WITH_MODPERL2=	yes
+USE_APACHE=	20+
 
 .include "${MASTERDIR}/Makefile"
