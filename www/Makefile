@@ -600,7 +600,6 @@
     SUBDIR += nanoblogger-extra
     SUBDIR += nd
     SUBDIR += neon29
-    SUBDIR += neowebscript
     SUBDIR += netoffice
     SUBDIR += netrik
     SUBDIR += netstiff

@@ -1,9 +1,0 @@
--
-	Please, adjust the %%APACHEETCDIR%%/neowebscript.conf
-	(%%APACHEETCDIR%%/neowebscript.conf.dist is insalled
-	for your convenience) to your liking and add
-
-		include etc/apache/neowebscript.conf
-
-	to the Apache's config file.
--
