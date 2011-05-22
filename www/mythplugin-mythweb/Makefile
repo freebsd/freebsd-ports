@@ -7,21 +7,22 @@
 
 PORTNAME=	mythweb
 PORTVERSION=	0.24.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
 		http://ftp.oregonstate.edu/pub/mythtv/ \
 		http://ftp.oregonstate.edu/pub/mythtv/old_releases/
 PKGNAMEPREFIX=	mythplugin-
-EXTRACT_SUFX=	.tar
+DISTNAME=	mythplugins-${PORTVERSION}
 
 MAINTAINER=	decke@FreeBSD.org
 COMMENT=	A frontend for scheduling and managing recordings on your MythTV Box
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 
-WRKSRC=		${WRKDIR}/mythplugins-${PORTVERSION}
 NO_BUILD=	yes
+USE_BZIP2=	yes
 USE_PHP=	spl session mysql pcre posix json
 SUB_FILES=	pkg-message
 REINPLACE_ARGS=	-i ""
