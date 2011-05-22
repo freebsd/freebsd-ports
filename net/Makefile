@@ -1185,6 +1185,7 @@
     SUBDIR += xrdp
     SUBDIR += xwhois
     SUBDIR += yaph
+    SUBDIR += yate
     SUBDIR += yate-devel
     SUBDIR += yaz
     SUBDIR += yaz++
