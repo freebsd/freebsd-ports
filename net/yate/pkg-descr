@@ -1,0 +1,13 @@
+Yate - Yet Another Telephony Engine
+
+is a next-generation telephony engine; while currently focused on
+Voice over Internet Protocol (VoIP) and PSTN, its power lies in its
+ability to be easily extended. Voice, video, data and instant
+messenging can all be unified under Yate's flexible routing engine,
+maximizing communications efficiency and minimizing infrastructure
+costs for businesses.
+
+Yate is production-ready software and is easily extensible.
+Yate is licensed under the GPL.
+
+WWW: http://yate.null.ro

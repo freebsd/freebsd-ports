@@ -91,6 +91,7 @@ cups:*:193:
 saned:*:194:
 sympa:*:200:
 dspam:*:202:
+yate:*:204:
 git:*:211:
 drizzle:*:213:
 bs:*:220:

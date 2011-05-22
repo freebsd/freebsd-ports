@@ -1,0 +1,474 @@
+bin/yate
+bin/yate-config
+@unexec if cmp -s %D/%%ETCDIR%%/accfile.conf.sample %D/%%ETCDIR%%/accfile.conf; then rm -f %D/%%ETCDIR%%/accfile.conf; fi
+%%ETCDIR%%/accfile.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/accfile.conf ] ; then cp -p %D/%F %B/accfile.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/analog.conf.sample %D/%%ETCDIR%%/analog.conf; then rm -f %D/%%ETCDIR%%/analog.conf; fi
+%%ETCDIR%%/analog.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/analog.conf ] ; then cp -p %D/%F %B/analog.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/callcounters.conf.sample %D/%%ETCDIR%%/callcounters.conf; then rm -f %D/%%ETCDIR%%/callcounters.conf; fi
+%%ETCDIR%%/callcounters.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/callcounters.conf ] ; then cp -p %D/%F %B/callcounters.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/callfork.conf.sample %D/%%ETCDIR%%/callfork.conf; then rm -f %D/%%ETCDIR%%/callfork.conf; fi
+%%ETCDIR%%/callfork.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/callfork.conf ] ; then cp -p %D/%F %B/callfork.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/ccongestion.conf.sample %D/%%ETCDIR%%/ccongestion.conf; then rm -f %D/%%ETCDIR%%/ccongestion.conf; fi
+%%ETCDIR%%/ccongestion.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/ccongestion.conf ] ; then cp -p %D/%F %B/ccongestion.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/cdrbuild.conf.sample %D/%%ETCDIR%%/cdrbuild.conf; then rm -f %D/%%ETCDIR%%/cdrbuild.conf; fi
+%%ETCDIR%%/cdrbuild.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/cdrbuild.conf ] ; then cp -p %D/%F %B/cdrbuild.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/cdrfile.conf.sample %D/%%ETCDIR%%/cdrfile.conf; then rm -f %D/%%ETCDIR%%/cdrfile.conf; fi
+%%ETCDIR%%/cdrfile.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/cdrfile.conf ] ; then cp -p %D/%F %B/cdrfile.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/ciscosm.conf.sample %D/%%ETCDIR%%/ciscosm.conf; then rm -f %D/%%ETCDIR%%/ciscosm.conf; fi
+%%ETCDIR%%/ciscosm.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/ciscosm.conf ] ; then cp -p %D/%F %B/ciscosm.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/clustering.conf.sample %D/%%ETCDIR%%/clustering.conf; then rm -f %D/%%ETCDIR%%/clustering.conf; fi
+%%ETCDIR%%/clustering.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/clustering.conf ] ; then cp -p %D/%F %B/clustering.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/cpuload.conf.sample %D/%%ETCDIR%%/cpuload.conf; then rm -f %D/%%ETCDIR%%/cpuload.conf; fi
+%%ETCDIR%%/cpuload.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/cpuload.conf ] ; then cp -p %D/%F %B/cpuload.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/dbpbx.conf.sample %D/%%ETCDIR%%/dbpbx.conf; then rm -f %D/%%ETCDIR%%/dbpbx.conf; fi
+%%ETCDIR%%/dbpbx.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/dbpbx.conf ] ; then cp -p %D/%F %B/dbpbx.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/dsoundchan.conf.sample %D/%%ETCDIR%%/dsoundchan.conf; then rm -f %D/%%ETCDIR%%/dsoundchan.conf; fi
+%%ETCDIR%%/dsoundchan.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/dsoundchan.conf ] ; then cp -p %D/%F %B/dsoundchan.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/enumroute.conf.sample %D/%%ETCDIR%%/enumroute.conf; then rm -f %D/%%ETCDIR%%/enumroute.conf; fi
+%%ETCDIR%%/enumroute.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/enumroute.conf ] ; then cp -p %D/%F %B/enumroute.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/extmodule.conf.sample %D/%%ETCDIR%%/extmodule.conf; then rm -f %D/%%ETCDIR%%/extmodule.conf; fi
+%%ETCDIR%%/extmodule.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/extmodule.conf ] ; then cp -p %D/%F %B/extmodule.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/filetransfer.conf.sample %D/%%ETCDIR%%/filetransfer.conf; then rm -f %D/%%ETCDIR%%/filetransfer.conf; fi
+%%ETCDIR%%/filetransfer.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/filetransfer.conf ] ; then cp -p %D/%F %B/filetransfer.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/h323chan.conf.sample %D/%%ETCDIR%%/h323chan.conf; then rm -f %D/%%ETCDIR%%/h323chan.conf; fi
+%%ETCDIR%%/h323chan.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/h323chan.conf ] ; then cp -p %D/%F %B/h323chan.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/heartbeat.conf.sample %D/%%ETCDIR%%/heartbeat.conf; then rm -f %D/%%ETCDIR%%/heartbeat.conf; fi
+%%ETCDIR%%/heartbeat.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/heartbeat.conf ] ; then cp -p %D/%F %B/heartbeat.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/isupmangler.conf.sample %D/%%ETCDIR%%/isupmangler.conf; then rm -f %D/%%ETCDIR%%/isupmangler.conf; fi
+%%ETCDIR%%/isupmangler.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/isupmangler.conf ] ; then cp -p %D/%F %B/isupmangler.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/jabberclient.conf.sample %D/%%ETCDIR%%/jabberclient.conf; then rm -f %D/%%ETCDIR%%/jabberclient.conf; fi
+%%ETCDIR%%/jabberclient.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/jabberclient.conf ] ; then cp -p %D/%F %B/jabberclient.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/jabberserver.conf.sample %D/%%ETCDIR%%/jabberserver.conf; then rm -f %D/%%ETCDIR%%/jabberserver.conf; fi
+%%ETCDIR%%/jabberserver.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/jabberserver.conf ] ; then cp -p %D/%F %B/jabberserver.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/jbfeatures.conf.sample %D/%%ETCDIR%%/jbfeatures.conf; then rm -f %D/%%ETCDIR%%/jbfeatures.conf; fi
+%%ETCDIR%%/jbfeatures.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/jbfeatures.conf ] ; then cp -p %D/%F %B/jbfeatures.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/lateroute.conf.sample %D/%%ETCDIR%%/lateroute.conf; then rm -f %D/%%ETCDIR%%/lateroute.conf; fi
+%%ETCDIR%%/lateroute.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/lateroute.conf ] ; then cp -p %D/%F %B/lateroute.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/mgcpca.conf.sample %D/%%ETCDIR%%/mgcpca.conf; then rm -f %D/%%ETCDIR%%/mgcpca.conf; fi
+%%ETCDIR%%/mgcpca.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/mgcpca.conf ] ; then cp -p %D/%F %B/mgcpca.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/mgcpgw.conf.sample %D/%%ETCDIR%%/mgcpgw.conf; then rm -f %D/%%ETCDIR%%/mgcpgw.conf; fi
+%%ETCDIR%%/mgcpgw.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/mgcpgw.conf ] ; then cp -p %D/%F %B/mgcpgw.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/moh.conf.sample %D/%%ETCDIR%%/moh.conf; then rm -f %D/%%ETCDIR%%/moh.conf; fi
+%%ETCDIR%%/moh.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/moh.conf ] ; then cp -p %D/%F %B/moh.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/monitoring.conf.sample %D/%%ETCDIR%%/monitoring.conf; then rm -f %D/%%ETCDIR%%/monitoring.conf; fi
+%%ETCDIR%%/monitoring.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/monitoring.conf ] ; then cp -p %D/%F %B/monitoring.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/mux.conf.sample %D/%%ETCDIR%%/mux.conf; then rm -f %D/%%ETCDIR%%/mux.conf; fi
+%%ETCDIR%%/mux.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/mux.conf ] ; then cp -p %D/%F %B/mux.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/mysqldb.conf.sample %D/%%ETCDIR%%/mysqldb.conf; then rm -f %D/%%ETCDIR%%/mysqldb.conf; fi
+%%ETCDIR%%/mysqldb.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/mysqldb.conf ] ; then cp -p %D/%F %B/mysqldb.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/openssl.conf.sample %D/%%ETCDIR%%/openssl.conf; then rm -f %D/%%ETCDIR%%/openssl.conf; fi
+%%ETCDIR%%/openssl.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/openssl.conf ] ; then cp -p %D/%F %B/openssl.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/pbxassist.conf.sample %D/%%ETCDIR%%/pbxassist.conf; then rm -f %D/%%ETCDIR%%/pbxassist.conf; fi
+%%ETCDIR%%/pbxassist.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/pbxassist.conf ] ; then cp -p %D/%F %B/pbxassist.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/pgsqldb.conf.sample %D/%%ETCDIR%%/pgsqldb.conf; then rm -f %D/%%ETCDIR%%/pgsqldb.conf; fi
+%%ETCDIR%%/pgsqldb.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/pgsqldb.conf ] ; then cp -p %D/%F %B/pgsqldb.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/presence.conf.sample %D/%%ETCDIR%%/presence.conf; then rm -f %D/%%ETCDIR%%/presence.conf; fi
+%%ETCDIR%%/presence.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/presence.conf ] ; then cp -p %D/%F %B/presence.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/providers.conf.sample %D/%%ETCDIR%%/providers.conf; then rm -f %D/%%ETCDIR%%/providers.conf; fi
+%%ETCDIR%%/providers.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/providers.conf ] ; then cp -p %D/%F %B/providers.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/queues.conf.sample %D/%%ETCDIR%%/queues.conf; then rm -f %D/%%ETCDIR%%/queues.conf; fi
+%%ETCDIR%%/queues.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/queues.conf ] ; then cp -p %D/%F %B/queues.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/queuesnotify.conf.sample %D/%%ETCDIR%%/queuesnotify.conf; then rm -f %D/%%ETCDIR%%/queuesnotify.conf; fi
+%%ETCDIR%%/queuesnotify.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/queuesnotify.conf ] ; then cp -p %D/%F %B/queuesnotify.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/regexroute.conf.sample %D/%%ETCDIR%%/regexroute.conf; then rm -f %D/%%ETCDIR%%/regexroute.conf; fi
+%%ETCDIR%%/regexroute.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/regexroute.conf ] ; then cp -p %D/%F %B/regexroute.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/regfile.conf.sample %D/%%ETCDIR%%/regfile.conf; then rm -f %D/%%ETCDIR%%/regfile.conf; fi
+%%ETCDIR%%/regfile.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/regfile.conf ] ; then cp -p %D/%F %B/regfile.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/register.conf.sample %D/%%ETCDIR%%/register.conf; then rm -f %D/%%ETCDIR%%/register.conf; fi
+%%ETCDIR%%/register.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/register.conf ] ; then cp -p %D/%F %B/register.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/rmanager.conf.sample %D/%%ETCDIR%%/rmanager.conf; then rm -f %D/%%ETCDIR%%/rmanager.conf; fi
+%%ETCDIR%%/rmanager.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/rmanager.conf ] ; then cp -p %D/%F %B/rmanager.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/sigtransport.conf.sample %D/%%ETCDIR%%/sigtransport.conf; then rm -f %D/%%ETCDIR%%/sigtransport.conf; fi
+%%ETCDIR%%/sigtransport.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/sigtransport.conf ] ; then cp -p %D/%F %B/sigtransport.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/sip_cnam_lnp.conf.sample %D/%%ETCDIR%%/sip_cnam_lnp.conf; then rm -f %D/%%ETCDIR%%/sip_cnam_lnp.conf; fi
+%%ETCDIR%%/sip_cnam_lnp.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/sip_cnam_lnp.conf ] ; then cp -p %D/%F %B/sip_cnam_lnp.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/sipfeatures.conf.sample %D/%%ETCDIR%%/sipfeatures.conf; then rm -f %D/%%ETCDIR%%/sipfeatures.conf; fi
+%%ETCDIR%%/sipfeatures.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/sipfeatures.conf ] ; then cp -p %D/%F %B/sipfeatures.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/subscription.conf.sample %D/%%ETCDIR%%/subscription.conf; then rm -f %D/%%ETCDIR%%/subscription.conf; fi
+%%ETCDIR%%/subscription.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/subscription.conf ] ; then cp -p %D/%F %B/subscription.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/tdmcard.conf.sample %D/%%ETCDIR%%/tdmcard.conf; then rm -f %D/%%ETCDIR%%/tdmcard.conf; fi
+%%ETCDIR%%/tdmcard.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/tdmcard.conf ] ; then cp -p %D/%F %B/tdmcard.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/tonegen.conf.sample %D/%%ETCDIR%%/tonegen.conf; then rm -f %D/%%ETCDIR%%/tonegen.conf; fi
+%%ETCDIR%%/tonegen.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/tonegen.conf ] ; then cp -p %D/%F %B/tonegen.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/users.conf.sample %D/%%ETCDIR%%/users.conf; then rm -f %D/%%ETCDIR%%/users.conf; fi
+%%ETCDIR%%/users.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/users.conf ] ; then cp -p %D/%F %B/users.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/wpcard.conf.sample %D/%%ETCDIR%%/wpcard.conf; then rm -f %D/%%ETCDIR%%/wpcard.conf; fi
+%%ETCDIR%%/wpcard.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/wpcard.conf ] ; then cp -p %D/%F %B/wpcard.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/yate-qt4.conf.sample %D/%%ETCDIR%%/yate-qt4.conf; then rm -f %D/%%ETCDIR%%/yate-qt4.conf; fi
+%%ETCDIR%%/yate-qt4.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/yate-qt4.conf ] ; then cp -p %D/%F %B/yate-qt4.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/yate.conf.sample %D/%%ETCDIR%%/yate.conf; then rm -f %D/%%ETCDIR%%/yate.conf; fi
+%%ETCDIR%%/yate.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/yate.conf ] ; then cp -p %D/%F %B/yate.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/yiaxchan.conf.sample %D/%%ETCDIR%%/yiaxchan.conf; then rm -f %D/%%ETCDIR%%/yiaxchan.conf; fi
+%%ETCDIR%%/yiaxchan.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/yiaxchan.conf ] ; then cp -p %D/%F %B/yiaxchan.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/yjinglechan.conf.sample %D/%%ETCDIR%%/yjinglechan.conf; then rm -f %D/%%ETCDIR%%/yjinglechan.conf; fi
+%%ETCDIR%%/yjinglechan.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/yjinglechan.conf ] ; then cp -p %D/%F %B/yjinglechan.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/yradius.conf.sample %D/%%ETCDIR%%/yradius.conf; then rm -f %D/%%ETCDIR%%/yradius.conf; fi
+%%ETCDIR%%/yradius.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/yradius.conf ] ; then cp -p %D/%F %B/yradius.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/yrtpchan.conf.sample %D/%%ETCDIR%%/yrtpchan.conf; then rm -f %D/%%ETCDIR%%/yrtpchan.conf; fi
+%%ETCDIR%%/yrtpchan.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/yrtpchan.conf ] ; then cp -p %D/%F %B/yrtpchan.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/ysigchan.conf.sample %D/%%ETCDIR%%/ysigchan.conf; then rm -f %D/%%ETCDIR%%/ysigchan.conf; fi
+%%ETCDIR%%/ysigchan.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/ysigchan.conf ] ; then cp -p %D/%F %B/ysigchan.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/ysipchan.conf.sample %D/%%ETCDIR%%/ysipchan.conf; then rm -f %D/%%ETCDIR%%/ysipchan.conf; fi
+%%ETCDIR%%/ysipchan.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/ysipchan.conf ] ; then cp -p %D/%F %B/ysipchan.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/ysnmpagent.conf.sample %D/%%ETCDIR%%/ysnmpagent.conf; then rm -f %D/%%ETCDIR%%/ysnmpagent.conf; fi
+%%ETCDIR%%/ysnmpagent.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/ysnmpagent.conf ] ; then cp -p %D/%F %B/ysnmpagent.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/ysockschan.conf.sample %D/%%ETCDIR%%/ysockschan.conf; then rm -f %D/%%ETCDIR%%/ysockschan.conf; fi
+%%ETCDIR%%/ysockschan.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/ysockschan.conf ] ; then cp -p %D/%F %B/ysockschan.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/ystunchan.conf.sample %D/%%ETCDIR%%/ystunchan.conf; then rm -f %D/%%ETCDIR%%/ystunchan.conf; fi
+%%ETCDIR%%/ystunchan.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/ystunchan.conf ] ; then cp -p %D/%F %B/ystunchan.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/zapcard.conf.sample %D/%%ETCDIR%%/zapcard.conf; then rm -f %D/%%ETCDIR%%/zapcard.conf; fi
+%%ETCDIR%%/zapcard.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/zapcard.conf ] ; then cp -p %D/%F %B/zapcard.conf; fi
+@unexec if cmp -s %D/%%ETCDIR%%/zlibcompress.conf.sample %D/%%ETCDIR%%/zlibcompress.conf; then rm -f %D/%%ETCDIR%%/zlibcompress.conf; fi
+%%ETCDIR%%/zlibcompress.conf.sample
+@exec if [ ! -f %D/%%ETCDIR%%/zlibcompress.conf ] ; then cp -p %D/%F %B/zlibcompress.conf; fi
+include/yate/yatecbase.h
+include/yate/yateclass.h
+include/yate/yatemime.h
+include/yate/yatengine.h
+include/yate/yatephone.h
+include/yate/yateversn.h
+lib/libyate.so
+lib/libyate.so.3
+lib/libyate.so.3.3.2
+lib/libyatejabber.so
+lib/libyatejabber.so.3.3.2
+lib/libyatemgcp.so
+lib/libyatemgcp.so.3.3.2
+lib/libyatesig.so
+lib/libyatesig.so.3.3.2
+lib/yate/analyzer.yate
+lib/yate/callfork.yate
+lib/yate/callgen.yate
+lib/yate/cdrbuild.yate
+lib/yate/cdrfile.yate
+%%WITH_ALSA%%lib/yate/client/alsachan.yate
+lib/yate/client/jabberclient.yate
+lib/yate/client/osschan.yate
+lib/yate/conference.yate
+lib/yate/dumbchan.yate
+lib/yate/enumroute.yate
+lib/yate/extmodule.yate
+%%WITH_SPANDSP%%lib/yate/faxchan.yate
+lib/yate/filetransfer.yate
+lib/yate/gsmcodec.yate
+%%WITH_H323%%lib/yate/h323chan.yate
+lib/yate/ilbccodec.yate
+lib/yate/jabber/jabberserver.yate
+lib/yate/jabber/jbfeatures.yate
+lib/yate/moh.yate
+lib/yate/msgsniff.yate
+lib/yate/mux.yate
+%%WITH_SSL%%lib/yate/openssl.yate
+lib/yate/pbx.yate
+lib/yate/regexroute.yate
+lib/yate/rmanager.yate
+lib/yate/server/accfile.yate
+lib/yate/server/analog.yate
+lib/yate/server/analogdetect.yate
+lib/yate/server/callcounters.yate
+lib/yate/server/ccongestion.yate
+lib/yate/server/ciscosm.yate
+lib/yate/server/clustering.yate
+lib/yate/server/cpuload.yate
+lib/yate/server/dbpbx.yate
+lib/yate/server/dbwave.yate
+lib/yate/server/heartbeat.yate
+lib/yate/server/isupmangler.yate
+lib/yate/server/lateroute.yate
+lib/yate/server/mgcpca.yate
+lib/yate/server/mgcpgw.yate
+lib/yate/server/monitoring.yate
+lib/yate/server/mrcpspeech.yate
+%%WITH_MYSQL%%lib/yate/server/mysqldb.yate
+lib/yate/server/park.yate
+lib/yate/server/pbxassist.yate
+%%WITH_PGSQL%%lib/yate/server/pgsqldb.yate
+lib/yate/server/presence.yate
+lib/yate/server/queues.yate
+lib/yate/server/queuesnotify.yate
+lib/yate/server/regfile.yate
+lib/yate/server/register.yate
+lib/yate/server/sigtransport.yate
+lib/yate/server/sipfeatures.yate
+lib/yate/server/subscription.yate
+lib/yate/server/users.yate
+lib/yate/server/yradius.yate
+lib/yate/server/ysigchan.yate
+lib/yate/server/ysnmpagent.yate
+%%WITH_DAHDI%%lib/yate/server/zapcard.yate
+lib/yate/sip/sip_cnam_lnp.yate
+lib/yate/speexcodec.yate
+lib/yate/tonedetect.yate
+lib/yate/tonegen.yate
+lib/yate/wavefile.yate
+lib/yate/yiaxchan.yate
+lib/yate/yjinglechan.yate
+lib/yate/yrtpchan.yate
+lib/yate/ysipchan.yate
+lib/yate/ysockschan.yate
+lib/yate/ystunchan.yate
+lib/yate/zlibcompress.yate
+libdata/pkgconfig/yate.pc
+%%PORTDOCS%%%%DOCSDIR%%/COPYING
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/dataflow.html
+%%PORTDOCS%%%%DOCSDIR%%/extmodule.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/messages.html
+%%DATADIR%%/data/NULL-TEAM-MIB.txt
+%%DATADIR%%/data/YATE-MIB.txt
+%%DATADIR%%/data/snmp_mib.conf
+%%DATADIR%%/help/0.yhlp
+%%DATADIR%%/help/1.yhlp
+%%DATADIR%%/help/2.yhlp
+%%DATADIR%%/help/3.yhlp
+%%DATADIR%%/help/4.yhlp
+%%DATADIR%%/help/99.yhlp
+%%DATADIR%%/scripts/Yate.pm
+%%DATADIR%%/scripts/leavemail.php
+%%DATADIR%%/scripts/libvoicemail.php
+%%DATADIR%%/scripts/libyate.php
+%%DATADIR%%/scripts/libyate.py
+%%DATADIR%%/scripts/libyatechan.php
+%%DATADIR%%/scripts/libyateivr.php
+%%DATADIR%%/scripts/queue_in.php
+%%DATADIR%%/scripts/queue_out.php
+%%DATADIR%%/scripts/route.php
+%%DATADIR%%/scripts/voicemail.php
+%%DATADIR%%/skins/default/account.ui
+%%DATADIR%%/skins/default/accountlist.ui
+%%DATADIR%%/skins/default/accountwizard.ui
+%%DATADIR%%/skins/default/addaccount.png
+%%DATADIR%%/skins/default/addaccountwiz.png
+%%DATADIR%%/skins/default/addchatroom.png
+%%DATADIR%%/skins/default/addcontact.png
+%%DATADIR%%/skins/default/addrbook.ui
+%%DATADIR%%/skins/default/answer.png
+%%DATADIR%%/skins/default/answer_20.png
+%%DATADIR%%/skins/default/arch_contact_item.ui
+%%DATADIR%%/skins/default/arch_room_item.ui
+%%DATADIR%%/skins/default/arch_roompriv_item.ui
+%%DATADIR%%/skins/default/arch_session_item.ui
+%%DATADIR%%/skins/default/archive.png
+%%DATADIR%%/skins/default/archive.ui
+%%DATADIR%%/skins/default/ask.png
+%%DATADIR%%/skins/default/ask_32.png
+%%DATADIR%%/skins/default/bell.png
+%%DATADIR%%/skins/default/book.png
+%%DATADIR%%/skins/default/book_32.png
+%%DATADIR%%/skins/default/cdr.png
+%%DATADIR%%/skins/default/cdr_32.png
+%%DATADIR%%/skins/default/chan_idle.png
+%%DATADIR%%/skins/default/chan_progress.png
+%%DATADIR%%/skins/default/chan_ringing.png
+%%DATADIR%%/skins/default/chan_routed.png
+%%DATADIR%%/skins/default/chat.png
+%%DATADIR%%/skins/default/chat.ui
+%%DATADIR%%/skins/default/chatroomedit.ui
+%%DATADIR%%/skins/default/clear.png
+%%DATADIR%%/skins/default/close.png
+%%DATADIR%%/skins/default/collapsed.png
+%%DATADIR%%/skins/default/conference.png
+%%DATADIR%%/skins/default/conference_20.png
+%%DATADIR%%/skins/default/configure.png
+%%DATADIR%%/skins/default/confirm.ui
+%%DATADIR%%/skins/default/contactedit.ui
+%%DATADIR%%/skins/default/contactinfo.ui
+%%DATADIR%%/skins/default/contactlist_chatroom.ui
+%%DATADIR%%/skins/default/contactlist_contact.ui
+%%DATADIR%%/skins/default/contactlist_group.ui
+%%DATADIR%%/skins/default/digit0.png
+%%DATADIR%%/skins/default/digit0_hover.png
+%%DATADIR%%/skins/default/digit0_pressed.png
+%%DATADIR%%/skins/default/digit1.png
+%%DATADIR%%/skins/default/digit1_hover.png
+%%DATADIR%%/skins/default/digit1_pressed.png
+%%DATADIR%%/skins/default/digit2.png
+%%DATADIR%%/skins/default/digit2_hover.png
+%%DATADIR%%/skins/default/digit2_pressed.png
+%%DATADIR%%/skins/default/digit3.png
+%%DATADIR%%/skins/default/digit3_hover.png
+%%DATADIR%%/skins/default/digit3_pressed.png
+%%DATADIR%%/skins/default/digit4.png
+%%DATADIR%%/skins/default/digit4_hover.png
+%%DATADIR%%/skins/default/digit4_pressed.png
+%%DATADIR%%/skins/default/digit5.png
+%%DATADIR%%/skins/default/digit5_hover.png
+%%DATADIR%%/skins/default/digit5_pressed.png
+%%DATADIR%%/skins/default/digit6.png
+%%DATADIR%%/skins/default/digit6_hover.png
+%%DATADIR%%/skins/default/digit6_pressed.png
+%%DATADIR%%/skins/default/digit7.png
+%%DATADIR%%/skins/default/digit7_hover.png
+%%DATADIR%%/skins/default/digit7_pressed.png
+%%DATADIR%%/skins/default/digit8.png
+%%DATADIR%%/skins/default/digit8_hover.png
+%%DATADIR%%/skins/default/digit8_pressed.png
+%%DATADIR%%/skins/default/digit9.png
+%%DATADIR%%/skins/default/digit9_hover.png
+%%DATADIR%%/skins/default/digit9_pressed.png
+%%DATADIR%%/skins/default/digitpound.png
+%%DATADIR%%/skins/default/digitpound_hover.png
+%%DATADIR%%/skins/default/digitpound_pressed.png
+%%DATADIR%%/skins/default/digitstar.png
+%%DATADIR%%/skins/default/digitstar_hover.png
+%%DATADIR%%/skins/default/digitstar_pressed.png
+%%DATADIR%%/skins/default/dockedchat.ui
+%%DATADIR%%/skins/default/down.png
+%%DATADIR%%/skins/default/down_active.png
+%%DATADIR%%/skins/default/edit.png
+%%DATADIR%%/skins/default/events.png
+%%DATADIR%%/skins/default/events.ui
+%%DATADIR%%/skins/default/expanded.png
+%%DATADIR%%/skins/default/fileprogress.ui
+%%DATADIR%%/skins/default/fileprogress_item.ui
+%%DATADIR%%/skins/default/find.png
+%%DATADIR%%/skins/default/findnext.png
+%%DATADIR%%/skins/default/findprev.png
+%%DATADIR%%/skins/default/handshake.png
+%%DATADIR%%/skins/default/handshake_x.png
+%%DATADIR%%/skins/default/hangup.png
+%%DATADIR%%/skins/default/hangup_20.png
+%%DATADIR%%/skins/default/help.ui
+%%DATADIR%%/skins/default/hold.png
+%%DATADIR%%/skins/default/hold_20.png
+%%DATADIR%%/skins/default/home.png
+%%DATADIR%%/skins/default/info.png
+%%DATADIR%%/skins/default/info_32.png
+%%DATADIR%%/skins/default/input.ui
+%%DATADIR%%/skins/default/inputpwd.ui
+%%DATADIR%%/skins/default/joinmucwizard.ui
+%%DATADIR%%/skins/default/keyboard.png
+%%DATADIR%%/skins/default/message.ui
+%%DATADIR%%/skins/default/messages_generic.ui
+%%DATADIR%%/skins/default/messages_header.ui
+%%DATADIR%%/skins/default/messages_loginfail.ui
+%%DATADIR%%/skins/default/messages_okrejignore.ui
+%%DATADIR%%/skins/default/minus.png
+%%DATADIR%%/skins/default/muc.png
+%%DATADIR%%/skins/default/muc_16.png
+%%DATADIR%%/skins/default/mucchat.ui
+%%DATADIR%%/skins/default/mucinvite.ui
+%%DATADIR%%/skins/default/mucprivchat.ui
+%%DATADIR%%/skins/default/mucs.ui
+%%DATADIR%%/skins/default/next.png
+%%DATADIR%%/skins/default/null_team-16.png
+%%DATADIR%%/skins/default/null_team-32.png
+%%DATADIR%%/skins/default/null_team-48.png
+%%DATADIR%%/skins/default/ok.png
+%%DATADIR%%/skins/default/phone.png
+%%DATADIR%%/skins/default/phone_32.png
+%%DATADIR%%/skins/default/plus.png
+%%DATADIR%%/skins/default/prev.png
+%%DATADIR%%/skins/default/progress.gif
+%%DATADIR%%/skins/default/qt4client.rc
+%%DATADIR%%/skins/default/qt4client.ui
+%%DATADIR%%/skins/default/quest.png
+%%DATADIR%%/skins/default/room_member.ui
+%%DATADIR%%/skins/default/save.png
+%%DATADIR%%/skins/default/sendchat.png
+%%DATADIR%%/skins/default/sendchat_32.png
+%%DATADIR%%/skins/default/sendfile.png
+%%DATADIR%%/skins/default/settings.ui
+%%DATADIR%%/skins/default/speaker.png
+%%DATADIR%%/skins/default/speaker_x.png
+%%DATADIR%%/skins/default/status_away.png
+%%DATADIR%%/skins/default/status_busy.png
+%%DATADIR%%/skins/default/status_connecting.png
+%%DATADIR%%/skins/default/status_dnd.png
+%%DATADIR%%/skins/default/status_offline.png
+%%DATADIR%%/skins/default/status_online.png
+%%DATADIR%%/skins/default/status_xa.png
+%%DATADIR%%/skins/default/transfer.png
+%%DATADIR%%/skins/default/transfer_20.png
+%%DATADIR%%/skins/default/tray_incomingcall.png
+%%DATADIR%%/skins/default/tray_incomingchat.png
+%%DATADIR%%/skins/default/tray_notification.png
+%%DATADIR%%/skins/default/up.png
+%%DATADIR%%/skins/default/up_active.png
+%%DATADIR%%/skins/default/update.png
+%%DATADIR%%/skins/default/updater.ui
+%%DATADIR%%/skins/default/user.png
+%%DATADIR%%/sounds/ring.wav
+%%DATADIR%%/sounds/tone.wav
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/skins/default
+@dirrm %%DATADIR%%/skins
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/help
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/yate/sip
+@dirrm lib/yate/server
+@dirrm lib/yate/qt4
+@dirrm lib/yate/jabber
+@dirrm lib/yate/client
+@dirrm lib/yate
+@dirrm lib/pkgconfig
+@dirrm include/yate
+@dirrm %%ETCDIR%%
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/api
+@exec mkdir -p %D/lib/yate/qt4
+@exec mkdir -p %D/lib/pkgconfig
