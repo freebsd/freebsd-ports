@@ -31,10 +31,6 @@ OPTIONS=	RC_NG		"install RC_NG script"		off \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900000
-BROKEN=		does not compile on FreeBSD 9.X
-.endif
-
 .if defined(WITH_RC_NG)
 USE_RC_SUBR=	vsftpd.sh
 .endif
