@@ -7,6 +7,7 @@
 
 PORTNAME=	vboxgtk
 PORTVERSION=	0.5.2
+PORTREVISION=	1
 CATEGORIES=	deskutils emulators gnome
 MASTER_SITES=	SF
 
@@ -14,7 +15,7 @@ MAINTAINER=	avl@FreeBSD.org
 COMMENT=	GTK frontend for VirtualBox
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gobject/_gobject.so:${PORTSDIR}/devel/py-gobject \
-		${PYTHON_SITELIBDIR}/xpcom/vboxxpcom.py:${PORTSDIR}/emulators/virtualbox-ose
+		${PYTHON_SITELIBDIR}/xpcom/vboxxpcom.py:${PORTSDIR}/emulators/virtualbox-ose-legacy
 
 USE_PYTHON=	yes
 USE_GNOME=	pygtk2
