@@ -30,6 +30,10 @@ RUN_DEPENDS+=	p5-IO-Socket-SSL>=0:${PORTSDIR}/security/p5-IO-Socket-SSL
 RUN_DEPENDS+=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay
 .endif
 
+.if ${PERL_LEVEL} >= 501400
+BROKEN=		port's IPv6 support conflicts with perl's built-in one
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e "s,/usr/bin/perl,${PERL},g" \
 		${WRKSRC}/${PORTNAME}
