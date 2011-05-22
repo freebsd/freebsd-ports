@@ -7,24 +7,31 @@
 
 PORTNAME=	tucan
 PORTVERSION=	0.3.9
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://forja.rediris.es/frs/download.php/1470/ \
 		http://build-tucan-doc.googlecode.com/files/
 
 MAINTAINER=	gustau.perez@gmail.com
-COMMENT=	Give us the links, we'll cook the meal!
+COMMENT=	Tucan Manager aids file-sharing with 1-click hosters
 
 RUN_DEPENDS=	${LOCALBASE}/bin/pilconvert.py:${PORTSDIR}/graphics/py-imaging \
 		${LOCALBASE}/bin/cntraining:${PORTSDIR}/graphics/tesseract/
 
 NO_BUILD=	yes
 USE_GNOME=	pygtk2 librsvg2
-USE_PYTHON=	yes
+USE_PYTHON=	2.5+
 
 MANCOMPRESSED=	yes
 MAN1=		tucan.1
 USE_GETTEXT=	yes
+
+post-patch:
+	${REINPLACE_CMD} -Ee 's|#! /usr/bin/env python|#! ${PYTHON_CMD}|' ${WRKSRC}/tucan.py
+
+# remove .orig leftovers from files/patch-*
+pre-install:
+	${RM} ${WRKSRC}/core/*.orig
 
 do-install:
 	${MKDIR} ${PREFIX}/bin/
