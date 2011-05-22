@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110523:
+  AFFECTS: users of www/mod_perl2
+  AUTHOR: ohauer@FreeBSD.org
+
+  mod_perl2 was updated to version 2.0.5, this version includes
+  p5-Apache-Reload again. The ports p5-Apache-Reload is now marked as
+  conflict for mod_perl2.
+
+  To update your mod_perl2 with portmaster use the commands
+
+  # portmaster -o www/mod_perl2 www/p5-Apache-Reload
+  # portmaster -R -r mod_perl2
+  
 20110522:
   AFFECTS: users of emulators/virtualbox-ose
   AUTHOR: vbox@FreeBSD.org
