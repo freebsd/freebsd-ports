@@ -22,7 +22,6 @@
 %%WWWDIR%%/themes/default/images/xml.gif
 %%WWWDIR%%/themes/default/index.tmpl
 %%WWWDIR%%/themes/default/style.css
-@exec mkdir -p %D %%WWWDIR%%/data/
 @dirrm %%WWWDIR%%/themes/default/images
 @dirrm %%WWWDIR%%/themes/default
 @dirrm %%WWWDIR%%/themes
@@ -31,3 +30,4 @@
 @dirrm %%WWWDIR%%/data
 @dirrm %%WWWDIR%%/Blogsum
 @dirrm %%WWWDIR%%
+@exec mkdir -p %D/%%WWWDIR%%/data

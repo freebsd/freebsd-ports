@@ -7,6 +7,7 @@
 
 PORTNAME=	blogsum
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.dixongroup.net/
 
@@ -23,10 +24,10 @@ PERL_MODULES=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
-USE_APACHE=	1.3+
+USE_APACHE_RUN=	1.3+
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.apache.mk"
+
 .if ${APACHE_VERSION} != 13
 PERL_MODULES+=	${LOCALBASE}/${APACHEMODDIR}/mod_perl.so:${PORTSDIR}/www/mod_perl2
 .else
