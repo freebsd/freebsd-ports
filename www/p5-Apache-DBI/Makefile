@@ -24,6 +24,20 @@ MAKE_JOBS_SAFE=	yes
 MAN3=		Apache::DBI.3 Apache::AuthDBI.3
 
 PERL_CONFIGURE=	yes
+USE_APACHE?=	13+
+.include <bsd.port.pre.mk>
+
+# prevent from direct including
+# ports should use one of the SLAVEPORTS
+.if !defined(PKGNAMESUFFIX)
+IGNORE=	use ${SLAVEDIRS} instead
+.endif
+
+.if defined(WITH_MODPERL) && ${APACHE_VERSION} > 13
+IGNORE= mod_perl require apache13 but ${APACHE_PORT} is installed
+.elif defined(WITH_MODPERL2) && ${APACHE_VERSION} < 20
+IGNORE= mod_perl2 require at last apache20 but ${APACHE_PORT} is installed
+.endif
 
 .if defined(WITH_MODPERL2)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
@@ -41,4 +55,4 @@ PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache/DBI \
 	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache \
 	%%SITE_PERL%%/Apache
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
