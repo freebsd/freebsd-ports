@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	phpvirtualbox
-PORTVERSION=	0.5
+DISTVERSION=	4.0-5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	AJAX Web Interface for VirtualBox
 
-LICENSE=	MIT
+LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 USE_ZIP=	yes
@@ -24,8 +24,7 @@ DOS2UNIX_REGEX=	.*\.(php|txt|js|css|html)
 
 do-install:
 	@${MKDIR} ${WWWDIR}
-	@${CP} ${WRKSRC}/config.php ${WWWDIR}/config.php.sample
-	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "*" ${WWWDIR} "! -name config.php ! -name *.orig")
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} "*" ${WWWDIR} "! -name *.orig")
 
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	@${FIND} ${WWWDIR} -type f -exec ${CHMOD} 0444 {} \;
@@ -33,8 +32,7 @@ do-install:
 
 post-install:
 	@if [ ! -f ${WWWDIR}/config.php ]; then \
-		${CP} ${WWWDIR}/config.php.sample ${WWWDIR}/config.php ; \
+		${CP} ${WWWDIR}/config.php-example ${WWWDIR}/config.php ; \
 	fi
-	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
