@@ -1,47 +1,59 @@
---- relayd/check_tcp.c.orig	2011-01-15 00:27:09.011450590 +0100
-+++ relayd/check_tcp.c	2011-01-15 00:42:05.271822942 +0100
-@@ -50,11 +50,10 @@
- check_tcp(struct ctl_tcp_event *cte)
- {
- 	int			 s;
--	int			 type;
- 	socklen_t		 len;
- 	struct timeval		 tv;
- 	struct linger		 lng;
--	int			 he = HCE_TCP_CONNECT_ERROR;
-+	int			 he = HCE_TCP_SOCKET_OPTION;
+--- relayd.orig/check_tcp.c	2011-05-22 01:06:39.463154237 +0200
++++ relayd/check_tcp.c	2011-05-22 01:06:54.673025092 +0200
+@@ -31,7 +31,7 @@
+ #include <stdlib.h>
+ #include <errno.h>
+ #include <fnmatch.h>
+-#include <sha1.h>
++#include <sha.h>
  
- 	switch (cte->host->conf.ss.ss_family) {
- 	case AF_INET:
-@@ -69,17 +68,18 @@
+ #include <openssl/ssl.h>
  
- 	len = ((struct sockaddr *)&cte->host->conf.ss)->sa_len;
+@@ -287,7 +287,11 @@
+ 	if (b == NULL)
+ 		fatal("out of memory");
+ 	*b = '\0';
++#ifndef __FreeBSD__
+ 	if (fnmatch(cte->table->conf.exbuf, cte->buf->buf, 0) == 0) {
++#else
++	if (fnmatch(cte->table->conf.exbuf, (char *)cte->buf->buf, 0) == 0) {
++#endif
+ 		cte->host->he = HCE_SEND_EXPECT_OK;
+ 		cte->host->up = HOST_UP;
+ 		return (0);
+@@ -320,7 +324,11 @@
+ 		fatal("out of memory");
+ 	*b = '\0';
  
--	if ((s = socket(cte->host->conf.ss.ss_family, SOCK_STREAM, 0)) == -1)
-+	if ((s = socket(cte->host->conf.ss.ss_family, SOCK_STREAM, 0)) == -1) {
-+		if (errno == EMFILE || errno == ENFILE)
-+			he = HCE_TCP_SOCKET_LIMIT;
-+		else
-+			he = HCE_TCP_SOCKET_ERROR;
- 		goto bad;
-+	}
++#ifndef __FreeBSD__
+ 	head = cte->buf->buf;
++#else
++	head = (char *)cte->buf->buf;
++#endif
+ 	host = cte->host;
+ 	host->he = HCE_HTTP_CODE_ERROR;
  
- 	bzero(&lng, sizeof(lng));
- 	if (setsockopt(s, SOL_SOCKET, SO_LINGER, &lng, sizeof(lng)) == -1)
- 		goto bad;
+@@ -372,7 +380,11 @@
+ 		fatal("out of memory");
+ 	*b = '\0';
  
--	type = 1;
--	if (setsockopt(s, SOL_SOCKET, SO_REUSEPORT, &type, sizeof(type)) == -1)
--		goto bad;
--
- 	if (cte->host->conf.ttl > 0) {
- 		if (setsockopt(s, IPPROTO_IP, IP_TTL,
- 		    &cte->host->conf.ttl, sizeof(int)) == -1)
-@@ -99,6 +99,7 @@
++#ifndef __FreeBSD__
+ 	head = cte->buf->buf;
++#else
++	head = (char *)cte->buf->buf;
++#endif
+ 	host = cte->host;
+ 	host->he = HCE_HTTP_DIGEST_ERROR;
  
- 	cte->buf = NULL;
- 	cte->host->up = HOST_UP;
-+	event_del(&cte->ev);
- 	event_set(&cte->ev, s, EV_TIMEOUT|EV_WRITE, tcp_write, cte);
- 	event_add(&cte->ev, &tv);
- 	return;
+@@ -384,7 +396,11 @@
+ 	}
+ 	head += strlen("\r\n\r\n");
+ 
++#ifndef __FreeBSD__
+ 	digeststr(cte->table->conf.digest_type, head, strlen(head), digest);
++#else
++	digeststr(cte->table->conf.digest_type, (u_int8_t*)head, strlen(head), digest);
++#endif
+ 
+ 	if (strcmp(cte->table->conf.digest, digest)) {
+ 		log_warnx("%s: %s failed (wrong digest)",

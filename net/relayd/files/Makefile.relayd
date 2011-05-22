@@ -5,11 +5,14 @@ PROG=	relayd
 MAN=	relayd.8 \
 	relayd.conf.5
 
-SRCS=	parse.y \
+.PATH:	${.CURDIR}/../../lib/libutil
+SRCS=	imsg-buffer.c \
+	imsg.c
+
+.PATH:	${.CURDIR}
+SRCS+=	parse.y \
 	log.c \
 	control.c \
-	buffer.c \
-	imsg.c \
 	ssl.c \
 	ssl_privsep.c \
 	relayd.c \
@@ -23,13 +26,16 @@ SRCS=	parse.y \
 	check_script.c \
 	name2id.c \
 	arc4random.c \
-	shuffle.c
+	shuffle.c \
+	proc.c \
+	config.c
 
 CFLAGS+=	-DSHA1_DIGEST_LENGTH=SHA_DIGEST_LENGTH \
 		-DSHA1_DIGEST_STRING_LENGTH=SHA_DIGEST_LENGTH \
 		-DOPENSSL_NO_SHA -DOPENSSL_NO_MD5 \
 		-D__dead=''
-CFLAGS+=	-I${.CURDIR} -I${PREFIX}/include
+CFLAGS+=	-I${.CURDIR} -I${.CURDIR}/../../lib/libutil \
+		-I${PREFIX}/include
 CLEANFILES+=	y.tab.h
 
 LDADD=		-lmd -L${PREFIX}/lib ${LIBEVENT} -lssl -lcrypto

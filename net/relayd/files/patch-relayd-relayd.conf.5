@@ -1,0 +1,244 @@
+--- relayd/relayd.conf.5.orig	2011-05-05 12:20:24.000000000 +0200
++++ relayd/relayd.conf.5	2011-05-22 12:52:42.026190316 +0200
+@@ -43,7 +43,7 @@
+ in a similar fashion to
+ .Xr pf 4
+ tables.
+-They are used for relay, redirection, and router target selection with
++They are used for relay and redirection target selection with
+ the described options and health checking on the host they contain.
+ .It Sy Redirections
+ Redirections are translated to
+@@ -55,9 +55,6 @@
+ general purpose TCP proxying on layer 7.
+ .It Sy Protocols
+ Protocols are predefined protocol handlers and settings for relays.
+-.It Sy Routers
+-Routers are used to insert routes with health-checked gateways for
+-(WAN) link balancing.
+ .El
+ .Pp
+ Within the sections,
+@@ -86,7 +83,7 @@
+ .Ic include
+ keyword, for example:
+ .Bd -literal -offset indent
+-include "/etc/relayd.conf.local"
++include "%%PREFIX%%/etc/relayd.conf.local"
+ .Ed
+ .Sh MACROS
+ Macros can be defined that will later be expanded in context.
+@@ -111,17 +108,6 @@
+ .Sh GLOBAL CONFIGURATION
+ Here are the settings that can be set globally:
+ .Bl -tag -width Ds
+-.It Ic demote Ar group
+-Enable the global
+-.Xr carp 4
+-demotion option, resetting the carp demotion counter for the
+-specified interface group to zero on startup and to 128 on shutdown of
+-the daemon.
+-For more information on interface groups,
+-see the
+-.Ic group
+-keyword in
+-.Xr ifconfig 8 .
+ .It Ic interval Ar number
+ Set the interval in seconds at which the hosts will be checked.
+ The default interval is 10 seconds.
+@@ -151,15 +137,6 @@
+ .Xr relayd 8
+ runs 5 relay processes by default and every process will handle
+ all configured relays.
+-.It Ic send trap
+-Send an SNMP trap when the state of a host changes.
+-.Xr relayd 8
+-will try to connect to
+-.Xr snmpd 8
+-and request it send a trap to the registered trap receivers;
+-see
+-.Xr snmpd.conf 5
+-for more information about the configuration.
+ .It Ic timeout Ar number
+ Set the global timeout in milliseconds for checks.
+ This can be overridden by the timeout value in the table definitions.
+@@ -363,17 +340,6 @@
+ .Pp
+ The following general table options are available:
+ .Bl -tag -width Ds
+-.It Ic demote Ar group
+-Enable the per-table
+-.Xr carp 4
+-demotion option.
+-This will increment the carp demotion counter for the
+-specified interface group if all hosts in the table are down.
+-For more information on interface groups,
+-see the
+-.Ic group
+-keyword in
+-.Xr ifconfig 8 .
+ .It Ic interval Ar number
+ Override the global interval and specify one for this table.
+ It must be a multiple of the global interval.
+@@ -605,7 +571,7 @@
+ .Ic destination
+ .Ar options ...
+ .Xc
+-When redirecting connections with a divert-to rule in
++When redirecting connections with a rdr-to rule in
+ .Xr pf.conf 5
+ to a relay listening on localhost, this directive will
+ look up the real destination address of the intended target host,
+@@ -613,14 +579,7 @@
+ If an additional
+ .Ic forward to
+ directive to a specified address or table is present,
+-it will be used as a backup if the lookup failed.
+-.It Xo
+-.Ic forward to
+-.Ic nat lookup
+-.Ar options ...
+-.Xc
+-Like the previous directive, but for redirections with rdr-to in
+-.Xr pf.conf 5 .
++it will be used as a backup if the NAT lookup failed.
+ .It Xo
+ .Ic listen on Ar address
+ .Op Ic port Ar port
+@@ -639,9 +598,9 @@
+ keyword is present, the relay will accept connections using the
+ encrypted SSL protocol.
+ The relay will look up a private key in
+-.Pa /etc/ssl/private/address.key
++.Pa %%PREFIX%%/etc/ssl/private/address.key
+ and a public certificate in
+-.Pa /etc/ssl/address.crt ,
++.Pa %%PREFIX%%/etc/ssl/address.crt ,
+ where
+ .Ar address
+ is the specified IP address of the relay to listen on.
+@@ -990,9 +949,6 @@
+ This option enables CA verification in SSL client mode.
+ The daemon will load the CA (Certificate Authority) certificates from
+ the specified path to verify the server certificates.
+-.Ox
+-provides a default CA bundle in
+-.Pa /etc/ssl/cert.pem .
+ .It Ic ciphers Ar string
+ Set the string defining the SSL cipher suite.
+ If not specified, the default value
+@@ -1068,89 +1024,22 @@
+ Set the socket-level buffer size for input and output for this
+ connection.
+ This will affect the TCP window size.
+-.It Xo
+-.Op Ic no
+-.Ic splice
+-.Xc
+-Use socket splicing for zero-copy data transfer.
+-This option is enabled by default.
+ .El
+ .El
+-.Sh ROUTERS
+-Routers represent routing table entries in the kernel forwarding
+-database, see
+-.Xr route 4 ,
+-and a table of associated gateways.
+-They are used to dynamically insert or remove routes with gateways
+-based on their availability and health-check results.
+-A router can include multiple network statements and a single forward
+-statement with a table of one or more gateways.
+-All entries in a single router directive must match the same address
+-family, either IPv4 or IPv6.
+-.Pp
+-The kernel supports multipath routing when multiple gateways exist to
+-the same destination address.
+-The multipath routing behaviour can be changed globally using the
+-.Xr sysctl 8
+-variables
+-.Va net.inet.ip.multipath
+-and
+-.Va net.inet6.ip6.multipath .
+-With the default setting of 0,
+-the first route selected will be used for subsequent packets to that
+-destination regardless of source.
+-Setting it to 1 will enable load balancing based on the packet source
+-address across gateways; multiple routes with the same priority are
+-used equally.
+-The kernel will also check the link state of the related network
+-interface and try a different route if it is not active.
+-.Pp
+-The configuration directives that are valid in the
+-.Ic routers
+-context are described below:
+-.Bl -tag -width Ds
+-.It Xo
+-.Ic forward to
+-.Aq Ar table
+-.Ic port Ar number
+-.Ar options ...
+-.Xc
+-Specify the table of target gateways to be used; see the
+-.Sx TABLES
+-section above for information about table options.
+-This entry is mandatory and must be specified once.
+-.It Xo
+-.Ic route
+-.Ar address Ns Li / Ns Ar prefix
+-.Xc
+-Specify the network address and prefix length of a route destination
+-that is reachable via the active gateways.
+-This entry must be specified at least once in a router directive.
+-.It Ic rtable Ar id
+-Add the routes to the kernel routing table with the specified
+-.Ar id .
+-.It Ic rtlabel Ar label
+-Add the routes with the specified
+-.Ar label
+-to the kernel routing table.
+-.El
+ .Sh FILES
+-.Bl -tag -width "/etc/ssl/private/address.keyXX" -compact
+-.It Pa /etc/relayd.conf
++.Bl -tag -width "%%PREFIX%%/etc/ssl/private/address.keyXX" -compact
++.It Pa %%PREFIX%%/etc/relayd.conf
+ .Xr relayd 8
+ configuration file.
+ .Pp
+ .It Pa /etc/services
+ Service name database.
+ .Pp
+-.It Pa /etc/ssl/address.crt
+-.It Pa /etc/ssl/private/address.key
++.It Pa %%PREFIX%%/etc/ssl/address.crt
++.It Pa %%PREFIX%%/etc/ssl/private/address.key
+ Location of the relay SSL server certificates, where
+ .Ar address
+ is the configured IP address of the relay.
+-.It Pa /etc/ssl/cert.pem
+-Default location of the CA bundle that can be used with
+-.Xr relayd 8 .
+ .El
+ .Sh EXAMPLES
+ This configuration file would create a redirection service
+@@ -1242,20 +1131,9 @@
+ 	forward to shell.example.com port 22
+ }
+ .Ed
+-.Pp
+-The next simple router configuration example can be used to run
+-redundant, health-checked WAN links:
+-.Bd -literal -offset indent
+-table \*(Ltgateways\*(Gt { $gw1 ip ttl 1, $gw2 ip ttl 1 }
+-router "uplinks" {
+-	route 0.0.0.0/0
+-	forward to \*(Ltgateways\*(Gt check icmp
+-}
+-.Ed
+ .Sh SEE ALSO
+ .Xr relayctl 8 ,
+ .Xr relayd 8 ,
+-.Xr snmpd 8 ,
+ .Xr ssl 8
+ .Sh HISTORY
+ The

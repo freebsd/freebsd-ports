@@ -2,10 +2,12 @@
 
 PROG=	relayctl
 
+.PATH:	${.CURDIR}/../../lib/libutil
+SRCS=	imsg-buffer.c \
+	imsg.c
+
 .PATH:	${.CURDIR}/../relayd
-SRCS=	buffer.c \
-	imsg.c \
-	log.c
+SRCS+=	log.c
 
 .PATH:	${.CURDIR}
 SRCS+=	relayctl.c \
@@ -15,6 +17,7 @@ MAN=	relayctl.8
 
 CFLAGS+=	-D__dead=''
 CFLAGS+=	-I${.CURDIR} \
+		-I${.CURDIR}/../../lib/libutil \
 		-I${.CURDIR}/../relayd \
 		-I${PREFIX}/include
 
