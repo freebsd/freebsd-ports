@@ -1,7 +1,4 @@
 %%PORTDOCS%%%%DOCSDIR%%/bugzilla.ent
-%%PORTDOCS%%%%DOCSDIR%%/makedocs.pl
-%%PORTDOCS%%%%DOCSDIR%%/style.css
-%%PORTDOCS%%%%DOCSDIR%%/en/rel_notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/html/Bugzilla-Guide.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/about.html
 %%PORTDOCS%%%%DOCSDIR%%/en/html/administration.html
@@ -177,6 +174,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/en/images/tip.gif
 %%PORTDOCS%%%%DOCSDIR%%/en/images/warning.gif
 %%PORTDOCS%%%%DOCSDIR%%/en/pdf/Bugzilla-Guide.pdf
+%%PORTDOCS%%%%DOCSDIR%%/en/rel_notes.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/txt/Bugzilla-Guide.txt
 %%PORTDOCS%%%%DOCSDIR%%/en/xml/Bugzilla-Guide.xml
 %%PORTDOCS%%%%DOCSDIR%%/en/xml/about.xml
@@ -195,6 +193,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/en/xml/using.xml
 %%PORTDOCS%%%%DOCSDIR%%/lib/Pod/Simple/HTML/Bugzilla.pm
 %%PORTDOCS%%%%DOCSDIR%%/lib/Pod/Simple/HTMLBatch/Bugzilla.pm
+%%PORTDOCS%%%%DOCSDIR%%/makedocs.pl
+%%PORTDOCS%%%%DOCSDIR%%/style.css
 %%WWWDIR%%/Bugzilla.pm
 %%WWWDIR%%/Bugzilla/Attachment.pm
 %%WWWDIR%%/Bugzilla/Attachment/PatchReader.pm
@@ -313,64 +313,6 @@
 %%WWWDIR%%/colchange.cgi
 %%WWWDIR%%/collectstats.pl
 %%WWWDIR%%/config.cgi
-%%WWWDIR%%/sanitycheck.pl
-%%WWWDIR%%/jobqueue.pl
-%%WWWDIR%%/jsonrpc.cgi
-%%WWWDIR%%/migrate.pl
-%%WWWDIR%%/js/TUI.js
-%%WWWDIR%%/js/attachment.js
-%%WWWDIR%%/js/change-columns.js
-%%WWWDIR%%/js/expanding-tree.js
-%%WWWDIR%%/js/field.js
-%%WWWDIR%%/js/flag.js
-%%WWWDIR%%/js/global.js
-%%WWWDIR%%/js/help.js
-%%WWWDIR%%/js/params.js
-%%WWWDIR%%/js/productform.js
-%%WWWDIR%%/js/util.js
-%%WWWDIR%%/js/yui/calendar.js
-%%WWWDIR%%/js/yui/cookie.js
-%%WWWDIR%%/js/yui/yahoo-dom-event.js
-%%WWWDIR%%/skins/contrib/Dusk/buglist.css
-%%WWWDIR%%/skins/contrib/Dusk/global.css
-%%WWWDIR%%/skins/contrib/Dusk/index.css
-%%WWWDIR%%/skins/contrib/Dusk/index/account.gif
-%%WWWDIR%%/skins/contrib/Dusk/index/bug.gif
-%%WWWDIR%%/skins/contrib/Dusk/index/search.gif
-%%WWWDIR%%/skins/standard/IE-fixes.css
-%%WWWDIR%%/skins/standard/admin.css
-%%WWWDIR%%/skins/standard/buglist.css
-%%WWWDIR%%/skins/standard/create_attachment.css
-%%WWWDIR%%/skins/standard/dependency-tree.css
-%%WWWDIR%%/skins/standard/dependency-tree/bug-item.png
-%%WWWDIR%%/skins/standard/dependency-tree/tree-closed.png
-%%WWWDIR%%/skins/standard/dependency-tree/tree-open.png
-%%WWWDIR%%/skins/standard/dependency-tree/tree.png
-%%WWWDIR%%/skins/standard/duplicates.css
-%%WWWDIR%%/skins/standard/editusers.css
-%%WWWDIR%%/skins/standard/global.css
-%%WWWDIR%%/skins/standard/global/body-back.gif
-%%WWWDIR%%/skins/standard/global/calendar.png
-%%WWWDIR%%/skins/standard/global/down.png
-%%WWWDIR%%/skins/standard/global/header.png
-%%WWWDIR%%/skins/standard/global/left.png
-%%WWWDIR%%/skins/standard/global/right.png
-%%WWWDIR%%/skins/standard/global/up.png
-%%WWWDIR%%/skins/standard/help.css
-%%WWWDIR%%/skins/standard/index.css
-%%WWWDIR%%/skins/standard/index/account.gif
-%%WWWDIR%%/skins/standard/index/bug.gif
-%%WWWDIR%%/skins/standard/index/search.gif
-%%WWWDIR%%/skins/standard/page.css
-%%WWWDIR%%/skins/standard/panel.css
-%%WWWDIR%%/skins/standard/params.css
-%%WWWDIR%%/skins/standard/reports.css
-%%WWWDIR%%/skins/standard/show_bug.css
-%%WWWDIR%%/skins/standard/show_multiple.css
-%%WWWDIR%%/skins/standard/summarize-time.css
-%%WWWDIR%%/skins/standard/voting.css
-%%WWWDIR%%/skins/standard/yui/calendar.css
-%%WWWDIR%%/skins/standard/yui/sprite.png
 %%CONTRIB%%%%WWWDIR%%/contrib/README
 %%CONTRIB%%%%WWWDIR%%/contrib/bugzilla-queue
 %%CONTRIB%%%%WWWDIR%%/contrib/bugzilla-submit/README
@@ -420,12 +362,29 @@
 %%WWWDIR%%/editworkflow.cgi
 %%WWWDIR%%/email_in.pl
 %%WWWDIR%%/enter_bug.cgi
-%%WWWDIR%%/images/padlock.png
 %%WWWDIR%%/images/favicon.ico
-%%WWWDIR%%/install-module.pl
+%%WWWDIR%%/images/padlock.png
 %%WWWDIR%%/importxml.pl
 %%WWWDIR%%/index.cgi
+%%WWWDIR%%/install-module.pl
+%%WWWDIR%%/jobqueue.pl
+%%WWWDIR%%/js/TUI.js
+%%WWWDIR%%/js/attachment.js
+%%WWWDIR%%/js/change-columns.js
+%%WWWDIR%%/js/expanding-tree.js
+%%WWWDIR%%/js/field.js
+%%WWWDIR%%/js/flag.js
+%%WWWDIR%%/js/global.js
+%%WWWDIR%%/js/help.js
+%%WWWDIR%%/js/params.js
+%%WWWDIR%%/js/productform.js
+%%WWWDIR%%/js/util.js
+%%WWWDIR%%/js/yui/calendar.js
+%%WWWDIR%%/js/yui/cookie.js
+%%WWWDIR%%/js/yui/yahoo-dom-event.js
+%%WWWDIR%%/jsonrpc.cgi
 %%WWWDIR%%/long_list.cgi
+%%WWWDIR%%/migrate.pl
 %%WWWDIR%%/mod_perl.pl
 %%WWWDIR%%/page.cgi
 %%WWWDIR%%/post_bug.cgi
@@ -439,6 +398,7 @@
 %%WWWDIR%%/robots.txt
 %%WWWDIR%%/runtests.pl
 %%WWWDIR%%/sanitycheck.cgi
+%%WWWDIR%%/sanitycheck.pl
 %%WWWDIR%%/search_plugin.cgi
 %%WWWDIR%%/show_activity.cgi
 %%WWWDIR%%/show_bug.cgi
@@ -446,6 +406,46 @@
 %%WWWDIR%%/showdependencygraph.cgi
 %%WWWDIR%%/showdependencytree.cgi
 %%WWWDIR%%/sidebar.cgi
+%%WWWDIR%%/skins/contrib/Dusk/buglist.css
+%%WWWDIR%%/skins/contrib/Dusk/global.css
+%%WWWDIR%%/skins/contrib/Dusk/index.css
+%%WWWDIR%%/skins/contrib/Dusk/index/account.gif
+%%WWWDIR%%/skins/contrib/Dusk/index/bug.gif
+%%WWWDIR%%/skins/contrib/Dusk/index/search.gif
+%%WWWDIR%%/skins/standard/IE-fixes.css
+%%WWWDIR%%/skins/standard/admin.css
+%%WWWDIR%%/skins/standard/buglist.css
+%%WWWDIR%%/skins/standard/create_attachment.css
+%%WWWDIR%%/skins/standard/dependency-tree.css
+%%WWWDIR%%/skins/standard/dependency-tree/bug-item.png
+%%WWWDIR%%/skins/standard/dependency-tree/tree-closed.png
+%%WWWDIR%%/skins/standard/dependency-tree/tree-open.png
+%%WWWDIR%%/skins/standard/dependency-tree/tree.png
+%%WWWDIR%%/skins/standard/duplicates.css
+%%WWWDIR%%/skins/standard/editusers.css
+%%WWWDIR%%/skins/standard/global.css
+%%WWWDIR%%/skins/standard/global/body-back.gif
+%%WWWDIR%%/skins/standard/global/calendar.png
+%%WWWDIR%%/skins/standard/global/down.png
+%%WWWDIR%%/skins/standard/global/header.png
+%%WWWDIR%%/skins/standard/global/left.png
+%%WWWDIR%%/skins/standard/global/right.png
+%%WWWDIR%%/skins/standard/global/up.png
+%%WWWDIR%%/skins/standard/help.css
+%%WWWDIR%%/skins/standard/index.css
+%%WWWDIR%%/skins/standard/index/account.gif
+%%WWWDIR%%/skins/standard/index/bug.gif
+%%WWWDIR%%/skins/standard/index/search.gif
+%%WWWDIR%%/skins/standard/page.css
+%%WWWDIR%%/skins/standard/panel.css
+%%WWWDIR%%/skins/standard/params.css
+%%WWWDIR%%/skins/standard/reports.css
+%%WWWDIR%%/skins/standard/show_bug.css
+%%WWWDIR%%/skins/standard/show_multiple.css
+%%WWWDIR%%/skins/standard/summarize-time.css
+%%WWWDIR%%/skins/standard/voting.css
+%%WWWDIR%%/skins/standard/yui/calendar.css
+%%WWWDIR%%/skins/standard/yui/sprite.png
 %%WWWDIR%%/summarize_time.cgi
 %%WWWDIR%%/template/en/default/account/auth/login-small.html.tmpl
 %%WWWDIR%%/template/en/default/account/auth/login.html.tmpl
@@ -761,8 +761,8 @@
 @dirrm %%WWWDIR%%/template/en/default/admin/milestones
 @dirrm %%WWWDIR%%/template/en/default/admin/keywords
 @dirrm %%WWWDIR%%/template/en/default/admin/groups
-@dirrm %%WWWDIR%%/template/en/default/admin/fieldvalues
 @dirrm %%WWWDIR%%/template/en/default/admin/flag-type
+@dirrm %%WWWDIR%%/template/en/default/admin/fieldvalues
 @dirrm %%WWWDIR%%/template/en/default/admin/custom_fields
 @dirrm %%WWWDIR%%/template/en/default/admin/components
 @dirrm %%WWWDIR%%/template/en/default/admin/classifications
@@ -775,9 +775,23 @@
 @dirrm %%WWWDIR%%/template/en/default
 @dirrm %%WWWDIR%%/template/en
 @dirrmtry %%WWWDIR%%/template
+@dirrmtry %%WWWDIR%%/t
+@dirrm %%WWWDIR%%/skins/standard/yui
+@dirrm %%WWWDIR%%/skins/standard/index
+@dirrm %%WWWDIR%%/skins/standard/global
+@dirrm %%WWWDIR%%/skins/standard/dependency-tree
+@dirrm %%WWWDIR%%/skins/standard
+@dirrm %%WWWDIR%%/skins/contrib/Dusk/index
+@dirrm %%WWWDIR%%/skins/contrib/Dusk
+@dirrm %%WWWDIR%%/skins/contrib
+@dirrmtry %%WWWDIR%%/skins
+@dirrmtry %%WWWDIR%%/lib
+@dirrm %%WWWDIR%%/js/yui
+@dirrm %%WWWDIR%%/js
+@dirrm %%WWWDIR%%/images
 %%CONTRIB%%@dirrm %%WWWDIR%%/contrib/cmdline
 %%CONTRIB%%@dirrm %%WWWDIR%%/contrib/bugzilla-submit
-%%CONTRIB%%@dirrm %%WWWDIR%%/contrib
+%%CONTRIB%%@dirrmtry %%WWWDIR%%/contrib
 @dirrm %%WWWDIR%%/Bugzilla/Whine
 @dirrm %%WWWDIR%%/Bugzilla/WebService/Server
 @dirrm %%WWWDIR%%/Bugzilla/WebService
@@ -802,18 +816,6 @@
 @dirrmtry %%WWWDIR%%/Bugzilla
 @dirrmtry %%WWWDIR%%/data
 @dirrmtry %%WWWDIR%%/graphs
-@dirrm %%WWWDIR%%/images
-@dirrm %%WWWDIR%%/js/yui
-@dirrm %%WWWDIR%%/js
-@dirrm %%WWWDIR%%/skins/standard/yui
-@dirrm %%WWWDIR%%/skins/standard/index
-@dirrm %%WWWDIR%%/skins/standard/global
-@dirrm %%WWWDIR%%/skins/standard/dependency-tree
-@dirrm %%WWWDIR%%/skins/standard
-@dirrm %%WWWDIR%%/skins/contrib/Dusk/index
-@dirrm %%WWWDIR%%/skins/contrib/Dusk
-@dirrm %%WWWDIR%%/skins/contrib
-@dirrm %%WWWDIR%%/skins
 @dirrmtry %%WWWDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/Pod/Simple/HTMLBatch
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/lib/Pod/Simple/HTML
@@ -846,4 +848,5 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/en
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry www/data
+@exec mkdir -p %D/%%WWWDIR%%/t
+@exec mkdir -p %D/%%WWWDIR%%/lib
