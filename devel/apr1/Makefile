@@ -6,7 +6,6 @@
 
 PORTNAME=	apr
 PORTVERSION=	${APR_VERSION}.${APU_VERSION}
-PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	apr
@@ -30,8 +29,8 @@ OPTIONS=	THREADS "Enable Threads in apr"				on  \
 		SQLITE  "Enable SQLite3 support in apr-util"		off \
 		DEVRANDOM "Use /dev/random or compatible in apr"	on
 
-APR_VERSION=	1.4.4
-APU_VERSION=	1.3.11
+APR_VERSION=	1.4.5
+APU_VERSION=	1.3.12
 
 USE_ICONV=		yes
 USE_AUTOTOOLS=	automake autoconf libtool:env
@@ -246,6 +245,12 @@ do-build:
 do-install:
 	cd ${APR_WRKDIR}; ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET}
 	cd ${APU_WRKDIR}; ${SETENV} ${MAKE_ENV} ${MAKE} ${INSTALL_TARGET}
+
+test: build
+	@(cd ${APR_WRKDIR}; ${MAKE} test)
+	@(cd ${APU_WRKDIR}; ${MAKE} test)
+
+#regression-test: test
 
 debug_autoconf:
 	@${ECHO} "LIBTOOL: ${LIBTOOL_VERSION}"
