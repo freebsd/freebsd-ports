@@ -6,15 +6,13 @@
 #
 
 PORTNAME=	virtualbox-ose
-DISTVERSION=	3.2.12
-PORTREVISION=	1
+DISTVERSION=	4.0.8
 CATEGORIES=	emulators kld
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
-		http://disasterarea.chruetertee.ch/ \
-		http://mirror.4bit.ws/
+		http://disasterarea.chruetertee.ch/
 PKGNAMESUFFIX=	-additions
-DISTNAME=	VirtualBox-${DISTVERSION}-OSE
+DISTNAME=	VirtualBox-${DISTVERSION}
 
 MAINTAINER=	vbox@FreeBSD.org
 COMMENT=	VirtualBox additions for FreeBSD guests
@@ -39,7 +37,8 @@ CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --nofatal \
 		--disable-alsa --disable-dbus --disable-python \
 		--build-headless
 
-CONFLICTS=	bcc-[0-9]* virtualbox-ose-3.*
+CONFLICTS=	bcc-[0-9]*
+CONFLICTS_INSTALL=	virtualbox-ose-additions-devel-[3,4]* virtualbox-ose-[3,4]* virtualbox-ose-devel-[3,4]* virtualbox-ose-legacy-[3,4]*
 
 OPTIONS=	DEBUG "Build with debugging symbols" off \
 		X11 "Build with X11 support" on \
@@ -176,5 +175,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/src/VBox/Additions/linux/installer/90-vboxguest.fdi \
 		${PREFIX}/share/hal/fdi/policy/10osvendor/
 .endif
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
