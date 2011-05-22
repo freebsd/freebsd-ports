@@ -7,6 +7,7 @@
 
 PORTNAME=	Apache-DB
 PORTVERSION=	0.14
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,13 +18,14 @@ COMMENT=	Debugging and profiling tools for mod_perl
 MAKE_JOBS_SAFE=  yes
 
 PERL_CONFIGURE=	yes
+USE_APACHE_RUN=	13+
 
 MAN3=		Apache::DB.3 Apache::DProf.3 Apache::perl5db.3 \
 		Apache::SmallProf.3
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_MODPERL2)
+.if defined(WITH_MODPERL2) || ${APACHE_VERSION} > 13
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
 .else
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl

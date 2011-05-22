@@ -28,7 +28,7 @@ USE_APACHE=	13
 
 .include <bsd.port.pre.mk>
 
-.if ${APACHE_VERSION} > 13 || ${APACHE_PORT} != "www/apache13"
+.if ${APACHE_VERSION} > 13
 IGNORE=	build only with apache13
 .endif
 

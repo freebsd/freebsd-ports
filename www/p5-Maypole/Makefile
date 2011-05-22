@@ -6,7 +6,7 @@
 
 PORTNAME=	Maypole
 PORTVERSION=	2.13
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/T/TE/TEEJAY
@@ -36,28 +36,39 @@ BUILD_DEPENDS=	p5-CGI-Simple>0:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-UNIVERSAL-require>0:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 		p5-URI>0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PORTSCOUT=	skipv:2.121
 
 MAKE_JOBS_SAFE=  yes
 
 OPTIONS=	MODPERL "mod_perl support" on \
-			MODPERL2 "mod_perl2 support" off
+		MODPERL2 "mod_perl2 support" off
 
 PERL_CONFIGURE=	yes
+.include <bsd.port.options.mk>
+
+.if defined(WITH_MODPERL) || defined(WITH_MODPERL2)
+USE_APACHE_RUN=	13+
+.endif
 
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_MODPERL) && ${APACHE_VERSION} > 13
+IGNORE=	mod_perl require apache13 but ${APACHE_PORT} is installed
+.elif defined(WITH_MODPERL2) && ${APACHE_VERSION} < 20
+IGNORE=	mod_perl2 require at last apache20 but ${APACHE_PORT} is installed
+.endif
+
+.if defined(WITH_MODPERL) && defined(WITH_MODPERL2)
+IGNORE=	only 1 mod_perl at a time
+.endif
 
 .if defined(WITH_MODPERL2)
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
 .endif
 .if defined(WITH_MODPERL)
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
-.endif
-
-.if defined(WITH_MODPERL) && defined(WITH_MODPERL2)
-IGNORE=	only 1 mod_perl at a time
 .endif
 
 PKGMESSAGE=	${WRKDIR}/pkg-message

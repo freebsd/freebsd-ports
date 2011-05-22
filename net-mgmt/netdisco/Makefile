@@ -7,6 +7,7 @@
 
 PORTNAME=	netdisco
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}_with_mibs
@@ -21,7 +22,6 @@ RUN_DEPENDS+=	${SITE_PERL}/Net/SNMP.pm:${PORTSDIR}/net-mgmt/p5-Net-SNMP				\
 		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session			\
 		${SITE_PERL}/Net/NBName.pm:${PORTSDIR}/net/p5-Net-NBName				\
 		${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg			\
-		${SITE_PERL}/${PERL_ARCH}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test			\
 		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser		\
 		${SITE_PERL}/MasonX/Request/WithApacheSession.pm:${PORTSDIR}/www/p5-MasonX-Request-WithApacheSession
 
@@ -70,6 +70,7 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
 .else
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl	\
 		${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq \
+		${SITE_PERL}/${PERL_ARCH}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test	\
 		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp1
 .endif
 

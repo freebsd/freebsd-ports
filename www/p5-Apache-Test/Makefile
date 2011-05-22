@@ -8,7 +8,8 @@
 PORTNAME=	Apache-Test
 PORTVERSION=	1.36
 CATEGORIES=	www perl5
-MASTER_SITES=	CPAN/../../authors/id/P/PH/PHRED
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:PHRED
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -17,11 +18,10 @@ COMMENT=	Test.pm wrapper with helpers for testing Apache
 MAKE_JOBS_SAFE=	yes
 PERL_CONFIGURE=	yes
 USE_APACHE=	1.3+
+.include <bsd.port.pre.mk>
 
-## XXX: Need to fix this, www/mod_perl2 currently @2.0.4 contains A-T 1.29,
-## XXX: but
-## XXX: A-T has released 1.32
-.if defined(WITH_MODPERL2)
+## XXX: www/mod_perl2 currently @2.0.5 contains A-T 1.36,
+.if defined(WITH_MODPERL2) || ${APACHE_VERSION} > 13
 IGNORE=		is already included in mod_perl2
 .endif
 
@@ -40,4 +40,4 @@ MAN3=		Apache::Test.3 \
 		Apache::TestUtil.3 \
 		Bundle::ApacheTest.3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
