@@ -1,4 +1,4 @@
-# New ports collection makefile for:	virtualbox-ose
+# New ports collection makefile for:	virtualbox-ose-legacy
 # Date created:		2009-05-02
 # Whom:			Bernhard Froehlich <decke@bluelife.at>
 #
@@ -7,13 +7,13 @@
 
 PORTNAME=	virtualbox-ose
 DISTVERSION=	3.2.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	http://tmp.chruetertee.ch/ \
 		http://freebsd.unixfreunde.de/sources/ \
 		http://disasterarea.chruetertee.ch/ \
-		http://mirror.4bit.ws/ \
 		http://dlc.sun.com/virtualbox/${VBOX_GUEST_VER}/:guestadditions
+PKGNAMESUFFIX=	-legacy
 DISTFILES=	VirtualBox-${DISTVERSION}-OSE${EXTRACT_SUFX} ${GADISTFILES}
 EXTRACT_ONLY=	VirtualBox-${DISTVERSION}-OSE${EXTRACT_SUFX}
 
@@ -28,7 +28,7 @@ BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		xslt.2:${PORTSDIR}/textproc/libxslt \
 		curl.6:${PORTSDIR}/ftp/curl
-RUN_DEPENDS=	/boot/modules/vboxdrv.ko:${PORTSDIR}/emulators/virtualbox-ose-kmod
+RUN_DEPENDS=	/boot/modules/vboxdrv.ko:${PORTSDIR}/emulators/virtualbox-ose-kmod-legacy
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -47,9 +47,13 @@ HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-gcc="${CC}" --with-g++="${CXX}" --passive-mesa
 USE_LDCONFIG=	${PREFIX}/lib/virtualbox
 
-CONFLICTS=	bcc-[0-9]* virtualbox-ose-devel-3* virtualbox-ose-additions-3* virtualbox-ose-additions-devel-3*
+CONFLICTS=	bcc-[0-9]*
+CONFLICTS_INSTALL=	virtualbox-ose-[3,4]* virtualbox-ose-devel-[3,4]* virtualbox-ose-additions-[3,4]* virtualbox-ose-additions-devel-[3,4]*
 
+VBOXUSER?=	vboxusers
+VBOXWSUSER?=	vboxusers
 VBOXGROUP?=	vboxusers
+USERS=		${VBOXUSER}
 GROUPS=		${VBOXGROUP}
 VBOX_FRONTENDS=	VBoxHeadless
 VBOX_GUEST_VER=	${PORTVERSION}
@@ -70,6 +74,9 @@ OPTIONS=	QT4 "Build with QT4 Frontend" on \
 PLIST_SUB+=	PYTHON_VER=${PYTHON_VER} \
 		PYTHON_VERU=${PYTHON_VER:S/./_/} \
 		GUEST_VER=${VBOX_GUEST_VER}
+
+SUB_LIST+=	VBOXUSER=${VBOXUSER}
+USE_RC_SUBR+=	vboxheadless
 
 KMK_BUILDTYPE=	release
 KMK_CONFIG=	VBOX_LIBPATH_X11=${LOCALBASE} VBOX_FREEBSD_SRC=${SRC_BASE}/sys
@@ -151,6 +158,8 @@ CONFIGURE_ARGS+=--enable-vde
 .if defined(WITH_WEBSERVICE)
 BUILD_DEPENDS+=	soapcpp2:${PORTSDIR}/devel/gsoap
 VBOX_WEB=	vboxwebsrv webtest
+USE_RC_SUBR+=	vboxwebsrv
+SUB_LIST+=	VBOXWSUSER=${VBOXWSUSER}
 PLIST_SUB+=	WEB=""
 .else
 PLIST_SUB+=	WEB="@comment "
