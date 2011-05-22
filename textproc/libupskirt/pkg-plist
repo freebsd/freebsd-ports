@@ -5,5 +5,5 @@ include/upskirt/buffer.h
 include/upskirt/markdown.h
 include/upskirt/renderers.h
 lib/libupskirt.so
-lib/libupskirt.so.1
+lib/libupskirt.so.2
 @dirrm include/upskirt

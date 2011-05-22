@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libupskirt
-DISTVERSION=	1.0
+DISTVERSION=	1.1
 CATEGORIES=	textproc devel
 MASTER_SITES=	http://instinctive.eu/code/
 
@@ -27,10 +27,10 @@ BROKEN=		does not compile on 6.X
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/libupskirt.so.1 ${PREFIX}/lib
+	${INSTALL_PROGRAM} ${WRKSRC}/libupskirt.so.2 ${PREFIX}/lib
 	${INSTALL_PROGRAM} ${WRKSRC}/lace ${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/kilt ${PREFIX}/bin
-	cd ${PREFIX}/lib && ${LN} -s libupskirt.so.1 libupskirt.so
+	cd ${PREFIX}/lib && ${LN} -s libupskirt.so.2 libupskirt.so
 	${MKDIR} ${PREFIX}/include/upskirt
 	${INSTALL_DATA} ${WRKSRC}/*.h ${PREFIX}/include/upskirt
 
