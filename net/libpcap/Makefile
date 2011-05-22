@@ -7,6 +7,7 @@
 
 PORTNAME=	libpcap
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.tcpdump.org/release/
 
