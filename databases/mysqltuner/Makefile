@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mysqltuner
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	databases
 MASTER_SITES=	http://mysqltuner.pl/
 DISTNAME=	${PORTNAME}.pl
@@ -16,6 +16,8 @@ EXTRACT_ONLY=
 MAINTAINER=	vlad@vlad.uz.ua
 COMMENT=	A Script Assist You with MySQL Configuration
 
+LICENSE=	GPLv3
+
 USE_PERL=	yes
 NO_BUILD=	yes
 
@@ -24,10 +26,6 @@ PLIST_FILES=	bin/${PORTNAME}.pl
 pre-patch:
 	@${MKDIR} ${WRKSRC}
 	@${CP} ${DISTDIR}/${DISTNAME} ${WRKSRC}
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|"1.0.1";|"1.1.0";|' \
-		${WRKSRC}/${DISTNAME}
 
 .include <bsd.port.pre.mk>
 do-install:
