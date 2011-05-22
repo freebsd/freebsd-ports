@@ -76,6 +76,9 @@ bin/mp2bug
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/UUID.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/APR/XSLoader.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/Reload.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/SizeLimit.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache/SizeLimit/Core.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/Test.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/Test5005compat.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache/TestBuild.pm
@@ -127,6 +130,7 @@ bin/mp2bug
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/PerlSections.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/PerlSections/Dump.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Process.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Apache2/Reload.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/RequestIO.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/RequestRec.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/RequestUtil.pm
@@ -313,8 +317,8 @@ bin/mp2bug
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Util
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/UUID
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/URI
-%%THREADMUTEX%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/ThreadMutex
 %%THREADRWLOCK%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/ThreadRWLock
+%%THREADMUTEX%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/ThreadMutex
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Table
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/String
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/APR/Status
@@ -337,8 +341,9 @@ bin/mp2bug
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/ModPerl
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Bundle
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2/PerlSections
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache2
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Apache2
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Apache/SizeLimit
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Apache
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/APR
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
 @dirrm %%APACHEINCLUDEDIR%%/modules/perl

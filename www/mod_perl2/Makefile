@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	mod_perl
-PORTVERSION=	2.0.4
-PORTREVISION=	2
+PORTVERSION=	2.0.5
 PORTEPOCH=	3
 CATEGORIES=	www perl5
-MASTER_SITES=	http://perl.apache.org/dist/ \
-		http://perl.apache.org/dist/old/
+MASTER_SITES=	${MASTER_SITE_APACHE}
+MASTER_SITE_SUBDIR= perl
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 PKGNAMESUFFIX=	2
 
@@ -19,9 +18,11 @@ MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Embeds a Perl interpreter in the Apache2 server
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/BSD/Resource.pm:${PORTSDIR}/devel/p5-BSD-Resource
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-MAKE_JOBS_SAFE=  yes
+CONFLICTS=	p5-Apache-Reload-0.*
+
+MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
 SUB_LIST=	APACHEMODDIR=${APACHEMODDIR}
@@ -45,12 +46,14 @@ MAN3=		APR.3 APR::Base64.3 APR::Brigade.3 APR::Bucket.3 \
 		Apache2::Directive.3 Apache2::Filter.3 Apache2::FilterRec.3 \
 		Apache2::HookRun.3 Apache2::Log.3 Apache2::MPM.3 \
 		Apache2::Module.3 Apache2::PerlSections.3 Apache2::Process.3 \
+		Apache2::Reload.3 \
 		Apache2::RequestIO.3 Apache2::RequestRec.3 \
 		Apache2::RequestUtil.3 Apache2::Resource.3 \
 		Apache2::Response.3 Apache2::ServerRec.3 \
 		Apache2::ServerUtil.3 Apache2::SizeLimit.3 Apache2::Status.3 \
 		Apache2::SubProcess.3 Apache2::SubRequest.3 Apache2::URI.3 \
 		Apache2::Util.3 Apache2::compat.3 Apache2::porting.3 \
+		Apache::Reload.3 Apache::SizeLimit.3 Apache::SizeLimit::Core.3 \
 		Apache::Test.3 Apache::TestConfig.3 Apache::TestMB.3 \
 		Apache::TestMM.3 Apache::TestReport.3 Apache::TestRequest.3 \
 		Apache::TestRun.3 Apache::TestRunPHP.3 Apache::TestRunPerl.3 \
@@ -88,18 +91,6 @@ PLIST_SUB+=	THREADRWLOCK=""
 PLIST_SUB+=	THREADMUTEX="@comment "
 PLIST_SUB+=	THREADRWLOCK="@comment "
 .endif
-
-pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "Note, Aapche(2)::Reload was mistakenly ommited from ${PORTVERSION}"
-	@${ECHO} "cd ${PORTSDIR}/www/p5-Apache-Reload ; ${MAKE} install"
-	@${ECHO} "After installing mod_perl"
-	@${ECHO} "This will be fixed in the next version...."
-	@${ECHO} ""
-
-pre-configure:
-	${RM} ${WRKSRC}/lib/ModPerl/BuildMM.pm.orig
-	${RM} ${WRKSRC}/lib/Apache2/Status.pm.orig
 
 post-install:
 	${MKDIR} ${PREFIX}/${APACHEINCLUDEDIR}/modules/perl
