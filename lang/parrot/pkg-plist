@@ -216,6 +216,7 @@ lib/parrot/%%PARROT_VER%%/include/iterator.pasm
 lib/parrot/%%PARROT_VER%%/include/libpaths.pasm
 lib/parrot/%%PARROT_VER%%/include/longopt.pasm
 lib/parrot/%%PARROT_VER%%/include/parrotlib.pbc
+lib/parrot/%%PARROT_VER%%/include/parrot_version.pir
 lib/parrot/%%PARROT_VER%%/include/pmctypes.pasm
 lib/parrot/%%PARROT_VER%%/include/signal.pasm
 lib/parrot/%%PARROT_VER%%/include/socket.pasm
@@ -423,7 +424,6 @@ lib/parrot/%%PARROT_VER%%/library/dumper.pir
 lib/parrot/%%PARROT_VER%%/library/libpcre.pbc
 lib/parrot/%%PARROT_VER%%/library/libpcre.pir
 lib/parrot/%%PARROT_VER%%/library/ncurses.declarations
-lib/parrot/%%PARROT_VER%%/library/ncurses.pasm
 lib/parrot/%%PARROT_VER%%/library/ncurses.pbc
 lib/parrot/%%PARROT_VER%%/library/ncurses.pir
 lib/parrot/%%PARROT_VER%%/library/nqp-rx.pbc
@@ -439,7 +439,6 @@ lib/parrot/%%PARROT_VER%%/library/pcore.pir
 lib/parrot/%%PARROT_VER%%/library/pcre.pbc
 lib/parrot/%%PARROT_VER%%/library/pcre.pir
 lib/parrot/%%PARROT_VER%%/library/postgres.declarations
-lib/parrot/%%PARROT_VER%%/library/postgres.pasm
 lib/parrot/%%PARROT_VER%%/library/postgres.pir
 lib/parrot/%%PARROT_VER%%/library/random_lib.pir
 lib/parrot/%%PARROT_VER%%/library/uuid.pbc
@@ -451,7 +450,6 @@ lib/parrot/%%PARROT_VER%%/tools/build/pmc2c.pl
 lib/parrot/%%PARROT_VER%%/tools/dev/create_language.pl
 lib/parrot/%%PARROT_VER%%/tools/dev/gen_makefile.pl
 lib/parrot/%%PARROT_VER%%/tools/dev/mk_language_shell.pl
-lib/parrot/%%PARROT_VER%%/tools/dev/ncidef2pir.pl
 lib/parrot/%%PARROT_VER%%/tools/dev/pbc_to_exe.pir
 lib/parrot/%%PARROT_VER%%/tools/dev/pprof2cg.pl
 lib/parrot/%%PARROT_VER%%/tools/dev/reconfigure.pl
