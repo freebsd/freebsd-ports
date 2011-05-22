@@ -7,7 +7,7 @@
 
 PORTNAME=	Bundle-Sledge
 PORTVERSION=	0.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,10 +23,10 @@ USE_APACHE=	13+
 
 .if ${APACHE_VERSION} == 13
 PM_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/Request.pm:${PORTSDIR}/www/p5-libapreq
+PM_DEPENDS+=	${SITE_PERL}/Apache/Reload.pm:${PORTSDIR}/www/p5-Apache-Reload
 .else
 PM_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache2/Request.pm:${PORTSDIR}/www/p5-libapreq2
 .endif
-PM_DEPENDS+=	${SITE_PERL}/Apache/Reload.pm:${PORTSDIR}/www/p5-Apache-Reload
 PM_DEPENDS+=	${SITE_PERL}/Test/Inline.pm:${PORTSDIR}/devel/p5-Test-Inline
 PM_DEPENDS+=	${SITE_PERL}/Carp/Assert.pm:${PORTSDIR}/devel/p5-Carp-Assert
 PM_DEPENDS+=	${SITE_PERL}/Class/Fields.pm:${PORTSDIR}/devel/p5-Class-Fields

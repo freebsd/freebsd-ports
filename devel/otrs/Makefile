@@ -7,6 +7,7 @@
 
 PORTNAME=	otrs
 PORTVERSION=	3.0.7
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -34,7 +35,6 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Date/Pcalc.pm:${PORTSDIR}/devel/p5-Date
 		p5-JSON-XS>=0:${PORTSDIR}/converters/p5-JSON-XS \
 		p5-CSS-Minifier-XS>=0:${PORTSDIR}/textproc/p5-CSS-Minifier-XS \
 		p5-JavaScript-Minifier-XS>=0:${PORTSDIR}/textproc/p5-JavaScript-Minifier-XS \
-		p5-Apache-Reload>=0:${PORTSDIR}/www/p5-Apache-Reload \
 		${SITE_PERL}/Text/Diff.pm:${PORTSDIR}/textproc/p5-Text-Diff \
 		${SITE_PERL}/XML/FeedPP.pm:${PORTSDIR}/textproc/p5-XML-FeedPP
 RUN_DEPENDS:=	${BUILD_DEPENDS}
@@ -88,8 +88,10 @@ RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-P
 USE_PGSQL=	yes
 .endif
 
-.if ${APACHE_VERSION} > 13
-RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=2.0.0:${PORTSDIR}/www/mod_perl2
+.if ${APACHE_VERSION} == 13
+BUILD_DEPENDS+=	p5-Apache-Reload>=0:${PORTSDIR}/www/p5-Apache-Reload
+.else
+RUN_DEPENDS+=	${APACHE_PKGNAMEPREFIX}mod_perl2>=2.0.5:${PORTSDIR}/www/mod_perl2
 .endif
 
 .ifdef WITH_REPORTS_MODULES

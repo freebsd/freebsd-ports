@@ -7,7 +7,7 @@
 
 PORTNAME=	MasonX-WebApp
 PORTVERSION=	0.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,9 +20,13 @@ RUN_DEPENDS=	${SITE_PERL}/HTML/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \
 		${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
 		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		${SITE_PERL}/Class/Factory/Util.pm:${PORTSDIR}/devel/p5-Class-Factory-Util
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
-.if defined(WITH_MODPERL2)
+BUILD_DEPENDS:=	${RUN_DEPENDS}
+
+USE_APACHE_RUN=	13+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MODPERL2) || ${APACHE_VERSION} > 13
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2
 .else
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
@@ -34,4 +38,4 @@ PERL_MODBUILD=	yes
 
 MAN3=		MasonX::WebApp.3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
