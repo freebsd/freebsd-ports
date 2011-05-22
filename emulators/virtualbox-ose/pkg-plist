@@ -12,11 +12,16 @@ bin/VBoxXPCOMIPCD
 %%WEB%%bin/webtest
 %%X11%%lib/virtualbox/VBoxBFE
 %%X11%%lib/virtualbox/VBoxBFE.so
+lib/virtualbox/DBGCPlugInDiggers.so
+lib/virtualbox/VBoxAuth.so
+lib/virtualbox/VBoxAuthSimple.so
+lib/virtualbox/VBoxDbg.so
 lib/virtualbox/VBoxDD.so
 lib/virtualbox/VBoxDD2.so
 lib/virtualbox/VBoxDDU.so
 lib/virtualbox/VBoxEFI32.fd
 lib/virtualbox/VBoxEFI64.fd
+lib/virtualbox/VBoxExtPackHelperApp
 lib/virtualbox/VBoxGuestControlSvc.so
 lib/virtualbox/VBoxGuestPropSvc.so
 lib/virtualbox/VBoxHeadless
