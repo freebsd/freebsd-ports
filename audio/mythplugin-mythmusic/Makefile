@@ -7,6 +7,7 @@
 
 PORTNAME=	mythmusic
 PORTVERSION=	0.24.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
@@ -27,7 +28,6 @@ LIB_DEPENDS=	cdaudio.1:${PORTSDIR}/audio/libcdaudio \
 		fftw3f:${PORTSDIR}/math/fftw3-float
 BUILD_DEPENDS=	mythfrontend:${PORTSDIR}/multimedia/mythtv
 
-WRKSRC=		${WRKDIR}/mythplugins-${PORTVERSION}/mythplugins
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	linguist_build moc_build qmake_build rcc_build uic_build

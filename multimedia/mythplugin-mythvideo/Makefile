@@ -7,6 +7,7 @@
 
 PORTNAME=	mythvideo
 PORTVERSION=	0.24.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.osuosl.org/pub/mythtv/ \
 		http://ftp.osuosl.org/pub/mythtv/old_releases/ \
@@ -21,7 +22,6 @@ COMMENT=	Video playback and browsing plugin for MythTV
 BUILD_DEPENDS=	mythfrontend:${PORTSDIR}/multimedia/mythtv
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=1.2.2:${PORTSDIR}/databases/py-MySQLdb
 
-WRKSRC=		${WRKDIR}/mythplugins-${PORTVERSION}/mythplugins
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	linguist_build moc_build qmake_build rcc_build uic_build
