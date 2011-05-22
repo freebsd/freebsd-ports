@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CPAN-Meta
-PORTVERSION=	2.110580
+PORTVERSION=	2.110930
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
@@ -17,11 +17,10 @@ COMMENT=	The distribution metadata for a CPAN dist
 
 BUILD_DEPENDS=	p5-CPAN-Meta-YAML>=0.002:${PORTSDIR}/devel/p5-CPAN-Meta-YAML	\
 		p5-JSON-PP>=2.27103:${PORTSDIR}/converters/p5-JSON-PP		\
-		p5-Parse-CPAN-Meta>=1.44:${PORTSDIR}/devel/p5-Parse-CPAN-Meta	\
-		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple		\
-		p5-Version-Requirements>=0.101020:${PORTSDIR}/devel/p5-Version-Requirements \
-		p5-version>=0.82:${PORTSDIR}/devel/p5-version
-RUN_DEPENDS=	${BUILD_DEPENDS}
+		p5-Parse-CPAN-Meta>=1.44:${PORTSDIR}/devel/p5-Parse-CPAN-Meta
+RUN_DEPENDS=	p5-CPAN-Meta-YAML>=0.002:${PORTSDIR}/devel/p5-CPAN-Meta-YAML	\
+		p5-JSON-PP>=2.27103:${PORTSDIR}/converters/p5-JSON-PP		\
+		p5-Parse-CPAN-Meta>=1.44:${PORTSDIR}/devel/p5-Parse-CPAN-Meta
 
 PERL_CONFIGURE=	YES
 
@@ -33,4 +32,16 @@ MAN3=		CPAN::Meta.3		\
 		CPAN::Meta::Spec.3	\
 		CPAN::Meta::Validator.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501200
+BUILD_DEPENDS+=	p5-version>=0.82:${PORTSDIR}/devel/p5-version
+RUN_DEPENDS+=	p5-version>=0.82:${PORTSDIR}/devel/p5-version
+.endif
+
+.if ${PERL_LEVEL} < 501400
+BUILD_DEPENDS+=	p5-Version-Requirements>=0.101020:${PORTSDIR}/devel/p5-Version-Requirements
+RUN_DEPENDS+=	p5-Version-Requirements>=0.101020:${PORTSDIR}/devel/p5-Version-Requirements
+.endif
+
+.include <bsd.port.post.mk>
