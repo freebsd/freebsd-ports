@@ -9,8 +9,6 @@
 # $FreeBSD$
 #
 
-PORTREVISION=		1
-
 MAINTAINER=		jille@quis.cx
 
 MASTERDIR=		${.CURDIR}/../apache22
