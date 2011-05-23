@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	yara
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	security
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	A malware identification and classification tool
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
+LIB_DEPENDS=	re2.0:${PORTSDIR}/devel/re2
 
 PROJECTHOST=	yara-project
 MAKE_JOBS_SAFE=	yes
@@ -21,6 +21,7 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	"--with-re2"
 USE_LDCONFIG=	yes
 
 MAN1=	yara.1
