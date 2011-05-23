@@ -185,6 +185,7 @@
     SUBDIR += hmap
     SUBDIR += honggfuzz
     SUBDIR += horde-jeta
+    SUBDIR += horde4-auth
     SUBDIR += hotssh
     SUBDIR += hs-SHA
     SUBDIR += hs-digest
