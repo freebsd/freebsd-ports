@@ -20,6 +20,8 @@ LIB_DEPENDS=	neon.27:${PORTSDIR}/www/neon29 \
 		svn_client-1.0:${PORTSDIR}/devel/subversion \
 		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 
+BROKEN=		does not link
+
 LATEST_LINK=	subcommander2
 CONFLICTS=	subcommander-1.*
 
