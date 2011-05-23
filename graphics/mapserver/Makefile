@@ -185,7 +185,7 @@ do-install:
 
 .if defined(WITH_PHP)
 	@${MKDIR} ${LOCALBASE}/${PHP_EXTENSION_DIR}
-	${INSTALL_PROGRAM} ${WRKSRC}/mapscript/php3/php_mapscript.so ${LOCALBASE}/${PHP_EXTENSION_DIR}/
+	${INSTALL_PROGRAM} ${WRKSRC}/mapscript/php/php_mapscript.so ${LOCALBASE}/${PHP_EXTENSION_DIR}/
 .endif
 
 .if defined(WITH_PERL)
