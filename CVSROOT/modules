@@ -25720,6 +25720,8 @@ vips                            ports/graphics/vips
 virtualbox-ose                  ports/emulators/virtualbox-ose
 virtualbox-ose-additions        ports/emulators/virtualbox-ose-additions
 virtualbox-ose-kmod             ports/emulators/virtualbox-ose-kmod
+virtualbox-ose-kmod-legacy      ports/emulators/virtualbox-ose-kmod-legacy
+virtualbox-ose-legacy           ports/emulators/virtualbox-ose-legacy
 virtualmin                      ports/sysutils/virtualmin
 virtuoso                        ports/databases/virtuoso
 viruskiller                     ports/games/viruskiller
@@ -27153,6 +27155,7 @@ yasnippet                       ports/editors/yasnippet
 yasql                           ports/databases/yasql
 yasr                            ports/accessibility/yasr
 yassl                           ports/security/yassl
+yate                            ports/net/yate
 yate-devel                      ports/net/yate-devel
 yatex                           ports/print/yatex
 yatex-xemacs                    ports/print/yatex-xemacs
