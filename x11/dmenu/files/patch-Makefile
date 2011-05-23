@@ -1,28 +1,6 @@
---- Makefile.orig	2010-11-20 10:24:33.000000000 +0100
-+++ Makefile	2011-03-24 17:16:32.000000000 +0100
-@@ -12,16 +12,17 @@
- 	@echo "CC       = ${CC}"
- 
- dmenu: dmenu.o draw.o
-+	@echo CC -o $@
-+	@${CC} -o $@ dmenu.o draw.o ${LDFLAGS}
-+
- dmenu_path: dmenu_path.o
-+	@echo CC -o $@
-+	@${CC} -o $@ dmenu_path.o ${LDFLAGS}
- 
- .c.o: config.mk
- 	@echo CC -c $<
- 	@${CC} -c $< ${CFLAGS}
- 
--dmenu dmenu_path:
--	@echo CC -o $@
--	@${CC} -o $@ $+ ${LDFLAGS}
--
- clean:
- 	@echo cleaning
- 	@rm -f dmenu dmenu.o draw.o dmenu_path dmenu_path.o dmenu-${VERSION}.tar.gz
-@@ -41,17 +42,17 @@
+--- Makefile.orig	2011-05-18 18:02:16.000000000 +0200
++++ Makefile	2011-05-20 22:52:15.000000000 +0200
+@@ -43,17 +43,17 @@
  	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu
  	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu_path
  	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu_run

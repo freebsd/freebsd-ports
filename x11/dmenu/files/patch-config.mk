@@ -1,7 +1,7 @@
---- config.mk.orig	2010-11-20 10:24:33.000000000 +0100
-+++ config.mk	2011-03-24 17:19:41.000000000 +0100
-@@ -4,11 +4,11 @@
- # Customize below to fit your system
+--- config.mk.orig	2011-05-18 18:02:16.000000000 +0200
++++ config.mk	2011-05-20 22:58:36.000000000 +0200
+@@ -2,11 +2,11 @@
+ VERSION = 4.3.1
  
  # paths
 -PREFIX = /usr/local
@@ -16,15 +16,15 @@
  
  # Xinerama, comment if you don't want it
  XINERAMALIBS  = -lXinerama
-@@ -19,9 +19,9 @@
+@@ -17,9 +17,9 @@
  LIBS = -L${X11LIB} -lX11 ${XINERAMALIBS}
  
  # flags
 -CPPFLAGS = -D_BSD_SOURCE -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
--CFLAGS   = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
+-CFLAGS   = -ansi -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
 -LDFLAGS  = -s ${LIBS}
 +CPPFLAGS+= -D_BSD_SOURCE -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
-+CFLAGS  += -std=c99 ${INCS} ${CPPFLAGS}
++CFLAGS  += -ansi ${INCS} ${CPPFLAGS}
 +LDFLAGS += ${LIBS}
  
  # compiler and linker
