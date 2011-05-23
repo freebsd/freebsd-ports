@@ -1,0 +1,61 @@
+%%HORBAS%%/Image.php
+%%HORDIR%%/Base.php
+%%HORDIR%%/Effect.php
+%%HORDIR%%/Effect/Border.php
+%%HORDIR%%/Effect/Gd/DropShadow.php
+%%HORDIR%%/Effect/Gd/RoundCorners.php
+%%HORDIR%%/Effect/Gd/TextWatermark.php
+%%HORDIR%%/Effect/Gd/Unsharpmask.php
+%%HORDIR%%/Effect/Im/Border.php
+%%HORDIR%%/Effect/Im/CenterCrop.php
+%%HORDIR%%/Effect/Im/Composite.php
+%%HORDIR%%/Effect/Im/DropShadow.php
+%%HORDIR%%/Effect/Im/LiquidResize.php
+%%HORDIR%%/Effect/Im/PhotoStack.php
+%%HORDIR%%/Effect/Im/PolaroidImage.php
+%%HORDIR%%/Effect/Im/RoundCorners.php
+%%HORDIR%%/Effect/Im/TextWatermark.php
+%%HORDIR%%/Effect/Im/Unsharpmask.php
+%%HORDIR%%/Effect/Imagick/Border.php
+%%HORDIR%%/Effect/Imagick/CenterCrop.php
+%%HORDIR%%/Effect/Imagick/Composite.php
+%%HORDIR%%/Effect/Imagick/DropShadow.php
+%%HORDIR%%/Effect/Imagick/LiquidResize.php
+%%HORDIR%%/Effect/Imagick/PhotoStack.php
+%%HORDIR%%/Effect/Imagick/PolaroidImage.php
+%%HORDIR%%/Effect/Imagick/RoundCorners.php
+%%HORDIR%%/Effect/Imagick/SmartCrop.php
+%%HORDIR%%/Effect/Imagick/TextWatermark.php
+%%HORDIR%%/Effect/Imagick/Unsharpmask.php
+%%HORDIR%%/Exception.php
+%%HORDIR%%/Exif.php
+%%HORDIR%%/Exif/Base.php
+%%HORDIR%%/Exif/Bundled.php
+%%HORDIR%%/Exif/Exiftool.php
+%%HORDIR%%/Exif/Parser/Base.php
+%%HORDIR%%/Exif/Parser/Canon.php
+%%HORDIR%%/Exif/Parser/Fujifilm.php
+%%HORDIR%%/Exif/Parser/Gps.php
+%%HORDIR%%/Exif/Parser/Nikon.php
+%%HORDIR%%/Exif/Parser/Olympus.php
+%%HORDIR%%/Exif/Parser/Panasonic.php
+%%HORDIR%%/Exif/Parser/Sanyo.php
+%%HORDIR%%/Exif/Php.php
+%%HORDIR%%/Gd.php
+%%HORDIR%%/Im.php
+%%HORDIR%%/Imagick.php
+%%HORDIR%%/Png.php
+%%HORDIR%%/Svg.php
+%%HORDIR%%/Swf.php
+%%HORDIR%%/Translation.php
+%%HORDIR%%/rgb.php
+@dirrm %%HORDIR%%/Exif/Parser
+@dirrm %%HORDIR%%/Exif/
+@dirrm %%HORDIR%%/Exif
+@dirrm %%HORDIR%%/Effect/Imagick
+@dirrm %%HORDIR%%/Effect/Im
+@dirrm %%HORDIR%%/Effect/Gd
+@dirrm %%HORDIR%%/Effect
+@dirrmtry %%HORDIR%%
+@dirrmtry %%HORBAS%%
+
