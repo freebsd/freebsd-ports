@@ -15,11 +15,13 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BINFILE}:binfile
 MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	A compatibility plugin for Mozilla NPAPI (development version)
 
+IGNORE=		is now older than www/nspluginwrapper
+
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 LATEST_LINK=	${PORTNAME}-devel
 
-CONFLICTS=	nspluginwrapper-1.2.*
+CONFLICTS=	nspluginwrapper-1.[24].*
 
 BINBUILD=	1
 BINFILE=	${PORTNAME}-i386-${PORTVERSION}-${BINBUILD}${EXTRACT_SUFX}
