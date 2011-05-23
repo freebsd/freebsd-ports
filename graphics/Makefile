@@ -323,6 +323,7 @@
     SUBDIR += gwenview
     SUBDIR += gx
     SUBDIR += hobbes-icons-xpm
+    SUBDIR += horde4-image
     SUBDIR += hppsmtools
     SUBDIR += hs-cairo
     SUBDIR += hs-HGL
