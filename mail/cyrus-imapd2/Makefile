@@ -46,12 +46,12 @@ CONFIGURE_ARGS=	--with-cyrus-prefix=${PREFIX}/cyrus \
 .if defined(WITH_BDB_VER)
 USE_BDB_VER=	${WITH_BDB_VER}
 .else
-USE_BDB_VER=	3
+USE_BDB_VER=	41
 .endif
 .if ${USE_BDB_VER} == 4
 USE_BDB=	40
-.elif ${USE_BDB_VER} != 3 && ${USE_BDB_VER} != 41
-IGNORE=		"cannot install: WITH_BDB_VER must be 3, 4 or 41"
+.elif ${USE_BDB_VER} != 41
+IGNORE=		"cannot install: WITH_BDB_VER must be 4 or 41"
 .endif
 USE_BDB?=	${USE_BDB_VER}
 CONFIGURE_ARGS+=--with-bdb-incdir=${LOCALBASE}/include/db${USE_BDB_VER} \
@@ -112,7 +112,7 @@ pre-everything::
 		${ECHO_MSG} "It seems you have installed newer db than db3.  If"; \
 		${ECHO_MSG} "you are using newer db for cyrus-sasl2, you should"; \
 		${ECHO_MSG} "specify same version by WITH_BDB_VER.  For"; \
-		${ECHO_MSG} "exapmle, WITH_BDB_VER=4 for db4."; \
+		${ECHO_MSG} "example, WITH_BDB_VER=41 for db41."; \
 		${ECHO_MSG} ""; \
 	fi
 .endif

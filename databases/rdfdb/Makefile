@@ -15,7 +15,7 @@ DISTNAME=	rdfdb_src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A lightweight RDF database
 
-USE_BDB=	3+
+USE_BDB=	40+
 INVALID_BDB_VER=2
 
 WRKSRC=	${WRKDIR}/rdfdb

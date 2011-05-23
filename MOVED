@@ -2183,3 +2183,4 @@ barnyard-sguil|barnyard2-sguil|2011-05-15|barnyard2 has build in sguil support
 multimedia/rebot3||2011-05-16|Removed
 devel/tcl-neo||2011-05-22|Removed: deprecated and no maintainer interest.
 www/neowebscript||2011-05-22|Removed: deprecated and no maintainer interest.
+databases/db3||2011-05-23|Removed: all users set USE_BDB=3+ and have been using 4.0+.

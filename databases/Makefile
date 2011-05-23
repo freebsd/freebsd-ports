@@ -32,7 +32,6 @@
     SUBDIR += cyrus-imspd
     SUBDIR += dalmp
     SUBDIR += db
-    SUBDIR += db3
     SUBDIR += db4
     SUBDIR += db41
     SUBDIR += db41-nocrypto
