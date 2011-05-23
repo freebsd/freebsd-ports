@@ -34,6 +34,58 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d226626c-857f-11e0-95cc-001b2134ef46">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin</name>
+	<range><le>9.0r289</le></range>
+      </package>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>10.3r181.14</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe Product Security Incident Response Team reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb11-12.html">
+	  <p>Critical vulnerabilities have been identified in Adobe Flash
+	    Player 10.2.159.1 and earlier versions (Adobe Flash Player
+	    10.2.154.28 and earlier for Chrome users) for Windows,
+	    Macintosh, Linux and Solaris, and Adobe Flash Player 10.2.157.51
+	    and earlier versions for Android. These vulnerabilities could
+	    cause the application to crash and could potentially allow an
+	    attacker to take control of the affected system. There are
+	    reports of malware attempting to exploit one of the
+	    vulnerabilities, CVE-2011-0627, in the wild via a Flash (.swf)
+	    file embedded in a Microsoft Word (.doc) or Microsoft Excel
+	    (.xls) file delivered as an email attachment targeting the
+	    Windows platform. However, to date, Adobe has not obtained a
+	    sample that successfully completes an attack.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0579</cvename>
+      <cvename>CVE-2011-0618</cvename>
+      <cvename>CVE-2011-0619</cvename>
+      <cvename>CVE-2011-0620</cvename>
+      <cvename>CVE-2011-0621</cvename>
+      <cvename>CVE-2011-0622</cvename>
+      <cvename>CVE-2011-0623</cvename>
+      <cvename>CVE-2011-0624</cvename>
+      <cvename>CVE-2011-0625</cvename>
+      <cvename>CVE-2011-0626</cvename>
+      <cvename>CVE-2011-0627</cvename>
+      <url>http://www.adobe.com/support/security/bulletins/apsb11-12.html</url>
+    </references>
+    <dates>
+      <discovery>2011-01-20</discovery>
+      <entry>2011-05-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e666498a-852a-11e0-8f78-080027ef73ec">
     <topic>opera -- code injection vulnerability through broken frameset
       handling</topic>
