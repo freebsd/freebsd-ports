@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	node
-PORTVERSION=	0.4.7
-PORTREVISION=	1
+PORTVERSION=	0.4.8
+PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -35,6 +35,8 @@ PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 BUILD_DEPENDS=	${LOCALBASE}/include/v8.h:${PORTSDIR}/lang/v8
 CONFIGURE_ARGS+=	--shared-v8-includes=${LOCALBASE}/include --shared-v8-libpath=${LOCALBASE}/lib
 PLIST_SUB+=	SHAREDV8="@comment "
+.else
+PLIST_SUB+=	SHAREDV8=""
 .endif
 
 .if !defined(DISABLE_MAKE_JOBS)
