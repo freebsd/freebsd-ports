@@ -17,6 +17,7 @@ COMMENT=	A single sign-on system for websites (apache module)
 
 MAKE_JOBS_UNSAFE=	yes
 
+FORBIDDEN=	vuxml:1ca8228f-858d-11e0-a76c-000743057ca2
 DEPRECATED=	will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
 EXPIRATION_DATE=	2011-05-01
 
