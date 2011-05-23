@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dmenu
-PORTVERSION=	4.2.1
-PORTREVISION=	1
+PORTVERSION=	4.3.1
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/ \
 		http://schot.a-eskwadraat.nl/files/
@@ -21,6 +20,9 @@ USE_XORG=	x11
 
 MAN1=		dmenu.1
 PLIST_FILES=	bin/dmenu bin/dmenu_path bin/dmenu_run
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 .include <bsd.port.options.mk>
 
