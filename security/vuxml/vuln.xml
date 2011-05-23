@@ -34,6 +34,64 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7af2fb85-8584-11e0-96b7-00300582f9fc">
+    <topic>ViewVC -- user-reachable override of cvsdb row limit</topic>
+    <affects>
+      <package>
+	<name>ViewVC</name>
+	<range><lt>1.1.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ViewVC.org reports:</p>
+	<blockquote cite="http://viewvc.tigris.org/source/browse/viewvc/trunk/CHANGES?r1=2536&amp;r2=2574">
+	  <p>Security fix: remove user-reachable override of cvsdb row limit.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+    <url>http://viewvc.tigris.org/source/browse/*checkout*/viewvc/branches/1.1.x/CHANGES</url>
+    </references>
+    <dates>
+      <discovery>2011-05-17</discovery>
+      <entry>2011-05-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="99a5590c-857e-11e0-96b7-00300582f9fc">
+    <topic>Apache APR -- DoS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>apr1</name>
+	<range><lt>1.4.5.1.3.12</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Apache Portable Runtime Project reports:</p>
+	<blockquote cite="http://www.apache.org/dist/apr/CHANGES-APR-1.4">
+	  <p>A flaw was discovered in the apr_fnmatch() function in the Apache Portable
+             Runtime (APR) library 1.4.4 (or any backported versions that contained the
+             upstream fix for CVE-2011-0419). This could cause httpd workers to enter a
+             hung state (100% CPU utilization).</p>
+          <p>apr-util 1.3.11 could cause crashes with httpd's mod_authnz_ldap in some situations.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>47929</bid>
+      <cvename>CVE-2011-1928</cvename>
+      <cvename>CVE-2011-0419</cvename>
+      <url>http://www.apache.org/dist/apr/Announcement1.x.html</url>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2011-1928</url>
+    </references>
+    <dates>
+      <discovery>2011-05-19</discovery>
+      <entry>2011-05-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d226626c-857f-11e0-95cc-001b2134ef46">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
@@ -87,8 +145,7 @@ Note:  Please add new entries to the beginning of this file.
   </vuln>
 
   <vuln vid="e666498a-852a-11e0-8f78-080027ef73ec">
-    <topic>opera -- code injection vulnerability through broken frameset
-      handling</topic>
+    <topic>opera -- code injection vulnerability through broken frameset handling</topic>
     <affects>
       <package> <name>opera</name> <range><lt>11.11</lt></range> </package>
       <package> <name>opera-devel</name> <range><lt>11.11</lt></range> </package>
@@ -155,8 +212,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Release notes for Exim 4.76 says:</p>
-	<blockquote
-	  cite="ftp://ftp.exim.org/pub/exim/ChangeLogs/ChangeLog-4.76">
+	<blockquote cite="ftp://ftp.exim.org/pub/exim/ChangeLogs/ChangeLog-4.76">
 	  <p>Bugzilla 1106: CVE-2011-1764 - DKIM log line was subject
 	    to a format-string attack -- SECURITY: remote arbitrary code
 	    execution.</p>
@@ -168,8 +224,7 @@ Note:  Please add new entries to the beginning of this file.
 	</blockquote>
         <p>Also, impact assessment was redone shortly after the original
           announcement:</p>
-	<blockquote
-	  cite="https://lists.exim.org/lurker/message/20110512.102909.8136175a.en.html">
+	<blockquote cite="https://lists.exim.org/lurker/message/20110512.102909.8136175a.en.html">
           <p>Further analysis revealed that the second security was
             more severe than I realised at the time that I wrote the
             announcement.  The second security issue has been assigned
@@ -195,7 +250,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>apr1</name>
-	<range><ge>1.4.0</ge><lt>1.4.4</lt></range>
+	<range><lt>1.4.4.1.3.11</lt></range>
       </package>
     </affects>
     <description>
