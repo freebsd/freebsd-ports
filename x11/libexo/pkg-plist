@@ -196,6 +196,7 @@ share/locale/ur_PK/LC_MESSAGES/exo-1.mo
 share/locale/zh_CN/LC_MESSAGES/exo-1.mo
 share/locale/zh_TW/LC_MESSAGES/exo-1.mo
 share/pixmaps/exo-1/exo-thumbnail-frame.png
+%%PYTHON%%share/pygtk/2.0/defs/%%EXODIR%%/exo.defs
 share/xfce4/helpers/Terminal.desktop
 share/xfce4/helpers/Thunar.desktop
 share/xfce4/helpers/aterm.desktop
@@ -230,6 +231,20 @@ share/xfce4/helpers/thunderbird.desktop
 share/xfce4/helpers/urxvt.desktop
 share/xfce4/helpers/w3m.desktop
 share/xfce4/helpers/xterm.desktop
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/_exo.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/_exo.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/_exo.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/exo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/exo/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/exo/__init__.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/exo/__init__.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.pyo
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/%%EXODIR%%/exo
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/%%EXODIR%%
+%%PYTHON%%@dirrm share/pygtk/2.0/defs/%%EXODIR%%
 @dirrm share/xfce4/helpers
 @dirrm share/xfce4
 @dirrm share/pixmaps/exo-1

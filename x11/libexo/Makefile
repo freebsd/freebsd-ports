@@ -8,8 +8,8 @@
 PORTNAME=	libexo
 PORTVERSION=	0.6.0
 CATEGORIES=	x11 xfce
-DISTNAME=	exo-${PORTVERSION}
 MASTER_SITES=	${MASTER_SITE_XFCE}
+DISTNAME=	exo-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
@@ -42,7 +42,7 @@ OPTIONS=	HAL	"Enable HAL support"			on \
 
 MAN1=		exo-csource.1 exo-open.1
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_HAL)
 CONFIGURE_ARGS+=--enable-hal
@@ -66,7 +66,7 @@ CONFIGURE_ARGS+=--enable-python
 .include "${PORTSDIR}/Mk/bsd.python.mk"
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gtk>=2:${PORTSDIR}/x11-toolkits/py-gtk2
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}gtk>=2:${PORTSDIR}/x11-toolkits/py-gtk2
-PLIST_SUB+=	PYTHON=""
+PLIST_SUB+=	PYTHON="" EXODIR="exo-0.6"
 .else
 CONFIGURE_ARGS+=--disable-python
 PLIST_SUB+=	PYTHON="@comment "
@@ -85,4 +85,4 @@ post-install:
 	${FIND} ${WRKSRC}/docs/reference -type f -regex '.*\.1' \
 	-exec ${INSTALL_MAN} "{}" "${MANPREFIX}/man/man1" \;
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
