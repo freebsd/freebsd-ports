@@ -27,8 +27,11 @@ LICENSE=	GPLv3
 USE_ICONV=	yes
 USE_GZIP=	yes
 
+CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+# XXX FreeBSD 9.x has posix_fallocate() for OSVERSION > 900035,
+# but is missing the required POSIX_FADV_* macros
+CONFIGURE_ENV=	i_cv_posix_fallocate_works=no \
 		LIBS="-L${LOCALBASE}/lib"
 MAKE_JOBS_SAFE=	yes
 
