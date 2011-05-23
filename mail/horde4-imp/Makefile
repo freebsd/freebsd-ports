@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	imp
-PORTVERSION=	4.3.9
-PORTREVISION=	2
-PORTEPOCH=	1
+PORTVERSION=	5.0.3
+DISTVERSIONPREFIX=
+DISTVERSIONSUFFIX=
 CATEGORIES=	mail www
-DISTFILES=	${PORTNAME}-h3-${PORTVERSION}${EXTRACT_SUFX}
+MASTER_SITES=		http://pear.horde.org/get/ \
+			LOCAL/beech
+PKGNAMEPREFIX=	horde4-
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Webmail system for IMAP/POP3 mailboxes
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-h3-${PORTVERSION}
 
 #-----------------------------------------------------------------------
 # You may define these options:
@@ -39,6 +40,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-h3-${PORTVERSION}
 # - WITH_HTML		: enable HTML composition mode;
 #-----------------------------------------------------------------------
 
+LATEST_LINK=	horde4-imp
 RUN_DEPENDS+=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL
 
 USE_PHP=	imap
@@ -51,7 +53,8 @@ USE_PHP+=	openssl
 .endif
 
 .if !defined(NOCRYPT)
-RUN_DEPENDS+=	${PEARDIR}/Mail/mimeDecode.php:${PORTSDIR}/mail/pear-Mail_mimeDecode \
+RUN_DEPENDS+=
+${PEARDIR}/Mail/mimeDecode.php:${PORTSDIR}/mail/pear-Mail_mimeDecode \
 		${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
 .endif
 
@@ -65,11 +68,11 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS+=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 .endif
 
-CONFLICTS=	imp-3.*
+CONFLICTS=	imp-4.*
 USE_HORDE=	base
 USE_GETTEXT=	yes
 PORTDOCS=	README CHANGES CREDITS INSTALL	\
-		RELEASE_NOTES  TODO  UPGRADING
+		RELEASE_NOTES  UPGRADING
 
 pre-configure:
 .if !defined(WITHOUT_ASPELL)
@@ -87,22 +90,6 @@ pre-configure:
 .else
 	@${REINPLACE_CMD} -e "s:%%GPG%%::" ${WRKSRC}/config/conf.xml
 .endif
-	@${REINPLACE_CMD} -e "s:IMP_VERSION:IMP_VERSION . ' / ${SERVOS}':"	\
-		${WRKSRC}/lib/MIME/Headers.php
-	@${REINPLACE_CMD} -e "s:example.com:${HOSTNAME}:g"	\
-		${WRKSRC}/config/servers.php.dist
-.if defined(WITHOUT_SSL)
-	@${REINPLACE_CMD} -e "s:%%PROTOCOL%%:imap/notls:;s:%%IMAPPORT%%:143:"	\
-		${WRKSRC}/config/servers.php.dist
-.else
-	@${REINPLACE_CMD} -e "s:%%IMAPPORT%%:993:" ${WRKSRC}/config/servers.php.dist
-. if defined(WITH_VALID_CERT)
-	@${REINPLACE_CMD} -e "s:%%PROTOCOL%%:imap/ssl:" ${WRKSRC}/config/servers.php.dist
-. else
-	@${REINPLACE_CMD} -e "s:%%PROTOCOL%%:imap/ssl/novalidate-cert:"	\
-		${WRKSRC}/config/servers.php.dist
-. endif
-.endif
 
 pre-install:
 .if !defined(BATCH) && !defined(WITHOUT_SSL)
@@ -114,5 +101,5 @@ pre-install:
 	fi
 .endif
 
-.include "${.CURDIR}/../../www/horde-base/bsd.horde.mk"
+.include "${.CURDIR}/../../www/horde4-base/bsd.horde4.mk"
 .include <bsd.port.mk>
