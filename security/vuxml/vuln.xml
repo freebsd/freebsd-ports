@@ -34,6 +34,72 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="115a1389-858e-11e0-a76c-000743057ca2">
+    <topic>Pubcookie Login Server -- XSS Vulnerability</topic>
+    <affects>
+      <package>
+	<name>pubcookie-login-server</name>
+	<range><lt>3.3.2d</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Nathan Dors, Pubcookie Project reports:</p>
+	<blockquote cite="http://pubcookie.org/news/20070606-login-secadv.html">
+	  <p>A  new non-persistent XSS vulnerability was found in the
+            Pubcookie login server's compiled binary "index.cgi" CGI
+            program. The CGI program mishandles untrusted data when
+            printing responses to the browser. This makes the program
+            vulnerable to carefully crafted requests containing script
+            or HTML. If an attacker can lure an unsuspecting user to
+            visit carefully staged content, the attacker can use it to
+            redirect the user to his or her local Pubcookie login page
+            and attempt to exploit the XSS vulnerability.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://pubcookie.org/news/20070606-login-secadv.html</url>
+    </references>
+    <dates>
+      <discovery>2007-05-25</discovery>
+      <entry>2011-05-23</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="1ca8228f-858d-11e0-a76c-000743057ca2">
+    <topic>mod_pubcookie -- Empty Authentication Security Advisory</topic>
+    <affects>
+      <package>
+	<name>ap*-mod_pubcookie</name>
+	<range>><ge>3.1.0</ge><lt>3.3.2b</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Nathan Dors, Pubcookie Project reports:</p>
+	<blockquote cite="http://pubcookie.org/news/20061106-empty-auth-secadv.html">
+	  <p>An Abuse of Functionality vulnerability in the Pubcookie
+	     authentication process was found. This vulnerability
+	     allows an attacker to appear as if he or she were
+	     authenticated using an empty userid when such a userid
+	     isn't expected. Unauthorized access to web content and
+	     applications may result where access is restricted to
+	     users who can authenticate successfully but where no
+	     additional authorization is performed after
+	     authentication.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://pubcookie.org/news/20061106-empty-auth-secadv.html</url>
+    </references>
+    <dates>
+      <discovery>2006-10-04</discovery>
+      <entry>2011-05-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7af2fb85-8584-11e0-96b7-00300582f9fc">
     <topic>ViewVC -- user-reachable override of cvsdb row limit</topic>
     <affects>

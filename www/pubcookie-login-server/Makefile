@@ -16,6 +16,10 @@ DISTNAME=	${PORTNAME}-3.3.0a
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	A single sign-on system for websites (login server)
 
+FORBIDDEN=      vuxml:115a1389-858e-11e0-a76c-000743057ca2
+DEPRECATED=	Unused by maintiner, needs updates.
+EXPIRATION_DATE=	2011-06-06
+
 CONFLICTS=      mod_pubcookie-[0-9]*
 
 OPTIONS=	LDAP "Enable LDAP verifier" on \
@@ -35,15 +39,16 @@ PC_BASE?=	${PORTNAME}
 PC_DIR=		${PREFIX}/${PC_BASE}
 
 SUB_FILES+=	pkg-install
-SUB_LIST+=	CONF_FILES="${CONF_FILES}" CONF_DIRS="${CONF_DIRS}"
+SUB_LIST+=	CONF_FILES="${PUBCOOKIE_CONF_FILES}" \
+		CONF_DIRS="${PUBCOOKIE_CONF_DIRS}"
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${PKGINSTALL}
 .include "${.CURDIR}/Makefile.templates"
-CONF_FILES+=	${LOGIN_TEMPLATES:C|(.*)|${PC_BASE}/login_templates.default/\1:${PC_BASE}/login_templates/\1|}
-CONF_DIRS+=	${PC_BASE}/login_templates
-CONF_FILES+=	${LOGIN_IMAGES:C|(.*)|${PC_BASE}/login_templates.default/images/\1:${PC_BASE}/login/images/\1|}
-CONF_DIRS+=	${PC_BASE}/login/images
-CONF_FILES+=	${PC_BASE}/config.login.sample:${PC_BASE}/config
+PUBCOOKIE_CONF_FILES+=	${LOGIN_TEMPLATES:C|(.*)|${PC_BASE}/login_templates.default/\1:${PC_BASE}/login_templates/\1|}
+PUBCOOKIE_CONF_DIRS+=	${PC_BASE}/login_templates
+PUBCOOKIE_CONF_FILES+=	${LOGIN_IMAGES:C|(.*)|${PC_BASE}/login_templates.default/images/\1:${PC_BASE}/login/images/\1|}
+PUBCOOKIE_PUBCOOKIE_CONF_DIRS+=	${PC_BASE}/login/images
+PUBCOOKIE_CONF_FILES+=	${PC_BASE}/config.login.sample:${PC_BASE}/config
 
 # XXX Add Kerberos
 
