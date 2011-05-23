@@ -12,7 +12,7 @@ pre-build-epag:
 
 post-build-epag:
 	cd ${WRKSRC}/${EPAG_NAME} && \
-		${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} Makefile
+		${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} Makefile
 
 post-install-docs-epag:
 	${MKDIR} ${WRKSRC}/contrib/epag
