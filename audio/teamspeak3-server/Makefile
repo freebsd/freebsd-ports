@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	teamspeak3-server
-PORTVERSION=	3.0.0.b30
+PORTVERSION=	3.0.0
 CATEGORIES=	audio net
-MASTER_SITES=	http://teamspeak.gameserver.gamed.de/ts3/releases/beta-30/ \
-		http://ftp.4players.de/pub/hosted/ts3/releases/beta-30/
-DISTNAME=	${PORTNAME}_freebsd-${TEAMSPEAK_ARCH}-3.0.0-beta30
+MASTER_SITES=	http://teamspeak.gameserver.gamed.de/ts3/releases/rc1/ \
+		http://ftp.4players.de/pub/hosted/ts3/releases/rc1/
+DISTNAME=	${PORTNAME}_freebsd-${TEAMSPEAK_ARCH}-3.0.0-rc1
 
 MAINTAINER=	hirner@bitfire.at
 COMMENT=	Server side of the TeamSpeak group voice chat system
@@ -54,7 +54,6 @@ SHAREDIR=	${PREFIX}/share/teamspeak/server
 PORTDOCS=	ts3_serverquery_manual.pdf \
 		permissiondoc.txt \
 		server_quickstart.txt \
-		token_guide.txt \
 		server_upgrade.txt
 
 do-install:

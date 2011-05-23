@@ -10,6 +10,7 @@ share/teamspeak/server/sql/token_get_by_key.sql
 share/teamspeak/server/sql/perm_insert.sql
 share/teamspeak/server/sql/message_insert.sql
 share/teamspeak/server/sql/perm_update_get_groups.sql
+share/teamspeak/server/sql/perm_rename.sql
 share/teamspeak/server/sql/server_update_traffic_stats.sql
 share/teamspeak/server/sql/message_list_by_clientid.sql
 share/teamspeak/server/sql/update_15.sql
@@ -17,6 +18,8 @@ share/teamspeak/server/sql/client_count_by_serverid.sql
 share/teamspeak/server/sql/perm_get_by_serverid.sql
 share/teamspeak/server/sql/server_delete_get_qa_clients.sql
 share/teamspeak/server/sql/update_database_version.sql
+share/teamspeak/server/sql/update_permissions_12.sql
+share/teamspeak/server/sql/update_17.sql
 share/teamspeak/server/sql/ban_list.sql
 share/teamspeak/server/sql/defaults.sql
 share/teamspeak/server/sql/properties_list_by_id.sql
@@ -114,6 +117,7 @@ share/teamspeak/server/serverquerydocs/serverdelete.txt
 share/teamspeak/server/serverquerydocs/sendtextmessage.txt
 share/teamspeak/server/serverquerydocs/clientfind.txt
 share/teamspeak/server/serverquerydocs/clientdbfind.txt
+share/teamspeak/server/serverquerydocs/clientgetuidfromclid.txt
 share/teamspeak/server/serverquerydocs/permfind.txt
 share/teamspeak/server/serverquerydocs/clientkick.txt
 share/teamspeak/server/serverquerydocs/serveridgetbyport.txt
