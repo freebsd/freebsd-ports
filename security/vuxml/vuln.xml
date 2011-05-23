@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1495f931-8522-11e0-a1c1-00215c6a37bb">
+    <topic>pureftpd -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>pure-ftpd</name>
+	<range><lt>1.0.32</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Pure-FTPd development team reports:</p>
+	<blockquote cite="http://www.pureftpd.org/project/pure-ftpd/news">
+	  <p>Support for braces expansion in directory listings has been
+	    disabled -- Cf. CVE-2011-0418.</p>
+	  <p>Fix a STARTTLS flaw similar to Postfix's CVE-2011-0411.
+	    If you're using TLS, upgrading is recommended.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>46767</bid>
+      <cvename>CVE-2011-0418</cvename>  
+      <cvename>CVE-2011-1575</cvename>  
+    </references>
+    <dates>
+      <discovery>2011-04-01</discovery>
+      <entry>2011-05-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="36594c54-7be7-11e0-9838-0022156e8794">
     <topic>exim -- remote code execution and information disclosure</topic>
     <affects>
