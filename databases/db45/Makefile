@@ -28,6 +28,12 @@ PATCH_DIST_STRIP=	-d .. -l
 MAINTAINER=	gslin@gslin.org
 COMMENT=	The Berkeley DB package, revision 4.5
 
+# A short expiration is in order as all dependent ports
+# inherit db45 through archivers/rpm4, which itself supports
+# db45+
+DEPRECATED=	Use the newest possible db port instead.
+EXPIRATION_DATE=2011-06-07
+
 BDBVER=		${PORTVERSION:R:R}
 CONFIGURE_ARGS=	--enable-compat185 --enable-dump185 --enable-cxx \
 		--enable-dynamic --enable-rpc --enable-pthread_api \
