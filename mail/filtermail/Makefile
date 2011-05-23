@@ -19,6 +19,8 @@ DISTNAME=	mailfilter-${PORTVERSION}
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Filter mail on a pop3 server: saves downloading spam
 
+LICENSE=	GPLv3
+
 # This port is filtermail, but the author called it mailfilter. To avoid a
 #  clash with another port called mailfilter, we change all files
 #  installed by this port from the form *mailfilter* to the form
