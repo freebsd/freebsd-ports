@@ -121,6 +121,12 @@
 %%SITE_PERL%%/Mojolicious/public/favicon.ico
 %%SITE_PERL%%/Mojolicious/public/mojolicious-pinstripe.gif
 %%SITE_PERL%%/Mojolicious/public/mojolicious-notfound.png
+%%SITE_PERL%%/Mojolicious/templates/exception.development.html.ep
+%%SITE_PERL%%/Mojolicious/templates/exception.html.ep
+%%SITE_PERL%%/Mojolicious/templates/mojobar.html.ep
+%%SITE_PERL%%/Mojolicious/templates/not_found.development.html.ep
+%%SITE_PERL%%/Mojolicious/templates/not_found.html.ep
+%%SITE_PERL%%/Mojolicious/templates/perldoc.html.ep
 %%SITE_PERL%%/README.pod
 %%SITE_PERL%%/Test/Mojo.pm
 %%SITE_PERL%%/ojo.pm
@@ -132,6 +138,7 @@ bin/mojo
 @dirrmtry %%SITE_PERL%%/Mojolicious/Guides
 @dirrmtry %%SITE_PERL%%/Mojolicious/Command/Generate
 @dirrmtry %%SITE_PERL%%/Mojolicious/Command
+@dirrmtry %%SITE_PERL%%/Mojolicious/templates
 @dirrmtry %%SITE_PERL%%/Mojolicious/public/js
 @dirrmtry %%SITE_PERL%%/Mojolicious/public/css
 @dirrmtry %%SITE_PERL%%/Mojolicious/public
