@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	re2
-PORTVERSION=	20100901
+PORTVERSION=	20110522
 CATEGORIES=	devel
-MASTER_SITES=	http://laffaye.free.fr/distfiles/
+MASTER_SITES=	http://jlaffaye.net/distfiles/ \
+		http://laffaye.free.fr/distfiles/
 
 MAINTAINER=	kimelto@gmail.com
 COMMENT=	A fast C++ regex library
@@ -19,5 +20,6 @@ USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 MAKE_ENV=	prefix=${PREFIX}
 MAKE_ARGS+=	-e
+CC=		${CXX}
 
 .include <bsd.port.mk>
