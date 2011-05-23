@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	horde
-PORTVERSION=	3.3.11
+PORTVERSION=	4.0.2
 DISTVERSIONPREFIX=
-PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=
-PKGNAMESUFFIX=	-base
+PKGNAMESUFFIX=	4-base
 
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Common code-base used by Horde applications
@@ -69,6 +68,7 @@ COMMENT=	Common code-base used by Horde applications
 #
 #----------------------------------------------------------------------------
 
+LATEST_LINK=	horde4-base
 RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
 		${PEARDIR}/Log.php:${PORTSDIR}/sysutils/pear-Log		\
 		${PEARDIR}/Mail/RFC822.php:${PORTSDIR}/mail/pear-Mail		\
@@ -79,10 +79,12 @@ RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
 		${PEARDIR}/Net/SMTP.php:${PORTSDIR}/net/pear-Net_SMTP   \
 		${PEARDIR}/MDB2/Schema/Validate.php:${PORTSDIR}/databases/pear-MDB2_Schema
 
-CONFLICTS=	horde-2.*
+CONFLICTS=	horde-3.*
 
 USE_GETTEXT=	yes
-USE_PHP=	ctype gettext session
+USE_PHP=	ctype gettext session dom
+
+EXTRACT_SUFX=	.tgz
 
 .if defined(WITH_SUPHP) && !defined(WITHOUT_SUPHP)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/suphp:${PORTSDIR}/www/suphp
@@ -193,51 +195,10 @@ RUN_DEPENDS+=	${PEARDIR}/Services/Weather.php:${PORTSDIR}/misc/pear-Services_Wea
 RUN_DEPENDS+=	${LOCALBASE}/share/GeoIP/GeoIP.dat:${PORTSDIR}/net/GeoIP
 .endif
 
-PORTDOCS=	README CHANGES CODING_STANDARDS CONTRIBUTING CREDITS HACKING INSTALL \
-		PERFORMANCE RELEASE_NOTES SECURITY TODO TRANSLATIONS UPGRADING
+PORTDOCS=	README CHANGES CODING_STANDARDS CONTRIBUTING CREDITS INSTALL \
+		PERFORMANCE RELEASE_NOTES SECURITY TRANSLATIONS UPGRADING
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-lib_Horde_NLS.php
-.endif
-
-.if ${PHP_VER} >= 5
-USE_PHP+=	dom
-.else
-USE_PHP+=	domxml
-.endif
-
-pre-patch:
-.if !defined(WITHOUT_X11)
-. if !defined(WITHOUT_WV)
-	@${REINPLACE_CMD} -e "s://UNCOMMENTIFWV::" ${WRKSRC}/config/mime_drivers.php.dist
-. endif
-. if !defined(WITHOUT_XL)
-	@${REINPLACE_CMD} -e "s://UNCOMMENTIFXL::" ${WRKSRC}/config/mime_drivers.php.dist
-. endif
-.endif
-.if !defined(WITHOUT_WEBCPP)
-	@${REINPLACE_CMD} -e "s://UNCOMMENTIFWCPP::" ${WRKSRC}/config/mime_drivers.php.dist
-.endif
-.if defined(WITH_SRCHIGH)
-	@${REINPLACE_CMD} -e "s://UNCOMMENTIFSRCHIGH::" ${WRKSRC}/config/mime_drivers.php.dist
-.endif
-.if defined(WITH_ENSCRIPT)
-	@${REINPLACE_CMD} -e "s://UNCOMMENTIFES::" ${WRKSRC}/config/mime_drivers.php.dist
-.endif
-.if defined(WITH_RPM)
-	@${REINPLACE_CMD} -e "s://UNCOMMENTIFRPM::" ${WRKSRC}/config/mime_drivers.php.dist
-.endif
-.if defined(WITH_DEB)
-	@${REINPLACE_CMD} -e "s://UNCOMMENTIFDEB::" ${WRKSRC}/config/mime_drivers.php.dist
-.endif
-.if !defined(WITHOUT_GEOIP)
-	@${REINPLACE_CMD} -e "s:GeoIP lookup will not be performed.\"/>:GeoIP lookup will not be performed.\">${LOCALBASE}/share/GeoIP/GeoIP.dat</configstring>:" \
-		${WRKSRC}/config/conf.xml
-.endif
-	@${REINPLACE_CMD} -e "s:/usr/local/apache/htdocs:${PREFIX}/www:g"	\
-		${WRKDIR}/docs/INSTALL
 
 pre-install:
 .if !defined(WITHOUT_SUPPORTED_DB) && exists(${LOCALBASE}/bin/php)
@@ -263,5 +224,5 @@ pre-install:
 	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 .endif
 
-.include "${.CURDIR}/../../www/horde-base/bsd.horde.mk"
+.include "${.CURDIR}/../../www/horde4-base/bsd.horde4.mk"
 .include <bsd.port.post.mk>
