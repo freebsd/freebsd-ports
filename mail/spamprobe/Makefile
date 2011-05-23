@@ -38,8 +38,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -lpbl
 
 # BerkleyDB support
 .if !defined(WITHOUT_BDB)
-USE_BDB=	3+
-INVALID_BDB_VER=2
+USE_BDB=	40+
 CONFIGURE_ARGS+=	--enable-cdb
 CPPFLAGS+=	-I${BDB_INCLUDE_DIR} -DUSE_DB=1
 LDFLAGS+=	-L${LOCALBASE}/lib -l${BDB_LIB_NAME}

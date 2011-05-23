@@ -1,6 +1,0 @@
-SHA256 (bdb/db-3.3.11.tar.gz) = ac911bdd336a33aa4ced298aa3862cd317cbd372a20bbce9f65d0c21adea94fd
-SIZE (bdb/db-3.3.11.tar.gz) = 2343243
-SHA256 (bdb/patch.3.3.11.1) = 10f32fc6b0d7814c44bf06a69ee2ec99b524aa5b1ac761a739e58619df2f1c1e
-SIZE (bdb/patch.3.3.11.1) = 2601
-SHA256 (bdb/patch.3.3.11.2) = 1395a93ea16a83af6c538140c9e2672261709b4f904206f2c54dedb55c7ef122
-SIZE (bdb/patch.3.3.11.2) = 325

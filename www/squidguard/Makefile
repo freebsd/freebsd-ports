@@ -19,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
-USE_BDB=	3+
+USE_BDB=	40+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db-inc=${BDB_INCLUDE_DIR} \
 		--with-db-lib=${BDB_LIB_DIR} \
