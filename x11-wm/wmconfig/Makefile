@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wmconfig
-PORTVERSION=	1.3.4
+PORTVERSION=	1.3.5
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://www.arrishq.net/files/
 
