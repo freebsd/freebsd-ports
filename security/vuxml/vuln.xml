@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e666498a-852a-11e0-8f78-080027ef73ec">
+    <topic>opera -- code injection vulnerability through broken frameset
+      handling</topic>
+    <affects>
+      <package> <name>opera</name> <range><lt>11.11</lt></range> </package>
+      <package> <name>opera-devel</name> <range><lt>11.11</lt></range> </package>
+      <package> <name>linux-opera</name> <range><lt>11.11</lt></range> </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Opera Software ASA reports:</p>
+	<blockquote cite="http://www.opera.com/docs/changelogs/unix/1111/">
+	  <p>Fixed an issue with framesets that could allow execution of
+	    arbitrary code, as reported by an anonymous contributor working with
+	    the SecuriTeam Secure Disclosure program.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.opera.com/docs/changelogs/unix/1111/</url>
+      <url>http://www.opera.com/support/kb/view/992/</url>
+    </references>
+    <dates>
+      <discovery>2011-05-18</discovery>
+      <entry>2011-05-23</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1495f931-8522-11e0-a1c1-00215c6a37bb">
     <topic>pureftpd -- multiple vulnerabilities</topic>
     <affects>
