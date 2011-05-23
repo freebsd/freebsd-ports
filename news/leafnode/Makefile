@@ -9,10 +9,7 @@ PORTNAME=	leafnode
 DISTVERSION=	1.11.8
 CATEGORIES=	news ipv6
 MASTER_SITES=	SF \
-		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
-		SUNSITE/system/news/transport
-#MASTER_SITES=	http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/ \
-#		http://homepages.uni-paderborn.de/mandree/
+		http://www.dt.e-technik.uni-dortmund.de/~ma/${PORTNAME}/
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	NNTP package for offline news caching and reading
