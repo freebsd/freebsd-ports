@@ -1,0 +1,36 @@
+%%HORDIR%%/1_rampage_base_tables.php
+%%HORDIR%%/2_rampage_tag_tables.php
+%%HORDIR%%/Application.php
+%%HORDIR%%/Exception.php
+%%HORDIR%%/Index/Index.php
+%%HORDIR%%/Index/IndexMapper.php
+%%HORDIR%%/Linkbacks/Linkback.php
+%%HORDIR%%/Linkbacks/LinkbackMapper.php
+%%HORDIR%%/Objects/Manager.php
+%%HORDIR%%/Objects/Object.php
+%%HORDIR%%/Objects/ObjectMapper.php
+%%HORDIR%%/Relationships/Relationship.php
+%%HORDIR%%/Relationships/RelationshipMapper.php
+%%HORDIR%%/Tagger.php
+%%HORDIR%%/Tags/Tag.php
+%%HORDIR%%/Tags/TagMapper.php
+%%HORDIR%%/Types/Manager.php
+%%HORDIR%%/Users/Manager.php
+%%HORDIR%%/controllers/ApplicationController.php
+%%HORDIR%%/controllers/TagController.php
+%%HORDIR%%/placeholder.dist
+%%HORDIR%%/routes.php
+%%HORDIR%%/views/Tag/recentTags.html.php
+%%HORDIR%%/views/Tag/searchTags.html.php
+@dirrm %%HORDIR%%/views/Tag
+@dirrm %%HORDIR%%/views
+@dirrm %%HORDIR%%/controllers
+@dirrm %%HORDIR%%/Users
+@dirrm %%HORDIR%%/Types
+@dirrm %%HORDIR%%/Tags
+@dirrm %%HORDIR%%/Relationships
+@dirrm %%HORDIR%%/Objects
+@dirrm %%HORDIR%%/Linkbacks
+@dirrm %%HORDIR%%/Index
+@dirrmtry %%HORDIR%%
+@dirrmtry %%HORBAS%%
