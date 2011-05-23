@@ -11,7 +11,7 @@ PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/LZO-v1/ \
-		${MASTER_SITE_LOCAL:S,$,mandree/,}
+		LOCAL/mandree
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Portable speedy, lossless data compression library
