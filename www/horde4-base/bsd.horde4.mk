@@ -1,20 +1,22 @@
 #-*- mode: makefile; tab-width: 4; -*
 # ex:ts=4
 #
-# Maintainers:  Beech Rintoul <beech@FreeBSD.org>,
-#				Andrew Pantyukhin <infofarmer@FreeBSD.org>
+# Maintainers:	Beech Rintoul	<beech@FreeBSD.org>,
+#		Andrew Pantyukhin <infofarmer@FreeBSD.org>
 #
 
-MASTER_SITES?=		HORDE
+MASTER_SITES?=		http://pear.horde.org/get/ \
+			LOCAL/beech
 DISTVERSIONPREFIX?=	h3-
-PKGNAMEPREFIX?=	horde-
+PKGNAMEPREFIX?=	horde4-
 
 .if defined(USE_HORDE) && ${USE_HORDE:Mbase}
-RUN_DEPENDS+=	${HORBAS}/rpc.php:${PORTSDIR}/www/horde-base
+RUN_DEPENDS+=	${HORBAS}/rpc.php:${PORTSDIR}/www/horde4-base
 .endif
 
-#USE_BZIP2=	yes
 NO_BUILD=	yes
+
+EXTRACT_SUFX?=	.tgz
 
 PEARDIR?=	${LOCALBASE}/share/pear
 PORTREV_H?=	${LOCALBASE}/include/c-client/portrevision.h
@@ -54,10 +56,10 @@ post-extract:
 .if !target(post-patch)
 post-patch:
 .	for file in pkg-deinstall pkg-install
-	@${SED} ${_SUB_LIST_TEMP} -e '/^@comment /d' ${.CURDIR}/../../www/horde-base/files/${file}.in > ${WRKDIR}/${file}
+	@${SED} ${_SUB_LIST_TEMP} -e '/^@comment /d' ${.CURDIR}/../../www/horde4-base/files/${file}.in > ${WRKDIR}/${file}
 .	endfor
 .	if defined(USE_HORDE) && ${USE_HORDE:Mpkg-message}
-	@${SED} ${_SUB_LIST_TEMP} -e '/^@comment /d' ${.CURDIR}/../../www/horde-base/files/pkg-message.common.in >\
+	@${SED} ${_SUB_LIST_TEMP} -e '/^@comment /d' ${.CURDIR}/../../www/horde4-base/files/pkg-message.common.in >\
 		${WRKDIR}/pkg-message
 .	endif
 	@${EGREP} -lr '(/usr/local|%%LOCALBASE%%|/tmp/horde.log)' ${WRKSRC}/config/ |\
