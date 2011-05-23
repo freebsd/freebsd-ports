@@ -28,6 +28,8 @@ LIB_DEPENDS=		enchant.1:${PORTSDIR}/textproc/enchant \
 RUN_DEPENDS=		qca-ossl>=2.0.0.b3:${PORTSDIR}/security/qca-ossl
 # TODO enable devel/libexecinfo
 
+BROKEN=			does not configure
+
 TABS_MOD_DISTFILE=	kadu-tabs-1.2.3.tar.bz2
 
 GG6_EMOTS_DISTFILE=	kompatybilne_z_GG6.tar.gz
