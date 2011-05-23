@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	10.2r159.1
+PORTVERSION=	10.3r181.14
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/current/:plugin \
 		ftp://ftp.ipt.ru/pub/download/:suplib
@@ -22,6 +22,8 @@ COMMENT=	Adobe Flash Player NPAPI Plugin
 ONLY_FOR_ARCHS=	amd64 i386
 USE_LINUX=	yes
 USE_LINUX_APPS=	openssl curl cyrus-sasl2 libssh2 nspr nss openldap gtk2
+USE_GNOME=	desktopfileutils
+INSTALLS_ICONS=	yes
 
 RESTRICTED=	Redistribution not allowed
 RESTRICTED_FILES=	${DISTFILES:Nlinux-f10-flashsupport*:C/:[^:]+$//}
@@ -34,8 +36,15 @@ NPAPI_FILES=	libflashplayer.so
 
 CONFLICTS=	linux-flashplugin-7* linux-flashplugin-9* linux-f8-flashplugin10-*
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' -e '/^NotShowIn=KDE/d' ${WRKDIR}/usr/share/applications/flash-player-properties.desktop
+
 post-install:
 	@${INSTALL_PROGRAM} ${WRKDIR}/libflashsupport.so ${LINUXBASE}/usr/lib
+	@${INSTALL_PROGRAM} ${WRKDIR}/usr/bin/flash-player-properties ${PREFIX}/bin
+	@${INSTALL_DATA} ${WRKDIR}/usr/share/applications/flash-player-properties.desktop ${DESKTOPDIR}
+	@(cd ${WRKDIR}/usr/share/icons && ${COPYTREE_SHARE} hicolor ${PREFIX}/share/icons)
+	-@update-desktop-database
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/www/linux-mplayer-plugin/Makefile.npapi"
