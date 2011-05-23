@@ -1,11 +1,11 @@
 *************************************************************************
-In addition to the manpages, see %%DOCSDIR%%/readme_*.txt and the
-comments at the head of %%DOCSDIR%%/*.cpp for instructions and
-details on usage and the algorithms employed.  For simplicity, the
-".exe" suffix has been retained for temporary executables used with
-the zpaq "o" flag, and optimized pzpaq decompression.  However, the
-suffix has been dropped from the zpsfx self-expanding archive stub
-executable, to avoid confusion with win32 executable stubs. zpsfx
-can be further compressed with archivers/upx, to yield smaller
-self-expanding archives.
+In addition to the manpages, see %%DOCSDIR%%/readme_*.txt and
+the comments at the head of %%DOCSDIR%%/*.cpp for instructions
+and details on usage and the algorithms employed.  For
+simplicity, the ".exe" suffix has been retained for temporary
+executables used with the zpaq "o" flag.  However, the suffix
+has been dropped from the zpsfx self-expanding archive stub
+executable, to avoid confusion with win32 executable stubs.
+zpsfx can be further compressed with archivers/upx, to yield
+smaller self-expanding archives.
 ************************************************************************
