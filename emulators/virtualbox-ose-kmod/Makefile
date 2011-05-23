@@ -40,7 +40,7 @@ CONFLICTS=	bcc-[0-9]*
 CONFLICTS_INSTALL=	virtualbox-ose-kmod-devel-[3,4]* virtualbox-ose-kmod-legacy-[3,4]*
 
 OPTIONS=	DEBUG "Build with debugging symbols" off \
-		VIMAGE "Build with VIMAGE support" off
+		VIMAGE "VIMAGE virtual networking support" off
 
 .include <bsd.port.options.mk>
 
