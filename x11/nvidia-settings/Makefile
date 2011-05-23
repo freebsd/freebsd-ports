@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://download.nvidia.com/XFree86/nvidia-settings/ \
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Display Control Panel for X NVidia driver
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 USE_GNOME=	gtk20
 USE_GMAKE=	yes

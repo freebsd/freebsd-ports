@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://download.nvidia.com/XFree86/nvidia-xconfig/ \
 MAINTAINER=	bland@FreeBSD.org
 COMMENT=	Tool to manipulate X configuration files for the NVidia driver
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
