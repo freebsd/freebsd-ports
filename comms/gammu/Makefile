@@ -7,7 +7,7 @@
 
 PORTNAME=	gammu
 PORTVERSION=	1.29.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	http://dl.cihar.com/gammu/releases/ \
 		http://dl.cihar.com.nyud.net/gammu/releases/
