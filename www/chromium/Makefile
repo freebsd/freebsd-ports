@@ -112,6 +112,12 @@ STRIP=
 MAKE_ENV+=	BUILDTYPE=${BUILDTYPE}
 MAKE_JOBS_SAFE=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} >= 501400
+BUILD_DEPENDS+=	p5-Switch>=0:${PORTSDIR}/lang/p5-Switch
+.endif
+
 pre-everything::
 	@${ECHO_MSG}
 	@${ECHO_MSG} "To build Chromium, you should have around 1 GB of memory"
@@ -170,4 +176,4 @@ do-install:
 		${COPYTREE_SHARE} "locales resources" ${DATADIR}
 	${LN} -sf ${DATADIR}/chrome ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
