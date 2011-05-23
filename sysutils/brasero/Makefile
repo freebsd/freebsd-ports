@@ -7,6 +7,7 @@
 
 PORTNAME=	brasero
 PORTVERSION=	2.32.1
+PORTREVISION=	1
 CATEGORIES=	sysutils audio multimedia gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -70,5 +71,6 @@ post-patch:
 	    	${WRKSRC}/libbrasero-burn/burn-process.c
 	@${REINPLACE_CMD} -e 's|" == "|" = "|g' \
 		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|/proc/self/fd/0|/dev/fd/0|g' ${WRKSRC}/po/*.po
 
 .include <bsd.port.post.mk>
