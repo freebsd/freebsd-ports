@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libpbl
-PORTVERSION=	1.04
+PORTVERSION=	1.04.04
 CATEGORIES=	databases
 MASTER_SITES=	http://www.mission-base.com/peter/source/
 DISTNAME=	pbl_${PORTVERSION:S/./_/g}
@@ -14,11 +14,11 @@ DISTNAME=	pbl_${PORTVERSION:S/./_/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Peter Graf's Program Base Library
 
-BROKEN=		checksum mismatch
-
 MAKEFILE=	makefile
 PLIST_FILES=	lib/libpbl.a include/pbl.h
 MAKE_JOBS_SAFE=	yes
+
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 .ifndef(NOPORTDOCS)
 PORTDOCS=	*
@@ -33,13 +33,12 @@ post-extract:
 		${WRKSRC}/*.c
 
 do-install:
-	@${INSTALL_DATA} ${WRKSRC}/libpbl.a ${LOCALBASE}/lib
-	@${INSTALL_DATA} ${WRKSRC}/pbl.h ${LOCALBASE}/include
-
-post-install:
+	${MKDIR} ${PREFIX}/lib ${PREFIX}/include
+	${INSTALL_DATA} ${WRKSRC}/libpbl.a ${PREFIX}/lib/
+	${INSTALL_DATA} ${WRKSRC}/pbl.h ${PREFIX}/include/
 .ifndef(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}/
 .endif
 
 post-build test regression-test check:
