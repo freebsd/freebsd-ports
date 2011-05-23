@@ -8,7 +8,7 @@
 PORTNAME=	monitor-core
 PORTVERSION=	3.1.7
 CATEGORIES=	sysutils net parallel
-MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}%20%28Wien%29
+MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}
 PKGNAMEPREFIX=	ganglia-
 .if defined(CLUSTER)
 PKGNAMESUFFIX=	-${CLUSTER}
