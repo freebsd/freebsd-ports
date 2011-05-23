@@ -25,6 +25,11 @@ ARCH_SUFX=	${ARCH:S/i386//:S/amd/_/}
 USE_XORG=	xorg-server
 USE_GL=		gl
 USE_LDCONFIG=	yes
+# NVIDIA_ROOT is not set in src/Makefile, which results in bogus -I/src
+# passed to compiler and broken build on HEAD since r221320 when option
+# -Wmissing-include-dirs was added for kernel sources.  Until properly
+# fixed upstream, use this hack below to universally set NVIDIA_ROOT.
+MAKE_ENV=	NVIDIA_ROOT=${WRKSRC}
 SUB_FILES=	pkg-message
 DOCSDIR=	${PREFIX}/share/doc/NVIDIA_GLX-1.0
 MODULESDIR=	lib/xorg/modules
