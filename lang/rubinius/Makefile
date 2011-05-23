@@ -28,6 +28,8 @@ CONFIGURE_ARGS=	--without-execinfo \
 		--sitedir "${PREFIX}/lib/ruby/site_ruby/rubinius" \
 		--vendordir "${PREFIX}/lib/ruby/vendor_ruby/rubinius"
 
+BROKEN=		does not compile
+
 LLVMDIST=	llvm-2.8.tgz
 USE_RUBY=	yes
 USE_RAKE=	yes
