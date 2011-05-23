@@ -1,0 +1,12 @@
+%%HORBAS%%/Rdo.php
+%%HORDIR%%/Base.php
+%%HORDIR%%/Exception.php
+%%HORDIR%%/Iterator.php
+%%HORDIR%%/List.php
+%%HORDIR%%/Mapper.php
+%%HORDIR%%/Query.php
+%%HORDIR%%/Query/Literal.php
+@dirrm %%HORDIR%%/Query
+@dirrmtry %%HORDIR%%
+@dirrmtry %%HORBAS%%
+
