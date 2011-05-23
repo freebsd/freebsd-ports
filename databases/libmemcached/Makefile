@@ -7,7 +7,7 @@
 
 PORTNAME=	libmemcached
 PORTVERSION=	0.49
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/1.0/${PORTVERSION}/+download/
 
