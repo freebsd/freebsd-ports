@@ -9,6 +9,7 @@ PORTNAME=	itip
 PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=
 DISTVERSIONSUFFIX=
+PORTREVISION=	1
 CATEGORIES=	deskutils www
 MASTER_SITES=		http://pear.horde.org/get/ \
 			LOCAL/beech
@@ -21,6 +22,8 @@ COMMENT=	Horde iTip invitation response handling
 
 USE_HORDE=	base
 USE_GETTEXT=	yes
+ITIPDIR=	Itip
+HORDIR=		${HORBAS}${ITIPDIR:S|^|/|:S|/horde||}
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/config && ${TOUCH} ${WRKSRC}/config/placeholder.dist

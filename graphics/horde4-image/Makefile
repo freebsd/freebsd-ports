@@ -9,6 +9,7 @@ PORTNAME=	image
 PORTVERSION=	1.0.1
 DISTVERSIONPREFIX=
 DISTVERSIONSUFFIX=
+PORTREVISION=	1
 CATEGORIES=	graphics www
 MASTER_SITES=		http://pear.horde.org/get/ \
 			LOCAL/beech
@@ -21,8 +22,10 @@ COMMENT=	Horde Image API, with backends for various image formats
 
 USE_HORDE=	base
 USE_GETTEXT=	yes
+IMAGEDIR=	Image
+HORDIR=		${HORBAS}${IMAGEDIR:S|^|/|:S|/horde||}
 
-EXTRACT_SUFX=	.tgz
+RUN_DEPENDS+=	${PEARDIR}/XML/SVG.php:${PORTSDIR}/devel/pear-XML_SVG
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/config && touch ${WRKSRC}/config/placeholder.dist
