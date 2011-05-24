@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	rtorrent-devel
-PORTVERSION=	0.8.7
+PORTVERSION=	0.8.8
 PORTREVISION=	0
 DISTNAME=	${PORTNAME:S/-devel//}-${PORTVERSION}
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	BitTorrent Client written in C++ (development version)
 
-BUILD_DEPENDS=	libtorrent-devel=0.12.7:${PORTSDIR}/net-p2p/libtorrent-devel
-RUN_DEPENDS=	libtorrent-devel=0.12.7:${PORTSDIR}/net-p2p/libtorrent-devel
+BUILD_DEPENDS=	libtorrent-devel=0.12.8:${PORTSDIR}/net-p2p/libtorrent-devel
+RUN_DEPENDS=	libtorrent-devel=0.12.8:${PORTSDIR}/net-p2p/libtorrent-devel
 
 BROKEN=		fails to package
 
@@ -25,8 +25,6 @@ PLIST=		${.CURDIR}/pkg-plist
 DESCR=		${MASTERDIR}/pkg-descr
 
 CONFLICTS=	rtorrent-[0-9]*
-
-MAN1=	rtorrent.1
 
 USE_GCC=	4.2+
 
