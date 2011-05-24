@@ -2156,7 +2156,6 @@ davmail                         ports/mail/davmail
 dazuko                          ports/security/dazuko
 db                              ports/databases/db
 db2latex                        ports/textproc/db2latex
-db3                             ports/databases/db3
 db4                             ports/databases/db4
 db41                            ports/databases/db41
 db41-nocrypto                   ports/databases/db41-nocrypto
@@ -5412,6 +5411,8 @@ horde-turba                     ports/mail/horde-turba
 horde-vacation                  ports/mail/horde-vacation
 horde-whups                     ports/devel/horde-whups
 horde-wicked                    ports/www/horde-wicked
+horde4-auth                     ports/security/horde4-auth
+horde4-base                     ports/www/horde4-base
 hostapd                         ports/net/hostapd
 hot-babe                        ports/deskutils/hot-babe
 hotcrp                          ports/www/hotcrp
@@ -9906,7 +9907,6 @@ nemesis                         ports/net/nemesis
 nemiver                         ports/devel/nemiver
 nenscript                       ports/print/nenscript
 neon29                          ports/www/neon29
-neowebscript                    ports/www/neowebscript
 nepenthes                       ports/net/nepenthes
 nepim                           ports/net/nepim
 nepomukcontroller               ports/misc/nepomukcontroller
@@ -24649,7 +24649,6 @@ tcl-manual                      ports/lang/tcl-manual
 tcl-memchan                     ports/devel/tcl-memchan
 tcl-modules                     ports/lang/tcl-modules
 tcl-mysql                       ports/databases/tcl-Mysql
-tcl-neo                         ports/devel/tcl-neo
 tcl-trf                         ports/devel/tcl-trf
 tcl-wrapper                     ports/lang/tcl-wrapper
 tcl82                           ports/lang/tcl82
