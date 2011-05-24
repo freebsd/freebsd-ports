@@ -9,6 +9,7 @@ PORTNAME=	auth
 PORTVERSION=	1.0.3
 DISTVERSIONPREFIX=
 DISTVERSIONSUFFIX=
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=		http://pear.horde.org/get/ \
 			LOCAL/beech
@@ -21,6 +22,8 @@ COMMENT=	Common interface to backends for Horde authentication
 
 USE_HORDE=	base
 USE_GETTEXT=	yes
+AUTHDIR=	Auth
+HORDIR=		${HORBAS}${AUTHDIR:S|^|/|:S|/horde||}
 
 EXTRACT_SUFX=	.tgz
 

@@ -9,6 +9,7 @@ PORTNAME=	rdo
 PORTVERSION=	1.0.0
 DISTVERSIONPREFIX=
 DISTVERSIONSUFFIX=
+PORTREVISION=	1
 CATEGORIES=	devel www
 MASTER_SITES=		http://pear.horde.org/get/ \
 			LOCAL/beech
@@ -21,14 +22,19 @@ COMMENT=	Rampage data objects
 
 USE_HORDE=	base
 USE_GETTEXT=	yes
+RDODIR=		Rdo
+HORDIR=		${HORBAS}${RDODIR:S|^|/|:S|/horde||}
+EXAMPLESDIR=	${PREFIX}/share/examples/horde
 
 post-extract:
 	@${MKDIR} ${WRKSRC}/config && ${TOUCH} ${WRKSRC}/config/placeholder.dist
 
 do-install:
 	@${INSTALL} -d ${HORDIR}/
+	@${INSTALL} -d ${EXAMPLESDIR}/
 	@${CP} ${WRKSRC}/lib/Horde/Rdo.php ${HORBAS}/
-	@${CP} -Rp ${WRKSRC}/lib/Horde/Rdo/ ${HORDIR}/	
+	@${CP} -Rp ${WRKSRC}/lib/Horde/Rdo/ ${HORDIR}/
+	@ cd ${WRKSRC}/examples/Horde/ && ${COPYTREE_SHARE} Rdo ${EXAMPLESDIR}
 	@${ECHO_CMD} @exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} %D/${HORDIR:S|^${PREFIX}/||}/ >> ${TMPPLIST}
 	@${ECHO_CMD} @exec ${CHMOD} -R o-rwx %D/${HORDIR:S|^${PREFIX}/||}/ >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec ${TOUCH} ${HORLOG};${CHOWN} ${WWWOWN}:${WWWGRP} ${HORLOG}" >> ${TMPPLIST}
