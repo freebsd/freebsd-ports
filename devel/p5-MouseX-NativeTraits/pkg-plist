@@ -1,0 +1,35 @@
+%%SITE_PERL%%/Mouse/Meta/Attribute/Custom/Trait/Array.pm
+%%SITE_PERL%%/Mouse/Meta/Attribute/Custom/Trait/Bool.pm
+%%SITE_PERL%%/Mouse/Meta/Attribute/Custom/Trait/Code.pm
+%%SITE_PERL%%/Mouse/Meta/Attribute/Custom/Trait/Counter.pm
+%%SITE_PERL%%/Mouse/Meta/Attribute/Custom/Trait/Hash.pm
+%%SITE_PERL%%/Mouse/Meta/Attribute/Custom/Trait/Number.pm
+%%SITE_PERL%%/Mouse/Meta/Attribute/Custom/Trait/String.pm
+%%SITE_PERL%%/Mouse/Meta/Attribute/Native.pm
+%%SITE_PERL%%/MouseX/NativeTraits.pm
+%%SITE_PERL%%/MouseX/NativeTraits/ArrayRef.pm
+%%SITE_PERL%%/MouseX/NativeTraits/Bool.pm
+%%SITE_PERL%%/MouseX/NativeTraits/CodeRef.pm
+%%SITE_PERL%%/MouseX/NativeTraits/Counter.pm
+%%SITE_PERL%%/MouseX/NativeTraits/HashRef.pm
+%%SITE_PERL%%/MouseX/NativeTraits/MethodProvider.pm
+%%SITE_PERL%%/MouseX/NativeTraits/MethodProvider/ArrayRef.pm
+%%SITE_PERL%%/MouseX/NativeTraits/MethodProvider/Bool.pm
+%%SITE_PERL%%/MouseX/NativeTraits/MethodProvider/CodeRef.pm
+%%SITE_PERL%%/MouseX/NativeTraits/MethodProvider/Counter.pm
+%%SITE_PERL%%/MouseX/NativeTraits/MethodProvider/HashRef.pm
+%%SITE_PERL%%/MouseX/NativeTraits/MethodProvider/Num.pm
+%%SITE_PERL%%/MouseX/NativeTraits/MethodProvider/Str.pm
+%%SITE_PERL%%/MouseX/NativeTraits/Num.pm
+%%SITE_PERL%%/MouseX/NativeTraits/Str.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/NativeTraits/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/NativeTraits
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX
+@dirrm %%SITE_PERL%%/MouseX/NativeTraits/MethodProvider
+@dirrm %%SITE_PERL%%/MouseX/NativeTraits
+@dirrmtry %%SITE_PERL%%/MouseX
+@dirrm %%SITE_PERL%%/Mouse/Meta/Attribute/Custom/Trait
+@dirrm %%SITE_PERL%%/Mouse/Meta/Attribute/Custom
+@dirrm %%SITE_PERL%%/Mouse/Meta/Attribute
+@dirrmtry %%SITE_PERL%%/Mouse/Meta
+@dirrmtry %%SITE_PERL%%/Mouse
