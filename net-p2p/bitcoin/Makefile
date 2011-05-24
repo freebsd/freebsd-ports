@@ -54,6 +54,15 @@ MAKE_ENV+=	-DUSE_UPNP
 
 .include <bsd.port.pre.mk>
 
+pre-fetch:
+.if ${MASTER_SITES:M*github.com*} != "" && !exists(${DISTDIR}/${DISTFILES})
+	@${ECHO_MSG} "===>  Pinging github to vivify tarball..."
+	@(cd ${DISTDIR} && \
+		${FETCH_BINARY} -Ap https://nodeload.github.com/bitcoin/bitcoin/tarball/v${PORTVERSION} 2>/dev/null \
+		|| ${TRUE} \
+	)
+.endif
+
 post-patch:
 	cd ${WRKSRC} && ${CP} -p makefile.unix Makefile
 	${REINPLACE_CMD} \
