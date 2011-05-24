@@ -1,6 +1,7 @@
 bin/warzone2100
 share/applications/warzone2100.desktop
 share/icons/warzone2100.png
+%%NLS%%share/locale/ca_ES/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/da/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/de/LC_MESSAGES/warzone2100.mo
@@ -12,6 +13,7 @@ share/icons/warzone2100.png
 %%NLS%%share/locale/fy/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/warzone2100.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/it/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/warzone2100.mo
 %%NLS%%share/locale/la/LC_MESSAGES/warzone2100.mo
@@ -51,5 +53,7 @@ share/icons/warzone2100.png
 %%NLS%%@dirrmtry share/locale/fy
 %%NLS%%@dirrmtry share/locale/et_EE/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/et_EE
+%%NLS%%@dirrmtry share/locale/ca_ES/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ca_ES
 @dirrmtry share/icons
 @dirrmtry share/applications
