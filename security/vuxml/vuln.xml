@@ -71,7 +71,7 @@ Note:  Please add new entries to the beginning of this file.
     <topic>mod_pubcookie -- Empty Authentication Security Advisory</topic>
     <affects>
       <package>
-	<name>ap-mod_pubcookie</name>
+	<name>ap20-mod_pubcookie</name>
 	<range><ge>3.1.0</ge><lt>3.3.2b</lt></range>
       </package>
     </affects>
