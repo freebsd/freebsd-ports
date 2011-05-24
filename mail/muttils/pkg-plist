@@ -2,8 +2,8 @@ bin/pybrowser
 bin/sigpager
 bin/urlbatcher
 bin/urlpager
-bin/wrap
 bin/viewhtmlmsg
+bin/wrap
 %%PYTHON_SITELIBDIR%%/muttils/__init__.py
 %%PYTHON_SITELIBDIR%%/muttils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/muttils/__init__.pyo
@@ -52,12 +52,6 @@ bin/viewhtmlmsg
 %%PYTHON_SITELIBDIR%%/muttils/util.py
 %%PYTHON_SITELIBDIR%%/muttils/util.pyc
 %%PYTHON_SITELIBDIR%%/muttils/util.pyo
-%%PYTHON_SITELIBDIR%%/muttils/wrap.py
-%%PYTHON_SITELIBDIR%%/muttils/wrap.pyc
-%%PYTHON_SITELIBDIR%%/muttils/wrap.pyo
-%%PYTHON_SITELIBDIR%%/muttils/wrapcommand.py
-%%PYTHON_SITELIBDIR%%/muttils/wrapcommand.pyc
-%%PYTHON_SITELIBDIR%%/muttils/wrapcommand.pyo
 %%PYTHON_SITELIBDIR%%/muttils/viewhtmlmsg.py
 %%PYTHON_SITELIBDIR%%/muttils/viewhtmlmsg.pyc
 %%PYTHON_SITELIBDIR%%/muttils/viewhtmlmsg.pyo
@@ -67,9 +61,15 @@ bin/viewhtmlmsg
 %%PYTHON_SITELIBDIR%%/muttils/wget.py
 %%PYTHON_SITELIBDIR%%/muttils/wget.pyc
 %%PYTHON_SITELIBDIR%%/muttils/wget.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/muttils
+%%PYTHON_SITELIBDIR%%/muttils/wrap.py
+%%PYTHON_SITELIBDIR%%/muttils/wrap.pyc
+%%PYTHON_SITELIBDIR%%/muttils/wrap.pyo
+%%PYTHON_SITELIBDIR%%/muttils/wrapcommand.py
+%%PYTHON_SITELIBDIR%%/muttils/wrapcommand.pyc
+%%PYTHON_SITELIBDIR%%/muttils/wrapcommand.pyo
 %%EXAMPLESDIR%%/example-mail.vim
 %%EXAMPLESDIR%%/example-muttilsrc
 %%EXAMPLESDIR%%/example-muttrc
 %%EXAMPLESDIR%%/example-screenrc
 @dirrm %%EXAMPLESDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/muttils
