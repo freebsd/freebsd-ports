@@ -7,7 +7,7 @@
 
 PORTNAME=	zoneminder
 PORTVERSION=	1.24.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www2.zoneminder.com/downloads/
 DISTNAME=	ZoneMinder-${PORTVERSION}
