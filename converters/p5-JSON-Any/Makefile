@@ -14,13 +14,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl Wrapper Class for the various JSON classes
 
+BUILD_DEPENDS=	p5-JSON>=2.02:${PORTSDIR}/converters/p5-JSON
+RUN_DEPENDS=	p5-JSON>=2.02:${PORTSDIR}/converters/p5-JSON
+
 LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1
 
-RUN_DEPENDS=	p5-JSON>=2.02:${PORTSDIR}/converters/p5-JSON
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
 PERL_CONFIGURE=	yes
+
 MAN3=		JSON::Any.3
 
 .include <bsd.port.mk>
