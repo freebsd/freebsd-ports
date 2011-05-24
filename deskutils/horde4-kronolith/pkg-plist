@@ -1,6 +1,12 @@
 %%HORDIR%%/add.php
 %%HORDIR%%/attend.php
 %%HORDIR%%/attendees.php
+%%HORDIR%%/bin/kronolith-agenda
+%%HORDIR%%/bin/kronolith-convert-datatree-shares-to-sql
+%%HORDIR%%/bin/kronolith-convert-sql-shares-to-sqlng
+%%HORDIR%%/bin/kronolith-convert-to-utc
+%%HORDIR%%/bin/kronolith-import-icals
+%%HORDIR%%/bin/kronolith-import-squirrelmail-calendar
 %%HORDIR%%/calendars/create.php
 %%HORDIR%%/calendars/delete.php
 %%HORDIR%%/calendars/edit.php
@@ -9,11 +15,12 @@
 %%HORDIR%%/calendars/remote_edit.php
 %%HORDIR%%/calendars/remote_subscribe.php
 %%HORDIR%%/calendars/remote_unsubscribe.php
+%%HORDIR%%/calendars/subscribe.php
 %%HORDIR%%/config/.htaccess
 %%HORDIR%%/config/conf.xml
-%%HORDIR%%/config/keywords.php.dist
+%%HORDIR%%/config/hooks.php.dist
 %%HORDIR%%/config/menu.php.dist
-%%HORDIR%%/config/prefs.php.dist
+%%HORDIR%%/config/prefs.php
 %%HORDIR%%/contacts.php
 %%HORDIR%%/data.php
 %%HORDIR%%/day.php
@@ -23,207 +30,227 @@
 %%HORDIR%%/fb.php
 %%HORDIR%%/feed/.htaccess
 %%HORDIR%%/feed/index.php
-%%HORDIR%%/ics.php
-%%HORDIR%%/imple.php
 %%HORDIR%%/index.php
-%%HORDIR%%/js/QuickFinder.js
-%%HORDIR%%/js/builder.js
 %%HORDIR%%/js/calendar-panel.js
-%%HORDIR%%/js/controls.js
-%%HORDIR%%/js/effects.js
+%%HORDIR%%/js/dragdrop2.js
+%%HORDIR%%/js/edit.js
 %%HORDIR%%/js/embed.js
-%%HORDIR%%/js/prototype.js
-%%HORDIR%%/js/redbox.js
-%%HORDIR%%/js/scriptaculous.js
-%%HORDIR%%/js/src/QuickFinder.js
-%%HORDIR%%/js/src/builder.js
-%%HORDIR%%/js/src/calendar-panel.js
-%%HORDIR%%/js/src/controls.js
-%%HORDIR%%/js/src/effects.js
-%%HORDIR%%/js/src/embed.js
-%%HORDIR%%/js/src/prototype.js
-%%HORDIR%%/js/src/redbox.js
-%%HORDIR%%/js/src/scriptaculous.js
-%%HORDIR%%/js/src/stripe.js
-%%HORDIR%%/js/src/tables.js
-%%HORDIR%%/js/src/views.js
-%%HORDIR%%/js/stripe.js
-%%HORDIR%%/js/tables.js
+%%HORDIR%%/js/goto.js
+%%HORDIR%%/js/kronolith.js
+%%HORDIR%%/js/mobile.js
+%%HORDIR%%/js/tagactions.js
 %%HORDIR%%/js/views.js
-%%HORDIR%%/lib/Block/month.php
-%%HORDIR%%/lib/Block/monthlist.php
-%%HORDIR%%/lib/Block/prevmonthlist.php
-%%HORDIR%%/lib/Block/summary.php
-%%HORDIR%%/lib/Block/tree_alarms.php
-%%HORDIR%%/lib/Block/tree_menu.php
+%%HORDIR%%/lib/.htaccess
+%%HORDIR%%/lib/Ajax/Application.php
+%%HORDIR%%/lib/Ajax/Imple/ContactAutoCompleter.php
+%%HORDIR%%/lib/Ajax/Imple/Embed.php
+%%HORDIR%%/lib/Ajax/Imple/TagActions.php
+%%HORDIR%%/lib/Ajax/Imple/TagAutoCompleter.php
+%%HORDIR%%/lib/Api.php
+%%HORDIR%%/lib/Application.php
+%%HORDIR%%/lib/Block/Month.php
+%%HORDIR%%/lib/Block/Monthlist.php
+%%HORDIR%%/lib/Block/Prevmonthlist.php
+%%HORDIR%%/lib/Block/Summary.php
+%%HORDIR%%/lib/Calendar.php
+%%HORDIR%%/lib/Calendar/External.php
+%%HORDIR%%/lib/Calendar/External/Tasks.php
+%%HORDIR%%/lib/Calendar/Holiday.php
+%%HORDIR%%/lib/Calendar/Internal.php
+%%HORDIR%%/lib/Calendar/Remote.php
 %%HORDIR%%/lib/Day.php
-%%HORDIR%%/lib/Driver/holidays.php
-%%HORDIR%%/lib/Driver/ical.php
-%%HORDIR%%/lib/Driver/kolab.php
-%%HORDIR%%/lib/Driver/sql.php
 %%HORDIR%%/lib/Driver.php
-%%HORDIR%%/lib/FBView/day.php
-%%HORDIR%%/lib/FBView/month.php
-%%HORDIR%%/lib/FBView/week.php
-%%HORDIR%%/lib/FBView/workweek.php
-%%HORDIR%%/lib/FBView.php
-%%HORDIR%%/lib/Forms/CreateCalendar.php
-%%HORDIR%%/lib/Forms/DeleteCalendar.php
-%%HORDIR%%/lib/Forms/EditCalendar.php
-%%HORDIR%%/lib/Forms/EditRemoteCalendar.php
-%%HORDIR%%/lib/Forms/SubscribeRemoteCalendar.php
-%%HORDIR%%/lib/Forms/UnsubscribeRemoteCalendar.php
+%%HORDIR%%/lib/Driver/Holidays.php
+%%HORDIR%%/lib/Driver/Horde.php
+%%HORDIR%%/lib/Driver/Ical.php
+%%HORDIR%%/lib/Driver/Kolab.php
+%%HORDIR%%/lib/Driver/Resource.php
+%%HORDIR%%/lib/Driver/Sql.php
+%%HORDIR%%/lib/Event.php
+%%HORDIR%%/lib/Event/Holidays.php
+%%HORDIR%%/lib/Event/Horde.php
+%%HORDIR%%/lib/Event/Ical.php
+%%HORDIR%%/lib/Event/Kolab.php
+%%HORDIR%%/lib/Event/Resource.php
+%%HORDIR%%/lib/Event/Sql.php
+%%HORDIR%%/lib/Exception.php
+%%HORDIR%%/lib/Factory/Driver.php
+%%HORDIR%%/lib/Factory/Geo.php
+%%HORDIR%%/lib/Factory/Storage.php
+%%HORDIR%%/lib/Form/CreateCalendar.php
+%%HORDIR%%/lib/Form/CreateResource.php
+%%HORDIR%%/lib/Form/CreateResourceGroup.php
+%%HORDIR%%/lib/Form/DeleteCalendar.php
+%%HORDIR%%/lib/Form/DeleteResource.php
+%%HORDIR%%/lib/Form/DeleteResourceGroup.php
+%%HORDIR%%/lib/Form/EditCalendar.php
+%%HORDIR%%/lib/Form/EditRemoteCalendar.php
+%%HORDIR%%/lib/Form/EditResource.php
+%%HORDIR%%/lib/Form/EditResourceGroup.php
+%%HORDIR%%/lib/Form/SubscribeRemoteCalendar.php
+%%HORDIR%%/lib/Form/UnsubscribeRemoteCalendar.php
 %%HORDIR%%/lib/FreeBusy.php
-%%HORDIR%%/lib/Imple/ContactAutoCompleter.php
-%%HORDIR%%/lib/Imple/Embed.php
-%%HORDIR%%/lib/Imple.php
-%%HORDIR%%/lib/JSON.php
+%%HORDIR%%/lib/FreeBusy/View.php
+%%HORDIR%%/lib/FreeBusy/View/Day.php
+%%HORDIR%%/lib/FreeBusy/View/Month.php
+%%HORDIR%%/lib/FreeBusy/View/Week.php
+%%HORDIR%%/lib/FreeBusy/View/Workweek.php
+%%HORDIR%%/lib/Geo/Base.php
+%%HORDIR%%/lib/Geo/Mysql.php
+%%HORDIR%%/lib/Geo/Sql.php
 %%HORDIR%%/lib/Kronolith.php
-%%HORDIR%%/lib/Maintenance/Task/purge_events.php
-%%HORDIR%%/lib/Maintenance/kronolith.php
-%%HORDIR%%/lib/Recurrence.php
-%%HORDIR%%/lib/Scheduler/kronolith.php
-%%HORDIR%%/lib/Storage/kolab.php
-%%HORDIR%%/lib/Storage/sql.php
+%%HORDIR%%/lib/LoginTasks/SystemTask/Upgrade.php
+%%HORDIR%%/lib/LoginTasks/Task/PurgeEvents.php
+%%HORDIR%%/lib/Notification/Listener/AjaxStatus.php
+%%HORDIR%%/lib/Resource.php
+%%HORDIR%%/lib/Resource/Base.php
+%%HORDIR%%/lib/Resource/Group.php
+%%HORDIR%%/lib/Resource/Single.php
 %%HORDIR%%/lib/Storage.php
-%%HORDIR%%/lib/Views/Day.php
-%%HORDIR%%/lib/Views/DeleteEvent.php
-%%HORDIR%%/lib/Views/EditEvent.php
-%%HORDIR%%/lib/Views/Event.php
-%%HORDIR%%/lib/Views/ExportEvent.php
-%%HORDIR%%/lib/Views/Month.php
-%%HORDIR%%/lib/Views/Week.php
-%%HORDIR%%/lib/Views/WorkWeek.php
-%%HORDIR%%/lib/Views/Year.php
-%%HORDIR%%/lib/api.php
-%%HORDIR%%/lib/base.php
-%%HORDIR%%/lib/prefs.php
+%%HORDIR%%/lib/Storage/Kolab.php
+%%HORDIR%%/lib/Storage/Sql.php
+%%HORDIR%%/lib/Tagger.php
+%%HORDIR%%/lib/Test.php
+%%HORDIR%%/lib/View/Day.php
+%%HORDIR%%/lib/View/DeleteEvent.php
+%%HORDIR%%/lib/View/EditEvent.php
+%%HORDIR%%/lib/View/Event.php
+%%HORDIR%%/lib/View/ExportEvent.php
+%%HORDIR%%/lib/View/Month.php
+%%HORDIR%%/lib/View/Week.php
+%%HORDIR%%/lib/View/WorkWeek.php
+%%HORDIR%%/lib/View/Year.php
 %%HORDIR%%/lib/tests/allday.ics
 %%HORDIR%%/lib/tests/allday.phpt
-%%HORDIR%%/lib/tests/bug2813.ics
-%%HORDIR%%/lib/tests/bug2813.phpt
 %%HORDIR%%/lib/tests/bug6031.phpt
 %%HORDIR%%/lib/tests/bug7068.ics
 %%HORDIR%%/lib/tests/bug7068.phpt
-%%HORDIR%%/lib/tests/recurrence.phpt
+%%HORDIR%%/lib/tests/fromicalendar.ics
+%%HORDIR%%/lib/tests/fromicalendar.phpt
 %%HORDIR%%/lib/tests/toicalendar.phpt
-%%HORDIR%%/lib/version.php
-%%HORDIR%%/locale/ar_SY/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/bg_BG/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/ca_ES/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/ca_ES/help.xml
-%%HORDIR%%/locale/cs_CZ/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/da_DK/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/de_DE/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/de_DE/help.xml
-%%HORDIR%%/locale/el_GR/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/en_US/help.xml
-%%HORDIR%%/locale/es_ES/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/es_ES/help.xml
-%%HORDIR%%/locale/et_EE/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/eu_ES/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/eu_ES/help.xml
-%%HORDIR%%/locale/fi_FI/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/fi_FI/help.xml
-%%HORDIR%%/locale/fr_FR/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/fr_FR/help.xml
-%%HORDIR%%/locale/hr_HR/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/hr_HR/help.xml
-%%HORDIR%%/locale/hu_HU/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/hu_HU/help.xml
-%%HORDIR%%/locale/it_IT/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/ja_JP/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/ko_KR/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/lt_LT/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/lv_LV/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/nb_NO/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/nl_NL/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/nn_NO/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/pl_PL/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/.htaccess
+%%HORDIR%%/locale/ar/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/ar/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/bg/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/bg/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/ca/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/ca/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/ca/help.xml
+%%HORDIR%%/locale/cs/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/cs/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/da/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/da/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/de/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/de/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/de/help.xml
+%%HORDIR%%/locale/el/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/el/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/en/help.xml
+%%HORDIR%%/locale/es/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/es/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/es/help.xml
+%%HORDIR%%/locale/et/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/et/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/eu/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/eu/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/eu/help.xml
+%%HORDIR%%/locale/fi/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/fi/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/fi/help.xml
+%%HORDIR%%/locale/fr/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/fr/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/fr/help.xml
+%%HORDIR%%/locale/hr/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/hr/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/hr/help.xml
+%%HORDIR%%/locale/hu/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/hu/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/hu/help.xml
+%%HORDIR%%/locale/it/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/it/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/ja/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/ja/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/ko/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/ko/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/kronolith.pot
+%%HORDIR%%/locale/lt/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/lt/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/lv/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/lv/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/nb/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/nb/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/nl/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/nl/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/nn/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/nn/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/pl/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/pl/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/pt/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/pt/LC_MESSAGES/kronolith.po
 %%HORDIR%%/locale/pt_BR/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/pt_BR/LC_MESSAGES/kronolith.po
 %%HORDIR%%/locale/pt_BR/help.xml
-%%HORDIR%%/locale/pt_PT/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/ro_RO/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/ru_RU/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/sk_SK/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/sl_SI/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/sv_SE/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/tr_TR/LC_MESSAGES/kronolith.mo
-%%HORDIR%%/locale/tr_TR/help.xml
-%%HORDIR%%/locale/uk_UA/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/ro/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/ro/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/ru/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/ru/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/sk/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/sk/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/sl/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/sl/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/sv/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/sv/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/tr/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/tr/LC_MESSAGES/kronolith.po
+%%HORDIR%%/locale/tr/help.xml
+%%HORDIR%%/locale/uk/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/uk/LC_MESSAGES/kronolith.po
 %%HORDIR%%/locale/zh_CN/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/zh_CN/LC_MESSAGES/kronolith.po
 %%HORDIR%%/locale/zh_TW/LC_MESSAGES/kronolith.mo
+%%HORDIR%%/locale/zh_TW/LC_MESSAGES/kronolith.po
+%%HORDIR%%/migration/10_kronolith_upgrade_exceptions.php
+%%HORDIR%%/migration/11_kronolith_upgrade_resourceemail.php
+%%HORDIR%%/migration/12_kronolith_upgrade_addzoom.php
+%%HORDIR%%/migration/13_kronolith_upgrade_systemshares.php
+%%HORDIR%%/migration/14_kronolith_upgrade_missingresourcefield.php
+%%HORDIR%%/migration/15_kronolith_upgrade_sqlng.php
+%%HORDIR%%/migration/16_kronolith_upgrade_sqlhierarchical.php
+%%HORDIR%%/migration/17_kronolith_upgrade_sqlnghierarchical.php
+%%HORDIR%%/migration/18_kronolith_upgrade_categoriestotags.php
+%%HORDIR%%/migration/19_kronolith_upgrade_addmysqlgeo.php
+%%HORDIR%%/migration/1_kronolith_base_tables.php
+%%HORDIR%%/migration/2_kronolith_upgrade_autoincrement.php
+%%HORDIR%%/migration/3_kronolith_upgrade_addallday.php
+%%HORDIR%%/migration/4_kronolith_upgrade_addalarmmethods.php
+%%HORDIR%%/migration/5_kronolith_upgrade_addcolor.php
+%%HORDIR%%/migration/6_kronolith_upgrade_addresources.php
+%%HORDIR%%/migration/7_kronolith_upgrade_resourceautoincrement.php
+%%HORDIR%%/migration/8_kronolith_upgrade_addgeo.php
+%%HORDIR%%/migration/9_kronolith_upgrade_addurl.php
+%%HORDIR%%/mobile.php
 %%HORDIR%%/month.php
 %%HORDIR%%/new.php
 %%HORDIR%%/perms.php
-%%HORDIR%%/po/README
-%%HORDIR%%/po/ar_SY.po
-%%HORDIR%%/po/bg_BG.po
-%%HORDIR%%/po/ca_ES.po
-%%HORDIR%%/po/cs_CZ.po
-%%HORDIR%%/po/da_DK.po
-%%HORDIR%%/po/de_DE.po
-%%HORDIR%%/po/el_GR.po
-%%HORDIR%%/po/es_ES.po
-%%HORDIR%%/po/et_EE.po
-%%HORDIR%%/po/eu_ES.po
-%%HORDIR%%/po/fi_FI.po
-%%HORDIR%%/po/fr_FR.po
-%%HORDIR%%/po/hr_HR.po
-%%HORDIR%%/po/hu_HU.po
-%%HORDIR%%/po/it_IT.po
-%%HORDIR%%/po/ja_JP.po
-%%HORDIR%%/po/ko_KR.po
-%%HORDIR%%/po/kronolith.pot
-%%HORDIR%%/po/lt_LT.po
-%%HORDIR%%/po/lv_LV.po
-%%HORDIR%%/po/nb_NO.po
-%%HORDIR%%/po/nl_NL.po
-%%HORDIR%%/po/nn_NO.po
-%%HORDIR%%/po/pl_PL.po
-%%HORDIR%%/po/pt_BR.po
-%%HORDIR%%/po/pt_PT.po
-%%HORDIR%%/po/ro_RO.po
-%%HORDIR%%/po/ru_RU.po
-%%HORDIR%%/po/sk_SK.po
-%%HORDIR%%/po/sl_SI.po
-%%HORDIR%%/po/sv_SE.po
-%%HORDIR%%/po/tr_TR.po
-%%HORDIR%%/po/uk_UA.po
-%%HORDIR%%/po/zh_CN.po
-%%HORDIR%%/po/zh_TW.po
-%%HORDIR%%/pref_api.php
-%%HORDIR%%/scripts/.htaccess
-%%HORDIR%%/scripts/import_icals.php
-%%HORDIR%%/scripts/import_squirrelmail_calendar.php
-%%HORDIR%%/scripts/migrate_to_sql_driver.php
-%%HORDIR%%/scripts/reminders.php
-%%HORDIR%%/scripts/sql/kronolith.mssql.sql
-%%HORDIR%%/scripts/sql/kronolith.mysql.sql
-%%HORDIR%%/scripts/sql/kronolith.oci8.sql
-%%HORDIR%%/scripts/sql/kronolith.pgsql.sql
-%%HORDIR%%/scripts/sql/kronolith.sql
-%%HORDIR%%/scripts/sql/kronolith.xml
-%%HORDIR%%/scripts/upgrades/1.1_to_2.0.mysql.sql
-%%HORDIR%%/scripts/upgrades/1.1_to_2.0.oci8.sql
-%%HORDIR%%/scripts/upgrades/1.1_to_2.0.pgsql.sql
-%%HORDIR%%/scripts/upgrades/2.1_to_2.2.oci8.sql
-%%HORDIR%%/scripts/upgrades/2.1_to_2.2.pgsql.sql
-%%HORDIR%%/scripts/upgrades/2.1_to_2.2.sql
-%%HORDIR%%/scripts/upgrades/2.2_to_2.3.oci8.sql
-%%HORDIR%%/scripts/upgrades/2.2_to_2.3.pgsql.sql
-%%HORDIR%%/scripts/upgrades/2.2_to_2.3.sql
-%%HORDIR%%/scripts/upgrades/2006-08-20_fix_recur_int_fields.mysql.sql
-%%HORDIR%%/scripts/upgrades/2006-08-20_fix_recur_int_fields.pgsql.sql
-%%HORDIR%%/scripts/upgrades/2008-09-23_fix_group_uid.sql
-%%HORDIR%%/scripts/upgrades/convert_datatree_shares_to_sql.php
+%%HORDIR%%/resources/create.php
+%%HORDIR%%/resources/delete.php
+%%HORDIR%%/resources/edit.php
+%%HORDIR%%/resources/groups/create.php
+%%HORDIR%%/resources/groups/delete.php
+%%HORDIR%%/resources/groups/edit.php
+%%HORDIR%%/resources/groups/index.php
+%%HORDIR%%/resources/index.php
 %%HORDIR%%/search.php
+%%HORDIR%%/templates/agenda/notification.html.php
+%%HORDIR%%/templates/agenda/notification.plain.php
+%%HORDIR%%/templates/alarm/mail.html.php
+%%HORDIR%%/templates/alarm/mail.plain.php
 %%HORDIR%%/templates/attendees/attendees.inc
 %%HORDIR%%/templates/calendar_info.php
 %%HORDIR%%/templates/calendar_list.php
 %%HORDIR%%/templates/calendar_titles.inc
-%%HORDIR%%/templates/category_legend.inc
-%%HORDIR%%/templates/common-header.inc
+%%HORDIR%%/templates/chunks/calendar.php
+%%HORDIR%%/templates/chunks/permissions.inc
 %%HORDIR%%/templates/contacts/contacts.inc
 %%HORDIR%%/templates/data/export.inc
 %%HORDIR%%/templates/data/import.inc
@@ -235,7 +262,6 @@
 %%HORDIR%%/templates/delete/one.inc
 %%HORDIR%%/templates/edit/edit.inc
 %%HORDIR%%/templates/edit/edit_timespan.inc
-%%HORDIR%%/templates/edit/javascript.inc
 %%HORDIR%%/templates/fbview/busyblock.html
 %%HORDIR%%/templates/fbview/emptyblock.html
 %%HORDIR%%/templates/fbview/header.html
@@ -245,17 +271,32 @@
 %%HORDIR%%/templates/fbview/section.html
 %%HORDIR%%/templates/fbview/unknownblock.html
 %%HORDIR%%/templates/feeds/atom.xml
-%%HORDIR%%/templates/javascript/goto.js
+%%HORDIR%%/templates/index/agenda.inc
+%%HORDIR%%/templates/index/day.inc
+%%HORDIR%%/templates/index/edit.inc
+%%HORDIR%%/templates/index/index.inc
+%%HORDIR%%/templates/index/month.inc
+%%HORDIR%%/templates/index/task.inc
+%%HORDIR%%/templates/index/tasks.inc
+%%HORDIR%%/templates/index/week.inc
+%%HORDIR%%/templates/index/year.inc
+%%HORDIR%%/templates/itip/notification.html.php
+%%HORDIR%%/templates/itip/notification.plain.php
 %%HORDIR%%/templates/javascript_defs.php
-%%HORDIR%%/templates/menu.inc
+%%HORDIR%%/templates/mobile/day.html.php
+%%HORDIR%%/templates/mobile/event.html.php
+%%HORDIR%%/templates/mobile/head.html.php
+%%HORDIR%%/templates/mobile/javascript_defs.php
+%%HORDIR%%/templates/mobile/month.html.php
+%%HORDIR%%/templates/mobile/notice.html.php
+%%HORDIR%%/templates/mobile/summary.html.php
 %%HORDIR%%/templates/month/head.inc
 %%HORDIR%%/templates/month/head_side_by_side.inc
 %%HORDIR%%/templates/panel.inc
 %%HORDIR%%/templates/perms/perms.inc
-%%HORDIR%%/templates/prefs/default_alarm_management.inc
-%%HORDIR%%/templates/prefs/fb_cals_select.inc
-%%HORDIR%%/templates/prefs/shareselect.inc
-%%HORDIR%%/templates/prefs/sourceselect.inc
+%%HORDIR%%/templates/prefs/defaultalarm.html
+%%HORDIR%%/templates/resources/form-header.inc
+%%HORDIR%%/templates/resources/resource-form.php
 %%HORDIR%%/templates/search/empty.inc
 %%HORDIR%%/templates/search/event_footers.inc
 %%HORDIR%%/templates/search/event_headers.inc
@@ -263,101 +304,168 @@
 %%HORDIR%%/templates/search/header.inc
 %%HORDIR%%/templates/search/search.inc
 %%HORDIR%%/templates/search/search_advanced.inc
+%%HORDIR%%/templates/share/notification.html.php
+%%HORDIR%%/templates/share/notification.plain.php
 %%HORDIR%%/templates/view/view.inc
 %%HORDIR%%/templates/week/head.inc
 %%HORDIR%%/templates/week/head_side_by_side.inc
 %%HORDIR%%/templates/year/head.inc
-%%HORDIR%%/test.php
 %%HORDIR%%/themes/bluewhite/screen.css
 %%HORDIR%%/themes/burntorange/screen.css
-%%HORDIR%%/themes/categoryCSS.php
-%%HORDIR%%/themes/embed.css
+%%HORDIR%%/themes/default/embed.css
+%%HORDIR%%/themes/default/graphics/addressbook_browse.png
+%%HORDIR%%/themes/default/graphics/agenda.png
+%%HORDIR%%/themes/default/graphics/alarm-000.png
+%%HORDIR%%/themes/default/graphics/alarm-fff.png
+%%HORDIR%%/themes/default/graphics/alarm.png
+%%HORDIR%%/themes/default/graphics/alerts/alarm.png
+%%HORDIR%%/themes/default/graphics/alerts/error.png
+%%HORDIR%%/themes/default/graphics/alerts/message.png
+%%HORDIR%%/themes/default/graphics/alerts/success.png
+%%HORDIR%%/themes/default/graphics/alerts/warning.png
+%%HORDIR%%/themes/default/graphics/attendee-accepted.png
+%%HORDIR%%/themes/default/graphics/attendee-declined.png
+%%HORDIR%%/themes/default/graphics/attendee-none.png
+%%HORDIR%%/themes/default/graphics/attendee-tentative.png
+%%HORDIR%%/themes/default/graphics/attendees-000.png
+%%HORDIR%%/themes/default/graphics/attendees-fff.png
+%%HORDIR%%/themes/default/graphics/attendees.png
+%%HORDIR%%/themes/default/graphics/back_quick.png
+%%HORDIR%%/themes/default/graphics/big_agenda.png
+%%HORDIR%%/themes/default/graphics/big_alarm.png
+%%HORDIR%%/themes/default/graphics/big_invitation.png
+%%HORDIR%%/themes/default/graphics/big_share.png
+%%HORDIR%%/themes/default/graphics/calendars.png
+%%HORDIR%%/themes/default/graphics/checkbox_off.png
+%%HORDIR%%/themes/default/graphics/checkbox_on.png
+%%HORDIR%%/themes/default/graphics/checkbox_over.png
+%%HORDIR%%/themes/default/graphics/close.png
+%%HORDIR%%/themes/default/graphics/dayview.png
+%%HORDIR%%/themes/default/graphics/delete-000.png
+%%HORDIR%%/themes/default/graphics/delete-fff.png
+%%HORDIR%%/themes/default/graphics/drag-handle.png
+%%HORDIR%%/themes/default/graphics/edit-000.png
+%%HORDIR%%/themes/default/graphics/edit-fff.png
+%%HORDIR%%/themes/default/graphics/exception-000.png
+%%HORDIR%%/themes/default/graphics/exception-fff.png
+%%HORDIR%%/themes/default/graphics/favicon.ico
+%%HORDIR%%/themes/default/graphics/goto.png
+%%HORDIR%%/themes/default/graphics/kronolith.png
+%%HORDIR%%/themes/default/graphics/left.png
+%%HORDIR%%/themes/default/graphics/loading.gif
+%%HORDIR%%/themes/default/graphics/minus.png
+%%HORDIR%%/themes/default/graphics/monthview.png
+%%HORDIR%%/themes/default/graphics/new.png
+%%HORDIR%%/themes/default/graphics/new_big.png
+%%HORDIR%%/themes/default/graphics/new_small.png
+%%HORDIR%%/themes/default/graphics/new_small_fade.png
+%%HORDIR%%/themes/default/graphics/new_task.png
+%%HORDIR%%/themes/default/graphics/picker.png
+%%HORDIR%%/themes/default/graphics/plus.png
+%%HORDIR%%/themes/default/graphics/print.png
+%%HORDIR%%/themes/default/graphics/private-000.png
+%%HORDIR%%/themes/default/graphics/private-fff.png
+%%HORDIR%%/themes/default/graphics/recur-000.png
+%%HORDIR%%/themes/default/graphics/recur-fff.png
+%%HORDIR%%/themes/default/graphics/right.png
+%%HORDIR%%/themes/default/graphics/search.png
+%%HORDIR%%/themes/default/graphics/tasks.png
+%%HORDIR%%/themes/default/graphics/today.png
+%%HORDIR%%/themes/default/graphics/unknown-background.png
+%%HORDIR%%/themes/default/graphics/weekview.png
+%%HORDIR%%/themes/default/graphics/workweekview.png
+%%HORDIR%%/themes/default/graphics/yearview.png
+%%HORDIR%%/themes/default/ie7.css
+%%HORDIR%%/themes/default/ie8.css
+%%HORDIR%%/themes/default/mobile.css
+%%HORDIR%%/themes/default/opera.css
+%%HORDIR%%/themes/default/screen.css
 %%HORDIR%%/themes/fadetogreen/graphics/headerbox.png
 %%HORDIR%%/themes/fadetogreen/screen.css
-%%HORDIR%%/themes/feed-rss.xsl
-%%HORDIR%%/themes/graphics/addressbook_browse.png
-%%HORDIR%%/themes/graphics/alarm-000.png
-%%HORDIR%%/themes/graphics/alarm-fff.png
-%%HORDIR%%/themes/graphics/alarm.png
-%%HORDIR%%/themes/graphics/attendees.png
-%%HORDIR%%/themes/graphics/az.png
-%%HORDIR%%/themes/graphics/calendars.png
-%%HORDIR%%/themes/graphics/dayview.png
-%%HORDIR%%/themes/graphics/delete-000.png
-%%HORDIR%%/themes/graphics/delete-fff.png
-%%HORDIR%%/themes/graphics/edit-000.png
-%%HORDIR%%/themes/graphics/edit-fff.png
-%%HORDIR%%/themes/graphics/favicon.ico
-%%HORDIR%%/themes/graphics/goto.png
-%%HORDIR%%/themes/graphics/kronolith.png
-%%HORDIR%%/themes/graphics/loading.gif
-%%HORDIR%%/themes/graphics/minus.png
-%%HORDIR%%/themes/graphics/monthview.png
-%%HORDIR%%/themes/graphics/new.png
-%%HORDIR%%/themes/graphics/new_big.png
-%%HORDIR%%/themes/graphics/new_small.png
-%%HORDIR%%/themes/graphics/plus.png
-%%HORDIR%%/themes/graphics/private-000.png
-%%HORDIR%%/themes/graphics/private-fff.png
-%%HORDIR%%/themes/graphics/recur-000.png
-%%HORDIR%%/themes/graphics/recur-fff.png
-%%HORDIR%%/themes/graphics/redbox_spinner.gif
-%%HORDIR%%/themes/graphics/search.png
-%%HORDIR%%/themes/graphics/today.png
-%%HORDIR%%/themes/graphics/unknown-background.png
-%%HORDIR%%/themes/graphics/weekview.png
-%%HORDIR%%/themes/graphics/workweekview.png
-%%HORDIR%%/themes/graphics/yearview.png
-%%HORDIR%%/themes/graphics/za.png
 %%HORDIR%%/themes/mozilla/screen.css
-%%HORDIR%%/themes/print/screen.css
-%%HORDIR%%/themes/screen.css
 %%HORDIR%%/themes/silver/graphics/addressbook_browse.png
+%%HORDIR%%/themes/silver/graphics/agenda.png
 %%HORDIR%%/themes/silver/graphics/alarm-000.png
 %%HORDIR%%/themes/silver/graphics/alarm-fff.png
 %%HORDIR%%/themes/silver/graphics/alarm.png
+%%HORDIR%%/themes/silver/graphics/alerts/alarm.png
+%%HORDIR%%/themes/silver/graphics/alerts/error.png
+%%HORDIR%%/themes/silver/graphics/alerts/message.png
+%%HORDIR%%/themes/silver/graphics/alerts/success.png
+%%HORDIR%%/themes/silver/graphics/alerts/warning.png
+%%HORDIR%%/themes/silver/graphics/attendee-accepted.png
+%%HORDIR%%/themes/silver/graphics/attendee-declined.png
+%%HORDIR%%/themes/silver/graphics/attendee-none.png
+%%HORDIR%%/themes/silver/graphics/attendee-tentative.png
+%%HORDIR%%/themes/silver/graphics/attendees-000.png
+%%HORDIR%%/themes/silver/graphics/attendees-fff.png
 %%HORDIR%%/themes/silver/graphics/attendees.png
 %%HORDIR%%/themes/silver/graphics/calendars.png
+%%HORDIR%%/themes/silver/graphics/close.png
 %%HORDIR%%/themes/silver/graphics/dayview.png
 %%HORDIR%%/themes/silver/graphics/delete-000.png
 %%HORDIR%%/themes/silver/graphics/delete-fff.png
 %%HORDIR%%/themes/silver/graphics/edit-000.png
 %%HORDIR%%/themes/silver/graphics/edit-fff.png
+%%HORDIR%%/themes/silver/graphics/exception-000.png
+%%HORDIR%%/themes/silver/graphics/exception-fff.png
 %%HORDIR%%/themes/silver/graphics/favicon.ico
 %%HORDIR%%/themes/silver/graphics/goto.png
 %%HORDIR%%/themes/silver/graphics/kronolith.png
+%%HORDIR%%/themes/silver/graphics/left.png
 %%HORDIR%%/themes/silver/graphics/loading.gif
+%%HORDIR%%/themes/silver/graphics/menu-active.png
+%%HORDIR%%/themes/silver/graphics/menu.png
 %%HORDIR%%/themes/silver/graphics/minus.png
 %%HORDIR%%/themes/silver/graphics/monthview.png
 %%HORDIR%%/themes/silver/graphics/new.png
 %%HORDIR%%/themes/silver/graphics/new_big.png
 %%HORDIR%%/themes/silver/graphics/new_small.png
+%%HORDIR%%/themes/silver/graphics/new_task.png
+%%HORDIR%%/themes/silver/graphics/picker.png
 %%HORDIR%%/themes/silver/graphics/plus.png
+%%HORDIR%%/themes/silver/graphics/print.png
 %%HORDIR%%/themes/silver/graphics/private-000.png
 %%HORDIR%%/themes/silver/graphics/private-fff.png
 %%HORDIR%%/themes/silver/graphics/recur-000.png
 %%HORDIR%%/themes/silver/graphics/recur-fff.png
+%%HORDIR%%/themes/silver/graphics/right.png
 %%HORDIR%%/themes/silver/graphics/search.png
+%%HORDIR%%/themes/silver/graphics/tasks.png
 %%HORDIR%%/themes/silver/graphics/today.png
 %%HORDIR%%/themes/silver/graphics/unknown-background.png
 %%HORDIR%%/themes/silver/graphics/weekview.png
 %%HORDIR%%/themes/silver/graphics/workweekview.png
 %%HORDIR%%/themes/silver/graphics/yearview.png
+%%HORDIR%%/themes/silver/ie7.css
+%%HORDIR%%/themes/silver/ie8.css
 %%HORDIR%%/themes/silver/screen.css
-%%HORDIR%%/themes/silver/themed_graphics
 %%HORDIR%%/themes/simplex/screen.css
-%%HORDIR%%/themes/sounds/theetone.wav
 %%HORDIR%%/themes/tango-blue/graphics/addressbook_browse.png
 %%HORDIR%%/themes/tango-blue/graphics/alarm-000.png
 %%HORDIR%%/themes/tango-blue/graphics/alarm-fff.png
 %%HORDIR%%/themes/tango-blue/graphics/alarm.png
+%%HORDIR%%/themes/tango-blue/graphics/alerts/alarm.png
+%%HORDIR%%/themes/tango-blue/graphics/alerts/error.png
+%%HORDIR%%/themes/tango-blue/graphics/alerts/message.png
+%%HORDIR%%/themes/tango-blue/graphics/alerts/success.png
+%%HORDIR%%/themes/tango-blue/graphics/alerts/warning.png
+%%HORDIR%%/themes/tango-blue/graphics/attendee-accepted.png
+%%HORDIR%%/themes/tango-blue/graphics/attendee-declined.png
+%%HORDIR%%/themes/tango-blue/graphics/attendee-none.png
+%%HORDIR%%/themes/tango-blue/graphics/attendee-tentative.png
+%%HORDIR%%/themes/tango-blue/graphics/attendees-000.png
+%%HORDIR%%/themes/tango-blue/graphics/attendees-fff.png
 %%HORDIR%%/themes/tango-blue/graphics/attendees.png
 %%HORDIR%%/themes/tango-blue/graphics/calendars.png
+%%HORDIR%%/themes/tango-blue/graphics/close.png
 %%HORDIR%%/themes/tango-blue/graphics/dayview.png
 %%HORDIR%%/themes/tango-blue/graphics/delete-000.png
 %%HORDIR%%/themes/tango-blue/graphics/delete-fff.png
 %%HORDIR%%/themes/tango-blue/graphics/edit-000.png
 %%HORDIR%%/themes/tango-blue/graphics/edit-fff.png
+%%HORDIR%%/themes/tango-blue/graphics/exception-000.png
+%%HORDIR%%/themes/tango-blue/graphics/exception-fff.png
 %%HORDIR%%/themes/tango-blue/graphics/favicon.ico
 %%HORDIR%%/themes/tango-blue/graphics/goto.png
 %%HORDIR%%/themes/tango-blue/graphics/kronolith.png
@@ -367,7 +475,9 @@
 %%HORDIR%%/themes/tango-blue/graphics/new.png
 %%HORDIR%%/themes/tango-blue/graphics/new_big.png
 %%HORDIR%%/themes/tango-blue/graphics/new_small.png
+%%HORDIR%%/themes/tango-blue/graphics/picker.png
 %%HORDIR%%/themes/tango-blue/graphics/plus.png
+%%HORDIR%%/themes/tango-blue/graphics/print.png
 %%HORDIR%%/themes/tango-blue/graphics/private-000.png
 %%HORDIR%%/themes/tango-blue/graphics/private-fff.png
 %%HORDIR%%/themes/tango-blue/graphics/recur-000.png
@@ -379,132 +489,149 @@
 %%HORDIR%%/themes/tango-blue/graphics/workweekview.png
 %%HORDIR%%/themes/tango-blue/graphics/yearview.png
 %%HORDIR%%/themes/tango-blue/screen.css
-%%HORDIR%%/themes/tango-blue/themed_graphics
 %%HORDIR%%/view.php
 %%HORDIR%%/week.php
 %%HORDIR%%/workweek.php
 %%HORDIR%%/year.php
-@dirrm %%HORDIR%%/calendars
-@dirrmtry %%HORDIR%%/config
-@dirrm %%HORDIR%%/feed
-@dirrm %%HORDIR%%/js/src
-@dirrm %%HORDIR%%/js
-@dirrm %%HORDIR%%/lib/Block
-@dirrm %%HORDIR%%/lib/Driver
-@dirrm %%HORDIR%%/lib/FBView
-@dirrm %%HORDIR%%/lib/Forms
-@dirrm %%HORDIR%%/lib/Imple
-@dirrm %%HORDIR%%/lib/Maintenance/Task
-@dirrm %%HORDIR%%/lib/Maintenance
-@dirrm %%HORDIR%%/lib/Scheduler
-@dirrm %%HORDIR%%/lib/Storage
-@dirrm %%HORDIR%%/lib/Views
-@dirrm %%HORDIR%%/lib/tests
-@dirrm %%HORDIR%%/lib
-@dirrm %%HORDIR%%/locale/ar_SY/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ar_SY
-@dirrm %%HORDIR%%/locale/bg_BG/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/bg_BG
-@dirrm %%HORDIR%%/locale/ca_ES/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ca_ES
-@dirrm %%HORDIR%%/locale/cs_CZ/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/cs_CZ
-@dirrm %%HORDIR%%/locale/da_DK/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/da_DK
-@dirrm %%HORDIR%%/locale/de_DE/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/de_DE
-@dirrm %%HORDIR%%/locale/el_GR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/el_GR
-@dirrm %%HORDIR%%/locale/en_US
-@dirrm %%HORDIR%%/locale/es_ES/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/es_ES
-@dirrm %%HORDIR%%/locale/et_EE/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/et_EE
-@dirrm %%HORDIR%%/locale/eu_ES/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/eu_ES
-@dirrm %%HORDIR%%/locale/fi_FI/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/fi_FI
-@dirrm %%HORDIR%%/locale/fr_FR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/fr_FR
-@dirrm %%HORDIR%%/locale/hr_HR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/hr_HR
-@dirrm %%HORDIR%%/locale/hu_HU/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/hu_HU
-@dirrm %%HORDIR%%/locale/it_IT/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/it_IT
-@dirrm %%HORDIR%%/locale/ja_JP/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ja_JP
-@dirrm %%HORDIR%%/locale/ko_KR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ko_KR
-@dirrm %%HORDIR%%/locale/lt_LT/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/lt_LT
-@dirrm %%HORDIR%%/locale/lv_LV/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/lv_LV
-@dirrm %%HORDIR%%/locale/nb_NO/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/nb_NO
-@dirrm %%HORDIR%%/locale/nl_NL/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/nl_NL
-@dirrm %%HORDIR%%/locale/nn_NO/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/nn_NO
-@dirrm %%HORDIR%%/locale/pl_PL/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/pl_PL
-@dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/pt_BR
-@dirrm %%HORDIR%%/locale/pt_PT/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/pt_PT
-@dirrm %%HORDIR%%/locale/ro_RO/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ro_RO
-@dirrm %%HORDIR%%/locale/ru_RU/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/ru_RU
-@dirrm %%HORDIR%%/locale/sk_SK/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/sk_SK
-@dirrm %%HORDIR%%/locale/sl_SI/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/sl_SI
-@dirrm %%HORDIR%%/locale/sv_SE/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/sv_SE
-@dirrm %%HORDIR%%/locale/tr_TR/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/tr_TR
-@dirrm %%HORDIR%%/locale/uk_UA/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/uk_UA
-@dirrm %%HORDIR%%/locale/zh_CN/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/zh_CN
-@dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
-@dirrm %%HORDIR%%/locale/zh_TW
-@dirrm %%HORDIR%%/locale
-@dirrm %%HORDIR%%/po
-@dirrm %%HORDIR%%/scripts/sql
-@dirrm %%HORDIR%%/scripts/upgrades
-@dirrm %%HORDIR%%/scripts
-@dirrm %%HORDIR%%/templates/attendees
-@dirrm %%HORDIR%%/templates/contacts
-@dirrm %%HORDIR%%/templates/data
-@dirrm %%HORDIR%%/templates/day
-@dirrm %%HORDIR%%/templates/delete
-@dirrm %%HORDIR%%/templates/edit
-@dirrm %%HORDIR%%/templates/fbview
-@dirrm %%HORDIR%%/templates/feeds
-@dirrm %%HORDIR%%/templates/javascript
-@dirrm %%HORDIR%%/templates/month
-@dirrm %%HORDIR%%/templates/perms
-@dirrm %%HORDIR%%/templates/prefs
-@dirrm %%HORDIR%%/templates/search
-@dirrm %%HORDIR%%/templates/view
-@dirrm %%HORDIR%%/templates/week
-@dirrm %%HORDIR%%/templates/year
-@dirrm %%HORDIR%%/templates
-@dirrm %%HORDIR%%/themes/bluewhite
-@dirrm %%HORDIR%%/themes/burntorange
-@dirrm %%HORDIR%%/themes/fadetogreen/graphics
-@dirrm %%HORDIR%%/themes/fadetogreen
-@dirrm %%HORDIR%%/themes/graphics
-@dirrm %%HORDIR%%/themes/mozilla
-@dirrm %%HORDIR%%/themes/print
-@dirrm %%HORDIR%%/themes/silver/graphics
-@dirrm %%HORDIR%%/themes/silver
-@dirrm %%HORDIR%%/themes/simplex
-@dirrm %%HORDIR%%/themes/sounds
+@dirrm %%HORDIR%%/themes/tango-blue/graphics/alerts
 @dirrm %%HORDIR%%/themes/tango-blue/graphics
 @dirrm %%HORDIR%%/themes/tango-blue
+@dirrm %%HORDIR%%/themes/simplex
+@dirrm %%HORDIR%%/themes/silver/graphics/alerts
+@dirrm %%HORDIR%%/themes/silver/graphics
+@dirrm %%HORDIR%%/themes/silver
+@dirrm %%HORDIR%%/themes/mozilla
+@dirrm %%HORDIR%%/themes/fadetogreen/graphics
+@dirrm %%HORDIR%%/themes/fadetogreen
+@dirrm %%HORDIR%%/themes/default/graphics/alerts
+@dirrm %%HORDIR%%/themes/default/graphics
+@dirrm %%HORDIR%%/themes/default
+@dirrm %%HORDIR%%/themes/burntorange
+@dirrm %%HORDIR%%/themes/bluewhite
 @dirrm %%HORDIR%%/themes
+@dirrm %%HORDIR%%/templates/year
+@dirrm %%HORDIR%%/templates/week
+@dirrm %%HORDIR%%/templates/view
+@dirrm %%HORDIR%%/templates/share
+@dirrm %%HORDIR%%/templates/search
+@dirrm %%HORDIR%%/templates/resources
+@dirrm %%HORDIR%%/templates/prefs
+@dirrm %%HORDIR%%/templates/perms
+@dirrm %%HORDIR%%/templates/month
+@dirrm %%HORDIR%%/templates/mobile
+@dirrm %%HORDIR%%/templates/itip
+@dirrm %%HORDIR%%/templates/index
+@dirrm %%HORDIR%%/templates/feeds
+@dirrm %%HORDIR%%/templates/fbview
+@dirrm %%HORDIR%%/templates/edit
+@dirrm %%HORDIR%%/templates/delete
+@dirrm %%HORDIR%%/templates/day
+@dirrm %%HORDIR%%/templates/data
+@dirrm %%HORDIR%%/templates/contacts
+@dirrm %%HORDIR%%/templates/chunks
+@dirrm %%HORDIR%%/templates/attendees
+@dirrm %%HORDIR%%/templates/alarm
+@dirrm %%HORDIR%%/templates/agenda
+@dirrm %%HORDIR%%/templates
+@dirrm %%HORDIR%%/resources/groups
+@dirrm %%HORDIR%%/resources
+@dirrm %%HORDIR%%/migration
+@dirrm %%HORDIR%%/locale/zh_TW/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_TW
+@dirrm %%HORDIR%%/locale/zh_CN/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/zh_CN
+@dirrm %%HORDIR%%/locale/uk/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/uk
+@dirrm %%HORDIR%%/locale/tr/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/tr
+@dirrm %%HORDIR%%/locale/sv/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sv
+@dirrm %%HORDIR%%/locale/sl/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sl
+@dirrm %%HORDIR%%/locale/sk/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/sk
+@dirrm %%HORDIR%%/locale/ru/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ru
+@dirrm %%HORDIR%%/locale/ro/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ro
+@dirrm %%HORDIR%%/locale/pt_BR/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt_BR
+@dirrm %%HORDIR%%/locale/pt/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pt
+@dirrm %%HORDIR%%/locale/pl/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/pl
+@dirrm %%HORDIR%%/locale/nn/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nn
+@dirrm %%HORDIR%%/locale/nl/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nl
+@dirrm %%HORDIR%%/locale/nb/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/nb
+@dirrm %%HORDIR%%/locale/lv/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/lv
+@dirrm %%HORDIR%%/locale/lt/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/lt
+@dirrm %%HORDIR%%/locale/ko/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ko
+@dirrm %%HORDIR%%/locale/ja/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ja
+@dirrm %%HORDIR%%/locale/it/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/it
+@dirrm %%HORDIR%%/locale/hu/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/hu
+@dirrm %%HORDIR%%/locale/hr/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/hr
+@dirrm %%HORDIR%%/locale/fr/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fr
+@dirrm %%HORDIR%%/locale/fi/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/fi
+@dirrm %%HORDIR%%/locale/eu/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/eu
+@dirrm %%HORDIR%%/locale/et/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/et
+@dirrm %%HORDIR%%/locale/es/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/es
+@dirrm %%HORDIR%%/locale/en
+@dirrm %%HORDIR%%/locale/el/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/el
+@dirrm %%HORDIR%%/locale/de/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/de
+@dirrm %%HORDIR%%/locale/da/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/da
+@dirrm %%HORDIR%%/locale/cs/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/cs
+@dirrm %%HORDIR%%/locale/ca/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ca
+@dirrm %%HORDIR%%/locale/bg/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/bg
+@dirrm %%HORDIR%%/locale/ar/LC_MESSAGES
+@dirrm %%HORDIR%%/locale/ar
+@dirrm %%HORDIR%%/locale
+@dirrm %%HORDIR%%/lib/tests
+@dirrm %%HORDIR%%/lib/View
+@dirrm %%HORDIR%%/lib/Storage
+@dirrm %%HORDIR%%/lib/Resource
+@dirrm %%HORDIR%%/lib/Notification/Listener
+@dirrm %%HORDIR%%/lib/Notification
+@dirrm %%HORDIR%%/lib/LoginTasks/Task
+@dirrm %%HORDIR%%/lib/LoginTasks/SystemTask
+@dirrm %%HORDIR%%/lib/LoginTasks
+@dirrm %%HORDIR%%/lib/Geo
+@dirrm %%HORDIR%%/lib/FreeBusy/View
+@dirrm %%HORDIR%%/lib/FreeBusy
+@dirrm %%HORDIR%%/lib/Form
+@dirrm %%HORDIR%%/lib/Factory
+@dirrm %%HORDIR%%/lib/Event
+@dirrm %%HORDIR%%/lib/Driver
+@dirrm %%HORDIR%%/lib/Calendar/External
+@dirrm %%HORDIR%%/lib/Calendar
+@dirrm %%HORDIR%%/lib/Block
+@dirrm %%HORDIR%%/lib/Ajax/Imple
+@dirrm %%HORDIR%%/lib/Ajax
+@dirrm %%HORDIR%%/lib
+@dirrm %%HORDIR%%/js
+@dirrm %%HORDIR%%/feed
+@dirrmtry %%HORDIR%%/config
+@dirrmtry %%HORDIR%%/calendars
+@dirrm %%HORDIR%%/bin
 @dirrmtry %%HORDIR%%
 @dirrmtry %%HORBAS%%
