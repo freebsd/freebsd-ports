@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	munger
-PORTVERSION=	4.184
+PORTVERSION=	4.186
 CATEGORIES=	lang
 MASTER_SITES=	http://www.mammothcheese.ca/
 
