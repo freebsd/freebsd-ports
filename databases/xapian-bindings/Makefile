@@ -10,7 +10,7 @@ PORTVERSION=	1.0.22
 CATEGORIES=	databases
 MASTER_SITES=	http://oligarchy.co.uk/xapian/${PORTVERSION}/
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	jf@dockes.org
 COMMENT=	Bindings allowing Xapian to be used from various programming languages
 
 RUN_DEPENDS=	xapian-core>=1.0.22:${PORTSDIR}/databases/xapian-core
