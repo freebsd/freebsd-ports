@@ -304,8 +304,8 @@ lib/perl5/%%PERL_VERSION%%/%%PERL_ARCH%%/perllocal.pod
 @dirrm %%SITE_PERL%%/ZoneMinder
 @dirrmtry %%SITE_PERL%%
 @dirrmtry lib/perl5/site_perl
-@dirrmtry lib/perl5/5.10.1/man/man3
-@dirrmtry lib/perl5/5.10.1/man
-@dirrmtry lib/perl5/5.10.1/mach
-@dirrmtry lib/perl5/5.10.1
+@dirrmtry lib/perl5/%%PERL_VERSION%%/man/man3
+@dirrmtry lib/perl5/%%PERL_VERSION%%/man
+@dirrmtry lib/perl5/%%PERL_VERSION%%/mach
+@dirrmtry lib/perl5/%%PERL_VERSION%%
 @dirrmtry lib/perl5
