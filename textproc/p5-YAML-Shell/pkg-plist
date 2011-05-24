@@ -1,0 +1,6 @@
+bin/ysh
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/YAML/Shell/.packlist
+%%SITE_PERL%%/YAML/Shell.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAML/Shell
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/YAML
+@dirrmtry %%SITE_PERL%%/YAML
