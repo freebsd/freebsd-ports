@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	bbdb
-PORTVERSION=	2.34
-PORTREVISION=	5
+PORTVERSION=	2.35
 CATEGORIES=	databases elisp
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dryice@FreeBSD.org
 COMMENT=	Big Brother Database
 
 USE_EMACS=	yes
 
 ALL_TARGET=	bbdb info
-MAKE_ARGS=	MAKE="${MAKE} MAKEINFO=\"makeinfo --no-split\""
+MAKE_ARGS=	MAKE="${MAKE} clean MAKEINFO=\"makeinfo --no-split\""
 BBDB_LISPDIR=	${EMACS_VERSION_SITE_LISPDIR}/${PORTNAME}
 DIRSECTION=	"The Emacs editor and associated tools"
 INFOENTRY=	"* BBDB: (bbdb).             The Insidious Big Brother Database."
