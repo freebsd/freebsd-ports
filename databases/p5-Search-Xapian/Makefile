@@ -11,7 +11,7 @@ CATEGORIES=	databases perl5
 MASTER_SITES=	http://oligarchy.co.uk/xapian/1.0.22/
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	perl@FreeBSD.org
+MAINTAINER=	jf@dockes.org
 COMMENT=	Perl XS frontend to the Xapian C++ search library
 
 BUILD_DEPENDS=	xapian-core>=1.0.22:${PORTSDIR}/databases/xapian-core
