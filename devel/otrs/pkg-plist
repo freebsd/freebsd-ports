@@ -177,6 +177,7 @@ otrs/scripts/test/GenericAgent.t
 otrs/scripts/test/Group.t
 otrs/scripts/test/HTMLUtils.t
 otrs/scripts/test/JSON.t
+otrs/scripts/test/Language.t
 otrs/scripts/test/Layout.t
 otrs/scripts/test/LayoutTicket.t
 otrs/scripts/test/LinkObject.t
@@ -229,6 +230,14 @@ otrs/var/cron/postmaster_mailbox.dist
 otrs/var/cron/rebuild_ticket_index.dist
 otrs/var/cron/session.dist
 otrs/var/cron/unlock.dist
+otrs/var/fonts/DejaVuSans-Bold.ttf
+otrs/var/fonts/DejaVuSans-BoldOblique.ttf
+otrs/var/fonts/DejaVuSans-Oblique.ttf
+otrs/var/fonts/DejaVuSans.ttf
+otrs/var/fonts/DejaVuSansMono-Bold.ttf
+otrs/var/fonts/DejaVuSansMono-BoldOblique.ttf
+otrs/var/fonts/DejaVuSansMono-Oblique.ttf
+otrs/var/fonts/DejaVuSansMono.ttf
 otrs/var/httpd/htdocs/index.html
 otrs/var/httpd/htdocs/js/Core.AJAX.js
 otrs/var/httpd/htdocs/js/Core.Agent.Admin.SysConfig.js
@@ -621,11 +630,11 @@ otrs/var/httpd/htdocs/skins/Agent/default/img/icons/folder-small.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/greenled-small.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/in.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/maps.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/icons/monitor.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/plus-button.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/product.ico
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/redled-small.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/reload.png
-otrs/var/httpd/htdocs/skins/Agent/default/img/icons/screen.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/tick.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/trash-can.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/icons/undo.png
@@ -660,6 +669,7 @@ otrs/var/httpd/htdocs/skins/Agent/default/img/contexthelp.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/controlrow.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/controlrow_isolator.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/controlrow_sprite.png
+otrs/var/httpd/htdocs/skins/Agent/default/img/datepicker_vacation_days.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/dialog_alert.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/dialog_close.png
 otrs/var/httpd/htdocs/skins/Agent/default/img/dialog_content.png
@@ -809,6 +819,7 @@ otrs/var/httpd/htdocs/skins/Customer/default/img/controlrow.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/controlrow_bg.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/controlrow_isolator.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/decline.png
+otrs/var/httpd/htdocs/skins/Customer/default/img/datepicker_vacation_days.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/dialog_alert.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/dialog_close.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/logo.png
@@ -877,6 +888,7 @@ otrs/Kernel/Language/fa.pm
 otrs/Kernel/Language/fi.pm
 otrs/Kernel/Language/fr.pm
 otrs/Kernel/Language/hi.pm
+otrs/Kernel/Language/hr.pm
 otrs/Kernel/Language/hu.pm
 otrs/Kernel/Language/it.pm
 otrs/Kernel/Language/ja.pm
@@ -1573,6 +1585,7 @@ otrs/Kernel/System/XMLMaster.pm
 @dirrm otrs/var/httpd/htdocs/js
 @dirrm otrs/var/httpd/htdocs
 @dirrm otrs/var/httpd
+@dirrm otrs/var/fonts
 @dirrm otrs/var/cron
 @dirrm otrs/var/article
 @dirrmtry otrs/var

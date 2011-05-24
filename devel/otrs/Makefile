@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	otrs
-PORTVERSION=	3.0.7
-PORTREVISION=	1
+PORTVERSION=	3.0.8
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
