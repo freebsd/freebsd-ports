@@ -41,10 +41,12 @@ USE_GNOME=	gtk20
 BUILD_DEPENDS+=	${LOCALBASE}/include/wx-2.9/wx/aboutdlg.h:${PORTSDIR}/x11-toolkits/wxgtk29
 WX_CONFIG=	${LOCALBASE}/bin/wxgtk2u-2.9-config
 
-PLIST_FILES=	bitcoin
+BINARY=		bitcoin
+PLIST_FILES=	bin/${BINARY}
 .else
-ALL_TARGET=	bitcoind
-PLIST_FILES=	bitcoind
+BINARY=		bitcoind
+ALL_TARGET=	${BINARY}
+PLIST_FILES=	bin/${BINARY}
 .endif
 
 .if defined(WITH_UPNP)
@@ -76,6 +78,6 @@ post-patch:
 
 do-install:
 	@${MKDIR} ${PREFIX}/bin
-	${INSTALL_PROGRAM} ${WRKSRC}/${PLIST_FILES} ${PREFIX}/bin/
+	${INSTALL_PROGRAM} ${WRKSRC}/${BINARY} ${PREFIX}/bin/
 
 .include <bsd.port.post.mk>
