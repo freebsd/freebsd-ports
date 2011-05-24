@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.8.4
-PORTREVISION=	1
+PORTVERSION=	1.8.4.1
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -24,9 +23,9 @@ RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 ONLY_FOR_ARCHS=	i386 amd64 powerpc sparc64
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-gsm=${LOCALBASE}
+LDFLAGS=	-L${LOCALBASE}/lib
 CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/openh323
 USE_GMAKE=	yes
 USE_GNOME=	libxml2
@@ -261,12 +260,12 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-menuselect-tree-g711-new-codec.diff
 .endif
 
 .if !defined(WITH_SRTP)
-PLIST_SUB+=    WITH_SRTP="@comment "
-CONFIGURE_ARGS+=       --without-srtp
+PLIST_SUB+=	WITH_SRTP="@comment "
+CONFIGURE_ARGS+=	--without-srtp
 .else
-PLIST_SUB+=    WITH_SRTP=""
-BUILD_DEPENDS+=        libsrtp>=1.4.4:${PORTSDIR}/net/libsrtp
-CONFIGURE_ARGS+=       --with-srtp
+PLIST_SUB+=	WITH_SRTP=""
+BUILD_DEPENDS+=	libsrtp>=1.4.4:${PORTSDIR}/net/libsrtp
+CONFIGURE_ARGS+=	--with-srtp
 .endif
 
 .if defined(WITH_LUA)
