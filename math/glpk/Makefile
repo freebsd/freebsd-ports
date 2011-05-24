@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	glpk
-PORTVERSION=	4.43
-PORTREVISION=	1
+PORTVERSION=	4.45
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	glpk
@@ -16,6 +15,8 @@ MAINTAINER=	demon@FreeBSD.org
 COMMENT=	A GNU Linear Programming Kit
 
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp
+
+LICENSE=	GPLv3
 
 OPTIONS=	IODBC	"Enable MathProg iodbc support" Off \
 		MYSQL	"Enable MathProg mysql support" Off
@@ -26,7 +27,7 @@ USE_LDCONFIG=	yes
 CFLAGS+=	-trigraphs
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--with-gmp --with-zlib
 
 .include <bsd.port.pre.mk>
@@ -56,9 +57,9 @@ post-patch:
 	${WRKSRC}/configure
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	glpk.pdf glpk_faq.txt gmpl.pdf graphs.pdf miplib2.txt miplib3.txt \
-		netlib.txt opb.txt tables.pdf dfeas.pdf gomory.pdf keller.pdf prepro.pdf \
-		scaling.pdf subset.pdf updating.pdf
+PORTDOCS=	dfeas.pdf glpk.pdf glpk_faq.txt gmpl.pdf gomory.pdf graphs.pdf \
+		keller.pdf miplib2.txt miplib3.txt netlib.txt prepro.pdf \
+		scaling.pdf updating.pdf
 
 post-install:
 	@${CP} ${WRKSRC}/doc/notes/*.pdf ${WRKSRC}/doc/
