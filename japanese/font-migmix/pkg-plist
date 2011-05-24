@@ -1,35 +1,35 @@
 @comment $FreeBSD$
-%%DATADIR%%/MigMix-1M-Bold.ttf
-%%DATADIR%%/MigMix-1M-Regular.ttf
-%%DATADIR%%/MigMix-1P-Bold.ttf
-%%DATADIR%%/MigMix-1P-Regular.ttf
-%%DATADIR%%/MigMix-2M-Bold.ttf
-%%DATADIR%%/MigMix-2M-Regular.ttf
-%%DATADIR%%/MigMix-2P-Bold.ttf
-%%DATADIR%%/MigMix-2P-Regular.ttf
+%%DATADIR%%/MigMix-1M-bold.ttf
+%%DATADIR%%/MigMix-1M-regular.ttf
+%%DATADIR%%/MigMix-1P-bold.ttf
+%%DATADIR%%/MigMix-1P-regular.ttf
+%%DATADIR%%/MigMix-2M-bold.ttf
+%%DATADIR%%/MigMix-2M-regular.ttf
+%%DATADIR%%/MigMix-2P-bold.ttf
+%%DATADIR%%/MigMix-2P-regular.ttf
 @dirrm %%DATADIR%%
-%%LOCAL_FONTSDIR%%/TTF/MigMix-1M-Bold.ttf
-%%LOCAL_FONTSDIR%%/TTF/MigMix-1M-Regular.ttf
-%%LOCAL_FONTSDIR%%/TTF/MigMix-1P-Bold.ttf
-%%LOCAL_FONTSDIR%%/TTF/MigMix-1P-Regular.ttf
-%%LOCAL_FONTSDIR%%/TTF/MigMix-2M-Bold.ttf
-%%LOCAL_FONTSDIR%%/TTF/MigMix-2M-Regular.ttf
-%%LOCAL_FONTSDIR%%/TTF/MigMix-2P-Bold.ttf
-%%LOCAL_FONTSDIR%%/TTF/MigMix-2P-Regular.ttf
+%%LOCAL_FONTSDIR%%/TTF/MigMix-1M-bold.ttf
+%%LOCAL_FONTSDIR%%/TTF/MigMix-1M-regular.ttf
+%%LOCAL_FONTSDIR%%/TTF/MigMix-1P-bold.ttf
+%%LOCAL_FONTSDIR%%/TTF/MigMix-1P-regular.ttf
+%%LOCAL_FONTSDIR%%/TTF/MigMix-2M-bold.ttf
+%%LOCAL_FONTSDIR%%/TTF/MigMix-2M-regular.ttf
+%%LOCAL_FONTSDIR%%/TTF/MigMix-2P-bold.ttf
+%%LOCAL_FONTSDIR%%/TTF/MigMix-2P-regular.ttf
 @dirrmtry %%LOCAL_FONTSDIR%%/TTF
 @dirrmtry %%LOCAL_FONTSDIR%%
 etc/fonts/conf.avail/20-unhint-migmix.conf
 etc/fonts/conf.avail/62-fonts-migmix.conf
 etc/fonts/conf.d/20-unhint-migmix.conf
 etc/fonts/conf.d/62-fonts-migmix.conf
-%%X_FONTSDIR%%/TTF/MigMix-1M-Bold.ttf
-%%X_FONTSDIR%%/TTF/MigMix-1M-Regular.ttf
-%%X_FONTSDIR%%/TTF/MigMix-1P-Bold.ttf
-%%X_FONTSDIR%%/TTF/MigMix-1P-Regular.ttf
-%%X_FONTSDIR%%/TTF/MigMix-2M-Bold.ttf
-%%X_FONTSDIR%%/TTF/MigMix-2M-Regular.ttf
-%%X_FONTSDIR%%/TTF/MigMix-2P-Bold.ttf
-%%X_FONTSDIR%%/TTF/MigMix-2P-Regular.ttf
+%%X_FONTSDIR%%/TTF/MigMix-1M-bold.ttf
+%%X_FONTSDIR%%/TTF/MigMix-1M-regular.ttf
+%%X_FONTSDIR%%/TTF/MigMix-1P-bold.ttf
+%%X_FONTSDIR%%/TTF/MigMix-1P-regular.ttf
+%%X_FONTSDIR%%/TTF/MigMix-2M-bold.ttf
+%%X_FONTSDIR%%/TTF/MigMix-2M-regular.ttf
+%%X_FONTSDIR%%/TTF/MigMix-2P-bold.ttf
+%%X_FONTSDIR%%/TTF/MigMix-2P-regular.ttf
 @exec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
 @unexec %%LOCALBASE%%/bin/fc-cache -s -f -v %D/%%X_FONTSDIR%%/TTF || true
 @unexec rm -f %D/%%X_FONTSDIR%%/TTF/fonts.cache-1
