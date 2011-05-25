@@ -1,0 +1,8 @@
+--- doc/CMakeLists.txt.orig	2011-04-15 22:40:26.000000000 +0400
++++ doc/CMakeLists.txt	2011-05-25 01:42:25.000000000 +0400
+@@ -1,5 +1,4 @@
+ IF (NOT WIN32)
+-  find_package(Doxygen)
+   if (DOXYGEN_FOUND)
+     include(Documentation)
+     file(MAKE_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/sourcecode)
