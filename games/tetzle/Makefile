@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tetzle
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	2.0.0
 CATEGORIES=	games
 MASTER_SITES=	http://gottcode.org/tetzle/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -26,8 +25,8 @@ MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
-		PREFIX=${PREFIX} -spec ${QMAKESPEC} tetzle.pro
+	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS} \
+		PREFIX=${PREFIX} tetzle.pro
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tetzle ${PREFIX}/bin

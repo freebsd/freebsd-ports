@@ -1,8 +1,29 @@
 bin/tetzle
 share/applications/tetzle.desktop
+share/icons/hicolor/128x128/apps/tetzle.png
+share/icons/hicolor/16x16/apps/tetzle.png
+share/icons/hicolor/22x22/apps/tetzle.png
+share/icons/hicolor/32x32/apps/tetzle.png
 share/icons/hicolor/48x48/apps/tetzle.png
+share/icons/hicolor/64x64/apps/tetzle.png
+share/pixmaps/tetzle.xpm
+%%DATADIR%%/translations/en.qm
+%%DATADIR%%/translations/uk.qm
+%%DATADIR%%/translations/uk_UA.qm
+@dirrm %%DATADIR%%/translations
+@dirrm %%DATADIR%%
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
 @dirrmtry share/applications
