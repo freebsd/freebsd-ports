@@ -1,3 +1,6 @@
-Nag is the Horde task list manager.
+Nag is a web-based application built upon the Horde Application Framework which
+provides a simple, clean interface for managing online task lists (i.e., todo
+lists). It also includes strong integration with the other Horde applications
+and allows users to share task lists or enable light-weight project management.
 
-WWW: http://horde.org/nag/
+WWW: http://horde.org/
