@@ -3463,13 +3463,24 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>chromium</name>
-	<range><lt>11.0.696.68</lt></range>
+	<range><lt>11.0.696.71</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
 	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>Fixed in 11.0.698.71:<br/>
+	    [72189] Low CVE-2011-1801: Pop-up blocker bypass. Credit to Chamal
+	      De Silva.<br/>
+	    [82546] High CVE-2011-1804: Stale pointer in floats rendering.
+	      Credit to Martin Barbella.<br/>
+	    [82873] Critical CVE-2011-1806: Memory corruption in GPU command
+	      buffer. Credit to Google Chrome Security Team (Cris Neckar).<br/>
+	    [82903] Critical CVE-2011-1807: Out-of-bounds write in blob
+	      handling. Credit to Google Chrome Security Team (Inferno) and
+	      Kostya Serebryany of the Chromium development community.</p>
+
 	  <p>Fixed in 11.0.696.68:<br/>
 	    [64046] High CVE-2011-1799: Bad casts in Chromium WebKit glue.
 	      Credit to Google Chrome Security Team (SkyLined).<br/>
@@ -3842,11 +3853,15 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2011-1456</cvename>
       <cvename>CVE-2011-1799</cvename>
       <cvename>CVE-2011-1800</cvename>
+      <cvename>CVE-2011-1801</cvename>
+      <cvename>CVE-2011-1804</cvename>
+      <cvename>CVE-2011-1806</cvename>
+      <cvename>CVE-2011-1807</cvename>
     </references>
     <dates>
       <discovery>2010-10-19</discovery>
       <entry>2010-12-07</entry>
-      <modified>2011-05-12</modified>
+      <modified>2011-05-25</modified>
     </dates>
   </vuln>
 
