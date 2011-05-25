@@ -7,6 +7,7 @@
 
 PORTNAME=	ghostscript9
 PORTVERSION=	9.02
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://ghostscript.com/releases/:gs_srcs \
 		SF/ghostscript/files/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \

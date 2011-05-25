@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/print/ghostscript9/pkg-plist,v 1.1 2011-05-23 20:58:46 hrs Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/print/ghostscript9/pkg-plist,v 1.2 2011-05-25 21:22:30 hrs Exp $
 bin/bdftops
 bin/dumphint
 bin/dvipdf
@@ -22,6 +22,7 @@ bin/pdf2ps
 bin/pdfopt
 bin/pf2afm
 bin/pfbtopfa
+bin/pphs
 bin/printafm
 bin/ps2ascii
 bin/ps2epsi
