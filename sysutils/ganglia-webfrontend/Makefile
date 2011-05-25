@@ -7,6 +7,7 @@
 
 PORTNAME=	webfrontend
 PORTVERSION=	3.1.7
+PORTREVISION=	1
 CATEGORIES=	sysutils net parallel www
 MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}
 PKGNAMEPREFIX=	ganglia-
@@ -15,8 +16,10 @@ DISTNAME=	ganglia-${PORTVERSION}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, web frontend
 
-LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr1
-RUN_DEPENDS+=	${LOCALBASE}/sbin/gmetad:${PORTSDIR}/sysutils/ganglia-monitor-core
+LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1 \
+		confuse:${PORTSDIR}/devel/libconfuse \
+		pcre:${PORTSDIR}/devel/pcre
+RUN_DEPENDS=	${LOCALBASE}/sbin/gmetad:${PORTSDIR}/sysutils/ganglia-monitor-core
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -91,7 +94,7 @@ post-install:
 
 build-plist:
 	@${RM} ${PLIST}
-	@${ECHO_CMD} '@unexec cmp -s %D/%%WEBFRONTDIR%%/conf.php %D/%%WEBFRONTDIR%%/conf.php.sample && rm -f %D/%%WEBFRONTDIR%%/conf.php' >> ${PLIST}
+	@${ECHO_CMD} '@unexec cmp -s %D/%%WEBFRONTDIR%%/conf.php %D/%%WEBFRONTDIR%%/conf.php.sample && ${RM} -f %D/%%WEBFRONTDIR%%/conf.php' >> ${PLIST}
 	@${FIND} ${TMP_WEBFRONTDIR}/* -type f | \
 	    ${SED} -e 's|${TMP_WEBFRONTDIR}|%%WEBFRONTDIR%%|' | \
 	    ${SORT} >> ${PLIST}
