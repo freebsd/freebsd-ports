@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdconv
-PORTVERSION=	4.8
+PORTVERSION=	5.0
 CATEGORIES=	converters perl5
 MASTER_SITES=	https://github.com/buganini/perl-${PORTNAME}/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	p5-
@@ -15,11 +15,11 @@ DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GITVERSION}
 MAINTAINER=	buganini@gmail.com
 COMMENT=	Perl wrapper for bsdconv
 
-LIB_DEPENDS=	bsdconv.4:${PORTSDIR}/converters/bsdconv
+LIB_DEPENDS=	bsdconv.5:${PORTSDIR}/converters/bsdconv
 
 LICENSE=	BSD
 
-GITVERSION=	1ee9a24
+GITVERSION=	ee14c04
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/buganini-perl-${PORTNAME}-${GITVERSION}
 
