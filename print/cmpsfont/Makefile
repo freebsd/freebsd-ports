@@ -7,10 +7,9 @@
 
 PORTNAME=	cmpsfont
 PORTVERSION=	1.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	print x11-fonts
-MASTER_SITES=	http://cvsup.theplanet.com/distfiles/ \
-		http://ftp.ctex.org/pub/tex/fonts/type1/
+MASTER_SITES=	http://ftp.ctex.org/pub/tex/fonts/type1/
 DISTNAME=	cmps
 EXTRACT_SUFX=	-unix.tar.gz
 
@@ -47,7 +46,7 @@ do-install:
 	${MKDIR} ${PREFIX}/${FONTSDIR}/type1
 	${INSTALL_DATA} ${WRKSRC}/pfb/* ${PREFIX}/${FONTSDIR}/type1
 	${INSTALL_DATA} \
-		${WRKSRC}/README ${WRKSRC}/cmsample.tex \
+		${WRKSRC}/READ.ME ${WRKSRC}/cmsample.tex \
 		${PREFIX}/${FONTSDIR}/
 
 .if !defined(WITHOUT_X11)
