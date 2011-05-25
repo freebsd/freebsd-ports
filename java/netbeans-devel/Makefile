@@ -24,7 +24,7 @@ PREFIXDIR=	${PREFIX}/netbeans70
 
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 
-#IGNORE=		No development version available right now. Please use java/netbeans instead.
+IGNORE=		No development version available right now. Please use java/netbeans instead.
 
 do-patch:
 	@${REINPLACE_CMD} -i "" -e '19s|#||;19s|/path/to/jdk|${JAVA_HOME}|' \
