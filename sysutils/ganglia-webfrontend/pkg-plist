@@ -65,5 +65,5 @@
 @dirrm %%WEBFRONTDIR%%/templates/default
 @dirrm %%WEBFRONTDIR%%/templates
 @dirrm %%WEBFRONTDIR%%/graph.d
-@dirrmtry /bin/rmdir %D/%%WEBFRONTDIR%%
+@dirrmtry rmdir %D/%%WEBFRONTDIR%%
 @unexec (test -d %D/%%WEBFRONTDIR%% && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%WEBFRONTDIR%% and its contents manually.")) || true
