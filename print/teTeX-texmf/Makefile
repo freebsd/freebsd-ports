@@ -19,10 +19,10 @@ MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Thomas Esser's distribution of TeX & friends (texmf tree)
 
 BUILD_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/share/fonts/cmpsfont/README:${PORTSDIR}/print/cmpsfont \
+		${LOCALBASE}/share/fonts/cmpsfont/READ.ME:${PORTSDIR}/print/cmpsfont \
 		${LOCALBASE}/share/fonts/amspsfont/READ.ME:${PORTSDIR}/print/amspsfnt
 RUN_DEPENDS=	${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal \
-		${LOCALBASE}/share/fonts/cmpsfont/README:${PORTSDIR}/print/cmpsfont \
+		${LOCALBASE}/share/fonts/cmpsfont/READ.ME:${PORTSDIR}/print/cmpsfont \
 		${LOCALBASE}/share/fonts/amspsfont/READ.ME:${PORTSDIR}/print/amspsfnt
 
 CONFLICTS=	latex2e-[0-9]* tex-[0-9]* dvips-[0-9]* xdvi-[0-9]* \
