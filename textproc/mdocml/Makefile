@@ -23,7 +23,7 @@ EXAMPLESDIR_REL=share/examples/mandoc
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^CFLAGS/s/-g//' -e '/^PREFIX/s/=/?=/' \
-		-e '/INSTALL_LIB/d' -e '/LIBDIR/d' \
+		-e '/INSTALL_LIB/d' -e '/LIBDIR/d' -e '/INCLUDEDIR/d' \
 		${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
