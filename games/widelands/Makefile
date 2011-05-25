@@ -6,50 +6,45 @@
 #
 
 PORTNAME=	widelands
-DISTVERSION=	build13
-PORTREVISION=	8
+DISTVERSION=	build16
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/Old%20releases%20%21%21%21/build-13/
-DISTNAME=	${PORTNAME:C/^w/W/}-${DISTVERSION:C/^b/B/}-src
+MASTER_SITES=	http://launchpadlibrarian.net/69520494/
+DISTNAME=	${PORTNAME}-${DISTVERSION}-src
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Realtime strategy game inspired by Settlers II
 
-LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
-		boost_thread.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	ggzcore.9:${PORTSDIR}/games/ggz-client-libs \
+		png.6:${PORTSDIR}/graphics/png \
+		GLEW.1:${PORTSDIR}/graphics/glew
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs
 
 USE_BZIP2=	yes
-USE_GETTEXT=	yes
-USE_PYTHON_BUILD=2.5+
+USE_CMAKE=	yes
+CMAKE_OUTSOURCE=yes
+CMAKE_ARGS=	-DWL_INSTALL_PREFIX="${PREFIX}" \
+		-DWL_INSTALL_DATADIR="share/widelands" \
+		-DWL_INSTALL_BINDIR="bin" \
+		-DWL_VERSION="${DISTVERSION}"
+USE_LUA=	5.1+
 USE_SDL=	sdl mixer image net ttf gfx
-USE_GCC=	4.2+
+USE_PYTHON_BUILD=2.4+
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/widelands
 
-WRKSRC=		${WRKDIR}/widelands-${DISTVERSION:C/build/b/}
-
-USE_SCONS=	yes
-SCONS_ARGS=	install_prefix=${PREFIX} bindir=bin datadir=share/widelands \
-		localedir=share/widelands/locale build=release \
-		sdlconfig=${SDL_CONFIG}
-MAKE_JOBS_SAFE=	yes
-
 DESKTOP_ENTRIES="Widelands" \
 		"Realtime strategy game inspired by Settlers II" \
-		"${DATADIR}/pics/wl-ico-32.png" \
+		"${DATADIR}/pics/wl-ico-64.png" \
 		"widelands" \
 		"Game;StrategyGame;" \
 		false
 
 post-patch:
-	@${REINPLACE_CMD} -e '/prefer_localdata/ s|True|False|' \
-		${WRKSRC}/worlds/SConscript
 	@${REINPLACE_CMD} -e '/ifndef/ s|__APPLE__|__FreeBSD__|' \
 		${WRKSRC}/src/backtrace.cc
-	@${REINPLACE_CMD} -e 's|/usr/bin/python|${PYTHON_CMD}|' \
-		${WRKSRC}/utils/buildlocale.py
-	@${REINPLACE_CMD} -e 's|revstring=.*|return "${DISTVERSION}-FreeBSD"|' \
-		${WRKSRC}/build/scons-tools/detect_revision.py
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/cmake/Modules/*.cmake
 
 post-install:
 	@${FIND} ${DATADIR} -type f | \

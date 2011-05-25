@@ -1,0 +1,11 @@
+--- CMakeLists.txt.orig	2011-04-15 22:40:26.000000000 +0400
++++ CMakeLists.txt	2011-05-25 01:12:54.000000000 +0400
+@@ -204,7 +204,7 @@
+ set (CMAKE_CXX_FLAGS_DEBUG "-g -DDEBUG -DNOPARACHUTE${WL_COMPILERFLAG_OLDSTYLECAST}${WL_COMPILERFLAG_GENERICWARNINGS}${WL_COMPILERFLAG_EXTRAWARNINGS}${WL_COMPILERFLAG_STRICT}" CACHE STRING "Set by widelands CMakeLists.txt" FORCE)
+ 
+ # CMAKE defines "-O3 -DNDEBUG", but we better say -O2 (see gcc manual)
+-set (CMAKE_CXX_FLAGS_RELEASE "-O2 -DNDEBUG" CACHE STRING "Set by widelands CMakeLists.txt" FORCE)
++set (CMAKE_CXX_FLAGS_RELEASE "-DNDEBUG" CACHE STRING "Set by widelands CMakeLists.txt" FORCE)
+ 
+ #If building with MSVC, then check for 3rdparty libs
+ if (DEFINED MSVC)
