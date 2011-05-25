@@ -403,6 +403,8 @@
 %%WWWDIR%%/languages/pt_br.php
 %%WWWDIR%%/languages/ru_ru.php
 %%WWWDIR%%/lib/ajax.php
+%%WWWDIR%%/lib/auth/Builtin.php
+%%WWWDIR%%/lib/auth/WebAuth.php
 %%WWWDIR%%/lib/cache.php
 %%WWWDIR%%/lib/config.php
 %%WWWDIR%%/lib/jqueryFileTree.php
@@ -457,6 +459,7 @@
 %%WWWDIR%%/screen.php
 @dirrm %%WWWDIR%%/rdpweb
 @dirrm %%WWWDIR%%/panes
+@dirrm %%WWWDIR%%/lib/auth
 @dirrm %%WWWDIR%%/lib
 @dirrm %%WWWDIR%%/languages
 @dirrm %%WWWDIR%%/js
