@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dc96ac1f-86b1-11e0-9e85-00215af774f0">
+    <topic>unbound -- An empty error packet handling assertion failure</topic>
+    <affects>
+      <package>
+	<name>unbound</name>
+	<range><lt>1.4.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Unbound developer reports:</p>
+	<blockquote
+	  cite="http://unbound.nlnetlabs.nl/downloads/CVE-2011-1922.txt">
+	  <p>NLnet Labs was notified of an error in Unbound's code-path
+	    for error replies which is triggered under special conditions.
+	    The error causes the program to abort.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-1922</cvename>
+      <url>http://unbound.nlnetlabs.nl/downloads/CVE-2011-1922.txt</url>
+    </references>
+    <dates>
+      <discovery>2011-05-25</discovery>
+      <entry>2011-05-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="115a1389-858e-11e0-a76c-000743057ca2">
     <topic>Pubcookie Login Server -- XSS Vulnerability</topic>
     <affects>
