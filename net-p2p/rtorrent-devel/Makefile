@@ -16,8 +16,6 @@ COMMENT=	BitTorrent Client written in C++ (development version)
 BUILD_DEPENDS=	libtorrent-devel=0.12.8:${PORTSDIR}/net-p2p/libtorrent-devel
 RUN_DEPENDS=	libtorrent-devel=0.12.8:${PORTSDIR}/net-p2p/libtorrent-devel
 
-BROKEN=		fails to package
-
 MASTERDIR=	${.CURDIR}/../rtorrent
 PATCHDIR=	${.CURDIR}/files/
 DISTINFO_FILE=	${.CURDIR}/distinfo
