@@ -32,7 +32,7 @@ PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
-BUILD_DEPENDS=	${LOCALBASE}/include/v8.h:${PORTSDIR}/lang/v8
+BUILD_DEPENDS+=	${LOCALBASE}/include/v8.h:${PORTSDIR}/lang/v8
 CONFIGURE_ARGS+=	--shared-v8-includes=${LOCALBASE}/include --shared-v8-libpath=${LOCALBASE}/lib
 PLIST_SUB+=	SHAREDV8="@comment "
 .else
