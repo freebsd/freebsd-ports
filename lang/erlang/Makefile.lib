@@ -1,59 +1,60 @@
 # $FreeBSD$
 
-ERTS_VSN=	5.8.3
-TOOLS_VSN=	2.6.6.3
+ERTS_VSN=	5.8.4
+TOOLS_VSN=	2.6.6.4
 OTP_LIBS=	appmon-2.1.13 \
-		asn1-1.6.16 \
-		common_test-1.5.3 \
-		compiler-4.7.3 \
-		cosEvent-2.1.10 \
-		cosEventDomain-1.1.10 \
-		cosFileTransfer-1.1.10 \
-		cosNotification-1.1.16 \
-		cosProperty-1.1.13 \
-		cosTime-1.1.10 \
-		cosTransactions-1.2.10 \
-		crypto-2.0.2.1 \
+		asn1-1.6.17 \
+		common_test-1.5.4 \
+		compiler-4.7.4 \
+		cosEvent-2.1.11 \
+		cosEventDomain-1.1.11 \
+		cosFileTransfer-1.1.11 \
+		cosNotification-1.1.17 \
+		cosProperty-1.1.14 \
+		cosTime-1.1.11 \
+		cosTransactions-1.2.11 \
+		crypto-2.0.3 \
 		debugger-3.2.6 \
-		dialyzer-2.4.2 \
-		docbuilder-0.9.8.9 \
-		edoc-0.7.7 \
-		erl_docgen-0.2.4 \
-		erl_interface-3.7.3 \
-		erts-5.8.3 \
-		et-1.4.2 \
-		eunit-2.1.6 \
+		dialyzer-2.4.3 \
+		diameter-0.9 \
+		docbuilder-0.9.8.10 \
+		edoc-0.7.8 \
+		erl_docgen-0.2.5 \
+		erl_interface-3.7.4 \
+		erts-5.8.4 \
+		et-1.4.3 \
+		eunit-2.1.7 \
 		gs-1.5.13 \
-		hipe-3.7.9 \
+		hipe-3.8 \
 		ic-4.2.26 \
-		inets-5.5.2 \
+		inets-5.6 \
 		inviso-0.6.2 \
 		jinterface-1.5.4 \
-		kernel-2.14.3 \
+		kernel-2.14.4 \
 		megaco-3.15.1 \
-		mnesia-4.4.17 \
+		mnesia-4.4.19 \
 		observer-0.9.9 \
 		odbc-2.10.10 \
-		orber-3.6.20 \
-		os_mon-2.2.5 \
+		orber-3.6.21 \
+		os_mon-2.2.6 \
 		otp_mibs-1.0.6 \
 		parsetools-2.0.5 \
 		percept-0.8.5 \
 		pman-2.7.1 \
-		public_key-0.11 \
-		reltool-0.5.5 \
+		public_key-0.12 \
+		reltool-0.5.6 \
 		runtime_tools-1.8.5 \
-		sasl-2.1.9.3 \
-		snmp-4.19 \
-		ssh-2.0.4 \
-		ssl-4.1.4 \
-		stdlib-1.17.3 \
-		syntax_tools-1.6.7 \
-		test_server-3.4.3 \
+		sasl-2.1.9.4 \
+		snmp-4.20 \
+		ssh-2.0.7 \
+		ssl-4.1.5 \
+		stdlib-1.17.4 \
+		syntax_tools-1.6.7.1 \
+		test_server-3.4.4 \
 		toolbar-1.4.1 \
-		tools-2.6.6.3 \
-		tv-2.1.4.6 \
-		typer-0.9 \
-		webtool-0.8.7 \
-		wx-0.98.9 \
-		xmerl-1.2.8
+		tools-2.6.6.4 \
+		tv-2.1.4.7 \
+		typer-0.9.1 \
+		webtool-0.8.8 \
+		wx-0.98.10 \
+		xmerl-1.2.9
