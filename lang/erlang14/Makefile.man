@@ -1,6 +1,7 @@
 # $FreeBSD$
 
 MAN1=	ct_run.1 \
+	diameter_compile.1 \
 	epmd.1 \
 	erl.1 \
 	erl_call.1 \
@@ -123,6 +124,11 @@ MAN3=	CosEventChannelAdmin.3 \
 	debugger.3 \
 	dets.3 \
 	dialyzer.3 \
+	diameter.3 \
+	diameter_app.3 \
+	diameter_sctp.3 \
+	diameter_tcp.3 \
+	diameter_transport.3 \
 	dict.3 \
 	digraph.3 \
 	digraph_utils.3 \
@@ -597,6 +603,7 @@ MAN3=	CosEventChannelAdmin.3 \
 MAN4=	app.4 \
 	appup.4 \
 	config.4 \
+	diameter_dict.4 \
 	rel.4 \
 	relup.4 \
 	script.4
