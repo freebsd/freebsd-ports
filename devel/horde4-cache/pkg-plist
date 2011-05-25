@@ -1,0 +1,16 @@
+%%HORBAS%%/Cache.php
+%%HORDIR%%/Exception.php
+%%HORDIR%%/Storage/Apc.php
+%%HORDIR%%/Storage/Base.php
+%%HORDIR%%/Storage/Eaccelerator.php
+%%HORDIR%%/Storage/File.php
+%%HORDIR%%/Storage/Memcache.php
+%%HORDIR%%/Storage/Mock.php
+%%HORDIR%%/Storage/Null.php
+%%HORDIR%%/Storage/Session.php
+%%HORDIR%%/Storage/Sql.php
+%%HORDIR%%/Storage/Stack.php
+%%HORDIR%%/Storage/Xcache.php
+@dirrm %%HORDIR%%/Storage
+@dirrmtry %%HORDIR%%
+@dirrmtry %%HORBAS%%
