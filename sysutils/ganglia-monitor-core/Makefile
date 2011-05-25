@@ -7,6 +7,7 @@
 
 PORTNAME=	monitor-core
 PORTVERSION=	3.1.7
+PORTREVISION=	1
 CATEGORIES=	sysutils net parallel
 MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}
 PKGNAMEPREFIX=	ganglia-
@@ -18,8 +19,9 @@ DISTNAME=	ganglia-${PORTVERSION}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, monitoring daemon
 
-LIB_DEPENDS+=	confuse:${PORTSDIR}/devel/libconfuse
-LIB_DEPENDS+=	apr-1:${PORTSDIR}/devel/apr1
+LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1 \
+		confuse:${PORTSDIR}/devel/libconfuse \
+		pcre:${PORTSDIR}/devel/pcre
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 
