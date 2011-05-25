@@ -4322,6 +4322,7 @@ ghostscript7-korfont            ports/print/ghostscript7-korfont
 ghostscript7-nox11              ports/print/ghostscript7-nox11
 ghostscript8                    ports/print/ghostscript8
 ghostscript8-nox11              ports/print/ghostscript8-nox11
+ghostscript9                    ports/print/ghostscript9
 ghostview                       ports/print/ghostview
 ghtool                          ports/dns/ghtool
 giacxcas                        ports/math/giacxcas
@@ -5413,6 +5414,11 @@ horde-whups                     ports/devel/horde-whups
 horde-wicked                    ports/www/horde-wicked
 horde4-auth                     ports/security/horde4-auth
 horde4-base                     ports/www/horde4-base
+horde4-content                  ports/devel/horde4-content
+horde4-image                    ports/graphics/horde4-image
+horde4-itip                     ports/deskutils/horde4-itip
+horde4-kronolith                ports/deskutils/horde4-kronolith
+horde4-rdo                      ports/devel/horde4-rdo
 hostapd                         ports/net/hostapd
 hot-babe                        ports/deskutils/hot-babe
 hotcrp                          ports/www/hotcrp
@@ -13122,6 +13128,8 @@ p5-Mouse                        ports/devel/p5-Mouse
 p5-MouseX-AttributeHelpers      ports/devel/p5-MouseX-AttributeHelpers
 p5-MouseX-ConfigFromFile        ports/devel/p5-MouseX-ConfigFromFile
 p5-MouseX-Getopt                ports/devel/p5-MouseX-Getopt
+p5-MouseX-NativeTraits          ports/devel/p5-MouseX-NativeTraits
+p5-MouseX-StrictConstructor     ports/devel/p5-MouseX-StrictConstructor
 p5-MouseX-Types                 ports/devel/p5-MouseX-Types
 p5-MouseX-Types-Path-Class      ports/devel/p5-MouseX-Types-Path-Class
 p5-Mozilla-CA                   ports/www/p5-Mozilla-CA
@@ -14825,6 +14833,7 @@ p5-Xango                        ports/www/p5-Xango
 p5-Xmms                         ports/audio/p5-Xmms
 p5-YAML                         ports/textproc/p5-YAML
 p5-YAML-LibYAML                 ports/textproc/p5-YAML-LibYAML
+p5-YAML-Shell                   ports/textproc/p5-YAML-Shell
 p5-YAML-Syck                    ports/textproc/p5-YAML-Syck
 p5-YAML-Tiny                    ports/textproc/p5-YAML-Tiny
 p5-YAPE-HTML                    ports/textproc/p5-YAPE-HTML
@@ -16142,6 +16151,7 @@ p5-device-modem                 ports/comms/p5-Device-Modem
 p5-device-serialport            ports/comms/p5-Device-SerialPort
 p5-device-usb                   ports/devel/p5-Device-USB
 p5-dialog                       ports/devel/p5-Dialog
+p5-dicewaregen                  ports/security/p5-dicewaregen
 p5-digest                       ports/security/p5-Digest
 p5-digest-adler32               ports/security/p5-Digest-Adler32
 p5-digest-bubblebabble          ports/security/p5-Digest-BubbleBabble
@@ -17362,6 +17372,8 @@ p5-mouse                        ports/devel/p5-Mouse
 p5-mousex-attributehelpers      ports/devel/p5-MouseX-AttributeHelpers
 p5-mousex-configfromfile        ports/devel/p5-MouseX-ConfigFromFile
 p5-mousex-getopt                ports/devel/p5-MouseX-Getopt
+p5-mousex-nativetraits          ports/devel/p5-MouseX-NativeTraits
+p5-mousex-strictconstructor     ports/devel/p5-MouseX-StrictConstructor
 p5-mousex-types                 ports/devel/p5-MouseX-Types
 p5-mousex-types-path-class      ports/devel/p5-MouseX-Types-Path-Class
 p5-mozilla-ca                   ports/www/p5-Mozilla-CA
@@ -19124,6 +19136,7 @@ p5-yahoo-lifestyle              ports/www/p5-Yahoo-Lifestyle
 p5-yahoo-search                 ports/www/p5-Yahoo-Search
 p5-yaml                         ports/textproc/p5-YAML
 p5-yaml-libyaml                 ports/textproc/p5-YAML-LibYAML
+p5-yaml-shell                   ports/textproc/p5-YAML-Shell
 p5-yaml-syck                    ports/textproc/p5-YAML-Syck
 p5-yaml-tiny                    ports/textproc/p5-YAML-Tiny
 p5-yape-html                    ports/textproc/p5-YAPE-HTML
