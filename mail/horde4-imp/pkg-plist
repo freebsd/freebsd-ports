@@ -18,6 +18,7 @@
 %%HORDIR%%/index-dimp.php
 %%HORDIR%%/index.php
 %%HORDIR%%/js/acl.js
+%%HORDIR%%/js/base64url.js
 %%HORDIR%%/js/compose-base.js
 %%HORDIR%%/js/compose-dimp.js
 %%HORDIR%%/js/compose.js
@@ -81,6 +82,8 @@
 %%HORDIR%%/lib/Flag/Imap/Draft.php
 %%HORDIR%%/lib/Flag/Imap/Flagged.php
 %%HORDIR%%/lib/Flag/Imap/Forwarded.php
+%%HORDIR%%/lib/Flag/Imap/Junk.php
+%%HORDIR%%/lib/Flag/Imap/NotJunk.php
 %%HORDIR%%/lib/Flag/Imap/Seen.php
 %%HORDIR%%/lib/Flag/System.php
 %%HORDIR%%/lib/Flag/System/Attachment.php
@@ -97,12 +100,14 @@
 %%HORDIR%%/lib/Imap.php
 %%HORDIR%%/lib/Imap/Acl.php
 %%HORDIR%%/lib/Imap/Exception.php
+%%HORDIR%%/lib/Imap/PermanentFlags.php
 %%HORDIR%%/lib/Imap/Thread.php
 %%HORDIR%%/lib/Imap/Tree.php
 %%HORDIR%%/lib/Indices.php
 %%HORDIR%%/lib/LoginTasks/SystemTask/GarbageCollection.php
 %%HORDIR%%/lib/LoginTasks/SystemTask/Upgrade.php
 %%HORDIR%%/lib/LoginTasks/SystemTask/UpgradeAuth.php
+%%HORDIR%%/lib/LoginTasks/Task/Autocreate.php
 %%HORDIR%%/lib/LoginTasks/Task/DeleteAttachmentsMonthly.php
 %%HORDIR%%/lib/LoginTasks/Task/DeleteSentmailMonthly.php
 %%HORDIR%%/lib/LoginTasks/Task/FilterOnLogin.php
@@ -184,6 +189,7 @@
 %%HORDIR%%/lib/Spam.php
 %%HORDIR%%/lib/Test.php
 %%HORDIR%%/lib/Tree/Flist.php
+%%HORDIR%%/lib/Tree/Jquerymobile.php
 %%HORDIR%%/lib/Ui/Compose.php
 %%HORDIR%%/lib/Ui/Editor.php
 %%HORDIR%%/lib/Ui/Folder.php
@@ -470,6 +476,7 @@
 %%HORDIR%%/themes/default/graphics/key_down.png
 %%HORDIR%%/themes/default/graphics/key_up.png
 %%HORDIR%%/themes/default/graphics/loading.gif
+%%HORDIR%%/themes/default/graphics/locked.png
 %%HORDIR%%/themes/default/graphics/logo.png
 %%HORDIR%%/themes/default/graphics/logout.png
 %%HORDIR%%/themes/default/graphics/mail_answered.png
@@ -505,6 +512,7 @@
 %%HORDIR%%/themes/default/graphics/sbcursor_top.png
 %%HORDIR%%/themes/default/graphics/scroller.png
 %%HORDIR%%/themes/default/graphics/scroller_back.png
+%%HORDIR%%/themes/default/graphics/search.png
 %%HORDIR%%/themes/default/graphics/select.png
 %%HORDIR%%/themes/default/graphics/shared.png
 %%HORDIR%%/themes/default/graphics/signed.png
@@ -847,4 +855,3 @@
 @dirrm %%HORDIR%%/bin
 @dirrmtry %%HORDIR%%
 @dirrmtry %%HORBAS%%
-
