@@ -129,16 +129,16 @@
 +		     const char *type,
 +		     const char *data)
 +{
-+  if (! data || strcmp(system, "DEVFS") || strcmp(subsystem, "CDEV") ||
-+      (strcmp(type, "CREATE") && strcmp(type, "DESTROY")))
++  if (! data || strcmp(system, "USB") || strcmp(subsystem, "DEVICE") ||
++      (strcmp(type, "ATTACH") && strcmp(type, "DETACH")))
 +    return FALSE;
 +
-+  if (strstr(data, "cdev=ugen") != NULL ||
-+      strstr(data, "cdev=usb") != NULL)
-+    return TRUE;
-+
-+  return FALSE;
++  return TRUE;
 +}
++
++
++
++
 +
  HFHandler hf_usb2_handler = {
    .privileged_init	= hf_usb2_privileged_init,
