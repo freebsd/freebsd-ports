@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dicewaregen
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	security
 MASTER_SITES=	http://files.bsdroot.lv/my/FreeBSD/distfiles/
 PKGNAMEPREFIX=	p5-
@@ -22,7 +22,7 @@ PLIST_FILES=	bin/${PORTNAME}
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/dicewaregen-${REV}
-REV=		a1b6ae57d64b
+REV=		20c777eac1db
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/dicewaregen.pl ${PREFIX}/bin/${PORTNAME}
