@@ -7,7 +7,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	3.4.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gnu.org/gnu/octave/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/bleeding-edge/
@@ -23,7 +23,7 @@ BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot \
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		gsed:${PORTSDIR}/textproc/gsed \
 		${PREFIX}/bin/makeinfo:${PORTSDIR}/print/texinfo
-LIB_DEPENDS=	glpk.28:${PORTSDIR}/math/glpk \
+LIB_DEPENDS=	glpk.30:${PORTSDIR}/math/glpk \
 		umfpack.1:${PORTSDIR}/math/suitesparse \
 		qhull:${PORTSDIR}/math/qhull \
 		arpack:${PORTSDIR}/math/arpack \
