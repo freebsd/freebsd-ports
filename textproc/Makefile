@@ -246,6 +246,7 @@
     SUBDIR += hs-tagsoup
     SUBDIR += hs-texmath
     SUBDIR += hs-xhtml
+    SUBDIR += hs-xhtml-docs
     SUBDIR += hs-xml
     SUBDIR += hsb-aspell
     SUBDIR += htdig
