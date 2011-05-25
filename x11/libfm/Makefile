@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	libfm
-PORTVERSION=	0.1.12
+PORTVERSION=	0.1.14
 CATEGORIES=	x11
-MASTER_SITES=	SF/pcmanfm/PCManFM2%20%2B%20Libfm%20%28experimental%29/libfm%20%28required%20by%20PCManFM%29/
+MASTER_SITES=	SF/pcmanfm/PCManFM%20%2B%20Libfm%20%28tarball%20release%29/libfm%20%28required%20by%20PCManFM%29/
 
 MAINTAINER=	kmoore@FreeBSD.org
-COMMENT=	The libFM backend library to PCManFM.
+COMMENT=	The libFM backend library to PCManFM
 
 LIB_DEPENDS=	startup-notification-1:${PORTSDIR}/x11/startup-notification \
 		menu-cache.1:${PORTSDIR}/x11/menu-cache
