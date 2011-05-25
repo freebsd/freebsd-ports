@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lrzip
-PORTVERSION=	0.601
+PORTVERSION=	0.605
 CATEGORIES=	archivers
 MASTER_SITES=	http://ck.kolivas.org/apps/lrzip/ \
 		http://files.gslin.org/Software/
@@ -27,6 +27,7 @@ USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 
 MAN1=		lrunzip.1 \
+		lrzcat.1 \
 		lrzip.1 \
 		lrztar.1 \
 		lrzuntar.1
