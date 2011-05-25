@@ -17,6 +17,7 @@ USE_BZIP2=	yes
 USE_GNOME=	gtk20 libxml2 gnomehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	libltdl
 
 CONFIGURE_ARGS+=	--with-all-plugins
 
