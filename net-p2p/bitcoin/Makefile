@@ -52,7 +52,7 @@ PLIST_FILES=	bin/${BINARY}
 
 .if defined(WITH_UPNP)
 LIB_DEPENDS+=	miniupnpc:${PORTSDIR}/net/miniupnpc
-MAKE_ENV+=	-DUSE_UPNP
+MAKE_ENV+=	USE_UPNP=yes
 .endif
 
 .include <bsd.port.pre.mk>
