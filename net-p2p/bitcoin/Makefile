@@ -7,6 +7,7 @@
 
 PORTNAME=	bitcoin
 PORTVERSION=	0.3.21
+PORTREVISION=	1
 CATEGORIES=	net-p2p finance
 MASTER_SITES=	https://download.github.com/		\
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
@@ -50,7 +51,7 @@ PLIST_FILES=	bin/${BINARY}
 .endif
 
 .if defined(WITH_UPNP)
-LIB_DEPENDS+=	libminiupnpc.5:${PORTSDIR}/net/miniupnpc
+LIB_DEPENDS+=	miniupnpc:${PORTSDIR}/net/miniupnpc
 MAKE_ENV+=	-DUSE_UPNP
 .endif
 
