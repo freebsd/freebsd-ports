@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdconv
-PORTVERSION=	4.6
+PORTVERSION=	5.0
 CATEGORIES=	converters
 MASTER_SITES=	https://github.com/buganini/php-${PORTNAME}/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	php5-
@@ -15,11 +15,11 @@ DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GITVERSION}
 MAINTAINER=	buganini@gmail.com
 COMMENT=	PHP wrapper for bsdconv
 
-LIB_DEPENDS=	bsdconv.4:${PORTSDIR}/converters/bsdconv
+LIB_DEPENDS=	bsdconv.5:${PORTSDIR}/converters/bsdconv
 
 LICENSE=	BSD
 
-GITVERSION=	4297d53
+GITVERSION=	7037d27
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/buganini-php-${PORTNAME}-${GITVERSION}
 
