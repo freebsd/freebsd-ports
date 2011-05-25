@@ -6,6 +6,7 @@
 
 PORTNAME=	ghc
 PORTVERSION=	7.0.3
+PORTREVISION=	1
 CATEGORIES=	lang haskell
 MASTER_SITES=	http://haskell.org/ghc/dist/${PORTVERSION}/:source \
 		${MASTER_SITE_LOCAL:S/$/:boot/} \
@@ -289,7 +290,9 @@ post-install:
 	cd ${DOCSDIR}/html/libraries && ./gen_contents_index
 .endif
 	@${RM} -f ${PREFIX}/bin/haddock
+.if !defined(NOPORTDOCS)
 	@${LN} -sf ${PREFIX}/bin/haddock-ghc-${GHC_VERSION} ${PREFIX}/bin/haddock
+.endif
 	@${RM} -f ${PREFIX}/lib/ghc-${GHC_VERSION}/package.conf.old
 
 .include <bsd.port.post.mk>

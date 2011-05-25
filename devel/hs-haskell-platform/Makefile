@@ -7,6 +7,7 @@
 
 PORTNAME=	haskell-platform
 PORTVERSION=	2011.2.0.1
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -32,7 +33,7 @@ USE_CABAL=	cgi==3001.1.7.4,1 \
 		regex-posix==0.94.4 \
 		stm==2.2.0.1 \
 		syb==0.3 \
-		xhtml==3000.2.0.1 \
+		xhtml==3000.2.0.1_1 \
 		zlib==0.5.3.1 \
 		HTTP==4000.1.1 \
 		deepseq==1.1.0.2 \
