@@ -7,7 +7,7 @@
 
 PORTNAME=	tmux
 PORTVERSION=	1.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -23,12 +23,10 @@ PLIST_FILES=	bin/tmux
 PORTDOCS=	CHANGES FAQ NOTES
 PORTEXAMPLES=	*
 
-CFLAGS+=	-I${LOCALBASE}/include
-#LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-
-OPTIONS=		KQUEUE   "Build without define HAVE_BROKEN_KQUEUE " On \
-			LIBEVENT_STATIC	"Build with static libevent" Off
+OPTIONS=	KQUEUE   	"Build without define HAVE_BROKEN_KQUEUE " On \
+		LIBEVENT2	"Use libevent version 2" Off \
+		LIBEVENT_STATIC	"Build with static libevent" Off \
+		BACKSPACE 	"Build with tty/keys patch" Off
 
 # Now I set tmux build without #define HAVE_BROKEN_KQUEUE as default and an option,
 # If it still hang the system or other run error, try as upstream suggest:
@@ -36,10 +34,32 @@ OPTIONS=		KQUEUE   "Build without define HAVE_BROKEN_KQUEUE " On \
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_LIBEVENT_STATIC)
-BUILD_DEPENDS+=	${LOCALBASE}/lib/libevent.a:${PORTSDIR}/devel/libevent
+.if defined(WITH_LIBEVENT2)
+CFLAGS+=	-I${LOCALBASE}/include/event2/compat -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib/event2
 .else
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+.endif
+
+MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+
+.if defined(WITH_LIBEVENT_STATIC)
+. if defined(WITH_LIBEVENT2)
+_LEVENT_LIB=	${LOCALBASE}/lib/event2/libevent.a
+BUILD_DEPENDS+=	${_LEVENT_LIB}:${PORTSDIR}/devel/libevent2
+. else
+_LEVENT_LIB=	${LOCALBASE}/lib/libevent.a
+BUILD_DEPENDS+=	${_LEVENT_LIB}:${PORTSDIR}/devel/libevent
+. endif
+.else
+. if defined(WITH_LIBEVENT2)
+_LEVENT_LIB=	-levent-2.0
+LIB_DEPENDS=	event-2.0:${PORTSDIR}/devel/libevent2
+. else
+_LEVENT_LIB=	-levent-1.4
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
+. endif
 .endif
 
 .if !defined(WITHOUT_KQUEUE)
@@ -52,13 +72,19 @@ EXTRA_PATCHES=	${PATCHDIR}/extra-patch-kqueue
 EXTRA_PATCHES=	${PATCHDIR}/extra-patch-fb7
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' \
-		${WRKSRC}/Makefile
-.if defined(WITH_LIBEVENT_STATIC)
-	@${REINPLACE_CMD} -e 's|-levent|${LOCALBASE}/lib/libevent.a|g' \
-		${WRKSRC}/configure
+.if defined(WITH_BACKSPACE)
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-tty-keys.c
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/etc/tmux.conf|${PREFIX}/etc/tmux.conf|g' \
+		${WRKSRC}/tmux.1 ${WRKSRC}/tmux.h
+	@${REINPLACE_CMD} -e 's|-I/usr/local/include||g' \
+		-e 's|/usr/local|${LOCALBASE}|g' \
+		-e 's|LDFLAGS+=|#LDFLAGS+=|g' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|-levent|${_LEVENT_LIB}|g' \
+		${WRKSRC}/configure
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/tmux ${PREFIX}/bin
