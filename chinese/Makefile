@@ -144,6 +144,7 @@
     SUBDIR += xpdf
     SUBDIR += xsim
     SUBDIR += xttmgr
+    SUBDIR += ydict
     SUBDIR += zhcon
 
 .include <bsd.port.subdir.mk>
