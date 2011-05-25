@@ -456,6 +456,7 @@
     SUBDIR += online-desktop
     SUBDIR += opal
     SUBDIR += opal3
+    SUBDIR += openafs
     SUBDIR += openam
     SUBDIR += openbgpd
     SUBDIR += opendpi
