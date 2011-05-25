@@ -553,6 +553,7 @@
     SUBDIR += horde-chora
     SUBDIR += horde-whups
     SUBDIR += horde4-content
+    SUBDIR += horde4-date
     SUBDIR += horde4-rdo
     SUBDIR += hp48cc
     SUBDIR += hp48xgcc
