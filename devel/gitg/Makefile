@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	gitg
-PORTVERSION=	0.0.6
-PORTREVISION=	1
+PORTVERSION=	0.0.8
 CATEGORIES=	devel deskutils gnome
-MASTER_SITES=	http://trac.novowork.com/gitg/raw-attachment/wiki/Releases/ \
-		http://mirror.amdmi3.ru/distfiles/
+MASTER_SITES=	GNOME
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	GTK-based git repository viewer
 
 RUN_DEPENDS=	git>=1.7.0.2:${PORTSDIR}/devel/git
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
