@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nmap/Parser/.packlist
 %%SITE_PERL%%/Nmap/Parser.pm
-%%SITE_PERL%%/Nmap/._Parser.pm
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nmap/Parser
 @dirrmtry %%SITE_PERL%%/Nmap
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Nmap
