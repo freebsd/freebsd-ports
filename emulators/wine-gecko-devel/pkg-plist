@@ -1,4 +1,0 @@
-%%DATADIR%%/wine/gecko/wine_gecko-%%GECKO_VERSION%%-x86.msi
-@dirrm %%DATADIR%%/wine/gecko
-@dirrmtry %%DATADIR%%/wine
-@dirrmtry %%DATADIR%%
