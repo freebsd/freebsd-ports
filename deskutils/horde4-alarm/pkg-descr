@@ -1,0 +1,6 @@
+Horde Alarm. This package provides an interface to deal with reminders, alarms 
+and notifications through a standardized API. The following notification 
+methods are available at the moment: 
+standard Horde notifications, popups, emails, sms.
+
+WWW: http://www.horde.org

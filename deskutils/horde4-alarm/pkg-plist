@@ -1,0 +1,13 @@
+%%HORBAS%%/Alarm.php
+%%HORDIR%%/Exception.php
+%%HORDIR%%/Handler.php
+%%HORDIR%%/Handler/Desktop.php
+%%HORDIR%%/Handler/Mail.php
+%%HORDIR%%/Handler/Notify.php
+%%HORDIR%%/Null.php
+%%HORDIR%%/Object.php
+%%HORDIR%%/Sql.php
+%%HORDIR%%/Translation.php
+@dirrm %%HORDIR%%/Handler
+@dirrmtry %%HORDIR%%
+@dirrmtry %%HORBAS%%
