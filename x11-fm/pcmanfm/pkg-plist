@@ -1,6 +1,9 @@
 bin/pcmanfm
+etc/xdg/pcmanfm/default/pcmanfm.conf
 share/applications/pcmanfm.desktop
+%%NLS%%share/locale/ar/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/bn/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/da/LC_MESSAGES/pcmanfm.mo
@@ -9,11 +12,14 @@ share/applications/pcmanfm.desktop
 %%NLS%%share/locale/en_GB/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/es/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/fo/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/he/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/hr/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/id/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/it/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/pcmanfm.mo
@@ -28,7 +34,9 @@ share/applications/pcmanfm.desktop
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/th/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pcmanfm.mo
 %%DATADIR%%/ui/pref.ui
 %%DATADIR%%/ui/autorun.ui
@@ -36,6 +44,9 @@ share/applications/pcmanfm.desktop
 %%DATADIR%%/ui/desktop-pref.ui
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
+@dirrmtry etc/xdg/pcmanfm/default
+@dirrmtry etc/xdg/pcmanfm
+@dirrmtry etc/xdg
 @dirrmtry share/applications
 @dirrmtry share/locale/bn_IN/LC_MESSAGES
 @dirrmtry share/locale/bn_IN
