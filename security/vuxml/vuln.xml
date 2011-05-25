@@ -109,14 +109,14 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Nathan Dors, Pubcookie Project reports:</p>
 	<blockquote cite="http://pubcookie.org/news/20061106-empty-auth-secadv.html">
 	  <p>An Abuse of Functionality vulnerability in the Pubcookie
-	     authentication process was found. This vulnerability
-	     allows an attacker to appear as if he or she were
-	     authenticated using an empty userid when such a userid
-	     isn't expected. Unauthorized access to web content and
-	     applications may result where access is restricted to
-	     users who can authenticate successfully but where no
-	     additional authorization is performed after
-	     authentication.</p>
+	    authentication process was found. This vulnerability
+	    allows an attacker to appear as if he or she were
+	    authenticated using an empty userid when such a userid
+	    isn't expected. Unauthorized access to web content and
+	    applications may result where access is restricted to
+	    users who can authenticate successfully but where no
+	    additional authorization is performed after
+	    authentication.</p>
 	</blockquote>
       </body>
     </description>
@@ -167,10 +167,11 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The Apache Portable Runtime Project reports:</p>
 	<blockquote cite="http://www.apache.org/dist/apr/CHANGES-APR-1.4">
 	  <p>A flaw was discovered in the apr_fnmatch() function in the Apache Portable
-             Runtime (APR) library 1.4.4 (or any backported versions that contained the
-             upstream fix for CVE-2011-0419). This could cause httpd workers to enter a
-             hung state (100% CPU utilization).</p>
-          <p>apr-util 1.3.11 could cause crashes with httpd's mod_authnz_ldap in some situations.</p>
+	    Runtime (APR) library 1.4.4 (or any backported versions that contained the
+	    upstream fix for CVE-2011-0419). This could cause httpd workers to enter a
+	    hung state (100% CPU utilization).</p>
+          <p>apr-util 1.3.11 could cause crashes with httpd's mod_authnz_ldap in some
+	    situations.</p>
 	</blockquote>
       </body>
     </description>
@@ -287,8 +288,8 @@ Note:  Please add new entries to the beginning of this file.
     </description>
     <references>
       <bid>46767</bid>
-      <cvename>CVE-2011-0418</cvename>  
-      <cvename>CVE-2011-1575</cvename>  
+      <cvename>CVE-2011-0418</cvename>
+      <cvename>CVE-2011-1575</cvename>
     </references>
     <dates>
       <discovery>2011-04-01</discovery>
@@ -353,10 +354,10 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The Apache Portable Runtime Project reports:</p>
 	<blockquote cite="http://www.apache.org/dist/apr/CHANGES-APR-1.4">
 	  <p>Note especially a security fix to APR 1.4.4, excessive CPU
-           consumption was possible due to an unconstrained, recursive
-           invocation of apr_fnmatch, as apr_fnmatch processed '*' wildcards.
-           Reimplement apr_fnmatch() from scratch using a non-recursive algorithm
-           now has improved compliance with the fnmatch() spec. (William Rowe)</p>
+            consumption was possible due to an unconstrained, recursive
+            invocation of apr_fnmatch, as apr_fnmatch processed '*' wildcards.
+            Reimplement apr_fnmatch() from scratch using a non-recursive algorithm
+            now has improved compliance with the fnmatch() spec. (William Rowe)</p>
 	</blockquote>
       </body>
     </description>
@@ -449,11 +450,11 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The Postfix SMTP server has a memory corruption error,
-	   when the Cyrus SASL library is used with authentication
-	   mechanisms other than PLAIN and LOGIN (ANONYMOUS is not
-	   affected, but should not be used for other reasons).
-	   This memory corruption is known to result in a program
-	   crash (SIGSEV).</p>
+	  when the Cyrus SASL library is used with authentication
+	  mechanisms other than PLAIN and LOGIN (ANONYMOUS is not
+	  affected, but should not be used for other reasons).
+	  This memory corruption is known to result in a program
+	  crash (SIGSEV).</p>
       </body>
     </description>
     <references>
@@ -664,9 +665,9 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Best Practical reports:</p>
 	<blockquote cite="http://blog.bestpractical.com/2011/04/security-vulnerabilities-in-rt.html">
 	  <p>In the process of preparing the release of RT 4.0.0, we performed
-             an extensive security audit of RT's source code.  During this
-             audit, several vulnerabilities were found which affect earlier
-             releases of RT.</p>
+	    an extensive security audit of RT's source code.  During this
+	    audit, several vulnerabilities were found which affect earlier
+	    releases of RT.</p>
 	</blockquote>
       </body>
     </description>
@@ -698,15 +699,15 @@ Note:  Please add new entries to the beginning of this file.
 	<p>An advisory published by the MIT Kerberos team says:</p>
 	<blockquote cite="http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-004.txt">
 	  <p>The password-changing capability of the MIT krb5 administration
-             daemon (kadmind) has a bug that can cause it to attempt to free()
-             an invalid pointer under certain error conditions.  This can cause
-             the daemon to crash or induce the execution of arbitrary code
-             (which is believed to be difficult).  No exploit that executes
-             arbitrary code is known to exist, but it is easy to trigger a
-             denial of service manually.</p>
+	    daemon (kadmind) has a bug that can cause it to attempt to free()
+	    an invalid pointer under certain error conditions.  This can cause
+	    the daemon to crash or induce the execution of arbitrary code
+	    (which is believed to be difficult).  No exploit that executes
+	    arbitrary code is known to exist, but it is easy to trigger a
+	    denial of service manually.</p>
 	  <p>Some platforms detect attempted freeing of invalid pointers and
-             protectively terminate the process, preventing arbitrary code
-             execution on those platforms.</p>
+	    protectively terminate the process, preventing arbitrary code
+	    execution on those platforms.</p>
 	</blockquote>
       </body>
     </description>
