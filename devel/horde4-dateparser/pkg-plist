@@ -1,0 +1,41 @@
+%%EXAMPLESDIR%%/Date/Parser/parse.php
+%%HORDIR%%/Parser.php
+%%HORDIR%%/Parser/Exception.php
+%%HORDIR%%/Parser/Handler.php
+%%HORDIR%%/Parser/Locale/Base.php
+%%HORDIR%%/Parser/Locale/Base/Grabber.php
+%%HORDIR%%/Parser/Locale/Base/Ordinal.php
+%%HORDIR%%/Parser/Locale/Base/Pointer.php
+%%HORDIR%%/Parser/Locale/Base/Repeater.php
+%%HORDIR%%/Parser/Locale/Base/Scalar.php
+%%HORDIR%%/Parser/Locale/Base/Separator.php
+%%HORDIR%%/Parser/Locale/Base/Timezone.php
+%%HORDIR%%/Parser/Locale/De.php
+%%HORDIR%%/Parser/Locale/De/Grabber.php
+%%HORDIR%%/Parser/Locale/De/Ordinal.php
+%%HORDIR%%/Parser/Locale/De/Pointer.php
+%%HORDIR%%/Parser/Locale/De/Repeater.php
+%%HORDIR%%/Parser/Locale/De/Scalar.php
+%%HORDIR%%/Parser/Locale/De/Separator.php
+%%HORDIR%%/Parser/Locale/De/Timezone.php
+%%HORDIR%%/Parser/Locale/Pt.php
+%%HORDIR%%/Parser/Locale/Pt/Grabber.php
+%%HORDIR%%/Parser/Locale/Pt/Ordinal.php
+%%HORDIR%%/Parser/Locale/Pt/Pointer.php
+%%HORDIR%%/Parser/Locale/Pt/Repeater.php
+%%HORDIR%%/Parser/Locale/Pt/Scalar.php
+%%HORDIR%%/Parser/Locale/Pt/Separator.php
+%%HORDIR%%/Parser/Locale/Pt/Timezone.php
+%%HORDIR%%/Parser/Result.php
+%%HORDIR%%/Parser/Token.php
+@dirrm %%HORDIR%%/Parser/Locale/Pt
+@dirrm %%HORDIR%%/Parser/Locale/De
+@dirrm %%HORDIR%%/Parser/Locale/Base
+@dirrm %%HORDIR%%/Parser/Locale
+@dirrm %%HORDIR%%/Parser
+@dirrmtry %%HORDIR%%
+@dirrm %%EXAMPLESDIR%%/Date/Parser
+@dirrmtry %%EXAMPLESDIR%%/Date
+@dirrmtry %%EXAMPLESDIR%%
+@dirrmtry %%HORBAS%%
+
