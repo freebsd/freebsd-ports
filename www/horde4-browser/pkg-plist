@@ -1,0 +1,5 @@
+%%HORBAS%%/Browser.php
+%%HORDIR%%/Exception.php
+%%HORDIR%%/Translation.php
+@dirrm %%HORDIR%%
+@dirrmtry %%HORBAS%% 
