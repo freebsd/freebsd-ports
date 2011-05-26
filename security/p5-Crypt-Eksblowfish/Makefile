@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt-Eksblowfish
-PORTVERSION=	0.008
+PORTVERSION=	0.009
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,8 @@ COMMENT=	Perl module for the Eksblowfish block cipher
 RUN_DEPENDS=	${SITE_PERL}/Class/Mix.pm:${PORTSDIR}/devel/p5-Class-Mix \
 		${SITE_PERL}/parent.pm:${PORTSDIR}/devel/p5-parent
 
+LICENSE_COMB=	dual
+LICENSE=	ART10 GPLv1
 PERL_MODBUILD=	yes
 
 MAN3=	Crypt::Eksblowfish.3 \
