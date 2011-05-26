@@ -558,6 +558,7 @@
     SUBDIR += horde4-date
     SUBDIR += horde4-dateparser
     SUBDIR += horde4-rdo
+    SUBDIR += horde4-streamfilter
     SUBDIR += horde4-translation
     SUBDIR += hp48cc
     SUBDIR += hp48xgcc

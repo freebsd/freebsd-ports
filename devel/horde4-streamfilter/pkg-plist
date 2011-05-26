@@ -1,0 +1,6 @@
+%%HORDIR%%/Filter/Crc32.php
+%%HORDIR%%/Filter/Eol.php
+@dirrm %%HORDIR%%/Filter
+@dirrmtry %%HORDIR%%
+@dirrmtry %%HORBAS%%
+
