@@ -1,0 +1,8 @@
+%%HORBAS%%/Translation.php
+%%HORDIR%%/Exception.php
+%%HORDIR%%/Handler.php
+%%HORDIR%%/Handler/Gettext.php
+@dirrm %%HORDIR%%/Handler
+@dirrmtry %%HORDIR%%
+@dirrmtry %%HORBAS%%
+
