@@ -1,0 +1,14 @@
+IPC::MMA provides an interface to Ralf Engelschall's mm library, allowing
+memory to be shared between multiple processes in a relatively
+convenient way.
+
+IPC::MMA is a superset of Arthur Choung's IPC::MM module, adding arrays and
+allowing any Perl scalar to be used as a hash/BTree key rather than just C
+strings. IPC::MMA hashes are like IPC::MM BTrees in that they return keys in
+sorted order ineach, keys, and next operations.
+
+An IPC::MMA array can store data in any of six ways, including general-purpose
+scalars, signed or unsigned integers, floating-point numbers, fixed-length
+strings/records, and booleans at one bit per array element.
+
+WWW: http://search.cpan.org/dist/IPC-MMA/
