@@ -554,6 +554,7 @@
     SUBDIR += horde-whups
     SUBDIR += horde4-autoloader
     SUBDIR += horde4-cache
+    SUBDIR += horde4-constraint
     SUBDIR += horde4-content
     SUBDIR += horde4-date
     SUBDIR += horde4-dateparser
