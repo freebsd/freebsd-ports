@@ -19,9 +19,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
-BROKEN=		USE_BDB was misdeclared as 3+, db4 fails
 FORBIDDEN=	Lacks patches from http://www.squidguard.org/Downloads/Patches/1.4/
-USE_BDB=	40+
+USE_BDB=	41+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db-inc=${BDB_INCLUDE_DIR} \
 		--with-db-lib=${BDB_LIB_DIR} \
