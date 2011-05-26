@@ -311,6 +311,7 @@
     SUBDIR += horde-wicked
     SUBDIR += horde4-base
     SUBDIR += horde4-browser
+    SUBDIR += horde4-template
     SUBDIR += hotcrp
     SUBDIR += hs-HTTP
     SUBDIR += hs-cgi
