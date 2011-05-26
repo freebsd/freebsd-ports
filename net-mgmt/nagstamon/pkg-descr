@@ -1,0 +1,10 @@
+Nagstamon is a Nagios status monitor for the desktop. It connects to multiple
+Nagios, Icinga, Opsview, Centreon, Op5 Monitor/Ninja and Check_MK Multisite
+monitoring servers and resides in systray or as a floating statusbar at the
+desktop showing a brief summary of critical, warning, unknown, unreachable and
+down hosts and services and pops up a detailed status overview when moving the
+mouse pointer over it. Connecting to displayed hosts and services is easily
+established by context menu via SSH, RDP and VNC. Users can be notified by
+sound. Hosts and services can be filtered by category and regular expressions.
+
+WWW: http://nagstamon.ifw-dresden.de/

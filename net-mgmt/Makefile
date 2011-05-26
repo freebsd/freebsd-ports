@@ -141,6 +141,7 @@
     SUBDIR += nagiosql
     SUBDIR += nagiostat
     SUBDIR += nagircbot
+    SUBDIR += nagstamon
     SUBDIR += nagvis
     SUBDIR += nat
     SUBDIR += nbtscan
