@@ -1,14 +1,15 @@
 bin/%%GOOBJ%%a
 bin/%%GOOBJ%%c
-bin/6cov
 bin/%%GOOBJ%%g
 bin/%%GOOBJ%%l
+bin/6cov
 bin/6nm
 bin/6prof
 bin/cgo
 bin/ebnflint
 bin/godefs
 bin/godoc
+bin/gofix
 bin/gofmt
 bin/goinstall
 bin/gomake
@@ -16,6 +17,7 @@ bin/gopack
 bin/gopprof
 bin/gotest
 bin/gotry
+bin/gotype
 bin/govet
 bin/goyacc
 bin/hgpatch
@@ -28,23 +30,33 @@ lib/go/pkg/freebsd_%%ARCH%%/bufio.a
 lib/go/pkg/freebsd_%%ARCH%%/bytes.a
 lib/go/pkg/freebsd_%%ARCH%%/cgocall.h
 lib/go/pkg/freebsd_%%ARCH%%/cmath.a
+lib/go/pkg/freebsd_%%ARCH%%/compress/bzip2.a
 lib/go/pkg/freebsd_%%ARCH%%/compress/flate.a
 lib/go/pkg/freebsd_%%ARCH%%/compress/gzip.a
+lib/go/pkg/freebsd_%%ARCH%%/compress/lzw.a
 lib/go/pkg/freebsd_%%ARCH%%/compress/zlib.a
 lib/go/pkg/freebsd_%%ARCH%%/container/heap.a
 lib/go/pkg/freebsd_%%ARCH%%/container/list.a
 lib/go/pkg/freebsd_%%ARCH%%/container/ring.a
 lib/go/pkg/freebsd_%%ARCH%%/container/vector.a
+lib/go/pkg/freebsd_%%ARCH%%/crypto.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/aes.a
-lib/go/pkg/freebsd_%%ARCH%%/crypto/block.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/blowfish.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/cast5.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/cipher.a
+lib/go/pkg/freebsd_%%ARCH%%/crypto/des.a
+lib/go/pkg/freebsd_%%ARCH%%/crypto/dsa.a
+lib/go/pkg/freebsd_%%ARCH%%/crypto/ecdsa.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/elliptic.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/hmac.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/md4.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/md5.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/ocsp.a
+lib/go/pkg/freebsd_%%ARCH%%/crypto/openpgp.a
+lib/go/pkg/freebsd_%%ARCH%%/crypto/openpgp/armor.a
+lib/go/pkg/freebsd_%%ARCH%%/crypto/openpgp/error.a
+lib/go/pkg/freebsd_%%ARCH%%/crypto/openpgp/packet.a
+lib/go/pkg/freebsd_%%ARCH%%/crypto/openpgp/s2k.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/rand.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/rc4.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/ripemd160.a
@@ -54,6 +66,7 @@ lib/go/pkg/freebsd_%%ARCH%%/crypto/sha256.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/sha512.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/subtle.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/tls.a
+lib/go/pkg/freebsd_%%ARCH%%/crypto/twofish.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/x509.a
 lib/go/pkg/freebsd_%%ARCH%%/crypto/xtea.a
 lib/go/pkg/freebsd_%%ARCH%%/debug/dwarf.a
@@ -64,16 +77,18 @@ lib/go/pkg/freebsd_%%ARCH%%/debug/pe.a
 lib/go/pkg/freebsd_%%ARCH%%/debug/proc.a
 lib/go/pkg/freebsd_%%ARCH%%/ebnf.a
 lib/go/pkg/freebsd_%%ARCH%%/encoding/ascii85.a
+lib/go/pkg/freebsd_%%ARCH%%/encoding/base32.a
 lib/go/pkg/freebsd_%%ARCH%%/encoding/base64.a
 lib/go/pkg/freebsd_%%ARCH%%/encoding/binary.a
 lib/go/pkg/freebsd_%%ARCH%%/encoding/git85.a
 lib/go/pkg/freebsd_%%ARCH%%/encoding/hex.a
+lib/go/pkg/freebsd_%%ARCH%%/encoding/line.a
 lib/go/pkg/freebsd_%%ARCH%%/encoding/pem.a
 lib/go/pkg/freebsd_%%ARCH%%/exec.a
 lib/go/pkg/freebsd_%%ARCH%%/exp/datafmt.a
 lib/go/pkg/freebsd_%%ARCH%%/exp/draw.a
-lib/go/pkg/freebsd_%%ARCH%%/exp/eval.a
 lib/go/pkg/freebsd_%%ARCH%%/exp/draw/x11.a
+lib/go/pkg/freebsd_%%ARCH%%/exp/eval.a
 lib/go/pkg/freebsd_%%ARCH%%/expvar.a
 lib/go/pkg/freebsd_%%ARCH%%/flag.a
 lib/go/pkg/freebsd_%%ARCH%%/fmt.a
@@ -84,17 +99,23 @@ lib/go/pkg/freebsd_%%ARCH%%/go/printer.a
 lib/go/pkg/freebsd_%%ARCH%%/go/scanner.a
 lib/go/pkg/freebsd_%%ARCH%%/go/token.a
 lib/go/pkg/freebsd_%%ARCH%%/go/typechecker.a
+lib/go/pkg/freebsd_%%ARCH%%/go/types.a
 lib/go/pkg/freebsd_%%ARCH%%/gob.a
 lib/go/pkg/freebsd_%%ARCH%%/hash.a
 lib/go/pkg/freebsd_%%ARCH%%/hash/adler32.a
 lib/go/pkg/freebsd_%%ARCH%%/hash/crc32.a
 lib/go/pkg/freebsd_%%ARCH%%/hash/crc64.a
+lib/go/pkg/freebsd_%%ARCH%%/hash/fnv.a
 lib/go/pkg/freebsd_%%ARCH%%/html.a
 lib/go/pkg/freebsd_%%ARCH%%/http.a
+lib/go/pkg/freebsd_%%ARCH%%/http/cgi.a
+lib/go/pkg/freebsd_%%ARCH%%/http/fcgi.a
+lib/go/pkg/freebsd_%%ARCH%%/http/httptest.a
 lib/go/pkg/freebsd_%%ARCH%%/http/pprof.a
 lib/go/pkg/freebsd_%%ARCH%%/image.a
 lib/go/pkg/freebsd_%%ARCH%%/image/jpeg.a
 lib/go/pkg/freebsd_%%ARCH%%/image/png.a
+lib/go/pkg/freebsd_%%ARCH%%/image/ycbcr.a
 lib/go/pkg/freebsd_%%ARCH%%/index/suffixarray.a
 lib/go/pkg/freebsd_%%ARCH%%/io.a
 lib/go/pkg/freebsd_%%ARCH%%/io/ioutil.a
@@ -104,13 +125,15 @@ lib/go/pkg/freebsd_%%ARCH%%/math.a
 lib/go/pkg/freebsd_%%ARCH%%/mime.a
 lib/go/pkg/freebsd_%%ARCH%%/mime/multipart.a
 lib/go/pkg/freebsd_%%ARCH%%/net.a
-lib/go/pkg/freebsd_%%ARCH%%/netchan.a
-lib/go/pkg/freebsd_%%ARCH%%/net/textproto.a
 lib/go/pkg/freebsd_%%ARCH%%/net/dict.a
+lib/go/pkg/freebsd_%%ARCH%%/net/textproto.a
+lib/go/pkg/freebsd_%%ARCH%%/netchan.a
 lib/go/pkg/freebsd_%%ARCH%%/os.a
 lib/go/pkg/freebsd_%%ARCH%%/os/signal.a
+lib/go/pkg/freebsd_%%ARCH%%/os/user.a
 lib/go/pkg/freebsd_%%ARCH%%/patch.a
 lib/go/pkg/freebsd_%%ARCH%%/path.a
+lib/go/pkg/freebsd_%%ARCH%%/path/filepath.a
 lib/go/pkg/freebsd_%%ARCH%%/rand.a
 lib/go/pkg/freebsd_%%ARCH%%/reflect.a
 lib/go/pkg/freebsd_%%ARCH%%/regexp.a
@@ -119,6 +142,7 @@ lib/go/pkg/freebsd_%%ARCH%%/rpc/jsonrpc.a
 lib/go/pkg/freebsd_%%ARCH%%/runtime.a
 lib/go/pkg/freebsd_%%ARCH%%/runtime.h
 lib/go/pkg/freebsd_%%ARCH%%/runtime/cgo.a
+lib/go/pkg/freebsd_%%ARCH%%/runtime/debug.a
 lib/go/pkg/freebsd_%%ARCH%%/runtime/pprof.a
 lib/go/pkg/freebsd_%%ARCH%%/scanner.a
 lib/go/pkg/freebsd_%%ARCH%%/smtp.a
@@ -126,6 +150,7 @@ lib/go/pkg/freebsd_%%ARCH%%/sort.a
 lib/go/pkg/freebsd_%%ARCH%%/strconv.a
 lib/go/pkg/freebsd_%%ARCH%%/strings.a
 lib/go/pkg/freebsd_%%ARCH%%/sync.a
+lib/go/pkg/freebsd_%%ARCH%%/sync/atomic.a
 lib/go/pkg/freebsd_%%ARCH%%/syscall.a
 lib/go/pkg/freebsd_%%ARCH%%/syslog.a
 lib/go/pkg/freebsd_%%ARCH%%/tabwriter.a
@@ -149,13 +174,14 @@ lib/go/pkg/freebsd_%%ARCH%%/xml.a
 %%PORTDOCS%%%%DOCSDIR%%/all.css
 %%PORTDOCS%%%%DOCSDIR%%/button_background.png
 %%PORTDOCS%%%%DOCSDIR%%/code.html
-%%PORTDOCS%%%%DOCSDIR%%/codelab/wiki/wiki.html
+%%PORTDOCS%%%%DOCSDIR%%/codelab/wiki/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/codelab/wiki/edit.html
 %%PORTDOCS%%%%DOCSDIR%%/codelab/wiki/final-noclosure.go
 %%PORTDOCS%%%%DOCSDIR%%/codelab/wiki/final-noerror.go
 %%PORTDOCS%%%%DOCSDIR%%/codelab/wiki/final-parsetemplate.go
 %%PORTDOCS%%%%DOCSDIR%%/codelab/wiki/final-template.go
 %%PORTDOCS%%%%DOCSDIR%%/codelab/wiki/final.go
+%%PORTDOCS%%%%DOCSDIR%%/codelab/wiki/get.go
 %%PORTDOCS%%%%DOCSDIR%%/codelab/wiki/htmlify.go
 %%PORTDOCS%%%%DOCSDIR%%/codelab/wiki/http-sample.go
 %%PORTDOCS%%%%DOCSDIR%%/codelab/wiki/index.html
@@ -169,24 +195,26 @@ lib/go/pkg/freebsd_%%ARCH%%/xml.a
 %%PORTDOCS%%%%DOCSDIR%%/codelab/wiki/test_edit.good
 %%PORTDOCS%%%%DOCSDIR%%/codelab/wiki/test_view.good
 %%PORTDOCS%%%%DOCSDIR%%/codelab/wiki/view.html
-%%PORTDOCS%%%%DOCSDIR%%/codelab/wiki/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/codelab/wiki/wiki.html
+%%PORTDOCS%%%%DOCSDIR%%/codereview_with_mq.html
 %%PORTDOCS%%%%DOCSDIR%%/codewalk/codewalk.css
 %%PORTDOCS%%%%DOCSDIR%%/codewalk/codewalk.js
 %%PORTDOCS%%%%DOCSDIR%%/codewalk/codewalk.xml
+%%PORTDOCS%%%%DOCSDIR%%/codewalk/functions.xml
+%%PORTDOCS%%%%DOCSDIR%%/codewalk/pig.go
 %%PORTDOCS%%%%DOCSDIR%%/codewalk/popout.png
 %%PORTDOCS%%%%DOCSDIR%%/codewalk/sharemem.xml
 %%PORTDOCS%%%%DOCSDIR%%/codewalk/urlpoll.go
-%%PORTDOCS%%%%DOCSDIR%%/codereview_with_mq.html
 %%PORTDOCS%%%%DOCSDIR%%/community.html
 %%PORTDOCS%%%%DOCSDIR%%/contrib.html
 %%PORTDOCS%%%%DOCSDIR%%/contribute.html
 %%PORTDOCS%%%%DOCSDIR%%/devel/index.html
 %%PORTDOCS%%%%DOCSDIR%%/devel/release.html
 %%PORTDOCS%%%%DOCSDIR%%/devel/roadmap.html
+%%PORTDOCS%%%%DOCSDIR%%/devel/weekly.html
 %%PORTDOCS%%%%DOCSDIR%%/docs.html
-%%PORTDOCS%%%%DOCSDIR%%/frontpage.css
-%%PORTDOCS%%%%DOCSDIR%%/ie.css
 %%PORTDOCS%%%%DOCSDIR%%/effective_go.html
+%%PORTDOCS%%%%DOCSDIR%%/frontpage.css
 %%PORTDOCS%%%%DOCSDIR%%/gccgo_contribute.html
 %%PORTDOCS%%%%DOCSDIR%%/gccgo_install.html
 %%PORTDOCS%%%%DOCSDIR%%/go-logo-black.png
@@ -199,15 +227,16 @@ lib/go/pkg/freebsd_%%ARCH%%/xml.a
 %%PORTDOCS%%%%DOCSDIR%%/go_tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/go_tutorial.txt
 %%PORTDOCS%%%%DOCSDIR%%/godocs.js
-%%PORTDOCS%%%%DOCSDIR%%/gopher/gophercolor16x16.png
+%%PORTDOCS%%%%DOCSDIR%%/gopher/bumper.png
 %%PORTDOCS%%%%DOCSDIR%%/gopher/bumper192x108.png
 %%PORTDOCS%%%%DOCSDIR%%/gopher/bumper320x180.png
 %%PORTDOCS%%%%DOCSDIR%%/gopher/bumper480x270.png
 %%PORTDOCS%%%%DOCSDIR%%/gopher/bumper640x360.png
 %%PORTDOCS%%%%DOCSDIR%%/gopher/gopherbw.png
 %%PORTDOCS%%%%DOCSDIR%%/gopher/gophercolor.png
-%%PORTDOCS%%%%DOCSDIR%%/gopher/bumper.png
+%%PORTDOCS%%%%DOCSDIR%%/gopher/gophercolor16x16.png
 %%PORTDOCS%%%%DOCSDIR%%/htmlgen.go
+%%PORTDOCS%%%%DOCSDIR%%/ie.css
 %%PORTDOCS%%%%DOCSDIR%%/install.html
 %%PORTDOCS%%%%DOCSDIR%%/logo-153x55.png
 %%PORTDOCS%%%%DOCSDIR%%/logo.png
@@ -235,17 +264,17 @@ lib/go/pkg/freebsd_%%ARCH%%/xml.a
 %%PORTDOCS%%%%DOCSDIR%%/progs/sum.go
 %%PORTDOCS%%%%DOCSDIR%%/root.html
 %%PORTDOCS%%%%DOCSDIR%%/sieve.gif
+%%PORTDOCS%%%%DOCSDIR%%/talks/go_talk-20091030.pdf
+%%PORTDOCS%%%%DOCSDIR%%/talks/go_talk-20100112.html
+%%PORTDOCS%%%%DOCSDIR%%/talks/go_talk-20100121.html
+%%PORTDOCS%%%%DOCSDIR%%/talks/go_talk-20100323.html
+%%PORTDOCS%%%%DOCSDIR%%/talks/gofrontend-gcc-summit-2010.pdf
 %%PORTDOCS%%%%DOCSDIR%%/talks/io2010/balance.go
 %%PORTDOCS%%%%DOCSDIR%%/talks/io2010/decrypt.go
 %%PORTDOCS%%%%DOCSDIR%%/talks/io2010/encrypt.go
 %%PORTDOCS%%%%DOCSDIR%%/talks/io2010/eval1.go
 %%PORTDOCS%%%%DOCSDIR%%/talks/io2010/eval2.go
 %%PORTDOCS%%%%DOCSDIR%%/talks/io2010/talk.pdf
-%%PORTDOCS%%%%DOCSDIR%%/talks/go_talk-20091030.pdf
-%%PORTDOCS%%%%DOCSDIR%%/talks/go_talk-20100112.html
-%%PORTDOCS%%%%DOCSDIR%%/talks/go_talk-20100121.html
-%%PORTDOCS%%%%DOCSDIR%%/talks/go_talk-20100323.html
-%%PORTDOCS%%%%DOCSDIR%%/talks/gofrontend-gcc-summit-2010.pdf
 %%PORTDOCS%%%%DOCSDIR%%/talks/java-typing.png
 %%PORTDOCS%%%%DOCSDIR%%/talks/slidy.css
 %%PORTDOCS%%%%DOCSDIR%%/talks/slidy.js
@@ -285,10 +314,13 @@ lib/go/pkg/freebsd_%%ARCH%%/xml.a
 @dirrm lib/go/pkg/freebsd_%%ARCH%%/exp
 @dirrm lib/go/pkg/freebsd_%%ARCH%%/encoding
 @dirrm lib/go/pkg/freebsd_%%ARCH%%/debug
+@dirrm lib/go/pkg/freebsd_%%ARCH%%/crypto/openpgp
 @dirrm lib/go/pkg/freebsd_%%ARCH%%/crypto
 @dirrm lib/go/pkg/freebsd_%%ARCH%%/container
 @dirrm lib/go/pkg/freebsd_%%ARCH%%/compress
 @dirrm lib/go/pkg/freebsd_%%ARCH%%/archive
+@dirrm lib/go/pkg/freebsd_%%ARCH%%/sync
+@dirrm lib/go/pkg/freebsd_%%ARCH%%/path
 @dirrm lib/go/pkg/freebsd_%%ARCH%%
 @dirrm lib/go/pkg
 @dirrm lib/go
