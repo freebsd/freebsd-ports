@@ -7,6 +7,7 @@
 
 PORTNAME=	soegtk
 PORTVERSION=	0.11.1
+PORTREVISION=	1
 CATEGORIES=	graphics haskell
 
 MAINTAINER=	haskell@FreeBSD.org

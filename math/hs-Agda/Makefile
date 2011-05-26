@@ -7,6 +7,7 @@
 
 PORTNAME=	Agda
 PORTVERSION=	2.2.10
+PORTREVISION=	1
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org

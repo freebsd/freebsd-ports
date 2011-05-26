@@ -7,6 +7,7 @@
 
 PORTNAME=	pcap
 PORTVERSION=	0.4.5.1
+PORTREVISION=	1
 CATEGORIES=	net haskell
 
 MAINTAINER=	jupengfei@gmail.com
