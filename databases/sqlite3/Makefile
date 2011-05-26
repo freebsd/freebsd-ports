@@ -135,7 +135,7 @@ CFLAGS+=		-DSQLITE_ENABLE_RTREE=1
 
 .if defined(WITH_ICU)
 BUILD_DEPENDS+=		${LOCALBASE}/bin/icu-config:${PORTSDIR}/devel/icu
-LIB_DEPENDS+=		icudata.46:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=		icudata:${PORTSDIR}/devel/icu
 CFLAGS+=		-DSQLITE_ENABLE_ICU=1
 CPPFLAGS+=		`${LOCALBASE}/bin/icu-config --cppflags`
 LDFLAGS+=		`${LOCALBASE}/bin/icu-config --ldflags`
