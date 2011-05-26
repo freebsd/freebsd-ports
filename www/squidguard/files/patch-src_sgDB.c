@@ -1,27 +1,27 @@
---- src/sgDb.c.orig	Mon May 14 08:40:12 2001
-+++ src/sgDb.c	Thu Dec 29 23:31:32 2005
-@@ -97,14 +97,20 @@
+--- src/sgDb.c.orig	2008-07-14 20:29:41.000000000 +0200
++++ src/sgDb.c	2011-05-26 11:04:22.106201692 +0200
+@@ -119,14 +119,20 @@
      flag = DB_CREATE;
      if(createdb)
        flag = flag | DB_TRUNCATE;
--    if ((ret = 
--	 Db->dbp->open(Db->dbp, dbfile, NULL, DB_BTREE, flag, 0664)) != 0) {
+-    if ((ret =
+-         Db->dbp->open(Db->dbp, NULL, dbfile, NULL, DB_BTREE, flag, 0664)) != 0) {
 +    if ((ret = Db->dbp->open(Db->dbp,
-+#if DB_VERSION_MAJOR * 10 + DB_VERSION_MINOR >= 41
-+	 NULL,
++#if DB_VERSION_MINOR >= 1
++	NULL,
 +#endif
-+	 dbfile, NULL, DB_BTREE, flag, 0664)) != 0) {
++	dbfile, NULL, DB_BTREE, flag, 0664)) != 0) {
        (void) Db->dbp->close(Db->dbp, 0);
        sgLogFatalError("Error db_open: %s", strerror(ret));
      }
    } else {
--    if ((ret = 
--	 Db->dbp->open(Db->dbp, dbfile, NULL, DB_BTREE, DB_CREATE, 0664)) != 0) {
+-    if ((ret =
+-         Db->dbp->open(Db->dbp, NULL, dbfile, NULL, DB_BTREE, DB_CREATE, 0664)) != 0) {
 +    if ((ret = Db->dbp->open(Db->dbp,
-+#if DB_VERSION_MAJOR * 10 + DB_VERSION_MINOR >= 41
-+	 NULL,
++#if DB_VERSION_MINOR >= 1
++	NULL,
 +#endif
-+	 dbfile, NULL, DB_BTREE, DB_CREATE, 0664)) != 0) {
++	dbfile, NULL, DB_BTREE, DB_CREATE, 0664)) != 0) {
        sgLogFatalError("Error db_open: %s", strerror(ret));
      }
    }
