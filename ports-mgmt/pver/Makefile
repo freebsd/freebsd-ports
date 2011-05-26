@@ -7,6 +7,7 @@
 
 PORTNAME=	pver
 PORTVERSION=	0.15
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~weiyu/software/ \
 		${MASTER_SITE_GOOGLE_CODE}
