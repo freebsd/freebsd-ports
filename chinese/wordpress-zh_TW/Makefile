@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	3.1.2
+PORTVERSION=	3.1.3
 CATEGORIES=	chinese www
 MASTER_SITES=	http://tw.wordpress.org/ \
 		http://mirror.joehorn.idv.tw/wordpress/
