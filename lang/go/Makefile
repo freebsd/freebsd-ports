@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	go
-PORTVERSION=	20101225
-PORTREVISION=	0
+PORTVERSION=	20110515
 CATEGORIES=	lang
-MASTER_SITES=	LOCAL/wen
+MASTER_SITES=	http://www.exit2shell.com/~skreuzer/distfiles/
 DISTNAME=	go-${PORTVERSION}
 
 MAINTAINER=	devon.odell@gmail.com
