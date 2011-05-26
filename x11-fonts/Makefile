@@ -120,6 +120,7 @@
     SUBDIR += p5-Font-TTFMetrics
     SUBDIR += p5-type1inst
     SUBDIR += padauk
+    SUBDIR += paratype
     SUBDIR += pcf2bdf
     SUBDIR += pingwi
     SUBDIR += ppantsfonts
