@@ -7,20 +7,24 @@
 
 PORTNAME=	squidGuard
 PORTVERSION=	1.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
-MASTER_SITES=	http://www.squidguard.org/Downloads/
+MASTER_SITES=	http://www.squidguard.org/Downloads/:a \
+		http://www.squidguard.org/Downloads/Contrib/:b
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:a \
+		squidGuard-1.4-quoted_string_support.diff:b \
+		squidGuard-1.4-dnsbl.patch:b
+EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	A fast redirector for squid
 
+RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
-
-FORBIDDEN=	Lacks patches from http://www.squidguard.org/Downloads/Patches/1.4/
-USE_BDB=	41+
+USE_BDB=	40+
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db-inc=${BDB_INCLUDE_DIR} \
 		--with-db-lib=${BDB_LIB_DIR} \
@@ -29,9 +33,12 @@ CONFIGURE_ARGS=	--with-db-inc=${BDB_INCLUDE_DIR} \
 		--with-sg-logdir=${LOGDIR} \
 		--exec-prefix=${PREFIX}
 
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${PREFIX}/include" LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CFLAGS+=	-I${PREFIX}/include -I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
-CFGINPUT=	${.CURDIR}/files/sgcfg.in
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+
+CFGINPUT=	${FILESDIR}/sgcfg.in
 
 SQUID_UID?=	squid
 SQUID_GID?=	squid
@@ -49,15 +56,10 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	SAMPLE_BL	"Install sample blacklists" On \
 		LDAP		"Enable LDAP support" Off \
+		DNS_BL		"Enable DNS based blacklists" Off \
 		QUOTE_STRING	"Add quoted string patch" Off
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_QUOTE_STRING)
-PATCH_SITES=	http://www.squidguard.org/Downloads/
-PATCHFILES=	Contrib/squidGuard-1.4-quoted_string_support.diff
-PATCH_DIST_STRIP=-p2
-.endif
 
 .if defined(WITH_LDAP)
 CONFIGURE_ARGS+=	--with-ldap
@@ -92,6 +94,12 @@ post-patch:
 		${REINPLACE_CMD} -E -e 's,(db_version),\1_4002,g' \
 			${WRKSRC}/configure ; \
 	fi
+.if defined(WITH_QUOTE_STRING)
+	${PATCH} -d ${WRKSRC} --forward --quiet -p2 <${DISTDIR}/squidGuard-1.4-quoted_string_support.diff
+.endif
+.if defined(WITH_DNS_BL)
+	${PATCH} -d ${WRKSRC} --forward --quiet -p1 <${DISTDIR}/squidGuard-1.4-dnsbl.patch
+.endif
 
 post-build:
 .if !defined(WITHOUT_SAMPLE_BL)
@@ -130,6 +138,7 @@ pre-install:
 #
 	@if [ ! -f "${PREFIX}/etc/squid/${PORTNAME}.conf" ] ; then \
 		${ECHO_MSG} "===>   Installing sample configuration file" ; \
+		${MKDIR} "${PREFIX}/etc/squid/" ; \
 		BLACKLIST_DIRS=`(cd ${DATADIR} && ${FIND} . -type d | \
 		    ${SED} '/^\.$$/d; s/^\.\//!/' | ${XARGS} ${ECHO_CMD})`; \
 		for I in `${ECHO_CMD} $${BLACKLIST_DIRS} | ${SED} 's/!//g'`; do \
