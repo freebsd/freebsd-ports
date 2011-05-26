@@ -1,0 +1,8 @@
+%%HORDIR%%/Wrapper/Combine.php
+%%HORDIR%%/Wrapper/CombineStream.php
+%%HORDIR%%/Wrapper/String.php
+%%HORDIR%%/Wrapper/StringStream.php
+@dirrm %%HORDIR%%/Wrapper
+@dirrmtry %%HORDIR%%
+@dirrmtry %%HORBAS%%
+
