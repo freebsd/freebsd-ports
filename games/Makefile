@@ -422,6 +422,7 @@
     SUBDIR += kimboot
     SUBDIR += klavaro
     SUBDIR += klondike
+    SUBDIR += kmancala
     SUBDIR += kmastermind
     SUBDIR += kmquake2
     SUBDIR += knights
