@@ -1,5 +1,5 @@
---- relayd.orig/relayd.h	2011-05-22 01:06:39.465162022 +0200
-+++ relayd/relayd.h	2011-05-22 01:07:39.088200887 +0200
+--- relayd/relayd.h.orig	2011-05-26 18:42:14.000000000 +0200
++++ relayd/relayd.h	2011-05-26 18:44:44.868614096 +0200
 @@ -21,10 +21,18 @@
  #include <sys/tree.h>
  
@@ -38,17 +38,7 @@
  
  #if DEBUG > 1
  #define DPRINTF		log_debug
-@@ -253,7 +272,9 @@
- #define F_SSLCLIENT		0x00200000
- #define F_NEEDRT		0x00400000
- #define F_MATCH			0x00800000
-+#ifndef __FreeBSD__
- #define F_DIVERT		0x01000000
-+#endif
- 
- #define F_BITS								\
- 	"\10\01DISABLE\02BACKUP\03USED\04DOWN\05ADD\06DEL\07CHANGED"	\
-@@ -622,6 +643,7 @@
+@@ -626,6 +645,7 @@
  };
  #define RELAY_DSTMODE_DEFAULT		RELAY_DSTMODE_ROUNDROBIN
  
@@ -56,7 +46,7 @@
  struct router;
  struct netroute_config {
  	objid_t			 id;
-@@ -668,6 +690,7 @@
+@@ -672,6 +692,7 @@
  	struct netroute_config	nr;
  	struct router_config	rt;
  };
@@ -64,7 +54,7 @@
  
  /* initially control.h */
  struct control_sock {
-@@ -753,12 +776,18 @@
+@@ -757,12 +778,18 @@
  	IMSG_HOST_STATUS,	/* notifies from hce to pfe */
  	IMSG_SYNC,
  	IMSG_NATLOOK,
@@ -83,7 +73,7 @@
  	IMSG_CFG_TABLE,		/* configuration from parent */
  	IMSG_CFG_HOST,
  	IMSG_CFG_RDR,
-@@ -826,14 +855,18 @@
+@@ -830,14 +857,18 @@
  	u_int32_t		 sc_flags;
  	const char		*sc_conffile;
  	struct pfdata		*sc_pf;
@@ -102,7 +92,7 @@
  	struct timeval		 sc_interval;
  	struct timeval		 sc_timeout;
  	struct table		 sc_empty_table;
-@@ -843,8 +876,10 @@
+@@ -847,8 +878,10 @@
  	struct rdrlist		*sc_rdrs;
  	struct protolist	*sc_protos;
  	struct relaylist	*sc_relays;
@@ -113,7 +103,7 @@
  	u_int16_t		 sc_prefork_relay;
  	char			 sc_demote_group[IFNAMSIZ];
  	u_int16_t		 sc_id;
-@@ -852,10 +887,11 @@
+@@ -856,10 +889,11 @@
  	struct event		 sc_statev;
  	struct timeval		 sc_statinterval;
  
@@ -126,7 +116,7 @@
  	int			 sc_has_icmp;
  	int			 sc_has_icmp6;
  	struct ctl_icmp_event	 sc_icmp_send;
-@@ -923,10 +959,12 @@
+@@ -927,10 +961,12 @@
  u_int64_t
  	 check_table(struct relayd *, struct rdr *, struct table *);
  
@@ -139,7 +129,7 @@
  
  /* hce.c */
  pid_t	 hce(struct privsep *, struct privsep_proc *);
-@@ -943,8 +981,10 @@
+@@ -947,8 +983,10 @@
  void	 relay_session(struct rsession *);
  int	 relay_from_table(struct rsession *);
  int	 relay_socket_af(struct sockaddr_storage *, in_port_t);
@@ -150,7 +140,7 @@
  int	 relay_cmp_af(struct sockaddr_storage *,
  		 struct sockaddr_storage *);
  
-@@ -986,8 +1026,10 @@
+@@ -990,8 +1028,10 @@
  struct host	*host_find(struct relayd *, objid_t);
  struct table	*table_find(struct relayd *, objid_t);
  struct rdr	*rdr_find(struct relayd *, objid_t);
@@ -161,7 +151,7 @@
  struct host	*host_findbyname(struct relayd *, const char *);
  struct table	*table_findbyname(struct relayd *, const char *);
  struct table	*table_findbyconf(struct relayd *, struct table *);
-@@ -1035,11 +1077,13 @@
+@@ -1039,11 +1079,13 @@
  void		 pn_unref(u_int16_t);
  void		 pn_ref(u_int16_t);
  
@@ -175,7 +165,7 @@
  
  /* shuffle.c */
  void		shuffle_init(struct shuffle *);
-@@ -1092,9 +1136,11 @@
+@@ -1096,9 +1138,11 @@
  int	 config_setrdr(struct relayd *, struct rdr *);
  int	 config_getrdr(struct relayd *, struct imsg *);
  int	 config_getvirt(struct relayd *, struct imsg *);
@@ -187,7 +177,7 @@
  int	 config_setproto(struct relayd *env, struct protocol *);
  int	 config_getproto(struct relayd *, struct imsg *);
  int	 config_setprotonode(struct relayd *, enum privsep_procid,
-@@ -1102,3 +1148,9 @@
+@@ -1106,3 +1150,9 @@
  int	 config_getprotonode(struct relayd *, struct imsg *);
  int	 config_setrelay(struct relayd *env, struct relay *);
  int	 config_getrelay(struct relayd *, struct imsg *);
