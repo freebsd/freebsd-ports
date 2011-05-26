@@ -7,7 +7,7 @@
 
 PORTNAME=	cvs2darcs
 PORTVERSION=	0.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://ab-initio.mit.edu/${PORTNAME}/
 

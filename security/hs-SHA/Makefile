@@ -7,6 +7,7 @@
 
 PORTNAME=	SHA
 PORTVERSION=	1.4.1.3
+PORTREVISION=	1
 CATEGORIES=	security haskell
 
 MAINTAINER=	haskell@FreeBSD.org

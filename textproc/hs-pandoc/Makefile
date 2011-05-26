@@ -7,6 +7,7 @@
 
 PORTNAME=	pandoc
 PORTVERSION=	1.8.1.1
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

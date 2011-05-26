@@ -7,7 +7,7 @@
 
 PORTNAME=	bsd-sysctl
 PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	jupengfei@gmail.com

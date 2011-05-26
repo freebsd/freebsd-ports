@@ -7,6 +7,7 @@
 
 PORTNAME=	tagsoup
 PORTVERSION=	0.12
+PORTREVISION=	1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org

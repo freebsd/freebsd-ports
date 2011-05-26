@@ -7,6 +7,7 @@
 
 PORTNAME=	MemoTrie
 PORTVERSION=	0.4.9
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
