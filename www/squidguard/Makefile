@@ -25,18 +25,14 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BDB=	40+
-HAS_CONFIGURE=	yes
+GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-db-inc=${BDB_INCLUDE_DIR} \
 		--with-db-lib=${BDB_LIB_DIR} \
 		--with-sg-config=${PREFIX}/etc/squid/${PORTNAME}.conf \
 		--with-sg-dbhome=${DATADIR} \
 		--with-sg-logdir=${LOGDIR} \
 		--exec-prefix=${PREFIX}
-
-CFLAGS+=	-I${PREFIX}/include -I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+CPPFLAGS+=	-I${PREFIX}/include -I${LOCALBASE}/include
 
 CFGINPUT=	${FILESDIR}/sgcfg.in
 
