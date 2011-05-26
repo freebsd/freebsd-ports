@@ -2063,6 +2063,7 @@
     SUBDIR += p5-POE-Devel-Profiler
     SUBDIR += p5-POE-Exceptions
     SUBDIR += p5-POE-Loop-Glib
+    SUBDIR += p5-POE-Quickie
     SUBDIR += p5-POE-Session-MultiDispatch
     SUBDIR += p5-POE-Stage
     SUBDIR += p5-POE-Test-Loops

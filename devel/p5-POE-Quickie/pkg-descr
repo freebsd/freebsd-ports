@@ -1,0 +1,18 @@
+If you need nonblocking access to an external program, or want to execute some
+blocking code in a separate process, but you don't want to write a wrapper
+module or some POE::Wheel::Run boilerplate code, then POE::Quickie can help.
+
+You just specify what you're interested in (stdout, stderr, and/or exit code),
+and POE::Quickie will handle the rest in a sensible way.
+
+It has some convenience features, such as killing processes after a timeout,
+and storing process-specific context information which will be delivered with
+every event.
+
+There is also an even lazier API which suspends the execution of your event
+handler and gives control back to POE while your task is running, the same
+way LWP::UserAgent::POE does.
+
+This is provided by the quickie_* functions which are exported by default.
+
+WWW: http://search.cpan.org/dist/POE-Quickie/
