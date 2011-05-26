@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	znc
-PORTVERSION=	0.096
+PORTVERSION=	0.098
 CATEGORIES=	irc ipv6
-MASTER_SITES=	SF
+MASTER_SITES=	http://znc.in/releases/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	An advanced IRC bouncer
 
+FETCH_ARGS?=	-Fpr
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
@@ -26,9 +27,10 @@ OPTIONS=	DEBUG		"Enable debugging" off \
 		PERL		"Enable Perl module support" on \
 		TCL		"Enable TCL module support" off \
 		TCLALLOWALL	"Allow non-admin users to load TCL module" off \
+		PYTHON		"Enable Python module support" off \
 		SASL		"Enable SASL module support" off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--enable-debug
@@ -57,7 +59,7 @@ PLIST_SUB+=		OPENSSL="@comment "
 CONFIGURE_ARGS+=	--enable-perl
 USE_PERL5=		yes
 PLIST_SUB+=		PERL=""
-BUILD_DEPENDS+=		swig>0:${PORTSDIR}/devel/swig13
+BUILD_DEPENDS+=		swig>=1.3.40:${PORTSDIR}/devel/swig13
 .else
 PLIST_SUB+=		PERL="@comment "
 .endif
@@ -77,6 +79,16 @@ PLIST_SUB+=		TCL="@comment "
 IGNORE=			tcl allow all support requires TCL. Please re-rerun 'make config' and enable TCL
 .endif
 CXXFLAGS+=		-DMOD_MODTCL_ALLOW_EVERYONE
+.endif
+
+.if defined(WITH_PYTHON)
+USE_PYTHON=	3.1
+USE_PERL5_BUILD=	yes
+PLIST_SUB+=	PYTHON=""
+CONFIGURE_ARGS+=	--enable-python=${PYTHON_VERSION}-config
+BUILD_DEPENDS+=	swig>=1.3.40:${PORTSDIR}/devel/swig13
+.else
+PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if defined(WITH_SASL)
@@ -99,4 +111,4 @@ PLIST_SUB+=		EXTRA="@comment "
 MANCOMPRESSED=	yes
 MAN1=		znc.1 znc-buildmod.1 znc-config.1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
