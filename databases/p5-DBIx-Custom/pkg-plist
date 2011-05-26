@@ -2,11 +2,9 @@
 %%SITE_PERL%%/DBIx/Custom/Guide/Ja.pod
 %%SITE_PERL%%/DBIx/Custom/Guide.pod
 %%SITE_PERL%%/DBIx/Custom/Model.pm
-%%SITE_PERL%%/DBIx/Custom/MySQL.pm
 %%SITE_PERL%%/DBIx/Custom/Query.pm
 %%SITE_PERL%%/DBIx/Custom/QueryBuilder.pm
 %%SITE_PERL%%/DBIx/Custom/Result.pm
-%%SITE_PERL%%/DBIx/Custom/SQLite.pm
 %%SITE_PERL%%/DBIx/Custom/Tag.pm
 %%SITE_PERL%%/DBIx/Custom/Util.pm
 %%SITE_PERL%%/DBIx/Custom/Where.pm
