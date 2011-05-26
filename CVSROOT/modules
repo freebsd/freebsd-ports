@@ -5413,8 +5413,11 @@ horde-vacation                  ports/mail/horde-vacation
 horde-whups                     ports/devel/horde-whups
 horde-wicked                    ports/www/horde-wicked
 horde4-auth                     ports/security/horde4-auth
+horde4-autoloader               ports/devel/horde4-autoloader
 horde4-base                     ports/www/horde4-base
 horde4-content                  ports/devel/horde4-content
+horde4-date                     ports/devel/horde4-date
+horde4-dateparser               ports/devel/horde4-dateparser
 horde4-image                    ports/graphics/horde4-image
 horde4-itip                     ports/deskutils/horde4-itip
 horde4-kronolith                ports/deskutils/horde4-kronolith
@@ -5643,6 +5646,7 @@ hs-webkit                       ports/www/hs-webkit
 hs-x11                          ports/x11/hs-X11
 hs-x11-xft                      ports/x11/hs-X11-xft
 hs-xhtml                        ports/textproc/hs-xhtml
+hs-xhtml-docs                   ports/textproc/hs-xhtml-docs
 hs-xml                          ports/textproc/hs-xml
 hs-xmobar                       ports/x11/hs-xmobar
 hs-xmonad                       ports/x11-wm/hs-xmonad
@@ -10433,6 +10437,7 @@ open-vm-tools                   ports/emulators/open-vm-tools
 open-vm-tools-nox11             ports/emulators/open-vm-tools-nox11
 openacs                         ports/www/openacs
 openacs-dotlrn                  ports/www/openacs-dotlrn
+openafs                         ports/net/openafs
 openal                          ports/audio/openal
 openal-soft                     ports/audio/openal-soft
 openalchemist                   ports/games/openalchemist
