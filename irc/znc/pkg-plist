@@ -25,6 +25,7 @@ include/znc/ZNCString.h
 include/znc/defines.h
 include/znc/main.h
 include/znc/znc.h
+include/znc/zncconfig.h
 libdata/pkgconfig/znc.pc
 lib/znc/admin.so
 lib/znc/adminlog.so
@@ -103,6 +104,7 @@ share/znc/notes/tmpl/index.tmpl
 share/znc/notes/files/trash.gif
 share/znc/stickychan/tmpl/index.tmpl
 share/znc/stickychan/tmpl/stickychan_WebadminChan.tmpl
+share/znc/perform/tmpl/index.tmpl
 share/znc/webadmin/tmpl/listusers.tmpl
 share/znc/webadmin/tmpl/settings.tmpl
 share/znc/webadmin/tmpl/traffic.tmpl
@@ -132,25 +134,33 @@ share/znc/webadmin/tmpl/add_edit_chan.tmpl
 %%OPENSSL%%lib/znc/crypt.so
 %%OPENSSL%%lib/znc/savebuff.so
 %%OPENSSL%%lib/znc/schat.so
+%%PERL%%lib/znc/perleval.pm
 %%PERL%%lib/znc/modperl.so
 %%PERL%%lib/znc/modperl/startup.pl
 %%PERL%%lib/znc/modperl/ZNC.pm
 %%PERL%%lib/znc/modperl/ZNC.so
+%%PYTHON%%lib/znc/modpython.so
+%%PYTHON%%lib/znc/modpython/znc_core.pyc
+%%PYTHON%%lib/znc/modpython/znc.pyc
+%%PYTHON%%lib/znc/modpython/_znc_core.so
 %%SASL%%lib/znc/saslauth.so
 %%TCL%%lib/znc/modtcl.so
 %%TCL%%share/znc/modtcl/modtcl.tcl
 %%TCL%%share/znc/modtcl/binds.tcl
 @dirrm include/znc
-@dirrmtry lib/znc/modperl
+%%PYTHON%%@dirrmtry lib/znc/modpython
+%%PERL%%@dirrmtry lib/znc/modperl
 @dirrmtry lib/znc
 @dirrmtry share/znc/blockuser/tmpl
 @dirrmtry share/znc/blockuser
 @dirrmtry share/znc/lastseen/tmpl
 @dirrmtry share/znc/lastseen
-@dirrmtry share/znc/modtcl
+%%TCL%%@dirrmtry share/znc/modtcl
 @dirrmtry share/znc/notes/files
 @dirrmtry share/znc/notes/tmpl
 @dirrmtry share/znc/notes
+@dirrmtry share/znc/perform/tmpl/
+@dirrmtry share/znc/perform/
 @dirrmtry share/znc/stickychan/tmpl
 @dirrmtry share/znc/stickychan
 @dirrmtry share/znc/webadmin/tmpl
