@@ -1,0 +1,24 @@
+--- configure.orig	2010-01-25 12:47:28.000000000 +0100
++++ configure	2011-03-11 17:11:27.000000000 +0100
+@@ -20717,17 +20717,17 @@
+ if test "x${prefix}" = "xNONE"; then
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define PIXMAPS_DIR "${ac_default_prefix}/${DATADIRNAME}/${PACKAGE}/pixmaps"
++#define PIXMAPS_DIR "${ac_default_prefix}/${DATADIRNAME}/pixmaps"
+ _ACEOF
+ 
+-  pixmapsdir="${ac_default_prefix}/${DATADIRNAME}/${PACKAGE}/pixmaps"
++  pixmapsdir="${ac_default_prefix}/${DATADIRNAME}/pixmaps"
+ else
+ 
+ cat >>confdefs.h <<_ACEOF
+-#define PIXMAPS_DIR "${prefix}/${DATADIRNAME}/${PACKAGE}/pixmaps"
++#define PIXMAPS_DIR "${prefix}/${DATADIRNAME}/pixmaps"
+ _ACEOF
+ 
+-  pixmapsdir="${prefix}/${DATADIRNAME}/${PACKAGE}/pixmaps"
++  pixmapsdir="${prefix}/${DATADIRNAME}/pixmaps"
+ fi
+ 
+ 

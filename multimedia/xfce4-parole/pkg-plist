@@ -7,10 +7,13 @@ include/parole/parole-provider-player.h
 include/parole/parole-provider-plugin.h
 include/parole/parole-stream.h
 include/parole/parole.h
+lib/parole-0/stream-properties.a
 lib/parole-0/stream-properties.la
 lib/parole-0/stream-properties.so
+lib/parole-0/tray-icon.a
 lib/parole-0/tray-icon.la
 lib/parole-0/tray-icon.so
+lib/parole-0/window-title.a
 lib/parole-0/window-title.la
 lib/parole-0/window-title.so
 share/applications/parole.desktop
@@ -24,31 +27,38 @@ share/icons/hicolor/scalable/apps/parole.svg
 %%NLS%%share/locale/cs/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/da/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/de/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/el/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/es/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/id/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/it/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/lv/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/parole.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/parole.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/parole.mo
-share/parole/parole-plugins-0/stream-properties.desktop
-share/parole/parole-plugins-0/system-tray.desktop
-share/parole/parole-plugins-0/window-title.desktop
-share/parole/pixmaps/parole.png
-@dirrm share/parole/pixmaps
-@dirrm share/parole/parole-plugins-0
-@dirrm share/parole
+%%DATADIR%%/parole-plugins-0/stream-properties.desktop
+%%DATADIR%%/parole-plugins-0/system-tray.desktop
+%%DATADIR%%/parole-plugins-0/window-title.desktop
+share/pixmaps/loader.gif
+share/pixmaps/parole.png
+@dirrm %%DATADIR%%/parole-plugins-0
+@dirrm %%DATADIR%%
+%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ug
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
-@dirrmtry share/applications
 @dirrm lib/parole-0
 @dirrm include/parole
 @exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
