@@ -183,6 +183,7 @@
     SUBDIR += fnlib
     SUBDIR += fortytwo
     SUBDIR += fotofix
+    SUBDIR += fotoxx
     SUBDIR += fpc-cairo
     SUBDIR += fpc-fpgtk
     SUBDIR += fpc-fpvectorial
