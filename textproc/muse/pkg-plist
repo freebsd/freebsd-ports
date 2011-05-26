@@ -1,10 +1,13 @@
 %%EMACS_SITE_LISPDIR%%/muse/contrib/cgi.el
 %%EMACS_SITE_LISPDIR%%/muse/contrib/cgi.elc
+%%EMACS_SITE_LISPDIR%%/muse/contrib/htmlize-hack.el
 %%EMACS_SITE_LISPDIR%%/muse/contrib/httpd.el
 %%EMACS_SITE_LISPDIR%%/muse/contrib/httpd.elc
 %%EMACS_SITE_LISPDIR%%/muse/contrib/Makefile
 %%EMACS_SITE_LISPDIR%%/muse/contrib/blosxom/getstamps.pl
 %%EMACS_SITE_LISPDIR%%/muse/contrib/blosxom/metadate_0_0_3
+%%EMACS_SITE_LISPDIR%%/muse/contrib/ikiwiki/IkiWiki/Plugin/muse.pm
+%%EMACS_SITE_LISPDIR%%/muse/contrib/ikiwiki/IkiWiki/Plugin/test.pl
 %%EMACS_SITE_LISPDIR%%/muse/contrib/pyblosxom/getstamps.py
 %%EMACS_SITE_LISPDIR%%/muse/contrib/pyblosxom/hardcodedates.py
 %%EMACS_SITE_LISPDIR%%/muse/contrib/pyblosxom/make-blog
@@ -34,12 +37,16 @@
 %%EMACS_SITE_LISPDIR%%/muse/muse-html.elc
 %%EMACS_SITE_LISPDIR%%/muse/muse-http.el
 %%EMACS_SITE_LISPDIR%%/muse/muse-http.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-ikiwiki.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-ikiwiki.elc
 %%EMACS_SITE_LISPDIR%%/muse/muse-import-docbook.el
 %%EMACS_SITE_LISPDIR%%/muse/muse-import-docbook.elc
 %%EMACS_SITE_LISPDIR%%/muse/muse-import-latex.el
 %%EMACS_SITE_LISPDIR%%/muse/muse-import-latex.elc
 %%EMACS_SITE_LISPDIR%%/muse/muse-import-xml.el
 %%EMACS_SITE_LISPDIR%%/muse/muse-import-xml.elc
+%%EMACS_SITE_LISPDIR%%/muse/muse-ipc.el
+%%EMACS_SITE_LISPDIR%%/muse/muse-ipc.elc
 %%EMACS_SITE_LISPDIR%%/muse/muse-journal.el
 %%EMACS_SITE_LISPDIR%%/muse/muse-journal.elc
 %%EMACS_SITE_LISPDIR%%/muse/muse-latex.el
@@ -71,6 +78,8 @@
 %%EXAMPLESDIR%%/Makefile
 %%EXAMPLESDIR%%/QuickStart.muse
 %%EXAMPLESDIR%%/emacs-muse.png
+%%EXAMPLESDIR%%/ikiwiki/muse-init-project.el
+%%EXAMPLESDIR%%/ikiwiki/muse-init-simple.el
 %%EXAMPLESDIR%%/johnw/muse-init.el
 %%EXAMPLESDIR%%/johnw/publish-johnw
 %%EXAMPLESDIR%%/muse-made-with.png
@@ -88,10 +97,14 @@
 @dirrm %%EXAMPLESDIR%%/mwolson/templates
 @dirrm %%EXAMPLESDIR%%/mwolson/stylesheets
 @dirrm %%EXAMPLESDIR%%/mwolson
+@dirrm %%EXAMPLESDIR%%/ikiwiki
 @dirrm %%EXAMPLESDIR%%/johnw
 @dirrm %%EXAMPLESDIR%%
 @dirrm %%EMACS_SITE_LISPDIR%%/muse/experimental
 @dirrm %%EMACS_SITE_LISPDIR%%/muse/contrib/blosxom
+@dirrm %%EMACS_SITE_LISPDIR%%/muse/contrib/ikiwiki/IkiWiki/Plugin
+@dirrm %%EMACS_SITE_LISPDIR%%/muse/contrib/ikiwiki/IkiWiki
+@dirrm %%EMACS_SITE_LISPDIR%%/muse/contrib/ikiwiki
 @dirrm %%EMACS_SITE_LISPDIR%%/muse/contrib/pyblosxom
 @dirrm %%EMACS_SITE_LISPDIR%%/muse/contrib
 @dirrm %%EMACS_SITE_LISPDIR%%/muse
