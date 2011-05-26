@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1acf9ec5-877d-11e0-b937-001372fd0af2">
+    <topic>drupal6 -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>drupal6</name>
+	<range><lt>6.22</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Drupal Team reports:</p>
+	<blockquote cite="http://drupal.org/node/1168756">
+	  <p>A reflected cross site scripting vulnerability was discovered
+	    in Drupal's error handler. Drupal displays PHP errors in the
+	    messages area, and a specially crafted URL can cause malicious
+	    scripts to be injected into the message. The issue can be
+	    mitigated by disabling on-screen error display at admin /
+	    settings / error-reporting. This is the recommended setting for
+	    production sites.</p>
+	  <p>When using re-colorable themes, color inputs are not sanitized. 
+	    Malicious color values can be used to insert arbitrary CSS and
+	    script code. Successful exploitation requires the "Administer
+	    themes" permission.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://drupal.org/node/1168756</url>
+    </references>
+    <dates>
+      <discovery>2011-05-25</discovery>
+      <entry>2011-05-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e4833927-86e5-11e0-a6b4-000a5e1e33c6">
     <topic>erlang -- ssh library uses a weak random number generator</topic>
     <affects>
