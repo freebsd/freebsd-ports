@@ -1,0 +1,26 @@
+--- Makefile.orig	2011-02-28 17:04:24.000000000 +0100
++++ Makefile	2011-05-25 17:26:15.000000000 +0200
+@@ -15,13 +15,12 @@
+ BINDIR = $(PREFIX)/bin
+ DATADIR = $(PREFIX)/share/$(PROGRAM)
+ DOCDIR = $(PREFIX)/share/doc/$(PROGRAM)
+-MANDIR = $(PREFIX)/share/man/man1
++MANDIR = $(PREFIX)/man/man1
+ ICONDIR = $(DATADIR)/icons
+ DESKTOP = $(DATADIR)/kornelix-$(PROGRAM).desktop
+ 
+ $(PROGRAM): $(PROGRAM).o zfuncs.o
+ 	$(CXX) $(LFLAGS) -ltiff -o $(PROGRAM) $(PROGRAM).o zfuncs.o
+-	@ ./dependencies.sh
+ 
+ $(PROGRAM).o: $(SOURCE)
+ 	$(CXX) $(CFLAGS) -o $(PROGRAM).o $(SOURCE)   \
+@@ -42,8 +41,6 @@
+ 	cp -f icons/* $(DESTDIR)$(ICONDIR)
+ 	cp -f -R locales/* $(DESTDIR)$(DATADIR)/locales
+ 	cp -f $(PROGRAM) $(DESTDIR)$(BINDIR)
+-	@ echo use make menu to install desktop menu
+-	@ echo use make manpage to install man page
+ 
+ menu:
+ 	cp -f desktop $(DESTDIR)$(DESKTOP)

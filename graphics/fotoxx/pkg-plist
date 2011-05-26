@@ -1,0 +1,98 @@
+@comment $FreeBSD$
+bin/fotoxx
+%%DATADIR%%/icons/arrow.png
+%%DATADIR%%/icons/busy.png
+%%DATADIR%%/icons/drag.png
+%%DATADIR%%/icons/draw.png
+%%DATADIR%%/icons/first-page.png
+%%DATADIR%%/icons/folder.png
+%%DATADIR%%/icons/folder256.png
+%%DATADIR%%/icons/fotoxx.png
+%%DATADIR%%/icons/gallery.png
+%%DATADIR%%/icons/help.png
+%%DATADIR%%/icons/last-page.png
+%%DATADIR%%/icons/next-page.png
+%%DATADIR%%/icons/next-row.png
+%%DATADIR%%/icons/next.png
+%%DATADIR%%/icons/open.png
+%%DATADIR%%/icons/prev-page.png
+%%DATADIR%%/icons/prev-row.png
+%%DATADIR%%/icons/prev.png
+%%DATADIR%%/icons/print.png
+%%DATADIR%%/icons/quit.png
+%%DATADIR%%/icons/redo.png
+%%DATADIR%%/icons/save.png
+%%DATADIR%%/icons/saveas.png
+%%DATADIR%%/icons/trash.png
+%%DATADIR%%/icons/undo.png
+%%DATADIR%%/icons/zoom+.png
+%%DATADIR%%/icons/zoom-.png
+%%DOCSDIR%%/userguide-en.html
+%%DOCSDIR%%/freshmeat
+%%DOCSDIR%%/fotoxx.man
+%%DOCSDIR%%/TRANSLATIONS
+%%DOCSDIR%%/README
+%%DOCSDIR%%/COPYING
+%%DOCSDIR%%/CHANGES
+%%DOCSDIR%%/images/HDF-paint.jpg
+%%DOCSDIR%%/images/HDR-adjust.jpg
+%%DOCSDIR%%/images/annotate.jpg
+%%DOCSDIR%%/images/brightness-color.jpg
+%%DOCSDIR%%/images/brightness-ramp.png
+%%DOCSDIR%%/images/edit-tags.jpg
+%%DOCSDIR%%/images/expand-brightness.png
+%%DOCSDIR%%/images/gallery image selection.jpg
+%%DOCSDIR%%/images/manage-tags.jpg
+%%DOCSDIR%%/images/navigation.jpeg
+%%DOCSDIR%%/images/pano-dialog.jpeg
+%%DOCSDIR%%/images/rename.jpeg
+%%DOCSDIR%%/images/save-as.jpeg
+%%DOCSDIR%%/images/search-images.jpg
+%%DOCSDIR%%/images/select-area.png
+%%DOCSDIR%%/images/select-whole-image.jpg
+%%DOCSDIR%%/images/select_edit.jpg
+%%DOCSDIR%%/images/sharpen.jpeg
+%%DOCSDIR%%/images/smart-erase.png
+%%DOCSDIR%%/images/stack.png
+%%DOCSDIR%%/images/tone-mapping.png
+%%DOCSDIR%%/images/trim.jpg
+%%DOCSDIR%%/images/watermark.jpg
+%%DATADIR%%/locales/de/fotoxx.po
+%%DATADIR%%/locales/de/zfuncs.po
+%%DATADIR%%/locales/en/fotoxx.po
+%%DATADIR%%/locales/en/zfuncs.po
+%%DATADIR%%/locales/es/fotoxx.po
+%%DATADIR%%/locales/es/zfuncs.po
+%%DATADIR%%/locales/fr/fotoxx.po
+%%DATADIR%%/locales/fr/fotoxx.po.old
+%%DATADIR%%/locales/fr/zfuncs.po
+%%DATADIR%%/locales/gl/fotoxx.po
+%%DATADIR%%/locales/gl/zfuncs.po
+%%DATADIR%%/locales/it/fotoxx.po
+%%DATADIR%%/locales/it/zfuncs.po
+%%DATADIR%%/locales/nl/fotoxx.po
+%%DATADIR%%/locales/nl/zfuncs.po
+%%DATADIR%%/locales/pt/fotoxx.po
+%%DATADIR%%/locales/pt/zfuncs.po
+%%DATADIR%%/locales/ru/fotoxx.po
+%%DATADIR%%/locales/ru/zfuncs.po
+%%DATADIR%%/locales/sv/fotoxx.po
+%%DATADIR%%/locales/sv/zfuncs.po
+%%DATADIR%%/locales/zh_CN/fotoxx.po
+%%DATADIR%%/locales/zh_CN/zfuncs.po
+@dirrm %%DOCSDIR%%/images
+@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/locales/de
+@dirrm %%DATADIR%%/locales/en
+@dirrm %%DATADIR%%/locales/es
+@dirrm %%DATADIR%%/locales/fr
+@dirrm %%DATADIR%%/locales/gl
+@dirrm %%DATADIR%%/locales/it
+@dirrm %%DATADIR%%/locales/nl
+@dirrm %%DATADIR%%/locales/pt
+@dirrm %%DATADIR%%/locales/ru
+@dirrm %%DATADIR%%/locales/sv
+@dirrm %%DATADIR%%/locales/zh_CN
+@dirrm %%DATADIR%%/locales
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
