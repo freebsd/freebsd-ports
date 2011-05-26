@@ -27,50 +27,66 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/Iterator.pm
 %%SITE_PERL%%/Config/Model/ListId.pm
 %%SITE_PERL%%/Config/Model/Loader.pm
+%%SITE_PERL%%/Config/Model/Manual/ModelCreationAdvanced.pod
 %%SITE_PERL%%/Config/Model/Manual/ModelCreationIntroduction.pod
 %%SITE_PERL%%/Config/Model/Node.pm
 %%SITE_PERL%%/Config/Model/ObjTreeScanner.pm
 %%SITE_PERL%%/Config/Model/Report.pm
-%%SITE_PERL%%/Config/Model/Searcher.pm
+%%SITE_PERL%%/Config/Model/SearchElement.pm
 %%SITE_PERL%%/Config/Model/SimpleUI.pm
 %%SITE_PERL%%/Config/Model/TermUI.pm
+%%SITE_PERL%%/Config/Model/TreeSearcher.pm
 %%SITE_PERL%%/Config/Model/Value.pm
 %%SITE_PERL%%/Config/Model/ValueComputer.pm
 %%SITE_PERL%%/Config/Model/WarpedNode.pm
-%%SITE_PERL%%/Config/Model/WarpedThing.pm
+%%SITE_PERL%%/Config/Model/Warper.pm
 %%SITE_PERL%%/Config/Model/application.d/dpkg
 %%SITE_PERL%%/Config/Model/application.d/dpkg-control
 %%SITE_PERL%%/Config/Model/application.d/dpkg-copyright
-%%SITE_PERL%%/Config/Model/Manual/ModelCreationAdvanced.pod
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control.pl
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control/Binary.pl
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control/Source.pl
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright.pl
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/Content.pl
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/License.pl
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg.pod
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control.pod
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control/Binary.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control/Binary.pod
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control/Source.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control/Source.pod
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright.pod
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/Content.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/Content.pod
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/License.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/License.pod
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Meta.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Meta.pod
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Source.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Source.pod
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Source/Options.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Source/Options.pod
 %%SITE_PERL%%/Config/Model/models/Fstab.pl
+%%SITE_PERL%%/Config/Model/models/Fstab.pod
 %%SITE_PERL%%/Config/Model/models/Fstab/CommonOptions.pl
 %%SITE_PERL%%/Config/Model/models/Fstab/Ext2FsOpt.pl
 %%SITE_PERL%%/Config/Model/models/Fstab/Ext3FsOpt.pl
 %%SITE_PERL%%/Config/Model/models/Fstab/Ext4FsOpt.pl
 %%SITE_PERL%%/Config/Model/models/Fstab/FsLine.pl
+%%SITE_PERL%%/Config/Model/models/Fstab/FsLine.pod
 %%SITE_PERL%%/Config/Model/models/Fstab/Iso9660_Opt.pl
 %%SITE_PERL%%/Config/Model/models/Fstab/NoneOptions.pl
 %%SITE_PERL%%/Config/Model/models/Fstab/SwapOptions.pl
 %%SITE_PERL%%/Config/Model/models/Fstab/UsbFsOptions.pl
 %%SITE_PERL%%/Config/Model/models/PopCon.pl
+%%SITE_PERL%%/Config/Model/models/PopCon.pod
 %%SITE_PERL%%/Config/Model/system.d/fstab
 %%SITE_PERL%%/Config/Model/system.d/popcon
 @dirrmtry %%SITE_PERL%%/Config/Model/system.d
 @dirrmtry %%SITE_PERL%%/Config/Model/models/Fstab
+@dirrmtry %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Source
 @dirrmtry %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright
 @dirrmtry %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Control
 @dirrmtry %%SITE_PERL%%/Config/Model/models/Debian/Dpkg
 @dirrmtry %%SITE_PERL%%/Config/Model/models/Debian
 @dirrmtry %%SITE_PERL%%/Config/Model/models
-@dirrmtry %%SITE_PERL%%/Config/Model/Manual
 @dirrmtry %%SITE_PERL%%/Config/Model/application.d
 @dirrmtry %%SITE_PERL%%/Config/Model/Manual
 @dirrmtry %%SITE_PERL%%/Config/Model/Debian
