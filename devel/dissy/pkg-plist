@@ -18,15 +18,15 @@ bin/dissy
 %%PYTHON_SITELIBDIR%%/dissy/File.py
 %%PYTHON_SITELIBDIR%%/dissy/File.pyc
 %%PYTHON_SITELIBDIR%%/dissy/File.pyo
-%%PYTHON_SITELIBDIR%%/dissy/FileDialogue.py
-%%PYTHON_SITELIBDIR%%/dissy/FileDialogue.pyc
-%%PYTHON_SITELIBDIR%%/dissy/FileDialogue.pyo
 %%PYTHON_SITELIBDIR%%/dissy/Function.py
 %%PYTHON_SITELIBDIR%%/dissy/Function.pyc
 %%PYTHON_SITELIBDIR%%/dissy/Function.pyo
 %%PYTHON_SITELIBDIR%%/dissy/FunctionModel.py
 %%PYTHON_SITELIBDIR%%/dissy/FunctionModel.pyc
 %%PYTHON_SITELIBDIR%%/dissy/FunctionModel.pyo
+%%PYTHON_SITELIBDIR%%/dissy/InfoBox.py
+%%PYTHON_SITELIBDIR%%/dissy/InfoBox.pyc
+%%PYTHON_SITELIBDIR%%/dissy/InfoBox.pyo
 %%PYTHON_SITELIBDIR%%/dissy/Instruction.py
 %%PYTHON_SITELIBDIR%%/dissy/Instruction.pyc
 %%PYTHON_SITELIBDIR%%/dissy/Instruction.pyo
@@ -39,12 +39,18 @@ bin/dissy
 %%PYTHON_SITELIBDIR%%/dissy/JumpStreamHandler.py
 %%PYTHON_SITELIBDIR%%/dissy/JumpStreamHandler.pyc
 %%PYTHON_SITELIBDIR%%/dissy/JumpStreamHandler.pyo
+%%PYTHON_SITELIBDIR%%/dissy/Location.py
+%%PYTHON_SITELIBDIR%%/dissy/Location.pyc
+%%PYTHON_SITELIBDIR%%/dissy/Location.pyo
 %%PYTHON_SITELIBDIR%%/dissy/PreferencesDialogue.py
 %%PYTHON_SITELIBDIR%%/dissy/PreferencesDialogue.pyc
 %%PYTHON_SITELIBDIR%%/dissy/PreferencesDialogue.pyo
 %%PYTHON_SITELIBDIR%%/dissy/StrEntity.py
 %%PYTHON_SITELIBDIR%%/dissy/StrEntity.pyc
 %%PYTHON_SITELIBDIR%%/dissy/StrEntity.pyo
+%%PYTHON_SITELIBDIR%%/dissy/ValueAnalysisInfoProvider.py
+%%PYTHON_SITELIBDIR%%/dissy/ValueAnalysisInfoProvider.pyc
+%%PYTHON_SITELIBDIR%%/dissy/ValueAnalysisInfoProvider.pyo
 %%PYTHON_SITELIBDIR%%/dissy/__init__.py
 %%PYTHON_SITELIBDIR%%/dissy/__init__.pyc
 %%PYTHON_SITELIBDIR%%/dissy/__init__.pyo
@@ -54,6 +60,9 @@ bin/dissy
 %%PYTHON_SITELIBDIR%%/dissy/arm.py
 %%PYTHON_SITELIBDIR%%/dissy/arm.pyc
 %%PYTHON_SITELIBDIR%%/dissy/arm.pyo
+%%PYTHON_SITELIBDIR%%/dissy/atmel.py
+%%PYTHON_SITELIBDIR%%/dissy/atmel.pyc
+%%PYTHON_SITELIBDIR%%/dissy/atmel.pyo
 %%PYTHON_SITELIBDIR%%/dissy/history.py
 %%PYTHON_SITELIBDIR%%/dissy/history.pyc
 %%PYTHON_SITELIBDIR%%/dissy/history.pyo
@@ -66,6 +75,9 @@ bin/dissy
 %%PYTHON_SITELIBDIR%%/dissy/ppc.py
 %%PYTHON_SITELIBDIR%%/dissy/ppc.pyc
 %%PYTHON_SITELIBDIR%%/dissy/ppc.pyo
+%%PYTHON_SITELIBDIR%%/dissy/valueanalysis.py
+%%PYTHON_SITELIBDIR%%/dissy/valueanalysis.pyc
+%%PYTHON_SITELIBDIR%%/dissy/valueanalysis.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/dissy
 %%DATADIR%%/gfx/red_arrow_left.png
 %%DATADIR%%/gfx/red_line.png
@@ -74,6 +86,6 @@ bin/dissy
 %%DATADIR%%/gfx/red_plus.png
 %%DATADIR%%/gfx/red_start_up.png
 %%DATADIR%%/gfx/icon.svg
-%%DATADIR%%/menubar.xml
+%%DATADIR%%/dissy.ui
 @dirrm %%DATADIR%%/gfx
 @dirrm %%DATADIR%%
