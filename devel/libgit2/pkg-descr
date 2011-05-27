@@ -2,7 +2,7 @@ libgit2 is...
 
 licensed under a very permissive license so you can use it anywhere
 faster than any other Git library
-written in standards compilant C99
+written in standards compliant C99
 completely multi-platform: Windows, Linux, Mac OS X, xBSD
 compiled natively under all platforms (yes, even MSVC on Windows)
 re-entrant, with sane error handling
