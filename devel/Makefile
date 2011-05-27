@@ -809,6 +809,7 @@
     SUBDIR += libghthash
     SUBDIR += libgii
     SUBDIR += libgiigic
+    SUBDIR += libgit2
     SUBDIR += libglade
     SUBDIR += libglade-java
     SUBDIR += libglade2
