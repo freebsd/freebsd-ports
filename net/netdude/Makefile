@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	netdude
-PORTVERSION=	0.4.8a
-PORTREVISION=	3
+PORTVERSION=	0.5.1
 CATEGORIES=	net
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.4.8
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	brenton.chang@gmail.com
 COMMENT=	NETwork DUmp data Displayer and Editor for tcpdump tracefiles
