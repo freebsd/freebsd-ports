@@ -3673,6 +3673,7 @@ foswiki-ModPerlEngineContrib    ports/www/foswiki-ModPerlEngineContrib
 foswiki-modperlenginecontrib    ports/www/foswiki-ModPerlEngineContrib
 fotaq                           ports/games/fotaq
 fotofix                         ports/graphics/fotofix
+fotoxx                          ports/graphics/fotoxx
 fowsr                           ports/astro/fowsr
 fox14                           ports/x11-toolkits/fox14
 fox16                           ports/x11-toolkits/fox16
@@ -5412,9 +5413,12 @@ horde-turba                     ports/mail/horde-turba
 horde-vacation                  ports/mail/horde-vacation
 horde-whups                     ports/devel/horde-whups
 horde-wicked                    ports/www/horde-wicked
+horde4-alarm                    ports/deskutils/horde4-alarm
 horde4-auth                     ports/security/horde4-auth
 horde4-autoloader               ports/devel/horde4-autoloader
 horde4-base                     ports/www/horde4-base
+horde4-browser                  ports/www/horde4-browser
+horde4-cache                    ports/devel/horde4-cache
 horde4-content                  ports/devel/horde4-content
 horde4-date                     ports/devel/horde4-date
 horde4-dateparser               ports/devel/horde4-dateparser
@@ -5422,6 +5426,7 @@ horde4-image                    ports/graphics/horde4-image
 horde4-itip                     ports/deskutils/horde4-itip
 horde4-kronolith                ports/deskutils/horde4-kronolith
 horde4-rdo                      ports/devel/horde4-rdo
+horde4-template                 ports/www/horde4-template
 hostapd                         ports/net/hostapd
 hot-babe                        ports/deskutils/hot-babe
 hotcrp                          ports/www/hotcrp
@@ -7190,6 +7195,7 @@ klondike                        ports/games/klondike
 klone                           ports/lang/klone
 kludge3d                        ports/graphics/kludge3d
 kluje                           ports/deskutils/kluje
+kmancala                        ports/games/kmancala
 kmastermind                     ports/games/kmastermind
 kmatrix3d                       ports/deskutils/kmatrix3d
 kmenc15                         ports/multimedia/kmenc15
@@ -9832,6 +9838,7 @@ nagiosgrapher                   ports/net-mgmt/nagiosgrapher
 nagiosql                        ports/net-mgmt/nagiosql
 nagiostat                       ports/net-mgmt/nagiostat
 nagircbot                       ports/net-mgmt/nagircbot
+nagstamon                       ports/net-mgmt/nagstamon
 nagvis                          ports/net-mgmt/nagvis
 naim                            ports/net-im/naim
 najitool                        ports/misc/najitool
@@ -12608,6 +12615,7 @@ p5-IPC-Cmd                      ports/devel/p5-IPC-Cmd
 p5-IPC-DirQueue                 ports/devel/p5-IPC-DirQueue
 p5-IPC-Locker                   ports/devel/p5-IPC-Locker
 p5-IPC-MM                       ports/devel/p5-IPC-MM
+p5-IPC-MMA                      ports/devel/p5-IPC-MMA
 p5-IPC-Mmap                     ports/devel/p5-IPC-Mmap
 p5-IPC-Mmap-Share               ports/devel/p5-IPC-Mmap-Share
 p5-IPC-Open3-Simple             ports/devel/p5-IPC-Open3-Simple
@@ -13564,6 +13572,7 @@ p5-POE-Filter-Transparent-SMTP  ports/mail/p5-POE-Filter-Transparent-SMTP
 p5-POE-Filter-XML               ports/textproc/p5-POE-Filter-XML
 p5-POE-Filter-Zlib              ports/archivers/p5-POE-Filter-Zlib
 p5-POE-Loop-Glib                ports/devel/p5-POE-Loop-Glib
+p5-POE-Quickie                  ports/devel/p5-POE-Quickie
 p5-POE-Session-Irssi            ports/irc/p5-POE-Session-Irssi
 p5-POE-Session-MultiDispatch    ports/devel/p5-POE-Session-MultiDispatch
 p5-POE-Stage                    ports/devel/p5-POE-Stage
@@ -16884,6 +16893,7 @@ p5-ipc-cmd                      ports/devel/p5-IPC-Cmd
 p5-ipc-dirqueue                 ports/devel/p5-IPC-DirQueue
 p5-ipc-locker                   ports/devel/p5-IPC-Locker
 p5-ipc-mm                       ports/devel/p5-IPC-MM
+p5-ipc-mma                      ports/devel/p5-IPC-MMA
 p5-ipc-mmap                     ports/devel/p5-IPC-Mmap
 p5-ipc-mmap-share               ports/devel/p5-IPC-Mmap-Share
 p5-ipc-open3-simple             ports/devel/p5-IPC-Open3-Simple
@@ -17991,6 +18001,7 @@ p5-poe-filter-transparent-smtp  ports/mail/p5-POE-Filter-Transparent-SMTP
 p5-poe-filter-xml               ports/textproc/p5-POE-Filter-XML
 p5-poe-filter-zlib              ports/archivers/p5-POE-Filter-Zlib
 p5-poe-loop-glib                ports/devel/p5-POE-Loop-Glib
+p5-poe-quickie                  ports/devel/p5-POE-Quickie
 p5-poe-session-irssi            ports/irc/p5-POE-Session-Irssi
 p5-poe-session-multidispatch    ports/devel/p5-POE-Session-MultiDispatch
 p5-poe-stage                    ports/devel/p5-POE-Stage
@@ -19237,6 +19248,7 @@ paragui-devel                   ports/x11-toolkits/paragui-devel
 parallel                        ports/sysutils/parallel
 parallels-tools                 ports/emulators/parallels-tools
 parano                          ports/security/parano
+paratype                        ports/x11-fonts/paratype
 paraview                        ports/science/paraview
 parcellite                      ports/deskutils/parcellite
 parchive                        ports/archivers/parchive
@@ -21635,6 +21647,7 @@ py-pyPgSQL                      ports/databases/py-pyPgSQL
 py-pyang                        ports/net-mgmt/py-pyang
 py-pybloom                      ports/math/py-pybloom
 py-pybmp                        ports/multimedia/py-pybmp
+py-pycalendar                   ports/devel/py-pycalendar
 py-pycallgraph                  ports/devel/py-pycallgraph
 py-pycerberus                   ports/devel/py-pycerberus
 py-pycha                        ports/graphics/py-pycha
@@ -27424,6 +27437,7 @@ zh-xmms                         ports/chinese/xmms
 zh-xpdf                         ports/chinese/xpdf
 zh-xsim                         ports/chinese/xsim
 zh-xttmgr                       ports/chinese/xttmgr
+zh-ydict                        ports/chinese/ydict
 zh-zhcon                        ports/chinese/zhcon
 zidrav                          ports/sysutils/zidrav
 zile                            ports/editors/zile
