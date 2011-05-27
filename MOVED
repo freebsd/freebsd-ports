@@ -2184,3 +2184,4 @@ multimedia/rebot3||2011-05-16|Removed
 devel/tcl-neo||2011-05-22|Removed: deprecated and no maintainer interest.
 www/neowebscript||2011-05-22|Removed: deprecated and no maintainer interest.
 databases/db3||2011-05-23|Removed: all users set USE_BDB=3+ and have been using 4.0+.
+databases/db45|databases/db46|2011-05-28|Removed: no users left that require exactly 4.5.
