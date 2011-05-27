@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snmp++
-PORTVERSION=	3.2.23
+PORTVERSION=	3.2.25
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.agentpp.com/
 DISTNAME=	${PORTNAME}v${PORTVERSION}
@@ -22,5 +22,8 @@ USE_LDCONFIG=	yes
 
 post-extract:
 	${CP} ${FILESDIR}/Makefile.FreeBSD ${WRKSRC}
+
+post-install:
+	${LN} -sf ${PREFIX}/lib/libsnmp++.so.2.0.0 ${PREFIX}/lib/libsnmp++.so
 
 .include <bsd.port.mk>
