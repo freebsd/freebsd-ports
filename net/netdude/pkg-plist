@@ -1,33 +1,34 @@
-bin/netdude0.4
+bin/netdude0.5
 bin/netdude
-include/netdude/0.4/nd.h
-include/netdude/0.4/nd_debug.h
-include/netdude/0.4/nd_macros.h
-include/netdude/0.4/nd_clipboard.h
-include/netdude/0.4/nd_dialog.h
-include/netdude/0.4/nd_fam.h
-include/netdude/0.4/nd_filter_gui.h
-include/netdude/0.4/nd_gettext.h
-include/netdude/0.4/nd_globals.h
-include/netdude/0.4/nd_gui.h
-include/netdude/0.4/nd_info_dialog.h
-include/netdude/0.4/nd_main.h
-include/netdude/0.4/nd_packet.h
-include/netdude/0.4/nd_plugin.h
-include/netdude/0.4/nd_prefs.h
-include/netdude/0.4/nd_protocol.h
-include/netdude/0.4/nd_protocol_inst.h
-include/netdude/0.4/nd_protocol_plugin.h
-include/netdude/0.4/nd_raw_protocol.h
-include/netdude/0.4/nd_recent.h
-include/netdude/0.4/nd_timestamp.h
-include/netdude/0.4/nd_tp.h
-include/netdude/0.4/nd_tpm_gui.h
-include/netdude/0.4/nd_trace.h
-include/netdude/0.4/nd_trace_area_gui.h
-include/netdude/0.4/nd_trace_registry.h
-include/netdude/0.4/nd_types.h
-include/netdude/0.4/protocols/snap/nd_snap.h
+include/netdude/0.5/nd.h
+include/netdude/0.5/nd_debug.h
+include/netdude/0.5/nd_macros.h
+include/netdude/0.5/nd_clipboard.h
+include/netdude/0.5/nd_dialog.h
+include/netdude/0.5/nd_fam.h
+include/netdude/0.5/nd_filter_gui.h
+include/netdude/0.5/nd_gettext.h
+include/netdude/0.5/nd_globals.h
+include/netdude/0.5/nd_gui.h
+include/netdude/0.5/nd_info_dialog.h
+include/netdude/0.5/nd_main.h
+include/netdude/0.5/nd_packet.h
+include/netdude/0.5/nd_plugin.h
+include/netdude/0.5/nd_prefs.h
+include/netdude/0.5/nd_protocol.h
+include/netdude/0.5/nd_protocol_inst.h
+include/netdude/0.5/nd_protocol_plugin.h
+include/netdude/0.5/nd_raw_protocol.h
+include/netdude/0.5/nd_recent.h
+include/netdude/0.5/nd_timestamp.h
+include/netdude/0.5/nd_tp.h
+include/netdude/0.5/nd_tpm_gui.h
+include/netdude/0.5/nd_trace.h
+include/netdude/0.5/nd_trace_area_gui.h
+include/netdude/0.5/nd_trace_registry.h
+include/netdude/0.5/nd_types.h
+include/netdude/0.5/protocols/snap/nd_snap.h
+include/netdude/0.5/protocols/vlan/nd_vlan.h
 %%PORTDOCS%%%%DOCSDIR%%/images/about_menu.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/arch.png
 %%PORTDOCS%%%%DOCSDIR%%/images/ascii_editor.png
@@ -48,19 +49,10 @@ include/netdude/0.4/protocols/snap/nd_snap.h
 %%PORTDOCS%%%%DOCSDIR%%/images/trace_areas.png
 %%PORTDOCS%%%%DOCSDIR%%/api.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/a6548.html
-%%PORTDOCS%%%%DOCSDIR%%/a6566.html
-%%PORTDOCS%%%%DOCSDIR%%/a6568.html
-%%PORTDOCS%%%%DOCSDIR%%/a6572.html
-%%PORTDOCS%%%%DOCSDIR%%/b6560.html
-%%PORTDOCS%%%%DOCSDIR%%/b6578.html
-%%PORTDOCS%%%%DOCSDIR%%/b6580.html
-%%PORTDOCS%%%%DOCSDIR%%/b6584.html
+%%PORTDOCS%%%%DOCSDIR%%/a6326.html
+%%PORTDOCS%%%%DOCSDIR%%/b6338.html
 %%PORTDOCS%%%%DOCSDIR%%/c106.html
 %%PORTDOCS%%%%DOCSDIR%%/c21.html
-%%PORTDOCS%%%%DOCSDIR%%/c456.html
-%%PORTDOCS%%%%DOCSDIR%%/c474.html
-%%PORTDOCS%%%%DOCSDIR%%/c476.html
 %%PORTDOCS%%%%DOCSDIR%%/c480.html
 %%PORTDOCS%%%%DOCSDIR%%/c72.html
 %%PORTDOCS%%%%DOCSDIR%%/netdude-gtkhex.html
@@ -92,62 +84,66 @@ include/netdude/0.4/protocols/snap/nd_snap.h
 %%PORTDOCS%%%%DOCSDIR%%/netdude-nd-trace-area-gui.html
 %%PORTDOCS%%%%DOCSDIR%%/netdude-nd-trace-registry.html
 %%PORTDOCS%%%%DOCSDIR%%/stylesheet.css
-%%DATADIR%%/0.4/plugins/nd_cksumfix.so
-%%DATADIR%%/0.4/plugins/nd_cksumfix.la
-%%DATADIR%%/0.4/plugins/nd_cksumfix.a
-%%DATADIR%%/0.4/plugins/nd_bpf.so
-%%DATADIR%%/0.4/plugins/nd_bpf.la
-%%DATADIR%%/0.4/plugins/nd_bpf.a
-%%DATADIR%%/0.4/protocols/nd_arp.so
-%%DATADIR%%/0.4/protocols/nd_arp.la
-%%DATADIR%%/0.4/protocols/nd_arp.a
-%%DATADIR%%/0.4/protocols/nd_ethernet.so
-%%DATADIR%%/0.4/protocols/nd_ethernet.la
-%%DATADIR%%/0.4/protocols/nd_ethernet.a
-%%DATADIR%%/0.4/protocols/nd_fddi.so
-%%DATADIR%%/0.4/protocols/nd_fddi.la
-%%DATADIR%%/0.4/protocols/nd_fddi.a
-%%DATADIR%%/0.4/protocols/nd_icmp.so
-%%DATADIR%%/0.4/protocols/nd_icmp.la
-%%DATADIR%%/0.4/protocols/nd_icmp.a
-%%DATADIR%%/0.4/protocols/nd_ip.so
-%%DATADIR%%/0.4/protocols/nd_ip.la
-%%DATADIR%%/0.4/protocols/nd_ip.a
-%%DATADIR%%/0.4/protocols/nd_pcap.a
-%%DATADIR%%/0.4/protocols/nd_pcap.la
-%%DATADIR%%/0.4/protocols/nd_pcap.so
-%%DATADIR%%/0.4/protocols/nd_sll.so
-%%DATADIR%%/0.4/protocols/nd_sll.la
-%%DATADIR%%/0.4/protocols/nd_sll.a
-%%DATADIR%%/0.4/protocols/nd_snap.so
-%%DATADIR%%/0.4/protocols/nd_snap.la
-%%DATADIR%%/0.4/protocols/nd_snap.a
-%%DATADIR%%/0.4/protocols/nd_tcp.so
-%%DATADIR%%/0.4/protocols/nd_tcp.la
-%%DATADIR%%/0.4/protocols/nd_tcp.a
-%%DATADIR%%/0.4/protocols/nd_udp.so
-%%DATADIR%%/0.4/protocols/nd_udp.la
-%%DATADIR%%/0.4/protocols/nd_udp.a
-%%DATADIR%%/0.4/pixmaps/incomplete.xpm
-%%DATADIR%%/0.4/pixmaps/delete.xpm
-%%DATADIR%%/0.4/pixmaps/delete_okay.xpm
-%%DATADIR%%/0.4/pixmaps/question.xpm
-%%DATADIR%%/0.4/pixmaps/exclamation.xpm
-%%DATADIR%%/0.4/pixmaps/netdude_small.xpm
-%%DATADIR%%/0.4/pixmaps/netdude_splash.xpm
-%%DATADIR%%/0.4/pixmaps/apply_to_all.xpm
-%%DATADIR%%/0.4/pixmaps/apply_to_part.xpm
-%%DATADIR%%/0.4/pixmaps/apply_to_sel.xpm
-%%DATADIR%%/0.4/pixmaps/netdude-icon.png
-@dirrm include/netdude/0.4/protocols/fddi
-@dirrm include/netdude/0.4/protocols/snap
-@dirrm include/netdude/0.4/protocols
-@dirrm include/netdude/0.4
+%%DATADIR%%/0.5/plugins/nd_cksumfix.so
+%%DATADIR%%/0.5/plugins/nd_cksumfix.la
+%%DATADIR%%/0.5/plugins/nd_cksumfix.a
+%%DATADIR%%/0.5/plugins/nd_bpf.so
+%%DATADIR%%/0.5/plugins/nd_bpf.la
+%%DATADIR%%/0.5/plugins/nd_bpf.a
+%%DATADIR%%/0.5/protocols/nd_arp.so
+%%DATADIR%%/0.5/protocols/nd_arp.la
+%%DATADIR%%/0.5/protocols/nd_arp.a
+%%DATADIR%%/0.5/protocols/nd_ethernet.so
+%%DATADIR%%/0.5/protocols/nd_ethernet.la
+%%DATADIR%%/0.5/protocols/nd_ethernet.a
+%%DATADIR%%/0.5/protocols/nd_fddi.so
+%%DATADIR%%/0.5/protocols/nd_fddi.la
+%%DATADIR%%/0.5/protocols/nd_fddi.a
+%%DATADIR%%/0.5/protocols/nd_icmp.so
+%%DATADIR%%/0.5/protocols/nd_icmp.la
+%%DATADIR%%/0.5/protocols/nd_icmp.a
+%%DATADIR%%/0.5/protocols/nd_ip.so
+%%DATADIR%%/0.5/protocols/nd_ip.la
+%%DATADIR%%/0.5/protocols/nd_ip.a
+%%DATADIR%%/0.5/protocols/nd_pcap.a
+%%DATADIR%%/0.5/protocols/nd_pcap.la
+%%DATADIR%%/0.5/protocols/nd_pcap.so
+%%DATADIR%%/0.5/protocols/nd_sll.so
+%%DATADIR%%/0.5/protocols/nd_sll.la
+%%DATADIR%%/0.5/protocols/nd_sll.a
+%%DATADIR%%/0.5/protocols/nd_snap.so
+%%DATADIR%%/0.5/protocols/nd_snap.la
+%%DATADIR%%/0.5/protocols/nd_snap.a
+%%DATADIR%%/0.5/protocols/nd_tcp.so
+%%DATADIR%%/0.5/protocols/nd_tcp.la
+%%DATADIR%%/0.5/protocols/nd_tcp.a
+%%DATADIR%%/0.5/protocols/nd_udp.so
+%%DATADIR%%/0.5/protocols/nd_udp.la
+%%DATADIR%%/0.5/protocols/nd_udp.a
+%%DATADIR%%/0.5/protocols/nd_vlan.so
+%%DATADIR%%/0.5/protocols/nd_vlan.la
+%%DATADIR%%/0.5/protocols/nd_vlan.a
+%%DATADIR%%/0.5/pixmaps/incomplete.xpm
+%%DATADIR%%/0.5/pixmaps/delete.xpm
+%%DATADIR%%/0.5/pixmaps/delete_okay.xpm
+%%DATADIR%%/0.5/pixmaps/question.xpm
+%%DATADIR%%/0.5/pixmaps/exclamation.xpm
+%%DATADIR%%/0.5/pixmaps/netdude_small.xpm
+%%DATADIR%%/0.5/pixmaps/netdude_splash.xpm
+%%DATADIR%%/0.5/pixmaps/apply_to_all.xpm
+%%DATADIR%%/0.5/pixmaps/apply_to_part.xpm
+%%DATADIR%%/0.5/pixmaps/apply_to_sel.xpm
+%%DATADIR%%/0.5/pixmaps/netdude-icon.png
+@dirrm include/netdude/0.5/protocols/fddi
+@dirrm include/netdude/0.5/protocols/snap
+@dirrm include/netdude/0.5/protocols/vlan
+@dirrm include/netdude/0.5/protocols
+@dirrm include/netdude/0.5
 @dirrm include/netdude
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/0.4/plugins
-@dirrm %%DATADIR%%/0.4/protocols
-@dirrm %%DATADIR%%/0.4/pixmaps
-@dirrm %%DATADIR%%/0.4
+@dirrm %%DATADIR%%/0.5/plugins
+@dirrm %%DATADIR%%/0.5/protocols
+@dirrm %%DATADIR%%/0.5/pixmaps
+@dirrm %%DATADIR%%/0.5
 @dirrm %%DATADIR%%
