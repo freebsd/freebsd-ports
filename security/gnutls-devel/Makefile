@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	2.11.6
+PORTVERSION=	2.99.2
 CATEGORIES=	security net
 MASTER_SITES=	http://alpha.gnu.org/gnu/gnutls/ \
 		ftp://ftp.gnutls.org/pub/gnutls/devel/
@@ -15,8 +15,8 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
-LIB_DEPENDS=	gcrypt.17:${PORTSDIR}/security/libgcrypt \
-		gpg-error.0:${PORTSDIR}/security/libgpg-error
+LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error \
+		nettle.4:${PORTSDIR}/security/nettle
 
 CONFLICTS=	gnutls-[0-9]*
 
@@ -29,7 +29,8 @@ USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -fPIC" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=	--disable-guile --with-libgcrypt
+CONFIGURE_ARGS+=	--disable-guile --disable-silent-rules \
+			--disable-hardware-acceleration
 MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
@@ -38,13 +39,6 @@ MANCOMPRESSED=	no
 LIB_DEPENDS+=	tasn1.4:${PORTSDIR}/security/libtasn1
 .else
 CONFIGURE_ARGS+=	--with-included-libtasn1
-.endif
-
-.if (defined(WITH_LZO) || exists(${LOCALBASE}/lib/liblzo2.so)) && !defined(WITHOUT_LZO)
-LIB_DEPENDS+=		lzo2:${PORTSDIR}/archivers/lzo2
-CONFIGURE_ARGS+=	--with-lzo
-.else
-CONFIGURE_ARGS+=	--with-lzo=no
 .endif
 
 .if defined(WITHOUT_CXX)

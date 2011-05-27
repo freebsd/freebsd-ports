@@ -528,7 +528,6 @@ MAN3=	\
 	gnutls_x509_crq_get_key_rsa_raw.3 \
 	gnutls_x509_crq_get_key_usage.3 \
 	gnutls_x509_crq_get_pk_algorithm.3 \
-	gnutls_x509_crq_get_preferred_hash_algorithm.3 \
 	gnutls_x509_crq_get_subject_alt_name.3 \
 	gnutls_x509_crq_get_subject_alt_othername_oid.3 \
 	gnutls_x509_crq_get_version.3 \
