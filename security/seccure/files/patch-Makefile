@@ -1,15 +1,14 @@
---- Makefile.orig	Wed Aug 16 22:13:57 2006
-+++ Makefile	Thu Aug 30 13:33:58 2007
-@@ -1,4 +1,7 @@
--CFLAGS = -O2 # -D NOBEEP # -D NOMEMLOCK
-+CFLAGS = -L/usr/local/lib -I/usr/local/include -O2 -DNOBEEP -DNOMEMLOCK
-+DESTDIR = /usr/local
+--- Makefile	2009-04-09 08:42:50.000000000 -0400
++++ /tmp/Makefile	2011-05-26 19:30:35.000000000 -0400
+@@ -1,4 +1,6 @@
+-CFLAGS = -O2 -Wall # -D NOBEEP
++CFLAGS = -L$(LOCALBASE)/lib -I$(LOCALBASE)/include -O2 -DNOBEEP -DNOMEMLOCK
 +
 +all: default
  
  default: binaries # doc
  
-@@ -8,15 +11,15 @@
+@@ -8,15 +10,15 @@
  doc: seccure.1 seccure.1.html
  
  install: default
@@ -22,15 +21,15 @@
 -	ln -f $(DESTDIR)/usr/bin/seccure-key $(DESTDIR)/usr/bin/seccure-veridec
 -	ln -f $(DESTDIR)/usr/bin/seccure-key $(DESTDIR)/usr/bin/seccure-dh
 -	install -m0644 seccure.1 $(DESTDIR)/usr/share/man/man1
-+	install -m0755 seccure-key $(DESTDIR)/bin
-+	ln -f $(DESTDIR)/bin/seccure-key $(DESTDIR)/bin/seccure-encrypt
-+	ln -f $(DESTDIR)/bin/seccure-key $(DESTDIR)/bin/seccure-decrypt
-+	ln -f $(DESTDIR)/bin/seccure-key $(DESTDIR)/bin/seccure-sign
-+	ln -f $(DESTDIR)/bin/seccure-key $(DESTDIR)/bin/seccure-verify
-+	ln -f $(DESTDIR)/bin/seccure-key $(DESTDIR)/bin/seccure-signcrypt
-+	ln -f $(DESTDIR)/bin/seccure-key $(DESTDIR)/bin/seccure-veridec
-+	ln -f $(DESTDIR)/bin/seccure-key $(DESTDIR)/bin/seccure-dh
-+	install -m0644 seccure.1 $(DESTDIR)/man/man1
++	install -m0755 seccure-key $(PREFIX)/bin
++	ln -f $(PREFIX)/bin/seccure-key $(PREFIX)/bin/seccure-encrypt
++	ln -f $(PREFIX)/bin/seccure-key $(PREFIX)/bin/seccure-decrypt
++	ln -f $(PREFIX)/bin/seccure-key $(PREFIX)/bin/seccure-sign
++	ln -f $(PREFIX)/bin/seccure-key $(PREFIX)/bin/seccure-verify
++	ln -f $(PREFIX)/bin/seccure-key $(PREFIX)/bin/seccure-signcrypt
++	ln -f $(PREFIX)/bin/seccure-key $(PREFIX)/bin/seccure-veridec
++	ln -f $(PREFIX)/bin/seccure-key $(PREFIX)/bin/seccure-dh
++	install -m0644 seccure.1 $(PREFIX)/man/man1
  
  clean:
- 	rm -f *.o seccure-key seccure-encrypt seccure-decrypt seccure-sign \
+ 	rm -f *.o *~ seccure-key seccure-encrypt seccure-decrypt seccure-sign \
