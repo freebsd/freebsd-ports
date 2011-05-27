@@ -230,14 +230,13 @@ CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .if defined(USE_BDB)
 
-_DB_PORTS=	40 41 42 43 44 45 46 47 48 51 40+ 41+ 42+ 43+ 44+ 45+ 46+ 47+ 48+ 51+
+_DB_PORTS=	40 41 42 43 44 46 47 48 51 40+ 41+ 42+ 43+ 44+ 46+ 47+ 48+ 51+
 # Dependence lines for different db versions
 db40_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 db41_DEPENDS=	db41.1:${PORTSDIR}/databases/db41
 db42_DEPENDS=	db-4.2.2:${PORTSDIR}/databases/db42
 db43_DEPENDS=	db-4.3.0:${PORTSDIR}/databases/db43
 db44_DEPENDS=	db-4.4.0:${PORTSDIR}/databases/db44
-db45_DEPENDS=	db-4.5.0:${PORTSDIR}/databases/db45
 db46_DEPENDS=	db-4.6.0:${PORTSDIR}/databases/db46
 db47_DEPENDS=	db-4.7.0:${PORTSDIR}/databases/db47
 db48_DEPENDS=	db-4.8.0:${PORTSDIR}/databases/db48
@@ -248,7 +247,6 @@ db41_FIND=	${LOCALBASE}/include/db41/db.h
 db42_FIND=	${LOCALBASE}/include/db42/db.h
 db43_FIND=	${LOCALBASE}/include/db43/db.h
 db44_FIND=	${LOCALBASE}/include/db44/db.h
-db45_FIND=	${LOCALBASE}/include/db45/db.h
 db46_FIND=	${LOCALBASE}/include/db46/db.h
 db47_FIND=	${LOCALBASE}/include/db47/db.h
 db48_FIND=	${LOCALBASE}/include/db48/db.h
@@ -259,8 +257,7 @@ _DB_40P=	40 ${_DB_41P}
 _DB_41P=	41 ${_DB_42P}
 _DB_42P=	42 ${_DB_43P}
 _DB_43P=	43 ${_DB_44P}
-_DB_44P=	44 ${_DB_45P}
-_DB_45P=	${_DB_46P}
+_DB_44P=	44 ${_DB_46P}
 _DB_46P=	46 ${_DB_47P}
 _DB_47P=	47 ${_DB_48P}
 _DB_48P=	48 ${_DB_51P}
@@ -388,10 +385,6 @@ BDB_LIB_DIR=		${LOCALBASE}/lib/db43
 BDB_LIB_NAME=		db-4.4
 BDB_LIB_CXX_NAME=	db_cxx-4.4
 BDB_LIB_DIR=		${LOCALBASE}/lib/db44
-.  elif ${_BDB_VER} == 45
-BDB_LIB_NAME=		db-4.5
-BDB_LIB_CXX_NAME=	db_cxx-4.5
-BDB_LIB_DIR=		${LOCALBASE}/lib/db45
 .  elif ${_BDB_VER} == 46
 BDB_LIB_NAME=		db-4.6
 BDB_LIB_CXX_NAME=	db_cxx-4.6

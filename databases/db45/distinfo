@@ -1,6 +1,0 @@
-SHA256 (bdb/db-4.5.20.tar.gz) = f52cd5cea899823dd200d56556f70b33c55e48a33bb7b65ee128968dc10ca82d
-SIZE (bdb/db-4.5.20.tar.gz) = 9281894
-SHA256 (bdb/patch.4.5.20.1) = f0749a6780cd260fed20b6e961a0d354889ffe84505129d5c81925a4a4dcf6cb
-SIZE (bdb/patch.4.5.20.1) = 984
-SHA256 (bdb/patch.4.5.20.2) = 232a93565ab1bf34db10f7513b612867bb61e0c012def7f63715800a05d07e6a
-SIZE (bdb/patch.4.5.20.2) = 1752
