@@ -14,9 +14,16 @@ DISTNAME=	task-${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A framework for supercharged task and contact management
 
+OPTIONS=	LUA "Enable LUA extensions" off
+
 WRKSRC=		${WRKDIR}/${DISTNAME}
 
+.include <bsd.port.options.mk>
+
+.if defined(WITH_LUA)
 USE_LUA=	5.1
+.endif
+
 USE_CMAKE=	yes
 CMAKE_OUTSOURCE=yes
 CMAKE_ARGS+=	-DTASK_DOCDIR:STRING=${DATADIR:S/${PREFIX}\///} \
