@@ -1,0 +1,12 @@
+libgit2 is...
+
+licensed under a very permissive license so you can use it anywhere
+faster than any other Git library
+written in standards compilant C99
+completely multi-platform: Windows, Linux, Mac OS X, xBSD
+compiled natively under all platforms (yes, even MSVC on Windows)
+re-entrant, with sane error handling
+designed with a solid and consistent API
+available as bindings for all major scripting languages
+
+WWW:	http://libgit2.github.com/
