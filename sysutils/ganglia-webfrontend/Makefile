@@ -7,7 +7,7 @@
 
 PORTNAME=	webfrontend
 PORTVERSION=	3.1.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils net parallel www
 MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}
 PKGNAMEPREFIX=	ganglia-
@@ -16,9 +16,6 @@ DISTNAME=	ganglia-${PORTVERSION}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	Ganglia cluster monitor, web frontend
 
-LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1 \
-		confuse:${PORTSDIR}/devel/libconfuse \
-		pcre:${PORTSDIR}/devel/pcre
 RUN_DEPENDS=	${LOCALBASE}/sbin/gmetad:${PORTSDIR}/sysutils/ganglia-monitor-core
 
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -32,6 +29,7 @@ PLIST_SUB+=	WEBFRONTDIR="${WEBFRONTDIR}"
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	GANGLIA_ACK_SYSCONFDIR=1
 CONFIGURE_WRKSRC=	${WRKDIR}/${DISTNAME}
+USE_AUTOTOOLS=	autoconf
 
 USE_PHP=	gd pcre xml ctype
 WANT_PHP_MOD=	yes
