@@ -15,7 +15,7 @@ bin/VBoxXPCOMIPCD
 lib/virtualbox/DBGCPlugInDiggers.so
 lib/virtualbox/VBoxAuth.so
 lib/virtualbox/VBoxAuthSimple.so
-lib/virtualbox/VBoxDbg.so
+%%QT4%%lib/virtualbox/VBoxDbg.so
 lib/virtualbox/VBoxDD.so
 lib/virtualbox/VBoxDD2.so
 lib/virtualbox/VBoxDDU.so
