@@ -2,9 +2,7 @@
 #
 # $FreeBSD$
 #
-
 # PROVIDE: /service
-# REQUIRE: 
 # BEFORE:  SERVERS
 # KEYWORD: shutdown
 
