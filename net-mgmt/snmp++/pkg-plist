@@ -3,8 +3,6 @@ include/snmp_pp/address.h
 include/snmp_pp/asn1.h
 include/snmp_pp/auth_priv.h
 include/snmp_pp/collect.h
-include/snmp_pp/collect1.h
-include/snmp_pp/collect2.h
 include/snmp_pp/config_snmp_pp.h
 include/snmp_pp/counter.h
 include/snmp_pp/ctr64.h
@@ -38,5 +36,6 @@ include/snmp_pp/v3.h
 include/snmp_pp/vb.h
 lib/libsnmp++.a
 lib/libsnmp++.so
+lib/libsnmp++.so.2.0.0
 
 @dirrm include/snmp_pp
