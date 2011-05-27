@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-FreshBooks-API
-PORTVERSION=	0.18
+PORTVERSION=	0.21
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy OO access to the FreshBooks.com API
 
-RUN_DEPENDS=	p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
+RUN_DEPENDS=	p5-B-Hooks-EndOfScope>=0.09:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
+		p5-Clone>=0:${PORTSDIR}/devel/p5-Clone \
 		p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
 		p5-Lingua-EN-Inflect>=0:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
@@ -32,23 +33,33 @@ PERL_MODBUILD=	yes
 MAN3=		Net::FreshBooks::API.3 \
 		Net::FreshBooks::API::Base.3 \
 		Net::FreshBooks::API::Client.3 \
-		Net::FreshBooks::API::Error.3 \
 		Net::FreshBooks::API::Estimate.3 \
+		Net::FreshBooks::API::Gateway.3 \
 		Net::FreshBooks::API::Invoice.3 \
 		Net::FreshBooks::API::InvoiceLine.3 \
 		Net::FreshBooks::API::Iterator.3 \
+		Net::FreshBooks::API::Language.3 \
 		Net::FreshBooks::API::Links.3 \
 		Net::FreshBooks::API::OAuth.3 \
 		Net::FreshBooks::API::Payment.3 \
 		Net::FreshBooks::API::Recurring.3 \
+		Net::FreshBooks::API::Recurring::AutoBill.3 \
+		Net::FreshBooks::API::Recurring::AutoBill::Card.3 \
+		Net::FreshBooks::API::Recurring::AutoBill::Card::Expiration.3 \
 		Net::FreshBooks::API::Role::CRUD.3 \
+		Net::FreshBooks::API::Role::Common.3 \
+		Net::FreshBooks::API::Role::Iterator.3 \
 		Net::FreshBooks::API::Role::LineItem.3 \
 		Net::FreshBooks::API::Role::SendBy.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 501104
+.if ${PERL_LEVEL} < 501200
 BUILD_DEPENDS+=	p5-Module-Build>=0.3601:${PORTSDIR}/devel/p5-Module-Build
+.endif
+
+.if ${PERL_LEVEL} < 501400
+RUN_DEPENDS+=	p5-parent>=0.224:${PORTSDIR}/devel/p5-parent
 .endif
 
 .include <bsd.port.post.mk>
