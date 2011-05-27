@@ -176,6 +176,7 @@
     SUBDIR += lll_spect
     SUBDIR += lp_solve
     SUBDIR += ltl
+    SUBDIR += ltl2ba
     SUBDIR += lybniz
     SUBDIR += matharray
     SUBDIR += mathomatic
