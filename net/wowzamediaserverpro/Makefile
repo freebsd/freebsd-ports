@@ -30,7 +30,7 @@ LOG_DIR=	${APP_HOME}/logs
 STDOUT_LOG=	${LOG_DIR}/stdout.log
 STDERR_LOG=	${LOG_DIR}/stderr.log
 
-CONF_FILES=	Application.xml MediaCasters.xml RTP.xml VHost.xml jmxremote.password \
+WMP_CONF_FILES=	Application.xml MediaCasters.xml RTP.xml VHost.xml jmxremote.password \
 		Authentication.xml MediaReaders.xml Server.xml VHosts.xml log4j.properties \
 		MP3Tags.xml MediaWriters.xml Streams.xml jmxremote.access rtp.password
 CONF_EXT=	sample
@@ -56,7 +56,7 @@ post-extract:
 	${SH} ${WRKDIR}/wowza-licence.sh
 
 post-patch:
-.for f in ${CONF_FILES}
+.for f in ${WMP_CONF_FILES}
 	@${MV} ${WRKSRC}/conf/${f} ${WRKSRC}/conf/${f}.${CONF_EXT}
 .endfor
 
@@ -75,7 +75,7 @@ do-install:
 	@${CP} -R ${WRKSRC}/bin ${APP_HOME}
 	@${CP} -R ${WRKSRC}/conf/*.${CONF_EXT} ${APP_HOME}/conf/
 
-.for f in ${CONF_FILES}
+.for f in ${WMP_CONF_FILES}
 .	if !exists(${APP_HOME}/conf/${f})
 		@${CP} ${APP_HOME}/conf/${f}.${CONF_EXT} ${APP_HOME}/conf/${f}
 .	else
