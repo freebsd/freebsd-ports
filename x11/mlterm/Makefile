@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mlterm
-PORTVERSION=	3.0.3
+PORTVERSION=	3.0.4
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/01release/${PORTNAME}-${PORTVERSION}
 
@@ -23,7 +23,7 @@ USE_PERL5_BUILD=yes
 USE_GETTEXT=	yes
 CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf2 --enable-utmp \
 		--mandir="${LOCALBASE}/man" --enable-optimize-redrawing \
-		--with-tools="mlclient,mlconfig,mlterm-menu,mlcc,w3mmlconfig" \
+		--with-tools="mlclient,mlconfig,mlterm-menu,mlcc,w3mmlconfig,mlimgloader" \
 		--with-type-engines="xcore,xft" \
 		--disable-iiimf
 CONFIGURE_ENV=	LIBS="${LIBS} -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl" CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=	--disable-fribidi
 .if defined(WITH_UIM)
 CONFIGURE_ARGS+=	--enable-uim
 MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
-LIB_DEPENDS+=	uim.7:${PORTSDIR}/textproc/uim
+LIB_DEPENDS+=	uim.8:${PORTSDIR}/textproc/uim
 PLIST_SUB+=	UIM=""
 .else
 CONFIGURE_ARGS+=	--disable-uim
