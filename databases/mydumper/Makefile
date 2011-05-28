@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mydumper
-PORTVERSION=	0.1.8a
-PORTREVISION=	1
+PORTVERSION=	0.2.2
 CATEGORIES=	databases
-MASTER_SITES=	http://code.launchpad.net/mydumper/${PORTVERSION:R}/${PORTVERSION:S/a//}/+download/
+MASTER_SITES=	http://code.launchpad.net/mydumper/${PORTVERSION:R}/${PORTVERSION}/+download/
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	MySQL Data Dumper
