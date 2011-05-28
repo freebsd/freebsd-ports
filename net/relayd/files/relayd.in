@@ -3,7 +3,8 @@
 # $FreeBSD$
 #
 # PROVIDE: relayd
-# REQUIRE: LOGIN
+# REQUIRE: NETWORKING syslogd
+# BEFORE:  DAEMON
 # KEYWORD: shutdown
 
 # Add the following lines to /etc/rc.conf to enable relayd:
