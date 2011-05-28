@@ -14,6 +14,19 @@ bin/import
 bin/mogrify
 bin/montage
 bin/stream
+etc/ImageMagick/coder.xml
+etc/ImageMagick/colors.xml
+etc/ImageMagick/delegates.xml
+etc/ImageMagick/log.xml
+etc/ImageMagick/magic.xml
+etc/ImageMagick/mime.xml
+etc/ImageMagick/policy.xml
+etc/ImageMagick/sRGB.icm
+etc/ImageMagick/thresholds.xml
+etc/ImageMagick/type.xml
+etc/ImageMagick/type-dejavu.xml
+etc/ImageMagick/type-ghostscript.xml
+etc/ImageMagick/type-windows.xml
 include/ImageMagick/Magick++.h
 include/ImageMagick/Magick++/Blob.h
 include/ImageMagick/Magick++/CoderInfo.h
@@ -138,16 +151,6 @@ include/ImageMagick/wand/pixel-iterator.h
 include/ImageMagick/wand/pixel-wand.h
 include/ImageMagick/wand/stream.h
 include/ImageMagick/wand/wand-view.h
-lib/ImageMagick-%%PORTVERSION%%/config/configure.xml
-lib/ImageMagick-%%PORTVERSION%%/config/delegates.xml
-lib/ImageMagick-%%PORTVERSION%%/config/english.xml
-lib/ImageMagick-%%PORTVERSION%%/config/francais.xml
-lib/ImageMagick-%%PORTVERSION%%/config/locale.xml
-lib/ImageMagick-%%PORTVERSION%%/config/policy.xml
-lib/ImageMagick-%%PORTVERSION%%/config/type.xml
-lib/ImageMagick-%%PORTVERSION%%/config/type-dejavu.xml
-lib/ImageMagick-%%PORTVERSION%%/config/type-ghostscript.xml
-lib/ImageMagick-%%PORTVERSION%%/config/type-windows.xml
 lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/.keep
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/aai.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/aai.so
@@ -205,6 +208,8 @@ lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/.keep
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/gray.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/hald.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/hald.so
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/hdr.la
+%%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/hdr.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/histogram.la
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/histogram.so
 %%MODULES%%lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders/hrz.la
@@ -399,16 +404,13 @@ libdata/pkgconfig/Wand.pc
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/Magick.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick/autosplit.ix
-%%DATADIR%%-%%PORTVERSION%%/config/coder.xml
-%%DATADIR%%-%%PORTVERSION%%/config/colors.xml
-%%DATADIR%%-%%PORTVERSION%%/config/log.xml
-%%DATADIR%%-%%PORTVERSION%%/config/magic.xml
-%%DATADIR%%-%%PORTVERSION%%/config/mime.xml
-%%DATADIR%%-%%PORTVERSION%%/config/sRGB.icm
-%%DATADIR%%-%%PORTVERSION%%/config/thresholds.xml
-%%DATADIR%%-%%PORTVERSION%%/LICENSE
-%%DATADIR%%-%%PORTVERSION%%/ChangeLog
-%%DATADIR%%-%%PORTVERSION%%/NEWS.txt
+%%DATADIR%%-%%PORTVERSION%%/configure.xml
+%%DATADIR%%-%%PORTVERSION%%/english.xml
+%%DATADIR%%-%%PORTVERSION%%/francais.xml
+%%DATADIR%%-%%PORTVERSION%%/locale.xml
+%%DOCSDIR%%-%%PORTVERSION%%/LICENSE
+%%DOCSDIR%%-%%PORTVERSION%%/ChangeLog
+%%DOCSDIR%%-%%PORTVERSION%%/NEWS.txt
 %%PORTDOCS%%%%DOCSDIR%%/images/affine.png
 %%PORTDOCS%%%%DOCSDIR%%/images/arc.png
 %%PORTDOCS%%%%DOCSDIR%%/images/background.jpg
@@ -438,6 +440,60 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/images/montage.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/navy.png
 %%PORTDOCS%%%%DOCSDIR%%/images/networkredux.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/bricks.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/checkerboard.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/circles.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/crosshatch.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/crosshatch30.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/crosshatch45.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/fishscales.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray0.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray10.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray100.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray15.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray20.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray25.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray30.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray35.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray40.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray45.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray5.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray50.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray55.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray60.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray65.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray70.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray75.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray80.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray85.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray90.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/gray95.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/hexagons.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/horizontal.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/horizontal2.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/horizontal3.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/horizontalsaw.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/hs_bdiagonal.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/hs_cross.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/hs_diagcross.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/hs_fdiagonal.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/hs_horizontal.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/hs_vertical.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/left30.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/left45.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/leftshingle.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/octagons.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/right30.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/right45.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/rightshingle.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/smallfishscales.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/vertical.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/vertical2.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/vertical3.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/verticalbricks.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/verticalleftshingle.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/verticalrightshingle.png
+%%PORTDOCS%%%%DOCSDIR%%/images/patterns/verticalsaw.png
 %%PORTDOCS%%%%DOCSDIR%%/images/piechart.png
 %%PORTDOCS%%%%DOCSDIR%%/images/project-support.jpg
 %%PORTDOCS%%%%DOCSDIR%%/images/radial-gradient.png
@@ -1318,6 +1374,7 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%%%DOCSDIR%%/www/montage.html
 %%PORTDOCS%%%%DOCSDIR%%/www/motion-picture.html
 %%PORTDOCS%%%%DOCSDIR%%/www/perl-magick.html
+%%PORTDOCS%%%%DOCSDIR%%/www/porting.html
 %%PORTDOCS%%%%DOCSDIR%%/www/quantize.html
 %%PORTDOCS%%%%DOCSDIR%%/www/resources.html
 %%PORTDOCS%%%%DOCSDIR%%/www/search.html
@@ -1357,9 +1414,10 @@ libdata/pkgconfig/Wand.pc
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www/Magick++
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/www
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images/patterns
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%-%%PORTVERSION%%/config
+@dirrm %%DOCSDIR%%-%%PORTVERSION%%
 @dirrm %%DATADIR%%-%%PORTVERSION%%
 %%WITH_PERL%%@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image/Magick
 %%WITH_PERL%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Image
@@ -1367,9 +1425,9 @@ libdata/pkgconfig/Wand.pc
 @dirrm lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/filters
 @dirrm lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%/coders
 @dirrm lib/ImageMagick-%%PORTVERSION%%/modules-%%QBIT%%
-@dirrm lib/ImageMagick-%%PORTVERSION%%/config
 @dirrm lib/ImageMagick-%%PORTVERSION%%
 @dirrm include/ImageMagick/wand
 @dirrm include/ImageMagick/magick
 @dirrm include/ImageMagick/Magick++
 @dirrm include/ImageMagick
+@dirrmtry etc/ImageMagick
