@@ -7,6 +7,7 @@
 
 PORTNAME=	libvirt
 PORTVERSION=	0.9.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/
 
@@ -15,7 +16,7 @@ COMMENT=	Toolkit to interact with virtualization capabilities
 
 LICENSE=	LGPL3
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--without-libssh2 \
+CONFIGURE_ARGS=	--without-libssh2 \
 		--without-sasl \
 		--without-yajl \
 		--without-avahi \
@@ -25,11 +26,12 @@ CONFIGURE_ARGS+=--without-libssh2 \
 		--without-netcf \
 		--without-network
 USE_GMAKE=	yes
+USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
-PLIST_SUB+=	PORTVERSION="-${PORTVERSION}"
+PLIST_SUB=	PORTVERSION="-${PORTVERSION}"
 
-LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl \
+LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		gcrypt.17:${PORTSDIR}/security/libgcrypt \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		gnutls.40:${PORTSDIR}/security/gnutls
