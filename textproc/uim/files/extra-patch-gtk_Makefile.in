@@ -1,22 +1,25 @@
---- gtk/Makefile.in.orig	2010-08-11 16:30:55.000000000 +0900
-+++ gtk/Makefile.in	2010-10-16 21:33:40.000000000 +0900
-@@ -85,8 +85,6 @@
+--- gtk/Makefile.in.orig	2011-05-17 13:16:12.000000000 +0900
++++ gtk/Makefile.in	2011-05-29 02:29:01.000000000 +0900
+@@ -82,10 +82,6 @@
    sed '$$!N;$$!N;$$!N;$$!N;s/\n/ /g'
  am__installdirs = "$(DESTDIR)$(moduledir)"
  LTLIBRARIES = $(module_LTLIBRARIES)
 -@GTK2_TRUE@im_uim_la_DEPENDENCIES = $(top_builddir)/uim/libuim-scm.la \
--@GTK2_TRUE@	$(top_builddir)/uim/libuim.la $(am__append_1)
+-@GTK2_TRUE@	$(top_builddir)/uim/libuim.la \
+-@GTK2_TRUE@	$(top_builddir)/uim/libuim-counted-init.la \
+-@GTK2_TRUE@	$(am__append_1)
  am__im_uim_la_SOURCES_DIST = gtk-im-uim.c gtk-im-uim.h key-util-gtk.c \
  	key-util-gtk.h uim-cand-win-gtk.c uim-cand-win-gtk.h \
  	uim-cand-win-tbl-gtk.c uim-cand-win-tbl-gtk.h \
-@@ -452,8 +450,8 @@
+@@ -443,9 +439,8 @@
  @GTK2_TRUE@module_LTLIBRARIES = $(im_uim_la)
  @GTK2_TRUE@im_uim_la_SOURCES = $(IM_UIM_SOURCES)
  @GTK2_TRUE@im_uim_la_LDFLAGS = -module -avoid-version @GTK2_LIBS@
 -@GTK2_TRUE@im_uim_la_LIBADD = $(top_builddir)/uim/libuim-scm.la \
--@GTK2_TRUE@	$(top_builddir)/uim/libuim.la $(am__append_1)
+-@GTK2_TRUE@	$(top_builddir)/uim/libuim.la \
+-@GTK2_TRUE@	$(top_builddir)/uim/libuim-counted-init.la \
 +@GTK2_TRUE@im_uim_la_LIBADD = -luim-scm \
-+@GTK2_TRUE@	-luim $(am__append_1)
++@GTK2_TRUE@	-luim \
+ @GTK2_TRUE@	$(am__append_1)
  @GTK2_TRUE@IM_UIM_SOURCES = \
  @GTK2_TRUE@	gtk-im-uim.c gtk-im-uim.h key-util-gtk.c key-util-gtk.h \
- @GTK2_TRUE@	uim-cand-win-gtk.c uim-cand-win-gtk.h \

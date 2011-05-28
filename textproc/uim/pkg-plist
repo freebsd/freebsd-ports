@@ -32,7 +32,7 @@ lib/libuim-scm.so.1
 lib/libuim.a
 lib/libuim.la
 lib/libuim.so
-lib/libuim.so.7
+lib/libuim.so.8
 lib/uim/plugin/libuim-custom-enabler.a
 lib/uim/plugin/libuim-custom-enabler.la
 lib/uim/plugin/libuim-custom-enabler.so
@@ -321,6 +321,7 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/pixmaps/zm_dark_background.svg
 %%DATADIR%%/plugin.scm
 %%DATADIR%%/predict-custom.scm
+%%DATADIR%%/predict-google-suggest.scm
 %%DATADIR%%/predict-look-skk.scm
 %%DATADIR%%/predict-look.scm
 %%DATADIR%%/predict-sqlite3.scm

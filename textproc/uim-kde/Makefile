@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-kde
 
 COMMENT=	KDE panel applet of uim input method
 
-LIB_DEPENDS=	uim.7:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	uim.8:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	uim-pref-qt:${PORTSDIR}/textproc/uim-qt
 
 USE_GCC=	4.2+

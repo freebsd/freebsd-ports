@@ -15,7 +15,7 @@ COMMENT=	Uim plugin using m17n library input method
 
 BUILD_DEPENDS=	m17n-db:${PORTSDIR}/devel/m17n-db
 LIB_DEPENDS=	m17n.4:${PORTSDIR}/devel/m17n-lib \
-		uim.7:${PORTSDIR}/textproc/uim
+		uim.8:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	m17n-db:${PORTSDIR}/devel/m17n-db
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim

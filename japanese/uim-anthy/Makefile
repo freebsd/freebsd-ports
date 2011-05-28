@@ -19,7 +19,7 @@ USE_GNOME=	gtk20
 .endif
 
 LIB_DEPENDS=	anthy.1:${PORTSDIR}/japanese/anthy \
-		uim.7:${PORTSDIR}/textproc/uim
+		uim.8:${PORTSDIR}/textproc/uim
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}

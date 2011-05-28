@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-gnome
 COMMENT=	GNOME applets of uim input method
 
 USE_GNOME=	gtk20 gnomepanel libgnomeui
-LIB_DEPENDS=	uim.7:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	uim.8:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	uim-pref-gtk:${PORTSDIR}/textproc/uim-gtk
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
