@@ -5419,6 +5419,7 @@ horde4-autoloader               ports/devel/horde4-autoloader
 horde4-base                     ports/www/horde4-base
 horde4-browser                  ports/www/horde4-browser
 horde4-cache                    ports/devel/horde4-cache
+horde4-constraint               ports/devel/horde4-constraint
 horde4-content                  ports/devel/horde4-content
 horde4-date                     ports/devel/horde4-date
 horde4-dateparser               ports/devel/horde4-dateparser
@@ -5426,7 +5427,10 @@ horde4-image                    ports/graphics/horde4-image
 horde4-itip                     ports/deskutils/horde4-itip
 horde4-kronolith                ports/deskutils/horde4-kronolith
 horde4-rdo                      ports/devel/horde4-rdo
+horde4-streamfilter             ports/devel/horde4-streamfilter
+horde4-streamwrapper            ports/devel/horde4-streamwrapper
 horde4-template                 ports/www/horde4-template
+horde4-translation              ports/devel/horde4-translation
 hostapd                         ports/net/hostapd
 hot-babe                        ports/deskutils/hot-babe
 hotcrp                          ports/www/hotcrp
@@ -7878,6 +7882,7 @@ libghttp                        ports/www/libghttp
 libgig                          ports/audio/libgig
 libgii                          ports/devel/libgii
 libgiigic                       ports/devel/libgiigic
+libgit2                         ports/devel/libgit2
 libgksu                         ports/sysutils/libgksu
 libgl                           ports/graphics/libGL
 libglade                        ports/devel/libglade
@@ -8775,6 +8780,7 @@ lsof                            ports/sysutils/lsof
 lsysexp                         ports/biology/lsysexp
 lt-aspell                       ports/textproc/lt-aspell
 ltl                             ports/math/ltl
+ltl2ba                          ports/math/ltl2ba
 ltm                             ports/net/ltm
 ltrace                          ports/sysutils/ltrace
 ltris                           ports/games/ltris
