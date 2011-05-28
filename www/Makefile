@@ -1427,6 +1427,7 @@
     SUBDIR += php-plurk-api
     SUBDIR += php-screw
     SUBDIR += php-templates
+    SUBDIR += php-yaf
     SUBDIR += php4-session
     SUBDIR += php5-session
     SUBDIR += php5-tidy
