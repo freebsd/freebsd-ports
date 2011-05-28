@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	sciplore-mindmapping
-PORTVERSION=	0.b014
+PORTVERSION=	0.b015
 CATEGORIES=	deskutils java
 MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	splmm/beta14
-DISTNAME=	SciPlore_MindMapping_AllOS_v014b
+MASTER_SITE_SUBDIR=	splmm/beta15
+DISTNAME=	SciPlore_MindMapping_AllOS_v015b
 # we use the binary distribution - it's 25% smaller than the source .zip
 # and does not depend on devel/apache-ant
 

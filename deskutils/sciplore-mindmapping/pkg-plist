@@ -71,6 +71,7 @@ share/java/sciplore-mindmapping/doc/freemind_fr.mm
 share/java/sciplore-mindmapping/doc/freemind_id.mm
 share/java/sciplore-mindmapping/doc/freemind_ru.mm
 share/java/sciplore-mindmapping/doc/freemind_vi.mm
+share/java/sciplore-mindmapping/doc/splmm-welcome.mm
 share/java/sciplore-mindmapping/freemind.xsd
 share/java/sciplore-mindmapping/lib/SimplyHTML/SimplyHTML.jar
 share/java/sciplore-mindmapping/lib/SimplyHTML/gnu-regexp-1.1.4.jar
