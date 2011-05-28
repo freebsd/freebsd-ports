@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	nagstamon
-PORTVERSION=	0.9.6.1
+PORTVERSION=	0.9.7
 CATEGORIES=	net-mgmt python
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}%20${PORTVERSION}/ CRITICAL/.
+MASTER_SITES=	SF/nagstamon/nagstamon/SVN/ CRITICAL/.
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	ehaupt@FreeBSD.org
@@ -28,10 +28,10 @@ MAN1=		nagstamon.1
 
 MAKE_JOBS_SAFE=	yes
 
+WRKSRC=		${WRKDIR}/Nagstamon
+
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/\(man/man1\)|\1|' ${WRKSRC}/setup.py
-	@${REINPLACE_CMD} -e "s|0.9.6|${PORTVERSION}|" \
-		${WRKSRC}/Nagstamon/GUI.py
 
 post-install:
 	@${LN} ${PREFIX}/bin/${PORTNAME}.py ${PREFIX}/bin/${PORTNAME}
