@@ -8,7 +8,9 @@
 PORTNAME=	jcode.pl
 PORTVERSION=	2.13
 CATEGORIES=	japanese perl5
-MASTER_SITES=	http://srekcah.org/jcode/
+MASTER_SITES=	ftp://ftp.iij.ad.jp/pub/IIJ/dist/utashiro/perl/ \
+		ftp://ftp.sra.co.jp/pub/lang/perl/sra-scripts/ \
+		http://srekcah.org/jcode/
 EXTRACT_SUFX=	# none
 
 MAINTAINER=	ports@FreeBSD.org
@@ -24,7 +26,7 @@ EXTRACT_AFTER_ARGS=	.
 PLIST_FILES=	%%SITE_PERL%%/${PORTNAME}
 
 do-install:
-	${MKDIR} ${INSTALL_DIR}/
-	${INSTALL_DATA} ${WRKDIR}/${DISTNAME} ${SITE_PERL}/${PORTNAME}
+	${MKDIR} ${PREFIX}/${SITE_PERL_REL}/
+	${INSTALL_DATA} ${WRKDIR}/${DISTNAME} ${PREFIX}/${SITE_PERL_REL}/${PORTNAME}
 
 .include <bsd.port.mk>
