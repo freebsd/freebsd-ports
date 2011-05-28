@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	RT-Authen-ExternalAuth
-PORTVERSION=	0.08
-PORTREVISION=	3
+DISTVERSION=	0.09
 CATEGORIES=	www net perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:FALCONE
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	m.seaman@infracaninophile.co.uk
@@ -43,7 +43,7 @@ MAN3PREFIX=	${PREFIX}
 
 .endif
 
-MAN3=		RT::Authen::ExternalAuth.3 RT::User_Vendor.3
+MAN3=		RT::Authen::ExternalAuth.3
 PLIST_SUB+=	RTHOME=${RTHOME}
 
 # Note: You can install using an arbitrary $PREFIX but only if it
