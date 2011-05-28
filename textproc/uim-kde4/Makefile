@@ -10,7 +10,7 @@ PKGNAMESUFFIX=	-kde4
 COMMENT=	KDE4 panel applet of uim input method
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
-LIB_DEPENDS=	uim.7:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	uim.8:${PORTSDIR}/textproc/uim
 RUN_DEPENDS=	uim-pref-qt4:${PORTSDIR}/textproc/uim-qt4
 
 USE_GCC=	4.2+

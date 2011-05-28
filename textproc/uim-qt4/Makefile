@@ -9,7 +9,7 @@ PKGNAMESUFFIX=	-qt4
 
 COMMENT=	Qt4 modules of uim input method
 
-LIB_DEPENDS=	uim.7:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	uim.8:${PORTSDIR}/textproc/uim
 
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build qt3support uic

@@ -12,7 +12,7 @@ COMMENT=	QT modules of uim input method
 USE_QT_VER=	3
 USE_AUTOTOOLS=	libtool
 
-LIB_DEPENDS=	uim.7:${PORTSDIR}/textproc/uim
+LIB_DEPENDS=	uim.8:${PORTSDIR}/textproc/uim
 
 MASTERDIR=	${.CURDIR}/../../textproc/uim
 PKGDIR=		${.CURDIR}
