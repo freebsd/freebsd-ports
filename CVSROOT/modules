@@ -2163,7 +2163,6 @@ db42                            ports/databases/db42
 db42-nocrypto                   ports/databases/db42-nocrypto
 db43                            ports/databases/db43
 db44                            ports/databases/db44
-db45                            ports/databases/db45
 db46                            ports/databases/db46
 db47                            ports/databases/db47
 db48                            ports/databases/db48
@@ -20159,6 +20158,7 @@ php-suhosin                     ports/security/php-suhosin
 php-tclink                      ports/finance/php-tclink
 php-templates                   ports/www/php-templates
 php-xdebug                      ports/devel/php-xdebug
+php-yaf                         ports/www/php-yaf
 php4                            ports/lang/php4
 php4-bcmath                     ports/math/php4-bcmath
 php4-bz2                        ports/archivers/php4-bz2
