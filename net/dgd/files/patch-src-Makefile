@@ -1,19 +1,22 @@
 $FreeBSD$
 
---- src/Makefile.orig	2010-07-31 06:24:45.000000000 -0700
-+++ src/Makefile	2010-10-02 10:50:17.000000000 -0700
-@@ -16,16 +16,15 @@
+--- src/Makefile.orig	2011-05-19 07:59:49.000000000 -0700
++++ src/Makefile	2011-05-29 14:41:28.000000000 -0700
+@@ -16,17 +16,17 @@
+ # You should have received a copy of the GNU Affero General Public License
  # along with this program.  If not, see <http://www.gnu.org/licenses/>.
  #
- HOST=	DARWIN
--DEFINES=-D$(HOST) #-DNETWORK_EXTENSIONS #-DLPC_EXTENSION #-DDUMP_FUNCS
--DEBUG=	-O -g
+-HOST=	DARWIN
+-DEFINES=-D$(HOST)	#-DNETWORK_EXTENSIONS #-DDUMP_FUNCS #-DCO_THROTTLE=50
++HOST=	FREEBSD
++DEFINES=-D$(HOST) $(EXTRA_DEFINES)	#-DNETWORK_EXTENSIONS #-DDUMP_FUNCS #-DCO_THROTTLE=50
+ DEBUG=	-O -g
 -CCFLAGS=$(DEFINES) $(DEBUG)
-+DEFINES=-D$(HOST) $(EXTRA_DEFINES) #-DNETWORK_EXTENSIONS #-DLPC_EXTENSION #-DDUMP_FUNCS
 +CCFLAGS=$(DEFINES)
  CFLAGS=	-I. -Icomp -Ilex -Ied -Iparser -Ikfun $(CCFLAGS)
  LDFLAGS=
- LIBS=	#-ldl
+-LIBS=	-ldl		# FreeBSD may require "make HOST=FREEBSD LIBS="
++LIBS=
  LINTFLAGS=-abcehpruz
 -CC=	gcc
 +CC?=	gcc
@@ -23,7 +26,7 @@ $FreeBSD$
  YACC=	yacc
  BIN=	../bin
  
-@@ -36,6 +35,8 @@
+@@ -37,6 +37,8 @@
  COMPOBJ=alloc.o error.o hash.o path.o str.o array.o object.o sdata.o data.o \
  	interpret.o config.o ext.o
  
@@ -32,7 +35,7 @@ $FreeBSD$
  a.out:	$(OBJ) always
  	cd comp; $(DMAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' 'YACC=$(YACC)' dgd
  	cd lex; $(DMAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
-@@ -53,10 +54,15 @@
+@@ -54,10 +56,15 @@
  	@rm -f a.out
  
  $(BIN)/driver: a.out
@@ -49,7 +52,7 @@ $FreeBSD$
  
  lint:
  	lint $(LINTFLAGS) $(CFLAGS) $(SRC)
-@@ -82,7 +88,8 @@
+@@ -83,7 +90,8 @@
  
  comp/a.out:
  	cd comp; $(DMAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' \
