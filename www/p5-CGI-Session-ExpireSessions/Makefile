@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	CGI-Session-ExpireSessions
-PORTVERSION=	1.09
-PORTREVISION=	2
+PORTVERSION=	1.12
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CGI
@@ -17,8 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gerard@seibercom.net
 COMMENT=	Perl module to delete expired CGI::Session-type sessions
 
-BUILD_DEPENDS=	p5-Test-Pod>=1.26:${PORTSDIR}/devel/p5-Test-Pod
-RUN_DEPENDS=	p5-CGI-Session>=4.40:${PORTSDIR}/www/p5-CGI-Session
+BUILD_DEPENDS=	p5-Test-Pod>=1.45:${PORTSDIR}/devel/p5-Test-Pod
+RUN_DEPENDS=	p5-CGI-Session>=4.43:${PORTSDIR}/www/p5-CGI-Session
 
 MAN3=	CGI::Session::ExpireSessions.3
 MANCOMPRESSED=	no
