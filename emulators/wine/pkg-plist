@@ -502,6 +502,7 @@ include/wine/windows/rpcdcep.h
 include/wine/windows/rpcndr.h
 include/wine/windows/rpcnterr.h
 include/wine/windows/rpcproxy.h
+include/wine/windows/rpcsal.h
 include/wine/windows/rstbas.idl
 include/wine/windows/rstinf.idl
 include/wine/windows/rstloc.idl
@@ -964,6 +965,7 @@ lib/wine/fakedlls/hhctrl.ocx
 lib/wine/fakedlls/hid.dll
 lib/wine/fakedlls/hlink.dll
 lib/wine/fakedlls/hnetcfg.dll
+lib/wine/fakedlls/hostname.exe
 lib/wine/fakedlls/httpapi.dll
 lib/wine/fakedlls/iccvid.dll
 lib/wine/fakedlls/icinfo.exe
@@ -1123,6 +1125,7 @@ lib/wine/fakedlls/rasapi16.dll16
 lib/wine/fakedlls/rasapi32.dll
 lib/wine/fakedlls/rasdlg.dll
 lib/wine/fakedlls/reg.exe
+lib/wine/fakedlls/regapi.dll
 lib/wine/fakedlls/regedit.exe
 lib/wine/fakedlls/regsvcs.exe
 lib/wine/fakedlls/regsvr32.exe
@@ -1250,6 +1253,7 @@ lib/wine/fakedlls/winoldap.mod16
 lib/wine/fakedlls/winscard.dll
 lib/wine/fakedlls/winsock.dll16
 lib/wine/fakedlls/winspool.drv
+lib/wine/fakedlls/winsta.dll
 lib/wine/fakedlls/wintab.dll16
 lib/wine/fakedlls/wintab32.dll
 lib/wine/fakedlls/wintrust.dll
@@ -1293,6 +1297,7 @@ lib/wine/hhctrl.ocx.so
 lib/wine/hid.dll.so
 lib/wine/hlink.dll.so
 lib/wine/hnetcfg.dll.so
+lib/wine/hostname.exe.so
 lib/wine/httpapi.dll.so
 lib/wine/iccvid.dll.so
 lib/wine/icinfo.exe.so
@@ -1611,6 +1616,7 @@ lib/wine/rasapi16.dll16.so
 lib/wine/rasapi32.dll.so
 lib/wine/rasdlg.dll.so
 lib/wine/reg.exe.so
+lib/wine/regapi.dll.so
 lib/wine/regedit.exe.so
 lib/wine/regsvcs.exe.so
 lib/wine/regsvr32.exe.so
@@ -1738,6 +1744,7 @@ lib/wine/winoldap.mod16.so
 lib/wine/winscard.dll.so
 lib/wine/winsock.dll16.so
 lib/wine/winspool.drv.so
+lib/wine/winsta.dll.so
 lib/wine/wintab.dll16.so
 lib/wine/wintab32.dll.so
 lib/wine/wintrust.dll.so
