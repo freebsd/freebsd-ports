@@ -1,8 +1,10 @@
 This is mnemonic keyboard that covers entire IPA (International
 Phonetic Alphabet) Unicode 5 range, written in Keyman keyboard
 language. The keyboard is developed by SIL Non-Roman Script Initiative
-(NRSI). This port installs the keyboard so that it can be used through
-SCIM KMFL IMEngine (textproc/scim-kmfl-imengine).
+(NRSI).
+
+This port installs the keyboard so that it can be used through SCIM or
+IBus KMFL IMEngine (textproc/scim-kmfl-imengine, textproc/ibus-kmfl).
                          
 This keyboard is provided under SIL International X11-style License
 (http://scripts.sil.org/X11License).

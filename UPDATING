@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110529:
+  AFFECTS: users of textproc/*kmfl*
+  AUTHOR: nikola.lecic@anthesphoria.net
+
+  KMFL keyboard ports are now shared between IBus and SCIM KMFL IMEngines
+  (textproc/ibus-kmfl and textproc/scim-kmfl-imengine). Thus, the prefix
+  'scim-' is dropped from keyboard ports names.
+
+  Similar to m17n, both engines now search engine-neutral locations,
+  ${LOCALBASE}/share/kmfl/ and ~/.kmfl/. Users have to move their local
+  keyboard files from ~/.scim/kmfl/ to ~/kmfl/.
+
 20110523:
   AFFECTS: users of www/mod_perl2
   AUTHOR: ohauer@FreeBSD.org

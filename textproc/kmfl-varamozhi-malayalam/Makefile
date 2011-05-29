@@ -5,39 +5,41 @@
 # $FreeBSD$
 #
 
-PORTNAME=	scim-kmfl-varamozhi-malayalam
+PORTNAME=	kmfl-varamozhi-malayalam
 PORTVERSION=	1.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc
 MASTER_SITES=	SF/varamozhi/2%20Mozhi%20Keyman%20-%20Input%20Method/${PORTVERSION} \
-		http://anthesphoria.net/FreeBSD/ports/distfiles/kmfl/
+		http://anthesphoria.net/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
 DISTNAME=	mozhi_${PORTVERSION}
 DIST_SUBDIR=	kmfl
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
-COMMENT=	SCIM KMFL IMEngine Malayalam keyboard according to the Mozhi scheme
+COMMENT=	KMFL Malayalam keyboard according to the Mozhi scheme
 
-RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp \
- 		${LOCALBASE}/lib/scim-1.0/1.4.0/IMEngine/kmfl.so:${PORTSDIR}/textproc/scim-kmfl-imengine
+RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
 
 USE_DOS2UNIX=	mozhi_1.1.0.kmn
 NO_BUILD=	yes
 USE_ZIP=	yes
 
-SCIM_KMFL_DIR=	share/scim/kmfl
-SCIM_KMFL_ICONS_DIR=	share/scim/kmfl/icons
+KMFL_DIR=	share/kmfl
+KMFL_ICONS_DIR=	share/kmfl/icons
 
-PLIST_FILES=	${SCIM_KMFL_DIR}/mozhi_1.1.0.kmn \
-		${SCIM_KMFL_ICONS_DIR}/mozhi.bmp
+PLIST_FILES=	${KMFL_DIR}/mozhi_1.1.0.kmn \
+		${KMFL_ICONS_DIR}/mozhi.bmp
+PLIST_DIRSTRY=	${KMFL_ICONS_DIR} \
+		${KMFL_DIR}
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/*.kmn ${LOCALBASE}/${SCIM_KMFL_DIR}
-	${INSTALL_DATA} ${WRKSRC}/*.bmp ${LOCALBASE}/${SCIM_KMFL_ICONS_DIR}
+	${MKDIR} ${LOCALBASE}/${KMFL_DIR} ${LOCALBASE}/${KMFL_ICONS_DIR}
+	${INSTALL_DATA} ${WRKSRC}/*.kmn ${LOCALBASE}/${KMFL_DIR}
+	${INSTALL_DATA} ${WRKSRC}/*.bmp ${LOCALBASE}/${KMFL_ICONS_DIR}
 
 post-install:
 	@${ECHO_MSG} "--------------------------------------------------------"
 	@${ECHO_MSG} "  You should now have the new keyboard in the section"
-	@${ECHO_MSG} "  \"Malayalam\" in your SCIM menu. If you don't see it,"
+	@${ECHO_MSG} "  \"Malayalam\" in your SCIM/IBus menu. If you don't see it,"
 	@${ECHO_MSG} "  restart X."
 	@${ECHO_MSG}
 	@${ECHO_MSG} "  At the moment, this keyboard has no downloadable"

@@ -2,6 +2,9 @@ This is a keyboard for input of the standardized Yi script of southwestern
 China with Unicode Yi fonts. It is written in Keyman keyboard language and
 developed by SIL Non-Roman Script Initiative (NRSI).
 
+This port installs the keyboard so that it can be used through SCIM or
+IBus KMFL IMEngine (textproc/scim-kmfl-imengine, textproc/ibus-kmfl).
+
 To keyboard a Yi syllable, you should type the Pinyin romanization for that
 syllable, followed by a space. For keyboarding punctuation, use the usual
 punctuation keystrokes.

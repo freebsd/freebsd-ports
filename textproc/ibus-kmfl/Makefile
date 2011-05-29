@@ -7,6 +7,7 @@
 
 PORTNAME=	ibus-kmfl
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/kmfl/${PORTNAME}/${PORTVERSION} \
 		http://anthesphoria.net/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
@@ -24,8 +25,9 @@ USE_GNOME=	glib20 pkgconfig
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -36,7 +38,10 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch:
+	@${CP} ${WRKSRC}/icons/default.png ${WRKSRC}/icons/default-kmfl.png
 	@${REINPLACE_CMD} -e 's|/usr/|${PREFIX}/|g' \
 		${WRKSRC}/src/kmflutil.c ${WRKSRC}/src/kmfl.xml.in.in
+	@${REINPLACE_CMD} -e 's|default\.png|default-kmfl.png|g' \
+		${WRKSRC}/src/kmflutil.c ${WRKSRC}/icons/Makefile.in
 
 .include <bsd.port.mk>

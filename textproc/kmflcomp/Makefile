@@ -8,15 +8,16 @@
 PORTNAME=	kmflcomp
 PORTVERSION=	0.9.9
 CATEGORIES=	textproc
-MASTER_SITES=	SF/kmfl/kmfl/${PORTVERSION} \
-		http://anthesphoria.net/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
-DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz \
-		KMFL-Compiler.sxw
+MASTER_SITES=	SF/kmfl/kmfl/${PORTVERSION}:1 \
+		SF/kmfl/kmfl/Documentation:2 \
+		http://anthesphoria.net/FreeBSD/ports/distfiles/${DIST_SUBDIR}/:1,2
+DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz:1 \
+		KMFL-Compiler.sxw:2
 DIST_SUBDIR=	kmfl
 EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}.tar.gz
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
-COMMENT=	Compiler of Keyman keyboard sources to use with SCIM KMFL IMEngine
+COMMENT=	Compiler of Keyman KMFL keyboard sources to use with SCIM/IBus
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 
@@ -24,8 +25,9 @@ USE_XORG=	x11
 USE_LDCONFIG=	yes
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -liconv"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -liconv
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 DOCSDIR=	${PREFIX}/share/doc/kmfl/${PORTNAME}
 DOCS=		${DISTDIR}/${DIST_SUBDIR}/KMFL-Compiler.sxw \

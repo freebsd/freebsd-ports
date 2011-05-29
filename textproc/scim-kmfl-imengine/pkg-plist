@@ -7,3 +7,4 @@ lib/scim-1.0/1.4.0/SetupUI/kmfl_imengine_setup.so
 share/scim/kmfl/icons/default.png
 @dirrmtry share/scim/kmfl/icons
 @dirrmtry share/scim/kmfl
+@dirrmtry share/scim

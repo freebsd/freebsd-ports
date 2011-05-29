@@ -14,6 +14,7 @@
 
     http://tavultesoft.com/keymandev/documentation/help/main/guide.php
 
-  You need textproc/scim-kmfl-imengine and textproc/scim-kmfl-* ports
-  in order to use actual keyboards through SCIM.
+  You need textproc/scim-kmfl-imengine to use KMFL keyboards through
+  SCIM, or textproc/ibus-kmfl to use them through IBus. The keyboard
+  ports are textproc/kmfl-*.
 ------------------------------------------------------------------------

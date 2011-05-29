@@ -4,9 +4,9 @@
 #
 # $FreeBSD$
 
-PORTNAME=	scim-kmfl-sil-ipa-unicode5
+PORTNAME=	kmfl-sil-ipa-unicode
 PORTVERSION=	1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	textproc
 MASTER_SITES=	http://scripts.sil.org/cms/scripts/render_download.php\?site_id=nrsi\&format=file\&media_id=IPAUni_12_Src\&filename=/:1 \
 		http://scripts.sil.org/cms/scripts/render_download.php\?site_id=nrsi\&format=file\&media_id=IPAUni_12.pdf\&filename=/:2
@@ -16,10 +16,9 @@ DIST_SUBDIR=	kmfl
 EXTRACT_ONLY=	IPAUni_Src12.zip
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
-COMMENT=	IPA Unicode 5.1 mnemonic keyboard for KMFL IMEngine of SCIM
+COMMENT=	IPA Unicode 5.1 mnemonic keyboard for KMFL IMEngine
 
-RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp \
- 		${LOCALBASE}/lib/scim-1.0/1.4.0/IMEngine/kmfl.so:${PORTSDIR}/textproc/scim-kmfl-imengine
+RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
 
 WRKSRC=		${WRKDIR}/IPA12
 USE_DOS2UNIX=	IPAUni12.kmn
@@ -28,20 +27,23 @@ USE_ZIP=	yes
 
 DOCSDIR_REL=	share/doc/kmfl/${PORTNAME}
 DOCSDIR=	${PREFIX}/${DOCSDIR_REL}
-SCIM_KMFL_DIR=	share/scim/kmfl
-SCIM_KMFL_ICONS_DIR=	share/scim/kmfl/icons
+KMFL_DIR=	share/kmfl
+KMFL_ICONS_DIR=	share/kmfl/icons
 
 SUB_FILES=	pkg-message
 PORTDOCS=	*
 DOCSLIST=	${WRKSRC}/welcome.htm \
 		${DISTDIR}/${DIST_SUBDIR}/IPA+Unicode+5.1_ver+1.2_KMN.pdf
-PLIST_FILES=	${SCIM_KMFL_DIR}/IPAUni12.kmn \
-		${SCIM_KMFL_ICONS_DIR}/ipa.bmp \
-		${SCIM_KMFL_ICONS_DIR}/sil.bmp
+PLIST_FILES=	${KMFL_DIR}/IPAUni12.kmn \
+		${KMFL_ICONS_DIR}/ipa.bmp \
+		${KMFL_ICONS_DIR}/sil.bmp
+PLIST_DIRSTRY=	${KMFL_ICONS_DIR} \
+		${KMFL_DIR}
 
 do-install:
-	${INSTALL_DATA} ${WRKSRC}/*.kmn ${LOCALBASE}/${SCIM_KMFL_DIR}
-	${INSTALL_DATA} ${WRKSRC}/*.bmp ${LOCALBASE}/${SCIM_KMFL_ICONS_DIR}
+	${MKDIR} ${LOCALBASE}/${KMFL_DIR} ${LOCALBASE}/${KMFL_ICONS_DIR}
+	${INSTALL_DATA} ${WRKSRC}/*.kmn ${LOCALBASE}/${KMFL_DIR}
+	${INSTALL_DATA} ${WRKSRC}/*.bmp ${LOCALBASE}/${KMFL_ICONS_DIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	for doc in ${DOCSLIST} ; do \
