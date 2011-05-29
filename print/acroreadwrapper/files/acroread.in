@@ -126,6 +126,7 @@ case ${ADOBE_DISABLEIMMODULEHACK} in
 esac
 
 UNAME_s=Linux; export UNAME_s
+GTK_PATH="${LINUXBASE}/usr/lib/gtk-2.0/"; export GTK_PATH
 
 if [ -x %%PREFIX%%/${ACROBASE}/${ADOBE_LANG}/${BINPREFIX}/acroread ]; then
 	exec %%LINUXSH%% %%PREFIX%%/${ACROBASE}/${ADOBE_LANG}/${BINPREFIX}/acroread "$@"

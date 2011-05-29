@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	acroread9
-PORTVERSION=	9.4.1
-PORTREVISION?=	1
+PORTVERSION=	9.4.2
 CATEGORIES?=	print linux
 MASTER_SITES?=	http://ardownload.adobe.com/pub/adobe/reader/unix/9.x/${PORTVERSION}/${ADOBE_LANG:L}/ \
 		ftp://ftp.adobe.com/pub/adobe/reader/unix/9.x/${PORTVERSION}/${ADOBE_LANG:L}/
@@ -17,7 +16,7 @@ DIST_SUBDIR=	acroread
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Adobe Reader for view, print, and search PDF documents (${ADOBE_LANG})
 
-RUN_DEPENDS=	acroreadwrapper>=0.0.20100806:${PORTSDIR}/print/acroreadwrapper
+RUN_DEPENDS=	acroreadwrapper>=0.0.20110529:${PORTSDIR}/print/acroreadwrapper
 
 RESTRICTED=	Must fill out redistribution form at http://www.adobe.com/products/acrobat/distribute.html
 ONLY_FOR_ARCHS=	amd64 i386
@@ -67,13 +66,6 @@ INSTALLEXEC=	${SETENV} UNAME_s=Linux \
 			UNAME_r="Linux Compatibility on FreeBSD" \
 			${SH} ./INSTALL --install_path=${INSTALLDIR} > /dev/null
 
-pre-everything::
-	@${ECHO_CMD} "======================================================="
-	@${ECHO_CMD} "Try print/acroread8 instead if you need Adobe Reader."
-	@${ECHO_CMD} "Currently acroread9 port does not work with X Window "
-	@${ECHO_CMD} "System because of issues in FreeBSD's Linux emulation."
-	@${ECHO_CMD} "======================================================="
-
 pre-install:
 	@${MKDIR} ${WRKDIR}/bin
 	@${INSTALL_SCRIPT} \
@@ -86,9 +78,7 @@ do-install:
 	@${MKDIR} ${PREFIX}/share/desktop-directories
 	@cd ${WRKSRC} && ${SETENV} PATH=${WRKDIR}/bin:${PATH} ${INSTALLEXEC} > /dev/null
 
-.if ${ADOBE_LANG:U} != ENU
 post-install:
 	@${CAT} ${PKGMESSAGE}
-.endif
 
 .include <bsd.port.mk>
