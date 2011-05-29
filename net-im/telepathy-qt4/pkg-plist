@@ -19,6 +19,7 @@ include/telepathy-1.0/TelepathyQt4/AvatarData
 include/telepathy-1.0/TelepathyQt4/AvatarSpec
 include/telepathy-1.0/TelepathyQt4/CapabilitiesBase
 include/telepathy-1.0/TelepathyQt4/Channel
+include/telepathy-1.0/TelepathyQt4/ChannelClassFeatures
 include/telepathy-1.0/TelepathyQt4/ChannelClassSpec
 include/telepathy-1.0/TelepathyQt4/ChannelClassSpecList
 include/telepathy-1.0/TelepathyQt4/ChannelDispatchOperation
@@ -73,14 +74,19 @@ include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceBalanceInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceCapabilitiesInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceCellularInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceClientTypes
+include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceClientTypesInterface
+include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceContactBlockingInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceContactCapabilitiesInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceContactGroups
+include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceContactGroupsInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceContactInfoInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceContactList
+include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceContactListInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceContactsInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceLocationInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceMailNotificationInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfacePowerSaving
+include/telepathy-1.0/TelepathyQt4/ConnectionInterfacePowerSavingInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfacePresenceInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceRequestsInterface
 include/telepathy-1.0/TelepathyQt4/ConnectionInterfaceServicePointInterface
@@ -105,6 +111,7 @@ include/telepathy-1.0/TelepathyQt4/Farsight/Channel
 include/telepathy-1.0/TelepathyQt4/Farsight/channel.h
 include/telepathy-1.0/TelepathyQt4/Farsight/global.h
 include/telepathy-1.0/TelepathyQt4/Feature
+include/telepathy-1.0/TelepathyQt4/Features
 include/telepathy-1.0/TelepathyQt4/FileTransferChannel
 include/telepathy-1.0/TelepathyQt4/FileTransferChannelCreationProperties
 include/telepathy-1.0/TelepathyQt4/Filter
@@ -155,6 +162,7 @@ include/telepathy-1.0/TelepathyQt4/PendingVariantMap
 include/telepathy-1.0/TelepathyQt4/PendingVoid
 include/telepathy-1.0/TelepathyQt4/Presence
 include/telepathy-1.0/TelepathyQt4/PresenceSpec
+include/telepathy-1.0/TelepathyQt4/PresenceSpecList
 include/telepathy-1.0/TelepathyQt4/Profile
 include/telepathy-1.0/TelepathyQt4/ProfileManager
 include/telepathy-1.0/TelepathyQt4/Properties
@@ -172,6 +180,8 @@ include/telepathy-1.0/TelepathyQt4/RequestableChannelClassSpec
 include/telepathy-1.0/TelepathyQt4/RequestableChannelClassSpecList
 include/telepathy-1.0/TelepathyQt4/RoomListChannel
 include/telepathy-1.0/TelepathyQt4/SharedPtr
+include/telepathy-1.0/TelepathyQt4/SimpleCallObserver
+include/telepathy-1.0/TelepathyQt4/SimpleObserver
 include/telepathy-1.0/TelepathyQt4/SimpleTextObserver
 include/telepathy-1.0/TelepathyQt4/StatefulDBusProxy
 include/telepathy-1.0/TelepathyQt4/StatelessDBusProxy
@@ -208,6 +218,7 @@ include/telepathy-1.0/TelepathyQt4/account.h
 include/telepathy-1.0/TelepathyQt4/and-filter.h
 include/telepathy-1.0/TelepathyQt4/avatar.h
 include/telepathy-1.0/TelepathyQt4/capabilities-base.h
+include/telepathy-1.0/TelepathyQt4/channel-class-features.h
 include/telepathy-1.0/TelepathyQt4/channel-class-spec.h
 include/telepathy-1.0/TelepathyQt4/channel-dispatch-operation.h
 include/telepathy-1.0/TelepathyQt4/channel-dispatcher.h
@@ -249,8 +260,8 @@ include/telepathy-1.0/TelepathyQt4/location-info.h
 include/telepathy-1.0/TelepathyQt4/manager-file.h
 include/telepathy-1.0/TelepathyQt4/media-session-handler.h
 include/telepathy-1.0/TelepathyQt4/media-stream-handler.h
-include/telepathy-1.0/TelepathyQt4/message.h
 include/telepathy-1.0/TelepathyQt4/message-content-part.h
+include/telepathy-1.0/TelepathyQt4/message.h
 include/telepathy-1.0/TelepathyQt4/method-invocation-context.h
 include/telepathy-1.0/TelepathyQt4/not-filter.h
 include/telepathy-1.0/TelepathyQt4/object.h
@@ -285,6 +296,8 @@ include/telepathy-1.0/TelepathyQt4/referenced-handles.h
 include/telepathy-1.0/TelepathyQt4/requestable-channel-class-spec.h
 include/telepathy-1.0/TelepathyQt4/room-list-channel.h
 include/telepathy-1.0/TelepathyQt4/shared-ptr.h
+include/telepathy-1.0/TelepathyQt4/simple-call-observer.h
+include/telepathy-1.0/TelepathyQt4/simple-observer.h
 include/telepathy-1.0/TelepathyQt4/simple-pending-operations.h
 include/telepathy-1.0/TelepathyQt4/simple-text-observer.h
 include/telepathy-1.0/TelepathyQt4/stream-tube-channel.h
@@ -295,10 +308,10 @@ include/telepathy-1.0/TelepathyQt4/types.h
 include/telepathy-1.0/TelepathyQt4/utils.h
 lib/libtelepathy-qt4-farsight.so
 lib/libtelepathy-qt4-farsight.so.1
-lib/libtelepathy-qt4-farsight.so.1.0.5.14
+lib/libtelepathy-qt4-farsight.so.1.0.6.0
 lib/libtelepathy-qt4.so
 lib/libtelepathy-qt4.so.1
-lib/libtelepathy-qt4.so.1.0.5.14
+lib/libtelepathy-qt4.so.1.0.6.0
 libdata/pkgconfig/TelepathyQt4.pc
 libdata/pkgconfig/TelepathyQt4Farsight.pc
 @dirrm include/telepathy-1.0/TelepathyQt4/_gen
