@@ -1,6 +1,6 @@
---- readconfig.h.orig	Wed Feb 13 06:54:06 2002
-+++ readconfig.h	Tue Sep 27 19:33:19 2005
-@@ -14,7 +14,7 @@
+--- readconfig.h.orig	2009-11-10 20:55:07.000000000 -0500
++++ readconfig.h	2011-05-26 21:06:12.000000000 -0400
+@@ -13,7 +13,7 @@
  #endif
  
  #if withPGSQL
@@ -8,4 +8,4 @@
 +#include <libpq-fe.h>
  #endif
  
- #include <pcap.h> 
+ #include <stdlib.h>
