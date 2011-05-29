@@ -46,7 +46,7 @@ done
 
 pidfile="${mysql_proxy_pid_file}"
 command=%%PREFIX%%/libexec/mysql-proxy
-command_args="--admin-address=${mysql_proxy_admin_address} --proxy-address=${mysql_proxy_address} ${proxy_backend_addresses} ${mysql_proxy_args} --daemon --pid-file=${mysql_proxy_pid_file}"
+command_args="--admin-username=${mysql_proxy_admin_username} --admin-password=${mysql_proxy_admin_password} --admin-lua-script=${mysql_proxy_admin_lua_scripts} --admin-address=${mysql_proxy_admin_address} --proxy-address=${mysql_proxy_address} ${proxy_backend_addresses} ${mysql_proxy_args} --daemon --pid-file=${mysql_proxy_pid_file}"
 procname=%%PREFIX%%/libexec/mysql-proxy
 
 run_rc_command "$1"
