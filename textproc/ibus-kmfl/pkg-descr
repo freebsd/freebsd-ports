@@ -14,5 +14,6 @@ constants, SIL Ethnologue language codes, etc.
 
 Official Tavultesoft repository contains keyboards that cover more
 than 220 languages. Significant number of them are open source.
+The keyboard ports are textproc/kmfl-*.
 
 WWW: http://kmfl.sourceforge.net/

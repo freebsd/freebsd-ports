@@ -7,9 +7,10 @@
 
 PORTNAME=	scim-kmfl-imengine
 PORTVERSION=	0.9.9
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/kmfl/kmfl/${PORTVERSION} \
-		http://anthesphoria.net/FreeBSD/ports/distfiles/
+		http://anthesphoria.net/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
 DIST_SUBDIR=	kmfl
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
@@ -30,8 +31,9 @@ USE_GNOME=	glib20 gtk20 intlhack
 USE_GETTEXT=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 DOCSDIR=	${PREFIX}/share/doc/kmfl/${PORTNAME}
 PORTDOCS=	AUTHORS COPYING ChangeLog
@@ -41,7 +43,7 @@ SUB_FILES=	pkg-message
 pre-patch:
 	@${ECHO_MSG} ---------------------------------------------------------
 	@${ECHO_MSG}   You have SKIM installed. KMFL-SCIM-IMEngine will work
-	@${ECHO_MSG}   and you will be able to use textproc/scim-kmfl-* key-
+	@${ECHO_MSG}   and you will be able to use textproc/kmfl-* key-
 	@${ECHO_MSG}   boards, but KMFL IME does not have SKIM frontend yet.
 	@${ECHO_MSG}   Please refer to the textproc/kmflcomp docs on how to
 	@${ECHO_MSG}   use KMFL keyboards in QT applications.
@@ -55,6 +57,19 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's|/usr/lib|${LOCALBASE}/lib|' \
 		${WRKSRC}/scim_kmfl_imengine_setup/scim_kmfl_imengine_setup.cpp
+	@${REINPLACE_CMD} \
+		's|$$(datadir)/scim/kmfl|$$(datadir)/kmfl|g' \
+		${WRKSRC}/src/Makefile.* \
+		${WRKSRC}/scim_kmfl_imengine_setup/Makefile.*
+	@${REINPLACE_CMD} \
+		's|SCIM_DATADIR="$$datadir/scim"|SCIM_DATADIR="$$datadir"|' \
+		${WRKSRC}/configure.in
+	@${REINPLACE_CMD} \
+		's|"\.scim" SCIM_PATH_DELIM_STRING "kmfl"|".kmfl"|' \
+		${WRKSRC}/scim_kmfl_imengine_setup/scim_kmfl_imengine_setup.cpp
+	@${REINPLACE_CMD} \
+		's|"\.scim" + SCIM_PATH_DELIM_STRING + "kmfl"|".kmfl"|' \
+		${WRKSRC}/src/scim_kmfl_imengine.cpp
 
 post-install:
 .if !defined(NOPORTDOCS)

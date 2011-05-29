@@ -6,8 +6,9 @@ The keyboards are written in Keyman keyboard language and developed by SIL
 Non-Roman Script Initiative (NRSI). The software is distributed under the
 X11-style license (http://scripts.sil.org/X11License).
 
-This port installs the keyboards so that they can be used through SCIM KMFL
-IMEngine (textproc/scim-kmfl-imengine). Two layouts are provided:
+This port installs the keyboard so that it can be used through SCIM or
+IBus KMFL IMEngine (textproc/scim-kmfl-imengine, textproc/ibus-kmfl).
+Two layouts are provided:
 
   * mnemonic layout for any keyboard (using deadkeys);
   * positional layout for US keyboard (using deadkeys and/or shift-states, i.e.

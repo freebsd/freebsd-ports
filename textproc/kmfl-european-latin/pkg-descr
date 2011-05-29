@@ -5,8 +5,8 @@ developer, Tavultesoft (http://www.tavultesoft.com). The keyboard
 uses punctuation and letter keys in sequence to access diacritic and
 other letters.
 
-This port installs the keyboard so that it can be used through SCIM
-KMFL IMEngine (textproc/scim-kmfl-imengine).
+This port installs the keyboard so that it can be used through SCIM or
+IBus KMFL IMEngine (textproc/scim-kmfl-imengine, textproc/ibus-kmfl).
 
 Some of the supported languages include: Afrikaans, Albanian,
 Balearic, Basque, Breton, Catalan, Croatian, Czech, Danish, Dutch,

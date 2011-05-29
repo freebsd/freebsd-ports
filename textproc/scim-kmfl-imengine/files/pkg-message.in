@@ -7,6 +7,6 @@
 
     %%PREFIX%%/share/doc/kmfl/kmflcomp/KMFL-Compiler.sxw
 
-  You need textproc/scim-kmfl-* ports in order to use actual keyboards
+  You need textproc/kmfl-* ports in order to use actual keyboards
   through SCIM.
 ------------------------------------------------------------------------

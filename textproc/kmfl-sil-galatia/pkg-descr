@@ -2,6 +2,9 @@ This is a keyboard for typesetting Ancient Greek with precomposed Unicode
 characters. It is written in Keyman Keyboard Language by SIL Non-Roman Script
 Initiative (NRSI).
 
+This port installs the keyboard so that it can be used through SCIM or
+IBus KMFL IMEngine (textproc/scim-kmfl-imengine, textproc/ibus-kmfl).
+
 The main purpose of the keyboards is to provide a wide range of keying options,
 so many characters can be entered in multiple ways. The features include:
 
