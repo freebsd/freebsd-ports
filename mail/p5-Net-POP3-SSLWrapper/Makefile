@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-POP3-SSLWrapper
-PORTVERSION=	0.02
+PORTVERSION=	0.06
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,12 +14,18 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	johnpupu@gmail.com
 COMMENT=	Perl extension for simple POP3S wrapper for Net::POP3
 
-RUN_DEPENDS=	p5-IO-Socket-SSL>0:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		p5-ExtUtils-MakeMaker>0:${PORTSDIR}/devel/p5-ExtUtils-MakeMaker
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-IO-Socket-SSL>=1.34:${PORTSDIR}/security/p5-IO-Socket-SSL
+RUN_DEPENDS=	p5-IO-Socket-SSL>=1.34:${PORTSDIR}/security/p5-IO-Socket-SSL
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Net::POP3::SSLWrapper.3
+MAN3=		Net::POP3::SSLWrapper.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
+RUN_DEPENDS+=	p5-parent>=0:${PORTSDIR}/devel/p5-parent
+.endif
+
+.include <bsd.port.post.mk>
