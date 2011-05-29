@@ -1,0 +1,5 @@
+lrng is a collection of uniform pseudorandom number
+generators, written in C, and based on algorithms by Francois
+Panneton, Pierre L'Ecuyer, and Makoto Matsumoto.
+
+WWW:	http://www.iro.umontreal.ca/~simardr/

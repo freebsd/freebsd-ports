@@ -175,6 +175,7 @@
     SUBDIR += linux-relview
     SUBDIR += lll_spect
     SUBDIR += lp_solve
+    SUBDIR += lrng
     SUBDIR += ltl
     SUBDIR += ltl2ba
     SUBDIR += lybniz
