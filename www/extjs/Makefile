@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	extjs
-PORTVERSION=	4.0.0
+PORTVERSION=	4.0.1
 CATEGORIES=	www
 MASTER_SITES=	http://extjs.cachefly.net/ \
 		http://mirror.joehorn.idv.tw/extjs/
@@ -26,9 +26,10 @@ NO_BUILD=	yes
 OPTIONS=	DOC	"Install with documents" on \
 		EXAMPLE "Install with examples" on
 
-WWW_SUB=	"bootstrap.js builds ext-all-debug-w-comments.js ext-all-debug.js \
-		 ext-all.js ext-debug.js ext.js index.html license.txt locale \
-		 overview pkgs release-notes.html resources src welcome"
+WWW_SUB=	"bootstrap.js build builds ext-all-debug-w-comments.js \
+		 ext-all-debug.js ext-all.js ext-debug.js ext.js index.html \
+		 jsbuilder license.txt locale overview pkgs release-notes.html \
+		 resources src welcome"
 
 .include <bsd.port.pre.mk>
 
