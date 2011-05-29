@@ -7,13 +7,11 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.6.1.20110520
+PORTVERSION=	4.6.1.20110527
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
-DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX}
+DISTFILES=	gcc-${VERSIONSTRING}${EXTRACT_SUFX}
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.6
@@ -24,7 +22,6 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 
 .if defined(MAINTAINER_MODE)
-DISTFILES+=	gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 .endif
 
@@ -97,7 +94,6 @@ INFO+=		gcc${SUFFIX}/libquadmath
 .endif
 
 .if ! defined(WITHOUT_JAVA)
-DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
 MAN1+=		aot-compile${SUFFIX}.1 \
