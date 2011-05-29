@@ -6,19 +6,22 @@
 #
 
 PORTNAME=	traff
-PORTVERSION=	0.6.1
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	net net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	daniel@freebsd.ro
 COMMENT=	Libpcab based fast traffic accounting program
 
-USE_RC_SUBR=	traff.sh
-USE_GMAKE=	yes
+BUILD_DEPENDS=	${LOCALBASE}/include/argp.h:${PORTSDIR}/devel/argp-standalone
 
-CFLAGS+=	${PTHREAD_CFLAGS}
+USE_RC_SUBR=	traff
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+
+CFLAGS+=	${PTHREAD_CFLAGS} -L${LOCALBASE}/lib
 LFLAGS=		${PTHREAD_LIBS}
+CONFIGURE_ENV+=	"LIBS=-largp"
 
 OPTIONS=	MYSQL	"Enable MYSQL storage" 	on \
 		PGSQL	"Enable PGSQL storage"	off
@@ -27,19 +30,21 @@ OPTIONS=	MYSQL	"Enable MYSQL storage" 	on \
 
 .if !defined(WITHOUT_MYSQL)
 USE_MYSQL=	yes
-CFLAGS+=	-DwithMYSQL -I${LOCALBASE}/include
+CFLAGS+=	-DwithMYSQL -I${LOCALBASE}/include -L${LOCALBASE}/lib/mysql
 LFLAGS+=	-L${LOCALBASE}/lib/mysql -lmysqlclient_r
+CONFIGURE_ARGS+=--enable-mysql
 .endif
 
 .if defined(WITH_PGSQL)
 USE_PGSQL=	yes
 CFLAGS+=	-DwithPGSQL -I${LOCALBASE}/include
 LFLAGS+=	-L${LOCALBASE}/lib -lpq
+CONFIGURE_ARGS+=--enable-postgresql
 .endif
 
 MAKE_ARGS+=	EXTRA_LIBS="${LFLAGS}"
 
-post-patch:
+post-configure:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" \
 		${WRKSRC}/Makefile ${WRKSRC}/traff.c
 
