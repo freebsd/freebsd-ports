@@ -32,6 +32,7 @@
 %%WWWDIR%%/lib/gallery.in_place_edit.js
 %%WWWDIR%%/lib/gallery.panel.js
 %%WWWDIR%%/lib/gallery.show_full_size.js
+%%WWWDIR%%/lib/images/apple-touch-icon.png
 %%WWWDIR%%/lib/images/favicon.ico
 %%WWWDIR%%/lib/images/logo.png
 %%WWWDIR%%/lib/jquery-ui.js
@@ -85,6 +86,7 @@
 %%WWWDIR%%/modules/comment/views/admin_block_recent_comments.html.php
 %%WWWDIR%%/modules/comment/views/admin_comments.html.php
 %%WWWDIR%%/modules/comment/views/admin_manage_comments.html.php
+%%WWWDIR%%/modules/comment/views/admin_manage_comments_queue.html.php
 %%WWWDIR%%/modules/comment/views/comment.html.php
 %%WWWDIR%%/modules/comment/views/comment.mrss.php
 %%WWWDIR%%/modules/comment/views/comments.html.php
@@ -197,6 +199,7 @@
 %%WWWDIR%%/modules/gallery/helpers/block_manager.php
 %%WWWDIR%%/modules/gallery/helpers/data_rest.php
 %%WWWDIR%%/modules/gallery/helpers/dir.php
+%%WWWDIR%%/modules/gallery/helpers/encoding.php
 %%WWWDIR%%/modules/gallery/helpers/gallery.php
 %%WWWDIR%%/modules/gallery/helpers/gallery_block.php
 %%WWWDIR%%/modules/gallery/helpers/gallery_error.php
@@ -253,7 +256,6 @@
 %%WWWDIR%%/modules/gallery/libraries/MY_Input.php
 %%WWWDIR%%/modules/gallery/libraries/MY_Kohana_Exception.php
 %%WWWDIR%%/modules/gallery/libraries/MY_ORM.php
-%%WWWDIR%%/modules/gallery/libraries/MY_Pagination.php
 %%WWWDIR%%/modules/gallery/libraries/MY_View.php
 %%WWWDIR%%/modules/gallery/libraries/Menu.php
 %%WWWDIR%%/modules/gallery/libraries/ORM_MPTT.php
@@ -302,6 +304,7 @@
 %%WWWDIR%%/modules/gallery/views/admin_sidebar_blocks.html.php
 %%WWWDIR%%/modules/gallery/views/admin_theme_options.html.php
 %%WWWDIR%%/modules/gallery/views/admin_themes.html.php
+%%WWWDIR%%/modules/gallery/views/admin_themes_buttonset.html.php
 %%WWWDIR%%/modules/gallery/views/admin_themes_preview.html.php
 %%WWWDIR%%/modules/gallery/views/error.html.php
 %%WWWDIR%%/modules/gallery/views/error_404.html.php
@@ -441,7 +444,6 @@
 %%WWWDIR%%/modules/server_add/helpers/server_add_event.php
 %%WWWDIR%%/modules/server_add/helpers/server_add_installer.php
 %%WWWDIR%%/modules/server_add/helpers/server_add_theme.php
-%%WWWDIR%%/modules/server_add/js/admin.js
 %%WWWDIR%%/modules/server_add/js/server_add.js
 %%WWWDIR%%/modules/server_add/models/server_add_entry.php
 %%WWWDIR%%/modules/server_add/module.info
@@ -608,6 +610,7 @@
 %%WWWDIR%%/system/views/profiler/table.css
 %%WWWDIR%%/system/views/profiler/table.php
 %%WWWDIR%%/themes/admin_wind/css/fix-ie.css
+%%WWWDIR%%/themes/admin_wind/css/screen-rtl.css
 %%WWWDIR%%/themes/admin_wind/css/screen.css
 %%WWWDIR%%/themes/admin_wind/css/themeroller/images/ui-bg_flat_0_aaaaaa_40x100.png
 %%WWWDIR%%/themes/admin_wind/css/themeroller/images/ui-bg_flat_55_fbec88_40x100.png
@@ -652,8 +655,9 @@
 %%WWWDIR%%/themes/admin_wind/thumbnail.png
 %%WWWDIR%%/themes/admin_wind/views/admin.html.php
 %%WWWDIR%%/themes/admin_wind/views/block.html.php
-%%WWWDIR%%/themes/admin_wind/views/pager.html.php
+%%WWWDIR%%/themes/admin_wind/views/paginator.html.php
 %%WWWDIR%%/themes/wind/css/fix-ie.css
+%%WWWDIR%%/themes/wind/css/screen-rtl.css
 %%WWWDIR%%/themes/wind/css/screen.css
 %%WWWDIR%%/themes/wind/css/themeroller/images/ui-bg_flat_0_aaaaaa_40x100.png
 %%WWWDIR%%/themes/wind/css/themeroller/images/ui-bg_flat_55_fbec88_40x100.png
