@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iplike
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.2
 CATEGORIES=	databases
 MASTER_SITES=	SF/opennms/IPLIKE/stable-2.0/
 
@@ -18,8 +18,8 @@ USE_LDCONFIG=	yes
 USE_PGSQL=	yes
 SUB_FILES=	pkg-message
 
-PLIST_FILES=	lib/iplike.la \
-	lib/iplike.so \
+PLIST_FILES=	lib/postgresql/iplike.la \
+	lib/postgresql/iplike.so \
 	sbin/install_iplike.sh
 
 post-install:
