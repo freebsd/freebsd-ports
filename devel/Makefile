@@ -276,6 +276,7 @@
     SUBDIR += cxref
     SUBDIR += cxxtest
     SUBDIR += cxxtools
+    SUBDIR += czmq
     SUBDIR += d-feet
     SUBDIR += darts
     SUBDIR += datadesigner
