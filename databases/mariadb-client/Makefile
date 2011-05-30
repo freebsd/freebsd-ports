@@ -20,6 +20,8 @@ MASTER_SITES=	http://www.percona.com/downloads/MariaDB/${PORTNAME}-${PORTVERSION
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	A database server - drop-in replacement functionality for MySQL
 
+IGNORE=		Post repo-copy, not ready for use yet
+
 LICENSE=	GPLv2
 
 CONFLICTS=	mysql-server-[0-9]* mysql-client-[0-9]* mysql-scripts-[0-9]*
