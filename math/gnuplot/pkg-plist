@@ -188,6 +188,7 @@ bin/lasergnu
 %%DATADIR%%/4.4/PostScript/8859-9.ps
 %%DATADIR%%/4.4/PostScript/aglfn.txt
 %%DATADIR%%/4.4/PostScript/cp1250.ps
+%%DATADIR%%/4.4/PostScript/cp1251.ps
 %%DATADIR%%/4.4/PostScript/cp437.ps
 %%DATADIR%%/4.4/PostScript/cp850.ps
 %%DATADIR%%/4.4/PostScript/cp852.ps
