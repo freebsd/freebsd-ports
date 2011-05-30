@@ -5,6 +5,7 @@
 # $FreeBSD$
 #
 
+PORTREVISION=	1
 PKGNAMESUFFIX=	-gtk
 
 COMMENT=	GTK+ modules of uim input method
@@ -26,7 +27,7 @@ IGNORE=		requires X11
 .endif
 
 do-build:
-	(cd ${WRKSRC}/uim && ${GMAKE} libuim-x-util.la)
+	(cd ${WRKSRC}/uim && ${GMAKE} libuim-x-util.la libuim-counted-init.la)
 	(cd ${WRKSRC}/gtk && ${GMAKE})
 	(cd ${WRKSRC}/helper && ${GMAKE})
 
