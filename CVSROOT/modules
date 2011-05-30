@@ -8768,6 +8768,7 @@ lprps-a4                        ports/print/lprps-a4
 lprps-letter                    ports/print/lprps-letter
 lr                              ports/misc/lr
 lrmi                            ports/devel/lrmi
+lrng                            ports/math/lrng
 lrzip                           ports/archivers/lrzip
 lrzsz                           ports/comms/lrzsz
 lsdb                            ports/databases/lsdb
@@ -9821,6 +9822,7 @@ nagios-check_hdd_health         ports/net-mgmt/nagios-check_hdd_health
 nagios-check_ice                ports/net-mgmt/nagios-check_ice
 nagios-check_kumofs             ports/net-mgmt/nagios-check_kumofs
 nagios-check_memcached_paranoid  ports/net-mgmt/nagios-check_memcached_paranoid
+nagios-check_mysql_slave        ports/net-mgmt/nagios-check_mysql_slave
 nagios-check_nick               ports/net-mgmt/nagios-check_nick
 nagios-check_ports              ports/net-mgmt/nagios-check_ports
 nagios-check_puppet             ports/net-mgmt/nagios-check_puppet
@@ -23633,15 +23635,8 @@ scim                            ports/textproc/scim
 scim-bridge                     ports/textproc/scim-bridge
 scim-bridge-qt4                 ports/textproc/scim-bridge-qt4
 scim-input-pad                  ports/textproc/scim-input-pad
-scim-kmfl-european-latin        ports/textproc/scim-kmfl-european-latin
 scim-kmfl-imengine              ports/textproc/scim-kmfl-imengine
 scim-kmfl-khmer                 ports/textproc/scim-kmfl-khmer
-scim-kmfl-sil-ezra              ports/textproc/scim-kmfl-sil-ezra
-scim-kmfl-sil-galatia           ports/textproc/scim-kmfl-sil-galatia
-scim-kmfl-sil-ipa-unicode5      ports/textproc/scim-kmfl-sil-ipa-unicode5
-scim-kmfl-sil-panafrican-latin  ports/textproc/scim-kmfl-sil-panafrican-latin
-scim-kmfl-sil-yi                ports/textproc/scim-kmfl-sil-yi
-scim-kmfl-varamozhi-malayalam   ports/textproc/scim-kmfl-varamozhi-malayalam
 scim-m17n                       ports/textproc/scim-m17n
 scim-openvanilla                ports/textproc/scim-openvanilla
 scim-table-imengine             ports/textproc/scim-table-imengine
