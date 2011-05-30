@@ -36,19 +36,16 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-opengl=yes
 
 CPPFLAGS=	-I${LOCALBASE}/include -I${LOCALBASE}/include/freetype2
-LDFLAGS=	-L${LOCALBASE}/lib
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 MAN1=		reswrap.1 shutterbug.1 adie.1 PathFinder.1 calculator.1 \
 		ControlPanel.1
 
 .include <bsd.port.pre.mk>
 
-.if (${ARCH} == "alpha" || ${ARCH} == "sparc64") && ${OSVERSION} < 700000
-THREAD_LIBS=	-lthr
-.else
-THREAD_LIBS=	${PTHREAD_LIBS}
+.if ${ARCH} == "amd64" && ${OSVERSION} < 900000
+BROKEN=		does not build on amd64
 .endif
-LDFLAGS+=	${THREAD_LIBS}
 
 post-patch:
 .if defined(NOPORTDOCS)
