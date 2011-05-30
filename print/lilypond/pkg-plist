@@ -158,6 +158,7 @@ lib/lilypond/%%PORTVERSION%%/python/midi.so
 %%DATADIR%%/%%PORTVERSION%%/ly/predefined-fretboards-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/predefined-guitar-fretboards.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/predefined-guitar-ninth-fretboards.ly
+%%DATADIR%%/%%PORTVERSION%%/ly/predefined-mandolin-fretboards.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/predefined-ukulele-fretboards.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/property-init.ly
 %%DATADIR%%/%%PORTVERSION%%/ly/scale-definitions-init.ly

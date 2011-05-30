@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	2.13.61
-PORTREVISION=	1
+PORTVERSION=	2.13.62
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.13/
 
@@ -53,7 +52,7 @@ CONFIGURE_ENV+=	MAKEINFO="${LOCALBASE}/bin/makeinfo" \
 
 ALL_TARGET=	all
 
-NOCCACHE=	yes
+NO_CCACHE=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
