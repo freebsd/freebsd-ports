@@ -7,7 +7,7 @@
 
 PORTNAME=	dgd-lpmud
 PORTVERSION=	2.4.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net games
 MASTER_SITES=	${MASTER_SITE_LOCAL:S|%SUBDIR%|glewis/dgd|} \
 		http://ftp.dworkin.nl/dgd/lib/
