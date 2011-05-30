@@ -1,0 +1,21 @@
+@comment $FreeBSD$
+bin/czmq_selftest
+include/czmq.h
+include/czmq_prelude.h
+include/zclock.h
+include/zctx.h
+include/zframe.h
+include/zhash.h
+include/zlist.h
+include/zloop.h
+include/zmsg.h
+include/zsocket.h
+include/zsockopt.h
+include/zstr.h
+include/zthread.h
+lib/libczmq.a
+lib/libczmq.la
+lib/libczmq.so
+lib/libczmq.so.0
+libdata/pkgconfig/libczmq.pc
+@dirrmtry libdata/pkgconfig
