@@ -7,7 +7,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	1.1.9
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -283,7 +283,7 @@ CONFIGURE_ARGS+=--enable-dca
 .if defined(WITHOUT_DVB)
 CONFIGURE_ARGS+=--disable-dvb --disable-dvbpsi
 .else
-LIB_DEPENDS+=	dvbpsi.6:${PORTSDIR}/multimedia/libdvbpsi
+LIB_DEPENDS+=	dvbpsi.7:${PORTSDIR}/multimedia/libdvbpsi
 CONFIGURE_ARGS+=--enable-dvb --enable-dvbpsi \
 		--with-dvbpsi=${LOCALBASE}
 .endif
