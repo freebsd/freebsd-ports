@@ -15,7 +15,7 @@ you update your ports collection, before attempting any port upgrades.
 
   Similar to m17n, both engines now search engine-neutral locations,
   ${LOCALBASE}/share/kmfl/ and ~/.kmfl/. Users have to move their local
-  keyboard files from ~/.scim/kmfl/ to ~/kmfl/.
+  keyboard files from ~/.scim/kmfl/ to ~/.kmfl/.
 
 20110523:
   AFFECTS: users of www/mod_perl2
