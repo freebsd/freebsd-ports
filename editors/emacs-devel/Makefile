@@ -26,7 +26,7 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
 INSTALLS_ICONS=	yes
 
 EMACS_VER=	24.0.50
-EMACS_REV=	104238
+EMACS_REV=	104432
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XZ=		yes
