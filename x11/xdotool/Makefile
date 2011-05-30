@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xdotool
-DISTVERSION=	2.20101012.3049
+DISTVERSION=	2.20110530.1
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://semicomplete.googlecode.com/files/
@@ -18,7 +18,7 @@ USE_PERL5_BUILD=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 USE_GNOME=	pkgconfig
-USE_XORG=	x11 xtst
+USE_XORG=	x11 xtst xinerama
 
 MAN1=		xdotool.1
 PLIST_FILES=	bin/xdotool lib/libxdo.so lib/libxdo.so.2 include/xdo.h
