@@ -1,5 +1,4 @@
 bin/quantlib-config
-bin/quantlib-test-suite
 include/ql/auto_link.hpp
 include/ql/cashflow.hpp
 include/ql/cashflows/all.hpp
@@ -91,6 +90,7 @@ include/ql/experimental/convertiblebonds/convertiblebond.hpp
 include/ql/experimental/convertiblebonds/discretizedconvertible.hpp
 include/ql/experimental/convertiblebonds/tflattice.hpp
 include/ql/experimental/coupons/all.hpp
+include/ql/experimental/coupons/proxyibor.hpp
 include/ql/experimental/coupons/quantocouponpricer.hpp
 include/ql/experimental/coupons/subperiodcoupons.hpp
 include/ql/experimental/credit/all.hpp
@@ -122,12 +122,17 @@ include/ql/experimental/credit/spreadedhazardratecurve.hpp
 include/ql/experimental/credit/syntheticcdo.hpp
 include/ql/experimental/credit/syntheticcdoengines.hpp
 include/ql/experimental/exoticoptions/all.hpp
+include/ql/experimental/exoticoptions/analyticamericanmargrabeengine.hpp
+include/ql/experimental/exoticoptions/analyticeuropeanmargrabeengine.hpp
+include/ql/experimental/exoticoptions/analyticsimplechooserengine.hpp
 include/ql/experimental/exoticoptions/everestoption.hpp
 include/ql/experimental/exoticoptions/himalayaoption.hpp
+include/ql/experimental/exoticoptions/margrabeoption.hpp
 include/ql/experimental/exoticoptions/mceverestengine.hpp
 include/ql/experimental/exoticoptions/mchimalayaengine.hpp
 include/ql/experimental/exoticoptions/mcpagodaengine.hpp
 include/ql/experimental/exoticoptions/pagodaoption.hpp
+include/ql/experimental/exoticoptions/simplechooseroption.hpp
 include/ql/experimental/finitedifferences/all.hpp
 include/ql/experimental/finitedifferences/bicgstab.hpp
 include/ql/experimental/finitedifferences/concentrating1dmesher.hpp
@@ -135,6 +140,8 @@ include/ql/experimental/finitedifferences/craigsneydscheme.hpp
 include/ql/experimental/finitedifferences/dividendbarrieroption.hpp
 include/ql/experimental/finitedifferences/douglasscheme.hpp
 include/ql/experimental/finitedifferences/expliciteulerscheme.hpp
+include/ql/experimental/finitedifferences/fd2dblackscholesvanillaengine.hpp
+include/ql/experimental/finitedifferences/fdbatesvanillaengine.hpp
 include/ql/experimental/finitedifferences/fdblackscholesasianengine.hpp
 include/ql/experimental/finitedifferences/fdblackscholesbarrierengine.hpp
 include/ql/experimental/finitedifferences/fdblackscholesrebateengine.hpp
@@ -144,9 +151,14 @@ include/ql/experimental/finitedifferences/fdhestonhullwhitevanillaengine.hpp
 include/ql/experimental/finitedifferences/fdhestonrebateengine.hpp
 include/ql/experimental/finitedifferences/fdhestonvanillaengine.hpp
 include/ql/experimental/finitedifferences/fdm1dmesher.hpp
+include/ql/experimental/finitedifferences/fdm2dblackscholesop.hpp
+include/ql/experimental/finitedifferences/fdm2dblackscholessolver.hpp
 include/ql/experimental/finitedifferences/fdmamericanstepcondition.hpp
 include/ql/experimental/finitedifferences/fdmarithmeticaveragecondition.hpp
 include/ql/experimental/finitedifferences/fdmbackwardsolver.hpp
+include/ql/experimental/finitedifferences/fdmbatesop.hpp
+include/ql/experimental/finitedifferences/fdmbatessolver.hpp
+include/ql/experimental/finitedifferences/fdmbermudanstepcondition.hpp
 include/ql/experimental/finitedifferences/fdmblackscholesmesher.hpp
 include/ql/experimental/finitedifferences/fdmblackscholesmultistrikemesher.hpp
 include/ql/experimental/finitedifferences/fdmblackscholesop.hpp
@@ -155,6 +167,7 @@ include/ql/experimental/finitedifferences/fdmdirichletboundary.hpp
 include/ql/experimental/finitedifferences/fdmdividendhandler.hpp
 include/ql/experimental/finitedifferences/fdmhestonhullwhiteop.hpp
 include/ql/experimental/finitedifferences/fdmhestonhullwhitesolver.hpp
+include/ql/experimental/finitedifferences/fdmhestonlikesolverfactory.hpp
 include/ql/experimental/finitedifferences/fdmhestonop.hpp
 include/ql/experimental/finitedifferences/fdmhestonsolver.hpp
 include/ql/experimental/finitedifferences/fdmhestonvariancemesher.hpp
@@ -181,6 +194,9 @@ include/ql/experimental/finitedifferences/sparseilupreconditioner.hpp
 include/ql/experimental/finitedifferences/triplebandlinearop.hpp
 include/ql/experimental/finitedifferences/uniform1dmesher.hpp
 include/ql/experimental/finitedifferences/uniformgridmesher.hpp
+include/ql/experimental/fx/all.hpp
+include/ql/experimental/fx/blackdeltacalculator.hpp
+include/ql/experimental/fx/deltavolquote.hpp
 include/ql/experimental/inflation/all.hpp
 include/ql/experimental/inflation/genericindexes.hpp
 include/ql/experimental/inflation/interpolatedyoyoptionletstripper.hpp
@@ -194,7 +210,12 @@ include/ql/experimental/inflation/yoyoptionletstripper.hpp
 include/ql/experimental/lattices/all.hpp
 include/ql/experimental/lattices/extendedbinomialtree.hpp
 include/ql/experimental/math/all.hpp
+include/ql/experimental/math/autocovariance.hpp
+include/ql/experimental/math/claytoncopularng.hpp
+include/ql/experimental/math/farliegumbelmorgensterncopularng.hpp
 include/ql/experimental/math/fastfouriertransform.hpp
+include/ql/experimental/math/frankcopularng.hpp
+include/ql/experimental/math/zigguratrng.hpp
 include/ql/experimental/mcbasket/adaptedpathpayoff.hpp
 include/ql/experimental/mcbasket/all.hpp
 include/ql/experimental/mcbasket/longstaffschwartzmultipathpricer.hpp
@@ -205,8 +226,20 @@ include/ql/experimental/mcbasket/pathmultiassetoption.hpp
 include/ql/experimental/mcbasket/pathpayoff.hpp
 include/ql/experimental/processes/all.hpp
 include/ql/experimental/processes/extendedblackscholesprocess.hpp
+include/ql/experimental/processes/extendedornsteinuhlenbeckprocess.hpp
+include/ql/experimental/processes/vegastressedblackscholesprocess.hpp
 include/ql/experimental/risk/all.hpp
 include/ql/experimental/risk/sensitivityanalysis.hpp
+include/ql/experimental/shortrate/all.hpp
+include/ql/experimental/shortrate/generalizedhullwhite.hpp
+include/ql/experimental/shortrate/generalizedornsteinuhlenbeckprocess.hpp
+include/ql/experimental/variancegamma/all.hpp
+include/ql/experimental/variancegamma/analyticvariancegammaengine.hpp
+include/ql/experimental/variancegamma/fftengine.hpp
+include/ql/experimental/variancegamma/fftvanillaengine.hpp
+include/ql/experimental/variancegamma/fftvariancegammaengine.hpp
+include/ql/experimental/variancegamma/variancegammamodel.hpp
+include/ql/experimental/variancegamma/variancegammaprocess.hpp
 include/ql/experimental/varianceoption/all.hpp
 include/ql/experimental/varianceoption/integralhestonvarianceoptionengine.hpp
 include/ql/experimental/varianceoption/varianceoption.hpp
@@ -240,6 +273,7 @@ include/ql/indexes/ibor/jpylibor.hpp
 include/ql/indexes/ibor/libor.hpp
 include/ql/indexes/ibor/nzdlibor.hpp
 include/ql/indexes/ibor/seklibor.hpp
+include/ql/indexes/ibor/sonia.hpp
 include/ql/indexes/ibor/tibor.hpp
 include/ql/indexes/ibor/trlibor.hpp
 include/ql/indexes/ibor/usdlibor.hpp
@@ -274,6 +308,7 @@ include/ql/instruments/basketoption.hpp
 include/ql/instruments/bmaswap.hpp
 include/ql/instruments/bond.hpp
 include/ql/instruments/bonds/all.hpp
+include/ql/instruments/bonds/btp.hpp
 include/ql/instruments/bonds/cmsratebond.hpp
 include/ql/instruments/bonds/fixedratebond.hpp
 include/ql/instruments/bonds/floatingratebond.hpp
@@ -340,16 +375,20 @@ include/ql/math/bernsteinpolynomial.hpp
 include/ql/math/beta.hpp
 include/ql/math/bspline.hpp
 include/ql/math/comparison.hpp
+include/ql/math/copulas/alimikhailhaqcopula.hpp
 include/ql/math/copulas/all.hpp
 include/ql/math/copulas/claytoncopula.hpp
 include/ql/math/copulas/farliegumbelmorgensterncopula.hpp
 include/ql/math/copulas/frankcopula.hpp
+include/ql/math/copulas/galamboscopula.hpp
 include/ql/math/copulas/gaussiancopula.hpp
 include/ql/math/copulas/gumbelcopula.hpp
+include/ql/math/copulas/huslerreisscopula.hpp
 include/ql/math/copulas/independentcopula.hpp
 include/ql/math/copulas/marshallolkincopula.hpp
 include/ql/math/copulas/maxcopula.hpp
 include/ql/math/copulas/mincopula.hpp
+include/ql/math/copulas/plackettcopula.hpp
 include/ql/math/curve.hpp
 include/ql/math/distributions/all.hpp
 include/ql/math/distributions/binomialdistribution.hpp
@@ -389,6 +428,7 @@ include/ql/math/interpolations/kernelinterpolation.hpp
 include/ql/math/interpolations/kernelinterpolation2d.hpp
 include/ql/math/interpolations/linearinterpolation.hpp
 include/ql/math/interpolations/loginterpolation.hpp
+include/ql/math/interpolations/mixedinterpolation.hpp
 include/ql/math/interpolations/multicubicspline.hpp
 include/ql/math/interpolations/sabrinterpolation.hpp
 include/ql/math/kernelfunctions.hpp
@@ -528,6 +568,7 @@ include/ql/models/equity/batesmodel.hpp
 include/ql/models/equity/gjrgarchmodel.hpp
 include/ql/models/equity/hestonmodel.hpp
 include/ql/models/equity/hestonmodelhelper.hpp
+include/ql/models/equity/piecewisetimedependenthestonmodel.hpp
 include/ql/models/marketmodels/accountingengine.hpp
 include/ql/models/marketmodels/all.hpp
 include/ql/models/marketmodels/browniangenerator.hpp
@@ -637,6 +678,7 @@ include/ql/models/marketmodels/products/multistep/multistepperiodcapletswaptions
 include/ql/models/marketmodels/products/multistep/multistepratchet.hpp
 include/ql/models/marketmodels/products/multistep/multistepswap.hpp
 include/ql/models/marketmodels/products/multistep/multistepswaption.hpp
+include/ql/models/marketmodels/products/multistep/multisteptarn.hpp
 include/ql/models/marketmodels/products/onestep/all.hpp
 include/ql/models/marketmodels/products/onestep/onestepcoinitialswaps.hpp
 include/ql/models/marketmodels/products/onestep/onestepcoterminalswaps.hpp
@@ -703,6 +745,7 @@ include/ql/pricingengines/barrier/all.hpp
 include/ql/pricingengines/barrier/analyticbarrierengine.hpp
 include/ql/pricingengines/barrier/mcbarrierengine.hpp
 include/ql/pricingengines/basket/all.hpp
+include/ql/pricingengines/basket/kirkengine.hpp
 include/ql/pricingengines/basket/mcamericanbasketengine.hpp
 include/ql/pricingengines/basket/mceuropeanbasketengine.hpp
 include/ql/pricingengines/basket/stulzengine.hpp
@@ -760,6 +803,7 @@ include/ql/pricingengines/vanilla/analyticeuropeanengine.hpp
 include/ql/pricingengines/vanilla/analyticgjrgarchengine.hpp
 include/ql/pricingengines/vanilla/analytichestonengine.hpp
 include/ql/pricingengines/vanilla/analytichestonhullwhiteengine.hpp
+include/ql/pricingengines/vanilla/analyticptdhestonengine.hpp
 include/ql/pricingengines/vanilla/baroneadesiwhaleyengine.hpp
 include/ql/pricingengines/vanilla/batesengine.hpp
 include/ql/pricingengines/vanilla/binomialengine.hpp
@@ -944,6 +988,7 @@ include/ql/time/calendars/newzealand.hpp
 include/ql/time/calendars/norway.hpp
 include/ql/time/calendars/nullcalendar.hpp
 include/ql/time/calendars/poland.hpp
+include/ql/time/calendars/russia.hpp
 include/ql/time/calendars/saudiarabia.hpp
 include/ql/time/calendars/singapore.hpp
 include/ql/time/calendars/slovakia.hpp
@@ -1074,12 +1119,15 @@ share/emacs/site-lisp/quantlib.el
 @dirrm include/ql/indexes
 @dirrm include/ql/experimental/volatility
 @dirrm include/ql/experimental/varianceoption
+@dirrm include/ql/experimental/variancegamma
+@dirrm include/ql/experimental/shortrate
 @dirrm include/ql/experimental/risk
 @dirrm include/ql/experimental/processes
 @dirrm include/ql/experimental/mcbasket
 @dirrm include/ql/experimental/math
 @dirrm include/ql/experimental/lattices
 @dirrm include/ql/experimental/inflation
+@dirrm include/ql/experimental/fx
 @dirrm include/ql/experimental/finitedifferences
 @dirrm include/ql/experimental/exoticoptions
 @dirrm include/ql/experimental/credit
