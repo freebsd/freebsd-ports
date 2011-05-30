@@ -6,25 +6,18 @@
 #
 
 PORTNAME=	hmac
-PORTVERSION=	0.3.2
+PORTVERSION=	0.4.0
 CATEGORIES=	security ruby
-MASTER_SITES=	RF/ruby-hmac
+MASTER_SITES=	RG
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	ruby-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	ruby@freebsd.org
 COMMENT=	A Ruby library which implements the HMAC algorithm
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
 GEM_NAME=	${DISTNAME}
-
-post-install:
-	@${ECHO} ${GEM_CACHE} > ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},${GEM_DOC_DIR},' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type f | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},${GEM_LIB_DIR},' >> ${TMPPLIST}
-	@${ECHO} ${GEM_SPEC} >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_LIB_DIR},@dirrm ${GEM_LIB_DIR},' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${GEM_DOC_DIR} -type d -depth | ${SED} -e 's,${PREFIX}/${GEM_DOC_DIR},@dirrm ${GEM_DOC_DIR},' >> ${TMPPLIST}
 
 .include <bsd.port.mk>
