@@ -16,8 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	gerard@seibercom.net
 COMMENT=	Perl module to delete expired CGI::Session-type sessions
 
-BUILD_DEPENDS=	p5-Test-Pod>=1.45:${PORTSDIR}/devel/p5-Test-Pod
-RUN_DEPENDS=	p5-CGI-Session>=4.43:${PORTSDIR}/www/p5-CGI-Session
+RUN_DEPENDS=	p5-CGI-Session>=4.14:${PORTSDIR}/www/p5-CGI-Session
+
+TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
 
 MAN3=	CGI::Session::ExpireSessions.3
 MANCOMPRESSED=	no
