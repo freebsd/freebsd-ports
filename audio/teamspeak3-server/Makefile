@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	teamspeak3-server
-DISTVERSION=	3.0.0rc1
+PORTVERSION=	3.0.0.r1
 CATEGORIES=	audio net
 MASTER_SITES=	http://teamspeak.gameserver.gamed.de/ts3/releases/rc1/ \
 		http://ftp.4players.de/pub/hosted/ts3/releases/rc1/
