@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	moodle
-PORTVERSION=	1.9.11
+PORTVERSION=	1.9.12
 CATEGORIES=	www
 MASTER_SITES=	http://download.moodle.org/stable19/ \
 		http://download2.moodle.org/stable19/ \
@@ -28,7 +28,7 @@ OPTIONS=	MYSQL   "Add support for a MySQL database server" Off \
 		ZLIB    "Add zip/unzip functionality" On \
 		NETWORK "Add Moodle Network functionality" Off \
 		LDAP    "Add LDAP authentication functionality" Off \
-		MIMETEX "Add mimeTeX filter functionality" On
+		MIMETEX "Add mimeTeX filter functionality" Off
 
 .include <bsd.port.pre.mk>
 
