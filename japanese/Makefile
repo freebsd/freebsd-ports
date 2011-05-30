@@ -118,6 +118,7 @@
     SUBDIR += ipadic
     SUBDIR += ircII
     SUBDIR += ja6
+    SUBDIR += jacode.pl
     SUBDIR += jadetex-ptex
     SUBDIR += japana
     SUBDIR += japaneseAFM

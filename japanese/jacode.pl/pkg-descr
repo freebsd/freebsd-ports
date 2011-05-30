@@ -1,0 +1,17 @@
+jacode.pl - Perl library for Japanese character code conversion
+
+This software has upper compatibility to jcode.pl.
+
+* jcode.pl upper compatible
+* Perl4 script
+* Acts as a wrapper to Encode::from_to
+* Support HALFWIDTH KATAKANA
+* Support UTF-8 by cp932 to Unicode table
+    http://unicode.org/Public/MAPPINGS/VENDORS/MICSFT/WINDOWS/CP932.TXT
+    http://support.microsoft.com/kb/170559/ja
+    (JIS X 0221:2007 BASIC JAPANESE and COMMON JAPANESE)
+* Hidden UTF8 flag
+* No Object oriented
+* Possible to re-use past code and how to
+
+WWW:	http://search.cpan.org/dist/jacode/
