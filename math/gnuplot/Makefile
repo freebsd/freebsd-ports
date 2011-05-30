@@ -19,6 +19,7 @@ CONFIGURE_ARGS+=--with-lasergnu \
 		--without-linux-vga \
 		--without-lisp-files \
 		--without-tutorial
+MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	X11		"Enable X11 support"		on \
 		GD		"Enable GD support"		on \
