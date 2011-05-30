@@ -55,7 +55,8 @@ JAXPFILE=	jaxp-1_4_5.zip
 JAXWSFILE=	jdk7-jaxws2_2_4-b02-2011_05_09.zip
 JAFFILE=	jdk7-jaf-2010_08_19.zip
 
-LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2 \
+		asound.2:${PORTSDIR}/audio/alsa-lib
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip \
 		unzip:${PORTSDIR}/archivers/unzip \
 		${LOCALBASE}/include/cups/cups.h:${PORTSDIR}/print/cups-client
