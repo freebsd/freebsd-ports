@@ -7,7 +7,7 @@
 
 PORTNAME?=	alpine
 PORTVERSION=	2.00
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	mail news ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/alpine/ \
 		http://dougbarton.us/Downloads/alpine-${PORTVERSION}/
