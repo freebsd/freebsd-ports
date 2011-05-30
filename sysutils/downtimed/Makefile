@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	downtimed
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	sysutils
 MASTER_SITES=	http://dist.epipe.com/${PORTNAME}/ \
-		http://launchpadlibrarian.net/61230833/
+		http://launchpadlibrarian.net/65433766/
 DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	snabb@epipe.com
@@ -23,6 +23,7 @@ MAN1=		downtimes.1
 MAN8=		downtimed.8
 USE_RC_SUBR=	${PORTNAME}
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 post-install:
 		@${MKDIR} /var/db/downtimed
