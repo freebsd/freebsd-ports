@@ -39,6 +39,19 @@ POST-INSTALL CONFIGURATION FOR MOODLE
    set up whatever file permissions you deem more adequate.
    For instance, user=root, group=www, mask=640.
 
+   Alternatively, change the directory ownership/permissions
+   for %%PREFIX%%/%%MOODLEDIR%% so that the web server process
+   can write, and retry the installation. Once it is finished,
+   remember to restore the permissions to the usual value, for
+   security reasons. The following commands will probably do
+   the trick:
+
+     chmod 777 %%PREFIX%%/%%MOODLEDIR%%
+   <Now retry the installation>
+     chmod 755 %%PREFIX%%/%%MOODLEDIR%%
+     chown root:www %%PREFIX%%/%%MOODLEDIR%%/config.php
+     chmod 750 %%PREFIX%%/%%MOODLEDIR%%/config.php
+
 4) Set up a cron task to invoke the file admin/cron.php
    every five minutes or so. For instance:
    */5 * * * * fetch http://your.server.com/moodle/admin/cron.php
