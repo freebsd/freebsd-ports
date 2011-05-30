@@ -11,6 +11,3 @@ This package contains the following perl5 modules:
 * Time::DaysInMonth - simply report the number of days in a month
 
 WWW: http://search.cpan.org/dist/Time-modules/
-
--- Sergey Skvortsov
-skv@FreeBSD.org
