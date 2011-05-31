@@ -8,8 +8,8 @@
 PORTNAME=	bxpkg
 DISTVERSION=	0.0.4_0
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	http://hg.bsdroot.lv/expl/bxpkg/archive/
-DISTNAME=	${DISTVERSION}
+MASTER_SITES=	http://bxpkg.bsdroot.lv/files/
+DISTNAME=	${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	kpetrikas@gmail.com
 COMMENT=	bxPKG is a GTK+ based tool to manage binary packages on BSD systems.
