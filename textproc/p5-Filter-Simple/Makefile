@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Filter-Simple
-PORTVERSION=	0.85
+PORTVERSION=	0.87
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simplified source filtering
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 MAKE_JOBS_SAFE= yes
 
