@@ -1,0 +1,4 @@
+lib/libunrar.so
+lib/libunrar.so.3
+include/libunrar4/dll.hpp
+@dirrm  include/libunrar4
