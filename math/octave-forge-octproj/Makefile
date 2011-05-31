@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge-octproj
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
@@ -18,6 +18,9 @@ LIB_DEPENDS+=	proj:${PORTSDIR}/graphics/proj
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
+post-extract:
+	${REINPLACE_CMD} s/CC/CCC/ ${WRKSRC}/Makefile
+
 post-build:
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTAVE_PKGNAME}
 
