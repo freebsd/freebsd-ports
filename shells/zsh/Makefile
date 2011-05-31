@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zsh
-PORTVERSION=	4.3.11
+PORTVERSION=	4.3.12
 CATEGORIES=	shells
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dev/${PORTVERSION}:src \
 		SF/${PORTNAME}/${PORTNAME}-doc-dev/${PORTVERSION}:doc
@@ -30,14 +30,13 @@ USE_NCURSES=	yes
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
 .endif
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-term-lib="ncursesw ncurses" --with-tcsetpgrp \
 		--enable-function-subdirs
 
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-bsdtar
-EXTRA_COMPLETION_FILES=	_sockstat
-EXTRA_COMPLETION_DIR=	Completion/BSD/Command
+#EXTRA_COMPLETION_FILES=	_sockstat
+#EXTRA_COMPLETION_DIR=	Completion/BSD/Command
 
 LICENSE=	ZSH
 LICENSE_NAME=   ZSH license
