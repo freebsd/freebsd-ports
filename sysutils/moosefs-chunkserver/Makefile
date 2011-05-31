@@ -7,6 +7,7 @@
 
 PORTNAME=	moosefs
 PORTVERSION=	1.6.20
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/moosefs/moosefs/${PORTVERSION}/
 PKGNAMESUFFIX=	-chunkserver
@@ -15,6 +16,10 @@ DISTNAME=	mfs-${PORTVERSION}
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	Storing files data and synchronizing it among themselves
 
+LICENSE=	GPLv3
+USERS=		mfs
+GROUPS=		mfs
+
 GNU_CONFIGURE=	yes
 USE_RC_SUBR+=	mfschunkserver
 MFS_WORKDIR=	/var
@@ -22,7 +27,7 @@ MFS_WORKDIR=	/var
 MAN5=		mfschunkserver.cfg.5 mfshdd.cfg.5
 MAN8=		mfschunkserver.8
 
-SUB_FILES+=	pkg-install pkg-message pkg-deinstall
+SUB_FILES+=	pkg-message
 SUB_LIST+=	MFS_WORKDIR="${MFS_WORKDIR}"
 
 CONFIGURE_ARGS=	--localstatedir=${MFS_WORKDIR} \
@@ -47,7 +52,6 @@ post-install:
 		${CP} ${PREFIX}/etc/${FILE}.cfg.dist ${PREFIX}/etc/${FILE}.cfg ; \
 	fi
 .endfor
-	PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
