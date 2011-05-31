@@ -1,0 +1,22 @@
+--- bullet/CMakeLists.txt.orig	2011-02-15 01:41:02.000000000 +0100
++++ bullet/CMakeLists.txt	2011-05-26 00:00:27.000000000 +0200
+@@ -8,13 +8,14 @@
+ MAKE_DIRECTORY(${PROJECT_SOURCE_DIR}/src/)
+ 
+ # Build Bullet
+-if($ENV{MAKE})
++#if($ENV{MAKE})
+ execute_process(COMMAND cmake -E chdir ${PROJECT_SOURCE_DIR} $ENV{MAKE} -f Makefile.bullet
+                 RESULT_VARIABLE _make_failed)
+-else($ENV{MAKE})
+-execute_process(COMMAND cmake -E chdir ${PROJECT_SOURCE_DIR} make -f Makefile.bullet
+-                RESULT_VARIABLE _make_failed)
+-endif($ENV{MAKE})
++#else($ENV{MAKE})
++#message(FATAL_ERROR "no env, bullet: " $ENV{MAKE})
++#execute_process(COMMAND cmake -E chdir ${PROJECT_SOURCE_DIR} make -f Makefile.bullet
++#                RESULT_VARIABLE _make_failed)
++#endif($ENV{MAKE})
+ if(_make_failed)
+   message(FATAL_ERROR "Build of Bullet failed")
+ endif(_make_failed)

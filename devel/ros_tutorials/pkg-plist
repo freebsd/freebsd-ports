@@ -1,6 +1,5 @@
 ros/stacks/ros_tutorials/CMakeLists.txt
 ros/stacks/ros_tutorials/Makefile
-ros/stacks/ros_tutorials/stack.xml
 ros/stacks/ros_tutorials/roscpp_tutorials/CMakeLists.txt
 ros/stacks/ros_tutorials/roscpp_tutorials/Makefile
 ros/stacks/ros_tutorials/roscpp_tutorials/ROS_NOBUILD
@@ -62,16 +61,21 @@ ros/stacks/ros_tutorials/roscpp_tutorials/notify_connect/notify_connect.cpp
 ros/stacks/ros_tutorials/roscpp_tutorials/parameters/CMakeLists.txt
 ros/stacks/ros_tutorials/roscpp_tutorials/parameters/parameters.cpp
 ros/stacks/ros_tutorials/roscpp_tutorials/src/roscpp_tutorials/__init__.py
+ros/stacks/ros_tutorials/roscpp_tutorials/src/roscpp_tutorials/__init__.pyc
+ros/stacks/ros_tutorials/roscpp_tutorials/src/roscpp_tutorials/__init__.pyo
 ros/stacks/ros_tutorials/roscpp_tutorials/src/roscpp_tutorials/srv/_TwoInts.py
+ros/stacks/ros_tutorials/roscpp_tutorials/src/roscpp_tutorials/srv/_TwoInts.pyc
+ros/stacks/ros_tutorials/roscpp_tutorials/src/roscpp_tutorials/srv/_TwoInts.pyo
 ros/stacks/ros_tutorials/roscpp_tutorials/src/roscpp_tutorials/srv/__init__.py
+ros/stacks/ros_tutorials/roscpp_tutorials/src/roscpp_tutorials/srv/__init__.pyc
+ros/stacks/ros_tutorials/roscpp_tutorials/src/roscpp_tutorials/srv/__init__.pyo
 ros/stacks/ros_tutorials/roscpp_tutorials/srv/TwoInts.srv
-ros/stacks/ros_tutorials/roscpp_tutorials/srv/lisp/roscpp_tutorials/.TwoInts.asd-dep
-ros/stacks/ros_tutorials/roscpp_tutorials/srv/lisp/roscpp_tutorials/TwoInts.lisp
-ros/stacks/ros_tutorials/roscpp_tutorials/srv/lisp/roscpp_tutorials/_package.lisp
-ros/stacks/ros_tutorials/roscpp_tutorials/srv/lisp/roscpp_tutorials/_package_TwoInts.lisp
-ros/stacks/ros_tutorials/roscpp_tutorials/srv/lisp/roscpp_tutorials/roscpp_tutorials-srv.asd
 ros/stacks/ros_tutorials/roscpp_tutorials/srv_gen/cpp/include/roscpp_tutorials/TwoInts.h
 ros/stacks/ros_tutorials/roscpp_tutorials/srv_gen/generated
+ros/stacks/ros_tutorials/roscpp_tutorials/srv_gen/lisp/TwoInts.lisp
+ros/stacks/ros_tutorials/roscpp_tutorials/srv_gen/lisp/_package.lisp
+ros/stacks/ros_tutorials/roscpp_tutorials/srv_gen/lisp/_package_TwoInts.lisp
+ros/stacks/ros_tutorials/roscpp_tutorials/srv_gen/lisp/roscpp_tutorials-srv.asd
 ros/stacks/ros_tutorials/roscpp_tutorials/talker/CMakeLists.txt
 ros/stacks/ros_tutorials/roscpp_tutorials/talker/talker.cpp
 ros/stacks/ros_tutorials/roscpp_tutorials/time_api/CMakeLists.txt
@@ -82,31 +86,57 @@ ros/stacks/ros_tutorials/roscpp_tutorials/timers/timers.cpp
 ros/stacks/ros_tutorials/rospy_tutorials/001_talker_listener/README
 ros/stacks/ros_tutorials/rospy_tutorials/001_talker_listener/listener
 ros/stacks/ros_tutorials/rospy_tutorials/001_talker_listener/listener.py
+ros/stacks/ros_tutorials/rospy_tutorials/001_talker_listener/listener.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/001_talker_listener/listener.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/001_talker_listener/talker
 ros/stacks/ros_tutorials/rospy_tutorials/001_talker_listener/talker.py
+ros/stacks/ros_tutorials/rospy_tutorials/001_talker_listener/talker.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/001_talker_listener/talker.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/001_talker_listener/talker_listener.launch
 ros/stacks/ros_tutorials/rospy_tutorials/002_headers/headers.launch
 ros/stacks/ros_tutorials/rospy_tutorials/002_headers/listener_header.py
+ros/stacks/ros_tutorials/rospy_tutorials/002_headers/listener_header.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/002_headers/listener_header.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/002_headers/talker_header.py
+ros/stacks/ros_tutorials/rospy_tutorials/002_headers/talker_header.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/002_headers/talker_header.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/003_listener_with_user_data/listener_with_user_data.launch
 ros/stacks/ros_tutorials/rospy_tutorials/003_listener_with_user_data/listener_with_user_data.py
+ros/stacks/ros_tutorials/rospy_tutorials/003_listener_with_user_data/listener_with_user_data.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/003_listener_with_user_data/listener_with_user_data.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/004_listener_subscribe_notify/listener_subscribe_notify.launch
 ros/stacks/ros_tutorials/rospy_tutorials/004_listener_subscribe_notify/listener_subscribe_notify.py
+ros/stacks/ros_tutorials/rospy_tutorials/004_listener_subscribe_notify/listener_subscribe_notify.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/004_listener_subscribe_notify/listener_subscribe_notify.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/004_listener_subscribe_notify/run_demo
 ros/stacks/ros_tutorials/rospy_tutorials/005_add_two_ints/add_two_ints_client
 ros/stacks/ros_tutorials/rospy_tutorials/005_add_two_ints/add_two_ints_server
 ros/stacks/ros_tutorials/rospy_tutorials/006_parameters/param_talker.launch
 ros/stacks/ros_tutorials/rospy_tutorials/006_parameters/param_talker.py
+ros/stacks/ros_tutorials/rospy_tutorials/006_parameters/param_talker.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/006_parameters/param_talker.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/007_connection_header/README
 ros/stacks/ros_tutorials/rospy_tutorials/007_connection_header/client_connection_header.py
+ros/stacks/ros_tutorials/rospy_tutorials/007_connection_header/client_connection_header.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/007_connection_header/client_connection_header.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/007_connection_header/connection_header.launch
 ros/stacks/ros_tutorials/rospy_tutorials/007_connection_header/listener_connection_header.py
+ros/stacks/ros_tutorials/rospy_tutorials/007_connection_header/listener_connection_header.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/007_connection_header/listener_connection_header.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/007_connection_header/server_connection_header.py
+ros/stacks/ros_tutorials/rospy_tutorials/007_connection_header/server_connection_header.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/007_connection_header/server_connection_header.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/007_connection_header/talker_connection_header.py
+ros/stacks/ros_tutorials/rospy_tutorials/007_connection_header/talker_connection_header.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/007_connection_header/talker_connection_header.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/008_on_shutdown/on_shutdown.launch
 ros/stacks/ros_tutorials/rospy_tutorials/008_on_shutdown/publish_on_shutdown.py
+ros/stacks/ros_tutorials/rospy_tutorials/008_on_shutdown/publish_on_shutdown.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/008_on_shutdown/publish_on_shutdown.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/009_advanced_publish/advanced_publish.launch
 ros/stacks/ros_tutorials/rospy_tutorials/009_advanced_publish/advanced_publish.py
+ros/stacks/ros_tutorials/rospy_tutorials/009_advanced_publish/advanced_publish.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/009_advanced_publish/advanced_publish.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/CMakeLists.txt
 ros/stacks/ros_tutorials/rospy_tutorials/Makefile
 ros/stacks/ros_tutorials/rospy_tutorials/ROS_NOBUILD
@@ -114,39 +144,53 @@ ros/stacks/ros_tutorials/rospy_tutorials/mainpage.dox
 ros/stacks/ros_tutorials/rospy_tutorials/manifest.xml
 ros/stacks/ros_tutorials/rospy_tutorials/msg/Floats.msg
 ros/stacks/ros_tutorials/rospy_tutorials/msg/HeaderString.msg
-ros/stacks/ros_tutorials/rospy_tutorials/msg/lisp/rospy_tutorials/.Floats.asd-dep
-ros/stacks/ros_tutorials/rospy_tutorials/msg/lisp/rospy_tutorials/.HeaderString.asd-dep
-ros/stacks/ros_tutorials/rospy_tutorials/msg/lisp/rospy_tutorials/Floats.lisp
-ros/stacks/ros_tutorials/rospy_tutorials/msg/lisp/rospy_tutorials/HeaderString.lisp
-ros/stacks/ros_tutorials/rospy_tutorials/msg/lisp/rospy_tutorials/_package.lisp
-ros/stacks/ros_tutorials/rospy_tutorials/msg/lisp/rospy_tutorials/_package_Floats.lisp
-ros/stacks/ros_tutorials/rospy_tutorials/msg/lisp/rospy_tutorials/_package_HeaderString.lisp
-ros/stacks/ros_tutorials/rospy_tutorials/msg/lisp/rospy_tutorials/rospy_tutorials-msg.asd
 ros/stacks/ros_tutorials/rospy_tutorials/msg_gen/cpp/include/rospy_tutorials/Floats.h
 ros/stacks/ros_tutorials/rospy_tutorials/msg_gen/cpp/include/rospy_tutorials/HeaderString.h
 ros/stacks/ros_tutorials/rospy_tutorials/msg_gen/generated
+ros/stacks/ros_tutorials/rospy_tutorials/msg_gen/lisp/Floats.lisp
+ros/stacks/ros_tutorials/rospy_tutorials/msg_gen/lisp/HeaderString.lisp
+ros/stacks/ros_tutorials/rospy_tutorials/msg_gen/lisp/_package.lisp
+ros/stacks/ros_tutorials/rospy_tutorials/msg_gen/lisp/_package_Floats.lisp
+ros/stacks/ros_tutorials/rospy_tutorials/msg_gen/lisp/_package_HeaderString.lisp
+ros/stacks/ros_tutorials/rospy_tutorials/msg_gen/lisp/rospy_tutorials-msg.asd
 ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/__init__.py
+ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/__init__.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/__init__.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/msg/_Floats.py
+ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/msg/_Floats.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/msg/_Floats.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/msg/_HeaderString.py
+ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/msg/_HeaderString.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/msg/_HeaderString.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/msg/__init__.py
+ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/msg/__init__.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/msg/__init__.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/srv/_AddTwoInts.py
+ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/srv/_AddTwoInts.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/srv/_AddTwoInts.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/srv/_BadTwoInts.py
+ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/srv/_BadTwoInts.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/srv/_BadTwoInts.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/srv/__init__.py
+ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/srv/__init__.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/srv/__init__.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/srv/AddTwoInts.srv
 ros/stacks/ros_tutorials/rospy_tutorials/srv/BadTwoInts.srv
-ros/stacks/ros_tutorials/rospy_tutorials/srv/lisp/rospy_tutorials/.AddTwoInts.asd-dep
-ros/stacks/ros_tutorials/rospy_tutorials/srv/lisp/rospy_tutorials/.BadTwoInts.asd-dep
-ros/stacks/ros_tutorials/rospy_tutorials/srv/lisp/rospy_tutorials/AddTwoInts.lisp
-ros/stacks/ros_tutorials/rospy_tutorials/srv/lisp/rospy_tutorials/BadTwoInts.lisp
-ros/stacks/ros_tutorials/rospy_tutorials/srv/lisp/rospy_tutorials/_package.lisp
-ros/stacks/ros_tutorials/rospy_tutorials/srv/lisp/rospy_tutorials/_package_AddTwoInts.lisp
-ros/stacks/ros_tutorials/rospy_tutorials/srv/lisp/rospy_tutorials/_package_BadTwoInts.lisp
-ros/stacks/ros_tutorials/rospy_tutorials/srv/lisp/rospy_tutorials/rospy_tutorials-srv.asd
 ros/stacks/ros_tutorials/rospy_tutorials/srv_gen/cpp/include/rospy_tutorials/AddTwoInts.h
 ros/stacks/ros_tutorials/rospy_tutorials/srv_gen/cpp/include/rospy_tutorials/BadTwoInts.h
 ros/stacks/ros_tutorials/rospy_tutorials/srv_gen/generated
+ros/stacks/ros_tutorials/rospy_tutorials/srv_gen/lisp/AddTwoInts.lisp
+ros/stacks/ros_tutorials/rospy_tutorials/srv_gen/lisp/BadTwoInts.lisp
+ros/stacks/ros_tutorials/rospy_tutorials/srv_gen/lisp/_package.lisp
+ros/stacks/ros_tutorials/rospy_tutorials/srv_gen/lisp/_package_AddTwoInts.lisp
+ros/stacks/ros_tutorials/rospy_tutorials/srv_gen/lisp/_package_BadTwoInts.lisp
+ros/stacks/ros_tutorials/rospy_tutorials/srv_gen/lisp/rospy_tutorials-srv.asd
 ros/stacks/ros_tutorials/rospy_tutorials/test/publish_on_shutdown_test_node.py
+ros/stacks/ros_tutorials/rospy_tutorials/test/publish_on_shutdown_test_node.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/test/publish_on_shutdown_test_node.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/test/talker_listener_test.py
+ros/stacks/ros_tutorials/rospy_tutorials/test/talker_listener_test.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/test/talker_listener_test.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/test/test-add-two-ints-with-roscpp-server.launch
 ros/stacks/ros_tutorials/rospy_tutorials/test/test-add-two-ints.launch
 ros/stacks/ros_tutorials/rospy_tutorials/test/test-connection-header.launch
@@ -155,11 +199,24 @@ ros/stacks/ros_tutorials/rospy_tutorials/test/test-peer-subscribe-notify.launch
 ros/stacks/ros_tutorials/rospy_tutorials/test/test-talker-listener-with-roscpp.launch
 ros/stacks/ros_tutorials/rospy_tutorials/test/test-talker-listener.launch
 ros/stacks/ros_tutorials/rospy_tutorials/test/test_add_two_ints.py
+ros/stacks/ros_tutorials/rospy_tutorials/test/test_add_two_ints.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/test/test_add_two_ints.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/test/test_client_connection_header.py
+ros/stacks/ros_tutorials/rospy_tutorials/test/test_client_connection_header.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/test/test_client_connection_header.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/test/test_listener_connection_header.py
+ros/stacks/ros_tutorials/rospy_tutorials/test/test_listener_connection_header.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/test/test_listener_connection_header.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/test/test_on_shutdown.py
+ros/stacks/ros_tutorials/rospy_tutorials/test/test_on_shutdown.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/test/test_on_shutdown.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/test/test_peer_subscribe_notify.py
+ros/stacks/ros_tutorials/rospy_tutorials/test/test_peer_subscribe_notify.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/test/test_peer_subscribe_notify.pyo
 ros/stacks/ros_tutorials/rospy_tutorials/test/test_server_connection_header.py
+ros/stacks/ros_tutorials/rospy_tutorials/test/test_server_connection_header.pyc
+ros/stacks/ros_tutorials/rospy_tutorials/test/test_server_connection_header.pyo
+ros/stacks/ros_tutorials/stack.xml
 ros/stacks/ros_tutorials/turtlesim/CMakeLists.txt
 ros/stacks/ros_tutorials/turtlesim/Makefile
 ros/stacks/ros_tutorials/turtlesim/ROS_NOBUILD
@@ -182,84 +239,96 @@ ros/stacks/ros_tutorials/turtlesim/manifest.xml
 ros/stacks/ros_tutorials/turtlesim/msg/Color.msg
 ros/stacks/ros_tutorials/turtlesim/msg/Pose.msg
 ros/stacks/ros_tutorials/turtlesim/msg/Velocity.msg
-ros/stacks/ros_tutorials/turtlesim/msg/lisp/turtlesim/.Color.asd-dep
-ros/stacks/ros_tutorials/turtlesim/msg/lisp/turtlesim/.Pose.asd-dep
-ros/stacks/ros_tutorials/turtlesim/msg/lisp/turtlesim/.Velocity.asd-dep
-ros/stacks/ros_tutorials/turtlesim/msg/lisp/turtlesim/Color.lisp
-ros/stacks/ros_tutorials/turtlesim/msg/lisp/turtlesim/Pose.lisp
-ros/stacks/ros_tutorials/turtlesim/msg/lisp/turtlesim/Velocity.lisp
-ros/stacks/ros_tutorials/turtlesim/msg/lisp/turtlesim/_package.lisp
-ros/stacks/ros_tutorials/turtlesim/msg/lisp/turtlesim/_package_Color.lisp
-ros/stacks/ros_tutorials/turtlesim/msg/lisp/turtlesim/_package_Pose.lisp
-ros/stacks/ros_tutorials/turtlesim/msg/lisp/turtlesim/_package_Velocity.lisp
-ros/stacks/ros_tutorials/turtlesim/msg/lisp/turtlesim/turtlesim-msg.asd
 ros/stacks/ros_tutorials/turtlesim/msg_gen/cpp/include/turtlesim/Color.h
 ros/stacks/ros_tutorials/turtlesim/msg_gen/cpp/include/turtlesim/Pose.h
 ros/stacks/ros_tutorials/turtlesim/msg_gen/cpp/include/turtlesim/Velocity.h
 ros/stacks/ros_tutorials/turtlesim/msg_gen/generated
+ros/stacks/ros_tutorials/turtlesim/msg_gen/lisp/Color.lisp
+ros/stacks/ros_tutorials/turtlesim/msg_gen/lisp/Pose.lisp
+ros/stacks/ros_tutorials/turtlesim/msg_gen/lisp/Velocity.lisp
+ros/stacks/ros_tutorials/turtlesim/msg_gen/lisp/_package.lisp
+ros/stacks/ros_tutorials/turtlesim/msg_gen/lisp/_package_Color.lisp
+ros/stacks/ros_tutorials/turtlesim/msg_gen/lisp/_package_Pose.lisp
+ros/stacks/ros_tutorials/turtlesim/msg_gen/lisp/_package_Velocity.lisp
+ros/stacks/ros_tutorials/turtlesim/msg_gen/lisp/turtlesim-msg.asd
 ros/stacks/ros_tutorials/turtlesim/src/turtle.cpp
 ros/stacks/ros_tutorials/turtlesim/src/turtle_frame.cpp
 ros/stacks/ros_tutorials/turtlesim/src/turtlesim.cpp
 ros/stacks/ros_tutorials/turtlesim/src/turtlesim/__init__.py
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/__init__.pyc
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/__init__.pyo
 ros/stacks/ros_tutorials/turtlesim/src/turtlesim/msg/_Color.py
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/msg/_Color.pyc
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/msg/_Color.pyo
 ros/stacks/ros_tutorials/turtlesim/src/turtlesim/msg/_Pose.py
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/msg/_Pose.pyc
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/msg/_Pose.pyo
 ros/stacks/ros_tutorials/turtlesim/src/turtlesim/msg/_Velocity.py
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/msg/_Velocity.pyc
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/msg/_Velocity.pyo
 ros/stacks/ros_tutorials/turtlesim/src/turtlesim/msg/__init__.py
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/msg/__init__.pyc
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/msg/__init__.pyo
 ros/stacks/ros_tutorials/turtlesim/src/turtlesim/srv/_Kill.py
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/srv/_Kill.pyc
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/srv/_Kill.pyo
 ros/stacks/ros_tutorials/turtlesim/src/turtlesim/srv/_SetPen.py
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/srv/_SetPen.pyc
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/srv/_SetPen.pyo
 ros/stacks/ros_tutorials/turtlesim/src/turtlesim/srv/_Spawn.py
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/srv/_Spawn.pyc
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/srv/_Spawn.pyo
 ros/stacks/ros_tutorials/turtlesim/src/turtlesim/srv/_TeleportAbsolute.py
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/srv/_TeleportAbsolute.pyc
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/srv/_TeleportAbsolute.pyo
 ros/stacks/ros_tutorials/turtlesim/src/turtlesim/srv/_TeleportRelative.py
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/srv/_TeleportRelative.pyc
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/srv/_TeleportRelative.pyo
 ros/stacks/ros_tutorials/turtlesim/src/turtlesim/srv/__init__.py
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/srv/__init__.pyc
+ros/stacks/ros_tutorials/turtlesim/src/turtlesim/srv/__init__.pyo
 ros/stacks/ros_tutorials/turtlesim/srv/Kill.srv
 ros/stacks/ros_tutorials/turtlesim/srv/SetPen.srv
 ros/stacks/ros_tutorials/turtlesim/srv/Spawn.srv
 ros/stacks/ros_tutorials/turtlesim/srv/TeleportAbsolute.srv
 ros/stacks/ros_tutorials/turtlesim/srv/TeleportRelative.srv
-ros/stacks/ros_tutorials/turtlesim/srv/lisp/turtlesim/.Kill.asd-dep
-ros/stacks/ros_tutorials/turtlesim/srv/lisp/turtlesim/.SetPen.asd-dep
-ros/stacks/ros_tutorials/turtlesim/srv/lisp/turtlesim/.Spawn.asd-dep
-ros/stacks/ros_tutorials/turtlesim/srv/lisp/turtlesim/.TeleportAbsolute.asd-dep
-ros/stacks/ros_tutorials/turtlesim/srv/lisp/turtlesim/.TeleportRelative.asd-dep
-ros/stacks/ros_tutorials/turtlesim/srv/lisp/turtlesim/Kill.lisp
-ros/stacks/ros_tutorials/turtlesim/srv/lisp/turtlesim/SetPen.lisp
-ros/stacks/ros_tutorials/turtlesim/srv/lisp/turtlesim/Spawn.lisp
-ros/stacks/ros_tutorials/turtlesim/srv/lisp/turtlesim/TeleportAbsolute.lisp
-ros/stacks/ros_tutorials/turtlesim/srv/lisp/turtlesim/TeleportRelative.lisp
-ros/stacks/ros_tutorials/turtlesim/srv/lisp/turtlesim/_package.lisp
-ros/stacks/ros_tutorials/turtlesim/srv/lisp/turtlesim/_package_Kill.lisp
-ros/stacks/ros_tutorials/turtlesim/srv/lisp/turtlesim/_package_SetPen.lisp
-ros/stacks/ros_tutorials/turtlesim/srv/lisp/turtlesim/_package_Spawn.lisp
-ros/stacks/ros_tutorials/turtlesim/srv/lisp/turtlesim/_package_TeleportAbsolute.lisp
-ros/stacks/ros_tutorials/turtlesim/srv/lisp/turtlesim/_package_TeleportRelative.lisp
-ros/stacks/ros_tutorials/turtlesim/srv/lisp/turtlesim/turtlesim-srv.asd
 ros/stacks/ros_tutorials/turtlesim/srv_gen/cpp/include/turtlesim/Kill.h
 ros/stacks/ros_tutorials/turtlesim/srv_gen/cpp/include/turtlesim/SetPen.h
 ros/stacks/ros_tutorials/turtlesim/srv_gen/cpp/include/turtlesim/Spawn.h
 ros/stacks/ros_tutorials/turtlesim/srv_gen/cpp/include/turtlesim/TeleportAbsolute.h
 ros/stacks/ros_tutorials/turtlesim/srv_gen/cpp/include/turtlesim/TeleportRelative.h
 ros/stacks/ros_tutorials/turtlesim/srv_gen/generated
+ros/stacks/ros_tutorials/turtlesim/srv_gen/lisp/Kill.lisp
+ros/stacks/ros_tutorials/turtlesim/srv_gen/lisp/SetPen.lisp
+ros/stacks/ros_tutorials/turtlesim/srv_gen/lisp/Spawn.lisp
+ros/stacks/ros_tutorials/turtlesim/srv_gen/lisp/TeleportAbsolute.lisp
+ros/stacks/ros_tutorials/turtlesim/srv_gen/lisp/TeleportRelative.lisp
+ros/stacks/ros_tutorials/turtlesim/srv_gen/lisp/_package.lisp
+ros/stacks/ros_tutorials/turtlesim/srv_gen/lisp/_package_Kill.lisp
+ros/stacks/ros_tutorials/turtlesim/srv_gen/lisp/_package_SetPen.lisp
+ros/stacks/ros_tutorials/turtlesim/srv_gen/lisp/_package_Spawn.lisp
+ros/stacks/ros_tutorials/turtlesim/srv_gen/lisp/_package_TeleportAbsolute.lisp
+ros/stacks/ros_tutorials/turtlesim/srv_gen/lisp/_package_TeleportRelative.lisp
+ros/stacks/ros_tutorials/turtlesim/srv_gen/lisp/turtlesim-srv.asd
 ros/stacks/ros_tutorials/turtlesim/tutorials/draw_square.cpp
 ros/stacks/ros_tutorials/turtlesim/tutorials/mimic.cpp
 ros/stacks/ros_tutorials/turtlesim/tutorials/teleop_turtle_key.cpp
 @dirrm ros/stacks/ros_tutorials/turtlesim/tutorials
+@dirrm ros/stacks/ros_tutorials/turtlesim/srv_gen/lisp
 @dirrm ros/stacks/ros_tutorials/turtlesim/srv_gen/cpp/include/turtlesim
 @dirrm ros/stacks/ros_tutorials/turtlesim/srv_gen/cpp/include
 @dirrm ros/stacks/ros_tutorials/turtlesim/srv_gen/cpp
 @dirrm ros/stacks/ros_tutorials/turtlesim/srv_gen
-@dirrm ros/stacks/ros_tutorials/turtlesim/srv/lisp/turtlesim
-@dirrm ros/stacks/ros_tutorials/turtlesim/srv/lisp
 @dirrm ros/stacks/ros_tutorials/turtlesim/srv
 @dirrm ros/stacks/ros_tutorials/turtlesim/src/turtlesim/srv
 @dirrm ros/stacks/ros_tutorials/turtlesim/src/turtlesim/msg
 @dirrm ros/stacks/ros_tutorials/turtlesim/src/turtlesim
 @dirrm ros/stacks/ros_tutorials/turtlesim/src
+@dirrm ros/stacks/ros_tutorials/turtlesim/msg_gen/lisp
 @dirrm ros/stacks/ros_tutorials/turtlesim/msg_gen/cpp/include/turtlesim
 @dirrm ros/stacks/ros_tutorials/turtlesim/msg_gen/cpp/include
 @dirrm ros/stacks/ros_tutorials/turtlesim/msg_gen/cpp
 @dirrm ros/stacks/ros_tutorials/turtlesim/msg_gen
-@dirrm ros/stacks/ros_tutorials/turtlesim/msg/lisp/turtlesim
-@dirrm ros/stacks/ros_tutorials/turtlesim/msg/lisp
 @dirrm ros/stacks/ros_tutorials/turtlesim/msg
 @dirrm ros/stacks/ros_tutorials/turtlesim/lib
 @dirrm ros/stacks/ros_tutorials/turtlesim/launch
@@ -269,23 +338,21 @@ ros/stacks/ros_tutorials/turtlesim/tutorials/teleop_turtle_key.cpp
 @dirrm ros/stacks/ros_tutorials/turtlesim/bin
 @dirrm ros/stacks/ros_tutorials/turtlesim
 @dirrm ros/stacks/ros_tutorials/rospy_tutorials/test
+@dirrm ros/stacks/ros_tutorials/rospy_tutorials/srv_gen/lisp
 @dirrm ros/stacks/ros_tutorials/rospy_tutorials/srv_gen/cpp/include/rospy_tutorials
 @dirrm ros/stacks/ros_tutorials/rospy_tutorials/srv_gen/cpp/include
 @dirrm ros/stacks/ros_tutorials/rospy_tutorials/srv_gen/cpp
 @dirrm ros/stacks/ros_tutorials/rospy_tutorials/srv_gen
-@dirrm ros/stacks/ros_tutorials/rospy_tutorials/srv/lisp/rospy_tutorials
-@dirrm ros/stacks/ros_tutorials/rospy_tutorials/srv/lisp
 @dirrm ros/stacks/ros_tutorials/rospy_tutorials/srv
 @dirrm ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/srv
 @dirrm ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials/msg
 @dirrm ros/stacks/ros_tutorials/rospy_tutorials/src/rospy_tutorials
 @dirrm ros/stacks/ros_tutorials/rospy_tutorials/src
+@dirrm ros/stacks/ros_tutorials/rospy_tutorials/msg_gen/lisp
 @dirrm ros/stacks/ros_tutorials/rospy_tutorials/msg_gen/cpp/include/rospy_tutorials
 @dirrm ros/stacks/ros_tutorials/rospy_tutorials/msg_gen/cpp/include
 @dirrm ros/stacks/ros_tutorials/rospy_tutorials/msg_gen/cpp
 @dirrm ros/stacks/ros_tutorials/rospy_tutorials/msg_gen
-@dirrm ros/stacks/ros_tutorials/rospy_tutorials/msg/lisp/rospy_tutorials
-@dirrm ros/stacks/ros_tutorials/rospy_tutorials/msg/lisp
 @dirrm ros/stacks/ros_tutorials/rospy_tutorials/msg
 @dirrm ros/stacks/ros_tutorials/rospy_tutorials/bin
 @dirrm ros/stacks/ros_tutorials/rospy_tutorials/009_advanced_publish
@@ -302,12 +369,11 @@ ros/stacks/ros_tutorials/turtlesim/tutorials/teleop_turtle_key.cpp
 @dirrm ros/stacks/ros_tutorials/roscpp_tutorials/time_api/sleep
 @dirrm ros/stacks/ros_tutorials/roscpp_tutorials/time_api
 @dirrm ros/stacks/ros_tutorials/roscpp_tutorials/talker
+@dirrm ros/stacks/ros_tutorials/roscpp_tutorials/srv_gen/lisp
 @dirrm ros/stacks/ros_tutorials/roscpp_tutorials/srv_gen/cpp/include/roscpp_tutorials
 @dirrm ros/stacks/ros_tutorials/roscpp_tutorials/srv_gen/cpp/include
 @dirrm ros/stacks/ros_tutorials/roscpp_tutorials/srv_gen/cpp
 @dirrm ros/stacks/ros_tutorials/roscpp_tutorials/srv_gen
-@dirrm ros/stacks/ros_tutorials/roscpp_tutorials/srv/lisp/roscpp_tutorials
-@dirrm ros/stacks/ros_tutorials/roscpp_tutorials/srv/lisp
 @dirrm ros/stacks/ros_tutorials/roscpp_tutorials/srv
 @dirrm ros/stacks/ros_tutorials/roscpp_tutorials/src/roscpp_tutorials/srv
 @dirrm ros/stacks/ros_tutorials/roscpp_tutorials/src/roscpp_tutorials
@@ -333,3 +399,5 @@ ros/stacks/ros_tutorials/turtlesim/tutorials/teleop_turtle_key.cpp
 @dirrm ros/stacks/ros_tutorials/roscpp_tutorials/add_two_ints_client
 @dirrm ros/stacks/ros_tutorials/roscpp_tutorials
 @dirrm ros/stacks/ros_tutorials
+@exec mkdir -p %D/ros/stacks/ros_tutorials/turtlesim/lib
+@exec mkdir -p %D/ros/stacks/ros_tutorials/rospy_tutorials/bin

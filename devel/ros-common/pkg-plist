@@ -1,9 +1,10 @@
 lib/libactionlib.so
+lib/libbondcpp.so
 lib/libboost_fs_wrapper.so
+lib/libtest_plugins.so
 lib/libincrement.so
 lib/libmean.so
 lib/libmedian.so
-lib/libnodelet_math.so
 lib/libnodeletlib.so
 lib/liborocos-bfl.so
 lib/libparams.so
@@ -13,28 +14,25 @@ lib/libtinyxml.so
 lib/libtransfer_function.so
 lib/libyaml-cpp.so
 lib/libyaml-cpp.so.0.2
-lib/libyaml-cpp.so.0.2.2
 libdata/pkgconfig/orocos-bfl.pc
 libdata/pkgconfig/yaml-cpp.pc
+lib/libyaml-cpp.so.0.2.5
 ros/stacks/common/CMakeLists.txt
 ros/stacks/common/Makefile
 ros/stacks/common/actionlib/CMakeLists.txt
 ros/stacks/common/actionlib/Makefile
 ros/stacks/common/actionlib/ROS_NOBUILD
 ros/stacks/common/actionlib/action/Test.action
-ros/stacks/common/actionlib/bin/action_client_destruction_test
+ros/stacks/common/actionlib/action/TestRequest.action
+ros/stacks/common/actionlib/action/TwoInts.action
+ros/stacks/common/actionlib/bin/add_two_ints_client
+ros/stacks/common/actionlib/bin/add_two_ints_server
 ros/stacks/common/actionlib/bin/ref_server
-ros/stacks/common/actionlib/bin/server_goal_handle_destruction
-ros/stacks/common/actionlib/bin/simple_client_allocator_test
-ros/stacks/common/actionlib/bin/simple_client_test
-ros/stacks/common/actionlib/bin/simple_client_wait_test
 ros/stacks/common/actionlib/bin/simple_execute_ref_server
-ros/stacks/common/actionlib/cmake/actionbuild.cmake
 ros/stacks/common/actionlib/docs/action_interface.svg
 ros/stacks/common/actionlib/docs/cancel_policy.svg
 ros/stacks/common/actionlib/docs/server_states_detailed.svg
 ros/stacks/common/actionlib/docs/simple_goal_reception.svg
-ros/stacks/common/actionlib/genaction.py
 ros/stacks/common/actionlib/include/actionlib/action_definition.h
 ros/stacks/common/actionlib/include/actionlib/client/action_client.h
 ros/stacks/common/actionlib/include/actionlib/client/client_goal_handle_imp.h
@@ -43,6 +41,8 @@ ros/stacks/common/actionlib/include/actionlib/client/comm_state.h
 ros/stacks/common/actionlib/include/actionlib/client/comm_state_machine_imp.h
 ros/stacks/common/actionlib/include/actionlib/client/connection_monitor.h
 ros/stacks/common/actionlib/include/actionlib/client/goal_manager_imp.h
+ros/stacks/common/actionlib/include/actionlib/client/service_client.h
+ros/stacks/common/actionlib/include/actionlib/client/service_client_imp.h
 ros/stacks/common/actionlib/include/actionlib/client/simple_action_client.h
 ros/stacks/common/actionlib/include/actionlib/client/simple_client_goal_state.h
 ros/stacks/common/actionlib/include/actionlib/client/simple_goal_state.h
@@ -59,6 +59,8 @@ ros/stacks/common/actionlib/include/actionlib/server/handle_tracker_deleter.h
 ros/stacks/common/actionlib/include/actionlib/server/handle_tracker_deleter_imp.h
 ros/stacks/common/actionlib/include/actionlib/server/server_goal_handle.h
 ros/stacks/common/actionlib/include/actionlib/server/server_goal_handle_imp.h
+ros/stacks/common/actionlib/include/actionlib/server/service_server.h
+ros/stacks/common/actionlib/include/actionlib/server/service_server_imp.h
 ros/stacks/common/actionlib/include/actionlib/server/simple_action_server.h
 ros/stacks/common/actionlib/include/actionlib/server/simple_action_server_imp.h
 ros/stacks/common/actionlib/include/actionlib/server/status_tracker.h
@@ -72,64 +74,204 @@ ros/stacks/common/actionlib/msg/TestActionGoal.msg
 ros/stacks/common/actionlib/msg/TestActionResult.msg
 ros/stacks/common/actionlib/msg/TestFeedback.msg
 ros/stacks/common/actionlib/msg/TestGoal.msg
+ros/stacks/common/actionlib/msg/TestRequestAction.msg
+ros/stacks/common/actionlib/msg/TestRequestActionFeedback.msg
+ros/stacks/common/actionlib/msg/TestRequestActionGoal.msg
+ros/stacks/common/actionlib/msg/TestRequestActionResult.msg
+ros/stacks/common/actionlib/msg/TestRequestFeedback.msg
+ros/stacks/common/actionlib/msg/TestRequestGoal.msg
+ros/stacks/common/actionlib/msg/TestRequestResult.msg
 ros/stacks/common/actionlib/msg/TestResult.msg
-ros/stacks/common/actionlib/msg/lisp/actionlib/.TestAction.asd-dep
-ros/stacks/common/actionlib/msg/lisp/actionlib/.TestActionFeedback.asd-dep
-ros/stacks/common/actionlib/msg/lisp/actionlib/.TestActionGoal.asd-dep
-ros/stacks/common/actionlib/msg/lisp/actionlib/.TestActionResult.asd-dep
-ros/stacks/common/actionlib/msg/lisp/actionlib/.TestFeedback.asd-dep
-ros/stacks/common/actionlib/msg/lisp/actionlib/.TestGoal.asd-dep
-ros/stacks/common/actionlib/msg/lisp/actionlib/.TestResult.asd-dep
-ros/stacks/common/actionlib/msg/lisp/actionlib/TestAction.lisp
-ros/stacks/common/actionlib/msg/lisp/actionlib/TestActionFeedback.lisp
-ros/stacks/common/actionlib/msg/lisp/actionlib/TestActionGoal.lisp
-ros/stacks/common/actionlib/msg/lisp/actionlib/TestActionResult.lisp
-ros/stacks/common/actionlib/msg/lisp/actionlib/TestFeedback.lisp
-ros/stacks/common/actionlib/msg/lisp/actionlib/TestGoal.lisp
-ros/stacks/common/actionlib/msg/lisp/actionlib/TestResult.lisp
-ros/stacks/common/actionlib/msg/lisp/actionlib/_package.lisp
-ros/stacks/common/actionlib/msg/lisp/actionlib/_package_TestAction.lisp
-ros/stacks/common/actionlib/msg/lisp/actionlib/_package_TestActionFeedback.lisp
-ros/stacks/common/actionlib/msg/lisp/actionlib/_package_TestActionGoal.lisp
-ros/stacks/common/actionlib/msg/lisp/actionlib/_package_TestActionResult.lisp
-ros/stacks/common/actionlib/msg/lisp/actionlib/_package_TestFeedback.lisp
-ros/stacks/common/actionlib/msg/lisp/actionlib/_package_TestGoal.lisp
-ros/stacks/common/actionlib/msg/lisp/actionlib/_package_TestResult.lisp
-ros/stacks/common/actionlib/msg/lisp/actionlib/actionlib-msg.asd
+ros/stacks/common/actionlib/msg/TwoIntsAction.msg
+ros/stacks/common/actionlib/msg/TwoIntsActionFeedback.msg
+ros/stacks/common/actionlib/msg/TwoIntsActionGoal.msg
+ros/stacks/common/actionlib/msg/TwoIntsActionResult.msg
+ros/stacks/common/actionlib/msg/TwoIntsFeedback.msg
+ros/stacks/common/actionlib/msg/TwoIntsGoal.msg
+ros/stacks/common/actionlib/msg/TwoIntsResult.msg
 ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestAction.h
 ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestActionFeedback.h
 ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestActionGoal.h
 ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestActionResult.h
 ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestFeedback.h
 ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestGoal.h
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestRequestAction.h
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestRequestActionFeedback.h
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestRequestActionGoal.h
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestRequestActionResult.h
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestRequestFeedback.h
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestRequestGoal.h
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestRequestResult.h
 ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TestResult.h
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TwoIntsAction.h
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TwoIntsActionFeedback.h
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TwoIntsActionGoal.h
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TwoIntsActionResult.h
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TwoIntsFeedback.h
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TwoIntsGoal.h
+ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib/TwoIntsResult.h
 ros/stacks/common/actionlib/msg_gen/generated
+ros/stacks/common/actionlib/msg_gen/lisp/TestAction.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/TestActionFeedback.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/TestActionGoal.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/TestActionResult.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/TestFeedback.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/TestGoal.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/TestRequestAction.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/TestRequestActionFeedback.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/TestRequestActionGoal.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/TestRequestActionResult.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/TestRequestFeedback.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/TestRequestGoal.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/TestRequestResult.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/TestResult.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/TwoIntsAction.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/TwoIntsActionFeedback.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/TwoIntsActionGoal.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/TwoIntsActionResult.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/TwoIntsFeedback.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/TwoIntsGoal.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/TwoIntsResult.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TestAction.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TestActionFeedback.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TestActionGoal.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TestActionResult.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TestFeedback.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TestGoal.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TestRequestAction.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TestRequestActionFeedback.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TestRequestActionGoal.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TestRequestActionResult.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TestRequestFeedback.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TestRequestGoal.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TestRequestResult.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TestResult.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TwoIntsAction.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TwoIntsActionFeedback.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TwoIntsActionGoal.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TwoIntsActionResult.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TwoIntsFeedback.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TwoIntsGoal.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/_package_TwoIntsResult.lisp
+ros/stacks/common/actionlib/msg_gen/lisp/actionlib-msg.asd
 ros/stacks/common/actionlib/src/actionlib/__init__.py
+ros/stacks/common/actionlib/src/actionlib/__init__.pyc
+ros/stacks/common/actionlib/src/actionlib/__init__.pyo
 ros/stacks/common/actionlib/src/actionlib/action_client.py
+ros/stacks/common/actionlib/src/actionlib/action_client.pyc
+ros/stacks/common/actionlib/src/actionlib/action_client.pyo
 ros/stacks/common/actionlib/src/actionlib/action_server.py
+ros/stacks/common/actionlib/src/actionlib/action_server.pyc
+ros/stacks/common/actionlib/src/actionlib/action_server.pyo
 ros/stacks/common/actionlib/src/actionlib/exceptions.py
+ros/stacks/common/actionlib/src/actionlib/exceptions.pyc
+ros/stacks/common/actionlib/src/actionlib/exceptions.pyo
 ros/stacks/common/actionlib/src/actionlib/goal_id_generator.py
+ros/stacks/common/actionlib/src/actionlib/goal_id_generator.pyc
+ros/stacks/common/actionlib/src/actionlib/goal_id_generator.pyo
 ros/stacks/common/actionlib/src/actionlib/handle_tracker_deleter.py
+ros/stacks/common/actionlib/src/actionlib/handle_tracker_deleter.pyc
+ros/stacks/common/actionlib/src/actionlib/handle_tracker_deleter.pyo
 ros/stacks/common/actionlib/src/actionlib/msg/_TestAction.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestAction.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TestAction.pyo
 ros/stacks/common/actionlib/src/actionlib/msg/_TestActionFeedback.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestActionFeedback.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TestActionFeedback.pyo
 ros/stacks/common/actionlib/src/actionlib/msg/_TestActionGoal.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestActionGoal.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TestActionGoal.pyo
 ros/stacks/common/actionlib/src/actionlib/msg/_TestActionResult.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestActionResult.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TestActionResult.pyo
 ros/stacks/common/actionlib/src/actionlib/msg/_TestFeedback.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestFeedback.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TestFeedback.pyo
 ros/stacks/common/actionlib/src/actionlib/msg/_TestGoal.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestGoal.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TestGoal.pyo
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestAction.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestAction.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestAction.pyo
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestActionFeedback.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestActionFeedback.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestActionFeedback.pyo
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestActionGoal.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestActionGoal.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestActionGoal.pyo
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestActionResult.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestActionResult.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestActionResult.pyo
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestFeedback.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestFeedback.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestFeedback.pyo
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestGoal.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestGoal.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestGoal.pyo
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestResult.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestResult.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TestRequestResult.pyo
 ros/stacks/common/actionlib/src/actionlib/msg/_TestResult.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TestResult.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TestResult.pyo
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsAction.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsAction.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsAction.pyo
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsActionFeedback.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsActionFeedback.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsActionFeedback.pyo
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsActionGoal.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsActionGoal.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsActionGoal.pyo
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsActionResult.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsActionResult.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsActionResult.pyo
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsFeedback.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsFeedback.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsFeedback.pyo
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsGoal.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsGoal.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsGoal.pyo
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsResult.py
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsResult.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/_TwoIntsResult.pyo
 ros/stacks/common/actionlib/src/actionlib/msg/__init__.py
+ros/stacks/common/actionlib/src/actionlib/msg/__init__.pyc
+ros/stacks/common/actionlib/src/actionlib/msg/__init__.pyo
 ros/stacks/common/actionlib/src/actionlib/server_goal_handle.py
+ros/stacks/common/actionlib/src/actionlib/server_goal_handle.pyc
+ros/stacks/common/actionlib/src/actionlib/server_goal_handle.pyo
 ros/stacks/common/actionlib/src/actionlib/simple_action_client.py
+ros/stacks/common/actionlib/src/actionlib/simple_action_client.pyc
+ros/stacks/common/actionlib/src/actionlib/simple_action_client.pyo
 ros/stacks/common/actionlib/src/actionlib/simple_action_server.py
+ros/stacks/common/actionlib/src/actionlib/simple_action_server.pyc
+ros/stacks/common/actionlib/src/actionlib/simple_action_server.pyo
 ros/stacks/common/actionlib/src/actionlib/status_tracker.py
+ros/stacks/common/actionlib/src/actionlib/status_tracker.pyc
+ros/stacks/common/actionlib/src/actionlib/status_tracker.pyo
 ros/stacks/common/actionlib/src/connection_monitor.cpp
 ros/stacks/common/actionlib/src/goal_id_generator.cpp
 ros/stacks/common/actionlib/test/action_client_destruction_test.cpp
+ros/stacks/common/actionlib/test/add_two_ints_client.cpp
+ros/stacks/common/actionlib/test/add_two_ints_server.cpp
 ros/stacks/common/actionlib/test/destruction_guard_test.cpp
+ros/stacks/common/actionlib/test/exercise_simple_client.cpp
+ros/stacks/common/actionlib/test/exercise_simple_client.py
+ros/stacks/common/actionlib/test/exercise_simple_client.pyc
+ros/stacks/common/actionlib/test/exercise_simple_client.pyo
+ros/stacks/common/actionlib/test/mock_simple_server.py
+ros/stacks/common/actionlib/test/mock_simple_server.pyc
+ros/stacks/common/actionlib/test/mock_simple_server.pyo
 ros/stacks/common/actionlib/test/ref_server.cpp
 ros/stacks/common/actionlib/test/ref_server.py
+ros/stacks/common/actionlib/test/ref_server.pyc
+ros/stacks/common/actionlib/test/ref_server.pyo
 ros/stacks/common/actionlib/test/ref_server_test.launch
 ros/stacks/common/actionlib/test/ref_simple_server.py
+ros/stacks/common/actionlib/test/ref_simple_server.pyc
+ros/stacks/common/actionlib/test/ref_simple_server.pyo
 ros/stacks/common/actionlib/test/server_goal_handle_destruction.cpp
 ros/stacks/common/actionlib/test/simple_client_allocator_test.cpp
 ros/stacks/common/actionlib/test/simple_client_test.cpp
@@ -137,10 +279,15 @@ ros/stacks/common/actionlib/test/simple_client_wait_test.cpp
 ros/stacks/common/actionlib/test/simple_execute_ref_server.cpp
 ros/stacks/common/actionlib/test/simple_execute_ref_server_test.launch
 ros/stacks/common/actionlib/test/simple_python_client_test.py
+ros/stacks/common/actionlib/test/simple_python_client_test.pyc
+ros/stacks/common/actionlib/test/simple_python_client_test.pyo
 ros/stacks/common/actionlib/test/test_cpp_action_client_destruction.launch
 ros/stacks/common/actionlib/test/test_cpp_simple_client_allocator.launch
+ros/stacks/common/actionlib/test/test_exercise_simple_clients.launch
 ros/stacks/common/actionlib/test/test_imports.launch
 ros/stacks/common/actionlib/test/test_imports.py
+ros/stacks/common/actionlib/test/test_imports.pyc
+ros/stacks/common/actionlib/test/test_imports.pyo
 ros/stacks/common/actionlib/test/test_python_server.launch
 ros/stacks/common/actionlib/test/test_python_server2.launch
 ros/stacks/common/actionlib/test/test_python_server3.launch
@@ -148,16 +295,29 @@ ros/stacks/common/actionlib/test/test_python_server_components.launch
 ros/stacks/common/actionlib/test/test_python_simple_client.launch
 ros/stacks/common/actionlib/test/test_python_simple_server.launch
 ros/stacks/common/actionlib/test/test_ref_action_server.py
+ros/stacks/common/actionlib/test/test_ref_action_server.pyc
+ros/stacks/common/actionlib/test/test_ref_action_server.pyo
 ros/stacks/common/actionlib/test/test_ref_simple_action_server.py
+ros/stacks/common/actionlib/test/test_ref_simple_action_server.pyc
+ros/stacks/common/actionlib/test/test_ref_simple_action_server.pyo
 ros/stacks/common/actionlib/test/test_server_components.py
+ros/stacks/common/actionlib/test/test_server_components.pyc
+ros/stacks/common/actionlib/test/test_server_components.pyo
 ros/stacks/common/actionlib/test/test_server_goal_handle_destruction.launch
 ros/stacks/common/actionlib/tools/axclient.py
+ros/stacks/common/actionlib/tools/axclient.pyc
+ros/stacks/common/actionlib/tools/axclient.pyo
 ros/stacks/common/actionlib/tools/axserver.py
+ros/stacks/common/actionlib/tools/axserver.pyc
+ros/stacks/common/actionlib/tools/axserver.pyo
 ros/stacks/common/actionlib/tools/dynamic_action.py
+ros/stacks/common/actionlib/tools/dynamic_action.pyc
+ros/stacks/common/actionlib/tools/dynamic_action.pyo
 ros/stacks/common/actionlib/tools/library.py
+ros/stacks/common/actionlib/tools/library.pyc
+ros/stacks/common/actionlib/tools/library.pyo
 ros/stacks/common/bfl/Makefile
 ros/stacks/common/bfl/ROS_NOBUILD
-ros/stacks/common/bfl/bfl-31655.tar.gz.md5sum
 ros/stacks/common/bfl/bfl-boost/bin/bfl/test_compare_filters
 ros/stacks/common/bfl/bfl-boost/bin/bfl/test_discrete_filter
 ros/stacks/common/bfl/bfl-boost/bin/bfl/test_kalman_smoother
@@ -232,9 +392,60 @@ ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers/matrix/vector_NEWMAT.h
 ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers/matrix/vector_wrapper.h
 ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers/rng/rng.h
 ros/stacks/common/bfl/bfl-boost/lib/liborocos-bfl.so
-ros/stacks/common/bfl/installed
 ros/stacks/common/bfl/manifest.xml
 ros/stacks/common/bfl/total.patch
+ros/stacks/common/bond/BondSM.sm
+ros/stacks/common/bond/CMakeLists.txt
+ros/stacks/common/bond/Makefile
+ros/stacks/common/bond/ROS_NOBUILD
+ros/stacks/common/bond/mainpage.dox
+ros/stacks/common/bond/manifest.xml
+ros/stacks/common/bond/msg/Constants.msg
+ros/stacks/common/bond/msg/Status.msg
+ros/stacks/common/bond/msg_gen/cpp/include/bond/Constants.h
+ros/stacks/common/bond/msg_gen/cpp/include/bond/Status.h
+ros/stacks/common/bond/msg_gen/generated
+ros/stacks/common/bond/msg_gen/lisp/Constants.lisp
+ros/stacks/common/bond/msg_gen/lisp/Status.lisp
+ros/stacks/common/bond/msg_gen/lisp/_package.lisp
+ros/stacks/common/bond/msg_gen/lisp/_package_Constants.lisp
+ros/stacks/common/bond/msg_gen/lisp/_package_Status.lisp
+ros/stacks/common/bond/msg_gen/lisp/bond-msg.asd
+ros/stacks/common/bond/src/bond/__init__.py
+ros/stacks/common/bond/src/bond/__init__.pyc
+ros/stacks/common/bond/src/bond/__init__.pyo
+ros/stacks/common/bond/src/bond/msg/_Constants.py
+ros/stacks/common/bond/src/bond/msg/_Constants.pyc
+ros/stacks/common/bond/src/bond/msg/_Constants.pyo
+ros/stacks/common/bond/src/bond/msg/_Status.py
+ros/stacks/common/bond/src/bond/msg/_Status.pyc
+ros/stacks/common/bond/src/bond/msg/_Status.pyo
+ros/stacks/common/bond/src/bond/msg/__init__.py
+ros/stacks/common/bond/src/bond/msg/__init__.pyc
+ros/stacks/common/bond/src/bond/msg/__init__.pyo
+ros/stacks/common/bondcpp/CMakeLists.txt
+ros/stacks/common/bondcpp/Makefile
+ros/stacks/common/bondcpp/ROS_NOBUILD
+ros/stacks/common/bondcpp/include/BondSM_sm.h
+ros/stacks/common/bondcpp/include/bondcpp/bond.h
+ros/stacks/common/bondcpp/include/bondcpp/timeout.h
+ros/stacks/common/bondcpp/lib/libbondcpp.so
+ros/stacks/common/bondcpp/mainpage.dox
+ros/stacks/common/bondcpp/manifest.xml
+ros/stacks/common/bondcpp/src/BondSM_sm.cpp
+ros/stacks/common/bondcpp/src/bond.cpp
+ros/stacks/common/bondcpp/src/timeout.cpp
+ros/stacks/common/bondpy/CMakeLists.txt
+ros/stacks/common/bondpy/Makefile
+ros/stacks/common/bondpy/ROS_NOBUILD
+ros/stacks/common/bondpy/mainpage.dox
+ros/stacks/common/bondpy/manifest.xml
+ros/stacks/common/bondpy/src/BondSM_sm.py
+ros/stacks/common/bondpy/src/BondSM_sm.pyc
+ros/stacks/common/bondpy/src/BondSM_sm.pyo
+ros/stacks/common/bondpy/src/bondpy.py
+ros/stacks/common/bondpy/src/bondpy.pyc
+ros/stacks/common/bondpy/src/bondpy.pyo
 ros/stacks/common/filters/CMakeLists.txt
 ros/stacks/common/filters/Makefile
 ros/stacks/common/filters/ROS_BUILD_BLACKLIST_OSX
@@ -253,7 +464,6 @@ ros/stacks/common/filters/lib/libmean.so
 ros/stacks/common/filters/lib/libmedian.so
 ros/stacks/common/filters/lib/libparams.so
 ros/stacks/common/filters/lib/libtransfer_function.so
-ros/stacks/common/nodelet/lib/libnodeletlib.so
 ros/stacks/common/filters/mainpage.dox
 ros/stacks/common/filters/manifest.xml
 ros/stacks/common/filters/src/increment.cpp
@@ -286,6 +496,7 @@ ros/stacks/common/nodelet/include/nodelet/detail/callback_queue_manager.h
 ros/stacks/common/nodelet/include/nodelet/exception.h
 ros/stacks/common/nodelet/include/nodelet/loader.h
 ros/stacks/common/nodelet/include/nodelet/nodelet.h
+ros/stacks/common/nodelet/lib/libnodeletlib.so
 ros/stacks/common/nodelet/mainpage.dox
 ros/stacks/common/nodelet/manifest.xml
 ros/stacks/common/nodelet/scripts/list_nodelets
@@ -294,29 +505,36 @@ ros/stacks/common/nodelet/src/callback_queue_manager.cpp
 ros/stacks/common/nodelet/src/loader.cpp
 ros/stacks/common/nodelet/src/nodelet.cpp
 ros/stacks/common/nodelet/src/nodelet/__init__.py
+ros/stacks/common/nodelet/src/nodelet/__init__.pyc
+ros/stacks/common/nodelet/src/nodelet/__init__.pyo
 ros/stacks/common/nodelet/src/nodelet/srv/_NodeletList.py
+ros/stacks/common/nodelet/src/nodelet/srv/_NodeletList.pyc
+ros/stacks/common/nodelet/src/nodelet/srv/_NodeletList.pyo
 ros/stacks/common/nodelet/src/nodelet/srv/_NodeletLoad.py
+ros/stacks/common/nodelet/src/nodelet/srv/_NodeletLoad.pyc
+ros/stacks/common/nodelet/src/nodelet/srv/_NodeletLoad.pyo
 ros/stacks/common/nodelet/src/nodelet/srv/_NodeletUnload.py
+ros/stacks/common/nodelet/src/nodelet/srv/_NodeletUnload.pyc
+ros/stacks/common/nodelet/src/nodelet/srv/_NodeletUnload.pyo
 ros/stacks/common/nodelet/src/nodelet/srv/__init__.py
+ros/stacks/common/nodelet/src/nodelet/srv/__init__.pyc
+ros/stacks/common/nodelet/src/nodelet/srv/__init__.pyo
 ros/stacks/common/nodelet/src/nodelet_class.cpp
 ros/stacks/common/nodelet/srv/NodeletList.srv
 ros/stacks/common/nodelet/srv/NodeletLoad.srv
 ros/stacks/common/nodelet/srv/NodeletUnload.srv
-ros/stacks/common/nodelet/srv/lisp/nodelet/.NodeletList.asd-dep
-ros/stacks/common/nodelet/srv/lisp/nodelet/.NodeletLoad.asd-dep
-ros/stacks/common/nodelet/srv/lisp/nodelet/.NodeletUnload.asd-dep
-ros/stacks/common/nodelet/srv/lisp/nodelet/NodeletList.lisp
-ros/stacks/common/nodelet/srv/lisp/nodelet/NodeletLoad.lisp
-ros/stacks/common/nodelet/srv/lisp/nodelet/NodeletUnload.lisp
-ros/stacks/common/nodelet/srv/lisp/nodelet/_package.lisp
-ros/stacks/common/nodelet/srv/lisp/nodelet/_package_NodeletList.lisp
-ros/stacks/common/nodelet/srv/lisp/nodelet/_package_NodeletLoad.lisp
-ros/stacks/common/nodelet/srv/lisp/nodelet/_package_NodeletUnload.lisp
-ros/stacks/common/nodelet/srv/lisp/nodelet/nodelet-srv.asd
 ros/stacks/common/nodelet/srv_gen/cpp/include/nodelet/NodeletList.h
 ros/stacks/common/nodelet/srv_gen/cpp/include/nodelet/NodeletLoad.h
 ros/stacks/common/nodelet/srv_gen/cpp/include/nodelet/NodeletUnload.h
 ros/stacks/common/nodelet/srv_gen/generated
+ros/stacks/common/nodelet/srv_gen/lisp/NodeletList.lisp
+ros/stacks/common/nodelet/srv_gen/lisp/NodeletLoad.lisp
+ros/stacks/common/nodelet/srv_gen/lisp/NodeletUnload.lisp
+ros/stacks/common/nodelet/srv_gen/lisp/_package.lisp
+ros/stacks/common/nodelet/srv_gen/lisp/_package_NodeletList.lisp
+ros/stacks/common/nodelet/srv_gen/lisp/_package_NodeletLoad.lisp
+ros/stacks/common/nodelet/srv_gen/lisp/_package_NodeletUnload.lisp
+ros/stacks/common/nodelet/srv_gen/lisp/nodelet-srv.asd
 ros/stacks/common/nodelet_topic_tools/CMakeLists.txt
 ros/stacks/common/nodelet_topic_tools/Makefile
 ros/stacks/common/nodelet_topic_tools/ROS_NOBUILD
@@ -324,16 +542,6 @@ ros/stacks/common/nodelet_topic_tools/include/nodelet_topic_tools/nodelet_demux.
 ros/stacks/common/nodelet_topic_tools/include/nodelet_topic_tools/nodelet_mux.h
 ros/stacks/common/nodelet_topic_tools/mainpage.dox
 ros/stacks/common/nodelet_topic_tools/manifest.xml
-ros/stacks/common/nodelet_tutorial_math/CMakeLists.txt
-ros/stacks/common/nodelet_tutorial_math/Makefile
-ros/stacks/common/nodelet_tutorial_math/ROS_NOBUILD
-ros/stacks/common/nodelet_tutorial_math/lib/libnodelet_math.so
-ros/stacks/common/nodelet_tutorial_math/mainpage.dox
-ros/stacks/common/nodelet_tutorial_math/manifest.xml
-ros/stacks/common/nodelet_tutorial_math/nodelet_math.xml
-ros/stacks/common/nodelet_tutorial_math/plus.launch
-ros/stacks/common/nodelet_tutorial_math/plus_default.yaml
-ros/stacks/common/nodelet_tutorial_math/src/plus.cpp
 ros/stacks/common/pluginlib/CMakeLists.txt
 ros/stacks/common/pluginlib/Makefile
 ros/stacks/common/pluginlib/ROS_NOBUILD
@@ -410,6 +618,7 @@ ros/stacks/common/pluginlib/include/pluginlib/class_loader.h
 ros/stacks/common/pluginlib/include/pluginlib/class_loader_imp.h
 ros/stacks/common/pluginlib/lib/libboost_fs_wrapper.so
 ros/stacks/common/pluginlib/lib/libpoco_lite.so
+ros/stacks/common/pluginlib/lib/libtest_plugins.so
 ros/stacks/common/pluginlib/mainpage.dox
 ros/stacks/common/pluginlib/manifest.xml
 ros/stacks/common/pluginlib/src/ASCIIEncoding.cpp
@@ -462,8 +671,61 @@ ros/stacks/common/pluginlib/src/UTF8Encoding.cpp
 ros/stacks/common/pluginlib/src/UnicodeConverter.cpp
 ros/stacks/common/pluginlib/src/Windows1252Encoding.cpp
 ros/stacks/common/pluginlib/src/boost_fs_wrapper.cpp
+ros/stacks/common/pluginlib/test/test_base.h
+ros/stacks/common/pluginlib/test/test_plugins.cpp
+ros/stacks/common/pluginlib/test/test_plugins.h
+ros/stacks/common/pluginlib/test/test_plugins.xml
+ros/stacks/common/pluginlib/test/utest.cpp
 ros/stacks/common/rosdep.yaml
+ros/stacks/common/smclib/CMakeLists.txt
+ros/stacks/common/smclib/Makefile
+ros/stacks/common/smclib/ROS_NOBUILD
+ros/stacks/common/smclib/include/statemap.h
+ros/stacks/common/smclib/mainpage.dox
+ros/stacks/common/smclib/manifest.xml
+ros/stacks/common/smclib/src/statemap.py
+ros/stacks/common/smclib/src/statemap.pyc
+ros/stacks/common/smclib/src/statemap.pyo
 ros/stacks/common/stack.xml
+ros/stacks/common/test_bond/CMakeLists.txt
+ros/stacks/common/test_bond/Makefile
+ros/stacks/common/test_bond/ROS_NOBUILD
+ros/stacks/common/test_bond/mainpage.dox
+ros/stacks/common/test_bond/manifest.xml
+ros/stacks/common/test_bond/scripts/BondSM_sm.py
+ros/stacks/common/test_bond/scripts/BondSM_sm.pyc
+ros/stacks/common/test_bond/scripts/BondSM_sm.pyo
+ros/stacks/common/test_bond/scripts/tester.py
+ros/stacks/common/test_bond/scripts/tester.pyc
+ros/stacks/common/test_bond/scripts/tester.pyo
+ros/stacks/common/test_bond/src/test_bond/__init__.py
+ros/stacks/common/test_bond/src/test_bond/__init__.pyc
+ros/stacks/common/test_bond/src/test_bond/__init__.pyo
+ros/stacks/common/test_bond/src/test_bond/srv/_TestBond.py
+ros/stacks/common/test_bond/src/test_bond/srv/_TestBond.pyc
+ros/stacks/common/test_bond/src/test_bond/srv/_TestBond.pyo
+ros/stacks/common/test_bond/src/test_bond/srv/__init__.py
+ros/stacks/common/test_bond/src/test_bond/srv/__init__.pyc
+ros/stacks/common/test_bond/src/test_bond/srv/__init__.pyo
+ros/stacks/common/test_bond/srv/TestBond.srv
+ros/stacks/common/test_bond/srv_gen/cpp/include/test_bond/TestBond.h
+ros/stacks/common/test_bond/srv_gen/generated
+ros/stacks/common/test_bond/srv_gen/lisp/TestBond.lisp
+ros/stacks/common/test_bond/srv_gen/lisp/_package.lisp
+ros/stacks/common/test_bond/srv_gen/lisp/_package_TestBond.lisp
+ros/stacks/common/test_bond/srv_gen/lisp/test_bond-srv.asd
+ros/stacks/common/test_bond/test/exercise_bond.cpp
+ros/stacks/common/test_bond/test/exercise_bond.py
+ros/stacks/common/test_bond/test/exercise_bond.pyc
+ros/stacks/common/test_bond/test/exercise_bond.pyo
+ros/stacks/common/test_bond/test/test_callbacks_cpp.cpp
+ros/stacks/common/test_bond/test/test_callbacks_cpp.launch
+ros/stacks/common/test_bond/test/test_callbacks_py.launch
+ros/stacks/common/test_bond/test/test_callbacks_py.py
+ros/stacks/common/test_bond/test/test_callbacks_py.pyc
+ros/stacks/common/test_bond/test/test_callbacks_py.pyo
+ros/stacks/common/test_bond/test/test_cpp.launch
+ros/stacks/common/test_bond/test/test_python.launch
 ros/stacks/common/test_nodelet/CMakeLists.txt
 ros/stacks/common/test_nodelet/Makefile
 ros/stacks/common/test_nodelet/ROS_NOBUILD
@@ -471,10 +733,17 @@ ros/stacks/common/test_nodelet/lib/libtest_nodelet.so
 ros/stacks/common/test_nodelet/mainpage.dox
 ros/stacks/common/test_nodelet/manifest.xml
 ros/stacks/common/test_nodelet/plus_default.yaml
+ros/stacks/common/test_nodelet/src/console_tests.cpp
 ros/stacks/common/test_nodelet/src/plus.cpp
 ros/stacks/common/test_nodelet/src/test_callback_queue_manager.cpp
 ros/stacks/common/test_nodelet/test/plus_local.py
+ros/stacks/common/test_nodelet/test/plus_local.pyc
+ros/stacks/common/test_nodelet/test/plus_local.pyo
+ros/stacks/common/test_nodelet/test/test_console.cpp
+ros/stacks/common/test_nodelet/test/test_console.launch
 ros/stacks/common/test_nodelet/test/test_loader.py
+ros/stacks/common/test_nodelet/test/test_loader.pyc
+ros/stacks/common/test_nodelet/test/test_loader.pyo
 ros/stacks/common/test_nodelet/test_loader.launch
 ros/stacks/common/test_nodelet/test_local.launch
 ros/stacks/common/test_nodelet/test_nodelet.xml
@@ -497,13 +766,18 @@ ros/stacks/common/xacro/cmake/xacro.cmake
 ros/stacks/common/xacro/mainpage.dox
 ros/stacks/common/xacro/manifest.xml
 ros/stacks/common/xacro/src/xacro.py
+ros/stacks/common/xacro/src/xacro.pyc
+ros/stacks/common/xacro/src/xacro.pyo
 ros/stacks/common/xacro/test/test_xacro.py
+ros/stacks/common/xacro/test/test_xacro.pyc
+ros/stacks/common/xacro/test/test_xacro.pyo
 ros/stacks/common/xacro/xacro.py
+ros/stacks/common/xacro/xacro.pyc
+ros/stacks/common/xacro/xacro.pyo
 ros/stacks/common/yaml_cpp/Makefile
 ros/stacks/common/yaml_cpp/ROS_NOBUILD
 ros/stacks/common/yaml_cpp/manifest.xml
 ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/conversion.h
-ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/crt.h
 ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/emitter.h
 ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/emittermanip.h
 ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/exceptions.h
@@ -517,13 +791,13 @@ ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/noncopyable.h
 ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/null.h
 ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/ostream.h
 ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/parser.h
-ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/parserstate.h
 ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/stlemitter.h
+ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/stlnode.h
+ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/traits.h
 ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp/yaml.h
-ros/stacks/common/yaml_cpp/yaml-cpp/lib/libyaml-cpp.so.0.2.2
-ros/stacks/common/yaml_cpp/yaml-cpp/lib/libyaml-cpp.so.0.2
 ros/stacks/common/yaml_cpp/yaml-cpp/lib/libyaml-cpp.so
-@exec mkdir -p %D/ros/stacks/common/yaml_cpp/yaml-cpp/lib/pkgconfig
+ros/stacks/common/yaml_cpp/yaml-cpp/lib/libyaml-cpp.so.0.2
+ros/stacks/common/yaml_cpp/yaml-cpp/lib/libyaml-cpp.so.0.2.5
 @dirrm ros/stacks/common/yaml_cpp/yaml-cpp/lib/pkgconfig
 @dirrm ros/stacks/common/yaml_cpp/yaml-cpp/lib
 @dirrm ros/stacks/common/yaml_cpp/yaml-cpp/include/yaml-cpp
@@ -533,47 +807,50 @@ ros/stacks/common/yaml_cpp/yaml-cpp/lib/libyaml-cpp.so
 @dirrm ros/stacks/common/xacro/test
 @dirrm ros/stacks/common/xacro/src
 @dirrm ros/stacks/common/xacro/cmake
-@exec mkdir -p %D/ros/stacks/common/xacro/bin
 @dirrm ros/stacks/common/xacro/bin
 @dirrm ros/stacks/common/xacro
 @dirrm ros/stacks/common/tinyxml/include/tinyxml
 @dirrm ros/stacks/common/tinyxml/include
-@exec mkdir -p %D/ros/stacks/common/tinyxml/bin
 @dirrm ros/stacks/common/tinyxml/bin
 @dirrm ros/stacks/common/tinyxml
 @dirrm ros/stacks/common/test_nodelet/test
 @dirrm ros/stacks/common/test_nodelet/src
 @dirrm ros/stacks/common/test_nodelet/lib
-@exec mkdir -p %D/ros/stacks/common/test_nodelet/bin
 @dirrm ros/stacks/common/test_nodelet/bin
 @dirrm ros/stacks/common/test_nodelet
+@dirrm ros/stacks/common/test_bond/test
+@dirrm ros/stacks/common/test_bond/srv_gen/lisp
+@dirrm ros/stacks/common/test_bond/srv_gen/cpp/include/test_bond
+@dirrm ros/stacks/common/test_bond/srv_gen/cpp/include
+@dirrm ros/stacks/common/test_bond/srv_gen/cpp
+@dirrm ros/stacks/common/test_bond/srv_gen
+@dirrm ros/stacks/common/test_bond/srv
+@dirrm ros/stacks/common/test_bond/src/test_bond/srv
+@dirrm ros/stacks/common/test_bond/src/test_bond
+@dirrm ros/stacks/common/test_bond/src
+@dirrm ros/stacks/common/test_bond/scripts
+@dirrm ros/stacks/common/test_bond/bin
+@dirrm ros/stacks/common/test_bond
+@dirrm ros/stacks/common/smclib/src
+@dirrm ros/stacks/common/smclib/include
+@dirrm ros/stacks/common/smclib
+@dirrm ros/stacks/common/pluginlib/test
 @dirrm ros/stacks/common/pluginlib/src
 @dirrm ros/stacks/common/pluginlib/lib
 @dirrm ros/stacks/common/pluginlib/include/pluginlib
 @dirrm ros/stacks/common/pluginlib/include/Poco
 @dirrm ros/stacks/common/pluginlib/include
-@exec mkdir -p %D/ros/stacks/common/pluginlib/bin
 @dirrm ros/stacks/common/pluginlib/bin
 @dirrm ros/stacks/common/pluginlib
-@dirrm ros/stacks/common/nodelet_tutorial_math/src
-@dirrm ros/stacks/common/nodelet_tutorial_math/lib
-@exec mkdir -p %D/ros/stacks/common/nodelet_tutorial_math/include/nodelet_tutorial_math
-@dirrm ros/stacks/common/nodelet_tutorial_math/include/nodelet_tutorial_math
-@dirrm ros/stacks/common/nodelet_tutorial_math/include
-@exec mkdir -p %D/ros/stacks/common/nodelet_tutorial_math/bin
-@dirrm ros/stacks/common/nodelet_tutorial_math/bin
-@dirrm ros/stacks/common/nodelet_tutorial_math
 @dirrm ros/stacks/common/nodelet_topic_tools/include/nodelet_topic_tools
 @dirrm ros/stacks/common/nodelet_topic_tools/include
-@exec mkdir -p %D/ros/stacks/common/nodelet_topic_tools/bin
 @dirrm ros/stacks/common/nodelet_topic_tools/bin
 @dirrm ros/stacks/common/nodelet_topic_tools
+@dirrm ros/stacks/common/nodelet/srv_gen/lisp
 @dirrm ros/stacks/common/nodelet/srv_gen/cpp/include/nodelet
 @dirrm ros/stacks/common/nodelet/srv_gen/cpp/include
 @dirrm ros/stacks/common/nodelet/srv_gen/cpp
 @dirrm ros/stacks/common/nodelet/srv_gen
-@dirrm ros/stacks/common/nodelet/srv/lisp/nodelet
-@dirrm ros/stacks/common/nodelet/srv/lisp
 @dirrm ros/stacks/common/nodelet/srv
 @dirrm ros/stacks/common/nodelet/src/nodelet/srv
 @dirrm ros/stacks/common/nodelet/src/nodelet
@@ -590,10 +867,32 @@ ros/stacks/common/yaml_cpp/yaml-cpp/lib/libyaml-cpp.so
 @dirrm ros/stacks/common/filters/lib
 @dirrm ros/stacks/common/filters/include/filters
 @dirrm ros/stacks/common/filters/include
-@exec mkdir -p %D/ros/stacks/common/filters/bin
 @dirrm ros/stacks/common/filters/bin
 @dirrm ros/stacks/common/filters
-@exec mkdir -p %D/ros/stacks/common/bfl/bfl-boost/lib/pkgconfig
+@dirrm ros/stacks/common/bondtest/test
+@dirrm ros/stacks/common/bondtest/srv
+@dirrm ros/stacks/common/bondtest/scripts
+@dirrm ros/stacks/common/bondtest
+@dirrm ros/stacks/common/bondpy/src
+@dirrm ros/stacks/common/bondpy/bin
+@dirrm ros/stacks/common/bondpy
+@dirrm ros/stacks/common/bondcpp/src
+@dirrm ros/stacks/common/bondcpp/lib
+@dirrm ros/stacks/common/bondcpp/include/bondcpp
+@dirrm ros/stacks/common/bondcpp/include
+@dirrm ros/stacks/common/bondcpp/bin
+@dirrm ros/stacks/common/bondcpp
+@dirrm ros/stacks/common/bond/src/bond/msg
+@dirrm ros/stacks/common/bond/src/bond
+@dirrm ros/stacks/common/bond/src
+@dirrm ros/stacks/common/bond/msg_gen/lisp
+@dirrm ros/stacks/common/bond/msg_gen/cpp/include/bond
+@dirrm ros/stacks/common/bond/msg_gen/cpp/include
+@dirrm ros/stacks/common/bond/msg_gen/cpp
+@dirrm ros/stacks/common/bond/msg_gen
+@dirrm ros/stacks/common/bond/msg
+@dirrm ros/stacks/common/bond/bin
+@dirrm ros/stacks/common/bond
 @dirrm ros/stacks/common/bfl/bfl-boost/lib/pkgconfig
 @dirrm ros/stacks/common/bfl/bfl-boost/lib
 @dirrm ros/stacks/common/bfl/bfl-boost/include/bfl/wrappers/rng
@@ -615,12 +914,11 @@ ros/stacks/common/yaml_cpp/yaml-cpp/lib/libyaml-cpp.so
 @dirrm ros/stacks/common/actionlib/src/actionlib/msg
 @dirrm ros/stacks/common/actionlib/src/actionlib
 @dirrm ros/stacks/common/actionlib/src
+@dirrm ros/stacks/common/actionlib/msg_gen/lisp
 @dirrm ros/stacks/common/actionlib/msg_gen/cpp/include/actionlib
 @dirrm ros/stacks/common/actionlib/msg_gen/cpp/include
 @dirrm ros/stacks/common/actionlib/msg_gen/cpp
 @dirrm ros/stacks/common/actionlib/msg_gen
-@dirrm ros/stacks/common/actionlib/msg/lisp/actionlib
-@dirrm ros/stacks/common/actionlib/msg/lisp
 @dirrm ros/stacks/common/actionlib/msg
 @dirrm ros/stacks/common/actionlib/lib
 @dirrm ros/stacks/common/actionlib/include/actionlib/server
@@ -628,8 +926,22 @@ ros/stacks/common/yaml_cpp/yaml-cpp/lib/libyaml-cpp.so
 @dirrm ros/stacks/common/actionlib/include/actionlib
 @dirrm ros/stacks/common/actionlib/include
 @dirrm ros/stacks/common/actionlib/docs
-@dirrm ros/stacks/common/actionlib/cmake
 @dirrm ros/stacks/common/actionlib/bin
 @dirrm ros/stacks/common/actionlib/action
 @dirrm ros/stacks/common/actionlib
 @dirrm ros/stacks/common
+@exec mkdir -p %D/ros/stacks/common/yaml_cpp/yaml-cpp/lib/pkgconfig
+@exec mkdir -p %D/ros/stacks/common/xacro/bin
+@exec mkdir -p %D/ros/stacks/common/tinyxml/bin
+@exec mkdir -p %D/ros/stacks/common/test_nodelet/bin
+@exec mkdir -p %D/ros/stacks/common/test_bond/bin
+@exec mkdir -p %D/ros/stacks/common/pluginlib/bin
+@exec mkdir -p %D/ros/stacks/common/nodelet_topic_tools/bin
+@exec mkdir -p %D/ros/stacks/common/filters/bin
+@exec mkdir -p %D/ros/stacks/common/bondtest/test
+@exec mkdir -p %D/ros/stacks/common/bondtest/srv
+@exec mkdir -p %D/ros/stacks/common/bondtest/scripts
+@exec mkdir -p %D/ros/stacks/common/bondpy/bin
+@exec mkdir -p %D/ros/stacks/common/bondcpp/bin
+@exec mkdir -p %D/ros/stacks/common/bond/bin
+@exec mkdir -p %D/ros/stacks/common/bfl/bfl-boost/lib/pkgconfig

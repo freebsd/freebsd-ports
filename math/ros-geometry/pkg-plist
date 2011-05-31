@@ -28,12 +28,8 @@ ros/stacks/geometry/bullet/CMakeLists.txt
 ros/stacks/geometry/bullet/Makefile
 ros/stacks/geometry/bullet/Makefile.bullet
 ros/stacks/geometry/bullet/ROS_NOBUILD
-ros/stacks/geometry/bullet/bullet-2.76-patched.md5sum
-ros/stacks/geometry/bullet/bullet-2.76-patched2.md5sum
 ros/stacks/geometry/bullet/demos.patch
 ros/stacks/geometry/bullet/deprecations.patch
-ros/stacks/geometry/bullet/euler.patch
-ros/stacks/geometry/bullet/euler_angles_doxygen.patch
 ros/stacks/geometry/bullet/getsetRPY.patch
 ros/stacks/geometry/bullet/gimbal_lock.patch
 ros/stacks/geometry/bullet/include/Bullet-C-Api.h
@@ -218,7 +214,6 @@ ros/stacks/geometry/bullet/include/LinearMath/btTransformUtil.h
 ros/stacks/geometry/bullet/include/LinearMath/btVector3.h
 ros/stacks/geometry/bullet/include/btBulletCollisionCommon.h
 ros/stacks/geometry/bullet/include/btBulletDynamicsCommon.h
-ros/stacks/geometry/bullet/installed
 ros/stacks/geometry/bullet/lib/libBulletCollision.so
 ros/stacks/geometry/bullet/lib/libBulletCollision.so.2.76
 ros/stacks/geometry/bullet/lib/libBulletDynamics.so
@@ -230,82 +225,121 @@ ros/stacks/geometry/bullet/lib/libLinearMath.so.2.76
 ros/stacks/geometry/bullet/manifest.xml
 ros/stacks/geometry/bullet/no_extras_build.patch
 ros/stacks/geometry/bullet/quaternion.patch
+ros/stacks/geometry/bullet/rosdoc.yaml
 ros/stacks/geometry/bullet/test/bullet_unittest.cpp
-ros/stacks/geometry/bullet/test_angles.patch
-ros/stacks/geometry/bullet/wiped
 ros/stacks/geometry/eigen/Makefile
 ros/stacks/geometry/eigen/ROS_NOBUILD
-ros/stacks/geometry/eigen/eigen2-2.0.15.tar.bz2.md5sum
 ros/stacks/geometry/eigen/include/Eigen/Array
 ros/stacks/geometry/eigen/include/Eigen/CMakeLists.txt
 ros/stacks/geometry/eigen/include/Eigen/Cholesky
 ros/stacks/geometry/eigen/include/Eigen/Core
 ros/stacks/geometry/eigen/include/Eigen/Dense
 ros/stacks/geometry/eigen/include/Eigen/Eigen
+ros/stacks/geometry/eigen/include/Eigen/Eigen2Support
+ros/stacks/geometry/eigen/include/Eigen/Eigenvalues
 ros/stacks/geometry/eigen/include/Eigen/Geometry
+ros/stacks/geometry/eigen/include/Eigen/Householder
+ros/stacks/geometry/eigen/include/Eigen/Jacobi
 ros/stacks/geometry/eigen/include/Eigen/LU
 ros/stacks/geometry/eigen/include/Eigen/LeastSquares
-ros/stacks/geometry/eigen/include/Eigen/NewStdVector
 ros/stacks/geometry/eigen/include/Eigen/QR
 ros/stacks/geometry/eigen/include/Eigen/QtAlignedMalloc
 ros/stacks/geometry/eigen/include/Eigen/SVD
 ros/stacks/geometry/eigen/include/Eigen/Sparse
+ros/stacks/geometry/eigen/include/Eigen/StdDeque
+ros/stacks/geometry/eigen/include/Eigen/StdList
 ros/stacks/geometry/eigen/include/Eigen/StdVector
-ros/stacks/geometry/eigen/include/Eigen/src/Array/BooleanRedux.h
-ros/stacks/geometry/eigen/include/Eigen/src/Array/CMakeLists.txt
-ros/stacks/geometry/eigen/include/Eigen/src/Array/CwiseOperators.h
-ros/stacks/geometry/eigen/include/Eigen/src/Array/Functors.h
-ros/stacks/geometry/eigen/include/Eigen/src/Array/Norms.h
-ros/stacks/geometry/eigen/include/Eigen/src/Array/PartialRedux.h
-ros/stacks/geometry/eigen/include/Eigen/src/Array/Random.h
-ros/stacks/geometry/eigen/include/Eigen/src/Array/Select.h
 ros/stacks/geometry/eigen/include/Eigen/src/CMakeLists.txt
 ros/stacks/geometry/eigen/include/Eigen/src/Cholesky/CMakeLists.txt
-ros/stacks/geometry/eigen/include/Eigen/src/Cholesky/CholeskyInstantiations.cpp
 ros/stacks/geometry/eigen/include/Eigen/src/Cholesky/LDLT.h
 ros/stacks/geometry/eigen/include/Eigen/src/Cholesky/LLT.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/Array.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/ArrayBase.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/ArrayWrapper.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/Assign.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/BandMatrix.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/Block.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/BooleanRedux.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/CMakeLists.txt
-ros/stacks/geometry/eigen/include/Eigen/src/Core/CacheFriendlyProduct.h
-ros/stacks/geometry/eigen/include/Eigen/src/Core/Coeffs.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/CommaInitializer.h
-ros/stacks/geometry/eigen/include/Eigen/src/Core/CoreInstantiations.cpp
-ros/stacks/geometry/eigen/include/Eigen/src/Core/Cwise.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/CwiseBinaryOp.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/CwiseNullaryOp.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/CwiseUnaryOp.h
-ros/stacks/geometry/eigen/include/Eigen/src/Core/DiagonalCoeffs.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/CwiseUnaryView.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/DenseBase.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/DenseCoeffsBase.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/DenseStorage.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/Diagonal.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/DiagonalMatrix.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/DiagonalProduct.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/Dot.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/EigenBase.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/Flagged.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/ForceAlignedAccess.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/Functors.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/Fuzzy.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/GenericPacketMath.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/GlobalFunctions.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/IO.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/Map.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/MapBase.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/MathFunctions.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/Matrix.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/MatrixBase.h
-ros/stacks/geometry/eigen/include/Eigen/src/Core/MatrixStorage.h
-ros/stacks/geometry/eigen/include/Eigen/src/Core/Minor.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/NestByValue.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/NoAlias.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/NumTraits.h
-ros/stacks/geometry/eigen/include/Eigen/src/Core/Part.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/PermutationMatrix.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/PlainObjectBase.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/Product.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/ProductBase.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/Random.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/Redux.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/Replicate.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/ReturnByValue.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/Reverse.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/Select.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/SelfAdjointView.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/SelfCwiseBinaryOp.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/SolveTriangular.h
-ros/stacks/geometry/eigen/include/Eigen/src/Core/Sum.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/StableNorm.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/Stride.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/Swap.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/Transpose.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/Transpositions.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/TriangularMatrix.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/VectorBlock.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/VectorwiseOp.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/Visitor.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/arch/AltiVec/CMakeLists.txt
+ros/stacks/geometry/eigen/include/Eigen/src/Core/arch/AltiVec/Complex.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/arch/AltiVec/PacketMath.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/arch/CMakeLists.txt
+ros/stacks/geometry/eigen/include/Eigen/src/Core/arch/Default/CMakeLists.txt
+ros/stacks/geometry/eigen/include/Eigen/src/Core/arch/Default/Settings.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/arch/NEON/CMakeLists.txt
+ros/stacks/geometry/eigen/include/Eigen/src/Core/arch/NEON/Complex.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/arch/NEON/PacketMath.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/arch/SSE/CMakeLists.txt
+ros/stacks/geometry/eigen/include/Eigen/src/Core/arch/SSE/Complex.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/arch/SSE/MathFunctions.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/arch/SSE/PacketMath.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/products/CMakeLists.txt
+ros/stacks/geometry/eigen/include/Eigen/src/Core/products/CoeffBasedProduct.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/products/GeneralBlockPanelKernel.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/products/GeneralMatrixMatrix.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/products/GeneralMatrixMatrixTriangular.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/products/GeneralMatrixVector.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/products/Parallelizer.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/products/SelfadjointMatrixMatrix.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/products/SelfadjointMatrixVector.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/products/SelfadjointProduct.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/products/SelfadjointRank2Update.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/products/TriangularMatrixMatrix.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/products/TriangularMatrixVector.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/products/TriangularSolverMatrix.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/products/TriangularSolverVector.h
+ros/stacks/geometry/eigen/include/Eigen/src/Core/util/BlasUtil.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/util/CMakeLists.txt
 ros/stacks/geometry/eigen/include/Eigen/src/Core/util/Constants.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/util/DisableMSVCWarnings.h
@@ -316,10 +350,50 @@ ros/stacks/geometry/eigen/include/Eigen/src/Core/util/Memory.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/util/Meta.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/util/StaticAssert.h
 ros/stacks/geometry/eigen/include/Eigen/src/Core/util/XprHelper.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/Block.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/CMakeLists.txt
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/Cwise.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/CwiseOperators.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/Geometry/AlignedBox.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/Geometry/All.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/Geometry/AngleAxis.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/Geometry/CMakeLists.txt
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/Geometry/Hyperplane.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/Geometry/ParametrizedLine.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/Geometry/Quaternion.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/Geometry/Rotation2D.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/Geometry/RotationBase.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/Geometry/Scaling.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/Geometry/Transform.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/Geometry/Translation.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/LU.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/Lazy.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/LeastSquares.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/Macros.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/MathFunctions.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/Memory.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/Meta.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/Minor.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/QR.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/SVD.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/TriangularSolver.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/VectorBlock.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigenvalues/CMakeLists.txt
+ros/stacks/geometry/eigen/include/Eigen/src/Eigenvalues/ComplexEigenSolver.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigenvalues/ComplexSchur.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigenvalues/EigenSolver.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigenvalues/EigenvaluesCommon.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigenvalues/GeneralizedSelfAdjointEigenSolver.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigenvalues/HessenbergDecomposition.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigenvalues/MatrixBaseEigenvalues.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigenvalues/RealSchur.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigenvalues/SelfAdjointEigenSolver.h
+ros/stacks/geometry/eigen/include/Eigen/src/Eigenvalues/Tridiagonalization.h
 ros/stacks/geometry/eigen/include/Eigen/src/Geometry/AlignedBox.h
 ros/stacks/geometry/eigen/include/Eigen/src/Geometry/AngleAxis.h
 ros/stacks/geometry/eigen/include/Eigen/src/Geometry/CMakeLists.txt
 ros/stacks/geometry/eigen/include/Eigen/src/Geometry/EulerAngles.h
+ros/stacks/geometry/eigen/include/Eigen/src/Geometry/Homogeneous.h
 ros/stacks/geometry/eigen/include/Eigen/src/Geometry/Hyperplane.h
 ros/stacks/geometry/eigen/include/Eigen/src/Geometry/OrthoMethods.h
 ros/stacks/geometry/eigen/include/Eigen/src/Geometry/ParametrizedLine.h
@@ -329,55 +403,75 @@ ros/stacks/geometry/eigen/include/Eigen/src/Geometry/RotationBase.h
 ros/stacks/geometry/eigen/include/Eigen/src/Geometry/Scaling.h
 ros/stacks/geometry/eigen/include/Eigen/src/Geometry/Transform.h
 ros/stacks/geometry/eigen/include/Eigen/src/Geometry/Translation.h
+ros/stacks/geometry/eigen/include/Eigen/src/Geometry/Umeyama.h
+ros/stacks/geometry/eigen/include/Eigen/src/Geometry/arch/CMakeLists.txt
+ros/stacks/geometry/eigen/include/Eigen/src/Geometry/arch/Geometry_SSE.h
+ros/stacks/geometry/eigen/include/Eigen/src/Householder/BlockHouseholder.h
+ros/stacks/geometry/eigen/include/Eigen/src/Householder/CMakeLists.txt
+ros/stacks/geometry/eigen/include/Eigen/src/Householder/Householder.h
+ros/stacks/geometry/eigen/include/Eigen/src/Householder/HouseholderSequence.h
+ros/stacks/geometry/eigen/include/Eigen/src/Jacobi/CMakeLists.txt
+ros/stacks/geometry/eigen/include/Eigen/src/Jacobi/Jacobi.h
 ros/stacks/geometry/eigen/include/Eigen/src/LU/CMakeLists.txt
 ros/stacks/geometry/eigen/include/Eigen/src/LU/Determinant.h
+ros/stacks/geometry/eigen/include/Eigen/src/LU/FullPivLU.h
 ros/stacks/geometry/eigen/include/Eigen/src/LU/Inverse.h
-ros/stacks/geometry/eigen/include/Eigen/src/LU/LU.h
-ros/stacks/geometry/eigen/include/Eigen/src/LeastSquares/CMakeLists.txt
-ros/stacks/geometry/eigen/include/Eigen/src/LeastSquares/LeastSquares.h
+ros/stacks/geometry/eigen/include/Eigen/src/LU/PartialPivLU.h
+ros/stacks/geometry/eigen/include/Eigen/src/LU/arch/CMakeLists.txt
+ros/stacks/geometry/eigen/include/Eigen/src/LU/arch/Inverse_SSE.h
 ros/stacks/geometry/eigen/include/Eigen/src/QR/CMakeLists.txt
-ros/stacks/geometry/eigen/include/Eigen/src/QR/EigenSolver.h
-ros/stacks/geometry/eigen/include/Eigen/src/QR/HessenbergDecomposition.h
-ros/stacks/geometry/eigen/include/Eigen/src/QR/QR.h
-ros/stacks/geometry/eigen/include/Eigen/src/QR/QrInstantiations.cpp
-ros/stacks/geometry/eigen/include/Eigen/src/QR/SelfAdjointEigenSolver.h
-ros/stacks/geometry/eigen/include/Eigen/src/QR/Tridiagonalization.h
+ros/stacks/geometry/eigen/include/Eigen/src/QR/ColPivHouseholderQR.h
+ros/stacks/geometry/eigen/include/Eigen/src/QR/FullPivHouseholderQR.h
+ros/stacks/geometry/eigen/include/Eigen/src/QR/HouseholderQR.h
 ros/stacks/geometry/eigen/include/Eigen/src/SVD/CMakeLists.txt
-ros/stacks/geometry/eigen/include/Eigen/src/SVD/SVD.h
+ros/stacks/geometry/eigen/include/Eigen/src/SVD/JacobiSVD.h
+ros/stacks/geometry/eigen/include/Eigen/src/SVD/UpperBidiagonalization.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/AmbiVector.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/CMakeLists.txt
-ros/stacks/geometry/eigen/include/Eigen/src/Sparse/CholmodSupport.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/CompressedStorage.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/CoreIterators.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/DynamicSparseMatrix.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/MappedSparseMatrix.h
-ros/stacks/geometry/eigen/include/Eigen/src/Sparse/RandomSetter.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseAssign.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseBlock.h
-ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseCwise.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseCwiseBinaryOp.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseCwiseUnaryOp.h
+ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseDenseProduct.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseDiagonalProduct.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseDot.h
-ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseFlagged.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseFuzzy.h
-ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseLDLT.h
-ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseLLT.h
-ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseLU.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseMatrix.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseMatrixBase.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseProduct.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseRedux.h
+ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseSelfAdjointView.h
+ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseSparseProduct.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseTranspose.h
+ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseTriangularView.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseUtil.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseVector.h
-ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SuperLUSupport.h
-ros/stacks/geometry/eigen/include/Eigen/src/Sparse/TaucsSupport.h
+ros/stacks/geometry/eigen/include/Eigen/src/Sparse/SparseView.h
 ros/stacks/geometry/eigen/include/Eigen/src/Sparse/TriangularSolver.h
-ros/stacks/geometry/eigen/include/Eigen/src/Sparse/UmfPackSupport.h
-ros/stacks/geometry/eigen/include/installed
+ros/stacks/geometry/eigen/include/Eigen/src/StlSupport/CMakeLists.txt
+ros/stacks/geometry/eigen/include/Eigen/src/StlSupport/StdDeque.h
+ros/stacks/geometry/eigen/include/Eigen/src/StlSupport/StdList.h
+ros/stacks/geometry/eigen/include/Eigen/src/StlSupport/StdVector.h
+ros/stacks/geometry/eigen/include/Eigen/src/StlSupport/details.h
+ros/stacks/geometry/eigen/include/Eigen/src/misc/CMakeLists.txt
+ros/stacks/geometry/eigen/include/Eigen/src/misc/Image.h
+ros/stacks/geometry/eigen/include/Eigen/src/misc/Kernel.h
+ros/stacks/geometry/eigen/include/Eigen/src/misc/Solve.h
+ros/stacks/geometry/eigen/include/Eigen/src/plugins/ArrayCwiseBinaryOps.h
+ros/stacks/geometry/eigen/include/Eigen/src/plugins/ArrayCwiseUnaryOps.h
+ros/stacks/geometry/eigen/include/Eigen/src/plugins/BlockMethods.h
+ros/stacks/geometry/eigen/include/Eigen/src/plugins/CMakeLists.txt
+ros/stacks/geometry/eigen/include/Eigen/src/plugins/CommonCwiseBinaryOps.h
+ros/stacks/geometry/eigen/include/Eigen/src/plugins/CommonCwiseUnaryOps.h
+ros/stacks/geometry/eigen/include/Eigen/src/plugins/MatrixCwiseBinaryOps.h
+ros/stacks/geometry/eigen/include/Eigen/src/plugins/MatrixCwiseUnaryOps.h
 ros/stacks/geometry/eigen/manifest.xml
-ros/stacks/geometry/eigen/matrix.patch
+ros/stacks/geometry/eigen/scripts/e2_to_eigen2support.sh
+ros/stacks/geometry/eigen/scripts/recursive_eigen2_port.sh
 ros/stacks/geometry/eigen_conversions/CMakeLists.txt
 ros/stacks/geometry/eigen_conversions/Makefile
 ros/stacks/geometry/eigen_conversions/ROS_NOBUILD
@@ -388,9 +482,12 @@ ros/stacks/geometry/eigen_conversions/mainpage.dox
 ros/stacks/geometry/eigen_conversions/manifest.xml
 ros/stacks/geometry/eigen_conversions/src/eigen_kdl.cpp
 ros/stacks/geometry/eigen_conversions/src/eigen_msg.cpp
+ros/stacks/geometry/kdl/CMakeLists.txt
 ros/stacks/geometry/kdl/Makefile
 ros/stacks/geometry/kdl/ROS_NOBUILD
 ros/stacks/geometry/kdl/conf.py
+ros/stacks/geometry/kdl/conf.pyc
+ros/stacks/geometry/kdl/conf.pyo
 ros/stacks/geometry/kdl/geometric_primitives.rst
 ros/stacks/geometry/kdl/include/kdl/articulatedbodyinertia.hpp
 ros/stacks/geometry/kdl/include/kdl/chain.hpp
@@ -470,19 +567,20 @@ ros/stacks/geometry/kdl/include/kdl/velocityprofile_rect.hpp
 ros/stacks/geometry/kdl/include/kdl/velocityprofile_trap.hpp
 ros/stacks/geometry/kdl/include/kdl/velocityprofile_traphalf.hpp
 ros/stacks/geometry/kdl/index.rst
-ros/stacks/geometry/kdl/installed
+ros/stacks/geometry/kdl/kinematic_chains.rst
+ros/stacks/geometry/kdl/kinematic_solvers.rst
 ros/stacks/geometry/kdl/lib/PyKDL.so
 ros/stacks/geometry/kdl/lib/liborocos-kdl.so
 ros/stacks/geometry/kdl/lib/liborocos-kdl.so.1.0
 ros/stacks/geometry/kdl/lib/liborocos-kdl.so.1.0.99
-ros/stacks/geometry/kdl/kdl-31715.tar.gz.md5sum
-ros/stacks/geometry/kdl/kinematic_chains.rst
-ros/stacks/geometry/kdl/kinematic_solvers.rst
 ros/stacks/geometry/kdl/manifest.xml
 ros/stacks/geometry/kdl/rosdoc.yaml
 ros/stacks/geometry/kdl/share/orocos-kdl/orocos-kdl-config.cmake
+ros/stacks/geometry/kdl/test/run_tests.launch
+ros/stacks/geometry/kdl/test/run_tests.py
+ros/stacks/geometry/kdl/test/run_tests.pyc
+ros/stacks/geometry/kdl/test/run_tests.pyo
 ros/stacks/geometry/kdl/total.patch
-ros/stacks/geometry/kdl/wiped
 ros/stacks/geometry/rosdep.yaml
 ros/stacks/geometry/stack.xml
 ros/stacks/geometry/tf/CMakeLists.txt
@@ -493,6 +591,8 @@ ros/stacks/geometry/tf/bin/static_transform_publisher
 ros/stacks/geometry/tf/bin/tf_echo
 ros/stacks/geometry/tf/bin/tf_monitor
 ros/stacks/geometry/tf/conf.py
+ros/stacks/geometry/tf/conf.pyc
+ros/stacks/geometry/tf/conf.pyo
 ros/stacks/geometry/tf/doc/bifrucation.gv
 ros/stacks/geometry/tf/doc/bifrucation.pdf
 ros/stacks/geometry/tf/include/tf/exceptions.h
@@ -507,18 +607,18 @@ ros/stacks/geometry/tf/lib/_tf.so
 ros/stacks/geometry/tf/lib/libtf.so
 ros/stacks/geometry/tf/mainpage.dox
 ros/stacks/geometry/tf/manifest.xml
-ros/stacks/geometry/tf/msg/lisp/tf/.tfMessage.asd-dep
-ros/stacks/geometry/tf/msg/lisp/tf/_package.lisp
-ros/stacks/geometry/tf/msg/lisp/tf/_package_tfMessage.lisp
-ros/stacks/geometry/tf/msg/lisp/tf/tf-msg.asd
-ros/stacks/geometry/tf/msg/lisp/tf/tfMessage.lisp
 ros/stacks/geometry/tf/msg/tfMessage.msg
 ros/stacks/geometry/tf/msg_gen/cpp/include/tf/tfMessage.h
 ros/stacks/geometry/tf/msg_gen/generated
+ros/stacks/geometry/tf/msg_gen/lisp/_package.lisp
+ros/stacks/geometry/tf/msg_gen/lisp/_package_tfMessage.lisp
+ros/stacks/geometry/tf/msg_gen/lisp/tf-msg.asd
+ros/stacks/geometry/tf/msg_gen/lisp/tfMessage.lisp
 ros/stacks/geometry/tf/remap_tf.launch
 ros/stacks/geometry/tf/rosdoc.yaml
 ros/stacks/geometry/tf/scripts/python_benchmark.py
-ros/stacks/geometry/tf/scripts/reset_time.py
+ros/stacks/geometry/tf/scripts/python_benchmark.pyc
+ros/stacks/geometry/tf/scripts/python_benchmark.pyo
 ros/stacks/geometry/tf/scripts/tf_remap
 ros/stacks/geometry/tf/scripts/view_frames
 ros/stacks/geometry/tf/src/cache.cpp
@@ -527,46 +627,69 @@ ros/stacks/geometry/tf/src/pytf.cpp
 ros/stacks/geometry/tf/src/static_transform_publisher.cpp
 ros/stacks/geometry/tf/src/tf.cpp
 ros/stacks/geometry/tf/src/tf/__init__.py
+ros/stacks/geometry/tf/src/tf/__init__.pyc
+ros/stacks/geometry/tf/src/tf/__init__.pyo
 ros/stacks/geometry/tf/src/tf/broadcaster.py
+ros/stacks/geometry/tf/src/tf/broadcaster.pyc
+ros/stacks/geometry/tf/src/tf/broadcaster.pyo
 ros/stacks/geometry/tf/src/tf/listener.py
+ros/stacks/geometry/tf/src/tf/listener.pyc
+ros/stacks/geometry/tf/src/tf/listener.pyo
 ros/stacks/geometry/tf/src/tf/msg/__init__.py
+ros/stacks/geometry/tf/src/tf/msg/__init__.pyc
+ros/stacks/geometry/tf/src/tf/msg/__init__.pyo
 ros/stacks/geometry/tf/src/tf/msg/_tfMessage.py
+ros/stacks/geometry/tf/src/tf/msg/_tfMessage.pyc
+ros/stacks/geometry/tf/src/tf/msg/_tfMessage.pyo
 ros/stacks/geometry/tf/src/tf/srv/_FrameGraph.py
+ros/stacks/geometry/tf/src/tf/srv/_FrameGraph.pyc
+ros/stacks/geometry/tf/src/tf/srv/_FrameGraph.pyo
 ros/stacks/geometry/tf/src/tf/srv/__init__.py
+ros/stacks/geometry/tf/src/tf/srv/__init__.pyc
+ros/stacks/geometry/tf/src/tf/srv/__init__.pyo
 ros/stacks/geometry/tf/src/tf/tfwtf.py
+ros/stacks/geometry/tf/src/tf/tfwtf.pyc
+ros/stacks/geometry/tf/src/tf/tfwtf.pyo
 ros/stacks/geometry/tf/src/tf/transformations.py
+ros/stacks/geometry/tf/src/tf/transformations.pyc
+ros/stacks/geometry/tf/src/tf/transformations.pyo
 ros/stacks/geometry/tf/src/tf_echo.cpp
 ros/stacks/geometry/tf/src/tf_monitor.cpp
 ros/stacks/geometry/tf/src/transform_broadcaster.cpp
 ros/stacks/geometry/tf/src/transform_listener.cpp
 ros/stacks/geometry/tf/srv/FrameGraph.srv
-ros/stacks/geometry/tf/srv/lisp/tf/.FrameGraph.asd-dep
-ros/stacks/geometry/tf/srv/lisp/tf/FrameGraph.lisp
-ros/stacks/geometry/tf/srv/lisp/tf/_package.lisp
-ros/stacks/geometry/tf/srv/lisp/tf/_package_FrameGraph.lisp
-ros/stacks/geometry/tf/srv/lisp/tf/tf-srv.asd
 ros/stacks/geometry/tf/srv_gen/cpp/include/tf/FrameGraph.h
 ros/stacks/geometry/tf/srv_gen/generated
+ros/stacks/geometry/tf/srv_gen/lisp/FrameGraph.lisp
+ros/stacks/geometry/tf/srv_gen/lisp/_package.lisp
+ros/stacks/geometry/tf/srv_gen/lisp/_package_FrameGraph.lisp
+ros/stacks/geometry/tf/srv_gen/lisp/tf-srv.asd
 ros/stacks/geometry/tf/test/btTest
 ros/stacks/geometry/tf/test/cache_unittest.cpp
 ros/stacks/geometry/tf/test/method_test.py
+ros/stacks/geometry/tf/test/method_test.pyc
+ros/stacks/geometry/tf/test/method_test.pyo
 ros/stacks/geometry/tf/test/operator_overload.cpp
 ros/stacks/geometry/tf/test/python_debug_test.py
+ros/stacks/geometry/tf/test/python_debug_test.pyc
+ros/stacks/geometry/tf/test/python_debug_test.pyo
 ros/stacks/geometry/tf/test/quaternion.cpp
 ros/stacks/geometry/tf/test/testBroadcaster
 ros/stacks/geometry/tf/test/testBroadcaster.cpp
-ros/stacks/geometry/tf/test/testListener
 ros/stacks/geometry/tf/test/testListener.cpp
 ros/stacks/geometry/tf/test/testPython.py
+ros/stacks/geometry/tf/test/testPython.pyc
+ros/stacks/geometry/tf/test/testPython.pyo
 ros/stacks/geometry/tf/test/test_broadcaster.launch
 ros/stacks/geometry/tf/test/test_datatype_conversion.py
+ros/stacks/geometry/tf/test/test_datatype_conversion.pyc
+ros/stacks/geometry/tf/test/test_datatype_conversion.pyo
 ros/stacks/geometry/tf/test/test_message_filter.cpp
 ros/stacks/geometry/tf/test/test_message_filter.xml
 ros/stacks/geometry/tf/test/test_transform_datatypes.cpp
 ros/stacks/geometry/tf/test/tf_benchmark.cpp
 ros/stacks/geometry/tf/test/tf_unittest.cpp
 ros/stacks/geometry/tf/test/tf_unittest_future.cpp
-ros/stacks/geometry/tf/test/transform_listener_unittest
 ros/stacks/geometry/tf/test/transform_listener_unittest.cpp
 ros/stacks/geometry/tf/test/transform_listener_unittest.launch
 ros/stacks/geometry/tf/test/transform_twist_test.cpp
@@ -577,6 +700,8 @@ ros/stacks/geometry/tf_conversions/CMakeLists.txt
 ros/stacks/geometry/tf_conversions/Makefile
 ros/stacks/geometry/tf_conversions/ROS_NOBUILD
 ros/stacks/geometry/tf_conversions/conf.py
+ros/stacks/geometry/tf_conversions/conf.pyc
+ros/stacks/geometry/tf_conversions/conf.pyo
 ros/stacks/geometry/tf_conversions/include/tf_conversions/mainpage.dox
 ros/stacks/geometry/tf_conversions/include/tf_conversions/tf_eigen.h
 ros/stacks/geometry/tf_conversions/include/tf_conversions/tf_kdl.h
@@ -585,39 +710,43 @@ ros/stacks/geometry/tf_conversions/lib/libtf_conversions.so
 ros/stacks/geometry/tf_conversions/manifest.xml
 ros/stacks/geometry/tf_conversions/rosdoc.yaml
 ros/stacks/geometry/tf_conversions/src/tf_conversions/__init__.py
+ros/stacks/geometry/tf_conversions/src/tf_conversions/__init__.pyc
+ros/stacks/geometry/tf_conversions/src/tf_conversions/__init__.pyo
 ros/stacks/geometry/tf_conversions/src/tf_conversions/posemath.py
+ros/stacks/geometry/tf_conversions/src/tf_conversions/posemath.pyc
+ros/stacks/geometry/tf_conversions/src/tf_conversions/posemath.pyo
 ros/stacks/geometry/tf_conversions/src/tf_eigen.cpp
 ros/stacks/geometry/tf_conversions/src/tf_kdl.cpp
 ros/stacks/geometry/tf_conversions/test/posemath.py
+ros/stacks/geometry/tf_conversions/test/posemath.pyc
+ros/stacks/geometry/tf_conversions/test/posemath.pyo
 ros/stacks/geometry/tf_conversions/test/test_eigen_tf.cpp
+ros/stacks/geometry/tf_conversions/test/test_kdl_tf.cpp
 @dirrm ros/stacks/geometry/tf_conversions/test
 @dirrm ros/stacks/geometry/tf_conversions/src/tf_conversions
 @dirrm ros/stacks/geometry/tf_conversions/src
 @dirrm ros/stacks/geometry/tf_conversions/lib
 @dirrm ros/stacks/geometry/tf_conversions/include/tf_conversions
 @dirrm ros/stacks/geometry/tf_conversions/include
-@exec mkdir -p %D/ros/stacks/geometry/tf_conversions/bin
 @dirrm ros/stacks/geometry/tf_conversions/bin
 @dirrm ros/stacks/geometry/tf_conversions
 @dirrm ros/stacks/geometry/tf/test
+@dirrm ros/stacks/geometry/tf/srv_gen/lisp
 @dirrm ros/stacks/geometry/tf/srv_gen/cpp/include/tf
 @dirrm ros/stacks/geometry/tf/srv_gen/cpp/include
 @dirrm ros/stacks/geometry/tf/srv_gen/cpp
 @dirrm ros/stacks/geometry/tf/srv_gen
-@dirrm ros/stacks/geometry/tf/srv/lisp/tf
-@dirrm ros/stacks/geometry/tf/srv/lisp
 @dirrm ros/stacks/geometry/tf/srv
 @dirrm ros/stacks/geometry/tf/src/tf/srv
 @dirrm ros/stacks/geometry/tf/src/tf/msg
 @dirrm ros/stacks/geometry/tf/src/tf
 @dirrm ros/stacks/geometry/tf/src
 @dirrm ros/stacks/geometry/tf/scripts
+@dirrm ros/stacks/geometry/tf/msg_gen/lisp
 @dirrm ros/stacks/geometry/tf/msg_gen/cpp/include/tf
 @dirrm ros/stacks/geometry/tf/msg_gen/cpp/include
 @dirrm ros/stacks/geometry/tf/msg_gen/cpp
 @dirrm ros/stacks/geometry/tf/msg_gen
-@dirrm ros/stacks/geometry/tf/msg/lisp/tf
-@dirrm ros/stacks/geometry/tf/msg/lisp
 @dirrm ros/stacks/geometry/tf/msg
 @dirrm ros/stacks/geometry/tf/lib
 @dirrm ros/stacks/geometry/tf/include/tf
@@ -625,44 +754,54 @@ ros/stacks/geometry/tf_conversions/test/test_eigen_tf.cpp
 @dirrm ros/stacks/geometry/tf/doc
 @dirrm ros/stacks/geometry/tf/bin
 @dirrm ros/stacks/geometry/tf
+@dirrm ros/stacks/geometry/kdl/test
 @dirrm ros/stacks/geometry/kdl/share/orocos-kdl
-@exec mkdir -p %D/ros/stacks/geometry/kdl/share/doc/liborocos-kdl
 @dirrm ros/stacks/geometry/kdl/share/doc/liborocos-kdl
 @dirrm ros/stacks/geometry/kdl/share/doc
 @dirrm ros/stacks/geometry/kdl/share
-@exec mkdir -p %D/ros/stacks/geometry/kdl/lib/pkgconfig
 @dirrm ros/stacks/geometry/kdl/lib/pkgconfig
 @dirrm ros/stacks/geometry/kdl/lib
 @dirrm ros/stacks/geometry/kdl/include/kdl/utilities
 @dirrm ros/stacks/geometry/kdl/include/kdl
 @dirrm ros/stacks/geometry/kdl/include
+@dirrm ros/stacks/geometry/kdl/bin
 @dirrm ros/stacks/geometry/kdl
 @dirrm ros/stacks/geometry/eigen_conversions/src
 @dirrm ros/stacks/geometry/eigen_conversions/lib
 @dirrm ros/stacks/geometry/eigen_conversions/include/eigen_conversions
 @dirrm ros/stacks/geometry/eigen_conversions/include
-@exec mkdir -p %D/ros/stacks/geometry/eigen_conversions/bin
 @dirrm ros/stacks/geometry/eigen_conversions/bin
 @dirrm ros/stacks/geometry/eigen_conversions
+@dirrm ros/stacks/geometry/eigen/scripts
+@dirrm ros/stacks/geometry/eigen/include/Eigen/src/plugins
+@dirrm ros/stacks/geometry/eigen/include/Eigen/src/misc
+@dirrm ros/stacks/geometry/eigen/include/Eigen/src/StlSupport
 @dirrm ros/stacks/geometry/eigen/include/Eigen/src/Sparse
 @dirrm ros/stacks/geometry/eigen/include/Eigen/src/SVD
 @dirrm ros/stacks/geometry/eigen/include/Eigen/src/QR
-@dirrm ros/stacks/geometry/eigen/include/Eigen/src/LeastSquares
+@dirrm ros/stacks/geometry/eigen/include/Eigen/src/LU/arch
 @dirrm ros/stacks/geometry/eigen/include/Eigen/src/LU
+@dirrm ros/stacks/geometry/eigen/include/Eigen/src/Jacobi
+@dirrm ros/stacks/geometry/eigen/include/Eigen/src/Householder
+@dirrm ros/stacks/geometry/eigen/include/Eigen/src/Geometry/arch
 @dirrm ros/stacks/geometry/eigen/include/Eigen/src/Geometry
+@dirrm ros/stacks/geometry/eigen/include/Eigen/src/Eigenvalues
+@dirrm ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support/Geometry
+@dirrm ros/stacks/geometry/eigen/include/Eigen/src/Eigen2Support
 @dirrm ros/stacks/geometry/eigen/include/Eigen/src/Core/util
+@dirrm ros/stacks/geometry/eigen/include/Eigen/src/Core/products
 @dirrm ros/stacks/geometry/eigen/include/Eigen/src/Core/arch/SSE
+@dirrm ros/stacks/geometry/eigen/include/Eigen/src/Core/arch/NEON
+@dirrm ros/stacks/geometry/eigen/include/Eigen/src/Core/arch/Default
 @dirrm ros/stacks/geometry/eigen/include/Eigen/src/Core/arch/AltiVec
 @dirrm ros/stacks/geometry/eigen/include/Eigen/src/Core/arch
 @dirrm ros/stacks/geometry/eigen/include/Eigen/src/Core
 @dirrm ros/stacks/geometry/eigen/include/Eigen/src/Cholesky
-@dirrm ros/stacks/geometry/eigen/include/Eigen/src/Array
 @dirrm ros/stacks/geometry/eigen/include/Eigen/src
 @dirrm ros/stacks/geometry/eigen/include/Eigen
 @dirrm ros/stacks/geometry/eigen/include
 @dirrm ros/stacks/geometry/eigen
 @dirrm ros/stacks/geometry/bullet/test
-@exec mkdir -p %D/ros/stacks/geometry/bullet/src
 @dirrm ros/stacks/geometry/bullet/src
 @dirrm ros/stacks/geometry/bullet/lib
 @dirrm ros/stacks/geometry/bullet/include/LinearMath
@@ -679,13 +818,19 @@ ros/stacks/geometry/tf_conversions/test/test_eigen_tf.cpp
 @dirrm ros/stacks/geometry/bullet/include/BulletCollision/BroadphaseCollision
 @dirrm ros/stacks/geometry/bullet/include/BulletCollision
 @dirrm ros/stacks/geometry/bullet/include
-@exec mkdir -p %D/ros/stacks/geometry/bullet/bin
 @dirrm ros/stacks/geometry/bullet/bin
 @dirrm ros/stacks/geometry/bullet
 @dirrm ros/stacks/geometry/angles/test
 @dirrm ros/stacks/geometry/angles/include/angles
 @dirrm ros/stacks/geometry/angles/include
-@exec mkdir -p %D/ros/stacks/geometry/angles/bin
 @dirrm ros/stacks/geometry/angles/bin
 @dirrm ros/stacks/geometry/angles
 @dirrm ros/stacks/geometry
+@exec mkdir -p %D/ros/stacks/geometry/tf_conversions/bin
+@exec mkdir -p %D/ros/stacks/geometry/kdl/share/doc/liborocos-kdl
+@exec mkdir -p %D/ros/stacks/geometry/kdl/lib/pkgconfig
+@exec mkdir -p %D/ros/stacks/geometry/kdl/bin
+@exec mkdir -p %D/ros/stacks/geometry/eigen_conversions/bin
+@exec mkdir -p %D/ros/stacks/geometry/bullet/src
+@exec mkdir -p %D/ros/stacks/geometry/bullet/bin
+@exec mkdir -p %D/ros/stacks/geometry/angles/bin

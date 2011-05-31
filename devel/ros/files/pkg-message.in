@@ -6,7 +6,13 @@ PYTHONPATH ${ROS_ROOT}/core/roslib/src
 
 If you intend to build software with ROS:
 CPATH %%LOCALBASE%%/include
-EXTRA_CMAKE_FLAGS -DwxWidgets_CONFIG_EXECUTABLE=%%WX_CONFIG%%
 LIBRARY_PATH %%LOCALBASE%%/lib
 MAKE %%LOCALBASE%%/bin/gmake
 ROS_BOOST_ROOT %%LOCALBASE%%
+
+Note that some scripts in %%LOCALBASE%%/bin will not work, which is by design.
+See http://www.ros.org/reps/rep-0100.html#ros-root-bin-executables :
+> The inclusion of ros_comm and rx executables with the ros stack is
+> unfortunate.  It does not significantly increase the size of the ros stack as
+> binary executables will be replaced with bash scripts, but it does add
+> non-functioning executables to a bare ros installation.

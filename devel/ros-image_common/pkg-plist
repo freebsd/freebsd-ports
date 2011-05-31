@@ -1,4 +1,5 @@
 lib/libcamera_calibration_parsers.so
+lib/libcamera_info_manager.so
 lib/libimage_transport.so
 lib/libpolled_camera.so
 ros/stacks/image_common/CMakeLists.txt
@@ -17,6 +18,17 @@ ros/stacks/image_common/camera_calibration_parsers/src/convert.cpp
 ros/stacks/image_common/camera_calibration_parsers/src/parse.cpp
 ros/stacks/image_common/camera_calibration_parsers/src/parse_ini.cpp
 ros/stacks/image_common/camera_calibration_parsers/src/parse_yml.cpp
+ros/stacks/image_common/camera_info_manager/CMakeLists.txt
+ros/stacks/image_common/camera_info_manager/Makefile
+ros/stacks/image_common/camera_info_manager/ROS_NOBUILD
+ros/stacks/image_common/camera_info_manager/include/camera_info_manager/camera_info_manager.h
+ros/stacks/image_common/camera_info_manager/lib/libcamera_info_manager.so
+ros/stacks/image_common/camera_info_manager/mainpage.dox
+ros/stacks/image_common/camera_info_manager/manifest.xml
+ros/stacks/image_common/camera_info_manager/src/camera_info_manager.cpp
+ros/stacks/image_common/camera_info_manager/tests/test_calibration.yaml
+ros/stacks/image_common/camera_info_manager/tests/unit_test.cpp
+ros/stacks/image_common/camera_info_manager/tests/unit_test.test
 ros/stacks/image_common/image_transport/CMakeLists.txt
 ros/stacks/image_common/image_transport/Makefile
 ros/stacks/image_common/image_transport/ROS_NOBUILD
@@ -62,25 +74,29 @@ ros/stacks/image_common/polled_camera/lib/libpolled_camera.so
 ros/stacks/image_common/polled_camera/mainpage.dox
 ros/stacks/image_common/polled_camera/manifest.xml
 ros/stacks/image_common/polled_camera/src/polled_camera/__init__.py
+ros/stacks/image_common/polled_camera/src/polled_camera/__init__.pyc
+ros/stacks/image_common/polled_camera/src/polled_camera/__init__.pyo
 ros/stacks/image_common/polled_camera/src/polled_camera/srv/_GetPolledImage.py
+ros/stacks/image_common/polled_camera/src/polled_camera/srv/_GetPolledImage.pyc
+ros/stacks/image_common/polled_camera/src/polled_camera/srv/_GetPolledImage.pyo
 ros/stacks/image_common/polled_camera/src/polled_camera/srv/__init__.py
+ros/stacks/image_common/polled_camera/src/polled_camera/srv/__init__.pyc
+ros/stacks/image_common/polled_camera/src/polled_camera/srv/__init__.pyo
 ros/stacks/image_common/polled_camera/src/poller.cpp
 ros/stacks/image_common/polled_camera/src/publication_server.cpp
 ros/stacks/image_common/polled_camera/srv/GetPolledImage.srv
-ros/stacks/image_common/polled_camera/srv/lisp/polled_camera/.GetPolledImage.asd-dep
-ros/stacks/image_common/polled_camera/srv/lisp/polled_camera/GetPolledImage.lisp
-ros/stacks/image_common/polled_camera/srv/lisp/polled_camera/_package.lisp
-ros/stacks/image_common/polled_camera/srv/lisp/polled_camera/_package_GetPolledImage.lisp
-ros/stacks/image_common/polled_camera/srv/lisp/polled_camera/polled_camera-srv.asd
 ros/stacks/image_common/polled_camera/srv_gen/cpp/include/polled_camera/GetPolledImage.h
 ros/stacks/image_common/polled_camera/srv_gen/generated
+ros/stacks/image_common/polled_camera/srv_gen/lisp/GetPolledImage.lisp
+ros/stacks/image_common/polled_camera/srv_gen/lisp/_package.lisp
+ros/stacks/image_common/polled_camera/srv_gen/lisp/_package_GetPolledImage.lisp
+ros/stacks/image_common/polled_camera/srv_gen/lisp/polled_camera-srv.asd
 ros/stacks/image_common/stack.xml
+@dirrm ros/stacks/image_common/polled_camera/srv_gen/lisp
 @dirrm ros/stacks/image_common/polled_camera/srv_gen/cpp/include/polled_camera
 @dirrm ros/stacks/image_common/polled_camera/srv_gen/cpp/include
 @dirrm ros/stacks/image_common/polled_camera/srv_gen/cpp
 @dirrm ros/stacks/image_common/polled_camera/srv_gen
-@dirrm ros/stacks/image_common/polled_camera/srv/lisp/polled_camera
-@dirrm ros/stacks/image_common/polled_camera/srv/lisp
 @dirrm ros/stacks/image_common/polled_camera/srv
 @dirrm ros/stacks/image_common/polled_camera/src/polled_camera/srv
 @dirrm ros/stacks/image_common/polled_camera/src/polled_camera
@@ -96,6 +112,13 @@ ros/stacks/image_common/stack.xml
 @dirrm ros/stacks/image_common/image_transport/include
 @dirrm ros/stacks/image_common/image_transport/bin
 @dirrm ros/stacks/image_common/image_transport
+@dirrm ros/stacks/image_common/camera_info_manager/tests
+@dirrm ros/stacks/image_common/camera_info_manager/src
+@dirrm ros/stacks/image_common/camera_info_manager/lib
+@dirrm ros/stacks/image_common/camera_info_manager/include/camera_info_manager
+@dirrm ros/stacks/image_common/camera_info_manager/include
+@dirrm ros/stacks/image_common/camera_info_manager/bin
+@dirrm ros/stacks/image_common/camera_info_manager
 @dirrm ros/stacks/image_common/camera_calibration_parsers/src
 @dirrm ros/stacks/image_common/camera_calibration_parsers/lib
 @dirrm ros/stacks/image_common/camera_calibration_parsers/include/camera_calibration_parsers
@@ -103,3 +126,4 @@ ros/stacks/image_common/stack.xml
 @dirrm ros/stacks/image_common/camera_calibration_parsers/bin
 @dirrm ros/stacks/image_common/camera_calibration_parsers
 @dirrm ros/stacks/image_common
+@exec mkdir -p %D/ros/stacks/image_common/camera_info_manager/bin

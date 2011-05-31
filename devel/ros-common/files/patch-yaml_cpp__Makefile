@@ -1,0 +1,35 @@
+--- yaml_cpp/Makefile.orig	2011-02-25 05:21:32.000000000 +0100
++++ yaml_cpp/Makefile	2011-05-26 23:10:16.000000000 +0200
+@@ -13,20 +13,31 @@
+ 
+ yaml-cpp: wiped $(SOURCE_DIR)/unpacked
+ 	cd build && cmake -DCMAKE_INSTALL_PREFIX=../yaml-cpp yaml-cpp-0.2.5
++ifneq ($(MAKE),)
++	cd build && $(MAKE) && $(MAKE) install
++else
+ 	cd build && make && make install
++endif
+ 	if [ `uname` = Darwin ]; then \
+ 		install_name_tool -id `rospack find yaml_cpp`/yaml-cpp/lib/libyaml-cpp.0.2.dylib yaml-cpp/lib/libyaml-cpp.0.2.dylib; \
+ 	fi
+ 
+ clean:
+ 	rm -rf yaml-cpp $(SOURCE_DIR)
++ifneq ($(MAKE),)
++	-cd build && $(MAKE) clean
++else
+ 	-cd build && make clean
++endif
+ 
+ wipe: clean
+-	rm -rf build
+ 
+ wiped: Makefile
++ifneq ($(MAKE),)
++	$(MAKE) -f Makefile wipe
++else
+ 	make -f Makefile wipe
++endif
+ 	touch wiped
+ 
+ 

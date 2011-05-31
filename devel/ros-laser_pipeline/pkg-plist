@@ -20,25 +20,31 @@ ros/stacks/laser_pipeline/laser_assembler/include/laser_assembler/base_assembler
 ros/stacks/laser_pipeline/laser_assembler/mainpage.dox
 ros/stacks/laser_pipeline/laser_assembler/manifest.xml
 ros/stacks/laser_pipeline/laser_assembler/src/laser_assembler/__init__.py
+ros/stacks/laser_pipeline/laser_assembler/src/laser_assembler/__init__.pyc
+ros/stacks/laser_pipeline/laser_assembler/src/laser_assembler/__init__.pyo
 ros/stacks/laser_pipeline/laser_assembler/src/laser_assembler/srv/_AssembleScans.py
+ros/stacks/laser_pipeline/laser_assembler/src/laser_assembler/srv/_AssembleScans.pyc
+ros/stacks/laser_pipeline/laser_assembler/src/laser_assembler/srv/_AssembleScans.pyo
 ros/stacks/laser_pipeline/laser_assembler/src/laser_assembler/srv/__init__.py
+ros/stacks/laser_pipeline/laser_assembler/src/laser_assembler/srv/__init__.pyc
+ros/stacks/laser_pipeline/laser_assembler/src/laser_assembler/srv/__init__.pyo
 ros/stacks/laser_pipeline/laser_assembler/src/laser_scan_assembler.cpp
 ros/stacks/laser_pipeline/laser_assembler/src/laser_scan_assembler_srv.cpp
 ros/stacks/laser_pipeline/laser_assembler/src/merge_clouds.cpp
 ros/stacks/laser_pipeline/laser_assembler/src/point_cloud_assembler.cpp
 ros/stacks/laser_pipeline/laser_assembler/src/point_cloud_assembler/__init__.py
+ros/stacks/laser_pipeline/laser_assembler/src/point_cloud_assembler/__init__.pyc
+ros/stacks/laser_pipeline/laser_assembler/src/point_cloud_assembler/__init__.pyo
 ros/stacks/laser_pipeline/laser_assembler/src/point_cloud_assembler_srv.cpp
 ros/stacks/laser_pipeline/laser_assembler/srv/AssembleScans.srv
-ros/stacks/laser_pipeline/laser_assembler/srv/lisp/laser_assembler/.AssembleScans.asd-dep
-ros/stacks/laser_pipeline/laser_assembler/srv/lisp/laser_assembler/AssembleScans.lisp
-ros/stacks/laser_pipeline/laser_assembler/srv/lisp/laser_assembler/_package.lisp
-ros/stacks/laser_pipeline/laser_assembler/srv/lisp/laser_assembler/_package_AssembleScans.lisp
-ros/stacks/laser_pipeline/laser_assembler/srv/lisp/laser_assembler/laser_assembler-srv.asd
 ros/stacks/laser_pipeline/laser_assembler/srv_gen/cpp/include/laser_assembler/AssembleScans.h
 ros/stacks/laser_pipeline/laser_assembler/srv_gen/generated
+ros/stacks/laser_pipeline/laser_assembler/srv_gen/lisp/AssembleScans.lisp
+ros/stacks/laser_pipeline/laser_assembler/srv_gen/lisp/_package.lisp
+ros/stacks/laser_pipeline/laser_assembler/srv_gen/lisp/_package_AssembleScans.lisp
+ros/stacks/laser_pipeline/laser_assembler/srv_gen/lisp/laser_assembler-srv.asd
 ros/stacks/laser_pipeline/laser_assembler/test/dummy_scan_producer
 ros/stacks/laser_pipeline/laser_assembler/test/dummy_scan_producer.cpp
-ros/stacks/laser_pipeline/laser_assembler/test/test_assembler
 ros/stacks/laser_pipeline/laser_assembler/test/test_assembler.cpp
 ros/stacks/laser_pipeline/laser_assembler/test/test_laser_assembler.launch
 ros/stacks/laser_pipeline/laser_filters/CMakeLists.txt
@@ -82,6 +88,8 @@ ros/stacks/laser_pipeline/laser_filters/src/pointcloud_filters.cpp
 ros/stacks/laser_pipeline/laser_filters/src/scan_to_cloud_filter_chain.cpp
 ros/stacks/laser_pipeline/laser_filters/src/scan_to_scan_filter_chain.cpp
 ros/stacks/laser_pipeline/laser_filters/test/fake_laser.py
+ros/stacks/laser_pipeline/laser_filters/test/fake_laser.pyc
+ros/stacks/laser_pipeline/laser_filters/test/fake_laser.pyo
 ros/stacks/laser_pipeline/laser_filters/test/test_scan_filter_chain.cpp
 ros/stacks/laser_pipeline/laser_filters/test/test_scan_filter_chain.launch
 ros/stacks/laser_pipeline/laser_filters/test/test_scan_filter_chain.yaml
@@ -100,7 +108,6 @@ ros/stacks/laser_pipeline/stack.xml
 @dirrm ros/stacks/laser_pipeline/laser_geometry/lib
 @dirrm ros/stacks/laser_pipeline/laser_geometry/include/laser_geometry
 @dirrm ros/stacks/laser_pipeline/laser_geometry/include
-@exec mkdir -p %D/ros/stacks/laser_pipeline/laser_geometry/bin
 @dirrm ros/stacks/laser_pipeline/laser_geometry/bin
 @dirrm ros/stacks/laser_pipeline/laser_geometry
 @dirrm ros/stacks/laser_pipeline/laser_filters/test
@@ -113,12 +120,11 @@ ros/stacks/laser_pipeline/stack.xml
 @dirrm ros/stacks/laser_pipeline/laser_filters/bin
 @dirrm ros/stacks/laser_pipeline/laser_filters
 @dirrm ros/stacks/laser_pipeline/laser_assembler/test
+@dirrm ros/stacks/laser_pipeline/laser_assembler/srv_gen/lisp
 @dirrm ros/stacks/laser_pipeline/laser_assembler/srv_gen/cpp/include/laser_assembler
 @dirrm ros/stacks/laser_pipeline/laser_assembler/srv_gen/cpp/include
 @dirrm ros/stacks/laser_pipeline/laser_assembler/srv_gen/cpp
 @dirrm ros/stacks/laser_pipeline/laser_assembler/srv_gen
-@dirrm ros/stacks/laser_pipeline/laser_assembler/srv/lisp/laser_assembler
-@dirrm ros/stacks/laser_pipeline/laser_assembler/srv/lisp
 @dirrm ros/stacks/laser_pipeline/laser_assembler/srv
 @dirrm ros/stacks/laser_pipeline/laser_assembler/src/point_cloud_assembler
 @dirrm ros/stacks/laser_pipeline/laser_assembler/src/laser_assembler/srv
@@ -131,3 +137,4 @@ ros/stacks/laser_pipeline/stack.xml
 @dirrm ros/stacks/laser_pipeline/laser_assembler/bin
 @dirrm ros/stacks/laser_pipeline/laser_assembler
 @dirrm ros/stacks/laser_pipeline
+@exec mkdir -p %D/ros/stacks/laser_pipeline/laser_geometry/bin

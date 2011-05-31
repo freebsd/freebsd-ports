@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ros-common_msgs
-PORTVERSION=	1.2.2
+PORTVERSION=	1.4.0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
+MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/common_msgs/common_msgs-${PORTVERSION}/	
 DISTNAME=	common_msgs-${PORTVERSION}
 DIST_SUBDIR=	ros
 
@@ -17,10 +17,11 @@ COMMENT=	Robot Operating System - common messages
 LICENSE=	BSD
 
 STACKNAME=	${PORTNAME:S/ros-//}
-WRKSRC=		${WRKDIR}/${STACKNAME}
 
-BUILD_DEPENDS=	rosmake:${PORTSDIR}/devel/ros
-RUN_DEPENDS=	roscore:${PORTSDIR}/devel/ros
+BUILD_DEPENDS=	rosmake:${PORTSDIR}/devel/ros \
+ 		${LOCALBASE}/ros/stacks/ros_comm/stack.xml:${PORTSDIR}/devel/ros_comm
+RUN_DEPENDS=	roscore:${PORTSDIR}/devel/ros \
+ 		${LOCALBASE}/ros/stacks/ros_comm/stack.xml:${PORTSDIR}/devel/ros_comm
 USE_PYTHON=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
@@ -33,7 +34,7 @@ MAKE_ENV+=	CPATH=${LOCALBASE}/include \
 		LIBRARY_PATH=${LOCALBASE}/lib \
 		MAKE=${LOCALBASE}/bin/gmake \
 		ROS_ROOT=${LOCALBASE}/ros/ros \
-		ROS_PACKAGE_PATH=${WRKSRC} \
+		ROS_PACKAGE_PATH=${LOCALBASE}/ros/stacks/ros_comm:${WRKSRC} \
 		PYTHONPATH=${LOCALBASE}/ros/ros/core/roslib/src
 
 MAKE_ARGS=	-i --no-rosdep --status-rate=0 --disable-logging
@@ -45,7 +46,7 @@ do-install:
 	${MKDIR} ${PREFIX}/ros/stacks/${STACKNAME}
 # delete files explicitly because negation in find (for COPYTREE_SHARE) is bogus
 .for d in actionlib_msgs diagnostic_msgs geometry_msgs nav_msgs sensor_msgs \
-    test_common_msgs
+    stereo_msgs test_common_msgs trajectory_msgs visualization_msgs
 	${FIND} ${WRKSRC}/${d} -name build -type d -or -name \*.bak -type f \
 	    -or -name .svnignore -type f -or -name .cvsignore -type f \
 	    -or -name \*.orig | ${XARGS} ${RM} -rf
@@ -55,13 +56,19 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/${f} ${PREFIX}/ros/stacks/${STACKNAME}
 .endfor
 #strip and symlink ELF libraries
-	${STRIP_CMD} ${PREFIX}/ros/stacks/${STACKNAME}/sensor_msgs/lib/libsensor_msgs.so
-	${LN} -s ${PREFIX}/ros/stacks/${STACKNAME}/sensor_msgs/lib/libsensor_msgs.so \
-	    ${PREFIX}/lib
+.for f in sensor_msgs/lib/libsensor_msgs.so 
+	${STRIP_CMD} ${PREFIX}/ros/stacks/${STACKNAME}/${f}
+	${LN} -s ${PREFIX}/ros/stacks/${STACKNAME}/${f} ${PREFIX}/lib
+.endfor
 # make scripts executable
 .for f in actionlib_msgs/genaction.py \
+    stereo_msgs/migration_rules/split_rawstereo.py \
     test_common_msgs/test/test_common_msgs_migration.py
 	${CHMOD} 0555 ${PREFIX}/ros/stacks/${STACKNAME}/${f}
 .endfor
+
+post-install:
+	${PYTHON_CMD} -O -mcompileall ${PREFIX}/ros/stacks/${STACKNAME}/
+	${PYTHON_CMD} -mcompileall ${PREFIX}/ros/stacks/${STACKNAME}/
 
 .include <bsd.port.mk>

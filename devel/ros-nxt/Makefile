@@ -5,31 +5,36 @@
 # $FreeBSD$
 
 PORTNAME=	ros-nxt
-PORTVERSION=	0.1.0
-PORTREVISION=	2
+PORTVERSION=	0.1.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
-DISTFILES=	nxt-${PORTVERSION}.tar.bz2 nxt-python-1.1.2.zip
+MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${STACKNAME}/${STACKNAME}-${PORTVERSION}/:rel \
+		${MASTER_SITE_GOOGLE_CODE}:gc \
+		http://foote-ros-pkg.googlecode.com/files/:foote
+DISTFILES=	nxt-${PORTVERSION}.tar.bz2:rel nxt-python-1.1.2.zip:gc \
+		nxt_description.parts.tar.gz:foote
 DIST_SUBDIR=	ros
 EXTRACT_ONLY=	nxt-${PORTVERSION}.tar.bz2
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Robot Operating System - LEGO NXT interface
 
+PROJECTHOST=	nxt-python
 LICENSE_COMB=	multi
 LICENSE=	BSD GPLv3
 
 STACKNAME=	${PORTNAME:S/ros-//}
-WRKSRC=		${WRKDIR}/${STACKNAME}
+WRKSRC=		${WRKDIR}/${STACKNAME}-${PORTVERSION}
 
 # TODO port python-bluez for secondary bluetooth interface (no bluetooth here)
 
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 BUILD_DEPENDS=	rosmake:${PORTSDIR}/devel/ros \
+		${LOCALBASE}/ros/stacks/ros_comm/stack.xml:${PORTSDIR}/devel/ros_comm \
 		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/ros-common_msgs \
 		${LOCALBASE}/ros/stacks/geometry/stack.xml:${PORTSDIR}/math/ros-geometry \
 		chrpath:${PORTSDIR}/devel/chrpath
 RUN_DEPENDS=	roscore:${PORTSDIR}/devel/ros \
+		${LOCALBASE}/ros/stacks/ros_comm/stack.xml:${PORTSDIR}/devel/ros_comm \
 		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/ros-common_msgs \
 		${LOCALBASE}/ros/stacks/geometry/stack.xml:${PORTSDIR}/math/ros-geometry \
 		${PYTHON_SITELIBDIR}/usb.so:${PORTSDIR}/devel/py-usb
@@ -44,7 +49,7 @@ MAKE_ENV+=	CPATH=${LOCALBASE}/include \
 		LIBRARY_PATH=${LOCALBASE}/lib \
 		MAKE=${LOCALBASE}/bin/gmake \
 		ROS_ROOT=${LOCALBASE}/ros/ros \
-		ROS_PACKAGE_PATH=${LOCALBASE}/ros/stacks/common_msgs:${LOCALBASE}/ros/stacks/geometry:${WRKSRC} \
+		ROS_PACKAGE_PATH=${LOCALBASE}/ros/stacks/ros_comm:${LOCALBASE}/ros/stacks/common_msgs:${LOCALBASE}/ros/stacks/geometry:${WRKSRC} \
 		PYTHONPATH=${LOCALBASE}/ros/ros/core/roslib/src
 
 MAKE_ARGS=	-i --no-rosdep --status-rate=0 --disable-logging
@@ -56,6 +61,7 @@ LIB_DEPENDS+=	usb:${PORTSDIR}/devel/libusb
 .endif
 
 post-extract:
+	${CP} ${_DISTDIR}/nxt_description.parts.tar.gz ${WRKSRC}/nxt_description/meshes/nxt_description.tar.gz
 	${MKDIR} ${WRKSRC}/nxt_python/build
 	${CP} ${_DISTDIR}/nxt-python-1.1.2.zip ${WRKSRC}/nxt_python/build
 	# already extract and mark as such because we have to patch it
@@ -73,12 +79,15 @@ PLIST_SUB=	PYTHON_VER=${PYTHON_VER}
 
 do-install:
 	${MKDIR} ${PREFIX}/ros/stacks/${STACKNAME}
+# delete file already extracted
+	${RM} ${WRKSRC}/nxt_description/meshes/nxt_description.tar.gz
 # delete files explicitly because negation in find (for COPYTREE_SHARE) is bogus
 .for d in nxt_controllers nxt_description nxt_lxf2urdf nxt_msgs nxt_python \
     nxt_ros #nxt_rviz_plugin
 	${FIND} ${WRKSRC}/${d} -name build -type d -or -name \*.bak -type f \
 	    -or -name .svnignore -type f -or -name .cvsignore -type f \
-	    -or -name \*.orig | ${XARGS} ${RM} -rf
+	    -or -name \*.orig -or -name installed -type f \
+	    -or -name wiped -type f | ${XARGS} ${RM} -rf
 	(cd ${WRKSRC} ; ${COPYTREE_SHARE} ${d} ${PREFIX}/ros/stacks/${STACKNAME})
 .endfor
 .for f in CMakeLists.txt Makefile rosdep.yaml stack.xml
@@ -95,5 +104,9 @@ do-install:
     nxt_ros/scripts/joint_states_aggregator.py nxt_ros/scripts/nxt_ros.py
 	${CHMOD} 0555 ${PREFIX}/ros/stacks/${STACKNAME}/${f}
 .endfor
+
+post-install:
+	${PYTHON_CMD} -O -mcompileall ${PREFIX}/ros/stacks/${STACKNAME}/
+	${PYTHON_CMD} -mcompileall ${PREFIX}/ros/stacks/${STACKNAME}/
 
 .include <bsd.port.post.mk>
