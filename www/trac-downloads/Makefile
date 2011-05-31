@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	${PYDISTUTILS_PKGNAME:S;^Trac;;:L}
-PORTVERSION=	${TRAC_VERSION}.${PLUGIN_VERSION}
+PORTVERSION=	${TRAC_VERSION}.${PLUGIN_VERSION}.${SVN_REV}
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -22,6 +22,7 @@ BUILD_DEPENDS+=	easy_install:${PORTSDIR}/devel/py-setuptools
 
 TRAC_VERSION=	0.12
 PLUGIN_VERSION=	0.3
+SVN_REV=	10047
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
@@ -34,7 +35,7 @@ PLIST_FILES=	%%PYTHON_SITELIBDIR%%/${PYDISTUTILS_PKGNAME}-${PLUGIN_VERSION}-py${
 .if defined(BOOTSTRAP)
 do-fetch:
 	${MKDIR} ${WRKDIR}
-	svn export http://trac-hacks.org/svn/downloadsplugin/${TRAC_VERSION}/ ${WRKSRC}
+	svn export -r ${SVN_REV} http://trac-hacks.org/svn/downloadsplugin/${TRAC_VERSION}/ ${WRKSRC}
 	${MKDIR} ${_DISTDIR}
 	cd ${WRKDIR} && \
 	    tar cfvz ${_DISTDIR}/${DISTNAME}.tar.gz ${DISTNAME}
