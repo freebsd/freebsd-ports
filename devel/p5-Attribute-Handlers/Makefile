@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Attribute-Handlers
-PORTVERSION=	0.88
+PORTVERSION=	0.91
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Simpler definition of attribute handlers
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 PERL_CONFIGURE=	yes
 
