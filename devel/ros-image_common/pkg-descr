@@ -3,6 +3,10 @@ Common code for working with images in ROS:
 camera_calibration_parsers contains routines for reading and writing camera
 calibration parameters.
 
+camera_info_manager provides a C++ interface for camera calibration information.
+It provides CameraInfo, and handles SetCameraInfo service requests, saving and
+restoring the camera calibration data.
+
 image_transport should always be used to subscribe to and publish images. It
 provides transparent support for transporting images in low-bandwidth
 compressed formats. Examples (provided by separate plugin packages) include

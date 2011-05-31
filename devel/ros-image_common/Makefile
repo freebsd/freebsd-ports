@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ros-image_common
-PORTVERSION=	1.2.0
-PORTREVISION=	1
+PORTVERSION=	1.4.1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
+MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${STACKNAME}/${STACKNAME}-${PORTVERSION}/
 DISTNAME=	image_common-${PORTVERSION}
 DIST_SUBDIR=	ros
 
@@ -18,14 +17,16 @@ COMMENT=	Robot Operating System - common image routines
 LICENSE=	BSD
 
 STACKNAME=	${PORTNAME:S/ros-//}
-WRKSRC=		${WRKDIR}/${STACKNAME}
+WRKSRC=		${WRKDIR}/${STACKNAME}-${PORTVERSION}
 
 BUILD_DEPENDS=	rosmake:${PORTSDIR}/devel/ros \
 		${LOCALBASE}/ros/stacks/common/stack.xml:${PORTSDIR}/devel/ros-common \
+		${LOCALBASE}/ros/stacks/ros_comm/stack.xml:${PORTSDIR}/devel/ros_comm \
 		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/ros-common_msgs \
 		chrpath:${PORTSDIR}/devel/chrpath
 RUN_DEPENDS=	roscore:${PORTSDIR}/devel/ros \
 		${LOCALBASE}/ros/stacks/common/stack.xml:${PORTSDIR}/devel/ros-common \
+		${LOCALBASE}/ros/stacks/ros_comm/stack.xml:${PORTSDIR}/devel/ros_comm \
 		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/ros-common_msgs
 USE_PYTHON=	yes
 USE_BZIP2=	yes
@@ -39,7 +40,7 @@ MAKE_ENV+=	CPATH=${LOCALBASE}/include \
 		LIBRARY_PATH=${LOCALBASE}/lib \
 		MAKE=${LOCALBASE}/bin/gmake \
 		ROS_ROOT=${LOCALBASE}/ros/ros \
-		ROS_PACKAGE_PATH=${LOCALBASE}/ros/stacks/common:${LOCALBASE}/ros/stacks/common_msgs:${WRKSRC} \
+		ROS_PACKAGE_PATH=${LOCALBASE}/ros/stacks/ros_comm:${LOCALBASE}/ros/stacks/common:${LOCALBASE}/ros/stacks/common_msgs:${WRKSRC} \
 		PYTHONPATH=${LOCALBASE}/ros/ros/core/roslib/src
 
 MAKE_ARGS=	-i --no-rosdep --status-rate=0 --disable-logging
@@ -50,7 +51,8 @@ do-build:
 do-install:
 	${MKDIR} ${PREFIX}/ros/stacks/${STACKNAME}
 # delete files explicitly because negation in find (for COPYTREE_SHARE) is bogus
-.for d in camera_calibration_parsers image_transport polled_camera
+.for d in camera_calibration_parsers camera_info_manager image_transport \
+    polled_camera
 	${FIND} ${WRKSRC}/${d} -name build -type d -or -name \*.bak -type f \
 	    -or -name .svnignore -type f -or -name .cvsignore -type f \
 	    -or -name \*.orig | ${XARGS} ${RM} -rf
@@ -69,11 +71,16 @@ do-install:
 .endfor
 # strip and symlink ELF libaries
 .for f in camera_calibration_parsers/lib/libcamera_calibration_parsers.so \
+    camera_info_manager/lib/libcamera_info_manager.so \
     image_transport/lib/libimage_transport.so \
     polled_camera/lib/libpolled_camera.so
 	${STRIP_CMD} ${PREFIX}/ros/stacks/${STACKNAME}/${f}
 	${LOCALBASE}/bin/chrpath -d ${PREFIX}/ros/stacks/${STACKNAME}/${f}
 	${LN} -s ${PREFIX}/ros/stacks/${STACKNAME}/${f} ${PREFIX}/lib
 .endfor
+
+post-install:
+	${PYTHON_CMD} -O -mcompileall ${PREFIX}/ros/stacks/${STACKNAME}/
+	${PYTHON_CMD} -mcompileall ${PREFIX}/ros/stacks/${STACKNAME}/
 
 .include <bsd.port.mk>

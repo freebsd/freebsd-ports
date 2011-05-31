@@ -9,6 +9,7 @@ Filtering:
 Helper libraries:
 * actionlib: provides C++ and Python libraries for interacting with the Action
   API used by the executive.
+* bond: with C++ and Python bindings (bondcpp and bondpy).
 * nodelet: a way to run multiple algorithms within the same process abstracted
   with a ROS interface.
 * pluginlib: providea a C++ API for dynamically loading plugin classes.

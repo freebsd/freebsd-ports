@@ -5,10 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ros-laser_pipeline
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.2.0
 CATEGORIES=	devel
-MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
+MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${STACKNAME}/${STACKNAME}-${PORTVERSION}/
 DISTNAME=	laser_pipeline-${PORTVERSION}
 DIST_SUBDIR=	ros
 
@@ -18,15 +17,17 @@ COMMENT=	Robot Operating System - laser data processing utilities
 LICENSE=	BSD
 
 STACKNAME=	${PORTNAME:S/ros-//}
-WRKSRC=		${WRKDIR}/${STACKNAME}
+WRKSRC=		${WRKDIR}/${STACKNAME}-${PORTVERSION}
 
 BUILD_DEPENDS=	rosmake:${PORTSDIR}/devel/ros \
+		${LOCALBASE}/ros/stacks/ros_comm/stack.xml:${PORTSDIR}/devel/ros_comm \
 		${LOCALBASE}/ros/stacks/common/stack.xml:${PORTSDIR}/devel/ros-common \
 		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/ros-common_msgs \
 		${LOCALBASE}/ros/stacks/geometry/stack.xml:${PORTSDIR}/math/ros-geometry \
 		chrpath:${PORTSDIR}/devel/chrpath
 RUN_DEPENDS=	roscore:${PORTSDIR}/devel/ros \
 		${LOCALBASE}/ros/stacks/common/stack.xml:${PORTSDIR}/devel/ros-common \
+		${LOCALBASE}/ros/stacks/ros_comm/stack.xml:${PORTSDIR}/devel/ros_comm \
 		${LOCALBASE}/ros/stacks/common_msgs/stack.xml:${PORTSDIR}/devel/ros-common_msgs \
 		${LOCALBASE}/ros/stacks/geometry/stack.xml:${PORTSDIR}/math/ros-geometry
 USE_PYTHON=	yes
@@ -41,7 +42,7 @@ MAKE_ENV+=	CPATH=${LOCALBASE}/include \
 		LIBRARY_PATH=${LOCALBASE}/lib \
 		MAKE=${LOCALBASE}/bin/gmake \
 		ROS_ROOT=${LOCALBASE}/ros/ros \
-		ROS_PACKAGE_PATH=${LOCALBASE}/ros/stacks/common:${LOCALBASE}/ros/stacks/common_msgs:${LOCALBASE}/ros/stacks/geometry:${WRKSRC} \
+		ROS_PACKAGE_PATH=${LOCALBASE}/ros/stacks/ros_comm:${LOCALBASE}/ros/stacks/common:${LOCALBASE}/ros/stacks/common_msgs:${LOCALBASE}/ros/stacks/geometry:${WRKSRC} \
 		PYTHONPATH=${LOCALBASE}/ros/ros/core/roslib/src
 
 MAKE_ARGS=	-i --no-rosdep --status-rate=0 --disable-logging
@@ -68,7 +69,6 @@ do-install:
     laser_assembler/bin/point_cloud_assembler_srv \
     laser_assembler/examples/periodic_snapshotter \
     laser_assembler/test/dummy_scan_producer \
-    laser_assembler/test/test_assembler \
     laser_filters/bin/generic_laser_filter_node \
     laser_filters/bin/scan_to_cloud_filter_chain \
     laser_filters/bin/scan_to_scan_filter_chain
@@ -86,5 +86,9 @@ do-install:
 .endfor
 #make scripts executable
 	${CHMOD} 0555 ${PREFIX}/ros/stacks/${STACKNAME}/laser_filters/test/fake_laser.py
+
+post-install:
+	${PYTHON_CMD} -O -mcompileall ${PREFIX}/ros/stacks/${STACKNAME}/
+	${PYTHON_CMD} -mcompileall ${PREFIX}/ros/stacks/${STACKNAME}/
 
 .include <bsd.port.mk>

@@ -20,4 +20,4 @@
    fedora: pyusb
    rhel: python-usb
    gentoo: dev-python/pyusb
-+  freebsd: py26-usb
++  freebsd: py27-usb

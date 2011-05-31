@@ -6,8 +6,9 @@
 
 PORTNAME=	ros_tutorials
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	ftp://rene-ladan.nl/pub/distfiles/ros/
+MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
 DIST_SUBDIR=	ros
 
 MAINTAINER=	rene@FreeBSD.org
@@ -15,10 +16,10 @@ COMMENT=	Robot Operating System - tutorials
 
 LICENSE=	BSD
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
-BUILD_DEPENDS=	rosmake:${PORTSDIR}/devel/ros
-RUN_DEPENDS=	roscore:${PORTSDIR}/devel/ros
+BUILD_DEPENDS=	rosmake:${PORTSDIR}/devel/ros \
+		${LOCALBASE}/ros/stacks/ros_comm/stack.xml:${PORTSDIR}/devel/ros_comm
+RUN_DEPENDS=	roscore:${PORTSDIR}/devel/ros \
+		${LOCALBASE}/ros/stacks/ros_comm/stack.xml:${PORTSDIR}/devel/ros_comm
 USE_WX=		2.8
 USE_PYTHON=	yes
 USE_BZIP2=	yes
@@ -32,7 +33,7 @@ MAKE_ENV+=	CPATH=${LOCALBASE}/include \
 		LIBRARY_PATH=${LOCALBASE}/lib \
 		MAKE=${LOCALBASE}/bin/gmake \
 		ROS_ROOT=${LOCALBASE}/ros/ros \
-		ROS_PACKAGE_PATH=${WRKSRC} \
+		ROS_PACKAGE_PATH=${LOCALBASE}/ros/stacks/ros_comm:${WRKSRC} \
 		PYTHONPATH=${LOCALBASE}/ros/ros/core/roslib/src
 
 MAKE_ARGS=	-i --no-rosdep --status-rate=0 --disable-logging
@@ -98,5 +99,9 @@ do-install:
     rospy_tutorials/test/test_server_connection_header.py
 	${CHMOD} 0555 ${PREFIX}/ros/stacks/${PORTNAME}/${f}
 .endfor
+
+post-install:
+	${PYTHON_CMD} -O -mcompileall ${PREFIX}/ros/stacks/${PORTNAME}/
+	${PYTHON_CMD} -mcompileall ${PREFIX}/ros/stacks/${PORTNAME}/
 
 .include <bsd.port.mk>

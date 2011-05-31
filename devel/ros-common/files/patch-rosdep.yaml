@@ -1,6 +1,13 @@
---- rosdep.yaml.orig	2010-03-29 23:52:57.000000000 +0200
-+++ rosdep.yaml	2010-11-25 19:49:05.000000000 +0100
-@@ -4,6 +4,7 @@
+--- rosdep.yaml.orig	2011-02-25 05:21:33.000000000 +0100
++++ rosdep.yaml	2011-05-30 21:34:56.000000000 +0200
+@@ -2,12 +2,14 @@
+   ubuntu: uuid-dev
+   fedora: libuuid-devel
+   macports: ossp-uuid
++  freebsd: e2fsprogs-libuuid
+ sdl:
+   ubuntu: libsdl1.2-dev
+   debian: libsdl1.2-dev
    fedora: SDL-devel
    arch: sdl 
    macports: libsdl 
@@ -8,7 +15,7 @@
  sdl-image:
    ubuntu: libsdl-image1.2-dev
    debian: libsdl-image1.2-dev
-@@ -11,6 +12,7 @@
+@@ -15,6 +17,7 @@
    arch: sdl_image
    macports: libsdl_image
    gentoo: sdl-image
