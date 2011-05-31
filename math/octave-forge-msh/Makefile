@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge-msh
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
@@ -21,6 +21,6 @@ do-build:
 	@${DO_NADA}
 
 post-build:
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTAVE_PKGNAME}
+	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${DISTNAME}
 
 .include <bsd.port.post.mk>
