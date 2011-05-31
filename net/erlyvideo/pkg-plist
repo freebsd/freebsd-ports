@@ -10,6 +10,8 @@ lib/erlang/lib/amf-%%PORTVERSION%%/ebin/amf3.beam
 lib/erlang/lib/amf-%%PORTVERSION%%/ebin/amf3_tests.beam
 lib/erlang/lib/amf-%%PORTVERSION%%/ebin/eamf.app
 lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/aac.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/asf.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/deskshare.beam
 lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/ems_log.beam
 lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/erlmedia.app
 lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/flv.beam
@@ -32,8 +34,10 @@ lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/mp4_reader.beam
 lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/mp4_writer.beam
 lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/packet_codec.beam
 lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/sdp.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/sdp_encoder.beam
 lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/sdp_tests.beam
 lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/shoutcast_reader.beam
+lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/shoutcast_writer.beam
 lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/srt_parser.beam
 lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/video_frame.beam
 lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin/wav.beam
@@ -47,33 +51,8 @@ lib/erlang/lib/erlmedia-%%PORTVERSION%%/include/sdp.hrl
 lib/erlang/lib/erlmedia-%%PORTVERSION%%/include/srt.hrl
 lib/erlang/lib/erlmedia-%%PORTVERSION%%/include/video_frame.hrl
 lib/erlang/lib/erlmedia-%%PORTVERSION%%/include/wav.hrl
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl.beam
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_compiler.beam
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_dateformat.beam
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_dateformat_tests.beam
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_deps.beam
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_example_variable_storage.beam
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_filters.beam
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_functional_tests.beam
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_parser.beam
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_runtime.beam
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_scanner.beam
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin/erlydtl_unittests.beam
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl/erlydtl.app
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl/erlydtl.erl
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl/erlydtl_compiler.erl
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl/erlydtl_dateformat.erl
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl/erlydtl_deps.erl
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl/erlydtl_filters.erl
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl/erlydtl_parser.erl
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl/erlydtl_parser.yrl
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl/erlydtl_runtime.erl
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl/erlydtl_scanner.erl
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/tests/erlydtl_dateformat_tests.erl
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/tests/erlydtl_example_variable_storage.erl
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/tests/erlydtl_functional_tests.erl
-lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/tests/erlydtl_unittests.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/Emakefile
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/anonymous_seek_protection.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/apps_push.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/apps_recording.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/apps_rewrite_play.beam
@@ -81,29 +60,32 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/apps_rewrite_publish.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/apps_stat_collector.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/apps_streaming.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/array_timeshift.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/auth_iphone.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/auth_users_limit.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/deskshare_tracker.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/directory_playlist.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_debug.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_event.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_event_consumer.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_event_hook.beam
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_flv_streams.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_hook_http.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_deskshare.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_erlyvideo_api.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_file.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_flv.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_push.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_rtmpt.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_shoutcast.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_switch_source.beam
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_http_templates.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_license_client.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_media.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_media_client_control.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_media_clients.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_media_flow_tests.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_media_frame.beam
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_media_tests.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_media_timeout_tests.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_network_lag_monitor.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_rtsp.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ems_shoutcast.beam
@@ -118,7 +100,6 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/erlyvideo_ctl.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/file_media.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/file_password_publish.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/fitc_demo.beam
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/gen_cache.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/gen_server_ems.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/http_media.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/io_lib_pretty_limited.beam
@@ -131,8 +112,10 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/media_provider.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/media_ticker.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/misultin_req.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/misultin_socket.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mmap.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mochijson2.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mochiweb_util.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mpegts_encode_tests.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mpegts_file_media.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mpegts_media.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mpegts_passive_media.beam
@@ -146,6 +129,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/rtmp_media.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/rtmp_proxy.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/rtmp_publish.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/rtmp_publish_tests.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/rtmp_read_tests.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/rtmp_session.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/rtsp_media.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/shared_object.beam
@@ -156,28 +140,15 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/uuid.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/ems_media.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/erlyvideo.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include/rtmp_session.hrl
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/LICENSE.txt
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/README.txt
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/compile
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/compile.bat
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/examples/misultin_echo.erl
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/examples/misultin_file.erl
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/examples/misultin_gen_server.erl
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/examples/misultin_get_variable.erl
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/examples/misultin_hello_world.erl
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/examples/misultin_rest.erl
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/examples/misultin_stream.erl
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/include/misultin.hrl
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/src/misultin.app
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/src/misultin_req.erl
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/src/misultin_socket.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/apps/apps_push.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/apps/apps_recording.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/apps/apps_stat_collector.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/apps/apps_streaming.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/apps/remove_useless_prefix.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/anonymous_seek_protection.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/apps_rewrite_play.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/apps_rewrite_publish.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/auth_iphone.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/auth_users_limit.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/file_password_publish.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/json_session.erl
@@ -186,20 +157,20 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/password_publish.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/referer_check.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth/trusted_login.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/core/ems_network_lag_monitor.erl
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/core/gen_cache.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/core/gen_server_ems.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/core/io_lib_pretty_limited.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/core/mmap.c
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/core/mmap.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/core/mochijson2.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/core/mochiweb_util.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/core/uuid.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/demos/fitc_demo.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/deskshare_tracker.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ems.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ems.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ems_debug.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ems_event.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ems_event_consumer.erl
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ems_flv_streams.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ems_license_client.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ems_rtsp.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/ems_sup.erl
@@ -210,13 +181,14 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/erlyvideo_ctl.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/hooks/ems_event_hook.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/hooks/ems_hook_http.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_deskshare.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_erlyvideo_api.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_file.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_flv.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_push.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_rtmpt.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_shoutcast.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_switch_source.erl
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http/ems_http_templates.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/jsonerl.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/jsonerl.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/log.hrl
@@ -227,7 +199,6 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/ems_media_client.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/ems_media_client_control.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/ems_media_clients.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/ems_media_frame.erl
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/ems_media_tests.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/ems_shoutcast.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/file_media.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/http_media.erl
@@ -242,6 +213,9 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/proxy_media.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/rtmp_media.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media/rtsp_media.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/meta_access.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/misultin/misultin.hrl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/misultin/misultin_req.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/misultin/misultin_socket.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/reverse_mpegts.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp/rtmp_dump.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp/rtmp_proxy.erl
@@ -250,6 +224,8 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp/rtmp_session.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp/shared_objects/shared_object.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp/shared_objects/shared_object.hrl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp/shared_objects/shared_objects.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/sip/apps_sip.erl
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/sip/ems_sip.erl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/tpl/_ems_http.tpl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/tpl/_ems_media.tpl
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/tpl/_gen_consumer.tpl
@@ -341,6 +317,8 @@ lib/erlang/lib/rtp-%%PORTVERSION%%/ebin/rtp.app
 lib/erlang/lib/rtp-%%PORTVERSION%%/ebin/rtp.beam
 lib/erlang/lib/rtp-%%PORTVERSION%%/ebin/rtp_decoder.beam
 lib/erlang/lib/rtp-%%PORTVERSION%%/ebin/rtp_decoder_tests.beam
+lib/erlang/lib/rtp-%%PORTVERSION%%/ebin/rtp_encoder.beam
+lib/erlang/lib/rtp-%%PORTVERSION%%/ebin/rtp_server.beam
 lib/erlang/lib/rtp-%%PORTVERSION%%/ebin/rtp_sup.beam
 lib/erlang/lib/rtp-%%PORTVERSION%%/include/rtp.hrl
 lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp.app
@@ -348,11 +326,11 @@ lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp.beam
 lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp_example_callback.beam
 lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp_inbound.beam
 lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp_listener.beam
+lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp_outbound.beam
 lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp_socket.beam
 lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp_sup.beam
 lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp_test_client.beam
 lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp_tests.beam
-%%WWWDIR%%/wwwroot/admin.html
 %%WWWDIR%%/wwwroot/admin/adapter/ext/ext-base-debug.js
 %%WWWDIR%%/wwwroot/admin/adapter/ext/ext-base.js
 %%WWWDIR%%/wwwroot/admin/adapter/jquery/ext-jquery-adapter-debug.js
@@ -1277,9 +1255,12 @@ lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp_tests.beam
 %%WWWDIR%%/wwwroot/index.html
 %%WWWDIR%%/wwwroot/iphone.html
 %%WWWDIR%%/wwwroot/js/jquery.js
-%%WWWDIR%%/wwwroot/js/jsSO.js
 %%WWWDIR%%/wwwroot/js/netconnection.js
 %%WWWDIR%%/wwwroot/js/swfobject.js
+%%WWWDIR%%/wwwroot/jsSO/index.html
+%%WWWDIR%%/wwwroot/jsSO/jsSO.js
+%%WWWDIR%%/wwwroot/jsSO/jsSO.mxml
+%%WWWDIR%%/wwwroot/jsSO/jsSO.swf
 %%WWWDIR%%/wwwroot/jwplayer/jwplayer.js
 %%WWWDIR%%/wwwroot/jwplayer/license.txt
 %%WWWDIR%%/wwwroot/jwplayer/player.swf
@@ -1292,6 +1273,7 @@ lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp_tests.beam
 %%WWWDIR%%/wwwroot/phone/index.html
 @dirrm %%WWWDIR%%/wwwroot/phone
 @dirrm %%WWWDIR%%/wwwroot/jwplayer
+@dirrm %%WWWDIR%%/wwwroot/jsSO
 @dirrm %%WWWDIR%%/wwwroot/js
 @dirrm %%WWWDIR%%/wwwroot/flowplayer
 @dirrm %%WWWDIR%%/wwwroot/admin/resources/images/yourtheme/window
@@ -1407,8 +1389,10 @@ lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp_tests.beam
 @dirrm lib/erlang/lib/ibrowse-2.1.3/ebin
 @dirrm lib/erlang/lib/ibrowse-2.1.3
 @dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/tpl
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/sip
 @dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp/shared_objects
 @dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/rtmp
+@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/misultin
 @dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/media
 @dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/http
 @dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/hooks
@@ -1417,19 +1401,9 @@ lib/erlang/lib/rtsp-%%PORTVERSION%%/ebin/rtsp_tests.beam
 @dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/auth
 @dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src/apps
 @dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/src
-@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/src
-@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/include
-@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin/examples
-@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib/misultin
-@dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/lib
 @dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/include
 @dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin
 @dirrm lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%
-@dirrm lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/tests
-@dirrm lib/erlang/lib/erlydtl-%%PORTVERSION%%/src/erlydtl
-@dirrm lib/erlang/lib/erlydtl-%%PORTVERSION%%/src
-@dirrm lib/erlang/lib/erlydtl-%%PORTVERSION%%/ebin
-@dirrm lib/erlang/lib/erlydtl-%%PORTVERSION%%
 @dirrm lib/erlang/lib/erlmedia-%%PORTVERSION%%/include
 @dirrm lib/erlang/lib/erlmedia-%%PORTVERSION%%/ebin
 @dirrm lib/erlang/lib/erlmedia-%%PORTVERSION%%
