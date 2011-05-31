@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}-src
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	wxs@FreeBSD.org
+MAINTAINER=	glewis@eyesbeyond.com
 COMMENT=	A dungeon explorin', slashin', hackin' game
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
