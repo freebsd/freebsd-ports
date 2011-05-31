@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hydra
-PORTVERSION=	6.1
+PORTVERSION=	6.2
 CATEGORIES=	security
 MASTER_SITES=	http://freeworld.thc.org/releases/
 EXTRACT_SUFX=	-src.tar.gz
@@ -18,12 +18,14 @@ COMMENT=	Brute force attack utility working on multiple network services
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
 NO_LATEST_LINK=	yes
-PLIST_FILES=	bin/hydra
+PLIST_FILES=	bin/hydra bin/pw-inspector
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 WANT_GNOME=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-src
+
+MAN1=		hydra.1 pw-inspector.1
 
 OPTIONS=	FIREBIRD "Enable firebird support" off \
 		SSH "Enable ssh support" off \
@@ -45,6 +47,7 @@ LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
 .if defined(WITH_X11)
 USE_GNOME=	gtk20
 PLIST_FILES+=	bin/xhydra
+MAN1+=		xhydra.1
 .else
 CONFIGURE_ARGS+=	--disable-xhydra
 .endif
@@ -56,8 +59,12 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/hydra ${PREFIX}/bin
+	@${INSTALL_PROGRAM} ${WRKSRC}/pw-inspector ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/hydra.1 ${MANPREFIX}/man/man1/hydra.1
+	@${INSTALL_MAN} ${WRKSRC}/pw-inspector.1 ${MANPREFIX}/man/man1/pw-inspector.1
 .if defined(WITH_X11)
 	@${INSTALL_PROGRAM} ${WRKSRC}/hydra-gtk/src/xhydra ${PREFIX}/bin
+	@${INSTALL_MAN} ${WRKSRC}/xhydra.1 ${MANPREFIX}/man/man1/xhydra.1
 .endif
 
 .include <bsd.port.post.mk>
