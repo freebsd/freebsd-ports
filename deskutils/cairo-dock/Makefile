@@ -20,7 +20,6 @@ LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig glib20 gtk20 librsvg2 libxml2
 USE_LDCONFIG=	yes
 USE_XORG=	xrender xtst
