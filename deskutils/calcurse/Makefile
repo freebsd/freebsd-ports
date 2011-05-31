@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	calcurse
-PORTVERSION=	2.8
+PORTVERSION=	2.9.0
 CATEGORIES=	deskutils
-MASTER_SITES=	ftp://ftp2.culot.org/culot/
+MASTER_SITES=	http://calcurse.org/files/ \
+		ftp://ftp2.culot.org/culot/
 
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	A text-based calendar and scheduling application
@@ -23,6 +24,17 @@ PLIST_SUB+=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+.endif
+
+post-patch:
+.if !defined(NOPORTDOCS)
+	${REINPLACE_CMD} -e \
+		's|^docdir = .*|docdir = ${DOCSDIR}|' \
+		${WRKSRC}/doc/Makefile.in
+.else
+	${REINPLACE_CMD} -e \
+		'/install-data-am/ s|install-dist_docDATA||' \
+		${WRKSRC}/doc/Makefile.in
 .endif
 
 .include <bsd.port.mk>
