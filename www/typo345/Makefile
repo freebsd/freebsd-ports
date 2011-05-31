@@ -6,30 +6,30 @@
 #
 
 PORTNAME=	typo3
-PORTVERSION=	4.5.2
-PORTREVISION=	1
+PORTVERSION=	4.5.3
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION} \
-		http://dl1.typo3.org/TYPO3_${PORTVERSION}/
-DISTNAME=	${PORTNAME}_src-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/TYPO3%20Source%20and%20Dummy/TYPO3%20${PORTVERSION}
+DISTNAME=	${TYPO3EDITION}-${PORTVERSION}
 
 MAINTAINER=	jumper99@gmx.de
 COMMENT=	The typo3 content management system
 
 LICENSE=	GPLv2
 
+LATEST_LINK=	${PORTNAME}
 NO_BUILD=	yes
 USE_PHP=	ctype filter json mysql pcre session xml
 WANT_PHP_WEB=	yes
 IGNORE_WITH_PHP=	4
 
-TYPO3DIR=	www/${DISTNAME}
-SITEDIR?=	www/typo3
-SITESRC=	${WRKDIR}/${EDITION}-${PORTVERSION}
+TYPO3WWW=	www
+TYPO3VER=	typo3
+TYPO3SITE=	${TYPO3WWW}/${TYPO3VER}
+TYPO3PKG=	${TYPO3EDITION}-${PORTVERSION}
+TYPO3SRC=	typo3_src-${PORTVERSION}
+TYPO3EDITION=	blankpackage
 
-EDITION=	dummy
-
-DISTFILES+=	${DISTNAME}${EXTRACT_SUFX} ${EDITION}-${PORTVERSION}${EXTRACT_SUFX}
+DISTFILES+=	${TYPO3EDITION}-${PORTVERSION}${EXTRACT_SUFX}
 
 OPTIONS=	CURL "Configure with cURL support" off \
 		GD "Configure with GDlib/freetype support" off \
@@ -60,22 +60,25 @@ USE_PHP+=	zlib
 .endif
 
 pre-install:
-	${MV} ${SITESRC}/typo3conf/localconf.php ${SITESRC}/typo3conf/localconf.php.dist
+	${MV} ${WRKDIR}/${TYPO3PKG}/typo3conf/localconf.php ${WRKDIR}/${TYPO3PKG}/typo3conf/localconf.php.dist
 
 do-install:
-	${CP} -R ${WRKSRC} ${PREFIX}/${TYPO3DIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${TYPO3DIR}
-	${CP} -R ${SITESRC} ${PREFIX}/${SITEDIR}
-	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${SITEDIR}
+	${CP} -R ${WRKDIR}/${TYPO3PKG}/ ${PREFIX}/${TYPO3SITE}
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${TYPO3SITE}
+	${MV} ${PREFIX}/${TYPO3SITE}/${TYPO3SRC} ${PREFIX}/${TYPO3WWW}
+	${RM} ${PREFIX}/${TYPO3SITE}/typo3_src && \
+		cd ${PREFIX}/${TYPO3SITE} && \
+		${LN} -s ../${TYPO3SRC} typo3_src
+	${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/${TYPO3WWW}/${TYPO3SRC}
 
 post-install:
-	@${FIND} ${PREFIX}/${TYPO3DIR} -not -type d \
-	  | ${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
-	@${FIND} -d ${PREFIX}/${TYPO3DIR} -type d \
-	  | ${SED} -ne 's,^${PREFIX}/${TYPO3DIR},@dirrm ${TYPO3DIR},p' >> ${TMPPLIST}
-	@${FIND} ${PREFIX}/${SITEDIR} -not -type d \
-	  | ${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
-	@${FIND} -d ${PREFIX}/${SITEDIR} -type d \
-	  | ${SED} -ne 's,^${PREFIX}/${SITEDIR},@dirrm ${SITEDIR},p' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/${TYPO3WWW}/${TYPO3SRC} -not -type d \
+		| ${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
+	@${FIND} -d ${PREFIX}/${TYPO3WWW}/${TYPO3SRC} -type d \
+		| ${SED} -ne 's,^${PREFIX}/${TYPO3WWW}/${TYPO3SRC},@dirrm ${TYPO3DIR}/${TYPO3WWW}/${TYPO3SRC},p' >> ${TMPPLIST}
+	@${FIND} ${PREFIX}/${TYPO3SITE} -not -type d \
+		| ${SED} -ne 's,^${PREFIX}/,,p' >> ${TMPPLIST}
+	@${FIND} -d ${PREFIX}/${TYPO3SITE} -type d \
+		| ${SED} -ne 's,^${PREFIX}/${TYPO3SITE},@dirrm ${TYPO3SITE},p' >> ${TMPPLIST}
 
 .include <bsd.port.post.mk>
