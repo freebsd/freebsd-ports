@@ -3,8 +3,12 @@ bin/workrave
 %%GNOME%%libdata/bonobo/servers/Workrave-Control.server
 %%GNOME%%libexec/workrave-applet
 %%GNOME%%share/gnome-2.0/ui/GNOME_WorkraveApplet.xml
-share/pixmaps/workrave/workrave.xpm
-share/pixmaps/workrave/workrave-icon-huge.png
+share/dbus-1/services/org.workrave.Workrave.service
+share/locale/ga/LC_MESSAGES/workrave.mo
+share/locale/ko/LC_MESSAGES/workrave.mo
+share/locale/te/LC_MESSAGES/workrave.mo
+share/icons/hicolor/48x48/apps/workrave-icon-huge.png
+share/icons/hicolor/scalable/apps/workrave-sheep.svg
 share/sounds/workrave/subtle/break-ignored.wav
 share/sounds/workrave/subtle/break-prelude.wav
 share/sounds/workrave/subtle/daily-limit.wav
@@ -27,7 +31,7 @@ share/sounds/workrave/default/micro-break-started.wav
 share/sounds/workrave/default/rest-break-ended.wav
 share/sounds/workrave/default/rest-break-started.wav
 share/sounds/workrave/default/soundtheme
-%%DATADIR%%/images/workrave.xpm
+share/workrave/images/workrave.xpm
 %%DATADIR%%/exercises/backward-shoulder-stretch.png
 %%DATADIR%%/exercises/chair-pushup-1.png
 %%DATADIR%%/exercises/chair-pushup-2.png
@@ -105,4 +109,3 @@ share/sounds/workrave/default/soundtheme
 @dirrm share/sounds/workrave/default
 @dirrm share/sounds/workrave/subtle
 @dirrm share/sounds/workrave
-@dirrm share/pixmaps/workrave

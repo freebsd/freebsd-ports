@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	workrave
-PORTVERSION=	1.9.1
-PORTREVISION=	4
+PORTVERSION=	1.9.4
 CATEGORIES=	x11 gnome
 MASTER_SITES=	SF
 
@@ -19,11 +18,12 @@ BUILD_DEPENDS=	gdome-config:${PORTSDIR}/textproc/gdome2
 OPTIONS=	GNOME "Build with Gnome support" off \
 		NETWORK "Build with network support" off
 
+INSTALLS_ICONS=	yes
 DESKTOP_ENTRIES=	"Workrave" "An RSI prevention tool" \
 					"${DATADIR}/images/workrave-icon-small.png" \
 					"workrave" \
 					"Application;Utility;" \
-					false
+					${FALSE}
 
 USE_XORG=	x11 xmu recordproto xtst xext
 USE_GMAKE=	yes
@@ -31,10 +31,9 @@ MAKE_JOBS_SAFE=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 intltool
 USE_GSTREAMER=	good
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		LIBS="`pkg-config --libs libgnomeui-2.0`"
-CONFIGURE_ARGS=	--enable-gconf
+CONFIGURE_ARGS=	--enable-gconf --disable-pulse
 
 .include <bsd.port.pre.mk>
 LIB_DEPENDS+=	gdome.8:${PORTSDIR}/textproc/gdome2
@@ -62,18 +61,5 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|#include <sigc++\/compatibility\.h>||g ; \
-		s|SigC::Signal|sigc::signal|g ; \
-		s|SigC::slot_class|sigc::mem_fun|g ; \
-		s|SigC::Connection|sigc::connection|g ; \
-		s|SigC::Slot|sigc::slot|g ; \
-		s|SigC::Object|sigc::trackable|g ; \
-		s|SigC::slot|sigc::mem_fun|g' \
-			${WRKSRC}/frontend/gtkmm/src/*.* \
-			${WRKSRC}/frontend/plugin/*/gtkmm/src/*.*
-	@${REINPLACE_CMD} -e 's|Gtk::HButtonBox|Gtk::ButtonBox|g' \
-		${WRKSRC}/frontend/plugin/exercises/gtkmm/src/ExercisesPanel.*
 
 .include <bsd.port.post.mk>
