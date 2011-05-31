@@ -2756,6 +2756,7 @@
     SUBDIR += projectcenter.app
     SUBDIR += projectmanager
     SUBDIR += protobuf
+    SUBDIR += protobuf-c
     SUBDIR += prototype
     SUBDIR += psptoolchain
     SUBDIR += psptoolchain-binutils
