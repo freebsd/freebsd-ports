@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	redmine
-PORTVERSION=	1.1.3
+PORTVERSION=	1.2.0
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -59,11 +59,6 @@ RUN_DEPENDS+=	passenger-config:${PORTSDIR}/www/rubygem-passenger
 IGNORE=		either Thin or Apache/Nginx WEB server option required. \
 		Please 'make config' again.
 .endif
-
-post-patch:
-	# hack to fix template syntax for rubygem-i18n >= 0.5.0
-	${FIND} ${WRKSRC} -name "*.yml" -type f | ${XARGS} ${REINPLACE_CMD} -e \
-		's|{{|%{|g ; s|}}|}|g'
 
 do-install:
 	${MKDIR} ${WWWDIR}
