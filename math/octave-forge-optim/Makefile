@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	octave-forge-optim
-PORTVERSION=	1.0.12
+PORTVERSION=	1.0.16
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
