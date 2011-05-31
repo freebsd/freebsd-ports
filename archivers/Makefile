@@ -65,6 +65,7 @@
     SUBDIR += libpar2
     SUBDIR += librtfcomp
     SUBDIR += libunrar
+    SUBDIR += libunrar4
     SUBDIR += libzip
     SUBDIR += linux-f10-ucl
     SUBDIR += linux-f10-upx
