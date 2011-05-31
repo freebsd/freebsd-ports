@@ -915,6 +915,7 @@
     SUBDIR += libvanessa_logger
     SUBDIR += libvanessa_socket
     SUBDIR += libvc
+    SUBDIR += libvirt
     SUBDIR += libvolume_id
     SUBDIR += libwfut
     SUBDIR += libx86
