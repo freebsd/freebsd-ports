@@ -6,14 +6,20 @@
 #
 
 PORTNAME=	octave-forge-nan
-PORTVERSION=	1.0.9
-PORTREVISION=	3
+PORTVERSION=	2.4.4
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-GNU_CONFIGURE=	yes
+
+WRKSRC=		${WRKDIR}/NaN/src
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
+
+ALL_TARGET=	octave
+
+post-build:
+	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz NaN
+
 .include <bsd.port.post.mk>
