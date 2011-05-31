@@ -7,7 +7,7 @@
 
 PORTNAME=	webfrontend
 PORTVERSION=	3.1.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils net parallel www
 MASTER_SITES=	SF/ganglia/ganglia%20monitoring%20core/${PORTVERSION}
 PKGNAMEPREFIX=	ganglia-
@@ -99,7 +99,7 @@ build-plist:
 	@${FIND} ${TMP_WEBFRONTDIR}/* -type d | \
 	    ${SED} -e 's|${TMP_WEBFRONTDIR}|@dirrm %%WEBFRONTDIR%%|' | \
 	    ${SORT} -r >> ${PLIST}
-	@${ECHO_CMD} '@dirrmtry ${RMDIR} %D/%%WEBFRONTDIR%%' >> ${PLIST}
+	@${ECHO_CMD} '@dirrmtry %%WEBFRONTDIR%%' >> ${PLIST}
 	@${ECHO_CMD} '@unexec (test -d %D/%%WEBFRONTDIR%% && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %D/%%WEBFRONTDIR%% and its contents manually.")) || true' >> ${PLIST}
 
 .include <bsd.port.mk>
