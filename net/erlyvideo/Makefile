@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	erlyvideo
-PORTVERSION=	2.7.4
+PORTVERSION=	2.8.1
 CATEGORIES=	net
 MASTER_SITES=	http://host5.webstroy.ru/
 
@@ -23,8 +23,8 @@ USE_GMAKE=	yes
 
 ERLANGDIR=	${PREFIX}/lib/erlang
 ERLYDIR=	${ERLANGDIR}/lib/${PORTNAME}-${PORTVERSION}
-ERLYVIDEO=	ebin src include lib Emakefile
-DEPSLIST=	amf log4erl erlydtl erlmedia mpegts rtmp rtp rtsp ibrowse
+ERLYVIDEO=	ebin src include Emakefile
+DEPSLIST=	amf log4erl erlmedia mpegts rtmp rtp rtsp ibrowse
 PLIST_SUB=	PORTNAME=${PORTNAME} PORTVERSION=${PORTVERSION}
 SUB_FILES=	pkg-deinstall
 
@@ -39,7 +39,7 @@ post-patch:
 		${WRKSRC}/priv/${PORTNAME}.conf.sample
 	@${FIND} ${WRKSRC} -type f -name .gitignore | ${XARGS} ${RM}
 	@${FIND} ${WRKSRC} -type f -name "*.bak" | ${XARGS} ${RM}
-	@${RMDIR} ${WRKSRC}/lib/misultin/ebin ${WRKSRC}/src/plugins
+	@${RMDIR} ${WRKSRC}/src/plugins
 
 do-install:
 	${MKDIR} ${ETCDIR} ${ERLYDIR} ${WWWDIR}
