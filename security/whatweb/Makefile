@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	whatweb
-PORTVERSION=	0.4.5
+PORTVERSION=	0.4.7
 CATEGORIES=	security www
 MASTER_SITES=	http://www.morningstarsecurity.com/downloads/
 
@@ -15,7 +15,7 @@ COMMENT=	A tool to fingerprint web site components
 
 USE_RUBY=	yes
 NO_BUILD=	yes
-PORTDOCS=	README INSTALL CHANGELOG TODO How-to-develop-WhatWeb-plugins-1.1.txt
+PORTDOCS=	README INSTALL CHANGELOG TODO
 MAN1=		${PORTNAME}.1
 MANCOMPRESSED=	no
 LICENSE=	GPLv2
