@@ -6,16 +6,22 @@
 #
 
 PORTNAME=	octave-forge-tsa
-PORTVERSION=	4.0.1
-PORTREVISION=	3
+PORTVERSION=	4.1.1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@missouri.edu
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-GNU_CONFIGURE=	yes
+
+EXTRACT_SUFX=	.tgz
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/nan.tar.gz:${PORTSDIR}/math/octave-forge-nan
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
+do-build:
+	@${DO_NADA}
+
+post-build:
+	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTAVE_PKGNAME}
+
 .include <bsd.port.post.mk>
