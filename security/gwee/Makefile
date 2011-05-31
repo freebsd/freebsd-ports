@@ -8,13 +8,11 @@
 PORTNAME=	gwee
 PORTVERSION=	1.36
 CATEGORIES=	security www
-MASTER_SITES=	http://tigerteam.se/dl/gwee/
+MASTER_SITES=	PACKETSTORM
+MASTER_SITE_SUBDIR=	UNIX/utilities
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to exploit command execution vulnerabilities in web scripts
-
-DEPRECATED=     Upstream disapear and distfile is no more available
-EXPIRATION_DATE=        2011-05-01
 
 USE_OPENSSL=	yes
 USE_PERL5=	yes
