@@ -14,8 +14,11 @@ bin/gcov2perl
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Condition_xor_4.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Criterion.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB/Digests.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB/File.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB/IO.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB/IO/JSON.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB/IO/Storable.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB/Structure.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Inc.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Op.pm
@@ -41,6 +44,7 @@ bin/gcov2perl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel/Cover
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Devel
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Report
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB/IO
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/DB
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover/Annotation
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Devel/Cover
