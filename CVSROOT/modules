@@ -2106,6 +2106,7 @@ cyrus-sasl2-ldapdb              ports/security/cyrus-sasl2-ldapdb
 cyrus-sasl2-saslauthd           ports/security/cyrus-sasl2-saslauthd
 cyrus2courier                   ports/mail/cyrus2courier
 cython                          ports/lang/cython
+czmq                            ports/devel/czmq
 d-feet                          ports/devel/d-feet
 d2x                             ports/games/d2x
 d2x-xl                          ports/games/d2x-xl
@@ -6234,6 +6235,7 @@ ja-ipadic                       ports/japanese/ipadic
 ja-ircII                        ports/japanese/ircII
 ja-ircii                        ports/japanese/ircII
 ja-ja6                          ports/japanese/ja6
+ja-jacode.pl                    ports/japanese/jacode.pl
 ja-jadetex-ptex                 ports/japanese/jadetex-ptex
 ja-japana                       ports/japanese/japana
 ja-japaneseAFM                  ports/japanese/japaneseAFM
@@ -7205,6 +7207,12 @@ kmenc15                         ports/multimedia/kmenc15
 kmerlin                         ports/net-im/kmerlin
 kmess                           ports/net-im/kmess
 kmess-kde4                      ports/net-im/kmess-kde4
+kmfl-european-latin             ports/textproc/kmfl-european-latin
+kmfl-sil-ezra                   ports/textproc/kmfl-sil-ezra
+kmfl-sil-galatia                ports/textproc/kmfl-sil-galatia
+kmfl-sil-panafrican-latin       ports/textproc/kmfl-sil-panafrican-latin
+kmfl-sil-yi                     ports/textproc/kmfl-sil-yi
+kmfl-varamozhi-malayalam        ports/textproc/kmfl-varamozhi-malayalam
 kmflcomp                        ports/textproc/kmflcomp
 kmilo                           ports/sysutils/kmilo
 kmldonkey                       ports/net-p2p/kmldonkey
