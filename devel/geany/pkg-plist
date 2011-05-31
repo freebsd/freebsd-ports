@@ -103,8 +103,10 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%DATADIR%%/filetypes.d
 %%DATADIR%%/filetypes.diff
 %%DATADIR%%/filetypes.docbook
+%%DATADIR%%/filetypes.erlang
 %%DATADIR%%/filetypes.f77
 %%DATADIR%%/filetypes.ferite
+%%DATADIR%%/filetypes.forth
 %%DATADIR%%/filetypes.fortran
 %%DATADIR%%/filetypes.freebasic
 %%DATADIR%%/filetypes.glsl
@@ -115,6 +117,7 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%DATADIR%%/filetypes.javascript
 %%DATADIR%%/filetypes.latex
 %%DATADIR%%/filetypes.lua
+%%DATADIR%%/filetypes.lisp
 %%DATADIR%%/filetypes.makefile
 %%DATADIR%%/filetypes.markdown
 %%DATADIR%%/filetypes.matlab
@@ -143,6 +146,12 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%DATADIR%%/python.tags
 %%DATADIR%%/snippets.conf
 %%DATADIR%%/ui_toolbar.xml
+%%DATADIR%%/colorschemes/alt.conf
+%%DATADIR%%/templates/bsd
+%%DATADIR%%/templates/changelog
+%%DATADIR%%/templates/fileheader
+%%DATADIR%%/templates/function
+%%DATADIR%%/templates/gpl
 %%DATADIR%%/templates/files/file.html
 %%DATADIR%%/templates/files/file.php
 %%DATADIR%%/templates/files/file.rb
@@ -168,6 +177,7 @@ share/icons/hicolor/scalable/apps/geany.svg
 %%NLS%%share/locale/hu/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/it/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/geany.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/lb/LC_MESSAGES/geany.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/geany.mo
@@ -188,6 +198,7 @@ share/icons/hicolor/scalable/apps/geany.svg
 @dirrm lib/geany
 @dirrm %%DATADIR%%/templates/files
 @dirrm %%DATADIR%%/templates
+@dirrm %%DATADIR%%/colorschemes
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
