@@ -1,0 +1,40 @@
+bin/xmltk
+%%SITE_PERL%%/XML/Filter/Moose.pm
+%%SITE_PERL%%/XML/Generator/Moose.pm
+%%SITE_PERL%%/XML/Toolkit.pm
+%%SITE_PERL%%/XML/Toolkit/App.pm
+%%SITE_PERL%%/XML/Toolkit/Builder.pm
+%%SITE_PERL%%/XML/Toolkit/Builder/ClassRegistry.pm
+%%SITE_PERL%%/XML/Toolkit/Builder/ClassTemplate.pm
+%%SITE_PERL%%/XML/Toolkit/Builder/Filter.pm
+%%SITE_PERL%%/XML/Toolkit/Builder/NamespaceRegistry.pm
+%%SITE_PERL%%/XML/Toolkit/Cmd.pm
+%%SITE_PERL%%/XML/Toolkit/Cmd/ClassTemplate.pm
+%%SITE_PERL%%/XML/Toolkit/Cmd/Command/generate.pm
+%%SITE_PERL%%/XML/Toolkit/Cmd/Command/validate.pm
+%%SITE_PERL%%/XML/Toolkit/Config.pm
+%%SITE_PERL%%/XML/Toolkit/Config/Container.pm
+%%SITE_PERL%%/XML/Toolkit/Generator.pm
+%%SITE_PERL%%/XML/Toolkit/Generator/Default.pm
+%%SITE_PERL%%/XML/Toolkit/Generator/Interface.pm
+%%SITE_PERL%%/XML/Toolkit/Loader.pm
+%%SITE_PERL%%/XML/Toolkit/Loader/Filter.pm
+%%SITE_PERL%%/XML/Toolkit/MetaDescription.pm
+%%SITE_PERL%%/XML/Toolkit/MetaDescription/Attribute.pm
+%%SITE_PERL%%/XML/Toolkit/MetaDescription/Trait.pm
+%%SITE_PERL%%/XML/Toolkit/Trait/NoXML.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Toolkit/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Toolkit
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
+@dirrm %%SITE_PERL%%/XML/Toolkit/Trait
+@dirrm %%SITE_PERL%%/XML/Toolkit/MetaDescription
+@dirrm %%SITE_PERL%%/XML/Toolkit/Loader
+@dirrm %%SITE_PERL%%/XML/Toolkit/Generator
+@dirrm %%SITE_PERL%%/XML/Toolkit/Config
+@dirrm %%SITE_PERL%%/XML/Toolkit/Cmd/Command
+@dirrm %%SITE_PERL%%/XML/Toolkit/Cmd
+@dirrm %%SITE_PERL%%/XML/Toolkit/Builder
+@dirrm %%SITE_PERL%%/XML/Toolkit
+@dirrm %%SITE_PERL%%/XML/Generator
+@dirrm %%SITE_PERL%%/XML/Filter
+@dirrmtry %%SITE_PERL%%/XML
