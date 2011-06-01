@@ -2,10 +2,14 @@
 bin/gorilla
 lib/gorilla/gorilla.tcl
 lib/gorilla/isaac.tcl
+lib/gorilla/non-modal.tcl
+lib/gorilla/viewhelp.tcl
 lib/gorilla/blowfish/LICENSE.txt
 lib/gorilla/blowfish/blowfish.tcl
 lib/gorilla/blowfish/blowtest.tcl
 lib/gorilla/blowfish/pkgIndex.tcl
+lib/gorilla/msgs/de.msg
+lib/gorilla/msgs/ru.msg
 lib/gorilla/pics/browse.gif
 lib/gorilla/pics/gorilla-16x16.gif
 lib/gorilla/pics/gorilla-32x32.gif
@@ -23,16 +27,49 @@ lib/gorilla/pwsafe/pwsafe.tcl
 lib/gorilla/pwsafe/pwtest.tcl
 lib/gorilla/pwsafe/pwsafe-v2.tcl
 lib/gorilla/pwsafe/pwsafe-v3.tcl
+lib/gorilla/sha1/ChangeLog
 lib/gorilla/sha1/LICENSE.txt
 lib/gorilla/sha1/pkgIndex.tcl
+lib/gorilla/sha1/sha1.c
+lib/gorilla/sha1/sha1v1.test
+lib/gorilla/sha1/sha1.man
+lib/gorilla/sha1/sha1v1.tcl
+lib/gorilla/sha1/sha256.c
+lib/gorilla/sha1/sha1c.tcl
+lib/gorilla/sha1/sha1.bench
+lib/gorilla/sha1/sha256c.tcl
+lib/gorilla/sha1/sha1.h
+lib/gorilla/sha1/sha1.tcl
+lib/gorilla/sha1/sha1.test
+lib/gorilla/sha1/sha256.bench
+lib/gorilla/sha1/sha256.h
+lib/gorilla/sha1/sha256.man
 lib/gorilla/sha1/sha256.tcl
+lib/gorilla/sha1/sha256.test
+lib/gorilla/sha256c/critcl.tcl
+lib/gorilla/sha256c/pkgIndex.tcl
+lib/gorilla/sha256c/Darwin-x86/critcl.tcl
+lib/gorilla/sha256c/Linux-x86/critcl.tcl
+lib/gorilla/sha256c/Linux-x86_64/critcl.tcl
+lib/gorilla/sha256c/Windows-x86/critcl.tcl
+lib/gorilla/tooltip/pkgIndex.tcl
+lib/gorilla/tooltip/tipstack.tcl
+lib/gorilla/tooltip/tooltip.tcl
+lib/gorilla/twofish/f32-critcl.tcl
 lib/gorilla/twofish/twofish.tcl
 lib/gorilla/twofish/twotest.tcl
 lib/gorilla/twofish/pkgIndex.tcl
 lib/gorilla/twofish/LICENSE.txt
 @dirrm lib/gorilla/blowfish
+@dirrm lib/gorilla/msgs
 @dirrm lib/gorilla/pics
-@dirrm lib/gorilla/twofish
 @dirrm lib/gorilla/pwsafe
 @dirrm lib/gorilla/sha1
+@dirrm lib/gorilla/sha256c/Darwin-x86
+@dirrm lib/gorilla/sha256c/Linux-x86
+@dirrm lib/gorilla/sha256c/Linux-x86_64
+@dirrm lib/gorilla/sha256c/Windows-x86
+@dirrm lib/gorilla/sha256c
+@dirrm lib/gorilla/tooltip
+@dirrm lib/gorilla/twofish
 @dirrm lib/gorilla

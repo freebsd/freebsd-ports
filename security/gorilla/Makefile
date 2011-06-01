@@ -6,19 +6,16 @@
 #
 
 PORTNAME=	gorilla
-PORTVERSION=	1.5.3.1
-DISTVERSIONSUFFIX=	c05eb4e
-PORTREVISION=	1
+PORTVERSION=	1.5.3.4
+DISTVERSIONSUFFIX=	7c3e819
 CATEGORIES=	security
-MASTER_SITES=	http://www.bayofrum.net/dist/gorilla/ \
-		http://cerberus.bayofrum.net/dist/gorilla/
+MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 DISTNAME=	zdia-${PORTNAME}-v${DISTVERSION}-0-g${DISTVERSIONSUFFIX}
 
 MAINTAINER=	utisoft@gmail.com
 COMMENT=	Password Gorilla is a cross-platform Password Manager
 
-RUN_DEPENDS=	${LOCALBASE}/lib/bwidget/init.tcl:${PORTSDIR}/x11-toolkits/bwidget \
-		itcl>=3.4:${PORTSDIR}/lang/itcl \
+RUN_DEPENDS=	itcl>=3.4:${PORTSDIR}/lang/itcl \
 		wish:${PORTSDIR}/x11-toolkits/tk-wrapper
 
 LICENSE=	GPLv2
@@ -28,20 +25,40 @@ USE_TCL_RUN=	85+
 USE_TK=		85+
 NO_BUILD=	yes
 SUB_FILES=	gorilla
-SUB_LIST=	WISH=wish
+SUB_LIST=	WISH=${WISH}
+PORTDOCS=	*
+
+SRC_DIRS=	blowfish msgs pics pwsafe sha1 sha256c tooltip twofish
+
+post-patch:
+# We don't want Linux/Windows/Darwin binaries thank you
+	${FIND} ${WRKSRC} \( \
+		-name "*.so" \
+		-or -name "*.dll" \
+		-or -name "*.dylib" \
+	   \) -delete
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/gorilla
 	@${INSTALL_SCRIPT} ${WRKSRC}/sources/*.tcl ${PREFIX}/lib/gorilla
-	${TAR} -C ${WRKSRC}/sources -cf - blowfish pics pwsafe twofish sha1 | \
-		${TAR} -C ${PREFIX}/lib/gorilla --unlink -xf -
+.for dir in ${SRC_DIRS}
+	@${MKDIR} ${PREFIX}/lib/${PORTNAME}/${dir}
+	@cd ${WRKSRC}/sources/${dir} \
+		&& ${COPYTREE_SHARE} \* \
+		${PREFIX}/lib/${PORTNAME}/${dir}
+.endfor
 	@${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
 
 post-install:
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/gorilla
-	@${CHMOD} ugo+rx ${PREFIX}/lib/gorilla/blowfish/*.tcl
-	@${CHMOD} ugo+rx ${PREFIX}/lib/gorilla/pwsafe/*.tcl
-	@${CHMOD} ugo+rx ${PREFIX}/lib/gorilla/twofish/*.tcl
-	@${CHMOD} ugo+rx ${PREFIX}/lib/gorilla/sha1/*.tcl
+	@${FIND} ${PREFIX}/lib/${PORTNAME}/ -name "*.tcl" \
+		| ${XARGS} ${CHMOD} ${BINMODE}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/README			\
+		${WRKSRC}/sources/README.install-from-source	\
+		${WRKSRC}/sources/CHANGES.txt			\
+	   ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
