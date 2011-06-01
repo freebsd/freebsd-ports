@@ -55,7 +55,6 @@
     SUBDIR += eclipse-viplugin
     SUBDIR += eclipse-webtools
     SUBDIR += eclipseme
-    SUBDIR += gj
     SUBDIR += icedtea6-stubs
     SUBDIR += infobus
     SUBDIR += j2sdkee13

@@ -229,7 +229,6 @@
     SUBDIR += qwt5
     SUBDIR += qwt5-designerplugin
     SUBDIR += renaissance
-    SUBDIR += rep-gtk
     SUBDIR += rep-gtk2
     SUBDIR += ruby-fox16
     SUBDIR += ruby-gnomeprintui

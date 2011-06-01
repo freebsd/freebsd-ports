@@ -872,7 +872,6 @@
     SUBDIR += tkmoo
     SUBDIR += tksol
     SUBDIR += tmw
-    SUBDIR += tnl
     SUBDIR += tomatoes
     SUBDIR += tome
     SUBDIR += toppler

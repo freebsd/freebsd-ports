@@ -35,7 +35,6 @@
     SUBDIR += chasen
     SUBDIR += chasen-base
     SUBDIR += chimera
-    SUBDIR += citrix_xenapp
     SUBDIR += csrd
     SUBDIR += ctags
     SUBDIR += dbskkd-cdb

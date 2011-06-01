@@ -74,7 +74,6 @@
     SUBDIR += callweaver
     SUBDIR += ccxstream
     SUBDIR += citrix_ica
-    SUBDIR += citrix_xenapp
     SUBDIR += clamz
     SUBDIR += click
     SUBDIR += clusterit
@@ -250,7 +249,6 @@
     SUBDIR += ipsorc
     SUBDIR += ipsumdump
     SUBDIR += ipsvd
-    SUBDIR += ipv6socket_scrub
     SUBDIR += ipvs
     SUBDIR += ipw-firmware
     SUBDIR += ipw-firmware-kmod
@@ -1133,7 +1131,6 @@
     SUBDIR += vinagre
     SUBDIR += vino
     SUBDIR += vnc
-    SUBDIR += vnc2swf
     SUBDIR += vncreflector
     SUBDIR += vnstat
     SUBDIR += vserver
