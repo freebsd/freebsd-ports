@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${SVNVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Simplest way to write web applications in the Go programming language
 
-SVNVERSION=	20101122
+SVNVERSION=	20110531
 WRKSRC=		${WRKDIR}/web.go
 PLIST_FILES=	${GO_LIBDIR}/web.a
 
