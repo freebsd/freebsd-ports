@@ -22,7 +22,8 @@ COMMENT=	A UML design tool with cognitive support
 
 LICENSE=	EPL
 
-PORTSCOUT=	limitw:1,even
+PORTSCOUT=	limitw:1,even \
+		site:${MASTER_SITES:S/argouml-${PORTVERSION}\///}
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
