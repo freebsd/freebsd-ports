@@ -1,0 +1,34 @@
+%%SITE_PERL%%/Net/DNS/Check/Test/ns_count.pm
+%%SITE_PERL%%/Net/DNS/Check/Test/soa_expire_compare.pm
+%%SITE_PERL%%/Net/DNS/Check/Test/soa_master_compare.pm
+%%SITE_PERL%%/Net/DNS/Check/Test/mx_compare.pm
+%%SITE_PERL%%/Net/DNS/Check/Test/mx_present.pm
+%%SITE_PERL%%/Net/DNS/Check/Test/soa_retry_compare.pm
+%%SITE_PERL%%/Net/DNS/Check/Test/unknown.pm
+%%SITE_PERL%%/Net/DNS/Check/Test/host_ip_vs_ip_orig.pm
+%%SITE_PERL%%/Net/DNS/Check/Test/ns_vs_delegated.pm
+%%SITE_PERL%%/Net/DNS/Check/Test/soa_retry_range.pm
+%%SITE_PERL%%/Net/DNS/Check/Test/soa_serial_compare.pm
+%%SITE_PERL%%/Net/DNS/Check/Test/host_ip_private.pm
+%%SITE_PERL%%/Net/DNS/Check/Test/soa_expire_range.pm
+%%SITE_PERL%%/Net/DNS/Check/Test/soa_master_in_ns.pm
+%%SITE_PERL%%/Net/DNS/Check/Test/host_syntax.pm
+%%SITE_PERL%%/Net/DNS/Check/Test/soa_refresh_range.pm
+%%SITE_PERL%%/Net/DNS/Check/Test/ns_compare.pm
+%%SITE_PERL%%/Net/DNS/Check/Test/host_not_cname.pm
+%%SITE_PERL%%/Net/DNS/Check/Test/soa_refresh_compare.pm
+%%SITE_PERL%%/Net/DNS/Check/Test/soa_serial_syntax.pm
+%%SITE_PERL%%/Net/DNS/Check/NSQuery.pm
+%%SITE_PERL%%/Net/DNS/Check/HostsList.pm
+%%SITE_PERL%%/Net/DNS/Check/Config.pm
+%%SITE_PERL%%/Net/DNS/Check/Host.pm
+%%SITE_PERL%%/Net/DNS/Check/Test.pm
+%%SITE_PERL%%/Net/DNS/Check.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/Check/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS/Check
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net/DNS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Net
+@dirrmtry %%SITE_PERL%%/Net/DNS/Check/Test
+@dirrmtry %%SITE_PERL%%/Net/DNS/Check
+@dirrmtry %%SITE_PERL%%/Net/DNS
+@dirrmtry %%SITE_PERL%%/Net
