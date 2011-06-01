@@ -5,15 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=	ros
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.8
 CATEGORIES=	devel
-MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
+MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${STACKNAME}/${STACKNAME}-${PORTVERSION}/
 DIST_SUBDIR=	ros
 
 MAINTAINER=	rene@FreeBSD.org
 COMMENT=	Robot Operating System - core utilities
 
 LICENSE=	BSD
+
+STACKNAME=	${PORTNAME:S/ros-//}
 
 CFLAGS+=	-I${LOCALBASE}/include
 LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
