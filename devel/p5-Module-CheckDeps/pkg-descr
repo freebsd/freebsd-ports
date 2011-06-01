@@ -1,0 +1,9 @@
+Module::CheckDeps parses Perl code searching for used modules. It can either
+return a list of all the modules used by some code, or a list of the used
+modules that are not available in the host system (e.g. not installed modules).
+
+Compared to similar modules, such as Module::ScanDeps, Module::CheckDeps is
+simpler and less powerful, but also much faster.
+
+WWW: http://search.cpan.org/dist/Module-CheckDeps
+     https://github.com/AlexBio/Module-CheckDeps
