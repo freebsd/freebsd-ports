@@ -64,15 +64,6 @@
 %%PYTHON_SITELIBDIR%%/paramiko/resource.py
 %%PYTHON_SITELIBDIR%%/paramiko/resource.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/resource.pyo
-%%PYTHON_SITELIBDIR%%/paramiko/rng.py
-%%PYTHON_SITELIBDIR%%/paramiko/rng.pyc
-%%PYTHON_SITELIBDIR%%/paramiko/rng.pyo
-%%PYTHON_SITELIBDIR%%/paramiko/rng_posix.py
-%%PYTHON_SITELIBDIR%%/paramiko/rng_posix.pyc
-%%PYTHON_SITELIBDIR%%/paramiko/rng_posix.pyo
-%%PYTHON_SITELIBDIR%%/paramiko/rng_win32.py
-%%PYTHON_SITELIBDIR%%/paramiko/rng_win32.pyc
-%%PYTHON_SITELIBDIR%%/paramiko/rng_win32.pyo
 %%PYTHON_SITELIBDIR%%/paramiko/rsakey.py
 %%PYTHON_SITELIBDIR%%/paramiko/rsakey.pyc
 %%PYTHON_SITELIBDIR%%/paramiko/rsakey.pyo

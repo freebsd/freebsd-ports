@@ -1,5 +1,5 @@
---- ./setup.py.orig	2010-02-24 21:06:37.000000000 +0100
-+++ ./setup.py	2010-02-24 21:09:55.000000000 +0100
+--- ./setup.py.orig	2011-05-31 12:57:26.000000000 +0200
++++ ./setup.py	2011-05-31 13:01:30.000000000 +0200
 @@ -33,14 +33,9 @@
  #ez_setup.use_setuptools()
  
@@ -7,7 +7,7 @@
 -try:
 -    from setuptools import setup
 -    kw = {
--        'install_requires': 'pycrypto >= 1.9',
+-        'install_requires': 'pycrypto >= 2.1',
 -    }
 -except ImportError:
 -    from distutils.core import setup
