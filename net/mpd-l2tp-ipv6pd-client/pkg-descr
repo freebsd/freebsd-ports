@@ -7,4 +7,4 @@ on FreeBSD 6.2, you need to apply following diff to your ng_ksocket:
 
 http://www.freebsd.org/cgi/cvsweb.cgi/src/sys/netgraph/ng_ksocket.c.diff?r1=1.59&r2=1.60
 
-WWW: http://www.ocn.v6.ntt.net/ocnipv6/pdf/ocnipv6uni_ver1.0.pdf
+WWW: http://www.ocn.ne.jp/ipv6/service/pdf/ocnipv6uni_ver1.0.pdf
