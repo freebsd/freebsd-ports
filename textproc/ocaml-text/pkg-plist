@@ -1,0 +1,18 @@
+%%DOCSDIR%%/api/Encoding.html
+%%DOCSDIR%%/api/Text.html
+%%DOCSDIR%%/api/index.html
+%%DOCSDIR%%/api/index_attributes.html
+%%DOCSDIR%%/api/index_class_types.html
+%%DOCSDIR%%/api/index_classes.html
+%%DOCSDIR%%/api/index_exceptions.html
+%%DOCSDIR%%/api/index_methods.html
+%%DOCSDIR%%/api/index_module_types.html
+%%DOCSDIR%%/api/index_modules.html
+%%DOCSDIR%%/api/index_types.html
+%%DOCSDIR%%/api/index_values.html
+%%DOCSDIR%%/api/style.css
+%%DOCSDIR%%/api/type_Encoding.html
+%%DOCSDIR%%/api/type_Text.html
+@dirrm %%DOCSDIR%%/api
+%%DOCSDIR%%/manual.pdf
+@dirrm %%DOCSDIR%%

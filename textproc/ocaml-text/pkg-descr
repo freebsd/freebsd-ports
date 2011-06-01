@@ -1,0 +1,4 @@
+OCaml-Text is a library for dealing with ``text'', i.e. a sequence of Unicode
+characters, in a convenient way.
+
+WWW: http://forge.ocamlcore.org/projects/ocaml-text/
