@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ros-geometry
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	math
 MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${STACKNAME}/${STACKNAME}-${PORTVERSION}/:rel \
 		http://pr.willowgarage.com/downloads/:pr \
