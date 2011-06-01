@@ -1,0 +1,6 @@
+bin/checkdeps
+%%SITE_PERL%%/Module/CheckDeps.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/CheckDeps/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/CheckDeps
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
+@dirrmtry %%SITE_PERL%%/Module
