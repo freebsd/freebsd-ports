@@ -1,5 +1,7 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/ccc.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/ccc.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/cdb.el
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/cdb.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/context-skk.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/context-skk.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/queue-m.el
@@ -17,6 +19,8 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-autoloads.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-azik.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-azik.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-cdb.el
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-cdb.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-comp.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-comp.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-cursor.el
@@ -27,14 +31,14 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-dcomp.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-develop.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-develop.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-dic.el
-%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-dic.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-e21.el
-%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-e21.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-emacs.el
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-emacs.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-gadget.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-gadget.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-hint.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-hint.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-inline.el
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-inline.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-isearch.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-isearch.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-jisx0201.el
@@ -57,13 +61,13 @@
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-macs.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-num.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-num.elc
-%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-obsolete.el
-%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-obsolete.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-server-completion.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-server-completion.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-server.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-server.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-setup.el
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-sticky.el
+%%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-sticky.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-study.el
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-study.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/skk/skk-tankan.el
@@ -84,14 +88,14 @@ share/skk/SKK.tut
 share/skk/SKK.tut.E
 share/skk/skk.xpm
 @dirrmtry share/skk
-share/examples/ddskk/Emacs.ad
-share/examples/ddskk/dot.emacs
-share/examples/ddskk/dot.skk
-@dirrm share/examples/ddskk
-%%PORTDOCS%%share/doc/ddskk/AUTHORS.ja
-%%PORTDOCS%%share/doc/ddskk/CODENAME.ja
-%%PORTDOCS%%share/doc/ddskk/Contributors
-%%PORTDOCS%%share/doc/ddskk/FAQ.ja
-%%PORTDOCS%%share/doc/ddskk/NEWS.ja
-%%PORTDOCS%%share/doc/ddskk/README
-%%PORTDOCS%%@dirrm share/doc/ddskk
+%%EXAMPLESDIR%%/Emacs.ad
+%%EXAMPLESDIR%%/dot.emacs
+%%EXAMPLESDIR%%/dot.skk
+@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.ja
+%%PORTDOCS%%%%DOCSDIR%%/CODENAME.ja
+%%PORTDOCS%%%%DOCSDIR%%/Contributors
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.ja
+%%PORTDOCS%%%%DOCSDIR%%/NEWS.ja
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%

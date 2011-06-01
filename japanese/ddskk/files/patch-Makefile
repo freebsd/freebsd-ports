@@ -1,0 +1,11 @@
+--- Makefile.orig	2011-06-01 09:07:20.000000000 +0800
++++ Makefile	2011-06-01 09:07:54.000000000 +0800
+@@ -11,7 +11,7 @@
+ DATE	  = date
+ EMACS	  = emacs
+ ETAGS	  = etags
+-FLAGS     = -batch -q -no-site-file -l SKK-MK
++FLAGS     = -batch -q -no-site-file --eval '(setq PREFIX "${PREFIX}")' -l SKK-MK
+ GZIP      = gzip -9
+ MD5	  = md5
+ RM	  = /bin/rm -f
