@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ros_comm
-PORTVERSION=	1.4.5
+PORTVERSION=	1.4.6
 CATEGORIES=	devel
-MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/ros_comm/ros_comm-${PORTVERSION}/
+MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${STACKNAME}/${STACKNAME}-${PORTVERSION}/
 DIST_SUBDIR=	ros
 
 MAINTAINER=	rene@FreeBSD.org
@@ -15,7 +15,7 @@ COMMENT=	Robot Operating System - communication-related utilities
 
 #LICENSE=       BSD LGPL #which?
 
-STACKNAME=	${PORTNAME}
+STACKNAME=	${PORTNAME:S/ros-//}
 
 CFLAGS+=	-I${LOCALBASE}/include
 LIB_DEPENDS=	log4cxx.10:${PORTSDIR}/devel/log4cxx
