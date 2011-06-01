@@ -1,4 +1,4 @@
-A simple (and stupid) converter from OpenDocument Text to plain text
+A simple converter from OpenDocument Text to plain text
 
  * small (size of binary is 25 KB on Linux/i386)
  * fast (no xml parser involved)
