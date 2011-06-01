@@ -8276,6 +8276,7 @@ libuninameslist                 ports/textproc/libuninameslist
 libuninum                       ports/devel/libuninum
 libunp                          ports/net/libunp
 libunrar                        ports/archivers/libunrar
+libunrar4                       ports/archivers/libunrar4
 libunwind                       ports/devel/libunwind
 libupskirt                      ports/textproc/libupskirt
 libusb                          ports/devel/libusb
@@ -8289,6 +8290,7 @@ libvanessa_logger               ports/devel/libvanessa_logger
 libvanessa_socket               ports/devel/libvanessa_socket
 libvc                           ports/devel/libvc
 libvdpau                        ports/multimedia/libvdpau
+libvirt                         ports/devel/libvirt
 libvisual                       ports/graphics/libvisual
 libvisual04                     ports/graphics/libvisual04
 libvisual04-plugins             ports/graphics/libvisual04-plugins
@@ -20993,6 +20995,7 @@ prosearch                       ports/net/prosearch
 prosody                         ports/net-im/prosody
 prosper                         ports/textproc/prosper
 protobuf                        ports/devel/protobuf
+protobuf-c                      ports/devel/protobuf-c
 protomol                        ports/biology/protomol
 prototype                       ports/devel/prototype
 protovis                        ports/www/protovis
