@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ldns
-PORTVERSION=	1.6.9
+PORTVERSION=	1.6.10
 CATEGORIES=	dns
 MASTER_SITES=	http://www.nlnetlabs.nl/downloads/ldns/ \
 		CRITICAL
@@ -243,7 +243,8 @@ PLIST_SUB+=		DRILLPROG="@comment "
 PLIST_SUB+=		EXAMPLES=""
 NOMANCOMPRESS=	true
 MANCOMPRESSED=	no
-MAN1+=	ldns-chaos.1 ldns-compare-zones.1 ldns-dpa.1 ldns-key2ds.1 \
+MAN1+=	ldns-chaos.1 ldns-compare-zones.1 ldns-dpa.1 \
+	ldns-gen-zone.1 ldns-key2ds.1 \
 	ldns-keyfetcher.1 ldns-keygen.1 ldns-mx.1 ldns-notify.1 \
 	ldns-nsec3-hash.1 ldns-read-zone.1 ldns-resolver.1 ldns-revoke.1 \
 	ldns-rrsig.1 ldns-signzone.1 ldns-testns.1 ldns-update.1 \
