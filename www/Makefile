@@ -545,7 +545,6 @@
     SUBDIR += mod_proxy_add_forward
     SUBDIR += mod_proxy_html
     SUBDIR += mod_proxy_xml
-    SUBDIR += mod_pubcookie
     SUBDIR += mod_put
     SUBDIR += mod_python
     SUBDIR += mod_python3
@@ -1509,7 +1508,6 @@
     SUBDIR += py-django-storages
     SUBDIR += py-django-tagging
     SUBDIR += py-django-threaded-multihost
-    SUBDIR += py-django11
     SUBDIR += py-django12
     SUBDIR += py-djblets
     SUBDIR += py-dojango

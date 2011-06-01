@@ -262,8 +262,6 @@ install40.jar		games/sfbol		Commercial software.  License
 						does not allow redistribution
 iperf-*			benchmarks/iperf	Cannot charge a fee for the
 						software
-IPv6socket_scrub.tar	net/ipv6socket_scrub	Not redistributable, license
-						agreement required
 j2me_wireless_toolkit*	java/sun-wtk		No redistribution allowed
 j2sdk-*-doc.zip		java/jdk13-doc		This documentation is under
 						license and export control

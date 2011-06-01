@@ -34,7 +34,6 @@
     SUBDIR += flwrap
     SUBDIR += gammu
     SUBDIR += gammu-devel
-    SUBDIR += gammu-python
     SUBDIR += garmin-utils
     SUBDIR += geoid
     SUBDIR += ghfaxviewer

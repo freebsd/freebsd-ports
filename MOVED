@@ -2194,3 +2194,16 @@ textproc/scim-kmfl-sil-yi|textproc/kmfl-sil-yi|2011-05-29|KMFL keyboard ports ar
 textproc/scim-kmfl-varamozhi-malayalam|textproc/kmfl-varamozhi-malayalam|2011-05-29|KMFL keyboard ports are now platform-independent
 dns/bind94||2011-05-31|EOL - Update to dns/bind97 or dns/bind96
 dns/bind94-geoip||2011-05-31|BIND 9.4.x is EOL
+german/citrix_xenapp||2011-06-01|Has expired: "crashes with f10"
+japanese/citrix_xenapp||2011-06-01|Has expired: "crashes with f10"
+net/citrix_xenapp||2011-06-01|Has expired: "crashes with f10"
+comms/gammu-python||2011-06-01|Has expired: since version 1.29.0 comms/gammu uses python by default
+java/gj||2011-06-01|Has expired: Upstream disapear and distfile is no more available
+net/ipv6socket_scrub||2011-06-01|Has expired: Upstream disapear and distfile is no more available
+graphics/lodju||2011-06-01|Has expired: depends on rep-gtk, which doesn't build anymore.
+www/mod_pubcookie||2011-06-01|Has expired: will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
+ftp/prozilla||2011-06-01|Has expired: Upstream disapear and distfile is no more available
+www/py-django11||2011-06-01|Has expired: Unsupported (no longer receive security updates or bugfixes)
+x11-toolkits/rep-gtk||2011-06-01|Has expired: missing rep-config from librep port broke the build.
+games/tnl||2011-06-01|Has expired: Upstream development has ceased, it doesn't work with newer CEGUI and is generally broken
+net/vnc2swf||2011-06-01|Has expired: Development is now superseded by deskutils/vnc2flv

@@ -84,7 +84,6 @@
     SUBDIR += proftpd-mysql
     SUBDIR += profxp
     SUBDIR += proma
-    SUBDIR += prozilla
     SUBDIR += puf
     SUBDIR += pure-ftpd
     SUBDIR += pureadmin

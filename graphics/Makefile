@@ -520,7 +520,6 @@
     SUBDIR += linux-ungif
     SUBDIR += linux_dri
     SUBDIR += linux_glide
-    SUBDIR += lodju
     SUBDIR += long-exposure-tools
     SUBDIR += lprof-devel
     SUBDIR += luminance
