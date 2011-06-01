@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	4.7.0
-PORTREVISION=	1
+PORTVERSION=	4.8.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		CRITICAL
@@ -34,8 +33,7 @@ USE_RAKE=	yes
 USE_RUBY=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS}" CXXFLAGS="${CXXFLAGS}" \
-		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}" \
 		ac_cv_path_PO4A=no
 CONFIGURE_ARGS=	--enable-lzo --enable-bz2 --disable-qt \
 		--with-boost=${LOCALBASE} \
