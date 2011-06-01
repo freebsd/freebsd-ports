@@ -45,6 +45,7 @@
 %%SITE_PERL%%/Bio/Graphics/Glyph/merge_parts.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/merged_alignment.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/minmax.pm
+%%SITE_PERL%%/Bio/Graphics/Glyph/operon.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/oval.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/pairplot.pm
 %%SITE_PERL%%/Bio/Graphics/Glyph/pentagram.pm
