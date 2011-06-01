@@ -1779,6 +1779,7 @@
     SUBDIR += p5-IO-AIO
     SUBDIR += p5-IO-All
     SUBDIR += p5-IO-All-LWP
+    SUBDIR += p5-IO-Any
     SUBDIR += p5-IO-Async
     SUBDIR += p5-IO-BufferedSelect
     SUBDIR += p5-IO-Capture
