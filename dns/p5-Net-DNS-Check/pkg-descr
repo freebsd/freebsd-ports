@@ -1,0 +1,9 @@
+Net::DNS::Check is a collection of OOP Perl modules allowing easy
+implementation of applications for domain name checking.
+
+The Net::DNS::Check was built to be as easy as possible to use and
+highly configurable and flexible: it allow easy implementation
+of your custom test and deeper configuration of what you want
+to check and how.
+
+WWW: http://search.cpan.org/dist/Net-DNS-Check/
