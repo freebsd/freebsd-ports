@@ -1575,6 +1575,7 @@
     SUBDIR += p5-Devel-NYTProf
     SUBDIR += p5-Devel-ObjectTracker
     SUBDIR += p5-Devel-PPPort
+    SUBDIR += p5-Devel-PackagePath
     SUBDIR += p5-Devel-PartialDump
     SUBDIR += p5-Devel-Pointer
     SUBDIR += p5-Devel-Profile
