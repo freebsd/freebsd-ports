@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	prepflog
-PORTVERSION=	0.3
+PORTVERSION=	0.4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.gufonero.com/postfix/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	terry@sucked-in.com
+MAINTAINER=	tabmow@freenode.net
 COMMENT=	Prepares logfiles in a sanitised format for pflogsumm and awstats
 
 PLIST_FILES=	bin/prepflog
