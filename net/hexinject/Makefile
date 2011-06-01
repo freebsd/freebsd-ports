@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	hexinject
-PORTVERSION=	1.1
+PORTVERSION=	1.2
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	HexInject is a very versatile packet injector and sniffer
+
+LICENSE=	BSD
 
 PLIST_FILES=	bin/${PORTNAME}
 
