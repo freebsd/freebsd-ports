@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bio-Graphics
-PORTVERSION=	2.18
+PORTVERSION=	2.24
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,11 +14,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generate GD Images of Bio::Seq Objects
 
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
+
 RUN_DEPENDS=	p5-Bio-SCF>=1.01:${PORTSDIR}/biology/p5-Bio-SCF \
 		p5-GD>=2.3:${PORTSDIR}/graphics/p5-GD \
 		p5-GD-SVG>=0.32:${PORTSDIR}/graphics/p5-GD-SVG \
 		p5-Statistics-Descriptive>=2.6:${PORTSDIR}/math/p5-Statistics-Descriptive \
 		p5-bioperl>=1.6.0:${PORTSDIR}/biology/p5-bioperl
+
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_MODBUILD=	YES
 
@@ -75,6 +80,7 @@ MAN3=		Bio::Graphics.3 \
 		Bio::Graphics::Glyph::merge_parts.3 \
 		Bio::Graphics::Glyph::merged_alignment.3 \
 		Bio::Graphics::Glyph::minmax.3 \
+		Bio::Graphics::Glyph::operon.3 \
 		Bio::Graphics::Glyph::oval.3 \
 		Bio::Graphics::Glyph::pairplot.3 \
 		Bio::Graphics::Glyph::pentagram.3 \
