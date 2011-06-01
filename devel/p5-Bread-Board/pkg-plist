@@ -1,0 +1,41 @@
+%%SITE_PERL%%/Bread/Board.pm
+%%SITE_PERL%%/Bread/Board/BlockInjection.pm
+%%SITE_PERL%%/Bread/Board/ConstructorInjection.pm
+%%SITE_PERL%%/Bread/Board/Container.pm
+%%SITE_PERL%%/Bread/Board/Container/Parameterized.pm
+%%SITE_PERL%%/Bread/Board/Dependency.pm
+%%SITE_PERL%%/Bread/Board/Dumper.pm
+%%SITE_PERL%%/Bread/Board/LifeCycle.pm
+%%SITE_PERL%%/Bread/Board/LifeCycle/Singleton.pm
+%%SITE_PERL%%/Bread/Board/LifeCycle/Singleton/WithParameters.pm
+%%SITE_PERL%%/Bread/Board/Literal.pm
+%%SITE_PERL%%/Bread/Board/Manual.pod
+%%SITE_PERL%%/Bread/Board/Manual/Concepts.pod
+%%SITE_PERL%%/Bread/Board/Manual/Concepts/Advanced.pod
+%%SITE_PERL%%/Bread/Board/Manual/Concepts/Typemap.pod
+%%SITE_PERL%%/Bread/Board/Manual/Example.pod
+%%SITE_PERL%%/Bread/Board/Manual/Example/FormSensible.pod
+%%SITE_PERL%%/Bread/Board/Manual/Example/LogDispatch.pod
+%%SITE_PERL%%/Bread/Board/Service.pm
+%%SITE_PERL%%/Bread/Board/Service/Deferred.pm
+%%SITE_PERL%%/Bread/Board/Service/Deferred/Thunk.pm
+%%SITE_PERL%%/Bread/Board/Service/Inferred.pm
+%%SITE_PERL%%/Bread/Board/Service/WithClass.pm
+%%SITE_PERL%%/Bread/Board/Service/WithDependencies.pm
+%%SITE_PERL%%/Bread/Board/Service/WithParameters.pm
+%%SITE_PERL%%/Bread/Board/SetterInjection.pm
+%%SITE_PERL%%/Bread/Board/Traversable.pm
+%%SITE_PERL%%/Bread/Board/Types.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bread/Board/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bread/Board
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bread
+@dirrm %%SITE_PERL%%/Bread/Board/Service/Deferred
+@dirrm %%SITE_PERL%%/Bread/Board/Service
+@dirrm %%SITE_PERL%%/Bread/Board/Manual/Example
+@dirrm %%SITE_PERL%%/Bread/Board/Manual/Concepts
+@dirrm %%SITE_PERL%%/Bread/Board/Manual
+@dirrm %%SITE_PERL%%/Bread/Board/LifeCycle/Singleton
+@dirrm %%SITE_PERL%%/Bread/Board/LifeCycle
+@dirrm %%SITE_PERL%%/Bread/Board/Container
+@dirrm %%SITE_PERL%%/Bread/Board
+@dirrmtry %%SITE_PERL%%/Bread
