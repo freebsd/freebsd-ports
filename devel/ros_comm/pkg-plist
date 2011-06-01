@@ -1043,6 +1043,7 @@ ros/stacks/ros_comm/test/test_roscpp/src/latching_publisher.cpp
 ros/stacks/ros_comm/test/test_roscpp/src/loads_of_publishers.cpp
 ros/stacks/ros_comm/test/test_roscpp/src/log.cpp
 ros/stacks/ros_comm/test/test_roscpp/src/log_aftermain.cpp
+ros/stacks/ros_comm/test/test_roscpp/src/logs_after_shutdown.cpp
 ros/stacks/ros_comm/test/test_roscpp/src/multiple_init_fini.cpp
 ros/stacks/ros_comm/test/test_roscpp/src/multiple_subscriptions.cpp
 ros/stacks/ros_comm/test/test_roscpp/src/name_remapping.cpp
@@ -1080,6 +1081,8 @@ ros/stacks/ros_comm/test/test_roscpp/src/subscribe_star.cpp
 ros/stacks/ros_comm/test/test_roscpp/src/subscribe_unsubscribe.cpp
 ros/stacks/ros_comm/test/test_roscpp/src/subscribe_unsubscribe_repeatedly.cpp
 ros/stacks/ros_comm/test/test_roscpp/src/subscription_callback_types.cpp
+ros/stacks/ros_comm/test/test_roscpp/src/test_ns_node_remapping.cpp
+ros/stacks/ros_comm/test/test_roscpp/src/test_remapping.cpp
 ros/stacks/ros_comm/test/test_roscpp/src/test_roscpp/__init__.py
 ros/stacks/ros_comm/test/test_roscpp/src/test_roscpp/__init__.pyc
 ros/stacks/ros_comm/test/test_roscpp/src/test_roscpp/__init__.pyo
@@ -1107,6 +1110,7 @@ ros/stacks/ros_comm/test/test_roscpp/src/test_roscpp/srv/_TestStringString.pyo
 ros/stacks/ros_comm/test/test_roscpp/src/test_roscpp/srv/__init__.py
 ros/stacks/ros_comm/test/test_roscpp/src/test_roscpp/srv/__init__.pyc
 ros/stacks/ros_comm/test/test_roscpp/src/test_roscpp/srv/__init__.pyo
+ros/stacks/ros_comm/test/test_roscpp/src/test_search_param.cpp
 ros/stacks/ros_comm/test/test_roscpp/src/timer_callbacks.cpp
 ros/stacks/ros_comm/test/test_roscpp/src/wait_for_message.cpp
 ros/stacks/ros_comm/test/test_roscpp/srv/BadTestStringString.srv
@@ -1123,18 +1127,22 @@ ros/stacks/ros_comm/test/test_roscpp/srv_gen/lisp/test_roscpp-srv.asd
 ros/stacks/ros_comm/test/test_roscpp/test/CMakeLists.txt
 ros/stacks/ros_comm/test/test_roscpp/test/check_master.xml
 ros/stacks/ros_comm/test/test_roscpp/test/get_master_information.xml
+ros/stacks/ros_comm/test/test_roscpp/test/global_remappings.xml
 ros/stacks/ros_comm/test/test_roscpp/test/handles.xml
 ros/stacks/ros_comm/test/test_roscpp/test/incrementing_sequence.xml
 ros/stacks/ros_comm/test/test_roscpp/test/inspection.xml
 ros/stacks/ros_comm/test/test_roscpp/test/intraprocess_subscriptions.xml
 ros/stacks/ros_comm/test/test_roscpp/test/latching_publisher.xml
 ros/stacks/ros_comm/test/test_roscpp/test/loads_of_publishers.xml
+ros/stacks/ros_comm/test/test_roscpp/test/local_remappings.xml
 ros/stacks/ros_comm/test/test_roscpp/test/log.xml
 ros/stacks/ros_comm/test/test_roscpp/test/multiple_init_fini.xml
 ros/stacks/ros_comm/test/test_roscpp/test/multiple_subscriptions.xml
 ros/stacks/ros_comm/test/test_roscpp/test/name_remapping.xml
 ros/stacks/ros_comm/test/test_roscpp/test/namespaces.xml
+ros/stacks/ros_comm/test/test_roscpp/test/no_remappings.xml
 ros/stacks/ros_comm/test/test_roscpp/test/nonconst_subscriptions.xml
+ros/stacks/ros_comm/test/test_roscpp/test/ns_node_remapping.xml
 ros/stacks/ros_comm/test/test_roscpp/test/parameter_validation.xml
 ros/stacks/ros_comm/test/test_roscpp/test/params.xml
 ros/stacks/ros_comm/test/test_roscpp/test/pingpong.xml
@@ -1149,6 +1157,7 @@ ros/stacks/ros_comm/test/test_roscpp/test/pubsub_resub_once.xml
 ros/stacks/ros_comm/test/test_roscpp/test/pubsub_unadv.xml
 ros/stacks/ros_comm/test/test_roscpp/test/pubsub_unsub.xml
 ros/stacks/ros_comm/test/test_roscpp/test/real_time_test.xml
+ros/stacks/ros_comm/test/test_roscpp/test/search_param.xml
 ros/stacks/ros_comm/test/test_roscpp/test/service_adv_multiple.xml
 ros/stacks/ros_comm/test/test_roscpp/test/service_call.xml
 ros/stacks/ros_comm/test/test_roscpp/test/service_call_unadv.xml
