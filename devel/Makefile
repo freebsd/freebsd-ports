@@ -1219,6 +1219,7 @@
     SUBDIR += p5-BZ-Client
     SUBDIR += p5-Badger
     SUBDIR += p5-Best
+    SUBDIR += p5-Bread-Board
     SUBDIR += p5-Bundle-Perl6
     SUBDIR += p5-C-Scan
     SUBDIR += p5-CHI
