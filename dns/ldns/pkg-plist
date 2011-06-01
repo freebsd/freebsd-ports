@@ -1,6 +1,7 @@
 %%EXAMPLES%%bin/ldns-chaos
 %%EXAMPLES%%bin/ldns-compare-zones
 %%EXAMPLES%%bin/ldns-dpa
+%%EXAMPLES%%bin/ldns-gen-zone
 %%EXAMPLES%%bin/ldns-key2ds
 %%EXAMPLES%%bin/ldns-keyfetcher
 %%EXAMPLES%%bin/ldns-keygen
