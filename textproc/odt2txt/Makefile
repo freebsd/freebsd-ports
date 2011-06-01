@@ -7,11 +7,15 @@
 
 PORTNAME=	odt2txt
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://stosberg.net/odt2txt/
+MASTER_SITES=	http://stosberg.net/odt2txt/ \
+		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A simple (and stupid) converter from OpenDocument Text to plain text
+MAINTAINER=	alexey@renatasystems.org
+COMMENT=	A simple converter from OpenDocument Text to plain text
+
+LICENSE=	GPLv2
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
@@ -20,7 +24,13 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 
 PLIST_FILES=	bin/odt2txt
 
+MAN1=		odt2txt.1
+
+post-patch:
+	${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/Makefile
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/odt2txt ${PREFIX}/bin/odt2txt
+	${INSTALL_MAN} ${WRKSRC}/odt2txt.1 ${MANPREFIX}/man/man1/odt2txt.1
 
 .include <bsd.port.mk>
