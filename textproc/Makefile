@@ -418,6 +418,7 @@
     SUBDIR += ocaml-csv
     SUBDIR += ocaml-expat
     SUBDIR += ocaml-pxp
+    SUBDIR += ocaml-text
     SUBDIR += odt2txt
     SUBDIR += openfts
     SUBDIR += openjade
