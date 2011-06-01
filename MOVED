@@ -2192,3 +2192,5 @@ textproc/scim-kmfl-sil-ipa-unicode5|textproc/kmfl-sil-ipa-unicode|2011-05-29|KMF
 textproc/scim-kmfl-sil-panafrican-latin|textproc/kmfl-sil-panafrican-latin|2011-05-29|KMFL keyboard ports are now platform-independent
 textproc/scim-kmfl-sil-yi|textproc/kmfl-sil-yi|2011-05-29|KMFL keyboard ports are now platform-independent
 textproc/scim-kmfl-varamozhi-malayalam|textproc/kmfl-varamozhi-malayalam|2011-05-29|KMFL keyboard ports are now platform-independent
+dns/bind94||2011-05-31|EOL - Update to dns/bind97 or dns/bind96
+dns/bind94-geoip||2011-05-31|BIND 9.4.x is EOL
