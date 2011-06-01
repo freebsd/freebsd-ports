@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	MongoDB
-PORTVERSION=	0.42
+PORTVERSION=	0.43
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/K/KR/KRISTINA
+MASTER_SITE_SUBDIR=	CPAN:KRISTINA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Mongo Driver for Perl
+
+LICENSE=	ASL
 
 BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Class-Method-Modifiers>=0:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
