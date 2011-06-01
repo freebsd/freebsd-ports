@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fldigi
-PORTVERSION=	3.21.8
+PORTVERSION=	3.21.10
 CATEGORIES=	comms hamradio
 MASTER_SITES=	http://www.w1hkj.com/downloads/fldigi/ \
 		${MASTER_SITE_LOCAL}
@@ -23,10 +23,10 @@ LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib \
 		fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/portaudio2/include
 USE_DOS2UNIX=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
+LICENSE=	GPLv3
 
 MAN1=		fldigi.1 flarq.1
 
