@@ -85,6 +85,7 @@ ros/ros/core/mk/make_pydev_project.pyo
 ros/ros/core/mk/manifest.xml
 ros/ros/core/mk/svn_checkout.mk
 ros/ros/core/rosbuild/FindPkgConfig.cmake
+ros/ros/core/rosbuild/ProcessorCount.cmake
 ros/ros/core/rosbuild/ROS_NOBUILD
 ros/ros/core/rosbuild/bin/check_same_directories.py
 ros/ros/core/rosbuild/bin/check_same_directories.pyc
