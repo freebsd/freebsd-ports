@@ -1,0 +1,52 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/compressor/__init__.py
+%%PYTHON_SITELIBDIR%%/compressor/__init__.pyc
+%%PYTHON_SITELIBDIR%%/compressor/__init__.pyo
+%%PYTHON_SITELIBDIR%%/compressor/conf/__init__.py
+%%PYTHON_SITELIBDIR%%/compressor/conf/__init__.pyc
+%%PYTHON_SITELIBDIR%%/compressor/conf/__init__.pyo
+%%PYTHON_SITELIBDIR%%/compressor/conf/settings.py
+%%PYTHON_SITELIBDIR%%/compressor/conf/settings.pyc
+%%PYTHON_SITELIBDIR%%/compressor/conf/settings.pyo
+%%PYTHON_SITELIBDIR%%/compressor/filters/__init__.py
+%%PYTHON_SITELIBDIR%%/compressor/filters/__init__.pyc
+%%PYTHON_SITELIBDIR%%/compressor/filters/__init__.pyo
+%%PYTHON_SITELIBDIR%%/compressor/filters/css_default.py
+%%PYTHON_SITELIBDIR%%/compressor/filters/css_default.pyc
+%%PYTHON_SITELIBDIR%%/compressor/filters/css_default.pyo
+%%PYTHON_SITELIBDIR%%/compressor/filters/csstidy.py
+%%PYTHON_SITELIBDIR%%/compressor/filters/csstidy.pyc
+%%PYTHON_SITELIBDIR%%/compressor/filters/csstidy.pyo
+%%PYTHON_SITELIBDIR%%/compressor/filters/jsmin/__init__.py
+%%PYTHON_SITELIBDIR%%/compressor/filters/jsmin/__init__.pyc
+%%PYTHON_SITELIBDIR%%/compressor/filters/jsmin/__init__.pyo
+%%PYTHON_SITELIBDIR%%/compressor/filters/jsmin/jsmin.py
+%%PYTHON_SITELIBDIR%%/compressor/filters/jsmin/jsmin.pyc
+%%PYTHON_SITELIBDIR%%/compressor/filters/jsmin/jsmin.pyo
+%%PYTHON_SITELIBDIR%%/compressor/filters/yui.py
+%%PYTHON_SITELIBDIR%%/compressor/filters/yui.pyc
+%%PYTHON_SITELIBDIR%%/compressor/filters/yui.pyo
+%%PYTHON_SITELIBDIR%%/compressor/models.py
+%%PYTHON_SITELIBDIR%%/compressor/models.pyc
+%%PYTHON_SITELIBDIR%%/compressor/models.pyo
+%%PYTHON_SITELIBDIR%%/compressor/templates/compressor/css.html
+%%PYTHON_SITELIBDIR%%/compressor/templates/compressor/js.html
+%%PYTHON_SITELIBDIR%%/compressor/templatetags/__init__.py
+%%PYTHON_SITELIBDIR%%/compressor/templatetags/__init__.pyc
+%%PYTHON_SITELIBDIR%%/compressor/templatetags/__init__.pyo
+%%PYTHON_SITELIBDIR%%/compressor/templatetags/compress.py
+%%PYTHON_SITELIBDIR%%/compressor/templatetags/compress.pyc
+%%PYTHON_SITELIBDIR%%/compressor/templatetags/compress.pyo
+%%PYTHON_SITELIBDIR%%/compressor/tests.py
+%%PYTHON_SITELIBDIR%%/compressor/tests.pyc
+%%PYTHON_SITELIBDIR%%/compressor/tests.pyo
+%%PYTHON_SITELIBDIR%%/compressor/utils.py
+%%PYTHON_SITELIBDIR%%/compressor/utils.pyc
+%%PYTHON_SITELIBDIR%%/compressor/utils.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/compressor/templatetags
+@dirrm %%PYTHON_SITELIBDIR%%/compressor/templates/compressor
+@dirrm %%PYTHON_SITELIBDIR%%/compressor/templates
+@dirrm %%PYTHON_SITELIBDIR%%/compressor/filters/jsmin
+@dirrm %%PYTHON_SITELIBDIR%%/compressor/filters
+@dirrm %%PYTHON_SITELIBDIR%%/compressor/conf
+@dirrm %%PYTHON_SITELIBDIR%%/compressor
