@@ -6,27 +6,30 @@
 #
 
 PORTNAME=	elfkickers
-DISTVERSION=	2.0a
+PORTVERSION=	3.0
 CATEGORIES=	devel sysutils
 MASTER_SITES=	http://www.muppetlabs.com/~breadbox/pub/software/
-DISTNAME=	ELFkickers-${DISTVERSION}
+DISTNAME=	ELFkickers-${PORTVERSION}
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	Collection of programs to manipulate ELF files
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GMAKE=	yes
 
 PLIST_FILES=	bin/ebfc \
 		bin/elfls \
 		bin/elftoc \
+		bin/infect \
+		bin/objres \
 		bin/rebind \
 		bin/sstrip
 
 PORTDOCS=	COPYING Changelog README
 
-MAN1=		ebfc.1 elfls.1
-
-WRKSRC=		${WRKDIR}/ELFkickers
+MAN1=		ebfc.1 elfls.1 elftoc.1 infect.1 objres.1 rebind.1 sstrip.1
 
 post-patch:
 	@${GREP} -lR "\/elf.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
