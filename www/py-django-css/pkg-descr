@@ -1,0 +1,4 @@
+Django-css is a fork of django_compressor that makes it easy
+to use CSS compilers with your Django projects.
+
+WWW: https://github.com/dziegler/django-css

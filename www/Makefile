@@ -1495,6 +1495,7 @@
     SUBDIR += py-django-app-plugins
     SUBDIR += py-django-appmedia
     SUBDIR += py-django-classy-tags
+    SUBDIR += py-django-css
     SUBDIR += py-django-devel
     SUBDIR += py-django-evolution
     SUBDIR += py-django-extensions
