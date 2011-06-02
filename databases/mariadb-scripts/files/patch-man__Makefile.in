@@ -1,0 +1,20 @@
+--- man/Makefile.in.orig	2011-03-01 22:25:06.000000000 -0800
++++ man/Makefile.in	2011-06-01 22:55:49.000000000 -0700
+@@ -450,7 +450,7 @@
+ yassl_taocrypt_extra_cxxflags = @yassl_taocrypt_extra_cxxflags@
+ yassl_thread_cxxflags = @yassl_thread_cxxflags@
+ zlib_dir = @zlib_dir@
+-man1_MANS = @man1_files@
++man1_MANS = %%MANS%%
+ man8_MANS = @man8_files@
+ EXTRA_DIST = $(man1_MANS) $(man8_MANS)
+ all: all-am
+@@ -676,7 +676,7 @@
+ 
+ install-info: install-info-am
+ 
+-install-man: install-man1 install-man8
++install-man: install-man1
+ 
+ installcheck-am:
+ 
