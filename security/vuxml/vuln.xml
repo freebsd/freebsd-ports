@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="34ce5817-8d56-11e0-b5a2-6c626dd55a41">
+    <topic>asterisk -- Remote crash vulnerability</topic>
+    <affects>
+      <package>
+	<name>asterisk18</name>
+	<range><gt>1.8.*</gt><lt>1.8.4.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk Development Team reports:</p>
+	<blockquote cite="http://lists.digium.com/pipermail/asterisk-announce/2011-June/000325.html">
+	  <p>If a remote user initiates a SIP call and the recipient picks up,
+	    the remote user can reply with a malformed Contact header that
+	    Asterisk will improperly handle and cause a crash due to a
+	    segmentation fault.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-2216</cvename>
+      <url>http://downloads.asterisk.org/pub/security/AST-2011-007.pdf</url>
+    </references>
+    <dates>
+      <discovery>2011-06-02</discovery>
+      <entry>2011-06-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="e27a1af3-8d21-11e0-a45d-001e8c75030d">
     <topic>subversion -- multiple vulnerabilities</topic>
     <affects>
