@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Dancer-Plugin-Database
-PORTVERSION=	1.23
+PORTVERSION=	1.40
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Easy database connections for Dancer applications
 
 BUILD_DEPENDS=	p5-DBI>0:${PORTSDIR}/databases/p5-DBI \
