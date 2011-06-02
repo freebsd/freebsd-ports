@@ -1,4 +1,5 @@
 bin/epdfview
+%%NLS%%share/locale/ar/LC_MESSAGES/epdfview.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/epdfview.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/epdfview.mo
 %%NLS%%share/locale/de/LC_MESSAGES/epdfview.mo
@@ -6,8 +7,12 @@ bin/epdfview
 %%NLS%%share/locale/es/LC_MESSAGES/epdfview.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/epdfview.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/epdfview.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/epdfview.mo
+%%NLS%%share/locale/he_IL/LC_MESSAGES/epdfview.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/epdfview.mo
 %%NLS%%share/locale/it/LC_MESSAGES/epdfview.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/epdfview.mo
+%%NLS%%share/locale/nl_NL/LC_MESSAGES/epdfview.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/epdfview.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/epdfview.mo
 %%NLS%%share/locale/pt_PT/LC_MESSAGES/epdfview.mo
@@ -31,3 +36,7 @@ share/applications/epdfview.desktop
 @dirrmtry %%DATADIR%%/pixmaps
 @dirrmtry %%DATADIR%%/ui
 @dirrmtry %%DATADIR%%
+@dirrmtry %%NLS%%share/locale/nl_NL/LC_MESSAGES
+@dirrmtry %%NLS%%share/locale/nl_NL
+@dirrmtry %%NLS%%share/locale/he_IL/LC_MESSAGES
+@dirrmtry %%NLS%%share/locale/he_IL
