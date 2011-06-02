@@ -1,0 +1,126 @@
+diff -urN sysdep/bsd/Modules sysdep/bsd/Modules
+--- sysdep/bsd/Modules	2011-03-31 12:29:42.000000000 +0400
++++ sysdep/bsd/Modules	2011-05-10 12:04:30.643950460 +0400
+@@ -4,3 +4,4 @@
+ krt-set.h
+ krt-sock.c
+ krt-sock.h
++fib.Y
+diff -urN sysdep/bsd/fib.Y sysdep/bsd/fib.Y
+--- sysdep/bsd/fib.Y	1970-01-01 03:00:00.000000000 +0300
++++ sysdep/bsd/fib.Y	2011-05-10 12:04:05.724272679 +0400
+@@ -0,0 +1,29 @@
++/*
++ *	BIRD -- FreeBSD rtsock configuration
++ *
++ *	(c) 2011 Alexander V. Chernikov
++ *
++ *	Can be freely distributed and used under the terms of the GNU GPL.
++ */
++
++CF_HDR
++
++CF_DECLS
++
++CF_KEYWORDS(ASYNC, KERNEL, TABLE, KRT_PREFSRC, KRT_REALM)
++
++CF_GRAMMAR
++
++CF_ADDTO(kern_proto, kern_proto rtsock_item ';')
++
++rtsock_item:
++   KERNEL TABLE expr {
++	if ($3 <= 0 || $3 >= max_fib_num())
++	  cf_error("Kernel routing table number out of range");
++	THIS_KRT->scan.table_id = $3;
++   }
++ ;
++
++CF_CODE
++
++CF_END
+diff -urN sysdep/bsd/krt-scan.h sysdep/bsd/krt-scan.h
+--- sysdep/bsd/krt-scan.h	2011-03-31 12:29:42.000000000 +0400
++++ sysdep/bsd/krt-scan.h	2011-05-10 11:58:54.812942887 +0400
+@@ -10,6 +10,7 @@
+ #define _BIRD_KRT_SCAN_H_
+ 
+ struct krt_scan_params {
++  int table_id;				/* Kernel table ID we sync with */
+ };
+ 
+ struct krt_scan_status {
+diff -urN sysdep/bsd/krt-sock.c sysdep/bsd/krt-sock.c
+--- sysdep/bsd/krt-sock.c	2011-05-02 12:13:18.000000000 +0400
++++ sysdep/bsd/krt-sock.c	2011-05-10 12:25:22.075267568 +0400
+@@ -53,6 +53,21 @@
+      );
+ }
+ 
++int
++max_fib_num()
++{
++  int fibs = 1;
++  size_t fibs_len = sizeof(fibs);
++  if (sysctlbyname("net.fibs", &fibs, &fibs_len, NULL, 0) == -1)
++  {
++    log(L_ERR "KRT: unable to get fib number, assuming 1. error: %s", strerror(errno));
++    return 1;
++  }
++
++  log(L_TRACE "Max fibs: %d\n", fibs);
++  return fibs;
++}
++
+ #define ROUNDUP(a) \
+         ((a) > 0 ? (1 + (((a) - 1) | (sizeof(long) - 1))) : sizeof(long))
+ 
+@@ -219,6 +234,7 @@
+ {
+   sock *sk_rt;
+   static int ks_open_tried = 0;
++  int fib = 0;
+ 
+   if (ks_open_tried)
+     return;
+@@ -230,6 +246,16 @@
+   if( (rt_sock = socket(PF_ROUTE, SOCK_RAW, AF_UNSPEC)) < 0)
+     die("Cannot open kernel socket for routes");
+ 
++  fib = ((struct krt_config *)x)->scan.table_id;
++  log(L_TRACE "KRT: Setting fib %d", fib);
++
++
++  if ((fib != 0) && (setsockopt(rt_sock, SOL_SOCKET, SO_SETFIB, &fib, sizeof(fib)) == -1))
++  {
++    log(L_ERR "KRT: setsockopt() failed for socket %d: %s", rt_sock, strerror(errno));
++    die("Cannot set fib for kernel socket");
++  }
++
+   sk_rt = sk_new(krt_pool);
+   sk_rt->type = SK_MAGIC;
+   sk_rt->rx_hook = krt_set_hook;
+diff -urN sysdep/cf/bsd-v6.h sysdep/cf/bsd-v6.h
+--- sysdep/cf/bsd-v6.h	2011-03-31 12:29:42.000000000 +0400
++++ sysdep/cf/bsd-v6.h	2011-05-10 11:19:01.394166479 +0400
+@@ -10,7 +10,7 @@
+ 
+ #define CONFIG_AUTO_ROUTES
+ #define CONFIG_SELF_CONSCIOUS
+-#undef CONFIG_MULTIPLE_TABLES
++#define CONFIG_MULTIPLE_TABLES
+ 
+ #undef CONFIG_UNIX_IFACE
+ #undef CONFIG_UNIX_SET
+diff -urN sysdep/cf/bsd.h sysdep/cf/bsd.h
+--- sysdep/cf/bsd.h	2011-03-31 12:29:42.000000000 +0400
++++ sysdep/cf/bsd.h	2011-05-10 11:19:01.398182352 +0400
+@@ -8,7 +8,7 @@
+ 
+ #define CONFIG_AUTO_ROUTES
+ #define CONFIG_SELF_CONSCIOUS
+-#undef CONFIG_MULTIPLE_TABLES
++#define CONFIG_MULTIPLE_TABLES
+ 
+ #undef CONFIG_UNIX_IFACE
+ #undef CONFIG_UNIX_SET
