@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	help2man
-PORTVERSION=	1.39.4
+PORTVERSION=	1.40.1
 CATEGORIES=	misc
 MASTER_SITES=	GNU/${PORTNAME}
 
@@ -31,14 +31,17 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Locale/gettext.pm:${PORTSDIR}/devel/p5-Locale-gettext
 
 CFLAGS+=	-lintl
-MANLANG=	"" ${LANGS}
+MANLANG=	"" ${LANGS} ${LANGS_MTREE}
 USE_GETTEXT=	yes
 
 LANGS=		de el eo fi fr it pl pt_BR ru sv uk vi
+LANGS_MTREE=	ja	# languages which already exist in BSD.local.dist
 
 PLIST_FILES+=	lib/bindtextdomain.so
-.for lang in ${LANGS}
+.for lang in ${LANGS} ${LANGS_MTREE}
 PLIST_FILES+=	share/locale/${lang}/LC_MESSAGES/${PORTNAME}.mo
+.endfor
+.for lang in ${LANGS}
 PLIST_DIRSTRY+=	man/${lang}/man1 man/${lang}
 .endfor
 .endif
