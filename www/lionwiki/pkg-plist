@@ -22,6 +22,7 @@
 %%WWWDIR%%/lang/ru.php
 %%WWWDIR%%/lang/sk.php
 %%WWWDIR%%/lang/uk.php
+%%WWWDIR%%/lang/zh-simp.php
 %%WWWDIR%%/lang/zh-tw.php
 %%WWWDIR%%/plugins/AjaxEditing/ajax.js
 %%WWWDIR%%/plugins/AjaxEditing/template.html
