@@ -1018,8 +1018,6 @@ bincimap                        ports/mail/bincimap
 bind-tools                      ports/dns/bind-tools
 bind9-sdb-ldap                  ports/dns/bind9-sdb-ldap
 bind9-sdb-postgresql            ports/dns/bind9-sdb-postgresql
-bind94                          ports/dns/bind94
-bind94-geoip                    ports/dns/bind94-geoip
 bind96                          ports/dns/bind96
 bind97                          ports/dns/bind97
 bind98                          ports/dns/bind98
@@ -10288,6 +10286,7 @@ ocaml-sem                       ports/devel/ocaml-sem
 ocaml-sexplib                   ports/devel/ocaml-sexplib
 ocaml-sqlite3                   ports/databases/ocaml-sqlite3
 ocaml-ssl                       ports/security/ocaml-ssl
+ocaml-text                      ports/textproc/ocaml-text
 ocaml-typeconv                  ports/devel/ocaml-typeconv
 ocaml-ulex                      ports/devel/ocaml-ulex
 ocaml-xstr                      ports/devel/ocaml-xstr
@@ -10995,6 +10994,7 @@ p5-Bloom-Filter                 ports/textproc/p5-Bloom-Filter
 p5-Bot-BasicBot                 ports/irc/p5-Bot-BasicBot
 p5-Boulder                      ports/converters/p5-Boulder
 p5-Brackup                      ports/sysutils/p5-Brackup
+p5-Bread-Board                  ports/devel/p5-Bread-Board
 p5-Bundle-Perl6                 ports/devel/p5-Bundle-Perl6
 p5-Bundle-Slash                 ports/www/p5-Bundle-Slash
 p5-Bundle-Sledge                ports/www/p5-Bundle-Sledge
@@ -11933,6 +11933,7 @@ p5-Devel-Modlist                ports/devel/p5-Devel-Modlist
 p5-Devel-NYTProf                ports/devel/p5-Devel-NYTProf
 p5-Devel-ObjectTracker          ports/devel/p5-Devel-ObjectTracker
 p5-Devel-PPPort                 ports/devel/p5-Devel-PPPort
+p5-Devel-PackagePath            ports/devel/p5-Devel-PackagePath
 p5-Devel-PartialDump            ports/devel/p5-Devel-PartialDump
 p5-Devel-Pointer                ports/devel/p5-Devel-Pointer
 p5-Devel-Profile                ports/devel/p5-Devel-Profile
@@ -12437,6 +12438,7 @@ p5-HTML-Macro                   ports/www/p5-HTML-Macro
 p5-HTML-Mason                   ports/www/p5-HTML-Mason
 p5-HTML-Pager                   ports/www/p5-HTML-Pager
 p5-HTML-Parser                  ports/www/p5-HTML-Parser
+p5-HTML-Parser-Simple           ports/www/p5-HTML-Parser-Simple
 p5-HTML-Perlinfo                ports/www/p5-HTML-Perlinfo
 p5-HTML-PrettyPrinter           ports/www/p5-HTML-PrettyPrinter
 p5-HTML-Prototype               ports/www/p5-HTML-Prototype
@@ -12588,6 +12590,7 @@ p5-IO                           ports/devel/p5-IO
 p5-IO-AIO                       ports/devel/p5-IO-AIO
 p5-IO-All                       ports/devel/p5-IO-All
 p5-IO-All-LWP                   ports/devel/p5-IO-All-LWP
+p5-IO-Any                       ports/devel/p5-IO-Any
 p5-IO-Async                     ports/devel/p5-IO-Async
 p5-IO-Async-SSL                 ports/security/p5-IO-Async-SSL
 p5-IO-BufferedSelect            ports/devel/p5-IO-BufferedSelect
@@ -13047,6 +13050,7 @@ p5-Module-Build                 ports/devel/p5-Module-Build
 p5-Module-Build-Convert         ports/devel/p5-Module-Build-Convert
 p5-Module-Build-Kwalitee        ports/devel/p5-Module-Build-Kwalitee
 p5-Module-CPANTS-Analyse        ports/devel/p5-Module-CPANTS-Analyse
+p5-Module-CheckDeps             ports/devel/p5-Module-CheckDeps
 p5-Module-Collect               ports/devel/p5-Module-Collect
 p5-Module-Compile               ports/devel/p5-Module-Compile
 p5-Module-CoreList              ports/devel/p5-Module-CoreList
@@ -13125,6 +13129,7 @@ p5-MooseX-LazyRequire           ports/devel/p5-MooseX-LazyRequire
 p5-MooseX-Lists                 ports/devel/p5-MooseX-Lists
 p5-MooseX-Log-Log4perl          ports/devel/p5-MooseX-Log-Log4perl
 p5-MooseX-Meta-TypeConstraint-ForceCoercion  ports/devel/p5-MooseX-Meta-TypeConstraint-ForceCoercion
+p5-MooseX-MetaDescription       ports/devel/p5-MooseX-MetaDescription
 p5-MooseX-Method-Signatures     ports/devel/p5-MooseX-Method-Signatures
 p5-MooseX-MethodAttributes      ports/devel/p5-MooseX-MethodAttributes
 p5-MooseX-MultiInitArg          ports/devel/p5-MooseX-MultiInitArg
@@ -13224,6 +13229,7 @@ p5-Net-DHCPClient               ports/net/p5-Net-DHCPClient
 p5-Net-DLookup                  ports/net/p5-Net-DLookup
 p5-Net-DNS                      ports/dns/p5-Net-DNS
 p5-Net-DNS-Async                ports/dns/p5-Net-DNS-Async
+p5-Net-DNS-Check                ports/dns/p5-Net-DNS-Check
 p5-Net-DNS-Codes                ports/dns/p5-Net-DNS-Codes
 p5-Net-DNS-Lite                 ports/dns/p5-Net-DNS-Lite
 p5-Net-DNS-RR-SRV-Helper        ports/dns/p5-Net-DNS-RR-SRV-Helper
@@ -14843,6 +14849,7 @@ p5-XML-Stream                   ports/textproc/p5-XML-Stream
 p5-XML-Tiny                     ports/textproc/p5-XML-Tiny
 p5-XML-TinyXML                  ports/textproc/p5-XML-TinyXML
 p5-XML-TokeParser               ports/textproc/p5-XML-TokeParser
+p5-XML-Toolkit                  ports/textproc/p5-XML-Toolkit
 p5-XML-TreeBuilder              ports/textproc/p5-XML-TreeBuilder
 p5-XML-TreePP                   ports/textproc/p5-XML-TreePP
 p5-XML-Twig                     ports/textproc/p5-XML-Twig
@@ -15202,6 +15209,7 @@ p5-boolean                      ports/devel/p5-boolean
 p5-bot-basicbot                 ports/irc/p5-Bot-BasicBot
 p5-boulder                      ports/converters/p5-Boulder
 p5-brackup                      ports/sysutils/p5-Brackup
+p5-bread-board                  ports/devel/p5-Bread-Board
 p5-bs-event                     ports/devel/p5-BS-Event
 p5-bsd-devstat                  ports/devel/p5-BSD-devstat
 p5-bsd-jail-object              ports/sysutils/p5-BSD-Jail-Object
@@ -16152,6 +16160,7 @@ p5-devel-messenger              ports/devel/p5-Devel-Messenger
 p5-devel-modlist                ports/devel/p5-Devel-Modlist
 p5-devel-nytprof                ports/devel/p5-Devel-NYTProf
 p5-devel-objecttracker          ports/devel/p5-Devel-ObjectTracker
+p5-devel-packagepath            ports/devel/p5-Devel-PackagePath
 p5-devel-partialdump            ports/devel/p5-Devel-PartialDump
 p5-devel-pointer                ports/devel/p5-Devel-Pointer
 p5-devel-ppport                 ports/devel/p5-Devel-PPPort
@@ -16692,6 +16701,7 @@ p5-html-macro                   ports/www/p5-HTML-Macro
 p5-html-mason                   ports/www/p5-HTML-Mason
 p5-html-pager                   ports/www/p5-HTML-Pager
 p5-html-parser                  ports/www/p5-HTML-Parser
+p5-html-parser-simple           ports/www/p5-HTML-Parser-Simple
 p5-html-perlinfo                ports/www/p5-HTML-Perlinfo
 p5-html-prettyprinter           ports/www/p5-HTML-PrettyPrinter
 p5-html-prototype               ports/www/p5-HTML-Prototype
@@ -16865,6 +16875,7 @@ p5-io                           ports/devel/p5-IO
 p5-io-aio                       ports/devel/p5-IO-AIO
 p5-io-all                       ports/devel/p5-IO-All
 p5-io-all-lwp                   ports/devel/p5-IO-All-LWP
+p5-io-any                       ports/devel/p5-IO-Any
 p5-io-async                     ports/devel/p5-IO-Async
 p5-io-async-ssl                 ports/security/p5-IO-Async-SSL
 p5-io-bufferedselect            ports/devel/p5-IO-BufferedSelect
@@ -17291,6 +17302,7 @@ p5-modern-perl                  ports/lang/p5-Modern-Perl
 p5-module-build                 ports/devel/p5-Module-Build
 p5-module-build-convert         ports/devel/p5-Module-Build-Convert
 p5-module-build-kwalitee        ports/devel/p5-Module-Build-Kwalitee
+p5-module-checkdeps             ports/devel/p5-Module-CheckDeps
 p5-module-collect               ports/devel/p5-Module-Collect
 p5-module-compile               ports/devel/p5-Module-Compile
 p5-module-corelist              ports/devel/p5-Module-CoreList
@@ -17371,6 +17383,7 @@ p5-moosex-lazyrequire           ports/devel/p5-MooseX-LazyRequire
 p5-moosex-lists                 ports/devel/p5-MooseX-Lists
 p5-moosex-log-log4perl          ports/devel/p5-MooseX-Log-Log4perl
 p5-moosex-meta-typeconstraint-forcecoercion  ports/devel/p5-MooseX-Meta-TypeConstraint-ForceCoercion
+p5-moosex-metadescription       ports/devel/p5-MooseX-MetaDescription
 p5-moosex-method-signatures     ports/devel/p5-MooseX-Method-Signatures
 p5-moosex-methodattributes      ports/devel/p5-MooseX-MethodAttributes
 p5-moosex-multiinitarg          ports/devel/p5-MooseX-MultiInitArg
@@ -17484,6 +17497,7 @@ p5-net-divert                   ports/net/p5-Net-Divert
 p5-net-dlookup                  ports/net/p5-Net-DLookup
 p5-net-dns                      ports/dns/p5-Net-DNS
 p5-net-dns-async                ports/dns/p5-Net-DNS-Async
+p5-net-dns-check                ports/dns/p5-Net-DNS-Check
 p5-net-dns-codes                ports/dns/p5-Net-DNS-Codes
 p5-net-dns-lite                 ports/dns/p5-Net-DNS-Lite
 p5-net-dns-resolver-programmable  ports/dns/p5-Net-DNS-Resolver-Programmable
@@ -19143,6 +19157,7 @@ p5-xml-stx                      ports/textproc/p5-XML-STX
 p5-xml-tiny                     ports/textproc/p5-XML-Tiny
 p5-xml-tinyxml                  ports/textproc/p5-XML-TinyXML
 p5-xml-tokeparser               ports/textproc/p5-XML-TokeParser
+p5-xml-toolkit                  ports/textproc/p5-XML-Toolkit
 p5-xml-treebuilder              ports/textproc/p5-XML-TreeBuilder
 p5-xml-treepp                   ports/textproc/p5-XML-TreePP
 p5-xml-twig                     ports/textproc/p5-XML-Twig
@@ -21300,6 +21315,7 @@ py-django                       ports/www/py-django
 py-django-app-plugins           ports/www/py-django-app-plugins
 py-django-appmedia              ports/www/py-django-appmedia
 py-django-classy-tags           ports/www/py-django-classy-tags
+py-django-css                   ports/www/py-django-css
 py-django-devel                 ports/www/py-django-devel
 py-django-evolution             ports/www/py-django-evolution
 py-django-extensions            ports/www/py-django-extensions
@@ -22678,10 +22694,13 @@ roottail                        ports/sysutils/roottail
 ros                             ports/devel/ros
 ros-common                      ports/devel/ros-common
 ros-common_msgs                 ports/devel/ros-common_msgs
+ros-documentation               ports/devel/ros-documentation
 ros-geometry                    ports/math/ros-geometry
 ros-image_common                ports/devel/ros-image_common
 ros-laser_pipeline              ports/devel/ros-laser_pipeline
 ros-nxt                         ports/devel/ros-nxt
+ros-rx                          ports/devel/ros-rx
+ros_comm                        ports/devel/ros_comm
 ros_tutorials                   ports/devel/ros_tutorials
 rosegarden                      ports/audio/rosegarden
 rospell                         ports/editors/rospell
