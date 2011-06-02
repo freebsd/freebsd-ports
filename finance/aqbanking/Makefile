@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	aqbanking
-DISTVERSION=	5.0.5
+DISTVERSION=	5.0.7
 CATEGORIES=	finance
-MASTER_SITES=	http://www2.aquamaniac.de/sites/download/
-DISTFILES=	download.php\?package=03\&release=78\&file=01\&dummy=${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=03&release=80&file=01&dummy=/
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Online banking interface and financial data framework
@@ -31,8 +30,7 @@ OPTIONS=	APIDOC "Full API documentation (requires Doxygen)" off \
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-release="yes"
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
