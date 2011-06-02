@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	cduce
-PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTVERSION=	0.5.4
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cduce.org/download/ \
 		ftp://ftp.stack.nl/pub/users/johans/cduce/
