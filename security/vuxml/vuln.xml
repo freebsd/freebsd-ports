@@ -34,6 +34,56 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e27a1af3-8d21-11e0-a45d-001e8c75030d">
+    <topic>subversion -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+        <name>subversion</name>
+        <range><lt>1.6.17</lt></range>
+      </package>
+      <package>
+        <name>subversion-freebsd</name>
+        <range><lt>1.6.17</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Subversion tram reports:</p>
+	<blockquote cite="http://subversion.apache.org/security/CVE-2011-1752-advisory.txt">
+	  <p>Subversion's mod_dav_svn Apache HTTPD server module will
+            dereference a NULL pointer if asked to deliver baselined WebDAV
+            resources.</p>
+          <p>This can lead to a DoS.  An exploit has been tested, and tools or
+            users have been observed triggering this problem in the wild.</p>
+	</blockquote>
+        <blockquote cite="http://subversion.apache.org/security/CVE-2011-1783-advisory.txt">
+          <p>Subversion's mod_dav_svn Apache HTTPD server module may in certain
+            scenarios enter a logic loop which does not exit and which allocates
+            memory in each iteration, ultimately exhausting all the available
+            memory on the server.</p>
+          <p>This can lead to a DoS.  There are no known instances of this
+            problem being observed in the wild, but an exploit has been tested.</p>
+        </blockquote>
+        <blockquote cite="http://subversion.apache.org/security/CVE-2011-1921-advisory.txt">
+          <p>Subversion's mod_dav_svn Apache HTTPD server module may leak to
+            remote users the file contents of files configured to be unreadable
+            by those users.</p>
+          <p>There are no known instances of this problem being observed in the
+            wild, but an exploit has been tested.</p>
+        </blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-1752</cvename>
+      <cvename>CVE-2011-1783</cvename>
+      <cvename>CVE-2011-1921</cvename>
+    </references>
+    <dates>
+      <discovery>2011-05-28</discovery>
+      <entry>2011-06-02</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1acf9ec5-877d-11e0-b937-001372fd0af2">
     <topic>drupal6 -- multiple vulnerabilities</topic>
     <affects>
