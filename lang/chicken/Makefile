@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	chicken
-PORTVERSION=	4.6.0
+PORTVERSION=	4.7.0
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://code.call-cc.org/releases/${PORTVERSION}/
 
@@ -14,6 +14,7 @@ MAINTAINER=	vmagerya@gmail.com
 COMMENT=	A Scheme-to-C compiler
 
 USE_GMAKE=	yes
+MAKEFILE=	GNUmakefile
 USE_LDCONFIG=	yes
 MAKE_ARGS+=	PLATFORM=bsd PREFIX=${PREFIX} \
 		TOPMANDIR=${PREFIX}/man ARCH=${NEW_ARCH} \
@@ -29,6 +30,11 @@ MAN1=		chicken.1 chicken-bug.1 chicken-install.1 chicken-profile.1 \
 .if ${ARCH} != "amd64" && ${ARCH} != "i386" && ${ARCH} != "sparc64"
 MAKE_ARGS+=	HACKED_APPLY=
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} \
+		's|^DOCDIR = .*$$|DOCDIR = ${DOCSDIR}|' \
+		${WRKSRC}/defaults.make
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/NEWS ${DOCSDIR}
