@@ -1,12 +1,13 @@
-# New ports collection makefile for:   mariadb
-# Date created:        14 November 2010
-# Whom:                siasia
+# New ports collection makefile for:	mariadb-server
+# Date created:				30 May 2011
+# Whom:					Doug Barton <dougb@FreeBSD.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	mariadb
+PKGNAMESUFFIX?=	-server
 PORTVERSION=	5.2.5
+PORTREVISION?=	0
 CATEGORIES=	databases
 MASTER_SITES=	http://www.percona.com/downloads/MariaDB/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
 		http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
@@ -15,32 +16,33 @@ MASTER_SITES=	http://www.percona.com/downloads/MariaDB/${PORTNAME}-${PORTVERSION
 		http://mirror.aarnet.edu.au/pub/MariaDB/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
 		http://ftp-stud.hs-esslingen.de/pub/Mirrors/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
 		http://gd.tuwien.ac.at/db/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
-		http://mirrors.fe.up.pt/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/
+		http://mirrors.fe.up.pt/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
+		http://mirror.switch.ch/mirror/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/
 
 MAINTAINER=	dgeo@centrale-marseille.fr
-COMMENT=	A database server - drop-in replacement functionality for MySQL
+COMMENT?=	Database server - drop-in replacement for MySQL
 
 IGNORE=		Post repo-copy, not ready for use yet
 
-LICENSE=	GPLv2
+CONFLICTS?=	mysql-server-[0-9]*
 
-CONFLICTS=	mysql-server-[0-9]* mysql-client-[0-9]* mysql-scripts-[0-9]*
+GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=	--with-embedded-server
-
+.if !defined(MARIADB_SCRIPTS_SLAVE)
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 DATADIR=	${PREFIX}/share/mysql
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/mysql
-USE_RC_SUBR=	mysql-server
+
+INFO=		mysql
 
 USERS=		mysql
 GROUPS=		mysql
 
-INFO=		mysql
+OPTIONS=	SSL "Activate SSL support (yassl)" Off \
+		OPENSSL "Use OpenSSL instead of bundled yassl" Off
+
 MAN1=		comp_err.1 \
-		innochecksum.1 \
 		msql2mysql.1 \
 		my_print_defaults.1 \
 		myisam_ftdump.1 \
@@ -52,7 +54,6 @@ MAN1=		comp_err.1 \
 		mysql.1 \
 		mysql.server.1 \
 		mysql_client_test.1 \
-		mysql_client_test_embedded.1 \
 		mysql_config.1 \
 		mysql_convert_table_format.1 \
 		mysql_find_rows.1 \
@@ -80,7 +81,6 @@ MAN1=		comp_err.1 \
 		mysqlshow.1 \
 		mysqlslap.1 \
 		mysqltest.1 \
-		mysqltest_embedded.1 \
 		perror.1 \
 		replace.1 \
 		resolve_stack_dump.1 \
@@ -88,22 +88,32 @@ MAN1=		comp_err.1 \
 MAN8=		mysqld.8 \
 		mysqlmanager.8
 
-OPTIONS=	ARIADB  "Aria storage engine" On \
+.if !defined(MARIADB_CLIENT_SLAVE)
+LICENSE=	GPLv2
+
+CONFIGURE_ARGS=	--with-embedded-server
+USE_RC_SUBR=	mysql-server
+
+OPTIONS+=	ARIADB "Aria storage engine" On \
+		PORTEVENT "Use libevent from ports" Off \
 		ARCHIVE "Archive storage plugin" On \
-		BLACKHOLE       "Blackhole storage engine" On \
-		FEDERATED       "Federated (old) storage engine" Off \
-		FEDERATEDX      "FederatedX storage engine (Federated replacement)" On \
-		INNODB  "InnoDB (old) engine" Off \
-		XTRADB  "XtraDB (InnoDB replacement) engine" On \
+		BLACKHOLE "Blackhole storage engine" On \
+		FEDERATED "Federated (old) storage engine" Off \
+		FEDERATEDX "FederatedX storage engine (Federated replacement)" On \
+		INNODB "InnoDB (old) engine" Off \
+		XTRADB "XtraDB (InnoDB replacement) engine" On \
 		OQGRAPH "Open Query Graph Computation engine" Off \
-		PBXT    "MVCC-based transactional engine" Off \
-		PARTITION       "Partitioning support" Off \
-		SPHINX  "SE client for Sphinx search daemon" On \
-		NDB     "Enable NDB support (imply PARTITION)" Off \
-		EXAMPLES        "Example engine,daemon and ftsearch plugins" Off \
-		PORTEVENT       "Use libevent from ports" Off \
-		SSL     "Activate SSL support (yassl)" Off \
-		OPENSSL "Use OpenSSL instead of bundled yassl" Off
+		PBXT "MVCC-based transactional engine" Off \
+		PARTITION "Partitioning support" Off \
+		SPHINX "SE client for Sphinx search daemon" On \
+		NDB "Enable NDB support (imply PARTITION)" Off \
+		EXAMPLES "Example engine,daemon and ftsearch plugins" Off
+
+MAN1+=		innochecksum.1 \
+		mysql_client_test_embedded.1 \
+		mysqltest_embedded.1
+.endif		# .if !defined(MARIADB_CLIENT_SLAVE)
+.endif		# .if !defined(MARIADB_SCRIPTS_SLAVE)
 
 .include <bsd.port.options.mk>
 
@@ -205,11 +215,7 @@ PLIST_SUB+=	EXAMPLES="@comment "
 .if defined(WITH_NDB)
 CONFIGURE_ARGS+=	--with-plugin-ndbcluster
 WITH_PARTITION=yes
-#MAN1+=       ndb_config.1 ndb_delete_all.1 ndb_desc.1 ndb_drop_index.1 \
-#     ndb_drop_table.1 ndb_error_reporter.1 ndb_mgm.1 \
-#     ndb_print_backup_file.1 ndb_print_schema_file.1 \
-#     ndb_print_sys_file.1 ndb_restore.1 ndb_select_all.1 \
-#     ndb_select_count.1 ndb_show_tables.1 ndb_size.pl.1 ndb_waiter.1
+
 PLIST_SUB+=	NDB=""
 .else
 CONFIGURE_ARGS+=	--without-plugin-ndbcluster
@@ -231,18 +237,25 @@ CONFIGURE_ARGS+=	--with-extra-charsets=${WITH_XCHARSET}
 CONFIGURE_ARGS+=	--with-collation=${WITH_COLLATION}
 .endif
 
+.if !defined(MARIADB_SCRIPTS_SLAVE)
 pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "      WITH_CHARSET=charset    Define the primary built-in charset (def: latin1 selected: ${WITH_CHARSET})."
-	@${ECHO} "      WITH_XCHARSET=list      Define other built-in charsets (selected: ${WITH_XCHARSET})."
-	@${ECHO} "      WITH_COLLATION=collate  Define default collation (def: latin1_swedish_ci selected: ${WITH_COLLATION})."
-	@${ECHO} ""
+	@${ECHO} ''
+	@${ECHO} '	The following configuration options can be set in /etc/make.conf'
+	@${ECHO} ''
+	@${ECHO} "	WITH_COLLATION=collate"
+	@${ECHO} "		Default collation (default: latin1_swedish_ci, selected: ${WITH_COLLATION})."
+	@${ECHO} "	WITH_CHARSET=charset"
+	@${ECHO} "		Primary built-in charset (default: latin1, selected: ${WITH_CHARSET})."
+	@${ECHO} "	WITH_XCHARSET=list"
+	@${ECHO} "		Other built-in charsets (default: none, selected: ${WITH_XCHARSET})."
+	@${ECHO} ''
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^install:/ s|^\(install:\).*$$|\1|' \
 		${WRKSRC}/mysql-test/Makefile.in ${WRKSRC}/sql-bench/Makefile.in
 
-port-install:
+post-install:
 	@${CAT} pkg-message
+.endif
 
 .include <bsd.port.mk>

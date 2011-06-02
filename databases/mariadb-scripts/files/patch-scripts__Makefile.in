@@ -1,0 +1,29 @@
+--- scripts/Makefile.in.orig	2011-03-01 22:25:08.000000000 -0800
++++ scripts/Makefile.in	2011-06-01 22:13:44.000000000 -0700
+@@ -477,16 +477,12 @@
+ BUILT_SOURCES = mysql_fix_privilege_tables.sql \
+ 		mysql_fix_privilege_tables_sql.c
+ 
+-bin_SCRIPTS = @server_scripts@ \
+-			msql2mysql \
+-			mysql_config \
+-			mysql_fix_privilege_tables \
++bin_SCRIPTS = msql2mysql \
+ 			mysql_fix_extensions \
+ 			mysql_setpermission \
+ 			mysql_secure_installation \
+ 			mysql_zap \
+ 			mysqlaccess \
+-			mysqlbug \
+ 			mysql_convert_table_format \
+ 			mysql_find_rows \
+ 			mysqlhotcopy \
+@@ -765,7 +761,7 @@
+ uninstall: uninstall-am
+ 
+ install-am: all-am
+-	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am install-data-am
++	@$(MAKE) $(AM_MAKEFLAGS) install-exec-am
+ 
+ installcheck: installcheck-am
+ install-strip:
