@@ -94,6 +94,11 @@ INFO+=		gcc${SUFFIX}/libquadmath
 .endif
 
 .if ! defined(WITHOUT_JAVA)
+ECJ_JAR=	ecj-4.5.jar
+MASTER_SITES+=	${MASTER_SITE_SOURCEWARE:S|$|:ecj|}
+MASTER_SITE_SUBDIR+=	java/:ecj
+DISTFILES+=	${ECJ_JAR}:ecj
+EXTRACT_ONLY=	${DISTFILES:S|${ECJ_JAR}:ecj||}
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
 MAN1+=		aot-compile${SUFFIX}.1 \
@@ -124,6 +129,10 @@ MAN3=		ffi${SUFFIX}.3 \
 INFO+=		gcc${SUFFIX}/cp-tools \
 		gcc${SUFFIX}/gcj
 PLIST_SUB+=	JAVA=""
+
+# Preps the source tree for the gcj build
+post-patch::
+	@${CP} ${DISTDIR}/${ECJ_JAR} ${SRCDIR}/ecj.jar
 .else
 CONFIGURE_ARGS+=--disable-libgcj
 PLIST_SUB+=	JAVA="@comment "
