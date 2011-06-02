@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libofx
-PORTVERSION=	0.9.2
+PORTVERSION=	0.9.4
 CATEGORIES=	finance
 MASTER_SITES=	SF
 
@@ -14,14 +14,14 @@ MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	OpenSource implementation of the OFX (Open Financial eXchange)
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
-		xml\\+\\+-1.0.1:${PORTSDIR}/textproc/libxml++ \
+		xml\\+\\+-2.6.2:${PORTSDIR}/textproc/libxml++26 \
 		osp.5:${PORTSDIR}/textproc/opensp
 
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtool
 ACLOCAL_ARGS=	-I m4
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-doxygen --disable-dot --disable-gengetopt \
 		--with-opensp-includes=${LOCALBASE}/include/OpenSP \
 		--with-opensp-libs=${LOCALBASE}/lib
@@ -33,6 +33,9 @@ LDFLAGS=	-L${LOCALBASE}/lib
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+MAN1=		ofxconnect.1 \
+		ofxdump.1
 
 PORTDOCS=	*
 
