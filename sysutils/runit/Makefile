@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	runit
-PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTVERSION=	2.1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://smarden.org/${PORTNAME}/
+MASTER_SITES=	http://smarden.org/${PORTNAME}/ \
+		http://www.bayofrum.net/dist/${PORTNAME}/
 
 MAINTAINER=	utisoft@gmail.com
 COMMENT=	Service supervision tools compatible with DJB daemontools
