@@ -6,20 +6,25 @@
 #
 
 PORTNAME=	drush
-PORTVERSION=	3.0
+PORTVERSION=	4.4
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.drupal.org/files/projects/
-DISTNAME=	drush-All-versions-${PORTVERSION}
+DISTNAME=	drush-7.x-${PORTVERSION}
 
-MAINTAINER=	freebsduser@paradisegreen.co.uk
+MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT=	Drupal command line and scripting interface
+
+RUN_DEPENDS=	${LOCALBASE}/share/pear/Console/Table.php:${PORTSDIR}/devel/pear-Console_Table
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 NO_BUILD=	yes
 
 # set php requirements same as drupal itself
-USE_PHP=	gd pcre session xml mbstring
+USE_PHP=	gd pcre session xml mbstring ctype
 IGNORE_WITH_PHP=4
-WANT_PHP_WEB=	yes
+WANT_PHP_CLI=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -30,7 +35,8 @@ do-configure:
 
 do-install:
 	${MKDIR} ${DATADIR}
-	( cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${DATADIR} '! ( -name drush -or -name drush.bat -or -name *.orig -or -name *.bak )' )
-	${INSTALL_SCRIPT} ${WRKSRC}/drush ${PREFIX}/bin
+	( cd ${WRKSRC} && ${COPYTREE_SHARE} \* ${DATADIR} '! ( -name drush.bat -or -name *.orig -or -name *.bak -or -name .gitignore -or -name LICENSE.txt )' )
+	${CHMOD} 755 ${DATADIR}/drush
+	${LN} -s ${DATADIR}/drush ${PREFIX}/bin/drush
 
 .include <bsd.port.post.mk>
