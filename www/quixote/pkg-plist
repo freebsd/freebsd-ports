@@ -19,6 +19,9 @@
 %%PYTHON_SITELIBDIR%%/quixote/demo/mini_demo.py
 %%PYTHON_SITELIBDIR%%/quixote/demo/mini_demo.pyc
 %%PYTHON_SITELIBDIR%%/quixote/demo/mini_demo.pyo
+%%PYTHON_SITELIBDIR%%/quixote/demo/profile.py
+%%PYTHON_SITELIBDIR%%/quixote/demo/profile.pyc
+%%PYTHON_SITELIBDIR%%/quixote/demo/profile.pyo
 %%PYTHON_SITELIBDIR%%/quixote/demo/root.ptl
 %%PYTHON_SITELIBDIR%%/quixote/demo/root.ptlc
 %%PYTHON_SITELIBDIR%%/quixote/directory.py
@@ -65,6 +68,12 @@
 %%PYTHON_SITELIBDIR%%/quixote/ptl/__init__.pyc
 %%PYTHON_SITELIBDIR%%/quixote/ptl/__init__.pyo
 %%PYTHON_SITELIBDIR%%/quixote/ptl/cimport.so
+%%PYTHON_SITELIBDIR%%/quixote/ptl/ihooks_local.py
+%%PYTHON_SITELIBDIR%%/quixote/ptl/ihooks_local.pyc
+%%PYTHON_SITELIBDIR%%/quixote/ptl/ihooks_local.pyo
+%%PYTHON_SITELIBDIR%%/quixote/ptl/infinite_reload.py
+%%PYTHON_SITELIBDIR%%/quixote/ptl/infinite_reload.pyc
+%%PYTHON_SITELIBDIR%%/quixote/ptl/infinite_reload.pyo
 %%PYTHON_SITELIBDIR%%/quixote/ptl/install.py
 %%PYTHON_SITELIBDIR%%/quixote/ptl/install.pyc
 %%PYTHON_SITELIBDIR%%/quixote/ptl/install.pyo
@@ -80,6 +89,12 @@
 %%PYTHON_SITELIBDIR%%/quixote/ptl/qx_distutils.py
 %%PYTHON_SITELIBDIR%%/quixote/ptl/qx_distutils.pyc
 %%PYTHON_SITELIBDIR%%/quixote/ptl/qx_distutils.pyo
+%%PYTHON_SITELIBDIR%%/quixote/ptl/relimport.py
+%%PYTHON_SITELIBDIR%%/quixote/ptl/relimport.pyc
+%%PYTHON_SITELIBDIR%%/quixote/ptl/relimport.pyo
+%%PYTHON_SITELIBDIR%%/quixote/ptl/test_import.py
+%%PYTHON_SITELIBDIR%%/quixote/ptl/test_import.pyc
+%%PYTHON_SITELIBDIR%%/quixote/ptl/test_import.pyo
 %%PYTHON_SITELIBDIR%%/quixote/publish.py
 %%PYTHON_SITELIBDIR%%/quixote/publish.pyc
 %%PYTHON_SITELIBDIR%%/quixote/publish.pyo
