@@ -115,6 +115,9 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/ui_options_lastfm.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/ui_options_lastfm.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/ui_options_lastfm.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/open_in_gui.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/open_in_gui.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/open_in_gui.pyo
 %%PYTHON_SITELIBDIR%%/picard/plugins/originalreleasedate.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/originalreleasedate.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/originalreleasedate.pyo
@@ -130,6 +133,9 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/plugins/titlecase.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/titlecase.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/titlecase.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/tracks2clipboard.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/tracks2clipboard.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/tracks2clipboard.pyo
 %%PYTHON_SITELIBDIR%%/picard/puidmanager.py
 %%PYTHON_SITELIBDIR%%/picard/puidmanager.pyc
 %%PYTHON_SITELIBDIR%%/picard/puidmanager.pyo
