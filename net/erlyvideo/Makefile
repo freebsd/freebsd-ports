@@ -7,6 +7,7 @@
 
 PORTNAME=	erlyvideo
 PORTVERSION=	2.8.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://host5.webstroy.ru/
 
@@ -39,6 +40,7 @@ post-patch:
 		${WRKSRC}/priv/${PORTNAME}.conf.sample
 	@${FIND} ${WRKSRC} -type f -name .gitignore | ${XARGS} ${RM}
 	@${FIND} ${WRKSRC} -type f -name "*.bak" | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -type f -name "*.orig" | ${XARGS} ${RM}
 	@${RMDIR} ${WRKSRC}/src/plugins
 
 do-install:
