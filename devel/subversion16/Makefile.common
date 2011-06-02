@@ -5,8 +5,8 @@
 # $FreeBSD$
 
 PORTNAME=	subversion
-PORTVERSION=	1.6.16
-PORTREVISION?=	3
+PORTVERSION=	1.6.17
+PORTREVISION?=	0
 CATEGORIES+=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/en/1.5/:book
