@@ -16,8 +16,22 @@ bin/desktop-installer
 %%DATADIR%%/XFCE4/bsd_background.jpg
 %%DATADIR%%/XFCE4/xdmshutdown
 %%DATADIR%%/XFCE4/xinitrc
+%%DATADIR%%/gcc45/Makefile
+%%DATADIR%%/gcc45/distinfo
+%%DATADIR%%/gcc45/files/gcc-4.5-r170893-freebsd-ppc.diff
+%%DATADIR%%/gcc45/files/java-patch-hier
+%%DATADIR%%/gcc45/files/patch-gcc-config-rs6000-freebsd.h
+%%DATADIR%%/gcc45/files/patch-gcc-config-rs6000-t-t-freebsd
+%%DATADIR%%/gcc45/files/patch-gcc-config.gcc
+%%DATADIR%%/gcc45/files/patch-libgcc-config.host
+%%DATADIR%%/gcc45/files/patch-unwind-ia64.h
+%%DATADIR%%/gcc45/pkg-descr
+%%DATADIR%%/gcc45/pkg-plist
 %%DATADIR%%/ntp.conf
+%%DATADIR%%/splash.bmp
 %%DATADIR%%/todo
+@dirrm %%DATADIR%%/gcc45/files
+@dirrm %%DATADIR%%/gcc45
 @dirrm %%DATADIR%%/XFCE4
 @dirrm %%DATADIR%%/Scripts
 @dirrm %%DATADIR%%/KDE4
