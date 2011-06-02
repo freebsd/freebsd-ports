@@ -6,93 +6,96 @@ bin/chicken-status
 bin/chicken-uninstall
 bin/csc
 bin/csi
-include/chicken-config.h
-include/chicken.h
-lib/chicken/5/chicken.import.so
-lib/chicken/5/csi.import.so
-lib/chicken/5/data-structures.import.so
-lib/chicken/5/extras.import.so
-lib/chicken/5/files.import.so
-lib/chicken/5/foreign.import.so
-lib/chicken/5/irregex.import.so
-lib/chicken/5/lolevel.import.so
-lib/chicken/5/modules.db
-lib/chicken/5/ports.import.so
-lib/chicken/5/posix.import.so
-lib/chicken/5/regex.import.so
-lib/chicken/5/scheme.import.so
-lib/chicken/5/setup-api.import.so
-lib/chicken/5/setup-api.so
-lib/chicken/5/setup-download.import.so
-lib/chicken/5/setup-download.so
-lib/chicken/5/srfi-1.import.so
-lib/chicken/5/srfi-13.import.so
-lib/chicken/5/srfi-14.import.so
-lib/chicken/5/srfi-18.import.so
-lib/chicken/5/srfi-4.import.so
-lib/chicken/5/srfi-69.import.so
-lib/chicken/5/tcp.import.so
-lib/chicken/5/types.db
-lib/chicken/5/utils.import.so
+include/chicken/chicken-config.h
+include/chicken/chicken.h
+lib/chicken/6/chicken.import.so
+lib/chicken/6/csi.import.so
+lib/chicken/6/data-structures.import.so
+lib/chicken/6/extras.import.so
+lib/chicken/6/files.import.so
+lib/chicken/6/foreign.import.so
+lib/chicken/6/irregex.import.so
+lib/chicken/6/lolevel.import.so
+lib/chicken/6/modules.db
+lib/chicken/6/ports.import.so
+lib/chicken/6/posix.import.so
+lib/chicken/6/scheme.import.so
+lib/chicken/6/setup-api.import.so
+lib/chicken/6/setup-api.so
+lib/chicken/6/setup-download.import.so
+lib/chicken/6/setup-download.so
+lib/chicken/6/srfi-1.import.so
+lib/chicken/6/srfi-13.import.so
+lib/chicken/6/srfi-14.import.so
+lib/chicken/6/srfi-18.import.so
+lib/chicken/6/srfi-4.import.so
+lib/chicken/6/srfi-69.import.so
+lib/chicken/6/tcp.import.so
+lib/chicken/6/types.db
+lib/chicken/6/utils.import.so
 lib/libchicken.a
 lib/libchicken.so
-lib/libchicken.so.5
-%%DATADIR%%/chicken.png
+lib/libchicken.so.6
 %%DATADIR%%/setup.defaults
-%%DOCSDIR%%/LICENSE
-%%DOCSDIR%%/NEWS
-%%DOCSDIR%%/README
-%%DOCSDIR%%/manual/Accessing external objects
-%%DOCSDIR%%/manual/Acknowledgements
-%%DOCSDIR%%/manual/Basic mode of operation
-%%DOCSDIR%%/manual/Bibliography
-%%DOCSDIR%%/manual/Bugs and limitations
-%%DOCSDIR%%/manual/C interface
-%%DOCSDIR%%/manual/Callbacks
-%%DOCSDIR%%/manual/Cross development
-%%DOCSDIR%%/manual/Data representation
-%%DOCSDIR%%/manual/Declarations
-%%DOCSDIR%%/manual/Deployment
-%%DOCSDIR%%/manual/Deviations from the standard
-%%DOCSDIR%%/manual/Embedding
-%%DOCSDIR%%/manual/Exceptions
-%%DOCSDIR%%/manual/Extensions
-%%DOCSDIR%%/manual/Extensions to the standard
-%%DOCSDIR%%/manual/Foreign type specifiers
-%%DOCSDIR%%/manual/Getting started
-%%DOCSDIR%%/manual/Interface to external functions and variables
-%%DOCSDIR%%/manual/Locations
-%%DOCSDIR%%/manual/Modules
-%%DOCSDIR%%/manual/Non-standard macros and special forms
-%%DOCSDIR%%/manual/Non-standard read syntax
-%%DOCSDIR%%/manual/Other support procedures
-%%DOCSDIR%%/manual/Parameters
-%%DOCSDIR%%/manual/Supported language
-%%DOCSDIR%%/manual/The R5RS standard
-%%DOCSDIR%%/manual/The User's Manual
-%%DOCSDIR%%/manual/Unit data-structures
-%%DOCSDIR%%/manual/Unit eval
-%%DOCSDIR%%/manual/Unit expand
-%%DOCSDIR%%/manual/Unit extras
-%%DOCSDIR%%/manual/Unit files
-%%DOCSDIR%%/manual/Unit library
-%%DOCSDIR%%/manual/Unit lolevel
-%%DOCSDIR%%/manual/Unit ports
-%%DOCSDIR%%/manual/Unit posix
-%%DOCSDIR%%/manual/Unit regex
-%%DOCSDIR%%/manual/Unit srfi-1
-%%DOCSDIR%%/manual/Unit srfi-13
-%%DOCSDIR%%/manual/Unit srfi-14
-%%DOCSDIR%%/manual/Unit srfi-18
-%%DOCSDIR%%/manual/Unit srfi-4
-%%DOCSDIR%%/manual/Unit srfi-69
-%%DOCSDIR%%/manual/Unit tcp
-%%DOCSDIR%%/manual/Unit utils
-%%DOCSDIR%%/manual/Using the compiler
-%%DOCSDIR%%/manual/Using the interpreter
-%%DOCSDIR%%/manual/faq
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/manual/Accessing external objects.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Acknowledgements.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Basic mode of operation.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Bibliography.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Bugs and limitations.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/C interface.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Callbacks.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Cross development.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Data representation.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Declarations.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Deployment.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Deviations from the standard.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Embedding.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Exceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Extensions to the standard.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Extensions.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Foreign type specifiers.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Getting started.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Interface to external functions and variables.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Locations.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Macros.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Modules.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Non-standard macros and special forms.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Non-standard read syntax.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Other support procedures.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Parameters.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Supported language.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/The R5RS standard.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/The User's Manual.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Unit data-structures.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Unit eval.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Unit expand.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Unit extras.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Unit files.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Unit irregex.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Unit library.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Unit lolevel.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Unit ports.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Unit posix.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Unit srfi-1.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Unit srfi-13.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Unit srfi-14.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Unit srfi-18.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Unit srfi-4.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Unit srfi-69.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Unit tcp.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Unit utils.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Using the compiler.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/Using the interpreter.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/chicken.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/faq.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/index.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/manual.css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/manual
-@dirrm %%DOCSDIR%%
-@dirrm lib/chicken/5
+@dirrm lib/chicken/6
 @dirrm lib/chicken
+@dirrm include/chicken
