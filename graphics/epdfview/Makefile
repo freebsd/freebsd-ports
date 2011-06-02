@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	epdfview
-PORTVERSION=	0.1.7
-PORTREVISION=	7
+PORTVERSION=	0.1.8
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	http://trac.emma-soft.com/epdfview/chrome/site/releases/ \
 		http://mirror.slitaz.org/sources/packages/e/
@@ -31,6 +30,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 OPTIONS=	CUPS	"Use cups printing system"		off \
 		NLS	"Native language support"		on
+
+MAN1=	epdfview.1
 
 .include <bsd.port.pre.mk>
 
