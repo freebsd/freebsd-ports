@@ -38,9 +38,8 @@ post-patch:
 		${WRKSRC}/priv/${PORTNAME}.conf.sample
 	@${REINPLACE_CMD} -e 's#"movies"#"/var/lib/${PORTNAME}/movies"#g' \
 		${WRKSRC}/priv/${PORTNAME}.conf.sample
-	@${FIND} ${WRKSRC} -type f -name .gitignore | ${XARGS} ${RM}
-	@${FIND} ${WRKSRC} -type f -name "*.bak" | ${XARGS} ${RM}
-	@${FIND} ${WRKSRC} -type f -name "*.orig" | ${XARGS} ${RM}
+	@${FIND} ${WRKSRC} -type f -name .gitignore -delete -or -name "*.bak" \
+		-delete -or -name "*.orig" -delete 
 	@${RMDIR} ${WRKSRC}/src/plugins
 
 do-install:
