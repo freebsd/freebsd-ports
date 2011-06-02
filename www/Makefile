@@ -228,6 +228,7 @@
     SUBDIR += extsm
     SUBDIR += eyeos
     SUBDIR += eyeos-themes
+    SUBDIR += fancybox
     SUBDIR += fcgi
     SUBDIR += fcgiwrap
     SUBDIR += feedjack
