@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	roboctl
-PORTVERSION=	0.3.6
-PORTREVISION=	1
+PORTVERSION=	0.3.7
 CATEGORIES=	devel
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 		http://jbacon.dyndns.org/~bacon/Ports/distfiles/
@@ -20,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libgamepad.a:${PORTSDIR}/devel/libgamepad
 MAKE_ENV=	EXTRALIBS=-lbluetooth
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	CUTECOM "Install cutecom for Vex debugging" On
+OPTIONS=	CUTECOM "Install cutecom for Vex debugging" Off
 
 MAN1=		legoctl.1 vexctl.1 nxtremote.1
 MAN3=		roboctl.3
