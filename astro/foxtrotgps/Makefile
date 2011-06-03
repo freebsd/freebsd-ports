@@ -1,13 +1,12 @@
 # New ports collection makefile for:	foxtrotgps
 # Date created:				15 January 2011
-# Whom:						crwhipp
+# Whom:						crwhipp@gmail.com
 #
 # $FreeBSD$
 #
 
 PORTNAME=	foxtrotgps
-PORTVERSION=	1.0.0
-PORTREVISION=	2
+PORTVERSION=	1.0.1
 CATEGORIES=	astro geography
 MASTER_SITES=	http://www.foxtrotgps.org/releases/
 
@@ -30,5 +29,9 @@ USE_SQLITE=	3
 INSTALLS_ICONS=	yes
 
 MAN1=	foxtrotgps.1 convert2gpx.1 convert2osm.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|' ${WRKSRC}/contrib/convert2gpx ${WRKSRC}/contrib/convert2osm
+	@${REINPLACE_CMD} -e 's|/usr/bin/python|${LOCALBASE}/bin/python|' ${WRKSRC}/contrib/georss2foxtrotgps-poi
 
 .include <bsd.port.mk>

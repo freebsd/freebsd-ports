@@ -16,6 +16,7 @@ share/applications/foxtrotgps.desktop
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING
 %%DOCSDIR%%/ChangeLog
+%%DOCSDIR%%/HACKING
 %%DOCSDIR%%/INSTALL
 %%DOCSDIR%%/NEWS
 %%DOCSDIR%%/README
