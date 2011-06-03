@@ -6,7 +6,7 @@
 
 PORTNAME=	haddock
 PORTVERSION=	2.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -22,13 +22,13 @@ EXECUTABLE=	haddock-${PORTVERSION}
 
 PORTDATA=	*
 
-SUB_FILES=	pkg-deinstall
-SUB_LIST=	GHC_HADDOCK_CMD=${GHC_HADDOCK_CMD} HADDOCK=${PREFIX}/bin/haddock
+SUB_FILES=	pkg-deinstall pkg-install
+SUB_LIST=	GHC_HADDOCK_CMD=${GHC_HADDOCK_CMD} HADDOCK=${PREFIX}/bin/haddock EXECUTABLE=${PREFIX}/bin/${EXECUTABLE}
 
 CONFIGURE_ARGS=	--program-suffix=-${PORTVERSION}
 
 post-install::
-	@${LN} -sf ${PREFIX}/bin/${EXECUTABLE} ${PREFIX}/bin/haddock
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
