@@ -462,6 +462,7 @@
     SUBDIR += py-gato
     SUBDIR += py-gmpy
     SUBDIR += py-gnuplot
+    SUBDIR += py-graphtool
     SUBDIR += py-gsl
     SUBDIR += py-igraph
     SUBDIR += py-mathdom

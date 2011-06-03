@@ -1,0 +1,156 @@
+doc/graph-tool/AUTHORS
+doc/graph-tool/COPYING
+doc/graph-tool/INSTALL
+doc/graph-tool/LICENSE_1_0.txt
+doc/graph-tool/NEWS
+doc/graph-tool/README
+doc/graph-tool/TODO
+%%PYTHON_SITELIBDIR%%/graph_tool/__init__.py
+%%PYTHON_SITELIBDIR%%/graph_tool/__init__.pyc
+%%PYTHON_SITELIBDIR%%/graph_tool/__init__.pyo
+%%PYTHON_SITELIBDIR%%/graph_tool/all.py
+%%PYTHON_SITELIBDIR%%/graph_tool/all.pyc
+%%PYTHON_SITELIBDIR%%/graph_tool/all.pyo
+%%PYTHON_SITELIBDIR%%/graph_tool/centrality/__init__.py
+%%PYTHON_SITELIBDIR%%/graph_tool/centrality/__init__.pyc
+%%PYTHON_SITELIBDIR%%/graph_tool/centrality/__init__.pyo
+%%PYTHON_SITELIBDIR%%/graph_tool/centrality/libgraph_tool_centrality.la
+%%PYTHON_SITELIBDIR%%/graph_tool/centrality/libgraph_tool_centrality.so
+%%PYTHON_SITELIBDIR%%/graph_tool/clustering/__init__.py
+%%PYTHON_SITELIBDIR%%/graph_tool/clustering/__init__.pyc
+%%PYTHON_SITELIBDIR%%/graph_tool/clustering/__init__.pyo
+%%PYTHON_SITELIBDIR%%/graph_tool/clustering/libgraph_tool_clustering.la
+%%PYTHON_SITELIBDIR%%/graph_tool/clustering/libgraph_tool_clustering.so
+%%PYTHON_SITELIBDIR%%/graph_tool/community/__init__.py
+%%PYTHON_SITELIBDIR%%/graph_tool/community/__init__.pyc
+%%PYTHON_SITELIBDIR%%/graph_tool/community/__init__.pyo
+%%PYTHON_SITELIBDIR%%/graph_tool/community/libgraph_tool_community.la
+%%PYTHON_SITELIBDIR%%/graph_tool/community/libgraph_tool_community.so
+%%PYTHON_SITELIBDIR%%/graph_tool/correlations/__init__.py
+%%PYTHON_SITELIBDIR%%/graph_tool/correlations/__init__.pyc
+%%PYTHON_SITELIBDIR%%/graph_tool/correlations/__init__.pyo
+%%PYTHON_SITELIBDIR%%/graph_tool/correlations/libgraph_tool_correlations.la
+%%PYTHON_SITELIBDIR%%/graph_tool/correlations/libgraph_tool_correlations.so
+%%PYTHON_SITELIBDIR%%/graph_tool/decorators.py
+%%PYTHON_SITELIBDIR%%/graph_tool/decorators.pyc
+%%PYTHON_SITELIBDIR%%/graph_tool/decorators.pyo
+%%PYTHON_SITELIBDIR%%/graph_tool/dl_import.py
+%%PYTHON_SITELIBDIR%%/graph_tool/dl_import.pyc
+%%PYTHON_SITELIBDIR%%/graph_tool/dl_import.pyo
+%%PYTHON_SITELIBDIR%%/graph_tool/draw/__init__.py
+%%PYTHON_SITELIBDIR%%/graph_tool/draw/__init__.pyc
+%%PYTHON_SITELIBDIR%%/graph_tool/draw/__init__.pyo
+%%PYTHON_SITELIBDIR%%/graph_tool/draw/libgraph_tool_layout.la
+%%PYTHON_SITELIBDIR%%/graph_tool/draw/libgraph_tool_layout.so
+%%PYTHON_SITELIBDIR%%/graph_tool/flow/__init__.py
+%%PYTHON_SITELIBDIR%%/graph_tool/flow/__init__.pyc
+%%PYTHON_SITELIBDIR%%/graph_tool/flow/__init__.pyo
+%%PYTHON_SITELIBDIR%%/graph_tool/flow/libgraph_tool_flow.la
+%%PYTHON_SITELIBDIR%%/graph_tool/flow/libgraph_tool_flow.so
+%%PYTHON_SITELIBDIR%%/graph_tool/generation/__init__.py
+%%PYTHON_SITELIBDIR%%/graph_tool/generation/__init__.pyc
+%%PYTHON_SITELIBDIR%%/graph_tool/generation/__init__.pyo
+%%PYTHON_SITELIBDIR%%/graph_tool/generation/libgraph_tool_generation.la
+%%PYTHON_SITELIBDIR%%/graph_tool/generation/libgraph_tool_generation.so
+%%PYTHON_SITELIBDIR%%/graph_tool/include/config.h
+%%PYTHON_SITELIBDIR%%/graph_tool/include/fast_vector_property_map.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_adaptor.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_arf.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_assortativity.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_augment.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_average.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_avg_correlations.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_clustering.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_community.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_community_network.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_components.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_corr_hist.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_correlations.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_distance.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_distance_sampled.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_eigentrust.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_extended_clustering.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_filtering.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_generation.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_geometric.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_histograms.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_lattice.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_motifs.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_pagerank.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_parallel.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_predecessor.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_price.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_properties.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_properties_group.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_python_interface.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_rewiring.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_search.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_selectors.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_subgraph_isomorphism.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_triangulation.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_trust_transitivity.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_union.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_util.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/graph_wrap.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/histogram.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/minmax.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/mpl_nested_loop.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/numpy_bind.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/sampler.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/include/shared_map.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/io.py
+%%PYTHON_SITELIBDIR%%/graph_tool/io.pyc
+%%PYTHON_SITELIBDIR%%/graph_tool/io.pyo
+%%PYTHON_SITELIBDIR%%/graph_tool/libgraph_tool_core.la
+%%PYTHON_SITELIBDIR%%/graph_tool/libgraph_tool_core.so
+%%PYTHON_SITELIBDIR%%/graph_tool/run_action/__init__.py
+%%PYTHON_SITELIBDIR%%/graph_tool/run_action/__init__.pyc
+%%PYTHON_SITELIBDIR%%/graph_tool/run_action/__init__.pyo
+%%PYTHON_SITELIBDIR%%/graph_tool/run_action/inline.py
+%%PYTHON_SITELIBDIR%%/graph_tool/run_action/inline.pyc
+%%PYTHON_SITELIBDIR%%/graph_tool/run_action/inline.pyo
+%%PYTHON_SITELIBDIR%%/graph_tool/run_action/run_action_support.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/run_action/run_action_template.hh
+%%PYTHON_SITELIBDIR%%/graph_tool/search/__init__.py
+%%PYTHON_SITELIBDIR%%/graph_tool/search/__init__.pyc
+%%PYTHON_SITELIBDIR%%/graph_tool/search/__init__.pyo
+%%PYTHON_SITELIBDIR%%/graph_tool/search/libgraph_tool_search.la
+%%PYTHON_SITELIBDIR%%/graph_tool/search/libgraph_tool_search.so
+%%PYTHON_SITELIBDIR%%/graph_tool/spectral/__init__.py
+%%PYTHON_SITELIBDIR%%/graph_tool/spectral/__init__.pyc
+%%PYTHON_SITELIBDIR%%/graph_tool/spectral/__init__.pyo
+%%PYTHON_SITELIBDIR%%/graph_tool/stats/__init__.py
+%%PYTHON_SITELIBDIR%%/graph_tool/stats/__init__.pyc
+%%PYTHON_SITELIBDIR%%/graph_tool/stats/__init__.pyo
+%%PYTHON_SITELIBDIR%%/graph_tool/stats/libgraph_tool_stats.la
+%%PYTHON_SITELIBDIR%%/graph_tool/stats/libgraph_tool_stats.so
+%%PYTHON_SITELIBDIR%%/graph_tool/topology/__init__.py
+%%PYTHON_SITELIBDIR%%/graph_tool/topology/__init__.pyc
+%%PYTHON_SITELIBDIR%%/graph_tool/topology/__init__.pyo
+%%PYTHON_SITELIBDIR%%/graph_tool/topology/libgraph_tool_topology.la
+%%PYTHON_SITELIBDIR%%/graph_tool/topology/libgraph_tool_topology.so
+%%PYTHON_SITELIBDIR%%/graph_tool/util/__init__.py
+%%PYTHON_SITELIBDIR%%/graph_tool/util/__init__.pyc
+%%PYTHON_SITELIBDIR%%/graph_tool/util/__init__.pyo
+%%PYTHON_SITELIBDIR%%/graph_tool/util/libgraph_tool_util.la
+%%PYTHON_SITELIBDIR%%/graph_tool/util/libgraph_tool_util.so
+@dirrm %%PYTHON_SITELIBDIR%%/graph_tool/util
+@dirrm %%PYTHON_SITELIBDIR%%/graph_tool/topology
+@dirrm %%PYTHON_SITELIBDIR%%/graph_tool/stats
+@dirrm %%PYTHON_SITELIBDIR%%/graph_tool/spectral
+@dirrm %%PYTHON_SITELIBDIR%%/graph_tool/search
+@dirrm %%PYTHON_SITELIBDIR%%/graph_tool/run_action
+@dirrm %%PYTHON_SITELIBDIR%%/graph_tool/include
+@dirrm %%PYTHON_SITELIBDIR%%/graph_tool/generation
+@dirrm %%PYTHON_SITELIBDIR%%/graph_tool/flow
+@dirrm %%PYTHON_SITELIBDIR%%/graph_tool/draw
+@dirrm %%PYTHON_SITELIBDIR%%/graph_tool/correlations
+@dirrm %%PYTHON_SITELIBDIR%%/graph_tool/community
+@dirrm %%PYTHON_SITELIBDIR%%/graph_tool/clustering
+@dirrm %%PYTHON_SITELIBDIR%%/graph_tool/centrality
+@dirrm %%PYTHON_SITELIBDIR%%/graph_tool
+@dirrm %%PYTHON_SITELIBDIR%%
+@dirrm lib/python2.7
+@dirrm doc/graph-tool
+@dirrm doc
