@@ -1,7 +1,7 @@
---- src/mousing.c.orig	2009-08-24 03:03:26.000000000 +0900
-+++ src/mousing.c	2009-09-28 18:48:47.000000000 +0900
-@@ -177,8 +177,11 @@
- 		     && pi->measure_number >= si->rightmeasurenum);
+--- src/mousing.c.orig	2011-04-27 19:59:45.127257000 +0200
++++ src/mousing.c	2011-05-07 10:52:03.000000000 +0200
+@@ -202,8 +202,11 @@
+ 		     && pi->measure_number >= rightmeasurenum);
      
    pi->the_staff = g_list_nth (si->thescore, pi->staff_number - 1);
 -  pi->the_measure

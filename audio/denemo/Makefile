@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	denemo
-PORTVERSION=	0.8.14
-PORTREVISION=	1
+PORTVERSION=	0.9.0
 CATEGORIES=	audio
-MASTER_SITES=	SAVANNAH
+MASTER_SITES=	GNU
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Graphical score editor
@@ -20,12 +19,13 @@ LIB_DEPENDS=	aubio.3:${PORTSDIR}/audio/aubio \
 		jack.0:${PORTSDIR}/audio/jack \
 		guile.20:${PORTSDIR}/lang/guile \
 		fftw3.5:${PORTSDIR}/math/fftw3
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2
+
+OPTIONS+=	LILYPOND "Install LilyPond (Printing)" off
 
 USE_GNOME=	gtk20 gtksourceview2 librsvg2 libxml2
 USE_BISON=	build
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-jack \
 		--sysconfdir=${PREFIX}/etc
 
@@ -35,7 +35,12 @@ PORTEXAMPLES=	*
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
 
+.include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_LILYPOND)
+RUN_DEPENDS+=	lilypond:${PORTSDIR}/print/lilypond
+.endif
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
@@ -49,7 +54,7 @@ PLIST_SUB+=		NLS=""
 post-patch:
 	@${REINPLACE_CMD} -e 's|m4 doc actions|m4 actions| ; \
 		 s|fonts examples templates|fonts templates|' ${WRKSRC}/Makefile.in
-	@${REINPLACE_CMD} -e '/<malloc.h>/d' ${WRKSRC}/src/lyparser.y
+	@${REINPLACE_CMD} -e '/<malloc.h>/d' ${WRKSRC}/ltmain.sh
 
 post-install:
 	@${LN} -sf ${DOCSDIR}/manual ${DATADIR}/manual
