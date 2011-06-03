@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110602:
+  AFFECTS: users of net/freeradius
+  AUTHOR: Sevan Janiyan <venture37@geeklan.co.uk>
+
+  Freeradius no longer runs as nobody. It now runs as the freeradius
+  user. Please ensure that the following paths are owned by freeradius:
+
+  /var/run/radiusd
+  /var/log/radacct
+  /var/log/radius.log
+
 20110529:
   AFFECTS: users of textproc/*kmfl*
   AUTHOR: nikola.lecic@anthesphoria.net
