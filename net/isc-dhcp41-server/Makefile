@@ -24,7 +24,7 @@ LICENSE=	ISCL
 PATCHLEVEL=	R2
 PORTREVISION_SERVER=	0
 PORTREVISION_CLIENT=	0
-PORTREVISION_RELAY=	0
+PORTREVISION_RELAY=	1
 
 SUBSYS?=	server
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}-${PATCHLEVEL}
@@ -197,6 +197,10 @@ post-install:
 .elif ${SUBSYS} == server
 .if defined(WITH_DHCP_IPV6)
 	@${LN} -sf isc-dhcpd ${PREFIX}/etc/rc.d/isc-dhcpd6
+.endif
+.elif ${SUBSYS} == relay
+.if defined(WITH_DHCP_IPV6)
+	@${LN} -sf isc-dhcrelay ${PREFIX}/etc/rc.d/isc-dhcrelay6
 .endif
 .endif
 	@${SED} ${PKGMESSAGE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
