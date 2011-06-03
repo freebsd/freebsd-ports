@@ -15,7 +15,9 @@ COMMENT=	A module for using Tcl to write SQL functions
 
 MASTERDIR=	${.CURDIR}/../../databases/postgresql${PGSQL_VER}-server
 
-RUN_DEPENDS=	postgres:${MASTERDIR}
+BUILD_DEPENDS=	postgres:${POSTGRESQL_PORT}
+RUN_DEPENDS=	postgres:${POSTGRESQL_PORT}
+POSTGRESQL_PORT?=${PORTSDIR}/databases/postgresql${PGSQL_VER}-server
 
 DEFAULT_PGSQL_VER?=82
 
