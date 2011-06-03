@@ -1,15 +1,28 @@
 bin/denemo
-bin/smfsh
 %%ETCDIR%%/denemo.conf
 share/applications/denemo.desktop
-%%DATADIR%%/actions/Default.cmdset
-%%DATADIR%%/actions/Empty.cmdset
+%%DATADIR%%/actions/AllCommands.commands
+%%DATADIR%%/actions/AllCommands.shortcuts
+%%DATADIR%%/actions/Arranger.commands
+%%DATADIR%%/actions/Arranger.scm
+%%DATADIR%%/actions/Arranger.shortcuts
+%%DATADIR%%/actions/Classic.commands
+%%DATADIR%%/actions/Classic.shortcuts
+%%DATADIR%%/actions/Composer.commands
+%%DATADIR%%/actions/Composer.shortcuts
+%%DATADIR%%/actions/Default.commands
+%%DATADIR%%/actions/Default.scm
+%%DATADIR%%/actions/Default.shortcuts
+%%DATADIR%%/actions/LilyPond.commands
+%%DATADIR%%/actions/LilyPond.shortcuts
 %%DATADIR%%/actions/Makefile
 %%DATADIR%%/actions/Makefile.am
 %%DATADIR%%/actions/Makefile.in
-%%DATADIR%%/actions/NumericKeypad.cmdset
-%%DATADIR%%/actions/Windows.cmdset
-%%DATADIR%%/actions/bitmaps/Anacrusis.png
+%%DATADIR%%/actions/Simple.commands
+%%DATADIR%%/actions/Simple.scm
+%%DATADIR%%/actions/Simple.shortcuts
+%%DATADIR%%/actions/abstractionmovement.scm
+%%DATADIR%%/actions/ans.scm
 %%DATADIR%%/actions/bitmaps/Barline.png
 %%DATADIR%%/actions/bitmaps/BracketedWholeMeasureRest.png
 %%DATADIR%%/actions/bitmaps/CheckMark.png
@@ -20,6 +33,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/bitmaps/EncircleChar
 %%DATADIR%%/actions/bitmaps/EndBeam.png
 %%DATADIR%%/actions/bitmaps/EndSecondTimeBar.png
+%%DATADIR%%/actions/bitmaps/EndVolta.png
 %%DATADIR%%/actions/bitmaps/FirstTimeBar.png
 %%DATADIR%%/actions/bitmaps/Forte.png
 %%DATADIR%%/actions/bitmaps/Fortissimo.png
@@ -39,8 +53,11 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/bitmaps/MezzoPiano.png
 %%DATADIR%%/actions/bitmaps/MultiMeasureRests.png
 %%DATADIR%%/actions/bitmaps/NoBeam.png
+%%DATADIR%%/actions/bitmaps/OpenFirstTimeBar.png
+%%DATADIR%%/actions/bitmaps/OpenSecondTimeBar.png
 %%DATADIR%%/actions/bitmaps/Pianissimo.png
 %%DATADIR%%/actions/bitmaps/Pianississimo.png
+%%DATADIR%%/actions/bitmaps/Piano.png
 %%DATADIR%%/actions/bitmaps/RehearsalMark
 %%DATADIR%%/actions/bitmaps/RehearsalMark.png
 %%DATADIR%%/actions/bitmaps/RepeatClose.png
@@ -55,46 +72,574 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/bitmaps/StartTupletNumbering.png
 %%DATADIR%%/actions/bitmaps/StartUpStems.png
 %%DATADIR%%/actions/bitmaps/StopTupletNumbering.png
+%%DATADIR%%/actions/bitmaps/Upbeat.png
 %%DATADIR%%/actions/bitmaps/WholeMeasureRest.png
 %%DATADIR%%/actions/bitmaps/WholeMeasureRestLH.png
 %%DATADIR%%/actions/bitmaps/WholeMeasureRestRH.png
+%%DATADIR%%/actions/bitmaps/accidentals.doublesharp.svg
+%%DATADIR%%/actions/bitmaps/accidentals.flat.arrowboth.svg
+%%DATADIR%%/actions/bitmaps/accidentals.flat.arrowdown.svg
+%%DATADIR%%/actions/bitmaps/accidentals.flat.arrowup.svg
+%%DATADIR%%/actions/bitmaps/accidentals.flat.slash.svg
+%%DATADIR%%/actions/bitmaps/accidentals.flat.slashslash.svg
+%%DATADIR%%/actions/bitmaps/accidentals.flat.svg
+%%DATADIR%%/actions/bitmaps/accidentals.flatflat.slash.svg
+%%DATADIR%%/actions/bitmaps/accidentals.flatflat.svg
+%%DATADIR%%/actions/bitmaps/accidentals.hufnagelM1.svg
+%%DATADIR%%/actions/bitmaps/accidentals.leftparen.svg
+%%DATADIR%%/actions/bitmaps/accidentals.medicaeaM1.svg
+%%DATADIR%%/actions/bitmaps/accidentals.mensural1.svg
+%%DATADIR%%/actions/bitmaps/accidentals.mensuralM1.svg
+%%DATADIR%%/actions/bitmaps/accidentals.mirroredflat.backslash.svg
+%%DATADIR%%/actions/bitmaps/accidentals.mirroredflat.flat.svg
+%%DATADIR%%/actions/bitmaps/accidentals.mirroredflat.svg
+%%DATADIR%%/actions/bitmaps/accidentals.natural.arrowboth.svg
+%%DATADIR%%/actions/bitmaps/accidentals.natural.arrowdown.svg
+%%DATADIR%%/actions/bitmaps/accidentals.natural.arrowup.svg
+%%DATADIR%%/actions/bitmaps/accidentals.natural.svg
+%%DATADIR%%/actions/bitmaps/accidentals.rightparen.svg
+%%DATADIR%%/actions/bitmaps/accidentals.sharp.arrowboth.svg
+%%DATADIR%%/actions/bitmaps/accidentals.sharp.arrowdown.svg
+%%DATADIR%%/actions/bitmaps/accidentals.sharp.arrowup.svg
+%%DATADIR%%/actions/bitmaps/accidentals.sharp.slashslash.stem.svg
+%%DATADIR%%/actions/bitmaps/accidentals.sharp.slashslash.stemstemstem.svg
+%%DATADIR%%/actions/bitmaps/accidentals.sharp.slashslashslash.stem.svg
+%%DATADIR%%/actions/bitmaps/accidentals.sharp.slashslashslash.stemstem.svg
+%%DATADIR%%/actions/bitmaps/accidentals.sharp.svg
+%%DATADIR%%/actions/bitmaps/accidentals.vaticana0.svg
+%%DATADIR%%/actions/bitmaps/accidentals.vaticanaM1.svg
+%%DATADIR%%/actions/bitmaps/accordion-accStdbase.svg
+%%DATADIR%%/actions/bitmaps/accordion.bayanbass.svg
+%%DATADIR%%/actions/bitmaps/accordion.discant.svg
+%%DATADIR%%/actions/bitmaps/accordion.dot.svg
+%%DATADIR%%/actions/bitmaps/accordion.freebass.svg
+%%DATADIR%%/actions/bitmaps/accordion.oldEE.svg
+%%DATADIR%%/actions/bitmaps/accordion.pull.svg
+%%DATADIR%%/actions/bitmaps/accordion.push.svg
+%%DATADIR%%/actions/bitmaps/accordion.stdbass.svg
+%%DATADIR%%/actions/bitmaps/arrowheads.close.01.svg
+%%DATADIR%%/actions/bitmaps/arrowheads.close.0M1.svg
+%%DATADIR%%/actions/bitmaps/arrowheads.close.11.svg
+%%DATADIR%%/actions/bitmaps/arrowheads.close.1M1.svg
+%%DATADIR%%/actions/bitmaps/arrowheads.open.01.svg
+%%DATADIR%%/actions/bitmaps/arrowheads.open.0M1.svg
+%%DATADIR%%/actions/bitmaps/arrowheads.open.11.svg
+%%DATADIR%%/actions/bitmaps/arrowheads.open.1M1.svg
+%%DATADIR%%/actions/bitmaps/brackettips.down.svg
+%%DATADIR%%/actions/bitmaps/brackettips.up.svg
+%%DATADIR%%/actions/bitmaps/clefs-C.svg
+%%DATADIR%%/actions/bitmaps/clefs-G.svg
+%%DATADIR%%/actions/bitmaps/clefs.C.svg
+%%DATADIR%%/actions/bitmaps/clefs.C_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.F.svg
+%%DATADIR%%/actions/bitmaps/clefs.F_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.G.svg
+%%DATADIR%%/actions/bitmaps/clefs.G_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.hufnagel.do.fa.svg
+%%DATADIR%%/actions/bitmaps/clefs.hufnagel.do.fa_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.hufnagel.do.svg
+%%DATADIR%%/actions/bitmaps/clefs.hufnagel.do_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.hufnagel.fa.svg
+%%DATADIR%%/actions/bitmaps/clefs.hufnagel.fa_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.medicaea.do.svg
+%%DATADIR%%/actions/bitmaps/clefs.medicaea.do_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.medicaea.fa.svg
+%%DATADIR%%/actions/bitmaps/clefs.medicaea.fa_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.mensural.c.svg
+%%DATADIR%%/actions/bitmaps/clefs.mensural.c_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.mensural.f.svg
+%%DATADIR%%/actions/bitmaps/clefs.mensural.f_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.mensural.g.svg
+%%DATADIR%%/actions/bitmaps/clefs.mensural.g_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.neomensural.c.svg
+%%DATADIR%%/actions/bitmaps/clefs.neomensural.c_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.percussion.svg
+%%DATADIR%%/actions/bitmaps/clefs.percussion_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.petrucci.c1.svg
+%%DATADIR%%/actions/bitmaps/clefs.petrucci.c1_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.petrucci.c2.svg
+%%DATADIR%%/actions/bitmaps/clefs.petrucci.c2_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.petrucci.c3.svg
+%%DATADIR%%/actions/bitmaps/clefs.petrucci.c3_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.petrucci.c4.svg
+%%DATADIR%%/actions/bitmaps/clefs.petrucci.c4_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.petrucci.c5.svg
+%%DATADIR%%/actions/bitmaps/clefs.petrucci.c5_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.petrucci.f.svg
+%%DATADIR%%/actions/bitmaps/clefs.petrucci.f_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.petrucci.g.svg
+%%DATADIR%%/actions/bitmaps/clefs.petrucci.g_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.tab.svg
+%%DATADIR%%/actions/bitmaps/clefs.tab_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.vaticana.do.svg
+%%DATADIR%%/actions/bitmaps/clefs.vaticana.do_change.svg
+%%DATADIR%%/actions/bitmaps/clefs.vaticana.fa.svg
+%%DATADIR%%/actions/bitmaps/clefs.vaticana.fa_change.svg
+%%DATADIR%%/actions/bitmaps/comma.svg
+%%DATADIR%%/actions/bitmaps/custodes.hufnagel.d0.svg
+%%DATADIR%%/actions/bitmaps/custodes.hufnagel.d1.svg
+%%DATADIR%%/actions/bitmaps/custodes.hufnagel.d2.svg
+%%DATADIR%%/actions/bitmaps/custodes.hufnagel.u0.svg
+%%DATADIR%%/actions/bitmaps/custodes.hufnagel.u1.svg
+%%DATADIR%%/actions/bitmaps/custodes.hufnagel.u2.svg
+%%DATADIR%%/actions/bitmaps/custodes.medicaea.d0.svg
+%%DATADIR%%/actions/bitmaps/custodes.medicaea.d1.svg
+%%DATADIR%%/actions/bitmaps/custodes.medicaea.d2.svg
+%%DATADIR%%/actions/bitmaps/custodes.medicaea.u0.svg
+%%DATADIR%%/actions/bitmaps/custodes.medicaea.u1.svg
+%%DATADIR%%/actions/bitmaps/custodes.medicaea.u2.svg
+%%DATADIR%%/actions/bitmaps/custodes.mensural.d0.svg
+%%DATADIR%%/actions/bitmaps/custodes.mensural.d1.svg
+%%DATADIR%%/actions/bitmaps/custodes.mensural.d2.svg
+%%DATADIR%%/actions/bitmaps/custodes.mensural.u0.svg
+%%DATADIR%%/actions/bitmaps/custodes.mensural.u1.svg
+%%DATADIR%%/actions/bitmaps/custodes.mensural.u2.svg
+%%DATADIR%%/actions/bitmaps/custodes.vaticana.d0.svg
+%%DATADIR%%/actions/bitmaps/custodes.vaticana.d1.svg
+%%DATADIR%%/actions/bitmaps/custodes.vaticana.d2.svg
+%%DATADIR%%/actions/bitmaps/custodes.vaticana.u0.svg
+%%DATADIR%%/actions/bitmaps/custodes.vaticana.u1.svg
+%%DATADIR%%/actions/bitmaps/custodes.vaticana.u2.svg
+%%DATADIR%%/actions/bitmaps/dots.dot.svg
+%%DATADIR%%/actions/bitmaps/dots.dotvaticana.svg
+%%DATADIR%%/actions/bitmaps/eight.svg
+%%DATADIR%%/actions/bitmaps/f.svg
 %%DATADIR%%/actions/bitmaps/ffff.png
+%%DATADIR%%/actions/bitmaps/five.svg
+%%DATADIR%%/actions/bitmaps/flags.d3.svg
+%%DATADIR%%/actions/bitmaps/flags.d4.svg
+%%DATADIR%%/actions/bitmaps/flags.d5.svg
+%%DATADIR%%/actions/bitmaps/flags.d6.svg
+%%DATADIR%%/actions/bitmaps/flags.d7.svg
+%%DATADIR%%/actions/bitmaps/flags.dgrace.svg
+%%DATADIR%%/actions/bitmaps/flags.mensurald03.svg
+%%DATADIR%%/actions/bitmaps/flags.mensurald04.svg
+%%DATADIR%%/actions/bitmaps/flags.mensurald05.svg
+%%DATADIR%%/actions/bitmaps/flags.mensurald06.svg
+%%DATADIR%%/actions/bitmaps/flags.mensurald13.svg
+%%DATADIR%%/actions/bitmaps/flags.mensurald14.svg
+%%DATADIR%%/actions/bitmaps/flags.mensurald15.svg
+%%DATADIR%%/actions/bitmaps/flags.mensurald16.svg
+%%DATADIR%%/actions/bitmaps/flags.mensurald23.svg
+%%DATADIR%%/actions/bitmaps/flags.mensurald24.svg
+%%DATADIR%%/actions/bitmaps/flags.mensurald25.svg
+%%DATADIR%%/actions/bitmaps/flags.mensurald26.svg
+%%DATADIR%%/actions/bitmaps/flags.mensuralu03.svg
+%%DATADIR%%/actions/bitmaps/flags.mensuralu04.svg
+%%DATADIR%%/actions/bitmaps/flags.mensuralu05.svg
+%%DATADIR%%/actions/bitmaps/flags.mensuralu06.svg
+%%DATADIR%%/actions/bitmaps/flags.mensuralu13.svg
+%%DATADIR%%/actions/bitmaps/flags.mensuralu14.svg
+%%DATADIR%%/actions/bitmaps/flags.mensuralu15.svg
+%%DATADIR%%/actions/bitmaps/flags.mensuralu16.svg
+%%DATADIR%%/actions/bitmaps/flags.mensuralu23.svg
+%%DATADIR%%/actions/bitmaps/flags.mensuralu24.svg
+%%DATADIR%%/actions/bitmaps/flags.mensuralu25.svg
+%%DATADIR%%/actions/bitmaps/flags.mensuralu26.svg
+%%DATADIR%%/actions/bitmaps/flags.u3.svg
+%%DATADIR%%/actions/bitmaps/flags.u4.svg
+%%DATADIR%%/actions/bitmaps/flags.u5.svg
+%%DATADIR%%/actions/bitmaps/flags.u6.svg
+%%DATADIR%%/actions/bitmaps/flags.u7.svg
+%%DATADIR%%/actions/bitmaps/flags.ugrace.svg
+%%DATADIR%%/actions/bitmaps/four.svg
 %%DATADIR%%/actions/bitmaps/fp.png
+%%DATADIR%%/actions/bitmaps/glyphasn.svg
+%%DATADIR%%/actions/bitmaps/glyphati.svg
+%%DATADIR%%/actions/bitmaps/hyphen.svg
+%%DATADIR%%/actions/bitmaps/m.svg
+%%DATADIR%%/actions/bitmaps/mute.png
+%%DATADIR%%/actions/bitmaps/nine.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d0doFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d0fa.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d0faFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d0faThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d0miFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d0reFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d0tiFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d1do.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d1doFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d1doThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d1doWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d1fa.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d1faFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d1faThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d1faWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d1miFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d1re.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d1reFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d1reThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d1reWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d1ti.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d1tiFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d1tiThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d1tiWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d1triangle.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d2do.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d2doFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d2doThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d2doWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d2fa.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d2faFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d2faThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d2faWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d2re.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d2reFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d2reThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d2reWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d2ti.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d2tiFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d2tiThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d2tiWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.d2triangle.svg
+%%DATADIR%%/actions/bitmaps/noteheads.dM2.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s-1.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s-2.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0cross.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0diamond.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0do.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0doThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0doWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0faWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0harmonic.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0la.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0laFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0laThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0laWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0mensural.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0mi.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0miMirror.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0miThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0miWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0neomensural.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0petrucci.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0re.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0reThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0reWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0slash.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0sol.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0solFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0ti.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0tiThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0tiWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s0triangle.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s1.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s1cross.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s1diamond.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s1la.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s1laFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s1laThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s1laWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s1mensural.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s1mi.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s1miMirror.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s1miThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s1miWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s1neomensural.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s1petrucci.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s1slash.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s1sol.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s1solFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s2.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s2cross.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s2diamond.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s2harmonic.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s2la.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s2laFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s2laThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s2laWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s2mensural.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s2mi.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s2miFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s2miMirror.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s2miThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s2miWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s2neomensural.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s2petrucci.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s2slash.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s2sol.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s2solFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.s2xcircle.svg
+%%DATADIR%%/actions/bitmaps/noteheads.sM1.svg
+%%DATADIR%%/actions/bitmaps/noteheads.sM1double.svg
+%%DATADIR%%/actions/bitmaps/noteheads.sM1mensural.svg
+%%DATADIR%%/actions/bitmaps/noteheads.sM1neomensural.svg
+%%DATADIR%%/actions/bitmaps/noteheads.sM2mensural.svg
+%%DATADIR%%/actions/bitmaps/noteheads.sM2neomensural.svg
+%%DATADIR%%/actions/bitmaps/noteheads.sM3mensural.svg
+%%DATADIR%%/actions/bitmaps/noteheads.sM3neomensural.svg
+%%DATADIR%%/actions/bitmaps/noteheads.shufnagel.lpes.svg
+%%DATADIR%%/actions/bitmaps/noteheads.shufnagel.punctum.svg
+%%DATADIR%%/actions/bitmaps/noteheads.shufnagel.virga.svg
+%%DATADIR%%/actions/bitmaps/noteheads.slmensural.svg
+%%DATADIR%%/actions/bitmaps/noteheads.slneomensural.svg
+%%DATADIR%%/actions/bitmaps/noteheads.smedicaea.inclinatum.svg
+%%DATADIR%%/actions/bitmaps/noteheads.smedicaea.punctum.svg
+%%DATADIR%%/actions/bitmaps/noteheads.smedicaea.rvirga.svg
+%%DATADIR%%/actions/bitmaps/noteheads.smedicaea.virga.svg
+%%DATADIR%%/actions/bitmaps/noteheads.ssolesmes.auct.asc.svg
+%%DATADIR%%/actions/bitmaps/noteheads.ssolesmes.auct.desc.svg
+%%DATADIR%%/actions/bitmaps/noteheads.ssolesmes.incl.auctum.svg
+%%DATADIR%%/actions/bitmaps/noteheads.ssolesmes.incl.parvum.svg
+%%DATADIR%%/actions/bitmaps/noteheads.ssolesmes.oriscus.svg
+%%DATADIR%%/actions/bitmaps/noteheads.ssolesmes.stropha.aucta.svg
+%%DATADIR%%/actions/bitmaps/noteheads.ssolesmes.stropha.svg
+%%DATADIR%%/actions/bitmaps/noteheads.svaticana.cephalicus.svg
+%%DATADIR%%/actions/bitmaps/noteheads.svaticana.epiphonus.svg
+%%DATADIR%%/actions/bitmaps/noteheads.svaticana.inclinatum.svg
+%%DATADIR%%/actions/bitmaps/noteheads.svaticana.inner.cephalicus.svg
+%%DATADIR%%/actions/bitmaps/noteheads.svaticana.linea.punctum.cavum.svg
+%%DATADIR%%/actions/bitmaps/noteheads.svaticana.linea.punctum.svg
+%%DATADIR%%/actions/bitmaps/noteheads.svaticana.lpes.svg
+%%DATADIR%%/actions/bitmaps/noteheads.svaticana.plica.svg
+%%DATADIR%%/actions/bitmaps/noteheads.svaticana.punctum.cavum.svg
+%%DATADIR%%/actions/bitmaps/noteheads.svaticana.punctum.svg
+%%DATADIR%%/actions/bitmaps/noteheads.svaticana.quilisma.svg
+%%DATADIR%%/actions/bitmaps/noteheads.svaticana.reverse.plica.svg
+%%DATADIR%%/actions/bitmaps/noteheads.svaticana.reverse.vplica.svg
+%%DATADIR%%/actions/bitmaps/noteheads.svaticana.upes.svg
+%%DATADIR%%/actions/bitmaps/noteheads.svaticana.vepiphonus.svg
+%%DATADIR%%/actions/bitmaps/noteheads.svaticana.vlpes.svg
+%%DATADIR%%/actions/bitmaps/noteheads.svaticana.vplica.svg
+%%DATADIR%%/actions/bitmaps/noteheads.svaticana.vupes.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u0doFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u0fa.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u0faFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u0faThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u0miFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u0reFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u0tiFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u1do.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u1doFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u1doThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u1doWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u1fa.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u1faFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u1faThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u1faWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u1miFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u1re.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u1reFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u1reThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u1reWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u1ti.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u1tiFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u1tiThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u1tiWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u1triangle.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u2do.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u2doFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u2doThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u2doWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u2fa.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u2faFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u2faThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u2faWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u2re.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u2reFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u2reThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u2reWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u2ti.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u2tiFunk.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u2tiThin.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u2tiWalker.svg
+%%DATADIR%%/actions/bitmaps/noteheads.u2triangle.svg
+%%DATADIR%%/actions/bitmaps/noteheads.uM2.svg
+%%DATADIR%%/actions/bitmaps/noteheads_dM2.svg
+%%DATADIR%%/actions/bitmaps/noteheads_sM1.svg
+%%DATADIR%%/actions/bitmaps/noteheads_sM1neomensural.png
+%%DATADIR%%/actions/bitmaps/noteheads_sM1neomensural.svg
+%%DATADIR%%/actions/bitmaps/noteheads_sM2neomensural.png
+%%DATADIR%%/actions/bitmaps/noteheads_sM2neomensural.svg
+%%DATADIR%%/actions/bitmaps/one.svg
+%%DATADIR%%/actions/bitmaps/p.svg
+%%DATADIR%%/actions/bitmaps/pedal...svg
+%%DATADIR%%/actions/bitmaps/pedal.M.svg
+%%DATADIR%%/actions/bitmaps/pedal.P.svg
+%%DATADIR%%/actions/bitmaps/pedal.Ped.svg
+%%DATADIR%%/actions/bitmaps/pedal.d.svg
+%%DATADIR%%/actions/bitmaps/pedal.e.svg
+%%DATADIR%%/actions/bitmaps/period.svg
+%%DATADIR%%/actions/bitmaps/plus.svg
 %%DATADIR%%/actions/bitmaps/pppp.png
 %%DATADIR%%/actions/bitmaps/ppppp.png
+%%DATADIR%%/actions/bitmaps/r.svg
+%%DATADIR%%/actions/bitmaps/rests.0.svg
+%%DATADIR%%/actions/bitmaps/rests.0mensural.svg
+%%DATADIR%%/actions/bitmaps/rests.0neomensural.svg
+%%DATADIR%%/actions/bitmaps/rests.0o.svg
+%%DATADIR%%/actions/bitmaps/rests.1.svg
+%%DATADIR%%/actions/bitmaps/rests.1mensural.svg
+%%DATADIR%%/actions/bitmaps/rests.1neomensural.svg
+%%DATADIR%%/actions/bitmaps/rests.1o.svg
+%%DATADIR%%/actions/bitmaps/rests.2.svg
+%%DATADIR%%/actions/bitmaps/rests.2classical.svg
+%%DATADIR%%/actions/bitmaps/rests.2mensural.svg
+%%DATADIR%%/actions/bitmaps/rests.2neomensural.svg
+%%DATADIR%%/actions/bitmaps/rests.3.svg
+%%DATADIR%%/actions/bitmaps/rests.3mensural.svg
+%%DATADIR%%/actions/bitmaps/rests.3neomensural.svg
+%%DATADIR%%/actions/bitmaps/rests.4.svg
+%%DATADIR%%/actions/bitmaps/rests.4mensural.svg
+%%DATADIR%%/actions/bitmaps/rests.4neomensural.svg
+%%DATADIR%%/actions/bitmaps/rests.5.svg
+%%DATADIR%%/actions/bitmaps/rests.6.svg
+%%DATADIR%%/actions/bitmaps/rests.7.svg
+%%DATADIR%%/actions/bitmaps/rests.M1.svg
+%%DATADIR%%/actions/bitmaps/rests.M1mensural.svg
+%%DATADIR%%/actions/bitmaps/rests.M1neomensural.svg
+%%DATADIR%%/actions/bitmaps/rests.M2.svg
+%%DATADIR%%/actions/bitmaps/rests.M2mensural.svg
+%%DATADIR%%/actions/bitmaps/rests.M2neomensural.svg
+%%DATADIR%%/actions/bitmaps/rests.M3.svg
+%%DATADIR%%/actions/bitmaps/rests.M3mensural.svg
+%%DATADIR%%/actions/bitmaps/rests.M3neomensural.svg
+%%DATADIR%%/actions/bitmaps/rests_M1neomensural.png
+%%DATADIR%%/actions/bitmaps/rests_M1neomensural.svg
+%%DATADIR%%/actions/bitmaps/rests_M2.svg
+%%DATADIR%%/actions/bitmaps/rests_M2neomensural.png
+%%DATADIR%%/actions/bitmaps/rests_M2neomensural.svg
+%%DATADIR%%/actions/bitmaps/rests_M3neomensural.svg
 %%DATADIR%%/actions/bitmaps/rfz.png
+%%DATADIR%%/actions/bitmaps/s.svg
+%%DATADIR%%/actions/bitmaps/scripts.arpeggio.arrow.1.svg
+%%DATADIR%%/actions/bitmaps/scripts.arpeggio.arrow.M1.svg
+%%DATADIR%%/actions/bitmaps/scripts.arpeggio.svg
+%%DATADIR%%/actions/bitmaps/scripts.augmentum.svg
+%%DATADIR%%/actions/bitmaps/scripts.caesura.curved.svg
+%%DATADIR%%/actions/bitmaps/scripts.caesura.straight.svg
+%%DATADIR%%/actions/bitmaps/scripts.circulus.svg
+%%DATADIR%%/actions/bitmaps/scripts.coda.svg
+%%DATADIR%%/actions/bitmaps/scripts.daccentus.svg
+%%DATADIR%%/actions/bitmaps/scripts.dfermata.svg
+%%DATADIR%%/actions/bitmaps/scripts.dlongfermata.svg
+%%DATADIR%%/actions/bitmaps/scripts.dmarcato.svg
+%%DATADIR%%/actions/bitmaps/scripts.downbow.svg
+%%DATADIR%%/actions/bitmaps/scripts.downmordent.svg
+%%DATADIR%%/actions/bitmaps/scripts.downprall.svg
+%%DATADIR%%/actions/bitmaps/scripts.dpedalheel.svg
+%%DATADIR%%/actions/bitmaps/scripts.dpedaltoe.svg
+%%DATADIR%%/actions/bitmaps/scripts.dportato.svg
+%%DATADIR%%/actions/bitmaps/scripts.dsemicirculus.svg
+%%DATADIR%%/actions/bitmaps/scripts.dshortfermata.svg
+%%DATADIR%%/actions/bitmaps/scripts.dsignumcongruentiae.svg
+%%DATADIR%%/actions/bitmaps/scripts.dstaccatissimo.svg
+%%DATADIR%%/actions/bitmaps/scripts.dverylongfermata.svg
+%%DATADIR%%/actions/bitmaps/scripts.espr.svg
+%%DATADIR%%/actions/bitmaps/scripts.flageolet.svg
+%%DATADIR%%/actions/bitmaps/scripts.halfopen.svg
+%%DATADIR%%/actions/bitmaps/scripts.ictus.svg
+%%DATADIR%%/actions/bitmaps/scripts.lcomma.svg
+%%DATADIR%%/actions/bitmaps/scripts.lineprall.svg
+%%DATADIR%%/actions/bitmaps/scripts.lvarcomma.svg
+%%DATADIR%%/actions/bitmaps/scripts.mordent.svg
+%%DATADIR%%/actions/bitmaps/scripts.open.svg
+%%DATADIR%%/actions/bitmaps/scripts.prall.svg
+%%DATADIR%%/actions/bitmaps/scripts.pralldown.svg
+%%DATADIR%%/actions/bitmaps/scripts.prallmordent.svg
+%%DATADIR%%/actions/bitmaps/scripts.prallprall.svg
+%%DATADIR%%/actions/bitmaps/scripts.prallup.svg
+%%DATADIR%%/actions/bitmaps/scripts.rcomma.svg
+%%DATADIR%%/actions/bitmaps/scripts.reverseturn.svg
+%%DATADIR%%/actions/bitmaps/scripts.rvarcomma.svg
+%%DATADIR%%/actions/bitmaps/scripts.segno.svg
+%%DATADIR%%/actions/bitmaps/scripts.sforzato.svg
+%%DATADIR%%/actions/bitmaps/scripts.snappizzicato.svg
+%%DATADIR%%/actions/bitmaps/scripts.staccato.svg
+%%DATADIR%%/actions/bitmaps/scripts.stopped.svg
+%%DATADIR%%/actions/bitmaps/scripts.tenuto.svg
+%%DATADIR%%/actions/bitmaps/scripts.thumb.svg
+%%DATADIR%%/actions/bitmaps/scripts.trilelement.svg
+%%DATADIR%%/actions/bitmaps/scripts.trill.svg
+%%DATADIR%%/actions/bitmaps/scripts.trill_element.svg
+%%DATADIR%%/actions/bitmaps/scripts.turn.svg
+%%DATADIR%%/actions/bitmaps/scripts.uaccentus.svg
+%%DATADIR%%/actions/bitmaps/scripts.ufermata.svg
+%%DATADIR%%/actions/bitmaps/scripts.ulongfermata.svg
+%%DATADIR%%/actions/bitmaps/scripts.umarcato.svg
+%%DATADIR%%/actions/bitmaps/scripts.upbow.svg
+%%DATADIR%%/actions/bitmaps/scripts.upedalheel.svg
+%%DATADIR%%/actions/bitmaps/scripts.upedaltoe.svg
+%%DATADIR%%/actions/bitmaps/scripts.upmordent.svg
+%%DATADIR%%/actions/bitmaps/scripts.uportato.svg
+%%DATADIR%%/actions/bitmaps/scripts.upprall.svg
+%%DATADIR%%/actions/bitmaps/scripts.usemicirculus.svg
+%%DATADIR%%/actions/bitmaps/scripts.ushortfermata.svg
+%%DATADIR%%/actions/bitmaps/scripts.usignumcongruentiae.svg
+%%DATADIR%%/actions/bitmaps/scripts.ustaccatissimo.svg
+%%DATADIR%%/actions/bitmaps/scripts.uverylongfermata.svg
+%%DATADIR%%/actions/bitmaps/scripts.varcoda.svg
+%%DATADIR%%/actions/bitmaps/scripts.varsegno.svg
+%%DATADIR%%/actions/bitmaps/seven.svg
 %%DATADIR%%/actions/bitmaps/sf.png
 %%DATADIR%%/actions/bitmaps/sff.png
 %%DATADIR%%/actions/bitmaps/sfz.png
+%%DATADIR%%/actions/bitmaps/six.svg
 %%DATADIR%%/actions/bitmaps/sp.png
 %%DATADIR%%/actions/bitmaps/spp.png
+%%DATADIR%%/actions/bitmaps/three.svg
+%%DATADIR%%/actions/bitmaps/timesig.C22.svg
+%%DATADIR%%/actions/bitmaps/timesig.C44.svg
+%%DATADIR%%/actions/bitmaps/timesig.mensural22.svg
+%%DATADIR%%/actions/bitmaps/timesig.mensural24.svg
+%%DATADIR%%/actions/bitmaps/timesig.mensural32.svg
+%%DATADIR%%/actions/bitmaps/timesig.mensural34.svg
+%%DATADIR%%/actions/bitmaps/timesig.mensural44.svg
+%%DATADIR%%/actions/bitmaps/timesig.mensural48.svg
+%%DATADIR%%/actions/bitmaps/timesig.mensural64.svg
+%%DATADIR%%/actions/bitmaps/timesig.mensural68.svg
+%%DATADIR%%/actions/bitmaps/timesig.mensural68alt.svg
+%%DATADIR%%/actions/bitmaps/timesig.mensural94.svg
+%%DATADIR%%/actions/bitmaps/timesig.mensural98.svg
+%%DATADIR%%/actions/bitmaps/timesig.neomensural22.svg
+%%DATADIR%%/actions/bitmaps/timesig.neomensural24.svg
+%%DATADIR%%/actions/bitmaps/timesig.neomensural32.svg
+%%DATADIR%%/actions/bitmaps/timesig.neomensural34.svg
+%%DATADIR%%/actions/bitmaps/timesig.neomensural44.svg
+%%DATADIR%%/actions/bitmaps/timesig.neomensural48.svg
+%%DATADIR%%/actions/bitmaps/timesig.neomensural64.svg
+%%DATADIR%%/actions/bitmaps/timesig.neomensural68.svg
+%%DATADIR%%/actions/bitmaps/timesig.neomensural68alt.svg
+%%DATADIR%%/actions/bitmaps/timesig.neomensural94.svg
+%%DATADIR%%/actions/bitmaps/timesig.neomensural98.svg
+%%DATADIR%%/actions/bitmaps/two.svg
+%%DATADIR%%/actions/bitmaps/unmute.png
+%%DATADIR%%/actions/bitmaps/z.svg
+%%DATADIR%%/actions/bitmaps/zero.svg
+%%DATADIR%%/actions/block.l
+%%DATADIR%%/actions/commandlist.scm
 %%DATADIR%%/actions/denemo.scm
 %%DATADIR%%/actions/editscripts/D.C.AlFine.scm
 %%DATADIR%%/actions/editscripts/LHFinger.scm
-%%DATADIR%%/actions/editscripts/Movement-title.scm
-%%DATADIR%%/actions/editscripts/RehearsalMark.scm
+%%DATADIR%%/actions/editscripts/Mute.scm
 %%DATADIR%%/actions/editscripts/StaffSize.scm
 %%DATADIR%%/actions/editscripts/StringNum.scm
 %%DATADIR%%/actions/editscripts/Tempo.scm
 %%DATADIR%%/actions/editscripts/UnknownScoreTag.scm
+%%DATADIR%%/actions/helpsystem.scm
+%%DATADIR%%/actions/incl.l
 %%DATADIR%%/actions/init.denemo
+%%DATADIR%%/actions/lalr.scm
+%%DATADIR%%/actions/lyimport-lexer.scm
+%%DATADIR%%/actions/lyimport-parser.scm
+%%DATADIR%%/actions/lyimport-todenemo.scm
+%%DATADIR%%/actions/lyimport.scm
 %%DATADIR%%/actions/menus/MainMenu/EditMenu/ConvertDrum2GmSingleSelection
+%%DATADIR%%/actions/menus/MainMenu/EditMenu/IntelligentDelete
 %%DATADIR%%/actions/menus/MainMenu/EditMenu/KeyBindings/StartEmacs2KeyShortcut
-%%DATADIR%%/actions/menus/MainMenu/EditMenu/Paste
+%%DATADIR%%/actions/menus/MainMenu/EditMenu/PasteReplaceSelection
 %%DATADIR%%/actions/menus/MainMenu/EditMenu/ReloadDrumHash
-%%DATADIR%%/actions/menus/MainMenu/EditMenu/Select/ApplyToChordsInSelection
 %%DATADIR%%/actions/menus/MainMenu/EditMenu/Select/ApplyToSelection
+%%DATADIR%%/actions/menus/MainMenu/EditMenu/Select/DeleteSelectionLeaveEmpty
 %%DATADIR%%/actions/menus/MainMenu/EditMenu/Select/SelectAllStaffs
+%%DATADIR%%/actions/menus/MainMenu/EditMenu/Select/SelectColumn
+%%DATADIR%%/actions/menus/MainMenu/EditMenu/Select/SelectLeft
+%%DATADIR%%/actions/menus/MainMenu/EditMenu/Select/SelectMeasure
+%%DATADIR%%/actions/menus/MainMenu/EditMenu/Select/SelectRight
 %%DATADIR%%/actions/menus/MainMenu/EditMenu/Select/SelectStaff
-%%DATADIR%%/actions/menus/MainMenu/EditMenu/SetImmediatePlayback
-%%DATADIR%%/actions/menus/MainMenu/EditMenu/Shift/ShiftDown
-%%DATADIR%%/actions/menus/MainMenu/EditMenu/Shift/ShiftUp
-%%DATADIR%%/actions/menus/MainMenu/EditMenu/Shift/init.scm
-%%DATADIR%%/actions/menus/MainMenu/EditMenu/Transpose/SetTransposeIntervalFromNote
-%%DATADIR%%/actions/menus/MainMenu/EditMenu/Transpose/SetTransposeIntervalFromSelection
-%%DATADIR%%/actions/menus/MainMenu/EditMenu/Transpose/TransposeNote
-%%DATADIR%%/actions/menus/MainMenu/EditMenu/Transpose/TransposeSelection
-%%DATADIR%%/actions/menus/MainMenu/EditMenu/Transpose/init.scm
+%%DATADIR%%/actions/menus/MainMenu/EditMenu/Select/SelectionToEmptyMeasure
+%%DATADIR%%/actions/menus/MainMenu/EditMenu/StagedDelete
 %%DATADIR%%/actions/menus/MainMenu/Educational/Aural Training/Chord-Comparison/DiminishedOrAugmented
 %%DATADIR%%/actions/menus/MainMenu/Educational/Aural Training/Chord-Comparison/DiminishedOrMinor
 %%DATADIR%%/actions/menus/MainMenu/Educational/Aural Training/Chord-Comparison/HalfDiminished7OrDiminshed7
@@ -120,6 +665,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/MainMenu/Educational/Aural Training/Identify-Scale-Note/init.scm
 %%DATADIR%%/actions/menus/MainMenu/Educational/MIDI/CheckPitches
 %%DATADIR%%/actions/menus/MainMenu/Educational/MIDI/Conductor
+%%DATADIR%%/actions/menus/MainMenu/Educational/MIDI/FiguredBassExercises
 %%DATADIR%%/actions/menus/MainMenu/Educational/Note-Reading/BassClefNoteNameSpeedTest
 %%DATADIR%%/actions/menus/MainMenu/Educational/Note-Reading/CountSteps
 %%DATADIR%%/actions/menus/MainMenu/Educational/Note-Reading/DiatonicInterval
@@ -132,65 +678,130 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/MainMenu/Educational/Note-Reading/StepSkipOrSame
 %%DATADIR%%/actions/menus/MainMenu/Educational/Note-Reading/UpDownOrSame
 %%DATADIR%%/actions/menus/MainMenu/Educational/Note-Reading/init.scm
+%%DATADIR%%/actions/menus/MainMenu/FileMenu/Import/Import-Lilypond
+%%DATADIR%%/actions/menus/MainMenu/FileMenu/Import/Import-Midi
+%%DATADIR%%/actions/menus/MainMenu/FileMenu/Import/Import-MusicXml
+%%DATADIR%%/actions/menus/MainMenu/FileMenu/OpenMenu/OpenMyDefaultTemplate
+%%DATADIR%%/actions/menus/MainMenu/FileMenu/PrintMenu/Preview4Bars
+%%DATADIR%%/actions/menus/MainMenu/FileMenu/PrintMenu/PrintAccompanistsScore
 %%DATADIR%%/actions/menus/MainMenu/HelpMenu/IRC
-%%DATADIR%%/actions/menus/MainMenu/ModeMenu/MIDI/AngryDelete
-%%DATADIR%%/actions/menus/MainMenu/ModeMenu/MIDI/CheckPitches
-%%DATADIR%%/actions/menus/MainMenu/ModeMenu/MIDI/FiguredBassFilterOn
-%%DATADIR%%/actions/menus/MainMenu/ModeMenu/MIDI/MidiAdvanceOnEdit
-%%DATADIR%%/actions/menus/MainMenu/ModeMenu/MIDI/MidiFilterOff
-%%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Bookmarks/Bookmark
+%%DATADIR%%/actions/menus/MainMenu/HelpMenu/Tutorial
+%%DATADIR%%/actions/menus/MainMenu/InputMenu/MIDI/AngryDelete
+%%DATADIR%%/actions/menus/MainMenu/InputMenu/MIDI/CheckPitches
+%%DATADIR%%/actions/menus/MainMenu/InputMenu/MIDI/ChordsOverBass
+%%DATADIR%%/actions/menus/MainMenu/InputMenu/MIDI/FiguredBassFilterOn
+%%DATADIR%%/actions/menus/MainMenu/InputMenu/MIDI/MidiAdvanceOnEdit
+%%DATADIR%%/actions/menus/MainMenu/InputMenu/MIDI/MidiFilterOff
+%%DATADIR%%/actions/menus/MainMenu/MoreMenu/LoadDefaultComposerNumberkeys
+%%DATADIR%%/actions/menus/MainMenu/MoreMenu/LoadSelectDurationComposerNumberkeys
+%%DATADIR%%/actions/menus/MainMenu/MoreMenu/NoOp
+%%DATADIR%%/actions/menus/MainMenu/MoreMenu/OpEight
+%%DATADIR%%/actions/menus/MainMenu/MoreMenu/OpFive
+%%DATADIR%%/actions/menus/MainMenu/MoreMenu/OpFour
+%%DATADIR%%/actions/menus/MainMenu/MoreMenu/OpNine
+%%DATADIR%%/actions/menus/MainMenu/MoreMenu/OpOne
+%%DATADIR%%/actions/menus/MainMenu/MoreMenu/OpSeven
+%%DATADIR%%/actions/menus/MainMenu/MoreMenu/OpSix
+%%DATADIR%%/actions/menus/MainMenu/MoreMenu/OpThree
+%%DATADIR%%/actions/menus/MainMenu/MoreMenu/OpTwo
+%%DATADIR%%/actions/menus/MainMenu/MoreMenu/OpZero
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Bookmarks/BookmarkNamed
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Bookmarks/BookmarkNonPrinting
-%%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Bookmarks/BookmarkRNamed
-%%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Bookmarks/BookmarkRNonPrinting
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Bookmarks/NextBookmark
-%%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Bookmarks/NextBookmarkR
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Bookmarks/PrevBookmark
-%%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Bookmarks/PrevBookmarkR
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Bookmarks/RehearsalMark
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Bookmarks/SearchBookmark
-%%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Bookmarks/SearchBookmarkR
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Cursor/CursorToHighestNote
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Cursor/CursorToLowestNote
+%%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Cursor/JumpDownOctave
+%%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Cursor/JumpLeft
+%%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Cursor/JumpRight
+%%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Cursor/JumpUpOctave
+%%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Cursor/MoveToMovementBeginning
+%%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Cursor/MoveToMovementEnd
+%%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Cursor/ToggleCursorHighlight
+%%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Cursor/init.scm
+%%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Seek/CheckForIncompleteMeasures
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Seek/FindEditPoint
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Seek/FindNextLowerNote
+%%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Seek/FindNote
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Seek/GoToEmptyMeasure
+%%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Seek/GoToMeasureEnd
+%%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Seek/MoveToPreviousEmptyMeasure
 %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Seek/NextHigher
+%%DATADIR%%/actions/menus/MainMenu/PlaybackMenu/ConvertMidiForBass
+%%DATADIR%%/actions/menus/MainMenu/PlaybackMenu/DenemoPlayCursorToEnd
+%%DATADIR%%/actions/menus/MainMenu/PlaybackMenu/RecordAndConvert
 %%DATADIR%%/actions/menus/MainMenu/PlaybackMenu/RecreateTimebase
+%%DATADIR%%/actions/menus/MainMenu/PlaybackMenu/ToggleConduct
+%%DATADIR%%/actions/menus/MainMenu/PlaybackMenu/ToggleImmediatePlayback
+%%DATADIR%%/actions/menus/MainMenu/PlaybackMenu/TogglePlayAlongPlayback
 %%DATADIR%%/actions/menus/MainMenu/ViewMenu/Zoom/ZoomDialog
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddInterval/AddIntervalTest
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddInterval/init.scm
+%%DATADIR%%/actions/menus/MainMenu/ViewMenu/Zoom/ZoomIn
+%%DATADIR%%/actions/menus/MainMenu/ViewMenu/Zoom/ZoomOut
+%%DATADIR%%/actions/menus/MainMenu/ViewMenu/Zoom/ZoomReset
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddAboveBase/AddLowestUpAugmented4
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddAboveBase/AddLowestUpDiminished5
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddAboveBase/AddLowestUpMajor2
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddAboveBase/AddLowestUpMajor3
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddAboveBase/AddLowestUpMajor6
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddAboveBase/AddLowestUpMajor7
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddAboveBase/AddLowestUpMinor2
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddAboveBase/AddLowestUpMinor3
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddAboveBase/AddLowestUpMinor6
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddAboveBase/AddLowestUpMinor7
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddAboveBase/AddLowestUpPerfect1
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddAboveBase/AddLowestUpPerfect4
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddAboveBase/AddLowestUpPerfect5
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddBelowTop/AddHighestDownAugmented4
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddBelowTop/AddHighestDownDiminished5
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddBelowTop/AddHighestDownMajor2
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddBelowTop/AddHighestDownMajor3
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddBelowTop/AddHighestDownMajor6
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddBelowTop/AddHighestDownMajor7
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddBelowTop/AddHighestDownMinor2
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddBelowTop/AddHighestDownMinor3
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddBelowTop/AddHighestDownMinor6
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddBelowTop/AddHighestDownMinor7
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddBelowTop/AddHighestDownPerfect1
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddBelowTop/AddHighestDownPerfect4
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddBelowTop/AddHighestDownPerfect5
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/ChangePrintDuration/ChangePrintDuration0
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/ChangePrintDuration/ChangePrintDuration1
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/ChangePrintDuration/ChangePrintDuration2
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/ChangePrintDuration/ChangePrintDurationBreve
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/ChangePrintDuration/ChangePrintDurationLonga
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/ChangePrintDuration/init.scm
 %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Directives/DeleteLilyPondOnChord
 %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/HideLilyPond
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/Metronome Markings/MetronomeMarking
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/Ornaments/Trill+Above
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/Ornaments/Trill+Below
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/TextMarks/D.C.AlFine
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/TextMarks/Dynamic Markings/DeleteDynamic
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/TextMarks/Dynamic Markings/Forte
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/TextMarks/Dynamic Markings/Fortissimo
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/TextMarks/Dynamic Markings/Largo
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/TextMarks/Dynamic Markings/MezzoForte
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/TextMarks/Dynamic Markings/MezzoPiano
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/TextMarks/Dynamic Markings/init.scm
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/TextMarks/Glissando
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/TextMarks/ParenthesizeChord
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/TextMarks/ParenthesizeNote
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/TextMarks/Tempo Indications/Allegro
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/TextMarks/Tempo Indications/AllegroAssai
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/TextMarks/Tempo Indications/Andante
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/TextMarks/Tempo Indications/Largo
-%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/TextMarks/Tempo Indications/Presto
 %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/ParenthesizeChord
 %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/BeginPhrasingSlur
 %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/EndPhrasingSlur
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/ExtendSlur
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/ReduceSlur
 %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/SlurDown
 %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/SlurNeutral
 %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/SlurThree
 %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/SlurTwo
 %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/SlurUp
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/ToggleBeginPhrasingSlur
+%%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs/ToggleEndPhrasingSlur
 %%DATADIR%%/actions/menus/ObjectMenu/ClefMenu/ClefChooser
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/AutoAccidentals
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Barlines/ChooseBarline
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Barlines/ClosingBarline
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Barlines/DoubleBarline
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Barlines/ForceBarline
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Barlines/HalfBarline
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/BreathMark
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/CadenzaOn
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/DynamicsDialog
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/EndVolta
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/FinishCadenza
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/FreeFermata
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Hide
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/InsertStandaloneDirective
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/LineBreak
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/MIDI/ChangeBalance
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/MIDI/ChangeChannel
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/MIDI/ChangeExpression
@@ -206,61 +817,145 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/MIDI/ChangeSustenutoPedal
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/MIDI/ChangeVolume
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/MIDI/ChannelChange
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/MIDI/ClarinetInA
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/MIDI/ClarinetInBb
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/MIDI/CloseTransposingInstrument
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/MIDI/MidiTempo
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/MIDI/Temperament/StartEqualTemperament
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/MIDI/Temperament/StartQCMeanTone
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/MIDI/init.scm
-%%DATADIR%%/actions/menus/ObjectMenu/Directives/MM
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/MetronomeMarking
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/OpenFirstTimeBar
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/OpenSecondTimeBar
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/PageBreak
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Print Transpositions/CloseLilyBlock
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Print Transpositions/OpenOctaveDown
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Print Transpositions/OpenOctaveUp
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/RehearsalMark
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/SetBarNumber
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/SmallFontEnd
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/SmallFontStart
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Staff/HideNotes
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Staff/StartStaff
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Staff/StopStaff
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Staff/UnHideNotes
 %%DATADIR%%/actions/menus/ObjectMenu/Directives/Tempo
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Tuning/SetTuningAllStaffs
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/Tuning/SetTuningStaff
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/TypesettingOff
+%%DATADIR%%/actions/menus/ObjectMenu/Directives/TypesettingOn
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/AddDuplicateMeasure
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/Anacrusis
-%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/ClosingBarline
-%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/DeleteBarline
-%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/DoubleBarline
-%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/ForceBarline
-%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/ForceNewMeasure
-%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/LineBreak
-%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/PageBreak
-%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/ReBar
-%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/RepeatEnd
-%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/RepeatEndStart
-%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/RepeatStart
+%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/MergeWithNextMeasure
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/Repeats/CloseReopenRepeat
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/Repeats/CloseRepeat
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/Repeats/EndSecondTimeBar
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/Repeats/FirstTimeBar
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/Repeats/OpenRepeat
+%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/Repeats/RepeatEnd
+%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/Repeats/RepeatEndStart
+%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/Repeats/RepeatStart
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/Repeats/SecondTimeBar
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/ShortMeasure
 %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/SplitMeasure
+%%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/Upbeat
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/CreateIntro
 %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/HideMovement
 %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/MovementPageBreak
 %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/MvntComment
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/NoteHeadStyles/MovementNoteheadsBaroque
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/NoteHeadStyles/MovementNoteheadsCross
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/NoteHeadStyles/MovementNoteheadsDefault
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/NoteHeadStyles/MovementNoteheadsDelete
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/NoteHeadStyles/MovementNoteheadsDiamond
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/NoteHeadStyles/MovementNoteheadsHarmonic
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/NoteHeadStyles/MovementNoteheadsHarmonic-black
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/NoteHeadStyles/MovementNoteheadsHarmonic-mixed
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/NoteHeadStyles/MovementNoteheadsMensural
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/NoteHeadStyles/MovementNoteheadsNeomensural
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/NoteHeadStyles/MovementNoteheadsPetrucci
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/NoteHeadStyles/MovementNoteheadsSlash
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/NoteHeadStyles/MovementNoteheadsXcircle
 %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Print Layout/Indent
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/ReBar
 %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/SetMovementTempo
+%%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/SwitchMensuralBarlines
 %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles Etc/MovementPiece
 %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles Etc/MovementSubtitle
 %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles Etc/MovementTitle
+%%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/GenerateRhythmFromString/NotationMagick-InsertReversedStringAsBinaryRhythm
+%%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/GenerateRhythmFromString/NotationMagick-InsertReversedStringAsReversedBinaryRhythm
+%%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/GenerateRhythmFromString/NotationMagick-InsertStringAsBinaryRhythm
+%%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/GenerateRhythmFromString/NotationMagick-InsertStringAsReversedBinaryRhythm
+%%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/NotationMagick-InsertPoolShuffled
+%%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/NotationMagick-MirrorSelectedObjects
+%%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/NotationMagick-ReverseSelectedObjects
+%%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/NotationMagick-ShuffleSelectedObjects
+%%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/NotationMagick-SortSelectionAscending
+%%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/NotationMagick-SortSelectionDescending
+%%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/NotationMagick-TwelveToneRow
+%%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/SingleRandomNote/NotationMagick-InsertNoteFromPool
+%%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/SingleRandomNote/NotationMagick-RandomWithinClefRangeChromatic
+%%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/SingleRandomNote/NotationMagick-RandomWithinClefRangeDiatonic
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Augment
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Beaming/Beam1234
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Beaming/EndBeam
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Beaming/StartBeam
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/ChangeDuration/ChangeBreve
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/ChangeDuration/ChangeLonga
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/ChordComment
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Diminish
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Directives/DeleteLilyPondOnNote
-%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditModeNote/EditNote/CautionaryAccidental
-%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditModeNote/EditNote/MoveNoteToCursor
-%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditModeNote/EditNote/ReminderAccidental
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/DuplicateChord
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration/Breve
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration/Longa
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/AddDotSelectionSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/CautionaryAccidental
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/MoveNoteToCursor
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/ReminderAccidental
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote/RemoveDotSelectionSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/FingeringsDoublestroke
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/GraceNotes/GraceAfter
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/GraceNotes/GraceNoteSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/GraceNotes/InsertTwoGraceNotesBeamed
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/InsertNote/InsertDuration/InsertBreve
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/InsertNote/InsertDuration/InsertLonga
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/InsertNote/InsertDuration/InsertOneNote
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/JoinChords
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/JoinChordsToMergedChord
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/AccentSelectionSwitcher
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/StaccatissimoSelectionSwitcher
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/StaccatoSelectionSwitcher
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations/TenutoSelectionSwitcher
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/Trill+Above
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments/Trill+Below
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/Fingerings/Finger0
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/Fingerings/Finger1
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/Fingerings/Finger2
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/Fingerings/Finger3
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/Fingerings/Finger4
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/Fingerings/Finger5
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/LHFinger
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/StringNum
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextAbove
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/ArbitraryTextAbove
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Congruentia
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/D.C.AlFine
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Dynamic Markings/DeleteDynamic
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Dynamic Markings/Forte
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Dynamic Markings/Fortissimo
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Dynamic Markings/Largo
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Dynamic Markings/MezzoForte
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Dynamic Markings/MezzoPiano
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Dynamic Markings/init.scm
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Glissando
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/ParenthesizeChord
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/ParenthesizeNote
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Tempo Indications/Allegro
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Tempo Indications/AllegroAssai
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Tempo Indications/Andante
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Tempo Indications/Largo
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Tempo Indications/Presto
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/NoteheadSizes/NormalSizeNotehead
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/NoteheadSizes/SmallNotehead
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/NoteheadSizes/TinyNotehead
@@ -274,32 +969,50 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Percussion/RideBell
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Percussion/TimbalesStyle
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/RestEntry/EnterRest
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/RestEntry/InsertBreveRest
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/RestEntry/InsertLongaRest
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/RestEntry/InsertWholeMeasureRest
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/RestEntry/MultiMeasureRests
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/RestEntry/WholeMeasureRest
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/SelectDuration/SetBreve
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/SelectDuration/SetLonga
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Slurs/BeginPhrasingSlur
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Slurs/EndPhrasingSlur
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Slurs/ExtendSlur
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Slurs/ReduceSlur
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Slurs/SlurDown
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Slurs/SlurNeutral
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Slurs/SlurThree
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Slurs/SlurTwo
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Slurs/SlurUp
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Slurs/ToggleBeginPhrasingSlur
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Slurs/ToggleEndPhrasingSlur
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/SplitChord
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/StemControl/DesignateVoice
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/StemControl/StartDownStems
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/StemControl/StartUpStems
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TiedNotes/InsertTiedNoteDuration
-%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/CloseLilyBlock
-%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/DiatonicShift/Third
-%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/OpenOctaveDown
-%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/OpenOctaveUp
-%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/init.scm
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/ShiftDown
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/ShiftRealDialogDown
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/ShiftRealDialogUp
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/ShiftRealHalfDown
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/ShiftRealHalfUp
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/ShiftRealOctaveDown
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/ShiftRealOctaveUp
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/ShiftRealWholeDown
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/ShiftRealWholeUp
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/ShiftUp
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Tremolo
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Tuplets/NoTupletNumbers
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Tuplets/StartTuplet
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Tuplets/ToggleTripleting
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Tuplets/ToggleTupletBrackets
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Tuplets/ToggleTupletNumbering
 %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/init.scm
-%%DATADIR%%/actions/menus/ObjectMenu/Score/Ambitus
+%%DATADIR%%/actions/menus/ObjectMenu/NotesRests/split.scm
+%%DATADIR%%/actions/menus/ObjectMenu/Score/AccompanistsScore
+%%DATADIR%%/actions/menus/ObjectMenu/Score/DeactivateTimeSignatureStencil
+%%DATADIR%%/actions/menus/ObjectMenu/Score/DenemoBar
 %%DATADIR%%/actions/menus/ObjectMenu/Score/EditProlog
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Print Layout/HideEmptyStaffs
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Print Layout/PaperSize
@@ -323,27 +1036,67 @@ share/applications/denemo.desktop
 %%DATADIR%%/actions/menus/ObjectMenu/Score/Titles Etc/TitlePage
 %%DATADIR%%/actions/menus/ObjectMenu/Score/TransposeOctaveUp
 %%DATADIR%%/actions/menus/ObjectMenu/Score/TransposeScorePrint
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Ambitus
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/ChangeStaff
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/InstrumentName
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/NonPrintingStaff
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Numbering/BarNumbers
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Ossia/CreateOssiaStaff
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Ossia/HideOssia
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Ossia/ShowOssia
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Playback/SetInitialVolumeToZero
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/PrintEffects/ClearStaffProlog
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/PrintEffects/TransposeStaffOutput
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/ShortInstrumentName
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/SimplifyTies
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/SmallerStaff
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffAlias
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffComment
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings/ChoirStaffEnd
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings/ChoirStaffStart
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings/DeleteStaffGroupings
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings/GrandStaffEnd
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings/GrandStaffStart
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings/GroupStaffEnd
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings/GroupStaffStart
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings/PianoStaffEnd
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings/PianoStaffStart
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffOctaveUp
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/TabStaff
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/TinyStaff
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/TinyStaffAllMovements
 %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/TransposeStaffPrint
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/CreateParts
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/VoicePreset1
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/VoicePreset2
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/VoicePreset3
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/VoicePreset4
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/VoicePresetAutomatic
+%%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices/VoicesDoublestroke
+%%DATADIR%%/actions/menus/ObjectMenu/TimeSig/ChooseTimeSignature
+%%DATADIR%%/actions/multilex.scm
 %%DATADIR%%/actions/musicgames/ReadingNoteNames.denemo
+%%DATADIR%%/actions/mxml2ly2denemo/import_nwctext.scm
+%%DATADIR%%/actions/mxml2ly2denemo/lyimport.dia
+%%DATADIR%%/actions/mxml2ly2denemo/nwctext.l
+%%DATADIR%%/actions/mxml2ly2denemo/sample.nwctext
+%%DATADIR%%/actions/mxml2ly2denemo/silex.pdf
+%%DATADIR%%/actions/mxml2ly2denemo/silex.tar.gz
+%%DATADIR%%/actions/mytest.ly
+%%DATADIR%%/actions/notationmagick.scm
+%%DATADIR%%/actions/notes.l
+%%DATADIR%%/actions/quote.l
+%%DATADIR%%/actions/silex.scm
+%%DATADIR%%/actions/testinclude.ly
 %%DATADIR%%/denemoui.xml
 %%DATADIR%%/examples/AbbreviatedNotes.denemo
 %%DATADIR%%/examples/CautionaryAccidental.denemo
 %%DATADIR%%/examples/Cues.denemo
 %%DATADIR%%/examples/ForcingBreaks.denemo
 %%DATADIR%%/examples/GraceLilyPondBugWorkaround.denemo
+%%DATADIR%%/examples/HandelFiguredBassExercises.denemo
 %%DATADIR%%/examples/InstrumentNames.denemo
+%%DATADIR%%/examples/LeadSheet.denemo
 %%DATADIR%%/examples/Makefile
 %%DATADIR%%/examples/Makefile.am
 %%DATADIR%%/examples/Makefile.in
@@ -356,6 +1109,7 @@ share/applications/denemo.desktop
 %%DATADIR%%/examples/ReminderAccidental.denemo
 %%DATADIR%%/examples/SeveralVerses.denemo
 %%DATADIR%%/examples/SuggestedAccidental.denemo
+%%DATADIR%%/examples/TemperamentShiftingPlayback.denemo
 %%DATADIR%%/examples/TextPosition.denemo
 %%DATADIR%%/examples/Upbeat.denemo
 %%DATADIR%%/examples/denemo
@@ -496,47 +1250,203 @@ share/applications/denemo.desktop
 %%DATADIR%%/pixmaps/upbow.svg
 %%DATADIR%%/soundfonts/A320U-license.txt
 %%DATADIR%%/soundfonts/A320U.sf2
+%%DATADIR%%/templates/Accordion/accordion.denemo
+%%DATADIR%%/templates/Early Music/BreveLonga.denemo
 %%DATADIR%%/templates/Makefile
 %%DATADIR%%/templates/Makefile.am
 %%DATADIR%%/templates/Makefile.in
 %%DATADIR%%/templates/band/BrassBand.denemo
 %%DATADIR%%/templates/band/BrassTrio.denemo
-%%DATADIR%%/templates/band/Makefile
-%%DATADIR%%/templates/band/Makefile.in
-%%DATADIR%%/templates/chamber/Makefile
-%%DATADIR%%/templates/chamber/Makefile.in
 %%DATADIR%%/templates/chamber/StringQuartet.denemo
-%%DATADIR%%/templates/choral/Makefile
-%%DATADIR%%/templates/choral/Makefile.in
 %%DATADIR%%/templates/choral/SATB-Piano.denemo
 %%DATADIR%%/templates/choral/SATB.denemo
 %%DATADIR%%/templates/choral/TTBB.denemo
 %%DATADIR%%/templates/drummap.denemo
 %%DATADIR%%/templates/jazz/JazzCombo.denemo
-%%DATADIR%%/templates/jazz/Makefile
-%%DATADIR%%/templates/jazz/Makefile.in
-share/fonts/truetype/denemo/Denemo.ttf
-share/fonts/truetype/denemo/LICENSE_OFL.txt
-share/fonts/truetype/denemo/fetta.ttf
+share/pixmaps/denemo.png
+%%NLS%%share/locale/cs/LC_MESSAGES/denemo.mo
 %%NLS%%share/locale/de/LC_MESSAGES/denemo.mo
 %%NLS%%share/locale/es/LC_MESSAGES/denemo.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/denemo.mo
 %%NLS%%share/locale/it/LC_MESSAGES/denemo.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/denemo.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/denemo.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/denemo.mo
-share/pixmaps/denemo.png
-@dirrmtry share/fonts/truetype/denemo
-@dirrmtry share/fonts/truetype
-@dirrmtry share/fonts
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/DESIGN
+%%PORTDOCS%%%%DOCSDIR%%/DESIGN.lilypond
+%%PORTDOCS%%%%DOCSDIR%%/GOALS
+%%PORTDOCS%%%%DOCSDIR%%/NEWS
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/manual/denemo-manual.html
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/4fo2denemo.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/4for2abc.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/4for2abcps.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/4for2ly.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/4for2new-page1.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/4for2new-page2.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/4for2touchedly.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/Changeclefdialog.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/accent.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/acciaccatura.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/accidentals.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/addvc2currentstaff.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/appoggiatura.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/arpeggio.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/articulations.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/bandtemplate.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/blank.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/caution.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/changeinitialclef.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/choraltemplate1.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/chord.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/churchtemplate2.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/clefmenu.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/coda.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/copy.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/cut.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/denemomain.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/displaymenu.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/downbow.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/downmordent.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/downprall.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/draft.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/educationtemplate3.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/expressions.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/fermata.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/fig1.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/fig2.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/fig3.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/filemenu.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/flageolet.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/generaltemplate4.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/glissando.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/gotobegin.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/gotoend.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/grace.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/home.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/important.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/initalkeydialog.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/keymenu.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/lheel.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/lineprall.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/longfermata.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/lpmode.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/ltoe.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/main.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/marcato.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/mark1.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/mordent.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/navigationmenu.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/new.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/next.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/note-page1.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/note.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/open.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/orchestraltemplate5.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/othermenu1.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/paste.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/playbackcontrols.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/playbackmenu.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/playmidi.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/polyphony.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/portato.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/prall.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/pralldown.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/prallmordent.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/prallprall.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/prallup.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/prev.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/print.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/redo.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/rests.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/reverseturn.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/rheel.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/rtoe.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/save.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/scorewizard.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/secondending.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/segno.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/selectingkey.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/setpreferences.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/settimesigniture.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/shortfermata.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/signumcongruentime.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/simplemelody.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/simplerepeat.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/staccatissimo.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/staccato.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/stacctissiimo.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/staffmenu.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/stopmidi.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/stopped.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/tablituretemplate6.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/tenuto.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/thumb.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/timemenu.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/tip.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/toc-blank.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/toc-minus.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/toc-plus.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/tremolo1.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/tremolo2.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/tremolo3.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/trill.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/tupletmarkers.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/turn.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/undo.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/up.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/upbeat.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/upbow.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/upmordent.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/upprall.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/varcoda.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/verylongfermata.png
+%%PORTDOCS%%%%DOCSDIR%%/manual/images/warning.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/AbbreviatedNotes.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/CautionaryAccidental.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Cues.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ForcingBreaks.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/GraceLilyPondBugWorkaround.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/HandelFiguredBassExercises.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/InstrumentNames.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/LeadSheet.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Metronome.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/MultiMeasureRests.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Ossia.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PrintScoreAndParts.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/RaggedBottom.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/RehearsalMarks.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ReminderAccidental.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SeveralVerses.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/SuggestedAccidental.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/TemperamentShiftingPlayback.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/TextPosition.denemo
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Upbeat.denemo
+share/fonts/truetype/denemo/Denemo.ttf
+share/fonts/truetype/denemo/LICENSE_OFL.txt
+share/fonts/truetype/denemo/fetta.ttf
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/manual
 @dirrm %%DATADIR%%/templates/jazz
 @dirrm %%DATADIR%%/templates/choral
 @dirrm %%DATADIR%%/templates/chamber
 @dirrm %%DATADIR%%/templates/band
+@dirrm %%DATADIR%%/templates/Early Music
+@dirrm %%DATADIR%%/templates/Accordion
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/soundfonts
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%/actions/mxml2ly2denemo
 @dirrm %%DATADIR%%/actions/musicgames
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/TimeSig
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Voices
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/StaffGroupings
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/PrintEffects
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Playback
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Ossia
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu/Numbering
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/StaffMenu
@@ -544,40 +1454,53 @@ share/pixmaps/denemo.png
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/Score/Print Layout
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/Score
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Tuplets
-@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose/DiatonicShift
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Transpose
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/TiedNotes
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/StemControl
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Slurs
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/SelectDuration
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/RestEntry
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Percussion
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/NoteheadSizes
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Tempo Indications
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks/Dynamic Markings
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/TextMarks
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings/Fingerings
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Strings
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Ornaments
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings/Articulations
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Markings
-@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditModeNote/EditNote
-@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditModeNote
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/InsertNote/InsertDuration
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/InsertNote
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/GraceNotes
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditNote
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/EditDuration
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Directives
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/ChangeDuration
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests/Beaming
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotesRests
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/SingleRandomNote
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotationMagick/GenerateRhythmFromString
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/NotationMagick
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Titles Etc
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/Print Layout
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu/NoteHeadStyles
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/MovementMenu
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu/Repeats
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/MeasureMenu
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Directives/Tuning
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Directives/Staff
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Directives/Print Transpositions
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Directives/MIDI/Temperament
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/Directives/MIDI
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/Directives/Barlines
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/Directives
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/ClefMenu
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Slurs
-@dirrm %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/TextMarks/Tempo Indications
-@dirrm %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/TextMarks/Dynamic Markings
-@dirrm %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/TextMarks
-@dirrm %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/Ornaments
-@dirrm %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings/Metronome Markings
-@dirrm %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Markings
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/Directives
-@dirrm %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddInterval
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/ChangePrintDuration
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddBelowTop
+@dirrm %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu/AddAboveBase
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu/ChordMenu
 @dirrm %%DATADIR%%/actions/menus/ObjectMenu
 @dirrm %%DATADIR%%/actions/menus/MainMenu/ViewMenu/Zoom
@@ -587,17 +1510,20 @@ share/pixmaps/denemo.png
 @dirrm %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Cursor
 @dirrm %%DATADIR%%/actions/menus/MainMenu/NavigationMenu/Bookmarks
 @dirrm %%DATADIR%%/actions/menus/MainMenu/NavigationMenu
-@dirrm %%DATADIR%%/actions/menus/MainMenu/ModeMenu/MIDI
-@dirrm %%DATADIR%%/actions/menus/MainMenu/ModeMenu
+@dirrm %%DATADIR%%/actions/menus/MainMenu/MoreMenu
+@dirrm %%DATADIR%%/actions/menus/MainMenu/InputMenu/MIDI
+@dirrm %%DATADIR%%/actions/menus/MainMenu/InputMenu
 @dirrm %%DATADIR%%/actions/menus/MainMenu/HelpMenu
+@dirrm %%DATADIR%%/actions/menus/MainMenu/FileMenu/PrintMenu
+@dirrm %%DATADIR%%/actions/menus/MainMenu/FileMenu/OpenMenu
+@dirrm %%DATADIR%%/actions/menus/MainMenu/FileMenu/Import
+@dirrm %%DATADIR%%/actions/menus/MainMenu/FileMenu
 @dirrm %%DATADIR%%/actions/menus/MainMenu/Educational/Note-Reading
 @dirrm %%DATADIR%%/actions/menus/MainMenu/Educational/MIDI
-@dirrm %%DATADIR%%/actions/menus/MainMenu/Educational/Aural Training/Chord-Comparison
 @dirrm %%DATADIR%%/actions/menus/MainMenu/Educational/Aural Training/Identify-Scale-Note
+@dirrm %%DATADIR%%/actions/menus/MainMenu/Educational/Aural Training/Chord-Comparison
 @dirrm %%DATADIR%%/actions/menus/MainMenu/Educational/Aural Training
 @dirrm %%DATADIR%%/actions/menus/MainMenu/Educational
-@dirrm %%DATADIR%%/actions/menus/MainMenu/EditMenu/Transpose
-@dirrm %%DATADIR%%/actions/menus/MainMenu/EditMenu/Shift
 @dirrm %%DATADIR%%/actions/menus/MainMenu/EditMenu/Select
 @dirrm %%DATADIR%%/actions/menus/MainMenu/EditMenu/KeyBindings
 @dirrm %%DATADIR%%/actions/menus/MainMenu/EditMenu
@@ -608,4 +1534,7 @@ share/pixmaps/denemo.png
 @dirrm %%DATADIR%%/actions
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
-@dirrm %%ETCDIR%%
+@dirrm share/fonts/truetype/denemo
+@dirrm share/fonts/truetype
+@dirrm share/fonts
+@dirrm etc/denemo
