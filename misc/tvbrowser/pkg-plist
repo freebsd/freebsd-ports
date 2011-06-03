@@ -3,303 +3,9 @@ bin/tvbrowser
 %%DATADIR%%/LICENSE.txt
 %%DATADIR%%/enwiki.url
 %%DATADIR%%/forum.url
-%%DATADIR%%/icons/CrystalClear/16x16/actions/appointment-new.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/close-pressed.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/document-edit.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/document-new.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/document-open.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/document-print-preview.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/document-properties.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/document-save-as.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/document-save.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/edit-copy.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/edit-delete.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/edit-find.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/edit-paste.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/edit-undo.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/folder-new.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/format-justify-fill.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/go-down.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/go-next.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/go-previous.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/go-to-date-list.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/go-to-next-week.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/go-to-previous-week.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/go-up.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/list-remove.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/mail-message-new.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/media-playback-start.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/media-seek-forward.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/process-stop.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/scroll-to-channel-list.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/scroll-to-channel.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/scroll-to-now.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/scroll-to-specific-time.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/scroll-to-time-list.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/scroll-to-time.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/sort-list-numerical.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/sort-list.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/system-log-out.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/system-search.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/view-filter.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/view-fullscreen.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/view-list.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/view-plugins.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/view-refresh.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/view-tree.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/web-search.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/zoom-in.png
-%%DATADIR%%/icons/CrystalClear/16x16/actions/zoom-out.png
-%%DATADIR%%/icons/CrystalClear/16x16/apps/appointment.png
-%%DATADIR%%/icons/CrystalClear/16x16/apps/help-browser.png
-%%DATADIR%%/icons/CrystalClear/16x16/apps/internet-news-reader.png
-%%DATADIR%%/icons/CrystalClear/16x16/apps/internet-web-browser.png
-%%DATADIR%%/icons/CrystalClear/16x16/apps/office-calendar.png
-%%DATADIR%%/icons/CrystalClear/16x16/apps/preferences-desktop-font.png
-%%DATADIR%%/icons/CrystalClear/16x16/apps/preferences-desktop-locale.png
-%%DATADIR%%/icons/CrystalClear/16x16/apps/preferences-desktop-theme.png
-%%DATADIR%%/icons/CrystalClear/16x16/apps/preferences-system-network-proxy.png
-%%DATADIR%%/icons/CrystalClear/16x16/apps/system-file-manager.png
-%%DATADIR%%/icons/CrystalClear/16x16/apps/system-software-update.png
-%%DATADIR%%/icons/CrystalClear/16x16/categories/preferences-system.png
-%%DATADIR%%/icons/CrystalClear/16x16/devices/input-mouse.png
-%%DATADIR%%/icons/CrystalClear/16x16/devices/printer.png
-%%DATADIR%%/icons/CrystalClear/16x16/emblems/emblem-favorite.png
-%%DATADIR%%/icons/CrystalClear/16x16/emblems/emblem-important.png
-%%DATADIR%%/icons/CrystalClear/16x16/emblems/emblem-symbolic-link.png
-%%DATADIR%%/icons/CrystalClear/16x16/mimetypes/image-x-generic.png
-%%DATADIR%%/icons/CrystalClear/16x16/mimetypes/video-x-generic.png
-%%DATADIR%%/icons/CrystalClear/16x16/status/close-over.png
-%%DATADIR%%/icons/CrystalClear/16x16/status/dialog-information.png
-%%DATADIR%%/icons/CrystalClear/16x16/status/dialog-warning.png
-%%DATADIR%%/icons/CrystalClear/16x16/status/folder-open.png
-%%DATADIR%%/icons/CrystalClear/16x16/status/mail-attachment.png
-%%DATADIR%%/icons/CrystalClear/16x16/status/network-transmit-receive.png
-%%DATADIR%%/icons/CrystalClear/16x16/status/software-update-available.png
-%%DATADIR%%/icons/CrystalClear/16x16/status/view-filter-set-list.png
-%%DATADIR%%/icons/CrystalClear/16x16/status/view-filter-set.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/appointment-new.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/document-edit.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/document-new.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/document-open.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/document-print-preview.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/document-properties.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/document-save-as.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/document-save.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/edit-copy.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/edit-delete.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/edit-find.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/edit-paste.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/edit-undo.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/folder-new.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/format-justify-fill.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/go-bottom.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/go-down.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/go-next.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/go-previous.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/go-to-date-list.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/go-to-next-week.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/go-to-previous-week.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/go-to-prevoius-day.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/go-to-today.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/go-top.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/go-up.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/mail-message-new.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/media-playback-start.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/media-seek-forward.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/process-stop.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/scroll-to-channel-list.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/scroll-to-channel.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/scroll-to-now.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/scroll-to-specific-time.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/scroll-to-time-list.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/scroll-to-time.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/sort-list-numerical.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/sort-list.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/system-log-out.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/system-search.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/view-filter-list.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/view-filter.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/view-list.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/view-plugins.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/view-refresh.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/view-tree.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/web-search.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/zoom-in.png
-%%DATADIR%%/icons/CrystalClear/22x22/actions/zoom-out.png
-%%DATADIR%%/icons/CrystalClear/22x22/apps/appointment.png
-%%DATADIR%%/icons/CrystalClear/22x22/apps/help-browser.png
-%%DATADIR%%/icons/CrystalClear/22x22/apps/internet-news-reader.png
-%%DATADIR%%/icons/CrystalClear/22x22/apps/internet-web-browser.png
-%%DATADIR%%/icons/CrystalClear/22x22/apps/office-calendar.png
-%%DATADIR%%/icons/CrystalClear/22x22/apps/preferences-desktop-font.png
-%%DATADIR%%/icons/CrystalClear/22x22/apps/preferences-desktop-locale.png
-%%DATADIR%%/icons/CrystalClear/22x22/apps/preferences-desktop-theme.png
-%%DATADIR%%/icons/CrystalClear/22x22/apps/preferences-system-network-proxy.png
-%%DATADIR%%/icons/CrystalClear/22x22/apps/system-software-update.png
-%%DATADIR%%/icons/CrystalClear/22x22/categories/preferences-system.png
-%%DATADIR%%/icons/CrystalClear/22x22/devices/printer.png
-%%DATADIR%%/icons/CrystalClear/22x22/emblems/emblem-favorite.png
-%%DATADIR%%/icons/CrystalClear/22x22/emblems/emblem-important.png
-%%DATADIR%%/icons/CrystalClear/22x22/emblems/emblem-symbolic-link.png
-%%DATADIR%%/icons/CrystalClear/22x22/mimetypes/video-x-generic.png
-%%DATADIR%%/icons/CrystalClear/22x22/status/dialog-information.png
-%%DATADIR%%/icons/CrystalClear/22x22/status/dialog-warning.png
-%%DATADIR%%/icons/CrystalClear/22x22/status/folder-open.png
-%%DATADIR%%/icons/CrystalClear/22x22/status/mail-attachment.png
-%%DATADIR%%/icons/CrystalClear/22x22/status/network-transmit-receive.png
-%%DATADIR%%/icons/CrystalClear/22x22/status/view-filter-set-list.png
-%%DATADIR%%/icons/CrystalClear/22x22/status/view-filter-set.png
-%%DATADIR%%/icons/CrystalClear/index.theme
-%%DATADIR%%/icons/CrystalClear/license.txt
-%%DATADIR%%/icons/CrystalClear/readme.txt
-%%DATADIR%%/icons/tango/16x16/actions/appointment-new.png
-%%DATADIR%%/icons/tango/16x16/actions/close-pressed.png
-%%DATADIR%%/icons/tango/16x16/actions/document-edit.png
-%%DATADIR%%/icons/tango/16x16/actions/document-new.png
-%%DATADIR%%/icons/tango/16x16/actions/document-open.png
-%%DATADIR%%/icons/tango/16x16/actions/document-print-preview.png
-%%DATADIR%%/icons/tango/16x16/actions/document-properties.png
-%%DATADIR%%/icons/tango/16x16/actions/document-save-as.png
-%%DATADIR%%/icons/tango/16x16/actions/document-save.png
-%%DATADIR%%/icons/tango/16x16/actions/edit-copy.png
-%%DATADIR%%/icons/tango/16x16/actions/edit-delete.png
-%%DATADIR%%/icons/tango/16x16/actions/edit-find.png
-%%DATADIR%%/icons/tango/16x16/actions/edit-paste.png
-%%DATADIR%%/icons/tango/16x16/actions/edit-undo.png
-%%DATADIR%%/icons/tango/16x16/actions/folder-new.png
-%%DATADIR%%/icons/tango/16x16/actions/format-justify-fill.png
-%%DATADIR%%/icons/tango/16x16/actions/go-down.png
-%%DATADIR%%/icons/tango/16x16/actions/go-next.png
-%%DATADIR%%/icons/tango/16x16/actions/go-previous.png
-%%DATADIR%%/icons/tango/16x16/actions/go-to-date-list.png
-%%DATADIR%%/icons/tango/16x16/actions/go-to-next-week.png
-%%DATADIR%%/icons/tango/16x16/actions/go-to-previous-week.png
-%%DATADIR%%/icons/tango/16x16/actions/go-up.png
-%%DATADIR%%/icons/tango/16x16/actions/list-remove.png
-%%DATADIR%%/icons/tango/16x16/actions/mail-message-new.png
-%%DATADIR%%/icons/tango/16x16/actions/media-playback-start.png
-%%DATADIR%%/icons/tango/16x16/actions/media-seek-forward.png
-%%DATADIR%%/icons/tango/16x16/actions/process-stop.png
-%%DATADIR%%/icons/tango/16x16/actions/scroll-to-channel-list.png
-%%DATADIR%%/icons/tango/16x16/actions/scroll-to-channel.png
-%%DATADIR%%/icons/tango/16x16/actions/scroll-to-now.png
-%%DATADIR%%/icons/tango/16x16/actions/scroll-to-specific-time.png
-%%DATADIR%%/icons/tango/16x16/actions/scroll-to-time-list.png
-%%DATADIR%%/icons/tango/16x16/actions/scroll-to-time.png
-%%DATADIR%%/icons/tango/16x16/actions/sort-list-numerical.png
-%%DATADIR%%/icons/tango/16x16/actions/sort-list.png
-%%DATADIR%%/icons/tango/16x16/actions/system-log-out.png
-%%DATADIR%%/icons/tango/16x16/actions/system-search.png
-%%DATADIR%%/icons/tango/16x16/actions/view-filter.png
-%%DATADIR%%/icons/tango/16x16/actions/view-fullscreen.png
-%%DATADIR%%/icons/tango/16x16/actions/view-list.png
-%%DATADIR%%/icons/tango/16x16/actions/view-plugins.png
-%%DATADIR%%/icons/tango/16x16/actions/view-refresh.png
-%%DATADIR%%/icons/tango/16x16/actions/view-tree.png
-%%DATADIR%%/icons/tango/16x16/actions/web-search.png
-%%DATADIR%%/icons/tango/16x16/actions/zoom-in.png
-%%DATADIR%%/icons/tango/16x16/actions/zoom-out.png
-%%DATADIR%%/icons/tango/16x16/apps/appointment.png
-%%DATADIR%%/icons/tango/16x16/apps/help-browser.png
-%%DATADIR%%/icons/tango/16x16/apps/internet-news-reader.png
-%%DATADIR%%/icons/tango/16x16/apps/internet-web-browser.png
-%%DATADIR%%/icons/tango/16x16/apps/office-calendar.png
-%%DATADIR%%/icons/tango/16x16/apps/preferences-desktop-font.png
-%%DATADIR%%/icons/tango/16x16/apps/preferences-desktop-locale.png
-%%DATADIR%%/icons/tango/16x16/apps/preferences-desktop-theme.png
-%%DATADIR%%/icons/tango/16x16/apps/preferences-desktop-wallpaper.png
-%%DATADIR%%/icons/tango/16x16/apps/preferences-system-network-proxy.png
-%%DATADIR%%/icons/tango/16x16/apps/system-file-manager.png
-%%DATADIR%%/icons/tango/16x16/apps/system-software-update.png
-%%DATADIR%%/icons/tango/16x16/categories/preferences-system.png
-%%DATADIR%%/icons/tango/16x16/devices/input-mouse.png
-%%DATADIR%%/icons/tango/16x16/devices/printer.png
-%%DATADIR%%/icons/tango/16x16/emblems/emblem-favorite.png
-%%DATADIR%%/icons/tango/16x16/emblems/emblem-important.png
-%%DATADIR%%/icons/tango/16x16/emblems/emblem-symbolic-link.png
-%%DATADIR%%/icons/tango/16x16/mimetypes/image-x-generic.png
-%%DATADIR%%/icons/tango/16x16/mimetypes/video-x-generic.png
-%%DATADIR%%/icons/tango/16x16/status/close-over.png
-%%DATADIR%%/icons/tango/16x16/status/dialog-information.png
-%%DATADIR%%/icons/tango/16x16/status/dialog-warning.png
-%%DATADIR%%/icons/tango/16x16/status/folder-open.png
-%%DATADIR%%/icons/tango/16x16/status/mail-attachment.png
-%%DATADIR%%/icons/tango/16x16/status/network-transmit-receive.png
-%%DATADIR%%/icons/tango/16x16/status/software-update-available.png
-%%DATADIR%%/icons/tango/16x16/status/view-filter-set.png
-%%DATADIR%%/icons/tango/22x22/actions/appointment-new.png
-%%DATADIR%%/icons/tango/22x22/actions/document-edit.png
-%%DATADIR%%/icons/tango/22x22/actions/document-new.png
-%%DATADIR%%/icons/tango/22x22/actions/document-open.png
-%%DATADIR%%/icons/tango/22x22/actions/document-print-preview.png
-%%DATADIR%%/icons/tango/22x22/actions/document-properties.png
-%%DATADIR%%/icons/tango/22x22/actions/document-save-as.png
-%%DATADIR%%/icons/tango/22x22/actions/document-save.png
-%%DATADIR%%/icons/tango/22x22/actions/edit-copy.png
-%%DATADIR%%/icons/tango/22x22/actions/edit-delete.png
-%%DATADIR%%/icons/tango/22x22/actions/edit-find.png
-%%DATADIR%%/icons/tango/22x22/actions/edit-paste.png
-%%DATADIR%%/icons/tango/22x22/actions/edit-undo.png
-%%DATADIR%%/icons/tango/22x22/actions/folder-new.png
-%%DATADIR%%/icons/tango/22x22/actions/format-justify-fill.png
-%%DATADIR%%/icons/tango/22x22/actions/go-bottom.png
-%%DATADIR%%/icons/tango/22x22/actions/go-down.png
-%%DATADIR%%/icons/tango/22x22/actions/go-next.png
-%%DATADIR%%/icons/tango/22x22/actions/go-previous.png
-%%DATADIR%%/icons/tango/22x22/actions/go-to-date-list.png
-%%DATADIR%%/icons/tango/22x22/actions/go-to-next-week.png
-%%DATADIR%%/icons/tango/22x22/actions/go-to-previous-week.png
-%%DATADIR%%/icons/tango/22x22/actions/go-top.png
-%%DATADIR%%/icons/tango/22x22/actions/go-up.png
-%%DATADIR%%/icons/tango/22x22/actions/mail-message-new.png
-%%DATADIR%%/icons/tango/22x22/actions/media-playback-start.png
-%%DATADIR%%/icons/tango/22x22/actions/media-seek-forward.png
-%%DATADIR%%/icons/tango/22x22/actions/process-stop.png
-%%DATADIR%%/icons/tango/22x22/actions/scroll-to-channel-list.png
-%%DATADIR%%/icons/tango/22x22/actions/scroll-to-channel.png
-%%DATADIR%%/icons/tango/22x22/actions/scroll-to-now.png
-%%DATADIR%%/icons/tango/22x22/actions/scroll-to-specific-time.png
-%%DATADIR%%/icons/tango/22x22/actions/scroll-to-time-list.png
-%%DATADIR%%/icons/tango/22x22/actions/scroll-to-time.png
-%%DATADIR%%/icons/tango/22x22/actions/sort-list-numerical.png
-%%DATADIR%%/icons/tango/22x22/actions/sort-list.png
-%%DATADIR%%/icons/tango/22x22/actions/system-log-out.png
-%%DATADIR%%/icons/tango/22x22/actions/system-search.png
-%%DATADIR%%/icons/tango/22x22/actions/view-filter-list.png
-%%DATADIR%%/icons/tango/22x22/actions/view-filter.png
-%%DATADIR%%/icons/tango/22x22/actions/view-list.png
-%%DATADIR%%/icons/tango/22x22/actions/view-plugins.png
-%%DATADIR%%/icons/tango/22x22/actions/view-refresh.png
-%%DATADIR%%/icons/tango/22x22/actions/view-tree.png
-%%DATADIR%%/icons/tango/22x22/actions/web-search.png
-%%DATADIR%%/icons/tango/22x22/actions/zoom-in.png
-%%DATADIR%%/icons/tango/22x22/actions/zoom-out.png
-%%DATADIR%%/icons/tango/22x22/apps/appointment.png
-%%DATADIR%%/icons/tango/22x22/apps/help-browser.png
-%%DATADIR%%/icons/tango/22x22/apps/internet-news-reader.png
-%%DATADIR%%/icons/tango/22x22/apps/internet-web-browser.png
-%%DATADIR%%/icons/tango/22x22/apps/office-calendar.png
-%%DATADIR%%/icons/tango/22x22/apps/preferences-desktop-font.png
-%%DATADIR%%/icons/tango/22x22/apps/preferences-desktop-locale.png
-%%DATADIR%%/icons/tango/22x22/apps/preferences-desktop-theme.png
-%%DATADIR%%/icons/tango/22x22/apps/preferences-system-network-proxy.png
-%%DATADIR%%/icons/tango/22x22/apps/system-software-update.png
-%%DATADIR%%/icons/tango/22x22/categories/preferences-system.png
-%%DATADIR%%/icons/tango/22x22/devices/printer.png
-%%DATADIR%%/icons/tango/22x22/emblems/emblem-favorite.png
-%%DATADIR%%/icons/tango/22x22/emblems/emblem-important.png
-%%DATADIR%%/icons/tango/22x22/emblems/emblem-symbolic-link.png
-%%DATADIR%%/icons/tango/22x22/mimetypes/video-x-generic.png
-%%DATADIR%%/icons/tango/22x22/status/dialog-information.png
-%%DATADIR%%/icons/tango/22x22/status/folder-open.png
-%%DATADIR%%/icons/tango/22x22/status/mail-attachment.png
-%%DATADIR%%/icons/tango/22x22/status/network-transmit-receive.png
-%%DATADIR%%/icons/tango/22x22/status/view-filter-set-list.png
-%%DATADIR%%/icons/tango/22x22/status/view-filter-set.png
-%%DATADIR%%/icons/tango/index.theme
-%%DATADIR%%/icons/tango/license.txt
-%%DATADIR%%/icons/tango/readme.txt
+%%DATADIR%%/hyphen/dehyphx.tex
+%%DATADIR%%/icons/CrystalClear.zip
+%%DATADIR%%/icons/Tango.zip
 %%DATADIR%%/imgs/Filter16.png
 %%DATADIR%%/imgs/Filter22.png
 %%DATADIR%%/imgs/FilterSet16.png
@@ -324,9 +30,11 @@ bin/tvbrowser
 %%DATADIR%%/imgs/Info_OriginalWithSubtitle_EN.gif
 %%DATADIR%%/imgs/Info_Series.png
 %%DATADIR%%/imgs/Info_Show.png
+%%DATADIR%%/imgs/Info_Signlanguage.png
 %%DATADIR%%/imgs/Info_Sports.png
 %%DATADIR%%/imgs/Info_Stereo.gif
 %%DATADIR%%/imgs/Info_SubtitleForAurallyHandicapped.gif
+%%DATADIR%%/imgs/Info_SubtitleForAurallyHandicapped_DK.gif
 %%DATADIR%%/imgs/Info_SubtitleForAurallyHandicapped_US.gif
 %%DATADIR%%/imgs/Info_TwoChannelTone.gif
 %%DATADIR%%/imgs/Jar16.gif
@@ -341,15 +49,14 @@ bin/tvbrowser
 %%DATADIR%%/imgs/desktop.ico
 %%DATADIR%%/imgs/splash.png
 %%DATADIR%%/imgs/systray.ico
-%%DATADIR%%/imgs/time_block_gray.jpg
-%%DATADIR%%/imgs/time_block_white.jpg
+%%DATADIR%%/imgs/time_block_gray.png
+%%DATADIR%%/imgs/time_block_white.png
 %%DATADIR%%/imgs/tvabout.png
 %%DATADIR%%/imgs/tvbrowser128.png
 %%DATADIR%%/imgs/tvbrowser16.png
 %%DATADIR%%/imgs/tvbrowser32.png
 %%DATADIR%%/imgs/tvbrowser48.png
 %%DATADIR%%/linux.properties
-%%DATADIR%%/plugins/BbcBackstageDataService.jar
 %%DATADIR%%/plugins/BlogThisPlugin.jar
 %%DATADIR%%/plugins/CalendarExportPlugin.jar
 %%DATADIR%%/plugins/CapturePlugin.jar
@@ -357,6 +64,7 @@ bin/tvbrowser
 %%DATADIR%%/plugins/DreamboxDataService.jar
 %%DATADIR%%/plugins/EMailPlugin.jar
 %%DATADIR%%/plugins/GenrePlugin.jar
+%%DATADIR%%/plugins/GrowlPlugin.jar
 %%DATADIR%%/plugins/I18NPlugin.jar
 %%DATADIR%%/plugins/KNotifyPlugin.jar
 %%DATADIR%%/plugins/ListViewPlugin.jar
@@ -379,42 +87,6 @@ bin/tvbrowser
 @dirrm %%DATADIR%%/themepacks
 @dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/imgs
-@dirrm %%DATADIR%%/icons/tango/22x22/status
-@dirrm %%DATADIR%%/icons/tango/22x22/mimetypes
-@dirrm %%DATADIR%%/icons/tango/22x22/emotes
-@dirrm %%DATADIR%%/icons/tango/22x22/emblems
-@dirrm %%DATADIR%%/icons/tango/22x22/devices
-@dirrm %%DATADIR%%/icons/tango/22x22/categories
-@dirrm %%DATADIR%%/icons/tango/22x22/apps
-@dirrm %%DATADIR%%/icons/tango/22x22/actions
-@dirrm %%DATADIR%%/icons/tango/22x22
-@dirrm %%DATADIR%%/icons/tango/16x16/status
-@dirrm %%DATADIR%%/icons/tango/16x16/mimetypes
-@dirrm %%DATADIR%%/icons/tango/16x16/emotes
-@dirrm %%DATADIR%%/icons/tango/16x16/emblems
-@dirrm %%DATADIR%%/icons/tango/16x16/devices
-@dirrm %%DATADIR%%/icons/tango/16x16/categories
-@dirrm %%DATADIR%%/icons/tango/16x16/apps
-@dirrm %%DATADIR%%/icons/tango/16x16/actions
-@dirrm %%DATADIR%%/icons/tango/16x16
-@dirrm %%DATADIR%%/icons/tango
-@dirrm %%DATADIR%%/icons/CrystalClear/22x22/status
-@dirrm %%DATADIR%%/icons/CrystalClear/22x22/mimetypes
-@dirrm %%DATADIR%%/icons/CrystalClear/22x22/emblems
-@dirrm %%DATADIR%%/icons/CrystalClear/22x22/devices
-@dirrm %%DATADIR%%/icons/CrystalClear/22x22/categories
-@dirrm %%DATADIR%%/icons/CrystalClear/22x22/apps
-@dirrm %%DATADIR%%/icons/CrystalClear/22x22/actions
-@dirrm %%DATADIR%%/icons/CrystalClear/22x22
-@dirrm %%DATADIR%%/icons/CrystalClear/16x16/status
-@dirrm %%DATADIR%%/icons/CrystalClear/16x16/mimetypes
-@dirrm %%DATADIR%%/icons/CrystalClear/16x16/emblems
-@dirrm %%DATADIR%%/icons/CrystalClear/16x16/devices
-@dirrm %%DATADIR%%/icons/CrystalClear/16x16/categories
-@dirrm %%DATADIR%%/icons/CrystalClear/16x16/apps
-@dirrm %%DATADIR%%/icons/CrystalClear/16x16/actions
-@dirrm %%DATADIR%%/icons/CrystalClear/16x16
-@dirrm %%DATADIR%%/icons/CrystalClear
 @dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/hyphen
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
