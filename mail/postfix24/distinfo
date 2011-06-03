@@ -1,6 +1,0 @@
-MD5 (postfix/postfix-2.4.14.tar.gz) = fb2dde4d7db56e5a3fcc5b83cc93cd73
-SHA256 (postfix/postfix-2.4.14.tar.gz) = bcc109fa3da85fbeaa868840fab94e3523615b964cf7ab835b0c4498182abcc3
-SIZE (postfix/postfix-2.4.14.tar.gz) = 2939655
-MD5 (postfix/postfix-2.4.6-vda-ng.patch.gz) = 6090de66e36051357e37bb94a1eea342
-SHA256 (postfix/postfix-2.4.6-vda-ng.patch.gz) = 847e9c39bdbd92c912f71521ab4e5266d9baae749d135f220db9c8a5a13e8b3f
-SIZE (postfix/postfix-2.4.6-vda-ng.patch.gz) = 12244

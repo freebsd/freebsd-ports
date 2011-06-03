@@ -2208,3 +2208,4 @@ x11-toolkits/rep-gtk||2011-06-01|Has expired: missing rep-config from librep por
 games/tnl||2011-06-01|Has expired: Upstream development has ceased, it doesn't work with newer CEGUI and is generally broken
 net/vnc2swf|deskutils/vnc2flv|2011-06-01|Has expired: Development is now superseded by deskutils/vnc2flv
 lang/libobjc2||2011-06-02|Redundant with lang/gnustep-libobjc
+mail/postfix24||2011-06-03|Has expired: no further upstream development; please consider upgrading
