@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	sqlgrey
-PORTVERSION=	1.7.6
+DISTVERSION=	1.8.0-rc2
 CATEGORIES=	mail
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.7%20%28devel%29/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-1.8%20%28stable%29
 
 MAINTAINER=	chifeng@gmail.com
 COMMENT=	Greylisting policy server for Postfix using an SQL backend
@@ -18,8 +18,7 @@ RUN_DEPENDS=	${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server \
 		${SITE_PERL}/Pod/Usage.pm:${PORTSDIR}/textproc/p5-Pod-Parser
 
 USE_PERL5_RUN=	yes
-USE_RC_SUBR=	sqlgrey.sh
-USE_BZIP2=	yes
+USE_RC_SUBR=	sqlgrey
 NO_BUILD=	yes
 
 ETCFILES=	clients_fqdn_whitelist clients_ip_whitelist dyn_fqdn.regexp smtp_server.regexp sqlgrey.conf
