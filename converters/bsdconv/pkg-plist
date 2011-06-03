@@ -46,6 +46,7 @@ lib/libbsdconv.so.5
 %%DATADIR%%/inter/UNIX
 %%DATADIR%%/inter/UPPER
 %%DATADIR%%/inter/UPSIDEDOWN
+%%DATADIR%%/inter/WIDTH
 %%DATADIR%%/inter/WIN
 %%DATADIR%%/inter/ZHCN
 %%DATADIR%%/inter/ZHTW
@@ -73,6 +74,7 @@ lib/libbsdconv.so.5
 %%DATADIR%%/to/GBK
 %%DATADIR%%/to/ISO-8859-1
 %%DATADIR%%/to/NUL
+%%DATADIR%%/to/NULL
 %%DATADIR%%/to/PASS
 %%DATADIR%%/to/RAW
 %%DATADIR%%/to/UAO250
@@ -101,6 +103,7 @@ lib/libbsdconv.so.5
 %%DATADIR%%/inter/BIG5-DEFRAG.so
 %%DATADIR%%/inter/SCORE.so
 %%DATADIR%%/inter/SCORE_TRAIN.so
+%%DATADIR%%/inter/WIDTH.so
 %%DATADIR%%/to/3F.so
 %%DATADIR%%/to/ANSI-CONTROL.so
 %%DATADIR%%/to/ASCII-ESCAPED-UNICODE.so
@@ -112,6 +115,7 @@ lib/libbsdconv.so.5
 %%DATADIR%%/to/BSDCONV_LOG.so
 %%DATADIR%%/to/BSDCONV_RAW.so
 %%DATADIR%%/to/BSDCONV_STDOUT.so
+%%DATADIR%%/to/NULL.so
 %%DATADIR%%/to/PASS.so
 %%DATADIR%%/to/RAW.so
 %%DATADIR%%/to/UCS-2BE.so
