@@ -1,6 +1,6 @@
 #! /bin/sh
 #
-# $FreeBSD: /tmp/pcvs/ports/net/isc-dhcp41-server/files/isc-dhcrelay.in,v 1.1 2010-05-06 20:24:01 wxs Exp $
+# $FreeBSD: /tmp/pcvs/ports/net/isc-dhcp41-server/files/isc-dhcrelay.in,v 1.2 2011-06-03 12:31:24 wxs Exp $
 #
 # PROVIDE: dhcrelay
 # REQUIRE: DAEMON
@@ -16,25 +16,49 @@ dhcrelay_enable=${dhcrelay_enable:-"NO"}
 # dhcrelay_servers=""			# dhcrelay server(s)
 # dhcrelay_ifaces=""			# ethernet interface(s)
 
+case $0 in
+/etc/rc*)
+	# during boot (shutdown) $0 is /etc/rc (/etc/rc.shutdown),
+	# so get the name of the script from $_file
+	name=$_file
+	;;
+*)
+	name=$0
+	;;
+esac
+
+name=${name##*/isc-}
+
+case ${name} in
+*6)
+	ipversion=-6
+	;;
+*)
+	ipversion=-4
+	;;
+esac
+
 dhcrelay_precmd ()
 {
-	local ifaces
+	local ifaces _servers _ifaces
+	
+	eval "_servers=\${${name}_servers}"
+	eval "_ifaces=\${${name}_ifaces}"
 
-	if [ -z "${dhcrelay_servers}" ]; then
-		err 1 "no dhcrelay server(s) configured."
+	if [ -z "${_servers}" ]; then
+		err 1 "no ${name} server(s) configured."
 	fi
 
 	ifaces=
-	for iface in ${dhcrelay_ifaces}; do
+	for iface in ${_ifaces}; do
 		ifaces="${ifaces} -i ${iface}"
 	done
 
-	rc_flags="${rc_flags} ${ifaces} ${dhcrelay_servers}"
+	rc_flags="${rc_flags} ${ipversion} ${ifaces} ${_servers}"
 }
 
 . /etc/rc.subr
 
-name=dhcrelay
 rcvar=${name}_enable
 
 command=%%PREFIX%%/sbin/${name}
