@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.5.4.20110526
+PORTVERSION=	4.5.4.20110602
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
@@ -40,18 +40,9 @@ MAKE_JOBS_SAFE=	yes
 PATCH_WRKSRC=	${SRCDIR}
 CONFIGURE_SCRIPT=	../${SRCDIR:S/${WRKDIR}\///}/configure
 
-OPTIONS=	LTO	"Enable link-time optimizations (LTO)"	off \
-		JAVA	"Enable the Java frontend (i386 and amd64 only)"	on
+OPTIONS=	JAVA	"Enable the Java frontend (i386 and amd64 only)"	on
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_LTO)
-LIB_DEPENDS+=	elf.0:${PORTSDIR}/devel/libelf
-CONFIGURE_ARGS+=	--enable-lto=yes \
-			--with-libelf=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=	--enable-lto=no
-.endif
 
 .if ${ARCH} != i386 && ${ARCH} != amd64
 WITHOUT_JAVA=	yes
@@ -70,6 +61,7 @@ LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--disable-nls \
+		--enable-lto=no \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
 		--program-suffix=${SUFFIX} \
