@@ -1170,6 +1170,7 @@
     SUBDIR += p5-AnyEvent-Filesys-Notify
     SUBDIR += p5-AnyEvent-Run
     SUBDIR += p5-AnyEvent-Subprocess
+    SUBDIR += p5-AnyMQ
     SUBDIR += p5-App-Build
     SUBDIR += p5-App-CLI
     SUBDIR += p5-App-CLI-Extension
