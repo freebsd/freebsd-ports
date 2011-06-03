@@ -347,10 +347,10 @@ add-plist-cabal:
 		(${ECHO_CMD} '${DOCSDIR_REL}/${FILE_LICENSE}'; \
 		 ${ECHO_CMD} '@unexec ${RMDIR} "%D/${DOCSDIR_REL}" 2>/dev/null || true') >>${TMPPLIST}; fi
 .else
-	@(${ECHO_CMD} '@exec [ -f %D/${GHC_LIB_DOCSDIR_REL}/gen_contents_index ] && ${LN} -s ${DOCSDIR}/html %D/${GHC_LIB_DOCSDIR_REL}/${DISTNAME}' ; \
-	  ${ECHO_CMD} '@exec ${SH} -c "[ -f %D/${GHC_LIB_DOCSDIR_REL}/gen_contents_index ] && cd %D/${GHC_LIB_DOCSDIR_REL} && ${RM} -f doc-index*.html && ./gen_contents_index"' ; \
+	@(${ECHO_CMD} '@exec if [ -f %D/${GHC_LIB_DOCSDIR_REL}/gen_contents_index ]; then ${LN} -s ${DOCSDIR}/html %D/${GHC_LIB_DOCSDIR_REL}/${DISTNAME} && \
+		cd %D/${GHC_LIB_DOCSDIR_REL} && ${RM} -f doc-index*.html && ./gen_contents_index; fi' ; \
 	  ${ECHO_CMD} '@unexec ${RM} -f %D/${GHC_LIB_DOCSDIR_REL}/${DISTNAME}' ; \
-	  ${ECHO_CMD} '@unexec ${SH} -c "[ -f %D/${GHC_LIB_DOCSDIR_REL}/gen_contents_index ] && cd %D/${GHC_LIB_DOCSDIR_REL} && ${RM} -f doc-index*.html && ./gen_contents_index"') >>${TMPPLIST};
+	  ${ECHO_CMD} '@unexec if [ -f %D/${GHC_LIB_DOCSDIR_REL}/gen_contents_index ]; then cd %D/${GHC_LIB_DOCSDIR_REL} && ${RM} -f doc-index*.html && ./gen_contents_index; fi') >>${TMPPLIST};
 .endif
 .else
 	${DO_NADA}
@@ -359,8 +359,11 @@ add-plist-cabal:
 post-install::
 .if !defined(METAPORT)
 .if !defined(NOPORTDOCS)
-	[ -f ${PREFIX}/${GHC_LIB_DOCSDIR_REL}/gen_contents_index ] && ${LN} -s ${DOCSDIR}/html ${PREFIX}/${GHC_LIB_DOCSDIR_REL}/${DISTNAME} && \
-		cd ${PREFIX}/${GHC_LIB_DOCSDIR_REL} && ${RM} -f doc-index*.html && ./gen_contents_index
+	@if [ -f ${PREFIX}/${GHC_LIB_DOCSDIR_REL}/gen_contents_index ]; then \
+		${LN} -s ${DOCSDIR}/html ${PREFIX}/${GHC_LIB_DOCSDIR_REL}/${DISTNAME} && \
+		cd ${PREFIX}/${GHC_LIB_DOCSDIR_REL} && \
+		${RM} -f doc-index*.html && ./gen_contents_index; \
+	fi
 .endif
 
 .if !defined(STANDALONE) && !defined(DOCUMENTATION)
