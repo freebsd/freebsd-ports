@@ -1,0 +1,20 @@
+# $FreeBSD$
+
+.PATH: ${.CURDIR}/../..
+PROG=	exiftran
+SRCS=	exiftran.c genthumbnail.c jpegtools.c filter.c op.c readers.c
+
+.PATH: ${.CURDIR}/../../jpeg/80
+SRCS+=	transupp.c
+
+.PATH: ${.CURDIR}/../../rd
+SRCS+=	read-jpeg.c
+
+LDADD=	-L${PREFIX}/lib -ljpeg -lexif
+
+CFLAGS+= -I${PREFIX}/include -I${.CURDIR}/../../jpeg/80 \
+	-I${.CURDIR}/../.. -DHAVE_NEW_EXIF
+
+MAN=
+
+.include <bsd.prog.mk>

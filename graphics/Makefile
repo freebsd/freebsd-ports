@@ -165,6 +165,7 @@
     SUBDIR += exif
     SUBDIR += exifprobe
     SUBDIR += exiftags
+    SUBDIR += exiftran
     SUBDIR += exiv2
     SUBDIR += exrtools
     SUBDIR += f-spot
