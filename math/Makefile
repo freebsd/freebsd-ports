@@ -473,6 +473,7 @@
     SUBDIR += py-numeric
     SUBDIR += py-numexpr
     SUBDIR += py-numpy
+    SUBDIR += py-nzmath
     SUBDIR += py-plastex
     SUBDIR += py-probstat
     SUBDIR += py-pybloom
