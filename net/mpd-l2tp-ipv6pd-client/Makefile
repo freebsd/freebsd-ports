@@ -42,7 +42,7 @@ RUN_DEPENDS=	dhcp6ctl:${PORTSDIR}/net/dhcp6 \
 		${MPD_NAME}:${PORTSDIR}/net/${MPD_NAME}
 
 CONF_DIR?=	etc/${MPD_NAME}
-CONF_FILES=	dhcp6c.conf.in rtadvd.conf
+MPD_CONF_FILES=	dhcp6c.conf.in rtadvd.conf
 SCRIPT_FILES=	dhcp6c_pd.sh linkdown.sh linkup.sh
 SECRET_FILES=	mpd.secret
 
@@ -92,7 +92,7 @@ do-install:
 .else
 	@${INSTALL_DATA} ${WRKDIR}/mpd5.conf ${PREFIX}/${CONF_DIR}/mpd.conf
 .endif
-.for f in ${CONF_FILES}
+.for f in ${MPD_CONF_FILES}
 	@${INSTALL_DATA} ${WRKDIR}/${f} ${PREFIX}/${CONF_DIR}/${f}
 .endfor
 	@${INSTALL_DATA} ${WRKDIR}/mpd ${PREFIX}/${CONF_DIR}/${MPD_NAME}
