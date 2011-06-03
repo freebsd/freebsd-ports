@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.2b1
+PORTVERSION=	3.3.0b1
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/3.2beta1/source/
+MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/3.3.0beta1/source/
 PKGNAMESUFFIX=	3-devel
-DISTFILES=	$(PORTNAME)_3.2beta1.tar.gz
+DISTFILES=	$(PORTNAME)_3.3.0beta1.tar.gz
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A powerful syslogd replacement
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]*
-WRKSRC=		$(WRKDIR)/$(PORTNAME)-3.2beta1
+WRKSRC=		$(WRKDIR)/$(PORTNAME)-3.3.0beta1
 
 OPTIONS=	SSL "Build with OpenSSL support (from ports)" off \
 		TCP_WRAPPERS "Build with TCP Wrappers" off \
@@ -30,7 +30,7 @@ OPTIONS=	SSL "Build with OpenSSL support (from ports)" off \
 
 LIB_DEPENDS=	evtlog.0:${PORTSDIR}/sysutils/eventlog
 
-MAN1=		pdbtool.1
+MAN1=		loggen.1 pdbtool.1 syslog-ng-ctl.1
 MAN5=		syslog-ng.conf.5
 MAN8=		syslog-ng.8
 
@@ -105,6 +105,7 @@ CONFIGURE_ENV+= LIBDBI_CFLAGS="-I/usr/local/include" \
 post-patch:
 	@${REINPLACE_CMD} -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/lib/syslog-ng.h
 	@${REINPLACE_CMD} -e 's:libnet-config:libnet11-config:g' ${WRKSRC}/configure
+	@${MV} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.dist
 .if ${OSVERSION} >= 900007
 	@${REINPLACE_CMD} \
 		-e 's|utmp|utmpx|' -e 's|getutent|getutxent|' \
