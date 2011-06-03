@@ -80,10 +80,10 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Subversion tram reports:</p>
 	<blockquote cite="http://subversion.apache.org/security/CVE-2011-1752-advisory.txt">
 	  <p>Subversion's mod_dav_svn Apache HTTPD server module will
-            dereference a NULL pointer if asked to deliver baselined WebDAV
-            resources.</p>
+	    dereference a NULL pointer if asked to deliver baselined WebDAV
+	    resources.</p>
           <p>This can lead to a DoS.  An exploit has been tested, and tools or
-            users have been observed triggering this problem in the wild.</p>
+	    users have been observed triggering this problem in the wild.</p>
 	</blockquote>
         <blockquote cite="http://subversion.apache.org/security/CVE-2011-1783-advisory.txt">
           <p>Subversion's mod_dav_svn Apache HTTPD server module may in certain
@@ -161,11 +161,11 @@ Note:  Please add new entries to the beginning of this file.
 	<p>US-CERT reports:</p>
 	<blockquote cite="http://www.kb.cert.org/vuls/id/178990">
 	  <p>The Erlang/OTP ssh library implements a number of
-	  cryptographic operations that depend on cryptographically
-	  strong random numbers. Unfortunately the RNG used by the
-	  library is not cryptographically strong, and is further
-	  weakened by the use of predictable seed material. The RNG
-	  (Wichman-Hill) is not mixed with an entropy source.</p>
+	    cryptographic operations that depend on cryptographically
+	    strong random numbers. Unfortunately the RNG used by the
+	    library is not cryptographically strong, and is further
+	    weakened by the use of predictable seed material. The RNG
+	    (Wichman-Hill) is not mixed with an entropy source.</p>
 	</blockquote>
       </body>
     </description>
@@ -914,26 +914,26 @@ Note:  Please add new entries to the beginning of this file.
 	<p>An advisory published by the MIT Kerberos team says:</p>
 	<blockquote cite="http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-002.txt">
 	  <p>The MIT krb5 Key Distribution Center (KDC) daemon is vulnerable
-             to denial of service attacks from unauthenticated remote
-             attackers.  CVE-2011-0281 and CVE-2011-0282 occur only in KDCs
-             using LDAP back ends, but CVE-2011-0283 occurs in all krb5-1.9
-             KDCs.</p>
+	    to denial of service attacks from unauthenticated remote
+	    attackers.  CVE-2011-0281 and CVE-2011-0282 occur only in KDCs
+	    using LDAP back ends, but CVE-2011-0283 occurs in all krb5-1.9
+	    KDCs.</p>
 	  <p>Exploit code is not known to exist, but the vulnerabilities are
-             easy to trigger manually.  The trigger for CVE-2011-0281 has
-             already been disclosed publicly, but that fact might not be
-             obvious to casual readers of the message in which it was
-             disclosed.  The triggers for CVE-2011-0282 and CVE-2011-0283
-             have not yet been disclosed publicly, but they are also
-             trivial.</p>
+	    easy to trigger manually.  The trigger for CVE-2011-0281 has
+	    already been disclosed publicly, but that fact might not be
+	    obvious to casual readers of the message in which it was
+	    disclosed.  The triggers for CVE-2011-0282 and CVE-2011-0283
+	    have not yet been disclosed publicly, but they are also
+	    trivial.</p>
           <p>CVE-2011-0281: An unauthenticated remote attacker can cause a KDC
-             configured with an LDAP back end to become completely unresponsive
-             until restarted.</p>
+	    configured with an LDAP back end to become completely unresponsive
+	    until restarted.</p>
           <p>CVE-2011-0282: An unauthenticated remote attacker can cause a KDC
-             configured with an LDAP back end to crash with a null pointer
-             dereference.</p>
+	    configured with an LDAP back end to crash with a null pointer
+	    dereference.</p>
           <p>CVE-2011-0283: An unauthenticated remote attacker can cause a
-             krb5-1.9 KDC with any back end to crash with a null pointer
-             dereference.</p>
+	    krb5-1.9 KDC with any back end to crash with a null pointer
+	    dereference.</p>
 	</blockquote>
       </body>
     </description>
@@ -962,20 +962,20 @@ Note:  Please add new entries to the beginning of this file.
 	<p>An advisory published by the MIT Kerberos team says:</p>
 	<blockquote cite="http://web.mit.edu/kerberos/advisories/MITKRB5-SA-2011-001.txt">
 	  <p>The MIT krb5 KDC database propagation daemon (kpropd) is
-             vulnerable to a denial-of-service attack triggered by invalid
-             network input.  If a kpropd worker process receives invalid
-             input that causes it to exit with an abnormal status, it can
-             cause the termination of the listening process that spawned it,
-             preventing the slave KDC it was running on from receiving
-             database updates from the master KDC.</p>
+	    vulnerable to a denial-of-service attack triggered by invalid
+	    network input.  If a kpropd worker process receives invalid
+	    input that causes it to exit with an abnormal status, it can
+	    cause the termination of the listening process that spawned it,
+	    preventing the slave KDC it was running on from receiving
+	    database updates from the master KDC.</p>
 	  <p>Exploit code is not known to exist, but the vulnerabilities are
-             easy to trigger manually.</p>
+	    easy to trigger manually.</p>
           <p>An unauthenticated remote attacker can cause kpropd running in
-             standalone mode (the "-S" option) to terminate its listening
-             process, preventing database propagations to the KDC host on
-             which it was running.  Configurations where kpropd runs in
-             incremental propagation mode ("iprop") or as an inetd server
-             are not affected.</p>
+	    standalone mode (the "-S" option) to terminate its listening
+	    process, preventing database propagations to the KDC host on
+	    which it was running.  Configurations where kpropd runs in
+	    incremental propagation mode ("iprop") or as an inetd server
+	    are not affected.</p>
 	</blockquote>
       </body>
     </description>
@@ -1002,12 +1002,12 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Matthias Hopf reports:</p>
 	<blockquote cite="http://lists.freedesktop.org/archives/xorg-announce/2011-April/001636.html">
 	  <p>By crafting hostnames with shell escape characters, arbitrary 
-             commands can be executed in a root environment when a display 
-             manager reads in the resource database via xrdb.</p>
+	    commands can be executed in a root environment when a display 
+	    manager reads in the resource database via xrdb.</p>
 	  <p>These specially crafted hostnames can occur in two environments:</p>
 	  <p>Systems are affected are: systems set their hostname via DHCP,
-             and the used DHCP client allows setting of hostnames with illegal
-             characters. And systems that allow remote logins via xdmcp.</p>
+	    and the used DHCP client allows setting of hostnames with illegal
+	    characters. And systems that allow remote logins via xdmcp.</p>
 	</blockquote>
       </body>
     </description>
@@ -1157,11 +1157,11 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Sebastian Krahmer reports:</p>
 	<blockquote cite="http://mail.gnome.org/archives/distributor-list/2011-March/msg00008.html">
 	  <p>It was discovered that the GNOME Display Manager (gdm) cleared the cache
-	  directory, which is owned by an unprivileged user, with the privileges of the
-	  root user.  A race condition exists in gdm where a local user could take
-	  advantage of this by writing to the cache directory between ending the session
-	  and the signal to clean up the session, which could lead to the execution of
-	  arbitrary code as the root user.</p>
+	    directory, which is owned by an unprivileged user, with the privileges of the
+	    root user.  A race condition exists in gdm where a local user could take
+	    advantage of this by writing to the cache directory between ending the session
+	    and the signal to clean up the session, which could lead to the execution of
+	    arbitrary code as the root user.</p>
 	</blockquote>
       </body>
     </description>
@@ -1983,9 +1983,9 @@ Note:  Please add new entries to the beginning of this file.
 	<p>exim.org reports:</p>
 	<blockquote cite="ftp://ftp.exim.org/pub/exim/ChangeLogs/ChangeLog-4.74">
 	  <p>CVE-2011-0017 - check return value of setuid/setgid. This is a
-	      privilege escalation vulnerability whereby the Exim run-time user
-	      can cause root to append content of the attacker's choosing to
-	      arbitrary files.
+	    privilege escalation vulnerability whereby the Exim run-time user
+	    can cause root to append content of the attacker's choosing to
+	    arbitrary files.
 	  </p>
 	</blockquote>
       </body>
@@ -2058,12 +2058,12 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Gustavo Noronha Silva reports:</p>
 	<blockquote cite="http://permalink.gmane.org/gmane.os.opendarwin.webkit.gtk/405">
-	  <p>This release has essentially security fixes. Refer to the 
-	     WebKit/gtk/NEWS file inside the tarball for details. We would like
-	     to thank the Red Hat security team (Huzaifa Sidhpurwala in
-	     particular) and Michael Gilbert from Debian for their help in
-	     checking (and pushing!) security issues affecting the WebKitGTK+
-	     stable branch for this release.</p>
+	  <p>This release has essentially security fixes. Refer to the
+	    WebKit/gtk/NEWS file inside the tarball for details. We would like
+	    to thank the Red Hat security team (Huzaifa Sidhpurwala in
+	    particular) and Michael Gilbert from Debian for their help in
+	    checking (and pushing!) security issues affecting the WebKitGTK+
+	    stable branch for this release.</p>
 	</blockquote>
       </body>
     </description>
@@ -2321,7 +2321,7 @@ Note:  Please add new entries to the beginning of this file.
 	<p>VLC team reports:</p>
 	<blockquote cite="http://www.videolan.org/security/sa1102.html">
 	  <p>When parsing an invalid MKV (Matroska or WebM) file, input
-             validation are insufficient.</p>
+	    validation are insufficient.</p>
 	</blockquote>
       </body>
     </description>
@@ -2547,12 +2547,12 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Colin Percival reports:</p>
 	<blockquote cite="http://www.daemonology.net/blog/2011-01-18-tarsnap-critical-security-bug.html">
 	  <p>In versions 1.0.22 through 1.0.27 of Tarsnap, the CTR nonce value
-	   is not incremented after each chunk is encrypted. (The CTR counter
-	   is correctly incremented after each 16 bytes of data was processed,
-	   but this counter is reset to zero for each new chunk.)</p>
+	    is not incremented after each chunk is encrypted. (The CTR counter
+	    is correctly incremented after each 16 bytes of data was processed,
+	    but this counter is reset to zero for each new chunk.)</p>
 	  <p>Note that since the Tarsnap client-server protocol is encrypted,
-	   being able to intercept Tarsnap client-server traffic does not
-	   provide an attacker with access to the data.</p>
+	    being able to intercept Tarsnap client-server traffic does not
+	    provide an attacker with access to the data.</p>
 	</blockquote>
       </body>
     </description>
@@ -2617,9 +2617,9 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The Tor Project reports:</p>
 	<blockquote cite="http://archives.seul.org/or/announce/Jan-2011/msg00000.html">
 	  <p>A remote heap overflow vulnerability that can allow remote
-	  code execution. Other fixes address a variety of assert and crash
-	  bugs, most of which we think are hard to exploit remotely.
-	  All Tor users should upgrade.</p>
+	    code execution. Other fixes address a variety of assert and crash
+	    bugs, most of which we think are hard to exploit remotely.
+	    All Tor users should upgrade.</p>
 	</blockquote>
       </body>
     </description>
@@ -2767,9 +2767,9 @@ Note:  Please add new entries to the beginning of this file.
 	<p>David Woodhouse reports:</p>
 	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=661756#c3">
 	  <p>Secondly a privilege escalation where the trusted 'exim'
-	  user is able to tell Exim to use arbitrary config files,
-	  in which further ${run ...} commands will be invoked as
-	  root.</p>
+	    user is able to tell Exim to use arbitrary config files,
+	    in which further ${run ...} commands will be invoked as
+	    root.</p>
 	</blockquote>
       </body>
     </description>
@@ -2934,7 +2934,7 @@ Note:  Please add new entries to the beginning of this file.
 	    parts of the page path without escaping, resulting in a
 	    relected Cross Site Scripting (XSS) vulnerability. An attacker
 	    could exploit this to gain full administrative access.</p>
-	    <p>Mitigating factors: This vulnerability only occurs with a
+	  <p>Mitigating factors: This vulnerability only occurs with a
 	    specific combination of configuration options for a specific
 	    View, but this combination is used in the default Views
 	    provided by some additional modules. A malicious user would
@@ -3122,13 +3122,13 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The following DoS condition in filter extension
 	  was fixed in PHP 5.3.4 and PHP 5.2.15:</p>
-	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-3710">
-	  <p>Stack consumption vulnerability in the filter_var
-	    function in PHP 5.2.x through 5.2.14 and 5.3.x through
-	    5.3.3, when FILTER_VALIDATE_EMAIL mode is used, allows
-	    remote attackers to cause a denial of service (memory
-	    consumption and application crash) via a long e-mail
-	    address string.</p>
+      <blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2010-3710">
+	<p>Stack consumption vulnerability in the filter_var
+	  function in PHP 5.2.x through 5.2.14 and 5.3.x through
+	  5.3.3, when FILTER_VALIDATE_EMAIL mode is used, allows
+	  remote attackers to cause a denial of service (memory
+	  consumption and application crash) via a long e-mail
+	  address string.</p>
 	</blockquote>
       </body>
     </description>
@@ -3160,12 +3160,12 @@ Note:  Please add new entries to the beginning of this file.
 	<p>The following DoS condition in IMAP extension
 	  was fixed in PHP 5.3.4 and PHP 5.2.15:</p>
 	<blockquote cite="http://securitytracker.com/alerts/2010/Nov/1024761.html">
-	  <p>A remote user can send specially crafted IMAP user name
-	    or password data to trigger a double free memory error
-	    in 'ext/imap/php_imap.c' and cause the target service
-	    to crash.</p>
-	  <p>It may be possible to execute arbitrary code.
-	    However, code execution was not confirmed.</p>
+	<p>A remote user can send specially crafted IMAP user name
+	  or password data to trigger a double free memory error
+	  in 'ext/imap/php_imap.c' and cause the target service
+	  to crash.</p>
+	<p>It may be possible to execute arbitrary code.
+	  However, code execution was not confirmed.</p>
 	</blockquote>
       </body>
     </description>
@@ -4176,7 +4176,6 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>This vulnerability allows remote attackers to execute arbitrary
 	    code on vulnerable installations of ProFTPD.  Authentication is not
 	    required to exploit this vulnerability.</p>
-
 	  <p>The flaw exists within the proftpd server component which
 	    listens by default on TCP port 21.  When reading user input if a
 	    TELNET_IAC escape sequence is encountered the process
@@ -4317,15 +4316,15 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Secunia reports:</p>
 	<blockquote cite="http://secunia.com/advisories/41535">
 	  <p>A vulnerability has been discovered in Wireshark, which can
-	  be exploited by malicious people to cause a DoS (Denial of
-	  Service).</p>
+	    be exploited by malicious people to cause a DoS (Denial of
+	    Service).</p>
 	  <p>The vulnerability is caused due to an infinite recursion
-	  error in the "dissect_unknown_ber()" function in
-	  epan/dissectors/packet-ber.c and can be exploited to cause a
-	  stack overflow e.g. via a specially crafted SNMP packet.</p>
+	    error in the "dissect_unknown_ber()" function in
+	    epan/dissectors/packet-ber.c and can be exploited to cause a
+	    stack overflow e.g. via a specially crafted SNMP packet.</p>
 	  <p>The vulnerability is confirmed in version 1.4.0 and
-	  reported in version 1.2.11 and prior and version 1.4.0 and
-	  prior.</p>
+	    reported in version 1.2.11 and prior and version 1.4.0 and
+	    prior.</p>
 	</blockquote>
       </body>
     </description>
@@ -4406,10 +4405,10 @@ Note:  Please add new entries to the beginning of this file.
 	<blockquote cite="http://otrs.org/advisory/OSA-2010-03-en/">
 	  <p>AgentTicketZoom is vulnerable to XSS attacks from HTML e-mails:</p>
 	  <p>Whenever a customer sends an HTML e-mail and RichText is enabled
-             in OTRS, javascript contained in the email can do everything
-             in the OTRS agent interface that the agent himself could do.</p>
+	    in OTRS, javascript contained in the email can do everything
+	    in the OTRS agent interface that the agent himself could do.</p>
 	  <p>Most relevant is that this type of exploit can be used in such
-             a way that the agent won't even detect he is being exploited.</p>
+	    a way that the agent won't even detect he is being exploited.</p>
 	</blockquote>
       </body>
     </description>
@@ -4834,9 +4833,9 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<h1>Problem Description:</h1>
 	<p>When running setuid programs rtld will normally remove potentially
-        dangerous environment variables. Due to recent changes in FreeBSD
-        environment variable handling code, a corrupt environment may
-        result in attempts to unset environment variables failing.</p>
+	  dangerous environment variables. Due to recent changes in FreeBSD
+	  environment variable handling code, a corrupt environment may
+	  result in attempts to unset environment variables failing.</p>
       </body>
     </description>
     <references>
@@ -4995,7 +4994,7 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Gustavo Noronha Silva reports:</p>
 	<blockquote cite="http://gitorious.org/webkitgtk/stable/blobs/master/WebKit/gtk/NEWS">
 	  <p>The patches to fix the following CVEs are included with help from
-	     Vincent Danen and other members of the Red Hat security team:</p>
+	    Vincent Danen and other members of the Red Hat security team:</p>
 	</blockquote>
       </body>
     </description>
@@ -5351,7 +5350,7 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Gustavo Noronha Silva reports:</p>
 	<blockquote cite="http://gitorious.org/webkitgtk/stable/commit/9d07fda89aab7105962d933eef32ca15dda610d8">
 	  <p>With help from Vincent Danen and other members of the Red Hat
-             security team, the following CVE's where fixed.</p>
+	    security team, the following CVE's where fixed.</p>
 	</blockquote>
       </body>
     </description>
@@ -5391,9 +5390,9 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Description for CVE-2008-3432 says:</p>
 	<blockquote cite="http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2008-3432">
 	  <p>Heap-based buffer overflow in the mch_expand_wildcards
-	  function in os_unix.c in Vim 6.2 and 6.3 allows user-assisted
-	  attackers to execute arbitrary code via shell metacharacters
-	  in filenames, as demonstrated by the netrw.v3 test case.</p>
+	    function in os_unix.c in Vim 6.2 and 6.3 allows user-assisted
+	    attackers to execute arbitrary code via shell metacharacters
+	    in filenames, as demonstrated by the netrw.v3 test case.</p>
 	</blockquote>
       </body>
     </description>
@@ -5545,12 +5544,12 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>The get1 command, as used by lftpget, in LFTP before 4.0.6 does
-	not properly validate a server-provided filename before determining
-	the destination filename of a download, which allows remote servers
-	to create or overwrite arbitrary files via a Content-Disposition
-	header that suggests a crafted filename, and possibly execute
-	arbitrary code as a consequence of writing to a dotfile in a home
-	directory.</p>
+	  not properly validate a server-provided filename before determining
+	  the destination filename of a download, which allows remote servers
+	  to create or overwrite arbitrary files via a Content-Disposition
+	  header that suggests a crafted filename, and possibly execute
+	  arbitrary code as a consequence of writing to a dotfile in a home
+	  directory.</p>
       </body>
     </description>
     <references>
@@ -5575,12 +5574,12 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>GNU Wget version 1.12 and earlier uses a server-provided filename
-	instead of the original URL to determine the destination filename of
-	a download, which allows remote servers to create or overwrite
-	arbitrary files via a 3xx redirect to a URL with a .wgetrc filename
-	followed by a 3xx redirect to a URL with a crafted filename, and
-	possibly execute arbitrary code as a consequence of writing to a
-	dotfile in a home directory.</p>
+	  instead of the original URL to determine the destination filename of
+	  a download, which allows remote servers to create or overwrite
+	  arbitrary files via a 3xx redirect to a URL with a .wgetrc filename
+	  followed by a 3xx redirect to a URL with a crafted filename, and
+	  possibly execute arbitrary code as a consequence of writing to a
+	  dotfile in a home directory.</p>
       </body>
     </description>
     <references>
@@ -5734,10 +5733,10 @@ Note:  Please add new entries to the beginning of this file.
 	<p>OpenTTD project reports:</p>
 	<blockquote cite="http://security.openttd.org/en/CVE-2010-2534">
 	  <p>When multiple commands are queued (at the server) for execution
-	     in the next game tick and an client joins the server can get into
-	     an infinite loop. With the default settings triggering this bug
-	     is difficult (if not impossible), however the larger value of
-	     the "frame_freq" setting is easier it is to trigger the bug.</p>
+	    in the next game tick and an client joins the server can get into
+	    an infinite loop. With the default settings triggering this bug
+	    is difficult (if not impossible), however the larger value of
+	    the "frame_freq" setting is easier it is to trigger the bug.</p>
 	</blockquote>
       </body>
     </description>
@@ -6085,11 +6084,11 @@ Note:  Please add new entries to the beginning of this file.
 	  libmspack code is built into cabextract, so it is also
 	  vulnerable.</p>
 	<p>Secunia reports:</p>
-	<blockquote cite="http://secunia.com/advisories/40719/">
-	  <p>The vulnerability is caused due to an error when copying data
-	    from an uncompressed block (block type 0) and can be exploited
-	    to trigger an infinite loop by tricking an application using the
-	    library into processing specially crafted MS-ZIP archives.</p>
+      <blockquote cite="http://secunia.com/advisories/40719/">
+	<p>The vulnerability is caused due to an error when copying data
+	  from an uncompressed block (block type 0) and can be exploited
+	  to trigger an infinite loop by tricking an application using the
+	  library into processing specially crafted MS-ZIP archives.</p>
 	</blockquote>
       </body>
     </description>
@@ -6314,10 +6313,10 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Gustavo Noronha reports:</p>
 	<blockquote cite="http://blog.kov.eti.br/?p=116">
-	  <p>Debian's Michael Gilbert has done a great job going
-             through all CVEs released about WebKit, and including patches in
-             the Debian package. 1.2.3 includes all of the commits from trunk
-             to fix those, too.</p>
+	  <p>Debian's Michael Gilbert has done a great job going through all
+	    CVEs released about WebKit, and including patches in the Debian
+	    package. 1.2.3 includes all of the commits from trunk to fix those,
+	    too.</p>
 	</blockquote>
       </body>
     </description>
@@ -6737,7 +6736,7 @@ Note:  Please add new entries to the beginning of this file.
        <p>Daniel Mealha Cabrita reports:</p>
        <blockquote cite="http://ziproxy.sourceforge.net/#news">
          <p>Fixed security vulnerability (heap-related) in PNG decoder.
-            (new bug from 3.1.0)</p>
+	   (new bug from 3.1.0)</p>
        </blockquote>
       </body>
     </description>
