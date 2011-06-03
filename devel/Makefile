@@ -2024,6 +2024,7 @@
     SUBDIR += p5-MouseX-ConfigFromFile
     SUBDIR += p5-MouseX-Getopt
     SUBDIR += p5-MouseX-NativeTraits
+    SUBDIR += p5-MouseX-Traits
     SUBDIR += p5-MouseX-StrictConstructor
     SUBDIR += p5-MouseX-Types
     SUBDIR += p5-MouseX-Types-Path-Class
