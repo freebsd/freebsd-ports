@@ -6,23 +6,18 @@
 #
 
 PORTNAME=	userinfo
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/bjk/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rpsfa@rit.edu
 COMMENT=	Show information about local users
 
 USE_AUTOTOOLS=	libtool
+USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
 MAN1=		ui.1
 MLINKS=		ui.1 userinfo.1
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
