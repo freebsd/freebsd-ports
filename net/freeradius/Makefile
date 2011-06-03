@@ -15,38 +15,67 @@ MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		http://ftp.cc.uoc.gr/mirrors/ftp.freeradius.org/%SUBDIR%/ \
 		http://freeradius.portal-to-web.de/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. old
+# If FREERADIUS_SLAVE_MYSQL is defined, we want to build the
+# freeradius-mysql slave port
+.ifdef(FREERADIUS_SLAVE_MYSQL)
+PKGNAMESUFFIX=	-mysql
+.endif
 
 MAINTAINER?=	rpsfa@rit.edu
 COMMENT?=	A free RADIUS server implementation
 
-USE_BZIP2=	yes
-WANT_PERL=	yes
-
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
-LOGDIR?=	/var/log
-
+CONFLICTS=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].*
 # If FREERADIUS_SLAVE_MYSQL is defined, we want to build the
 # freeradius-mysql slave port
-
-CONFLICTS=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].*
 .ifdef(FREERADIUS_SLAVE_MYSQL)
 CONFLICTS+=	freeradius-[0-9].* freeradius-mysql-[02-9].*
-PKGNAMESUFFIX=	-mysql
 .else
 CONFLICTS+=	freeradius-mysql-[0-9].* freeradius-[02-9].*
 .endif
+
+MAN1=		radclient.1 radeapclient.1 radlast.1 radtest.1 radwho.1 \
+		radzap.1
+MAN5=		acct_users.5 clients.5 clients.conf.5 dictionary.5 naslist.5 \
+		radiusd.conf.5 rlm_acct_unique.5 rlm_always.5 \
+		rlm_attr_filter.5 rlm_attr_rewrite.5 rlm_chap.5 rlm_counter.5 \
+		rlm_detail.5 rlm_expr.5 rlm_files.5 rlm_mschap.5 rlm_pap.5 \
+		rlm_passwd.5 rlm_realm.5 rlm_sql.5 rlm_sql_log.5 rlm_unix.5 \
+		users.5
+MAN8=		radiusd.8 radrelay.8 radsqlrelay.8 radwatch.8 rlm_ippool_tool.8
+
+USE_BZIP2=	yes
+WANT_PERL=	yes
+
+LOGDIR?=	/var/log
+
 NO_LATEST_LINK=	yes
 
-USE_RC_SUBR=	radiusd.sh
+USE_RC_SUBR=	radiusd
 USE_AUTOTOOLS=	libltdl libtool autoconf
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
+USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--quiet \
+		--prefix=${PREFIX} \
+		--localstatedir=/var \
+		--with-system-libtool \
+		--with-logdir=${LOGDIR} \
+		--with-large-files \
+		--with-openssl-includes=${OPENSSLINC} \
+		--without-rlm_sql_db2 \
+		--without-rlm_sql_freetds \
+		--without-rlm_sql_iodbc \
+		--without-rlm_sql_oracle \
+		--without-rlm_sql_sybase
 MAKE_ARGS+=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
+USERS=		freeradius
+GROUPS=	freeradius
 
 OPTIONS=	KERBEROS	"With Kerberos support" off \
 		HEIMDAL		"With Heimdal Kerberos support" off \
@@ -62,42 +91,21 @@ OPTIONS+=	PGSQL		"With PostgreSQL database support" off \
 		NOPERL		"Do not require perl (use only if necessary)" off \
 		EXPERIMENTAL	"Build experimental modules" off
 
-.include <bsd.port.pre.mk>
-
 # Default requirements for rc script
 _REQUIRE=	NETWORKING SERVERS
+
+.include <bsd.port.options.mk>
 
 .ifdef(FREERADIUS_SLAVE_MYSQL)
 WITH_MYSQL=	yes
 .endif
 
-CONFIGURE_ARGS=	--quiet \
-		--prefix=${PREFIX} \
-		--localstatedir=/var \
-		--with-system-libtool
 .ifdef(NOPORTDOCS)
 CONFIGURE_ARGS+=--without-docdir
 PLIST_SUB+=	PORTDOCS="@comment "
 .else
 CONFIGURE_ARGS+=--with-docdir=${DOCSDIR}
 PLIST_SUB+=	PORTDOCS=""
-.endif
-CONFIGURE_ARGS+=--with-logdir=${LOGDIR} \
-		--with-large-files \
-		--with-openssl-includes=${OPENSSLINC}
-# This conditionality avoids -L/usr/lib in the radiusd build step when
-# building with base system OpenSSL
-.if ${OPENSSLLIB} != "/usr/lib"
-CONFIGURE_ARGS+=--with-openssl-libraries=${OPENSSLLIB}
-.endif
-CONFIGURE_ARGS+=--without-rlm_sql_db2 \
-		--without-rlm_sql_freetds \
-		--without-rlm_sql_iodbc \
-		--without-rlm_sql_oracle \
-		--without-rlm_sql_sybase
-
-.if ${ARCH} == amd64
-CONFIGURE_ARGS+=	--with-pic
 .endif
 
 .if defined(WITH_HEIMDAL) && !defined(WITH_KERBEROS)
@@ -187,8 +195,6 @@ CONFIGURE_ARGS+=--without-snmp
 
 .ifdef(WITH_EXPERIMENTAL)
 USE_PYTHON=	yes
-# hack to get the dependency
-.include "${PORTSDIR}/Mk/bsd.python.mk"
 CONFIGURE_ARGS+=--with-experimental-modules
 PLIST_SUB+=	EXPM=""
 .else
@@ -208,19 +214,19 @@ CONFIGURE_ARGS+=--with-rlm_perl
 PLIST_SUB+=	RLMPERL=""
 .endif
 
-USE_LDCONFIG=	yes
-
-MAN1=		radclient.1 radeapclient.1 radlast.1 radtest.1 radwho.1 \
-		radzap.1
-MAN5=		acct_users.5 clients.5 clients.conf.5 dictionary.5 naslist.5 \
-		radiusd.conf.5 rlm_acct_unique.5 rlm_always.5 \
-		rlm_attr_filter.5 rlm_attr_rewrite.5 rlm_chap.5 rlm_counter.5 \
-		rlm_detail.5 rlm_expr.5 rlm_files.5 rlm_mschap.5 rlm_pap.5 \
-		rlm_passwd.5 rlm_realm.5 rlm_sql.5 rlm_sql_log.5 rlm_unix.5 \
-		users.5
-MAN8=		radiusd.8 radrelay.8 radsqlrelay.8 radwatch.8 rlm_ippool_tool.8
-
 SUB_LIST+=	REQUIRE="${_REQUIRE}"
+
+.include <bsd.port.pre.mk>
+
+# This conditionality avoids -L/usr/lib in the radiusd build step when
+# building with base system OpenSSL
+.if ${OPENSSLLIB} != "/usr/lib"
+CONFIGURE_ARGS+=--with-openssl-libraries=${OPENSSLLIB}
+.endif
+
+.if ${ARCH} == amd64
+CONFIGURE_ARGS+=	--with-pic
+.endif
 
 post-patch:
 # Patch Makefile / Makefile.in throughout the source tree to install raddb
@@ -263,5 +269,11 @@ post-install:
 # Set ${PREFIX}/etc/raddb and all the files and folders in it to g-w,o-rwx
 # (FreeRADIUS will probably complain if this is not done)
 	@${CHMOD} -R g-w,o-rwx ${PREFIX}/etc/raddb
+	@${CHOWN} -R ${USERS}:${GROUPS} ${PREFIX}/etc/raddb
+
+	@${TOUCH} ${LOGDIR}/radius.log
+	@${CHOWN} ${USERS}:${GROUPS} ${LOGDIR}/radius.log
+	@${CHOWN} ${USERS}:${GROUPS} ${LOGDIR}/radacct
+	@${CHOWN} ${USERS}:${GROUPS} /var/run/radiusd
 
 .include <bsd.port.post.mk>
