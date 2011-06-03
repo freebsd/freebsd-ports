@@ -1,5 +1,6 @@
-A bitmap paint program that allows you to draw in more than 60 video
-resolutions. It was written to run under DOS, but the code you'll find here was
-modified to use SDL and modern operating systems. 
+GrafX2 is a bitmap paint program inspired by the Amiga programs Deluxe Paint and
+Brilliance. Specialized in 256-color drawing, it includes a very large number of
+tools and effects that make it particularly suitable for pixel art, game
+graphics, and generally any detailed graphics painted with a mouse.
 
 WWW: http://code.google.com/p/grafx2/
