@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		mailagent
-PORTVERSION=		3.1.65
+PORTVERSION=		3.1.71
 CATEGORIES=		mail
 MASTER_SITES=		http://eron.info/
 
