@@ -7,22 +7,20 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.4.7.20110503
+PORTVERSION=	4.4.7.20110531
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
-DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX}
+DISTNAME=	gcc-${VERSIONSTRING}
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.4
 
-DEPRECATED=	Superseded by GCC 4.5, only kept for the sake of cad/salome
-
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		mpfr.4:${PORTSDIR}/math/mpfr
 RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
+
+DEPRECATED=	Superseded by GCC 4.5, only kept for the sake of cad/salome
 
 VERSIONSTRING=	${PORTVERSION:C/([0-9]+\.[0-9]+).*\.([0-9]+)/\1-\2/}
 SUFFIX=		${PORTVERSION:C/([0-9]+).([0-9]+).*/\1\2/}
@@ -55,6 +53,7 @@ GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--disable-nls \
+		--enable-languages=c,c++,fortran \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
 		--program-suffix=${SUFFIX} \
