@@ -1,0 +1,5 @@
+%%SITE_PERL%%/MouseX/Traits.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/Traits/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/Traits
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX
+@dirrmtry %%SITE_PERL%%/MouseX
