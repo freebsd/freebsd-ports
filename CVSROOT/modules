@@ -1577,7 +1577,6 @@ cisco_conf                      ports/net-mgmt/cisco_conf
 ciscoconf                       ports/net-mgmt/ciscoconf
 ciso                            ports/sysutils/ciso
 citrix_ica                      ports/net/citrix_ica
-citrix_xenapp                   ports/net/citrix_xenapp
 cjc                             ports/net-im/cjc
 cjk-lyx                         ports/print/cjk-lyx
 ck4up                           ports/sysutils/ck4up
@@ -2228,7 +2227,6 @@ de-bbbike                       ports/german/BBBike
 de-bsdforen-firefox-searchplugin  ports/german/bsdforen-firefox-searchplugin
 de-bsdgroup-firefox-searchplugin  ports/german/bsdgroup-firefox-searchplugin
 de-bsdpaste                     ports/german/bsdpaste
-de-citrix_xenapp                ports/german/citrix_xenapp
 de-dict                         ports/german/dict
 de-digibux                      ports/german/digibux
 de-ding                         ports/german/ding
@@ -3319,6 +3317,7 @@ fakeroot                        ports/security/fakeroot
 falconseye                      ports/games/falconseye
 fam                             ports/devel/fam
 fampp                           ports/devel/fampp
+fancybox                        ports/www/fancybox
 fann                            ports/math/fann
 fanout                          ports/sysutils/fanout
 fapg                            ports/audio/fapg
@@ -4105,7 +4104,6 @@ gamess                          ports/science/gamess
 gamin                           ports/devel/gamin
 gammu                           ports/comms/gammu
 gammu-devel                     ports/comms/gammu-devel
-gammu-python                    ports/comms/gammu-python
 ganglia-monitor-core            ports/sysutils/ganglia-monitor-core
 ganglia-webfrontend             ports/sysutils/ganglia-webfrontend
 ganttproject                    ports/deskutils/ganttproject
@@ -4383,7 +4381,6 @@ git                             ports/devel/git
 git-merge-changelog             ports/devel/git-merge-changelog
 gitg                            ports/devel/gitg
 gittrac                         ports/devel/gittrac
-gj                              ports/java/gj
 gjs                             ports/lang/gjs
 gkermit                         ports/comms/gkermit
 gkfreq                          ports/sysutils/gkfreq
@@ -6004,7 +6001,6 @@ ipsumdump                       ports/net/ipsumdump
 ipsvd                           ports/net/ipsvd
 ipv6calc                        ports/net-mgmt/ipv6calc
 ipv6gen                         ports/net-mgmt/ipv6gen
-ipv6socket_scrub                ports/net/ipv6socket_scrub
 ipvs                            ports/net/ipvs
 ipw-firmware                    ports/net/ipw-firmware
 ipw-firmware-kmod               ports/net/ipw-firmware-kmod
@@ -6147,7 +6143,6 @@ ja-cgdic-fpw                    ports/japanese/CGdic-fpw
 ja-chasen                       ports/japanese/chasen
 ja-chasen-base                  ports/japanese/chasen-base
 ja-chimera                      ports/japanese/chimera
-ja-citrix_xenapp                ports/japanese/citrix_xenapp
 ja-csrd                         ports/japanese/csrd
 ja-ctags                        ports/japanese/ctags
 ja-dbskkd-cdb                   ports/japanese/dbskkd-cdb
@@ -8725,7 +8720,6 @@ localedata                      ports/misc/localedata
 localize                        ports/textproc/localize
 locator                         ports/comms/locator
 lockdown                        ports/security/lockdown
-lodju                           ports/graphics/lodju
 loemu                           ports/emulators/loemu
 log2timeline                    ports/security/log2timeline
 log4c                           ports/devel/log4c
@@ -9423,7 +9417,6 @@ mod_proctitle                   ports/www/mod_proctitle
 mod_proxy_add_forward           ports/www/mod_proxy_add_forward
 mod_proxy_html                  ports/www/mod_proxy_html
 mod_proxy_xml                   ports/www/mod_proxy_xml
-mod_pubcookie                   ports/www/mod_pubcookie
 mod_put                         ports/www/mod_put
 mod_python                      ports/www/mod_python
 mod_python3                     ports/www/mod_python3
@@ -21021,7 +21014,6 @@ proxychains                     ports/net/proxychains
 proxycheck                      ports/security/proxycheck
 proxyper                        ports/misc/proxyper
 proxytunnel                     ports/security/proxytunnel
-prozilla                        ports/ftp/prozilla
 prtunnel                        ports/net/prtunnel
 prune                           ports/astro/prune
 ps2eps                          ports/print/ps2eps
@@ -21328,7 +21320,6 @@ py-django-signals-ahoy          ports/www/py-django-signals-ahoy
 py-django-storages              ports/www/py-django-storages
 py-django-tagging               ports/www/py-django-tagging
 py-django-threaded-multihost    ports/www/py-django-threaded-multihost
-py-django11                     ports/www/py-django11
 py-django12                     ports/www/py-django12
 py-djblets                      ports/www/py-djblets
 py-dns                          ports/dns/py-dns
@@ -22597,7 +22588,6 @@ renattach                       ports/mail/renattach
 rendercheck                     ports/x11/rendercheck
 renderproto                     ports/x11/renderproto
 reoback                         ports/sysutils/reoback
-rep-gtk                         ports/x11-toolkits/rep-gtk
 rep-gtk2                        ports/x11-toolkits/rep-gtk2
 repeater                        ports/net/repeater
 replaceit                       ports/textproc/replaceit
@@ -25056,7 +25046,6 @@ tnef                            ports/converters/tnef
 tnef2txt                        ports/textproc/tnef2txt
 tnftp                           ports/ftp/tnftp
 tnftpd                          ports/ftp/tnftpd
-tnl                             ports/games/tnl
 tnote                           ports/deskutils/tnote
 tnt                             ports/devel/tnt
 tntnet                          ports/www/tntnet
@@ -25817,7 +25806,6 @@ vmware-tools6                   ports/emulators/vmware-tools6
 vmware3                         ports/emulators/vmware3
 vnc                             ports/net/vnc
 vnc2flv                         ports/deskutils/vnc2flv
-vnc2swf                         ports/net/vnc2swf
 vnccrack                        ports/security/vnccrack
 vncreflector                    ports/net/vncreflector
 vnstat                          ports/net/vnstat
