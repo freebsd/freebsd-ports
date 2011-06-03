@@ -7,7 +7,7 @@
 
 PORTNAME=	nmap
 PORTVERSION=	5.51
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		LOCAL/ohauer
@@ -31,6 +31,13 @@ CONFIGURE_ARGS=	--without-localdirs \
 		--with-libpcre=${LOCALBASE} \
 		--with-liblua=${LOCALBASE}
 CONFIGURE_ENV=	LUA_INCDIR="${LUA_INCDIR}" LUA_LIBDIR="${LUA_LIBDIR}"
+
+# fix for gcc from ports
+.if ${CC} != "cc"
+GCCLIBDIR_CMDS=	${CC} -print-file-name=libstdc++.so | ${SED} -e 's/libstdc++.so//'
+CONFIGURE_ARGS+=LDFLAGS="-L$$(${GCCLIBDIR_CMDS})"
+NDCC=	true
+.endif
 
 MANLANG=	"" de es fr hr hu it jp pl pt_BR pt_PT ro ru sk zh
 MAN1=		nmap.1
@@ -70,6 +77,9 @@ post-install:
 .	for i in ${EXAMPLES}
 		@${INSTALL_DATA} ${WRKSRC}/${i} ${EXAMPLESDIR}
 .	endfor
+.endif
+.if defined(NDCC)
+	@${ECHO_MSG} do not forget to adjust libnmap.conf
 .endif
 
 .include <bsd.port.mk>
