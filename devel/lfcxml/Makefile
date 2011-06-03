@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	lfcxml
-PORTVERSION=	1.0.24
+PORTVERSION=	1.0.25
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
 
