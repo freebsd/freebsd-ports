@@ -1,0 +1,9 @@
+%%SITE_PERL%%/AnyMQ.pm
+%%SITE_PERL%%/AnyMQ/Queue.pm
+%%SITE_PERL%%/AnyMQ/Topic.pm
+%%SITE_PERL%%/AnyMQ/Topic/Trait/WithBacklog.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyMQ/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyMQ
+@dirrm %%SITE_PERL%%/AnyMQ/Topic/Trait
+@dirrm %%SITE_PERL%%/AnyMQ/Topic
+@dirrm %%SITE_PERL%%/AnyMQ
