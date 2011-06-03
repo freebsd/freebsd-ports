@@ -6,28 +6,54 @@
 #
 
 PORTNAME=	grafx2
-DISTVERSION=	2.00b98.0
-DISTVERSIONSUFFIX=	-svn482
-PORTREVISION=	5
+PORTVERSION=	2.3.1781
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ehaupt@FreeBSD.org
-COMMENT=	Bitmap paint program that supports more than 60 video resolutions
+COMMENT=	A pixelart-oriented bitmap painting program
+
+OPTIONS=	TTF "Enable True Type font support" on \
+		LUA "Enable Lua scripting support" off
 
 USE_GMAKE=	yes
-USE_DOS2UNIX=	yes
-USE_SDL=	image ttf
+USE_SDL=	sdl image
 MAKE_JOBS_SAFE=	yes
 
-WRKSRC=		${WRKDIR}
-MAKE_ENV+=	DATADIR="${DATADIR}"
-CFLAGS+=	-DHAVE_SYS_PARAM_H -DHAVE_SYS_UCRED_H -DHAVE_SYS_MOUNT_H \
-		-DHAVE_STRUCT_STATFS_F_FSTYPENAME
+WRKSRC=		${WRKDIR}/${PORTNAME}/src
+CFLAGS+=	-DHAVE_SYS_PARAM_H -DHAVE_SYS_UCRED_H -DHAVE_SYS_MOUNT_H
+
+LIB_DEPENDS=	X11:${PORTSDIR}/x11/libX11 \
+		png:${PORTSDIR}/graphics/png
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_TTF)
+MAKE_ARGS+=	NOTTF=1
+.else
+USE_SDL+=	ttf
+.endif
+
+.if defined(WITH_LUA)
+BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
+USE_LUA=	5.1
+.else
+MAKE_ARGS+=	NOLUA=1
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|macosx|FreeBSD|g' \
-		${WRKSRC}/divers.c ${WRKSRC}/mountlist.c ${WRKSRC}/aide.c ${WRKSRC}/init.c
+	@${REINPLACE_CMD} \
+		-e 's|^  prefix = .*$$|  prefix = ${PREFIX}|' \
+		-e '/scripts\/libs/d' \
+		-e 's/CC = gcc/CC ?= gcc/' \
+		${WRKSRC}/Makefile
+	@${REINPLACE_CMD} \
+		-e 's|macosx|FreeBSD|g' \
+		${WRKSRC}/mountlist.c ${WRKSRC}/init.c
+	@${REINPLACE_CMD} \
+		-e 's|Extract_path(program_dir, argv0);|strcpy(program_dir,"${PREFIX}/bin/");|' \
+		${WRKSRC}/setup.c
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

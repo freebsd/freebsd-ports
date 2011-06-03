@@ -1,11 +1,84 @@
 bin/grafx2
-bin/gfxcfg
-%%DATADIR%%/grafx2
-%%DATADIR%%/gfxcfg
-%%DATADIR%%/gfx2.dat
-%%DATADIR%%/gfx2.gif
-%%DATADIR%%/gfx2cfg.gif
-%%DATADIR%%/fonts/Tuffy.ttf
-%%DATADIR%%/fonts/8pxfont.png
-@dirrm %%DATADIR%%/fonts
-@dirrm %%DATADIR%%
+share/applications/grafx2.desktop
+share/grafx2/fonts/8pxfont.png
+share/grafx2/fonts/PF_Arma_5__.png
+share/grafx2/fonts/PF_Easta_7_.png
+share/grafx2/fonts/PF_Easta_7__.png
+share/grafx2/fonts/PF_Ronda_7__.png
+share/grafx2/fonts/PF_Tempesta_5.png
+share/grafx2/fonts/PF_Tempesta_5_.png
+share/grafx2/fonts/PF_Tempesta_5__.png
+share/grafx2/fonts/PF_Tempesta_5___.png
+share/grafx2/fonts/PF_Tempesta_7.png
+share/grafx2/fonts/PF_Tempesta_7_.png
+share/grafx2/fonts/PF_Tempesta_7__.png
+share/grafx2/fonts/PF_Tempesta_7___.png
+share/grafx2/fonts/PF_Westa_7_.png
+share/grafx2/fonts/PF_Westa_7__.png
+share/grafx2/fonts/Tuffy.ttf
+share/grafx2/gfx2.gif
+share/grafx2/gfx2def.ini
+share/grafx2/scripts/samples_2.3/brush/ApplyColor.lua
+share/grafx2/scripts/samples_2.3/brush/Fisheye.lua
+share/grafx2/scripts/samples_2.3/brush/GrayscaleAvg.lua
+share/grafx2/scripts/samples_2.3/brush/GrayscaleDesat.lua
+share/grafx2/scripts/samples_2.3/brush/Halfsmooth.lua
+share/grafx2/scripts/samples_2.3/brush/Waves.lua
+share/grafx2/scripts/samples_2.3/demo/3DPalette.lua
+share/grafx2/scripts/samples_2.3/demo/Ellipse.lua
+share/grafx2/scripts/samples_2.3/demo/FlipPicture.lua
+share/grafx2/scripts/samples_2.3/demo/SierpinskyCarpet.lua
+share/grafx2/scripts/samples_2.3/demo/SierpinskyTriangle.lua
+share/grafx2/scripts/samples_2.3/demo/Spritesheet.lua
+share/grafx2/scripts/samples_2.3/demo/brush/Amigaball.lua
+share/grafx2/scripts/samples_2.3/demo/brush/ColorSphere.lua
+share/grafx2/scripts/samples_2.3/demo/brush/FindAA.lua
+share/grafx2/scripts/samples_2.3/demo/brush/Mandelbrot.lua
+share/grafx2/scripts/samples_2.3/libs/dawnbringer_lib.lua
+share/grafx2/scripts/samples_2.3/libs/memory.lua
+share/grafx2/scripts/samples_2.3/palette/Desaturate.lua
+share/grafx2/scripts/samples_2.3/palette/ExpandColors.lua
+share/grafx2/scripts/samples_2.3/palette/FillColorCube.lua
+share/grafx2/scripts/samples_2.3/palette/InvertedRGB.lua
+share/grafx2/scripts/samples_2.3/palette/Set3bit.lua
+share/grafx2/scripts/samples_2.3/palette/Set6bit.lua
+share/grafx2/scripts/samples_2.3/palette/SetC64Palette.lua
+share/grafx2/scripts/samples_2.3/palette/ShiftHue.lua
+share/grafx2/scripts/samples_2.3/picture/CellColourReducer.lua
+share/grafx2/scripts/samples_2.3/picture/DrawGridIsometric.lua
+share/grafx2/scripts/samples_2.3/picture/DrawGridOrthogonal_RGB.lua
+share/grafx2/scripts/samples_2.3/picture/DrawgridOrthogonal_Index.lua
+share/grafx2/scripts/samples_2.3/picture/GlassGridFilter.lua
+share/grafx2/scripts/samples_2.3/picture/PaletteToPicture.lua
+share/grafx2/scripts/samples_2.3/picture/Pic2isometric.lua
+share/grafx2/scripts/samples_2.3/picture/Rainbow-Dark2Bright.lua
+share/grafx2/scripts/samples_2.3/picture/RemapImage2RGB.lua
+share/grafx2/scripts/samples_2.3/picture/RemapImage2RGB_ed.lua
+share/grafx2/scripts/samples_2.3/picture/RemapImageTo3bitPal.lua
+share/grafx2/scripts/samples_2.3/picture/XBitColourXpaceFromPalette.lua
+share/grafx2/skins/font_Classic.png
+share/grafx2/skins/font_DPaint.png
+share/grafx2/skins/font_Fairlight.png
+share/grafx2/skins/font_Fun.png
+share/grafx2/skins/font_Melon.png
+share/grafx2/skins/font_Seen.png
+share/grafx2/skins/skin_Aurora.png
+share/grafx2/skins/skin_DPaint.png
+share/grafx2/skins/skin_classic.png
+share/grafx2/skins/skin_modern.png
+share/grafx2/skins/skin_scenish.png
+share/icons/grafx2.svg
+share/icons/grafx2.xpm
+@dirrm share/grafx2/skins
+@dirrm share/grafx2/scripts/samples_2.3/picture
+@dirrm share/grafx2/scripts/samples_2.3/palette
+@dirrm share/grafx2/scripts/samples_2.3/libs
+@dirrm share/grafx2/scripts/samples_2.3/demo/brush
+@dirrm share/grafx2/scripts/samples_2.3/demo
+@dirrm share/grafx2/scripts/samples_2.3/brush
+@dirrm share/grafx2/scripts/samples_2.3
+@dirrm share/grafx2/scripts
+@dirrm share/grafx2/fonts
+@dirrm share/grafx2
+@dirrmtry share/icons
+@dirrmtry share/applications
