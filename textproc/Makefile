@@ -301,6 +301,7 @@
     SUBDIR += kbedic
     SUBDIR += kdiff3
     SUBDIR += kmfl-european-latin
+    SUBDIR += kmfl-khmer
     SUBDIR += kmfl-sil-ezra
     SUBDIR += kmfl-sil-galatia
     SUBDIR += kmfl-sil-ipa-unicode5
@@ -1185,7 +1186,6 @@
     SUBDIR += scim-bridge-qt4
     SUBDIR += scim-input-pad
     SUBDIR += scim-kmfl-imengine
-    SUBDIR += scim-kmfl-khmer
     SUBDIR += scim-m17n
     SUBDIR += scim-openvanilla
     SUBDIR += scim-table-imengine
