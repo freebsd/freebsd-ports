@@ -19,10 +19,11 @@ COMMENT=	A powerful syslogd replacement
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]*
 WRKSRC=		$(WRKDIR)/$(PORTNAME)-3.3.0beta1
 
-OPTIONS=	SSL "Build with OpenSSL support (from ports)" off \
+OPTIONS=	SYS_SSL "Build with OpenSSL support (from system)" off \
+		PORTS_SSL "Build with OpenSSL support (from ports)" off \
 		TCP_WRAPPERS "Build with TCP Wrappers" off \
 		SQL "Build with database (libdbi) support" off \
-		SPOOF "Build with spoof source support" on \
+		SPOOF "Build with spoof source support" off \
 		IPV6 "Build with IPV6 support" on \
 		PCRE "Build with PCRE support" on
 
@@ -36,8 +37,8 @@ MAN8=		syslog-ng.8
 
 USE_RC_SUBR=	syslog-ng.sh
 GNU_CONFIGURE=	yes
-USE_GNOME=	glib20
 USE_GMAKE=	yes
+USE_GNOME=	glib20
 SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
@@ -45,17 +46,24 @@ CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
 CONFIGURE_ENV=	CFLAGS="`${LIBNET_CONFIG} --cflags` -I${LOCALBASE}/include ${CFLAGS}" \
 		LDFLAGS="`${LIBNET_CONFIG} --libs` ${LDFLAGS}"
 
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_SSL)
-USE_OPENSSL=		yes
-WITH_OPENSSL_PORT=	yes
-CONFIGURE_ARGS+=	--enable-ssl
-CONFIGURE_ENV+=		OPENSSL_CFLAGS="${OPENSSL_CFLAGS}" \
-			OPENSSL_LIBS="${OPENSSL_LDFLAGS} -lcrypto -lssl"
-.else
-CONFIGURE_args+=	--disable-ssl
+.if defined(WITH_SYS_SSL) && defined(WITH_PORTS_SSL)
+BROKEN=		SYS_SSL and PORTS_SSL are mutually exclusive
 .endif
+
+.if defined(WITH_SYS_SSL) || defined(WITH_PORTS_SSL)
+USE_OPENSSL=            yes
+CONFIGURE_ARGS+=        --enable-ssl
+CONFIGURE_ENV+=         OPENSSL_CFLAGS="${OPENSSL_CFLAGS}" \
+                        OPENSSL_LIBS="${OPENSSL_LDFLAGS} -lcrypto -lssl"
+.else
+CONFIGURE_ARGS+=        --disable-ssl
+.endif
+
+.if defined(WITH_PORTS_SSL)
+WITH_OPENSSL_PORT=      yes
+.endif
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITH_TCP_WRAPPERS)
 CONFIGURE_ARGS+=	--enable-tcp-wrapper
@@ -64,11 +72,8 @@ CONFIGURE_ARGS+=	--disable-tcp-wrapper
 .endif
 
 .if defined(WITH_SPOOF)
-.if ${ARCH} == "amd64" 
-BROKEN=			Does not compile: relocation R_X86_64_32 can not be used when making a shared object
-.endif
-BUILD_DEPENDS=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
-LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet11-config
+BUILD_DEPENDS=		${LIBNET_CONFIG}:${PORTSDIR}/net/libnet-devel
+LIBNET_CONFIG?=		${LOCALBASE}/bin/libnet115-config
 CONFIGURE_ARGS+=	--enable-spoof-source
 .else
 CONFIGURE_ARGS+=	--disable-spoof-source
@@ -91,27 +96,24 @@ CONFIGURE_ARGS+=	--disable-pcre
 LIB_DEPENDS+=		dbi.1:${PORTSDIR}/databases/libdbi
 CONFIGURE_ENV+=		LIBDBI_LIBS="-ldbi"
 CONFIGURE_ARGS+=	--enable-sql
+PLIST_FILES=		lib/syslog-ng/libafsql.la lib/syslog-ng/libafsql.so
 .else
 CONFIGURE_ARGS+=	--disable-sql
 .endif
 
-.if defined(WITH_SQL)
-CONFIGURE_ARGS+=--enable-sql
-LIB_DEPENDS+= dbi.1:${PORTSDIR}/databases/libdbi
-CONFIGURE_ENV+= LIBDBI_CFLAGS="-I/usr/local/include" \
-		LIBDBI_LIBS=" -ldbi"
+.if ${OSVERSION} >= 900034
+CONFIGURE_ARGS+=        --disable-linux-caps
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's:__PREFIX__:${PREFIX}:g' ${WRKSRC}/lib/syslog-ng.h
-	@${REINPLACE_CMD} -e 's:libnet-config:libnet11-config:g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's:libnet-config:libnet115-config:g' ${WRKSRC}/configure
 	@${MV} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.dist
 .if ${OSVERSION} >= 900007
 	@${REINPLACE_CMD} \
 		-e 's|utmp|utmpx|' -e 's|getutent|getutxent|' \
 		-e 's|ut_name|ut_user|' \
-		${WRKSRC}/configure ${WRKSRC}/src/afuser.c \
-		${WRKSRC}/src/utils.c ${WRKSRC}/src/utils.h
+		${WRKSRC}/configure ${WRKSRC}/modules/afuser/afuser.c \
+		${WRKSRC}/lib/utils.c ${WRKSRC}/lib/utils.h
 .endif
 
 post-install:
@@ -127,6 +129,9 @@ post-install:
 .endif
 	@if [ ! -f ${PREFIX}/etc/syslog-ng.conf.sample ]; then \
 		${INSTALL_DATA} ${FILESDIR}/syslog-ng.conf.sample ${PREFIX}/etc; \
+	fi
+	@if [ ! -f ${PREFIX}/etc/syslog-ng.conf ]; then \
+		${CP} ${PREFIX}/etc/syslog-ng.conf.sample ${PREFIX}/etc/syslog-ng.conf; \
 	fi
 	@${CAT} ${PKGMESSAGE}
 
