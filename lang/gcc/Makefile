@@ -7,6 +7,7 @@
 #
 
 PORTNAME=	gcc
+PORTVERSION=	4.6.1.20110603
 PORTVERSION=	4.6.1.20110527
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
@@ -61,6 +62,7 @@ LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--disable-nls \
+		--enable-languages=c,c++,fortran \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
 		--program-suffix=${SUFFIX} \
@@ -101,6 +103,7 @@ DISTFILES+=	${ECJ_JAR}:ecj
 EXTRACT_ONLY=	${DISTFILES:S|${ECJ_JAR}:ecj||}
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
+CONFIGURE_ARGS+=--enable-languages=c,c++,fortran,java
 MAN1+=		aot-compile${SUFFIX}.1 \
 		gappletviewer${SUFFIX}.1 \
 		gc-analyze${SUFFIX}.1 \
