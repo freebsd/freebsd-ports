@@ -1,6 +1,6 @@
 bin/rkward
-bin/rkward.bin
-bin/rkward.rbackend
+lib/kde4/libexec/rkward.frontend
+lib/kde4/libexec/rkward.rbackend
 share/applications/kde4/rkward.desktop
 share/apps/katepart/syntax/rkward.xml
 share/apps/rkward/00saveload/import/import_csv.js
@@ -387,6 +387,7 @@ share/apps/rkward/icons/rkward_logo.png
 share/apps/rkward/icons/run_all.png
 share/apps/rkward/icons/run_line.png
 share/apps/rkward/icons/run_selection.png
+share/apps/rkward/icons/s4_slots.png
 share/apps/rkward/icons/window_back.png
 share/apps/rkward/icons/window_forward.png
 share/apps/rkward/import_export.pluginmap
@@ -397,6 +398,7 @@ share/apps/rkward/pages/rkward_for_r_users.rkh
 share/apps/rkward/pages/rkward_for_rkward_devs.rkh
 share/apps/rkward/pages/rkward_help.css
 share/apps/rkward/pages/rkward_output.rkh
+share/apps/rkward/pages/rkward_output.css
 share/apps/rkward/pages/rkward_plot_history.rkh
 share/apps/rkward/pages/rkward_public_functions.rkh
 share/apps/rkward/pages/rkward_shortcuts.rkh
@@ -414,6 +416,7 @@ share/apps/rkward/plots/barplot_embed.js
 share/apps/rkward/plots/barplot_embed.rkh
 share/apps/rkward/plots/barplot_embed.xml
 share/apps/rkward/plots/box_plot.js
+share/apps/rkward/plots/box_plot.rkh
 share/apps/rkward/plots/box_plot.xml
 share/apps/rkward/plots/color_chooser.js
 share/apps/rkward/plots/color_chooser.rkh
@@ -510,6 +513,7 @@ share/config/rkward.knsrc
 %%PORTDOCS%%%%DOCSDIR%%/common
 %%PORTDOCS%%%%DOCSDIR%%/index.cache.bz2
 %%PORTDOCS%%%%DOCSDIR%%/index.docbook
+%%PORTDOCS%%%%DOCSDIR%%/man-rkward.1.docbook
 %%PORTDOCS%%%%DOCSDIR%%/menu_hierarchy_example.png
 %%PORTDOCS%%%%DOCSDIR%%/t_test_plugin_example.png
 %%PORTDOCS%%%%DOCSDIR%%/writing_plugins_introduction.docbook
@@ -602,7 +606,6 @@ lib/R/library/rkwardtests/NAMESPACE
 lib/R/library/rkwardtests/R/rkwardtests
 lib/R/library/rkwardtests/R/rkwardtests.rdb
 lib/R/library/rkwardtests/R/rkwardtests.rdx
-lib/R/library/rkwardtests/doc/.empty
 lib/R/library/rkwardtests/help/AnIndex
 lib/R/library/rkwardtests/help/aliases.rds
 lib/R/library/rkwardtests/help/paths.rds
@@ -612,7 +615,6 @@ lib/R/library/rkwardtests/html/00Index.html
 lib/R/library/rkwardtests/html/R.css
 @dirrm lib/R/library/rkwardtests/html
 @dirrm lib/R/library/rkwardtests/help
-@dirrm lib/R/library/rkwardtests/doc
 @dirrm lib/R/library/rkwardtests/R
 @dirrm lib/R/library/rkwardtests/Meta
 @dirrm lib/R/library/rkwardtests

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rkward
-PORTVERSION=	0.5.5
-PORTREVISION=	2
+PORTVERSION=	0.5.6
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/Current_Stable_Releases
 PKGNAMESUFFIX=	-kde4
@@ -34,6 +33,7 @@ USE_CMAKE=	yes
 INSTALLS_ICONS=	yes
 
 DOCSDIR=	${PREFIX}/share/doc/HTML/en/rkward
+MAN1=		rkward.1
 
 .if defined(WITHOUT_NLS)
 NLS=		"@comment "
@@ -52,7 +52,8 @@ CMAKE_ARGS+=	-DCMAKE_BUILD_TYPE=Debug
 
 pre-configure:
 	${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|'	\
-		${WRKSRC}/rkward/rkward.sh.template
+		${WRKSRC}/rkward/rkward.sh.template	\
+		${WRKSRC}/rkward/rbackend/rkfrontendtransmitter.cpp
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e 's|ADD_SUBDIRECTORY(doc)|#ADD_SUBDIRECTORY(doc)|'	\
 		${WRKSRC}/CMakeLists.txt
@@ -68,9 +69,6 @@ pre-configure:
 	@(if [ ! -e ${LOCALBASE}/lib/R/lib/libR.so ] ; then \
 	${ECHO_MSG} "==> ${PKGNAME} requires math/R to be built WITH_LIBR" ; \
 	exit 1; fi)
-
-post-install:
-	${TOUCH} ${LOCALBASE}/lib/R/library/rkwardtests/doc/.empty
 
 .if defined(MAINTAINER_MODE)
 regression-test:	install
