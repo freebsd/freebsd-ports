@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	spamd
-PORTVERSION=	4.8.0
+PORTVERSION=	4.9.1
 CATEGORIES=	mail
 MASTER_SITES=	BERLIOS
 MASTER_SITE_SUBDIR=freebsdspamd
@@ -18,31 +18,21 @@ LICENSE=	BSD
 
 USE_RC_SUBR?=	obspamd obspamlogd
 
-SPAMDUSER?=	_spamd
-SPAMDGROUP?=	_spamd
-SPAMDDIR?=	/var/empty
-
-SPAMDUID=	132
-SPAMDGID=	${SPAMDUID}
+USERS=		_spamd
+GROUPS=		_spamd
 
 MAN5=		spamd.conf.5
 MAN8=		spamd.8 spamd-setup.8 spamdb.8 spamlogd.8
 PORTDOCS=	ipfw-spamd.txt spamdb.txt
 
-PLIST_DIRS=	etc/spamd
-PLIST_FILES=	libexec/spamlogd \
+PLIST_DIRSTRY=	%%ETCDIR%%
+PLIST_FILES=	%%ETCDIR%%/spamd.conf.sample \
+		libexec/spamlogd \
 		sbin/spamd-setup \
-		sbin/spamdb \
-		etc/spamd/spamd.conf.sample
+		sbin/spamdb
 
-CONFIG_DIR=		${PREFIX}/etc/spamd
-SAMPLE_SPAMD_CONF=	${CONFIG_DIR}/spamd.conf.sample
-
-PLIST_SUB=	SPAMDDIR=${SPAMDDIR} \
-		SPAMDUSER=${SPAMDUSER} \
-		SPAMDGROUP=${SPAMDGROUP} \
-		SPAMDUID=${SPAMDUID} \
-		SPAMDGID=${SPAMDGID}
+PLIST_SUB=	SPAMDUSER=${USERS} \
+		SPAMDGROUP=${GROUPS}
 
 # If you are a CPANEL user the this option is for you!
 # CPANEL sends periodic a 'kill -TERM spamd' to the SpamAssassin spamd, and
@@ -58,7 +48,6 @@ PLIST_SUB+=	SPAMDBIN=obspamd
 .endif
 
 SUB_FILES=	pkg-install \
-		pkg-deinstall \
 		pkg-message
 
 SUB_LIST=	PREFIX=${PREFIX} \
@@ -81,14 +70,9 @@ do-install:
 	@${INSTALL_MAN} ${WRKSRC}/spamd-setup/spamd-setup.8 ${PREFIX}/man/man8
 	@${INSTALL_MAN} ${WRKSRC}/spamdb/spamdb.8 ${PREFIX}/man/man8
 	@${INSTALL_MAN} ${WRKSRC}/spamlogd/spamlogd.8 ${PREFIX}/man/man8
-	@if [ ! -d ${CONFIG_DIR} ]; then \
-		${MKDIR} ${CONFIG_DIR}; \
-	fi
-	@if [ ! -f ${SAMPLE_SPAMD_CONF} ]; then \
-		${ECHO_MSG} "Installing ${SAMPLE_SPAMD_CONF} file."; \
-		${INSTALL_DATA} -p ${WRKSRC}/etc/spamd.conf \
-		${SAMPLE_SPAMD_CONF}; \
-	fi
+	@${INSTALL} -d ${ETCDIR}
+	@${INSTALL_DATA} -m 644 ${WRKSRC}/etc/spamd.conf ${ETCDIR}/spamd.conf.sample
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/doc/ipfw-spamd.txt ${DOCSDIR}/
@@ -96,6 +80,7 @@ do-install:
 .endif
 
 post-install:
+	@${SH} ${PKGINSTALL} ${DISTNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

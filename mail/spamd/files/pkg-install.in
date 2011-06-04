@@ -1,150 +1,72 @@
 #!/bin/sh
 #
+# ex:ts=4:sw=4:noet
+#-*- mode: makefile; tab-width: 4; -*-
 #
+# $FreeBSD$
 
-SPAMDDIR=%%SPAMDDIR%%
 SPAMDUSER=%%SPAMDUSER%%
 SPAMDGROUP=%%SPAMDGROUP%%
-SPAMDUID=%%SPAMDUID%%
-SPAMDGID=%%SPAMDGID%%
-
-ask() {
-  local question default answer
-
-  question=$1
-  default=$2
-  if [ -z "${PACKAGE_BUILDING}" ]; then
-    read -p "${question} [${default}]? " answer
-  fi
-  if [ "x${answer}" = "x" ]; then
-    answer=${default}
-  fi
-  echo ${answer}
-}
-
-yesno() {
-  local default question answer
-
-  question=$1
-  default=$2
-  while :; do
-    answer=$(ask "${question}" "${default}")
-    case "${answer}" in
-      [Yy][Ee][Ss]|[Yy])
-        return 0
-        ;;
-      [Nn][Oo]|[Nn])
-        return 1
-        ;;
-    esac
-    echo "Please answer yes or no."
-   done
-}
+FILE="/etc/services"
 
 check_db() {
-    DB=/var/db/spamd
-    if [ -f ${DB} ]; then
-        OWN=`ls -l ${DB} | awk '{print $3}'`
-        GRP=`ls -l ${DB} | awk '{print $4}'`
-        if [ "x${OWN}" != "x${SPAMDUSER}" ]; then
-            echo "change ${DB} owner to ${SPAMDUSER}"
-            /usr/sbin/chown ${SPAMDUSER} ${DB}
-        fi
-        if [ "x${GRP}" != "x${SPAMDGROUP}" ]; then
-            echo "change ${DB} group to ${SPAMDGROUP}"
-            /usr/sbin/chown :${SPAMDGROUP} ${DB}
-        fi
-    fi
+	DB=/var/db/spamd
+	if [ -f ${DB} ]; then
+		OWN=$(stat -f "%Su" ${DB})
+		GRP=$(stat -f "%Sg" ${DB})
+		if [ "x${OWN}" != "x${SPAMDUSER}" ]; then
+			echo "==> chown ${SPAMDUSER} ${DB} (previous ${OWN})"
+				chown ${SPAMDUSER} ${DB}
+		fi
+		if [ "x${GRP}" != "x${SPAMDGROUP}" ]; then
+			echo "==> chgrp ${SPAMDGROUP} ${DB} (previous ${GRP})"
+			chgrp ${SPAMDGROUP} ${DB}
+		fi
+	fi
 }
 
 check_service() {
-    local name number type comment
+	local SERVICE PORT PROTO COMMENT
 
-    name=$1
-    number=$2
-    type=$3
-    comment=$4
+	SERVICE=$1
+	PORT=$2
+	PROTO=$3
+	COMMENT=$4
 
-    FILE="/etc/services"
-    # check
-    OK=no
-    HAS_SERVICE=no
-    COUNT=1
-    for i in `grep $name $FILE `; do
-    if [ $COUNT = 1 ] && [ X"$i" = X"$name" ]; then
-        HAS_SERVICE=yes
-    elif [ $COUNT = 2 ] && [ $HAS_SERVICE = yes ] && \
-        [ X"$i" = X"$number/$type" ]; then
-        OK=yes
-        break
-    fi
-    COUNT=`expr ${COUNT} + 1`
-    done
-    # add an entry for SERVICE to /etc/services
-    if [ $OK = no ]; then
-    echo "This system has no entry for $name in ${FILE}"
-    if yesno "Would you like to add it automatically?" y; then
-        mv ${FILE} ${FILE}.bak
-        (grep -v $name ${FILE}.bak ; \
-        echo "$name 	$number/$type 	# $comment") \
-        >> ${FILE}
-        rm ${FILE}.bak
-    else
-        echo "Please add '$name $number/$type' into ${FILE}, and try again."
-        return 1
-    fi
-    fi
-    return 0
+	# check
+	OK=no
+	HAS_SERVICE=no
+	COUNT=1
+	for i in $(grep ^${SERVICE} ${FILE}); do
+		if [ ${COUNT} -eq 1 ] && [ x"${i}" = x"${SERVICE}" ]; then
+			HAS_SERVICE=yes
+		elif [ ${COUNT} -eq 2 ] && [ "${HAS_SERVICE}" = "yes" ] && \
+			[ x"${i}" = x"${PORT}/${PROTO}" ]; then
+			OK=yes
+			break
+		fi
+		COUNT=$(( ${COUNT} + 1 ))
+	done
+	# add an entry for SERVICE to /etc/services
+	if [ "${OK}" = "no" ]; then
+		echo "==> add entry \"${SERVICE} ${PORT}/${PROTO}\""
+		(
+			grep -v -e "^${SERVICE}.*${PORT}/${PROTO}" ${FILE}
+			echo "${SERVICE}	${PORT}/${PROTO}   # ${COMMENT}"
+		) >> ${FILE}.new
+		mv ${FILE}.new ${FILE}
+	fi
 }
 
-
+# always add service entries
 if [ "$2" = "PRE-INSTALL" ]; then
-  check_dbown=0
-  if /usr/sbin/pw group show "${SPAMDGROUP}" 2>&1 >/dev/null; then
-    echo "You already have a \"${SPAMDGROUP}\" group, so I will use it."
-    check_dbown=1
-  else
-    echo "You need a \"${SPAMDGROUP}\" group."
-    if yesno "Would you like me to create it" "YES"; then
-      /usr/sbin/pw groupadd "${SPAMDGROUP}" -g "${SPAMDGID}" -h - || \
-        /usr/sbin/pw groupadd "${SPAMDGROUP}" -h - || exit
-      echo "Done."
-      check_dbown=1
-    else
-      echo "Please create the \"${SPAMDGROUP}\" group manually and try again."
-      exit 1
-    fi
-  fi
+	echo "Checking ${FILE} for missing service entries"
+	[ ! -f ${FILE} ] && echo "==> cannot find ${FILE} ... => exit" &&  exit 1
+	check_service spamd 8025 tcp "spamd(8)"
+	check_service spamd-sync 8025 udp "spamd(8) synchronisation"
+	check_service spamd-cfg 8026 tcp "spamd(8) configuration"
+fi
 
-  if /usr/sbin/pw user show "${SPAMDUSER}" 2>&1 >/dev/null; then
-    echo "You already have a \"${SPAMDUSER}\" user, so I will use it."
-    check_dbown=1
-  else
-    echo "You need a \"${SPAMDUSER}\" user."
-    if yesno "Would you like me to create it" "YES"; then
-      /usr/sbin/pw useradd "${SPAMDUSER}" -u "${SPAMDUID}" -g "${SPAMDGROUP}" -h - -d "${SPAMDDIR}" \
-        -s /sbin/nologin -c "spamd pseudo-user" || \
-        /usr/sbin/pw useradd "${SPAMDUSER}" -g "${SPAMDGROUP}" -h - -d "${SPAMDDIR}" \
-        -s /sbin/nologin -c "spamd pseudo-user" || exit
-      check_dbown=1
-    else
-      echo "Please create the \"${SPAMDUSER}\" user manually and try again."
-      exit 1
-    fi
-  fi
-
-  if [ ${check_dbown} -eq 1 ]; then
-    check_db
-  fi
-
-  if ! check_service spamd 8025 tcp "spamd(8)"; then
-    exit 1
-  fi
-  if ! check_service spamd-cfg 8026 tcp "spamd(8) configuration"; then
-    exit 1
-  fi
-  if ! check_service spamd-sync 8025 udp "spamd(8) synchronisation"; then
-    exit 1
-  fi
-
+if [ "$2" = "POST-INSTALL" ]; then
+	check_db
 fi
