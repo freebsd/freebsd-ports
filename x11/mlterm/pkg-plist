@@ -23,10 +23,10 @@ lib/libmkf.a
 lib/libmkf.la
 lib/libmkf.so
 lib/libmkf.so.15
-lib/libvte.a
-lib/libvte.la
-lib/libvte.so
-lib/libvte.so.9
+lib/libvte-mlterm.a
+lib/libvte-mlterm.la
+lib/libvte-mlterm.so
+lib/libvte-mlterm.so.9
 lib/mkf/libmkf_8bits.a
 lib/mkf/libmkf_8bits.la
 lib/mkf/libmkf_8bits.so

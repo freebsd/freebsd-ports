@@ -1,0 +1,29 @@
+--- gtk/Makefile.in.orig	2011-06-04 15:13:16.000000000 +0900
++++ gtk/Makefile.in	2011-06-04 15:14:33.000000000 +0900
+@@ -23,10 +23,10 @@
+ 
+ OBJ = vte.o marshal.o vtetypebuiltins.o reaper.o
+ 
+-all: libvte.la
++all: libvte-mlterm.la
+ 
+-libvte.la: $(OBJ)
+-	$(LIBTOOL_LINK) -o libvte.la $(OBJ:.o=.lo) ../mlterm/*.lo \
++libvte-mlterm.la: $(OBJ)
++	$(LIBTOOL_LINK) -o libvte-mlterm.la $(OBJ:.o=.lo) ../mlterm/*.lo \
+ 	`echo ../xwindow/*.lo|sed 's/..\/xwindow\/main.lo//g' | \
+ 	sed 's/..\/xwindow\/x_term_manager.lo//g' | \
+ 	sed 's/..\/xwindow\/x_sb_screen.lo//g' | \
+@@ -43,10 +43,10 @@
+ 		-I$(top_builddir)/xwindow -I../mkf/include -I../kiklib/include -g -c $<
+ 
+ clean:
+-	rm -rf $(OBJ) $(OBJ:.o=.lo) libvte.la *.core .libs
++	rm -rf $(OBJ) $(OBJ:.o=.lo) libvte-mlterm.la *.core .libs
+ 
+ distclean: clean
+ 	rm -f Makefile
+ 
+ install:
+-	$(LIBTOOL_INSTALL) libvte.la $(libdir)
++	$(LIBTOOL_INSTALL) libvte-mlterm.la $(libdir)
