@@ -4,12 +4,13 @@ lib/nautilus/extensions-2.0/libnautilus-python.la
 lib/nautilus/extensions-2.0/libnautilus-python.so
 libdata/pkgconfig/nautilus-python.pc
 %%DOCSDIR%%/README
-%%DOCSDIR%%/documentation.py
 %%DOCSDIR%%/examples/background-image.py
 %%DOCSDIR%%/examples/block-size-column.py
+%%DOCSDIR%%/examples/location-widget-provider.py
 %%DOCSDIR%%/examples/md5sum-property-page.py
 %%DOCSDIR%%/examples/open-terminal.py
 %%DOCSDIR%%/examples/submenu.py
+%%DOCSDIR%%/examples/update-file-info-async.py
 @dirrm %%DOCSDIR%%/examples
 @dirrm %%DOCSDIR%%
 @dirrm lib/nautilus-python

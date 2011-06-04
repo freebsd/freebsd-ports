@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	nautilus
-PORTVERSION=	0.6.1
-PORTREVISION=	2
+PORTVERSION=	0.7.2
 CATEGORIES=	x11-fm gnome python
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/nautilus-python/${PORTVERSION:R}
@@ -18,14 +17,16 @@ DISTNAME=	nautilus-python-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python nautilus bindings
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack pygnome2 eel2 nautilus2
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags gnome-vfs-2.0`" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		LIBS="`pkg-config --libs gnome-vfs-2.0`"
+USE_GNOME=	gnomeprefix gnomehack pygnome2 nautilus2
+MAKE_JOBS_SAFE=	yes
+CONFIGURE_ENV=	PYTHON_VERSION="${PYTHON_VER}"
 
 DOCSDIR=	${PREFIX}/share/doc/nautilus-python
 
