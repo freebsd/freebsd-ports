@@ -23,19 +23,28 @@ USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack glib20 ltverhack
-CONFIGURE_ARGS=	--disable-gtk-doc
+CONFIGURE_ARGS=	--disable-gtk-doc --enable-debug=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-Wl,-Bsymbolic -L${LOCALBASE}/lib"
 
-OPTIONS=	GNUTLS "Enable SSL (via GnuTLS) support" on
+OPTIONS=	GNUTLS "Enable SSL (via GnuTLS) support" on \
+		OPENSSL "Enable SSL (via OpenSSL) support" off
 
 .include <bsd.port.pre.mk>
 
-.if !defined(WITHOUT_GNUTLS)
-LIB_DEPENDS+=		gnutls.40:${PORTSDIR}/security/gnutls
-RUN_DEPENDS+=		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
-.else
-CONFIGURE_ARGS+=	--without-ssl
+.if defined(WITH_GNUTLS)
+LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
+RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+.endif
+
+.if defined(WITH_OPENSSL)
+USE_OPENSSL=	yes
+CONFIGURE_ARGS+=--with-ssl=openssl
+RUN_DEPENDS+=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
+.endif
+
+.if !defined(WITH_GNUTLS) && !defined(WITH_OPENSSL)
+CONFIGURE_ARGS+=--without-ssl
 .endif
 
 post-patch:
