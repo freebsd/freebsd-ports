@@ -9,7 +9,8 @@ PORTNAME=	ecartis
 PORTVERSION=	1.0.0.s20060813
 PORTEPOCH=	1
 CATEGORIES=	mail
-MASTER_SITES=	ftp://ftp.ecartis.org/pub/ecartis/snapshots/tar/
+MASTER_SITES=	http://conducive.net/tarballs/ \
+		http://rodrigo.osorio.free.fr/freebsd/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.s/-snap/}
 
 MAINTAINER=	jtrigg@spamcop.net
@@ -17,7 +18,7 @@ COMMENT=	The Ecartis Listserver \ Mailing List Manager
 
 USE_GMAKE=	yes
 
-NO_PACKAGE=	"Requires ecartis uid"
+NO_PACKAGE=	Requires ecartis uid
 IS_INTERACTIVE=	"Stops to ask to create ecartis user/group"
 WRKSRC=		${WRKDIR}/ecartis-1.0.0/src
 
