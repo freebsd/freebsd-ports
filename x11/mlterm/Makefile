@@ -7,6 +7,7 @@
 
 PORTNAME=	mlterm
 PORTVERSION=	3.0.4
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/01release/${PORTNAME}-${PORTVERSION}
 
@@ -16,7 +17,7 @@ COMMENT=	Multilingual X11 terminal emulator
 LIB_DEPENDS=	Xft.2:${PORTSDIR}/x11-fonts/libXft
 
 USE_XORG=	sm
-USE_GNOME=	gtk20 lthack
+USE_GNOME=	gtk20 lthack vte
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure kiklib/configure mkf/configure
 USE_PERL5_BUILD=yes
