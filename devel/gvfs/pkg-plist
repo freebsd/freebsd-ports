@@ -32,7 +32,7 @@ lib/libgvfscommon.so
 lib/libgvfscommon.so.0
 %%FUSE%%libexec/gvfs-fuse-daemon
 %%GPHOTO2%%libexec/gvfs-gphoto2-volume-monitor
-libexec/gvfs-hal-volume-monitor
+%%HAL%%libexec/gvfs-hal-volume-monitor
 libexec/gvfsd
 libexec/gvfsd-archive
 libexec/gvfsd-burn
@@ -53,7 +53,7 @@ libexec/gvfsd-trash
 share/dbus-1/services/gvfs-daemon.service
 share/dbus-1/services/gvfs-metadata.service
 %%GPHOTO2%%share/dbus-1/services/org.gtk.Private.GPhoto2VolumeMonitor.service
-share/dbus-1/services/org.gtk.Private.HalVolumeMonitor.service
+%%HAL%%share/dbus-1/services/org.gtk.Private.HalVolumeMonitor.service
 share/gvfs/mounts/archive.mount
 share/gvfs/mounts/burn.mount
 %%CDDA%%share/gvfs/mounts/cdda.mount
@@ -71,7 +71,7 @@ share/gvfs/mounts/sftp.mount
 %%SMB%%share/gvfs/mounts/smb.mount
 share/gvfs/mounts/trash.mount
 %%GPHOTO2%%share/gvfs/remote-volume-monitors/gphoto2.monitor
-share/gvfs/remote-volume-monitors/hal.monitor
+%%HAL%%share/gvfs/remote-volume-monitors/hal.monitor
 share/locale/af/LC_MESSAGES/gvfs.mo
 share/locale/ar/LC_MESSAGES/gvfs.mo
 share/locale/as/LC_MESSAGES/gvfs.mo
