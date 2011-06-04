@@ -96,7 +96,7 @@ CONFIGURE_ARGS+=	--disable-pcre
 LIB_DEPENDS+=		dbi.1:${PORTSDIR}/databases/libdbi
 CONFIGURE_ENV+=		LIBDBI_LIBS="-ldbi"
 CONFIGURE_ARGS+=	--enable-sql
-PLIST_FILES=		lib/syslog-ng/libafsql.la lib/syslog-ng/libafsql.so
+PLIST_FILES+=		lib/syslog-ng/libafsql.la lib/syslog-ng/libafsql.so
 .else
 CONFIGURE_ARGS+=	--disable-sql
 .endif
