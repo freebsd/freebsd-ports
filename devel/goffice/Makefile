@@ -22,15 +22,21 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack intlhack libgsf gconf2 \
-		ltverhack
+USE_GNOME=	gnomeprefix gnomehack intlhack gtk20 libgsf ltverhack
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-
+CPPFLAGS=	"-I${LOCALBASE}/include"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 PLIST_SUB=	VERSION=${PORTVERSION} \
 		SHORT_VER=0.8
+
+MAKE_JOBS_SAFE=	yes
+
+.if !defined(WITHOUT_GCONF)
+USE_GNOME+=	gconf2
+.else
+CONFIGURE_ARGS+=--with-config-backend=keyfile
+.endif
 
 .include <bsd.port.mk>
