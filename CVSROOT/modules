@@ -2460,6 +2460,7 @@ dmg2img                         ports/sysutils/dmg2img
 dmidecode                       ports/sysutils/dmidecode
 dmitry                          ports/security/dmitry
 dmjava                          ports/games/dmjava
+dmtx-utils                      ports/graphics/dmtx-utils
 dmucs                           ports/devel/dmucs
 dmxproto                        ports/x11/dmxproto
 dna-qc                          ports/biology/dna-qc
@@ -3244,6 +3245,7 @@ exhaust-ma                      ports/games/exhaust-ma
 exif                            ports/graphics/exif
 exifprobe                       ports/graphics/exifprobe
 exiftags                        ports/graphics/exiftags
+exiftran                        ports/graphics/exiftran
 exilog                          ports/mail/exilog
 exim                            ports/mail/exim
 exim-doc-html                   ports/mail/exim-doc-html
@@ -7201,6 +7203,7 @@ kmerlin                         ports/net-im/kmerlin
 kmess                           ports/net-im/kmess
 kmess-kde4                      ports/net-im/kmess-kde4
 kmfl-european-latin             ports/textproc/kmfl-european-latin
+kmfl-khmer                      ports/textproc/kmfl-khmer
 kmfl-sil-ezra                   ports/textproc/kmfl-sil-ezra
 kmfl-sil-galatia                ports/textproc/kmfl-sil-galatia
 kmfl-sil-panafrican-latin       ports/textproc/kmfl-sil-panafrican-latin
@@ -8057,7 +8060,6 @@ libntlm                         ports/security/libntlm
 libnxml                         ports/textproc/libnxml
 libnxt                          ports/devel/libnxt
 liboauth                        ports/net/liboauth
-libobjc2                        ports/lang/libobjc2
 libodbc++                       ports/databases/libodbc++
 libofa                          ports/audio/libofa
 libofx                          ports/finance/libofx
@@ -10754,6 +10756,7 @@ p5-AnyEvent-Subprocess          ports/devel/p5-AnyEvent-Subprocess
 p5-AnyEvent-Twitter             ports/net/p5-AnyEvent-Twitter
 p5-AnyEvent-Twitter-Stream      ports/net/p5-AnyEvent-Twitter-Stream
 p5-AnyEvent-XMPP                ports/net-im/p5-AnyEvent-XMPP
+p5-AnyMQ                        ports/devel/p5-AnyMQ
 p5-Apache-ASP                   ports/www/p5-Apache-ASP
 p5-Apache-AddHostPath           ports/www/p5-Apache-AddHostPath
 p5-Apache-Admin-Config          ports/www/p5-Apache-Admin-Config
@@ -13158,6 +13161,7 @@ p5-MouseX-ConfigFromFile        ports/devel/p5-MouseX-ConfigFromFile
 p5-MouseX-Getopt                ports/devel/p5-MouseX-Getopt
 p5-MouseX-NativeTraits          ports/devel/p5-MouseX-NativeTraits
 p5-MouseX-StrictConstructor     ports/devel/p5-MouseX-StrictConstructor
+p5-MouseX-Traits                ports/devel/p5-MouseX-Traits
 p5-MouseX-Types                 ports/devel/p5-MouseX-Types
 p5-MouseX-Types-Path-Class      ports/devel/p5-MouseX-Types-Path-Class
 p5-Mozilla-CA                   ports/www/p5-Mozilla-CA
@@ -14966,6 +14970,7 @@ p5-anyevent-subprocess          ports/devel/p5-AnyEvent-Subprocess
 p5-anyevent-twitter             ports/net/p5-AnyEvent-Twitter
 p5-anyevent-twitter-stream      ports/net/p5-AnyEvent-Twitter-Stream
 p5-anyevent-xmpp                ports/net-im/p5-AnyEvent-XMPP
+p5-anymq                        ports/devel/p5-AnyMQ
 p5-apache-addhostpath           ports/www/p5-Apache-AddHostPath
 p5-apache-admin-config          ports/www/p5-Apache-Admin-Config
 p5-apache-antispam              ports/www/p5-Apache-AntiSpam
@@ -17412,6 +17417,7 @@ p5-mousex-configfromfile        ports/devel/p5-MouseX-ConfigFromFile
 p5-mousex-getopt                ports/devel/p5-MouseX-Getopt
 p5-mousex-nativetraits          ports/devel/p5-MouseX-NativeTraits
 p5-mousex-strictconstructor     ports/devel/p5-MouseX-StrictConstructor
+p5-mousex-traits                ports/devel/p5-MouseX-Traits
 p5-mousex-types                 ports/devel/p5-MouseX-Types
 p5-mousex-types-path-class      ports/devel/p5-MouseX-Types-Path-Class
 p5-mozilla-ca                   ports/www/p5-Mozilla-CA
@@ -20865,7 +20871,6 @@ postfix-policyd-spf-perl        ports/mail/postfix-policyd-spf-perl
 postfix-policyd-spf-python      ports/mail/postfix-policyd-spf-python
 postfix-policyd-weight          ports/mail/postfix-policyd-weight
 postfix-postfwd                 ports/mail/postfix-postfwd
-postfix24                       ports/mail/postfix24
 postfix25                       ports/mail/postfix25
 postfix26                       ports/mail/postfix26
 postfix27                       ports/mail/postfix27
@@ -21425,6 +21430,7 @@ py-gozerbot                     ports/irc/py-gozerbot
 py-graph                        ports/graphics/py-graph
 py-graph-core                   ports/graphics/py-graph-core
 py-graph-dot                    ports/graphics/py-graph-dot
+py-graphtool                    ports/math/py-graphtool
 py-graphviz                     ports/graphics/py-graphviz
 py-graphy                       ports/graphics/py-graphy
 py-greenlet                     ports/devel/py-greenlet
@@ -21584,6 +21590,7 @@ py-numarray                     ports/math/py-numarray
 py-numeric                      ports/math/py-numeric
 py-numexpr                      ports/math/py-numexpr
 py-numpy                        ports/math/py-numpy
+py-nzmath                       ports/math/py-nzmath
 py-oauth                        ports/net/py-oauth
 py-oauth2                       ports/net/py-oauth2
 py-obspy-core                   ports/science/py-obspy-core
@@ -23656,7 +23663,6 @@ scim-bridge                     ports/textproc/scim-bridge
 scim-bridge-qt4                 ports/textproc/scim-bridge-qt4
 scim-input-pad                  ports/textproc/scim-input-pad
 scim-kmfl-imengine              ports/textproc/scim-kmfl-imengine
-scim-kmfl-khmer                 ports/textproc/scim-kmfl-khmer
 scim-m17n                       ports/textproc/scim-m17n
 scim-openvanilla                ports/textproc/scim-openvanilla
 scim-table-imengine             ports/textproc/scim-table-imengine
