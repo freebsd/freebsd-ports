@@ -17,10 +17,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME virtual file system
 
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus \
-    		hal.1:${PORTSDIR}/sysutils/hal \
 		soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome \
 		gnome-keyring:${PORTSDIR}/security/libgnome-keyring
-RUN_DEPENDS=	gnome-mount:${PORTSDIR}/sysutils/gnome-mount
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20 gnomehack gnomeprefix intlhack gconf2
@@ -34,8 +32,9 @@ CONFIGURE_ARGS=	--disable-obexftp
 OPTIONS=	FUSE "Enable fuse" off \
 		AVAHI "Enable AVAHI" on \
 		SAMBA "Enable Samba" on \
-		GPHOTO2 "Enable Gphoto 2 camera support" on \
-		CDDA "Enable CDDA" on
+		GPHOTO2 "Enable Gphoto 2 camera support (required HAL)" on \
+		CDDA "Enable CDDA (required HAL)" on \
+		HAL "Enable HAL" on
 
 .include <bsd.port.pre.mk>
 
@@ -56,7 +55,7 @@ CONFIGURE_ARGS+=	--disable-samba
 PLIST_SUB+=	SMB="@comment "
 .endif
 
-.if defined(WITH_CDDA)
+.if defined(WITH_CDDA) && !defined(WITHOUT_HAL)
 LIB_DEPENDS+=	cdio_paranoia.0:${PORTSDIR}/sysutils/libcdio
 PLIST_SUB+=	CDDA=""
 .else
@@ -64,7 +63,7 @@ CONFIGURE_ARGS+=	--disable-cdda
 PLIST_SUB+=	CDDA="@comment "
 .endif
 
-.if defined(WITH_GPHOTO2)
+.if defined(WITH_GPHOTO2) && !defined(WITHOUT_HAL)
 LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 PLIST_SUB+=	GPHOTO2=""
 .else
@@ -78,6 +77,15 @@ PLIST_SUB+=	AVAHI=""
 .else
 CONFIGURE_ARGS+=--disable-avahi
 PLIST_SUB+=	AVAHI="@comment "
+.endif
+
+.if defined(WITH_HAL)
+LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+RUN_DEPENDS+=	gnome-mount:${PORTSDIR}/sysutils/gnome-mount
+PLIST_SUB+=	HAL=""
+.else
+CONFIGURE_ARGS+=--disable-hal
+PLIST_SUB+=	HAL="@comment "
 .endif
 
 .include <bsd.port.post.mk>
