@@ -24,8 +24,9 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier \
-		libgsf_gnome pygtk2 desktopfileutils libgnomeui
+USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier pygtk2 \
+		desktopfileutils
+WANT_GNOME=	yes
 USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
@@ -37,8 +38,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}" \
 		python_prog=${PYTHON_VERSION}
 
-GCONF_SCHEMAS=	gnumeric-dialogs.schemas gnumeric-general.schemas \
-		gnumeric-plugins.schemas
+MAKE_JOBS_SAFE=	yes
+
 GLIB_SCHEMAS=	org.gnome.gnumeric.dialogs.gschema.xml \
 		org.gnome.gnumeric.gschema.xml \
 		org.gnome.gnumeric.plugin.gschema.xml
@@ -51,6 +52,14 @@ OPTIONS=	PERL "Enable Perl as extension language" on
 #GNOMEDB "Enable libgnomedb support" off
 
 .include <bsd.port.pre.mk>
+
+.if ${HAVE_GNOME:Mlibgnomeui}!=""
+CONFIGURE_ARGS+=--with-gnome=yes
+USE_GNOME+=	libgnomeui libgsf_gnome
+.else
+CONFIGURE_ARGS+=--with-gnome=no
+USE_GNOME+=	libgsf
+.endif
 
 .if defined(WITH_PERL)
 USE_PERL5=		yes
@@ -73,7 +82,8 @@ post-patch:
 	@${RM} -f ${WRKSRC}/GNOME_Gnumeric.server.in
 	@${REINPLACE_CMD} -e 's|gda-3.0 >= 3.1.1|gda-3.0 >= 3.0.1|g' \
 		-e 's|gnomedb-3.0 >= 3.0.1|gnomedb-3.0 >= 3.0.0|g' \
-		${WRKSRC}/configure
+		-e 's|gnumeric_with_gconf=true|gnumeric_with_gconf=false|g' \
+			${WRKSRC}/configure
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/gnumeric.desktop ${PREFIX}/share/applications
