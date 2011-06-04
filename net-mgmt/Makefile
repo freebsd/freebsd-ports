@@ -143,6 +143,7 @@
     SUBDIR += nagiostat
     SUBDIR += nagircbot
     SUBDIR += nagstamon
+    SUBDIR += nagtail
     SUBDIR += nagvis
     SUBDIR += nat
     SUBDIR += nbtscan
