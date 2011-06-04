@@ -6,6 +6,7 @@
 
 PORTNAME=	ccid
 PORTVERSION=	1.4.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	https://alioth.debian.org/frs/download.php/3579/
 
@@ -29,6 +30,8 @@ CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 
 PLIST_SUB=	VER=${PORTVERSION}
 
+MAN1=		RSA_SecurID_getpasswd.1
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 801000
@@ -42,5 +45,11 @@ post-patch:
 		${WRKSRC}/configure ${WRKSRC}/src/ccid_usb.c \
 		${WRKSRC}/src/ccid_usb.h \
 		${WRKSRC}/contrib/Kobil_mIDentity_switch/Kobil_mIDentity_switch.c
+
+post-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/contrib/RSA_SecurID/RSA_SecurID_getpasswd \
+		${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/contrib/RSA_SecurID/RSA_SecurID_getpasswd.1 \
+		${MANPREFIX}/man/man1
 
 .include <bsd.port.post.mk>
