@@ -107,7 +107,7 @@ CONFIGURE_ARGS+=        --disable-linux-caps
 
 post-patch:
 	@${REINPLACE_CMD} -e 's:libnet-config:libnet115-config:g' ${WRKSRC}/configure
-	@${MV} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.dist
+	@${LN} ${WRKSRC}/scl/syslog-ng.conf ${WRKSRC}/scl/syslog-ng.conf.dist
 .if ${OSVERSION} >= 900007
 	@${REINPLACE_CMD} \
 		-e 's|utmp|utmpx|' -e 's|getutent|getutxent|' \
