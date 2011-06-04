@@ -1,0 +1,30 @@
+--- Makefile.in.orig	2011-03-01 22:25:33.000000000 -0800
++++ Makefile.in	2011-06-03 15:19:13.000000000 -0700
+@@ -476,24 +476,9 @@
+ 			CMakeLists.txt \
+ 			config/ac-macros/libevent_configure.m4
+ 
+-SUBDIRS = . include @docs_dirs@ @zlib_dir@ \
+-			@readline_topdir@ sql-common scripts \
+-			libservices \
+-			@sql_union_dirs@ storage \
+-			@sql_server@ @man_dirs@ tests \
+-			netware @libmysqld_dirs@ \
+-			mysql-test support-files sql-bench @tools_dirs@ \
+-			win
+-
+-DIST_SUBDIRS = . include Docs zlib \
+-			cmd-line-utils sql-common scripts \
+-			libservices \
+-			strings mysys dbug extra regex libmysql libmysql_r client unittest storage plugin \
+-			vio sql man tests \
+-			netware libmysqld \
+-			mysql-test support-files sql-bench server-tools \
+-			win \
+-			BUILD
++SUBDIRS = %%SUBDIRS%%
++
++DIST_SUBDIRS = %%SUBDIRS%%
+ 
+ DISTCLEANFILES = ac_available_languages_fragment
+ 

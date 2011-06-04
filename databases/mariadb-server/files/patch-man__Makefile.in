@@ -9,12 +9,3 @@
  man8_MANS = @man8_files@
  EXTRA_DIST = $(man1_MANS) $(man8_MANS)
  all: all-am
-@@ -676,7 +676,7 @@
- 
- install-info: install-info-am
- 
--install-man: install-man1 install-man8
-+install-man: install-man1
- 
- installcheck-am:
- 

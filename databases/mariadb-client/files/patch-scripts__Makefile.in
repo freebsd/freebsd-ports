@@ -1,0 +1,38 @@
+--- scripts/Makefile.in.orig	2011-03-01 22:25:08.000000000 -0800
++++ scripts/Makefile.in	2011-06-02 23:35:04.000000000 -0700
+@@ -477,21 +477,7 @@
+ BUILT_SOURCES = mysql_fix_privilege_tables.sql \
+ 		mysql_fix_privilege_tables_sql.c
+ 
+-bin_SCRIPTS = @server_scripts@ \
+-			msql2mysql \
+-			mysql_config \
+-			mysql_fix_privilege_tables \
+-			mysql_fix_extensions \
+-			mysql_setpermission \
+-			mysql_secure_installation \
+-			mysql_zap \
+-			mysqlaccess \
+-			mysqlbug \
+-			mysql_convert_table_format \
+-			mysql_find_rows \
+-			mysqlhotcopy \
+-			mysqldumpslow \
+-			mysqld_multi
++bin_SCRIPTS = mysql_config mysql_fix_privilege_tables mysqlbug
+ 
+ noinst_SCRIPTS = make_binary_distribution \
+ 			make_sharedlib_distribution \
+@@ -528,11 +514,7 @@
+ 			mysql_system_tables_fix.sql \
+ 			CMakeLists.txt
+ 
+-dist_pkgdata_DATA = fill_help_tables.sql \
+-			mysql_fix_privilege_tables.sql \
+-			mysql_system_tables.sql \
+-			mysql_system_tables_data.sql \
+-			mysql_test_data_timezone.sql
++dist_pkgdata_DATA = mysql_fix_privilege_tables.sql
+ 
+ CLEANFILES = @server_scripts@ \
+ 			make_binary_distribution \

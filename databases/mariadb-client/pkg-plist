@@ -1,41 +1,16 @@
-bin/msql2mysql
-bin/my_print_defaults
-bin/myisam_ftdump
-bin/myisamchk
-bin/myisamlog
-bin/myisampack
 bin/mysql
-bin/mysql_client_test
 bin/mysql_config
-bin/mysql_convert_table_format
-bin/mysql_find_rows
-bin/mysql_fix_extensions
 bin/mysql_fix_privilege_tables
-bin/mysql_secure_installation
-bin/mysql_setpermission
 bin/mysql_upgrade
-bin/mysql_waitpid
-bin/mysql_zap
-bin/mysqlaccess
 bin/mysqladmin
 bin/mysqlbinlog
 bin/mysqlbug
 bin/mysqlcheck
-bin/mysqld_multi
 bin/mysqldump
-bin/mysqldumpslow
-bin/mysqlhotcopy
 bin/mysqlimport
 bin/mysqlshow
 bin/mysqlslap
 bin/mysqltest
-bin/perror
-bin/replace
-bin/resolve_stack_dump
-bin/resolveip
-include/evutil.h
-include/event.h
-include/event-config.h
 include/mysql/client_plugin.h
 include/mysql/decimal.h
 include/mysql/errmsg.h
@@ -77,10 +52,6 @@ include/mysql/sslopt-case.h
 include/mysql/sslopt-longopts.h
 include/mysql/sslopt-vars.h
 include/mysql/typelib.h
-lib/mysql/libdbug.a
-lib/mysql/libheap.a
-lib/mysql/libmyisam.a
-lib/mysql/libmyisammrg.a
 lib/mysql/libmysqlclient.a
 lib/mysql/libmysqlclient.la
 lib/mysql/libmysqlclient.so
@@ -89,28 +60,8 @@ lib/mysql/libmysqlclient_r.a
 lib/mysql/libmysqlclient_r.la
 lib/mysql/libmysqlclient_r.so
 lib/mysql/libmysqlclient_r.so.16
-lib/mysql/libmysqlservices.a
-lib/mysql/libmystrings.a
-lib/mysql/libmysys.a
 share/aclocal/mysql.m4
-%%DATADIR%%/binary-configure
-%%DATADIR%%/config.huge.ini
-%%DATADIR%%/config.medium.ini
-%%DATADIR%%/config.small.ini
-%%DATADIR%%/fill_help_tables.sql
-%%DATADIR%%/my-huge.cnf
-%%DATADIR%%/my-innodb-heavy-4G.cnf
-%%DATADIR%%/my-large.cnf
-%%DATADIR%%/my-medium.cnf
-%%DATADIR%%/my-small.cnf
-%%DATADIR%%/mysql-log-rotate
-%%DATADIR%%/mysql.server
 %%DATADIR%%/mysql_fix_privilege_tables.sql
-%%DATADIR%%/mysql_system_tables.sql
-%%DATADIR%%/mysql_system_tables_data.sql
-%%DATADIR%%/mysql_test_data_timezone.sql
-%%DATADIR%%/mysqld_multi.server
-%%DATADIR%%/ndb-config-2-node.ini
-@dirrm %%DATADIR%%
-@dirrm lib/mysql
-@dirrm include/mysql
+@dirrmtry %%DATADIR%%
+@dirrmtry include/mysql
+@dirrmtry lib/mysql
