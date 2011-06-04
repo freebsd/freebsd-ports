@@ -20,7 +20,8 @@ BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/cups.so:${PORTSDIR}/print/py-cups \
 		xmlproc_parse:${PORTSDIR}/textproc/py-xml \
 		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
 		xmlto:${PORTSDIR}/textproc/xmlto \
-		desktop-file-install:${PORTSDIR}/devel/desktop-file-utils
+		desktop-file-install:${PORTSDIR}/devel/desktop-file-utils \
+		${LOCALBASE}/share/xml/docbook/4.1.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-sk
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cups.so:${PORTSDIR}/print/py-cups \
 		${LOCALBASE}/libdata/pkgconfig/notify-python.pc:${PORTSDIR}/devel/py-notify \
 		xmlproc_parse:${PORTSDIR}/textproc/py-xml \
