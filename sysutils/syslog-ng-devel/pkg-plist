@@ -82,8 +82,6 @@ lib/syslog-ng/libafprog.la
 lib/syslog-ng/libafprog.so
 lib/syslog-ng/libafsocket-notls.la
 lib/syslog-ng/libafsocket-notls.so
-lib/syslog-ng/libafsocket-tls.la
-lib/syslog-ng/libafsocket-tls.so
 lib/syslog-ng/libafsocket.so
 lib/syslog-ng/libafuser.la
 lib/syslog-ng/libafuser.so
@@ -104,8 +102,6 @@ lib/syslog-ng/libsyslog-ng-crypto.so
 lib/syslog-ng/libsyslog-ng-crypto.so.0
 lib/syslog-ng/libsyslogformat.la
 lib/syslog-ng/libsyslogformat.so
-lib/syslog-ng/libtfjson.la
-lib/syslog-ng/libtfjson.so
 share/include/scl/pacct/plugin.conf
 share/include/scl/syslogconf/README
 share/include/scl/syslogconf/convert-syslogconf.awk
