@@ -8,8 +8,7 @@
 PORTNAME=	nspr
 DISTVERSION=	4.8.7
 CATEGORIES=	devel
-#MASTER_SITES=	LOCAL/ahze
-MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITES=	MOZILLA
 MASTER_SITE_SUBDIR=	nspr/releases/v${PORTVERSION}/src
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -34,11 +33,6 @@ LIBS=		libnspr4.so.1 libplc4.so.1 libplds4.so.1
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,-lpthread,${PTHREAD_LIBS},g ; s,echo aout,echo elf,g' ${WRKSRC}/${CONFIGURE_SCRIPT}
-.if ${OSVERSION} < 601104
-	@${REINPLACE_CMD} -e 's|pthread_cond_wait|_pthread_cond_wait|g' \
-	    	${WRKSRC}/../pr/src/md/unix/pthreads_user.c \
-		${WRKSRC}/../pr/src/pthreads/ptsynch.c
-.endif
 
 do-install:
 	${MKDIR} ${PREFIX}/include/nspr
@@ -62,7 +56,7 @@ do-install:
 .endfor
 
 prtests:
-	env PTHREAD_LIBS="${PTHREAD_LIBS}" ${GMAKE} -C ${WRKSRC}/pr/tests
+	${SETENV} PTHREAD_LIBS="${PTHREAD_LIBS}" ${GMAKE} -C ${WRKSRC}/pr/tests
 	${LN} -sf libmy.so.1 ${WRKSRC}/pr/tests/dll/libmy.so
 	cd ${WRKSRC}/pr/tests && ../../../pr/tests/runtests.sh
 
