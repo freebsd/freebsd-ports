@@ -26,19 +26,18 @@ LIB_DEPENDS=	gweather.1:${PORTSDIR}/net/libgweather \
 
 USE_GETTEXT=	yes
 USE_XORG=	ice sm x11 xau xrandr
+USE_PYTHON=	yes
 INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop libwnck gnomemenus \
 		gnomedocutils ltverhack referencehack librsvg2
 WANT_GNOME=	yes
-GNOME_DESKTOP_VERSION=2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ARGS=	--disable-network-manager \
-		--enable-polkit
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-network-manager
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS="-I${LOCALBASE}/include"
 
 MAN1=		gnome-panel.1
 GCONF_SCHEMAS=	clock.schemas fish.schemas \
@@ -80,6 +79,8 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|xsltproc -o| xsltproc --nonet -o|g' \
 		${WRKSRC}/help/clock/Makefile.in \
 		${WRKSRC}/help/fish/Makefile.in
+	@${REINPLACE_CMD} -e 's|python.* python2\.0|${PYTHON_VERSION}|g' \
+		${WRKSRC}/configure
 
 post-install:
 	@${MKDIR} ${PREFIX}/lib/gnome-panel/modules
