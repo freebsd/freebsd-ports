@@ -1,5 +1,5 @@
---- src/zmu.cpp.orig	2009-05-08 13:17:10.000000000 +0400
-+++ src/zmu.cpp	2011-04-12 15:41:02.696305284 +0400
+--- src/zmu.cpp.orig	2011-02-16 00:59:06.000000000 +0300
++++ src/zmu.cpp	2011-05-05 18:31:35.038175339 +0400
 @@ -18,7 +18,7 @@
  // 
  
@@ -9,7 +9,7 @@
  #include "zm.h"
  #include "zm_db.h"
  #include "zm_user.h"
-@@ -431,7 +431,7 @@ int main( int argc, char *argv[] )
+@@ -435,7 +435,7 @@ int main( int argc, char *argv[] )
  				{
  					char timestamp_str[64] = "None";
  					if ( timestamp.tv_sec )

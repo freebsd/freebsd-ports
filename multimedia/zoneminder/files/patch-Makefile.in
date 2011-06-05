@@ -1,6 +1,6 @@
---- Makefile.in.orig	2009-06-24 14:22:38.000000000 +0400
-+++ Makefile.in	2011-04-12 15:41:02.584304485 +0400
-@@ -213,7 +213,7 @@ AUTOMAKE_OPTIONS = gnu
+--- Makefile.in.orig	2011-04-27 18:25:46.000000000 +0400
++++ Makefile.in	2011-05-05 17:28:47.671178104 +0400
+@@ -275,7 +275,7 @@ AUTOMAKE_OPTIONS = gnu
  webuser = @WEB_USER@
  webgroup = @WEB_GROUP@
  sysconf_DATA = \
@@ -9,12 +9,12 @@
  
  SUBDIRS = \
  	src \
-@@ -278,7 +278,7 @@ $(srcdir)/config.h.in:  $(am__configure_
+@@ -343,7 +343,7 @@ $(srcdir)/config.h.in:  $(am__configure_
  
  distclean-hdr:
  	-rm -f config.h stamp-h1
 -zm.conf: $(top_builddir)/config.status $(srcdir)/zm.conf.in
 +zm.conf.sample: $(top_builddir)/config.status $(srcdir)/zm.conf.in
  	cd $(top_builddir) && $(SHELL) ./config.status $@
- scripts/ZoneMinder/lib/ZoneMinder/Base.pm: $(top_builddir)/config.status $(top_srcdir)/scripts/ZoneMinder/lib/ZoneMinder/Base.pm.in
+ zmconfgen.pl: $(top_builddir)/config.status $(srcdir)/zmconfgen.pl.in
  	cd $(top_builddir) && $(SHELL) ./config.status $@

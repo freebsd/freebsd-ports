@@ -1,12 +1,10 @@
---- src/Makefile.am.orig	2009-05-28 12:45:50.000000000 +0400
-+++ src/Makefile.am	2011-04-08 17:48:07.308804602 +0400
-@@ -1,7 +1,7 @@
+--- src/Makefile.am.orig	2011-01-22 01:09:46.000000000 +0300
++++ src/Makefile.am	2011-05-05 18:11:47.076749885 +0400
+@@ -1,6 +1,6 @@
  AUTOMAKE_OPTIONS = gnu
  
 -AM_CPPFLAGS = @MYSQL_CFLAGS@ @FFMPEG_CFLAGS@ -Wall -Wno-sign-compare -fno-inline
--AM_CXXFLAGS = -frepo
 +AM_CPPFLAGS = @MYSQL_CFLAGS@ @FFMPEG_CFLAGS@
-+AM_CXXFLAGS = 
+ #AM_CXXFLAGS = -frepo
  
  CLEANFILES = *.rpo
- 

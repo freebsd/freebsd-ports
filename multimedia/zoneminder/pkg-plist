@@ -7,6 +7,7 @@ bin/zmdc.pl
 bin/zmf
 bin/zmfilter.pl
 bin/zmfix
+bin/zmstreamer
 bin/zmpkg.pl
 bin/zmtrack.pl
 bin/zmtrigger.pl
@@ -23,6 +24,7 @@ lib/perl5/%%PERL_VERSION%%/%%PERL_ARCH%%/perllocal.pod
 %%SITE_PERL%%/ZoneMinder/Base.pm
 %%SITE_PERL%%/ZoneMinder/Config.pm
 %%SITE_PERL%%/ZoneMinder/ConfigAdmin.pm
+%%SITE_PERL%%/ZoneMinder/ConfigData.pm
 %%SITE_PERL%%/ZoneMinder/Control.pm
 %%SITE_PERL%%/ZoneMinder/Control/AxisV2.pm
 %%SITE_PERL%%/ZoneMinder/Control/Ncs370.pm
@@ -67,6 +69,7 @@ lib/perl5/%%PERL_VERSION%%/%%PERL_ARCH%%/perllocal.pod
 %%WWWDIR_REL%%/data/graphics/transparent.gif
 %%WWWDIR_REL%%/data/includes/actions.php
 %%WWWDIR_REL%%/data/includes/config.php
+%%WWWDIR_REL%%/data/includes/control_functions.php
 %%WWWDIR_REL%%/data/includes/database.php
 %%WWWDIR_REL%%/data/includes/functions.php
 %%WWWDIR_REL%%/data/includes/lang.php
@@ -80,6 +83,7 @@ lib/perl5/%%PERL_VERSION%%/%%PERL_ARCH%%/perllocal.pod
 %%WWWDIR_REL%%/data/lang/en_gb.php
 %%WWWDIR_REL%%/data/lang/en_us.php
 %%WWWDIR_REL%%/data/lang/es_ar.php
+%%WWWDIR_REL%%/data/lang/et_ee.php
 %%WWWDIR_REL%%/data/lang/fr_fr.php
 %%WWWDIR_REL%%/data/lang/he_il.php
 %%WWWDIR_REL%%/data/lang/hu_hu.php
@@ -234,6 +238,7 @@ lib/perl5/%%PERL_VERSION%%/%%PERL_ARCH%%/perllocal.pod
 %%WWWDIR_REL%%/data/skins/classic/views/zones.php
 %%WWWDIR_REL%%/data/skins/mobile/css/skin.css
 %%WWWDIR_REL%%/data/skins/mobile/includes/config.php
+%%WWWDIR_REL%%/data/skins/mobile/includes/control_functions.php
 %%WWWDIR_REL%%/data/skins/mobile/includes/functions.php
 %%WWWDIR_REL%%/data/skins/mobile/includes/init.php
 %%WWWDIR_REL%%/data/skins/mobile/skin.php
@@ -252,16 +257,31 @@ lib/perl5/%%PERL_VERSION%%/%%PERL_ARCH%%/perllocal.pod
 %%WWWDIR_REL%%/data/skins/mobile/views/state.php
 %%WWWDIR_REL%%/data/skins/mobile/views/video.php
 %%WWWDIR_REL%%/data/skins/mobile/views/watch.php
-%%WWWDIR_REL%%/data/tools/mootools/mootools-1.2-more-nc.js
-%%WWWDIR_REL%%/data/tools/mootools/mootools-1.2-more-yc.js
-%%WWWDIR_REL%%/data/tools/mootools/mootools-1.2.1-core-nc.js
-%%WWWDIR_REL%%/data/tools/mootools/mootools-1.2.1-core-yc.js
+%%WWWDIR_REL%%/data/skins/xml/includes/config.php
+%%WWWDIR_REL%%/data/skins/xml/includes/functions.php
+%%WWWDIR_REL%%/data/skins/xml/includes/init.php
+%%WWWDIR_REL%%/data/skins/xml/skin.php
+%%WWWDIR_REL%%/data/skins/xml/views/actions.php
+%%WWWDIR_REL%%/data/skins/xml/views/console.php
+%%WWWDIR_REL%%/data/skins/xml/views/none.php
+%%WWWDIR_REL%%/data/skins/xml/views/notfound.png
+%%WWWDIR_REL%%/data/tools/mootools/mootools-1.2.5-core-nc.js
+%%WWWDIR_REL%%/data/tools/mootools/mootools-1.2.5-core-yc.js
+%%WWWDIR_REL%%/data/tools/mootools/mootools-1.2.5.1-more-nc.js
+%%WWWDIR_REL%%/data/tools/mootools/mootools-1.2.5.1-more-yc.js
+%%WWWDIR_REL%%/data/tools/mootools/mootools-core.js
+%%WWWDIR_REL%%/data/tools/mootools/mootools-more.js
+%%WWWDIR_REL%%/data/views/file.php
+%%WWWDIR_REL%%/data/views/image.php
 @comment non-empty directory listing in revers order
 @dirrm %%WWWDIR_REL%%/data/views
 @dirrm %%WWWDIR_REL%%/data/tools/mootools
 @dirrm %%WWWDIR_REL%%/data/tools
 @dirrm %%WWWDIR_REL%%/data/temp
 @dirrm %%WWWDIR_REL%%/data/sounds
+@dirrm %%WWWDIR_REL%%/data/skins/xml/views
+@dirrm %%WWWDIR_REL%%/data/skins/xml/includes
+@dirrm %%WWWDIR_REL%%/data/skins/xml
 @dirrm %%WWWDIR_REL%%/data/skins/mobile/views/css
 @dirrm %%WWWDIR_REL%%/data/skins/mobile/views
 @dirrm %%WWWDIR_REL%%/data/skins/mobile/lang
