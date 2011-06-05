@@ -26,9 +26,11 @@ KMFL_ICONS_DIR=	share/kmfl/icons
 
 PLIST_FILES=	${KMFL_DIR}/khmer.kmn \
 		${KMFL_ICONS_DIR}/khmer.bmp
+PLIST_DIRS=	${KMFL_ICONS_DIR} \
+		${KMFL_DIR}
 
 do-install:
-	${MKDIR} ${DATADIR}/kmfl/icons
+	${MKDIR} ${LOCALBASE}/${KMFL_ICONS_DIR}
 	${INSTALL_DATA} ${WRKSRC}/*.kmn ${LOCALBASE}/${KMFL_DIR}
 	${INSTALL_DATA} ${WRKSRC}/*.bmp ${LOCALBASE}/${KMFL_ICONS_DIR}
 
