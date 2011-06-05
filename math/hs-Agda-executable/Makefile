@@ -12,6 +12,8 @@ CATEGORIES=	math haskell
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Command-line program for type-checking and compiling Agda programs
 
+BROKEN=		bad dependency object
+
 CABAL_SETUP=	Setup.hs
 USE_CABAL=	Agda==2.2.10
 
