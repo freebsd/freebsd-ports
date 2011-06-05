@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Software-License
-PORTVERSION=	0.103001
+PORTVERSION=	0.103002
 CATEGORIES=	misc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
@@ -39,6 +39,7 @@ MAN3=		Software::License.3 \
 		Software::License::Custom.3 \
 		Software::License::FreeBSD.3 \
 		Software::License::GFDL_1_2.3 \
+		Software::License::GFDL_1_3.3 \
 		Software::License::GPL_1.3 \
 		Software::License::GPL_2.3 \
 		Software::License::GPL_3.3 \
