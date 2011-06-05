@@ -7,6 +7,7 @@
 
 PORTNAME=	fvwm
 PORTVERSION=	2.7.0
+PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	ftp://ftp.fvwm.org/pub/fvwm/version-2/ \
 		http://www.fvwm.org/generated/icon_download/
@@ -24,7 +25,8 @@ NO_LATEST_LINK=	yes
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	X_CFLAGS=-I${LOCALBASE}/include
-CONFIGURE_ARGS=	--with-png-library=${LOCALBASE}/lib
+CONFIGURE_ARGS= --mandir=${MANPREFIX}/man
+USE_AUTOTOOLS=	autoconf
 USE_GMAKE=	yes
 USE_XORG=	xpm xft
 USE_BZIP2=	yes
@@ -35,10 +37,11 @@ OPTIONS=	ICONS		"Install default icon set" on \
 		STROKE		"Enable support for mouse gestures" off \
 		RPLAY		"Enable RPlay support in FvwmEvent" off \
 		SESSION_MGMT	"Enable Session Management support" on \
-		MULTIBYTE	"Enable multibyte character support" on \
 		PNG		"Build with PNG graphics support" on \
+		SVG		"Build with SVG graphics support using librsvg2" off \
 		BIDI		"Enable Asian bi-directional text support" off \
 		NLS		"Enable National Language Support" on \
+		IMLIB		"Enable imlib library (requires gtk12)" off \
 		GNOME		"Enable GNOME desktop support" off
 
 .include <bsd.port.pre.mk>
@@ -53,46 +56,55 @@ CONFIGURE_ARGS+=	--disable-iconv
 .else
 USE_ICONV=		yes
 CONFIGURE_ARGS+=	--with-iconv-library=${LOCALBASE}/lib \
-			--with-iconv-includes=${LOCALBASE}/include \
-			--mandir=${LOCALBASE}/man
+			--with-iconv-includes=${LOCALBASE}/include
 .endif
 
 .if defined(WITH_STROKE)
 LIB_DEPENDS+=	stroke.0:${PORTSDIR}/devel/libstroke
-CONFIGURE_ARGS+=	--with-stroke --with-stroke-library=${LOCALBASE}/lib \
+CONFIGURE_ARGS+=	--with-stroke-library=${LOCALBASE}/lib \
 			--with-stroke-includes=${LOCALBASE}/include
+.else
+CONFIGURE_ARGS+=	--without-stroke-library
 .endif
 
 .if defined(WITH_RPLAY)
 LIB_DEPENDS+=	rplay.1:${PORTSDIR}/audio/rplay
-CONFIGURE_ARGS+=	--with-rplay --with-rplay-library=${LOCALBASE}/lib \
+CONFIGURE_ARGS+=	--with-rplay-library=${LOCALBASE}/lib \
 			--with-rplay-includes=${LOCALBASE}/include
+.else
+CONFIGURE_ARGS+=	--without-rplay-library
 .endif
 
 .if defined(WITHOUT_SESSION_MGMT)
 CONFIGURE_ARGS+=	--disable-sm
 .endif
 
-.if defined(WITH_MULTIBYTE)
-CONFIGURE_ARGS+=	--enable-multibyte
-.endif
-
 .if !defined(WITHOUT_PNG)
 LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
-CONFIGURE_ARGS+=	--with-png --with-png-includes=${LOCALBASE}/include \
+CONFIGURE_ARGS+=	--with-png-includes=${LOCALBASE}/include \
 			--with-png-library=${LOCALBASE}/lib
+.else
+CONFIGURE_ARGS+=	--without-png-library
+.endif
+
+.if defined(WITH_SVG) && !defined(WITHOUT_SVG)
+USE_GNOME+=	librsvg2
+.else
+CONFIGURE_ARGS+=	--disable-rsvg
 .endif
 
 .if defined(WITHOUT_BIDI)
 CONFIGURE_ARGS+=	--disable-bidi
 .else
 LIB_DEPENDS+=	fribidi.3:${PORTSDIR}/converters/fribidi
+CONFIGURE_ARGS+=	--enable-bidi \
+			--with-bidi-bindir=${LOCALBASE}/bin
 .endif
 
 PLIST_SUB+=	FVWM_VERSION="${PORTVERSION}"
 
-.if ${HAVE_GNOME:Mimlib}!=""
-USE_GNOME=	imlib
+.if defined(WITH_IMLIB) && !defined(WITHOUT_GTK)
+USE_GNOME+=	imlib
 CONFIGURE_ARGS+=	--enable-gtktest --enable-imlibtest
 PLIST_SUB+=	GTK=""
 MAN1+=		FvwmGtk.1
@@ -105,7 +117,7 @@ WITHOUT_GNOME=	true
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-CONFIGURE_ARGS+=	--with-intl --with-intl-library=${LOCALBASE}/lib \
+CONFIGURE_ARGS+=	--with-intl-library=${LOCALBASE}/lib \
 			--with-intl-includes=${LOCALBASE}/include
 PLIST_SUB+=	NLS=""
 .else
@@ -114,9 +126,10 @@ PLIST_SUB+=	NLS="@comment not installed: "
 .endif
 
 .if defined(WITHOUT_GNOME)
-CONFIGURE_ARGS+=	--without-gnome --disable-gnome-hints
+CONFIGURE_ARGS+=	--without-gnome
 .else
-CONFIGURE_ARGS+=	--with-gnome --enable-gnome-hints
+USE_GNOME+=gnomelibs
+CONFIGURE_ARGS+=	--with-gnome
 .endif
 
 MAN1+=	FvwmAnimate.1 FvwmAuto.1 FvwmBacker.1 FvwmBanner.1 FvwmButtons.1 \
