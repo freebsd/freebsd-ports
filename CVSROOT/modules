@@ -9849,6 +9849,7 @@ nagiosql                        ports/net-mgmt/nagiosql
 nagiostat                       ports/net-mgmt/nagiostat
 nagircbot                       ports/net-mgmt/nagircbot
 nagstamon                       ports/net-mgmt/nagstamon
+nagtail                         ports/net-mgmt/nagtail
 nagvis                          ports/net-mgmt/nagvis
 naim                            ports/net-im/naim
 najitool                        ports/misc/najitool
