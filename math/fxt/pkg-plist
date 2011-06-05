@@ -260,6 +260,7 @@ include/fxt/comb/perm-star-swaps.h
 include/fxt/comb/perm-star.h
 include/fxt/comb/perm-trotter-lg.h
 include/fxt/comb/perm-trotter.h
+include/fxt/comb/perm-pref.h
 include/fxt/comb/rgs-fincr.h
 include/fxt/comb/rgs-kincr.h
 include/fxt/comb/rgs-maxincr.h
@@ -361,11 +362,6 @@ include/fxt/mod/mtypes.h
 include/fxt/mod/numtheory.h
 include/fxt/mod/primes.h
 include/fxt/mod/testnum.h
-include/fxt/mult-all.h
-include/fxt/mult/diskaux.h
-include/fxt/mult/diskconvolution.h
-include/fxt/mult/fxtmult.h
-include/fxt/mult/workspace.h
 include/fxt/ntt-all.h
 include/fxt/ntt/ntt.h
 include/fxt/perm-all.h
@@ -914,6 +910,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-trotter-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm2fact-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm2fact-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-pref-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-pref-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rll-rec-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rll-rec2-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/rll-rec-demo.cc
