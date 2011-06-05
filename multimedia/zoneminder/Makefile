@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	zoneminder
-PORTVERSION=	1.24.2
-PORTREVISION=	3
+PORTVERSION=	1.24.4
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www2.zoneminder.com/downloads/
+MASTER_SITES=	http://www2.zoneminder.com/downloads/ \
+		http://www.zoneminder.com/downloads/
 DISTNAME=	ZoneMinder-${PORTVERSION}
 
 MAINTAINER=	bsam@FreeBSD.org
@@ -89,7 +89,8 @@ MAN3=		ZoneMinder::Trigger::Connection.3 \
 		ZoneMinder::General.3 \
 		ZoneMinder::Trigger::Channel::Handle.3 \
 		ZoneMinder::Debug.3 \
-		ZoneMinder::ConfigAdmin.3
+		ZoneMinder::ConfigAdmin.3 \
+		ZoneMinder::ConfigData.3
 
 post-configure:
 	${MV} ${WRKSRC}/zm.conf ${WRKSRC}/zm.conf.sample

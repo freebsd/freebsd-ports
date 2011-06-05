@@ -1,6 +1,6 @@
---- src/zm_monitor.cpp.orig	2009-06-24 14:22:23.000000000 +0400
-+++ src/zm_monitor.cpp	2011-04-08 17:48:07.389805307 +0400
-@@ -43,6 +43,7 @@
+--- src/zm_monitor.cpp.orig	2011-03-02 15:23:10.000000000 +0300
++++ src/zm_monitor.cpp	2011-05-05 18:31:35.028176099 +0400
+@@ -45,6 +45,7 @@
  #include <sys/mman.h>
  #include <fcntl.h>
  #else // ZM_MEM_MAPPED
