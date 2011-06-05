@@ -76,7 +76,7 @@ CUPS_SUFFIX=	-client
 CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
 .else
-PORTREVISION=	4
+PORTREVISION=	5
 CUPS_SUFFIX=	-base
 CONFLICTS+=	cupsddk-*
 .endif
@@ -126,7 +126,7 @@ CONFIGURE_ARGS+=	--with-printcap=${PREFIX}/etc/printcap
 .if !defined(WITHOUT_GNUTLS)
 CONFIGURE_ARGS+=	--disable-openssl --enable-gnutls
 CONFIGURE_ENV+=		PKGCONFIG="${LOCALBASE}/bin/pkg-config"
-LIB_DEPENDS+=		gnutls-openssl.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls-openssl.27:${PORTSDIR}/security/gnutls
 BUILD_DEPENDS+=		pkg-config:${PORTSDIR}/devel/pkg-config
 .else
 CONFIGURE_ARGS+=	--disable-gnutls --enable-openssl

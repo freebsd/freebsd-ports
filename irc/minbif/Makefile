@@ -7,6 +7,7 @@
 
 PORTNAME=	minbif
 PORTVERSION=	1.0.3
+PORTREVISION=	1
 CATEGORIES=	irc net-im
 MASTER_SITES=	http://minbif.im/attachments/download/50/
 
@@ -77,7 +78,7 @@ CMAKE_ARGS+=	-DENABLE_PLUGIN:BOOL=OFF
 .endif
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
 CMAKE_ARGS+=	-DENABLE_GNUTLS:BOOL=ON
 .endif
 

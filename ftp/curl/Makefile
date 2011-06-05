@@ -7,7 +7,7 @@
 
 PORTNAME=	curl
 PORTVERSION=	7.21.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	ftp ipv6 www
 MASTER_SITES=	http://curl.haxx.se/download/ \
 		ftp://ftp.sunet.se/pub/www/utilities/curl/ \

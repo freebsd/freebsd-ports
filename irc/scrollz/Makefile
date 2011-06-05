@@ -7,7 +7,7 @@
 
 PORTNAME=	scrollz
 PORTVERSION=	2.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc ipv6
 MASTER_SITES=	http://scrollz.lysergide.net/ScrollZ/source/ \
 		http://www.xs4all.nl/~netraam/ScrollZ/source/

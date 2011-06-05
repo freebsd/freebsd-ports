@@ -8,7 +8,7 @@
 
 PORTNAME=	libsoup
 PORTVERSION=	2.32.2
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -46,7 +46,7 @@ CONFIGURE_ARGS+=--without-gnome
 .endif
 
 .if !defined(WITHOUT_SSL)
-LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=--disable-ssl
 .endif

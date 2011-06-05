@@ -6,7 +6,7 @@
 
 PORTNAME=	prelude-manager
 PORTVERSION=	0.9.14.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security
 MASTER_SITES=   http://www.prelude-ids.com/download/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=     ${PORTNAME} ${PORTNAME}/old
@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prelude Network Intrusion Detection System central logging point
 
 LIB_DEPENDS+=	prelude.20:${PORTSDIR}/security/libprelude \
-		gnutls.40:${PORTSDIR}/security/gnutls
+		gnutls.47:${PORTSDIR}/security/gnutls
 
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

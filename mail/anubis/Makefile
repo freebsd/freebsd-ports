@@ -7,7 +7,7 @@
 
 PORTNAME=	anubis
 PORTVERSION=	4.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -76,7 +76,7 @@ LIB_DEPENDS+=	gpgme.18:${PORTSDIR}/security/gpgme
 .if defined(WITHOUT_GNUTLS)
 CONFIGURE_ARGS+=--without-gnutls
 .else
-LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
 .endif
 
 .if defined(WITH_GDBM)

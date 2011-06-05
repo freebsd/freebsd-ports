@@ -7,6 +7,7 @@
 
 PORTNAME=	inspircd
 PORTVERSION=	2.0.2
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	SF/${PORTNAME}/InspIRCd-2.0/${PORTVERSION}
 DISTNAME=	InspIRCd-${PORTVERSION}
@@ -90,7 +91,7 @@ PLIST_SUB+=	SQLITE3="@comment "
 .endif
 
 .if defined(WITH_GNUTLS) && !defined(WITHOUT_GNUTLS)
-LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--enable-gnutls
 PLIST_SUB+=	GNUTLS=""
 .else

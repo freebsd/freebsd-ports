@@ -7,6 +7,7 @@
 
 PORTNAME=	claws-mail
 PORTVERSION=	3.7.9
+PORTREVISION=	1
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	SF/sylpheed-claws/Claws%20Mail/${PORTVERSION}
 
@@ -19,7 +20,7 @@ LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan \
 		fontconfig:${PORTSDIR}/x11-fonts/fontconfig \
 		freetype:${PORTSDIR}/print/freetype2 \
 		png:${PORTSDIR}/graphics/png \
-		gnutls.40:${PORTSDIR}/security/gnutls \
+		gnutls.47:${PORTSDIR}/security/gnutls \
 		execinfo:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 

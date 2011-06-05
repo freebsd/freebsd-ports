@@ -7,7 +7,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	1.1.9
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -353,7 +353,7 @@ COFIGURE_ARGS+=--disable-gnomevfs
 .if defined(WITHOUT_GNUTLS)
 CONFIGURE_ARGS+=--disable-gnutls --enable-libgcrypt
 .else
-LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=--enable-gnutls --enable-libgcrypt
 .endif
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	jabber
 PORTVERSION=	0.2
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	1
 CATEGORIES=	net-im
 MASTER_SITES=	http://qutim.org/download/ \
@@ -45,7 +45,7 @@ OPTIONS=	GNUTLS "Use GNUTLS (required for GMail)" on
 
 .if !defined(WITHOUT_GNUTLS)
 CMAKE_ARGS+=	-DGNUTLS=1
-LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
 .endif
 
 do-install:

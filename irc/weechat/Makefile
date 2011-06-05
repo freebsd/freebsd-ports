@@ -7,6 +7,7 @@
 
 PORTNAME=	weechat
 PORTVERSION=	0.3.4
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://weechat.org/files/src/
 
@@ -79,7 +80,7 @@ PLIST_SUB+=	RUBY="@comment "
 .endif
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
 .else
 CMAKE_ARGS+=	-DENABLE_GNUTLS=no
 .endif

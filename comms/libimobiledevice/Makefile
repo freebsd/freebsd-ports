@@ -6,6 +6,7 @@
 
 PORTNAME=	libimobiledevice
 PORTVERSION=	1.0.6
+PORTREVISION=	1
 CATEGORIES=	comms
 MASTER_SITES=	http://www.${PORTNAME}.org/downloads/
 
@@ -15,7 +16,7 @@ COMMENT=	A library to communicate with Apple iPhone/iPod Touch devices
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
-LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls \
+LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls \
 		tasn1.4:${PORTSDIR}/security/libtasn1 \
 		gcrypt.17:${PORTSDIR}/security/libgcrypt \
 		plist.1:${PORTSDIR}/devel/libplist \

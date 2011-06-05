@@ -7,6 +7,7 @@
 
 PORTNAME=	msmtp
 PORTVERSION=	1.4.24
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
@@ -32,7 +33,7 @@ OPTIONS=	GNUTLS "Adds GnuTLS support" off \
 .include       <bsd.port.options.mk>
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-ssl=gnutls
 .elif defined(WITH_OPENSSL)
 USE_OPENSSL=	yes
