@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	2.8.6
-PORTREVISION=	2
+PORTVERSION=	2.12.6.1
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		${MASTER_SITE_GNUPG}
@@ -23,7 +22,7 @@ CONFLICTS=	gnutls-devel-[0-9]*
 
 USE_BZIP2=	yes
 USE_ICONV=	yes
-USE_GNOME=	pkgconfig ltverhack
+USE_GNOME=	pkgconfig ltverhack gnomehack
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
@@ -31,7 +30,7 @@ USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -fPIC" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS+=	--disable-guile
+CONFIGURE_ARGS+=	--disable-guile --with-libgcrypt
 MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
@@ -64,18 +63,10 @@ USE_GETTEXT=		yes
 PLIST_SUB+=		NLS=""
 .endif
 
-.if defined(WITH_CAMELLIA)
-CONFIGURE_ARGS+=	--enable-camellia
-.endif
-
 .if !defined(NOPORTDOCS)
 PORTDOCS=		AUTHORS NEWS README THANKS
 .endif
 EXAMPLES=	doc/examples/*.c
-
-pre-configure:
-	@${REINPLACE_CMD} -e 's,(libdir)/pkgconfig,(prefix)/libdata/pkgconfig,' \
-		${WRKSRC}/lib/Makefile.in ${WRKSRC}/libextra/Makefile.in
 
 post-install:
 	@${MKDIR} ${EXAMPLESDIR}
