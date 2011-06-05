@@ -1,21 +1,28 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/GitGot/.packlist
+bin/got
 %%SITE_PERL%%/App/GitGot.pm
 %%SITE_PERL%%/App/GitGot/Command.pm
 %%SITE_PERL%%/App/GitGot/Command/add.pm
 %%SITE_PERL%%/App/GitGot/Command/chdir.pm
+%%SITE_PERL%%/App/GitGot/Command/clone.pm
 %%SITE_PERL%%/App/GitGot/Command/fork.pm
+%%SITE_PERL%%/App/GitGot/Command/gc.pm
 %%SITE_PERL%%/App/GitGot/Command/list.pm
+%%SITE_PERL%%/App/GitGot/Command/push.pm
 %%SITE_PERL%%/App/GitGot/Command/remove.pm
 %%SITE_PERL%%/App/GitGot/Command/status.pm
 %%SITE_PERL%%/App/GitGot/Command/update.pm
+%%SITE_PERL%%/App/GitGot/Command/update_status.pm
 %%SITE_PERL%%/App/GitGot/Command/version.pm
 %%SITE_PERL%%/App/GitGot/Outputter/light.pm
 %%SITE_PERL%%/App/GitGot/Outputter/dark.pm
 %%SITE_PERL%%/App/GitGot/Outputter.pm
-bin/got
-@dirrmtry %%SITE_PERL%%/App/GitGot/Outputter
-@dirrmtry %%SITE_PERL%%/App/GitGot/Command
-@dirrmtry %%SITE_PERL%%/App/GitGot
-@dirrmtry %%SITE_PERL%%/App
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/GitGot
+%%SITE_PERL%%/App/GitGot/Repo.pm
+%%SITE_PERL%%/App/GitGot/Repo/Git.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/App/GitGot/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/App/GitGot
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/App
+@dirrm %%SITE_PERL%%/App/GitGot/Repo
+@dirrm %%SITE_PERL%%/App/GitGot/Outputter
+@dirrm %%SITE_PERL%%/App/GitGot/Command
+@dirrm %%SITE_PERL%%/App/GitGot
+@dirrmtry %%SITE_PERL%%/App
