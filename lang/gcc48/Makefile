@@ -7,13 +7,11 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	4.7.0.20110521
+PORTVERSION=	4.7.0.20110604
 CATEGORIES=	lang java
 MASTER_SITES=	${MASTER_SITE_GCC}
 MASTER_SITE_SUBDIR=	snapshots/${VERSIONSTRING}
-DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-fortran-${VERSIONSTRING}${EXTRACT_SUFX} \
-		gcc-g++-${VERSIONSTRING}${EXTRACT_SUFX}
+DISTNAME=	gcc-${VERSIONSTRING}
 
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 4.7
@@ -24,7 +22,6 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 RUN_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 
 .if defined(MAINTAINER_MODE)
-DISTFILES+=	gcc-testsuite-${VERSIONSTRING}${EXTRACT_SUFX}
 BUILD_DEPENDS+=	runtest:${PORTSDIR}/misc/dejagnu
 .endif
 
@@ -64,6 +61,7 @@ LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--disable-nls \
+		--enable-languages=c,c++,fortran \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
 		--program-suffix=${SUFFIX} \
@@ -97,9 +95,9 @@ INFO+=		gcc${SUFFIX}/libquadmath
 .endif
 
 .if ! defined(WITHOUT_JAVA)
-DISTFILES+=	gcc-java-${VERSIONSTRING}${EXTRACT_SUFX}
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
+CONFIGURE_ARGS+=--enable-languages=c,c++,fortran,java
 MAN1+=		aot-compile${SUFFIX}.1 \
 		gappletviewer${SUFFIX}.1 \
 		gc-analyze${SUFFIX}.1 \
