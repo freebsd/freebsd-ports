@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	silktools
-PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTVERSION=	2.4.5
 CATEGORIES=	security net
 MASTER_SITES=	http://tools.netsa.cert.org/releases/ \
 		http://redundancy.redundancy.org/mirror/
@@ -16,7 +15,7 @@ DISTNAME=	silk-${PORTVERSION}
 MAINTAINER=	lx@FreeBSD.org
 COMMENT=	Tools for large-scale network capture analysis
 
-LIB_DEPENDS=	lzo:${PORTSDIR}/archivers/lzo \
+LIB_DEPENDS=	lzo2:${PORTSDIR}/archivers/lzo2 \
 		fixbuf:${PORTSDIR}/net/libfixbuf
 
 GNU_CONFIGURE=	yes
@@ -41,14 +40,15 @@ MAN1=	mapsid.1 num2dot.1 rwaddrcount.1 rwappend.1 \
 	rwidsquery.1 rwipfix2silk.1 rwp2yaf2silk.1 rwsilk2ipfix.1
 
 MAN3=	addrtype.3 ccfilter.3 flowrate.3 pmapfilter.3 pysilk.3 \
-		silkpython.3
+		silk-plugin.3 silkpython.3
 
 MAN5=	sensor.conf.5 silk.conf.5
 
 MAN7=	silk.7
 
 MAN8=	flowcap.8 rwflowappend.8 rwflowpack.8 rwguess.8 \
-		rwpackchecker.8 rwreceiver.8 rwsender.8
+		rwpackchecker.8 rwpollexec.8 rwreceiver.8 \
+		rwsender.8
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
