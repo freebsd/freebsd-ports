@@ -1,11 +1,5 @@
-%%WWWDIR%%/crossdomain.xml
-%%WWWDIR%%/index-asp.html
-%%WWWDIR%%/index-aspx.html
-%%WWWDIR%%/index-jsp.html
-%%WWWDIR%%/index-php.html
 %%WWWDIR%%/index.html
 %%WWWDIR%%/speedtest.swf
-%%WWWDIR%%/speedtest/latency.txt
 %%WWWDIR%%/speedtest/random1000x1000.jpg
 %%WWWDIR%%/speedtest/random1500x1500.jpg
 %%WWWDIR%%/speedtest/random2000x2000.jpg
@@ -17,10 +11,6 @@
 %%WWWDIR%%/speedtest/random500x500.jpg
 %%WWWDIR%%/speedtest/random750x750.jpg
 %%WWWDIR%%/speedtest/swfobject.js
-%%WWWDIR%%/speedtest/upload.asp
-%%WWWDIR%%/speedtest/upload.aspx
-%%WWWDIR%%/speedtest/upload.jsp
 %%WWWDIR%%/speedtest/upload.php
-%%WWWDIR%%/troubleshooting.txt
 @dirrm %%WWWDIR%%/speedtest
 @dirrm %%WWWDIR%%

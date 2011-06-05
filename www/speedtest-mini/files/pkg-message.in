@@ -1,16 +1,16 @@
 
 Speedtest Mini has been installed into:
 
-     %%PREFIX%%/%%WWWDIR%%
+     %%WWWDIR%%
 
 Please edit php.ini to suit your needs.
 
 To make speedtest available through your web site, I suggest
 that you add something like the following to httpd.conf:
 
-    Alias /speedtest/ "%%PREFIX%%/%%WWWDIR%%/"
+    Alias /speedtest/ "%%WWWDIR%%/"
 
-    <Directory "%%PREFIX%%/%%WWWDIR%%/">
+    <Directory "%%WWWDIR%%/">
 	Options none
 	DirectoryIndex index.html
 	AllowOverride All
