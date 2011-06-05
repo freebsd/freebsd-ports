@@ -8,9 +8,10 @@
 PORTNAME=	gnustep-base
 .if defined(WITH_GNUSTEP_DEVEL)
 PORTVERSION=	1.22.0
+PORTREvISION=	1
 .else
 PORTVERSION=	1.19.3
-PORTREVISION=	4
+PORTREVISION=	5
 .endif
 CATEGORIES=	lang devel gnustep
 MASTER_SITES=	${MASTER_SITE_GNUSTEP}
@@ -24,7 +25,7 @@ LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 LIB_DEPENDS+=	xslt.2:${PORTSDIR}/textproc/libxslt
 LIB_DEPENDS+=	gmp.10:${PORTSDIR}/math/gmp
 LIB_DEPENDS+=	dns_sd:${PORTSDIR}/net/mDNSResponder
-LIB_DEPENDS+=	gnutls-openssl.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls-openssl.27:${PORTSDIR}/security/gnutls
 BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 
 LICENSE_COMB=	multi

@@ -8,7 +8,7 @@
 
 PORTNAME=	gsasl
 PORTVERSION=	1.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,7 +18,7 @@ COMMENT=	GNU SASL Library
 
 LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn \
 		gcrypt.17:${PORTSDIR}/security/libgcrypt \
-		gnutls.40:${PORTSDIR}/security/gnutls \
+		gnutls.47:${PORTSDIR}/security/gnutls \
 		ntlm.0:${PORTSDIR}/security/libntlm
 
 USE_GNOME=	gnomehack gnometarget pkgconfig

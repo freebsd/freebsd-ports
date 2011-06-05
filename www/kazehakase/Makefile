@@ -8,7 +8,7 @@
 
 PORTNAME=	kazehakase
 PORTVERSION=	0.5.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}/43802
@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}/43802
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Kazehakase is a browser with gecko engine like Epiphany or Galeon
 
-LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls \
+LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls \
 		estraier.8:${PORTSDIR}/textproc/hyperestraier
 
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20

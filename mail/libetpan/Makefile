@@ -8,7 +8,7 @@
 
 PORTNAME=	libetpan
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
@@ -34,7 +34,7 @@ OPTIONS=	GNUTLS	"Enable gnuTLS support" off \
 		IPV6	"Enable ipv6 support." on
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--without-openssl --with-gnutls
 .else
 USE_OPENSSL=	yes

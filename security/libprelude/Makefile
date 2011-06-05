@@ -5,6 +5,7 @@
 
 PORTNAME=	libprelude
 PORTVERSION=	0.9.24.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.prelude-ids.com/download/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME} ${PORTNAME}/old
@@ -12,7 +13,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME} ${PORTNAME}/old
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework library for Prelude NIDS
 
-LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls
 
 OPTIONS=	PERL "Include Perl bindings" off \
 		PYTHON "Include Python bindings" off

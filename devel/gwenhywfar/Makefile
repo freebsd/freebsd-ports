@@ -7,6 +7,7 @@
 
 PORTNAME=	gwenhywfar
 PORTVERSION=	4.0.9
+PORTREVISION=	1
 CATEGORIES=	devel net security
 MASTER_SITES=	http://www2.aquamaniac.de/sites/download/
 DISTFILES=	download.php\?package=01\&release=60\&file=01\&dummy=${DISTNAME}${EXTRACT_SUFX}
@@ -14,7 +15,7 @@ DISTFILES=	download.php\?package=01\&release=60\&file=01\&dummy=${DISTNAME}${EXT
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Multi-platform helper library for networking and security applications
 
-LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes

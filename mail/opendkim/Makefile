@@ -7,6 +7,7 @@
 
 PORTNAME=	opendkim
 PORTVERSION=	2.3.2
+PORTREVISION=	1
 CATEGORIES=	mail security
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -52,8 +53,7 @@ WITHOUT_MILTER_LDFLAGS=	yes
 CONFIGURE_ARGS+=	--with-milter=${MILTERBASE}
 
 .if defined(WITH_GNUTLS)
-BROKEN=		WITH_GNUTLS option requires security/gnutls 2.12.0 or later
-LIB_DEPENDS+=	gnutls.44:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-gnutls=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--with-openssl=${OPENSSLBASE}

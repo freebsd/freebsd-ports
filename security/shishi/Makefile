@@ -8,7 +8,7 @@
 
 PORTNAME=	shishi
 PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	GNU
 
@@ -18,7 +18,7 @@ COMMENT=	A free implementation of the Kerberos 5 network security system
 LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn \
 		tasn1.4:${PORTSDIR}/security/libtasn1 \
 		gcrypt.17:${PORTSDIR}/security/libgcrypt \
-		gnutls.40:${PORTSDIR}/security/gnutls
+		gnutls.47:${PORTSDIR}/security/gnutls
 
 USE_AUTOTOOLS=	libtool
 USE_PERL5_BUILD=	yes

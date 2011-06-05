@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_gnutls
 PORTVERSION=	0.5.6
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	http://www.outoforder.cc/downloads/mod_gnutls/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 MAINTAINER=	fumifumi@abacustech.jp
 COMMENT=	mod_gnutls uses the GnuTLS library to provide SSL, and TLS encryption for Apache HTTPD
 
-LIB_DEPENDS=	gnutls.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool

@@ -6,7 +6,7 @@
 #
 PORTNAME?=		${SAMBA_PORTNAME}
 PORTVERSION?=		${SAMBA_VERSION}
-PORTREVISION?=		1
+PORTREVISION?=		2
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	samba4
@@ -140,7 +140,7 @@ CONFIGURE_ARGS+=	--without-pthreads
 .endif
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=		gnutls.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls.47:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--enable-gnutls
 .else
 CONFIGURE_ARGS+=	--disable-gnutls

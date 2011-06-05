@@ -7,7 +7,7 @@
 
 PORTNAME=	bitlbee-otr
 PORTVERSION=	1.2.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	irc
 MASTER_SITES=	http://fbsd.zlonet.ru/distfiles/ \
 		http://wahjava.users.sourceforge.net/
@@ -91,7 +91,7 @@ CONFIGURE_ARGS+=--yahoo=0
 CONFIGURE_ARGS+=--ssl=openssl
 .else
 CONFIGURE_ARGS+=--ssl=gnutls
-LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
 .endif
 
 .if defined(WITH_DEBUG)

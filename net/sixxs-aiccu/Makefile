@@ -7,7 +7,7 @@
 
 PORTNAME=	aiccu
 PORTVERSION=	20070115
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://noc.sixxs.net/archive/sixxs/aiccu/unix/ \
 		http://www.sixxs.net/archive/sixxs/aiccu/unix/
@@ -17,7 +17,7 @@ DISTNAME=	aiccu_20070115
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	SixXS IPv6 TIC+ tunnel broker heartbeat client
 
-LIB_DEPENDS=	gnutls-openssl.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls-openssl.27:${PORTSDIR}/security/gnutls
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE

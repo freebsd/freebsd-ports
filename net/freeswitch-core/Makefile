@@ -7,7 +7,7 @@
 
 PORTNAME=	freeswitch-core
 PORTVERSION=	201044
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.secure-computing.net/pub/freeswitch/ \
 		ftp://ftp2.secure-computing.net/pub/freeswitch/ \

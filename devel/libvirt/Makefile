@@ -7,7 +7,7 @@
 
 PORTNAME=	libvirt
 PORTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/
 
@@ -34,7 +34,7 @@ PLIST_SUB=	PORTVERSION="-${PORTVERSION}"
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		gcrypt.17:${PORTSDIR}/security/libgcrypt \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
-		gnutls.40:${PORTSDIR}/security/gnutls
+		gnutls.47:${PORTSDIR}/security/gnutls
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes

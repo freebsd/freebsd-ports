@@ -7,6 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}.${EMACS_REV}
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	editors ipv6
 MASTER_SITES=	http://wahjava.users.sourceforge.net/%SUBDIR%/ \
@@ -233,7 +234,7 @@ USE_GNOME+=		libxml2
 .if defined(WITHOUT_GNUTLS)
 CONFIGURE_ARGS+=	--without-gnutls
 .else
-LIB_DEPENDS+=		gnutls.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=		gnutls.47:${PORTSDIR}/security/gnutls
 .endif
 
 .include <bsd.port.pre.mk>

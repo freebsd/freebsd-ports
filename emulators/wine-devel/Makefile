@@ -8,6 +8,7 @@
 
 PORTNAME=	wine
 DISTVERSION=	1.3.21
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -77,7 +78,7 @@ LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-base
 
 .ifdef WITH_GNUTLS
 CONFIGURE_ARGS+=	--with-gnutls
-LIB_DEPENDS+=	gnutls.40:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
 .else
 CONFIGURE_ARGS+=	--without-gnutls
 .endif

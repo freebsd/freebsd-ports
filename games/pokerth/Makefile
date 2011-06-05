@@ -7,6 +7,7 @@
 
 PORTNAME=	pokerth
 PORTVERSION=	0.8.3
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.8
 DISTNAME=	PokerTH-${PORTVERSION}-src
@@ -19,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		mikmod.2:${PORTSDIR}/audio/libmikmod \
-		gnutls.40:${PORTSDIR}/security/gnutls \
+		gnutls.47:${PORTSDIR}/security/gnutls \
 		curl.6:${PORTSDIR}/ftp/curl \
 		gsasl.15:${PORTSDIR}/security/gsasl
 
