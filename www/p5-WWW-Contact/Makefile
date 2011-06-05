@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	WWW-Contact
-PORTVERSION=	0.41
+PORTVERSION=	0.43
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/F/FA/FAYLAND/
+MASTER_SITE_SUBDIR=	CPAN:FAYLAND
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sailorfred@yahoo.com
@@ -23,7 +23,12 @@ RUN_DEPENDS=	${SITE_PERL}/HTML/TokeParser/Simple.pm:${PORTSDIR}/www/p5-HTML-Toke
 		${SITE_PERL}/WWW/Mechanize/GZip.pm:${PORTSDIR}/www/p5-WWW-Mechanize-GZip \
 		${SITE_PERL}/Net/Google/AuthSub.pm:${PORTSDIR}/net/p5-Net-Google-AuthSub \
 		${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		${SITE_PERL}/${PERL_ARCH}/Moose.pm:${PORTSDIR}/devel/p5-Moose
+		${SITE_PERL}/${PERL_ARCH}/HTML/Entities.pm:${PORTSDIR}/www/p5-HTML-Parser \
+		${SITE_PERL}/${PERL_ARCH}/Moose.pm:${PORTSDIR}/devel/p5-Moose \
+		${SITE_PERL}/${PERL_ARCH}/Net/DNS/Resolver.pm:${PORTSDIR}/dns/p5-Net-DNS
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 PERL_CONFIGURE=	yes
 USE_PERL5=	yes
