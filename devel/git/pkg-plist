@@ -499,6 +499,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/git-status.txt
 %%HTMLDOCS%%%%DOCSDIR%%/git-repack.txt
 %%HTMLDOCS%%%%DOCSDIR%%/gitworkflows.txt
+%%HTMLDOCS%%%%DOCSDIR%%/diff-config.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-sigchain.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-sigchain.txt
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-hash.html
