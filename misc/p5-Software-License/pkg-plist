@@ -9,6 +9,7 @@
 %%SITE_PERL%%/Software/License/Custom.pm
 %%SITE_PERL%%/Software/License/FreeBSD.pm
 %%SITE_PERL%%/Software/License/GFDL_1_2.pm
+%%SITE_PERL%%/Software/License/GFDL_1_3.pm
 %%SITE_PERL%%/Software/License/GPL_1.pm
 %%SITE_PERL%%/Software/License/GPL_2.pm
 %%SITE_PERL%%/Software/License/GPL_3.pm
