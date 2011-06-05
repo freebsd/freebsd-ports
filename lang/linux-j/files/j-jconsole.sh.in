@@ -1,5 +1,5 @@
 #!/bin/sh
-# $FreeBSD$
+# $FreeBSD: /tmp/pcvs/ports/lang/linux-j/files/j-jconsole.sh.in,v 1.1 2011-06-05 22:56:39 glewis Exp $
 
 JPATHj%%PORTVERSION%%=%%PREFIX%%/lib/j
 export JPATHj%%PORTVERSION%%

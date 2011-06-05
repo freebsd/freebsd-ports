@@ -19,27 +19,24 @@ COMMENT=	A general purpose programming language
 
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
-# Java 1.5 JDKs install ${PREFIX}/bin/jconsole
-CONFLICTS=	diablo-jdk-1.5.0* jdk-1.5.0* linux-sun-jdk-1.5.0*
-
 USE_LINUX=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.3 1.4
+JAVA_VERSION=	1.5+
 
 ONLY_FOR_ARCHS=	i386
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 
-MAN1=		jconsole.1
+MAN1=		j-jconsole.1
 
-SUB_FILES=	jconsole.sh jw.sh
+SUB_FILES=	j-jconsole.sh jw.sh
 SUB_LIST=	PORTVERSION=${PORTVERSION:S/b//g}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/jconsole.sh ${PREFIX}/bin/jconsole
+	${INSTALL_SCRIPT} ${WRKSRC}/j-jconsole.sh ${PREFIX}/bin/j-jconsole
 	${INSTALL_SCRIPT} ${WRKSRC}/jw.sh ${PREFIX}/bin/jw
-	${INSTALL_MAN} ${WRKSRC}/j${PORTVERSION:S/b//g}/system/extras/help/man/${MAN1} ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKSRC}/j${PORTVERSION:S/b//g}/system/extras/help/man/jconsole.1 ${PREFIX}/man/man1/${MAN1}
 	@${MKDIR} ${PREFIX}/lib/j
 	cd ${WRKSRC}/j${PORTVERSION:S/b//g} && \
 		${TAR} -cf - system user profile.ijs j.jar | \

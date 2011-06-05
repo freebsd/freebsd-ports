@@ -1,5 +1,5 @@
 @comment $FreeBSD$
-bin/jconsole
+bin/j-jconsole
 bin/jw
 lib/j/j.jar
 lib/j/jconsole
