@@ -177,6 +177,7 @@
     SUBDIR += metacity-themes
     SUBDIR += moodin
     SUBDIR += murrine-configurator
+    SUBDIR += nimbus
     SUBDIR += openbox-themes
     SUBDIR += phase
     SUBDIR += polymer
