@@ -103,6 +103,7 @@ dspam:*:202:202::0:0:Dspam:/nonexistent:/usr/sbin/nologin
 yate:*:204:204::0:0:Yate:/nonexistent:/usr/sbin/nologin
 shoutcast:*:210:210::0:0:Shoutcast sandbox:/nonexistent:/bin/sh
 git:*:211:211::0:0:gitosis user:/usr/local/git:/bin/sh
+hg:*:212:212::0:0:mercurial-server user:/usr/local/hg:/bin/sh
 drizzle:*:213:213::0:0:Drizzle daemon:/var/db/drizzle:/usr/sbin/nologin
 bs:*:220:220::0:0:Big Sister:/usr/local/bigsister:/bin/sh
 postgrey:*:225:225::0:0:Postgrey Owner:/nonexistent:/usr/sbin/nologin
@@ -126,6 +127,7 @@ backuppc:*:300:300::0:0:BackupPC pseudo-user:/nonexistent:/usr/sbin/nologin
 _sphinx:*:312:312::0:0:Sphinxsearch Owner:/nonexistent:/usr/sbin/nologin
 dkfilter:*:325:325::0:0:DK Filter Owner:/nonexistent:/usr/sbin/nologin
 _pma:*:336:80::0:0:phpMyAdmin Owner:/nonexistent:/usr/sbin/nologin
+murmur:*:338:338::0:0:& User:/nonexistent:/usr/sbin/nologin
 wildfire:*:340:340::0:0:Wildfire Daemon:/nonexistent:/usr/sbin/nologin
 stunnel:*:341:341::0:0:Stunnel Daemon:/nonexistent:/usr/sbin/nologin
 openfire:*:342:342::0:0:Openfire IM Daemon:/nonexistent:/usr/sbin/nologin
@@ -205,3 +207,8 @@ noip:*:939:939::0:0:noip user:/nonexistent:/usr/sbin/nologin
 _tcpproxy:*:940:940::0:0:tcpproxy user:/nonexistent:/usr/sbin/nologin
 cego:*:941:941::0:0:cego user:/usr/local/cego:/usr/sbin/nologin
 teamspeak:*:942:942::0:0:TeamSpeak user:/nonexistent:/sbin/nologin
+dnetfold:*:943:943::0:0:& user:/nonexistent:/sbin/nologin
+bbs:*:944:944::0:0:& user:/nonexistent:/sbin/nologin
+dbxml:*:945:945::0:0:& user:/nonexistent:/sbin/nologin
+sybase:*:946:946::0:0:& user:/usr/local/sybase-ase:/sbin/nologin
+dnrd:*:948:948::0:0:& user:/nonexistent:/sbin/nologin
