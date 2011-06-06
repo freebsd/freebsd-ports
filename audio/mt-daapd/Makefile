@@ -14,6 +14,8 @@ MASTER_SITES=	SF
 MAINTAINER=	mark@foster.cc
 COMMENT=	Multithread daapd yet another Server for Apple iTunes
 
+DEPRECATED=	Use audio/firefly instead
+
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		id3tag.0:${PORTSDIR}/audio/libid3tag
 
@@ -36,13 +38,15 @@ PATCH_DIST_STRIP+=	-p1
 DAAPD_USER?=	daapd
 DAAPD_GROUP?=	daapd
 DAAPD_DBDIR?=	${DAAPD_MASTERDIR}/var/db/${PORTNAME}
+USERS=		${DAAPD_USER}
+GROUPS=		${DAAPD_GROUP}
 USE_RC_SUBR=	mt-daapd
 
 PLIST_SUB+=	DAAPD_DBDIR=${DAAPD_DBDIR}
 SUB_LIST+=	USER=${DAAPD_USER} GROUP=${DAAPD_GROUP}\
 		DAAPD_DBDIR=${DAAPD_DBDIR}\
 		DAAPD_MASTERDIR=${DAAPD_MASTERDIR}
-SUB_FILES+=	pkg-install pkg-deinstall mt-daapd.conf
+SUB_FILES+=	mt-daapd.conf
 
 .include <bsd.port.pre.mk>
 
@@ -51,9 +55,6 @@ pre-everything::
 	@${ECHO_CMD} "DAAPD_USER=${DAAPD_USER} (default: daapd)"
 	@${ECHO_CMD} "DAAPD_GROUP=${DAAPD_GROUP} (default: daapd)"
 	@${ECHO_CMD} "DAAPD_DBDIR=${DAAPD_DBDIR} (default: ${DAAPD_MASTERDIR}/var/db/${PORTNAME})"
-
-pre-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 .if !defined(NOPORTDOCS)
