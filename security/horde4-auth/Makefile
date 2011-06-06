@@ -20,6 +20,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Common interface to backends for Horde authentication
 
+BROKEN=		Rewrite in progress
 USE_HORDE=	base
 USE_GETTEXT=	yes
 AUTHDIR=	Auth

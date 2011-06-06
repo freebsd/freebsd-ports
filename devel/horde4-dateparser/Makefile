@@ -19,6 +19,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Library for natural-language date parsing
 
+BROKEN=		Rewrite in progress
 USE_HORDE=	base
 USE_GETTEXT=	yes
 DATEDIR=	Date

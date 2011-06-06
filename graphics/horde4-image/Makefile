@@ -20,6 +20,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Horde Image API, with backends for various image formats
 
+BROKEN=		Rewrite in progress
 USE_HORDE=	base
 USE_GETTEXT=	yes
 IMAGEDIR=	Image

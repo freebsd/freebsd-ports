@@ -81,6 +81,8 @@ RUN_DEPENDS+=	${PEARDIR}/Date.php:${PORTSDIR}/devel/pear-Date			\
 
 CONFLICTS=	horde-3.*
 
+BROKEN=		Rewrite in progress
+
 USE_GETTEXT=	yes
 USE_PHP=	ctype gettext session dom
 

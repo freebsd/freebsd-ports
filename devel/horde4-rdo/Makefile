@@ -20,6 +20,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Rampage data objects
 
+BROKEN=		Rewrite in progress
 USE_HORDE=	base
 USE_GETTEXT=	yes
 RDODIR=		Rdo
