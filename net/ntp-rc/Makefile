@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	ntp
-PORTVERSION?=	4.2.6p3.r8
+PORTVERSION?=	4.2.6p4.b2
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ \
-		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ \
-		ftp://ftp.archive.de.uu.net/pub/unix/ntp/ntp4/ \
-		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/ntp/ntp4/
-DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/}
+		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-4.2/ \
+		ftp://ftp.archive.de.uu.net/pub/unix/ntp/ntp4/ntp-4.2/ \
+		ftp://ftp.netlab.is.tsukuba.ac.jp/pub/network/ntp/ntp4/ntp-4.2/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/P/p/:S/.r/-RC/:S/.b/-beta/}
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	The Network Time Protocol Distribution
@@ -33,7 +33,7 @@ OPTIONS=	NTPSNMPD "Build and install ntpsnmpd" OFF \
 		RAWDCF "Enable RAWDCF option" OFF \
 		SSL "Enable SSL" ON
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITH_RAWDCF)
 CONFIGURE_ARGS+=	--enable-RAWDCF
@@ -71,4 +71,4 @@ post-install:
 		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} --quiet ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
