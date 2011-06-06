@@ -9,11 +9,13 @@ PORTNAME=	drweb
 PORTVERSION=	4.44.3
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/70/ \
-		ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/60/ \
 		http://freebsd.spectrum.ru/distfiles/drweb/
 
-MAINTAINER=	support@spectrum.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DrWeb antivirus suite
+
+DEPRECATED=		fails to fetch (website rearranged)
+EXPIRATION_DATE=	2011-08-06
 
 IA32_BINARY_PORT=	yes
 NO_BUILD=		yes
@@ -22,15 +24,7 @@ USE_BZIP2=		yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 601000
-IGNORE=		sorry, port is not supported of FreeBSD version < 6.1
-.endif
-
-.if ${OSVERSION} >= 700000
 DISTNAME=	${PORTNAME}-${PORTVERSION}-unix-fbsd70
-.else
-DISTNAME=	${PORTNAME}-${PORTVERSION}-unix-fbsd60
-.endif
 DIST_SUBDIR=	${PORTNAME}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}

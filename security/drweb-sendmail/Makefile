@@ -10,11 +10,13 @@ PORTVERSION=	4.44.1
 PORTREVISION=	1
 CATEGORIES=	security mail
 MASTER_SITES=	ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/70/ \
-		ftp://ftp.drweb.com/pub/drweb/unix/FreeBSD/60/ \
 		http://freebsd.spectrum.ru/distfiles/drweb/
 
-MAINTAINER=	support@spectrum.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sendmail message filter for virus processing through DrWeb daemon
+
+DEPRECATED=		fails to fetch (website rearranged)
+EXPIRATION_DATE=	2011-08-06
 
 RUN_DEPENDS=	${LOCALBASE}/drweb/drwebd:${PORTSDIR}/security/drweb
 
@@ -25,15 +27,7 @@ USE_BZIP2=		yes
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 601000
-IGNORE=	sorry, port is not supported of FreeBSD version < 6.1
-.endif
-
-.if ${OSVERSION} >= 700000
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd70
-.else
-DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsd60
-.endif
 DIST_SUBDIR=	drweb
 
 WRKSRC=		${WRKDIR}/${DISTNAME}
