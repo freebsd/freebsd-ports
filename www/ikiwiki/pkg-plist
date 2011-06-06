@@ -109,6 +109,8 @@
 %%PO4A%%%%DATADIR%%/locale/da/basewiki/sandbox.mdwn
 %%PO4A%%%%DATADIR%%/locale/da/basewiki/shortcuts.mdwn
 %%PO4A%%%%DATADIR%%/locale/da/basewiki/templates.mdwn
+%%PO4A%%%%DATADIR%%/locale/da/basewiki/templates/note.mdwn
+%%PO4A%%%%DATADIR%%/locale/da/basewiki/templates/popup.mdwn
 %%PO4A%%%%DATADIR%%/locale/da/directives/ikiwiki/directive/aggregate.mdwn
 %%PO4A%%%%DATADIR%%/locale/da/directives/ikiwiki/directive/brokenlinks.mdwn
 %%PO4A%%%%DATADIR%%/locale/da/directives/ikiwiki/directive/calendar.mdwn
@@ -748,6 +750,7 @@ share/locale/vi/LC_MESSAGES/ikiwiki.mo
 %%PO4A%%@dirrm %%DATADIR%%/locale/da/basewiki/ikiwiki/pagespec
 %%PO4A%%@dirrm %%DATADIR%%/locale/da/basewiki/ikiwiki/subpage
 %%PO4A%%@dirrm %%DATADIR%%/locale/da/basewiki/ikiwiki
+%%PO4A%%@dirrm %%DATADIR%%/locale/da/basewiki/templates
 %%PO4A%%@dirrm %%DATADIR%%/locale/da/basewiki
 %%PO4A%%@dirrm %%DATADIR%%/locale/da/directives/ikiwiki/directive
 %%PO4A%%@dirrm %%DATADIR%%/locale/da/directives/ikiwiki
