@@ -6,7 +6,7 @@
 
 PORTNAME=	relayd
 PORTVERSION=	4.9.20110526
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mm
@@ -29,13 +29,8 @@ CFLAGS+=	-I${PREFIX}/include -Wall
 
 MAKE_ARGS+=	BINDIR=${PREFIX}/sbin MANDIR=${PREFIX}/man/man
 
-RUSER=		_relayd
-RGROUP=		_relayd
-PKGINSTALL=	${WRKDIR}/pkginstall
-SUB_FILES+=	pkg-install
-
-SUB_LIST+=	RUSER=${RUSER} \
-		RGROUP=${RGROUP}
+USERS=		_relayd
+GROUPS=		_relayd
 
 OPTIONS=	LIBEVENT_STATIC "Build with static libevent" Off
 
@@ -65,10 +60,6 @@ post-patch:
 		${WRKSRC}/relayd/relayd.h \
 		${WRKSRC}/relayd/relayd.conf.5 \
 		${WRKSRC}/relayd/relayd.8
-
-pre-su-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/../etc/relayd.conf \
