@@ -12,7 +12,7 @@ MASTER_SITES=	https://github.com/nicolasff/phpredis/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	php5-
 DISTNAME=	nicolasff-phpredis-${PORTVERSION}-0-g${GITVERSION}
 
-MAINTAINER=	ports@niessen.ch
+MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	PHP5-Extension for Redis
 
 GITVERSION=	43bc590
