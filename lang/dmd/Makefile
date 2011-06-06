@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dmd
-PORTVERSION=	1.067
+PORTVERSION=	1.068
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -58,13 +58,13 @@ post-patch:
 		${WRKDIR}/dmd/man/man1/dmd.conf.5
 	@${REINPLACE_CMD} -e 's|"/etc/"|"${PREFIX}/etc/"|' ${WRKSRC}/inifile.c
 .endif
-	@${REINPLACE_CMD} -e "s|%@P%/../../src/phobos|${MODULEDIR}|" ${WRKDIR}/dmd/freebsd/bin/dmd.conf
-	@${CP} ${WRKDIR}/dmd/freebsd/bin/dmd.conf ${WRKDIR}/dmd/freebsd/bin/dmd.conf.tango
-	@${REINPLACE_CMD} -e "s|phobos|tango -defaultlib=tango -version=freebsd|" ${WRKDIR}/dmd/freebsd/bin/dmd.conf.tango
-	@${REINPLACE_CMD} -e "1s|^|# You'll need to recompile libtango.a with dmd and install it yourself.|" ${WRKDIR}/dmd/freebsd/bin/dmd.conf.tango
+	@${REINPLACE_CMD} -e "s|%@P%/../../src/phobos|${MODULEDIR}|" ${WRKDIR}/dmd/freebsd/bin32/dmd.conf
+	@${CP} ${WRKDIR}/dmd/freebsd/bin32/dmd.conf ${WRKDIR}/dmd/freebsd/bin32/dmd.conf.tango
+	@${REINPLACE_CMD} -e "s|phobos|tango -defaultlib=tango -version=freebsd|" ${WRKDIR}/dmd/freebsd/bin32/dmd.conf.tango
+	@${REINPLACE_CMD} -e "1s|^|# You'll need to recompile libtango.a with dmd and install it yourself.|" ${WRKDIR}/dmd/freebsd/bin32/dmd.conf.tango
 	@${REINPLACE_CMD} -e "s|%@P%/../lib|${PREFIX}/lib|" \
-		${WRKDIR}/dmd/freebsd/bin/dmd.conf	\
-		${WRKDIR}/dmd/freebsd/bin/dmd.conf.tango
+		${WRKDIR}/dmd/freebsd/bin32/dmd.conf	\
+		${WRKDIR}/dmd/freebsd/bin32/dmd.conf.tango
 
 post-build:
 	@${REINPLACE_CMD} -e "s| etc/c/zlib/gzio.o||" ${WRKSRC}/../phobos/freebsd.mak
@@ -75,7 +75,7 @@ do-install:
 	${INSTALL_MAN} ${WRKDIR}/dmd/man/man1/dmd.1 ${MANPREFIX}/man/man1
 	${INSTALL_MAN} ${WRKDIR}/dmd/man/man1/dmd.conf.5 ${MANPREFIX}/man/man5
 .if !exists(${PREFIX}/etc/dmd.conf)
-	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/bin/dmd.conf ${PREFIX}/etc
+	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/bin32/dmd.conf ${PREFIX}/etc
 .endif
 .if defined(WITH_SOURCE)
 	${INSTALL_PROGRAM} ${WRKSRC}/dmd ${PREFIX}/bin
@@ -86,8 +86,8 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/lib/libphobos.a ${PREFIX}/lib
 .endif
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/bin/dmd.conf ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/bin/dmd.conf.tango ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/bin32/dmd.conf ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/bin32/dmd.conf.tango ${EXAMPLESDIR}
 	cd ${WRKDIR}/dmd && ${COPYTREE_SHARE} samples ${EXAMPLESDIR}
 	${MKDIR} ${MODULEDIR}
 	${INSTALL_DATA} ${WRKSRC}/../phobos/*.d ${MODULEDIR}
