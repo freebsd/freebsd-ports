@@ -35,9 +35,6 @@ MANCOMPRESSED=	no
 
 .include <bsd.port.pre.mk>
 
-post-configure:
-	@${REINPLACE_CMD} -e 's|zlib||' ${WRKSRC}/lib/gnutls.pc
-
 .if (defined(WITH_LIBTASN1) || exists(${LOCALBASE}/lib/libtasn1.so.4)) && !defined(WITHOUT_LIBTASN1)
 LIB_DEPENDS+=	tasn1.4:${PORTSDIR}/security/libtasn1
 .else
