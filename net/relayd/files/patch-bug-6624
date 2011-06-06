@@ -1,0 +1,20 @@
+--- relayd/check_tcp.c.orig	Sat Jun  4 08:59:06 2011
++++ relayd/check_tcp.c	Sat Jun  4 09:07:17 2011
+@@ -77,6 +77,8 @@
+ 		goto bad;
+ 	}
+ 
++	cte->s = s;
++
+ 	bzero(&lng, sizeof(lng));
+ 	if (setsockopt(s, SOL_SOCKET, SO_LINGER, &lng, sizeof(lng)) == -1)
+ 		goto bad;
+@@ -100,7 +102,6 @@
+ 
+ 	cte->buf = NULL;
+ 	cte->host->up = HOST_UP;
+-	cte->s = s;
+ 	event_del(&cte->ev);
+ 	event_set(&cte->ev, s, EV_TIMEOUT|EV_WRITE, tcp_write, cte);
+ 	event_add(&cte->ev, &tv);
+
