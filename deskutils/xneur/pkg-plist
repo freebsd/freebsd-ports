@@ -3,10 +3,10 @@ bin/xneur
 etc/xneur/xneurrc.sample
 @exec if [ ! -f %D/etc/xneur/xneurrc ] ; then cp -p %D/%F %B/xneurrc; fi
 @dirrmtry etc/xneur
-lib/xneur/libxneur.so.12
+lib/xneur/libxneur.so.13
 lib/xneur/libxneur.so
 lib/xneur/libxneur.la
-lib/xneur/libxnconfig.so.12
+lib/xneur/libxnconfig.so.13
 lib/xneur/libxnconfig.so
 lib/xneur/libxnconfig.la
 lib/xneur/xneur/libxntest.so.0
@@ -122,3 +122,23 @@ include/xneur/xnconfig.h
 %%NLS%%share/locale/uk/LC_MESSAGES/xneur.mo
 libdata/pkgconfig/xneur.pc
 libdata/pkgconfig/xnconfig.pc
+share/icons/hicolor/16x16/apps/xneur.png
+share/icons/hicolor/22x22/apps/xneur.png
+share/icons/hicolor/24x24/apps/xneur.png
+share/icons/hicolor/32x32/apps/xneur.png
+share/icons/hicolor/48x48/apps/xneur.png
+share/icons/hicolor/scalable/apps/xneur.svg
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
