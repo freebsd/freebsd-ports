@@ -19,6 +19,6 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LDFLAGS="${PTHREAD_LIBS}"
 
-MAN1=	args.1 scrub.1 mdsum.1 zerofill.1 ucommon-config.1
+MAN1=	args.1 scrub.1 mdsum.1 zerofill.1 ucommon-config.1 commoncpp-config.1
 
 .include <bsd.port.mk>
