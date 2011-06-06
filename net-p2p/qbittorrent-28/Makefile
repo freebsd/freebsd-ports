@@ -1,12 +1,11 @@
-# New ports collection makefile for:	qbittorrent-27
-# Date created:				16 April 2011
-# Whom:					dougb@FreeBSD.org
+# New ports collection makefile for:	qbittorrent-28
+# Date created:				5 June 2011
+# Whom:					Doug Barton <dougb@FreeBSD.org>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	qbittorrent
-PORTVERSION=	2.7.3
+PORTVERSION=	2.8.1
 PORTREVISION?=	0
 CATEGORIES=	net-p2p ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/
@@ -19,12 +18,12 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 
 MAKE_JOBS_SAFE=	yes
 
-CONFLICTS=	qbittorrent-2.[2345689].*
+CONFLICTS=	qbittorrent-2.[2345679].*
 
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib network qmake_build moc_build rcc_build
 
-.if !defined(QB27_NOX_SLAVE)
+.if !defined(QB28_NOX_SLAVE)
 .if defined(WITHOUT_X11)
 BROKEN=	Use net-p2p/${PORTNAME}-nox11 for the non-GUI version
 .endif
@@ -50,11 +49,12 @@ CONFIGURE_ARGS+=	--disable-qt-dbus
 .endif
 
 post-install:
-.if !defined(QB27_NOX_SLAVE)
+.if !defined(QB28_NOX_SLAVE)
 	@${STRIP_CMD} ${PREFIX}/bin/qbittorrent
 .else
 	@${STRIP_CMD} ${PREFIX}/bin/qbittorrent-nox
 	${INSTALL_MAN} ${WRKSRC}/doc/qbittorrent-nox.1 ${MANPREFIX}/man/man1
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
