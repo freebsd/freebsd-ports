@@ -9426,7 +9426,6 @@ mod_realip                      ports/www/mod_realip
 mod_remoteip                    ports/www/mod_remoteip
 mod_rivet                       ports/www/mod_rivet
 mod_roaming                     ports/www/mod_roaming
-mod_roaming2                    ports/www/mod_roaming2
 mod_rpaf                        ports/www/mod_rpaf
 mod_rpaf2                       ports/www/mod_rpaf2
 mod_ruby                        ports/www/mod_ruby
@@ -10072,6 +10071,7 @@ nightfall                       ports/astro/nightfall
 nighthawk                       ports/games/nighthawk
 nikto                           ports/security/nikto
 nil                             ports/games/nil
+nimbus                          ports/x11-themes/nimbus
 nimuh                           ports/games/nimuh
 nini                            ports/devel/nini
 ninix-aya                       ports/games/ninix-aya
