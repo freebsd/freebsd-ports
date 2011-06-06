@@ -92,7 +92,9 @@ saned:*:194:
 sympa:*:200:
 dspam:*:202:
 yate:*:204:
+shoutcast:*:210:
 git:*:211:
+hg:*:212:
 drizzle:*:213:
 bs:*:220:
 postgrey:*:225:
@@ -116,6 +118,8 @@ prelude:*:281:
 backuppc:*:300:
 _sphinx:*:312:
 dkfilter:*:325:
+daapd:*:337:
+murmur:*:338:
 wildfire:*:340:
 stunnel:*:341:
 openfire:*:342:
@@ -197,3 +201,9 @@ noip:*:939:
 _tcpproxy:*:940:
 cego:*:941:
 teamspeak:*:942:
+dnetfold:*:943:
+bbs:*:944:
+dbxml:*:945:
+sybase:*:946:
+gnokii:*:947:
+dnrd:*:948:
