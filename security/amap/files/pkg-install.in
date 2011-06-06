@@ -2,6 +2,6 @@
 
 [ "$2" != "POST-INSTALL" ] && exit 0
 
-for f in %%CONF_FILES%%; do
+for f in %%LOCAL_CONF_FILES%%; do
     [ -f "%%CONF_DIR%%/$f" ] || cp -p "%%CONF_DIR%%/$f.default" "%%CONF_DIR%%/$f"
 done

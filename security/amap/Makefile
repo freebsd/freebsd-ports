@@ -29,7 +29,7 @@ CONF_DIR=	${PREFIX}/etc/${PORTNAME}
 LOCAL_CONF_FILES=	appdefs.resp appdefs.rpc appdefs.trig
 
 SUB_FILES=	pkg-install pkg-deinstall
-SUB_LIST=	CONF_FILES="${LOCAL_CONF_FILES}" CONF_DIR="${CONF_DIR}"
+SUB_LIST=	LOCAL_CONF_FILES="${LOCAL_CONF_FILES}" CONF_DIR="${CONF_DIR}"
 
 post-patch:
 	@${REINPLACE_CMD} -e \
