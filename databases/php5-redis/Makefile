@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	redis
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.3
 CATEGORIES=	databases
-MASTER_SITES=	https://github.com/owlient/phpredis/tarball/${PORTVERSION}/
+MASTER_SITES=	https://github.com/nicolasff/phpredis/tarball/${PORTVERSION}/
 PKGNAMEPREFIX=	php5-
-DISTNAME=	owlient-phpredis-${PORTVERSION}-0-g${GITVERSION}
+DISTNAME=	nicolasff-phpredis-${PORTVERSION}-0-g${GITVERSION}
 
 MAINTAINER=	ports@niessen.ch
 COMMENT=	PHP5-Extension for Redis
 
-GITVERSION=	5a07edc
+GITVERSION=	43bc590
 FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/owlient-phpredis-${GITVERSION}
+WRKSRC=		${WRKDIR}/nicolasff-phpredis-${GITVERSION}
 
 USE_PHP=	session
 USE_PHP_BUILD=	yes
