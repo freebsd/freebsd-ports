@@ -1173,7 +1173,7 @@ SRC_BASE?=		/usr/src
 
 .if !target(makepatch)
 makepatch:
-	@cd ${.CURDIR} && ${MKDIR} ${FILESDIR}
+	@${MKDIR} ${FILESDIR}
 	@(cd ${PATCH_WRKSRC}; \
 		for i in `find . -type f -name '*.orig'`; do \
 			ORG=$$i; \
@@ -1191,11 +1191,6 @@ makepatch:
 # Start of options section
 .if defined(INOPTIONSMK) || ( !defined(USEOPTIONSMK) && !defined(AFTERPORTMK) )
 
-.if defined(MAKE_VERSION)
-.if ${MAKE_VERSION} >= 5200408030 || ${MAKE_VERSION} >= 4200408030 && ${MAKE_VERSION} < 5000000000
-NOPRECIOUSSOFTMAKEVARS= yes
-.endif
-.endif
 
 # Get the default maintainer
 MAINTAINER?=	ports@FreeBSD.org
@@ -2975,12 +2970,10 @@ VALID_CATEGORIES+= accessibility afterstep arabic archivers astro audio \
 
 check-categories:
 .for cat in ${CATEGORIES}
-	@if ${ECHO_CMD} ${VALID_CATEGORIES} | ${GREP} -wq ${cat}; then \
-		${TRUE}; \
-	else \
-		${ECHO_MSG} "${PKGNAME}: Makefile error: category ${cat} not in list of valid categories."; \
-		${FALSE}; \
-	fi
+.	if empty(VALID_CATEGORIES:M${cat})
+		@${ECHO_MSG} "${PKGNAME}: Makefile error: category ${cat} not in list of valid categories."; \
+		${FALSE};
+.	endif
 .endfor
 .endif
 
@@ -4849,7 +4842,7 @@ fetch-url-list-int:
 	for _file in ${DISTFILES}; do \
 		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
 		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
-		if [ ! -z "${LISTALL}" -o ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
+		if [ ! -z "${LISTALL}" -o ! -f $$file -a ! -f $${file##*/} ]; then \
 			if [ ! -z "$$select" ] ; then \
 				__MASTER_SITES_TMP= ; \
 				for group in $$select; do \
@@ -4865,7 +4858,7 @@ fetch-url-list-int:
 			fi ; \
 			for site in `eval $$SORTED_MASTER_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
 				DIR=${DIST_SUBDIR}; \
-				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${DISTINFO_FILE} | ${AWK} '{print $$4}'`; \
+				CKSIZE=`${AWK} "/^SIZE \($${DIR:+$$DIR/}$$file\)"'{print $$4}' ${DISTINFO_FILE}`; \
 				case $${file} in \
 				*/*)	args="-o $${file} $${site}$${file}";; \
 				*)		args=$${site}$${file};; \
@@ -4880,7 +4873,7 @@ fetch-url-list-int:
 	for _file in ${PATCHFILES}; do \
 		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
 		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
-		if [ ! -z "${LISTALL}" -o ! -f $$file -a ! -f `${BASENAME} $$file` ]; then \
+		if [ ! -z "${LISTALL}" -o ! -f $$file -a ! -f $${file##*/} ]; then \
 			if [ ! -z "$$select" ] ; then \
 				__PATCH_SITES_TMP= ; \
 				for group in $$select; do \
@@ -4896,7 +4889,7 @@ fetch-url-list-int:
 			fi ; \
 			for site in `eval $$SORTED_PATCH_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
 				DIR=${DIST_SUBDIR}; \
-				CKSIZE=`${GREP} "^SIZE ($${DIR:+$$DIR/}$$file)" ${DISTINFO_FILE} | ${AWK} '{print $$4}'`; \
+				CKSIZE=`${AWK} "/^SIZE \($${DIR:+$$DIR/}$$file\)"'{print $$4}' ${DISTINFO_FILE}`; \
 				case $${file} in \
 				*/*)	args="-o $${file} $${site}$${file}";; \
 				*)		args=$${site}$${file};; \
@@ -5163,15 +5156,15 @@ ${deptype:L}-depends:
 .if defined(${deptype}_DEPENDS)
 .if !defined(NO_DEPENDS)
 	@for i in `${ECHO_CMD} "${${deptype}_DEPENDS}"`; do \
-		prog=`${ECHO_CMD} $$i | ${SED} -e 's/:.*//'`; \
+		prog=$${i%%:*}; \
 		if [ -z "$$prog" ]; then \
 			${ECHO_MSG} "Error: there is an empty port dependency in ${deptype}_DEPENDS."; \
 			break; \
 		fi; \
 		dir=`${ECHO_CMD} $$i | ${SED} -e 's/[^:]*://'`; \
 		if ${EXPR} "$$dir" : '.*:' > /dev/null; then \
-			target=`${ECHO_CMD} $$dir | ${SED} -e 's/.*://'`; \
-			dir=`${ECHO_CMD} $$dir | ${SED} -e 's/:.*//'`; \
+			target=$${dir##*:}; \
+			dir=$${dir%%:*}; \
 			if [ X${DEPENDS_PRECLEAN} != "X" ]; then \
 				target="clean $$target"; \
 				depends_args="$$depends_args NOCLEANDEPENDS=yes"; \
@@ -6097,14 +6090,6 @@ depend:
 # Same goes for tags
 .if !target(tags)
 tags:
-.endif
-
-.if !defined(NOPRECIOUSSOFTMAKEVARS)
-.for softvar in CKSUMFILES _MLINKS
-.if defined(${softvar})
-__softMAKEFLAGS+=      '${softvar}+=${${softvar}:S/'/'\''/g}'
-.endif
-.endfor
 .endif
 
 .if !defined(NOPRECIOUSMAKEVARS)
