@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opengfx
-PORTVERSION=	0.3.3
+PORTVERSION=	0.3.4
 CATEGORIES=	games
 MASTER_SITES=	http://gb.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVERSION}/ \
 		http://de.binaries.openttd.org/binaries/extra/${PORTNAME}/${PORTVERSION}/ \
