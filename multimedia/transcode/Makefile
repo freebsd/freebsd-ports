@@ -27,8 +27,8 @@ USE_LDCONFIG=	yes
 WANT_SDL=	yes
 WANT_GNOME=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="-isystem /usr/include -isystem ${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+CPPFLAGS+=	-isystem ${LOCALBASE}/include
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		SDL_CONFIG="${SDL_CONFIG}"
 CONFIGURE_ARGS+=	--with-libmpeg2-prefix=${LOCALBASE} \
 			--with-libavcodec-prefix=${LOCALBASE} \
@@ -194,7 +194,7 @@ CONFIGURE_ARGS+=	--disable-libxml2
 .endif
 
 .if defined(WITH_MJPEG)
-LIB_DEPENDS+=	lavjpeg-1.9.0:${PORTSDIR}/multimedia/mjpegtools
+LIB_DEPENDS+=	lavjpeg-2.0.0:${PORTSDIR}/multimedia/mjpegtools
 CONFIGURE_ARGS+=	--with-mjpegtools-prefix=${LOCALBASE} --enable-mjpegtools
 .else
 CONFIGURE_ARGS+=	--disable-mjpegtools

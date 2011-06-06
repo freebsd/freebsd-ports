@@ -7,7 +7,7 @@
 
 PORTNAME=	gmerlin-avdecoder
 PORTVERSION=	1.0.1
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin/${PORTNAME}/${PORTVERSION}
 
@@ -82,7 +82,7 @@ CONFIGURE_ARGS+=--disable-speex
 .endif
 
 .if !defined(WITHOUT_MJPEGTOOLS)
-LIB_DEPENDS+=	lavjpeg-1.9.0:${PORTSDIR}/multimedia/mjpegtools
+LIB_DEPENDS+=	lavjpeg-2.0.0:${PORTSDIR}/multimedia/mjpegtools
 .else
 CONFIGURE_ARGS+=--disable-mjpegtools
 .endif
