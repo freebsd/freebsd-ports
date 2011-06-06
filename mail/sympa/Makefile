@@ -7,6 +7,7 @@
 
 PORTNAME=	sympa
 PORTVERSION=	6.1.4
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sympa.org/distribution/ \
 		http://www.sympa.org/distribution/old/
@@ -20,34 +21,48 @@ BUILD_DEPENDS+=	${SITE_PERL}/Mail/Mailer.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		${SITE_PERL}/Crypt/CipherSaber.pm:${PORTSDIR}/security/p5-Crypt-CipherSaber \
 		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
-		${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB \
 		${SITE_PERL}/${PERL_ARCH}/Locale/Msgcat.pm:${PORTSDIR}/misc/p5-Locale-Msgcat \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 LICENSE=	GPLv2
 
-HAS_CONFIGURE=	yes
+# Ignore alpha/beta versions
+PORTSCOUT=	limit:^[0-9]+(\.[0-9]+)*$$
+
+USERS=		sympa
+GROUPS=		sympa
+GNU_CONFIGURE=	yes
 USE_PERL5=	yes
 USE_APACHE=	1.3+
-CONFIGURE_ARGS+=--prefix=${PREFIX}/sympa \
-		--with-confdir=${PREFIX}/etc \
-		--with-docdir=${EXAMPLESDIR} \
-		--with-initdir=${PREFIX}/etc/rc.d \
-		--with-etcdir=${PREFIX}/sympa/bin/etc \
-		--with-iconsdir=${PREFIX}/www/icons \
-		--with-lockdir=/var/spool/lock \
-		--mandir=${PREFIX}/man \
-		${CONFIGURE_TARGET}
+ICONSDIR?=	www/icons
+CONFIGURE_ARGS+=--bindir=${PREFIX}/libexec/${PORTNAME}	\
+		--libexecdir=${PREFIX}/libexec/${PORTNAME} \
+		--localedir=${PREFIX}/share/locale	\
+		--sbindir=${PREFIX}/libexec/${PORTNAME}	\
+		--sysconfdir=${ETCDIR}			\
+		--with-confdir=${PREFIX}/etc		\
+		--with-docdir=${EXAMPLESDIR}		\
+		--with-expldir=${DATADIR}/list_data	\
+		--with-iconsdir=${PREFIX}/${ICONSDIR}	\
+		--with-initdir=${PREFIX}/etc/rc.d	\
+		--with-lockdir=/var/spool/lock		\
+		--with-modulesdir=${PREFIX}/libexec/${PORTNAME} \
+		--with-piddir=/var/run/${PORTNAME} \
+		--with-scriptdir=${PREFIX}/libexec/${PORTNAME} \
+		--with-spooldir=/var/spool/${PORTNAME}	\
+		--mandir=${MAN8PREFIX}/man
 CONFIGURE_ENV+=	lt_cv_sys_max_cmd_len=${CONFIGURE_MAX_CMD_LEN}
 MAKE_ENV?=	PERL_EXTUTILS_AUTOINSTALL=--skip
+SUB_FILES=	pkg-install
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
-CONFIGURE_ARGS+=	--disable-nls
+CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
@@ -60,28 +75,18 @@ DB_TYPE=
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FASTCGI)
-.	if ${APACHE_VERSION}>=20
-BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache2/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
-.	else
-BUILD_DEPENDS+=	${LOCALBASE}/libexec/apache/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
-.	endif
-BUILD_DEPENDS+=		${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI
+BUILD_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi \
+		${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI
 .endif
 
 .if ${DB_TYPE} == "Oracle"
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Oracle.pm:${PORTSDIR}/databases/p5-DBD-Oracle
-.else
-.	if ${DB_TYPE} == "Pg"
+.elif ${DB_TYPE} == "Pg"
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
-.	else
-.		if ${DB_TYPE} == "Sybase"
+.elif ${DB_TYPE} == "Sybase"
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Sybase.pm:${PORTSDIR}/databases/p5-DBD-Sybase
-.		else
-.			if ${DB_TYPE} == "mysql"
+.elif ${DB_TYPE} == "mysql"
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
-.			endif
-.		endif
-.	endif
 .endif
 
 pre-fetch:
@@ -96,15 +101,20 @@ pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-patch:
-	${REINPLACE_CMD} -e 's/\$$(DESTDIR)\$$(sampledir)/\$$(sampledir)/g' \
+	@${REINPLACE_CMD} -e 's|^\( *staticdir=\).*$$|\1${DATADIR}|'	\
+	    -e 's|^\( *defaultdir=\).*$$|\1${EXAMPLESDIR}|'		\
+	    -e 's|^\( *arcdir=\).*$$|\1${DATADIR}/arc|'			\
+	    -e 's|^\( *bouncedir=\).*$$|\1${DATADIR}/bounce|'		\
+	    -e 's|^\( *execcgidir=\).*$$|\1${PREFIX}/libexec/${PORTNAME}|' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|\(--target.*sympa.conf\)|\1.sample|'	\
+		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's/\$$(DESTDIR)\$$(sampledir)/\$$(sampledir)/g' \
 		${WRKSRC}/doc/sample/Makefile.in
-	@${FIND} ${WRKSRC} -name "*.orig" -a -exec ${RM} -f {} \;
+#	@${FIND} ${WRKSRC} \( -name "*.orig" -or -name "*.bak" \) -delete
 
 post-install:
 	@PKG_PREFIX=${PREFIX} DB_TYPE=${DB_TYPE} WITH_FASTCGI=${WITH_FASTCGI} \
 		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-
-post-deinstall:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} POST-DEINSTALL
 
 .include <bsd.port.post.mk>
