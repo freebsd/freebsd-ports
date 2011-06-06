@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xneur
-PORTVERSION=	0.12.0
+PORTVERSION=	0.13.0
 CATEGORIES=	deskutils
 MASTER_SITES=	http://dists.xneur.ru/release-${DISTVERSION}/tgz/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -24,10 +24,10 @@ USE_ICONV=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 CONFIGURE_ARGS=	--disable-static --libdir=${PREFIX}/lib/xneur
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 USE_LDCONFIG=	yes
+INSTALLS_ICONS=	yes
 
 MAN1=		xneur.1
 MAN5=		xneurrc.5
