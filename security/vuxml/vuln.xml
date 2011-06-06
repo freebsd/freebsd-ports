@@ -34,6 +34,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="f7d838f2-9039-11e0-a051-080027ef73ec">
+    <topic>fetchmail -- STARTTLS denial of service</topic>
+    <affects>
+      <package>
+	<name>fetchmail</name>
+	<range><lt>6.3.20</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Andree reports:</p>
+	<blockquote cite="http://www.fetchmail.info/fetchmail-SA-2011-01.txt">
+	  <p>Fetchmail version 5.9.9 introduced STLS support for POP3, version
+	  6.0.0 added STARTTLS for IMAP. However, the actual
+	  S(TART)TLS-initiated in-band SSL/TLS negotiation was not guarded by a
+	  timeout.</p>
+	  <p>Depending on the operating system defaults as to TCP stream
+	  keepalive mode, fetchmail hangs in excess of one week after sending
+	  STARTTLS were observed if the connection failed without notifying the
+	  operating system, for instance, through network outages or hard
+	  server crashes.</p>
+	  <p>A malicious server that does not respond, at the network level,
+	  after acknowledging fetchmail's STARTTLS or STLS request, can hold
+	  fetchmail in this protocol state, and thus render fetchmail unable to
+	  complete the poll, or proceed to the next server, effecting a denial
+	  of service.</p>
+	  <p>SSL-wrapped mode on dedicated ports was unaffected by this
+problem, so can be used as a workaround.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+    <cvename>CVE-2011-1947</cvename>
+    <url>http://www.fetchmail.info/fetchmail-SA-2011-01.txt</url>
+    <url>https://gitorious.org/fetchmail/fetchmail/commit/7dc67b8cf06f74aa57525279940e180c99701314</url>
+    </references>
+    <dates>
+      <discovery>2011-04-28</discovery>
+      <entry>2011-06-06</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="34ce5817-8d56-11e0-b5a2-6c626dd55a41">
     <topic>asterisk -- Remote crash vulnerability</topic>
     <affects>
