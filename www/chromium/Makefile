@@ -7,8 +7,7 @@
 
 PORTNAME=	chromium
 DISTVERSIONPREFIX=	courgette-redacted-
-DISTVERSION=	11.0.696.71
-PORTREVISION=	1
+DISTVERSION=	11.0.696.77
 CATEGORIES=	www
 MASTER_SITES=	http://download.goodking.org/downloads/ \
 		ftp://rene-ladan.nl/pub/distfiles/ \
