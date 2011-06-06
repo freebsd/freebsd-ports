@@ -61,6 +61,7 @@ LIBEXEC=	${PREFIX}/libexec/gcc${SUFFIX}
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ARGS+=--disable-nls \
+		--enable-languages=c,c++,fortran \
 		--enable-lto=no \
 		--libdir=${TARGLIB} \
 		--libexecdir=${LIBEXEC} \
@@ -101,7 +102,8 @@ BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 EXTRA_PATCHES+=	${FILESDIR}/java-patch-hier
 # FIXME: we are currently getting weird build failures with libjava on
 # some 4.x and 5.x systems, which the following works around. PR 81788.
-CONFIGURE_ARGS+=--disable-rpath --enable-libgcj
+CONFIGURE_ARGS+=--disable-rpath \
+		--enable-languages=c,c++,fortran,java
 MAN1+=		aot-compile${SUFFIX}.1 \
 		gappletviewer${SUFFIX}.1 \
 		gc-analyze${SUFFIX}.1 \
