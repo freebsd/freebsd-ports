@@ -1,485 +1,488 @@
 etc/rc.d/sympa
-etc/sympa.conf
-etc/wwsympa.conf
-sympa/bin/Archive.pm
-sympa/bin/Auth.pm
-sympa/bin/Bounce.pm
-sympa/bin/Bulk.pm
-sympa/bin/Commands.pm
-sympa/bin/Conf.pm
-sympa/bin/Config_XML.pm
-sympa/bin/Datasource.pm
-sympa/bin/Family.pm
-sympa/bin/Fetch.pm
-sympa/bin/HTML/myFormatText.pm
-sympa/bin/LDAPSource.pm
-sympa/bin/Language.pm
-sympa/bin/Ldap.pm
-sympa/bin/List.pm
-sympa/bin/Lock.pm
-sympa/bin/Log.pm
-sympa/bin/Marc.pm
-sympa/bin/Marc/Search.pm
-sympa/bin/Message.pm
-sympa/bin/PlainDigest.pm
-sympa/bin/Robot.pm
-sympa/bin/SQLSource.pm
-sympa/bin/Scenario.pm
-sympa/bin/SharedDocument.pm
-sympa/bin/Sympa/Constants.pm
-sympa/bin/Sympa/Template/Compat.pm
-sympa/bin/SympaSession.pm
-sympa/bin/SympaTransport.pm
-sympa/bin/Task.pm
-sympa/bin/Upgrade.pm
-sympa/bin/WebAgent.pm
-sympa/bin/admin.pm
-sympa/bin/alias_manager.pl
-sympa/bin/aliaswrapper
-sympa/bin/arc2webarc.pl
-sympa/bin/archived.pl
-sympa/bin/bounced.pl
-sympa/bin/bouncequeue
-sympa/bin/bulk.pl
-sympa/bin/confdef.pm
-sympa/bin/cookielib.pm
-sympa/bin/create_db.Oracle
-sympa/bin/create_db.Pg
-sympa/bin/create_db.SQLite
-sympa/bin/create_db.Sybase
-sympa/bin/create_db.mysql
-sympa/bin/crypt_passwd.pl
-sympa/bin/etc/data_structure.version
-sympa/bin/familyqueue
-sympa/bin/init_comment.pl
-sympa/bin/ldap_alias_manager.pl
-sympa/bin/mail.pm
-sympa/bin/mod2html.pl
-sympa/bin/mysql_alias_manager.pl
-sympa/bin/p12topem.pl
-sympa/bin/queue
-sympa/bin/report.pm
-sympa/bin/sympa.pl
-sympa/bin/sympa_soap_client.pl
-sympa/bin/sympa_soap_server-wrapper.fcgi
-sympa/bin/sympa_soap_server.fcgi
-sympa/bin/sympa_wizard.pl
-sympa/bin/sympasoap.pm
-sympa/bin/task_manager.pl
-sympa/bin/testldap.pl
-sympa/bin/testlogs.pl
-sympa/bin/time_utils.pm
-sympa/bin/tools.pm
-sympa/bin/tpl2tt2.pl
-sympa/bin/tt2.pm
-sympa/bin/virtualwrapper
-sympa/bin/wwslib.pm
-sympa/bin/wwsympa-wrapper.fcgi
-sympa/bin/wwsympa.fcgi
-sympa/default/auth.conf
-sympa/default/ca-bundle.crt
-sympa/default/charset.conf
-sympa/default/crawlers_detection.conf
-sympa/default/create_list.conf
-sympa/default/create_list_templates/discussion_list/comment.tt2
-sympa/default/create_list_templates/discussion_list/config.tt2
-sympa/default/create_list_templates/hotline/comment.tt2
-sympa/default/create_list_templates/hotline/config.tt2
-sympa/default/create_list_templates/html-news-letter/comment.tt2
-sympa/default/create_list_templates/html-news-letter/config.tt2
-sympa/default/create_list_templates/intranet_list/comment.tt2
-sympa/default/create_list_templates/intranet_list/config.tt2
-sympa/default/create_list_templates/news-letter/comment.tt2
-sympa/default/create_list_templates/news-letter/config.tt2
-sympa/default/create_list_templates/private_working_group/comment.tt2
-sympa/default/create_list_templates/private_working_group/config.tt2
-sympa/default/create_list_templates/public_web_forum/comment.tt2
-sympa/default/create_list_templates/public_web_forum/config.tt2
-sympa/default/edit_list.conf
-sympa/default/families/sample-auto/config.tt2
-sympa/default/families/sample-auto/param_constraint.conf
-sympa/default/global_task_models/chk_cert_expiration.daily.task
-sympa/default/global_task_models/crl_update.daily.task
-sympa/default/global_task_models/eval_bouncers.daily.task
-sympa/default/global_task_models/expire_bounce.daily.task
-sympa/default/global_task_models/process_bouncers.weekly.task
-sympa/default/global_task_models/purge_logs_table.daily.task
-sympa/default/global_task_models/purge_one_time_ticket_table.daily.task
-sympa/default/global_task_models/purge_orphan_bounces.monthly.task
-sympa/default/global_task_models/purge_session_table.daily.task
-sympa/default/global_task_models/purge_tables.daily.task
-sympa/default/global_task_models/purge_user_table.monthly.task
-sympa/default/ldap_alias_entry.tt2
-sympa/default/ldap_alias_manager.conf
-sympa/default/list_aliases.tt2
-sympa/default/list_task_models/expire.yearly.task
-sympa/default/list_task_models/remind.2month.task
-sympa/default/list_task_models/remind.monthly.task
-sympa/default/list_task_models/remind.yearly.task
-sympa/default/list_task_models/sync_include.ttl.task
-sympa/default/mail_tt2/authorization_reject.tt2
-sympa/default/mail_tt2/bye.tt2
-sympa/default/mail_tt2/certif_warning.tt2
-sympa/default/mail_tt2/command_report.tt2
-sympa/default/mail_tt2/d_install_shared.tt2
-sympa/default/mail_tt2/d_reject_shared.tt2
-sympa/default/mail_tt2/digest.tt2
-sympa/default/mail_tt2/digest_plain.tt2
-sympa/default/mail_tt2/expire_deletion.tt2
-sympa/default/mail_tt2/expire_warning1.tt2
-sympa/default/mail_tt2/expire_warning2.tt2
-sympa/default/mail_tt2/get_archive.tt2
-sympa/default/mail_tt2/global_remind.tt2
-sympa/default/mail_tt2/helpfile.tt2
-sympa/default/mail_tt2/index_archive.tt2
-sympa/default/mail_tt2/info_report.tt2
-sympa/default/mail_tt2/invite.tt2
-sympa/default/mail_tt2/list_created.tt2
-sympa/default/mail_tt2/list_rejected.tt2
-sympa/default/mail_tt2/list_unknown.tt2
-sympa/default/mail_tt2/listeditor_notification.tt2
-sympa/default/mail_tt2/listmaster_notification.tt2
-sympa/default/mail_tt2/listowner_notification.tt2
-sympa/default/mail_tt2/lists.tt2
-sympa/default/mail_tt2/message_report.tt2
-sympa/default/mail_tt2/moderate.tt2
-sympa/default/mail_tt2/modindex.tt2
-sympa/default/mail_tt2/reject.tt2
-sympa/default/mail_tt2/remind.tt2
-sympa/default/mail_tt2/removed.tt2
-sympa/default/mail_tt2/request_auth.tt2
-sympa/default/mail_tt2/review.tt2
-sympa/default/mail_tt2/send_auth.tt2
-sympa/default/mail_tt2/sendpasswd.tt2
-sympa/default/mail_tt2/sendssopasswd.tt2
-sympa/default/mail_tt2/stats_report.tt2
-sympa/default/mail_tt2/summary.tt2
-sympa/default/mail_tt2/urlized_part.tt2
-sympa/default/mail_tt2/user_notification.tt2
-sympa/default/mail_tt2/welcome.tt2
-sympa/default/mail_tt2/which.tt2
-sympa/default/mail_tt2/x509-user-cert-missing.tt2
-sympa/default/mail_tt2/your_infected_msg.tt2
-sympa/default/mhonarc-ressources.tt2
-sympa/default/mime.types
-sympa/default/nrcpt_by_domain.conf
-sympa/default/scenari/access_web_archive.closed
-sympa/default/scenari/access_web_archive.intranet
-sympa/default/scenari/access_web_archive.listmaster
-sympa/default/scenari/access_web_archive.owner
-sympa/default/scenari/access_web_archive.private
-sympa/default/scenari/access_web_archive.public
-sympa/default/scenari/add.auth
-sympa/default/scenari/add.closed
-sympa/default/scenari/add.default
-sympa/default/scenari/add.owner
-sympa/default/scenari/add.owner_notify
-sympa/default/scenari/automatic_list_creation.listmaster
-sympa/default/scenari/automatic_list_creation.public
-sympa/default/scenari/create_list.intranet
-sympa/default/scenari/create_list.listmaster
-sympa/default/scenari/create_list.public_listmaster
-sympa/default/scenari/d_edit.default
-sympa/default/scenari/d_edit.editor
-sympa/default/scenari/d_edit.owner
-sympa/default/scenari/d_edit.private
-sympa/default/scenari/d_edit.private-https
-sympa/default/scenari/d_edit.public
-sympa/default/scenari/d_read.default
-sympa/default/scenari/d_read.owner
-sympa/default/scenari/d_read.private
-sympa/default/scenari/d_read.private-https
-sympa/default/scenari/d_read.public
-sympa/default/scenari/del.auth
-sympa/default/scenari/del.closed
-sympa/default/scenari/del.default
-sympa/default/scenari/del.owner
-sympa/default/scenari/del.owner_notify
-sympa/default/scenari/global_remind.listmaster
-sympa/default/scenari/info.default
-sympa/default/scenari/info.open
-sympa/default/scenari/info.private
-sympa/default/scenari/invite.closed
-sympa/default/scenari/invite.default
-sympa/default/scenari/invite.owner
-sympa/default/scenari/invite.private
-sympa/default/scenari/invite.public
-sympa/default/scenari/remind.default
-sympa/default/scenari/remind.listmaster
-sympa/default/scenari/remind.owner
-sympa/default/scenari/review.closed
-sympa/default/scenari/review.default
-sympa/default/scenari/review.intranet
-sympa/default/scenari/review.listmaster
-sympa/default/scenari/review.owner
-sympa/default/scenari/review.private
-sympa/default/scenari/review.public
-sympa/default/scenari/send.closed
-sympa/default/scenari/send.default
-sympa/default/scenari/send.editorkey
-sympa/default/scenari/send.editorkeyonly
-sympa/default/scenari/send.editorkeyonlyauth
-sympa/default/scenari/send.intranet
-sympa/default/scenari/send.intranetorprivate
-sympa/default/scenari/send.newsletter
-sympa/default/scenari/send.newsletterkeyonly
-sympa/default/scenari/send.private
-sympa/default/scenari/send.private_smime
-sympa/default/scenari/send.privateandeditorkey
-sympa/default/scenari/send.privateandnomultipartoreditorkey
-sympa/default/scenari/send.privatekey
-sympa/default/scenari/send.privatekeyandeditorkeyonly
-sympa/default/scenari/send.privateoreditorkey
-sympa/default/scenari/send.privateorpublickey
-sympa/default/scenari/send.public
-sympa/default/scenari/send.public_nobcc
-sympa/default/scenari/send.publickey
-sympa/default/scenari/send.publicnoattachment
-sympa/default/scenari/send.publicnomultipart
-sympa/default/scenari/spam_status.x-spam-status
-sympa/default/scenari/subscribe.auth
-sympa/default/scenari/subscribe.auth_notify
-sympa/default/scenari/subscribe.auth_owner
-sympa/default/scenari/subscribe.closed
-sympa/default/scenari/subscribe.default
-sympa/default/scenari/subscribe.intranet
-sympa/default/scenari/subscribe.intranetorowner
-sympa/default/scenari/subscribe.open
-sympa/default/scenari/subscribe.open_notify
-sympa/default/scenari/subscribe.open_quiet
-sympa/default/scenari/subscribe.owner
-sympa/default/scenari/subscribe.smime
-sympa/default/scenari/subscribe.smimeorowner
-sympa/default/scenari/topics_visibility.conceal
-sympa/default/scenari/topics_visibility.default
-sympa/default/scenari/topics_visibility.identified
-sympa/default/scenari/topics_visibility.noconceal
-sympa/default/scenari/unsubscribe.auth
-sympa/default/scenari/unsubscribe.auth_notify
-sympa/default/scenari/unsubscribe.closed
-sympa/default/scenari/unsubscribe.default
-sympa/default/scenari/unsubscribe.open
-sympa/default/scenari/unsubscribe.open_notify
-sympa/default/scenari/unsubscribe.owner
-sympa/default/scenari/visibility.conceal
-sympa/default/scenari/visibility.default
-sympa/default/scenari/visibility.intranet
-sympa/default/scenari/visibility.noconceal
-sympa/default/scenari/visibility.secret
-sympa/default/sympa.wsdl
-sympa/default/topics.conf
-sympa/default/web_tt2/active_lists.tt2
-sympa/default/web_tt2/add_request.tt2
-sympa/default/web_tt2/admin.tt2
-sympa/default/web_tt2/admin_menu.tt2
-sympa/default/web_tt2/arc.tt2
-sympa/default/web_tt2/arc_manage.tt2
-sympa/default/web_tt2/arc_protect.tt2
-sympa/default/web_tt2/arcsearch.tt2
-sympa/default/web_tt2/arcsearch_form.tt2
-sympa/default/web_tt2/authorization_reject.tt2
-sympa/default/web_tt2/auto_signoff.tt2
-sympa/default/web_tt2/blacklist.tt2
-sympa/default/web_tt2/button_footer.tt2
-sympa/default/web_tt2/button_header.tt2
-sympa/default/web_tt2/ca.tt2
-sympa/default/web_tt2/change_email.tt2
-sympa/default/web_tt2/change_email_request.tt2
-sympa/default/web_tt2/choosepasswd.tt2
-sympa/default/web_tt2/close_list.tt2
-sympa/default/web_tt2/compose_mail.tt2
-sympa/default/web_tt2/copy_template.tt2
-sympa/default/web_tt2/create_list.tt2
-sympa/default/web_tt2/create_list_request.tt2
-sympa/default/web_tt2/css.tt2
-sympa/default/web_tt2/css_ie.tt2
-sympa/default/web_tt2/d_control.tt2
-sympa/default/web_tt2/d_editfile.tt2
-sympa/default/web_tt2/d_install_shared.tt2
-sympa/default/web_tt2/d_properties.tt2
-sympa/default/web_tt2/d_read.tt2
-sympa/default/web_tt2/d_upload.tt2
-sympa/default/web_tt2/dump_scenario.tt2
-sympa/default/web_tt2/dumpvars.tt2
-sympa/default/web_tt2/edit_attributes.tt2
-sympa/default/web_tt2/edit_config.tt2
-sympa/default/web_tt2/edit_list_request.tt2
-sympa/default/web_tt2/edit_template.tt2
-sympa/default/web_tt2/editfile.tt2
-sympa/default/web_tt2/editsubscriber.tt2
-sympa/default/web_tt2/error.tt2
-sympa/default/web_tt2/footer.tt2
-sympa/default/web_tt2/get_closed_lists.tt2
-sympa/default/web_tt2/get_inactive_lists.tt2
-sympa/default/web_tt2/get_latest_lists.tt2
-sympa/default/web_tt2/get_pending_lists.tt2
-sympa/default/web_tt2/help.tt2
-sympa/default/web_tt2/help_admin.tt2
-sympa/default/web_tt2/help_arc.tt2
-sympa/default/web_tt2/help_editfile.tt2
-sympa/default/web_tt2/help_editlist.tt2
-sympa/default/web_tt2/help_faqadmin.tt2
-sympa/default/web_tt2/help_faquser.tt2
-sympa/default/web_tt2/help_introduction.tt2
-sympa/default/web_tt2/help_listconfig.tt2
-sympa/default/web_tt2/help_mail_commands.tt2
-sympa/default/web_tt2/help_sendmsg.tt2
-sympa/default/web_tt2/help_shared.tt2
-sympa/default/web_tt2/help_user.tt2
-sympa/default/web_tt2/help_user_options.tt2
-sympa/default/web_tt2/home.tt2
-sympa/default/web_tt2/info.tt2
-sympa/default/web_tt2/install_pending_list.tt2
-sympa/default/web_tt2/javascript.tt2
-sympa/default/web_tt2/latest_arc.tt2
-sympa/default/web_tt2/latest_d_read.tt2
-sympa/default/web_tt2/latest_lists.tt2
-sympa/default/web_tt2/lca.tt2
-sympa/default/web_tt2/list_button_footer.tt2
-sympa/default/web_tt2/list_button_header.tt2
-sympa/default/web_tt2/list_menu.tt2
-sympa/default/web_tt2/list_panel.tt2
-sympa/default/web_tt2/lists.tt2
-sympa/default/web_tt2/login.tt2
-sympa/default/web_tt2/login_menu.tt2
-sympa/default/web_tt2/loginbanner.tt2
-sympa/default/web_tt2/loginrequest.tt2
-sympa/default/web_tt2/ls_templates.tt2
-sympa/default/web_tt2/main.tt2
-sympa/default/web_tt2/maintenance.tt2
-sympa/default/web_tt2/manage_template.tt2
-sympa/default/web_tt2/menu.tt2
-sympa/default/web_tt2/menu_search.tt2
-sympa/default/web_tt2/modindex.tt2
-sympa/default/web_tt2/nav.tt2
-sympa/default/web_tt2/notice.tt2
-sympa/default/web_tt2/picture_upload.tt2
-sympa/default/web_tt2/pref.tt2
-sympa/default/web_tt2/remove_arc.tt2
-sympa/default/web_tt2/rename_list_request.tt2
-sympa/default/web_tt2/renewpasswd.tt2
-sympa/default/web_tt2/request_topic.tt2
-sympa/default/web_tt2/requestpasswd.tt2
-sympa/default/web_tt2/review.tt2
-sympa/default/web_tt2/review_family.tt2
-sympa/default/web_tt2/reviewbouncing.tt2
-sympa/default/web_tt2/rss.tt2
-sympa/default/web_tt2/rss_request.tt2
-sympa/default/web_tt2/scenario_test.tt2
-sympa/default/web_tt2/search.tt2
-sympa/default/web_tt2/search_list.tt2
-sympa/default/web_tt2/search_user.tt2
-sympa/default/web_tt2/serveradmin.tt2
-sympa/default/web_tt2/set_pending_list_request.tt2
-sympa/default/web_tt2/setlang.tt2
-sympa/default/web_tt2/show_cert.tt2
-sympa/default/web_tt2/show_exclude.tt2
-sympa/default/web_tt2/show_sessions.tt2
-sympa/default/web_tt2/sigrequest.tt2
-sympa/default/web_tt2/skinsedit.tt2
-sympa/default/web_tt2/sso_login.tt2
-sympa/default/web_tt2/stats.tt2
-sympa/default/web_tt2/subindex.tt2
-sympa/default/web_tt2/suboptions.tt2
-sympa/default/web_tt2/subrequest.tt2
-sympa/default/web_tt2/subscriber_table.tt2
-sympa/default/web_tt2/suspend_request.tt2
-sympa/default/web_tt2/ticket.tt2
-sympa/default/web_tt2/title.tt2
-sympa/default/web_tt2/tt2_error.tt2
-sympa/default/web_tt2/view_template.tt2
-sympa/default/web_tt2/viewbounce.tt2
-sympa/default/web_tt2/viewlogs.tt2
-sympa/default/web_tt2/viewmod.tt2
-sympa/default/web_tt2/which.tt2
-sympa/default/web_tt2/your_lists.tt2
-%%NLS%%sympa/locale/ar/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/ar/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/bg/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/bg/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/br/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/br/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/ca/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/cs/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/cs/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/de/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/de/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/el/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/el/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/en_US/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/en_US/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/es/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/es/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/et/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/et/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/eu/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/eu/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/fi/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/fi/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/fr/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/fr/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/hu/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/hu/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/id/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/id/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/it/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/it/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/ja/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/ja/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/ko/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/la/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/ml/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/nb_NO/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/nb_NO/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/nl/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/nl/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/oc/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/oc/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/pl/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/pl/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/pt/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/pt/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/pt_BR/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/pt_BR/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/ro/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/ro/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/ru/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/ru/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/sv/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/sv/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/tr/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/tr/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/vi/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/vi/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/zh_CN/LC_MESSAGES/sympa.mo
-%%NLS%%sympa/locale/zh_CN/LC_MESSAGES/web_help.mo
-%%NLS%%sympa/locale/zh_TW/LC_MESSAGES/sympa.mo
-sympa/static_content/icons/back.png
-sympa/static_content/icons/begin.png
-sympa/static_content/icons/binary.png
-sympa/static_content/icons/crosshairs.png
-sympa/static_content/icons/down.png
-sympa/static_content/icons/end.png
-sympa/static_content/icons/favicon_sympa.png
-sympa/static_content/icons/folder.open.png
-sympa/static_content/icons/folder.png
-sympa/static_content/icons/h.png
-sympa/static_content/icons/image2.png
-sympa/static_content/icons/junk.png
-sympa/static_content/icons/left.png
-sympa/static_content/icons/link.png
-sympa/static_content/icons/locked.png
-sympa/static_content/icons/logo-s-lock.png
-sympa/static_content/icons/logo-s.png
-sympa/static_content/icons/logo_sympa.png
-sympa/static_content/icons/movie.png
-sympa/static_content/icons/position.png
-sympa/static_content/icons/right.png
-sympa/static_content/icons/sound1.png
-sympa/static_content/icons/sv.png
-sympa/static_content/icons/text.png
-sympa/static_content/icons/top.png
-sympa/static_content/icons/unknown.png
+@comment copyover handled in pkg-install
+@unexec cmp -s %D/etc/sympa.conf.sample %D/etc/sympa.conf && rm -f %D/etc/sympa.conf
+etc/sympa.conf.sample
+@unexec cmp -s %D/etc/wwsympa.conf.sample %D/etc/wwsympa.conf && rm -f %D/etc/wwsympa.conf
+etc/wwsympa.conf.sample
+%%ETCDIR%%/data_structure.version
+libexec/sympa/Archive.pm
+libexec/sympa/Auth.pm
+libexec/sympa/Bounce.pm
+libexec/sympa/Bulk.pm
+libexec/sympa/Commands.pm
+libexec/sympa/Conf.pm
+libexec/sympa/Config_XML.pm
+libexec/sympa/Datasource.pm
+libexec/sympa/Family.pm
+libexec/sympa/Fetch.pm
+libexec/sympa/HTML/myFormatText.pm
+libexec/sympa/LDAPSource.pm
+libexec/sympa/Language.pm
+libexec/sympa/Ldap.pm
+libexec/sympa/List.pm
+libexec/sympa/Lock.pm
+libexec/sympa/Log.pm
+libexec/sympa/Marc.pm
+libexec/sympa/Marc/Search.pm
+libexec/sympa/Message.pm
+libexec/sympa/PlainDigest.pm
+libexec/sympa/Robot.pm
+libexec/sympa/SQLSource.pm
+libexec/sympa/Scenario.pm
+libexec/sympa/SharedDocument.pm
+libexec/sympa/Sympa/Constants.pm
+libexec/sympa/Sympa/Template/Compat.pm
+libexec/sympa/SympaSession.pm
+libexec/sympa/SympaTransport.pm
+libexec/sympa/Task.pm
+libexec/sympa/Upgrade.pm
+libexec/sympa/WebAgent.pm
+libexec/sympa/admin.pm
+libexec/sympa/alias_manager.pl
+libexec/sympa/aliaswrapper
+libexec/sympa/arc2webarc.pl
+libexec/sympa/archived.pl
+libexec/sympa/bounced.pl
+libexec/sympa/bouncequeue
+libexec/sympa/bulk.pl
+libexec/sympa/confdef.pm
+libexec/sympa/cookielib.pm
+libexec/sympa/create_db.Oracle
+libexec/sympa/create_db.Pg
+libexec/sympa/create_db.SQLite
+libexec/sympa/create_db.Sybase
+libexec/sympa/create_db.mysql
+libexec/sympa/crypt_passwd.pl
+libexec/sympa/familyqueue
+libexec/sympa/init_comment.pl
+libexec/sympa/ldap_alias_manager.pl
+libexec/sympa/mail.pm
+libexec/sympa/mod2html.pl
+libexec/sympa/mysql_alias_manager.pl
+libexec/sympa/p12topem.pl
+libexec/sympa/queue
+libexec/sympa/report.pm
+libexec/sympa/sympa.pl
+libexec/sympa/sympa_soap_client.pl
+libexec/sympa/sympa_soap_server-wrapper.fcgi
+libexec/sympa/sympa_soap_server.fcgi
+libexec/sympa/sympa_wizard.pl
+libexec/sympa/sympasoap.pm
+libexec/sympa/task_manager.pl
+libexec/sympa/testldap.pl
+libexec/sympa/testlogs.pl
+libexec/sympa/time_utils.pm
+libexec/sympa/tools.pm
+libexec/sympa/tpl2tt2.pl
+libexec/sympa/tt2.pm
+libexec/sympa/virtualwrapper
+libexec/sympa/wwslib.pm
+libexec/sympa/wwsympa-wrapper.fcgi
+libexec/sympa/wwsympa.fcgi
+%%EXAMPLESDIR%%/auth.conf
+%%EXAMPLESDIR%%/ca-bundle.crt
+%%EXAMPLESDIR%%/charset.conf
+%%EXAMPLESDIR%%/crawlers_detection.conf
+%%EXAMPLESDIR%%/create_list.conf
+%%EXAMPLESDIR%%/create_list_templates/discussion_list/comment.tt2
+%%EXAMPLESDIR%%/create_list_templates/discussion_list/config.tt2
+%%EXAMPLESDIR%%/create_list_templates/hotline/comment.tt2
+%%EXAMPLESDIR%%/create_list_templates/hotline/config.tt2
+%%EXAMPLESDIR%%/create_list_templates/html-news-letter/comment.tt2
+%%EXAMPLESDIR%%/create_list_templates/html-news-letter/config.tt2
+%%EXAMPLESDIR%%/create_list_templates/intranet_list/comment.tt2
+%%EXAMPLESDIR%%/create_list_templates/intranet_list/config.tt2
+%%EXAMPLESDIR%%/create_list_templates/news-letter/comment.tt2
+%%EXAMPLESDIR%%/create_list_templates/news-letter/config.tt2
+%%EXAMPLESDIR%%/create_list_templates/private_working_group/comment.tt2
+%%EXAMPLESDIR%%/create_list_templates/private_working_group/config.tt2
+%%EXAMPLESDIR%%/create_list_templates/public_web_forum/comment.tt2
+%%EXAMPLESDIR%%/create_list_templates/public_web_forum/config.tt2
+%%EXAMPLESDIR%%/edit_list.conf
+%%EXAMPLESDIR%%/families/sample-auto/config.tt2
+%%EXAMPLESDIR%%/families/sample-auto/param_constraint.conf
+%%EXAMPLESDIR%%/global_task_models/chk_cert_expiration.daily.task
+%%EXAMPLESDIR%%/global_task_models/crl_update.daily.task
+%%EXAMPLESDIR%%/global_task_models/eval_bouncers.daily.task
+%%EXAMPLESDIR%%/global_task_models/expire_bounce.daily.task
+%%EXAMPLESDIR%%/global_task_models/process_bouncers.weekly.task
+%%EXAMPLESDIR%%/global_task_models/purge_logs_table.daily.task
+%%EXAMPLESDIR%%/global_task_models/purge_one_time_ticket_table.daily.task
+%%EXAMPLESDIR%%/global_task_models/purge_orphan_bounces.monthly.task
+%%EXAMPLESDIR%%/global_task_models/purge_session_table.daily.task
+%%EXAMPLESDIR%%/global_task_models/purge_tables.daily.task
+%%EXAMPLESDIR%%/global_task_models/purge_user_table.monthly.task
+%%EXAMPLESDIR%%/ldap_alias_entry.tt2
+%%EXAMPLESDIR%%/ldap_alias_manager.conf
+%%EXAMPLESDIR%%/list_aliases.tt2
+%%EXAMPLESDIR%%/list_task_models/expire.yearly.task
+%%EXAMPLESDIR%%/list_task_models/remind.2month.task
+%%EXAMPLESDIR%%/list_task_models/remind.monthly.task
+%%EXAMPLESDIR%%/list_task_models/remind.yearly.task
+%%EXAMPLESDIR%%/list_task_models/sync_include.ttl.task
+%%EXAMPLESDIR%%/mail_tt2/authorization_reject.tt2
+%%EXAMPLESDIR%%/mail_tt2/bye.tt2
+%%EXAMPLESDIR%%/mail_tt2/certif_warning.tt2
+%%EXAMPLESDIR%%/mail_tt2/command_report.tt2
+%%EXAMPLESDIR%%/mail_tt2/d_install_shared.tt2
+%%EXAMPLESDIR%%/mail_tt2/d_reject_shared.tt2
+%%EXAMPLESDIR%%/mail_tt2/digest.tt2
+%%EXAMPLESDIR%%/mail_tt2/digest_plain.tt2
+%%EXAMPLESDIR%%/mail_tt2/expire_deletion.tt2
+%%EXAMPLESDIR%%/mail_tt2/expire_warning1.tt2
+%%EXAMPLESDIR%%/mail_tt2/expire_warning2.tt2
+%%EXAMPLESDIR%%/mail_tt2/get_archive.tt2
+%%EXAMPLESDIR%%/mail_tt2/global_remind.tt2
+%%EXAMPLESDIR%%/mail_tt2/helpfile.tt2
+%%EXAMPLESDIR%%/mail_tt2/index_archive.tt2
+%%EXAMPLESDIR%%/mail_tt2/info_report.tt2
+%%EXAMPLESDIR%%/mail_tt2/invite.tt2
+%%EXAMPLESDIR%%/mail_tt2/list_created.tt2
+%%EXAMPLESDIR%%/mail_tt2/list_rejected.tt2
+%%EXAMPLESDIR%%/mail_tt2/list_unknown.tt2
+%%EXAMPLESDIR%%/mail_tt2/listeditor_notification.tt2
+%%EXAMPLESDIR%%/mail_tt2/listmaster_notification.tt2
+%%EXAMPLESDIR%%/mail_tt2/listowner_notification.tt2
+%%EXAMPLESDIR%%/mail_tt2/lists.tt2
+%%EXAMPLESDIR%%/mail_tt2/message_report.tt2
+%%EXAMPLESDIR%%/mail_tt2/moderate.tt2
+%%EXAMPLESDIR%%/mail_tt2/modindex.tt2
+%%EXAMPLESDIR%%/mail_tt2/reject.tt2
+%%EXAMPLESDIR%%/mail_tt2/remind.tt2
+%%EXAMPLESDIR%%/mail_tt2/removed.tt2
+%%EXAMPLESDIR%%/mail_tt2/request_auth.tt2
+%%EXAMPLESDIR%%/mail_tt2/review.tt2
+%%EXAMPLESDIR%%/mail_tt2/send_auth.tt2
+%%EXAMPLESDIR%%/mail_tt2/sendpasswd.tt2
+%%EXAMPLESDIR%%/mail_tt2/sendssopasswd.tt2
+%%EXAMPLESDIR%%/mail_tt2/stats_report.tt2
+%%EXAMPLESDIR%%/mail_tt2/summary.tt2
+%%EXAMPLESDIR%%/mail_tt2/urlized_part.tt2
+%%EXAMPLESDIR%%/mail_tt2/user_notification.tt2
+%%EXAMPLESDIR%%/mail_tt2/welcome.tt2
+%%EXAMPLESDIR%%/mail_tt2/which.tt2
+%%EXAMPLESDIR%%/mail_tt2/x509-user-cert-missing.tt2
+%%EXAMPLESDIR%%/mail_tt2/your_infected_msg.tt2
+%%EXAMPLESDIR%%/mhonarc-ressources.tt2
+%%EXAMPLESDIR%%/mime.types
+%%EXAMPLESDIR%%/nrcpt_by_domain.conf
+%%EXAMPLESDIR%%/scenari/access_web_archive.closed
+%%EXAMPLESDIR%%/scenari/access_web_archive.intranet
+%%EXAMPLESDIR%%/scenari/access_web_archive.listmaster
+%%EXAMPLESDIR%%/scenari/access_web_archive.owner
+%%EXAMPLESDIR%%/scenari/access_web_archive.private
+%%EXAMPLESDIR%%/scenari/access_web_archive.public
+%%EXAMPLESDIR%%/scenari/add.auth
+%%EXAMPLESDIR%%/scenari/add.closed
+%%EXAMPLESDIR%%/scenari/add.default
+%%EXAMPLESDIR%%/scenari/add.owner
+%%EXAMPLESDIR%%/scenari/add.owner_notify
+%%EXAMPLESDIR%%/scenari/automatic_list_creation.listmaster
+%%EXAMPLESDIR%%/scenari/automatic_list_creation.public
+%%EXAMPLESDIR%%/scenari/create_list.intranet
+%%EXAMPLESDIR%%/scenari/create_list.listmaster
+%%EXAMPLESDIR%%/scenari/create_list.public_listmaster
+%%EXAMPLESDIR%%/scenari/d_edit.default
+%%EXAMPLESDIR%%/scenari/d_edit.editor
+%%EXAMPLESDIR%%/scenari/d_edit.owner
+%%EXAMPLESDIR%%/scenari/d_edit.private
+%%EXAMPLESDIR%%/scenari/d_edit.private-https
+%%EXAMPLESDIR%%/scenari/d_edit.public
+%%EXAMPLESDIR%%/scenari/d_read.default
+%%EXAMPLESDIR%%/scenari/d_read.owner
+%%EXAMPLESDIR%%/scenari/d_read.private
+%%EXAMPLESDIR%%/scenari/d_read.private-https
+%%EXAMPLESDIR%%/scenari/d_read.public
+%%EXAMPLESDIR%%/scenari/del.auth
+%%EXAMPLESDIR%%/scenari/del.closed
+%%EXAMPLESDIR%%/scenari/del.default
+%%EXAMPLESDIR%%/scenari/del.owner
+%%EXAMPLESDIR%%/scenari/del.owner_notify
+%%EXAMPLESDIR%%/scenari/global_remind.listmaster
+%%EXAMPLESDIR%%/scenari/info.default
+%%EXAMPLESDIR%%/scenari/info.open
+%%EXAMPLESDIR%%/scenari/info.private
+%%EXAMPLESDIR%%/scenari/invite.closed
+%%EXAMPLESDIR%%/scenari/invite.default
+%%EXAMPLESDIR%%/scenari/invite.owner
+%%EXAMPLESDIR%%/scenari/invite.private
+%%EXAMPLESDIR%%/scenari/invite.public
+%%EXAMPLESDIR%%/scenari/remind.default
+%%EXAMPLESDIR%%/scenari/remind.listmaster
+%%EXAMPLESDIR%%/scenari/remind.owner
+%%EXAMPLESDIR%%/scenari/review.closed
+%%EXAMPLESDIR%%/scenari/review.default
+%%EXAMPLESDIR%%/scenari/review.intranet
+%%EXAMPLESDIR%%/scenari/review.listmaster
+%%EXAMPLESDIR%%/scenari/review.owner
+%%EXAMPLESDIR%%/scenari/review.private
+%%EXAMPLESDIR%%/scenari/review.public
+%%EXAMPLESDIR%%/scenari/send.closed
+%%EXAMPLESDIR%%/scenari/send.default
+%%EXAMPLESDIR%%/scenari/send.editorkey
+%%EXAMPLESDIR%%/scenari/send.editorkeyonly
+%%EXAMPLESDIR%%/scenari/send.editorkeyonlyauth
+%%EXAMPLESDIR%%/scenari/send.intranet
+%%EXAMPLESDIR%%/scenari/send.intranetorprivate
+%%EXAMPLESDIR%%/scenari/send.newsletter
+%%EXAMPLESDIR%%/scenari/send.newsletterkeyonly
+%%EXAMPLESDIR%%/scenari/send.private
+%%EXAMPLESDIR%%/scenari/send.private_smime
+%%EXAMPLESDIR%%/scenari/send.privateandeditorkey
+%%EXAMPLESDIR%%/scenari/send.privateandnomultipartoreditorkey
+%%EXAMPLESDIR%%/scenari/send.privatekey
+%%EXAMPLESDIR%%/scenari/send.privatekeyandeditorkeyonly
+%%EXAMPLESDIR%%/scenari/send.privateoreditorkey
+%%EXAMPLESDIR%%/scenari/send.privateorpublickey
+%%EXAMPLESDIR%%/scenari/send.public
+%%EXAMPLESDIR%%/scenari/send.public_nobcc
+%%EXAMPLESDIR%%/scenari/send.publickey
+%%EXAMPLESDIR%%/scenari/send.publicnoattachment
+%%EXAMPLESDIR%%/scenari/send.publicnomultipart
+%%EXAMPLESDIR%%/scenari/spam_status.x-spam-status
+%%EXAMPLESDIR%%/scenari/subscribe.auth
+%%EXAMPLESDIR%%/scenari/subscribe.auth_notify
+%%EXAMPLESDIR%%/scenari/subscribe.auth_owner
+%%EXAMPLESDIR%%/scenari/subscribe.closed
+%%EXAMPLESDIR%%/scenari/subscribe.default
+%%EXAMPLESDIR%%/scenari/subscribe.intranet
+%%EXAMPLESDIR%%/scenari/subscribe.intranetorowner
+%%EXAMPLESDIR%%/scenari/subscribe.open
+%%EXAMPLESDIR%%/scenari/subscribe.open_notify
+%%EXAMPLESDIR%%/scenari/subscribe.open_quiet
+%%EXAMPLESDIR%%/scenari/subscribe.owner
+%%EXAMPLESDIR%%/scenari/subscribe.smime
+%%EXAMPLESDIR%%/scenari/subscribe.smimeorowner
+%%EXAMPLESDIR%%/scenari/topics_visibility.conceal
+%%EXAMPLESDIR%%/scenari/topics_visibility.default
+%%EXAMPLESDIR%%/scenari/topics_visibility.identified
+%%EXAMPLESDIR%%/scenari/topics_visibility.noconceal
+%%EXAMPLESDIR%%/scenari/unsubscribe.auth
+%%EXAMPLESDIR%%/scenari/unsubscribe.auth_notify
+%%EXAMPLESDIR%%/scenari/unsubscribe.closed
+%%EXAMPLESDIR%%/scenari/unsubscribe.default
+%%EXAMPLESDIR%%/scenari/unsubscribe.open
+%%EXAMPLESDIR%%/scenari/unsubscribe.open_notify
+%%EXAMPLESDIR%%/scenari/unsubscribe.owner
+%%EXAMPLESDIR%%/scenari/visibility.conceal
+%%EXAMPLESDIR%%/scenari/visibility.default
+%%EXAMPLESDIR%%/scenari/visibility.intranet
+%%EXAMPLESDIR%%/scenari/visibility.noconceal
+%%EXAMPLESDIR%%/scenari/visibility.secret
+%%EXAMPLESDIR%%/sympa.wsdl
+%%EXAMPLESDIR%%/topics.conf
+%%EXAMPLESDIR%%/web_tt2/active_lists.tt2
+%%EXAMPLESDIR%%/web_tt2/add_request.tt2
+%%EXAMPLESDIR%%/web_tt2/admin.tt2
+%%EXAMPLESDIR%%/web_tt2/admin_menu.tt2
+%%EXAMPLESDIR%%/web_tt2/arc.tt2
+%%EXAMPLESDIR%%/web_tt2/arc_manage.tt2
+%%EXAMPLESDIR%%/web_tt2/arc_protect.tt2
+%%EXAMPLESDIR%%/web_tt2/arcsearch.tt2
+%%EXAMPLESDIR%%/web_tt2/arcsearch_form.tt2
+%%EXAMPLESDIR%%/web_tt2/authorization_reject.tt2
+%%EXAMPLESDIR%%/web_tt2/auto_signoff.tt2
+%%EXAMPLESDIR%%/web_tt2/blacklist.tt2
+%%EXAMPLESDIR%%/web_tt2/button_footer.tt2
+%%EXAMPLESDIR%%/web_tt2/button_header.tt2
+%%EXAMPLESDIR%%/web_tt2/ca.tt2
+%%EXAMPLESDIR%%/web_tt2/change_email.tt2
+%%EXAMPLESDIR%%/web_tt2/change_email_request.tt2
+%%EXAMPLESDIR%%/web_tt2/choosepasswd.tt2
+%%EXAMPLESDIR%%/web_tt2/close_list.tt2
+%%EXAMPLESDIR%%/web_tt2/compose_mail.tt2
+%%EXAMPLESDIR%%/web_tt2/copy_template.tt2
+%%EXAMPLESDIR%%/web_tt2/create_list.tt2
+%%EXAMPLESDIR%%/web_tt2/create_list_request.tt2
+%%EXAMPLESDIR%%/web_tt2/css.tt2
+%%EXAMPLESDIR%%/web_tt2/css_ie.tt2
+%%EXAMPLESDIR%%/web_tt2/d_control.tt2
+%%EXAMPLESDIR%%/web_tt2/d_editfile.tt2
+%%EXAMPLESDIR%%/web_tt2/d_install_shared.tt2
+%%EXAMPLESDIR%%/web_tt2/d_properties.tt2
+%%EXAMPLESDIR%%/web_tt2/d_read.tt2
+%%EXAMPLESDIR%%/web_tt2/d_upload.tt2
+%%EXAMPLESDIR%%/web_tt2/dump_scenario.tt2
+%%EXAMPLESDIR%%/web_tt2/dumpvars.tt2
+%%EXAMPLESDIR%%/web_tt2/edit_attributes.tt2
+%%EXAMPLESDIR%%/web_tt2/edit_config.tt2
+%%EXAMPLESDIR%%/web_tt2/edit_list_request.tt2
+%%EXAMPLESDIR%%/web_tt2/edit_template.tt2
+%%EXAMPLESDIR%%/web_tt2/editfile.tt2
+%%EXAMPLESDIR%%/web_tt2/editsubscriber.tt2
+%%EXAMPLESDIR%%/web_tt2/error.tt2
+%%EXAMPLESDIR%%/web_tt2/footer.tt2
+%%EXAMPLESDIR%%/web_tt2/get_closed_lists.tt2
+%%EXAMPLESDIR%%/web_tt2/get_inactive_lists.tt2
+%%EXAMPLESDIR%%/web_tt2/get_latest_lists.tt2
+%%EXAMPLESDIR%%/web_tt2/get_pending_lists.tt2
+%%EXAMPLESDIR%%/web_tt2/help.tt2
+%%EXAMPLESDIR%%/web_tt2/help_admin.tt2
+%%EXAMPLESDIR%%/web_tt2/help_arc.tt2
+%%EXAMPLESDIR%%/web_tt2/help_editfile.tt2
+%%EXAMPLESDIR%%/web_tt2/help_editlist.tt2
+%%EXAMPLESDIR%%/web_tt2/help_faqadmin.tt2
+%%EXAMPLESDIR%%/web_tt2/help_faquser.tt2
+%%EXAMPLESDIR%%/web_tt2/help_introduction.tt2
+%%EXAMPLESDIR%%/web_tt2/help_listconfig.tt2
+%%EXAMPLESDIR%%/web_tt2/help_mail_commands.tt2
+%%EXAMPLESDIR%%/web_tt2/help_sendmsg.tt2
+%%EXAMPLESDIR%%/web_tt2/help_shared.tt2
+%%EXAMPLESDIR%%/web_tt2/help_user.tt2
+%%EXAMPLESDIR%%/web_tt2/help_user_options.tt2
+%%EXAMPLESDIR%%/web_tt2/home.tt2
+%%EXAMPLESDIR%%/web_tt2/info.tt2
+%%EXAMPLESDIR%%/web_tt2/install_pending_list.tt2
+%%EXAMPLESDIR%%/web_tt2/javascript.tt2
+%%EXAMPLESDIR%%/web_tt2/latest_arc.tt2
+%%EXAMPLESDIR%%/web_tt2/latest_d_read.tt2
+%%EXAMPLESDIR%%/web_tt2/latest_lists.tt2
+%%EXAMPLESDIR%%/web_tt2/lca.tt2
+%%EXAMPLESDIR%%/web_tt2/list_button_footer.tt2
+%%EXAMPLESDIR%%/web_tt2/list_button_header.tt2
+%%EXAMPLESDIR%%/web_tt2/list_menu.tt2
+%%EXAMPLESDIR%%/web_tt2/list_panel.tt2
+%%EXAMPLESDIR%%/web_tt2/lists.tt2
+%%EXAMPLESDIR%%/web_tt2/login.tt2
+%%EXAMPLESDIR%%/web_tt2/login_menu.tt2
+%%EXAMPLESDIR%%/web_tt2/loginbanner.tt2
+%%EXAMPLESDIR%%/web_tt2/loginrequest.tt2
+%%EXAMPLESDIR%%/web_tt2/ls_templates.tt2
+%%EXAMPLESDIR%%/web_tt2/main.tt2
+%%EXAMPLESDIR%%/web_tt2/maintenance.tt2
+%%EXAMPLESDIR%%/web_tt2/manage_template.tt2
+%%EXAMPLESDIR%%/web_tt2/menu.tt2
+%%EXAMPLESDIR%%/web_tt2/menu_search.tt2
+%%EXAMPLESDIR%%/web_tt2/modindex.tt2
+%%EXAMPLESDIR%%/web_tt2/nav.tt2
+%%EXAMPLESDIR%%/web_tt2/notice.tt2
+%%EXAMPLESDIR%%/web_tt2/picture_upload.tt2
+%%EXAMPLESDIR%%/web_tt2/pref.tt2
+%%EXAMPLESDIR%%/web_tt2/remove_arc.tt2
+%%EXAMPLESDIR%%/web_tt2/rename_list_request.tt2
+%%EXAMPLESDIR%%/web_tt2/renewpasswd.tt2
+%%EXAMPLESDIR%%/web_tt2/request_topic.tt2
+%%EXAMPLESDIR%%/web_tt2/requestpasswd.tt2
+%%EXAMPLESDIR%%/web_tt2/review.tt2
+%%EXAMPLESDIR%%/web_tt2/review_family.tt2
+%%EXAMPLESDIR%%/web_tt2/reviewbouncing.tt2
+%%EXAMPLESDIR%%/web_tt2/rss.tt2
+%%EXAMPLESDIR%%/web_tt2/rss_request.tt2
+%%EXAMPLESDIR%%/web_tt2/scenario_test.tt2
+%%EXAMPLESDIR%%/web_tt2/search.tt2
+%%EXAMPLESDIR%%/web_tt2/search_list.tt2
+%%EXAMPLESDIR%%/web_tt2/search_user.tt2
+%%EXAMPLESDIR%%/web_tt2/serveradmin.tt2
+%%EXAMPLESDIR%%/web_tt2/set_pending_list_request.tt2
+%%EXAMPLESDIR%%/web_tt2/setlang.tt2
+%%EXAMPLESDIR%%/web_tt2/show_cert.tt2
+%%EXAMPLESDIR%%/web_tt2/show_exclude.tt2
+%%EXAMPLESDIR%%/web_tt2/show_sessions.tt2
+%%EXAMPLESDIR%%/web_tt2/sigrequest.tt2
+%%EXAMPLESDIR%%/web_tt2/skinsedit.tt2
+%%EXAMPLESDIR%%/web_tt2/sso_login.tt2
+%%EXAMPLESDIR%%/web_tt2/stats.tt2
+%%EXAMPLESDIR%%/web_tt2/subindex.tt2
+%%EXAMPLESDIR%%/web_tt2/suboptions.tt2
+%%EXAMPLESDIR%%/web_tt2/subrequest.tt2
+%%EXAMPLESDIR%%/web_tt2/subscriber_table.tt2
+%%EXAMPLESDIR%%/web_tt2/suspend_request.tt2
+%%EXAMPLESDIR%%/web_tt2/ticket.tt2
+%%EXAMPLESDIR%%/web_tt2/title.tt2
+%%EXAMPLESDIR%%/web_tt2/tt2_error.tt2
+%%EXAMPLESDIR%%/web_tt2/view_template.tt2
+%%EXAMPLESDIR%%/web_tt2/viewbounce.tt2
+%%EXAMPLESDIR%%/web_tt2/viewlogs.tt2
+%%EXAMPLESDIR%%/web_tt2/viewmod.tt2
+%%EXAMPLESDIR%%/web_tt2/which.tt2
+%%EXAMPLESDIR%%/web_tt2/your_lists.tt2
+%%NLS%%share/locale/ar/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/br/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/br/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/de/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/de/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/el/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/el/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/en_US/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/en_US/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/es/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/es/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/et/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/et/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/id/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/id/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/it/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/it/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/la/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/ml/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/nb_NO/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/nb_NO/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/oc/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/vi/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/sympa.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/web_help.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/sympa.mo
+%%DATADIR%%/icons/back.png
+%%DATADIR%%/icons/begin.png
+%%DATADIR%%/icons/binary.png
+%%DATADIR%%/icons/crosshairs.png
+%%DATADIR%%/icons/down.png
+%%DATADIR%%/icons/end.png
+%%DATADIR%%/icons/favicon_sympa.png
+%%DATADIR%%/icons/folder.open.png
+%%DATADIR%%/icons/folder.png
+%%DATADIR%%/icons/h.png
+%%DATADIR%%/icons/image2.png
+%%DATADIR%%/icons/junk.png
+%%DATADIR%%/icons/left.png
+%%DATADIR%%/icons/link.png
+%%DATADIR%%/icons/locked.png
+%%DATADIR%%/icons/logo-s-lock.png
+%%DATADIR%%/icons/logo-s.png
+%%DATADIR%%/icons/logo_sympa.png
+%%DATADIR%%/icons/movie.png
+%%DATADIR%%/icons/position.png
+%%DATADIR%%/icons/right.png
+%%DATADIR%%/icons/sound1.png
+%%DATADIR%%/icons/sv.png
+%%DATADIR%%/icons/text.png
+%%DATADIR%%/icons/top.png
+%%DATADIR%%/icons/unknown.png
 %%EXAMPLESDIR%%/sample/test/web_tt2/welcome.tt2
 %%EXAMPLESDIR%%/sample/test/config
 %%EXAMPLESDIR%%/sample/test/info
@@ -488,112 +491,101 @@ sympa/static_content/icons/unknown.png
 %%EXAMPLESDIR%%/sample/trusted_applications.conf
 %%EXAMPLESDIR%%/sample/robot.conf
 %%EXAMPLESDIR%%/sample/employees.ldap
+%%NLS%%@dirrmtry share/locale/zh_TW/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_TW
+%%NLS%%@dirrmtry share/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/zh_CN
+%%NLS%%@dirrmtry share/locale/vi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/vi
+%%NLS%%@dirrmtry share/locale/tr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tr
+%%NLS%%@dirrmtry share/locale/sv/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/sv
+%%NLS%%@dirrmtry share/locale/ru/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ru
+%%NLS%%@dirrmtry share/locale/ro/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ro
+%%NLS%%@dirrmtry share/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt_BR
+%%NLS%%@dirrmtry share/locale/pt/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pt
+%%NLS%%@dirrmtry share/locale/pl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/pl
+%%NLS%%@dirrmtry share/locale/oc/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/oc
+%%NLS%%@dirrmtry share/locale/nl/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nl
+%%NLS%%@dirrmtry share/locale/nb_NO/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/nb_NO
+%%NLS%%@dirrmtry share/locale/la/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/la
+%%NLS%%@dirrmtry share/locale/ko/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ko
+%%NLS%%@dirrmtry share/locale/ja/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ja
+%%NLS%%@dirrmtry share/locale/it/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/it
+%%NLS%%@dirrmtry share/locale/id/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/id
+%%NLS%%@dirrmtry share/locale/fr/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fr
+%%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/fi
+%%NLS%%@dirrmtry share/locale/eu/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/eu
+%%NLS%%@dirrmtry share/locale/et/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/et
+%%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es
+%%NLS%%@dirrmtry share/locale/en_US/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/en_US
+%%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/el
+%%NLS%%@dirrmtry share/locale/de/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/de
+%%NLS%%@dirrmtry share/locale/cs/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/cs
+%%NLS%%@dirrmtry share/locale/ca/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ca
+%%NLS%%@dirrmtry share/locale/bg/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/bg
+@dirrm %%DATADIR%%/list_data
+@dirrmtry %%ETCDIR%%
+@dirrm %%EXAMPLESDIR%%/web_tt2
+@dirrm %%EXAMPLESDIR%%/scenari
 @dirrm %%EXAMPLESDIR%%/sample/test/web_tt2
 @dirrm %%EXAMPLESDIR%%/sample/test
 @dirrm %%EXAMPLESDIR%%/sample
+@dirrm %%EXAMPLESDIR%%/mail_tt2
+@dirrm %%EXAMPLESDIR%%/list_task_models
+@dirrm %%EXAMPLESDIR%%/global_task_models
+@dirrm %%EXAMPLESDIR%%/families/sample-auto
+@dirrm %%EXAMPLESDIR%%/families
+@dirrm %%EXAMPLESDIR%%/create_list_templates/public_web_forum
+@dirrm %%EXAMPLESDIR%%/create_list_templates/private_working_group
+@dirrm %%EXAMPLESDIR%%/create_list_templates/news-letter
+@dirrm %%EXAMPLESDIR%%/create_list_templates/intranet_list
+@dirrm %%EXAMPLESDIR%%/create_list_templates/html-news-letter
+@dirrm %%EXAMPLESDIR%%/create_list_templates/hotline
+@dirrm %%EXAMPLESDIR%%/create_list_templates/discussion_list
+@dirrm %%EXAMPLESDIR%%/create_list_templates
 @dirrm %%EXAMPLESDIR%%
-@dirrm sympa/static_content/icons
-@dirrm sympa/static_content
-@dirrm sympa/spool/tmp
-@dirrm sympa/spool/task
-@dirrm sympa/spool/outgoing
-@dirrm sympa/spool/msg
-@dirrm sympa/spool/moderation
-@dirrm sympa/spool/expire
-@dirrm sympa/spool/digest
-@dirrm sympa/spool/auth
-@dirrm sympa/spool
-@dirrm sympa/share
-%%NLS%%@dirrm sympa/locale/zh_TW/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/zh_TW
-%%NLS%%@dirrm sympa/locale/zh_CN/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/zh_CN
-%%NLS%%@dirrm sympa/locale/vi/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/vi
-%%NLS%%@dirrm sympa/locale/tr/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/tr
-%%NLS%%@dirrm sympa/locale/sv/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/sv
-%%NLS%%@dirrm sympa/locale/ru/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/ru
-%%NLS%%@dirrm sympa/locale/ro/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/ro
-%%NLS%%@dirrm sympa/locale/pt_BR/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/pt_BR
-%%NLS%%@dirrm sympa/locale/pt/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/pt
-%%NLS%%@dirrm sympa/locale/pl/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/pl
-%%NLS%%@dirrm sympa/locale/oc/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/oc
-%%NLS%%@dirrm sympa/locale/nl/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/nl
-%%NLS%%@dirrm sympa/locale/nb_NO/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/nb_NO
-%%NLS%%@dirrm sympa/locale/ml/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/ml
-%%NLS%%@dirrm sympa/locale/la/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/la
-%%NLS%%@dirrm sympa/locale/ko/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/ko
-%%NLS%%@dirrm sympa/locale/ja/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/ja
-%%NLS%%@dirrm sympa/locale/it/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/it
-%%NLS%%@dirrm sympa/locale/id/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/id
-%%NLS%%@dirrm sympa/locale/hu/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/hu
-%%NLS%%@dirrm sympa/locale/fr/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/fr
-%%NLS%%@dirrm sympa/locale/fi/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/fi
-%%NLS%%@dirrm sympa/locale/eu/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/eu
-%%NLS%%@dirrm sympa/locale/et/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/et
-%%NLS%%@dirrm sympa/locale/es/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/es
-%%NLS%%@dirrm sympa/locale/en_US/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/en_US
-%%NLS%%@dirrm sympa/locale/el/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/el
-%%NLS%%@dirrm sympa/locale/de/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/de
-%%NLS%%@dirrm sympa/locale/cs/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/cs
-%%NLS%%@dirrm sympa/locale/ca/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/ca
-%%NLS%%@dirrm sympa/locale/br/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/br
-%%NLS%%@dirrm sympa/locale/bg/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/bg
-%%NLS%%@dirrm sympa/locale/ar/LC_MESSAGES
-%%NLS%%@dirrm sympa/locale/ar
-%%NLS%%@dirrm sympa/locale
-@dirrm sympa/list_data
-@dirrm sympa/default/web_tt2
-@dirrm sympa/default/scenari
-@dirrm sympa/default/mail_tt2
-@dirrm sympa/default/list_task_models
-@dirrm sympa/default/global_task_models
-@dirrm sympa/default/families/sample-auto
-@dirrm sympa/default/families
-@dirrm sympa/default/create_list_templates/public_web_forum
-@dirrm sympa/default/create_list_templates/private_working_group
-@dirrm sympa/default/create_list_templates/news-letter
-@dirrm sympa/default/create_list_templates/intranet_list
-@dirrm sympa/default/create_list_templates/html-news-letter
-@dirrm sympa/default/create_list_templates/hotline
-@dirrm sympa/default/create_list_templates/discussion_list
-@dirrm sympa/default/create_list_templates
-@dirrm sympa/default
-@dirrm sympa/bounce
-@dirrm sympa/bin/etc
-@dirrm sympa/bin/Sympa/Template
-@dirrm sympa/bin/Sympa
-@dirrm sympa/bin/Marc
-@dirrm sympa/bin/HTML
-@dirrm sympa/bin
-@dirrm sympa/arc
-@dirrm sympa
+@dirrm libexec/sympa/Sympa/Template
+@dirrm libexec/sympa/Sympa
+@dirrm libexec/sympa/Marc
+@dirrm libexec/sympa/HTML
+@dirrm libexec/sympa
+@dirrm %%DATADIR%%/arc
+@dirrm %%DATADIR%%/bounce
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%
+@cwd /var
+@dirrm spool/sympa/tmp
+@dirrm spool/sympa/task
+@dirrm spool/sympa/outgoing
+@dirrm spool/sympa/msg
+@dirrm spool/sympa/moderation
+@dirrm spool/sympa/expire
+@dirrm spool/sympa/digest
+@dirrm spool/sympa/auth
+@dirrm spool/sympa
