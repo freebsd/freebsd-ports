@@ -12,7 +12,7 @@ CATEGORIES=	databases elisp
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gnats
 
-MAINTAINER=	ceri@FreeBSD.org
+MAINTAINER=	linimon@FreeBSD.org
 COMMENT=	Cygnus GNATS bug tracking system
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
