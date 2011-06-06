@@ -96,10 +96,8 @@
     SUBDIR += py-py2play
     SUBDIR += py-transmissionrpc
     SUBDIR += py-vertex
-    SUBDIR += qbittorrent-26
-    SUBDIR += qbittorrent-26-nox11
-    SUBDIR += qbittorrent-27
-    SUBDIR += qbittorrent-27-nox11
+    SUBDIR += qbittorrent-28
+    SUBDIR += qbittorrent-28-nox11
     SUBDIR += qtella
     SUBDIR += qtorrent
     SUBDIR += rtgui
