@@ -21,6 +21,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser
 
+GROUPS=		${PORTNAME}
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
@@ -38,7 +39,6 @@ CONFIGURE_ENV+=	MSGFMT="${LOCALBASE}/bin/msgfmt" \
 		LIBS="-L${WRKSRC}/common -L${LOCALBASE}/lib" \
 		PKG_CONFIG="${LOCALBASE}/bin/pkg-config"
 
-PKGDEINSTALL=	${PKGINSTALL}
 SUB_FILES+=	pkg-message
 PORTDOCS=	*
 MAN1=		gnokii.1 sendsms.1 xgnokii.1
@@ -125,9 +125,6 @@ post-patch:
 		-e 's|([[:space:]]+test[[:space:]]+.+)==([[:space:]]+"yes")|\1=\2|' \
 		${WRKSRC}/${CONFIGURE_SCRIPT}
 	@${MV} ${WRKSRC}/Docs/man/xgnokii.1x ${WRKSRC}/Docs/man/xgnokii.1
-
-pre-install:
-	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/xgnokii/xgnokii.pc ${PREFIX}/libdata/pkgconfig
