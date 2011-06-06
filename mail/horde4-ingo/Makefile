@@ -26,6 +26,7 @@ COMMENT=	Email-filter management application
 RUN_DEPENDS+=	${PEARDIR}/Net/Sieve.php:${PORTSDIR}/net/pear-Net_Sieve
 .endif
 
+BROKEN=		Rewrite in progress
 USE_PHP=	imap
 USE_HORDE=	base pkg-message
 USE_GETTEXT=	yes

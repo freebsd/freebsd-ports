@@ -19,6 +19,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	Horde browser API
 
+BROKEN=		Rewrite in progress
+
 USE_HORDE=	base
 USE_GETTEXT=	yes
 BRODIR=		Browser

@@ -19,6 +19,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	This port provides various stream wrappers
 
+BROKEN=		Rewrite in progress
 RUN_DEPENDS+=	${HORBAS}/Stream/Filter/Eol.php:${PORTSDIR}/devel/horde4-streamfilter
 USE_HORDE=	base
 USE_GETTEXT=	yes

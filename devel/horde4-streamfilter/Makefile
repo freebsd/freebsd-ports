@@ -19,6 +19,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	beech@FreeBSD.org
 COMMENT=	This port provides various stream filters
 
+BROKEN=		Rewrite in progress
 USE_HORDE=	base
 USE_GETTEXT=	yes
 STFDIR=		Stream
