@@ -9,7 +9,7 @@ PORTNAME=	red5
 PORTVERSION=	0.9.1
 PORTREVISION=	1
 CATEGORIES=	www java
-MASTER_SITES=	http://www.red5.org/downloads/0_9/ \
+MASTER_SITES=	http://trac.red5.org/downloads/0_9/ \
 		http://red5.rmdir.fr/
 
 MAINTAINER=	joris.dedieu@gmail.com
