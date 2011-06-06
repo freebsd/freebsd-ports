@@ -1469,7 +1469,6 @@
     SUBDIR += privoxy+ipv6
     SUBDIR += protovis
     SUBDIR += pserv
-    SUBDIR += pubcookie-login-server
     SUBDIR += publicfile
     SUBDIR += punbb
     SUBDIR += pwebstats
