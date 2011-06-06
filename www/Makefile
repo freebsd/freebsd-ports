@@ -2063,6 +2063,7 @@
     SUBDIR += yourls
     SUBDIR += youtube_dl
     SUBDIR += yuicompressor
+    SUBDIR += zen-cart
     SUBDIR += zend-framework
     SUBDIR += zenphoto
     SUBDIR += zerowait-httpd
