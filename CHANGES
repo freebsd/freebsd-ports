@@ -10,6 +10,21 @@ in the release notes and/or placed into UPDATING.
 
 All ports committers are allowed to commit to this file.
 
+20110320:
+AUTHOR: gerald@FreeBSD.org
+
+  * CPPFLAGS is now passed to both the configure and make environments,
+    so this no longer needs to happen in individual ports by adding this
+    to CONFIGURE_ENV or MAKE_ENV.  Rather, just set CPPFLAGS in the port
+    Makefile (if necessary).
+
+    For example, where you would have used
+      CONFIGURE_ENV=    CPPFLAGS="-I${LOCALBASE}/include"
+      MAKE_ENV=         SOMETHING=foo CPPFLAGS="-I${LOCALBASE}/include"
+    now just use
+      CPPFLAGS=         "-I${LOCALBASE}/include"
+      MAKE_ENV          SOMETHING=foo
+
 20100831:
 AUTHOR: autotools@FreeBSD.org
 
