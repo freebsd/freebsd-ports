@@ -7,7 +7,7 @@
 
 PORTNAME=	dmd
 PKGNAMESUFFIX=	2
-PORTVERSION=	2.052
+PORTVERSION=	2.053
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	dmd.${PORTVERSION}
@@ -57,7 +57,7 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|%@P%/../../src/phobos|${MODULEDIR}|"	\
 			  -e "s|%@P%/../lib|${PREFIX}/lib|"		\
 			  -e "s|%@P%/../../src/druntime|${PREFIX}/include/d/druntime|"	\
-			  ${WRKDIR}/dmd2/linux/bin/dmd.conf
+			  ${WRKDIR}/dmd2/linux/bin32/dmd.conf
 
 post-build:
 	cd ${WRKSRC}/../druntime && \
@@ -69,12 +69,12 @@ do-install:
 	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man1/dmd.1 ${MANPREFIX}/man/man1/dmd2.1
 	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man1/dmd.conf.5 ${MANPREFIX}/man/man5/dmd2.conf.5
 .if !exists(${PREFIX}/etc/dmd2.conf)
-	${INSTALL_DATA} ${WRKDIR}/dmd2/linux/bin/dmd.conf ${PREFIX}/etc/dmd2.conf
+	${INSTALL_DATA} ${WRKDIR}/dmd2/linux/bin32/dmd.conf ${PREFIX}/etc/dmd2.conf
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/dmd ${PREFIX}/bin/dmd2
 	${INSTALL_DATA} ${WRKSRC}/../phobos/generated/freebsd/release/32/libphobos2.a ${PREFIX}/lib
 	${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKDIR}/dmd2/linux/bin/dmd.conf ${EXAMPLESDIR}/dmd2.conf
+	${INSTALL_DATA} ${WRKDIR}/dmd2/linux/bin32/dmd.conf ${EXAMPLESDIR}/dmd2.conf
 	cd ${WRKDIR}/dmd2 && ${COPYTREE_SHARE} samples ${EXAMPLESDIR}
 	${MKDIR} ${MODULEDIR}
 	${INSTALL_DATA} ${WRKSRC}/../phobos/*.d ${MODULEDIR}
