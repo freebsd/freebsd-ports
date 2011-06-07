@@ -7,6 +7,7 @@
 
 PORTNAME=	Net-Amazon-S3
 PORTVERSION=	0.53
+PORTREVISION=	1
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +16,6 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Use the Amazon S3 - Simple Storage Service
 
 RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
-		p5-Class-MOP>=0.88:${PORTSDIR}/devel/p5-Class-MOP \
 		p5-Data-Stream-Bulk>=0.06:${PORTSDIR}/devel/p5-Data-Stream-Bulk \
 		p5-DateTime-Format-HTTP>=0:${PORTSDIR}/devel/p5-DateTime-Format-HTTP \
 		p5-DateTime-Format-ISO8601>=0:${PORTSDIR}/devel/p5-DateTime-Format-ISO8601 \

@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110607:
+  AFFECTS: users of devel/p5-Moose and devel/p5-Class-MOP
+  AUTHOR: az@FreeBSD.org
+
+  p5-Moose have been updated to 2.0007. Now p5-Class-MOP is a part of the
+  p5-Moose distribution. Manual intervention into update procedure is requied:
+
+    # portmaster -o devel/p5-Moose devel/p5-Class-MOP
+    # portmaster -R -r p5-Moose-\*
+  or do the same things with portupgrade.
+
+  To check everything went fine you can run:
+    # perl -Moose\ 999
+  and
+    # perl -MClass::MOP\ 999
+  in both cases you should see output:
+  version 999 required--this is only version 2.0007
+
 20110606:
   AFFECTS: users of databases/mariadb
   AUTHOR: dougb@FreeBSD.org

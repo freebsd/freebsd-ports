@@ -1,3 +1,27 @@
+bin/moose-outdated
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class/Immutable/Trait.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Generated.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Accessor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Meta.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Wrapped.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Inlined.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method/Constructor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin/HasAttributes.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin/AttributeCore.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin/HasMethods.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/MiniTrait.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Package.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Module.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Attribute.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Deprecated.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Object.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Instance.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Conflicts.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/metaclass.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Cookbook/Basics/Recipe1.pod
@@ -182,6 +206,12 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/Moose.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/Moose.so
 %%SITE_PERL%%/%%PERL_ARCH%%/oose.pm
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Mixin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Method
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class/Immutable
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class/MOP
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Class
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Test
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Util/TypeConstraints

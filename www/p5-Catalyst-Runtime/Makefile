@@ -7,6 +7,7 @@
 
 PORTNAME=	Catalyst-Runtime
 PORTVERSION=	5.80032
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	../by-authors/id/B/BO/BOBTFISH/
@@ -18,7 +19,6 @@ COMMENT=	The Elegant MVC Web Application Framework (Runtime)
 RUN_DEPENDS=	p5-B-Hooks-EndOfScope>=0.08:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
 		p5-CGI-Simple>=1.109:${PORTSDIR}/www/p5-CGI-Simple \
 		p5-Class-C3-Adopt-NEXT>=0.07:${PORTSDIR}/devel/p5-Class-C3-Adopt-NEXT \
-		p5-Class-MOP>=0.95:${PORTSDIR}/devel/p5-Class-MOP \
 		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
 		p5-Data-Dump>=0:${PORTSDIR}/devel/p5-Data-Dump \
 		p5-Data-OptList>=0:${PORTSDIR}/devel/p5-Data-OptList \

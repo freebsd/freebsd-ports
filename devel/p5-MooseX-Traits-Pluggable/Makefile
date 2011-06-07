@@ -7,6 +7,7 @@
 
 PORTNAME=	MooseX-Traits-Pluggable
 PORTVERSION=	0.10
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +16,6 @@ MAINTAINER=	bill.brinzer@gmail.com
 COMMENT=	An extension to MooseX::Traits
 
 BUILD_DEPENDS=	\
-	p5-Class-MOP>=0.84:${PORTSDIR}/devel/p5-Class-MOP \
 	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 	p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
 	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
