@@ -14,6 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Meta Object Protocol for Perl 5
 
+IGNORE=		distribution has been merged with devel/p5-Moose
+
 BUILD_DEPENDS=	p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
 		p5-MRO-Compat>=0.05:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \

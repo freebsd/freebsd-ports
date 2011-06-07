@@ -7,6 +7,7 @@
 
 PORTNAME=	File-ChangeNotify
 PORTVERSION=	0.16
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Watch for changes to files
 
-RUN_DEPENDS=	p5-Class-MOP>=0:${PORTSDIR}/devel/p5-Class-MOP \
+RUN_DEPENDS=	p5-Moose>=1.00:${PORTSDIR}/devel/p5-Moose \
 		p5-IO-KQueue>=0:${PORTSDIR}/devel/p5-IO-KQueue \
 		p5-MooseX-Params-Validate>=0:${PORTSDIR}/devel/p5-MooseX-Params-Validate \
 		p5-MooseX-SemiAffordanceAccessor>=0:${PORTSDIR}/devel/p5-MooseX-SemiAffordanceAccessor \

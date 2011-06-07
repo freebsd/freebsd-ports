@@ -1,31 +1,31 @@
 Note that this release of p5-Moose is incompatible with
 older versions of the following modules:
 
-	Catalyst			<= 5.80017
-	Devel::REPL			<= 1.003008
-	Fey::ORM			<= 0.23
-	File::ChangeNotify		<= 0.15
-	KiokuDB				<= 0.41
-	MooseX::Aliases			<= 0.07
-	MooseX::AttributeHelpers	<= 0.22
-	MooseX::AttributeInflate	<= 0.02
-	MooseX::Attribute::Prototype	<= 0.10
-	MooseX::ClassAttribute		<= 0.13
-	MooseX::FollowPBP		<= 0.02
-	MooseX::HasDefaults		<= 0.02
-	MooseX::InstanceTracking	<= 0.04
-	MooseX::LazyRequire		<= 0.05
-	MooseX::MethodAttributes	<= 0.22
-	MooseX::NonMoose		<= 0.13
-	MooseX::Params::Validate	<= 0.05
-	MooseX::Role::Cmd		<= 0.06
-	MooseX::Role::WithOverloading	<= 0.07
-	MooseX::SemiAffordanceAccessor	<= 0.05
-	MooseX::Singleton		<= 0.22
-	MooseX::StrictConstructor	<= 0.08
-	MooseX::Types			<= 0.19
-	MooseX::UndefTolerant		<= 0.04
-	namespace::autoclean		<= 0.08
-	Pod::Elemental			<= 0.093280
+       Catalyst                        <= 5.80017
+       Devel::REPL                     <= 1.003008
+       Fey::ORM                        <= 0.23
+       File::ChangeNotify              <= 0.15
+       KiokuDB                         <= 0.41
+       MooseX::Aliases                 <= 0.07
+       MooseX::AttributeHelpers        <= 0.22
+       MooseX::AttributeInflate        <= 0.02
+       MooseX::Attribute::Prototype    <= 0.10
+       MooseX::ClassAttribute          <= 0.13
+       MooseX::FollowPBP               <= 0.02
+       MooseX::HasDefaults             <= 0.02
+       MooseX::InstanceTracking        <= 0.04
+       MooseX::LazyRequire             <= 0.05
+       MooseX::MethodAttributes        <= 0.22
+       MooseX::NonMoose                <= 0.13
+       MooseX::Params::Validate        <= 0.05
+       MooseX::Role::Cmd               <= 0.06
+       MooseX::Role::WithOverloading   <= 0.07
+       MooseX::SemiAffordanceAccessor  <= 0.05
+       MooseX::Singleton               <= 0.22
+       MooseX::StrictConstructor       <= 0.08
+       MooseX::Types                   <= 0.19
+       MooseX::UndefTolerant           <= 0.04
+       namespace::autoclean            <= 0.08
+       Pod::Elemental                  <= 0.093280
 
 They will need to be updated.

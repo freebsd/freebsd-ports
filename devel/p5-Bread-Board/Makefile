@@ -7,6 +7,7 @@
 
 PORTNAME=	Bread-Board
 PORTVERSION=	0.18
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:STEVAN
@@ -15,8 +16,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A solderless way to wire up your application components
 
-RUN_DEPENDS=	p5-Class-MOP>=0:${PORTSDIR}/devel/p5-Class-MOP \
-		p5-Moose>=1.00:${PORTSDIR}/devel/p5-Moose \
+RUN_DEPENDS=	p5-Moose>=1.00:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Clone>=0.05:${PORTSDIR}/devel/p5-MooseX-Clone \
 		p5-MooseX-Params-Validate>=0.14:${PORTSDIR}/devel/p5-MooseX-Params-Validate
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/Test-Exception

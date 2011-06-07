@@ -7,6 +7,7 @@
 
 PORTNAME=	HTML-FormFu
 PORTVERSION=	0.09003
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +17,6 @@ COMMENT=	HTML Form Creation, Rendering and Validation Framework
 
 RUN_DEPENDS=	p5-Captcha-reCAPTCHA>=0.93:${PORTSDIR}/graphics/p5-Captcha-reCAPTCHA \
 		p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
-		p5-Class-MOP>=0:${PORTSDIR}/devel/p5-Class-MOP \
 		p5-Clone>=0.31:${PORTSDIR}/devel/p5-Clone \
 		p5-Config-Any>=0.18:${PORTSDIR}/devel/p5-Config-Any \
 		p5-Crypt-CBC>=0:${PORTSDIR}/security/p5-Crypt-CBC \

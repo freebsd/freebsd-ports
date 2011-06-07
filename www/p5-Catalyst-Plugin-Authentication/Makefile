@@ -7,6 +7,7 @@
 
 PORTNAME=	Catalyst-Plugin-Authentication
 PORTVERSION=	0.10017
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -19,7 +20,6 @@ COMMENT=	Infrastructure plugin for the Catalyst authentication framework
 RUN_DEPENDS=	p5-Catalyst-Plugin-Session>=0.10:${PORTSDIR}/www/p5-Catalyst-Plugin-Session \
 		p5-Catalyst-Runtime>=0:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Class-Inspector>=0:${PORTSDIR}/devel/p5-Class-Inspector \
-		p5-Class-MOP>=0:${PORTSDIR}/devel/p5-Class-MOP \
 		p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose
 BUILD_DEPENDS=	${RUN_DEPENDS}
