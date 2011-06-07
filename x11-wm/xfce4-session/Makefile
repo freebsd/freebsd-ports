@@ -20,7 +20,6 @@ RUN_DEPENDS=	iceauth:${PORTSDIR}/x11/iceauth \
 		console-kit-daemon:${PORTSDIR}/sysutils/consolekit
 LIB_DEPENDS=	wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		hal.1:${PORTSDIR}/sysutils/hal \
 		upower-glib.1:${PORTSDIR}/sysutils/upower \
 		polkit.2:${PORTSDIR}/sysutils/policykit
 
@@ -40,7 +39,10 @@ CONFIGURE_ARGS+=	--enable-panel-plugin \
 		--disable-gnome \
 		--disable-libgnome-keyring
 
-OPTIONS=	NLS "Enable Native Language Support" on
+OPTIONS=	NLS	"Enable Native Language Support"	on  \
+		HAL	"Enable HAL Support"			off
+
+.include <bsd.port.options.mk>
 
 MAN1=		xfce4-session.1 xfce4-session-logout.1
 
@@ -53,6 +55,11 @@ PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
+.endif
+.if !defined(WITHOUT_HAL)
+LIB_DEPENDS+=	hal.1:${PORTSDIR}/sysutils/hal
+.else
+CONFIGURE_ARGS+=--disable-hal
 .endif
 
 post-install:
