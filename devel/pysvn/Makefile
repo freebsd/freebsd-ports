@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	pysvn
-PORTVERSION=	1.7.2
-PORTREVISION=	2
+PORTVERSION=	1.7.5
+PORTREVISION=	0
 CATEGORIES=	devel
 MASTER_SITES=	http://pysvn.barrys-emacs.org/source_kits/
 
