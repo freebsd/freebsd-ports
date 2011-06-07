@@ -1,14 +1,14 @@
---- ./content/browser/child_process_launcher.cc.orig	2010-12-16 02:11:58.000000000 +0100
-+++ ./content/browser/child_process_launcher.cc	2010-12-20 20:15:08.000000000 +0100
+--- content/browser/child_process_launcher.cc.orig	2011-05-06 12:02:54.000000000 +0300
++++ content/browser/child_process_launcher.cc	2011-06-04 15:13:25.939378747 +0300
 @@ -20,7 +20,7 @@
  #if defined(OS_WIN)
  #include "base/file_path.h"
  #include "chrome/common/sandbox_policy.h"
 -#elif defined(OS_LINUX)
 +#elif defined(OS_LINUX) || defined(OS_FREEBSD)
- #include "base/singleton.h"
+ #include "base/memory/singleton.h"
  #include "chrome/browser/crash_handler_host_linux.h"
- #include "chrome/browser/zygote_host_linux.h"
+ #include "content/browser/zygote_host_linux.h"
 @@ -45,7 +45,7 @@
        : client_(NULL),
          client_thread_id_(BrowserThread::UI),
@@ -24,19 +24,19 @@
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_FREEBSD)
-     if (use_zygote) {
-       base::GlobalDescriptors::Mapping mapping;
-       mapping.push_back(std::pair<uint32_t, int>(kPrimaryIPCChannel, ipcfd));
-@@ -131,7 +131,7 @@
+     // On Linux, we need to add some extra file descriptors for crash handling.
+     std::string process_type =
+         cmd_line->GetSwitchValueASCII(switches::kProcessType);
+@@ -151,7 +151,7 @@
            ipcfd,
            kPrimaryIPCChannel + base::GlobalDescriptors::kBaseDescriptor));
  
 -#if defined(OS_LINUX)
 +#if defined(OS_LINUX) || defined(OS_FREEBSD)
-       // On Linux, we need to add some extra file descriptors for crash handling
-       // and the sandbox.
-       bool is_renderer =
-@@ -163,7 +163,7 @@
+       if (crash_signal_fd >= 0) {
+         fds_to_map.push_back(std::make_pair(
+             crash_signal_fd,
+@@ -164,7 +164,7 @@
              sandbox_fd,
              kSandboxIPCChannel + base::GlobalDescriptors::kBaseDescriptor));
        }
@@ -45,7 +45,7 @@
  
        bool launched = false;
  #if defined(OS_MACOSX)
-@@ -199,20 +199,20 @@
+@@ -200,20 +200,20 @@
          NewRunnableMethod(
              this,
              &ChildProcessLauncher::Context::Notify,
@@ -69,7 +69,7 @@
      zygote_ = zygote;
  #endif
      if (client_) {
-@@ -232,7 +232,7 @@
+@@ -233,7 +233,7 @@
          BrowserThread::PROCESS_LAUNCHER, FROM_HERE,
          NewRunnableFunction(
              &ChildProcessLauncher::Context::TerminateInternal,
@@ -78,7 +78,7 @@
              zygote_,
  #endif
              process_.handle()));
-@@ -240,7 +240,7 @@
+@@ -246,7 +246,7 @@
    }
  
    static void TerminateInternal(
@@ -87,7 +87,7 @@
        bool zygote,
  #endif
        base::ProcessHandle handle) {
-@@ -250,13 +250,13 @@
+@@ -256,13 +256,13 @@
      process.Terminate(ResultCodes::NORMAL_EXIT);
      // On POSIX, we must additionally reap the child.
  #if defined(OS_POSIX)
@@ -103,7 +103,7 @@
      {
        ProcessWatcher::EnsureProcessTerminated(handle);
      }
-@@ -269,7 +269,7 @@
+@@ -275,7 +275,7 @@
    base::Process process_;
    bool starting_;
  
@@ -112,7 +112,7 @@
    bool zygote_;
  #endif
  };
-@@ -315,7 +315,7 @@
+@@ -321,7 +321,7 @@
      int* exit_code) {
    base::TerminationStatus status;
    base::ProcessHandle handle = context_->process_.handle();

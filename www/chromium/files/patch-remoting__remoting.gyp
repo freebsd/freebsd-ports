@@ -1,5 +1,5 @@
---- ./remoting/remoting.gyp.orig	2010-12-13 12:03:06.000000000 +0100
-+++ ./remoting/remoting.gyp	2011-01-07 14:17:11.000000000 +0100
+--- remoting/remoting.gyp.orig	2011-05-06 12:02:51.000000000 +0300
++++ remoting/remoting.gyp	2011-06-05 16:03:32.069163399 +0300
 @@ -16,7 +16,7 @@
    },
  
@@ -18,25 +18,21 @@
            ],
            'link_settings': {
              'libraries': [
-@@ -221,7 +223,11 @@
-             'host/event_executor_win.h',
-           ],
-         }],
+@@ -238,7 +240,7 @@
+         'host/user_authenticator_win.cc',
+       ],
+       'conditions': [
 -        ['OS=="linux"', {
-+        ['OS=="linux" or OS=="freebsd"', {
-+          'dependencies': [
-+	    '../build/linux/system.gyp:x11',
-+	    '../build/linux/system.gyp:xext',
-+          ],
-           'sources': [
-             'host/capturer_linux.cc',
-             'host/capturer_linux.h',
-@@ -497,7 +503,7 @@
-             'host/capturer_gdi_unittest.cc',
-           ],
-         }],
--        ['OS=="linux"', {
-+        ['OS=="linux" or OS=="freebsd"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
            'dependencies': [
+             '../build/linux/system.gyp:gtk',
+           ],
+@@ -555,7 +557,7 @@
+         'run_all_unittests.cc',
+       ],
+       'conditions': [
+-        ['OS=="linux"', {
++        ['OS=="linux" or OS=="freebsd" or OS=="openbsd"', {
+           'dependencies': [
+             '../app/app.gyp:app_base',
              # Needed for the following #include chain:
-             #   base/run_all_unittests.cc

@@ -1,6 +1,6 @@
---- base/base.gypi.orig	2011-03-21 21:48:13.059300970 +0200
-+++ base/base.gypi	2011-03-21 21:49:30.340376078 +0200
-@@ -157,6 +157,7 @@
+--- base/base.gypi.orig	2011-05-06 12:03:16.000000000 +0300
++++ base/base.gypi	2011-06-05 19:27:52.717164750 +0300
+@@ -190,6 +190,7 @@
            'process_posix.cc',
            'process_util.cc',
            'process_util.h',
@@ -8,7 +8,7 @@
            'process_util_linux.cc',
            'process_util_mac.mm',
            'process_util_posix.cc',
-@@ -343,11 +344,9 @@
+@@ -363,11 +364,9 @@
                  'message_pump_glib_x.cc',
                ],
            }],
@@ -21,7 +21,20 @@
                  'linux_util.cc',
                ],
              },
-@@ -462,6 +461,12 @@
+@@ -408,10 +407,10 @@
+           },],
+           ['OS=="freebsd" or OS=="openbsd"', {
+             'sources!': [
+-              'base/files/file_path_watcher_linux.cc',
++              'files/file_path_watcher_linux.cc',
+             ],
+             'sources': [
+-              'base/files/file_path_watcher_stub.cc',
++              'files/file_path_watcher_stub.cc',
+             ],
+           }],
+         ],
+@@ -481,6 +480,12 @@
              ],
          }],
          [ 'OS == "freebsd" or OS == "openbsd"', {
