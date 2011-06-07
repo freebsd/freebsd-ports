@@ -103,6 +103,7 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/focusButtonGlyph.png
 %%DATADIR%%/resources/inspector/Images/forward.png
 %%DATADIR%%/resources/inspector/Images/frame.png
+%%DATADIR%%/resources/inspector/Images/garbageCollectButtonGlyph.png
 %%DATADIR%%/resources/inspector/Images/gearButtonGlyph.png
 %%DATADIR%%/resources/inspector/Images/glossyHeader.png
 %%DATADIR%%/resources/inspector/Images/glossyHeaderPressed.png
@@ -225,6 +226,7 @@ bin/chrome
 %%DATADIR%%/resources/inspector/Images/warningMediumIcon.png
 %%DATADIR%%/resources/inspector/Images/warningOrangeDot.png
 %%DATADIR%%/resources/inspector/Images/warningsErrors.png
+%%DATADIR%%/resources/inspector/ScriptFormatterWorker.js
 %%DATADIR%%/resources/inspector/devTools.css
 %%DATADIR%%/resources/inspector/devtools.html
 %%DATADIR%%/xdg-settings

@@ -1,16 +1,16 @@
---- content/browser/renderer_host/render_message_filter.cc.orig	2011-04-15 11:01:10.000000000 +0300
-+++ content/browser/renderer_host/render_message_filter.cc	2011-04-16 21:12:33.904069230 +0300
-@@ -416,7 +416,7 @@
-     IPC_MESSAGE_HANDLER(ViewHostMsg_V8HeapStats, OnV8HeapStats)
+--- content/browser/renderer_host/render_message_filter.cc.orig	2011-05-06 12:02:54.000000000 +0300
++++ content/browser/renderer_host/render_message_filter.cc	2011-06-04 15:22:29.321379253 +0300
+@@ -365,7 +365,7 @@
+     IPC_MESSAGE_HANDLER(ViewHostMsg_AllocateSharedMemoryBuffer,
+                         OnAllocateSharedMemoryBuffer)
      IPC_MESSAGE_HANDLER(ViewHostMsg_DidZoomURL, OnDidZoomURL)
-     IPC_MESSAGE_HANDLER_DELAY_REPLY(ViewHostMsg_ResolveProxy, OnResolveProxy)
 -#if defined(OS_MACOSX)
 +#if defined(OS_MACOSX) || defined(OS_FREEBSD)
      IPC_MESSAGE_HANDLER(ViewHostMsg_AllocTransportDIB, OnAllocTransportDIB)
      IPC_MESSAGE_HANDLER(ViewHostMsg_FreeTransportDIB, OnFreeTransportDIB)
  #endif
-@@ -1111,7 +1111,7 @@
-   HistogramSynchronizer::DeserializeHistogramList(sequence_number, histograms);
+@@ -740,7 +740,7 @@
+       context_getter->GetURLRequestContext());
  }
  
 -#if defined(OS_MACOSX)

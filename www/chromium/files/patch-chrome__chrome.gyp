@@ -1,6 +1,6 @@
---- ./chrome/chrome.gyp.orig	2010-12-16 02:12:13.000000000 +0100
-+++ ./chrome/chrome.gyp	2010-12-20 20:15:08.000000000 +0100
-@@ -96,6 +96,10 @@
+--- chrome/chrome.gyp.orig	2011-05-06 12:03:42.000000000 +0300
++++ chrome/chrome.gyp	2011-06-04 00:41:46.403404482 +0300
+@@ -72,6 +72,10 @@
            }],
          ],
        },],
@@ -11,7 +11,7 @@
        ['OS=="mac"', {
          'tweak_info_plist_path': 'tools/build/mac/tweak_info_plist',
          'nacl_defines': [
-@@ -673,7 +677,7 @@
+@@ -419,7 +423,7 @@
          '..',
        ],
        'conditions': [
@@ -20,16 +20,7 @@
            'dependencies': [
              '../build/linux/system.gyp:gtk',
            ],
-@@ -795,7 +799,7 @@
-             'gpu/media/mft_angle_video_device.h',
-           ],
-         }],
--        ['OS=="linux" and target_arch!="arm"', {
-+        ['(OS=="linux" or OS=="freebsd") and target_arch!="arm"', {
-           'sources': [
-             'gpu/x_util.cc',
-             'gpu/x_util.h',
-@@ -1175,7 +1179,7 @@
+@@ -769,7 +773,7 @@
              'service/cloud_print/print_system_win.cc',
            ],
          }],
