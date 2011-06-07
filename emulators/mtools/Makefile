@@ -7,7 +7,7 @@
 
 PORTNAME=	mtools
 PORTVERSION=	4.0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	mtools
@@ -43,6 +43,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib -liconv
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-x
 PLIST_SUB=	X11="@comment "
+MAKE_ENV+=	WITHOUT_X11=${WITHOUT_X11}
 .else
 USE_XORG=	x11 sm ice xau
 PLIST_SUB=	X11=""
@@ -53,13 +54,11 @@ post-patch:
 	@${REINPLACE_CMD} -e \
 		's|^#define MT_SIZE_T size_t|#define MT_SIZE_T off_t|g' \
 		${WRKSRC}/llong.h
-.for file in mformat.c
 	@${REINPLACE_CMD} -e 's|/etc/mtools.conf|${PREFIX}/etc/mtools.conf|g' \
-		${WRKSRC}/${file}
-.endfor
-.for file in mtools.5 mtools.texi
+		${WRKSRC}/mformat.c
+.for f in mtools.5 mtools.texi
 	@${REINPLACE_CMD} -e 's|/usr/local/etc/|${PREFIX}/etc/|g' \
-		${WRKSRC}/${file}
+		${WRKSRC}/${f}
 .endfor
 
 post-install:
