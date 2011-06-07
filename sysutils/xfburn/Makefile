@@ -1,4 +1,3 @@
-
 # New ports collection makefile for:	xfburn
 # Date created:		2008 November 06
 # Whom:			J.R. Oldroyd <fbsd@opal.com>
@@ -8,6 +7,7 @@
 
 PORTNAME=	xfburn
 PORTVERSION=	0.4.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=/src/apps/${PORTNAME}/${PORTVERSION:R}
