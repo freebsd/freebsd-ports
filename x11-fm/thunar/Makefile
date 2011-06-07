@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Thunar
-PORTVERSION=	1.2.1
-PORTREVISION=	2
+PORTVERSION=	1.2.2
 CATEGORIES=	x11-fm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME:L}/${PORTVERSION:R}
@@ -23,7 +22,7 @@ INSTALLS_ICONS= yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
 USE_GMAKE=	yes
-USE_GNOME=	desktopfileutils glib20 gnomehack gtk20 intltool intlhack pkgconfig gdkpixbuf2
+USE_GNOME=	desktopfileutils gnomehack gtk20 intltool intlhack pkgconfig gdkpixbuf2
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libexo libmenu libutil
 USE_XORG=	sm x11
@@ -39,11 +38,13 @@ OPTIONS=	DBUS		"Enable D-BUS support"				on  \
 		PLUG_SBR_PCRE	"Regular expression support for the SBR plugin"	off \
 		PLUG_TPA	"Thunar Trash Panel Applet plugin"		on  \
 		PLUG_UCA	"Thunar User Customizable Actions plugin"	on  \
-		PLUG_WALL	"Thunar Wallpaper plugin"			on
+		PLUG_WALL	"Thunar Wallpaper plugin"			on \
+		GVFS		"Add support for remote access"			on 
 
 CONFIGURE_ARGS+=	--disable-debug \
 		--enable-gio-unix \
 		--disable-gudev
+CONFIGURE_ENV+=	ac_cv_prog_AWK="${AWK}"
 
 MAN1=		Thunar.1
 
@@ -111,7 +112,6 @@ PLIST_SUB+=	PLUGIN_SBR="@comment "
 .endif
 
 .if !defined(WITHOUT_PLUG_TPA)
-#USE_XFCE+=	xfcehack
 CONFIGURE_ARGS+=--enable-tpa-plugin
 PLIST_SUB+=	PLUGIN_TPA=""
 USE_XFCE+=	panel
@@ -141,6 +141,10 @@ LIB_DEPENDS+=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification
 CONFIGURE_ARGS+=--enable-startup-notification
 .else
 CONFIGURE_ARGS+=--disable-startup-notification
+.endif
+
+.if defined(WITH_GVFS)
+USE_GNOME+=gvfs
 .endif
 
 .if (${OSVERSION} < 701000)
