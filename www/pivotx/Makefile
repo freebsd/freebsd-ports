@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pivotx
-PORTVERSION=	2.2.5
+PORTVERSION=	2.2.6
 CATEGORIES=	www
 MASTER_SITES=	SF/pivot-weblog/PivotX http://pivotx.net/files/ http://pivotx.net/files/archived/
-DISTNAME=	pivotx_225
+DISTNAME=	pivotx_226
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fumifumi@abacustech.jp
