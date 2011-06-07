@@ -3701,14 +3701,46 @@ problem, so can be used as a workaround.</p>
     <affects>
       <package>
 	<name>chromium</name>
-	<range><lt>11.0.696.71</lt></range>
+	<range><lt>12.0.742.91</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
 	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
-	  <p>Fixed in 11.0.698.71:<br/>
+	  <p>Fixed in 12.0.742.91:<br/>
+	    [73962] [79746] High CVE-2011-1808: Use-after-free due to integer
+	      issues in float handling. Credit to miaubiz.<br/>
+	    [75496] Medium CVE-2011-1809: Use-after-free in accessibility
+	      support. Credit to Google Chrome Security Team (SkyLined).<br/>
+	    [75643] Low CVE-2011-1810: Visit history information leak in CSS.
+	      Credit to Jesse Mohrland of Microsoft and Microsoft Vulnerability
+	      Research (MSVR).<br/>
+	    [76034] Low CVE-2011-1811: Browser crash with lots of form
+	      submissions. Credit to "DimitrisV22".<br/>
+	    [77026] Medium CVE-2011-1812: Extensions permission bypass. Credit
+	      to kuzzcc.<br/>
+	    [78516] High CVE-2011-1813: Stale pointer in extension framework.
+	      Credit to Google Chrome Security Team (Inferno).<br/>
+	    [79362] Medium CVE-2011-1814: Read from uninitialized pointer.
+	      Credit to Eric Roman of the Chromium development community.<br/>
+	    [79862] Low CVE-2011-1815: Extension script injection into new tab
+	      page. Credit to kuzzcc.<br/>
+	    [80358] Medium CVE-2011-1816: Use-after-free in developer tools.
+	      Credit to kuzzcc.<br/>
+	    [81916] Medium CVE-2011-1817: Browser memory corruption in history
+	      deletion. Credit to Collin Payne.<br/>
+	    [81949] High CVE-2011-1818: Use-after-free in image loader. Credit
+	      to miaubiz.<br/>
+	    [83010] Medium CVE-2011-1819: Extension injection into chrome://
+	      pages. Credit to Vladislavas Jarmalis, plus subsequent
+	      independent discovery by Sergey Glazunov.<br/>
+	    [83275] High CVE-2011-2332: Same origin bypass in v8. Credit to
+	      Sergey Glazunov.<br/>
+	    [83743] High CVE-2011-2342: Same origin bypass in DOM. Credit to
+	      Sergey Glazunov.</p>
+
+	  <p>Fixed in 11.0.696.71:<br/>
 	    [72189] Low CVE-2011-1801: Pop-up blocker bypass. Credit to Chamal
 	      De Silva.<br/>
 	    [82546] High CVE-2011-1804: Stale pointer in floats rendering.
@@ -4095,11 +4127,25 @@ problem, so can be used as a workaround.</p>
       <cvename>CVE-2011-1804</cvename>
       <cvename>CVE-2011-1806</cvename>
       <cvename>CVE-2011-1807</cvename>
+      <cvename>CVE-2011-1808</cvename>
+      <cvename>CVE-2011-1809</cvename>
+      <cvename>CVE-2011-1810</cvename>
+      <cvename>CVE-2011-1811</cvename>
+      <cvename>CVE-2011-1812</cvename>
+      <cvename>CVE-2011-1813</cvename>
+      <cvename>CVE-2011-1814</cvename>
+      <cvename>CVE-2011-1815</cvename>
+      <cvename>CVE-2011-1816</cvename>
+      <cvename>CVE-2011-1817</cvename>
+      <cvename>CVE-2011-1818</cvename>
+      <cvename>CVE-2011-1819</cvename>
+      <cvename>CVE-2011-2332</cvename>
+      <cvename>CVE-2011-2342</cvename>
     </references>
     <dates>
       <discovery>2010-10-19</discovery>
       <entry>2010-12-07</entry>
-      <modified>2011-05-25</modified>
+      <modified>2011-06-07</modified>
     </dates>
   </vuln>
 
