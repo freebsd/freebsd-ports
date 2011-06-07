@@ -4,3 +4,5 @@ can edit text with multi-byte character encoding, has full undo/redo, can
 edit files and mmap-able devices in mmap shared mode (only replace), has
 tunable syntax highlighting, tunable color scheme (can use default colors),
 tunable key map.
+
+WWW: http://freshmeat.net/projects/leeditor/
