@@ -104,6 +104,17 @@ share/applications/thunar-settings.desktop
 %%DOCSDIR%%/html/es/the-file-manager-window.html
 %%DOCSDIR%%/html/es/using-removable-media.html
 %%DOCSDIR%%/html/es/working-with-files-and-folders.html
+%%DOCSDIR%%/html/el/advanced-topics.html
+%%DOCSDIR%%/html/el/copyright.html
+%%DOCSDIR%%/html/el/customizing-thunar.html
+%%DOCSDIR%%/html/el/faq.html
+%%DOCSDIR%%/html/el/images
+%%DOCSDIR%%/html/el/index.html
+%%DOCSDIR%%/html/el/preferences.html
+%%DOCSDIR%%/html/el/support.html
+%%DOCSDIR%%/html/el/the-file-manager-window.html
+%%DOCSDIR%%/html/el/using-removable-media.html
+%%DOCSDIR%%/html/el/working-with-files-and-folders.html
 %%DOCSDIR%%/html/eu/advanced-topics.html
 %%DOCSDIR%%/html/eu/copyright.html
 %%DOCSDIR%%/html/eu/customizing-thunar.html
@@ -289,17 +300,6 @@ share/applications/thunar-settings.desktop
 %%DOCSDIR%%/html/zh_TW/the-file-manager-window.html
 %%DOCSDIR%%/html/zh_TW/using-removable-media.html
 %%DOCSDIR%%/html/zh_TW/working-with-files-and-folders.html
-%%DOCSDIR%%/html/el/advanced-topics.html
-%%DOCSDIR%%/html/el/copyright.html
-%%DOCSDIR%%/html/el/customizing-thunar.html
-%%DOCSDIR%%/html/el/faq.html
-%%DOCSDIR%%/html/el/index.html
-%%DOCSDIR%%/html/el/preferences.html
-%%DOCSDIR%%/html/el/support.html
-%%DOCSDIR%%/html/el/the-file-manager-window.html
-%%DOCSDIR%%/html/el/using-removable-media.html
-%%DOCSDIR%%/html/el/working-with-files-and-folders.html
-%%DOCSDIR%%/html/el/images
 %%APIDOCS%%share/gtk-doc/html/thunarx/ThunarxFileInfo.html
 %%APIDOCS%%share/gtk-doc/html/thunarx/ThunarxMenuProvider.html
 %%APIDOCS%%share/gtk-doc/html/thunarx/ThunarxPreferencesProvider.html
@@ -333,13 +333,13 @@ share/applications/thunar-settings.desktop
 %%APIDOCS%%share/gtk-doc/html/thunarx/thunarx.devhelp2
 %%APIDOCS%%share/gtk-doc/html/thunarx/up.png
 share/icons/hicolor/16x16/apps/Thunar.png
-share/icons/hicolor/16x16/stock/navigation/stock_thunar-shortcuts.png
-share/icons/hicolor/16x16/stock/navigation/stock_thunar-templates.png
 share/icons/hicolor/16x16/stock/navigation/stock_folder-copy.png
 share/icons/hicolor/16x16/stock/navigation/stock_folder-move.png
+share/icons/hicolor/16x16/stock/navigation/stock_thunar-shortcuts.png
+share/icons/hicolor/16x16/stock/navigation/stock_thunar-templates.png
+share/icons/hicolor/24x24/apps/Thunar.png
 share/icons/hicolor/24x24/stock/navigation/stock_folder-copy.png
 share/icons/hicolor/24x24/stock/navigation/stock_folder-move.png
-share/icons/hicolor/24x24/apps/Thunar.png
 share/icons/hicolor/48x48/apps/Thunar.png
 share/icons/hicolor/scalable/apps/Thunar.svg
 %%NLS%%share/locale/ar/LC_MESSAGES/Thunar.mo
@@ -397,8 +397,6 @@ share/icons/hicolor/scalable/apps/Thunar.svg
 share/pixmaps/Thunar/Thunar-about-logo.png
 %%PLUGIN_TPA%%share/xfce4/panel-plugins/thunar-tpa.desktop
 %%PLUGIN_TPA%%@dirrmtry share/xfce4/panel-plugins
-%%PLUGIN_TPA%%@dirrmtry share/xfce4/panel/plugins
-%%PLUGIN_TPA%%@dirrmtry share/xfce4/panel
 %%PLUGIN_TPA%%@dirrmtry share/xfce4
 @dirrm share/pixmaps/Thunar
 @exec %%LOCALBASE%%/bin/update-desktop-database >/dev/null || /usr/bin/true
@@ -442,10 +440,10 @@ share/pixmaps/Thunar/Thunar-about-logo.png
 @dirrm %%DOCSDIR%%/html/fr
 @dirrm %%DOCSDIR%%/html/eu
 @dirrm %%DOCSDIR%%/html/es
+@dirrm %%DOCSDIR%%/html/el
 @dirrm %%DOCSDIR%%/html/da
 @dirrm %%DOCSDIR%%/html/ca
 @dirrm %%DOCSDIR%%/html/bn
-@dirrm %%DOCSDIR%%/html/el
 @dirrm %%DOCSDIR%%/html/C/images
 @dirrm %%DOCSDIR%%/html/C
 @dirrm %%DOCSDIR%%/html
