@@ -14,11 +14,8 @@ USE_PERL5=	yes
 MASTERDIR=	${.CURDIR}/../mariadb-server
 MARIADB_SCRIPTS_SLAVE=	yes
 
-IGNORE=		Post repo-copy, not ready for use yet
-
 CONFLICTS=	mysql-scripts-[0-9]*
 
-PKGMESSAGE=	/nonexistent	# To avoid equivalent in master port
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
 

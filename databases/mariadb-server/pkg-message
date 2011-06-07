@@ -1,5 +1,0 @@
-Some optional plugins (those in ${LOCALBASE}/lib/mysql/plugin/*.so)
-must be loaded in <datadir>/my.cnf. For example:
-
-[mysqld]
-plugin-load=ha_xtradb.so:ha_federatedx.so
