@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-settings
-PORTVERSION=	4.8.1
-PORTREVISION=	1
+PORTVERSION=	4.8.2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
@@ -15,8 +14,6 @@ DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	XFce 4 settings application
-
-CONFLICTS=	xfce4-settings-4.6*
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 
@@ -28,6 +25,7 @@ OPTIONS=	XKLAVIER	"Keyboard layout settings"		off \
 
 CONFIGURE_ARGS=	--disable-sound-settings \
 		--disable-debug
+CONFIGURE_ENV+=	ac_cv_prog_AWK="${AWK}"
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
@@ -36,7 +34,7 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20 gtk20 desktopfileutils intltool intlhack \
 		pkgconfig
 USE_XFCE=	configenv libexo libmenu libutil xfconf
-USE_XORG=	x11 xi
+USE_XORG=	inputproto x11 xi
 
 .include <bsd.port.pre.mk>
 
