@@ -11,6 +11,7 @@ CATEGORIES=	chinese x11
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} pinyin.tar.gz table.tar.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	darcsis@gmail.com
 COMMENT=	A simple and fast GBK Chinese XIM server
@@ -19,27 +20,22 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 LICENSE=	GPLv2
 
-DIST_SUBDIR=	fcitx
-USE_GNOME=	pango intltool
+USE_GNOME=	pango intltool gnomehack
 USE_XORG=	xpm x11 xtst
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
 OPTIONS=	XFT		"Use Xft for Freetype font support" on \
-		TRAY		"Enable system tray support" on \
+		TRAY		"Enable system tray support"	    on \
 		DBUS		"Enable D-Bus for KIMPanel support" off \
 		RECORDING	"Enable recording of user input"    off \
-		DEBUG		"Enable debug build with logging"   off \
+		DEBUG		"Build with debug information"	    off
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 800000
-BROKEN=		does not build on 7.X
-.endif
-
 .if defined(WITH_XFT)
-LIB_DEPENDS+=	Xft.2:${PORTSDIR}/x11-fonts/libXft
+USE_XORG+=	xft
 .else
 CONFIGURE_ARGS+=	--disable-xft
 .endif
@@ -59,12 +55,20 @@ CONFIGURE_ARGS+=	--enable-recording
 .endif
 
 .if defined(WITH_DEBUG)
-CONFIGURE_ARGS+=	--enable-debug --enable-log
+CONFIGURE_ARGS+=	--enable-debug
 .endif
 
 post-patch:
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/pinyin.tar.gz ${WRKSRC}/data
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/table.tar.gz ${WRKSRC}/data/table
+	@${CP} ${_DISTDIR}/pinyin.tar.gz ${WRKSRC}/data
+	@${CP} ${_DISTDIR}/table.tar.gz ${WRKSRC}/data/table
+.if ${OSVERSION} < 800067
+# getline() is GNU extension which FreeBSD only recently adopted
+	@${REINPLACE_CMD} -E \
+		's:getline\(&(.+, )&(.+, .+\) != )-1:fgets(\1\2NULL:' \
+			${WRKSRC}/src/fcitx-config/fcitx-config.c \
+			${WRKSRC}/src/im/special/QuickPhrase.c \
+			${WRKSRC}/src/tools/tools.c
+.endif
 
 pre-install:
 	@${CHMOD} +x ${WRKSRC}/install-sh
