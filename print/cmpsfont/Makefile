@@ -9,9 +9,9 @@ PORTNAME=	cmpsfont
 PORTVERSION=	1.0
 PORTREVISION=	7
 CATEGORIES=	print x11-fonts
-MASTER_SITES=	http://ftp.ctex.org/pub/tex/fonts/type1/
-DISTNAME=	cmps
-EXTRACT_SUFX=	-unix.tar.gz
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	hrs
+DISTNAME=	cmps-unix-19970930
 
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Computer Modern PostScript Fonts (Adobe Type 1 format)
@@ -20,7 +20,7 @@ COMMENT=	Computer Modern PostScript Fonts (Adobe Type 1 format)
 BUILD_DEPENDS=	${LOCALBASE}/bin/type1inst:${PORTSDIR}/x11-fonts/p5-type1inst
 .endif
 
-WRKSRC=		${WRKDIR}/cmpsfont
+WRKSRC=		${WRKDIR}/${PORTNAME}
 PLIST_SUB=	PLIST_X11=${PLIST_X11}
 
 .if !defined(WITHOUT_X11)
