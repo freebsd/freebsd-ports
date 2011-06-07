@@ -1,0 +1,18 @@
+BUG 6488 - Lint errors with Perl 5.12.1 in AntiVirus.pm
+
+Index: lib/Mail/SpamAssassin/Plugin/AntiVirus.pm
+=========================================================================
+--- lib/Mail/SpamAssassin/Plugin/AntiVirus.pm	(revision 574664)
++++ lib/Mail/SpamAssassin/Plugin/AntiVirus.pm	(revision 1028149)
+@@ -98,9 +98,9 @@
+     my ($ctype, $boundary, $charset, $name) =
+       Mail::SpamAssassin::Util::parse_content_type($p->get_header('content-type'));
+ 
+-    $name = lc $name || '';
++    $name = lc($name || '');
+ 
+-    my $cte = lc $p->get_header('content-transfer-encoding') || '';
++    my $cte = lc($p->get_header('content-transfer-encoding') || '');
+     $ctype = lc $ctype;
+ 
+     if ($name && $name =~ /\.(?:ade|adp|asx|bas|bat|chm|cmd|com|cpl|crt|dll|exe|hlp|hta|inf|ins|isp|js|jse|lnk|mda|mdb|mde|mdt|mdw|mdz|msc|msi|msp|mst|nws|ops|pcd|pif|prf|reg|scf|scr\??|sct|shb|shs|shm|swf|url|vb|vbe|vbs|vbx|vxd|wsc|wsf|wsh)$/)
