@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	1.1.9
-PORTREVISION=	3
+DISTVERSION=	1.1.10
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -358,7 +357,7 @@ CONFIGURE_ARGS+=--enable-gnutls --enable-libgcrypt
 .endif
 
 .if defined(WITH_GOOM)
-LIB_DEPENDS+=	goom.0:${PORTSDIR}/graphics/goom
+LIB_DEPENDS+=	goom2.0:${PORTSDIR}/graphics/goom
 CONFIGURE_ARGS+=--enable-goom
 .else
 CONFIGURE_ARGS+=--disable-goom
@@ -367,6 +366,7 @@ CONFIGURE_ARGS+=--disable-goom
 .if defined(WITHOUT_HTTPD)
 CONFIGURE_ARGS+=--disable-httpd
 .else
+LIB_DEPENDS+=	proxy.0:${PORTSDIR}/net/libproxy
 CONFIGURE_ARGS+=--enable-httpd
 .endif
 
@@ -788,7 +788,7 @@ pre-install:
 	cd ${FAKEDIR}/share/locale && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/locale/|' >> ${PLIST}
 .endif
-.for locale in ckb co fur kk km lg my oc ps tet tl
+.for locale in ach cgg ckb co ff fur kk km lg my oc ps tet tl
 	${ECHO_CMD} "@dirrmtry share/locale/${locale}/LC_MESSAGES" >> ${PLIST}
 	${ECHO_CMD} "@dirrmtry share/locale/${locale}" >> ${PLIST}
 .endfor
