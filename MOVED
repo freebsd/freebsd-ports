@@ -2215,5 +2215,5 @@ net-p2p/qbittorrent26-nox11|net-p2p/qbittorrent28-nox11|2011-06-05|Old version n
 net-p2p/qbittorrent27|net-p2p/qbittorrent28|2011-06-05|Old version no longer updated
 net-p2p/qbittorrent27-nox11|net-p2p/qbittorrent28-nox11|2011-06-05|Old version no longer updated
 www/pubcookie-login-server||2011-06-06|Has expired: Unused by maintiner, needs updates.
-databases/mariadb||2011-06-06|Split into databases/mariadb-{client|scripts|server}
+databases/mariadb||2011-06-06|Split into databases/mariadb-{client,scripts,server}
 devel/bugzilla2||2011-06-07|Removed: no longer under development
