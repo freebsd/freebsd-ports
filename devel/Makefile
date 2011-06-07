@@ -122,7 +122,6 @@
     SUBDIR += bufferpool
     SUBDIR += bug-buddy
     SUBDIR += bugzilla
-    SUBDIR += bugzilla2
     SUBDIR += bugzilla3
     SUBDIR += build
     SUBDIR += buildapp
