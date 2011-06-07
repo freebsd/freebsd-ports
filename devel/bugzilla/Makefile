@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bugzilla
-PORTVERSION=	3.6.4
-PORTREVISION=	1
+PORTVERSION=	4.0.1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -16,15 +15,17 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Bug-tracking system developed by Mozilla Project
 
 RUN_DEPENDS=	\
-		${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
+		p5-TimeDate>=1.19:${PORTSDIR}/devel/p5-TimeDate \
 		p5-DBI>=1.41:${PORTSDIR}/databases/p5-DBI \
 		p5-Template-Toolkit>=2.22:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-DateTime>=0.28:${PORTSDIR}/devel/p5-DateTime \
 		p5-DateTime-TimeZone>=0.71:${PORTSDIR}/devel/p5-DateTime-TimeZone \
+		p5-List-MoreUtils>=0.22:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Math-Random-Secure>=0.05:${PORTSDIR}/math/p5-Math-Random-Secure \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-CGI.pm>=3.51:${PORTSDIR}/www/p5-CGI.pm \
 		p5-Email-Send>=2.00:${PORTSDIR}/mail/p5-Email-Send \
-		p5-Email-MIME>=1.861:${PORTSDIR}/mail/p5-Email-MIME
+		p5-Email-MIME>=1.904:${PORTSDIR}/mail/p5-Email-MIME
 
 USE_PERL5=	yes
 
@@ -51,7 +52,7 @@ OPTIONS=	MYSQL "MySQL database support" off \
 		MODPERL2 "With mod_perl2 support" off \
 		GRAPHVIZ "Use GraphViz" off \
 		EXPORT_IMPORT "Import/export bugs (via XML)" off \
-		CONTRIB	"Install user-contributed scripts" off \
+		CONTRIB	"Install user-contributed scripts" on \
 		LDAP "LDAP Authentication" off \
 		RADIUS "RADIUS Authentication" off
 
@@ -117,16 +118,17 @@ RUN_DEPENDS+=	p5-Test-Taint>=0:${PORTSDIR}/devel/p5-Test-Taint
 .endif
 
 .ifdef WITH_XMLRPC
-RUN_DEPENDS+=	${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite
+RUN_DEPENDS+=	p5-SOAP-Lite>=0.712:${PORTSDIR}/net/p5-SOAP-Lite
 .endif
 
 .ifdef WITH_JSONRPC
-RUN_DEPENDS+=	p5-JSON-RPC>=0:${PORTSDIR}/devel/p5-JSON-RPC
+RUN_DEPENDS+=	p5-JSON-RPC>=0:${PORTSDIR}/devel/p5-JSON-RPC \
+		p5-JSON-XS>=2.0:${PORTSDIR}/converters/p5-JSON-XS
 .endif
 
 .ifdef WITH_MODPERL2
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
-		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI
+		${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp2
 .endif
 
 .ifdef WITH_GRAPHVIZ

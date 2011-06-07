@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bugzilla
-DISTVERSION=	3.6.3-ru-20101117
+DISTVERSION=	4.0.1-ru-20110510
 CATEGORIES=	russian
 MASTER_SITES=	http://ftp.mozilla-russia.org/bugzilla/
 PKGNAMESUFFIX=	-ru

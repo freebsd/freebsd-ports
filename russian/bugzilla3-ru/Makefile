@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bugzilla
-DISTVERSION=	3.6.3-ru-20101117
+DISTVERSION=	3.6.5-ru-20110510
 CATEGORIES=	russian
 MASTER_SITES=	http://ftp.mozilla-russia.org/bugzilla/
 PKGNAMESUFFIX=	-ru
@@ -14,11 +14,11 @@ PKGNAMESUFFIX=	-ru
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Russian localization for Bugzilla
 
-RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla
+RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla3
 
 NO_WRKSUBDIR=	yes
 
-.include "${.CURDIR}/../../devel/bugzilla/Makefile.common"
+.include "${.CURDIR}/../../devel/bugzilla3/Makefile.common"
 
 do-install:
 	${MKDIR} ${WWWDIR}
