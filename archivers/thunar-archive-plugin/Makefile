@@ -7,6 +7,7 @@
 
 PORTNAME=	thunar-archive-plugin
 PORTVERSION=	0.3.0
+PORTREVISION=	1
 CATEGORIES=	archivers xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=/src/thunar-plugins//${PORTNAME}/${PORTVERSION:R}

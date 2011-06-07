@@ -27,13 +27,13 @@ include/exo-1/exo/exo-utils.h
 include/exo-1/exo/exo-wrap-table.h
 include/exo-1/exo/exo-xsession-client.h
 include/exo-1/exo/exo.h
-lib/libexo-1.so.0
-lib/libexo-1.so
-lib/libexo-1.la
-lib/libexo-1.a
 lib/gio/modules/libexo-module-1.a
 lib/gio/modules/libexo-module-1.la
 lib/gio/modules/libexo-module-1.so
+lib/libexo-1.a
+lib/libexo-1.la
+lib/libexo-1.so
+lib/libexo-1.so.0
 lib/xfce4/exo-1/exo-compose-mail-1
 lib/xfce4/exo-1/exo-helper-1
 libdata/pkgconfig/exo-1.pc
@@ -42,159 +42,165 @@ share/applications/exo-mail-reader.desktop
 share/applications/exo-preferred-applications.desktop
 share/applications/exo-terminal-emulator.desktop
 share/applications/exo-web-browser.desktop
-share/doc/exo/html/C/exo-preferred-applications.html
-share/doc/exo/html/C/images/exo-preferred-applications-internet.png
-share/doc/exo/html/C/images/exo-preferred-applications-utilities.png
-share/doc/exo/html/C/images/exo-preferred-applications-webbrowser-custom.png
-share/doc/exo/html/C/images/exo-preferred-applications-webbrowser-menu.png
-share/doc/exo/html/bn/exo-preferred-applications.html
-share/doc/exo/html/bn/images
-share/doc/exo/html/ca/exo-preferred-applications.html
-share/doc/exo/html/ca/images
-share/doc/exo/html/da/exo-preferred-applications.html
-share/doc/exo/html/da/images
-share/doc/exo/html/de/exo-preferred-applications.html
-share/doc/exo/html/de/images
-share/doc/exo/html/el/exo-preferred-applications.html
-share/doc/exo/html/el/images
-share/doc/exo/html/es/exo-preferred-applications.html
-share/doc/exo/html/es/images/exo-preferred-applications-internet.png
-share/doc/exo/html/es/images/exo-preferred-applications-utilities.png
-share/doc/exo/html/es/images/exo-preferred-applications-webbrowser-custom.png
-share/doc/exo/html/es/images/exo-preferred-applications-webbrowser-menu.png
-share/doc/exo/html/exo-preferred-applications.css
-share/doc/exo/html/fr/exo-preferred-applications.html
-share/doc/exo/html/fr/images
-share/doc/exo/html/gl/exo-preferred-applications.html
-share/doc/exo/html/gl/images
-share/doc/exo/html/id/exo-preferred-applications.html
-share/doc/exo/html/id/images
-share/doc/exo/html/it/exo-preferred-applications.html
-share/doc/exo/html/it/images
-share/doc/exo/html/ja/exo-preferred-applications.html
-share/doc/exo/html/ja/images/exo-preferred-applications-internet.png
-share/doc/exo/html/ja/images/exo-preferred-applications-utilities.png
-share/doc/exo/html/ja/images/exo-preferred-applications-webbrowser-custom.png
-share/doc/exo/html/ja/images/exo-preferred-applications-webbrowser-menu.png
-share/doc/exo/html/pt/exo-preferred-applications.html
-share/doc/exo/html/pt/images
-share/doc/exo/html/pt_BR/exo-preferred-applications.html
-share/doc/exo/html/pt_BR/images
-share/doc/exo/html/ru/exo-preferred-applications.html
-share/doc/exo/html/ru/images
-share/doc/exo/html/sv/exo-preferred-applications.html
-share/doc/exo/html/sv/images
-share/doc/exo/html/tr/exo-preferred-applications.html
-share/doc/exo/html/tr/images
-share/doc/exo/html/ug/exo-preferred-applications.html
-share/doc/exo/html/ug/images
-share/doc/exo/html/zh_CN/exo-preferred-applications.html
-share/doc/exo/html/zh_CN/images
-share/gtk-doc/html/exo-1/ExoCellRendererEllipsizedText.html
-share/gtk-doc/html/exo-1/ExoCellRendererIcon.html
-share/gtk-doc/html/exo-1/ExoIconBar.html
-share/gtk-doc/html/exo-1/ExoIconChooserDialog.html
-share/gtk-doc/html/exo-1/ExoIconView.html
-share/gtk-doc/html/exo-1/ExoJob.html
-share/gtk-doc/html/exo-1/ExoSimpleJob.html
-share/gtk-doc/html/exo-1/ExoToolbarsEditor.html
-share/gtk-doc/html/exo-1/ExoToolbarsEditorDialog.html
-share/gtk-doc/html/exo-1/ExoToolbarsModel.html
-share/gtk-doc/html/exo-1/ExoToolbarsView.html
-share/gtk-doc/html/exo-1/ExoTreeView.html
-share/gtk-doc/html/exo-1/ExoWrapTable.html
-share/gtk-doc/html/exo-1/ExoXsessionClient.html
-share/gtk-doc/html/exo-1/ch01.html
-share/gtk-doc/html/exo-1/exo-1.devhelp
-share/gtk-doc/html/exo-1/exo-1.devhelp2
-share/gtk-doc/html/exo-1/exo-Binding-Properties-Functions.html
-share/gtk-doc/html/exo-1/exo-Executing-Applications.html
-share/gtk-doc/html/exo-1/exo-Extensions-to-GObject.html
-share/gtk-doc/html/exo-1/exo-Extensions-to-Gtk.html
-share/gtk-doc/html/exo-1/exo-Extensions-to-gdk-pixbuf.html
-share/gtk-doc/html/exo-1/exo-Miscellaneous-Utility-Functions.html
-share/gtk-doc/html/exo-1/exo-String-Utility-Functions.html
-share/gtk-doc/html/exo-1/exo-Version-Information.html
-share/gtk-doc/html/exo-1/exo-cell-renderers.html
-share/gtk-doc/html/exo-1/exo-csource.html
-share/gtk-doc/html/exo-1/exo-extensions.html
-share/gtk-doc/html/exo-1/exo-gtk-file-chooser-add-thumbnail-preview.png
-share/gtk-doc/html/exo-1/exo-icon-chooser-dialog.png
-share/gtk-doc/html/exo-1/exo-jobs.html
-share/gtk-doc/html/exo-1/exo-miscelleanous.html
-share/gtk-doc/html/exo-1/exo-overview.html
-share/gtk-doc/html/exo-1/exo-toolbars-editor-dialog.png
-share/gtk-doc/html/exo-1/exo-toolbars-editor.png
-share/gtk-doc/html/exo-1/exo-toolbars-view.png
-share/gtk-doc/html/exo-1/exo-toolbars.html
-share/gtk-doc/html/exo-1/exo-tools.html
-share/gtk-doc/html/exo-1/exo-widgets.html
-share/gtk-doc/html/exo-1/exo-wrap-table.png
-share/gtk-doc/html/exo-1/home.png
-share/gtk-doc/html/exo-1/index.html
-share/gtk-doc/html/exo-1/index.sgml
-share/gtk-doc/html/exo-1/ix01.html
-share/gtk-doc/html/exo-1/left.png
-share/gtk-doc/html/exo-1/right.png
-share/gtk-doc/html/exo-1/style.css
-share/gtk-doc/html/exo-1/up.png
+%%DOCSDIR%%/html/C/exo-preferred-applications.html
+%%DOCSDIR%%/html/C/images/exo-preferred-applications-internet.png
+%%DOCSDIR%%/html/C/images/exo-preferred-applications-utilities.png
+%%DOCSDIR%%/html/C/images/exo-preferred-applications-webbrowser-custom.png
+%%DOCSDIR%%/html/C/images/exo-preferred-applications-webbrowser-menu.png
+%%DOCSDIR%%/html/bn/exo-preferred-applications.html
+%%DOCSDIR%%/html/bn/images
+%%DOCSDIR%%/html/ca/exo-preferred-applications.html
+%%DOCSDIR%%/html/ca/images
+%%DOCSDIR%%/html/da/exo-preferred-applications.html
+%%DOCSDIR%%/html/da/images
+%%DOCSDIR%%/html/de/exo-preferred-applications.html
+%%DOCSDIR%%/html/de/images
+%%DOCSDIR%%/html/el/exo-preferred-applications.html
+%%DOCSDIR%%/html/el/images/exo-preferred-applications-internet.png
+%%DOCSDIR%%/html/el/images/exo-preferred-applications-utilities.png
+%%DOCSDIR%%/html/el/images/exo-preferred-applications-webbrowser-custom.png
+%%DOCSDIR%%/html/el/images/exo-preferred-applications-webbrowser-menu.png
+%%DOCSDIR%%/html/es/exo-preferred-applications.html
+%%DOCSDIR%%/html/es/images/exo-preferred-applications-internet.png
+%%DOCSDIR%%/html/es/images/exo-preferred-applications-utilities.png
+%%DOCSDIR%%/html/es/images/exo-preferred-applications-webbrowser-custom.png
+%%DOCSDIR%%/html/es/images/exo-preferred-applications-webbrowser-menu.png
+%%DOCSDIR%%/html/exo-preferred-applications.css
+%%DOCSDIR%%/html/fr/exo-preferred-applications.html
+%%DOCSDIR%%/html/fr/images
+%%DOCSDIR%%/html/gl/exo-preferred-applications.html
+%%DOCSDIR%%/html/gl/images
+%%DOCSDIR%%/html/id/exo-preferred-applications.html
+%%DOCSDIR%%/html/id/images
+%%DOCSDIR%%/html/it/exo-preferred-applications.html
+%%DOCSDIR%%/html/it/images
+%%DOCSDIR%%/html/ja/exo-preferred-applications.html
+%%DOCSDIR%%/html/ja/images/exo-preferred-applications-internet.png
+%%DOCSDIR%%/html/ja/images/exo-preferred-applications-utilities.png
+%%DOCSDIR%%/html/ja/images/exo-preferred-applications-webbrowser-custom.png
+%%DOCSDIR%%/html/ja/images/exo-preferred-applications-webbrowser-menu.png
+%%DOCSDIR%%/html/pt/exo-preferred-applications.html
+%%DOCSDIR%%/html/pt/images
+%%DOCSDIR%%/html/pt_BR/exo-preferred-applications.html
+%%DOCSDIR%%/html/pt_BR/images
+%%DOCSDIR%%/html/ru/exo-preferred-applications.html
+%%DOCSDIR%%/html/ru/images
+%%DOCSDIR%%/html/tr/exo-preferred-applications.html
+%%DOCSDIR%%/html/tr/images
+%%DOCSDIR%%/html/sv/exo-preferred-applications.html
+%%DOCSDIR%%/html/sv/images/exo-preferred-applications-internet.png
+%%DOCSDIR%%/html/sv/images/exo-preferred-applications-utilities.png
+%%DOCSDIR%%/html/sv/images/exo-preferred-applications-webbrowser-custom.png
+%%DOCSDIR%%/html/sv/images/exo-preferred-applications-webbrowser-menu.png
+%%DOCSDIR%%/html/ug/exo-preferred-applications.html
+%%DOCSDIR%%/html/ug/images
+%%DOCSDIR%%/html/zh_CN/exo-preferred-applications.html
+%%DOCSDIR%%/html/zh_CN/images
+%%APIDOCS%%share/gtk-doc/html/exo-1/ExoCellRendererEllipsizedText.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/ExoCellRendererIcon.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/ExoIconBar.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/ExoIconChooserDialog.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/ExoIconView.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/ExoJob.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/ExoSimpleJob.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/ExoToolbarsEditor.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/ExoToolbarsEditorDialog.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/ExoToolbarsModel.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/ExoToolbarsView.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/ExoTreeView.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/ExoWrapTable.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/ExoXsessionClient.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/ch01.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-1.devhelp
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-1.devhelp2
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-Binding-Properties-Functions.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-Executing-Applications.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-Extensions-to-GObject.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-Extensions-to-Gtk.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-Extensions-to-gdk-pixbuf.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-Miscellaneous-Utility-Functions.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-String-Utility-Functions.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-Version-Information.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-cell-renderers.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-csource.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-extensions.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-gtk-file-chooser-add-thumbnail-preview.png
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-icon-chooser-dialog.png
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-jobs.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-miscelleanous.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-overview.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-toolbars-editor-dialog.png
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-toolbars-editor.png
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-toolbars-view.png
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-toolbars.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-tools.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-widgets.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/exo-wrap-table.png
+%%APIDOCS%%share/gtk-doc/html/exo-1/home.png
+%%APIDOCS%%share/gtk-doc/html/exo-1/index.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/index.sgml
+%%APIDOCS%%share/gtk-doc/html/exo-1/ix01.html
+%%APIDOCS%%share/gtk-doc/html/exo-1/left.png
+%%APIDOCS%%share/gtk-doc/html/exo-1/right.png
+%%APIDOCS%%share/gtk-doc/html/exo-1/style.css
+%%APIDOCS%%share/gtk-doc/html/exo-1/up.png
 share/icons/hicolor/24x24/apps/preferences-desktop-default-applications.png
 share/icons/hicolor/48x48/apps/applications-internet.png
 share/icons/hicolor/48x48/apps/applications-other.png
 share/icons/hicolor/48x48/apps/preferences-desktop-default-applications.png
-share/locale/ar/LC_MESSAGES/exo-1.mo
-share/locale/ast/LC_MESSAGES/exo-1.mo
-share/locale/be/LC_MESSAGES/exo-1.mo
-share/locale/bg/LC_MESSAGES/exo-1.mo
-share/locale/bn/LC_MESSAGES/exo-1.mo
-share/locale/ca/LC_MESSAGES/exo-1.mo
-share/locale/cs/LC_MESSAGES/exo-1.mo
-share/locale/cy/LC_MESSAGES/exo-1.mo
-share/locale/da/LC_MESSAGES/exo-1.mo
-share/locale/de/LC_MESSAGES/exo-1.mo
-share/locale/dz/LC_MESSAGES/exo-1.mo
-share/locale/el/LC_MESSAGES/exo-1.mo
-share/locale/en_GB/LC_MESSAGES/exo-1.mo
-share/locale/es/LC_MESSAGES/exo-1.mo
-share/locale/et/LC_MESSAGES/exo-1.mo
-share/locale/eu/LC_MESSAGES/exo-1.mo
-share/locale/fi/LC_MESSAGES/exo-1.mo
-share/locale/fr/LC_MESSAGES/exo-1.mo
-share/locale/gl/LC_MESSAGES/exo-1.mo
-share/locale/he/LC_MESSAGES/exo-1.mo
-share/locale/hr/LC_MESSAGES/exo-1.mo
-share/locale/hu/LC_MESSAGES/exo-1.mo
-share/locale/id/LC_MESSAGES/exo-1.mo
-share/locale/is/LC_MESSAGES/exo-1.mo
-share/locale/it/LC_MESSAGES/exo-1.mo
-share/locale/ja/LC_MESSAGES/exo-1.mo
-share/locale/ka/LC_MESSAGES/exo-1.mo
-share/locale/kk/LC_MESSAGES/exo-1.mo
-share/locale/ku/LC_MESSAGES/exo-1.mo
-share/locale/lt/LC_MESSAGES/exo-1.mo
-share/locale/lv/LC_MESSAGES/exo-1.mo
-share/locale/mk/LC_MESSAGES/exo-1.mo
-share/locale/nb/LC_MESSAGES/exo-1.mo
-share/locale/nl/LC_MESSAGES/exo-1.mo
-share/locale/pa/LC_MESSAGES/exo-1.mo
-share/locale/pl/LC_MESSAGES/exo-1.mo
-share/locale/pt/LC_MESSAGES/exo-1.mo
-share/locale/pt_BR/LC_MESSAGES/exo-1.mo
-share/locale/ro/LC_MESSAGES/exo-1.mo
-share/locale/ru/LC_MESSAGES/exo-1.mo
-share/locale/si/LC_MESSAGES/exo-1.mo
-share/locale/sk/LC_MESSAGES/exo-1.mo
-share/locale/sl/LC_MESSAGES/exo-1.mo
-share/locale/sq/LC_MESSAGES/exo-1.mo
-share/locale/sv/LC_MESSAGES/exo-1.mo
-share/locale/tl_PH/LC_MESSAGES/exo-1.mo
-share/locale/tr/LC_MESSAGES/exo-1.mo
-share/locale/ug/LC_MESSAGES/exo-1.mo
-share/locale/uk/LC_MESSAGES/exo-1.mo
-share/locale/ur/LC_MESSAGES/exo-1.mo
-share/locale/ur_PK/LC_MESSAGES/exo-1.mo
-share/locale/zh_CN/LC_MESSAGES/exo-1.mo
-share/locale/zh_TW/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/ar/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/ast/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/be/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/bg/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/bn/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/cy/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/da/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/de/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/dz/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/el/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/en_GB/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/es/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/et/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/he/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/hr/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/id/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/is/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/it/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/ka/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/ku/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/mk/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/nb/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/pt/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/ro/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/si/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/sk/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/sl/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/sq/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/sv/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/tl_PH/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/ug/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/ur/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/ur_PK/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/exo-1.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/exo-1.mo
 share/pixmaps/exo-1/exo-thumbnail-frame.png
 %%PYTHON%%share/pygtk/2.0/defs/%%EXODIR%%/exo.defs
 share/xfce4/helpers/Terminal.desktop
@@ -246,59 +252,76 @@ share/xfce4/helpers/xterm.desktop
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/%%EXODIR%%
 %%PYTHON%%@dirrm share/pygtk/2.0/defs/%%EXODIR%%
 @dirrm share/xfce4/helpers
-@dirrm share/xfce4
+@dirrmtry share/xfce4
 @dirrm share/pixmaps/exo-1
-@dirrmtry share/locale/ur_PK/LC_MESSAGES
-@dirrmtry share/locale/ur_PK
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
-@dirrmtry share/locale/ug/LC_MESSAGES
-@dirrmtry share/locale/ug
-@dirrmtry share/locale/tl_PH/LC_MESSAGES
-@dirrmtry share/locale/tl_PH
-@dirrmtry share/locale/si/LC_MESSAGES
-@dirrmtry share/locale/si
-@dirrmtry share/locale/ku/LC_MESSAGES
-@dirrmtry share/locale/ku
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
-@dirrmtry share/locale/dz/LC_MESSAGES
-@dirrmtry share/locale/dz
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
-@dirrm share/gtk-doc/html/exo-1
-@dirrmtry share/gtk-doc/html
-@dirrmtry share/gtk-doc
-@dirrm share/doc/exo/html/zh_CN
-@dirrm share/doc/exo/html/ug
-@dirrm share/doc/exo/html/tr
-@dirrm share/doc/exo/html/sv
-@dirrm share/doc/exo/html/ru
-@dirrm share/doc/exo/html/pt_BR
-@dirrm share/doc/exo/html/pt
-@dirrm share/doc/exo/html/ja/images
-@dirrm share/doc/exo/html/ja
-@dirrm share/doc/exo/html/it
-@dirrm share/doc/exo/html/id
-@dirrm share/doc/exo/html/gl
-@dirrm share/doc/exo/html/fr
-@dirrm share/doc/exo/html/es/images
-@dirrm share/doc/exo/html/es
-@dirrm share/doc/exo/html/el
-@dirrm share/doc/exo/html/de
-@dirrm share/doc/exo/html/da
-@dirrm share/doc/exo/html/ca
-@dirrm share/doc/exo/html/bn
-@dirrm share/doc/exo/html/C/images
-@dirrm share/doc/exo/html/C
-@dirrm share/doc/exo/html
-@dirrm share/doc/exo
-@dirrmtry share/applications
-@dirrm lib/gio/modules
-@dirrm lib/gio
+%%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur_PK
+%%NLS%%@dirrmtry share/locale/ur/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ur
+%%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ug
+%%NLS%%@dirrmtry share/locale/tl_PH/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tl_PH
+%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/si
+%%NLS%%@dirrmtry share/locale/ku/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ku
+%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kk
+%%NLS%%@dirrmtry share/locale/dz/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/dz
+%%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ast
+%%APIDOCS%%@dirrm share/gtk-doc/html/exo-1
+%%APIDOCS%%@dirrmtry share/gtk-doc/html
+%%APIDOCS%%@dirrmtry share/gtk-doc
+@dirrm %%DOCSDIR%%/html/zh_CN
+@dirrm %%DOCSDIR%%/html/ug
+@dirrm %%DOCSDIR%%/html/tr
+@dirrm %%DOCSDIR%%/html/sv/images
+@dirrm %%DOCSDIR%%/html/sv
+@dirrm %%DOCSDIR%%/html/ru
+@dirrm %%DOCSDIR%%/html/pt_BR
+@dirrm %%DOCSDIR%%/html/pt
+@dirrm %%DOCSDIR%%/html/ja/images
+@dirrm %%DOCSDIR%%/html/ja
+@dirrm %%DOCSDIR%%/html/it
+@dirrm %%DOCSDIR%%/html/id
+@dirrm %%DOCSDIR%%/html/gl
+@dirrm %%DOCSDIR%%/html/fr
+@dirrm %%DOCSDIR%%/html/es/images
+@dirrm %%DOCSDIR%%/html/es
+@dirrm %%DOCSDIR%%/html/el/images
+@dirrm %%DOCSDIR%%/html/el
+@dirrm %%DOCSDIR%%/html/de
+@dirrm %%DOCSDIR%%/html/da
+@dirrm %%DOCSDIR%%/html/ca
+@dirrm %%DOCSDIR%%/html/bn
+@dirrm %%DOCSDIR%%/html/C/images
+@dirrm %%DOCSDIR%%/html/C
+@dirrm %%DOCSDIR%%/html
+@dirrm %%DOCSDIR%%
 @dirrm lib/xfce4/exo-1
 @dirrmtry lib/xfce4
 @dirrm include/exo-1/exo
 @dirrm include/exo-1
 @dirrmtry etc/xdg/xfce4
 @dirrmtry etc/xdg
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/_exo.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/_exo.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/_exo.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/exo/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/exo/__init__.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/exo/__init__.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.pyo
+%%PYTHON%%share/pygtk/2.0/defs/%%EXODIR%%/exo.defs
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/%%EXODIR%%/exo
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/%%EXODIR%%
+%%PYTHON%%@dirrm share/pygtk/2.0/defs/%%EXODIR%%
+%%PYTHON%%@dirrmtry share/pygtk/2.0/defs
+%%PYTHON%%@dirrmtry share/pygtk/2.0
+%%PYTHON%%@dirrmtry share/pygtk
