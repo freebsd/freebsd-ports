@@ -25,6 +25,12 @@ RUN_DEPENDS=	\
 		p5-Email-Send>=2.00:${PORTSDIR}/mail/p5-Email-Send \
 		p5-Email-MIME>=1.861:${PORTSDIR}/mail/p5-Email-MIME
 
+CONFLICTS=	bugzilla-2.* bugzilla-4.*
+LICENSE=	MPL
+PORTSCOUT=	limitw:1,even
+
+LATEST_LINK=	bugzilla3
+
 USE_PERL5=	yes
 
 BINMODE=	700
