@@ -141,8 +141,8 @@ IGNORE=		cannot install: MySQL versions mismatch: mysql${_MYSQL_VER}-client is i
 .endif
 
 .if (${MYSQL_VER} == "52")
-_MYSQL_CLIENT=	databases/mariadb
-_MYSQL_SERVER=	databases/mariadb
+_MYSQL_CLIENT=	databases/mariadb-client
+_MYSQL_SERVER=	databases/mariadb-server
 .else
 _MYSQL_CLIENT=	databases/mysql${MYSQL_VER}-client
 _MYSQL_SERVER=	databases/mysql${MYSQL_VER}-server
