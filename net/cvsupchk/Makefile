@@ -14,7 +14,7 @@ DISTFILES=
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Check a CVSup directory hierarchy against the checkouts file
 
-EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/cvsup:extract
+EXTRACT_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/net/cvsup-without-gui:extract
 
 PLIST_FILES=	bin/cvsupchk
 PORTDOCS=	*
@@ -24,7 +24,7 @@ NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>
 
-src!=		cd ${PORTSDIR}/net/cvsup && make -V WRKSRC
+src!=		cd ${PORTSDIR}/net/cvsup-without-gui && make -V WRKSRC
 
 do-extract:
 	${MKDIR} ${WRKSRC}
