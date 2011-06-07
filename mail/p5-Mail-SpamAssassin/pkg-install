@@ -32,32 +32,11 @@ yesno() {
                 echo "Please answer yes or no."
         done
 }
-    if ! pw groupshow "${GROUP}" 2>/dev/null 1>&2; then
-    	if pw groupadd ${GROUP} -g ${GID}; then
-    		echo "Added group \"${GROUP}\"."
-    	else
-    		echo "Adding group \"${GROUP}\" failed..."
-    		exit 1
-    	fi
-    fi
-    
-    if ! pw usershow "${USER}" 2>/dev/null 1>&2; then
-    	if pw useradd ${USER} -u ${UID} -g ${GROUP} -h - \
-    		-s "/sbin/nologin" -d "${HOME}" \
-    		-c "SpamAssassin user"; \
-    	then
-    		echo "Added user \"${USER}\"."
-    		mkdir ${HOME} && chown ${USER}:${GROUP} ${HOME}
-    	else
-    		echo "Adding user \"${USER}\" failed..."
-    		exit 1
-    	fi
-    fi
-    
+
     # Create pid directory
-    mkdir /var/run/spamd 2> /dev/null && chown ${USER}:${GROUP} /var/run/spamd
+    install -d -g ${USER} -g ${GROUP} /var/run/spamd
     /usr/bin/su root -c "${PKG_PREFIX}/bin/spamassassin -x -L --lint"
-    
+
     if [ ${?} -eq 255 ];then
         echo "***********************************************"
         echo "*__        ___    ____  _   _ ___ _   _  ____ *"
@@ -82,7 +61,7 @@ yesno() {
     fi
        fi
     fi
-    
+
     exit 0
 fi  # post-install
 
