@@ -34,6 +34,56 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1e1421f0-8d6f-11e0-89b4-001ec9578670">
+    <topic>BIND -- Large RRSIG RRsets and Negative Caching DoS</topic>
+    <affects>
+      <package>
+	<name>bind9-sdb-ldap</name>
+	<name>bind9-sdb-postgresql</name>
+	<range><lt>9.4.3.4</lt></range>
+      </package>
+      <package>
+	<name>bind96</name>
+	<range><lt>9.6.3.1.ESV.R4.1</lt></range>
+      </package>
+      <package>
+	<name>bind97</name>
+	<range><lt>9.7.3.1</lt></range>
+      </package>
+      <package>
+	<name>bind98</name>
+	<range><lt>9.8.0.2</lt></range>
+      </package>
+      <system>
+        <name>FreeBSD</name>
+        <range><gt>7.3</gt><lt>7.3_6</lt></range>
+        <range><gt>7.4</gt><lt>7.4_2</lt></range>
+        <range><gt>8.1</gt><lt>8.1_4</lt></range>
+        <range><gt>8.2</gt><lt>8.2_2</lt></range>
+      </system>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>ISC reports:</p>
+	<blockquote cite="http://www.isc.org/software/bind/advisories/cve-2011-1910">
+	  <p>A BIND 9 DNS server set up to be a caching resolver is vulnerable
+	    to a user querying a domain with very large resource record
+	    sets (RRSets) when trying to negatively cache a response. This
+	    can cause the BIND 9 DNS server (named process) to crash.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-1910</cvename>
+      <freebsdsa>SA-11:02.bind</freebsdsa>
+      <url>http://www.isc.org/software/bind/advisories/cve-2011-1910</url>
+    </references>
+    <dates>
+      <discovery>2011-05-26</discovery>
+      <entry>2011-06-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="f7d838f2-9039-11e0-a051-080027ef73ec">
     <topic>fetchmail -- STARTTLS denial of service</topic>
     <affects>
