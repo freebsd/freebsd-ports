@@ -353,7 +353,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- If set, this port needs ghostscript to both
 #				  build and run.  If a number is specified,
 #				  the specified version will be used.
-#				  The valid value is '7' or '8' in that case.
+#				  The valid value is '7', '8', or '9' in that case.
 # USE_GHOSTSCRIPT_BUILD
 #				- If set, this port needs ghostscript to build.
 # USE_GHOSTSCRIPT_RUN
@@ -363,10 +363,10 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  Some installations may wish to override the default
 #				  to specify a version without X11 and/or localized
 #				  versions for their nationality.
-#				  Default: print/ghostscript8
+#				  Default: print/ghostscript9
 # WITH_GHOSTSCRIPT_VER
 #				- If set, the specified version of ghostscript will be
-#				  used.  The valid value is "7" or "8".  Note that
+#				  used.  The valid value is "7", "8", or "9".  Note that
 #				  this is for users, not for port maintainers.  This
 #				  should not be used in Makefile.
 ##
@@ -2201,10 +2201,10 @@ _USE_GHOSTSCRIPT=	${USE_GHOSTSCRIPT_RUN}
 _USE_GHOSTSCRIPT=	${USE_GHOSTSCRIPT}
 .endif
 
-.if defined(WITH_GHOSTSCRIPT_VER) && !empty(WITH_GHOSTSCRIPT_VER:M[78])
+.if defined(WITH_GHOSTSCRIPT_VER) && !empty(WITH_GHOSTSCRIPT_VER:M[789])
 _USE_GHOSTSCRIPT_DEFAULT_VER=	${WITH_GHOSTSCRIPT_VER}
 .else
-_USE_GHOSTSCRIPT_DEFAULT_VER=	8
+_USE_GHOSTSCRIPT_DEFAULT_VER=	9
 .endif
 
 .if defined(_USE_GHOSTSCRIPT)
@@ -2213,8 +2213,8 @@ _USE_GHOSTSCRIPT_PKGNAME_SUFFIX=
 .	else
 _USE_GHOSTSCRIPT_PKGNAME_SUFFIX=-nox11
 .	endif
-.	if !empty(_USE_GHOSTSCRIPT:M[78])
-_USE_GHOSTSCRIPT_VER=${_USE_GHOSTSCRIPT:M[78]}
+.	if !empty(_USE_GHOSTSCRIPT:M[789])
+_USE_GHOSTSCRIPT_VER=${_USE_GHOSTSCRIPT:M[789]}
 .	else
 _USE_GHOSTSCRIPT_VER=${_USE_GHOSTSCRIPT_DEFAULT_VER}
 .	endif
@@ -2224,7 +2224,7 @@ _USE_GHOSTSCRIPT_VER=${_USE_GHOSTSCRIPT_DEFAULT_VER}
 
 # Sanity check
 .if defined(_USE_GHOSTSCRIPT) && defined(WITH_GHOSTSCRIPT_VER)
-.	if empty(WITH_GHOSTSCRIPT_VER:M[78])
+.	if empty(WITH_GHOSTSCRIPT_VER:M[789])
 .		error You set an invalid value "${WITH_GHOSTSCRIPT_VER}" in WITH_GHOSTSCRIPT_VER.  Abort.
 .	elif ${_USE_GHOSTSCRIPT_VER} != ${WITH_GHOSTSCRIPT_VER}
 .		error You set WITH_GHOSTSCRIPT_VER as ${WITH_GHOSTSCRIPT_VER} but ${PKGNAME} requires print/ghostscript${_USE_GHOSTSCRIPT_VER}.  Abort.
