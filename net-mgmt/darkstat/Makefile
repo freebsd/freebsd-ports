@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	darkstat
-PORTVERSION=	3.0.713
+PORTVERSION=	3.0.714
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://dmr.ath.cx/net/darkstat/
+MASTER_SITES=	http://unix4lyfe.org/darkstat/
 
 MAINTAINER=	emikulic@gmail.com
 COMMENT=	Network statistics gatherer and reporter
