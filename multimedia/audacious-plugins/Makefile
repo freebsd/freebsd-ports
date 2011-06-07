@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 EXTRACT_SUFX=	.tgz
@@ -23,7 +23,7 @@ CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" \
 		CFLAGS="-I${LOCALBASE}/include" \
 		CPP=${CPP}
 CONFIGURE_ARGS=	--disable-evdevplug --disable-alsa \
-		--disable-pulse --disable-projectm --disable-projectm-1.0
+		--disable-pulse --disable-projectm-1.0
 WANT_GNOME=	yes
 WANT_EFL=	yes
 WANT_SDL=	yes
@@ -36,8 +36,7 @@ PORTDOCS=	AUTHORS
 #		PROJECTM	"Enable projectM vis plugin"		on \
 
 OPTIONS=	DBUS		"Enable dbus support"			on  \
-                CUE             "Enable CUE support"                    on  \
-		ESOUND		"Enable Esound output output"		off \
+		CUE             "Enable CUE support"                    on  \
 		MP3		"Enable mp3 plugin"			on  \
 		ROCKLIGHT	"Enable Rocklight vis plugin"		on  \
 		LIRC		"Enable LIRC plugin"			off \
@@ -47,7 +46,7 @@ OPTIONS=	DBUS		"Enable dbus support"			on  \
 		ADPLUG		"Enable AdPlug plugin"			off \
 		VORBIS		"Enable Ogg Vorbis input plugin"	off \
 		FLAC		"Enable FLAC input plugin"		off \
-                FFAUDIO         "Enable FFAUDIO input plugin"           off \
+		FFAUDIO         "Enable FFAUDIO input plugin"           off \
 		WAVPACK 	"Enable WavPack input plugin"		off \
 		AAC		"Enable aac plugin"			on  \
 		SNDFILE 	"Enable sndfile extensions"		off \
@@ -57,6 +56,7 @@ OPTIONS=	DBUS		"Enable dbus support"			on  \
 		OSS		"Enable OSS output plugin"		on  \
 		OSS4		"Enable OSS4 output plugin"		off \
 		CDAUDIO		"Enable cdaudio-ng input plugin"        on  \
+		SCROBBLER	"Enable Scrobbler Plugin"		on  \
 		NEON		"Enable neon (HTTP) support"            on  \
 		MMS		"Enable mms support"			off \
 		MTP		"Enable MTP upload support"             off \
@@ -80,20 +80,21 @@ PLIST_SUB+=	SDL="@comment "
 CONFIGURE_ARGS+=--disable-sdlout
 .endif
 
-.if defined(WITH_NOTIFY)
-PLIST_SUB+=	NOTIFY=""
+.if defined(WITH_NOTIFY) || exists(${LOCALBASE}/lib/libnotify.so.1)
+LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--enable-notify
+PLIST_SUB+=     NOTIFY=""
 .else
 PLIST_SUB+=	NOTIFY="@comment "
 CONFIGURE_ARGS+=--disable-notify
 .endif
 
 .if !defined(WITHOUT_DBUS)
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
-CONFIGURE_ARGS+=--enable-dbus --enable-gnomeshortcuts
+LIB_DEPENDS+=   dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+CONFIGURE_ARGS+=--enable-gnomeshortcuts
 PLIST_SUB+=	DBUS=""
 .else
-CONFIGURE_ARGS+=--disable-dbus --disable-gnomeshortcuts
+CONFIGURE_ARGS+=--disable-gnomeshortcuts
 PLIST_SUB+=	DBUS="@comment "
 .endif
 
@@ -104,20 +105,6 @@ PLIST_SUB+=	CUEPLUGIN=""
 .else
 CONFIGURE_ARGS+=--disable-cue
 PLIST_SUB+=	CUEPLUGIN="@comment "
-.endif
-
-.if defined(WITH_ESOUND)
-USE_GNOME+=	esound
-CONFIGURE_ARGS+=--enable-esd
-PLIST_SUB+=	ESDPLUGIN=""
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-esound
-.else
-PKGNAMESUFFIX=	-esound
-.endif
-.else
-CONFIGURE_ARGS+=--disable-esd
-PLIST_SUB+=	ESDPLUGIN="@comment "
 .endif
 
 .if !defined(WITHOUT_MP3)
@@ -261,6 +248,15 @@ CONFIGURE_ARGS+=--enable-oss
 .else
 PLIST_SUB+=	OSSPLUGIN="@comment "
 CONFIGURE_ARGS+=--disable-oss
+.endif
+
+.if !defined(WITHOUT_SCROBBLER)
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+PLIST_SUB+=	SCROBBLERPLUGIN=""
+CONFIGURE_ARGS+=--enable-scrobbler
+.else
+PLIST_SUB+=	SCROBBLERPLUGIN="@comment "
+CONFIGURE_ARGS+=--disable-scrobbler
 .endif
 
 .if !defined(WITHOUT_OSS4)

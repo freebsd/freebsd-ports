@@ -23,6 +23,7 @@ lib/audacious/General/hotkey.so
 %%LIRCPLUGIN%%lib/audacious/General/lirc.so
 lib/audacious/General/lyricwiki.so
 %%NOTIFY%%lib/audacious/General/notify.so
+%%SCROBBLERPLUGIN%%lib/audacious/General/scrobbler.so
 lib/audacious/General/skins.so
 lib/audacious/General/song_change.so
 %%STATUSICONPLUGIN%%lib/audacious/General/statusicon.so
@@ -49,7 +50,6 @@ lib/audacious/Input/vtx.so
 lib/audacious/Input/xsf.so
 %%OSSPLUGIN%%lib/audacious/Output/OSS.so
 %%OSS4PLUGIN%%lib/audacious/Output/oss4.so
-%%ESDPLUGIN%%lib/audacious/Output/ESD.so
 lib/audacious/Output/filewriter.so
 %%JACKPLUGIN%%lib/audacious/Output/jackout.so
 lib/audacious/Output/null.so
