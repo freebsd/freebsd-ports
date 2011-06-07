@@ -88,6 +88,7 @@
     SUBDIR += ghostscript8
     SUBDIR += ghostscript8-nox11
     SUBDIR += ghostscript9
+    SUBDIR += ghostscript9-nox11
     SUBDIR += ghostview
     SUBDIR += gimp-gutenprint
     SUBDIR += gl2ps
