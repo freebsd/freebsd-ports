@@ -6,53 +6,55 @@
 #
 
 PORTNAME=	dbXML
-PORTVERSION=	1.0b2
-PORTREVISION=	4
+PORTVERSION=	2.0
 CATEGORIES=	databases java
-MASTER_SITES=	SF/${PORTNAME:L}-core/OldFiles
-DISTNAME=	dbXML-Core-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME:L}-core/${PORTNAME}/${PORTNAME}%20${PORTVERSION}/
+DISTNAME=	dbXML-${PORTVERSION}
 
 MAINTAINER=	rws@procopia.com
 COMMENT=	Java Native XML Database
 
-RUN_DEPENDS=	${JAVA_HOME}/bin/java:${PORTSDIR}/java/jdk13
-
-JAVA_HOME=	${LOCALBASE}/jdk1.3.1
-WRKSRC=		${WRKDIR}/dbXML-Core-${PORTVERSION}
-DBXML_HOME=	${PREFIX}/share/java/${PORTNAME}
+USE_JAVA=	1.5+
+DBXML_HOME=	${JAVASHAREDIR}/${PORTNAME}
 PLIST_SUB+=	T=${DBXML_HOME:S/^${PREFIX}\///}
 
 NO_BUILD=	yes
 
-post-patch:
-	@${RM} ${WRKSRC}/config/system.xml.orig
+SUB_FILES+=	pkg-message \
+		dbxmlctl
+SUB_LIST+=	DBXML_HOME=${DBXML_HOME} \
+		USER=${USERS} \
+		PORTNAME=${PORTNAME:L}
+USE_RC_SUBR=	${PORTNAME:L}
 
-pre-install:
-	PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
+USERS=		${PORTNAME:L}
+GROUPS=		${PORTNAME:L}
+SHAREMODE=	0644
+
+post-patch:
+.for f in bin/dbxml bin/dbxml-gui install/create-db startup
+	@${REINPLACE_CMD} -e "s:%%DBXML_HOME%%:${DBXML_HOME}:" \
+		-e "s:%%LOCALBASE%%:${LOCALBASE}:" "${WRKSRC}/${f}"
+.endfor
 
 do-install:
 	@${MKDIR} ${DBXML_HOME}
-	@cd ${WRKSRC}; \
-	${CP} -R config docs idl java xml icons logs ${DBXML_HOME}; \
-	${CP} LICENSE ${DBXML_HOME}; \
-	${CP} README ${DBXML_HOME}
-	@${CAT} ${WRKSRC}/bin/dbxmladmin \
-	| ${SED} "s|%%PREFIX%%|${PREFIX}|g" > ${WRKDIR}/dbxmladmin
-	${INSTALL_SCRIPT} -m 755 ${WRKDIR}/dbxmladmin ${PREFIX}/bin
-	@${CAT} ${WRKSRC}/bin/dbxml \
-	| ${SED} "s|%%PREFIX%%|${PREFIX}|g" > ${WRKDIR}/dbxml
-	${INSTALL_SCRIPT} -m 755 ${WRKDIR}/dbxml ${PREFIX}/bin
-	@${CAT} ${FILESDIR}/00dbxml.sh \
-	| ${SED} "s|%%PREFIX%%|${PREFIX}|g" \
-	| ${SED} "s|%%JAVA_HOME%%|${JAVA_HOME}|g" > ${WRKDIR}/00dbxml.sh
-	${INSTALL_SCRIPT} ${WRKDIR}/00dbxml.sh ${PREFIX}/etc/rc.d
-	@${CAT} ${FILESDIR}/dbxmlctl \
-	| ${SED} "s|%%JAVA_HOME%%|${JAVA_HOME}|g" \
-	| ${SED} "s|%%DBXML_HOME%%|${DBXML_HOME}|g" > ${WRKDIR}/dbxmlctl
-	${INSTALL_SCRIPT} ${WRKDIR}/dbxmlctl ${PREFIX}/bin
+.for d in cocoa config db docs install java jsp logs schemas stylesheets
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${DBXML_HOME})
+.endfor
+	@${INSTALL_DATA} ${WRKSRC}/LICENSE ${DBXML_HOME}
+	@${INSTALL_DATA} ${WRKSRC}/README ${DBXML_HOME}
+	@${INSTALL_SCRIPT} ${WRKSRC}/startup ${DBXML_HOME}
+	@${CHOWN} -R ${USERS}:${GROUPS} ${DBXML_HOME}
+.for f in dbxml dbxml-gui
+	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${f} ${PREFIX}/bin/
+.endfor
+	@${INSTALL_SCRIPT} ${WRKDIR}/dbxmlctl ${PREFIX}/bin/
+.for f in install/create-db startup
+	@${CHMOD} 0755 ${DBXML_HOME}/${f}
+.endfor
 
-	${CHOWN} -R dbxml:dbxml ${DBXML_HOME}
 post-install:
-	@${ECHO} "etc/rc.d/00dbxml.sh" >> ${TMPPLIST}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
