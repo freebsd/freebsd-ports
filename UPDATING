@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110606:
+  AFFECTS: users of databases/mariadb
+  AUTHOR: dougb@FreeBSD.org
+
+  The mariadb port has been split into -client, -scripts, and -server ports
+  ala mysql.  You can now install only the parts that you need.
+
+  If you have devel/libevent installed along with mariadb you should do
+  something like:
+
+	pkg_delete mariadb\*
+	portmaster devel/libevent
+
 20110605:
   AFFECTS: users of security/gnutls and any port that depends on it
   AUTHOR: novel@FreeBSD.org

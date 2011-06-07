@@ -14,11 +14,10 @@ MARIADB_CLIENT_SLAVE=	yes
 
 CONFIGURE_ARGS=	--without-server --with-libevent=no
 
-IGNORE=		Post repo-copy, not ready for use yet
+OPTIONS=	THREADSAFE "Build thread-safe client" On
 
 CONFLICTS=	mysql-client-[0-9]*
 
-PKGMESSAGE=	/nonexistent	# To avoid equivalent in master port
 PATCHDIR=	${.CURDIR}/files
 PLIST=		${.CURDIR}/pkg-plist
 
