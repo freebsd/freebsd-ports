@@ -1,0 +1,57 @@
+*** fontset.c.orig	Sun Jan 24 20:51:59 1999
+--- fontset.c	Sun Jan 24 20:54:54 1999
+***************
+*** 210,216 ****
+  
+  	if (notFound)
+  	{
+!         	(void) sprintf(filename, "/usr/lib/X11/app-defaults/%s/%s",
+  			locale, FONT_SETS);
+  	}
+  
+--- 210,216 ----
+  
+  	if (notFound)
+  	{
+!         	(void) sprintf(filename, "/usr/X11R6/lib/X11/app-defaults/%s/%s",
+  			locale, FONT_SETS);
+  	}
+  
+*** ol_button.413.c.orig	Sun Jan 24 20:16:16 1999
+--- ol_button.413.c	Sun Jan 24 20:21:00 1999
+***************
+*** 8,14 ****
+   * a version of olgx 3.2 (from the xview 3.2 release) and don't want to
+   * use this file, change the define here
+   */
+! #ifndef SVR4
+  
+  /*
+   * Based on
+--- 8,14 ----
+   * a version of olgx 3.2 (from the xview 3.2 release) and don't want to
+   * use this file, change the define here
+   */
+! #if !defined(SVR4) && !defined(XVIEW32)
+  
+  /*
+   * Based on
+*** ol_button.svr4.c.orig	Sun Jan 24 20:21:22 1999
+--- ol_button.svr4.c	Sun Jan 24 20:23:34 1999
+***************
+*** 12,18 ****
+   *
+   */
+  
+! #ifdef SVR4
+  
+  /*
+   * Copyright 1989-1990 Sun Microsystems  See LEGAL_NOTICE for terms of
+--- 12,18 ----
+   *
+   */
+  
+! #if defined(SVR4) || defined(XVIEW32)
+  
+  /*
+   * Copyright 1989-1990 Sun Microsystems  See LEGAL_NOTICE for terms of
