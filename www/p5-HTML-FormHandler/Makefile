@@ -4,11 +4,11 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-FormHandler
-PORTVERSION=	0.33002
+PORTVERSION=	0.34001
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/G/GS/GSHANK
+MASTER_SITE_SUBDIR=	CPAN:GSHANK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	az@FreeBSD.org
@@ -19,7 +19,7 @@ BUILD_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-Email-Valid>=0:${PORTSDIR}/mail/p5-Email-Valid \
 		p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
 		p5-Locale-Maketext>=1.09:${PORTSDIR}/devel/p5-Locale-Maketext \
-		p5-Moose>=0.90:${PORTSDIR}/devel/p5-Moose \
+		p5-Moose>=2.0007:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Getopt>=0.16:${PORTSDIR}/devel/p5-MooseX-Getopt \
 		p5-MooseX-Types>=0.20:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-MooseX-Types-Common>=0:${PORTSDIR}/devel/p5-MooseX-Types-Common \
@@ -33,7 +33,7 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	5.8.9+
 MAN3=	HTML::FormHandler.3 \
 	HTML::FormHandler::Field.3 HTML::FormHandler::TraitFor::I18N.3 \
 	HTML::FormHandler::Render::WithTT.3 HTML::FormHandler::Field::NoValue.3 \
@@ -81,6 +81,7 @@ MAN3=	HTML::FormHandler.3 \
 	HTML::FormHandler::Widget::Form::Simple.3 \
 	HTML::FormHandler::Widget::Form::Table.3 \
 	HTML::FormHandler::Widget::Wrapper::Simple.3 \
+	HTML::FormHandler::Widget::Wrapper::SimpleInline.3 \
 	HTML::FormHandler::TraitFor::Captcha.3 \
 	HTML::FormHandler::Widget::Wrapper::Fieldset.3 \
 	HTML::FormHandler::Widget::Field::Button.3 \
@@ -108,6 +109,7 @@ MAN3=	HTML::FormHandler.3 \
 	HTML::FormHandler::I18N::tr_tr.3 \
 	HTML::FormHandler::I18N::en_us.3 \
 	HTML::FormHandler::Widget::Wrapper::Table.3 \
+	HTML::FormHandler::Widget::Wrapper::TableInline.3 \
 	HTML::FormHandler::Widget::Field::CheckboxGroup.3 \
 	HTML::FormHandler::Widget::Field::Submit.3 \
 	HTML::FormHandler::Widget::Wrapper::None.3 \

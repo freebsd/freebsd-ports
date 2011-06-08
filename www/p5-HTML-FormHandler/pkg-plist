@@ -122,7 +122,9 @@
 %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Fieldset.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/None.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Simple.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/SimpleInline.pm
 %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/Table.pm
+%%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper/TableInline.pm
 %%SITE_PERL%%/HTML/FormHandler/Wizard.pm
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget/Wrapper
 @dirrmtry %%SITE_PERL%%/HTML/FormHandler/Widget/Form/Role
@@ -149,3 +151,5 @@
 @dirrmtry %%SITE_PERL%%/HTML
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/FormHandler
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML
+@dirrmtry %%SITE_PERL%%/auto/share/dist
+@dirrmtry %%SITE_PERL%%/auto/share
