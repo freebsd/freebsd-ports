@@ -6,7 +6,7 @@
 
 PORTNAME=	prelude-manager
 PORTVERSION=	0.9.14.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 MASTER_SITES=   http://www.prelude-ids.com/download/releases/%SUBDIR%/
 MASTER_SITE_SUBDIR=     ${PORTNAME} ${PORTNAME}/old
@@ -26,26 +26,15 @@ CONFIGURE_ARGS=		--with-html-dir=${PREFIX}/share/doc \
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		LIBS="${LIBS} -L${LOCALBASE}/lib"
 
-PRELUDEUSER?=	prelude
-PRELUDEGROUP?=	prelude
-PRELUDEDIR?=	/nonexistent
-
-PRELUDEUID=	281
-PRELUDEGID=	${PRELUDEUID}
+USERS?=		prelude
+GROUPS?=	prelude
 
 MAN1=		prelude-manager.1
 
+PLIST_SUB=	PRELUDEUSER=${USERS} \
+		PRELUDEGROUP=${GROUPS}
+
 .include <bsd.port.pre.mk>
-
-PLIST_SUB+=	PRELUDEDIR=${PRELUDEDIR} \
-		PRELUDEUSER=${PRELUDEUSER} \
-		PRELUDEGROUP=${PRELUDEGROUP}
-
-SUB_FILES=	pkg-install \
-		pkg-deinstall
-
-SUB_LIST=	PREFIX=${PREFIX} \
-		${PLIST_SUB}
 
 .if defined(WITHOUT_XML)
 PLIST_SUB+=		WITH_XML="@comment "
