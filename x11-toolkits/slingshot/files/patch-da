@@ -1,0 +1,19 @@
+*** include/sspkg/Makefile.orig	Sat Oct 23 02:34:35 1993
+--- include/sspkg/Makefile	Sat Mar  4 05:05:40 2000
+***************
+*** 13,19 ****
+  	-sccs clean
+  
+  install: FORCE
+! 	cp $(INCLUDEFILES) $(INSTALL_DIR)/include/sspkg
+  
+  FORCE:
+  
+--- 13,19 ----
+  	-sccs clean
+  
+  install: FORCE
+! 	${BSD_INSTALL_DATA} $(INCLUDEFILES) $(INSTALL_DIR)/include/sspkg
+  
+  FORCE:
+  
