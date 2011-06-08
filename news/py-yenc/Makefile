@@ -12,7 +12,7 @@ MASTER_SITES=	http://sabnzbd.sourceforge.net/
 		
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	kimelto@gmail.com
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	A yenc decoding module for Python in C
 
 USE_PYTHON=	yes

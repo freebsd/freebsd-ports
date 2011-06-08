@@ -10,7 +10,7 @@ PORTVERSION=	1.3
 CATEGORIES=	irc devel
 MASTER_SITES=	SF
 
-MAINTAINER=	kimelto@gmail.com
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	An IRC library to create IRC clients
 
 GNU_CONFIGURE=	yes

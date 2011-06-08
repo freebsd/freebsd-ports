@@ -10,7 +10,7 @@ PORTVERSION=	0.21
 CATEGORIES=	audio
 MASTER_SITES=	SF/musicpd/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	kimelto@gmail.com
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Musicpd last.fm client
 
 LIB_DEPENDS+=	mpdclient.2:${PORTSDIR}/audio/libmpdclient

@@ -8,11 +8,11 @@
 PORTNAME=	gflags
 PORTVERSION=	1.4
 CATEGORIES=	devel python
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-gflags-${PORTVERSION}
 
-MAINTAINER=	kimelto@gmail.com
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Commandline flags module for Python
 
 PROJECTHOST=	python-gflags

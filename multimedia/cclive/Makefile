@@ -12,7 +12,7 @@ CATEGORIES=	multimedia net
 MASTER_SITES=	SF/${PORTNAME}/0.7 \
 		GOOGLE_CODE
 
-MAINTAINER=	kimelto@gmail.com
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Lightweight command line video extraction tool
 
 LIB_DEPENDS=	boost_system.4:${PORTSDIR}/devel/boost-libs \

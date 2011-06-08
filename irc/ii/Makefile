@@ -11,7 +11,7 @@ CATEGORIES=	irc
 MASTER_SITES=	http://dl.suckless.org/tools/ \
 		http://laffaye.free.fr/distfiles/
 
-MAINTAINER=	kimelto@gmail.com
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	A minimalist FIFO and filesystem-based IRC client
 
 LICENSE=	MIT

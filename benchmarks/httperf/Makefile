@@ -10,7 +10,7 @@ PORTVERSION=	0.9.0
 CATEGORIES=	benchmarks www
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	kimelto@gmail.com
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	A tool for measuring webserver performance
 
 LICENSE=	GPLv2

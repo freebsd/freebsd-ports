@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	misc print
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	kimelto@gmail.com
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	A collection of makefile and scripts for LaTeX documents
 
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
