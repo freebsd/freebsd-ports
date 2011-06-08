@@ -17,6 +17,9 @@ COMMENT=	distributedfolding.org distributed protein folding project
 
 LIB_DEPENDS=	c_r.4:${PORTSDIR}/misc/compat4x
 
+DEPRECATED=	No more upstream, looks like an abandonware
+EXPIRATION_DATE=	2011-08-01
+
 ONLY_FOR_ARCHS=	i386
 USE_BZIP2=	yes
 NO_BUILD=	yes
