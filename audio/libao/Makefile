@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libao
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.xiph.org/releases/ao/
 
