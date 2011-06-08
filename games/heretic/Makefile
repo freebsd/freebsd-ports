@@ -7,7 +7,7 @@
 
 PORTNAME=	heretic
 PORTVERSION=	1.2
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	games
 MASTER_SITES=	http://heretic.linuxgames.com/heretic/src/:source \
 		http://heretic.linuxgames.com/wad/:wad
@@ -72,8 +72,10 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/heretic_share.wad ${PREFIX}/share/heretic
 .endif
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${PREFIX}/share/doc/heretic
-	${INSTALL_DATA} ${WRKSRC}/doc/* ${PREFIX}/share/doc/heretic
+	@${MKDIR} ${DOCSDIR}
+.for i in "End User License Heretic Source Code.txt" Gamekeys.txt README.txt AUTHORS SourceReadme.txt Changelog README.opengl
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.post.mk>
