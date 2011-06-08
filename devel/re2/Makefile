@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://jlaffaye.net/distfiles/ \
 		http://laffaye.free.fr/distfiles/
 
-MAINTAINER=	kimelto@gmail.com
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	A fast C++ regex library
 
 LICENSE=	BSD

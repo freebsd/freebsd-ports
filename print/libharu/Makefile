@@ -11,7 +11,7 @@ PORTVERSION=	2.2.1
 CATEGORIES=	print
 MASTER_SITES=	http://libharu.org/files/
 
-MAINTAINER=	kimelto@gmail.com
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Haru Free PDF Library
 
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png

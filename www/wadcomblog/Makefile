@@ -11,7 +11,7 @@ CATEGORIES=	www python
 MASTER_SITES=	http://laffaye.free.fr/distfiles/ \
 		http://vss.73rus.com/wadcomblog/files/
 
-MAINTAINER=	kimelto@gmail.com
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Simple open-source static blog engine written in Python
 
 USE_PYTHON=	yes

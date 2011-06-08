@@ -11,7 +11,7 @@ CATEGORIES=	www devel
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	closure_linter-${PORTVERSION}
 
-MAINTAINER=	kimelto@gmail.com
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	JavaScript linter
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gflags:${PORTSDIR}/devel/py-gflags

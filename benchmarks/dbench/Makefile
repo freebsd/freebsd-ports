@@ -12,7 +12,7 @@ CATEGORIES=	benchmarks
 MASTER_SITES=	SAMBA
 MASTER_SITE_SUBDIR=	../../ftp/tridge/dbench
 
-MAINTAINER=	kimelto@gmail.com
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	A simulation of the Ziff-Davis netbench benchmark
 
 LIB_DEPENDS=	popt:${PORTSDIR}/devel/popt

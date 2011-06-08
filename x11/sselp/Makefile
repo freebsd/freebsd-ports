@@ -11,7 +11,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/ \
 		http://laffaye.free.fr/distfiles/
 
-MAINTAINER=	kimelto@gmail.com
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Simple SELection Printer for X11
 
 USE_XORG=	x11

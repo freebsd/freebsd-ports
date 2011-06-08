@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/dns/ \
 		http://www.sourcefiles.org/Networking/Tools/DNS/
 DISTNAME=	dlint${PORTVERSION}
 
-MAINTAINER=	kimelto@gmail.com
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Lint for DNS zones (Domain Name Server zone verification utility)
 
 NO_BUILD=	yes
