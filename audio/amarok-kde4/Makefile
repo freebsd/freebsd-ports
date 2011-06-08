@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	amarok
-PORTVERSION=	2.4.0
-PORTREVISION=	3
+PORTVERSION=	2.4.1
 CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
@@ -19,6 +18,7 @@ LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
 		lastfm.0:${PORTSDIR}/audio/liblastfm \
 		ofa:${PORTSDIR}/audio/libofa \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
+		qjson.0:${PORTSDIR}/devel/qjson \
 		qca.2:${PORTSDIR}/devel/qca
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so.1.0.0:${PORTSDIR}/devel/qtscriptgenerator
