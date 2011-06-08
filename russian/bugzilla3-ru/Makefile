@@ -16,6 +16,8 @@ COMMENT=	Russian localization for Bugzilla
 
 RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla3
 
+LATEST_LINK=	${PKGNAMEPREFIX}bugzilla3${PKGNAMESUFFIX}
+
 NO_WRKSUBDIR=	yes
 
 .include "${.CURDIR}/../../devel/bugzilla3/Makefile.common"
