@@ -788,7 +788,7 @@ pre-install:
 	cd ${FAKEDIR}/share/locale && ${FIND} -s * -type f -o -type l | \
 		${SED} -e 's|^|share/locale/|' >> ${PLIST}
 .endif
-.for locale in ach cgg ckb co ff fur kk km lg my oc ps tet tl
+.for locale in ach cgg ckb co ff fur kk km lg my oc ps tet tl zu
 	${ECHO_CMD} "@dirrmtry share/locale/${locale}/LC_MESSAGES" >> ${PLIST}
 	${ECHO_CMD} "@dirrmtry share/locale/${locale}" >> ${PLIST}
 .endfor
