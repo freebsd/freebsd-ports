@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pgbouncer
-PORTVERSION=	1.4
+PORTVERSION=	1.4.1
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/2912/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/2987/
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Lightweight connection pooler for PostgreSQL
@@ -16,6 +16,9 @@ COMMENT=	Lightweight connection pooler for PostgreSQL
 LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 
 PORTSCOUT=	site:http://pgfoundry.org/frs/?group_id=1000258
+
+USERS=		pgbouncer
+GROUPS=		pgbouncer
 
 USE_RC_SUBR=	pgbouncer.sh
 SUB_FILES=	pkg-message pkg-install pkg-deinstall
@@ -29,6 +32,8 @@ MAN5=		pgbouncer.5
 .endif
 
 CONFIGURE_ARGS=	--with-libevent=${LOCALBASE}
+CONFIGURE_ENV+=	PTHREAD_CFLAGS=${PTHREAD_CFLAGS} \
+		PTHREAD_LIBS=${PTHREAD_LIBS}
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
@@ -44,28 +49,8 @@ BUILD_DEPENDS+=		${LOCALBASE}/bin/gsed:${PORTSDIR}/textproc/gsed
 
 .include <bsd.port.pre.mk>
 
-# Parse ${PORTSDIR}/UIDs and GIDs for the defaults
-USER!=	${GREP} -E '^${PGBOUNCER_USER}:' ${PORTSDIR}/UIDs | \
-		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):([^:]*)::0:0:([^:]*):([^:]*):([^:]*)$$/USER="\1" UID="\3" GECOS="\5" HOME="\6" SHELL="\7"/'
-GROUP!=	${GREP} -E '^${PGBOUNCER_GROUP}:' ${PORTSDIR}/GIDs | \
-		${SED} -Ee 's/^([^:]*):([^:]*):([^:]*):$$/GROUP="\1" GID="\3"/'
-
-# Apply the defaults where necessary
-PGBOUNCER_USER?=	${USER:MUSER*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-PGBOUNCER_UID?=		${USER:MUID*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-PGBOUNCER_GECOS?=	${USER:MGECOS*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-PGBOUNCER_HOME?=	${USER:MHOME*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-PGBOUNCER_SHELL?=	${USER:MSHELL*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-PGBOUNCER_GROUP?=	${GROUP:MGROUP*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-PGBOUNCER_GID?=		${GROUP:MGID*:C/^[^=]*=\"([^\"]*)\"$/\1/}
-
-SUB_LIST+=	PGBOUNCER_USER="${PGBOUNCER_USER}" \
-		PGBOUNCER_UID="${PGBOUNCER_UID}" \
-		PGBOUNCER_GECOS="${PGBOUNCER_GECOS}" \
-		PGBOUNCER_HOME="${PGBOUNCER_HOME}" \
-		PGBOUNCER_SHELL="${PGBOUNCER_SHELL}" \
-		PGBOUNCER_GROUP="${PGBOUNCER_GROUP}" \
-		PGBOUNCER_GID="${PGBOUNCER_GID}" \
+SUB_LIST+=	PGBOUNCER_USER="${USERS}" \
+		PGBOUNCER_GROUP="${GROUPS}" \
 		PGBOUNCER_LOGDIR="${PGBOUNCER_LOGDIR}" \
 		PGBOUNCER_RUNDIR="${PGBOUNCER_RUNDIR}" \
 		CHMOD="${CHMOD}" CHOWN="${CHOWN}" MKDIR="${MKDIR}" PW="${PW}"
