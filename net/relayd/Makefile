@@ -44,8 +44,8 @@ LIB_DEPENDS=	event-1.4:${PORTSDIR}/devel/libevent
 MAKE_ARGS+=	LIBEVENT=-levent
 .endif
 
-.if (${OSVERSION} < 702104)
-IGNORE=		requires newer FreeBSD (osreldate 702104 and higher)
+.if ${OSVERSION} < 800041
+BROKEN=		does not build on FreeBSD 7.X
 .endif
 
 post-extract:
