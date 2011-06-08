@@ -6,7 +6,7 @@
 
 PORTNAME=	pgcluster
 PORTVERSION=	1.0.7
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/OLD/v${BASEPGSQL}
@@ -26,6 +26,8 @@ WRKSRC?=	${WRKDIR}/postgresql-${BASEPGSQL}
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
+USERS=	pgsql
+GROUPS=	pgsql
 MAKE_FLAGS=	# empty
 MAKEFILE=	# empty
 CONFLICTS=	postgresql-*
@@ -91,10 +93,6 @@ post-build:
 	${MAKE} WRKSRC=${WRKSRC}/src/pgcluster/pglb run-autotools do-configure
 	${MAKE} WRKSRC=${WRKSRC}/src/pgcluster/pglb AUTOCONF=${AUTOCONF} do-build
 .endif
-
-pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
 post-install:
 .if !defined(WITHOUT_PGCLUSTER_REPLICATION)
