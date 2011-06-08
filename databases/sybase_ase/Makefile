@@ -15,6 +15,9 @@ EXTRACT_SUFX=   .tgz
 MAINTAINER=     ports@FreeBSD.org
 COMMENT=        Sybase ASE RDBM System 11
 
+DEPRECATED=	no more public distfiles available
+EXPIRATION_DATE=	2011-08-01
+
 RESTRICTED=     "Please see the license"
 NO_BUILD=       "This is a precompiled package"
 ONLY_FOR_ARCHS= i386
