@@ -1266,7 +1266,7 @@ bugs                            ports/security/bugs
 bugsquish                       ports/games/bugsquish
 bugsx                           ports/games/bugsx
 bugzilla                        ports/devel/bugzilla
-bugzilla2                       ports/devel/bugzilla2
+bugzilla3                       ports/devel/bugzilla3
 buici-clock                     ports/x11-clocks/buici-clock
 build                           ports/devel/build
 buildapp                        ports/devel/buildapp
@@ -4322,6 +4322,7 @@ ghostscript7-nox11              ports/print/ghostscript7-nox11
 ghostscript8                    ports/print/ghostscript8
 ghostscript8-nox11              ports/print/ghostscript8-nox11
 ghostscript9                    ports/print/ghostscript9
+ghostscript9-nox11              ports/print/ghostscript9-nox11
 ghostview                       ports/print/ghostview
 ghtool                          ports/dns/ghtool
 giacxcas                        ports/math/giacxcas
@@ -8967,7 +8968,9 @@ mapyrus                         ports/graphics/mapyrus
 mar                             ports/archivers/mar
 maradns                         ports/dns/maradns
 marble                          ports/astro/marble
-mariadb                         ports/databases/mariadb
+mariadb-client                  ports/databases/mariadb-client
+mariadb-scripts                 ports/databases/mariadb-scripts
+mariadb-server                  ports/databases/mariadb-server
 markdown                        ports/textproc/markdown
 mars                            ports/cad/mars
 mars_nwe                        ports/net/mars_nwe
@@ -21110,7 +21113,6 @@ ptpd2                           ports/net/ptpd2
 ptunnel                         ports/net/ptunnel
 pty                             ports/devel/pty
 ptypes                          ports/devel/ptypes
-pubcookie-login-server          ports/www/pubcookie-login-server
 publib                          ports/devel/publib
 publicfile                      ports/www/publicfile
 puddletag                       ports/audio/puddletag
@@ -22842,6 +22844,7 @@ ru-apache13-modssl              ports/russian/apache13-modssl
 ru-artwiz-ru                    ports/russian/artwiz-ru
 ru-aspell                       ports/russian/aspell
 ru-bugzilla-ru                  ports/russian/bugzilla-ru
+ru-bugzilla3-ru                 ports/russian/bugzilla3-ru
 ru-cyrproxy                     ports/russian/cyrproxy
 ru-d1489                        ports/russian/d1489
 ru-eric4                        ports/russian/eric4
@@ -27268,6 +27271,7 @@ zbase32                         ports/converters/zbase32
 zebedee                         ports/security/zebedee
 zebra                           ports/net/zebra
 zebra-server                    ports/net/zebra-server
+zen-cart                        ports/www/zen-cart
 zend-framework                  ports/www/zend-framework
 zendoptimizer                   ports/devel/ZendOptimizer
 zenity                          ports/x11/zenity
