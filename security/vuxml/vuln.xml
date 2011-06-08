@@ -34,6 +34,46 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="57573136-920e-11e0-bdc9-001b2134ef46">
+    <topic>linux-flashplugin -- cross-site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin</name>
+	<range><le>9.0r289</le></range>
+      </package>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>10.3r181.22</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe Product Security Incident Response Team reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb11-13.html">
+	  <p>An important vulnerability has been identified in Adobe
+	    Flash Player 10.3.181.16 and earlier versions for Windows,
+	    Macintosh, Linux and Solaris, and Adobe Flash Player
+	    10.3.185.22 and earlier versions for Android. This universal
+	    cross-site scripting vulnerability (CVE-2011-2107) could be
+	    used to take actions on a user's behalf on any website or
+	    webmail provider, if the user visits a malicious website.
+	    There are reports that this vulnerability is being exploited
+	    in the wild in active targeted attacks designed to trick
+	    the user into clicking on a malicious link delivered in an
+	    email message.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-2107</cvename>
+      <url>http://www.adobe.com/support/security/bulletins/apsb11-13.html</url>
+    </references>
+    <dates>
+      <discovery>2011-05-13</discovery>
+      <entry>2011-06-08</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1e1421f0-8d6f-11e0-89b4-001ec9578670">
     <topic>BIND -- Large RRSIG RRsets and Negative Caching DoS</topic>
     <affects>
