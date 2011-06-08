@@ -61,7 +61,7 @@
  #
  
 +ifeq ($(usingFreeBSD), 1)
-+IVPREFIX = ${LOCALBASE}
++IVPREFIX = ${PREFIX}
 +else
  IVPREFIX = /usr
 +endif
