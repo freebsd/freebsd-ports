@@ -328,6 +328,7 @@
     SUBDIR += p5-DBD-mysql41
     SUBDIR += p5-DBD-mysql50
     SUBDIR += p5-DBD-mysql51
+    SUBDIR += p5-DBD-mysql52
     SUBDIR += p5-DBD-mysql55
     SUBDIR += p5-DBI
     SUBDIR += p5-DBI-Shell
