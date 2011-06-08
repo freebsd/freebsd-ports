@@ -23,7 +23,7 @@ CONFLICTS=	cppunit*
 
 EXTRATC_ONLY?=	${OOOSRC} ${OOOEXTSRC}
 
-OOOEXTSRC=	ext_sources.20101009.tar.bz2:extsrc
+OOOEXTSRC=	ext_sources.20110331.tar.bz2:extsrc
 
 .if defined(CWS)
 PORTNAME:=	openoffice.org-${CWS}
