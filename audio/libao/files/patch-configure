@@ -1,9 +1,9 @@
 
 $FreeBSD$
 
---- configure.orig	2010-06-05 15:58:21.000000000 +0200
-+++ configure	2010-06-05 16:00:29.000000000 +0200
-@@ -11593,7 +11593,7 @@ if test -z "$GCC"; then
+--- configure.orig	2011-06-08 21:32:18.000000000 +0200
++++ configure	2011-06-08 21:32:18.000000000 +0200
+@@ -11059,7 +11059,7 @@ if test -z "$GCC"; then
          *)
                  PLUGIN_LDFLAGS="-export-dynamic -avoid-version"
                  DEBUG="-g"
@@ -12,7 +12,7 @@ $FreeBSD$
                  PROFILE="-g -p" ;;
          esac
  else
-@@ -11616,9 +11616,9 @@ else
+@@ -11082,9 +11082,9 @@ else
                  PROFILE="-g -pg -D__NO_MATH_INLINES -fsigned-char" ;;
       	*)
                  PLUGIN_LDFLAGS="-export-dynamic -avoid-version"
@@ -25,16 +25,16 @@ $FreeBSD$
          esac
  fi
  CFLAGS="$CFLAGS $cflags_save -DAO_BUILDING_LIBAO"
-@@ -16563,7 +16563,7 @@ if test "${ac_cv_lib_audio_AuOpenServer+
-   echo $ECHO_N "(cached) $ECHO_C" >&6
+@@ -12978,7 +12978,7 @@ if test "${ac_cv_lib_audio_AuOpenServer+
+   $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
 -LIBS="-laudio -lXau $X_LIBS $LIBS"
 +LIBS="-laudio -lXau -lXt -lm $X_LIBS $LIBS"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -16780,7 +16780,7 @@ fi
+ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+ /* end confdefs.h.  */
+ 
+@@ -13041,7 +13041,7 @@ fi
  
  if test "x$have_nas" = xyes; then
  	NAS_CFLAGS="$X_CFLAGS"
