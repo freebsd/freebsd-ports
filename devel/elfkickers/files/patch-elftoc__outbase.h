@@ -1,5 +1,5 @@
---- ./elftoc/outbase.h.orig	2011-06-01 17:16:31.000000000 +0200
-+++ ./elftoc/outbase.h	2011-06-01 17:14:57.000000000 +0200
+--- ./elftoc/outbase.h.orig	2011-05-22 20:46:29.000000000 +0200
++++ ./elftoc/outbase.h	2011-06-08 12:16:37.000000000 +0200
 @@ -7,6 +7,10 @@
  #ifndef _outbase_h_
  #define _outbase_h_

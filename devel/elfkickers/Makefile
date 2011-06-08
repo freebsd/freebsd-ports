@@ -7,6 +7,7 @@
 
 PORTNAME=	elfkickers
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	devel sysutils
 MASTER_SITES=	http://www.muppetlabs.com/~breadbox/pub/software/
 DISTNAME=	ELFkickers-${PORTVERSION}
