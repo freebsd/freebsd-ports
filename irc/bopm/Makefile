@@ -7,6 +7,7 @@
 
 PORTNAME=	bopm
 PORTVERSION=	3.1.3
+PORTREVISION=	1
 CATEGORIES=	irc
 MASTER_SITES=	http://static.blitzed.org/www.blitzed.org/bopm/files/ \
 		ftp://rusunix.org/pub/FreeBSD/distfiles/
@@ -23,12 +24,12 @@ CONFIGURE_ARGS=		--sysconfdir=${PREFIX}/etc --localstatedir=${LOGDIR}
 USE_LDCONFIG=	yes
 USE_RC_SUBR=	bopm
 
-SUB_FILES=	pkg-message pkg-install pkg-deinstall
+SUB_FILES=	pkg-message pkg-deinstall
 PLIST_SUB=	LOGDIR=${LOGDIR}
 SUB_LIST=	LOGDIR=${LOGDIR}
 
-pre-su-install:
-	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+USERS=	bopm
+GROUPS=	bopm
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -41,10 +42,9 @@ post-patch:
 		${WRKSRC}/bopm.conf.sample
 
 post-install:
-	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-	@${CHOWN} bopm:bopm ${LOGDIR}
+	@${CHOWN} ${USERS}:${GROUPS} ${LOGDIR}
 	@${CHMOD} 750 ${LOGDIR}
-	@${CHOWN} bopm:bopm ${PREFIX}/etc/bopm.conf.sample
+	@${CHOWN} ${USERS}:${GROUPS} ${PREFIX}/etc/bopm.conf.sample
 	@${CHMOD} 640 ${PREFIX}/etc/bopm.conf.sample
 	@${CAT} ${PKGMESSAGE}
 
