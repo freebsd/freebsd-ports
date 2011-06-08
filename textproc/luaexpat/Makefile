@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	luaexpat
-PORTVERSION=	1.1
+PORTVERSION=	1.2.0
 CATEGORIES=	textproc
-MASTER_SITES=	http://luaforge.net/frs/download.php/2469/
+MASTER_SITES=	http://matthewwild.co.uk/projects/luaexpat/ \
+				http://redundancy.redundancy.org/mirror/
 PKGNAMEPREFIX=	${LUA_PKGNAMEPREFIX}
 
-MAINTAINER=	freeghb@gmail.com
+MAINTAINER=	lx@FreeBSD.org
 COMMENT=	LuaExpat is a SAX XML parser based on the Expat library
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
