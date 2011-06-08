@@ -7,6 +7,7 @@
 
 PORTNAME=	ldmud
 PORTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	games net
 MASTER_SITES=	http://www.bearnip.com/ftp/mud/
 
@@ -19,6 +20,9 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 ALL_TARGET=	ldmud
 MAN1=		ldmud.1
 MAKE_JOBS_UNSAFE=	yes
+
+USERS=	mud
+GROUPS=	mud
 
 LOGDIR=		${DATADIR}
 .if defined(MUDLIB) && ${MUDLIB} == lpmud
@@ -55,8 +59,5 @@ post-install:
 		| ${CPIO} -pdmu -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 	${RM} -f ${DOCSDIR}/Makefile
 .endif
-	# Run package install script
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} \
-		POST-INSTALL
 
 .include <bsd.port.post.mk>
