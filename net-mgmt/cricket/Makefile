@@ -7,7 +7,7 @@
 
 PORTNAME=	cricket
 PORTVERSION=	1.0.5
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
@@ -23,14 +23,11 @@ USE_PERL5=	yes
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 PLIST_SUB+=	VERSION=${PORTVERSION}
-SUB_FILES=	pkg-message pkg-install
-SUB_LIST=	USER="${CRICKET_USER}" GROUP="${CRICKET_GROUP}" UID="${CRICKET_UID}" GID="${CRICKET_GID}"
+SUB_FILES=	pkg-message 
 
 # UID and username comes from ports/UIDs.
-CRICKET_USER=	cricket
-CRICKET_UID=	141
-CRICKET_GROUP=	www
-CRICKET_GID=	80
+USERS=	cricket
+GROUPS=	www
 
 .include <bsd.port.pre.mk>
 
@@ -46,12 +43,11 @@ post-patch:
 		${WRKSRC}/sample-config/news-server/Defaults
 
 do-install:
-	@PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 	@${MKDIR} -m 755 ${PREFIX}/cricket/cricket-${PORTVERSION}
 	@${CP} -R ${WRKSRC}/* ${PREFIX}/cricket/cricket-${PORTVERSION}
 	@${FIND} ${PREFIX}/cricket/cricket-${PORTVERSION} -name \*.orig -or \
 		-name \*.bak | ${XARGS} ${RM} -f
-	${CHOWN} -R ${CRICKET_USER}:${CRICKET_GROUP} ${PREFIX}/cricket
+	${CHOWN} -R ${USERS}:${GROUPS} ${PREFIX}/cricket
 	@if [ -L ${PREFIX}/cricket/cricket ]; then \
 		${ECHO_MSG} "Updating ${PREFIX}/cricket/cricket symbolic link"; \
 		${RM} ${PREFIX}/cricket/cricket; \
