@@ -7,7 +7,7 @@
 
 PORTNAME=	xview
 PORTVERSION=	3.2.1
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	ftp://ftp.efd.lth.se/pub/X11/ \
 		ftp://ftp.uni-heidelberg.de/pub/X11/contrib/libraries/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.efd.lth.se/pub/X11/ \
 MASTER_SITE_SUBDIR=	pav
 DISTNAME=	xview3.2p1-X11R6
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	X Window-System-based Visual/Integrated Environment for Workstations
 
 MAKE_JOBS_UNSAFE=	yes
