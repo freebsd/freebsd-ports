@@ -7,7 +7,7 @@
 
 PORTNAME=	rdfdb
 PORTVERSION=	0.46
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	http://www.guha.com/
 DISTNAME=	rdfdb_src
@@ -18,15 +18,16 @@ COMMENT=	A lightweight RDF database
 USE_BDB=	40+
 INVALID_BDB_VER=2
 
+USERS=	rdfdb
+GROUPS=	rdfdb
+
 WRKSRC=	${WRKDIR}/rdfdb
 USE_GMAKE=	yes
 MAKEFILE=	makefile
 ALL_TARGET=
 CFLAGS+=	${PTHREAD_CFLAGS}
 
-RDFDB_DIR?=	/var/db/rdfdb
 RDFDB_PORT?=	7001
-PLIST_SUB=	RDFDB_DIR=${RDFDB_DIR}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
@@ -37,11 +38,6 @@ post-patch:
 
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/rdfdb ${PREFIX}/bin
-.if !exists(${RDFDB_DIR})
-	@${MKDIR} ${RDFDB_DIR}
-.endif
-	@${SETENV} RDFDB_DIR=${RDFDB_DIR} ${SH} ${PKGINSTALL} ${PKGNAME} \
-		PRE-INSTALL
 	@${SED} "s|%%PREFIX%%|${PREFIX}|g; s|%%RDFDB_DIR%%|${RDFDB_DIR}|g; \
 		s|%%RDFDB_PORT%%|${RDFDB_PORT}|g" \
 		< ${FILESDIR}/rdfdb-server.sh.tmpl \
