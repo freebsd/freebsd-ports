@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	pav
 DISTNAME=	xview3.2p1-X11R6
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	OpenLook applications and man pages
 
 PATCH_DEPENDS=	${NONEXISTENT}:${.CURDIR}/../xview:patch
