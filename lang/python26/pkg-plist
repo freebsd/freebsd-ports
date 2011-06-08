@@ -697,9 +697,9 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/json/tool.py
 %%PYTHON_LIBDIR%%/keyword.py
 %%PYTHON_LIBDIR%%/lib2to3/Grammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/Grammar2.6.6.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/Grammar2.6.7.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/PatternGrammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar2.6.6.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar2.6.7.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/__init__.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_base.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_util.py
