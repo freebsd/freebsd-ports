@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110608:
+  AFFECTS: users of security/amavisd-milter
+  AUTHOR: delphij@FreeBSD.org
+
+  A change have been made to rc.d script for amavisd-milter makes it to
+  specify -s explicitly.  If you used to override the location of listening
+  socket by specifying -s, please migrate to the new way (specify
+  amavisd_milter_socket in /etc/rc.conf).
+
 20110607:
   AFFECTS: users of devel/p5-Moose and devel/p5-Class-MOP
   AUTHOR: az@FreeBSD.org
