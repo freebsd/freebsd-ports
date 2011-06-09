@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8.0
 CATEGORIES=	games
 MASTER_SITES=	SF/crawl-ref/Stone%20Soup/${PORTVERSION}
 DISTNAME=	stone_soup-${PORTVERSION}-nodeps
@@ -24,19 +24,31 @@ USE_PERL5_BUILD=	yes
 MAKE_JOBS_SAFE=	yes
 
 SAVEDIR?=	/var/games/${PORTNAME}
-WRKSRC=		${WRKDIR}/stone_soup-${PORTVERSION}-1-g7ce9b19/source/
+WRKSRC=		${WRKDIR}/stone_soup-${PORTVERSION}/source/
 
 SUB_FILES=	README.FreeBSD
 PLIST_SUB=	SAVEDIR="${SAVEDIR}"
 
 OPTIONS=	SOUND		"Sound support"			off \
-		LUA_BINDINGS	"LUA bindings for user scripts"	on \
 		UNICODE		"Unicode glyphs (UTF-8)"	off \
 		WIZARD		"Wizard mode"			off
 
 MAKEFILE=	makefile
 MAKE_ARGS=	FREEBSD_PORT=yes
-MAKE_ARGS+=	prefix=${PREFIX} SAVEDIR=${SAVEDIR} DATADIR=${DATADIR}
+MAKE_ARGS+=	prefix=${PREFIX} \
+		SAVEDIR=${SAVEDIR} \
+		DATADIR=${DATADIR} \
+		INSTALL_UGRP=root:games \
+		MCHMOD=2755 \
+		MCHMOD_SAVEDIR=775 \
+		MCHMOD_LOGS=664 \
+		NO_AUTOOPT=YesPlease \
+		NO_OPTIMIZE=YesPlease \
+		LUA_INCLUDE_DIR=${LOCALBASE}/include/lua51 \
+		LUA_LIB=-llua-5.1 \
+		SQLITE_INCLUDE_DIR=${LOCALBASE}/include \
+		SQLITE_LIB=-lsqlite3 \
+		LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/lua51"
 
 .include <bsd.port.options.mk>
 
@@ -66,9 +78,11 @@ PLIST_SUB+=	SDL="@comment "
 RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox
 .endif
 
-.if defined(WITHOUT_LUA_BINDINGS)
-MAKE_ARGS+=	NO_LUA_BINDINGS=yes
-.endif
+# NO_LUA_BINDINGS is bit-rotten. Upstream thinks about fixing or removing it.
+#	
+# .if defined(WITHOUT_LUA_BINDINGS)
+# MAKE_ARGS+=	NO_LUA_BINDINGS=yes
+# .endif
 
 .if defined(WITH_UNICODE)
 MAKE_ARGS+=	USE_UNICODE=yes

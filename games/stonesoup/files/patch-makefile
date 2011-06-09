@@ -1,133 +1,80 @@
---- ./makefile.orig	2010-07-24 05:31:49.000000000 +0200
-+++ ./makefile	2010-08-05 09:25:27.000000000 +0200
-@@ -45,14 +45,7 @@
+--- ./makefile.orig	2011-04-26 15:08:48.000000000 +0200
++++ ./makefile	2011-06-02 19:52:05.000000000 +0200
+@@ -51,7 +51,7 @@
  #    ask for a package with convenience libraries instead -- we'll try to provide
  #    them somewhere in the near future.
  
 -GAME = crawl
--
--ASSERTS = yes
--
--# Disable GNU Make implicit rules and variables. Leaving them enabled will slow
--# down MinGW and Cygwin builds by a very VERY noticeable degree. Besides, we have
--# _explicit_ rules defined for everything. So we don't need them.
--MAKEFLAGS += -rR
 +GAME = stonesoup
  
- #
- # Compiler Flags
-@@ -86,24 +79,39 @@
+ ASSERTS = yes
+ 
+@@ -92,11 +92,11 @@
  
  else
  
-+ifndef FREEBSD_PORT
- CFOPTIMIZE := -O2
-+endif
+-CFOPTIMIZE := -O2
++CFOPTIMIZE :=
  
  endif # USE_ICC
  
-+ifndef FREEBSD_PORT
- CFOTHERS := -pipe $(EXTERNAL_FLAGS)
+-CFOTHERS := -pipe $(EXTERNAL_FLAGS)
++CFOTHERS := $(CFLAGS)
  CFOTHERS_L := -fsigned-char
  CFWARN := -Wall
  CFWARN_L := -Wundef
- 
- DEFINES := $(EXTERNAL_DEFINES)
-+else
-+NO_AUTO_OPT = YesPlease
-+
-+CFOTHERS := $(CFLAGS)
-+CFOTHERS_L := -fsigned-char
-+CFWARN := 
-+CFWARN_L := 
-+
-+DEFINES := $(EXTERNAL_DEFINES)
-+endif
- 
- #
- # The GCC and GXX variables are set later.
- #
- AR = ar
- RANLIB = ranlib
-+ifndef FREEBSD_PORT
- CC = $(GCC)
- CXX = $(GXX)
-+endif
- RM = rm -f
- COPY = cp
- COPY_R = cp -r
-@@ -135,10 +143,10 @@
+@@ -639,7 +639,7 @@
+ DEFINES += -DWIZARD
  endif
- LIBZ := contrib/install/lib/libz.a
- 
--LUA_INCLUDE_DIR := /usr/include/lua5.1
--LUA_LIB := -llua5.1
--SQLITE_INCLUDE_DIR := /usr/include
--SQLITE_LIB := -lsqlite3
-+LUA_INCLUDE_DIR := ${LOCALBASE}/include/lua51
-+LUA_LIB := -L${LOCALBASE}/lib/lua51 -llua-5.1
-+SQLITE_INCLUDE_DIR := ${LOCALBASE}/include
-+SQLITE_LIB := -L${LOCALBASE}/lib -lsqlite3
- 
- #
- # Platform Detection
-@@ -314,7 +322,7 @@
- MCHMOD_LOGS := 664
- 
- # The user:group to install the game as.
--INSTALL_UGRP := games:games
-+INSTALL_UGRP := root:games
- 
- chroot_prefix :=
- prefix        :=
-@@ -540,6 +548,7 @@
- 
- endif # TILES
- 
-+ifndef FREEBSD_PORT
- # On clang, unknown -Wfoo is merely a warning, thus -Werror.
- CFWARN_L += $(shell w=-Wno-array-bounds;echo|$(GCC) -E - -Werror $$w >/dev/null 2>&1 && echo $$w)
- 
-@@ -607,6 +616,17 @@
- ifndef NO_OPTIMIZE
- CFWARN_L += -Wuninitialized
+ ifdef NO_OPTIMIZE
+-CFOPTIMIZE  := -O0
++CFOPTIMIZE  :=
  endif
-+else # ifdef FREEBSD_PORT
-+CFOTHERS_L = $(EXTERNAL_FLAGS_L) $(EXTRA_FLAGS) $(DEFINES) $(SDL_CFLAGS)
-+
-+ifndef NO_LUA_BINDINGS
-+CFOTHERS_L += -DCLUA_BINDINGS
-+endif
-+
-+ifdef WIZARD
-+DEFINES += -DWIZARD
-+endif
-+endif # FREEBSD_PORT
- 
- ifneq ($(strip $(chroot_prefix)),)
- 	USE_CHROOT=YesPlease
-@@ -822,10 +842,10 @@
+ ifdef PCH
+ CFWARN_L += -Winvalid-pch
+@@ -872,10 +872,10 @@
  
  GAME_DEPENDS  := $(DESTTILEFILES) $(OBJECTS) $(EXTRA_OBJECTS) $(CONTRIB_LIBS)
  SRC_PKG_BASE  := stone_soup
 -SRC_VERSION   := $(shell git describe --tags --long $(MERGE_BASE) 2>/dev/null || cat util/release_ver)
-+SRC_VERSION   := $(cat util/release_ver)
++SRC_VERSION   := $(shell cat util/release_ver)
  
  # when making release builds, use just the bare tag
 -SRC_VERSION_SHORT := $(shell git describe --tags $(MERGE_BASE) 2>/dev/null || cat util/release_ver)
-+SRC_VERSION_SHORT := $(cat util/release_ver)
++SRC_VERSION_SHORT := $(shell cat util/release_ver)
  ifneq (,$(SRC_VERSION_SHORT))
    ifeq (,$(findstring -,$(SRC_VERSION_SHORT)))
      SRC_VERSION := $(SRC_VERSION_SHORT)
-@@ -983,9 +1003,11 @@
- 	$(COPY) dat/tiles/VeraMono.ttf $(datadir_fp)/dat/tiles/
- endif
- endif
-+ifndef FREEBSD_PORT
- ifeq ($(USE_DGAMELAUNCH),)
- 	$(CHOWN) -R $(INSTALL_UGRP) $(datadir_fp) || true
- endif
-+endif
+@@ -1041,7 +1041,7 @@
  ifneq ($(savedir_fp),)
  	mkdir -p $(savedir_fp)/saves
- ifneq ($(patsubst /var/%,%,$(savedir_fp)),$(savedir_fp))
+ 	mkdir -p $(savedir_fp)/morgue
+-ifeq ($(USE_DGAMELAUNCH),)
++#ifeq ($(USE_DGAMELAUNCH),)
+ 	$(CHOWN) $(INSTALL_UGRP) $(prefix_fp)/$(bin_prefix)/$(GAME) || true
+ 	$(CHMOD) $(MCHMOD) $(prefix_fp)/$(bin_prefix)/$(GAME) || true
+ 	$(CHOWN) -R $(INSTALL_UGRP) $(datadir_fp) || true
+@@ -1049,7 +1049,7 @@
+ 	$(CHMOD) $(MCHMOD_SAVEDIR) $(savedir_fp) || true
+ 	$(CHMOD) $(MCHMOD_SAVEDIR) $(savedir_fp)/saves || true
+ 	$(CHMOD) $(MCHMOD_SAVEDIR) $(savedir_fp)/morgue || true
+-endif
++#endif
+ endif
+ ifneq ($(shareddir_fp),)
+ 	mkdir -p $(shareddir_fp)
+@@ -1060,12 +1060,12 @@
+ 	touch $(shareddir_fp)/logfile
+ 	touch $(shareddir_fp)/scores
+ endif
+-ifeq ($(USE_DGAMELAUNCH),)
++#ifeq ($(USE_DGAMELAUNCH),)
+ 	$(CHOWN) -R $(INSTALL_UGRP) $(shareddir_fp) || true
+ 	$(CHMOD) $(MCHMOD_SAVEDIR) $(shareddir_fp) || true
+ 	$(CHMOD) $(MCHMOD_LOGS) $(shareddir_fp)/logfile || true
+ 	$(CHMOD) $(MCHMOD_LOGS) $(shareddir_fp)/scores || true
+-endif
++#endif
+ endif
+ 
+ clean: clean-rltiles
