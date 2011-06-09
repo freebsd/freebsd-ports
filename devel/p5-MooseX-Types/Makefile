@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Types
-PORTVERSION=	0.25
+PORTVERSION=	0.26
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,7 +20,10 @@ BUILD_DEPENDS=	p5-Moose>=0.61:${PORTSDIR}/devel/p5-Moose \
 		p5-namespace-clean>=0.08:${PORTSDIR}/devel/p5-namespace-clean \
 		p5-Carp-Clan>=6.00:${PORTSDIR}/devel/p5-Carp-Clan \
 		p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 PERL_CONFIGURE=	5.8.0+
 
