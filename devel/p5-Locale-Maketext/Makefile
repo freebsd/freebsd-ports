@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Locale-Maketext
-PORTVERSION=	1.17
+PORTVERSION=	1.19
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A framework for software localization and inheritance-based lexicons
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 PERL_CONFIGURE=	YES
 
