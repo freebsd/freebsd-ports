@@ -7,15 +7,15 @@
 #
 
 PORTNAME=	IPA
-PORTVERSION=	1.07
+PORTVERSION=	1.08
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.prima.eu.org/IPA/ CPAN/Prima/KARASIK
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Image Processing Algorithms
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Prima.pm:${PORTSDIR}/x11-toolkits/p5-Prima
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Prima>1.24:${PORTSDIR}/x11-toolkits/p5-Prima
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 INSTALL_TARGET=	pure_install
