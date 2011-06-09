@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sabnzbdplus
-PORTVERSION=	0.5.6
-PORTREVISION=	2
+PORTVERSION=	0.6.4
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/sabnzbd-${PORTVERSION}
 DISTNAME=	SABnzbd-${PORTVERSION}-src
@@ -77,12 +76,15 @@ do-install:
 	${CP} -rp ${WRKSRC}/sabnzbd ${PYTHONPREFIX_SITELIBDIR}/
 	${INSTALL} -d ${DATADIR}
 	${CP} -rp ${WRKSRC}/interfaces ${DATADIR}
-	${CP} -rp ${WRKSRC}/language ${DATADIR}
+	${CP} -rp ${WRKSRC}/locale ${DATADIR}
+	${CP} -rp ${WRKSRC}/po ${DATADIR}
+	${CP} -rp ${WRKSRC}/tools ${DATADIR}
+	${CP} -rp ${WRKSRC}/util ${DATADIR}
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in CHANGELOG.txt INSTALL.txt ISSUES.txt LICENSE.txt README.txt
+.for i in *.txt licenses/*.txt
 	${CP} ${WRKSRC}/$i ${DOCSDIR}
 .endfor
 .endif
