@@ -2217,3 +2217,7 @@ net-p2p/qbittorrent27-nox11|net-p2p/qbittorrent28-nox11|2011-06-05|Old version n
 www/pubcookie-login-server||2011-06-06|Has expired: Unused by maintiner, needs updates.
 databases/mariadb||2011-06-06|Split into databases/mariadb-{client,scripts,server}
 devel/bugzilla2||2011-06-07|Removed: no longer under development
+lang/ruby-js||2011-06-09|Removed, depends on expired port, seems abandonware itself
+textproc/ruby-xml-script||2011-06-09|Removed, depends on expired port, seems abandonware itself
+www/ruby-asp||2011-06-09|Removed, depends on expired port, seems abandonware itself
+lang/njs||2011-06-09|Has expired: Upstream disapear and distfile is no more available
