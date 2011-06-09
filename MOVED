@@ -2221,3 +2221,5 @@ lang/ruby-js||2011-06-09|Removed, depends on expired port, seems abandonware its
 textproc/ruby-xml-script||2011-06-09|Removed, depends on expired port, seems abandonware itself
 www/ruby-asp||2011-06-09|Removed, depends on expired port, seems abandonware itself
 lang/njs||2011-06-09|Has expired: Upstream disapear and distfile is no more available
+editors/wily||2011-06-09|Removed, depends on an expired port
+x11-fonts/Xg||2011-06-09|Has expired: Upstream disapear and distfile is no more available

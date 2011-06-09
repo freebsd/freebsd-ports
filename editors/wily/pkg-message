@@ -1,9 +1,0 @@
-The following tools have been installed along with wily:
-
-	wreplace win wgoto mktags Man Tag
-
-Please refer to their manual pages for information on their use.
-
-The wily(1) manual page has not been installed because it's out-of-date.
-
-Please refer to "${PREFIX}/share/doc/wily/" documentation.
