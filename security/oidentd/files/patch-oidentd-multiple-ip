@@ -1,0 +1,137 @@
+diff -ur doc/oidentd.8 doc/oidentd.8.orig
+--- doc/oidentd.8.orig	2003-07-13 20:27:52.000000000 +0200
++++ doc/oidentd.8	2008-04-14 15:04:26.000000000 +0200
+@@ -50,7 +50,7 @@
+ 
+ .TP
+ .B "\-a or \-\-address=<address|hostname>"
+-Listen for connections on the specified address. The default is to listen for connections on all configured IP addresses.
++Listen for connections on the specified address, this option can be specified multiple times. The default is to listen for connections on all configured IP addresses.
+ 
+ .TP
+ .B "\-c or \-\-charset=<charset>"
+diff -ur src/oidentd.c src/oidentd.c.orig
+--- src/oidentd.c.orig	2006-05-22 02:43:26.000000000 +0200
++++ src/oidentd.c	2008-04-14 14:55:07.000000000 +0200
+@@ -73,7 +73,7 @@
+ char *config_file;
+ 
+ in_port_t listen_port;
+-struct sockaddr_storage *addr;
++struct sockaddr_storage **addr;
+ 
+ int main(int argc, char **argv) {
+ 	int *listen_fds = NULL;
+diff -ur src/oidentd_inet_util.c src/oidentd_inet_util.c.orig
+--- src/oidentd_inet_util.c.orig	2006-05-22 02:31:19.000000000 +0200
++++ src/oidentd_inet_util.c	2008-04-14 15:00:37.000000000 +0200
+@@ -92,16 +92,18 @@
+ ** Setup the listening socket(s).
+ */
+ 
+-int *setup_listen(struct sockaddr_storage *listen_addr, in_port_t listen_port) {
++int *setup_listen(struct sockaddr_storage **listen_addr, in_port_t listen_port) {
+ 	int ret;
+-	int *bound_fds;
++	int *bound_fds = NULL;
+ 	u_char listen_port_str[64];
+ 	struct addrinfo hints, *res, *cur;
++	int naddr = 0;
+ 
+ 	if (listen_addr != NULL) {
++	    do {
+ 		cur = xcalloc(1, sizeof(struct addrinfo));
+ 
+-		cur->ai_family = listen_addr->ss_family;
++		cur->ai_family = listen_addr[naddr]->ss_family;
+ 
+ 		switch (cur->ai_family) {
+ #ifdef WANT_IPV6
+@@ -115,20 +117,22 @@
+ 		}
+ 
+ 		cur->ai_addr = xmalloc(cur->ai_addrlen);
+-		memcpy(cur->ai_addr, listen_addr, cur->ai_addrlen);
++		memcpy(cur->ai_addr, listen_addr[naddr], cur->ai_addrlen);
+ 
+ 		ret = setup_bind(cur, listen_port);
+ 		free(cur->ai_addr);
+ 		free(cur);
+-		free(listen_addr);
++		free(listen_addr[naddr]);
+ 
+ 		if (ret == -1)
+ 			return (NULL);
+ 
+-		bound_fds = xmalloc(2 * sizeof(int));
+-		bound_fds[0] = ret;
+-		bound_fds[1] = -1;
+-
++		bound_fds = xrealloc(bound_fds, (naddr + 2) * sizeof(int));
++		bound_fds[naddr] = ret;
++		bound_fds[naddr+1] = -1;
++		naddr++;
++	    } while (listen_addr[naddr] != NULL);
++		free(listen_addr);
+ 		return (bound_fds);
+ 	}
+ 
+diff -ur src/oidentd_inet_util.h src/oidentd_inet_util.h.orig
+--- src/oidentd_inet_util.h.orig	2006-05-22 00:52:24.000000000 +0200
++++ src/oidentd_inet_util.h	2008-04-14 15:00:26.000000000 +0200
+@@ -22,7 +22,7 @@
+ #define SIN4(x) ((struct sockaddr_in *) (x))
+ #define SIN6(x) ((struct sockaddr_in6 *) (x))
+ 
+-int *setup_listen(struct sockaddr_storage *listen_addr, in_port_t listen_port);
++int *setup_listen(struct sockaddr_storage **listen_addr, in_port_t listen_port);
+ 
+ int get_port(const char *name, in_port_t *port);
+ int get_addr(const char *const hostname, struct sockaddr_storage *g_addr);
+diff -ur src/oidentd_options.c src/oidentd_options.c.orig
+--- src/oidentd_options.c.orig	2006-05-22 02:31:19.000000000 +0200
++++ src/oidentd_options.c	2008-04-14 15:00:49.000000000 +0200
+@@ -53,7 +53,7 @@
+ extern u_int32_t timeout;
+ extern u_int32_t connection_limit;
+ extern in_port_t listen_port;
+-extern struct sockaddr_storage *addr;
++extern struct sockaddr_storage **addr;
+ extern uid_t uid;
+ extern gid_t gid;
+ 
+@@ -126,6 +126,7 @@
+ 	int opt;
+ 	char *temp_os;
+ 	char *charset = NULL;
++	int naddrs = 0;
+ 
+ #ifdef MASQ_SUPPORT
+ 	if (get_port(DEFAULT_FPORT, &fwdport) == -1) {
+@@ -151,13 +152,16 @@
+ 				struct sockaddr_storage *temp_ss =
+ 					xmalloc(sizeof(struct sockaddr_storage));
+ 
++				if (naddrs % 16 == 0)
++					addr = xrealloc(addr, sizeof(struct sockaddr_storage *)*(naddrs+16));
++
+ 				if (get_addr(optarg, temp_ss) == -1) {
+ 					o_log(NORMAL, "Fatal: Unknown host: \"%s\"", optarg);
+ 					free(temp_ss);
+ 					return (-1);
+ 				}
+ 
+-				addr = temp_ss;
++				addr[naddrs++] = temp_ss;
+ 				break;
+ 			}
+ 
+@@ -327,6 +331,8 @@
+ 				return (-1);
+ 		}
+ 	}
++	if (addr != NULL)
++		addr[naddrs] = NULL;
+ 
+ 	if (charset != NULL) {
+ 		size_t len = strlen(temp_os) + strlen(charset) + 4;
