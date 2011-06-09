@@ -1,21 +1,18 @@
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *
 
-This port now includes an rc script:
-
+news/sabnzbdplus includes an RC script:
 %%PREFIX%%/etc/rc.d/sabnzbd
 
-Add:
+TO START SABNZBD ON BOOT:
+echo 'sabnzbd_enable="YES"' >> /etc/rc.conf
 
-sabnzbd_enable="YES"
-
-to /etc/rc.conf, then start it via:
-
+START MANUALLY:
 %%PREFIX%%/etc/rc.d/sabnzbd start
 
-Once started, visit:
-
+Once started, visit the following to configure:
 http://localhost:8080/sabnzbd/
 
-to configure.
+Note that your URL may differ slightly if you have an old sabnzbd.ini
+that specifies a different address to bind to.
 
 * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *

@@ -1,333 +1,403 @@
 bin/SABnzbd.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/newswrapper.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/bpsmeter.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/interface.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/codecs.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/emailer.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/newzbin.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/__init__.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/tvsort.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/assembler.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/dirscanner.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/cfg.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/api.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/articlecache.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/wizard.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/rss.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/database.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/postproc.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/constants.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/lang.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/assembler.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/bpsmeter.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/cfg.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/config.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/decorators.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/urlgrabber.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/newsunpack.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/constants.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/database.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/decoder.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/decorators.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/dirscanner.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/downloader.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/emailer.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/encoding.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/interface.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/lang.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/misc.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/nzbstuff.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/trylist.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/scheduler.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/version.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/newsunpack.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/newswrapper.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/newzbin.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/nzbqueue.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/certgen.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/upload.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/rsslib.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/feedparser.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/nzbstuff.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/osxmenu.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/postproc.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/rss.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/scheduler.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/skintext.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/trylist.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/tvsort.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/urlgrabber.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/__init__.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/osx.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/servertests.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/listquote.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/ssmtplib.py
-%%PYTHON_SITELIBDIR%%/sabnzbd/utils/rarfile.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/utils/certgen.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/configobj.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/utils/feedparser.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/json.py
 %%PYTHON_SITELIBDIR%%/sabnzbd/utils/kronos.py
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
-%%PORTDOCS%%%%DOCSDIR%%/ISSUES.txt
+%%PYTHON_SITELIBDIR%%/sabnzbd/utils/listquote.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/utils/osx.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/utils/pathbrowser.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/utils/rarfile.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/utils/rsslib.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/utils/servertests.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/utils/ssmtplib.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/utils/upload.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/version.py
+%%PYTHON_SITELIBDIR%%/sabnzbd/wizard.py
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT.txt
+%%PORTDOCS%%%%DOCSDIR%%/GPL2.txt
+%%PORTDOCS%%%%DOCSDIR%%/GPL3.txt
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
-%%DATADIR%%/language/de-de.txt
-%%DATADIR%%/language/dk-da.txt
-%%DATADIR%%/language/email-da-dk.tmpl
-%%DATADIR%%/language/email-de-de.tmpl
-%%DATADIR%%/language/email-fr-fr.tmpl
-%%DATADIR%%/language/email-nl-du.tmpl
-%%DATADIR%%/language/email-no-no.tmpl
-%%DATADIR%%/language/email-sv-se.tmpl
-%%DATADIR%%/language/email-us-en.tmpl
-%%DATADIR%%/language/fr-fr.txt
-%%DATADIR%%/language/nl-du.txt
-%%DATADIR%%/language/no-no.txt
-%%DATADIR%%/language/sv-se.txt
-%%DATADIR%%/language/us-en.txt
-%%DATADIR%%/language/rss-no-no.tmpl
-%%DATADIR%%/interfaces/wizard/README.TXT
-%%DATADIR%%/interfaces/wizard/inc_top.tmpl
-%%DATADIR%%/interfaces/wizard/three.html
-%%DATADIR%%/interfaces/wizard/inc_bottom.tmpl
-%%DATADIR%%/interfaces/wizard/four.html
-%%DATADIR%%/interfaces/wizard/five.html
-%%DATADIR%%/interfaces/wizard/index.html
-%%DATADIR%%/interfaces/wizard/language/nl-du.txt
-%%DATADIR%%/interfaces/wizard/language/dk-da.txt
-%%DATADIR%%/interfaces/wizard/language/sv-se.txt
-%%DATADIR%%/interfaces/wizard/language/de-de.txt
-%%DATADIR%%/interfaces/wizard/language/us-en.txt
-%%DATADIR%%/interfaces/wizard/language/fr-fr.txt
-%%DATADIR%%/interfaces/wizard/language/no-no.txt
-%%DATADIR%%/interfaces/wizard/static/style.css
-%%DATADIR%%/interfaces/wizard/static/javascript/checkserver.js
-%%DATADIR%%/interfaces/wizard/static/javascript/jquery.js
-%%DATADIR%%/interfaces/wizard/static/javascript/restart.js
-%%DATADIR%%/interfaces/wizard/static/javascript/pagetwo.js
-%%DATADIR%%/interfaces/wizard/static/images/classic.png
-%%DATADIR%%/interfaces/wizard/static/images/plush-th.png
-%%DATADIR%%/interfaces/wizard/static/images/flags/us-en.png
-%%DATADIR%%/interfaces/wizard/static/images/flags/nl-du.png
-%%DATADIR%%/interfaces/wizard/static/images/flags/de-de.png
-%%DATADIR%%/interfaces/wizard/static/images/flags/dk-da.png
-%%DATADIR%%/interfaces/wizard/static/images/flags/sv-se.png
-%%DATADIR%%/interfaces/wizard/static/images/flags/fr-fr.png
-%%DATADIR%%/interfaces/wizard/static/images/flags/no-no.png
-%%DATADIR%%/interfaces/wizard/static/images/icon_sab.png
-%%DATADIR%%/interfaces/wizard/static/images/favicon.ico
-%%DATADIR%%/interfaces/wizard/static/images/classic-th.png
-%%DATADIR%%/interfaces/wizard/static/images/smpl-th.png
-%%DATADIR%%/interfaces/wizard/static/images/plush.png
-%%DATADIR%%/interfaces/wizard/static/images/smpl.png
-%%DATADIR%%/interfaces/wizard/one.html
-%%DATADIR%%/interfaces/wizard/two.html
-%%DATADIR%%/interfaces/Mobile/licenses/LICENSE-GPL.txt
-%%DATADIR%%/interfaces/Mobile/licenses/LICENSE-MIT.txt
+%%PORTDOCS%%%%DOCSDIR%%/ISSUES.txt
+%%PORTDOCS%%%%DOCSDIR%%/License-CherryPy.txt
+%%PORTDOCS%%%%DOCSDIR%%/License-Python.txt
+%%PORTDOCS%%%%DOCSDIR%%/License-configobj.txt
+%%PORTDOCS%%%%DOCSDIR%%/License-feedparser.txt
+%%PORTDOCS%%%%DOCSDIR%%/License-json.txt
+%%PORTDOCS%%%%DOCSDIR%%/License-kronos.txt
+%%PORTDOCS%%%%DOCSDIR%%/License-listquote.txt
+%%PORTDOCS%%%%DOCSDIR%%/License-msgfmt.txt
+%%PORTDOCS%%%%DOCSDIR%%/License-pynewsleecher.txt
+%%PORTDOCS%%%%DOCSDIR%%/License-rarfile.txt
+%%PORTDOCS%%%%DOCSDIR%%/License-rsslib.txt
+%%PORTDOCS%%%%DOCSDIR%%/License-ssmtplib.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%DATADIR%%/interfaces/Classic/README.TXT
+%%DATADIR%%/interfaces/Classic/templates/config.tmpl
+%%DATADIR%%/interfaces/Classic/templates/config_cat.tmpl
+%%DATADIR%%/interfaces/Classic/templates/config_directories.tmpl
+%%DATADIR%%/interfaces/Classic/templates/config_email.tmpl
+%%DATADIR%%/interfaces/Classic/templates/config_general.tmpl
+%%DATADIR%%/interfaces/Classic/templates/config_newzbin.tmpl
+%%DATADIR%%/interfaces/Classic/templates/config_rss.tmpl
+%%DATADIR%%/interfaces/Classic/templates/config_scheduling.tmpl
+%%DATADIR%%/interfaces/Classic/templates/config_server.tmpl
+%%DATADIR%%/interfaces/Classic/templates/config_sorting.tmpl
+%%DATADIR%%/interfaces/Classic/templates/config_switches.tmpl
+%%DATADIR%%/interfaces/Classic/templates/connection_info.tmpl
+%%DATADIR%%/interfaces/Classic/templates/history.tmpl
+%%DATADIR%%/interfaces/Classic/templates/inc_bottom.tmpl
+%%DATADIR%%/interfaces/Classic/templates/inc_cmenu.tmpl
+%%DATADIR%%/interfaces/Classic/templates/inc_top.tmpl
+%%DATADIR%%/interfaces/Classic/templates/main.tmpl
+%%DATADIR%%/interfaces/Classic/templates/nzo.tmpl
+%%DATADIR%%/interfaces/Classic/templates/queue.tmpl
+%%DATADIR%%/interfaces/Classic/templates/static/images/favicon.ico
+%%DATADIR%%/interfaces/Classic/templates/static/javascript/dropdown.js
+%%DATADIR%%/interfaces/Classic/templates/static/placeholder.txt
+%%DATADIR%%/interfaces/Classic/templates/static/stylesheets/colorschemes/black.css
+%%DATADIR%%/interfaces/Classic/templates/static/stylesheets/colorschemes/classic.css
+%%DATADIR%%/interfaces/Classic/templates/static/stylesheets/colorschemes/darkblue.css
+%%DATADIR%%/interfaces/Classic/templates/static/stylesheets/colorschemes/green.css
+%%DATADIR%%/interfaces/Classic/templates/static/stylesheets/colorschemes/lightblue.css
+%%DATADIR%%/interfaces/Classic/templates/static/stylesheets/colorschemes/red.css
+%%DATADIR%%/interfaces/Classic/templates/static/stylesheets/colorschemes/white-black.css
+%%DATADIR%%/interfaces/Classic/templates/static/stylesheets/default.css
+%%DATADIR%%/interfaces/Classic/templates/static/stylesheets/defaultcolors.css
+%%DATADIR%%/interfaces/Mobile/README.txt
 %%DATADIR%%/interfaces/Mobile/licenses/LICENSE-BSD.txt
 %%DATADIR%%/interfaces/Mobile/licenses/LICENSE-CC.txt
-%%DATADIR%%/interfaces/Mobile/README.txt
-%%DATADIR%%/interfaces/Mobile/language/nl-du.txt
-%%DATADIR%%/interfaces/Mobile/language/de-de.txt
-%%DATADIR%%/interfaces/Mobile/language/sv-se.txt
-%%DATADIR%%/interfaces/Mobile/language/dk-da.txt
-%%DATADIR%%/interfaces/Mobile/language/us-en.txt
-%%DATADIR%%/interfaces/Mobile/language/fr-fr.txt
-%%DATADIR%%/interfaces/Mobile/language/no-no.txt
-%%DATADIR%%/interfaces/Mobile/templates/static/javascripts/mobile.js
-%%DATADIR%%/interfaces/Mobile/templates/static/images/sab.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/whiteButton.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/rowhead.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/grayButton.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/toggleOn.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/on_off.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/toolbar.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/button_clicked.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/loading.gif
-%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/chevron_circle.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/chevron.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/toggle.png
+%%DATADIR%%/interfaces/Mobile/licenses/LICENSE-GPL.txt
+%%DATADIR%%/interfaces/Mobile/licenses/LICENSE-MIT.txt
+%%DATADIR%%/interfaces/Mobile/templates/main.tmpl
 %%DATADIR%%/interfaces/Mobile/templates/static/images/dark/back_button.png
 %%DATADIR%%/interfaces/Mobile/templates/static/images/dark/back_button_clicked.png
 %%DATADIR%%/interfaces/Mobile/templates/static/images/dark/button.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/light/blueButton.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/light/listGroup.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/button_clicked.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/chevron.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/chevron_circle.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/grayButton.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/loading.gif
+%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/on_off.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/rowhead.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/toggle.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/toggleOn.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/toolbar.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/dark/whiteButton.png
 %%DATADIR%%/interfaces/Mobile/templates/static/images/light/backButton.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/light/toggleOn.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/light/toolButton.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/light/whiteButton.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/light/on_off.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/light/selection.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/light/thumb.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/light/grayButton.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/light/pinstripes.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/light/blueButton.png
 %%DATADIR%%/interfaces/Mobile/templates/static/images/light/cancel.png
 %%DATADIR%%/interfaces/Mobile/templates/static/images/light/chevron.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/light/toolbar.png
-%%DATADIR%%/interfaces/Mobile/templates/static/images/light/loading.gif
-%%DATADIR%%/interfaces/Mobile/templates/static/images/light/toggle.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/light/grayButton.png
 %%DATADIR%%/interfaces/Mobile/templates/static/images/light/listArrowSel.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/light/listGroup.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/light/loading.gif
+%%DATADIR%%/interfaces/Mobile/templates/static/images/light/on_off.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/light/pinstripes.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/light/selection.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/light/thumb.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/light/toggle.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/light/toggleOn.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/light/toolButton.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/light/toolbar.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/light/whiteButton.png
+%%DATADIR%%/interfaces/Mobile/templates/static/images/sab.png
+%%DATADIR%%/interfaces/Mobile/templates/static/javascripts/mobile.js
 %%DATADIR%%/interfaces/Mobile/templates/static/stylesheets/colorschemes/dark.css
 %%DATADIR%%/interfaces/Mobile/templates/static/stylesheets/colorschemes/light.css
 %%DATADIR%%/interfaces/Mobile/templates/static/stylesheets/jqtouch.css
-%%DATADIR%%/interfaces/Mobile/templates/main.tmpl
-%%DATADIR%%/interfaces/Plush/templates/config_rss.tmpl
-%%DATADIR%%/interfaces/Plush/templates/queue.tmpl
+%%DATADIR%%/interfaces/Plush/README.txt
+%%DATADIR%%/interfaces/Plush/licenses/LICENSE-BSD.txt
+%%DATADIR%%/interfaces/Plush/licenses/LICENSE-CC.txt
+%%DATADIR%%/interfaces/Plush/licenses/LICENSE-GPL.txt
+%%DATADIR%%/interfaces/Plush/licenses/LICENSE-GPL3.txt
+%%DATADIR%%/interfaces/Plush/licenses/LICENSE-LGPL.txt
+%%DATADIR%%/interfaces/Plush/licenses/LICENSE-MIT.txt
+%%DATADIR%%/interfaces/Plush/licenses/LICENSE-WebToolkit.txt
+%%DATADIR%%/interfaces/Plush/templates/_inc_footer.tmpl
+%%DATADIR%%/interfaces/Plush/templates/_inc_header.tmpl
+%%DATADIR%%/interfaces/Plush/templates/_inc_modals.tmpl
+%%DATADIR%%/interfaces/Plush/templates/config.tmpl
 %%DATADIR%%/interfaces/Plush/templates/config_cat.tmpl
-%%DATADIR%%/interfaces/Plush/templates/main.tmpl
-%%DATADIR%%/interfaces/Plush/templates/connection_info.tmpl
 %%DATADIR%%/interfaces/Plush/templates/config_directories.tmpl
 %%DATADIR%%/interfaces/Plush/templates/config_email.tmpl
-%%DATADIR%%/interfaces/Plush/templates/config_inc_footer.tmpl
-%%DATADIR%%/interfaces/Plush/templates/config_sorting.tmpl
-%%DATADIR%%/interfaces/Plush/templates/config_scheduling.tmpl
-%%DATADIR%%/interfaces/Plush/templates/config_newzbin.tmpl
 %%DATADIR%%/interfaces/Plush/templates/config_general.tmpl
-%%DATADIR%%/interfaces/Plush/templates/nzo.tmpl
-%%DATADIR%%/interfaces/Plush/templates/config_inc_header.tmpl
-%%DATADIR%%/interfaces/Plush/templates/static/images/plush-default/sprite-tilex.png
-%%DATADIR%%/interfaces/Plush/templates/static/images/plush-default/sprite-config.png
-%%DATADIR%%/interfaces/Plush/templates/static/images/plush-default/sprite-jq-colorbox.png
-%%DATADIR%%/interfaces/Plush/templates/static/images/plush-default/spinner.gif
-%%DATADIR%%/interfaces/Plush/templates/static/images/plush-default/sprite-tiley.png
-%%DATADIR%%/interfaces/Plush/templates/static/images/plush-default/sabnzbdplus.ico
-%%DATADIR%%/interfaces/Plush/templates/static/images/plush-default/sprite-main.png
-%%DATADIR%%/interfaces/Plush/templates/static/images/plush-default-split.tar.gz
-%%DATADIR%%/interfaces/Plush/templates/static/javascripts/plush.js
-%%DATADIR%%/interfaces/Plush/templates/static/javascripts/plush-config.js
-%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/plush-default.css
-%%DATADIR%%/interfaces/Plush/templates/config.tmpl
-%%DATADIR%%/interfaces/Plush/templates/history.tmpl
+%%DATADIR%%/interfaces/Plush/templates/config_newzbin.tmpl
+%%DATADIR%%/interfaces/Plush/templates/config_rss.tmpl
+%%DATADIR%%/interfaces/Plush/templates/config_scheduling.tmpl
 %%DATADIR%%/interfaces/Plush/templates/config_server.tmpl
+%%DATADIR%%/interfaces/Plush/templates/config_sorting.tmpl
 %%DATADIR%%/interfaces/Plush/templates/config_switches.tmpl
-%%DATADIR%%/interfaces/Plush/language/nl-du.txt
-%%DATADIR%%/interfaces/Plush/language/sv-se.txt
-%%DATADIR%%/interfaces/Plush/language/dk-da.txt
-%%DATADIR%%/interfaces/Plush/language/de-de.txt
-%%DATADIR%%/interfaces/Plush/language/us-en.txt
-%%DATADIR%%/interfaces/Plush/language/fr-fr.txt
-%%DATADIR%%/interfaces/Plush/licenses/LICENSE-GPL3.txt
-%%DATADIR%%/interfaces/Plush/licenses/LICENSE-WebToolkit.txt
-%%DATADIR%%/interfaces/Plush/licenses/LICENSE-LGPL.txt
-%%DATADIR%%/interfaces/Plush/licenses/LICENSE-CC.txt
-%%DATADIR%%/interfaces/Plush/licenses/LICENSE-BSD.txt
-%%DATADIR%%/interfaces/Plush/licenses/LICENSE-GPL.txt
-%%DATADIR%%/interfaces/Plush/licenses/LICENSE-MIT.txt
-%%DATADIR%%/interfaces/Plush/README.txt
-%%DATADIR%%/interfaces/Classic/README.TXT
-%%DATADIR%%/interfaces/Classic/templates/config_rss.tmpl
-%%DATADIR%%/interfaces/Classic/templates/static/placeholder.txt
-%%DATADIR%%/interfaces/Classic/templates/static/stylesheets/default.css
-%%DATADIR%%/interfaces/Classic/templates/static/stylesheets/defaultcolors.css
-%%DATADIR%%/interfaces/Classic/templates/static/stylesheets/colorschemes/lightblue.css
-%%DATADIR%%/interfaces/Classic/templates/static/stylesheets/colorschemes/classic.css
-%%DATADIR%%/interfaces/Classic/templates/static/stylesheets/colorschemes/black.css
-%%DATADIR%%/interfaces/Classic/templates/static/stylesheets/colorschemes/red.css
-%%DATADIR%%/interfaces/Classic/templates/static/stylesheets/colorschemes/darkblue.css
-%%DATADIR%%/interfaces/Classic/templates/static/stylesheets/colorschemes/white-black.css
-%%DATADIR%%/interfaces/Classic/templates/static/stylesheets/colorschemes/green.css
-%%DATADIR%%/interfaces/Classic/templates/static/images/favicon.ico
-%%DATADIR%%/interfaces/Classic/templates/static/javascript/dropdown.js
-%%DATADIR%%/interfaces/Classic/templates/config_cat.tmpl
-%%DATADIR%%/interfaces/Classic/templates/config_scheduling.tmpl
-%%DATADIR%%/interfaces/Classic/templates/config.tmpl
-%%DATADIR%%/interfaces/Classic/templates/connection_info.tmpl
-%%DATADIR%%/interfaces/Classic/templates/inc_top.tmpl
-%%DATADIR%%/interfaces/Classic/templates/history.tmpl
-%%DATADIR%%/interfaces/Classic/templates/queue.tmpl
-%%DATADIR%%/interfaces/Classic/templates/config_sorting.tmpl
-%%DATADIR%%/interfaces/Classic/templates/inc_bottom.tmpl
-%%DATADIR%%/interfaces/Classic/templates/nzo.tmpl
-%%DATADIR%%/interfaces/Classic/templates/config_directories.tmpl
-%%DATADIR%%/interfaces/Classic/templates/config_newzbin.tmpl
-%%DATADIR%%/interfaces/Classic/templates/config_server.tmpl
-%%DATADIR%%/interfaces/Classic/templates/config_email.tmpl
-%%DATADIR%%/interfaces/Classic/templates/config_general.tmpl
-%%DATADIR%%/interfaces/Classic/templates/main.tmpl
-%%DATADIR%%/interfaces/Classic/templates/config_switches.tmpl
-%%DATADIR%%/interfaces/Classic/templates/inc_cmenu.tmpl
-%%DATADIR%%/interfaces/smpl/README.txt
+%%DATADIR%%/interfaces/Plush/templates/connection_info.tmpl
+%%DATADIR%%/interfaces/Plush/templates/history.tmpl
+%%DATADIR%%/interfaces/Plush/templates/main.tmpl
+%%DATADIR%%/interfaces/Plush/templates/nzo.tmpl
+%%DATADIR%%/interfaces/Plush/templates/queue.tmpl
+%%DATADIR%%/interfaces/Plush/templates/static/javascripts/config.js
+%%DATADIR%%/interfaces/Plush/templates/static/javascripts/lib.js
+%%DATADIR%%/interfaces/Plush/templates/static/javascripts/plush.js
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/gold.css
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images-split.tar.gz
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/colorbox-border.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/colorbox-controls.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/loading-bar.gif
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/loading-spinner.gif
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/addnzb-grey.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/addnzb.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/config.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/connections-grey.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/connections.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/downloads-grey.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/downloads.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/help-grey.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/help.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/options.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/refresh-grey.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/refresh.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/rss-grey.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav/rss.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/sabnzbdplus.ico
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/sprite-config.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/sprite-main.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/sprite-tilex.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/sprite-tiley.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_flat_0_eeeeee_40x100.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_flat_55_c0402a_40x100.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_flat_55_eeeeee_40x100.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_glass_100_f8f8f8_1x400.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_glass_35_dddddd_1x400.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_glass_60_eeeeee_1x400.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_inset-hard_75_999999_1x100.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-bg_inset-soft_50_c9c9c9_1x100.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-icons_3383bb_256x240.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-icons_454545_256x240.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-icons_70b2e1_256x240.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-icons_999999_256x240.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images/ui-icons_fbc856_256x240.png
+%%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/jquery-ui-1.8.9.custom.css
 %%DATADIR%%/interfaces/smpl/CreativeCommons2-5.txt
-%%DATADIR%%/interfaces/smpl/License-PlotKit.txt
+%%DATADIR%%/interfaces/smpl/CreativeCommons3-0.txt
+%%DATADIR%%/interfaces/smpl/GPL2.txt
+%%DATADIR%%/interfaces/smpl/GPL3.txt
 %%DATADIR%%/interfaces/smpl/LICENCE-silk_icons.txt
+%%DATADIR%%/interfaces/smpl/LICENSE.txt
+%%DATADIR%%/interfaces/smpl/License-ExCanvas.txt
+%%DATADIR%%/interfaces/smpl/License-MochiKit.txt
 %%DATADIR%%/interfaces/smpl/License-Nuvola.txt
-%%DATADIR%%/interfaces/smpl/language/nl-du.txt
-%%DATADIR%%/interfaces/smpl/language/de-de.txt
-%%DATADIR%%/interfaces/smpl/language/sv-se.txt
-%%DATADIR%%/interfaces/smpl/language/dk-da.txt
-%%DATADIR%%/interfaces/smpl/language/us-en.txt
-%%DATADIR%%/interfaces/smpl/language/fr-fr.txt
-%%DATADIR%%/interfaces/smpl/language/no-no.txt
-%%DATADIR%%/interfaces/smpl/templates/config_scheduling.tmpl
-%%DATADIR%%/interfaces/smpl/templates/config_sorting.tmpl
-%%DATADIR%%/interfaces/smpl/templates/config_rss.tmpl
+%%DATADIR%%/interfaces/smpl/License-PlotKit.txt
+%%DATADIR%%/interfaces/smpl/License-getElementPosition.txt
+%%DATADIR%%/interfaces/smpl/README.txt
+%%DATADIR%%/interfaces/smpl/templates/config.tmpl
 %%DATADIR%%/interfaces/smpl/templates/config_cat.tmpl
-%%DATADIR%%/interfaces/smpl/templates/history.tmpl
 %%DATADIR%%/interfaces/smpl/templates/config_directories.tmpl
-%%DATADIR%%/interfaces/smpl/templates/connection_info.tmpl
-%%DATADIR%%/interfaces/smpl/templates/main.tmpl
-%%DATADIR%%/interfaces/smpl/templates/config_switches.tmpl
-%%DATADIR%%/interfaces/smpl/templates/config_server.tmpl
+%%DATADIR%%/interfaces/smpl/templates/config_email.tmpl
 %%DATADIR%%/interfaces/smpl/templates/config_general.tmpl
-%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/__package__.js
+%%DATADIR%%/interfaces/smpl/templates/config_newzbin.tmpl
+%%DATADIR%%/interfaces/smpl/templates/config_rss.tmpl
+%%DATADIR%%/interfaces/smpl/templates/config_scheduling.tmpl
+%%DATADIR%%/interfaces/smpl/templates/config_server.tmpl
+%%DATADIR%%/interfaces/smpl/templates/config_sorting.tmpl
+%%DATADIR%%/interfaces/smpl/templates/config_switches.tmpl
+%%DATADIR%%/interfaces/smpl/templates/connection_info.tmpl
+%%DATADIR%%/interfaces/smpl/templates/history.tmpl
+%%DATADIR%%/interfaces/smpl/templates/main.tmpl
+%%DATADIR%%/interfaces/smpl/templates/nzo.tmpl
+%%DATADIR%%/interfaces/smpl/templates/queue.tmpl
 %%DATADIR%%/interfaces/smpl/templates/static/MochiKit/MochiKit.js
-%%DATADIR%%/interfaces/smpl/templates/static/stylesheets/colorschemes/black.css
-%%DATADIR%%/interfaces/smpl/templates/static/stylesheets/colorschemes/white.css
-%%DATADIR%%/interfaces/smpl/templates/static/stylesheets/smpl.css
-%%DATADIR%%/interfaces/smpl/templates/static/excanvas/excanvas.js
+%%DATADIR%%/interfaces/smpl/templates/static/MochiKit/__package__.js
 %%DATADIR%%/interfaces/smpl/templates/static/PlotKit/PlotKit.js
+%%DATADIR%%/interfaces/smpl/templates/static/excanvas/excanvas.js
 %%DATADIR%%/interfaces/smpl/templates/static/feed-icon-14x14.png
-%%DATADIR%%/interfaces/smpl/templates/static/images/control_pause.png
-%%DATADIR%%/interfaces/smpl/templates/static/images/favicon.ico
-%%DATADIR%%/interfaces/smpl/templates/static/images/down.gif
-%%DATADIR%%/interfaces/smpl/templates/static/images/key_enter.png
-%%DATADIR%%/interfaces/smpl/templates/static/images/control_play.png
 %%DATADIR%%/interfaces/smpl/templates/static/images/browser.png
-%%DATADIR%%/interfaces/smpl/templates/static/images/up.gif
 %%DATADIR%%/interfaces/smpl/templates/static/images/bullet_arrow_down.png
-%%DATADIR%%/interfaces/smpl/templates/static/images/drive_go.png
+%%DATADIR%%/interfaces/smpl/templates/static/images/control_pause.png
+%%DATADIR%%/interfaces/smpl/templates/static/images/control_play.png
+%%DATADIR%%/interfaces/smpl/templates/static/images/down.gif
 %%DATADIR%%/interfaces/smpl/templates/static/images/drive.png
+%%DATADIR%%/interfaces/smpl/templates/static/images/drive_go.png
+%%DATADIR%%/interfaces/smpl/templates/static/images/favicon.ico
+%%DATADIR%%/interfaces/smpl/templates/static/images/key_enter.png
 %%DATADIR%%/interfaces/smpl/templates/static/images/messagebox_critical.png
 %%DATADIR%%/interfaces/smpl/templates/static/images/newzbin.png
 %%DATADIR%%/interfaces/smpl/templates/static/images/nuvola/kgpg.png
+%%DATADIR%%/interfaces/smpl/templates/static/images/up.gif
 %%DATADIR%%/interfaces/smpl/templates/static/sabnzbd_small4.png
-%%DATADIR%%/interfaces/smpl/templates/config_email.tmpl
-%%DATADIR%%/interfaces/smpl/templates/nzo.tmpl
-%%DATADIR%%/interfaces/smpl/templates/queue.tmpl
-%%DATADIR%%/interfaces/smpl/templates/config_newzbin.tmpl
-%%DATADIR%%/interfaces/smpl/templates/config.tmpl
-%%DATADIR%%/interfaces/smpl/CreativeCommons3-0.txt
-%%DATADIR%%/interfaces/smpl/LICENSE.txt
-%%DATADIR%%/interfaces/smpl/License-MochiKit.txt
-%%DATADIR%%/interfaces/smpl/GPL2.txt
-%%DATADIR%%/interfaces/smpl/GPL3.txt
-%%DATADIR%%/interfaces/smpl/License-ExCanvas.txt
-%%DATADIR%%/interfaces/smpl/License-getElementPosition.txt
-@dirrm %%PYTHON_SITELIBDIR%%/sabnzbd/utils
-@dirrm %%PYTHON_SITELIBDIR%%/sabnzbd/
+%%DATADIR%%/interfaces/smpl/templates/static/stylesheets/colorschemes/black.css
+%%DATADIR%%/interfaces/smpl/templates/static/stylesheets/colorschemes/white.css
+%%DATADIR%%/interfaces/smpl/templates/static/stylesheets/smpl.css
+%%DATADIR%%/interfaces/wizard/README.TXT
+%%DATADIR%%/interfaces/wizard/four.html
+%%DATADIR%%/interfaces/wizard/inc_bottom.tmpl
+%%DATADIR%%/interfaces/wizard/inc_top.tmpl
+%%DATADIR%%/interfaces/wizard/index.html
+%%DATADIR%%/interfaces/wizard/one.html
+%%DATADIR%%/interfaces/wizard/static/images/classic-th.png
+%%DATADIR%%/interfaces/wizard/static/images/classic.png
+%%DATADIR%%/interfaces/wizard/static/images/favicon.ico
+%%DATADIR%%/interfaces/wizard/static/images/flags/da.png
+%%DATADIR%%/interfaces/wizard/static/images/flags/de.png
+%%DATADIR%%/interfaces/wizard/static/images/flags/en.png
+%%DATADIR%%/interfaces/wizard/static/images/flags/fr.png
+%%DATADIR%%/interfaces/wizard/static/images/flags/nb.png
+%%DATADIR%%/interfaces/wizard/static/images/flags/nl.png
+%%DATADIR%%/interfaces/wizard/static/images/flags/ro.png
+%%DATADIR%%/interfaces/wizard/static/images/flags/sv.png
+%%DATADIR%%/interfaces/wizard/static/images/icon_sab.png
+%%DATADIR%%/interfaces/wizard/static/images/plush-th.png
+%%DATADIR%%/interfaces/wizard/static/images/plush.png
+%%DATADIR%%/interfaces/wizard/static/images/smpl-th.png
+%%DATADIR%%/interfaces/wizard/static/images/smpl.png
+%%DATADIR%%/interfaces/wizard/static/javascript/checkserver.js
+%%DATADIR%%/interfaces/wizard/static/javascript/jquery.js
+%%DATADIR%%/interfaces/wizard/static/javascript/pagetwo.js
+%%DATADIR%%/interfaces/wizard/static/javascript/restart.js
+%%DATADIR%%/interfaces/wizard/static/style.css
+%%DATADIR%%/interfaces/wizard/three.html
+%%DATADIR%%/interfaces/wizard/two.html
+%%DATADIR%%/locale/da/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/locale/de/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/locale/fr/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/locale/nb/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/locale/nl/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/locale/ro/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/locale/sv/LC_MESSAGES/SABnzbd.mo
+%%DATADIR%%/po/email/SABemail.pot
+%%DATADIR%%/po/email/da.po
+%%DATADIR%%/po/email/de.po
+%%DATADIR%%/po/email/en.po
+%%DATADIR%%/po/email/fr.po
+%%DATADIR%%/po/email/nb.po
+%%DATADIR%%/po/email/nl.po
+%%DATADIR%%/po/email/ro.po
+%%DATADIR%%/po/email/ro.px
+%%DATADIR%%/po/email/sv.po
+%%DATADIR%%/po/main/SABnzbd.pot
+%%DATADIR%%/po/main/da.po
+%%DATADIR%%/po/main/de.po
+%%DATADIR%%/po/main/fr.po
+%%DATADIR%%/po/main/nb.po
+%%DATADIR%%/po/main/nl.po
+%%DATADIR%%/po/main/ro.po
+%%DATADIR%%/po/main/ro.px
+%%DATADIR%%/po/main/sv.po
+%%DATADIR%%/po/nsis/SABnsis.pot
+%%DATADIR%%/po/nsis/da.po
+%%DATADIR%%/po/nsis/de.po
+%%DATADIR%%/po/nsis/fr.po
+%%DATADIR%%/po/nsis/nb.po
+%%DATADIR%%/po/nsis/nl.po
+%%DATADIR%%/po/nsis/ro.po
+%%DATADIR%%/po/nsis/ro.px
+%%DATADIR%%/po/nsis/sv.po
+%%DATADIR%%/tools/make_mo.py
+%%DATADIR%%/tools/msgfmt.py
+%%DATADIR%%/util/__init__.py
+%%DATADIR%%/util/apireg.py
+%%DATADIR%%/util/mailslot.py
+@dirrm %%DATADIR%%/util
+@dirrm %%DATADIR%%/tools
+@dirrm %%DATADIR%%/po/nsis
+@dirrm %%DATADIR%%/po/main
+@dirrm %%DATADIR%%/po/email
+@dirrm %%DATADIR%%/po
+@dirrm %%DATADIR%%/locale/sv/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/sv
+@dirrm %%DATADIR%%/locale/ro/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/ro
+@dirrm %%DATADIR%%/locale/nl/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/nl
+@dirrm %%DATADIR%%/locale/nb/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/nb
+@dirrm %%DATADIR%%/locale/fr/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/fr
+@dirrm %%DATADIR%%/locale/de/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/de
+@dirrm %%DATADIR%%/locale/da/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/da
+@dirrm %%DATADIR%%/locale
+@dirrm %%DATADIR%%/interfaces/wizard/static/javascript
+@dirrm %%DATADIR%%/interfaces/wizard/static/images/flags
+@dirrm %%DATADIR%%/interfaces/wizard/static/images
+@dirrm %%DATADIR%%/interfaces/wizard/static
+@dirrm %%DATADIR%%/interfaces/wizard
+@dirrm %%DATADIR%%/interfaces/smpl/templates/static/stylesheets/colorschemes
+@dirrm %%DATADIR%%/interfaces/smpl/templates/static/stylesheets
+@dirrm %%DATADIR%%/interfaces/smpl/templates/static/images/nuvola
+@dirrm %%DATADIR%%/interfaces/smpl/templates/static/images
+@dirrm %%DATADIR%%/interfaces/smpl/templates/static/excanvas
+@dirrm %%DATADIR%%/interfaces/smpl/templates/static/PlotKit
+@dirrm %%DATADIR%%/interfaces/smpl/templates/static/MochiKit
+@dirrm %%DATADIR%%/interfaces/smpl/templates/static
+@dirrm %%DATADIR%%/interfaces/smpl/templates
+@dirrm %%DATADIR%%/interfaces/smpl
+@dirrm %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast/images
+@dirrm %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui/overcast
+@dirrm %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/jqueryui
+@dirrm %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images/nav
+@dirrm %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold/images
+@dirrm %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes/gold
+@dirrm %%DATADIR%%/interfaces/Plush/templates/static/stylesheets/colorschemes
+@dirrm %%DATADIR%%/interfaces/Plush/templates/static/stylesheets
+@dirrm %%DATADIR%%/interfaces/Plush/templates/static/javascripts
+@dirrm %%DATADIR%%/interfaces/Plush/templates/static
+@dirrm %%DATADIR%%/interfaces/Plush/templates
+@dirrm %%DATADIR%%/interfaces/Plush/licenses
+@dirrm %%DATADIR%%/interfaces/Plush
+@dirrm %%DATADIR%%/interfaces/Mobile/templates/static/stylesheets/colorschemes
+@dirrm %%DATADIR%%/interfaces/Mobile/templates/static/stylesheets
+@dirrm %%DATADIR%%/interfaces/Mobile/templates/static/javascripts
+@dirrm %%DATADIR%%/interfaces/Mobile/templates/static/images/light
+@dirrm %%DATADIR%%/interfaces/Mobile/templates/static/images/dark
+@dirrm %%DATADIR%%/interfaces/Mobile/templates/static/images
+@dirrm %%DATADIR%%/interfaces/Mobile/templates/static
+@dirrm %%DATADIR%%/interfaces/Mobile/templates
+@dirrm %%DATADIR%%/interfaces/Mobile/licenses
+@dirrm %%DATADIR%%/interfaces/Mobile
+@dirrm %%DATADIR%%/interfaces/Classic/templates/static/stylesheets/colorschemes
+@dirrm %%DATADIR%%/interfaces/Classic/templates/static/stylesheets
+@dirrm %%DATADIR%%/interfaces/Classic/templates/static/javascript
+@dirrm %%DATADIR%%/interfaces/Classic/templates/static/images
+@dirrm %%DATADIR%%/interfaces/Classic/templates/static
+@dirrm %%DATADIR%%/interfaces/Classic/templates
+@dirrm %%DATADIR%%/interfaces/Classic
+@dirrm %%DATADIR%%/interfaces
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm share/sabnzbdplus/interfaces/wizard/static/javascript
-@dirrm share/sabnzbdplus/interfaces/wizard/static/images/flags
-@dirrm share/sabnzbdplus/interfaces/wizard/static/images
-@dirrm share/sabnzbdplus/interfaces/wizard/language
-@dirrm share/sabnzbdplus/interfaces/wizard/static
-@dirrm share/sabnzbdplus/interfaces/wizard
-@dirrm share/sabnzbdplus/interfaces/Mobile/templates/static/stylesheets/colorschemes
-@dirrm share/sabnzbdplus/interfaces/Mobile/templates/static/stylesheets
-@dirrm share/sabnzbdplus/interfaces/Mobile/templates/static/images/dark
-@dirrm share/sabnzbdplus/interfaces/Mobile/templates/static/images/light
-@dirrm share/sabnzbdplus/interfaces/Mobile/templates/static/images
-@dirrm share/sabnzbdplus/interfaces/Mobile/templates/static/javascripts
-@dirrm share/sabnzbdplus/interfaces/Mobile/templates/static
-@dirrm share/sabnzbdplus/interfaces/Mobile/templates
-@dirrm share/sabnzbdplus/interfaces/Mobile/language
-@dirrm share/sabnzbdplus/interfaces/Mobile/licenses
-@dirrm share/sabnzbdplus/interfaces/Mobile
-@dirrm share/sabnzbdplus/interfaces/Classic/templates/static/images
-@dirrm share/sabnzbdplus/interfaces/Classic/templates/static/stylesheets/colorschemes
-@dirrm share/sabnzbdplus/interfaces/Classic/templates/static/stylesheets
-@dirrm share/sabnzbdplus/interfaces/Classic/templates/static/javascript
-@dirrm share/sabnzbdplus/interfaces/Classic/templates/static
-@dirrm share/sabnzbdplus/interfaces/Classic/templates
-@dirrm share/sabnzbdplus/interfaces/Classic
-@dirrm share/sabnzbdplus/interfaces/smpl/templates/static/stylesheets/colorschemes
-@dirrm share/sabnzbdplus/interfaces/smpl/templates/static/stylesheets
-@dirrm share/sabnzbdplus/interfaces/smpl/templates/static/images/nuvola
-@dirrm share/sabnzbdplus/interfaces/smpl/templates/static/images
-@dirrm share/sabnzbdplus/interfaces/smpl/templates/static/excanvas
-@dirrm share/sabnzbdplus/interfaces/smpl/templates/static/PlotKit
-@dirrm share/sabnzbdplus/interfaces/smpl/templates/static/MochiKit
-@dirrm share/sabnzbdplus/interfaces/smpl/templates/static
-@dirrm share/sabnzbdplus/interfaces/smpl/language
-@dirrm share/sabnzbdplus/interfaces/smpl/templates
-@dirrm share/sabnzbdplus/interfaces/smpl
-@dirrm share/sabnzbdplus/interfaces/Plush/templates/static/stylesheets
-@dirrm share/sabnzbdplus/interfaces/Plush/templates/static/javascripts
-@dirrm share/sabnzbdplus/interfaces/Plush/templates/static/images/plush-default
-@dirrm share/sabnzbdplus/interfaces/Plush/templates/static/images
-@dirrm share/sabnzbdplus/interfaces/Plush/templates/static
-@dirrm share/sabnzbdplus/interfaces/Plush/templates
-@dirrm share/sabnzbdplus/interfaces/Plush/language
-@dirrm share/sabnzbdplus/interfaces/Plush/licenses
-@dirrm share/sabnzbdplus/interfaces/Plush
-@dirrm share/sabnzbdplus/interfaces
-@dirrm share/sabnzbdplus/language
-@dirrm share/sabnzbdplus
 @dirrmtry sabnzbd
-@stopdaemon sabnzbd
+@dirrm %%PYTHON_SITELIBDIR%%/sabnzbd/utils
+@dirrm %%PYTHON_SITELIBDIR%%/sabnzbd
+@dirrmtry %%PYTHON_SITELIBDIR%%
