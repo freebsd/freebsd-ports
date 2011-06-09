@@ -9,7 +9,6 @@ bin/pkcs11-tool
 bin/pkcs15-crypt
 bin/pkcs15-init
 bin/pkcs15-tool
-bin/rutoken-tool
 bin/westcos-tool
 etc/opensc.conf-sample
 lib/libopensc.a
@@ -26,11 +25,19 @@ lib/pkcs11/onepin-opensc-pkcs11.so
 lib/pkcs11/opensc-pkcs11.so
 lib/pkcs11/pkcs11-spy.so
 %%DATADIR%%/asepcos.profile
+%%DATADIR%%/authentic.profile
 %%DATADIR%%/cardos.profile
 %%DATADIR%%/cyberflex.profile
 %%DATADIR%%/entersafe.profile
 %%DATADIR%%/flex.profile
 %%DATADIR%%/gpk.profile
+%%DATADIR%%/ias_adele_admin1.profile
+%%DATADIR%%/ias_adele_admin2.profile
+%%DATADIR%%/ias_adele_common.profile
+%%DATADIR%%/iasecc_admin_eid.profile
+%%DATADIR%%/iasecc_generic_oberthur.profile
+%%DATADIR%%/iasecc_generic_pki.profile
+%%DATADIR%%/iasecc.profile
 %%DATADIR%%/incrypto34.profile
 %%DATADIR%%/jcop.profile
 %%DATADIR%%/miocos.profile
@@ -43,6 +50,5 @@ lib/pkcs11/pkcs11-spy.so
 %%DATADIR%%/setcos.profile
 %%DATADIR%%/starcos.profile
 %%DATADIR%%/westcos.profile
-@dirrm include/opensc
 @dirrm lib/pkcs11
 @dirrm %%DATADIR%%

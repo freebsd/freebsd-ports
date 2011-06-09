@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opensc
-PORTVERSION=	0.12.0
+PORTVERSION=	0.12.1
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 		http://www.opensc-project.org/files/${PORTNAME}/testing/
@@ -24,15 +24,13 @@ OPTIONS=	PCSC "Enable PC/SC backend support" on \
 LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_AUTOTOOLS=	libltdl
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	LTLIB_CFLAGS="-I${LOCALBASE}/include" \
-		LTLIB_LIBS="-L${LOCALBASE}/lib -lltdl" \
+CONFIGURE_ENV=	\
 		OPENSSL_CFLAGS="-I${OPENSSLINC}" \
 		OPENSSL_LIBS="-L${OPENSSLLIB} -lssl" \
 		XSLTPROC="${LOCALBASE}/bin/xsltproc"
@@ -42,8 +40,8 @@ CONFIGURE_ARGS=	--with-xsl-stylesheetsdir=${LOCALBASE}/share/xsl/docbook
 PORTDOCS=	*
 
 MANCOMPRESSED=	no
-MAN1=		cardos-tool.1 cryptoflex-tool.1 netkey-tool.1 \
-		opensc-explorer.1 opensc-tool.1 \
+MAN1=		cardos-tool.1 cryptoflex-tool.1 eidenv.1 netkey-tool.1 \
+		opensc-explorer.1 opensc-tool.1 piv-tool.1 \
 		pkcs11-tool.1 pkcs15-crypt.1 pkcs15-init.1 pkcs15-tool.1 \
 		westcos-tool.1
 MAN5=		pkcs15-profile.5
