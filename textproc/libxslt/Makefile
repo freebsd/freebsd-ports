@@ -25,7 +25,7 @@ USE_LDCONFIG=	yes
 USE_GNOME?=	gnomehack gnometarget libxml2
 CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
 		--without-python
-CPPFLAGS=	"-I${LOCALBASE}/include"
+CPPFLAGS=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(MASTERDIR)
