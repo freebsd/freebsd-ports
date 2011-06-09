@@ -236,7 +236,6 @@
     SUBDIR += vile
     SUBDIR += vim
     SUBDIR += vim-lite
-    SUBDIR += wily
     SUBDIR += winefish
     SUBDIR += wordgrinder
     SUBDIR += xcoral
