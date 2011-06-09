@@ -1,0 +1,11 @@
+--- ./Makefile.in.orig	2007-01-18 19:01:09.000000000 -0500
++++ ./Makefile.in	2011-05-27 12:55:15.000000000 -0400
+@@ -34,7 +34,7 @@
+ 	$(CC) $(LDFLAGS) -o $@ $^ -lm $(LIBS) $(FLITE_LIBS) $(AUDIOLIBS)
+ 
+ fs.o: fs.c
+-	$(CC) $(CFLAGS) @AUDIODEFS@ -I. -I$(flite_include_dir) -DREGISTER_VOX=register_$(subst cmu_us_kal16,cmu_us_kal,$(FL_VOX)) -DSTANDALONE -DEFLITE -c -o $@ $<
++	$(CC) $(CFLAGS) @AUDIODEFS@ -I. -I$(flite_include_dir) -DREGISTER_VOX=register_$(FL_VOX) -DSTANDALONE -DEFLITE -c -o $@ $<
+ 
+ tone.o: tone.c
+ 	$(CC) $(CFLAGS) -I$(flite_include_dir) -DEFLITE -c -o $@ $<
