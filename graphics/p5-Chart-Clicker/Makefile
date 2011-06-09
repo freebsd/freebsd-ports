@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Chart-Clicker
-PORTVERSION=	2.68
+PORTVERSION=	2.69
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GPHAT
@@ -27,7 +27,10 @@ RUN_DEPENDS=	p5-Color-Palette>=0.091400:${PORTSDIR}/graphics/p5-Color-Palette \
 		p5-Graphics-Primitive>=0.42:${PORTSDIR}/graphics/p5-Graphics-Primitive \
 		p5-Graphics-Primitive-Driver-Cairo>=0.39:${PORTSDIR}/graphics/p5-Graphics-Primitive-Driver-Cairo \
 		p5-Layout-Manager>=0.29:${PORTSDIR}/graphics/p5-Layout-Manager
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 PERL_CONFIGURE=	YES
 
