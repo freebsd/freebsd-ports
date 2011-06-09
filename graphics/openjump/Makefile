@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	openjump
-PORTVERSION=	1.3
+PORTVERSION=	1.4.0.3
 CATEGORIES=	graphics java geography
-MASTER_SITES=	SF/jump-pilot/OldFiles
+MASTER_SITES=	SF/jump-pilot/OpenJUMP/${PORTVERSION}
+DISTNAME=	${PORTNAME}-bin-${PORTVERSION}
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	An open source GIS software written in Java
@@ -18,8 +19,7 @@ USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 USE_ZIP=	yes
 NO_BUILD=	yes
-PORTDOCS=	OJ_improvements_from_v1.2_to_v1.3.txt gpl2_license.txt \
-		Using_MrSIDPlugIn.txt apache_license.txt readme.txt
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .include <bsd.port.pre.mk>
 
@@ -31,7 +31,7 @@ do-install:
 	@cd ${WRKSRC}/lib/ext && ${COPYTREE_SHARE} . ${TARGET_DIR}/lib/ext
 	@${ECHO_MSG} "Installing startup script"
 	${MKDIR} ${TARGET_DIR}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/openjump.sh ${TARGET_DIR}/bin/openjump
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/oj_linux.sh ${TARGET_DIR}/bin/openjump
 	${INSTALL_DATA} ${WRKSRC}/bin/workbench-properties.xml ${TARGET_DIR}/bin/
 	${INSTALL_DATA} ${WRKSRC}/bin/default-plugins.xml ${TARGET_DIR}/bin/
 	${INSTALL_DATA} ${WRKSRC}/bin/log4j.xml ${TARGET_DIR}/bin/
@@ -39,9 +39,12 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "---> Installing documentation"
 	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/Changes.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/licenses/apache_license.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/licenses/gpl2_license.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/licenses/jmath_license.txt ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/licenses/jython_license.txt ${DOCSDIR}
 .else
 	@${ECHO_MSG} "---> Skipping documentation"
 .endif
