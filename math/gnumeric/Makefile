@@ -9,6 +9,7 @@
 
 PORTNAME=	gnumeric
 PORTVERSION=	1.10.14
+PORTREVISION=	1
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,8 +17,10 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	The GNOME 2 spreadsheet
 
+BUILD_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 LIB_DEPENDS=	goffice-0.8.8:${PORTSDIR}/devel/goffice \
 		psiconv.10:${PORTSDIR}/converters/psiconv
+RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -34,10 +37,9 @@ WANT_PERL=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-gnome
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}" \
+CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}" \
 		python_prog=${PYTHON_VERSION}
-
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 MAKE_JOBS_SAFE=	yes
 
 GLIB_SCHEMAS=	org.gnome.gnumeric.dialogs.gschema.xml \
