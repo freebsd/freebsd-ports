@@ -1,8 +1,8 @@
 # $FreeBSD$
 #
 
-AVIDEMUX2_VERSION=	2.5.4
-MASTER_SITES=	${MASTER_SITE_BERLIOS} \
+AVIDEMUX2_VERSION=	2.5.5
+MASTER_SITES=	BERLIOS \
 		SF/avidemux/avidemux/${PORTVERSION}
 DISTNAME=	avidemux_${PORTVERSION}
 
@@ -14,6 +14,8 @@ LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		dca.0:${PORTSDIR}/multimedia/libdca \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo
+
+LICENSE=	GPLv2
 
 CONFLICTS=	avidemux2-2.[0-46-9].*
 
