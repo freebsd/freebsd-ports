@@ -4858,7 +4858,7 @@ fetch-url-list-int:
 			fi ; \
 			for site in `eval $$SORTED_MASTER_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
 				DIR=${DIST_SUBDIR}; \
-				CKSIZE=`${AWK} "/^SIZE \($${DIR:+$$DIR/}$$file\)"'{print $$4}' ${DISTINFO_FILE}`; \
+				CKSIZE=`${AWK} "/^SIZE \($${DIR:+$$DIR/}$$file\)/"'{print $$4}' ${DISTINFO_FILE}`; \
 				case $${file} in \
 				*/*)	args="-o $${file} $${site}$${file}";; \
 				*)		args=$${site}$${file};; \
@@ -4889,7 +4889,7 @@ fetch-url-list-int:
 			fi ; \
 			for site in `eval $$SORTED_PATCH_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
 				DIR=${DIST_SUBDIR}; \
-				CKSIZE=`${AWK} "/^SIZE \($${DIR:+$$DIR/}$$file\)"'{print $$4}' ${DISTINFO_FILE}`; \
+				CKSIZE=`${AWK} "/^SIZE \($${DIR:+$$DIR/}$$file\)/"'{print $$4}' ${DISTINFO_FILE}`; \
 				case $${file} in \
 				*/*)	args="-o $${file} $${site}$${file}";; \
 				*)		args=$${site}$${file};; \
