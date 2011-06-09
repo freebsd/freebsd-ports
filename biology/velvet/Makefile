@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	velvet
-PORTVERSION=	0.7.55
+PORTVERSION=	1.1.04
 CATEGORIES=	biology
 MASTER_SITES=	http://www.ebi.ac.uk/~zerbino/velvet/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -19,28 +19,34 @@ USE_GMAKE=	yes
 ALL_TARGET=	default
 
 MAXKMERLENGTH?=	31
-MAKE_ENV+=	MAXKMERLENGTH=${MAXKMERLENGTH}
+VELVET_CATEGORIES?=	2
+MAKE_ENV+=	MAXKMERLENGTH=${MAXKMERLENGTH} CATEGORIES=${VELVET_CATEGORIES}
 
 USE_PERL5_RUN=	yes
 
 BINARIES=	velvetg velveth
-SCRIPTS=	contrib/VelvetOptimiser/VelvetOptimiser.pl \
+SCRIPTS=	shuffleSequences_fasta.pl shuffleSequences_fastq.pl \
+		contrib/VelvetOptimiser-2.1.7/VelvetOptimiser.pl \
 		contrib/afg_handling/asmbly_splitter.pl \
 		contrib/afg_handling/snp_view.pl \
+		contrib/columbus_scripts/enlarge_exons.pl \
+		contrib/columbus_scripts/gff2fasta.pl \
+		contrib/columbus_scripts/merge_gtf_exons.pl \
 		contrib/estimate-exp_cov/velvet-estimate-exp_cov.pl \
-		contrib/fasta2agp/fasta2agp.pl \
 		contrib/extractContigReads/extractContigReads.pl \
+		contrib/fasta2agp/fasta2agp.pl \
 		contrib/observed-insert-length.pl/observed-insert-length.pl \
-		contrib/shuffleSequences_fasta/shuffleSequences_fasta.pl
-PERLMOD_DIRS=	contrib/VelvetOptimiser/VelvetOpt
-PERLMOD_FILES=	contrib/VelvetOptimiser/VelvetOpt/Assembly.pm \
-		contrib/VelvetOptimiser/VelvetOpt/Utils.pm \
-		contrib/VelvetOptimiser/VelvetOpt/gwrap.pm \
-		contrib/VelvetOptimiser/VelvetOpt/hwrap.pm
+		contrib/select_paired/select_paired.pl \
+		contrib/show_repeats/show_repeats.pl
+PERLMOD_DIRS=	contrib/VelvetOptimiser-2.1.7/VelvetOpt
+PERLMOD_FILES=	contrib/VelvetOptimiser-2.1.7/VelvetOpt/Assembly.pm \
+		contrib/VelvetOptimiser-2.1.7/VelvetOpt/Utils.pm \
+		contrib/VelvetOptimiser-2.1.7/VelvetOpt/gwrap.pm \
+		contrib/VelvetOptimiser-2.1.7/VelvetOpt/hwrap.pm
 
 .if !defined(WITHOUT_PYTHON)
 USE_PYTHON=	yes
-SCRIPTS+=	contrib/layout/graph2.py
+SCRIPTS+=	contrib/AssemblyAssembler1.3/AssemblyAssembler1.3.py
 .endif
 
 .for f in ${BINARIES} ${SCRIPTS}
@@ -53,18 +59,15 @@ PLIST_DIRS+=	%%SITE_PERL%%/${d:T}
 PLIST_FILES+=	%%SITE_PERL%%/${f:H:T}/${f:T}
 .endfor
 
-PORTDOCS=	ChangeLog Manual.pdf
+PORTDOCS=	ChangeLog Manual.pdf Columbus_manual.pdf
 
 post-patch:
 .for f in ${SCRIPTS}
 	${REINPLACE_CMD} -e s,#!/usr/bin/perl,${PERL}, ${WRKSRC}/${f}
 .endfor
 .if !defined(WITHOUT_PYTHON)
-	(IFS=''; ${REINPLACE_CMD} -e `${ECHO} '1i\'; ${ECHO} '#!${PYTHON_CMD}'` ${WRKSRC}/contrib/layout/graph2.py)
+	${REINPLACE_CMD} -e s,#!/usr/bin/python,${PYTHON_CMD}, ${WRKSRC}/contrib/AssemblyAssembler1.3/AssemblyAssembler1.3.py
 .endif
-
-post-build:
-	${REINPLACE_CMD} -e s,%%MAXKMERLENGTH%%,${MAXKMERLENGTH},g ${WRKSRC}/contrib/VelvetOptimiser/VelvetOptimiser.pl
 
 do-install:
 .for f in ${BINARIES}
