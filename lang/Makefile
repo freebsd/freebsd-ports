@@ -179,7 +179,6 @@
     SUBDIR += newlisp
     SUBDIR += nhc98
     SUBDIR += nickle
-    SUBDIR += njs
     SUBDIR += nml
     SUBDIR += nqc
     SUBDIR += nwcc
@@ -288,7 +287,6 @@
     SUBDIR += rubinius
     SUBDIR += ruby-doc-stdlib
     SUBDIR += ruby-extensions
-    SUBDIR += ruby-js
     SUBDIR += ruby-lua
     SUBDIR += ruby-lua4
     SUBDIR += ruby-man

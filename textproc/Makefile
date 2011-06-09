@@ -1135,7 +1135,6 @@
     SUBDIR += ruby-sablot
     SUBDIR += ruby-sary
     SUBDIR += ruby-tempura
-    SUBDIR += ruby-xml-script
     SUBDIR += ruby-xmlconfigfile
     SUBDIR += ruby-xmlparser
     SUBDIR += ruby-xmlscan
