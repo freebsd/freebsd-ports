@@ -5,4 +5,9 @@ in a quest for the mystifyingly fabulous Orb of Zot.
 Dungeon Crawl Stone Soup is a variant of Linley's Dungeon Crawl that's openly 
 developed and invites participation from the Crawl community.
 
+This port comes with two interfaces:
+
+    games/stonesoup - the traditional tty interfaced
+    games/stonesoup-sdl - the fancy SDL interface
+
 WWW:	http://crawl.develz.org/
