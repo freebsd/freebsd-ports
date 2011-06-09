@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Types-Structured
-PORTVERSION=	0.26
+PORTVERSION=	0.27
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +19,9 @@ RUN_DEPENDS=	p5-Moose>=1.06:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Types>=0.22:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-Devel-PartialDump>=0.10:${PORTSDIR}/devel/p5-Devel-PartialDump \
 		p5-Sub-Exporter>=0.982:${PORTSDIR}/devel/p5-Sub-Exporter
+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
 
 PERL_CONFIGURE=	yes
 
