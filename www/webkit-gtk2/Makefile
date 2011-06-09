@@ -85,7 +85,7 @@ CFLAGS+= -mminimal-toc
 .endif
 
 .if ${PERL_LEVEL} >= 501400
-BUILD_DEPENDS+= p5-Switch:${PORTSDIR}/lang/p5-Switch
+BUILD_DEPENDS+= p5-Switch>0:${PORTSDIR}/lang/p5-Switch
 .endif
 
 post-patch:
