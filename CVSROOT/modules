@@ -11640,6 +11640,7 @@ p5-DBD-mysql40                  ports/databases/p5-DBD-mysql40
 p5-DBD-mysql41                  ports/databases/p5-DBD-mysql41
 p5-DBD-mysql50                  ports/databases/p5-DBD-mysql50
 p5-DBD-mysql51                  ports/databases/p5-DBD-mysql51
+p5-DBD-mysql52                  ports/databases/p5-DBD-mysql52
 p5-DBD-mysql55                  ports/databases/p5-DBD-mysql55
 p5-DBI                          ports/databases/p5-DBI
 p5-DBI-Shell                    ports/databases/p5-DBI-Shell
@@ -16042,6 +16043,7 @@ p5-dbd-mysql40                  ports/databases/p5-DBD-mysql40
 p5-dbd-mysql41                  ports/databases/p5-DBD-mysql41
 p5-dbd-mysql50                  ports/databases/p5-DBD-mysql50
 p5-dbd-mysql51                  ports/databases/p5-DBD-mysql51
+p5-dbd-mysql52                  ports/databases/p5-DBD-mysql52
 p5-dbd-mysql55                  ports/databases/p5-DBD-mysql55
 p5-dbd-odbc                     ports/databases/p5-DBD-ODBC
 p5-dbd-oracle                   ports/databases/p5-DBD-Oracle
