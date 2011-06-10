@@ -11,8 +11,11 @@ PORTREVISION=	8
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/OldFiles
 
-MAINTAINER=	koutek@o-k.cz
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The free and open multilingual web publishing tool for news sites
+
+DEPRECATED=	Does not work
+EXPIRATION_DATE=	2011-08-01
 
 LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn \
 		GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick
