@@ -13,8 +13,10 @@ MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=/src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	fbsd@opal.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XFce4 power manager
+
+IGNORE=		new versions does not operate correctly on FreeBSD/hal, see ports/154064
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
