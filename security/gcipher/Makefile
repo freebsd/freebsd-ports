@@ -11,7 +11,7 @@ PORTREVISION=	14
 CATEGORIES=	security gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	jjinux@yahoo.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple encryption tool
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
