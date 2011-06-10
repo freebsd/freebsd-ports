@@ -10,7 +10,7 @@ PORTVERSION=	0.0.1
 CATEGORIES=	devel
 MASTER_SITES=	http://live.polito.it/files/downloads/bufferpool/
 
-MAINTAINER=	err@tollari.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Bufferpool - the memory management library Feng and Felix depend upon
 
 GNU_CONFIGURE=	yes
