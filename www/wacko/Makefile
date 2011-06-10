@@ -9,7 +9,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://wackowiki.com/files/
 DISTNAME=	wacko.r4
 
-MAINTAINER=	ivan.sviridov@electro-com.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small and fast PHP Wikki clone with 30+ languages support
 
 USE_BZIP2=	yes

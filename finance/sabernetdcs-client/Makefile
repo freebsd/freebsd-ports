@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/SaberNet%20DCS/${PORTVERSION}
 PKGNAMESUFFIX=	-client
 DISTNAME=	sndcs-${PORTVERSION}
 
-MAINTAINER=	mranostay@saberlogic.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SaberNet DCS - A labor data collection system
 
 RUN_DEPENDS=	pygtk-codegen-2.0:${PORTSDIR}/x11-toolkits/py-gtk2 \

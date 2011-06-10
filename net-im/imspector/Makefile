@@ -10,7 +10,7 @@ PORTVERSION=	0.5
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.imspector.org/downloads/
 
-MAINTAINER=	lawrence@aslak.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IM transparent proxy with monitoring, blocking, and content-filtering supports
 
 CFLAGS+=	-fPIC
