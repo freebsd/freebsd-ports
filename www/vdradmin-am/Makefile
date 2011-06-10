@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vdradmin-am
-PORTVERSION=	3.6.7
-PORTREVISION=	1
+PORTVERSION=	3.6.8
 CATEGORIES=	www
 MASTER_SITES=	http://andreas.vdr-developer.org/vdradmin-am/download/
 

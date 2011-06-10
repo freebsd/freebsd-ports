@@ -17,6 +17,7 @@ rcvar=`set_rcvar`
 
 command="%%PREFIX%%/bin/vdradmind"
 pidfile="/var/run/vdradmin_am/${name}.pid"
+command_args="-p ${pidfile}"
 
 load_rc_config ${name}
 : ${vdradmind_enable="NO"}
