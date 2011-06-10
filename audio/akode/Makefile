@@ -17,6 +17,8 @@ DISTNAME=	30375-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Default KDE audio backend
 
+BROKEN=		Unfetchable
+
 CONFLICTS=	kdemultimedia-3.[1-3]*
 
 OPTIONS=	FFMPEG "FFMPEG decoder plugin" off \
