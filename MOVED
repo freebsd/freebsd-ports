@@ -1,18 +1,18 @@
 #
-# MOVED - a list of (recently) moved or removed ports
+# MOVED -- A list of (recently) moved or removed ports
 #
 # $FreeBSD$
 #
 # Each entry consists of a single line containing the following four
 # fields in the order named, separated with the pipe (`|') character:
 #
-#     Port:	A port that was moved (category/portname).
-#     Moved to:	Where the port was moved to, or which port users
-#		can and should migrate to (category/portname).
-#		Blank indicates that the port was deleted.
+#     Port:	A port that was moved (category/portname)
+#     Moved to:	Where the port was moved to, or which port users can
+#		and should migrate to (category/portname); no entry
+#		indicates that the port was deleted
 #     Date:	When the moving or the removal was done (YYYY-MM-DD,
-#		in PST/PDT).
-#     Why:	The reason why the port was moved or removed.
+#		in PST/PDT)
+#     Why:	The reason why the port was moved or removed
 #
 # Keep this list sorted in the chronological order.  New entries must
 # be added at the tail.
@@ -704,7 +704,6 @@ www/p5-HTML-Embperl||2009-06-13|Removed
 www/thttpd-st||2009-06-13|Removed
 www/toofpy||2009-06-13|Removed
 x11-drivers/xf86-video-vga||2009-06-13|Removed
-x11-themes/nimbus||2009-06-13|Removed
 x11-toolkits/py-pyxfce||2009-06-13|Removed
 multimedia/mlt++|multimedia/mlt|2009-06-15|Project reorganization
 x11-wm/enlightenment-devel|x11-wm/enlightenment|2009-06-15|Relocated
@@ -975,7 +974,6 @@ shells/bush||2010-01-18|Has expired: has been broken for 3 months
 textproc/iiimf-gnome-im-switcher||2010-01-18|Has expired: has been broken for 4 months
 textproc/iiimf-gtk||2010-01-18|Has expired: has been broken for 3 months
 x11-toolkits/gtkada-devel||2010-01-18|Has expired: has been broken for 3 months
-x11-toolkits/gtkada||2010-01-18|Has expired: has been broken for 3 months
 x11-wm/ion-2||2010-01-18|Has expired: has been broken for 4 months
 databases/pear-Doctrine2||2010-01-20|Removed
 audio/dino||2010-01-20|Has expired: has been broken for 7 months
@@ -1753,12 +1751,10 @@ ports-mgmt/portsman||2011-04-29|Has expired: hardwires an ancient version of IND
 mail/kiltdown||2011-04-29|Has expired: upstream seems dead since 2001
 devel/pinstall||2011-04-30|Removed
 x11-wm/kappdock||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11-wm/olvwm||2011-05-01|Has expired: Upstream disapear and distfile is no more available
 x11-wm/wmg||2011-05-01|Has expired: Upstream disapear and distfile is no more available
 x11-toolkits/gtkglarea--||2011-05-01|Has expired: Upstream disapear and distfile is no more available
 x11-toolkits/php-gtk||2011-05-01|Has expired: Abandoned upstream
 x11-toolkits/py-gtkextra||2011-05-01|Has expired: Abandoned upstream
-x11-toolkits/slingshot||2011-05-01|Has expired: Upstream disapear and distfile is no more available
 x11-toolkits/viewkit||2011-05-01|Has expired: Upstream disapear and distfile is no more available
 x11-themes/buffy||2011-05-01|Has expired: Upstream disapear and distfile is no more available
 x11-themes/clean-theme-gtk||2011-05-01|Has expired: Upstream disapear and distfile is no more available
@@ -1972,7 +1968,6 @@ net/ytalk||2011-05-02|Has expired: Upstream disapear and distfile is no more ava
 net/zniper||2011-05-02|Has expired: Upstream disapear and distfile is no more available
 multimedia/gtksubtitler||2011-05-02|Has expired: Upstream disapear and distfile is no more available
 multimedia/hayes||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-multimedia/linux-libtheora||2011-05-02|Has expired: deprecated please use linux-f[89]-libtheora
 multimedia/netshow||2011-05-02|Has expired: Distfile is no more available
 multimedia/smpeg-xmms||2011-05-02|Has expired: Distfile is no more available
 multimedia/streamdvd||2011-05-02|Has expired: upstream and distfile is no more available
@@ -2025,7 +2020,6 @@ mail/teapop-devel||2011-05-02|Has expired: Upstream disapear and distfile is no 
 mail/wmmail||2011-05-02|Has expired: Upstream disapear and distfile is no more available
 mail/wmmultipop3||2011-05-02|Has expired: Upstream disapear and distfile is no more available
 mail/wmymail||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-mail/xpbiff||2011-05-02|Has expired: Upstream disapear and distfile is no more available
 java/avalon-logkit||2011-05-02|Has expired: Upstream disapear and distfile is no more available
 java/gnu-regexp||2011-05-02|Has expired: Upstream disapear and distfile is no more available
 java/jce-aba||2011-05-02|Has expired: Upstream disapear and distfile is no more available
