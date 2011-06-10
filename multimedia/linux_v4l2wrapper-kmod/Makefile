@@ -7,7 +7,7 @@
 
 PORTNAME=	linux_v4l2wrapper-kmod
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia kld
 MASTER_SITES=	LOCAL/nox \
 		http://people.freebsd.org/~ae/
