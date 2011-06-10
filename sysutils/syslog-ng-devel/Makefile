@@ -116,6 +116,7 @@ post-patch:
 		${WRKSRC}/lib/utils.c ${WRKSRC}/lib/utils.h
 .endif
 
+
 post-install:
 .if !defined(NOPORTDOCS)
 	${INSTALL} -d -o ${SHAREOWN} -g ${SHAREGRP} \
@@ -130,8 +131,8 @@ post-install:
 	@if [ ! -f ${PREFIX}/etc/syslog-ng.conf.sample ]; then \
 		${INSTALL_DATA} ${FILESDIR}/syslog-ng.conf.sample ${PREFIX}/etc; \
 	fi
-	@if [ ! -f ${PREFIX}/etc/syslog-ng.conf ]; then \
-		${CP} ${PREFIX}/etc/syslog-ng.conf.sample ${PREFIX}/etc/syslog-ng.conf; \
+	@if [ ! -f ${PREFIX}/etc/syslog-ng.conf.dist ]; then \
+		${INSTALL_DATA} ${WRKSRC}/scl/syslog-ng.conf.dist ${PREFIX}/etc; \
 	fi
 	@${CAT} ${PKGMESSAGE}
 
