@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/print/ghostscript9/pkg-plist,v 1.2 2011-05-25 21:22:30 hrs Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/print/ghostscript9/pkg-plist,v 1.3 2011-06-10 09:10:52 hrs Exp $
 bin/bdftops
 bin/dumphint
 bin/dvipdf
@@ -43,6 +43,9 @@ include/ghostscript/ierrors.h
 lib/libgs.so
 lib/libgs.so.%%SHLIB_VER%%
 lib/libgs.so.%%GS_VERSION%%
+%%X11BITS%%lib/ghostscript/%%GS_VERSION%%/X11.so
+%%X11BITS%%@dirrm lib/ghostscript/%%GS_VERSION%%
+%%X11BITS%%@dirrmtry lib/ghostscript
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/78-EUC-H
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/78-EUC-V
 %%DATADIR%%/%%GS_VERSION%%/Resource/CMap/78-H
