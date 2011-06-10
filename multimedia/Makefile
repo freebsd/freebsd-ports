@@ -342,6 +342,7 @@
     SUBDIR += vdr-plugin-skinenigmang
     SUBDIR += vdr-plugin-softdevice
     SUBDIR += vdr-plugin-streamdev
+    SUBDIR += vdr-plugin-ttxtsubs
     SUBDIR += vdr-plugin-upnp
     SUBDIR += vdr-plugin-vnsiserver
     SUBDIR += vdr-plugin-wirbelscan
