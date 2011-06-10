@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	onioncat
-PORTVERSION=	0.2.1
+PORTVERSION=	0.2.2.r552
 CATEGORIES=	net security
 MASTER_SITES=	http://www.cypherpunk.at/ocat/download/Source/stable/
 
