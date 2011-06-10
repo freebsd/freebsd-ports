@@ -115,6 +115,7 @@ share/augeas/lenses/tests/test_libvirtd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/libvirt-object-model.png
 %%DOCSDIR%%%%PORTVERSION%%/html/libvirt.css
 %%DOCSDIR%%%%PORTVERSION%%/html/libvirtLogo.png
+%%DOCSDIR%%%%PORTVERSION%%/html/locking.html
 %%DOCSDIR%%%%PORTVERSION%%/html/logging.html
 %%DOCSDIR%%%%PORTVERSION%%/html/madeWith.png
 %%DOCSDIR%%%%PORTVERSION%%/html/main.css
@@ -126,6 +127,9 @@ share/augeas/lenses/tests/test_libvirtd.aug
 %%DOCSDIR%%%%PORTVERSION%%/html/remote.html
 %%DOCSDIR%%%%PORTVERSION%%/html/sitemap.html
 %%DOCSDIR%%%%PORTVERSION%%/html/storage.html
+%%DOCSDIR%%%%PORTVERSION%%/html/testapi.html
+%%DOCSDIR%%%%PORTVERSION%%/html/testsuites.html
+%%DOCSDIR%%%%PORTVERSION%%/html/testtck.html
 %%DOCSDIR%%%%PORTVERSION%%/html/todo.html
 %%DOCSDIR%%%%PORTVERSION%%/html/uri.html
 %%DOCSDIR%%%%PORTVERSION%%/html/virshcmdref.html
@@ -236,6 +240,7 @@ share/gtk-doc/html/libvirt/up.png
 @dirrm include/libvirt
 @dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrmtry %%PYTHON_LIBDIR%%
+@exec /bin/mkdir -p %%PREFIX%%/lib/libvirt/connection-driver
 @dirrm lib/libvirt/connection-driver
 @dirrm lib/libvirt
 @dirrm %%DOCSDIR%%%%PORTVERSION%%/html/html
@@ -355,6 +360,19 @@ share/gtk-doc/html/libvirt/up.png
 %%NLS%%@dirrmtry share/locale/zh_TW
 %%NLS%%@dirrmtry share/locale/zu/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/zu
-@dirrm var/run/libvirt
 @dirrm %%ETCDIR%%/nwfilter
 @dirrm %%ETCDIR%%
+@dirrmtry var/run/libvirt
+@dirrmtry var/run
+@dirrmtry var/log/libvirt/uml
+@dirrmtry var/log/libvirt/qemu
+@dirrmtry var/log/libvirt/lxc
+@dirrmtry var/log/libvirt
+@dirrmtry var/log
+@dirrmtry var/lib/libvirt/images
+@dirrmtry var/lib/libvirt/boot
+@dirrmtry var/lib/libvirt
+@dirrmtry var/lib
+@dirrmtry var/cache/libvirt
+@dirrmtry var/cache
+@dirrmtry var
