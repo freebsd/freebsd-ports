@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	net-im python
 MASTER_SITES=	http://fugu.gale.org/dist/old/
 
-MAINTAINER=	peterh@sapros.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical client for the Gale instant messaging system
 
 RUN_DEPENDS+= 	${PYTHON_SITELIBDIR}/Pmw:${PORTSDIR}/x11-toolkits/py-Pmw
