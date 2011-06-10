@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libvirt
-PORTVERSION=	0.9.1
-PORTREVISION=	2
+PORTVERSION=	0.9.2
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/
 
@@ -39,6 +38,8 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
+CONFIGURE_ARGS+=	--enable-nls \
+			--with-libintl-prefix=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
