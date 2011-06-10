@@ -7,7 +7,7 @@
 
 PORTNAME=	vdr-plugins
 PORTVERSION=	1.7.18
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -29,6 +29,7 @@ OPTIONS=	CONTROL "telnet control" On \
 		REMOTE "non-lirc remote control (experimental)" On \
 		SKINENIGMANG "Enigma-NG skin" On \
 		STREAMDEV "stream device (server and client)" On \
+		TTXTSUBS "teletext subtitle plugin" On \
 		WIRBELSCAN "Wirbelscan" On \
 		XINELIBOUTPUT "xineliboutput plugin/viewer" On \
 		LIVE "live web plugin" On \
@@ -71,6 +72,9 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-skinenigmang.so.${PORTVERSION}:${PORTS
 .endif
 .if defined(WITH_STREAMDEV)
 RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-streamdev-server.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-streamdev
+.endif
+.if defined(WITH_TTXTSUBS)
+RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-ttxtsubs.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-ttxtsubs
 .endif
 .if defined(WITH_WIRBELSCAN)
 RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-wirbelscan.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-wirbelscan
