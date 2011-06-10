@@ -190,7 +190,7 @@ DEVICE_DEVS13=
 DEVICE_DEVS14= jpeg.dev jpeggray.dev jpegcmyk.dev
 DEVICE_DEVS15= pdfwrite.dev pswrite.dev ps2write.dev epswrite.dev	\
 	txtwrite.dev pxlmono.dev pxlcolor.dev
-DEVICE_DEVS16=
+DEVICE_DEVS16= bbox.dev
 DEVICE_DEVS17=
 DEVICE_DEVS18=
 DEVICE_DEVS20= cljet5.dev cljet5c.dev

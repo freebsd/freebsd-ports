@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript9
 PORTVERSION=	9.02
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	print
 MASTER_SITES=	http://ghostscript.com/releases/:gs_srcs \
 		SF/ghostscript/files/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -155,14 +155,15 @@ post-patch:
 
 pre-build-drivers.mak:
 	@${ECHO_CMD} '# automatically generated' > ${WRKSRC}/base/drivers.mak
+	@${ECHO_CMD} 'DEVICE_DEVS=$${DISPLAY_DEV}' >> ${WRKSRC}/base/drivers.mak
 .for N in ${DEVS_LIST}
-	@${ECHO_CMD} 'DEVICE_${N}=' >> ${WRKSRC}/base/drivers.mak
+	@${ECHO_CMD} '${N:S/^/DEVICE_/:S/^DEVICE_DISPLAY_DEV/DISPLAY_DEV/}=' >> ${WRKSRC}/base/drivers.mak
 .endfor
 .for D in ${OPTIONS:MGS_*:S/^GS_//}
 .for N in ${DEVS_LIST}
 .if defined(WITH_GS_${D})
-.for X in ${DEVICE_${N}:M${D}.dev}
-	@${ECHO_CMD} 'DEVICE_${N}+= $$(DD)${D}.dev'  >> ${WRKSRC}/base/drivers.mak
+.for X in ${${N:S/^/DEVICE_/:S/^DEVICE_DISPLAY_DEV/DISPLAY_DEV/}:M${D}.dev}
+	@${ECHO_CMD} '${N:S/^/DEVICE_/:S/^DEVICE_DISPLAY_DEV/DISPLAY_DEV/}+= $$(DD)${D}.dev'  >> ${WRKSRC}/base/drivers.mak
 .endfor
 .endif
 .endfor
