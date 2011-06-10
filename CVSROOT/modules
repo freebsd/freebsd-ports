@@ -230,7 +230,6 @@ WebMagick                       ports/www/WebMagick
 Xaw3d                           ports/x11-toolkits/Xaw3d
 XawPlus                         ports/x11-toolkits/XawPlus
 Xfstt                           ports/x11-servers/Xfstt
-Xg                              ports/x11-fonts/Xg
 ZendOptimizer                   ports/devel/ZendOptimizer
 a2pdf                           ports/print/a2pdf
 a2png                           ports/graphics/a2png
@@ -10085,7 +10084,6 @@ nitpicker                       ports/net-mgmt/nitpicker
 nitrogen                        ports/sysutils/nitrogen
 njam                            ports/games/njam
 njplot                          ports/biology/njplot
-njs                             ports/lang/njs
 nl-acroread8                    ports/print/nl-acroread8
 nl-aspell                       ports/textproc/nl-aspell
 nl-ispell                       ports/textproc/nl-ispell
@@ -22912,7 +22910,6 @@ ruby-amatch                     ports/textproc/ruby-amatch
 ruby-amazon                     ports/www/ruby-amazon
 ruby-amrita                     ports/textproc/ruby-amrita
 ruby-amstd                      ports/devel/ruby-amstd
-ruby-asp                        ports/www/ruby-asp
 ruby-aspectr                    ports/devel/ruby-aspectr
 ruby-atk                        ports/accessibility/ruby-atk
 ruby-audiofile                  ports/audio/ruby-audiofile
@@ -23023,7 +23020,6 @@ ruby-interbase                  ports/databases/ruby-interbase
 ruby-intl                       ports/devel/ruby-intl
 ruby-io-reactor                 ports/devel/ruby-io-reactor
 ruby-irc                        ports/irc/ruby-irc
-ruby-js                         ports/lang/ruby-js
 ruby-jttui                      ports/devel/ruby-jttui
 ruby-kyotocabinet               ports/databases/ruby-kyotocabinet
 ruby-ldap                       ports/net/ruby-ldap
@@ -23157,7 +23153,6 @@ ruby-wgettsv                    ports/www/ruby-wgettsv
 ruby-wirble                     ports/devel/ruby-wirble
 ruby-wx                         ports/x11-toolkits/ruby-wx
 ruby-x11                        ports/x11/ruby-X11
-ruby-xml-script                 ports/textproc/ruby-xml-script
 ruby-xmlconfigfile              ports/textproc/ruby-xmlconfigfile
 ruby-xmlparser                  ports/textproc/ruby-xmlparser
 ruby-xmlscan                    ports/textproc/ruby-xmlscan
@@ -26024,7 +26019,6 @@ wikicalc                        ports/www/wikicalc
 wikindx                         ports/www/wikindx
 wildmagic                       ports/graphics/wildmagic
 wiliki                          ports/www/wiliki
-wily                            ports/editors/wily
 win32-codecs                    ports/multimedia/win32-codecs
 windowlab                       ports/x11-wm/windowlab
 windowmaker                     ports/x11-wm/windowmaker
@@ -26568,7 +26562,6 @@ xfsm                            ports/sysutils/xfsm
 xfsprogs                        ports/sysutils/xfsprogs
 xfstt                           ports/x11-servers/Xfstt
 xfwp                            ports/x11/xfwp
-xg                              ports/x11-fonts/Xg
 xgalaga                         ports/games/xgalaga
 xgame                           ports/games/xgame
 xgamma                          ports/x11/xgamma
