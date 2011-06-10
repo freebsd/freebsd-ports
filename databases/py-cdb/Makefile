@@ -13,7 +13,7 @@ MASTER_SITES=	http://pilcrow.madison.wi.us/python-${PORTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	jason@mastaler.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python interface to DJB's constant database library
 
 USE_PYTHON=	yes
