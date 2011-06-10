@@ -7,6 +7,7 @@
 
 PORTNAME=	linux_v4l2wrapper-kmod
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia kld
 MASTER_SITES=	LOCAL/nox \
 		http://people.freebsd.org/~ae/
@@ -38,10 +39,10 @@ MAKE_ENV+=	SYSDIR="${SYSDIR}"
 CFLAGS+=	${DEBUG_FLAGS}
 
 # try to avoid child processes when finding out if already in the kernel
-.if ${OSVERSION} > 900036
+.if ${OSVERSION} > 900036 || (${OSVERSION} < 900000 && ${OSVERSION} > 802508)
 INBASE=		1
 .else
-.if ${OSVERSION} == 900036
+.if ${OSVERSION} == 900036 || ${OSVERSION} == 802508
 INBASE!=	($(SYSCTL) -n kern.features.linuxulator_v4l2 2>/dev/null || true)
 .else
 INBASE=		0
