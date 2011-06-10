@@ -10,7 +10,7 @@ PORTVERSION=	0.12
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.nurs.or.jp/~kurati/celrw/
 
-MAINTAINER=	shuna@pop16.odn.ne.jp
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cellular phone-number read/write tool (in Japan only)
 
 USE_AUTOTOOLS=	automake:env
