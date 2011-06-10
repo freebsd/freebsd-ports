@@ -10,7 +10,7 @@ PORTVERSION=	1.7
 CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.cx/
 
-MAINTAINER=	mike@tric.tomsk.gov.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spam relay database
 
 MAN8=		relaydb.8
