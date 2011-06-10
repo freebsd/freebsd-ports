@@ -10,7 +10,7 @@ PORTREVISION=	5
 CATEGORIES=	games kde
 MASTER_SITES=	http://kamikaze.coolprojects.org/download/
 
-MAINTAINER=	spillner@kde.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplayer bomberman-style game for KDE
 
 USE_KDELIBS_VER=3
