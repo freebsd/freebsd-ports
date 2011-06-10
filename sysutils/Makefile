@@ -674,6 +674,7 @@
     SUBDIR += py-bcfg2
     SUBDIR += py-drmaa
     SUBDIR += py-filelike
+    SUBDIR += py-nagiosplugin
     SUBDIR += py-psutil
     SUBDIR += py-stdiff
     SUBDIR += py-supervisor
