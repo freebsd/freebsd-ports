@@ -12,7 +12,7 @@ CATEGORIES=	net-im tk
 MASTER_SITES=	SF
 DISTNAME=	Coccinella-${PORTVERSION}Src
 
-MAINTAINER=	marc@bruenink.de
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Jabber client with whiteboard communication
 
 RUN_DEPENDS=	wish8.4:${PORTSDIR}/x11-toolkits/tk84
