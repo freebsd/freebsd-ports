@@ -134,6 +134,7 @@ include/vdr/ci.h
 include/vdr/config.h
 include/vdr/channels.h
 include/vdr/Make.global
+%%TTXPATCH%%include/vdr/vdrttxtsubshooks.h
 @exec mkdir -p %D/etc/vdr/plugins
 @exec chown %%VDR_USER%%:%%VDR_GROUP%% %D/etc/vdr %D/etc/vdr/plugins
 @unexec if cmp -s %D/etc/vdr/remote.conf.sample %D/etc/vdr/remote.conf; then rm -f %D/etc/vdr/remote.conf; fi

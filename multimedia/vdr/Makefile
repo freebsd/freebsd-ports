@@ -7,7 +7,7 @@
 
 PORTNAME=	vdr
 PORTVERSION=	1.7.18
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.tvdr.de/vdr/Developer/
 
@@ -19,7 +19,8 @@ LIB_DEPENDS=    jpeg.11:${PORTSDIR}/graphics/jpeg
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/fontconfig.pc:${PORTSDIR}/x11-fonts/fontconfig
 
-OPTIONS=	IPTVPATCH "Stops EIT scans on IPTV channels" On
+OPTIONS=	IPTVPATCH "Stops EIT scans on IPTV channels" On \
+		TTXPATCH "Support patches for teletext subtitle plugin" On
 
 DIST_SUBDIR=	vdr
 USE_BZIP2=	yes
@@ -52,9 +53,15 @@ PLIST_SUB+=	VDR_GROUP=${VDR_GROUP}
 
 .include <bsd.port.options.mk>
 
+EXTRA_PATCHES+=	${FILESDIR}/vdr-1.7.15-disable_ca_updates.patch
 .if defined(WITH_IPTVPATCH)
-EXTRA_PATCHES+=	${FILESDIR}/vdr-1.7.15-disable_ca_updates.patch \
-	${FILESDIR}/vdr-1.7.15-disable_eitscan.patch
+EXTRA_PATCHES+=	${FILESDIR}/vdr-1.7.15-disable_eitscan.patch
+.endif
+
+.if defined(WITH_TTXPATCH)
+PLIST_SUB+=	TTXPATCH=""
+.else
+PLIST_SUB+=	TTXPATCH="@comment "
 .endif
 
 .if !defined(WITHOUT_NLS)
@@ -65,6 +72,10 @@ ALL_TARGET=	vdr plugins
 .endif
 
 post-patch:
+.if defined(WITH_TTXPATCH)
+	@${PATCH} -d ${WRKSRC} --quiet -p1 <${FILESDIR}/vdr-1.7.15-ttxtsubs.patch-1
+	@${PATCH} -d ${WRKSRC} --quiet -p1 <${FILESDIR}/vdr-1.7.15-ttxtsubs.patch-2
+.endif
 	@${SED} 's|^\(VIDEODIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*|\1\2${VIDEODIR}|' \
 		${WRKSRC}/Make.config.template >${WRKSRC}/Make.config
 	@${REINPLACE_CMD} -e 's|%%CONFDIR%%|${CONFDIR}|' ${WRKSRC}/vdr.1
