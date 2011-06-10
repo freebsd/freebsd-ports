@@ -11,7 +11,7 @@ PORTREVISION=	8
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-sources/${PORTVERSION}
 
-MAINTAINER=	phil@teaser.fr
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK+ passwords manager for system and network administrators
 
 RUN_DEPENDS+=   gpgv:${PORTSDIR}/security/gnupg1
