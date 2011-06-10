@@ -10,7 +10,7 @@ PORTVERSION=	5.7j1
 CATEGORIES=	japanese devel
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA025040/ctags/downloads/
 
-MAINTAINER=	issei@issei.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A feature-filled tagfile generator with Japanese support
 
 WRKSRC=	${WRKDIR}/${DISTNAME:S/j1//}

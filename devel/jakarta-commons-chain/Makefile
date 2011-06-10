@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
 PKGNAMEPREFIX=	jakarta-
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	acidos@bandwidth-junkies.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API implementing Chain of Responsiblity design pattern
 
 BUILD_DEPENDS=	${JAR_DEPENDS}
