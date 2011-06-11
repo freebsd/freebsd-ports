@@ -1,0 +1,37 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: ldmud
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add ldmud_enable=yes to /etc/rc.conf.local or /etc/rc.conf to enable ldmud
+
+. /etc/rc.subr
+
+name=ldmud
+ldmud_user=mud
+rcvar=`set_rcvar`
+
+start_cmd="${name}_start"
+
+command="%%PREFIX%%/sbin/${name}"
+rundir="/var/run/${name}"
+pidfile="${rundir}/${name}.pid"
+logfile="/var/log/${name}/${name}.log"
+
+load_rc_config ${name}
+: ${ldmud_enable="NO"}
+
+ldmud_start()
+{
+	if checkyesno ldmud_enable
+	then
+		echo "Starting ${name}."
+		/usr/sbin/daemon -u "${ldmud_user}" -p "${pidfile}" \
+			/bin/sh -c "${command} > ${logfile} 2>&1"
+	fi
+}
+
+run_rc_command "$1"
