@@ -7,14 +7,13 @@
 
 PORTNAME=	Test-TableDriven
 PORTVERSION=	0.02
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Write tests, not scripts that run them
-
-RUN_DEPENDS=	p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper
 
 PERL_CONFIGURE=	yes
 
