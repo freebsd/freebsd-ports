@@ -2,7 +2,7 @@
 # $FreeBSD$
 #
 
-CONFLICTS=	bugzilla-2.*
+CONFLICTS=	bugzilla-4.*
 
 PORTSCOUT=	limitw:1,even
 
