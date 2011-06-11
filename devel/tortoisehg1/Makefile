@@ -18,10 +18,13 @@ RUN_DEPENDS=	hg:${PORTSDIR}/devel/mercurial \
 
 OPTIONS=	NAUTILUS "Install TortoiseHG Nautilus extension" off
 
+CONFLICTS=	tortoisehg-2*
+
 USE_GNOME=	pygtk2 pygobject
 INSTALLS_ICONS=	yes
 
 USE_PYTHON=	yes
+USE_PYDISTUTILS=yes
 INSTALLS_EGGINFO=yes
 
 .include <bsd.port.options.mk>
@@ -42,24 +45,20 @@ PLIST_SUB+=	NAUTILUS=""
 post-patch:
 	@${REINPLACE_CMD} -e '/_path/ s|/usr|${PREFIX}|' ${WRKSRC}/${PYSETUP}
 .if defined(WITHOUT_NLS)
-	@${REINPLACE_CMD} -e '150,152 s|^|# |' ${WRKSRC}/${PYSETUP}
+	@${REINPLACE_CMD} -e 's/^%%NLS%%/# /' ${WRKSRC}/${PYSETUP}
+.else
+	@${REINPLACE_CMD} -e 's/^%%NLS%%//' ${WRKSRC}/${PYSETUP}
 .endif
 .if defined(WITHOUT_NAUTILUS)
-	@${REINPLACE_CMD} -e '153,154 s|^|# |' ${WRKSRC}/${PYSETUP}
+	@${REINPLACE_CMD} -e 's/^%%NAUTILUS%%/# /' ${WRKSRC}/${PYSETUP}
+.else
+	@${REINPLACE_CMD} -e 's/^%%NAUTILUS%%//' ${WRKSRC}/${PYSETUP}
 .endif
 
-do-configure:
-	@${DO_NADA}
-
-do-build:
-	cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} build
-
-do-install:
-	cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} install --prefix=${PREFIX}
+post-install:
 	${MKDIR} ${PREFIX}/share/tortoisehg
 	${INSTALL_DATA} ${WRKSRC}/contrib/mergetools.rc ${PREFIX}/share/tortoisehg/
 
-post-install:
 	@${ECHO_MSG}
 	@${CAT} pkg-message
 	@${ECHO_MSG}
