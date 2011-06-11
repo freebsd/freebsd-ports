@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Manual
-PORTVERSION=	5.8005
+PORTVERSION=	5.8007
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -15,7 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The Catalyst developer\'s manual
 
-PERL_CONFIGURE=	5.8.1+
+LICENSE_COMB=	dual
+LICENSE=	ART20 GPLv1
+
+PERL_CONFIGURE=	5.8.9+
 
 MAN3=	Catalyst::Manual.3 \
 	Catalyst::Manual::About.3 \
