@@ -13,7 +13,7 @@ MASTER_SITES=	http://quixote.idyll.org/session2/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
 DISTNAME=	session2-${PORTVERSION}
 
-MAINTAINER=	dryice@dryice.name
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A quixote session manager with persistence support
 
 USE_PYTHON=	yes
@@ -27,7 +27,6 @@ OPTIONS+=	POSTGRESQL "psycopg support" on
 
 .if defined(WITH_MYSQL)
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
-BROKEN=		bad dependency line
 .endif
 
 .if defined(WITH_POSTGRESQL)
