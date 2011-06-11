@@ -14,6 +14,7 @@
 %%ETCDIR%%/action.d/mail-whois.conf
 %%ETCDIR%%/action.d/mail.conf
 %%ETCDIR%%/action.d/mynetwatchman.conf
+%%ETCDIR%%/action.d/pf.conf
 %%ETCDIR%%/action.d/sendmail-buffered.conf
 %%ETCDIR%%/action.d/sendmail-whois-lines.conf
 %%ETCDIR%%/action.d/sendmail-whois.conf
