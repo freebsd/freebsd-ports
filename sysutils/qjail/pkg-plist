@@ -1,0 +1,26 @@
+bin/qjail
+etc/qjail.conf.sample
+etc/rc.d/qjail-jail2
+etc/rc.d/qjail2
+%%EXAMPLESDIR%%/default/qjail.flavor
+%%EXAMPLESDIR%%/default/etc/make.conf
+%%EXAMPLESDIR%%/default/etc/periodic.conf
+%%EXAMPLESDIR%%/default/etc/rc.conf
+%%EXAMPLESDIR%%/default/usr/local/etc/sudoers
+%%EXAMPLESDIR%%/nullmailer-example/qjail.flavor
+%%EXAMPLESDIR%%/nullmailer-example/etc/rc.conf
+%%EXAMPLESDIR%%/nullmailer-example/etc/mail/mailer.conf
+%%EXAMPLESDIR%%/nullmailer-example/usr/local/etc/nullmailer/remotes
+@dirrm %%EXAMPLESDIR%%/default/usr/local/etc
+@dirrm %%EXAMPLESDIR%%/default/usr/local
+@dirrm %%EXAMPLESDIR%%/default/usr
+@dirrm %%EXAMPLESDIR%%/default/etc
+@dirrm %%EXAMPLESDIR%%/default
+@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/local/etc/nullmailer
+@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/local/etc
+@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr/local
+@dirrm %%EXAMPLESDIR%%/nullmailer-example/usr
+@dirrm %%EXAMPLESDIR%%/nullmailer-example/etc/mail
+@dirrm %%EXAMPLESDIR%%/nullmailer-example/etc
+@dirrm %%EXAMPLESDIR%%/nullmailer-example
+@dirrm %%EXAMPLESDIR%%
