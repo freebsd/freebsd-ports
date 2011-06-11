@@ -20,6 +20,7 @@ include/nemiver/common/nmv-i-input-stream.h
 include/nemiver/common/nmv-initializer.h
 include/nemiver/common/nmv-insert-statement.h
 include/nemiver/common/nmv-libxml-utils.h
+include/nemiver/common/nmv-loc.h
 include/nemiver/common/nmv-log-stream-utils.h
 include/nemiver/common/nmv-log-stream.h
 include/nemiver/common/nmv-namespace.h
@@ -127,6 +128,7 @@ lib/nemiver/plugins/dbgperspective/ui/remotetargetdialog.ui
 lib/nemiver/plugins/dbgperspective/ui/runprogramdialog.ui
 lib/nemiver/plugins/dbgperspective/ui/savedsessionsdialog.ui
 lib/nemiver/plugins/dbgperspective/ui/setbreakpointdialog.ui
+lib/nemiver/plugins/dbgperspective/ui/setjumptodialog.ui
 lib/nemiver/plugins/dbgperspective/ui/varinspectordialog.ui
 lib/nemiver/plugins/dbgperspective/ui/watchpointdialog.ui
 share/applications/nemiver.desktop
@@ -295,6 +297,7 @@ share/locale/nb/LC_MESSAGES/nemiver.mo
 share/locale/nl/LC_MESSAGES/nemiver.mo
 share/locale/oc/LC_MESSAGES/nemiver.mo
 share/locale/pt_BR/LC_MESSAGES/nemiver.mo
+share/locale/ro/LC_MESSAGES/nemiver.mo
 share/locale/ru/LC_MESSAGES/nemiver.mo
 share/locale/sl/LC_MESSAGES/nemiver.mo
 share/locale/sv/LC_MESSAGES/nemiver.mo
