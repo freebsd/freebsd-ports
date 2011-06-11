@@ -1,11 +1,11 @@
---- common/Makefile.in~	2008-02-05 04:37:42.000000000 +0100
-+++ common/Makefile.in	2008-02-06 18:11:34.685979351 +0100
-@@ -32,7 +32,7 @@
+--- common/Makefile.in.old	2011-06-06 14:35:23.000000000 +0400
++++ common/Makefile.in	2011-06-06 14:36:20.000000000 +0400
+@@ -35,7 +35,7 @@
  
  CC = @CC@
  CCOPT = @V_CCOPT@
 -INCLS = -I$(srcdir) @V_INCLS@ -I$(srcdir)/../include  -I$(srcdir)/../argus
 +INCLS = -I$(srcdir) @V_INCLS@ -I$(srcdir)/../include  -I$(srcdir)/../argus @SASLFLAGS@
- DEFS = @DEFS@ -DARGUS_SYSLOG=1
+ DEFS = @DEFS@
  
  # Standard CFLAGS
