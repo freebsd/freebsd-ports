@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	argus-clients
-PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTVERSION=	3.0.4.1
 CATEGORIES=	net-mgmt security
 MASTER_SITES=	http://qosient.com/argus/src/ \
 		ftp://qosient.com/pub/argus/src/
@@ -18,12 +17,14 @@ COMMENT=	Client programs for the argus IP network transaction auditing tool
 CONFLICTS=	argus-clients-2* argus-clients-sasl-2*
 
 OPTIONS+=	SASL "SASL authentication support" on \
-		MYSQL "MySQL database support" on
+		MYSQL "MySQL database support" on \
+		GEOIP "GeoIP library support" off
 
 .include <bsd.port.options.mk>
 
 USE_BISON=	build
 GNU_CONFIGURE=	true
+USE_NCURSES=	yes
 
 .if defined(WITH_SASL)
 PKGNAMESUFFIX=	-sasl
@@ -33,6 +34,11 @@ CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
+.endif
+
+.if defined(WITH_GEOIP)
+LIB_DEPENDS+=	GeoIP:${PORTSDIR}/net/GeoIP
+CONFIGURE_ARGS+=        --with-GeoIP=${LOCALBASE}
 .endif
 
 MAN1=	ra.1 rabins.1 racluster.1 racount.1 ragraph.1 rahisto.1 \
