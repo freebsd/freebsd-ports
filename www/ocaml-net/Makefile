@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	net
-PORTVERSION=	3.2.1
-PORTREVISION=	2
+PORTVERSION=	3.3.1
 CATEGORIES=	www
 MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
@@ -46,7 +45,7 @@ PORTEXAMPLES=	*
 .endif
 
 OCAML_PKGDIRS=	netsys netshm equeue shell netstring rpc-generator \
-		rpc pop smtp netclient netcgi2 cgi netplex \
+		rpc pop smtp netclient netcgi2 netgssapi netplex \
 		netcgi2-plex netcamlbox netmulticore
 OCAML_LDLIBS=	${OCAML_PKGDIRS:S/^/${OCAML_SITELIBDIR}\//}
 
