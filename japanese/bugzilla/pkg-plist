@@ -20,12 +20,14 @@
 %%WWWDIR%%/template/ja/default/admin/admin.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/classifications/add.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/classifications/del.html.tmpl
+%%WWWDIR%%/template/ja/default/admin/classifications/edit-common.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/classifications/edit.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/classifications/footer.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/classifications/reclassify.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/classifications/select.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/components/confirm-delete.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/components/create.html.tmpl
+%%WWWDIR%%/template/ja/default/admin/components/edit-common.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/components/edit.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/components/footer.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/components/list.html.tmpl
@@ -61,12 +63,11 @@
 %%WWWDIR%%/template/ja/default/admin/milestones/list.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/milestones/select-product.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/params/admin.html.tmpl
+%%WWWDIR%%/template/ja/default/admin/params/advanced.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/params/attachment.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/params/auth.html.tmpl
-%%WWWDIR%%/template/ja/default/admin/params/advanced.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/params/bugchange.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/params/bugfields.html.tmpl
-%%WWWDIR%%/template/ja/default/admin/params/bugmove.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/params/common.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/params/core.html.tmpl
 %%WWWDIR%%/template/ja/default/admin/params/dependencygraph.html.tmpl
@@ -116,7 +117,6 @@
 %%WWWDIR%%/template/ja/default/attachment/cancel-create-dupe.html.tmpl
 %%WWWDIR%%/template/ja/default/attachment/choose.html.tmpl
 %%WWWDIR%%/template/ja/default/attachment/confirm-delete.html.tmpl
-%%WWWDIR%%/template/ja/default/attachment/content-types.html.tmpl
 %%WWWDIR%%/template/ja/default/attachment/create.html.tmpl
 %%WWWDIR%%/template/ja/default/attachment/created.html.tmpl
 %%WWWDIR%%/template/ja/default/attachment/createformcontents.html.tmpl
@@ -145,6 +145,8 @@
 %%WWWDIR%%/template/ja/default/bug/dependency-tree.html.tmpl
 %%WWWDIR%%/template/ja/default/bug/edit.html.tmpl
 %%WWWDIR%%/template/ja/default/bug/field-events.js.tmpl
+%%WWWDIR%%/template/ja/default/bug/field-help.none.tmpl
+%%WWWDIR%%/template/ja/default/bug/field-label.html.tmpl
 %%WWWDIR%%/template/ja/default/bug/field.html.tmpl
 %%WWWDIR%%/template/ja/default/bug/format_comment.txt.tmpl
 %%WWWDIR%%/template/ja/default/bug/knob.html.tmpl
@@ -161,16 +163,12 @@
 %%WWWDIR%%/template/ja/default/bug/show.xml.tmpl
 %%WWWDIR%%/template/ja/default/bug/summarize-time.html.tmpl
 %%WWWDIR%%/template/ja/default/bug/time.html.tmpl
-%%WWWDIR%%/template/ja/default/bug/votes/delete-all.html.tmpl
-%%WWWDIR%%/template/ja/default/bug/votes/list-for-bug.html.tmpl
-%%WWWDIR%%/template/ja/default/bug/votes/list-for-user.html.tmpl
 %%WWWDIR%%/template/ja/default/config.js.tmpl
 %%WWWDIR%%/template/ja/default/config.rdf.tmpl
 %%WWWDIR%%/template/ja/default/email/lockout.txt.tmpl
 %%WWWDIR%%/template/ja/default/email/newchangedmail.txt.tmpl
 %%WWWDIR%%/template/ja/default/email/sanitycheck.txt.tmpl
 %%WWWDIR%%/template/ja/default/email/sudo.txt.tmpl
-%%WWWDIR%%/template/ja/default/email/votes-removed.txt.tmpl
 %%WWWDIR%%/template/ja/default/email/whine.txt.tmpl
 %%WWWDIR%%/template/ja/default/extensions/config.pm.tmpl
 %%WWWDIR%%/template/ja/default/extensions/extension.pm.tmpl
@@ -178,6 +176,7 @@
 %%WWWDIR%%/template/ja/default/extensions/license.txt.tmpl
 %%WWWDIR%%/template/ja/default/extensions/name-readme.txt.tmpl
 %%WWWDIR%%/template/ja/default/extensions/util.pm.tmpl
+%%WWWDIR%%/template/ja/default/extensions/web-readme.txt.tmpl
 %%WWWDIR%%/template/ja/default/filterexceptions.pl
 %%WWWDIR%%/template/ja/default/flag/list.html.tmpl
 %%WWWDIR%%/template/ja/default/global/banner.html.tmpl
@@ -199,6 +198,7 @@
 %%WWWDIR%%/template/ja/default/global/message.txt.tmpl
 %%WWWDIR%%/template/ja/default/global/messages.html.tmpl
 %%WWWDIR%%/template/ja/default/global/per-bug-queries.html.tmpl
+%%WWWDIR%%/template/ja/default/global/reason-descs.none.tmpl
 %%WWWDIR%%/template/ja/default/global/select-menu.html.tmpl
 %%WWWDIR%%/template/ja/default/global/setting-descs.none.tmpl
 %%WWWDIR%%/template/ja/default/global/site-navigation.html.tmpl
@@ -208,6 +208,7 @@
 %%WWWDIR%%/template/ja/default/global/user-error.html.tmpl
 %%WWWDIR%%/template/ja/default/global/user.html.tmpl
 %%WWWDIR%%/template/ja/default/global/userselect.html.tmpl
+%%WWWDIR%%/template/ja/default/global/value-descs.js.tmpl
 %%WWWDIR%%/template/ja/default/global/variables.none.tmpl
 %%WWWDIR%%/template/ja/default/index.html.tmpl
 %%WWWDIR%%/template/ja/default/list/change-columns.html.tmpl
@@ -229,7 +230,6 @@
 %%WWWDIR%%/template/ja/default/pages/quicksearch.html.tmpl
 %%WWWDIR%%/template/ja/default/pages/release-notes.html.tmpl
 %%WWWDIR%%/template/ja/default/pages/sudo.html.tmpl
-%%WWWDIR%%/template/ja/default/pages/voting.html.tmpl
 %%WWWDIR%%/template/ja/default/reports/chart.csv.tmpl
 %%WWWDIR%%/template/ja/default/reports/chart.html.tmpl
 %%WWWDIR%%/template/ja/default/reports/chart.png.tmpl
@@ -256,11 +256,11 @@
 %%WWWDIR%%/template/ja/default/request/email.txt.tmpl
 %%WWWDIR%%/template/ja/default/request/queue.html.tmpl
 %%WWWDIR%%/template/ja/default/search/boolean-charts.html.tmpl
+%%WWWDIR%%/template/ja/default/search/field.html.tmpl
 %%WWWDIR%%/template/ja/default/search/form.html.tmpl
 %%WWWDIR%%/template/ja/default/search/knob.html.tmpl
 %%WWWDIR%%/template/ja/default/search/search-advanced.html.tmpl
 %%WWWDIR%%/template/ja/default/search/search-create-series.html.tmpl
-%%WWWDIR%%/template/ja/default/search/search-help.html.tmpl
 %%WWWDIR%%/template/ja/default/search/search-plugin.xml.tmpl
 %%WWWDIR%%/template/ja/default/search/search-report-graph.html.tmpl
 %%WWWDIR%%/template/ja/default/search/search-report-select.html.tmpl
@@ -275,7 +275,6 @@
 %%WWWDIR%%/template/ja/default/whine/mail.txt.tmpl
 %%WWWDIR%%/template/ja/default/whine/multipart-mime.txt.tmpl
 %%WWWDIR%%/template/ja/default/whine/schedule.html.tmpl
-@dirrmtry %%WWWDIR%%/template/ja/extension
 @dirrmtry %%WWWDIR%%/template/ja/default/whine
 @dirrmtry %%WWWDIR%%/template/ja/default/setup
 @dirrmtry %%WWWDIR%%/template/ja/default/search
@@ -287,7 +286,6 @@
 @dirrmtry %%WWWDIR%%/template/ja/default/flag
 @dirrmtry %%WWWDIR%%/template/ja/default/extensions
 @dirrmtry %%WWWDIR%%/template/ja/default/email
-@dirrmtry %%WWWDIR%%/template/ja/default/bug/votes
 @dirrmtry %%WWWDIR%%/template/ja/default/bug/process
 @dirrmtry %%WWWDIR%%/template/ja/default/bug/create
 @dirrmtry %%WWWDIR%%/template/ja/default/bug/activity
