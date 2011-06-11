@@ -19,6 +19,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 LIB_DEPENDS=	gcrypt.17:${PORTSDIR}/security/libgcrypt \
 		gnutls.47:${PORTSDIR}/security/gnutls \
 		idn.17:${PORTSDIR}/dns/libidn \
+		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		tinyxml.3:${PORTSDIR}/textproc/tinyxml
 
 LICENSE=	GPLv2
