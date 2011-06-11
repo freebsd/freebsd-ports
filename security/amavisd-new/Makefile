@@ -7,8 +7,7 @@
 # Based on amavisd ports makefile.
 
 PORTNAME=	amavisd-new
-PORTVERSION=	2.6.4
-PORTREVISION=	11
+PORTVERSION=	2.6.6
 PORTEPOCH=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
@@ -17,6 +16,8 @@ MASTER_SITES=	http://www.ijs.si/software/amavisd/ \
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	Performance-enhanced daemonized version of amavis-perl
+
+LICENCE=	GPLv2
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
