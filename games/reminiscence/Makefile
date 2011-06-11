@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	REminiscence
-PORTVERSION=	0.1.9
-PORTREVISION=	4
+PORTVERSION=	0.2.1
 CATEGORIES=	games
 MASTER_SITES=	http://cyxdown.free.fr/reminiscence/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -26,10 +25,6 @@ SUB_FILES=	pkg-message
 PORTDOCS=	README
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CXX =/ d' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e '/^CXXFLAGS:=/ d' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e '/^CXXFLAGS+=.*-W/ d' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|DATA|${DATADIR}/data|' ${WRKSRC}/main.cpp
 
 do-install:
