@@ -47,6 +47,7 @@ bin/mmotype
 %%DATADIR%%/phi.mms
 %%DATADIR%%/plain.mmconfig
 %%DATADIR%%/popup.mms
+%%DATADIR%%/poptest.mms
 %%DATADIR%%/primes.mmconfig
 %%DATADIR%%/primes.mmix
 %%DATADIR%%/primes.mms
