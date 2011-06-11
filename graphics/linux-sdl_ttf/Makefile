@@ -11,7 +11,7 @@ CATEGORIES=	graphics linux
 MASTER_SITES=	http://www.libsdl.org/projects/SDL_ttf/release/
 DISTNAME=	SDL_ttf-${PORTVERSION}-1
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library to use TrueType fonts in SDL applications (linux version)
 
 USE_LINUX_RPM=	yes
