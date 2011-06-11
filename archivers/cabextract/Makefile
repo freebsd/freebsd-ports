@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cabextract
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	archivers
 MASTER_SITES=	http://www.cabextract.org.uk/
 
