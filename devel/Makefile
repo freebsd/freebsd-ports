@@ -2004,6 +2004,7 @@
     SUBDIR += p5-MooseX-RelatedClassRoles
     SUBDIR += p5-MooseX-Role-Parameterized
     SUBDIR += p5-MooseX-Role-WithOverloading
+    SUBDIR += p5-MooseX-Runnable
     SUBDIR += p5-MooseX-SemiAffordanceAccessor
     SUBDIR += p5-MooseX-SetOnce
     SUBDIR += p5-MooseX-SimpleConfig

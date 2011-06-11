@@ -1,0 +1,28 @@
+bin/mx-run
+%%SITE_PERL%%/MooseX/Runnable.pm
+%%SITE_PERL%%/MooseX/Runnable/Invocation.pm
+%%SITE_PERL%%/MooseX/Runnable/Invocation/MxRun.pm
+%%SITE_PERL%%/MooseX/Runnable/Invocation/Plugin/Debug.pm
+%%SITE_PERL%%/MooseX/Runnable/Invocation/Plugin/PAR.pm
+%%SITE_PERL%%/MooseX/Runnable/Invocation/Plugin/Profile.pm
+%%SITE_PERL%%/MooseX/Runnable/Invocation/Plugin/Restart.pm
+%%SITE_PERL%%/MooseX/Runnable/Invocation/Plugin/Restart/Auto.pm
+%%SITE_PERL%%/MooseX/Runnable/Invocation/Plugin/Restart/Base.pm
+%%SITE_PERL%%/MooseX/Runnable/Invocation/Plugin/Role/CmdlineArgs.pm
+%%SITE_PERL%%/MooseX/Runnable/Invocation/Role/WithParsedArgs.pm
+%%SITE_PERL%%/MooseX/Runnable/Invocation/Scheme/MooseX/Getopt.pm
+%%SITE_PERL%%/MooseX/Runnable/Run.pm
+%%SITE_PERL%%/MooseX/Runnable/Util/ArgParser.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Runnable/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX/Runnable
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MooseX
+@dirrm %%SITE_PERL%%/MooseX/Runnable/Util
+@dirrm %%SITE_PERL%%/MooseX/Runnable/Invocation/Scheme/MooseX
+@dirrm %%SITE_PERL%%/MooseX/Runnable/Invocation/Scheme
+@dirrm %%SITE_PERL%%/MooseX/Runnable/Invocation/Role
+@dirrm %%SITE_PERL%%/MooseX/Runnable/Invocation/Plugin/Role
+@dirrm %%SITE_PERL%%/MooseX/Runnable/Invocation/Plugin/Restart
+@dirrm %%SITE_PERL%%/MooseX/Runnable/Invocation/Plugin
+@dirrm %%SITE_PERL%%/MooseX/Runnable/Invocation
+@dirrm %%SITE_PERL%%/MooseX/Runnable
+@dirrmtry %%SITE_PERL%%/MooseX

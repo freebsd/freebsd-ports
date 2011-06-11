@@ -1,0 +1,10 @@
+MooseX::Runnable is a framework for making classes runnable applications. This
+role doesn't do anything other than tell the rest of the framework that your
+class is a runnable application that has a "run" method which accepts arguments
+and returns the process' exit code.
+
+This is a convention that the community has been using for a while. This role
+tells the computer that your class uses this convention, and let's the computer
+abstract away some of the tedium this entails.
+
+WWW: http://search.cpan.org/dist/MooseX-Runnable/
