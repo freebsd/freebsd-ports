@@ -1,11 +1,8 @@
 #! /bin/sh
 
-# $FreeBSD: /tmp/pcvs/ports/databases/postgresql91-server/files/Attic/pkg-install-server.in,v 1.1 2011-04-18 23:34:27 girgen Exp $
+# $FreeBSD: /tmp/pcvs/ports/databases/postgresql91-server/files/Attic/pkg-install-server.in,v 1.2 2011-06-11 23:14:30 girgen Exp $
 
 PATH=/bin:/usr/bin:/usr/sbin
-PG_USER=%%PG_USER%%
-PG_GROUP=%%PG_GROUP%%
-PG_UID=%%PG_UID%%
 
 backupwarning() { echo "
 
@@ -23,43 +20,6 @@ backupwarning() { echo "
 }
 
 case $2 in
-PRE-INSTALL)
-	backupwarning
-	PGUSER=${PGUSER:-${PG_USER}}
-	PGGROUP=${PGGROUP:-${PG_GROUP}}
-	DB_DIR=${PKG_PREFIX}/${PGUSER}
-	UID=${PG_UID}
-	GID=${PG_UID}
-
-	if pw group show "${PGGROUP}" 2>/dev/null; then
-		echo "You already have a group \"${PGGROUP}\", so I will use it."
-	else
-		if pw groupadd ${PGGROUP} -g ${GID}; then
-			echo "Added group \"${PGGROUP}\"."
-		else
-			echo "Adding group \"${PGGROUP}\" failed..."
-			exit 1
-		fi
-	fi
-
-	if pw user show "${PGUSER}" 2>/dev/null; then
-		echo "You already have a user \"${PGUSER}\", so I will use it."
-	else
-		if pw useradd ${PGUSER} -u ${UID} -g ${PGGROUP} -h - \
-			-d ${DB_DIR} -c "PostgreSQL Daemon"
-		then
-			echo "Added user \"${PGUSER}\"."
-		else
-			echo "Adding user \"${PGUSER}\" failed..."
-			exit 1
-		fi
-	fi
-
-	if ! [ -x ~${PGUSER} ] ; then 
-		install -m 755 -o ${PGUSER} -g ${PGGROUP} -d ${DB_DIR}
-	fi
-	;;
-
 BACKUPWARNING)
 	backupwarning
 	;;

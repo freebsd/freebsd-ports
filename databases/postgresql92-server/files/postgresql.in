@@ -10,7 +10,7 @@
 #
 #  postgresql_enable="YES"
 #  # optional
-#  postgresql_data="%%PREFIX%%/pgsql/data"
+#  postgresql_data="%%PREFIX%%/%%PG_USER%%/data"
 #  postgresql_flags="-w -s -m fast"
 #  postgresql_initdb_flags="--encoding=utf-8 --lc-collate=C"
 #  postgresql_class="default"
