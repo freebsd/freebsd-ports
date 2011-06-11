@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	hydra
-PORTVERSION=	6.2
+PORTVERSION=	6.3
 CATEGORIES=	security
 MASTER_SITES=	http://freeworld.thc.org/releases/
 EXTRACT_SUFX=	-src.tar.gz
@@ -45,7 +45,7 @@ LIB_DEPENDS+=	svn_client-1:${PORTSDIR}/devel/subversion
 .endif
 
 .if defined(WITH_X11)
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 pkgconfig
 PLIST_FILES+=	bin/xhydra
 MAN1+=		xhydra.1
 .else
