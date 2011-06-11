@@ -25,7 +25,9 @@ OPTIONS=	SYS_SSL "Build with OpenSSL support (from system)" off \
 		SQL "Build with database (libdbi) support" off \
 		SPOOF "Build with spoof source support" off \
 		IPV6 "Build with IPV6 support" on \
-		PCRE "Build with PCRE support" on
+		PCRE "Build with PCRE support" on \
+		JSON_C "Build with JSON-C support" off \
+		JSON_GLIB "Build with JSON-GLIB support" off \
 
 .include <bsd.port.options.mk>
 
@@ -99,6 +101,22 @@ CONFIGURE_ARGS+=	--enable-sql
 PLIST_FILES+=		lib/syslog-ng/libafsql.la lib/syslog-ng/libafsql.so
 .else
 CONFIGURE_ARGS+=	--disable-sql
+.endif
+
+.if defined(WITH_JSON_C) && defined(WITH_JSON_GLIB)
+BROKEN=		JSON_C and JSON_GLIB are mutually exclusive
+.endif
+
+.if defined(WITH_JSON_GLIB)
+LIB_DEPENDS+=		json-glib-1.0.0:${PORTSDIR}/devel/json-glib
+CONFIGURE_ARGS+=        --enable-json --with-json=json-glib
+PLIST_FILES+=		lib/syslog-ng/libtfjson.la lib/syslog-ng/libtfjson.so
+.elif defined(WITH_JSON_C)
+LIB_DEPENDS+=		json.0:${PORTSDIR}/devel/json-c
+CONFIGURE_ARGS+=        --enable-json --with-json=json-c
+PLIST_FILES+=		lib/syslog-ng/libtfjson.la lib/syslog-ng/libtfjson.so
+.else
+CONFIGURE_ARGS+=        --disable-json
 .endif
 
 .if ${OSVERSION} >= 900034
