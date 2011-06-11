@@ -837,6 +837,7 @@
     SUBDIR += pxe
     SUBDIR += py-GeoIP
     SUBDIR += py-avahi
+    SUBDIR += py-beanstalkc
     SUBDIR += py-cloudfiles
     SUBDIR += py-dpkt
     SUBDIR += py-eventlet
