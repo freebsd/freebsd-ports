@@ -32,6 +32,7 @@ INSTALL_TARGET=	install install.man
 SUB_FILES=	pkg-install
 PKGINSTALL=	${WRKDIR}/pkg-install
 MAKE_JOBS_UNSAFE=	yes
+USERS=		wnn
 
 WNNTYPE?=	WNN
 CONFIGURE_ARGS=	--enable-libraries=no \
@@ -76,10 +77,6 @@ USE_RC_SUBR.KWNN=	kwnn.sh
 ${M}+=		${${M}.${WNNTYPE}}
 . endif
 .endfor
-
-pre-install:
-	${SETENV} BATCH=${BATCH} \
-	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	${SETENV} PKG_PREFIX=${PREFIX} \

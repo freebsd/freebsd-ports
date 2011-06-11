@@ -2,20 +2,6 @@
 # $FreeBSD$
 
 case $2 in
-PRE-INSTALL)
-	if id -u wnn > /dev/null 2>&1; then
-		echo "INFO: wnn user already exists.  FreeWnn will use it."
-	else
-		echo "INFO: Creating 'wnn' user..."
-		if pw useradd wnn -u 69 -g 7 -h - -d /nonexistent \
-			-s /nonexistent -c Wnn; then
-			echo "INFO: Created."
-		else
-			echo "ERROR: wnn user cannot create."
-			exit 1
-		fi
-	fi
-	;;
 POST-INSTALL)
 	case $1 in
 	ja-FreeWnn-*)
