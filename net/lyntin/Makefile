@@ -14,6 +14,9 @@ MASTER_SITES=	SF/${PORTNAME}/OldFiles
 MAINTAINER=	stefan@aeschbacher.ch
 COMMENT=	A highly configurable client program to help playing muds
 
+DEPRECATED=	No longer under active development
+EXPIRATION_DATE=	2011-08-01
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 USE_PYTHON=	yes
