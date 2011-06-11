@@ -356,6 +356,8 @@ share/pixmaps/solfege.png
 %%DATADIR%%/exercises/standard/lesson-files/compare-intervals-harmonic-7-9
 %%DATADIR%%/exercises/standard/lesson-files/compare-intervals-harmonic-9
 %%DATADIR%%/exercises/standard/lesson-files/compare-intervals-harmonic-tritonus-7
+%%DATADIR%%/exercises/standard/lesson-files/compare-intervals-harmonic-2-to-8
+%%DATADIR%%/exercises/standard/lesson-files/compare-intervals-melodic-2-to-8
 %%DATADIR%%/exercises/standard/lesson-files/compare-intervals-melodic
 %%DATADIR%%/exercises/standard/lesson-files/compare-intervals-melodic-10
 %%DATADIR%%/exercises/standard/lesson-files/compare-intervals-melodic-2
@@ -851,6 +853,7 @@ share/pixmaps/solfege.png
 %%DATADIR%%/exercises/standard/lesson-files/sc-sim-name
 %%DATADIR%%/exercises/standard/lesson-files/sc-sim-s
 %%DATADIR%%/exercises/standard/lesson-files/sing-chord-tone
+%%DATADIR%%/exercises/standard/lesson-files/sing-intervals-2-to-8
 %%DATADIR%%/exercises/standard/lesson-files/sing-intervals
 %%DATADIR%%/exercises/standard/lesson-files/sing-intervals-10
 %%DATADIR%%/exercises/standard/lesson-files/sing-intervals-2
