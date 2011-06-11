@@ -1,0 +1,13 @@
+Writing table-driven tests is usually a good idea. Adding a test case doesn't
+require adding code, so it's easy to avoid fucking up the other tests. However,
+actually going from a table of tests to a test that runs is non-trivial.
+
+Test::TableDriven makes writing the test drivers trivial. You simply define your
+test cases and write a function that turns the input data into output data to
+compare against. Test::TableDriven will compute how many tests need to be run,
+and then run the tests.
+
+Concentrate on your data and what you're testing, not plan tests = scalar keys
+%test_cases> and a big foreach loop.
+
+WWW: http://search.cpan.org/dist/Test-TableDriven/

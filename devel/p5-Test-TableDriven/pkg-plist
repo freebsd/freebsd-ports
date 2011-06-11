@@ -1,0 +1,5 @@
+%%SITE_PERL%%/Test/TableDriven.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TableDriven/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/TableDriven
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrmtry %%SITE_PERL%%/Test
