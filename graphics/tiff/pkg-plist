@@ -35,6 +35,7 @@ lib/libtiffxx.a
 lib/libtiffxx.la
 lib/libtiffxx.so
 lib/libtiffxx.so.4
+lib/pkgconfig/libtiff-4.pc
 %%PORTDOCS%%%%DOCSDIR%%/TIFFTechNote2.html
 %%PORTDOCS%%%%DOCSDIR%%/addingtags.html
 %%PORTDOCS%%%%DOCSDIR%%/bugs.html
