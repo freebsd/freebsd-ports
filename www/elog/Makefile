@@ -10,7 +10,7 @@ DISTVERSION=	2.6.3-1
 CATEGORIES=	www
 MASTER_SITES=	http://midas.psi.ch/elog/download/tar/
 
-MAINTAINER=	ottodavid@gmx.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast and lightweight, extremly customizable weblog
 
 MAN1=		elog.1 elconv.1

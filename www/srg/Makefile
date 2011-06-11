@@ -12,8 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://mirror.crc.net.nz/pub/srg/
 
-
-MAINTAINER=	ds@tic-tac.ru
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Squid Report Generator
 
 USE_GMAKE=	yes
