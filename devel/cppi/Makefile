@@ -6,20 +6,26 @@
 #
 
 PORTNAME=	cppi
-PORTVERSION=	1.12
+PORTVERSION=	1.15
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	coreutils
+MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A tool to indent the C preprocessor directives
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
+USE_XZ=		yes
+USE_GETTEXT=	yes                                                             
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
+CPPFLAGS=	-I${LOCALBASE}/include
 
 PLIST_FILES=	bin/cppi
 MAN1=		cppi.1
+
+.ifndef	WITHOUT_NLS
+USE_GETTEXT=    yes                                                             
+.else                                                                           
+CONFIGURE_ARGS+=--disable-nls                                                   
+.endif                                                                          
 
 .include <bsd.port.mk>
