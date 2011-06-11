@@ -1,6 +1,6 @@
---- misc/glob.c.orig	2010-07-02 09:52:38.000000000 +0200
-+++ misc/glob.c	2010-07-02 09:52:10.000000000 +0200
-@@ -903,6 +903,11 @@ prefix_array (const char *dirname, char 
+--- misc/glob.c.orig	2010-12-03 13:11:57.000000000 +0100
++++ misc/glob.c	2011-03-03 19:12:51.000000000 +0100
+@@ -907,6 +907,11 @@ prefix_array (const char *dirname, char 
    return 0;
  }
  

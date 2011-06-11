@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rpm
-PORTVERSION=	4.8.1
-PORTREVISION=	4
+PORTVERSION=	4.9.0
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R}.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-${PORTVERSION:E}.x/
@@ -74,7 +73,8 @@ CONFIGURE_ARGS+=--without-db \
 
 MANLANG=	"" ja fr pl ru ko sk
 MAN1_EN=	gendiff.1
-MAN8_EN=	rpm.8 rpm2cpio.8 rpmbuild.8 rpmdeps.8 rpmgraph.8
+MAN8_EN=	rpm.8 rpm2cpio.8 rpmbuild.8 rpmdeps.8 rpmgraph.8 \
+		rpmdb.8 rpmkeys.8 rpmsign.8 rpmspec.8
 MAN8_JA=	rpm.8 rpm2cpio.8 rpmbuild.8 rpmgraph.8
 MAN8_FR=	rpm.8
 MAN8_PL=	rpm.8 rpm2cpio.8 rpmbuild.8 rpmdeps.8 rpmgraph.8
@@ -103,7 +103,9 @@ post-patch:
 	${REINPLACE_CMD} -e '/^pkgconfigdir/s:/:data/:' \
 		-e 's:\.\./\.\./bin/::' ${WRKSRC}/Makefile.in
 	${REINPLACE_CMD} -e 's/(hpux)/& || defined(__FreeBSD__)/' \
-		${WRKSRC}/rpmio/fts.?
+		${WRKSRC}/misc/fts.?
+	${REINPLACE_CMD} -e 's/ __GLIBC__.*/& || defined(__FreeBSD__)/' \
+		${WRKSRC}/system.h
 
 post-install:
 .if !defined(NOPORTDOCS)
