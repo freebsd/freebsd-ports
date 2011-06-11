@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	roauth
-PORTVERSION=	0.0.6
+PORTVERSION=	0.0.7
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
