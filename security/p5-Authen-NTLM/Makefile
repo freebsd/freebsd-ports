@@ -6,7 +6,7 @@
 # $FreeBSD$
 
 PORTNAME=	NTLM
-PORTVERSION=	1.05
+PORTVERSION=	1.08
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Authen
@@ -19,6 +19,6 @@ RUN_DEPENDS=	p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Authen::NTLM.3
+MAN3=		Authen::NTLM.3
 
 .include <bsd.port.mk>
