@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.14.0
-PORTREVISION=	1
+PORTVERSION=	0.14.1
 CATEGORIES=	emulators
 MASTER_SITES=	SAVANNAH:release \
 		LOCAL:snapshot
@@ -26,8 +25,8 @@ PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}" LDFLAGS="${LDFLAGS}"
 MAN1=		qemu.1 qemu-img.1
 MAN8=		qemu-nbd.8
-ONLY_FOR_ARCHS=	amd64 i386 powerpc
-CONFLICTS=	qemu-[0-9]*
+ONLY_FOR_ARCHS=	amd64 i386 powerpc # XXX someone wants to debug sparc64 hosts?
+CONFLICTS_INSTALL=	qemu-[0-9]*
 MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	SAMBA "samba dependency (for -smb)" Off \
@@ -37,20 +36,25 @@ OPTIONS=	SAMBA "samba dependency (for -smb)" Off \
 		PCAP "pcap dependency (networking with bpf)" On \
 		CDROM_DMA "IDE CDROM DMA" On \
 		ADD_AUDIO "Emulate more audio hardware (experimental!)" Off \
-		ALL_TARGETS "Also build non-x86 and user targets" On
+		ALL_TARGETS "Also build bsd-user targets (for testing)" Off
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_ALL_TARGETS)
-CONFIGURE_ARGS+=	--target-list=i386-softmmu,x86_64-softmmu
+CONFIGURE_ARGS+=	--disable-bsd-user
 PLIST_SUB+=	ALLTARGETS="@comment "
 .else
 PLIST_SUB+=	ALLTARGETS=""
+.if ${ARCH} == "sparc64"
+IGNORE=		bsd-user targets not tested on sparc64
+.endif
 .endif
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
 CFLAGS:=	${CFLAGS:C/-fno-tree-vrp//}
 CONFIGURE_ARGS+=	--prefix=${PREFIX} --cc=${CC} --enable-docs \
+	--disable-linux-user --disable-linux-aio \
+	--disable-darwin-user --disable-kvm --disable-xen \
 	--extra-cflags=-DSMBD_COMMAND=\\\"${LOCALBASE}/sbin/smbd\\\"\ -I${WRKSRC}\ -I${LOCALBASE}/include\ -DPREFIX=\\\"${PREFIX}\\\"
 
 .if defined(WITHOUT_SDL)
@@ -76,7 +80,7 @@ CONFIGURE_ARGS+=	--enable-pcap
 .endif
 
 .if defined(WITH_ADD_AUDIO)
-CONFIGURE_ARGS+=	--audio-card-list=ac97,es1370,sb16,cs4231a,adlib,gus
+CONFIGURE_ARGS+=	--audio-card-list=ac97,es1370,sb16,cs4231a,adlib,gus,hda
 .endif
 
 .if defined(WITH_SAMBA)
@@ -97,6 +101,10 @@ MAKE_ARGS+=	ARCH=x86_64
 MAKE_ARGS+=	ARCH=ppc
 .endif
 
+.if ${ARCH} == "sparc64"
+CONFIGURE_ARGS+= --sparc_cpu=v9
+.endif
+
 .if ${OSVERSION} < 900033 && ${ARCH} == "amd64"
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
@@ -109,7 +117,7 @@ pre-patch:
 	done
 
 post-patch:
-.if ${ARCH} == "powerpc"
+.if (${ARCH} == "powerpc" || ${ARCH} == "sparc64")
 .if ${OSVERSION} < 800030
 # These OSVERSION don't have all the needed long double fns in their
 # libc so just disable 80 bit floats completely.
