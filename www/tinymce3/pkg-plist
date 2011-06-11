@@ -88,6 +88,8 @@
 %%WWWDIR%%/jscripts/tiny_mce/plugins/example/js/dialog.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/example/langs/en.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/example/langs/en_dlg.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/example_dependency/editor_plugin.js
+%%WWWDIR%%/jscripts/tiny_mce/plugins/example_dependency/editor_plugin_src.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/css/fullpage.css
 %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/editor_plugin.js
 %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/editor_plugin_src.js
@@ -348,6 +350,7 @@
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/js
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage/css
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/fullpage
+@dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/example_dependency
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/example/langs
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/example/js
 @dirrm %%WWWDIR%%/jscripts/tiny_mce/plugins/example/img
