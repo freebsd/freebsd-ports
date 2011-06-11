@@ -853,6 +853,7 @@
     SUBDIR += tripwire-131
     SUBDIR += tripwire12
     SUBDIR += trousers
+    SUBDIR += truecrypt
     SUBDIR += tthsum
     SUBDIR += tuntun
     SUBDIR += umit
