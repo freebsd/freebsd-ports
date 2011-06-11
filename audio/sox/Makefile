@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sox
-PORTVERSION=	14.3.1
+PORTVERSION=	14.3.2
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
@@ -23,6 +23,8 @@ GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libltdl
 USE_GNOME=	pkgconfig
+LICENSE_COMB=	dual
+LICENSE=	LGPL21 GPLv2
 
 # Default LAME to off for packages so we don't end up RESTRICTED
 .if defined(PACKAGE_BUILDING)
@@ -51,7 +53,7 @@ OPTIONS=	ALSA "ALSA output driver" off \
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--with-pkgconfigdir="${PREFIX}/libdata/pkgconfig"
 CONFIGURE_ARGS+=	--with-distro="${CONFIGURE_TARGET} ${PKGNAME}"
 
@@ -147,8 +149,9 @@ LIB_DEPENDS+=		gsm.1:${PORTSDIR}/audio/gsm
 .else
 CONFIGURE_ARGS+=	--with-gsm
 # We cannot ask for gsm to be enabled without it trying to use external gsm,
-# so workaround with the below line
-CONFIGURE_ENV+=		ac_cv_header_gsm_h=no
+# so force the autoconf checks to fail
+CONFIGURE_ENV+=	ac_cv_header_gsm_h=no ac_cv_header_gsm_gsm_h=no \
+		ac_cv_lib_gsm_gsm_create=no
 .endif
 
 .if defined(WITH_ID3TAG)
@@ -164,12 +167,5 @@ LIB_DEPENDS+=		wavpack.2:${PORTSDIR}/audio/wavpack
 .else
 CONFIGURE_ARGS+=	--without-wavpack
 .endif
-
-# Tell configure that libgsm's headers are in $LOCALDIR/include
-post-patch:
-	@${REINPLACE_CMD} -Ee 's![[:<:]]gsm/gsm.h!gsm.h!' ${WRKSRC}/configure \
-		${WRKSRC}/src/gsm.c ${WRKSRC}/src/wav.c
-	@${REINPLACE_CMD} -Ee 's!ffmpeg/avformat.h!libavformat/avformat.h!' \
-		${WRKSRC}/configure ${WRKSRC}/src/ffmpeg.c
 
 .include <bsd.port.post.mk>
