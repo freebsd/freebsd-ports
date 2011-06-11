@@ -59,7 +59,7 @@ LIB_DEPENDS+=	cups.2:${PORTSDIR}/print/cups-client
 .endif
 
 .if !defined(WITHOUT_VIDEO)
-USE_GSTREAMER+=	vorbis ogg theora good
+USE_GSTREAMER+=	vorbis ogg theora vp8 good
 .endif
 
 .if defined(WITH_GTK)
