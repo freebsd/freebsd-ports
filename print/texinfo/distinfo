@@ -1,2 +1,6 @@
 SHA256 (texinfo-4.13.tar.gz) = 1303e91a1c752b69a32666a407e9fbdd6e936def4b09bc7de30f416301530d68
 SIZE (texinfo-4.13.tar.gz) = 2751071
+SHA256 (texinfo.tex) = 7a2514914dd0dd815effe123e44611c4c0d32bae1fb214d0a34bb33ff35623ee
+SIZE (texinfo.tex) = 306510
+SHA256 (texi2dvi) = 331ad8d43bd09399724490d972bcd4fb77761b140f6dae90b0db8946d8baa73e
+SIZE (texi2dvi) = 57776
