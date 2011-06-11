@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	gnulib
-PORTVERSION=	20110412
+PORTVERSION=	20110609
 CATEGORIES=	devel
 MASTER_SITES=	http://erislabs.net/ianb/projects/gnulib/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-stable
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	GNU portability library
+
+BUILD_DEPENDS=	${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 
 USE_GMAKE=	yes
 USE_PERL5_RUN=	yes
@@ -31,7 +33,9 @@ PLIST_FILES+=	%%DOCSDIR%%/${PORTNAME}.html
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's/date -u.*/stat -f %Sa -t "@set UPDATED %F %T" `ls -t $$^ | sed 1q` > $$@/' ${WRKSRC}/doc/Makefile
+	${REINPLACE_CMD} -e 's/date -u.*/stat -f %Sa -t "@set UPDATED %F %T" `ls -t $$^ | sed 1q` > $$@/' \
+		-e 's: makeinfo$$: ${LOCALBASE}/bin/makeinfo:' \
+		${WRKSRC}/doc/Makefile
 
 do-build:
 	cd ${WRKSRC} && ${GMAKE} -C doc info html
