@@ -46,6 +46,10 @@ share/postgresql/postgresql.conf.sample
 share/postgresql/recovery.conf.sample
 share/postgresql/sql_features.txt
 share/postgresql/system_views.sql
+share/postgresql/extension/plpgsql--1.0.sql
+share/postgresql/extension/plpgsql--unpackaged--1.0.sql
+share/postgresql/extension/plpgsql.control
+@dirrmtry share/postgresql/extension
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/initdb-9.0.mo
 %%GETTEXT%%share/locale/de/LC_MESSAGES/initdb-9.0.mo
 %%GETTEXT%%share/locale/de/LC_MESSAGES/pg_controldata-9.0.mo
@@ -756,9 +760,7 @@ share/postgresql/tsearch_data/ispell_sample.dict
 share/postgresql/tsearch_data/synonym_sample.syn
 share/postgresql/tsearch_data/thesaurus_sample.ths
 @dirrmtry share/postgresql/tsearch_data
-@unexec echo "Warning: If you will *NOT* use this package anymore, please remove the pgsql user manually."
 @dirrmtry share/postgresql
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic
 @dirrmtry lib/postgresql
-@dirrmtry %%PG_USER%%

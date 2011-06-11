@@ -6,8 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-DISTVERSION?=	9.0.4
-PORTREVISION=	1
+DISTVERSION?=	9.1beta1
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -17,12 +16,14 @@ MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
 
 CONFLICTS?=	${PORTNAME}-client-[78]* \
-		${PORTNAME}${PKGNAMESUFFIX}-[78]*
+		${PORTNAME}-client-9.[02-9]* \
+		${PORTNAME}${PKGNAMESUFFIX}-[78]* \
+		${PORTNAME}${PKGNAMESUFFIX}-9.[02-9]
 
 WRKSRC=		${WRKDIR}/postgresql-${DISTVERSION}
 DIST_SUBDIR=	postgresql
 
-UNIQUENAME?=	${PORTNAME}90
+UNIQUENAME?=	${PORTNAME}91
 LATEST_LINK?=	${PKGNAMEPREFIX}${UNIQUENAME}${PKGNAMESUFFIX}
 
 USE_BZIP2=	YES
@@ -34,7 +35,7 @@ GNU_CONFIGURE=	YES
 .endif
 
 PG_USER?=	pgsql
-PG_GROUP?=	pgsql
+PG_GROUP?=	${PG_USER}
 PG_UID?=	70
 
 LDFLAGS+=	-L${LOCALBASE}/lib
@@ -61,6 +62,12 @@ SERVER_ONLY=	yes
 USE_RC_SUBR=	postgresql
 USE_PGSQL=	yes
 WANT_PGSQL_VER=	${PORTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
+USERS?=		${PG_USER}
+.if (${USERS} != "pgsql")
+UID_FILES+=	${WRKDIR}/pguid
+GID_FILES+=	${WRKDIR}/pggid
+.endif
+GROUPS?=	${PG_GROUP}
 SUB_FILES+=	502.pgsql
 .endif
 
@@ -98,20 +105,20 @@ OPTIONS+=	DEBUG "Builds with debugging symbols" off
 OPTIONS+=	GSSAPI "BUild with GSSAPI support" off
 
 # See http://people.freebsd.org/~girgen/postgresql-icu/README.html for more info
-OPTIONS+=	ICU	"Use ICU for unicode collation (server)" off
+##OPTIONS+=	ICU	"Use ICU for unicode collation (server)" off
 
 # See http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/76999 for more info
 # (requires dump/restore if modified.)
 OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" on
 
-.  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
-USE_AUTOTOOLS=	autoconf
-CONFIGURE_ARGS+=--with-icu
-PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
-PATCHFILES+=	pg-900-icu-2010-09-19.diff.gz:icu
-LIB_DEPENDS+=	icudata.46:${PORTSDIR}/devel/icu
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-icu4
-.  endif
+#.  if (defined(SERVER_ONLY) && defined(WITH_ICU)) || make(makesum)
+#USE_AUTOTOOLS=	autoconf
+#CONFIGURE_ARGS+=--with-icu
+#PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
+#PATCHFILES+=	pg-900-icu-2010-09-19.diff.gz:icu
+#LIB_DEPENDS+=	icudata.46:${PORTSDIR}/devel/icu
+#EXTRA_PATCHES+=	${FILESDIR}/extra-patch-icu4
+#.  endif
 
 PATCH_DIST_STRIP=-p1
 
@@ -202,7 +209,7 @@ CONFIGURE_ARGS+=--with-krb5
 .if defined(CLIENT_ONLY)
 MAN1=		clusterdb.1 createdb.1 createlang.1 createuser.1   \
 		dropdb.1 droplang.1 dropuser.1 ecpg.1 initdb.1	   \
-		pg_config.1 pg_controldata.1 pg_ctl.1   \
+		pg_basebackup.1 pg_config.1 pg_controldata.1 pg_ctl.1   \
 		pg_dump.1 pg_dumpall.1 pg_resetxlog.1 pg_restore.1 \
 		postgres.1 postmaster.1 psql.1 reindexdb.1 vacuumdb.1
 
@@ -228,8 +235,9 @@ MAN3=		SPI_connect.3 SPI_copytuple.3 SPI_cursor_close.3 SPI_cursor_fetch.3 \
 		dblink_get_pkey.3 dblink_get_result.3 dblink_is_busy.3 \
 		dblink_open.3 dblink_send_query.3
 
-MAN7=		ABORT.7 ALTER_AGGREGATE.7 ALTER_CONVERSION.7 ALTER_DATABASE.7 \
-		ALTER_DEFAULT_PRIVILEGES.7 \
+MAN7=		ABORT.7 ALTER_AGGREGATE.7 ALTER_COLLATION.7 ALTER_CONVERSION.7 \
+		ALTER_DATABASE.7 ALTER_EXTENSION.7 ALTER_DEFAULT_PRIVILEGES.7 \
+		ALTER_FOREIGN_TABLE.7 \
 		ALTER_DOMAIN.7 ALTER_FOREIGN_DATA_WRAPPER.7 ALTER_FUNCTION.7 ALTER_GROUP.7 \
 		ALTER_LARGE_OBJECT.7 ALTER_SERVER.7 \
 		ALTER_USER_MAPPING.7		ALTER_INDEX.7 ALTER_LANGUAGE.7 ALTER_OPERATOR_CLASS.7	      \
@@ -244,7 +252,7 @@ MAN7=		ABORT.7 ALTER_AGGREGATE.7 ALTER_CONVERSION.7 ALTER_DATABASE.7 \
 		CHECKPOINT.7 CLOSE.7 CLUSTER.7 COMMENT.7 COMMIT.7	      \
 		COMMIT_PREPARED.7					      \
 		COPY.7 CREATE_AGGREGATE.7 CREATE_CAST.7			      \
-		CREATE_CONSTRAINT_TRIGGER.7 CREATE_CONVERSION.7		      \
+		CREATE_CONVERSION.7		      \
 		CREATE_DATABASE.7 CREATE_DOMAIN.7 CREATE_FOREIGN_DATA_WRAPPER.7 \
 		CREATE_FUNCTION.7	      \
 		CREATE_GROUP.7 CREATE_INDEX.7 CREATE_LANGUAGE.7		      \
@@ -280,7 +288,10 @@ MAN7=		ABORT.7 ALTER_AGGREGATE.7 ALTER_CONVERSION.7 ALTER_DATABASE.7 \
 		ALTER_OPERATOR.7 ALTER_TABLESPACE.7 ALTER_TYPE.7	      \
 		CREATE_TABLESPACE.7 DROP_TABLESPACE.7			      \
 		RELEASE_SAVEPOINT.7 ROLLBACK_TO_SAVEPOINT.7		      \
-		SAVEPOINT.7 VALUES.7 WITH.7
+		SAVEPOINT.7 VALUES.7 WITH.7 \
+		CREATE_COLLATION.7 CREATE_EXTENSION.7 CREATE_FOREIGN_TABLE.7 \
+		DROP_COLLATION.7 DROP_EXTENSION.7 DROP_FOREIGN_TABLE.7 \
+		SECURITY_LABEL.7
 .endif
 
 .if defined(SERVER_ONLY)
@@ -299,7 +310,7 @@ pre-configure:
 
 do-build:
 	@ cd ${WRKSRC}/src/backend && ${SETENV} ${MAKE_ENV} ${GMAKE} symlinks
-	@ for dir in ${BUILD_DIRS}; do \
+	@ for dir in src/port ${BUILD_DIRS}; do \
 		cd ${WRKSRC}/$${dir} && ${SETENV} ${MAKE_ENV} ${GMAKE}; \
 	done
 
@@ -309,27 +320,26 @@ PKGMESSAGE=	${WRKSRC}/pkg-message${PKGNAMESUFFIX}
 .  endif
 .  if exists(${FILESDIR}/pkg-install${PKGNAMESUFFIX}.in)
 SUB_FILES+=     pkg-install${PKGNAMESUFFIX}
-SUB_LIST=       PG_GROUP=$(PG_GROUP) \
-                PG_USER=$(PG_USER) \
-                PG_UID=$(PG_UID)
-PLIST_SUB+=     PG_USER=$(PG_USER)
+SUB_LIST=	PG_GROUP=$(PG_GROUP) \
+		PG_USER=$(PG_USER) \
+		PG_UID=$(PG_UID)
 PKGINSTALL=     ${WRKDIR}/pkg-install${PKGNAMESUFFIX}
 .  endif
-.endif
-
-.if defined(SERVER_ONLY)
-pre-su-install:
-	@ ${SETENV} PKG_PREFIX=${PREFIX} PG_USER=$(PG_USER) PG_GROUP=$(PG_GROUP) \
-		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
 
 .if !defined(NO_BUILD)
 post-patch:
 	@${REINPLACE_CMD} s/@PTHREAD_LIBS@// ${WRKSRC}/src/Makefile.global.in
-.  if defined(WITH_ICU)
-	@${REINPLACE_CMD} -E -e \
-		"s|^(m4_if.*)2.6[0-9](.*Autoconf version )2.6[0-9]|\1${AUTOCONF_VERSION}\2${AUTOCONF_VERSION}|g" \
-		${WRKSRC}/configure.in
+#.  if defined(WITH_ICU)
+#	@${REINPLACE_CMD} -E -e \
+#		"s|^(m4_if.*)2.6[0-9](.*Autoconf version )2.6[0-9]|\1${AUTOCONF_VERSION}\2${AUTOCONF_VERSION}|g" \
+#		${WRKSRC}/configure.in
+#.  endif
+
+.  if defined(SERVER_ONLY) && (${PG_USER} != "pgsql")
+pre-install:
+	@${SED} -n s,pgsql,${PG_USER},gp ${PORTSDIR}/UIDs > ${WRKDIR}/pguid
+	@${SED} -n s,pgsql,${PG_GROUP},gp ${PORTSDIR}/GIDs > ${WRKDIR}/pggid
 .  endif
 
 do-install:
