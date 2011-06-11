@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	springlobby
-PORTVERSION=	0.101
+PORTVERSION=	0.130
 CATEGORIES=	games net
 MASTER_SITES=	http://www.springlobby.info/tarballs/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -22,6 +22,7 @@ USE_CMAKE=	yes
 CMAKE_ARGS=	-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}" \
 		-DENABLE_DEBUG_REPORT=FALSE
 USE_WX=		2.8+
+WX_UNICODE=	yes
 MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	*
