@@ -26,7 +26,7 @@ LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib
 USE_GMAKE=	yes
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS= --with-system-t1lib \
+CONFIGURE_ARGS=	--with-system-t1lib \
 		--with-t1lib-libdir=${LIBT1_PREFIX}/lib \
 		--with-t1lib-include=${LIBT1_PREFIX}/include \
 		--disable-multiplatform
@@ -37,9 +37,8 @@ CONFIGURE_ENV=	INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
 INSTALL_WRKSRC=	${WRKSRC}/texk/xdvik
 
 PLIST_SUB=	TEXMFDIR=${TEXMFDIR} TEXMFCONFIGDIR=${TEXMFDIR}-config
-CONFLICTS=	xdvi-[0-9]* xdvi-*-[0-9]* \
-		*-xdvi-[0-9]* xdvi-*-[0-9]* \
-		*-xdvik-[0-9]* ja-ptex-tetex-[0-9]*
+CONFLICTS_INSTALL=	xdvi-[0-9]* xdvi-*-[0-9]* *-xdvi-[0-9]* \
+			*-xdvik-[0-9]* ja-xdvik-*-[0-9]*
 
 MAN1=		xdvi.1
 MLINKS=		xdvi.1 oxdvi.1
@@ -55,10 +54,10 @@ DOC_FILES=	BUGS CHANGES INSTALL \
 		README README.CVS README_maintainer TODO
 
 .if defined(WITH_LETTERSIZE)
-FLAVOR+=        letter
-PAPERSIZE=      letter
+FLAVOR+=	letter
+PAPERSIZE=	letter
 .else
-PAPERSIZE=      a4
+PAPERSIZE=	a4
 .endif
 
 PKGINSTALL=	${WRKDIR}/pkg-install.sh
