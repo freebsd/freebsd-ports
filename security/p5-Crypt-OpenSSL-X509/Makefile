@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	Crypt-OpenSSL-X509
-PORTVERSION=	1.4
+PORTVERSION=	1.8.2
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}00.${PORTVERSION:E}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for OpenSSL X509 API
@@ -18,10 +19,7 @@ PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::OpenSSL::X509.3
 
-.include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e '/^cc_optimize_flags/ s| -Werror||' ${WRKSRC}/Makefile.PL
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
