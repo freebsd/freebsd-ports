@@ -4185,8 +4185,6 @@
 %%PREFIX_SUBDIR%%usr/lib/libcrypto.a
 %%PREFIX_SUBDIR%%usr/lib/libcrypto.so
 %%PREFIX_SUBDIR%%usr/lib/libcrypto.so.1.0.0
-%%PREFIX_SUBDIR%%usr/lib/libcurl.a
-%%PREFIX_SUBDIR%%usr/lib/libcurl.la
 %%PREFIX_SUBDIR%%usr/lib/libcurl.so
 %%PREFIX_SUBDIR%%usr/lib/libcurl.so.4
 %%PREFIX_SUBDIR%%usr/lib/libcurl.so.4.2.0
@@ -13904,14 +13902,14 @@
 %%PREFIX_SUBDIR%%usr/share/doc/cracklib-2.8.16/README-LICENSE.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/cracklib-2.8.16/README-WORDS.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/cracklib-2.8.16/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/curl-7.20.0-r2/BUGS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/curl-7.20.0-r2/CHANGES.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/curl-7.20.0-r2/CONTRIBUTE.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/curl-7.20.0-r2/FAQ.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/curl-7.20.0-r2/FEATURES.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/curl-7.20.0-r2/INTERNALS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/curl-7.20.0-r2/MANUAL.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/curl-7.20.0-r2/README.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/curl-7.21.4/BUGS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/curl-7.21.4/CHANGES.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/curl-7.21.4/CONTRIBUTE.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/curl-7.21.4/FAQ.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/curl-7.21.4/FEATURES.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/curl-7.21.4/INTERNALS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/curl-7.21.4/MANUAL.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/curl-7.21.4/README.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/debianutils-3.4.4/changelog.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/debianutils-3.4.4/control.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/diffutils-3.0/AUTHORS.bz2
@@ -14423,15 +14421,15 @@
 %%PREFIX_SUBDIR%%usr/share/doc/m4-1.4.15/README.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/m4-1.4.15/THANKS.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/m4-1.4.15/TODO.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/make-3.81-r2/AUTHORS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/make-3.81-r2/ChangeLog.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/make-3.81-r2/NEWS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/make-3.81-r2/README.Amiga.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/make-3.81-r2/README.DOS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/make-3.81-r2/README.OS2.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/make-3.81-r2/README.W32.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/make-3.81-r2/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/make-3.81-r2/README.customs.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/make-3.82/AUTHORS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/make-3.82/ChangeLog.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/make-3.82/NEWS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/make-3.82/README.Amiga.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/make-3.82/README.DOS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/make-3.82/README.OS2.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/make-3.82/README.W32.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/make-3.82/README.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/make-3.82/README.customs.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/man-1.6f-r4/LSM.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/man-1.6f-r4/README.GNU-WIN32.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/man-1.6f-r4/README.HP.bz2
@@ -14481,9 +14479,9 @@
 %%PREFIX_SUBDIR%%usr/share/doc/ncurses-5.7-r7/TO-DO.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/ncurses-5.7-r7/hackguide.doc.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/ncurses-5.7-r7/ncurses-intro.doc.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/net-tools-1.60_p20100815160931/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/net-tools-1.60_p20100815160931/README.ipv6.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/net-tools-1.60_p20100815160931/TODO.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/net-tools-1.60_p20110409135728/README.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/net-tools-1.60_p20110409135728/README.ipv6.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/net-tools-1.60_p20110409135728/TODO.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/openrc-0.8.2-r1/README.newnet.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/openrc-0.8.2-r1/net.example
 %%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1-r1/CREDITS.bz2
@@ -16654,6 +16652,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/it/LC_MESSAGES/gettext-tools.mo
 %%PREFIX_SUBDIR%%usr/share/locale/it/LC_MESSAGES/grep.mo
 %%PREFIX_SUBDIR%%usr/share/locale/it/LC_MESSAGES/libc.mo
+%%PREFIX_SUBDIR%%usr/share/locale/it/LC_MESSAGES/make.mo
 %%PREFIX_SUBDIR%%usr/share/locale/it/LC_MESSAGES/nano.mo
 %%PREFIX_SUBDIR%%usr/share/locale/it/LC_MESSAGES/popt.mo
 %%PREFIX_SUBDIR%%usr/share/locale/it/LC_MESSAGES/psmisc.mo
@@ -16726,6 +16725,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/lt/LC_MESSAGES/findutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/lt/LC_MESSAGES/grep.mo
 %%PREFIX_SUBDIR%%usr/share/locale/lt/LC_MESSAGES/libc.mo
+%%PREFIX_SUBDIR%%usr/share/locale/lt/LC_MESSAGES/make.mo
 %%PREFIX_SUBDIR%%usr/share/locale/lt/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/lt/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/lv/LC_MESSAGES/bison-runtime.mo
@@ -16923,7 +16923,6 @@
 %%PREFIX_SUBDIR%%usr/share/locale/rw/LC_MESSAGES/gawk.mo
 %%PREFIX_SUBDIR%%usr/share/locale/rw/LC_MESSAGES/grep.mo
 %%PREFIX_SUBDIR%%usr/share/locale/rw/LC_MESSAGES/libc.mo
-%%PREFIX_SUBDIR%%usr/share/locale/rw/LC_MESSAGES/make.mo
 %%PREFIX_SUBDIR%%usr/share/locale/rw/LC_MESSAGES/nano.mo
 %%PREFIX_SUBDIR%%usr/share/locale/rw/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/si/LC_MESSAGES/Linux-PAM.mo
@@ -29788,36 +29787,37 @@
 %%PREFIX_SUBDIR%%var/db/pkg/dev-vcs/git-1.7.3.4-r1/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/dev-vcs/git-1.7.3.4-r1/git-1.7.3.4-r1.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/dev-vcs/git-1.7.3.4-r1/repository
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/NEEDED
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/NEEDED.ELF.2
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/PF
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/USE
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/curl-7.20.0-r2.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2/repository
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/DEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/INHERITED
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/NEEDED
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/NEEDED.ELF.2
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/PF
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/REQUIRED_USE
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/USE
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/curl-7.21.4.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4/repository
 %%PREFIX_SUBDIR%%var/db/pkg/net-misc/iputils-20100418-r1/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/net-misc/iputils-20100418-r1/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/net-misc/iputils-20100418-r1/CATEGORY
@@ -30498,36 +30498,36 @@
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/module-init-tools-3.12-r1.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/repository
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/CC
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/NEEDED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/NEEDED.ELF.2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/PF
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/USE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/net-tools-1.60_p20100815160931.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931/repository
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/CC
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/DEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/INHERITED
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/NEEDED
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/NEEDED.ELF.2
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/PF
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/USE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/net-tools-1.60_p20110409135728.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/repository
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/CATEGORY
@@ -31273,36 +31273,36 @@
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/m4-1.4.15.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/repository
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/NEEDED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/NEEDED.ELF.2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/PF
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/USE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/make-3.81-r2.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2/repository
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/DEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/INHERITED
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/NEEDED
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/NEEDED.ELF.2
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/PF
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/USE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/make-3.82.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/repository
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/patch-2.5.9/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/patch-2.5.9/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/patch-2.5.9/CATEGORY
@@ -32196,7 +32196,7 @@
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-fs/e2fsprogs-1.41.12
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-fs
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/patch-2.5.9
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.81-r2
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libperl-5.10.1
@@ -32225,7 +32225,7 @@
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/sandbox-2.4
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20100815160931
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-posix-2003a
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.28
@@ -32251,7 +32251,7 @@
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/net-misc/rsync-3.0.8
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/net-misc/openssh-5.8_p1-r1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/net-misc/iputils-20100418-r1
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.20.0-r2
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/net-misc/curl-7.21.4
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/net-misc
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-vcs/git-1.7.3.4-r1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-vcs
@@ -32953,7 +32953,7 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0d
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1-r1
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/openrc-0.8.2-r1
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/net-tools-1.60_p20100815160931
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/net-tools-1.60_p20110409135728
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/ncurses-5.7-r7
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/nano-2.2.5/html
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/nano-2.2.5
@@ -32964,7 +32964,7 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/man-pages-posix-2003a
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/man-pages-3.28
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/man-1.6f-r4
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/make-3.81-r2
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/make-3.82
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/m4-1.4.15
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10
@@ -33005,7 +33005,7 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/e2fsprogs-1.41.12
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/diffutils-3.0
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/debianutils-3.4.4
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/curl-7.20.0-r2
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/curl-7.21.4
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/cracklib-2.8.16
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/cpio-2.11
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/coreutils-8.7
