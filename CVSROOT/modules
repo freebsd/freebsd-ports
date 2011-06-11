@@ -11778,6 +11778,7 @@ p5-Data-Pageset                 ports/databases/p5-Data-Pageset
 p5-Data-ParseBinary             ports/devel/p5-Data-ParseBinary
 p5-Data-Password                ports/security/p5-Data-Password
 p5-Data-Path                    ports/devel/p5-Data-Path
+p5-Data-Peek                    ports/devel/p5-Data-Peek
 p5-Data-Phrasebook              ports/textproc/p5-Data-Phrasebook
 p5-Data-Phrasebook-Loader-YAML  ports/textproc/p5-Data-Phrasebook-Loader-YAML
 p5-Data-Properties              ports/devel/p5-Data-Properties
@@ -15911,6 +15912,7 @@ p5-data-pageset                 ports/databases/p5-Data-Pageset
 p5-data-parsebinary             ports/devel/p5-Data-ParseBinary
 p5-data-password                ports/security/p5-Data-Password
 p5-data-path                    ports/devel/p5-Data-Path
+p5-data-peek                    ports/devel/p5-Data-Peek
 p5-data-phrasebook              ports/textproc/p5-Data-Phrasebook
 p5-data-phrasebook-loader-yaml  ports/textproc/p5-Data-Phrasebook-Loader-YAML
 p5-data-properties              ports/devel/p5-Data-Properties
@@ -25688,6 +25690,7 @@ vdr-plugin-remote               ports/multimedia/vdr-plugin-remote
 vdr-plugin-skinenigmang         ports/multimedia/vdr-plugin-skinenigmang
 vdr-plugin-softdevice           ports/multimedia/vdr-plugin-softdevice
 vdr-plugin-streamdev            ports/multimedia/vdr-plugin-streamdev
+vdr-plugin-ttxtsubs             ports/multimedia/vdr-plugin-ttxtsubs
 vdr-plugin-upnp                 ports/multimedia/vdr-plugin-upnp
 vdr-plugin-vnsiserver           ports/multimedia/vdr-plugin-vnsiserver
 vdr-plugin-wirbelscan           ports/multimedia/vdr-plugin-wirbelscan
