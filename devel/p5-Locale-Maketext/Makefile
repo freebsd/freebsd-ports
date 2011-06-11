@@ -17,13 +17,13 @@ COMMENT=	A framework for software localization and inheritance-based lexicons
 LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1
 
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	yes
 
 MAN3=		Locale::Maketext.3 \
-		Locale::Maketext::TPJ13.3 \
-		Locale::Maketext::GutsLoader.3 \
+		Locale::Maketext::Cookbook.3 \
 		Locale::Maketext::Guts.3 \
-		Locale::Maketext::Cookbook.3
+		Locale::Maketext::GutsLoader.3 \
+		Locale::Maketext::TPJ13.3
 
 .include <bsd.port.pre.mk>
 
