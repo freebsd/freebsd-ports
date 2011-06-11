@@ -1,14 +1,14 @@
---- main.cpp.orig	Tue Aug 23 22:26:20 2005
-+++ main.cpp	Sat Feb 11 07:53:56 2006
+--- main.cpp.orig	2011-03-10 23:37:01.000000000 +0300
++++ main.cpp	2011-05-05 11:40:07.000000000 +0400
 @@ -19,6 +19,7 @@
- #include "file.h"
+ #include "fs.h"
  #include "game.h"
  #include "systemstub.h"
 +#include <sys/stat.h>
  
- static const char *USAGE = 
+ static const char *USAGE =
  	"REminiscence - Flashback Interpreter\n"
-@@ -59,8 +60,15 @@
+@@ -83,8 +84,15 @@
  
  #undef main
  int main(int argc, char *argv[]) {
@@ -22,10 +22,10 @@
  	const char *dataPath = "DATA";
 -	const char *savePath = ".";
 +	const char *savePath = buf;
+ 	const char *levelNum = "0";
  	for (int i = 1; i < argc; ++i) {
  		bool opt = false;
- 		if (strlen(argv[i]) >= 2) {
-@@ -79,5 +87,6 @@
+@@ -111,5 +119,6 @@
  	g->run();
  	delete g;
  	delete stub;

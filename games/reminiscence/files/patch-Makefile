@@ -1,0 +1,18 @@
+--- Makefile.orig	2011-03-10 20:47:57.000000000 +0300
++++ Makefile	2011-05-05 11:43:09.000000000 +0400
+@@ -1,12 +1,11 @@
+ 
+-SDL_CFLAGS = `sdl-config --cflags`
+-SDL_LIBS = `sdl-config --libs`
++SDL_CFLAGS = `${SDL_CONFIG} --cflags`
++SDL_LIBS = `${SDL_CONFIG} --libs`
+ 
+ DEFINES = -DBYPASS_PROTECTION
+ #DEFINES = -DBYPASS_PROTECTION -DENABLE_PASSWORD_MENU -DNDEBUG
+ 
+-CXX = g++
+-CXXFLAGS := -g -O -Wall -Wuninitialized -Wshadow -Wimplicit -Wundef -Wreorder -Wnon-virtual-dtor -Wno-multichar
++CXXFLAGS += -Wall -Wuninitialized -Wshadow -Wimplicit -Wundef -Wreorder -Wnon-virtual-dtor -Wno-multichar
+ CXXFLAGS += -MMD $(SDL_CFLAGS) -DUSE_ZLIB $(DEFINES)
+ 
+ SRCS = collision.cpp cutscene.cpp file.cpp fs.cpp game.cpp graphics.cpp main.cpp menu.cpp \
