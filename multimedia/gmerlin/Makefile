@@ -11,7 +11,7 @@ PORTREVISION=	7
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multimedia framework
 
 LIB_DEPENDS=	gavl.1:${PORTSDIR}/multimedia/gavl
