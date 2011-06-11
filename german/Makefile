@@ -12,6 +12,8 @@
     SUBDIR += bsdforen-firefox-searchplugin
     SUBDIR += bsdgroup-firefox-searchplugin
     SUBDIR += bsdpaste
+    SUBDIR += bugzilla
+    SUBDIR += bugzilla3
     SUBDIR += dict
     SUBDIR += digibux
     SUBDIR += ding
