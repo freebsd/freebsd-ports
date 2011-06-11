@@ -1,38 +1,38 @@
---- pyclamd.py.orig	2007-04-11 18:10:26.000000000 +0200
-+++ pyclamd.py	2007-08-28 11:28:48.000000000 +0200
-@@ -14,7 +14,7 @@
-     # Network
-     pyclamd.init_network_socket('localhost', 3310)
-     # Unix local socket 
--    #pyclamd.init_unix_socket('/var/run/clamd')
-+    #pyclamd.init_unix_socket('/var/run/clamav/clamd')
+--- pyclamd.py.orig	2011-01-26 20:08:38.000000000 +0100
++++ pyclamd.py	2011-01-26 20:14:58.000000000 +0100
+@@ -51,7 +51,7 @@
+ 	# Network
+ 	pyclamd.init_network_socket('localhost', 3310)
+ 	# Unix local socket 
+-	#pyclamd.init_unix_socket('/var/run/clamd')
++	#pyclamd.init_unix_socket('/var/run/clamav/clamd.sock')
  
-     # Get Clamscan version
-     print pyclamd.version()
-@@ -29,7 +29,7 @@
+ 	# Get Clamscan version
+ 	print pyclamd.version()
+@@ -66,7 +66,7 @@
  Test strings :
  ^^^^^^^^^^^^
  >>> try:
--...     init_unix_socket('/var/run/clamd')
-+...     init_unix_socket('/var/run/clamav/clamd')
+-...	 init_unix_socket('/var/run/clamav/clamd.ctl')
++...	 init_unix_socket('/var/run/clamav/clamd.sock')
  ... except ScanError:
- ...     init_network_socket('localhost', 3310)
+ ...	 init_network_socket('localhost', 3310)
  ... 
-@@ -68,7 +68,7 @@
+@@ -110,7 +110,7 @@
  
  # Default values for globals
  use_socket = None
--clamd_SOCKET = "/var/run/clamd"
-+clamd_SOCKET = "/var/run/clamav/clamd"
- clamd_HOST='127.0.0.1'
- clamd_PORT=3310
+-clamd_SOCKET = "/var/run/clamav/clamd.ctl"
++clamd_SOCKET = "/var/run/clamav/clamd.sock"
+ clamd_HOST = '127.0.0.1'
+ clamd_PORT = 3310
+ clamd_timeout = None	#[PL] default timeout for sockets: None = blocking operations
+@@ -121,7 +121,7 @@
  
-@@ -85,7 +85,7 @@
-             
  ############################################################################
  
--def init_unix_socket(filename="/var/run/clamd"):
-+def init_unix_socket(filename="/var/run/clamav/clamd"):
-     """
-     Init pyclamd to use clamd unix local socket 
-     
+-def init_unix_socket(filename="/var/run/clamav/clamd.ctl"):
++def init_unix_socket(filename="/var/run/clamav/clamd.sock"):
+ 	"""
+ 	Init pyclamd to use clamd unix local socket 
+ 	

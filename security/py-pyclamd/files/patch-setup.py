@@ -9,7 +9,7 @@
 +from distutils.core import setup
 +
 +setup(name="pyclamd",
-+      version="0.1.1",
++      version="0.2.2",
 +      description="Python ClamD module.",
 +      author="Alexandre Norman",
 +      author_email="norman@xael.org",
