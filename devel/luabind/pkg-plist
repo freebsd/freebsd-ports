@@ -25,7 +25,6 @@ include/luabind/detail/deduce_signature.hpp
 include/luabind/detail/enum_maker.hpp
 include/luabind/detail/format_signature.hpp
 include/luabind/detail/garbage_collector.hpp
-include/luabind/detail/get_signature.hpp
 include/luabind/detail/has_get_pointer.hpp
 include/luabind/detail/inheritance.hpp
 include/luabind/detail/instance_holder.hpp

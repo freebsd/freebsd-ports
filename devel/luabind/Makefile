@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	luabind
-PORTVERSION=	0.9
+PORTVERSION=	0.9.1
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library that helps you create bindings between C++ and Lua
 
 LIB_DEPENDS=	boost_python.4:${PORTSDIR}/devel/boost-python-libs
