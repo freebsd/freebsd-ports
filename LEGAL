@@ -23,6 +23,9 @@ Such ports are listed below:
 
 Dist			Port			Why
 ------------------------------------------------------------------------------
+TrueCrypt*		security/truecrypt	May not be redistributed.
+						Crypto; export-controlled.
+						Must accept license to download.
 ventrilo_srv-*		audio/ventrilo-server	May not be redistributed.
 						Crypto; export-controlled.
 						For personal use only.
