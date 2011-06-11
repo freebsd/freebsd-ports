@@ -682,6 +682,7 @@
     SUBDIR += py-zfs
     SUBDIR += pydf
     SUBDIR += pyrenamer
+    SUBDIR += qjail
     SUBDIR += qlogtools
     SUBDIR += qpxtool
     SUBDIR += quicksynergy
