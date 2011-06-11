@@ -11,7 +11,7 @@ PORTREVISION=	12
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	amdmi3@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose media decoding library
 
 LIB_DEPENDS=	gavl.1:${PORTSDIR}/multimedia/gavl
