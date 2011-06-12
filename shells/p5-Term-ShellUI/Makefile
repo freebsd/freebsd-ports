@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Term-ShellUI
-PORTVERSION=	0.86
+PORTVERSION=	0.91
 CATEGORIES=	shells perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,23 +18,16 @@ RUN_DEPENDS=	${SITE_PERL}/Term/ReadLine/Perl.pm:${PORTSDIR}/devel/p5-ReadLine-Pe
 
 PERL_CONFIGURE=	yes
 
-SAMPLESDIR=	${WRKSRC}/examples
-
-MAN3=	Term::ShellUI.3 \
-	Text::Shellwords::Cursor.3
+MAN3=		Term::ShellUI.3 \
+		Text::Shellwords::Cursor.3
 
 post-install:
 
-.if !defined(NOPORTDOCS)
+.if !defined(NOPORTEXAMPLES)
 	@${ECHO_MSG} "===>   Installing examples for ${PKGNAME}"
 	@${MKDIR} ${EXAMPLESDIR}
-	@${MKDIR} ${EXAMPLESDIR}/RPC
-	@${MKDIR} ${EXAMPLESDIR}/Term
-	@${INSTALL_DATA} ${SAMPLESDIR}/RPC/Connection.pm	${EXAMPLESDIR}/RPC
-	@${INSTALL_DATA} ${SAMPLESDIR}/Term/ExprUI.pm	${EXAMPLESDIR}/Term
-	@${INSTALL_DATA} ${SAMPLESDIR}/README		${EXAMPLESDIR}
-.for file in fileman-example psh synopsys synopsys-old tui-sample xmlexer
-	    @${INSTALL_SCRIPT} ${SAMPLESDIR}/${file}	${EXAMPLESDIR}
+.for file in fileman-example synopsis synopsis-big tui-sample
+	@${INSTALL_SCRIPT} ${WRKSRC}/examples/${file} ${EXAMPLESDIR}
 .endfor
 .endif
 
