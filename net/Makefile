@@ -996,6 +996,7 @@
     SUBDIR += service-discovery-applet
     SUBDIR += serviio
     SUBDIR += sflowtool
+    SUBDIR += shaperprobe
     SUBDIR += sharity-light
     SUBDIR += shelldap
     SUBDIR += shmux
