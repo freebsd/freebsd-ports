@@ -11,8 +11,11 @@ PORTREVISION=	3
 CATEGORIES=		x11
 MASTER_SITES=		http://bbdock.nethence.com/download/
 
-MAINTAINER=		idroxid01@yahoo.fr
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		BBDock displays one or more PNG icons in the BlackBox/FluxBox slit
+
+DEPRECATED=		yes
+EXPIRATION_DATE=	2011-08-01
 
 LIB_DEPENDS=		png:${PORTSDIR}/graphics/png
 
