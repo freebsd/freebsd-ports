@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	scrollz
-PORTVERSION=	2.1
-PORTREVISION=	3
+PORTVERSION=	2.2
+PORTREVISION=
 CATEGORIES=	irc ipv6
-MASTER_SITES=	http://scrollz.lysergide.net/ScrollZ/source/ \
-		http://www.xs4all.nl/~netraam/ScrollZ/source/
+MASTER_SITES=	http://www.scrollz.com/download/ \
+		http://scrollz.multihomed.net/
 DISTNAME=	ScrollZ-${PORTVERSION}
 
 MAINTAINER=	mdv@unsavoury.net
 COMMENT=	Enhanced ircII client that supports scripts, colors, and more
 
 USE_GMAKE=	yes
-USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-ipv6 --enable-regexp
+USE_NCURSES=	yes
 
 MAKE_ENV+=	IRCLIB="${PREFIX}/share/scrollz"
 
