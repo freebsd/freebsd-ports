@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	sympa
-PORTVERSION=	6.1.4
-PORTREVISION=	1
+PORTVERSION=	6.1.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sympa.org/distribution/ \
 		http://www.sympa.org/distribution/old/
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@freebsd.org
 COMMENT=	Sympa is an electronic mailing list manager
 
 BUILD_DEPENDS+=	${SITE_PERL}/Mail/Mailer.pm:${PORTSDIR}/mail/p5-Mail-Tools \
