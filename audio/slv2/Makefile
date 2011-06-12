@@ -10,7 +10,7 @@ PORTVERSION=	0.6.1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
-MAINTAINER=	xaimus@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LV2 Application Support Library
 
 LIB_DEPENDS=	rdf.0:${PORTSDIR}/textproc/redland \
