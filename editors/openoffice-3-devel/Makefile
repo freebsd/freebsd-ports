@@ -75,12 +75,12 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set.sh
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 .endif
 
-MILESTONE?=		99
+MILESTONE?=		100
 OOOTAG?=		DEV300_m${MILESTONE}
 OOOTAG2=		${OOOTAG:C/_//g}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20110206
+SNAPDATE=		20110219
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org3
@@ -153,6 +153,7 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--enable-pdfimport				\
 			--enable-wiki-publisher				\
 			--enable-report-builder				\
+			--enable-verbose				\
 			--disable-gstreamer				\
 			--with-vendor="FreeBSD ports system"
 #disable-gstreamer: simple build fix req'ed
