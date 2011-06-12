@@ -1,0 +1,15 @@
+%%SITE_PERL%%/Geo/Coordinates/Converter/Format/IArea.pm
+%%SITE_PERL%%/Geo/Coordinates/Converter/iArea.pm
+%%SITE_PERL%%/auto/share/dist/Geo-Coordinates-Converter-iArea/areacode2center.cdb
+%%SITE_PERL%%/auto/share/dist/Geo-Coordinates-Converter-iArea/areacode2name.cdb
+%%SITE_PERL%%/auto/share/dist/Geo-Coordinates-Converter-iArea/meshcode2areacode.cdb
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coordinates/Converter/iArea/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coordinates/Converter/iArea
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coordinates/Converter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Geo/Coordinates
+@dirrmtry %%SITE_PERL%%/auto/share/dist/Geo-Coordinates-Converter-iArea
+@dirrmtry %%SITE_PERL%%/auto/share/dist
+@dirrmtry %%SITE_PERL%%/auto/share
+@dirrmtry %%SITE_PERL%%/Geo/Coordinates/Converter/Format
+@dirrmtry %%SITE_PERL%%/Geo/Coordinates/Converter
+@dirrmtry %%SITE_PERL%%/Geo/Coordinates

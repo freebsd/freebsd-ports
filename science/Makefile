@@ -133,6 +133,7 @@
     SUBDIR += p5-Chemistry-Ring
     SUBDIR += p5-Geo-BUFR
     SUBDIR += p5-Geo-Coordinates-Converter
+    SUBDIR += p5-Geo-Coordinates-Converter-iArea
     SUBDIR += p5-Geo-ReadGRIB
     SUBDIR += p5-Geo-WebService-Elevation-USGS
     SUBDIR += p5-PerlMol
