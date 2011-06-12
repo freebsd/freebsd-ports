@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Geo-WebService-Elevation-USGS
-PORTVERSION=	0.006
+PORTVERSION=	0.007
 CATEGORIES=	science perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,12 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for elevation queries against USGS web services
 
-BUILD_DEPENDS=	p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite \
-		p5-Params-Util>=0.11:${PORTSDIR}/devel/p5-Params-Util
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-SOAP-Lite>=0:${PORTSDIR}/net/p5-SOAP-Lite
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Geo::WebService::Elevation::USGS.3
+MAN3=		Geo::WebService::Elevation::USGS.3
 
 .include <bsd.port.mk>
