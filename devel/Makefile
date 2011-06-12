@@ -1057,6 +1057,7 @@
     SUBDIR += newt
     SUBDIR += nini
     SUBDIR += ninja
+    SUBDIR += notify-sharp
     SUBDIR += noweb
     SUBDIR += nspr
     SUBDIR += nxt-python
