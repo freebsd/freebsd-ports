@@ -7,7 +7,7 @@
 
 PORTNAME=	zoneminder
 PORTVERSION=	1.24.4
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www2.zoneminder.com/downloads/ \
 		http://www.zoneminder.com/downloads/
@@ -28,7 +28,6 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/php/20090626/mysql.so:${PORTSDIR}/databases/php5
 		${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php5-extensions \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER} \
-		${SITE_PERL}/PHP/Serialization.pm:${PORTSDIR}/devel/p5-PHP-Serialization \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
 		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
@@ -103,7 +102,7 @@ post-patch:
 pre-build:
 	${CP} ${FILESDIR}/videodev.h ${WRKSRC}/src
 	${CP} ${FILESDIR}/zm_fbsd_camera.cpp ${WRKSRC}/src
-	${CP} ${FILESDIR}/zm_fbsd_camera.h ${WRKSRC}/src
+	${TOUCH} ${WRKSRC}/src/zm_fbsd_camera.h
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/zm.conf ]; then \
