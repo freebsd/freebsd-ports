@@ -23,6 +23,7 @@ share/gnome/help/pdfmod/es/pdfmod.xml
 share/gnome/help/pdfmod/fr/pdfmod.xml
 share/gnome/help/pdfmod/hr/pdfmod.xml
 share/gnome/help/pdfmod/pl/pdfmod.xml
+share/gnome/help/pdfmod/sl/pdfmod.xml
 share/gnome/help/pdfmod/sv/pdfmod.xml
 share/gnome/help/pdfmod/zh_CN/pdfmod.xml
 share/icons/hicolor/16x16/apps/pdfmod.png
@@ -33,6 +34,7 @@ share/icons/hicolor/32x32/apps/pdfmod.png
 share/icons/hicolor/scalable/apps/pdfmod.svg
 share/locale/bn_IN/LC_MESSAGES/pdfmod.mo
 share/locale/ca/LC_MESSAGES/pdfmod.mo
+share/locale/ca@valencia/LC_MESSAGES/pdfmod.mo
 share/locale/cs/LC_MESSAGES/pdfmod.mo
 share/locale/da/LC_MESSAGES/pdfmod.mo
 share/locale/de/LC_MESSAGES/pdfmod.mo
@@ -41,6 +43,7 @@ share/locale/et/LC_MESSAGES/pdfmod.mo
 share/locale/fr/LC_MESSAGES/pdfmod.mo
 share/locale/gl/LC_MESSAGES/pdfmod.mo
 share/locale/hr/LC_MESSAGES/pdfmod.mo
+share/locale/hu/LC_MESSAGES/pdfmod.mo
 share/locale/it/LC_MESSAGES/pdfmod.mo
 share/locale/ja/LC_MESSAGES/pdfmod.mo
 share/locale/lt/LC_MESSAGES/pdfmod.mo
@@ -49,6 +52,7 @@ share/locale/nl/LC_MESSAGES/pdfmod.mo
 share/locale/pl/LC_MESSAGES/pdfmod.mo
 share/locale/pt/LC_MESSAGES/pdfmod.mo
 share/locale/pt_BR/LC_MESSAGES/pdfmod.mo
+share/locale/ro/LC_MESSAGES/pdfmod.mo
 share/locale/ru/LC_MESSAGES/pdfmod.mo
 share/locale/sl/LC_MESSAGES/pdfmod.mo
 share/locale/sv/LC_MESSAGES/pdfmod.mo
@@ -58,6 +62,7 @@ share/locale/zh_CN/LC_MESSAGES/pdfmod.mo
 @dirrmtry share/icons/hicolor/256x256
 @dirrm share/gnome/help/pdfmod/zh_CN
 @dirrm share/gnome/help/pdfmod/sv
+@dirrm share/gnome/help/pdfmod/sl
 @dirrm share/gnome/help/pdfmod/pl
 @dirrm share/gnome/help/pdfmod/hr
 @dirrm share/gnome/help/pdfmod/fr

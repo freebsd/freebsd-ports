@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tomboy
-PORTVERSION=	1.4.2
+PORTVERSION=	1.6.1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -32,9 +32,6 @@ INSTALLS_OMF=	yes
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=--enable-evolution=yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		DBUS_SERVICE_DIR="${PREFIX}/share/dbus-1/services"
 
 MAN1=		tomboy.1
 GCONF_SCHEMAS=	tomboy.schemas

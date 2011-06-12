@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgdiplus
-PORTVERSION=	2.6.7
+PORTVERSION=	2.10
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 

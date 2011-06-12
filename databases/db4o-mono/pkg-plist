@@ -851,3 +851,4 @@ lib/mono/gac/db4o/5.5.1.0__6199cd4f203aa8eb/db4o.dll
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/mono/gac/db4o/5.5.1.0__6199cd4f203aa8eb
 @dirrm lib/mono/gac/db4o
+@dirrm lib/mono/1.0

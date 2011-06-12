@@ -17,6 +17,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	OpenSource Implementation of Silverlight
 
+BROKEN=		Basically does not work
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo

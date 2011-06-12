@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pdfmod
-PORTVERSION=	0.9.0
-PORTREVISION=	1
+PORTVERSION=	0.9.1
 CATEGORIES=	print
 MASTER_SITES=	GNOME
 
@@ -15,7 +14,7 @@ MAINTAINER=	mono@FreeBSD.org
 COMMENT=	A tool for modifying PDF documents
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/hyena.pc:${PORTSDIR}/devel/hyena
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/hyena.pc:${PORTSDIR}/devel/hyena
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes

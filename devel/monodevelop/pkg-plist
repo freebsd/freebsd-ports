@@ -177,6 +177,7 @@ lib/monodevelop/bin/MonoDevelop.Core.dll.mdb
 lib/monodevelop/bin/MonoDevelop.Ide.dll
 lib/monodevelop/bin/MonoDevelop.Ide.dll.mdb
 lib/monodevelop/bin/MonoDevelop.Projects.Formats.MSBuild.exe
+lib/monodevelop/bin/MonoDevelop.Projects.Formats.MSBuild.exe.config
 lib/monodevelop/bin/MonoDevelop.Projects.Formats.MSBuild.exe.mdb
 lib/monodevelop/bin/MonoDevelop.exe
 lib/monodevelop/bin/MonoDevelop.exe.addins

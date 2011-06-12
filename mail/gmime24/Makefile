@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmime
-PORTVERSION=	2.4.15
+PORTVERSION=	2.4.24
 PORTREVISION?=	0
 CATEGORIES?=	mail
 MASTER_SITES=	GNOME
@@ -25,16 +25,12 @@ USE_GMAKE=	yes
 USE_GNOME?=	gnomehack gnometarget glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS?=	--with-libiconv=${LOCALBASE} \
-			--with-html-dir=${PREFIX}/share/doc \
-			--enable-mono=no
+CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
+		--enable-mono=no
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib"
 
 LATEST_LINK?=	${PORTNAME}24
-
-post-patch:
-	@${REINPLACE_CMD} -e "s|stdint.h|inttypes.h|" ${WRKSRC}/zentimer.h
 
 post-install:
 .if !defined(NOPORTDOCS)

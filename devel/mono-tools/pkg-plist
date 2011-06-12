@@ -2,6 +2,7 @@
 bin/create-native-map
 bin/emveepee
 bin/gasnview
+bin/gd2i
 bin/gendarme
 bin/gendarme-wizard
 bin/gsharp
@@ -22,8 +23,12 @@ lib/gendarme/Gendarme.Rules.Design.Generic.dll
 lib/gendarme/Gendarme.Rules.Design.Linq.dll
 lib/gendarme/Gendarme.Rules.Design.dll
 lib/gendarme/Gendarme.Rules.Exceptions.dll
+lib/gendarme/Gendarme.Rules.Gendarme.dll
+lib/gendarme/Gendarme.Rules.Globalization.dll
+lib/gendarme/Gendarme.Rules.Interoperability.Com.dll
 lib/gendarme/Gendarme.Rules.Interoperability.dll
 lib/gendarme/Gendarme.Rules.Maintainability.dll
+lib/gendarme/Gendarme.Rules.NUnit.dll
 lib/gendarme/Gendarme.Rules.Naming.dll
 lib/gendarme/Gendarme.Rules.Performance.dll
 lib/gendarme/Gendarme.Rules.Portability.dll
@@ -32,12 +37,14 @@ lib/gendarme/Gendarme.Rules.Security.dll
 lib/gendarme/Gendarme.Rules.Serialization.dll
 lib/gendarme/Gendarme.Rules.Smells.dll
 lib/gendarme/Gendarme.Rules.Ui.dll
+lib/gendarme/gd2i.exe
 lib/gendarme/gendarme-wizard.exe
 lib/gendarme/gendarme.exe
 lib/gendarme/rules.xml
 lib/gsharp/gsharp.exe
 lib/gsharp/gsharp.exe.config
 lib/gui-compare/gui-compare.exe
+lib/gui-compare/gui-compare.exe.mdb
 lib/ilcontrast/ilcontrast.exe
 lib/minvoke/minvoke.exe
 lib/mono-tools/Mono.Profiler.Widgets.dll
@@ -53,9 +60,9 @@ lib/mono-tools/mprof-heap-snapshot-explorer.dll.mdb
 lib/mono-tools/mprof-heap-viewer.exe
 lib/mono-tools/mprof-heap-viewer.exe.mdb
 lib/mono/1.0/gasnview.exe
-lib/monodoc/GeckoHtmlRender.dll
 lib/monodoc/GtkHtmlHtmlRender.dll
 lib/monodoc/MonoWebBrowserHtmlRender.dll
+lib/monodoc/WebKitHtmlRender.dll
 lib/monodoc/browser.exe
 lib/monodoc/sources/Gendarme.Framework.source
 lib/monodoc/sources/Gendarme.Framework.tree
@@ -81,12 +88,24 @@ lib/monodoc/sources/Gendarme.Rules.Design.zip
 lib/monodoc/sources/Gendarme.Rules.Exceptions.source
 lib/monodoc/sources/Gendarme.Rules.Exceptions.tree
 lib/monodoc/sources/Gendarme.Rules.Exceptions.zip
+lib/monodoc/sources/Gendarme.Rules.Gendarme.source
+lib/monodoc/sources/Gendarme.Rules.Gendarme.tree
+lib/monodoc/sources/Gendarme.Rules.Gendarme.zip
+lib/monodoc/sources/Gendarme.Rules.Globalization.source
+lib/monodoc/sources/Gendarme.Rules.Globalization.tree
+lib/monodoc/sources/Gendarme.Rules.Globalization.zip
+lib/monodoc/sources/Gendarme.Rules.Interoperability.Com.source
+lib/monodoc/sources/Gendarme.Rules.Interoperability.Com.tree
+lib/monodoc/sources/Gendarme.Rules.Interoperability.Com.zip
 lib/monodoc/sources/Gendarme.Rules.Interoperability.source
 lib/monodoc/sources/Gendarme.Rules.Interoperability.tree
 lib/monodoc/sources/Gendarme.Rules.Interoperability.zip
 lib/monodoc/sources/Gendarme.Rules.Maintainability.source
 lib/monodoc/sources/Gendarme.Rules.Maintainability.tree
 lib/monodoc/sources/Gendarme.Rules.Maintainability.zip
+lib/monodoc/sources/Gendarme.Rules.NUnit.source
+lib/monodoc/sources/Gendarme.Rules.NUnit.tree
+lib/monodoc/sources/Gendarme.Rules.NUnit.zip
 lib/monodoc/sources/Gendarme.Rules.Naming.source
 lib/monodoc/sources/Gendarme.Rules.Naming.tree
 lib/monodoc/sources/Gendarme.Rules.Naming.zip
@@ -184,7 +203,6 @@ lib/mperfmon/config
 lib/mperfmon/mperfmon.exe
 libdata/pkgconfig/create-native-map.pc
 libdata/pkgconfig/gendarme-framework.pc
-man/man1/mperfmon.1
 share/applications/gendarme-wizard.desktop
 share/applications/gsharp.desktop
 share/applications/ilcontrast.desktop
@@ -201,6 +219,7 @@ share/pixmaps/monodoc.png
 @dirrm lib/monodoc/web/ptree
 @dirrm lib/monodoc/web/images
 @dirrm lib/monodoc/web
+@dirrm lib/mono/1.0
 @dirrm lib/mono-tools
 @dirrm lib/minvoke
 @dirrm lib/ilcontrast

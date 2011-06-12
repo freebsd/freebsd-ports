@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mono-addins
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.6.1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 
@@ -29,7 +28,7 @@ OPTIONS=	GTK2 "Enable GTK support" on
 
 MAN1=		mautil.1
 
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
+PLIST_SUB+=	VER=0.6.0
 
 .include <bsd.port.pre.mk>
 .include "${.CURDIR}/../../lang/mono/bsd.mono.mk"

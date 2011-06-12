@@ -13,6 +13,8 @@ MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	MonoDevelop Boo language support
 
+BROKEN=		Does not build
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${LOCALBASE}/libdata/pkgconfig/monodevelop.pc:${PORTSDIR}/devel/monodevelop \
 		booc:${PORTSDIR}/lang/boo
