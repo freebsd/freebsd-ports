@@ -7,7 +7,7 @@
 
 PORTNAME=	freebsd
 PORTVERSION=	0.9.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel python
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://people.freebsd.org/~perky/distfiles/
@@ -37,9 +37,8 @@ EXTRA_PATCHES+=	${FILESDIR}/freebsd7_patch-src-netstat.c
     (${OSVERSION} < 800000 && ${OSVERSION} >= 701103)
 EXTRA_PATCHES+=	${FILESDIR}/freebsd8_patch-src-jail.c
 .endif
-
-.if ${OSVERSION} >= 900000
-BROKEN=		does not compile on 9.X
+.if ${OSVERSION} >= 900030
+EXTRA_PATCHES+=	${FILESDIR}/freebsd9_patch-src-sysctl.c
 .endif
 
 .include <bsd.port.post.mk>
