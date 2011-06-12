@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Plugin-Session
-PORTVERSION=	0.31
+PORTVERSION=	0.32
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,12 +24,12 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+
 
-MAN3=	Catalyst::Plugin::Session.3 \
-	Catalyst::Plugin::Session::State.3 \
-	Catalyst::Plugin::Session::Store.3 \
-	Catalyst::Plugin::Session::Store::Dummy.3 \
-	Catalyst::Plugin::Session::Test::Store.3 \
-	Catalyst::Plugin::Session::Tutorial.3
+MAN3=		Catalyst::Plugin::Session.3 \
+		Catalyst::Plugin::Session::State.3 \
+		Catalyst::Plugin::Session::Store.3 \
+		Catalyst::Plugin::Session::Store::Dummy.3 \
+		Catalyst::Plugin::Session::Test::Store.3 \
+		Catalyst::Plugin::Session::Tutorial.3
 
 post-extract:
 	@${PERL} -i.bak -ne 'print unless /^(is_upgrading_needed|test_requires)/' ${WRKSRC}/Makefile.PL
