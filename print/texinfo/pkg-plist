@@ -31,27 +31,27 @@ bin/pdftexi2dvi
 %%DATADIR%%/texinfo.cat
 %%DATADIR%%/texinfo.dtd
 %%DATADIR%%/texinfo.xsl
-%%TEXMFLOCAL%%/tex/texinfo/texinfo.tex
-%%TEXMFLOCAL%%/tex/texinfo/txi-cs.tex
-%%TEXMFLOCAL%%/tex/texinfo/txi-de.tex
-%%TEXMFLOCAL%%/tex/texinfo/txi-en.tex
-%%TEXMFLOCAL%%/tex/texinfo/txi-es.tex
-%%TEXMFLOCAL%%/tex/texinfo/txi-fr.tex
-%%TEXMFLOCAL%%/tex/texinfo/txi-it.tex
-%%TEXMFLOCAL%%/tex/texinfo/txi-nb.tex
-%%TEXMFLOCAL%%/tex/texinfo/txi-nl.tex
-%%TEXMFLOCAL%%/tex/texinfo/txi-pl.tex
-%%TEXMFLOCAL%%/tex/texinfo/txi-pt.tex
-%%TEXMFLOCAL%%/tex/texinfo/txi-ru.tex
-%%TEXMFLOCAL%%/tex/texinfo/txi-sr.tex
-%%TEXMFLOCAL%%/tex/texinfo/txi-tr.tex
-%%TEXMFLOCAL%%/tex/texinfo/txi-uk.tex
-%%TEXMFLOCAL%%/tex/generic/epsf/epsf.tex
+%%TEXMF%%/tex/texinfo/texinfo.tex
+%%TEXMF%%/tex/texinfo/txi-cs.tex
+%%TEXMF%%/tex/texinfo/txi-de.tex
+%%TEXMF%%/tex/texinfo/txi-en.tex
+%%TEXMF%%/tex/texinfo/txi-es.tex
+%%TEXMF%%/tex/texinfo/txi-fr.tex
+%%TEXMF%%/tex/texinfo/txi-it.tex
+%%TEXMF%%/tex/texinfo/txi-nb.tex
+%%TEXMF%%/tex/texinfo/txi-nl.tex
+%%TEXMF%%/tex/texinfo/txi-pl.tex
+%%TEXMF%%/tex/texinfo/txi-pt.tex
+%%TEXMF%%/tex/texinfo/txi-ru.tex
+%%TEXMF%%/tex/texinfo/txi-sr.tex
+%%TEXMF%%/tex/texinfo/txi-tr.tex
+%%TEXMF%%/tex/texinfo/txi-uk.tex
+%%TEXMF%%/tex/generic/epsf/epsf.tex
 %%NLS%%@dirrmtry share/locale/rw/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/rw
-@dirrmtry %%TEXMFLOCAL%%/tex/generic/epsf
-@dirrmtry %%TEXMFLOCAL%%/tex/generic
-@dirrm %%TEXMFLOCAL%%/tex/texinfo
-@dirrmtry %%TEXMFLOCAL%%/tex
-@dirrmtry %%TEXMFLOCAL%%
+@dirrmtry %%TEXMF%%/tex/generic/epsf
+@dirrmtry %%TEXMF%%/tex/generic
+@dirrm %%TEXMF%%/tex/texinfo
+@dirrmtry %%TEXMF%%/tex
+@dirrmtry %%TEXMF%%
 @dirrm %%DATADIR%%
