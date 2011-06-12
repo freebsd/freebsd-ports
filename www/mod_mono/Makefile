@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	mod_mono
-PORTVERSION=	2.6.3
+PORTVERSION=	2.10
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}

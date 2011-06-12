@@ -1,8 +1,9 @@
+
 $FreeBSD$
 
---- default.build.orig	2009-09-06 14:21:30.000000000 -0700
-+++ default.build	2009-09-06 14:21:40.000000000 -0700
-@@ -21,19 +21,25 @@
+--- default.build.orig
++++ default.build
+@@ -23,19 +23,25 @@
  	
  	<property name="build.dir" value="build" dynamic="True"/>
  	<property name="distrobuild.dir" value="distrobuild"/>
@@ -29,16 +30,16 @@ $FreeBSD$
  
  	<!-- set gendarme.dir in your build.properties to enable Gendarme report after build -->
  	<property name="gendarme.dir" value=""/>
-@@ -71,7 +77,7 @@
+@@ -90,7 +96,7 @@
  		<property name="nosign" value="true" overwrite="true" />
  	</target>
  
--	<target name="all" depends="booc, booi, booish, boo-pkgconfig, Boo.Lang.CodeDom, Boo.Lang.Useful, boo, Boo.Microsoft.Build.Tasks, update-vs2005-env, Boo.Lang.PatternMatching">
+-	<target name="all" depends="booc, booi, booish, boo-pkgconfig, Boo.Lang.CodeDom, Boo.Lang.Useful, boo, Boo.Microsoft.Build.Tasks, update-vs-env, Boo.Lang.PatternMatching">
 +	<target name="all" depends="booc, booi, booish, boo-pkgconfig, Boo.Lang.CodeDom, Boo.Lang.Useful, boo, Boo.Microsoft.Build.Tasks, Boo.Lang.PatternMatching">
  		<call target="gendarme" if="${gendarme.dir != ''}" />
+ 		<call target="verify-assemblies" />
  	</target>
- 
-@@ -538,7 +544,7 @@
+@@ -571,7 +577,7 @@
  		<call target="install-linux" if="${not(platform::is-win32())}"/>
  	</target>
  
@@ -47,7 +48,7 @@ $FreeBSD$
  		<!--
  		Use pkg-config to find the proper locations for several
  		key files for mime detection, etc
-@@ -602,7 +608,7 @@
+@@ -635,7 +641,7 @@
  		</copy>
  		
  		<copy file="extras/boo.lang" todir="${fakeroot.gsv}/share/gtksourceview-1.0/language-specs/" />
@@ -56,7 +57,7 @@ $FreeBSD$
  		<copy file="extras/boo-mime-info.xml" todir="${fakeroot.sharedmime}/share/mime/packages/" />
  
  		<exec program="chmod" commandline="+x ${fakeroot.bindir}/booc" />
-@@ -645,7 +651,28 @@
+@@ -678,7 +684,28 @@
  		</foreach>
  
  	</target>

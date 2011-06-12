@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	boo
-PORTVERSION=	0.9.3
+PORTVERSION=	0.9.4.9
 CATEGORIES=	lang
 MASTER_SITES=	http://dist.codehaus.org/boo/distributions/
-DISTNAME=	${PORTNAME}-${PORTVERSION}.${BUILD_NUMBER}-src
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	mono@FreeBSD.org
 COMMENT=	A CLI-targeted programming language similar to Python
@@ -31,9 +31,7 @@ USE_ZIP=	yes
 MAKE_ENV=	LC_ALL=C
 NANT_FLAGS+=	-debug
 
-BUILD_NUMBER=	3457
-
-PLIST_SUB+=	PORTVERSION="${PORTVERSION}"
+PLIST_SUB+=	PORTVERSION="2.${PORTVERSION:R}"
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*

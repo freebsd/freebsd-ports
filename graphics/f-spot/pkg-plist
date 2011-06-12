@@ -80,8 +80,6 @@ lib/f-spot/Hyena.Gui.dll.mdb
 lib/f-spot/Hyena.dll
 lib/f-spot/Hyena.dll.config
 lib/f-spot/Hyena.dll.mdb
-lib/f-spot/Mono.Data.Sqlite.dll
-lib/f-spot/Mono.Data.Sqlite.dll.mdb
 lib/f-spot/TagLib.dll
 lib/f-spot/TagLib.dll.mdb
 lib/f-spot/f-spot.exe
@@ -312,6 +310,84 @@ share/gnome/help/f-spot/es/tags.page
 share/gnome/help/f-spot/es/upload-to-web.page
 share/gnome/help/f-spot/es/versioning.page
 share/gnome/help/f-spot/es/zooomr.page
+share/gnome/help/f-spot/fr/23hq.page
+share/gnome/help/f-spot/fr/adjust-color.page
+share/gnome/help/f-spot/fr/cd.page
+share/gnome/help/f-spot/fr/colors.page
+share/gnome/help/f-spot/fr/date-search.page
+share/gnome/help/f-spot/fr/enhancements.page
+share/gnome/help/f-spot/fr/extensions.page
+share/gnome/help/f-spot/fr/facebook.page
+share/gnome/help/f-spot/fr/figures/f-spot-adjust-colors.png
+share/gnome/help/f-spot/fr/figures/f-spot-autocolor.png
+share/gnome/help/f-spot/fr/figures/f-spot-crop.png
+share/gnome/help/f-spot/fr/figures/f-spot-desaturate.png
+share/gnome/help/f-spot/fr/figures/f-spot-fullscreen.png
+share/gnome/help/f-spot/fr/figures/f-spot-red-eye.png
+share/gnome/help/f-spot/fr/figures/f-spot-sepia.png
+share/gnome/help/f-spot/fr/figures/f-spot-slideshow.png
+share/gnome/help/f-spot/fr/figures/f-spot-soft-focus.png
+share/gnome/help/f-spot/fr/figures/f-spot-straighten.png
+share/gnome/help/f-spot/fr/file-management.page
+share/gnome/help/f-spot/fr/flickr.page
+share/gnome/help/f-spot/fr/folder.page
+share/gnome/help/f-spot/fr/general-editing.page
+share/gnome/help/f-spot/fr/import-photos.page
+share/gnome/help/f-spot/fr/import-roll-search.page
+share/gnome/help/f-spot/fr/index.page
+share/gnome/help/f-spot/fr/introduction.page
+share/gnome/help/f-spot/fr/picasa.page
+share/gnome/help/f-spot/fr/rate-search.page
+share/gnome/help/f-spot/fr/ratings.page
+share/gnome/help/f-spot/fr/smugmug.page
+share/gnome/help/f-spot/fr/tag-attach.page
+share/gnome/help/f-spot/fr/tag-creation.page
+share/gnome/help/f-spot/fr/tag-delete.page
+share/gnome/help/f-spot/fr/tag-remove.page
+share/gnome/help/f-spot/fr/tag-search.page
+share/gnome/help/f-spot/fr/tags.page
+share/gnome/help/f-spot/fr/upload-to-web.page
+share/gnome/help/f-spot/fr/versioning.page
+share/gnome/help/f-spot/fr/zooomr.page
+share/gnome/help/f-spot/sl/23hq.page
+share/gnome/help/f-spot/sl/adjust-color.page
+share/gnome/help/f-spot/sl/cd.page
+share/gnome/help/f-spot/sl/colors.page
+share/gnome/help/f-spot/sl/date-search.page
+share/gnome/help/f-spot/sl/enhancements.page
+share/gnome/help/f-spot/sl/extensions.page
+share/gnome/help/f-spot/sl/facebook.page
+share/gnome/help/f-spot/sl/figures/f-spot-adjust-colors.png
+share/gnome/help/f-spot/sl/figures/f-spot-autocolor.png
+share/gnome/help/f-spot/sl/figures/f-spot-crop.png
+share/gnome/help/f-spot/sl/figures/f-spot-desaturate.png
+share/gnome/help/f-spot/sl/figures/f-spot-fullscreen.png
+share/gnome/help/f-spot/sl/figures/f-spot-red-eye.png
+share/gnome/help/f-spot/sl/figures/f-spot-sepia.png
+share/gnome/help/f-spot/sl/figures/f-spot-slideshow.png
+share/gnome/help/f-spot/sl/figures/f-spot-soft-focus.png
+share/gnome/help/f-spot/sl/figures/f-spot-straighten.png
+share/gnome/help/f-spot/sl/file-management.page
+share/gnome/help/f-spot/sl/flickr.page
+share/gnome/help/f-spot/sl/folder.page
+share/gnome/help/f-spot/sl/general-editing.page
+share/gnome/help/f-spot/sl/import-photos.page
+share/gnome/help/f-spot/sl/import-roll-search.page
+share/gnome/help/f-spot/sl/index.page
+share/gnome/help/f-spot/sl/introduction.page
+share/gnome/help/f-spot/sl/picasa.page
+share/gnome/help/f-spot/sl/rate-search.page
+share/gnome/help/f-spot/sl/ratings.page
+share/gnome/help/f-spot/sl/smugmug.page
+share/gnome/help/f-spot/sl/tag-attach.page
+share/gnome/help/f-spot/sl/tag-creation.page
+share/gnome/help/f-spot/sl/tag-delete.page
+share/gnome/help/f-spot/sl/tag-remove.page
+share/gnome/help/f-spot/sl/tag-search.page
+share/gnome/help/f-spot/sl/tags.page
+share/gnome/help/f-spot/sl/upload-to-web.page
+share/gnome/help/f-spot/sl/versioning.page
+share/gnome/help/f-spot/sl/zooomr.page
 share/icons/hicolor/128x128/apps/f-spot.png
 share/icons/hicolor/16x16/apps/f-spot.png
 share/icons/hicolor/22x22/apps/f-spot.png
@@ -326,6 +402,7 @@ share/locale/be@latin/LC_MESSAGES/f-spot.mo
 share/locale/bg/LC_MESSAGES/f-spot.mo
 share/locale/bn_IN/LC_MESSAGES/f-spot.mo
 share/locale/ca/LC_MESSAGES/f-spot.mo
+share/locale/ca@valencia/LC_MESSAGES/f-spot.mo
 share/locale/cs/LC_MESSAGES/f-spot.mo
 share/locale/da/LC_MESSAGES/f-spot.mo
 share/locale/de/LC_MESSAGES/f-spot.mo
@@ -381,6 +458,10 @@ share/locale/zh_HK/LC_MESSAGES/f-spot.mo
 share/locale/zh_TW/LC_MESSAGES/f-spot.mo
 @dirrmtry share/icons/hicolor/256x256/apps
 @dirrmtry share/icons/hicolor/256x256
+@dirrm share/gnome/help/f-spot/sl/figures
+@dirrm share/gnome/help/f-spot/sl
+@dirrm share/gnome/help/f-spot/fr/figures
+@dirrm share/gnome/help/f-spot/fr
 @dirrm share/gnome/help/f-spot/es/figures
 @dirrm share/gnome/help/f-spot/es
 @dirrm share/gnome/help/f-spot/de/figures
