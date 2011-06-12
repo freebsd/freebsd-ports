@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pbzip2
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.4
 CATEGORIES=	archivers
 MASTER_SITES=	http://compression.ca/pbzip2/
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
@@ -22,6 +22,9 @@ MLINKS=		pbzip2.1 pbunzip2.1
 
 USE_GMAKE=	YES
 MAKE_JOBS_SAFE=	yes
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 post-patch:
 	@${REINPLACE_CMD} \
