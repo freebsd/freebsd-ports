@@ -342,6 +342,7 @@
     SUBDIR += p5-DBIx-Browse
     SUBDIR += p5-DBIx-Class
     SUBDIR += p5-DBIx-Class-AsFdat
+    SUBDIR += p5-DBIx-Class-Cursor-Cached
     SUBDIR += p5-DBIx-Class-DateTime-Epoch
     SUBDIR += p5-DBIx-Class-DigestColumns
     SUBDIR += p5-DBIx-Class-DynamicDefault

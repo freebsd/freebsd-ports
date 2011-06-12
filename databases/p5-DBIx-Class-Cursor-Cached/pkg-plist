@@ -1,0 +1,9 @@
+%%SITE_PERL%%/DBIx/Class/Cursor/Cached.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Cursor/Cached/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Cursor/Cached
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class/Cursor
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
+@dirrmtry %%SITE_PERL%%/DBIx/Class/Cursor
+@dirrmtry %%SITE_PERL%%/DBIx/Class
+@dirrmtry %%SITE_PERL%%/DBIx
