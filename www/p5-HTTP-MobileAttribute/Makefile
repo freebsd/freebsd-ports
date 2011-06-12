@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-MobileAttribute
-PORTVERSION=	0.22
+PORTVERSION=	0.23
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,14 +14,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Yet Another HTTP::MobileAgent
 
+BUILD_DEPENDS=	p5-Geo-Coordinates-Converter>=0:${PORTSDIR}/science/p5-Geo-Coordinates-Converter \
+		p5-Geo-Coordinates-Converter-iArea>=0:${PORTSDIR}/science/p5-Geo-Coordinates-Converter-iArea \
+		p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 RUN_DEPENDS=	p5-Class-Component>=0.17:${PORTSDIR}/devel/p5-Class-Component \
 		p5-UNIVERSAL-require>=0.13:${PORTSDIR}/devel/p5-UNIVERSAL-require
-BUILD_DEPENDS=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	p5-YAML>=0:${PORTSDIR}/textproc/p5-YAML
 
 DEPRECATED=	Use www/p5-HTTP-MobileAgent instead.
 
-PERL_CONFIGURE=	Yes
+PERL_CONFIGURE=	yes
 
 MAN3=		HTTP::MobileAttribute.3 \
 		HTTP::MobileAttribute::Agent::Base.3 \
