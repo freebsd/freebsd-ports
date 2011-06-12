@@ -10,6 +10,7 @@ PORTVERSION=	3.4.${SNAPDATE}
 CATEGORIES=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/:extsrc \
+		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/:l10nsdf \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/cws/:cws \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unowinreg
 DISTFILES+=	${OOOSRC} ${OOOEXTSRC} unowinreg.dll:unowinreg
@@ -23,7 +24,7 @@ CONFLICTS=	cppunit*
 
 EXTRATC_ONLY?=	${OOOSRC} ${OOOEXTSRC}
 
-OOOEXTSRC=	ext_sources.20110331.tar.bz2:extsrc
+OOOEXTSRC=	ext_sources.20110331.tar.bz2:extsrc l10n.20110611.tar.bz2:l10nsdf
 
 .if defined(CWS)
 PORTNAME:=	openoffice.org-${CWS}
@@ -75,12 +76,12 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set.sh
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 .endif
 
-MILESTONE?=		100
+MILESTONE?=		101
 OOOTAG?=		DEV300_m${MILESTONE}
 OOOTAG2=		${OOOTAG:C/_//g}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20110219
+SNAPDATE=		20110220
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org3
@@ -199,6 +200,9 @@ pre-configure:
 .endif
 
 do-build:
+	@cd ${WRKDIR} ; ${PRINTF} "[repositories]\n" > source_config
+	@cd ${WRKDIR} ; ${PRINTF} "${OOOTAG}=active\n" >> source_config
+	@cd ${WRKDIR} ; ${PRINTF} "l10n=active\n" >> source_config
 	@cd ${WRKSRC} ; ./bootstrap
 	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" "LIBINTL_PREFIX=${PREFIX}" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; ../solenv/bin/build.pl --all -P${MAKE_JOBS_NUMBER} -- -P${MAKE_JOBS_NUMBER}"
 

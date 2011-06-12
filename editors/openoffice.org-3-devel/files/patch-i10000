@@ -1,0 +1,13 @@
+http://hg.services.openoffice.org/DEV300/rev/a22158b47c13
+http://www.mail-archive.com/dev@openoffice.org/msg15401.html
+
+--- set_soenv.in	2011-03-28 20:50:13.000000000 +0900
++++ set_soenv.in	2011-06-12 16:32:09.000000000 +0900
+@@ -1497,6 +1497,7 @@
+ #
+ print "done\n";
+ $gb_REPOS = $SRC_ROOT;
++my $BUILD_TYPE = "@BUILD_TYPE@";
+ 
+ if ('@WITH_LANG@' ne "")
+ {
