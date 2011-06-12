@@ -740,6 +740,7 @@
     SUBDIR += povray37
     SUBDIR += ppmcaption
     SUBDIR += ppminfo
+    SUBDIR += ppsei
     SUBDIR += pqiv
     SUBDIR += preview
     SUBDIR += price
