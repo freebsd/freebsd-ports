@@ -7,6 +7,7 @@
 
 PORTNAME=	texinfo
 PORTVERSION=	4.13.20110529
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		ftp://ftp.stack.nl/pub/users/johans/texinfo/${PORTVERSION:E}/
@@ -20,15 +21,13 @@ COMMENT=	A typeset documentation system with multiple format output
 
 BUILD_DEPENDS+=	help2man:${PORTSDIR}/misc/help2man
 
-CONFLICTS_INSTALL=teTeX-base-[0-9]*
-
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALL_TARGET=	install install-tex
 PKGDEINSTALL=	${PKGINSTALL}
 MAKE_JOBS_SAFE=	yes
 
-MAKE_ARGS=	TEXMF=${PREFIX}/${TEXMFLOCAL}
+MAKE_ARGS=	TEXMF=${PREFIX}/${TEXMF}
 CONFIGURE_ARGS=	--without-included-gettext
 CPPFLAGS=	-I${LOCALBASE}/lib
 LDFLAGS=	-L${LOCALBASE}/lib -lintl
@@ -38,9 +37,8 @@ MAN1=		info.1 infokey.1 install-info.1 makeinfo.1 texi2dvi.1 \
 		texi2pdf.1 pdftexi2dvi.1 texindex.1
 MAN5=		info.5 texinfo.5
 
-PLIST_SUB=	TEXMFLOCAL=${TEXMFLOCAL}
-
-TEXMFLOCAL=	share/texmf-local
+TEXMF=		share/texmf
+PLIST_SUB=	TEXMF=${TEXMF}
 
 .include <bsd.port.pre.mk>
 
