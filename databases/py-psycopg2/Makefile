@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	psycopg2
-PORTVERSION=	2.4
+PORTVERSION=	2.4.1
 CATEGORIES=	databases python
 MASTER_SITES=	http://initd.org/psycopg/tarballs/PSYCOPG-2-4/ \
 		${MASTER_SITE_LOCAL}
