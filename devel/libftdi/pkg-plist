@@ -17,6 +17,6 @@ lib/libftdi.so.19
 %%BOOST%%lib/libftdipp.a
 %%BOOST%%lib/libftdipp.la
 %%BOOST%%lib/libftdipp.so
-%%BOOST%%lib/libftdipp.so.18
+%%BOOST%%lib/libftdipp.so.19
 libdata/pkgconfig/libftdi.pc
 %%BOOST%%libdata/pkgconfig/libftdipp.pc
