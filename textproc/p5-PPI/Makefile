@@ -7,8 +7,10 @@
 
 PORTNAME=	PPI
 PORTVERSION=	1.215
+PORTREVISION=	1
 CATEGORIES=	textproc perl5
-MASTER_SITES=	CPAN/../../authors/id/A/AD/ADAMK
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:ADAMK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	lth@FreeBSD.org
@@ -18,10 +20,9 @@ BUILD_DEPENDS=	\
 		p5-Clone>=0.30:${PORTSDIR}/devel/p5-Clone \
 		p5-IO-String>=1.07:${PORTSDIR}/devel/p5-IO-String \
 		p5-List-MoreUtils>=0.16:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Scalar-List-Utils>=1.20:${PORTSDIR}/lang/p5-Scalar-List-Utils \
 		p5-Params-Util>=1.00:${PORTSDIR}/devel/p5-Params-Util \
 		p5-Task-Weaken>0:${PORTSDIR}/devel/p5-Task-Weaken
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
@@ -115,4 +116,11 @@ MAN3=	PPI.3 \
 	PPI::Transform.3 \
 	PPI::Transform::UpdateCopyright.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-Scalar-List-Utils>=1.20:${PORTSDIR}/lang/p5-Scalar-List-Utils
+RUN_DEPENDS+=	p5-Scalar-List-Utils>=1.20:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+
+.include <bsd.port.post.mk>
