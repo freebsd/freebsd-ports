@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sshguard
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 CATEGORIES=	security
 MASTER_SITES=	SF/sshguard/sshguard/sshguard-${PORTVERSION}
 
