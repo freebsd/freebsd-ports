@@ -37,7 +37,8 @@ AJP_1_3_PORT?=	8009
 STDOUT_LOG=	${LOG_DIR}/stdout.log
 STDERR_LOG=	${LOG_DIR}/stderr.log
 JAR_FILE=	bin/bootstrap.jar
-CONF_FILES=	catalina.policy catalina.properties context.xml logging.properties server.xml tomcat-users.xml web.xml
+TOMCAT_CONF_FILES=	catalina.policy catalina.properties context.xml \
+			logging.properties server.xml tomcat-users.xml web.xml
 CONF_EXT=	sample
 PLIST_SUB=	T=${APP_HOME:S/^${PREFIX}\///} CONF_EXT=${CONF_EXT} \
 		WWWOWN=${TOMCAT_USER} WWWGRP=${TOMCAT_GROUP}
@@ -73,7 +74,7 @@ pre-patch:
 post-patch:
 	@${REINPLACE_CMD} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} ${WRKSRC}/conf/server.xml
 	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.bat' -or -name '*.dll' -or -name '*.exe' -or -name '*.orig' \) -delete
-.for f in ${CONF_FILES}
+.for f in ${TOMCAT_CONF_FILES}
 	@${MV} ${WRKSRC}/conf/${f} ${WRKSRC}/conf/${f}.${CONF_EXT}
 .endfor
 
@@ -91,7 +92,7 @@ do-install:
 	@${CP} -R ${WRKSRC}/* ${APP_HOME}
 	@${ECHO_MSG} " [ DONE ]"
 
-.for f in ${CONF_FILES}
+.for f in ${TOMCAT_CONF_FILES}
 .	if !exists(${APP_HOME}/conf/${f})
 		@${CP} ${APP_HOME}/conf/${f}.${CONF_EXT} ${APP_HOME}/conf/${f}
 .	else
