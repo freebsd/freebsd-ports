@@ -1,0 +1,5 @@
+%%SITE_PERL%%/ModPerl/VersionUtil.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/VersionUtil/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl/VersionUtil
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/ModPerl
+@dirrmtry %%SITE_PERL%%/ModPerl

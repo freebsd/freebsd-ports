@@ -1120,6 +1120,7 @@
     SUBDIR += p5-Maypole-Component
     SUBDIR += p5-MediaWiki
     SUBDIR += p5-MediaWiki-API
+    SUBDIR += p5-ModPerl-VersionUtil
     SUBDIR += p5-Mojolicious
     SUBDIR += p5-Mojolicious-Plugin-Database
     SUBDIR += p5-Mojolicious-Plugin-Mongodb
