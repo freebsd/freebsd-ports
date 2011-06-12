@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sgwi
-PORTVERSION=	0.8
+PORTVERSION=	1.1.2
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.vanheusden.com/sgwi/
 DISTNAME=	sqlgreywebinterface-${PORTVERSION}
@@ -16,7 +16,8 @@ MAINTAINER=	lukasz@wasikowski.net
 COMMENT=	PHP web interface to SQLGrey
 
 NO_BUILD=	yes
-SUB_FILES+=	pkg-message
+SUB_FILES+=	pkg-message pkg-install
+SUB_LIST=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
 
 OPTIONS=	MYSQL "MySQL back-end (use mysql PHP extension)" on
 OPTIONS+=	PGSQL "PostgreSQL back-end (use pgsql PHP extension)" off
@@ -33,32 +34,37 @@ USE_PHP+=	pgsql
 IGNORE=	needs at least one database back-end
 .endif
 
+WANT_PHP_WEB=	yes
+
 post-patch:
 		${FIND} ${WRKSRC} -name '*.orig' -delete
 
 do-install:
-		@[ ! -f ${WRKSRC}/.htpasswd ] || ${MV} ${WRKSRC}/.htpasswd ${WRKSRC}/.htpasswd.dist
-		@[ ! -f ${WRKSRC}/.htaccess ] || ${MV} ${WRKSRC}/.htaccess ${WRKSRC}/.htaccess.dist
-		@[ ! -f ${WRKSRC}/config.inc.php ] || ${MV} ${WRKSRC}/config.inc.php ${WRKSRC}/config.inc.php.dist
-		@${MKDIR} ${PREFIX}/www/sgwi
-		@${INSTALL_DATA} ${WRKSRC}/*.php ${PREFIX}/www/sgwi
-		@${INSTALL_DATA} ${WRKSRC}/*.txt ${PREFIX}/www/sgwi
-		@${INSTALL_DATA} ${WRKSRC}/*.dist ${PREFIX}/www/sgwi
-		@${INSTALL_DATA} ${WRKSRC}/.ht* ${PREFIX}/www/sgwi
-		@[ -f ${PREFIX}/www/sgwi/config.inc.php ] || \
-			${CP} ${PREFIX}/www/sgwi/config.inc.php.dist \
-				${PREFIX}/www/sgwi/config.inc.php
-		@[ -f ${PREFIX}/www/sgwi/.htpasswd ] || \
-			${CP} ${PREFIX}/www/sgwi/.htpasswd.dist \
-				${PREFIX}/www/sgwi/.htpasswd
-		@[ -f ${PREFIX}/www/sgwi/.htaccess ] || \
-			${CP} ${PREFIX}/www/sgwi/.htaccess.dist \
-				${PREFIX}/www/sgwi/.htaccess
+		@[ ! -f ${WRKSRC}/.htpasswd ] || ${MV} ${WRKSRC}/.htpasswd ${WRKSRC}/.htpasswd.sample
+		@[ ! -f ${WRKSRC}/.htaccess ] || ${MV} ${WRKSRC}/.htaccess ${WRKSRC}/.htaccess.sample
+		@[ ! -f ${WRKSRC}/includes/config.inc.php ] || ${MV} ${WRKSRC}/includes/config.inc.php ${WRKSRC}/includes/config.inc.php.sample
+		@${MKDIR} ${WWWDIR}
+		@${MKDIR} ${WWWDIR}/includes
+		@${INSTALL_DATA} ${WRKSRC}/*.php ${WWWDIR}
+		@${INSTALL_DATA} ${WRKSRC}/*.txt ${WWWDIR}
+		@${INSTALL_DATA} ${WRKSRC}/*.css ${WWWDIR}
+		@${INSTALL_DATA} ${WRKSRC}/.ht* ${WWWDIR}
+		@${INSTALL_DATA} ${WRKSRC}/includes/*.sample ${WWWDIR}/includes/
+		@${INSTALL_DATA} ${WRKSRC}/includes/*.php ${WWWDIR}/includes/
+		@if [ -f ${WWWDIR}/config.inc.php ]; then \
+			${MV} ${WWWDIR}/config.inc.php ${WWWDIR}/includes/config.inc.php; \
+		fi
+		@[ -f ${WWWDIR}/includes/config.inc.php ] || \
+			${CP} ${WWWDIR}/includes/config.inc.php.sample ${WWWDIR}/includes/config.inc.php
+		@[ -f ${WWWDIR}/.htpasswd ] || \
+			${CP} ${WWWDIR}/.htpasswd.sample ${WWWDIR}/.htpasswd
+		@[ -f ${WWWDIR}/.htaccess ] || \
+			${CP} ${WWWDIR}/.htaccess.sample ${WWWDIR}/.htaccess
 
 post-install:
-		@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${PREFIX}/www/sgwi
-		@${CHOWN} root ${PREFIX}/www/sgwi/.ht* ${PREFIX}/www/sgwi/config.inc.php*
-		@${CHMOD} 640 ${PREFIX}/www/sgwi/*.php ${PREFIX}/www/sgwi/*.txt ${PREFIX}/www/sgwi/.ht* ${PREFIX}/www/sgwi/*.dist
-		${CAT} ${PKGMESSAGE}
+		@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/
+		@${CHOWN} root ${WWWDIR}/.ht* ${WWWDIR}/includes/config.inc.php*
+		@${CHMOD} -R 0640 ${WWWDIR}/*.php ${WWWDIR}/*.txt ${WWWDIR}/*.css ${WWWDIR}/.ht* ${WWWDIR}/includes/*.php ${WWWDIR}/includes/*.sample
+		@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
