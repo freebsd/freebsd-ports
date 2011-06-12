@@ -2226,6 +2226,8 @@ de-bbbike                       ports/german/BBBike
 de-bsdforen-firefox-searchplugin  ports/german/bsdforen-firefox-searchplugin
 de-bsdgroup-firefox-searchplugin  ports/german/bsdgroup-firefox-searchplugin
 de-bsdpaste                     ports/german/bsdpaste
+de-bugzilla                     ports/german/bugzilla
+de-bugzilla3                    ports/german/bugzilla3
 de-dict                         ports/german/dict
 de-digibux                      ports/german/digibux
 de-ding                         ports/german/ding
@@ -6136,6 +6138,7 @@ ja-awffull                      ports/japanese/awffull
 ja-bible_names-fpw              ports/japanese/bible_names-fpw
 ja-bookview                     ports/japanese/bookview
 ja-bugzilla                     ports/japanese/bugzilla
+ja-bugzilla3                    ports/japanese/bugzilla3
 ja-canna-lib                    ports/japanese/canna-lib
 ja-canna-server                 ports/japanese/canna-server
 ja-cannadic                     ports/japanese/cannadic
@@ -13142,6 +13145,7 @@ p5-MooseX-Params-Validate       ports/devel/p5-MooseX-Params-Validate
 p5-MooseX-RelatedClassRoles     ports/devel/p5-MooseX-RelatedClassRoles
 p5-MooseX-Role-Parameterized    ports/devel/p5-MooseX-Role-Parameterized
 p5-MooseX-Role-WithOverloading  ports/devel/p5-MooseX-Role-WithOverloading
+p5-MooseX-Runnable              ports/devel/p5-MooseX-Runnable
 p5-MooseX-SemiAffordanceAccessor  ports/devel/p5-MooseX-SemiAffordanceAccessor
 p5-MooseX-SetOnce               ports/devel/p5-MooseX-SetOnce
 p5-MooseX-SimpleConfig          ports/devel/p5-MooseX-SimpleConfig
@@ -13157,6 +13161,7 @@ p5-MooseX-Types-DateTimeX       ports/devel/p5-MooseX-Types-DateTimeX
 p5-MooseX-Types-JSON            ports/devel/p5-MooseX-Types-JSON
 p5-MooseX-Types-Path-Class      ports/devel/p5-MooseX-Types-Path-Class
 p5-MooseX-Types-Perl            ports/devel/p5-MooseX-Types-Perl
+p5-MooseX-Types-Set-Object      ports/devel/p5-MooseX-Types-Set-Object
 p5-MooseX-Types-Signal          ports/devel/p5-MooseX-Types-Signal
 p5-MooseX-Types-Structured      ports/devel/p5-MooseX-Types-Structured
 p5-MooseX-Types-VariantTable    ports/devel/p5-MooseX-Types-VariantTable
@@ -14302,6 +14307,7 @@ p5-Test-Synopsis                ports/devel/p5-Test-Synopsis
 p5-Test-TAP-HTMLMatrix          ports/devel/p5-Test-TAP-HTMLMatrix
 p5-Test-TAP-Model               ports/devel/p5-Test-TAP-Model
 p5-Test-TCP                     ports/devel/p5-Test-TCP
+p5-Test-TableDriven             ports/devel/p5-Test-TableDriven
 p5-Test-Taint                   ports/devel/p5-Test-Taint
 p5-Test-TempDir                 ports/devel/p5-Test-TempDir
 p5-Test-Tester                  ports/devel/p5-Test-Tester
@@ -17402,6 +17408,7 @@ p5-moosex-poe                   ports/devel/p5-MooseX-POE
 p5-moosex-relatedclassroles     ports/devel/p5-MooseX-RelatedClassRoles
 p5-moosex-role-parameterized    ports/devel/p5-MooseX-Role-Parameterized
 p5-moosex-role-withoverloading  ports/devel/p5-MooseX-Role-WithOverloading
+p5-moosex-runnable              ports/devel/p5-MooseX-Runnable
 p5-moosex-semiaffordanceaccessor  ports/devel/p5-MooseX-SemiAffordanceAccessor
 p5-moosex-setonce               ports/devel/p5-MooseX-SetOnce
 p5-moosex-simpleconfig          ports/devel/p5-MooseX-SimpleConfig
@@ -17417,6 +17424,7 @@ p5-moosex-types-datetimex       ports/devel/p5-MooseX-Types-DateTimeX
 p5-moosex-types-json            ports/devel/p5-MooseX-Types-JSON
 p5-moosex-types-path-class      ports/devel/p5-MooseX-Types-Path-Class
 p5-moosex-types-perl            ports/devel/p5-MooseX-Types-Perl
+p5-moosex-types-set-object      ports/devel/p5-MooseX-Types-Set-Object
 p5-moosex-types-signal          ports/devel/p5-MooseX-Types-Signal
 p5-moosex-types-structured      ports/devel/p5-MooseX-Types-Structured
 p5-moosex-types-varianttable    ports/devel/p5-MooseX-Types-VariantTable
@@ -18601,6 +18609,7 @@ p5-test-spelling                ports/devel/p5-Test-Spelling
 p5-test-strict                  ports/devel/p5-Test-Strict
 p5-test-subcalls                ports/devel/p5-Test-SubCalls
 p5-test-synopsis                ports/devel/p5-Test-Synopsis
+p5-test-tabledriven             ports/devel/p5-Test-TableDriven
 p5-test-taint                   ports/devel/p5-Test-Taint
 p5-test-tap-htmlmatrix          ports/devel/p5-Test-TAP-HTMLMatrix
 p5-test-tap-model               ports/devel/p5-Test-TAP-Model
@@ -21238,6 +21247,7 @@ py-basemap-data                 ports/math/py-basemap-data
 py-bcfg2                        ports/sysutils/py-bcfg2
 py-bcrypt                       ports/security/py-bcrypt
 py-beaker                       ports/www/py-beaker
+py-beanstalkc                   ports/net/py-beanstalkc
 py-beautifulsoup                ports/www/py-beautifulsoup
 py-beautifulsoup30              ports/www/py-beautifulsoup30
 py-biolccc                      ports/science/py-biolccc
@@ -21582,6 +21592,7 @@ py-myghtyutils                  ports/devel/py-myghtyutils
 py-mysql                        ports/databases/py-MySQL
 py-mysqldb                      ports/databases/py-MySQLdb
 py-mysqldb-devel                ports/databases/py-MySQLdb-devel
+py-nagiosplugin                 ports/sysutils/py-nagiosplugin
 py-namebench                    ports/dns/py-namebench
 py-nautilus                     ports/x11-fm/py-nautilus
 py-ncurses                      ports/devel/py-ncurses
@@ -25264,6 +25275,7 @@ trophy                          ports/games/trophy
 trousers                        ports/security/trousers
 trove4j                         ports/java/trove4j
 truc                            ports/devel/truc
+truecrypt                       ports/security/truecrypt
 trueprint                       ports/print/trueprint
 truevision                      ports/graphics/truevision
 trustedqsl                      ports/comms/trustedqsl
