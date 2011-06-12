@@ -7,16 +7,16 @@
 
 PORTNAME=	Net-BitTorrent
 PORTVERSION=	0.052
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-p2p perl5
-MASTER_SITES=	CPAN/../../authors/id/S/SA/SANKO
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:SANKO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	BitTorrent peer-to-peer protocol class
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version
+RUN_DEPENDS=	p5-Math-BigInt>=1.78:${PORTSDIR}/math/p5-Math-BigInt
 
 CONFIGURE_ARGS=	</dev/null
 PORTSCOUT=	skipv:0.074000_012	
@@ -41,8 +41,11 @@ MAN3=		Net::BitTorrent.3 \
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 501000
-RUN_DEPENDS+=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA
-BUILD_DEPENDS+=	p5-Digest-SHA>=5.47:${PORTSDIR}/security/p5-Digest-SHA
+BUILD_DEPENDS+=	p5-Digest-SHA>=5.45:${PORTSDIR}/security/p5-Digest-SHA \
+		p5-Module-Build>=0.3:${PORTSDIR}/devel/p5-Module-Build \
+		p5-version>=0.74:${PORTSDIR}/devel/p5-version
+RUN_DEPENDS+=	p5-Digest-SHA>=5.45:${PORTSDIR}/security/p5-Digest-SHA \
+		p5-version>=0.74:${PORTSDIR}/devel/p5-version
 .endif
 
 .include <bsd.port.post.mk>
