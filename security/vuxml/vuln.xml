@@ -137,21 +137,21 @@ Note:  Please add new entries to the beginning of this file.
 	<p>Matthias Andree reports:</p>
 	<blockquote cite="http://www.fetchmail.info/fetchmail-SA-2011-01.txt">
 	  <p>Fetchmail version 5.9.9 introduced STLS support for POP3, version
-	  6.0.0 added STARTTLS for IMAP. However, the actual
-	  S(TART)TLS-initiated in-band SSL/TLS negotiation was not guarded by a
-	  timeout.</p>
+	    6.0.0 added STARTTLS for IMAP. However, the actual
+	    S(TART)TLS-initiated in-band SSL/TLS negotiation was not guarded by a
+	    timeout.</p>
 	  <p>Depending on the operating system defaults as to TCP stream
-	  keepalive mode, fetchmail hangs in excess of one week after sending
-	  STARTTLS were observed if the connection failed without notifying the
-	  operating system, for instance, through network outages or hard
-	  server crashes.</p>
+	    keepalive mode, fetchmail hangs in excess of one week after sending
+	    STARTTLS were observed if the connection failed without notifying the
+	    operating system, for instance, through network outages or hard
+	    server crashes.</p>
 	  <p>A malicious server that does not respond, at the network level,
-	  after acknowledging fetchmail's STARTTLS or STLS request, can hold
-	  fetchmail in this protocol state, and thus render fetchmail unable to
-	  complete the poll, or proceed to the next server, effecting a denial
-	  of service.</p>
+	    after acknowledging fetchmail's STARTTLS or STLS request, can hold
+	    fetchmail in this protocol state, and thus render fetchmail unable to
+	    complete the poll, or proceed to the next server, effecting a denial
+	    of service.</p>
 	  <p>SSL-wrapped mode on dedicated ports was unaffected by this
-problem, so can be used as a workaround.</p>
+	    problem, so can be used as a workaround.</p>
 	</blockquote>
       </body>
     </description>
