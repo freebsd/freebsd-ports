@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SQL-Translator
-PORTVERSION=	0.11007
+PORTVERSION=	0.11008
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,14 +24,14 @@ BUILD_DEPENDS=	p5-Class-Base>=0:${PORTSDIR}/devel/p5-Class-Base \
 		p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-Template-Toolkit>=2.20:${PORTSDIR}/www/p5-Template-Toolkit \
-		p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
-		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz \
-		p5-Graph>=0:${PORTSDIR}/math/p5-Graph \
 		p5-IO-stringy>=0:${PORTSDIR}/devel/p5-IO-stringy \
+		p5-Moo>=0.009007:${PORTSDIR}/devel/p5-Moo \
 		p5-Spreadsheet-ParseExcel>=0.41:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel \
+		p5-Text-ParseWords>0:${PORTSDIR}/textproc/p5-Text-ParseWords \
 		p5-Text-RecordParser>=0.02:${PORTSDIR}/textproc/p5-Text-RecordParser \
-		p5-XML-Writer>=0.500:${PORTSDIR}/textproc/p5-XML-Writer
-RUN_DEPENDS=	${BUILD_DEPENDS}
+		p5-XML-LibXML>=1.69:${PORTSDIR}/textproc/p5-XML-LibXML
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+OPTIONS=	DIAGRAM "Diagram generation support" Off
 
 PERL_CONFIGURE=	yes
 
@@ -112,6 +112,12 @@ post-patch:
 
 .if ${PERL_LEVEL} < 500703
 BUILD_DEPENDS+=	p5-Scalar-List-Utils>=0:${PORTSDIR}/lang/p5-Scalar-List-Utils
+.endif
+
+.if defined(WITH_DIAGRAM)
+BUILD_DEPENDS+= p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
+		p5-Graph>=0:${PORTSDIR}/math/p5-Graph \
+		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz
 .endif
 
 .include <bsd.port.post.mk>

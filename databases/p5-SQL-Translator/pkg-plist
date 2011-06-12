@@ -57,6 +57,7 @@ bin/sqlt-graph
 %%SITE_PERL%%/SQL/Translator/Producer/XML.pm
 %%SITE_PERL%%/SQL/Translator/Producer/XML/SQLFairy.pm
 %%SITE_PERL%%/SQL/Translator/Producer/YAML.pm
+%%SITE_PERL%%/SQL/Translator/ProducerUtils.pm
 %%SITE_PERL%%/SQL/Translator/Schema.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Constants.pm
 %%SITE_PERL%%/SQL/Translator/Schema/Constraint.pm
