@@ -1,0 +1,12 @@
+#!/bin/sh
+
+WWWDIR=%%WWWDIR%%
+WWWOWN=%%WWWOWN%%
+WWWGRP=%%WWWGRP%%
+
+if [ "$2" != "POST-INSTALL" ]; then
+	exit 0
+else
+	/usr/sbin/chown ${WWWOWN}:${WWWGRP} ${WWWDIR}/includes/
+	/usr/bin/chgrp ${WWWGRP} ${WWWDIR}/.ht* ${WWWDIR}/includes/config.inc.php
+fi
