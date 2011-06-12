@@ -1,0 +1,14 @@
+The aird daemon handles Apple IR receiver button events.  If your system
+has an USB Apple IR receiver, most likely you'll also have an Apple
+Remote.  An Apple remote has six (6) buttons: Volume up, Volume down,
+Play/Pause, Forward, Backward and Menu.  For each button you can assign a
+command to execute.
+
+Apple IR receiver modules are found on:
+
+           o   MacBook (any generation)
+           o   MacBook Pro (any generation)
+           o   Intel iMac
+           o   Intel MacMini
+
+WWW: http://wiki.freebsd.org/AppleMacbook
