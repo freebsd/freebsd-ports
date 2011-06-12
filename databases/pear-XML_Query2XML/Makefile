@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	XML_Query2XML
-PORTVERSION=	1.7.1
+PORTVERSION=	1.7.2
 CATEGORIES=	databases pear
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR class transform SQL queries into XML data
 
 BUILD_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/DB.php:${PORTSDIR}/databases/pear-DB
 
 LATEST_LINK=	pear-XML_Query2xml
 OPTIONS=	PEAR_MDB2 "Add support for pear-MDB2" Off \
