@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Example-InstantCRUD
-PORTVERSION=	0.037
+PORTVERSION=	0.038
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -35,9 +35,9 @@ BUILD_DEPENDS=	\
 	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 	p5-HTML-Widget>=1.10:${PORTSDIR}/www/p5-HTML-Widget \
 	p5-HTML-Widget-DBIC>=0:${PORTSDIR}/www/p5-HTML-Widget-DBIC \
+	p5-Lingua-EN-Inflect-Phrase>=0:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Phrase \
 	p5-Template-Plugin-Class>=0:${PORTSDIR}/www/p5-Template-Plugin-Class \
-	p5-URI>=0:${PORTSDIR}/net/p5-URI \
-	p5-version>=0:${PORTSDIR}/devel/p5-version
+	p5-URI>=0:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+
@@ -52,4 +52,11 @@ MAN3=	Catalyst::Example::Controller::InstantCRUD.3 \
 	Catalyst::Helper::View::InstantCRUD.3 \
 	Catalyst::Plugin::Auth::Utils.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+BUILD_DEPENDS+=	p5-version>=0:${PORTSDIR}/devel/p5-version
+RUN_DEPENDS+=	p5-version>=0:${PORTSDIR}/devel/p5-version
+.endif
+
+.include <bsd.port.post.mk>
