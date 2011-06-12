@@ -10,7 +10,7 @@ PORTVERSION=	3.0
 CATEGORIES=	audio
 MASTER_SITES=	http://lv2plug.in/spec/
 
-MAINTAINER=	xaimus@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LV2 Core Package
 
 USE_BZIP2=	yes
