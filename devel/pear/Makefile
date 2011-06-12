@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pear
-PORTVERSION=	1.9.2
+PORTVERSION=	1.9.3
 CATEGORIES=	devel
-MASTER_SITES=	http://freebsd.unixfreunde.de/pear/
+MASTER_SITES=	http://bsdcrew.de/distfiles/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR framework for PHP
