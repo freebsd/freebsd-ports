@@ -1,21 +1,7 @@
 #!/bin/sh
 
-[ "${PKG_PREFIX}" ] && PREFIX="${PKG_PREFIX}"
-[ "${PREFIX}" ] || PREFIX=/usr/local
-
 case "$2" in
-	PRE-INSTALL)
-		if ! pw group show conquest >/dev/null 2>&1
-		then
-			echo "===>   Creating group conquest"
-			pw add group conquest
-		fi
-	;;
 	POST-INSTALL)
 		install -d -o root -g conquest -m 770 /var/games/conquest
-	;;
-	*)
-		echo "Incorrect parameter"
-		exit 1
 	;;
 esac
