@@ -1,6 +1,6 @@
---- cmake/FindTCL.cmake.orig	2010-12-10 15:13:27.000000000 +0000
-+++ cmake/FindTCL.cmake	2010-12-12 19:23:43.000000000 +0000
-@@ -55,94 +55,18 @@
+--- cmake/FindTCL.cmake.orig	2011-04-02 18:26:10.225070885 +0100
++++ cmake/FindTCL.cmake	2011-04-02 18:29:21.009167958 +0100
+@@ -55,98 +55,18 @@
    SET(TCL_FIND_QUIETLY TRUE)
  ENDIF(TCL_FOUND)
  
@@ -21,10 +21,14 @@
 -
 -SET(TCL_POSSIBLE_LIB_PATHS
 -  "${TCL_INCLUDE_PATH_PARENT}/lib"
+-  "${TCL_INCLUDE_PATH_PARENT}/lib64"
 -  "${TCL_LIBRARY_PATH}"
 -  "${TCL_TCLSH_PATH_PARENT}/lib"
+-  "${TCL_TCLSH_PATH_PARENT}/lib64"
 -  /usr/lib
+-  /usr/lib64
 -  /usr/local/lib
+-  /usr/local/lib64
 -  )
 -
 -IF(WIN32)
