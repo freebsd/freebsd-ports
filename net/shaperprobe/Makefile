@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	josh.carroll@gmail.com
 COMMENT=	Utility to check for traffic shapers
 
+LICENSE=	GPLv2
+
 MAKEFILE=	Makefile.osx
 PLIST_FILES=	bin/prober
 
