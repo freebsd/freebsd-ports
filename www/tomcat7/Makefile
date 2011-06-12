@@ -28,7 +28,7 @@ USE_RC_SUBR=	${APP_SHORTNAME}
 
 TOMCAT_SUBDIR?=	${DISTNAME:R}
 TOMCAT_HOME=	${PREFIX}/${TOMCAT_SUBDIR}
-CONF_FILES=	catalina.policy catalina.properties context.xml logging.properties server.xml tomcat-users.xml web.xml
+TOMCAT_CONF_FILES=	catalina.policy catalina.properties context.xml logging.properties server.xml tomcat-users.xml web.xml
 CONF_EXT=	sample
 PLIST_SUB=	T=${TOMCAT_SUBDIR} CONF_EXT=${CONF_EXT} \
 		WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
@@ -47,7 +47,7 @@ pre-patch:
 
 post-patch:
 	@${FIND} ${WRKSRC} -name '*.bat' -delete
-.for f in ${CONF_FILES}
+.for f in ${TOMCAT_CONF_FILES}
 	@${MV} ${WRKSRC}/conf/${f} ${WRKSRC}/conf/${f}.${CONF_EXT}
 .endfor
 
@@ -61,7 +61,7 @@ do-install:
 	@${CP} -R ${WRKSRC}/* ${TOMCAT_HOME}
 	@${ECHO_MSG} " [ DONE ]"
 
-.for f in ${CONF_FILES}
+.for f in ${TOMCAT_CONF_FILES}
 .	if !exists(${TOMCAT_HOME}/conf/${f})
 		@${CP} ${TOMCAT_HOME}/conf/${f}.${CONF_EXT} ${TOMCAT_HOME}/conf/${f}
 .	else
