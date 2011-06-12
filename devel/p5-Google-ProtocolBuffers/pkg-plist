@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Google/ProtocolBuffers.pm
+%%SITE_PERL%%/Google/ProtocolBuffers/CodeGen.pm
+%%SITE_PERL%%/Google/ProtocolBuffers/Codec.pm
+%%SITE_PERL%%/Google/ProtocolBuffers/CodecIV32.pm
+%%SITE_PERL%%/Google/ProtocolBuffers/CodecIV64.pm
+%%SITE_PERL%%/Google/ProtocolBuffers/Compiler.pm
+%%SITE_PERL%%/Google/ProtocolBuffers/Constants.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/ProtocolBuffers/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google/ProtocolBuffers
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Google
+@dirrm %%SITE_PERL%%/Google/ProtocolBuffers
+@dirrmtry %%SITE_PERL%%/Google
