@@ -4,9 +4,9 @@ libexec/conqdriv
 sbin/conqai
 sbin/conqoper
 sbin/conqstrat
-share/conquest/conqnews.doc.sample
-share/conquest/conquest.doc
-%%PORTDOCS%%share/doc/conquest/README
-%%PORTDOCS%%@dirrm share/doc/conquest
+%%DATADIR%%/conqnews.doc.sample
+%%DATADIR%%/conquest.doc
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/conquest
-@dirrm share/conquest
+@dirrm %%DATADIR%%

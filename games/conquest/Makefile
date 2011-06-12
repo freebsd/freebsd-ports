@@ -18,6 +18,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc/conquest \
 		--datadir=${LOCALBASE}/share/conquest \
 		--localstatedir=/var/games
+GROUPS=		${PORTNAME}
 BINGRP=		conquest
 SHAREGRP=	conquest
 MAKE_JOBS_UNSAFE=	yes
@@ -29,7 +30,6 @@ post-patch:
 	${REINPLACE_CMD} "s/-O2 -fPIC//g" ${WRKSRC}/configure
 
 do-install:
-	@${SH} pkg-install ${PORTNAME} PRE-INSTALL
 	${INSTALL_PROGRAM} -m 2550 ${WRKSRC}/conqai ${PREFIX}/sbin
 	${INSTALL_PROGRAM} -m 2551 ${WRKSRC}/conqdriv ${PREFIX}/libexec
 	${INSTALL_PROGRAM} -m 2551 ${WRKSRC}/conqoper ${PREFIX}/sbin
