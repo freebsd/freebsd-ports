@@ -545,6 +545,7 @@ share/scrollz/help/set/notify_string
 share/scrollz/help/set/novice
 share/scrollz/help/set/old_encrypt_program
 share/scrollz/help/set/pause_after_motd
+share/scrollz/help/set/rate_limit_join
 share/scrollz/help/set/realname
 share/scrollz/help/set/same_window_only
 share/scrollz/help/set/save_encryption_keys
@@ -598,6 +599,7 @@ share/scrollz/help/set/tab_max
 share/scrollz/help/set/truncate_public_channel
 share/scrollz/help/set/underline_video
 share/scrollz/help/set/user_information
+share/scrollz/help/set/username
 share/scrollz/help/set/user_wallops
 share/scrollz/help/set/verbose_ctcp
 share/scrollz/help/set/warn_of_ignores
@@ -711,6 +713,7 @@ share/scrollz/help/wkill
 share/scrollz/help/ww
 share/scrollz/help/xecho
 share/scrollz/help/xtype
+@exec /bin/mkdir %%PREFIX%%/share/scrollz/script
 @dirrm share/scrollz/script
 @dirrm share/scrollz/help/window
 @dirrm share/scrollz/help/set
