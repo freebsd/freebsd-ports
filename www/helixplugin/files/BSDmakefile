@@ -1,5 +1,6 @@
 SHLIB_NAME	 =	helix.so
 
+CXXFLAGS	+=	-fshort-wchar -D_FREEBSD
 CXXFLAGS	+=	-D_UNIX -DMOZ_X11 -I${LOCALBASE}/include/nspr
 CXXFLAGS	+=	-I${LOCALBASE}/include/${GECKO}/uconv
 CXXFLAGS	+=	-I${LOCALBASE}/include/${GECKO}/xpcom
@@ -9,6 +10,8 @@ CXXFLAGS	+=	-I${LOCALBASE}/include/${GECKO}
 CXXFLAGS	+=	-I${LOCALBASE}/include
 CXXFLAGS	+=	-I${TOP}/player/app/plugin/include
 CXXFLAGS	+=	-I${TOP}/player/app/gtk/pub
+CXXFLAGS	+=	-I${TOP}/common/include
+CXXFLAGS	+=	-I${TOP}
 
 SRCS		 =	hxbackend.cpp	\
 			np_entry.cpp	\
@@ -24,8 +27,12 @@ SHARE_IDL	!=	echo ${LOCALBASE}/share/idl/${GECKO:S,firefox$,firefox-2,}*
 
 .PATH:	${TOP}/player/app/plugin ${TOP}/player/app/plugin/common
 
-nphelix.xpt:	nsIHXPlayer.idl
+hxbackend.So:	nsIHXPlayer.h
+
+nsIHXPlayer.h:	nsIHXPlayer.idl
 	${XPIDL} -m header -I${SHARE_IDL} ${.ALLSRC}
+
+nphelix.xpt: nsIHXPlayer.idl
 	${XPIDL} -m typelib -I${SHARE_IDL} ${.ALLSRC}
 	${XPTLINK} $@ nsIHXPlayer.xpt
 

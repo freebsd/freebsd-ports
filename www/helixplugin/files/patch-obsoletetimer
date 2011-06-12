@@ -88,9 +88,17 @@ long-obsolete content...
 -        m_pObsoleteTimer(NULL),
          m_pUConv(NULL),
          m_pPromptService(NULL),
-@@ -424,13 +423,5 @@
-                                                           (void**)&m_pTimer);
-             
+@@ -447,21 +444,3 @@
+ 
+-            // Maintain compatibility with Firefox pre-1.5.
+-            if(!m_pTimer)
+-            {
+-                pComponentManager->CreateInstanceByContractID(NS_TIMER_CONTRACTID,
+-                                                              NULL,
+-                                                              NS_GET_IID(nsITimer_pre_gecko_1_8),
+-                                                              (void**)&m_pTimer);
+-            }
+-
 -            if(!m_pTimer)
 -            {
 -                /* Try to get an old-style mozilla 1.0-1.2 timer */
@@ -100,7 +108,6 @@ long-obsolete content...
 -                                                              (void**)&m_pObsoleteTimer);
 -            }
 -            
-+ 
              NS_RELEASE(pComponentManager);
          }
 @@ -545,5 +536,5 @@
