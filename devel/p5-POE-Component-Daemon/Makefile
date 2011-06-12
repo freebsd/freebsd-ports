@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	POE-Component-Daemon
-PORTVERSION=	0.1203
+PORTVERSION=	0.1300
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,13 +17,11 @@ COMMENT=	Handles all the housework for a daemon in POE
 LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1
 
-BUILD_DEPENDS=	${SITE_PERL}/POE/API/Peek.pm:${PORTSDIR}/devel/p5-POE-API-Peek \
-		${SITE_PERL}/POE.pm:${PORTSDIR}/devel/p5-POE
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-POE>=1:${PORTSDIR}/devel/p5-POE
 
 PERL_CONFIGURE=	yes
 
-MAN3=	POE::Component::Daemon.3
+MAN3=		POE::Component::Daemon.3
 
 PORTDOCS=	*
 
