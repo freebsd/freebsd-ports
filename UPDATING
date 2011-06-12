@@ -33,6 +33,21 @@ you update your ports collection, before attempting any port upgrades.
   version 999 required--this is only version 2.0007
 
 20110606:
+  AFFECTS: users of mail/sympa
+  AUTHOR: crees@FreeBSD.org
+
+  Sympa previously used to install to ${PREFIX}/sympa, which goes against
+  the general rules for hierachy. Most files which were previously found
+  in ${PREFIX}/sympa should now be found in ${PREFIX}/libexec/sympa.
+
+  Any configuration in httpd.conf files etc will need to be updated to the
+  new directory.
+
+  Before upgrade, it is advisable to back up configuration files
+  ${PREFIX}/etc/sympa.conf and wwsympa.conf since previous versions wipe these
+  out on deinstall.
+
+20110606:
   AFFECTS: users of databases/mariadb
   AUTHOR: dougb@FreeBSD.org
 
