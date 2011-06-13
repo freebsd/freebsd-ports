@@ -145,3 +145,6 @@ share/locale/zh_CN/LC_MESSAGES/yakuake.mo
 @dirrm share/apps/yakuake/skins/default
 @dirrm share/apps/yakuake/skins
 @dirrm share/apps/yakuake
+@dirrmtry share/apps
+@dirrmtry share/applications/kde4
+@dirrmtry share/applications
