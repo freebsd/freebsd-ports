@@ -2217,3 +2217,4 @@ www/ruby-asp||2011-06-09|Removed, depends on expired port, seems abandonware its
 lang/njs||2011-06-09|Has expired: Upstream disapear and distfile is no more available
 editors/wily||2011-06-09|Removed, depends on an expired port
 x11-fonts/Xg||2011-06-09|Has expired: Upstream disapear and distfile is no more available
+irc/bitlbee-otr||2011-06-13|Removed, overridden by irc/bitlbee
