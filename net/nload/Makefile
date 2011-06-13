@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	nload
-PORTVERSION=	0.7.2
-PORTREVISION=	1
+PORTVERSION=	0.7.3
 CATEGORIES=	net
-MASTER_SITES=	CRITICAL SF
+MASTER_SITES=	http://www.roland-riegel.de/nload/ \
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Console application which monitors network traffic in real time
