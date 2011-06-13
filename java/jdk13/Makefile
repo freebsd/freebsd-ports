@@ -30,6 +30,9 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 		${LOCALBASE}/lib/libXm.so:${PORTSDIR}/x11-toolkits/open-motif \
 		${LOCALBASE}/lib/X11/fonts/URW/fonts.dir:${PORTSDIR}/x11-fonts/urwfonts
 
+DEPRECATED=	ancient version of Java
+EXPIRATION_DATE=2011-07-12
+
 .if defined(WITH_JAPANESE_FONTS)
 RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/TrueType/fonts.dir.kochi:${PORTSDIR}/japanese/kochi-ttfonts
 .endif

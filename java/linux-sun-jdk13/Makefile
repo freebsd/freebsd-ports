@@ -19,6 +19,9 @@ COMMENT=	Sun Java Development Kit 1.3 for Linux
 EXTRACT_DEPENDS=${LINUX_BASE_PORT}
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
+DEPRECATED=	ancient version of Java
+EXPIRATION_DATE=2011-07-12
+
 NO_CDROM=	"License does not allow distribution with fee"
 RESTRICTED=	"Redistribution of repackaged binaries not permitted"
 LATEST_LINK=	linux-sun-jdk13
