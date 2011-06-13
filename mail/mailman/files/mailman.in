@@ -30,7 +30,9 @@ mailman_start() {
 }
 
 mailman_stop() {
-	%%MAILMANDIR%%/bin/mailmanctl -q stop
+	[ -f $pidfile ] \
+	  && %%MAILMANDIR%%/bin/mailmanctl -q stop \
+	  || echo ${name} not running? (check ${pidfile})
 }
 
 run_rc_command "$1"

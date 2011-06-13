@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110613:
+  AFFECTS: users of mail/mailman with postfix
+  AUTHOR: crees@FreeBSD.org
+
+  The mailman port has for some time specified the incorrect group when
+  using with Postfix, as reported in ports/142000. The group for mailman
+  is now nobody if compiled with Postfix. Be prepared to make appropriate
+  adjustments if you have compensated for this bug in the past.
+
 20110608:
   AFFECTS: users of security/amavisd-milter
   AUTHOR: delphij@FreeBSD.org
