@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	epm
-PORTVERSION=	4.1
-PORTREVISION=	1
+PORTVERSION=	4.2
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_EASYSW}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -21,6 +20,5 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	autoconf
 MAN1=		epm.1 epminstall.1 mkepmlist.1 setup.1
 MAN5=		epm.list.5 setup.types.5
-MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.mk>
