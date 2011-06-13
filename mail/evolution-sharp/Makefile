@@ -12,7 +12,7 @@ PORTREVISION=	5
 CATEGORIES=	mail gnome
 MASTER_SITES=	GNOME
 
-MAINTAINER=	bsd-sharp@googlegroups.com
+MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono bindings for evolution
 
 BROKEN=		Doesn't accept current evolution version
