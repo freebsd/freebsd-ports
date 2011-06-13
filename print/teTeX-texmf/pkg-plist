@@ -13617,19 +13617,6 @@
 %%TEXMFDISTDIR%%/tex/platex/config/language.dat
 %%TEXMFDISTDIR%%/tex/platex/config/pdfplatex.ini
 %%TEXMFDISTDIR%%/tex/platex/config/platex.ini
-%%TEXMFDISTDIR%%/tex/texinfo/texinfo.ini
-%%TEXMFDISTDIR%%/tex/texinfo/texinfo.tex
-%%TEXMFDISTDIR%%/tex/texinfo/txi-cs.tex
-%%TEXMFDISTDIR%%/tex/texinfo/txi-de.tex
-%%TEXMFDISTDIR%%/tex/texinfo/txi-en.tex
-%%TEXMFDISTDIR%%/tex/texinfo/txi-es.tex
-%%TEXMFDISTDIR%%/tex/texinfo/txi-fr.tex
-%%TEXMFDISTDIR%%/tex/texinfo/txi-it.tex
-%%TEXMFDISTDIR%%/tex/texinfo/txi-nl.tex
-%%TEXMFDISTDIR%%/tex/texinfo/txi-no.tex
-%%TEXMFDISTDIR%%/tex/texinfo/txi-pl.tex
-%%TEXMFDISTDIR%%/tex/texinfo/txi-pt.tex
-%%TEXMFDISTDIR%%/tex/texinfo/txi-tr.tex
 %%TEXMFDISTDIR%%/tex/texinfo/vntexinfo.tex
 %%TEXMFDISTDIR%%/texdoctk/texdocrc.defaults
 %%TEXMFDISTDIR%%/texdoctk/texdoctk.dat
@@ -13673,7 +13660,6 @@
 @dirrm %%TEXMFDISTDIR%%/xdvi
 @dirrm %%TEXMFDISTDIR%%/web2c
 @dirrm %%TEXMFDISTDIR%%/texdoctk
-@dirrm %%TEXMFDISTDIR%%/tex/texinfo
 @dirrm %%TEXMFDISTDIR%%/tex/platex/config
 @dirrm %%TEXMFDISTDIR%%/tex/platex
 @dirrm %%TEXMFDISTDIR%%/tex/plain/xepsf

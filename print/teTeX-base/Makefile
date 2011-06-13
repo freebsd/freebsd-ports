@@ -7,7 +7,7 @@
 
 PORTNAME=	teTeX-base
 PORTVERSION=	3.0
-PORTREVISION=	21
+PORTREVISION=	22
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN} \
 		ftp://ftp.ascii.co.jp/pub/TeX/ascii-ptex/dvips/:1
@@ -177,8 +177,6 @@ post-install:
 	${MKDIR} ${PREFIX}/${TEXMFCONFIGDIR}/texconfig
 	${INSTALL_DATA} ${PREFIX}/${TEXMFDIR}/texconfig/tcfmgr.map \
 		${PREFIX}/${TEXMFCONFIGDIR}/texconfig/tcfmgr.map
-	${INSTALL_SCRIPT} ${WRKSRC}/utils/texinfo/util/texi2dvi ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/utils/texinfo/util/texi2pdf ${PREFIX}/bin
 	${MV} -f ${PREFIX}/bin/texdoctk ${PREFIX}/bin/texdoctk.real
 	${INSTALL_SCRIPT} ${WRKDIR}/texdoctk.wrapper ${PREFIX}/bin/texdoctk
 	${MKDIR} ${PREFIX}/${UPDMAPDIR}
