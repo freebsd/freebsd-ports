@@ -16,6 +16,8 @@ COMMENT=	Plugins for lightweight editor - geany
 BUILD_DEPENDS=	geany:${PORTSDIR}/devel/geany
 RUN_DEPENDS=	geany:${PORTSDIR}/devel/geany
 
+BROKEN=		does not compile
+
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_BZIP2=	yes
