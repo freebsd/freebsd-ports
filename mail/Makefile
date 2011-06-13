@@ -129,7 +129,6 @@
     SUBDIR += evolution
     SUBDIR += evolution-exchange
     SUBDIR += evolution-mapi
-    SUBDIR += evolution-sharp
     SUBDIR += exact
     SUBDIR += exilog
     SUBDIR += exim
