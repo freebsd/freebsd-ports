@@ -9,7 +9,7 @@
 
 PORTNAME=	tiff
 PORTVERSION=	4.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 DISTVERSION=	4.0.0beta7
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
@@ -18,7 +18,6 @@ MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tools and library routines for working with TIFF images
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		jbig.1:${PORTSDIR}/graphics/jbigkit
 
