@@ -10,7 +10,7 @@ PORTVERSION=	0.45
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	rpsfa@rit.edu
 COMMENT=	Translate IP/DNS/WINS/MAC address into port description
 
 LIB_DEPENDS=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
