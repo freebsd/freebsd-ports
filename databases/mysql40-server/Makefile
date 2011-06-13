@@ -87,6 +87,9 @@ CONFLICTS_INSTALL=	mysql-server-[35].* mysql-server-4.[1-9].*
 
 USE_RC_SUBR=	mysql-server.sh
 
+USERS=		mysql
+GROUPS=		mysql
+
 MAN1=		isamchk.1 isamlog.1 mysqld.1 \
 		mysqld_safe.1 perror.1 replace.1
 
@@ -120,11 +123,6 @@ post-patch:
 .endif
 	@${REINPLACE_CMD} -e 's|\&\& defined(__GNUC__)|\&\& defined(__GNUC__) \&\& 0|' \
 		${WRKSRC}/include/my_global.h
-
-post-install:
-.if !defined(PACKAGE_BUILDING)
-	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-.endif
 
 .else
 # MySQL-Client part
