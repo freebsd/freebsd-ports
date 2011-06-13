@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	v8
-PORTVERSION=	3.3.8
+PORTVERSION=	3.4.1
 CATEGORIES=	lang
 MASTER_SITES=	http://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTNAME}-${PORTVERSION}-${GITVERSION}
@@ -16,13 +16,12 @@ COMMENT=	Google\'s open source JavaScript engine
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
-GITVERSION=	0-g1a3419a
+GITVERSION=	0-g064fc53
 FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-1a3419a
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-064fc53
 USE_SCONS=	yes
 OPTIONS=	DEBUG "Build in debug mode" Off \
-		SNAPSHOT "Enable snapshots" Off \
-		SHARED "Build shared library" Off
+		SNAPSHOT "Enable snapshots" Off
 
 .include <bsd.port.options.mk>
 
@@ -37,13 +36,6 @@ SCONS_ARGS+=	mode=debug
 SCONS_ARGS+=	snapshot=off
 .else
 SCONS_ARGS+=	snapshot=on
-.endif
-
-.if defined(WITH_SHARED)
-USE_LDCONFIG=	yes
-PLIST_SUB+=	V8SHARED=""
-.else
-PLIST_SUB+=	V8SHARED="@comment "
 .endif
 
 ONLY_FOR_ARCHS=	i386 amd64
@@ -71,10 +63,6 @@ do-build:
 do-install:
 	${INSTALL_DATA} -m 755 ${WRKSRC}/libv8.a ${PREFIX}/lib
 	${INSTALL_DATA} -m 755 ${WRKSRC}/libv8preparser.a ${PREFIX}/lib
-.if defined(WITH_SHARED)
-	${INSTALL_LIB} -m 755 ${WRKSRC}/libv8.so ${PREFIX}/lib/libv8.so.1
-	${INSTALL_LIB} -m 755 ${WRKSRC}/libv8preparser.so ${PREFIX}/lib/libv8preparser.so.1
-.endif
 	${INSTALL_DATA} ${WRKSRC}/include/v8.h ${PREFIX}/include/
 	${INSTALL_DATA} ${WRKSRC}/include/v8-debug.h ${PREFIX}/include/
 	${INSTALL_DATA} ${WRKSRC}/include/v8-preparser.h ${PREFIX}/include/
