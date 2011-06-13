@@ -377,6 +377,7 @@ aiksaurus-gtk                   ports/textproc/aiksaurus-gtk
 aimage                          ports/sysutils/aimage
 aimsniff                        ports/security/aimsniff
 aircrack-ng                     ports/net-mgmt/aircrack-ng
+aird                            ports/sysutils/aird
 airoflash                       ports/misc/airoflash
 airport                         ports/net-mgmt/airport
 aish                            ports/converters/aish
@@ -10140,6 +10141,7 @@ notecase                        ports/deskutils/notecase
 notftp                          ports/www/notftp
 notification-daemon             ports/deskutils/notification-daemon
 notify-osd                      ports/deskutils/notify-osd
+notify-sharp                    ports/devel/notify-sharp
 nova                            ports/astro/nova
 noweb                           ports/devel/noweb
 npadmin                         ports/sysutils/npadmin
@@ -11655,6 +11657,7 @@ p5-DBIx-AnyDBD                  ports/databases/p5-DBIx-AnyDBD
 p5-DBIx-Browse                  ports/databases/p5-DBIx-Browse
 p5-DBIx-Class                   ports/databases/p5-DBIx-Class
 p5-DBIx-Class-AsFdat            ports/databases/p5-DBIx-Class-AsFdat
+p5-DBIx-Class-Cursor-Cached     ports/databases/p5-DBIx-Class-Cursor-Cached
 p5-DBIx-Class-DateTime-Epoch    ports/databases/p5-DBIx-Class-DateTime-Epoch
 p5-DBIx-Class-DigestColumns     ports/databases/p5-DBIx-Class-DigestColumns
 p5-DBIx-Class-DynamicDefault    ports/databases/p5-DBIx-Class-DynamicDefault
@@ -12301,6 +12304,7 @@ p5-Geo-Caching                  ports/www/p5-Geo-Caching
 p5-Geo-Coder-Google             ports/misc/p5-Geo-Coder-Google
 p5-Geo-Coder-Multiple           ports/misc/p5-Geo-Coder-Multiple
 p5-Geo-Coordinates-Converter    ports/science/p5-Geo-Coordinates-Converter
+p5-Geo-Coordinates-Converter-iArea  ports/science/p5-Geo-Coordinates-Converter-iArea
 p5-Geo-Coordinates-UTM          ports/math/p5-Geo-Coordinates-UTM
 p5-Geo-Distance                 ports/math/p5-Geo-Distance
 p5-Geo-Distance-XS              ports/math/p5-Geo-Distance-XS
@@ -12354,6 +12358,7 @@ p5-Google-Chart                 ports/graphics/p5-Google-Chart
 p5-Google-Checkout              ports/devel/p5-Google-Checkout
 p5-Google-Code-Upload           ports/www/p5-Google-Code-Upload
 p5-Google-Data-JSON             ports/textproc/p5-Google-Data-JSON
+p5-Google-ProtocolBuffers       ports/devel/p5-Google-ProtocolBuffers
 p5-Google-SAML-Request          ports/net/p5-Google-SAML-Request
 p5-Google-SAML-Response         ports/net/p5-Google-SAML-Response
 p5-Google-Search                ports/www/p5-Google-Search
@@ -13049,6 +13054,7 @@ p5-Method-Signatures-Simple     ports/devel/p5-Method-Signatures-Simple
 p5-Mixin-Linewise               ports/devel/p5-Mixin-Linewise
 p5-Mknod                        ports/devel/p5-Mknod
 p5-Mock-Quick                   ports/devel/p5-Mock-Quick
+p5-ModPerl-VersionUtil          ports/www/p5-ModPerl-VersionUtil
 p5-Modern-Perl                  ports/lang/p5-Modern-Perl
 p5-Module-Build                 ports/devel/p5-Module-Build
 p5-Module-Build-Convert         ports/devel/p5-Module-Build-Convert
@@ -16072,6 +16078,7 @@ p5-dbix-anydbd                  ports/databases/p5-DBIx-AnyDBD
 p5-dbix-browse                  ports/databases/p5-DBIx-Browse
 p5-dbix-class                   ports/databases/p5-DBIx-Class
 p5-dbix-class-asfdat            ports/databases/p5-DBIx-Class-AsFdat
+p5-dbix-class-cursor-cached     ports/databases/p5-DBIx-Class-Cursor-Cached
 p5-dbix-class-datetime-epoch    ports/databases/p5-DBIx-Class-DateTime-Epoch
 p5-dbix-class-digestcolumns     ports/databases/p5-DBIx-Class-DigestColumns
 p5-dbix-class-dynamicdefault    ports/databases/p5-DBIx-Class-DynamicDefault
@@ -16543,6 +16550,7 @@ p5-geo-caching                  ports/www/p5-Geo-Caching
 p5-geo-coder-google             ports/misc/p5-Geo-Coder-Google
 p5-geo-coder-multiple           ports/misc/p5-Geo-Coder-Multiple
 p5-geo-coordinates-converter    ports/science/p5-Geo-Coordinates-Converter
+p5-geo-coordinates-converter-iarea  ports/science/p5-Geo-Coordinates-Converter-iArea
 p5-geo-coordinates-utm          ports/math/p5-Geo-Coordinates-UTM
 p5-geo-distance                 ports/math/p5-Geo-Distance
 p5-geo-distance-xs              ports/math/p5-Geo-Distance-XS
@@ -16601,6 +16609,7 @@ p5-google-chart                 ports/graphics/p5-Google-Chart
 p5-google-checkout              ports/devel/p5-Google-Checkout
 p5-google-code-upload           ports/www/p5-Google-Code-Upload
 p5-google-data-json             ports/textproc/p5-Google-Data-JSON
+p5-google-protocolbuffers       ports/devel/p5-Google-ProtocolBuffers
 p5-google-saml-request          ports/net/p5-Google-SAML-Request
 p5-google-saml-response         ports/net/p5-Google-SAML-Response
 p5-google-search                ports/www/p5-Google-Search
@@ -17312,6 +17321,7 @@ p5-mldbm-sync                   ports/databases/p5-MLDBM-Sync
 p5-mock-quick                   ports/devel/p5-Mock-Quick
 p5-mocked                       ports/devel/p5-mocked
 p5-modern-perl                  ports/lang/p5-Modern-Perl
+p5-modperl-versionutil          ports/www/p5-ModPerl-VersionUtil
 p5-module-build                 ports/devel/p5-Module-Build
 p5-module-build-convert         ports/devel/p5-Module-Build-Convert
 p5-module-build-kwalitee        ports/devel/p5-Module-Build-Kwalitee
@@ -20923,6 +20933,9 @@ postgresql84-server             ports/databases/postgresql84-server
 postgresql90-client             ports/databases/postgresql90-client
 postgresql90-contrib            ports/databases/postgresql90-contrib
 postgresql90-server             ports/databases/postgresql90-server
+postgresql91-client             ports/databases/postgresql91-client
+postgresql91-contrib            ports/databases/postgresql91-contrib
+postgresql91-server             ports/databases/postgresql91-server
 postgresql_autodoc              ports/databases/postgresql_autodoc
 postgrey                        ports/mail/postgrey
 postmark                        ports/benchmarks/postmark
@@ -20965,6 +20978,7 @@ pppd23                          ports/net/pppd23
 pppload                         ports/net/pppload
 pppoa                           ports/net/pppoa
 ppracer                         ports/games/ppracer
+ppsei                           ports/graphics/ppsei
 pptpclient                      ports/net/pptpclient
 ppunpack                        ports/archivers/ppunpack
 pqiv                            ports/graphics/pqiv
@@ -22205,6 +22219,7 @@ qiv                             ports/graphics/qiv
 qiviewer                        ports/graphics/qiviewer
 qix                             ports/games/qix
 qjackctl                        ports/audio/qjackctl
+qjail                           ports/sysutils/qjail
 qjson                           ports/devel/qjson
 qkismet                         ports/net-mgmt/qkismet
 qkmj                            ports/games/qkmj
@@ -23880,6 +23895,7 @@ sh-rtems-gdb                    ports/devel/sh-rtems-gdb
 sha                             ports/security/sha
 shaaft                          ports/games/shaaft
 shapelib                        ports/devel/shapelib
+shaperprobe                     ports/net/shaperprobe
 shared-desktop-ontologies       ports/x11-toolkits/shared-desktop-ontologies
 shared-mime-info                ports/misc/shared-mime-info
 sharedance                      ports/databases/sharedance
