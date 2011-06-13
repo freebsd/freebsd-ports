@@ -1,0 +1,3 @@
+This is the NANOG traceroute program. This traceroute variant offers
+features such as MPLS label decode, Path MTU discovery, AS lookup,
+and spray mode. It is maintained by a collection of volunteers.
