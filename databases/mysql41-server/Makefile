@@ -95,6 +95,9 @@ CONFLICTS=	mysql-server-[35].* mysql-server-4.[02-9].*
 
 USE_RC_SUBR=	mysql-server.sh
 
+USERS=		mysql
+GROUPS=		mysql
+
 USE_BISON=	build
 
 .if defined(WITH_NDB)
@@ -139,11 +142,6 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/mysys/default.c
 .if defined(WITH_PROC_SCOPE_PTH)
 	@${REINPLACE_CMD} -e "s|PTHREAD_SCOPE_SYSTEM|PTHREAD_SCOPE_PROCESS|g" ${WRKSRC}/sql/mysqld.cc
-.endif
-
-post-install:
-.if !defined(PACKAGE_BUILDING)
-	@${SETENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
 
 .else
