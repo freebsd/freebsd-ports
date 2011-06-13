@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	imspector
-PORTVERSION=	0.5
+PORTVERSION=	0.9
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.imspector.org/downloads/
 
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	IM transparent proxy with monitoring, blocking, and content-filtering supports
+MAINTAINER=	m.tsatsenko@gmail.com
+COMMENT=	IM transparent proxy with monitoring, blocking and content-filtering
 
-CFLAGS+=	-fPIC
+LICENSE=	GPLv2
+CFLAGS+=	-fPIC -I ${LOCALBASE}/include -DHAVE_SSL
+USE_GMAKE=	YES
+USE_ICONV=	YES
+USE_OPENSSL=	YES
 
 CONFIG_FILES=	imspector.conf badwords.txt acl.txt
 

@@ -7,9 +7,15 @@
 @unexec if cmp -s %D/%%ETCDIR%%/imspector.conf.sample %D/%%ETCDIR%%/imspector.conf; then rm -f %D/%%ETCDIR%%/imspector.conf; fi
 %%ETCDIR%%/imspector.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/imspector.conf ] ; then cp -p %D/%F %B/imspector.conf; fi
+@exec /bin/mkdir -p /var/lib/imspector
+@exec /bin/mkdir -p /var/log/imspector
 lib/imspector/aclfilterplugin.so
 lib/imspector/badwordsfilterplugin.so
+lib/imspector/catsloggingplugin.so
+lib/imspector/censordfilterplugin.so
 lib/imspector/debugloggingplugin.so
+lib/imspector/httpsprotocolplugin.so
+lib/imspector/jabberprotocolplugin.so
 lib/imspector/fileloggingplugin.so
 lib/imspector/ggprotocolplugin.so
 lib/imspector/icqprotocolplugin.so
@@ -21,3 +27,6 @@ lib/libimspector.so
 sbin/imspector
 @dirrmtry etc/imspector
 @dirrm lib/imspector
+@cwd /
+@dirrmtry var/lib/imspector
+@dirrmtry var/log/imspector
