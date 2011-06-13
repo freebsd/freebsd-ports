@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freecol
-PORTVERSION=	0.9.5
+PORTVERSION=	0.10.0
 CATEGORIES=	games java
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,6 +16,7 @@ COMMENT=	An open source version of Colonization
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+USE_ZIP=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_JAVA=	yes
@@ -29,7 +30,7 @@ PLIST_FILES=	bin/freecol
 PORTDATA=	*
 PORTDOCS=	*
 
-DESKTOP_ENTRIES="FreeCol" "${COMMENT}" "${DATADIR}/freecol.xpm" "freecol" "Game;ArcadeGame;" false
+DESKTOP_ENTRIES="FreeCol" "${COMMENT}" "${DATADIR}/freecol.xpm" "freecol" "Game;StrategyGame;" false
 
 post-patch:
 	@${REINPLACE_CMD} 's|%%DATADIR%%|${DATADIR}|g' \
