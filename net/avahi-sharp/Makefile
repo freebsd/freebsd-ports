@@ -10,7 +10,7 @@ PORTREVISION=	0
 CATEGORIES=	net dns
 PKGNAMESUFFIX=	-sharp
 
-MAINTAINER=	bsd-sharp@googlegroups.com
+MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono bindings for Avahi service discovery
 
 LIB_DEPENDS=	avahi-core:${PORTSDIR}/net/avahi-app

@@ -13,7 +13,7 @@ CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus/
 DISTNAME=	dbus-${PORTVERSION}
 
-MAINTAINER=	bsd-sharp@googlegroups.com
+MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Mono interface to the D-BUS messaging system
 
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
