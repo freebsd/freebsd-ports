@@ -19,6 +19,9 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
 RUN_DEPENDS=	${LOCALBASE}/bin/tcprules:${PORTSDIR}/sysutils/ucspi-tcp
 USE_QMAIL=	yes
 
+DEPRECATED=	Obsolate version, install mail/vpopmail port
+EXPIRATION_DATE=2011-06-26
+
 CONFLICTS=	vpopmail-5.*
 
 PORTSCOUT=	limit:^5\.5\.[0-9]+$
