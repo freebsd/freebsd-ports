@@ -18,7 +18,7 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 GITVERSION=	0-g064fc53
 FETCH_ARGS=	-pRr
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-064fc53
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${GITVERSION:S/^0-g//}
 USE_SCONS=	yes
 OPTIONS=	DEBUG "Build in debug mode" Off \
 		SNAPSHOT "Enable snapshots" Off
