@@ -16,6 +16,9 @@ COMMENT=	A Just In Time java bytecode compiler
 
 LIB_DEPENDS=	gdbm:${PORTSDIR}/databases/gdbm
 
+DEPRECATED=	ancient version of Java
+EXPIRATION_DATE=2011-07-12
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 ONLY_FOR_ARCHS=	i386
 
