@@ -21,6 +21,8 @@ BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang-lite \
 RUN_DEPENDS=	erlc:${PORTSDIR}/lang/erlang-lite \
 		sudo:${PORTSDIR}/security/sudo
 
+BROKEN=		does not build
+
 USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_RC_SUBR=	rabbitmq
