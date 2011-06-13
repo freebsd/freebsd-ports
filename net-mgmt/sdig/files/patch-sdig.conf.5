@@ -1,0 +1,20 @@
+--- sdig.conf.5.orig	2011-05-30 17:21:10.000000000 -0400
++++ sdig.conf.5	2011-05-30 17:21:34.000000000 -0400
+@@ -109,7 +109,7 @@
+ This program is optional, and is provided to augment DNS lookups in
+ environments laden with Windows machines.
+ 
+-	NMBLOOKUP /usr/local/samba/bin/nmblookup
++	NMBLOOKUP %%PREFIX%%/bin/nmblookup
+ 
+ .IP "MACTABLE \fIpath\fR"
+ 
+@@ -122,7 +122,7 @@
+ source distribution.  You can get it on the main sdig web site -
+ http://www.exploits.org/sdig/
+ 
+-	MACTABLE /etc/mactable
++	MACTABLE %%PREFIX%%/etc/mactable
+ 
+ .IP "HOSTINFO \fIpath\fR"
+  
