@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	x11
 MASTER_SITES=	http://www.math.missouri.edu/~stephen/software/xkbset/
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Manage various XKB features of X Window
 
 MAN1=		xkbset.1
