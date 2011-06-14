@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://c.speedtest.net/mini/
 DISTNAME=	mini
 
-MAINTAINER=	gx@bsdplanet.ru
+MAINTAINER=	tut@nhamon.com.ua
 COMMENT=	Mini bandwidth speed test on your own server
 
 NO_BUILD=	yes
