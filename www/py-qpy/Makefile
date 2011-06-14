@@ -11,9 +11,10 @@ CATEGORIES=	www python
 MASTER_SITES=	http://www.mems-exchange.org/software/qpy/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Generating safely-quoted html text from python code
 
+MAKE_ENV=	USE_DISTUTILS=yes
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 
