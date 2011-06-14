@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bwping
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	net
 MASTER_SITES=	SF
 
@@ -17,6 +17,9 @@ PLIST_FILES=	sbin/bwping
 
 GNU_CONFIGURE=	yes
 MAN8=		bwping.8
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 post-install:
 	@${STRIP_CMD} ${PREFIX}/sbin/bwping
