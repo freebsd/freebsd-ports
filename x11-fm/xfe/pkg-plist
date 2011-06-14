@@ -132,6 +132,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/blue-theme/fliplr.png
 %%DATADIR%%/icons/blue-theme/flipud.png
 %%DATADIR%%/icons/blue-theme/floppy.png
+%%DATADIR%%/icons/blue-theme/font_16x16.png
+%%DATADIR%%/icons/blue-theme/font_32x32.png
 %%DATADIR%%/icons/blue-theme/fonts.png
 %%DATADIR%%/icons/blue-theme/gif_16x16.png
 %%DATADIR%%/icons/blue-theme/gif_32x32.png
@@ -248,6 +250,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/blue-theme/run.png
 %%DATADIR%%/icons/blue-theme/saveas.png
 %%DATADIR%%/icons/blue-theme/savefile.png
+%%DATADIR%%/icons/blue-theme/sci_16x16.png
+%%DATADIR%%/icons/blue-theme/sci_32x32.png
 %%DATADIR%%/icons/blue-theme/search.png
 %%DATADIR%%/icons/blue-theme/searchnext.png
 %%DATADIR%%/icons/blue-theme/searchprev.png
@@ -436,6 +440,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/brown-theme/fliplr.png
 %%DATADIR%%/icons/brown-theme/flipud.png
 %%DATADIR%%/icons/brown-theme/floppy.png
+%%DATADIR%%/icons/brown-theme/font_16x16.png
+%%DATADIR%%/icons/brown-theme/font_32x32.png
 %%DATADIR%%/icons/brown-theme/fonts.png
 %%DATADIR%%/icons/brown-theme/gif_16x16.png
 %%DATADIR%%/icons/brown-theme/gif_32x32.png
@@ -552,6 +558,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/brown-theme/run.png
 %%DATADIR%%/icons/brown-theme/saveas.png
 %%DATADIR%%/icons/brown-theme/savefile.png
+%%DATADIR%%/icons/brown-theme/sci_16x16.png
+%%DATADIR%%/icons/brown-theme/sci_32x32.png
 %%DATADIR%%/icons/brown-theme/search.png
 %%DATADIR%%/icons/brown-theme/searchnext.png
 %%DATADIR%%/icons/brown-theme/searchprev.png
@@ -740,6 +748,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnome-theme/fliplr.png
 %%DATADIR%%/icons/gnome-theme/flipud.png
 %%DATADIR%%/icons/gnome-theme/floppy.png
+%%DATADIR%%/icons/gnome-theme/font_16x16.png
+%%DATADIR%%/icons/gnome-theme/font_32x32.png
 %%DATADIR%%/icons/gnome-theme/fonts.png
 %%DATADIR%%/icons/gnome-theme/gif_16x16.png
 %%DATADIR%%/icons/gnome-theme/gif_32x32.png
@@ -856,6 +866,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnome-theme/run.png
 %%DATADIR%%/icons/gnome-theme/saveas.png
 %%DATADIR%%/icons/gnome-theme/savefile.png
+%%DATADIR%%/icons/gnome-theme/sci_16x16.png
+%%DATADIR%%/icons/gnome-theme/sci_32x32.png
 %%DATADIR%%/icons/gnome-theme/search.png
 %%DATADIR%%/icons/gnome-theme/searchnext.png
 %%DATADIR%%/icons/gnome-theme/searchprev.png
@@ -1044,6 +1056,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnomeblue-theme/fliplr.png
 %%DATADIR%%/icons/gnomeblue-theme/flipud.png
 %%DATADIR%%/icons/gnomeblue-theme/floppy.png
+%%DATADIR%%/icons/gnomeblue-theme/font_16x16.png
+%%DATADIR%%/icons/gnomeblue-theme/font_32x32.png
 %%DATADIR%%/icons/gnomeblue-theme/fonts.png
 %%DATADIR%%/icons/gnomeblue-theme/gif_16x16.png
 %%DATADIR%%/icons/gnomeblue-theme/gif_32x32.png
@@ -1160,6 +1174,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/gnomeblue-theme/run.png
 %%DATADIR%%/icons/gnomeblue-theme/saveas.png
 %%DATADIR%%/icons/gnomeblue-theme/savefile.png
+%%DATADIR%%/icons/gnomeblue-theme/sci_16x16.png
+%%DATADIR%%/icons/gnomeblue-theme/sci_32x32.png
 %%DATADIR%%/icons/gnomeblue-theme/search.png
 %%DATADIR%%/icons/gnomeblue-theme/searchnext.png
 %%DATADIR%%/icons/gnomeblue-theme/searchprev.png
@@ -1348,6 +1364,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/kde-theme/fliplr.png
 %%DATADIR%%/icons/kde-theme/flipud.png
 %%DATADIR%%/icons/kde-theme/floppy.png
+%%DATADIR%%/icons/kde-theme/font_16x16.png
+%%DATADIR%%/icons/kde-theme/font_32x32.png
 %%DATADIR%%/icons/kde-theme/fonts.png
 %%DATADIR%%/icons/kde-theme/gif_16x16.png
 %%DATADIR%%/icons/kde-theme/gif_32x32.png
@@ -1464,6 +1482,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/kde-theme/run.png
 %%DATADIR%%/icons/kde-theme/saveas.png
 %%DATADIR%%/icons/kde-theme/savefile.png
+%%DATADIR%%/icons/kde-theme/sci_16x16.png
+%%DATADIR%%/icons/kde-theme/sci_32x32.png
 %%DATADIR%%/icons/kde-theme/search.png
 %%DATADIR%%/icons/kde-theme/searchnext.png
 %%DATADIR%%/icons/kde-theme/searchprev.png
@@ -1652,6 +1672,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/tango-theme/fliplr.png
 %%DATADIR%%/icons/tango-theme/flipud.png
 %%DATADIR%%/icons/tango-theme/floppy.png
+%%DATADIR%%/icons/tango-theme/font_16x16.png
+%%DATADIR%%/icons/tango-theme/font_32x32.png
 %%DATADIR%%/icons/tango-theme/fonts.png
 %%DATADIR%%/icons/tango-theme/gif_16x16.png
 %%DATADIR%%/icons/tango-theme/gif_32x32.png
@@ -1768,6 +1790,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/tango-theme/run.png
 %%DATADIR%%/icons/tango-theme/saveas.png
 %%DATADIR%%/icons/tango-theme/savefile.png
+%%DATADIR%%/icons/tango-theme/sci_16x16.png
+%%DATADIR%%/icons/tango-theme/sci_32x32.png
 %%DATADIR%%/icons/tango-theme/search.png
 %%DATADIR%%/icons/tango-theme/searchnext.png
 %%DATADIR%%/icons/tango-theme/searchprev.png
@@ -1956,6 +1980,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/windows-theme/fliplr.png
 %%DATADIR%%/icons/windows-theme/flipud.png
 %%DATADIR%%/icons/windows-theme/floppy.png
+%%DATADIR%%/icons/windows-theme/font_16x16.png
+%%DATADIR%%/icons/windows-theme/font_32x32.png
 %%DATADIR%%/icons/windows-theme/fonts.png
 %%DATADIR%%/icons/windows-theme/gif_16x16.png
 %%DATADIR%%/icons/windows-theme/gif_32x32.png
@@ -2072,6 +2098,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/windows-theme/run.png
 %%DATADIR%%/icons/windows-theme/saveas.png
 %%DATADIR%%/icons/windows-theme/savefile.png
+%%DATADIR%%/icons/windows-theme/sci_16x16.png
+%%DATADIR%%/icons/windows-theme/sci_32x32.png
 %%DATADIR%%/icons/windows-theme/search.png
 %%DATADIR%%/icons/windows-theme/searchnext.png
 %%DATADIR%%/icons/windows-theme/searchprev.png
@@ -2260,6 +2288,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfce-theme/fliplr.png
 %%DATADIR%%/icons/xfce-theme/flipud.png
 %%DATADIR%%/icons/xfce-theme/floppy.png
+%%DATADIR%%/icons/xfce-theme/font_16x16.png
+%%DATADIR%%/icons/xfce-theme/font_32x32.png
 %%DATADIR%%/icons/xfce-theme/fonts.png
 %%DATADIR%%/icons/xfce-theme/gif_16x16.png
 %%DATADIR%%/icons/xfce-theme/gif_32x32.png
@@ -2376,6 +2406,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfce-theme/run.png
 %%DATADIR%%/icons/xfce-theme/saveas.png
 %%DATADIR%%/icons/xfce-theme/savefile.png
+%%DATADIR%%/icons/xfce-theme/sci_16x16.png
+%%DATADIR%%/icons/xfce-theme/sci_32x32.png
 %%DATADIR%%/icons/xfce-theme/search.png
 %%DATADIR%%/icons/xfce-theme/searchnext.png
 %%DATADIR%%/icons/xfce-theme/searchprev.png
@@ -2564,6 +2596,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfe-theme/fliplr.png
 %%DATADIR%%/icons/xfe-theme/flipud.png
 %%DATADIR%%/icons/xfe-theme/floppy.png
+%%DATADIR%%/icons/xfe-theme/font_16x16.png
+%%DATADIR%%/icons/xfe-theme/font_32x32.png
 %%DATADIR%%/icons/xfe-theme/fonts.png
 %%DATADIR%%/icons/xfe-theme/gif_16x16.png
 %%DATADIR%%/icons/xfe-theme/gif_32x32.png
@@ -2680,6 +2714,8 @@ share/applications/xfp.desktop
 %%DATADIR%%/icons/xfe-theme/run.png
 %%DATADIR%%/icons/xfe-theme/saveas.png
 %%DATADIR%%/icons/xfe-theme/savefile.png
+%%DATADIR%%/icons/xfe-theme/sci_16x16.png
+%%DATADIR%%/icons/xfe-theme/sci_32x32.png
 %%DATADIR%%/icons/xfe-theme/search.png
 %%DATADIR%%/icons/xfe-theme/searchnext.png
 %%DATADIR%%/icons/xfe-theme/searchprev.png
