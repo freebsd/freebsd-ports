@@ -6,44 +6,34 @@
 #
 
 PORTNAME=	qp
-PORTVERSION=	2.0
-PORTREVISION=	1
+PORTVERSION=	2.2
 CATEGORIES=	www python
-MASTER_SITES=	http://www.mems-exchange.org/software/qp/ \
-		${MASTER_SITE_LOCAL} \
-		http://dryice.name/computer/FreeBSD/distfiles/
+MASTER_SITES=	http://www.mems-exchange.org/software/qp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A python web framework to use qpy and durus together
 
-BUILD_DEPENDS+=	qpcheck.py:${PORTSDIR}/www/py-qpy
-BUILD_DEPENDS+=	durus:${PORTSDIR}/devel/py-durus
-BUILD_DEPENDS+=	pythoni:${PORTSDIR}/devel/py-repl
-RUN_DEPENDS+=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}durus>=0:${PORTSDIR}/devel/py-durus \
+		${PYTHON_PKGNAMEPREFIX}qpy>=1.7:${PORTSDIR}/www/py-qpy
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}durus>=0:${PORTSDIR}/devel/py-durus \
+		${PYTHON_PKGNAMEPREFIX}qpy>=1.7:${PORTSDIR}/www/py-qpy
 
-BROKEN=		does not build
-
-USE_PYTHON=	2.5+
+MAKE_ENV=	USE_DISTUTILS=yes
+USE_PYTHON=	2.5-2.7
 USE_PYDISTUTILS=	yes
-SUB_FILES+=	pkg-message
-SUB_LIST+=	PYTHON_VERSION=${PYTHON_VERSION}
 
-.include <bsd.port.pre.mk>
+SUB_FILES=	pkg-message
 
 post-install:
-	@ PYTHONPATH=${PREFIX}/lib/${PYTHON_VERSION}/site-packages \
-	  ${PYTHON_CMD} -c "import qp.fill"; \
-     	  cd ${WRKSRC}; \
-	  ${PYTHON_CMD} setup.py install_demo_sites ${EXAMPLESDIR}
-
 .if !defined(NOPORTDOCS)
-	@ ${MKDIR} ${DOCSDIR}
-.for docfile in CHANGES.txt LICENSE.txt README.txt
-	@ ${INSTALL_DATA} ${WRKSRC}/${docfile} ${DOCSDIR}
-.endfor
+	@${MKDIR} ${DOCSDIR}/
+	@cd ${WRKSRC} && \
+		${INSTALL_DATA} CHANGES.txt LICENSE.txt README.txt ${DOCSDIR}/
 .endif
-
+.if !defined(NOPORTEXAMPLES)
+	@cd ${WRKSRC} && ${PYTHON_CMD} ${PYSETUP} install_demo_sites ${EXAMPLESDIR}
+.endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
