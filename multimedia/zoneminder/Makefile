@@ -7,7 +7,7 @@
 
 PORTNAME=	zoneminder
 PORTVERSION=	1.24.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www2.zoneminder.com/downloads/ \
 		http://www.zoneminder.com/downloads/
@@ -38,7 +38,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/php/20090626/mysql.so:${PORTSDIR}/databases/php5
 		${LOCALBASE}/include/gnutls/openssl.h:${PORTSDIR}/security/gnutls
 
 GNU_CONFIGURE=	yes
-USE_PHP=	yes
+USE_PHP=	json mysql session
 USE_PERL5=	yes
 USE_MYSQL=	yes
 USE_RC_SUBR=	zm
