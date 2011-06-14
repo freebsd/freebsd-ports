@@ -1,5 +1,5 @@
 --- Makefile.orig	2008-12-22 15:03:15.000000000 +0300
-+++ Makefile	2011-06-13 16:39:07.748652935 +0400
++++ Makefile	2011-06-14 14:26:22.072210675 +0400
 @@ -1,5 +1,5 @@
 -DESTDIR = /
 -PREFIX = /usr
@@ -37,6 +37,15 @@
  
  IMSPECTOR_OBJS = main.o protocolplugin.o loggingplugin.o filterplugin.o responderplugin.o $(SSL_OBJS)
  
+@@ -54,7 +54,7 @@
+ msnprotocolplugin.so: msnprotocolplugin.o libimspector.so
+ 	$(CXX) msnprotocolplugin.o libimspector.so $(PLUGIN_FLAGS)
+ icqprotocolplugin.so: icqprotocolplugin.o libimspector.so
+-	$(CXX) icqprotocolplugin.o libimspector.so $(PLUGIN_FLAGS)
++	$(CXX) icqprotocolplugin.o libimspector.so $(PLUGIN_FLAGS) -liconv -L${LOCALBASE}/lib
+ yahooprotocolplugin.so: yahooprotocolplugin.o libimspector.so
+ 	$(CXX) yahooprotocolplugin.o libimspector.so $(PLUGIN_FLAGS)
+ ircprotocolplugin.so: ircprotocolplugin.o libimspector.so
 @@ -162,15 +162,15 @@
  install: imspector libimspector.so $(PLUGINS)
  	-mkdir -p $(DESTDIR)/$(PREFIX)/sbin
