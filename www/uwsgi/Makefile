@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uwsgi
-PORTVERSION=	0.9.7.2
+PORTVERSION=	0.9.8
 CATEGORIES=	www python
 MASTER_SITES=	http://projects.unbit.it/downloads/
 
