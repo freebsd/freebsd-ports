@@ -7,7 +7,7 @@
 
 PORTNAME=	neon29
 PORTVERSION=	0.29.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 DISTNAME=	neon-${PORTVERSION}
@@ -17,6 +17,13 @@ COMMENT=	An HTTP and WebDAV client library for Unix systems
 
 CONFLICTS=	neon2[6|8]-[0-9]*
 
+OPTIONS=	EXPAT "Build with exapt-based XML parser" on \
+		XML "Build with libxml-based XML parser" off \
+		OPENSSL "Build with SSL support" on \
+		NLS "Build with NLS support" on \
+		GSSAPI "Build with GSSAPI support" on \
+		PROXY "Build with libproxy support" off
+
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
@@ -25,9 +32,15 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared \
 		--with-libs=${LOCALBASE}:${PREFIX}
 
+.include "bsd.port.options.mk"
+
+.if defined(WITH_EXPAT) && defined(WITH_XML)
+BROKEN=expat and libxml is not compatible
+.endif
+
 # expat is default unless WITH_XML is choosen
 .if !defined(WITHOUT_EXPAT) && !defined(WITH_XML)
-CONFIGURE_ARGS+=	--with-expat
+CONFIGURE_ARGS+=--with-expat
 LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
 .endif
 
@@ -36,9 +49,9 @@ CONFIGURE_ARGS+=--with-libxml2
 LIB_DEPENDS+=	xml2.5:${PORTSDIR}/textproc/libxml2
 .endif
 
-.ifndef WITHOUT_OPENSSL
-USE_OPENSSL=	yes
+.if !defined(WITHOUT_OPENSSL)
 CONFIGURE_ARGS+=--with-ssl
+USE_OPENSSL=	yes
 .endif
 
 .if defined(WITHOUT_NLS)
@@ -51,6 +64,13 @@ PLIST_SUB+=	NLS=""
 
 .if defined(WITHOUT_GSSAPI)
 CONFIGURE_ARGS+=--without-gssapi
+.endif
+
+.if defined(WITH_PROXY)
+CONFIGURE_ARGS+=--with-libproxy
+LIB_DEPENDS+=	proxy.0:${PORTSDIR}/net/libproxy
+.else
+CONFIGURE_ARGS+=--without-libproxy
 .endif
 
 MAN1=	neon-config.1
@@ -125,8 +145,6 @@ MLINKS=	ne_add_request_header.3 ne_print_request_header.3 \
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 DOCSDIR=	${PREFIX}/share/doc/neon
 
-.include <bsd.port.pre.mk>
-
 pre-everything::
 .if defined(WITH_EXPAT) && defined(WITH_XML)
 	@${ECHO_CMD} "please choose between expat and libxml2 not both"
@@ -140,4 +158,4 @@ post-install:
 	(cd ${WRKSRC} ; ${MAKE} install-html)
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
