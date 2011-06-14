@@ -976,6 +976,7 @@
 @exec mkdir -p %D/share/icons/oxygen/16x16/intl
 @exec mkdir -p %D/share/icons/oxygen/16x16/mimetypes
 @exec mkdir -p %D/share/icons/oxygen/16x16/places
+@exec mkdir -p %D/share/icons/oxygen/16x16/special
 @exec mkdir -p %D/share/icons/oxygen/16x16/status
 @exec mkdir -p %D/share/icons/oxygen/22x22
 @exec mkdir -p %D/share/icons/oxygen/22x22/actions
@@ -1276,6 +1277,7 @@
 @dirrmtry share/icons/oxygen/22x22/actions
 @dirrmtry share/icons/oxygen/22x22
 @dirrmtry share/icons/oxygen/16x16/status
+@dirrmtry share/icons/oxygen/16x16/special
 @dirrmtry share/icons/oxygen/16x16/places
 @dirrmtry share/icons/oxygen/16x16/mimetypes
 @dirrmtry share/icons/oxygen/16x16/intl

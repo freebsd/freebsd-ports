@@ -128,7 +128,6 @@ lib/libmarblewidget.so.0.11.0
 lib/libmarblewidget.so.11
 share/applications/kde4/marble.desktop
 share/apps/cmake/modules/FindMarble.cmake
-share/apps/cmake/modules/FindMarbleWidget.cmake
 share/apps/marble/data/LICENSE.txt
 share/apps/marble/data/bitmaps/airport.png
 share/apps/marble/data/bitmaps/annotation.png

@@ -907,6 +907,9 @@ share/doc/HTML/de/klettres/klettres3.png
 share/doc/HTML/de/klettres/klettres4.png
 share/doc/HTML/de/klettres/klettres5.png
 share/doc/HTML/de/klettres/klettres6.png
+share/doc/HTML/de/klickety/common
+share/doc/HTML/de/klickety/index.cache.bz2
+share/doc/HTML/de/klickety/index.docbook
 share/doc/HTML/de/klines/common
 share/doc/HTML/de/klines/gamescreen.png
 share/doc/HTML/de/klines/index.cache.bz2
@@ -2177,6 +2180,7 @@ share/locale/de/entry.desktop
 @dirrm share/doc/HTML/de/klipper
 @dirrm share/doc/HTML/de/klinkstatus
 @dirrm share/doc/HTML/de/klines
+@dirrm share/doc/HTML/de/klickety
 @dirrm share/doc/HTML/de/klettres
 @dirrm share/doc/HTML/de/kjumpingcube
 @dirrm share/doc/HTML/de/kiten

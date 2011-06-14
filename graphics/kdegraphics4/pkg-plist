@@ -144,6 +144,7 @@ share/applications/kde4/okularApplication_pdf.desktop
 share/applications/kde4/okularApplication_plucker.desktop
 share/applications/kde4/okularApplication_tiff.desktop
 share/applications/kde4/okularApplication_xps.desktop
+share/apps/cmake/modules/FindKSane.cmake
 share/apps/gvpart/gvpart.rc
 share/apps/gwenview/cursors/zoom.png
 share/apps/gwenview/fullscreenthemes/blackglass/checked.png

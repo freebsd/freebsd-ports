@@ -1,5 +1,5 @@
---- ./marble/src/plugins/positionprovider/gpsd/GpsdConnection.cpp.orig	2011-03-22 18:32:49.000000000 +0300
-+++ ./marble/src/plugins/positionprovider/gpsd/GpsdConnection.cpp	2011-03-22 19:24:18.000000000 +0300
+--- ./src/plugins/positionprovider/gpsd/GpsdConnection.cpp.orig	2011-03-22 18:32:49.000000000 +0300
++++ ./src/plugins/positionprovider/gpsd/GpsdConnection.cpp	2011-03-22 19:24:18.000000000 +0300
 @@ -18,7 +18,8 @@
  
  GpsdConnection::GpsdConnection( QObject* parent )

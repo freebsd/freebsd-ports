@@ -786,6 +786,20 @@ share/doc/HTML/nl/kpat/common
 share/doc/HTML/nl/kpat/index.cache.bz2
 share/doc/HTML/nl/kpat/index.docbook
 share/doc/HTML/nl/kpat/man-kpat.6.docbook
+share/doc/HTML/nl/kppp/accounting.docbook
+share/doc/HTML/nl/kppp/callback.docbook
+share/doc/HTML/nl/kppp/chap.docbook
+share/doc/HTML/nl/kppp/common
+share/doc/HTML/nl/kppp/dialog-setup.docbook
+share/doc/HTML/nl/kppp/getting-online.docbook
+share/doc/HTML/nl/kppp/global-settings.docbook
+share/doc/HTML/nl/kppp/hayes.docbook
+share/doc/HTML/nl/kppp/index.cache.bz2
+share/doc/HTML/nl/kppp/index.docbook
+share/doc/HTML/nl/kppp/kppp-faq.docbook
+share/doc/HTML/nl/kppp/security.docbook
+share/doc/HTML/nl/kppp/tricks.docbook
+share/doc/HTML/nl/kppp/wizard.docbook
 share/doc/HTML/nl/krdc/common
 share/doc/HTML/nl/krdc/index.cache.bz2
 share/doc/HTML/nl/krdc/index.docbook
@@ -1725,6 +1739,7 @@ share/locale/nl/entry.desktop
 @dirrm share/doc/HTML/nl/krfb
 @dirrm share/doc/HTML/nl/kreversi
 @dirrm share/doc/HTML/nl/krdc
+@dirrm share/doc/HTML/nl/kppp
 @dirrm share/doc/HTML/nl/kpat
 @dirrm share/doc/HTML/nl/kopete
 @dirrm share/doc/HTML/nl/konsole

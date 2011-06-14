@@ -27,17 +27,8 @@ USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build
 USE_LDCONFIG=	yes
 DISTINFO_FILE=	${PORTSDIR}/misc/kdeedu4/distinfo
-MAKE_JOBS_UNSAFE=	yes
 
-CMAKE_SOURCE_PATH=	${WRKSRC}/marble
+WRKSRC=		${WRKDIR}/${DISTNAME}/marble
 CMAKE_OUTSOURCE=	yes
-
-pre-configure:
-	${LN} -s ${WRKSRC}/doc/marble ${WRKSRC}/marble/marble
-
-post-install:
-	${MKDIR} ${PREFIX}/share/apps/cmake/modules
-	${INSTALL_DATA} ${WRKSRC}/cmake/modules/FindMarbleWidget.cmake \
-		${PREFIX}/share/apps/cmake/modules
 
 .include <bsd.port.mk>

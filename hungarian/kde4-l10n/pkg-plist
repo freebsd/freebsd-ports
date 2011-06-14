@@ -136,6 +136,7 @@ share/locale/hu/LC_MESSAGES/adblock.mo
 share/locale/hu/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/hu/LC_MESSAGES/akonadi_kolabproxy_resource.mo
 share/locale/hu/LC_MESSAGES/akonadi_localbookmarks_resource.mo
+share/locale/hu/LC_MESSAGES/akonadi_nepomukfeeder.mo
 share/locale/hu/LC_MESSAGES/akonadi_nepomuktag_resource.mo
 share/locale/hu/LC_MESSAGES/akonadi_serializer_plugins.mo
 share/locale/hu/LC_MESSAGES/akonadicontact.mo

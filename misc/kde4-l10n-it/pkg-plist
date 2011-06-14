@@ -327,6 +327,9 @@ share/doc/HTML/it/kcontrol/componentchooser/index.docbook
 share/doc/HTML/it/kcontrol/cookies/common
 share/doc/HTML/it/kcontrol/cookies/index.cache.bz2
 share/doc/HTML/it/kcontrol/cookies/index.docbook
+share/doc/HTML/it/kcontrol/cursortheme/common
+share/doc/HTML/it/kcontrol/cursortheme/index.cache.bz2
+share/doc/HTML/it/kcontrol/cursortheme/index.docbook
 share/doc/HTML/it/kcontrol/desktop/common
 share/doc/HTML/it/kcontrol/desktop/index.cache.bz2
 share/doc/HTML/it/kcontrol/desktop/index.docbook
@@ -1955,6 +1958,7 @@ share/locale/it/entry.desktop
 @dirrm share/doc/HTML/it/kcontrol/ebrowsing
 @dirrm share/doc/HTML/it/kcontrol/desktopthemedetails
 @dirrm share/doc/HTML/it/kcontrol/desktop
+@dirrm share/doc/HTML/it/kcontrol/cursortheme
 @dirrm share/doc/HTML/it/kcontrol/cookies
 @dirrm share/doc/HTML/it/kcontrol/componentchooser
 @dirrm share/doc/HTML/it/kcontrol/colors
