@@ -50,7 +50,6 @@ include/ginac/wildcard.h
 lib/libginac.a
 lib/libginac.la
 lib/libginac.so
-lib/libginac-1.5.so
-lib/libginac-1.5.so.2
+lib/libginac.so.2
 libdata/pkgconfig/ginac.pc
 @dirrm include/ginac
