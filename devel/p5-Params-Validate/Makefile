@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Params-Validate
-PORTVERSION=	0.99
+PORTVERSION=	1.00
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -20,8 +20,8 @@ BUILD_DEPENDS=	p5-ExtUtils-CBuilder>=0.2703:${PORTSDIR}/devel/p5-ExtUtils-CBuild
 
 PERL_MODBUILD=	yes
 
-MAN3=		Attribute::Params::Validate.3 Params::ValidateXS.3 \
-		Params::ValidatePP.3 Params::Validate.3
+MAN3=		Attribute::Params::Validate.3 \
+		Params::Validate.3
 
 .include <bsd.port.pre.mk>
 
