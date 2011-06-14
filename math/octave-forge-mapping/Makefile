@@ -10,7 +10,7 @@ PORTVERSION=	1.0.7
 PORTREVISION=	3
 CATEGORIES=	math
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 GNU_CONFIGURE=	yes
 

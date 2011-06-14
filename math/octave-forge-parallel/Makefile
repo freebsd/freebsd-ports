@@ -9,7 +9,7 @@ PORTNAME=	octave-forge-parallel
 PORTVERSION=	2.0.4
 CATEGORIES=	math
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

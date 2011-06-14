@@ -11,7 +11,7 @@ CATEGORIES=	math
 MASTER_SITES=	http://www.qhull.org/download/
 DISTNAME=	${PORTNAME}-2003.1
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Qhull computes convex hulls, Delaunay triangulations and halfspaces
 
 PATCH_SITES=		http://www.qhull.org/download/

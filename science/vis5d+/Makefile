@@ -12,7 +12,7 @@ PORTREVISION=	15
 CATEGORIES=	science
 MASTER_SITES=	SF/vis5d/vis5d/${PORTVERSION}
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	OpenGL-based volumetric visualization program for scientific datasets
 
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick

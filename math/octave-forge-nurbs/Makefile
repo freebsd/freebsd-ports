@@ -9,7 +9,7 @@ PORTNAME=	octave-forge-nurbs
 PORTVERSION=	1.3.3
 CATEGORIES=	math
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src

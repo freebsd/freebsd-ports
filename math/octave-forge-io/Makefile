@@ -9,7 +9,7 @@ PORTNAME=	octave-forge-io
 PORTVERSION=	1.0.14
 CATEGORIES=	math
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 .include <bsd.port.pre.mk>

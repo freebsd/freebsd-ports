@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	cad
 MASTER_SITES=	SF/netgen-mesher/netgen-mesher/${PORTVERSION}/
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	An automatic 3D tetrahedral mesh generator
 
 LIB_DEPENDS=	Tix8.4.3:${PORTSDIR}/x11-toolkits/tix \

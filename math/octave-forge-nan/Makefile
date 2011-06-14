@@ -9,7 +9,7 @@ PORTNAME=	octave-forge-nan
 PORTVERSION=	2.4.4
 CATEGORIES=	math
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 WRKSRC=		${WRKDIR}/NaN/src

@@ -13,7 +13,7 @@ CATEGORIES=	graphics math
 MASTER_SITES=	http://www.sfr-fresh.com/unix/misc/
 DISTNAME=	dx-${PORTVERSION}
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	IBM's Open Visualization Data Explorer
 
 LIB_DEPENDS=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick	\

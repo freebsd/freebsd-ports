@@ -20,7 +20,7 @@ MASTER_SITES=	#none
 DISTFILES=	#none
 EXTRACT_ONLY=	#none
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge baseport for all packages
 
 RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave

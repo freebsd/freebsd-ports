@@ -11,7 +11,7 @@ CATEGORIES=	math graphics
 MASTER_SITES=	http://www.math.pitt.edu/~bard/bardware/
 DISTNAME=	${PORTNAME}_latest
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Graphical tool for solving differential equations, etc
 
 MAN1=		xppaut.1
