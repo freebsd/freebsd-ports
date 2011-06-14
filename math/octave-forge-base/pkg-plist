@@ -1,7 +1,7 @@
-@exec mkdir -p %%LOCALBASE%%/libexec/octave/packages
-@exec mkdir -p %%LOCALBASE%%/share/octave/packages
-@exec mkdir -p %%LOCALBASE%%/share/octave/tarballs
-@unexec rm -rf %%LOCALBASE%%/libexec/octave/packages
-@unexec rm -f %%LOCALBASE%%/share/octave/octave_packages
-@unexec rm -rf %%LOCALBASE%%/share/octave/packages
-@unexec rm -rf %%LOCALBASE%%/share/octave/tarballs
+@exec mkdir -p %D/libexec/octave/packages
+@exec mkdir -p %D/share/octave/packages
+@exec mkdir -p %D/share/octave/tarballs
+@unexec rm -rf %D/libexec/octave/packages 2>&1 >/dev/null || true
+@unexec rm -f %D/share/octave/octave_packages 2>&1 >/dev/null || true
+@unexec rm -rf %D/share/octave/packages 2>&1 >/dev/null || true
+@unexec rm -rf %D/share/octave/tarballs 2>&1 >/dev/null || true
