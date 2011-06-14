@@ -111,6 +111,7 @@ share/apps/kile/complete/tex/scrtime.cwl
 share/apps/kile/complete/tex/setspace.cwl
 share/apps/kile/complete/tex/siunitx-special.cwl
 share/apps/kile/complete/tex/siunitx.cwl
+share/apps/kile/complete/tex/soul.cwl
 share/apps/kile/complete/tex/subfig.cwl
 share/apps/kile/complete/tex/supertabular.cwl
 share/apps/kile/complete/tex/svn-multi.cwl
@@ -1452,6 +1453,8 @@ share/doc/HTML/en/kile/delete.png
 share/doc/HTML/en/kile/dialog-addhelp.png
 share/doc/HTML/en/kile/dialog-docbrowser1.png
 share/doc/HTML/en/kile/dialog-docbrowser2.png
+share/doc/HTML/en/kile/dialog-float.png
+share/doc/HTML/en/kile/dialog-math.png
 share/doc/HTML/en/kile/dialog-pstools.png
 share/doc/HTML/en/kile/dialog-tabular.png
 share/doc/HTML/en/kile/dialog-userhelp.png
@@ -1475,8 +1478,6 @@ share/doc/HTML/en/kile/select.png
 share/doc/HTML/en/kile/snap_autocomplete.png
 share/doc/HTML/en/kile/snap_compile_error.png
 share/doc/HTML/en/kile/snap_editusertag.png
-share/doc/HTML/en/kile/snap_encoding.png
-share/doc/HTML/en/kile/snap_kdvi_settings.png
 share/doc/HTML/en/kile/snap_okular_settings.png
 share/doc/HTML/en/kile/snap_projectview.png
 share/doc/HTML/en/kile/snap_projectview_add.png
@@ -1489,6 +1490,87 @@ share/doc/HTML/en/kile/structureview-context1.png
 share/doc/HTML/en/kile/structureview-context2.png
 share/doc/HTML/en/kile/structureview.png
 share/doc/HTML/en/kile/texgroup.png
+share/doc/HTML/es/kile/index.cache.bz2
+share/doc/HTML/es/kile/index.docbook
+share/doc/HTML/fr/kile/index.cache.bz2
+share/doc/HTML/fr/kile/index.docbook
+share/doc/HTML/it/kile/index.cache.bz2
+share/doc/HTML/it/kile/index.docbook
+share/doc/HTML/pt/kile/index.cache.bz2
+share/doc/HTML/pt/kile/index.docbook
+share/doc/HTML/pt_BR/kile/index.cache.bz2
+share/doc/HTML/pt_BR/kile/index.docbook
+share/doc/HTML/sv/kile/bullets.png
+share/doc/HTML/sv/kile/config-complete.png
+share/doc/HTML/sv/kile/config-dblquotes.png
+share/doc/HTML/sv/kile/config-encoding.png
+share/doc/HTML/sv/kile/config-quickpreview.png
+share/doc/HTML/sv/kile/config-userhelp.png
+share/doc/HTML/sv/kile/delete.png
+share/doc/HTML/sv/kile/dialog-addhelp.png
+share/doc/HTML/sv/kile/dialog-docbrowser1.png
+share/doc/HTML/sv/kile/dialog-docbrowser2.png
+share/doc/HTML/sv/kile/dialog-pstools.png
+share/doc/HTML/sv/kile/dialog-tabular.png
+share/doc/HTML/sv/kile/environment.png
+share/doc/HTML/sv/kile/includegraphics.png
+share/doc/HTML/sv/kile/index.cache.bz2
+share/doc/HTML/sv/kile/index.docbook
+share/doc/HTML/sv/kile/latex_example.png
+share/doc/HTML/sv/kile/quickpreview.png
+share/doc/HTML/sv/kile/select.png
+share/doc/HTML/sv/kile/snap_autocomplete.png
+share/doc/HTML/sv/kile/snap_compile_error.png
+share/doc/HTML/sv/kile/snap_editusertag.png
+share/doc/HTML/sv/kile/snap_encoding.png
+share/doc/HTML/sv/kile/snap_kdvi_settings.png
+share/doc/HTML/sv/kile/snap_projectview.png
+share/doc/HTML/sv/kile/snap_projectview_add.png
+share/doc/HTML/sv/kile/snap_ref_choose.png
+share/doc/HTML/sv/kile/snap_ref_select.png
+share/doc/HTML/sv/kile/snap_sidebarmenu.png
+share/doc/HTML/sv/kile/snap_structview_label.png
+share/doc/HTML/sv/kile/snap_usertag.png
+share/doc/HTML/sv/kile/texgroup.png
+share/doc/HTML/uk/kile/bullets.png
+share/doc/HTML/uk/kile/command-view.png
+share/doc/HTML/uk/kile/config-complete.png
+share/doc/HTML/uk/kile/config-dblquotes.png
+share/doc/HTML/uk/kile/config-encoding.png
+share/doc/HTML/uk/kile/config-quickpreview.png
+share/doc/HTML/uk/kile/config-userhelp.png
+share/doc/HTML/uk/kile/delete.png
+share/doc/HTML/uk/kile/dialog-addhelp.png
+share/doc/HTML/uk/kile/dialog-docbrowser1.png
+share/doc/HTML/uk/kile/dialog-docbrowser2.png
+share/doc/HTML/uk/kile/dialog-float.png
+share/doc/HTML/uk/kile/dialog-math.png
+share/doc/HTML/uk/kile/dialog-pstools.png
+share/doc/HTML/uk/kile/dialog-tabular.png
+share/doc/HTML/uk/kile/dialog-userhelp.png
+share/doc/HTML/uk/kile/environment.png
+share/doc/HTML/uk/kile/includegraphics.png
+share/doc/HTML/uk/kile/index.cache.bz2
+share/doc/HTML/uk/kile/index.docbook
+share/doc/HTML/uk/kile/latex_example.png
+share/doc/HTML/uk/kile/menu-userhelp.png
+share/doc/HTML/uk/kile/quickpreview.png
+share/doc/HTML/uk/kile/select.png
+share/doc/HTML/uk/kile/snap_autocomplete.png
+share/doc/HTML/uk/kile/snap_compile_error.png
+share/doc/HTML/uk/kile/snap_editusertag.png
+share/doc/HTML/uk/kile/snap_okular_settings.png
+share/doc/HTML/uk/kile/snap_projectview.png
+share/doc/HTML/uk/kile/snap_projectview_add.png
+share/doc/HTML/uk/kile/snap_ref_choose.png
+share/doc/HTML/uk/kile/snap_ref_select.png
+share/doc/HTML/uk/kile/snap_sidebarmenu.png
+share/doc/HTML/uk/kile/snap_structview_label.png
+share/doc/HTML/uk/kile/snap_usertag.png
+share/doc/HTML/uk/kile/structureview-context1.png
+share/doc/HTML/uk/kile/structureview-context2.png
+share/doc/HTML/uk/kile/structureview.png
+share/doc/HTML/uk/kile/texgroup.png
 share/doc/kile/AUTHORS
 share/doc/kile/ChangeLog
 share/doc/kile/README
@@ -1502,9 +1584,59 @@ share/icons/hicolor/32x32/apps/kile.png
 share/icons/hicolor/48x48/apps/kile.png
 share/icons/hicolor/64x64/apps/kile.png
 share/icons/hicolor/scalable/apps/kile.svgz
+share/locale/bg/LC_MESSAGES/kile.mo
+share/locale/bs/LC_MESSAGES/kile.mo
+share/locale/ca/LC_MESSAGES/kile.mo
+share/locale/ca@valencia/LC_MESSAGES/kile.mo
+share/locale/cs/LC_MESSAGES/kile.mo
+share/locale/da/LC_MESSAGES/kile.mo
+share/locale/de/LC_MESSAGES/kile.mo
+share/locale/el/LC_MESSAGES/kile.mo
+share/locale/en_GB/LC_MESSAGES/kile.mo
+share/locale/eo/LC_MESSAGES/kile.mo
+share/locale/es/LC_MESSAGES/kile.mo
+share/locale/et/LC_MESSAGES/kile.mo
+share/locale/fi/LC_MESSAGES/kile.mo
+share/locale/fr/LC_MESSAGES/kile.mo
+share/locale/ga/LC_MESSAGES/kile.mo
+share/locale/gl/LC_MESSAGES/kile.mo
+share/locale/hi/LC_MESSAGES/kile.mo
+share/locale/hne/LC_MESSAGES/kile.mo
+share/locale/it/LC_MESSAGES/kile.mo
+share/locale/ja/LC_MESSAGES/kile.mo
+share/locale/lt/LC_MESSAGES/kile.mo
+share/locale/mai/LC_MESSAGES/kile.mo
+share/locale/ms/LC_MESSAGES/kile.mo
+share/locale/nb/LC_MESSAGES/kile.mo
+share/locale/nds/LC_MESSAGES/kile.mo
+share/locale/nl/LC_MESSAGES/kile.mo
+share/locale/nn/LC_MESSAGES/kile.mo
+share/locale/pt/LC_MESSAGES/kile.mo
+share/locale/pt_BR/LC_MESSAGES/kile.mo
+share/locale/ro/LC_MESSAGES/kile.mo
+share/locale/ru/LC_MESSAGES/kile.mo
+share/locale/sk/LC_MESSAGES/kile.mo
+share/locale/sv/LC_MESSAGES/kile.mo
+share/locale/tr/LC_MESSAGES/kile.mo
+share/locale/ug/LC_MESSAGES/kile.mo
+share/locale/uk/LC_MESSAGES/kile.mo
+share/locale/x-test/LC_MESSAGES/kile.mo
+share/locale/zh_CN/LC_MESSAGES/kile.mo
+share/locale/zh_TW/LC_MESSAGES/kile.mo
 share/mime/packages/kile.xml
 share/mime/text/x-kilepr.xml
+@dirrmtry share/locale/x-test/LC_MESSAGES
+@dirrmtry share/locale/x-test
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrm share/doc/kile
+@dirrm share/doc/HTML/uk/kile
+@dirrm share/doc/HTML/sv/kile
+@dirrm share/doc/HTML/pt_BR/kile
+@dirrm share/doc/HTML/pt/kile
+@dirrm share/doc/HTML/it/kile
+@dirrm share/doc/HTML/fr/kile
+@dirrm share/doc/HTML/es/kile
 @dirrm share/doc/HTML/en/kile
 @dirrm share/apps/kile/test
 @dirrm share/apps/kile/templates
