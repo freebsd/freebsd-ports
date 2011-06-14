@@ -3,12 +3,14 @@ bin/qpcensus.py
 %%PYTHON_SITELIBDIR%%/qp/__init__.py
 %%PYTHON_SITELIBDIR%%/qp/__init__.pyc
 %%PYTHON_SITELIBDIR%%/qp/__init__.pyo
+%%PYTHON_SITELIBDIR%%/qp/__main__.py
+%%PYTHON_SITELIBDIR%%/qp/__main__.pyc
+%%PYTHON_SITELIBDIR%%/qp/__main__.pyo
 %%PYTHON_SITELIBDIR%%/qp/fill/__init__.py
 %%PYTHON_SITELIBDIR%%/qp/fill/__init__.pyc
 %%PYTHON_SITELIBDIR%%/qp/fill/__init__.pyo
-%%PYTHON_SITELIBDIR%%/qp/fill/css.py
 %%PYTHON_SITELIBDIR%%/qp/fill/css.pyc
-%%PYTHON_SITELIBDIR%%/qp/fill/css.pyo
+%%PYTHON_SITELIBDIR%%/qp/fill/css.qpy
 %%PYTHON_SITELIBDIR%%/qp/fill/directory.py
 %%PYTHON_SITELIBDIR%%/qp/fill/directory.pyc
 %%PYTHON_SITELIBDIR%%/qp/fill/directory.pyo
@@ -104,29 +106,6 @@ bin/qpcensus.py
 %%PYTHON_SITELIBDIR%%/qp/setup.py
 %%PYTHON_SITELIBDIR%%/qp/setup.pyc
 %%PYTHON_SITELIBDIR%%/qp/setup.pyo
-%%EXAMPLESDIR%%/__init__.py
-%%EXAMPLESDIR%%/echo/slash.qpy
-%%EXAMPLESDIR%%/echo/__init__.py
-%%EXAMPLESDIR%%/echo/var/here.txt
-%%EXAMPLESDIR%%/hello/slash.py
-%%EXAMPLESDIR%%/hello/__init__.py
-%%EXAMPLESDIR%%/hello/var/here.txt
-%%EXAMPLESDIR%%/proto/forms.qpy
-%%EXAMPLESDIR%%/proto/qwiki.qpy
-%%EXAMPLESDIR%%/proto/slash.qpy
-%%EXAMPLESDIR%%/proto/__init__.py
-%%EXAMPLESDIR%%/proto/static/all.css
-%%EXAMPLESDIR%%/proto/static/favicon.png
-%%EXAMPLESDIR%%/proto/static/proto.js
-%%EXAMPLESDIR%%/proto/var/here.txt
-@dirrm %%EXAMPLESDIR%%/echo/var
-@dirrm %%EXAMPLESDIR%%/echo
-@dirrm %%EXAMPLESDIR%%/hello/var
-@dirrm %%EXAMPLESDIR%%/hello
-@dirrm %%EXAMPLESDIR%%/proto/static
-@dirrm %%EXAMPLESDIR%%/proto/var
-@dirrm %%EXAMPLESDIR%%/proto
-@dirrm %%EXAMPLESDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/qp/pub
 @dirrm %%PYTHON_SITELIBDIR%%/qp/mail
 @dirrm %%PYTHON_SITELIBDIR%%/qp/lib
@@ -139,3 +118,27 @@ bin/qpcensus.py
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo/slash.qpy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/echo/var/here.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello/slash.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/hello/var/here.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/forms.qpy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/qwiki.qpy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/slash.qpy
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/__init__.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/static/all.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/static/favicon.ico
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/static/favicon.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/static/proto.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/var/here.txt
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/echo/var
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/echo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hello/var
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hello
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/proto/static
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/proto/var
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/proto
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
