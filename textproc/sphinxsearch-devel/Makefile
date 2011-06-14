@@ -8,13 +8,12 @@
 # this port.  You need a patched version of mysql server for that.
 
 PORTNAME=	sphinxsearch
-PORTVERSION=	1.10b
-PORTREVISION=	1
+PORTVERSION=	2.0.1b
 PORTEPOCH=	1
 CATEGORIES=	textproc databases
 MASTER_SITES=	http://sphinxsearch.com/files/
 PKGNAMESUFFIX?=	-devel
-DISTNAME=	sphinx-1.10-beta
+DISTNAME=	sphinx-2.0.1-beta
 
 PATCH_DIST_STRIP=-p1
 
