@@ -1,8 +1,7 @@
 # New ports collection makefile for:	multimedia/zoneminder
 # Date created:				2011-04-08
-# Whom:					bsam, based on ports by Richard Lee and Electric Messiah
-#					special thanks to achix since at least the local fbsd
-#					camera code is 99.99% written by him
+# Whom:					bsam, based on ports by achix (1.23 & local camera stuff),
+#					Richard Lee and Electric Messiah
 # $FreeBSD$
 #
 
