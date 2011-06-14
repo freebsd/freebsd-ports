@@ -17,7 +17,7 @@ COMMENT=	Client Library of HandlerSocket Plugin
 
 WRKSRC=		${WRKDIR}/HandlerSocket-Plugin-for-MySQL
 
-REVISION=	20101215
+REVISION=	20110614
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-handlersocket-server=no
