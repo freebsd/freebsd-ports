@@ -12,6 +12,7 @@ etc/sarg/images/datetime.png
 etc/sarg/images/graph.png
 etc/sarg/images/sarg-squidguard-block.png
 etc/sarg/images/sarg.png
+etc/sarg/languages/Afrikaans
 etc/sarg/languages/Bulgarian_windows1251
 etc/sarg/languages/Catalan
 etc/sarg/languages/Czech
@@ -57,6 +58,28 @@ etc/sarg/sarg-php/sarg-squidguard-block2.php
 etc/sarg/sarg-php/style.php
 etc/sarg/sarg-php/translate.this
 etc/sarg/user_limit_block
+share/locale/bg/LC_MESSAGES/sarg.mo
+share/locale/ca/LC_MESSAGES/sarg.mo
+share/locale/cs/LC_MESSAGES/sarg.mo
+share/locale/de/LC_MESSAGES/sarg.mo
+share/locale/el/LC_MESSAGES/sarg.mo
+share/locale/es/LC_MESSAGES/sarg.mo
+share/locale/fr/LC_MESSAGES/sarg.mo
+share/locale/hu/LC_MESSAGES/sarg.mo
+share/locale/id/LC_MESSAGES/sarg.mo
+share/locale/it/LC_MESSAGES/sarg.mo
+share/locale/ja/LC_MESSAGES/sarg.mo
+share/locale/lv/LC_MESSAGES/sarg.mo
+share/locale/nl/LC_MESSAGES/sarg.mo
+share/locale/pl/LC_MESSAGES/sarg.mo
+share/locale/pt/LC_MESSAGES/sarg.mo
+share/locale/ro/LC_MESSAGES/sarg.mo
+share/locale/ru/LC_MESSAGES/sarg.mo
+share/locale/sk/LC_MESSAGES/sarg.mo
+share/locale/sr/LC_MESSAGES/sarg.mo
+share/locale/tr/LC_MESSAGES/sarg.mo
+share/locale/uk/LC_MESSAGES/sarg.mo
+share/locale/zh_CN/LC_MESSAGES/sarg.mo
 @dirrm etc/sarg/sarg-php/locale/ru/LC_MESSAGES
 @dirrm etc/sarg/sarg-php/locale/ru
 @dirrm etc/sarg/sarg-php/locale/pt_BR/LC_MESSAGES

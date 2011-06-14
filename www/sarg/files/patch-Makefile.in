@@ -1,17 +1,29 @@
---- Makefile.in.orig	2010-01-20 09:19:16.000000000 -0200
-+++ Makefile.in	2010-02-08 09:58:51.000000000 -0200
-@@ -9,7 +9,7 @@
- CC 		= @CC@
- BINDIR   	= @bindir@
- IBINDIR   	= -DBINDIR=\"@bindir@\"
--MANDIR		= @mandir@
-+MANDIR		= @mandir@/man1
- SYSCONFDIR	= @sysconfdir@
- SARGPHPDIR	= @SARGPHPDIR@
- LANGDIR		= @LANGDIR@
-@@ -84,12 +84,11 @@
+--- Makefile.in.orig	2010-08-03 13:41:57.000000000 -0400
++++ Makefile.in	2011-06-11 22:34:52.000000000 -0400
+@@ -8,7 +8,7 @@
+ docdir      = @docdir@
+ CC          = @CC@
+ BINDIR      = @bindir@
+-MANDIR      = @mandir@
++MANDIR      = @mandir@/man1
+ SYSCONFDIR  = @sysconfdir@
+ SARGPHPDIR  = @SARGPHPDIR@
+ FONTDIR     = @FONTDIR@
+@@ -23,7 +23,7 @@
+ CPPFLAGS    = @CPPFLAGS@
+ LDFLAGS     = @LDFLAGS@
+ DEFS        = $(IBINDIR) $(ISYSCONFDIR) $(IFONTDIR) $(IIMAGEDIR) $(ISARGPHPDIR) $(ILOCALEDIR) @DEFS@
+-LIBS        = @LIBS@
++LIBS        = @LIBS@ -lintl
+ SRCDIR      = .
+ VPATH       = .
+ INSTALL     = cp
+@@ -77,14 +77,13 @@
+ 		mkdir -p $(DESTDIR)$(IMAGEDIR); \
+ 	fi
  	$(INSTALL_PROGRAM) sarg $(DESTDIR)$(BINDIR)/sarg
- 	chmod 755 $(DESTDIR)$(BINDIR)/sarg
+-	chmod 755 $(DESTDIR)$(BINDIR)/sarg
++	chmod 644 $(DESTDIR)$(BINDIR)/sarg
  	$(INSTALL_PROGRAM) sarg.1 $(DESTDIR)$(MANDIR)/sarg.1
 -	chmod 755 $(DESTDIR)$(MANDIR)/sarg.1
 +	chmod 644 $(DESTDIR)$(MANDIR)/sarg.1
@@ -22,5 +34,5 @@
 -	else \
 -		cp sarg.conf $(DESTDIR)$(SYSCONFDIR)/sarg.conf.default; \
  	fi
- 	cp -r ./languages/* $(DESTDIR)$(LANGDIR);
  	cp ./exclude_codes $(DESTDIR)$(SYSCONFDIR);
+ 	cp ./user_limit_block $(DESTDIR)$(SYSCONFDIR);
