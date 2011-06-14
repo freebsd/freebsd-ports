@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imapsync
-PORTVERSION=	1.411
+PORTVERSION=	1.434
 CATEGORIES=	mail perl5
 MASTER_SITES=	https://fedorahosted.org/released/${PORTNAME}/
 EXTRACT_SUFX=	.tgz
