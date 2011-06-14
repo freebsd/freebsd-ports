@@ -345,6 +345,7 @@ share/locale/fi/LC_MESSAGES/kreversi.mo
 share/locale/fi/LC_MESSAGES/krfb.mo
 share/locale/fi/LC_MESSAGES/kruler.mo
 share/locale/fi/LC_MESSAGES/krunner.mo
+share/locale/fi/LC_MESSAGES/ksaneplugin.mo
 share/locale/fi/LC_MESSAGES/kscd.mo
 share/locale/fi/LC_MESSAGES/kscreensaver.mo
 share/locale/fi/LC_MESSAGES/kshisen.mo
@@ -403,6 +404,7 @@ share/locale/fi/LC_MESSAGES/libkcal.mo
 share/locale/fi/LC_MESSAGES/libkcalutils.mo
 share/locale/fi/LC_MESSAGES/libkcddb.mo
 share/locale/fi/LC_MESSAGES/libkcompactdisc.mo
+share/locale/fi/LC_MESSAGES/libkdcraw.mo
 share/locale/fi/LC_MESSAGES/libkdeedu.mo
 share/locale/fi/LC_MESSAGES/libkdegames.mo
 share/locale/fi/LC_MESSAGES/libkexiv2.mo
@@ -415,6 +417,7 @@ share/locale/fi/LC_MESSAGES/libkpimidentities.mo
 share/locale/fi/LC_MESSAGES/libkpimtextedit.mo
 share/locale/fi/LC_MESSAGES/libkpimutils.mo
 share/locale/fi/LC_MESSAGES/libkresources.mo
+share/locale/fi/LC_MESSAGES/libksane.mo
 share/locale/fi/LC_MESSAGES/libkscreensaver.mo
 share/locale/fi/LC_MESSAGES/libktnef.mo
 share/locale/fi/LC_MESSAGES/libkunitconversion.mo
@@ -453,9 +456,11 @@ share/locale/fi/LC_MESSAGES/okular_comicbook.mo
 share/locale/fi/LC_MESSAGES/okular_djvu.mo
 share/locale/fi/LC_MESSAGES/okular_dvi.mo
 share/locale/fi/LC_MESSAGES/okular_epub.mo
+share/locale/fi/LC_MESSAGES/okular_fax.mo
 share/locale/fi/LC_MESSAGES/okular_fictionbook.mo
 share/locale/fi/LC_MESSAGES/okular_ghostview.mo
 share/locale/fi/LC_MESSAGES/okular_kimgio.mo
+share/locale/fi/LC_MESSAGES/okular_mobi.mo
 share/locale/fi/LC_MESSAGES/okular_ooo.mo
 share/locale/fi/LC_MESSAGES/okular_plucker.mo
 share/locale/fi/LC_MESSAGES/okular_poppler.mo

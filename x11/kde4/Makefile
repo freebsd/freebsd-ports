@@ -103,11 +103,11 @@ RUN_DEPENDS+=	${KDE4_PREFIX}/bin/printer-applet:${PORTSDIR}/print/kdeutils4-prin
 .if !defined(WITHOUT_PRINTER_CONFIG)
 RUN_DEPENDS+=	${KDE4_PREFIX}/share/apps/system-config-printer-kde/system-config-printer-kde.py:${PORTSDIR}/print/system-config-printer-kde
 .endif
-.if !defined(WITHOUT_XINE)
-RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/plugins/phonon_backend/phonon_xine.so:${PORTSDIR}/multimedia/phonon-xine
-.endif
-.if !defined(WITHOUT_VLC)
+.if defined(WITH_VLC)
 RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/plugins/phonon_backend/phonon_vlc.so:${PORTSDIR}/multimedia/phonon-vlc
+.endif
+.if defined(WITH_XINE)
+RUN_DEPENDS+=	${KDE4_PREFIX}/lib/kde4/plugins/phonon_backend/phonon_xine.so:${PORTSDIR}/multimedia/phonon-xine
 .endif
 
 do-install:

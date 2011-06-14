@@ -32,9 +32,11 @@ include/libkdeedu/kedufontutils.h
 include/libkdeedu/keduvocarticle.h
 include/libkdeedu/keduvocconjugation.h
 include/libkdeedu/keduvoccontainer.h
+include/libkdeedu/keduvocdeclension.h
 include/libkdeedu/keduvocdocument.h
 include/libkdeedu/keduvocexpression.h
 include/libkdeedu/keduvocidentifier.h
+include/libkdeedu/keduvockvtml2writer.h
 include/libkdeedu/keduvocleitnerbox.h
 include/libkdeedu/keduvoclesson.h
 include/libkdeedu/keduvocmultiplechoice.h
@@ -76,6 +78,9 @@ include/rocs/qtScriptBackend.h
 include/rocs/rocs_typedefs.h
 include/rocs/rocslib_export.h
 include/rocs/threadDocument.h
+lib/cmake/libkdeedu/LibKdeEduConfig.cmake
+lib/cmake/libkdeedu/LibKdeEduTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/cmake/libkdeedu/LibKdeEduTargets.cmake
 lib/kde4/cantor_advancedplotassistant.so
 lib/kde4/cantor_creatematrixassistant.so
 lib/kde4/cantor_differentiateassistant.so
@@ -188,7 +193,6 @@ share/apps/cantor/octavebackend/cantor_plot3d.m
 share/apps/cantor/octavebackend/cantor_print.m
 share/apps/cantor/xslt/latex.xsl
 share/apps/cantorpart/cantor_part.rc
-share/apps/cmake/modules/FindKDEEdu.cmake
 share/apps/desktoptheme/default/widgets/chalkboard.svg
 share/apps/desktoptheme/default/widgets/parley_plasma_card.svg
 share/apps/kalgebra/scripts/console/console.js
@@ -3648,6 +3652,8 @@ share/kde4/servicetypes/kalgebrascript.desktop
 @dirrm share/apps/blinken/images
 @dirrm share/apps/blinken/fonts
 @dirrm share/apps/blinken
+@dirrm lib/cmake/libkdeedu
+@dirrmtry lib/cmake
 @dirrm include/rocs
 @dirrm include/libkiten
 @dirrm include/libkdeedu

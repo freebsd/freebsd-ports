@@ -150,6 +150,13 @@ share/apps/kvtml/ca/provincies_sec.kvtml
 share/apps/kvtml/ca/transports_pri.kvtml
 share/apps/kvtml/ca/verdures_pri.kvtml
 share/apps/kvtml/ca/vestit_pri.kvtml
+share/doc/HTML/ca/PolicyKit-kde/authorization.docbook
+share/doc/HTML/ca/PolicyKit-kde/authorizationagent.docbook
+share/doc/HTML/ca/PolicyKit-kde/common
+share/doc/HTML/ca/PolicyKit-kde/howitworks.docbook
+share/doc/HTML/ca/PolicyKit-kde/index.cache.bz2
+share/doc/HTML/ca/PolicyKit-kde/index.docbook
+share/doc/HTML/ca/PolicyKit-kde/introduction.docbook
 share/doc/HTML/ca/amor/common
 share/doc/HTML/ca/amor/index.cache.bz2
 share/doc/HTML/ca/amor/index.docbook
@@ -393,6 +400,11 @@ share/doc/HTML/ca/kdf/common
 share/doc/HTML/ca/kdf/index.cache.bz2
 share/doc/HTML/ca/kdf/index.docbook
 share/doc/HTML/ca/kdf/kdf_config.png
+share/doc/HTML/ca/kdm/common
+share/doc/HTML/ca/kdm/index.cache.bz2
+share/doc/HTML/ca/kdm/index.docbook
+share/doc/HTML/ca/kdm/kdmrc-ref.docbook
+share/doc/HTML/ca/kdm/theme-ref.docbook
 share/doc/HTML/ca/kfind/common
 share/doc/HTML/ca/kfind/index.cache.bz2
 share/doc/HTML/ca/kfind/index.docbook
@@ -652,6 +664,9 @@ share/doc/HTML/ca/kstars/zenith.docbook
 share/doc/HTML/ca/ksysguard/common
 share/doc/HTML/ca/ksysguard/index.cache.bz2
 share/doc/HTML/ca/ksysguard/index.docbook
+share/doc/HTML/ca/ksystemlog/common
+share/doc/HTML/ca/ksystemlog/index.cache.bz2
+share/doc/HTML/ca/ksystemlog/index.docbook
 share/doc/HTML/ca/kteatime/common
 share/doc/HTML/ca/kteatime/index.cache.bz2
 share/doc/HTML/ca/kteatime/index.docbook
@@ -731,6 +746,7 @@ share/locale/ca/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/ca/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/ca/LC_MESSAGES/akonadi_serializer_plugins.mo
 share/locale/ca/LC_MESSAGES/akonadi_singlefile_resource.mo
+share/locale/ca/LC_MESSAGES/akonadi_strigi_feeder.mo
 share/locale/ca/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ca/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/ca/LC_MESSAGES/akonadicontact.mo
@@ -908,6 +924,7 @@ share/locale/ca/LC_MESSAGES/kdecalendarsystems.mo
 share/locale/ca/LC_MESSAGES/kdelibs4.mo
 share/locale/ca/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/ca/LC_MESSAGES/kdepasswd.mo
+share/locale/ca/LC_MESSAGES/kdepim-runtime-qml.mo
 share/locale/ca/LC_MESSAGES/kdeqt.mo
 share/locale/ca/LC_MESSAGES/kdesu.mo
 share/locale/ca/LC_MESSAGES/kdesud.mo
@@ -1164,6 +1181,7 @@ share/locale/ca/LC_MESSAGES/nepomukserver.mo
 share/locale/ca/LC_MESSAGES/nepomukservicestub.mo
 share/locale/ca/LC_MESSAGES/nepomukstorage.mo
 share/locale/ca/LC_MESSAGES/nepomukstrigiservice.mo
+share/locale/ca/LC_MESSAGES/newmailnotifieragent.mo
 share/locale/ca/LC_MESSAGES/nsplugin.mo
 share/locale/ca/LC_MESSAGES/okteta-mobile.mo
 share/locale/ca/LC_MESSAGES/okteta.mo
@@ -1383,6 +1401,7 @@ share/locale/ca/entry.desktop
 @dirrm share/doc/HTML/ca/ktouch
 @dirrm share/doc/HTML/ca/ktimer
 @dirrm share/doc/HTML/ca/kteatime
+@dirrm share/doc/HTML/ca/ksystemlog
 @dirrm share/doc/HTML/ca/ksysguard
 @dirrm share/doc/HTML/ca/kstars
 @dirrm share/doc/HTML/ca/krfb
@@ -1442,6 +1461,7 @@ share/locale/ca/entry.desktop
 @dirrm share/doc/HTML/ca/kgeography
 @dirrm share/doc/HTML/ca/kfontview
 @dirrm share/doc/HTML/ca/kfind
+@dirrm share/doc/HTML/ca/kdm
 @dirrm share/doc/HTML/ca/kdf
 @dirrm share/doc/HTML/ca/kdesu
 @dirrm share/doc/HTML/ca/kdebugdialog
@@ -1519,6 +1539,7 @@ share/locale/ca/entry.desktop
 @dirrm share/doc/HTML/ca/cervisia
 @dirrm share/doc/HTML/ca/bomber
 @dirrm share/doc/HTML/ca/amor
+@dirrm share/doc/HTML/ca/PolicyKit-kde
 @dirrm share/apps/kvtml/ca
 @dirrm share/apps/kvtml
 @dirrm share/apps/ktuberling/sounds/ca

@@ -1118,6 +1118,7 @@ share/locale/sr/LC_MESSAGES/libkxmlrpcclient.mo
 share/locale/sr/LC_MESSAGES/liblancelot-datamodels.mo
 share/locale/sr/LC_MESSAGES/libmailtransport.mo
 share/locale/sr/LC_MESSAGES/liboktetacore.mo
+share/locale/sr/LC_MESSAGES/liboktetagui.mo
 share/locale/sr/LC_MESSAGES/liboktetakasten.mo
 share/locale/sr/LC_MESSAGES/libphonon.mo
 share/locale/sr/LC_MESSAGES/libplasma.mo
@@ -1139,6 +1140,7 @@ share/locale/sr/LC_MESSAGES/nepomukservicestub.mo
 share/locale/sr/LC_MESSAGES/nepomukstorage.mo
 share/locale/sr/LC_MESSAGES/nepomukstrigiservice.mo
 share/locale/sr/LC_MESSAGES/nsplugin.mo
+share/locale/sr/LC_MESSAGES/okteta-mobile.mo
 share/locale/sr/LC_MESSAGES/okteta.mo
 share/locale/sr/LC_MESSAGES/oktetapart.mo
 share/locale/sr/LC_MESSAGES/okular.mo
@@ -1673,6 +1675,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/libkxmlrpcclient.mo
 share/locale/sr@ijekavian/LC_MESSAGES/liblancelot-datamodels.mo
 share/locale/sr@ijekavian/LC_MESSAGES/libmailtransport.mo
 share/locale/sr@ijekavian/LC_MESSAGES/liboktetacore.mo
+share/locale/sr@ijekavian/LC_MESSAGES/liboktetagui.mo
 share/locale/sr@ijekavian/LC_MESSAGES/liboktetakasten.mo
 share/locale/sr@ijekavian/LC_MESSAGES/libphonon.mo
 share/locale/sr@ijekavian/LC_MESSAGES/libplasma.mo
@@ -1694,6 +1697,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/nepomukservicestub.mo
 share/locale/sr@ijekavian/LC_MESSAGES/nepomukstorage.mo
 share/locale/sr@ijekavian/LC_MESSAGES/nepomukstrigiservice.mo
 share/locale/sr@ijekavian/LC_MESSAGES/nsplugin.mo
+share/locale/sr@ijekavian/LC_MESSAGES/okteta-mobile.mo
 share/locale/sr@ijekavian/LC_MESSAGES/okteta.mo
 share/locale/sr@ijekavian/LC_MESSAGES/oktetapart.mo
 share/locale/sr@ijekavian/LC_MESSAGES/okular.mo
@@ -2228,6 +2232,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/libkxmlrpcclient.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/liblancelot-datamodels.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libmailtransport.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/liboktetacore.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/liboktetagui.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/liboktetakasten.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libphonon.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libplasma.mo
@@ -2249,6 +2254,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/nepomukservicestub.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/nepomukstorage.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/nepomukstrigiservice.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/nsplugin.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/okteta-mobile.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/okteta.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/oktetapart.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/okular.mo
@@ -2783,6 +2789,7 @@ share/locale/sr@latin/LC_MESSAGES/libkxmlrpcclient.mo
 share/locale/sr@latin/LC_MESSAGES/liblancelot-datamodels.mo
 share/locale/sr@latin/LC_MESSAGES/libmailtransport.mo
 share/locale/sr@latin/LC_MESSAGES/liboktetacore.mo
+share/locale/sr@latin/LC_MESSAGES/liboktetagui.mo
 share/locale/sr@latin/LC_MESSAGES/liboktetakasten.mo
 share/locale/sr@latin/LC_MESSAGES/libphonon.mo
 share/locale/sr@latin/LC_MESSAGES/libplasma.mo
@@ -2804,6 +2811,7 @@ share/locale/sr@latin/LC_MESSAGES/nepomukservicestub.mo
 share/locale/sr@latin/LC_MESSAGES/nepomukstorage.mo
 share/locale/sr@latin/LC_MESSAGES/nepomukstrigiservice.mo
 share/locale/sr@latin/LC_MESSAGES/nsplugin.mo
+share/locale/sr@latin/LC_MESSAGES/okteta-mobile.mo
 share/locale/sr@latin/LC_MESSAGES/okteta.mo
 share/locale/sr@latin/LC_MESSAGES/oktetapart.mo
 share/locale/sr@latin/LC_MESSAGES/okular.mo

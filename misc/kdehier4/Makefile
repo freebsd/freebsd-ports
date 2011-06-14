@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kdehier4
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.9
 CATEGORIES=	misc kde
 MASTER_SITES=	# none
 DISTFILES=	# none
