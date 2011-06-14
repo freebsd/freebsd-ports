@@ -8,13 +8,10 @@
 PORTNAME=	octave-forge-tsa
 PORTVERSION=	4.1.1
 CATEGORIES=	math
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-
-EXTRACT_SUFX=	.tgz
-
-RUN_DEPENDS+=	${TARBALLS_DIR}/nan.tar.gz:${PORTSDIR}/math/octave-forge-nan
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
