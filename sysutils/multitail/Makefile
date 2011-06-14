@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	multitail
-PORTVERSION=	5.2.7
+PORTVERSION=	5.2.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.vanheusden.com/multitail/
 EXTRACT_SUFX=	.tgz
@@ -19,6 +19,9 @@ USE_GMAKE=	yes
 MAN1=		multitail.1
 PLIST_FILES=	bin/multitail etc/multitail.conf.sample
 PORTDOCS=	readme.txt license.txt
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/license.txt
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,/etc/multitail.conf,${PREFIX}/etc/multitail.conf,' \
