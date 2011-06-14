@@ -8,9 +8,9 @@
 #
 
 PORTNAME=	lilypond
-PORTVERSION=	2.13.63
+PORTVERSION=	2.14.1
 CATEGORIES=	print audio
-MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.13/
+MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.14/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	The GNU music typesetter
@@ -52,7 +52,7 @@ CONFIGURE_ENV+=	MAKEINFO="${LOCALBASE}/bin/makeinfo" \
 
 ALL_TARGET=	all
 
-NO_CCACHE=	yes
+NOCCACHE=	yes
 
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
