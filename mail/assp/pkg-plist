@@ -11,6 +11,7 @@ sbin/assplog
 %%DATADIR%%/files/bombheaderre.txt
 %%DATADIR%%/files/bombre.txt
 %%DATADIR%%/files/bombsenderre.txt
+%%DATADIR%%/files/bombsubjectre.txt
 %%DATADIR%%/files/charsets.txt
 %%DATADIR%%/files/checkdomains.txt
 %%DATADIR%%/files/deny.txt
