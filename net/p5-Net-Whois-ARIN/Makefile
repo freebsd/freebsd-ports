@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-Whois-ARIN
-PORTVERSION=	0.11
+PORTVERSION=	0.12
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,13 +14,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ARIN whois client
 
-MAN3=	Net::Whois::ARIN.3 \
-	Net::Whois::ARIN::AS.3 \
-	Net::Whois::ARIN::Contact.3 \
-	Net::Whois::ARIN::Customer.3 \
-	Net::Whois::ARIN::Network.3 \
-	Net::Whois::ARIN::Organization.3
-
 PERL_CONFIGURE=	yes
+
+MAN3=		Net::Whois::ARIN.3 \
+		Net::Whois::ARIN::AS.3 \
+		Net::Whois::ARIN::Contact.3 \
+		Net::Whois::ARIN::Customer.3 \
+		Net::Whois::ARIN::Network.3 \
+		Net::Whois::ARIN::Organization.3
 
 .include <bsd.port.mk>
