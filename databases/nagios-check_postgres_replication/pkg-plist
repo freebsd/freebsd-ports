@@ -1,0 +1,2 @@
+libexec/nagios/check_postgres_replication
+@dirrmtry libexec/nagios
