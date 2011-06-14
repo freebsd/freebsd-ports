@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	RT-Extension-SLA
-PORTVERSION=	0.03
-PORTREVISION=	3
+PORTVERSION=	0.04
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +16,8 @@ COMMENT=	RT extension to automate due dates using service levels
 
 BUILD_DEPENDS=	${SITE_PERL}/Business/Hours.pm:${PORTSDIR}/misc/p5-Business-Hours
 RUN_DEPENDS=	${BUILD_DEPENDS}
+
+LICENSE=	GPLv2
 
 PERL_CONFIGURE=	yes
 
