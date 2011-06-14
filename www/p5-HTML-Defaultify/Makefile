@@ -10,10 +10,9 @@ PORTVERSION=	1.01
 CATEGORIES=	www perl5
 MASTER_SITES=	http://www.jmarshall.com/tools/defaultify/releases/\
 		CPAN
-MASTER_SITE_SUBDIR=	HTML
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	akefu@airport.fm
+MAINTAINER=	takefu@airport.fm
 COMMENT=	Perl module to populate HTML forms with default values
 
 PERL_CONFIGURE=	yes
