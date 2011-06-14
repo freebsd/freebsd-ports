@@ -10,17 +10,23 @@ include/strigi/analysisresult.h
 include/strigi/analyzerconfiguration.h
 include/strigi/analyzerplugin.h
 include/strigi/archivereader.h
+include/strigi/arinputstream.h
 include/strigi/asyncsocket.h
 include/strigi/asyncsocketclient.h
 include/strigi/bufferedstream.h
+include/strigi/bz2inputstream.h
 include/strigi/classproperties.h
 include/strigi/clientinterface.h
+include/strigi/cpioinputstream.h
+include/strigi/dataeventinputstream.h
 include/strigi/diranalyzer.h
 include/strigi/encodinginputstream.h
 include/strigi/fieldproperties.h
 include/strigi/fieldpropertiesdb.h
 include/strigi/fieldtypes.h
 include/strigi/fileinputstream.h
+include/strigi/filelister.h
+include/strigi/gzipinputstream.h
 include/strigi/indexeddocument.h
 include/strigi/indexmanager.h
 include/strigi/indexplugin.h
@@ -29,13 +35,20 @@ include/strigi/indexreader.h
 include/strigi/indexwriter.h
 include/strigi/inputstream.h
 include/strigi/inputstreamreader.h
+include/strigi/kmpsearcher.h
+include/strigi/lzmainputstream.h
+include/strigi/mailinputstream.h
+include/strigi/oleinputstream.h
+include/strigi/processinputstream.h
 include/strigi/qtdbus/strigiasyncclient.h
 include/strigi/qtdbus/strigiclient.h
 include/strigi/qtdbus/strigidbus.h
 include/strigi/qtdbus/strigitypes.h
 include/strigi/query.h
 include/strigi/queryparser.h
+include/strigi/rpminputstream.h
 include/strigi/sdfinputstream.h
+include/strigi/socketclient.h
 include/strigi/streamanalyzer.h
 include/strigi/streamanalyzerfactory.h
 include/strigi/streambase.h
@@ -45,6 +58,7 @@ include/strigi/streameventanalyzer.h
 include/strigi/streamlineanalyzer.h
 include/strigi/streamsaxanalyzer.h
 include/strigi/streamthroughanalyzer.h
+include/strigi/strigi_thread.h
 include/strigi/strigiconfig.h
 include/strigi/strigihtmlgui.h
 include/strigi/stringstream.h
@@ -52,25 +66,32 @@ include/strigi/stringterminatedsubstream.h
 include/strigi/subinputstream.h
 include/strigi/substreamprovider.h
 include/strigi/substreamproviderprovider.h
+include/strigi/tarinputstream.h
 include/strigi/textutils.h
 include/strigi/variant.h
+include/strigi/zipinputstream.h
 lib/libsearchclient.so
 lib/libsearchclient.so.0
-lib/libsearchclient.so.0.7.2
+lib/libsearchclient.so.0.7.5
+lib/libsearchclient/LibSearchClientConfig.cmake
 lib/libstreamanalyzer.so
 lib/libstreamanalyzer.so.0
-lib/libstreamanalyzer.so.0.7.2
+lib/libstreamanalyzer.so.0.7.5
+lib/libstreamanalyzer/LibStreamAnalyzerConfig.cmake
 lib/libstreams.so
 lib/libstreams.so.0
-lib/libstreams.so.0.7.2
+lib/libstreams.so.0.7.5
+lib/libstreams/LibStreamsConfig.cmake
 lib/libstrigihtmlgui.so
 lib/libstrigihtmlgui.so.0
-lib/libstrigihtmlgui.so.0.7.2
+lib/libstrigihtmlgui.so.0.7.5
 lib/libstrigiqtdbusclient.so
 lib/libstrigiqtdbusclient.so.0
-lib/libstrigiqtdbusclient.so.0.7.2
+lib/libstrigiqtdbusclient.so.0.7.5
 lib/strigi/StrigiConfig.cmake
+lib/strigi/strigiea_ffmpeg.so
 lib/strigi/strigiea_jpeg.so
+lib/strigi/strigiea_riff.so
 lib/strigi/strigiindex_clucene.so
 lib/strigi/strigila_cpp.so
 lib/strigi/strigila_deb.so
@@ -104,5 +125,8 @@ share/dbus-1/services/vandenoever.strigi.service
 @dirrmtry %%DATADIR%%/fieldproperties
 @dirrmtry %%DATADIR%%
 @dirrmtry lib/strigi
+@dirrmtry lib/libstreams
+@dirrmtry lib/libstreamanalyzer
+@dirrmtry lib/libsearchclient
 @dirrmtry include/strigi/qtdbus
 @dirrmtry include/strigi
