@@ -15,6 +15,7 @@ COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/miscellaneous.tar.gz:${PORTSDIR}/math/octave-forge-miscellaneous
+RUN_DEPENDS+=	${TARBALLS_DIR}/struct.tar.gz:${PORTSDIR}/math/octave-forge-struct
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
