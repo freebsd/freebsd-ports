@@ -1,11 +1,11 @@
-# New ports collection makefile for:	cego-base
-# Date created:				Jun 12, 2010
+# New ports collection makefile for:	lfc
+# Date created:				20100907
 # Whom:					Kurt Jaeger <fbsd-ports@opsec.eu>
 #
 # $FreeBSD$
 
 PORTNAME=	lfc
-PORTVERSION=	1.1.36
+PORTVERSION=	1.1.37
 CATEGORIES=	devel
 MASTER_SITES=	http://www.lemke-it.com/
 
