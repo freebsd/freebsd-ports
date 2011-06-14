@@ -9,7 +9,7 @@ PORTNAME=	octave-forge-bim
 PORTVERSION=	1.0.1
 CATEGORIES=	math
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/fpl.tar.gz:${PORTSDIR}/math/octave-forge-fpl

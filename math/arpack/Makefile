@@ -22,7 +22,7 @@ PATCH_SITES=	http://www.caam.rice.edu/software/ARPACK/SRC/ \
 PATCHFILES=	arpack-arscnd-2.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Argand Library: large eigenvalue subroutines (serial version)
 
 .if exists(${LOCALBASE}/lib/libatlas_r.so) && !defined(WITH_BLAS)

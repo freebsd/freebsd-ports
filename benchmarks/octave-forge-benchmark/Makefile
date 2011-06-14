@@ -10,7 +10,7 @@ PORTVERSION=	1.1.1
 PORTREVISION=	3
 CATEGORIES=	benchmarks math
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 .include <bsd.port.pre.mk>

@@ -9,7 +9,7 @@ PORTNAME=	octave-forge-tsa
 PORTVERSION=	4.1.1
 CATEGORIES=	math
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 EXTRACT_SUFX=	.tgz

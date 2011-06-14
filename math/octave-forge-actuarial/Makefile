@@ -9,7 +9,7 @@ PORTNAME=	octave-forge-actuarial
 PORTVERSION=	1.1.0
 CATEGORIES=	math
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 .include <bsd.port.pre.mk>

@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	gmsh
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	An automatic 3D finite element mesh generator
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \

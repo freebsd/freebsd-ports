@@ -9,7 +9,7 @@ PORTNAME=	octave-forge-msh
 PORTVERSION=	1.0.2
 CATEGORIES=	math
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/splines.tar.gz:${PORTSDIR}/math/octave-forge-splines

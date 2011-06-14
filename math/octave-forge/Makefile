@@ -13,7 +13,7 @@ MASTER_SITES=	#none
 DISTFILES=	#none
 EXTRACT_ONLY=	#none
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge metaport for math/octave
 
 OPTIONS=	\

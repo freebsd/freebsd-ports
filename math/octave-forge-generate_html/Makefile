@@ -9,7 +9,7 @@ PORTNAME=	octave-forge-generate_html
 PORTVERSION=	0.1.3
 CATEGORIES=	math
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 .include <bsd.port.pre.mk>

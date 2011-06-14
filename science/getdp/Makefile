@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.geuz.org/getdp/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	A rather general finite element solver using mixed finite elements
 
 LIB_DEPENDS=	gsl.16:${PORTSDIR}/math/gsl	\

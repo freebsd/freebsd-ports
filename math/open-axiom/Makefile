@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	A computer algebra system
 
 BUILD_DEPENDS=	sbcl:${PORTSDIR}/lang/sbcl \

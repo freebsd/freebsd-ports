@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	thierry/${PORTNAME}
 DISTNAME=	cdf${VER}-dist-cdf
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Device independent view of the CDF data model
 
 MAKE_FLAGS=	INSTALLDIR=${PREFIX} OS=${OPSYS:L} ENV=gnu      \

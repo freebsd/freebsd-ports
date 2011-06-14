@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GNU
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	A plotting library and toolkit
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png

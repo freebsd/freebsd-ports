@@ -9,7 +9,7 @@ PORTNAME=	octave-forge-ga
 PORTVERSION=	0.9.8
 CATEGORIES=	math
 
-MAINTAINER=	stephen@missouri.edu
+MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 RUN_DEPENDS+=	${TARBALLS_DIR}/communications.tar.gz:${PORTSDIR}/math/octave-forge-communications
