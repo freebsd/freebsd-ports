@@ -2,8 +2,9 @@ smartmontools has been installed
 
 To check the status of drives, use the following:
 
-	%%PREFIX%%/sbin/smartctl -a /dev/ad0		for first ATA drive
-	%%PREFIX%%/sbin/smartctl -a /dev/da0		for first SCSI drive
+	%%PREFIX%%/sbin/smartctl -a /dev/ad0	for first ATA/SATA drive
+	%%PREFIX%%/sbin/smartctl -a /dev/da0	for first SCSI drive
+	%%PREFIX%%/sbin/smartctl -a /dev/ada0	for first SATA drive
 
 To include drive health information in your daily status reports,
 add a line like the following to /etc/periodic.conf:
