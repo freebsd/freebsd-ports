@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	idnits
-PORTVERSION=	2.12.09
+PORTVERSION=	2.12.12
 CATEGORIES=	textproc
 MASTER_SITES=	http://tools.ietf.org/tools/idnits/ \
 		LOCAL/sunpoet
