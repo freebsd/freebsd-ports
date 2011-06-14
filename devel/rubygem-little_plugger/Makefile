@@ -18,6 +18,6 @@ USE_RUBYGEMS=	yes
 GEM_NAME=	${DISTNAME}
 RUBYGEM_AUTOPLIST=	yes
 
-RUN_DEPENDS=	spec:${PORTSDIR}/devel/rubygem-rspec
+RUN_DEPENDS=	rubygem-rspec>=0:${PORTSDIR}/devel/rubygem-rspec
 
 .include <bsd.port.mk>
