@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	assp
-PORTVERSION=	1.8.5.6
+PORTVERSION=	1.9.1.0
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ringofsaturn.com/distfiles/
 DISTNAME=	${PORTNAME:U}_${PORTVERSION}-Install
@@ -156,9 +156,5 @@ do-install:
 
 post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
-# XXX Workaround: for PR ports/152498. Remove if PR ports/152498 is fixed!
-	@${EGREP} -e '^@exec.*${PW}' -e '^@exec ${INSTALL} -d -g' ${TMPPLIST} > ${WRKDIR}/.PLIST.ugid
-	@${EGREP} -v -e '^@exec.*${PW}' -e '^@exec ${INSTALL} -d -g' ${TMPPLIST} >> ${WRKDIR}/.PLIST.ugid
-	@${MV} ${WRKDIR}/.PLIST.ugid ${TMPPLIST}
 
 .include <bsd.port.post.mk>
