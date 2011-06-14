@@ -12,6 +12,8 @@ CATEGORIES=	math
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
+BROKEN=		Does not build with octave-3.4.0
+
 WRKSRC=		${WRKDIR}/${OCTAVE_PKGNAME}/src
 
 .include <bsd.port.pre.mk>

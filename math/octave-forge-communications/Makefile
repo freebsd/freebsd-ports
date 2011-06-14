@@ -12,8 +12,10 @@ CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-GNU_CONFIGURE=	yes
 
+BROKEN=		Does not build with Octave-3.4.0
+
+GNU_CONFIGURE=	yes
 RUN_DEPENDS+=	${TARBALLS_DIR}/signal.tar.gz:${PORTSDIR}/math/octave-forge-signal
 
 .include <bsd.port.pre.mk>
