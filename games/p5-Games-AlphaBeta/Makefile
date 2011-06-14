@@ -6,18 +6,14 @@
 #
 
 PORTNAME=	Games-AlphaBeta
-PORTVERSION=	0.4.6
+PORTVERSION=	0.4.7
 CATEGORIES=	games perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game-tree search with object oriented interface
-
-BUILD_DEPENDS=	${SITE_PERL}/File/Find/Rule.pm:${PORTSDIR}/devel/p5-File-Find-Rule \
-		${SITE_PERL}/Pod/Coverage/CountParents.pm:${PORTSDIR}/devel/p5-Pod-Coverage \
-		${SITE_PERL}/${PERL_ARCH}/Storable.pm:${PORTSDIR}/devel/p5-Storable
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
 
