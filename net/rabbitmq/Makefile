@@ -7,7 +7,7 @@
 
 PORTNAME=	rabbitmq
 PORTVERSION=	2.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -15,13 +15,11 @@ DISTNAME=	${PORTNAME}-server-${PORTVERSION}
 MAINTAINER=	pneumann@gmail.com
 COMMENT=	RabbitMQ is an implementation of AMQP
 
-BUILD_DEPENDS=	erlc:${PORTSDIR}/lang/erlang-lite \
+BUILD_DEPENDS=	erlang-lite>=r14b03,1:${PORTSDIR}/lang/erlang-lite \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson \
 		xmlto:${PORTSDIR}/textproc/xmlto
-RUN_DEPENDS=	erlc:${PORTSDIR}/lang/erlang-lite \
+RUN_DEPENDS=	erlang-lite>=r14b03,1:${PORTSDIR}/lang/erlang-lite \
 		sudo:${PORTSDIR}/security/sudo
-
-BROKEN=		does not build
 
 USE_GMAKE=	yes
 USE_PYTHON=	yes
