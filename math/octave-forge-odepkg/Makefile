@@ -7,16 +7,17 @@
 
 PORTNAME=	octave-forge-odepkg
 PORTVERSION=	0.6.12
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
-WRKSRC=		${WRKDIR}/${OCTAVE_PKGNAME}/src
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
 post-build:
-	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTAVE_PKGNAME}
+	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${DISTNAME}
 
 .include <bsd.port.post.mk>
