@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge
 PORTVERSION=	20110205
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -25,18 +25,19 @@ OPTIONS=	\
 	BIOINFO "Install package: bioinfo" On \
 	CIVIL_ENGINEERING "Install package: civil-engineering" On \
 	COMBINATORICS "Install package: combinatorics" On \
-	COMMUNICATIONS "Install package: communications" On \
+	COMMUNICATIONS "Install package: communications" Off \
 	CONTROL "Install package: control" On \
 	DATA_SMOOTHING "Install package: data-smoothing" On \
 	DATAFRAME "Install package: dataframe" On \
 	ECONOMETRICS "Install package: econometrics" On \
 	ENGINE "Install package: engine" On \
-	ES "Install package: es" On \
+	ES "Install package: es" Off \
 	FENV "Install package: fenv" On \
-	FITS "Install package: fits" On \
+	FITS "Install package: fits" Off \
 	FINANCIAL "Install package: financial" On \
+	FL_CORE "Install package: fl-core" On \
 	FPL "Install package: fpl" On \
-	GA "Install package: ga" On \
+	GA "Install package: ga" Off \
 	GENERAL "Install package: general" On \
 	GENERATE_HTML "Install package: generate_html" On \
 	GNUPLOT "Install package: gnuplot" On \
@@ -71,7 +72,7 @@ OPTIONS=	\
 	PDB "Install package: pdb" On \
 	PHYSICALCONSTANTS "Install package: physicalconstants" On \
 	PLOT "Install package: plot" On \
-	PT_BR "Install package: pt_br" On \
+	PT_BR "Install package: pt_br" Off \
 	QUATERNION "Install package: quaternion" On \
 	SECS1D "Install package: secs1d" On \
 	SECS2D "Install package: secs2d" On \
@@ -149,6 +150,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/fits.tar.gz:${PORTSDIR}/math/octave-forge-fits
 .endif
 .if defined(WITH_FINANCIAL)
 RUN_DEPENDS+=	${TARBALLS_DIR}/financial.tar.gz:${PORTSDIR}/math/octave-forge-financial
+.endif
+.if defined(WITH_FL_CORE)
+RUN_DEPENDS+=	${TARBALLS_DIR}/fl-core.tar.gz:${PORTSDIR}/math/octave-forge-fl-core
 .endif
 .if defined(WITH_FPL)
 RUN_DEPENDS+=	${TARBALLS_DIR}/fpl.tar.gz:${PORTSDIR}/math/octave-forge-fpl
