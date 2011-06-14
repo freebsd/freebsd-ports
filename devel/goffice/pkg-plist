@@ -126,9 +126,9 @@ include/libgoffice-%%SHORT_VER%%/goffice/math/go-complex.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-cspline.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-distribution.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-fft.h
-include/libgoffice-%%SHORT_VER%%/goffice/math/go-quad.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-math.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-matrix3x3.h
+include/libgoffice-%%SHORT_VER%%/goffice/math/go-quad.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-rangefunc.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/go-regression.h
 include/libgoffice-%%SHORT_VER%%/goffice/math/goffice-math.h
@@ -203,6 +203,7 @@ lib/goffice/%%VERSION%%/plugins/plot_surface/surface.la
 lib/goffice/%%VERSION%%/plugins/plot_surface/surface.so
 lib/goffice/%%VERSION%%/plugins/plot_xy/gog-bubble-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_xy/gog-xy-color-prefs.ui
+lib/goffice/%%VERSION%%/plugins/plot_xy/gog-xy-dropbar-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_xy/gog-xy-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_xy/gog-xy-series-prefs.ui
 lib/goffice/%%VERSION%%/plugins/plot_xy/plot-types.xml
@@ -272,6 +273,7 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/GocGroup.html
 %%DOCSDIR%%-%%SHORT_VER%%/GocItem.html
 %%DOCSDIR%%-%%SHORT_VER%%/GocLine.html
+%%DOCSDIR%%-%%SHORT_VER%%/GocPixbuf.html
 %%DOCSDIR%%-%%SHORT_VER%%/GocPolygon.html
 %%DOCSDIR%%-%%SHORT_VER%%/GocPolyline.html
 %%DOCSDIR%%-%%SHORT_VER%%/GocRectangle.html
@@ -292,7 +294,6 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/GogLegend.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogObject.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogOutlinedObject.html
-%%DOCSDIR%%-%%SHORT_VER%%/GocPixbuf.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogPlot.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogRegCurve.html
 %%DOCSDIR%%-%%SHORT_VER%%/GogRegEqn.html
@@ -322,8 +323,6 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/ch15.html
 %%DOCSDIR%%-%%SHORT_VER%%/ch16.html
 %%DOCSDIR%%-%%SHORT_VER%%/ch17.html
-%%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8.devhelp
-%%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8.devhelp2
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-GOArrow.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-GOBezierSpline.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-GOCSpline.html
@@ -366,6 +365,8 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-go-image.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-go-plugin.html
 %%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8-go-string.html
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8.devhelp
+%%DOCSDIR%%-%%SHORT_VER%%/goffice-0.8.devhelp2
 %%DOCSDIR%%-%%SHORT_VER%%/home.png
 %%DOCSDIR%%-%%SHORT_VER%%/index.html
 %%DOCSDIR%%-%%SHORT_VER%%/index.sgml
@@ -377,6 +378,7 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DOCSDIR%%-%%SHORT_VER%%/right.png
 %%DOCSDIR%%-%%SHORT_VER%%/style.css
 %%DOCSDIR%%-%%SHORT_VER%%/up.png
+%%DATADIR%%/%%VERSION%%/patterns/svg-patterns.xml
 %%DATADIR%%/%%VERSION%%/ui/go-3d-rotation-sel.ui
 %%DATADIR%%/%%VERSION%%/ui/go-font-sel.ui
 %%DATADIR%%/%%VERSION%%/ui/go-format-sel.ui
@@ -396,7 +398,6 @@ libdata/pkgconfig/libgoffice-%%SHORT_VER%%.pc
 %%DATADIR%%/%%VERSION%%/ui/gog-reg-curve-prefs.ui
 %%DATADIR%%/%%VERSION%%/ui/gog-reg-eqn-prefs.ui
 %%DATADIR%%/%%VERSION%%/ui/gog-series-prefs.ui
-%%DATADIR%%/%%VERSION%%/patterns/svg-patterns.xml
 share/locale/am/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/ar/LC_MESSAGES/goffice-%%VERSION%%.mo
 share/locale/ast/LC_MESSAGES/goffice-%%VERSION%%.mo
@@ -471,8 +472,8 @@ share/pixmaps/goffice/%%VERSION%%/chart_boxplot_1_2.png
 share/pixmaps/goffice/%%VERSION%%/chart_boxplot_2_1.png
 share/pixmaps/goffice/%%VERSION%%/chart_boxplot_2_2.png
 share/pixmaps/goffice/%%VERSION%%/chart_bubble_1_1.png
-share/pixmaps/goffice/%%VERSION%%/chart_colored_1_1.png
 share/pixmaps/goffice/%%VERSION%%/chart_color_polar_1_1.png
+share/pixmaps/goffice/%%VERSION%%/chart_colored_1_1.png
 share/pixmaps/goffice/%%VERSION%%/chart_column_1_1.png
 share/pixmaps/goffice/%%VERSION%%/chart_column_1_2.png
 share/pixmaps/goffice/%%VERSION%%/chart_column_1_3.png
@@ -498,6 +499,8 @@ share/pixmaps/goffice/%%VERSION%%/chart_cylinder_2_3.png
 share/pixmaps/goffice/%%VERSION%%/chart_cylinder_3_1.png
 share/pixmaps/goffice/%%VERSION%%/chart_dropbar_1_1.png
 share/pixmaps/goffice/%%VERSION%%/chart_dropbar_1_2.png
+share/pixmaps/goffice/%%VERSION%%/chart_dropbar_1_3.png
+share/pixmaps/goffice/%%VERSION%%/chart_dropbar_1_4.png
 share/pixmaps/goffice/%%VERSION%%/chart_histogram_1_1.png
 share/pixmaps/goffice/%%VERSION%%/chart_histogram_1_3.png
 share/pixmaps/goffice/%%VERSION%%/chart_histogram_1_4.png
@@ -567,8 +570,8 @@ share/pixmaps/goffice/%%VERSION%%/stock.xpm
 share/pixmaps/goffice/%%VERSION%%/surface.xpm
 @dirrm share/pixmaps/goffice/%%VERSION%%
 @dirrmtry share/pixmaps/goffice
-@dirrm %%DATADIR%%/%%VERSION%%/patterns
 @dirrm %%DATADIR%%/%%VERSION%%/ui
+@dirrm %%DATADIR%%/%%VERSION%%/patterns
 @dirrm %%DATADIR%%/%%VERSION%%
 @dirrmtry %%DATADIR%%
 @dirrm %%DOCSDIR%%-%%SHORT_VER%%
@@ -598,6 +601,8 @@ share/pixmaps/goffice/%%VERSION%%/surface.xpm
 @dirrm include/libgoffice-%%SHORT_VER%%
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
 @dirrmtry share/locale/mr/LC_MESSAGES
