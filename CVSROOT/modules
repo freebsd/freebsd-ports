@@ -1049,7 +1049,6 @@ bitedit                         ports/editors/bitedit
 bitefusion                      ports/games/bitefusion
 bitflu                          ports/net-p2p/bitflu
 bitlbee                         ports/irc/bitlbee
-bitlbee-otr                     ports/irc/bitlbee-otr
 bitmap                          ports/x11/bitmap
 bitstream-vera                  ports/x11-fonts/bitstream-vera
 bittwist                        ports/net/bittwist
@@ -3228,7 +3227,6 @@ evolution-exchange              ports/mail/evolution-exchange
 evolution-gconf-tools           ports/devel/evolution-gconf-tools
 evolution-jescs                 ports/deskutils/evolution-jescs
 evolution-mapi                  ports/mail/evolution-mapi
-evolution-sharp                 ports/mail/evolution-sharp
 evolution-webcal                ports/www/evolution-webcal
 evolvotron                      ports/graphics/evolvotron
 evq3                            ports/games/evq3
@@ -9031,7 +9029,6 @@ mc-light                        ports/misc/mc-light
 mcabber                         ports/net-im/mcabber
 mcal                            ports/deskutils/mcal
 mcast-tools                     ports/net/mcast-tools
-mcatalog                        ports/deskutils/mcatalog
 mcl                             ports/net/mcl
 mcplay                          ports/audio/mcplay
 mcpp                            ports/devel/mcpp
@@ -10184,6 +10181,7 @@ ntlmaps                         ports/net/ntlmaps
 ntop                            ports/net/ntop
 ntp-devel                       ports/net/ntp-devel
 ntp-rc                          ports/net/ntp-rc
+ntraceroute                     ports/net/ntraceroute
 nttcp                           ports/benchmarks/nttcp
 nuclearchess                    ports/games/nuclearchess
 nucleo                          ports/x11-toolkits/nucleo
@@ -25139,6 +25137,7 @@ torrus                          ports/net-mgmt/torrus
 torsmo                          ports/sysutils/torsmo
 torsocks                        ports/net/torsocks
 tortoisehg1                     ports/devel/tortoisehg1
+tortoisehg2                     ports/devel/tortoisehg2
 tosha                           ports/audio/tosha
 toshctl                         ports/sysutils/toshctl
 totd                            ports/dns/totd
