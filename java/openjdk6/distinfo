@@ -10,5 +10,5 @@ SHA256 (apache-ant-1.8.2-bin.tar.bz2) = ecb49f5017807c9320bf19702149328cf4779a01
 SIZE (apache-ant-1.8.2-bin.tar.bz2) = 6740047
 SHA256 (jtreg-4.1-bin-b02_21_may_2010.zip) = 9a9ca107e8004e8d29e6c708e03e347c38ac4d7fdfd1930a25d6dc5cf61ad0f4
 SIZE (jtreg-4.1-bin-b02_21_may_2010.zip) = 5038412
-SHA256 (icedtea-web-1.0.2.tar.gz) = aa836e4c350eaaf3a3f474522ec47069f9b71c02ce59e8dd3d79881edb15115c
-SIZE (icedtea-web-1.0.2.tar.gz) = 750179
+SHA256 (icedtea-web-1.0.3.tar.gz) = 2a3b907b471a67fdbae4ecc80b8425dfc7533e91f63f622d91501d4a64f07581
+SIZE (icedtea-web-1.0.3.tar.gz) = 821928
