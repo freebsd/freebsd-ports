@@ -250,6 +250,7 @@
     SUBDIR += mysqltuner
     SUBDIR += mytop
     SUBDIR += mywwwatcher
+    SUBDIR += nagios-check_postgres_replication
     SUBDIR += namazu2
     SUBDIR += ocaml-pgocaml
     SUBDIR += ocaml-sqlite3
