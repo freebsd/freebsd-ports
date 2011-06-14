@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	octave-forge-parallel
-PORTVERSION=	2.0.4
+PORTVERSION=	2.0.5
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
