@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	kile
-DISTVERSION=	2.1b5
+DISTVERSION=	2.1
 CATEGORIES=	editors kde
-MASTER_SITES=	SF/${PORTNAME}/unstable/${PORTNAME}-${DISTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${DISTVERSION}
 
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	A LaTeX source editor for KDE
 
-BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		identify:${PORTSDIR}/graphics/ImageMagick
 
