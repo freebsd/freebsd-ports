@@ -1,4 +1,4 @@
 SHA256 (xloadimage.4.1.tar.gz) = 400bc7d84dcfb3265a7a1ce51819679dc3adaeda231514bd89b0f932b78ff5c4
 SIZE (xloadimage.4.1.tar.gz) = 596021
-SHA256 (xloadimage_4.1-16.diff.gz) = eb09ab4e61d6142de30b5db1cad5cfaf4c469846aa535606ed21fb4b40fd556f
-SIZE (xloadimage_4.1-16.diff.gz) = 69676
+SHA256 (xloadimage_4.1-16.2.diff.gz) = 36c318d36bab9401d96bf4f3c103306d9e4ab2ef3f42378ffc1c2784026d6db0
+SIZE (xloadimage_4.1-16.2.diff.gz) = 73679
