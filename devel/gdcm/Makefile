@@ -12,10 +12,22 @@ MASTER_SITES=	SF/gdcm/gdcm%202.x/GDCM%20${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Grassroots DICOM library
 
+OPTIONS=	VTK "Build the VTK bindings" off
+
 USE_BZIP2=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	${PREFIX}/lib \
 		${PREFIX}/lib/gdcm-${GDCM_MAJ}
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_VTK)
+LIB_DEPENDS+=	vtkHybrid.5:${PORTSDIR}/math/vtk5
+CMAKE_ARGS+=	-DGDCM_USE_VTK:BOOL=YES
+PLIST_SUB+=	VTK=""
+.else
+PLIST_SUB+=	VTK="@comment "
+.endif
 
 GDCM_MAJ=	2.0
 GDCM_MIN=	17
