@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="3145faf1-974c-11e0-869e-000c29249b2e">
+    <topic>ikiwiki -- tty hijacking via ikiwiki-mass-rebuild</topic>
+    <affects>
+      <package>
+	<name>ikiwiki</name>
+	<range><lt>3.20110608</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The IkiWiki development team reports:</p>
+	<blockquote cite="http://ikiwiki.info/security/#index40h2">
+	  <p>Ludwig Nussel discovered a way for users to hijack root's
+	  tty when ikiwiki-mass-rebuild was run.  Additionally, there
+	  was some potential for information disclosure via
+	  symlinks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-1408</cvename>
+      <url>http://ikiwiki.info/security/#index40h2</url>
+    </references>
+    <dates>
+      <discovery>2011-06-08</discovery>
+      <entry>2011-06-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="57573136-920e-11e0-bdc9-001b2134ef46">
     <topic>linux-flashplugin -- cross-site scripting vulnerability</topic>
     <affects>
