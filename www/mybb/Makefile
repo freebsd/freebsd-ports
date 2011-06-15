@@ -7,6 +7,7 @@
 
 PORTNAME=	mybb
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.mybb.com/download/latest/
 DISTNAME=	${PORTNAME}_1603
