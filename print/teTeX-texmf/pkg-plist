@@ -148,12 +148,7 @@
 %%TEXMFDISTDIR%%/doc/fonts/ae/COPYING
 %%TEXMFDISTDIR%%/doc/fonts/ae/README
 %%TEXMFDISTDIR%%/doc/fonts/ae/README2
-%%TEXMFDISTDIR%%/doc/fonts/amsfonts/amsfndoc.dvi
-%%TEXMFDISTDIR%%/doc/fonts/amsfonts/amsfonts.bug
-%%TEXMFDISTDIR%%/doc/fonts/amsfonts/amsfonts.dvi
-%%TEXMFDISTDIR%%/doc/fonts/amsfonts/amsfonts.faq
-%%TEXMFDISTDIR%%/doc/fonts/amsfonts/eufrak.dvi
-%%TEXMFDISTDIR%%/doc/fonts/amsfonts/euscript.dvi
+%%TEXMFDISTDIR%%/doc/fonts/amsfonts
 %%TEXMFDISTDIR%%/doc/fonts/antt/AntykwaTorunska-doc-en-2_01.pdf
 %%TEXMFDISTDIR%%/doc/fonts/antt/AntykwaTorunska-doc-pl-2_01.pdf
 %%TEXMFDISTDIR%%/doc/fonts/antt/README
@@ -170,7 +165,6 @@
 %%TEXMFDISTDIR%%/doc/fonts/bh/lucida.txt
 %%TEXMFDISTDIR%%/doc/fonts/bh/makefile
 %%TEXMFDISTDIR%%/doc/fonts/bh/readme.lucida
-%%TEXMFDISTDIR%%/doc/fonts/bluesky/README
 %%TEXMFDISTDIR%%/doc/fonts/cbgreek/cbgreek.txt
 %%TEXMFDISTDIR%%/doc/fonts/charter/readme.charter
 %%TEXMFDISTDIR%%/doc/fonts/cm/README
@@ -3004,9 +2998,6 @@
 %%TEXMFDISTDIR%%/doc/latex/amscls/textcmds.pdf
 %%TEXMFDISTDIR%%/doc/latex/amscls/thmtest.pdf
 %%TEXMFDISTDIR%%/doc/latex/amscls/thmtest.tex
-%%TEXMFDISTDIR%%/doc/latex/amsfonts/amsfonts.dvi
-%%TEXMFDISTDIR%%/doc/latex/amsfonts/eufrak.dvi
-%%TEXMFDISTDIR%%/doc/latex/amsfonts/euscript.dvi
 %%TEXMFDISTDIR%%/doc/latex/amsmath/amsldoc.pdf
 %%TEXMFDISTDIR%%/doc/latex/amsmath/diffs-m.txt
 %%TEXMFDISTDIR%%/doc/latex/amsmath/subeqn.pdf
@@ -3782,10 +3773,6 @@
 %%TEXMFDISTDIR%%/dvipdfm/config/config
 %%TEXMFDISTDIR%%/dvips/antp/config.antp
 %%TEXMFDISTDIR%%/dvips/antt/config.antt
-%%TEXMFDISTDIR%%/dvips/bluesky/config.ams
-%%TEXMFDISTDIR%%/dvips/bluesky/config.amz
-%%TEXMFDISTDIR%%/dvips/bluesky/config.cm
-%%TEXMFDISTDIR%%/dvips/bluesky/config.cmz
 %%TEXMFDISTDIR%%/dvips/config/config.ps
 %%TEXMFDISTDIR%%/dvips/misc/alt-rule.pro
 %%TEXMFDISTDIR%%/dvips/misc/config.mirr
@@ -3867,8 +3854,7 @@
 %%TEXMFDISTDIR%%/fonts/afm/bitstrea/charter/bchbi8a.afm
 %%TEXMFDISTDIR%%/fonts/afm/bitstrea/charter/bchr8a.afm
 %%TEXMFDISTDIR%%/fonts/afm/bitstrea/charter/bchri8a.afm
-%%TEXMFDISTDIR%%/fonts/afm/bluesky/cm
-%%TEXMFDISTDIR%%/fonts/afm/bluesky/ams
+%%TEXMFDISTDIR%%/fonts/afm/public/amsfonts
 %%TEXMFDISTDIR%%/fonts/afm/public/antp/antpb.afm
 %%TEXMFDISTDIR%%/fonts/afm/public/antp/antpbi.afm
 %%TEXMFDISTDIR%%/fonts/afm/public/antp/antpr.afm
@@ -4346,10 +4332,7 @@
 %%TEXMFDISTDIR%%/fonts/enc/dvips/tetex/mtex.enc
 %%TEXMFDISTDIR%%/fonts/enc/dvips/vntex/t5.enc
 %%TEXMFDISTDIR%%/fonts/map/dvipdfm/tetex/cm-dvipdfm-fix.map
-%%TEXMFDISTDIR%%/fonts/map/dvips/ams/psfonts.ams
-%%TEXMFDISTDIR%%/fonts/map/dvips/ams/psfonts.amz
-%%TEXMFDISTDIR%%/fonts/map/dvips/ams/psfonts.cm
-%%TEXMFDISTDIR%%/fonts/map/dvips/ams/psfonts.cmz
+%%TEXMFDISTDIR%%/fonts/map/dvips/amsfonts
 %%TEXMFDISTDIR%%/fonts/map/dvips/antp/antp.map
 %%TEXMFDISTDIR%%/fonts/map/dvips/antt/cork-antt.map
 %%TEXMFDISTDIR%%/fonts/map/dvips/antt/cs-antt.map
@@ -4542,119 +4525,6 @@
 %%TEXMFDISTDIR%%/fonts/ovp/public/omega/uctt9.ovp
 %%TEXMFDISTDIR%%/fonts/ovp/public/omega/ucvtt10.ovp
 %%TEXMFDISTDIR%%/fonts/ovp/public/otibet/otibetan.ovp
-%%TEXMFDISTDIR%%/fonts/source/ams/cmextra/cmbsy5.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cmextra/cmbsy6.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cmextra/cmbsy7.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cmextra/cmbsy8.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cmextra/cmbsy9.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cmextra/cmcsc8.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cmextra/cmcsc9.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cmextra/cmex7.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cmextra/cmex8.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cmextra/cmmib5.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cmextra/cmmib6.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cmextra/cmmib7.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cmextra/cmmib8.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cmextra/cmmib9.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/cyrcsc.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/cyrfont.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/cyrilu.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/cyrital.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/cyrmax.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/cyrpunc.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/cyrspl.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/cyrspu.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/cyrti.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/serb.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/serbspu.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyb10.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyb5.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyb6.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyb7.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyb8.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyb9.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyi10.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyi5.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyi6.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyi7.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyi8.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyi9.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyr10.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyr5.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyr6.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyr7.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyr8.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyr9.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncysc10.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyss10.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyss8.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/cyrillic/wncyss9.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eubase.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/euex10.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/euex7.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/euex8.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/euex9.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eufb10.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eufb5.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eufb6.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eufb7.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eufb8.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eufb9.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eufbch.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eufm10.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eufm5.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eufm6.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eufm7.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eufm8.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eufm9.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eufmch.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eurb10.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eurb5.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eurb6.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eurb7.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eurb8.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eurb9.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eurbch.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eurm10.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eurm5.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eurm6.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eurm7.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eurm8.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eurm9.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eurmch.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eusb10.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eusb5.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eusb6.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eusb7.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eusb8.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eusb9.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eusbch.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eusm10.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eusm5.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eusm6.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eusm7.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eusm8.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eusm9.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/euler/eusmch.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/symbols/amsya.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/symbols/amsyb.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/symbols/asymbols.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/symbols/bsymbols.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/symbols/msam10.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/symbols/msam5.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/symbols/msam6.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/symbols/msam7.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/symbols/msam8.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/symbols/msam9.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/symbols/msbm10.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/symbols/msbm5.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/symbols/msbm6.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/symbols/msbm7.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/symbols/msbm8.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/symbols/msbm9.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/symbols/xbbase.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/symbols/xbbold.mf
-%%TEXMFDISTDIR%%/fonts/source/ams/symbols/xbcaps.mf
 %%TEXMFDISTDIR%%/fonts/source/jknappen/ec/ecbi.mf
 %%TEXMFDISTDIR%%/fonts/source/jknappen/ec/ecbl.mf
 %%TEXMFDISTDIR%%/fonts/source/jknappen/ec/ecbm.mf
@@ -5277,6 +5147,7 @@
 %%TEXMFDISTDIR%%/fonts/source/lh/specific/lgcrusl.mf
 %%TEXMFDISTDIR%%/fonts/source/lh/specific/lgrucl.mf
 %%TEXMFDISTDIR%%/fonts/source/lh/specific/lgrucu.mf
+%%TEXMFDISTDIR%%/fonts/source/public/amsfonts
 %%TEXMFDISTDIR%%/fonts/source/public/bbm/bbm10.mf
 %%TEXMFDISTDIR%%/fonts/source/public/bbm/bbm12.mf
 %%TEXMFDISTDIR%%/fonts/source/public/bbm/bbm17.mf
@@ -6617,94 +6488,6 @@
 %%TEXMFDISTDIR%%/fonts/tfm/adobe/zapfchan/rpzcmi.tfm
 %%TEXMFDISTDIR%%/fonts/tfm/adobe/zapfding/pzdr.tfm
 %%TEXMFDISTDIR%%/fonts/tfm/adobe/zapfding/rpzdr.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cmextra/cmbsy5.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cmextra/cmbsy6.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cmextra/cmbsy7.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cmextra/cmbsy8.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cmextra/cmbsy9.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cmextra/cmcsc8.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cmextra/cmcsc9.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cmextra/cmex7.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cmextra/cmex8.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cmextra/cmmib5.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cmextra/cmmib6.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cmextra/cmmib7.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cmextra/cmmib8.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cmextra/cmmib9.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyb10.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyb5.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyb6.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyb7.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyb8.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyb9.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyi10.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyi5.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyi6.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyi7.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyi8.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyi9.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyr10.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyr5.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyr6.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyr7.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyr8.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyr9.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncysc10.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyss10.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyss8.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic/wncyss9.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/euex10.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/euex7.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/euex8.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/euex9.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eufb10.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eufb5.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eufb6.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eufb7.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eufb8.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eufb9.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eufm10.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eufm5.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eufm6.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eufm7.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eufm8.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eufm9.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eurb10.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eurb5.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eurb6.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eurb7.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eurb8.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eurb9.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eurm10.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eurm5.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eurm6.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eurm7.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eurm8.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eurm9.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eusb10.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eusb5.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eusb6.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eusb7.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eusb8.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eusb9.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eusm10.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eusm5.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eusm6.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eusm7.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eusm8.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/euler/eusm9.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/symbols/msam10.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/symbols/msam5.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/symbols/msam6.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/symbols/msam7.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/symbols/msam8.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/symbols/msam9.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/symbols/msbm10.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/symbols/msbm5.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/symbols/msbm6.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/symbols/msbm7.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/symbols/msbm8.tfm
-%%TEXMFDISTDIR%%/fonts/tfm/ams/symbols/msbm9.tfm
 %%TEXMFDISTDIR%%/fonts/tfm/bh/lubright/hlhb8a.tfm
 %%TEXMFDISTDIR%%/fonts/tfm/bh/lubright/hlhb8c.tfm
 %%TEXMFDISTDIR%%/fonts/tfm/bh/lubright/hlhb8r.tfm
@@ -7251,6 +7034,7 @@
 %%TEXMFDISTDIR%%/fonts/tfm/public/ae/laess8.tfm
 %%TEXMFDISTDIR%%/fonts/tfm/public/ae/laessb8.tfm
 %%TEXMFDISTDIR%%/fonts/tfm/public/ae/laessi8.tfm
+%%TEXMFDISTDIR%%/fonts/tfm/public/amsfonts
 %%TEXMFDISTDIR%%/fonts/tfm/public/antp/antpb.tfm
 %%TEXMFDISTDIR%%/fonts/tfm/public/antp/antpbi.tfm
 %%TEXMFDISTDIR%%/fonts/tfm/public/antp/antpr.tfm
@@ -9012,8 +8796,6 @@
 %%TEXMFDISTDIR%%/fonts/type1/bitstrea/charter/bchbi8a.pfb
 %%TEXMFDISTDIR%%/fonts/type1/bitstrea/charter/bchr8a.pfb
 %%TEXMFDISTDIR%%/fonts/type1/bitstrea/charter/bchri8a.pfb
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/cm
-%%TEXMFDISTDIR%%/fonts/type1/bluesky/ams
 %%TEXMFDISTDIR%%/fonts/type1/hoekwater/context/contnav.pfb
 %%TEXMFDISTDIR%%/fonts/type1/hoekwater/mflogo/logo10.pfb
 %%TEXMFDISTDIR%%/fonts/type1/hoekwater/mflogo/logo8.pfb
@@ -9040,6 +8822,7 @@
 %%TEXMFDISTDIR%%/fonts/type1/hoekwater/wasy/wasy8.pfb
 %%TEXMFDISTDIR%%/fonts/type1/hoekwater/wasy/wasy9.pfb
 %%TEXMFDISTDIR%%/fonts/type1/hoekwater/wasy/wasyb10.pfb
+%%TEXMFDISTDIR%%/fonts/type1/public/amsfonts
 %%TEXMFDISTDIR%%/fonts/type1/public/antp/antpb.pfb
 %%TEXMFDISTDIR%%/fonts/type1/public/antp/antpbi.pfb
 %%TEXMFDISTDIR%%/fonts/type1/public/antp/antpr.pfb
@@ -12020,24 +11803,7 @@
 %%TEXMFDISTDIR%%/tex/latex/amscls/rkvbeta.sty
 %%TEXMFDISTDIR%%/tex/latex/amscls/textcmds.sty
 %%TEXMFDISTDIR%%/tex/latex/amscls/upref.sty
-%%TEXMFDISTDIR%%/tex/latex/amsfonts/amsfonts.sty
-%%TEXMFDISTDIR%%/tex/latex/amsfonts/amssymb.sty
-%%TEXMFDISTDIR%%/tex/latex/amsfonts/cmmib57.sty
-%%TEXMFDISTDIR%%/tex/latex/amsfonts/eucal.sty
-%%TEXMFDISTDIR%%/tex/latex/amsfonts/eufrak.sty
-%%TEXMFDISTDIR%%/tex/latex/amsfonts/euscript.sty
-%%TEXMFDISTDIR%%/tex/latex/amsfonts/ueuex.fd
-%%TEXMFDISTDIR%%/tex/latex/amsfonts/ueuex57.fd
-%%TEXMFDISTDIR%%/tex/latex/amsfonts/ueuf.fd
-%%TEXMFDISTDIR%%/tex/latex/amsfonts/ueuf57.fd
-%%TEXMFDISTDIR%%/tex/latex/amsfonts/ueur.fd
-%%TEXMFDISTDIR%%/tex/latex/amsfonts/ueur57.fd
-%%TEXMFDISTDIR%%/tex/latex/amsfonts/ueus.fd
-%%TEXMFDISTDIR%%/tex/latex/amsfonts/ueus57.fd
-%%TEXMFDISTDIR%%/tex/latex/amsfonts/umsa.fd
-%%TEXMFDISTDIR%%/tex/latex/amsfonts/umsa57.fd
-%%TEXMFDISTDIR%%/tex/latex/amsfonts/umsb.fd
-%%TEXMFDISTDIR%%/tex/latex/amsfonts/umsb57.fd
+%%TEXMFDISTDIR%%/tex/latex/amsfonts
 %%TEXMFDISTDIR%%/tex/latex/amsmath/amsbsy.sty
 %%TEXMFDISTDIR%%/tex/latex/amsmath/amscd.sty
 %%TEXMFDISTDIR%%/tex/latex/amsmath/amsgen.sty
@@ -13531,9 +13297,7 @@
 %%TEXMFDISTDIR%%/tex/mex/utf8mex/utf8-pl.tex
 %%TEXMFDISTDIR%%/tex/mex/utf8mex/utf8mex.ini
 %%TEXMFDISTDIR%%/tex/mex/utf8mex/utf8plsq.tex
-%%TEXMFDISTDIR%%/tex/plain/amsfonts/amssym.def
-%%TEXMFDISTDIR%%/tex/plain/amsfonts/amssym.tex
-%%TEXMFDISTDIR%%/tex/plain/amsfonts/cyracc.def
+%%TEXMFDISTDIR%%/tex/plain/amsfonts
 %%TEXMFDISTDIR%%/tex/plain/antt/ofs-8x.tex
 %%TEXMFDISTDIR%%/tex/plain/antt/pantyk.tex
 %%TEXMFDISTDIR%%/tex/plain/arrow/arrow.tex
@@ -13617,7 +13381,6 @@
 %%TEXMFDISTDIR%%/tex/platex/config/language.dat
 %%TEXMFDISTDIR%%/tex/platex/config/pdfplatex.ini
 %%TEXMFDISTDIR%%/tex/platex/config/platex.ini
-%%TEXMFDISTDIR%%/tex/texinfo/vntexinfo.tex
 %%TEXMFDISTDIR%%/texdoctk/texdocrc.defaults
 %%TEXMFDISTDIR%%/texdoctk/texdoctk.dat
 %%TEXMFDISTDIR%%/web2c/amiga-pl.tcx
@@ -13687,7 +13450,6 @@
 @dirrm %%TEXMFDISTDIR%%/tex/plain/base
 @dirrm %%TEXMFDISTDIR%%/tex/plain/arrow
 @dirrm %%TEXMFDISTDIR%%/tex/plain/antt
-@dirrm %%TEXMFDISTDIR%%/tex/plain/amsfonts
 @dirrm %%TEXMFDISTDIR%%/tex/plain
 @dirrm %%TEXMFDISTDIR%%/tex/mex/utf8mex
 @dirrm %%TEXMFDISTDIR%%/tex/mex/config
@@ -13905,7 +13667,6 @@
 @dirrm %%TEXMFDISTDIR%%/tex/latex/antt
 @dirrm %%TEXMFDISTDIR%%/tex/latex/antp
 @dirrm %%TEXMFDISTDIR%%/tex/latex/amsmath
-@dirrm %%TEXMFDISTDIR%%/tex/latex/amsfonts
 @dirrm %%TEXMFDISTDIR%%/tex/latex/amscls
 @dirrm %%TEXMFDISTDIR%%/tex/latex/algorithms
 @dirrm %%TEXMFDISTDIR%%/tex/latex/aeguill
@@ -14110,7 +13871,6 @@
 @dirrm %%TEXMFDISTDIR%%/fonts/type1/hoekwater/mflogo
 @dirrm %%TEXMFDISTDIR%%/fonts/type1/hoekwater/context
 @dirrm %%TEXMFDISTDIR%%/fonts/type1/hoekwater
-@dirrm %%TEXMFDISTDIR%%/fonts/type1/bluesky
 @dirrm %%TEXMFDISTDIR%%/fonts/type1/bitstrea/charter
 @dirrm %%TEXMFDISTDIR%%/fonts/type1/bitstrea
 @dirrm %%TEXMFDISTDIR%%/fonts/type1
@@ -14187,11 +13947,6 @@
 @dirrm %%TEXMFDISTDIR%%/fonts/tfm/bh/lucida
 @dirrm %%TEXMFDISTDIR%%/fonts/tfm/bh/lubright
 @dirrm %%TEXMFDISTDIR%%/fonts/tfm/bh
-@dirrm %%TEXMFDISTDIR%%/fonts/tfm/ams/symbols
-@dirrm %%TEXMFDISTDIR%%/fonts/tfm/ams/euler
-@dirrm %%TEXMFDISTDIR%%/fonts/tfm/ams/cyrillic
-@dirrm %%TEXMFDISTDIR%%/fonts/tfm/ams/cmextra
-@dirrm %%TEXMFDISTDIR%%/fonts/tfm/ams
 @dirrm %%TEXMFDISTDIR%%/fonts/tfm/adobe/zapfding
 @dirrm %%TEXMFDISTDIR%%/fonts/tfm/adobe/zapfchan
 @dirrm %%TEXMFDISTDIR%%/fonts/tfm/adobe/times
@@ -14250,11 +14005,6 @@
 @dirrm %%TEXMFDISTDIR%%/fonts/source/jknappen/sauter
 @dirrm %%TEXMFDISTDIR%%/fonts/source/jknappen/ec
 @dirrm %%TEXMFDISTDIR%%/fonts/source/jknappen
-@dirrm %%TEXMFDISTDIR%%/fonts/source/ams/symbols
-@dirrm %%TEXMFDISTDIR%%/fonts/source/ams/euler
-@dirrm %%TEXMFDISTDIR%%/fonts/source/ams/cyrillic
-@dirrm %%TEXMFDISTDIR%%/fonts/source/ams/cmextra
-@dirrm %%TEXMFDISTDIR%%/fonts/source/ams
 @dirrm %%TEXMFDISTDIR%%/fonts/source
 @dirrm %%TEXMFDISTDIR%%/fonts/sfd
 @dirrm %%TEXMFDISTDIR%%/fonts/pk
@@ -14301,7 +14051,6 @@
 @dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/cc-pl
 @dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/antt
 @dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/antp
-@dirrm %%TEXMFDISTDIR%%/fonts/map/dvips/ams
 @dirrm %%TEXMFDISTDIR%%/fonts/map/dvips
 @dirrm %%TEXMFDISTDIR%%/fonts/map/dvipdfm/updmap
 @dirrm %%TEXMFDISTDIR%%/fonts/map/dvipdfm/tetex
@@ -14355,7 +14104,6 @@
 @dirrm %%TEXMFDISTDIR%%/fonts/afm/public/antt
 @dirrm %%TEXMFDISTDIR%%/fonts/afm/public/antp
 @dirrm %%TEXMFDISTDIR%%/fonts/afm/public
-@dirrm %%TEXMFDISTDIR%%/fonts/afm/bluesky
 @dirrm %%TEXMFDISTDIR%%/fonts/afm/bitstrea/charter
 @dirrm %%TEXMFDISTDIR%%/fonts/afm/bitstrea
 @dirrm %%TEXMFDISTDIR%%/fonts/afm/adobe/zapfding
@@ -14380,7 +14128,6 @@
 @dirrm %%TEXMFDISTDIR%%/dvips/omega
 @dirrm %%TEXMFDISTDIR%%/dvips/misc
 @dirrm %%TEXMFDISTDIR%%/dvips/config
-@dirrm %%TEXMFDISTDIR%%/dvips/bluesky
 @dirrm %%TEXMFDISTDIR%%/dvips/antt
 @dirrm %%TEXMFDISTDIR%%/dvips/antp
 @dirrm %%TEXMFDISTDIR%%/dvips
@@ -14557,7 +14304,6 @@
 @dirrm %%TEXMFDISTDIR%%/doc/latex/appendix
 @dirrm %%TEXMFDISTDIR%%/doc/latex/anysize
 @dirrm %%TEXMFDISTDIR%%/doc/latex/amsmath
-@dirrm %%TEXMFDISTDIR%%/doc/latex/amsfonts
 @dirrm %%TEXMFDISTDIR%%/doc/latex/amscls
 @dirrm %%TEXMFDISTDIR%%/doc/latex/algorithms
 @dirrm %%TEXMFDISTDIR%%/doc/latex/aeguill
@@ -14636,11 +14382,9 @@
 @dirrm %%TEXMFDISTDIR%%/doc/fonts/cm
 @dirrm %%TEXMFDISTDIR%%/doc/fonts/charter
 @dirrm %%TEXMFDISTDIR%%/doc/fonts/cbgreek
-@dirrm %%TEXMFDISTDIR%%/doc/fonts/bluesky
 @dirrm %%TEXMFDISTDIR%%/doc/fonts/bh
 @dirrm %%TEXMFDISTDIR%%/doc/fonts/belleek
 @dirrm %%TEXMFDISTDIR%%/doc/fonts/antt
-@dirrm %%TEXMFDISTDIR%%/doc/fonts/amsfonts
 @dirrm %%TEXMFDISTDIR%%/doc/fonts/ae
 @dirrm %%TEXMFDISTDIR%%/doc/fonts
 @dirrm %%TEXMFDISTDIR%%/doc/fontinst/talks
