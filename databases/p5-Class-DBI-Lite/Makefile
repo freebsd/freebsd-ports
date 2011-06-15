@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Class-DBI-Lite
-PORTVERSION=	1.020
+PORTVERSION=	1.021
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Lightweight ORM for Perl
 
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
+LICENSE=	ART10 GPLv1
 
 RUN_DEPENDS=	p5-Cache-Memcached>=1.27:${PORTSDIR}/databases/p5-Cache-Memcached \
 		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
