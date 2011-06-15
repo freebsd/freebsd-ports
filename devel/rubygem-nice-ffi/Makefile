@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	kick.christoph@googlemail.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Nice-FFI is a layer on top of Ruby-FFI
 
 RUN_DEPENDS=	rubygem-ffi>=0.5.0:${PORTSDIR}/devel/rubygem-ffi
