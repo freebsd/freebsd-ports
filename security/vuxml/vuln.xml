@@ -34,6 +34,44 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="55a528e8-9787-11e0-b24a-001b2134ef46">
+    <topic>linux-flashplugin -- remote code execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin</name>
+	<range><le>9.0r289</le></range>
+      </package>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>10.3r181.26</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe Product Security Incident Response Team reports:</p>
+	<blockquote cite="http://www.adobe.com/support/security/bulletins/apsb11-18.html">
+	  <p>A critical vulnerability has been identified in Adobe Flash
+	    Player 10.3.181.23 and earlier versions for Windows,
+	    Macintosh, Linux and Solaris, and Adobe Flash Player
+	    10.3.185.23 and earlier versions for Android. This memory
+	    corruption vulnerability (CVE-2011-2110) could cause a crash
+	    and potentially allow an attacker to take control of the
+	    affected system. There are reports that this vulnerability
+	    is being exploited in the wild in targeted attacks via
+	    malicious Web pages.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-2110</cvename>
+      <url>http://www.adobe.com/support/security/bulletins/apsb11-18.html</url>
+    </references>
+    <dates>
+      <discovery>2011-05-13</discovery>
+      <entry>2011-06-15</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="3145faf1-974c-11e0-869e-000c29249b2e">
     <topic>ikiwiki -- tty hijacking via ikiwiki-mass-rebuild</topic>
     <affects>
