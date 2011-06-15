@@ -7,14 +7,3 @@
 +#include <sys/param.h>
 +#include <libutil.h>
 +#include "anna.h"
- 
- void error_exit(char *format, ...)
- {
-@@ -17,6 +20,7 @@
- 
- 	fprintf(stderr, "%s: errno=%d (if applicable)\n", buffer, errno);
- 	syslog(LOG_ERR, "'%s': %m", buffer);
-+	pidfile_remove(pfh);
- 
- 	exit(EXIT_FAILURE);
- }
