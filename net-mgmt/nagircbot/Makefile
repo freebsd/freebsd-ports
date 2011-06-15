@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nagircbot
-PORTVERSION=	0.0.20
+PORTVERSION=	0.0.33
 CATEGORIES=	net-mgmt irc
 MASTER_SITES=	http://www.vanheusden.com/nagircbot/
 EXTRACT_SUFX=	.tgz
