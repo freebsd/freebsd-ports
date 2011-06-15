@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	trafficserver
-PORTVERSION=	2.1.5
+PORTVERSION=	3.0.0
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-unstable
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	A fast, scalable and extensible HTTP proxy server
@@ -39,14 +39,10 @@ RUN_DEPENDS=	xz>0:${PORTSDIR}/archivers/xz
 BROKEN=		does not compile on 7.X
 .endif
 
-pre-configure:
-	@cd ${WRKSRC} && ${AUTORECONF} -i
-
-# XXX: no, I don't know why this is needed for libtool > 2.2.10 but it's
-#      the only one, and a dirty hack will suffice.  Of course, using both
-#      autoreconf and the bsd.autotools.mk targets is bad too.
-#
 post-configure:
-	@${CP} ${LIBTOOL} ${WRKSRC}/libtool
+	@${FIND} ${WRKSRC} -name 'Makefile' | ${XARGS} ${REINPLACE_CMD} -e \
+	    's,LIBTOOL_LINK_FLAGS = -R -R/usr/local/lib,LIBTOOL_LINK_FLAGS = -R/usr/local/lib,'
+	@${FIND} ${WRKSRC} -name 'Makefile' | ${XARGS} ${REINPLACE_CMD} -e \
+	    's,LDFLAGS = -rdynamic  *-R -R,LDFLAGS = -rdynamic -R,'
 
 .include <bsd.port.post.mk>

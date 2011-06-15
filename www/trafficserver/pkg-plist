@@ -1,4 +1,5 @@
 @comment $FreeBSD$
+bin/trafficserver
 bin/traffic_cop
 bin/traffic_line
 bin/traffic_logcat
@@ -8,10 +9,18 @@ bin/traffic_sac
 bin/traffic_server
 bin/traffic_shell
 bin/tsxs
+lib/libtsmgmt.so
+lib/libtsutil.a
+lib/libtsutil.so.3
+lib/libtsmgmt.la
+lib/libtsutil.so
+lib/libtsutil.la
+lib/libtsmgmt.a
+lib/libtsmgmt.so.3
 libexec/trafficserver/conf_remap.la
 libexec/trafficserver/conf_remap.so
-%%ETCDIR%%/admin_access.config
 %%ETCDIR%%/ae_ua.config
+%%ETCDIR%%/volume.config
 %%ETCDIR%%/body_factory/default/.body_factory_info
 %%ETCDIR%%/body_factory/default/README
 %%ETCDIR%%/body_factory/default/access#denied
@@ -46,10 +55,8 @@ libexec/trafficserver/conf_remap.so
 %%ETCDIR%%/ip_allow.config
 %%ETCDIR%%/log_hosts.config
 %%ETCDIR%%/logs_xml.config
-%%ETCDIR%%/mgmt_allow.config
 %%ETCDIR%%/mgr.cnf
 %%ETCDIR%%/parent.config
-%%ETCDIR%%/partition.config
 %%ETCDIR%%/plugin.config
 %%ETCDIR%%/plugin.db
 %%ETCDIR%%/records.config
@@ -63,6 +70,7 @@ libexec/trafficserver/conf_remap.so
 %%ETCDIR%%/update.config
 %%ETCDIR%%/vaddrs.config
 include/ts/experimental.h
+include/ts/mgmtapi.h
 include/ts/remap.h
 include/ts/ts.h
 @dirrm %%DATADIR%%
