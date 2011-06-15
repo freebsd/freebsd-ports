@@ -7,7 +7,7 @@
 
 PORTNAME=	mailman
 DISTVERSION=	2.1.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	mailman
 
-MAINTAINER?=	wxs@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A mailing list manager (MLM) with a user-friendly web front-end
 
 OPTIONS=	SENDMAIL "for use with sendmail" off \
@@ -27,15 +27,13 @@ OPTIONS=	SENDMAIL "for use with sendmail" off \
 		HTDIG "htdig integration patches" off \
 		NAMAZU2 "make private archives searchable with namazu2" off
 
-USE_AUTOTOOLS=	autoconf
-GNU_CONFIGURE_PREFIX=	${MAILMANDIR}
+HAS_CONFIGURE=	yes
 USE_PYTHON=	yes
 MAKE_JOBS_SAFE=	yes
-CONFIGURE_ARGS+=--with-python=${PYTHON_CMD} \
+CONFIGURE_ARGS+=	--prefix=${MAILMANDIR} --with-python=${PYTHON_CMD} \
 		--with-username=${MM_USERNAME} \
 		--with-groupname=${MM_GROUPNAME} \
-		--with-mail-gid=${MAIL_GID} --with-cgi-gid=${CGI_GID} \
-		--with-permcheck=no
+		--with-mail-gid=${MAIL_GID} --with-cgi-gid=${CGI_GID}
 SUB_FILES=	pkg-message
 SUB_LIST+=	MAILMANDIR=${MAILMANDIR}
 USE_RC_SUBR=	mailman
@@ -52,9 +50,6 @@ CGI_GID?=	www
 IMGDIR?=	www/icons
 #
 # End of user-configurable variables.
-
-USERS=		${MM_USERNAME}
-GROUPS=		${MM_GROUPNAME}
 
 MAILMANDIR=	${PREFIX}/${MM_DIR}
 PKGINSTALL=	${WRKDIR}/pkg-install
@@ -74,7 +69,7 @@ IMGFILES=	PythonPowered.png mailman.jpg mm-icon.png
 .if defined(WITH_SENDMAIL)
 .if defined(WITH_EXIM3) || defined(WITH_EXIM4) || defined(WITH_POSTFIX) || \
 defined(WITH_COURIER)
-IGNORE=	can only have one MTA selected to integrate with
+BROKEN=	choose only one MTA integration
 .endif
 MAIL_GID?=	mailnull
 .endif
@@ -82,7 +77,7 @@ MAIL_GID?=	mailnull
 .if defined(WITH_EXIM3)
 .if defined(WITH_SENDMAIL) || defined(WITH_EXIM4) || defined(WITH_POSTFIX) || \
 defined(WITH_COURIER)
-IGNORE=	can only have one MTA selected to integrate with
+BROKEN=	choose only one MTA integration
 .endif
 MAIL_GID?=	nobody
 .endif
@@ -90,7 +85,7 @@ MAIL_GID?=	nobody
 .if defined(WITH_EXIM4)
 .if defined(WITH_SENDMAIL) || defined(WITH_EXIM3) || defined(WITH_POSTFIX) || \
 defined(WITH_COURIER)
-IGNORE=	can only have one MTA selected to integrate with
+BROKEN=	choose only one MTA integration
 .endif
 MAIL_GID?=	mail
 .endif
@@ -98,16 +93,16 @@ MAIL_GID?=	mail
 .if defined(WITH_POSTFIX)
 .if defined(WITH_SENDMAIL) || defined(WITH_EXIM3) || defined(WITH_EXIM4) || \
 defined(WITH_COURIER)
-IGNORE=	can only have one MTA selected to integrate with
+BROKEN=	choose only one MTA integration
 .endif
-MAIL_GID?=	nobody
+MAIL_GID?=	mailman
 EXTRA_PATCHES+=	${FILESDIR}/postfix-verp.diff
 .endif
 
 .if defined(WITH_COURIER)
 .if defined(WITH_SENDMAIL) || defined(WITH_EXIM3) || defined(WITH_EXIM4) || \
 defined(WITH_POSTFIX)
-IGNORE=	can only have one MTA selected to integrate with
+BROKEN=	choose only one MTA integration
 .endif
 MAIL_GID?=	courier
 .endif
@@ -154,18 +149,29 @@ pre-fetch:
 post-patch:
 	@${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#g' \
 	  ${WRKSRC}/Mailman/Defaults.py.in
-# Disable username check in configure -- we promise to make the users!
-	@${REINPLACE_CMD} \
-		-e 's#^MM_FIND_\([^_]*\)_NAME.*#MAILMAN_\1=$${\1NAME}#' \
-		${WRKSRC}/configure.in
+
+pre-configure::
+# Mailman's configure script needs the "mailman" user/group to exist, so
+# $PKGINSTALL has to be patched before the do-configure target executes.
 	@${SED} \
-	  -e 's#%%USER%%#${MM_USERNAME}#g' \
-	  -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' \
-		${MASTERDIR}/pkg-install > ${PKGINSTALL}
+	  -e 's#%%USER%%#${MM_USERNAME}#g' -e 's#%%UID%%#${MM_USERID}#g' \
+	  -e 's#%%GROUP%%#${MM_GROUPNAME}#g' -e 's#%%GID%%#${MM_GROUPID}#g' \
+	  -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' ${MASTERDIR}/pkg-install > \
+	  ${PKGINSTALL}
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+
+post-configure:
 	@${SED} \
 	  -e 's#%%USER%%#${MM_USERNAME}#g' -e 's#%%GROUP%%#${MM_GROUPNAME}#g' \
 	  -e 's#%%PREFIX%%#${PREFIX}#g' -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' \
 	  ${MASTERDIR}/pkg-deinstall > ${PKGDEINSTALL}
+# port system auditors complain if dir is created prior to install
+# but configure demands it be there.  we delete it now if empty,
+# so it will be re-created.  For existing installs, this is ignored
+	@- ${RMDIR} ${MAILMANDIR} 2> /dev/null
+
+pre-install:
+	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@${RM} -f ${MAILMANDIR}/pythonlib/*.egg-info
