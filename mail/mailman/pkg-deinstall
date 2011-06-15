@@ -23,6 +23,10 @@ DEINSTALL)
       echo "--->     /usr/bin/crontab -u "%%USER%%" -r"
   fi
 
+  echo "---> Stopping Mailman's qrunner daemon"
+  %%PREFIX%%/etc/rc.d/mailman.sh stop >/dev/null 2>&1
+  /bin/sleep 2
+
   echo "---> Preserving the \"last_mailman_version\" file"
   /bin/cp -f %%MAILMANDIR%%/data/last_mailman_version /var/tmp/
 
@@ -46,6 +50,10 @@ POST-DEINSTALL)
     [ -d %%MAILMANDIR%%/data ] || /bin/mkdir %%MAILMANDIR%%/data
     /bin/mv -f /var/tmp/last_mailman_version %%MAILMANDIR%%/data/
   fi
+
+  echo '---> - If you are not using Mailman any more, you should manually delete'
+  echo '---> - the "%%USER%%" user and "%%GROUP%%" group.'
+  echo '---> - You may delete them with "pw groupdel %%GROUP%%; pw userdel %%USER%%".'
 
   ;;
 
