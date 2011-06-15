@@ -29,6 +29,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}qt4-core>=4.8.3:${PORTSDIR}/devel/py-qt4-cor
 OPTIONS=	NAUTILUS "Install TortoiseHG Nautilus extension" off
 
 CONFLICTS=	tortoisehg-1*
+LATEST_LINK=	${PORTNAME}2
 
 INSTALLS_ICONS=	yes
 
