@@ -483,10 +483,6 @@
 %%WWWDIR%%/inc/cachehandlers/index.html
 %%WWWDIR%%/inc/cachehandlers/memcache.php
 %%WWWDIR%%/inc/cachehandlers/xcache.php
-%%WWWDIR%%/inc/captcha_fonts/MINYN___.ttf
-%%WWWDIR%%/inc/captcha_fonts/edmunds.ttf
-%%WWWDIR%%/inc/captcha_fonts/index.html
-%%WWWDIR%%/inc/captcha_fonts/read_me.html
 %%WWWDIR%%/inc/class_bitwise.php
 %%WWWDIR%%/inc/class_core.php
 %%WWWDIR%%/inc/class_custommoderation.php
@@ -827,7 +823,6 @@
 @dirrm %%WWWDIR%%/inc/3rdparty/diff
 @dirrm %%WWWDIR%%/inc/3rdparty
 @dirrm %%WWWDIR%%/inc/cachehandlers
-@dirrm %%WWWDIR%%/inc/captcha_fonts
 @dirrm %%WWWDIR%%/inc/datahandlers
 @dirrm %%WWWDIR%%/inc/languages/english/admin
 @dirrm %%WWWDIR%%/inc/languages/english
