@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=		devel rubygems
 MASTER_SITES=		RG
 
-MAINTAINER=	kick.christoph@googlemail.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Low-level binding to SDL and related libraries using Ruby-FFI
 
 RUN_DEPENDS=	rubygem-nice-ffi>=0.2:${PORTSDIR}/devel/rubygem-nice-ffi

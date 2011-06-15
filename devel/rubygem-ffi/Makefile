@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	kick.christoph@googlemail.com
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Extension for dynamic libraries & binding functions
 
 USE_RUBY=	yes
