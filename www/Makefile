@@ -330,6 +330,7 @@
     SUBDIR += htmlcompressor
     SUBDIR += htmlobject
     SUBDIR += htmlpp
+    SUBDIR += httest
     SUBDIR += http-analyze
     SUBDIR += http_get
     SUBDIR += http_load
