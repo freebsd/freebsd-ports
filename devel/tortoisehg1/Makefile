@@ -19,6 +19,7 @@ RUN_DEPENDS=	hg:${PORTSDIR}/devel/mercurial \
 OPTIONS=	NAUTILUS "Install TortoiseHG Nautilus extension" off
 
 CONFLICTS=	tortoisehg-2*
+LATEST_LINK=	${PORTNAME}1
 
 USE_GNOME=	pygtk2 pygobject
 INSTALLS_ICONS=	yes
