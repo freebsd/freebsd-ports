@@ -18,7 +18,6 @@
     SUBDIR += advi
     SUBDIR += afm
     SUBDIR += alignmargins
-    SUBDIR += amspsfnt
     SUBDIR += ansiprint
     SUBDIR += apsfilter
     SUBDIR += asprint
@@ -33,7 +32,6 @@
     SUBDIR += cdlabelgen
     SUBDIR += cjk-lyx
     SUBDIR += cm-super
-    SUBDIR += cmpsfont
     SUBDIR += cpp2latex
     SUBDIR += cups
     SUBDIR += cups-base
@@ -66,6 +64,7 @@
     SUBDIR += es-acroread8
     SUBDIR += fi-acroread8
     SUBDIR += flpsed
+    SUBDIR += font-amsfonts
     SUBDIR += font2svg
     SUBDIR += fontforge
     SUBDIR += foo2zjs

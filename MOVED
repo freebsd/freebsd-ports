@@ -2219,3 +2219,5 @@ x11-fonts/Xg||2011-06-09|Has expired: Upstream disapear and distfile is no more 
 irc/bitlbee-otr||2011-06-13|Removed, overridden by irc/bitlbee
 deskutils/mcatalog||2011-06-13|Removed, upstream disapear and distfile is no more available
 mail/evolution-sharp||2011-06-13|Has expired: has been broken for over a year
+print/cmpsfont|print/font-amsfonts|2011-06-15|Renamed
+print/amspsfnt|print/font-amsfonts|2011-06-15|Renamed
