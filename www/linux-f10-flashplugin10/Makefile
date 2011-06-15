@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	flashplugin
-PORTVERSION=	10.3r181.22
+PORTVERSION=	10.3r181.26
 CATEGORIES=	www multimedia linux
 MASTER_SITES=	http://fpdownload.macromedia.com/get/flashplayer/current/:plugin \
 		ftp://ftp.ipt.ru/pub/download/:suplib
