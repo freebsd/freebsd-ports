@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	0.97
+PORTVERSION=	0.97.1
 CATEGORIES=	security
 MASTER_SITES=	SF
 
@@ -65,7 +65,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib \
 # force to use -lthr until it's not fixed.
 PTHREAD_LIBS=	-lthr
 
-MAN1=		clamconf.1 \
+MAN1=		clambc.1 \
+		clamconf.1 \
 		clamscan.1 \
 		freshclam.1 \
 		sigtool.1 \
@@ -146,6 +147,7 @@ USE_GMAKE=	yes
 . if defined(WITH_LLVM_PORTS)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/llvm-config:${PORTSDIR}/devel/llvm
 CONFIGURE_ARGS+=-with-system-llvm=${LOCALBASE}/bin/llvm-config
+BROKEN=	Not building with last llvm version
 . endif
 . if defined(WITH_LLVM) && defined(WITH_LLVM_PORTS)
 IGNORE=Select only one LLVM
