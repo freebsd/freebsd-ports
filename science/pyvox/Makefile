@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.src.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of software tools for medical image processing
 
+DEPRECATED=	No more upstream, looks like an abandonware
+EXPIRATION_DATE=	2011-08-01
+
 LIB_DEPENDS=	Xm.2:${PORTSDIR}/x11-toolkits/lesstif
 
 USE_XORG=	x11
