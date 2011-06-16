@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A curses version of the classic game
 
+DEPRECATE=	No moe public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 EXTRACT_DEPENDS=gunshar:${PORTSDIR}/archivers/sharutils
 
 EXTRACT_CMD=		${GZCAT}
