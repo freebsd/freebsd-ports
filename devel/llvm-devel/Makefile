@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	llvm
-DISTVERSION=	2.9.r${SVN_REV}
+DISTVERSION=	3.0.r${SVN_REV}
 CATEGORIES=	devel lang
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -22,7 +22,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
-CONFLICTS=	llvm-2.[0-9]* llvm-etoile-2.[0-9]*
+CONFLICTS=	llvm-[23]* llvm-etoile-2*
 
 GNU_CONFIGURE=	yes
 USE_GCC=	4.2+
@@ -141,8 +141,8 @@ PLIST_FILE_LIST=	bin/bugpoint \
 			lib/libEnhancedDisassembly.a \
 			lib/libLTO.* \
 			lib/libLLVM* \
-			lib/libUnitTestMain.a \
-			lib/profile_rt.so
+			lib/libprofile_rt.so \
+			lib/libprofile_rt.a
 PLIST_DIR_LIST=		include/llvm-c \
 			include/llvm
 build-plist:

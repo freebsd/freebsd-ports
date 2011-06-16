@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clang
-PORTVERSION=	2.9.r${SVN_REV}
+PORTVERSION=	3.0.r${SVN_REV}
 CATEGORIES=	lang devel
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	brooks
@@ -18,7 +18,7 @@ EXTRACT_ONLY=	${LLVM_SOURCE}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	C, Objective-C, and (alpha-quality) C++ compiler
 
-CONFLICTS=	clang-2.[0-9]* llvm-2.[0-9]*
+CONFLICTS=	clang-[23]*
 
 CLANG_NAME=	clang-${PORTVERSION}
 CLANG_SOURCE=	${CLANG_NAME}${EXTRACT_SUFX}
@@ -105,7 +105,7 @@ post-patch:
 
 pre-build:
 	${LN} -sf ${LOCALBASE}/include/llvm/Intrinsics.gen ${WRKSRC}/include/llvm/
-	cd ${WRKSRC}/utils/unittest/googletest && ${GMAKE}
+	cd ${WRKSRC}/utils/unittest && ${GMAKE}
 
 .if defined(NOPORTDOCS)
 post-build:
@@ -145,7 +145,6 @@ regression-test: ${BUILD_COOKIE}
 
 PLIST_FILE_LIST=	bin/ccc-analyzer \
 			bin/c++-analyzer \
-			bin/c-index-test \
 			bin/clang \
 			bin/clang++ \
 			bin/scan-build \
