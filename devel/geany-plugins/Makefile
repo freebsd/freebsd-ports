@@ -16,8 +16,6 @@ COMMENT=	Plugins for lightweight editor - geany
 BUILD_DEPENDS=	geany:${PORTSDIR}/devel/geany
 RUN_DEPENDS=	geany:${PORTSDIR}/devel/geany
 
-BROKEN=		does not compile
-
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 USE_BZIP2=	yes
@@ -28,7 +26,7 @@ OPTIONS=	GEANY_ADDONS		"ADDONS" on \
 		GEANY_GEANYGDB		"GDB support (broken)" off \
 		GEANY_GEANYLATEX	"Improve work with LaTeX" on \
 		GEANY_GEANYLIPSUM	"GEANYLIPSUM" on \
-		GEANY_GEANYLUA		"LUA support" on \
+		GEANY_GEANYLUA		"LUA support (broken)" off \
 		GEANY_GEANYPRJ		"Alternative project management" on \
 		GEANY_GEANYSENDMAIL	"Sending mail from geany" on \
 		GEANY_GEANYVC		"Version-control systems support" on \
