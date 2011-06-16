@@ -17,6 +17,9 @@ COMMENT=	A spectrum analyzer with a skin support and some visualization modes
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 USE_GMAKE=	yes
 MAKE_ARGS=	CC="${CC}" OPTS="${CFLAGS} -fPIC"
 PLIST_FILES=	lib/xmms/Input/msa.so
