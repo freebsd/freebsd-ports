@@ -14,6 +14,8 @@ MASTER_SITES=	http://mange.dynalias.org/linux/gproftpd/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk2 Frontend for proftpd daemon
 
+BROKEN=	Does not fetch
+
 RUN_DEPENDS=	proftpd:${PORTSDIR}/ftp/proftpd
 
 USE_GMAKE=	yes

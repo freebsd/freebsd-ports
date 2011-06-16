@@ -19,6 +19,8 @@ DISTNAME=	rusnet-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RusNet Internet Relay Chat Server
 
+BROKEN=	Does not fetch
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	irc_cv_mathlib=-lm

@@ -14,6 +14,8 @@ MASTER_SITES=	http://tiger.bioinf.cs.uni-potsdam.de/free/Graphics/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for high-performance 2D graphics
 
+BROKEN=	Does not fetch
+
 USE_AUTOTOOLS=	libtool
 WRKSRC=		${WRKDIR}/${PORTNAME}_lgpl-${PORTVERSION}
 GNU_CONFIGURE=	yes

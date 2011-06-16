@@ -17,6 +17,8 @@ DISTNAME=	abuse-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SDL port of the Abuse game engine
 
+BROKEN=	Does not fetch
+
 # Add in the oposite, request games/abuse if being installed directly
 # Instead of games/abuse
 RUN_DEPENS=	abuse:${PORTSDIR}/games/abuse

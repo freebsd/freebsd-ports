@@ -15,6 +15,8 @@ DISTNAME=	Pyro4-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Distributed Object Middleware for Python(IPC/RPC)
 
+BROKEN=	Does not fetch 
+
 USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	Pyro4
