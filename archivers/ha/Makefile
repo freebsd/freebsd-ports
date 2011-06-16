@@ -9,15 +9,12 @@ PORTNAME=	ha
 PORTVERSION=	0.999b
 PORTREVISION=	1
 CATEGORIES=	archivers
-MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/arcers/
+MASTER_SITES=	ftp://ftp.kuzbass.ru/pub/unix/util/arcers/
 DISTNAME=	ha0999
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The HA archiver using the HSC compression method
-
-DEPRECATED=	Looks like an abandonware, no more public distfile
-EXPIRATION_DATE=	2011-08-01
 
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/ha
