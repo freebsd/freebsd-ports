@@ -18,6 +18,9 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Seven Chinese Big5 TrueType fonts made by NTU
 
+DEPRECATED=	No more public distfiles available
+EXPIRATION_DATE=	2011-08-01
+
 NO_BUILD=	yes
 
 TTF=		${DISTFILES}

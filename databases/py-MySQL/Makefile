@@ -15,6 +15,9 @@ DISTNAME=	MySQLmodule-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access a MySQL database through Python
 
+DEPRECATED=	Please use databases/py-MySQLdb instead
+EXPIRATION_DATE=	2011-08-01
+
 LIB_DEPENDS=	mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 PLIST_FILES=	lib/%%PYTHON_VERSION%%/site-packages/MySQLmodule.so

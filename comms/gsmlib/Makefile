@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.pxh.de/fs/gsmlib/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library to access GSM mobile phones through GSM modems
 
+DEPRECATED=	Look like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 USE_GNOME=	gnometarget lthack
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

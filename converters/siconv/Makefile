@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.technocage.com/~caskey/siconv/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert data from one character set to another
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 USE_ICONV=	yes
 PLIST_FILES=	bin/siconv
 
