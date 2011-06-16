@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-current-snap${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Message Harmonized Calendaring system
 
+BROKEN=	Does not fetch
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/emacs
 USE_EMACS=	yes
 EMACS_PORT_NAME?=	emacs21

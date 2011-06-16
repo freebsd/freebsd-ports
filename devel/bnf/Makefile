@@ -17,6 +17,8 @@ MASTER_SITES=	http://ftp.dkuug.dk/gnu/ftp/savannah/files/bnf/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate C parser given a grammar in BNF notation
 
+BROKEN=	Does not fetch
+
 GNU_CONFIGURE=	yes
 
 INFO=		bnf

@@ -15,6 +15,8 @@ DISTNAME=	mhc-current-snap${PORTVERSION}
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Calendar program for MHC
 
+BROKEN=	Does not fetch
+
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk.so:${PORTSDIR}/x11-toolkits/ruby-gtk
 
 USE_RUBY=	yes
