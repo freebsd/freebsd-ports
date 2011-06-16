@@ -6,17 +6,16 @@
 #
 
 PORTNAME=	xfce4-power-manager
-PORTVERSION=	0.8.2
-PORTREVISION=	6
+PORTVERSION=	1.0.10
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
-MASTER_SITE_SUBDIR=/src/apps/${PORTNAME}/${PORTVERSION:R}
+MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XFce4 power manager
 
-IGNORE=		new versions does not operate correctly on FreeBSD/hal, see ports/154064
+LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
@@ -24,6 +23,9 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libutil libgui panel
+INSTALLS_ICONS=	yes
+CONFIGURE_ARGS=	--disable-network-manager \
+		--enable-polkit
 
 MAN1=		xfce4-power-manager.1 xfce4-power-manager-settings.1
 
