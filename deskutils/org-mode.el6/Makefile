@@ -16,6 +16,8 @@ DISTNAME=	org-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Emacs mode for notes and project planning
 
+BROKEN=	Does not fetch
+
 USE_EMACS=	yes
 USE_GMAKE=	yes
 MAKE_FLAGS=	prefix=${PREFIX}
