@@ -16,8 +16,8 @@ bin/raports
 bin/raservices
 bin/rasort
 bin/rasplit
-bin/rasql
-bin/rasqlinsert
+%%MYSQL%%bin/rasql
+%%MYSQL%%bin/rasqlinsert
 bin/rastream
 bin/rastrip
 bin/ratemplate
