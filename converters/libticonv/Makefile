@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libticonv
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.2
 CATEGORIES=	converters
-MASTER_SITES=	http://lpg.ticalc.org/prj_tilp/download/ \
-		http://tijl.fastmail.fm/mirror/
+MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.15
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI calculator character set library
@@ -21,7 +20,6 @@ USE_GNOME=	glib20 gnomehack pkgconfig
 USE_LDCONFIG=	yes
 USE_ICONV=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"\
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.mk>

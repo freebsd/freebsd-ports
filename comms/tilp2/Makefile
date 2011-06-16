@@ -6,19 +6,18 @@
 #
 
 PORTNAME=	tilp2
-PORTVERSION=	1.14
+PORTVERSION=	1.15
 CATEGORIES=	comms
-MASTER_SITES=	http://lpg.ticalc.org/prj_tilp/download/ \
-		http://tijl.fastmail.fm/mirror/
+MASTER_SITES=	SF/tilp/tilp2-linux/${DISTNAME}
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI Linking Program
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS=	ticables2.4:${PORTSDIR}/comms/libticables2 \
-		tifiles2.6:${PORTSDIR}/devel/libtifiles2 \
-		ticalcs2.8:${PORTSDIR}/comms/libticalcs2 \
-		ticonv.4:${PORTSDIR}/converters/libticonv
+		tifiles2.7:${PORTSDIR}/devel/libtifiles2 \
+		ticalcs2.9:${PORTSDIR}/comms/libticalcs2 \
+		ticonv.5:${PORTSDIR}/converters/libticonv
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
@@ -33,9 +32,10 @@ CONFIGURE_ARGS=	--disable-nls
 PLIST_SUB=	NLS="@comment "
 .endif
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--without-kde
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 MAN1=	tilp.1
 

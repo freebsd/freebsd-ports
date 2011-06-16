@@ -7,8 +7,9 @@
 
 PORTNAME=	libticables2
 PORTVERSION=	1.3.2
+PORTREVISION=	1
 CATEGORIES=	comms
-MASTER_SITES=	http://tijl.fastmail.fm/mirror/
+MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.15
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI calculator link cables library
@@ -27,8 +28,9 @@ CONFIGURE_ARGS=	--disable-nls
 PLIST_SUB=	NLS="@comment "
 .endif
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"\
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.pre.mk>
 

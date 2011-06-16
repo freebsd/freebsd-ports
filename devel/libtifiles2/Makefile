@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	libtifiles2
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	devel
-MASTER_SITES=	http://lpg.ticalc.org/prj_tilp/download/ \
-		http://tijl.fastmail.fm/mirror/
+MASTER_SITES=	SF/tilp/tilp2-linux/tilp2-1.15
 
 MAINTAINER=	tijl@coosemans.org
 COMMENT=	TI calculator file types library
 
-LIB_DEPENDS=	ticonv.4:${PORTSDIR}/converters/libticonv
+LIB_DEPENDS=	ticonv.5:${PORTSDIR}/converters/libticonv
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
@@ -30,7 +29,8 @@ CONFIGURE_ARGS=	--disable-nls
 PLIST_SUB=	NLS="@comment "
 .endif
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"\
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 .include <bsd.port.mk>
