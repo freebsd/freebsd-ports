@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The HA archiver using the HSC compression method
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/ha
 MAKEFILE=	makefile.nix

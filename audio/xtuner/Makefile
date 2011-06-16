@@ -15,6 +15,9 @@ DISTNAME=	Xtuner-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xwindows interface for the RadioREVEAL and RadioTrack FM radio cards!
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
 
 PLIST_FILES=	bin/xtuner

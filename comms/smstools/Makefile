@@ -14,6 +14,9 @@ MASTER_SITES=	http://smstools.meinemullemaus.de/packages/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools to handle Short Message Service
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 LIB_DEPENDS=	mm:${PORTSDIR}/devel/mm
 
 CONFLICTS=	gnokii-[0-9]* smstools-3.* sendsms-[0-9]*

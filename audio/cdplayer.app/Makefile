@@ -15,6 +15,9 @@ DISTNAME=	CDPlayer.app-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A CD player with CDDB support resembling OpenStep's OmniCD
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 LIB_DEPENDS=	PropList.2:${PORTSDIR}/devel/libPropList \
 		cdaudio.1:${PORTSDIR}/audio/libcdaudio \
 		wraster.4:${PORTSDIR}/x11-wm/windowmaker

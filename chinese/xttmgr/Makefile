@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://freebsd.sinica.edu.tw/pub/statue/xttmgr/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Big5/GB enhanced TrueType Font Manager
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 BUILD_DEPENDS=	freetype-config:${PORTSDIR}/print/freetype2
 
 PLIST_FILES=	bin/xttmgr

@@ -14,6 +14,9 @@ MASTER_SITES=	http://mikebabcock.ca/code/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert hexadecimal Unicode character values to UTF-8
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	${PORTNAME}
 
