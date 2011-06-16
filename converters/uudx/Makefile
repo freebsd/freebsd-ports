@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.lzh
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extractor from uuencoded files
 
+DEPRECATE=	No more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
