@@ -15,6 +15,8 @@ DISTNAME=	z80-asm
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Z80 assembly code assembler and disassembler
 
+BROKEN=	Does not fetch
+
 MAN1=		z80-asm.1 z80-dis.1
 MAN5=		z80-file.5 z80-asm.5
 MANCOMPRESSED=	no

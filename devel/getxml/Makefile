@@ -15,6 +15,8 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An XML internationalization tool
 
+BROKEN=	Does not fetch
+
 LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
 
 USE_GNOME=	glib12

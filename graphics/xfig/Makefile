@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}.${PORTVERSION}.full
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A drawing program for X11
 
+BROKEN=	Does not fetch 
+
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
 		Xaw3d.8:${PORTSDIR}/x11-toolkits/Xaw3d

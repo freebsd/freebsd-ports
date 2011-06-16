@@ -15,6 +15,8 @@ MASTER_SITES=	ftp://ftp.peps.redprince.net/unix/peps/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts EPS images to anti-aliased bitmaps
 
+BROKEN=	Does not fetch
+
 MAN1=		peps.1
 PLIST_FILES=	bin/peps \
 		etc/peps.mime \
