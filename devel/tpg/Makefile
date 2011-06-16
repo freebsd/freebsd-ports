@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME:U}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Parser generator in Python
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 USE_PYTHON=		2.2+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	TPG

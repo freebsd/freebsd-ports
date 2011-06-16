@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates program and library makefiles for the make(1) command
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 MAN1=		mkmf.1
 MANCOMPRESSED=	maybe
 
