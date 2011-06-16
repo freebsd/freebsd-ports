@@ -15,6 +15,9 @@ MASTER_SITES=	http://coscorrosa.com/programs/${PORTNAME}/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GTK based program for viewing and creating L-system fractals
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 WRKSRC=		${WRKDIR}/lsysexp-0.67
 
 USE_GNOME=	gtk20

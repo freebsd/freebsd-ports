@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}-source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows you to display and breed L-system forms
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 NO_WRKSUBDIR=	yes
 BUILD_WRKSRC=	${WRKSRC}/Unix
 

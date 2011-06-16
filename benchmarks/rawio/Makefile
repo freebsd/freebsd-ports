@@ -16,6 +16,9 @@ MASTER_SITES=	ftp://ftp.lemis.com/pub/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Test performance of low-level storage devices
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 NO_WRKSUBDIR=	yes
 MAN1=		rawio.1
 PLIST_FILES=	bin/rawio
