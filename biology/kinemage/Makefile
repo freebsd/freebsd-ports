@@ -21,6 +21,9 @@ DISTNAME=	mage-001120
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A molecular visualization program with special functions
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 USE_MOTIF=	YES
 
 ALL_TARGET=	mage

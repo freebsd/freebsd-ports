@@ -18,6 +18,9 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 USE_SCONS=	yes
 USE_LDCONFIG=	yes
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
 pre-patch:
