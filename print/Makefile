@@ -145,6 +145,7 @@
     SUBDIR += latex-keystroke
     SUBDIR += latex-logpap
     SUBDIR += latex-logreq
+    SUBDIR += latex-ltablex
     SUBDIR += latex-mathabx
     SUBDIR += latex-pgf
     SUBDIR += latex-prettyref
