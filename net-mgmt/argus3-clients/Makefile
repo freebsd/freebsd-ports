@@ -34,6 +34,9 @@ CONFIGURE_ARGS+=	--with-sasl=${LOCALBASE}
 
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes
+PLIST_SUB+=	MYSQL=""
+.else
+PLIST_SUB+=	MYSQL="@comment "
 .endif
 
 .if defined(WITH_GEOIP)
@@ -51,10 +54,15 @@ MAN8=	radium.8
 do-install:
 .for i in ra rabins racluster racount radump rafilteraddr \
 		rahisto ralabel ranonymize rapath rapolicy \
-		raservices rasort rasplit rasql rasqlinsert rastream \
+		raservices rasort rasplit rastream \
 		rastrip ratemplate ratimerange ratop ratree rauserdata
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/$i ${PREFIX}/bin/$i
 .endfor
+.if defined(WITH_MYSQL)
+.for i in rasql rasqlinsert
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/$i ${PREFIX}/bin/$i
+.endfor
+.endif
 .for i in radark ragraph rahosts raports
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/$i ${PREFIX}/bin/$i
 .endfor
