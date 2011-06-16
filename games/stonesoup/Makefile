@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stonesoup
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.1
 CATEGORIES=	games
 MASTER_SITES=	SF/crawl-ref/Stone%20Soup/${PORTVERSION}
 DISTNAME=	stone_soup-${PORTVERSION}-nodeps
@@ -20,6 +20,7 @@ USE_BISON=	build
 USE_GMAKE=	yes
 USE_LUA=	5.1
 USE_PERL5_BUILD=	yes
+USE_NCURSES=	yes
 
 MAKE_JOBS_SAFE=	yes
 
