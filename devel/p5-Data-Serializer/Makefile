@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Data-Serializer
-PORTVERSION=	0.57
+PORTVERSION=	0.58
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,10 @@ COMMENT=	Modules that serialize data structures
 
 RUN_DEPENDS=	${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC \
 		${SITE_PERL}/YAML.pm:${PORTSDIR}/textproc/p5-YAML
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
+
+LICENSE_COMB=	dual
+LICENSE=	ART10 GPLv1
 
 PERL_MODBUILD=	yes
 
@@ -35,4 +38,10 @@ MAN3=		Data::Serializer.3 Data::Serializer::Bencode.3 \
 		Data::Serializer::XML::Simple.3 Data::Serializer::YAML.3 \
 		Data::Serializer::YAML::Syck.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-Digest-SHA>=0:${PORTSDIR}/security/p5-Digest-SHA
+.endif
+
+.include <bsd.port.post.mk>
