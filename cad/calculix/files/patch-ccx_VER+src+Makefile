@@ -3,7 +3,7 @@
 @@ -1,9 +1,9 @@
  
 -CFLAGS = -Wall -O  -I ../../../SPOOLES.2.2 -DARCH="Linux" -DSPOOLES -DARPACK -DMATRIXSTORAGE
-+CFLAGS = -Wall -O3 -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/spooles -DARCH="FreeBSD" -DSPOOLES -DARPACK -DMATRIXSTORAGE
++CFLAGS = -Wall -O3 -I%%LOCALBASE%%/include -I%%LOCALBASE%%/include/spooles -DARCH="FreeBSD" -DSPOOLES -DUSE_MT -DARPACK -DMATRIXSTORAGE
  FFLAGS = -Wall -O -fopenmp
  
 -CC=cc
