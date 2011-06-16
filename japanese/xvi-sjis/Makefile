@@ -10,6 +10,9 @@ PKGNAMESUFFIX=	-sjis
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable multi-window 'vi', handles Japanese SJIS
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 MASTERDIR=	${.CURDIR}/../xvi-euc
 
 PATCHDIR=	${.CURDIR}/files
