@@ -10,6 +10,9 @@ PKGNAMESUFFIX=	-euc
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable multi-window 'vi', handles Japanese EUC
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 MASTERDIR=	${.CURDIR}/../xvi-euc
 
 PLIST=		${.CURDIR}/pkg-plist
