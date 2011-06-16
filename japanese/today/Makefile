@@ -16,6 +16,9 @@ DISTFILES=	td${PORTVERSION:S/.//}s.lzh \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tells you what day today is
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha \
 		nkf:${PORTSDIR}/japanese/nkf
 
