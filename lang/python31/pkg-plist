@@ -980,9 +980,34 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/test/buffer_tests.py
 %%PYTHON_LIBDIR%%/test/cfgparser.1
 %%PYTHON_LIBDIR%%/test/check_soundcard.vbs
-%%PYTHON_LIBDIR%%/test/cjkencodings_test.py
 %%PYTHON_LIBDIR%%/test/cmath_testcases.txt
 %%PYTHON_LIBDIR%%/test/curses_tests.py
+%%PYTHON_LIBDIR%%/test/cjkencodings/big5-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/big5.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/big5hkscs-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/big5hkscs.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/cp949-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/cp949.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_jisx0213-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_jisx0213.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_jp-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_jp.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_kr-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_kr.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gb18030-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gb18030.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gb2312-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gb2312.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gbk-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gbk.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/hz-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/hz.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/johab-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/johab.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/shift_jis-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/shift_jis.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/shift_jisx0213-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/shift_jisx0213.txt
 %%PYTHON_LIBDIR%%/test/decimaltestdata/abs.decTest
 %%PYTHON_LIBDIR%%/test/decimaltestdata/add.decTest
 %%PYTHON_LIBDIR%%/test/decimaltestdata/and.decTest
@@ -1167,6 +1192,7 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/test/ssl_cert.pem
 %%PYTHON_LIBDIR%%/test/ssl_key.pem
 %%PYTHON_LIBDIR%%/test/string_tests.py
+%%PYTHON_LIBDIR%%/test/subprocessdata/sigchild_ignore.py
 %%PYTHON_LIBDIR%%/test/support.py
 %%PYTHON_LIBDIR%%/test/svn_python_org_https_cert.pem
 %%PYTHON_LIBDIR%%/test/test.xml
@@ -1355,6 +1381,7 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/test/test_mmap.py
 %%PYTHON_LIBDIR%%/test/test_module.py
 %%PYTHON_LIBDIR%%/test/test_modulefinder.py
+%%PYTHON_LIBDIR%%/test/test_msilib.py
 %%PYTHON_LIBDIR%%/test/test_multibytecodec.py
 %%PYTHON_LIBDIR%%/test/test_multibytecodec_support.py
 %%PYTHON_LIBDIR%%/test/test_multiprocessing.py
@@ -1532,6 +1559,7 @@ libdata/pkgconfig/python-3.1.pc
 %%PYTHON_LIBDIR%%/test/tracedmodules/testmod.py
 %%PYTHON_LIBDIR%%/test/warning_tests.py
 %%PYTHON_LIBDIR%%/test/xmltests.py
+%%PYTHON_LIBDIR%%/test/zip_cp437_header.zip
 %%PYTHON_LIBDIR%%/test/zipdir.zip
 %%PYTHON_LIBDIR%%/textwrap.py
 %%PYTHON_LIBDIR%%/this.py
@@ -2178,7 +2206,9 @@ libdata/pkgconfig/python-3.1.pc
 @dirrm %%PYTHON_LIBDIR%%/tkinter/test/test_ttk
 @dirrm %%PYTHON_LIBDIR%%/tkinter/test
 @dirrm %%PYTHON_LIBDIR%%/tkinter
+@dirrm %%PYTHON_LIBDIR%%/test/cjkencodings
 @dirrm %%PYTHON_LIBDIR%%/test/decimaltestdata
+@dirrm %%PYTHON_LIBDIR%%/test/subprocessdata
 @dirrm %%PYTHON_LIBDIR%%/test/tracedmodules
 @dirrm %%PYTHON_LIBDIR%%/test
 @dirrm %%PYTHON_LIBDIR%%/sqlite3/test
