@@ -14,6 +14,9 @@ MASTER_SITES=	http://michael.bacarella.com/projects/tmetric/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A bandwidth measurement tool
 
+DEPRECATED=	Looks like abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 HAS_CONFIGURE=	yes
 ALL_TARGET=	${PORTNAME}
 PLIST_FILES=	sbin/tmetric
