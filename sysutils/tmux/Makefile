@@ -7,7 +7,7 @@
 
 PORTNAME=	tmux
 PORTVERSION=	1.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -35,14 +35,14 @@ OPTIONS=	KQUEUE   	"Build without define HAVE_BROKEN_KQUEUE " On \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LIBEVENT2)
-CFLAGS+=	-I${LOCALBASE}/include/event2/compat -I${LOCALBASE}/include
+EXTRA_CPPFLAGS+=	-I${LOCALBASE}/include/event2/compat -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib/event2
 .else
-CFLAGS+=	-I${LOCALBASE}/include
+EXTRA_CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 .endif
 
-MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+MAKE_ENV+=	EXTRA_CPPFLAGS="${EXTRA_CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
 .if defined(WITH_LIBEVENT_STATIC)
 . if defined(WITH_LIBEVENT2)
@@ -81,6 +81,7 @@ post-patch:
 		${WRKSRC}/tmux.1 ${WRKSRC}/tmux.h
 	@${REINPLACE_CMD} -e 's|-I/usr/local/include||g' \
 		-e 's|/usr/local|${LOCALBASE}|g' \
+		-e 's|$${CPPFLAGS}$$|${CPPFLAGS} ${EXTRA_CPPFLAGS}|g' \
 		-e 's|LDFLAGS+=|#LDFLAGS+=|g' \
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's|-levent|${_LEVENT_LIB}|g' \
