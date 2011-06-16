@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}-06
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web based to-do list manager written in php
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 NO_BUILD=	YES
 USE_PHP=	mysql
 WANT_PHP_WEB=	YES

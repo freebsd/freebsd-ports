@@ -20,6 +20,9 @@ PATCH_DIST_STRIP=	-p0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The multi-master and synchronous replication system for PostgreSQL
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
 WRKSRC?=	${WRKDIR}/postgresql-${BASEPGSQL}

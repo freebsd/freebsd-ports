@@ -16,6 +16,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 2D - Jump'n'run shooter
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 USE_BZIP2=	yes
 USE_XORG=	xpm
 USE_SDL=	sdl

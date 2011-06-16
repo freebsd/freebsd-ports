@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.coyotegulch.com/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of useful C++ classes
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_LDCONFIG=	yes

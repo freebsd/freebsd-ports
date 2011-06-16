@@ -17,6 +17,9 @@ COMMENT=	Python dictionary wrapper around a SQL database
 USE_PYTHON=	yes
 NO_WRKSUBDIR=	yes
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 do-build:
 	@cd ${WRKSRC} && ${PYTHON_CMD} -c 'import SQLDict'
 	@cd ${WRKSRC} && ${PYTHON_CMD} -O -c 'import SQLDict'

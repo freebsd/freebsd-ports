@@ -13,6 +13,9 @@ CATEGORIES=	devel
 MASTER_SITES=	http://bluebat.dyndns.org/software/libfs++/%SUBDIR%/
 MASTER_SITE_SUBDIR=	. archive
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library which provides a file_iterator class
 

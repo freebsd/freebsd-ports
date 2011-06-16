@@ -18,6 +18,9 @@ DISTNAME=	PyRRDpipe-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Portable Python module to access RRDTool files via pipes
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
 
 USE_PYTHON=	yes

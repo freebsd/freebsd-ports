@@ -15,6 +15,9 @@ DISTNAME=	c_cpp_reference-${PORTVERSION}_for_KDE_3.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C/C++ reference manual for KDevelop
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 RUN_DEPENDS=	kdevelop:${PORTSDIR}/devel/kdevelop
 
 USE_BZIP2=	yes
