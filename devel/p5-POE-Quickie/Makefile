@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	POE-Quickie
-PORTVERSION=	0.14
+PORTVERSION=	0.17
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/H/HI/HINRIK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	takefu@airport.fm
 COMMENT=	A lazy way to wrap blocking code and programs
+
+BUILD_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE
+RUN_DEPENDS=	p5-POE>=0:${PORTSDIR}/devel/p5-POE
 
 LICENSE=	GPLv1 ART10
 LICENSE_COMB=	dual
@@ -35,5 +37,6 @@ post-patch:
 .if !defined(WITH_Capture)
 	${REINPLACE_CMD} -e "s,^.*Capture::Tiny.*,," ${BUILD_WRKSRC}/Makefile.PL
 .endif
+	${RM} ${WRKSRC}/lib/POE/Quickie.pm.orig
 
 .include <bsd.port.mk>
