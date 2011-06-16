@@ -20,6 +20,8 @@ DISTFILES+=	${OOOSRC} ${OOOEXTSRC} unowinreg.dll:unowinreg
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT?=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(developer version)
 
+IGNORE=		now development towards ver. 3.5 has been stopped, and OOO340_m0 is the newest milestone
+
 CONFLICTS=	cppunit*
 
 EXTRATC_ONLY?=	${OOOSRC} ${OOOEXTSRC}
