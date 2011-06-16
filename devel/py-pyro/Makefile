@@ -8,14 +8,14 @@
 PORTNAME=	pyro
 PORTVERSION=	4.3
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.xs4all.nl/~irmen/pyro4/download/
+MASTER_SITES=	http://pypi.python.org/packages/source/P/Pyro4/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Pyro4-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	Distributed Object Middleware for Python(IPC/RPC)
 
-BROKEN=	Does not fetch 
+BROKEN=	Does not fetch
 
 USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	yes
