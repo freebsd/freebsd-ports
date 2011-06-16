@@ -469,7 +469,6 @@ amqp08                          ports/net/amqp08
 amrcoder                        ports/audio/amrcoder
 amrstat                         ports/sysutils/amrstat
 amsn                            ports/net-im/amsn
-amspsfnt                        ports/print/amspsfnt
 amule                           ports/net-p2p/amule
 amule-devel                     ports/net-p2p/amule-devel
 an                              ports/games/an
@@ -1729,7 +1728,6 @@ cmios9                          ports/converters/cmios9
 cmospwd                         ports/sysutils/cmospwd
 cmp3                            ports/audio/cmp3
 cmph                            ports/devel/cmph
-cmpsfont                        ports/print/cmpsfont
 cmsmadesimple                   ports/www/cmsmadesimple
 cmt                             ports/audio/cmt
 cmucl                           ports/lang/cmucl
@@ -3595,6 +3593,7 @@ font-adobe-utopia-100dpi        ports/x11-fonts/font-adobe-utopia-100dpi
 font-adobe-utopia-75dpi         ports/x11-fonts/font-adobe-utopia-75dpi
 font-adobe-utopia-type1         ports/x11-fonts/font-adobe-utopia-type1
 font-alias                      ports/x11-fonts/font-alias
+font-amsfonts                   ports/print/font-amsfonts
 font-arabic-misc                ports/x11-fonts/font-arabic-misc
 font-bh-100dpi                  ports/x11-fonts/font-bh-100dpi
 font-bh-75dpi                   ports/x11-fonts/font-bh-75dpi
@@ -5690,6 +5689,7 @@ htmlsection                     ports/textproc/htmlsection
 htmltolatex                     ports/textproc/htmltolatex
 htop                            ports/sysutils/htop
 htpdate                         ports/net/htpdate
+httest                          ports/www/httest
 http-analyze                    ports/www/http-analyze
 http_get                        ports/www/http_get
 http_load                       ports/www/http_load
@@ -9830,6 +9830,7 @@ nagios-check_memcached_paranoid  ports/net-mgmt/nagios-check_memcached_paranoid
 nagios-check_mysql_slave        ports/net-mgmt/nagios-check_mysql_slave
 nagios-check_nick               ports/net-mgmt/nagios-check_nick
 nagios-check_ports              ports/net-mgmt/nagios-check_ports
+nagios-check_postgres_replication  ports/databases/nagios-check_postgres_replication
 nagios-check_puppet             ports/net-mgmt/nagios-check_puppet
 nagios-check_smartmon           ports/net-mgmt/nagios-check_smartmon
 nagios-devel                    ports/net-mgmt/nagios-devel
