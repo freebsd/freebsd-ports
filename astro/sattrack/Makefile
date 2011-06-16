@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	trevor
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Real-time satellite tracking and orbit propagation program
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 USE_XORG=	xt
 WRKSRC=		${WRKDIR}/SatTrack-${PORTVERSION}/src
 

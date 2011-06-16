@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for transferring files to and from the Diamond Rio .mp3 player
 
+DEPRECATED=	Look like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 WRKSRC=		${WRKDIR}/rio107
 
 BINOWN=		root

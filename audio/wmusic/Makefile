@@ -14,6 +14,9 @@ MASTER_SITES=	http://home.jtan.com/~john/wmusic/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A remote control dockapp for xmms
 
+DEPRECATED=	Looks like an abandonware, no more distfiles
+EXPIRATION_DATE=	2011-08-01
+
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_XORG=	xpm

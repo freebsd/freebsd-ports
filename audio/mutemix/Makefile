@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.py
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adjusts a mixer
 
+DEPRECATED=	abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 RUN_DEPENDS=	aumix:${PORTSDIR}/audio/aumix \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 

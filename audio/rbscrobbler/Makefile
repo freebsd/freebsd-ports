@@ -13,6 +13,9 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rhythmbox plugin for Audioscrobbler
 
+DEPRECATED=	Looks like abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 RUN_DEPENDS=	rhythmbox:${PORTSDIR}/audio/rhythmbox
 
 USE_GNOME=	pygnomeextras

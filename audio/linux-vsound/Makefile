@@ -17,6 +17,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility for capturing audio streams from Linux binaries
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2011-08-01
+
 RUN_DEPENDS=	sox:${PORTSDIR}/audio/sox/
 
 USE_LINUX=	yes
