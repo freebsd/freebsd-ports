@@ -21,6 +21,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4
 		dynagen:${PORTSDIR}/emulators/dynagen \
 		qemu>=0.11:${PORTSDIR}/emulators/qemu
 
+BROKEN=		conflicting dependencies
+
 USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	GNS3
