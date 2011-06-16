@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	openoffice.org
-PORTVERSION=	3.3.${SNAPDATE}
+PORTVERSION=	3.4.${SNAPDATE}
 CATEGORIES=	editors java
 MASTER_SITES+=	http://ooopackages.good-day.net/pub/OpenOffice.org/sources/ \
 		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/:extsrc \
+		http://ooopackages.good-day.net/pub/OpenOffice.org/sources/:l10nsdf \
 		http://tools.openoffice.org/unowinreg_prebuild/680/:unowinreg
 DISTFILES+=	${OOOSRC} ${OOOEXTSRC} unowinreg.dll:unowinreg
 
@@ -18,13 +19,11 @@ DISTFILES+=	${OOOSRC} ${OOOEXTSRC} unowinreg.dll:unowinreg
 MAINTAINER=	openoffice@FreeBSD.org
 COMMENT=	Integrated wordprocessor/dbase/spreadsheet/drawing/chart/browser(release branch)
 
-IGNORE=		3.3.0 has just been released
-
 CONFLICTS=	cppunit*
 
 EXTRATC_ONLY?=	${OOOSRC} ${OOOEXTSRC}
 
-OOOEXTSRC=	ext_sources.20101009.tar.bz2:extsrc
+OOOEXTSRC=	ext_sources.20110331.tar.bz2:extsrc l10n.OOO340.20110613.tar.bz2:l10nsdf
 
 NO_LATEST_LINK=	yes
 
@@ -70,12 +69,12 @@ FREEBSD_ENV_SET=	FreeBSDAMDEnv.Set.sh
 FREEBSD_ENV_SET=	FreeBSDX86Env.Set.sh
 .endif
 
-MILESTONE?=		20
-OOOTAG?=		OOO330_m${MILESTONE}
+MILESTONE?=		0
+OOOTAG?=		OOO340_m${MILESTONE}
 OOOTAG2=		${OOOTAG:C/_//g}
 OOOSRC?=		OOo_${OOOTAG}_source${EXTRACT_SUFX}
 OOODIR=			openoffice.org3
-SNAPDATE=		20110121
+SNAPDATE=		20110409
 INSTALLATION_BASEDIR?=	openoffice.org-${OOOTAG}
 EXECBASE?=		openoffice.org-${OOOTAG}
 DIST_SUBDIR=		openoffice.org3
@@ -148,9 +147,10 @@ CONFIGURE_ARGS+=	--with-gnu-cp=${LOCALBASE}/bin/gcp		\
 			--enable-pdfimport				\
 			--enable-wiki-publisher				\
 			--enable-report-builder				\
-			--with-use-shell=bash				\
+			--enable-verbose				\
+			--disable-gstreamer				\
 			--with-vendor="FreeBSD ports system"
-
+#disable-gstreamer: simple build fix req'ed
 OOOEXTENSIONS+=		minimizer/presentation-minimizer.oxt
 OOOEXTENSIONS+=		presenter/presenter-screen.oxt
 OOOEXTENSIONS+=		pdfimport/pdfimport.oxt
@@ -193,8 +193,11 @@ pre-configure:
 .endif
 
 do-build:
+	@cd ${WRKDIR} ; ${PRINTF} "[repositories]\n" > source_config
+	@cd ${WRKDIR} ; ${PRINTF} "${OOOTAG}=active\n" >> source_config
+	@cd ${WRKDIR} ; ${PRINTF} "l10n=active\n" >> source_config
 	@cd ${WRKSRC} ; ./bootstrap
-	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" "LIBINTL_PREFIX=${PREFIX}" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; build.pl --checkmodules ; build.pl -P${MAKE_JOBS_NUMBER} --all --html"
+	@cd ${WRKSRC} ; ${SETENV} "LANG=C" "LC_ALL=C" "LIBINTL_PREFIX=${PREFIX}" ${BASH} -c "source ${FREEBSD_ENV_SET} ; cd instsetoo_native ; ../solenv/bin/build.pl --all -P${MAKE_JOBS_NUMBER} -- -P${MAKE_JOBS_NUMBER}"
 
 .if ${LOCALIZED_LANG} == "alllangs"
 	@${MAKE} languagepack
@@ -218,7 +221,6 @@ do-install:
 	@cd ${WRKDIR}/tmp/opt/ ; ${TAR} cf - -C . . | ${TAR} xf - -C ${PREFIX}/${INSTALLATION_BASEDIR}
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 	@cd ${WRKSRC}/solver/3?0/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
-	@${INSTALL_DATA} ${WRKSRC}/instsetoo_native/unxfbsd?.pro/bin/hid.lst ${PREFIX}/${INSTALLATION_BASEDIR}
 .else
 	@cd ${WRKSRC}/instsetoo_native/unxfbsd?.pro/OpenOffice/bsd/install/${LOCALIZED_LANG}/freebsd/ ; ${LS} *.t?z > ${WRKDIR}/INSTALLFILES
 	@${RM} -Rf ${WRKDIR}/tmp
@@ -232,7 +234,6 @@ do-install:
 .endif
 	@${MKDIR} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
 	@cd ${WRKSRC}/solver/3?0/unxfbsd?.pro/bin/ ; ${INSTALL_DATA} ${OOOEXTENSIONS} ${PREFIX}/${INSTALLATION_BASEDIR}/extensions/
-	@${INSTALL_DATA} ${WRKSRC}/instsetoo_native/unxfbsd?.pro/bin/hid.lst ${PREFIX}/${INSTALLATION_BASEDIR}
 
 post-install:
 	@${ECHO_MSG} "===>  Add wrapper scripts";
@@ -266,7 +267,7 @@ post-install:
 		-e "s/^Icon.*/Icon=${EXECBASE}-printeradmin.png/" \
 		${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/printeradmin.desktop
 	@${REINPLACE_CMD} -e "s/^Exec.*/Exec=${EXECBASE} -quickstart -nologo -nodefault/" \
-		${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/qstart.desktop
+		${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/startcenter.desktop
 	@${RM} ${PREFIX}/${INSTALLATION_BASEDIR}/${OOODIR}/share/xdg/*.desktop.bak
 	@${RM} -f ${DESKTOPDIR}/${EXECBASE}
 	@${MKDIR} ${DESKTOPDIR}

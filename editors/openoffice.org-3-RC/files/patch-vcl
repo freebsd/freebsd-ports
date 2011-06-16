@@ -1,0 +1,100 @@
+--- vcl/Library_desktop_detector.mk	2011-04-15 21:51:38.000000000 +0900
++++ vcl/Library_desktop_detector.mk	2011-06-15 06:04:43.000000000 +0900
+@@ -65,10 +65,6 @@
+ 	cppu \
+ 	sal \
+ 	vos3 \
+-    X11 \
+-    Xext \
+-    SM \
+-    ICE \
+ ))
+ 
+ $(eval $(call gb_Library_add_exception_objects,vclplug_kde,\
+
+
+--- vcl/Library_vclplug_gen.mk	2011-04-15 21:51:38.000000000 +0900
++++ vcl/Library_vclplug_gen.mk	2011-06-15 06:27:38.000000000 +0900
+@@ -56,10 +56,6 @@
+ 	cppu \
+ 	sal \
+ 	vos3 \
+-    X11 \
+-    Xext \
+-    SM \
+-    ICE \
+ 	$(gb_STDLIBS) \
+ ))
+ 
+@@ -203,4 +199,14 @@
+ 	pthread \
+ ))
+ endif
++
++ifeq ($(OS),FREEBSD)
++$(eval $(call gb_Library_set_ldflags,vclplug_gen,\
++     $$(SOLARLIB) \
++    -lX11 \
++    -lXext \
++    -lSM \
++    -lICE \
++))
++endif
+ # vim: set noet sw=4 ts=4:
+
+
+--- vcl/Library_vclplug_gtk.mk	2011-04-15 21:51:38.000000000 +0900
++++ vcl/Library_vclplug_gtk.mk	2011-06-15 06:28:07.000000000 +0900
+@@ -85,10 +85,6 @@
+ 	cppu \
+ 	sal \
+ 	vos3 \
+-    X11 \
+-    Xext \
+-    SM \
+-    ICE \
+     $(gb_STDLIBS) \
+ ))
+ 
+--- vcl/Library_vclplug_svp.mk	2011-04-15 21:51:38.000000000 +0900
++++ vcl/Library_vclplug_svp.mk	2011-06-15 06:28:20.000000000 +0900
+@@ -62,10 +62,6 @@
+ 	cppu \
+ 	sal \
+ 	vos3 \
+-    X11 \
+-    Xext \
+-    SM \
+-    ICE \
+ 	$(gb_STDLIBS) \
+ ))
+ 
+--- vcl/Library_vcl.mk	2011-04-15 21:51:38.000000000 +0900
++++ vcl/Library_vcl.mk	2011-06-16 12:18:00.000000000 +0900
+@@ -45,13 +45,8 @@
+ 	-I$(OUTDIR)/inc/offuh \
+ 	-I$(OUTDIR)/inc/stl \
+ 	-I$(OUTDIR)/inc \
++         $$(FREETYPE_CFLAGS) \
+ ))
+-ifeq ($(GUIBASE),unx)
+-$(eval $(call gb_Library_set_cxxflags,vcl,\
+-    $$(CXXFLAGS) \
+-    $$(FREETYPE_CFLAGS) \
+-))
+-endif
+ 
+ $(eval $(call gb_Library_set_defs,vcl,\
+ 	$$(DEFS) \
+@@ -89,8 +84,9 @@
+ endif
+ endif
+ ifeq ($(GUIBASE),unx)
+-$(eval $(call gb_Library_add_linked_libs,vcl,\
+-    freetype \
++$(eval $(call gb_Library_set_ldflags,vcl,\
++    $$(LDFLAGS) \
++    $(FREETYPE_LIBS) \
+ ))
+ endif
+ 
