@@ -7,7 +7,7 @@
 
 PORTNAME=	zoneminder
 PORTVERSION=	1.24.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www2.zoneminder.com/downloads/ \
 		http://www.zoneminder.com/downloads/
@@ -98,6 +98,8 @@ post-configure:
 post-patch:
 	${REINPLACE_CMD} -e 's,/bin:/usr/bin,/bin:/usr/bin:${LOCALBASE}/bin,g' ${WRKSRC}/scripts/*.pl.in
 	${REINPLACE_CMD} -e 's,sudo,${LOCALBASE}/bin/sudo,g' ${WRKSRC}/scripts/zmpkg.pl.in
+	${REINPLACE_CMD} -e 's," == "," = ",g' ${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's,ZM_V4L2,ZM_HAS_V4L2,g' ${WRKSRC}//web/skins/classic/views/monitorprobe.php
 
 pre-build:
 	${CP} ${FILESDIR}/videodev.h ${WRKSRC}/src
