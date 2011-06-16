@@ -1,8 +1,8 @@
 bin/mautil
 lib/mono/gac/Mono.Addins.CecilReflector/%%VER%%.0__0738eb9f132ed756/Mono.Addins.CecilReflector.dll
 lib/mono/gac/Mono.Addins.CecilReflector/%%VER%%.0__0738eb9f132ed756/Mono.Addins.CecilReflector.dll.mdb
-lib/mono/gac/Mono.Addins.Gui/%%VER%%.0__0738eb9f132ed756/Mono.Addins.Gui.dll
-lib/mono/gac/Mono.Addins.Gui/%%VER%%.0__0738eb9f132ed756/Mono.Addins.Gui.dll.mdb
+%%OPT_GTK2%%lib/mono/gac/Mono.Addins.Gui/%%VER%%.0__0738eb9f132ed756/Mono.Addins.Gui.dll
+%%OPT_GTK2%%lib/mono/gac/Mono.Addins.Gui/%%VER%%.0__0738eb9f132ed756/Mono.Addins.Gui.dll.mdb
 lib/mono/gac/Mono.Addins.MSBuild/%%VER%%.0__0738eb9f132ed756/Mono.Addins.MSBuild.dll
 lib/mono/gac/Mono.Addins.MSBuild/%%VER%%.0__0738eb9f132ed756/Mono.Addins.MSBuild.dll.mdb
 lib/mono/gac/Mono.Addins.Setup/%%VER%%.0__0738eb9f132ed756/Mono.Addins.Setup.dll
@@ -41,8 +41,8 @@ lib/mono/gac/policy.0.4.Mono.Addins/0.0.0.0__0738eb9f132ed756/policy.0.4.Mono.Ad
 lib/mono/gac/policy.0.4.Mono.Addins/0.0.0.0__0738eb9f132ed756/policy.0.4.config
 lib/mono/gac/policy.0.5.Mono.Addins.CecilReflector/0.0.0.0__0738eb9f132ed756/policy.0.5.Mono.Addins.CecilReflector.dll
 lib/mono/gac/policy.0.5.Mono.Addins.CecilReflector/0.0.0.0__0738eb9f132ed756/policy.0.5.config
-lib/mono/gac/policy.0.5.Mono.Addins.Gui/0.0.0.0__0738eb9f132ed756/policy.0.5.Mono.Addins.Gui.dll
-lib/mono/gac/policy.0.5.Mono.Addins.Gui/0.0.0.0__0738eb9f132ed756/policy.0.5.config
+%%OPT_GTK2%%lib/mono/gac/policy.0.5.Mono.Addins.Gui/0.0.0.0__0738eb9f132ed756/policy.0.5.Mono.Addins.Gui.dll
+%%OPT_GTK2%%lib/mono/gac/policy.0.5.Mono.Addins.Gui/0.0.0.0__0738eb9f132ed756/policy.0.5.config
 lib/mono/gac/policy.0.5.Mono.Addins.MSBuild/0.0.0.0__0738eb9f132ed756/policy.0.5.Mono.Addins.MSBuild.dll
 lib/mono/gac/policy.0.5.Mono.Addins.MSBuild/0.0.0.0__0738eb9f132ed756/policy.0.5.config
 lib/mono/gac/policy.0.5.Mono.Addins.Setup/0.0.0.0__0738eb9f132ed756/policy.0.5.Mono.Addins.Setup.dll
