@@ -8,7 +8,7 @@
 PORTNAME=	sqlcc
 PORTVERSION=	0.2
 CATEGORIES=	devel databases python
-MASTER_SITES=	http://master.branda.to/downloads/sqlcc/
+MASTER_SITES=	http://pypi.python.org/packages/source/s/sqlcc/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
