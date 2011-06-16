@@ -7,6 +7,7 @@
 
 PORTNAME=	miro
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/ \
 		http://ftp.osuosl.org/pub/pculture.org/miro/src/
@@ -27,7 +28,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb \
 		${PYTHON_SITELIBDIR}/libtorrent.so:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15-python \
 		${PYTHON_SITELIBDIR}/webkit/webkit.so:${PORTSDIR}/www/py-webkitgtk \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gconf.so:${PORTSDIR}/x11-toolkits/py-gnome2 \
-		${PYTHON_SITELIBDIR}/pycurl.so:${PORTSDIR}/ftp/py-curl
+		${PYTHON_SITELIBDIR}/pycurl.so:${PORTSDIR}/ftp/py-curl \
+		${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 
 BUILD_WRKSRC=	${WRKSRC}/linux
 INSTALL_WRKSRC=	${WRKSRC}/linux
