@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generalize listed filenames to csh-extended glob patterns
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 BUILD_DEPENDS=	makeme:${PORTSDIR}/devel/msrc0 \
 		mkcmd:${PORTSDIR}/devel/mkcmd
 
