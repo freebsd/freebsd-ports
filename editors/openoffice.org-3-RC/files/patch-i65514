@@ -1,9 +1,9 @@
---- berkeleydb/makefile.mk	2009-09-26 08:52:35.000000000 +0900
-+++ berkeleydb/makefile.mk	2009-09-26 08:54:31.000000000 +0900
-@@ -102,6 +102,9 @@
+--- berkeleydb/makefile.mk	2011-06-13 13:30:42.000000000 +0900
++++ berkeleydb/makefile.mk	2011-06-13 13:33:39.000000000 +0900
+@@ -97,6 +97,9 @@
  CONFIGURE_ACTION= \
  	..$/dist$/configure
- CONFIGURE_FLAGS=--disable-cxx --enable-dynamic --enable-shared --enable-compat185
+ CONFIGURE_FLAGS=--disable-cxx --enable-dynamic --enable-shared --enable-compat185 CC='$(CC) $(SOLARLIB)'
 +.IF "$(OS)"==FREEBSD && "$(COM)$(CPU)"=="GCCX"
 +CONFIGURE_FLAGS+=--with-mutex=x86/gcc-assembly
 +.ENDIF

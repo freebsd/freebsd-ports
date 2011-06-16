@@ -1,0 +1,11 @@
+--- framework/Library_fwe.mk.orig	2011-02-15 18:20:16.000000000 +0900
++++ framework/Library_fwe.mk	2011-02-19 13:09:58.000000000 +0900
+@@ -99,5 +99,8 @@
+ ifeq ($(OS),LINUX)
+ $(eval $(call gb_Library_set_cxxflags,fwe,$$(filter-out -fvisibility=hidden,$$(CXXFLAGS))))
+ endif
++ifeq ($(OS),FREEBSD)
++$(eval $(call gb_Library_set_cxxflags,fwe,$$(filter-out -fvisibility=hidden,$$(CXXFLAGS))))
++endif
+ 
+ # vim: set noet sw=4 ts=4:
