@@ -22,7 +22,7 @@ BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
-CONFLICTS=	llvm-devel-2.[0-9]* llvm-etoile-2.[0-9]*
+CONFLICTS=	llvm-devel-[23]* llvm-etoile-2*
 
 GNU_CONFIGURE=	yes
 USE_GCC=	4.2+

@@ -15,6 +15,7 @@ bin/llvm-nm
 bin/llvm-objdump
 bin/llvm-prof
 bin/llvm-ranlib
+bin/llvm-rtdyld
 bin/llvm-stub
 bin/llvmc
 bin/macho-dump
@@ -24,10 +25,12 @@ include/llvm-c/Analysis.h
 include/llvm-c/BitReader.h
 include/llvm-c/BitWriter.h
 include/llvm-c/Core.h
+include/llvm-c/Disassembler.h
 include/llvm-c/EnhancedDisassembly.h
 include/llvm-c/ExecutionEngine.h
 include/llvm-c/Initialization.h
 include/llvm-c/LinkTimeOptimizer.h
+include/llvm-c/Object.h
 include/llvm-c/Target.h
 include/llvm-c/Transforms/IPO.h
 include/llvm-c/Transforms/Scalar.h
@@ -58,6 +61,7 @@ include/llvm/ADT/IntrusiveRefCntPtr.h
 include/llvm/ADT/NullablePtr.h
 include/llvm/ADT/Optional.h
 include/llvm/ADT/OwningPtr.h
+include/llvm/ADT/PackedVector.h
 include/llvm/ADT/PointerIntPair.h
 include/llvm/ADT/PointerUnion.h
 include/llvm/ADT/PostOrderIterator.h
@@ -90,6 +94,7 @@ include/llvm/ADT/ilist_node.h
 include/llvm/AbstractTypeUser.h
 include/llvm/Analysis/AliasAnalysis.h
 include/llvm/Analysis/AliasSetTracker.h
+include/llvm/Analysis/BranchProbabilityInfo.h
 include/llvm/Analysis/CFGPrinter.h
 include/llvm/Analysis/CallGraph.h
 include/llvm/Analysis/CaptureTracking.h
@@ -114,7 +119,6 @@ include/llvm/Analysis/LazyValueInfo.h
 include/llvm/Analysis/LibCallAliasAnalysis.h
 include/llvm/Analysis/LibCallSemantics.h
 include/llvm/Analysis/Lint.h
-include/llvm/Analysis/LiveValues.h
 include/llvm/Analysis/Loads.h
 include/llvm/Analysis/LoopDependenceAnalysis.h
 include/llvm/Analysis/LoopInfo.h
@@ -155,7 +159,6 @@ include/llvm/Bitcode/BitstreamReader.h
 include/llvm/Bitcode/BitstreamWriter.h
 include/llvm/Bitcode/LLVMBitCodes.h
 include/llvm/Bitcode/ReaderWriter.h
-include/llvm/CMakeLists.txt
 include/llvm/CallGraphSCCPass.h
 include/llvm/CallingConv.h
 include/llvm/CodeGen/Analysis.h
@@ -244,11 +247,11 @@ include/llvm/Config/AsmPrinters.def
 include/llvm/Config/Disassemblers.def
 include/llvm/Config/Targets.def
 include/llvm/Config/config.h
-include/llvm/Config/config.h.cmake
 include/llvm/Config/llvm-config.h
-include/llvm/Config/llvm-config.h.cmake
 include/llvm/Constant.h
 include/llvm/Constants.h
+include/llvm/DebugInfoProbe.h
+include/llvm/DefaultPasses.h
 include/llvm/DerivedTypes.h
 include/llvm/ExecutionEngine/ExecutionEngine.h
 include/llvm/ExecutionEngine/GenericValue.h
@@ -257,6 +260,7 @@ include/llvm/ExecutionEngine/JIT.h
 include/llvm/ExecutionEngine/JITEventListener.h
 include/llvm/ExecutionEngine/JITMemoryManager.h
 include/llvm/ExecutionEngine/MCJIT.h
+include/llvm/ExecutionEngine/RuntimeDyld.h
 include/llvm/Function.h
 include/llvm/GVMaterializer.h
 include/llvm/GlobalAlias.h
@@ -275,6 +279,7 @@ include/llvm/Intrinsics.td
 include/llvm/IntrinsicsARM.td
 include/llvm/IntrinsicsAlpha.td
 include/llvm/IntrinsicsCellSPU.td
+include/llvm/IntrinsicsPTX.td
 include/llvm/IntrinsicsPowerPC.td
 include/llvm/IntrinsicsX86.td
 include/llvm/IntrinsicsXCore.td
@@ -318,6 +323,7 @@ include/llvm/MC/MCSectionMachO.h
 include/llvm/MC/MCStreamer.h
 include/llvm/MC/MCSymbol.h
 include/llvm/MC/MCValue.h
+include/llvm/MC/MCWin64EH.h
 include/llvm/MC/SectionKind.h
 include/llvm/Metadata.h
 include/llvm/Module.h
@@ -336,6 +342,7 @@ include/llvm/Support/AIXDataTypesFix.h
 include/llvm/Support/AlignOf.h
 include/llvm/Support/Allocator.h
 include/llvm/Support/Atomic.h
+include/llvm/Support/BranchProbability.h
 include/llvm/Support/CFG.h
 include/llvm/Support/COFF.h
 include/llvm/Support/CallSite.h
@@ -348,7 +355,6 @@ include/llvm/Support/CrashRecoveryContext.h
 include/llvm/Support/DOTGraphTraits.h
 include/llvm/Support/DataFlow.h
 include/llvm/Support/DataTypes.h
-include/llvm/Support/DataTypes.h.cmake
 include/llvm/Support/Debug.h
 include/llvm/Support/DebugLoc.h
 include/llvm/Support/Disassembler.h
@@ -383,6 +389,7 @@ include/llvm/Support/Mutex.h
 include/llvm/Support/MutexGuard.h
 include/llvm/Support/NoFolder.h
 include/llvm/Support/OutputBuffer.h
+include/llvm/Support/PassManagerBuilder.h
 include/llvm/Support/PassNameParser.h
 include/llvm/Support/Path.h
 include/llvm/Support/PathV1.h
@@ -404,7 +411,6 @@ include/llvm/Support/SMLoc.h
 include/llvm/Support/Signals.h
 include/llvm/Support/Solaris.h
 include/llvm/Support/SourceMgr.h
-include/llvm/Support/StandardPasses.h
 include/llvm/Support/StringPool.h
 include/llvm/Support/SwapByteOrder.h
 include/llvm/Support/SystemUtils.h
@@ -417,6 +423,7 @@ include/llvm/Support/ToolOutputFile.h
 include/llvm/Support/TypeBuilder.h
 include/llvm/Support/Valgrind.h
 include/llvm/Support/ValueHandle.h
+include/llvm/Support/Win64EH.h
 include/llvm/Support/circular_raw_ostream.h
 include/llvm/Support/raw_os_ostream.h
 include/llvm/Support/raw_ostream.h
@@ -530,6 +537,7 @@ lib/libLLVMPTXInfo.a
 lib/libLLVMPowerPCAsmPrinter.a
 lib/libLLVMPowerPCCodeGen.a
 lib/libLLVMPowerPCInfo.a
+lib/libLLVMRuntimeDyld.a
 lib/libLLVMScalarOpts.a
 lib/libLLVMSelectionDAG.a
 lib/libLLVMSparcCodeGen.a
@@ -551,8 +559,8 @@ lib/libLLVMipa.a
 lib/libLLVMipo.a
 lib/libLTO.a
 lib/libLTO.so
-lib/libUnitTestMain.a
-lib/profile_rt.so
+lib/libprofile_rt.a
+lib/libprofile_rt.so
 %%PORTDOCS%%%%DOCSDIR%%/html.tar.gz
 %%PORTDOCS%%%%DOCSDIR%%/html/AliasAnalysis.html
 %%PORTDOCS%%%%DOCSDIR%%/html/BitCodeFormat.html

@@ -22,7 +22,7 @@ BUILD_DEPENDS=	runtest:${PORTSDIR}/misc/dejagnu
 BUILD_DEPENDS+=	f2c:${PORTSDIR}/lang/f2c
 .endif
 
-CONFLICTS=	llvm-devel-2* llvm-2*
+CONFLICTS=	llvm-devel-[23]* llvm-[23]*
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

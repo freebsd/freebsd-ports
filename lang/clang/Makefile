@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${LLVM_SOURCE}
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	C, Objective-C, and (alpha-quality) C++ compiler
 
-CONFLICTS=	clang-devel-2.[0-9]* llvm-devel-2.[0-9]*
+CONFLICTS=	clang-devel-[23]*
 
 CLANG_NAME=	clang-${PORTVERSION}
 CLANG_SOURCE=	${CLANG_NAME}${EXTRACT_SUFX}
