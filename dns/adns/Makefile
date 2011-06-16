@@ -9,8 +9,7 @@ PORTNAME=	adns
 PORTVERSION=	1.4
 PORTREVISION=	1
 CATEGORIES=	dns
-MASTER_SITES=	ftp://ftp.chiark.greenend.org.uk/users/ian/adns/ \
-		http://www.chiark.greenend.org.uk/~ian/adns/ftp/
+MASTER_SITES=	http://www.chiark.greenend.org.uk/~ian/adns/ftp/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy to use, asynchronous-capable DNS client library and utilities
