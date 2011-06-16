@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	MT
-PORTVERSION?=	5.04
-PORTREVISION?=	0
+PORTVERSION?=	5.11
 CATEGORIES?=	www
 MASTER_SITES?=	http://movabletype.org/downloads/stable/
 DISTNAME?=	MTOS-${PORTVERSION}-en
@@ -17,7 +16,7 @@ COMMENT?=	A web-based personal publishing system for weblogs
 
 CONFLICTS?=	de-MT-[2-5].* fr-MT-[2-5].* ja-MT-[2-5].* ru-MT-[2-5].*
 
-RUN_DEPENDS=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
+RUN_DEPENDS+=	${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
 		${SITE_PERL}/Image/Size.pm:${PORTSDIR}/graphics/p5-Image-Size \
 		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm
 
@@ -42,7 +41,7 @@ DATADIR=	www/data
 CGIDIR=		www/cgi-bin/mt
 
 .if defined(WITH_MYSQL)
-DB_DIR?=	/var/db/mysql/blog
+DB_DIR?=	${BASEDIR}/var/db/mysql/blog
 USE_MYSQL=	yes
 .else
 DB_DIR?=	${PREFIX}/${CGIDIR}/db
@@ -61,7 +60,9 @@ SUB_FILES+=	MT.conf
 SUB_LIST+=	DATADIR=${PREFIX}/${DATADIR} CGIDIR=${PREFIX}/${CGIDIR} \
 		APACHEETCDIR=${PREFIX}/${APACHEETCDIR} \
 		PACKAGENAME=${PKGNAMEPREFIX}${PORTNAME}
-PLIST_FILES+=	${APACHEETCDIR}/Includes/MT.conf
+PLIST_SUB+=	APACHE=""
+.else
+PLIST_SUB+=	APACHE="@comment "
 .endif
 
 MT_LANGUAGES=	en ja ru
@@ -79,11 +80,6 @@ MT_DOCS_URL?=	http://movabletype.org/documentation/
 MT_UPGRADE_URL?=http://movabletype.org/documentation/upgrade/
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_APACHE)
-PLIST_FILES+=	"@dirrmtry ${APACHEETCDIR}/Includes"
-PLIST_FILES+=	"@dirrmtry ${APACHEETCDIR}"
-.endif
 
 .if !defined(WITHOUT_OPTIONAL_MODULES)
 .if ${PERL_LEVEL} < 500800
