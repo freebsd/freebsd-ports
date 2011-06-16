@@ -20,6 +20,8 @@ USE_JAVA=	YES
 JAVA_VERSION=	1.5+
 NO_BUILD=	YES
 
+BROKEN=		unfetchable
+
 RESTRICTED=	Licensee may not distribute the Software
 
 BINS=		convertdoc csscheck deploywebstart translatexxe xmltool xxe
