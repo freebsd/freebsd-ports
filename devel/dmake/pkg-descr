@@ -1,3 +1,5 @@
+Dmake is a make utility similar to GNU make or the Workshop dmake.
+
 dmake is different from other versions of Make in that it supports
 significant enhancements.
 
@@ -5,7 +7,6 @@ The original author(s) were WTICorp.com, but they appear to have lost
 interest in maintaining the code.
 
 This port installs the version currently maintained by OpenOffice
-project. Unfortunately, OOo does not offer dmake as an independent
-download, but, fortunately, the folks at Debian do.
+project.
 
-WWW: http://people.debian.org/~rene/dmake/
+WWW: http://tools.openoffice.org/dmake/index.html
