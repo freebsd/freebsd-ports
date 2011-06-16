@@ -48,6 +48,8 @@ post-patch:
 		${WRKSRC}/bootstrap
 	@${REINPLACE_CMD} -e 's,/opt/kde4,${LOCALBASE}/kde4,g' \
 		${WRKSRC}/Modules/FindKDE4.cmake
+	@${REINPLACE_CMD} -e 's,/usr/include,${LOCALBASE}/include,' \
+	   	${WRKSRC}/Modules/FindDCMTK.cmake
 	@${FIND} ${WRKSRC} -name "*.bak" -delete -o -name "*.orig" -delete
 
 .include <bsd.port.mk>
