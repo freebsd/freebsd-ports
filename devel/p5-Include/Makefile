@@ -11,7 +11,7 @@ CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-DEPRECARED=	No more public distfiles
+DEPRECATED=	No more public distfiles
 EXPIRATION_DATE=	2011-08-01
 
 MAINTAINER=	ports@FreeBSD.org
