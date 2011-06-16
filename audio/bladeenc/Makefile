@@ -12,6 +12,9 @@ MASTER_SITES=	http://bladeenc.mp3.no/source/ \
 		http://www.physik.TU-Berlin.DE/~ibex/ports/distfiles/
 EXTRACT_SUFX=	-src-stable.tar.gz
 
+DEPRECATED=	Looks like an abandonware
+EXPIRATION_DATE=	2011-08-01
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MP3 encoder
 
