@@ -15,6 +15,9 @@ DISTNAME=	speex-xmms-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS input plugin to play speex files
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms

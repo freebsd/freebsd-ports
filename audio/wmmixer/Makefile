@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An audio mixer for the WindowMaker dock
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 PLIST_FILES=		bin/wmmixer
 WRKSRC=			${WRKDIR}/wmmixer
 USE_IMAKE=		yes

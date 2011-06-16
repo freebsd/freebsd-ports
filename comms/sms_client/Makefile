@@ -15,6 +15,9 @@ MASTER_SITES=		http://www.smsclient.org/download/smsclient-3.0-testing/ \
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	A simple UNIX SMS client to send messages to phones or pagers
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 HAS_CONFIGURE=		yes
 MAKE_JOBS_UNSAFE=	yes
 

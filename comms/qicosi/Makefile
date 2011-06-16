@@ -14,6 +14,9 @@ DISTNAME=	qico-${PORTVERSION}xe
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ip/modem fido compatible mailer
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 

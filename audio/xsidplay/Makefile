@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical front end for libsidplay
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 USE_QT_VER=	3
 USE_GNOME=	gnometarget
 WANT_GNOME=	yes

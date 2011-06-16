@@ -18,6 +18,9 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.bz2 \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Education software to help people to study English
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"

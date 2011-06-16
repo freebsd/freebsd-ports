@@ -15,6 +15,9 @@ DISTNAME=	adflib
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracts files from .adf-files used by Amiga emulators
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 NO_WRKSUBDIR=	yes
 PLIST_FILES=	bin/unadf
 PORTDOCS=	API.txt api_device.html api_dir.html api_env.html api_file.html \
