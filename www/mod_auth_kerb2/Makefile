@@ -26,6 +26,8 @@ USE_APACHE=	2.0+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
+BUILD_DEPENDS=  gsed:${PORTSDIR}/textproc/gsed
+
 PORTSCOUT=	limit:^5.3
 
 .if defined(KRB5_HOME)
