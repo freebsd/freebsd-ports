@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.gdesklets.de/files/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A framework for Gnome 2.x for desktop applets
 
+BROKEN=	Does not fetch
+
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop
 
 OPTIONS=	GDBM "install py-gdbm instead py-bsddb for config storage" off
