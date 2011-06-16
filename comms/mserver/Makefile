@@ -13,6 +13,9 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/FreeBSD/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network modem sharing server
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 MAKE_ARGS=	CC="${CC}" CCOPTS="${CFLAGS}"
 
 do-install:

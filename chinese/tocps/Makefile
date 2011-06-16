@@ -14,6 +14,9 @@ DISTNAME=	zh-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Translates PostScript files with Chinese characters
 
+DEPRECATED=	No more pulic distfiles
+EXPIRATION_DATE=	2011-08-01
+
 MANCOMPRESSED=	yes
 MAN1=		tocps.1
 
