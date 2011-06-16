@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CGI.pm
-PORTVERSION=	3.52
+PORTVERSION=	3.55
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Simple Common Gateway Interface Class for Perl
+
+TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
 
 LICENSE=	ART20 GPLv1
 LICENSE_COMB=	dual
