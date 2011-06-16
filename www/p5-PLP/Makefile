@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple Perl embedder superficially resembling PHP
 
+DEPRECATED=	No more upstream, looks like an abandonware
+EXPIRATION_DATE=	2011-08-01
+
 PERL_CONFIGURE=	yes
 
 MAN3=		PLP.3 PLP::FAQ.3 PLP::Fields.3 PLP::Functions.3 PLP::HowTo.3 \

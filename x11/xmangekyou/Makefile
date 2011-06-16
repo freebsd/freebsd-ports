@@ -15,6 +15,9 @@ MASTER_SITES=	http://hp.vector.co.jp/authors/VA014157/myfreesoft/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A kaleidoscope on X
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 ALL_TARGET=	xmangekyou
 
 USE_XORG=	x11 xpm xaw

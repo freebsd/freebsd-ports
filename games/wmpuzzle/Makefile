@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.godisch.de/debian/wmpuzzle/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockable puzzle game for WindowMaker and AfterStep
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_XORG=	xpm

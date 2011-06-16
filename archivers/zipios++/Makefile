@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}+cvs.2004.02.07.orig
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A java.util.zip-like C++ library for reading and writing Zip files
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
