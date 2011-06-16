@@ -18,6 +18,8 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
 
+BROKEN=		bad depobj
+
 OPTIONS=	CLANG "Build with LLVM/Clang (required for blocks support)" on
 
 MAN3=	dispatch.3 dispatch_after.3 dispatch_api.3 dispatch_apply.3 \
