@@ -9,9 +9,7 @@ PORTNAME=	sr
 PORTVERSION=	2.3.1
 PORTREVISION=	2
 CATEGORIES=	lang parallel
-MASTER_SITES=	ftp://ftp.uu.net/.vol/1/languages/sr/ \
-		http://www.it.uc3m.es/~ptb/clases/sr/inst/src/ \
-		ftp://ftp.cs.arizona.edu/sr/
+MASTER_SITES=	ftp://ftp.cs.arizona.edu/sr/
 DISTNAME=	sr231
 EXTRACT_SUFX=	.tar.Z
 
