@@ -16,6 +16,9 @@ COMMENT=	Rate your mp3s for a randomized playlist you will actually like
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123 \
 		${PYTHON_SITELIBDIR}/gdbm.so:${PORTSDIR}/databases/py-gdbm
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 WRKSRC=		${WRKDIR}/pimp3
 
 NO_BUILD=	yes

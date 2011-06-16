@@ -15,6 +15,9 @@ DISTNAME=		PhatBeat-${PORTVERSION}
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A beat counter
 
+DEPRECATED=	abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 USE_SDL=		sdl image
 MAN1=			phatbeat.1
 

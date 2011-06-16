@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File transfer tool for the MPMan MP-F20 portable MP3-player
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2011-08-01
+
 NOT_FOR_ARCHS=	ia64 powerpc sparc64
 
 MAKEFILE=	makefile

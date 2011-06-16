@@ -15,6 +15,9 @@ DISTNAME=	kint_xmms-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	This is a plugin that adds K-Joefol-Skinsupport to xmms
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png

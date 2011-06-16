@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.finik.net/files/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An audio mixer for the WindowMaker dock
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 PLIST_FILES=	bin/wmfmixer
 USE_GMAKE=	yes
 USE_XORG=	xpm

@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.dakotacom.net/~donut/programs/id3ed/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An id3 tag editor for mp3 files
 
+DEPRECATED=	No more public distfiles, looks like an abandonware
+EXPIRATION_DATE=	2011-08-01
+
 GNU_CONFIGURE=	yes
 
 MAN1=		id3ed.1

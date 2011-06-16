@@ -13,6 +13,9 @@ MASTER_SITES=	http://home.kc.rr.com/ripenc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Script that automates the ripping, encoding, and naming of CD's
 
+DEPRECATED=	Looks like and abandonware, No more distfile
+EXPIRATION_DATE=	2011-08-01
+
 WRKSRC=		${WRKDIR}/ripenc
 
 NO_BUILD=	Shell Script

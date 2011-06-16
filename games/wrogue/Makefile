@@ -13,6 +13,9 @@ MASTER_SITES=	SF/todoom/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A gothic science fantasy roguelike game
 
+DEPRECATED=	No more public distfiles, looks like an abandonware
+EXPIRATION_DATE=	2011-08-01
+
 USE_BZIP2=	yes
 USE_SDL=	yes
 USE_GMAKE=	yes

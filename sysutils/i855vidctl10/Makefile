@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}10
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Resolution tool for Centrino based laptops
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 ONLY_FOR_ARCHS=	i386
 
 PLIST_FILES=	bin/i855vidctl

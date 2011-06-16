@@ -20,6 +20,9 @@ MASTER_SITES=	http://www.bincimap.org/%SUBDIR%/ \
 MASTER_SITE_SUBDIR=	dl/tarballs/1.2
 DISTNAME=	${PORTNAME}-${PORTVERSION}final
 
+DEPRECATED=	No more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Light-weight IMAP server for Maildir
 

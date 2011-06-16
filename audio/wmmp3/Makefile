@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.dotfiles.com/software/wmmp3/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A front-end for mpg123 in a Window Maker dockapp
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 GNU_CONFIGURE=	yes

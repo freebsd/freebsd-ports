@@ -16,6 +16,9 @@ DISTNAME=	pyrt-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Routeing Toolkit
 
+DEPRECATED=	No more public distfiles, looks like an abandonware
+EXPIRATION_DATE=	2011-08-01
+
 USE_PYTHON=	yes
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
