@@ -3,6 +3,7 @@ bin/tilp
 %%DATADIR%%/COPYING
 %%DATADIR%%/Manpage.txt
 %%DATADIR%%/RELEASE
+%%DATADIR%%/builder/tilp.ui
 %%DATADIR%%/glade/action-2.glade
 %%DATADIR%%/glade/clist_rbm-2.glade
 %%DATADIR%%/glade/clock-2.glade
@@ -119,4 +120,5 @@ bin/tilp
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%/builder
 @dirrm %%DATADIR%%

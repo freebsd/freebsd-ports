@@ -7,25 +7,28 @@
 
 PORTNAME=	tiemu3
 PORTVERSION=	3.03
+PORTREVISION=	1
 CATEGORIES=	emulators
-MASTER_SITES=	http://tijl.fastmail.fm/mirror/
-DISTNAME=	tiemu-${PORTVERSION}
+MASTER_SITES=	SF/gtktiemu/tiemu-linux/TIEmu%20${DISTVERSION}
+DISTNAME=	tiemu-${DISTVERSION}
+EXTRACT_SUFX=	-nogdb.tar.gz
 
 MAINTAINER=	cyberbotx@cyberbotx.com
 COMMENT=	TI89(ti)/92(+)/V200 hand-helds emulator
 
-LIB_DEPENDS=	ticalcs2.8:${PORTSDIR}/comms/libticalcs2 \
+LIB_DEPENDS=	ticalcs2.9:${PORTSDIR}/comms/libticalcs2 \
 		ticables2.4:${PORTSDIR}/comms/libticables2 \
-		tifiles2.6:${PORTSDIR}/devel/libtifiles2
+		tifiles2.7:${PORTSDIR}/devel/libtifiles2
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
 USE_SDL=	sdl
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib -export-dynamic
 CONFIGURE_ARGS=	--disable-gdb
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib -export-dynamic"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 MAN1=		tiemu.1
 
