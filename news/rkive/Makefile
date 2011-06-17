@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A USENET newsgroup archiver
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 NO_CDROM=	"Don't make money from it"
 MAN1=		rkive.1 article.1 ckconfig.1
 MAN5=		rkive.5

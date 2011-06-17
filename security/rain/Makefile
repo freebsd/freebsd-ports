@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/beta/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rain is a packeting tool used for testing system stability
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 GNU_CONFIGURE=	yes
 
 MANCOMPRESSED=	yes

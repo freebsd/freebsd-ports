@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command line Polish-English and English-Polish dictionary
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 do-configure:
 	@${REINPLACE_CMD} -e 's|PREFIX=/usr|PREFIX=${PREFIX}|g' ${WRKSRC}/Makefile
 	${REINPLACE_CMD} -e 's|-O2|${CFLAGS}|' ${WRKSRC}/src/Makefile

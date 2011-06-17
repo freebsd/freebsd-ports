@@ -16,6 +16,9 @@ DISTNAME=	SDL_gui-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Graphical User Interface library for SDL
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 USE_AUTOTOOLS=	libtool
 USE_SDL=	sdl image ttf
 GNU_CONFIGURE=	yes

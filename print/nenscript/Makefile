@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.risacher.org/nenscript/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of the proprietary enscript program from Adobe Systems
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 USE_BZIP2=	yes
 
 MAKEFILE=	makefile

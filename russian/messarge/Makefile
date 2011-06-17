@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.kiarchive.ru/pub/unix/mail/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tools to mantain UNIX mailboxes
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 MAN1=		messarge.1 mesraw.1 mesdbc.1 mesarc.1 mestun.1
 MANLANG=	ru_RU.KOI8-R
 MANCOMPRESSED=	yes

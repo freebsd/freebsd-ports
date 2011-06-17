@@ -14,6 +14,9 @@ DISTNAME=	wcolEpre.990110_150126
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A prefetching proxy server for WWW
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 GNU_CONFIGURE=	yes
