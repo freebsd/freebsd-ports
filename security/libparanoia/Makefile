@@ -12,6 +12,8 @@ MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/snar/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Safe (in the mean of stack smashing) reincarnation of strcpy et al
 
+BROKEN=	does not fetch
+
 ONLY_FOR_ARCHS=	i386
 
 USE_LDCONFIG=	yes

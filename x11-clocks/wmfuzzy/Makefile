@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fuzzy clock WindowMaker dockapp
 
+BROKEN=	Does not fetch
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_XORG=	xpm

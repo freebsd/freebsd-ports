@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.stacken.kth.se/pub/projects/webredirect/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small web server serving "301 Moved Permanently" only
 
+BROKEN=	Does not fetch
+
 ALL_TARGET=	depend all
 
 MAN1=		webredirect.1

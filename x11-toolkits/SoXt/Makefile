@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.coin3d.org/pub/coin/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI binding for using Open Inventor with Xt/Motif
 
+BROKEN=	Does not fetch
+
 LIB_DEPENDS=	Coin.61:${PORTSDIR}/graphics/Coin
 
 USE_GL=		yes

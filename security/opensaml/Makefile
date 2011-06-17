@@ -14,6 +14,8 @@ MASTER_SITES=	http://shibboleth.internet2.edu/downloads/opensaml/cpp/${DISTVERSI
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open source implentation of SAML
 
+BROKEN=	Does not fetch
+
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		log4cpp.4:${PORTSDIR}/devel/log4cpp \
 		xml-security-c.14:${PORTSDIR}/security/apache-xml-security-c

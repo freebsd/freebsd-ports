@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-1.4-2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk-based simple TeX interface
 
+BROKEN=	Does not fetch
+
 RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX \
 		wish8.4:${PORTSDIR}/x11-toolkits/tk84
 

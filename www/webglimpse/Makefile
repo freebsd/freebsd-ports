@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	WWW interface to Glimpse search engine
 
+BROKEN=	Does not fetch
+
 RUN_DEPENDS=	glimpse:${PORTSDIR}/textproc/glimpse
 
 MAKE_JOBS_SAFE=  yes

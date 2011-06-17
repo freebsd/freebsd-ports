@@ -15,6 +15,8 @@ DISTNAME=	dtd
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DTD of the Text Encoding Initiative
 
+BROKEN=	Does not fetch
+
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
 LATEST_LINK=	tei-p4

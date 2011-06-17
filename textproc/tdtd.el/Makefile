@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An emacs major mode for editing SGML and XML DTDs
 
+BROKEN=	Does not fetch
+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_ZIP=	yes

@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.dindin.ru/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fortunes from bash.org.ru and freebsd.rusnet.org.ru/bash
 
+BROKEN=	Does not fetch
+
 NO_BUILD=	yes
 
 SUB_FILES=	pkg-message

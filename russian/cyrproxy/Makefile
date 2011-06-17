@@ -15,6 +15,8 @@ DISTNAME=	cyrproxy-1.4.2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cyrillic proxy for network protocols
 
+BROKEN=	Does not fetch
+
 post-extract:
 	@ ${RM} ${WRKSRC}/discover/discover
 

@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	steve
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Web Mirroring Program
 
+BROKEN=	Does not fetch
+
 RESTRICTED=	"This program cannot be distributed if modified in any way.  Don't sell for profit without written permission"
 ALL_TARGET=
 

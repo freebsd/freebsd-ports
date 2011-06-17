@@ -14,6 +14,8 @@ MASTER_SITES=	http://db.bell-labs.com/galax/Downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Galax is a full-featured, fully compliant implementation of XQuery
 
+BROKEN=	Does not fetch
+
 BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
 
 WRKSRC=		${WRKDIR}/galax
