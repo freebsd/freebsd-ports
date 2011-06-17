@@ -1,14 +1,16 @@
-# New ports collection makefile for:	yafray
+# New ports collection makefile for:	YafRay
 # Date created:				18 May 2003
 # Whom:					David Yeske <dyeske@gmail.com>
 #
 # $FreeBSD$
+#
 
 PORTNAME=	yafray
 PORTVERSION=	0.0.9
 PORTREVISION=	2
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.yafray.org/sec/2/downloads/
+MASTER_SITES=	http://freebsd.nsu.ru/distfiles/ \
+		#http://www.yafaray.org/sites/default/files/download/builds/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast XML based raytracer
@@ -18,10 +20,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 USE_SCONS=	yes
 USE_LDCONFIG=	yes
 
-DEPRECATED=	Looks like an abandonware, no more public distfile
-EXPIRATION_DATE=	2011-08-01
-
-WRKSRC=	${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 pre-patch:
 	@${MV} ${WRKSRC}/linux-settings.py ${WRKSRC}/freebsd-settings.py
