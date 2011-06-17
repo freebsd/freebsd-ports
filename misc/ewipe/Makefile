@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.jnet-jp.to/~sekisita/ewipe/
 MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	Tcl/tk-based presentation tool
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 .if defined(KANJI)
 RUN_DEPENDS=	wish8.0jp:${PORTSDIR}/japanese/tk80
 .else

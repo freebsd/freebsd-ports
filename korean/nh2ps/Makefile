@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/nh2ps/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Formats an Korean text file for printing on a postscript printer
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 USE_PERL5_BUILD=yes
 
 MAN1=		nh2ps.1

@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.riss-telecom.ru/pub/dev/trafd/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The BPF Traffic Collector
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 USE_RC_SUBR=	trafd
 
 CONFLICTS=	bpft-4.*

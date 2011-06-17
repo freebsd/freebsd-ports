@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generic Colouriser
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 NO_BUILD=	yes

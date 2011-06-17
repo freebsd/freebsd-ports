@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Process logfiles and conditionally perform certain actions
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS+=	--with-etc-dir=${PREFIX}/etc
 

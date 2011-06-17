@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Wnn7 elisp client
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 EMACSDIR=	${PREFIX}/share/emacs/site-lisp
 ELISPDIR=	${EMACSDIR}/wnn7egg
 SITEPKGDIR=	${PREFIX}/lib/xemacs/site-packages

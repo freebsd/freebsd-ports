@@ -13,6 +13,9 @@ DISTFILES=		${PORTNAME}.c readme.${PORTNAME}
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Apache module for manipulating euc-kr encoded URL
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 MAKE_JOBS_SAFE=  yes
 
 USE_APACHE=	1.3

@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.omega.clara.net/anagramarama/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Anagramarama - a word game for Linux, Windows and BeOS
 
+DEPRECATED=	Looks like an abandonware, no more public distfile
+EXPIRATION_DATE=	2011-08-01
+
 USE_GMAKE=	yes
 USE_SDL=	mixer sdl
 WRKSRC=		${WRKDIR}/${PORTNAME}

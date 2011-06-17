@@ -18,6 +18,9 @@ PATCHFILES=	${PORTNAME}-jtex-patch \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Character-based DVI file previewer
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 RUN_DEPENDS=	jless:${PORTSDIR}/japanese/less
 
 PATCH_DIST_STRIP=	-p1

@@ -19,6 +19,9 @@ PATCHFILES=	j${PORTNAME}-${PORTVERSION}.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dungeon explorin', slashin', hackin' game
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf
 RUN_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale

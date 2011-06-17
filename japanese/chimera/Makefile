@@ -21,6 +21,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X/Athena World-Wide Web client + Japanese patch
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 PREV_VERSION=	${PORTVERSION:S/p1/p0/}
 
 USE_IMAKE=	yes

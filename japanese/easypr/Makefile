@@ -15,6 +15,9 @@ DISTNAME=	print-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A control panel for printers (with Japanese messages)
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 RUN_DEPENDS=	e2ps:${PORTSDIR}/japanese/e2ps \
 		wish8.0jp:${PORTSDIR}/japanese/tk80 \
 		psnup:${PORTSDIR}/print/psutils-a4 \

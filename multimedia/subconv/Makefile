@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.linux-projects.net/d/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts DivX subtitles from one format to another
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 BROKEN=		unfetchable
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

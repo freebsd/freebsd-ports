@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A paint tool for Shodo, the Japanese traditional writing character
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 MAN1=		xshodo.1

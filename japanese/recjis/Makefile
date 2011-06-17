@@ -14,6 +14,9 @@ DISTFILES=	${PORTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for recovery of broken japanese text
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 NO_WRKSUBDIR=	yes
 ALL_TARGET=	prog
 
