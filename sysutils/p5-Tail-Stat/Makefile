@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Tail-Stat
-PORTVERSION=	0.17
+PORTVERSION=	0.18
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:LONERR
@@ -22,6 +22,9 @@ RUN_DEPENDS=	p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
 		p5-Pid-File-Flock>=0:${PORTSDIR}/devel/p5-Pid-File-Flock \
 		p5-Sys-Syslog>=0.16:${PORTSDIR}/sysutils/p5-Sys-Syslog \
 		p5-Tie-Hash-Indexed>=0:${PORTSDIR}/devel/p5-Tie-Hash-Indexed
+
+LICENSE_COMB=	dual
+LICENSE=	ART10 GPLv1
 
 PERL_CONFIGURE=	yes
 
