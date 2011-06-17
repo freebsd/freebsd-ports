@@ -15,6 +15,8 @@ DISTNAME=	txl${PORTVERSION}.linux
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The TXL Programming Language (transformation by example)
 
+BROKEN=	Does not fetch
+
 USE_LINUX=	yes
 
 MAN1=		txl.1 txlc.1 txldb.1 txlp.1

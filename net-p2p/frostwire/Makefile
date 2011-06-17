@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.noarch
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Java based Gnutella and Bittorrent client
 
+BROKEN=	Does not fetch
+
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_JAVA=	yes

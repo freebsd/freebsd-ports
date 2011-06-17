@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A command driven graph plotting system for scientists and engineers
 
+BROKEN=	Does not fetch
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_XORG=	x11

@@ -14,6 +14,8 @@ MASTER_SITES=	http://unixpages.org/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DirectConnect (www.neo-modus.com) text client for file sharing
 
+BROKEN=	Does not fetch
+
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 LIB_DEPENDS=	db4.0:${PORTSDIR}/databases/db4
 

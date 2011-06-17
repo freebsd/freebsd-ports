@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-1.1.7-rc1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multi-platform Java virtual machine with JIT compiler and AWT package
 
+BROKEN=	Does not fetch
+
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		ungif.5:${PORTSDIR}/graphics/libungif \
 		png.6:${PORTSDIR}/graphics/png \
