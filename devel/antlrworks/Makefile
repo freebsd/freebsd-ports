@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	antlrworks
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.2
 PORTEPOCH=	1
 CATEGORIES=	devel java
 MASTER_SITES=	http://www.antlr.org/download/
@@ -14,9 +14,10 @@ EXTRACT_SUFX=	.jar
 MAINTAINER=	m.sund@arcor.de
 COMMENT=	The ANTLR GUI Development Environment
 
+NO_BUILD=	yes
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
-NO_BUILD=	yes
 
 DESKTOP_ENTRIES="ANTLRWorks" \
 	"ANTLR GUI Development Environment" \
@@ -25,13 +26,24 @@ DESKTOP_ENTRIES="ANTLRWorks" \
 	"Application;Development;" \
 	true
 
+PLIST_FILES=	bin/antlrworks \
+		${JAVAJARDIR:C,${PREFIX}/?,,}/${PORTNAME}.jar \
+		share/pixmaps/antlrworks.png
+
 do-install:
-	@${MKDIR} ${JAVASHAREDIR}/${PORTNAME}
-	@${INSTALL_DATA} ${DISTDIR}/${DISTNAME}.jar ${JAVASHAREDIR}/${PORTNAME}/${DISTNAME}.jar
-	@${ECHO_CMD} '#!/bin/sh' > ${WRKDIR}/antlrworks
-	@${ECHO_CMD} "exec java -Xmx400m -jar ${JAVASHAREDIR}/${PORTNAME}/${DISTNAME}.jar" >> ${WRKDIR}/antlrworks
-	@${INSTALL_SCRIPT} ${WRKDIR}/antlrworks ${PREFIX}/bin
+	${SED} -e 's|%%JAVAJARDIR%%|${JAVAJARDIR}|' \
+	-e 's|%%LOCALBASE%%|${LOCALBASE}|' \
+	-e 's|%%PORTNAME%%|${PORTNAME}|' \
+	-e 's|%%JAVA_VERSION%%|${JAVA_VERSION}|' ${FILESDIR}/antlrworks.sh > ${WRKDIR}/antlrworks.sh
+
+	@${MKDIR} ${JAVAJARDIR}
+	@${ECHO_MSG} -n ">> Installing JAR as ${JAVAJARDIR}/${PORTNAME}.jar..."
+	@${INSTALL_DATA} ${DISTDIR}/${DISTFILES} ${JAVAJARDIR}/${PORTNAME}.jar
+	@${ECHO_MSG} " [ DONE ]"
+	@${ECHO_MSG} -n ">> Installing antlrworks script as ${PREFIX}/bin/antlrworks..."
+	@${INSTALL_SCRIPT} ${WRKDIR}/antlrworks.sh ${PREFIX}/bin/antlrworks
+	@${ECHO_MSG} " [ DONE ]"
 	@${MKDIR} ${PREFIX}/share/pixmaps
-	@${INSTALL_DATA} ${WRKDIR}/icons/app_32x32.png ${PREFIX}/share/pixmaps/antlrworks.png
+	@${INSTALL_DATA} ${WRKDIR}/icons/app_64x64.png ${PREFIX}/share/pixmaps/antlrworks.png
 
 .include <bsd.port.mk>
