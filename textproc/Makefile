@@ -407,6 +407,7 @@
     SUBDIR += mt-aspell
     SUBDIR += muse
     SUBDIR += mxml
+    SUBDIR += mythes
     SUBDIR += nb-aspell
     SUBDIR += nds-aspell
     SUBDIR += nl-aspell
