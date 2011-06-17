@@ -1,3 +1,4 @@
+bin/visualize-breadboard
 %%SITE_PERL%%/Bread/Board.pm
 %%SITE_PERL%%/Bread/Board/BlockInjection.pm
 %%SITE_PERL%%/Bread/Board/ConstructorInjection.pm
@@ -5,6 +6,8 @@
 %%SITE_PERL%%/Bread/Board/Container/Parameterized.pm
 %%SITE_PERL%%/Bread/Board/Dependency.pm
 %%SITE_PERL%%/Bread/Board/Dumper.pm
+%%SITE_PERL%%/Bread/Board/GraphViz.pm
+%%SITE_PERL%%/Bread/Board/GraphViz/App.pm
 %%SITE_PERL%%/Bread/Board/LifeCycle.pm
 %%SITE_PERL%%/Bread/Board/LifeCycle/Singleton.pm
 %%SITE_PERL%%/Bread/Board/LifeCycle/Singleton/WithParameters.pm
@@ -17,6 +20,7 @@
 %%SITE_PERL%%/Bread/Board/Manual/Example/FormSensible.pod
 %%SITE_PERL%%/Bread/Board/Manual/Example/LogDispatch.pod
 %%SITE_PERL%%/Bread/Board/Service.pm
+%%SITE_PERL%%/Bread/Board/Service/Alias.pm
 %%SITE_PERL%%/Bread/Board/Service/Deferred.pm
 %%SITE_PERL%%/Bread/Board/Service/Deferred/Thunk.pm
 %%SITE_PERL%%/Bread/Board/Service/Inferred.pm
@@ -36,6 +40,7 @@
 @dirrm %%SITE_PERL%%/Bread/Board/Manual
 @dirrm %%SITE_PERL%%/Bread/Board/LifeCycle/Singleton
 @dirrm %%SITE_PERL%%/Bread/Board/LifeCycle
+@dirrm %%SITE_PERL%%/Bread/Board/GraphViz
 @dirrm %%SITE_PERL%%/Bread/Board/Container
 @dirrm %%SITE_PERL%%/Bread/Board
 @dirrmtry %%SITE_PERL%%/Bread

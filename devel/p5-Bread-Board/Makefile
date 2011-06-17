@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Bread-Board
-PORTVERSION=	0.18
-PORTREVISION=	1
+PORTVERSION=	0.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:STEVAN
@@ -16,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A solderless way to wire up your application components
 
+OPTIONS=	GRAPHVIZ "Using Graphviz to visualize a Bread::Board system" off
+
 RUN_DEPENDS=	p5-Moose>=1.00:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Clone>=0.05:${PORTSDIR}/devel/p5-MooseX-Clone \
 		p5-MooseX-Params-Validate>=0.14:${PORTSDIR}/devel/p5-MooseX-Params-Validate
@@ -23,6 +24,7 @@ TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/Test-Exception
 
 PERL_CONFIGURE=	yes
 
+MAN1=		visualize-breadboard.1
 MAN3=		Bread::Board.3 \
 		Bread::Board::BlockInjection.3 \
 		Bread::Board::ConstructorInjection.3 \
@@ -30,6 +32,8 @@ MAN3=		Bread::Board.3 \
 		Bread::Board::Container::Parameterized.3 \
 		Bread::Board::Dependency.3 \
 		Bread::Board::Dumper.3 \
+		Bread::Board::GraphViz.3 \
+		Bread::Board::GraphViz::App.3 \
 		Bread::Board::LifeCycle.3 \
 		Bread::Board::LifeCycle::Singleton.3 \
 		Bread::Board::LifeCycle::Singleton::WithParameters.3 \
@@ -51,5 +55,21 @@ MAN3=		Bread::Board.3 \
 		Bread::Board::SetterInjection.3 \
 		Bread::Board::Traversable.3 \
 		Bread::Board::Types.3
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_GRAPHVIZ)
+RUN_DEPENDS+=	p5-Data-Visitor>=0:${PORTSDIR}/devel/p5-Data-Visitor \
+		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz \
+		p5-MooseX-Runnable>=0:${PORTSDIR}/devel/p5-MooseX-Runnable \
+		p5-MooseX-Types-Set-Object>=0:${PORTSDIR}/devel/p5-MooseX-Types-Set-Object \
+		p5-Set-Object>=0:${PORTSDIR}/devel/p5-Set-Object
+.endif
+
+post-patch:
+.if defined(WITH_GRAPHVIZ)
+	@${REINPLACE_CMD} -e 's|^# require|require|' ${WRKSRC}/Makefile.PL
+.else
+.endif
 
 .include <bsd.port.mk>
