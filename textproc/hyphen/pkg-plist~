@@ -1,0 +1,9 @@
+bin/substrings.pl
+lib/libhyphen.so.2
+lib/libhyphen.so
+lib/libhyphen.la
+lib/libhyphen.a
+include/hyphen.h
+%%DATADIR%%/hyph_en_US.dic
+@dirrmtry %%DATADIR%%
+
