@@ -9,13 +9,10 @@ PORTNAME=	peps
 PORTVERSION=	2.0
 PORTREVISION=	4
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.peps.redprince.net/unix/peps/ \
-		http://www.peps.redprince.net/peps/2.0/
+MASTER_SITES=	ftp://ftp.peps.redprince.net/unix/peps/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts EPS images to anti-aliased bitmaps
-
-BROKEN=	Does not fetch
 
 MAN1=		peps.1
 PLIST_FILES=	bin/peps \
