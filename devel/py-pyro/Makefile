@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyro
-PORTVERSION=	4.3
+PORTVERSION=	4.6
 CATEGORIES=	devel python
 MASTER_SITES=	http://pypi.python.org/packages/source/P/Pyro4/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,8 +14,6 @@ DISTNAME=	Pyro4-${PORTVERSION}
 
 MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	Distributed Object Middleware for Python(IPC/RPC)
-
-BROKEN=	Does not fetch
 
 USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	yes
