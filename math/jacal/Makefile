@@ -9,7 +9,7 @@ PORTNAME=	jacal
 PORTVERSION=	1b7
 PORTREVISION=	1
 CATEGORIES=	math
-MASTER_SITES=	http://swissnet.ai.mit.edu/ftpdir/scm/
+MASTER_SITES=	http://groups.csail.mit.edu/mac/ftpdir/scm/OLD/
 DISTNAME=	jacal1b7
 
 MAINTAINER=	ports@FreeBSD.org

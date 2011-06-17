@@ -9,8 +9,7 @@ PORTNAME=	jakarta-oro
 PORTVERSION=	2.0.8
 PORTREVISION=	2
 CATEGORIES=	java
-MASTER_SITES=	http://jakarta.apache.org/builds/${PORTNAME}/release/v${PORTVERSION}/ \
-		http://ftp.epix.net/apache/jakarta/oro/binaries/
+MASTER_SITES=	http://archive.apache.org/dist/jakarta/oro/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl/awk/sh regular expressions for Java
