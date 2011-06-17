@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Log-Any-App
-PORTVERSION=	0.31
+PORTVERSION=	0.33
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +15,7 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An easy way to use Log::Any in applications
 
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
+LICENSE=	ART10 GPLv1
 
 RUN_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
