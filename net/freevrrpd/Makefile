@@ -8,10 +8,7 @@
 PORTNAME=	freevrrpd
 PORTVERSION=	1.0
 CATEGORIES=	net
-MASTER_SITES=	http://opensource.kewego.com/freevrrpd/ \
-		http://freebsd.unixfreunde.de/sources/ \
-		${MASTER_SITE_LOCAL:S/$/:freebsd/g}
-MASTER_SITE_SUBDIR=	flz/freevrrpd/:freebsd
+MASTER_SITES=	http://opensource.kewego.com/freevrrpd/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:DEFAULT,freebsd
 
 MAINTAINER=	ports@FreeBSD.org
