@@ -15,6 +15,9 @@ COMMENT=	Undernet IRCU irc daemon
 
 CONFLICTS=	ircd-hybrid-7.[0-9]*
 
+USERS=		undernet
+GROUPS=		${USERS}
+
 GNU_CONFIGURE=		yes
 USE_RC_SUBR=		undernet.sh
 CONFIGURE_ARGS=		--with-dpath=${PREFIX}/etc/ --with-symlink=no
@@ -85,9 +88,6 @@ CONFIGURE_ARGS+=	--disable-epoll
 .if defined(WITH_LEAKDETECT)
 CONFIGURE_ARGS+=	--with-leak-detect
 .endif
-
-pre-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@${ECHO_MSG}    ""
