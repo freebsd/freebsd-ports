@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	libisofs
-PORTVERSION=	0.6.20
+PORTVERSION=	1.0.8
 CATEGORIES=	devel
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 
-MAINTAINER=	fbsd@opal.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libburnia ISO9660 filesystem creation library
 
 LIB_DEPENDS=	burn.4:${PORTSDIR}/devel/libburn
