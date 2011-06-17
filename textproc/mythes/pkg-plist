@@ -1,0 +1,7 @@
+bin/th_gen_idx.pl
+lib/libmythes-1.2.so.0
+lib/libmythes-1.2.so
+lib/libmythes-1.2.la
+lib/libmythes-1.2.a
+include/mythes.hxx
+libdata/pkgconfig/mythes.pc
