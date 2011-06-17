@@ -17,6 +17,9 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mode for viewing/editing context diffs in Emacsen
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 

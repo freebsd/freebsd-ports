@@ -13,6 +13,9 @@ MASTER_SITES=	http://bgrab.ifip.net/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Binary Grabber - downloads binaries from newsgroups
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 RUN_DEPENDS=	mmencode:${PORTSDIR}/converters/mmencode
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -zxf -

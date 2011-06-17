@@ -14,6 +14,9 @@ DISTNAME=	ifd-gempc-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PC/SC Lite driver for the GemPC 410 serial smart card reader
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 BUILD_DEPENDS=	${LOCALBASE}/include/ifdhandler.h:${PORTSDIR}/security/ifd-devkit
 LIB_DEPENDS=	pcsclite.1:${PORTSDIR}/devel/pcsc-lite
 

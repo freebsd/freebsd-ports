@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.rwhois.net/ftp/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Internic referral whois server
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 OPTIONS=	IPV6 "Enable IPV6 support" On \
 		LARGEFILE "Enable largefile support (> 2Gb)" Off
 

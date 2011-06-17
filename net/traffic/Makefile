@@ -13,6 +13,9 @@ MASTER_SITES=		http://darkzone.ma.cx/resources/unix/traffic/
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		The main goal of this program is to count bandwidth usage by IP
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 GNU_CONFIGURE=		yes
 
 PLIST_FILES=		bin/traffic

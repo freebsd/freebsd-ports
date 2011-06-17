@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.cs.huji.ac.il/~bla/ports/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Dynamic Library Tracer -- similar to strace, but trace library calls
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 LIB_DEPENDS=	elf.0:${PORTSDIR}/devel/libelf
 
 # The FreeBSD port exists only for i386

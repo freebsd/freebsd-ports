@@ -16,6 +16,9 @@ MASTER_SITES=	ftp://ftp.funet.fi/pub/mirrors/ftp.psy.uq.oz.au/libeay/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	IDEA block cipher library
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 RESTRICTED=	"Crypto; IDEA is a patented algorithm that requires proper licensing"
 
 WRKSRC=		${WRKDIR}/idea

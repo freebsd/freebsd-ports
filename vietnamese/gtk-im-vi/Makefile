@@ -14,6 +14,9 @@ MASTER_SITES=	http://dev.gentoo.org/~pclouds/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple GTK+ input methods for Vietnamese(VNI and TELEX)
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 GNU_CONFIGURE=	YES
 USE_GNOME=	gtk20
 USE_LDCONFIG=	YES

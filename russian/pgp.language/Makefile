@@ -15,6 +15,9 @@ DISTNAME=	pgp26ru
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Russian language module for PGP
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-08-01
+
 RUN_DEPENDS=	${LOCALBASE}/share/pgp/config.txt:${PORTSDIR}/security/pgp
 
 USE_ZIP=	YES
