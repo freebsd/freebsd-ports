@@ -9,7 +9,6 @@ PORTNAME=	trafficserver
 PORTVERSION=	3.0.0
 CATEGORIES=	www
 MASTER_SITES=	APACHE/${PORTNAME}
-DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jnlin@csie.nctu.edu.tw
 COMMENT=	A fast, scalable and extensible HTTP proxy server
@@ -40,9 +39,8 @@ BROKEN=		does not compile on 7.X
 .endif
 
 post-configure:
-	@${FIND} ${WRKSRC} -name 'Makefile' | ${XARGS} ${REINPLACE_CMD} -e \
-	    's,LIBTOOL_LINK_FLAGS = -R -R/usr/local/lib,LIBTOOL_LINK_FLAGS = -R/usr/local/lib,'
-	@${FIND} ${WRKSRC} -name 'Makefile' | ${XARGS} ${REINPLACE_CMD} -e \
-	    's,LDFLAGS = -rdynamic  *-R -R,LDFLAGS = -rdynamic -R,'
+	@${FIND} ${WRKSRC} -name 'Makefile' | ${XARGS} ${REINPLACE_CMD} \
+	    -e 's,LIBTOOL_LINK_FLAGS = -R -R,LIBTOOL_LINK_FLAGS = -R,' \
+	    -e 's,LDFLAGS = -rdynamic  *-R -R,LDFLAGS = -rdynamic -R,'
 
 .include <bsd.port.post.mk>
