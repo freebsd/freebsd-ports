@@ -8,7 +8,7 @@ PORTNAME=	kannel
 PORTVERSION=	1.4.3
 PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	http://www.kannel.org/download/
+MASTER_SITES=	http://www.kannel.org/download/${PORTVERSION}/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 DISTNAME=	gateway-${PORTVERSION}
 
