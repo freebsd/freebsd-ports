@@ -7,7 +7,6 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}.${EMACS_REV}
-PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	editors ipv6
 MASTER_SITES=	http://wahjava.users.sourceforge.net/%SUBDIR%/ \
@@ -27,7 +26,7 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
 INSTALLS_ICONS=	yes
 
 EMACS_VER=	24.0.50
-EMACS_REV=	104432
+EMACS_REV=	104609
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XZ=		yes
