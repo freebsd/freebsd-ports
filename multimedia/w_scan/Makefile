@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	w_scan
-PORTVERSION=	20110206
-PORTREVISION=	2
+PORTVERSION=	20110616
 CATEGORIES=	multimedia
 MASTER_SITES=	http://wirbel.htpc-forum.de/w_scan/
 
@@ -19,11 +18,14 @@ BUILD_DEPENDS=  ${LOCALBASE}/include/linux/dvb/frontend.h:${PORTSDIR}/multimedia
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 PATCH_STRIP=	-p1
-CFLAGS+=	-I"${LOCALBASE}/include"
+USE_GETTEXT=	yes
+CPPFLAGS+=	-I"${LOCALBASE}/include"
+LDFLAGS+=	-L"${LOCALBASE}/lib\ -liconv"
 PORTDOCS=	COPYING ChangeLog README
 PLIST_FILES=	bin/${PORTNAME}
 MAN1=		w_scan.1
 MAKE_JOBS_SAFE=	yes
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 post-patch:
 	${REINPLACE_CMD} -f ${FILESDIR}/types.sed ${WRKSRC}/configure ${WRKSRC}/*.c ${WRKSRC}/*.h
