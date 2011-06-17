@@ -1,5 +1,5 @@
 #!/bin/sh
-#
+
 # $FreeBSD$
 #
 # PROVIDE: musicpd
@@ -8,28 +8,31 @@
 
 # Add the following line to /etc/rc.conf to enable mpd:
 #
-#musicpd_enable="YES"
+# musicpd_enable="YES"
 
 . /etc/rc.subr
 
 name=musicpd
 rcvar=`set_rcvar`
-stop_cmd="${name}_stop"
+start_precmd="${name}_getpidfile"
+stop_precmd="${name}_getpidfile"
 
-config=%%PREFIX%%/etc/%%MPDCONF%%
 command=%%PREFIX%%/bin/musicpd
-required_files=$config
+command_args=%%PREFIX%%/etc/%%MPDCONF%%
+required_files=%%PREFIX%%/etc/%%MPDCONF%%
 
-musicpd_stop()
+musicpd_getpidfile()
 {
-	echo -n "Stopping musicpd: ";
-	${command} --kill ${config} && echo "stopped.";
+	if type get_pidfile_from_conf >/dev/null 2>&1 &&
+	    get_pidfile_from_conf pid_file %%PREFIX%%/etc/%%MPDCONF%% ; then
+		pidfile="$_pidfile_from_conf"
+	else
+		pidfile="%%MPDDIR%%/.mpd/pid"
+	fi
 }
 
 load_rc_config $name
 
 : ${musicpd_enable="NO"}
-
-command_args="$config"
 
 run_rc_command "$1"
