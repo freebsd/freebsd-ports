@@ -9,14 +9,11 @@ PORTNAME=	libconvolve
 PORTVERSION=	0.0.8
 PORTREVISION=	1
 CATEGORIES=	audio
-MASTER_SITES=	http://tapas.affenbande.org/jack_convolve/
+MASTER_SITES=	SF/heaven/Audio%20Applications/Jack%20Related/jack_convolve/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple C library for partitioned convolution
-
-DEPRECATED=	No more public distfiles, looks like an abandonware
-EXPIRATION_DATE=	2011-08-01
 
 LIB_DEPENDS=	fftw3f.5:${PORTSDIR}/math/fftw3-float \
 		samplerate.1:${PORTSDIR}/audio/libsamplerate \
