@@ -6,73 +6,64 @@
 #
 
 PORTNAME=	qmpdclient
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	audio
-MASTER_SITES=	http://dump.bitcheese.net/files/dedycec/
+MASTER_SITES=	http://dump.bitcheese.net/files/
 
 MAINTAINER=	uyamba@gmail.com
-COMMENT=	Easy to use musicpd client written in QT4
+COMMENT=	Easy to use musicpd client written in Qt4
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS+=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
 USE_BZIP2=	yes
-HAS_CONFIGURE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build \
-		corelib xml gui
-QMAKE_ARGS=	-unix PREFIX=${PREFIX}
+		corelib gui network webkit xml xmlpatterns
+MAKE_JOBS_SAFE=	yes
+INSTALLS_ICONS=	yes
+QMAKE_ARGS=	${QMAKE_PRO}
 QMAKE_PRO=	${PORTNAME}.pro
 
 OPTIONS=	DBUS	"Enable D-BUS support"	off
 
 DATADIR=	${PREFIX}/share/QMPDClient
-PLIST_FILES=	bin/${PORTNAME}
-
-USE_DOS2UNIX=	${QMAKE_PRO}
-
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include  <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_NLS)
 QT_COMPONENTS+=	linguist_build
-
-TRANSLATIONS=	cs_CZ de_DE fr_FR it_IT nl_NL nn_NO pt_BR no_NO \
-		ru_RU sv_SE tr_TR uk_UA zh_CN zh_TW
-
-.for lang in ${TRANSLATIONS}
-PLIST_FILES+=	${DATADIR_REL}/translations/${lang}.qm
-.endfor
-PLIST_DIRS=	${DATADIR_REL}/translations \
-		${DATADIR_REL}
 .endif
+
+# TRANSLATIONS=	cs_CZ de_DE es_ES fr_FR it_IT nl_NL nn_NO no_NO \
+# 		pt_BR ru_RU sv_SE tr_TR uk_UA zh_CN zh_TW
 
 .if defined(WITH_DBUS) && !defined(WITHOUT_DBUS)
 QT_COMPONENTS+=	dbus
-QMAKE_ARGS+=	CONFIG+=qdbus
+QMAKEFLAGS+=	"CONFIG+=qdbus"
 .endif
+
+.if defined(WITH_DEBUG) && !defined(WITHOUT_DEBUG)
+QMAKEFLAGS+=	"CONFIG+=debug"
+.endif
+
+post-patch:
+.if defined(WITHOUT_NLS)
+	@${REINPLACE_CMD} -e '/INSTALLS += translations/d' \
+		${WRKSRC}/${QMAKE_PRO}
+.endif
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' \
+		-e 's|lupdate|lupdate-qt4|' \
+		-e 's|lrelease|lrelease-qt4|' \
+		${WRKSRC}/${QMAKE_PRO}
+	@${REINPLACE_CMD} -e 's|/usr|${PREFIX}|' \
+		${WRKSRC}/src/notifications_dbus.cpp
 
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} \
-		${QMAKE_ARGS} ${QMAKE_PRO}
-
-post-build:
-.if !defined(WITHOUT_NLS)
-.for lang in ${TRANSLATIONS}
-	@${QT_PREFIX}/bin/lrelease-qt4 -compress \
-		${WRKSRC}/lang/${lang}.ts
-.endfor
-.else
-	@${DO_NADA}
-.endif
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-.if !defined(WITHOUT_NLS)
-	${MKDIR} ${DATADIR}/translations
-.for lang in ${TRANSLATIONS}
-	${INSTALL_DATA} ${WRKSRC}/lang/${lang}.qm \
-		${DATADIR}/translations/${lang}.qm
-.endfor
-.endif
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} \
+		${QMAKEFLAGS} ${QMAKE_ARGS}
 
 .include <bsd.port.post.mk>

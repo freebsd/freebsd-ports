@@ -1,0 +1,10 @@
+--- qmpdclient.desktop.orig	2011-02-04 14:22:08.000000000 +0300
++++ qmpdclient.desktop	2011-03-25 13:43:51.000000000 +0300
+@@ -4,6 +4,6 @@
+ GenericName=Qt4 based MPD client
+ Comment=A nicer MPD client
+ Exec=qmpdclient
+-Categories=Qt;Network;Music;
++Categories=Qt;AudioVideo;Player;
+ Icon=qmpdclient
+ Terminal=false
