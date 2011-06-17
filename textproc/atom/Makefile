@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.bayofrum.net/dist/atom/ \
 		http://muuz.deadbbs.com/FreeBSD/atom/
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Converts text files to html with special attributes
 
 MAN1=	atom.1

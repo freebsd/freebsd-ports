@@ -11,7 +11,7 @@ CATEGORIES=	www databases
 MASTER_SITES=	http://www.mnogosearch.org/Download/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Full featured SQL-based hypertext search engine
 
 MAN1=		indexer.1

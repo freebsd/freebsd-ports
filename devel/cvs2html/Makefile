@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Perl script to turn ``cvs log'' output into HTML
 
 LICENSE=	GPLv2

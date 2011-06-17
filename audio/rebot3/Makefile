@@ -11,7 +11,7 @@ CATEGORIES=	audio
 MASTER_SITES=	http://www.headmqa.com/${PORTNAME}/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Renames mp3 files using freedb or local CDDB
 
 RUN_DEPENDS=	${SITE_PERL}/CDDB.pm:${PORTSDIR}/audio/p5-CDDB \

@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	maven/binaries
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Allows Maven's artifact handling to be used from within an Ant build
 
 RUN_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant

@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits java
 MASTER_SITES=	https://skinlf.dev.java.net/files/documents/66/37801/ \
 		http://www.bayofrum.net/dist/skinlf/
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Allows Java developers to write skinnable applications in Swing
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

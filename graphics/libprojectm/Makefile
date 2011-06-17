@@ -12,7 +12,7 @@ CATEGORIES=	graphics audio
 MASTER_SITES=	SF/${PORTNAME:L:S/lib//}/${PORTVERSION}/
 DISTNAME=	${PORTNAME:S/lib//}-${DISTVERSION}-Source
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	An awesome music visualiser
 
 LICENSE=	LGPL21

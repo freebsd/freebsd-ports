@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 DISTNAME=	zdia-${PORTNAME}-v${DISTVERSION}-0-g${DISTVERSIONSUFFIX}
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Password Gorilla is a cross-platform Password Manager
 
 RUN_DEPENDS=	itcl>=3.4:${PORTSDIR}/lang/itcl \

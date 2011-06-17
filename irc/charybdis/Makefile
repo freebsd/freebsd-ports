@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.stack.nl/~jilles/irc/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
 EXTRACT_SUFX=	.tbz2
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	A powerful IRC daemon, based on ircd-ratbox
 
 LICENSE=	GPLv2

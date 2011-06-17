@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.bayofrum.net/dist/jgraphx/ \
 		http://www.jgraph.com/downloads/jgraphx/archive/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/g}
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	The Java Graph Diagram Component version X (jgraph v6+)
 
 LICENSE=	jgraph

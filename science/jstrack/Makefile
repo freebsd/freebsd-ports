@@ -11,7 +11,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://www.jstrack.org/${PORTNAME}/downloads/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	A freeware hurricane tracking program
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm \
