@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of various Hangul-related sources
 
+BROKEN=	Does not fetch
+
 GNU_CONFIGURE=	YES
 USE_GMAKE=	YES
 

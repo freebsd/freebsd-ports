@@ -16,6 +16,8 @@ DISTNAME=	Users-Agent-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Perl based Jabber User Directory
 
+BROKEN=	Does not fetch
+
 NO_BUILD=	yes
 STRIP=
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

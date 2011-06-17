@@ -14,6 +14,8 @@ MASTER_SITES=	http://mange.dynalias.org/linux/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk2 Frontend for samba daemon
 
+BROKEN=	Does not fetch
+
 RUN_DEPENDS=	${LOCALBASE}/bin/smbclient:${PORTSDIR}/${SAMBA_PORT}
 
 SAMBA_PORT?=	net/samba34

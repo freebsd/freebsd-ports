@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.csl.sony.co.jp/pub/kjc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Aggregation-based Traffic Profiler
 
+BROKEN=	Does not fetch
+
 .if defined(WITH_X11)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile
 USE_XORG=	x11

@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.rxvt.org/pub/rxvt/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xterm replacement that supports pixmap background and Japanese
 
+BROKEN=	Does not fetch
+
 USE_XORG=	x11 ice xt xpm
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
