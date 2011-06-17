@@ -8,7 +8,7 @@
 PORTNAME=	xsi
 PORTVERSION=	1.0.b2
 CATEGORIES=	sysutils
-MASTER_SITES=	http://xsi.kolabore.ath.cx/download/
+MASTER_SITES=	SF/xmlsysinfo/xmlsysinfo/1.0-beta2/
 DISTNAME=	${PORTNAME}-1.0-beta2
 
 MAINTAINER=	ports@FreeBSD.org
