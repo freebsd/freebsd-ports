@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	A command-line attachment mailer
 
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash

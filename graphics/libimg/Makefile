@@ -12,7 +12,7 @@ CATEGORIES?=	graphics tk
 MASTER_SITES=	SF/tkimg/tkimg/${PORTVERSION:R}
 DISTNAME=	img${PORTVERSION}
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	A library of image format handlers for Tk4.1 and later
 
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png \

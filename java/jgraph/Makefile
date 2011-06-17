@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.jgraph.com/downloads/jgraph/archive/ \
 		http://www.bayofrum.net/dist/jgraph/
 EXTRACT_SUFX=	.jar
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	The Java Graph Diagram Component
 
 LICENSE=	BSD

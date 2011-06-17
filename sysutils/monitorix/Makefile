@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.monitorix.org/ \
 		http://www.monitorix.org/old_versions/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	A web based monitoring system
 
 LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool

@@ -11,7 +11,7 @@ CATEGORIES=	sysutils
 MASTER_SITES=	http://smarden.org/${PORTNAME}/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Service supervision tools compatible with DJB daemontools
 
 USE_RC_SUBR=	runsvdir.sh

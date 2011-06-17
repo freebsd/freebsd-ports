@@ -11,7 +11,7 @@ CATEGORIES=	java devel
 MASTER_SITES=	http://dist.codehaus.org/castor/${PORTVERSION}/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Data binding for XML (JAXB) and SQL database (JDO)
 
 LICENSE=	ASL

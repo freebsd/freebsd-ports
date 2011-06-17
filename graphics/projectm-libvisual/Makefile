@@ -11,7 +11,7 @@ CATEGORIES=	graphics audio
 MASTER_SITES=	SF/${PORTNAME:L:S/-libvisual//}/${PORTVERSION}
 DISTNAME=	${PORTNAME:S/-/_/}-${DISTVERSION}-Source
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Allows projectM to be used with libvisual
 
 LICENSE=	GPLv2

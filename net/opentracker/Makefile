@@ -12,7 +12,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://www.bayofrum.net/dist/${PORTNAME}/ \
 		http://www.glenbarber.us/ports/net/${PORTNAME}/
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	A free lightweight bittorrent tracker using libowfat
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libowfat.a:${PORTSDIR}/devel/libowfat

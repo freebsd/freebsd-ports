@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.busybox.net/downloads/ \
 		${MASTER_SITE_GENTOO}
 MASTER_SITE_SUBDIR=	distfiles
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Busybox for FreeBSD
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed

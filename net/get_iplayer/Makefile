@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.infradead.org/pub/${PORTNAME}/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
 PKGNAMEPREFIX=	uk-
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Search, index, or stream archive video from BBC iPlayer
 
 RUN_DEPENDS=	flvstreamer:${PORTSDIR}/multimedia/flvstreamer
