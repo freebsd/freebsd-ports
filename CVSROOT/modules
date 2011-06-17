@@ -7542,6 +7542,7 @@ latex-feynmf                    ports/print/latex-feynmf
 latex-keystroke                 ports/print/latex-keystroke
 latex-logpap                    ports/print/latex-logpap
 latex-logreq                    ports/print/latex-logreq
+latex-ltablex                   ports/print/latex-ltablex
 latex-mathabx                   ports/print/latex-mathabx
 latex-mk                        ports/misc/latex-mk
 latex-pgf                       ports/print/latex-pgf
