@@ -1,3 +1,4 @@
+bin/vaavcenc
 bin/vah264encode
 bin/vainfo
 bin/vampeg2vldemo
