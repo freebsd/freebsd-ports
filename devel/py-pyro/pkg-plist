@@ -1,9 +1,9 @@
 %%PYTHON_SITELIBDIR%%/Pyro4/__init__.py
 %%PYTHON_SITELIBDIR%%/Pyro4/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Pyro4/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Pyro4/config.py
-%%PYTHON_SITELIBDIR%%/Pyro4/config.pyc
-%%PYTHON_SITELIBDIR%%/Pyro4/config.pyo
+%%PYTHON_SITELIBDIR%%/Pyro4/configuration.py
+%%PYTHON_SITELIBDIR%%/Pyro4/configuration.pyc
+%%PYTHON_SITELIBDIR%%/Pyro4/configuration.pyo
 %%PYTHON_SITELIBDIR%%/Pyro4/constants.py
 %%PYTHON_SITELIBDIR%%/Pyro4/constants.pyc
 %%PYTHON_SITELIBDIR%%/Pyro4/constants.pyo
@@ -22,15 +22,21 @@
 %%PYTHON_SITELIBDIR%%/Pyro4/socketserver/__init__.py
 %%PYTHON_SITELIBDIR%%/Pyro4/socketserver/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Pyro4/socketserver/__init__.pyo
-%%PYTHON_SITELIBDIR%%/Pyro4/socketserver/selectserver.py
-%%PYTHON_SITELIBDIR%%/Pyro4/socketserver/selectserver.pyc
-%%PYTHON_SITELIBDIR%%/Pyro4/socketserver/selectserver.pyo
+%%PYTHON_SITELIBDIR%%/Pyro4/socketserver/multiplexserver.py
+%%PYTHON_SITELIBDIR%%/Pyro4/socketserver/multiplexserver.pyc
+%%PYTHON_SITELIBDIR%%/Pyro4/socketserver/multiplexserver.pyo
 %%PYTHON_SITELIBDIR%%/Pyro4/socketserver/threadpoolserver.py
 %%PYTHON_SITELIBDIR%%/Pyro4/socketserver/threadpoolserver.pyc
 %%PYTHON_SITELIBDIR%%/Pyro4/socketserver/threadpoolserver.pyo
 %%PYTHON_SITELIBDIR%%/Pyro4/socketutil.py
 %%PYTHON_SITELIBDIR%%/Pyro4/socketutil.pyc
 %%PYTHON_SITELIBDIR%%/Pyro4/socketutil.pyo
+%%PYTHON_SITELIBDIR%%/Pyro4/test/__init__.py
+%%PYTHON_SITELIBDIR%%/Pyro4/test/__init__.pyc
+%%PYTHON_SITELIBDIR%%/Pyro4/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Pyro4/test/echoserver.py
+%%PYTHON_SITELIBDIR%%/Pyro4/test/echoserver.pyc
+%%PYTHON_SITELIBDIR%%/Pyro4/test/echoserver.pyo
 %%PYTHON_SITELIBDIR%%/Pyro4/threadutil.py
 %%PYTHON_SITELIBDIR%%/Pyro4/threadutil.pyc
 %%PYTHON_SITELIBDIR%%/Pyro4/threadutil.pyo
@@ -38,6 +44,7 @@
 %%PYTHON_SITELIBDIR%%/Pyro4/util.pyc
 %%PYTHON_SITELIBDIR%%/Pyro4/util.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/Pyro4/socketserver
+@dirrm %%PYTHON_SITELIBDIR%%/Pyro4/test
 @dirrm %%PYTHON_SITELIBDIR%%/Pyro4/
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/autoreconnect/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/autoreconnect/client.py
@@ -48,6 +55,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/banks/banks.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/banks/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/banks/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/batchedcalls/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/batchedcalls/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/batchedcalls/server.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/benchmark/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/benchmark/bench.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/benchmark/client.py
@@ -72,6 +82,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/distributed-computing/dispatcher.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/distributed-computing/worker.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/distributed-computing/workitem.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/echoserver/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/echoserver/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eventloop/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eventloop/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eventloop/server.py
@@ -110,11 +122,13 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/timeout/server.py
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/autoreconnect
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/banks
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/batchedcalls
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/benchmark
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/callback
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/chatbox
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/circular
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/distributed-computing
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/echoserver
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/eventloop
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/exceptions
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hugetransfer
@@ -128,4 +142,5 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/timeout
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/socketserver_api.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
