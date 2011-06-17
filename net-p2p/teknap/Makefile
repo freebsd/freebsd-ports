@@ -9,8 +9,7 @@ PORTNAME=	TekNap
 PORTVERSION=	1.3.g
 PORTREVISION=	3
 CATEGORIES=	net-p2p
-MASTER_SITES=	http://got.net/~brian/teknap/ \
-		ftp://ftp.arnes.si/packages2/OpenBSD/distfiles/
+MASTER_SITES=	http://got.net/~brian/teknap/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.g/g/}
 
 MAINTAINER=	ports@FreeBSD.org
