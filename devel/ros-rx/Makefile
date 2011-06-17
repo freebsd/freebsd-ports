@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ros-rx
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	devel
-MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/rx/rx-${PORTVERSION}/:rel \
+MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${STACKNAME}/${STACKNAME}-${PORTVERSION}/:rel \
 		http://pr.willowgarage.com/downloads/:pr
 DISTFILES=	rx-${PORTVERSION}.tar.bz2:rel SWIG-1.3.29-wx.tar.gz:pr
 DIST_SUBDIR=	ros
