@@ -18,6 +18,9 @@ COMMENT=	GKrellM plugin that simply prints the current clock speed
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 ONLY_FOR_ARCHS=	i386
 USE_GNOME=	gtk12 imlib
 

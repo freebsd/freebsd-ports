@@ -20,6 +20,9 @@ PATCHFILES=	elisp-manual-20-2.5-jp.ERRATA.000422.jis \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese translation of the GNU Emacs Lisp Reference Manual
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_EMACS=	yes

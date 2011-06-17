@@ -18,6 +18,9 @@ DISTFILES=	${DISTNAME}.tgz:ascii ${EMACS_ARC:S/$/:gnu/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese translation of the GNU Emacs Manual
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
 
 USE_EMACS=	yes

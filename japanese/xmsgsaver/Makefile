@@ -14,6 +14,9 @@ MASTER_SITES=	http://www19.xdsl.ne.jp/~cdr/soft/dl/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 screensaver using VFlib
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 LIB_DEPENDS=	VFlib2.24:${PORTSDIR}/japanese/vflib
 
 MAN1=		xmsgsaver.1

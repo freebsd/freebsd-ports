@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.xm1math.net/qgfe/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnuplot Front End
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot
 

@@ -16,6 +16,9 @@ DISTNAME=	weblint-97-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An internationalized HTML checker with japanese message(EUC-JP)
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 RUN_DEPENDS=	${SITE_PERL}/jcode.pl:${PORTSDIR}/japanese/jcode.pl
 
 USE_PERL5_RUN=	yes

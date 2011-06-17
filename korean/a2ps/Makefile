@@ -16,6 +16,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple a2ps wrapper for Korean text printing
 
+DEPRECATED=	Looks like an abandonware, no more public distfiles
+
+EXPIRATION_DATE=	2011-08-01
 PLIST_FILES=	bin/a2ps-h
 # depends on a2ps-a4. a2ps has several variation, so if I should
 # choose one, a2ps-a4 is good because A4-sized paper is default in Korea.

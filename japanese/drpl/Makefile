@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.yk.rim.or.jp/~tomoto/archives/drpl/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Replaces words in a Japanese text using dictionaries
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 USE_PERL5=	yes
 SCRIPTS=	drpl revdic
 

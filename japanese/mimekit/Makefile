@@ -14,6 +14,9 @@ DISTNAME=	delegate8.9.6-pre11
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to handle messages with MIME-encoded headers
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/mimekit
 .if !defined(NOPORTDOCS)
 PORTDOCS=	README README-LIB README-PGP

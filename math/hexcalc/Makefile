@@ -16,6 +16,9 @@ EXTRACT_SUFX=	..tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multi-radix calculator for x11
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 USE_IMAKE=	yes
 USE_XORG=	ice sm x11 xaw xext xmu xt
 MAN1=		hexcalc.1

@@ -14,6 +14,9 @@ DISTNAME=	mailutils-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small program to add cvsweb links to FreeBSD commit messages
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 ALL_TARGET=	cvsmail
 MANCOMPRESSED=	no
 MAN1=		cvsmail.1

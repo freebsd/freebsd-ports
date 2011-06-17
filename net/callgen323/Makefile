@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://ftp.frm2.tum.de/pub/jpulz/FreeBSD/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	H.323 Call Generator
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 USE_GMAKE=	yes
 ALL_TARGET=	optshared
 MAKE_ENV=	PWLIBDIR=${LOCALBASE}/share/pwlib \

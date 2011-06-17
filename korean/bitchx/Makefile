@@ -20,6 +20,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An alternative ircII color client support patched for korean
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 WRKSRC=		${WRKDIR}/BitchX
 
 GNU_CONFIGURE=	yes

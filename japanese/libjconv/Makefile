@@ -13,6 +13,9 @@ MASTER_SITES=	http://ghost.math.sci.hokudai.ac.jp/misc/libjconv/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese charset conversion library powered by iconv(3)
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 #RUN_DEPENDS=	${LOCALBASE}/libexec/iconv/iso-2022-jp.so:${PORTSDIR}/converters/iconv-extra
 
 MAKE_ARGS=	NOPROFILE=true PREFIX=${PREFIX} LOCALBASE=${LOCALBASE}

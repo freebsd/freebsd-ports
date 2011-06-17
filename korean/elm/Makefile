@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ELM Mail User Agent, patched for Korean E-Mail
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 MAN1=		answer.1 checkalias.1 elm.1 elmalias.1 fastmail.1 filter.1\
 		frm.1 listalias.1 messages.1 newalias.1 printmail.1 readmsg.1\
 		newmail.1

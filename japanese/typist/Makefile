@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.src.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Typing lessons (Japanese version)
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAN1=		typist.1
 

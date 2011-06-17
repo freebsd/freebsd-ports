@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/sgml-tools-ko/old/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Korean patch version of Linuxdoc-SGML
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 USE_PERL5=	yes
 MAN1=		sgml2html.1 sgml2latex.1 sgml2rtf.1 sgmls.1 \
 		sgml2info.1 sgml2lyx.1   sgml2txt.1 sgmlsasp.1

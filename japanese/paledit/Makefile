@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.swlab.csce.kyushu-u.ac.jp/~nom/prj/paledit/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	NTT DoCoMo PHS Paldio telephone data transfer tool
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 

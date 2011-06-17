@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://ftp.iamas.ac.jp/UNIX/File/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese Hexdecimal Dump
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
 
 MANLANG=	ja

@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.dokidoki.ne.jp/home2/shinmaru/mahjong/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese version of a four player mahjong game
 
+DEPRECATED=	Look like an abandonware, no more public distifles
+EXPIRATION_DATE=	2011-08-01
+
 USE_XORG=	xpm
 
 MAN6=		xyagamo.6
