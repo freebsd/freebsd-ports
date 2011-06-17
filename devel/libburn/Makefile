@@ -6,16 +6,15 @@
 #
 
 PORTNAME=	libburn
-PORTVERSION=	0.6.8
+PORTVERSION=	1.0.6
 CATEGORIES=	devel
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 DISTFILES=	${PORTNAME}-${PORTVERSION}.pl00${EXTRACT_SUFX}
 
-MAINTAINER=	fbsd@opal.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libburnia library to read/write optical discs
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	LIBS="-lcam"
 
 USE_LDCONFIG=	yes
 MAN1=		cdrskin.1
