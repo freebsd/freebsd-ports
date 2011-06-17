@@ -264,6 +264,7 @@
     SUBDIR += humanzip
     SUBDIR += hy-aspell
     SUBDIR += hyperestraier
+    SUBDIR += hyphen
     SUBDIR += ia-aspell
     SUBDIR += ibus
     SUBDIR += ibus-el
