@@ -6,6 +6,7 @@
 
 PORTNAME=	ltablex
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	${MASTER_SITE_TEX_CTAN}
 MASTER_SITE_SUBDIR=	macros/latex/contrib
@@ -16,52 +17,34 @@ DIST_SUBDIR=	latex
 MAINTAINER=	kubito@gmail.com
 COMMENT=	Combines the features of both the tabularx and longtable packages
 
-BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base \
-		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
-RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
-		${TEXMFLOCAL_LSR}:${PORTSDIR}/print/tex-texmflocal
+BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 
 USE_ZIP=	YES
 NO_BUILD=	YES
-PLIST=		${WRKDIR}/pkg-plist
+PLIST_SUB=	MKTEXLSR=${MKTEXLSR} \
+		CLASSDIR=${CLASSDIR} \
+		TEXMFDIR=${TEXMFDIR}
 
-TEXMFLOCAL=	share/texmf-local
-TEXMFLOCAL_LSR=	${LOCALBASE}/${TEXMFLOCAL}/ls-R
+TEXMFDIR=	share/texmf
 MKTEXLSR=	${LOCALBASE}/bin/mktexlsr
-TEX_BIN=	${LOCALBASE}/bin/latex
 
-CLASSNAME=	${PORTNAME}
-CLASSDIR=	${TEXMFLOCAL}/tex/latex/${CLASSNAME}
-DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+CLASSDIR=	${TEXMFDIR}/tex/latex/${PORTNAME}
 
 CLASS_FILES=	ltablex.sty
-DOC_FILES=	ltablex.pdf ltablex.tex
+PORTDOCS=	ltablex.pdf ltablex.tex
 
-WRKSRC=		${WRKDIR}/${CLASSNAME}
-
-pre-install:
-	(for F in ${CLASS_FILES}; do \
-			${ECHO_CMD} "${CLASSDIR}/$${F}"; \
-		done;) > ${PLIST}
-	${ECHO_CMD} "@dirrm ${CLASSDIR}" >> ${PLIST}
-.if !defined(NOPORTDOCS)
-	(for F in ${DOC_FILES}; do \
-		${ECHO_CMD} "${DOCSDIR:S,^${PREFIX}/,,}/$${F}"; \
-		done;\
-	${ECHO_CMD} "@dirrm ${DOCSDIR:S,^${PREFIX}/,,}" ) >> ${PLIST}
-.endif
-	${ECHO_CMD} "@exec ${MKTEXLSR}" >> ${PLIST}
-	${ECHO_CMD} "@unexec ${MKTEXLSR}" >> ${PLIST}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 do-install:
 	${MKDIR} ${PREFIX}/${CLASSDIR}
 	${INSTALL_DATA} ${CLASS_FILES:S@^@${WRKSRC}/@} ${PREFIX}/${CLASSDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${DOC_FILES:S@^@${WRKSRC}/@} ${DOCSDIR}
+	${INSTALL_DATA} ${PORTDOCS:S@^@${WRKSRC}/@} ${DOCSDIR}
 .endif
 
 post-install:
-	${MKTEXLSR}
+	${MKTEXLSR} ${PREFIX}/${TEXMFDIR}
 
 .include <bsd.port.mk>
