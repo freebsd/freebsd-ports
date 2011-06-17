@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	misc
 MASTER_SITES=	GOOGLE_CODE
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A tool for creating presentations
 
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
