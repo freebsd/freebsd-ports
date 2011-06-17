@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.nntpswitch.org/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A NNTP content router
 
+BROKEN=	Does not fetch
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	YES
 USE_PERL5=	YES

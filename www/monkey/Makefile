@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.monkey-project.com/versions/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small, powerful, and fast Web server written in C
 
+BROKEN=	Does not fetch
+
 USE_GMAKE=	yes
 ALL_TARGET=	default
 HAS_CONFIGURE=	yes

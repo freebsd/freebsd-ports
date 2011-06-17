@@ -16,6 +16,8 @@ MASTER_SITE_SUBDIR=	osip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A low layer of SIP implementation
 
+BROKEN=	Does not fetch
+
 CONFLICTS=	libosip-3*
 
 USE_GNOME=	gnomehack gnometarget pkgconfig

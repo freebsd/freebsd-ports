@@ -15,6 +15,8 @@ DISTNAME=	hyper_estraier_wrappers-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for HyperEstraier
 
+BROKEN=	Does not fetch
+
 BUILD_DEPENDS=	swig>=1.3:${PORTSDIR}/devel/swig13
 LIB_DEPENDS=	estraier.8:${PORTSDIR}/textproc/hyperestraier
 

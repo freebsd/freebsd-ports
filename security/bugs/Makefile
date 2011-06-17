@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Great cryptography library and sample programs
 
+BROKEN=	Does not fetch
+
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 DOCSDIR=	${PREFIX}/${DISTNAME}/doc
 

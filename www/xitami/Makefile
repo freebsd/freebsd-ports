@@ -14,6 +14,8 @@ DISTNAME=	xiopen_2_5_src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast, portable multithreaded web server
 
+BROKEN=	Does not fetch
+
 NO_WRKSUBDIR=	yes
 
 MAN8=	xitami.8
