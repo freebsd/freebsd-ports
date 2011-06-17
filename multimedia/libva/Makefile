@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libva
-PORTVERSION=	1.0.10
+PORTVERSION=	1.0.13
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cgit.freedesktop.org/${PORTNAME}/snapshot/
 
@@ -20,13 +20,14 @@ LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
-USE_XORG=	xext xfixes
+USE_XORG=	pciaccess xext xfixes
 USE_GL=		gl
 USE_AUTOTOOLS=	aclocal autoheader automake autoconf libtoolize
 ACLOCAL_ARGS=	-I.
 AUTOMAKE_ARGS=	--add-missing
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--program-prefix=va
+MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-isystem${LOCALBASE}/include
@@ -58,11 +59,5 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} 's/va\(info\)/\1/' \
 		${WRKSRC}/test/vainfo/Makefile.am
 	${REINPLACE_CMD} 's/-ldl//' ${WRKSRC}/va/Makefile.am
-	${REINPLACE_CMD} 's/LDFLAGS.*/& -Wl,-lc/' \
-		${WRKSRC}/dummy_drv_video/Makefile.am \
-		${WRKSRC}/i965_drv_video/Makefile.am
-	${REINPLACE_CMD} 's/-pthread/${PTHREAD_LIBS}/' \
-		${WRKSRC}/i965_drv_video/Makefile.am \
-		${WRKSRC}/test/putsurface/Makefile.am
 
 .include <bsd.port.post.mk>

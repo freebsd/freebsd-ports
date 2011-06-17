@@ -4,7 +4,7 @@
  bin_PROGRAMS = putsurface
  
  AM_CFLAGS = -I$(top_srcdir)/va -I$(top_srcdir)/src/x11
-+AM_LDFLAGS = -pthread
++AM_LDFLAGS = $(PTHREAD_LIBS)
  
 -TEST_LIBS = $(top_builddir)/va/$(libvabackendlib) -lpthread
 +TEST_LIBS = $(top_builddir)/va/$(libvabackendlib)
