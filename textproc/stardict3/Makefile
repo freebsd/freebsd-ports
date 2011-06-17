@@ -7,6 +7,7 @@
 
 PORTNAME=	stardict
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 DIST_SUBDIR=	stardict
@@ -16,6 +17,7 @@ COMMENT=	A cross-platform and international dictionary written in Gtk2
 
 LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		enchant.1:${PORTSDIR}/textproc/enchant
+RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib"
@@ -55,6 +57,7 @@ post-patch:
 	${REINPLACE_CMD} -e '/^GNOME_DOC_INIT/d' ${WRKSRC}/configure.ac
 .endif
 	${REINPLACE_CMD} -e 's,/usr/share,${PREFIX}/share,g' \
+		-e 's,firefox,xdg-open,' \
 		${WRKSRC}/src/conf.cpp
 
 post-install:
