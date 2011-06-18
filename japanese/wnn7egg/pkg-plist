@@ -31,8 +31,6 @@ lib/xemacs/site-packages/lisp/wnn7egg/wnn7egg-leim.el
 lib/xemacs/site-packages/lisp/wnn7egg/wnn7egg-lib.el
 lib/xemacs/site-packages/lisp/wnn7egg/wnn7egg-rpcx21.el
 lib/xemacs/site-packages/lisp/wnn7egg/wnn7egg.el
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/Setup_wnn7egg
 @dirrm share/emacs/site-lisp/wnn7egg/its-v309
 @dirrm share/emacs/site-lisp/wnn7egg
 @dirrm lib/xemacs/site-packages/lisp/wnn7egg/its-v309
@@ -40,4 +38,3 @@ lib/xemacs/site-packages/lisp/wnn7egg/wnn7egg.el
 @dirrm lib/xemacs/site-packages/lisp
 @dirrm lib/xemacs/site-packages
 @dirrm lib/xemacs
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
