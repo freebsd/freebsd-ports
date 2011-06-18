@@ -14,6 +14,8 @@ MASTER_SITES=	http://reality.sgiweb.org/davea/
 MAINTAINER=	joerg@FreeBSD.org
 COMMENT=	A library to analyze DWARF debugging information in ELF files
 
+INSTALL_CONFLICT=	bsdlibdwarf*
+
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 700000
