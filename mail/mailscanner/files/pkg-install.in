@@ -1,0 +1,115 @@
+#!/bin/sh
+#
+# $FreeBSD$
+
+CHMOD=/bin/chmod
+CP=/bin/cp
+DATADIR=%%DATADIR%%
+ECHO=echo
+LN=/bin/ln
+PERL=%%PERL%%
+RM=/bin/rm
+PKGVERSION=%%PKGVERSION%%
+
+upgrade_lang_conf()
+{
+	for LANG_DIR in ${DATADIR}/reports/*
+	do
+	    if [ -f ${LANG_DIR}/languages.conf ] ; then
+		${ECHO} -n Upgrading ${LANG_DIR}/languages.conf... Please wait..
+		${PERL} ${DATADIR}/upgrade_languages_conf \
+			${LANG_DIR}/languages.conf \
+			${LANG_DIR}/languages.conf.sample > \
+			${LANG_DIR}/languages.conf.new.${PKGVERSION} \
+			2> /dev/null
+		if /usr/bin/diff -bBq ${LANG_DIR}/languages.conf \
+			${LANG_DIR}/languages.conf.new.${PKGVERSION}
+		then	${ECHO} " no changes"
+			${RM} ${LANG_DIR}/languages.conf.new.${PKGVERSION}
+		else	${ECHO} " done"
+			${CP} ${LANG_DIR}/languages.conf.new.${PKGVERSION} \
+				${LANG_DIR}/languages.conf
+			${CHMOD} u+w ${LANG_DIR}/languages.conf
+		fi
+	    fi
+	done
+}
+
+upgrade_mailscanner_conf()
+{
+	${PERL} ${DATADIR}/upgrade_MailScanner_conf			\
+		${PKG_PREFIX}/etc/MailScanner/MailScanner.conf		\
+		${PKG_PREFIX}/etc/MailScanner/MailScanner.conf.sample >	\
+	    ${PKG_PREFIX}/etc/MailScanner/MailScanner.conf.new.${PKGVERSION} \
+		2> /dev/null
+	if diff -b -B -q ${PKG_PREFIX}/etc/MailScanner/MailScanner.conf	\
+	    ${PKG_PREFIX}/etc/MailScanner/MailScanner.conf.new.${PKGVERSION}
+	then	${ECHO} "No changes in MailScanner.conf options found"
+	else	${ECHO} -n "Changes in MailScanner.conf found. Please look at"
+	    ${ECHO} \
+	     "${PKG_PREFIX}/etc/MailScanner/MailScanner.conf.new.${PKGVERSION}"
+	fi
+}
+
+initial_config()
+{
+	for LANG_DIR in ${DATADIR}/reports/*
+	do
+	    for REPORT_FILE in ${LANG_DIR}/*.sample
+	    do
+		[ ! -f ${REPORT_FILE%.sample} ] \
+		    && cp -p ${REPORT_FILE} ${REPORT_FILE%.sample} \
+		    && ${CHMOD} u+w ${REPORT_FILE%.sample}
+	    done
+	done
+
+	for WRAPPER in ${PKG_PREFIX}/libexec/MailScanner/*-wrapper.sample
+	do
+	    [ ! -f ${WRAPPER%.sample} ] \
+		&& cp -p ${WRAPPER} ${WRAPPER%.sample} \
+		&& ${CHMOD} u+w ${WRAPPER%.sample}
+	done
+
+	for AUTOUPDATE in ${PKG_PREFIX}/libexec/MailScanner/*-autoupdate.sample
+	do
+	    [ ! -f ${AUTOUPDATE%.sample} ] \
+		&& cp -p ${AUTOUPDATE} ${AUTOUPDATE%.sample} \
+		&& ${CHMOD} u+w ${AUTOUPDATE%.sample}
+	done
+
+	for RULES in ${PKG_PREFIX}/etc/MailScanner/rules/*.rules.sample
+	do
+	    [ ! -f ${RULES%.sample} ] \
+		&& cp -p ${RULES} ${RULES%.sample} \
+		&& ${CHMOD} u+w ${RULES%.sample}
+	done
+
+	for MCP_FILES in %%MCP_FILES%%
+	do
+	    [ ! -f ${PKG_PREFIX}/etc/MailScanner/mcp/${MCP_FILES} ] \
+		&& cp -p ${PKG_PREFIX}/etc/MailScanner/mcp/${MCP_FILES}.sample \
+			${PKG_PREFIX}/etc/MailScanner/mcp/${MCP_FILES} \
+		&& ${CHMOD} u+w ${PKG_PREFIX}/etc/MailScanner/mcp/${MCP_FILES}
+	done
+
+	for ETC in ${PKG_PREFIX}/etc/MailScanner/*.sample
+	do
+	    [ ! -f ${ETC%.sample} ] \
+		&& cp -p ${ETC} ${ETC%.sample} \
+		&& ${CHMOD} u+w ${ETC%.sample}
+	done
+}
+
+case $2 in
+POST-INSTALL)
+	[ ! -z "${WITHOUT_SPAMASSASSIN_SYMLINK}" ] \
+	    && [ ! -r ${PKG_PREFIX}/etc/mail/spamassassin/mailscanner.cf ] \
+	    && ${LN} -s ${PKG_PREFIX}/etc/MailScanner/spam.assassin.prefs.conf \
+		${PKG_PREFIX}/etc/mail/spamassassin/mailscanner.cf
+	upgrade_lang_conf
+	[ -f ${PKG_PREFIX}/etc/MailScanner/MailScanner.conf ] \
+		&& upgrade_mailscanner_conf
+	initial_config
+	exit 0
+	;;
+esac

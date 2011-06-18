@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	MailScanner
-PORTVERSION=	4.83.4
+PORTVERSION=	4.83.5
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mailscanner.info/files/4/tar/
 DISTNAME=	${PORTNAME}-install-${PORTVERSION}-${PATCHLEVEL}
 
-MAINTAINER=	utisoft@gmail.com
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Powerful virus/spam scanning framework for mail gateways
 
 BUILD_DEPENDS=	\
@@ -51,7 +51,12 @@ PATCHLEVEL=	1
 USE_PERL5=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-install-${PORTVERSION}
-SUB_FILES=	pkg-message
+SUB_FILES=	pkg-message pkg-install pkg-deinstall
+SUB_LIST=	DATADIR=${DATADIR} \
+		PERL=${PERL} \
+		PKGVERSION=${PKGVERSION} \
+		ETC_FILES="${ETC_FILES}" \
+		MCP_FILES="${MCP_FILES}"
 
 MAN8=		MailScanner.8
 MLINKS=		MailScanner.8 mailscanner.8
@@ -101,7 +106,7 @@ RUN_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip \
 RUN_DEPENDS+=	bdc:${PORTSDIR}/security/bdc
 .endif
 
-DOC_FILES=	INSTALL.FreeBSD INSTALL.OpenBSD README
+DOC_FILES=	INSTALL.FreeBSD README
 ETC_FILES=	MailScanner.conf filename.rules.conf \
 		archives.filename.rules.conf archives.filetype.rules.conf \
 		filetype.rules.conf spam.assassin.prefs.conf \
@@ -188,202 +193,97 @@ do-build:
 	@${FIND} ${WRKSRC} \( -name "*.bak" -or -name "*.orig" \) -delete
 
 do-install:
-	#
-	# Step 1: Install bin files
-	#
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/MailScanner ${PREFIX}/sbin/mailscanner
-	${LN} -s ${PREFIX}/sbin/mailscanner ${PREFIX}/sbin/MailScanner
-	#
-	# Step 2: Install libexec files
-	#
-	${MKDIR} ${PREFIX}/libexec/MailScanner
-	${CHMOD} -R ${BINMODE} ${PREFIX}/libexec/MailScanner
-	cd ${WRKSRC}/lib && ${FIND} * -name "*-wrapper" -exec \
+	@${ECHO_MSG} -n ">> Installing files in ${PREFIX}/sbin..."
+	@${INSTALL_SCRIPT} ${WRKSRC}/bin/MailScanner ${PREFIX}/sbin/mailscanner
+	@${LN} -s ${PREFIX}/sbin/mailscanner ${PREFIX}/sbin/MailScanner
+	@${ECHO_MSG} " [DONE]"
+	@${ECHO_MSG} -n \
+		">> Installing files in ${PREFIX}/libexec/MailScanner..."
+	@${MKDIR} -m ${BINMODE} ${PREFIX}/libexec/MailScanner
+	@cd ${WRKSRC}/lib && ${FIND} * -name "*-wrapper" -exec \
 		${INSTALL_SCRIPT} {} ${PREFIX}/libexec/MailScanner/{}.sample \;
-	cd ${WRKSRC}/lib && ${FIND} * -name "*-autoupdate" -exec \
+	@cd ${WRKSRC}/lib && ${FIND} * -name "*-autoupdate" -exec \
 		${INSTALL_SCRIPT} {} ${PREFIX}/libexec/MailScanner/{}.sample \;
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/analyse_SpamAssassin_cache \
-		${PREFIX}/libexec/MailScanner/analyse_SpamAssassin_cache
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/clean.SA.cache \
-		${PREFIX}/libexec/MailScanner/clean.SA.cache
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/clean.quarantine \
-		${PREFIX}/libexec/MailScanner/clean.quarantine
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/mailscanner_create_locks \
-		${PREFIX}/libexec/MailScanner/mailscanner_create_locks
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/processing_messages_alert \
-		${PREFIX}/libexec/MailScanner/processing_messages_alert
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/Quick.Peek \
-		${PREFIX}/libexec/MailScanner/Quick.Peek
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_bad_phishing_emails \
-		${PREFIX}/libexec/MailScanner/update_bad_phishing_emails
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_phishing_sites \
-		${PREFIX}/libexec/MailScanner/update_phishing_sites
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_bad_phishing_sites \
-		${PREFIX}/libexec/MailScanner/update_bad_phishing_sites
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/cron/update_phishing_sites.cron \
-		${PREFIX}/libexec/MailScanner/update_phishing_sites.cron
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/cron/update_bad_phishing_sites.cron \
-		${PREFIX}/libexec/MailScanner/update_bad_phishing_sites.cron
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_virus_scanners \
-		${PREFIX}/libexec/MailScanner/update_virus_scanners
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/cron/update_virus_scanners.cron \
-		${PREFIX}/libexec/MailScanner/update_virus_scanners.cron
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/update_spamassassin \
-		${PREFIX}/libexec/MailScanner/update_spamassassin
-	${INSTALL_SCRIPT} ${WRKSRC}/bin/cron/update_spamassassin.cron \
-		${PREFIX}/libexec/MailScanner/update_spamassassin.cron
-	#
-	# Step 3: Install etc files
-	#
-	${MKDIR} ${PREFIX}/etc/MailScanner
-	${CHMOD} ${BINMODE} ${PREFIX}/etc/MailScanner
+.for FILE in analyse_SpamAssassin_cache clean.SA.cache clean.quarantine \
+		mailscanner_create_locks processing_messages_alert Quick.Peek \
+		update_bad_phishing_emails update_phishing_sites \
+		update_bad_phishing_sites cron/update_phishing_sites.cron \
+		cron/update_bad_phishing_sites.cron update_virus_scanners \
+		cron/update_virus_scanners.cron update_spamassassin \
+		cron/update_spamassassin.cron
+	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${FILE} \
+		${PREFIX}/libexec/MailScanner/
+.endfor
+	@${ECHO_MSG} " [DONE]"
+	@${ECHO_MSG} -n ">> Installing files in ${PREFIX}/etc/MailScanner..."
+	@${MKDIR} -m ${BINMODE} ${PREFIX}/etc/MailScanner
 .for FILE in ${ETC_FILES}
-	${INSTALL_DATA} ${WRKSRC}/etc/${FILE} \
+	@${INSTALL_DATA} ${WRKSRC}/etc/${FILE} \
 		${PREFIX}/etc/MailScanner/${FILE}.sample
 .endfor
-	${MKDIR} ${PREFIX}/etc/MailScanner/rules
-	cd ${WRKSRC}/etc/rules && \
-		${INSTALL_DATA} EXAMPLES README ${PREFIX}/etc/MailScanner/rules
-	${INSTALL_DATA} ${WRKSRC}/etc/rules/spam.whitelist.rules \
-		${PREFIX}/etc/MailScanner/rules/spam.whitelist.rules.sample
-	${INSTALL_DATA} ${WRKSRC}/etc/rules/bounce.rules \
-		${PREFIX}/etc/MailScanner/rules/bounce.rules.sample
-	${INSTALL_DATA} ${WRKSRC}/etc/rules/max.message.size.rules \
-		${PREFIX}/etc/MailScanner/rules/max.message.size.rules.sample
-	${MKDIR} ${PREFIX}/etc/MailScanner/mcp
-	${CHMOD} ${BINMODE} ${PREFIX}/etc/MailScanner/mcp
+	@${MKDIR} ${PREFIX}/etc/MailScanner/rules
+	@cd ${WRKSRC}/etc/rules \
+		&& ${INSTALL_DATA} EXAMPLES README \
+			${PREFIX}/etc/MailScanner/rules
+.for RULES in spam.whitelist.rules bounce.rules max.message.size.rules
+	@${INSTALL_DATA} ${WRKSRC}/etc/rules/${RULES} \
+		${PREFIX}/etc/MailScanner/rules/${RULES}.sample
+.endfor
+	@${MKDIR} -m ${BINMODE} ${PREFIX}/etc/MailScanner/mcp
 .for FILE in ${MCP_FILES}
-	${INSTALL_DATA} ${WRKSRC}/etc/mcp/${FILE} \
+	@${INSTALL_DATA} ${WRKSRC}/etc/mcp/${FILE} \
 		${PREFIX}/etc/MailScanner/mcp/${FILE}.sample
 .endfor
-	${MKDIR} ${PREFIX}/etc/MailScanner/conf.d
-	${INSTALL_DATA} ${WRKSRC}/etc/conf.d/README \
+	@${MKDIR} ${PREFIX}/etc/MailScanner/conf.d
+	@${INSTALL_DATA} ${WRKSRC}/etc/conf.d/README \
 		${PREFIX}/etc/MailScanner/conf.d/README
-	#
-	# Step 4: Install files in share
-	#
+	@${ECHO_MSG} " [DONE]"
+	@${ECHO_MSG} -n ">> Installing files in ${DATADIR}..."
 	@${MKDIR} ${DATADIR}
-	cd ${WRKSRC}/etc && ${FIND} reports -type d ! -name "*.old" -exec \
-		${MKDIR} ${DATADIR}/{} \;
-	# cd ${WRKSRC}/etc && ${FIND} reports -type f ! \( -name "*.orig" -exec ...
-	cd ${WRKSRC}/etc && ${FIND} reports \( -type d -name "*.old" -prune \) \
-		-o \( -type f ! \( -name "*.orig" -o -name "*.bak" \) \
+	@cd ${WRKSRC}/etc && ${FIND} reports -type d ! -name "*.old" -exec \
+		${MKDIR} -m ${BINMODE} ${DATADIR}/{} \;
+	@cd ${WRKSRC}/etc \
+	    && ${FIND} reports \( -type d -name "*.old" -prune \) \
+	    -o \( -type f ! \( -name "*.orig" -o -name "*.bak" \) \
 		-exec ${INSTALL_DATA} {} ${DATADIR}/{}.sample \; \)
-	${CHMOD} -R ${BINMODE} ${DATADIR}/reports
-	#
-	# Step 5: Install lib
-	#
-	${MKDIR} ${PREFIX}/lib/MailScanner/MailScanner
-	${MKDIR} ${PREFIX}/lib/MailScanner/MailScanner/CustomFunctions
-	${INSTALL_SCRIPT} ${WRKSRC}/lib/MailScanner.pm \
+	@${INSTALL_SCRIPT} ${WRKSRC}/bin/upgrade_MailScanner_conf ${DATADIR}
+	@${LN} -s ${DATADIR}/upgrade_MailScanner_conf \
+		${DATADIR}/upgrade_languages_conf
+	@${ECHO_MSG} " [DONE]"
+	@${ECHO_MSG} -n ">> Installing files in ${PREFIX}/lib..."
+	@${MKDIR} ${PREFIX}/lib/MailScanner/MailScanner/CustomFunctions
+	@${INSTALL_SCRIPT} ${WRKSRC}/lib/MailScanner.pm \
 		${PREFIX}/lib/MailScanner/MailScanner.pm
-	cd ${WRKSRC}/lib/MailScanner && ${FIND} * -type f ! -name "*.orig" -exec \
+	@cd ${WRKSRC}/lib/MailScanner \
+		&& ${FIND} * -type f ! -name "*.orig" -exec \
 		${INSTALL_SCRIPT} {} ${PREFIX}/lib/MailScanner/MailScanner/{} \;
-	#
-	# Step 6: Docs & Manpages
-	#
-	# Manpage
+	@${ECHO_MSG} " [DONE]"
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${FILESDIR}/README.FreeBSD.port ${DOCSDIR}
-	# Sophos install script
-	${INSTALL_SCRIPT} ${FILESDIR}/Sophos.install.freebsd ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${DOC_FILES} ${DOCSDIR}
-	cd ${FILESDIR} && ${INSTALL_DATA} CHANGES.port ${DOCSDIR}
-.endif
-	cd ${FILESDIR} && \
-		${INSTALL_MAN} ${MAN8} ${MAN5PREFIX}/man/man8
-	${PERL} -pi -e \
-		's,%%LOCALBASE%%,${LOCALBASE},g; \
-		s,%%PREFIX%%,${PREFIX},g;' \
+	@${ECHO_MSG} -n ">> Installing docs and manpage..."
+	@${MKDIR} ${DOCSDIR}
+	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD.port ${DOCSDIR}
+	@${INSTALL_SCRIPT} ${FILESDIR}/Sophos.install.freebsd ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOC_FILES} ${DOCSDIR}
+	@${REINPLACE_CMD} \
+		-e 's,%%LOCALBASE%%,${LOCALBASE},'	\
+		-e 's,%%PREFIX%%,${PREFIX},'		\
 		${DOCSDIR}/Sophos.install.freebsd
-.if exists(${PREFIX}/etc/MailScanner/MailScanner.conf)
-	# Upgrading MailScanner.conf file... Please wait
-	@${PERL} ${WRKSRC}/bin/upgrade_MailScanner_conf \
-		${PREFIX}/etc/MailScanner/MailScanner.conf \
-		${PREFIX}/etc/MailScanner/MailScanner.conf.sample > \
-		${PREFIX}/etc/MailScanner/MailScanner.conf.new.${PORTVERSION} \
-		2> /dev/null
-	# Diff the files. If the files do not differ, delete the new file
-	@if diff -b -B -q ${PREFIX}/etc/MailScanner/MailScanner.conf \
-		${PREFIX}/etc/MailScanner/MailScanner.conf.new.${PORTVERSION} ; \
-	   then ${ECHO} "No changes in MailScanner.conf options found" ; \
-		${RM} ${PREFIX}/etc/MailScanner/MailScanner.conf.new.${PORTVERSION} ; \
-	else \
-	   ${ECHO} "Changes in MailScanner.conf found. Please look at \
-		${PREFIX}/etc/MailScanner/MailScanner.conf.new.${PORTVERSION}" ; \
-	fi
+	@${RM} -f ${DOCSDIR}/Sophos.install.freebsd.bak
+.else
+	@${ECHO_MSG} -n ">> Installing manpage..."
 .endif
-	# Languages.conf update
-	@for LANG_DIR in ${DATADIR}/reports/*; do \
-		if [ -f $${LANG_DIR}/languages.conf ]; then \
-			${ECHO} -n Upgrading $${LANG_DIR}/languages.conf... Please wait...; \
-			${PERL} ${WRKSRC}/bin/upgrade_languages_conf \
-				$${LANG_DIR}/languages.conf \
-				$${LANG_DIR}/languages.conf.sample > \
-				$${LANG_DIR}/languages.conf.new.${PORTVERSION} \
-				2> /dev/null ; \
-			if diff -b -B -q $${LANG_DIR}/languages.conf \
-				$${LANG_DIR}/languages.conf.new.${PORTVERSION} ; \
-			  then	${ECHO} " no changes"; \
-				${RM} $${LANG_DIR}/languages.conf.new.${PORTVERSION} ; \
-			  else	${ECHO} " done"; \
-				${CP} $${LANG_DIR}/languages.conf.new.${PORTVERSION} $${LANG_DIR}/languages.conf ; \
-			fi; \
-		fi; \
-	done
-	@${CAT} ${PKGMESSAGE}
+	@cd ${FILESDIR} && \
+		${INSTALL_MAN} ${MAN8} ${MAN5PREFIX}/man/man8
+	@${ECHO_MSG} " [DONE]"
 
 post-install:
 .if defined(WITH_SPAMASSASSIN) && !defined(WITHOUT_SPAMASSASSIN_SYMLINK)
-	@if [ ! -r ${PREFIX}/etc/mail/spamassassin/mailscanner.cf ]; then \
-		${ECHO} ${LN} -s ${PREFIX}/etc/MailScanner/spam.assassin.prefs.conf ${PREFIX}/etc/mail/spamassassin/mailscanner.cf; \
-		${LN} -s ${PREFIX}/etc/MailScanner/spam.assassin.prefs.conf ${PREFIX}/etc/mail/spamassassin/mailscanner.cf; \
-	else \
-		${ECHO} "File ${PREFIX}/etc/mail/spamassassin/mailscanner.cf already exists!"; \
-	fi;
+	@${SETENV} PKG_PREFIX=${PREFIX} \
+	    ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.else
+	@${SETENV} PKG_PREFIX=${PREFIX} WITHOUT_SPAMASSASSIN_SYMLINK=yes \
+	    ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
-	# Display warning about new start/stop scripts
-	@${CAT} ${FILESDIR}/rcwarning.txt
-.if !defined(BATCH)
-	@${ECHO} Press ENTER to continue...
-	@read a
-.endif
-
-renew-wrapper: configure
-	# Renew virus wrapper scripts
-	${INSTALL_SCRIPT} ${WRKSRC}/lib/*-wrapper ${PREFIX}/libexec/MailScanner
-
-renew-autoupdate: configure
-	# Renew autoupdate scripts
-	${INSTALL_SCRIPT} ${WRKSRC}/lib/*-autoupdate ${PREFIX}/libexec/MailScanner
-
-renew-reports: configure
-	# Renew reports
-	cd ${WRKSRC}/etc/reports/en && ${FIND} * -type f ! -name "*.orig" \
-		-exec ${INSTALL_DATA} {} ${DATADIR}/reports/en/{}  \;
-
-initial-config: renew-wrapper renew-autoupdate renew-reports
-	cd ${WRKSRC}/etc && ${INSTALL_DATA} ${ETC_FILES} \
-		${PREFIX}/etc/MailScanner
-	${INSTALL_DATA} ${WRKSRC}/etc/rules/spam.whitelist.rules \
-		${PREFIX}/etc/MailScanner/rules/spam.whitelist.rules
-	${INSTALL_DATA} ${WRKSRC}/etc/rules/bounce.rules \
-		${PREFIX}/etc/MailScanner/rules/bounce.rules
-	${INSTALL_DATA} ${WRKSRC}/etc/rules/max.message.size.rules \
-		${PREFIX}/etc/MailScanner/rules/max.message.size.rules
-.for FILE in ${MCP_FILES}
-	${INSTALL_DATA} ${WRKSRC}/etc/mcp/${FILE} \
-		${PREFIX}/etc/MailScanner/mcp/${FILE}
-.endfor
-	@${ECHO} "******************************************************************************"
-	@${ECHO} "The provided default configuration requires several directories to be created:"
-	@${ECHO} "/var/spool/MailScanner/incoming"
-	@${ECHO} "/var/spool/MailScanner/incoming/Locks"
-	@${ECHO} "/var/spool/MailScanner/quarantine"
-	@${ECHO} "/var/spool/mqueue"
-	@${ECHO} "/var/spool/mqueue.in"
-	@${ECHO} "Either create those directories or change the configuration."
-	@${ECHO} "******************************************************************************"
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

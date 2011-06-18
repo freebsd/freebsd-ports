@@ -1,3 +1,9 @@
+Version 4.84.5
+==============
+- Upgrade to 4.83.5
+- Remove extra config file targets-- config files are handled automatically
+  in pkg-(de)?install scripts now.
+
 Version 4.83.4
 ==============
 - Upgrade to 4.83.4
