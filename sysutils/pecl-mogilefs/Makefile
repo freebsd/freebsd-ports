@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mogilefs
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.1
 CATEGORIES=	sysutils pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -25,5 +25,8 @@ USE_PHP=	yes
 USE_PHP_BUILD=	spl
 USE_PHPIZE=	yes
 USE_PHPEXT=	yes
+
+post-extract:
+	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/config.m4
 
 .include <bsd.port.mk>
