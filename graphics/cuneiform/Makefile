@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cuneiform
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://launchpadlibrarian.net/51166054/
+MASTER_SITES=	http://launchpadlibrarian.net/69906918/
 DISTNAME=	${PORTNAME}-linux-${PORTVERSION}
 
 MAINTAINER=	samm@os2.kiev.ua
@@ -41,8 +41,6 @@ post-extract:
 	${MKDIR} ${WRKSRC}
 
 post-patch:
-	${MV} ${WRKSRC}/cuneiform_src/Kern/hrstr/strings.h \
-		${WRKSRC}/cuneiform_src/Kern/hrstr/cf_strings.h
 	${MV} ${WRKSRC}/cuneiform_src/Kern/hhh/tigerh/h/strings.h \
 		${WRKSRC}/cuneiform_src/Kern/hhh/tigerh/h/cf_strings.h
 .if !defined(WITH_IMAGEMAGICK)
