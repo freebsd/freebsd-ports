@@ -3288,6 +3288,7 @@
     SUBDIR += rubygem-nice-ffi
     SUBDIR += rubygem-notify
     SUBDIR += rubygem-open4
+    SUBDIR += rubygem-orm_adapter
     SUBDIR += rubygem-parsetree
     SUBDIR += rubygem-piston
     SUBDIR += rubygem-pkg-config
