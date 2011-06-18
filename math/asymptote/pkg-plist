@@ -504,15 +504,15 @@ bin/xasy
 %%PORTDOCS%%@dirrm info/asymptote
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/asy-faq.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-share/texmf-local/tex/context/third/asymptote/colo-asy.tex
-share/texmf-local/tex/latex/asymptote/asycolors.sty
-share/texmf-local/tex/latex/asymptote/asymptote.sty
-share/texmf-local/tex/latex/asymptote/latexmkrc
-share/texmf-local/tex/latex/asymptote/ocg.sty
+share/texmf/tex/context/third/asymptote/colo-asy.tex
+share/texmf/tex/latex/asymptote/asycolors.sty
+share/texmf/tex/latex/asymptote/asymptote.sty
+share/texmf/tex/latex/asymptote/latexmkrc
+share/texmf/tex/latex/asymptote/ocg.sty
 @dirrm %%DATADIR%%/GUI
 @dirrm %%DATADIR%%
-@dirrm share/texmf-local/tex/latex/asymptote
-@dirrm share/texmf-local/tex/context/third/asymptote
-@dirrm share/texmf-local/tex/context/third
-@unexec %%MKTEXLSR%%
-@exec %%MKTEXLSR%%
+@dirrm share/texmf/tex/latex/asymptote
+@dirrm share/texmf/tex/context/third/asymptote
+@dirrm share/texmf/tex/context/third
+@unexec %%MKTEXLSR%% %D/share/texmf
+@exec %%MKTEXLSR%% %D/share/texmf

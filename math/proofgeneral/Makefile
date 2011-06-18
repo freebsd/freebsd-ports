@@ -7,7 +7,7 @@
 
 PORTNAME=	proofgeneral
 PORTVERSION=	3.7.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math elisp
 MASTER_SITES=	http://proofgeneral.inf.ed.ac.uk/releases/
 DISTNAME=	ProofGeneral-3.7.1
@@ -62,7 +62,8 @@ INFO=		PG-adapting ProofGeneral
 
 .if !defined(NOPORTDOCS)
 MAKE_ARGS+=	DOCSDIR=${DOCSDIR} INSTALLDOC=install-doc
-BUILD_DEPENDS+=	${LOCALBASE}/bin/texi2pdf:${PORTSDIR}/print/teTeX-base
+BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base \
+		texi2pdf:${PORTSDIR}/print/texinfo
 .endif
 
 post-patch:
