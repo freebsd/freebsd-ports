@@ -3347,6 +3347,7 @@
     SUBDIR += rubygem-validatable
     SUBDIR += rubygem-vmc
     SUBDIR += rubygem-warbler
+    SUBDIR += rubygem-warden
     SUBDIR += rubygem-webby
     SUBDIR += rubygem-yajl-ruby
     SUBDIR += rubygem-yui-compressor
