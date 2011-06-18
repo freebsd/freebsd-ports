@@ -3226,6 +3226,7 @@
     SUBDIR += rubygem-deeptest
     SUBDIR += rubygem-deprecated
     SUBDIR += rubygem-deprecated2
+    SUBDIR += rubygem-devise
     SUBDIR += rubygem-directory_watcher
     SUBDIR += rubygem-ditz
     SUBDIR += rubygem-echoe
