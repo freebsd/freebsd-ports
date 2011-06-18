@@ -3210,6 +3210,7 @@
     SUBDIR += ruby-wirble
     SUBDIR += rubygem-abstract
     SUBDIR += rubygem-activesupport
+    SUBDIR += rubygem-allison
     SUBDIR += rubygem-analogger
     SUBDIR += rubygem-arrayfields
     SUBDIR += rubygem-authlogic
