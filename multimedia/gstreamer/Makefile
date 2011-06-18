@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	gstreamer
-PORTVERSION=	0.10.34
+PORTVERSION=	0.10.35
 CATEGORIES=	multimedia
-MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/ \
-		GNOME
+MASTER_SITES=	http://gstreamer.freedesktop.org/src/gstreamer/
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Development framework for creating media applications
@@ -23,7 +22,6 @@ LICENSE=	LGPL20
 LICENSE_FILE=	${WRKSRC}/COPYING
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
 USE_BISON=	build
-USE_XORG=	x11 xv xext videoproto xextproto
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 WANT_GNOME=	yes
@@ -34,8 +32,8 @@ CONFIGURE_ARGS=	--disable-tests \
 		--disable-examples \
 		--disable-failing-tests \
 		--disable-gtk-doc
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
+CPPFLAGS=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib" \
 		ac_cv_func_register_printf_function="no" \
 		FLEX_PATH="${LOCALBASE}/bin/flex"
 PLIST_SUB=	VERSION="${GST_VERSION}"
