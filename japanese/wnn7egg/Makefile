@@ -9,15 +9,12 @@ PORTNAME=	wnn7egg
 PORTVERSION=	1.02
 #PORTREVISION=	1
 CATEGORIES=	japanese elisp
-MASTER_SITES=	ftp://ftp.omronsoft.co.jp/pub/Wnn7/client/lisp/
+MASTER_SITES=	http://www.omronsoft.co.jp/SP/pcunix/wnn7/support/modules/wnn7egg/
 DISTNAME=	wnn7-elisp-el-1.02-1
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Wnn7 elisp client
-
-DEPRECATED=	Look like an abandonware, no more public distifles
-EXPIRATION_DATE=	2011-08-01
 
 EMACSDIR=	${PREFIX}/share/emacs/site-lisp
 ELISPDIR=	${EMACSDIR}/wnn7egg
@@ -28,6 +25,8 @@ MANIFEST=	MANIFEST.wnn7egg
 WRKSRC=		${WRKDIR}/wnn7/elisp
 
 NO_BUILD=	yes
+
+PORTDOCS=	README Setup_wnn7egg
 
 do-install:
 	${MKDIR} ${ELISPDIR} ${XELISPDIR}
@@ -41,8 +40,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/xemacs21/eggrc-wnn7 ${XELISPDIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/
-	${INSTALL_DATA} ${WRKSRC}/Setup_wnn7egg ${DOCSDIR}
+	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
