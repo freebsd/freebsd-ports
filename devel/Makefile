@@ -3326,6 +3326,7 @@
     SUBDIR += rubygem-sequel
     SUBDIR += rubygem-sexp_processor
     SUBDIR += rubygem-shoulda
+    SUBDIR += rubygem-simple_form
     SUBDIR += rubygem-soap4r
     SUBDIR += rubygem-spruz
     SUBDIR += rubygem-state_machine
