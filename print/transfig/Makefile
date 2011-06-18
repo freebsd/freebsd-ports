@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	transfig
-PORTVERSION=	3.2.5
-PORTREVISION=	2
+PORTVERSION=	3.2.5d
 CATEGORIES=	print
-MASTER_SITES=	http://xfig.org/software/xfig/${PORTVERSION}/ \
-		ftp://www-epb.lbl.gov/xfig/
+MASTER_SITES=	SF/mcj/mcj_dist_src/3.0/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
