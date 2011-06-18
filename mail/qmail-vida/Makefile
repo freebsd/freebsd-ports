@@ -17,6 +17,9 @@ MASTER_SITE_SUBDIR=${PORTNAME}/2100/:vida
 MAINTAINER=	futurebsd@infoseek.to
 COMMENT=	SMTP_AUTH/APOP support for qmail
 
+DEPRECATED=	UID collisions, IGNOREd for four years with no-one caring
+EXPIRATION_DATE=	2011-07-18
+
 IGNORE=		abuses UID registered to another port, and uses unregistered GID
 
 DISTFILES=	${DISTNAME}.tar.gz:vida	\
