@@ -14,6 +14,10 @@ MASTER_SITES=	http://www.klomp.org/mod_roaming/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that works as a Netscape Roaming Access server
 
+DEPRECATED=	Works only with Netscape version 4 see PR 73383
+
+EXPIRATION_DATE=	2011-08-01
+
 PORTSCOUT=	limit:^1
 
 MAKE_JOBS_SAFE=  yes
