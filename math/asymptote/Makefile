@@ -7,7 +7,7 @@
 
 PORTNAME=	asymptote
 PORTVERSION=	2.04
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION} \
 		SF/${PORTNAME}/${PORTNAME}/old/${PORTVERSION}
@@ -25,13 +25,13 @@ LIB_DEPENDS=	fftw3.5:${PORTSDIR}/math/fftw3
 .endif
 BUILD_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \
-		latex:${PORTSDIR}/print/teTeX \
+		latex:${PORTSDIR}/print/teTeX-base \
 		makeinfo:${PORTSDIR}/textproc/texi2html \
-		${MKTEXLSR}:${PORTSDIR}/print/teTeX \
+		${MKTEXLSR}:${PORTSDIR}/print/teTeX-base \
 		svn:${PORTSDIR}/devel/subversion \
-		texi2dvi:${PORTSDIR}/print/teTeX
+		texi2dvi:${PORTSDIR}/print/texinfo
 RUN_DEPENDS=	gv:${PORTSDIR}/print/gv \
-		latex:${PORTSDIR}/print/teTeX \
+		latex:${PORTSDIR}/print/teTeX-base \
 		${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_PKGNAMEPREFIX}imaging>=1.1.6_3:${PORTSDIR}/graphics/py-imaging
 
@@ -48,7 +48,7 @@ MAKE_JOBS_UNSAFE=	yes
 WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-latex=${LOCALBASE}/share/texmf-local/tex/latex
+CONFIGURE_ARGS+=	--with-latex=${LOCALBASE}/share/texmf/tex/latex
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include $${CPPFLAGS}" LFLAGS="-L${LOCALBASE}/lib $${LFLAGS}" CFLAGS="-I${LOCALBASE}/include $${CFLAGS}" LDFLAGS="-L${LOCALBASE}/lib $${LDFLAGS}"
 MAKE_ENV+=	${CONFIGURE_ENV}
 

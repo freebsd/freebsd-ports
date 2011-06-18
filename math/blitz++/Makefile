@@ -8,7 +8,7 @@
 
 PORTNAME=	blitz++
 PORTVERSION=	0.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	SF/blitz/blitz/Blitz%2B%2B%20${PORTVERSION}
 DISTNAME=	blitz-${PORTVERSION}
@@ -17,7 +17,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A C++ class library for scientific computing
 
 .ifndef NOPORTDOCS
-BUILD_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex
+BUILD_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex \
+		texi2dvi:${PORTSDIR}/print/texinfo
 INFO=		blitz
 .else
 MAKE_ARGS=	NOPORTDOCS=yes

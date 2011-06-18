@@ -10,7 +10,7 @@
 
 PORTNAME=	sbcl
 PORTVERSION=	1.0.43.0
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	lang lisp
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R} \
@@ -91,7 +91,8 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_PDF)
-BUILD_DEPENDS+=	texi2dvi:${PORTSDIR}/print/teTeX-base
+BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base \
+		texi2dvi:${PORTSDIR}/print/texinfo
 DOC_TARGETS+=	pdf
 PLIST_SUB+=	PDF=""
 . if !defined(NOPORTDOCS)
