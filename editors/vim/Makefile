@@ -38,7 +38,7 @@ SLAVEDIRS=	editors/vim-lite
 .endif
 
 CONFLICTS=	vim6* vim*-lite vim*-gnome
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 USE_BZIP2=	yes
 DIST_SUBDIR=	vim
 WRKSRC=		${WRKDIR}/vim${PORTVERSION:C/\.[0-9]*$//:S/.//g}/src
