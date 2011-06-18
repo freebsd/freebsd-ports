@@ -3292,6 +3292,7 @@
     SUBDIR += rubygem-pkg-config
     SUBDIR += rubygem-platform
     SUBDIR += rubygem-polyglot
+    SUBDIR += rubygem-popen4
     SUBDIR += rubygem-ptreloaded
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rapt
