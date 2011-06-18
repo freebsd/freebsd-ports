@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	LOCAL/bapt \
 		http://files.etoilebsd.net/yajl/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Portable JSON parsing and serialization library in ANSI C
 
 GITREF=		f4baae0
