@@ -1,0 +1,4 @@
+File attachments as attributes for DataMapper, 
+based on the original Paperclip by Jon Yurek at Thoughtbot
+
+WWW: http://rubygems.org/gems/dm-paperclip
