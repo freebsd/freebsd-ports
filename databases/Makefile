@@ -757,6 +757,7 @@
     SUBDIR += rubygem-dm-pager
     SUBDIR += rubygem-dm-paperclip
     SUBDIR += rubygem-dm-postgres-adapter
+    SUBDIR += rubygem-dm-rails
     SUBDIR += rubygem-dm-serializer
     SUBDIR += rubygem-dm-timestamps
     SUBDIR += rubygem-dm-transactions
