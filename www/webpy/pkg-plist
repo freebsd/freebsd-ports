@@ -31,6 +31,9 @@
 %%PYTHON_SITELIBDIR%%/web/net.py
 %%PYTHON_SITELIBDIR%%/web/net.pyc
 %%PYTHON_SITELIBDIR%%/web/net.pyo
+%%PYTHON_SITELIBDIR%%/web/python23.py
+%%PYTHON_SITELIBDIR%%/web/python23.pyc
+%%PYTHON_SITELIBDIR%%/web/python23.pyo
 %%PYTHON_SITELIBDIR%%/web/session.py
 %%PYTHON_SITELIBDIR%%/web/session.pyc
 %%PYTHON_SITELIBDIR%%/web/session.pyo
