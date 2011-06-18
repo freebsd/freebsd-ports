@@ -1,24 +1,24 @@
 @comment $FreeBSD$
-etc/MailScanner/archives.filename.rules.conf.sample
-etc/MailScanner/archives.filetype.rules.conf.sample
-etc/MailScanner/country.domains.conf.sample
-etc/MailScanner/MailScanner.conf.sample
-etc/MailScanner/filename.rules.conf.sample
-etc/MailScanner/filetype.rules.conf.sample
-etc/MailScanner/conf.d/README
-etc/MailScanner/mcp/10_example.cf.sample
-etc/MailScanner/mcp/mcp.spam.assassin.prefs.conf.sample
-etc/MailScanner/mcp/v320.pre.sample
-etc/MailScanner/rules/EXAMPLES
-etc/MailScanner/rules/README
-etc/MailScanner/rules/bounce.rules.sample
-etc/MailScanner/rules/max.message.size.rules.sample
-etc/MailScanner/rules/spam.whitelist.rules.sample
-etc/MailScanner/phishing.bad.sites.conf.sample
-etc/MailScanner/phishing.safe.sites.conf.sample
-etc/MailScanner/spam.assassin.prefs.conf.sample
-etc/MailScanner/spam.lists.conf.sample
-etc/MailScanner/virus.scanners.conf.sample
+%%ETCDIR%%/archives.filename.rules.conf.sample
+%%ETCDIR%%/archives.filetype.rules.conf.sample
+%%ETCDIR%%/country.domains.conf.sample
+%%ETCDIR%%/MailScanner.conf.sample
+%%ETCDIR%%/filename.rules.conf.sample
+%%ETCDIR%%/filetype.rules.conf.sample
+%%ETCDIR%%/conf.d/README
+%%ETCDIR%%/mcp/10_example.cf.sample
+%%ETCDIR%%/mcp/mcp.spam.assassin.prefs.conf.sample
+%%ETCDIR%%/mcp/v320.pre.sample
+%%ETCDIR%%/rules/EXAMPLES
+%%ETCDIR%%/rules/README
+%%ETCDIR%%/rules/bounce.rules.sample
+%%ETCDIR%%/rules/max.message.size.rules.sample
+%%ETCDIR%%/rules/spam.whitelist.rules.sample
+%%ETCDIR%%/phishing.bad.sites.conf.sample
+%%ETCDIR%%/phishing.safe.sites.conf.sample
+%%ETCDIR%%/spam.assassin.prefs.conf.sample
+%%ETCDIR%%/spam.lists.conf.sample
+%%ETCDIR%%/virus.scanners.conf.sample
 lib/MailScanner/MailScanner.pm
 lib/MailScanner/MailScanner/Antiword.pm
 lib/MailScanner/MailScanner/BinHex.pm
@@ -544,15 +544,13 @@ sbin/MailScanner
 %%DATADIR%%/reports/sk/deleted.size.message.txt.sample
 %%DATADIR%%/reports/sk/sender.size.report.txt.sample
 %%DATADIR%%/reports/sk/stored.size.message.txt.sample
+%%DATADIR%%/upgrade_MailScanner_conf
+%%DATADIR%%/upgrade_languages_conf
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD.port
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES.port
 %%PORTDOCS%%%%DOCSDIR%%/Sophos.install.freebsd
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL.FreeBSD
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL.OpenBSD
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%SPAMASSASSIN%%%%SPAMASSASSIN_SYMLINK%%@exec [ -e %D/etc/mail/spamassassin/mailscanner.cf ] ||  ln -s %D/etc/MailScanner/spam.assassin.prefs.conf %D/etc/mail/spamassassin/mailscanner.cf
-%%SPAMASSASSIN%%%%SPAMASSASSIN_SYMLINK%%@unexec [ -L %D/etc/mail/spamassassin/mailscanner.cf ] &&  rm -f %D/etc/mail/spamassassin/mailscanner.cf
 @dirrm %%DATADIR%%/reports/sk
 @dirrm %%DATADIR%%/reports/se
 @dirrm %%DATADIR%%/reports/ro
@@ -574,7 +572,7 @@ sbin/MailScanner
 @dirrm lib/MailScanner/MailScanner/CustomFunctions
 @dirrm lib/MailScanner/MailScanner
 @dirrm lib/MailScanner
-@dirrm etc/MailScanner/conf.d
-@dirrm etc/MailScanner/mcp
-@dirrm etc/MailScanner/rules
-@dirrm etc/MailScanner
+@dirrmtry %%ETCDIR%%/conf.d
+@dirrmtry %%ETCDIR%%/mcp
+@dirrmtry %%ETCDIR%%/rules
+@dirrmtry %%ETCDIR%%

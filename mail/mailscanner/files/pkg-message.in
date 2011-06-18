@@ -11,30 +11,18 @@
 
 	You will need to make several modifications to config files
 	before MailScanner will work correctly.
+
+	The provided default configuration requires several directories
+	to be created:
+
+		/var/spool/MailScanner/incoming
+		/var/spool/MailScanner/incoming/Locks
+		/var/spool/MailScanner/quarantine
+		/var/spool/mqueue
+		/var/spool/mqueue.in
+
+	Either create those directories or change the configuration.
                                               
-	If this is the first time you are installing this port you
-	should create an initial set of configuration files with 
-                                                               
-	make initial-config 
-
-	within this directory. Without this step you will only have
-	.sample files instead of real .conf files and report
-	templates.
-
-	If you are upgrading your port you might consider 
-	running
-
-	make renew-wrapper
-	make renew-autoupdate
-	make renew-reports
-
-	to update your virus-wrappers, autoupdates, reports and
-	languages.conf
-
-	The english languages.conf is updated automatically. For all
-	other versions use the update_languages_conf tool found
-	in the work directory of this port.
-
 	Sophos users: Please take a look at the Sophos install
 	script %%PREFIX%%/share/doc/MailScanner/Sophos.install.freebsd
 
