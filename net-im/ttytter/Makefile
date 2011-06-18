@@ -1,48 +1,48 @@
 # New ports collection makefile for:	ttytter
-# Date created:				21 March 2009
-# Whom:				        Julian C. Dunn <jdunn@aquezada.com>
+# Date created:		21 March 2009
+# Whom:			Julian C. Dunn <jdunn@aquezada.com>
 #
 # $FreeBSD$
 
 PORTNAME=	ttytter
-PORTVERSION=	1.1.10
-CATEGORIES=	net-im
+PORTVERSION=	1.1.12
+CATEGORIES=	net-im perl5
 MASTER_SITES=	http://www.floodgap.com/software/ttytter/dist1/
-DISTFILES=	1.1.10.txt
-EXTRACT_ONLY=
+DISTNAME=	${PORTVERSION}
+EXTRACT_SUFX=	.txt
 
 MAINTAINER=	jdunn@aquezada.com
 COMMENT=	Command-line Twitter client in Perl
 
-RUN_DEPENDS=	${SITE_PERL}/Date/Parse.pm:${PORTSDIR}/devel/p5-TimeDate \
-		curl:${PORTSDIR}/ftp/curl
+RUN_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
+		p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 
-OPTIONS=	READLINE	"Include rich readline support"	on \
-		RLTTYTTER       "Use T::R::TTYtter readline driver (beta!)" off \
+OPTIONS=	READLINE	"Include rich readline support" on \
+		RLTTYTTER	"Use T::R::TTYtter readline driver (beta!)" off \
 
 PLIST_FILES=	bin/${PORTNAME}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_READLINE)
-RUN_DEPENDS+=	${SITE_PERL}/Term/ReadLine/Perl.pm:${PORTSDIR}/devel/p5-ReadLine-Perl
+.if !defined(WITHOUT_READLINE)
+RUN_DEPENDS+=	p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl
 .endif
 
 .if defined(WITH_RLTTYTTER)
-RUN_DEPENDS+=	${SITE_PERL}/Term/ReadLine/TTYtter.pm:${PORTSDIR}/devel/p5-ReadLine-TTYtter
+RUN_DEPENDS+=	p5-ReadLine-TTYtter>=0:${PORTSDIR}/devel/p5-ReadLine-TTYtter
 .endif
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@${CP} ${DISTDIR}/${DISTFILES}  ${WRKSRC}/${PORTNAME}-${PORTVERSION}.txt
+	@${CP} ${DISTDIR}/${DISTFILES} ${WRKSRC}/${DISTFILES}
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^\#!/usr/bin/perl|\#!${PERL}|' ${WRKSRC}/${PORTNAME}-${PORTVERSION}.txt
+	@${REINPLACE_CMD} -e 's|^\#!/usr/bin/perl|\#!${PERL}|' ${WRKSRC}/${DISTFILES}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}-${PORTVERSION}.txt ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_SCRIPT} ${WRKSRC}/${DISTFILES} ${PREFIX}/bin/${PORTNAME}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
