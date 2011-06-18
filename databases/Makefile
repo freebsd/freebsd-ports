@@ -746,6 +746,7 @@
     SUBDIR += rubygem-bigrecord
     SUBDIR += rubygem-data_objects
     SUBDIR += rubygem-datamapper
+    SUBDIR += rubygem-dm-active_model
     SUBDIR += rubygem-dm-aggregates
     SUBDIR += rubygem-dm-constraints
     SUBDIR += rubygem-dm-core
