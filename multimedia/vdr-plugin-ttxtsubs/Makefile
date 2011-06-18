@@ -7,12 +7,13 @@
 
 PORTNAME=	vdr-plugin-ttxtsubs
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/309/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	nox@FreeBSD.org
-COMMENT=	Video Disk Recorder - telnet control plugin
+COMMENT=	Video Disk Recorder - teletext subtitle plugin
 
 PATCH_STRIP=	-p1
 HAVE_CONFIGURE=	yes
