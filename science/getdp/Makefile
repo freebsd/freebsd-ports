@@ -7,7 +7,7 @@
 
 PORTNAME=	getdp
 PORTVERSION=	1.2.1
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	science
 MASTER_SITES=	http://www.geuz.org/getdp/src/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-source
@@ -40,8 +40,9 @@ CONFIGURE_ARGS+=	--enable-multiharmonic
 
 .if !defined(NOPORTDOCS)
 ALL_TARGET=	all doc
-BUILD_DEPENDS+=	texi2pdf:${PORTSDIR}/print/teTeX-base	\
-		dvips:${PORTSDIR}/print/dvipsk-tetex
+BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base	\
+		dvips:${PORTSDIR}/print/dvipsk-tetex	\
+		texi2pdf:${PORTSDIR}/print/texinfo
 USE_PERL5_BUILD=	yes
 .endif
 
