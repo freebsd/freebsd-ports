@@ -753,6 +753,7 @@
     SUBDIR += rubygem-dm-migrations
     SUBDIR += rubygem-dm-mysql-adapter
     SUBDIR += rubygem-dm-observer
+    SUBDIR += rubygem-dm-pager
     SUBDIR += rubygem-dm-postgres-adapter
     SUBDIR += rubygem-dm-serializer
     SUBDIR += rubygem-dm-timestamps
