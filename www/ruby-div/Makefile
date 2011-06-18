@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	div
-PORTVERSION=	1.2.0
+PORTVERSION=	1.3.2
 CATEGORIES=	www ruby
 MASTER_SITES=	http://www2a.biglobe.ne.jp/~seki/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
