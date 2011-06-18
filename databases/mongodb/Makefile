@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	mongodb
-PORTVERSION=	1.8.1
+PORTVERSION=	1.8.2
 CATEGORIES=	databases net
-MASTER_SITES=	http://downloads.mongodb.org/src/ \
-		http://files.derzinn.de/
+MASTER_SITES=	http://downloads.mongodb.org/src/
 DISTNAME=	${PORTNAME}-src-r${PORTVERSION}
 
 MAINTAINER=	mail@derzinn.de
