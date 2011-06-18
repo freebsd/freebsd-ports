@@ -9,8 +9,8 @@
     SUBDIR += TenDRA
     SUBDIR += abcl
     SUBDIR += afnix
-    SUBDIR += alisp
     SUBDIR += algol68g
+    SUBDIR += alisp
     SUBDIR += arena
     SUBDIR += asn1c
     SUBDIR += atlast
@@ -265,6 +265,7 @@
     SUBDIR += python-doc-pdf-letter
     SUBDIR += python-doc-postscript-a4
     SUBDIR += python-doc-postscript-letter
+    SUBDIR += python-doc-text
     SUBDIR += python-mode.el
     SUBDIR += python24
     SUBDIR += python25
