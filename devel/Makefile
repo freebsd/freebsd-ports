@@ -3273,6 +3273,7 @@
     SUBDIR += rubygem-main
     SUBDIR += rubygem-mash
     SUBDIR += rubygem-metaid
+    SUBDIR += rubygem-minitest
     SUBDIR += rubygem-mixlib-authentication
     SUBDIR += rubygem-mixlib-cli
     SUBDIR += rubygem-mixlib-config
