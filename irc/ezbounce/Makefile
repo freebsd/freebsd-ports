@@ -6,27 +6,21 @@
 #
 
 PORTNAME=	ezbounce
-PORTVERSION=	1.04c
+PORTVERSION=	1.99.15
 CATEGORIES=	irc
 MASTER_SITES=	http://www.linuxftw.com/ezbounce/files/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	flo@FreeBSD.org
 COMMENT=	A highly configurable IRC Proxy
 
-BROKEN=	Does not fetch
+BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
 
 GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 
 SUB_FILES=	pkg-message
 
 MAN1=		ezbounce.1
-
-.if !defined(WITH_MDIDENTD)
-ALL_TARGET=	ezbounce_src
-PLIST_SUB+=	MDIDENTD="@comment "
-.else
-PLIST_SUB+=	MDIDENTD=""
-.endif
 
 .if defined(WITH_SSL)
 USE_OPENSSL=	YES
@@ -43,8 +37,6 @@ pre-everything::
 	@${ECHO_MSG} "You may use the following build options:"
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "	WITH_SSL=yes      Enable SSL support"
-	@${ECHO_MSG} "	WITH_MDIDENTD=yes Install the mdidentd binary to"
-	@${ECHO_MSG} "                        modify ident replies"
 	@${ECHO_MSG} ""
 
 post-patch:
@@ -55,11 +47,7 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/ezbounce ${PREFIX}/sbin
 	${INSTALL_SCRIPT} ${WRKSRC}/ezb.conf.default ${PREFIX}/etc
-	${INSTALL_MAN}	${WRKSRC}/misc/ezbounce.1 ${PREFIX}/man/man1
-
-.if defined(WITH_MDIDENTD)
-	${INSTALL_PROGRAM} ${WRKSRC}/mdidentd/mdidentd ${PREFIX}/sbin
-.endif
+	${INSTALL_MAN}	${WRKSRC}/docs/ezbounce.1 ${PREFIX}/man/man1
 
 	@if [ ! -f ${PREFIX}/etc/ezb.conf ]; then \
 		${INSTALL_DATA} \
@@ -71,15 +59,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/CHANGES ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/TODO ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/worklog ${DOCSDIR}
-
-.if defined(WITH_MDIDENTD)
-	${INSTALL_DATA} ${WRKSRC}/mdidentd/README \
-		${DOCSDIR}/mdidentd.README
-.endif
-.if defined(WITH_SSL)
-	${INSTALL_DATA} ${WRKSRC}/README.SSL ${DOCSDIR}
-.endif
+	${INSTALL_DATA} ${WRKSRC}/docs/worklog ${DOCSDIR}
 
 .endif
 	@${CAT} ${PKGMESSAGE}

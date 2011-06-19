@@ -6,6 +6,24 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20110619:
+  AFFECTS: users of irc/ezbounce and irc/ezbounce-devel
+  AUTHOR: flo@FreeBSD.org
+
+  irc/ezbounce-devel was moved to irc/ezbounce as the version previously in
+  irc/ezbounce has been broken for some time and the distfile is not available
+  anymore.
+
+  If you are upgrading from a 1.0X version make sure to verify that your config
+  still works. There is basic compatibility for old config files but a lot has
+  changed, see http://linuxftw.com/ezbounce/files/CHANGES
+
+  If you run irc/ezbounce-devel you need to run one of the following commands:
+
+  # portmaster -o irc/ezbounce irc/ezbounce-devel
+  or
+  # portupgrade -o irc/ezbounce irc/ezbounce-devel
+
+20110619:
   AFFECTS: users of lang/perl5.14
   AUTHOR: skv@FreeBSD.org
 
