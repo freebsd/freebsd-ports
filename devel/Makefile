@@ -3304,6 +3304,7 @@
     SUBDIR += rubygem-rascut
     SUBDIR += rubygem-rash
     SUBDIR += rubygem-rcov
+    SUBDIR += rubygem-require_all
     SUBDIR += rubygem-rgl
     SUBDIR += rubygem-rparsec
     SUBDIR += rubygem-rr
