@@ -183,7 +183,7 @@ post-patch:
 		> ${WRKDIR}/perl-after-upgrade
 	${CP} ${WRKDIR}/use.perl ${PKGINSTALL}
 	${CP} ${WRKDIR}/use.perl ${PKGDEINSTALL}
-	${SED} -i '' -e 's|%%PERL_PKGNAME%%|${PKGNAME}|g; s|%%PERL_VER%%|5.10|g;' \
+	${SED} -i '' -e 's|%%PERL_PKGNAME%%|${PKGNAME}|g; s|%%PERL_VER%%|5.12|g;' \
 		-e 's!%%BSDPAN_VERSION%%!${BSDPAN_VERSION}!g;' \
 		${BSDPAN_WRKSRC}/ExtUtils/*.pm
 	${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|g' \
