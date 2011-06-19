@@ -1,9 +1,0 @@
-@unexec if [ -f %D/etc/ezb.conf ] && cmp -s %D/etc/ezb.conf %D/etc/ezb.conf.default; then rm -f %D/etc/ezb.conf; fi
-etc/ezb.conf.default
-@exec if [ ! -f %D/etc/ezb.conf ] ; then cp -p %D/%F %B/ezb.conf; fi
-sbin/ezbounce
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/worklog
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

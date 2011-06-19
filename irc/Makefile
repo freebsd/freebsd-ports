@@ -24,7 +24,6 @@
     SUBDIR += epic5
     SUBDIR += evangeline
     SUBDIR += ezbounce
-    SUBDIR += ezbounce-devel
     SUBDIR += fisg
     SUBDIR += gdesklets-irc
     SUBDIR += gruftistats
