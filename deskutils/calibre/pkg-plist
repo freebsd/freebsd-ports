@@ -14,7 +14,6 @@ bin/ebook-meta
 bin/ebook-viewer
 bin/epub-fix
 bin/fetch-ebook-metadata
-bin/librarything
 bin/lrf2lrs
 bin/lrfviewer
 bin/lrs2lrf
@@ -477,6 +476,7 @@ lib/calibre/calibre/gui2/add.py
 lib/calibre/calibre/gui2/add_wizard/__init__.py
 lib/calibre/calibre/gui2/add_wizard/scan_ui.py
 lib/calibre/calibre/gui2/add_wizard/welcome_ui.py
+lib/calibre/calibre/gui2/bars.py
 lib/calibre/calibre/gui2/book_details.py
 lib/calibre/calibre/gui2/catalog/__init__.py
 lib/calibre/calibre/gui2/catalog/catalog_bibtex.py
@@ -613,6 +613,7 @@ lib/calibre/calibre/gui2/dialogs/tag_list_editor.py
 lib/calibre/calibre/gui2/dialogs/tag_list_editor_ui.py
 lib/calibre/calibre/gui2/dialogs/template_dialog.py
 lib/calibre/calibre/gui2/dialogs/template_dialog_ui.py
+lib/calibre/calibre/gui2/dialogs/template_line_editor.py
 lib/calibre/calibre/gui2/dialogs/test_email_ui.py
 lib/calibre/calibre/gui2/dialogs/tweak_epub.py
 lib/calibre/calibre/gui2/dialogs/tweak_epub_ui.py
@@ -650,6 +651,7 @@ lib/calibre/calibre/gui2/preferences/adding.py
 lib/calibre/calibre/gui2/preferences/adding_ui.py
 lib/calibre/calibre/gui2/preferences/behavior.py
 lib/calibre/calibre/gui2/preferences/behavior_ui.py
+lib/calibre/calibre/gui2/preferences/coloring.py
 lib/calibre/calibre/gui2/preferences/columns.py
 lib/calibre/calibre/gui2/preferences/columns_ui.py
 lib/calibre/calibre/gui2/preferences/conversion.py
@@ -695,6 +697,15 @@ lib/calibre/calibre/gui2/search_restriction_mixin.py
 lib/calibre/calibre/gui2/shortcuts.py
 lib/calibre/calibre/gui2/shortcuts_ui.py
 lib/calibre/calibre/gui2/store/beam_ebooks_de_plugin.py
+lib/calibre/calibre/gui2/store/gandalf_plugin.py
+lib/calibre/calibre/gui2/store/pragmatic_bookshelf_plugin.py
+lib/calibre/calibre/gui2/store/nexto_plugin.py
+lib/calibre/calibre/gui2/store/whsmith_uk_plugin.py
+lib/calibre/calibre/gui2/store/zixo_plugin.py
+lib/calibre/calibre/gui2/store/epubbud_plugin.py
+lib/calibre/calibre/gui2/store/oreilly_plugin.py
+lib/calibre/calibre/gui2/store/woblink_plugin.py
+lib/calibre/calibre/gui2/store/archive_org_plugin.py
 lib/calibre/calibre/gui2/store/weightless_books_plugin.py
 lib/calibre/calibre/gui2/store/epubbuy_de_plugin.py
 lib/calibre/calibre/gui2/store/wizards_tower_books_plugin.py
@@ -724,7 +735,27 @@ lib/calibre/calibre/gui2/store/manybooks_plugin.py
 lib/calibre/calibre/gui2/store/amazon_plugin.py
 lib/calibre/calibre/gui2/store/amazon_uk_plugin.py
 lib/calibre/calibre/gui2/store/basic_config_widget_ui.py
+lib/calibre/calibre/gui2/store/legimi_plugin.py
+lib/calibre/calibre/gui2/store/ebookshoppe_uk_plugin.py
+lib/calibre/calibre/gui2/store/virtualo_plugin.py
+lib/calibre/calibre/gui2/store/config/__init__.py
+lib/calibre/calibre/gui2/store/config/search_widget_ui.py
+lib/calibre/calibre/gui2/store/config/store.py
+lib/calibre/calibre/gui2/store/config/search/__init__.py
+lib/calibre/calibre/gui2/store/config/search/search_widget_ui.py
+lib/calibre/calibre/gui2/store/config/search/search_widget.py
+lib/calibre/calibre/gui2/store/config/chooser/results_view.py
+lib/calibre/calibre/gui2/store/config/chooser/__init__.py
+lib/calibre/calibre/gui2/store/config/chooser/chooser_dialog.py
+lib/calibre/calibre/gui2/store/config/chooser/adv_search_builder.py
+lib/calibre/calibre/gui2/store/config/chooser/models.py
+lib/calibre/calibre/gui2/store/config/chooser/adv_search_builder_ui.py
+lib/calibre/calibre/gui2/store/config/chooser/chooser_widget.py
+lib/calibre/calibre/gui2/store/config/chooser/chooser_widget_ui.py
+lib/calibre/calibre/gui2/store/google_books_plugin.py
 lib/calibre/calibre/gui2/store/mobileread/__init__.py
+lib/calibre/calibre/gui2/store/mobileread/adv_search_builder.py
+lib/calibre/calibre/gui2/store/mobileread/adv_search_builder_ui.py
 lib/calibre/calibre/gui2/store/mobileread/models.py
 lib/calibre/calibre/gui2/store/mobileread/store_dialog.py
 lib/calibre/calibre/gui2/store/mobileread/cache_progress_dialog_ui.py
@@ -773,6 +804,7 @@ lib/calibre/calibre/library/caches.py
 lib/calibre/calibre/library/catalog.py
 lib/calibre/calibre/library/check_library.py
 lib/calibre/calibre/library/cli.py
+lib/calibre/calibre/library/coloring.py
 lib/calibre/calibre/library/comments.py
 lib/calibre/calibre/library/custom_columns.py
 lib/calibre/calibre/library/database.py
@@ -803,6 +835,7 @@ lib/calibre/calibre/manual/conf.py
 lib/calibre/calibre/manual/custom.py
 lib/calibre/calibre/manual/epub.py
 lib/calibre/calibre/manual/qthelp.py
+lib/calibre/calibre/manual/template_ref_generate.py
 lib/calibre/calibre/manual/plugin_examples/helloworld/__init__.py
 lib/calibre/calibre/manual/plugin_examples/interface_demo/__init__.py
 lib/calibre/calibre/manual/plugin_examples/interface_demo/main.py
@@ -824,6 +857,7 @@ lib/calibre/calibre/plugins/speedup.so
 lib/calibre/calibre/plugins/sqlite_custom.so
 lib/calibre/calibre/ptempfile.py
 lib/calibre/calibre/startup.py
+lib/calibre/calibre/test_build.py
 lib/calibre/calibre/trac/__init__.py
 lib/calibre/calibre/trac/bzr_commit_plugin.py
 lib/calibre/calibre/trac/setup.py
@@ -1057,6 +1091,7 @@ share/calibre/content_server/mobile.css
 share/calibre/content_server/next.png
 share/calibre/content_server/previous.png
 share/calibre/content_server/read/monocle.js
+share/calibre/content_server/stacktrace.js
 share/calibre/content_server/star-half.png
 share/calibre/content_server/star-off.png
 share/calibre/content_server/star-on.png
@@ -1230,141 +1265,10 @@ share/calibre/jacket/stylesheet.css
 share/calibre/jacket/template.xhtml
 share/calibre/jquery.simulate.js
 share/calibre/localization/iso639.pickle
-share/calibre/localization/locales/af/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/af/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/ar/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/ar/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/ar/LC_MESSAGES/qt.qm
-share/calibre/localization/locales/ast/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/ast/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/bg/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/bg/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/bn/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/bs/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/bs/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/ca/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/ca/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/cs/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/cs/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/cs/LC_MESSAGES/qt.qm
-share/calibre/localization/locales/da/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/da/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/da/LC_MESSAGES/qt.qm
-share/calibre/localization/locales/de/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/de/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/de/LC_MESSAGES/qt.qm
-share/calibre/localization/locales/el/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/el/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/en_AU/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/en_CA/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/en_GB/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/eo/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/eo/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/es/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/es/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/es/LC_MESSAGES/qt.qm
-share/calibre/localization/locales/eu/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/eu/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/fa/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/fa/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/fi/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/fi/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/fo/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/fr/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/fr/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/fr/LC_MESSAGES/qt.qm
-share/calibre/localization/locales/gl/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/gl/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/gl/LC_MESSAGES/qt.qm
-share/calibre/localization/locales/he/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/he/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/he/LC_MESSAGES/qt.qm
-share/calibre/localization/locales/hi/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/hi/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/hr/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/hr/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/hu/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/hu/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/hu/LC_MESSAGES/qt.qm
-share/calibre/localization/locales/id/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/id/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/it/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/it/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/ja/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/ja/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/ja/LC_MESSAGES/qt.qm
-share/calibre/localization/locales/ko/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/ko/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/lt/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/lt/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/ltg/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/lv/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/lv/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/ml/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/mr/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/mr/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/ms/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/ms/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/nb/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/nb/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/nds/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/nl/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/nl/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/oc/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/oc/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/pa/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/pa/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/pl/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/pl/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/pl/LC_MESSAGES/qt.qm
-share/calibre/localization/locales/pt/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/pt/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/pt/LC_MESSAGES/qt.qm
-share/calibre/localization/locales/pt_BR/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/pt_BR/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/ro/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/ro/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/ru/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/ru/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/ru/LC_MESSAGES/qt.qm
-share/calibre/localization/locales/sc/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/sk/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/sk/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/sk/LC_MESSAGES/qt.qm
-share/calibre/localization/locales/sl/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/sl/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/sl/LC_MESSAGES/qt.qm
-share/calibre/localization/locales/sq/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/sr/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/sr/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/sv/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/sv/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/sv/LC_MESSAGES/qt.qm
-share/calibre/localization/locales/ta/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/ta/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/te/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/th/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/th/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/tr/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/tr/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/uk/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/uk/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/uk/LC_MESSAGES/qt.qm
-share/calibre/localization/locales/ur/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/vi/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/vi/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/yi/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/zh_CN/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/zh_CN/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/zh_CN/LC_MESSAGES/qt.qm
-share/calibre/localization/locales/zh_HK/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/zh_HK/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/zh_TW/LC_MESSAGES/iso639.mo
-share/calibre/localization/locales/zh_TW/LC_MESSAGES/messages.mo
-share/calibre/localization/locales/zh_TW/LC_MESSAGES/qt.qm
 share/calibre/localization/pykakasi/itaijidict2.pickle
 share/calibre/localization/pykakasi/kanadict2.pickle
-share/calibre/localization/pykakasi/kanwadict2.db
+share/calibre/localization/pykakasi/kanwadict2.pickle
+share/calibre/localization/locales.zip
 share/calibre/localization/stats.pickle
 share/calibre/metadata_sqlite.sql
 share/calibre/mime.types
@@ -1427,133 +1331,6 @@ share/calibre/viewer/referencing.js
 @dirrm share/calibre/viewer
 @dirrm share/calibre/templates
 @dirrm share/calibre/localization/pykakasi
-@dirrm share/calibre/localization/locales/zh_TW/LC_MESSAGES
-@dirrm share/calibre/localization/locales/zh_TW
-@dirrm share/calibre/localization/locales/zh_HK/LC_MESSAGES
-@dirrm share/calibre/localization/locales/zh_HK
-@dirrm share/calibre/localization/locales/zh_CN/LC_MESSAGES
-@dirrm share/calibre/localization/locales/zh_CN
-@dirrm share/calibre/localization/locales/yi/LC_MESSAGES
-@dirrm share/calibre/localization/locales/yi
-@dirrm share/calibre/localization/locales/vi/LC_MESSAGES
-@dirrm share/calibre/localization/locales/vi
-@dirrm share/calibre/localization/locales/ur/LC_MESSAGES
-@dirrm share/calibre/localization/locales/ur
-@dirrm share/calibre/localization/locales/uk/LC_MESSAGES
-@dirrm share/calibre/localization/locales/uk
-@dirrm share/calibre/localization/locales/tr/LC_MESSAGES
-@dirrm share/calibre/localization/locales/tr
-@dirrm share/calibre/localization/locales/th/LC_MESSAGES
-@dirrm share/calibre/localization/locales/th
-@dirrm share/calibre/localization/locales/te/LC_MESSAGES
-@dirrm share/calibre/localization/locales/te
-@dirrm share/calibre/localization/locales/ta/LC_MESSAGES
-@dirrm share/calibre/localization/locales/ta
-@dirrm share/calibre/localization/locales/sv/LC_MESSAGES
-@dirrm share/calibre/localization/locales/sv
-@dirrm share/calibre/localization/locales/sr/LC_MESSAGES
-@dirrm share/calibre/localization/locales/sr
-@dirrm share/calibre/localization/locales/sq/LC_MESSAGES
-@dirrm share/calibre/localization/locales/sq
-@dirrm share/calibre/localization/locales/sl/LC_MESSAGES
-@dirrm share/calibre/localization/locales/sl
-@dirrm share/calibre/localization/locales/sk/LC_MESSAGES
-@dirrm share/calibre/localization/locales/sk
-@dirrm share/calibre/localization/locales/sc/LC_MESSAGES
-@dirrm share/calibre/localization/locales/sc
-@dirrm share/calibre/localization/locales/ru/LC_MESSAGES
-@dirrm share/calibre/localization/locales/ru
-@dirrm share/calibre/localization/locales/ro/LC_MESSAGES
-@dirrm share/calibre/localization/locales/ro
-@dirrm share/calibre/localization/locales/pt_BR/LC_MESSAGES
-@dirrm share/calibre/localization/locales/pt_BR
-@dirrm share/calibre/localization/locales/pt/LC_MESSAGES
-@dirrm share/calibre/localization/locales/pt
-@dirrm share/calibre/localization/locales/pl/LC_MESSAGES
-@dirrm share/calibre/localization/locales/pl
-@dirrm share/calibre/localization/locales/pa/LC_MESSAGES
-@dirrm share/calibre/localization/locales/pa
-@dirrm share/calibre/localization/locales/oc/LC_MESSAGES
-@dirrm share/calibre/localization/locales/oc
-@dirrm share/calibre/localization/locales/nl/LC_MESSAGES
-@dirrm share/calibre/localization/locales/nl
-@dirrm share/calibre/localization/locales/nds/LC_MESSAGES
-@dirrm share/calibre/localization/locales/nds
-@dirrm share/calibre/localization/locales/nb/LC_MESSAGES
-@dirrm share/calibre/localization/locales/nb
-@dirrm share/calibre/localization/locales/ms/LC_MESSAGES
-@dirrm share/calibre/localization/locales/ms
-@dirrm share/calibre/localization/locales/mr/LC_MESSAGES
-@dirrm share/calibre/localization/locales/mr
-@dirrm share/calibre/localization/locales/ml/LC_MESSAGES
-@dirrm share/calibre/localization/locales/ml
-@dirrm share/calibre/localization/locales/lv/LC_MESSAGES
-@dirrm share/calibre/localization/locales/lv
-@dirrm share/calibre/localization/locales/lt/LC_MESSAGES
-@dirrm share/calibre/localization/locales/lt
-@dirrm share/calibre/localization/locales/ltg/LC_MESSAGES
-@dirrm share/calibre/localization/locales/ltg
-@dirrm share/calibre/localization/locales/ko/LC_MESSAGES
-@dirrm share/calibre/localization/locales/ko
-@dirrm share/calibre/localization/locales/ja/LC_MESSAGES
-@dirrm share/calibre/localization/locales/ja
-@dirrm share/calibre/localization/locales/it/LC_MESSAGES
-@dirrm share/calibre/localization/locales/it
-@dirrm share/calibre/localization/locales/id/LC_MESSAGES
-@dirrm share/calibre/localization/locales/id
-@dirrm share/calibre/localization/locales/hu/LC_MESSAGES
-@dirrm share/calibre/localization/locales/hu
-@dirrm share/calibre/localization/locales/hr/LC_MESSAGES
-@dirrm share/calibre/localization/locales/hr
-@dirrm share/calibre/localization/locales/hi/LC_MESSAGES
-@dirrm share/calibre/localization/locales/hi
-@dirrm share/calibre/localization/locales/he/LC_MESSAGES
-@dirrm share/calibre/localization/locales/he
-@dirrm share/calibre/localization/locales/gl/LC_MESSAGES
-@dirrm share/calibre/localization/locales/gl
-@dirrm share/calibre/localization/locales/fr/LC_MESSAGES
-@dirrm share/calibre/localization/locales/fr
-@dirrm share/calibre/localization/locales/fo/LC_MESSAGES
-@dirrm share/calibre/localization/locales/fo
-@dirrm share/calibre/localization/locales/fi/LC_MESSAGES
-@dirrm share/calibre/localization/locales/fi
-@dirrm share/calibre/localization/locales/fa/LC_MESSAGES
-@dirrm share/calibre/localization/locales/fa
-@dirrm share/calibre/localization/locales/eu/LC_MESSAGES
-@dirrm share/calibre/localization/locales/eu
-@dirrm share/calibre/localization/locales/es/LC_MESSAGES
-@dirrm share/calibre/localization/locales/es
-@dirrm share/calibre/localization/locales/eo/LC_MESSAGES
-@dirrm share/calibre/localization/locales/eo
-@dirrm share/calibre/localization/locales/en_GB/LC_MESSAGES
-@dirrm share/calibre/localization/locales/en_GB
-@dirrm share/calibre/localization/locales/en_CA/LC_MESSAGES
-@dirrm share/calibre/localization/locales/en_CA
-@dirrm share/calibre/localization/locales/en_AU/LC_MESSAGES
-@dirrm share/calibre/localization/locales/en_AU
-@dirrm share/calibre/localization/locales/el/LC_MESSAGES
-@dirrm share/calibre/localization/locales/el
-@dirrm share/calibre/localization/locales/de/LC_MESSAGES
-@dirrm share/calibre/localization/locales/de
-@dirrm share/calibre/localization/locales/da/LC_MESSAGES
-@dirrm share/calibre/localization/locales/da
-@dirrm share/calibre/localization/locales/cs/LC_MESSAGES
-@dirrm share/calibre/localization/locales/cs
-@dirrm share/calibre/localization/locales/ca/LC_MESSAGES
-@dirrm share/calibre/localization/locales/ca
-@dirrm share/calibre/localization/locales/bs/LC_MESSAGES
-@dirrm share/calibre/localization/locales/bs
-@dirrm share/calibre/localization/locales/bn/LC_MESSAGES
-@dirrm share/calibre/localization/locales/bn
-@dirrm share/calibre/localization/locales/bg/LC_MESSAGES
-@dirrm share/calibre/localization/locales/bg
-@dirrm share/calibre/localization/locales/ast/LC_MESSAGES
-@dirrm share/calibre/localization/locales/ast
-@dirrm share/calibre/localization/locales/ar/LC_MESSAGES
-@dirrm share/calibre/localization/locales/ar
-@dirrm share/calibre/localization/locales/af/LC_MESSAGES
-@dirrm share/calibre/localization/locales/af
-@dirrm share/calibre/localization/locales
 @dirrm share/calibre/localization
 @dirrm share/calibre/jacket
 @dirrm share/calibre/images/mimetypes
@@ -1605,6 +1382,9 @@ share/calibre/viewer/referencing.js
 @dirrm lib/calibre/calibre/gui2/wizard
 @dirrm lib/calibre/calibre/gui2/viewer
 @dirrm lib/calibre/calibre/gui2/store/mobileread
+@dirrm lib/calibre/calibre/gui2/store/config/search
+@dirrm lib/calibre/calibre/gui2/store/config/chooser
+@dirrm lib/calibre/calibre/gui2/store/config
 @dirrm lib/calibre/calibre/gui2/store/search
 @dirrm lib/calibre/calibre/gui2/store
 @dirrm lib/calibre/calibre/gui2/progress_indicator

@@ -1,12 +1,12 @@
---- src/calibre/utils/help2man.py.orig	2011-05-14 17:55:12.000000000 -0700
-+++ src/calibre/utils/help2man.py	2011-05-14 17:56:18.000000000 -0700
+--- src/calibre/utils/help2man.py.orig	2011-06-14 14:14:49.000000000 -0500
++++ src/calibre/utils/help2man.py	2011-06-14 14:15:31.000000000 -0500
 @@ -3,13 +3,14 @@
  __copyright__ = '2009, Kovid Goyal <kovid@kovidgoyal.net>'
  __docformat__ = 'restructuredtext en'
  
 -import time, bz2
-+import bz2, locale, time
- from calibre.constants import isfreebsd
++import time, bz2, locale
+ from calibre.constants import isbsd
  
  from calibre.constants import __version__, __appname__, __author__
  

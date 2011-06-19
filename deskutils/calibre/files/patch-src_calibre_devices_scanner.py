@@ -1,5 +1,5 @@
---- src/calibre/devices/scanner.py.orig	2011-05-02 11:35:14.000000000 -0500
-+++ src/calibre/devices/scanner.py	2011-05-02 11:38:07.000000000 -0500
+--- src/calibre/devices/scanner.py.orig	2011-06-14 14:10:28.000000000 -0500
++++ src/calibre/devices/scanner.py	2011-06-14 14:12:39.000000000 -0500
 @@ -5,10 +5,10 @@
  manner.
  '''
@@ -13,7 +13,7 @@
  
  osx_scanner = win_scanner = linux_scanner = None
  
-@@ -155,17 +155,66 @@
+@@ -155,17 +155,68 @@
              ans.add(tuple(dev))
          return ans
  
@@ -61,6 +61,7 @@
 +        return ans
 +
 +
++
  linux_scanner = None
  
  if islinux:
@@ -70,6 +71,7 @@
 +
 +if isfreebsd:
 +    freebsd_scanner = FreeBSDScanner()
++
 +
  class DeviceScanner(object):
  
