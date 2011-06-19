@@ -469,6 +469,7 @@
     SUBDIR += giggle
     SUBDIR += gindent
     SUBDIR += gio-fam-backend
+    SUBDIR += gio-sharp
     SUBDIR += gir-repository
     SUBDIR += gir-repository-libnotify
     SUBDIR += git
