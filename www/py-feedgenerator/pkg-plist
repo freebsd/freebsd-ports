@@ -1,0 +1,4 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/feedgenerator.py
+%%PYTHON_SITELIBDIR%%/feedgenerator.pyc
+%%PYTHON_SITELIBDIR%%/feedgenerator.pyo
