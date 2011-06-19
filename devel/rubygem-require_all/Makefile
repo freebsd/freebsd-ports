@@ -1,0 +1,19 @@
+# Ports collection makefile for:	rubygem-require_all
+# Date created:				2011-06-16
+# Whom:					rpsfa@rit.edu
+#
+# $FreeBSD$
+
+PORTNAME=	require_all
+PORTVERSION=	1.2.0
+CATEGORIES=	devel rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	rpsfa@rit.edu
+COMMENT=	A wonderfully simple way to load your code
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+
+.include <bsd.port.mk>
