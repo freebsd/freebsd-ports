@@ -11,13 +11,13 @@ bin/tshark
 %%TEXT2PCAP%%
 lib/libwireshark.la
 lib/libwireshark.so
-lib/libwireshark.so.0
+lib/libwireshark.so.1
 lib/libwiretap.la
 lib/libwiretap.so
-lib/libwiretap.so.0
+lib/libwiretap.so.1
 lib/libwsutil.la
 lib/libwsutil.so
-lib/libwsutil.so.0
+lib/libwsutil.so.1
 lib/wireshark/plugins/%%PORTVERSION%%/asn1.la
 lib/wireshark/plugins/%%PORTVERSION%%/asn1.so
 lib/wireshark/plugins/%%PORTVERSION%%/coseventcomm.la
@@ -96,13 +96,6 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%DATADIR%%/dtds/xcap-error.dtd
 %%DATADIR%%/editcap.html
 %%LUA%%%%DATADIR%%/init.lua
-%%DATADIR%%/services
-%%DATADIR%%/smi_modules
-%%DATADIR%%/tpncp/tpncp.dat
-%%DATADIR%%/wimaxasncp/dictionary.dtd
-%%DATADIR%%/wimaxasncp/dictionary.xml
-%%DATADIR%%/wireshark-filter.html
-%%DATADIR%%/wireshark.html
 %%DATADIR%%/help/capture_filters.txt
 %%DATADIR%%/help/capturing.txt
 %%DATADIR%%/help/display_filters.txt
@@ -114,6 +107,7 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%DATADIR%%/ipmap.html
 %%DATADIR%%/manuf
 %%DATADIR%%/mergecap.html
+%%DATADIR%%/pdml2html.xsl
 %%DATADIR%%/radius/README.radius_dictionary
 %%DATADIR%%/radius/dictionary
 %%DATADIR%%/radius/dictionary.3com
@@ -149,6 +143,7 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%DATADIR%%/radius/dictionary.cosine
 %%DATADIR%%/radius/dictionary.dhcp
 %%DATADIR%%/radius/dictionary.digium
+%%DATADIR%%/radius/dictionary.eltex
 %%DATADIR%%/radius/dictionary.epygi
 %%DATADIR%%/radius/dictionary.ericsson
 %%DATADIR%%/radius/dictionary.erx
@@ -245,8 +240,15 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%DATADIR%%/radius/dictionary.zyxel
 %%DATADIR%%/randpkt.html
 %%DATADIR%%/rawshark.html
+%%DATADIR%%/services
+%%DATADIR%%/smi_modules
 %%DATADIR%%/tshark.html
 %%DATADIR%%/text2pcap.html
+%%DATADIR%%/tpncp/tpncp.dat
+%%DATADIR%%/wimaxasncp/dictionary.dtd
+%%DATADIR%%/wimaxasncp/dictionary.xml
+%%DATADIR%%/wireshark-filter.html
+%%DATADIR%%/wireshark.html
 %%DATADIR%%/ws.css
 @dirrm lib/wireshark/plugins/%%PORTVERSION%%
 @dirrm lib/wireshark/plugins
