@@ -264,7 +264,7 @@ while (@ARGV) {
 our $PERL_VERSION = '%%PERL_VERSION%%';
 our $PERL_PKGNAME = '%%PKGNAME%%';
 
-our $PERL_VERSION_REGEX = qr/5\.12\.\d+/;
+our $PERL_VERSION_REGEX = qr/5\.14\.\d+/;
 print STDERR "- Fuzzy source re: <$PERL_VERSION_REGEX>\n" if $debug;
 
 our @errors;
