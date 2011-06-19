@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ipaddress
-PORTVERSION=	0.7.0
+PORTVERSION=	0.8.0
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
