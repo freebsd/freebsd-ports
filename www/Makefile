@@ -1516,6 +1516,7 @@
     SUBDIR += py-dtflickr
     SUBDIR += py-fcgi
     SUBDIR += py-feedfinder
+    SUBDIR += py-feedgenerator
     SUBDIR += py-flask
     SUBDIR += py-flask-cache
     SUBDIR += py-flask-uploads
