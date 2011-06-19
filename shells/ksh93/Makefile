@@ -16,59 +16,58 @@
 #
 
 PORTNAME=	ksh93
-PORTVERSION=	${VERSION:S/-//g}
+PORTVERSION=	${KSHVERSION:S/-//g}
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	http://www.research.att.com/~gsf/download/tgz/
-DISTNAME=	${PORTNAME}-${VERSION}
-DISTFILES=	INIT.${VERSION}.tgz ast-ksh.${VERSION}.tgz
+DISTFILES=	INIT.${KSHVERSION}.tgz ast-ksh.${KSHVERSION}.tgz
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Official AT&T release of KornShell 93
 
-MANUAL_PACKAGE_BUILD=Doesn't build in tinderbox environment
+OPTIONS=	STATIC	"Static linking" off
 
-VERSION=	2011-02-08
+MANUAL_PACKAGE_BUILD=	Does not build in tinderbox environment
 RESTRICTED=	Source recipient must acknowledge license
 
 FETCH_ARGS=	-Rr
 FETCH_ENV=	HTTP_AUTH='basic:*:I accept www.opensource.org/licenses/cpl:.'
-NO_WRKSUBDIR=	yes
 MAKE_ENV=	CCFLAGS="${CFLAGS}"
-.if defined(WANT_STATIC)
-MAKE_ENV+=	LDFLAGS=-static
-.endif
+NO_WRKSUBDIR=	yes
 
 MAN1=		ksh93.1
 
-INSTALLROOT=	${WRKSRC}/arch/freebsd.${ARCH}
+KSHVERSION=	2011-02-08
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_STATIC)
+MAKE_ENV+=	LDFLAGS=-static
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '1825 D' ${WRKSRC}/bin/package
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
+		${WRKSRC}/bin/package ${WRKSRC}/src/cmd/INIT/package.sh
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} -i ${MAKE_ENV} ${SH} bin/package make
+	@cd ${WRKSRC} && ${SETENV} -i ${MAKE_ENV} ${SH} bin/package flat make
 
 do-install:
-	${INSTALL_PROGRAM} ${INSTALLROOT}/bin/ksh ${PREFIX}/bin/ksh93
-	${INSTALL_MAN} ${INSTALLROOT}/man/man1/sh.1 \
-	    ${MANPREFIX}/man/man1/ksh93.1
-	${MKDIR} ${PREFIX}/share/examples/ksh93
-.for fun in dirs popd pushd
-	${INSTALL_SCRIPT} ${INSTALLROOT}/fun/${fun} \
-	    ${PREFIX}/share/examples/ksh93/
-.endfor
+	${INSTALL_PROGRAM} ${WRKSRC}/bin/ksh ${PREFIX}/bin/ksh93
+	${INSTALL_MAN} ${WRKSRC}/man/man1/sh.1 ${MAN1PREFIX}/man/man1/ksh93.1
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}/
+	cd ${WRKSRC}/fun/ && ${INSTALL_SCRIPT} dirs popd pushd ${EXAMPLESDIR}/
+.endif
 
 post-install:
 	@${ECHO} "Updating /etc/shells"
-	@${CP} /etc/shells /etc/shells.bak
-	@(${GREP} -v ${PREFIX}/bin/ksh93 /etc/shells.bak; \
-	  ${ECHO_CMD} ${PREFIX}/bin/ksh93) >/etc/shells
-	@${RM} -f /etc/shells.bak
+	@${SED} -i '' '\|${PREFIX}/bin/ksh93|d' /etc/shells
+	@${ECHO} ${PREFIX}/bin/ksh93 >> /etc/shells
 
 test: build
 	@cd ${WRKSRC}/src/cmd/ksh93/tests && \
-	    ${SETENV} SHELL=${INSTALLROOT}/bin/ksh \
-		${INSTALLROOT}/bin/ksh shtests
+		${SETENV} SHELL=${WRKSRC}/bin/ksh ${WRKSRC}/bin/ksh shtests
 
 .include <bsd.port.mk>
