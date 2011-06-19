@@ -3338,6 +3338,7 @@
     SUBDIR += rubygem-sundawg_country_codes
     SUBDIR += rubygem-systemu
     SUBDIR += rubygem-templater
+    SUBDIR += rubygem-test
     SUBDIR += rubygem-test-unit
     SUBDIR += rubygem-thor
     SUBDIR += rubygem-tilt
