@@ -189,7 +189,6 @@ share/pixmaps/pidgin/emblems/16/hiptop.png
 share/pixmaps/pidgin/emblems/16/male.png
 share/pixmaps/pidgin/emblems/16/not-authorized.png
 share/pixmaps/pidgin/emblems/16/operator.png
-share/pixmaps/pidgin/emblems/16/qq-member.png
 share/pixmaps/pidgin/emblems/16/secure.png
 share/pixmaps/pidgin/emblems/16/unavailable.png
 share/pixmaps/pidgin/emblems/16/video.png
@@ -203,7 +202,6 @@ share/pixmaps/pidgin/emblems/scalable/free-for-chat.svg
 share/pixmaps/pidgin/emblems/scalable/game.svg
 share/pixmaps/pidgin/emblems/scalable/male.svg
 share/pixmaps/pidgin/emblems/scalable/not-authorized.svg
-share/pixmaps/pidgin/emblems/scalable/qq-member.svg
 share/pixmaps/pidgin/emblems/scalable/secure.svg
 share/pixmaps/pidgin/emblems/scalable/unavailable.svg
 share/pixmaps/pidgin/emblems/scalable/video.svg
@@ -347,7 +345,6 @@ share/pixmaps/pidgin/emotes/default/poop.png
 share/pixmaps/pidgin/emotes/default/pray.png
 share/pixmaps/pidgin/emotes/default/present.png
 share/pixmaps/pidgin/emotes/default/pumpkin.png
-share/pixmaps/pidgin/emotes/default/qq.png
 share/pixmaps/pidgin/emotes/default/question.png
 share/pixmaps/pidgin/emotes/default/quiet.png
 share/pixmaps/pidgin/emotes/default/rain.png
@@ -499,7 +496,6 @@ share/pixmaps/pidgin/protocols/16/msn.png
 share/pixmaps/pidgin/protocols/16/mxit.png
 share/pixmaps/pidgin/protocols/16/myspace.png
 share/pixmaps/pidgin/protocols/16/novell.png
-share/pixmaps/pidgin/protocols/16/qq.png
 share/pixmaps/pidgin/protocols/16/silc.png
 share/pixmaps/pidgin/protocols/16/simple.png
 share/pixmaps/pidgin/protocols/16/yahoo.png
@@ -516,7 +512,6 @@ share/pixmaps/pidgin/protocols/22/meanwhile.png
 share/pixmaps/pidgin/protocols/22/msn.png
 share/pixmaps/pidgin/protocols/22/myspace.png
 share/pixmaps/pidgin/protocols/22/novell.png
-share/pixmaps/pidgin/protocols/22/qq.png
 share/pixmaps/pidgin/protocols/22/silc.png
 share/pixmaps/pidgin/protocols/22/simple.png
 share/pixmaps/pidgin/protocols/22/yahoo.png
@@ -533,7 +528,6 @@ share/pixmaps/pidgin/protocols/48/msn.png
 share/pixmaps/pidgin/protocols/48/mxit.png
 share/pixmaps/pidgin/protocols/48/myspace.png
 share/pixmaps/pidgin/protocols/48/novell.png
-share/pixmaps/pidgin/protocols/48/qq.png
 share/pixmaps/pidgin/protocols/48/silc.png
 share/pixmaps/pidgin/protocols/48/simple.png
 share/pixmaps/pidgin/protocols/48/yahoo.png
@@ -549,7 +543,6 @@ share/pixmaps/pidgin/protocols/scalable/meanwhile.svg
 share/pixmaps/pidgin/protocols/scalable/msn.svg
 share/pixmaps/pidgin/protocols/scalable/mxit.svg
 share/pixmaps/pidgin/protocols/scalable/novell.svg
-share/pixmaps/pidgin/protocols/scalable/qq.svg
 share/pixmaps/pidgin/protocols/scalable/silc.svg
 share/pixmaps/pidgin/protocols/scalable/simple.svg
 share/pixmaps/pidgin/protocols/scalable/yahoo.svg
