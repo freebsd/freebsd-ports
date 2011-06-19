@@ -7,8 +7,8 @@
 #
 
 PORTNAME?=	libpurple
-PORTVERSION=	2.7.11
-PORTREVISION?=	2
+PORTVERSION=	2.8.0
+PORTREVISION?=	0
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -275,12 +275,12 @@ PRPL_MODULES:=		oscar,${PRPL_MODULES}
 PLIST_SUB+=		OSCAR="@comment not installed: "
 .endif
 
-.if !defined(WITHOUT_QQ)
-PLIST_SUB+=		QQ=""
-PRPL_MODULES:=		qq,${PRPL_MODULES}
-.else
-PLIST_SUB+=		QQ="@comment not installed: "
-.endif
+#.if !defined(WITHOUT_QQ)
+#PLIST_SUB+=		QQ=""
+#PRPL_MODULES:=		qq,${PRPL_MODULES}
+#.else
+#PLIST_SUB+=		QQ="@comment not installed: "
+#.endif
 
 .if !defined(WITHOUT_SIMPLE)
 PLIST_SUB+=		SIMPLE=""

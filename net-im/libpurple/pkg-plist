@@ -109,8 +109,6 @@ lib/purple-2/joinpart.so
 %%OSCAR%%lib/purple-2/liboscar.so.0
 %%SILC%%lib/purple-2/libsilcpurple.la
 %%SILC%%lib/purple-2/libsilcpurple.so
-%%QQ%%lib/purple-2/libqq.la
-%%QQ%%lib/purple-2/libqq.so
 %%SAMETIME%%lib/purple-2/libsametime.la
 %%SAMETIME%%lib/purple-2/libsametime.so
 %%SIMPLE%%lib/purple-2/libsimple.la
@@ -153,10 +151,10 @@ lib/purple-2/statenotify.so
 %%TCL:%%lib/purple-2/tcl.so
 %%DBUS%%lib/libpurple-client.la
 %%DBUS%%lib/libpurple-client.so
-%%DBUS%%lib/libpurple-client.so.7
+%%DBUS%%lib/libpurple-client.so.8
 lib/libpurple.la
 lib/libpurple.so
-lib/libpurple.so.7
+lib/libpurple.so.8
 libdata/pkgconfig/purple.pc
 share/aclocal/purple.m4
 share/locale/af/LC_MESSAGES/pidgin.mo
@@ -190,6 +188,7 @@ share/locale/gl/LC_MESSAGES/pidgin.mo
 share/locale/gu/LC_MESSAGES/pidgin.mo
 share/locale/he/LC_MESSAGES/pidgin.mo
 share/locale/hi/LC_MESSAGES/pidgin.mo
+share/locale/hr/LC_MESSAGES/pidgin.mo
 share/locale/hu/LC_MESSAGES/pidgin.mo
 share/locale/hy/LC_MESSAGES/pidgin.mo
 share/locale/id/LC_MESSAGES/pidgin.mo
@@ -247,6 +246,7 @@ share/purple/ca-certs/America_Online_Root_Certification_Authority_1.pem
 share/purple/ca-certs/CAcert_Class3.pem
 share/purple/ca-certs/CAcert_Root.pem
 share/purple/ca-certs/Deutsche_Telekom_Root_CA_2.pem
+share/purple/ca-certs/DigiCertHighAssuranceCA-3.pem
 share/purple/ca-certs/Entrust.net_Secure_Server_CA.pem
 share/purple/ca-certs/Equifax_Secure_CA.pem
 share/purple/ca-certs/Equifax_Secure_Global_eBusiness_CA-1.pem
