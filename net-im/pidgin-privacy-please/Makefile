@@ -7,13 +7,14 @@
 
 PORTNAME=	pidgin-privacy-please
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 CATEGORIES=	net-im
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A privacy plugin for the pidgin instant messenger
 
-LIB_DEPENDS=	purple.7:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS=	purple.8:${PORTSDIR}/net-im/libpurple
 BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
