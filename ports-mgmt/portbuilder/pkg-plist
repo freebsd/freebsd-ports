@@ -41,8 +41,5 @@ bin/portbuilder
 %%PYTHON_SITELIBDIR%%/libpb/signal.py
 %%PYTHON_SITELIBDIR%%/libpb/signal.pyc
 %%PYTHON_SITELIBDIR%%/libpb/signal.pyo
-%%PYTHON_SITELIBDIR%%/libpb/subprocess.py
-%%PYTHON_SITELIBDIR%%/libpb/subprocess.pyc
-%%PYTHON_SITELIBDIR%%/libpb/subprocess.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/libpb/port
 @dirrm %%PYTHON_SITELIBDIR%%/libpb
