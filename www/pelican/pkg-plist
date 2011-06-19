@@ -1,0 +1,93 @@
+@comment $FreeBSD$
+bin/pelican
+bin/pelican-themes
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/pelican
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/pelican-themes
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/contents.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/contents.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/contents.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/generators.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/generators.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/generators.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/log.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/log.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/log.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/paginator.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/paginator.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/paginator.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/readers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/readers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/readers.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/rstdirectives.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/rstdirectives.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/rstdirectives.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/settings.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/settings.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/settings.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/static/css/main.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/static/css/pygment.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/static/css/reset.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/static/css/wide.css
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/static/images/icons/delicious.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/static/images/icons/lastfm.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/static/images/icons/linkedin.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/static/images/icons/rss.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/static/images/icons/twitter.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/analytics.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/archives.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/article.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/article_infos.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/base.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/categories.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/category.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/comments.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/disqus_script.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/github.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/page.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/pagination.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/piwik.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/skribit_tab_script.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/skribit_widget_script.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/tag.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/taglist.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/tags.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/translations.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates/twitter.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/simple/templates/archives.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/simple/templates/article.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/simple/templates/base.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/simple/templates/categories.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/simple/templates/category.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/simple/templates/index.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/simple/templates/page.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/simple/templates/tag.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/simple/templates/tags.html
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/utils.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/writers.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/writers.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/writers.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/simple/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/simple
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/templates
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/static/images/icons
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/static/images
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/static/css
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea/static
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes/notmyidea
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican/themes
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/pelican
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%

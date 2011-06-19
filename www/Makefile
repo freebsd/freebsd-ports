@@ -1422,6 +1422,7 @@
     SUBDIR += pecl-http
     SUBDIR += pecl-swish
     SUBDIR += pecl-tidy
+    SUBDIR += pelican
     SUBDIR += perlbal
     SUBDIR += pglogd
     SUBDIR += photo_gallery
