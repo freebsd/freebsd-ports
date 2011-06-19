@@ -2,9 +2,10 @@ bin/jfbterm
 @unexec if cmp -s %D/etc/jfbterm.conf.sample %D/etc/jfbterm.conf; then rm -f %D/etc/jfbterm.conf; fi
 etc/jfbterm.conf.sample
 @exec if [ ! -f %D/etc/jfbterm.conf ]; then cp -p %D/%F %B/jfbterm.conf; fi
-%%PORTDATA%%%%DATADIR%%/fonts/vt100-graphics.pcf.gz
-%%PORTDATA%%%%DATADIR%%/termcap.jfbterm
-%%PORTDATA%%%%DATADIR%%/terminfo.jfbterm
-%%PORTDATA%%@dirrm %%DATADIR%%/fonts
-%%PORTDATA%%@dirrm %%DATADIR%%
+%%PORTDATA%%share/misc/fonts/vt100-graphics.pcf.gz
+%%PORTDATA%%share/misc/jfbterm.termcap
+%%PORTDATA%%share/misc/jfbterm.terminfo
+%%PORTDATA%%@dirrmtry share/misc/fonts
 %%PORTDATA%%%%TERMCAP_ADD_RECORD%%
+%%PORTDATA%%%%TERMCAP_DEL_RECORD%%
+%%PORTDATA%%%%TIC%%

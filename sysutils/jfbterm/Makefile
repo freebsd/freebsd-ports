@@ -7,7 +7,7 @@
 PORTNAME=	jfbterm
 PORTVERSION=	0.6.1
 DISTVERSIONPREFIX=${OPSYS}-
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.ac.auone-net.jp/~baba/${PORTNAME}/ \
 		http://chirashi-no-ura.net/files/
@@ -24,9 +24,13 @@ ONLY_FOR_ARCHS_REASON=	requires VESA support in kernel
 MAKE_JOBS_SAFE=	yes
 MAKEFILE=	${FILESDIR}/BSDmakefile
 MAKE_ENV+=	VERSION=${PORTVERSION} GUNZIP=${GUNZIP_CMD:N-*}
-PLIST_SUB+=	TERMCAP_ADD_RECORD="@exec ${TERMCAP_ADD_RECORD}"
+PLIST_SUB+=	TERMCAP_ADD_RECORD="@exec ${TERMCAP_ADD_RECORD:S,^${PREFIX},%D,}" \
+		TERMCAP_DEL_RECORD="@unexec ${TERMCAP_DEL_RECORD}" \
+		TIC="@exec ${TIC} ${TERMINFO_FILE:S,^${PREFIX},%D,} 2>/dev/null || ${TRUE}"
 
 CAP_MKDB?=	/usr/bin/cap_mkdb
+TIC?=		${LOCALBASE}/bin/tic
+TERMINFO_FILE?=	${PREFIX}/share/misc/${PORTNAME}.terminfo
 
 OPTIONS=	ICONV	"encodings support"		On \
 		PNG	"splash .png support"		On \
@@ -82,15 +86,25 @@ MAKE_ENV+=	WITHOUT_PNG=
 
 .if !defined(WITHOUT_TERMCAP)
 TERMCAP_ADD_RECORD=	\
-	if ${GREP} -q '^jfbterm|' ${TERMCAP_FILE}; then else \
-		${CAT} ${PREFIX}/share/jfbterm/termcap.jfbterm \
-			>>${TERMCAP_FILE}; \
-		if [ -f ${TERMCAP_FILE}.db ]; then \
-			${CAP_MKDB} ${TERMCAP_FILE}; \
-		fi \
+	${ECHO_CMD} '\# begin of ${PORTNAME}.termcap' \
+		>>${TERMCAP_FILE}; \
+	${CAT} ${PREFIX}/share/misc/${PORTNAME}.termcap \
+		>>${TERMCAP_FILE}; \
+	${ECHO_CMD} '\# end of ${PORTNAME}.termcap' \
+		>>${TERMCAP_FILE}; \
+	if [ -f ${TERMCAP_FILE}.db ]; then \
+		${CAP_MKDB} ${TERMCAP_FILE}; \
+	fi
+TERMCAP_DEL_RECORD=	\
+	${REINPLACE_CMD} -i '' '/^\# begin of ${PORTNAME}\.termcap/, \
+		/^\# end of ${PORTNAME}\.termcap/d' \
+		${TERMCAP_FILE}; \
+	if [ -f ${TERMCAP_FILE}.db ]; then \
+		${CAP_MKDB} ${TERMCAP_FILE}; \
 	fi
 .else
 TERMCAP_ADD_RECORD=	${DO_NADA}
+TERMCAP_DEL_RECORD=	${DO_NADA}
 .endif
 
 .if !defined(WITHOUT_UNIFONT)
@@ -105,8 +119,13 @@ post-extract:	.SILENT
 		${WRKSRC}/${PORTNAME}.conf.sample
 
 post-patch:	.SILENT
-	${REINPLACE_CMD} 's|/usr/local|${PREFIX}|g' \
+	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' \
+		-e 's|\(share\)/${PORTNAME}/\(fonts\)|\1/misc/\2|' \
 		${WRKSRC}/*.[0-9] ${WRKSRC}/*.conf.sample
+.if defined(WITHOUT_TERMCAP)
+	${REINPLACE_CMD} '/^term/s/:.*/: xterm/' \
+		${WRKSRC}/${PORTNAME}.conf.sample
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
@@ -117,16 +136,17 @@ do-install:
 	fi
 .if !defined(NO_INSTALL_MANPAGES)
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/${MAN5} ${MAN1PREFIX}/man/man5
+	${INSTALL_MAN} ${WRKSRC}/${MAN5} ${MAN5PREFIX}/man/man5
 .endif
 .if !defined(NOPORTDATA)
-	${MKDIR} ${DATADIR}/fonts
-	${INSTALL_DATA} ${WRKSRC}/termcap.jfbterm ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/terminfo.jfbterm ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/fonts/*.pcf.gz ${DATADIR}/fonts
-.endif
-.if !defined(WITHOUT_TERMCAP)
+	${INSTALL_DATA} ${WRKSRC}/termcap.${PORTNAME} ${PREFIX}/share/misc/${PORTNAME}.termcap
+	${INSTALL_DATA} ${WRKSRC}/terminfo.${PORTNAME} ${PREFIX}/share/misc/${PORTNAME}.terminfo
+	${MKDIR} ${PREFIX}/share/misc/fonts
+	${INSTALL_DATA} ${WRKSRC}/fonts/*.pcf.gz ${PREFIX}/share/misc/fonts
+. if !defined(WITHOUT_TERMCAP)
 	${TERMCAP_ADD_RECORD}
+. endif
+	-${TIC} ${TERMINFO_FILE} 2>/dev/null
 .endif
 
 .include <bsd.port.post.mk>
