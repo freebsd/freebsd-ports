@@ -1,3 +1,5 @@
+bin/oxygen-gtk-deco
+bin/oxygen-gtk-demo
 lib/gtk-2.0/%%GTK2_VERSION%%/engines/liboxygen-gtk.so
 share/themes/oxygen-gtk/gtk-2.0/argb-apps.conf
 share/themes/oxygen-gtk/gtk-2.0/gtkrc
