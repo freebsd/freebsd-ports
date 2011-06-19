@@ -17,6 +17,21 @@ you update your ports collection, before attempting any port upgrades.
   If you want to switch to lang/perl5.14 from lang/perl5.{8,10,12} please
   follow instructions in the entry 20110517 in this file.
 
+20110618:
+  AFFECTS: users of mail/mailscanner
+  AUTHOR: crees@FreeBSD.org
+
+  mail/mailscanner no longer requires running of any renew-* targets to
+  update the config files / wrapper scripts; it is now automatically
+  performed as the port is installed -- these targets have been removed.
+
+  As an added bonus, the binary package now performs these steps as well,
+  in case you don't have a portstree handy.
+
+  Before upgrading, please backup your PREFIX/etc/MailScanner,
+  PREFIX/share/MailScanner and PREFIX/libexec/MailScanner if you
+  have customised any of these directories, just in case.
+
 20110613:
   AFFECTS: users of mail/mailman with postfix
   AUTHOR: crees@FreeBSD.org
