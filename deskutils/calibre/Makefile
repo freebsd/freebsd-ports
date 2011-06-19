@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	calibre
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.5
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -59,21 +59,19 @@ MAKE_ENV+=	LDFLAGS="${LDFLAGS}" \
 		OVERRIDE_CFLAGS="${CFLAGS}" \
 		OVERRIDE_LDFLAGS="${LDFLAGS}"
 
-MAN1=	calibre-customize.1 \
-	calibre-debug.1 \
-	calibre-server.1 \
-	calibre-smtp.1 \
-	calibredb.1 \
-	ebook-convert.1 \
-	ebook-meta.1 \
-	epub-fix.1 \
-	fetch-ebook-metadata.1 \
-	librarything.1 \
-	lrf2lrs.1 \
-	lrs2lrf.1 \
-	pdfmanipulate.1 \
-	web2disk.1
-MANCOMPRESSED=	no
+MAN1=		calibre-customize.1 \
+		calibre-debug.1 \
+		calibre-server.1 \
+		calibre-smtp.1 \
+		calibredb.1 \
+		ebook-convert.1 \
+		ebook-meta.1 \
+		epub-fix.1 \
+		fetch-ebook-metadata.1 \
+		lrf2lrs.1 \
+		lrs2lrf.1 \
+		pdfmanipulate.1 \
+		web2disk.1
 
 .include <bsd.port.pre.mk>
 
@@ -109,7 +107,7 @@ do-install:
 post-install:
 .if defined(WITH_MOUNTHELPER_SUID)
 	${CHOWN} ${BINOWN}:operator ${PREFIX}/bin/calibre-mount-helper
-	${CHMOD} g+s ${PREFIX}/bin/calibre-mount-helper
+	${CHMOD} ug+s ${PREFIX}/bin/calibre-mount-helper
 .endif
 
 .include <bsd.port.post.mk>
