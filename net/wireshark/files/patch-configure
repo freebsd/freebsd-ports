@@ -1,23 +1,5 @@
 --- configure.orig	2010-08-29 18:20:30.000000000 -0400
 +++ configure	2010-09-04 17:19:07.000000000 -0400
-@@ -18072,7 +18072,7 @@ $as_echo_n "checking whether we should t
- # Check whether --enable-warnings-as-errors was given.
- if test "${enable_warnings_as_errors+set}" = set; then :
-   enableval=$enable_warnings_as_errors;
--  if test "x$GCC" = "xyes" -a "x$enableval" == "xyes" -a "x$wireshark_extra_gcc_flags" != "xyes"; then
-+  if test "x$GCC" = "xyes" -a "x$enableval" = "xyes" -a "x$wireshark_extra_gcc_flags" != "xyes"; then
-     with_warnings_as_errors="yes"
-     { $as_echo "$as_me:${as_lineno-$LINENO}: result: yes" >&5
- $as_echo "yes" >&6; }
-@@ -19660,7 +19660,7 @@ fi
- 
- 	fi
- 
--	if test x$have_ige_mac == x
-+	if test x$have_ige_mac = x
- 	then
- 		#
- 		# Not found - check for the old integration functions in
 @@ -22487,7 +22487,7 @@ $as_echo "yes" >&6; }
  	  #
  	  CFLAGS="$CFLAGS -I$krb5_dir/include"
