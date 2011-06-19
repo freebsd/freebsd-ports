@@ -7,14 +7,14 @@
 
 PORTNAME=	pidgin-hotkeys
 PORTVERSION=	0.2.4
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	A pidgin plugin that allows user to assign global hotkeys
 
-LIB_DEPENDS=	purple.7:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS=	purple.8:${PORTSDIR}/net-im/libpurple
 BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 

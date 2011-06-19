@@ -7,14 +7,14 @@
 
 PORTNAME=	minbif
 PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	irc net-im
 MASTER_SITES=	http://minbif.im/attachments/download/50/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IRC to instant messaging gateway
 
-LIB_DEPENDS=	purple.7:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS=	purple.8:${PORTSDIR}/net-im/libpurple
 
 USERS=		minbif
 GROUPS=		minbif
