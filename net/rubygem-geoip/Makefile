@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geoip
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.1
 CATEGORIES=	net rubygems
 MASTER_SITES=	RG
 
@@ -18,5 +18,7 @@ RUN_DEPENDS=	geoiplookup:${PORTSDIR}/net/GeoIP
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes
+
+PLIST_FILES=	bin/geoip
 
 .include <bsd.port.mk>
