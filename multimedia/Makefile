@@ -368,6 +368,8 @@
     SUBDIR += xine
     SUBDIR += xine_artsplugin
     SUBDIR += xmms
+    SUBDIR += xmms-skins
+    SUBDIR += xmms-skins-huge
     SUBDIR += xmms-status-plugin
     SUBDIR += xmms-weasel
     SUBDIR += xporthdmv
