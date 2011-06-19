@@ -1223,6 +1223,7 @@ bsdftpd-ssl                     ports/ftp/bsdftpd-ssl
 bsdgames                        ports/games/bsdgames
 bsdgrep                         ports/textproc/bsdgrep
 bsdhwmon                        ports/sysutils/bsdhwmon
+bsdlibdwarf                     ports/devel/bsdlibdwarf
 bsdmoted                        ports/sysutils/bsdmoted
 bsdproxy                        ports/net/bsdproxy
 bsdrain                         ports/games/bsdrain
@@ -5757,6 +5758,7 @@ hyperlatex                      ports/print/hyperlatex
 hypermail                       ports/www/hypermail
 hypersrc                        ports/devel/hypersrc
 hypertable                      ports/databases/hypertable
+hyphen                          ports/textproc/hyphen
 i18ntools                       ports/converters/i18ntools
 i2p                             ports/net-p2p/i2p
 i3                              ports/x11-wm/i3
@@ -9802,6 +9804,7 @@ mysqlsla                        ports/databases/mysqlsla
 mysqlsniffer                    ports/databases/mysqlsniffer
 mysqltcl                        ports/databases/mysqltcl
 mysqltuner                      ports/databases/mysqltuner
+mythes                          ports/textproc/mythes
 mythplugin-mythmusic            ports/audio/mythplugin-mythmusic
 mythplugin-mythvideo            ports/multimedia/mythplugin-mythvideo
 mythplugin-mythweb              ports/www/mythplugin-mythweb
@@ -22143,6 +22146,7 @@ python-doc-pdf-a4               ports/lang/python-doc-pdf-a4
 python-doc-pdf-letter           ports/lang/python-doc-pdf-letter
 python-doc-postscript-a4        ports/lang/python-doc-postscript-a4
 python-doc-postscript-letter    ports/lang/python-doc-postscript-letter
+python-doc-text                 ports/lang/python-doc-text
 python-mode.el                  ports/lang/python-mode.el
 python-nexus                    ports/biology/python-nexus
 python24                        ports/lang/python24
@@ -23203,6 +23207,7 @@ rubygem-activeresource          ports/www/rubygem-activeresource
 rubygem-activesupport           ports/devel/rubygem-activesupport
 rubygem-addressable             ports/www/rubygem-addressable
 rubygem-ai4r                    ports/science/rubygem-ai4r
+rubygem-allison                 ports/devel/rubygem-allison
 rubygem-amazon-ecs              ports/www/rubygem-amazon-ecs
 rubygem-amqp                    ports/net/rubygem-amqp
 rubygem-analogger               ports/devel/rubygem-analogger
@@ -23240,18 +23245,25 @@ rubygem-data_objects            ports/databases/rubygem-data_objects
 rubygem-datamapper              ports/databases/rubygem-datamapper
 rubygem-davclient               ports/www/rubygem-davclient
 rubygem-deeptest                ports/devel/rubygem-deeptest
+rubygem-delayed_job             ports/devel/rubygem-delayed_job
 rubygem-deprecated              ports/devel/rubygem-deprecated
 rubygem-deprecated2             ports/devel/rubygem-deprecated2
+rubygem-devise                  ports/devel/rubygem-devise
 rubygem-diff-lcs                ports/textproc/rubygem-diff-lcs
 rubygem-directory_watcher       ports/devel/rubygem-directory_watcher
 rubygem-ditz                    ports/devel/rubygem-ditz
+rubygem-dm-active_model         ports/databases/rubygem-dm-active_model
 rubygem-dm-aggregates           ports/databases/rubygem-dm-aggregates
 rubygem-dm-constraints          ports/databases/rubygem-dm-constraints
 rubygem-dm-core                 ports/databases/rubygem-dm-core
 rubygem-dm-do-adapter           ports/databases/rubygem-dm-do-adapter
 rubygem-dm-migrations           ports/databases/rubygem-dm-migrations
 rubygem-dm-mysql-adapter        ports/databases/rubygem-dm-mysql-adapter
+rubygem-dm-observer             ports/databases/rubygem-dm-observer
+rubygem-dm-pager                ports/databases/rubygem-dm-pager
+rubygem-dm-paperclip            ports/databases/rubygem-dm-paperclip
 rubygem-dm-postgres-adapter     ports/databases/rubygem-dm-postgres-adapter
+rubygem-dm-rails                ports/databases/rubygem-dm-rails
 rubygem-dm-serializer           ports/databases/rubygem-dm-serializer
 rubygem-dm-timestamps           ports/databases/rubygem-dm-timestamps
 rubygem-dm-transactions         ports/databases/rubygem-dm-transactions
@@ -23321,6 +23333,7 @@ rubygem-ini                     ports/textproc/rubygem-ini
 rubygem-inline                  ports/devel/rubygem-inline
 rubygem-innate                  ports/www/rubygem-innate
 rubygem-ipaddress               ports/net/rubygem-ipaddress
+rubygem-jammit                  ports/devel/rubygem-jammit
 rubygem-jdbc-mysql              ports/databases/rubygem-jdbc-mysql
 rubygem-jekyll                  ports/www/rubygem-jekyll
 rubygem-jquery-rails            ports/www/rubygem-jquery-rails
@@ -23396,6 +23409,7 @@ rubygem-open4                   ports/devel/rubygem-open4
 rubygem-opengl                  ports/graphics/rubygem-opengl
 rubygem-openid                  ports/net/rubygem-openid
 rubygem-opml                    ports/textproc/rubygem-opml
+rubygem-orm_adapter             ports/devel/rubygem-orm_adapter
 rubygem-parsetree               ports/devel/rubygem-parsetree
 rubygem-passenger               ports/www/rubygem-passenger
 rubygem-pdfwriter               ports/print/rubygem-pdfwriter
@@ -23405,6 +23419,7 @@ rubygem-pkg-config              ports/devel/rubygem-pkg-config
 rubygem-platform                ports/devel/rubygem-platform
 rubygem-polyglot                ports/devel/rubygem-polyglot
 rubygem-pony                    ports/mail/rubygem-pony
+rubygem-popen4                  ports/devel/rubygem-popen4
 rubygem-postgres                ports/databases/rubygem-postgres
 rubygem-prawn                   ports/print/rubygem-prawn
 rubygem-prawn-core              ports/print/rubygem-prawn-core
@@ -23481,6 +23496,7 @@ rubygem-sequel                  ports/devel/rubygem-sequel
 rubygem-sexp_processor          ports/devel/rubygem-sexp_processor
 rubygem-shoulda                 ports/devel/rubygem-shoulda
 rubygem-simple-rss              ports/www/rubygem-simple-rss
+rubygem-simple_form             ports/devel/rubygem-simple_form
 rubygem-simple_oauth            ports/net/rubygem-simple_oauth
 rubygem-sinatra                 ports/www/rubygem-sinatra
 rubygem-sinatra-respond_to      ports/www/rubygem-sinatra-respond_to
@@ -23534,6 +23550,7 @@ rubygem-validatable             ports/devel/rubygem-validatable
 rubygem-vmail                   ports/mail/rubygem-vmail
 rubygem-vmc                     ports/devel/rubygem-vmc
 rubygem-warbler                 ports/devel/rubygem-warbler
+rubygem-warden                  ports/devel/rubygem-warden
 rubygem-webby                   ports/devel/rubygem-webby
 rubygem-webmock                 ports/www/rubygem-webmock
 rubygem-whois                   ports/net/rubygem-whois
@@ -23543,6 +23560,7 @@ rubygem-xslt                    ports/textproc/rubygem-xslt
 rubygem-yadis                   ports/net/rubygem-yadis
 rubygem-yajl-ruby               ports/devel/rubygem-yajl-ruby
 rubygem-yapra                   ports/www/rubygem-yapra
+rubygem-yui-compressor          ports/devel/rubygem-yui-compressor
 rubygem-zentest                 ports/devel/rubygem-zentest
 rubygem-zoom                    ports/devel/rubygem-zoom
 rubyphoto                       ports/graphics/rubyphoto
