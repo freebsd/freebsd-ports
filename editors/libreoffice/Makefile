@@ -6,12 +6,29 @@
 #
 
 PORTNAME=	libreoffice
-PORTVERSION=	3.3.2
-LOVERSION=	${PORTVERSION}.2
+PORTVERSION=	3.3.3
+LOVERSION=	${PORTVERSION}.1
 CATEGORIES=	editors
-MASTER_SITES=	http://download.documentfoundation.org/libreoffice/src/ \
-		http://humppa.hu/libreoffice/ \
-		http://download.go-oo.org/3.3/ \
+MASTER_SITES=	http://ftp.osuosl.org/pub/tdf/libreoffice/src/ \http://download.go-oo.org/3.3/ \
+		http://ftp.rediris.es/mirror/TDF/libreoffice/src/ \
+		http://mirrors.supportex.net/tdf/libreoffice/src/ \
+		http://mirror.netcologne.de/tdf/libreoffice/src/ \
+		http://mirror.informatik.uni-mannheim.de/pub/mirrors/tdf/libreoffice/src/ \
+		http://ftp.uni-muenster.de/pub/software/DocumentFoundation/libreoffice/src/ \
+		http://ftp.rz.tu-bs.de/pub/mirror/tdf/tdf-pub/libreoffice/src/ \
+		http://artfiles.org/documentfoundation.org/libreoffice/src/ \
+		http://mirror.galpon.org/tdf/libreoffice/src/ \
+		http://ftp.tu-chemnitz.de/pub/tdf/libreoffice/src/ \
+		http://tdf.panu.it/libreoffice/src/ \
+		http://ftp.wh2.tu-dresden.de/pub/mirrors/tdf/libreoffice/src/ \
+		http://ftp.klid.dk/ftp/tdf/libreoffice/src/ \
+		http://gd.tuwien.ac.at/tdf/libreoffice/src/ \
+		http://archive.sunet.se/pub/Office/tdf/libreoffice/src/ \
+		http://ftp.astral.ro/mirrors/tdf/libreoffice/src/ \
+		http://ftp.roedu.net/mirrors/tdf/libreoffice/src/ \
+		http://ftp.unicamp.br/pub/tdf/libreoffice/src/ \
+		http://mirror.yongbok.net/tdf/libreoffice/src/ \
+		http://mirror3.mirrors.tds.net/pub/documentfoundation.org/libreoffice/src/ \
 		http://download.go-oo.org/src/ \
 		http://www.numbertext.org/linux/:OOoDTP
 
@@ -335,7 +352,7 @@ post-install:
 
 	@for img in ${LODESTDIR}/${PREFIX}/share/icons/hicolor/*/apps/ooo-*; do ${MV} $$img `${ECHO_CMD} $$img | ${SED} "s/ooo-/libreoffice-/"`; done
 	@for pix in ${LODESTDIR}/${PREFIX}/share/pixmaps/ooo-*; do ${RM} $$pix; ${LN} -sf ${PREFIX}/share/icons/hicolor/48x48/`${BASENAME} $$pix | ${SED} "s/ooo-/libreoffice-/"` ${LODESTDIR}/${PREFIX}/share/pixmaps/; done
-.for component in base calc draw math impress writer
+.for component in base calc draw math impress writer startcenter
 	@cd ${LODESTDIR}/${PREFIX}/share/applications; ${LN} -s ../../lib/${PORTNAME}/share/xdg/${component}.desktop ${PORTNAME}-${component}.desktop
 .endfor
 	@for dir in ${EMPTYDIRS}; do ${TOUCH} ${LODESTDIR}/${PREFIX}/lib/$$dir/.keep; done
@@ -360,7 +377,7 @@ post-install:
 	@${SORT} ${WRKDIR}/plist_files >> ${TMPPLIST}
 	@${SORT} -r ${WRKDIR}/plist_dirs >> ${TMPPLIST}
 
-	@cd ${LODESTDIR}/${PREFIX} ; ${TAR} cfp - . | ${TAR} xfp - -C ${PREFIX}
+	@cd ${LODESTDIR}/${PREFIX} ; ${FIND} . -print | ${CPIO} -adpm --quiet ${PREFIX}
 	@${LOCALBASE}/bin/update-desktop-database 2>/dev/null || ${TRUE}
 
 .include <bsd.port.post.mk>
