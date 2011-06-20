@@ -16,7 +16,4 @@
 %%PYTHON_SITELIBDIR%%/bitstring/constbitstream.py
 %%PYTHON_SITELIBDIR%%/bitstring/constbitstream.pyc
 %%PYTHON_SITELIBDIR%%/bitstring/constbitstream.pyo
-%%PYTHON_SITELIBDIR%%/bitstring/errors.py
-%%PYTHON_SITELIBDIR%%/bitstring/errors.pyc
-%%PYTHON_SITELIBDIR%%/bitstring/errors.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/bitstring
