@@ -21,4 +21,7 @@ PLIST_FILES=	bin/elf
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/gcc/${CC}/g' ${WRKSRC}/src/Makefile.in
+
 .include <bsd.port.mk>
