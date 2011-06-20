@@ -7,6 +7,7 @@
 
 PORTNAME=	xmms-skins
 PORTVERSION=	0.1
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.lissyara.su/distfiles/
 DISTFILES=	AbsoluteE_Xmms.zip \
