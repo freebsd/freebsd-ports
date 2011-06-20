@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	pver
-PORTVERSION=	0.15
-PORTREVISION=	1
+PORTVERSION=	0.16
+PORTREVISION=	0
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://www.csie.nctu.edu.tw/~weiyu/software/ \
 		${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	weiyu.csie+pver@gmail.com
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Show packages which are different version from ports using INDEX-*.db
 
 OPTIONS=	SORT "Sort the result by the package names" Off \
