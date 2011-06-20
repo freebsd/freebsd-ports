@@ -8,6 +8,6 @@
 PAPERSIZE=	a4
 MASTERDIR=	${.CURDIR}/../psutils-letter
 
-CONFLICTS=	psutils-letter-*
+CONFLICTS=	psutils-letter-[0-9]*
 
 .include "${MASTERDIR}/Makefile"

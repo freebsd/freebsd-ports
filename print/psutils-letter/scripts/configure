@@ -3,9 +3,10 @@ cd $WRKSRC || exit 1
 cp Makefile.unix Makefile
 cat >>Makefile<<END
 BINDIR = $PREFIX/bin
-INCLUDEDIR = $PREFIX/share/psutils
-MANDIR =$PREFIX/man/man1
-PERL = $PERL
-CC=cc
+INCLUDEDIR = $DATADIR
+MANDIR =$MANPREFIX/man/man1
+PERL = $PERL5
+CC=${CC}
+PAPER=${PAPER}
 END
 exit 0

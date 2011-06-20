@@ -5,28 +5,29 @@
 # $FreeBSD$
 #
 
-PORTNAME=	psutils-${PAPERSIZE}
+PORTNAME=	psutils
 PORTVERSION=	1.17
 PORTREVISION=	2
 CATEGORIES=	print
 MASTER_SITES=	ftp://ftp.dcs.ed.ac.uk/pub/ajcd/ \
-		ftp://ftp.knackered.org/pub/psutils/
+		ftp://ftp.knackered.org/pub/psutils/ \
+		${MASTER_SITE_TEX_CTAN}
+MASTER_SITE_SUBDIR=	support/psutils
+PKGNAMESUFFIX=	-${PAPERSIZE}
 DISTNAME=	psutils-p17
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	Utilities for manipulating PostScript documents
 
-USE_PERL5=	yes
-WRKSRC=		${WRKDIR}/psutils
-MAKE_FLAGS?=	PAPER=${PAPERSIZE} -f
+USE_PERL5_BUILD=yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 MAN1=		psbook.1 psselect.1 pstops.1 epsffit.1 psnup.1 psresize.1 \
 		getafm.1 fixdlsrps.1 fixfmps.1 fixmacps.1 fixpsditps.1 \
 		fixpspps.1 fixtpps.1 fixwfwps.1 fixwpps.1 fixwwps.1 \
 		extractres.1 includeres.1 fixscribeps.1 psmerge.1
-
-SCRIPTS_ENV+=	PERL=${PERL}
-
-CONFLICTS?=	psutils-a4-*
+SCRIPTS_ENV+=	PERL5=${PERL5} CC=${CC} DATADIR=${DATADIR} \
+		MANPREFIX=${MANPREFIX} PAPER=${PAPERSIZE}
+CONFLICTS?=	psutils-a4-[0-9]*
 
 .if !defined(PAPERSIZE)
 PAPERSIZE=letter

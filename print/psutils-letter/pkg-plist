@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 bin/psbook
 bin/psselect
 bin/pstops
@@ -19,6 +20,6 @@ bin/extractres
 bin/includeres
 bin/psmerge
 bin/showchar
-share/psutils/md68_0.ps
-share/psutils/md71_0.ps
-@dirrm share/psutils
+%%DATADIR%%/md68_0.ps
+%%DATADIR%%/md71_0.ps
+@dirrm %%DATADIR%%
