@@ -72,16 +72,17 @@ post-patch:
 	@${FIND} ${WRKSRC}/easy-rsa/?.0 -type f \
 	    -exec ${REINPLACE_CMD} -e 's;#!/bin/bash;#!/bin/sh;' \
 				   -e 's,source ./vars,. ./vars,' \{\} +
-	@${FIND} ${WRKSRC} -name \*.orig -delete
-	@${FIND} ${WRKSRC} -name \*.bak -delete
+	@${FIND} ${WRKSRC}/plugin -name Makefile \
+	    -exec ${REINPLACE_CMD} -e 's;gcc;${CC};g' '{}' +
+	@${FIND} ${WRKSRC} \( -name \*.orig -o -name \*.bak \) -delete
 
 post-build:
-	cd ${WRKSRC}/plugin/down-root && ${MAKE}
+	cd ${WRKSRC}/plugin/down-root && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS}
 	cd ${WRKSRC}/plugin/auth-pam && ${CC} ${CPPFLAGS} -I../.. -DDLOPEN_PAM=0 ${CFLAGS} -fPIC -shared -Wl,-soname,openvpn-auth-pam.so -o openvpn-auth-pam.so auth-pam.c pamdl.c -lc -lpam
 	@# self-tests here
 .if !defined(WITHOUT_CHECK)
 	@${ECHO} ; ${ECHO} "### Note that you can skip these lengthy selftests with WITHOUT_CHECK=yes ###" ; ${ECHO}
-	cd ${WRKSRC} && ${MAKE} check
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} check
 .endif
 
 post-install:
