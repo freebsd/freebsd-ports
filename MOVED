@@ -2220,3 +2220,4 @@ mail/evolution-sharp||2011-06-13|Has expired: has been broken for over a year
 print/cmpsfont|print/font-amsfonts|2011-06-15|Renamed
 print/amspsfnt|print/font-amsfonts|2011-06-15|Renamed
 irc/ezbounce-devel|irc/ezbounce|2011-06-19|main port updated to latest available version
+graphics/povray|graphics/povray36|2011-06-21|Renamed
