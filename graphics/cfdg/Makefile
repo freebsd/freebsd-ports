@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cfdg
-PORTVERSION=	2.2.1
-PORTREVISION=	1
+PORTVERSION=	2.2.2
 CATEGORIES=	graphics math
 MASTER_SITES=	http://www.contextfreeart.org/download/ \
 		http://glyphic.s3.amazonaws.com/cfa/download/
@@ -19,10 +18,20 @@ COMMENT=	Context Free Design Grammar compiler
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
-USE_BISON=	build
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
+
+WRKSRC=		${WRKDIR}/${DISTNAME}${EXTRACT_SUFX}
+
 USE_GMAKE=	yes
 
 NO_INSTALL_MANPAGES=	yes
+
+PLIST_FILES=	bin/cfdg
+
+.if !defined(NOPORTEXAMPLES)
+PORTEXAMPLES=	*
+.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/cfdg ${PREFIX}/bin
