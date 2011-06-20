@@ -20,7 +20,6 @@ LICENSE=	GPLv2
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_MTREE=	yes
-PREFIX=		${LOCALBASE}/share/doc
 WRKSRC=		${WRKDIR}/adabooch-doc-html
 EXTRACT_AFTER_ARGS=	-d ${WRKSRC}
 
@@ -28,8 +27,7 @@ pre-extract:
 	@${MKDIR} ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${PREFIX}/adabooch
-	@${MKDIR} ${PREFIX}/adabooch/html
-	@(cd ${WRKSRC} && ${PAX} -r -w * ${PREFIX}/adabooch/html)
+	@${MKDIR} ${PREFIX}/share/doc/adabooch/html
+	@(cd ${WRKSRC} && ${PAX} -r -w * ${PREFIX}/share/doc/adabooch/html)
 
 .include <bsd.port.mk>
