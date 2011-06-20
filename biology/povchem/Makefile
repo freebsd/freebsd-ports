@@ -7,7 +7,7 @@
 
 PORTNAME=	povchem
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	biology graphics
 MASTER_SITES=	http://www.chemicalgraphics.com/paul/PC_Dist/v1.00/
 DISTFILES=	povchem.c \
@@ -17,7 +17,7 @@ DISTFILES=	povchem.c \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple yet powerful tool to generate POV from a PDB file
 
-RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
+RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
 
 NO_WRKSUBDIR=	yes
 DIST_SUBDIR=	povchem
