@@ -9,10 +9,10 @@ PORTNAME=	VCP-Source-cvsbk
 PORTVERSION=	0.11
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/C/CL/CLKAO
+MASTER_SITE_SUBDIR=	CPAN:CLKAO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	VCP source driver for bk exported cvs repository
 
 BUILD_DEPENDS=	${SITE_PERL}/VCP.pm:${PORTSDIR}/devel/p5-VCP-autrijus

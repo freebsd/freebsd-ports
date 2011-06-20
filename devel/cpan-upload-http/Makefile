@@ -9,7 +9,7 @@ PORTNAME=	cpan-upload-http
 PORTVERSION=	2.4
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/B/BR/BRADFITZ
+MASTER_SITE_SUBDIR=	CPAN:BRADFITZ
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl script to upload one or more files to CPAN, using PAUSE

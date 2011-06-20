@@ -9,10 +9,10 @@ PORTNAME=	Yada-Yada-Yada
 PORTVERSION=	1.00
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/T/TM/TMTM
+MASTER_SITE_SUBDIR=	CPAN:TMTM
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Adds a Yada-Yada-Yada operator (...) to Perl 5
 
 BUILD_DEPENDS=	${SITE_PERL}/Filter/Simple.pm:${PORTSDIR}/textproc/p5-Filter-Simple

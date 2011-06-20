@@ -10,10 +10,10 @@ PORTVERSION=	0.28
 PORTREVISION=	4
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/D/DW/DWHEELER
+MASTER_SITE_SUBDIR=	CPAN:DWHEELER
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Build simple rules-based state machines in Perl
 
 RUN_DEPENDS=	${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz \

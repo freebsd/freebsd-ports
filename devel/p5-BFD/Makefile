@@ -9,10 +9,10 @@ PORTNAME=	BFD
 PORTVERSION=	0.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/R/RB/RBS
+MASTER_SITE_SUBDIR=	CPAN:RBS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Impromptu dumping of data structures for debugging purposes
 
 PERL_CONFIGURE=	yes
