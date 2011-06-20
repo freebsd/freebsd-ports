@@ -9,10 +9,10 @@ PORTNAME=		Text-German
 PORTVERSION=		0.06
 CATEGORIES=		textproc perl5
 MASTER_SITES=		CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/U/UL/ULPFR
+MASTER_SITE_SUBDIR=	CPAN:ULPFR
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		perl@FreeBSD.org
 COMMENT=		German grundform reduction
 
 PERL_CONFIGURE=		yes

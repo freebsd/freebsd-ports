@@ -10,7 +10,7 @@ PORTVERSION=	1.8.1
 PORTREVISION=	1
 CATEGORIES=	shells perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/G/GR/GREGOR
+MASTER_SITE_SUBDIR=	CPAN:GREGOR
 
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	New shell made entirely out of a Perl script

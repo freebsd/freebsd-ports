@@ -9,10 +9,10 @@ PORTNAME=	Petal-Mail
 PORTVERSION=	0.31
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/B/BP/BPOSTLE
+MASTER_SITE_SUBDIR=	CPAN:BPOSTLE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Format text e-mail using Petal
 
 BUILD_DEPENDS=	${SITE_PERL}/Petal.pm:${PORTSDIR}/textproc/p5-Petal \

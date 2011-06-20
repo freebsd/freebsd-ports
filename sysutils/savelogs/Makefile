@@ -9,7 +9,7 @@ PORTNAME=	savelogs
 PORTVERSION=	1.94
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/S/SC/SCOTTW
+MASTER_SITE_SUBDIR=	CPAN:SCOTTW
 
 MAINTAINER=	ports@c0decafe.net
 COMMENT=	Save log files in a nice way

@@ -9,10 +9,10 @@ PORTNAME=	CQL-Parser
 PORTVERSION=	1.10
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/B/BR/BRICAS
+MASTER_SITE_SUBDIR=	CPAN:BRICAS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Compiles CQL strings into parse trees of Node subtypes
 
 RUN_DEPENDS=    p5-Class-Accessor>=0.1:${PORTSDIR}/devel/p5-Class-Accessor \
