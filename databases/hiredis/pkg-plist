@@ -5,5 +5,7 @@ include/hiredis/adapters/libev.h
 include/hiredis/adapters/libevent.h
 lib/libhiredis.a
 lib/libhiredis.so
+lib/libhiredis.so.0
+lib/libhiredis.so.0.10
 @dirrm include/hiredis/adapters
 @dirrm include/hiredis
