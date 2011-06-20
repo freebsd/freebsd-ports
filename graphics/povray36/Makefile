@@ -7,7 +7,7 @@
 
 PORTNAME=	povray
 PORTVERSION=	3.6.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.povray.org/pub/povray/%SUBDIR%/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.povray.org/pub/povray/%SUBDIR%/ \
@@ -58,9 +58,10 @@ CONFIGURE_ARGS=	--x-includes="${LOCALBASE}/include" --includedir=${LOCALBASE} \
 		CXXFLAGS="${CXXFLAGS} -L${LOCALBASE}/lib" \
 		CFLAGS="${CFLAGS} -L${LOCALBASE}/lib" \
 		LDFLAGS="-L${LOCALBASE}/lib" COMPILED_BY=${MAINTAINER} \
+		--program-transform-name='s/${PORTNAME}/${UNIQUENAME}/' \
 		--disable-optimiz
 
-MAN1=		povray.1
+MAN1=		${UNIQUENAME}.1
 
 post-patch:
 	#@${REINPLACE_CMD} -e 's+@PREFIX@+${PREFIX}+g;' ${WRKSRC}/povray.ini
