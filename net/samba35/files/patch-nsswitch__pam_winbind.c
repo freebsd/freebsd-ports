@@ -83,7 +83,7 @@
  	case 0:
 -		pam_get_data(pamh, PAM_WINBIND_NEW_AUTHTOK_REQD,
 -			     (const void **)&tmp);
-+		_pam_get_data(pamh, PAM_WINBIND_NEW_AUTHTOK_REQD, tmp);
++		_pam_get_data(pamh, PAM_WINBIND_NEW_AUTHTOK_REQD, &tmp);
  		if (tmp != NULL) {
  			ret = atoi((const char *)tmp);
  			switch (ret) {
