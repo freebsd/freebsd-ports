@@ -219,11 +219,11 @@ post-install:
 	${TEST} -e ${PREFIX}/bin/gvimtutor  \
 		|| (cd ${PREFIX}/bin ; ${LN} -sf vimtutor gvimtutor)
 	${INSTALL_DATA} ${FILESDIR}/vietnamese_viscii.vim ${DATADIR}/keymap
-	cd ${PREFIX} ;\
+	cd ${PREFIX} ;						\
 	    ${FIND} share/vim/${_DATADIR} -type f -o -type l	\
 	    	| ${SORT}					\
 	    	>${WRKDIR}/PLIST.share-vim
-	cd ${PREFIX} ;\
+	cd ${PREFIX} ;						\
 	    ${FIND} share/vim/${_DATADIR} -type d		\
 	    	| ${SORT} -r | ${SED} -e 's/^/@dirrm /g'	\
 		>>${WRKDIR}/PLIST.share-vim
