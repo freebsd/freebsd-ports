@@ -22,4 +22,7 @@ MAKE_ENV=	prefix=${PREFIX}
 MAKE_ARGS+=	-e
 CC=		${CXX}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|g++|${CXX}|g' ${WRKSRC}/Makefile
+
 .include <bsd.port.mk>
