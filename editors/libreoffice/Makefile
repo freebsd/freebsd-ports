@@ -9,7 +9,8 @@ PORTNAME=	libreoffice
 PORTVERSION=	3.3.3
 LOVERSION=	${PORTVERSION}.1
 CATEGORIES=	editors
-MASTER_SITES=	http://ftp.osuosl.org/pub/tdf/libreoffice/src/ \http://download.go-oo.org/3.3/ \
+MASTER_SITES=	http://ftp.osuosl.org/pub/tdf/libreoffice/src/ \
+		http://download.go-oo.org/3.3/ \
 		http://ftp.rediris.es/mirror/TDF/libreoffice/src/ \
 		http://mirrors.supportex.net/tdf/libreoffice/src/ \
 		http://mirror.netcologne.de/tdf/libreoffice/src/ \
