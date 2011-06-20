@@ -10,7 +10,7 @@ PORTVERSION=	0.05
 PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/C/CO/COSIMO
+MASTER_SITE_SUBDIR=	CPAN:COSIMO
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Display PostgreSQL performance info like top(1)

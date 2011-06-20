@@ -9,10 +9,10 @@ PORTNAME=	AddressBook
 PORTVERSION=	0.16
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/D/DL/DLEIGH
+MASTER_SITE_SUBDIR=	CPAN:DLEIGH
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module providing an LDAP addressbook interface
 
 USE_PERL5=	yes

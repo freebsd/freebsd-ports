@@ -9,10 +9,10 @@ PORTNAME=	REST-Application
 PORTVERSION=	0.992
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/M/MO/MOCONNOR
+MASTER_SITE_SUBDIR=	CPAN:MOCONNOR
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A framework for building RESTful web-applications
 
 BUILD_DEPENDS=	p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash

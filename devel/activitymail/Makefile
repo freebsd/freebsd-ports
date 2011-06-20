@@ -9,7 +9,7 @@ PORTNAME=	activitymail
 PORTVERSION=	1.26
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/D/DW/DWHEELER/activitymail
+MASTER_SITE_SUBDIR=	CPAN:DWHEELER/activitymail
 
 MAINTAINER=	joseph@randomnetworks.com
 COMMENT=	A program for sending email messages for CVS repository commits

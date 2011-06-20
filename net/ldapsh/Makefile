@@ -11,7 +11,7 @@ PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	net
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/L/LO/LOOSIFER
+MASTER_SITE_SUBDIR=	CPAN:LOOSIFER
 
 MAINTAINER=	flz@FreeBSD.org
 COMMENT=	Interactive shell used to administer ldap directories

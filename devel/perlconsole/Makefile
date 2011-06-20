@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/S/SU/SUKRIA
+MASTER_SITE_SUBDIR=	CPAN:SUKRIA
 
 MAINTAINER=	jadawin@FreeBSD.org
 COMMENT=	A light program that lets you evaluate Perl code interactively

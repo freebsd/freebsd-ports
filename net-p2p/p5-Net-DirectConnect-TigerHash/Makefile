@@ -9,7 +9,7 @@ PORTNAME=	Net-DirectConnect-TigerHash
 PORTVERSION=	0.06
 CATEGORIES=	net-p2p net perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/P/PR/PRO/
+MASTER_SITE_SUBDIR=	CPAN:PRO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	proler@gmail.com

@@ -9,7 +9,7 @@ PORTNAME=	DateTime-Format-Japanese
 PORTVERSION=	0.04000
 CATEGORIES=	japanese devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/D/DM/DMAKI
+MASTER_SITE_SUBDIR=	CPAN:DMAKI
 
 MAINTAINER=	markun@onohara.to
 COMMENT=	A Japanese DateTime Formatter
