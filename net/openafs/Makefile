@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	openafs
-DISTVERSION=	1.6.0pre3
+DISTVERSION=	1.6.0pre6
 CATEGORIES=	net kld
 MASTER_SITES=	http://dl.central.org/dl/openafs/candidate/${DISTVERSION}/:openafs \
 		http://dl.openafs.org/dl/openafs/candidate/${DISTVERSION}/:openafs \
@@ -26,37 +26,36 @@ OPTIONS=	FUSE "Build afsd.fuse (enable fuse support)" off
 
 USE_LDCONFIG=	yes
 PATCH_STRIP=	-p1
-
 USE_BZIP2=	yes
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	afsd afsserver
 
 ONLY_FOR_ARCHS=	i386 amd64
 
-KERNELDIR=	/usr/obj/usr/src/sys/GENERIC
+.include <bsd.port.pre.mk>
+
+KERNCONF?=	GENERIC
+KERNCONFDIR?=	${SRC_BASE}/sys/${ARCH}/conf
 KMODDIR=	/boot/modules
 
-.include <bsd.port.pre.mk>
+.if !exists(${KERNCONFDIR}/${KERNCONF})
+IGNORE=	requires kernel configuration file ${KERNCONF} to build
+.endif
 
 .if ${OSVERSION} < 800000
 IGNORE=	supports FreeBSD 8.0 and later
 .endif
 
-.if !exists(${KERNELDIR}/opt_global.h)
-IGNORE= OpenAFS requires opt_global.h from kernel build tree
-.endif
-
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 	--localstatedir=/var \
-	--mandir=${PREFIX}/man \
-	--with-bsd-kernel-build=${KERNELDIR} \
+	--mandir=${MANPREFIX}/man \
+	--with-bsd-kernel-headers=${SRC_BASE}/sys \
+	--with-bsd-kernel-build=${WRKDIR}/conf \
 	--enable-debug \
 	--enable-debug-kernel \
 	--enable-debug-lwp \
-	--includedir=${LOCALBASE}/include/openafs \
-		${CONFIGURE_TARGET}
-#       --with-krb5 KRB5CFLAGS=-I/usr/include \
-#       KRB5LIBS='-lkrb5 -lcom_err -lcrypto -lcrypt -lasn1 -lhx509 -lroken' \
+	--includedir=${PREFIX}/include/openafs \
+	${CONFIGURE_TARGET}
 
 .if !defined(WITH_FUSE)
 CONFIGURE_ARGS+=	--disable-fuse-client
@@ -72,30 +71,26 @@ CONFLICTS=	heimdal-[0-9]*
 
 .include "Makefile.man"
 
-post-install:
-	@${MKDIR} ${PREFIX}/etc/openafs
-	@${CP} ${DISTDIR}/CellServDB ${PREFIX}/etc/openafs/CellServDB.sample
-	@if [ ! -e ${PREFIX}/etc/openafs/CellServDB ] ; then \
-		${CP} -p ${PREFIX}/etc/openafs/CellServDB.sample ${PREFIX}/etc/openafs/CellServDB ; \
-	fi
-	@${ECHO_CMD} openafs.org > ${PREFIX}/etc/openafs/ThisCell.sample
-	@if [ ! -e ${PREFIX}/etc/openafs/ThisCell ] ; then \
-		${CP} -p ${PREFIX}/etc/openafs/ThisCell.sample ${PREFIX}/etc/openafs/ThisCell ; \
-	fi
-	@${ECHO_CMD} '/afs:/usr/vice/cache:150000' > ${PREFIX}/etc/openafs/cacheinfo.sample
-	@if [ ! -e ${PREFIX}/etc/openafs/cacheinfo ] ; then \
-		${CP} -p ${PREFIX}/etc/openafs/cacheinfo.sample ${PREFIX}/etc/openafs/cacheinfo; \
-	fi
-	${MV} ${PREFIX}/lib/openafs/libafs.ko ${KMODDIR}/
-	@${RMDIR} ${PREFIX}/lib/openafs
-	kldxref ${KMODDIR}
+post-extract:
+	${MKDIR} ${WRKDIR}/conf
+	cd ${KERNCONFDIR} && /usr/sbin/config -d ${WRKDIR}/conf ${KERNCONF}
 
-pre-deinstall:
-	@if cmp -s ${PREFIX}/etc/openafs/CellServDB ${PREFIX}/etc/openafs/CellServDB.sample; then \
-		${RM} ${PREFIX}/etc/openafs/CellServDB; fi
-	@if cmp -s ${PREFIX}/etc/openafs/ThisCell ${PREFIX}/etc/openafs/ThisCell.sample; then \
-		${RM} ${PREFIX}/etc/openafs/ThisCell; fi
-	@if cmp -s ${PREFIX}/etc/openafs/cacheinfo ${PREFIX}/etc/openafs/cacheinfo.sample; then \
-		${RM} ${PREFIX}/etc/openafs/cacheinfo; fi
+create-sample-files:
+	@${ECHO_CMD} openafs.org > ${WRKDIR}/ThisCell
+	@${ECHO_CMD} '/afs:/usr/vice/cache:150000' > ${WRKDIR}/cacheinfo
+	@${INSTALL_DATA} ${DISTDIR}/CellServDB ${WRKDIR}/CellServDB
+
+post-install: create-sample-files
+	@${MKDIR} ${PREFIX}/etc/openafs
+.for F in CellServDB ThisCell cacheinfo
+	@${INSTALL_DATA} ${WRKDIR}/${F} ${PREFIX}/etc/openafs/${F}.sample
+	@if [ ! -e ${PREFIX}/etc/openafs/${F} ]; then \
+		${INSTALL_DATA} ${WRKDIR}/${F} ${PREFIX}/etc/openafs/${F}; \
+	fi
+.endfor
+	${INSTALL_KLD} ${PREFIX}/lib/openafs/libafs.ko ${KMODDIR}/
+	@${RM} ${PREFIX}/lib/openafs/libafs.ko
+	@${RMDIR} ${PREFIX}/lib/openafs
+	/usr/sbin/kldxref ${KMODDIR}
 
 .include <bsd.port.post.mk>

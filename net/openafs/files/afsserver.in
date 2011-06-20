@@ -9,8 +9,8 @@
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# afsserver_enable (bool):      Set to NO by default.
-#                               Set it to YES to enable AFS server activities.
+# afsserver_enable (bool):	Set to NO by default.
+#				Set it to YES to enable AFS server activities.
 
 . /etc/rc.subr
 
@@ -30,7 +30,7 @@ load_rc_config "$name"
 
 afsserver_prestop()
 {
-        %%PREFIX%%/bin/bos shutdown -localauth -server localhost
+	%%PREFIX%%/bin/bos shutdown -localauth -server localhost
 }
 
 run_rc_command "$1"

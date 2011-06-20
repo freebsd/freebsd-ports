@@ -13,8 +13,8 @@
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# afsd_enable (bool):   Set to NO by default.
-#                       Set it to YES to enable afsd.
+# afsd_enable (bool):	Set to NO by default.
+#			Set it to YES to enable afsd.
 #
 # Suggested values for a "large" configuration:
 # afsd_flags="-stat 2800 -daemons 5 -volumes 128"
@@ -49,31 +49,31 @@ load_rc_config "$name"
 
 afsd_prestart()
 {
-        local dir
+	local dir
 
-        # need a mountpoint and a cache dir (well, if we have a disk cache)
-        # Should use required_dirs, but no good way to extract from cacheinfo
-        for dir in $(awk -F: '{print $1, $2}' ${vicedir}/cacheinfo); do
-                if [ ! -d "${dir}" ]; then
-                        err 1 "Directory ${dir} does not exist. Not starting AFS client."
-                fi
-        done
+	# need a mountpoint and a cache dir (well, if we have a disk cache)
+	# Should use required_dirs, but no good way to extract from cacheinfo
+	for dir in $(awk -F: '{print $1, $2}' ${vicedir}/cacheinfo); do
+		if [ ! -d "${dir}" ]; then
+			err 1 "Directory ${dir} does not exist. Not starting AFS client."
+		fi
+	done
 }
 
 afsd_poststart()
 {
-        %%PREFIX%%/bin/fs setcrypt -crypt on
+	%%PREFIX%%/bin/fs setcrypt -crypt on
 }
 
 afsd_stop()
 {
-        local afsdir
+	local afsdir
 
-        afsdir=$(awk -F: '{print $1}' ${vicedir}/cacheinfo)
-        if ! umount $afsdir; then
-                [ -n "${rc_force}" ] && umount -f ${afsdir}
-        fi
-        kldunload ${kmod}
+	afsdir=$(awk -F: '{print $1}' ${vicedir}/cacheinfo)
+	if ! umount $afsdir; then
+		[ -n "${rc_force}" ] && umount -f ${afsdir}
+	fi
+	kldunload ${kmod}
 }
 
 run_rc_command "$1"
