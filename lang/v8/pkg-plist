@@ -5,4 +5,8 @@ include/v8-profiler.h
 include/v8-testing.h
 include/v8stdint.h
 lib/libv8.a
+lib/libv8.so
+lib/libv8.so.1
 lib/libv8preparser.a
+lib/libv8preparser.so
+lib/libv8preparser.so.1

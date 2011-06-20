@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	v8
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.4
+PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	http://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTNAME}-${PORTVERSION}-${GITVERSION}
@@ -16,16 +17,18 @@ COMMENT=	Google\'s open source JavaScript engine
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
-GITVERSION=	0-g064fc53
+GITVERSION=	0-gf985a1d
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${GITVERSION:S/^0-g//}
 USE_SCONS=	yes
+USE_LDCONFIG=	yes
 OPTIONS=	DEBUG "Build in debug mode" Off \
 		SNAPSHOT "Enable snapshots" Off
 
 .include <bsd.port.options.mk>
 
-SCONS_ARGS=
+SCONS_ARGS=	visibility=default
+
 .if defined(WITHOUT_DEBUG)
 SCONS_ARGS+=	mode=release
 .else
@@ -54,15 +57,17 @@ do-build:
 	@cd ${BUILD_WRKSRC} && \
 	${SETENV} ${SCONS_BUILDENV} ${SCONS_BIN} ${SCONS_ENV} ${_MAKE_JOBS} \
 	${SCONS_ARGS} library=static ${SCONS_TARGET}
-.if defined(WITH_SHARED)
 	@cd ${BUILD_WRKSRC} && \
 	${SETENV} ${SCONS_BUILDENV} ${SCONS_BIN} ${SCONS_ENV} ${_MAKE_JOBS} \
 	${SCONS_ARGS} library=shared ${SCONS_TARGET}
-.endif
 
 do-install:
-	${INSTALL_DATA} -m 755 ${WRKSRC}/libv8.a ${PREFIX}/lib
-	${INSTALL_DATA} -m 755 ${WRKSRC}/libv8preparser.a ${PREFIX}/lib
+	${INSTALL_LIB} -m 755 ${WRKSRC}/libv8.a ${PREFIX}/lib/libv8.a
+	${INSTALL_LIB} -m 755 ${WRKSRC}/libv8.so ${PREFIX}/lib/libv8.so.1
+	${INSTALL_LIB} -m 755 ${WRKSRC}/libv8preparser.a ${PREFIX}/lib/libv8preparser.a
+	${INSTALL_LIB} -m 755 ${WRKSRC}/libv8preparser.so ${PREFIX}/lib/libv8preparser.so.1
+	${LN} -sf ${PREFIX}/lib/libv8.so.1 ${PREFIX}/lib/libv8.so
+	${LN} -sf ${PREFIX}/lib/libv8preparser.so.1 ${PREFIX}/lib/libv8preparser.so
 	${INSTALL_DATA} ${WRKSRC}/include/v8.h ${PREFIX}/include/
 	${INSTALL_DATA} ${WRKSRC}/include/v8-debug.h ${PREFIX}/include/
 	${INSTALL_DATA} ${WRKSRC}/include/v8-preparser.h ${PREFIX}/include/
