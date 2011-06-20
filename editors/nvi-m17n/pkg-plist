@@ -1,0 +1,27 @@
+bin/nex
+bin/nvi
+bin/nview
+bin/qregular
+bin/regular
+share/vi/README.english
+share/vi/README.japanese
+share/vi/catalog/dutch
+share/vi/catalog/english
+share/vi/catalog/french
+share/vi/catalog/german
+share/vi/catalog/ru_SU.KOI8-R
+share/vi/catalog/spanish
+share/vi/catalog/swedish
+share/vi/perl/forall.pl
+share/vi/perl/make.pl
+share/vi/perl/tk.pl
+share/vi/perl/wc.pl
+share/vi/recover
+share/vi/tcl/errors.tcl
+share/vi/tcl/gnats.tcl
+share/vi/tcl/mailprocs.tcl
+share/vi/tcl/wc.tcl
+@dirrm share/vi/tcl
+@dirrm share/vi/perl
+@dirrm share/vi/catalog
+@dirrm share/vi

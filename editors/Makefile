@@ -176,6 +176,7 @@
     SUBDIR += ne
     SUBDIR += nedit
     SUBDIR += nvi-devel
+    SUBDIR += nvi-m17n
     SUBDIR += nxml
     SUBDIR += nxml-emacs21
     SUBDIR += omegaT
