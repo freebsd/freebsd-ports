@@ -7,7 +7,7 @@
 
 PORTNAME=	node
 PORTVERSION=	0.4.8
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nodejs.org/dist/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
@@ -32,7 +32,7 @@ PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == amd64
-BUILD_DEPENDS+=	${LOCALBASE}/include/v8.h:${PORTSDIR}/lang/v8
+LIB_DEPENDS+=	v8.1:${PORTSDIR}/lang/v8
 CONFIGURE_ARGS+=	--shared-v8-includes=${LOCALBASE}/include --shared-v8-libpath=${LOCALBASE}/lib
 PLIST_SUB+=	SHAREDV8="@comment "
 .else
