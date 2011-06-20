@@ -35,6 +35,7 @@ SLAVEDIRS=	editors/vim-lite
 
 .if defined(WITH_OPTIONS) || defined(WITH_VIM_OPTIONS)
 .include "${.CURDIR}/../vim/options"
+.include <bsd.port.options.mk>
 .endif
 
 CONFLICTS=	vim6* vim*-lite vim*-gnome
