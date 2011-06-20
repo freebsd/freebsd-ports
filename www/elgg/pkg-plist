@@ -202,6 +202,7 @@
 %%WWWDIR%%/engine/schema/upgrades/2010062401.sql
 %%WWWDIR%%/engine/settings.example.php
 %%WWWDIR%%/engine/start.php
+%%WWWDIR%%/engine/tests/api/access_collections.php
 %%WWWDIR%%/engine/tests/api/entity_getter_functions.php
 %%WWWDIR%%/engine/tests/elgg_unit_test.php
 %%WWWDIR%%/engine/tests/objects/entities.php
@@ -850,6 +851,7 @@
 %%WWWDIR%%/mod/thewire/views/rss/object/thewire.php
 %%WWWDIR%%/mod/thewire/views/rss/search/object/thewire/entity.php
 %%WWWDIR%%/mod/tinymce/LICENCE.txt
+%%WWWDIR%%/mod/tinymce/css/elgg_content.css
 %%WWWDIR%%/mod/tinymce/languages/en.php
 %%WWWDIR%%/mod/tinymce/manifest.xml
 %%WWWDIR%%/mod/tinymce/readme.txt
@@ -1870,6 +1872,7 @@
 @dirrm %%WWWDIR%%/mod/tinymce/tinymce/jscripts
 @dirrm %%WWWDIR%%/mod/tinymce/tinymce
 @dirrm %%WWWDIR%%/mod/tinymce/languages
+@dirrm %%WWWDIR%%/mod/tinymce/css
 @dirrm %%WWWDIR%%/mod/tinymce
 @dirrm %%WWWDIR%%/mod/thewire/views/rss/search/object/thewire
 @dirrm %%WWWDIR%%/mod/thewire/views/rss/search/object
