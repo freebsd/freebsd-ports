@@ -180,7 +180,7 @@ lib/afs/libbudb.a
 lib/afs/libbutm.a
 lib/afs/libbxdb.a
 lib/afs/libcmd.a
-lib/afs/libcom_err.a
+lib/afs/libafscom_err.a
 lib/afs/libdir.a
 lib/afs/libfsprobe.a
 lib/afs/libgtx.a
@@ -233,7 +233,7 @@ libexec/openafs/vlserver
 libexec/openafs/volserver
 libexec/openafs/salvageserver
 libexec/openafs/dasalvager
-share/openafs/C/afszcm.cat
+%%DATADIR%%/C/afszcm.cat
 %%FUSE%%sbin/afsd.fuse
 sbin/dafssync-debug
 sbin/prdb_check
@@ -256,7 +256,6 @@ sbin/vos
 sbin/uss
 sbin/backup
 sbin/butc
-sbin/kdump
 sbin/rxdebug
 sbin/bos_util
 sbin/fms
@@ -279,8 +278,8 @@ etc/openafs/cacheinfo.sample
 @dirrm lib/afs
 @dirrm libexec/openafs
 @dirrmtry etc/openafs
-@dirrm share/openafs/C
-@dirrm share/openafs
+@dirrm %%DATADIR%%/C
+@dirrm %%DATADIR%%
 @cwd /boot/modules
 libafs.ko
 @exec kldxref /boot/modules

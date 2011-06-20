@@ -1,0 +1,26 @@
+--- ./src/afs/Makefile.in.orig	2011-05-27 13:35:30.000000000 -0400
++++ ./src/afs/Makefile.in	2011-06-16 13:27:08.000000000 -0400
+@@ -36,8 +36,6 @@
+ 			gencat --new afszcm.cat afs_trace.msf ;; \
+ 		*_darwin_* ) \
+ 			gencat -new afszcm.cat afs_trace.msf ;; \
+-		i386_fbsd*) \
+-			echo No gencat for ${SYS_NAME} ;; \
+ 		* ) \
+ 			gencat afszcm.cat afs_trace.msf ;; \
+ 	esac
+@@ -87,13 +85,7 @@
+ 	    ${DESTDIR}${includedir}/afs/osi_inode.h
+ 	${INSTALL_DATA} ${srcdir}/sysctl.h ${DESTDIR}${includedir}/afs/sysctl.h
+ 	${INSTALL_DATA} unified_afs.h ${DESTDIR}${includedir}/afs/unified_afs.h
+-	case ${SYS_NAME} in \
+-	    i386_fbsd*) \
+-		echo skipping afszcm.cat install for ${SYS_NAME} ;; \
+-	    *) \
+-		${INSTALL_DATA} afszcm.cat \
+-		    ${DESTDIR}${afsdatadir}/C/afszcm.cat ;; \
+-	esac
++	${INSTALL_DATA} afszcm.cat ${DESTDIR}${afsdatadir}/C/afszcm.cat
+ 	case ${SYS_NAME} in \
+ 	    *linux*) \
+ 		${INSTALL_DATA} ${srcdir}/${MKAFS_OSTYPE}/osi_vfs.h \
