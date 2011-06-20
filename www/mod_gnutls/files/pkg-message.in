@@ -16,7 +16,4 @@ Sample %%PREFIX%%/etc/apache22/httpd.conf.
                 GnuTLSPriorities       NORMAL:%COMPAT
         </Directory>
 
-If you have disabled all configuration for mod_ssl,
-you have to disable LoadModule for mod_ssl.
-
 *********************************************************************
