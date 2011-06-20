@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hiredis
-DISTVERSION=	0.10.0
+DISTVERSION=	0.10.1
 CATEGORIES=	databases
 MASTER_SITES=	https://github.com/antirez/hiredis/tarball/v${DISTVERSION}/
 DISTNAME=	antirez-${PORTNAME}-v${DISTVERSION}-0-g${GITVERSION}
@@ -16,7 +16,7 @@ COMMENT=	Minimalistic C client library for the Redis database
 
 LICENSE=	BSD
 
-GITVERSION=	6d026b7
+GITVERSION=	3cc6a7f
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/antirez-${PORTNAME}-${GITVERSION}
 
