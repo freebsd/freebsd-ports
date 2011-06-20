@@ -25,6 +25,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 post-patch:
 	@${REINPLACE_CMD} -e "/-include/d" \
 		-e "s/^CFLAGS=.*/CFLAGS=${CFLAGS} -DUNIX_HOST/" \
+		-e "s/gcc/${CC}/" \
 		${WRKSRC}/Makefile
 
 do-install:
