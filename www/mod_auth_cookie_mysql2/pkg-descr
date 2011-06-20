@@ -1,4 +1,11 @@
 This Apache module allows authentication against a MySQL database via a 
 cryptographically secure cookie.
 
+Features:
+  - Fake Basic Auth with cookies
+  - Cookie only consists of random session data, no username or password
+  - Can check expiry information stored in database against cookie
+  - Can check if the remote IP is equal to the IP stored in database
+  - Can be used for Single-Sign-On (SSO).
+
 WWW: http://home.digithi.de/digithi/dev/mod_auth_cookie_mysql/
