@@ -7,14 +7,14 @@
 
 PORTNAME=	megapov
 PORTVERSION=	1.2.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://megapov.inetart.net/packages/unix/
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	Unofficial extensions of POV-Ray
 
-RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
+RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		jpeg:${PORTSDIR}/graphics/jpeg \
 		tiff:${PORTSDIR}/graphics/tiff
