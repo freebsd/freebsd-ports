@@ -1,0 +1,106 @@
+*** Makefile.in.orig	Thu Mar  6 13:19:46 1997
+--- Makefile.in	Thu Mar  6 13:23:40 1997
+***************
+*** 87,95 ****
+  	cd $(bindir) && $(chmod) $(emode) `echo vi | sed '$(transform)'`
+  	cd $(bindir) && $(rm) -f `echo ex | sed '$(transform)'`
+  	cd $(bindir) && $(rm) -f `echo view | sed '$(transform)'`
+! 	cd $(bindir) && $(ln) \
+  		`echo vi | sed '$(transform)'` `echo ex | sed '$(transform)'`
+! 	cd $(bindir) && $(ln) \
+  		`echo vi | sed '$(transform)'` `echo view | sed '$(transform)'`
+  	cd $(bindir) && $(rm) -f regular qregular
+  	$(cp) regular $(bindir)/regular
+--- 87,95 ----
+  	cd $(bindir) && $(chmod) $(emode) `echo vi | sed '$(transform)'`
+  	cd $(bindir) && $(rm) -f `echo ex | sed '$(transform)'`
+  	cd $(bindir) && $(rm) -f `echo view | sed '$(transform)'`
+! 	cd $(bindir) && $(ln) -s \
+  		`echo vi | sed '$(transform)'` `echo ex | sed '$(transform)'`
+! 	cd $(bindir) && $(ln) -s \
+  		`echo vi | sed '$(transform)'` `echo view | sed '$(transform)'`
+  	cd $(bindir) && $(rm) -f regular qregular
+  	$(cp) regular $(bindir)/regular
+***************
+*** 97,115 ****
+  	cd $(bindir) && $(chmod) $(emode) regular qregular
+  	[ -d $(mandir) ] || \
+  	    ($(mkdir) $(mandir) && $(chmod) $(dmode) $(mandir))
+! 	[ -d $(mandir)/cat1 ] || \
+! 	    ($(mkdir) $(mandir)/cat1 && $(chmod) $(dmode) $(mandir)/cat1)
+  	@echo "Installing man pages: $(mandir) ..."
+! 	cd $(mandir)/cat1 && $(rm) -f `echo vi.0 | sed '$(transform)'`
+! 	$(cp) $(srcdir)/docs/USD.doc/vi.man/vi.0 \
+! 	    $(mandir)/cat1/`echo vi.0 | sed '$(transform)'`
+! 	cd $(mandir)/cat1 && $(chmod) $(fmode) `echo vi.0 | sed '$(transform)'`
+! 	cd $(mandir)/cat1 && $(rm) -f `echo ex.0 | sed '$(transform)'`
+! 	cd $(mandir)/cat1 && $(rm) -f `echo view.0 | sed '$(transform)'`
+! 	cd $(mandir)/cat1 && $(ln) \
+! 	    `echo vi.0 | sed '$(transform)'` `echo ex.0 | sed '$(transform)'`
+! 	cd $(mandir)/cat1 && $(ln) \
+! 	    `echo vi.0 | sed '$(transform)'` `echo view.0 | sed '$(transform)'`
+  	[ -d $(mandir)/man1 ] || \
+  	    ($(mkdir) $(mandir)/man1 && $(chmod) $(dmode) $(mandir)/man1)
+  	cd $(mandir)/man1 && $(rm) -f `echo vi.1 | sed '$(transform)'`
+--- 97,115 ----
+  	cd $(bindir) && $(chmod) $(emode) regular qregular
+  	[ -d $(mandir) ] || \
+  	    ($(mkdir) $(mandir) && $(chmod) $(dmode) $(mandir))
+! #	[ -d $(mandir)/cat1 ] || \
+! #	    ($(mkdir) $(mandir)/cat1 && $(chmod) $(dmode) $(mandir)/cat1)
+  	@echo "Installing man pages: $(mandir) ..."
+! #	cd $(mandir)/cat1 && $(rm) -f `echo vi.0 | sed '$(transform)'`
+! #	$(cp) $(srcdir)/docs/USD.doc/vi.man/vi.0 \
+! #	    $(mandir)/cat1/`echo vi.0 | sed '$(transform)'`
+! #	cd $(mandir)/cat1 && $(chmod) $(fmode) `echo vi.0 | sed '$(transform)'`
+! #	cd $(mandir)/cat1 && $(rm) -f `echo ex.0 | sed '$(transform)'`
+! #	cd $(mandir)/cat1 && $(rm) -f `echo view.0 | sed '$(transform)'`
+! #	cd $(mandir)/cat1 && $(ln) -s \
+! #	    `echo vi.0 | sed '$(transform)'` `echo ex.0 | sed '$(transform)'`
+! #	cd $(mandir)/cat1 && $(ln) -s \
+! #	    `echo vi.0 | sed '$(transform)'` `echo view.0 | sed '$(transform)'`
+  	[ -d $(mandir)/man1 ] || \
+  	    ($(mkdir) $(mandir)/man1 && $(chmod) $(dmode) $(mandir)/man1)
+  	cd $(mandir)/man1 && $(rm) -f `echo vi.1 | sed '$(transform)'`
+***************
+*** 118,126 ****
+  	cd $(mandir)/man1 && $(chmod) $(fmode) `echo vi.1 | sed '$(transform)'`
+  	cd $(mandir)/man1 && $(rm) -f `echo ex.1 | sed '$(transform)'`
+  	cd $(mandir)/man1 && $(rm) -f `echo view.1 | sed '$(transform)'`
+! 	cd $(mandir)/man1 && $(ln) \
+  	    `echo vi.1 | sed '$(transform)'` `echo ex.1 | sed '$(transform)'`
+! 	cd $(mandir)/man1 && $(ln) \
+  	    `echo vi.1 | sed '$(transform)'` `echo view.1 | sed '$(transform)'`
+  
+  cat=	dutch english french german ru_SU.KOI8-R spanish swedish
+--- 118,126 ----
+  	cd $(mandir)/man1 && $(chmod) $(fmode) `echo vi.1 | sed '$(transform)'`
+  	cd $(mandir)/man1 && $(rm) -f `echo ex.1 | sed '$(transform)'`
+  	cd $(mandir)/man1 && $(rm) -f `echo view.1 | sed '$(transform)'`
+! 	cd $(mandir)/man1 && $(ln) -s \
+  	    `echo vi.1 | sed '$(transform)'` `echo ex.1 | sed '$(transform)'`
+! 	cd $(mandir)/man1 && $(ln) -s \
+  	    `echo vi.1 | sed '$(transform)'` `echo view.1 | sed '$(transform)'`
+  
+  cat=	dutch english french german ru_SU.KOI8-R spanish swedish
+***************
+*** 163,171 ****
+  	cd $(bindir) && $(rm) -f `echo vi | sed '$(transform)'`
+  	cd $(bindir) && $(rm) -f `echo view | sed '$(transform)'`
+  	cd $(bindir) && $(rm) -f regular qregular
+! 	cd $(mandir)/cat1 && $(rm) -f `echo ex.0 | sed '$(transform)'`
+! 	cd $(mandir)/cat1 && $(rm) -f `echo vi.0 | sed '$(transform)'`
+! 	cd $(mandir)/cat1 && $(rm) -f `echo view.0 | sed '$(transform)'`
+  	cd $(mandir)/man1 && $(rm) -f `echo ex.1 | sed '$(transform)'`
+  	cd $(mandir)/man1 && $(rm) -f `echo vi.1 | sed '$(transform)'`
+  	cd $(mandir)/man1 && $(rm) -f `echo view.1 | sed '$(transform)'`
+--- 163,171 ----
+  	cd $(bindir) && $(rm) -f `echo vi | sed '$(transform)'`
+  	cd $(bindir) && $(rm) -f `echo view | sed '$(transform)'`
+  	cd $(bindir) && $(rm) -f regular qregular
+! #	cd $(mandir)/cat1 && $(rm) -f `echo ex.0 | sed '$(transform)'`
+! #	cd $(mandir)/cat1 && $(rm) -f `echo vi.0 | sed '$(transform)'`
+! #	cd $(mandir)/cat1 && $(rm) -f `echo view.0 | sed '$(transform)'`
+  	cd $(mandir)/man1 && $(rm) -f `echo ex.1 | sed '$(transform)'`
+  	cd $(mandir)/man1 && $(rm) -f `echo vi.1 | sed '$(transform)'`
+  	cd $(mandir)/man1 && $(rm) -f `echo view.1 | sed '$(transform)'`

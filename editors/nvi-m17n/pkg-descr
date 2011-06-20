@@ -1,0 +1,22 @@
+This ports contains multilingualized nex/nvi.
+
+nex/nvi is a freely redistributable implementation of ex/vi text
+editors originally distributed as part of the Fourth Berkeley
+Software Distribution (4BSD), by the University of California,
+Berkeley.
+
+Multilingual patch enables you to use the following multilingual
+encoding methods, such as:
+	none iso-8859-[1234789] latin1 latin2
+	euc-jp-1978 euc-jp euc-jp-1983 euc-jp-1990 euc-cn euc-kr
+	iso-2022-cn iso-2022-jp iso-2022-kr
+	iso-2022-7-1 iso-2022-7-2 iso-2022-8-2
+	sjis big5 hz euc-tw
+Multilingual support has been set up to use some of the above (guess from
+the name of the ports/packages) as default value.
+You can change encoding style on the fly, or by setting up ~/.exrc.
+With configurations, for Japanese encodings, you can also enjoy the
+embedded canna support.
+See /usr/local/share/vi/README.* for details of multilingual patch.
+
+WWW: http://www.bostic.com/vi/
