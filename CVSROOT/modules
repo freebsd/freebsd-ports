@@ -3285,7 +3285,6 @@ eyeos-themes                    ports/www/eyeos-themes
 ez-ipupdate                     ports/dns/ez-ipupdate
 ez-pine-gpg                     ports/mail/ez-pine-gpg
 ezbounce                        ports/irc/ezbounce
-ezbounce-devel                  ports/irc/ezbounce-devel
 ezfm                            ports/x11-fm/ezfm
 ezjail                          ports/sysutils/ezjail
 ezm3                            ports/lang/ezm3
@@ -20091,6 +20090,7 @@ peeper                          ports/x11/peeper
 peg-e                           ports/games/peg-e
 peksystray                      ports/x11-wm/peksystray
 pekwm                           ports/x11-wm/pekwm
+pelican                         ports/www/pelican
 pen                             ports/net/pen
 pencil                          ports/graphics/pencil
 pengpong                        ports/games/pengpong
@@ -21401,6 +21401,7 @@ py-fastaudio                    ports/audio/py-fastaudio
 py-fcgi                         ports/www/py-fcgi
 py-fchksum                      ports/security/py-fchksum
 py-feedfinder                   ports/www/py-feedfinder
+py-feedgenerator                ports/www/py-feedgenerator
 py-feedparser                   ports/textproc/py-feedparser
 py-filelike                     ports/sysutils/py-filelike
 py-fileutils                    ports/devel/py-fileutils
@@ -23256,6 +23257,7 @@ rubygem-dm-active_model         ports/databases/rubygem-dm-active_model
 rubygem-dm-aggregates           ports/databases/rubygem-dm-aggregates
 rubygem-dm-constraints          ports/databases/rubygem-dm-constraints
 rubygem-dm-core                 ports/databases/rubygem-dm-core
+rubygem-dm-devise               ports/databases/rubygem-dm-devise
 rubygem-dm-do-adapter           ports/databases/rubygem-dm-do-adapter
 rubygem-dm-migrations           ports/databases/rubygem-dm-migrations
 rubygem-dm-mysql-adapter        ports/databases/rubygem-dm-mysql-adapter
@@ -23368,6 +23370,7 @@ rubygem-mechanize               ports/www/rubygem-mechanize
 rubygem-memcache-client         ports/databases/rubygem-memcache-client
 rubygem-metaid                  ports/devel/rubygem-metaid
 rubygem-mime-types              ports/misc/rubygem-mime-types
+rubygem-minitest                ports/devel/rubygem-minitest
 rubygem-mixlib-authentication   ports/devel/rubygem-mixlib-authentication
 rubygem-mixlib-cli              ports/devel/rubygem-mixlib-cli
 rubygem-mixlib-config           ports/devel/rubygem-mixlib-config
@@ -23387,6 +23390,7 @@ rubygem-mutter                  ports/devel/rubygem-mutter
 rubygem-ncurses                 ports/devel/rubygem-ncurses
 rubygem-ncursesw                ports/devel/rubygem-ncursesw
 rubygem-needle                  ports/devel/rubygem-needle
+rubygem-net-dns                 ports/dns/rubygem-net-dns
 rubygem-net-irc                 ports/irc/rubygem-net-irc
 rubygem-net-ldap                ports/net/rubygem-net-ldap
 rubygem-net-netrc               ports/net/rubygem-net-netrc
@@ -23452,6 +23456,7 @@ rubygem-rchardet                ports/textproc/rubygem-rchardet
 rubygem-rcov                    ports/devel/rubygem-rcov
 rubygem-rdiscount               ports/textproc/rubygem-rdiscount
 rubygem-redcloth                ports/www/rubygem-redcloth
+rubygem-require_all             ports/devel/rubygem-require_all
 rubygem-rest-client             ports/www/rubygem-rest-client
 rubygem-rfacebook               ports/www/rubygem-rfacebook
 rubygem-rfeedfinder             ports/www/rubygem-rfeedfinder
@@ -23513,6 +23518,7 @@ rubygem-stomp                   ports/devel/rubygem-stomp
 rubygem-stream                  ports/devel/rubygem-stream
 rubygem-streetaddress           ports/devel/rubygem-streetaddress
 rubygem-stringex                ports/devel/rubygem-stringex
+rubygem-sugar-high              ports/devel/rubygem-sugar-high
 rubygem-sundawg_country_codes   ports/devel/rubygem-sundawg_country_codes
 rubygem-syntax                  ports/textproc/rubygem-syntax
 rubygem-sys-admin               ports/sysutils/rubygem-sys-admin
@@ -23528,6 +23534,7 @@ rubygem-templater               ports/devel/rubygem-templater
 rubygem-termcolor               ports/textproc/rubygem-termcolor
 rubygem-terminal-table          ports/textproc/rubygem-terminal-table
 rubygem-termtter                ports/net-im/rubygem-termtter
+rubygem-test                    ports/devel/rubygem-test
 rubygem-test-unit               ports/devel/rubygem-test-unit
 rubygem-thin                    ports/www/rubygem-thin
 rubygem-thor                    ports/devel/rubygem-thor
@@ -26832,6 +26839,8 @@ xmms-sexypsf                    ports/audio/xmms-sexypsf
 xmms-sexyspc                    ports/audio/xmms-sexyspc
 xmms-shn                        ports/audio/xmms-shn
 xmms-sid                        ports/audio/xmms-sid
+xmms-skins                      ports/multimedia/xmms-skins
+xmms-skins-huge                 ports/multimedia/xmms-skins-huge
 xmms-sndfile                    ports/audio/xmms-sndfile
 xmms-sndstretch                 ports/audio/xmms-sndstretch
 xmms-speex                      ports/audio/xmms-speex
