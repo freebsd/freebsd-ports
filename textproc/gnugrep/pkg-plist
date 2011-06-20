@@ -1,6 +1,7 @@
 bin/egrep
 bin/fgrep
 bin/grep
+lib/charset.alias
 %%NLS%%share/locale/af/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/be/LC_MESSAGES/grep.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/grep.mo
