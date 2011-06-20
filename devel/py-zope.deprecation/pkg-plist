@@ -8,7 +8,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/__init__.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/deprecation/DEPENDENCIES.cfg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/deprecation/README.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/deprecation/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/zope/deprecation/__init__.pyc
