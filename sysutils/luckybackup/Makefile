@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	luckybackup
-PORTVERSION=	0.4.5
+PORTVERSION=	0.4.6
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/source
 
@@ -25,19 +25,19 @@ MANCOMPRESSED=	yes
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license/gpl.txt
 
-.include <bsd.port.pre.mk>
-
 post-patch:
 	${REINPLACE_CMD} -e 's|/usr||g' -e '/INSTALLS/s|debianmenu ||' \
 		-e '/manpage/s|share/||' ${WRKSRC}/luckybackup.pro
 	${REINPLACE_CMD} -e 's|/usr/bin/||g' -e 's|/usr/share/pixmaps/||g' \
 		${WRKSRC}/menu/*.desktop
+	${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \
+		${WRKSRC}/src/executenow.cpp
 	${REINPLACE_CMD} -e 's|/usr|${PREFIX}|g' \
-		${WRKSRC}/src/executenow.cpp \
 		${WRKSRC}/src/global.h \
 		${WRKSRC}/src/scheduleDialog.cpp
 
 do-configure:
-	cd ${WRKSRC} && ${QMAKE}
+	@cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} \
+		${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
