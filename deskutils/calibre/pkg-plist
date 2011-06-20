@@ -464,6 +464,7 @@ lib/calibre/calibre/gui2/actions/fetch_news.py
 lib/calibre/calibre/gui2/actions/help.py
 lib/calibre/calibre/gui2/actions/next_match.py
 lib/calibre/calibre/gui2/actions/open.py
+lib/calibre/calibre/gui2/actions/plugin_updates.py
 lib/calibre/calibre/gui2/actions/preferences.py
 lib/calibre/calibre/gui2/actions/restart.py
 lib/calibre/calibre/gui2/actions/save_to_disk.py
@@ -594,6 +595,7 @@ lib/calibre/calibre/gui2/dialogs/metadata_bulk.py
 lib/calibre/calibre/gui2/dialogs/metadata_bulk_ui.py
 lib/calibre/calibre/gui2/dialogs/password.py
 lib/calibre/calibre/gui2/dialogs/password_ui.py
+lib/calibre/calibre/gui2/dialogs/plugin_updater.py
 lib/calibre/calibre/gui2/dialogs/progress.py
 lib/calibre/calibre/gui2/dialogs/progress_ui.py
 lib/calibre/calibre/gui2/dialogs/restore_library.py
@@ -1225,6 +1227,19 @@ share/calibre/images/ok.png
 share/calibre/images/page.png
 share/calibre/images/plugboard.png
 share/calibre/images/plugins.png
+share/calibre/images/plugins/plugin_updater_updates.png
+share/calibre/images/plugins/plugin_new_invalid.png
+share/calibre/images/plugins/plugin_upgrade_ok.png
+share/calibre/images/plugins/plugin_disabled_ok.png
+share/calibre/images/plugins/plugin_new_valid.png
+share/calibre/images/plugins/plugin_new.png
+share/calibre/images/plugins/plugin_upgrade_valid.png
+share/calibre/images/plugins/plugin_deprecated.png
+share/calibre/images/plugins/mobileread.png
+share/calibre/images/plugins/plugin_disabled_invalid.png
+share/calibre/images/plugins/plugin_updater.png
+share/calibre/images/plugins/plugin_disabled_valid.png
+share/calibre/images/plugins/plugin_upgrade_invalid.png
 share/calibre/images/plus.png
 share/calibre/images/plusplus.png
 share/calibre/images/previous.png
@@ -1335,6 +1350,7 @@ share/calibre/viewer/referencing.js
 @dirrm share/calibre/jacket
 @dirrm share/calibre/images/mimetypes
 @dirrm share/calibre/images/devices
+@dirrm share/calibre/images/plugins
 @dirrm share/calibre/images
 @dirrm share/calibre/fonts/prs500
 @dirrm share/calibre/fonts/liberation
