@@ -9,11 +9,11 @@ PORTNAME=		Lingua-Stem-Snowball-Se
 PORTVERSION=		1.2
 CATEGORIES=		textproc perl5
 MASTER_SITES=		CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/A/AS/ASKSH
+MASTER_SITE_SUBDIR=	CPAN:ASKSH
 PKGNAMEPREFIX=		p5-
 DISTNAME=		Snowball-Swedish-${PORTVERSION}
 
-MAINTAINER=		ports@FreeBSD.org
+MAINTAINER=		perl@FreeBSD.org
 COMMENT=		A stemmer for Swedish
 
 PERL_CONFIGURE=		yes

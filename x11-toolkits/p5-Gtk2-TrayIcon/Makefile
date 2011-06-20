@@ -10,10 +10,10 @@ PORTVERSION=	0.06
 PORTREVISION=	4
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/B/BO/BORUP
+MASTER_SITE_SUBDIR=	CPAN:BORUP
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the EggTrayIcon library
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Cairo.pm:${PORTSDIR}/graphics/p5-Cairo \

@@ -9,7 +9,7 @@ PORTNAME=	makepatch
 PORTVERSION=	2.04
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/JV
+MASTER_SITE_SUBDIR=	CPAN:JV
 
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Perl scripts to assist in the generation and application of patches

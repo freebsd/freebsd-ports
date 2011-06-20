@@ -9,10 +9,10 @@ PORTNAME=	Petal-CodePerl
 PORTVERSION=	0.06
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/F/FD/FDALY
+MASTER_SITE_SUBDIR=	CPAN:FDALY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Make Petal go faster by compiling the expressions
 
 BUILD_DEPENDS=	${SITE_PERL}/Petal.pm:${PORTSDIR}/textproc/p5-Petal \
