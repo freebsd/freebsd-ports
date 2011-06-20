@@ -21,6 +21,9 @@ USE_ZIP=	yes
 
 PLIST_FILES=	bin/AtomicParsley
 
+post-patch:
+	@${REINPLACE_CMD} -e 's,g++,${CXX},g' -e 's,-g -O2 -Wall,${CXXFLAGS},g' ${WRKSRC}/build
+
 do-build:
 	cd ${WRKSRC} && ./build
 do-install:
