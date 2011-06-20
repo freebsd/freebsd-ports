@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	nvi
-PORTVERSION=	1.79.20040401
+PORTVERSION=	1.79.20040608
 PORTEPOCH=	1
 CATEGORIES?=	editors
-MASTER_SITES=	http://people.allbsd.org/~hrs/FreeBSD/
+MASTER_SITES=	ftp://ftp.mk.bsdclub.org/pub/FreeBSD/distfiles/	\
+		http://people.allbsd.org/~hrs/FreeBSD/
 PKGNAMESUFFIX?=	-m17n
 DISTNAME=	nvi-1.79
 
 PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	nvi-1.79.m17n-20040401.diff.gz
+PATCHFILES=	nvi-m17n-1.79-20040608.diff.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of vi/ex, with multilingual patch, no default settings
