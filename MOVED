@@ -34,9 +34,9 @@ devel/wxGlade-devel||2008-02-11|Has expired: has been the same version as wxGlad
 sysutils/sge|sysutils/sge60|2008-02-12|Splitting into 6.0 and 6.1 versions
 mail/linux-netscape-messenger|mail/thunderbird|2008-02-13|Abandoned by AOL
 www/linux-netscape-navigator|www/firefox|2008-02-13|Abandoned by AOL
-audio/daapd||2008-02-26|Has expired: Development stalled, outdated. Does not support newer versions of DAAP protocol.
-audio/daaplib||2008-02-26|Has expired: Development stalled for years, outdated. Does not support newer versions of DAAP protocol.
-www/libhttpd-persistent||2008-02-27|Has expired: Development stalled for years, outdated.
+audio/daapd||2008-02-26|Has expired: Development stalled, outdated. Does not support newer versions of DAAP protocol
+audio/daaplib||2008-02-26|Has expired: Development stalled for years, outdated. Does not support newer versions of DAAP protocol
+www/libhttpd-persistent||2008-02-27|Has expired: Development stalled for years, outdated
 www/vtiger4||2008-02-27|Has expired: This version is no longer supported by the developers
 www/xpi-surfkeys||2008-02-27|Has expired: Development has been ceased
 sysutils/eventwatcher||2008-02-27|Has expired: no active development
@@ -50,7 +50,7 @@ x11-themes/indubstrial||2008-02-28|Has expired: yes
 x11-themes/gtk-smooth-engine||2008-02-28|Has expired: Redundant port (now included in gtk-engines), no release since 2005
 security/amavis-perl||2008-02-28|Has expired: depends on misc/compat3x, which has security problems
 sysutils/cdbakeoven||2008-02-28|Has expired: Abandonware
-net/gnu-finger||2008-02-28|Has expired: no active development and known security vulnerabilities.
+net/gnu-finger||2008-02-28|Has expired: no active development and known security vulnerabilities
 misc/seizedesktop||2008-02-28|Has expired: development stalled for years, outdated, unmaintained
 net-im/wildfire||2008-02-28|Has expired: Use net-im/openfire instead of this port
 www/gekko||2008-02-28|Has expired: This port is not being developed anymore. This was replaced by textmotion  http://code.google.com/p/textmotion/
@@ -101,7 +101,7 @@ x11/XFree86-4-documents||2008-03-07|XFree86-4 is no longer supported on FreeBSD
 x11/XFree86-4-libraries||2008-03-07|XFree86-4 is no longer supported on FreeBSD
 x11/XFree86-4-manuals||2008-03-07|XFree86-4 is no longer supported on FreeBSD
 x11/ecore|devel/ecore|2008-03-12|Change category
-www/scout||2008-03-12|Has expired: Abandonware, website disappeared.
+www/scout||2008-03-12|Has expired: Abandonware, website disappeared
 security/nmapfe|security/zenmap|2008-03-14|Project renamed
 x11/hs-x11-extras-ghc||2008-03-14|Has expired: Use x11/hs-x11-ghc instead
 www/mod_dosevasise20||2008-03-14|Has expired: Use www/mod_evasive20 instead
@@ -146,8 +146,8 @@ ports-mgmt/instant-tinderbox||2008-05-07|No longer functional in the current inf
 devel/swigruby||2008-05-11|Has expired: use devel/swig13 instead, last release was 8 years ago
 japanese/epson-ttfonts||2008-05-12|Removed because of extremely restrictive license
 x11-servers/xorg-printserver||2008-05-15|Has expired, software is obsolete
-www/mod_evasive20|www/mod_evasive|2008-05-17|No reason to have the 20 in the name, so remove it.
-multimedia/smplayer-qt4||2008-05-17|Functionality is now included in smplayer.
+www/mod_evasive20|www/mod_evasive|2008-05-17|No reason to have the 20 in the name, so remove it
+multimedia/smplayer-qt4||2008-05-17|Functionality is now included in smplayer
 devel/php-Net_Gearman|devel/pear-Net_Gearman|2008-05-19|Now it is a pear module
 devel/swig11||2008-05-21|Has expired: use devel/swig13 instead, last release of 1.1 was 8 years ago
 japanese/truetypefonts||2008-05-25|Removed due to copyright problem
@@ -162,7 +162,7 @@ japanese/motoya-ttfonts||2008-05-31|Removed because of extremely restrictive lic
 devel/libffi-devel||2008-06-02|Has expired: Use devel/libffi instead
 www/mod_auth_pwcheck||2008-06-17|Depends on expired port, website disappeared
 security/cyrus-sasl||2008-06-17|Has expired: Unsupported, please move to cyrus-sasl2
-converters/compface|mail/faces|2008-06-17|Removed in favour to mail/faces.
+converters/compface|mail/faces|2008-06-17|Removed in favour to mail/faces
 security/p5-openxpki-client-cli||2008-06-18|Has expired: no longer supported. Use p5-openxpki-client-html-mason instead
 audio/mbrola||2008-06-18|Has expired: relies on forbidden port misc/compat3x; last release 2000
 emulators/linux-winetools||2008-06-18|Has expired: very old, discontinued, and replaced by emulators/wine-doors
@@ -170,7 +170,7 @@ games/linux-x-plane||2008-06-18|Relies on expired, unfetchable installer port
 games/linux-x-plane-net-installer||2008-06-18|Has expired: unfetchable
 japanese/vje30||2008-06-18|Has expired: depends on forbidden port misc/compat3x
 math/umfpack||2008-06-18|Has expired: Outdated subset of math/suitesparse
-net/apache-soap||2008-06-18|Has expired: Development has been ceased, superseded by www/axis.
+net/apache-soap||2008-06-18|Has expired: Development has been ceased, superseded by www/axis
 net/archie||2008-06-18|Has expired: No servers active anymore
 net/xarchie||2008-06-18|Has expired: No servers active anymore
 net/p5-Net-Z3950||2008-06-18|Has expired: does not compile with yaz 3.x, deprecated in favor of ZOOM-Perl (net/p5-Net-Z3950-ZOOM)
@@ -182,15 +182,15 @@ graphics/gtkcairo||2008-06-19|Unused, unfetchable, obsolete
 net/openospfd-devel||2008-06-19|Has expired: no longer maintained
 x11-servers/xorg-server-snap|x11-servers/xorg-server|2008-06-19|Has expired: no longer maintained
 devel/dumb|audio/dumb|2008-06-23|Moved to better category audio
-archivers/dynamite|archivers/libdynamite|2008-06-22|Moved to archivers/libdynamite.
-archivers/orange|archivers/liborange|2008-06-22|Moved to archivers/liborange.
+archivers/dynamite|archivers/libdynamite|2008-06-22|Moved to archivers/libdynamite
+archivers/orange|archivers/liborange|2008-06-22|Moved to archivers/liborange
 security/barnyard-sguil6|security/barnyard-sguil|2008-06-22|Moved to security/barnyard-sguil
 java/bsh|lang/bsh|2008-06-22|Moved to lang/bsh
-www/mod_security2|www/mod_security21|2008-06-22|Moved to www/mod_security2.
+www/mod_security2|www/mod_security21|2008-06-22|Moved to www/mod_security2
 security/ca-roots||2008-06-29|No longer supported by FreeBSD Security Officer
-devel/subversion-perl|devel/p5-subversion|2008-06-30|Rename to reflect official perl5 modules naming scheme.
-devel/subversion-python|devel/py-subversion|2008-06-30|Rename to reflect official python modules naming scheme.
-devel/subversion-ruby|devel/ruby-subversion|2008-06-30|Rename to reflect official ruby modules naming scheme.
+devel/subversion-perl|devel/p5-subversion|2008-06-30|Rename to reflect official perl5 modules naming scheme
+devel/subversion-python|devel/py-subversion|2008-06-30|Rename to reflect official python modules naming scheme
+devel/subversion-ruby|devel/ruby-subversion|2008-06-30|Rename to reflect official ruby modules naming scheme
 misc/goblin|math/goblin|2008-06-30|repo move to a better category
 editors/openoffice.org-1.0||2008-07-02|Removed
 editors/openoffice.org-1.1||2008-07-02|Removed
@@ -315,14 +315,14 @@ japanese/onew-canna+wnn7|japanese/onew|2008-10-26|Integrated into japanese/onew
 japanese/onew-freewnn|japanese/onew|2008-10-26|Integrated into japanese/onew
 japanese/onew-wnn6|japanese/onew|2008-10-26|Integrated into japanese/onew
 japanese/onew-wnn7|japanese/onew|2008-10-26|Integrated into japanese/onew
-japanese/jvim||2008-10-26|Removed: no longer maintained.
-japanese/jvim-canna||2008-10-26|Removed: no longer maintained.
-japanese/jvim-canna+freewnn||2008-10-26|Removed: no longer maintained.
-japanese/jvim-canna+wnn6||2008-10-26|Removed: no longer maintained.
-japanese/jvim-canna+wnn7||2008-10-26|Removed: no longer maintained.
-japanese/jvim-freewnn||2008-10-26|Removed: no longer maintained.
-japanese/jvim-wnn6||2008-10-26|Removed: no longer maintained.
-japanese/jvim-wnn7||2008-10-26|Removed: no longer maintained.
+japanese/jvim||2008-10-26|Removed: no longer maintained
+japanese/jvim-canna||2008-10-26|Removed: no longer maintained
+japanese/jvim-canna+freewnn||2008-10-26|Removed: no longer maintained
+japanese/jvim-canna+wnn6||2008-10-26|Removed: no longer maintained
+japanese/jvim-canna+wnn7||2008-10-26|Removed: no longer maintained
+japanese/jvim-freewnn||2008-10-26|Removed: no longer maintained
+japanese/jvim-wnn6||2008-10-26|Removed: no longer maintained
+japanese/jvim-wnn7||2008-10-26|Removed: no longer maintained
 japanese/jvim3-canna|japanese/jvim3|2008-10-28|Integrated into japanese/jvim3
 japanese/jvim3-canna+freewnn|japanese/jvim3|2008-10-28|Integrated into japanese/jvim3
 japanese/jvim3-canna+wnn6|japanese/jvim3|2008-10-28|Integrated into japanese/jvim3
@@ -486,9 +486,9 @@ www/ocaml-wdialog||2009-02-13|Has expired: has been broken for more than 6 month
 news/sabnzbd||2009-02-13|Has expired: no longer developed, use news/sabnzbdplus instead
 devel/erlslang||2009-02-14|Broken with libslang2; no upstream development
 mail/py-pyclamd|security/py-pyclamd|2009-02-14|Category change
-deskutils/zbgset|deskutils/p5-ZConf-BGSet|2009-02-15|Integrated into deskutils/p5-ZConf-BGSet.
-deskutils/zbgset-admin|deskutils/p5-ZConf-BGSet|2009-02-15|Integrated into deskutils/p5-ZConf-BGSet.
-net/samba32-devel|net/samba32|2009-02-16|Samba 3.2 became stable enough to be used in production.
+deskutils/zbgset|deskutils/p5-ZConf-BGSet|2009-02-15|Integrated into deskutils/p5-ZConf-BGSet
+deskutils/zbgset-admin|deskutils/p5-ZConf-BGSet|2009-02-15|Integrated into deskutils/p5-ZConf-BGSet
+net/samba32-devel|net/samba32|2009-02-16|Samba 3.2 became stable enough to be used in production
 editors/sam||2009-02-19|Has expired: distfile and homepage disappeared
 math/slsc||2009-02-28|Has expired: No longer maintained by author
 finance/eqonomize|finance/eqonomize-kde3|2009-03-02|Use finance/eqonomize-kde3
@@ -514,9 +514,9 @@ graphics/crystalentitylayer-devel||2009-03-09|Has expired: Depends on broken, ex
 graphics/crystalspace-devel||2009-03-09|Has expired: Has been broken for more than 6 months
 ftp/downloader||2009-03-09|Has expired: sources unavailable - website dissappeared
 devel/rubygem-mojombo-grit||2009-03-09|Has expired: Obsolete, use devel/rubygem-grit instead
-mail/postfix1||2009-03-09|Has expired: Not supported anymore by vendor. Please choose a new one version.
-mail/postfix21||2009-03-09|Has expired: Not supported anymore by vendor. Please choose a new one version.
-mail/postfix22||2009-03-09|Has expired: Not supported anymore by vendor. Please choose a new one version.
+mail/postfix1||2009-03-09|Has expired: Not supported anymore by vendor. Please choose a new one version
+mail/postfix21||2009-03-09|Has expired: Not supported anymore by vendor. Please choose a new one version
+mail/postfix22||2009-03-09|Has expired: Not supported anymore by vendor. Please choose a new one version
 www/rubygem-actionwebservice||2009-03-09|Has expired: from rails 2.0 www/rubygem-rails use www/rubygem-activeresource instead
 x11-toolkits/inti-gconf||2009-03-09|Has expired: not maintain by upstream for more than five years and no port depend on this
 x11-toolkits/inti-gl||2009-03-09|Has expired: not maintain by upstream for more than five years and no port depend on this
@@ -649,8 +649,8 @@ devel/powerpc-binutils||2009-06-06|Has expired: use cross-binutils instead
 www/apache-jserv|www/tomcat6|2009-06-08|Has expired: superceeded by tomcat
 lang/perl5.6||2009-06-08|Has expired: no longer under development, use lang/perl5.10 or lang/perl5.8
 multimedia/dplay|multimedia/playd|2009-06-10|Port renamed
-www/epiphany-webkit|www/epiphany|2009-06-10|Webkit backend isn't supported.
-devel/avr-gcc-devel|devel/avr-gcc|2009-06-11|AVR-GCC 4.3.x becomes the default version.
+www/epiphany-webkit|www/epiphany|2009-06-10|Webkit backend isn't supported
+devel/avr-gcc-devel|devel/avr-gcc|2009-06-11|AVR-GCC 4.3.x becomes the default version
 japanese/slirc||2009-06-13|Removed
 chinese/wordpress||2009-06-13|Removed due to security vulnerabilities
 www/amaya||2009-06-13|Removed due to security vulnerabilities
@@ -659,8 +659,8 @@ audio/festival+OGI||2009-06-13|Has expired: unmaintained, does not work with cur
 audio/festlex-ifd||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no active maintainer, no user interest
 audio/festogi-italian||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no active maintainer, no user interest
 audio/festogi-spanish||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no maintainer, no user interest
-audio/festvox-abc||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no user interest.
-audio/festvox-hvs||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no user interest.
+audio/festvox-abc||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no user interest
+audio/festvox-hvs||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no user interest
 audio/festvox-jph||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no maintainer, no user interest
 audio/festvox-lp||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no active maintainer, no user interest
 audio/festvox-mwm||2009-06-13|Has expired: unfulfilled dependencies for 8+ months, no maintainer, no user interest
@@ -772,7 +772,7 @@ x11-toolkits/tk80||2009-07-07|Has expired: tcl8.0 support dropped
 lang/tcl80||2009-07-07|Has expired: tcl8.0 support dropped
 audio/gai-album||2009-07-07|Has expired: abandoned project, does not build
 audio/gai-visual-audio||2009-07-07|Has expired: abandoned project, does not build
-devel/linxt||2009-07-07|Has expired: Use devel/roboctl instead.
+devel/linxt||2009-07-07|Has expired: Use devel/roboctl instead
 german/citrix_ica|net/citrix_ica|2009-07-07|Has expired: Use net/citrix_ica
 japanese/citrix_ica|net/citrix_ica|2009-07-07|Has expired: Use net/citrix_ica
 mail/bogofilter-qdbm||2009-07-07|Has expired: Migrate to bogofilter-tc instead
@@ -911,8 +911,8 @@ net-mgmt/net-snmp-tkmib||2009-12-08|Depends on expired port p5-SNMP
 net-mgmt/p5-SNMP||2009-12-08|Expired
 www/jakarta-tomcat4||2009-12-08|Has expired: www/jakarta-tomcat5 is recommended instead for new installations
 x11-toolkits/p5-Gnome||2009-12-08|Has expired: Has been broken for more than 6 months
-editors/abiword-extras|editors/abiword|2009-12-08|This subport has been included in the main port.
-editors/abiword-plugins|editors/abiword|2009-12-08|This subport has been included in the main port.
+editors/abiword-extras|editors/abiword|2009-12-08|This subport has been included in the main port
+editors/abiword-plugins|editors/abiword|2009-12-08|This subport has been included in the main port
 www/jakarta-tomcat5||2009-12-10|Has expired: Old version, consider using www/tomcat55 or www/tomcat6 instead
 net-mgmt/zabbix|net-mgmt/zabbix-server|2009-12-13|port was split into three components
 net/grdc|net/remmina|2009-12-14|Project was renamed
@@ -1025,23 +1025,23 @@ www/cheetah||2010-03-16|Has expired: broken, unmaintained, development ceased in
 net-p2p/rblibtorrent-devel||2010-03-16|Old version, no longer depended on
 mail/sylpheed2|mail/sylpheed3|2010-03-23|Update to new major version
 multimedia/gstreamer-schroedinger||2010-03-24|Removed
-multimedia/video4bsd-kmod|multimedia/cuse4bsd-kmod|2010-03-25|Renamed.
+multimedia/video4bsd-kmod|multimedia/cuse4bsd-kmod|2010-03-25|Renamed
 japanese/asterisk-sound|japanese/asterisk-sounds|2010-03-26|Fix port name typo
-x11-drivers/xf86-input-calcomp||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
-x11-drivers/xf86-input-digitaledge||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
-x11-drivers/xf86-input-dmc||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
-x11-drivers/xf86-input-dynapro||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
-x11-drivers/xf86-input-elo2300||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
-x11-drivers/xf86-input-jamstudio||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
-x11-drivers/xf86-input-magellan||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
-x11-drivers/xf86-input-microtouch||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
-x11-drivers/xf86-input-palmax||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
-x11-drivers/xf86-input-spaceorb||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
-x11-drivers/xf86-input-summa||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
-x11-drivers/xf86-input-tek4957||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device.
+x11-drivers/xf86-input-calcomp||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device
+x11-drivers/xf86-input-digitaledge||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device
+x11-drivers/xf86-input-dmc||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device
+x11-drivers/xf86-input-dynapro||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device
+x11-drivers/xf86-input-elo2300||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device
+x11-drivers/xf86-input-jamstudio||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device
+x11-drivers/xf86-input-magellan||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device
+x11-drivers/xf86-input-microtouch||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device
+x11-drivers/xf86-input-palmax||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device
+x11-drivers/xf86-input-spaceorb||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device
+x11-drivers/xf86-input-summa||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device
+x11-drivers/xf86-input-tek4957||2010-03-27|Unmaintained upstream. Notify x11 Maintainers if you have this device
 audio/ym2wav|audio/stymulator|2010-03-27|ym2wav is now part of stymulator
 www/trac-webadmin||2010-03-30|Incorporated to www/trac
-audio/gstreamer-plugins-ivorbis|audio/gstreamer-plugins-vorbis|2010-03-30|ivorbis plugin got merged into the vorbis plugin.
+audio/gstreamer-plugins-ivorbis|audio/gstreamer-plugins-vorbis|2010-03-30|ivorbis plugin got merged into the vorbis plugin
 math/octave-forge-arpack||2010-04-02|Incorporated to math/octave-forge
 www/p5-Plack-Request||2010-04-03|Incorporated to www/p5-Plack
 net-im/pidgin-birthday_reminder|net-im/pidgin-birthday-reminder|2010-04-05|Project was renamed
@@ -1058,7 +1058,7 @@ databases/php5-pdo_oci||2010-04-11|Doesn't support Oracle8 client library
 sysutils/rc_subr||2010-04-16|No longer needed
 math/libgmp4|math/gmp|2010-04-19|Switch to newer performance release
 irc/dircproxy-devel||2010-04-19|Removed
-security/krb5-17||2010-04-25|deleted: no longer builds with new OpenSSL 1.0. secuirity/krb5 now contains 1.8.1.
+security/krb5-17||2010-04-25|deleted: no longer builds with new OpenSSL 1.0. secuirity/krb5 now contains 1.8.1
 www/blogd|www/ephemera|2010-04-26|Port renamed
 net-p2p/qbittorrent||2010-05-01|Old version no longer updated
 audio/py-flac||2010-05-02|Has expired: has been marked IGNORE for past 24 months
@@ -1067,7 +1067,7 @@ databases/p5-DBIx-Class-HTML-FormFu||2010-05-02|Has expired: This module is obso
 devel/py-rbtree||2010-05-02|Has expired: "does not build with new pyrex and it's not active maintained"
 devel/tavrasm||2010-05-02|Has expired: No longer maintained, use devel/avra instead
 mail/postfix23||2010-05-02|Has expired: it's no longer maintened by upstream developer
-math/libgmp4||2010-05-02|Has expired: Use math/gmp instead.
+math/libgmp4||2010-05-02|Has expired: Use math/gmp instead
 misc/ezload||2010-05-02|Has expired: does not build with new USB stack in 8-STABLE
 misc/gkrellmbgchg||2010-05-02|Has expired: use misc/gkrellmbgchg2
 multimedia/kbtv||2010-05-02|Has expired: no longer under development by author
@@ -1096,37 +1096,37 @@ databases/postgresql-contrib|databases/postgresql82-contrib|2010-05-20|Use datab
 lang/yorick-doc||2010-05-20|Has expired: up-to-date docs are included in the lang/yorick port
 devel/perforce|devel/p4|2010-05-20|Split into multiple ports
 net/dgd-net||2010-05-24|Has expired: all network functionality is included in net/dgd
-archivers/hs-zip-archive-ghc|archivers/hs-zip-archive|2010-05-24|Renamed: No need for suffix.
-devel/hs-binary-ghc|devel/hs-binary|2010-05-24|Renamed: No need for suffix.
-devel/darcs|devel/hs-darcs|2010-05-24|Renamed: It has become a hackage transcript.
-devel/hs-language-c-ghc|devel/hs-language-c|2010-05-24|Renamed: No need for suffix.
-devel/hs-lazysmallcheck-ghc|devel/hs-lazysmallcheck|2010-05-24|Renamed: No need for suffix.
-devel/hs-pcre-light-ghc|devel/hs-pcre-light|2010-05-24|Renamed: No need for suffix.
-devel/hs-utf8-string-ghc|devel/hs-utf8-string|2010-05-24|Renamed: No need for suffix.
-graphics/hs-HGL-ghc|graphics/hs-HGL|2010-05-24|Renamed: No need for suffix.
-ports-mgmt/porte|ports-mgmt/hs-porte|2010-05-24|Renamed: It has become a hackage transcript.
-security/hs-digest-ghc|security/hs-digest|2010-05-24|Renamed: No need for suffix.
-textproc/hs-haxml|textproc/hs-HaXml|2010-05-24|Renamed: Brought in sync with HackageDB.
-textproc/hs-highlighting-kate-ghc|textproc/hs-highlighting-kate|2010-05-24|Renamed: No need for suffix.
-textproc/hs-polyparse-ghc|textproc/hs-polyparse|2010-05-24|Renamed: No need for suffix.
-textproc/pandoc|textproc/hs-pandoc|2010-05-24|Renamed: It has become a Cabal transcript.
-x11/hs-x11-ghc|x11/hs-X11|2010-05-24|Renamed: Brought in sync with HackageDB and no need for suffix.
-x11/hs-x11-xft-ghc|x11/hs-X11-xft|2010-05-24|Renamed: Brought in sync with HackageDB and no need for suffix.
-x11/xmobar|x11/hs-xmobar|2010-05-24|Renamed: It has become a hackage transcript.
-x11-toolkits/hs-OpenGLRaw-ghc|x11-toolkits/hs-OpenGLRaw|2010-05-24|Renamed; No need for suffix.
-x11-toolkits/hs-GLURaw-ghc|x11-toolkits/hs-GLURaw|2010-05-24|Renamed: No need for suffix.
-x11-toolkits/hs-opengl-ghc|x11-toolkits/hs-OpenGL|2010-05-24|Renamed: Brought in sync with HackageDB and no need for suffix.
-x11-toolkits/hs-glut-ghc|x11-toolkits/hs-GLUT|2010-05-24|Renamed: Brought in sync with HackageDB and no need for suffix.
-x11-wm/xmonad|x11-wm/hs-xmonad|2010-05-24|Renamed: It has become a Cabal transcript.
-x11-wm/xmonad-contrib|hs-xmonad-contrib|2010-05-24|Renamed: It has become a Cabal transcript.
+archivers/hs-zip-archive-ghc|archivers/hs-zip-archive|2010-05-24|Renamed: No need for suffix
+devel/hs-binary-ghc|devel/hs-binary|2010-05-24|Renamed: No need for suffix
+devel/darcs|devel/hs-darcs|2010-05-24|Renamed: It has become a hackage transcript
+devel/hs-language-c-ghc|devel/hs-language-c|2010-05-24|Renamed: No need for suffix
+devel/hs-lazysmallcheck-ghc|devel/hs-lazysmallcheck|2010-05-24|Renamed: No need for suffix
+devel/hs-pcre-light-ghc|devel/hs-pcre-light|2010-05-24|Renamed: No need for suffix
+devel/hs-utf8-string-ghc|devel/hs-utf8-string|2010-05-24|Renamed: No need for suffix
+graphics/hs-HGL-ghc|graphics/hs-HGL|2010-05-24|Renamed: No need for suffix
+ports-mgmt/porte|ports-mgmt/hs-porte|2010-05-24|Renamed: It has become a hackage transcript
+security/hs-digest-ghc|security/hs-digest|2010-05-24|Renamed: No need for suffix
+textproc/hs-haxml|textproc/hs-HaXml|2010-05-24|Renamed: Brought in sync with HackageDB
+textproc/hs-highlighting-kate-ghc|textproc/hs-highlighting-kate|2010-05-24|Renamed: No need for suffix
+textproc/hs-polyparse-ghc|textproc/hs-polyparse|2010-05-24|Renamed: No need for suffix
+textproc/pandoc|textproc/hs-pandoc|2010-05-24|Renamed: It has become a Cabal transcript
+x11/hs-x11-ghc|x11/hs-X11|2010-05-24|Renamed: Brought in sync with HackageDB and no need for suffix
+x11/hs-x11-xft-ghc|x11/hs-X11-xft|2010-05-24|Renamed: Brought in sync with HackageDB and no need for suffix
+x11/xmobar|x11/hs-xmobar|2010-05-24|Renamed: It has become a hackage transcript
+x11-toolkits/hs-OpenGLRaw-ghc|x11-toolkits/hs-OpenGLRaw|2010-05-24|Renamed; No need for suffix
+x11-toolkits/hs-GLURaw-ghc|x11-toolkits/hs-GLURaw|2010-05-24|Renamed: No need for suffix
+x11-toolkits/hs-opengl-ghc|x11-toolkits/hs-OpenGL|2010-05-24|Renamed: Brought in sync with HackageDB and no need for suffix
+x11-toolkits/hs-glut-ghc|x11-toolkits/hs-GLUT|2010-05-24|Renamed: Brought in sync with HackageDB and no need for suffix
+x11-wm/xmonad|x11-wm/hs-xmonad|2010-05-24|Renamed: It has become a Cabal transcript
+x11-wm/xmonad-contrib|hs-xmonad-contrib|2010-05-24|Renamed: It has become a Cabal transcript
 devel/ruby-game|devel/rubygem-rubygame|2010-05-24|Use devel/rubygem-rubygame instead
 devel/py-ro||2010-05-25|Use devel/py-pyro instead
 devel/runawk|lang/runawk|2010-05-31|Port duplicate with lang/runawk
 misc/ipod-sharp|audio/ipod-sharp|2010-06-02|Fix category
 lang/pike72|lang/pike76|2010-06-02|Has expired: Please use pike76 or pike78
 lang/pexts||2010-06-02|Depends on expired port lang/pike72
-databases/ptop||2010-06-04|Broken with no update from maintainer or upstream.
-deskutils/dolphin-plugins-mplayerthumbs||2010-06-05|no longer supported by upstream.
+databases/ptop||2010-06-04|Broken with no update from maintainer or upstream
+deskutils/dolphin-plugins-mplayerthumbs||2010-06-05|no longer supported by upstream
 irc/p5-IRC|irc/p5-Bot-BasicBot|2010-06-07|has been deceased for 5+ yrs
 emulators/linux_base-gentoo-stage1||2010-06-08|Expired: please use emulators/linux_base-gentoo-stage3
 emulators/linux_dist-gentoo-stage1||2010-06-08|Expired: please use emulators/linux_dist-gentoo-stage3
@@ -1184,7 +1184,7 @@ www/woadaptor||2010-08-23|Broken for 6+ months, unmaintained
 www/woadaptor-cgi||2010-08-23|Broken for 6+ months, unmaintained
 x11-toolkits/ruby-fox12||2010-08-23|Removed
 x11-toolkits/fxscintilla-fox12||2010-08-23|Removed
-x11-toolkits/fox12||2010-08-23|Has expired: Unsupported, please use x11-toolkits/fox14 or x11-toolkits/fox16 instead.
+x11-toolkits/fox12||2010-08-23|Has expired: Unsupported, please use x11-toolkits/fox14 or x11-toolkits/fox16 instead
 editors/mondrian||2010-08-23|Removed
 devel/freeride||2010-08-23|Removed
 devel/freebase||2010-08-23|Removed
@@ -1230,7 +1230,7 @@ deskutils/linux-sunbird|deskutils/lightning|2010-09-07|Upstream development disc
 deskutils/sunbird|deskutils/lightning|2010-09-07|Upstream development discontinued
 deskutils/sunbird-i18n||2010-09-07|Upstream development discontinued
 audio/audacious-crossfade||2010-09-08|Broken for 6+ months, unmaintained
-audio/ecamegapedal||2010-09-08|Has expired: Abandonned since 2004, please use audio/jack-rack or audio/creox instead.
+audio/ecamegapedal||2010-09-08|Has expired: Abandonned since 2004, please use audio/jack-rack or audio/creox instead
 comms/asmodem||2010-09-08|Broken for 6+ months, unmaintained
 comms/ltmdm||2010-09-08|Broken for 6+ months, unmaintained
 comms/yawmppp||2010-09-08|Broken for 6+ months, unmaintained
@@ -1255,7 +1255,7 @@ www/tdiary-devel||2010-09-12|Removed
 multimedia/playd2|multimedia/playd|2010-09-13|Has expired: Use multimedia/playd instead
 mail/mailscanner-devel|mail/mailscanner|2010-09-14|Removed, mail/mailscanner is newer
 databases/sqlite-ext-inet||2010-09-14|Has expired: Please install databases/sqlite-ext-mobigroup instead
-devel/codeville||2010-09-14|Has expired: Dead project.
+devel/codeville||2010-09-14|Has expired: Dead project
 editors/koffice-kde4-l10n-fy||2010-09-14|Has expired
 editors/koffice-kde4-l10n-hne||2010-09-14|Has expired
 graphics/xaralx-devel||2010-09-14|Has expired: Does not compile with png-1.4 and latest version is from Aug 2006
@@ -1298,18 +1298,18 @@ devel/automake18||2010-09-22|Outdated, ports (2) migrated to automake19
 devel/automake15||2010-09-23|Outdated, ports migrated to automake19
 www/xpi-gbutts|www/xpi-google_shortcuts|2010-09-28|Plugin was renamed
 mail/sympa-elixus||2010-09-28|Has expired: no longer maintained, no longer fetchable, no longer builds with sympa
-net-mgmt/zabbix16-server||2010-10-01|Has expired: Development has ceased. Please upgrade to Zabbix 1.8.
-net-mgmt/zabbix16-agent||2010-10-01|Has expired: Development has ceased. Please upgrade to Zabbix 1.8.
-net-mgmt/zabbix16-frontend||2010-10-01|Has expired: Development has ceased. Please upgrade to Zabbix 1.8.
-net-mgmt/zabbix16-proxy||2010-10-01|Has expired: Development has ceased. Please upgrade to Zabbix 1.8.
+net-mgmt/zabbix16-server||2010-10-01|Has expired: Development has ceased. Please upgrade to Zabbix 1.8
+net-mgmt/zabbix16-agent||2010-10-01|Has expired: Development has ceased. Please upgrade to Zabbix 1.8
+net-mgmt/zabbix16-frontend||2010-10-01|Has expired: Development has ceased. Please upgrade to Zabbix 1.8
+net-mgmt/zabbix16-proxy||2010-10-01|Has expired: Development has ceased. Please upgrade to Zabbix 1.8
 net-p2p/mutella||2010-10-01|Has expired: No longer under active development
-www/xpi-hit-a-hint||2010-10-01|Has expired: Development has been ceased and not compatible with Firefox > 2.
-www/xpi-preferential||2010-10-01|Has expired: Development has been ceased and not compatible with Firefox > 2.
-www/xpi-statusbarclock||2010-10-01|Has expired: Development has been ceased and not compatible with Firefox > 2.
+www/xpi-hit-a-hint||2010-10-01|Has expired: Development has been ceased and not compatible with Firefox > 2
+www/xpi-preferential||2010-10-01|Has expired: Development has been ceased and not compatible with Firefox > 2
+www/xpi-statusbarclock||2010-10-01|Has expired: Development has been ceased and not compatible with Firefox > 2
 devel/cego-base|devel/lfc|2010-10-02|Project was renamed
 devel/cego-xml|devel/lfcxml|2010-10-02|Project was renamed
 www/p5-WWW-Pastebin-RafbNet-Create||2010-10-02|http://rafb.net service is dead
-devel/maven||2010-10-03|Has expired: Development has been ceased, superseded by devel/maven2.
+devel/maven||2010-10-03|Has expired: Development has been ceased, superseded by devel/maven2
 games/daimonin-client|games/daimonin|2010-10-04|Renamed
 sysutils/rsyslog55|sysutils/rsyslog5|2010-10-05|Renamed
 sysutils/rsyslog55-dbi|sysutils/rsyslog5-dbi|2010-10-05|Renamed
@@ -1325,31 +1325,31 @@ devel/automake110||2010-10-07|No longer required by any port
 japanese/p5-jcode.pl|japanese/jcode.pl|2010-10-10|Duplicate port
 www/p5-Plack-Server-ServerSimple|www/p5-Plack|2010-10-11|Included in p5-Plack now
 www/trac-multirepos||2010-10-11|Has expired: Multiple repositories support has been merged in trunk, please use Trac 0.12+ (www/trac) instead
-devel/p5-P4||2010-10-14|Has expired: Depends of p5-P4-Client, which is DEPRECATED.
+devel/p5-P4||2010-10-14|Has expired: Depends of p5-P4-Client, which is DEPRECATED
 devel/p5-P4-Client||2010-10-14|Has expired: has been broken for 11 months
-net-p2p/btpeer||2010-10-14|Has expired: Does not build with net/Sockets and is unmaintained.
+net-p2p/btpeer||2010-10-14|Has expired: Does not build with net/Sockets and is unmaintained
 net-mgmt/net-snmp4||2010-10-14|Has expired: Use net-mgmt/net-snmp port instead
-net/gkrellm_snmp||2010-10-14|Has expired: Depends of net-snmp4, that is deprecated also and will be removed soon.
-net/Sockets-devel||2010-10-14|Has expired: Older than net/Sockets and unmaintained.
+net/gkrellm_snmp||2010-10-14|Has expired: Depends of net-snmp4, that is deprecated also and will be removed soon
+net/Sockets-devel||2010-10-14|Has expired: Older than net/Sockets and unmaintained
 devel/clang|lang/clang|2010-10-14|Compilers typically live in the lang category
 security/ssh2||2010-10-15|Has expired: abandoned upstream
 security/ssh2-nox11||2010-10-15|Has expired: abandoned upstream
 devel/autoconf267|devel/autoconf268|2010-10-16|Bump
-net/samba3||2010-10-18|Has expired: Unsupported by the upstream. Please, consider to upgrade.
-net/samba32||2010-10-18|Has expired: Unsupported by the upstream. Please, consider to upgrade.
-net/samba33||2010-10-18|Has expired: Unsupported by the upstream. Please, consider to upgrade.
-japanese/samba3||2010-10-18|Has expired: Unsupported by the upstream. Please, consider to upgrade.
-net/py-samba||2010-10-18|Has expired: Unsupported by the upstream. Please, consider to upgrade.
+net/samba3||2010-10-18|Has expired: Unsupported by the upstream. Please, consider to upgrade
+net/samba32||2010-10-18|Has expired: Unsupported by the upstream. Please, consider to upgrade
+net/samba33||2010-10-18|Has expired: Unsupported by the upstream. Please, consider to upgrade
+japanese/samba3||2010-10-18|Has expired: Unsupported by the upstream. Please, consider to upgrade
+net/py-samba||2010-10-18|Has expired: Unsupported by the upstream. Please, consider to upgrade
 security/samba-vscan||2010-10-18|Removed
 net-p2p/amule2|net-p2p/amule|2010-10-05|Split to -devel and non-devel ports
 www/firefox3-devel|www/firefox|2010-10-24|Upstream development focuses on Firefox 4.0
 editors/vim5||2010-10-26|Has expired: Outdated, superceded by editors/vim7 and has security issues
 sysutils/sfdisk||2010-10-27|Has expired: All supported freebsd versions now have sade, sfdisk 0.2 is outdated
 sysutils/synergy-plus|sysutils/synergy|2010-11-01|Synergy+ and Synergy have merged
-ftp/kwebget||2010-11-04|Has expired: Development has ceased.
+ftp/kwebget||2010-11-04|Has expired: Development has ceased
 multimedia/clive-utils||2010-11-04|Has expired: development has ceased; use multimedia/umph instead
-ports-mgmt/barry||2010-11-04|Has expired: Development has ceased.
-www/wb0||2010-11-04|Has expired: Development has ceased.
+ports-mgmt/barry||2010-11-04|Has expired: Development has ceased
+www/wb0||2010-11-04|Has expired: Development has ceased
 x11/e17-module-bling|x11-wm/e17-module-bling|2010-11-07|Fix category
 x11/e17-module-calendar|x11-wm/e17-module-calendar|2010-11-07|Fix category
 x11/e17-module-cpu|x11-wm/e17-module-cpu|2010-11-07|Fix category
@@ -1367,7 +1367,7 @@ x11/e17-module-snow|x11-wm/e17-module-snow|2010-11-07|Fix category
 x11/e17-module-uptime|x11-wm/e17-module-uptime|2010-11-07|Fix category
 x11/e17-module-weather|x11-wm/e17-module-weather|2010-11-07|Fix category
 x11/e17-module-winselector|x11-wm/e17-module-winselector|2010-11-07|Fix category
-devel/libisc||2010-11-08|Has expired: Unlikely to be used...
+devel/libisc||2010-11-08|Has expired: Unlikely to be used..
 emulators/vmware-guestd3||2010-11-08|Has expired: Depends of misc/compat3x, that is deprecated and set to be removed
 emulators/vmware-tools3||2010-11-08|Has expired: Depends of misc/compat3x, that is deprecated and set to be removed
 misc/compat3x||2010-11-08|Has expired: "Only FreeBSD 6.4+ are supported in ports"
@@ -1401,14 +1401,14 @@ archivers/linux-par2cmdline||2010-12-04|Has expired: Native version available
 audio/bmp-musepack||2010-12-04|Has expired: does not build with audio/musepack
 audio/libmpcdec|audio/musepack|2010-12-04|Has expired: superseded by audio/musepack
 audio/py-musepack||2010-12-04|Has expired: does not build with audio/musepack
-chinese/chinput3||2010-12-04|Has expired: Development has ceased.
+chinese/chinput3||2010-12-04|Has expired: Development has ceased
 emulators/dynagen-devel||2010-12-04|Has expired: Please install emulators/dynagen instead
 net-p2p/gift-fasttrack||2010-12-04|Has expired: unmaintained upstream
 net-p2p/gift-gnutella||2010-12-04|Has expired: unmaintained upstream
 net-p2p/gift-openft||2010-12-04|Has expired: unmaintained upstream
 net-p2p/pyslsk||2010-12-04|Has expired: unmantaind upstream, use net-p2p/nicotine-plus
 security/pamsfs||2010-12-04|Has expired: SFS is dead, this project is dead, and site is gone
-www/p5-Catalyst-Plugin-CommandLine||2010-12-04|Has expired: The module is not needed any more. With new Catalyst (at least 5.7014) it works out of the box.
+www/p5-Catalyst-Plugin-CommandLine||2010-12-04|Has expired: The module is not needed any more. With new Catalyst (at least 5.7014) it works out of the box
 devel/autoconf268|devel/autoconf|2010-12-08|Autotools cleanup
 devel/automake111|devel/automake|2010-12-08|Autotools cleanup
 devel/libtool22|devel/libtool|2010-12-08|Autotools cleanup
@@ -1434,15 +1434,15 @@ databases/p5-sqlrelay||2010-12-31|Has expired: broken and upstream disapeared
 devel/php-dbg2||2010-12-31|Has expired: No upstream support
 dns/fourcdns||2010-12-31|Has expired: upstream has disapeared
 emulators/win4bsd||2010-12-31|Has expired: Development has ceased and distfile is no longer available
-french/mozilla-flp||2010-12-31|Has expired: www/seamonkey port is deprecated. Consider using the www/firefox-i18n.
-french/xtel||2010-12-31|Has expired: Minitel services will be discontinued at the end of 2010.
+french/mozilla-flp||2010-12-31|Has expired: www/seamonkey port is deprecated. Consider using the www/firefox-i18n
+french/xtel||2010-12-31|Has expired: Minitel services will be discontinued at the end of 2010
 ftp/ftpq||2010-12-31|Has expired: upstream has disapeared
 graphics/paintlib||2010-12-31|Has expired: does not compile with new tiff and no more maintained upstream
 graphics/g3dviewer||2010-12-31|Has expired: does not build with gcc 4.2, upstream disapeared
 lang/scriba||2010-12-31|Has expired: Does not compile with gcc 4.2+, looks like abandonware
 math/rascal||2010-12-31|Has expired: Broken on every arch since 2008, looks like an abandonware
-net-mgmt/nrg|net-mgmt/cacti|2010-12-31|Has expired: Project has vanished. Use cacti instead.
-security/hostsentry||2010-12-31|Has expired: Project is dead.
+net-mgmt/nrg|net-mgmt/cacti|2010-12-31|Has expired: Project has vanished. Use cacti instead
+security/hostsentry||2010-12-31|Has expired: Project is dead
 sysutils/kcube||2010-12-31|Has expired: Project has vanished
 www/cybercalendar||2010-12-31|Has expired: has been unmaintained since 2001 and is unusable with dates after 2010 (see ports/150974)
 www/flock||2010-12-31|Has expired: Flock 3 moves from Firefox to Chromium
@@ -1469,7 +1469,7 @@ graphics/ruby-esmart||2011-01-03|Has expired: abandoned upstream
 graphics/ruby-evas||2011-01-03|Has expired: abandoned upstream
 graphics/ruby-redact||2011-01-03|Has expired: abandoned upstream
 multimedia/eclair||2011-01-03|Has expired: abandoned upstream
-security/phpmyid||2011-01-03|Has expired: Development has ceased.
+security/phpmyid||2011-01-03|Has expired: Development has ceased
 sysutils/ecore-config||2011-01-03|Has expired: abandoned upstream
 sysutils/extrackt||2011-01-03|Has expired: abandoned upstream
 textproc/exml||2011-01-03|Has expired: abandoned upstream
@@ -1688,7 +1688,7 @@ net-p2p/torrentvolve||2011-04-12|Has expired: development has ceased, and last r
 sysutils/gag||2011-04-12|Has expired: no point in having it as a port, can be downloaded from the website and burned
 lang/gpc|lang/fpc|2011-04-12|Has expired: development has ceased; use lang/fpc instead
 security/mypasswordsafe|security/gorilla|2011-04-12|Has expired: development has ceased; try security/gorilla instead
-database/db2||2011-04-12|Deprecated; use newer databases/db5* instead.
+database/db2||2011-04-12|Deprecated; use newer databases/db5* instead
 sysutils/rsyslog5-devel|sysutils/rsyslog5|2011-04-14|5.8.0 is the -stable for 5.7.x, and 5.6.x is now deprecated
 sysutils/rsyslog5-devel-dbi|sysutils/rsyslog5-dbi|2011-04-14|5.8.0 is the -stable for 5.7.x, and 5.6.x is now deprecated
 sysutils/rsyslog5-devel-gnutls|sysutils/rsyslog5-gnutls|2011-04-14|5.8.0 is the -stable for 5.7.x, and 5.6.x is now deprecated
@@ -2156,15 +2156,15 @@ www/codeigniter|www/codeigniter17|2011-05-03|Renamed to track deprecated branch
 www/codeigniter-devel||2011-05-03|Removed
 devel/common_msgs|devel/ros-common_msgs|2011-05-03|Renamed
 math/geometry|math/ros-geometry|2011-05-03|Renamed
-devel/hs-FileManip|devel/hs-filemanip|2011-05-08|Renamed: Cabal package has been renamed.
-devel/lhs2TeX|textproc/hs-lhs2tex|2011-05-08|Renamed: It has become a Cabal transcript.
-devel/bnfc|devel/hs-BNFC|2011-05-08|Renamed: It has become a Cabal transcript.
+devel/hs-FileManip|devel/hs-filemanip|2011-05-08|Renamed: Cabal package has been renamed
+devel/lhs2TeX|textproc/hs-lhs2tex|2011-05-08|Renamed: It has become a Cabal transcript
+devel/bnfc|devel/hs-BNFC|2011-05-08|Renamed: It has become a Cabal transcript
 graphics/hs-hgl||2011-05-08|deleted: overriden by graphics/hs-HGL
-x11-toolkits/hs-GLURaw||2011-05-08|Removed: It has become obsoleted by Haskell Platform.
-x11-toolkits/hs-OpenGLRaw||2011-05-08|Removed: It has become obsoleted by Haskell Platform.
-net/hs-network-bytestring||2011-05-08|Removed: It is deprecated by net/hs-network.
-devel/hs-uvector||2011-05-08|Removed: It is deprecated by devel/hs-vector.
-devel/hs-uvector-algorithms||2011-05-08|Removed: It is deprecated by devel/hs-vector-algorithms.
+x11-toolkits/hs-GLURaw||2011-05-08|Removed: It has become obsoleted by Haskell Platform
+x11-toolkits/hs-OpenGLRaw||2011-05-08|Removed: It has become obsoleted by Haskell Platform
+net/hs-network-bytestring||2011-05-08|Removed: It is deprecated by net/hs-network
+devel/hs-uvector||2011-05-08|Removed: It is deprecated by devel/hs-vector
+devel/hs-uvector-algorithms||2011-05-08|Removed: It is deprecated by devel/hs-vector-algorithms
 devel/jude-community|devel/astah-community|2011-05-09|Project was renamed
 net/skype12|net-im/skype12|2011-05-09|Moved to better category
 net/skype|net-im/skype|2011-05-09|Moved to better category
@@ -2173,10 +2173,10 @@ devel/libchipcard-kde||2011-05-14|obsolete
 sysutils/libgksuui|sysutils/libgksu|2011-05-14|Removed: It is a part of sysutils/libgksu now
 barnyard-sguil|barnyard2-sguil|2011-05-15|barnyard2 has build in sguil support
 multimedia/rebot3||2011-05-16|Removed
-devel/tcl-neo||2011-05-22|Removed: deprecated and no maintainer interest.
-www/neowebscript||2011-05-22|Removed: deprecated and no maintainer interest.
-databases/db3||2011-05-23|Removed: all users set USE_BDB=3+ and have been using 4.0+.
-databases/db45|databases/db46|2011-05-28|Removed: no users left that require exactly 4.5.
+devel/tcl-neo||2011-05-22|Removed: deprecated and no maintainer interest
+www/neowebscript||2011-05-22|Removed: deprecated and no maintainer interest
+databases/db3||2011-05-23|Removed: all users set USE_BDB=3+ and have been using 4.0+
+databases/db45|databases/db46|2011-05-28|Removed: no users left that require exactly 4.5
 textproc/scim-kmfl-european-latin|textproc/kmfl-european-latin|2011-05-29|KMFL keyboard ports are now platform-independent
 textproc/scim-kmfl-sil-ezra|textproc/kmfl-sil-ezra|2011-05-29|KMFL keyboard ports are now platform-independent
 textproc/scim-kmfl-sil-galatia|textproc/kmfl-sil-galatia|2011-05-29|KMFL keyboard ports are now platform-independent
@@ -2192,11 +2192,11 @@ net/citrix_xenapp||2011-06-01|Has expired: "crashes with f10"
 comms/gammu-python||2011-06-01|Has expired: since version 1.29.0 comms/gammu uses python by default
 java/gj||2011-06-01|Has expired: Upstream disapear and distfile is no more available
 net/ipv6socket_scrub||2011-06-01|Has expired: Upstream disapear and distfile is no more available
-graphics/lodju||2011-06-01|Has expired: depends on rep-gtk, which doesn't build anymore.
+graphics/lodju||2011-06-01|Has expired: depends on rep-gtk, which doesn't build anymore
 www/mod_pubcookie||2011-06-01|Has expired: will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
 ftp/prozilla||2011-06-01|Has expired: Upstream disapear and distfile is no more available
 www/py-django11||2011-06-01|Has expired: Unsupported (no longer receive security updates or bugfixes)
-x11-toolkits/rep-gtk||2011-06-01|Has expired: missing rep-config from librep port broke the build.
+x11-toolkits/rep-gtk||2011-06-01|Has expired: missing rep-config from librep port broke the build
 games/tnl||2011-06-01|Has expired: Upstream development has ceased, it doesn't work with newer CEGUI and is generally broken
 net/vnc2swf|deskutils/vnc2flv|2011-06-01|Has expired: Development is now superseded by deskutils/vnc2flv
 lang/libobjc2||2011-06-02|Redundant with lang/gnustep-libobjc
@@ -2206,7 +2206,7 @@ net-p2p/qbittorrent26|net-p2p/qbittorrent28|2011-06-05|Old version no longer upd
 net-p2p/qbittorrent26-nox11|net-p2p/qbittorrent28-nox11|2011-06-05|Old version no longer updated
 net-p2p/qbittorrent27|net-p2p/qbittorrent28|2011-06-05|Old version no longer updated
 net-p2p/qbittorrent27-nox11|net-p2p/qbittorrent28-nox11|2011-06-05|Old version no longer updated
-www/pubcookie-login-server||2011-06-06|Has expired: Unused by maintiner, needs updates.
+www/pubcookie-login-server||2011-06-06|Has expired: Unused by maintiner, needs updates
 databases/mariadb||2011-06-06|Split into databases/mariadb-{client,scripts,server}
 devel/bugzilla2||2011-06-07|Removed: no longer under development
 lang/ruby-js||2011-06-09|Removed, depends on expired port, seems abandonware itself
