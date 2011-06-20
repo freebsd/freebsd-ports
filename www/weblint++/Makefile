@@ -10,9 +10,9 @@ PORTVERSION=	1.15
 PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=../../authors/id/B/BD/BDFOY
+MASTER_SITE_SUBDIR=	CPAN:BDFOY
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTML validator and sanity checker
 
 BUILD_DEPENDS=	p5-ConfigReader-Simple>=1.15:${PORTSDIR}/devel/p5-ConfigReader-Simple \
