@@ -14,7 +14,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A constructor of .war files of Rails applications
 
 RUN_DEPENDS=	jruby:${PORTSDIR}/lang/jruby \
-		rubygem-jruby-jars>=1.4.0:${PORTSDIR}/devel/rubygem-jruby-jars
+		rubygem-jruby-jars>=1.3.1:${PORTSDIR}/devel/rubygem-jruby-jars
 
 USE_RUBY=	yes
 USE_RAKE=	yes

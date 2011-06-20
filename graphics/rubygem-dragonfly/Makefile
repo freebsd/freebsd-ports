@@ -12,7 +12,7 @@ MASTER_SITES=	RG
 MAINTAINER=	jhelfman@experts-exchange.com
 COMMENT=	On-the-fly Rack-based image handling framework
 
-RUN_DEPENDS+=	rubygem-rack>=1.2.1:${PORTSDIR}/www/rubygem-rack
+RUN_DEPENDS+=	rubygem-rack>=0:${PORTSDIR}/www/rubygem-rack
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
