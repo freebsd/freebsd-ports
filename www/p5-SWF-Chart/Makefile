@@ -9,10 +9,10 @@ PORTNAME=	SWF-Chart
 PORTVERSION=	1.4
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/G/GA/GARTH
+MASTER_SITE_SUBDIR=	CPAN:GARTH
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to the SWF Chart generation tool
 
 MAN3=		SWF::Chart.3

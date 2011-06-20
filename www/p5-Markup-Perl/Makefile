@@ -9,11 +9,11 @@ PORTNAME=	Markup-Perl
 PORTVERSION=	0.5
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../../authors/id/M/MM/MMATHEWS
+MASTER_SITE_SUBDIR=	CPAN:MMATHEWS
 PKGNAMEPREFIX=	p5-
 DISTNAME=	Markup-Perl-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Support perl code inside CGI scripts using simple tags
 
 USE_PERL5=	yes
