@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CSS-Inliner
-PORTVERSION=	3219
+PORTVERSION=	3275
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,6 +19,9 @@ RUN_DEPENDS=	p5-CSS-Simple>=3211:${PORTSDIR}/textproc/p5-CSS-Simple \
 		p5-HTML-Tree>=3.23:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
+
+LICENSE_COMB=	dual
+LICENSE=	ART10 GPLv1
 
 PERL_CONFIGURE=	yes
 
