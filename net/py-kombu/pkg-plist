@@ -94,6 +94,9 @@
 %%PYTHON_SITELIBDIR%%/kombu/tests/utils.py
 %%PYTHON_SITELIBDIR%%/kombu/tests/utils.pyc
 %%PYTHON_SITELIBDIR%%/kombu/tests/utils.pyo
+%%PYTHON_SITELIBDIR%%/kombu/transport/SQS.py
+%%PYTHON_SITELIBDIR%%/kombu/transport/SQS.pyc
+%%PYTHON_SITELIBDIR%%/kombu/transport/SQS.pyo
 %%PYTHON_SITELIBDIR%%/kombu/transport/__init__.py
 %%PYTHON_SITELIBDIR%%/kombu/transport/__init__.pyc
 %%PYTHON_SITELIBDIR%%/kombu/transport/__init__.pyo
