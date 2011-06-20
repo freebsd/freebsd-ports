@@ -7,7 +7,7 @@
 
 PORTNAME=	xfpovray
 PORTVERSION=	1.3.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.batse.msfc.nasa.gov/~mallozzi/home/software/xforms/src/ \
 		${MASTER_SITE_SUNSITE}
@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical interface to POV-Ray
 
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
-RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray
+RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
 
 USE_IMAKE=	yes
 USE_XORG=	x11 xext xpm
