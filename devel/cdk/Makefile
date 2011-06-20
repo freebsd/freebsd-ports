@@ -40,7 +40,8 @@ EXTRA_PATCHES+=      ${FILESDIR}/extra-patch-Makefile.in
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|/doc/cdk|/share/doc/cdk| ; s|VERSION)|VERSION_MAJOR)|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|/doc/cdk|/share/doc/cdk| ; s|VERSION)|VERSION_MAJOR)|' \
+		-e 's|gcc|${CC}|g' ${WRKSRC}/Makefile.in
 
 pre-install:
 .if !defined(NOPORTEXAMPLES)

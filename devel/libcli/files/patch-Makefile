@@ -1,12 +1,14 @@
 --- ./Makefile.orig	2011-05-04 04:52:15.000000000 +0200
-+++ ./Makefile	2011-05-04 06:51:14.794591784 +0200
-@@ -8,16 +8,14 @@
++++ ./Makefile	2011-06-20 18:57:17.703992054 +0200
+@@ -7,17 +7,15 @@
+ REVISION = 5
  LIB = libcli.so
  
- CC = gcc
+-CC = gcc
 -DEBUG = -g
 -OPTIM = -O3
 -CFLAGS += $(DEBUG) $(OPTIM) -Wall -Wformat-security -Wno-format-zero-length
++CC ?= gcc
 +CFLAGS += -Wall -Wformat-security -Wno-format-zero-length
  LDFLAGS += -shared
  LIBPATH += -L.
