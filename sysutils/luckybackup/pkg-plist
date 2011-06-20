@@ -88,7 +88,13 @@ share/doc/luckybackup/manual/data/ssh-askpass.png
 share/doc/luckybackup/manual/data/toolBar.png
 share/doc/luckybackup/manual/data/trayWithBubble.png
 share/doc/luckybackup/manual/data/up.png
+share/doc/luckybackup/manual/images/action_button-bg.png
+share/doc/luckybackup/manual/images/favicon.ico
+share/doc/luckybackup/manual/images/hover.png
+share/doc/luckybackup/manual/images/selected.png
+share/doc/luckybackup/manual/images/top.png
 share/doc/luckybackup/manual/index.html
+share/doc/luckybackup/manual/styles.css
 share/luckybackup/translations/luckybackup_ara.qm
 share/luckybackup/translations/luckybackup_ara.ts
 share/luckybackup/translations/luckybackup_bs.qm
@@ -125,6 +131,7 @@ share/pixmaps/luckybackup.png
 share/pixmaps/luckybackup.xpm
 @dirrm share/luckybackup/translations
 @dirrm share/luckybackup
+@dirrm share/doc/luckybackup/manual/images
 @dirrm share/doc/luckybackup/manual/data
 @dirrm share/doc/luckybackup/manual
 @dirrm share/doc/luckybackup/license
