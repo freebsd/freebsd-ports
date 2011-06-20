@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mod_gnutls
-PORTVERSION=	0.5.6
-PORTREVISION=	1
+PORTVERSION=	0.5.9
 CATEGORIES=	www security
 MASTER_SITES=	http://www.outoforder.cc/downloads/mod_gnutls/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
