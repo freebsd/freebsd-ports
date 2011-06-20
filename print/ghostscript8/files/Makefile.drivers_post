@@ -117,7 +117,7 @@ USE_XORG=	xt xext
 CONFIGURE_ARGS+=--with-x \
 		--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib
-CONFLICTS+=	ghostscript8-nox11-[0-9]*
+CONFLICTS_INSTALL+=	ghostscript8-nox11-[0-9]*
 .if defined(WITH_GTK)
 USE_GNOME=	atk gdkpixbuf glib20 gtk20
 CONFIGURE_ARGS+=--enable-gtk
@@ -127,7 +127,7 @@ CONFIGURE_ARGS+=--disable-gtk
 .else	# defined(_X11_DEVS)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
 CONFIGURE_ARGS+=--without-x --disable-gtk
-CONFLICTS+=	ghostscript8-[0-9]*
+CONFLICTS_INSTALL+=	ghostscript8-[0-9]*
 .endif	# defined(_X11_DEVS)
 
 # iconv specific

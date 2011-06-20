@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript8
 PORTVERSION=	8.71
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	print
 MASTER_SITES=	http://ghostscript.com/releases/:gs_srcs \
 		SF/ghostscript/files/GPL%20Ghostscript/${PORTVERSION}:gs_srcs \
@@ -31,7 +31,8 @@ LIB_DEPENDS=	expat:${PORTSDIR}/textproc/expat2 \
 		tiff:${PORTSDIR}/graphics/tiff
 RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME:S,8,,}/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
-CONFLICTS=	gambc-[0-9]* ghostscript7-[0-9]* ghostscript7-*-[0-9]*
+CONFLICTS_INSTALL=	gambc-[0-9]* ghostscript[79]-[0-9]* \
+			ghostscript[79]-*-[0-9]*
 
 USE_XZ=		yes
 USE_GMAKE=	yes

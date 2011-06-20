@@ -7,7 +7,7 @@
 
 PORTNAME=	ghostscript7
 PORTVERSION=	7.07
-PORTREVISION=	23
+PORTREVISION=	24
 CATEGORIES=	print
 MASTER_SITES=	SF/ghostscript/gnu-gs/${PORTVERSION}:gs_srcs \
 		${MASTER_SITE_PORTS_JP:S/$/:ports_jp,ports_jp_gs/} \
@@ -30,7 +30,8 @@ RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print
 WRKSRC=		${WRKDIR}/${PORTNAME:S,7$,,}
 DATADIR=	${PREFIX}/share/${PORTNAME:S,7$,,}
 
-CONFLICTS=	gambc-* ghostscript8-*
+CONFLICTS_INSTALL=	gambc-[0-9]* ghostscript[89]-[0-9]* \
+			ghostscript[89]-*-[0-9]*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -127,11 +128,11 @@ USE_XORG=	xt xext
 CONFIGURE_ARGS+=--with-x \
 		--x-includes=${X11BASE}/include \
 		--x-libraries=${X11BASE}/lib
-CONFLICTS+=	ghostscript7-nox11-[0-9]*
+CONFLICTS_INSTALL+=	ghostscript7-nox11-[0-9]*
 .else
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-nox11
 CONFIGURE_ARGS+=--without-x
-CONFLICTS+=	ghostscript7-[0-9]*
+CONFLICTS_INSTALL+=	ghostscript7-[0-9]*
 .endif
 
 .if defined(WITH_SHLIB)
