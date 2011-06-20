@@ -19,6 +19,8 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	glib20
 USE_GMAKE=	yes
 
+LICENSE=	GPLv2
+
 CONFIGURE_ARGS=	--prefix=${PREFIX}
 
 .if defined(WITH_DAG)
