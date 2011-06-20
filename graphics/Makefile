@@ -735,8 +735,9 @@
     SUBDIR += pornview
     SUBDIR += potrace
     SUBDIR += potracegui
-    SUBDIR += povray
+    SUBDIR += povray-meta
     SUBDIR += povray31
+    SUBDIR += povray36
     SUBDIR += povray37
     SUBDIR += ppmcaption
     SUBDIR += ppminfo
