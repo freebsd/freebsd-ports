@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0b535cd0-9b90-11e0-800a-00215c6a37bb">
+    <topic>dokuwiki -- cross site scripting vulnerability</topic>
+    <affects>
+      <package>
+	<name>dokuwiki</name>
+	<range><lt>20110525a</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Dokuwiki reports:</p>
+	<blockquote cite="http://www.freelists.org/post/dokuwiki/Hotfix-Release-20110525a-Rincewind">
+	  <p>We just released a Hotfix Release "2011-05-25a Rincewind".
+	    It contains the following changes:</p>
+	  <p>Security fix for a Cross Site Scripting vulnerability.
+	    Malicious users could abuse DokuWiki's RSS embedding
+	    mechanism to create links containing arbitrary JavaScript.
+	    Note: this security problem is present in at least Anteater
+	    and Rincewind but probably in older releases as well.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.freelists.org/post/dokuwiki/Hotfix-Release-20110525a-Rincewind</url>
+    </references>
+    <dates>
+      <discovery>2011-06-14</discovery>
+      <entry>2011-06-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="55a528e8-9787-11e0-b24a-001b2134ef46">
     <topic>linux-flashplugin -- remote code execution vulnerability</topic>
     <affects>
