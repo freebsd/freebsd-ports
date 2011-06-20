@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		${SAMBA_BASENAME}35
-PORTVERSION=		3.5.6
-PORTREVISION?=	2
+PORTVERSION=		3.5.9
+PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
@@ -16,7 +16,7 @@ DISTNAME=		${SAMBA_BASENAME}-${PORTVERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alph
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
 
-CONFLICTS?=		*samba3[0-4]-3.* sharity-light-1.*
+CONFLICTS?=		*samba3[2-4]-3.*
 # Additional patches from Sernet.de
 PATCH_STRIP=		-p1
 EXTRA_PATCHES=		${PATCHDIR}/sernet.patch
@@ -74,7 +74,7 @@ CONFIGURE_ARGS+=	--exec-prefix="${PREFIX}" \
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
 
-CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}" \
 			PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			PTHREAD_LDFLAGS="${PTHREAD_LIBS}"
 # pkg-config is used to find talloc
@@ -94,7 +94,7 @@ CONFIGURE_ARGS+=	--without-libtdb --enable-external-libtdb
 BUILD_DEPENDS+=		talloc>=2.0.1:${PORTSDIR}/devel/talloc
 RUN_DEPENDS+=		talloc>=2.0.1:${PORTSDIR}/devel/talloc
 CONFIGURE_ARGS+=	--without-libtalloc --enable-external-libtalloc
-# These options are common for all (sub)ports --disable-pie --disable-as-needed
+# These options are common for all (sub)ports
 CONFIGURE_ARGS+=	--with-libiconv="${LOCALBASE}"
 
 .if !defined(SAMBA_SUBPORT)
@@ -121,9 +121,14 @@ OPTIONS=	LDAP		"With LDAP support" on \
 .endif
 
 .include <bsd.port.options.mk>
+
 # XXX
 .if ${OSVERSION} >= 701000 && ${OSVERSION} < 702000
 IGNORE=			databases/tdb crashes on FreeBSD 7.1. Please, consider upgrading to 7.2 or higher
+.endif
+# There are reports that on ARM PIE makes binaries to core dump(#149186)
+.if ${ARCH} == "arm"
+CONFIGURE_ARGS+=	--disable-pie
 .endif
 
 .if defined(SAMBA_SUBPORT)
