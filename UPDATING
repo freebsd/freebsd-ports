@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110620:
+  AFFECTS: users of net/samba35
+  AUTHOR: timur@FreeBSD.org
+
+  A bug, introduced by local patch to pam_winbind.so, that made it coredump
+  was spotted by Martin Minkus. It is fixed in the 3.5.9 version of the port.
+  So, if pam_winbind.so strated to work for you - send him kudos.
+
 20110619:
   AFFECTS: users of irc/ezbounce and irc/ezbounce-devel
   AUTHOR: flo@FreeBSD.org
