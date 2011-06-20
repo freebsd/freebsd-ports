@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	Net-IPTrie
-PORTVERSION=	0.4
+PORTVERSION=	0.7
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	Module for building IPv4 and IPv6 address space hierarchies
