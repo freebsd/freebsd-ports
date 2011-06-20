@@ -319,6 +319,7 @@
     SUBDIR += tstools
     SUBDIR += tunapie
     SUBDIR += umph
+    SUBDIR += umplayer
     SUBDIR += umr
     SUBDIR += v4l_compat
     SUBDIR += vamps
