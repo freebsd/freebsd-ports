@@ -12,8 +12,8 @@ MASTER_SITES=	RG
 MAINTAINER=	jhelfman@experts-exchange.com
 COMMENT=	Ruby interface for lighthouse ticketing system
 
-RUN_DEPENDS+=	rubygem-activesupport>=3.0.3:${PORTSDIR}/devel/rubygem-activesupport \
-		rubygem-activeresource>=3.0.3:${PORTSDIR}/www/rubygem-activeresource
+RUN_DEPENDS+=	rubygem-activesupport>=3.0.0:${PORTSDIR}/devel/rubygem-activesupport \
+		rubygem-activeresource>=3.0.0:${PORTSDIR}/www/rubygem-activeresource
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

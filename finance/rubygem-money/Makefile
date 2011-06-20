@@ -13,7 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	freebsdports@chillibear.com
 COMMENT=	Library for handling money and different currencies
 
-RUN_DEPENDS=	rubygem-i18n>=0.4.0:${PORTSDIR}/devel/rubygem-i18n
+RUN_DEPENDS=	rubygem-i18n>=0.4:${PORTSDIR}/devel/rubygem-i18n
 
 USE_RUBY=		yes
 USE_RUBYGEMS=		yes
