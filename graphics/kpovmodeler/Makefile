@@ -7,7 +7,7 @@
 
 PORTNAME=	kpovmodeler
 PORTVERSION=	${APP_VER}.${EXTRA_VER}
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${EXTRA_VER}/src/extragear
@@ -16,6 +16,8 @@ DIST_SUBDIR=	KDE/extragear
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	A KDE editor/frontend for Povray
+
+RUN_DEPENDS=	povray:${PORTSDIR}/graphics/povray-meta
 
 USE_BZIP2=	yes
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
