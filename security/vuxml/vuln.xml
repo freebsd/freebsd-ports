@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="23c8423e-9bff-11e0-8ea2-0019d18c446a">
+    <topic>piwik -- remote command execution vulnerability</topic>
+    <affects>
+      <package>
+	<name>piwik</name>
+	<range><ge>1.2</ge><lt>1.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Piwik security advisory reports:</p>
+	<blockquote cite="http://piwik.org/blog/2011/06/piwik-1-5-security-advisory/">
+	  <p>The Piwik 1.5 release addresses a critical security vulnerability,
+	    which affect all Piwik users that have let granted some access to
+	    the "anonymous" user.</p>
+	  <p>Piwik contains a remotely exploitable vulnerabiliy that could
+	    allow a remote attacker to execute arbitrary code. Only
+	    installations that have granted untrusted view access to their
+	    stats (ie. grant "view" access to a website to anonymous) are at
+	    risk.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/158084</freebsdpr>
+      <url>http://piwik.org/blog/2011/06/piwik-1-5-security-advisory/</url>
+    </references>
+    <dates>
+      <discovery>2011-06-21</discovery>
+      <entry>2011-06-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0b535cd0-9b90-11e0-800a-00215c6a37bb">
     <topic>dokuwiki -- cross site scripting vulnerability</topic>
     <affects>
