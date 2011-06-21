@@ -1,6 +1,7 @@
-BBDock displays one or more PNG icons in the BlackBox/FluxBox slit from
-which you can launch the corresponding applications. It is pretty similar 
-in function and appearance to bbbutton wich you might want to try if you 
-are reading this on a display with a color-depth below 16 bits.
+BBDock is an application launcher for Blackbox-like window managers that
+allows one to create application buttons in the slit/dock.  It works with
+PNG files rather than XPM images, and supports alpha blending at 16, 24,
+and 32 bits color-depth.  Also, the raise-window function is available to
+window managers which implement the EWMH specification.
 
-WWW: http://bbdock.nethence.com/download/
+WWW: http://bbdock.nethence.com/
