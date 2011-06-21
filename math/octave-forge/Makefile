@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge
 PORTVERSION=	20110205
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -37,6 +37,7 @@ OPTIONS=	\
 	FINANCIAL "Install package: financial" On \
 	FL_CORE "Install package: fl-core" On \
 	FPL "Install package: fpl" On \
+	FUZZY_LOGIC_TOOLKIT "Install package: fuzzy-logic-toolkit" On \
 	GA "Install package: ga" Off \
 	GENERAL "Install package: general" On \
 	GENERATE_HTML "Install package: generate_html" On \
@@ -61,6 +62,7 @@ OPTIONS=	\
 	OCS "Install package: ocs" On \
 	OCT2MAT "Install package: oct2mat" On \
 	OCTCDF "Install package: octcdf" On \
+	OCTCLIP "Install package: octclip" On \
 	OCTGPR "Install package: octgpr" On \
 	OCTPROJ "Install package: octproj" On \
 	ODEBVP "Install package: odebvp" On \
@@ -157,6 +159,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/fl-core.tar.gz:${PORTSDIR}/math/octave-forge-fl-co
 .if defined(WITH_FPL)
 RUN_DEPENDS+=	${TARBALLS_DIR}/fpl.tar.gz:${PORTSDIR}/math/octave-forge-fpl
 .endif
+.if defined(WITH_FUZZY_LOGIC_TOOLKIT)
+RUN_DEPENDS+=	${TARBALLS_DIR}/fuzzy-logic-toolkit.tar.gz:${PORTSDIR}/math/octave-forge-fuzzy-logic-toolkit
+.endif
 .if defined(WITH_GA)
 RUN_DEPENDS+=	${TARBALLS_DIR}/ga.tar.gz:${PORTSDIR}/math/octave-forge-ga
 .endif
@@ -228,6 +233,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/oct2mat.tar.gz:${PORTSDIR}/math/octave-forge-oct2m
 .endif
 .if defined(WITH_OCTCDF)
 RUN_DEPENDS+=	${TARBALLS_DIR}/octcdf.tar.gz:${PORTSDIR}/math/octave-forge-octcdf
+.endif
+.if defined(WITH_OCTCLIP)
+RUN_DEPENDS+=	${TARBALLS_DIR}/octclip.tar.gz:${PORTSDIR}/math/octave-forge-octclip
 .endif
 .if defined(WITH_OCTGPR)
 RUN_DEPENDS+=	${TARBALLS_DIR}/octgpr.tar.gz:${PORTSDIR}/math/octave-forge-octgpr
