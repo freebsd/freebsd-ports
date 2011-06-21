@@ -14,7 +14,7 @@ MASTER_SITES=	http://humdi.net/vnstat/ \
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	A console-based network traffic monitor
 
-MAKE_ARGS=	CFLAGS="-I${LOCALBASE}/include" \
+MAKE_ARGS=	CC="${CC}" CFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 INSTALL_TARGET=	bsdinstall
 
