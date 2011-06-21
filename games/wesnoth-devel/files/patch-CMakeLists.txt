@@ -15,9 +15,9 @@
  find_package(X11)
  
 @@ -68,7 +67,7 @@ option(ENABLE_GAME "Enable compilation o
+ option(ENABLE_GAME "Enable compilation of the game" ON)
  option(ENABLE_CAMPAIGN_SERVER "Enable compilation of campaign server")
  option(ENABLE_SERVER "Enable compilation of server" ON)
- option(ENABLE_EDITOR "Enable compilation of the new map editor into the game executable" ON)
 -option(ENABLE_TOOLS "Enable building and installation of tools for artists and WML maintainers")
 +option(ENABLE_TOOLS "Enable building and installation of tools for artists and WML maintainers" OFF)
  option(ENABLE_TESTS "Build unit tests")
@@ -27,8 +27,8 @@
  		endif(ENABLE_STRICT_COMPILATION)
  
  		# Strict compilation for C files is disabled until somebody wants to clean them.
--		set(CMAKE_C_FLAGS "-O2 -W -Wall -ansi $ENV{CFLAGS}" 
-+		set(CMAKE_C_FLAGS "-W -Wall -ansi $ENV{CFLAGS}" 
+-		set(CMAKE_C_FLAGS "-O2 -W -Wall -ansi $ENV{CFLAGS}"
++		set(CMAKE_C_FLAGS "-W -Wall -ansi $ENV{CFLAGS}"
  				CACHE STRING "Flags used by the C compiler during normal builds." FORCE)
 -		set(CMAKE_C_FLAGS_DEBUG "-O0 -DDEBUG -ggdb3 -W -Wall -ansi $ENV{CFLAGS}"
 +		set(CMAKE_C_FLAGS_DEBUG "-DDEBUG -W -Wall -ansi $ENV{CFLAGS}"
@@ -48,26 +48,18 @@
  				CACHE STRING "Flags used by the CXX compiler during release builds." FORCE)
  
  	endif(NOT CONFIGURED)
-@@ -151,9 +150,15 @@ if(X11_FOUND)
- 	add_definitions(-D_X11)
- endif(X11_FOUND)
- 
-+if(IS_ABSOLUTE ${LOCALEDIR})
-+	set(LOCALE_INSTALL ${LOCALEDIR})
-+	add_definitions(-DLOCALEDIR=\\\"${LOCALE_INSTALL}\\\")
+@@ -154,6 +153,7 @@ add_definitions(-DLOCALEDIR=\\\"${LOCALE
+ if(LOCALEDIR MATCHES "^/")
+ 	add_definitions(-DHAS_RELATIVE_LOCALEDIR=0)
+ 	set(LOCALE_INSTALL ${LOCALEDIR})
 +	set(LOCALEDIR "translations")
-+else(IS_ABSOLUTE ${LOCALEDIR})
- add_definitions(-DHAS_RELATIVE_LOCALEDIR=1)
- add_definitions(-DLOCALEDIR=\\\"${LOCALEDIR}\\\")
- set(LOCALE_INSTALL ${DATADIR}/${LOCALEDIR})
-+endif(IS_ABSOLUTE ${LOCALEDIR})
- 
- add_definitions(-DFIFODIR=\\\"${FIFO_DIR}\\\")
- 
-@@ -201,10 +206,14 @@ if(ENABLE_GAME)
- 		pkg_check_modules( FONTCONFIG REQUIRED fontconfig>=2.4.1 )
- 	endif(NOT MSVC)
- 
+ else(LOCALEDIR MATCHES "^/")
+ 	add_definitions(-DHAS_RELATIVE_LOCALEDIR=1)
+ 	set(LOCALE_INSTALL ${DATADIR}/${LOCALEDIR})
+@@ -213,10 +213,14 @@ if(ENABLE_TESTS)
+ 	find_package( Boost 1.35 REQUIRED COMPONENTS unit_test_framework )
+ endif(ENABLE_TESTS)
+ if(ENABLE_GAME)
 -	find_package( FriBiDi )
 +	pkg_check_modules( FRIBIDI fribidi>=0.19.0 )
  	if(ENABLE_FRIBIDI AND FRIBIDI_LIBRARIES)

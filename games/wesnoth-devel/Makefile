@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wesnoth
-PORTVERSION=	1.9.4
+PORTVERSION=	1.9.7
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		http://files.wesnoth.org/
@@ -16,6 +16,7 @@ MAINTAINER=	philip@FreeBSD.org
 COMMENT=	A fantasy turn-based strategy game
 
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
+RUN_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-fonts/junicode:extract
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
@@ -36,16 +37,15 @@ PORTDATA=	*
 
 OPTIONS=	ANA	 "Enable Asynchronous Network API (WIP)" On \
 		CAMPAIGN "Enable campaign server"	On \
-		EDITOR	 "Enable map editor"		On \
 		FRIBIDI	 "Enable bidirectional support"	On \
 		LOWMEM	 "Reduce memory usage (disables animations)" Off \
 		NOTIFY	 "Enable desktop notifications"	On \
+		OPENMP	 "Enable OpenMP support"	Off \
 		POOLALLOC "Use wesnoth own memory allocator" Off \
 		PYTHON	 "Enable python developer tools" Off \
 		RAWSOCKETS "Use raw receiving sockets in multiplayer" Off \
 		SERVER	 "Enable server"		On \
 		TESTS	 "Enable unit tests"		Off \
-		TINYGUI	 "Enable tiny gui (down to 320x200)" Off \
 		TOOLS	 "Enable extra tools for artists and translators" On
 
 .include <bsd.port.options.mk>
@@ -67,14 +67,6 @@ PLIST_SUB+=	CAMPAIGN="@comment "
 .else
 CMAKE_ARGS+=	-DENABLE_CAMPAIGN_SERVER=on
 PLIST_SUB+=	CAMPAIGN=""
-.endif
-
-.if defined(WITHOUT_EDITOR)
-CMAKE_ARGS+=	-DENABLE_EDITOR=off
-PLIST_SUB+=	EDITOR="@comment "
-.else
-CMAKE_ARGS+=	-DENABLE_EDITOR=on
-PLIST_SUB+=	EDITOR=""
 .endif
 
 .if defined(WITHOUT_FRIBIDI)
@@ -108,6 +100,12 @@ MANLANG=	"" cs de en_GB et fi fr gl hu id it ja lt pl pt_BR sk \
 _MANPAGES+=	${PREFIX}/man/es/man6/wesnothd.6 \
 		${PREFIX}/man/tr/man6/wesnothd.6
 PLIST_SUB+=	NLS=""
+.endif
+
+.if defined(WITHOUT_OPENMP)
+CMAKE_ARGS+=	-DENABLE_OMP=off
+.else
+CMAKE_ARGS+=	-DENABLE_OMP=on
 .endif
 
 .if defined(WITHOUT_POOLALLOC)
@@ -148,11 +146,6 @@ CMAKE_ARGS+=	-DENABLE_TESTS=on
 PLIST_SUB+=	TESTS=""
 .endif
 
-.if !defined(WITHOUT_TINYGUI)
-CMAKE_ARGS+=	-DGUI=tiny
-BUILD_DEPENDS+=	convert:${PORTSDIR}/graphics/ImageMagick
-.endif
-
 .if defined(WITHOUT_TOOLS)
 CMAKE_ARGS+=	-DENABLE_TOOLS=off
 PLIST_SUB+=	TOOLS="@comment "
@@ -170,6 +163,9 @@ IGNORE=		game data is required, undefine NOPORTDATA
 .endif
 
 post-install:
+	${INSTALL_DATA} $$(${MAKE} -V WRKSRC \
+		-C ${PORTSDIR}/x11-fonts/junicode)/fonts/Junicode-Regular.ttf \
+		${DATADIR}/fonts
 	-update-desktop-database ${PREFIX}/share/applications
 
 .include <bsd.port.mk>

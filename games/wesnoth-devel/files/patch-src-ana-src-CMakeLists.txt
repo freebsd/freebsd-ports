@@ -1,32 +1,34 @@
 --- src/ana/src/CMakeLists.txt~
 +++ src/ana/src/CMakeLists.txt
-@@ -4,7 +4,7 @@ include_directories( ../api )
+@@ -4,7 +4,7 @@ include_directories(../api)
  
- find_package( Boost 1.35 REQUIRED COMPONENTS thread system)
+ find_package(Boost 1.35 REQUIRED COMPONENTS thread system)
  
--set ( CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -ggdb3" )
-+set ( CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}" )
+-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -ggdb3")
++set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG}")
  
- set ( common_srcs asio_listener.cpp asio_sender.cpp asio_timers.cpp )
+ set(common_srcs asio_listener.cpp asio_sender.cpp asio_timers.cpp)
  
-@@ -20,19 +20,9 @@ target_link_libraries( ana-static ${Boos
+@@ -20,11 +20,11 @@ target_link_libraries( ana-static ${Boos
  
- set ( CMAKE_INSTALL_PREFIX /usr/local )
+ set(CMAKE_INSTALL_PREFIX /usr/local)
  
--IF(NOT MSVC)
--       set ( CMAKE_INSTALL_PREFIX /usr/local )
--       install ( TARGETS ana LIBRARY DESTINATION lib )
--       install ( TARGETS ana-static ARCHIVE DESTINATION lib )
--ENDIF(NOT MSVC)
--
- set ( ana_headers ../api/ana.hpp
-                   ../api/common.hpp
-                   ../api/timers.hpp
-                   ../api/buffers.hpp
-                   ../api/predicates.hpp
-                   ../api/binary_streams.hpp )
--
--IF(NOT MSVC)
--       install ( FILES  ${ana_headers} DESTINATION include/ana )
--ENDIF(NOT MSVC)
-\ No newline at end of file
+-if(NOT MSVC)
++if(FALSE)
+ 	set(CMAKE_INSTALL_PREFIX /usr/local)
+ 	install(TARGETS ana LIBRARY DESTINATION lib)
+ 	install(TARGETS ana-static ARCHIVE DESTINATION lib)
+-endif(NOT MSVC)
++endif(FALSE)
+ 
+ set(ana_headers
+ 	../api/ana.hpp
+@@ -35,6 +35,6 @@ set(ana_headers
+ 	../api/binary_streams.hpp
+ )
+ 
+-if(NOT MSVC)
++if(FALSE)
+ 	install(FILES ${ana_headers} DESTINATION include/ana)
+-endif(NOT MSVC)
++endif(FALSE)
