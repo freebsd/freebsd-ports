@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	octave-forge-odepkg
-PORTVERSION=	0.6.12
-PORTREVISION=	1
+PORTVERSION=	0.8.0
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
