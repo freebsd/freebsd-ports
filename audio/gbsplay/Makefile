@@ -19,6 +19,7 @@ HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
+USE_CSTD=	gnu89
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 
@@ -49,14 +50,17 @@ CONFIGURE_ARGS+=	--disable-nas
 post-patch: gbsplay-post-patch
 	@${REINPLACE_CMD} -e 's|^\(default.*\)test|\1|' ${WRKSRC}/${MAKEFILE}
 	@${REINPLACE_CMD} -e \
-		's|/usr/local/include|${LOCALBASE}/include|; \
+		'/^need_include\ /d; \
+		 468s|char argc|int argc|; \
+		 s|/usr/local/include|${LOCALBASE}/include|; \
 		 s|/usr/local/lib|${LOCALBASE}/lib|; \
 		 s|/usr/X11R6/include||; \
 		 s|/usr/X11R6/lib||; \
 		 s|/usr/X11/lib|${LOCALBASE}/lib|; \
 		 s|/usr/lib/X11|${LOCALBASE}/lib/X11|; \
 		 s|-Os||; s|-pipe||; s|-fomit-frame-pointer||; \
-		 s|-march=$$ARCH||' ${WRKSRC}/configure
+		 s|-march=$$ARCH||' \
+		${WRKSRC}/configure
 
 .if ${PKGNAMEPREFIX} == ""
 
