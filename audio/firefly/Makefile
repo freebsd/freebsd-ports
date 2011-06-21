@@ -38,12 +38,10 @@ DAAPD_USER?=	daapd
 DAAPD_GROUP?=	daapd
 DAAPD_DBDIR?=	${PREFIX}/var/db/${PORTNAME}
 USE_RC_SUBR=	mt-daapd
+USERS=		${DAAPD_USER}
+GROUPS=		${DAAPD_GROUP}
 
 PLIST_SUB+=	DAAPD_DBDIR=${DAAPD_DBDIR}
-SUB_LIST+=	USER=${DAAPD_USER}\
-		GROUP=${DAAPD_GROUP}\
-		DAAPD_DBDIR=${DAAPD_DBDIR}
-SUB_FILES+=	pkg-install pkg-deinstall
 
 USE_LDCONFIG=	yes
 
@@ -56,9 +54,6 @@ pre-everything::
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' \
 	    ${WRKSRC}/configure
-
-pre-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 .if !defined(NOPORTDOCS)
