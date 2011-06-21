@@ -23,6 +23,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE
 CONFLICTS=	nxserver-[0-9]*
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf
 USE_XORG=	ice x11 sm
 PLIST_FILES=	bin/nxproxy bin/setsid
 
@@ -32,15 +33,16 @@ post-extract:
 	${LN} -sf ${WRKDIR}/nxcomp-${DISTVERSION:S/2/1/} ${WRKDIR}/nxcomp
 
 post-patch:
-	${REINPLACE_CMD} -e "s,-O3,${CFLAGS}," ${WRKSRC}/configure \
-		${WRKDIR}/nxcomp/configure
+	${REINPLACE_CMD} -e "s,-O3,${CFLAGS}," ${WRKSRC}/configure.in \
+		${WRKDIR}/nxcomp/configure.in
 	${REINPLACE_CMD} -e "s,-lXcomp, -L${PREFIX}/lib -lpng -ljpeg ../nxcomp/libXcomp.a," \
-		${WRKSRC}/configure
+		${WRKSRC}/configure.in
 .if ${OSVERSION} < 700000
 	${REINPLACE_CMD} -e "s,result = unsetenv,unsetenv," ${WRKDIR}/nxcomp/Children.cpp
 .endif
 
 pre-configure:
+	cd ${WRKDIR}/nxcomp; ${AUTOCONF}
 	cd ${WRKDIR}/nxcomp; ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS};
 
 pre-build:
