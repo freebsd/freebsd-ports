@@ -15,8 +15,8 @@ MAINTAINER?=	mandree@FreeBSD.org
 COMMENT?=	Utilities & library to manipulate ext2/3/4 filesystems
 
 PATCH_STRIP=	-p1
-USE_GCC=	4.2+
 USE_GMAKE=	yes
+USE_CSTD=	gnu89
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--disable-fsck --disable-e2initrd-helper \
