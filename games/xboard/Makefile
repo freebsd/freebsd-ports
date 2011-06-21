@@ -70,6 +70,7 @@ post-patch:
 		${WRKSRC}/engineoutput.c ${WRKSRC}/uci.c
 	@${REINPLACE_CMD} -e 's:INSTALL.*sysconfdir):&/$$$$files.dist:' \
 		${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's/^SendString/void &/' ${WRKSRC}/xoptions.c
 
 post-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/cmail ${PREFIX}/bin/
