@@ -8,6 +8,8 @@
 PORTNAME=	comiccron
 PORTVERSION=	1.0.0
 CATEGORIES=	sysutils deskutils
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:VVELOX
 DISTNAME=	comiccron-${PORTVERSION}.pl
 EXTRACT_SUFX=
 EXTRACT_ONLY=
@@ -22,8 +24,6 @@ RUN_DEPENDS=	${SITE_PERL}/DateTime/Event/Cron.pm:${PORTSDIR}/devel/p5-DateTime-E
 USE_PERL5=	yes
 
 NO_WRKSUBDIR=	yes
-
-MASTER_SITES=	http://cpan.org/authors/id/V/VV/VVELOX/
 
 MAN1=		comiccron.1
 

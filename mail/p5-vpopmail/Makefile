@@ -8,9 +8,8 @@
 PORTNAME=	vpopmail
 PORTVERSION=	0.08
 CATEGORIES=	mail perl5
-MASTER_SITES=	http://www.cpan.dk/CPAN/modules/by-authors/id/S/SS/SSCANLON/ \
-		ftp://ftp.funet.fi/pub/languages/perl/CPAN/modules/by-authors/id/S/SS/SSCANLON/ \
-		ftp://ftp.cpan.org/pub/CPAN/modules/by-authors/id/S/SS/SSCANLON/
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:SSCANLON
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	james@now.ie

@@ -8,9 +8,11 @@
 PORTNAME=	GraphViz-DBI
 PORTVERSION=	1.100860
 CATEGORIES=	databases perl5
-MASTER_SITES=	CPAN/../../authors/id/M/MA/MARCEL
+MASTER_SITES=	CPAN
+MASTER_SITES_SUBDIR=	CPAN:MARCEL
 PKGNAMEPREFIX=	p5-
 
+# Note: DEPRECATION candidate.
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	GraphViz::DBI - graph database tables and relations
 

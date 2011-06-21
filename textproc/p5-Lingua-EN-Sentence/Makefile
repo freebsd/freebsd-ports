@@ -8,11 +8,12 @@
 PORTNAME=		Lingua-EN-Sentence
 PORTVERSION=		0.25
 CATEGORIES=		textproc perl5
-MASTER_SITES=		http://www.cpan.org/authors/id/S/SH/SHLOMOY/
+MASTER_SITES=		CPAN
+MASTER_SITE_SUBDIR=	CPAN:SHLOMOY
 PKGNAMEPREFIX=		p5-
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=	Module for splitting text into sentences
+MAINTAINER=		perl@FreeBSD.org
+COMMENT=		Module for splitting text into sentences
 
 PERL_CONFIGURE=		yes
 
