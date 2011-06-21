@@ -16,6 +16,7 @@ COMMENT=	Tool for depacking some compressed Amiga formats
 
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
+USE_CSTD=	gnu89
 
 CONFIGURE_ARGS+=	--prefix=${PREFIX}
 ALL_TARGET=	${PORTNAME}
