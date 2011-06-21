@@ -235,6 +235,7 @@
     SUBDIR += octave-forge-fits
     SUBDIR += octave-forge-fl-core
     SUBDIR += octave-forge-fpl
+    SUBDIR += octave-forge-fuzzy-logic-toolkit
     SUBDIR += octave-forge-ga
     SUBDIR += octave-forge-general
     SUBDIR += octave-forge-generate_html
