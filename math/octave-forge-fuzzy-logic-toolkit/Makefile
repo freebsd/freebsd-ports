@@ -1,0 +1,23 @@
+# New ports collection makefile for:	octave-forge-fuzzy-logic-toolkit
+# Date created:		13 Janurary 2011
+# Whom:			Stephen Montgomery-Smith <stephen@math.missouri.edu>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	octave-forge-fuzzy-logic-toolkit
+PORTVERSION=	0.2.1
+CATEGORIES=	math
+
+MAINTAINER=	stephen@FreeBSD.org
+COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/Mk/bsd.octave.mk"
+do-build:
+	${DO_NADA}
+
+post-build:
+	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTAVE_PKGNAME}
+
+.include <bsd.port.post.mk>
