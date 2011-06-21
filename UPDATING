@@ -71,11 +71,13 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of devel/p5-Moose and devel/p5-Class-MOP
   AUTHOR: az@FreeBSD.org
 
-  p5-Moose have been updated to 2.0007. Now p5-Class-MOP is a part of the
-  p5-Moose distribution. Manual intervention into update procedure is requied:
+  p5-Moose has been updated to 2.0007. Now p5-Class-MOP is a part of the
+  p5-Moose distribution. Manual intervention of the update procedure is
+  required:
 
     # portmaster -o devel/p5-Moose devel/p5-Class-MOP
     # portmaster -R -r p5-Moose-\*
+
   or do the same things with portupgrade.
 
   To check everything went fine you can run:
