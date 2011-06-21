@@ -16,14 +16,13 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	XMMS input plugin for playing 8bit Atari(TM) .sap audio files
 
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
 USE_GMAKE=	yes
 USE_GNOME=	glib12
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
-CXXFLAGS+=	--no-exceptions
 WRKSRC=		${WRKDIR}/sapplug-${DISTVERSION}
 
 LICENSE=	GPLv2
@@ -33,6 +32,10 @@ OPTIONS=	OPTIMIZED_CXXFLAGS "use optimized C++ flags" on \
 		OPTIMIZED_CFLAGS   "use optimized C flags"   on
 
 .include <bsd.port.pre.mk>
+
+.if ${CXX:T} != "clang++"
+CXXFLAGS+=	--no-exceptions
+.endif
 
 .if defined(WITH_OPTIMIZED_CXXFLAGS)
 CXXFLAGS+=	-fPIC -fpic -funroll-all-loops -fno-strength-reduce \
