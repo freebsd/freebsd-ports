@@ -22,6 +22,9 @@ PLIST_FILES=	bin/cutmp3
 
 PORTDOCS=	README README.timetable USAGE
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/Makefile
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
