@@ -20,6 +20,9 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 MAN1=	smu.1
 PLIST_FILES=	bin/smu
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|cc|${CC}|g' ${WRKSRC}/config.mk
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/smu ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/smu.1 ${MAN1PREFIX}/man/man1
