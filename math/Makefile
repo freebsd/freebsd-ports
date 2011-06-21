@@ -259,6 +259,7 @@
     SUBDIR += octave-forge-ocs
     SUBDIR += octave-forge-oct2mat
     SUBDIR += octave-forge-octcdf
+    SUBDIR += octave-forge-octclip
     SUBDIR += octave-forge-octgpr
     SUBDIR += octave-forge-octproj
     SUBDIR += octave-forge-odebvp
