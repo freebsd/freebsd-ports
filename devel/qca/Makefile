@@ -25,6 +25,10 @@ USE_LDCONFIG=	yes
 
 MAN1=		qcatool2.1
 
+.if defined(PACKAGE_BUILDING)
+CONFIGURE_ENV+=	QC_VERBOSE=Y
+.endif
+
 .if defined(MAINTAINER_MODE)
 QT_COMPONENTS+=	qtestlib
 .else
