@@ -6,12 +6,16 @@
 #
 
 PORTNAME=	phprecipebook
-PORTVERSION=	2.41
+PORTVERSION=	3.01
 CATEGORIES=	www deskutils
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION:C/\..*//}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Small php webapp to manage your recipes
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/docs/LICENSE.TXT
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
@@ -36,7 +40,7 @@ post-extract:
 	@${CHMOD} -R u+w ${WRKSRC}
 
 do-install:
-	@${MV} ${WRKSRC}/custom_inc.php ${WRKSRC}/custom_inc.php.sample
+	@${CP} ${WRKSRC}/custom_inc.php ${WRKSRC}/custom_inc.php.sample
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} . ${PREFIX}/${RECIPEDIR}
 	@if [ ! -f ${PREFIX}/${RECIPEDIR}/custom_inc.php ]; then \
 		${CP} ${PREFIX}/${RECIPEDIR}/custom_inc.php.sample \
