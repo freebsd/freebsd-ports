@@ -19,7 +19,7 @@ LIB_DEPENDS+=	proj:${PORTSDIR}/graphics/proj
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
 post-extract:
-	${REINPLACE_CMD} s/CC/CCC/ ${WRKSRC}/Makefile
+	${REINPLACE_CMD} s/CC/MKOCTFILE/ ${WRKSRC}/Makefile
 
 post-build:
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTAVE_PKGNAME}
