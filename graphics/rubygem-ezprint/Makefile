@@ -1,0 +1,21 @@
+# Ports collection makefile for:	rubygem-ezprint
+# Date created:				2011-06-16
+# Whom:					rpsfa@rit.edu
+#
+# $FreeBSD$
+
+PORTNAME=	ezprint
+PORTVERSION=	0.2.2
+CATEGORIES=	graphics rubygems
+MASTER_SITES=	RG
+
+MAINTAINER=	rpsfa@rit.edu
+COMMENT=	A rails wrapper for the PDFKit library
+
+RUN_DEPENDS=	rubygem-pdfkit>=0.4.1:${PORTSDIR}/graphics/rubygem-pdfkit
+
+USE_RUBY=	yes
+USE_RUBYGEMS=	yes
+RUBYGEM_AUTOPLIST=	yes
+
+.include <bsd.port.mk>
