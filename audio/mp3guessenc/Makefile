@@ -15,16 +15,12 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Utility for guessing which encoder was used to encode an mp3 file
 
 USE_ZIP=	yes
+USE_DOS2UNIX=	yes
 MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}
 
 PLIST_FILES=	bin/mp3guessenc
-
-post-extract:
-	@${REINPLACE_CMD} -e 's/[[:cntrl:]]*$$//' \
-		${WRKSRC}/${PORTNAME}.c \
-		${WRKSRC}/VbrTag.h
 
 do-build:
 	${CC} ${CFLAGS} ${WRKSRC}/${PORTNAME}.c -o ${WRKSRC}/${PORTNAME}
