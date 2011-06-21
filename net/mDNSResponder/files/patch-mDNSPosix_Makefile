@@ -1,5 +1,14 @@
 --- mDNSPosix/Makefile.orig	2009-08-11 09:13:47.000000000 +0800
-+++ mDNSPosix/Makefile	2011-01-11 11:51:28.000000000 +0800
++++ mDNSPosix/Makefile	2011-06-21 10:22:59.016198425 +0800
+@@ -54,7 +54,7 @@
+ SHAREDDIR ?= ../mDNSShared
+ JDK = /usr/jdk
+ 
+-CC = @cc
++CC ?= @cc
+ BISON = @bison
+ FLEX = @flex
+ LD = ld -shared
 @@ -118,7 +118,7 @@
  LOCALBASE?=/usr/local
  INSTBASE=$(LOCALBASE)
