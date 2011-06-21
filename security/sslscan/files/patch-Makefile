@@ -1,0 +1,22 @@
+--- ./Makefile.orig	2009-09-01 14:35:59.000000000 +0200
++++ ./Makefile	2011-06-21 17:37:30.000000000 +0200
+@@ -1,13 +1,14 @@
+ SRCS = sslscan.c
+-BINPATH = /usr/bin/
+-MANPATH = /usr/share/man/
++BINPATH = ${PREFIX}/bin/
++MANPATH = ${PREFIX}/man
++CC =	${CC}
+ 
+ all:
+-	gcc -g -Wall -lssl -o sslscan $(SRCS) $(LDFLAGS) $(CFLAGS)
++	${CC} -g -Wall -lssl -o sslscan $(SRCS) $(LDFLAGS) $(CFLAGS)
+ 
+ install:
+-	cp sslscan $(BINPATH)
+-	cp sslscan.1 $(MANPATH)man1
++	install -s -m 755 sslscan $(BINPATH)
++	install -m 644 sslscan.1 $(MANPATH)/man1
+ 
+ uninstall:
+ 	rm -f $(BINPATH)sslscan

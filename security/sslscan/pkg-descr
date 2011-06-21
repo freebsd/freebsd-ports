@@ -1,0 +1,4 @@
+SSLScan is a fast SSL port scanner. SSLScan connects to SSL ports and determines
+what ciphers are supported, which are the servers prefered ciphers, which SSL
+protocols are supported and returns the SSL certificate. Client certificates and
+private key can be configured and output is to text / XML.
