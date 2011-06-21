@@ -1,43 +1,32 @@
-# New ports collection makefile for:	bbdock
-# Date created:		July 31, 2006
-# Whom:			Francis Bacque <idroxid01@yahoo.fr>
+# New ports collection makefile for:	BBDock
+# Date created:				July 31, 2006
+# Whom:					Francis Bacque <idroxid01@yahoo.fr>
 #
 # $FreeBSD$
 #
 
-PORTNAME=		bbdock
-PORTVERSION=		0.2.8
-PORTREVISION=	3
-CATEGORIES=		x11
-MASTER_SITES=		http://bbdock.nethence.com/download/
+PORTNAME=	bbdock
+PORTVERSION=	0.2.9
+CATEGORIES=	x11
+MASTER_SITES=	http://bbdock.nethence.com/download/
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		BBDock displays one or more PNG icons in the BlackBox/FluxBox slit
+MAINTAINER=	danfe@FreeBSD.org
+COMMENT=	An application launcher for Blackbox-like window manager
 
-DEPRECATED=		yes
-EXPIRATION_DATE=	2011-08-01
+LICENSE=	BSD
 
-LIB_DEPENDS=		png:${PORTSDIR}/graphics/png
+LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
-PORTDOCS=		README
-GNU_CONFIGURE=		yes
-USE_GMAKE=		yes
-USE_XORG=		ice sm x11 xau xcursor xdmcp xext xfixes xi
+GNU_CONFIGURE=	yes
+USE_XORG=	x11
+PORTDOCS=	README
 
-PLIST_FILES=		bin/bbdock
-
-.include <bsd.port.pre.mk>
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|png_check_sig|png_sig_cmp|' \
-		${WRKSRC}/configure
+PLIST_FILES=	bin/bbdock
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${WRKSRC}/${PORTDOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
