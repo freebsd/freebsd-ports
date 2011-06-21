@@ -8,7 +8,8 @@
 PORTNAME=	gplink
 PORTVERSION=	1.5
 CATEGORIES=	misc
-MASTER_SITES=	http://gp2x.org/gp32/gplink/
+MASTER_SITES=	http://gp2x.org/gp32/gplink/ \
+		http://www.gnu-darwin.org/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GP32 USB linker tool
@@ -25,6 +26,7 @@ LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's/^\(CC[^g]*\)gcc$$/\1${CC}/' ${WRKSRC}/Makefile
 .if ${OSVERSION} >= 800069
 	@${REINPLACE_CMD} -E -e 's,`libusb-config --cflags`,,g' \
 		-e 's,`libusb-config --libs`,-lusb,g' \
