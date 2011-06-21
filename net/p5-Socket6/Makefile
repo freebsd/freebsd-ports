@@ -15,6 +15,7 @@ MAINTAINER=	ume@FreeBSD.org
 COMMENT=	IPv6 related part of the C socket.h defines and structure manipulators
 
 PERL_CONFIGURE=	yes
+CONFIGURE_ENV+=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 PLIST_FILES=	%%SITE_PERL%%/%%PERL_ARCH%%/Socket6.pm \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Socket6/.packlist \
