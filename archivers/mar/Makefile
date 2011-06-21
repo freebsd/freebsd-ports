@@ -22,9 +22,7 @@ LICENSE=	MIT
 MAN1=		mar.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|^\(CFLAGS\ \)|\1?|' \
-		${WRKSRC}/src/Makefile
-	@${REINPLACE_CMD} -e 's|^\(CXXFLAGS\ \)|\1?|' \
+	@${REINPLACE_CMD} -E "s#^(CFLAGS\ |CXXFLAGS\ |CC\ |CXX\ )#\1?#" \
 		${WRKSRC}/src/Makefile
 
 do-install:
