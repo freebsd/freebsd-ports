@@ -33,7 +33,7 @@ bin/wesnoth
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/wmltools.pyc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/wesnoth/wmltools.pyo
 share/applications/wesnoth.desktop
-%%EDITOR%%share/applications/wesnoth_editor.desktop
+share/applications/wesnoth_editor.desktop
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-did.mo
@@ -59,6 +59,56 @@ share/applications/wesnoth.desktop
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-units.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth-utbs.mo
 %%NLS%%share/locale/af/LC_MESSAGES/wesnoth.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-anl.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-aoi.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-dw.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-editor.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-ei.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-help.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-httt.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-l.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-low.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-multiplayer.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-nr.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-sof.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-sotbe.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-tb.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-test.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-thot.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-trow.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-tsg.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-tutorial.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-units.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth-utbs.mo
+%%NLS%%share/locale/ang/LC_MESSAGES/wesnoth.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-anl.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-aoi.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-did.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-dm.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-dw.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-editor.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-ei.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-help.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-httt.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-l.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-lib.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-low.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-multiplayer.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-nr.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-sof.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-sotbe.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-tb.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-test.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-thot.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-trow.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-tsg.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-tutorial.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-units.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth-utbs.mo
+%%NLS%%share/locale/ang@latin/LC_MESSAGES/wesnoth.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-anl.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-aoi.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/wesnoth-did.mo
@@ -1360,10 +1410,14 @@ share/applications/wesnoth.desktop
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth-utbs.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/wesnoth.mo
 share/pixmaps/wesnoth-icon.png
-%%EDITOR%%share/pixmaps/wesnoth_editor-icon.png
+share/pixmaps/wesnoth_editor-icon.png
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/wesnoth
 @dirrmtry man/af/man6
 @dirrmtry man/af
+@dirrmtry man/ang/man6
+@dirrmtry man/ang
+@dirrmtry man/ang@latin/man6
+@dirrmtry man/ang@latin
 @dirrmtry man/ar/man6
 @dirrmtry man/ar
 @dirrmtry man/bg/man6
@@ -1467,6 +1521,10 @@ share/pixmaps/wesnoth-icon.png
 @dirrmtry man/zh_TW/man6
 @dirrmtry man/zh_TW
 @dirrmtry share/applications
+%%NLS%%@dirrmtry share/locale/ang/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ang
+%%NLS%%@dirrmtry share/locale/ang@latin/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/ang@latin
 %%NLS%%@dirrmtry share/locale/ca_ES@valencia/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ca_ES@valencia
 %%NLS%%@dirrmtry share/locale/en@shaw/LC_MESSAGES
