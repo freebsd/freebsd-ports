@@ -1,0 +1,14 @@
+--- Makefile.orig	2011-06-21 09:13:26.000000000 +0800
++++ Makefile	2011-06-21 09:13:41.000000000 +0800
+@@ -1,9 +1,9 @@
+ 
+ #--------------------------------------------------------------------
+ 
+-CC = gcc
++#CC = gcc
+ AR = ar cru
+-CFLAGS = -Wall -D_REENTRANT -D_GNU_SOURCE -g -fPIC
++CFLAGS += -Wall -D_REENTRANT -D_GNU_SOURCE -g -fPIC
+ SOFLAGS = -shared
+ LDFLAGS = -lstdc++ -lpthread
+ 
