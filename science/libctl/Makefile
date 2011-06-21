@@ -11,7 +11,7 @@ PORTVERSION=	3.1
 CATEGORIES=	science math
 MASTER_SITES=	http://ab-initio.mit.edu/libctl/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	devel@stasyan.com
 COMMENT=	Control Language Library
 
 LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile
