@@ -34,15 +34,18 @@ CONFIGURE_ARGS+=	--enable-tcp-wrapper
 
 .if defined(WITH_SPOOF_SOURCE)
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
-CONFIGURE_ENV=	CFLAGS="`${LIBNET_CONFIG} --cflags`" \
-		CPPFLAGS="`${LIBNET_CONFIG} --defines`" \
-		LDFLAGS="`${LIBNET_CONFIG} --libs`"
+CONFIGURE_ENV=	CFLAGS+="`${LIBNET_CONFIG} --cflags`" \
+		CPPFLAGS+="`${LIBNET_CONFIG} --defines`" \
+		LDFLAGS+="`${LIBNET_CONFIG} --libs`"
 CONFIGURE_ARGS+=	--enable-spoof-source
 BUILD_DEPENDS+=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's:libnet-config:libnet11-config:g' ${WRKSRC}/configure
+	@${REINPLACE_CMD}  \
+		-e 's:libnet-config:libnet11-config:g' \
+		-e 's|int foo(void)||' \
+		${WRKSRC}/configure
 .if ${OSVERSION} >= 900007
 	@${REINPLACE_CMD} \
 		-e 's|utmp|utmpx|' -e 's|getutent|getutxent|' \
