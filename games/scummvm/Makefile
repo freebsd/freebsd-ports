@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scummvm
-DISTVERSION=	1.2.1
+DISTVERSION=	1.3.0
 CATEGORIES=	games emulators
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${DISTVERSION}
@@ -41,10 +41,12 @@ MAN6=		scummvm.6
 
 PORTDOCS=	AUTHORS NEWS README TODO COPYRIGHT
 ENGINEDATA=	drascula.dat \
+		hugo.dat \
 		kyra.dat \
 		lure.dat \
 		queen.tbl \
 		sky.cpt \
+		toon.dat \
 		teenagent.dat
 
 PLIST_FILES=	bin/scummvm \
