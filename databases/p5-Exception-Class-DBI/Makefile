@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Exception-Class-DBI
-PORTVERSION=	1.00
+PORTVERSION=	1.01
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,9 @@ COMMENT=	DBI Exception objects
 
 RUN_DEPENDS=	${SITE_PERL}/Exception/Class.pm:${PORTSDIR}/devel/p5-Exception-Class \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+
+LICENSE_COMB=	dual
+LICENSE=	ART10 GPLv1
 
 PERL_MODBUILD=	5.8.0+
 
