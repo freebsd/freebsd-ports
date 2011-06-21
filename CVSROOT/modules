@@ -4371,6 +4371,7 @@ ginac                           ports/math/GiNaC
 gindent                         ports/devel/gindent
 gini                            ports/net/gini
 gio-fam-backend                 ports/devel/gio-fam-backend
+gio-sharp                       ports/devel/gio-sharp
 gir-repository                  ports/devel/gir-repository
 gir-repository-goocanvas        ports/graphics/gir-repository-goocanvas
 gir-repository-libnotify        ports/devel/gir-repository-libnotify
@@ -10206,6 +10207,7 @@ nuttcp                          ports/benchmarks/nuttcp
 nux                             ports/textproc/nux
 nvclock                         ports/sysutils/nvclock
 nvi-devel                       ports/editors/nvi-devel
+nvi-m17n                        ports/editors/nvi-m17n
 nvidia-driver                   ports/x11/nvidia-driver
 nvidia-driver-173               ports/x11/nvidia-driver-173
 nvidia-driver-71                ports/x11/nvidia-driver-71
@@ -25568,6 +25570,7 @@ umlgraph                        ports/devel/umlgraph
 umodplayer                      ports/audio/umodplayer
 umodunpack                      ports/misc/umodunpack
 umph                            ports/multimedia/umph
+umplayer                        ports/multimedia/umplayer
 umr                             ports/multimedia/umr
 unace                           ports/archivers/unace
 unadf                           ports/archivers/unadf
