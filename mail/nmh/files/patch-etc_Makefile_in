@@ -1,28 +1,26 @@
---- etc/Makefile.in	Tue Nov  8 08:58:08 2005
-+++ ../../work-save2/nmh-1.2/etc/Makefile.in	Sat Feb 18 21:24:51 2006
-@@ -23,6 +23,7 @@
- 
- INSTALL         = @INSTALL@
- INSTALL_PROGRAM = @INSTALL_PROGRAM@
-+INSTALL_SCRIPT  = @INSTALL_SCRIPT@
- INSTALL_DATA    = @INSTALL_DATA@
- 
- # Path to search for programs to handle MIME
-@@ -85,7 +86,7 @@
- install-bin-files:
- 	$(top_srcdir)/mkinstalldirs $(DESTDIR)$(bindir)
- 	for script in $(GENERATED_BIN_FILES); do \
--	  $(INSTALL_PROGRAM) $$script $(DESTDIR)$(bindir)/$$script; \
-+	  $(INSTALL_SCRIPT) $$script $(DESTDIR)$(bindir)/$$script; \
- 	done
- 
- install-etc-files:
-@@ -113,7 +115,8 @@
- 	  else \
- 	    $(INSTALL_DATA) $$path $(DESTDIR)$(etcdir)/$$file; \
- 	  fi; \
+--- etc/Makefile.in.orig	2006-03-04 17:14:18.000000000 -0500
++++ etc/Makefile.in	2011-06-01 20:41:11.000000000 -0400
+@@ -100,22 +100,7 @@
+ 	for path in $$INSTALL_FILES; do \
+ 	  file=`basename $$path`; \
+ 	  echo "Installing $$file..."; \
+-	  if [ -f $(DESTDIR)$(etcdir)/$$file ]; then \
+-	    mv $(DESTDIR)$(etcdir)/$$file $(DESTDIR)$(etcdir)/$$file.prev; \
+-	    $(INSTALL_DATA) $$path $(DESTDIR)$(etcdir)/$$file; \
+-	    if diff $(DESTDIR)$(etcdir)/$$file.prev $(DESTDIR)$(etcdir)/$$file; then \
+-	      rm $(DESTDIR)$(etcdir)/$$file.prev; \
+-	    else \
+-	      echo; \
+-	      echo "  Previous version of $$file saved as $$file.prev due\c";\
+-	      echo   " to diffs."; \
+-	      echo "  Please merge any local config changes into the new\c"; \
+-	      echo   " $$file."; \
+-	      echo; \
+-	    fi; \
+-	  else \
+-	    $(INSTALL_DATA) $$path $(DESTDIR)$(etcdir)/$$file; \
+-	  fi; \
 +	  $(INSTALL_DATA) $$path $(DESTDIR)$(etcdir)/$$file-dist; \
  	done
  
  uninstall: uninstall-bin-files uninstall-etc-files
- 
