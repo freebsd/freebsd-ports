@@ -7,6 +7,7 @@
 
 PORTNAME=	tvdownloader
 PORTVERSION=	0.7.2
+PORTREVISION=	1
 CATEGORIES=	french multimedia
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MASTER_SITE_SUBDIR=
@@ -20,7 +21,7 @@ RUN_DEPENDS=	msdl:${PORTSDIR}/multimedia/msdl	\
 		${PYTHON_SITELIBDIR}/Crypto/__init__.py:${PORTSDIR}/security/py-pycrypto\
 		${PYTHON_SITELIBDIR}/${MECHA_EGG}:${PORTSDIR}/www/py-mechanize
 
-MECHA_VER=	0.2.4
+MECHA_VER=	0.2.5
 MECHA_EGG=	mechanize-${MECHA_VER}-${PYTHON_VERSION:S/thon//}${PYEASYINSTALL_OSARCH}.egg
 
 USE_PYTHON=	yes
