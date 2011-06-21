@@ -52,8 +52,7 @@
 #
 
 PORTNAME=	nmh
-PORTVERSION=	1.2
-PORTREVISION=	3
+PORTVERSION=	1.3
 CATEGORIES=	mail
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	nmh
@@ -101,7 +100,7 @@ OPTIONS=	SASL2 "Cyrus SASL2" OFF
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900007
-BROKEN=		does not build
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-utmpx
 .endif
 
 .if defined(WITH_SASL2)
@@ -123,7 +122,7 @@ MAN5=	mh-alias.5 mh-draft.5 mh-format.5 mh-mail.5 mh-profile.5 \
 
 MLINKS=	mh-profile.5 mh_profile.5
 
-MAN8=	ap.8 conflict.8 dp.8 fmtdump.8 mh-mts.8 post.8
+MAN8=	ap.8 conflict.8 dp.8 fmtdump.8 post.8
 CONFLICTS=	ja-mh-[0-9]*
 
 post-patch:
