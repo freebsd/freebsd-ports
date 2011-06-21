@@ -1,0 +1,20 @@
+--- Makefile.orig	2011-06-21 13:05:27.000000000 +0200
++++ Makefile	2011-06-21 13:06:31.000000000 +0200
+@@ -1,7 +1,7 @@
+ # Makefile for swiggle
+ #
+ # $Id: Makefile,v 1.8 2003/10/22 21:01:18 le Exp $
+-CC = gcc
++CC ?= gcc
+ PROGRAM = swiggle
+ OBJS = swiggle.o resize.o html.o
+ HEADER = swiggle.h
+@@ -11,7 +11,7 @@ LDFLAGS += -L/usr/local/lib -ljpeg -lexi
+ all: ${PROGRAM}
+ 
+ ${PROGRAM}: ${OBJS}
+-	gcc ${CFLAGS} ${LDFLAGS} -o ${PROGRAM} ${OBJS}
++	${CC} ${CFLAGS} ${LDFLAGS} -o ${PROGRAM} ${OBJS}
+ 
+ ${OBJS}: ${HEADER}
+ 
