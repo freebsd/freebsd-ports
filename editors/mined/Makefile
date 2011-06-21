@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mined
-PORTVERSION=	2000.16
+PORTVERSION=	2011.17
 CATEGORIES=	editors
 MASTER_SITES=	http://towo.net/mined/download/
 
@@ -24,7 +24,6 @@ PORTDOCS=	*
 
 USE_GMAKE=	yes
 MAKEFILE=	makefile
-#MAKE_SHELL=	${LOCALBASE}/bin/bash	# To avoid "shift: can't shift that many"
 REINPLACE_ARGS=	-i ""
 MAKE_ARGS=	GMAKE=${GMAKE} CC=${CC:T} OPT="${CFLAGS}"
 INSTALL_TARGET=	localinstall
@@ -39,9 +38,8 @@ PRFX2FIX=	src/makefile.bsd usrshare/conf_user/xinitrc.mined	\
 
 pre-configure:
 .for FILE in ${PRFX2FIX}
-	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/${FILE}
+	${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/${FILE}
 .endfor
-	${REINPLACE_CMD} -e 's|#! ${SH}|#! ${MAKE_SHELL}|' ${WRKSRC}/makemined
 
 pre-build:
 	${MV} ${WRKSRC}/src/mkinclud.cc ${WRKSRC}/src/mkinclud.cc.bak
