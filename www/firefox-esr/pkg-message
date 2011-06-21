@@ -14,7 +14,7 @@ The SSH server on remote_host must allow pub key authentication.
 
 ======================================================================
 
-Firefox 4.0 and HTML5
+Firefox and HTML5
 
 Certain functions used to display HTML5 elements need the sem module.
 

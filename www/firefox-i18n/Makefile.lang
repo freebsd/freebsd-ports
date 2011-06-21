@@ -6,12 +6,12 @@
 #
 # Currently, the following 71 languages are supported.
 #
-FIREFOX_I18N_ALL_=	af ar be bg bn-BD bn-IN ca cs cy da de el en-GB \
-			eo es-AR es-CL es-ES es-MX et eu fa fi fr fy-NL \
-			ga-IE gl gu-IN he hi-IN hr hu id is it ja kk kn \
-			ko ku lt lv mk ml mr nb-NO nl nn-NO or pa-IN pl \
-			pt-BR pt-PT rm ro ru si sk sl sq sr sv-SE ta-LK \
-			ta te th tr uk vi zh-CN zh-TW
+FIREFOX_I18N_ALL_=	af ak ar ast be bg bn-BD bn-IN br bs ca cs cy da de el \
+			en-GB en-US en-ZA eo es-AR es-CL es-ES es-MX et eu fa \
+			fi fr fy-NL ga-IE gl gu-IN he hi-IN hr hu hy-AM id is \
+			it ja kk kn ko ku lg lt lv mai mk ml mr nb-NO nl nn-NO \
+			nso or pa-IN pl pt-BR pt-PT rm ro ru si sk sl son sq \
+			sr sv-SE ta-LK ta te th tr uk vi zh-CN zh-TW zu
 
 .if defined(FIREFOX_I18N_ALL) || defined(PACKAGE_BUILDING) || target(package)
 FIREFOX_I18N=   ${FIREFOX_I18N_ALL_}
@@ -19,8 +19,14 @@ FIREFOX_I18N=   ${FIREFOX_I18N_ALL_}
 .ifndef WITHOUT_LANG_AF
 FIREFOX_I18N+=  af
 .endif
+.ifndef WITHOUT_LANG_AK
+FIREFOX_I18N+=  ak
+.endif
 .ifndef WITHOUT_LANG_AR
 FIREFOX_I18N+=  ar
+.endif
+.ifndef WITHOUT_LANG_AST
+FIREFOX_I18N+=  ast
 .endif
 .ifndef WITHOUT_LANG_BE
 FIREFOX_I18N+=  be
@@ -33,6 +39,12 @@ FIREFOX_I18N+=  bn-BD
 .endif
 .ifndef WITHOUT_LANG_BN
 FIREFOX_I18N+=  bn-IN
+.endif
+.ifndef WITHOUT_LANG_BR
+FIREFOX_I18N+=  br
+.endif
+.ifndef WITHOUT_LANG_BS
+FIREFOX_I18N+=  bs
 .endif
 .ifndef WITHOUT_LANG_CA
 FIREFOX_I18N+=  ca
@@ -54,6 +66,12 @@ FIREFOX_I18N+=  el
 .endif
 .ifndef WITHOUT_LANG_GB
 FIREFOX_I18N+=  en-GB
+.endif
+.ifndef WITHOUT_LANG_US
+FIREFOX_I18N+=  en-US
+.endif
+.ifndef WITHOUT_LANG_ZA
+FIREFOX_I18N+=  en-ZA
 .endif
 .ifndef WITHOUT_LANG_EO
 FIREFOX_I18N+=  eo
@@ -109,6 +127,9 @@ FIREFOX_I18N+=  hr
 .ifndef WITHOUT_LANG_HU
 FIREFOX_I18N+=  hu
 .endif
+.ifndef WITHOUT_LANG_AM
+FIREFOX_I18N+=  hy-AM
+.endif
 .ifndef WITHOUT_LANG_ID
 FIREFOX_I18N+=  id
 .endif
@@ -133,11 +154,17 @@ FIREFOX_I18N+=  ko
 .ifndef WITHOUT_LANG_KU
 FIREFOX_I18N+=  ku
 .endif
+.ifndef WITHOUT_LANG_LG
+FIREFOX_I18N+=  lg
+.endif
 .ifndef WITHOUT_LANG_LT
 FIREFOX_I18N+=  lt
 .endif
 .ifndef WITHOUT_LANG_LV
 FIREFOX_I18N+=  lv
+.endif
+.ifndef WITHOUT_LANG_MAI
+FIREFOX_I18N+=  mai
 .endif
 .ifndef WITHOUT_LANG_MK
 FIREFOX_I18N+=  mk
@@ -157,6 +184,9 @@ FIREFOX_I18N+=  nl
 .ifndef WITHOUT_LANG_NN
 FIREFOX_I18N+=  nn-NO
 .endif
+.ifndef WITHOUT_LANG_NSO
+FIREFOX_I18N+=  nso
+.endif
 .ifndef WITHOUT_LANG_OR
 FIREFOX_I18N+=  or
 .endif
@@ -166,7 +196,7 @@ FIREFOX_I18N+=  pa-IN
 .ifndef WITHOUT_LANG_PL
 FIREFOX_I18N+=  pl
 .endif
-.ifndef WITHOUT_LANG_BR
+.ifndef WITHOUT_LANG_PBR
 FIREFOX_I18N+=  pt-BR
 .endif
 .ifndef WITHOUT_LANG_PT
@@ -186,6 +216,9 @@ FIREFOX_I18N+=  si
 .endif
 .ifndef WITHOUT_LANG_SK
 FIREFOX_I18N+=  sk
+.endif
+.ifndef WITHOUT_LANG_SON
+FIREFOX_I18N+=  son
 .endif
 .ifndef WITHOUT_LANG_SL
 FIREFOX_I18N+=  sl
@@ -225,5 +258,8 @@ FIREFOX_I18N+=  zh-CN
 .endif
 .ifndef WITHOUT_LANG_TW
 FIREFOX_I18N+=  zh-TW
+.endif
+.ifndef WITHOUT_LANG_ZU
+FIREFOX_I18N+=  zu
 .endif
 .endif

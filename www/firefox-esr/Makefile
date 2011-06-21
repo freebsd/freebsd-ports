@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	firefox
-DISTVERSION=	4.0.1
+DISTVERSION=	5.0
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -17,6 +17,8 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.8.7:${PORTSDIR}/devel/nspr
+LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
+		event-1.4:${PORTSDIR}/devel/libevent
 
 USE_AUTOTOOLS=	autoconf213
 USE_GECKO=	gecko
@@ -47,7 +49,7 @@ MOZ_OPTIONS=	--program-transform-name='s/firefox/${MOZILLA}/' \
 		--enable-application=browser \
 		--enable-official-branding --disable-updater \
 		--enable-canvas --enable-libxul --disable-necko-wifi \
-		--disable-ipc
+		--with-system-libevent=${LOCALBASE}
 
 OPTIONS=	DBUS "Enable D-BUS support" on \
 		PGO "Enable Profile-Guided Optimization" off \
@@ -55,7 +57,7 @@ OPTIONS=	DBUS "Enable D-BUS support" on \
 
 .include <bsd.port.pre.mk>
 
-WRKSRC:=	${WRKSRC}-2.0
+WRKSRC:=	${WRKDIR}/mozilla-release
 
 GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 '%{\!pg: %{pthread:' | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
 
@@ -107,6 +109,9 @@ post-extract::
 		<${FILESDIR}/firefox.desktop.in >${WRKDIR}/${MOZILLA}.desktop
 
 post-patch:
+	@${GREP} -Flr \"/proc ${WRKSRC}/ipc/chromium/src/base | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|/proc/self/fd|/dev/fd|' \
+		-e 's|/proc["/]|/compat/linux&|'
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
 		${WRKSRC}/storage/build/Makefile.in \
 		${WRKSRC}/toolkit/library/Makefile.in \
@@ -119,7 +124,7 @@ post-patch:
 		s|-lpthread|${PTHREAD_LIBS}|g ; \
 		s|echo aout|echo elf|g ; \
 		s|/usr/X11R6|${LOCALBASE}|g' \
-		${WRKSRC}/js/src/configure
+		${WRKSRC}/js/src/configure.in
 
 pre-configure:
 	(cd ${WRKSRC} && ${AUTOCONF})

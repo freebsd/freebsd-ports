@@ -5,7 +5,7 @@
  	$(INSTALL) $^ .
  
 -EXTRA_DSO_LDOPTS += $(LIBS_DIR) $(EXTRA_DSO_LIBS)
-+EXTRA_DSO_LDOPTS += $(LIBS_DIR) $(EXTRA_DSO_LIBS) %%PTHREAD_LIBS%%
++EXTRA_DSO_LDOPTS += $(LIBS_DIR) $(EXTRA_DSO_LIBS) -lexecinfo %%PTHREAD_LIBS%%
  
  ifdef MOZ_ENABLE_LIBXUL
  include $(srcdir)/libxul-rules.mk

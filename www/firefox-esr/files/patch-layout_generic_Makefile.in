@@ -1,9 +1,9 @@
---- layout/generic/Makefile.in.orig	2009-08-07 00:49:41.000000000 +0200
-+++ layout/generic/Makefile.in	2009-08-09 20:54:53.000000000 +0200
-@@ -187,9 +187,10 @@
- 		-I$(srcdir)/../../content/base/src \
+--- layout/generic/Makefile.in.orig	2011-04-26 23:21:46.000000000 +0200
++++ layout/generic/Makefile.in	2011-04-26 23:44:09.096445086 +0200
+@@ -147,9 +147,10 @@
  		-I$(srcdir)/../../content/html/content/src \
  		-I$(srcdir)/../../dom/base \
+ 		-I$(srcdir)/../../modules/plugin/base/src \
 -		$(MOZ_CAIRO_CFLAGS) \
  		$(NULL)
  
