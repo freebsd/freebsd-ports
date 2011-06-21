@@ -21,17 +21,6 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 PLIST_FILES=	bin/pkextract bin/pkfindkey bin/pkmakekey bin/pkcrack bin/zipdecrypt
 PORTDOCS=	README pkzip.ps.gz
 
-post-patch:
-	@${REINPLACE_CMD} -e 's|^\(#include\ <\)malloc\.h>|\1stdlib.h>|' \
-		${WRKSRC}/exfunc.c \
-		${WRKSRC}/readhead.c
-	@${REINPLACE_CMD} -e '/<malloc\.h>/d' \
-		${WRKSRC}/extract.c \
-		${WRKSRC}/main.c \
-		${WRKSRC}/zipdecrypt.c
-	@${REINPLACE_CMD} -E 's/^(CC|CFLAGS)=/\1?=/' \
-		${WRKSRC}/Makefile
-
 do-install:
 .for f in pkcrack zipdecrypt
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
