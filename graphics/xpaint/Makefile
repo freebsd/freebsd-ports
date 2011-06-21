@@ -33,6 +33,8 @@ post-patch:
 		's|@PREFIX@|${PREFIX}|g ; \
 		 s|@XPMDIR@|${LOCALBASE}|g ; \
 		 s|@LOCALBASE@|${LOCALBASE}|g' ${WRKSRC}/Local.config
+	@${REINPLACE_CMD} -e '/if (!image)/s/return;/return -1;/' \
+		${WRKSRC}/rw/readWriteTGA.c
 
 pre-configure:
 	@cd ${WRKSRC} && ${SH} ./configure xaw3dxft.a
