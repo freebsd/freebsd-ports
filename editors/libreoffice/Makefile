@@ -31,6 +31,7 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/tdf/libreoffice/src/ \
 		http://mirror.yongbok.net/tdf/libreoffice/src/ \
 		http://mirror3.mirrors.tds.net/pub/documentfoundation.org/libreoffice/src/ \
 		http://download.go-oo.org/src/ \
+		http://hg.services.openoffice.org/binaries/:hgOOo \
 		http://www.numbertext.org/linux/:OOoDTP
 
 MAINTAINER=	bapt@FreeBSD.org
@@ -239,29 +240,29 @@ CONFIGURE_ARGS+=	--disable-gconf --disable-gnome-vfs
 
 .if defined(WITH_JAVA)
 #additionnal distfiles needed for java
-DISTFILES+=	798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip \
-		17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip \
-		2a177023f9ea8ec8bd00837605c5df1b-jakarta-tomcat-5.0.30-src.tar.gz \
-		48d8169acc35f97e05d8dcdfd45be7f2-lucene-2.3.2.tar.gz \
-		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip \
-		af3c3acf618de6108d65fcdc92b492e1-commons-codec-1.3-src.tar.gz \
-		3c219630e4302863a9a83d0efde889db-commons-logging-1.1.1-src.tar.gz \
-		2ae988b339daec234019a7066f96733e-commons-lang-2.3-src.tar.gz \
+DISTFILES+=	798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip:hgOOo \
+		17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:hgOOo \
+		2a177023f9ea8ec8bd00837605c5df1b-jakarta-tomcat-5.0.30-src.tar.gz:hgOOo \
+		48d8169acc35f97e05d8dcdfd45be7f2-lucene-2.3.2.tar.gz:hgOOo \
+		a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip:hgOOo \
+		af3c3acf618de6108d65fcdc92b492e1-commons-codec-1.3-src.tar.gz:hgOOo \
+		3c219630e4302863a9a83d0efde889db-commons-logging-1.1.1-src.tar.gz:hgOOo \
+		2ae988b339daec234019a7066f96733e-commons-lang-2.3-src.tar.gz:hgOOo \
 		2c9b0f83ed5890af02c0df1c1776f39b-commons-httpclient-3.1-src.tar.gz \
-		ea570af93c284aa9e5621cd563f54f4d-bsh-2.0b1-src.tar.gz \
-		ada24d37d8d638b3d8a9985e80bc2978-source-9.0.0.7-bj.zip \
-		8ea307d71d11140574bfb9fcc2487e33-libbase.zip \
-		35c94d2df8893241173de1d16b6034c0-swingExSrc.zip \
-		39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip \
-		a06a496d7a43cbdc35e69dbe678efadb-libloader.zip \
-		f3e2febd267c8e4b13df00dac211dd6d-flute.zip \
-		5aba06ede2daa9f2c11892fbd7bc3057-libserializer.zip \
-		d1a3205871c3c52e8a50c9f18510ae12-libformula.zip \
-		f7925ba8491fe570e5164d2c72791358-libfonts.zip \
-		67b42915c8432abf0a922438f00860a2-libxml.zip \
-		dbb3757275dc5cc80820c0b4dd24ed95-librepository.zip \
-		79600e696a98ff95c2eba976f7a8dfbb-liblayout.zip \
-		d4c4d91ab3a8e52a2e69d48d34ef4df4-core.zip
+		ea570af93c284aa9e5621cd563f54f4d-bsh-2.0b1-src.tar.gz:hgOOo \
+		ada24d37d8d638b3d8a9985e80bc2978-source-9.0.0.7-bj.zip:hgOOo \
+		8ea307d71d11140574bfb9fcc2487e33-libbase.zip:hgOOo \
+		35c94d2df8893241173de1d16b6034c0-swingExSrc.zip:hgOOo \
+		39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip:hgOOo \
+		a06a496d7a43cbdc35e69dbe678efadb-libloader.zip:hgOOo \
+		f3e2febd267c8e4b13df00dac211dd6d-flute.zip:hgOOo \
+		5aba06ede2daa9f2c11892fbd7bc3057-libserializer.zip:hgOOo \
+		d1a3205871c3c52e8a50c9f18510ae12-libformula.zip:hgOOo \
+		f7925ba8491fe570e5164d2c72791358-libfonts.zip:hgOOo \
+		67b42915c8432abf0a922438f00860a2-libxml.zip:hgOOo \
+		dbb3757275dc5cc80820c0b4dd24ed95-librepository.zip:hgOOo \
+		79600e696a98ff95c2eba976f7a8dfbb-liblayout.zip:hgOOo \
+		d4c4d91ab3a8e52a2e69d48d34ef4df4-core.zip:hgOOo
 
 USE_JAVA=	1.4+
 BUILD_DEPENDS+=	ant:${PORTSDIR}/devel/apache-ant \
