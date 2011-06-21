@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-MethodAttributes
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,9 +18,12 @@ BUILD_DEPENDS=	p5-Moose>=0.98:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Types>=0.21:${PORTSDIR}/devel/p5-MooseX-Types \
 		p5-namespace-clean>=0.10:${PORTSDIR}/devel/p5-namespace-clean \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+
+LICENSE_COMB=	dual
+LICENSE=	ART10 GPLv1
 
 PERL_CONFIGURE=	yes
 
