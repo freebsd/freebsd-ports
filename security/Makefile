@@ -816,6 +816,7 @@
     SUBDIR += sshit
     SUBDIR += ssl-admin
     SUBDIR += sslproxy
+    SUBDIR += sslscan
     SUBDIR += sslsniffer
     SUBDIR += sslwrap
     SUBDIR += ssss
