@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	e16
-PORTVERSION=	1.0.8
+PORTVERSION=	1.0.8.001
 CATEGORIES=	x11-wm enlightenment
-MASTER_SITES=	SF/enlightenment/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/enlightenment/${PORTNAME}/Snapshots
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A very artistic X window manager

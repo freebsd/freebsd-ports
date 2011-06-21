@@ -4,9 +4,11 @@ bin/eesh
 bin/epp
 bin/starte16
 share/applications/e16.desktop
-share/xsessions/e16-gnome.desktop
-share/xsessions/e16-kde.desktop
-share/xsessions/e16.desktop
+share/gnome-session/sessions/e16-gnome.session
+share/xsessions/e16-session.desktop
+share/xsessions/e16-kde-session.desktop
+share/xsessions/e16-gnome2-session.desktop
+share/xsessions/e16-gnome3-session.desktop
 %%DATADIR%%/E-docs/bg.png
 %%DATADIR%%/E-docs/exit1.png
 %%DATADIR%%/E-docs/exit2.png
@@ -47,10 +49,6 @@ share/xsessions/e16.desktop
 %%DATADIR%%/misc/Xclients.e16-kde.sh
 %%DATADIR%%/misc/Xclients.e16.sh
 %%DATADIR%%/misc/e16-dbus-cmd
-%%DATADIR%%/misc/e16-gnome.desktop
-%%DATADIR%%/misc/e16-kde.desktop
-%%DATADIR%%/misc/e16.desktop
-%%DATADIR%%/misc/e16.desktop-app
 %%DATADIR%%/misc/starte16
 %%DATADIR%%/misc/starte16-gnome
 %%DATADIR%%/misc/starte16-kde
