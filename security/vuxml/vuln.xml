@@ -34,6 +34,101 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dfe40cff-9c3f-11e0-9bec-6c626dd55a41">
+    <topic>mozilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>firefox</name>
+	<range><gt>3.6.*,1</gt><lt>3.6.18,1</lt></range>
+	<range><gt>4.0.*,1</gt><lt>5.0,1</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>3.6.18,1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>3.1.11</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>3.1.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Mozilla Project reports:</p>
+	<blockquote cite="http://www.mozilla.org/security/known-vulnerabilities/">
+	  <p>MFSA 2011-19 Miscellaneous memory safety hazards (rv:3.0/1.9.2.18)</p>
+	  <p>MFSA 2011-20 Use-after-free vulnerability when viewing XUL document
+	    with script disabled</p>
+	  <p>MFSA 2011-21 Memory corruption due to multipart/x-mixed-replace
+	    images</p>
+	  <p>MFSA 2011-22 Integer overflow and arbitrary code execution in
+	    Array.reduceRight()</p>
+	  <p>MFSA 2011-23 Multiple dangling pointer vulnerabilities</p>
+	  <p>MFSA 2011-24 Cookie isolation error</p>
+	  <p>MFSA 2011-25 Stealing of cross-domain images using WebGL textures</p>
+	  <p>MFSA 2011-26 Multiple WebGL crashes</p>
+	  <p>MFSA 2011-27 XSS encoding hazard with inline SVG</p>
+	  <p>MFSA 2011-28 Non-whitelisted site can trigger xpinstall</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.mozilla.org/security/announce/2011/mfsa2011-19.html</url>
+      <url>http://www.mozilla.org/security/announce/2011/mfsa2011-20.html</url>
+      <url>http://www.mozilla.org/security/announce/2011/mfsa2011-21.html</url>
+      <url>http://www.mozilla.org/security/announce/2011/mfsa2011-22.html</url>
+      <url>http://www.mozilla.org/security/announce/2011/mfsa2011-23.html</url>
+      <url>http://www.mozilla.org/security/announce/2011/mfsa2011-24.html</url>
+      <url>http://www.mozilla.org/security/announce/2011/mfsa2011-25.html</url>
+      <url>http://www.mozilla.org/security/announce/2011/mfsa2011-26.html</url>
+      <url>http://www.mozilla.org/security/announce/2011/mfsa2011-27.html</url>
+      <url>http://www.mozilla.org/security/announce/2011/mfsa2011-28.html</url>
+    </references>
+    <dates>
+      <discovery>2011-06-21</discovery>
+      <entry>2011-06-21</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="bfdbc7ec-9c3f-11e0-9bec-6c626dd55a41">
+    <topic>samba -- Denial of service - memory corruption</topic>
+    <affects>
+      <package>
+	<name>samba34</name>
+	<range><gt>3.4.*</gt><lt>3.4.12</lt></range>
+      </package>
+      <package>
+	<name>samba35</name>
+	<range><gt>3.5.*</gt><lt>3.5.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Samba team reports:</p>
+	<blockquote cite="http://www.samba.org/samba/security/CVE-2011-0719.html">
+	  <p>Samba is vulnerable to a denial of service, caused by a memory
+	    corruption error related to missing range checks on file descriptors
+	    being used in the "FD_SET" macro. By performing a select on a bad
+	    file descriptor set, a remote attacker could exploit this
+	    vulnerability to cause the application to crash or possibly execute
+	    arbitrary code on the system</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0719</cvename>
+      <url>http://www.samba.org/samba/security/CVE-2011-0719.html</url>
+      <url>http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2011-0719</url>
+    </references>
+    <dates>
+      <discovery>2011-02-28</discovery>
+      <entry>2011-06-21</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="23c8423e-9bff-11e0-8ea2-0019d18c446a">
     <topic>piwik -- remote command execution vulnerability</topic>
     <affects>
