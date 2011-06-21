@@ -840,6 +840,7 @@
     SUBDIR += rubygem-captcha
     SUBDIR += rubygem-dragonfly
     SUBDIR += rubygem-exifr
+    SUBDIR += rubygem-ezprint
     SUBDIR += rubygem-gd2
     SUBDIR += rubygem-geokit
     SUBDIR += rubygem-graphviz

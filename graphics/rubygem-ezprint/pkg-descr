@@ -1,0 +1,4 @@
+A Rails wrapper for the PDFkit library.
+Meant to be a drop in replacement for princely.
+
+WWW: http://rubygems.org/gems/ezprint
