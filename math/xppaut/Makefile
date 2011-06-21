@@ -16,8 +16,7 @@ COMMENT=	Graphical tool for solving differential equations, etc
 
 MAN1=		xppaut.1
 USE_XORG=	xbitmaps x11 xproto
-MAKE_ARGS=	CC="${CC}"
-
+CFLAGS+=	-w -Wno-return-type
 WRKSRC=		${WRKDIR}
 
 post-build:
@@ -29,6 +28,6 @@ pre-configure:
 .endif
 
 post-patch:
-	@(cd ${WRKSRC} && ${REINPLACE_CMD} -e "s|gcc|${CC}|" Makefile libI77/Makefile cvodesrc/Makefile mkavi/Makefile)
+	@(cd ${WRKSRC} && ${REINPLACE_CMD} -e "s|gcc|${CC}|" -e "s|CFLAGS=|CFLAGS= ${CFLAGS}|" Makefile libI77/Makefile cvodesrc/Makefile mkavi/Makefile)
 
 .include <bsd.port.mk>
