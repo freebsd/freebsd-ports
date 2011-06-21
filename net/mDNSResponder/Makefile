@@ -43,6 +43,7 @@ BROKEN=		Does not compile on alpha
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e '/	cc / s|cc|$${CC}|' ${WRKSRC}/Clients/Makefile
 	@${MV} ${WRKSRC}/mDNSShared/mDNSResponder.8 \
 		${WRKSRC}/mDNSShared/mDNSResponderPosix.8
 
