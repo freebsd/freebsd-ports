@@ -7,7 +7,7 @@
 
 PORTNAME=	mrxvt-devel
 PORTVERSION=	0.5.4
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	x11
 MASTER_SITES=	SF/materm/mrxvt%20source/${PORTVERSION}
 DISTNAME=	mrxvt-${PORTVERSION}
@@ -42,8 +42,11 @@ OPTIONS=	XFT "Enable Xft support for fonts" Off \
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900007
-CONFIGURE_ARGS+=	--disable-lastlog --disable-wtmp
+CONFIGURE_ARGS+=	--enable-utempter
+.if ${OSVERSION} >= 900004
+CONFIGURE_ARGS+=	--disable-lastlog
+.else
+LIB_DEPENDS+=		utempter.0:${PORTSDIR}/sysutils/libutempter
 .endif
 
 .if defined(WITH_JAPANESE)
@@ -121,9 +124,6 @@ CONFIGURE_ARGS+=	--with-atab-extra=${EXTRA_ATAB_HEIGHT:M[0-9]*}
 CONFIGURE_ARGS+=	--with-tab-radius=${TAB_RADIUS:M[0-9]*}
 .endif
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LIBS="${LIBS} -L${LOCALBASE}/lib"
-
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/mrxvt ${PREFIX}/bin
 	${MKDIR} ${PREFIX}/share/pixmaps
@@ -146,8 +146,5 @@ do-install:
 	${BZIP2_CMD} -d ${DOCSDIR}/*.bz2
 .endif
 	@${CAT} ${PKGMESSAGE}
-
-post-install:
-	${CHMOD} 4511 ${PREFIX}/bin/mrxvt
 
 .include <bsd.port.post.mk>
