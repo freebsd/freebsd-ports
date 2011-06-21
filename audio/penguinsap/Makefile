@@ -13,10 +13,11 @@ MASTER_SITES=	CRITICAL
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A command line Atari(TM) .sap player
 
+USE_DOS2UNIX=	yes
+
 MAKE_JOBS_SAFE=	yes
 
 SOURCES=	sapPokey pokey1 sapCpu sapEngine main pokey0
-CXXFLAGS+=	--no-exceptions
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 EXTRAFLAGS=	-ffast-math -malign-double -finline-limit-1000000 \
@@ -25,12 +26,16 @@ EXTRAFLAGS=	-ffast-math -malign-double -finline-limit-1000000 \
 
 PLIST_FILES=	bin/sap
 
+.include <bsd.port.pre.mk>
+
+.if ${CXX:T} != "clang++"
+CXXFLAGS+=	--no-exceptions
+.endif
+
 post-patch:
-# gcc 2.95.4 does not like CR/LFs
-	@${FIND} ${WRKSRC} -type f -exec \
-		${REINPLACE_CMD} -E -e 's|||' {} \;
 	@${REINPLACE_CMD} -e 's|linux/soundcard\.h|sys/soundcard\.h|' \
 		${WRKSRC}/main.cpp
+	@${REINPLACE_CMD} -e 's|--no-exceptions||' ${WRKSRC}/build.inc
 
 do-build:
 .for f in ${SOURCES}
@@ -46,4 +51,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
