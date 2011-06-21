@@ -22,6 +22,9 @@ USE_GNOME=	gtk20
 
 PLIST_FILES=	bin/ssh-askpass-fullscreen
 
+post-patch:
+	${REINPLACE_CMD} -e "s,gcc,${CC}," ${WRKSRC}/Makefile
+
 do-install:
 	cd ${WRKSRC};\
 	${INSTALL_PROGRAM} ssh-askpass-fullscreen ${PREFIX}/bin/ssh-askpass-fullscreen;\
