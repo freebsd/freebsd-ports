@@ -1,0 +1,20 @@
+--- Makefile.orig	2011-06-21 13:24:59.000000000 +0200
++++ Makefile	2011-06-21 13:34:51.000000000 +0200
+@@ -3,7 +3,7 @@
+ # Should make just about anywhere...  If you have problems,
+ # check out porting.c first
+ 
+-CC            = gcc
++CC            ?= gcc
+ 
+ # at present, no include directories needed
+ # Except on our OSF3.0, where -I/usr/include is needed (why? I dont know).
+@@ -19,7 +19,7 @@
+ #         Do not use it if it takes none (SunOS, HPUX, OSF1 )
+ #         It works either way, just gets rid of a warning.
+ 
+-CFLAGS	              =  -I/usr/include $(DEBUGFLAG) $(INCLUDEDIR)
++CFLAGS	              +=  -I/usr/include $(DEBUGFLAG) $(INCLUDEDIR)
+ 
+ # for SunOS cc, just use the above
+ # for cc on HPUX:
