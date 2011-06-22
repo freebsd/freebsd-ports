@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	suricata
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.3
 CATEGORIES=	security
 MASTER_SITES=	http://openinfosecfoundation.org/download/ \
 		http://www6.freebsdbrasil.com.br/~eksffa/l/dev/suricata/
@@ -40,6 +39,9 @@ CONFIG_DIR?=	${PREFIX}/etc/suricata
 CONFIG_FILES=	suricata.yaml classification.config
 RULES_DIR=	${PREFIX}/etc/suricata/rules
 LOGS_DIR=	/var/log/suricata
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 .include <bsd.port.pre.mk>
 
