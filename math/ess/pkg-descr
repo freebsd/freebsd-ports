@@ -1,0 +1,6 @@
+Emacs Speaks Statistics (ESS) is an add-on package for emacs text editors
+such as GNU Emacs and XEmacs. It is designed to support editing of scripts
+and interaction with various statistical analysis programs such as R, S-Plus,
+SAS, Stata and JAGS.
+
+WWW:	http://ess.r-project.org

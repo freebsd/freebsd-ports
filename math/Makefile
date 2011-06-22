@@ -69,6 +69,7 @@
     SUBDIR += emacs-calc
     SUBDIR += emc2
     SUBDIR += entropy
+    SUBDIR += ess
     SUBDIR += eukleides
     SUBDIR += eval
     SUBDIR += facile
