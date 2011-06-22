@@ -7,6 +7,7 @@
 
 PORTNAME=	zen-cart
 PORTVERSION=	1.3.9h
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.akherb.com/FreeBSD/source/ \
 		LOCAL/beech
@@ -20,6 +21,8 @@ LICENSE_FILE=	${WRKSRC}/license.txt
 USE_ZIP=	yes
 USE_PHP=	yes
 WANT_PHP_WEB=	yes
+USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	.*\.php
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}
 NO_BUILD=	yes
