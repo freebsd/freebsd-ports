@@ -1,11 +1,11 @@
---- UFconfig/UFconfig.mk~	2009-02-16 14:40:18.000000000 +0900
-+++ UFconfig/UFconfig.mk	2009-02-16 14:44:33.000000000 +0900
+--- UFconfig/UFconfig.mk.orig	2011-05-11 05:47:15.000000000 +0900
++++ UFconfig/UFconfig.mk	2011-06-22 16:35:36.000000000 +0900
 @@ -33,11 +33,11 @@
  # C compiler and compiler flags:  These will normally not give you optimal
  # performance.  You should select the optimization parameters that are best
  # for your system.  On Linux, use "CFLAGS = -O3 -fexceptions" for example.
 -CC = cc
--# CFLAGS = -O   (for example; see below for details)
+-CFLAGS = -O3 -fexceptions
 +CC = %%CC%%
 +CFLAGS = %%CFLAGS%%
  
@@ -15,7 +15,7 @@
  
  # ranlib, and ar, for generating libraries
  RANLIB = ranlib
-@@ -48,8 +48,8 @@
+@@ -49,8 +49,8 @@
  MV = mv -f
  
  # Fortran compiler (not normally required)
@@ -26,18 +26,18 @@
  F77LIB =
  
  # C and Fortran libraries
-@@ -89,8 +89,8 @@
- # BLAS = -lgoto -lgfortran -lgfortranbegin -lg2c
+@@ -91,8 +91,8 @@
+ # naming the BLAS and LAPACK library (*.a or *.so) files.
  
  # This is probably slow ... it might connect to the Standard Reference BLAS:
--BLAS = -lblas -lgfortran -lgfortranbegin -lg2c
+-BLAS = -lblas -lgfortran
 -LAPACK = -llapack
 +BLAS = %%BLAS%% %%FORTRANRUNTIME%%
 +LAPACK = %%LAPACK%%
  
- # Using non-optimized versions:
- # BLAS = -lblas_plain -lgfortran -lgfortranbegin -lg2c
-@@ -122,8 +122,8 @@
+ # NOTE: this next option for the "Goto BLAS" has nothing to do with a "goto"
+ # statement.  Rather, the Goto BLAS is written by Dr. Kazushige Goto.
+@@ -132,8 +132,8 @@
  # The path is relative to where it is used, in CHOLMOD/Lib, CHOLMOD/MATLAB, etc.
  # You may wish to use an absolute path.  METIS is optional.  Compile
  # CHOLMOD with -DNPARTITION if you do not wish to use METIS.
@@ -48,7 +48,7 @@
  
  # If you use CHOLMOD_CONFIG = -DNPARTITION then you must use the following
  # options:
-@@ -184,7 +184,7 @@
+@@ -194,7 +194,7 @@
  # -DNSUNPERF	    for Solaris only.  If defined, do not use the Sun
  #			Performance Library
  
@@ -57,7 +57,7 @@
  
  #------------------------------------------------------------------------------
  # SuiteSparseQR configuration:
-@@ -198,7 +198,7 @@
+@@ -208,7 +208,7 @@
  # -DHAVE_TBB        enable the use of Intel's Threading Building Blocks (TBB)
  
  # default, without timing, without TBB:
@@ -66,19 +66,16 @@
  # with timing and TBB:
  # SPQR_CONFIG = -DTIMING -DHAVE_TBB
  # with timing
-@@ -220,15 +220,15 @@
- 
- # Using default compilers:
- # CC = gcc
--CFLAGS = -O3 -fexceptions
-+# CFLAGS = -O3 -fexceptions
+@@ -237,18 +237,18 @@
  
  # alternatives:
  # CFLAGS = -g -fexceptions \
 -   	-Wall -W -Wshadow -Wmissing-prototypes -Wstrict-prototypes \
--    	-Wredundant-decls -Wnested-externs -Wdisabled-optimization -ansi
+-    	-Wredundant-decls -Wnested-externs -Wdisabled-optimization -ansi \
+-        -funit-at-a-time
 +#   	-Wall -W -Wshadow -Wmissing-prototypes -Wstrict-prototypes \
-+#    	-Wredundant-decls -Wnested-externs -Wdisabled-optimization -ansi
++#    	-Wredundant-decls -Wnested-externs -Wdisabled-optimization -ansi \
++#       -funit-at-a-time
  # CFLAGS = -O3 -fexceptions \
 -   	-Wall -W -Werror -Wshadow -Wmissing-prototypes -Wstrict-prototypes \
 -    	-Wredundant-decls -Wnested-externs -Wdisabled-optimization -ansi
@@ -87,4 +84,11 @@
  # CFLAGS = -O3 -fexceptions -D_FILE_OFFSET_BITS=64 -D_LARGEFILE64_SOURCE
  # CFLAGS = -O3
  # CFLAGS = -O3 -g -fexceptions
-
+ # CFLAGS = -g -fexceptions \
+-   	-Wall -W -Wshadow \
+-    	-Wredundant-decls -Wdisabled-optimization -ansi
++#   	-Wall -W -Wshadow \
++#    	-Wredundant-decls -Wdisabled-optimization -ansi
+ 
+ # consider:
+ # -fforce-addr -fmove-all-movables -freduce-all-givs -ftsp-ordering
