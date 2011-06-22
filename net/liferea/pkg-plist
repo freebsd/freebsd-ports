@@ -1,11 +1,7 @@
 bin/liferea
 bin/liferea-add-feed
-%%NOTIFY%%lib/liferea/liblinotiflibnotify.a
-%%NOTIFY%%lib/liferea/liblinotiflibnotify.la
-%%NOTIFY%%lib/liferea/liblinotiflibnotify.so
 share/applications/liferea.desktop
 share/liferea/auth.glade
-share/liferea/bloglines_source.glade
 share/liferea/google_source.glade
 share/liferea/liferea.glade
 share/liferea/new_subscription.glade
@@ -73,6 +69,7 @@ share/liferea/opml/feedlist_es.opml
 share/liferea/opml/feedlist_eu.opml
 share/liferea/opml/feedlist_fr.opml
 share/liferea/opml/feedlist_gl.opml
+share/liferea/opml/feedlist_he.opml
 share/liferea/opml/feedlist_it.opml
 share/liferea/opml/feedlist_nl.opml
 share/liferea/opml/feedlist_pl.opml
@@ -92,7 +89,6 @@ share/liferea/pixmaps/directory.png
 share/liferea/pixmaps/edit.png
 share/liferea/pixmaps/empty.png
 share/liferea/pixmaps/empty_offline.png
-share/liferea/pixmaps/fl_bloglines.png
 share/liferea/pixmaps/fl_google.png
 share/liferea/pixmaps/fl_opml.png
 share/liferea/pixmaps/flag.png
@@ -124,6 +120,7 @@ share/icons/hicolor/32x32/apps/liferea.png
 share/icons/hicolor/48x48/apps/liferea.png
 share/icons/hicolor/scalable/apps/liferea.svg
 share/locale/ar/LC_MESSAGES/liferea.mo
+share/locale/ast/LC_MESSAGES/liferea.mo
 share/locale/be@latin/LC_MESSAGES/liferea.mo
 share/locale/bg/LC_MESSAGES/liferea.mo
 share/locale/ca/LC_MESSAGES/liferea.mo
@@ -136,6 +133,7 @@ share/locale/eu/LC_MESSAGES/liferea.mo
 share/locale/fi/LC_MESSAGES/liferea.mo
 share/locale/fr/LC_MESSAGES/liferea.mo
 share/locale/gl/LC_MESSAGES/liferea.mo
+share/locale/he/LC_MESSAGES/liferea.mo
 share/locale/hu/LC_MESSAGES/liferea.mo
 share/locale/it/LC_MESSAGES/liferea.mo
 share/locale/ja/LC_MESSAGES/liferea.mo
@@ -151,6 +149,7 @@ share/locale/sk/LC_MESSAGES/liferea.mo
 share/locale/sq/LC_MESSAGES/liferea.mo
 share/locale/sv/LC_MESSAGES/liferea.mo
 share/locale/tr/LC_MESSAGES/liferea.mo
+share/locale/uk/LC_MESSAGES/liferea.mo
 share/locale/zh_CN/LC_MESSAGES/liferea.mo
 share/locale/zh_TW/LC_MESSAGES/liferea.mo
 @dirrm share/liferea/xslt
