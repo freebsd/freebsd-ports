@@ -6,17 +6,12 @@
 #
 
 PORTNAME=	john
-PORTVERSION=	1.7.6
-PORTREVISION=	3
+DISTVERSION=	1.7.7-jumbo-6
 CATEGORIES=	security
 MASTER_SITES=	http://www.openwall.com/john/g/ \
-		http://mirrors.kernel.org/openwall/projects/john/${PORTVERSION}/ \
-		http://distro.ibiblio.org/pub/linux/distributions/openwall/projects/john/${PORTVERSION}/ \
-		http://gd.tuwien.ac.at/opsys/linux/openwall/projects/john/${PORTVERSION}/
-
-PATCH_SITES=	${MASTER_SITES:H:H:S/$/\/contrib\//}
-PATCHFILES=	john-${PORTVERSION}-jumbo-11.diff.gz
-PATCH_DIST_STRIP=	-p1
+		http://mirrors.kernel.org/openwall/projects/john/${DISTVERSION:C/-.*//}/ \
+		http://distro.ibiblio.org/pub/linux/distributions/openwall/projects/john/${DISTVERSION:C/-.*//}/ \
+		http://gd.tuwien.ac.at/opsys/linux/openwall/projects/john/${DISTVERSION:C/-.*//}/
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Featureful Unix password cracker
@@ -62,6 +57,7 @@ post-patch:
 			${WRKSRC}/src/Makefile
 	@${REINPLACE_CMD} -i '' -e 's|/usr/bin|${LOCALBASE}/bin|' \
 		${WRKSRC}/run/*.rb
+	@${REINPLACE_CMD} -e '/_XOPEN_SOURCE/d' ${WRKSRC}/src/recovery.c
 
 pre-build:
 	@${ECHO_CMD}
