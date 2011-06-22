@@ -1,26 +1,26 @@
 Index: configure.in
 diff -u configure.in.orig configure.in
---- configure.in.orig	2010-11-30 03:21:50.422738671 +0900
-+++ configure.in	2010-11-30 03:24:03.348497671 +0900
-@@ -391,7 +391,7 @@
- 	AC_CHECK_LIB(fl,main)
+--- configure.in.orig	2011-06-03 15:10:38.476221147 +0900
++++ configure.in	2011-06-03 15:12:46.807038121 +0900
+@@ -403,7 +403,7 @@
  
- 	AC_CHECK_HEADER(pcreposix.h)
--	if test "$ac_cv_header_pcreposix_h" == "yes"; then
-+	if test "$ac_cv_header_pcreposix_h" = "yes"; then
- 		AC_MSG_CHECKING(for utf8 enabled pcre)
- 		AC_CACHE_VAL(cyrus_cv_pcre_utf8, AC_TRY_CPP([#include <pcreposix.h>
+ 	if test "$testpcre" != "no"; then
+ 	    AC_CHECK_HEADER(pcreposix.h)
+-	    if test "$ac_cv_header_pcreposix_h" == "yes"; then
++	    if test "$ac_cv_header_pcreposix_h" = "yes"; then
+ 		    AC_MSG_CHECKING(for utf8 enabled pcre)
+ 		    AC_CACHE_VAL(cyrus_cv_pcre_utf8, AC_TRY_CPP([#include <pcreposix.h>
  #ifndef REG_UTF8
-@@ -401,7 +401,7 @@
- 	else
- 		cyrus_cv_pcre_utf8="no"
+@@ -415,7 +415,7 @@
+ 	    fi
  	fi
+ 
 -	if test "$cyrus_cv_pcre_utf8" == "yes"; then
 +	if test "$cyrus_cv_pcre_utf8" = "yes"; then
  		LIBS="$LIBS -lpcre -lpcreposix";
  		AC_DEFINE(ENABLE_REGEX, [], [Do we have a regex library?])
  		AC_DEFINE(HAVE_PCREPOSIX_H, [], [Do we have usable pcre library?])
-@@ -1157,7 +1157,7 @@
+@@ -1171,7 +1171,7 @@
  dnl libraries will be compiled as PIC if perl requires PIC objects
  dnl -- this is needed on NetBSD and Linux, but seems to cause problems on atleast Solaris --
      case "${target_os}" in
