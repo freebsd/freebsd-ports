@@ -7,7 +7,7 @@
 
 PORTNAME=	xine
 PORTVERSION=	1.1.19
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-lib/${PORTVERSION}
 PKGNAMEPREFIX=	lib
@@ -256,6 +256,8 @@ post-patch:
 		${WRKSRC}/misc/cdda_server.c
 	@${REINPLACE_CMD} -E -e 's|(libdvdcss.so)\.2|\1.${DVDCSS_LIBVERSION}|' \
 		${WRKSRC}/src/input/libdvdnav/dvd_input.c
+	@${REINPLACE_CMD} -e "s|#define _ATOM QT_ATOM('', '', '', '')||" \
+		${WRKSRC}/src/demuxers/demux_qt.c
 
 pre-configure:
 	@${REINPLACE_CMD} -e \
