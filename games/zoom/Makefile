@@ -18,6 +18,7 @@ COMMENT=	Z-Interpreter for X with full V6 support
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 		png.6:${PORTSDIR}/graphics/png
 
+USE_CSTD=	gnu89
 USE_PERL5=	yes
 USE_XORG=	xft
 USE_GNOME=	gnometarget
