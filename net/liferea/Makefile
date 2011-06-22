@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	liferea
-PORTVERSION=	1.6.5
-PORTREVISION=	1
+PORTVERSION=	1.6.6
 CATEGORIES=	net gnome
 MASTER_SITES=	SF/${PORTNAME}/Liferea%20Stable/${PORTVERSION}
 
@@ -23,6 +22,7 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ARGS=	--disable-libnotify
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		liferea.1
@@ -30,16 +30,7 @@ MANLANG=	"" pl
 GCONF_SCHEMAS=	liferea.schemas
 INSTALLS_ICONS=	yes
 
-OPTIONS=	LIBNOTIFY "Enable libnotify support" on
+post-patch:
+	@${CP} ${FILESDIR}/liferea_dbus.xml ${WRKSRC}/src
 
-.include <bsd.port.pre.mk>
-
-.ifdef WITHOUT_LIBNOTIFY
-CONFIGURE_ARGS+=--disable-libnotify
-PLIST_SUB+=	NOTIFY="@comment "
-.else
-LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
-PLIST_SUB+=	NOTIFY=""
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
