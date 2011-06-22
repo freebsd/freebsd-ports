@@ -16,6 +16,8 @@ COMMENT=	A fast & configurable redirector for the Squid
 
 RUN_DEPENDS=	${LOCALBASE}/sbin/squid:${PORTSDIR}/www/squid
 
+USE_CSTD=	gnu89
+
 SQUID_UID?=	squid
 SQUID_GID?=	squid
 
