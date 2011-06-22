@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Math-Complex
-PORTVERSION=	1.57
+PORTVERSION=	1.58
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Complex numbers and associated mathematical functions
+
+LICENSE_COMB=	dual
+LICENSE=	ART10 GPLv1
 
 PERL_CONFIGURE=	yes
 
