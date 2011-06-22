@@ -18,6 +18,7 @@ LIB_DEPENDS=	cxxtools:${PORTSDIR}/devel/cxxtools
 BUILD_DEPENDS+=	zip:${PORTSDIR}/archivers/zip
 
 USE_ICONV=	yes
+USE_CSTD=	gnu89
 PATCH_STRIP=	-p1
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}"

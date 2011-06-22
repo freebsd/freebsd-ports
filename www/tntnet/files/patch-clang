@@ -1,0 +1,27 @@
+--- a/framework/common/tnt/object.h
++++ b/framework/common/tnt/object.h
+@@ -57,9 +57,9 @@ namespace tnt
+         : ptr(ptr_)
+         { }
+       ~PointerObject()
+-        { destroy(ptr); }
++        { this->destroy(ptr); }
+       void set(data_type* ptr_)
+-        { destroy(ptr); ptr = ptr_; }
++        { this->destroy(ptr); ptr = ptr_; }
+       data_type* get()  { return ptr; }
+   };
+ 
+--- a/framework/common/tnt/compident.h
++++ b/framework/common/tnt/compident.h
+@@ -39,8 +39,9 @@ namespace tnt
+ /// tntnet components are identified by the library, where they reside and a name
+ /// inside the library. The name is actually a string constant, which was passed
+ /// to the component factory ctor.
+-struct Compident
++class Compident
+ {
++public:
+   std::string libname;
+   std::string compname;
+ 
