@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	lzma
-PORTVERSION=	9.20
+PORTVERSION=	9.22
 CATEGORIES=	archivers
 MASTER_SITES=	SF/sevenzip/LZMA%20SDK/
-
 DISTNAME=	lzma${PORTVERSION:S/.//g}
 
 MAINTAINER=	bf@FreeBSD.org
@@ -24,7 +23,6 @@ USE_DOS2UNIX=	yes
 BUILD_WRKSRC=	${WRKSRC}/CPP/7zip/Bundles/LzmaCon
 MAKEFILE=	makefile.gcc
 PLIST_FILES=	bin/${PORTNAME}
-CFLAGS+=	-D_LZMA_SYSTEM_SIZE_T
 .ifdef(WITH_LZMA_PROB32)
 #increase the speed of decoding on some 32-bit CPUs, at the expense of doubled
 #memory usage for CLzmaDec::probs
@@ -39,6 +37,9 @@ PORTDOCS=	7zC.txt 7zFormat.txt Methods.txt history.txt lzma.txt
 post-patch:
 	@${REINPLACE_CMD} -e '/bool Open(LPCTSTR fileName, DWORD creationDisposition)/,/}/d'\
 		${WRKSRC}/CPP/7zip/Common/FileStreams.h
+	@${REINPLACE_CMD} -e 's|malloc\.h|stdlib.h|g' \
+		${WRKSRC}/CPP/7zip/UI/Common/Bench.cpp \
+		${WRKSRC}/CPP/Common/MyWindows.cpp
 	@${REINPLACE_CMD} -e \
 		'/^CXX/d;s|CXX_C|CC|;s|^CFLAGS =|CFLAGS +=|;s|-o|${CFLAGS} -o|'\
 			${BUILD_WRKSRC}/${MAKEFILE}

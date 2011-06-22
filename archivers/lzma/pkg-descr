@@ -1,12 +1,7 @@
-Simple command line implementation of LZMA compression algorithm. This tool
-uses raw LZMA format as opposed to 7z container format, which uses LZMA as
-the default compression algorithm, but has many additional features and a
-header incompatible to that of raw LZMA streams. If you need to create
-highly-compatible archives, you probably want to use archivers/p7zip port.
-Lzma tool is taken from LZMA SDK.
-
-Compression ratio is about 25-30% better than bzip2 and decompression speed
-is about two times faster. The downside is higher CPU and RAM requirements
-for compression.
+This is a simple command line implementation of the LZMA compression algorithm
+from the LZMA SDK. It uses a raw LZMA format instead of the xz or 7z container
+formats, and produces compression ratios that are usually about 25-30% better
+than bzip2, and decompression speeds that are about twice as fast. The
+disadvantages are higher CPU and RAM requirements for compression.
 
 WWW: http://www.7-zip.org/sdk.html
