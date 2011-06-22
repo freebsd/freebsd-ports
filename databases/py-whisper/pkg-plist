@@ -1,0 +1,10 @@
+@comment $FreeBSD$
+%%PYTHON_SITELIBDIR%%/whisper.py
+%%PYTHON_SITELIBDIR%%/whisper.pyc
+%%PYTHON_SITELIBDIR%%/whisper.pyo
+bin/rrd2whisper.py
+bin/whisper-info.py
+bin/whisper-fetch.py
+bin/whisper-update.py
+bin/whisper-resize.py
+bin/whisper-create.py

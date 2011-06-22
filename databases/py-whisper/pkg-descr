@@ -1,0 +1,5 @@
+Whisper is a fixed-size database, similar in design to RRD
+(round-robin-database). It provides fast, reliable storage of
+numeric data over time.
+
+WWW:	http://graphite.wikidot.com/whisper
