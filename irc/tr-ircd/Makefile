@@ -12,7 +12,7 @@ CATEGORIES=	irc ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-ircd/trircd-${PORTVERSION}-release
 DISTNAME=	${PORTNAME:S/-//}-release-${PORTVERSION}-r
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An irc daeemon based on Bahamut and hybrid-7
 
 LICENSE=	GPLv2
