@@ -1,13 +1,31 @@
---- Makefile.orig	Sat Apr 12 10:04:41 2003
-+++ Makefile	Wed Jun  2 21:10:14 2004
-@@ -1,5 +1,5 @@
+--- Makefile.orig	2003-04-12 10:04:41.000000000 +0200
++++ Makefile	2011-06-23 00:18:51.000000000 +0200
+@@ -1,5 +1,6 @@
  
 -CFLAGS=-Wall -g -O0 -ansi -pedantic
++CC?=	gcc
 +CFLAGS+=-Wall -ansi -pedantic
  
  SRCS=$(wildcard *.c)
  
-@@ -26,7 +26,6 @@
+@@ -8,13 +9,13 @@
+ OBJECTS=$(SRCS:.c=.o)
+ 
+ sheerdns: $(OBJECTS)
+-	gcc -o sheerdns $(OBJECTS)
++	$(CC) -o sheerdns $(OBJECTS)
+ 
+ sheerdnshash: hash.c
+-	gcc $(CFLAGS) -o sheerdnshash hash.c -DSTANDALONE -Wall
++	$(CC) $(CFLAGS) -o sheerdnshash hash.c -DSTANDALONE -Wall
+ 
+ .c.o: $(SRCS)
+-	gcc $(CFLAGS) -c $<
++	$(CC) $(CFLAGS) -c $<
+ 
+ clean:
+ 	rm -f sheerdns sheerdnshash *.o
+@@ -26,7 +27,6 @@
  	groff -Tps -mandoc sheerdns.8 > sheerdns.ps
  
  install: all
