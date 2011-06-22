@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dnstop
-PORTVERSION=	20110107
+PORTVERSION=	20110502
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://dns.measurement-factory.com/tools/dnstop/src/
 
@@ -16,6 +16,8 @@ GNU_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 MAN8=		dnstop.8
 PLIST_FILES=	bin/dnstop
+
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/dnstop ${PREFIX}/bin
