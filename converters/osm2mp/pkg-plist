@@ -1,0 +1,35 @@
+bin/osm2mp
+%%DATADIR%%/cp1250.cmap
+%%DATADIR%%/cp1251.cmap
+%%DATADIR%%/garmin-auto-ru.yml
+%%DATADIR%%/garmin-auto.yml
+%%DATADIR%%/garmin-ru.yml
+%%DATADIR%%/garmin-water.yml
+%%DATADIR%%/garmin.yml
+%%DATADIR%%/iso-3166-1-a2-en.txt
+%%DATADIR%%/iso-3166-1-a2-ru.txt
+%%DATADIR%%/osm.typ
+%%DATADIR%%/osm_pv.txt
+%%DATADIR%%/polish-mp/nodes-common-en.yml
+%%DATADIR%%/polish-mp/nodes-common-ru.yml
+%%DATADIR%%/polish-mp/nodes-common-univ.yml
+%%DATADIR%%/polish-mp/nodes-common.yml
+%%DATADIR%%/polish-mp/nodes-garmin-custom-univ.yml
+%%DATADIR%%/polish-mp/nodes-garmin-custom.yml
+%%DATADIR%%/polish-mp/nodes-garmin-marine.yml
+%%DATADIR%%/polish-mp/output-polish.yml
+%%DATADIR%%/polish-mp/ways-areas-common-univ.yml
+%%DATADIR%%/polish-mp/ways-areas-common.yml
+%%DATADIR%%/polish-mp/ways-areas-garmin-custom-univ.yml
+%%DATADIR%%/polish-mp/ways-areas-garmin-custom.yml
+%%DATADIR%%/polish-mp/ways-lines-common-univ.yml
+%%DATADIR%%/polish-mp/ways-lines-common.yml
+%%DATADIR%%/polish-mp/ways-lines-garmin-custom-univ.yml
+%%DATADIR%%/polish-mp/ways-lines-garmin-custom.yml
+%%DATADIR%%/polish-mp/ways-roads-common-univ.yml
+%%DATADIR%%/polish-mp/ways-roads-common.yml
+%%DATADIR%%/polish-mp/ways-roads-garmin-univ.yml
+%%DATADIR%%/polish-mp/ways-roads-garmin.yml
+%%DATADIR%%/polish-mp/ways-roads-waterway.yml
+@dirrm %%DATADIR%%/polish-mp
+@dirrm %%DATADIR%%

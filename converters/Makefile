@@ -48,6 +48,7 @@
     SUBDIR += mule-ucs
     SUBDIR += nomyso
     SUBDIR += o3read
+    SUBDIR += osm2mp
     SUBDIR += p5-Boulder
     SUBDIR += p5-Convert-ASCII-Armour
     SUBDIR += p5-Convert-ASN1
