@@ -10334,6 +10334,7 @@ octave-forge-financial          ports/math/octave-forge-financial
 octave-forge-fits               ports/math/octave-forge-fits
 octave-forge-fl-core            ports/math/octave-forge-fl-core
 octave-forge-fpl                ports/math/octave-forge-fpl
+octave-forge-fuzzy-logic-toolkit  ports/math/octave-forge-fuzzy-logic-toolkit
 octave-forge-ga                 ports/math/octave-forge-ga
 octave-forge-general            ports/math/octave-forge-general
 octave-forge-generate_html      ports/math/octave-forge-generate_html
@@ -10358,6 +10359,7 @@ octave-forge-nurbs              ports/math/octave-forge-nurbs
 octave-forge-ocs                ports/math/octave-forge-ocs
 octave-forge-oct2mat            ports/math/octave-forge-oct2mat
 octave-forge-octcdf             ports/math/octave-forge-octcdf
+octave-forge-octclip            ports/math/octave-forge-octclip
 octave-forge-octgpr             ports/math/octave-forge-octgpr
 octave-forge-octproj            ports/math/octave-forge-octproj
 octave-forge-odebvp             ports/math/octave-forge-odebvp
@@ -20950,8 +20952,9 @@ potracegui                      ports/graphics/potracegui
 pouetchess                      ports/games/pouetchess
 pound                           ports/www/pound
 povchem                         ports/biology/povchem
-povray                          ports/graphics/povray
+povray-meta                     ports/graphics/povray-meta
 povray31                        ports/graphics/povray31
+povray36                        ports/graphics/povray36
 povray37                        ports/graphics/povray37
 powder                          ports/games/powder
 poweradmin                      ports/dns/poweradmin
@@ -23289,6 +23292,7 @@ rubygem-exifr                   ports/graphics/rubygem-exifr
 rubygem-extlib                  ports/devel/rubygem-extlib
 rubygem-ezamar                  ports/textproc/rubygem-ezamar
 rubygem-ezcrypto                ports/security/rubygem-ezcrypto
+rubygem-ezprint                 ports/graphics/rubygem-ezprint
 rubygem-facets                  ports/devel/rubygem-facets
 rubygem-faraday                 ports/www/rubygem-faraday
 rubygem-faraday_middleware      ports/www/rubygem-faraday_middleware
@@ -23418,6 +23422,7 @@ rubygem-opml                    ports/textproc/rubygem-opml
 rubygem-orm_adapter             ports/devel/rubygem-orm_adapter
 rubygem-parsetree               ports/devel/rubygem-parsetree
 rubygem-passenger               ports/www/rubygem-passenger
+rubygem-pdfkit                  ports/graphics/rubygem-pdfkit
 rubygem-pdfwriter               ports/print/rubygem-pdfwriter
 rubygem-pg                      ports/databases/rubygem-pg
 rubygem-piston                  ports/devel/rubygem-piston
@@ -24452,6 +24457,7 @@ ssl-admin                       ports/security/ssl-admin
 ssldump                         ports/net/ssldump
 sslh                            ports/net/sslh
 sslproxy                        ports/security/sslproxy
+sslscan                         ports/security/sslscan
 sslsniffer                      ports/security/sslsniffer
 ssltunnel-client                ports/net/ssltunnel-client
 ssltunnel-server                ports/net/ssltunnel-server
