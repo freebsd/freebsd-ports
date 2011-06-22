@@ -6,7 +6,7 @@
 
 PORTNAME=	mariadb
 PKGNAMESUFFIX?=	-server
-PORTVERSION=	5.2.6
+PORTVERSION=	5.2.7
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://www.percona.com/downloads/MariaDB/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
@@ -26,6 +26,11 @@ CONFLICTS?=	mysql-server-[0-9]*
 
 GNU_CONFIGURE=	yes
 
+.if !defined(MARIADB_CLIENT_SLAVE)
+USE_MYSQL=	yes
+WANT_MYSQL_VER=	52
+.endif
+
 .if !defined(MARIADB_SCRIPTS_SLAVE)
 CPPFLAGS+=	-I${LOCALBASE}/include
 
@@ -35,7 +40,7 @@ USE_LDCONFIG=	${PREFIX}/lib/mysql
 USERS=		mysql
 GROUPS=		mysql
 
-OPTIONS+=	STATIC "Build statically linked" On \
+OPTIONS+=	STATIC "Build statically linked (not on 9.x)" On \
 		SSL "Activate SSL support (yassl)" On \
 		OPENSSL "Use OpenSSL instead of bundled yassl" Off
 
@@ -74,6 +79,10 @@ OPTIONS+=	ARIADB "Aria storage engine" On \
 .endif	# .if !defined(MARIADB_CLIENT_SLAVE)
 
 .include <bsd.port.options.mk>
+
+.if ${OSVERSION} > 900000 && defined(WITH_STATIC)
+BROKEN=	WITH_STATIC is not functional on 9-current
+.endif
 
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 CONFIGURE_ARGS+=	--enable-assembler
