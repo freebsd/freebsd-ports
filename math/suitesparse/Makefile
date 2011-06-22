@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	suitesparse
-PORTVERSION=	3.4.0
-PORTREVISION=	1
+PORTVERSION=	3.6.1
 CATEGORIES=	math
 MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/SuiteSparse/
 DISTNAME=	SuiteSparse-${PORTVERSION}
@@ -90,18 +89,21 @@ post-patch:
 				 ${WRKSRC}/UFconfig/UFconfig.mk \
 				 ${WRKSRC_SHARED}/UFconfig/UFconfig.mk\
 				 ${WRKSRC}/CSparse/Lib/Makefile \
-				 ${WRKSRC_SHARED}/CSparse/Lib/Makefile
+				 ${WRKSRC_SHARED}/CSparse/Lib/Makefile \
+				 ${WRKSRC}/CSparse3/Lib/Makefile \
+				 ${WRKSRC_SHARED}/CSparse3/Lib/Makefile
 
 	@${REINPLACE_CMD}  -e 's|%%CFLAGS%%|${CFLAGS}|g' \
 			   -e 's|%%FFLAGS%%|${FFLAGS}|g' \
 				 ${WRKSRC}/UFconfig/UFconfig.mk \
-				 ${WRKSRC}/CSparse/Lib/Makefile
+				 ${WRKSRC}/CSparse/Lib/Makefile \
+				 ${WRKSRC}/CSparse3/Lib/Makefile
 
 	@${REINPLACE_CMD}  -e 's|%%CFLAGS%%|${CFLAGS_SHARED}|g' \
 			   -e 's|%%FFLAGS%%|${FFLAGS_SHARED}|g' \
 				 ${WRKSRC_SHARED}/UFconfig/UFconfig.mk \
-				 ${WRKSRC_SHARED}/CSparse/Lib/Makefile
-
+				 ${WRKSRC_SHARED}/CSparse/Lib/Makefile \
+				 ${WRKSRC_SHARED}/CSparse3/Lib/Makefile
 do-build:
 	cd ${WRKSRC} ; ${GMAKE}
 	cd ${WRKSRC_SHARED} ; ${GMAKE}
