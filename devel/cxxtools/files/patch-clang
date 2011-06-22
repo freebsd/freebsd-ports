@@ -1,0 +1,128 @@
+--- a/include/cxxtools/iostream.h
++++ b/include/cxxtools/iostream.h
+@@ -56,7 +56,7 @@ class BasicIStream : public std::basic_i
+         {
+             BasicStreamBuffer<CharT>* tmp = _buffer;
+             _buffer = buffer;
+-            rdbuf(buffer);
++            this->rdbuf(buffer);
+             return tmp;
+         }
+ 
+@@ -106,7 +106,7 @@ class BasicOStream : public std::basic_o
+         {
+             BasicStreamBuffer<CharT>* tmp = _buffer;
+             _buffer = buffer;
+-            rdbuf(buffer);
++            this->rdbuf(buffer);
+             return tmp;
+         }
+ 
+@@ -152,7 +152,7 @@ class BasicIOStream : public std::basic_
+         {
+             BasicStreamBuffer<CharT>* tmp = _buffer;
+             _buffer = buffer;
+-            rdbuf(buffer);
++            this->rdbuf(buffer);
+             return tmp;
+         }
+ 
+--- a/include/cxxtools/textstream.h
++++ b/include/cxxtools/textstream.h
+@@ -84,14 +84,14 @@ class BasicTextIStream : public std::bas
+         : std::basic_istream<intern_type>(0)
+         , _buffer( &is, codec )
+         {
+-            init(&_buffer);
++            this->init(&_buffer);
+         }
+ 
+         explicit BasicTextIStream(CodecType* codec)
+         : std::basic_istream<intern_type>(0)
+         , _buffer( 0, codec )
+         {
+-            init(&_buffer);
++            this->init(&_buffer);
+         }
+ 
+         //! @brief Deletes to codec.
+@@ -170,12 +170,12 @@ class BasicTextOStream : public std::bas
+         BasicTextOStream(StreamType& os, CodecType* codec)
+         : std::basic_ostream<intern_type>(0)
+         , _buffer( &os , codec )
+-        { init(&_buffer); }
++        { this->init(&_buffer); }
+ 
+         explicit BasicTextOStream(CodecType* codec)
+         : std::basic_ostream<intern_type>(0)
+         , _buffer( 0 , codec )
+-        { init(&_buffer); }
++        { this->init(&_buffer); }
+ 
+         //! @brief Deletes to codec.
+         ~BasicTextOStream()
+@@ -253,12 +253,12 @@ class BasicTextStream : public std::basi
+         BasicTextStream(StreamType& ios, CodecType* codec)
+         : std::basic_iostream<intern_type>(0)
+         , _buffer( &ios, codec)
+-        { init(&_buffer); }
++        { this->init(&_buffer); }
+ 
+         explicit BasicTextStream(CodecType* codec)
+         : std::basic_iostream<intern_type>(0)
+         , _buffer(0, codec)
+-        { init(&_buffer); }
++        { this->init(&_buffer); }
+ 
+         //! @brief Deletes the codec.
+         ~BasicTextStream()
+--- a/include/cxxtools/streamcounter.h
++++ b/include/cxxtools/streamcounter.h
+@@ -69,7 +69,7 @@ namespace cxxtools
+       BasicStreamcounter()
+         : std::basic_ostream<CharType, Traits>(0)
+       {
+-        init(&streambuf);
++        this->init(&streambuf);
+       }
+ 
+       unsigned getCount() const           { return streambuf.getCount(); }
+--- a/include/cxxtools/smartptr.h
++++ b/include/cxxtools/smartptr.h
+@@ -249,14 +249,14 @@ namespace cxxtools
+         { ownershipPolicyType::link(ptr, ptr.object); }
+       ~SmartPtr()
+         { if (ownershipPolicyType::unlink(object))
+-            destroy(object); }
++            this->destroy(object); }
+ 
+       SmartPtr& operator= (const SmartPtr& ptr)
+       {
+         if (object != ptr.object)
+         {
+           if (ownershipPolicyType::unlink(object))
+-            destroy(object);
++            this->destroy(object);
+ 
+           object = ptr.object;
+ 
+--- a/include/cxxtools/query_params.h
++++ b/include/cxxtools/query_params.h
+@@ -231,7 +231,7 @@ class QueryParams
+       : unnamed_params(src.unnamed_params),
+         named_params(src.named_params),
+         parent(src.parent),
+-        use_parent_values(use_parent_values)
++        use_parent_values(src.use_parent_values)
+     { }
+ 
+     /// returns the parent-object
+@@ -339,7 +339,7 @@ class QueryParams
+       if (i != named_params.end() && n < i->second.size())
+         return i->second[n];
+       else if (!useParentValues())
+-        return def;
++        return std::string(def);
+       else
+       {
+         if (i != named_params.end())
