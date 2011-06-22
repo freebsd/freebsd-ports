@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	terminus-font
-PORTVERSION=	4.32
+PORTVERSION=	4.35
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|%SUBDIR%|${PORTNAME:L}/${PORTNAME}-${PORTVERSION}|}
 
@@ -23,11 +23,12 @@ USE_GMAKE=	yes
 
 OPTIONS=	AO2 "Variant of letter 'a'" off \
 		DV1 "Variant of cyrillic letters 'de' and 've'" off \
-		GE1 "Variant of cyrillic letter 'ge'" off \
+		GE2 "Variant of cyrillic letter 'ge'" off \
 		GQ2 "Variant of grave accent and apostrophe" off \
 		IJ1 "Variant of cyrillic letters 'i' and 'short i'" off \
 		KA2 "Variant of cyrillic letter 'ka'" off \
-		CM2 "Variant of letters with circumflex, caron and macron" off
+		CM2 "Variant of letters with circumflex, caron and macron" off \
+		HI2 "Higher uppercase letters, for size 18" off
 
 SUB_LIST=	FONTDIR="${PREFIX}/${FONTDIR}"
 SUB_FILES=	pkg-message
@@ -45,8 +46,8 @@ post-extract:
 .if defined(WITH_DV1)
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/dv1.diff
 .endif
-.if defined(WITH_GE1)
-	cd ${WRKSRC} && ${PATCH} -p1 -i alt/ge1.diff
+.if defined(WITH_GE2)
+	cd ${WRKSRC} && ${PATCH} -p1 -i alt/ge2.diff
 .endif
 .if defined(WITH_GQ2)
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/gq2.diff
@@ -59,6 +60,15 @@ post-extract:
 .endif
 .if defined(WITH_CM2)
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/cm2.diff
+.endif
+.if defined(WITH_HI2)
+	cd ${WRKSRC} && ${PATCH} -p1 -i alt/hi2.diff
+.if defined(WITH_DV1)
+	cd ${WRKSRC} && ${PATCH} -p1 -i alt/hi2-dv1.diff
+.endif
+.if defined(WITH_KA2)
+	cd ${WRKSRC} && ${PATCH} -p1 -i alt/hi2-ka2.diff
+.endif
 .endif
 
 post-build:
