@@ -5,12 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	unrtf
-PORTVERSION=	0.21.1
+PORTVERSION=	0.21.2
 CATEGORIES=	textproc
 MASTER_SITES=	GNU
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A converter from RTF to several formats, including HTML and LaTeX
+
+LICENSE=	GPLv3
 
 USE_ICONV=	yes
 USE_GMAKE=	yes
@@ -36,7 +38,7 @@ post-patch:
 		${REINPLACE_CMD} -e \
 		's|/usr/local/lib/unrtf/|${DATADIR}/|g'
 
-test: build
+check regression-test test: build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} check)
 
 .include <bsd.port.mk>
