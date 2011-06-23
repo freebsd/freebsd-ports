@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	octave
-PORTVERSION=	3.4.0
-PORTREVISION=	2
+PORTVERSION=	3.4.1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gnu.org/gnu/octave/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/bleeding-edge/
@@ -23,18 +22,19 @@ BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot \
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		gsed:${PORTSDIR}/textproc/gsed \
 		${PREFIX}/bin/makeinfo:${PORTSDIR}/print/texinfo
-LIB_DEPENDS=	glpk.30:${PORTSDIR}/math/glpk \
-		umfpack.1:${PORTSDIR}/math/suitesparse \
-		qhull:${PORTSDIR}/math/qhull \
+LIB_DEPENDS=	GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick \
 		arpack:${PORTSDIR}/math/arpack \
-		qrupdate:${PORTSDIR}/math/qrupdate \
-		fftw3f:${PORTSDIR}/math/fftw3-float \
-		fftw3:${PORTSDIR}/math/fftw3 \
-		ftgl:${PORTSDIR}/graphics/ftgl \
-		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
-		GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick \
 		curl:${PORTSDIR}/ftp/curl \
-		hdf5:${PORTSDIR}/science/hdf5-18
+		fftw3:${PORTSDIR}/math/fftw3 \
+		fftw3f:${PORTSDIR}/math/fftw3-float \
+		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
+		ftgl:${PORTSDIR}/graphics/ftgl \
+		hdf5:${PORTSDIR}/science/hdf5-18 \
+		pcre.0:${PORTSDIR}/devel/pcre \
+		qhull:${PORTSDIR}/math/qhull \
+		qrupdate:${PORTSDIR}/math/qrupdate \
+		umfpack.1:${PORTSDIR}/math/suitesparse \
+		glpk.30:${PORTSDIR}/math/glpk
 
 USE_BZIP2=	yes
 USE_PERL5_BUILD=yes
@@ -116,7 +116,7 @@ post-install:
 .endfor
 .endif
 	${RM} -f ${WRKDIR}/PLIST
-.for d in ${PREFIX}/include/octave-${OCTAVE_VERSION} ${PREFIX}/share/octave ${PREFIX}/libexec/octave ${PREFIX}/lib/octave-${OCTAVE_VERSION}
+.for d in ${PREFIX}/include/octave-${OCTAVE_VERSION} ${PREFIX}/share/octave ${PREFIX}/lib/octave/${OCTAVE_VERSION} ${PREFIX}/libexec/octave ${PREFIX}/lib/octave/site
 	@${FIND} -s $d -not -type d | \
 		${SED} -e 's#^${PREFIX}/##' >> ${WRKDIR}/PLIST
 	@${FIND} -s $d -type d -empty | \
@@ -126,5 +126,9 @@ post-install:
 		${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${WRKDIR}/PLIST
 .endfor
 	cd ${WRKDIR} ; ${SED} -i -e "/PLIST/ r PLIST" ${TMPPLIST}
+
+
+check:
+	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} check)
 
 .include <bsd.port.post.mk>
