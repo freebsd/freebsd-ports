@@ -13,7 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	rpsfa@rit.edu
 COMMENT=	DataMapper plugin for observing Resources
 
-RUN_DEPENDS=	rubygem-dm-core>=1.0.2:${PORTSDIR}/databases/rubygem-dm-core
+RUN_DEPENDS=	rubygem-dm-core>=1.1.0:${PORTSDIR}/databases/rubygem-dm-core
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

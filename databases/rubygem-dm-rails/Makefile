@@ -13,11 +13,11 @@ MASTER_SITES=	RG
 MAINTAINER=	rpsfa@rit.edu
 COMMENT=	Integrate DataMapper with Rails 3
 
-RUN_DEPENDS=	rubygem-actionpack>=3.0.0:${PORTSDIR}/www/rubygem-actionpack \
+RUN_DEPENDS=	rubygem-actionpack>=3.0.4:${PORTSDIR}/www/rubygem-actionpack \
 		rubygem-activesupport>=3.0.0:${PORTSDIR}/devel/rubygem-activesupport \
-		rubygem-dm-active_model>=1.0.3:${PORTSDIR}/databases/rubygem-dm-active_model \
-		rubygem-dm-core>=1.0.0:${PORTSDIR}/databases/rubygem-dm-core \
-		rubygem-railties>=3.0.0:${PORTSDIR}/www/rubygem-railties
+		rubygem-dm-active_model>=1.1.0:${PORTSDIR}/databases/rubygem-dm-active_model \
+		rubygem-dm-core>=1.1.0:${PORTSDIR}/databases/rubygem-dm-core \
+		rubygem-railties>=3.0.4:${PORTSDIR}/www/rubygem-railties
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
