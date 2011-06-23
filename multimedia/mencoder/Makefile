@@ -6,7 +6,7 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	0
+PORTREVISION=	1
 COMMENT=	Convenient video file and movie encoder
 RESTRICTED=	Port has restricted dependencies
 
@@ -109,7 +109,7 @@ CONFIGURE_ARGS+=	--disable-faac
 .endif
 
 .if !defined(WITHOUT_X264)
-LIB_DEPENDS+=	x264.110:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.115:${PORTSDIR}/multimedia/x264
 .else
 CONFIGURE_ARGS+=	--disable-x264
 .endif

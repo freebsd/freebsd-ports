@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.6.3
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -321,7 +321,7 @@ CONFIGURE_ARGS+=	--disable-libvpx
 
 # x264
 .ifndef(WITHOUT_X264)
-LIB_DEPENDS+=	x264.110:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.115:${PORTSDIR}/multimedia/x264
 CONFIGURE_ARGS+=	--enable-libx264
 .else
 CONFIGURE_ARGS+=	--disable-libx264

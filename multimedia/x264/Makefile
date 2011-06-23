@@ -9,10 +9,10 @@ PORTVERSION=	0.${X264_BUILD}.${X264_REV}
 CATEGORIES=	multimedia
 MASTER_SITES=	http://downloads.videolan.org/pub/videolan/x264/snapshots/ \
 		http://samples.mplayerhq.hu/yuv4mpeg2/:pgo
-DISTNAME=	${PORTNAME}-snapshot-${X264_SNAPSHOT}-2245
-DISTFILES=	${PORTNAME}-snapshot-${X264_SNAPSHOT}-2245${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}-snapshot-${X264_SNAP}-2245-stable
+DISTFILES=	${PORTNAME}-snapshot-${X264_SNAP}-2245-stable${EXTRACT_SUFX}
 DIST_SUBDIR=	x264
-EXTRACT_ONLY=	${PORTNAME}-snapshot-${X264_SNAPSHOT}-2245${EXTRACT_SUFX}
+EXTRACT_ONLY=	${PORTNAME}-snapshot-${X264_SNAP}-2245-stable${EXTRACT_SUFX}
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT?=	Library and tool for encoding H.264/AVC video streams
@@ -22,9 +22,9 @@ BUILD_DEPENDS=	yasm>=0.6.0:${PORTSDIR}/devel/yasm
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-X264_BUILD=	110
-X264_REV=	1820
-X264_SNAPSHOT=	20101211
+X264_BUILD=	115
+X264_REV=	2000
+X264_SNAP=	20110622
 
 USE_BZIP2=	yes
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude .svn
@@ -43,7 +43,7 @@ OPTIONS=	ASM "Assembly optimizations (devel/binutils)" On \
 
 CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/include" \
 			--extra-ldflags="${LDFLAGS} -L${LOCALBASE}/lib" \
-			--enable-shared
+			--enable-static --enable-shared
 
 PLIST_SUB+=	X264_BUILD=${X264_BUILD}
 
