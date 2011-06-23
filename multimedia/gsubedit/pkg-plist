@@ -14,14 +14,14 @@ share/locale/ro/LC_MESSAGES/gsubedit.mo
 share/locale/ru/LC_MESSAGES/gsubedit.mo
 share/locale/sv/LC_MESSAGES/gsubedit.mo
 share/pixmaps/gsubedit/gsubedit_icon.png
-@dirrmtry share/locale/sv/LC_MESSAGES 
-@dirrmtry share/locale/sv 
-@dirrmtry share/locale/ru/LC_MESSAGES 
-@dirrmtry share/locale/ru 
-@dirrmtry share/locale/ro/LC_MESSAGES 
-@dirrmtry share/locale/ro 
-@dirrmtry share/locale/cs/LC_MESSAGES 
-@dirrmtry share/locale/cs 
+@dirrmtry share/locale/sv/LC_MESSAGES
+@dirrmtry share/locale/sv
+@dirrmtry share/locale/ru/LC_MESSAGES
+@dirrmtry share/locale/ru
+@dirrmtry share/locale/ro/LC_MESSAGES
+@dirrmtry share/locale/ro
+@dirrmtry share/locale/cs/LC_MESSAGES
+@dirrmtry share/locale/cs
 @dirrm share/pixmaps/gsubedit
 @dirrm share/gnome/help/gsubedit/C
 @dirrm share/gnome/help/gsubedit

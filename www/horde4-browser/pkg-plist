@@ -2,4 +2,4 @@
 %%HORDIR%%/Exception.php
 %%HORDIR%%/Translation.php
 @dirrm %%HORDIR%%
-@dirrmtry %%HORBAS%% 
+@dirrmtry %%HORBAS%%

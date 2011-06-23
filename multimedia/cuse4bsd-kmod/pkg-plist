@@ -1,4 +1,4 @@
-include/cuse4bsd.h 
+include/cuse4bsd.h
 lib/libcuse4bsd.a
 lib/libcuse4bsd.so
 lib/libcuse4bsd.so.1

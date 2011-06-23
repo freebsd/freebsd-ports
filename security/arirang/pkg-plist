@@ -1,5 +1,5 @@
 sbin/arirang
-share/arirang/account.uxe 
+share/arirang/account.uxe
 share/arirang/against-snort.uxe
 share/arirang/all.uxe
 share/arirang/apache.uxe
@@ -15,7 +15,7 @@ share/arirang/ncbook.uxe
 share/arirang/nes.uxe
 share/arirang/network.uxe
 share/arirang/nimda.uxe
-share/arirang/nottest.uxe 
+share/arirang/nottest.uxe
 share/arirang/nt.uxe
 share/arirang/nt_head.uxe
 share/arirang/request.uxe

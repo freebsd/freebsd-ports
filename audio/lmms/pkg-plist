@@ -2029,6 +2029,6 @@ share/pixmaps/lmms.png
 @dirrm %%DATADIR%%
 @dirrmtry share/applications
 @dirrm lib/lmms
-@dirrm include/lmms 
+@dirrm include/lmms
 @exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
 @unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
