@@ -50,6 +50,9 @@ bin/hgview
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/hgmanifestdialog.py
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/hgmanifestdialog.pyc
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/hgmanifestdialog.pyo
+%%PYTHON_SITELIBDIR%%/hgviewlib/qt4/hgqv_rc.py
+%%PYTHON_SITELIBDIR%%/hgviewlib/qt4/hgqv_rc.pyc
+%%PYTHON_SITELIBDIR%%/hgviewlib/qt4/hgqv_rc.pyo
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/hgqv_ui.py
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/hgqv_ui.pyc
 %%PYTHON_SITELIBDIR%%/hgviewlib/qt4/hgqv_ui.pyo
