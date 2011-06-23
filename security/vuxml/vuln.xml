@@ -39,6 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>firefox</name>
+	<range><gt>3.5.*,1</gt><lt>3.5.20,1</lt></range>
 	<range><gt>3.6.*,1</gt><lt>3.6.18,1</lt></range>
 	<range><gt>4.0.*,1</gt><lt>5.0,1</lt></range>
       </package>
@@ -90,6 +91,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2011-06-21</discovery>
       <entry>2011-06-21</entry>
+      <modified>2011-06-23</modified>
     </dates>
   </vuln>
 
