@@ -1,14 +1,40 @@
 bin/paprefs
 share/applications/paprefs.desktop
 %%DATADIR%%/paprefs.glade
+share/locale/as/LC_MESSAGES/paprefs.mo
+share/locale/bn_IN/LC_MESSAGES/paprefs.mo
+share/locale/ca/LC_MESSAGES/paprefs.mo
+share/locale/cs/LC_MESSAGES/paprefs.mo
+share/locale/da/LC_MESSAGES/paprefs.mo
 share/locale/de/LC_MESSAGES/paprefs.mo
 share/locale/el/LC_MESSAGES/paprefs.mo
+share/locale/es/LC_MESSAGES/paprefs.mo
+share/locale/fi/LC_MESSAGES/paprefs.mo
 share/locale/fr/LC_MESSAGES/paprefs.mo
+share/locale/gu/LC_MESSAGES/paprefs.mo
+share/locale/hi/LC_MESSAGES/paprefs.mo
 share/locale/hu/LC_MESSAGES/paprefs.mo
+share/locale/it/LC_MESSAGES/paprefs.mo
+share/locale/kn/LC_MESSAGES/paprefs.mo
+share/locale/ml/LC_MESSAGES/paprefs.mo
+share/locale/mr/LC_MESSAGES/paprefs.mo
+share/locale/ms/LC_MESSAGES/paprefs.mo
+share/locale/nl/LC_MESSAGES/paprefs.mo
+share/locale/or/LC_MESSAGES/paprefs.mo
+share/locale/pa/LC_MESSAGES/paprefs.mo
 share/locale/pl/LC_MESSAGES/paprefs.mo
+share/locale/pt/LC_MESSAGES/paprefs.mo
 share/locale/pt_BR/LC_MESSAGES/paprefs.mo
+share/locale/sk/LC_MESSAGES/paprefs.mo
+share/locale/sr/LC_MESSAGES/paprefs.mo
+share/locale/sr@latin/LC_MESSAGES/paprefs.mo
 share/locale/sv/LC_MESSAGES/paprefs.mo
+share/locale/ta/LC_MESSAGES/paprefs.mo
+share/locale/te/LC_MESSAGES/paprefs.mo
+share/locale/th/LC_MESSAGES/paprefs.mo
 share/locale/tr/LC_MESSAGES/paprefs.mo
+share/locale/uk/LC_MESSAGES/paprefs.mo
+share/locale/zh_CN/LC_MESSAGES/paprefs.mo
 @dirrm %%DATADIR%%
 @dirrmtry share/locale/de/LC_MESSAGES
 @dirrmtry share/locale/de
