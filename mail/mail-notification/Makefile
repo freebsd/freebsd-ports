@@ -7,7 +7,7 @@
 
 PORTNAME=	mail-notification
 DISTVERSION=	5.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	mailnotify
@@ -45,7 +45,7 @@ OPTIONS=	EVOLUTION "Evolution support" off \
 		SYLPHEED "Sylpheed support" on \
 		YAHOO "Yahoo! Mail support" on
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_MBOX)
 JB_CONF_ARGS+=	mbox=no
@@ -94,11 +94,8 @@ PLIST_SUB+=	EVOLUTION="@comment "
 EVO_VERSION!=	make -C ${PORTSDIR}/mail/evolution -V EVO_VERSION
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin.pc:${PORTSDIR}/mail/evolution
 RUN_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/evolution-plugin.pc:${PORTSDIR}/mail/evolution
+USE_GNOME+=	gtkhtml3
 PLIST_SUB+=	EVOLUTION="" EVO_VERSION=${EVO_VERSION}
-# Work around the fact that MN is using evolution's private(?) api that is not part of
-# evolution-plugin thus it's includes are not covered by pkgconfig metadata.
-# That path is frozen at 3.14 even for later versions of libgtkhtml.
-CFLAGS+=	-I${LOCALBASE}/include/libgtkhtml-3.14 -I${LOCALBASE}/include/libgtkhtml-3.14/editor
 .endif
 .if defined(WITHOUT_MOZILLA)
 JB_CONF_ARGS+=	mozilla=no
@@ -120,8 +117,7 @@ LIB_DEPENDS+=	gmime-2.0.4:${PORTSDIR}/mail/gmime2
 .if defined(WITHOUT_SSL)
 JB_CONF_ARGS+=	ssl=no
 .else
-# we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+USE_OPENSSL=	yes
 .endif
 .if defined(WITHOUT_SASL)
 JB_CONF_ARGS+=	sasl=no
@@ -143,4 +139,4 @@ do-build:
 do-install:
 	cd ${WRKSRC} && ./jb install
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
