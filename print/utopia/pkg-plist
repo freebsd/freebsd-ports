@@ -15,6 +15,6 @@
 %%DATADIR%%/devps/text.enc
 %%DATADIR%%/devps/textmap
 %%DATADIR%%/devps/download.old
-@unexec /usr/bin/sed -I backup -e "/Utopia Begin/,/Utopia End/d" 
+@unexec /usr/bin/sed -I backup -e "/Utopia Begin/,/Utopia End/d"
 @dirrm %%DATADIR%%/devps
 @dirrm %%DATADIR%%

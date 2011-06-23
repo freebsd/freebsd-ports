@@ -526,7 +526,7 @@ bin/pybabel
 %%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.frontend.extract_messages-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.frontend.init_catalog-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.frontend.update_catalog-class.html
-%%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.jslexer-module.html      
+%%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.jslexer-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.jslexer.Token-class.html
 %%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.mofile-module.html
 %%PORTDOCS%%%%DOCSDIR%%/api/babel.messages.plurals-module.html

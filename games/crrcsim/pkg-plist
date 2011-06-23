@@ -39,7 +39,7 @@ bin/crrcsim
 %%DATADIR%%/objects/allegro.ac
 %%DATADIR%%/objects/apogee.ac
 %%DATADIR%%/objects/biplane2.ac
-%%DATADIR%%/objects/copter3.ac                                                                                                                         
+%%DATADIR%%/objects/copter3.ac
 %%DATADIR%%/objects/flexifly_xlm.ac
 %%DATADIR%%/objects/freqboard.ac
 %%DATADIR%%/objects/gap65.ac
@@ -51,8 +51,8 @@ bin/crrcsim
 %%DATADIR%%/objects/melyan_01.ac
 %%DATADIR%%/objects/outhouse.ac
 %%DATADIR%%/objects/outrage.ac
-%%DATADIR%%/objects/qc01.ac                                                                                                                            
-%%DATADIR%%/objects/qc01_x.ac                                                                                                                          
+%%DATADIR%%/objects/qc01.ac
+%%DATADIR%%/objects/qc01_x.ac
 %%DATADIR%%/objects/quickie01.ac
 %%DATADIR%%/objects/small.ac
 %%DATADIR%%/objects/sovereign.ac

@@ -1,6 +1,6 @@
 include/ghemical/atom.h
 include/ghemical/bond.h
-include/ghemical/chn_info.h   
+include/ghemical/chn_info.h
 include/ghemical/conjgrad.h
 include/ghemical/constraint.h
 include/ghemical/eng1_mm.h
