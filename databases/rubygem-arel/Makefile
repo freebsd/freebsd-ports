@@ -4,15 +4,16 @@
 #
 # $FreeBSD$
 
+# XXX: activerecord 3.0.6+ ~> 2.0.2 of arel
+
 PORTNAME=	arel
-PORTVERSION=	2.0.9
+PORTVERSION=	2.0.2
+PORTEPOCH=	1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Relational Algebra for Ruby.
-
-RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-activesupport
 
 USE_RUBY=   yes
 USE_RUBYGEMS=   yes
