@@ -361,6 +361,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy_nose/noseplugin.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy_nose/noseplugin.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy_nose/noseplugin.pyo
+%%PORTDOCS%%%%DOCSDIR%%/contents.html
 %%PORTDOCS%%%%DOCSDIR%%/copyright.html
 %%PORTDOCS%%%%DOCSDIR%%/core/compiler.html
 %%PORTDOCS%%%%DOCSDIR%%/core/connections.html

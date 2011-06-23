@@ -5,8 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sqlalchemy
-PORTVERSION=	0.6.7
+PORTNAME=	sqlalchemy06
+PORTVERSION=	0.6.8
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -32,8 +32,8 @@ OPTIONS+=	POSTGRE "support PostGreSQL" on
 OPTIONS+=	SQLITE "support Sqlite" on
 OPTIONS+=	SYBASE "support Sybase" off
 
-DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
+DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PKGNAMEPREFIX}${PORTNAME}
 
 .if !defined(NOPORTDOCS)
 AL_PORTDOCS=	*.html *.js
