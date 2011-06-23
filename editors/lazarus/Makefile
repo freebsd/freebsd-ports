@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lazarus
-PORTVERSION=	0.9.28.3
+PORTVERSION=	0.9.30
 CATEGORIES=	editors devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL:S|$|acm/freepascal/|} \
@@ -17,6 +17,8 @@ DIST_SUBDIR=	freepascal
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	A portable Delphi-like IDE for the FreePascal compiler
 
+BUILD_DEPENDS=	fpcres:${PORTSDIR}/lang/fpc-utils
+
 PROJECTHOST=	bsdistfiles
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -25,15 +27,14 @@ USE_ICONV=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	#
-USE_FPC=	fcl-base fcl-db fcl-image fcl-process fcl-registry fcl-xml \
+USE_FPC=	fcl-base fcl-db fcl-image fcl-process fcl-registry fcl-res fcl-xml \
 		iconvenc pasjpeg x11
-
 MAKE_ENV=	OPT="-Sgic -Fu${UNITSDIR}/* -Fl${LOCALBASE}/lib -Fl${LOCALBASE}/lib/qt4 ${OPT_EXTRA}"
 MAN1=		lazarus-ide.1 lazbuild.1 startlazarus.1
 PLIST=		${WRKDIR}/pkg-plist
 SUB_FILES=	pkg-message
 SUB_LIST+=	PORTSDIR="${PORTSDIR}"
-WRKSRC=		${WRKDIR}/${DISTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 OPTIONS=	GTK2	"Use gtk20 interface instead of gtk12"	on \
 		QT4	"Use qt4 interface" off
@@ -73,8 +74,6 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' -e 's|%%DATADIR%%|${DATADIR}|g' \
 		${WRKSRC}/${MAKEFILE}
-	@${REINPLACE_CMD} -e 's|libqt4intf.so.5|libQt4Pas.so.5|g' \
-		${WRKSRC}/lcl/interfaces/qt/qt45.pas
 
 do-build:
 	@cd ${WRKSRC} && \
@@ -151,7 +150,6 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/localize.sh ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/lazarus-wrapper ${PREFIX}/bin/${PORTNAME}
 	${INSTALL_DATA}	${WRKSRC}/Makefile* ${DATADIR}
-	${INSTALL_DATA}	${WRKSRC}/JCFSettings.cfg ${DATADIR}
 .for FILE in ${MAN1}
 	${INSTALL_MAN} ${WRKDIR}/man1/${FILE} ${MAN1PREFIX}/man/man1
 .endfor
