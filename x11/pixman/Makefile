@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pixman
-PORTVERSION=	0.21.4
+PORTVERSION=	0.22.0
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
@@ -17,7 +17,7 @@ USE_AUTOTOOLS=	libtool
 USE_PERL5_BUILD=yes
 USE_GNOME=	ltverhack:9
 
-OPTIONS=	SIMD "Enable autodection of SIMD features (MMX, SSE2, VMX)" off
+OPTIONS=	SIMD "Enable autodetection of SIMD features (MMX, SSE2, VMX)" off
 
 .include <bsd.port.pre.mk>
 
