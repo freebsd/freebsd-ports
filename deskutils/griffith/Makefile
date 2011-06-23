@@ -7,6 +7,7 @@
 
 PORTNAME=	griffith
 PORTVERSION=	0.12.1
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpadlibrarian.net/58153655/
 
@@ -14,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight film collection manager
 
 RUN_DEPENDS=	py*-pysqlite>=2.0:${PORTSDIR}/databases/py-pysqlite23 \
-		py*-sqlalchemy>=0.5:${PORTSDIR}/databases/py-sqlalchemy \
+		py*-sqlalchemy>=0.5:${PORTSDIR}/databases/py-sqlalchemy06 \
 		py*-imaging>=0:${PORTSDIR}/graphics/py-imaging \
 		py*-reportlab>=1.19:${PORTSDIR}/print/py-reportlab \
 		py*-chardet>=0:${PORTSDIR}/textproc/py-chardet \

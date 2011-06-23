@@ -7,6 +7,7 @@
 
 PORTNAME=	TurboGears
 PORTVERSION=	1.1.2
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	http://files.turbogears.org/eggs/ \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
@@ -52,7 +53,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlobject>=0.10.1:${PORTSDIR}/databases/py-
 .endif
 
 .if defined (WITH_SQLALCHEMY)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.3.4:${PORTSDIR}/databases/py-sqlalchemy
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.3.4:${PORTSDIR}/databases/py-sqlalchemy06
 .endif
 
 .include <bsd.port.post.mk>

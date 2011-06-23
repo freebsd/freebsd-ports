@@ -7,6 +7,7 @@
 
 PORTNAME=	sqlkit
 PORTVERSION=	0.9.4
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	http://sqlkit.argolinux.org/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,7 +15,7 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	A standalone program to browse and edit data
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.5:${PORTSDIR}/databases/py-sqlalchemy \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.5:${PORTSDIR}/databases/py-sqlalchemy06 \
 		${PYTHON_PKGNAMEPREFIX}dateutil>=0:${PORTSDIR}/devel/py-dateutil \
 		${PYTHON_PKGNAMEPREFIX}Babel>=0:${PORTSDIR}/devel/py-babel
 

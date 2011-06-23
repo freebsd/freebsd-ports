@@ -7,6 +7,7 @@
 
 PORTNAME=	migrate
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://dose.se/distfiles/migrate/
@@ -16,7 +17,7 @@ DISTNAME=	sqlalchemy-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Database schema migrations for SQLAlchemy
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.5:${PORTSDIR}/databases/py-sqlalchemy \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.5:${PORTSDIR}/databases/py-sqlalchemy06 \
 		${PYTHON_PKGNAMEPREFIX}Tempita>0:${PORTSDIR}/textproc/py-Tempita \
 		${PYTHON_PKGNAMEPREFIX}decorator>0:${PORTSDIR}/devel/py-decorator
 

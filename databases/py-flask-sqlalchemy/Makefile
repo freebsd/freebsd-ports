@@ -7,6 +7,7 @@
 
 PORTNAME=	Flask-SQLAlchemy
 PORTVERSION=	0.11
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ MAINTAINER=	duchateau.olivier@gmail.com
 COMMENT=	Adds SQLAlchemy support to Flask
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Flask>=0.6:${PORTSDIR}/www/py-flask \
-	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.6:${PORTSDIR}/databases/py-sqlalchemy
+	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.6:${PORTSDIR}/databases/py-sqlalchemy06
 
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/LICENSE
