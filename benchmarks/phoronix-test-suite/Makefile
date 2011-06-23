@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phoronix-test-suite
-PORTVERSION=	3.0.1
+PORTVERSION=	3.2.0
 CATEGORIES=	benchmarks
 MASTER_SITES=	http://www.phoronix-test-suite.com/releases/
 
@@ -31,9 +31,7 @@ PORTDOCS=	*
 
 DOCFILES1=	CHANGE-LOG AUTHORS
 
-DOCFILES2=	phoronix-test-suite.pdf specifications_xml_test.html \
-		specifications_xml_download.html writing_your_first_module.html \
-		specifications_xml_suite.html writing_your_first_test.html
+DOCFILES2=	phoronix-test-suite.html
 
 .include <bsd.port.options.mk>
 
@@ -78,7 +76,7 @@ post-install:
 .for FILE in ${DOCFILES2}
 	@${INSTALL_DATA} ${WRKSRC}/documentation/${FILE} ${DOCSDIR}/${FILE}
 .endfor
-.for DIR in html_sections includes
+.for DIR in html_stubs includes
 	@${CP} -rf ${WRKSRC}/documentation/${DIR} ${DOCSDIR}
 .endfor
 	@${ECHO_MSG} "===> Docs installed in ${DOCSDIR}."
