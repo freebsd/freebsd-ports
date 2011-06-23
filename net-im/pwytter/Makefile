@@ -12,8 +12,10 @@ CATEGORIES=	net-im www python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free multi-platform Twitter client written in Python
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter \
 		${PYTHON_SITELIBDIR}/PIL/_imaging.so:${PORTSDIR}/graphics/py-imaging \
@@ -45,7 +47,7 @@ post-patch: .SILENT
 post-install:
 # Install themes and media files where they belong
 	@${MKDIR} ${DATADIR}/media ${DATADIR}/theme
-	@${INSTALL_DATA} ${WRKSRC}/media/* ${DATADIR}/media
-	@${INSTALL_DATA} ${WRKSRC}/theme/* ${DATADIR}/theme
+	${INSTALL_DATA} ${WRKSRC}/media/* ${DATADIR}/media
+	${INSTALL_DATA} ${WRKSRC}/theme/* ${DATADIR}/theme
 
 .include <bsd.port.mk>
