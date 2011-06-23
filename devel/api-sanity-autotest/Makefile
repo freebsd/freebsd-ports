@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	api-sanity-autotest
-PORTVERSION=	1.12.4
+PORTVERSION=	1.12.5
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://linuxtesting.org/downloads/ \
 		LOCAL/bf
@@ -18,12 +18,15 @@ LICENSE=	LGPL20 GPLv2
 LICENSE_COMB=	dual
 
 NO_BUILD=	yes
+.ifdef(MAINTAINER_MODE)
+USE_PERL5=	yes
+.else
 USE_PERL5_RUN=	yes
+.endif
 
 PLIST_FILES=	bin/${PORTNAME}.pl
 
-CPPFILT?=	c++filt
-READELF?=	readelf
+READELF?=	/usr/bin/readelf
 
 .include <bsd.port.pre.mk>
 
@@ -35,20 +38,23 @@ PICFLAG?=	-fpic
 
 post-patch:
 	@${REINPLACE_CMD} \
-		-e "\|ArCmd =|s|=.*|= \"${AR}\";|" \
-		-e "\|CPP_FILT =|s|=.*|= \"${CPPFILT}\";|" \
-		-e "\|GCC_PATH =|s|=.*|= \"${CC}\";|" \
-		-e "\|GPP_PATH =|s|=.*|= \"${CXX}\";|" \
-		-e "\|ObjdumpCmd =|s|=.*|= \"${OBJDUMP}\";|" \
-		-e "\|ReadelfCmd =|s|=.*|= \"${READELF}\";|" \
-		-e "s|-shared|& ${PICFLAG}|g" \
+		-e "\|get_CmdPath(\"ar\")|s|\"ar\"|\"${AR}\"|" \
+		-e "\|get_CmdPath(\"gcc\")|s|\"gcc\"|\"${CC}\"|" \
+		-e "\|get_CmdPath(\"g++\")|s|\"g++\"|\"${CXX}\"|" \
+		-e "\|get_CmdPath(\"objdump\")|s|\"objdump\"|\"${OBJDUMP}\"|" \
+		-e "\|get_CmdPath(\"pidof\")|s|\"pidof\"|\"pgrep\"|" \
+		-e "\|get_CmdPath(\"readelf\")|s|\"readelf\"|\"${READELF}\"|" \
+		-e "s| -shared|& ${PICFLAG}|g" \
 		${WRKSRC}/${PORTNAME}.pl
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME}.pl ${PREFIX}/bin
 
+.ifdef(MAINTAINER_MODE)
 check regression-test test: build
-	@(cd ${WRKSRC} && ./${PORTNAME}.pl -test )
+	@(cd ${WRKSRC}; ${PERL} ./${PORTNAME}.pl -test )
+
+.endif
 
 .ifndef(NOPORTDOCS)
 PORTDOCS=	Changes.html Descriptor.html Options.html Readme.html SpecType.html
