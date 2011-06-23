@@ -103,7 +103,7 @@ LATEST_LINK=	squid30
 
 SQUID_STABLE_VER=	25
 
-CONFLICTS=	squid-2.[0-9].* squid-3.[^0].* cacheboy-[0-9]* lusca-head-[0-9]*
+CONFLICTS_INSTALL=	squid-2.[0-9].* squid-3.[^0].* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_PERL5=	yes
