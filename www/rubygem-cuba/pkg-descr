@@ -4,4 +4,4 @@ inspired by Rum, a tiny but powerful mapper for Rack applications.
 It integrates many templates via Tilt, and testing via
 Cutest and Capybara.
 
-WWW: http://github.com/soveran/cuba
+WWW: https://github.com/soveran/cuba

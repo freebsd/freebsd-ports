@@ -4,4 +4,4 @@ that you'd expect, as well as YUI Compressor and Closure Compiler
 compatibility, ahead-of-time gzipping, built-in JavaScript template 
 support, and optional Data-URI / MHTML image embedding. 
 
-WWW: http://rubygems.org/gems/jammit/
+WWW: http://documentcloud.github.com/jammit/

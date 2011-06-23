@@ -9,4 +9,4 @@ Hashie is available as a RubyGem which extend Hashes and make them more useful.
     * Hashie::Clash: allows you to easily construct complex hashes using
       method notation chaining.
 
-WWW: http://github.com/intridea/hashie
+WWW: https://github.com/intridea/hashie
