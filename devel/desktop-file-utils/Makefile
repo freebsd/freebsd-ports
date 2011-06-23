@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	desktop-file-utils
-PORTVERSION=	0.15
-PORTREVISION=	2
+PORTVERSION=	0.18
 CATEGORIES=	devel
 MASTER_SITES=	http://freedesktop.org/software/${PORTNAME}/releases/
 
@@ -16,12 +15,17 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A couple of command line utilities for working with desktop entries
 
 USE_GNOME=	glib20
+USE_BZIP2=	yes
 USE_GETTEXT=	yes
+USE_GMAKE=	yes
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-lispdir
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" EMACS="no"
+
+MAN1=		desktop-file-install.1 desktop-file-validate.1 \
+		update-desktop-database.1
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
