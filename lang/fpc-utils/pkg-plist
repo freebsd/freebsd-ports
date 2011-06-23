@@ -2,6 +2,7 @@ bin/bin2obj
 bin/data2inc
 bin/delp
 bin/fpclasschart
+bin/fpcmkcfg
 bin/fpcres
 bin/fpdoc
 bin/fppkg
@@ -18,7 +19,6 @@ bin/rmcvsdir
 bin/rstconv
 bin/unitdiff
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/Package.fpc
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/buildfppkg.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgwget.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkglnet.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgrepos.ppu
@@ -32,7 +32,6 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgmkconv.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgdownload.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgfpmake.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgcommands.ppu
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/buildfppkg.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgwget.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkglnet.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgrepos.o
@@ -46,7 +45,6 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgmkconv.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgdownload.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgfpmake.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/pkgcommands.o
-lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libpbuildfppkg.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkgwget.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkglnet.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/fppkg/libppkgrepos.a

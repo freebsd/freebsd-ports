@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fpc
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.4
 PORTREVISION?=	0
 CATEGORIES?=	lang
 MASTER_SITES=	ftp://ftp.freepascal.org/pub/fpc/dist/${PORTVERSION}/source/:source \
@@ -31,8 +31,8 @@ USE_GMAKE=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 
 OPTIONSFILE=	${PORT_DBDIR}/${PORTNAME}${PKGNAMESUFFIX}/options
-SUB_FILES=	pkg-message
 
+#OPT?=-Ur -CX
 OPT?=-CX
 FPCSRCDIR=	${PORTNAME}-${PORTVERSION}
 
@@ -51,6 +51,8 @@ PLIST_SUB=	FPC_I386="@comment " \
 .endif
 
 .if !defined(PKGNAMESUFFIX)
+SUB_FILES=	pkg-message
+
 BUILDNAME=	${FPC_ARCH}-freebsd
 PLIST_SUB+=	PORTVERSION=${PORTVERSION} \
 		BUILDNAME=${BUILDNAME}
@@ -138,8 +140,8 @@ do-install:
 	# Installng fpcmake
 	@@cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcm && ${GMAKE} install ${MAKE_ENV}
 	# Installing manpages
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.man/}/man/man1/* ${MAN1PREFIX}/man/man1
-	${INSTALL_DATA} ${WRKDIR}/${PORTNAME}-${PORTVERSION:S/$/.man/}/man/man5/* ${MAN1PREFIX}/man/man5
+	${INSTALL_DATA} ${WRKDIR}/man/man1/* ${MAN1PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKDIR}/man/man5/* ${MAN1PREFIX}/man/man5
 
 post-install:
 	if [ -e "${PREFIX}/bin/${PPNAME}" ]; then ${RM} -f "${PREFIX}/bin/${PPNAME}"; fi

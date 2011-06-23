@@ -1,11 +1,10 @@
-@comment $FreeBSD: /tmp/pcvs/ports/lang/fpc/pkg-plist,v 1.12 2010-08-16 17:45:10 acm Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/lang/fpc/pkg-plist,v 1.13 2011-06-23 05:05:26 acm Exp $
 
 @unexec if cmp -s %D/etc/fpc.cfg.sample %D/etc/fpc.cfg; then rm -f %D/etc/fpc.cfg; fi
 etc/fpc.cfg.sample
 @exec if [ ! -f %D/etc/fpc.cfg ] ; then cp -p %D/%F %B/fpc.cfg; fi
 bin/fpc
 bin/fpcmake
-bin/fpcmkcfg
 bin/fpcsubst
 bin/mkarmins
 bin/mkx86ins
@@ -52,8 +51,8 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/console.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/convutils.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/convutils.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/cprt0.o
-%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/cpu.o
-%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/cpu.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/cpu.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/cpu.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/crt.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/crt.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/cthreads.o
@@ -103,7 +102,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpclocale.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpcmem.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpconsole.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpconvutils.a
-%%FPC_I386%%lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpcpu.a
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpcpu.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpcrt.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpcthreads.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/rtl/libpctypes.a

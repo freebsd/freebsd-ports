@@ -30,7 +30,7 @@ _FPCMKINCLUDED=	yes
 FPC_Include_MAINTAINER=	acm@FreeBSD.org
 FPC_Pre_Include=	bsd.fpc.mk
 
-DEFAULT_FPC_VER=	2.4.2
+DEFAULT_FPC_VER=	2.4.4
 FPC_VER=		${DEFAULT_FPC_VER}
 FPC_ARCH=		${ARCH:S/amd64/x86_64/}
 
@@ -51,18 +51,6 @@ BUILD_DEPENDS+=		${PPNAME}:${PORTSDIR}/lang/fpc
 
 BUILDNAME=		${FPC_ARCH}-freebsd
 UNITSDIR=		${LOCALBASE}/lib/fpc/${FPC_VER}/units/${BUILDNAME}
-
-fpc-check-install:
-check-makevars::
-.if defined(UNITPREFIX) && defined(PKGNAMESUFFIX)
-	@${ECHO_CMD} "#################################################################"
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} " The following freepascal unit will be installed in your system: "
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} " * ${UNITPREFIX}${PKGNAMESUFFIX:S/-//}			       "
-	@${ECHO_CMD} ""
-	@${ECHO_CMD} "#################################################################"
-.endif
 
 _FPC_ALL_UNITS=	a52 aspell bfd bzip2 cairo chm dbus dts fastcgi fcl-async fcl-base \
 		fcl-db fcl-fpcunit fcl-image fcl-json fcl-net fcl-passrc fcl-process \
@@ -201,7 +189,18 @@ RUN_DEPENDS+=	${UNITSDIR}/${UNITS}/Package.fpc:${PORTSDIR}/${${UNITS:S/-/_/}_UNI
 security-check: fpc-check-install
 .		endif
 .	endfor
+
+fpc-check-install:
+.if defined(UNITPREFIX) && defined(PKGNAMESUFFIX)
+	@${ECHO_CMD} "#################################################################"
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} " The following freepascal unit has been installed in your system:"
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} " * ${UNITPREFIX}${PKGNAMESUFFIX:S/-//}                           "
+	@${ECHO_CMD} ""
+	@${ECHO_CMD} "#################################################################"
 .endif
 
+.endif
 #.endif
 # End of bsd.fpc.mk file
