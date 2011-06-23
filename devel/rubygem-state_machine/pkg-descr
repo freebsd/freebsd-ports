@@ -7,4 +7,4 @@ parts of a real state machine, including states, events,
 transitions, and callbacks. However, the api is designed to be
 so simple you do not even need to know what a state machine is.
 
-WWW: http://www.pluginaweek.org/
+WWW: http://www.pluginaweek.org

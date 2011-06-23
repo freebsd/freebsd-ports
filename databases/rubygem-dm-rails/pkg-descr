@@ -7,4 +7,4 @@ almost identically.
 Creating new datamapper apps on rails3 from scratch is actually 
 really easy. The following will guide you through the process.
 
-WWW: http://rubygems.org/gems/dm-rails
+WWW: https://github.com/datamapper/dm-rails
