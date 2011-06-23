@@ -6,17 +6,18 @@
 #
 
 PORTNAME=	glurp
-PORTVERSION=	0.11.6
-PORTREVISION=	5
+PORTVERSION=	0.12.3
 CATEGORIES=	audio
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@mark.reidel.info
 COMMENT=	Nice and clean GTK+-2.x based graphical client for musicpd
 
+LIB_DEPENDS=	mpd.3:${PORTSDIR}/audio/libmpd
+
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget libglade2
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+USE_GNOME=	gtk20 glib20 gnometarget libglade2
+MAKE_ARGS+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -export-dynamic" \
 
 .include <bsd.port.mk>

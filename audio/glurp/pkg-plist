@@ -1,6 +1,7 @@
 bin/glurp
 %%DATADIR%%/glurp.glade
 %%DATADIR%%/pixmaps/add.png
+%%DATADIR%%/pixmaps/condense.png
 %%DATADIR%%/pixmaps/config.png
 %%DATADIR%%/pixmaps/media-audiofile.png
 %%DATADIR%%/pixmaps/offline.png
@@ -13,6 +14,7 @@ bin/glurp
 %%DATADIR%%/pixmaps/player-random.png
 %%DATADIR%%/pixmaps/player-repeat.png
 %%DATADIR%%/pixmaps/player-stop.png
+%%DATADIR%%/pixmaps/player-tabswitch.png
 %%DATADIR%%/pixmaps/playlist.png
 %%DATADIR%%/pixmaps/playlists.png
 %%DATADIR%%/pixmaps/remove.png
