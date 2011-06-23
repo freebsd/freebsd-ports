@@ -1,0 +1,8 @@
+VisualOn AAC encoder library
+
+This library contains an encoder implementation of the Advanced Audio
+Coding (AAC) audio codec. The library is based on a codec implementation
+by VisualOn as part of the Stagefright framework from the Google
+Android project.
+
+WWW: https://github.com/mstorsjo/vo-aacenc

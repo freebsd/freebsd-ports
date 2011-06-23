@@ -778,6 +778,7 @@
     SUBDIR += vat
     SUBDIR += ventrilo-server
     SUBDIR += vitunes
+    SUBDIR += vo-aacenc
     SUBDIR += voipong
     SUBDIR += volumecontrol.app
     SUBDIR += vorbis-tools

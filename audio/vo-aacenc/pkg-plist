@@ -1,0 +1,13 @@
+include/vo-aacenc/cmnMemory.h
+include/vo-aacenc/voAAC.h
+include/vo-aacenc/voAMRWB.h
+include/vo-aacenc/voAudio.h
+include/vo-aacenc/voIndex.h
+include/vo-aacenc/voMem.h
+include/vo-aacenc/voType.h
+lib/libvo-aacenc.a
+lib/libvo-aacenc.la
+lib/libvo-aacenc.so
+lib/libvo-aacenc.so.0
+libdata/pkgconfig/vo-aacenc.pc
+@dirrm include/vo-aacenc
