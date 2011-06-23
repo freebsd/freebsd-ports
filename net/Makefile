@@ -1043,6 +1043,7 @@
     SUBDIR += ssltunnel-client
     SUBDIR += ssltunnel-server
     SUBDIR += ssmping
+    SUBDIR += ssspl
     SUBDIR += ssvnc
     SUBDIR += stone
     SUBDIR += stund
