@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dm-observer
-PORTVERSION=	1.0.2
+PORTVERSION=	1.1.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 

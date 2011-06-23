@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dm-mysql-adapter
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
