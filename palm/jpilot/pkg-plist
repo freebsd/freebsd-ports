@@ -1,5 +1,6 @@
 bin/jpilot
 bin/jpilot-dump
+bin/jpilot-merge
 bin/jpilot-sync
 share/applications/jpilot.desktop
 %%NLS%%share/locale/ca/LC_MESSAGES/jpilot.mo

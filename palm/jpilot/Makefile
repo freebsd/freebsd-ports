@@ -7,8 +7,7 @@
 # "?=" and "+=" are for including this Makefile from japanese/jpilot
 
 PORTNAME=	jpilot
-PORTVERSION=	1.6.2
-PORTREVISION=	4
+PORTVERSION=	1.8.1
 CATEGORIES+=	palm comms
 MASTER_SITES=	http://www.mirrorservice.org/sites/master.us.finkmirrors.net/distfiles/ \
 		http://jpilot.org/
@@ -22,9 +21,10 @@ USE_GMAKE=	yes
 USE_GNOME=	gnomehier
 GNU_CONFIGURE=	yes
 CFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=	--with-pilot-prefix=${LOCALBASE}
+
+LICENSE=	GPLv2
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
