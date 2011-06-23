@@ -284,7 +284,6 @@
     SUBDIR += wbar
     SUBDIR += wbarconf
     SUBDIR += wdm
-    SUBDIR += widgetfactory
     SUBDIR += wmappl
     SUBDIR += wmblob
     SUBDIR += wmbutton
