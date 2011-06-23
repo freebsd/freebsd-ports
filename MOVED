@@ -2221,3 +2221,4 @@ print/cmpsfont|print/font-amsfonts|2011-06-15|Renamed
 print/amspsfnt|print/font-amsfonts|2011-06-15|Renamed
 irc/ezbounce-devel|irc/ezbounce|2011-06-19|main port updated to latest available version
 graphics/povray|graphics/povray36|2011-06-21|Renamed
+x11/widgetfactory|x11-themes/thewidgetfactory|2011-06-23|Duplicate ports merged

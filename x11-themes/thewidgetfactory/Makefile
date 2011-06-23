@@ -1,32 +1,24 @@
-# New ports collection makefile for:	thewidgetfactory
+# New ports collection makefile for:	The Widget Factory
 # Date created:				12 October 2006
-# Whom:					Mezz <mezz@FreeBSD.org>
+# Whom:					Jeremy Messenger <mezz@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	thewidgetfactory
 PORTVERSION=	0.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-themes
 MASTER_SITES=	http://www.stellingwerff.com/TheWidgetFactory/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for previewing GTK+ widgets and testing new themes
 
-USE_GMAKE=	yes
-USE_GNOME=	gnometarget gtk20
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
+USE_GNOME=	gtk20
 
 PLIST_FILES=	bin/twf
-PORTDOCS=	AUTHORS COPYING ChangeLog README
-
-.ifndef (NOPORTDOCS)
-post-install:
-	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
-.endif
 
 .include <bsd.port.mk>
