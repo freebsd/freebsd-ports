@@ -22,7 +22,8 @@ USE_AUTOTOOLS=	libtool libltdl
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-audio=oss \
+CONFIGURE_ARGS=	--with-optimization=0 \
+		--with-audio=oss \
 		--with-default-audio=oss
 CONFIGURE_ENV=	CONFIG_SHELL=${SH} CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 	       	LDFLAGS="-L${LOCALBASE}/lib"
