@@ -3109,6 +3109,7 @@ esniper                         ports/misc/esniper
 esound                          ports/audio/esound
 espeak                          ports/audio/espeak
 esperanza                       ports/audio/esperanza
+ess                             ports/math/ess
 estic                           ports/misc/estic
 estraier                        ports/textproc/estraier
 esvn                            ports/devel/esvn
@@ -10651,6 +10652,7 @@ osg-devel                       ports/graphics/osg-devel
 osgg                            ports/games/osgg
 osh                             ports/shells/osh
 osiris                          ports/security/osiris
+osm2mp                          ports/converters/osm2mp
 osmo                            ports/deskutils/osmo
 osmose                          ports/emulators/osmose
 osmosis                         ports/astro/osmosis
@@ -22019,6 +22021,7 @@ py-webunit                      ports/www/py-webunit
 py-webware                      ports/www/py-webware
 py-webware-component            ports/www/py-webware-component
 py-werkzeug                     ports/www/py-werkzeug
+py-whisper                      ports/databases/py-whisper
 py-wikitools                    ports/www/py-wikitools
 py-wmdockapps                   ports/x11-toolkits/py-wmdockapps
 py-wordnet                      ports/textproc/py-wordnet
@@ -23238,6 +23241,7 @@ rubygem-cgi_multipart_eof_fix   ports/www/rubygem-cgi_multipart_eof_fix
 rubygem-chef                    ports/sysutils/rubygem-chef
 rubygem-chronic                 ports/devel/rubygem-chronic
 rubygem-classifier              ports/devel/rubygem-classifier
+rubygem-cloudfiles              ports/devel/rubygem-cloudfiles
 rubygem-color                   ports/print/rubygem-color
 rubygem-colortools              ports/print/rubygem-colortools
 rubygem-columnize               ports/devel/rubygem-columnize
