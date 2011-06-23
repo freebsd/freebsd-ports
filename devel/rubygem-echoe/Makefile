@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	echoe
-PORTVERSION=	4.3
+PORTVERSION=	4.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
