@@ -7,7 +7,7 @@
 
 PORTNAME=	mol2ps
 PORTVERSION=	0.1e
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://merian.pch.univie.ac.at/pch/download/chemistry/${PORTNAME}/
 DISTNAME=	${PORTNAME}
