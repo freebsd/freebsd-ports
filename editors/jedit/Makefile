@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jedit
-PORTVERSION=	4.3.2
+PORTVERSION=	4.4.1
 PORTEPOCH=	1
 CATEGORIES=	editors java
 MASTER_SITES=	SF
@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION}install
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=
 
-MAINTAINER=	question+fbsdports@closedsrc.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Powerful programmer\'s text editor written in Java
 
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
@@ -22,7 +22,7 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 CONFLICTS=	jedit-4.3.p*
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6+
 
 USE_XORG=	x11
 NO_BUILD=	yes
