@@ -13,7 +13,7 @@ MASTER_SITES=	RG
 MAINTAINER=	voldern@hoeggen.net
 COMMENT=	Ruby DataObjects driver for MySQL
 
-RUN_DEPENDS=	rubygem-data_objects>=0.10.3:${PORTSDIR}/databases/rubygem-data_objects
+RUN_DEPENDS=	rubygem-data_objects>=0.10.4:${PORTSDIR}/databases/rubygem-data_objects
 
 USE_MYSQL=	yes
 USE_RUBY=	yes

@@ -15,7 +15,7 @@ COMMENT=	DataMapper plugin for serializing Resources and Collections
 
 RUN_DEPENDS=	rubygem-dm-core>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-core \
   				rubygem-json>=1.4.6:${PORTSDIR}/devel/rubygem-json146 \
-				rubygem-fastercsv>=1.5.3:${PORTSDIR}/devel/rubygem-fastercsv
+				rubygem-fastercsv>=1.5.4:${PORTSDIR}/devel/rubygem-fastercsv
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes

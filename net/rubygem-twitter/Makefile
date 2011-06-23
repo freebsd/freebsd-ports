@@ -14,7 +14,7 @@ MASTER_SITES=   RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Command line twits and an API wrapper
 
-RUN_DEPENDS=	rubygem-simple_oauth>=0.1.4:${PORTSDIR}/net/rubygem-simple_oauth \
+RUN_DEPENDS=	rubygem-simple_oauth>=0.1.5:${PORTSDIR}/net/rubygem-simple_oauth \
 		rubygem-multi_xml>=0.2.0:${PORTSDIR}/textproc/rubygem-multi_xml \
 		rubygem-multi_json>=1.0.0:${PORTSDIR}/devel/rubygem-multi_json \
 		rubygem-rash>=0.3.0:${PORTSDIR}/devel/rubygem-rash \

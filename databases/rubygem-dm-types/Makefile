@@ -14,10 +14,10 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	DataMapper plugin providing extra data types
 
 RUN_DEPENDS=	rubygem-dm-core>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-core \
-				rubygem-stringex>=1.1.0:${PORTSDIR}/devel/rubygem-stringex \
-				rubygem-uuidtools>=2.1.1:${PORTSDIR}/devel/rubygem-uuidtools \
+				rubygem-stringex>=1.2.0:${PORTSDIR}/devel/rubygem-stringex \
+				rubygem-uuidtools>=2.1.2:${PORTSDIR}/devel/rubygem-uuidtools \
 				rubygem-json>=1.4.6:${PORTSDIR}/devel/rubygem-json146 \
-				rubygem-fastercsv>=1.5.3:${PORTSDIR}/devel/rubygem-fastercsv \
+				rubygem-fastercsv>=1.5.4:${PORTSDIR}/devel/rubygem-fastercsv \
 				rubygem-bcrypt-ruby>=2.1.4:${PORTSDIR}/security/rubygem-bcrypt-ruby
 
 USE_RUBY=	yes
