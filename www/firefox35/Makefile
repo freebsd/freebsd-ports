@@ -18,6 +18,10 @@ COMMENT=	Web browser based on the browser portion of Mozilla
 
 BUILD_DEPENDS=	nspr>=4.8.6:${PORTSDIR}/devel/nspr
 
+DEPRECATED=	Upstream support dropped. Please consider using www/firefox instead.
+EXPIRATION_DATE=	2011-08-01
+FORBIDDEN=	several security vulnerabilities
+
 USE_AUTOTOOLS=	autoconf213:env
 LATEST_LINK=	firefox35
 USE_GECKO=	gecko
