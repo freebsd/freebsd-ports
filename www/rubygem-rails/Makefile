@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rails
-PORTVERSION=	3.0.6
+PORTVERSION=	3.0.9
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
