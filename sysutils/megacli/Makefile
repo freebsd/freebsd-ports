@@ -8,7 +8,7 @@
 PORTNAME=	megacli
 PORTVERSION=	8.01.06
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.lsi.com/DistributionSystem/User/AssetMgr.aspx?asset=56628&/
+MASTER_SITES=	http://www.lsi.com/downloads/Public/MegaRAID%20Common%20Files/
 DISTNAME=	${PORTVERSION}_FreeBSD_MegaCLI
 
 MAINTAINER=	samflanker@gmail.com
