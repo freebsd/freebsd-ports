@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dm-rails
-PORTVERSION=	1.0.4
+PORTVERSION=	1.1.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
