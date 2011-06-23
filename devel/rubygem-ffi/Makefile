@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ffi
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -19,12 +19,6 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.pre.mk>
-
-.if ${RUBY_VER} == 1.8
-PLIST_FILES=	${GEM_LIB_DIR}/ext/ffi_c/libffi/include/ffitarget.h \
-				${GEM_LIB_DIR}/ext/ffi_c/libffi/.libs/libffi.so \
-				${GEM_LIB_DIR}/ext/ffi_c/libffi/.libs/libffi.la \
-				${GEM_LIB_DIR}/ext/ffi_c/libffi/.libs/libffi_convenience.la
-.endif
-
+RUBY_VER=	19
+BROKEN=	rake not found
 .include <bsd.port.post.mk>
