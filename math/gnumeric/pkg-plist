@@ -500,7 +500,16 @@ share/gnome/help/gnumeric/C/figures/analysistools-moving-average-formula-spencer
 share/gnome/help/gnumeric/C/figures/analysistools-moving-average-formula-weighted.png
 share/gnome/help/gnumeric/C/figures/analysistools-moving-average-options.png
 share/gnome/help/gnumeric/C/figures/analysistools-moving-average.png
+share/gnome/help/gnumeric/C/figures/analysistools-normality-ex1.png
+share/gnome/help/gnumeric/C/figures/analysistools-normality-ex2.png
+share/gnome/help/gnumeric/C/figures/analysistools-normality-ex3.png
+share/gnome/help/gnumeric/C/figures/analysistools-normality-ex4.png
+share/gnome/help/gnumeric/C/figures/analysistools-normality-testspec.png
+share/gnome/help/gnumeric/C/figures/analysistools-normality.png
 share/gnome/help/gnumeric/C/figures/analysistools-outputoptions.png
+share/gnome/help/gnumeric/C/figures/analysistools-pcanalysis-ex1.png
+share/gnome/help/gnumeric/C/figures/analysistools-pcanalysis-ex2.png
+share/gnome/help/gnumeric/C/figures/analysistools-pcanalysis.png
 share/gnome/help/gnumeric/C/figures/analysistools-random-ex1.png
 share/gnome/help/gnumeric/C/figures/analysistools-random-ex2.png
 share/gnome/help/gnumeric/C/figures/analysistools-random.png
@@ -515,6 +524,10 @@ share/gnome/help/gnumeric/C/figures/analysistools-regression.png
 share/gnome/help/gnumeric/C/figures/analysistools-sampling-ex1.png
 share/gnome/help/gnumeric/C/figures/analysistools-sampling-ex2.png
 share/gnome/help/gnumeric/C/figures/analysistools-sampling.png
+share/gnome/help/gnumeric/C/figures/analysistools-signtest-ex1.png
+share/gnome/help/gnumeric/C/figures/analysistools-signtest-ex2.png
+share/gnome/help/gnumeric/C/figures/analysistools-signtest-ex3.png
+share/gnome/help/gnumeric/C/figures/analysistools-signtest.png
 share/gnome/help/gnumeric/C/figures/analysistools-smoothing-ex1.png
 share/gnome/help/gnumeric/C/figures/analysistools-smoothing-ex2.png
 share/gnome/help/gnumeric/C/figures/analysistools-smoothing-ex3.png
