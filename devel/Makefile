@@ -3264,6 +3264,7 @@
     SUBDIR += rubygem-jammit
     SUBDIR += rubygem-jruby-jars
     SUBDIR += rubygem-json
+    SUBDIR += rubygem-json146
     SUBDIR += rubygem-json_pure
     SUBDIR += rubygem-launchy
     SUBDIR += rubygem-linecache
