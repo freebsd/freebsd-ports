@@ -4,12 +4,12 @@
 %%PORTDATA%%bin/exe_jo
 %%PORTDATA%%bin/jpeg_jo
 %%PORTDATA%%bin/lzppre
-bin/unzp
+bin/wbpe
 bin/zp
 bin/zpaq
 bin/zpipe
 include/libzpaq.h
 lib/zpaq/libzpaq.o
-lib/zpaq/unzp.o
+lib/zpaq/zp.o
 lib/zpaq/zpaq.o
 @dirrm lib/zpaq

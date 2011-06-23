@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	paq
-PORTVERSION=	20110518
+PORTVERSION=	20110621
 CATEGORIES=	archivers
 MASTER_SITES=	http://mattmahoney.net/dc/ LOCAL/bf/paq/
-DISTFILES=	libzpaq.202a.zip unzp.100.zip zp.102.zip zpaq.205.zip zpipe.201.zip
+DISTFILES=	libzpaq.202a.zip wbpe110.zip zp.103.zip zpaq.205.zip zpipe.201.zip
 .if !defined(NOPORTDATA) || make(makesum)
 DISTFILES+=	bmp_j4.zip bwt.1.zip bwt_j3.zip bwt_slowmode1.zip exe_j1.zip \
 		fast.cfg jpg_test2.zip max.cfg mid.cfg min.zip zpsfx.100.zip
@@ -23,7 +23,7 @@ EXTRACT_ONLY=	${DISTFILES:M*.zip}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A family of archivers with extremely high compression ratios
 
-EXTRACT_AFTER_ARGS=	-x *.bat *.exe readme.txt unzp zp -d ${WRKDIR}
+EXTRACT_AFTER_ARGS=	-x *.bat *.exe readme.txt zp -d ${WRKDIR}
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
 
@@ -42,16 +42,16 @@ LICENSE_COMB=	multi
 CFLAGS+=	-DNDEBUG
 .endif
 
-UNZPFLAGS=	-DOPT="\"${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} \
-		-I${PREFIX}/include \$$1.cpp ${PREFIX}/lib/zpaq/unzp.o \
+ZPFLAGS=	-DOPT="\"${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} \
+		-I${PREFIX}/include \$$1.cpp ${PREFIX}/lib/zpaq/zp.o \
 		${PREFIX}/lib/zpaq/libzpaq.o ${PTHREAD_LIBS} -o \$$1.exe\""
 ZPAQFLAGS=	-DOPT="\"${CXX} ${CXXFLAGS} -I${PREFIX}/include zpaqopt.cpp \
 		${PREFIX}/lib/zpaq/zpaq.o ${PREFIX}/lib/zpaq/libzpaq.o \
 		-o zpaqopt.exe\""
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	libzpaq.cpp libzpaqo.cpp unzp.cpp zp.cpp zpaq.cpp \
-		zpaq1.pdf zpipe.cpp
+PORTDOCS=	libzpaq.cpp libzpaqo.cpp readme_zp.txt wbpe.cpp zp.cpp \
+		zpaq.cpp zpaq1.pdf zpipe.cpp
 .endif
 
 .if !defined(NOPORTDATA)
@@ -93,14 +93,14 @@ do-build:
 	${CXX} ${CXXFLAGS} zpsfx.cpp libzpaq.cpp libzpaqo.cpp -o zpsfx)
 .endif
 	@(cd ${WRKSRC}; \
-	${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} ${UNZPFLAGS} \
-	unzp.cpp libzpaq.cpp ${PTHREAD_LIBS} -o unzp; \
-	${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} zp.cpp libzpaq.cpp divsufsort.c \
-	${PTHREAD_LIBS} -o zp; \
+	${CXX} ${CXXFLAGS} wbpe.cpp -o wbpe; \
+	${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} ${ZPFLAGS} zp.cpp libzpaq.cpp \
+	divsufsort.c ${PTHREAD_LIBS} -o zp; \
 	${CXX} ${CXXFLAGS} ${ZPAQFLAGS} zpaq.cpp libzpaq.cpp libzpaqo.cpp \
 	-o zpaq; \
 	${CXX} ${CXXFLAGS} zpipe.cpp libzpaq.cpp libzpaqo.cpp -o zpipe; \
-	${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} -c libzpaq.cpp unzp.cpp; \
+	${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} -c libzpaq.cpp; \
+	${CXX} ${CXXFLAGS} ${PTHREAD_CFLAGS} -DNOOPT -c zp.cpp; \
 	${CXX} ${CXXFLAGS} -c zpaq.cpp; \
 	for page in ${MAN1} ${MAN3}; \
 	do pod2man $${page}.pod > $${page}; done)
@@ -108,11 +108,11 @@ do-build:
 do-install:
 	@${MKDIR} ${PREFIX}/bin ${PREFIX}/include ${PREFIX}/lib/zpaq \
 	${MANPREFIX}/man/man1 ${MANPREFIX}/man/man3
-.for prog in unzp zp zpaq zpipe
+.for prog in wbpe zp zpaq zpipe
 	@${INSTALL_PROGRAM} ${WRKSRC}/${prog} ${PREFIX}/bin
 .endfor
 	@${INSTALL_DATA} ${WRKSRC}/libzpaq.h ${PREFIX}/include
-.for obj in  libzpaq.o unzp.o zpaq.o
+.for obj in libzpaq.o zp.o zpaq.o
 	@${INSTALL_DATA} ${WRKSRC}/${obj} ${PREFIX}/lib/zpaq
 .endfor
 .for page in ${MAN1} ${MAN3}
