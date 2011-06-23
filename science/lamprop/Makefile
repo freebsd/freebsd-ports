@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	lamprop
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	science
-MASTER_SITES=	http://www.xs4all.nl/~rsmith/software/
+MASTER_SITES=	http://rsmith.home.xs4all.nl/software/
 
 MAINTAINER=	rsmith@xs4all.nl
 COMMENT=	Calculates properties of fiber reinforced composites
@@ -19,6 +19,9 @@ MAN1=		lamprop.1
 MAN5=		lamprop.5
 MANCOMPRESSED=	yes
 MAKE_JOBS_SAFE=	yes
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 .if defined(NOPORTDOCS)
 MAKE_ENV=	NOPORTDOCS=yes
