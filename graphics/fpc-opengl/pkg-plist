@@ -1,4 +1,6 @@
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/Package.fpc
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/freeglut.o
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/freeglut.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/gl.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/gl.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/glext.o
@@ -9,6 +11,7 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/glut.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/glut.ppu
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/glx.o
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/glx.ppu
+lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/libpfreeglut.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/libpgl.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/libpglext.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/libpglu.a

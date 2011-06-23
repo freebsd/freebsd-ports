@@ -5,6 +5,7 @@ PLIST_SUB+=		PORTVERSION=${PORTVERSION} \
 
 PLIST=			${.CURDIR}/pkg-plist
 PATCHDIR=		${.CURDIR}/files
+FILESDIR=		${.CURDIR}/files
 WRKSRC=			${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 UNITPREFIX=    		unit-
@@ -92,6 +93,11 @@ OPT+=	-Fuunits/${BUILDNAME} -Fu../units/${BUILDNAME} -Fu../* \
 
 .if ${PKGNAMESUFFIX} == "-fcl-net"
 OPT+=	-Fu${WRKDIR}/${WRKUNITDIR}/*
+.endif
+
+.if ${PKGNAMESUFFIX} == "-fcl-web"
+OPT+=	-Fuunits/${BUILDNAME} -Fu../units/${BUILDNAME} -Fu../* \
+	-Fu../../units/${BUILDNAME} -Fu../../../units/${BUILDNAME}
 .endif
 
 .if ${PKGNAMESUFFIX} == "-fpgtk"
@@ -352,10 +358,13 @@ LIB_DEPENDS=	Hermes:${PORTSDIR}/graphics/Hermes
 post-extract:
 	@cd ${WRKDIR}/${WRKUNITDIR} && \
 		${FIND} ${WRKSRC} -type d -name .svn | ${XARGS} ${RM} -rf
+.if ${PKGNAMESUFFIX} == "-fpvectorial"
+	@${CP} ${FILESDIR}/fpvutils.pas ${WRKDIR}/${WRKUNITDIR}/src
+.endif
 
 post-patch:
 .if ${PKGNAMESUFFIX} == "-utils"
-	@${REINPLACE_CMD} -e 's|fpcm||g' ${WRKDIR}/${WRKUNITDIR}/Makefile \
+	@${REINPLACE_CMD} -e 's|fpcm ||g' ${WRKDIR}/${WRKUNITDIR}/Makefile \
 		${WRKDIR}/${WRKUNITDIR}/Makefile.fpc
 .endif
 
