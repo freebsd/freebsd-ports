@@ -230,7 +230,7 @@ lib/eaglemode/etc/emFileMan/Commands/Run/RunOnSourceInTerminal.pl
 lib/eaglemode/etc/emFileMan/Commands/StructuredText.props
 lib/eaglemode/etc/emFileMan/Commands/StructuredText/AbiWord.pl
 lib/eaglemode/etc/emFileMan/Commands/StructuredText/Evince.pl
-lib/eaglemode/etc/emFileMan/Commands/StructuredText/Iceweasel.pl
+lib/eaglemode/etc/emFileMan/Commands/StructuredText/Firefox.pl
 lib/eaglemode/etc/emFileMan/Commands/StructuredText/Konqueror.pl
 lib/eaglemode/etc/emFileMan/Commands/StructuredText/OpenOfficeOrg.pl
 lib/eaglemode/etc/emFileMan/Commands/StructuredText/Xpdf.pl
@@ -309,6 +309,7 @@ lib/eaglemode/include/emAv/emAvFileControlPanel.h
 lib/eaglemode/include/emAv/emAvFileModel.h
 lib/eaglemode/include/emAv/emAvFilePanel.h
 lib/eaglemode/include/emAv/emAvServerModel.h
+lib/eaglemode/include/emAv/emAvStates.h
 lib/eaglemode/include/emBmp/emBmpImageFileModel.h
 lib/eaglemode/include/emClock/emAlarmClockModel.h
 lib/eaglemode/include/emClock/emAlarmClockPanel.h
