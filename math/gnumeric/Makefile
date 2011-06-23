@@ -8,7 +8,7 @@
 # When updating, remember to update pkg-plist of gchemutils.
 
 PORTNAME=	gnumeric
-PORTVERSION=	1.10.15
+PORTVERSION=	1.10.16
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -23,7 +23,7 @@ RUN_DEPENDS=	rarian-sk-config:${PORTSDIR}/textproc/rarian
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomeprefix intlhack gnomehack gnomehier pygtk2 \
@@ -36,7 +36,7 @@ USE_CSTD=	gnu89
 WANT_PERL=	yes
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-gnome
+CONFIGURE_ARGS=	--with-gnome --disable-silent-rules
 CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib -liconv ${PTHREAD_LIBS}" \
 		python_prog=${PYTHON_VERSION}
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
@@ -48,7 +48,7 @@ GLIB_SCHEMAS=	org.gnome.gnumeric.dialogs.gschema.xml \
 
 MAN1=		gnumeric.1 ssconvert.1 ssindex.1 ssgrep.1
 
-PLIST_SUB=	VERSION=${PORTVERSION} GOFFICE=0.8.15
+PLIST_SUB=	VERSION=${PORTVERSION} GOFFICE=0.8.16
 
 OPTIONS=	PERL "Enable Perl as extension language" on
 #GNOMEDB "Enable libgnomedb support" off
