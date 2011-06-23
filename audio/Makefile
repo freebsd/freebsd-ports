@@ -779,6 +779,7 @@
     SUBDIR += ventrilo-server
     SUBDIR += vitunes
     SUBDIR += vo-aacenc
+    SUBDIR += vo-amrwbenc
     SUBDIR += voipong
     SUBDIR += volumecontrol.app
     SUBDIR += vorbis-tools

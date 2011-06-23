@@ -1,0 +1,7 @@
+include/vo-amrwbenc/enc_if.h
+lib/libvo-amrwbenc.a
+lib/libvo-amrwbenc.la
+lib/libvo-amrwbenc.so
+lib/libvo-amrwbenc.so.0
+libdata/pkgconfig/vo-amrwbenc.pc
+@dirrm include/vo-amrwbenc
