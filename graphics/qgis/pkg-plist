@@ -1,3 +1,4 @@
+%%DATADIR%%/FindQGIS.cmake
 %%DATADIR%%/doc/AUTHORS
 %%DATADIR%%/doc/CODING
 %%DATADIR%%/doc/CONTRIBUTORS
@@ -9,6 +10,7 @@
 %%DATADIR%%/doc/images/qgis_new_80pct.png
 %%DATADIR%%/doc/index.html
 %%DATADIR%%/doc/qgisdoc.css
+%%DATADIR%%/i18n/qgis_af.qm
 %%DATADIR%%/i18n/qgis_ar.qm
 %%DATADIR%%/i18n/qgis_bg.qm
 %%DATADIR%%/i18n/qgis_ca_ES.qm
@@ -16,6 +18,7 @@
 %%DATADIR%%/i18n/qgis_de.qm
 %%DATADIR%%/i18n/qgis_el_GR.qm
 %%DATADIR%%/i18n/qgis_es.qm
+%%DATADIR%%/i18n/qgis_fa.qm
 %%DATADIR%%/i18n/qgis_fi.qm
 %%DATADIR%%/i18n/qgis_fr.qm
 %%DATADIR%%/i18n/qgis_he.qm
@@ -39,7 +42,9 @@
 %%DATADIR%%/i18n/qgis_sk.qm
 %%DATADIR%%/i18n/qgis_sl_SI.qm
 %%DATADIR%%/i18n/qgis_sq_AL.qm
+%%DATADIR%%/i18n/qgis_sr_CS-Latn.qm
 %%DATADIR%%/i18n/qgis_sv.qm
+%%DATADIR%%/i18n/qgis_ta.qm
 %%DATADIR%%/i18n/qgis_th.qm
 %%DATADIR%%/i18n/qgis_tr.qm
 %%DATADIR%%/i18n/qgis_uk.qm
@@ -122,6 +127,9 @@
 %%DATADIR%%/resources/context_help/QgsDelimitedTextPluginGui-ru_RU
 %%DATADIR%%/resources/context_help/QgsDelimitedTextPluginGui-sk_SK
 %%DATADIR%%/resources/context_help/QgsDelimitedTextPluginGui-sv_SE
+%%DATADIR%%/resources/context_help/QgsFieldCalculator-de_DE
+%%DATADIR%%/resources/context_help/QgsFieldCalculator-en_US
+%%DATADIR%%/resources/context_help/QgsFieldCalculator-fr_FR
 %%DATADIR%%/resources/context_help/QgsGPSPluginGui-de_DE
 %%DATADIR%%/resources/context_help/QgsGPSPluginGui-en_US
 %%DATADIR%%/resources/context_help/QgsGPSPluginGui-it_IT
@@ -140,13 +148,10 @@
 %%DATADIR%%/resources/context_help/QgsIdentifyResults-ru_RU
 %%DATADIR%%/resources/context_help/QgsIdentifyResults-sk_SK
 %%DATADIR%%/resources/context_help/QgsIdentifyResults-sv_SE
-%%DATADIR%%/resources/context_help/QgsMapserverExport-es_ES
-%%DATADIR%%/resources/context_help/QgsMapserverExport-pt_BR
-%%DATADIR%%/resources/context_help/QgsMapserverExport-ru_RU
-%%DATADIR%%/resources/context_help/QgsMapserverExport-sk_SK
 %%DATADIR%%/resources/context_help/QgsMeasureDialog-de_DE
 %%DATADIR%%/resources/context_help/QgsMeasureDialog-en_US
 %%DATADIR%%/resources/context_help/QgsMeasureDialog-es_ES
+%%DATADIR%%/resources/context_help/QgsMeasureDialog-fr_FR
 %%DATADIR%%/resources/context_help/QgsMeasureDialog-it_IT
 %%DATADIR%%/resources/context_help/QgsMeasureDialog-ja_JP
 %%DATADIR%%/resources/context_help/QgsMeasureDialog-pl_PL
@@ -157,6 +162,7 @@
 %%DATADIR%%/resources/context_help/QgsNewConnection-de_DE
 %%DATADIR%%/resources/context_help/QgsNewConnection-en_US
 %%DATADIR%%/resources/context_help/QgsNewConnection-es_ES
+%%DATADIR%%/resources/context_help/QgsNewConnection-fr_FR
 %%DATADIR%%/resources/context_help/QgsNewConnection-it_IT
 %%DATADIR%%/resources/context_help/QgsNewConnection-ja_JP
 %%DATADIR%%/resources/context_help/QgsNewConnection-pl_PL
@@ -164,15 +170,17 @@
 %%DATADIR%%/resources/context_help/QgsNewConnection-ru_RU
 %%DATADIR%%/resources/context_help/QgsNewConnection-sk_SK
 %%DATADIR%%/resources/context_help/QgsNewConnection-sv_SE
-%%DATADIR%%/resources/context_help/QgsNewHttpConnection-pt_BR
 %%DATADIR%%/resources/context_help/QgsNewOgrConnection-de_DE
 %%DATADIR%%/resources/context_help/QgsNewOgrConnection-en_US
+%%DATADIR%%/resources/context_help/QgsNewOgrConnection-fr_FR
 %%DATADIR%%/resources/context_help/QgsNewOgrConnection-it_IT
 %%DATADIR%%/resources/context_help/QgsNewOgrConnection-ja_JP
 %%DATADIR%%/resources/context_help/QgsNewOgrConnection-pt_BR
 %%DATADIR%%/resources/context_help/QgsNewOgrConnection-ru_RU
 %%DATADIR%%/resources/context_help/QgsNewSpatialiteLayerDialog-de_DE
 %%DATADIR%%/resources/context_help/QgsNewSpatialiteLayerDialog-en_US
+%%DATADIR%%/resources/context_help/QgsNewSpatialiteLayerDialog-es_ES
+%%DATADIR%%/resources/context_help/QgsNewSpatialiteLayerDialog-fr_FR
 %%DATADIR%%/resources/context_help/QgsNewSpatialiteLayerDialog-ja_JP
 %%DATADIR%%/resources/context_help/QgsNewSpatialiteLayerDialog-pt_BR
 %%DATADIR%%/resources/context_help/QgsNewVectorLayerDialog-de_DE
@@ -185,22 +193,26 @@
 %%DATADIR%%/resources/context_help/QgsNewVectorLayerDialog-sk_SK
 %%DATADIR%%/resources/context_help/QgsNorthArrowPluginGui-de_DE
 %%DATADIR%%/resources/context_help/QgsNorthArrowPluginGui-en_US
+%%DATADIR%%/resources/context_help/QgsNorthArrowPluginGui-fr_FR
 %%DATADIR%%/resources/context_help/QgsNorthArrowPluginGui-it_IT
 %%DATADIR%%/resources/context_help/QgsNorthArrowPluginGui-ja_JP
 %%DATADIR%%/resources/context_help/QgsNorthArrowPluginGui-pt_BR
 %%DATADIR%%/resources/context_help/QgsOpenVectorLayerDialog-de_DE
 %%DATADIR%%/resources/context_help/QgsOpenVectorLayerDialog-en_US
+%%DATADIR%%/resources/context_help/QgsOpenVectorLayerDialog-fr_FR
 %%DATADIR%%/resources/context_help/QgsOpenVectorLayerDialog-it_IT
 %%DATADIR%%/resources/context_help/QgsOpenVectorLayerDialog-ja_JP
 %%DATADIR%%/resources/context_help/QgsOpenVectorLayerDialog-pt_BR
 %%DATADIR%%/resources/context_help/QgsOpenVectorLayerDialog-ru_RU
 %%DATADIR%%/resources/context_help/QgsOptions-de_DE
 %%DATADIR%%/resources/context_help/QgsOptions-en_US
+%%DATADIR%%/resources/context_help/QgsOptions-fr_FR
 %%DATADIR%%/resources/context_help/QgsOptions-it_IT
 %%DATADIR%%/resources/context_help/QgsOptions-ja_JP
 %%DATADIR%%/resources/context_help/QgsOptions-pt_BR
 %%DATADIR%%/resources/context_help/QgsPgSourceSelect-de_DE
 %%DATADIR%%/resources/context_help/QgsPgSourceSelect-en_US
+%%DATADIR%%/resources/context_help/QgsPgSourceSelect-fr_FR
 %%DATADIR%%/resources/context_help/QgsPgSourceSelect-it_IT
 %%DATADIR%%/resources/context_help/QgsPgSourceSelect-ja_JP
 %%DATADIR%%/resources/context_help/QgsPgSourceSelect-pl_PL
@@ -210,6 +222,7 @@
 %%DATADIR%%/resources/context_help/QgsPgSourceSelect-sv_SE
 %%DATADIR%%/resources/context_help/QgsPluginInstallerDialog-de_DE
 %%DATADIR%%/resources/context_help/QgsPluginInstallerDialog-en_US
+%%DATADIR%%/resources/context_help/QgsPluginInstallerDialog-fr_FR
 %%DATADIR%%/resources/context_help/QgsPluginInstallerDialog-it_IT
 %%DATADIR%%/resources/context_help/QgsPluginInstallerDialog-ja_JP
 %%DATADIR%%/resources/context_help/QgsPluginInstallerDialog-pl_PL
@@ -217,6 +230,7 @@
 %%DATADIR%%/resources/context_help/QgsProjectProperties-de_DE
 %%DATADIR%%/resources/context_help/QgsProjectProperties-en_US
 %%DATADIR%%/resources/context_help/QgsProjectProperties-es_ES
+%%DATADIR%%/resources/context_help/QgsProjectProperties-fr_FR
 %%DATADIR%%/resources/context_help/QgsProjectProperties-it_IT
 %%DATADIR%%/resources/context_help/QgsProjectProperties-ja_JP
 %%DATADIR%%/resources/context_help/QgsProjectProperties-pl_PL
@@ -226,12 +240,15 @@
 %%DATADIR%%/resources/context_help/QgsProjectProperties-sv_SE
 %%DATADIR%%/resources/context_help/QgsScaleBarPluginGui-de_DE
 %%DATADIR%%/resources/context_help/QgsScaleBarPluginGui-en_US
+%%DATADIR%%/resources/context_help/QgsScaleBarPluginGui-es_ES
+%%DATADIR%%/resources/context_help/QgsScaleBarPluginGui-fr_FR
 %%DATADIR%%/resources/context_help/QgsScaleBarPluginGui-it_IT
 %%DATADIR%%/resources/context_help/QgsScaleBarPluginGui-ja_JP
 %%DATADIR%%/resources/context_help/QgsScaleBarPluginGui-pl_PL
 %%DATADIR%%/resources/context_help/QgsScaleBarPluginGui-pt_BR
 %%DATADIR%%/resources/context_help/QgsSpatiaLiteSourceSelect-de_DE
 %%DATADIR%%/resources/context_help/QgsSpatiaLiteSourceSelect-en_US
+%%DATADIR%%/resources/context_help/QgsSpatiaLiteSourceSelect-fr_FR
 %%DATADIR%%/resources/context_help/QgsSpatiaLiteSourceSelect-it_IT
 %%DATADIR%%/resources/context_help/QgsSpatiaLiteSourceSelect-ja_JP
 %%DATADIR%%/resources/context_help/QgsSpatiaLiteSourceSelect-pl_PL
@@ -244,6 +261,7 @@
 %%DATADIR%%/resources/context_help/QgsVectorLayerProperties-de_DE
 %%DATADIR%%/resources/context_help/QgsVectorLayerProperties-en_US
 %%DATADIR%%/resources/context_help/QgsVectorLayerProperties-es_ES
+%%DATADIR%%/resources/context_help/QgsVectorLayerProperties-fr_FR
 %%DATADIR%%/resources/context_help/QgsVectorLayerProperties-it_IT
 %%DATADIR%%/resources/context_help/QgsVectorLayerProperties-ja_JP
 %%DATADIR%%/resources/context_help/QgsVectorLayerProperties-pl_PL
@@ -254,6 +272,7 @@
 %%DATADIR%%/resources/context_help/QgsVectorLayerSaveAsDialog-en_US
 %%DATADIR%%/resources/context_help/QgsWMSSourceSelect-de_DE
 %%DATADIR%%/resources/context_help/QgsWMSSourceSelect-en_US
+%%DATADIR%%/resources/context_help/QgsWMSSourceSelect-fr_FR
 %%DATADIR%%/resources/context_help/QgsWMSSourceSelect-it_IT
 %%DATADIR%%/resources/context_help/QgsWMSSourceSelect-ja_JP
 %%DATADIR%%/resources/context_help/QgsWMSSourceSelect-pl_PL
@@ -261,6 +280,20 @@
 %%DATADIR%%/resources/context_help/QgsWMSSourceSelect-ru_RU
 %%DATADIR%%/resources/context_help/QgsWMSSourceSelect-sk_SK
 %%DATADIR%%/resources/context_help/QgsWMSSourceSelect-sv_SE
+%%DATADIR%%/resources/context_help/RgSettingsDlg-de_DE
+%%DATADIR%%/resources/context_help/RgSettingsDlg-en_US
+%%DATADIR%%/resources/context_help/RgSettingsDlg-fr_FR
+%%DATADIR%%/resources/context_help/RgSettingsDlg-ru_RU
+%%DATADIR%%/resources/context_help/RgShortestPathWidget-de_DE
+%%DATADIR%%/resources/context_help/RgShortestPathWidget-en_US
+%%DATADIR%%/resources/context_help/RgShortestPathWidget-fr_FR
+%%DATADIR%%/resources/context_help/RgShortestPathWidget-ru_RU
+%%DATADIR%%/resources/context_help/SaNewConnection-de_DE
+%%DATADIR%%/resources/context_help/SaNewConnection-en_US
+%%DATADIR%%/resources/context_help/SaNewConnection-fr_FR
+%%DATADIR%%/resources/context_help/SaSourceSelect-de_DE
+%%DATADIR%%/resources/context_help/SaSourceSelect-en_US
+%%DATADIR%%/resources/context_help/SaSourceSelect-fr_FR
 %%DATADIR%%/resources/context_help/eVisDatabaseConnectionGui-de_DE
 %%DATADIR%%/resources/context_help/eVisDatabaseConnectionGui-en_US
 %%DATADIR%%/resources/context_help/eVisDatabaseConnectionGui-es_ES
@@ -621,6 +654,7 @@
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/GdalTools.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/about.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/contour.png
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/dem.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/grid.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/merge.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/nearblack.png
@@ -634,11 +668,13 @@
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/raster-paletted.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/raster-rgb.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/sieve.png
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/tileindex.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/translate.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/vrt.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/warp.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/__init__.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/resources_rc.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/__init__.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/GdalTools_utils.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/dialogBase.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/dialogSRS.py
@@ -646,6 +682,7 @@
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/doBuildVRT.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/doClipper.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/doContour.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/doDEM.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/doGrid.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/doInfo.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/doMerge.py
@@ -659,18 +696,24 @@
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/doRgbPct.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/doSettings.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/doSieve.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/doTileIndex.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/doTranslate.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/doWarp.py
-%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/__init__.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/extentSelector.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/inOutSelector.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/optionsTable.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/terrain.txt
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/ui_dialogAbout.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/ui_dialogBase.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/ui_dialogSettings.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/ui_extentSelector.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/ui_inOutSelector.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/ui_optionsTable.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/ui_widgetBuildVRT.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/ui_widgetClipper.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/ui_widgetContour.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/ui_widgetConvert.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/ui_widgetDEM.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/ui_widgetGrid.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/ui_widgetInfo.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/ui_widgetMerge.py
@@ -681,14 +724,12 @@
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/ui_widgetProximity.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/ui_widgetRasterize.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/ui_widgetSieve.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/ui_widgetTileIndex.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/ui_widgetTranslate.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/ui_widgetWarp.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/widgetBatchBase.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/tools/widgetPluginBase.py
-%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/doAbout.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/fTools.py
-%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/ftools_help.xml
-%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/ftools_help.xsl
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/icons/default/analysis.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/icons/default/basic_statistics.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/icons/default/buffer.png
@@ -779,7 +820,9 @@
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/icons/gis/union.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/icons/gis/unique.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/icons/gis/vector_grid.png
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/icons/gis/voronoi.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/icons/logo.svg
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/icons/logo_small.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/icons/menu_icons.svg
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/__init__.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/resources_rc.py
@@ -787,28 +830,26 @@
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doGeometry.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doGeoprocessing.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doIntersectLines.py
-%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doJoinAttributes.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doMeanCoords.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doMergeShapes.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doPointDistance.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doPointsInPolygon.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doRandPoints.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doRandom.py
-%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doReProject.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doRegPoints.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doSelectByLocation.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doSimplify.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doSpatialJoin.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doSubsetSelect.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doSumLines.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doValidate.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doVectorGrid.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doVectorSplit.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/doVisual.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/ftools_utils.py
-%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/ui_frmAbout.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/ui_frmGeometry.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/ui_frmGeoprocessing.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/ui_frmIntersectLines.py
-%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/ui_frmJoinAttributes.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/ui_frmMeanCoords.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/ui_frmMergeShapes.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/ui_frmPointDistance.py
@@ -817,6 +858,7 @@
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/ui_frmRandom.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/ui_frmReProject.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/ui_frmRegPoints.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/ui_frmSimplify.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/ui_frmSpatialJoin.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/ui_frmSubsetSelect.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/ui_frmSumLines.py
@@ -824,7 +866,6 @@
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/ui_frmVectorSplit.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/ui_frmVisual.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/tools/voronoi.py
-%%QGIS_PYTHON%%%%DATADIR%%/python/plugins/fTools/ui_frmAbout.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/mapserver_export/__init__.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/mapserver_export/mapserverexportdialog.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/mapserver_export/mapserver_export.png
@@ -880,6 +921,10 @@
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/plugin_installer/ui_qgsplugininstallerrepositorybase.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/plugin_installer/unzip.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/plugin_installer/version_compare.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/pyspatialite/__init__.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/pyspatialite/_spatialite.so
+%%QGIS_PYTHON%%%%DATADIR%%/python/pyspatialite/dbapi2.py
+%%QGIS_PYTHON%%%%DATADIR%%/python/pyspatialite/dump.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/qgis/analysis.so
 %%QGIS_PYTHON%%%%DATADIR%%/python/qgis/console.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/qgis/console.pyc
@@ -890,9 +935,8 @@
 %%QGIS_PYTHON%%%%DATADIR%%/python/qgis/utils.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/qgis/utils.pyc
 %%QGIS_PYTHON%%lib/libqgispython.so
-%%QGIS_PYTHON%%lib/libqgispython.so.1.6.0
+%%QGIS_PYTHON%%lib/libqgispython.so.1.7.0
 bin/qgis
-bin/qgis_help
 %%QGIS_FCGI%%bin/admin.sld
 %%QGIS_FCGI%%bin/qgis_mapserv.fcgi
 %%QGIS_FCGI%%bin/wms_metadata.xml
@@ -903,6 +947,7 @@ include/qgis/qgisgui.h
 include/qgis/qgis.h
 include/qgis/qgisinterface.h
 include/qgis/qgisplugin.h
+include/qgis/qgsaddremoveitemcommand.h
 include/qgis/qgsapplication.h
 include/qgis/qgsattributeaction.h
 include/qgis/qgsattributeeditor.h
@@ -943,11 +988,13 @@ include/qgis/qgsdataprovider.h
 include/qgis/qgsdatasourceuri.h
 include/qgis/qgsdetaileditemdelegate.h
 include/qgis/qgsdetaileditemwidget.h
+include/qgis/qgsdiagramrendererv2.h
 include/qgis/qgsdistancearea.h
 include/qgis/qgsencodingfiledialog.h
 include/qgis/qgsexception.h
 include/qgis/qgsfeature.h
 include/qgis/qgsfield.h
+include/qgis/qgsfieldvalidator.h
 include/qgis/qgsfiledropedit.h
 include/qgis/qgsfillsymbollayerv2.h
 include/qgis/qgsformannotationitem.h
@@ -1017,6 +1064,8 @@ include/qgis/qgsquickprint.h
 include/qgis/qgsrasterbandstats.h
 include/qgis/qgsrasterdataprovider.h
 include/qgis/qgsrasterlayer.h
+include/qgis/qgsrasterprojector.h
+include/qgis/qgsrasterpyramid.h
 include/qgis/qgsrastershaderfunction.h
 include/qgis/qgsrastershader.h
 include/qgis/qgsrastertransparency.h
@@ -1038,9 +1087,11 @@ include/qgis/qgssearchtreenode.h
 include/qgis/qgssinglesymbolrenderer.h
 include/qgis/qgssinglesymbolrendererv2.h
 include/qgis/qgssinglesymbolrendererv2widget.h
+include/qgis/qgssearchquerybuilder.h
 include/qgis/qgssnapper.h
 include/qgis/qgsspatialindex.h
 include/qgis/qgsstylev2.h
+include/qgis/qgsstylev2exportimportdialog.h
 include/qgis/qgsstylev2managerdialog.h
 include/qgis/qgssymbol.h
 include/qgis/qgssymbollayerv2.h
@@ -1071,12 +1122,15 @@ include/qgis/ui_qgsdetaileditemwidgetbase.h
 include/qgis/ui_qgsgenericprojectionselectorbase.h
 include/qgis/ui_qgsmessageviewer.h
 include/qgis/ui_qgsprojectionselectorbase.h
+include/qgis/ui_qgsquerybuilderbase.h
 lib/libqgis_analysis.so
-lib/libqgis_analysis.so.1.6.0
+lib/libqgis_analysis.so.1.7.0
 lib/libqgis_core.so
-lib/libqgis_core.so.1.6.0
+lib/libqgis_core.so.1.7.0
 lib/libqgis_gui.so
-lib/libqgis_gui.so.1.6.0
+lib/libqgis_gui.so.1.7.0
+lib/libqgissqlanyconnection.so
+lib/libqgissqlanyconnection.so.1.7.0
 lib/qgis/plugins/libcoordinatecaptureplugin.so
 lib/qgis/plugins/libcopyrightlabelplugin.so
 lib/qgis/plugins/libdelimitedtextplugin.so
@@ -1085,6 +1139,7 @@ lib/qgis/plugins/libdiagramoverlay.so
 lib/qgis/plugins/libdisplacementplugin.so
 lib/qgis/plugins/libdxf2shpconverterplugin.so
 lib/qgis/plugins/libevis.so
+lib/qgis/plugins/libgdalprovider.so
 lib/qgis/plugins/libgeorefplugin.so
 lib/qgis/plugins/libgpsimporterplugin.so
 lib/qgis/plugins/libgpxprovider.so
@@ -1092,18 +1147,20 @@ lib/qgis/plugins/libinterpolationplugin.so
 lib/qgis/plugins/libmemoryprovider.so
 lib/qgis/plugins/libnortharrowplugin.so
 lib/qgis/plugins/libofflineeditingplugin.so
-lib/qgis/plugins/libogrconverterplugin.so
 lib/qgis/plugins/libogrprovider.so
 lib/qgis/plugins/liboracleplugin.so
 lib/qgis/plugins/libosmprovider.so
-lib/qgis/plugins/libquickprintplugin.so
 lib/qgis/plugins/librasterterrainplugin.so
+lib/qgis/plugins/libroadgraphplugin.so
 lib/qgis/plugins/libscalebarplugin.so
 lib/qgis/plugins/libspatialiteprovider.so
 lib/qgis/plugins/libspatialqueryplugin.so
+lib/qgis/plugins/libsqlanywhereprovider.so
+lib/qgis/plugins/libsqlanywhereplugin.so
 lib/qgis/plugins/libwfsplugin.so
 lib/qgis/plugins/libwfsprovider.so
 lib/qgis/plugins/libwmsprovider.so
+lib/qgis/qgis_help
 @dirrm lib/qgis/plugins
 @dirrm lib/qgis
 @dirrm include/qgis
@@ -1152,5 +1209,6 @@ lib/qgis/plugins/libwmsprovider.so
 %%QGIS_PYTHON%%@dirrm %%DATADIR%%/python/plugins/GdalTools/icons
 %%QGIS_PYTHON%%@dirrm %%DATADIR%%/python/plugins/GdalTools
 %%QGIS_PYTHON%%@dirrm %%DATADIR%%/python/plugins
+%%QGIS_PYTHON%%@dirrm %%DATADIR%%/python/pyspatialite
 %%QGIS_PYTHON%%@dirrm %%DATADIR%%/python
 @dirrm %%DATADIR%%

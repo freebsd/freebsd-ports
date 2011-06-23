@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qgis
-PORTVERSION=	1.6.0
-PORTREVISION=	3
+PORTVERSION=	1.7.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://qgis.org/downloads/ \
 		http://download.osgeo.org/qgis/src/
@@ -86,7 +85,7 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sip>=4.8.2:${PORTSDIR}/devel/py-sip \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=2.6.5:${PORTSDIR}/databases/py-sqlite3
 .endif
 
-MAN1=		qgis.1 qgis_help.1
+MAN1=		qgis.1
 
 post-patch:
 		${REINPLACE_CMD} -e 's# dl##g' \
