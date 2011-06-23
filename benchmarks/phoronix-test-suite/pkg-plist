@@ -24,6 +24,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/commands/default_benchmark.php
 %%DATADIR%%/pts-core/commands/default_run.php
 %%DATADIR%%/pts-core/commands/diagnostics.php
+%%DATADIR%%/pts-core/commands/download_test_files.php
 %%DATADIR%%/pts-core/commands/dump_core_storage.php
 %%DATADIR%%/pts-core/commands/dump_documentation.php
 %%DATADIR%%/pts-core/commands/dump_phodevi_smart_cache.php
@@ -35,6 +36,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/commands/info.php
 %%DATADIR%%/pts-core/commands/install_dependencies.php
 %%DATADIR%%/pts-core/commands/install_test.php
+%%DATADIR%%/pts-core/commands/interactive.php
 %%DATADIR%%/pts-core/commands/list_available_suites.php
 %%DATADIR%%/pts-core/commands/list_available_tests.php
 %%DATADIR%%/pts-core/commands/list_available_virtual_suites.php
@@ -74,26 +76,11 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/commands/system_sensors.php
 %%DATADIR%%/pts-core/commands/test_module.php
 %%DATADIR%%/pts-core/commands/upload_result.php
-%%DATADIR%%/pts-core/commands/user_config_get.php
 %%DATADIR%%/pts-core/commands/user_config_reset.php
 %%DATADIR%%/pts-core/commands/user_config_set.php
 %%DATADIR%%/pts-core/commands/validate_result_file.php
 %%DATADIR%%/pts-core/commands/validate_test_profile.php
 %%DATADIR%%/pts-core/commands/validate_test_suite.php
-%%DATADIR%%/pts-core/definitions/compatibility.xml
-%%DATADIR%%/pts-core/definitions/download-cache.xml
-%%DATADIR%%/pts-core/definitions/external-dependencies.xml
-%%DATADIR%%/pts-core/definitions/graph-config.xml
-%%DATADIR%%/pts-core/definitions/module-phoromatic.xml
-%%DATADIR%%/pts-core/definitions/module-settings.xml
-%%DATADIR%%/pts-core/definitions/result-file.xml
-%%DATADIR%%/pts-core/definitions/results-parser.xml
-%%DATADIR%%/pts-core/definitions/test-installation.xml
-%%DATADIR%%/pts-core/definitions/test-profile-downloads.xml
-%%DATADIR%%/pts-core/definitions/test-profile.xml
-%%DATADIR%%/pts-core/definitions/test-suite.xml
-%%DATADIR%%/pts-core/definitions/user-config.xml
-%%DATADIR%%/pts-core/definitions/xsl/pts-definitions-viewer.xsl
 %%DATADIR%%/pts-core/external-test-dependencies/scripts/install-angstrom-packages.sh
 %%DATADIR%%/pts-core/external-test-dependencies/scripts/install-arch-packages.sh
 %%DATADIR%%/pts-core/external-test-dependencies/scripts/install-debian-packages.sh
@@ -130,6 +117,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/external-test-dependencies/xml/xsl/pts-generic-exdep-viewer.xsl
 %%DATADIR%%/pts-core/external-test-dependencies/xml/zenwalk-packages.xml
 %%DATADIR%%/pts-core/modules/dummy_module.php
+%%DATADIR%%/pts-core/modules/ekofisk.php
 %%DATADIR%%/pts-core/modules/graphics_event_checker.php
 %%DATADIR%%/pts-core/modules/graphics_override.php
 %%DATADIR%%/pts-core/modules/phoromatic.php
@@ -153,7 +141,6 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/nye_Xml/nye_XmlReader.php
 %%DATADIR%%/pts-core/objects/nye_Xml/nye_XmlWriter.php
 %%DATADIR%%/pts-core/objects/nye_Xml/pts_config_nye_XmlReader.php
-%%DATADIR%%/pts-core/objects/nye_Xml/pts_external_dependencies_nye_XmlReader.php
 %%DATADIR%%/pts-core/objects/nye_Xml/pts_graph_config_nye_XmlReader.php
 %%DATADIR%%/pts-core/objects/nye_Xml/pts_parse_results_nye_XmlReader.php
 %%DATADIR%%/pts-core/objects/nye_Xml/pts_results_nye_XmlReader.php
@@ -187,6 +174,7 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/phodevi/sensors/cpu_voltage.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/gpu_fanspeed.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/gpu_freq.php
+%%DATADIR%%/pts-core/objects/phodevi/sensors/gpu_power.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/gpu_temp.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/gpu_usage.php
 %%DATADIR%%/pts-core/objects/phodevi/sensors/hdd_read_speed.php
@@ -231,6 +219,8 @@ bin/phoronix-test-suite
 %%DATADIR%%/pts-core/objects/pts_download_speed_manager.php
 %%DATADIR%%/pts-core/objects/pts_external_dependencies.php
 %%DATADIR%%/pts-core/objects/pts_file_io.php
+%%DATADIR%%/pts-core/objects/pts_flags.php
+%%DATADIR%%/pts-core/objects/pts_html_template.php
 %%DATADIR%%/pts-core/objects/pts_image.php
 %%DATADIR%%/pts-core/objects/pts_installed_test.php
 %%DATADIR%%/pts-core/objects/pts_math.php
@@ -356,8 +346,6 @@ bin/phoronix-test-suite
 @dirrm %%DATADIR%%/pts-core/external-test-dependencies/xml
 @dirrm %%DATADIR%%/pts-core/external-test-dependencies/scripts
 @dirrm %%DATADIR%%/pts-core/external-test-dependencies
-@dirrm %%DATADIR%%/pts-core/definitions/xsl
-@dirrm %%DATADIR%%/pts-core/definitions
 @dirrm %%DATADIR%%/pts-core/commands
 @dirrm %%DATADIR%%/pts-core
 @dirrm %%DATADIR%%
