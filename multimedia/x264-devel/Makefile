@@ -29,8 +29,8 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 X264_BUILD=	115
-X264_REV=	1947
-X264_SNAPSHOT=	20110502
+X264_REV=	2008
+X264_SNAPSHOT=	20110622
 
 USE_BZIP2=	yes
 EXTRACT_AFTER_ARGS?=	| ${TAR} -xf - --exclude .svn
@@ -48,7 +48,7 @@ OPTIONS=	DEBUG "Enable Debugging" Off \
 
 CONFIGURE_ARGS+=	--extra-cflags="${CPPFLAGS} ${CFLAGS} -fPIC -I${LOCALBASE}/include" \
 			--extra-ldflags="${LDFLAGS} -L${LOCALBASE}/lib" \
-			--enable-shared
+			--enable-static --enable-shared
 
 CONFIGURE_ENV+=		COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=		COMPILER_PATH=${LOCALBASE}/bin
