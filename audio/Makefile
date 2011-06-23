@@ -326,7 +326,9 @@
     SUBDIR += jack-keyboard
     SUBDIR += jack-rack
     SUBDIR += jack-smf-utils
+    SUBDIR += jack_ghero
     SUBDIR += jack_mixer
+    SUBDIR += jack_umidi
     SUBDIR += jamin
     SUBDIR += jid3lib
     SUBDIR += jmusic
@@ -401,6 +403,7 @@
     SUBDIR += libtremor
     SUBDIR += libtunepimp
     SUBDIR += libtunepimp-old
+    SUBDIR += libumidi
     SUBDIR += libvorbis
     SUBDIR += libworkman
     SUBDIR += linux-alsa-lib
@@ -460,6 +463,7 @@
     SUBDIR += mehdiaplayer
     SUBDIR += mhwaveedit
     SUBDIR += midimountain
+    SUBDIR += midipp
     SUBDIR += mikmod
     SUBDIR += milkytracker
     SUBDIR += minitunes
