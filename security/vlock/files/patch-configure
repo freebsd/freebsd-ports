@@ -1,12 +1,19 @@
---- configure.orig	2008-05-24 08:37:25.515872840 +0200
-+++ configure	2008-05-24 08:38:44.943843155 +0200
-@@ -220,7 +220,8 @@
+--- configure.orig	2008-05-18 11:10:54.000000000 +0200
++++ configure	2011-06-23 08:20:00.811018722 +0200
+@@ -219,12 +219,12 @@
+   SCRIPTDIR="\$(LIBDIR)/vlock/scripts"
    MODULEDIR="\$(LIBDIR)/vlock/modules"
  
-   CC=gcc
--  DEFAULT_CFLAGS="-O2 -Wall -W -pedantic -std=gnu99"
-+  #DEFAULT_CFLAGS="-O2 -Wall -W -pedantic -std=gnu99"
-+  DEFAULT_CFLAGS="-pedantic -std=gnu99"
+-  CC=gcc
++  #CC=gcc
+   DEFAULT_CFLAGS="-O2 -Wall -W -pedantic -std=gnu99"
    DEBUG_CFLAGS="-O0 -g -Wall -W -pedantic -std=gnu99"
-   CFLAGS="${DEFAULT_CFLAGS}"
-   LD=ld
+-  CFLAGS="${DEFAULT_CFLAGS}"
+-  LD=ld
+-  LDFLAGS=""
++  #CFLAGS="${DEFAULT_CFLAGS}"
++  #LD=ld
++  #LDFLAGS=""
+   AUTH_METHOD="pam"
+   ENABLE_ROOT_PASSWORD="yes"
+   ENABLE_PLUGINS="yes"

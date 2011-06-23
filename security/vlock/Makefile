@@ -7,7 +7,7 @@
 
 PORTNAME=	vlock
 PORTVERSION=	2.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security
 MASTER_SITES=	http://cthulhu.c3d2.de/~toidinamai/vlock/archive/
 
@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--enable-plugins --enable-pam \
 		VLOCK_MODE="0750" \
 		EXTRA_CFLAGS="-I${LOCALBASE}/include" \
 		EXTRA_LDFLAGS="-L${LOCALBASE}/lib"
+USE_CSTD=	gnu99
 
 OPTIONS=	ROOTPWD "Enable unlock using root password" on \
 		VLOCKSCRIPTS "Install sample hook scripts" off \
