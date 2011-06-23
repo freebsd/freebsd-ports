@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	railties
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.6
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
