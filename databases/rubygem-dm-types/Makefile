@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dm-types
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.1.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -17,8 +16,9 @@ COMMENT=	DataMapper plugin providing extra data types
 RUN_DEPENDS=	rubygem-dm-core>=${PORTVERSION}:${PORTSDIR}/databases/rubygem-dm-core \
 				rubygem-stringex>=1.1.0:${PORTSDIR}/devel/rubygem-stringex \
 				rubygem-uuidtools>=2.1.1:${PORTSDIR}/devel/rubygem-uuidtools \
-				rubygem-json_pure>=1.4:${PORTSDIR}/devel/rubygem-json_pure \
-				rubygem-fastercsv>=1.5.3:${PORTSDIR}/devel/rubygem-fastercsv
+				rubygem-json>=1.4.6:${PORTSDIR}/devel/rubygem-json146 \
+				rubygem-fastercsv>=1.5.3:${PORTSDIR}/devel/rubygem-fastercsv \
+				rubygem-bcrypt-ruby>=2.1.4:${PORTSDIR}/security/rubygem-bcrypt-ruby
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
