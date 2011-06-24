@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	msieve
-PORTVERSION=	1.48
+PORTVERSION=	1.49
 CATEGORIES=	math
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	\
@@ -20,12 +20,12 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libecm.a:${PORTSDIR}/math/gmp-ecm
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_GMAKE=	yes
-CFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	${PTHREAD_CFLAGS} -I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	LDFLAGS="${LDFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}" ECM=1
 
-PLIST_FILES=	bin/msieve lib/libmsieve.a include/msieve/msieve.h \
-		include/msieve/mp.h include/msieve/util.h
+HEADERS=	mp.h msieve.h util.h
+PLIST_FILES=	bin/msieve lib/libmsieve.a ${HEADERS:S|^|include/msieve/|}
 PLIST_DIRS=	include/msieve
 PORTDOCS=	Changes Readme Readme.nfs Readme.qs
 
@@ -38,30 +38,32 @@ CFLAGS+=	-O3 -ffast-math -fomit-frame-pointer -DNDEBUG
 .endif
 
 .if ${OSVERSION} >= 700042 && ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64-7
+BROKEN=		Does not compile on sparc64
 .endif
 
-ALL_TARGET=	generic
 .if ${ARCH} == "i386"
 ALL_TARGET=	x86
-.endif
-.if ${ARCH} == "amd64"
+.elif ${ARCH} == "amd64"
 ALL_TARGET=	x86_64
+.else
+ALL_TARGET=	generic
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e "\|^CC =|d" -e "\|^OPT_FLAGS =|d" \
+		-e "\|^CFLAGS =|s|=|+=|" ${WRKSRC}/Makefile
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/msieve ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/include/msieve
-	${INSTALL_DATA} ${WRKSRC}/include/msieve.h ${PREFIX}/include/msieve
-	${INSTALL_DATA} ${WRKSRC}/include/mp.h ${PREFIX}/include/msieve
-	${INSTALL_DATA} ${WRKSRC}/include/util.h ${PREFIX}/include/msieve
-	${INSTALL_DATA} ${WRKSRC}/libmsieve.a ${PREFIX}/lib
+	@${INSTALL_PROGRAM} ${WRKSRC}/msieve ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/include/msieve
+	@(cd ${WRKSRC}/include; ${INSTALL_DATA} ${HEADERS} ${PREFIX}/include/msieve)
+	@${INSTALL_DATA} ${WRKSRC}/libmsieve.a ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC}; ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR})
 .endif
 
 regression-test test check: build
-	@( cd ${WRKSRC} ; ./msieve -q -d 1 2385734365243128176756453434347656453122245767798 )
+	@(cd ${WRKSRC}; ./msieve -q -d 1 2385734365243128176756453434347656453122245767798)
 
 .include <bsd.port.post.mk>

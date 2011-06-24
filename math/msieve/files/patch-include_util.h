@@ -6,12 +6,12 @@
  
 +#if defined(CPU_GENERIC)	|| \
 +    defined(CPU_PENTIUM2)	|| \
-+    defined(CPU_ATHLON)		|| \
 +    defined(CPU_PENTIUM3)	|| \
-+    defined(CPU_ATHLON_XP)	|| \
 +    defined(CPU_PENTIUM4)	|| \
 +    defined(CPU_PENTIUM_M)	|| \
 +    defined(CPU_CORE)		|| \
++    defined(CPU_ATHLON)	|| \
++    defined(CPU_ATHLON_XP)	|| \
 +    defined(CPU_OPTERON)
  #define HAS_CMOV
  #define HAS_MMX
