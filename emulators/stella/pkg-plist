@@ -17,7 +17,7 @@ bin/stella
 %%PORTDOCS%%%%DOCSDIR%%/graphics/jr_pacman.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/cheat.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/space_invaders.png
-%%PORTDOCS%%%%DOCSDIR%%/graphics/eventmapping_virtualdevs.png
+%%PORTDOCS%%%%DOCSDIR%%/graphics/eventmapping_devsports.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/eventmapping_combo.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/eventmapping.png
 %%PORTDOCS%%%%DOCSDIR%%/graphics/select_romdir.png
