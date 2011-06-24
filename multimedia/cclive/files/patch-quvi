@@ -1,0 +1,81 @@
+--- include/quvicpp/quvicpp.h.orig	2011-03-15 18:17:23.000000000 +0800
++++ include/quvicpp/quvicpp.h	2011-06-25 07:00:00.000000000 +0800
+@@ -60,12 +60,10 @@
+   void verify     (const bool);
+   void shortened  (const bool);
+   void statusfunc (quvi_callback_status);
+-  void writefunc  (quvi_callback_write);
+ private:
+   void _swap (const options&);
+ private:
+   quvi_callback_status _statusfunc;
+-  quvi_callback_write  _writefunc;
+   std::string          _format;
+   bool                 _verify;
+   bool                 _shortened;
+--- src/quvicpp/link.cpp.orig	2011-03-15 18:17:23.000000000 +0800
++++ src/quvicpp/link.cpp	2011-06-25 07:00:00.000000000 +0800
+@@ -36,7 +36,7 @@
+         dst = tmp; \
+     } while (0)
+   _wrap(QUVIPROP_VIDEOURL,              _url,         char*);
+-  _wrap(QUVIPROP_VIDEOFILECONTENTTYPE,  _contentType, char*);
++  _wrap(QUVIPROP_MEDIACONTENTTYPE,      _contentType, char*);
+   _wrap(QUVIPROP_VIDEOFILESUFFIX,       _suffix,      char*);
+   _wrap(QUVIPROP_VIDEOFILELENGTH,       _length,      double);
+ #undef _wrap
+--- src/quvicpp/options.cpp.orig	2011-03-15 18:17:23.000000000 +0800
++++ src/quvicpp/options.cpp	2011-06-25 07:00:00.000000000 +0800
+@@ -25,7 +25,6 @@
+ 
+ options::options ()
+   : _statusfunc(NULL),
+-    _writefunc(NULL),
+     _format("default"),
+     _verify(true),
+     _shortened(true)
+@@ -35,7 +34,6 @@
+ 
+ options::options (const options& opts)
+   : _statusfunc(NULL),
+-    _writefunc(NULL),
+     _format("default"),
+     _verify(true),
+     _shortened(true)
+@@ -58,7 +56,6 @@
+ options::~options ()
+ {
+   _statusfunc = NULL;
+-  _writefunc  = NULL;
+ }
+ 
+ // Swap.
+@@ -70,7 +67,6 @@
+   _verify     = qo._verify;
+   _shortened  = qo._shortened;
+   _statusfunc = qo._statusfunc;
+-  _writefunc  = qo._writefunc;
+ }
+ 
+ // Set.
+@@ -91,10 +87,6 @@
+ {
+   _statusfunc = cb;
+ }
+-void options::writefunc (quvi_callback_write cb)
+-{
+-  _writefunc  = cb;
+-}
+ 
+ } // End namespace.
+ 
+--- src/quvicpp/query.cpp.orig	2011-03-15 18:17:23.000000000 +0800
++++ src/quvicpp/query.cpp	2011-06-25 07:00:00.000000000 +0800
+@@ -100,7 +100,6 @@
+     quvi_setopt(_quvi, QUVIOPT_FORMAT, opts._format.c_str());
+ 
+   quvi_setopt(_quvi, QUVIOPT_STATUSFUNCTION, opts._statusfunc);
+-  quvi_setopt(_quvi, QUVIOPT_WRITEFUNCTION,  opts._writefunc);
+ #ifdef _0
+   quvi_setopt(_quvi, QUVIOPT_NOVERIFY, opts._verify ? 1L:0L);
+ #endif

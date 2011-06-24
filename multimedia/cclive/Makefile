@@ -7,7 +7,7 @@
 
 PORTNAME=	cclive
 PORTVERSION=	0.7.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia net
 MASTER_SITES=	SF/${PORTNAME}/0.7 \
 		GOOGLE_CODE
@@ -18,7 +18,7 @@ COMMENT=	Lightweight command line video extraction tool
 LIB_DEPENDS=	boost_system.4:${PORTSDIR}/devel/boost-libs \
 		curl.6:${PORTSDIR}/ftp/curl \
 		pcre.0:${PORTSDIR}/devel/pcre \
-		quvi.5:${PORTSDIR}/multimedia/quvi
+		quvi.6:${PORTSDIR}/multimedia/quvi
 
 MAN1=		cclive.1
 PLIST_FILES=	bin/cclive
