@@ -34,4 +34,10 @@ MAKE_ARGS+=" HAVE_MAN=YES"
 MAKE_ARGS+=" HAVE_DEBUG=YES"
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800000
+IGNORE=		requires usb stack from FreeBSD 8.0-RELEASE or later
+.endif
+
+.include <bsd.port.post.mk>
