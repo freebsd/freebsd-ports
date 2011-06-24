@@ -17,7 +17,7 @@ COMMENT=	GNOME 2 Jabber Client
 LIB_DEPENDS=	gnet-2.0.0:${PORTSDIR}/net/gnet2
 
 BROKEN=		Does not build
-DEPRECATED=	No longer maintain by upstream since 2005
+DEPRECATED=	No longer maintain by upstream since 2005, use net-im/empathy instead
 EXPIRATION_DATE=2011-07-23
 
 USE_GMAKE=	yes
