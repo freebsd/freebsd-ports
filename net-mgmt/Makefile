@@ -183,6 +183,7 @@
     SUBDIR += openvmps
     SUBDIR += ourmon
     SUBDIR += p0f
+    SUBDIR += p5-AnyEvent-SNMP
     SUBDIR += p5-Cflow
     SUBDIR += p5-Cisco-Reconfig
     SUBDIR += p5-Data-Validate-IP
