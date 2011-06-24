@@ -7,8 +7,10 @@
 
 PORTNAME=	AnyEvent-SNMP
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt perl5
 MASTER_SITES=	CPAN
+PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Adaptor to integrate Net::SNMP into AnyEvent
