@@ -746,6 +746,7 @@
     SUBDIR += rubygem-activemodel
     SUBDIR += rubygem-arel
     SUBDIR += rubygem-bigrecord
+    SUBDIR += rubygem-couchrest
     SUBDIR += rubygem-data_objects
     SUBDIR += rubygem-datamapper
     SUBDIR += rubygem-delayed_job_data_mapper
