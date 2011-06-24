@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scamper
-PORTVERSION=	20110503
+PORTVERSION=	20110623
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wand.net.nz/scamper/
 DISTNAME=	${PORTNAME}-cvs-${PORTVERSION}
@@ -21,5 +21,7 @@ USE_GMAKE=	yes
 MAN1=		scamper.1 sc_ally.1 sc_analysis_dump.1 sc_attach.1 \
 		sc_tracediff.1 sc_warts2pcap.1 sc_warts2text.1 \
 		sc_wartscat.1 sc_wartsdump.1
+MAN3=		libscamperfile.3
+MAN5=		warts.5
 
 .include <bsd.port.mk>
