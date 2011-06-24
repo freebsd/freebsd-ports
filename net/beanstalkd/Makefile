@@ -7,6 +7,7 @@
 
 PORTNAME=	beanstalkd
 PORTVERSION=	1.4.6
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	http://cloud.github.com/downloads/kr/beanstalkd/
 
