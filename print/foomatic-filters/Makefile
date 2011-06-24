@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	foomatic-filters
-PORTVERSION=	4.0.1
-PORTREVISION=	5
+PORTVERSION=	4.0.7
 CATEGORIES=	print
 MASTER_SITES=	http://www.linuxprinting.org/download/foomatic/ \
 		http://www.openprinting.org/download/foomatic/
@@ -57,7 +56,7 @@ RUN_DEPENDS+=	a2ps:${PORTSDIR}/print/a2ps-a4
 .	endif
 .endif
 
-.if defined(WITH_A2PS_LETTER) 
+.if defined(WITH_A2PS_LETTER)
 .	if defined(WITH_A2PS_A4) || defined(WITH_A2PS_LETTERDJ)
 IGNORE=		Please select only one a2ps convertor
 .	else
