@@ -199,7 +199,6 @@
     SUBDIR += notification-daemon
     SUBDIR += notify-osd
     SUBDIR += ontv
-    SUBDIR += opengoo
     SUBDIR += openproj
     SUBDIR += orage
     SUBDIR += org-mode.el
