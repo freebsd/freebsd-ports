@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dazuko
-PORTVERSION=	2.3.7
+PORTVERSION=	2.3.9
 CATEGORIES=	security
 MASTER_SITES=	http://dazuko.dnsalias.org/files/
 
@@ -18,10 +18,6 @@ SUB_FILES=	pkg-message
 OPTIONS=	EXAMPLEC	"Install C example programs"	on
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 800014
-BROKEN=		does not build
-.endif
 
 .if defined(WITH_EXAMPLEC)
 PLIST_FILES=	%%EXAMPLESDIR%%/example %%EXAMPLESDIR%%/example_mt

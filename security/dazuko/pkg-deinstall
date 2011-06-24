@@ -18,9 +18,9 @@ if [ ! "$2" = "POST-DEINSTALL" ]; then
 	fi
 	
 	if [ -f /boot/loader.conf ]; then
-		cat /boot/loader.conf | grep ${MODULENAME} > /dev/null 2>&1; RESULT=$?
+		cat /etc/rc.local | grep ${MODULENAME} > /dev/null 2>&1; RESULT=$?
         	if [ ${RESULT} -eq 0 ]; then
-			sed -i '' -e "/^${MODULENAME}_load.*/d" /boot/loader.conf
+			sed -i '' -e "/${MODULENAME}/d" /etc/rc.local
 		fi
 	fi
 fi

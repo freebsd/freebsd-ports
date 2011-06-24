@@ -1,21 +1,11 @@
 ################################################################################
 
-1) Create device /dev/dazuko
-
-   * FreeBSD 4.x
-    
-     # mknod /dev/dazuko c 33 0
-
-   * FreeBSD >= 5.x
-
-     It's not neccesary on modern FreeBSD systems
-
-2) If you selected WITH_EXAMPLEC, you can test the module using files from:
+1) If you selected WITH_EXAMPLEC, you can test the module using files from:
 
      %%EXAMPLESDIR%%/example
      %%EXAMPLESDIR%%/example_mt
 
-3) Do not load the module using /boot/loader.conf. It generates a page fault due
+2) Do not load the module using /boot/loader.conf. It generates a page fault due
    to a possible dazuko bug.
 
    You could use /etc/rc.local for loading the module. For example, add the
