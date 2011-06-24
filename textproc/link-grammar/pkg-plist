@@ -42,6 +42,7 @@ libdata/pkgconfig/link-grammar.pc
 %%DATADIR%%/en/words/words-medical.v.4.1
 %%DATADIR%%/en/words/words-medical.v.4.2
 %%DATADIR%%/en/words/words-medical.v.4.3
+%%DATADIR%%/en/words/words-medical.v.4.4
 %%DATADIR%%/en/words/words-medical.v.4.5
 %%DATADIR%%/en/words/words.adj.1
 %%DATADIR%%/en/words/words.adj.2
@@ -49,13 +50,15 @@ libdata/pkgconfig/link-grammar.pc
 %%DATADIR%%/en/words/words.adv.1
 %%DATADIR%%/en/words/words.adv.2
 %%DATADIR%%/en/words/words.adv.3
+%%DATADIR%%/en/words/words.adv.4
 %%DATADIR%%/en/words/words.n.1
+%%DATADIR%%/en/words/words.n.1.wiki
 %%DATADIR%%/en/words/words.n.2.s
 %%DATADIR%%/en/words/words.n.2.s.biolg
+%%DATADIR%%/en/words/words.n.2.s.wiki
 %%DATADIR%%/en/words/words.n.2.x
+%%DATADIR%%/en/words/words.n.2.x.wiki
 %%DATADIR%%/en/words/words.n.3
-%%DATADIR%%/en/words/words.n.4
-%%DATADIR%%/en/words/words.n.4.biolg
 %%DATADIR%%/en/words/words.n.t
 %%DATADIR%%/en/words/words.v.1.1
 %%DATADIR%%/en/words/words.v.1.2
