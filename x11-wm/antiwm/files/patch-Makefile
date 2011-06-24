@@ -1,5 +1,5 @@
---- Makefile.orig	2008-08-01 02:59:17.000000000 +0200
-+++ Makefile	2009-02-01 10:00:20.000000000 +0100
+--- ./Makefile.orig	2008-08-01 02:59:17.000000000 +0200
++++ ./Makefile	2011-06-24 15:12:36.000000000 +0200
 @@ -1,22 +1,36 @@
  # install directory
 -INSTALL_DIR=/usr/local/bin
@@ -34,7 +34,7 @@
 +
  antiwm: $(SRC)
 -	gcc $(SRC) -o $@ $(CFLAGS) $(LDFLAGS) $(LIBS) 
-+	gcc $(SRC) -o $@ $(CFLAGS) $(LDFLAGS)
++	$(CC) $(SRC) -o $@ $(CFLAGS) $(LDFLAGS)
  
 -install: antiwm
 -	cp antiwm $(INSTALL_DIR)
