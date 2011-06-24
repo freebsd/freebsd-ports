@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-miscellaneous
 PORTVERSION=	1.0.11
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -20,6 +21,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 MAKE_ENV+=	MKOCTFILE=mkoctfile
 
 post-build:
+	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${DISTNAME}
 
 .include <bsd.port.post.mk>

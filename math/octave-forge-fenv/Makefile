@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-fenv
 PORTVERSION=	0.1.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -18,6 +19,7 @@ WRKSRC=		${WRKDIR}/${OCTAVE_PKGNAME}/src
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
 
 post-build:
+	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTAVE_PKGNAME}
 
 .include <bsd.port.post.mk>

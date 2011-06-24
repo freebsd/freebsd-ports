@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-tsa
 PORTVERSION=	4.1.1
+PORTREVISION=	1
 CATEGORIES=	math
 EXTRACT_SUFX=	.tgz
 
@@ -19,6 +20,7 @@ do-build:
 	@${DO_NADA}
 
 post-build:
+	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTAVE_PKGNAME}
 
 .include <bsd.port.post.mk>
