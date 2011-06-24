@@ -16,6 +16,10 @@ COMMENT=	GNOME 2 ICQ client
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
+BROKEN=         It does not work in the runtime by default
+DEPRECATED=     No longer maintain by upstream, use net-im/empathy instead
+EXPIRATION_DATE=2011-07-23
+
 USE_BZIP2=	yes
 INSTALLS_OMF=	yes
 USE_GNOME=	gnomeprefix gnomehack libglade2 gnomepanel libxml2 \
