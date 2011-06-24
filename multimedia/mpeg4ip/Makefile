@@ -7,7 +7,7 @@
 
 PORTNAME=	mpeg4ip
 PORTVERSION=	1.6.1
-PORTREVISION=	16
+PORTREVISION=	17
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	LOCAL/ahze
 # http://sourceforge.net/forum/forum.php?thread_id=1839453&forum_id=59136
@@ -144,7 +144,8 @@ PLIST_SUB+=	XVID="@comment "
 BROKEN=		Does not compile
 .endif
 
-post-patch:
+#post-patch:
+pre-configure:
 	@${TOUCH} -f ${WRKSRC}/bootstrapped
 # don't compile or use libmp4v2
 	@${REINPLACE_CMD} -e 's|mp4v2||' \

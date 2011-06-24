@@ -124,7 +124,7 @@ PLIST_SUB+=	THEORA="@comment "
 .endif
 
 .if defined(WITH_X264)
-LIB_DEPENDS+=	x264.110:${PORTSDIR}/multimedia/x264
+LIB_DEPENDS+=	x264.115:${PORTSDIR}/multimedia/x264
 CONFIGURE_ARGS+=	--enable-h264
 PLIST_SUB+=	X264=""
 WITH_VIDEO=	yes
@@ -136,6 +136,9 @@ PLIST_SUB+=	X264="@comment "
 .if defined(WITH_FFMPEG)
 LIB_DEPENDS+=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--enable-ffmpeg --enable-ffmpeg-h263
+CONFIGURE_ENV+=		ac_cv_lib_avcodec_h263p_encoder=yes \
+			ac_cv_lib_avcodec_h264_decoder=yes \
+			ac_cv_lib_avcodec_mpeg4_encoder=yes
 PLIST_SUB+=	FFMPEG=""
 WITH_VIDEO=	yes
 .else

@@ -7,7 +7,9 @@ VERS!=	uname -r
 CFLAGS+=-I${FILESDIR} -I${.CURDIR} -I${LOCALBASE}/include -I${LOCALBASE}/include/ffmpeg
 CFLAGS+=-I${LOCALBASE}/include/libavutil
 CFLAGS+=-DPREFIX='"${PREFIX}"' -DOS='"${OS}"' -DOSVERSION='"${VERS}"'
-CFLAGS+=-Wformat -Werror
+CFLAGS+=-Wformat
+
+NO_WERROR=	true
 
 LDADD+=	-L${LOCALBASE}/lib
 LDADD+=	-lsqlite3 -ljpeg -lexif -lid3tag -logg -lvorbis -lFLAC -lavformat

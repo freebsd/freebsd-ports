@@ -9,7 +9,7 @@
 
 PORTNAME=	aegisub
 PORTVERSION=	2.1.8
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	http://ftp.aegisub.org/pub/releases/ \
 		http://ftp2.aegisub.org/pub/releases/ \
@@ -31,7 +31,7 @@ OPTIONS=	DEBUG 		"Enable debug" Off \
 		PORTAUDIO	"Enable PortAudio2 audio provider (only one)" Off \
 		PULSE		"Enable PulseAudio audio provider (only one)" On \
 		OSS		"Enable OSS audio player (require portaudio)" Off \
-		FFMPEG		"Enable FFMPEG video provider" On \
+		FFMPEG		"Enable FFMPEG video provider" Off \
 		HUNSPELL	"Hungarian Spell" On \
 		LUA		"LUA Scripting" On \
 		PERL		"Perl Scripting" On
@@ -92,7 +92,8 @@ CONFIGURE_ARGS+=	--with-player-audio=pulseaudio
 CONFIGURE_ARGS+=	--with-player-audio=portaudio
 .endif
 .endif
-.if defined(WITH_FFMPEG)
+.if !defined(WITHOUT_FFMPEG)
+BROKEN=	ffmpeg support is broken
 BUILD_DEPENDS+=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--with-provider-video=ffmpegsource --with-provider-audio=ffmpegsource
 .endif
