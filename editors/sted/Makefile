@@ -12,7 +12,7 @@ CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	gabor
 
-MAINTAINER=	sahil@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple/Small/Stupid Text Editor
 
 WRKSRC=		${WRKDIR}/sted
