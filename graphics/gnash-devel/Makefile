@@ -7,7 +7,7 @@
 
 PORTNAME=	gnash
 PORTVERSION=	20100218
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	graphics
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/
 PKGNAMESUFFIX=	-devel

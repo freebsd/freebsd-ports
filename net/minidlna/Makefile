@@ -7,7 +7,7 @@
 
 PORTNAME=	minidlna
 PORTVERSION=	2010.12.12
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net multimedia www
 MASTER_SITES=	http://aldan.algebra.com/~mi/
 

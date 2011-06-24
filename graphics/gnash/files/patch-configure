@@ -1,0 +1,15 @@
+--- configure.orig	2011-06-24 09:37:48.372797223 +0200
++++ configure	2011-06-24 09:49:48.244082692 +0200
+@@ -20791,9 +20791,9 @@
+     { $as_echo "$as_me:${as_lineno-$LINENO}: checking ffmpeg version" >&5
+ $as_echo_n "checking ffmpeg version... " >&6; }
+ 
+-    ffmpeg_major_version=`$EGREP "define LIBAVCODEC_VERSION_MAJOR " ${avcodec_h} | sed -e "s%[^0-9]%%g"`
+-    ffmpeg_minor_version=`$EGREP "define LIBAVCODEC_VERSION_MINOR " ${avcodec_h} | sed -e "s%[^0-9]%%g"`
+-    ffmpeg_micro_version=`$EGREP "define LIBAVCODEC_VERSION_MICRO " ${avcodec_h} | sed -e "s%[^0-9]%%g"`
++    ffmpeg_major_version=`$EGREP "define LIBAVCODEC_VERSION_MAJOR " ${ffmpeg_top_incl}/libavcodec/version.h | sed -e "s%[^0-9]%%g"`
++    ffmpeg_minor_version=`$EGREP "define LIBAVCODEC_VERSION_MINOR " ${ffmpeg_top_incl}/libavcodec/version.h | sed -e "s%[^0-9]%%g"`
++    ffmpeg_micro_version=`$EGREP "define LIBAVCODEC_VERSION_MICRO " ${ffmpeg_top_incl}/libavcodec/version.h | sed -e "s%[^0-9]%%g"`
+ 
+     if test x"${ffmpeg_major_version}" != x ; then
+ 
