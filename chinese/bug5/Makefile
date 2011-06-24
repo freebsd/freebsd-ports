@@ -7,6 +7,7 @@
 
 PORTNAME=	bug5
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	chinese converters
 MASTER_SITES=	https://github.com/buganini/${PORTNAME}/tarball/${PORTVERSION}/
 DISTNAME=	buganini-${PORTNAME}-${PORTVERSION}-0-g${GITVERSION}
@@ -20,7 +21,7 @@ GITVERSION=	14af387
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/buganini-${PORTNAME}-${GITVERSION}
 
-LIB_DEPENDS=	bsdconv.5:${PORTSDIR}/converters/bsdconv
+LIB_DEPENDS=	bsdconv.6:${PORTSDIR}/converters/bsdconv
 
 PLIST_FILES=	bin/bug5
 
