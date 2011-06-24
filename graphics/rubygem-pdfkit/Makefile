@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdfkit
-PORTVERSION=	0.4.6
+PORTVERSION=	0.5.0
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
@@ -17,7 +17,5 @@ RUN_DEPENDS=	wkhtmltopdf:${PORTSDIR}/converters/wkhtmltopdf
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
-PLIST_FILES=	bin/pdfkit
 
 .include <bsd.port.mk>
