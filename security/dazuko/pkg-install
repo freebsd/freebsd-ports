@@ -16,7 +16,7 @@ echo
 		kldload ${MODULENAME}
 	fi
 
-echo -n "Do you want load ${MODULENAME}.ko on boot time? [ y/n ]: "
+echo -n "Do you want load ${MODULENAME}.ko in /etc/rc.local file? [ y/n ]: "
 read BOOTMOD
 echo
 
