@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	liveMedia
-PORTVERSION=	2011.03.14
+PORTVERSION=	2011.06.16
 PORTREVISION=	0
 PORTEPOCH=	1
 CATEGORIES=	net devel
@@ -61,6 +61,7 @@ groupsock=		\
 		groupsock/include/groupsock_version.hh
 
 liveMedia=		\
+		liveMedia/include/AC3AudioFileServerMediaSubsession.hh \
 		liveMedia/include/AC3AudioRTPSink.hh \
 		liveMedia/include/AC3AudioRTPSource.hh \
 		liveMedia/include/AC3AudioStreamFramer.hh \
