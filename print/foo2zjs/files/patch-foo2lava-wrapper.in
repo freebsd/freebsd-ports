@@ -1,6 +1,6 @@
---- foo2lava-wrapper.in	2009-05-30 05:00:03.000000000 -0500
-+++ foo2lava-wrapper.in	2009-05-30 05:00:53.000000000 -0500
-@@ -41,13 +41,6 @@
+--- foo2lava-wrapper.in.orig	2011-01-15 02:21:39.000000000 +0300
++++ foo2lava-wrapper.in	2011-06-19 21:22:09.019758180 +0400
+@@ -42,13 +42,6 @@ PREFIX=/usr
  SHARE=$PREFIX/share/foo2lava
  PATH=$PATH:/sw/bin:/opt/local/bin
  
@@ -14,18 +14,18 @@
  usage() {
  	cat <<EOF
  Usage:
-@@ -154,8 +147,8 @@
+@@ -155,8 +148,8 @@ nup() {
  #
  # N.B. := operator used here, when :- would be better, because "ash"
  # doesn't have :-
--if gs.foo -v >/dev/null 2>&1; then
+-if eval gs.foo -v >/dev/null 2>&1; then
 -        GSBIN=${GSBIN:-gs.foo}
-+if gs -v >/dev/null 2>&1; then
++if eval gs -v >/dev/null 2>&1; then
 +        GSBIN=${GSBIN:-gs}
  else
          GSBIN=${GSBIN:-gs}
  fi
-@@ -700,18 +693,6 @@
+@@ -733,18 +726,6 @@ $PREFILTER \
  	    $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD -D$DEBUG
  
  #

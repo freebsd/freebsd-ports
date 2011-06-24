@@ -1,6 +1,6 @@
---- foo2oak-wrapper.in	2009-05-30 05:01:17.000000000 -0500
-+++ foo2oak-wrapper.in	2009-05-30 05:02:12.000000000 -0500
-@@ -34,13 +34,6 @@
+--- foo2oak-wrapper.in.orig	2011-01-15 02:21:39.000000000 +0300
++++ foo2oak-wrapper.in	2011-06-19 21:24:46.175611255 +0400
+@@ -35,13 +35,6 @@ PREFIX=/usr
  SHARE=$PREFIX/share/foo2oak
  PATH=$PATH:/sw/bin:/opt/local/bin
  
@@ -14,18 +14,18 @@
  usage() {
  	cat <<EOF
  Usage:
-@@ -141,8 +134,8 @@
+@@ -144,8 +137,8 @@ nup() {
  #
  # N.B. := operator used here, when :- would be better, because "ash"
  # doesn't have :-
--if gs.foo -v >/dev/null 2>&1; then
+-if eval gs.foo -v >/dev/null 2>&1; then
 -        GSBIN=${GSBIN:-gs.foo}
-+if gs -v >/dev/null 2>&1; then
++if eval gs -v >/dev/null 2>&1; then
 +        GSBIN=${GSBIN:-gs}
  else
          GSBIN=${GSBIN:-gs}
  fi
-@@ -668,19 +661,6 @@
+@@ -701,19 +694,6 @@ $PREFILTER \
  	    $BC $AIB $COLOR2MONO -D$DEBUG
  
  #
@@ -36,7 +36,7 @@
 -	"$GSBIN $PAPERSIZE -g$DIM -r$RES $GSDEV $GSOPTS $GAMMAFILE"
 -    logger -t "$BASENAME" -p lpr.info -- \
 -	"foo2oak -r$RES -g$DIM -p$PAPER -m$MEDIA \
---n$COPIES -d$DUPLEX -s$SOURCE -M$MIRROR $COLOR -b$BPP \
+--n$COPIES -d$DUPLEX -s$SOURCE -z$MODEL -M$MIRROR $COLOR -b$BPP \
 -$CLIP_UL $CLIP_LR $CLIP_LOG \
 -$BC $AIB $COLOR2MONO"
 -fi

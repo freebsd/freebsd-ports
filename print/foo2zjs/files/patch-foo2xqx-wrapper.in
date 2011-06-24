@@ -1,6 +1,6 @@
---- foo2xqx-wrapper.in	2009-05-30 05:04:57.000000000 -0500
-+++ foo2xqx-wrapper.in	2009-05-30 05:05:34.000000000 -0500
-@@ -32,13 +32,6 @@
+--- foo2xqx-wrapper.in.orig	2011-01-15 02:21:39.000000000 +0300
++++ foo2xqx-wrapper.in	2011-06-19 21:28:35.844620886 +0400
+@@ -41,13 +41,6 @@ PREFIX=/usr
  SHARE=$PREFIX/share/foo2xqx
  PATH=$PATH:/sw/bin:/opt/local/bin
  
@@ -14,18 +14,18 @@
  usage() {
  	cat <<EOF
  Usage:
-@@ -139,8 +132,8 @@
+@@ -150,8 +143,8 @@ nup() {
  #
  # N.B. := operator used here, when :- would be better, because "ash"
  # doesn't have :-
--if gs.foo -v >/dev/null 2>&1; then
+-if eval gs.foo -v >/dev/null 2>&1; then
 -        GSBIN=${GSBIN:-gs.foo}
-+if gs -v >/dev/null 2>&1; then
++if eval gs -v >/dev/null 2>&1; then
 +        GSBIN=${GSBIN:-gs}
  else
          GSBIN=${GSBIN:-gs}
  fi
-@@ -614,18 +607,6 @@
+@@ -666,18 +659,6 @@ $PREFILTER \
  	    $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD -D$DEBUG
  
  #
@@ -37,7 +37,7 @@
 -    logger -t "$BASENAME" -p lpr.info -- \
 -	"foo2xqx -r$RES -g$DIM -p$PAPER -m$MEDIA \
 --n$COPIES -d$DUPLEX -s$SOURCE $COLOR $CLIP_UL $CLIP_LR $CLIP_LOG \
--$SAVETONER $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD"
+-$SAVETONER -T$DENSITY $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD"
 -fi
 -
 -#

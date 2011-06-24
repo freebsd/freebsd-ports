@@ -1,6 +1,6 @@
---- Makefile	2009-04-21 19:53:37.000000000 -0500
-+++ Makefile	2009-05-30 04:31:51.000000000 -0500
-@@ -16,9 +16,7 @@
+--- Makefile.orig	2011-06-09 18:07:08.000000000 +0400
++++ Makefile	2011-06-19 21:14:01.911619475 +0400
+@@ -17,9 +17,7 @@ SYSNAME := $(shell uname -n)
  VERSION=0.0
  
  # Installation prefix...
@@ -11,7 +11,7 @@
  
  # Pathnames for this package...
  BIN=$(PREFIX)/bin
-@@ -30,12 +28,13 @@
+@@ -31,13 +29,14 @@ SHARELAVA=$(PREFIX)/share/foo2lava
  SHAREQPDL=$(PREFIX)/share/foo2qpdl
  SHARESLX=$(PREFIX)/share/foo2slx
  SHAREHC=$(PREFIX)/share/foo2hiperc
@@ -21,6 +21,7 @@
 -INSTALL=install
 +INSTALL?=install
 +INSTALL_MAN?=install
+ ROOT=root
  
  # Pathnames for referenced packages...
 -FOODB=$(DESTDIR)/usr/share/foomatic/db/source
@@ -28,29 +29,30 @@
  
  # User ID's
  LPuid=-oroot
-@@ -255,7 +254,7 @@
- endif
+@@ -282,7 +281,7 @@ endif
  
  # Compiler flags
--CFLAGS +=	-O2 -Wall
-+CFLAGS ?=	-O2 -Wall
+ #CFLAGS +=	-O2 -Wall -Wno-unused-but-set-variable
+-CFLAGS +=	-O2 -Wall 
++CFLAGS ?=	-O2 -Wall 
  #CFLAGS +=	-g
  
  #
-@@ -505,10 +504,8 @@
+@@ -556,10 +555,9 @@ command2foo2lava-pjl.o: command2foo2lava
  #
  # Installation rules
  #
--install: all install-test install-prog install-icc2ps install-extra \
--	    install-crd install-foo install-ppd \
--	    install-gui install-desktop \
+-install: all install-test install-prog install-icc2ps install-osx-hotplug \
+-	    install-extra install-crd install-foo install-ppd \
+-	    install-gui install-desktop install-filter \
 -	    install-man install-doc
 +install: all install-prog install-icc2ps \
 +	    install-crd install-foo install-ppd
++
  	#
  	# If you use CUPS, then restart the spooler:
  	#	make cups
-@@ -544,7 +541,7 @@
+@@ -595,7 +593,7 @@ install-test:
  	#
      
  
@@ -59,7 +61,7 @@
  
  install-prog:
  	#
-@@ -574,21 +571,13 @@
+@@ -625,20 +623,13 @@ install-foo:
  	#
  	# Remove obsolete foomatic database files from previous versions
  	#
@@ -72,19 +74,18 @@
 -	rm -f $(FOODB)/opt/foo2zjs-NupOrient.xml
 -	rm -f $(FOODB)/opt/foo2*-Quality.xml
 -	rm -f $(FOODB)/printer/KonicaMinolta*.xml
--	#
+ 	#
  	# Install current database files
  	#
 +	mkdir -p $(FOODB)
  	@if [ -d $(FOODB) ]; then \
 -	    for dir in driver printer opt; do \
 +	    for dir in printer opt; do \
- 		echo install -m 644 foomatic-db/$$dir/*.xml $(FOODB)/$$dir/; \
 +		mkdir -p $(FOODB)/$$dir/; \
- 		$(INSTALL) -c -m 644 foomatic-db/$$dir/*.xml $(FOODB)/$$dir/; \
- 	    done \
- 	else \
-@@ -602,15 +591,6 @@
+ 		echo install -d $(FOODB)/$$dir/; \
+ 		$(INSTALL) -d $(FOODB)/$$dir/; \
+ 		echo install -m 644 foomatic-db/$$dir/*.xml $(FOODB)/$$dir/; \
+@@ -655,15 +646,6 @@ install-foo:
  	    echo "*** ... wherever foomatic is stashed on your machine."; \
  	    echo "***"; \
  	fi
@@ -100,7 +101,7 @@
  
  install-icc2ps:
  	#
-@@ -722,9 +702,9 @@
+@@ -783,9 +765,9 @@ install-extra:
  	    fi; \
  	done
  
@@ -113,15 +114,15 @@
  VARPPD=/var/lp/ppd
  install-ppd:
  	#
-@@ -753,6 +733,7 @@
- 		gzip < $$ppd > $(PPD)/foo2zjs/$$ppd.gz; \
- 	    done; \
+@@ -819,6 +801,7 @@ install-ppd:
  	fi
+ 	#
+ 	export PATH=$$PATH:`pwd`:; \
 +	mkdir -p $(MODEL)
  	if [ -d $(MODEL) ]; then \
  	    rm -f $(MODEL)/KonicaMinolta*; \
  	    cd PPD; \
-@@ -767,9 +748,9 @@
+@@ -835,9 +818,9 @@ install-ppd:
  	    done; \
  	fi
  
@@ -134,7 +135,7 @@
  
  install-desktop:
  	#
-@@ -1185,36 +1166,34 @@
+@@ -1344,38 +1327,38 @@ install-man: man
  	#
  	# Install manual pages
  	#
@@ -164,10 +165,14 @@
 -	$(INSTALL) -c -m 644 foo2hiperc.1 $(MANDIR)/man1/
 -	$(INSTALL) -c -m 644 foo2hiperc-wrapper.1 $(MANDIR)/man1/
 -	$(INSTALL) -c -m 644 hipercdecode.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 gipddecode.1 $(MANDIR)/man1/
+-	$(INSTALL) -c -m 644 hbpldecode.1 $(MANDIR)/man1/
 -	$(INSTALL) -c -m 644 foo2zjs-pstops.1 $(MANDIR)/man1/
 -	$(INSTALL) -c -m 644 arm2hpdl.1 $(MANDIR)/man1/
 -	$(INSTALL) -c -m 644 usb_printerid.1 $(MANDIR)/man1/
 -	$(INSTALL) -c -m 644 printer-profile.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -d -m 755 $(MANDIR)
++	$(INSTALL_MAN) -d -m 755 $(MANDIR)/man1/
 +	$(INSTALL_MAN) -c -m 644 foo2zjs.1 $(MANDIR)/man1/
 +	$(INSTALL_MAN) -c -m 644 foo2zjs-wrapper.1 $(MANDIR)/man1/
 +	$(INSTALL_MAN) -c -m 644 zjsdecode.1 $(MANDIR)/man1/
@@ -192,10 +197,12 @@
 +	$(INSTALL_MAN) -c -m 644 foo2hiperc.1 $(MANDIR)/man1/
 +	$(INSTALL_MAN) -c -m 644 foo2hiperc-wrapper.1 $(MANDIR)/man1/
 +	$(INSTALL_MAN) -c -m 644 hipercdecode.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 gipddecode.1 $(MANDIR)/man1/
++	$(INSTALL_MAN) -c -m 644 hbpldecode.1 $(MANDIR)/man1/
 +	$(INSTALL_MAN) -c -m 644 foo2zjs-pstops.1 $(MANDIR)/man1/
 +	$(INSTALL_MAN) -c -m 644 arm2hpdl.1 $(MANDIR)/man1/
 +	$(INSTALL_MAN) -c -m 644 usb_printerid.1 $(MANDIR)/man1/
 +	$(INSTALL_MAN) -c -m 644 printer-profile.1 $(MANDIR)/man1/
- 
- doc: README INSTALL manual.pdf
- 
+ 	cd icc2ps; $(MAKE) install-man
+ ifeq ($(UNAME),Darwin)
+ 	cd osx-hotplug; $(MAKE) install-man

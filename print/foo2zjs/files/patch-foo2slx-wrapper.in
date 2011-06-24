@@ -1,6 +1,6 @@
---- foo2slx-wrapper.in	2009-05-30 05:03:55.000000000 -0500
-+++ foo2slx-wrapper.in	2009-05-30 05:04:31.000000000 -0500
-@@ -32,13 +32,6 @@
+--- foo2slx-wrapper.in.orig	2011-01-15 02:21:39.000000000 +0300
++++ foo2slx-wrapper.in	2011-06-19 21:27:13.562618920 +0400
+@@ -32,13 +32,6 @@ PREFIX=/usr
  SHARE=$PREFIX/share/foo2slx
  PATH=$PATH:/sw/bin:/opt/local/bin
  
@@ -14,18 +14,18 @@
  usage() {
  	cat <<EOF
  Usage:
-@@ -133,8 +126,8 @@
+@@ -133,8 +126,8 @@ nup() {
  #
  # N.B. := operator used here, when :- would be better, because "ash"
  # doesn't have :-
--if gs.foo -v >/dev/null 2>&1; then
+-if eval gs.foo -v >/dev/null 2>&1; then
 -        GSBIN=${GSBIN:-gs.foo}
-+if gs -v >/dev/null 2>&1; then
++if eval gs -v >/dev/null 2>&1; then
 +        GSBIN=${GSBIN:-gs}
  else
          GSBIN=${GSBIN:-gs}
  fi
-@@ -672,18 +665,6 @@
+@@ -702,18 +695,6 @@ $PREFILTER \
  	    $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD -D$DEBUG
  
  #
