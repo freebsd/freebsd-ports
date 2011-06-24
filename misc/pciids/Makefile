@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pciids
-PORTVERSION=	20110525
+PORTVERSION=	20110617
 CATEGORIES=	misc
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -26,25 +26,33 @@ do-install:
 	${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/pci.ids ${DATADIR}
 
-.include <bsd.port.pre.mk>
+# maintainer section:
 
-# Below only contains code to create a tar file for this beast
-CT_DATE!=	date "+%Y%m%d"
-CT_WRKSRC=	${WRKDIR}/tmp
-CT_DESTDIR=	${PORTNAME}-${CT_DATE}
-CT_TEMPDIR=	${CT_WRKSRC}/${CT_DESTDIR}
-CT_MASTER_SITE=	http://pciids.sourceforge.net/v2.2
-CT_DISTFILES=	pci.ids
+MS_DIFF=	${MS_WRKSRC}/${MS_DISTFILES}.diff
+MS_VERSION=	`${CAT} ${MS_VERSIONFILE}`
+MS_VERSIONFILE=	${MS_WRKSRC}/.version
+MS_WRKSRC=	${WRKSRC}/tmp
+MS_MASTER_SITE=	http://pciids.sourceforge.net/v2.2/
+MS_DISTFILES=	pci.ids
+REINPLACE_ARGS=	-i ''
 
-maketar: extract
-	${MKDIR} ${CT_TEMPDIR}
-.for file in ${CT_DISTFILES}
-	(cd ${CT_TEMPDIR} && ${FETCH_CMD} ${CT_MASTER_SITE}/${file})
-.endfor
-	${DIFF} -u ${WRKSRC}/pci.ids ${CT_TEMPDIR}/pci.ids || ${TRUE}
-	(cd ${CT_WRKSRC} && ${TAR} -jcf ${PORTNAME}-${CT_DATE}.tar.bz2 ${CT_DESTDIR})
-	${SED} -i.bak -e 's|${PORTVERSION}|${CT_DATE}|' ${.CURDIR}/Makefile
-	@(cd ${.CURDIR} && ${CP} -f ${CT_WRKSRC}/${PORTNAME}-${CT_DATE}.tar.bz2 ${DISTDIR} && \
-		${MAKE} makesum)
+maketar: do-clean extract
+	${MKDIR} ${MS_WRKSRC}/
+	${FETCH_CMD} -o ${MS_WRKSRC}/${MS_DISTFILES} ${MS_MASTER_SITE}${MS_DISTFILES}
+	${GREP} '^#	Version: [0-9.]\{10\}$$' ${MS_WRKSRC}/${MS_DISTFILES} \
+		| ${SED} -e 's|^.* \([0-9]*\)\.\([0-9]*\)\.\([0-9]*\)$$|\1\2\3|' \
+			> ${MS_VERSIONFILE}
+	${MKDIR} ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}/
+	${MV} ${MS_WRKSRC}/${MS_DISTFILES} ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}/
+	(${DIFF} -u ${WRKSRC}/${MS_DISTFILES} ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}/${MS_DISTFILES} > ${MS_DIFF}) || ${TRUE}
+	if [ -s ${MS_DIFF} ]; then \
+		cd ${MS_WRKSRC}/ && ${TAR} -jcf ${PORTNAME}-${MS_VERSION}.tar.bz2 ${PORTNAME}-${MS_VERSION}/; \
+		${REINPLACE_CMD} -e "s|${PORTVERSION}|${MS_VERSION}|" ${.CURDIR}/Makefile; \
+		${INSTALL} -m 644 ${MS_WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.bz2 ${DISTDIR}/; \
+		cd ${.CURDIR}/ && ${MAKE} makesum; \
+		${ECHO_CMD} "*** Update from ${PORTVERSION} to ${MS_VERSION}, diff: ${MS_DIFF}"; \
+	else \
+		${ECHO_CMD} "*** ${MS_MASTER_SITE}${MS_DISTFILES} is unchanged (${PORTVERSION})."; \
+	fi
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
