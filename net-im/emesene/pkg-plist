@@ -1,4 +1,5 @@
 bin/emesene
+%%DATADIR%%/libmimic.so
 %%DATADIR%%/Avatar.py
 %%DATADIR%%/Avatar.pyc
 %%DATADIR%%/Avatar.pyo

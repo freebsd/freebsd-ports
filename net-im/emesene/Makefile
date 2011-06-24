@@ -7,6 +7,7 @@
 
 PORTNAME=	emesene
 PORTVERSION=	1.6.3
+PORTREVISION=	1
 CATEGORIES=	net-im python
 #MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MASTER_SITES=	${MASTER_SITE_LOCAL:S,$,acm/${PORTNAME}/,} \
@@ -24,6 +25,7 @@ USE_PYTHON=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	pygtk2 desktopfileutils
 USE_GSTREAMER=	python
+INSTALLS_ICONS=	yes
 REINPLACE_ARGS=	-i ""
 
 MAN1=		emesene.1
@@ -56,9 +58,9 @@ do-build:
 	@${ECHO_CMD} "exec ${PYTHON_CMD} ./${PORTNAME}" >> ${WRKDIR}/run.sh
 
 pre-install:
-	@${RM} -fr ${WRKSRC}/build ${WRKSRC}/libmimic ${WRKSRC}/libmimic.so
+	@${RM} -fr ${WRKSRC}/build ${WRKSRC}/libmimic
 .	for DIRE in ast dv fil fo gv ku la nb_NO nds oc zh_HK
-		@${MKDIR} -p ${PREFIX}/share/locale/${DIRE}/LC_MESSAGES
+		@${MKDIR} ${PREFIX}/share/locale/${DIRE}/LC_MESSAGES
 .	endfor
 
 do-install:
