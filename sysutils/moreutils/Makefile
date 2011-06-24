@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	moreutils
-PORTVERSION=	0.44
+PORTVERSION=	0.45
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_DEBIAN_POOL}
+MASTER_SITES=	DEBIAN_POOL
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Additional Unix utilities
 
-RUN_DEPENDS=	${SITE_PERL}/IPC/Run.pm:${PORTSDIR}/devel/p5-IPC-Run
+RUN_DEPENDS=	p5-IPC-Run>=0:${PORTSDIR}/devel/p5-IPC-Run
 
+ALL_TARGET=	bins
 USE_PERL5=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_FILES=	bin/chronic \
 		bin/combine \
@@ -30,10 +32,6 @@ PLIST_FILES=	bin/chronic \
 		bin/vidir \
 		bin/vipe \
 		bin/zrun
-
-ALL_TARGET=	bins
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .if !defined(NO_INSTALL_MANPAGES)
 ALL_TARGET+=	mans extraman
