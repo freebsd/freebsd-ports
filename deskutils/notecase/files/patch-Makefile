@@ -1,5 +1,5 @@
---- Makefile.orig	2008-12-09 10:07:06.000000000 +0000
-+++ Makefile	2010-11-16 17:57:07.716769729 +0000
+--- Makefile.orig	2008-12-09 11:07:06.000000000 +0100
++++ Makefile	2011-06-23 19:11:55.067358819 +0200
 @@ -10,9 +10,10 @@
  VERSION=1.9.8
  
@@ -12,7 +12,15 @@
  
  # define top of RPM build area
  topdir=/usr/src/redhat
-@@ -601,18 +602,20 @@
+@@ -268,7 +269,6 @@
+  $(OBJ)/IOLayerRedirect.o $(OBJ)/FileExportDlg.o $(OBJ)/FormatIOTxt.o $(OBJ)/FindReplaceDlg.o \
+  $(OBJ)/FindReplaceInfo.o $(OBJ)/LinkInfo.o $(OBJ)/LinkPropertiesDlg.o $(OBJ)/ExecuteFile.o \
+  $(OBJ)/FileSaveAsDlg.o $(OBJ)/CircularBuffer.o $(OBJ)/FormatIOMMLX.o \
+- $(OBJ)/libz.a \
+  $(OBJ)/ProgressDlg.o $(OBJ)/DocActionPix.o $(OBJ)/DocActionFinish.o $(OBJ)/DocActionFmt.o $(OBJ)/FmtInfo.o \
+  $(OBJ)/FileAttachmentDlg.o $(OBJ)/DocActionAtt.o $(OBJ)/PixPropertiesDlg.o $(OBJ)/DocActionFinishDel.o \
+  $(OBJ)/ShortcutsList.o $(OBJ)/ShortcutsListDlg.o $(OBJ)/DateTimeDlg.o $(OBJ)/AboutDlg.o $(OBJ)/EditDlg.o \
+@@ -601,18 +601,20 @@
  pouninstall:
  	@rm -vf $(DESTDIR)$(datadir)/locale/*/LC_MESSAGES/notecase.mo
  	@echo done uninstalling translations
@@ -36,7 +44,7 @@
  	$(INSTALL) -m 644 docs/notecase.xml "$(DESTDIR)$(datadir)/mime/packages/notecase.xml"
  	$(Q)if [ -n "$(NOKIA_MAEMO_BUILD)" ]; then \
  		$(INSTALL) -m 644 docs/notecase.desktop "$(DESTDIR)$(datadir)/applications/hildon/notecase.desktop"; \
-@@ -694,12 +697,6 @@
+@@ -694,12 +696,6 @@
  		echo 'pkg-config error detected $(shell pkg-config --cflags $(LIBS))';\
  		exit 1;\
  	fi;  
@@ -49,7 +57,7 @@
  	$(Q)echo 'Configuration: GNOME_VFS=$(HAVE_GNOME_VFS);GTKSOURCEVIEW=$(HAVE_GTKSOURCEVIEW);DEBUG=$(DEBUG);PROFILE=$(PROFILE);BYTE_ORDER=$(BYTE_ORDER);PLATFORM=$(PLATFORM)' 
  	$(Q)$(SED) 's/^Version:.*/Version:        $(VERSION)/' ./docs/notecase.spec
  	$(Q)$(SED) 's/^Source:.*/Source:         $(archive)_src.tar.gz/' ./docs/notecase.spec
-@@ -820,7 +817,7 @@
+@@ -820,7 +816,7 @@
  #
  # Note: first "make" command forces generating correct help file path in "config.h"
  #
