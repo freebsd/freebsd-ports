@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quvi
-PORTVERSION=	0.2.16
+PORTVERSION=	0.2.17
 CATEGORIES=	multimedia devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R}/ \
 		GOOGLE_CODE
@@ -20,7 +20,6 @@ OPTIONS=	NSFW "Enable adult website support" off
 
 LICENSE=	GPLv3
 
-CONFIGURE_ARGS=	--enable-broken --enable-examples
 CPPFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
@@ -31,10 +30,6 @@ USE_XZ=		yes
 
 MAN1=		quvi.1
 
-.if defined(NOPORTDOCS)
-CONFIGURE_ARGS+=--without-doc
-.endif
-
 .include <bsd.port.options.mk>
 
 .if defined(WITH_NSFW)
@@ -44,10 +39,10 @@ PLIST_SUB+=	NSFW=""
 PLIST_SUB+=	NSFW="@comment "
 .endif
 
-post-patch:
-.if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e '/install-data-am:/ s| install-docDATA||' \
-		${WRKSRC}/doc/Makefile.in
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC}/doc/nd/ && ${COPYTREE_SHARE} . ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>

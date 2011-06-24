@@ -5,14 +5,20 @@ include/quvi/quvi.h
 lib/libquvi.a
 lib/libquvi.la
 lib/libquvi.so
-lib/libquvi.so.5
+lib/libquvi.so.6
 libdata/pkgconfig/libquvi.pc
-%%PORTDOCS%%%%DOCSDIR%%/CodingStyle
-%%PORTDOCS%%%%DOCSDIR%%/HowtoGetDevelopmentCode
-%%PORTDOCS%%%%DOCSDIR%%/HowtoHelp
-%%PORTDOCS%%%%DOCSDIR%%/HowtoSubmitPatches
-%%PORTDOCS%%%%DOCSDIR%%/HowtoWriteWebsiteScript
-%%PORTDOCS%%%%DOCSDIR%%/WebsiteScriptGuidelines
+%%PORTDOCS%%%%DOCSDIR%%/About.txt
+%%PORTDOCS%%%%DOCSDIR%%/Help/Development.txt
+%%PORTDOCS%%%%DOCSDIR%%/Help/Help.txt
+%%PORTDOCS%%%%DOCSDIR%%/Help/Patches.txt
+%%PORTDOCS%%%%DOCSDIR%%/Help/Style.txt
+%%PORTDOCS%%%%DOCSDIR%%/Overviews/Formats.txt
+%%PORTDOCS%%%%DOCSDIR%%/Overviews/Overview.txt
+%%PORTDOCS%%%%DOCSDIR%%/Overviews/Overview_LinkedList.txt
+%%PORTDOCS%%%%DOCSDIR%%/Overviews/Overview_Network.txt
+%%PORTDOCS%%%%DOCSDIR%%/Webscripts/Guidelines.txt
+%%PORTDOCS%%%%DOCSDIR%%/Webscripts/Tutorial.txt
+%%PORTDOCS%%%%DOCSDIR%%/Webscripts/Webscript.txt
 %%DATADIR%%/lua/README
 %%DATADIR%%/lua/util/charset.lua
 %%DATADIR%%/lua/util/content_type.lua
@@ -68,5 +74,8 @@ libdata/pkgconfig/libquvi.pc
 @dirrm %%DATADIR%%/lua/util
 @dirrm %%DATADIR%%/lua
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Webscripts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Overviews
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/Help
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm include/quvi
