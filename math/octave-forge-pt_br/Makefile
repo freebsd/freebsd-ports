@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-pt_br
 PORTVERSION=	1.0.9
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -19,6 +20,7 @@ WRKSRC=		${WRKDIR}/pt_BR/src
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
 post-build:
+	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz pt_BR
 
 .include <bsd.port.post.mk>

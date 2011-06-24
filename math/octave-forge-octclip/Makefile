@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-octclip
 PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -16,10 +17,11 @@ WRKSRC=	${WRKDIR}/${OCTAVE_PKGNAME}/src
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
-post-extract:
-	${REINPLACE_CMD} s/CC/MKOCTFILE/ ${WRKSRC}/Makefile
+post-patch:
+	${REINPLACE_CMD} -e s/CC/MKOCTFILE/ -e s/-Wall// -e s/-Wextra// ${WRKSRC}/Makefile
 
 post-build:
+	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTAVE_PKGNAME}
 
 .include <bsd.port.post.mk>

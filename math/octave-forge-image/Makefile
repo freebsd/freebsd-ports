@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-image
 PORTVERSION=	1.0.14
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -16,7 +17,11 @@ WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
+post-patch:
+	${REINPLACE_CMD} s/-Wall// ${WRKSRC}/Makefile
+
 post-build:
+	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${DISTNAME}
 
 .include <bsd.port.post.mk>

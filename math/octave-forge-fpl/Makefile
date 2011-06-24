@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-fpl
 PORTVERSION=	1.2.0
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -20,6 +21,7 @@ do-build:
 	@${DO_NADA}
 
 post-build:
+	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${OCTAVE_PKGNAME}
 
 .include <bsd.port.post.mk>

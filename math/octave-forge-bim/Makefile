@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-bim
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -21,6 +22,7 @@ do-build:
 	@${DO_NADA}
 
 post-build:
+	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${DISTNAME}
 
 .include <bsd.port.post.mk>

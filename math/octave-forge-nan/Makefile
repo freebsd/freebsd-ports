@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-nan
 PORTVERSION=	2.4.4
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -20,6 +21,7 @@ WRKSRC=		${WRKDIR}/NaN/src
 ALL_TARGET=	octave
 
 post-build:
+	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz NaN
 
 .include <bsd.port.post.mk>

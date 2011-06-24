@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-signal
 PORTVERSION=	1.0.11
+PORTREVISION=	1
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
@@ -19,7 +20,11 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/specfun.tar.gz:${PORTSDIR}/math/octave-forge-specf
 
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.octave.mk"
+post-patch:
+	${REINPLACE_CMD} s/-Wall// ${WRKSRC}/Makefile
+
 post-build:
+	${RM} -f ${WRKSRC}/Makefile ${WRKSRC}/configure
 	cd ${WRKDIR} && ${TAR} cfz ${DISTNAME}.tar.gz ${DISTNAME}
 
 .include <bsd.port.post.mk>
