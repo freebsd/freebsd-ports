@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110624:
+  AFFECTS: users of deskutils/opengoo
+  AUTHOR: acm@FreeBSD.org
+
+  desktutils/opengoo has been renamed to deskutils/fengoffice, because 
+  The OpenGoo name was changed to Feng Office Community Edition.
+
+  If you want migrate from opengoo to fengoffice,  please see upgrading 
+  section at:
+
+  http://fengoffice.com/web/wiki/doku.php/installation
+
 20110623:
   AFFECTS: users of databases/py-sqlalchemy
   AUTHOR: nivit@FreeBSD.org
