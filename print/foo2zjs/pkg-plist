@@ -14,6 +14,7 @@ bin/oakdecode
 bin/foo2slx
 bin/slxdecode
 bin/foo2hiperc
+bin/hbpldecode
 bin/hipercdecode
 bin/gipddecode
 bin/printer-profile
@@ -63,6 +64,8 @@ share/cups/model/HP-LaserJet_1005.ppd.gz
 share/cups/model/HP-LaserJet_1018.ppd.gz
 share/cups/model/HP-LaserJet_1020.ppd.gz
 share/cups/model/HP-LaserJet_1022.ppd.gz
+share/cups/model/HP-LaserJet_1022n.ppd.gz
+share/cups/model/HP-LaserJet_1022nw.ppd.gz
 share/cups/model/HP-LaserJet_M1005_MFP.ppd.gz
 share/cups/model/HP-LaserJet_M1120_MFP.ppd.gz
 share/cups/model/HP-LaserJet_M1319_MFP.ppd.gz
@@ -71,8 +74,16 @@ share/cups/model/HP-LaserJet_P1006.ppd.gz
 share/cups/model/HP-LaserJet_P1007.ppd.gz
 share/cups/model/HP-LaserJet_P1008.ppd.gz
 share/cups/model/HP-LaserJet_P1505.ppd.gz
+share/cups/model/HP-LaserJet_P1505n.ppd.gz
 share/cups/model/HP-LaserJet_P2014.ppd.gz
+share/cups/model/HP-LaserJet_P2014n.ppd.gz
 share/cups/model/HP-LaserJet_P2035.ppd.gz
+share/cups/model/HP-LaserJet_P2035n.ppd.gz
+share/cups/model/HP-LaserJet_Pro_CP1025nw.ppd.gz
+share/cups/model/HP-LaserJet_Pro_P1102.ppd.gz
+share/cups/model/HP-LaserJet_Pro_P1102w.ppd.gz
+share/cups/model/HP-LaserJet_Pro_P1566.ppd.gz
+share/cups/model/HP-LaserJet_Pro_P1606dn.ppd.gz
 share/cups/model/KONICA_MINOLTA-magicolor_1600W.ppd.gz
 share/cups/model/KONICA_MINOLTA-magicolor_1680MF.ppd.gz
 share/cups/model/KONICA_MINOLTA-magicolor_1690MF.ppd.gz
@@ -80,12 +91,15 @@ share/cups/model/KONICA_MINOLTA-magicolor_2480_MF.ppd.gz
 share/cups/model/Lexmark-C500.ppd.gz
 share/cups/model/KONICA_MINOLTA-magicolor_2490_MF.ppd.gz
 share/cups/model/KONICA_MINOLTA-magicolor_2530_DL.ppd.gz
+share/cups/model/KONICA_MINOLTA-magicolor_4690MF.ppd.gz
 share/cups/model/Kyocera-KM-1635.ppd.gz
 share/cups/model/Kyocera-KM-2035.ppd.gz
 share/cups/model/Minolta-Color_PageWorks_Pro_L.ppd.gz
 share/cups/model/Minolta-magicolor_2200_DL.ppd.gz
 share/cups/model/Minolta-magicolor_2300_DL.ppd.gz
 share/cups/model/Minolta-magicolor_2430_DL.ppd.gz
+share/cups/model/Oki-C110.ppd.gz
+share/cups/model/Oki-C310dn.ppd.gz
 share/cups/model/Oki-C3100.ppd.gz
 share/cups/model/Oki-C3200.ppd.gz
 share/cups/model/Oki-C3300.ppd.gz
@@ -95,23 +109,46 @@ share/cups/model/Oki-C5100.ppd.gz
 share/cups/model/Oki-C5200.ppd.gz
 share/cups/model/Oki-C5500.ppd.gz
 share/cups/model/Oki-C5600.ppd.gz
+share/cups/model/Oki-C5650.ppd.gz
 share/cups/model/Oki-C5800.ppd.gz
+share/cups/model/Olivetti-d-Color_P160W.ppd.gz
 share/cups/model/Samsung-CLP-300.ppd.gz
 share/cups/model/Samsung-CLP-310.ppd.gz
 share/cups/model/Samsung-CLP-315.ppd.gz
+share/cups/model/Samsung-CLP-325.ppd.gz
 share/cups/model/Samsung-CLP-600.ppd.gz
 share/cups/model/Samsung-CLP-610.ppd.gz
+share/cups/model/Samsung-CLP-620.ppd.gz
 share/cups/model/Samsung-CLX-2160.ppd.gz
 share/cups/model/Samsung-CLX-3160.ppd.gz
 share/cups/model/Samsung-CLX-3175.ppd.gz
 share/cups/model/Xerox-Phaser_6110.ppd.gz
 share/cups/model/Xerox-Phaser_6115MFP.ppd.gz
+share/cups/model/Xerox-Phaser_6121MFP.ppd.gz
+foomatic/db/source/printer/HP-LaserJet_1022n.xml
+foomatic/db/source/printer/HP-LaserJet_1022nw.xml
 foomatic/db/source/printer/HP-LaserJet_M1319_MFP.xml
+foomatic/db/source/printer/HP-LaserJet_P1505n.xml
+foomatic/db/source/printer/HP-LaserJet_P2014n.xml
 foomatic/db/source/printer/HP-LaserJet_P2035.xml
+foomatic/db/source/printer/HP-LaserJet_P2035n.xml
+foomatic/db/source/printer/HP-LaserJet_Pro_CP1025nw.xml
+foomatic/db/source/printer/HP-LaserJet_Pro_P1102.xml
+foomatic/db/source/printer/HP-LaserJet_Pro_P1102w.xml
+foomatic/db/source/printer/HP-LaserJet_Pro_P1566.xml
+foomatic/db/source/printer/HP-LaserJet_Pro_P1606dn.xml
 foomatic/db/source/printer/KONICA_MINOLTA-magicolor_1600W.xml
 foomatic/db/source/printer/KONICA_MINOLTA-magicolor_1680MF.xml
 foomatic/db/source/printer/KONICA_MINOLTA-magicolor_1690MF.xml
+foomatic/db/source/printer/KONICA_MINOLTA-magicolor_4690MF.xml
+foomatic/db/source/printer/Oki-C110.xml
+foomatic/db/source/printer/Oki-C310dn.xml
+foomatic/db/source/printer/Oki-C5650.xml
+foomatic/db/source/printer/Olivetti-d-Color_P160W.xml
 foomatic/db/source/printer/Samsung-CLP-310.xml
+foomatic/db/source/printer/Samsung-CLP-325.xml
+foomatic/db/source/printer/Samsung-CLP-620.xml
+foomatic/db/source/printer/Xerox-Phaser_6121MFP.xml
 foomatic/db/source/opt/foo2hiperc-ColorMode.xml
 foomatic/db/source/opt/foo2hiperc-Compression.xml
 foomatic/db/source/opt/foo2hiperc-Duplex.xml
@@ -120,6 +157,7 @@ foomatic/db/source/opt/foo2hiperc-InputSlot.xml
 foomatic/db/source/opt/foo2hiperc-MediaType.xml
 foomatic/db/source/opt/foo2hiperc-PageSize.xml
 foomatic/db/source/opt/foo2hiperc-Resolution.xml
+foomatic/db/source/opt/foo2hp-AlignCMYK.xml
 foomatic/db/source/opt/foo2hp-BitsPerPlane.xml
 foomatic/db/source/opt/foo2hp-ColorMode.xml
 foomatic/db/source/opt/foo2hp-Duplex.xml
@@ -140,6 +178,7 @@ foomatic/db/source/opt/foo2oak-ColorMode.xml
 foomatic/db/source/opt/foo2oak-ICM.xml
 foomatic/db/source/opt/foo2oak-InputSlot.xml
 foomatic/db/source/opt/foo2oak-MediaType.xml
+foomatic/db/source/opt/foo2oak-z1-Duplex.xml
 foomatic/db/source/opt/foo2oak-z1-InputSlot.xml
 foomatic/db/source/opt/foo2oak-z1-MediaType.xml
 foomatic/db/source/opt/foo2oak-z1-PageSize.xml
@@ -157,7 +196,9 @@ foomatic/db/source/opt/foo2slx-InputSlot.xml
 foomatic/db/source/opt/foo2slx-MediaType.xml
 foomatic/db/source/opt/foo2slx-PageSize.xml
 foomatic/db/source/opt/foo2slx-Resolution.xml
+foomatic/db/source/opt/foo2xqx-Density.xml
 foomatic/db/source/opt/foo2xqx-Duplex.xml
+foomatic/db/source/opt/foo2xxx-Halftone.xml
 foomatic/db/source/opt/foo2xqx-InputSlot.xml
 foomatic/db/source/opt/foo2xqx-MediaType.xml
 foomatic/db/source/opt/foo2xqx-Resolution.xml
@@ -174,6 +215,13 @@ foomatic/db/source/opt/foo2zjs-MediaType.xml
 foomatic/db/source/opt/foo2zjs-PageSize.xml
 foomatic/db/source/opt/foo2zjs-PrinterType.xml
 foomatic/db/source/opt/foo2zjs-Resolution.xml
+foomatic/db/source/opt/foo2zjs-z1-MediaType.xml
+foomatic/db/source/opt/foo2zjs-z1-PageSize.xml
+foomatic/db/source/opt/foo2zjs-z12-Density.xml
+foomatic/db/source/opt/foo2zjs-z2-MediaType.xml
+foomatic/db/source/opt/foo2zjs-z2-PageSize.xml
+foomatic/db/source/opt/foo2zjs-z3-MediaType.xml
+foomatic/db/source/opt/foo2zjs-z3-PageSize.xml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry foomatic/db/source/printer
 @dirrmtry foomatic/db/source/opt
@@ -183,6 +231,8 @@ foomatic/db/source/opt/foo2zjs-Resolution.xml
 @dirrmtry %%DATADIR%%/icm
 @dirrmtry %%DATADIR%%/firmware
 @dirrmtry %%DATADIR%%/crd
+@dirrmtry share/cups/model
+@dirrmtry share/cups
 @unexec rmdir %D/%%DATADIR%% 2>/dev/null || echo "Note: %D/%%DATADIR%%: icm and firmware directories not empty, remove it manually"
 @dirrmtry share/foo2oak/icm
 @unexec rmdir %D/share/foo2oak 2>/dev/null || echo "Note: %D/share/foo2oak: icm directory not empty, remove it manually"

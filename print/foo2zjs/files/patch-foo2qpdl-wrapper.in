@@ -1,6 +1,6 @@
---- foo2qpdl-wrapper.in	2009-05-30 05:02:42.000000000 -0500
-+++ foo2qpdl-wrapper.in	2009-05-30 05:03:26.000000000 -0500
-@@ -40,13 +40,6 @@
+--- foo2qpdl-wrapper.in.orig	2011-04-15 23:07:00.000000000 +0400
++++ foo2qpdl-wrapper.in	2011-06-19 21:26:03.964850095 +0400
+@@ -43,13 +43,6 @@ PREFIX=/usr
  SHARE=$PREFIX/share/foo2qpdl
  PATH=$PATH:/sw/bin:/opt/local/bin
  
@@ -14,18 +14,18 @@
  usage() {
  	cat <<EOF
  Usage:
-@@ -157,8 +150,8 @@
+@@ -161,8 +154,8 @@ nup() {
  #
  # N.B. := operator used here, when :- would be better, because "ash"
  # doesn't have :-
--if gs.foo -v >/dev/null 2>&1; then
+-if eval gs.foo -v >/dev/null 2>&1; then
 -        GSBIN=${GSBIN:-gs.foo}
-+if gs -v >/dev/null 2>&1; then
++if eval gs -v >/dev/null 2>&1; then
 +        GSBIN=${GSBIN:-gs}
  else
          GSBIN=${GSBIN:-gs}
  fi
-@@ -671,18 +664,6 @@
+@@ -708,18 +701,6 @@ $PREFILTER \
  	    $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD -D$DEBUG
  
  #

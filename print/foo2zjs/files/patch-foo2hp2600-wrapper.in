@@ -1,6 +1,6 @@
---- foo2hp2600-wrapper.in	2009-05-30 04:57:56.000000000 -0500
-+++ foo2hp2600-wrapper.in	2009-05-30 04:59:38.000000000 -0500
-@@ -34,13 +34,6 @@
+--- foo2hp2600-wrapper.in.orig	2011-01-20 04:01:09.000000000 +0300
++++ foo2hp2600-wrapper.in	2011-06-19 21:21:05.231903101 +0400
+@@ -34,13 +34,6 @@ PREFIX=/usr
  SHARE=$PREFIX/share/foo2hp
  PATH=$PATH:/sw/bin:/opt/local/bin
  
@@ -14,18 +14,18 @@
  usage() {
  	cat <<EOF
  Usage:
-@@ -185,8 +178,8 @@
+@@ -186,8 +179,8 @@ nup() {
  #
  # N.B. := operator used here, when :- would be better, because "ash"
  # doesn't have :-
--if gs.foo -v >/dev/null 2>&1; then
+-if eval gs.foo -v >/dev/null 2>&1; then
 -        GSBIN=${GSBIN:-gs.foo}
-+if gs -v >/dev/null 2>&1; then
++if eval gs -v >/dev/null 2>&1; then
 +        GSBIN=${GSBIN:-gs}
  else
          GSBIN=${GSBIN:-gs}
  fi
-@@ -343,7 +336,7 @@
+@@ -359,7 +352,7 @@ case "$BPP" in
  	    GSDEV="-sDEVICE=cups -dcupsColorSpace=6 -dcupsBitsPerColor=2"
  	    GSDEV="$GSDEV -dcupsColorOrder=2"
  	fi
@@ -34,7 +34,7 @@
  	    GSBIN=gs
  	fi
  
-@@ -749,18 +742,6 @@
+@@ -793,18 +786,6 @@ $PREFILTER \
  	    $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD -D$DEBUG
  
  #
@@ -46,7 +46,7 @@
 -    logger -t "$BASENAME" -p lpr.info -- \
 -	"foo2hp -r$RES -g$DIM -p$PAPER -m$MEDIA \
 --n$COPIES -d$DUPLEX -s$SOURCE $COLOR -b$BPP $CLIP_UL $CLIP_LR $CLIP_LOG \
--$SAVETONER $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD"
+-$SAVETONER -O$OFF_C,$OFF_M,$OFF_Y,$OFF_K $BC $AIB $COLOR2MONO $NOPLANES $EXTRAPAD"
 -fi
 -
 -#
