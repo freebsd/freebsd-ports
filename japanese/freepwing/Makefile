@@ -9,13 +9,10 @@ PORTNAME=	freepwing
 PORTVERSION=	1.4.4
 PORTREVISION=	1
 CATEGORIES=	japanese textproc
-MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/freepwing/ \
-		ftp://ftp.sra.co.jp/pub/misc/freepwing/old/
+MASTER_SITES=	ftp://ftp.sra.co.jp/pub/misc/freepwing/old/1.4/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free JIS X 4081 (subset of EPWING V1) Formatter
-
-BROKEN=	Does not fetch
 
 RUN_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 
