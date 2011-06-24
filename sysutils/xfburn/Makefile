@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=/src/apps/${PORTNAME}/${PORTVERSION:R}
 DIST_SUBDIR=	xfce4
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	shuvaev@physik.uni-wuerzburg.de
 COMMENT=	CD/DVD burning tool for Xfce
 
 LIB_DEPENDS=	burn.4:${PORTSDIR}/devel/libburn \
