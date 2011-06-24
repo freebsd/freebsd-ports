@@ -17,11 +17,12 @@ lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/libpglext.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/libpglu.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/libpglut.a
 lib/fpc/%%PORTVERSION%%/units/%%BUILDNAME%%/opengl/libpglx.a
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/radblur.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/morph3d.pp
 %%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/glutdemo.pp
 %%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/glutdemova.pp
-%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/morph3d.pp
 %%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/glxtest.pp
-%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/radblur.pp
+%%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/freeglutdemo.pp
 %%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/bounce.pp
 %%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/Makefile.fpc
 %%PORTDOCS%%share/examples/fpc-%%PORTVERSION%%/opengl/Makefile
