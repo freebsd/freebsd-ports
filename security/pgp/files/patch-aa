@@ -1,15 +1,27 @@
---- makefile	1996-01-18 04:42:36.000000000 -0600
-+++ makefile.patched	2008-09-12 01:55:27.000000000 -0500
-@@ -50,7 +50,8 @@
+--- makefile.orig	1996-01-18 11:42:36.000000000 +0100
++++ makefile	2011-06-24 19:56:53.000000000 +0200
+@@ -50,15 +50,16 @@
  # -DUSE_SELECT to use select() system call
  # -DUSE_NBIO   to use non-blocking read()
  
 -CFLAGS= -O -DUNIX -DPORTABLE $(BYTEORDER)
 +PREFIX	?=/usr/local
-+CFLAGS= -O -DUNIX -DPORTABLE $(BYTEORDER) -DPREFIX=\"$(PREFIX)\"
++CFLAGS+= -O -DUNIX -DPORTABLE $(BYTEORDER) -DPREFIX=\"$(PREFIX)\"
  
  # must set byte order for targets "sysv" and "bsd"
  # BYTEORDER= -DHIGHFIRST
+ 
+-CC      = cc
+-LD      = cc            # Link command
+-LDFLAGS = 
+-CPP     = $(CC) -E
++CC      ?= cc
++LD      ?= cc            # Link command
++LDFLAGS ?= 
++CPP     ?= $(CC) -E
+ DBG     = -O
+ RM      = rm -f
+ 
 @@ -79,7 +80,7 @@
  	@echo "where <system> can be:"
  	@echo "	386bsd, 3b1, 3b1_asm, aix370, aix386, amix-68k-gcc, apollo,"
