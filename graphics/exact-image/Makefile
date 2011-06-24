@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	exact-image
-PORTVERSION=	0.8.5
+PORTVERSION=	0.8.6
 CATEGORIES=	graphics perl5 python
 MASTER_SITES=	http://dl.exactcode.de/oss/${PORTNAME}/ LOCAL/bf
 
