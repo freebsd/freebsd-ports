@@ -1,6 +1,6 @@
---- configure.orig	2010-06-15 21:44:30.000000000 +0200
-+++ configure	2010-12-12 22:19:20.533163967 +0100
-@@ -1469,7 +1469,7 @@
+--- configure.orig	2011-06-21 21:29:25.000000000 +0200
++++ configure	2011-06-23 13:36:46.099381871 +0200
+@@ -1657,7 +1657,7 @@
  nm_opts='-g'
  
  # machine
@@ -9,28 +9,10 @@
  cpu="generic"
  
  # OS
-@@ -1514,7 +1514,7 @@
+@@ -2966,8 +2966,8 @@
+ texi2html -version > /dev/null 2>&1 && enable texi2html || disable texi2html
  
- CC_O='-o $@'
- 
--host_cflags='-D_ISOC99_SOURCE -D_POSIX_C_SOURCE=200112 -O3 -g -Wall'
-+host_cflags='-D_ISOC99_SOURCE -O3 -g -Wall'
- host_libs='-lm'
- 
- target_path='$(CURDIR)'
-@@ -2096,7 +2096,7 @@
-     die "C compiler test failed."
- fi
- 
--add_cppflags -D_ISOC99_SOURCE -D_POSIX_C_SOURCE=200112
-+add_cppflags -D_ISOC99_SOURCE
- check_cflags -std=c99
- check_cc -D_FILE_OFFSET_BITS=64 <<EOF && add_cppflags -D_FILE_OFFSET_BITS=64
- #include <stdlib.h>
-@@ -2678,8 +2678,8 @@
-     fi
- fi
- 
+ check_header linux/fb.h
 -check_header linux/videodev.h
 -check_header linux/videodev2.h
 +#check_header linux/videodev.h
@@ -38,10 +20,10 @@
  check_header sys/videoio.h
  
  check_func_headers "windows.h vfw.h" capCreateCaptureWindow "$vfwcap_indev_extralibs"
-@@ -2986,7 +2986,7 @@
+@@ -3322,7 +3322,7 @@
  SRC_PATH="$source_path"
  SRC_PATH_BARE=$source_path
- BUILD_ROOT="$PWD"
+ CC_IDENT=$cc_ident
 -ARCH=$arch
 +FFMPEG_ARCH=$arch
  CC=$cc
