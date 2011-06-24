@@ -8,10 +8,13 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ELDAPv3.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/XmppAddr.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/acl.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/adhoc.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cache_tab.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cache_tab_sup.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cyrsasl.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cyrsasl_anonymous.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cyrsasl_digest.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cyrsasl_plain.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/dynamic_compile.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%.app
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_admin.beam
@@ -25,7 +28,9 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_auth_odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_auth_pam.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_c2s.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_c2s_config.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_captcha.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_check.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_commands.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_config.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_ctl.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_frontend_socket.beam
@@ -38,6 +43,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_local.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_logger_h.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_loglevel.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_node_groups.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_piefxis.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_rdbms.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_receiver.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_router.beam
@@ -47,6 +53,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_s2s_out.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_service.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_sm.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_socket.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_stun.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_sup.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_system_monitor.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_tmp_sup.beam
@@ -60,13 +67,6 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_zlib.beam
 %%PAM%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/epam.beam
 %%PAM%%lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/bin/epam
 %%PAM%%etc/pam.d/%%PORTNAME%%
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cache_tab.beam
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/cache_tab_sup.beam
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/dynamic_compile.beam
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_captcha.beam
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_commands.beam
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_piefxis.beam
-lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/%%PORTNAME%%_stun.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/ejd2odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eldap.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/eldap_filter.beam
@@ -84,6 +84,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/jd2ejd.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/jlib.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_adhoc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_announce.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_blocking.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_caps.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_configure.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_configure2.beam
@@ -102,6 +103,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_muc_room.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_offline.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_offline_odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_ping.beam
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_pres_counter.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_privacy.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_privacy_odbc.beam
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/ebin/mod_private.beam
@@ -196,6 +198,7 @@ lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/eo.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/es.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/fr.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/gl.msg
+lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/id.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/it.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/ja.msg
 lib/erlang/lib/%%PORTNAME%%-%%PORTVERSION%%/priv/msgs/nl.msg
@@ -244,7 +247,9 @@ sbin/%%PORTNAME%%ctl
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.3.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.4.txt
 %%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.5.txt
-%%PORTDOCS%%%%DOCSDIR%%/release_notes_%%PORTVERSION%%.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.6.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.7.txt
+%%PORTDOCS%%%%DOCSDIR%%/release_notes_2.1.8.txt
 %%PORTDOCS%%%%DOCSDIR%%/webadmmain.png
 %%PORTDOCS%%%%DOCSDIR%%/webadmmainru.png
 %%PORTDOCS%%%%DOCSDIR%%/yozhikheader.png
