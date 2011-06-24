@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	naev
-PORTVERSION=	0.4.2
-PORTREVISION=	1
+PORTVERSION=	0.5.0
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
+		${MASTER_SITE_GOOGLE_CODE}
 DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	acm@FreeBSD.org
@@ -21,7 +21,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/${PORTNAME}/ndata-${PORTVERSION}:${PORTSDIR}/gam
 
 USE_AUTOTOOLS=	automake:env aclocal:env autoconf:env
 USE_BZIP2=	yes
-USE_DOS2UNIX=	conf.example
 GNU_CONFIGURE=	yes
 USE_GL=		gl
 USE_GMAKE=	yes
@@ -44,11 +43,6 @@ OPTIONS=	OPENAL 		"Use the OpenAL sound backend"	on \
 BROKEN=		does not configure on 6.X
 .endif
 
-.if !defined(NOPORTDOCS)
-PLIST_FILES+=	%%DOCSDIR%%/conf.example
-PLIST_DIRS=	%%DOCSDIR%%
-.endif
-
 .if defined(WITH_OPENAL)
 USE_OPENAL=		yes
 CONFIGURE_ARGS+=	--with-openal=yes
@@ -66,10 +60,6 @@ CONFIGURE_ARGS+=	--with-sdlmixer=no
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/${PORTNAME}
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.6 ${PREFIX}/man/man6
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/conf.example ${DOCSDIR}
-.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
