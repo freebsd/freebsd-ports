@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	liferea
-PORTVERSION=	1.6.6
+PORTVERSION=	1.6.6b
 CATEGORIES=	net gnome
-MASTER_SITES=	SF/${PORTNAME}/Liferea%20Stable/${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}/Liferea%20Stable/1.6.6
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Simple RSS/RDF feed reader
@@ -31,8 +31,5 @@ GCONF_SCHEMAS=	liferea.schemas
 INSTALLS_ICONS=	yes
 
 LICENSE=	GPLv2
-
-post-patch:
-	@${CP} ${FILESDIR}/liferea_dbus.xml ${WRKSRC}/src
 
 .include <bsd.port.mk>
