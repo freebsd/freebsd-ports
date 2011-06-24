@@ -6560,7 +6560,9 @@ jack                            ports/audio/jack
 jack-keyboard                   ports/audio/jack-keyboard
 jack-rack                       ports/audio/jack-rack
 jack-smf-utils                  ports/audio/jack-smf-utils
+jack_ghero                      ports/audio/jack_ghero
 jack_mixer                      ports/audio/jack_mixer
+jack_umidi                      ports/audio/jack_umidi
 jad                             ports/java/jad
 jade                            ports/textproc/jade
 jadetex                         ports/print/jadetex
@@ -8271,6 +8273,7 @@ libtuner                        ports/multimedia/libtuner
 libublio                        ports/devel/libublio
 libudbc                         ports/databases/libudbc
 libukcprog                      ports/devel/libukcprog
+libumidi                        ports/audio/libumidi
 libungif                        ports/graphics/libungif
 libunicode                      ports/devel/libunicode
 libuninameslist                 ports/textproc/libuninameslist
@@ -9173,6 +9176,7 @@ micro_proxy                     ports/net/micro_proxy
 microdc2                        ports/net-p2p/microdc2
 middleman                       ports/www/middleman
 midimountain                    ports/audio/midimountain
+midipp                          ports/audio/midipp
 midori                          ports/www/midori
 mifluz                          ports/textproc/mifluz
 migrate                         ports/biology/migrate
@@ -21891,6 +21895,7 @@ py-spf                          ports/mail/py-spf
 py-sphinx                       ports/textproc/py-sphinx
 py-spreadmodule                 ports/net/py-spreadmodule
 py-sqlalchemy                   ports/databases/py-sqlalchemy
+py-sqlalchemy06                 ports/databases/py-sqlalchemy06
 py-sqlcc                        ports/devel/py-sqlcc
 py-sqldict                      ports/databases/py-SQLDict
 py-sqlite3                      ports/databases/py-sqlite3
@@ -23256,6 +23261,7 @@ rubygem-datamapper              ports/databases/rubygem-datamapper
 rubygem-davclient               ports/www/rubygem-davclient
 rubygem-deeptest                ports/devel/rubygem-deeptest
 rubygem-delayed_job             ports/devel/rubygem-delayed_job
+rubygem-delayed_job_data_mapper  ports/databases/rubygem-delayed_job_data_mapper
 rubygem-deprecated              ports/devel/rubygem-deprecated
 rubygem-deprecated2             ports/devel/rubygem-deprecated2
 rubygem-devise                  ports/devel/rubygem-devise
@@ -23351,6 +23357,7 @@ rubygem-jekyll                  ports/www/rubygem-jekyll
 rubygem-jquery-rails            ports/www/rubygem-jquery-rails
 rubygem-jruby-jars              ports/devel/rubygem-jruby-jars
 rubygem-json                    ports/devel/rubygem-json
+rubygem-json146                 ports/devel/rubygem-json146
 rubygem-json_pure               ports/devel/rubygem-json_pure
 rubygem-kirbybase               ports/databases/rubygem-kirbybase
 rubygem-kwalify                 ports/textproc/rubygem-kwalify
@@ -23466,6 +23473,7 @@ rubygem-rbase                   ports/databases/rubygem-rbase
 rubygem-rchardet                ports/textproc/rubygem-rchardet
 rubygem-rcov                    ports/devel/rubygem-rcov
 rubygem-rdiscount               ports/textproc/rubygem-rdiscount
+rubygem-rdoc                    ports/devel/rubygem-rdoc
 rubygem-redcloth                ports/www/rubygem-redcloth
 rubygem-require_all             ports/devel/rubygem-require_all
 rubygem-rest-client             ports/www/rubygem-rest-client
@@ -24469,6 +24477,7 @@ sslwrap                         ports/security/sslwrap
 ssmping                         ports/net/ssmping
 ssmtp                           ports/mail/ssmtp
 sssnips                         ports/misc/sssnips
+ssspl                           ports/net/ssspl
 ssss                            ports/security/ssss
 sst                             ports/security/sst
 ssvnc                           ports/net/ssvnc
@@ -25888,6 +25897,8 @@ vnc2flv                         ports/deskutils/vnc2flv
 vnccrack                        ports/security/vnccrack
 vncreflector                    ports/net/vncreflector
 vnstat                          ports/net/vnstat
+vo-aacenc                       ports/audio/vo-aacenc
+vo-amrwbenc                     ports/audio/vo-amrwbenc
 vobcopy                         ports/sysutils/vobcopy
 vodcatcher                      ports/multimedia/vodcatcher
 vodmr                           ports/mail/vodmr
@@ -26083,7 +26094,6 @@ whysynth                        ports/audio/whysynth
 wide-dhcp                       ports/net-mgmt/wide-dhcp
 widelands                       ports/games/widelands
 widentd                         ports/net/widentd
-widgetfactory                   ports/x11/widgetfactory
 wifimgr                         ports/net-mgmt/wifimgr
 wikicalc                        ports/www/wikicalc
 wikindx                         ports/www/wikindx
