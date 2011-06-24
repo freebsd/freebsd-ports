@@ -43,7 +43,7 @@ KSHVERSION=	2011-02-08
 .include <bsd.port.options.mk>
 
 .if defined(WITH_STATIC)
-MAKE_ENV+=	LDFLAGS=-static
+MAKE_ENV+=	LDFLAGS+=-static
 .endif
 
 post-patch:
