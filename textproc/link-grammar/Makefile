@@ -6,22 +6,28 @@
 #
 
 PORTNAME=	link-grammar
-PORTVERSION=	4.5.10
+PORTVERSION=	4.7.4
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.abisource.com/downloads/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A grammar checking library
 
-USE_GNOME=	gnomehack gnometarget ltverhack
+LIB_DEPENDS=	pspell.16:${PORTSDIR}/textproc/aspell
+
+USE_GNOME=	gnomehack ltverhack pkgconfig
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_DOS2UNIX=	yes
 USE_CSTD=	gnu99
 CFLAGS+=	${PTHREAD_CFLAGS}
+CPPFLAGS=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-pthreads \
-		--disable-java-bindings
+		--disable-java-bindings \
+		--disable-hunspell \
+		--enable-aspell
 MAKE_JOBS_UNSAFE=	yes
 
 DOCS=		AUTHORS LICENSE MAINTAINERS README
