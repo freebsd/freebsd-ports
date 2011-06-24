@@ -950,6 +950,7 @@
     SUBDIR += rubygem-amqp
     SUBDIR += rubygem-bunny
     SUBDIR += rubygem-geoip
+    SUBDIR += rubygem-http_parser.rb
     SUBDIR += rubygem-ipaddress
     SUBDIR += rubygem-macaddr
     SUBDIR += rubygem-net-ldap

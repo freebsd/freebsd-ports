@@ -1,0 +1,4 @@
+A simple callback-based HTTP request/response parser for writing http servers,
+clients and proxies.
+
+WWW:	https://github.com/tmm1/http_parser.rb
