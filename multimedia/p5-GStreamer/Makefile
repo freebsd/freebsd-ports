@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	GStreamer
-PORTVERSION=	0.15
+PORTVERSION=	0.16
 CATEGORIES=	multimedia perl5
 MASTER_SITES=	SF/gtk2-perl/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	p5-
@@ -38,10 +38,12 @@ MAN3=	GStreamer.3 GStreamer::Bin.3 GStreamer::Buffer.3 GStreamer::Bus.3 \
 	GStreamer::GhostPad.3 GStreamer::Index.3 GStreamer::IndexEntry.3 \
 	GStreamer::IndexFactory.3 GStreamer::Iterator.3 \
 	GStreamer::Iterator::Tie.3 GStreamer::Message.3 \
-	GStreamer::Message::Application.3 GStreamer::Message::ClockLost.3 \
+	GStreamer::Message::Application.3 GStreamer::Message::AsyncDone.3 \
+	GStreamer::Message::AsyncStart.3 GStreamer::Message::ClockLost.3 \
 	GStreamer::Message::ClockProvide.3 GStreamer::Message::Custom.3 \
 	GStreamer::Message::Duration.3 GStreamer::Message::EOS.3 \
 	GStreamer::Message::Element.3 GStreamer::Message::Error.3 \
+	GStreamer::Message::Latency.3 \
 	GStreamer::Message::NewClock.3 GStreamer::Message::SegmentDone.3 \
 	GStreamer::Message::SegmentStart.3 GStreamer::Message::StateChanged.3 \
 	GStreamer::Message::StateDirty.3 GStreamer::Message::Tag.3 \

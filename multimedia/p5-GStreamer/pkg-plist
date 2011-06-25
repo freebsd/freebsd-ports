@@ -39,6 +39,8 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Iterator/Tie.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/Application.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/AsyncDone.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/AsyncStart.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/ClockLost.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/ClockProvide.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/Custom.pod
@@ -46,6 +48,7 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/EOS.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/Element.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/Error.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/Latency.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/NewClock.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/SegmentDone.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/GStreamer/Message/SegmentStart.pod
