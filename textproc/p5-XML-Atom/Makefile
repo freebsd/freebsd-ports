@@ -14,16 +14,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 modules for Atom feed and API implementation
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
-		${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1 \
-		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/LWP/Authen/Wsse.pm:${PORTSDIR}/www/p5-LWP-Authen-Wsse \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/XML/XPath.pm:${PORTSDIR}/textproc/p5-XML-XPath \
-		p5-XML-LibXML>=1.54:${PORTSDIR}/textproc/p5-XML-LibXML
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-Digest-SHA1>=0:${PORTSDIR}/security/p5-Digest-SHA1 \
+		p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-LWP-Authen-Wsse>=0:${PORTSDIR}/www/p5-LWP-Authen-Wsse \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-XML-LibXML>=1.69:${PORTSDIR}/textproc/p5-XML-LibXML \
+		p5-XML-XPath>=0:${PORTSDIR}/textproc/p5-XML-XPath \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	5.8.5+
 
