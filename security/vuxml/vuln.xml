@@ -34,6 +34,54 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="40544e8c-9f7b-11e0-9bec-6c626dd55a41">
+    <topic>asterisk -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>asterisk14</name>
+	<range><gt>1.4.*</gt><lt>1.4.41.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk16</name>
+	<range><gt>1.6.*</gt><lt>1.6.2.18.1</lt></range>
+      </package>
+      <package>
+	<name>asterisk18</name>
+	<range><gt>1.8.*</gt><lt>1.8.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Asterisk Development Team reports:</p>
+	<blockquote cite="http://www.asterisk.org/node/51650">
+	  <p>AST-2011-008: If a remote user sends a SIP packet containing a
+	    null, Asterisk assumes available data extends past the null to the
+	    end of the packet when the buffer is actually truncated when
+	    copied. This causes SIP header parsing to modify data past
+	    the end of the buffer altering unrelated memory structures.
+	    This vulnerability does not affect TCP/TLS connections.</p>
+	  <p>AST-2011-009: A remote user sending a SIP packet containing a
+	    Contact header with a missing left angle bracket causes Asterisk to
+	    access a null pointer.</p>
+	  <p>AST-2011-010: A memory address was inadvertently transmitted over
+	    the network via IAX2 via an option control frame and the remote party
+	    would try to access it.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-2529</cvename>
+      <cvename>CVE-2011-2535</cvename>
+      <url>http://downloads.asterisk.org/pub/security/AST-2011-008.html</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2011-009.html</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2011-010.html</url>
+    </references>
+    <dates>
+      <discovery>2011-06-24</discovery>
+      <entry>2011-06-25</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="01d3ab7d-9c43-11e0-bc0f-0014a5e3cda6">
     <topic>ejabberd -- remote denial of service vulnerability</topic>
     <affects>
