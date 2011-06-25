@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	snmp4-mibs
-PORTVERSION=	0.0.6a
+PORTVERSION=	0.0.8a
 CATEGORIES=	net-mgmt python
-MASTER_SITES=	SF/pysnmp/pysnmp-mibs-devel/${PORTVERSION}
+MASTER_SITES=	CHEESESHOP \
+		SF/pysnmp/pysnmp-mibs-devel/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pysnmp-mibs-${PORTVERSION}
 
@@ -17,14 +18,16 @@ COMMENT=	Additional python MIB files for pysnmp4 and friends
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>=0:${PORTSDIR}/devel/py-asn1
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	pysnmp-mibs
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 
 PORTDOCS=	CHANGES \
-		LICENSE \
 		README
 
 post-install:
