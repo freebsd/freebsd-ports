@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	plus
-PORTVERSION=	1.2.12
-PORTREVISION=	4
+PORTVERSION=	1.2.16
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF/nicotine-${PORTNAME}/nicotine-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	nicotine-
@@ -34,7 +33,8 @@ MAN1=		nicotine-import-winconfig.1 nicotine.1
 OPTIONS=	GEOIP "Enable the GeoIP based country code blocker" on \
 		PSYCO "Enable Psyco, the optimizing Python compiler" on \
 		MUTAGEN "Enable Mutagen for audio metadata support" on \
-		LIBSEXY	"Enable libsexy support"	on
+		LIBSEXY	"Enable libsexy support"	on \
+		MINIUPNPC "Enable upnp support"	on
 
 .include <bsd.port.pre.mk>
 
@@ -49,6 +49,9 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-muta
 .endif
 .if defined(WITH_LIBSEXY)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/gtk-2.0/sexy.so:${PORTSDIR}/x11-toolkits/py-sexy
+.endif
+.if defined(WITH_MINIUPNPC)
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/miniupnpc.so:${PORTSDIR}/net/py-miniupnpc
 .endif
 
 post-extract:
