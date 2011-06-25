@@ -7,6 +7,7 @@
 
 PORTNAME=	chef
 PORTVERSION=	0.10.0
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	RG
 
@@ -18,7 +19,7 @@ RUN_DEPENDS=	ruby18-iconv>=0.0.0:${PORTSDIR}/converters/ruby-iconv \
 		rubygem-mixlib-config>=1.1.2:${PORTSDIR}/devel/rubygem-mixlib-config \
 		rubygem-mixlib-cli>=1.1.0:${PORTSDIR}/devel/rubygem-mixlib-cli \
 		rubygem-mixlib-authentication>=1.1.0:${PORTSDIR}/devel/rubygem-mixlib-authentication \
-		rubygem-json=1.5.1:${PORTSDIR}/devel/rubygem-json \
+		rubygem-json>=1.4.6:${PORTSDIR}/devel/rubygem-json146 \
 		rubygem-uuidtools>=0:${PORTSDIR}/devel/rubygem-uuidtools \
 		rubygem-highline>=0:${PORTSDIR}/devel/rubygem-highline \
 		rubygem-moneta>=0:${PORTSDIR}/devel/rubygem-moneta \
