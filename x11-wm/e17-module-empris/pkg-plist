@@ -1,0 +1,8 @@
+lib/enlightenment/modules/empris/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/empris/empris.edj
+lib/enlightenment/modules/empris/module.desktop
+lib/enlightenment/modules/empris/e-module-empris.edj
+@dirrm lib/enlightenment/modules/empris/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/empris/
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment
