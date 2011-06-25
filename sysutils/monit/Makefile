@@ -7,6 +7,7 @@
 
 PORTNAME=	monit
 PORTVERSION=	5.2.5
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.mmonit.com/monit/dist/
 
@@ -20,8 +21,8 @@ USE_BISON=	build
 USE_GMAKE=	yes
 USE_RC_SUBR=	${PORTNAME}.sh
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		CONFIG_SHELL="${SH}" LOCALBASE="${LOCALBASE}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" CONFIG_SHELL="${SH}" \
+		LOCALBASE="${LOCALBASE}"
 
 OPTIONS=	SSL "Enable SSL support" on
 
@@ -35,12 +36,9 @@ DOCS=		CHANGES.txt LICENSE README README.SSL \
 		doc/examples.html doc/monit.html
 PORTDOCS=	${DOCS:T}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if defined(WITH_SSL)
-.include "${PORTSDIR}/Mk/bsd.openssl.mk"
-CONFIGURE_ARGS+=	--enable-ssl --with-openssl="${OPENSSLBASE}"
-.else
+.if defined(WITHOUT_SSL)
 CONFIGURE_ARGS+=	--without-ssl
 .endif
 
@@ -52,4 +50,4 @@ post-install:
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

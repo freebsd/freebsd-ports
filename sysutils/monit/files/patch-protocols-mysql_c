@@ -1,0 +1,13 @@
+--- protocols/mysql.c.orig	2011-02-07 20:04:08.000000000 +0000
++++ protocols/mysql.c	2011-05-23 12:35:35.000000000 +0100
+@@ -160,8 +160,8 @@
+     }
+ 
+     return TRUE;
+-  } else if((buf[4] == 0xFF) && ((buf[5] == 0x15 && buf[6] == 0x04) || (buf[5] == 0xE3 && buf[6] == 0x04))) {
+-    /* If access denied (1045) or server requires newer authentication protocol (1251), return success immediately */
++  } else if((buf[4] == 0xFF) && ((buf[5] == 0x15 && buf[6] == 0x04) || (buf[5] == 0xE3 && buf[6] == 0x04) || (buf[5] == 0x13 && buf[6] == 0x04))) {
++    /* If access denied (1045) or server requires newer authentication protocol (1251) or bad handshake (1043) return success immediately */
+     return TRUE;
+   }
+ 
