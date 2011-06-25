@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	edje
-DISTVERSION=	1.0.0.beta
+DISTVERSION=	1.0.1
 PORTEPOCH=	2
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2010-10-03/base/
+		http://files.roorback.net/e17/2011-05-25/base/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Edje is a complex graphical design and layout engine

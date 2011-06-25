@@ -6,10 +6,11 @@
 #
 
 PORTNAME=	enlightenment
-PORTVERSION=	0.16.999.52995
+PORTVERSION=	0.16.999.55225
 PORTEPOCH=	2
 CATEGORIES=	x11-wm enlightenment
-MASTER_SITES=	http://files.roorback.net/e17/2010-10-03/base/
+MASTER_SITES=	http://download.enlightenment.org/snapshots/2010-12-03/ \
+		http://files.roorback.net/e17/2010-12-03/base/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A very artistic X window manager

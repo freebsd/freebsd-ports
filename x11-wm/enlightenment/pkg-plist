@@ -40,12 +40,14 @@ include/enlightenment/e_filereg.h
 include/enlightenment/e_flowlayout.h
 include/enlightenment/e_fm.h
 include/enlightenment/e_fm_custom.h
-include/enlightenment/e_fm_dbus.h
+include/enlightenment/e_fm_device.h
 include/enlightenment/e_fm_mime.h
 include/enlightenment/e_fm_op.h
 include/enlightenment/e_fm_op_registry.h
 include/enlightenment/e_fm_prop.h
-include/enlightenment/e_fm_shared.h
+include/enlightenment/e_fm_shared_codec.h
+include/enlightenment/e_fm_shared_device.h
+include/enlightenment/e_fm_shared_types.h
 include/enlightenment/e_focus.h
 include/enlightenment/e_font.h
 include/enlightenment/e_gadcon.h

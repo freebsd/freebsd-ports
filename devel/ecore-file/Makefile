@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	file
-DISTVERSION=	1.0.0.beta
-PORTREVISION=	0
+DISTVERSION=	1.0.1
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2010-10-03/base/
+		http://files.roorback.net/e17/2011-05-25/base/
 PKGNAMEPREFIX=	ecore-
 DISTNAME=	ecore-${DISTVERSION}
 

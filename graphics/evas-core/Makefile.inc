@@ -20,4 +20,4 @@ CONFIGURE_ARGS=	--disable-software-xlib \
 		--disable-image-loader-tiff \
 		--disable-image-loader-xpm \
 
-PATCHDIR=	"${PORTSDIR}/graphics/evas-core/files"
+PATCHDIR=	"../../graphics/evas-core/files"

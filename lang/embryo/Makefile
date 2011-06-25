@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	embryo
-DISTVERSION=	1.0.0.beta
+DISTVERSION=	1.0.0
 PORTEPOCH=	2
 CATEGORIES=	lang enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2010-10-03/base/
+		http://files.roorback.net/e17/2011-01-29/base/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A C like scripting language used in Enlightenment
