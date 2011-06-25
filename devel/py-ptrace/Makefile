@@ -7,6 +7,7 @@
 
 PORTNAME=	ptrace
 PORTVERSION=	0.6.3
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,7 +16,7 @@ DISTNAME=	python-ptrace-${PORTVERSION}
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	Python binding of ptrace
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/distorm.so:${PORTSDIR}/devel/py-distorm
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/distorm3/libdistorm3.so:${PORTSDIR}/devel/py-distorm
 
 USE_PYTHON=	2.5-2.7
 USE_PYDISTUTILS=	yes
@@ -25,7 +26,7 @@ LICENSE=	GPLv2
 ONLY_FOR_ARCHS=	i386
 
 post-patch:
-	${REINPLACE_CMD} -e 's|libdistorm64.so|${PYTHON_SITELIBDIR}/distorm.so|' \
+	${REINPLACE_CMD} -e 's|libdistorm64.so|${PYTHON_SITELIBDIR}/distorm3/libdistorm3.so|' \
 		${WRKSRC}/ptrace/pydistorm.py
 
 .include <bsd.port.mk>
