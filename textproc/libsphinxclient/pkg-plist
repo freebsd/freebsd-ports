@@ -1,0 +1,6 @@
+lib/libsphinxclient-0.0.1.so
+lib/libsphinxclient.so.0
+lib/libsphinxclient.a
+lib/libsphinxclient.la
+lib/libsphinxclient.so
+include/sphinxclient.h
