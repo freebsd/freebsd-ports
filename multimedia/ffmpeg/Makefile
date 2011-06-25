@@ -26,14 +26,14 @@ MAKE_JOBS_SAFE=	yes
 WANT_SDL=	yes
 
 OPTIONS=	ALSA	"Enable alsa input/output device" off \
-		AMR_NB	"AMR Narrow Band encoder (opencore)" off \
-		AMR_WB	"AMR Wide Band encoder (opencore)" off \
+		AMR_NB	"AMR Narrow Band audio encoder (opencore)" off \
+		AMR_WB	"AMR Wide Band audio decoder (opencore)" off \
 		CELT	"Enable CELT/Opus decoding via libcelt" off \
 		CPUDETECT "Enable runtime CPU detection" on \
 		DIRAC	"Dirac codec via libdirac" off \
 		FAAC	"FAAC mp4/aac audio encoder" off \
 		FFSERVER "Build and install ffserver" on \
-		FREETYPE "Enable libfreetype" on \
+		FREETYPE "Text on top of video frames (freetype2)" on \
 		FREI0R	"Frei0r wrapper filter" off \
 		GSM	"GSM audio codec" off \
 		LAME	"LAME MP3 encoder" off \
@@ -45,7 +45,7 @@ OPTIONS=	ALSA	"Enable alsa input/output device" off \
 		SPEEX	"Speex audio decoder" off \
 		SSSE3	"Use binutils from ports (SSSE3 support)" on \
 		THEORA	"Theora encoder (implies OGG)" on \
-		VAAPI	"VAAPI decoder support" off \
+		VAAPI	"GPU acceleration support (libva)" off \
 		VDPAU	"Nvidia vdpau support" off \
 		VO_AACENC "AAC audio encoder (vo-aacenc)" off \
 		VO_AMRWBENC "AMR Wide Band audio encoder (vo-amrwbenc)" off \
@@ -170,21 +170,19 @@ CONFIGURE_ARGS+=	--disable-indev=alsa \
 			--disable-outdev=alsa
 .endif
 
-# amr
-.if defined(WITH_AMR_NB) || defined(WITH_AMR_WB)
-
-LIB_DEPENDS+=	opencore-amrnb.0:${PORTSDIR}/audio/opencore-amr
-.endif
-
+# Opencore AMR NB
 .if defined(WITH_AMR_NB)
 FFMPEG_LICENSE_GPL3=	yes
+LIB_DEPENDS+=	opencore-amrnb.0:${PORTSDIR}/audio/opencore-amr
 CONFIGURE_ARGS+=	--enable-libopencore-amrnb
 .else
 CONFIGURE_ARGS+=	--disable-libopencore-amrnb
 .endif
 
+# Opencore AMR WB
 .if defined(WITH_AMR_WB)
 FFMPEG_LICENSE_GPL3=	yes
+LIB_DEPENDS+=	opencore-amrwb.0:${PORTSDIR}/audio/opencore-amr
 CONFIGURE_ARGS+=	--enable-libopencore-amrwb
 .else
 CONFIGURE_ARGS+=	--disable-libopencore-amrwb
@@ -315,23 +313,6 @@ CONFIGURE_ARGS+=	--enable-libtheora
 CONFIGURE_ARGS+=	--disable-libtheora
 .endif
 
-# vo-aacenc
-.if defined(WITH_VO_AACENC)
-LIB_DEPENDS+=	vo-aacenc.0:${PORTSDIR}/audio/vo-aacenc
-CONFIGURE_ARGS+=	--enable-libvo-aacenc
-.else
-CONFIGURE_ARGS+=	--disable-libvo-aacenc
-.endif
-
-# vo-amrwbenc
-.if defined(WITH_VO_AMRWBENC)
-FFMPEG_LICENSE_GPL3=	yes
-LIB_DEPENDS+=	vo-amrwbenc.0:${PORTSDIR}/audio/vo-amrwbenc
-CONFIGURE_ARGS+=	--enable-libvo-amrwbenc
-.else
-CONFIGURE_ARGS+=	--disable-libvo-amrwbenc
-.endif
-
 # vaapi
 .if !defined(WITHOUT_VAAPI)
 FFMPEG_LICENSE_GPL3=	yes
@@ -347,6 +328,24 @@ BUILD_DEPENDS+=	${LOCALBASE}/include/vdpau/vdpau.h:${PORTSDIR}/multimedia/libvdp
 CONFIGURE_ARGS+=	--enable-vdpau
 .else
 CONFIGURE_ARGS+=	--disable-vdpau
+.endif
+
+# vo-aacenc
+.if defined(WITH_VO_AACENC)
+FFMPEG_LICENSE_GPL3=	yes
+LIB_DEPENDS+=	vo-aacenc.0:${PORTSDIR}/audio/vo-aacenc
+CONFIGURE_ARGS+=	--enable-libvo-aacenc
+.else
+CONFIGURE_ARGS+=	--disable-libvo-aacenc
+.endif
+
+# vo-amrwbenc
+.if defined(WITH_VO_AMRWBENC)
+FFMPEG_LICENSE_GPL3=	yes
+LIB_DEPENDS+=	vo-amrwbenc.0:${PORTSDIR}/audio/vo-amrwbenc
+CONFIGURE_ARGS+=	--enable-libvo-amrwbenc
+.else
+CONFIGURE_ARGS+=	--disable-libvo-amrwbenc
 .endif
 
 # vorbis
