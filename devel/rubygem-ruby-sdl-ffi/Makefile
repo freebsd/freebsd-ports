@@ -6,8 +6,7 @@
 #
 
 PORTNAME=		ruby-sdl-ffi
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.4
 CATEGORIES=		devel rubygems
 MASTER_SITES=		RG
 
