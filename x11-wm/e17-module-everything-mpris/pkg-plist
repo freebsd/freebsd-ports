@@ -4,6 +4,15 @@ lib/enlightenment/modules/evry-mpris/module.desktop
 %%NLS%%lib/enlightenment/modules/evry-mpris/locale/fr/LC_MESSAGES/evry-mpris.mo
 %%NLS%%lib/enlightenment/modules/evry-mpris/locale/it/LC_MESSAGES/evry-mpris.mo
 %%NLS%%lib/enlightenment/modules/evry-mpris/locale/el/LC_MESSAGES/evry-mpris.mo
+%%NLS%%lib/enlightenment/modules/evry-mpris/locale/cs/LC_MESSAGES/evry-mpris.mo
+%%NLS%%lib/enlightenment/modules/evry-mpris/locale/de/LC_MESSAGES/evry-mpris.mo
+%%NLS%%lib/enlightenment/modules/evry-mpris/locale/pt/LC_MESSAGES/evry-mpris.mo
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/pt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/pt
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/de/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/de
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/cs/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/cs
 %%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/el/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/el
 %%NLS%%@dirrm lib/enlightenment/modules/evry-mpris/locale/it/LC_MESSAGES

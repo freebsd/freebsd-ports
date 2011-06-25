@@ -23,6 +23,7 @@ lib/enlightenment/modules/efm_nav/%%E17_ARCH%%/module.so
 %%NLS%%lib/enlightenment/modules/efm_nav/locale/fi/LC_MESSAGES/efm_nav.mo
 %%NLS%%lib/enlightenment/modules/efm_nav/locale/ko/LC_MESSAGES/efm_nav.mo
 %%NLS%%lib/enlightenment/modules/efm_nav/locale/ru/LC_MESSAGES/efm_nav.mo
+%%NLS%%lib/enlightenment/modules/efm_nav/locale/pt/LC_MESSAGES/efm_nav.mo
 %%NLS%%lib/enlightenment/modules/efm_nav/locale/pt_BR/LC_MESSAGES/efm_nav.mo
 %%NLS%%lib/enlightenment/modules/efm_nav/locale/ja/LC_MESSAGES/efm_nav.mo
 %%NLS%%lib/enlightenment/modules/efm_nav/locale/de/LC_MESSAGES/efm_nav.mo
@@ -38,6 +39,8 @@ lib/enlightenment/modules/efm_nav/%%E17_ARCH%%/module.so
 %%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/ja
 %%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/pt_BR/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/pt_BR
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/pt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/pt
 %%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/ru/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/ru
 %%NLS%%@dirrm lib/enlightenment/modules/efm_nav/locale/ko/LC_MESSAGES

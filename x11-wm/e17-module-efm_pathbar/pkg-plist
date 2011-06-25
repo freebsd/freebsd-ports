@@ -23,6 +23,9 @@ lib/enlightenment/modules/efm_pathbar/%%E17_ARCH%%/module.so
 %%NLS%%lib/enlightenment/modules/efm_pathbar/locale/el/LC_MESSAGES/efm_pathbar.mo
 %%NLS%%lib/enlightenment/modules/efm_pathbar/locale/uk/LC_MESSAGES/efm_pathbar.mo
 %%NLS%%lib/enlightenment/modules/efm_pathbar/locale/ru/LC_MESSAGES/efm_pathbar.mo
+%%NLS%%lib/enlightenment/modules/efm_pathbar/locale/de/LC_MESSAGES/efm_pathbar.mo
+%%NLS%%@dirrm lib/enlightenment/modules/efm_pathbar/locale/de/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/efm_pathbar/locale/de
 %%NLS%%@dirrm lib/enlightenment/modules/efm_pathbar/locale/ru/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/efm_pathbar/locale/ru
 %%NLS%%@dirrm lib/enlightenment/modules/efm_pathbar/locale/uk/LC_MESSAGES

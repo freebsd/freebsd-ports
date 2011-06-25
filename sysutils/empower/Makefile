@@ -7,9 +7,9 @@
 #
 
 PORTNAME=	empower
-PORTVERSION=	20101003
+PORTVERSION=	20110129
 CATEGORIES=	sysutils enlightenment
-MASTER_SITES=	http://files.roorback.net/e17/2010-10-03/extra/
+MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/extra/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A graphical sudo tool based on the EFL

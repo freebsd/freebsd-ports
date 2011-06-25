@@ -29,6 +29,9 @@ lib/enlightenment/modules/drawer/module.desktop
 %%NLS%%lib/enlightenment/modules/drawer/locale/zh_CN/LC_MESSAGES/drawer.mo
 %%NLS%%lib/enlightenment/modules/drawer/locale/es/LC_MESSAGES/drawer.mo
 %%NLS%%lib/enlightenment/modules/drawer/locale/hr/LC_MESSAGES/drawer.mo
+%%NLS%%lib/enlightenment/modules/drawer/locale/de/LC_MESSAGES/drawer.mo
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/de/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/de
 %%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/hr/LC_MESSAGES
 %%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/hr
 %%NLS%%@dirrm lib/enlightenment/modules/drawer/locale/es/LC_MESSAGES
