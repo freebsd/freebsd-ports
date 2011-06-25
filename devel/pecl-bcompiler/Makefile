@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bcompiler
-PORTVERSION=	0.9.3
+PORTVERSION=	1.0.2
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
