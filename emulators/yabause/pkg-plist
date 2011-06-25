@@ -1,6 +1,14 @@
 bin/yabause
-share/gen68k/c68k_ini.inc
-share/applications/yabause.desktop
+%%DATADIR%%/yts/de.yts
+%%DATADIR%%/yts/es.yts
+%%DATADIR%%/yts/fr.yts
+%%DATADIR%%/yts/it.yts
+%%DATADIR%%/yts/lt.yts
+%%DATADIR%%/yts/pt.yts
+%%DATADIR%%/yts/pt_BR.yts
+%%DATADIR%%/yts/sv.yts
 share/pixmaps/yabause.png
-@dirrm share/gen68k
+share/applications/yabause.desktop
+@dirrmtry share/yabause/yts
+@dirrmtry share/yabause
 @dirrmtry share/applications
