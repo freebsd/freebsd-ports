@@ -455,7 +455,6 @@
     SUBDIR += mod_auth_imap2
     SUBDIR += mod_auth_kerb
     SUBDIR += mod_auth_kerb2
-    SUBDIR += mod_auth_ldap
     SUBDIR += mod_auth_mellon
     SUBDIR += mod_auth_mysql
     SUBDIR += mod_auth_mysql2
@@ -466,11 +465,9 @@
     SUBDIR += mod_auth_pgsql
     SUBDIR += mod_auth_pgsql2
     SUBDIR += mod_auth_pubtkt
-    SUBDIR += mod_auth_remote
     SUBDIR += mod_auth_tkt
     SUBDIR += mod_auth_useragent
     SUBDIR += mod_auth_xradius
-    SUBDIR += mod_authenticache
     SUBDIR += mod_authn_sasl
     SUBDIR += mod_authnz_external
     SUBDIR += mod_authz_unixgroup
@@ -517,7 +514,6 @@
     SUBDIR += mod_jk
     SUBDIR += mod_jk-apache2
     SUBDIR += mod_layout
-    SUBDIR += mod_layout2
     SUBDIR += mod_layout22
     SUBDIR += mod_limitipconn
     SUBDIR += mod_limitipconn2
@@ -532,7 +528,6 @@
     SUBDIR += mod_log_sql2
     SUBDIR += mod_log_sql2-dtc
     SUBDIR += mod_macro
-    SUBDIR += mod_macro2
     SUBDIR += mod_macro22
     SUBDIR += mod_memcache
     SUBDIR += mod_mono
@@ -567,8 +562,6 @@
     SUBDIR += mod_sqlinclude
     SUBDIR += mod_ticket
     SUBDIR += mod_tidy
-    SUBDIR += mod_traf_thief
-    SUBDIR += mod_transform
     SUBDIR += mod_trigger
     SUBDIR += mod_tsa
     SUBDIR += mod_tsunami
