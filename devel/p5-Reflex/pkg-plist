@@ -1,0 +1,133 @@
+%%SITE_PERL%%/Reflex.pm
+%%SITE_PERL%%/Reflex/Acceptor.pm
+%%SITE_PERL%%/Reflex/Base.pm
+%%SITE_PERL%%/Reflex/Callbacks.pm
+%%SITE_PERL%%/Reflex/Client.pm
+%%SITE_PERL%%/Reflex/Collection.pm
+%%SITE_PERL%%/Reflex/Connector.pm
+%%SITE_PERL%%/Reflex/Interval.pm
+%%SITE_PERL%%/Reflex/PID.pm
+%%SITE_PERL%%/Reflex/Role.pm
+%%SITE_PERL%%/Reflex/Sender.pm
+%%SITE_PERL%%/Reflex/Signal.pm
+%%SITE_PERL%%/Reflex/Stream.pm
+%%SITE_PERL%%/Reflex/Timeout.pm
+%%SITE_PERL%%/Reflex/UdpPeer.pm
+%%SITE_PERL%%/Reflex/Wakeup.pm
+%%SITE_PERL%%/Reflex/Callback.pm
+%%SITE_PERL%%/Reflex/Callback/CodeRef.pm
+%%SITE_PERL%%/Reflex/Callback/Method.pm
+%%SITE_PERL%%/Reflex/Callback/Promise.pm
+%%SITE_PERL%%/Reflex/POE/Event.pm
+%%SITE_PERL%%/Reflex/POE/Postback.pm
+%%SITE_PERL%%/Reflex/POE/Session.pm
+%%SITE_PERL%%/Reflex/POE/Wheel.pm
+%%SITE_PERL%%/Reflex/POE/Wheel/Run.pm
+%%SITE_PERL%%/Reflex/Role/Accepting.pm
+%%SITE_PERL%%/Reflex/Role/Collectible.pm
+%%SITE_PERL%%/Reflex/Role/Connecting.pm
+%%SITE_PERL%%/Reflex/Role/InStreaming.pm
+%%SITE_PERL%%/Reflex/Role/Interval.pm
+%%SITE_PERL%%/Reflex/Role/OutStreaming.pm
+%%SITE_PERL%%/Reflex/Role/PidCatcher.pm
+%%SITE_PERL%%/Reflex/Role/Reactive.pm
+%%SITE_PERL%%/Reflex/Role/Readable.pm
+%%SITE_PERL%%/Reflex/Role/Reading.pm
+%%SITE_PERL%%/Reflex/Role/Recving.pm
+%%SITE_PERL%%/Reflex/Role/SigCatcher.pm
+%%SITE_PERL%%/Reflex/Role/Streaming.pm
+%%SITE_PERL%%/Reflex/Role/Timeout.pm
+%%SITE_PERL%%/Reflex/Role/Wakeup.pm
+%%SITE_PERL%%/Reflex/Role/Writable.pm
+%%SITE_PERL%%/Reflex/Role/Writing.pm
+%%SITE_PERL%%/Reflex/Trait/EmitsOnChange.pm
+%%SITE_PERL%%/Reflex/Trait/Observed.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Reflex/.packlist
+%%PORTDOCS%%%%DOCSDIR%%/continuation-passing.otl
+%%PORTDOCS%%%%DOCSDIR%%/manual.otl
+%%PORTDOCS%%%%DOCSDIR%%/new-names.otl
+%%PORTDOCS%%%%DOCSDIR%%/patterns.otl
+%%PORTDOCS%%%%DOCSDIR%%/syntax.pm
+%%PORTDOCS%%%%DOCSDIR%%/TODO.otl
+%%PORTDOCS%%%%DOCSDIR%%/intro/AfterAwhileClass.pm
+%%PORTDOCS%%%%DOCSDIR%%/intro/AfterAwhileRole.pm
+%%PORTDOCS%%%%DOCSDIR%%/intro/AfterAwhileSubclass.pm
+%%PORTDOCS%%%%DOCSDIR%%/intro/AsyncAwhileClass.pm
+%%PORTDOCS%%%%DOCSDIR%%/intro/AsyncAwhileRole.pm
+%%PORTDOCS%%%%DOCSDIR%%/intro/after-awhile-method.pl
+%%PORTDOCS%%%%DOCSDIR%%/intro/after-awhile-promise.pl
+%%PORTDOCS%%%%DOCSDIR%%/intro/after-awhile-subclass-use.pl
+%%PORTDOCS%%%%DOCSDIR%%/intro/after-awhile-use.pl
+%%PORTDOCS%%%%DOCSDIR%%/intro/intro.pod
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-04-inheritance.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-05-composition.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-06-moose-roles.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-07-wheel-run.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-08-observer-trait.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-11-poco-postback.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-12-poco-event.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-13-irc-bot.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-14-synopsis.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-15-ipc-run.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-16-timer-inheritance.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-17-inheritance-no-moose.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-18-synopsis-no-moose.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-30-promise-timer.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-31-promise-object.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-32-promise-tiny.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-33-all-callbacks.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-34-tcp-server-echo.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-35-tcp-client.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-36-tiny-coderefs.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-37-ping-pong.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-38-promise-client.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-39-signals.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-40-proxy.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-41-signal-twice.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-42-reflex-in-poe.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-50-timeout.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-51-wakeup.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-60-collection-promise.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/EchoStream.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleHelpers.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PoCoEvent.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/PoCoPostback.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Proxy.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ReflexPromise.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Runner.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/RunnerRole.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/Or.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/Un.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/And.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/Bin.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/Nor.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/Not.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/Xor.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/Nand.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/Adder.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/TriAnd.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/TriNand.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/HexDecoder.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/FlipFlop/D.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/FlipFlop/T.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/FlipFlop/JK.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/FlipFlop/MasterSlave.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/Latch/NorRS.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/Latch/NandRS.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/Latch/ClockedNandRS.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/fail-ttl-counter.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/fail-ttl-simple.pl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/intro
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ttl/Ttl/Latch
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ttl/Ttl/FlipFlop
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ttl/Ttl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ttl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Reflex
+@dirrm %%SITE_PERL%%/Reflex/Trait
+@dirrm %%SITE_PERL%%/Reflex/Role
+@dirrm %%SITE_PERL%%/Reflex/POE/Wheel
+@dirrm %%SITE_PERL%%/Reflex/POE
+@dirrm %%SITE_PERL%%/Reflex/Callback
+@dirrm %%SITE_PERL%%/Reflex

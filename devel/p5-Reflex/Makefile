@@ -1,0 +1,87 @@
+# New ports collection makefile for:	p5-Reflex
+# Date created:				2011-03-16
+# Whom:					Jase Thew <freebsd@beardz.net>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	Reflex
+PORTVERSION=	0.088
+CATEGORIES=	devel perl5
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:RCAPUTO
+PKGNAMEPREFIX=	p5-
+
+MAINTAINER=	freebsd@beardz.net
+COMMENT=	Class library for flexible, reactive programs
+
+BUILD_DEPENDS=	p5-POE>=1.294:${PORTSDIR}/devel/p5-POE \
+		p5-Moose>=1.21:${PORTSDIR}/devel/p5-Moose \
+		p5-MooseX-Role-Parameterized>=0.23:${PORTSDIR}/devel/p5-MooseX-Role-Parameterized \
+		p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple \
+		p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Reflex.3 \
+		Reflex::Acceptor.3 \
+		Reflex::Base.3 \
+		Reflex::Callback.3 \
+		Reflex::Callback::CodeRef.3 \
+		Reflex::Callback::Method.3 \
+		Reflex::Callback::Promise.3 \
+		Reflex::Callbacks.3 \
+		Reflex::Client.3 \
+		Reflex::Collection.3 \
+		Reflex::Connector.3 \
+		Reflex::Interval.3 \
+		Reflex::PID.3 \
+		Reflex::POE::Event.3 \
+		Reflex::POE::Postback.3 \
+		Reflex::POE::Session.3 \
+		Reflex::POE::Wheel.3 \
+		Reflex::POE::Wheel::Run.3 \
+		Reflex::Role.3 \
+		Reflex::Role::Accepting.3 \
+		Reflex::Role::Collectible.3 \
+		Reflex::Role::Connecting.3 \
+		Reflex::Role::Interval.3 \
+		Reflex::Role::InStreaming.3 \
+		Reflex::Role::OutStreaming.3 \
+		Reflex::Role::PidCatcher.3 \
+		Reflex::Role::Reactive.3 \
+		Reflex::Role::Readable.3 \
+		Reflex::Role::Reading.3 \
+		Reflex::Role::Recving.3 \
+		Reflex::Role::SigCatcher.3 \
+		Reflex::Role::Streaming.3 \
+		Reflex::Role::Timeout.3 \
+		Reflex::Role::Wakeup.3 \
+		Reflex::Role::Writable.3 \
+		Reflex::Role::Writing.3 \
+		Reflex::Sender.3 \
+		Reflex::Signal.3 \
+		Reflex::Stream.3 \
+		Reflex::Timeout.3 \
+		Reflex::Trait::EmitsOnChange.3 \
+		Reflex::Trait::Observed.3 \
+		Reflex::UdpPeer.3 \
+		Reflex::Wakeup.3
+
+post-install:
+.ifndef(NOPORTEXAMPLES)
+	@${ECHO_MSG} "===> Examples installed in ${EXAMPLESDIR}"
+	@${MKDIR} ${EXAMPLESDIR}/ttl
+	@${INSTALL_SCRIPT} ${WRKSRC}/eg/*.pl ${EXAMPLESDIR}
+	@${INSTALL_DATA} ${WRKSRC}/eg/*.pm ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/eg/ttl && ${COPYTREE_SHARE} \* ${EXAMPLESDIR}/ttl)
+.endif
+
+.ifndef(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC}/docs && ${COPYTREE_SHARE} \* ${DOCSDIR})
+	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}"
+.endif
+
+.include <bsd.port.mk>
