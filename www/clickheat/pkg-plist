@@ -10,7 +10,8 @@
 %%WWWDIR%%/clickempty.html
 %%WWWDIR%%/config.php
 %%WWWDIR%%/config/.htaccess
-%%WWWDIR%%/debug-piwik.html
+%%WWWDIR%%/debug-piwik-1.html
+%%WWWDIR%%/debug-piwik-2.html
 %%WWWDIR%%/examples/coords.txt
 %%WWWDIR%%/examples/fromdatabase.php
 %%WWWDIR%%/examples/fromfile.php
@@ -27,8 +28,8 @@
 %%WWWDIR%%/images/flags/es.png
 %%WWWDIR%%/images/flags/fr.png
 %%WWWDIR%%/images/flags/hu.png
-%%WWWDIR%%/images/flags/it.png
 %%WWWDIR%%/images/flags/id.png
+%%WWWDIR%%/images/flags/it.png
 %%WWWDIR%%/images/flags/ja.png
 %%WWWDIR%%/images/flags/nl.png
 %%WWWDIR%%/images/flags/pl.png
@@ -57,8 +58,8 @@
 %%WWWDIR%%/js/clickheat.js
 %%WWWDIR%%/languages/__readme.txt
 %%WWWDIR%%/languages/bg.php
-%%WWWDIR%%/languages/de.php
 %%WWWDIR%%/languages/cz.php
+%%WWWDIR%%/languages/de.php
 %%WWWDIR%%/languages/en.php
 %%WWWDIR%%/languages/es.php
 %%WWWDIR%%/languages/fr.php
@@ -66,9 +67,9 @@
 %%WWWDIR%%/languages/id.php
 %%WWWDIR%%/languages/it.php
 %%WWWDIR%%/languages/ja.php
+%%WWWDIR%%/languages/nl.php
 %%WWWDIR%%/languages/pl.php
 %%WWWDIR%%/languages/pt.php
-%%WWWDIR%%/languages/nl.php
 %%WWWDIR%%/languages/ro.php
 %%WWWDIR%%/languages/ru.php
 %%WWWDIR%%/languages/sr.php
@@ -91,13 +92,13 @@
 %%WWWDIR%%/view.php
 @dirrm %%WWWDIR%%/styles
 @dirrm %%WWWDIR%%/scripts
+@dirrm %%WWWDIR%%/logs
 @dirrm %%WWWDIR%%/languages
 @dirrm %%WWWDIR%%/js
 @dirrm %%WWWDIR%%/images/flags
 @dirrm %%WWWDIR%%/images
 @dirrm %%WWWDIR%%/examples
-@dirrm %%WWWDIR%%/classes
-@dirrmtry %%WWWDIR%%/cache
-@dirrmtry %%WWWDIR%%/logs
 @dirrmtry %%WWWDIR%%/config
+@dirrmtry %%WWWDIR%%/classes
+@dirrmtry %%WWWDIR%%/cache
 @dirrm %%WWWDIR%%
