@@ -6,12 +6,10 @@
 #
 
 PORTNAME=	ffmpeg
-DISTVERSION=	2011-05-03
-PORTREVISION=	1
+DISTVERSION=	2011-06-25
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mm
-		
 DISTNAME=	ffmpeg-${GIT_SUFFIX}
 
 MAINTAINER=	mm@FreeBSD.org
@@ -23,12 +21,7 @@ CONFLICTS=	ffmpeg-0.*
 
 LATEST_LINK=	ffmpeg-devel
 
-LICENSE=	GPLv2 LGPL21
-LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.GPLv2
-LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPLv2.1
-LICENSE_COMB=	multi
-
-GIT_SNAPSHOT=	c402ce418a9e7b456c383e097ad772f218a004c7
+GIT_SNAPSHOT=	dca3542d35c8b1769f9fd32641567ffa2346327e
 GIT_SUFFIX=	${GIT_SNAPSHOT:C/^(.......).*$/\1/g}
 
 USE_XZ=		yes
@@ -39,25 +32,30 @@ MAKE_JOBS_SAFE=	yes
 WANT_SDL=	yes
 
 OPTIONS=	ALSA	"Enable alsa input/output device" off \
-		AMR_NB	"AMR Narrow Band encoder (opencore)" on \
-		AMR_WB	"AMR Wide Band decoder (opencore)" on \
+		AMR_NB	"AMR Narrow Band audio encoder (opencore)" on \
+		AMR_WB	"AMR Wide Band audio decoder (opencore)" on \
+		CELT	"Enable CELT/Opus decoding via libcelt" off \
 		CPUDETECT "Enable runtime CPU detection" on \
 		DIRAC	"Dirac codec via libdirac" off \
 		FAAC	"FAAC mp4/aac audio encoder" off \
 		FFSERVER "Build and install ffserver" on \
+		FREETYPE "Text on top of video frames (freetype2)" on \
 		FREI0R	"Frei0r wrapper filter" off \
 		GSM	"GSM audio codec" off \
 		LAME	"LAME MP3 encoder" off \
 		OPENCV	"OpenCV video filtering support" off \
 		OPENJPEG	"JPEG 2000 decoder" off \
 		OPTIMIZED_CFLAGS "Additional optimizations" off \
+		RTMP	"RTMP[E] support via librtmp" off \
 		SCHROEDINGER	"Dirac codec via libschroedinger" on \
 		SDL	"SDL support (build ffplay)" off \
 		SPEEX	"Speex audio decoder" off \
 		SSSE3	"Use binutils from ports (SSSE3 support)" on \
 		THEORA	"Theora encoder (implies OGG)" on \
-		VAAPI	"VAAPI decoder support" off \
-		VDPAU 	"NVidia vdpau support" off \
+		VAAPI	"GPU acceleration support (libva)" off \
+		VDPAU 	"Nvidia vdpau support" off \
+		VO_AACENC "AAC audio encoder (vo-aacenc)" on \
+		VO_AMRWBENC "AMR Wide Band audio encoder (vo-amrwbenc)" on \
 		VORBIS	"Vorbis encoder via libvorbis (implies OGG)" on \
 		VP8	"VP8 codec via libvpx" on \
 		X264	"H.264 encoder" on \
@@ -138,7 +136,7 @@ CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
-.ifndef(WITHOUT_FFSERVER)
+.if !defined(WITHOUT_FFSERVER)
 USE_RC_SUBR=	ffserver
 .endif
 
@@ -161,13 +159,13 @@ FFMPEG_CFLAGS+=		-msse
 .endif
 
 # PORTDOCS
-.ifndef(NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=		texi2html:${PORTSDIR}/textproc/texi2html
 MAN1+=		ffmpeg.1 ffprobe.1
 .endif
 
 # optimizations
-.ifdef(WITH_OPTIMIZED_CFLAGS)
+.if defined(WITH_OPTIMIZED_CFLAGS)
 CFLAGS+=	-O3 -ffast-math -fno-finite-math-only -fomit-frame-pointer
 .endif
 
@@ -181,27 +179,33 @@ CONFIGURE_ARGS+=	--disable-indev=alsa \
 
 # amr
 .if defined(WITH_AMR_NB) || defined(WITH_AMR_WB)
-LICENSE=	GPLv3 LGPL3
-LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.GPLv3
-LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPLv3
-CONFIGURE_ARGS+=	--enable-version3
 LIB_DEPENDS+=	opencore-amrnb.0:${PORTSDIR}/audio/opencore-amr
 .endif
 
-.ifdef(WITH_AMR_NB)
-CONFIGURE_ARGS+=        --enable-libopencore-amrnb
+.if defined(WITH_AMR_NB)
+FFMPEG_LICENSE_GPL3=	yes
+CONFIGURE_ARGS+=	--enable-libopencore-amrnb
 .else
-CONFIGURE_ARGS+=        --disable-libopencore-amrnb
+CONFIGURE_ARGS+=	--disable-libopencore-amrnb
 .endif
 
-.ifdef(WITH_AMR_WB)
-CONFIGURE_ARGS+=        --enable-libopencore-amrwb
+.if defined(WITH_AMR_WB)
+FFMPEG_LICENSE_GPL3=	yes
+CONFIGURE_ARGS+=	--enable-libopencore-amrwb
 .else
-CONFIGURE_ARGS+=        --disable-libopencore-amrwb
+CONFIGURE_ARGS+=	--disable-libopencore-amrwb
+.endif
+
+# celt
+.if defined(WITH_CELT)
+LIB_DEPENDS+=	celt0.2:${PORTSDIR}/audio/celt
+CONFIGURE_ARGS+=	--enable-libcelt
+.else
+CONFIGURE_ARGS+=	--disable-libcelt
 .endif
 
 # dirac
-.ifdef(WITH_DIRAC)
+.if defined(WITH_DIRAC)
 LIB_DEPENDS+=	dirac_encoder.1:${PORTSDIR}/multimedia/dirac
 CONFIGURE_ARGS+=	--enable-libdirac
 .else
@@ -209,7 +213,7 @@ CONFIGURE_ARGS+=	--disable-libdirac
 .endif
 
 # faac
-.ifdef(WITH_FAAC)
+.if defined(WITH_FAAC)
 RESTRICTED=	linking to libfaac restricts redistribution
 LIB_DEPENDS+=	faac.0:${PORTSDIR}/audio/faac
 CONFIGURE_ARGS+=	--enable-libfaac --enable-nonfree
@@ -218,9 +222,9 @@ CONFIGURE_ARGS+=	--disable-libfaac
 .endif
 
 # ffserver
-.ifndef(WITHOUT_FFSERVER)
+.if !defined(WITHOUT_FFSERVER)
 PLIST_SUB+=	FFSERVER=""
-. ifndef(NOPORTDOCS)
+. if !defined(NOPORTDOCS)
 MAN1+=		ffserver.1
 DOC_DOCFILES+=	ffserver.html
 . endif
@@ -229,8 +233,16 @@ PLIST_SUB+=	FFSERVER="@comment "
 CONFIGURE_ARGS+=	--disable-ffserver
 .endif
 
+# freetype
+.if !defined(WITHOUT_FREETYPE)
+LIB_DEPENDS+=	freetype.9:${PORTSDIR}/print/freetype2
+CONFIGURE_ARGS+=	--enable-libfreetype
+.else
+CONFIGURE_ARGS+=	--disable-libfreetype
+.endif
+
 # frei0r
-.ifdef(WITH_FREI0R)
+.if defined(WITH_FREI0R)
 BUILD_DEPENDS+=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
 CONFIGURE_ARGS+=	--enable-frei0r
 .else
@@ -238,7 +250,7 @@ CONFIGURE_ARGS+=	--disable-frei0r
 .endif
 
 # gsm
-.ifdef(WITH_GSM)
+.if defined(WITH_GSM)
 LIB_DEPENDS+=	gsm.1:${PORTSDIR}/audio/gsm
 CONFIGURE_ARGS+=	--enable-libgsm
 .else
@@ -246,7 +258,7 @@ CONFIGURE_ARGS+=	--disable-libgsm
 .endif
 
 # mp3
-.ifdef(WITH_LAME)
+.if defined(WITH_LAME)
 LIB_DEPENDS+=	mp3lame.0:${PORTSDIR}/audio/lame
 CONFIGURE_ARGS+=	--enable-libmp3lame
 .else
@@ -254,7 +266,7 @@ CONFIGURE_ARGS+=	--disable-libmp3lame
 .endif
 
 # opencv
-.ifdef(WITH_OPENCV)
+.if defined(WITH_OPENCV)
 LIB_DEPENDS+=	cv.2:${PORTSDIR}/graphics/opencv
 CONFIGURE_ARGS+=	--enable-libopencv
 .else
@@ -262,15 +274,23 @@ CONFIGURE_ARGS+=	--disable-libopencv
 .endif
 
 # openjpeg
-.ifdef(WITH_OPENJPEG)
+.if defined(WITH_OPENJPEG)
 LIB_DEPENDS+=	openjpeg.2:${PORTSDIR}/graphics/openjpeg
 CONFIGURE_ARGS+=	--enable-libopenjpeg
 .else
 CONFIGURE_ARGS+=	--disable-libopenjpeg
 .endif
 
+# rtmp
+.if defined(WITH_RTMP)
+LIB_DEPENDS+=	rtmp.0:${PORTSDIR}/multimedia/rtmpdump
+CONFIGURE_ARGS+=	--enable-librtmp
+.else
+CONFIGURE_ARGS+=	--disable-librtmp
+.endif
+
 # schroedinger
-.ifndef(WITHOUT_SCHROEDINGER)
+.if !defined(WITHOUT_SCHROEDINGER)
 LIB_DEPENDS+=	schroedinger-1.0.10:${PORTSDIR}/multimedia/schroedinger
 CONFIGURE_ARGS+=	--enable-libschroedinger
 .else
@@ -278,7 +298,7 @@ CONFIGURE_ARGS+=	--disable-libschroedinger
 .endif
 
 # sdl
-.ifdef(WITH_SDL)
+.if defined(WITH_SDL)
 USE_SDL+=	sdl
 PLIST_FILES+=	bin/ffplay
 .if !defined(NOPORTDOCS)
@@ -290,7 +310,7 @@ CONFIGURE_ARGS+=	--disable-ffplay
 .endif
 
 # speex
-.ifdef(WITH_SPEEX)
+.if defined(WITH_SPEEX)
 LIB_DEPENDS+=	speex.1:${PORTSDIR}/audio/speex
 CONFIGURE_ARGS+=	--enable-libspeex
 .else
@@ -298,7 +318,7 @@ CONFIGURE_ARGS+=	--disable-libspeex
 .endif
 
 # theora
-.ifndef(WITHOUT_THEORA)
+.if !defined(WITHOUT_THEORA)
 LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
 CONFIGURE_ARGS+=	--enable-libtheora
 .else
@@ -306,7 +326,7 @@ CONFIGURE_ARGS+=	--disable-libtheora
 .endif
 
 # vaapi
-.ifndef(WITHOUT_VAAPI)
+.if !defined(WITHOUT_VAAPI)
 LIB_DEPENDS+=	va.1:${PORTSDIR}/multimedia/libva
 CONFIGURE_ARGS+=	--enable-vaapi
 .else
@@ -314,15 +334,32 @@ CONFIGURE_ARGS+=	--disable-vaapi
 .endif
 
 # vdpau
-.ifndef(WITHOUT_VDPAU)
-LIB_DEPENDS+=   vdpau.1:${PORTSDIR}/multimedia/libvdpau
+.if !defined(WITHOUT_VDPAU)
+BUILD_DEPENDS+=	${LOCALBASE}/include/vdpau/vdpau.h:${PORTSDIR}/multimedia/libvdpau
 CONFIGURE_ARGS+=	--enable-vdpau
 .else
 CONFIGURE_ARGS+=	--disable-vdpau
 .endif
 
+# vo-aacenc
+.if defined(WITH_VO_AACENC)
+LIB_DEPENDS+=	vo-aacenc.0:${PORTSDIR}/audio/vo-aacenc
+CONFIGURE_ARGS+=	--enable-libvo-aacenc
+.else
+CONFIGURE_ARGS+=	--disable-libvo-aacenc
+.endif
+
+# vo-amrwbenc
+.if defined(WITH_VO_AMRWBENC)
+FFMPEG_LICENSE_GPL3=	yes
+LIB_DEPENDS+=	vo-amrwbenc.0:${PORTSDIR}/audio/vo-amrwbenc
+CONFIGURE_ARGS+=	--enable-libvo-amrwbenc
+.else
+CONFIGURE_ARGS+=	--disable-libvo-amrwbenc
+.endif
+
 # vorbis
-.ifndef(WITHOUT_VORBIS)
+.if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbisenc.2:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=	--enable-libvorbis
 FFMPEG_CFLAGS+=		-I${LOCALBASE}/include/vorbis
@@ -331,7 +368,7 @@ CONFIGURE_ARGS+=	--disable-libvorbis
 .endif
 
 # vp8
-.ifndef(WITHOUT_VP8)
+.if !defined(WITHOUT_VP8)
 LIB_DEPENDS+=	vpx.0:${PORTSDIR}/multimedia/libvpx
 CONFIGURE_ARGS+=	--enable-libvpx
 .else
@@ -339,7 +376,7 @@ CONFIGURE_ARGS+=	--disable-libvpx
 .endif
 
 # x264
-.ifdef(WITH_X264)
+.if !defined(WITHOUT_X264)
 LIB_DEPENDS+=	x264.115:${PORTSDIR}/multimedia/x264
 CONFIGURE_ARGS+=	--enable-libx264
 .else
@@ -347,11 +384,24 @@ CONFIGURE_ARGS+=	--disable-libx264
 .endif
 
 # xvid
-.ifndef(WITHOUT_XVID)
+.if !defined(WITHOUT_XVID)
 LIB_DEPENDS+=	xvidcore.4:${PORTSDIR}/multimedia/xvid
 CONFIGURE_ARGS+=	--enable-libxvid
 .else
 CONFIGURE_ARGS+=	--disable-libxvid
+.endif
+
+# License knobs
+LICENSE_COMB=	multi
+.if defined(FFMPEG_LICENSE_GPL3)
+LICENSE=		GPLv3 LGPL3
+LICENSE_FILE_GPLv3=	${WRKSRC}/COPYING.GPLv3
+LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LGPLv3
+CONFIGURE_ARGS+=	--enable-version3
+.else
+LICENSE=		GPLv2 LGPL21
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING.GPLv2
+LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LGPLv2.1
 .endif
 
 pre-configure:
@@ -373,7 +423,7 @@ post-patch:
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|-ldl||; s|$$(LIBMAJOR)|${SHLIB_VER}|g;' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.ifdef(WITH_SDL)
+.if defined(WITH_SDL)
 	@${REINPLACE_CMD} -E \
 		-e 's|sdl-config|${SDL_CONFIG}|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
@@ -383,20 +433,20 @@ post-patch:
 .endif
 
 post-configure:
-.ifdef(WITHOUT_THEORA)
+.if defined(WITHOUT_THEORA)
 	@${REINPLACE_CMD} -E \
 		-e 's|^(CONFIG_LIBTHEORA).*$$|\1=no|' \
 		${WRKSRC}/config.mak
 .endif
 
 post-install:
-.ifndef(WITHOUT_FFSERVER)
+.if !defined(WITHOUT_FFSERVER)
 	${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf ${PREFIX}/etc/ffserver.conf-dist
 	if [ ! -f ${PREFIX}/etc/ffserver.conf ]; then \
 		${INSTALL_DATA} ${WRKSRC}/doc/ffserver.conf ${PREFIX}/etc; \
 	fi
 .endif
-.ifndef(NOPORTDOCS)
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 .for FILE in ${DOC_FILES}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
