@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight film collection manager
 
 RUN_DEPENDS=	py*-pysqlite>=2.0:${PORTSDIR}/databases/py-pysqlite23 \
-		py*-sqlalchemy>=0.5:${PORTSDIR}/databases/py-sqlalchemy06 \
+		py*-sqlalchemy06>=0.5:${PORTSDIR}/databases/py-sqlalchemy06 \
 		py*-imaging>=0:${PORTSDIR}/graphics/py-imaging \
 		py*-reportlab>=1.19:${PORTSDIR}/print/py-reportlab \
 		py*-chardet>=0:${PORTSDIR}/textproc/py-chardet \
