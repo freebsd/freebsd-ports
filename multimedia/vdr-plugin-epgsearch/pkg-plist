@@ -1,7 +1,7 @@
-lib/vdr/libvdr-epgsearch.so.1.7.18
-lib/vdr/libvdr-epgsearchonly.so.1.7.18
-lib/vdr/libvdr-conflictcheckonly.so.1.7.18
-lib/vdr/libvdr-quickepgsearch.so.1.7.18
+lib/vdr/libvdr-epgsearch.so.1.7.19
+lib/vdr/libvdr-epgsearchonly.so.1.7.19
+lib/vdr/libvdr-conflictcheckonly.so.1.7.19
+lib/vdr/libvdr-quickepgsearch.so.1.7.19
 %%NLS%%share/locale/ca_ES/LC_MESSAGES/vdr-epgsearch.mo
 %%NLS%%share/locale/cs_CZ/LC_MESSAGES/vdr-epgsearch.mo
 %%NLS%%share/locale/da_DK/LC_MESSAGES/vdr-epgsearch.mo

@@ -7,7 +7,7 @@
 
 PORTNAME=	vdr-plugin-streamdev
 PORTVERSION=	0.5.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	multimedia
 MASTER_SITES=	http://projects.vdr-developer.org/attachments/download/497/:release \
 		LOCAL:snapshot

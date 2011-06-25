@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vdr
-PORTVERSION=	1.7.18
-PORTREVISION=	3
+PORTVERSION=	1.7.19
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.tvdr.de/vdr/Developer/
 
@@ -32,8 +31,10 @@ MAKE_JOBS_SAFE=	yes
 MAN1=		vdr.1
 MAN5=		vdr.5
 MANCOMPRESSED=	yes
-MAKE_JOBS_SAFE=	yes
 CONFDIR=	$(ETCDIR)
+USE_CSTD=	gnu89
+MAKE_ARGS+=	CC=${CC}
+MAKE_ARGS+=	CXX=${CXX}
 MAKE_ARGS+=	DVBDIR=${LOCALBASE}/include
 MAKE_ARGS+=	VDR_USER=${VDR_USER}
 MAKE_ARGS+=	CONFDIR=$(CONFDIR)
@@ -72,9 +73,18 @@ ALL_TARGET=	vdr plugins
 .endif
 
 post-patch:
+# avoid a bug found post-release by reverting parts of the 1.7.19 update
+# thread:
+#	http://thread.gmane.org/gmane.linux.vdr/44724/focus=44729
+	@${PATCH} -d ${WRKSRC} --quiet -p1 -R <${FILESDIR}/vdr-1.7.18-1.7.19-tspacketbug.diff
+# clang doesn't know -MG:
+	@${REINPLACE_CMD} '/^MAKEDEP.*-MM/s/-MG[[:space:]]*$$/# -MG/' \
+		${WRKSRC}/Makefile ${WRKSRC}/libsi/Makefile \
+		${WRKSRC}/PLUGINS/src/*/Makefile
 .if defined(WITH_TTXPATCH)
 	@${PATCH} -d ${WRKSRC} --quiet -p1 <${FILESDIR}/vdr-1.7.15-ttxtsubs.patch-1
 	@${PATCH} -d ${WRKSRC} --quiet -p1 <${FILESDIR}/vdr-1.7.15-ttxtsubs.patch-2
+	@${PATCH} -d ${WRKSRC} --quiet -p1 <${FILESDIR}/vdr-1.7.19-ttxtsubs.patch-3
 .endif
 	@${SED} 's|^\(VIDEODIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*|\1\2${VIDEODIR}|' \
 		${WRKSRC}/Make.config.template >${WRKSRC}/Make.config

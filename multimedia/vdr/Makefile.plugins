@@ -1,6 +1,6 @@
 # this is to be included by vdr plugin ports
 #
-# $FreeBSD: /tmp/pcvs/ports/multimedia/vdr/Makefile.plugins,v 1.1 2011-03-26 19:13:49 nox Exp $
+# $FreeBSD: /tmp/pcvs/ports/multimedia/vdr/Makefile.plugins,v 1.2 2011-06-25 19:02:04 nox Exp $
 
 BUILD_DEPENDS+=  ${LOCALBASE}/include/linux/dvb/frontend.h:${PORTSDIR}/multimedia/v4l_compat
 
@@ -13,6 +13,9 @@ USE_GMAKE=	yes
 USE_GETTEXT=	yes
 VDRDIR=		${LOCALBASE}/include/vdr
 VDRINCDIR=	${LOCALBASE}/include
+USE_CSTD?=	gnu89
+MAKE_ARGS+=	CC=${CC}
+MAKE_ARGS+=	CXX=${CXX}
 MAKE_ARGS+=	DVBDIR=${LOCALBASE}/include
 MAKE_ARGS+=	VDRDIR=${VDRDIR}
 MAKE_ARGS+=	VDR_USER=${VDR_USER}
@@ -41,7 +44,8 @@ post-patch-plugin:
 		's/^\(LOCALEDIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*/\1\2..\/locale/;'\\
 		's/^\(VDRDIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*/\1\2'"${VDRDIR:S-/-\\\\/-g}/;"\\
 		's/^\(VDRINCDIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*/\1\2'"${VDRINCDIR:S-/-\\\\/-g}/;"\\
-		's/^\(BINDIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*/\1\2'"${PREFIX:S-/-\\\\/-g}\/bin/;" \
+		's/^\(BINDIR[[:space:]]*\)[?]*\(=[[:space:]]*\).*/\1\2'"${PREFIX:S-/-\\\\/-g}\/bin/;"\\
+		'/^MAKEDEP.*-MM/s/-MG[[:space:]]*$$/# -MG/' \
 		${WRKSRC}/Makefile ${VDR_PLUGIN_MAKEFILES}
 
 post-install-pluginlocales:

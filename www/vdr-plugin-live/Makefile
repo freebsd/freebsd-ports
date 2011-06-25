@@ -7,7 +7,7 @@
 
 PORTNAME=	vdr-plugin-live
 PORTVERSION=	0.2.0s20110303
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www multimedia
 MASTER_SITES=	http://live.vdr-developer.org/downloads/:release \
 		LOCAL/nox/:snapshot
@@ -25,6 +25,7 @@ PATCH_STRIP=	-p1
 PORTDOCS=	COPYING README
 MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/vdr-plugin-${PLUGIN}
+VDR_PLUGIN_MAKEFILES=	${WRKSRC}/httpd/Makefile ${WRKSRC}/pages/Makefile
 MAKE_ARGS+=	INCLUDES="-I$(LOCALBASE)/include -I${WRKSRC}"
 
 .include	"${.CURDIR}/../../multimedia/vdr/Makefile.plugins"

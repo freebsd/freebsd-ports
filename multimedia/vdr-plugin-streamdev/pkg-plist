@@ -1,5 +1,5 @@
-lib/vdr/libvdr-streamdev-client.so.1.7.18
-lib/vdr/libvdr-streamdev-server.so.1.7.18
+lib/vdr/libvdr-streamdev-client.so.1.7.19
+lib/vdr/libvdr-streamdev-server.so.1.7.19
 @unexec if cmp -s %D/etc/vdr/plugins/streamdev-server/externremux.sh.sample %D/etc/vdr/plugins/streamdev-server/externremux.sh; then rm -f %D/etc/vdr/plugins/streamdev-server/externremux.sh; fi
 etc/vdr/plugins/streamdev-server/externremux.sh.sample
 @exec if [ ! -f %D/etc/vdr/plugins/streamdev-server/externremux.sh ] ; then cp -p %D/%F %B/externremux.sh; fi

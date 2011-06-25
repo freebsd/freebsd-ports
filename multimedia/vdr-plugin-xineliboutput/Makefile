@@ -41,6 +41,9 @@ MAKE_ARGS+=	CONFIGURE_OPTS="${CONFIGURE_OPTS}"
 .include <bsd.port.pre.mk>
 
 post-patch: post-patch-plugin
+# clang doesn't know -MG
+	${TOUCH} -t 200001010000 ${WRKSRC}/nosignal_720x576.c \
+		${WRKSRC}/black_720x576.c ${WRKSRC}/vdrlogo_720x576.c
 
 post-install: post-install-pluginlocales
 	@${INSTALL} -o ${VDR_USER} -g ${VDR_GROUP} -d ${PREFIX}/etc/vdr/plugins/${PLUGIN}
