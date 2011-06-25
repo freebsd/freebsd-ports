@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	snmp4
-PORTVERSION=	4.1.10a
+PORTVERSION=	4.1.16a
 CATEGORIES=	net-mgmt python
-MASTER_SITES=	SF/pysnmp/pysnmp-devel/${PORTVERSION}
+MASTER_SITES=	CHEESESHOP \
+		SF/pysnmp/pysnmp-devel/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pysnmp-${PORTVERSION}
 
@@ -20,8 +21,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1>=0:${PORTSDIR}/devel/py-asn1 \
 
 CONFLICTS=	py??-snmp-[0-9]* py??-snmp2-[0-9]*
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	pysnmp
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
@@ -29,7 +33,6 @@ DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
 PORTDOCS=	*
 
 BASEDOCS=	CHANGES \
-		LICENSE \
 		README \
 		TODO
 
@@ -41,9 +44,11 @@ post-install:
 .endfor
 	@${CP} -Rv ${WRKSRC}/docs/* ${DOCSDIR}
 .endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 .for d in examples tools
 	@${CP} -Rv ${WRKSRC}/${d}/* ${EXAMPLESDIR}
 .endfor
+.endif
 
 .include <bsd.port.mk>
