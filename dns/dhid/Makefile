@@ -24,6 +24,9 @@ USE_RC_SUBR=	dhid
 PORTDOCS=	AUTHORS CONTRIBUTORS COPYRIGHT INSTALL README WHATSNEW
 PLIST_FILES=	sbin/dhid bin/genkeys etc/dhid.conf.sample
 
+DEPRECATED=	Unmaintained, distfile has changed with no explanation
+EXPIRATION_DATE=2011-07-25
+
 DHID_USER=	dhis
 DHID_GROUP=	dhis
 DHID_PID_DIR=	/var/run/dhis
