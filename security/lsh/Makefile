@@ -18,6 +18,7 @@ COMMENT=	A secure (encrypted) remote shell compatible with ssh 2.0
 LIB_DEPENDS=	oop:${PORTSDIR}/devel/liboop \
 		gmp.10:${PORTSDIR}/math/gmp
 
+USE_CSTD=	c89
 GNU_CONFIGURE=	yes
 USE_XORG=	xau
 USE_GMAKE=	yes
