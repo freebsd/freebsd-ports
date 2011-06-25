@@ -1501,6 +1501,7 @@
     SUBDIR += py-django-devel
     SUBDIR += py-django-evolution
     SUBDIR += py-django-extensions
+    SUBDIR += py-django-haystack
     SUBDIR += py-django-keyedcache
     SUBDIR += py-django-livesettings
     SUBDIR += py-django-mptt
