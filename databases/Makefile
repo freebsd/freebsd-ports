@@ -684,6 +684,7 @@
     SUBDIR += py-sqlite3
     SUBDIR += py-sqlkit
     SUBDIR += py-sqlobject
+    SUBDIR += py-sqlparse
     SUBDIR += py-sqlrelay
     SUBDIR += py-swift
     SUBDIR += py-sybase
