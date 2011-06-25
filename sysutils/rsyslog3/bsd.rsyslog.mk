@@ -23,6 +23,9 @@ PLIST=	""
 DESCR?=		${.CURDIR}/../rsyslog3/pkg-descr
 DISTINFO_FILE?=	${.CURDIR}/../rsyslog3/distinfo
 
+DEPRECATED=	unsupported upstream
+EXPIRATION_DATE=	2011-07-25
+
 do-install:
 	@${INSTALL} -d ${PREFIX}/lib/rsyslog/
 .for _T in ${MTYPES}
