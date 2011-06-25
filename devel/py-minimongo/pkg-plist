@@ -1,0 +1,37 @@
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/collection.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/collection.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/collection.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/config.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/config.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/config.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/index.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/index.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/index.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/model.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/model.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/model.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/options.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/options.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/options.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/tests/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/tests/test_model.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/tests/test_model.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/tests/test_model.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/tests/test_utils.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/tests/test_utils.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/tests/test_utils.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/minimongo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
