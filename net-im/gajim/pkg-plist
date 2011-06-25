@@ -1292,8 +1292,6 @@ share/icons/hicolor/scalable/apps/gajim.svg
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/gajim.mo
 %%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/kk
-%%NLS%%@dirrmtry share/locale/gl/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/gl
 %%NLS%%@dirrmtry share/locale/be@latin/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/be@latin
 @dirrmtry share/applications
