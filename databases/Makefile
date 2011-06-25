@@ -773,6 +773,7 @@
     SUBDIR += rubygem-do_sqlite3
     SUBDIR += rubygem-jdbc-mysql
     SUBDIR += rubygem-kirbybase
+    SUBDIR += rubygem-memcache
     SUBDIR += rubygem-memcache-client
     SUBDIR += rubygem-pg
     SUBDIR += rubygem-postgres
