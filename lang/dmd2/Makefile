@@ -15,7 +15,7 @@ DISTNAME=	dmd.${PORTVERSION}
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	D 2.0 compiler, not officially validated for FreeBSD
 
-ONLY_FOR_ARCHS=	i386
+# ONLY_FOR_ARCHS=	i386
 USE_ZIP=	yes
 USE_GMAKE=	yes
 MAKEFILE=	freebsd.mak
