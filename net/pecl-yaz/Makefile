@@ -7,7 +7,7 @@
 
 PORTNAME=	yaz
 PORTVERSION=	1.0.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -27,7 +27,7 @@ CONFIGURE_ARGS=	--with-yaz=${LOCALBASE}
 .include <bsd.port.pre.mk>
 
 pre-configure:
-	@if [ `${PKG_INFO} 'yaz>=4.1.4' > /dev/null 2>&1` ]; then \
+	@if [ `${PKG_INFO} 'yaz>=4.1.6' > /dev/null 2>&1` ]; then \
 		${REINPLACE_CMD} -e 's|YAZVERSION|YAZ_VERSION|g' \
 				${WRKSRC}/configure; fi
 
