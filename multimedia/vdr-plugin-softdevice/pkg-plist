@@ -1,7 +1,7 @@
 bin/ShmClient
-lib/vdr/libvdr-softdevice.so.1.7.18
-lib/vdr/libsoftdevice-xv.so.1.7.18
-lib/vdr/libsoftdevice-shm.so.1.7.18
+lib/vdr/libvdr-softdevice.so.1.7.19
+lib/vdr/libsoftdevice-xv.so.1.7.19
+lib/vdr/libsoftdevice-shm.so.1.7.19
 %%NLS%%share/locale/ca_ES/LC_MESSAGES/vdr-softdevice.mo
 %%NLS%%share/locale/cs_CZ/LC_MESSAGES/vdr-softdevice.mo
 %%NLS%%share/locale/da_DK/LC_MESSAGES/vdr-softdevice.mo

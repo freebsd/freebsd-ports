@@ -1,4 +1,4 @@
-lib/vdr/libvdr-iptv.so.1.7.18
+lib/vdr/libvdr-iptv.so.1.7.19
 @unexec if cmp -s %D/etc/vdr/plugins/iptv/image.sh.sample %D/etc/vdr/plugins/iptv/image.sh; then rm -f %D/etc/vdr/plugins/iptv/image.sh; fi
 etc/vdr/plugins/iptv/image.sh.sample
 @exec if [ ! -f %D/etc/vdr/plugins/iptv/image.sh ] ; then cp -p %D/%F %B/image.sh; fi

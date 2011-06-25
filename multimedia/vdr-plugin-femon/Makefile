@@ -7,6 +7,7 @@
 
 PORTNAME=	vdr-plugin-femon
 PORTVERSION=	1.7.10
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.saunalahti.fi/~rahrenbe/vdr/femon/files/
 DISTNAME=	${PORTNAME:S/-plugin-/-/}-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}

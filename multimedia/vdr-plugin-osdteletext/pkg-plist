@@ -1,4 +1,4 @@
-lib/vdr/libvdr-osdteletext.so.1.7.18
+lib/vdr/libvdr-osdteletext.so.1.7.19
 @exec /usr/bin/install -o %%VDR_USER%% -g %%VDR_GROUP%% -d /var/cache/vdr/vtx
 %%NLS%%share/locale/ca_ES/LC_MESSAGES/vdr-osdteletext.mo
 %%NLS%%share/locale/de_DE/LC_MESSAGES/vdr-osdteletext.mo

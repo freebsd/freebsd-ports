@@ -1,4 +1,4 @@
-lib/vdr/libvdr-vnsiserver.so.1.7.18
+lib/vdr/libvdr-vnsiserver.so.1.7.19
 @unexec if cmp -s %D/etc/vdr/plugins/vnsiserver/allowed_hosts.conf.sample %D/etc/vdr/plugins/vnsiserver/allowed_hosts.conf; then rm -f %D/etc/vdr/plugins/vnsiserver/allowed_hosts.conf; fi
 etc/vdr/plugins/vnsiserver/allowed_hosts.conf.sample
 @exec if [ ! -f %D/etc/vdr/plugins/vnsiserver/allowed_hosts.conf ] ; then cp -p %D/%F %B/allowed_hosts.conf; fi

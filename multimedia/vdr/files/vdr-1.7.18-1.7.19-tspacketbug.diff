@@ -1,0 +1,356 @@
+diff -ruN vdr-1.7.18/recorder.c vdr-1.7.19/recorder.c
+--- vdr-1.7.18/recorder.c	2010-12-27 12:35:46.000000000 +0100
++++ vdr-1.7.19/recorder.c	2011-06-12 16:16:45.000000000 +0200
+@@ -4,7 +4,7 @@
+  * See the main source file 'vdr.c' for copyright information and
+  * how to reach the author.
+  *
+- * $Id: recorder.c 2.9 2010/12/27 11:35:46 kls Exp $
++ * $Id: recorder.c 2.11 2011/06/12 14:16:45 kls Exp $
+  */
+ 
+ #include "recorder.h"
+@@ -31,7 +31,7 @@
+ 
+   SpinUpDisk(FileName);
+ 
+-  ringBuffer = new cRingBufferLinear(RECORDERBUFSIZE, MIN_TS_PACKETS_FOR_FRAME_DETECTOR * TS_SIZE, true, "Recorder");
++  ringBuffer = new cRingBufferLinear(RECORDERBUFSIZE, TS_SIZE, true, "Recorder");
+   ringBuffer->SetTimeouts(0, 100);
+ 
+   int Pid = Channel->Vpid();
+@@ -119,6 +119,8 @@
+   time_t t = time(NULL);
+   bool InfoWritten = false;
+   bool FirstIframeSeen = false;
++  int FileNumber = 0;
++  off_t FrameOffset = -1;
+   while (Running()) {
+         int r;
+         uchar *b = ringBuffer->Get(r);
+@@ -131,7 +133,7 @@
+                  if (!InfoWritten) {
+                     cRecordingInfo RecordingInfo(recordingName);
+                     if (RecordingInfo.Read()) {
+-                       if (frameDetector->FramesPerSecond() > 0 && !DoubleEqual(RecordingInfo.FramesPerSecond(), frameDetector->FramesPerSecond())) {
++                       if (frameDetector->FramesPerSecond() > 0 && DoubleEqual(RecordingInfo.FramesPerSecond(), DEFAULTFRAMESPERSECOND) && !DoubleEqual(RecordingInfo.FramesPerSecond(), frameDetector->FramesPerSecond())) {
+                           RecordingInfo.SetFramesPerSecond(frameDetector->FramesPerSecond());
+                           RecordingInfo.Write();
+                           Recordings.UpdateByName(recordingName);
+@@ -139,12 +141,16 @@
+                        }
+                     InfoWritten = true;
+                     }
++                 if (frameDetector->NewPayload()) {
++                    FileNumber = fileName->Number();
++                    FrameOffset = fileSize;
++                    }
+                  if (FirstIframeSeen || frameDetector->IndependentFrame()) {
+                     FirstIframeSeen = true; // start recording with the first I-frame
+                     if (!NextFile())
+                        break;
+                     if (index && frameDetector->NewFrame())
+-                       index->Write(frameDetector->IndependentFrame(), fileName->Number(), fileSize);
++                       index->Write(frameDetector->IndependentFrame(), FileNumber, FrameOffset);
+                     if (frameDetector->IndependentFrame()) {
+                        recordFile->Write(patPmtGenerator.GetPat(), TS_SIZE);
+                        fileSize += TS_SIZE;
+diff -ruN vdr-1.7.18/recording.c vdr-1.7.19/recording.c
+--- vdr-1.7.18/recording.c	2011-04-17 15:53:11.000000000 +0200
++++ vdr-1.7.19/recording.c	2011-06-12 15:04:28.000000000 +0200
+@@ -4,7 +4,7 @@
+  * See the main source file 'vdr.c' for copyright information and
+  * how to reach the author.
+  *
+- * $Id: recording.c 2.30 2011/04/17 13:53:11 kls Exp $
++ * $Id: recording.c 2.31 2011/06/12 13:04:28 kls Exp $
+  */
+ 
+ #include "recording.h"
+@@ -1403,11 +1403,12 @@
+   bool Rewind = false;
+   cFileName FileName(recordingName, false);
+   cUnbufferedFile *ReplayFile = FileName.Open();
+-  cRingBufferLinear Buffer(IFG_BUFFER_SIZE, MIN_TS_PACKETS_FOR_FRAME_DETECTOR * TS_SIZE);
++  cRingBufferLinear Buffer(IFG_BUFFER_SIZE, TS_SIZE);
+   cPatPmtParser PatPmtParser;
+   cFrameDetector FrameDetector;
+   cIndexFile IndexFile(recordingName, true);
+   int BufferChunks = KILOBYTE(1); // no need to read a lot at the beginning when parsing PAT/PMT
++  int FileNumber = 0;
+   off_t FileSize = 0;
+   off_t FrameOffset = -1;
+   Skins.QueueMessage(mtInfo, tr("Regenerating index file"));
+@@ -1424,12 +1425,18 @@
+         if (Data) {
+            if (FrameDetector.Synced()) {
+               // Step 3 - generate the index:
+-              if (TsPid(Data) == PATPID)
++              if (FrameOffset < 0 && TsPid(Data) == PATPID) {
++                 FileNumber = FileName.Number();
+                  FrameOffset = FileSize; // the PAT/PMT is at the beginning of an I-frame
++                 }
+               int Processed = FrameDetector.Analyze(Data, Length);
+               if (Processed > 0) {
++                 if (FrameDetector.NewPayload() && FrameOffset < 0) {
++                    FileNumber = FileName.Number();
++                    FrameOffset = FileSize;
++                    }
+                  if (FrameDetector.NewFrame()) {
+-                    IndexFile.Write(FrameDetector.IndependentFrame(), FileName.Number(), FrameOffset >= 0 ? FrameOffset : FileSize);
++                    IndexFile.Write(FrameDetector.IndependentFrame(), FileNumber, FrameOffset);
+                     FrameOffset = -1;
+                     }
+                  FileSize += Processed;
+diff -ruN vdr-1.7.18/remux.c vdr-1.7.19/remux.c
+--- vdr-1.7.18/remux.c	2011-03-20 11:21:14.000000000 +0100
++++ vdr-1.7.19/remux.c	2011-06-12 16:24:09.000000000 +0200
+@@ -4,7 +4,7 @@
+  * See the main source file 'vdr.c' for copyright information and
+  * how to reach the author.
+  *
+- * $Id: remux.c 2.53 2011/03/20 10:21:14 kls Exp $
++ * $Id: remux.c 2.57 2011/06/12 14:24:09 kls Exp $
+  */
+ 
+ #include "remux.h"
+@@ -12,6 +12,7 @@
+ #include "libsi/si.h"
+ #include "libsi/section.h"
+ #include "libsi/descriptor.h"
++#include "recording.h"
+ #include "shutdown.h"
+ #include "tools.h"
+ 
+@@ -781,7 +782,8 @@
+ {
+   SetPid(Pid, Type);
+   synced = false;
+-  newFrame = independentFrame = false;
++  newPayload = newFrame = independentFrame = false;
++  frameTypeOffset = -1;
+   numPtsValues = 0;
+   numFrames = 0;
+   numIFrames = 0;
+@@ -808,7 +810,8 @@
+ 
+ void cFrameDetector::Reset(void)
+ {
+-  newFrame = independentFrame = false;
++  newPayload = newFrame = independentFrame = false;
++  frameTypeOffset = -1;
+   payloadUnitOfFrame = 0;
+   scanning = false;
+   scanner = EMPTY_SCANNER;
+@@ -816,9 +819,8 @@
+ 
+ int cFrameDetector::Analyze(const uchar *Data, int Length)
+ {
+-  int SeenPayloadStart = false;
+   int Processed = 0;
+-  newFrame = independentFrame = false;
++  newPayload = newFrame = independentFrame = false;
+   while (Length >= TS_SIZE) {
+         if (Data[0] != TS_SYNC_BYTE) {
+            int Skipped = 1;
+@@ -831,16 +833,13 @@
+            int Pid = TsPid(Data);
+            if (Pid == pid) {
+               if (TsPayloadStart(Data)) {
+-                 SeenPayloadStart = true;
+                  if (synced && Processed)
+-                    return Processed;
+-                 if (Length < MIN_TS_PACKETS_FOR_FRAME_DETECTOR * TS_SIZE)
+-                    return Processed; // need more data, in case the frame type is not stored in the first TS packet
++                    return Processed; // flush everything before this new payload
+                  if (framesPerSecond <= 0.0) {
+                     // frame rate unknown, so collect a sequence of PTS values:
+                     if (numPtsValues < MaxPtsValues && numIFrames < 2) { // collect a sequence containing at least two I-frames
+                        const uchar *Pes = Data + TsPayloadOffset(Data);
+-                       if (PesHasPts(Pes)) {
++                       if (numIFrames && PesHasPts(Pes)) {
+                           ptsValues[numPtsValues] = PesGetPts(Pes);
+                           // check for rollover:
+                           if (numPtsValues && ptsValues[numPtsValues - 1] > 0xF0000000 && ptsValues[numPtsValues] < 0x10000000) {
+@@ -885,8 +884,8 @@
+                              else
+                                 framesPerSecond = 60.0 / 1.001;
+                           else {
+-                             framesPerSecond = 25.0;
+-                             dsyslog("unknown frame delta (%d), assuming 25 fps", Delta);
++                             framesPerSecond = DEFAULTFRAMESPERSECOND;
++                             dsyslog("unknown frame delta (%d), assuming %5.2f fps", Delta, DEFAULTFRAMESPERSECOND);
+                              }
+                           }
+                        else // audio
+@@ -900,6 +899,10 @@
+               if (scanning) {
+                  int PayloadOffset = TsPayloadOffset(Data);
+                  if (TsPayloadStart(Data)) {
++                    if (synced && Processed)
++                       return Processed; // flush everything before this new payload
++                    newPayload = true;
++                    scanner = EMPTY_SCANNER;
+                     PayloadOffset += PesPayloadOffset(Data + PayloadOffset);
+                     if (!framesPerPayloadUnit)
+                        framesPerPayloadUnit = framesInPayloadUnit;
+@@ -907,17 +910,30 @@
+                        dbgframes("/");
+                     }
+                  for (int i = PayloadOffset; scanning && i < TS_SIZE; i++) {
+-                     scanner <<= 8;
+-                     scanner |= Data[i];
++                     if (frameTypeOffset < 0) {
++                        scanner <<= 8;
++                        scanner |= Data[i];
++                        }
++                     else
++                        frameTypeOffset += PayloadOffset;
+                      switch (type) {
+                        case 0x01: // MPEG 1 video
+                        case 0x02: // MPEG 2 video
+                             if (scanner == 0x00000100) { // Picture Start Code
++                               if (frameTypeOffset < 0) {
++                                  frameTypeOffset = i + 2;
++                                  if (frameTypeOffset >= TS_SIZE) { // the byte to check is in the next TS packet
++                                     frameTypeOffset -= TS_SIZE;
++                                     if (!synced)
++                                        dbgframes("%d>", frameTypeOffset);
++                                     break;
++                                     }
++                                  }
+                                scanner = EMPTY_SCANNER;
+-                               if (synced && !SeenPayloadStart && Processed)
+-                                  return Processed; // flush everything before this new frame
+                                newFrame = true;
+-                               independentFrame = ((Data[i + 2] >> 3) & 0x07) == 1; // I-Frame
++                               uchar FrameType = (Data[frameTypeOffset] >> 3) & 0x07;
++                               frameTypeOffset = -1;
++                               independentFrame = FrameType == 1; // I-Frame
+                                if (synced) {
+                                   if (framesPerPayloadUnit <= 1)
+                                      scanning = false;
+@@ -928,7 +944,7 @@
+                                      numIFrames++;
+                                   if (numIFrames == 1)
+                                      numFrames++;
+-                                  dbgframes("%d ", (Data[i + 2] >> 3) & 0x07);
++                                  dbgframes("%u ", FrameType);
+                                   }
+                                if (synced)
+                                   return Processed + TS_SIZE; // flag this new frame
+@@ -936,11 +952,20 @@
+                             break;
+                        case 0x1B: // MPEG 4 video
+                             if (scanner == 0x00000109) { // Access Unit Delimiter
++                               if (frameTypeOffset < 0) {
++                                  frameTypeOffset = i + 1;
++                                  if (frameTypeOffset >= TS_SIZE) { // the byte to check is in the next TS packet
++                                     frameTypeOffset -= TS_SIZE;
++                                     if (!synced)
++                                        dbgframes("%d>", frameTypeOffset);
++                                     break;
++                                     }
++                                  }
+                                scanner = EMPTY_SCANNER;
+-                               if (synced && !SeenPayloadStart && Processed)
+-                                  return Processed; // flush everything before this new frame
+                                newFrame = true;
+-                               independentFrame = Data[i + 1] == 0x10;
++                               uchar FrameType = Data[frameTypeOffset];
++                               frameTypeOffset = -1;
++                               independentFrame = FrameType == 0x10;
+                                if (synced) {
+                                   if (framesPerPayloadUnit < 0) {
+                                      payloadUnitOfFrame = (payloadUnitOfFrame + 1) % -framesPerPayloadUnit;
+@@ -958,7 +983,7 @@
+                                      numIFrames++;
+                                   if (numIFrames == 1)
+                                      numFrames++;
+-                                  dbgframes("%02X ", Data[i + 1]);
++                                  dbgframes("%02X ", FrameType);
+                                   }
+                                if (synced)
+                                   return Processed + TS_SIZE; // flag this new frame
+diff -ruN vdr-1.7.18/remux.h vdr-1.7.19/remux.h
+--- vdr-1.7.18/remux.h	2011-03-19 17:52:46.000000000 +0100
++++ vdr-1.7.19/remux.h	2011-06-12 14:49:17.000000000 +0200
+@@ -4,7 +4,7 @@
+  * See the main source file 'vdr.c' for copyright information and
+  * how to reach the author.
+  *
+- * $Id: remux.h 2.28 2011/03/19 16:52:46 kls Exp $
++ * $Id: remux.h 2.30 2011/06/12 12:49:17 kls Exp $
+  */
+ 
+ #ifndef __REMUX_H
+@@ -84,15 +84,18 @@
+ 
+ inline int TsPayloadOffset(const uchar *p)
+ {
+-  int o = (p[3] & TS_ADAPT_FIELD_EXISTS) ? p[4] + 5 : 4;
++  int o = TsHasAdaptationField(p) ? p[4] + 5 : 4;
+   return o <= TS_SIZE ? o : TS_SIZE;
+ }
+ 
+ inline int TsGetPayload(const uchar **p)
+ {
+-  int o = TsPayloadOffset(*p);
+-  *p += o;
+-  return TS_SIZE - o;
++  if (TsHasPayload(*p)) {
++     int o = TsPayloadOffset(*p);
++     *p += o;
++     return TS_SIZE - o;
++     }
++  return 0;
+ }
+ 
+ inline int TsContinuityCounter(const uchar *p)
+@@ -294,7 +297,7 @@
+   ~cTsToPes();
+   void PutTs(const uchar *Data, int Length);
+        ///< Puts the payload data of the single TS packet at Data into the converter.
+-       ///< Length is always 188.
++       ///< Length is always TS_SIZE.
+        ///< If the given TS packet starts a new PES payload packet, the converter
+        ///< will be automatically reset. Any packets before the first one that starts
+        ///< a new PES payload packet will be ignored.
+@@ -333,16 +336,16 @@
+ 
+ // Frame detector:
+ 
+-#define MIN_TS_PACKETS_FOR_FRAME_DETECTOR 2
+-
+ class cFrameDetector {
+ private:
+   enum { MaxPtsValues = 150 };
+   int pid;
+   int type;
+   bool synced;
++  bool newPayload;
+   bool newFrame;
+   bool independentFrame;
++  int frameTypeOffset;
+   uint32_t ptsValues[MaxPtsValues]; // 32 bit is enough - we only need the delta
+   int numPtsValues;
+   int numFrames;
+@@ -368,12 +371,17 @@
+       ///< the frame detector for actual work.
+   int Analyze(const uchar *Data, int Length);
+       ///< Analyzes the TS packets pointed to by Data. Length is the number of
+-      ///< bytes Data points to, and must be a multiple of 188.
++      ///< bytes Data points to, and must be a multiple of TS_SIZE.
+       ///< Returns the number of bytes that have been analyzed.
+       ///< If the return value is 0, the data was not sufficient for analyzing and
+       ///< Analyze() needs to be called again with more actual data.
+   bool Synced(void) { return synced; }
+       ///< Returns true if the frame detector has synced on the data stream.
++  bool NewPayload(void) { return newPayload; }
++      ///< Returns true if the data given to the last call to Analyze() started a
++      ///< new payload. The caller should remember the current file offset in
++      ///< order to be able to generate an index entry later, when NewFrame()
++      ///< returns true.
+   bool NewFrame(void) { return newFrame; }
+       ///< Returns true if the data given to the last call to Analyze() started a
+       ///< new frame.
