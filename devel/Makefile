@@ -2818,6 +2818,7 @@
     SUBDIR += py-apipkg
     SUBDIR += py-argparse
     SUBDIR += py-asn1
+    SUBDIR += py-asn1-modules
     SUBDIR += py-aspects
     SUBDIR += py-aspyct
     SUBDIR += py-astng
