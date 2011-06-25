@@ -32,8 +32,8 @@ MAKE_JOBS_SAFE=	yes
 WANT_SDL=	yes
 
 OPTIONS=	ALSA	"Enable alsa input/output device" off \
-		AMR_NB	"AMR Narrow Band audio encoder (opencore)" on \
-		AMR_WB	"AMR Wide Band audio decoder (opencore)" on \
+		AMR_NB	"AMR Narrow Band audio encoder (opencore)" off \
+		AMR_WB	"AMR Wide Band audio decoder (opencore)" off \
 		CELT	"Enable CELT/Opus decoding via libcelt" off \
 		CPUDETECT "Enable runtime CPU detection" on \
 		DIRAC	"Dirac codec via libdirac" off \
@@ -55,7 +55,7 @@ OPTIONS=	ALSA	"Enable alsa input/output device" off \
 		VAAPI	"GPU acceleration support (libva)" off \
 		VDPAU 	"Nvidia vdpau support" off \
 		VO_AACENC "AAC audio encoder (vo-aacenc)" on \
-		VO_AMRWBENC "AMR Wide Band audio encoder (vo-amrwbenc)" on \
+		VO_AMRWBENC "AMR Wide Band audio encoder (vo-amrwbenc)" off \
 		VORBIS	"Vorbis encoder via libvorbis (implies OGG)" on \
 		VP8	"VP8 codec via libvpx" on \
 		X264	"H.264 encoder" on \
