@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt_GPG
-PORTVERSION=	1.0.0
+PORTVERSION=	1.2.0
 CATEGORIES=	security www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -15,6 +15,7 @@ COMMENT=	GNU Privacy Guard (GPG)
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
+PEAR_CATSRC=	yes
 CATEGORY=	Crypt
 FILES=		GPG/DecryptStatusHandler.php GPG/Key.php GPG/UserId.php \
 		GPG/Engine.php GPG/Signature.php GPG/VerifyStatusHandler.php \
