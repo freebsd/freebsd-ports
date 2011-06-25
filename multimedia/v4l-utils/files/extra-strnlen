@@ -1,0 +1,45 @@
+copied from src/lib/libc/string/strnlen.c
+Copyright (c) 2009 David Schultz <das@FreeBSD.org>
+
+--- v4l2-compliance/v4l2-compliance.cpp.orig	2011-06-04 11:03:04.000000000 +0200
++++ v4l2-compliance/v4l2-compliance.cpp	2011-06-04 11:03:34.000000000 +0200
+@@ -56,6 +56,18 @@ enum Option {
+ 	OptLast = 256
+ };
+ 
++static size_t
++strnlen(const char *s, size_t maxlen)
++{
++        size_t len;
++ 
++        for (len = 0; len < maxlen; len++, s++) {
++                if (!*s)
++                        break;
++        }
++        return (len);
++}
++
+ static char options[OptLast];
+ 
+ static int app_result;
+--- v4l2-compliance/v4l2-test-controls.cpp.orig	2011-06-04 11:12:52.000000000 +0200
++++ v4l2-compliance/v4l2-test-controls.cpp	2011-06-04 11:13:06.000000000 +0200
+@@ -32,6 +32,18 @@
+ #include <vector>
+ #include "v4l2-compliance.h"
+ 
++static size_t
++strnlen(const char *s, size_t maxlen)
++{
++        size_t len;
++ 
++        for (len = 0; len < maxlen; len++, s++) {
++                if (!*s)
++                        break;
++        }
++        return (len);
++}
++
+ static int checkQCtrl(struct node *node, struct test_queryctrl &qctrl)
+ {
+ 	struct v4l2_querymenu qmenu;
