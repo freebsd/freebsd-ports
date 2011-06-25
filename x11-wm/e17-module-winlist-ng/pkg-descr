@@ -1,0 +1,11 @@
+A Winlist NG module for Enlightenment 17.
+It is a replacement for the standard winlist.
+
+This module should not only look different as the e17 winlist, it
+also will get a lot of functionality i was missing, for example:
+decide while selecting if you want to jump to the desk of the
+selected app or bring the selected app to the current desk, close
+the selected app directly, show the selected app on the current
+desk(if it's on another desk), etc.
+
+WWW:	http://www.enlightenment.org/
