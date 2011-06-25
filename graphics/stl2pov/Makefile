@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	stl2pov
-PORTVERSION=	2.4.3
+PORTVERSION=	2.5.0
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.xs4all.nl/~rsmith/software/
+MASTER_SITES=	http://rsmith.home.xs4all.nl/software/
 
 MAINTAINER=	rsmith@xs4all.nl
 COMMENT=	Converts STL models to POV-Ray meshes
