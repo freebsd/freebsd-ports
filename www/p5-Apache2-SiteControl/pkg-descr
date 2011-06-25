@@ -1,0 +1,8 @@
+Apache2::SiteControl is a set of perl object-oriented classes that implement
+a fine-grained security control system for a web-based application.  The
+intent is to provide a clear, easy-to-integrate system that does not require
+the policies to be written into your application components.  It attempts to
+separate the concerns of how to show and manipulate data from the concerns
+of who is allowed to view and manipulate data and why.
+
+WWW: http://search.cpan.org/dist/Apache2-SiteControl/
