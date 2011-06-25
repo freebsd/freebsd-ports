@@ -335,6 +335,7 @@
     SUBDIR += libparsifal
     SUBDIR += libpathan
     SUBDIR += libroxml
+    SUBDIR += libsphinxclient
     SUBDIR += libstree
     SUBDIR += libtext-charwidth-perl
     SUBDIR += libtext-wrapi18n-perl
