@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libv4l
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.4
 CATEGORIES=	multimedia
 MASTER_SITES=	http://linuxtv.org/downloads/v4l-utils/
 DISTNAME=	v4l-utils-${PORTVERSION}
@@ -14,12 +14,15 @@ DISTNAME=	v4l-utils-${PORTVERSION}
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	Video4Linux library
 
-BUILD_DEPENDS=	v4l_compat>=1.0.20101027:${PORTSDIR}/multimedia/v4l_compat
+BUILD_DEPENDS=	v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
-MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LIBDIR="${PREFIX}/lib"
+MAKE_ARGS=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib" LIBDIR="${PREFIX}/lib"
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/lib
 
