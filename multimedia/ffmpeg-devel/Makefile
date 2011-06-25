@@ -177,20 +177,19 @@ CONFIGURE_ARGS+=	--disable-indev=alsa \
 			--disable-outdev=alsa
 .endif
 
-# amr
-.if defined(WITH_AMR_NB) || defined(WITH_AMR_WB)
-LIB_DEPENDS+=	opencore-amrnb.0:${PORTSDIR}/audio/opencore-amr
-.endif
-
+# Opencore AMR NB
 .if defined(WITH_AMR_NB)
 FFMPEG_LICENSE_GPL3=	yes
+LIB_DEPENDS+=	opencore-amrnb.0:${PORTSDIR}/audio/opencore-amr
 CONFIGURE_ARGS+=	--enable-libopencore-amrnb
 .else
 CONFIGURE_ARGS+=	--disable-libopencore-amrnb
 .endif
 
+# Opencore AMR WB
 .if defined(WITH_AMR_WB)
 FFMPEG_LICENSE_GPL3=	yes
+LIB_DEPENDS+=	opencore-amrwb.0:${PORTSDIR}/audio/opencore-amr
 CONFIGURE_ARGS+=	--enable-libopencore-amrwb
 .else
 CONFIGURE_ARGS+=	--disable-libopencore-amrwb
