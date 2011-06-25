@@ -1,0 +1,37 @@
+%%XPI_XPIDIR%%/chrome/content/bak.png
+%%XPI_XPIDIR%%/chrome/content/bkg.png
+%%XPI_XPIDIR%%/chrome/content/border.png
+%%XPI_XPIDIR%%/chrome/content/clrpkr.xul
+%%XPI_XPIDIR%%/chrome/content/clrtabs.js
+%%XPI_XPIDIR%%/chrome/content/clrtabs.xml
+%%XPI_XPIDIR%%/chrome/content/clrtabs.xul
+%%XPI_XPIDIR%%/chrome/content/clrtabsopt.xul
+%%XPI_XPIDIR%%/chrome/content/contents.rdf
+%%XPI_XPIDIR%%/chrome/content/contribute.png
+%%XPI_XPIDIR%%/chrome/content/ctbg.gif
+%%XPI_XPIDIR%%/chrome/content/hi-left.png
+%%XPI_XPIDIR%%/chrome/content/hi-right.png
+%%XPI_XPIDIR%%/chrome/content/star.png
+%%XPI_XPIDIR%%/chrome/content/tab-right-hi.png
+%%XPI_XPIDIR%%/chrome/skin/clrtabs-seamonkey.css
+%%XPI_XPIDIR%%/chrome/skin/clrtabs.css
+%%XPI_XPIDIR%%/chrome/skin/options.css
+%%XPI_XPIDIR%%/chrome/skin/seamonkey-bg.png
+%%XPI_XPIDIR%%/chrome/skin/seamonkey.png
+%%XPI_XPIDIR%%/chrome/skin/tab-left-bkgnd.png
+%%XPI_XPIDIR%%/chrome/skin/tab-middle-bkgnd.png
+%%XPI_XPIDIR%%/chrome/skin/tab-original.png
+%%XPI_XPIDIR%%/chrome/skin/tab-passive-bkgnd.png
+%%XPI_XPIDIR%%/chrome/skin/tab-pinned-white.png
+%%XPI_XPIDIR%%/chrome/skin/tab-pinned.png
+%%XPI_XPIDIR%%/chrome/skin/tab-right-bkgnd.png
+%%XPI_XPIDIR%%/chrome/skin/tab.png
+%%XPI_XPIDIR%%/chrome/skin.png
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/defaults/preferences/defaults.js
+%%XPI_XPIDIR%%/install.rdf
+@dirrm %%XPI_XPIDIR%%/chrome/content
+@dirrm %%XPI_XPIDIR%%/chrome/skin
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults
