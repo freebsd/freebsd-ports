@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	edje_viewer
-PORTVERSION=	20101003
-PORTREVISION=	1
+PORTVERSION=	20110129
 CATEGORIES=	graphics enlightenment
-MASTER_SITES=	http://files.roorback.net/e17/2010-10-03/extra/
+MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/extra/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A simple viewer for .edj files

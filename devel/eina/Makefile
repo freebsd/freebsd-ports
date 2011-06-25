@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	eina
-DISTVERSION=	1.0.0.beta
+DISTVERSION=	1.0.1
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2010-10-03/base/
+		http://files.roorback.net/e17/2011-05-25/base/
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	Enlightenment API for data types
@@ -22,5 +22,7 @@ USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_EFL=	librt_hack libtool_hack
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
+
+CONFIGURE_ARGS=	--enable-amalgamation
 
 .include <bsd.port.mk>

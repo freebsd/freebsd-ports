@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	eet
-DISTVERSION=	1.4.0.beta
+DISTVERSION=	1.4.1
 PORTEPOCH=	2
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2010-10-03/base/
+		http://files.roorback.net/e17/2011-05-25/base/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Enlightenment Data Handling Library
@@ -26,6 +26,10 @@ USE_GNOME=	gnomehack pkgconfig gnometarget
 USE_LDCONFIG=	yes
 USE_OPENSSL=	yes
 
-CONFIGURE_ARGS=	--disable-gnutls
+CONFIGURE_ENV=	OPENSSL_CFLAGS="-I${OPENSSLINC} -L${OPENSSLLIB}" OPENSSL_LIBS="-lssl"
+CONFIGURE_ARGS=	--disable-gnutls --enable-amalgamation
+
+post-install:
+	${REINPLACE_CMD} 's/ openssl//' ${PREFIX}/libdata/pkgconfig/eet.pc
 
 .include <bsd.port.mk>

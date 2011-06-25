@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	emotion
-PORTVERSION=	0.2.0.52995
+PORTVERSION=	0.2.0.56361
 PORTEPOCH=	1
 CATEGORIES=	multimedia enlightenment
-MASTER_SITES=	http://files.roorback.net/e17/2010-10-03/extra/
+MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/extra/
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Video playback wrapper library for Enlightenment

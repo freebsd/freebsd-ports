@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ecore
-DISTVERSION=	1.0.0.beta
+DISTVERSION=	1.0.1
 PORTEPOCH=	2
 CATEGORIES=	devel enlightenment
 MASTER_SITES=	# none

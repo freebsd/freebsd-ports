@@ -68,7 +68,11 @@ share/icons/elementary.png
 %%DATADIR%%/images/wood_01.jpg
 %%DATADIR%%/objects/multip.edj
 %%DATADIR%%/objects/test.edj
+%%DATADIR%%/objects/colorpreview.edj
+%%DATADIR%%/objects/cursors.edj
+%%DATADIR%%/objects/font_preview.edj
 %%DATADIR%%/themes/default.edj
+%%DATADIR%%/themes/default-desktop.edj
 @dirrm include/elementary-0
 @dirrm lib/edje/modules/elm/%%E17_ARCH%%
 @dirrm lib/edje/modules/elm

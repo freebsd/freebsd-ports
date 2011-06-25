@@ -3,4 +3,5 @@ include/eet-1/Eet.h
 lib/libeet.so
 lib/libeet.so.5
 libdata/pkgconfig/eet.pc
+libdata/pkgconfig/eet.pc.bak
 @dirrm include/eet-1

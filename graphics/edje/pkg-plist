@@ -1,7 +1,8 @@
 bin/edje_cc
-bin/edje_convert
 bin/edje_decc
 bin/edje_recc
+bin/edje_inspector
+bin/edje_external_inspector
 bin/edje_player
 include/edje-1/Edje.h
 include/edje-1/Edje_Edit.h

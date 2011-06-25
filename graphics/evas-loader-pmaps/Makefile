@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	loader-pmaps
-DISTVERSION=	1.0.0.beta
+DISTVERSION=	1.0.1
 CATEGORIES=	graphics enlightenment
 MASTER_SITES=	http://download.enlightenment.org/releases/ \
-		http://files.roorback.net/e17/2010-10-03/base/
+		http://files.roorback.net/e17/2011-05-25/base/
 PKGNAMEPREFIX=	evas-
 DISTNAME=	evas-${DISTVERSION}
 

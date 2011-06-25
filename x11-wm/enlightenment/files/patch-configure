@@ -4,7 +4,7 @@
  
  
  
--MODULE_ARCH="$host_os-$host_cpu-ver-pre-svn-07"
+-MODULE_ARCH="$host_os-$host_cpu-ver-pre-svn-08"
 +MODULE_ARCH="$host_os-$host_cpu"
  
  
