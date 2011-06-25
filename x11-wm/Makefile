@@ -55,6 +55,7 @@
     SUBDIR += e17-module-flame
     SUBDIR += e17-module-forecasts
     SUBDIR += e17-module-iiirk
+    SUBDIR += e17-module-itask
     SUBDIR += e17-module-itask-ng
     SUBDIR += e17-module-language
     SUBDIR += e17-module-mail
