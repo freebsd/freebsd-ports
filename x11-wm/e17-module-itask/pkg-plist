@@ -1,0 +1,10 @@
+lib/enlightenment/modules/itask/module.desktop
+lib/enlightenment/modules/itask/itask.edj
+lib/enlightenment/modules/itask/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/itask/itask.edc
+lib/enlightenment/modules/itask/e-module-itask.edj
+lib/enlightenment/modules/itask/module_icon.png
+@dirrm lib/enlightenment/modules/itask/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/itask
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment
