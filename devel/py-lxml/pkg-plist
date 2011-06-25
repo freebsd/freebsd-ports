@@ -68,6 +68,18 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/html/usedoctest.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/html/usedoctest.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/html/usedoctest.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/isoschematron/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/isoschematron/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/isoschematron/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/isoschematron/resources/rng/iso-schematron.rng
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/isoschematron/resources/xsl/RNG2Schtrn.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/isoschematron/resources/xsl/XSD2Schtrn.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_abstract_expand.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_dsdl_include.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_schematron_message.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_schematron_skeleton_for_xslt1.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/iso_svrl_for_xslt1.xsl
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/isoschematron/resources/xsl/iso-schematron-xslt1/readme.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/objectify.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/objectify.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/objectify.pyo
@@ -268,13 +280,21 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._IterparseContext-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._ListErrorLog-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._LogEntry-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._ModifyContentOnlyEntityProxy-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._ModifyContentOnlyPIProxy-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._ModifyContentOnlyProxy-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._NamespaceRegistry-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._OpaqueDocumentWrapper-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._OpaqueNodeWrapper-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._ParserContext-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._ParserDictionaryContext-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._ParserSchemaValidationContext-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._ProcessingInstruction-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._PythonSaxParserTarget-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._ReadOnlyElementProxy-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._ReadOnlyEntityProxy-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._ReadOnlyPIProxy-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._ReadOnlyProxy-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._ResolverContext-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._ResolverRegistry-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.etree._RotatingErrorLog-class.html
@@ -348,6 +368,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.html.soupparser-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.html.usedoctest-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.html.usedoctest-pysrc.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.isoschematron-module.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.isoschematron-pysrc.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.isoschematron.Schematron-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.objectify-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.objectify.BoolElement-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.objectify.ElementMaker-class.html
@@ -413,6 +436,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_io.ETreeIOTestCase-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_io.ElementTreeIOTestCase-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_io.IOTestCaseBase-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_isoschematron-module.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_isoschematron-pysrc.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_isoschematron.ETreeISOSchematronTestCase-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_nsclasses-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_nsclasses-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_nsclasses.ETreeNamespaceClassesTestCase-class.html
@@ -456,16 +482,18 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_xpathevaluator-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_xpathevaluator.ETreeETXPathClassTestCase-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_xpathevaluator.ETreeXPathClassTestCase-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_xpathevaluator.ETreeXPathExsltTestCase-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_xpathevaluator.ETreeXPathTestCase-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_xslt-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_xslt-pysrc.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_xslt.ETreeXSLTExtElementTestCase-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_xslt.ETreeXSLTExtFuncTestCase-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_xslt.ETreeXSLTTestCase-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.tests.test_xslt.Py3XSLTTestCase-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.usedoctest-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/lxml.usedoctest-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/module-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/redirect.html
-%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/str-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-everything.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.ElementInclude-module.html
@@ -483,6 +511,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.html.html5parser-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.html.soupparser-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.html.usedoctest-module.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.isoschematron-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.objectify-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.pyclasslookup-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.sax-module.html
@@ -496,6 +525,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.tests.test_etree-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.tests.test_htmlparser-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.tests.test_io-module.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.tests.test_isoschematron-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.tests.test_nsclasses-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.tests.test_objectify-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.tests.test_pyclasslookup-module.html
@@ -508,10 +538,20 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.tests.test_xpathevaluator-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.tests.test_xslt-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-lxml.usedoctest-module.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc-xml.etree.ElementTree-module.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/api/toc.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/xml.etree.ElementTree-module.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/xml.etree.ElementTree-pysrc.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/xml.etree.ElementTree.ElementTree-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/xml.etree.ElementTree.QName-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/xml.etree.ElementTree.TreeBuilder-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/xml.etree.ElementTree.XMLTreeBuilder-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/xml.etree.ElementTree._ElementInterface-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/xml.etree.ElementTree._SimpleElementPath-class.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/api/xml.etree.ElementTree.iterparse-class.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/build.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/capi.html
-%%PORTDOCS%%%%DOCSDIR%%/doc/html/changes-2.2.7.html
+%%PORTDOCS%%%%DOCSDIR%%/doc/html/changes-2.3.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/compatibility.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/credits.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/cssselect.html
@@ -523,7 +563,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/installation.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/intro.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/lxml-source-howto.html
-%%PORTDOCS%%%%DOCSDIR%%/doc/html/lxml2.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/lxmlhtml.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/objectify.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/html/parsing.html
@@ -567,6 +606,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/s5/ep2008/proxies.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/s5/lxml-ep2008.html
 %%PORTDOCS%%%%DOCSDIR%%/doc/s5/lxml-ep2008.txt
+%%PORTDOCS%%%%DOCSDIR%%/doc/s5/rst2s5.py
 %%PORTDOCS%%%%DOCSDIR%%/doc/s5/tagpython.png
 %%PORTDOCS%%%%DOCSDIR%%/doc/s5/ui/default/blank.gif
 %%PORTDOCS%%%%DOCSDIR%%/doc/s5/ui/default/bodybg.gif
@@ -587,14 +627,19 @@
 %%PORTDOCS%%%%DOCSDIR%%/doc/valgrind.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/validation.txt
 %%PORTDOCS%%%%DOCSDIR%%/doc/xpathxslt.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/s5/ui/default
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/s5/ui
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/s5/ep2008
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/s5
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/licenses
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/html/api
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc/html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/doc
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/doc/s5/ui/default
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/doc/s5/ui
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/doc/s5/ep2008
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/doc/s5
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/doc/licenses
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/doc/html/api
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/doc/html
+@dirrm %%PORTDOCS%%%%DOCSDIR%%/doc
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/isoschematron/resources/xsl/iso-schematron-xslt1
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/isoschematron/resources/xsl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/isoschematron/resources/rng
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/isoschematron/resources
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/isoschematron
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml/html
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/lxml
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
