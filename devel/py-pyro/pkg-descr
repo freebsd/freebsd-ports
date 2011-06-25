@@ -8,8 +8,8 @@ you split them over different machines on the network. All the gory
 socket programming details are taken care of, you just call a method on
 a remote object as if it were a local object!
 
-Pyro provides an object-oriented form of RPC. You can use Pyro within a 
-single system but also use it for IPC. For those that are familiar with 
+Pyro provides an object-oriented form of RPC. You can use Pyro within a
+single system but also use it for IPC. For those that are familiar with
 Java, Pyro resembles Java's Remote Method Invocation (RMI). It is less
 similar to CORBA - which is a system- and language independent
 Distributed Object Technology and has much more to offer than Pyro or
