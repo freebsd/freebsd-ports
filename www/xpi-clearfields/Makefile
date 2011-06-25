@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clearfields
-PORTVERSION=	3.0.2
+PORTVERSION=	4.0.3
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
@@ -16,8 +16,6 @@ COMMENT=	Toolbar buttons that clear input fields
 XPI_DISTNAME=	clear_fields
 XPI_ID=		clearfields@alex.alexander.googlepages.com
 XPI_NUM=	2408
-XPI_FILES=	chrome/clearfields.jar chrome.manifest install.rdf
-XPI_DIRS=	chrome
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>

@@ -1,0 +1,48 @@
+%%XPI_XPIDIR%%/chrome/content/.installed.html.swp
+%%XPI_XPIDIR%%/chrome/content/clearfields.js
+%%XPI_XPIDIR%%/chrome/content/clearfields.xbl
+%%XPI_XPIDIR%%/chrome/content/clearfields.xul
+%%XPI_XPIDIR%%/chrome/content/installed.html
+%%XPI_XPIDIR%%/chrome/locale/de-DE/clearfields.dtd
+%%XPI_XPIDIR%%/chrome/locale/el-GR/clearfields.dtd
+%%XPI_XPIDIR%%/chrome/locale/en-US/clearfields.dtd
+%%XPI_XPIDIR%%/chrome/locale/hu-HU/clearfields.dtd
+%%XPI_XPIDIR%%/chrome/locale/ko-KR/clearfields.dtd
+%%XPI_XPIDIR%%/chrome/skin/address-small.png
+%%XPI_XPIDIR%%/chrome/skin/address.png
+%%XPI_XPIDIR%%/chrome/skin/all-small.png
+%%XPI_XPIDIR%%/chrome/skin/all.png
+%%XPI_XPIDIR%%/chrome/skin/check.png
+%%XPI_XPIDIR%%/chrome/skin/clearfields.css
+%%XPI_XPIDIR%%/chrome/skin/dark/all-small.png
+%%XPI_XPIDIR%%/chrome/skin/dark/all.png
+%%XPI_XPIDIR%%/chrome/skin/dark/check.png
+%%XPI_XPIDIR%%/chrome/skin/dark/clearfields.css
+%%XPI_XPIDIR%%/chrome/skin/dark/logo.png
+%%XPI_XPIDIR%%/chrome/skin/dark/pass.png
+%%XPI_XPIDIR%%/chrome/skin/dark/text.png
+%%XPI_XPIDIR%%/chrome/skin/dark/toolbarbutton.css
+%%XPI_XPIDIR%%/chrome/skin/dark/x.png
+%%XPI_XPIDIR%%/chrome/skin/find.png
+%%XPI_XPIDIR%%/chrome/skin/google-small.png
+%%XPI_XPIDIR%%/chrome/skin/google.png
+%%XPI_XPIDIR%%/chrome/skin/logo.png
+%%XPI_XPIDIR%%/chrome/skin/pass.png
+%%XPI_XPIDIR%%/chrome/skin/search-small.png
+%%XPI_XPIDIR%%/chrome/skin/search.png
+%%XPI_XPIDIR%%/chrome/skin/text.png
+%%XPI_XPIDIR%%/chrome/skin/toolbarbutton.css
+%%XPI_XPIDIR%%/chrome/skin/x-hover.png
+%%XPI_XPIDIR%%/chrome/skin/x-normal.png
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/install.rdf
+@dirrm %%XPI_XPIDIR%%/chrome/content
+@dirrm %%XPI_XPIDIR%%/chrome/locale/de-DE
+@dirrm %%XPI_XPIDIR%%/chrome/locale/el-GR
+@dirrm %%XPI_XPIDIR%%/chrome/locale/en-US
+@dirrm %%XPI_XPIDIR%%/chrome/locale/hu-HU
+@dirrm %%XPI_XPIDIR%%/chrome/locale/ko-KR
+@dirrm %%XPI_XPIDIR%%/chrome/locale
+@dirrm %%XPI_XPIDIR%%/chrome/skin/dark
+@dirrm %%XPI_XPIDIR%%/chrome/skin
+@dirrm %%XPI_XPIDIR%%/chrome
