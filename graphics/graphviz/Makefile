@@ -279,7 +279,7 @@ CONFIGURE_ARGS+=	--with-gvedit=yes
 PLIST_SUB+=		WITH_GVEDIT=""
 .else
 PLIST_SUB+=		WITH_GVEDIT="@comment "
-CONFIGURE_ARGS+=	--without-gvedit
+CONFIGURE_ARGS+=	--with-qt=no
 .endif
 
 .if defined(WITH_MING)
