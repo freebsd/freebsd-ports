@@ -21,13 +21,10 @@ WRKSRC=		${WRKDIR}/tss2_rc2
 ONLY_FOR_ARCHS=	i386
 NO_BUILD=	yes
 USE_LINUX=	yes
-PKGDEINSTALL=	${PKGINSTALL}
+USERS=		teamspeak
+GROUPS=		${USERS}
 
 USE_RC_SUBR=	teamspeak-server
-
-pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
 do-install:
 	@${MKDIR} ${PREFIX}/lib/teamspeak_server
@@ -38,9 +35,5 @@ do-install:
 post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 		${SH} ${PKGINSTALL} ${PORTNAME} POST-INSTALL
-
-post-deinstall:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGDEINSTALL} ${PORTNAME} POST-DEINSTALL
 
 .include <bsd.port.mk>
