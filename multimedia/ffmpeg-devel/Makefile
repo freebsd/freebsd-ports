@@ -342,6 +342,7 @@ CONFIGURE_ARGS+=	--disable-vdpau
 
 # vo-aacenc
 .if defined(WITH_VO_AACENC)
+FFMPEG_LICENSE_GPL3=	yes
 LIB_DEPENDS+=	vo-aacenc.0:${PORTSDIR}/audio/vo-aacenc
 CONFIGURE_ARGS+=	--enable-libvo-aacenc
 .else
