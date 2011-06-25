@@ -16,6 +16,7 @@ COMMENT=	Low-level binding to SDL and related libraries using Ruby-FFI
 
 RUN_DEPENDS=	rubygem-nice-ffi>=0.2:${PORTSDIR}/devel/rubygem-nice-ffi
 
+RUBY_VER=	1.9
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
