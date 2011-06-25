@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	5.8.0
+PORTVERSION=	5.8.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 .ifdef MNAME
@@ -39,11 +39,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 
-# XXX: 5.5.6+ seem to crash frequently with low-mid load 
-# on FreeBSD, temporailiy enable debugging by default.
-# Now we can send gdb backtraces into the list:
-# rsyslog-users <rsyslog@lists.adiscon.com>
-OPTIONS=	DEBUG	"Enable debugging"	on
+OPTIONS=	DEBUG	"Enable debugging"	off
 
 .ifdef WITH_DEBUG
 CONFIGURE_ARGS+=--enable-rtinst --enable-debug
