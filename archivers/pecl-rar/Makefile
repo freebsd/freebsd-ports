@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rar
-PORTVERSION=	2.0.0
+PORTVERSION=	3.0.0
 CATEGORIES=	archivers pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
