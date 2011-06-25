@@ -688,6 +688,7 @@
     SUBDIR += p5-Apache-Template
     SUBDIR += p5-Apache-Test
     SUBDIR += p5-Apache2-Scoreboard
+    SUBDIR += p5-Apache2-SiteControl
     SUBDIR += p5-ApacheBench
     SUBDIR += p5-App-Nopaste
     SUBDIR += p5-Ark

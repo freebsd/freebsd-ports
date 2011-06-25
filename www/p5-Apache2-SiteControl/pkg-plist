@@ -1,0 +1,13 @@
+%%SITE_PERL%%/Apache2/SiteControl.pm
+%%SITE_PERL%%/Apache2/SiteControl/GrantAllRule.pm
+%%SITE_PERL%%/Apache2/SiteControl/ManagerFactory.pm
+%%SITE_PERL%%/Apache2/SiteControl/PermissionManager.pm
+%%SITE_PERL%%/Apache2/SiteControl/Radius.pm
+%%SITE_PERL%%/Apache2/SiteControl/Rule.pm
+%%SITE_PERL%%/Apache2/SiteControl/User.pm
+%%SITE_PERL%%/Apache2/SiteControl/UserFactory.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2/SiteControl/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2/SiteControl
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Apache2
+@dirrmtry %%SITE_PERL%%/Apache2/SiteControl
+@dirrmtry %%SITE_PERL%%/Apache2
