@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP_Client
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 CATEGORIES=	www pear
 
 MAINTAINER=	joseph@randomnetworks.com
@@ -14,7 +14,8 @@ COMMENT=	PEAR classes for high level HTTP requests
 
 BUILD_DEPENDS=	${PEARDIR}/HTTP.php:${PORTSDIR}/www/pear-HTTP \
 		${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/HTTP.php:${PORTSDIR}/www/pear-HTTP \
+		${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
 
 CATEGORY=	HTTP
 FILES=		Client.php Client/CookieManager.php
