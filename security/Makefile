@@ -34,6 +34,7 @@
     SUBDIR += bcwipe
     SUBDIR += bdc
     SUBDIR += beecrypt
+    SUBDIR += belier
     SUBDIR += bfbtester
     SUBDIR += bioapi
     SUBDIR += blindelephant
