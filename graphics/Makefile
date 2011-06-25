@@ -889,6 +889,7 @@
     SUBDIR += solang
     SUBDIR += spcaview
     SUBDIR += springgraph
+    SUBDIR += squish
     SUBDIR += sswf
     SUBDIR += stamp
     SUBDIR += stl2pov
