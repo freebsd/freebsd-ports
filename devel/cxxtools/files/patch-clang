@@ -117,12 +117,32 @@
      { }
  
      /// returns the parent-object
-@@ -339,7 +339,7 @@ class QueryParams
+@@ -332,8 +332,15 @@ class QueryParams
+     //
+ 
+     /// get named parameter.
++#if 0 // XXX this will return a temporary object for def with clang
+     const string& param(const string& name, size_type n = 0,
+       const string& def = std::string()) const
++#else
++    static const std::string emptystring;
++
++    const string& param(const string& name, size_type n = 0,
++      const string& def = emptystring) const
++#endif
+     {
+       named_params_type::const_iterator i = named_params.find(name);
        if (i != named_params.end() && n < i->second.size())
-         return i->second[n];
-       else if (!useParentValues())
--        return def;
-+        return std::string(def);
-       else
-       {
-         if (i != named_params.end())
+--- a/src/query_params.cpp
++++ b/src/query_params.cpp
+@@ -164,6 +164,10 @@ void _parse_url(
+   }
+ }
+ 
++#if 1 // XXX clang problem, see query_params.h
++const std::string QueryParams::emptystring;
++#endif
++
+ void QueryParams::parse_url(const std::string& url)
+ {
+   _parse_url(url.begin(), url.end(), unnamed_params, named_params);
