@@ -1,5 +1,14 @@
---- src/bin/sconvert.c.orig	Mon Sep 14 21:30:41 1992
-+++ src/bin/sconvert.c	Thu Jul 17 00:47:50 2003
+--- src/bin/sconvert.c.orig	1992-09-15 01:30:41.000000000 +0000
++++ src/bin/sconvert.c	2011-06-24 19:05:59.000000000 +0000
+@@ -36,7 +36,7 @@
+ static struct plot *oldread();
+ static char *fixdate();
+ 
+-void
++int
+ main(ac, av)
+     char **av;
+ {
 @@ -80,19 +80,19 @@
  
          case 1: printf("Input file: ");

@@ -1,16 +1,26 @@
---- src/include/misc.h.orig	Sun Apr 25 16:37:48 1993
-+++ src/include/misc.h	Mon Apr  3 23:04:51 2006
-@@ -86,8 +86,10 @@
+--- src/include/misc.h.orig	1993-04-25 21:37:48.000000000 +0000
++++ src/include/misc.h	2011-06-24 16:37:44.000000000 +0000
+@@ -86,9 +86,11 @@
  extern char *realloc();
  extern char *getenv();
  extern int errno;
 +#ifndef __FreeBSD__
  extern char *sys_errlist[];
  extern char *getenv();
-+#endif
  extern char *getwd();
++#endif
  extern int rand();
  extern int srand();
+ extern int atoi();
+@@ -100,7 +102,7 @@
+ #  endif
+ 
+ #  ifdef HAS_GETCWD
+-extern char *getcwd( );
++#include <unistd.h>
+ #  endif
+ 
+ #  ifdef HAS_CLEARERR
 @@ -154,7 +156,9 @@
  
  #ifndef HAS_MEMAVL
