@@ -5,12 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	tilt
-PORTVERSION=	1.2.2
+PORTVERSION=	1.3.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	Generic interface to multiple Ruby template engines
+
+LICENSE=	MIT
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
