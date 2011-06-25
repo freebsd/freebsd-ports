@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	itask-ng
-PORTVERSION=	20101003
+PORTVERSION=	20110129
 CATEGORIES=	x11-wm enlightenment
-MASTER_SITES=	http://files.roorback.net/e17/2010-10-03/modules/
+MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/modules/
 PKGNAMEPREFIX=	e17-module-
+DISTNAME=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	magik@roorback.net
-COMMENT=	A fast applications switching module for e17
+COMMENT=	MacOS X like taskbar module for e17
 
 BUILD_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment
 RUN_DEPENDS=	enlightenment:${PORTSDIR}/x11-wm/enlightenment

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	slideshow
-PORTVERSION=	20101003
+PORTVERSION=	20110129
 CATEGORIES=	x11-wm enlightenment
-MASTER_SITES=	http://files.roorback.net/e17/2010-10-03/modules/
+MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/modules/
 PKGNAMEPREFIX=	e17-module-
 
 MAINTAINER=	stas@FreeBSD.org
