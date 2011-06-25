@@ -1,0 +1,15 @@
+--- Makefile.common.orig	2011-05-01 15:07:21.000000000 +0200
++++ Makefile.common	2011-06-21 15:50:10.302230043 +0200
+@@ -15,10 +15,10 @@
+ endif
+ endif
+ 
+-CC = gcc
++CC ?= gcc
+ LIBS = $(shell pkg-config --libs gtk+-2.0 gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0) -lX11 -L/usr/X11R6/lib  -lXmu
+ INCS = $(shell pkg-config --cflags gtk+-2.0 gdk-pixbuf-2.0 gdk-pixbuf-xlib-2.0)
+-CFLAGS = -O2    # overwriten by command line or env. variable
++CFLAGS ?= -O2    # overwriten by command line or env. variable
+ CFLAGS += -Wall # always nice to have 
+ ifneq (,$(DEVEL))
+ CFLAGS := -g -Wall 
