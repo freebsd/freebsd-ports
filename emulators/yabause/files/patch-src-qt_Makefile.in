@@ -1,0 +1,10 @@
+--- src/qt/Makefile.in	2011-06-24 19:20:24.000000000 -0500
++++ src/qt/Makefile.in	2011-06-24 19:20:35.000000000 -0500
+@@ -521,7 +521,6 @@
+ 
+ install-data-am: install-ApplicationsDATA install-pixmapDATA
+ 	@$(NORMAL_INSTALL)
+-	$(MAKE) $(AM_MAKEFLAGS) install-data-hook
+ 
+ install-dvi: install-dvi-recursive
+ 
