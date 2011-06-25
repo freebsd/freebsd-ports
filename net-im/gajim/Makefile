@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	gajim
-PORTVERSION=	0.14.1
+PORTVERSION=	0.14.3
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.gajim.org/downloads/0.14/
 
-MAINTAINER=	dsh@bamus.cz
+MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	Gajim is a Jabber client based on a plugin system
 
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
