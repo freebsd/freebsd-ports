@@ -1,0 +1,2 @@
+This class is a near drop-in replacement for the regex parsing of
+Email::Address

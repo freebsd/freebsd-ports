@@ -333,6 +333,7 @@
     SUBDIR += p5-Data-Validate-Email
     SUBDIR += p5-Email-Abstract
     SUBDIR += p5-Email-Address
+    SUBDIR += p5-Email-AddressParser
     SUBDIR += p5-Email-Date
     SUBDIR += p5-Email-Date-Format
     SUBDIR += p5-Email-Delete
