@@ -1,3 +1,4 @@
+@comment $FreeBSD$
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -487,6 +488,27 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertical/__init__.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertical/dictlike-polymorphic.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vertical/dictlike.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/vertical
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/versioning
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sharding
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/postgis
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nested_sets
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/large_collection
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/inheritance
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/generic_associations
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/elementtree
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dynamic_dict
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/custom_attributes
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/beaker_caching
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/association
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/adjacency_list
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/orm/extensions
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/orm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/dialects
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/core
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/util
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/sql
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy/orm
@@ -509,24 +531,3 @@
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sqlalchemy
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/orm/extensions
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/orm
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/dialects
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/core
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/vertical
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/versioning
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sharding
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/postgis
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nested_sets
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/large_collection
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/inheritance
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/graphs
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/generic_associations
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/elementtree
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/dynamic_dict
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/custom_attributes
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/beaker_caching
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/association
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/adjacency_list
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
