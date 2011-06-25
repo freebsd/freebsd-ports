@@ -13,12 +13,10 @@ MASTER_SITES=	RG
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Extension for dynamic libraries & binding functions
 
+RUBY_VER=	1.9
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-.include <bsd.port.pre.mk>
-RUBY_VER=	19
-BROKEN=	rake not found
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
