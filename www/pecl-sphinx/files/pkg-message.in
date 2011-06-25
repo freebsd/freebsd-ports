@@ -1,0 +1,5 @@
+************************************************************************
+Restart your web server and consult the output of phpinfo().
+If there is an informational section for Sphinx, the installation was
+successful.
+************************************************************************

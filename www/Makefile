@@ -1413,6 +1413,7 @@
     SUBDIR += pecl-APC
     SUBDIR += pecl-amfext
     SUBDIR += pecl-http
+    SUBDIR += pecl-sphinx
     SUBDIR += pecl-swish
     SUBDIR += pecl-tidy
     SUBDIR += pelican
