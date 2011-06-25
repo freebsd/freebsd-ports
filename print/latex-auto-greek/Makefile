@@ -8,7 +8,7 @@ PORTNAME=	latex-auto-greek
 PORTVERSION=	1.0b
 PORTREVISION=	4
 CATEGORIES=	print
-MASTER_SITES=	http://a.physics.upatras.gr/~mplekos/files/
+MASTER_SITES=	http://waterdeep.physics.upatras.gr/~eelvex/files/
 
 MAINTAINER=	mplekos@physics.upatras.gr
 COMMENT=	A LaTeX package for switching between greek/latintext automaticaly
