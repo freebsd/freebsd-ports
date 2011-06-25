@@ -75,6 +75,7 @@
     SUBDIR += e17-module-tiling
     SUBDIR += e17-module-uptime
     SUBDIR += e17-module-weather
+    SUBDIR += e17-module-winlist-ng
     SUBDIR += e17-module-winselector
     SUBDIR += e17-module-wlan
     SUBDIR += e17-modules
