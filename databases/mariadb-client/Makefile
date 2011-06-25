@@ -7,6 +7,8 @@
 PORTNAME=	mariadb
 PKGNAMESUFFIX=	-client
 
+UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
+
 COMMENT=	Database client - drop-in replacement for MySQL
 
 MASTERDIR=	${.CURDIR}/../mariadb-server

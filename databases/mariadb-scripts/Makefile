@@ -7,6 +7,8 @@
 PORTNAME=	mariadb
 PKGNAMESUFFIX=	-scripts
 
+UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
+
 COMMENT=	Scripts for mariadb - drop-in replacement for MySQL
 
 USE_PERL5=	yes
