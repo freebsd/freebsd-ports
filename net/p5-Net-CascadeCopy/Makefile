@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	Net-CascadeCopy
-PORTVERSION=	0.2.4
+PORTVERSION=	0.2.6
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Net
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	gslin@gslin.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Rapidly propagate files to many servers in multiple locations
 
 RUN_DEPENDS=	p5-Class-Std-Utils>=v0.0.0:${PORTSDIR}/devel/p5-Class-Std-Utils \
@@ -21,7 +21,6 @@ RUN_DEPENDS=	p5-Class-Std-Utils>=v0.0.0:${PORTSDIR}/devel/p5-Class-Std-Utils \
 
 PERL_CONFIGURE=	yes
 
-MAN1=		ccp.1
 MAN3=		Net::CascadeCopy.3
 
 .include <bsd.port.mk>
