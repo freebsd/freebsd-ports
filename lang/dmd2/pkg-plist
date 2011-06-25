@@ -222,6 +222,7 @@ include/d/phobos2/unittest.d
 @dirrm %%EXAMPLESDIR%%/samples
 @dirrm %%EXAMPLESDIR%%
 @dirrm include/d/phobos2/std/windows
+@dirrm include/d/phobos2/std/net
 @dirrm include/d/phobos2/std/internal/math
 @dirrm include/d/phobos2/std/internal
 @dirrm include/d/phobos2/std/c/windows
