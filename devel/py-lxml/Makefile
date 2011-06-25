@@ -1,12 +1,11 @@
-# Ports collection makefile for:	py-lxml
+# Ports collection makefile for: py-lxml
 # Date created:				Feb 18, 2007
-# Whom:					Robert Gogolok <gogo@cs.uni-sb.de>
+# Whom:						Robert Gogolok <gogo@cs.uni-sb.de>
 #
 # $FreeBSD$
-#
 
 PORTNAME=	lxml
-PORTVERSION=	2.2.7
+PORTVERSION=	2.3
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -17,7 +16,7 @@ COMMENT=	Pythonic binding for the libxml2 and libxslt libraries
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		xslt.2:${PORTSDIR}/textproc/libxslt
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	easy_install
 PYEASYINSTALL_ARCHDEP=	yes
 
