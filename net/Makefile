@@ -306,7 +306,6 @@
     SUBDIR += libbgpdump
     SUBDIR += libconnect
     SUBDIR += libdnet
-    SUBDIR += libevnet
     SUBDIR += libexosip2
     SUBDIR += libfb
     SUBDIR += libfixbuf

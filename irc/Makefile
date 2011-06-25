@@ -25,7 +25,6 @@
     SUBDIR += evangeline
     SUBDIR += ezbounce
     SUBDIR += fisg
-    SUBDIR += gdesklets-irc
     SUBDIR += gruftistats
     SUBDIR += gseen.mod
     SUBDIR += hybserv
