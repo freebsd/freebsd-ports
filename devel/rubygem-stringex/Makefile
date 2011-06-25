@@ -3,10 +3,10 @@
 # Whom:					Philip M. Gollucci <pgollucci@p6m7g8.com>
 #
 # $FreeBSD$
+#
 
-# XXX: datamapper requires exact version ~>
 PORTNAME=	stringex
-PORTVERSION=	1.2.0
+PORTVERSION=	1.2.1
 PORTEPOCH=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
