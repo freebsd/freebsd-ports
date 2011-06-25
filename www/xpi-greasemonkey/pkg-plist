@@ -4,9 +4,7 @@
 %%XPI_XPIDIR%%/LICENSE.mpl
 %%XPI_XPIDIR%%/chrome/greasemonkey.jar
 %%XPI_XPIDIR%%/chrome.manifest
-%%XPI_XPIDIR%%/components/gmIBrowserWindow.xpt
 %%XPI_XPIDIR%%/components/gmIGreasemonkeyService.xpt
-%%XPI_XPIDIR%%/components/gmIMenuCommand.xpt
 %%XPI_XPIDIR%%/components/greasemonkey.js
 %%XPI_XPIDIR%%/defaults/preferences/greasemonkey.js
 %%XPI_XPIDIR%%/install.rdf
