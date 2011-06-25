@@ -1,0 +1,105 @@
+lib/enlightenment/modules/news/images/feeds/news.png
+lib/enlightenment/modules/news/images/feeds/osnews.png
+lib/enlightenment/modules/news/images/feeds/freshmeat.png
+lib/enlightenment/modules/news/images/feeds/cnn.png
+lib/enlightenment/modules/news/images/feeds/lemonde.png
+lib/enlightenment/modules/news/images/feeds/barrapunto.png
+lib/enlightenment/modules/news/images/feeds/meneame.png
+lib/enlightenment/modules/news/images/feeds/e_cvs.png
+lib/enlightenment/modules/news/images/feeds/futurasciences.png
+lib/enlightenment/modules/news/images/feeds/bouletcorp.png
+lib/enlightenment/modules/news/images/feeds/afp.png
+lib/enlightenment/modules/news/images/feeds/google.png
+lib/enlightenment/modules/news/images/feeds/digg.png
+lib/enlightenment/modules/news/images/feeds/slashdot.png
+lib/enlightenment/modules/news/images/feeds/courrierinternational.png
+lib/enlightenment/modules/news/images/feeds/google_fr.png
+lib/enlightenment/modules/news/images/feeds/default.png
+lib/enlightenment/modules/news/images/feeds/e_fr.png
+lib/enlightenment/modules/news/images/feeds/bbcworld.png
+lib/enlightenment/modules/news/images/categories/red.png
+lib/enlightenment/modules/news/images/categories/blue.png
+lib/enlightenment/modules/news/images/categories/default.png
+lib/enlightenment/modules/news/%%E17_ARCH%%/module.so
+lib/enlightenment/modules/news/module.desktop
+lib/enlightenment/modules/news/e-module-news.edj
+%%NLS%%lib/enlightenment/modules/news/locale/bg/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/hr/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/pt_BR/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/hu/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/es/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/pl/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/he/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/ar/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/cs/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/nl/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/fr/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/zh_CN/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/el/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/uk/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/ja/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/de/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/ru/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/pt/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/sv/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/fi/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/eo/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/it/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/tr/LC_MESSAGES/news.mo
+%%NLS%%lib/enlightenment/modules/news/locale/sk/LC_MESSAGES/news.mo
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/sk/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/sk
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/tr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/tr
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/it/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/it
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/eo/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/eo
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/fi/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/fi
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/sv/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/sv
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/pt/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/pt
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/ru/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/ru
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/de/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/de
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/ja/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/ja
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/uk/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/uk
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/el/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/el
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/zh_CN/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/zh_CN
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/fr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/fr
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/nl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/nl
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/cs/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/cs
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/ar/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/ar
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/he/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/he
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/pl/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/pl
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/es/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/es
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/hu/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/hu
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/pt_BR/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/pt_BR
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/hr/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/hr
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/bg/LC_MESSAGES
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale/bg
+%%NLS%%@dirrm lib/enlightenment/modules/news/locale
+@dirrm lib/enlightenment/modules/news/%%E17_ARCH%%
+@dirrm lib/enlightenment/modules/news/images/categories
+@dirrm lib/enlightenment/modules/news/images/feeds
+@dirrm lib/enlightenment/modules/news/images
+@dirrm lib/enlightenment/modules/news/
+@dirrmtry lib/enlightenment/modules
+@dirrmtry lib/enlightenment

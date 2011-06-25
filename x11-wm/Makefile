@@ -61,6 +61,7 @@
     SUBDIR += e17-module-moon
     SUBDIR += e17-module-mpdule
     SUBDIR += e17-module-net
+    SUBDIR += e17-module-news
     SUBDIR += e17-module-notification
     SUBDIR += e17-module-penguins
     SUBDIR += e17-module-photo
