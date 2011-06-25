@@ -3,6 +3,255 @@ bin/ustunts3dedit
 bin/ustuntsai
 bin/ustuntsserver
 bin/ustuntstrackedit
+%%PORTDOCS%%%%DOCSDIR%%/changes.txt
+%%PORTDOCS%%%%DOCSDIR%%/de/compile.htm
+%%PORTDOCS%%%%DOCSDIR%%/de/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/en/3dguideline.htm
+%%PORTDOCS%%%%DOCSDIR%%/en/cartuning.htm
+%%PORTDOCS%%%%DOCSDIR%%/en/client.htm
+%%PORTDOCS%%%%DOCSDIR%%/en/compile.htm
+%%PORTDOCS%%%%DOCSDIR%%/en/createcar.htm
+%%PORTDOCS%%%%DOCSDIR%%/en/developing.htm
+%%PORTDOCS%%%%DOCSDIR%%/en/fileformats.htm
+%%PORTDOCS%%%%DOCSDIR%%/en/general.htm
+%%PORTDOCS%%%%DOCSDIR%%/en/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/en/macosx.htm
+%%PORTDOCS%%%%DOCSDIR%%/en/originaltrackformat.htm
+%%PORTDOCS%%%%DOCSDIR%%/en/server.htm
+%%PORTDOCS%%%%DOCSDIR%%/en/stunts3dedit.htm
+%%PORTDOCS%%%%DOCSDIR%%/en/trackedit.htm
+%%PORTDOCS%%%%DOCSDIR%%/en/trackfromscratch.htm
+%%PORTDOCS%%%%DOCSDIR%%/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/nl/3dguideline.htm
+%%PORTDOCS%%%%DOCSDIR%%/nl/cartuning.htm
+%%PORTDOCS%%%%DOCSDIR%%/nl/client.htm
+%%PORTDOCS%%%%DOCSDIR%%/nl/compile.htm
+%%PORTDOCS%%%%DOCSDIR%%/nl/createcar.htm
+%%PORTDOCS%%%%DOCSDIR%%/nl/developing.htm
+%%PORTDOCS%%%%DOCSDIR%%/nl/fileformats.htm
+%%PORTDOCS%%%%DOCSDIR%%/nl/general.htm
+%%PORTDOCS%%%%DOCSDIR%%/nl/index.htm
+%%PORTDOCS%%%%DOCSDIR%%/nl/macosx.htm
+%%PORTDOCS%%%%DOCSDIR%%/nl/originaltrackformat.htm
+%%PORTDOCS%%%%DOCSDIR%%/nl/server.htm
+%%PORTDOCS%%%%DOCSDIR%%/nl/stunts3dedit.htm
+%%PORTDOCS%%%%DOCSDIR%%/nl/trackedit.htm
+%%PORTDOCS%%%%DOCSDIR%%/nl/trackfromscratch.htm
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bankedcorner_bl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bankedcorner_br.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bankedcorner_tl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bankedcorner_tr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bankedroad_hb.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bankedroad_ht.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bankedroad_vl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bankedroad_vr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/barn_b.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/barn_l.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/barn_r.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/barn_t.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bifurcation_hbl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bifurcation_hbr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bifurcation_htl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bifurcation_htr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bifurcation_vbl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bifurcation_vbr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bifurcation_vtl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bifurcation_vtr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bridge_b.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bridge_l.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bridge_r.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bridge_t.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/cactus.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/chicane_hl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/chicane_hr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/chicane_vl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/chicane_vr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corkscrew_h.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corkscrew_hbl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corkscrew_hbr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corkscrew_htl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corkscrew_htr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corkscrew_v.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corkscrew_vbl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corkscrew_vbr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corkscrew_vtl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corkscrew_vtr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_bl(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_bl(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_bl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_br(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_br(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_br.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_tl(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_tl(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_tl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_tr(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_tr(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_tr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/cross(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/cross(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/cross.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/dividedhighway_h.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/dividedhighway_v.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/halfpipe_h.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/halfpipe_v.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/house_b.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/house_l.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/house_r.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/house_t.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/loop_h.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/loop_v.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/mill_b.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/mill_l.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/mill_r.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/mill_t.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/overpass_h.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/overpass_v.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/palm.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/petrolstation_b.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/petrolstation_l.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/petrolstation_r.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/petrolstation_t.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/pipe_h.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/pipe_v.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/raisedcorner_bl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/raisedcorner_br.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/raisedcorner_tl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/raisedcorner_tr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/raisedramp_b.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/raisedramp_l.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/raisedramp_r.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/raisedramp_t.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/raisedroad_h.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/raisedroad_v.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/road_h(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/road_h(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/road_h.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/road_v(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/road_v(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/road_v.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/ship_b.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/ship_l.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/ship_r.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/ship_t.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/shop_b.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/shop_l.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/shop_r.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/shop_t.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/slalom_h.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/slalom_v.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/solidramp_b.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/solidramp_l.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/solidramp_r.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/solidramp_t.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/solidroad_h.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/solidroad_v.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/span_h.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/span_v.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_b(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_b(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_b.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_l(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_l(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_l.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_r(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_r(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_r.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_t(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_t(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_t.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startbank_hbl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startbank_hbr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startbank_htl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startbank_htr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startbank_vbl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startbank_vbr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startbank_vtl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startbank_vtr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/starthighway_hl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/starthighway_hr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/starthighway_vb.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/starthighway_vt.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startpipe_b.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startpipe_l.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startpipe_r.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startpipe_t.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/stunts.htm
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/style.css
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tenniscourt.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain0.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain1.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain10.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain11.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain12.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain13.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain14.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain15.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain16.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain17.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain18.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain2.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain3.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain4.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain5.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain6.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain7.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain8.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain9.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_hbl(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_hbl(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_hbl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_hbr(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_hbr(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_hbr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_htl(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_htl(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_htl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_htr(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_htr(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_htr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vbl(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vbl(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vbl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vbr(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vbr(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vbr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vtl(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vtl(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vtl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vtr(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vtr(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vtr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_bl(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_bl(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_bl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_br(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_br(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_br.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_tl(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_tl(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_tl.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_tr(1).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_tr(2).png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_tr.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tree.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tunnel_h.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tunnel_v.png
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/menu_gametype.jpg
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/menu_hiscore.jpg
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/menu_main.jpg
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/menu_player.jpg
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/menu_players.jpg
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/menu_track.jpg
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/stunts3dedit.jpg
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/track-environment.jpg
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/trackedit-resizetool.jpg
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/trackedit-scenerytool.jpg
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/trackedit-scenerytool2.jpg
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/trackedit-stuntsimporttool.jpg
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/trackedit-tilecollection1.jpg
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/trackedit-tilecollectiontool.jpg
+%%PORTDOCS%%%%DOCSDIR%%/nolanguage/trackedit1.jpg
 %%DATADIR%%/cars/diablo.conf
 %%DATADIR%%/cars/diablo/body.glb
 %%DATADIR%%/cars/diablo/dashboard.png
@@ -84,6 +333,7 @@ bin/ustuntstrackedit
 %%DATADIR%%/environment/london-horizon.png
 %%DATADIR%%/environment/sky3.rgb
 %%DATADIR%%/environment/spheremap.rgb
+%%DATADIR%%/environment/tropical-horizon.png
 %%DATADIR%%/lang/de/LC_MESSAGES/ultimatestunts.mo
 %%DATADIR%%/lang/fr_FR/LC_MESSAGES/ultimatestunts.mo
 %%DATADIR%%/lang/hu/LC_MESSAGES/ultimatestunts.mo
@@ -95,6 +345,7 @@ bin/ustuntstrackedit
 %%DATADIR%%/misc/routeerror.glb
 %%DATADIR%%/misc/showroom.glb
 %%DATADIR%%/misc/smoke.rgba
+%%DATADIR%%/misc/sun.rgba
 %%DATADIR%%/misc/trackedit.conf
 %%DATADIR%%/misc/trackedit.template
 %%DATADIR%%/music/pronobozo-ReInvent.ogg
@@ -370,6 +621,8 @@ bin/ustuntstrackedit
 %%DATADIR%%/tiles/trench3c.glb
 %%DATADIR%%/tiles/trenche.conf
 %%DATADIR%%/tiles/trenche.glb
+%%DATADIR%%/tiles/tunneldiag.conf
+%%DATADIR%%/tiles/tunneldiag.glb
 %%DATADIR%%/tiles/tunnelhoriz.conf
 %%DATADIR%%/tiles/tunnelhoriz.glb
 %%DATADIR%%/tiles/tunnelin1.conf
@@ -399,7 +652,6 @@ bin/ustuntstrackedit
 %%DATADIR%%/tracks/default.track
 %%DATADIR%%/tracks/downhill.track
 %%DATADIR%%/tracks/hill.track
-%%DATADIR%%/tracks/hill2.track
 %%DATADIR%%/tracks/mcp.track
 %%DATADIR%%/tracks/mountain.track
 %%DATADIR%%/tracks/nocorners.track
@@ -407,296 +659,40 @@ bin/ustuntstrackedit
 %%DATADIR%%/tracks/test.track
 %%DATADIR%%/tracks/ustunts.track
 %%DATADIR%%/tracks/wheeltest.track
-%%PORTDOCS%%%%DOCSDIR%%/changes.txt
-%%PORTDOCS%%%%DOCSDIR%%/de/3dguideline.htm
-%%PORTDOCS%%%%DOCSDIR%%/de/cartuning.htm
-%%PORTDOCS%%%%DOCSDIR%%/de/client.htm
-%%PORTDOCS%%%%DOCSDIR%%/de/compile.htm
-%%PORTDOCS%%%%DOCSDIR%%/de/createcar.htm
-%%PORTDOCS%%%%DOCSDIR%%/de/developing.htm
-%%PORTDOCS%%%%DOCSDIR%%/de/fileformats.htm
-%%PORTDOCS%%%%DOCSDIR%%/de/general.htm
-%%PORTDOCS%%%%DOCSDIR%%/de/index.htm
-%%PORTDOCS%%%%DOCSDIR%%/de/originaltrackformat.htm
-%%PORTDOCS%%%%DOCSDIR%%/de/server.htm
-%%PORTDOCS%%%%DOCSDIR%%/de/stunts3dedit.htm
-%%PORTDOCS%%%%DOCSDIR%%/de/trackedit.htm
-%%PORTDOCS%%%%DOCSDIR%%/de/trackfromscratch.htm
-%%PORTDOCS%%%%DOCSDIR%%/en/3dguideline.htm
-%%PORTDOCS%%%%DOCSDIR%%/en/cartuning.htm
-%%PORTDOCS%%%%DOCSDIR%%/en/client.htm
-%%PORTDOCS%%%%DOCSDIR%%/en/compile.htm
-%%PORTDOCS%%%%DOCSDIR%%/en/createcar.htm
-%%PORTDOCS%%%%DOCSDIR%%/en/developing.htm
-%%PORTDOCS%%%%DOCSDIR%%/en/fileformats.htm
-%%PORTDOCS%%%%DOCSDIR%%/en/general.htm
-%%PORTDOCS%%%%DOCSDIR%%/en/index.htm
-%%PORTDOCS%%%%DOCSDIR%%/en/macosx.htm
-%%PORTDOCS%%%%DOCSDIR%%/en/originaltrackformat.htm
-%%PORTDOCS%%%%DOCSDIR%%/en/server.htm
-%%PORTDOCS%%%%DOCSDIR%%/en/stunts3dedit.htm
-%%PORTDOCS%%%%DOCSDIR%%/en/trackedit.htm
-%%PORTDOCS%%%%DOCSDIR%%/en/trackfromscratch.htm
-%%PORTDOCS%%%%DOCSDIR%%/index.htm
-%%PORTDOCS%%%%DOCSDIR%%/nl/3dguideline.htm
-%%PORTDOCS%%%%DOCSDIR%%/nl/cartuning.htm
-%%PORTDOCS%%%%DOCSDIR%%/nl/client.htm
-%%PORTDOCS%%%%DOCSDIR%%/nl/compile.htm
-%%PORTDOCS%%%%DOCSDIR%%/nl/createcar.htm
-%%PORTDOCS%%%%DOCSDIR%%/nl/developing.htm
-%%PORTDOCS%%%%DOCSDIR%%/nl/fileformats.htm
-%%PORTDOCS%%%%DOCSDIR%%/nl/general.htm
-%%PORTDOCS%%%%DOCSDIR%%/nl/index.htm
-%%PORTDOCS%%%%DOCSDIR%%/nl/originaltrackformat.htm
-%%PORTDOCS%%%%DOCSDIR%%/nl/server.htm
-%%PORTDOCS%%%%DOCSDIR%%/nl/stunts3dedit.htm
-%%PORTDOCS%%%%DOCSDIR%%/nl/trackedit.htm
-%%PORTDOCS%%%%DOCSDIR%%/nl/trackfromscratch.htm
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bankedcorner_bl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bankedcorner_br.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bankedcorner_tl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bankedcorner_tr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bankedroad_hb.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bankedroad_ht.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bankedroad_vl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bankedroad_vr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/barn_b.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/barn_l.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/barn_r.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/barn_t.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bifurcation_hbl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bifurcation_hbr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bifurcation_htl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bifurcation_htr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bifurcation_vbl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bifurcation_vbr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bifurcation_vtl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bifurcation_vtr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bridge_b.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bridge_l.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bridge_r.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/bridge_t.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/cactus.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/chicane_hl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/chicane_hr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/chicane_vl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/chicane_vr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corkscrew_h.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corkscrew_hbl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corkscrew_hbr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corkscrew_htl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corkscrew_htr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corkscrew_v.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corkscrew_vbl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corkscrew_vbr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corkscrew_vtl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corkscrew_vtr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_bl(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_bl(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_bl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_br(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_br(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_br.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_tl(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_tl(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_tl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_tr(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_tr(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/corner_tr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/cross(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/cross(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/cross.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/dividedhighway_h.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/dividedhighway_v.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/halfpipe_h.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/halfpipe_v.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/house_b.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/house_l.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/house_r.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/house_t.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/loop_h.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/loop_v.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/mill_b.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/mill_l.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/mill_r.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/mill_t.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/overpass_h.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/overpass_v.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/palm.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/petrolstation_b.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/petrolstation_l.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/petrolstation_r.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/petrolstation_t.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/pipe_h.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/pipe_v.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/raisedcorner_bl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/raisedcorner_br.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/raisedcorner_tl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/raisedcorner_tr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/raisedramp_b.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/raisedramp_l.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/raisedramp_r.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/raisedramp_t.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/raisedroad_h.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/raisedroad_v.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/road_h(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/road_h(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/road_h.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/road_v(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/road_v(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/road_v.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/ship_b.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/ship_l.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/ship_r.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/ship_t.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/shop_b.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/shop_l.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/shop_r.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/shop_t.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/slalom_h.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/slalom_v.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/solidramp_b.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/solidramp_l.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/solidramp_r.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/solidramp_t.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/solidroad_h.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/solidroad_v.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/span_h.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/span_v.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_b(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_b(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_b.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_l(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_l(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_l.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_r(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_r(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_r.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_t(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_t(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/start_t.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startbank_hbl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startbank_hbr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startbank_htl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startbank_htr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startbank_vbl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startbank_vbr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startbank_vtl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startbank_vtr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/starthighway_hl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/starthighway_hr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/starthighway_vb.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/starthighway_vt.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startpipe_b.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startpipe_l.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startpipe_r.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/startpipe_t.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/stunts.htm
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/style.css
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tenniscourt.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain0.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain1.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain10.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain11.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain12.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain13.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain14.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain15.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain16.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain17.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain18.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain2.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain3.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain4.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain5.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain6.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain7.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain8.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/terrain9.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_hbl(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_hbl(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_hbl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_hbr(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_hbr(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_hbr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_htl(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_htl(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_htl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_htr(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_htr(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_htr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vbl(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vbl(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vbl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vbr(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vbr(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vbr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vtl(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vtl(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vtl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vtr(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vtr(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightbifurcation_vtr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_bl(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_bl(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_bl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_br(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_br(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_br.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_tl(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_tl(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_tl.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_tr(1).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_tr(2).png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tightcorner_tr.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tree.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tunnel_h.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files/tunnel_v.png
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/menu_gametype.jpg
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/menu_hiscore.jpg
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/menu_main.jpg
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/menu_player.jpg
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/menu_players.jpg
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/menu_track.jpg
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/stunts3dedit.jpg
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/track-environment.jpg
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/trackedit-tilecollection1.jpg
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/trackedit-tilecollectiontool.jpg
-%%PORTDOCS%%%%DOCSDIR%%/nolanguage/trackedit1.jpg
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/de
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/nl
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/nolanguage
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/cars/diablo
-@dirrm %%DATADIR%%/cars/f1
-@dirrm %%DATADIR%%/cars/ferrarif40
-@dirrm %%DATADIR%%/cars/ferrarispider
-@dirrm %%DATADIR%%/cars/generic
-@dirrm %%DATADIR%%/cars/jeep
-@dirrm %%DATADIR%%/cars/lego
-@dirrm %%DATADIR%%/cars/porsche911
-@dirrm %%DATADIR%%/cars/porsche928
-@dirrm %%DATADIR%%/cars/subaruimpreza
-@dirrm %%DATADIR%%/cars/tford
-@dirrm %%DATADIR%%/cars
-@dirrm %%DATADIR%%/environment/lensflare
-@dirrm %%DATADIR%%/environment
-@dirrm %%DATADIR%%/lang/de/LC_MESSAGES
-@dirrm %%DATADIR%%/lang/de
-@dirrm %%DATADIR%%/lang/fr_FR/LC_MESSAGES
-@dirrm %%DATADIR%%/lang/fr_FR
-@dirrm %%DATADIR%%/lang/hu/LC_MESSAGES
-@dirrm %%DATADIR%%/lang/hu
-@dirrm %%DATADIR%%/lang/nl/LC_MESSAGES
-@dirrm %%DATADIR%%/lang/nl
+@dirrm %%DATADIR%%/tracks
+@dirrm %%DATADIR%%/tiles
+@dirrm %%DATADIR%%/textures
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/misc
 @dirrm %%DATADIR%%/lang/pt_BR/LC_MESSAGES
 @dirrm %%DATADIR%%/lang/pt_BR
+@dirrm %%DATADIR%%/lang/nl/LC_MESSAGES
+@dirrm %%DATADIR%%/lang/nl
+@dirrm %%DATADIR%%/lang/hu/LC_MESSAGES
+@dirrm %%DATADIR%%/lang/hu
+@dirrm %%DATADIR%%/lang/fr_FR/LC_MESSAGES
+@dirrm %%DATADIR%%/lang/fr_FR
+@dirrm %%DATADIR%%/lang/de/LC_MESSAGES
+@dirrm %%DATADIR%%/lang/de
 @dirrm %%DATADIR%%/lang
-@dirrm %%DATADIR%%/misc
-@dirrm %%DATADIR%%/music
-@dirrm %%DATADIR%%/textures
-@dirrm %%DATADIR%%/tiles
-@dirrm %%DATADIR%%/tracks
+@dirrm %%DATADIR%%/environment/lensflare
+@dirrm %%DATADIR%%/environment
+@dirrm %%DATADIR%%/cars/tford
+@dirrm %%DATADIR%%/cars/subaruimpreza
+@dirrm %%DATADIR%%/cars/porsche928
+@dirrm %%DATADIR%%/cars/porsche911
+@dirrm %%DATADIR%%/cars/lego
+@dirrm %%DATADIR%%/cars/jeep
+@dirrm %%DATADIR%%/cars/generic
+@dirrm %%DATADIR%%/cars/ferrarispider
+@dirrm %%DATADIR%%/cars/ferrarif40
+@dirrm %%DATADIR%%/cars/f1
+@dirrm %%DATADIR%%/cars/diablo
+@dirrm %%DATADIR%%/cars
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/nolanguage/Original Stunts Track-Format_files
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/nolanguage
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/nl
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/de
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
