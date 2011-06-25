@@ -1,0 +1,32 @@
+--- a/xine_post_autocrop.c
++++ b/xine_post_autocrop.c
+@@ -42,6 +42,7 @@
+  */
+ 
+ 
++#include <stddef.h>
+ #include <stdint.h>
+ 
+ #include <xine/xine_internal.h>
+--- a/xine_post_swscale.c
++++ b/xine_post_swscale.c
+@@ -37,6 +37,8 @@
+  *    - Fixed yv12 stretched warp tables generation
+  */
+ 
++#include <stddef.h>
++
+ #include <xine/xine_internal.h>
+ #include <xine/post.h>
+ #include <float.h>  /* DBL_MIN */
+--- a/xine_post_audiochannel.c
++++ b/xine_post_audiochannel.c
+@@ -39,6 +39,8 @@
+  *
+  */
+ 
++#include <stddef.h>
++
+ #include <xine/xine_internal.h>
+ #include <xine/post.h>
+ 
