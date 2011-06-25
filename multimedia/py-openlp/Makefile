@@ -21,7 +21,7 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	py*-sip>=0:${PORTSDIR}/devel/py-sip \
 		py*-qt4-core>=0:${PORTSDIR}/devel/py-qt4-core \
 		py*-qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
-		py*-sqlalchemy>=0.5:${PORTSDIR}/databases/py-sqlalchemy06
+		py*-sqlalchemy06>=0.5:${PORTSDIR}/databases/py-sqlalchemy06
 RUN_DEPENDS=	py*-beautifulsoup<3.1:${PORTSDIR}/www/py-beautifulsoup30 \
 		py*-lxml>=0:${PORTSDIR}/devel/py-lxml \
 		py*-phonon>=${PYQT4_VERSION}:${PORTSDIR}/multimedia/py-qt4-phonon \

@@ -53,7 +53,7 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlobject>=0.10.1:${PORTSDIR}/databases/py-
 .endif
 
 .if defined (WITH_SQLALCHEMY)
-RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.3.4:${PORTSDIR}/databases/py-sqlalchemy06
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.3.4:${PORTSDIR}/databases/py-sqlalchemy06
 .endif
 
 .include <bsd.port.post.mk>

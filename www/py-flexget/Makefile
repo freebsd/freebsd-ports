@@ -17,7 +17,7 @@ EXTRACT_SUFX=
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	Program to automate downloading from different sources
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>0.5:${PORTSDIR}/databases/py-sqlalchemy06 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy06>0.5:${PORTSDIR}/databases/py-sqlalchemy06 \
 		${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}pygooglechart>=0:${PORTSDIR}/graphics/py-pygooglechart \
 		${PYTHON_PKGNAMEPREFIX}progressbar>=0:${PORTSDIR}/misc/py-progressbar \
