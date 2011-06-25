@@ -18,6 +18,8 @@ COMMENT=	Murmur is the server component of Mumble
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/function.hpp:${PORTSDIR}/devel/boost-libs
 LIB_DEPENDS=	protobuf.7:${PORTSDIR}/devel/protobuf
 
+USERS=		${PORTNAME}
+GROUPS=		${USERS}
 USE_QT_VER=	4
 QT_COMPONENTS=	qmake_build moc_build corelib network xml sql sql-sqlite3_run
 
