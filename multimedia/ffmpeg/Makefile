@@ -104,7 +104,7 @@ DOC_FILES=	CREDITS INSTALL LICENSE MAINTAINERS README RELEASE
 # under doc subdirectory
 DOC_DOCFILES=	APIchanges TODO avutil.txt build_system.txt \
 		developer.html faq.html fate.txt ffmpeg-mt-authorship.txt \
-		ffmpeg.html ffprobe.html ffserver.html general.html \
+		ffmpeg.html ffprobe.html general.html \
 		git-howto.txt issue_tracker.txt libavfilter.html \
 		multithreading.txt optimization.txt rate_distortion.txt \
 		snow.txt soc.txt swscale.txt tablegen.txt viterbi.txt
@@ -154,6 +154,7 @@ BUILD_DEPENDS+=		texi2html:${PORTSDIR}/textproc/texi2html
 MAN1+=		ffmpeg.1 ffprobe.1
 . if !defined(WITHOUT_FFSERVER)
 MAN1+=		ffserver.1
+DOC_DOCFILES+=	ffserver.html
 . endif
 .endif
 
@@ -292,6 +293,7 @@ USE_SDL+=	sdl
 PLIST_FILES+=	bin/ffplay
 .if !defined(NOPORTDOCS)
 MAN1+=	ffplay.1
+DOC_DOCFILES+=	ffplay.html
 .endif
 .else
 CONFIGURE_ARGS+=	--disable-ffplay
