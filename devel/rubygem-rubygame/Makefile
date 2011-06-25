@@ -16,6 +16,7 @@ COMMENT=	A game-development extension and library for the ruby language
 
 RUN_DEPENDS=	rubygem-ruby-sdl-ffi>=0.1.0:${PORTSDIR}/devel/rubygem-ruby-sdl-ffi
 
+RUBY_VER=	1.9
 USE_SDL=		gfx image mixer ttf
 USE_RUBY=		yes
 USE_RAKE=		yes
