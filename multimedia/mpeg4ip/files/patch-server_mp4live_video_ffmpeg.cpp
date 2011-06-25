@@ -1,5 +1,5 @@
 --- server/mp4live/video_ffmpeg.cpp.orig	2007-01-30 22:53:45.000000000 +0100
-+++ server/mp4live/video_ffmpeg.cpp	2011-06-24 22:08:18.167374694 +0200
++++ server/mp4live/video_ffmpeg.cpp	2011-06-25 11:45:14.444347677 +0200
 @@ -121,9 +121,6 @@
    m_avctx->bit_rate = 
      Profile()->GetIntegerValue(CFG_VIDEO_BIT_RATE) * 1000;
@@ -23,12 +23,14 @@
  #else
      AVRational asp = 
        {Profile()->GetIntegerValue(CFG_VIDEO_MPEG4_PAR_WIDTH),
-@@ -225,7 +222,7 @@
+@@ -224,8 +221,10 @@
+     }
    }
    if (wantKeyFrame) m_picture->pict_type = FF_I_TYPE; //m_picture->key_frame = 1;
++#if 0
    else //m_picture->key_frame = 0;
--    m_picture->pict_type = 0;
-+    m_picture->pict_type = FF_P_TYPE;
+     m_picture->pict_type = 0;
++#endif
  
    m_picture->data[0] = (uint8_t *)pY;
    m_picture->data[1] = (uint8_t *)pU;
