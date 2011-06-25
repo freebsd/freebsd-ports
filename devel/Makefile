@@ -2922,6 +2922,7 @@
     SUBDIR += py-magic
     SUBDIR += py-mercurialserver
     SUBDIR += py-mez_xml
+    SUBDIR += py-minimongo
     SUBDIR += py-mock
     SUBDIR += py-mongoengine
     SUBDIR += py-mongokit
