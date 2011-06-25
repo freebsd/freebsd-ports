@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bochs
-PORTVERSION=	2.4.5
+PORTVERSION=	2.4.6
 PORTEPOCH=	2
 CATEGORIES=	emulators
 MASTER_SITES=	SF
@@ -16,7 +16,7 @@ COMMENT=	An IA-32 (x86) PC emulator that runs DOS, Win 95, and more
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-docbook
 
 OPTIONS=	A20_PIN "Enable support for A20 pin" on \
@@ -26,6 +26,7 @@ OPTIONS=	A20_PIN "Enable support for A20 pin" on \
 		CDROM "Enable CDROM support" on \
 		CLGD54XX "Enable Cirrus Logic GD54xx video card" off \
 		CONF_MSRS "Enable configurable MSR registers support" on \
+		CPP_SUFX "Use .cpp as C++ suffix" off \
 		DEBUGGER "Enable debugger support" off \
 		DEBUGGER_X86 "Enable x86 hardware debugger" off \
 		DISASM "Enable disassemler support " on \
@@ -33,6 +34,7 @@ OPTIONS=	A20_PIN "Enable support for A20 pin" on \
 		FPU "Enable FPU emulator" on \
 		GAMEPORT "Enable standard PC gameport support" off \
 		GDB_STUB "Enable GDB stub support" off \
+		HS_ASMS "Enable support for host specific inline asms" off \
 		IDLE_HACK "Keep Bochs from using all CPU time" off \
 		INSTRUMENT "Enable support for instrumentation" off \
 		IODEBUG "Enable I/O interface to debugger" off \
@@ -41,7 +43,6 @@ OPTIONS=	A20_PIN "Enable support for A20 pin" on \
 		MISALIGNEDSSE "Enable misaligned SSE support" off \
 		MWAIT "Enable experimental MONITOR/MWAIT support" off \
 		NE2000 "Enable limited ne2000 support" on \
-		NEW_PIT "Enable use of the new PIT model" on \
 		OPTIMIZATIONS "Enable all safe speeed optimizations" on \
 		PCI "Enable limited i440FX PCI support" on \
 		PLUGINS "Enable building dynamic loadable plugins" off \
@@ -63,6 +64,7 @@ OPTIONS=	A20_PIN "Enable support for A20 pin" on \
 		VMX "Enable Virtialization extensions" off \
 		WX "Use WxWidgets display interface" off \
 		X11 "Use X11 display interface" on \
+		X2APIC "Enable support for X2APIC" off \
 		X86_64 "Enable AMD x86-64 support" off \
 		XPM "Enable XPM library support" off
 
@@ -125,6 +127,12 @@ CONFIGURE_ARGS+=--disable-configurable-msrs
 CONFIGURE_ARGS+=--enable-configurable-msrs
 .endif
 
+.if defined(WITH_CPP_SUFX)
+CONFIGURE_ARGS+=--enable-cpp
+.else
+CONFIGURE_ARGS+=--disable-cpp
+.endif
+
 .if defined(WITH_DEBUGGER)
 CONFIGURE_ARGS+=--enable-debugger
 .else
@@ -165,6 +173,12 @@ CONFIGURE_ARGS+=--disable-gameport
 CONFIGURE_ARGS+=--enable-gdb-stub
 .else
 CONFIGURE_ARGS+=--disable-gdb-stub
+.endif
+
+.if defined(WITH_HS_ASMS)
+CONFIGURE_ARGS+=--enable-host-specific-asms
+.else
+CONFIGURE_ARGS+=--disable-host-specific-asms
 .endif
 
 .if defined(WITH_IDLE_HACK)
@@ -213,12 +227,6 @@ CONFIGURE_ARGS+=--disable-monitor-mwait
 CONFIGURE_ARGS+=--enable-ne2000
 .else
 CONFIGURE_ARGS+=--disable-ne2000
-.endif
-
-.if !defined(WITH_NEW_PIT)
-CONFIGURE_ARGS+=--disable-new-pit
-.else
-CONFIGURE_ARGS+=--enable-new-pit
 .endif
 
 .if defined(WITH_OPTIMIZATIONS)
@@ -338,8 +346,14 @@ CONFIGURE_ARGS+=--disable-debugger-gui
 .endif
 
 .if defined(WITH_X11)
-USE_XORG=	xext xt
+USE_XORG=	xrandr
 CONFIGURE_ARGS+=--with-x11
+.endif
+
+.if defined(WITH_X2APIC)
+CONFIGURE_ARGS+=--enable-x2apic
+.else
+CONFIGURE_ARGS+=--disable-x2apic
 .endif
 
 .if defined(WITH_X86_64)
@@ -348,8 +362,8 @@ CONFIGURE_ARGS+=--enable-x86-64
 CONFIGURE_ARGS+=--disable-x86-64
 .endif
 
-.if defined(WITH_XPM)
-USE_XORG=	xpm
+.if defined(WITH_XPM) && defined(WITH_X11)
+USE_XORG+=	xpm
 CONFIGURE_ARGS+=--enable-xpm
 .else
 CONFIGURE_ARGS+=--disable-xpm
