@@ -20,6 +20,7 @@ COMMENT=	A C library for creating IP packets
 
 GNU_CONFIGURE=	yes
 CFLAGS+=	-fPIC
+USE_CSTD=	gnu89
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
