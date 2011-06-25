@@ -1,7 +1,11 @@
 %%PYTHON_SITELIBDIR%%/httplib2/__init__.py
 %%PYTHON_SITELIBDIR%%/httplib2/__init__.pyc
 %%PYTHON_SITELIBDIR%%/httplib2/__init__.pyo
+%%PYTHON_SITELIBDIR%%/httplib2/cacerts.txt
 %%PYTHON_SITELIBDIR%%/httplib2/iri2uri.py
 %%PYTHON_SITELIBDIR%%/httplib2/iri2uri.pyc
 %%PYTHON_SITELIBDIR%%/httplib2/iri2uri.pyo
+%%PYTHON_SITELIBDIR%%/httplib2/socks.py
+%%PYTHON_SITELIBDIR%%/httplib2/socks.pyc
+%%PYTHON_SITELIBDIR%%/httplib2/socks.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/httplib2
