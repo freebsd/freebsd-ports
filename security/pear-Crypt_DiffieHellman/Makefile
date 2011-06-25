@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Crypt_DiffieHellman
-PORTVERSION=	0.2.3
+PORTVERSION=	0.2.5
 CATEGORIES=	security www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -16,6 +16,7 @@ BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 USE_PHP=	bcmath mbstring gmp
+PEAR_CATSRC=	yes
 
 CATEGORY=	Crypt
 FILES=		DiffieHellman.php DiffieHellman/Math.php DiffieHellman/Exception.php \
