@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	do_sqlite3
-PORTVERSION=	0.10.5
+PORTVERSION=	0.10.6
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
@@ -14,7 +14,7 @@ MAINTAINER=	voldern@hoeggen.net
 COMMENT=	Ruby DataObjects driver to the SQLite DB engine version 3
 
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3
-RUN_DEPENDS=	rubygem-data_objects>=0.10.4:${PORTSDIR}/databases/rubygem-data_objects
+RUN_DEPENDS=	rubygem-data_objects>=0.10.6:${PORTSDIR}/databases/rubygem-data_objects
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
