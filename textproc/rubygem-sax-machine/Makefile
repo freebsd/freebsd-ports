@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sax-machine
-PORTVERSION=	0.0.15
+PORTVERSION=	0.0.16
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
