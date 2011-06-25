@@ -3372,6 +3372,7 @@ feh                             ports/graphics/feh
 felis                           ports/misc/felis
 felt                            ports/science/felt
 femlab                          ports/math/femlab
+fengoffice                      ports/deskutils/fengoffice
 fep                             ports/misc/fep
 ferite                          ports/lang/ferite
 festalon                        ports/audio/festalon
@@ -10771,6 +10772,7 @@ p5-AnyEvent-Redis               ports/databases/p5-AnyEvent-Redis
 p5-AnyEvent-ReverseHTTP         ports/www/p5-AnyEvent-ReverseHTTP
 p5-AnyEvent-Run                 ports/devel/p5-AnyEvent-Run
 p5-AnyEvent-SCGI                ports/www/p5-AnyEvent-SCGI
+p5-AnyEvent-SNMP                ports/net-mgmt/p5-AnyEvent-SNMP
 p5-AnyEvent-Subprocess          ports/devel/p5-AnyEvent-Subprocess
 p5-AnyEvent-Twitter             ports/net/p5-AnyEvent-Twitter
 p5-AnyEvent-Twitter-Stream      ports/net/p5-AnyEvent-Twitter-Stream
@@ -14996,6 +14998,7 @@ p5-anyevent-redis               ports/databases/p5-AnyEvent-Redis
 p5-anyevent-reversehttp         ports/www/p5-AnyEvent-ReverseHTTP
 p5-anyevent-run                 ports/devel/p5-AnyEvent-Run
 p5-anyevent-scgi                ports/www/p5-AnyEvent-SCGI
+p5-anyevent-snmp                ports/net-mgmt/p5-AnyEvent-SNMP
 p5-anyevent-subprocess          ports/devel/p5-AnyEvent-Subprocess
 p5-anyevent-twitter             ports/net/p5-AnyEvent-Twitter
 p5-anyevent-twitter-stream      ports/net/p5-AnyEvent-Twitter-Stream
@@ -23251,6 +23254,7 @@ rubygem-color                   ports/print/rubygem-color
 rubygem-colortools              ports/print/rubygem-colortools
 rubygem-columnize               ports/devel/rubygem-columnize
 rubygem-configuration           ports/devel/rubygem-configuration
+rubygem-couchrest               ports/databases/rubygem-couchrest
 rubygem-crack                   ports/devel/rubygem-crack
 rubygem-cuba                    ports/www/rubygem-cuba
 rubygem-curb                    ports/ftp/rubygem-curb
@@ -23340,6 +23344,7 @@ rubygem-hpricot                 ports/www/rubygem-hpricot
 rubygem-htauth                  ports/www/rubygem-htauth
 rubygem-htmlentities            ports/textproc/rubygem-htmlentities
 rubygem-htmltools               ports/textproc/rubygem-htmltools
+rubygem-http_parser.rb          ports/net/rubygem-http_parser.rb
 rubygem-httparty                ports/www/rubygem-httparty
 rubygem-httpclient              ports/www/rubygem-httpclient
 rubygem-i18n                    ports/devel/rubygem-i18n
