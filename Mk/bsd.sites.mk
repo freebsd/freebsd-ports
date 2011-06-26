@@ -1121,8 +1121,7 @@ MASTER_SITE_RUBY+= \
 # See http://rubyforge.org/credits/
 .if !defined(IGNORE_MASTER_SITE_RUBYFORGE)
 MASTER_SITE_RUBYFORGE+= \
-	http://files.rubyforge.vm.bytemark.co.uk/%SUBDIR%/ \
-	http://files.ruby.inoack.com/%SUBDIR%/
+	http://files.rubyforge.vm.bytemark.co.uk/%SUBDIR%/
 .endif
 
 # See http://rubygems.org/pages/about
