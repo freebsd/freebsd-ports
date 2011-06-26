@@ -1,0 +1,47 @@
+diff --git a/Makefile b/Makefile
+index 286c3a6..3ed7a59 100644
+--- Makefile
++++ Makefile
+@@ -1,4 +1,4 @@
+-PREFIX=/usr
++PREFIX=/usr/local
+ IGNORE=-ignore-package monads-fd
+ GHCFLAGS=-O2 -Wall $(IGNORE) -fspec-constr-count=5
+ ifdef PROFILE
+@@ -37,12 +37,8 @@ git-annex-shell.1: doc/git-annex-shell.mdwn
+ install: all
+ 	install -d $(DESTDIR)$(PREFIX)/bin
+ 	install $(bins) $(DESTDIR)$(PREFIX)/bin
+-	install -d $(DESTDIR)$(PREFIX)/share/man/man1
+-	install -m 0644 $(mans) $(DESTDIR)$(PREFIX)/share/man/man1
+-	install -d $(DESTDIR)$(PREFIX)/share/doc/git-annex
+-	if [ -d html ]; then \
+-		rsync -a --delete html/ $(DESTDIR)$(PREFIX)/share/doc/git-annex/html/; \
+-	fi
++	install -d $(DESTDIR)$(PREFIX)/man/man1
++	install -m 0644 $(mans) $(DESTDIR)$(PREFIX)/man/man1
+ 
+ test: $(bins)
+ 	if ! $(GHCMAKE) -O0 test; then \
+@@ -59,21 +55,7 @@ testcoverage: $(bins)
+ 	@hpc report test --exclude=Main --exclude=QC
+ 	@hpc markup test --exclude=Main --exclude=QC --destdir=.hpc >/dev/null
+ 
+-# If ikiwiki is available, build static html docs suitable for being
+-# shipped in the software package.
+-ifeq ($(shell which ikiwiki),)
+-IKIWIKI=@echo "** ikiwiki not found, skipping building docs" >&2; true
+-else
+-IKIWIKI=ikiwiki
+-endif
+-
+ docs: $(mans)
+-	$(IKIWIKI) doc html -v --wikiname git-annex --plugin=goodstuff \
+-		--no-usedirs --disable-plugin=openid --plugin=sidebar \
+-		--underlaydir=/dev/null --disable-plugin=shortcut \
+-		--disable-plugin=smiley \
+-		--plugin=comments --set comments_pagespec="*" \
+-		--exclude='news/.*'
+ 
+ clean:
+ 	rm -rf build $(bins) $(mans) test configure  *.tix .hpc \

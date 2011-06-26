@@ -474,6 +474,7 @@
     SUBDIR += gir-repository
     SUBDIR += gir-repository-libnotify
     SUBDIR += git
+    SUBDIR += git-annex
     SUBDIR += git-merge-changelog
     SUBDIR += gitg
     SUBDIR += gittrac
