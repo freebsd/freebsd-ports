@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	eigen
-PORTVERSION=	2.0.15
+PORTVERSION=	2.0.16
 PORTEPOCH=	1
 CATEGORIES=	math
 MASTER_SITES=	http://bitbucket.org/eigen/eigen/get/
@@ -20,7 +20,7 @@ USE_CMAKE=	yes
 
 LATEST_LINK=	${PORTNAME}2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-9ca09dbd70ce
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/pkgconfig|libdata/pkgconfig|g' \
