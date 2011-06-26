@@ -146,7 +146,6 @@ ports_x11_wm                    ports/x11-wm
 3dm                             ports/sysutils/3dm
 3dpong                          ports/games/3dpong
 3proxy                          ports/net/3proxy
-44bsd-csh                       ports/shells/44bsd-csh
 44bsd-hunt                      ports/games/44bsd-hunt
 44bsd-more                      ports/sysutils/44bsd-more
 4stattack                       ports/games/4stattack
@@ -965,6 +964,7 @@ beediff                         ports/textproc/beediff
 beep                            ports/audio/beep
 beep-media-player               ports/multimedia/beep-media-player
 beforelight                     ports/x11/beforelight
+belier                          ports/security/belier
 belooted                        ports/games/belooted
 belvu                           ports/biology/belvu
 bennugd-core                    ports/devel/bennugd-core
@@ -2765,6 +2765,7 @@ e17-module-drawer               ports/x11-wm/e17-module-drawer
 e17-module-efm_nav              ports/x11-wm/e17-module-efm_nav
 e17-module-efm_path             ports/x11-wm/e17-module-efm_path
 e17-module-efm_pathbar          ports/x11-wm/e17-module-efm_pathbar
+e17-module-empris               ports/x11-wm/e17-module-empris
 e17-module-eooorg               ports/x11-wm/e17-module-eooorg
 e17-module-everything-mpris     ports/x11-wm/e17-module-everything-mpris
 e17-module-everything-pidgin    ports/x11-wm/e17-module-everything-pidgin
@@ -2776,6 +2777,7 @@ e17-module-execwatch            ports/x11-wm/e17-module-execwatch
 e17-module-flame                ports/x11-wm/e17-module-flame
 e17-module-forecasts            ports/x11-wm/e17-module-forecasts
 e17-module-iiirk                ports/x11-wm/e17-module-iiirk
+e17-module-itask                ports/x11-wm/e17-module-itask
 e17-module-itask-ng             ports/x11-wm/e17-module-itask-ng
 e17-module-language             ports/x11-wm/e17-module-language
 e17-module-mail                 ports/x11-wm/e17-module-mail
@@ -2783,6 +2785,7 @@ e17-module-mem                  ports/x11-wm/e17-module-mem
 e17-module-moon                 ports/x11-wm/e17-module-moon
 e17-module-mpdule               ports/x11-wm/e17-module-mpdule
 e17-module-net                  ports/x11-wm/e17-module-net
+e17-module-news                 ports/x11-wm/e17-module-news
 e17-module-notification         ports/x11-wm/e17-module-notification
 e17-module-penguins             ports/x11-wm/e17-module-penguins
 e17-module-photo                ports/x11-wm/e17-module-photo
@@ -2797,6 +2800,7 @@ e17-module-tclock               ports/x11-wm/e17-module-tclock
 e17-module-tiling               ports/x11-wm/e17-module-tiling
 e17-module-uptime               ports/x11-wm/e17-module-uptime
 e17-module-weather              ports/x11-wm/e17-module-weather
+e17-module-winlist-ng           ports/x11-wm/e17-module-winlist-ng
 e17-module-winselector          ports/x11-wm/e17-module-winselector
 e17-module-wlan                 ports/x11-wm/e17-module-wlan
 e17-modules                     ports/x11-wm/e17-modules
@@ -4194,7 +4198,6 @@ gdesklets                       ports/deskutils/gdesklets
 gdesklets-clock                 ports/x11-clocks/gdesklets-clock
 gdesklets-countdown             ports/x11-clocks/gdesklets-countdown
 gdesklets-ebichuclock           ports/x11-clocks/gdesklets-ebichuclock
-gdesklets-irc                   ports/irc/gdesklets-irc
 gdesklets-recentlyused          ports/deskutils/gdesklets-recentlyused
 gdesklets-starterbar            ports/deskutils/gdesklets-starterbar
 gdesklets-tasklist              ports/x11/gdesklets-tasklist
@@ -7822,7 +7825,6 @@ libetpan                        ports/mail/libetpan
 libev                           ports/devel/libev
 libevent                        ports/devel/libevent
 libevent2                       ports/devel/libevent2
-libevnet                        ports/net/libevnet
 libevocosm                      ports/devel/libevocosm
 libexecinfo                     ports/devel/libexecinfo
 libexif                         ports/graphics/libexif
@@ -8213,6 +8215,7 @@ libspectrum                     ports/emulators/libspectrum
 libspf                          ports/mail/libspf
 libspf2                         ports/mail/libspf2
 libspf2-10                      ports/mail/libspf2-10
+libsphinxclient                 ports/textproc/libsphinxclient
 libspiro                        ports/graphics/libspiro
 libsrs2                         ports/mail/libsrs2
 libsrs_alt                      ports/mail/libsrs_alt
@@ -9339,7 +9342,6 @@ mod_auth_imap                   ports/www/mod_auth_imap
 mod_auth_imap2                  ports/www/mod_auth_imap2
 mod_auth_kerb                   ports/www/mod_auth_kerb
 mod_auth_kerb2                  ports/www/mod_auth_kerb2
-mod_auth_ldap                   ports/www/mod_auth_ldap
 mod_auth_mellon                 ports/www/mod_auth_mellon
 mod_auth_mysql                  ports/www/mod_auth_mysql
 mod_auth_mysql2                 ports/www/mod_auth_mysql2
@@ -9350,11 +9352,9 @@ mod_auth_pam2                   ports/www/mod_auth_pam2
 mod_auth_pgsql                  ports/www/mod_auth_pgsql
 mod_auth_pgsql2                 ports/www/mod_auth_pgsql2
 mod_auth_pubtkt                 ports/www/mod_auth_pubtkt
-mod_auth_remote                 ports/www/mod_auth_remote
 mod_auth_tkt                    ports/www/mod_auth_tkt
 mod_auth_useragent              ports/www/mod_auth_useragent
 mod_auth_xradius                ports/www/mod_auth_xradius
-mod_authenticache               ports/www/mod_authenticache
 mod_authn_sasl                  ports/www/mod_authn_sasl
 mod_authnz_external             ports/www/mod_authnz_external
 mod_authz_unixgroup             ports/www/mod_authz_unixgroup
@@ -9401,7 +9401,6 @@ mod_jail                        ports/www/mod_jail
 mod_jk                          ports/www/mod_jk
 mod_jk-apache2                  ports/www/mod_jk-apache2
 mod_layout                      ports/www/mod_layout
-mod_layout2                     ports/www/mod_layout2
 mod_layout22                    ports/www/mod_layout22
 mod_limitipconn                 ports/www/mod_limitipconn
 mod_limitipconn2                ports/www/mod_limitipconn2
@@ -9416,7 +9415,6 @@ mod_log_sql                     ports/www/mod_log_sql
 mod_log_sql2                    ports/www/mod_log_sql2
 mod_log_sql2-dtc                ports/www/mod_log_sql2-dtc
 mod_macro                       ports/www/mod_macro
-mod_macro2                      ports/www/mod_macro2
 mod_macro22                     ports/www/mod_macro22
 mod_memcache                    ports/www/mod_memcache
 mod_mono                        ports/www/mod_mono
@@ -9451,8 +9449,6 @@ mod_smooth_streaming            ports/www/mod_smooth_streaming
 mod_sqlinclude                  ports/www/mod_sqlinclude
 mod_ticket                      ports/www/mod_ticket
 mod_tidy                        ports/www/mod_tidy
-mod_traf_thief                  ports/www/mod_traf_thief
-mod_transform                   ports/www/mod_transform
 mod_trigger                     ports/www/mod_trigger
 mod_tsa                         ports/www/mod_tsa
 mod_tsunami                     ports/www/mod_tsunami
@@ -10525,7 +10521,6 @@ openfwtk                        ports/security/openfwtk
 opengfx                         ports/games/opengfx
 opengl-man                      ports/graphics/opengl-man
 openglad                        ports/games/openglad
-opengoo                         ports/deskutils/opengoo
 opengrok                        ports/devel/opengrok
 opengtl                         ports/graphics/opengtl
 openh323                        ports/net/openh323
@@ -10832,6 +10827,7 @@ p5-Apache-Test                  ports/www/p5-Apache-Test
 p5-Apache-XBEL                  ports/textproc/p5-Apache-XBEL
 p5-Apache2-SOAP                 ports/net/p5-Apache2-SOAP
 p5-Apache2-Scoreboard           ports/www/p5-Apache2-Scoreboard
+p5-Apache2-SiteControl          ports/www/p5-Apache2-SiteControl
 p5-ApacheBench                  ports/www/p5-ApacheBench
 p5-ApacheDBILogConfig           ports/databases/p5-ApacheDBILogConfig
 p5-ApacheDBILogger              ports/databases/p5-ApacheDBILogger
@@ -13863,6 +13859,7 @@ p5-ReadLine-TTYtter             ports/devel/p5-ReadLine-TTYtter
 p5-Readonly                     ports/devel/p5-Readonly
 p5-Redis                        ports/databases/p5-Redis
 p5-Redis-hiredis                ports/databases/p5-Redis-hiredis
+p5-Reflex                       ports/devel/p5-Reflex
 p5-Regex-PreSuf                 ports/textproc/p5-Regex-PreSuf
 p5-Regexp-Assemble              ports/devel/p5-Regexp-Assemble
 p5-Regexp-Assemble-Compressed   ports/devel/p5-Regexp-Assemble-Compressed
@@ -15057,6 +15054,7 @@ p5-apache-template              ports/www/p5-Apache-Template
 p5-apache-test                  ports/www/p5-Apache-Test
 p5-apache-xbel                  ports/textproc/p5-Apache-XBEL
 p5-apache2-scoreboard           ports/www/p5-Apache2-Scoreboard
+p5-apache2-sitecontrol          ports/www/p5-Apache2-SiteControl
 p5-apache2-soap                 ports/net/p5-Apache2-SOAP
 p5-apachebench                  ports/www/p5-ApacheBench
 p5-apachedbilogconfig           ports/databases/p5-ApacheDBILogConfig
@@ -18145,6 +18143,7 @@ p5-readonly                     ports/devel/p5-Readonly
 p5-reaper                       ports/devel/p5-reaper
 p5-redis                        ports/databases/p5-Redis
 p5-redis-hiredis                ports/databases/p5-Redis-hiredis
+p5-reflex                       ports/devel/p5-Reflex
 p5-regex-presuf                 ports/textproc/p5-Regex-PreSuf
 p5-regexp-assemble              ports/devel/p5-Regexp-Assemble
 p5-regexp-assemble-compressed   ports/devel/p5-Regexp-Assemble-Compressed
@@ -20072,6 +20071,7 @@ pecl-rar                        ports/archivers/pecl-rar
 pecl-rrd                        ports/databases/pecl-rrd
 pecl-runkit                     ports/devel/pecl-runkit
 pecl-shape                      ports/devel/pecl-shape
+pecl-sphinx                     ports/www/pecl-sphinx
 pecl-spl_types                  ports/devel/pecl-spl_types
 pecl-spread                     ports/devel/pecl-spread
 pecl-sqlite                     ports/databases/pecl-sqlite
@@ -21262,6 +21262,7 @@ py-apipkg                       ports/devel/py-apipkg
 py-apolicy                      ports/mail/py-apolicy
 py-argparse                     ports/devel/py-argparse
 py-asn1                         ports/devel/py-asn1
+py-asn1-modules                 ports/devel/py-asn1-modules
 py-aspects                      ports/devel/py-aspects
 py-aspyct                       ports/devel/py-aspyct
 py-astLib                       ports/astro/py-astLib
@@ -21366,6 +21367,7 @@ py-django-css                   ports/www/py-django-css
 py-django-devel                 ports/www/py-django-devel
 py-django-evolution             ports/www/py-django-evolution
 py-django-extensions            ports/www/py-django-extensions
+py-django-haystack              ports/www/py-django-haystack
 py-django-keyedcache            ports/www/py-django-keyedcache
 py-django-livesettings          ports/www/py-django-livesettings
 py-django-mptt                  ports/www/py-django-mptt
@@ -21598,6 +21600,7 @@ py-mhash                        ports/security/py-mhash
 py-migrate                      ports/databases/py-migrate
 py-milter                       ports/mail/py-milter
 py-ming                         ports/graphics/py-ming
+py-minimongo                    ports/devel/py-minimongo
 py-miniupnpc                    ports/net/py-miniupnpc
 py-mlpy                         ports/science/py-mlpy
 py-mlt                          ports/multimedia/py-mlt
@@ -21778,6 +21781,7 @@ py-pysqlite22                   ports/databases/py-pysqlite22
 py-pysqlite23                   ports/databases/py-pysqlite23
 py-pytc                         ports/databases/py-pytc
 py-pytemplate                   ports/devel/py-pytemplate
+py-pythonbrew                   ports/devel/py-pythonbrew
 py-pytz                         ports/devel/py-pytz
 py-pyutil                       ports/devel/py-pyutil
 py-pywebdav                     ports/www/py-pywebdav
@@ -21904,6 +21908,7 @@ py-sqldict                      ports/databases/py-SQLDict
 py-sqlite3                      ports/databases/py-sqlite3
 py-sqlkit                       ports/databases/py-sqlkit
 py-sqlobject                    ports/databases/py-sqlobject
+py-sqlparse                     ports/databases/py-sqlparse
 py-sqlrelay                     ports/databases/py-sqlrelay
 py-sslstrip                     ports/security/py-sslstrip
 py-statgrab                     ports/devel/py-statgrab
@@ -21968,6 +21973,7 @@ py-turbojson                    ports/devel/py-turbojson
 py-turbojson11                  ports/devel/py-turbojson11
 py-turbokid                     ports/devel/py-turbokid
 py-turbomail                    ports/mail/py-turbomail
+py-turpial                      ports/net-im/py-turpial
 py-tvgrab                       ports/textproc/py-tvgrab
 py-twisted                      ports/devel/py-twisted
 py-twistedConch                 ports/security/py-twistedConch
@@ -23389,6 +23395,7 @@ rubygem-markaby                 ports/textproc/rubygem-markaby
 rubygem-maruku                  ports/www/rubygem-maruku
 rubygem-mash                    ports/devel/rubygem-mash
 rubygem-mechanize               ports/www/rubygem-mechanize
+rubygem-memcache                ports/databases/rubygem-memcache
 rubygem-memcache-client         ports/databases/rubygem-memcache-client
 rubygem-metaid                  ports/devel/rubygem-metaid
 rubygem-mime-types              ports/misc/rubygem-mime-types
@@ -24435,6 +24442,7 @@ squirrelmail-vlogin-plugin      ports/mail/squirrelmail-vlogin-plugin
 squirrelmail-websearch-plugin   ports/mail/squirrelmail-websearch-plugin
 squirrelmail-wetteronline-plugin  ports/mail/squirrelmail-wetteronline-plugin
 squirreloutlook                 ports/mail/squirreloutlook
+squish                          ports/graphics/squish
 squishdot                       ports/www/squishdot
 squsq                           ports/archivers/squsq
 sqwebmail                       ports/mail/sqwebmail
@@ -25310,6 +25318,7 @@ transproxy                      ports/www/transproxy
 transset-df                     ports/x11-wm/transset-df
 trapproto                       ports/x11/trapproto
 trayer                          ports/x11/trayer
+trayer-srg                      ports/x11/trayer-srg
 tree                            ports/sysutils/tree
 tree-widget                     ports/editors/tree-widget
 treecc                          ports/lang/treecc
