@@ -1,0 +1,8 @@
+*******************************************************************
+
+  NOTE: on FreeBSD Digitemp should use /dev/cuau* serial devices,
+  so if running as non-root user, please tune your devfs rules or
+  add running user to "dialer" group which is the default owner
+  of /dev/cuau* devices !
+
+*******************************************************************
