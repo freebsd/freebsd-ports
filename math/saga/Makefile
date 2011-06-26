@@ -7,6 +7,7 @@
 
 PORTNAME=	saga
 PORTVERSION=	2.0.7
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -36,11 +37,10 @@ DESKTOP_ENTRIES=	"SAGA GIS" "${COMMENT}" "${DATADIR}/saga_icon_32.xpm" \
 			"saga_gui" "Application;Math;" true
 
 OPTIONS=	UNICODE "Enable Unicode Support" On \
+		PYTHON "Enable Python bindings" On \
 		HARU "Enable Haru Free PDF Library (optional)" Off
 
 .include <bsd.port.options.mk>
-
-.include <bsd.port.pre.mk>
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS+=	CFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
@@ -52,6 +52,15 @@ CONFIGURE_ARGS+=	--enable-unicode
 CONFIGURE_ARGS+=	--disable-unicode
 .endif
 
+.if defined(WITH_PYTHON)
+CONFIGURE_ARGS+=	--enable-python
+USE_PYTHON=	2.6-2.7
+PLIST_SUB+=	SAGA_PYTHON=""
+.else
+CONFIGURE_ARGS+=	--disable-python
+PLIST_SUB+=	SAGA_PYTHON="@comment "
+.endif
+
 .if defined(WITH_HARU)
 BUILD_DEPENDS+=	${LOCALBASE}/lib/libhpdf.so:${PORTSDIR}/print/libharu
 RUN_DEPENDS+=	${LOCALBASE}/lib/libhpdf.so:${PORTSDIR}/print/libharu
@@ -59,6 +68,8 @@ PLIST_SUB+=	HARU=""
 .else
 PLIST_SUB+=	HARU="@comment "
 .endif
+
+.include <bsd.port.pre.mk>
 
 post-patch:
 	@for f in `${FIND} '${WRKSRC}' -name Makefile.in` \
