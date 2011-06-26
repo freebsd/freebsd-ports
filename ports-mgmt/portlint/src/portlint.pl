@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.216 2011/03/21 00:58:39 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.223 2011/06/26 21:25:51 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 13;
-my $micro = 5;
+my $micro = 6;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -1541,7 +1541,7 @@ sub checkmakefile {
 	pos($whole) = 0;
 	print "OK: checking OPTIONS.\n" if ($verbose);
 	@oopt = ($makevar{OPTIONS} =~ /(\w+)\s+\".*?\"\s+\w+/sg);
-	while ($whole =~ /\n[^#\n]*?\(?\s*WITH(?:OUT)?_(\w+)\s*\)?/mg) {
+	while ($whole =~ /\(?\s*WITH(?:OUT)?_(\w+)\s*\)?/mg) {
 		push @mopt, $1;
 		my $lineno = &linenumber($`) + 1;
 		&perror("FATAL", $file, $lineno, "option WITH(OUT)_$1 is used before ".
@@ -1917,6 +1917,18 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 	}
 
 	#
+	# check for use of ${FIND} ... ${XARGS} ${RM}
+	#
+	print "OK: checking for instances of \${FIND} ... \${XARGS} \${RM}.\n"
+		if ($verbose);
+	if ($j =~ /\$\{FIND\}.*\|.*\$\{XARGS\}.*\$\{RM\}/) {
+			my $lineno = &linenumber($`);
+			&perror("WARN", $file, $lineno, "possible use of ".
+				"\"\${FIND} ... \${XARGS} \${RM}\" when ".
+				"\"\${FIND} ... -delete\" will work.");
+	}
+
+	#
 	# whole file: ${MACHINE_ARCH}
 	#
 	print "OK: checking for instances of \${MACHINE_ARCH} being test.\n"
@@ -2101,12 +2113,18 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 
 		if ($configure_env =~ /(FC)=/ ||
 			$configure_env =~ /(F77)=/ ||
-			$configure_env =~ /(CPPFLAGS)=/ ||
 			$configure_env =~ /(FFLAGS)=/) {
 				&perror("FATAL", $file, -1, "$1 is already ".
 					"passed in CONFIGURE_ENV via bsd.gcc.mk.  If you need to ".
 					"override the default value, alter $1 in the Makefile ".
 					"instead with $1=...");
+		}
+
+		if ($configure_env =~ /(CPPFLAGS)=/) {
+			&perror("FATAL", $file, -1, "$1 is already ".
+				"passed in CONFIGURE_ENV via bsd.port.mk.  If you need to ".
+				"override the default value, alter $1 in the Makefile ".
+				"instead with $1=...");
 		}
 	}
 
@@ -2233,7 +2251,6 @@ EOF
 		$sections[$i] =~ s/^\n//;
 	}
 
-	#
 	#
 	# section 2: PORTNAME/PORTVERSION/...
 	#
@@ -2393,21 +2410,6 @@ DIST_SUBDIR EXTRACT_ONLY
 		}
 	}
 
-	# check value of LICENSE_COMB
-	if ($makevar{LICENSE_COMB} && $makevar{LICENSE_COMB} !~ /^(single|dual|multi$)/) {
-		&perror("FATAL", $file, -1, "LICENSE_COMB contains invalid value '$1' - must be one of 'single', 'dual', 'multi'");
-	}
-
-	# check LICENSE
-	if ($makevar{LICENSE} && $makevar{LICENSE} ne '') {
-		my $comb = $makevar{LICENSE_COMB} // 'single';
-
-		my @tokens = split(/ /, $makevar{LICENSE});
-		if ($comb eq 'single' && scalar(@tokens) > 1) {
-			&perror("FATAL", $file, -1, "LICENSE contains multiple licenses but LICENSE_COMB is not set to 'dual' or 'multi'");
-		}
-	}
-
 	# check the URL
 	if (($tmp =~ /\nMASTER_SITES[+?]?=[ \t]*([^\n]*)\n/
 	 && $1 !~ /^[ \t]*$/) || ($makevar{MASTER_SITES} ne '')) {
@@ -2475,11 +2477,12 @@ DIST_SUBDIR EXTRACT_ONLY
 
 	print "OK: sanity checking PORTNAME/PORTVERSION/DISTVERSIONPREFIX/DISTVERSION/DISTVERSIONSUFFIX.\n" if ($verbose);
 	if ($distname ne '') {
-		if ($distname eq "$portname-$portversion") {
+		my $exp_distname = $makevar{DISTNAME};
+		if ($exp_distname eq "$portname-$portversion") {
 			&perror("WARN", $file, -1, "DISTNAME is \${PORTNAME}-\${PORTVERSION} by ".
 				"default, you don't need to define DISTNAME.");
 		} else {
-			if ($distname eq "$portname-$distversionprefix$distversion$distversionsuffix") {
+			if ($exp_distname eq "$portname-$distversionprefix$distversion$distversionsuffix") {
 				&perror("WARN", $file, -1, "DISTNAME is \${PORTNAME}-\${DISTVERSIONPREFIX}\${DISTVERSION}\${DISTVERSIONSUFFIX} by ".
 					"default, you don't need to define DISTNAME.");
 			}
@@ -2703,7 +2706,7 @@ PATCH_SITES PATCHFILES PATCH_DIST_STRIP
 	#
 	print "OK: checking third section of $file (MAINTAINER).\n"
 		if ($verbose);
-	$tmp = $sections[$idx++];
+	$tmp = $sections[$idx];
 
 	&checkearlier($file, $tmp, @varnames);
 	&checkorder('MAINTAINER', $tmp, $file, qw(
@@ -2756,14 +2759,52 @@ MAINTAINER COMMENT
 		}
 	}
 
+	$idx++;
+
 	push(@varnames, qw(
 MAINTAINER COMMENT
 	));
 
 	#
-	# section 5: *_DEPENDS (may not be there)
+	# section 5: LICENSE
 	#
-	print "OK: checking fourth section of $file (*_DEPENDS).\n"
+	print "OK: checking fourth section of $file (LICENSE).\n"
+		if ($verbose);
+	$tmp = $sections[$idx];
+
+	if ($makevar{LICENSE}) {
+		&checkorder('LICENSE', $tmp, $file, qw(
+			LICENSE LICENSE_COMB LICENSE_GROUPS LICENSE_NAME
+			LICENSE_TEXT LICENSE_FILE LICENSE_PERMS
+		));
+
+		# check LICENSE
+		if ($makevar{LICENSE} && $makevar{LICENSE} ne '') {
+			my $comb = $makevar{LICENSE_COMB} // 'single';
+
+			my @tokens = split(/ /, $makevar{LICENSE});
+			if ($comb eq 'single' && scalar(@tokens) > 1) {
+				&perror("FATAL", $file, -1, "LICENSE contains multiple licenses but LICENSE_COMB is not set to 'dual' or 'multi'");
+			}
+		}
+
+		# check value of LICENSE_COMB
+		if ($makevar{LICENSE_COMB} && $makevar{LICENSE_COMB} !~ /^(single|dual|multi$)/) {
+			&perror("FATAL", $file, -1, "LICENSE_COMB contains invalid value '$1' - must be one of 'single', 'dual', 'multi'");
+		}
+
+		$idx++;
+
+		push(@varnames, qw(
+			LICENSE LICENSE_COMB LICENSE_GROUPS LICENSE_NAME
+			LICENSE_TEXT LICENSE_FILE LICENSE_PERMS
+		));
+	}
+
+	#
+	# section 6: *_DEPENDS (may not be there)
+	#
+	print "OK: checking fifth section of $file (*_DEPENDS).\n"
 		if ($verbose);
 	$tmp = $sections[$idx];
 
@@ -2789,7 +2830,7 @@ FETCH_DEPENDS DEPENDS_TARGET
 		check_depends_syntax($tmp, $file);
 
 		foreach my $i (@linestocheck) {
-			$tmp =~ s/$i[?+]?=[^\n]+\n//g;
+			$tmp =~ s/$i[?+:]?=[^\n]+\n//g;
 		}
 
 		&checkextra($tmp, '*_DEPENDS', $file);
