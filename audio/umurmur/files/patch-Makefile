@@ -1,0 +1,15 @@
+--- src/Makefile.orig	2011-02-24 13:06:56.000000000 +0900
++++ src/Makefile	2011-02-24 13:07:54.000000000 +0900
+@@ -25,9 +25,10 @@
+ # OpenSSL - usually installed at a standard place
+ # EXTRA_CFLAGS:=
+ # EXTRA_LDFLAGS:=-lcrypto -lssl 
++EXTRA_LDFLAGS:=-lcrypto -lssl
+ 
+-CFLAGS:=$(CFLAGS) -I. -Wall $(EXTRA_CFLAGS)
+-LDFLAGS:=$(EXTRA_LDFLAGS) $(LDFLAGS) -lconfig 
++CFLAGS:=$(CFLAGS) -I. -I/usr/local/include -Wall $(EXTRA_CFLAGS)
++LDFLAGS:=$(EXTRA_LDFLAGS) $(LDFLAGS) -L/usr/local/lib -lconfig 
+ 
+ umurmurd:google/protobuf-c/libprotobuf_c.a $(OBJS)
+ 	$(CC) $(LDFLAGS) $(OBJS) $(SSL_LIB) google/protobuf-c/libprotobuf_c.a -o umurmurd

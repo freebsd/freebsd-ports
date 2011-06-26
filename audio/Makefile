@@ -778,6 +778,7 @@
     SUBDIR += ufmcontrol-i18n
     SUBDIR += umix
     SUBDIR += umodplayer
+    SUBDIR += umurmur
     SUBDIR += vagalume
     SUBDIR += vat
     SUBDIR += ventrilo-server
