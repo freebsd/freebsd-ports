@@ -10,6 +10,13 @@ lib/libsaga_odbc-2.0.7.so
 lib/libsaga_odbc.a
 lib/libsaga_odbc.la
 lib/libsaga_odbc.so
+%%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/_saga_api-2.0.7.so
+%%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/_saga_api.a
+%%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/_saga_api.la
+%%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/_saga_api.so
+%%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/saga_api.py
+%%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/saga_api.pyc
+%%SAGA_PYTHON%%%%PYTHON_SITELIBDIR%%/saga_api.pyo
 lib/saga/libcontrib_a_perego.la
 lib/saga/libcontrib_a_perego.so
 lib/saga/libdocs_html.la
