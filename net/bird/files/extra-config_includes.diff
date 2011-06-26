@@ -1,0 +1,302 @@
+Index: conf/conf.c
+===================================================================
+--- conf/conf.c	(revision 4873)
++++ conf/conf.c	(revision 4875)
+@@ -108,7 +108,7 @@
+   cfg_mem = c->mem;
+   if (setjmp(conf_jmpbuf))
+     return 0;
+-  cf_lex_init(0);
++  cf_lex_init(c, 0);
+   sysdep_preconfig(c);
+   protos_preconfig(c);
+   rt_preconfig(c);
+@@ -138,7 +138,7 @@
+   cfg_mem = c->mem;
+   if (setjmp(conf_jmpbuf))
+     return 0;
+-  cf_lex_init(1);
++  cf_lex_init(c, 1);
+   cf_parse();
+   return 1;
+ }
+@@ -356,6 +356,7 @@
+     strcpy(buf, "<bug: error message too long>");
+   new_config->err_msg = cfg_strdup(buf);
+   new_config->err_lino = conf_lino;
++  new_config->err_fname = conf_fname;
+   longjmp(conf_jmpbuf, 1);
+ }
+ 
+Index: conf/cf-lex.l
+===================================================================
+--- conf/cf-lex.l	(revision 4873)
++++ conf/cf-lex.l	(revision 4875)
+@@ -30,6 +30,9 @@
+ #include <errno.h>
+ #include <stdlib.h>
+ #include <stdarg.h>
++#include <unistd.h>
++#include <fcntl.h>
++#include <libgen.h>
+ 
+ #define PARSER 1
+ 
+@@ -64,18 +67,36 @@
+ static struct sym_scope *conf_this_scope;
+ 
+ int conf_lino;
++char conf_fname[255];
++int conf_fd;
+ 
++char conf_base[255];
++
+ static int cf_hash(byte *c);
+ static struct symbol *cf_find_sym(byte *c, unsigned int h0);
+ 
+ linpool *cfg_mem;
+ 
+-int (*cf_read_hook)(byte *buf, unsigned int max);
++int (*cf_read_hook)(byte *buf, unsigned int max, int fd);
+ 
+-#define YY_INPUT(buf,result,max) result = cf_read_hook(buf, max);
+-#define YY_NO_UNPUT
++#define YY_INPUT(buf,result,max) result = cf_read_hook(buf, max, STACK(conf_fd));
+ #define YY_FATAL_ERROR(msg) cf_error(msg)
+ 
++#define MAX_INCLUDE_DEPTH	42
++struct include_file_stack {
++	YY_BUFFER_STATE	stack; /* Internal lexer state */
++	unsigned int	conf_lino; /* Current file lineno (at include) */
++	char		conf_fname[255]; /* Current file name */
++	int		conf_fd; /* Current file descriptor */
++};
++
++static struct include_file_stack ifs[MAX_INCLUDE_DEPTH];
++static int ifs_ind; /* Current stack depth */
++#define STACK(x)	ifs[ifs_ind].x
++
++static void dispatch_include(void);
++static int check_eof(void);
++
+ %}
+ 
+ %option noyywrap
+@@ -90,9 +111,12 @@
+ XIGIT [0-9a-fA-F]
+ ALNUM [a-zA-Z_0-9]
+ WHITE [ \t]
++include   ^{WHITE}*include{WHITE}*\".*\"{WHITE}*;
+ 
+ %%
+ 
++{include} { dispatch_include(); }
++
+ {DIGIT}+\.{DIGIT}+\.{DIGIT}+\.{DIGIT}+ {
+ #ifdef IPV6
+   if (ipv4_pton_u32(yytext, &cf_lval.i32))
+@@ -184,7 +208,7 @@
+ 
+ ["][^"\n]*\n	cf_error("Unterminated string");
+ 
+-<INITIAL,COMMENT><<EOF>>	return END;
++<INITIAL,COMMENT><<EOF>>	{ if (check_eof()) return END; }
+ 
+ {WHITE}+
+ 
+@@ -220,7 +244,67 @@
+ 
+ %%
+ 
++/* Open included file with properly swapped buffers */
++static void
++dispatch_include(void)
++{
++	char *fname, *p = NULL, full_name[255];
++	int fd;
++
++	if ((fname = strchr(yytext, '"')) != NULL) {
++		if ((p = strchr(++fname, '"')) != NULL)
++			*p = '\0';
++
++		if (*fname == '/')
++			snprintf(full_name, sizeof(full_name), "%s", fname);
++		else
++			snprintf(full_name, sizeof(full_name), "%s/%s", conf_base, fname);
++
++		if (ifs_ind >= MAX_INCLUDE_DEPTH)
++			cf_error("Max include depth (%d) reached on file %s", MAX_INCLUDE_DEPTH, fname);
++
++		if ((fd = open(full_name, O_RDONLY)) == -1)
++			cf_error("Error opening included file %s", full_name);
++
++		/* Save current stack */
++		STACK(conf_lino) = conf_lino;
++		STACK(stack) = YY_CURRENT_BUFFER;
++		/* Prepare new stack */
++		ifs_ind++;
++		STACK(conf_lino) = 1;
++		strcpy(STACK(conf_fname), fname); /* XXX: strlcpy should be here */
++		STACK(conf_fd) = fd;
++		/* Export to global variables */
++		conf_lino = STACK(conf_lino);
++		conf_fd = STACK(conf_fd);
++		strcpy(conf_fname, STACK(conf_fname));
++
++		yy_switch_to_buffer(yy_create_buffer(yyin, YY_BUF_SIZE));
++	}
++}
++
+ static int
++check_eof(void)
++{
++	if (ifs_ind > 0)
++		close(STACK(conf_fd));
++	if (--ifs_ind < 0) {
++		/* EOF in main config file */
++		ifs_ind = 0;
++		conf_lino = 1;
++		return 1;
++	}
++
++	/* switch buffer */
++	conf_lino = STACK(conf_lino);
++	conf_fd = STACK(conf_fd);
++	strcpy(conf_fname, STACK(conf_fname));
++	yy_delete_buffer(YY_CURRENT_BUFFER);
++	yy_switch_to_buffer(STACK(stack));
++	return 0;
++}
++
++static int
+ cf_hash(byte *c)
+ {
+   unsigned int h = 13;
+@@ -363,11 +447,28 @@
+  * parsing of a new input.
+  */
+ void
+-cf_lex_init(int is_cli)
++cf_lex_init(struct config *c, int is_cli)
+ {
+   if (!kw_hash_inited)
+     cf_lex_init_kh();
+   conf_lino = 1;
++  /* Zero stack */
++  memset(ifs, 0, sizeof(ifs));
++  memset(conf_base, 0, sizeof(conf_base));
++  ifs_ind = 0;
++  if (!is_cli) {
++    /* Fill in level 0 */
++    STACK(conf_lino) = 1;
++    STACK(conf_fd) = c->file_fd;
++    strcpy(STACK(conf_fname), c->file_name);
++    /* Save config directory path */
++    strcpy(conf_base, dirname(STACK(conf_fname)));
++  }
++  /* Export to global variables */
++  conf_lino = STACK(conf_lino);
++  conf_fd = STACK(conf_fd);
++  strcpy(conf_fname, STACK(conf_fname));
++
+   yyrestart(NULL);
+   if (is_cli)
+     BEGIN(CLI);
+Index: conf/conf.h
+===================================================================
+--- conf/conf.h	(revision 4873)
++++ conf/conf.h	(revision 4875)
+@@ -38,7 +38,9 @@
+   int cli_debug;			/* Tracing of CLI connections and commands */
+   char *err_msg;			/* Parser error message */
+   int err_lino;				/* Line containing error */
++  char *err_fname;			/* File name containing error */
+   char *file_name;			/* Name of configuration file */
++  int file_fd;				/* Config file descriptor */
+   struct symbol **sym_hash;		/* Lexer: symbol hash table */
+   struct symbol **sym_fallback;		/* Lexer: fallback symbol hash table */
+   int obstacle_count;			/* Number of items blocking freeing of this config */
+@@ -83,7 +85,7 @@
+ 
+ /* Lexer */
+ 
+-extern int (*cf_read_hook)(byte *buf, unsigned int max);
++extern int (*cf_read_hook)(byte *buf, unsigned int max, int fd);
+ 
+ struct symbol {
+   struct symbol *next;
+@@ -107,9 +109,10 @@
+ #define SYM_VARIABLE 0x100	/* 0x100-0x1ff are variable types */
+ 
+ extern int conf_lino;
++extern char conf_fname[255];
+ 
+ int cf_lex(void);
+-void cf_lex_init(int is_cli);
++void cf_lex_init(struct config *c, int is_cli);
+ struct symbol *cf_find_symbol(byte *c);
+ struct symbol *cf_default_name(char *template, int *counter);
+ struct symbol *cf_define_symbol(struct symbol *symbol, int type, void *def);
+Index: doc/bird.conf.example
+===================================================================
+--- doc/bird.conf.example	(revision 4873)
++++ doc/bird.conf.example	(revision 4875)
+@@ -22,6 +22,9 @@
+ #	else reject;
+ #}
+ 
++# Write more filters in included config file(s):
++#include "filters.conf";
++
+ #filter sink { reject; }
+ #filter okay { accept; }
+ 
+Index: sysdep/unix/main.c
+===================================================================
+--- sysdep/unix/main.c	(revision 4873)
++++ sysdep/unix/main.c	(revision 4875)
+@@ -122,13 +122,12 @@
+ #endif // PATH_IPROUTE_DIR
+ 
+ 
+-static int conf_fd;
+ static char *config_name = PATH_CONFIG;
+ 
+ static int
+-cf_read(byte *dest, unsigned int len)
++cf_read(byte *dest, unsigned int len, int fd)
+ {
+-  int l = read(conf_fd, dest, len);
++  int l = read(fd, dest, len);
+   if (l < 0)
+     cf_error("Read error");
+   return l;
+@@ -158,15 +157,15 @@
+ unix_read_config(struct config **cp, char *name)
+ {
+   struct config *conf = config_alloc(name);
+-  int ret;
++  int ret, fd;
+ 
+   *cp = conf;
+-  conf_fd = open(name, O_RDONLY);
+-  if (conf_fd < 0)
++  if ((fd = open(name, O_RDONLY)) == -1)
+     return 0;
++  conf->file_fd = fd;
+   cf_read_hook = cf_read;
+   ret = config_parse(conf);
+-  close(conf_fd);
++  close(fd);
+   return ret;
+ }
+ 
+@@ -178,7 +177,7 @@
+   if (!unix_read_config(&conf, config_name))
+     {
+       if (conf->err_msg)
+-	die("%s, line %d: %s", config_name, conf->err_lino, conf->err_msg);
++	die("%s, line %d: %s", conf->err_fname, conf->err_lino, conf->err_msg);
+       else
+ 	die("Unable to open configuration file %s: %m", config_name);
+     }
