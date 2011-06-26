@@ -6,9 +6,9 @@
 
 PORTNAME=	groupoffice
 DISTVERSIONPREFIX=	com-
-DISTVERSION=	2.18-stable-21
+DISTVERSION=	3.7.20
 CATEGORIES=	www
-MASTER_SITES=	SF/group-office/2.18
+MASTER_SITES=	SF/group-office/3.7
 
 MAINTAINER=	as@bsdgroup.de
 COMMENT=	A modular web application framework vor office
@@ -20,7 +20,7 @@ WANT_PHP_WEB=	yes
 USE_MYSQL=	yes
 IGNORE_WITH_MYSQL=	323
 
-WWWDIR?=	${PREFIX}/www/${PORTNAME}2
+WWWDIR?=	${PREFIX}/www/${PORTNAME}3
 
 SUB_FILES=	pkg-message
 
