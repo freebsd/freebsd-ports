@@ -1,6 +1,6 @@
---- configure.orig	2010-09-08 19:40:48.000000000 +0200
-+++ configure	2010-12-09 09:21:58.223421249 +0100
-@@ -6636,7 +6636,7 @@
+--- configure.orig	2011-06-23 15:18:36.000000000 +0200
++++ configure	2011-06-25 21:30:44.310215849 +0200
+@@ -6638,7 +6638,7 @@
      # is disabled by the user. [Bug 1016796]
      LDFLAGS_ARCH=""
      UNSHARED_LIB_SUFFIX=""
@@ -9,7 +9,7 @@
      ECHO_VERSION='`echo ${VERSION}`'
      TCL_LIB_VERSIONS_OK=ok
      CFLAGS_DEBUG=-g
-@@ -7609,7 +7609,7 @@
+@@ -7648,7 +7648,7 @@
  	    SHLIB_SUFFIX=".so"
  	    DL_OBJS="tclLoadDl.o"
  	    DL_LIBS=""
@@ -18,7 +18,7 @@
  	    if test $doRpath = yes; then
  
  		CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
-@@ -7620,16 +7620,16 @@
+@@ -7659,16 +7659,16 @@
  
  		# The -pthread needs to go in the CFLAGS, not LIBS
  		LIBS=`echo $LIBS | sed s/-pthread//`
@@ -39,12 +39,12 @@
  	    	TCL_LIB_VERSIONS_OK=nodots
  		;;
  	    esac
-@@ -7638,7 +7638,7 @@
+@@ -7677,7 +7677,7 @@
  	    # This configuration from FreeBSD Ports.
  	    SHLIB_CFLAGS="-fPIC"
  	    SHLIB_LD="${CC} -shared"
 -	    TCL_SHLIB_LD_EXTRAS="-soname \$@"
 +	    TCL_SHLIB_LD_EXTRAS="-Wl,-soname,\$@"
- 	    SHLIB_LD_LIBS='${LIBS}'
  	    SHLIB_SUFFIX=".so"
  	    DL_OBJS="tclLoadDl.o"
+ 	    DL_LIBS=""

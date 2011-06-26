@@ -1,5 +1,5 @@
---- configure.orig	2010-09-02 20:12:14.000000000 +0200
-+++ configure	2010-12-09 09:26:30.809229814 +0100
+--- configure.orig	2011-06-23 20:37:39.000000000 +0200
++++ configure	2011-06-26 10:43:11.471967707 +0200
 @@ -3538,6 +3538,7 @@
  # Threads support - this auto-enables if Tcl was compiled threaded
  #------------------------------------------------------------------------
@@ -8,7 +8,7 @@
  
      # Check whether --enable-threads or --disable-threads was given.
  if test "${enable_threads+set}" = set; then
-@@ -5815,7 +5816,7 @@
+@@ -5854,7 +5855,7 @@
  	    SHLIB_SUFFIX=".so"
  	    DL_OBJS="tclLoadDl.o"
  	    DL_LIBS=""
@@ -17,7 +17,7 @@
  	    if test $doRpath = yes; then
  
  		CC_SEARCH_FLAGS='-Wl,-rpath,${LIB_RUNTIME_DIR}'
-@@ -5826,16 +5827,16 @@
+@@ -5865,16 +5866,16 @@
  
  		# The -pthread needs to go in the CFLAGS, not LIBS
  		LIBS=`echo $LIBS | sed s/-pthread//`
@@ -38,12 +38,12 @@
  	    	TCL_LIB_VERSIONS_OK=nodots
  		;;
  	    esac
-@@ -5844,7 +5845,7 @@
+@@ -5883,7 +5884,7 @@
  	    # This configuration from FreeBSD Ports.
  	    SHLIB_CFLAGS="-fPIC"
  	    SHLIB_LD="${CC} -shared"
 -	    TCL_SHLIB_LD_EXTRAS="-soname \$@"
 +	    TCL_SHLIB_LD_EXTRAS="-Wl,-soname,\$@"
- 	    SHLIB_LD_LIBS='${LIBS}'
  	    SHLIB_SUFFIX=".so"
  	    DL_OBJS="tclLoadDl.o"
+ 	    DL_LIBS=""

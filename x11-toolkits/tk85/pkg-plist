@@ -119,6 +119,7 @@ lib/tk%%TK_VER%%/console.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/ttknote.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/ttkpane.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/ttkprogress.tcl
+%%DEMOS%%lib/tk%%TK_VER%%/demos/ttkscale.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/twind.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/unicodeout.tcl
 %%DEMOS%%lib/tk%%TK_VER%%/demos/vscale.tcl
