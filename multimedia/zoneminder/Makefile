@@ -7,7 +7,7 @@
 
 PORTNAME=	zoneminder
 PORTVERSION=	1.24.4
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www2.zoneminder.com/downloads/ \
 		http://www.zoneminder.com/downloads/
@@ -18,8 +18,7 @@ COMMENT=	Complete security camera solution, fully web based with image analysis
 
 LICENSE=	GPLv2
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl2.pm:${PORTSDIR}/www/mod_perl2 \
-		${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo
+RUN_DEPENDS=	${LOCALBASE}/bin/sudo:${PORTSDIR}/security/sudo
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		netpbm.1:${PORTSDIR}/graphics/netpbm \
 		pcre.0:${PORTSDIR}/devel/pcre \
@@ -34,8 +33,7 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/php/20090626/mysql.so:${PORTSDIR}/databases/php5
 		${SITE_PERL}/Archive/Tar.pm:${PORTSDIR}/archivers/p5-Archive-Tar \
 		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite \
 		${SITE_PERL}/MIME/Entity.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat \
-		${LOCALBASE}/include/gnutls/openssl.h:${PORTSDIR}/security/gnutls
+		${LOCALBASE}/include/linux/videodev.h:${PORTSDIR}/multimedia/v4l_compat
 
 GNU_CONFIGURE=	yes
 USE_PHP=	json mysql session
@@ -56,7 +54,8 @@ CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} \
 CONFIGURE_ENV=	ZM_DB_HOST=${DB_HOST} \
 		ZM_DB_NAME=${DB_NAME} \
 		ZM_DB_USER=${DB_USER} \
-		ZM_DB_PASS=${DB_PASS}
+		ZM_DB_PASS=${DB_PASS} \
+		ZM_SSL_LIB="openssl"
 
 DB_HOST?=	localhost
 DB_NAME?=	zm
