@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	jrrd
-PORTVERSION=	1.0.3
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	databases java
 MASTER_SITES=	SF/opennms/JRRD/stable-1.0
 
-MAINTAINER=	rtdean@cytherianage.net
+MAINTAINER=	venture37@geeklan.co.uk
 COMMENT=	A Java native interface (JNI) to RRDtool
 
 LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6
+JAVA_VENDOR=	openjdk
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
 GNU_CONFIGURE=	yes
