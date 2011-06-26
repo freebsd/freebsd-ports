@@ -7,7 +7,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	4.10.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -145,20 +145,11 @@ PLIST_SUB+=	CGI="@comment "
 .endif
 
 .if defined(WITH_BIND)
-.if ${OSVERSION} < 800000
-BROKEN=		Need bind 9.5+
-.endif
-# check if MK_BIND is set to no (by /etc/src.conf or /etc/make.conf)
-.if exists(${DESTDIR}/usr/lib/libbind9.a) || exists(${LOCALBASE}/lib/libbind9.a)
 CONFIGURE_ARGS+=--enable-bind
+LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+LIB_DEPENDS+=	xml2:${PORTSDIR}/textproc/libxml2
 PLIST_SUB+=	BIND=""
 .else
-# libind9 does not exists
-CONFIGURE_ARGS+=--disable-bind
-PLIST_SUB+=	BIND="@comment "
-.endif
-.else
-# WITHOUT_BIND
 CONFIGURE_ARGS+=--disable-bind
 PLIST_SUB+=	BIND="@comment "
 .endif
