@@ -17,7 +17,10 @@ COMMENT=	Test.pm wrapper with helpers for testing Apache
 
 MAKE_JOBS_SAFE=	yes
 PERL_CONFIGURE=	yes
-USE_APACHE=	1.3+
+
+# Changed to apache13 exclusive, else apache13 ports
+# are broken if apache22 is set as default
+USE_APACHE=	13
 .include <bsd.port.pre.mk>
 
 ## XXX: www/mod_perl2 currently @2.0.5 contains A-T 1.36,

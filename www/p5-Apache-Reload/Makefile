@@ -19,7 +19,10 @@ CONFLICTS=	ap2[02]-mod_perl2-2.0.[5-9]*
 MAKE_JOBS_SAFE=	yes
 
 PERL_CONFIGURE=	yes
-USE_APACHE=	13+
+
+# Changed to apache13 exclusive, else apache13 ports
+# are broken if apache22 is set as default
+USE_APACHE=	13
 
 MAN3=		Apache2::Reload.3 Apache::Reload.3
 
