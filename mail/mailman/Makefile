@@ -7,7 +7,7 @@
 
 PORTNAME=	mailman
 DISTVERSION=	2.1.14
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES?=	mail
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		SF/${PORTNAME}/Mailman%202.1%20%28stable%29/${PORTVERSION}
@@ -154,6 +154,7 @@ pre-fetch:
 post-patch:
 	@${REINPLACE_CMD} -e 's#%%LOCALBASE%%#${LOCALBASE}#g' \
 	  ${WRKSRC}/Mailman/Defaults.py.in
+	@${REINPLACE_CMD} -e 's/^0,5,10/#&/' ${WRKSRC}/cron/crontab.in.in
 	@${SED} \
 	  -e 's#%%USER%%#${MM_USERNAME}#g' \
 	  -e 's#%%MAILMANDIR%%#${MAILMANDIR}#g' \
