@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	YAML-Tiny
-PORTVERSION=	1.44
+PORTVERSION=	1.50
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,6 @@ COMMENT=	Read/Write YAML files with as little code as possible
 
 PERL_CONFIGURE=	yes
 
-MAN3=	YAML::Tiny.3
+MAN3=		YAML::Tiny.3
 
 .include <bsd.port.mk>
