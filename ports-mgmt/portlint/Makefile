@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	portlint
-PORTVERSION=	2.13.5
+PORTVERSION=	2.13.6
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -23,6 +23,12 @@ USE_PERL5_RUN=	yes
 SRC=		${.CURDIR}/src
 
 MAN1=		portlint.1
+PLIST_FILES=	bin/portlint
+
+.if !defined(NOPORTEXAMPLES)
+PLIST_FILES+=	%%EXAMPLESDIR%%/portlintgrep
+PLIST_DIRS=	%%EXAMPLESDIR%%
+.endif
 
 do-fetch:
 	@${DO_NADA}
@@ -38,7 +44,6 @@ post-patch:
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/portlint.pl ${PREFIX}/bin/portlint
 	${INSTALL_MAN} ${WRKSRC}/portlint.1 ${MAN1PREFIX}/man/man1
-	${MKDIR} ${EXAMPLESDIR}
 .if !defined(NOPORTEXAMPLES)
 	${INSTALL} -o ${SHAREOWN} -g ${SHAREGRP} -m ${BINMODE} -d ${EXAMPLESDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/portlintgrep.pl ${EXAMPLESDIR}/portlintgrep
