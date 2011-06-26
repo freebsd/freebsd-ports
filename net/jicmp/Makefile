@@ -6,15 +6,19 @@
 #
 
 PORTNAME=	jicmp
-PORTVERSION=	1.0.11
+PORTVERSION=	1.2.0
 CATEGORIES=	net java
 MASTER_SITES=	SF/opennms/JICMP/stable-1.0/
+DISTNAME=	jicmp-${PORTVERSION}-2
 
-MAINTAINER=	rtdean@cytherianage.net
+MAINTAINER=	venture37@geeklan.co.uk
 COMMENT=	A Java native interface (JNI) to ICMP (ping)
 
+WRKSRC=		${WRKDIR}/jicmp-${PORTVERSION}
+
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.6
+JAVA_VENDOR=	openjdk
 JAVA_BUILD=	yes
 JAVA_RUN=	yes
 GNU_CONFIGURE=	yes
