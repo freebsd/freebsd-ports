@@ -3388,6 +3388,7 @@
     SUBDIR += sedsed
     SUBDIR += seed
     SUBDIR += semantic
+    SUBDIR += serdisplib
     SUBDIR += sfio
     SUBDIR += sfml
     SUBDIR += sfslite
