@@ -68,6 +68,7 @@
     SUBDIR += detachtty
     SUBDIR += diary-hercules
     SUBDIR += diction
+    SUBDIR += digitemp
     SUBDIR += display
     SUBDIR += dnetc
     SUBDIR += dotfile
