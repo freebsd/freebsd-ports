@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmapcatcher
-PORTVERSION=	0.7.5.0
-PORTREVISION=	1
+PORTVERSION=	0.7.6.1
 CATEGORIES=	astro geography
 MASTER_SITES=	http://gmapcatcher.googlecode.com/files/
 DISTNAME=	GMapCatcher-${PORTVERSION}

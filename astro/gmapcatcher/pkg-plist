@@ -3,6 +3,9 @@ bin/mapdownloader
 %%PYTHON_SITELIBDIR%%/gmapcatcher/DLWindow.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/DLWindow.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/DLWindow.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/EXWindow.py
+%%PYTHON_SITELIBDIR%%/gmapcatcher/EXWindow.pyc
+%%PYTHON_SITELIBDIR%%/gmapcatcher/EXWindow.pyo
 %%PYTHON_SITELIBDIR%%/gmapcatcher/__init__.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/__init__.pyo
@@ -48,6 +51,9 @@ bin/mapdownloader
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapMark.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapMark.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapMark.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/mapLogging.py
+%%PYTHON_SITELIBDIR%%/gmapcatcher/mapLogging.pyc
+%%PYTHON_SITELIBDIR%%/gmapcatcher/mapLogging.pyo
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapPixbuf.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapPixbuf.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapPixbuf.pyo
@@ -72,15 +78,24 @@ bin/mapdownloader
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/openStreetMaps.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/openStreetMaps.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/openStreetMaps.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/seznam.py
+%%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/seznam.pyc
+%%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/seznam.pyo
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/virtualEarth.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/virtualEarth.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/virtualEarth.pyo
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/yahoo.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/yahoo.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/yahoo.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/yandex.py
+%%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/yandex.pyc
+%%PYTHON_SITELIBDIR%%/gmapcatcher/mapServers/yandex.pyo
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServices.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServices.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapServices.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/mapTilesTransfer.py
+%%PYTHON_SITELIBDIR%%/gmapcatcher/mapTilesTransfer.pyc
+%%PYTHON_SITELIBDIR%%/gmapcatcher/mapTilesTransfer.pyo
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapTools.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapTools.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/mapTools.pyo
@@ -189,6 +204,9 @@ bin/mapdownloader
 %%PYTHON_SITELIBDIR%%/gmapcatcher/pyGPSD/scan.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/pyGPSD/scan.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/pyGPSD/scan.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tileFStoMGMaps.py
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tileFStoMGMaps.pyc
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tileFStoMGMaps.pyo
 %%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepo.pyo
@@ -198,6 +216,9 @@ bin/mapdownloader
 %%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoFS.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoFS.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoFS.pyo
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoMGMaps.py
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoMGMaps.pyc
+%%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoMGMaps.pyo
 %%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoSQLite3.py
 %%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoSQLite3.pyc
 %%PYTHON_SITELIBDIR%%/gmapcatcher/tilesRepoSQLite3.pyo
@@ -228,6 +249,7 @@ share/applications/gmapcatcher.desktop
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 share/pixmaps/gmapcatcher/downloading.png
 share/pixmaps/gmapcatcher/map.png
+share/pixmaps/gmapcatcher/map.svg
 share/pixmaps/gmapcatcher/maps.ico
 share/pixmaps/gmapcatcher/marker.png
 share/pixmaps/gmapcatcher/marker1.png
