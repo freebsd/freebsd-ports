@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Net-Amazon-Route53
-PORTVERSION=	0.110310
-PORTREVISION=	1
+PORTVERSION=	0.111300
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,7 +22,6 @@ RUN_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
 		p5-Mouse>=0:${PORTSDIR}/devel/p5-Mouse \
 		p5-XML-Bare>=0:${PORTSDIR}/textproc/p5-XML-Bare \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
