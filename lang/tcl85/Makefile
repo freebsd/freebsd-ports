@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	tcl
-PORTVERSION=	8.5.9
+PORTVERSION=	8.5.10
 CATEGORIES=	lang
 MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION}
 PKGNAMESUFFIX?=		${THREADS_SUFFIX}${PKGNAMESUFFIX2}
@@ -54,7 +54,7 @@ PLIST=		${PKGDIR}/pkg-plist.tm
 .if !defined(BUILDING_TCL_TM)
 
 .if !defined(WITHOUT_TCL_MODULES)
-RUN_DEPENDS+=	${LOCALBASE}/lib/tcl8/8.5/tcltest-2.3.2.tm:${PORTSDIR}/lang/tcl-modules
+RUN_DEPENDS+=	${LOCALBASE}/lib/tcl8/8.5/tcltest-2.3.3.tm:${PORTSDIR}/lang/tcl-modules
 .endif
 
 DATADIR=	${PREFIX}/share/${PORTNAME}${TCL_VER}

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tk
-PORTVERSION=	8.5.9
+PORTVERSION=	8.5.10
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/tcl/Tcl/${PORTVERSION}
 PKGNAMESUFFIX?=	${THREADS_SUFFIX}
@@ -117,8 +117,8 @@ MANN=	bell.n bind.n bindtags.n bitmap.n button.n canvas.n checkbutton.n \
 	ttk_button.n ttk_checkbutton.n ttk_combobox.n ttk_entry.n ttk_frame.n \
 	ttk_image.n ttk_intro.n ttk_label.n ttk_labelframe.n ttk_menubutton.n \
 	ttk_notebook.n ttk_panedwindow.n ttk_progressbar.n ttk_radiobutton.n \
-	ttk_scale.n ttk_scrollbar.n ttk_separator.n ttk_sizegrip.n ttk_style.n \
-	ttk_treeview.n ttk_vsapi.n ttk_widget.n
+	ttk_scale.n ttk_scrollbar.n ttk_separator.n ttk_sizegrip.n \
+	ttk_spinbox.n ttk_style.n ttk_treeview.n ttk_vsapi.n ttk_widget.n
 
 # MLINKS generated via  awk '/ln/ {print "\t" $2,$3,"\\"}' unix/mkLinks
 MLINKS=	3DBorder.3 Tk_Alloc3DBorderFromObj.3 \
