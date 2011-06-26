@@ -48,6 +48,8 @@ CONFIGURE_ARGS+=--with-system-pinerc=${PREFIX}/etc/alpine.conf \
 .endif
 CONFIGURE_ARGS+=--with-debug-level=2
 
+CONFIGURE_ENV+=	CC=${CC} CXX=${CXX}
+
 USE_OPENSSL=	yes
 
 .include <bsd.port.pre.mk>
