@@ -7,6 +7,7 @@
 
 PORTNAME=	net-ssh-multi
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 

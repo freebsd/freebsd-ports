@@ -7,6 +7,7 @@
 
 PORTNAME=	net-ssh
 PORTVERSION=	2.1.4
+PORTREVISION=	1	
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 
@@ -22,7 +23,7 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
 .if !defined(WITHOUT_PROMPT_PASSPHRASES)
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/termios.so:${PORTSDIR}/comms/ruby-termios
+RUN_DEPENDS+=	rubygem-ruby-termios>=0:${PORTSDIR}/comms/rubygem-ruby-termios
 .endif
 
 .include <bsd.port.mk>

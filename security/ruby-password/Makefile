@@ -7,7 +7,7 @@
 
 PORTNAME=	password
 PORTVERSION=	0.5.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security ruby
 MASTER_SITES=	http://www.caliban.org/files/ruby/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -18,7 +18,7 @@ MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A Ruby library to create, verify and manipulate passwords
 
 LIB_DEPENDS=	crack:${PORTSDIR}/security/cracklib
-RUN_DEPENDS=	${LOCALBASE}/${SADIR}/termios.so:${PORTSDIR}/comms/ruby-termios
+RUN_DEPENDS=	rubygem-ruby-termios>=0:${PORTSDIR}/comms/rubygem-ruby-termios
 
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
