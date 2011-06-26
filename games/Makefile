@@ -617,6 +617,7 @@
     SUBDIR += openpref
     SUBDIR += opensfx
     SUBDIR += opensonic
+    SUBDIR += openssn
     SUBDIR += openttd
     SUBDIR += openyahtzee
     SUBDIR += optimax
