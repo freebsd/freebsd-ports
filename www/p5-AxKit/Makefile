@@ -58,6 +58,7 @@ MAN3=		\
 		Apache::AxKit::StyleChooser::UserAgent.3 \
 		AxKit.3
 
+USE_APACHE_RUN=	13
 USE_ICONV=	yes
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	INC='-I${LOCALBASE}/include -I${LOCALBASE}/include/libxml2' \
