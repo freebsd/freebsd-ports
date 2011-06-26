@@ -7,6 +7,7 @@
 
 PORTNAME=	bird
 PORTVERSION=	1.3.1
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
 
@@ -18,7 +19,7 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 OPTIONS=	FIBS		"Enable multiple fib support" Off \
-		LEARN_FIX	"Support multiple routing daemons" Off
+		CONFIG_INCLUDES	"Permit config 'include' keyword" Off
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -30,13 +31,24 @@ USE_RC_SUBR=	bird
 EXTRA_PATCHES+=	${FILESDIR}/fibs.diff
 .endif
 
-.if defined(WITH_LEARN_FIX)
-EXTRA_PATCHES+=	${FILESDIR}/learn-krt-sock.c
+.if defined(WITH_CONFIG_INCLUDES)
+EXTRA_PATCHES+=	${FILESDIR}/extra-config_includes.diff
 .endif
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/bird.conf ]; then \
 		${CP} -p ${PREFIX}/etc/bird.conf.example ${PREFIX}/etc/bird.conf ; \
+		${CHMOD} 0640 ${PREFIX}/etc/bird.conf ; \
 	fi
+.if defined(WITH_FIBS)
+	@${ECHO_MSG}
+	@${ECHO_MSG} =====================================================================
+	@${ECHO_MSG}
+	@${ECHO_MSG} "        WARNING: Please take a look on kern/134931"
+	@${ECHO_MSG} "        WARNING: before using multiple fibs in production!"
+	@${ECHO_MSG}
+	@${ECHO_MSG} =====================================================================
+	@${ECHO_MSG}
+.endif
 
 .include <bsd.port.post.mk>
