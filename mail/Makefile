@@ -625,6 +625,7 @@
     SUBDIR += serialmail
     SUBDIR += sgwi
     SUBDIR += sid-milter
+    SUBDIR += sieve-connect
     SUBDIR += sigit
     SUBDIR += sigrot
     SUBDIR += simscan
