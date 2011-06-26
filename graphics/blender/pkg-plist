@@ -30,7 +30,6 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/add_mesh_ant_landscape.py
 %%DATADIR%%/scripts/addons/add_mesh_pipe_joint.py
 %%DATADIR%%/scripts/addons/add_mesh_solid.py
-%%DATADIR%%/scripts/addons/add_mesh_twisted_torus.py
 %%DATADIR%%/scripts/addons/animation_add_corrective_shape_key.py
 %%DATADIR%%/scripts/addons/animation_animall.py
 %%DATADIR%%/scripts/addons/animation_rotobezier.py
@@ -81,6 +80,8 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/io_scene_fbx/export_fbx.py
 %%DATADIR%%/scripts/addons/io_scene_m3/__init__.py
 %%DATADIR%%/scripts/addons/io_scene_m3/import_m3.py
+%%DATADIR%%/scripts/addons/io_scene_map/__init__.py
+%%DATADIR%%/scripts/addons/io_scene_map/export_map.py
 %%DATADIR%%/scripts/addons/io_scene_obj/__init__.py
 %%DATADIR%%/scripts/addons/io_scene_obj/export_obj.py
 %%DATADIR%%/scripts/addons/io_scene_obj/import_obj.py
@@ -92,10 +93,20 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/io_shape_mdd/import_mdd.py
 %%DATADIR%%/scripts/addons/light_field_tools/__init__.py
 %%DATADIR%%/scripts/addons/light_field_tools/light_field_tools.py
+%%DATADIR%%/scripts/addons/mesh_inset/__init__.py
+%%DATADIR%%/scripts/addons/mesh_inset/geom.py
+%%DATADIR%%/scripts/addons/mesh_inset/model.py
+%%DATADIR%%/scripts/addons/mesh_inset/offset.py
+%%DATADIR%%/scripts/addons/mesh_inset/triquad.py
 %%DATADIR%%/scripts/addons/mesh_bsurfaces.py
 %%DATADIR%%/scripts/addons/mesh_looptools.py
 %%DATADIR%%/scripts/addons/mesh_relax.py
 %%DATADIR%%/scripts/addons/modules/add_utils.py
+%%DATADIR%%/scripts/addons/modules/constants_utils.py
+%%DATADIR%%/scripts/addons/modules/cursor_utils.py
+%%DATADIR%%/scripts/addons/modules/geometry_utils.py
+%%DATADIR%%/scripts/addons/modules/misc_utils.py
+%%DATADIR%%/scripts/addons/modules/ui_utils.py
 %%DATADIR%%/scripts/addons/modules/extensions_framework/__init__.py
 %%DATADIR%%/scripts/addons/modules/extensions_framework/ui.py
 %%DATADIR%%/scripts/addons/modules/extensions_framework/util.py
@@ -122,9 +133,11 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/object_fracture/data.blend
 %%DATADIR%%/scripts/addons/object_fracture/fracture_ops.py
 %%DATADIR%%/scripts/addons/object_fracture/fracture_setup.py
+%%DATADIR%%/scripts/addons/paint_palette.py
 %%DATADIR%%/scripts/addons/render_povray/__init__.py
 %%DATADIR%%/scripts/addons/render_povray/render.py
 %%DATADIR%%/scripts/addons/render_povray/ui.py
+%%DATADIR%%/scripts/addons/render_povray/update_files.py
 %%DATADIR%%/scripts/addons/render_renderfarmfi.py
 %%DATADIR%%/scripts/addons/rigify/CREDITS
 %%DATADIR%%/scripts/addons/rigify/README
@@ -135,6 +148,9 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/rigify/metarigs/human.py
 %%DATADIR%%/scripts/addons/rigify/rig_ui_template.py
 %%DATADIR%%/scripts/addons/rigify/rigs/__init__.py
+%%DATADIR%%/scripts/addons/rigify/rigs/basic/__init__.py
+%%DATADIR%%/scripts/addons/rigify/rigs/basic/copy.py
+%%DATADIR%%/scripts/addons/rigify/rigs/basic/copy_chain.py
 %%DATADIR%%/scripts/addons/rigify/rigs/biped/__init__.py
 %%DATADIR%%/scripts/addons/rigify/rigs/biped/arm/__init__.py
 %%DATADIR%%/scripts/addons/rigify/rigs/biped/arm/deform.py
@@ -144,7 +160,6 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/rigify/rigs/biped/leg/deform.py
 %%DATADIR%%/scripts/addons/rigify/rigs/biped/leg/fk.py
 %%DATADIR%%/scripts/addons/rigify/rigs/biped/leg/ik.py
-%%DATADIR%%/scripts/addons/rigify/rigs/copy.py
 %%DATADIR%%/scripts/addons/rigify/rigs/finger.py
 %%DATADIR%%/scripts/addons/rigify/rigs/misc/__init__.py
 %%DATADIR%%/scripts/addons/rigify/rigs/misc/delta.py
@@ -167,7 +182,7 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/system_demo_mode/config.py
 %%DATADIR%%/scripts/addons/system_demo_mode/demo_mode.py
 %%DATADIR%%/scripts/addons/system_property_chart.py
-%%DATADIR%%/scripts/modules/add_object_utils.py
+%%DATADIR%%/scripts/addons/texture_paint_layer_manager.py
 %%DATADIR%%/scripts/modules/addon_utils.py
 %%DATADIR%%/scripts/modules/animsys_refactor.py
 %%DATADIR%%/scripts/modules/blend_render_info.py
@@ -175,6 +190,12 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/modules/bpy/ops.py
 %%DATADIR%%/scripts/modules/bpy/path.py
 %%DATADIR%%/scripts/modules/bpy/utils.py
+%%DATADIR%%/scripts/modules/bpy_extras/__init__.py
+%%DATADIR%%/scripts/modules/bpy_extras/image_utils.py
+%%DATADIR%%/scripts/modules/bpy_extras/io_utils.py
+%%DATADIR%%/scripts/modules/bpy_extras/mesh_utils.py
+%%DATADIR%%/scripts/modules/bpy_extras/object_utils.py
+%%DATADIR%%/scripts/modules/bpy_extras/view3d_utils.py
 %%DATADIR%%/scripts/modules/bpy_types.py
 %%DATADIR%%/scripts/modules/bpyml.py
 %%DATADIR%%/scripts/modules/bpyml_ui.py
@@ -186,10 +207,7 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/modules/console_python.py
 %%DATADIR%%/scripts/modules/console_shell.py
 %%DATADIR%%/scripts/modules/graphviz_export.py
-%%DATADIR%%/scripts/modules/image_utils.py
-%%DATADIR%%/scripts/modules/io_utils.py
 %%DATADIR%%/scripts/modules/keyingsets_utils.py
-%%DATADIR%%/scripts/modules/mesh_utils.py
 %%DATADIR%%/scripts/modules/rna_info.py
 %%DATADIR%%/scripts/modules/rna_prop_ui.py
 %%DATADIR%%/scripts/modules/sys_info.py
@@ -357,6 +375,7 @@ share/pixmaps/blender.svg
 @dirrm %%DATADIR%%/scripts/presets/cloth
 @dirrm %%DATADIR%%/scripts/presets
 @dirrm %%DATADIR%%/scripts/modules/console
+@dirrm %%DATADIR%%/scripts/modules/bpy_extras
 @dirrm %%DATADIR%%/scripts/modules/bpy
 @dirrm %%DATADIR%%/scripts/modules
 @dirrm %%DATADIR%%/scripts/addons/system_demo_mode
@@ -365,6 +384,7 @@ share/pixmaps/blender.svg
 @dirrm %%DATADIR%%/scripts/addons/rigify/rigs/biped/leg
 @dirrm %%DATADIR%%/scripts/addons/rigify/rigs/biped/arm
 @dirrm %%DATADIR%%/scripts/addons/rigify/rigs/biped
+@dirrm %%DATADIR%%/scripts/addons/rigify/rigs/basic
 @dirrm %%DATADIR%%/scripts/addons/rigify/rigs
 @dirrm %%DATADIR%%/scripts/addons/rigify/metarigs
 @dirrm %%DATADIR%%/scripts/addons/rigify
@@ -373,10 +393,12 @@ share/pixmaps/blender.svg
 @dirrm %%DATADIR%%/scripts/addons/netrender
 @dirrm %%DATADIR%%/scripts/addons/modules/extensions_framework
 @dirrm %%DATADIR%%/scripts/addons/modules
+@dirrm %%DATADIR%%/scripts/addons/mesh_inset
 @dirrm %%DATADIR%%/scripts/addons/light_field_tools
 @dirrm %%DATADIR%%/scripts/addons/io_shape_mdd
 @dirrm %%DATADIR%%/scripts/addons/io_scene_x3d
 @dirrm %%DATADIR%%/scripts/addons/io_scene_obj
+@dirrm %%DATADIR%%/scripts/addons/io_scene_map
 @dirrm %%DATADIR%%/scripts/addons/io_scene_m3
 @dirrm %%DATADIR%%/scripts/addons/io_scene_fbx
 @dirrm %%DATADIR%%/scripts/addons/io_scene_3ds
