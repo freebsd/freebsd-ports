@@ -608,6 +608,7 @@
     SUBDIR += pam_mount
     SUBDIR += parallel
     SUBDIR += pax-utils
+    SUBDIR += pbimaker
     SUBDIR += pbreg
     SUBDIR += pcfclock
     SUBDIR += pciutils
