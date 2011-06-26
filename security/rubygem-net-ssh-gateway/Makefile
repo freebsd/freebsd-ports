@@ -7,6 +7,7 @@
 
 PORTNAME=	net-ssh-gateway
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	security rubygems
 MASTER_SITES=	RG
 

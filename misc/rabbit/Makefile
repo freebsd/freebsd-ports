@@ -7,6 +7,7 @@
 
 PORTNAME=	rabbit
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	misc ruby
 MASTER_SITES=	http://www.cozmixng.org/~kou/download/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/rabbit|}
