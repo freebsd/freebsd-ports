@@ -28,14 +28,12 @@ OPTIONS=	TCP "Enable TCP support" off \
 		DEBUG "Enable debugging" off \
 		RANDOM "Enable random source port" off
 
-DNRD_USER?=	dnrd
-DNRD_GROUP?=	dnrd
+USERS=		dnrd
+GROUPS=		dnrd
 DNRD_DIR?=	${ETCDIR}
 
 SUB_FILES=	pkg-install
-SUB_LIST+=	DNRD_USER=${DNRD_USER} \
-		DNRD_GROUP=${DNRD_GROUP} \
-		DNRD_DIR=${DNRD_DIR}
+SUB_LIST+=	DNRD_DIR=${DNRD_DIR}
 
 .include <bsd.port.pre.mk>
 
@@ -54,10 +52,6 @@ CONFIGURE_ARGS+=	--enable-debug
 .if defined(WITH_RANDOM)
 CONFIGURE_ARGS+=	--enable-random-src
 .endif
-
-pre-install:
-	@${ECHO} "==>  Creating custom user to run dnrd..."
-	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 	@${ECHO} "==>  Creating dnrd directory"
