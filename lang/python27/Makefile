@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	python27
-PORTVERSION=	2.7.1
-PORTREVISION=	1
+PORTVERSION=	2.7.2
 CATEGORIES=	lang python ipv6
 MASTER_SITES=	${PYTHON_MASTER_SITES}
 MASTER_SITE_SUBDIR=	${PYTHON_MASTER_SITE_SUBDIR}
@@ -84,6 +83,7 @@ CFLAGS+=	-D__wchar_t=wchar_t
 
 .if !defined(WITHOUT_THREADS)
 .if defined(WITH_PTH)
+BROKEN=			does not build
 CONFIGURE_ARGS+=	--with-pth
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-configure-pth
 LIB_DEPENDS+=		pth:${PORTSDIR}/devel/pth
