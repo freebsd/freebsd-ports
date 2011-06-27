@@ -12,6 +12,8 @@ include/xsec/canon/XSECXMLNSStack.hpp
 include/xsec/dsig/DSIGAlgorithmHandlerDefault.hpp
 include/xsec/dsig/DSIGConstants.hpp
 include/xsec/dsig/DSIGKeyInfo.hpp
+include/xsec/dsig/DSIGKeyInfoDEREncoded.hpp
+include/xsec/dsig/DSIGKeyInfoExt.hpp
 include/xsec/dsig/DSIGKeyInfoList.hpp
 include/xsec/dsig/DSIGKeyInfoMgmtData.hpp
 include/xsec/dsig/DSIGKeyInfoName.hpp
@@ -46,6 +48,7 @@ include/xsec/enc/OpenSSL/OpenSSLCryptoBase64.hpp
 include/xsec/enc/OpenSSL/OpenSSLCryptoHash.hpp
 include/xsec/enc/OpenSSL/OpenSSLCryptoHashHMAC.hpp
 include/xsec/enc/OpenSSL/OpenSSLCryptoKeyDSA.hpp
+include/xsec/enc/OpenSSL/OpenSSLCryptoKeyEC.hpp
 include/xsec/enc/OpenSSL/OpenSSLCryptoKeyHMAC.hpp
 include/xsec/enc/OpenSSL/OpenSSLCryptoKeyRSA.hpp
 include/xsec/enc/OpenSSL/OpenSSLCryptoProvider.hpp
@@ -57,6 +60,7 @@ include/xsec/enc/XSECCryptoException.hpp
 include/xsec/enc/XSECCryptoHash.hpp
 include/xsec/enc/XSECCryptoKey.hpp
 include/xsec/enc/XSECCryptoKeyDSA.hpp
+include/xsec/enc/XSECCryptoKeyEC.hpp
 include/xsec/enc/XSECCryptoKeyHMAC.hpp
 include/xsec/enc/XSECCryptoKeyRSA.hpp
 include/xsec/enc/XSECCryptoProvider.hpp
@@ -75,6 +79,7 @@ include/xsec/framework/XSECException.hpp
 include/xsec/framework/XSECProvider.hpp
 include/xsec/framework/XSECURIResolver.hpp
 include/xsec/framework/XSECURIResolverXerces.hpp
+include/xsec/framework/XSECVersion.hpp
 include/xsec/framework/XSECW32Config.hpp
 include/xsec/transformers/TXFMBase.hpp
 include/xsec/transformers/TXFMBase64.hpp
@@ -93,6 +98,7 @@ include/xsec/transformers/TXFMURL.hpp
 include/xsec/transformers/TXFMXPath.hpp
 include/xsec/transformers/TXFMXPathFilter.hpp
 include/xsec/transformers/TXFMXSL.hpp
+include/xsec/utils/XSECAutoPtr.hpp
 include/xsec/utils/XSECBinTXFMInputStream.hpp
 include/xsec/utils/XSECDOMUtils.hpp
 include/xsec/utils/XSECNameSpaceExpander.hpp
@@ -153,9 +159,8 @@ include/xsec/xkms/XKMSValidateRequest.hpp
 include/xsec/xkms/XKMSValidateResult.hpp
 include/xsec/xkms/XKMSValidityInterval.hpp
 lib/libxml-security-c.a
-lib/libxml-security-c.la
 lib/libxml-security-c.so
-lib/libxml-security-c.so.14
+lib/libxml-security-c.so.16
 @dirrm include/xsec/xkms
 @dirrm include/xsec/xenc
 @dirrm include/xsec/utils/unixutils

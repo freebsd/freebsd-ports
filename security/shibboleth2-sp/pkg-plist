@@ -49,6 +49,15 @@ etc/shibboleth/globalLogout.html.dist
 @unexec if cmp -s %D/etc/shibboleth/sslError.html.dist %D/etc/shibboleth/sslError.html; then rm -f %D/etc/shibboleth/sslError.html; fi
 etc/shibboleth/sslError.html.dist
 @exec if [ ! -f %D/etc/shibboleth/sslError.html ] ; then cp -p %D/etc/shibboleth/sslError.html.dist %D/etc/shibboleth/sslError.html; fi
+@unexec if cmp -s %D/etc/shibboleth/example-shibboleth2.xml.dist %D/etc/shibboleth/example-shibboleth2.xml; then rm -f %D/etc/shibboleth/example-shibboleth2.xml; fi
+etc/shibboleth/example-shibboleth2.xml.dist
+@exec if [ ! -f %D/etc/shibboleth/example-shibboleth2.xml ] ; then cp -p %D/etc/shibboleth/example-shibboleth2.xml.dist %D/etc/shibboleth/example-shibboleth2.xml; fi
+@unexec if cmp -s %D/etc/shibboleth/protocols.xml.dist %D/etc/shibboleth/protocols.xml; then rm -f %D/etc/shibboleth/protocols.xml; fi
+etc/shibboleth/protocols.xml.dist
+@exec if [ ! -f %D/etc/shibboleth/protocols.xml ] ; then cp -p %D/etc/shibboleth/protocols.xml.dist %D/etc/shibboleth/protocols.xml; fi
+@unexec if cmp -s %D/etc/shibboleth/security-policy.xml.dist %D/etc/shibboleth/security-policy.xml; then rm -f %D/etc/shibboleth/security-policy.xml; fi
+etc/shibboleth/security-policy.xml.dist
+@exec if [ ! -f %D/etc/shibboleth/security-policy.xml ] ; then cp -p %D/etc/shibboleth/security-policy.xml.dist %D/etc/shibboleth/security-policy.xml; fi
 etc/shibboleth/shibd-redhat
 etc/shibboleth/shibd-debian
 etc/shibboleth/shibd-suse
@@ -66,57 +75,61 @@ etc/shibboleth/postTemplate.html.dist
 @unexec if cmp -s %D/etc/shibboleth/partialLogout.html.dist %D/etc/shibboleth/partialLogout.html; then rm -f %D/etc/shibboleth/partialLogout.html; fi
 etc/shibboleth/partialLogout.html.dist
 @exec if [ ! -f %D/etc/shibboleth/partialLogout.html ] ; then cp -p %D/etc/shibboleth/partialLogout.html.dist %D/etc/shibboleth/partialLogout.html; fi
-include/shibsp/attribute/filtering/AttributeFilter.h
-include/shibsp/attribute/filtering/BasicFilteringContext.h
-include/shibsp/attribute/filtering/FilteringContext.h
-include/shibsp/attribute/filtering/FilterPolicyContext.h
-include/shibsp/attribute/filtering/MatchFunctor.h
-include/shibsp/attribute/ExtensibleAttribute.h
+include/shibsp/AbstractSPRequest.h
+include/shibsp/AccessControl.h
+include/shibsp/Application.h
+include/shibsp/GSSRequest.h
+include/shibsp/RequestMapper.h
+include/shibsp/SPConfig.h
+include/shibsp/SPRequest.h
+include/shibsp/ServiceProvider.h
+include/shibsp/SessionCache.h
+include/shibsp/SessionCacheEx.h
+include/shibsp/TransactionLog.h
 include/shibsp/attribute/Attribute.h
 include/shibsp/attribute/AttributeDecoder.h
+include/shibsp/attribute/ExtensibleAttribute.h
 include/shibsp/attribute/NameIDAttribute.h
 include/shibsp/attribute/ScopedAttribute.h
 include/shibsp/attribute/SimpleAttribute.h
 include/shibsp/attribute/XMLAttribute.h
+include/shibsp/attribute/filtering/AttributeFilter.h
+include/shibsp/attribute/filtering/BasicFilteringContext.h
+include/shibsp/attribute/filtering/FilterPolicyContext.h
+include/shibsp/attribute/filtering/FilteringContext.h
+include/shibsp/attribute/filtering/MatchFunctor.h
 include/shibsp/attribute/resolver/AttributeExtractor.h
 include/shibsp/attribute/resolver/AttributeResolver.h
 include/shibsp/attribute/resolver/ResolutionContext.h
+include/shibsp/base.h
 include/shibsp/binding/ArtifactResolver.h
+include/shibsp/binding/ProtocolProvider.h
 include/shibsp/binding/SOAPClient.h
+include/shibsp/exceptions.h
 include/shibsp/handler/AbstractHandler.h
 include/shibsp/handler/AssertionConsumerService.h
 include/shibsp/handler/Handler.h
 include/shibsp/handler/LogoutHandler.h
+include/shibsp/handler/LogoutInitiator.h
 include/shibsp/handler/RemotedHandler.h
 include/shibsp/handler/SessionInitiator.h
-include/shibsp/AbstractSPRequest.h
-include/shibsp/AccessControl.h
-include/shibsp/Application.h
-include/shibsp/base.h
-include/shibsp/exceptions.h
-include/shibsp/paths.h
-include/shibsp/RequestMapper.h
-include/shibsp/ServiceProvider.h
-include/shibsp/SessionCache.h
-include/shibsp/SessionCacheEx.h
-include/shibsp/SPConfig.h
-include/shibsp/SPRequest.h
-include/shibsp/TransactionLog.h
-include/shibsp/version.h
 include/shibsp/lite/CommonDomainCookie.h
 include/shibsp/lite/SAMLConstants.h
 include/shibsp/metadata/MetadataExt.h
 include/shibsp/metadata/MetadataProviderCriteria.h
-include/shibsp/remoting/ddf.h
+include/shibsp/paths.h
 include/shibsp/remoting/ListenerService.h
+include/shibsp/remoting/ddf.h
 include/shibsp/security/PKIXTrustEngine.h
 include/shibsp/security/SecurityPolicy.h
+include/shibsp/security/SecurityPolicyProvider.h
 include/shibsp/util/CGIParser.h
 include/shibsp/util/DOMPropertySet.h
 include/shibsp/util/PropertySet.h
 include/shibsp/util/SPConstants.h
 include/shibsp/util/TemplateParameters.h
-lib/libshibsp.so.4
+include/shibsp/version.h
+lib/libshibsp.so.5
 lib/libshibsp.so
 lib/shibboleth/adfs.so
 lib/shibboleth/adfs.la
@@ -126,18 +139,19 @@ lib/shibboleth/adfs-lite.la
 %%WITH_APACHE_22%%lib/shibboleth/mod_shib_22.la
 %%WITH_APACHE_20%%lib/shibboleth/mod_shib_20.so
 %%WITH_APACHE_20%%lib/shibboleth/mod_shib_20.la
-lib/libshibsp-lite.so.4
+lib/libshibsp-lite.so.5
 lib/libshibsp-lite.so
 sbin/shibd
 share/xml/shibboleth/catalog.xml
-share/xml/shibboleth/shibboleth.xsd
-share/xml/shibboleth/shibboleth-metadata-1.0.xsd
-share/xml/shibboleth/shibboleth-2.0-native-sp-config.xsd
-share/xml/shibboleth/shibboleth-2.0-afp.xsd
 share/xml/shibboleth/shibboleth-2.0-afp-mf-basic.xsd
 share/xml/shibboleth/shibboleth-2.0-afp-mf-saml.xsd
+share/xml/shibboleth/shibboleth-2.0-afp.xsd
 share/xml/shibboleth/shibboleth-2.0-attribute-map.xsd
+share/xml/shibboleth/shibboleth-2.0-native-sp-config.xsd
+share/xml/shibboleth/shibboleth-2.0-native-sp-protocols.xsd
 share/xml/shibboleth/shibboleth-2.0-sp-notify.xsd
+share/xml/shibboleth/shibboleth-metadata-1.0.xsd
+share/xml/shibboleth/shibboleth.xsd
 share/xml/shibboleth/WS-Trust.xsd
 share/doc/shibboleth/CREDITS.txt
 share/doc/shibboleth/LICENSE.txt

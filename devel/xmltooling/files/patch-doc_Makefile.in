@@ -1,15 +1,15 @@
---- doc/Makefile.in.orig	2010-01-04 19:18:00.000000000 +0000
-+++ doc/Makefile.in	2010-01-04 19:18:17.000000000 +0000
-@@ -229,7 +229,7 @@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+--- doc/Makefile.in.orig	2011-05-01 01:06:10.813553015 +0200
++++ doc/Makefile.in	2011-05-01 01:06:53.643189373 +0200
+@@ -233,7 +233,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign
 -pkgdocdir = $(datadir)/doc/@PACKAGE@-@PACKAGE_VERSION@
 +pkgdocdir = $(datadir)/doc/@PACKAGE@
  docfiles = \
  	README.txt \
  	LICENSE.txt \
-@@ -239,7 +239,7 @@
+@@ -243,7 +243,7 @@
  	CURL.LICENSE
  
  pkgdoc_DATA = $(docfiles)
@@ -18,12 +18,12 @@
  all: all-am
  
  .SUFFIXES:
-@@ -425,8 +425,6 @@
+@@ -455,8 +455,6 @@
  
  
  install-data-hook:
 -	cp -r api $(DESTDIR)$(pkgdocdir)
 -	rm -rf `find $(DESTDIR)$(pkgdocdir)/api -name .svn`
+ 
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.
- .NOEXPORT:

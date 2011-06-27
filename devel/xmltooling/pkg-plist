@@ -84,14 +84,16 @@ include/xmltooling/validation/Validator.h
 include/xmltooling/validation/ValidatorSuite.h
 include/xmltooling/version.h
 lib/libxmltooling-lite.so
-lib/libxmltooling-lite.so.4
+lib/libxmltooling-lite.so.5
 lib/libxmltooling.so
-lib/libxmltooling.so.4
+lib/libxmltooling.so.5
+libdata/pkgconfig/xmltooling.pc
 share/xml/xmltooling/catalog.xml
 share/xml/xmltooling/soap-envelope.xsd
 share/xml/xmltooling/xenc-schema.xsd
 share/xml/xmltooling/xml.xsd
 share/xml/xmltooling/xmldsig-core-schema.xsd
+share/xml/xmltooling/xmldsig11-schema.xsd
 share/xml/xmltooling/xmltooling.xsd
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry include/xmltooling/encryption
