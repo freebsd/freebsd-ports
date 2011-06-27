@@ -97,9 +97,15 @@ lib/libklu.so.1
 lib/libldl.a
 lib/libldl.so
 lib/libldl.so.1
+lib/librbio.a
+lib/librbio.so
+lib/librbio.so.1
 lib/libspqr.a
 lib/libspqr.so
 lib/libspqr.so.1
+lib/libufconfig.a
+lib/libufconfig.so
+lib/libufconfig.so.1
 lib/libumfpack.a
 lib/libumfpack.so
 lib/libumfpack.so.1
