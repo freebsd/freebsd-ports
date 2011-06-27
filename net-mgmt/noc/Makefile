@@ -7,6 +7,7 @@
 
 PORTNAME=	noc
 PORTVERSION=	0.6.4
+PORTREVISION=	1
 CATEGORIES=	net-mgmt python
 MASTER_SITES=	http://redmine.nocproject.org/attachments/download/137/
 
@@ -26,7 +27,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}django>=1.3<1.4:${PORTSDIR}/www/py-django \
 		${PYTHON_PKGNAMEPREFIX}coverage>0:${PORTSDIR}/devel/py-coverage \
 		${PYTHON_PKGNAMEPREFIX}protobuf>0:${PORTSDIR}/devel/py-protobuf \
 		${PYTHON_SITELIBDIR}/psycopg2/_psycopg.so:${PORTSDIR}/databases/py-psycopg2 \
-		${PYTHON_SITELIBDIR}/pysnmp/v4/__init__.py:${PORTSDIR}/net-mgmt/py-snmp4 \
+		${PYTHON_PKGNAMEPREFIX}snmp4>=0:${PORTSDIR}/net-mgmt/py-snmp4 \
 		${PYTHON_PKGNAMEPREFIX}creole>0:${PORTSDIR}/textproc/py-creole \
 		${PYTHON_PKGNAMEPREFIX}webob>0:${PORTSDIR}/www/py-webob \
 		${PYTHON_PKGNAMEPREFIX}WebTest>0:${PORTSDIR}/www/py-WebTest \
