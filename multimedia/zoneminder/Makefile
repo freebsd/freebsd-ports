@@ -7,7 +7,7 @@
 
 PORTNAME=	zoneminder
 PORTVERSION=	1.24.4
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www2.zoneminder.com/downloads/ \
 		http://www.zoneminder.com/downloads/
@@ -121,4 +121,11 @@ post-install:
 	${INSTALL_MAN} ${FILESDIR}/README.FreeBSD ${DOCSDIR}
 .endif
 	${CAT} ${FILESDIR}/README.FreeBSD
-.include <bsd.port.mk>
+
+.include <bsd.port.pre.mk>
+
+.if ${ARCH}=="i386"
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-scripts_ZoneMinder_lib_ZoneMinder_Memory.pm.in
+.endif
+
+.include <bsd.port.post.mk>
