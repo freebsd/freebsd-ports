@@ -23,14 +23,13 @@
  #else
      AVRational asp = 
        {Profile()->GetIntegerValue(CFG_VIDEO_MPEG4_PAR_WIDTH),
-@@ -224,8 +221,10 @@
+@@ -224,8 +221,8 @@
      }
    }
    if (wantKeyFrame) m_picture->pict_type = FF_I_TYPE; //m_picture->key_frame = 1;
-+#if 0
    else //m_picture->key_frame = 0;
-     m_picture->pict_type = 0;
-+#endif
+-    m_picture->pict_type = 0;
++    m_picture->pict_type = AV_PICTURE_TYPE_NONE;
  
    m_picture->data[0] = (uint8_t *)pY;
    m_picture->data[1] = (uint8_t *)pU;
