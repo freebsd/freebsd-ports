@@ -1,0 +1,88 @@
+--- lib/Mail/SpamAssassin/BayesStore/MySQL.pm	(revision 1138970)
++++ lib/Mail/SpamAssassin/BayesStore/MySQL.pm	(working copy)
+@@ -840,14 +840,28 @@
+       return 0;
+     }
+ 
++    # With ON DUPLICATE KEY UPDATE, the affected-rows value per row is 1 if
++    # the row is inserted as a new row and 2 if an existing row is updated.
++    #
++    # Due to a MySQL server bug a value of 3 can be seen.
++    # See: http://bugs.mysql.com/bug.php?id=46675
++    #   When executing the INSERT ... ON DUPLICATE KEY UPDATE statement
++    #   and checking the rows return count:
++    #   mysql_client_found_rows = 0: The second INSERT returns a row count
++    #                                of 2 in all MySQL versions.
++    #   mysql_client_found_rows = 1: The second INSERT returns this row count:
++    #     Before MySQL 5.1.20: 2
++    #     MySQL 5.1.20: undef on Mac OS X, 139775481 on Linux (garbage?)
++    #     MySQL 5.1.21 and up: 3
++    #
+     my $num_rows = $rc;
+ 
+     $sth->finish();
+ 
+-    if ($num_rows == 1 || $num_rows == 2) {
++    if ($num_rows == 1 || $num_rows == 2 || $num_rows == 3) {
+       my $token_count_update = '';
+       
+-      $token_count_update = "token_count = token_count + 1," if ($num_rows == 1);
++      $token_count_update = "token_count = token_count + 1," if $num_rows == 1;
+       $sql = "UPDATE bayes_vars SET
+                      $token_count_update
+                      newest_token_age = GREATEST(newest_token_age, ?),
+@@ -872,7 +886,11 @@
+     }
+     else {
+       # $num_rows was not what we expected
+-      dbg("bayes: _put_token: Updated an unexpected number of rows.");
++      my $token_displ = $token;
++      $token_displ =~ s/(.)/sprintf('%02x',ord($1))/egs;
++      dbg("bayes: _put_token: Updated an unexpected number of rows: %s, ".
++          "id: %s, token (hex): %s",
++          $num_rows, $self->{_userid}, $token_displ);
+       $self->{_dbh}->rollback();
+       return 0;
+     }
+@@ -987,8 +1005,24 @@
+       else {
+ 	my $num_rows = $rc;
+ 
+-	$need_atime_update_p = 1 if ($num_rows == 1 || $num_rows == 2);
+-	$new_tokens++ if ($num_rows == 1);
++        # With ON DUPLICATE KEY UPDATE, the affected-rows value per row is 1 if
++        # the row is inserted as a new row and 2 if an existing row is updated.
++        # But see MySQL bug (as above): http://bugs.mysql.com/bug.php?id=46675
++
++        if ($num_rows == 1) {
++          $new_tokens++;
++          $need_atime_update_p = 1;
++        } elsif ($num_rows == 2 || $num_rows == 3) {
++          $need_atime_update_p = 1;
++        } else {
++          # $num_rows was not what we expected
++          my $token_displ = $token;
++          $token_displ =~ s/(.)/sprintf('%02x',ord($1))/egs;
++          dbg("bayes: _put_tokens: Updated an unexpected number of rows: %s, ".
++              "id: %s, token (hex): %s",
++              $num_rows, $self->{_userid}, $token_displ);
++          $error_p = 1;
++        }
+       }
+     }
+ 
+@@ -1026,10 +1060,10 @@
+       }
+     }
+     else {
+-      # $num_rows was not what we expected
+-      dbg("bayes: _put_tokens: Updated an unexpected number of rows.");
+-      $self->{_dbh}->rollback();
+-      return 0;
++      info("bayes: _put_tokens: no atime updates needed?  Num of tokens: %d",
++           scalar keys %{$tokens});
++#     $self->{_dbh}->rollback();
++#     return 0;
+     }
+   }
+ 
