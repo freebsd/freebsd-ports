@@ -17,6 +17,7 @@ COMMENT=	Lightweight library for vector and matrix math
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
+FETCH_ARGS=	-Fpr
 
 LATEST_LINK=	${PORTNAME}2
 
