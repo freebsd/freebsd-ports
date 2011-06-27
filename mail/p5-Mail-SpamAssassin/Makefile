@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	3.3.1
-PORTREVISION=	4
+PORTVERSION=	3.3.2
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -23,7 +22,12 @@ RUN_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 		${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect \
 		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
+		p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-HTML-Parser>=3.43:${PORTSDIR}/www/p5-HTML-Parser \
+		${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/${PERL_ARCH}/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect \
+		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
 
 CONFLICTS=	ja-p5-Mail-SpamAssassin-[0-9]*
 
@@ -207,7 +211,7 @@ MAN3=		Mail::SpamAssassin.3 \
 		spamassassin-run.3
 
 MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1 sa-update.1 \
-		spamassassin-run.1 sa-compile.1
+		spamassassin-run.1 sa-compile.1 sa-awl.1
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${PREFIX}/share/spamassassin
@@ -224,7 +228,7 @@ SUB_LIST+=	SQL_FLAG="-Q"
 SUB_LIST+=	SQL_FLAG=""
 .endif
 .if !defined(WITH_AS_ROOT)
-SUB_LIST+=	RUN_AS_USER="-u spamd -H /var/spool/spamd"
+SUB_LIST+=	RUN_AS_USER="-u ${USERS} -H /var/spool/spamd"
 .else
 SUB_LIST+=	RUN_AS_USER=""
 .endif
@@ -274,7 +278,7 @@ post-build:
 .endif
 
 pre-su-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@USER=${USERS} GROUP=${GROUPS} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${INSTALL_PROGRAM} ${WRKSRC}/spamc/libspamc.so ${PREFIX}/lib/libspamc.so.0
 	@${LN} -sf libspamc.so.0 ${PREFIX}/lib/libspamc.so
 .if !defined(WITHOUT_SSL)
@@ -299,7 +303,7 @@ post-install:
 	@[ -f ${PREFIX}/etc/mail/spamassassin/v320.pre ] || \
 		${CP} ${PREFIX}/etc/mail/spamassassin/v320.pre.sample \
 			${PREFIX}/etc/mail/spamassassin/v320.pre
-	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} SU_CMD="${SU_CMD}" ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
+	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} SU_CMD="${SU_CMD}" USER=${USERS} GROUP=${GROUPS} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
 	@[ -f ${PREFIX}/etc/mail/spamassassin/v330.pre ] || \
 		${CP} ${PREFIX}/etc/mail/spamassassin/v330.pre.sample \
 			${PREFIX}/etc/mail/spamassassin/v330.pre

@@ -1,9 +1,7 @@
 #!/bin/sh
 PKG_PREFIX=${PKG_PREFIX:-/usr/local}
-USER=spamd
-GROUP=${USER}
-UID=58
-GID=${UID}
+USER=${USER:-spamd}
+GROUP=${GROUP:-spamd}
 HOME=/var/spool/${USER}
 
 if [ "$2" = "POST-INSTALL" ];then
@@ -34,10 +32,10 @@ yesno() {
 }
 
     # Create pid directory
-    install -d -g ${USER} -g ${GROUP} /var/run/spamd
+    install -d -o ${USER} -g ${GROUP} /var/run/spamd
     /usr/bin/su root -c "${PKG_PREFIX}/bin/spamassassin -x -L --lint"
 
-    if [ ${?} -eq 255 ];then
+    if [ ${?} -eq 9 ];then
         echo "***********************************************"
         echo "*__        ___    ____  _   _ ___ _   _  ____ *"
         echo "*\ \      / / \  |  _ \| \ | |_ _| \ | |/ ___|*"
