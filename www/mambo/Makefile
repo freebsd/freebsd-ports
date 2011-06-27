@@ -5,46 +5,56 @@
 # $FreeBSD$
 
 PORTNAME=	mambo
-PORTVERSION=	4.6.1
-PORTREVISION=	1
+PORTVERSION=	4.6.5
 CATEGORIES=	www
-MASTER_SITES=	http://mamboxchange.com/frs/download.php/8290/:source1
-DISTFILES=	${MAMBO_SRC}:source1
+MASTER_SITES=	http://mambo-code.org/gf/download/frsrelease/388/790/
+DISTNAME=	MamboV${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	tabmow@freenode.net
 COMMENT=	A dynamic web content management system (CMS)
 
-EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
-
 NO_BUILD=	yes
-USE_MYSQL=	yes
-USE_PHP=	mysql session zlib gd pdf xml pcre
-WANT_PHP_WEB=	yes
-PKGMESSAGE=	${WRKDIR}/pkg-message
-SUB_FILES=	pkg-message
-SUB_LIST+=	MAMBO_DIR=${MAMBO_DIR}
-PLIST_SUB+=	MAMBO_DIR=${MAMBO_DIR}
+SUB_FILES+=	pkg-message
 
-MAMBO_DIR?=	www/${PORTNAME}
-DIST_SUBDIR=	${PORTNAME}
+OPTIONS=	MYSQLI "MySQL 4.1+ back-end (use mysqli PHP extension)" on
+OPTIONS+=	MYSQL "MySQL back-end (use mysql PHP extension)" off
 
-MAMBO_SRC=	MamboV4.6.1.zip
+.include <bsd.port.pre.mk>
+
+USE_PHP=	session zlib gd pdf xml pcre
+
+.if !defined(WITHOUT_MYSQL)
+USE_PHP+=	mysql
+.endif
+
+.if defined(WITH_MYSQLI)
+USE_PHP+=	mysqli
+.endif
+
+.if defined(WITHOUT_MYSQL) && !defined(WITH_MYSQLI)
+IGNORE=	needs at least one database back-end
+.endif
 
 do-extract:
-		@${MKDIR} ${WRKSRC}
-		@${UNZIP_CMD} -qo ${DISTDIR}/${DIST_SUBDIR}/${MAMBO_SRC} -d ${WRKSRC}
-#		@${RM} -rf ${WRKSRC}/templates/rhuk_solarflare # remove empty
+	@${MKDIR} ${WRKSRC}
+	@if ! (cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${DISTFILES} ${EXTRACT_AFTER_ARGS});\
+	then \
+		exit 1; \
+	fi
+
+post-patch:
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 
 do-install:
-		@${MKDIR} ${PREFIX}/${MAMBO_DIR}
+		@${MKDIR} ${WWWDIR}
 		@cd ${WRKSRC} && \
-			${FIND} . -type d -exec ${MKDIR} ${PREFIX}/${MAMBO_DIR}/{} \; \
-				-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${MAMBO_DIR}/{} \;
+			${FIND} . -type d -exec ${MKDIR} ${WWWDIR}/{} \; \
+				-exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/{} \;
 		@cd ${WRKSRC} && \
-			${FIND} . \! -type d -exec ${INSTALL_DATA} {} ${PREFIX}/${MAMBO_DIR}/{} \; \
-				-exec ${CHOWN} ${WWWOWN}:${WWWGRP} ${PREFIX}/${MAMBO_DIR}/{} \;
+			${FIND} . \! -type d -exec ${INSTALL_DATA} {} ${WWWDIR}/{} \; \
+				-exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}/{} \;
 
 post-install:
 		@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
