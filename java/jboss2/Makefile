@@ -41,7 +41,8 @@ STARTUP_SCRIPT_NAME=	${APP_SHORTNAME}.sh
 STARTUP_SCRIPT=	${PREFIX}/etc/rc.d/${STARTUP_ORDER}.${STARTUP_SCRIPT_NAME}
 USER=		www
 GROUP=		www
-PW?=		/usr/sbin/pw
+USERS=		${USER}
+GROUPS=		${GROUP}
 STDOUT_LOG=	${LOG_DIR}/stdout.log
 STDERR_LOG=	${LOG_DIR}/stderr.log
 AUTO_START?=	NO
@@ -116,7 +117,6 @@ pre-install:
 	@${ECHO_CMD} "   Logfile stderr:           ${STDERR_LOG}"
 	@${ECHO_CMD} "   Starting after install:   ${AUTO_START}"
 	@${ECHO_CMD} "   Stop time-out:            ${STOP_TIMEOUT} sec."
-	@PKG_PREFIX=${PREFIX} ${SH} pkg-install ${PKGNAME} PRE-INSTALL
 
 do-install:
 	@${ECHO_CMD} -n ">> Creating destination directory..."
