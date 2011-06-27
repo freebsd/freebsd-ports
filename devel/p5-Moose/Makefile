@@ -15,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A complete modern object system for Perl 5
 
-LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	\
 	p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
@@ -40,10 +40,12 @@ TEST_DEPENDS=	\
 	p5-Test-Fatal>=0.001:${PORTSDIR}/devel/p5-Test-Fatal \
 	p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires
 
+MAKE_JOBS_UNSAFE=	yes
+
 PERL_CONFIGURE=	5.8.4+
 CFLAGS+=	-I.	# mop.h
 
-CONFLICTS=     p5-Class-MOP*
+CONFLICTS=	p5-Class-MOP*
 
 MAN3=	Class::MOP::Mixin::HasAttributes.3 \
 	Class::MOP::MiniTrait.3 \
