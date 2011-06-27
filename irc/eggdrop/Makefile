@@ -23,11 +23,11 @@ COMMENT=	The most popular open source Internet Relay Chat bot
 USE_TCL=	85+
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_VER:S/.//}.so \
-		--with-tclinc=${TCL_INCLUDEDIR}/tcl.h
+#CONFIGURE_ARGS=	--with-tcllib=${LOCALBASE}/lib/libtcl${TCL_VER:S/.//}.so \
+#		--with-tclinc=${TCL_INCLUDEDIR}/tcl.h
 MAKE_JOBS_UNSAFE=	yes
 
-OPTIONS=	SSL "Use SSL" off
+OPTIONS=	SSL "Use SSL" on
 
 MAN1=		eggdrop.1
 
@@ -38,10 +38,13 @@ SUB_FILES=	pkg-message
 LICENSE=	GPLv2
 
 .if defined(WITH_SSL)
+. if ${ARCH} == "amd64"
+IGNORE=		ssl support is broken on amd64
+. endif
 EXTRA_PATCHES=	${WRKDIR}/eggdrop-1.6.20-ssl.patch
 
 CFLAGS+=	-DHAVE_OPENSSL
-CONFIGURE_ARGS+=	--with-ssl
+#CONFIGURE_ARGS+=	--with-ssl
 .endif
 
 post-patch:
