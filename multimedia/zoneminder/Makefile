@@ -23,8 +23,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		netpbm.1:${PORTSDIR}/graphics/netpbm \
 		pcre.0:${PORTSDIR}/devel/pcre \
 		avutil.1:${PORTSDIR}/multimedia/ffmpeg
-BUILD_DEPENDS=	${LOCALBASE}/lib/php/20090626/mysql.so:${PORTSDIR}/databases/php5-mysql \
-		${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php5-extensions \
+BUILD_DEPENDS=	${LOCALBASE}/bin/php-config:${PORTSDIR}/lang/php5-extensions \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI \
 		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER} \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
