@@ -187,6 +187,7 @@
     SUBDIR += paragui-devel
     SUBDIR += phat
     SUBDIR += plib
+    SUBDIR += pure-gtk
     SUBDIR += py-Pmw
     SUBDIR += py-SciParam
     SUBDIR += py-fltk
