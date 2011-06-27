@@ -795,6 +795,7 @@
     SUBDIR += libedit
     SUBDIR += libelf
     SUBDIR += libepp-nicbr
+    SUBDIR += libestr
     SUBDIR += libev
     SUBDIR += libevent
     SUBDIR += libevent2

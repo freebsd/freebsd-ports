@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+include/libestr.h
+lib/libestr.a
+lib/libestr.la
+lib/libestr.so
+lib/libestr.so.0
+libdata/pkgconfig/libestr.pc
