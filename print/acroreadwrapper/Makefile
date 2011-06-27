@@ -41,7 +41,12 @@ KMODDIR=	libexec/linux_adobe
 .include <bsd.port.pre.mk>
 KERNCONF?=	GENERIC
 
-.if !exists(${SRC_BASE}/sys/${ARCH}/conf/${KERNCONF})
+# Use the first component of ${KERNCONF}.
+.for K in ${KERNCONF}
+_KERNCONF?=$K
+.endfor
+
+.if !exists(${SRC_BASE}/sys/${ARCH}/conf/${_KERNCONF})
 IGNORE=		requires kernel source to be installed
 .endif
 
