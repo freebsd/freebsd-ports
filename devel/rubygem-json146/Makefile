@@ -16,6 +16,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Parse JSON texts and generate them from ruby data structures
 
 PORTSCOUT=	limit:^1.4
+NO_LATEST_LINK=	yes
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
