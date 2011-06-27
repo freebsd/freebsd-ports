@@ -28,6 +28,9 @@ USE_SQLITE=	3
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=	${PREFIX}/lib/ircd-ratbox
 
+USERS=		ircd
+GROUPS=		${USERS}
+
 LOGDIR?=	/var/log/${PORTNAME}
 RUNDIR?=	/var/run/${PORTNAME}
 DBDIR?=		/var/db/${PORTNAME}
@@ -188,7 +191,6 @@ post-build:
 		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} m_rsshortcut.la
 
 pre-su-install:
-	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	${MKDIR} ${PREFIX}/etc/${PORTNAME}
 	${MKDIR} ${DATADIR}/help
 	${MKDIR} ${PREFIX}/lib/${PORTNAME}/modules
