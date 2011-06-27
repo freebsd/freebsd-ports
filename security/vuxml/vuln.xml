@@ -30891,7 +30891,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>mambo</name>
-	<range><ge>0</ge></range>
+	<range><lt>4.6.5</lt></range>
       </package>
     </affects>
     <description>
