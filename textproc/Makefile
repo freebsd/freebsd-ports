@@ -1011,6 +1011,7 @@
     SUBDIR += print-n-times
     SUBDIR += prosper
     SUBDIR += pure-csv
+    SUBDIR += pure-xml
     SUBDIR += py-4suite
     SUBDIR += py-4suite-xml
     SUBDIR += py-Chameleon
