@@ -7,6 +7,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -34,7 +35,6 @@ OPTIONS=	ALSA	"Enable alsa input/output device" off \
 		FAAC	"FAAC mp4/aac audio encoder" off \
 		FFSERVER "Build and install ffserver" on \
 		FREETYPE "Text on top of video frames (freetype2)" on \
-		FREI0R	"Frei0r wrapper filter" off \
 		GSM	"GSM audio codec" off \
 		LAME	"LAME MP3 encoder" off \
 		OPENJPEG	"JPEG 2000 decoder" off \
@@ -53,6 +53,10 @@ OPTIONS=	ALSA	"Enable alsa input/output device" off \
 		VP8	"VP8 codec via libvpx" on \
 		X264	"H.264 encoder" on \
 		XVID	"Xvid encoder via xvidcore" on
+
+# Currently not supported because of cyclic dependencies:
+#		OPENCV  "OpenCV video filtering support" off \
+#		FREI0R	"Frei0r wrapper filter" off \
 
 COMPAT_HEADERS=libavcodec/avcodec.h \
 	libavcodec/opt.h \
@@ -230,13 +234,14 @@ CONFIGURE_ARGS+=	--enable-libfreetype
 CONFIGURE_ARGS+=	--disable-libfreetype
 .endif
 
+# Currently not supported because of cyclic dependencies
 # frei0r
-.if defined(WITH_FREI0R)
-BUILD_DEPENDS+=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
-CONFIGURE_ARGS+=	--enable-frei0r
-.else
+#.if defined(WITH_FREI0R)
+#BUILD_DEPENDS+=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
+#CONFIGURE_ARGS+=	--enable-frei0r
+#.else
 CONFIGURE_ARGS+=	--disable-frei0r
-.endif
+#.endif
 
 # gsm
 .if defined(WITH_GSM)
@@ -254,7 +259,7 @@ CONFIGURE_ARGS+=	--enable-libmp3lame
 CONFIGURE_ARGS+=	--disable-libmp3lame
 .endif
 
-# Not supported because of possible cyclic dependencies
+# Currently not supported because of cyclic dependencies
 # opencv
 #.if defined(WITH_OPENCV)
 #LIB_DEPENDS+=	cv.2:${PORTSDIR}/graphics/opencv
