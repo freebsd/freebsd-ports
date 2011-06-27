@@ -37,6 +37,8 @@ DESTINATION_DIR=	${PREFIX}/distribfold
 # default users
 DNETFOLD_USER=dnetfold
 DNETFOLD_GROUP=dnetfold
+USERS=		${DNETFOLD_USER}
+GROUPS=		${DNETFOLD_GROUP}
 
 # default number of processors
 WITH_NCPU?=	1
@@ -46,11 +48,6 @@ RELEASE_DATE=	20040613
 post-patch:
 	@${REINPLACE_CMD} -E -e 's|%%DESTINATION_DIR%%|${DESTINATION_DIR}/cpu0|' \
 		${WRKSRC}/foldit
-
-pre-install:
-# create users
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
-		${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 do-install:
 # remove any patch scrap files
@@ -65,7 +62,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/distribfold.sh ${PREFIX}/etc/rc.d
 # for every cpu directory
 	@ncpu=`${CAT} ${WRKDIR}/ncpu` ; \
-	for dir in `${FILESDIR}/number_of_dirs.sh $${ncpu}` ; do \
+	for dir in `${SH} ${FILESDIR}/number_of_dirs.sh $${ncpu}` ; do \
 		DESTINATION_DIR=${DESTINATION_DIR}/cpu$${dir} ; \
 		${MKDIR} $${DESTINATION_DIR} ; \
 		${INSTALL_DATA} ${WRKSRC}/* $${DESTINATION_DIR} ; \
