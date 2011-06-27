@@ -1,0 +1,6 @@
+pure-gl is Pure's interface to OpenGL, the well-known graphics library. It
+covers pretty much all of OpenGL, including the popular extensions.
+Extensions are loaded on demand, functions will throw an exception if they
+are not available in your OpenGL implementation.
+
+WWW:	http://docs.pure-lang.googlecode.com/hg/pure-gl.html
