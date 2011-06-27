@@ -6,15 +6,14 @@
 #
 
 PORTNAME=	shibboleth-sp
-PORTVERSION=	2.3.1
-PORTREVISION=	2
+PORTVERSION=	2.4.2
 CATEGORIES=	security www
 MASTER_SITES=	http://shibboleth.internet2.edu/downloads/shibboleth/cppsp/${PORTVERSION}/
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	C++ Shibboleth Service Provider (Internet2) for Apache
 
-LIB_DEPENDS=	saml.6:${PORTSDIR}/security/opensaml2
+LIB_DEPENDS=	saml.7:${PORTSDIR}/security/opensaml2
 
 OPTIONS=	APACHE22 "Use Apache version 2.2 instead of version 2.0" on
 
