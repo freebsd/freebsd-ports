@@ -1,0 +1,25 @@
+--- certs/Makefile.orig	2011-06-27 15:22:39.024815105 -0700
++++ certs/Makefile	2011-06-27 15:24:55.275832762 -0700
+@@ -2,13 +2,13 @@
+ keysize=2048
+ 
+ # How to:
+-# First, `make yourhost.cnf` which creates a openssl config file.
++# First, `gmake yourhost.cnf` which creates a openssl config file.
+ # Then edit this file and fill in the details you want it to have,
+ # and add or change hosts and components it should cover.
+-# Then `make yourhost.key` to create your private key, you can
++# Then `gmake yourhost.key` to create your private key, you can
+ # include keysize=number to change the size of the key.
+-# Then you can either `make yourhost.csr` to generate a certificate
+-# signing request that you can submit to a CA, or `make yourhost.cert`
++# Then you can either `gmake yourhost.csr` to generate a certificate
++# signing request that you can submit to a CA, or `gmake yourhost.cert`
+ # to generate a self signed certificate.
+ 
+ .PRECIOUS: %.cnf %.key
+@@ -28,3 +28,4 @@
+ %.key:
+ 	openssl genrsa $(keysize) > $@
+ 	@chmod 400 $@
++	@chown prosody:prosody $@
