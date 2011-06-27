@@ -708,6 +708,7 @@
     SUBDIR += picturebook
     SUBDIR += picviz
     SUBDIR += piddle
+    SUBDIR += pinpoint
     SUBDIR += pixelize
     SUBDIR += pixen
     SUBDIR += pixie

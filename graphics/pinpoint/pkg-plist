@@ -1,0 +1,17 @@
+bin/pinpoint
+%%DATADIR%%/action.json
+%%DATADIR%%/fade.json
+%%DATADIR%%/page-curl-both.json
+%%DATADIR%%/page-curl.json
+%%DATADIR%%/sheet.json
+%%DATADIR%%/slide-in-left.json
+%%DATADIR%%/slide-left.json
+%%DATADIR%%/slide-up.json
+%%DATADIR%%/spin-bg.json
+%%DATADIR%%/spin-text.json
+%%DATADIR%%/spin.json
+%%DATADIR%%/swing.json
+%%DATADIR%%/text-slide-down.json
+%%DATADIR%%/text-slide-left.json
+%%DATADIR%%/text-slide-up.json
+@dirrm %%DATADIR%%
