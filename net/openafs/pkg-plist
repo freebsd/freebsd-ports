@@ -280,6 +280,11 @@ etc/openafs/cacheinfo.sample
 @dirrmtry etc/openafs
 @dirrm %%DATADIR%%/C
 @dirrm %%DATADIR%%
-@cwd /boot/modules
-libafs.ko
-@exec kldxref /boot/modules
+@cwd /
+%%KMODDIR%%/libafs.ko
+@exec /usr/sbin/kldxref /%%KMODDIR%%
+@unexec /usr/sbin/kldxref /%%KMODDIR%%
+@exec /bin/mkdir -p %D/%%AFSMNTDIR%% %D/%%AFSSTATEDIR%% %D/%%AFSCACHEDIR%%
+@dirrmtry %%AFSMNTDIR%%
+@dirrmtry %%AFSCACHEDIR%%
+@dirrmtry %%AFSSTATEDIR%%
