@@ -2801,6 +2801,7 @@
     SUBDIR += pty
     SUBDIR += ptypes
     SUBDIR += publib
+    SUBDIR += pure-ffi
     SUBDIR += pure-gen
     SUBDIR += pushmi
     SUBDIR += pwlib
