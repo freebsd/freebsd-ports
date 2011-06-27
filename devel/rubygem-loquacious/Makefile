@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	loquacious
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,6 +16,6 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-RUN_DEPENDS=	spec:${PORTSDIR}/devel/rubygem-rspec
+RUN_DEPENDS=	rubygem-rspec=2.6.0:${PORTSDIR}/devel/rubygem-rspec
 
 .include <bsd.port.mk>
