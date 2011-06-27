@@ -8,7 +8,7 @@
 PORTNAME=	nerogame
 PORTVERSION=	2.0
 CATEGORIES=	games linux
-MASTER_SITES=	http://z.cs.utexas.edu/users/nn/nero/downloads/
+MASTER_SITES=	http://zweb.cs.utexas.edu/users/nn/nero/downloads/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	nero2_linux_i386
 
