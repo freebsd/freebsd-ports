@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	geoserver
-PORTVERSION=	2.0.2
+PORTVERSION=	2.1.1
 CATEGORIES=	graphics geography java
 MASTER_SITES=	SF/${PORTNAME}/GeoServer/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	An Open Source GIS Server
+
+LICENSE=	GPLv2
 
 USE_JAVA=	yes
 USE_ZIP=	yes
@@ -24,13 +26,11 @@ GEOSERVERDIR=	${PREFIX}/${PORTNAME}
 GEODIRS=	data_dir etc lib logs resources webapps
 
 USE_RC_SUBR=	${PORTNAME}
-PLIST_SUB=	G="${GEOSERVERDIR:S,^${PREFIX}/,,}" GTVER=2.6.4 MVER=${PORTVERSION}
+PLIST_SUB=	G="${GEOSERVERDIR:S,^${PREFIX}/,,}" GTVER=2.7.2 MVER=${PORTVERSION}
 SUB_LIST=	GEOSERVERDIR="${GEOSERVERDIR}" JAVA="${JAVA}"
 SUB_FILES=	pkg-message
 
 post-patch:
-	@${RM} ${WRKSRC}/data_dir/logs/geoserver.log
-	@${RM} ${WRKSRC}/data_dir/gwc/meta_jdbc_h2/*
 	@${REINPLACE_CMD} -e 's|$$GEOSERVER_HOME|${GEOSERVERDIR}|g' \
 		-e 's|%%JAVA%%|${JAVA}|g' \
 		${WRKSRC}/bin/startup.sh ${WRKSRC}/bin/shutdown.sh
@@ -38,7 +38,7 @@ post-patch:
 do-install:
 	@${MKDIR} ${GEOSERVERDIR}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/*.sh ${GEOSERVERDIR}/bin
-.for f in GPL.txt LICENSE.txt README.txt RUNNING.txt start.jar
+.for f in LICENSE.txt README.txt RUNNING.txt VERSION.txt start.jar
 	${INSTALL_DATA} ${WRKSRC}/${f} ${GEOSERVERDIR}
 .endfor
 .for dir in ${GEODIRS}
