@@ -7,6 +7,7 @@
 
 PORTNAME=	libv4l
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://linuxtv.org/downloads/v4l-utils/
 DISTNAME=	v4l-utils-${PORTVERSION}
