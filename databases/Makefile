@@ -631,6 +631,7 @@
     SUBDIR += postgresql91-contrib
     SUBDIR += postgresql_autodoc
     SUBDIR += powerarchitect
+    SUBDIR += pure-sql3
     SUBDIR += puredb
     SUBDIR += pxlib
     SUBDIR += pxtools
