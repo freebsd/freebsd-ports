@@ -793,6 +793,7 @@
     SUBDIR += libdsp
     SUBDIR += libdwarf
     SUBDIR += libedit
+    SUBDIR += libee
     SUBDIR += libelf
     SUBDIR += libepp-nicbr
     SUBDIR += libestr
