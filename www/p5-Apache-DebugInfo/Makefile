@@ -14,15 +14,20 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Log various bits of per-request data
 
-.if defined(WITH_MODPERL2)
-IGNORE=		This port does not support mod_perl2
+# Changed to apache13 exclusive, else apache13 ports
+# are broken if apache22 is set as default
+USE_APACHE=	13
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_MODPERL2) || ${APACHE_VERSION} > 13
+IGNORE=		this port does not support mod_perl2
 .else
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
+BUILD_DEPENDS+=	${RUN_DEPENDS}
 .endif
 
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::DebugInfo.3
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

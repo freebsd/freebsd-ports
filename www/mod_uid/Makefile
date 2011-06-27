@@ -15,7 +15,9 @@ COMMENT=	A module issuing the "correct" cookies for counting the site visitors
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	13-20
+# Changed to apache13 exclusive, else apache13 ports
+# are broken if apache22 is set as default
+USE_APACHE=	13
 
 PORTDOCS=	README.html
 
@@ -24,7 +26,7 @@ AP_GENPLIST=	yes
 
 .include <bsd.port.pre.mk>
 
-.if !defined(APACHE_PORT) || ${APACHE_VERSION} == "13"
+.if ${APACHE_VERSION} == 13
 MODULENAME=	mod_uid
 .else
 IGNORE=		does not build with latest apache20/22
