@@ -7,6 +7,7 @@
 
 PORTNAME=	flashrom
 PORTVERSION=	0.9.3
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://qa.coreboot.org/releases/
 
@@ -14,9 +15,9 @@ MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A utility for reading, writing, verifying and erasing flash ROM chips
 
 LIB_DEPENDS=	pci.3:${PORTSDIR}/devel/libpci
-RUN_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode
 
-OPTIONS=	FTDI	"Enable external FT2232SPI flasher support"	off
+OPTIONS=	DMIDECODE	"Use dmidecode to gather DMI information"	on \
+		FTDI		"Enable external FT2232SPI flasher support"	off
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -34,6 +35,10 @@ MAN8=		${PORTNAME}.8
 .endif
 
 .include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_DMIDECODE)
+RUN_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode
+.endif
 
 .if defined(WITH_FTDI)
 USE_GNOME=	pkgconfig
