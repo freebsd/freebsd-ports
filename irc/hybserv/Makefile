@@ -16,15 +16,15 @@ COMMENT=	HybServ2 IRCD Services
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
+USERS=		${PORTNAME}
+GROUPS=		${USERS}
+
 WRKSRC=		${WRKDIR}/hybserv
 
 .if defined(WITH_DAEMONTOOLS)
 CONFIGURE_ARGS+=	--with-daemontools
 RUN_DEPENDS+=	supervise:${PORTSDIR}/sysutils/daemontools
 .endif
-
-pre-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@${SED} -e "s#%PREFIX%#${PREFIX}#" ${FILESDIR}/hybserv.sh \
