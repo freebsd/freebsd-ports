@@ -735,10 +735,11 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/json/tool.py
 %%PYTHON_LIBDIR%%/keyword.py
 %%PYTHON_LIBDIR%%/lib2to3/Grammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/Grammar2.7.1.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/Grammar2.7.2.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/PatternGrammar.txt
-%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar2.7.1.final.0.pickle
+%%PYTHON_LIBDIR%%/lib2to3/PatternGrammar2.7.2.final.0.pickle
 %%PYTHON_LIBDIR%%/lib2to3/__init__.py
+%%PYTHON_LIBDIR%%/lib2to3/__main__.py
 %%PYTHON_LIBDIR%%/lib2to3/btm_matcher.py
 %%PYTHON_LIBDIR%%/lib2to3/btm_utils.py
 %%PYTHON_LIBDIR%%/lib2to3/fixer_base.py
@@ -835,7 +836,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_pytree.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_refactor.py
 %%PYTHON_LIBDIR%%/lib2to3/tests/test_util.py
-%%PYTHON_LIBDIR%%/lib-dynload/Python-2.7.1-py%%PYVER%%.egg-info
+%%PYTHON_LIBDIR%%/lib-dynload/Python-2.7.2-py%%PYVER%%.egg-info
 %%PYTHON_LIBDIR%%/lib-dynload/_bisect.so
 %%PYTHON_LIBDIR%%/lib-dynload/_codecs_cn.so
 %%PYTHON_LIBDIR%%/lib-dynload/_codecs_hk.so
@@ -1076,9 +1077,34 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/buffer_tests.py
 %%PYTHON_LIBDIR%%/test/cfgparser.1
 %%PYTHON_LIBDIR%%/test/check_soundcard.vbs
-%%PYTHON_LIBDIR%%/test/cjkencodings_test.py
 %%PYTHON_LIBDIR%%/test/cmath_testcases.txt
 %%PYTHON_LIBDIR%%/test/curses_tests.py
+%%PYTHON_LIBDIR%%/test/cjkencodings/big5-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/big5.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/big5hkscs-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/big5hkscs.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/cp949-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/cp949.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_jisx0213-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_jisx0213.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_jp-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_jp.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_kr-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_kr.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gb18030-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gb18030.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gb2312-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gb2312.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gbk-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gbk.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/hz-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/hz.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/johab-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/johab.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/shift_jis-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/shift_jis.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/shift_jisx0213-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/shift_jisx0213.txt
 %%PYTHON_LIBDIR%%/test/data/README
 %%PYTHON_LIBDIR%%/test/decimaltestdata/abs.decTest
 %%PYTHON_LIBDIR%%/test/decimaltestdata/add.decTest
@@ -1267,6 +1293,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/ssl_cert.pem
 %%PYTHON_LIBDIR%%/test/ssl_key.pem
 %%PYTHON_LIBDIR%%/test/string_tests.py
+%%PYTHON_LIBDIR%%/test/subprocessdata/sigchild_ignore.py
 %%PYTHON_LIBDIR%%/test/svn_python_org_https_cert.pem
 %%PYTHON_LIBDIR%%/test/test_MimeWriter.py
 %%PYTHON_LIBDIR%%/test/test_SimpleHTTPServer.py
@@ -1487,6 +1514,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/test/test_mmap.py
 %%PYTHON_LIBDIR%%/test/test_module.py
 %%PYTHON_LIBDIR%%/test/test_modulefinder.py
+%%PYTHON_LIBDIR%%/test/test_msilib.py
 %%PYTHON_LIBDIR%%/test/test_multibytecodec.py
 %%PYTHON_LIBDIR%%/test/test_multibytecodec_support.py
 %%PYTHON_LIBDIR%%/test/test_multifile.py
@@ -2328,8 +2356,10 @@ lib/libpython2.7.a
 @dirrm %%PYTHON_LIBDIR%%/wsgiref
 @dirrm %%PYTHON_LIBDIR%%/unittest/test
 @dirrm %%PYTHON_LIBDIR%%/unittest
+@dirrm %%PYTHON_LIBDIR%%/test/cjkencodings
 @dirrm %%PYTHON_LIBDIR%%/test/data
 @dirrm %%PYTHON_LIBDIR%%/test/decimaltestdata
+@dirrm %%PYTHON_LIBDIR%%/test/subprocessdata
 @dirrm %%PYTHON_LIBDIR%%/test/tracedmodules
 @dirrm %%PYTHON_LIBDIR%%/test/xmltestdata
 @dirrm %%PYTHON_LIBDIR%%/test
