@@ -8,6 +8,7 @@
 
 PORTNAME=	openafs
 DISTVERSION=	1.6.0pre6
+PORTREVISION=	1
 CATEGORIES=	net kld
 MASTER_SITES=	http://dl.central.org/dl/openafs/candidate/${DISTVERSION}/:openafs \
 		http://dl.openafs.org/dl/openafs/candidate/${DISTVERSION}/:openafs \
@@ -32,14 +33,27 @@ USE_RC_SUBR=	afsd afsserver
 
 ONLY_FOR_ARCHS=	i386 amd64
 
+AFSMNTDIR?=	/afs
+AFSSTATEDIR?=	/var/${PORTNAME}
+AFSCACHEDIR?=	${AFSSTATEDIR}/cache
+PLIST_SUB+=	AFSMNTDIR=${AFSMNTDIR:C,^/,,} \
+		AFSSTATEDIR=${AFSSTATEDIR:C,^/,,} \
+		AFSCACHEDIR=${AFSCACHEDIR:C,^/,,}
+
 .include <bsd.port.pre.mk>
 
 KERNCONF?=	GENERIC
 KERNCONFDIR?=	${SRC_BASE}/sys/${ARCH}/conf
 KMODDIR=	/boot/modules
+PLIST_SUB+=	KMODDIR=${KMODDIR:C,^/,,}
 
-.if !exists(${KERNCONFDIR}/${KERNCONF})
-IGNORE=	requires kernel configuration file ${KERNCONF} to build
+# Use the first component of ${KERNCONF}.
+.for K in ${KERNCONF}
+_KERNCONF?=$K
+.endfor
+
+.if !exists(${KERNCONFDIR}/${_KERNCONF})
+IGNORE=	requires kernel configuration file ${_KERNCONF} to build
 .endif
 
 .if ${OSVERSION} < 800000
@@ -73,11 +87,11 @@ CONFLICTS=	heimdal-[0-9]*
 
 post-extract:
 	${MKDIR} ${WRKDIR}/conf
-	cd ${KERNCONFDIR} && /usr/sbin/config -d ${WRKDIR}/conf ${KERNCONF}
+	cd ${KERNCONFDIR} && /usr/sbin/config -d ${WRKDIR}/conf ${_KERNCONF}
 
 create-sample-files:
 	@${ECHO_CMD} openafs.org > ${WRKDIR}/ThisCell
-	@${ECHO_CMD} '/afs:/usr/vice/cache:150000' > ${WRKDIR}/cacheinfo
+	@${ECHO_CMD} "${AFSMNTDIR}:${AFSCACHEDIR}:150000" > ${WRKDIR}/cacheinfo
 	@${INSTALL_DATA} ${DISTDIR}/CellServDB ${WRKDIR}/CellServDB
 
 post-install: create-sample-files
@@ -91,6 +105,7 @@ post-install: create-sample-files
 	${INSTALL_KLD} ${PREFIX}/lib/openafs/libafs.ko ${KMODDIR}/
 	@${RM} ${PREFIX}/lib/openafs/libafs.ko
 	@${RMDIR} ${PREFIX}/lib/openafs
+	${MKDIR} ${AFSMNTDIR} ${AFSSTATEDIR} ${AFSCACHEDIR}
 	/usr/sbin/kldxref ${KMODDIR}
 
 .include <bsd.port.post.mk>
