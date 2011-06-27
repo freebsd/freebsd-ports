@@ -1010,6 +1010,7 @@
     SUBDIR += ppower4
     SUBDIR += print-n-times
     SUBDIR += prosper
+    SUBDIR += pure-csv
     SUBDIR += py-4suite
     SUBDIR += py-4suite-xml
     SUBDIR += py-Chameleon
