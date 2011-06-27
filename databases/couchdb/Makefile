@@ -29,6 +29,8 @@ COUCH_LOGDIR?=	${COUCH_VARDIR}/log/couchdb
 COUCH_LIBDIR?=	${COUCH_VARDIR}/lib/couchdb
 COUCH_USER?=	couchdb
 
+USERS=		${COUCH_USER}
+GROUPS=		${USERS}
 USE_RC_SUBR=	couchdb
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
@@ -53,9 +55,6 @@ post-patch:
 .if defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's/install-data-am$$//' ${WRKSRC}/Makefile.in
 .endif
-
-pre-install:
-	@${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
