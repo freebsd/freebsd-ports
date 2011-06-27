@@ -497,6 +497,7 @@ antivirus-milter                ports/mail/antivirus-milter
 antiwm                          ports/x11-wm/antiwm
 antiword                        ports/textproc/antiword
 antlr                           ports/devel/antlr
+antlr2-python-runtime           ports/devel/antlr2-python-runtime
 antlrworks                      ports/devel/antlrworks
 antrix                          ports/games/antrix
 anubis                          ports/mail/anubis
@@ -2384,6 +2385,7 @@ digger-vgl                      ports/games/digger-vgl
 digikam                         ports/graphics/digikam
 digikam-doc                     ports/graphics/digikam-doc
 digikam-kde4                    ports/graphics/digikam-kde4
+digitemp                        ports/misc/digitemp
 digitizer                       ports/math/digitizer
 dikt                            ports/textproc/dikt
 dillo                           ports/www/dillo
@@ -4386,6 +4388,7 @@ giram                           ports/graphics/giram
 gish-demo                       ports/games/gish-demo
 gist                            ports/www/gist
 git                             ports/devel/git
+git-annex                       ports/devel/git-annex
 git-merge-changelog             ports/devel/git-merge-changelog
 gitg                            ports/devel/gitg
 gittrac                         ports/devel/gittrac
@@ -10581,6 +10584,7 @@ openspc                         ports/audio/openspc
 openssh-askpass                 ports/security/openssh-askpass
 openssh-portable                ports/security/openssh-portable
 openssl_tpm_engine              ports/security/openssl_tpm_engine
+openssn                         ports/games/openssn
 opentaxsolver                   ports/finance/opentaxsolver
 opentracker                     ports/net/opentracker
 openttd                         ports/games/openttd
@@ -12029,6 +12033,7 @@ p5-EV                           ports/devel/p5-EV
 p5-EasyTCP                      ports/net/p5-EasyTCP
 p5-Email-Abstract               ports/mail/p5-Email-Abstract
 p5-Email-Address                ports/mail/p5-Email-Address
+p5-Email-AddressParser          ports/mail/p5-Email-AddressParser
 p5-Email-Date                   ports/mail/p5-Email-Date
 p5-Email-Date-Format            ports/mail/p5-Email-Date-Format
 p5-Email-Delete                 ports/mail/p5-Email-Delete
@@ -16282,6 +16287,7 @@ p5-easytcp                      ports/net/p5-EasyTCP
 p5-ebook-tools                  ports/textproc/p5-EBook-Tools
 p5-email-abstract               ports/mail/p5-Email-Abstract
 p5-email-address                ports/mail/p5-Email-Address
+p5-email-addressparser          ports/mail/p5-Email-AddressParser
 p5-email-date                   ports/mail/p5-Email-Date
 p5-email-date-format            ports/mail/p5-Email-Date-Format
 p5-email-delete                 ports/mail/p5-Email-Delete
@@ -19358,6 +19364,7 @@ pbasic                          ports/lang/pbasic
 pbc                             ports/security/pbc
 pbi-manager                     ports/ports-mgmt/pbi-manager
 pbi-thumbnailer                 ports/x11-fm/pbi-thumbnailer
+pbimaker                        ports/sysutils/pbimaker
 pbnc                            ports/net/pbnc
 pbnj                            ports/security/pbnj
 pbreg                           ports/sysutils/pbreg
@@ -23190,7 +23197,6 @@ ruby-tcpsocketpipe              ports/net/ruby-tcpsocketpipe
 ruby-tcpwrap                    ports/security/ruby-tcpwrap
 ruby-tempura                    ports/textproc/ruby-tempura
 ruby-term-ansicolor             ports/devel/ruby-term-ansicolor
-ruby-termios                    ports/comms/ruby-termios
 ruby-textbuf                    ports/devel/ruby-textbuf
 ruby-tgif                       ports/graphics/ruby-tgif
 ruby-thrift                     ports/devel/ruby-thrift
@@ -23512,6 +23518,7 @@ rubygem-ruby-mp3info            ports/audio/rubygem-ruby-mp3info
 rubygem-ruby-ole                ports/devel/rubygem-ruby-ole
 rubygem-ruby-prof               ports/devel/rubygem-ruby-prof
 rubygem-ruby-sdl-ffi            ports/devel/rubygem-ruby-sdl-ffi
+rubygem-ruby-termios            ports/comms/rubygem-ruby-termios
 rubygem-ruby2ruby               ports/devel/rubygem-ruby2ruby
 rubygem-ruby_parser             ports/devel/rubygem-ruby_parser
 rubygem-rubyforge               ports/devel/rubygem-rubyforge
@@ -23895,6 +23902,7 @@ seq2                            ports/misc/seq2
 seqio                           ports/biology/seqio
 ser                             ports/net/ser
 ser2net                         ports/comms/ser2net
+serdisplib                      ports/devel/serdisplib
 serendipity                     ports/www/serendipity
 serendipity-devel               ports/www/serendipity-devel
 serf                            ports/www/serf
@@ -24000,6 +24008,7 @@ sidplay                         ports/audio/sidplay
 sidplay2                        ports/audio/sidplay2
 sidplayer                       ports/audio/sidplayer
 siege                           ports/benchmarks/siege
+sieve-connect                   ports/mail/sieve-connect
 sievelog                        ports/sysutils/sievelog
 sig2dot                         ports/security/sig2dot
 sigil                           ports/textproc/sigil
@@ -25605,6 +25614,7 @@ umodunpack                      ports/misc/umodunpack
 umph                            ports/multimedia/umph
 umplayer                        ports/multimedia/umplayer
 umr                             ports/multimedia/umr
+umurmur                         ports/audio/umurmur
 unace                           ports/archivers/unace
 unadf                           ports/archivers/unadf
 unalz                           ports/archivers/unalz
