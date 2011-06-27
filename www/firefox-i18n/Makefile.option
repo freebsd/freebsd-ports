@@ -9,10 +9,12 @@ OPTIONS=        LANG_AF  "Africaans"              off \
                 LANG_SQ  "Albanian"               off \
                 LANG_AR  "Arabic"                 on \
                 LANG_AM  "Armenian"               off \
+                LANG_AST "Asturian"               off \
                 LANG_EU  "Basque"                 off \
                 LANG_BN  "Bengali"                on \
                 LANG_BB  "Bengali (Bangladesh)"   off \
                 LANG_BS  "Bosnian"                off \
+                LANG_BR  "Breton"                 off \
                 LANG_BG  "Bulgarian"              off \
                 LANG_BE  "Byelorussian"           off \
                 LANG_CA  "Catalan"                off \
