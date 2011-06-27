@@ -750,6 +750,7 @@
     SUBDIR += projectm-libvisual
     SUBDIR += pstoedit
     SUBDIR += pstoepsi
+    SUBDIR += pure-gl
     SUBDIR += pvmpov
     SUBDIR += py-PyX
     SUBDIR += py-aafigure
