@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	prosody
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.2
 CATEGORIES=	net-im
 MASTER_SITES=	http://prosody.im/downloads/source/ \
 				http://redundancy.redundancy.org/mirror/
@@ -27,6 +27,7 @@ MANCOMPRESSED=	no
 
 USE_LUA=	5.1
 WANT_LUA_VER=	5.1
+USE_GMAKE=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS+="--ostype=freebsd"
@@ -37,6 +38,8 @@ SUB_FILES=	pkg-install pkg-deinstall
 pre-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	${REINPLACE_CMD} -e 's|/usr/bin/env lua|${LUA_CMD}|' ${WRKSRC}/prosody ${WRKSRC}/prosodyctl
+	${RM} ${WRKSRC}/certs/localhost.*
+	cd ${WRKSRC}/certs && ${GMAKE} localhost.cert
 
 post-install:
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
