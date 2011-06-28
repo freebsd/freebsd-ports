@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cclive
-PORTVERSION=	0.7.3.1
-PORTREVISION=	2
+PORTVERSION=	0.7.4.1
 CATEGORIES=	multimedia net
 MASTER_SITES=	SF/${PORTNAME}/0.7 \
 		GOOGLE_CODE
@@ -25,13 +24,7 @@ PLIST_FILES=	bin/cclive
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
-MANCOMPRESSED=	yes
-USE_CMAKE=	yes
-USE_GCC=	4.2+
 
 LICENSE=	GPLv3
-
-post-patch:
-	@${REINPLACE_CMD} -e '/install / s|share/||' ${WRKSRC}/man1/CMakeLists.txt
 
 .include <bsd.port.mk>
