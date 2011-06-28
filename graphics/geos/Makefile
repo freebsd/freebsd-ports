@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	geos
-PORTVERSION=	3.2.2
+PORTVERSION=	3.3.0
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/geos/
 
@@ -19,8 +19,5 @@ USE_AUTOTOOLS=	libtool
 USE_BZIP2=	YES
 USE_GMAKE=	YES
 USE_LDCONFIG=	YES
-
-post-patch:
-	@${REINPLACE_CMD} -e '/-release/d' ${WRKSRC}/source/Makefile.in
 
 .include <bsd.port.mk>
