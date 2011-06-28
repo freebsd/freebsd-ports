@@ -760,6 +760,7 @@
     SUBDIR += r1q2
     SUBDIR += race
     SUBDIR += railroad-rampage
+    SUBDIR += redeclipse
     SUBDIR += reminiscence
     SUBDIR += rezerwar
     SUBDIR += rfksay
