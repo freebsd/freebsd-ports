@@ -1,4 +1,5 @@
 bin/detox
+bin/inline-detox
 @unexec if cmp -s %D/etc/detoxrc %D/etc/detoxrc.sample; then rm -f %D/etc/detoxrc; fi
 etc/detoxrc.sample
 @exec [ -f %D/etc/detoxrc ] || cp %B/%f %D/etc/detoxrc
