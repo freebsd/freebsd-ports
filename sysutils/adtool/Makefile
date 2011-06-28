@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	adtool
-PORTVERSION=	1.3
-PORTREVISION=	2
+PORTVERSION=	1.3.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://gp2x.org/adtool/
 
@@ -21,5 +20,11 @@ USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS+=--with-ldap=${LOCALBASE}
 
 MAN1=		adtool.1
+
+PLIST_FILES=	bin/adtool \
+		etc/adtool.cfg.dist
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 .include <bsd.port.mk>
