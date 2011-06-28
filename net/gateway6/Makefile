@@ -7,6 +7,7 @@
 
 PORTNAME=	gateway6
 PORTVERSION=	6.0
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://go6.net/4105/file.asp?file_id=166&foo=/
 MASTER_SITES+=	http://go6.net/4105/file.asp?file_id=166&
