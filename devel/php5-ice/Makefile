@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	Ice
-PORTVERSION=	3.4.1
+PORTVERSION=	3.4.2
 CATEGORIES=	devel
-MASTER_SITES=	http://www.zeroc.com/download/Ice/3.4/
+MASTER_SITES=	http://download.zeroc.com/Ice/3.4/
 PKGNAMEPREFIX=	php5-
 DISTNAME=	Ice-${PORTVERSION}
 
@@ -26,7 +26,7 @@ USE_PHP_BUILD=	yes
 BUILD_WRKSRC=	${WRKSRC}/php
 INSTALL_WRKSRC=	${WRKSRC}/php
 
-LIB_VRS=	${PORTVERSION:S|.||g:C|1$||}
+LIB_VRS=	${PORTVERSION:S|.||g:C|2$||}
 PHP_MODNAME?=	IcePHP
 
 CFLAGS+=	-ftemplate-depth-128 -fPIC -DPIC -Wall -D_REENTRANT ${PTHREAD_CFLAGS}
