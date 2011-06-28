@@ -277,10 +277,6 @@ j2sdk-*-linux-i586.bin	java/linux-blackdown-jdk14	License does not allow
 						distribution with fee
 j2sdk-1_3_1-src.tar.gz	java/jdk13		Redistribution of pre-compiled
 						binaries is not permitted
-j2sdk-1_4_2-bin-scsl.*	java/jdk14		Redistribution of pre-compiled
-						binaries is not permitted
-j2sdk-1_4_2-src-scsl.*	java/jdk14		Redistribution of pre-compiled
-						binaries is not permitted
 jdk-1_5_0-bin-scsl.*	java/jdk15		Redistribution of pre-compiled
 						binaries is not permitted
 jdk-1_5_0-src-scsl.*	java/jdk15		Redistribution of pre-compiled
