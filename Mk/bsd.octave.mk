@@ -14,7 +14,7 @@ MASTER_SITES=	SF/octave/Octave%20Forge%20Packages/Individual%20Package%20Release
 		SF/octave/Octave%20Forge%20Packages/R2009-05-08
 DISTNAME=	${OCTAVE_PKGNAME}-${PORTVERSION}
 
-bsd_octave_mk_MAINTAINER=	stephen@missouri.edu
+bsd_octave_mk_MAINTAINER=	stephen@FreeBSD.org
 
 BUILD_DEPENDS+=	octave:${PORTSDIR}/math/octave
 RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave \
