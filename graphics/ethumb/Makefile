@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ethumb
-PORTVERSION=	0.1.0.52995
-PORTREVISION=	1
+PORTVERSION=	0.1.1.56361
 CATEGORIES=	graphics enlightenment
-MASTER_SITES=	http://files.roorback.net/e17/2010-10-03/extra/
+MASTER_SITES=	http://files.roorback.net/e17/2011-01-29/extra/
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	Thumbnail generator library
