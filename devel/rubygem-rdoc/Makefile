@@ -17,4 +17,8 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+RUBY_VERSION=	1.9
+
+PLIST_FILES=	bin/rdoc bin/ri
+
 .include <bsd.port.mk>
