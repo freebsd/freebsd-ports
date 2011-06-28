@@ -1,7 +1,9 @@
 bin/facter
 %%RUBY_SITELIBDIR%%/facter.rb
 %%RUBY_SITELIBDIR%%/facter/Cfkey.rb
+%%RUBY_SITELIBDIR%%/facter/application.rb
 %%RUBY_SITELIBDIR%%/facter/architecture.rb
+%%RUBY_SITELIBDIR%%/facter/arp.rb
 %%RUBY_SITELIBDIR%%/facter/domain.rb
 %%RUBY_SITELIBDIR%%/facter/ec2.rb
 %%RUBY_SITELIBDIR%%/facter/facterversion.rb
@@ -12,6 +14,7 @@ bin/facter
 %%RUBY_SITELIBDIR%%/facter/id.rb
 %%RUBY_SITELIBDIR%%/facter/interfaces.rb
 %%RUBY_SITELIBDIR%%/facter/ipaddress.rb
+%%RUBY_SITELIBDIR%%/facter/ipaddress6.rb
 %%RUBY_SITELIBDIR%%/facter/iphostnumber.rb
 %%RUBY_SITELIBDIR%%/facter/kernel.rb
 %%RUBY_SITELIBDIR%%/facter/kernelmajversion.rb
@@ -47,6 +50,7 @@ bin/facter
 %%RUBY_SITELIBDIR%%/facter/util/fact.rb
 %%RUBY_SITELIBDIR%%/facter/util/ip.rb
 %%RUBY_SITELIBDIR%%/facter/util/loader.rb
+%%RUBY_SITELIBDIR%%/facter/util/macaddress.rb
 %%RUBY_SITELIBDIR%%/facter/util/macosx.rb
 %%RUBY_SITELIBDIR%%/facter/util/manufacturer.rb
 %%RUBY_SITELIBDIR%%/facter/util/memory.rb
@@ -59,8 +63,10 @@ bin/facter
 %%RUBY_SITELIBDIR%%/facter/util/values.rb
 %%RUBY_SITELIBDIR%%/facter/util/virtual.rb
 %%RUBY_SITELIBDIR%%/facter/util/vlans.rb
+%%RUBY_SITELIBDIR%%/facter/util/xendomains.rb
 %%RUBY_SITELIBDIR%%/facter/virtual.rb
 %%RUBY_SITELIBDIR%%/facter/vlans.rb
+%%RUBY_SITELIBDIR%%/facter/xendomains.rb
 @dirrm %%RUBY_SITELIBDIR%%/facter/util/plist
 @dirrm %%RUBY_SITELIBDIR%%/facter/util
 @dirrm %%RUBY_SITELIBDIR%%/facter
