@@ -1,12 +1,13 @@
 sbin/ircd
 bin/ircdpasswd
-etc/ircd-ru/ircd.conf-dist
-etc/ircd-ru/ircd.motd-dist
-etc/ircd-ru/ircd.smotd-dist
-etc/ircd-ru/kline.conf
-etc/ircd-ru/ru_RU.CP1251/ircd.motd-dist
-etc/ircd-ru/ru_RU.CP1251/ircd.smotd-dist
-etc/ircd-ru/ru_RU.KOI8-R/ircd.conf-dist
+%%ETCDIR%%/ircd.conf-dist
+%%ETCDIR%%/ircd.motd-dist
+%%ETCDIR%%/ircd.smotd-dist
+@unexec [ -s %D/%%ETCDIR%%/kline.conf ] || rm -f %D/%%ETCDIR%%/kline.conf
+@exec [ -f %D/%%ETCDIR%%/kline.conf ] || touch %D/%%ETCDIR%%/kline.conf
+%%ETCDIR%%/ru_RU.CP1251/ircd.motd-dist
+%%ETCDIR%%/ru_RU.CP1251/ircd.smotd-dist
+%%ETCDIR%%/ru_RU.KOI8-R/ircd.conf-dist
 %%PORTDOCS%%%%DOCSDIR%%/README.Ilines
 %%PORTDOCS%%%%DOCSDIR%%/opers.txt
 %%PORTDOCS%%%%DOCSDIR%%/ru_RU.KOI8-R/FAQ
@@ -17,8 +18,8 @@ etc/ircd-ru/ru_RU.KOI8-R/ircd.conf-dist
 %%DATADIR%%/codepages/koi8-f.cp
 %%DATADIR%%/codepages/koi8-r.cp
 %%DATADIR%%/codepages/translit.cp
-@dirrm etc/ircd-ru/ru_RU.CP1251
-@dirrm etc/ircd-ru/ru_RU.KOI8-R
+@dirrm %%ETCDIR%%/ru_RU.CP1251
+@dirrm %%ETCDIR%%/ru_RU.KOI8-R
 @dirrm %%DATADIR%%/codepages
 @dirrm %%DATADIR%%/modules
 @dirrm %%DATADIR%%
@@ -28,4 +29,4 @@ etc/ircd-ru/ru_RU.KOI8-R/ircd.conf-dist
 @exec chown ircd:ircd %%VARDIR%%/log/ircd-ru
 @unexec rmdir %%VARDIR%%/log/ircd-ru
 @unexec rmdir %%VARDIR%%/run/ircd-ru
-@unexec (rmdir %D/etc/ircd-ru && pw user del ircd) || echo 'To completely remove this port delete user ircd, group ircd and remove etc/ircd-ru'
+@dirrmtry %%ETCDIR%%
