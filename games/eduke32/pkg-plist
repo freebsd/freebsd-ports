@@ -3,4 +3,13 @@ bin/mapster32
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/duke3d.def.sample
 %%PORTDOCS%%%%DOCSDIR%%/enhance.con.sample
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/_clipshape0.map
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/a.m32
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/m32script_ex.map
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ror.map
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spriteclip.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests.m32
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tiles.cfg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/trueror1.map
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%

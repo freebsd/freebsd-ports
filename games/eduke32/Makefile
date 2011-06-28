@@ -5,25 +5,27 @@
 # $FreeBSD$
 
 PORTNAME=	eduke32
-PORTVERSION=	20090313
-PORTREVISION=	3
-DISTVERSION=	20090131
+PORTVERSION=	20110627
 CATEGORIES=	games
-MASTER_SITES=	http://dukeworld.duke4.net/eduke32/source_code/
-DISTFILES=	${PORTNAME}_src_${DISTVERSION}${EXTRACT_SUFX}
-PATCH_SITES=	${MASTER_SITES}
-PATCHFILES=	${PORTNAME}_src_${PORTVERSION}.diff
+MASTER_SITES=	http://dukeworld.duke4.net/eduke32/synthesis/${PORTVERSION}-${SVNREVISION}/ \
+		http://dukeworld.duke4.net/eduke32/synthesis/old/${PORTVERSION}-${SVNREVISION}/
+DISTNAME=	${PORTNAME}_src_${PORTVERSION}-${SVNREVISION}
 
 MAINTAINER=	olivier@gid0.org
 COMMENT=	Duke Nukem 3D Port based on JFDuke and EDuke
 
-USE_ZIP=	yes
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/GNU.TXT
+
+LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
+
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		gl
 USE_GNOME=	gtk20
 USE_SDL=	mixer sdl
-WRKSRC=		${WRKDIR}/${PORTNAME}_src_${DISTVERSION}
-PATCH_ARGS=	-d ${PATCH_WRKSRC} --forward --quiet -E ${PATCH_STRIP} -l
+WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}-${SVNREVISION}
+SVNREVISION=	1923
 
 OPTIONS=	MIDI		"Enable original MIDI music support"	On \
 		TIMIDITYPLUS	"Use Timidity++ instead of Timidity"	Off \
@@ -55,32 +57,38 @@ LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 
 post-patch:
 .if defined(WITHOUT_VORBIS)
-	@${REINPLACE_CMD} -e '/LIBS+= -lvorbis/d' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} '/+= -lvorbis/d' ${WRKSRC}/Makefile
 .endif
 .if ${ARCH} != "i386"
-	@${REINPLACE_CMD} -Ee 's|^(NOASM =).*|\1 1|' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} '/^NOASM =/s/0/1/' ${WRKSRC}/Makefile.common
 .endif
-	@${REINPLACE_CMD} -Ee \
-		's|^(CC=).*|\1${CC}|; \
-		 s|^(CXX=).*|\1${CXX}|; \
-		 /debug=/d; \
-		 s|/usr/X11R6|${LOCALBASE}|; \
-		 s|sdl-config|${SDL_CONFIG}|' \
-		${WRKSRC}/Makefile \
-		${WRKSRC}/build/Makefile \
+	@${REINPLACE_CMD} -e '/^CC=/s/gcc/${CC}/' -e '/^CXX=/s/g++/${CXX}/' \
+		${WRKSRC}/Makefile.common
+	@${REINPLACE_CMD} 's/ \$$(ARCH)//' ${WRKSRC}/Makefile \
+		${WRKSRC}/build/Makefile
+	@${REINPLACE_CMD} -Ee '/^ifeq/s/LINUX/BSD/' \
+		-e 's/(\+= -lvorbisfile)/\1 -lexecinfo/' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|/usr/X11R6|${LOCALBASE}|' -e 's/ -ldl//' \
+		${WRKSRC}/build/Makefile
+	@${REINPLACE_CMD} -E 's|(SDLCONFIG[[:space:]]*=).*|\1${SDL_CONFIG}|' \
 		${WRKSRC}/build/Makefile.shared
-	@${REINPLACE_CMD} -e 's|LINUX|BSD|' ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} -e 's|/usr/share/games/eduke32|${DN3DDIR}|' \
+	@${REINPLACE_CMD} 's|/usr/share/games/eduke32|${DN3DDIR}|' \
 		${WRKSRC}/source/game.c ${WRKSRC}/source/astub.c
+	@${REINPLACE_CMD} -E 's|(-DHAVE_VORBIS)|-I${LOCALBASE}/include \1|' \
+		${WRKSRC}/source/jaudiolib/Makefile
 
 do-install:
 .for f in eduke32 mapster32
 	${INSTALL_PROGRAM} ${WRKSRC}/${f} ${PREFIX}/bin
 .endfor
 .if !defined(NOPORTDOCS)
-. for f in ChangeLog *.sample
 	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ChangeLog ${WRKSRC}/samples/*.sample ${DOCSDIR}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+. for f in cfg map m32 txt
+	${INSTALL_DATA} ${WRKSRC}/samples/*.${f} ${EXAMPLESDIR}
 . endfor
 .endif
 
