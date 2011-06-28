@@ -77,6 +77,7 @@ bin/exiftool
 %%SITE_PERL%%/Image/ExifTool/ID3.pm
 %%SITE_PERL%%/Image/ExifTool/IPTC.pm
 %%SITE_PERL%%/Image/ExifTool/ITC.pm
+%%SITE_PERL%%/Image/ExifTool/Import.pm
 %%SITE_PERL%%/Image/ExifTool/InDesign.pm
 %%SITE_PERL%%/Image/ExifTool/JPEG.pm
 %%SITE_PERL%%/Image/ExifTool/JPEGDigest.pm
