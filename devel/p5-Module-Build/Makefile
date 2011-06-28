@@ -7,24 +7,14 @@
 
 PORTNAME=	Module-Build
 PORTVERSION=	0.3800
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAGOLDEN
 PKGNAMEPREFIX=	p5-
-#DISTNAME=	${PORTNAME}-${PORTVERSION:C/\.(..)$/\1/}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Build and install Perl modules
-
-RUN_DEPENDS=	p5-CPAN-Meta>=2.110420:${PORTSDIR}/devel/p5-CPAN-Meta \
-		p5-ExtUtils-CBuilder>=0.27:${PORTSDIR}/devel/p5-ExtUtils-CBuilder \
-		p5-ExtUtils-ParseXS>=2.21:${PORTSDIR}/devel/p5-ExtUtils-ParseXS \
-		p5-ExtUtils-Install>=1.54:${PORTSDIR}/devel/p5-ExtUtils-Install \
-		p5-Module-Metadata>=1.000002:${PORTSDIR}/devel/p5-Module-Metadata \
-		p5-Perl-OSType>=1.000:${PORTSDIR}/devel/p5-Perl-OSType \
-		p5-version>=0.87:${PORTSDIR}/devel/p5-version
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		p5-Parse-CPAN-Meta>=1.44.01:${PORTSDIR}/devel/p5-Parse-CPAN-Meta
 
 PORTSCOUT=	skipv:0.31012
 
@@ -76,9 +66,33 @@ MAN1=		config_data.1
 PLIST_FILES=	bin/config_data
 .endif
 
+.if ${PERL_LEVEL} < 501001
+BUILD_DEPENDS+=	p5-ExtUtils-Install>=1.54:${PORTSDIR}/devel/p5-ExtUtils-Install
+RUN_DEPENDS+=	p5-ExtUtils-Install>=1.54:${PORTSDIR}/devel/p5-ExtUtils-Install
+.endif
+
+.if ${PERL_LEVEL} < 501200
+BUILD_DEPENDS+=	p5-ExtUtils-CBuilder>=0.27:${PORTSDIR}/devel/p5-ExtUtils-CBuilder \
+		p5-ExtUtils-ParseXS>=2.21:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
+RUN_DEPENDS+=	p5-ExtUtils-CBuilder>=0.27:${PORTSDIR}/devel/p5-ExtUtils-CBuilder \
+		p5-ExtUtils-ParseXS>=2.21:${PORTSDIR}/devel/p5-ExtUtils-ParseXS
+.endif
+
+.if ${PERL_LEVEL} < 501400
+BUILD_DEPENDS+=	p5-CPAN-Meta>=2.110420:${PORTSDIR}/devel/p5-CPAN-Meta \
+		p5-Module-Metadata>=1.000002:${PORTSDIR}/devel/p5-Module-Metadata \
+		p5-Parse-CPAN-Meta>=1.44.01:${PORTSDIR}/devel/p5-Parse-CPAN-Meta \
+		p5-Perl-OSType>=1.000:${PORTSDIR}/devel/p5-Perl-OSType \
+		p5-version>=0.87:${PORTSDIR}/devel/p5-version
+RUN_DEPENDS+=	p5-CPAN-Meta>=2.110420:${PORTSDIR}/devel/p5-CPAN-Meta \
+		p5-Module-Metadata>=1.000002:${PORTSDIR}/devel/p5-Module-Metadata \
+		p5-Perl-OSType>=1.000:${PORTSDIR}/devel/p5-Perl-OSType \
+		p5-version>=0.87:${PORTSDIR}/devel/p5-version
+.endif
+
 post-patch:
 .if ${PERL_LEVEL} >= 501000
-	@${RM} ${WRKSRC}/bin/config_data
+	@${RM} -f ${WRKSRC}/bin/config_data
 	@${REINPLACE_CMD} -e '/script_files/d' ${WRKSRC}/Build.PL
 	@${REINPLACE_CMD} -e '/^bin\/config_data/d' ${WRKSRC}/MANIFEST
 .endif
