@@ -198,6 +198,7 @@
     SUBDIR += monafonts
     SUBDIR += monafonts-ttf
     SUBDIR += mozc-additions
+    SUBDIR += mozc-el
     SUBDIR += mozc-server
     SUBDIR += mozc-tool
     SUBDIR += mtools

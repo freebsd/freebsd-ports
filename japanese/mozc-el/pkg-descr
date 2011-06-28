@@ -1,0 +1,4 @@
+Mozc.el is an Emacs client of Mozc, so you can input
+Japanese via mozc in your tty, bypassing ibus.
+
+WWW: http://code.google.com/p/mozc/
