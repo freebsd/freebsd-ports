@@ -469,6 +469,7 @@
     SUBDIR += p5-Test-Fixture-DBI
     SUBDIR += p5-Test-postgresql
     SUBDIR += p5-Text-Query-SQL
+    SUBDIR += p5-Text-xSV
     SUBDIR += p5-Tie-DBI
     SUBDIR += p5-Time-Piece-MySQL
     SUBDIR += p5-TokyoCabinet
