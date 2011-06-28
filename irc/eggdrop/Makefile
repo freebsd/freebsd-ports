@@ -39,7 +39,7 @@ LICENSE=	GPLv2
 
 .if defined(WITH_SSL)
 . if ${ARCH} == "amd64"
-IGNORE=		ssl support is broken on amd64
+BROKEN=		ssl support is broken on amd64
 . endif
 EXTRA_PATCHES=	${WRKDIR}/eggdrop-1.6.20-ssl.patch
 
