@@ -5,7 +5,7 @@
 
 #
 # PROVIDE: gateway6
-# REQUIRE: FILESYSTEMS netif
+# REQUIRE: FILESYSTEMS NETWORKING
 # KEYWORD: shutdown
 #
 
