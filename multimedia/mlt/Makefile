@@ -6,7 +6,7 @@
 
 PORTNAME=	mlt
 PORTVERSION=	0.6.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -100,7 +100,7 @@ PLIST_SUB+=	FREI0R="@comment "
 
 .ifndef(WITHOUT_GTK2)
 LIB_DEPENDS+=	exif.12:${PORTSDIR}/graphics/libexif
-USE_GNOME+=	gdkpixbuf gtk20 pango
+USE_GNOME+=	gdkpixbuf2 gtk20 pango
 CONFIGURE_ARGS+=	--enable-gtk2
 PLIST_SUB+=	GTK2=""
 .else
