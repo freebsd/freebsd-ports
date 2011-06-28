@@ -54,9 +54,9 @@ Java_Include_MAINTAINER=	glewis@FreeBSD.org hq@FreeBSD.org
 #-------------------------------------------------------------------------------
 # Variables defined for the port:
 #
-# JAVA_PORT			The name of the JDK port. (e.g. 'java/jdk14')
+# JAVA_PORT			The name of the JDK port. (e.g. 'java/jdk16')
 #
-# JAVA_PORT_VERSION	The version of the JDK port. (e.g. '1.4')
+# JAVA_PORT_VERSION	The version of the JDK port. (e.g. '1.6')
 #
 # JAVA_PORT_OS		The operating system used by the JDK port. (e.g. 'linux')
 #
@@ -181,8 +181,6 @@ _JAVA_PORT_NATIVE_FREEBSD_JDK_1_5_INFO=		PORT=java/diablo-jdk15			HOME=${LOCALBA
 											VERSION=1.5.0	OS=native	VENDOR=freebsd
 _JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3_INFO=		PORT=java/jdk13					HOME=${LOCALBASE}/jdk1.3.1 \
 											VERSION=1.3.1	OS=native	VENDOR=bsdjava
-_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4_INFO=		PORT=java/jdk14					HOME=${LOCALBASE}/jdk1.4.2 \
-											VERSION=1.4.2	OS=native	VENDOR=bsdjava
 _JAVA_PORT_NATIVE_BSDJAVA_JDK_1_5_INFO=		PORT=java/jdk15					HOME=${LOCALBASE}/jdk1.5.0 \
 											VERSION=1.5.0	OS=native	VENDOR=bsdjava
 _JAVA_PORT_NATIVE_BSDJAVA_JDK_1_6_INFO=		PORT=java/jdk16					HOME=${LOCALBASE}/jdk1.6.0 \
@@ -223,7 +221,6 @@ __JAVA_PORTS_ALL=	JAVA_PORT_NATIVE_FREEBSD_JDK_1_6 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_1_6 \
 					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_6 \
 					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_5 \
-					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_4 \
 					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3 \
 					JAVA_PORT_LINUX_SUN_JDK_1_6 \
 					JAVA_PORT_LINUX_SUN_JDK_1_5 \
