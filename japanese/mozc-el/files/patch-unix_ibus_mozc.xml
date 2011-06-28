@@ -1,0 +1,24 @@
+--- unix/ibus/mozc.xml.org	2010-11-06 10:57:06.006187725 +0900
++++ unix/ibus/mozc.xml	2010-11-06 10:57:28.462186463 +0900
+@@ -0,0 +1,21 @@
++<component>
++  <name>com.google.IBus.Mozc</name>
++  <description>Mozc Component</description>
++  <exec>@@LOCALBASE@@/libexec/ibus-engine-mozc --ibus</exec>
++  <version>0.0.0.0</version>
++  <author>Google Inc.</author>
++  <license>New BSD</license>
++  <homepage>http://code.google.com/p/mozc/</homepage>
++  <textdomain>ibus-mozc</textdomain>
++  <engines>
++    <engine>
++      <rank>0</rank>
++      <description>Mozc (Japanese Input Method)</description>
++      <language>ja</language>
++      <icon>@@LOCALBASE@@/share/ibus-mozc/icons/product_logo.png</icon>
++      <layout>jp</layout>
++      <name>mozc-jp</name>
++      <longname>Mozc</longname>
++    </engine>
++  </engines>
++</component>
