@@ -229,6 +229,7 @@ bin/tex2lyx
 %%DATADIR%%/doc/sl/Intro.lyx
 %%DATADIR%%/doc/sl/Tutorial.lyx
 %%DATADIR%%/doc/sv/Intro.lyx
+%%DATADIR%%/doc/sv/Shortcuts.lyx
 %%DATADIR%%/doc/sv/Tutorial.lyx
 %%DATADIR%%/doc/uk/Intro.lyx
 %%DATADIR%%/doc/uk/clipart/FootnoteQT4.png
@@ -364,6 +365,7 @@ bin/tex2lyx
 %%DATADIR%%/examples/sl/splash.lyx
 %%DATADIR%%/examples/splash.lyx
 %%DATADIR%%/examples/sr/splash.lyx
+%%DATADIR%%/examples/sv/splash.lyx
 %%DATADIR%%/examples/tufte-book.lyx
 %%DATADIR%%/examples/tufte-handout.lyx
 %%DATADIR%%/examples/uk/splash.lyx
@@ -1247,6 +1249,9 @@ bin/tex2lyx
 %%DATADIR%%/lyx2lyx/lyx2lyx_lang.py
 %%DATADIR%%/lyx2lyx/lyx2lyx_lang.pyc
 %%DATADIR%%/lyx2lyx/lyx2lyx_lang.pyo
+%%DATADIR%%/lyx2lyx/lyx2lyx_tools.py
+%%DATADIR%%/lyx2lyx/lyx2lyx_tools.pyc
+%%DATADIR%%/lyx2lyx/lyx2lyx_tools.pyo
 %%DATADIR%%/lyx2lyx/lyx2lyx_version.py
 %%DATADIR%%/lyx2lyx/lyx2lyx_version.pyc
 %%DATADIR%%/lyx2lyx/lyx2lyx_version.pyo
@@ -1292,6 +1297,9 @@ bin/tex2lyx
 %%DATADIR%%/lyx2lyx/lyx_1_6.py
 %%DATADIR%%/lyx2lyx/lyx_1_6.pyc
 %%DATADIR%%/lyx2lyx/lyx_1_6.pyo
+%%DATADIR%%/lyx2lyx/lyx_2_0.py
+%%DATADIR%%/lyx2lyx/lyx_2_0.pyc
+%%DATADIR%%/lyx2lyx/lyx_2_0.pyo
 %%DATADIR%%/lyx2lyx/parser_tools.py
 %%DATADIR%%/lyx2lyx/parser_tools.pyc
 %%DATADIR%%/lyx2lyx/parser_tools.pyo
@@ -1301,6 +1309,9 @@ bin/tex2lyx
 %%DATADIR%%/lyx2lyx/test_parser_tools.py
 %%DATADIR%%/lyx2lyx/test_parser_tools.pyc
 %%DATADIR%%/lyx2lyx/test_parser_tools.pyo
+%%DATADIR%%/lyx2lyx/unicode_symbols.py
+%%DATADIR%%/lyx2lyx/unicode_symbols.pyc
+%%DATADIR%%/lyx2lyx/unicode_symbols.pyo
 %%DATADIR%%/scripts/TeXFiles.py
 %%DATADIR%%/scripts/TeXFiles.pyc
 %%DATADIR%%/scripts/TeXFiles.pyo
@@ -1414,6 +1425,7 @@ bin/tex2lyx
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/examples/uk
+@dirrm %%DATADIR%%/examples/sv
 @dirrm %%DATADIR%%/examples/sr
 @dirrm %%DATADIR%%/examples/sl
 @dirrm %%DATADIR%%/examples/sk

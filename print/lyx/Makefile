@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	${MAJOR_VERSION}.9
+PORTVERSION=	${MAJOR_VERSION}.10
 CATEGORIES=	print editors
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/${MAJOR_VERSION}.x/ \
 		http://www-ftp.lip6.fr/ftp/pub/lyx/stable/${MAJOR_VERSION}.x/ \
@@ -15,7 +15,7 @@ MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/${MAJOR_VERSION}.x/ \
 		http://sunsite.icm.edu.pl/pub/unix/editors/lyx/stable/${MAJOR_VERSION}.x/ \
 		ftp://ftp.chg.ru/pub/X11/lyx/stable/${MAJOR_VERSION}.x/
 
-MAINTAINER=	aldis@bsdroot.lv
+MAINTAINER=	kubito@gmail.com
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG) (stable)
 
 LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs
