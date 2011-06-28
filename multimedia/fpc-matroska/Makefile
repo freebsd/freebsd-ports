@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	0
+PORTREVISION=	2
 CATEGORIES=	multimedia lang
 PKGNAMESUFFIX=	-matroska
 
