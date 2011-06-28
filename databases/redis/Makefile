@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	redis
-PORTVERSION=	2.2.10
+PORTVERSION=	2.2.11
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
@@ -32,12 +32,15 @@ REDIS_RUNDIR?=	/var/run/redis
 REDIS_LOGDIR?=	/var/log/redis
 
 SUB_FILES=	pkg-message
-SUB_LIST+=	PORTNAME="${PORTNAME}" \
-	REDIS_USER="${USERS}" \
-	REDIS_GROUP="${GROUPS}" \
-	REDIS_LOGDIR="${REDIS_LOGDIR}" \
-	REDIS_DBDIR="${REDIS_DBDIR}" \
-	REDIS_RUNDIR="${REDIS_RUNDIR}"
+SUB_LIST+=	PORTNAME=${PORTNAME} \
+	REDIS_USER=${USERS} \
+	REDIS_RUNDIR=${REDIS_RUNDIR}
+
+PLIST_SUB+=	REDIS_USER=${USERS} \
+	REDIS_GROUP=${GROUPS} \
+	REDIS_LOGDIR=${REDIS_LOGDIR} \
+	REDIS_DBDIR=${REDIS_DBDIR} \
+	REDIS_RUNDIR=${REDIS_RUNDIR}
 
 post-build:
 	${SED} ${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
@@ -46,5 +49,10 @@ post-build:
 do-install:
 	${INSTALL_PROGRAM} ${BIN_FILES:C!^!${WRKSRC}/src/!} ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKDIR}/redis.conf ${PREFIX}/etc/redis.conf.sample
+
+post-install:
+.for d in ${REDIS_LOGDIR} ${REDIS_RUNDIR} ${REDIS_DBDIR}
+	[ -d ${d} ] || ${MKDIR} ${d} && ${CHOWN} ${USERS}:${GROUPS} ${d}
+.endfor
 
 .include <bsd.port.mk>
