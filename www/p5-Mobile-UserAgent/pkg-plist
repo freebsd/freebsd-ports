@@ -1,0 +1,6 @@
+%%SITE_PERL%%/Mobile/UserAgent.pm
+%%SITE_PERL%%/Mobile/UserAgentFactory.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mobile/UserAgent/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mobile/UserAgent
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mobile
+@dirrmtry %%SITE_PERL%%/Mobile
