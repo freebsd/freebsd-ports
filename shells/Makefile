@@ -3,7 +3,7 @@
 
     COMMENT = Shells
 
-    SUBDIR += bash
+    SUBDIR += 44bsd-csh
     SUBDIR += bash-completion
     SUBDIR += bash-static
     SUBDIR += bashc
