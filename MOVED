@@ -2234,3 +2234,4 @@ www/mod_macro2||2011-06-25|Has expired: will be unsupported by ASF when 2.4.0 is
 www/mod_traf_thief||2011-06-25|Has expired: will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
 www/mod_transform||2011-06-25|Has expired: will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
 comms/ruby-termios|comms/rubygem-ruby-termios|2011-06-25|Development has moved, <=0.9.5 doesn't work with ruby 1.9.x
+java/jdk14||2011-06-28|Has expired: does not build on FreeBSD 7.x or newer
