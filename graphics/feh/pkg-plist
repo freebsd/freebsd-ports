@@ -10,7 +10,6 @@ bin/gen-cam-menu
 %%DATADIR%%/fonts/black.style
 %%DATADIR%%/fonts/menu.style
 %%DATADIR%%/fonts/yudit.ttf
-%%DATADIR%%/images/about.png
 %%DATADIR%%/images/logo.svg
 %%DATADIR%%/images/menubg_aluminium.png
 %%DATADIR%%/images/menubg_aqua.png

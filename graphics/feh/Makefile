@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	feh
-PORTVERSION=	1.12
+PORTVERSION=	1.14.1
 CATEGORIES=	graphics
-MASTER_SITES=	http://www.chaosdorf.de/~derf/feh/ \
+MASTER_SITES=	http://feh.finalrewind.org/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	uqs
 
@@ -25,8 +25,8 @@ USE_BZIP2=	yes
 
 MAN1=		feh.1 feh-cam.1 gen-cam-menu.1
 
-CFLAGS=		-I${LOCALBASE}/include -std=c99
-LDFLAGS=	-L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include -std=c99
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 post-patch:
