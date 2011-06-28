@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fetchconfig
-PORTVERSION=	0.19
+PORTVERSION=	0.20
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SAVANNAH
 
@@ -23,8 +23,12 @@ MODULES=	model/Abstract.pm model/CiscoCAT.pm model/CiscoIOS.pm \
 		model/Dell.pm model/Detector.pm model/FortiGate.pm \
 		model/Parks.pm model/ProCurve.pm model/Riverstone.pm \
 		model/DmSwitch.pm model/Terayon.pm Constants.pm Logger.pm \
-		model/3ComMSR.pm model/CiscoASA.pm model/MikroTik.pm
+		model/3ComMSR.pm model/CiscoASA.pm model/MikroTik.pm \
+		model/CiscoPIX.pm
 PORTDOCS=	CHANGES README device_table.example
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 post-patch:
 	@${REINPLACE_CMD} -e '1s|.*|#!${PERL} -w|' ${WRKSRC}/${PORTNAME}.pl
