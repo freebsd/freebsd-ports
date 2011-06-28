@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	lirc
-PORTVERSION=	0.9.0p1
-PORTREVISION=	7
+PORTVERSION=	0.9.0
+PORTEPOCH=	1
 CATEGORIES=	comms
-MASTER_SITES=	http://lirc.org/software/snapshots/
+MASTER_SITES=	SF/${PORTNAME}/LIRC/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/p1/-pre1/}
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	Linux Infrared Remote Control
+
+BUILD_DEPENDS=	v4l_compat>=1.0.20110603:${PORTSDIR}/multimedia/v4l_compat
 
 USE_AUTOTOOLS=	libtool automake autoheader aclocal autoconf
 ACLOCAL_ARGS=	-I "${ACLOCAL_DIR}" -I ${LOCALBASE}/share/aclocal
@@ -21,14 +23,16 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11
 USE_PYTHON=	yes
+USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
-CONFIGURE_ARGS=		--enable-sandboxed --with-devdir=/var/run/lirc
+CONFIGURE_ARGS=		--enable-sandboxed --with-devdir=/var/run/lirc \
+			--sysconfdir=${PREFIX}/etc
 CPPFLAGS+=		-I${LOCALBASE}/include
 LDFLAGS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 
 OPTIONS=	MINIMAL "Build with minmal dependencies" Off \
 		DEBUG "Build debug version" Off
