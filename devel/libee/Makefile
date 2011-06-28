@@ -15,6 +15,8 @@ COMMENT=	An event expression library inspired by CEE
 
 LIB_DEPENDS=	estr:${PORTSDIR}/devel/libestr
 
+MAKE_JOBS_UNSAFE=	yes
+
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
