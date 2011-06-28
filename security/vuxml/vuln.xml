@@ -4048,13 +4048,29 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>chromium</name>
-	<range><lt>12.0.742.91</lt></range>
+	<range><lt>12.0.742.112</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
 	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>Fixed in 12.0.742.112:<br/>
+	    [77493] Medium CVE-2011-2345: Out-of-bounds read in NPAPI string
+	      handling. Credit to Philippe Arteau.<br/>
+	    [84355] High CVE-2011-2346: Use-after-free in SVG font handling.
+	      Credit to miaubiz.<br/>
+	    [85003] High CVE-2011-2347: Memory corruption in CSS parsing. Credit
+	      to miaubiz.<br/>
+	    [85102] High CVE-2011-2350: Lifetime and re-entrancy issues in the
+	      HTML parser. Credit to miaubiz.<br/>
+	    [85177] High CVE-2011-2348: Bad bounds check in v8. Credit to Aki
+	      Helin of OUSPG.<br/>
+	    [85211] High CVE-2011-2351: Use-after-free with SVG use element.
+	      Credit to miaubiz.<br/>
+	    [85418] High CVE-2011-2349: Use-after-free in text selection. Credit
+	      to miaubiz.</p>
+
 	  <p>Fixed in 12.0.742.91:<br/>
 	    [73962] [79746] High CVE-2011-1808: Use-after-free due to integer
 	      issues in float handling. Credit to miaubiz.<br/>
@@ -4488,11 +4504,18 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2011-1819</cvename>
       <cvename>CVE-2011-2332</cvename>
       <cvename>CVE-2011-2342</cvename>
+      <cvename>CVE-2011-2345</cvename>
+      <cvename>CVE-2011-2346</cvename>
+      <cvename>CVE-2011-2347</cvename>
+      <cvename>CVE-2011-2348</cvename>
+      <cvename>CVE-2011-2349</cvename>
+      <cvename>CVE-2011-2350</cvename>
+      <cvename>CVE-2011-2351</cvename>
     </references>
     <dates>
       <discovery>2010-10-19</discovery>
       <entry>2010-12-07</entry>
-      <modified>2011-06-07</modified>
+      <modified>2011-06-29</modified>
     </dates>
   </vuln>
 
