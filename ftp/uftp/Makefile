@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uftp
-PORTVERSION=	3.4.3
+PORTVERSION=	3.5
 PORTEPOCH=	1
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.tcnj.edu/~bush/downloads/
@@ -22,6 +22,7 @@ PLIST_FILES=	bin/uftp bin/uftp_keymgt sbin/uftpd sbin/uftpproxyd
 
 MAN1=		uftp.1 uftpd.1 uftpproxyd.1 uftp_keymgt.1
 MANCOMPRESSED=	no
+LICENSE=	GPLv3
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/uftp ${PREFIX}/bin/
