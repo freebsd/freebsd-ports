@@ -15,6 +15,8 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Galax is a full-featured, fully compliant implementation of XQuery
 
 BROKEN=	Does not fetch
+DEPRECATED=	Depends on expired Java 1.4
+EXPIRATION_DATE=2011-07-28
 
 BUILD_DEPENDS=	ocaml:${PORTSDIR}/lang/ocaml
 

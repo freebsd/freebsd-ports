@@ -16,6 +16,9 @@ DISTNAME=	Colorer-take5.beta2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A syntax highlighting and text parsing library
 
+DEPRECATED=	Depends on deprecated Java 1.4
+EXPIRATION_DATE=2011-07-28
+
 BUILD_DEPENDS=	fop:${PORTSDIR}/textproc/fop \
 		${LOCALBASE}/share/xsl/docbook/catalog:${PORTSDIR}/textproc/docbook-xsl \
 		${LOCALBASE}/share/docbook-xsd/docbook.xsd:${PORTSDIR}/textproc/docbook-xsd \
