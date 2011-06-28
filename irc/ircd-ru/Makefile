@@ -21,6 +21,9 @@ SUB_FILES=	pkg-message
 USE_RC_SUBR=	ircd
 WRKSRC=		${WRKDIR}/ircd-RU-${PORTVERSION}-03-rc
 
+USERS=		ircd
+GROUPS=		${USERS}
+
 VARDIR=		/var
 PLIST_SUB=	VARDIR=${VARDIR}
 
@@ -86,9 +89,6 @@ pre-build:
 	@${ECHO_MSG} "NOTE:"
 	@${ECHO_MSG} " Edit ${WRKSRC}/include/config.h for specific settings "
 	@${ECHO_MSG} ""
-
-pre-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@${CHOWN} -R ircd:ircd ${VARDIR}/log/ircd-ru
