@@ -63,6 +63,7 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/licensing.html
 %%PORTDOCS%%%%DOCSDIR%%/log_rotation_fix_size.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/mmsnmptrapd.html
 %%PORTDOCS%%%%DOCSDIR%%/modules.html
 %%PORTDOCS%%%%DOCSDIR%%/multi_ruleset.html
 %%PORTDOCS%%%%DOCSDIR%%/netstream.html
