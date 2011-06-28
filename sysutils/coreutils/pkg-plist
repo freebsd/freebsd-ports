@@ -114,8 +114,8 @@ lib/coreutils/glibstdbuf.so
 %%NLS%%share/locale/da/LC_TIME/coreutils.mo
 %%NLS%%share/locale/de/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/de/LC_TIME/coreutils.mo
-%%NLS%%share/locale/en/LC_MESSAGES/coreutils.mo
-%%NLS%%share/locale/en/LC_TIME/coreutils.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/coreutils.mo
+%%NLS%%share/locale/eo/LC_TIME/coreutils.mo
 %%NLS%%share/locale/el/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/el/LC_TIME/coreutils.mo
 %%NLS%%share/locale/es/LC_MESSAGES/coreutils.mo
@@ -142,6 +142,8 @@ lib/coreutils/glibstdbuf.so
 %%NLS%%share/locale/ja/LC_TIME/coreutils.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/ko/LC_TIME/coreutils.mo
+%%NLS%%share/locale/kk/LC_MESSAGES/coreutils.mo
+%%NLS%%share/locale/kk/LC_TIME/coreutils.mo
 %%NLS%%share/locale/lg/LC_MESSAGES/coreutils.mo
 %%NLS%%share/locale/lg/LC_TIME/coreutils.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/coreutils.mo
@@ -217,6 +219,9 @@ lib/coreutils/glibstdbuf.so
 %%NLS%%@dirrmtry share/locale/lt/LC_TIME
 %%NLS%%@dirrmtry share/locale/ko/LC_TIME
 %%NLS%%@dirrmtry share/locale/ko/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kk/LC_TIME
+%%NLS%%@dirrmtry share/locale/kk/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/kk
 %%NLS%%@dirrmtry share/locale/ja/LC_TIME
 %%NLS%%@dirrmtry share/locale/ja/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/it/LC_TIME
@@ -238,7 +243,7 @@ lib/coreutils/glibstdbuf.so
 %%NLS%%@dirrmtry share/locale/et/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/es/LC_TIME
 %%NLS%%@dirrmtry share/locale/es/LC_MESSAGES
-%%NLS%%@dirrmtry share/locale/en/LC_TIME
+%%NLS%%@dirrmtry share/locale/eo/LC_TIME
 %%NLS%%@dirrmtry share/locale/el/LC_TIME
 %%NLS%%@dirrmtry share/locale/el/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/de/LC_TIME
