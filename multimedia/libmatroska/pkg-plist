@@ -15,6 +15,7 @@ include/matroska/KaxDefines.h
 include/matroska/KaxInfo.h
 include/matroska/KaxInfoData.h
 include/matroska/KaxSeekHead.h
+include/matroska/KaxSemantic.h
 include/matroska/KaxSegment.h
 include/matroska/KaxTag.h
 include/matroska/KaxTags.h
@@ -27,6 +28,6 @@ include/matroska/KaxVersion.h
 include/matroska/c/libmatroska.h
 include/matroska/c/libmatroska_t.h
 lib/libmatroska.so
-lib/libmatroska.so.3
+lib/libmatroska.so.4
 @dirrm include/matroska/c
 @dirrm include/matroska
