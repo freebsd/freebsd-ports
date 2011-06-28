@@ -7817,6 +7817,7 @@ libebml                         ports/textproc/libebml
 libecap                         ports/www/libecap
 libecc                          ports/security/libecc
 libecwj2                        ports/graphics/libecwj2
+libee                           ports/devel/libee
 libelf                          ports/devel/libelf
 libemf                          ports/graphics/libemf
 libepc                          ports/www/libepc
@@ -7824,6 +7825,7 @@ libepp-nicbr                    ports/devel/libepp-nicbr
 liberation-fonts-ttf            ports/x11-fonts/liberation-fonts-ttf
 liberator                       ports/net-p2p/liberator
 libesmtp                        ports/mail/libesmtp
+libestr                         ports/devel/libestr
 libetpan                        ports/mail/libetpan
 libev                           ports/devel/libev
 libevent                        ports/devel/libevent
@@ -20564,6 +20566,7 @@ pingwi                          ports/x11-fonts/pingwi
 pink-pony                       ports/games/pink-pony
 pino                            ports/net-im/pino
 pinot                           ports/deskutils/pinot
+pinpoint                        ports/graphics/pinpoint
 pioneers                        ports/games/pioneers
 pipe                            ports/misc/pipe
 pipebench                       ports/benchmarks/pipebench
@@ -21173,11 +21176,17 @@ punbb                           ports/www/punbb
 pup                             ports/print/pup
 puppet                          ports/sysutils/puppet
 pure                            ports/lang/pure
+pure-csv                        ports/textproc/pure-csv
 pure-emacs21                    ports/irc/pure-emacs21
+pure-ffi                        ports/devel/pure-ffi
 pure-ftpd                       ports/ftp/pure-ftpd
 pure-gen                        ports/devel/pure-gen
+pure-gl                         ports/graphics/pure-gl
+pure-gtk                        ports/x11-toolkits/pure-gtk
 pure-sfv                        ports/security/pure-sfv
+pure-sql3                       ports/databases/pure-sql3
 pure-xemacs21-mule              ports/irc/pure-xemacs21-mule
+pure-xml                        ports/textproc/pure-xml
 pureadmin                       ports/ftp/pureadmin
 puredb                          ports/databases/puredb
 pushmi                          ports/devel/pushmi
@@ -23510,6 +23519,9 @@ rubygem-rparsec                 ports/devel/rubygem-rparsec
 rubygem-rr                      ports/devel/rubygem-rr
 rubygem-rscm                    ports/devel/rubygem-rscm
 rubygem-rspec                   ports/devel/rubygem-rspec
+rubygem-rspec-core              ports/devel/rubygem-rspec-core
+rubygem-rspec-expectations      ports/devel/rubygem-rspec-expectations
+rubygem-rspec-mocks             ports/devel/rubygem-rspec-mocks
 rubygem-rubigen                 ports/devel/rubygem-rubigen
 rubygem-ruby-debug              ports/devel/rubygem-ruby-debug
 rubygem-ruby-debug-base         ports/devel/rubygem-ruby-debug-base
