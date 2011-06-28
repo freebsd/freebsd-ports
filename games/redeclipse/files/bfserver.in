@@ -1,3 +1,0 @@
-#!/bin/sh
-
-cd %%DATADIR%% && exec %%PREFIX%%/libexec/bfserver "$@"
