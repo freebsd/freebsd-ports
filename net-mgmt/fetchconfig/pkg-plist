@@ -4,6 +4,7 @@ bin/fetchconfig
 %%SITE_PERL%%/fetchconfig/model/CiscoASA.pm
 %%SITE_PERL%%/fetchconfig/model/CiscoCAT.pm
 %%SITE_PERL%%/fetchconfig/model/CiscoIOS.pm
+%%SITE_PERL%%/fetchconfig/model/CiscoPIX.pm
 %%SITE_PERL%%/fetchconfig/model/Dell.pm
 %%SITE_PERL%%/fetchconfig/model/Detector.pm
 %%SITE_PERL%%/fetchconfig/model/DmSwitch.pm
