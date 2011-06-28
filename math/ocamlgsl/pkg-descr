@@ -1,0 +1,4 @@
+ocamlgsl is an interface to GSL (GNU scientific library), for the
+Objective Caml langage.
+
+WWW: http://oandrieu.nerim.net/ocaml/gsl/

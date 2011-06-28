@@ -213,6 +213,7 @@
     SUBDIR += numdiff
     SUBDIR += nyh-hoc
     SUBDIR += ocaml-ocamlgraph
+    SUBDIR += ocamlgsl
     SUBDIR += octave
     SUBDIR += octave-devel
     SUBDIR += octave-forge
