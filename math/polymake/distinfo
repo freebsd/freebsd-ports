@@ -1,4 +1,2 @@
-SHA256 (polymake-2.3.tar.bz2) = 3d601cf439c9a07f83bc4253ac2e92cbaefe3f1c2698f9156b6e1683c6d9a5bf
-SIZE (polymake-2.3.tar.bz2) = 2266143
-SHA256 (polymake-2.3-install.diff) = 5b548ab37a36d6cca5aa98b3562f31e7a51e08708388b94b81c6f7addfeefeae
-SIZE (polymake-2.3-install.diff) = 975
+SHA256 (polymake-2.9.9.tar.bz2) = f914dbb4283e3f11c94d2fa7e0da9383c506e15678fe7b05c52eeb939508215e
+SIZE (polymake-2.9.9.tar.bz2) = 12656699
