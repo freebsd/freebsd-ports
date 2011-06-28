@@ -1,0 +1,6 @@
+%%SITE_PERL%%/MIME/AltWords.pm
+%%SITE_PERL%%/MIME/AltWords0.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/AltWords/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME/AltWords
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MIME
+@dirrmtry %%SITE_PERL%%/MIME
