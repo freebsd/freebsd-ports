@@ -1,0 +1,41 @@
+%%SITE_PERL%%/WebService/IMDB.pm
+%%SITE_PERL%%/WebService/IMDB/Base.pm
+%%SITE_PERL%%/WebService/IMDB/Birth.pm
+%%SITE_PERL%%/WebService/IMDB/Certificate.pm
+%%SITE_PERL%%/WebService/IMDB/Char.pm
+%%SITE_PERL%%/WebService/IMDB/Credit.pm
+%%SITE_PERL%%/WebService/IMDB/CreditList.pm
+%%SITE_PERL%%/WebService/IMDB/Date.pm
+%%SITE_PERL%%/WebService/IMDB/DatePlace.pm
+%%SITE_PERL%%/WebService/IMDB/DateText.pm
+%%SITE_PERL%%/WebService/IMDB/Death.pm
+%%SITE_PERL%%/WebService/IMDB/Encoding.pm
+%%SITE_PERL%%/WebService/IMDB/Goof.pm
+%%SITE_PERL%%/WebService/IMDB/Image.pm
+%%SITE_PERL%%/WebService/IMDB/KnownFor.pm
+%%SITE_PERL%%/WebService/IMDB/Name.pm
+%%SITE_PERL%%/WebService/IMDB/Name/Stub.pm
+%%SITE_PERL%%/WebService/IMDB/News.pm
+%%SITE_PERL%%/WebService/IMDB/NewsItem.pm
+%%SITE_PERL%%/WebService/IMDB/NewsSource.pm
+%%SITE_PERL%%/WebService/IMDB/ParentalGuideItem.pm
+%%SITE_PERL%%/WebService/IMDB/Photo.pm
+%%SITE_PERL%%/WebService/IMDB/Plot.pm
+%%SITE_PERL%%/WebService/IMDB/Quote.pm
+%%SITE_PERL%%/WebService/IMDB/QuoteLine.pm
+%%SITE_PERL%%/WebService/IMDB/Review.pm
+%%SITE_PERL%%/WebService/IMDB/Runtime.pm
+%%SITE_PERL%%/WebService/IMDB/Season.pm
+%%SITE_PERL%%/WebService/IMDB/Title.pm
+%%SITE_PERL%%/WebService/IMDB/Title/Stub.pm
+%%SITE_PERL%%/WebService/IMDB/Trailer.pm
+%%SITE_PERL%%/WebService/IMDB/Trivium.pm
+%%SITE_PERL%%/WebService/IMDB/UserComment.pm
+%%SITE_PERL%%/WebService/IMDB/WhereNow.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/IMDB/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService/IMDB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/WebService
+@dirrm %%SITE_PERL%%/WebService/IMDB/Title
+@dirrm %%SITE_PERL%%/WebService/IMDB/Name
+@dirrm %%SITE_PERL%%/WebService/IMDB
+@dirrmtry %%SITE_PERL%%/WebService
