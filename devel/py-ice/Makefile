@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Ice
-PORTVERSION=	3.4.1
-PORTREVISION=	2
+PORTVERSION=	3.4.2
 CATEGORIES=	devel python
-MASTER_SITES=	http://www.zeroc.com/download/Ice/3.4/ \
+MASTER_SITES=	http://download.zeroc.com/Ice/3.4/ \
 		http://www.dirk.sh/dirk/Ice/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	Ice-${PORTVERSION}
@@ -25,7 +24,7 @@ USE_PYTHON=	yes
 BUILD_WRKSRC=	${WRKSRC}/py
 INSTALL_WRKSRC=	${WRKSRC}/py
 
-LIB_VRS=	${PORTVERSION:S|.||g:C|1$||}
+LIB_VRS=	${PORTVERSION:S|.||g:C|2$||}
 PLIST_SUB=	LIB_VERSION="${PORTVERSION}" LIB_VRS="${LIB_VRS}"
 MAKE_ENV=	ICE_HOME="${LOCALBASE}/share/Ice"
 
