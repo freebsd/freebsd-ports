@@ -2225,7 +2225,6 @@ x11/widgetfactory|x11-themes/thewidgetfactory|2011-06-23|Duplicate ports merged
 deskutils/opengoo|deskutils/fengoffice|2011-06-24|It was renamed to deskutils/fengoffice
 irc/gdesklets-irc||2011-06-25|Has expired: Upstream disapear and distfile is no more available
 net/libevnet||2011-06-25|Has expired: no longer necessary now that libevent2 has been released
-shells/44bsd-csh||2011-06-25|Has expired: Upstream disapear and distfile is no more available
 www/mod_auth_ldap||2011-06-25|Has expired: apache 13/20 is sceduled for deletion, migrate to 2.2.x+ and mod_authnz_ldap now
 www/mod_auth_remote||2011-06-25|Has expired: will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
 www/mod_authenticache||2011-06-25|Has expired: will be unsupported by ASF when 2.4.0 is release, migrate to 2.2.x+ now
