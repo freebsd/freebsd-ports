@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.bin
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Sun Java Development Kit 1.4 for Linux
 
+DEPRECATED=	ancient version of Java
+EXPIRATION_DATE=2011-07-28
+
 EXTRACT_DEPENDS=${LINUX_BASE_PORT}
 RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper
 
