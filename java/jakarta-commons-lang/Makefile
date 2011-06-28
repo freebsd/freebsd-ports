@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	commons-lang
-PORTVERSION=	2.5
+PORTVERSION=	2.6
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Jakarta library with helper utilities for the java.lang API
+
+LICENSE=	ASL
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.3+
