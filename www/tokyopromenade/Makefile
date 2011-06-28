@@ -1,6 +1,6 @@
 # New ports collection makefile for:	tokyopromenade
 # Date created:		2009-08-13
-# Whom:			Qing Feng <qingfeng@me.com>
+# Whom:			Qing Feng <qingfeng@douban.com>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://1978th.net/tokyopromenade/ \
 		LOCAL/glarkin
 
-MAINTAINER=	qingfeng@me.com
+MAINTAINER=	qingfeng@douban.com
 COMMENT=	A content management system
 
 BUILD_DEPENDS=	tokyocabinet>=1.4.31:${PORTSDIR}/databases/tokyocabinet \

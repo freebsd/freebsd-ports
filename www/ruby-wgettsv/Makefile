@@ -1,6 +1,6 @@
 # New ports collection makefile for:    ruby-wgettsv
 # Date created:                         17 Jan 2009
-# Whom:                                 Qing Feng <qingfeng@me.com>
+# Whom:                                 Qing Feng <qingfeng@douban.com>
 #
 # $FreeBSD$
 #
@@ -14,7 +14,7 @@ DISTNAME=	wgettsv
 EXTRACT_SUFX=
 EXTRACT_ONLY=
 
-MAINTAINER=	qingfeng@me.com
+MAINTAINER=	qingfeng@douban.com
 COMMENT=	Collect WWW resources and generate TSV data
 
 USE_RUBY=		yes

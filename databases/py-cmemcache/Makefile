@@ -1,6 +1,6 @@
 # New ports collection makefile for:    py-cmemcache
 # Date created:                         17 Jan 2009
-# Whom:                                 Qing Feng <qingfeng@me.com>
+# Whom:                                 Qing Feng <qingfeng@douban.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ CATEGORIES=	databases python
 MASTER_SITES=	http://gijsbert.org/downloads/cmemcache/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	qingfeng@me.com
+MAINTAINER=	qingfeng@douban.com
 COMMENT=	Python API for memcached, a distributed memory cache daemon
 
 LIB_DEPENDS=	memcache:${PORTSDIR}/databases/libmemcache

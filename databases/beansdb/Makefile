@@ -1,6 +1,6 @@
 # New ports collection makefile for:	beansdb
 # Date created:		2010-03-27
-# Whom:			Qing Feng <qingfeng@me.com>
+# Whom:			Qing Feng <qingfeng@douban.com>
 #
 # $FreeBSD$
 #
@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	qingfeng@me.com
+MAINTAINER=	qingfeng@douban.com
 COMMENT=	Yet anonther distributed key-value storage system from Douban Inc
 
 BUILD_DEPENDS=	tokyocabinet>=1.4.30:${PORTSDIR}/databases/tokyocabinet
