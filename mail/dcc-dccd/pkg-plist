@@ -12,7 +12,10 @@ dcc/cgi-bin/http2https
 dcc/cgi-bin/list-log
 dcc/cgi-bin/list-msg
 dcc/cgi-bin/webuser-notify
+dcc/cgi-bin/footer-dist
+dcc/cgi-bin/header-dist
 dcc/libexec/check_ip_range
+dcc/libexec/ck2ip
 dcc/libexec/cron-dccd
 %%WITH_DCCIFD%%dcc/libexec/dccifd
 %%WITH_DCCM%%dcc/libexec/dccm
@@ -23,6 +26,7 @@ dcc/libexec/dcc-nagios
 dcc/libexec/dcc-stats-collect
 dcc/libexec/dcc-stats-graph
 dcc/libexec/dcc-stats-init
+dcc/libexec/dcc-stats-update
 %%WITH_DCCD%%dcc/libexec/dccd
 dcc/libexec/dccsight
 %%WITH_IFD_MILT%%dcc/libexec/dns-helper
