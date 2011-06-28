@@ -556,3 +556,10 @@ end remote
 
 # also support by default remotes coming with MCE USB receivers
 include "%%EXAMPLESDIR%%/remotes/mceusb/lircd.conf.mceusb"
+
+# ..and the devinput driver that can be used with the updated webcamd
+# by setting the following in rc.conf(5):
+#
+#	lircd_flags="-H devinput"
+#	lircd_device="/dev/input/event0"
+include "%%EXAMPLESDIR%%/remotes/devinput/lircd.conf.devinput"
