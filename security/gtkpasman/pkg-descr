@@ -1,8 +1,8 @@
-The purpose of Gtkpasman is to provide system and network administrators a 
+The purpose of Gtkpasman is to provide system and network administrators a
 convenient tool to manage a passwords knowledge base related to customers,
 servers, services... It can help to retrieve passwords, or even connect to
 servers (ssh, telnet, ftp).
-Passwords must be kept in a gnupg crypted file. The structure of the file is 
+Passwords must be kept in a gnupg crypted file. The structure of the file is
 predefined, but very easy to edit and maintain.
 
 WWW: http://gtkpasman.sourceforge.net/
