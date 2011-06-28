@@ -7,7 +7,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	1.1.10
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -407,7 +407,7 @@ CONFIGURE_ARGS+=--enable-mad --with-mad=${LOCALBASE}
 .if defined(WITHOUT_MATROSKA)
 CONFIGURE_ARGS+=--disable-mkv
 .else
-LIB_DEPENDS+=	matroska.3:${PORTSDIR}/multimedia/libmatroska
+LIB_DEPENDS+=	matroska.4:${PORTSDIR}/multimedia/libmatroska
 CONFIGURE_ARGS+=--enable-mkv
 .endif
 
