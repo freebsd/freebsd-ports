@@ -19,7 +19,10 @@ BUILD_DEPENDS=  ${LOCALBASE}/include/linux/dvb/frontend.h:${PORTSDIR}/multimedia
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 PATCH_STRIP=	-p1
+USE_CSTD=	gnu89
 MAKE_ARGS=	INCLUDE=-I"${LOCALBASE}/include"
+MAKE_ARGS+=	CC=${CC}
+MAKE_ARGS+=	CXX=${CXX}
 WRKSRC=		${WRKDIR}/szap-s2-e34f73b254db
 PORTDOCS=	README
 PLIST_FILES=	bin/szap-s2
