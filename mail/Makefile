@@ -732,7 +732,6 @@
     SUBDIR += vmailmgr
     SUBDIR += vodmr
     SUBDIR += vpopmail
-    SUBDIR += vpopmail-devel
     SUBDIR += vqadmin
     SUBDIR += vqregister
     SUBDIR += vrfy
