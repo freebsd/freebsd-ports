@@ -37,6 +37,8 @@ JARS=		bcprov bcmail bctsp bcpg
 
 PORTDOCS=	*
 
+PORTSCOUT=	skipv:1.46
+
 post-patch:
 	@${REINPLACE_CMD} s/BERConstructedOctetString/DEROctetString/ \
 		${WRKSRC}/src/org/bouncycastle/cms/CMS*DataGenerator.java
