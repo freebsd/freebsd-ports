@@ -370,6 +370,7 @@
     SUBDIR += p5-IMAP-Sieve
     SUBDIR += p5-LMAP-CID2SPF
     SUBDIR += p5-Log-Procmail
+    SUBDIR += p5-MIME-AltWords
     SUBDIR += p5-MIME-Charset
     SUBDIR += p5-MIME-EncWords
     SUBDIR += p5-MIME-Explode
