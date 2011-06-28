@@ -14,7 +14,8 @@ DISTNAME=	transgui-${PORTVERSION}-src
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Remote GUI for transmission daemon
 
-BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus
+BUILD_DEPENDS=	lazbuild:${PORTSDIR}/editors/lazarus \
+		fpcres:${PORTSDIR}/lang/fpc-utils
 RUN_DEPENDS=	transmission-daemon:${PORTSDIR}/net-p2p/transmission-daemon
 
 PROJECTHOST=	bsdistfiles
