@@ -213,5 +213,4 @@ bbs:*:944:944::0:0:& user:/nonexistent:/sbin/nologin
 dbxml:*:945:945::0:0:& user:/nonexistent:/sbin/nologin
 sybase:*:946:946::0:0:& user:/usr/local/sybase-ase:/sbin/nologin
 dnrd:*:948:948::0:0:& user:/nonexistent:/sbin/nologin
-dbxml:*:949:949::0:0:dbXML user:/nonexistent:/sbin/nologin
 nobody:*:65534:65534::0:0:Unprivileged user:/nonexistent:/usr/sbin/nologin
