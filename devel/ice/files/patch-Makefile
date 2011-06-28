@@ -4,7 +4,7 @@
  include $(top_srcdir)/config/Make.rules
  
  SUBDIRS		= config src include test demo
-+ifneq ($(NOPORTDOCS),yes)
++ifeq ($(NOPORTDOCS),)
 +SUBDIRS		+= doc
 +endif
  

@@ -147,7 +147,6 @@ include/IceGrid/FileParser.h
 include/IceGrid/IceGrid.h
 include/IceGrid/Locator.h
 include/IceGrid/Observer.h
-include/IceGrid/Perf.h
 include/IceGrid/Query.h
 include/IceGrid/Registry.h
 include/IceGrid/Session.h
@@ -212,49 +211,49 @@ include/Slice/RubyUtil.h
 include/Slice/Util.h
 lib/ImportKey.class
 lib/libFreeze.so
-lib/libFreeze.so.3.4.1
+lib/libFreeze.so.3.4.2
 lib/libFreeze.so.34
 lib/libGlacier2.so
-lib/libGlacier2.so.3.4.1
+lib/libGlacier2.so.3.4.2
 lib/libGlacier2.so.34
 lib/libIce.so
-lib/libIce.so.3.4.1
+lib/libIce.so.3.4.2
 lib/libIce.so.34
 lib/libIceBox.so
-lib/libIceBox.so.3.4.1
+lib/libIceBox.so.3.4.2
 lib/libIceBox.so.34
 lib/libIceDB.so
-lib/libIceDB.so.3.4.1
+lib/libIceDB.so.3.4.2
 lib/libIceDB.so.34
 lib/libIceGrid.so
-lib/libIceGrid.so.3.4.1
+lib/libIceGrid.so.3.4.2
 lib/libIceGrid.so.34
 lib/libIceGridFreezeDB.so
-lib/libIceGridFreezeDB.so.3.4.1
+lib/libIceGridFreezeDB.so.3.4.2
 lib/libIceGridFreezeDB.so.34
 lib/libIcePatch2.so
-lib/libIcePatch2.so.3.4.1
+lib/libIcePatch2.so.3.4.2
 lib/libIcePatch2.so.34
 lib/libIceSSL.so
-lib/libIceSSL.so.3.4.1
+lib/libIceSSL.so.3.4.2
 lib/libIceSSL.so.34
 lib/libIceStorm.so
-lib/libIceStorm.so.3.4.1
+lib/libIceStorm.so.3.4.2
 lib/libIceStorm.so.34
 lib/libIceStormFreezeDB.so
-lib/libIceStormFreezeDB.so.3.4.1
+lib/libIceStormFreezeDB.so.3.4.2
 lib/libIceStormFreezeDB.so.34
 lib/libIceStormService.so
-lib/libIceStormService.so.3.4.1
+lib/libIceStormService.so.3.4.2
 lib/libIceStormService.so.34
 lib/libIceUtil.so
-lib/libIceUtil.so.3.4.1
+lib/libIceUtil.so.3.4.2
 lib/libIceUtil.so.34
 lib/libIceXML.so
-lib/libIceXML.so.3.4.1
+lib/libIceXML.so.3.4.2
 lib/libIceXML.so.34
 lib/libSlice.so
-lib/libSlice.so.3.4.1
+lib/libSlice.so.3.4.2
 lib/libSlice.so.34
 %%DATADIR%%/Freeze/BackgroundSaveEvictor.ice
 %%DATADIR%%/Freeze/CatalogData.ice
@@ -586,17 +585,17 @@ lib/libSlice.so.34
 %%PORTDOCS%%%%DOCSDIR%%/reference/images/warning.gif
 %%PORTDOCS%%%%DOCSDIR%%/reference/index.html
 %%PORTDOCS%%%%DOCSDIR%%/reference/symboltree.js
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/reference/images
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/reference/IceStorm
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/reference/IceSSL
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/reference/IcePatch2
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/reference/IceGrid
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/reference/IceBox
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/reference/Ice
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/reference/Glacier2
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/reference/Freeze
-@dirrm %%PORTDOCS%%%%DOCSDIR%%/reference
-@dirrm %%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/IceStorm
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/IceSSL
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/IcePatch2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/IceGrid
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/IceBox
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/Ice
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/Glacier2
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference/Freeze
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/reference
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/config
 @dirrm %%DATADIR%%/IceStorm
 @dirrm %%DATADIR%%/IceSSL
