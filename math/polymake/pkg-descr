@@ -1,13 +1,10 @@
-Polymake is a versatile framework for experimental discrete geometry.
-The standard distribution contains tool collections for the algorithmic
-treatment of polytopes and polyhedra, polyhedral surfaces,
-and finite simplicial complexes.
-It offers an unified interface to a wide variety of algorithms
-and free software packages from the computational geometry field,
-such as convex hull computation or visualization tools.
+Polymake is a versatile tool for the algorithmic treatment of
+polytopes and polyhedra.  It offers an unified interface to a wide
+variety of algorithms and free software packages from the computational
+geometry field, such as convex hull computation or visualization tools.
 
-Polymake is highly adaptable to individual needs.  In particular, it
-has a C++/perl interface which allows the user to bind his/her own
-algorithms into the common framework.
+The 2.9 series are test versions towards the "next generation" polymake.
+They introduce an interactive shell, the XML-base file format, more
+efficient C++/perl interface, and many other new features.
 
-WWW: http://www.math.tu-berlin.de/polymake/
+WWW: http://www.polymake.de/

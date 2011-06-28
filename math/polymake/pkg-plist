@@ -1,1316 +1,779 @@
-libexec/polymake/Makefile.devel
-@exec sed -e 's:PREFIX=.*:PREFIX=%D:' %D/%F >%B/Makefile
-@unexec rm -f %B/Makefile
-share/polymake/apps/polytope/include/CubeFacets.h
-share/polymake/apps/polytope/include/GraphAdapter.h
-share/polymake/apps/polytope/include/HDEmbedder.h
-share/polymake/apps/polytope/include/SchlegelWindow.h
-share/polymake/apps/polytope/include/SimpleGeometryParser.h
-share/polymake/apps/polytope/include/SpringEmbedder.h
-share/polymake/apps/polytope/include/SpringEmbedderBase.h
-share/polymake/apps/polytope/include/SpringEmbedderBase.tcc
-share/polymake/apps/polytope/include/SpringEmbedderWindow.h
-share/polymake/apps/polytope/include/beneath_beyond.h
-share/polymake/apps/polytope/include/beneath_beyond.tcc
-share/polymake/apps/polytope/include/bipartite.h
-share/polymake/apps/polytope/include/bipartite.tcc
-share/polymake/apps/polytope/include/bisector.h
-share/polymake/apps/polytope/include/cdd_interface.h
-share/polymake/apps/polytope/include/cdd_interface_impl.h
-share/polymake/apps/polytope/include/ch_client.h
-share/polymake/apps/polytope/include/connected.h
-share/polymake/apps/polytope/include/connected.tcc
-share/polymake/apps/polytope/include/diameter.h
-share/polymake/apps/polytope/include/diameter.tcc
-share/polymake/apps/polytope/include/face_lattice_tools.h
-share/polymake/apps/polytope/include/graph_compare.h
-share/polymake/apps/polytope/include/hypersimplex.h
-share/polymake/apps/polytope/include/labels.h
-share/polymake/apps/polytope/include/lp_client.h
-share/polymake/apps/polytope/include/lrs_interface.h
-share/polymake/apps/polytope/include/max_cliques.h
-share/polymake/apps/polytope/include/schlegel_common.h
-share/polymake/apps/polytope/include/shortest_path_bf.h
-share/polymake/apps/polytope/include/shortest_path_common.h
-share/polymake/apps/polytope/include/shortest_path_dijkstra.h
-share/polymake/apps/polytope/include/transform.h
-share/polymake/apps/polytope/perllib/PostscriptGale.pm
-share/polymake/apps/polytope/perllib/VisualGale.pm
-share/polymake/apps/polytope/rules/azove.rules
-share/polymake/apps/polytope/rules/bastat.rules
-share/polymake/apps/polytope/rules/common.rules
-share/polymake/apps/polytope/rules/comparing.rules
-share/polymake/apps/polytope/rules/construction.rules
-share/polymake/apps/polytope/rules/flag_vector.rules
-share/polymake/apps/polytope/rules/float.rules
-share/polymake/apps/polytope/rules/framework.rules
-share/polymake/apps/polytope/rules/gale.rules
-share/polymake/apps/polytope/rules/geomview.rules
-share/polymake/apps/polytope/rules/javaview.rules
-share/polymake/apps/polytope/rules/javaview_interactive.rules
-share/polymake/apps/polytope/rules/jreality.rules
-share/polymake/apps/polytope/rules/lp.rules
-share/polymake/apps/polytope/rules/lp_float.rules
-share/polymake/apps/polytope/rules/lp_properties.rules
-share/polymake/apps/polytope/rules/lp_rational.rules
-share/polymake/apps/polytope/rules/main.rules
-share/polymake/apps/polytope/rules/plausible.rules
-share/polymake/apps/polytope/rules/polarize.rules
-share/polymake/apps/polytope/rules/polytope_properties.rules
-share/polymake/apps/polytope/rules/porta.rules
-share/polymake/apps/polytope/rules/postscript.rules
-share/polymake/apps/polytope/rules/povray.rules
-share/polymake/apps/polytope/rules/propagated_polytope.rules
-share/polymake/apps/polytope/rules/qhull.rules
-share/polymake/apps/polytope/rules/rational.rules
-share/polymake/apps/polytope/rules/schlegel.rules
-share/polymake/apps/polytope/rules/splitstree.rules
-share/polymake/apps/polytope/rules/steiner.rules
-share/polymake/apps/polytope/rules/tight_span.rules
-share/polymake/apps/polytope/rules/topcom.rules
-share/polymake/apps/polytope/rules/vinci.rules
-share/polymake/apps/polytope/rules/visual.rules
-share/polymake/apps/polytope/rules/visual_framework.rules
-share/polymake/apps/polytope/rules/visual_graph.rules
-share/polymake/apps/polytope/rules/voronoi.rules
-share/polymake/apps/surface/rules/common.rules
-share/polymake/apps/surface/rules/javaview.rules
-share/polymake/apps/surface/rules/jreality.rules
-share/polymake/apps/surface/rules/main.rules
-share/polymake/apps/surface/rules/morse_matching.rules
-share/polymake/apps/surface/rules/povray.rules
-share/polymake/apps/surface/rules/surface_properties.rules
-share/polymake/apps/surface/rules/visual.rules
-share/polymake/apps/topaz/include/1D_tools.tcc
-share/polymake/apps/topaz/include/2D_tools.tcc
-share/polymake/apps/topaz/include/3D_tools.tcc
-share/polymake/apps/topaz/include/BistellarComplex.h
-share/polymake/apps/topaz/include/ChainComplex.h
-share/polymake/apps/topaz/include/FiniteFields.h
-share/polymake/apps/topaz/include/SimplicialComplex_as_FaceMap.h
-share/polymake/apps/topaz/include/Smith_normal_form.h
-share/polymake/apps/topaz/include/barycentric_subdivision.h
-share/polymake/apps/topaz/include/complex_tools.h
-share/polymake/apps/topaz/include/complex_tools.tcc
-share/polymake/apps/topaz/include/connected_sum.h
-share/polymake/apps/topaz/include/connected_sum.tcc
-share/polymake/apps/topaz/include/is_sphere_h.h
-share/polymake/apps/topaz/include/is_sphere_h.tcc
-share/polymake/apps/topaz/include/merge_vertices.h
-share/polymake/apps/topaz/include/morse_matching_tools.h
-share/polymake/apps/topaz/include/orientation.h
-share/polymake/apps/topaz/include/orientation.tcc
-share/polymake/apps/topaz/include/read_int_args.h
-share/polymake/apps/topaz/include/read_str_args.h
-share/polymake/apps/topaz/include/read_str_args.tcc
-share/polymake/apps/topaz/include/subcomplex_tools.tcc
-share/polymake/apps/topaz/include/t_graph.h
-share/polymake/apps/topaz/include/t_graph.tcc
-share/polymake/apps/topaz/rules/common.rules
-share/polymake/apps/topaz/rules/comparing.rules
-share/polymake/apps/topaz/rules/complex_properties.rules
-share/polymake/apps/topaz/rules/construction.rules
-share/polymake/apps/topaz/rules/gap.rules
-share/polymake/apps/topaz/rules/homology.rules
-share/polymake/apps/topaz/rules/main.rules
-share/polymake/apps/topaz/rules/morse_matching.rules
-share/polymake/apps/topaz/rules/visual.rules
 bin/polymake
-%%DOCSDIR%%/about.html
-%%DOCSDIR%%/applications.html
-%%DOCSDIR%%/apply-patch.html
-%%DOCSDIR%%/apps/polytope/clients.html
-%%DOCSDIR%%/apps/polytope/images/24-cell-jv.gif
-%%DOCSDIR%%/apps/polytope/images/c45.gif
-%%DOCSDIR%%/apps/polytope/images/coord.gif
-%%DOCSDIR%%/apps/polytope/images/european-cities-bg.jpg
-%%DOCSDIR%%/apps/polytope/images/european-cities-ts.jpg
-%%DOCSDIR%%/apps/polytope/images/hyper52-t.gif
-%%DOCSDIR%%/apps/polytope/images/infinitesimal_motions_1.gif
-%%DOCSDIR%%/apps/polytope/images/laman_minus_one.gif
-%%DOCSDIR%%/apps/polytope/images/laman_minus_one_EXPANSIVE.gif
-%%DOCSDIR%%/apps/polytope/images/linear_program.gif
-%%DOCSDIR%%/apps/polytope/images/my_framework1.gif
-%%DOCSDIR%%/apps/polytope/images/random.gif
-%%DOCSDIR%%/apps/polytope/images/s3xs3.gif
-%%DOCSDIR%%/apps/polytope/images/snub-blau.gif
-%%DOCSDIR%%/apps/polytope/lib/solver.html
-%%DOCSDIR%%/apps/polytope/links.html
-%%DOCSDIR%%/apps/polytope/model.html
-%%DOCSDIR%%/apps/polytope/object_types.html
-%%DOCSDIR%%/apps/polytope/objects/FloatPolytope/object_properties.html
-%%DOCSDIR%%/apps/polytope/objects/Framework/object_methods.html
-%%DOCSDIR%%/apps/polytope/objects/Framework/object_properties.html
-%%DOCSDIR%%/apps/polytope/objects/Framework/object_tutorial.html
-%%DOCSDIR%%/apps/polytope/objects/Polytope/object_methods.html
-%%DOCSDIR%%/apps/polytope/objects/Polytope/object_properties.html
-%%DOCSDIR%%/apps/polytope/objects/PropagatedPolytope/object_properties.html
-%%DOCSDIR%%/apps/polytope/objects/RationalPolytope/object_properties.html
-%%DOCSDIR%%/apps/polytope/objects/SchlegelDiagram/object_methods.html
-%%DOCSDIR%%/apps/polytope/objects/SchlegelDiagram/object_properties.html
-%%DOCSDIR%%/apps/polytope/objects/TightSpan/object_methods.html
-%%DOCSDIR%%/apps/polytope/objects/TightSpan/object_properties.html
-%%DOCSDIR%%/apps/polytope/objects/TightSpan/object_tutorial.html
-%%DOCSDIR%%/apps/polytope/objects/Visual/Framework/visual_suppl.html
-%%DOCSDIR%%/apps/polytope/objects/Visual/Polytope/visual_suppl.html
-%%DOCSDIR%%/apps/polytope/objects/Visual/PolytopeGraph/visual_suppl.html
-%%DOCSDIR%%/apps/polytope/objects/Visual/PolytopeLattice/visual_suppl.html
-%%DOCSDIR%%/apps/polytope/objects/Visual/Schlegel/visual_suppl.html
-%%DOCSDIR%%/apps/polytope/objects/VoronoiDiagram/object_methods.html
-%%DOCSDIR%%/apps/polytope/objects/VoronoiDiagram/object_properties.html
-%%DOCSDIR%%/apps/polytope/pref_labels.html
-%%DOCSDIR%%/apps/polytope/tutorial.html
-%%DOCSDIR%%/apps/polytope/user_functions.html
-%%DOCSDIR%%/apps/polytope/utilities.html
-%%DOCSDIR%%/apps/surface/clients.html
-%%DOCSDIR%%/apps/surface/images/g5.gif
-%%DOCSDIR%%/apps/surface/images/g5_mm.gif
-%%DOCSDIR%%/apps/surface/images/g5_mm_fl.gif
-%%DOCSDIR%%/apps/surface/object_types.html
-%%DOCSDIR%%/apps/surface/objects/Surface/object_methods.html
-%%DOCSDIR%%/apps/surface/objects/Surface/object_properties.html
-%%DOCSDIR%%/apps/surface/objects/Visual/Surface/visual_suppl.html
-%%DOCSDIR%%/apps/surface/objects/Visual/SurfaceLattice/visual_suppl.html
-%%DOCSDIR%%/apps/surface/pref_labels.html
-%%DOCSDIR%%/apps/surface/samples/quad_surface.surf
-%%DOCSDIR%%/apps/surface/tutorial.html
-%%DOCSDIR%%/apps/surface/user_functions.html
-%%DOCSDIR%%/apps/surface/utilities.html
-%%DOCSDIR%%/apps/topaz/clients.html
-%%DOCSDIR%%/apps/topaz/images/kb.gif
-%%DOCSDIR%%/apps/topaz/images/mm.gif
-%%DOCSDIR%%/apps/topaz/images/morse_torus.gif
-%%DOCSDIR%%/apps/topaz/images/morse_torus.jvd
-%%DOCSDIR%%/apps/topaz/images/morse_torus.jvx
-%%DOCSDIR%%/apps/topaz/images/pile_with_boundary.gif
-%%DOCSDIR%%/apps/topaz/images/rand_sphere_poly.gif
-%%DOCSDIR%%/apps/topaz/images/rand_sphere_topaz.gif
-%%DOCSDIR%%/apps/topaz/images/rnd_knot.gif
-%%DOCSDIR%%/apps/topaz/images/sphere1.gif
-%%DOCSDIR%%/apps/topaz/images/sphere2.gif
-%%DOCSDIR%%/apps/topaz/images/subd_triang.gif
-%%DOCSDIR%%/apps/topaz/images/tetra.gif
-%%DOCSDIR%%/apps/topaz/images/torus.gif
-%%DOCSDIR%%/apps/topaz/images/trefoil.gif
-%%DOCSDIR%%/apps/topaz/images/unknot.gif
-%%DOCSDIR%%/apps/topaz/model.html
-%%DOCSDIR%%/apps/topaz/object_types.html
-%%DOCSDIR%%/apps/topaz/objects/SimplicialComplex/object_methods.html
-%%DOCSDIR%%/apps/topaz/objects/SimplicialComplex/object_properties.html
-%%DOCSDIR%%/apps/topaz/objects/Visual/SimplicialComplex/visual_suppl.html
-%%DOCSDIR%%/apps/topaz/objects/Visual/SimplicialComplexLattice/visual_suppl.html
-%%DOCSDIR%%/apps/topaz/pref_labels.html
-%%DOCSDIR%%/apps/topaz/tutorial.html
-%%DOCSDIR%%/apps/topaz/user_functions.html
-%%DOCSDIR%%/apps/topaz/utilities.html
-%%DOCSDIR%%/apps/visual_attrs.html
-%%DOCSDIR%%/calling_script.html
-%%DOCSDIR%%/client_devel.html
-%%DOCSDIR%%/copyright.html
-%%DOCSDIR%%/cover.html
-%%DOCSDIR%%/customization.html
-%%DOCSDIR%%/datafile.html
-%%DOCSDIR%%/developer_top.html
-%%DOCSDIR%%/dhtml/contents.js
-%%DOCSDIR%%/dhtml/images/collapse.gif
-%%DOCSDIR%%/dhtml/images/expand.gif
-%%DOCSDIR%%/dhtml/images/scroll_down.gif
-%%DOCSDIR%%/dhtml/images/scroll_up.gif
-%%DOCSDIR%%/dhtml/navigation.js
-%%DOCSDIR%%/dhtml/navigation_DOM.js
-%%DOCSDIR%%/dhtml/navigation_DOM_IE.js
-%%DOCSDIR%%/dhtml/recognize_browser.js
-%%DOCSDIR%%/download.html
-%%DOCSDIR%%/external.html
-%%DOCSDIR%%/full_index.html
-%%DOCSDIR%%/global.css
-%%DOCSDIR%%/help.html
-%%DOCSDIR%%/images/front.jpg
-%%DOCSDIR%%/images/front.png
-%%DOCSDIR%%/images/icon.xpm
-%%DOCSDIR%%/images/icon16.xpm
-%%DOCSDIR%%/images/new.gif
-%%DOCSDIR%%/images/polymake-150.gif
-%%DOCSDIR%%/images/polymake.gif
-%%DOCSDIR%%/images/polymake.ico
-%%DOCSDIR%%/index.html
-%%DOCSDIR%%/install-full.html
-%%DOCSDIR%%/install-port.html
-%%DOCSDIR%%/install-rpm.html
-%%DOCSDIR%%/lib/AVL.html
-%%DOCSDIR%%/lib/Array.html
-%%DOCSDIR%%/lib/Bitset.html
-%%DOCSDIR%%/lib/EquivalenceRelation.html
-%%DOCSDIR%%/lib/FaceMap.html
-%%DOCSDIR%%/lib/FacetList.html
-%%DOCSDIR%%/lib/GenericIO.html
-%%DOCSDIR%%/lib/Graph.html
-%%DOCSDIR%%/lib/HasseDiagram.html
-%%DOCSDIR%%/lib/IncidenceMatrix.html
-%%DOCSDIR%%/lib/Incidence_top.html
-%%DOCSDIR%%/lib/Map.html
-%%DOCSDIR%%/lib/Map_top.html
-%%DOCSDIR%%/lib/Matrix.html
-%%DOCSDIR%%/lib/Poly.html
-%%DOCSDIR%%/lib/PowerSet.html
-%%DOCSDIR%%/lib/STL-like_algo.html
-%%DOCSDIR%%/lib/Set.html
-%%DOCSDIR%%/lib/Set_top.html
-%%DOCSDIR%%/lib/Vector.html
-%%DOCSDIR%%/lib/advanced_features.html
-%%DOCSDIR%%/lib/algo.html
-%%DOCSDIR%%/lib/building_blocks.html
-%%DOCSDIR%%/lib/compile.html
-%%DOCSDIR%%/lib/debug.html
-%%DOCSDIR%%/lib/enums.html
-%%DOCSDIR%%/lib/gmp_wrapper.html
-%%DOCSDIR%%/lib/linalg.html
-%%DOCSDIR%%/lib/manip_container.html
-%%DOCSDIR%%/lib/operations.html
-%%DOCSDIR%%/lib/overview.html
-%%DOCSDIR%%/lib/random.html
-%%DOCSDIR%%/lib/top_level.html
-%%DOCSDIR%%/lib/union.html
-%%DOCSDIR%%/logo.html
-%%DOCSDIR%%/navigation.html
-%%DOCSDIR%%/navigation_noscript.html
-%%DOCSDIR%%/perl/Object.html
-%%DOCSDIR%%/perl/Pipe.html
-%%DOCSDIR%%/perl/Scope.html
-%%DOCSDIR%%/perl/Struct.html
-%%DOCSDIR%%/perl/User.html
-%%DOCSDIR%%/perl/extensions.html
-%%DOCSDIR%%/perl/namespaces.html
-%%DOCSDIR%%/perl/overload.html
-%%DOCSDIR%%/perl/utils.html
-%%DOCSDIR%%/polymake.bib
-%%DOCSDIR%%/prerequisites.html
-%%DOCSDIR%%/prod_rules.html
-%%DOCSDIR%%/property_decl.html
-%%DOCSDIR%%/property_types.html
-%%DOCSDIR%%/publications.html
-%%DOCSDIR%%/rules.html
-%%DOCSDIR%%/scripting.html
-%%DOCSDIR%%/title.html
-%%DOCSDIR%%/user_top.html
-%%DOCSDIR%%/visual_backend.html
-%%DOCSDIR%%/visual_frontend.html
-%%DOCSDIR%%/visualization.html
-share/polymake/jars/common.jar
-share/polymake/jars/graph.jar
-share/polymake/jars/polytope.jar
-share/polymake/lib/PTL/include/AVL.h
-share/polymake/lib/PTL/include/Array.h
-share/polymake/lib/PTL/include/Bitset.h
-share/polymake/lib/PTL/include/CascadedContainer.h
-share/polymake/lib/PTL/include/ContainerChain.h
-share/polymake/lib/PTL/include/ContainerUnion.h
-share/polymake/lib/PTL/include/EmbeddedList.h
-share/polymake/lib/PTL/include/EquivalenceRelation.h
-share/polymake/lib/PTL/include/FaceMap.h
-share/polymake/lib/PTL/include/FacetList.h
-share/polymake/lib/PTL/include/Fibonacci.h
-share/polymake/lib/PTL/include/GenericGraph.h
-share/polymake/lib/PTL/include/GenericIO.h
-share/polymake/lib/PTL/include/GenericIncidenceMatrix.h
-share/polymake/lib/PTL/include/GenericMatrix.h
-share/polymake/lib/PTL/include/GenericSet.h
-share/polymake/lib/PTL/include/GenericStruct.h
-share/polymake/lib/PTL/include/GenericVector.h
-share/polymake/lib/PTL/include/Graph.h
-share/polymake/lib/PTL/include/HasseDiagram.h
-share/polymake/lib/PTL/include/Heap.h
-share/polymake/lib/PTL/include/IncidenceMatrix.h
-share/polymake/lib/PTL/include/Incidence_and_SparseMatrix.h
-share/polymake/lib/PTL/include/IndexDispenser.h
-share/polymake/lib/PTL/include/IndexedSubgraph.h
-share/polymake/lib/PTL/include/IndexedSubset.h
-share/polymake/lib/PTL/include/Integer.h
-share/polymake/lib/PTL/include/ListMatrix.h
-share/polymake/lib/PTL/include/Map.h
-share/polymake/lib/PTL/include/Matrix.h
-share/polymake/lib/PTL/include/Monomial.h
-share/polymake/lib/PTL/include/MultiDimCounter.h
-share/polymake/lib/PTL/include/MultiDimCounter.tcc
-share/polymake/lib/PTL/include/Polynomial.h
-share/polymake/lib/PTL/include/PowerSet.h
-share/polymake/lib/PTL/include/RandomSubset.h
-share/polymake/lib/PTL/include/Rational.h
-share/polymake/lib/PTL/include/SelectedSubset.h
-share/polymake/lib/PTL/include/Series.h
-share/polymake/lib/PTL/include/Set.h
-share/polymake/lib/PTL/include/SparseMatrix.h
-share/polymake/lib/PTL/include/SparseVector.h
-share/polymake/lib/PTL/include/TransformedContainer.h
-share/polymake/lib/PTL/include/Vector.h
-share/polymake/lib/PTL/include/argv_options.h
-share/polymake/lib/PTL/include/assoc.h
-share/polymake/lib/PTL/include/color.h
-share/polymake/lib/PTL/include/color.tcc
-share/polymake/lib/PTL/include/comparators.h
-share/polymake/lib/PTL/include/comparators_basic_defs.h
-share/polymake/lib/PTL/include/comparators_ops.h
-share/polymake/lib/PTL/include/constructors.h
-share/polymake/lib/PTL/include/converters.h
-share/polymake/lib/PTL/include/converters_basic_defs.h
-share/polymake/lib/PTL/include/dense_linalg.h
-share/polymake/lib/PTL/include/extend_algo.h
-share/polymake/lib/PTL/include/inlines_int.h
-share/polymake/lib/PTL/include/iterator_zipper.h
-share/polymake/lib/PTL/include/iterators.h
-share/polymake/lib/PTL/include/linalg.h
-share/polymake/lib/PTL/include/linalg_exceptions.h
-share/polymake/lib/PTL/include/matrix_methods.h
-share/polymake/lib/PTL/include/nothing.h
-share/polymake/lib/PTL/include/operations.h
-share/polymake/lib/PTL/include/operations_basic_defs.h
-share/polymake/lib/PTL/include/ostream_wrapper.h
-share/polymake/lib/PTL/include/permutations.h
-share/polymake/lib/PTL/include/plausible_checks.h
-share/polymake/lib/PTL/include/ports/hash_adapter.h
-share/polymake/lib/PTL/include/ports/type_traits.h
-share/polymake/lib/PTL/include/ppair.h
-share/polymake/lib/PTL/include/random_generators.h
-share/polymake/lib/PTL/include/shared_object.h
-share/polymake/lib/PTL/include/sparse.h
-share/polymake/lib/PTL/include/sparse2d.h
-share/polymake/lib/PTL/include/sparse2d_ruler.h
-share/polymake/lib/PTL/include/sparse_linalg.h
-share/polymake/lib/PTL/include/std/bits/c++allocator.h
-share/polymake/lib/PTL/include/std/bits/stl_alloc.h
-share/polymake/lib/PTL/include/std/ext/defines.h
-share/polymake/lib/PTL/include/std/ext/hash_map
-share/polymake/lib/PTL/include/std/ext/hash_set
-share/polymake/lib/PTL/include/std/fstream
-share/polymake/lib/PTL/include/std/list
-share/polymake/lib/PTL/include/std/map
-share/polymake/lib/PTL/include/std/pipestream.h
-share/polymake/lib/PTL/include/std/set
-share/polymake/lib/PTL/include/std/socketstream.h
-share/polymake/lib/PTL/include/std/vector
-share/polymake/lib/PTL/include/std/xmemory
-share/polymake/lib/PTL/include/stopwatch.h
-share/polymake/lib/PTL/include/tree_containers.h
-share/polymake/lib/PTL/include/type_manip.h
-share/polymake/lib/PTL/include/type_union.h
-share/polymake/lib/gmp_wrapper/include/Integer.h
-share/polymake/lib/gmp_wrapper/include/Rational.h
-share/polymake/lib/gmp_wrapper/include/gmp_init.h
-libexec/polymake/lib/libpoly.a
-libexec/polymake/lib/libpolytope.a
-libexec/polymake/lib/libtopaz.a
-share/polymake/lib/poly_client/include/CharBuffer.h
-share/polymake/lib/poly_client/include/PlainParser.h
-share/polymake/lib/poly_client/include/Poly.h
-share/polymake/lib/poly_client/include/Polybuf.h
-share/polymake/modules/common/perllib/BackgroundViewer.pm
-share/polymake/modules/common/perllib/Geomview.pm
-share/polymake/modules/common/perllib/JReality.def
-share/polymake/modules/common/perllib/JReality.pm
-share/polymake/modules/common/perllib/JRealityViewer.pm
-share/polymake/modules/common/perllib/JavaView.def
-share/polymake/modules/common/perllib/JavaView.pm
-share/polymake/modules/common/perllib/JavaViewInteractiveViewer.pm
-share/polymake/modules/common/perllib/JavaViewStaticViewer.pm
-share/polymake/modules/common/perllib/Postscript.pm
-share/polymake/modules/common/perllib/Povray.pm
-share/polymake/modules/common/perllib/SplitsTree.pm
-share/polymake/modules/common/perllib/Visual.pm
-share/polymake/modules/common/perllib/VisualPointSet.pm
-share/polymake/modules/common/perllib/VisualPolygon.pm
-share/polymake/modules/common/perllib/VisualUtilities.pm
-share/polymake/modules/common/rules/basic_help
-share/polymake/modules/common/rules/coord_functions
-share/polymake/modules/common/rules/formatting_filters
-share/polymake/modules/common/rules/geomview.rules
-share/polymake/modules/common/rules/javaview.rules
-share/polymake/modules/common/rules/javaview_configure
-share/polymake/modules/common/rules/javaview_interactive.rules
-share/polymake/modules/common/rules/jreality.rules
-share/polymake/modules/common/rules/jreality_configure
-share/polymake/modules/common/rules/main.rules
-share/polymake/modules/common/rules/postscript.rules
-share/polymake/modules/common/rules/povray.rules
-share/polymake/modules/common/rules/utilities
-share/polymake/modules/common/rules/visual.rules
-share/polymake/modules/graph/perllib/Graphviz.pm
-share/polymake/modules/graph/perllib/MetapostGraph.pm
-share/polymake/modules/graph/perllib/PostscriptGraph.pm
-share/polymake/modules/graph/perllib/VisualGraph.pm
-share/polymake/modules/graph/perllib/VisualLattice.pm
-share/polymake/modules/graph/rules/geomview.rules
-share/polymake/modules/graph/rules/graphviz.rules
-share/polymake/modules/graph/rules/javaview.rules
-share/polymake/modules/graph/rules/javaview_interactive.rules
-share/polymake/modules/graph/rules/jreality.rules
-share/polymake/modules/graph/rules/main.rules
-share/polymake/modules/graph/rules/metapost.rules
-share/polymake/modules/graph/rules/postscript.rules
-share/polymake/modules/graph/rules/povray.rules
-share/polymake/modules/graph/rules/visual.rules
-share/polymake/perl/Enum.pm
-share/polymake/perl/Poly.pm
-share/polymake/perl/Poly/Application.pm
-share/polymake/perl/Poly/BackgroundProcess.pm
-share/polymake/perl/Poly/Customize.pm
-share/polymake/perl/Poly/Ext.pm
-share/polymake/perl/Poly/File.pm
-share/polymake/perl/Poly/Help.pm
-share/polymake/perl/Poly/Module.pm
-share/polymake/perl/Poly/Object.pm
-share/polymake/perl/Poly/Overload.pm
-share/polymake/perl/Poly/Pipe.pm
-share/polymake/perl/Poly/Preference.pm
-share/polymake/perl/Poly/ProgramPipe.pm
-share/polymake/perl/Poly/Property.pm
-share/polymake/perl/Poly/PropertyValue.pm
-share/polymake/perl/Poly/Prototype.pm
-share/polymake/perl/Poly/Rule.pm
-share/polymake/perl/Poly/Scheduler.pm
-share/polymake/perl/Poly/Scheduler_debug.pm
-share/polymake/perl/Poly/Scope.pm
-share/polymake/perl/Poly/Server.pm
-share/polymake/perl/Poly/Shell.pm
-share/polymake/perl/Poly/Sockets.pm
-share/polymake/perl/Poly/Tempfile.pm
-share/polymake/perl/Poly/User.pm
-share/polymake/perl/Poly/regex.pl
-share/polymake/perl/Struct.pm
-share/polymake/perl/Switches.pm
-share/polymake/perl/namespaces.pm
-share/polymake/povray/polymake-scene.pov
-share/polymake/povray/polymake-scene2.pov
-share/polymake/povray/polypov.ini
-share/polymake/scripts/grow_complex
-share/polymake/scripts/half_projection
-share/polymake/scripts/list_all_properties
-share/polymake/scripts/overlaid_drawing
-share/polymake/scripts/polytope_completeness
-share/polymake/scripts/proj-maple
-share/polymake/scripts/random_hirsch
-share/polymake/scripts/show_facets
-share/polymake/scripts/transformation
-share/polymake/scripts/triangulation_volumes
-share/polymake/scripts/visual_unbounded
-share/polymake/support/build.make
-share/polymake/support/install.pl
-share/polymake/support/java.make
-share/polymake/support/utils.make
-libexec/polymake/perlx/%%PERL_VERSION%%/%%PERL_REAL_ARCH%%/auto/Poly/Ext/.packlist
-libexec/polymake/perlx/%%PERL_VERSION%%/%%PERL_REAL_ARCH%%/auto/Poly/Ext/Ext.bs
-libexec/polymake/perlx/%%PERL_VERSION%%/%%PERL_REAL_ARCH%%/auto/Poly/Ext/Ext.so
-libexec/polymake/apps/polytope/bin/2-face-sizes
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/2-face-sizes-simple
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/24-cell
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/600-cell
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/Goldfarb
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/altshuler_det
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/associahedron
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/basis_compare
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/beneath_beyond
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/binary-markov-graph
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/bipyramid
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/birkhoff
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/blending
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/bounding_box
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/canonical_coord
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/cayley_embedding
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/cd_index
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/cdd_ch_client
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/cdd_ch_float_client
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/cdd_lp_client
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/cdd_lp_float_client
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/cdd_redund_client
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/center
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/centroid
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/check_inc
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/clip_graph
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/compress_incidence
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/congruent_polytopes
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/conv
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/cross
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/cube
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/cubical_h_vector
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/cyclic
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/cyclic_caratheodory
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/dgraph
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/dim_from_incidence
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/dimension
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/does_contain
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/dwarfed_cube
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/dwarfed_product_polygons
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/edge_colored_bounded_graph
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/edge_directions
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/edge_middle
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/expansive_motions
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/f2_vector
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/face_lattice
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/facet
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/facets_from_incidence
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/flag_vector
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/framework
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/gale_transform
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/gale_vertices
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/graph_from_face_lattice
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/graph_from_incidence
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/graph_from_vertices
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/h_vector
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/hasse_diagram
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/hypersimplex
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/incidence
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/infinitesimal_motions
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/inner_point
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/intersection
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/is_lattice
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/isomorphic_polytopes
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/k-cyclic
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/lrs_ch_client
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/lrs_lp_client
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/lrs_redund_client
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/mapping_polytope
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/metric2hyp_triang
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/metric2poly
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/minimal_vertex_angle
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/minkowski_sum
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/multiplex
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/n-gon
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/neighborly_cubical
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/neighbors_cyclic_normal
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/nn_crust
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/nullspace
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/one_vertex
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/orthantify
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/orthantify2
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/p_bound
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/p_proj
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/permutahedron
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/pile
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/polarize
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/poly2lp
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/poly2metric
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/prism
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/product
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/projective_transformation
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/pseudo-simplex
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/pvolume
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/pyramid
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/rand
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/rand01
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/rand_aof
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/rand_sphere
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/rand_vert
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/random_edge_epl
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/regular_triangulation
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/rel_int_point
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/revert
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/revert_section
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/rigid_components_of_patterns
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/rigidity_matrix
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/schlegel_interactive
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/schlegel_params
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/schlegel_transform
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/schlegel_vertices
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/schlegel_vertices_on_facet
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/simplex
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/spherize
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/splits
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/stack
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/steiner_point_all
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/steiner_point_graph
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/stellar_all_faces
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/stellar_indep_faces
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/sum-product
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/toric_g_vector
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/triang_boundary
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/triang_sign
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/truncation
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/ts-max-metric
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/ts-min-metric
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/tutte_lifting
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/unirand
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/vertex_barycenter
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/vertex_colors
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/vertex_figure
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/vertex_permutation
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/voronoi
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/wedge
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/wreath
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/zonotope
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/polytope/bin/zonotope_facets
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-share/polymake/apps/polytope/scripts/lp2poly
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-share/polymake/apps/polytope/scripts/porta2poly
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-share/polymake/apps/polytope/scripts/rand_polytopes
-libexec/polymake/apps/surface/bin/neighbors_cyclic
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/surface/bin/poly2surf
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/surface/bin/rotation_scheme
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-share/polymake/apps/surface/scripts/obj2surf
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/alexander_dual
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/ball
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/barycentric_subdivision
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/bistellar
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/boundary_complex
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/boundary_of_pseudo_manifold
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/cone
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/connected_sum
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/crosscut_complex
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/cube_complex
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/deletion
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/disjoint_union
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/edge_contraction
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/extract_subcomplex
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/faces_to_facets
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/facets_consistency
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/facets_from_hasse_diagram
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/flag_complex
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/fundamental_group
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/glue_induced_subcomplexes
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/h_induced_quotient
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/induced_subcomplex
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/intersection_form
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/is_ball
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/is_ball_h
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/is_ball_or_sphere
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/is_ball_or_sphere_h
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/is_closed_pseudo_manifold
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/is_locally_strongly_connected
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/is_manifold
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/is_manifold_h
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/is_pseudo_manifold
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/is_sphere
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/is_sphere_h
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/is_vert_dec
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/isomorphic_complexes
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/k_skeleton
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/klein_bottle
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/knot_complex
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/labels_consistency
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/lawler
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/minimal_non_faces
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/morse_matching
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/morse_matching_critical_faces
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/morse_matching_n_critical_faces
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/morse_matching_size
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/n_vertices
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/odd_complex
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/odd_complex_of_manifold
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/orientation
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/projective_plane
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/projectivities
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/rand_knot
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/sphere
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/stellar_subd_face
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/stiefel_whitney
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/surf2top
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/suspension
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/t_balanced_prism
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/t_dual_graph
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/t_f_vector
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/t_graph
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/t_hasse_diagram
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/t_homology
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/t_join
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/t_link
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/t_mixed_graph
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/t_signature
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/t_simplicial_product
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/t_staircase
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/t_star
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/t_surface
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/t_union
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/t_volume
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/torus
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/triangulation_complex
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/apps/topaz/bin/unknot
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/modules/common/bin/rational_float
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/modules/common/bin/rational_integer
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/modules/graph/bin/bipartite
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/modules/graph/bin/bounded_embedder
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/modules/graph/bin/connected
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/modules/graph/bin/connected_comp
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/modules/graph/bin/connectivity
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/modules/graph/bin/diameter
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/modules/graph/bin/edge_lengths
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/modules/graph/bin/greedy_coloring
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/modules/graph/bin/hd_embedder
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/modules/graph/bin/induced_subgraph
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/modules/graph/bin/isomorphic_graphs
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/modules/graph/bin/max_cliques
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/modules/graph/bin/poly2leda_graph
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/modules/graph/bin/se_interactive
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/modules/graph/bin/spring_embedder
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-libexec/polymake/modules/graph/bin/triangle_free
-@exec ln -s %D/%F %D/bin
-@unexec rm -f %D/bin/%f
-@dirrm libexec/polymake/perlx/%%PERL_VERSION%%/%%PERL_REAL_ARCH%%/auto/Poly/Ext
-@dirrm libexec/polymake/perlx/%%PERL_VERSION%%/%%PERL_REAL_ARCH%%/auto/Poly
+libexec/polymake/conf.make.in
+@exec sed -e 's:PREFIX=.*:PREFIX=%D:' %D/%F >%B/conf.make
+@unexec rm -f %B/conf.make
+libexec/polymake/lib/common.so
+libexec/polymake/lib/graph.so
+libexec/polymake/lib/jni/libcommon.so
+libexec/polymake/lib/matroid.so
+libexec/polymake/lib/poly.so
+libexec/polymake/lib/polytope.so
+libexec/polymake/lib/topaz.so
+libexec/polymake/lib/tropical.so
+%%PORTDOCS%%%%DOCSDIR%%/common.html
+%%PORTDOCS%%%%DOCSDIR%%/core.html
+%%PORTDOCS%%%%DOCSDIR%%/doc_index.html
+%%PORTDOCS%%%%DOCSDIR%%/docstyle.css
+%%PORTDOCS%%%%DOCSDIR%%/functions.js
+%%PORTDOCS%%%%DOCSDIR%%/graph.html
+%%PORTDOCS%%%%DOCSDIR%%/images/doclogo.png
+%%PORTDOCS%%%%DOCSDIR%%/images/minus.png
+%%PORTDOCS%%%%DOCSDIR%%/images/plus.png
+%%PORTDOCS%%%%DOCSDIR%%/images/tocdot2.png
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/matroid.html
+%%PORTDOCS%%%%DOCSDIR%%/polytope.html
+%%PORTDOCS%%%%DOCSDIR%%/topaz.html
+%%PORTDOCS%%%%DOCSDIR%%/tropical.html
+%%DATADIR%%/apps/common/include/perl/bindings/Array.h
+%%DATADIR%%/apps/common/include/perl/bindings/FacetList.h
+%%DATADIR%%/apps/common/include/perl/bindings/GenericStruct.h
+%%DATADIR%%/apps/common/include/perl/bindings/Graph.h
+%%DATADIR%%/apps/common/include/perl/bindings/IncidenceMatrix.h
+%%DATADIR%%/apps/common/include/perl/bindings/Integer.h
+%%DATADIR%%/apps/common/include/perl/bindings/Map.h
+%%DATADIR%%/apps/common/include/perl/bindings/Matrix.h
+%%DATADIR%%/apps/common/include/perl/bindings/Polynomial.h
+%%DATADIR%%/apps/common/include/perl/bindings/PowerSet.h
+%%DATADIR%%/apps/common/include/perl/bindings/Rational.h
+%%DATADIR%%/apps/common/include/perl/bindings/Ring.h
+%%DATADIR%%/apps/common/include/perl/bindings/Set.h
+%%DATADIR%%/apps/common/include/perl/bindings/SparseMatrix.h
+%%DATADIR%%/apps/common/include/perl/bindings/SparseVector.h
+%%DATADIR%%/apps/common/include/perl/bindings/Vector.h
+%%DATADIR%%/apps/common/include/perl/bindings/color.h
+%%DATADIR%%/apps/common/include/perl/bindings/hash_map
+%%DATADIR%%/apps/common/include/perl/bindings/hash_set
+%%DATADIR%%/apps/common/include/perl/bindings/list
+%%DATADIR%%/apps/common/include/polymake.h
+%%DATADIR%%/apps/common/perllib/BackgroundViewer.pm
+%%DATADIR%%/apps/common/perllib/Geomview.pm
+%%DATADIR%%/apps/common/perllib/InteractiveViewer.pm
+%%DATADIR%%/apps/common/perllib/JReality.pm
+%%DATADIR%%/apps/common/perllib/JavaConfigure.pm
+%%DATADIR%%/apps/common/perllib/JavaView.pm
+%%DATADIR%%/apps/common/perllib/Postscript.pm
+%%DATADIR%%/apps/common/perllib/Povray.pm
+%%DATADIR%%/apps/common/perllib/Visual.pm
+%%DATADIR%%/apps/common/perllib/Visual/PointSet.pm
+%%DATADIR%%/apps/common/perllib/Visual/Polygon.pm
+%%DATADIR%%/apps/common/perllib/Visual/Wire.pm
+%%DATADIR%%/apps/common/rules/algebraic_types
+%%DATADIR%%/apps/common/rules/basic_types
+%%DATADIR%%/apps/common/rules/formatting_filters
+%%DATADIR%%/apps/common/rules/geomview.rules
+%%DATADIR%%/apps/common/rules/graph_types
+%%DATADIR%%/apps/common/rules/help.rules
+%%DATADIR%%/apps/common/rules/java.rules
+%%DATADIR%%/apps/common/rules/javaview.rules
+%%DATADIR%%/apps/common/rules/jreality.rules
+%%DATADIR%%/apps/common/rules/main.rules
+%%DATADIR%%/apps/common/rules/misc_functions
+%%DATADIR%%/apps/common/rules/postscript.rules
+%%DATADIR%%/apps/common/rules/povray.rules
+%%DATADIR%%/apps/common/rules/set_types
+%%DATADIR%%/apps/common/rules/visual.rules
+%%DATADIR%%/apps/common/src/bounding_box.cc
+%%DATADIR%%/apps/common/src/check_int_limit.cc
+%%DATADIR%%/apps/common/src/incidence_tools.cc
+%%DATADIR%%/apps/common/src/native/SharedMemoryMatrix.c
+%%DATADIR%%/apps/common/src/rational_integer.cc
+%%DATADIR%%/apps/graph/include/BFSiterator.h
+%%DATADIR%%/apps/graph/include/HasseDiagram.h
+%%DATADIR%%/apps/graph/include/HasseDiagramTools.h
+%%DATADIR%%/apps/graph/include/SimpleGeometryParser.h
+%%DATADIR%%/apps/graph/include/SpringEmbedder.h
+%%DATADIR%%/apps/graph/include/bipartite.h
+%%DATADIR%%/apps/graph/include/bipartite.tcc
+%%DATADIR%%/apps/graph/include/connected.h
+%%DATADIR%%/apps/graph/include/diameter.h
+%%DATADIR%%/apps/graph/include/diameter.tcc
+%%DATADIR%%/apps/graph/include/graph_compare.h
+%%DATADIR%%/apps/graph/include/max_cliques.h
+%%DATADIR%%/apps/graph/include/max_cliques.tcc
+%%DATADIR%%/apps/graph/include/polymake.h
+%%DATADIR%%/apps/graph/perllib/Graphviz.pm
+%%DATADIR%%/apps/graph/perllib/MetapostGraph.pm
+%%DATADIR%%/apps/graph/perllib/PostscriptGraph.pm
+%%DATADIR%%/apps/graph/perllib/Visual/Graph.pm
+%%DATADIR%%/apps/graph/perllib/Visual/Lattice.pm
+%%DATADIR%%/apps/graph/rules/comparing.rules
+%%DATADIR%%/apps/graph/rules/face_lattice.rules
+%%DATADIR%%/apps/graph/rules/graph_properties.rules
+%%DATADIR%%/apps/graph/rules/graphviz.rules
+%%DATADIR%%/apps/graph/rules/javaview.rules
+%%DATADIR%%/apps/graph/rules/jreality.rules
+%%DATADIR%%/apps/graph/rules/main.rules
+%%DATADIR%%/apps/graph/rules/metapost.rules
+%%DATADIR%%/apps/graph/rules/postscript.rules
+%%DATADIR%%/apps/graph/rules/povray.rules
+%%DATADIR%%/apps/graph/rules/upgrade.rules
+%%DATADIR%%/apps/graph/rules/visual.rules
+%%DATADIR%%/apps/graph/src/HasseDiagram.cc
+%%DATADIR%%/apps/graph/src/HasseDiagram_tools.cc
+%%DATADIR%%/apps/graph/src/Makefile.inc
+%%DATADIR%%/apps/graph/src/SpringEmbedder.cc
+%%DATADIR%%/apps/graph/src/altshuler_det.cc
+%%DATADIR%%/apps/graph/src/bipartite.cc
+%%DATADIR%%/apps/graph/src/bounded_embedder.cc
+%%DATADIR%%/apps/graph/src/connectivity.cc
+%%DATADIR%%/apps/graph/src/diameter.cc
+%%DATADIR%%/apps/graph/src/edge_lengths.cc
+%%DATADIR%%/apps/graph/src/f2_vector.cc
+%%DATADIR%%/apps/graph/src/graph_compare.cc
+%%DATADIR%%/apps/graph/src/greedy_coloring.cc
+%%DATADIR%%/apps/graph/src/hd_embedder.cc
+%%DATADIR%%/apps/graph/src/se_interactive.cc
+%%DATADIR%%/apps/graph/src/spring_embedder.cc
+%%DATADIR%%/apps/graph/src/triangle_free.cc
+%%DATADIR%%/apps/matroid/include/polymake.h
+%%DATADIR%%/apps/matroid/rules/main.rules
+%%DATADIR%%/apps/matroid/rules/matroid_properties.rules
+%%DATADIR%%/apps/matroid/src/Makefile.inc
+%%DATADIR%%/apps/matroid/src/bases_from_matroid_polytope.cc
+%%DATADIR%%/apps/matroid/src/bases_from_points.cc
+%%DATADIR%%/apps/matroid/src/basic_transformations.cc
+%%DATADIR%%/apps/matroid/src/deletion.cc
+%%DATADIR%%/apps/matroid/src/dual.cc
+%%DATADIR%%/apps/matroid/src/invert_bases.cc
+%%DATADIR%%/apps/matroid/src/matroid_from_graph.cc
+%%DATADIR%%/apps/matroid/src/matroid_polytope.cc
+%%DATADIR%%/apps/matroid/src/matroid_test.cc
+%%DATADIR%%/apps/matroid/src/tropical_matroid_polytope.cc
+%%DATADIR%%/apps/matroid/src/uniform_matroid.cc
+%%DATADIR%%/apps/polytope/include/CubeFacets.h
+%%DATADIR%%/apps/polytope/include/beneath_beyond.h
+%%DATADIR%%/apps/polytope/include/beneath_beyond.tcc
+%%DATADIR%%/apps/polytope/include/bisector.h
+%%DATADIR%%/apps/polytope/include/cdd_interface.h
+%%DATADIR%%/apps/polytope/include/cdd_interface_impl.h
+%%DATADIR%%/apps/polytope/include/face_lattice_tools.h
+%%DATADIR%%/apps/polytope/include/hypersimplex.h
+%%DATADIR%%/apps/polytope/include/linsolver.h
+%%DATADIR%%/apps/polytope/include/lrs_interface.h
+%%DATADIR%%/apps/polytope/include/polymake.h
+%%DATADIR%%/apps/polytope/include/schlegel_common.h
+%%DATADIR%%/apps/polytope/include/transform.h
+%%DATADIR%%/apps/polytope/perllib/LPparser.pm
+%%DATADIR%%/apps/polytope/perllib/PortaParser.pm
+%%DATADIR%%/apps/polytope/perllib/PostscriptGale.pm
+%%DATADIR%%/apps/polytope/perllib/SplitsTree.pm
+%%DATADIR%%/apps/polytope/perllib/VisualGale.pm
+%%DATADIR%%/apps/polytope/rules/_4ti2.rules
+%%DATADIR%%/apps/polytope/rules/azove.rules
+%%DATADIR%%/apps/polytope/rules/common.rules
+%%DATADIR%%/apps/polytope/rules/flag_vector.rules
+%%DATADIR%%/apps/polytope/rules/float.rules
+%%DATADIR%%/apps/polytope/rules/gale.rules
+%%DATADIR%%/apps/polytope/rules/help.rules
+%%DATADIR%%/apps/polytope/rules/javaview.rules
+%%DATADIR%%/apps/polytope/rules/jreality.rules
+%%DATADIR%%/apps/polytope/rules/latte.rules
+%%DATADIR%%/apps/polytope/rules/lattice.rules
+%%DATADIR%%/apps/polytope/rules/lattice_properties.rules
+%%DATADIR%%/apps/polytope/rules/lattice_visual.rules
+%%DATADIR%%/apps/polytope/rules/lp.rules
+%%DATADIR%%/apps/polytope/rules/lp_float.rules
+%%DATADIR%%/apps/polytope/rules/lp_properties.rules
+%%DATADIR%%/apps/polytope/rules/lp_rational.rules
+%%DATADIR%%/apps/polytope/rules/main.rules
+%%DATADIR%%/apps/polytope/rules/normaliz.rules
+%%DATADIR%%/apps/polytope/rules/normaliz2.rules
+%%DATADIR%%/apps/polytope/rules/point_configuration.rules
+%%DATADIR%%/apps/polytope/rules/point_configuration_properties.rules
+%%DATADIR%%/apps/polytope/rules/polarize.rules
+%%DATADIR%%/apps/polytope/rules/polytope_properties.rules
+%%DATADIR%%/apps/polytope/rules/porta.rules
+%%DATADIR%%/apps/polytope/rules/postscript.rules
+%%DATADIR%%/apps/polytope/rules/ppl.rules
+%%DATADIR%%/apps/polytope/rules/propagated_polytope.rules
+%%DATADIR%%/apps/polytope/rules/qhull.rules
+%%DATADIR%%/apps/polytope/rules/rational.rules
+%%DATADIR%%/apps/polytope/rules/schlegel.rules
+%%DATADIR%%/apps/polytope/rules/splitstree.rules
+%%DATADIR%%/apps/polytope/rules/steiner.rules
+%%DATADIR%%/apps/polytope/rules/tight_span.rules
+%%DATADIR%%/apps/polytope/rules/topcom.rules
+%%DATADIR%%/apps/polytope/rules/unbounded_polyhedron.rules
+%%DATADIR%%/apps/polytope/rules/upgrade.rules
+%%DATADIR%%/apps/polytope/rules/vinci.rules
+%%DATADIR%%/apps/polytope/rules/visual.rules
+%%DATADIR%%/apps/polytope/rules/visual_graph.rules
+%%DATADIR%%/apps/polytope/rules/visual_point_configuration.rules
+%%DATADIR%%/apps/polytope/rules/voronoi.rules
+%%DATADIR%%/apps/polytope/scripts/rand_polytopes
+%%DATADIR%%/apps/polytope/scripts/random_hirsch
+%%DATADIR%%/apps/polytope/scripts/show_facets
+%%DATADIR%%/apps/polytope/scripts/transformation
+%%DATADIR%%/apps/polytope/scripts/visual_unbounded
+%%DATADIR%%/apps/polytope/src/2-face-sizes-simple.cc
+%%DATADIR%%/apps/polytope/src/2-face-sizes.cc
+%%DATADIR%%/apps/polytope/src/24-cell.cc
+%%DATADIR%%/apps/polytope/src/600-cell.cc
+%%DATADIR%%/apps/polytope/src/Makefile.inc
+%%DATADIR%%/apps/polytope/src/associahedron.cc
+%%DATADIR%%/apps/polytope/src/beneath_beyond.cc
+%%DATADIR%%/apps/polytope/src/binary_markov_graph.cc
+%%DATADIR%%/apps/polytope/src/bipyramid.cc
+%%DATADIR%%/apps/polytope/src/birkhoff.cc
+%%DATADIR%%/apps/polytope/src/blending.cc
+%%DATADIR%%/apps/polytope/src/bound.cc
+%%DATADIR%%/apps/polytope/src/bounded_complex.cc
+%%DATADIR%%/apps/polytope/src/bounding_box.cc
+%%DATADIR%%/apps/polytope/src/canonical_coord.cc
+%%DATADIR%%/apps/polytope/src/cayley_embedding.cc
+%%DATADIR%%/apps/polytope/src/cayley_polytope.cc
+%%DATADIR%%/apps/polytope/src/cd_index.cc
+%%DATADIR%%/apps/polytope/src/cdd_ch_client.cc
+%%DATADIR%%/apps/polytope/src/cdd_float_interface.cc
+%%DATADIR%%/apps/polytope/src/cdd_interface.cc
+%%DATADIR%%/apps/polytope/src/cdd_lp_client.cc
+%%DATADIR%%/apps/polytope/src/cdd_redund_client.cc
+%%DATADIR%%/apps/polytope/src/cell_from_subdivision.cc
+%%DATADIR%%/apps/polytope/src/center.cc
+%%DATADIR%%/apps/polytope/src/centroid.cc
+%%DATADIR%%/apps/polytope/src/check_inc.cc
+%%DATADIR%%/apps/polytope/src/check_poly.cc
+%%DATADIR%%/apps/polytope/src/clip_graph.cc
+%%DATADIR%%/apps/polytope/src/common_refinement.cc
+%%DATADIR%%/apps/polytope/src/compress_incidence.cc
+%%DATADIR%%/apps/polytope/src/congruent_polytopes.cc
+%%DATADIR%%/apps/polytope/src/conv.cc
+%%DATADIR%%/apps/polytope/src/core_point_algo.cc
+%%DATADIR%%/apps/polytope/src/cross.cc
+%%DATADIR%%/apps/polytope/src/cube.cc
+%%DATADIR%%/apps/polytope/src/cubical_h_vector.cc
+%%DATADIR%%/apps/polytope/src/cut_polytope.cc
+%%DATADIR%%/apps/polytope/src/cyclic.cc
+%%DATADIR%%/apps/polytope/src/cyclic_caratheodory.cc
+%%DATADIR%%/apps/polytope/src/delaunay_triangulation.cc
+%%DATADIR%%/apps/polytope/src/dgraph.cc
+%%DATADIR%%/apps/polytope/src/dim_from_incidence.cc
+%%DATADIR%%/apps/polytope/src/dwarfed_cube.cc
+%%DATADIR%%/apps/polytope/src/dwarfed_product_polygons.cc
+%%DATADIR%%/apps/polytope/src/edge_colored_bounded_graph.cc
+%%DATADIR%%/apps/polytope/src/edge_directions.cc
+%%DATADIR%%/apps/polytope/src/edge_middle.cc
+%%DATADIR%%/apps/polytope/src/face_lattice.cc
+%%DATADIR%%/apps/polytope/src/facet.cc
+%%DATADIR%%/apps/polytope/src/facet_to_infinity.cc
+%%DATADIR%%/apps/polytope/src/facets_from_incidence.cc
+%%DATADIR%%/apps/polytope/src/flag_vector.cc
+%%DATADIR%%/apps/polytope/src/gale_vertices.cc
+%%DATADIR%%/apps/polytope/src/gkz_vector.cc
+%%DATADIR%%/apps/polytope/src/goldfarb.cc
+%%DATADIR%%/apps/polytope/src/graph_from_face_lattice.cc
+%%DATADIR%%/apps/polytope/src/graph_from_incidence.cc
+%%DATADIR%%/apps/polytope/src/graph_from_vertices.cc
+%%DATADIR%%/apps/polytope/src/h_vector.cc
+%%DATADIR%%/apps/polytope/src/hasse_diagram.cc
+%%DATADIR%%/apps/polytope/src/hypersimplex.cc
+%%DATADIR%%/apps/polytope/src/hypertruncated_cube.cc
+%%DATADIR%%/apps/polytope/src/incidence.cc
+%%DATADIR%%/apps/polytope/src/included_polyhedra.cc
+%%DATADIR%%/apps/polytope/src/inner_point.cc
+%%DATADIR%%/apps/polytope/src/intersection.cc
+%%DATADIR%%/apps/polytope/src/is_subdivision.cc
+%%DATADIR%%/apps/polytope/src/isomorphic_polytopes.cc
+%%DATADIR%%/apps/polytope/src/join_polytopes.cc
+%%DATADIR%%/apps/polytope/src/k-cyclic.cc
+%%DATADIR%%/apps/polytope/src/knapsack.cc
+%%DATADIR%%/apps/polytope/src/lattice_bipyramid.cc
+%%DATADIR%%/apps/polytope/src/lattice_isomorphic_polytopes.cc
+%%DATADIR%%/apps/polytope/src/lattice_normalization.cc
+%%DATADIR%%/apps/polytope/src/lattice_pyramid.cc
+%%DATADIR%%/apps/polytope/src/lp_projection.cc
+%%DATADIR%%/apps/polytope/src/lrs_ch_client.cc
+%%DATADIR%%/apps/polytope/src/lrs_interface.cc
+%%DATADIR%%/apps/polytope/src/lrs_lp_client.cc
+%%DATADIR%%/apps/polytope/src/lrs_redund_client.cc
+%%DATADIR%%/apps/polytope/src/mapping_polytope.cc
+%%DATADIR%%/apps/polytope/src/matching_polytope.cc
+%%DATADIR%%/apps/polytope/src/max_GC_rank.cc
+%%DATADIR%%/apps/polytope/src/metric2hyp_triang.cc
+%%DATADIR%%/apps/polytope/src/metric2poly.cc
+%%DATADIR%%/apps/polytope/src/metric2splits.cc
+%%DATADIR%%/apps/polytope/src/minimal_vertex_angle.cc
+%%DATADIR%%/apps/polytope/src/minkowski_sum.cc
+%%DATADIR%%/apps/polytope/src/multiplex.cc
+%%DATADIR%%/apps/polytope/src/n_gon.cc
+%%DATADIR%%/apps/polytope/src/neighborly_cubical.cc
+%%DATADIR%%/apps/polytope/src/neighbors_cyclic_normal.cc
+%%DATADIR%%/apps/polytope/src/newton.cc
+%%DATADIR%%/apps/polytope/src/nn_crust.cc
+%%DATADIR%%/apps/polytope/src/non_vertices.cc
+%%DATADIR%%/apps/polytope/src/orthantify.cc
+%%DATADIR%%/apps/polytope/src/permutahedron.cc
+%%DATADIR%%/apps/polytope/src/perturb_matrix.cc
+%%DATADIR%%/apps/polytope/src/pile.cc
+%%DATADIR%%/apps/polytope/src/points_graph_from_incidence.cc
+%%DATADIR%%/apps/polytope/src/polarize.cc
+%%DATADIR%%/apps/polytope/src/poly2lp.cc
+%%DATADIR%%/apps/polytope/src/poly2metric.cc
+%%DATADIR%%/apps/polytope/src/polynomial_conversion.cc
+%%DATADIR%%/apps/polytope/src/prism.cc
+%%DATADIR%%/apps/polytope/src/product.cc
+%%DATADIR%%/apps/polytope/src/projection.cc
+%%DATADIR%%/apps/polytope/src/pseudo_simplex.cc
+%%DATADIR%%/apps/polytope/src/pyramid.cc
+%%DATADIR%%/apps/polytope/src/rand01.cc
+%%DATADIR%%/apps/polytope/src/rand_aof.cc
+%%DATADIR%%/apps/polytope/src/rand_box.cc
+%%DATADIR%%/apps/polytope/src/rand_inner_points.cc
+%%DATADIR%%/apps/polytope/src/rand_metric.cc
+%%DATADIR%%/apps/polytope/src/rand_sphere.cc
+%%DATADIR%%/apps/polytope/src/rand_vert.cc
+%%DATADIR%%/apps/polytope/src/random_edge_epl.cc
+%%DATADIR%%/apps/polytope/src/regular_subdivision.cc
+%%DATADIR%%/apps/polytope/src/rel_int_point.cc
+%%DATADIR%%/apps/polytope/src/reverse_search_graph.cc
+%%DATADIR%%/apps/polytope/src/revert.cc
+%%DATADIR%%/apps/polytope/src/rss_associahedron.cc
+%%DATADIR%%/apps/polytope/src/schlegel_interactive.cc
+%%DATADIR%%/apps/polytope/src/schlegel_transform.cc
+%%DATADIR%%/apps/polytope/src/simplex.cc
+%%DATADIR%%/apps/polytope/src/spherize.cc
+%%DATADIR%%/apps/polytope/src/split_compatibility_graph.cc
+%%DATADIR%%/apps/polytope/src/split_polyhedron.cc
+%%DATADIR%%/apps/polytope/src/splits.cc
+%%DATADIR%%/apps/polytope/src/splits_in_subdivision.cc
+%%DATADIR%%/apps/polytope/src/stack.cc
+%%DATADIR%%/apps/polytope/src/staircase_weight.cc
+%%DATADIR%%/apps/polytope/src/steiner_points.cc
+%%DATADIR%%/apps/polytope/src/stellar_all_faces.cc
+%%DATADIR%%/apps/polytope/src/stellar_indep_faces.cc
+%%DATADIR%%/apps/polytope/src/sum_product.cc
+%%DATADIR%%/apps/polytope/src/tensor.cc
+%%DATADIR%%/apps/polytope/src/tight_span.cc
+%%DATADIR%%/apps/polytope/src/toric_g_vector.cc
+%%DATADIR%%/apps/polytope/src/transform.cc
+%%DATADIR%%/apps/polytope/src/transportation.cc
+%%DATADIR%%/apps/polytope/src/triang_boundary.cc
+%%DATADIR%%/apps/polytope/src/triang_sign.cc
+%%DATADIR%%/apps/polytope/src/truncation.cc
+%%DATADIR%%/apps/polytope/src/ts_max_metric.cc
+%%DATADIR%%/apps/polytope/src/ts_min_metric.cc
+%%DATADIR%%/apps/polytope/src/ts_thrackle_metric.cc
+%%DATADIR%%/apps/polytope/src/tutte_lifting.cc
+%%DATADIR%%/apps/polytope/src/unirand.cc
+%%DATADIR%%/apps/polytope/src/vertex_barycenter.cc
+%%DATADIR%%/apps/polytope/src/vertex_colors.cc
+%%DATADIR%%/apps/polytope/src/vertex_figure.cc
+%%DATADIR%%/apps/polytope/src/vertex_point_map.cc
+%%DATADIR%%/apps/polytope/src/vertices_in_metric.cc
+%%DATADIR%%/apps/polytope/src/volume.cc
+%%DATADIR%%/apps/polytope/src/voronoi.cc
+%%DATADIR%%/apps/polytope/src/wedge.cc
+%%DATADIR%%/apps/polytope/src/wreath.cc
+%%DATADIR%%/apps/polytope/src/zonotope.cc
+%%DATADIR%%/apps/topaz/include/1D_tools.tcc
+%%DATADIR%%/apps/topaz/include/2D_tools.tcc
+%%DATADIR%%/apps/topaz/include/BistellarComplex.h
+%%DATADIR%%/apps/topaz/include/ChainComplex.h
+%%DATADIR%%/apps/topaz/include/FiniteFields.h
+%%DATADIR%%/apps/topaz/include/SimplicialComplex_as_FaceMap.h
+%%DATADIR%%/apps/topaz/include/barycentric_subdivision.h
+%%DATADIR%%/apps/topaz/include/complex_tools.h
+%%DATADIR%%/apps/topaz/include/complex_tools.tcc
+%%DATADIR%%/apps/topaz/include/connected_sum.h
+%%DATADIR%%/apps/topaz/include/connected_sum.tcc
+%%DATADIR%%/apps/topaz/include/is_sphere_h.h
+%%DATADIR%%/apps/topaz/include/merge_vertices.h
+%%DATADIR%%/apps/topaz/include/morse_matching_tools.h
+%%DATADIR%%/apps/topaz/include/polymake.h
+%%DATADIR%%/apps/topaz/include/read_int_args.h
+%%DATADIR%%/apps/topaz/include/subcomplex_tools.tcc
+%%DATADIR%%/apps/topaz/include/t_graph.h
+%%DATADIR%%/apps/topaz/include/t_graph.tcc
+%%DATADIR%%/apps/topaz/rules/common.rules
+%%DATADIR%%/apps/topaz/rules/complex_properties.rules
+%%DATADIR%%/apps/topaz/rules/gap.rules
+%%DATADIR%%/apps/topaz/rules/help.rules
+%%DATADIR%%/apps/topaz/rules/main.rules
+%%DATADIR%%/apps/topaz/rules/morse_matching.rules
+%%DATADIR%%/apps/topaz/rules/upgrade.rules
+%%DATADIR%%/apps/topaz/rules/visual.rules
+%%DATADIR%%/apps/topaz/scripts/grow_complex
+%%DATADIR%%/apps/topaz/src/Makefile.inc
+%%DATADIR%%/apps/topaz/src/alexander_dual.cc
+%%DATADIR%%/apps/topaz/src/balanced_prism.cc
+%%DATADIR%%/apps/topaz/src/ball.cc
+%%DATADIR%%/apps/topaz/src/barycentric_subdivision.cc
+%%DATADIR%%/apps/topaz/src/bistellar.cc
+%%DATADIR%%/apps/topaz/src/boundary_of_pseudo_manifold.cc
+%%DATADIR%%/apps/topaz/src/cap_product.cc
+%%DATADIR%%/apps/topaz/src/clique_complex.cc
+%%DATADIR%%/apps/topaz/src/complex_tools.cc
+%%DATADIR%%/apps/topaz/src/cone.cc
+%%DATADIR%%/apps/topaz/src/connected_sum.cc
+%%DATADIR%%/apps/topaz/src/crosscut_complex.cc
+%%DATADIR%%/apps/topaz/src/cube_complex.cc
+%%DATADIR%%/apps/topaz/src/deletion.cc
+%%DATADIR%%/apps/topaz/src/disjoint_union.cc
+%%DATADIR%%/apps/topaz/src/edge_contraction.cc
+%%DATADIR%%/apps/topaz/src/f_vector.cc
+%%DATADIR%%/apps/topaz/src/faces_to_facets.cc
+%%DATADIR%%/apps/topaz/src/facets_from_hasse_diagram.cc
+%%DATADIR%%/apps/topaz/src/fundamental_group.cc
+%%DATADIR%%/apps/topaz/src/h_induced_quotient.cc
+%%DATADIR%%/apps/topaz/src/hasse_diagram.cc
+%%DATADIR%%/apps/topaz/src/homology.cc
+%%DATADIR%%/apps/topaz/src/induced_subcomplex.cc
+%%DATADIR%%/apps/topaz/src/intersection_form.cc
+%%DATADIR%%/apps/topaz/src/is_ball_or_sphere.cc
+%%DATADIR%%/apps/topaz/src/is_ball_or_sphere_h.cc
+%%DATADIR%%/apps/topaz/src/is_closed_pseudo_manifold.cc
+%%DATADIR%%/apps/topaz/src/is_locally_strongly_connected.cc
+%%DATADIR%%/apps/topaz/src/is_manifold.cc
+%%DATADIR%%/apps/topaz/src/is_manifold_h.cc
+%%DATADIR%%/apps/topaz/src/is_pseudo_manifold.cc
+%%DATADIR%%/apps/topaz/src/is_sphere_h_impl.cc
+%%DATADIR%%/apps/topaz/src/is_vertex_decomposition.cc
+%%DATADIR%%/apps/topaz/src/isomorphic_complexes.cc
+%%DATADIR%%/apps/topaz/src/join_complexes.cc
+%%DATADIR%%/apps/topaz/src/k_skeleton.cc
+%%DATADIR%%/apps/topaz/src/klein_bottle.cc
+%%DATADIR%%/apps/topaz/src/lawler.cc
+%%DATADIR%%/apps/topaz/src/link.cc
+%%DATADIR%%/apps/topaz/src/merge_vertices.cc
+%%DATADIR%%/apps/topaz/src/minimal_non_faces.cc
+%%DATADIR%%/apps/topaz/src/mixed_graph.cc
+%%DATADIR%%/apps/topaz/src/odd_complex.cc
+%%DATADIR%%/apps/topaz/src/odd_complex_of_manifold.cc
+%%DATADIR%%/apps/topaz/src/orientation.cc
+%%DATADIR%%/apps/topaz/src/product.cc
+%%DATADIR%%/apps/topaz/src/projective_plane.cc
+%%DATADIR%%/apps/topaz/src/projectivities.cc
+%%DATADIR%%/apps/topaz/src/rand_knot.cc
+%%DATADIR%%/apps/topaz/src/read_int_args.cc
+%%DATADIR%%/apps/topaz/src/signature.cc
+%%DATADIR%%/apps/topaz/src/simplex.cc
+%%DATADIR%%/apps/topaz/src/sphere.cc
+%%DATADIR%%/apps/topaz/src/star.cc
+%%DATADIR%%/apps/topaz/src/stellar_subd_face.cc
+%%DATADIR%%/apps/topaz/src/surface.cc
+%%DATADIR%%/apps/topaz/src/suspension.cc
+%%DATADIR%%/apps/topaz/src/t_graph.cc
+%%DATADIR%%/apps/topaz/src/torus.cc
+%%DATADIR%%/apps/topaz/src/union.cc
+%%DATADIR%%/apps/topaz/src/unknot.cc
+%%DATADIR%%/apps/topaz/src/volume.cc
+%%DATADIR%%/apps/tropical/include/polymake.h
+%%DATADIR%%/apps/tropical/include/trop-2d-primitives.h
+%%DATADIR%%/apps/tropical/rules/hypersurface.rules
+%%DATADIR%%/apps/tropical/rules/main.rules
+%%DATADIR%%/apps/tropical/rules/singular.rules
+%%DATADIR%%/apps/tropical/rules/tropical_properties.rules
+%%DATADIR%%/apps/tropical/rules/upgrade.rules
+%%DATADIR%%/apps/tropical/rules/visual.rules
+%%DATADIR%%/apps/tropical/src/Makefile.inc
+%%DATADIR%%/apps/tropical/src/canonical_coord.cc
+%%DATADIR%%/apps/tropical/src/ch2d_3phases.cc
+%%DATADIR%%/apps/tropical/src/cornered_hull.cc
+%%DATADIR%%/apps/tropical/src/cyclic.cc
+%%DATADIR%%/apps/tropical/src/discard_non_vertices.cc
+%%DATADIR%%/apps/tropical/src/dualize.cc
+%%DATADIR%%/apps/tropical/src/extract_pseudovertices.cc
+%%DATADIR%%/apps/tropical/src/hypersimplex.cc
+%%DATADIR%%/apps/tropical/src/hypersurface.cc
+%%DATADIR%%/apps/tropical/src/minkowski_sum.cc
+%%DATADIR%%/apps/tropical/src/nearest_point.cc
+%%DATADIR%%/apps/tropical/src/planar_coords.cc
+%%DATADIR%%/apps/tropical/src/pluecker.cc
+%%DATADIR%%/apps/tropical/src/poly2trop.cc
+%%DATADIR%%/apps/tropical/src/pseudovertices2poly.cc
+%%DATADIR%%/apps/tropical/src/trop2poly.cc
+%%DATADIR%%/apps/tropical/src/types.cc
+%%DATADIR%%/java_build/common.jar
+%%DATADIR%%/java_build/graph.jar
+%%DATADIR%%/java_build/jni/common.h
+%%DATADIR%%/java_build/jreality/jReality-audio.jar
+%%DATADIR%%/java_build/jreality/jReality-backends-share.jar
+%%DATADIR%%/java_build/jreality/jReality-core.jar
+%%DATADIR%%/java_build/jreality/jReality-gpgpu.jar
+%%DATADIR%%/java_build/jreality/jReality-io.jar
+%%DATADIR%%/java_build/jreality/jReality-jogl.jar
+%%DATADIR%%/java_build/jreality/jReality-plugin.jar
+%%DATADIR%%/java_build/jreality/jReality-portal.jar
+%%DATADIR%%/java_build/jreality/jReality-proxies.jar
+%%DATADIR%%/java_build/jreality/jReality-renderman.jar
+%%DATADIR%%/java_build/jreality/jReality-soft.jar
+%%DATADIR%%/java_build/jreality/jReality-sunflow.jar
+%%DATADIR%%/java_build/jreality/jReality-swing.jar
+%%DATADIR%%/java_build/jreality/jReality-tools.jar
+%%DATADIR%%/java_build/jreality/jReality-ui.jar
+%%DATADIR%%/java_build/jreality/lib/antlr.jar
+%%DATADIR%%/java_build/jreality/lib/beans.jar
+%%DATADIR%%/java_build/jreality/lib/bsh.jar
+%%DATADIR%%/java_build/jreality/lib/colorpicker.jar
+%%DATADIR%%/java_build/jreality/lib/gluegen-rt.jar
+%%DATADIR%%/java_build/jreality/lib/iText-2.1.3.jar
+%%DATADIR%%/java_build/jreality/lib/janino.jar
+%%DATADIR%%/java_build/jreality/lib/jinput.jar
+%%DATADIR%%/java_build/jreality/lib/jjack_min.jar
+%%DATADIR%%/java_build/jreality/lib/jogl.jar
+%%DATADIR%%/java_build/jreality/lib/jrworkspace.jar
+%%DATADIR%%/java_build/jreality/lib/jterm.jar
+%%DATADIR%%/java_build/jreality/lib/netutil.jar
+%%DATADIR%%/java_build/jreality/lib/smrj-app.jar
+%%DATADIR%%/java_build/jreality/lib/smrj-client.jar
+%%DATADIR%%/java_build/jreality/lib/smrj.jar
+%%DATADIR%%/java_build/jreality/lib/sunflow.jar
+%%DATADIR%%/java_build/jreality/lib/xpp3.jar
+%%DATADIR%%/java_build/jreality/lib/xstream.jar
+%%DATADIR%%/java_build/polytope.jar
+%%DATADIR%%/lib/PTL/_doxygen.h
+%%DATADIR%%/lib/PTL/include/AVL.h
+%%DATADIR%%/lib/PTL/include/Array.h
+%%DATADIR%%/lib/PTL/include/Bitset.h
+%%DATADIR%%/lib/PTL/include/CascadedContainer.h
+%%DATADIR%%/lib/PTL/include/CharBuffer.h
+%%DATADIR%%/lib/PTL/include/CombArray.h
+%%DATADIR%%/lib/PTL/include/ContainerChain.h
+%%DATADIR%%/lib/PTL/include/ContainerUnion.h
+%%DATADIR%%/lib/PTL/include/EmbeddedList.h
+%%DATADIR%%/lib/PTL/include/EquivalenceRelation.h
+%%DATADIR%%/lib/PTL/include/FaceMap.h
+%%DATADIR%%/lib/PTL/include/FacetList.h
+%%DATADIR%%/lib/PTL/include/Fibonacci.h
+%%DATADIR%%/lib/PTL/include/GenericGraph.h
+%%DATADIR%%/lib/PTL/include/GenericIO.h
+%%DATADIR%%/lib/PTL/include/GenericIncidenceMatrix.h
+%%DATADIR%%/lib/PTL/include/GenericMatrix.h
+%%DATADIR%%/lib/PTL/include/GenericSet.h
+%%DATADIR%%/lib/PTL/include/GenericStruct.h
+%%DATADIR%%/lib/PTL/include/GenericVector.h
+%%DATADIR%%/lib/PTL/include/Graph.h
+%%DATADIR%%/lib/PTL/include/IncidenceMatrix.h
+%%DATADIR%%/lib/PTL/include/Incidence_and_SparseMatrix.h
+%%DATADIR%%/lib/PTL/include/IndexDispenser.h
+%%DATADIR%%/lib/PTL/include/IndexedSubgraph.h
+%%DATADIR%%/lib/PTL/include/IndexedSubset.h
+%%DATADIR%%/lib/PTL/include/Integer.h
+%%DATADIR%%/lib/PTL/include/ListIncidenceMatrix.h
+%%DATADIR%%/lib/PTL/include/ListMatrix.h
+%%DATADIR%%/lib/PTL/include/Map.h
+%%DATADIR%%/lib/PTL/include/Matrix.h
+%%DATADIR%%/lib/PTL/include/MultiDimCounter.h
+%%DATADIR%%/lib/PTL/include/MultiDimCounter.tcc
+%%DATADIR%%/lib/PTL/include/PlainParser.h
+%%DATADIR%%/lib/PTL/include/Polynomial.h
+%%DATADIR%%/lib/PTL/include/PowerSet.h
+%%DATADIR%%/lib/PTL/include/RandomSubset.h
+%%DATADIR%%/lib/PTL/include/Rational.h
+%%DATADIR%%/lib/PTL/include/Ring.h
+%%DATADIR%%/lib/PTL/include/SelectedSubset.h
+%%DATADIR%%/lib/PTL/include/Series.h
+%%DATADIR%%/lib/PTL/include/Set.h
+%%DATADIR%%/lib/PTL/include/SharedMemoryMatrix.h
+%%DATADIR%%/lib/PTL/include/Smith_normal_form.h
+%%DATADIR%%/lib/PTL/include/SparseMatrix.h
+%%DATADIR%%/lib/PTL/include/SparseVector.h
+%%DATADIR%%/lib/PTL/include/TransformedContainer.h
+%%DATADIR%%/lib/PTL/include/Vector.h
+%%DATADIR%%/lib/PTL/include/Wary.h
+%%DATADIR%%/lib/PTL/include/assoc.h
+%%DATADIR%%/lib/PTL/include/color.h
+%%DATADIR%%/lib/PTL/include/comparators.h
+%%DATADIR%%/lib/PTL/include/comparators_basic_defs.h
+%%DATADIR%%/lib/PTL/include/comparators_ops.h
+%%DATADIR%%/lib/PTL/include/constant_containers.h
+%%DATADIR%%/lib/PTL/include/constructors.h
+%%DATADIR%%/lib/PTL/include/converters.h
+%%DATADIR%%/lib/PTL/include/converters_basic_defs.h
+%%DATADIR%%/lib/PTL/include/dense_linalg.h
+%%DATADIR%%/lib/PTL/include/extend_algo.h
+%%DATADIR%%/lib/PTL/include/hash_iterators.h
+%%DATADIR%%/lib/PTL/include/hash_map
+%%DATADIR%%/lib/PTL/include/hash_set
+%%DATADIR%%/lib/PTL/include/inlines_int.h
+%%DATADIR%%/lib/PTL/include/iterator_zipper.h
+%%DATADIR%%/lib/PTL/include/iterators.h
+%%DATADIR%%/lib/PTL/include/linalg.h
+%%DATADIR%%/lib/PTL/include/linalg_exceptions.h
+%%DATADIR%%/lib/PTL/include/matrix_methods.h
+%%DATADIR%%/lib/PTL/include/modified_containers.h
+%%DATADIR%%/lib/PTL/include/node_edge_incidences.h
+%%DATADIR%%/lib/PTL/include/nothing.h
+%%DATADIR%%/lib/PTL/include/operations.h
+%%DATADIR%%/lib/PTL/include/operations_basic_defs.h
+%%DATADIR%%/lib/PTL/include/perl/Object.h
+%%DATADIR%%/lib/PTL/include/perl/Value.h
+%%DATADIR%%/lib/PTL/include/perl/assoc.h
+%%DATADIR%%/lib/PTL/include/perl/glue.h
+%%DATADIR%%/lib/PTL/include/perl/macros.h
+%%DATADIR%%/lib/PTL/include/perl/wrappers.h
+%%DATADIR%%/lib/PTL/include/permutations.h
+%%DATADIR%%/lib/PTL/include/pipestream.h
+%%DATADIR%%/lib/PTL/include/polymake.h
+%%DATADIR%%/lib/PTL/include/ppair.h
+%%DATADIR%%/lib/PTL/include/random_generators.h
+%%DATADIR%%/lib/PTL/include/shared_object.h
+%%DATADIR%%/lib/PTL/include/signal2exception.h
+%%DATADIR%%/lib/PTL/include/socketstream.h
+%%DATADIR%%/lib/PTL/include/sparse.h
+%%DATADIR%%/lib/PTL/include/sparse2d.h
+%%DATADIR%%/lib/PTL/include/sparse2d_ruler.h
+%%DATADIR%%/lib/PTL/include/sparse_linalg.h
+%%DATADIR%%/lib/PTL/include/std/bits/c++allocator.h
+%%DATADIR%%/lib/PTL/include/std/bits/stl_alloc.h
+%%DATADIR%%/lib/PTL/include/std/fstream
+%%DATADIR%%/lib/PTL/include/std/list
+%%DATADIR%%/lib/PTL/include/std/map
+%%DATADIR%%/lib/PTL/include/std/set
+%%DATADIR%%/lib/PTL/include/std/vector
+%%DATADIR%%/lib/PTL/include/totally_unimodular.h
+%%DATADIR%%/lib/PTL/include/tree_containers.h
+%%DATADIR%%/lib/PTL/include/tree_iterators.h
+%%DATADIR%%/lib/PTL/include/type_manip.h
+%%DATADIR%%/lib/PTL/include/type_union.h
+%%DATADIR%%/lib/PTL/skel/bindings.cc
+%%DATADIR%%/lib/PTL/skel/bindings.h
+%%DATADIR%%/lib/PTL/skel/polymake.h
+%%DATADIR%%/perllib/Polymake.pm
+%%DATADIR%%/perllib/Polymake/Background.pm
+%%DATADIR%%/perllib/Polymake/Core/Application.pm
+%%DATADIR%%/perllib/Polymake/Core/CPlusPlus.pm
+%%DATADIR%%/perllib/Polymake/Core/CPlusPlus_config.pm
+%%DATADIR%%/perllib/Polymake/Core/Compat.pm
+%%DATADIR%%/perllib/Polymake/Core/Customize.pm
+%%DATADIR%%/perllib/Polymake/Core/InteractiveCommands.pm
+%%DATADIR%%/perllib/Polymake/Core/InteractiveHelp.pm
+%%DATADIR%%/perllib/Polymake/Core/Object.pm
+%%DATADIR%%/perllib/Polymake/Core/ObjectType.pm
+%%DATADIR%%/perllib/Polymake/Core/PlainFile.pm
+%%DATADIR%%/perllib/Polymake/Core/Preference.pm
+%%DATADIR%%/perllib/Polymake/Core/Property.pm
+%%DATADIR%%/perllib/Polymake/Core/PropertyType.pm
+%%DATADIR%%/perllib/Polymake/Core/PropertyValue.pm
+%%DATADIR%%/perllib/Polymake/Core/Rule.pm
+%%DATADIR%%/perllib/Polymake/Core/RuleFilter.pm
+%%DATADIR%%/perllib/Polymake/Core/Scheduler.pm
+%%DATADIR%%/perllib/Polymake/Core/Scheduler_debug.pm
+%%DATADIR%%/perllib/Polymake/Core/Shell.pm
+%%DATADIR%%/perllib/Polymake/Core/XMLfile.pm
+%%DATADIR%%/perllib/Polymake/Enum.pm
+%%DATADIR%%/perllib/Polymake/Ext.pm
+%%DATADIR%%/perllib/Polymake/Namespaces.pm
+%%DATADIR%%/perllib/Polymake/Overload.pm
+%%DATADIR%%/perllib/Polymake/Pipe.pm
+%%DATADIR%%/perllib/Polymake/ProgramPipe.pm
+%%DATADIR%%/perllib/Polymake/Scope.pm
+%%DATADIR%%/perllib/Polymake/Sockets.pm
+%%DATADIR%%/perllib/Polymake/Struct.pm
+%%DATADIR%%/perllib/Polymake/Tempfile.pm
+%%DATADIR%%/perllib/Polymake/User.pm
+%%DATADIR%%/perllib/Polymake/config_utils.pl
+%%DATADIR%%/perllib/Polymake/regex.pl
+%%DATADIR%%/perllib/Polymake/utils.pl
+%%DATADIR%%/povray/polymake-scene.pov
+%%DATADIR%%/povray/polypov.ini
+%%DATADIR%%/scripts/configure_java
+%%DATADIR%%/scripts/doxygen
+%%DATADIR%%/scripts/extract_docs
+%%DATADIR%%/scripts/generate_docs
+%%DATADIR%%/scripts/list_all_properties
+%%DATADIR%%/scripts/list_suspicious_rules
+%%DATADIR%%/scripts/print_face_lattice
+%%DATADIR%%/scripts/tarballs
+%%DATADIR%%/support/Doxyfile.tmpl
+%%DATADIR%%/support/build.make
+%%DATADIR%%/support/extension.make
+%%DATADIR%%/support/install.pl
+%%DATADIR%%/support/locate_build_dir
+%%DATADIR%%/support/polymake_build.xml
+%%DATADIR%%/support/utils.make
+%%DATADIR%%/xml/datafile.dtd
+%%DATADIR%%/xml/datafile.rng
+%%DATADIR%%/xml/docfile.rng
+%%DATADIR%%/xml/documentation/all.xsl
+%%DATADIR%%/xml/documentation/doc.xsl
+%%DATADIR%%/xml/documentation/doc_index.xsl
+%%DATADIR%%/xml/documentation/docstyle.css
+%%DATADIR%%/xml/documentation/entities/xhtml-lat1.ent
+%%DATADIR%%/xml/documentation/entities/xhtml-symbol.ent
+%%DATADIR%%/xml/documentation/functions.js
+%%DATADIR%%/xml/documentation/images/doclogo.png
+%%DATADIR%%/xml/documentation/images/minus.png
+%%DATADIR%%/xml/documentation/images/plus.png
+%%DATADIR%%/xml/documentation/images/tocdot2.png
+%%DATADIR%%/xml/documentation/index.xsl
+%%DATADIR%%/xml/documentation/macros.xsl
+%%DATADIR%%/xml/trivial-copy.xslt
+%%DATADIR%%/xml/upgrade-2.9.7.xslt
+%%DATADIR%%/xml/upgrade-2.9.8.xslt
+libexec/polymake/perlx/%%PERL_VERSION%%/%%PERL_REAL_ARCH%%/auto/Polymake/Ext/.packlist
+libexec/polymake/perlx/%%PERL_VERSION%%/%%PERL_REAL_ARCH%%/auto/Polymake/Ext/Ext.bs
+libexec/polymake/perlx/%%PERL_VERSION%%/%%PERL_REAL_ARCH%%/auto/Polymake/Ext/Ext.so
+@dirrm libexec/polymake/perlx/%%PERL_VERSION%%/%%PERL_REAL_ARCH%%/auto/Polymake/Ext
+@dirrm libexec/polymake/perlx/%%PERL_VERSION%%/%%PERL_REAL_ARCH%%/auto/Polymake
 @dirrm libexec/polymake/perlx/%%PERL_VERSION%%/%%PERL_REAL_ARCH%%/auto
 @dirrm libexec/polymake/perlx/%%PERL_VERSION%%/%%PERL_REAL_ARCH%%
 @dirrm libexec/polymake/perlx/%%PERL_VERSION%%
-@dirrm share/polymake/support
-@dirrm share/polymake/scripts
-@dirrm share/polymake/povray
+@dirrm %%DATADIR%%/xml/documentation/images
+@dirrm %%DATADIR%%/xml/documentation/entities
+@dirrm %%DATADIR%%/xml/documentation
+@dirrm %%DATADIR%%/xml
+@dirrm %%DATADIR%%/support
+@dirrm %%DATADIR%%/scripts
+@dirrm %%DATADIR%%/povray
+@dirrm %%DATADIR%%/perllib/Polymake/Core
+@dirrm %%DATADIR%%/perllib/Polymake
+@dirrm %%DATADIR%%/perllib
+@dirrm %%DATADIR%%/lib/PTL/skel
+@dirrm %%DATADIR%%/lib/PTL/include/std/bits
+@dirrm %%DATADIR%%/lib/PTL/include/std
+@dirrm %%DATADIR%%/lib/PTL/include/perl
+@dirrm %%DATADIR%%/lib/PTL/include
+@dirrm %%DATADIR%%/lib/PTL
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%/java_build/jreality/lib
+@dirrm %%DATADIR%%/java_build/jreality
+@dirrm %%DATADIR%%/java_build/jni
+@dirrm %%DATADIR%%/java_build
+@dirrm %%DATADIR%%/apps/tropical/src
+@exec mkdir -p %D/%%DATADIR%%/apps/tropical/scripts
+@dirrm %%DATADIR%%/apps/tropical/scripts
+@dirrm %%DATADIR%%/apps/tropical/rules
+@dirrm %%DATADIR%%/apps/tropical/include
+@dirrm %%DATADIR%%/apps/tropical
+@dirrm %%DATADIR%%/apps/topaz/src
+@dirrm %%DATADIR%%/apps/topaz/scripts
+@dirrm %%DATADIR%%/apps/topaz/rules
+@dirrm %%DATADIR%%/apps/topaz/include
+@dirrm %%DATADIR%%/apps/topaz
+@dirrm %%DATADIR%%/apps/polytope/src
+@dirrm %%DATADIR%%/apps/polytope/scripts
+@dirrm %%DATADIR%%/apps/polytope/rules
+@dirrm %%DATADIR%%/apps/polytope/perllib
+@dirrm %%DATADIR%%/apps/polytope/include
+@dirrm %%DATADIR%%/apps/polytope
+@dirrm %%DATADIR%%/apps/matroid/src
+@dirrm %%DATADIR%%/apps/matroid/rules
+@dirrm %%DATADIR%%/apps/matroid/include
+@dirrm %%DATADIR%%/apps/matroid
+@dirrm %%DATADIR%%/apps/graph/src
+@dirrm %%DATADIR%%/apps/graph/rules
+@dirrm %%DATADIR%%/apps/graph/perllib/Visual
+@dirrm %%DATADIR%%/apps/graph/perllib
+@dirrm %%DATADIR%%/apps/graph/include
+@dirrm %%DATADIR%%/apps/graph
+@dirrm %%DATADIR%%/apps/common/src/native
+@dirrm %%DATADIR%%/apps/common/src
+@exec mkdir -p %D/%%DATADIR%%/apps/common/scripts
+@dirrm %%DATADIR%%/apps/common/scripts
+@dirrm %%DATADIR%%/apps/common/rules
+@dirrm %%DATADIR%%/apps/common/perllib/Visual
+@dirrm %%DATADIR%%/apps/common/perllib
+@dirrm %%DATADIR%%/apps/common/include/perl/bindings
+@dirrm %%DATADIR%%/apps/common/include/perl
+@dirrm %%DATADIR%%/apps/common/include
+@dirrm %%DATADIR%%/apps/common
+@dirrm %%DATADIR%%/apps
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libexec/polymake/perlx
-@dirrm share/polymake/perl/Poly
-@dirrm share/polymake/perl
-@dirrm share/polymake/modules/graph/rules
-@dirrm share/polymake/modules/graph/perllib
-@dirrm libexec/polymake/modules/graph/bin
-@dirrm libexec/polymake/modules/graph
-@dirrm share/polymake/modules/graph
-@dirrm share/polymake/modules/common/rules
-@dirrm share/polymake/modules/common/perllib
-@dirrm libexec/polymake/modules/common/bin
-@dirrm libexec/polymake/modules/common
-@dirrm share/polymake/modules/common
-@dirrm libexec/polymake/modules
-@dirrm share/polymake/modules
-@dirrm share/polymake/lib/poly_client/include
-@dirrm share/polymake/lib/poly_client
-@dirrm share/polymake/lib/gmp_wrapper/include
-@dirrm share/polymake/lib/gmp_wrapper
-@dirrm share/polymake/lib/PTL/include/std/ext
-@dirrm share/polymake/lib/PTL/include/std/bits
-@dirrm share/polymake/lib/PTL/include/std
-@dirrm share/polymake/lib/PTL/include/ports
-@dirrm share/polymake/lib/PTL/include
-@dirrm share/polymake/lib/PTL
+@dirrm libexec/polymake/lib/jni
 @dirrm libexec/polymake/lib
-@dirrm share/polymake/lib
-@dirrm share/polymake/jars
-@dirrm %%DOCSDIR%%/perl
-@dirrm %%DOCSDIR%%/lib
-@dirrm %%DOCSDIR%%/images
-@dirrm %%DOCSDIR%%/dhtml/images
-@dirrm %%DOCSDIR%%/dhtml
-@dirrm %%DOCSDIR%%/apps/topaz/objects/Visual/SimplicialComplexLattice
-@dirrm %%DOCSDIR%%/apps/topaz/objects/Visual/SimplicialComplex
-@dirrm %%DOCSDIR%%/apps/topaz/objects/Visual
-@dirrm %%DOCSDIR%%/apps/topaz/objects/SimplicialComplex
-@dirrm %%DOCSDIR%%/apps/topaz/objects
-@dirrm %%DOCSDIR%%/apps/topaz/images
-@dirrm %%DOCSDIR%%/apps/topaz
-@dirrm %%DOCSDIR%%/apps/surface/samples
-@dirrm %%DOCSDIR%%/apps/surface/objects/Visual/SurfaceLattice
-@dirrm %%DOCSDIR%%/apps/surface/objects/Visual/Surface
-@dirrm %%DOCSDIR%%/apps/surface/objects/Visual
-@dirrm %%DOCSDIR%%/apps/surface/objects/Surface
-@dirrm %%DOCSDIR%%/apps/surface/objects
-@dirrm %%DOCSDIR%%/apps/surface/images
-@dirrm %%DOCSDIR%%/apps/surface
-@dirrm %%DOCSDIR%%/apps/polytope/objects/VoronoiDiagram
-@dirrm %%DOCSDIR%%/apps/polytope/objects/Visual/Schlegel
-@dirrm %%DOCSDIR%%/apps/polytope/objects/Visual/PolytopeLattice
-@dirrm %%DOCSDIR%%/apps/polytope/objects/Visual/PolytopeGraph
-@dirrm %%DOCSDIR%%/apps/polytope/objects/Visual/Polytope
-@dirrm %%DOCSDIR%%/apps/polytope/objects/Visual/Framework
-@dirrm %%DOCSDIR%%/apps/polytope/objects/Visual
-@dirrm %%DOCSDIR%%/apps/polytope/objects/TightSpan
-@dirrm %%DOCSDIR%%/apps/polytope/objects/SchlegelDiagram
-@dirrm %%DOCSDIR%%/apps/polytope/objects/RationalPolytope
-@dirrm %%DOCSDIR%%/apps/polytope/objects/PropagatedPolytope
-@dirrm %%DOCSDIR%%/apps/polytope/objects/Polytope
-@dirrm %%DOCSDIR%%/apps/polytope/objects/Framework
-@dirrm %%DOCSDIR%%/apps/polytope/objects/FloatPolytope
-@dirrm %%DOCSDIR%%/apps/polytope/objects
-@dirrm %%DOCSDIR%%/apps/polytope/lib
-@dirrm %%DOCSDIR%%/apps/polytope/images
-@dirrm %%DOCSDIR%%/apps/polytope
-@dirrm %%DOCSDIR%%/apps
-@dirrm %%DOCSDIR%%
-@dirrm share/polymake/apps/topaz/rules
-@dirrm share/polymake/apps/topaz/include
-@dirrm libexec/polymake/apps/topaz/bin
-@dirrm libexec/polymake/apps/topaz
-@dirrm share/polymake/apps/topaz
-@dirrm share/polymake/apps/surface/scripts
-@dirrm share/polymake/apps/surface/rules
-@dirrm libexec/polymake/apps/surface/bin
-@dirrm libexec/polymake/apps/surface
-@dirrm share/polymake/apps/surface
-@dirrm share/polymake/apps/polytope/scripts
-@dirrm share/polymake/apps/polytope/rules
-@dirrm share/polymake/apps/polytope/perllib
-@dirrm share/polymake/apps/polytope/include
-@dirrm libexec/polymake/apps/polytope/bin
-@dirrm libexec/polymake/apps/polytope
-@dirrm share/polymake/apps/polytope
-@dirrm libexec/polymake/apps
-@dirrm share/polymake/apps
 @dirrm libexec/polymake
-@dirrm share/polymake
