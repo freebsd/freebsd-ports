@@ -1,5 +1,5 @@
---- tclock.c.orig	Mon Dec 21 20:56:29 1992
-+++ tclock.c	Tue Sep 24 13:02:59 2002
+--- tclock.c.orig	1992-12-21 19:56:29.000000000 +0000
++++ tclock.c	2011-06-20 18:42:37.000000000 +0100
 @@ -22,7 +22,10 @@
   */ 
  
@@ -53,6 +53,15 @@
  }
  
  unsigned long
+@@ -294,7 +295,7 @@
+   strcpy(appClass, "Tclock");
+ }
+ 
+-void
++int
+ main(ac, av)
+   int ac;
+   char **av;
 @@ -309,6 +310,7 @@
    extern
    char		*getenv();
