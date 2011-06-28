@@ -7,12 +7,15 @@
 
 PORTNAME=	ExtUtils-MakeMaker
 PORTVERSION=	6.56
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Designed to write a Makefile for an extension module
+
+CONFLICTS=	p5-ExtUtils-Install-[0-9]*
 
 PERL_CONFIGURE=	yes
 
