@@ -1,0 +1,20 @@
+--- ipc/glue/GeckoChildProcessHost.cpp.orig	2011-06-15 23:57:27.000000000 +0200
++++ ipc/glue/GeckoChildProcessHost.cpp	2011-06-27 23:48:28.799495181 +0200
+@@ -433,7 +433,16 @@
+ #ifdef ANDROID
+     path += "/lib";
+ #endif
+-    newEnvVars["LD_LIBRARY_PATH"] = path.get();
++    const char *ld_library_path = PR_GetEnv("LD_LIBRARY_PATH");
++    nsCString new_ld_lib_path;
++    if (ld_library_path && *ld_library_path) {
++        new_ld_lib_path.Assign(ld_library_path);
++        new_ld_lib_path.AppendLiteral(":");
++        new_ld_lib_path.Append(path.get());
++        newEnvVars["LD_LIBRARY_PATH"] = new_ld_lib_path.get();
++    } else {
++        newEnvVars["LD_LIBRARY_PATH"] = path.get();
++    }
+ #elif OS_MACOSX
+     newEnvVars["DYLD_LIBRARY_PATH"] = path.get();
+ #endif
