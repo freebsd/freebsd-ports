@@ -39,15 +39,15 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>asterisk14</name>
-	<range><gt>1.4.*</gt><lt>1.4.41.1</lt></range>
+	<range><gt>1.4.*</gt><lt>1.4.41.2</lt></range>
       </package>
       <package>
 	<name>asterisk16</name>
-	<range><gt>1.6.*</gt><lt>1.6.2.18.1</lt></range>
+	<range><gt>1.6.*</gt><lt>1.6.2.18.2</lt></range>
       </package>
       <package>
 	<name>asterisk18</name>
-	<range><gt>1.8.*</gt><lt>1.8.4.3</lt></range>
+	<range><gt>1.8.*</gt><lt>1.8.4.4</lt></range>
       </package>
     </affects>
     <description>
@@ -66,19 +66,24 @@ Note:  Please add new entries to the beginning of this file.
 	  <p>AST-2011-010: A memory address was inadvertently transmitted over
 	    the network via IAX2 via an option control frame and the remote party
 	    would try to access it.</p>
+	  <p>Possible enumeration of SIP users due to differing authentication
+	    responses.</p>
 	</blockquote>
       </body>
     </description>
     <references>
       <cvename>CVE-2011-2529</cvename>
       <cvename>CVE-2011-2535</cvename>
+      <cvename>CVE-2011-2536</cvename>
       <url>http://downloads.asterisk.org/pub/security/AST-2011-008.html</url>
       <url>http://downloads.asterisk.org/pub/security/AST-2011-009.html</url>
       <url>http://downloads.asterisk.org/pub/security/AST-2011-010.html</url>
+      <url>http://downloads.asterisk.org/pub/security/AST-2011-011.html</url>
     </references>
     <dates>
       <discovery>2011-06-24</discovery>
       <entry>2011-06-25</entry>
+      <modified>2011-06-29</modified>
     </dates>
   </vuln>
 
