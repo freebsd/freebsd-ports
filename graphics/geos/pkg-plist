@@ -357,6 +357,7 @@ include/geos/util/math.h
 include/geos/version.h
 include/geos_c.h
 lib/libgeos-3.3.0.so
+lib/libgeos.so.0
 lib/libgeos.a
 lib/libgeos.la
 lib/libgeos.so
