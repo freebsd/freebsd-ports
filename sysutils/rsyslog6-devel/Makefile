@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rsyslog
-PORTVERSION=	6.1.1
-PORTREVISION?=	1
+PORTVERSION=	6.1.9
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.rsyslog.com/files/download/rsyslog/
 .ifdef MNAME
@@ -17,11 +16,15 @@ PKGNAMESUFFIX?=	-${MNAME}
 MAINTAINER=	pgollucci@FreeBSD.org
 COMMENT?=	Syslogd supporting SQL, TCP and TLS
 
+USE_LDCONFIG=	yes
+
 .ifdef MNAME
 RUN_DEPENDS=	rsyslog>=${PORTVERSION}:${PORTSDIR}/sysutils/rsyslog6-devel
 PLIST=		${.CURDIR}/pkg-plist
 LATEST_LINK=	rsyslog6-devel-${MNAME}
 .else
+LIB_DEPENDS=	ee:${PORTSDIR}/devel/libee \
+		estr:${PORTSDIR}/devel/libestr
 LATEST_LINK=	rsyslog6-devel
 .endif
 
@@ -35,7 +38,7 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-mysql-microseconds
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sane-hostname
 .endif
 
-CONFLICTS=	rsyslog-devel-[!6].[0-9]* 
+CONFLICTS=	rsyslog-devel-[!6].[0-9]*
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
@@ -48,7 +51,7 @@ CONFIGURE_ARGS+=--enable-rtinst --enable-debug
 .if ${ARCH} == "i386"
 CPPFLAGS+=-march=i686
 .endif
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" LIBESTR_CFLAGS="${CPPFLAGS}" LIBESTR_LIBS="${LDFLAGS} -lestr"  LIBEE_CFLAGS="${CPPFLAGS}" LIBEE_LIBS="${LDFLAGS} -lee"
 
 .ifndef MNAME
 MAN8=	rsyslogd.8

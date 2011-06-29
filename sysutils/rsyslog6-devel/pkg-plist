@@ -6,6 +6,8 @@ lib/rsyslog/immark.la
 lib/rsyslog/immark.so
 lib/rsyslog/imtcp.la
 lib/rsyslog/imtcp.so
+lib/rsyslog/imtemplate.la
+lib/rsyslog/imtemplate.so
 lib/rsyslog/imudp.la
 lib/rsyslog/imudp.so
 lib/rsyslog/imuxsock.la
@@ -49,8 +51,8 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/imfile.html
 %%PORTDOCS%%%%DOCSDIR%%/imgssapi.html
 %%PORTDOCS%%%%DOCSDIR%%/imklog.html
-%%PORTDOCS%%%%DOCSDIR%%/imptcp.html
 %%PORTDOCS%%%%DOCSDIR%%/impstats.html
+%%PORTDOCS%%%%DOCSDIR%%/imptcp.html
 %%PORTDOCS%%%%DOCSDIR%%/imrelp.html
 %%PORTDOCS%%%%DOCSDIR%%/imsolaris.html
 %%PORTDOCS%%%%DOCSDIR%%/imtcp.html
@@ -61,6 +63,8 @@ sbin/rsyslogd
 %%PORTDOCS%%%%DOCSDIR%%/licensing.html
 %%PORTDOCS%%%%DOCSDIR%%/log_rotation_fix_size.html
 %%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%%%DOCSDIR%%/mmnormalize.html
+%%PORTDOCS%%%%DOCSDIR%%/mmsnmptrapd.html
 %%PORTDOCS%%%%DOCSDIR%%/modules.html
 %%PORTDOCS%%%%DOCSDIR%%/multi_ruleset.html
 %%PORTDOCS%%%%DOCSDIR%%/netstream.html
