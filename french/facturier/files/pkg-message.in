@@ -1,19 +1,19 @@
 ************************************************************************
-Le Facturier a été installé dans %%FACT_REP%%.
+Le Facturier a été installé dans %%WWWDIR%%.
 
 Si ce n'est pas déjà fait, il faut intaller un serveur MySQL sur la
 machine %%DBSERV%%
 (vous pouvez utiliser un port databases/mysqlxx-server sur FreeBSD).
 
 Vous devez maintenant créer une base MySQL sur le serveur %%DBSERV%% :
-	cd %%FACT_REP%%/sql
+	cd %%WWWDIR%%/sql
 	mysql -u%%DBOWN%% -p%%DBPWD%% -h%%DBSERV%% < facturier.sql
 où %%DBOWN%% a le droit de créer des bases MySQL.
 (Pour plus de détails, ou pour une montée de version,
  Cf. %%DOCSDIR%%/README.txt)
 
 Il faut ensuite configurer le fichier Conf.pm, qui se trouve dans
-%%FACT_REP%%/lib/
+%%WWWDIR%%/lib/
 en particulier les variables $USERBDD, $MDPBDD et $HOSTBDD.
 
 Redémarrez Apache pour que les modifications de httpd.conf soient prises

@@ -13,12 +13,12 @@ MASTER_SITES=	http://ignu.ungi.org/download/	\
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	thierry
 
-MAINTAINER=	thierry@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Logiciel de facturation pour P.M.I. & P.M.E.
 
 RUN_DEPENDS=	${LOCALBASE}/bin/htmldoc:${PORTSDIR}/textproc/htmldoc			\
-		${PBASE}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql	\
-		${PBASE}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash
+		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql	\
+		${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -27,29 +27,23 @@ USE_APACHE=	1.3+
 USE_PERL5_RUN=	yes
 USE_MYSQL=	yes
 
-APACHE_CONF=	${LOCALBASE}/${APACHEETCDIR}/httpd.conf
+SUB_FILES=	pkg-deinstall
 
-PBASE=		${SITE_PERL}
+APACHE_CONF=	${LOCALBASE}/${APACHEETCDIR}/httpd.conf
 
 DBOWN?=		PROP_BD
 DBPWD?=		MDP_BD
 DBSERV?=	localhost
-
-LFACT_REP?=	www/${PORTNAME}
-FACT_REP=	${PREFIX}/${LFACT_REP}
-FACT_INC=	${PREFIX}/etc/${PORTNAME}
-FACT_CNF=	${FACT_REP}/lib/Conf.pm
-
-PLIST_SUB=	FACT_REP=${LFACT_REP}
+FACT_CNF=	lib/Conf.pm
 
 SS_REPS=	cgi-bin html lib log sql
-REINPLACE_ARGS=	-i.beforeFacturier
 
 PORTDOCS=	README.txt todo.txt
 
-SUB_FILES=	pkg-message
-SUB_LIST=	FACT_REP=${FACT_REP} DBOWN=${DBOWN} DBPWD=${DBPWD}	\
-		DBSERV=${DBSERV}
+FACT_HTTP_CONF=	facturier.conf
+SUB_FILES+=	pkg-message ${FACT_HTTP_CONF}
+SUB_LIST=	DBOWN=${DBOWN} DBPWD=${DBPWD} DBSERV=${DBSERV} \
+		APACHE_CONF=${APACHE_CONF}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 TRASHFILES=	lib/Conf.pm~ cgi-bin/.articlemodif.cgi.swp lib/.Conf.pm.swp	\
@@ -64,44 +58,52 @@ pre-everything::
 	@${ECHO_MSG} "		(localhost par défaut)."
 	@${ECHO_MSG} ""
 
-post-patch:
+post-extract:
+	-@${RM} -r ${WRKSRC}/CVS
 	@${RM} ${TRASHFILES:S|^|${WRKSRC}/|}
+
+post-patch:
 # perl PREFIX safeness
-	@${FIND} ${WRKSRC} -type f | ${XARGS} -n 10 -x \
-		${REINPLACE_CMD} -E -e 's|/usr/bin/perl|${PERL}|'
-	@${FIND} ${WRKSRC} -name \*.beforeFacturier -exec ${RM} {} \;
+	@${FIND} ${WRKSRC}/cgi-bin -type f -print0 | ${XARGS} -0 \
+		${REINPLACE_CMD} -e 's|/usr/bin/perl|${PERL}|'
+
+	@${REINPLACE_CMD} -e "s:%%WWWDIR%%:${WWWDIR}:;s:%%PREFIX%%:${PREFIX}:;	\
+		s:%%DBOWN%%:${DBOWN}:;s:%%DBPWD%%:${DBPWD}:;s:%%DBSERV%%:${DBSERV}:;	\
+		s:%%LOCALBASE%%:${LOCALBASE}:"	${WRKSRC}/lib/Conf.pm
+
+	@${FIND} ${WRKSRC} \( -name "*.bak" -o -name "*.orig" \) -delete
+	@${MV} ${WRKSRC}/${FACT_CNF} ${WRKSRC}/${FACT_CNF}.dist
 
 do-install:
-	@${MKDIR} ${FACT_REP}
-	@${INSTALL_DATA} ${WRKSRC}/version.txt ${FACT_REP}
+	@${MKDIR} ${WWWDIR}
+	@${INSTALL_DATA} ${WRKSRC}/version.txt ${WWWDIR}
+
 .for REP in ${SS_REPS}
-	@${CP} -Rp ${WRKSRC}/${REP} ${FACT_REP}
+	@${CP} -Rp ${WRKSRC}/${REP} ${WWWDIR}
 .endfor
-	@${REINPLACE_CMD} -e "s:%%FACT_REP%%:${FACT_REP}:;s:%%PREFIX%%:${PREFIX}:;	\
-		s:%%DBOWN%%:${DBOWN}:;s:%%DBPWD%%:${DBPWD}:;s:%%DBSERV%%:${DBSERV}:;	\
-		s:%%LOCALBASE%%:${LOCALBASE}:"	\
-		${FACT_CNF}
-	@${RM} ${FACT_CNF}.beforeFacturier
-	@${CP} -p ${FACT_CNF} ${FACT_CNF}.dist
+
+	@[ -f ${WWWDIR}/${FACT_CNF} ] || \
+		${CP} ${WWWDIR}/${FACT_CNF}.dist ${WWWDIR}/${FACT_CNF}
+
 # Set perms
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${FACT_REP}
-	@${CHMOD} -R 644 ${FACT_REP}
-	@${FIND} ${FACT_REP} -type d -exec ${CHMOD} a+x {} \;
-	@${CHMOD} -R u+x ${FACT_REP}/cgi-bin
-	@${FIND} ${FACT_REP}/lib -type f -exec ${CHMOD} go-r {} \;
-	@${CHMOD} -R 777 ${FACT_REP}/log
+	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
+	@${CHMOD} -R 644 ${WWWDIR}
+	@${FIND} ${WWWDIR} -type d -exec ${CHMOD} a+x {} \;
+	@${CHMOD} -R u+x ${WWWDIR}/cgi-bin
+	@${FIND} ${WWWDIR}/lib -type f -exec ${CHMOD} go-r {} \;
+	@${CHMOD} -R 775 ${WWWDIR}/log
+
 # Configure Apache
+# If apache13 is gone from the ports tree,
+# then it's saver to use the Include directory
+	${MKDIR} ${ETCDIR}
+	${CP} ${WRKDIR}/${FACT_HTTP_CONF} ${ETCDIR}
 	@(if [ -f ${APACHE_CONF} ] ; then \
-		${MKDIR} ${FACT_INC} ; \
-		${CP} -p ${FILESDIR}/httpd.conf.facturier ${FACT_INC} ; \
-		${REINPLACE_CMD} -e "s:%%FACT_REP%%:${FACT_REP}:g" \
-			${FACT_INC}/httpd.conf.facturier ; \
-		${RM} ${FACT_INC}/httpd.conf.facturier.beforeFacturier ; \
 		${ECHO_MSG} "===> Updating ${APACHE_CONF}..." ; \
-		${CP} -p ${APACHE_CONF} ${APACHE_CONF}.beforeFacturier ; \
 		${ECHO_CMD} "# Le Facturier's cgi-bin directory" >> ${APACHE_CONF} ; \
-		${ECHO_CMD} "Include ${FACT_INC}" >> ${APACHE_CONF} ; \
+		${ECHO_CMD} "Include ${ETCDIR}" >> ${APACHE_CONF} ; \
 	fi)
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/
 	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}/
