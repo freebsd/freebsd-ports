@@ -10,13 +10,14 @@ PORTVERSION=	1.3
 DISTVERSIONPREFIX=	plugins-
 PORTREVISION?=	1
 CATEGORIES=	graphics
-MASTER_SITES=	http://piksel.no/${PORTNAME}/releases/ \
+MASTER_SITES?=	http://piksel.no/${PORTNAME}/releases/ \
 		ftp://ftp.dyne.org/${PORTNAME}/releases/ \
 		http://distfiles.macports.org/${PORTNAME}-plugins/
 
 MAINTAINER=	bsdkaffee@gmail.com
-COMMENT=	Minimalistic plugin API for video effects
+COMMENT?=	Minimalistic plugin API for video effects
 
+.if !defined(BUILDING_FREI0R_METAPORT)
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack pkgconfig
 MAKE_JOBS_SAFE=	yes
@@ -27,15 +28,17 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .if defined(BUILDING_FREI0R_OPENCV) && defined(BUILDING_FREI0R_GAVL)
-IGNORE=		cannot build opencv and gavl plugins simultaneously
+IGNORE=		cannot build OpenCV and gavl plugins simultaneously
 .endif
 
 .if defined(BUILDING_FREI0R_OPENCV)
+PORTREVISION=	1
 COMMENT=	Frei0r OpenCV plugins
 PKGNAMESUFFIX=  -plugins-opencv
 LIB_DEPENDS+=	opencv_legacy.2:${PORTSDIR}/graphics/opencv
 FREI0R_PLUGINS=	facebl0r facedetect
 .elif defined(BUILDING_FREI0R_GAVL)
+PORTREVISION=	1
 COMMENT=	Frei0r gavl plugins
 PKGNAMESUFFIX=  -plugins-gavl
 LIB_DEPENDS+=	gavl.1:${PORTSDIR}/multimedia/gavl
@@ -104,3 +107,5 @@ do-install:
 .endif #!defined(FREI0R_PLUGINS)
 
 .include <bsd.port.post.mk>
+
+.endif # !defined(BUILDING_FREI0R_METAPORT)
