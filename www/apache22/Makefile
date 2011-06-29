@@ -41,7 +41,7 @@ USE_ICONV=		yes
 USE_AUTOTOOLS=		autoconf libtool
 USE_PERL5=		yes
 USE_RC_SUBR=		apache22 htcacheclean
-LIBTOOLFILES=	configure
+LIBTOOLFILES=	configure.in
 
 MPM_ITK_VERSION?=	20110321-01
 
