@@ -146,6 +146,7 @@ ports_x11_wm                    ports/x11-wm
 3dm                             ports/sysutils/3dm
 3dpong                          ports/games/3dpong
 3proxy                          ports/net/3proxy
+44bsd-csh                       ports/shells/44bsd-csh
 44bsd-hunt                      ports/games/44bsd-hunt
 44bsd-more                      ports/sysutils/44bsd-more
 4stattack                       ports/games/4stattack
@@ -6323,6 +6324,7 @@ ja-mobileimap                   ports/japanese/mobileimap
 ja-monafonts                    ports/japanese/monafonts
 ja-monafonts-ttf                ports/japanese/monafonts-ttf
 ja-mozc-additions               ports/japanese/mozc-additions
+ja-mozc-el                      ports/japanese/mozc-el
 ja-mozc-server                  ports/japanese/mozc-server
 ja-mozc-tool                    ports/japanese/mozc-tool
 ja-mt                           ports/japanese/MT
@@ -6691,7 +6693,6 @@ jdictionary-int-eng             ports/textproc/jdictionary-int-eng
 jdiskreport                     ports/sysutils/jdiskreport
 jdk13                           ports/java/jdk13
 jdk13-doc                       ports/java/jdk13-doc
-jdk14                           ports/java/jdk14
 jdk14-doc                       ports/java/jdk14-doc
 jdk15                           ports/java/jdk15
 jdk15-doc                       ports/java/jdk15-doc
@@ -10306,6 +10307,7 @@ ocaml-xstr                      ports/devel/ocaml-xstr
 ocaml-xstrp4                    ports/devel/ocaml-xstrp4
 ocaml-zip                       ports/archivers/ocaml-zip
 ocamlduce                       ports/lang/ocamlduce
+ocamlgsl                        ports/math/ocamlgsl
 ocamlweb                        ports/devel/ocamlweb
 ocfpcsc                         ports/devel/ocfpcsc
 oclock                          ports/x11-clocks/oclock
@@ -12462,6 +12464,7 @@ p5-HTML-Lint                    ports/www/p5-HTML-Lint
 p5-HTML-Location                ports/www/p5-HTML-Location
 p5-HTML-Macro                   ports/www/p5-HTML-Macro
 p5-HTML-Mason                   ports/www/p5-HTML-Mason
+p5-HTML-MobileConverter         ports/www/p5-HTML-MobileConverter
 p5-HTML-Pager                   ports/www/p5-HTML-Pager
 p5-HTML-Parser                  ports/www/p5-HTML-Parser
 p5-HTML-Parser-Simple           ports/www/p5-HTML-Parser-Simple
@@ -12882,6 +12885,7 @@ p5-MARC-Record                  ports/textproc/p5-MARC-Record
 p5-MARC-XML                     ports/textproc/p5-MARC-XML
 p5-MD5                          ports/security/p5-MD5
 p5-MIDI                         ports/audio/p5-MIDI
+p5-MIME-AltWords                ports/mail/p5-MIME-AltWords
 p5-MIME-Base32                  ports/converters/p5-MIME-Base32
 p5-MIME-Base64                  ports/converters/p5-MIME-Base64
 p5-MIME-Base64-URLSafe          ports/converters/p5-MIME-Base64-URLSafe
@@ -13070,6 +13074,7 @@ p5-Method-Alias                 ports/devel/p5-Method-Alias
 p5-Method-Signatures-Simple     ports/devel/p5-Method-Signatures-Simple
 p5-Mixin-Linewise               ports/devel/p5-Mixin-Linewise
 p5-Mknod                        ports/devel/p5-Mknod
+p5-Mobile-UserAgent             ports/www/p5-Mobile-UserAgent
 p5-Mock-Quick                   ports/devel/p5-Mock-Quick
 p5-ModPerl-VersionUtil          ports/www/p5-ModPerl-VersionUtil
 p5-Modern-Perl                  ports/lang/p5-Modern-Perl
@@ -14467,6 +14472,7 @@ p5-Text-Wrapper                 ports/textproc/p5-Text-Wrapper
 p5-Text-Xslate                  ports/textproc/p5-Text-Xslate
 p5-Text-vCard                   ports/textproc/p5-Text-vCard
 p5-Text-vFile-asData            ports/devel/p5-Text-vFile-asData
+p5-Text-xSV                     ports/databases/p5-Text-xSV
 p5-TheSchwartz                  ports/devel/p5-TheSchwartz
 p5-TheSchwartz-Simple           ports/devel/p5-TheSchwartz-Simple
 p5-TheSchwartz-Worker-SendEmail  ports/devel/p5-TheSchwartz-Worker-SendEmail
@@ -14739,8 +14745,10 @@ p5-WebService-CIA               ports/www/p5-WebService-CIA
 p5-WebService-GData             ports/www/p5-WebService-GData
 p5-WebService-Google-Reader     ports/www/p5-WebService-Google-Reader
 p5-WebService-Google-Sets       ports/www/p5-WebService-Google-Sets
+p5-WebService-IMDB              ports/www/p5-WebService-IMDB
 p5-WebService-ISBNDB            ports/www/p5-WebService-ISBNDB
 p5-WebService-Linode            ports/www/p5-WebService-Linode
+p5-WebService-MoviePosterDB     ports/www/p5-WebService-MoviePosterDB
 p5-WebService-MusicBrainz       ports/www/p5-WebService-MusicBrainz
 p5-WebService-NoPaste           ports/www/p5-WebService-NoPaste
 p5-WebService-Rakuten           ports/www/p5-WebService-Rakuten
@@ -16742,6 +16750,7 @@ p5-html-lint                    ports/www/p5-HTML-Lint
 p5-html-location                ports/www/p5-HTML-Location
 p5-html-macro                   ports/www/p5-HTML-Macro
 p5-html-mason                   ports/www/p5-HTML-Mason
+p5-html-mobileconverter         ports/www/p5-HTML-MobileConverter
 p5-html-pager                   ports/www/p5-HTML-Pager
 p5-html-parser                  ports/www/p5-HTML-Parser
 p5-html-parser-simple           ports/www/p5-HTML-Parser-Simple
@@ -17319,6 +17328,7 @@ p5-metadata                     ports/databases/p5-Metadata
 p5-method-alias                 ports/devel/p5-Method-Alias
 p5-method-signatures-simple     ports/devel/p5-Method-Signatures-Simple
 p5-midi                         ports/audio/p5-MIDI
+p5-mime-altwords                ports/mail/p5-MIME-AltWords
 p5-mime-base32                  ports/converters/p5-MIME-Base32
 p5-mime-base64                  ports/converters/p5-MIME-Base64
 p5-mime-base64-urlsafe          ports/converters/p5-MIME-Base64-URLSafe
@@ -17339,6 +17349,7 @@ p5-mkdoc-xml                    ports/textproc/p5-MKDoc-XML
 p5-mknod                        ports/devel/p5-Mknod
 p5-mldbm                        ports/databases/p5-MLDBM
 p5-mldbm-sync                   ports/databases/p5-MLDBM-Sync
+p5-mobile-useragent             ports/www/p5-Mobile-UserAgent
 p5-mock-quick                   ports/devel/p5-Mock-Quick
 p5-mocked                       ports/devel/p5-mocked
 p5-modern-perl                  ports/lang/p5-Modern-Perl
@@ -18781,6 +18792,7 @@ p5-text-wikiformat              ports/textproc/p5-Text-WikiFormat
 p5-text-worddiff                ports/textproc/p5-Text-WordDiff
 p5-text-wrapper                 ports/textproc/p5-Text-Wrapper
 p5-text-xslate                  ports/textproc/p5-Text-Xslate
+p5-text-xsv                     ports/databases/p5-Text-xSV
 p5-theschwartz                  ports/devel/p5-TheSchwartz
 p5-theschwartz-simple           ports/devel/p5-TheSchwartz-Simple
 p5-theschwartz-worker-sendemail  ports/devel/p5-TheSchwartz-Worker-SendEmail
@@ -18979,8 +18991,10 @@ p5-webservice-cia               ports/www/p5-WebService-CIA
 p5-webservice-gdata             ports/www/p5-WebService-GData
 p5-webservice-google-reader     ports/www/p5-WebService-Google-Reader
 p5-webservice-google-sets       ports/www/p5-WebService-Google-Sets
+p5-webservice-imdb              ports/www/p5-WebService-IMDB
 p5-webservice-isbndb            ports/www/p5-WebService-ISBNDB
 p5-webservice-linode            ports/www/p5-WebService-Linode
+p5-webservice-movieposterdb     ports/www/p5-WebService-MoviePosterDB
 p5-webservice-musicbrainz       ports/www/p5-WebService-MusicBrainz
 p5-webservice-nopaste           ports/www/p5-WebService-NoPaste
 p5-webservice-rakuten           ports/www/p5-WebService-Rakuten
@@ -22624,6 +22638,7 @@ recoverdm                       ports/sysutils/recoverdm
 recoverjpeg                     ports/graphics/recoverjpeg
 recvnet                         ports/net/recvnet
 red5                            ports/www/red5
+redeclipse                      ports/games/redeclipse
 redet                           ports/textproc/redet
 redir                           ports/net/redir
 redis                           ports/databases/redis
@@ -22938,10 +22953,12 @@ ru-mueller-dic                  ports/russian/mueller-dic
 ru-muttprint                    ports/russian/muttprint
 ru-napster                      ports/russian/napster
 ru-p5-Convert-Cyrillic          ports/russian/p5-Convert-Cyrillic
+ru-p5-Lingua-DetectCyrillic     ports/russian/p5-Lingua-DetectCyrillic
 ru-p5-Lingua-RU-Charset         ports/russian/p5-Lingua-RU-Charset
 ru-p5-XML-Parser-encodings      ports/russian/p5-XML-Parser-encodings
 ru-p5-convert-cyrillic          ports/russian/p5-Convert-Cyrillic
 ru-p5-cyrillic                  ports/russian/p5-cyrillic
+ru-p5-lingua-detectcyrillic     ports/russian/p5-Lingua-DetectCyrillic
 ru-p5-lingua-ru-charset         ports/russian/p5-Lingua-RU-Charset
 ru-p5-xml-parser-encodings      ports/russian/p5-XML-Parser-encodings
 ru-pgp.language                 ports/russian/pgp.language
@@ -25949,7 +25966,6 @@ vordog                          ports/sysutils/vordog
 vp                              ports/graphics/vp
 vpnc                            ports/security/vpnc
 vpopmail                        ports/mail/vpopmail
-vpopmail-devel                  ports/mail/vpopmail-devel
 vqadmin                         ports/mail/vqadmin
 vqcc-gtk                        ports/net-im/vqcc-gtk
 vqregister                      ports/mail/vqregister
