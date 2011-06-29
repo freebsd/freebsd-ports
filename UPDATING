@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110629:
+  AFFECTS: users of graphics/opencv
+  AUTHOR: mm@FreeBSD.org
+
+  OpenCV was updated to version 2.3.0rc and to avoid circular dependencies
+  split into two ports: graphics/opencv-core and graphics/opencv
+
+  Before updating please uninstall the graphics/opencv port first because
+  the new dependency graphics/opencv-core contains conflicting files with
+  the old port graphics/opencv.
+
 20110626:
   AFFECTS: users of mail/p5-Mail-SpamAssassin
   AUTHOR: wxs@FreeBSD.org
