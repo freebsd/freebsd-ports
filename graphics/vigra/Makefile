@@ -10,59 +10,52 @@
 # The hugin port is a gui interface to interact with panorama tools.
 
 PORTNAME=	vigra
-PORTVERSION=	1.6.0
-PORTREVISION=	3
+PORTVERSION=	1.7.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://hci.iwr.uni-heidelberg.de/vigra/
-DISTNAME=	${PORTNAME}${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	vd@FreeBSD.org
 COMMENT=	VIGRA stands for "Vision with Generic Algorithms"
 
-USE_AUTOTOOLS=	libtool
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--docdir=${DOCSDIR}
-USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USE_CMAKE=	yes
+CMAKE_ARGS=	-DDEPENDENCY_SEARCH_PREFIX:PATH=${LOCALBASE} \
+		-DDOCINSTALL:PATH=${DOCSDIR_REL} \
+		-DWITH_HDF5=1
 
 USE_LDCONFIG=	yes
 
+# Vigra's CMakeLists.txt does not support disabling those so we hook them
+# as dependencies here unconditionally (without OPTIONS=) even though if
+# they are not present then Vigra/CMake will do without them (they are not
+# mandatory).
+#
+# Notice that if you define e.g. WITHOUT_VIGRA_TIFF and graphics/tiff is
+# installed on your system, then the lib will be picked up by Vigra, the
+# dependency will not be recorded by the ports system and later deletion
+# of graphics/tiff will break Vigra. Only define WITHOUT_VIGRA_TIFF if you
+# do not have graphics/tiff installed and do not want TIFF support in Vigra.
+
 .if !defined(WITHOUT_VIGRA_TIFF)
-LIB_DEPENDS+=		tiff.4:${PORTSDIR}/graphics/tiff
-CONFIGURE_ARGS+=	--with-tiff
-.else
-CONFIGURE_ARGS+=	--without-tiff
+LIB_DEPENDS+=	tiff:${PORTSDIR}/graphics/tiff
 .endif
 
 .if !defined(WITHOUT_VIGRA_JPEG)
-LIB_DEPENDS+=		jpeg.11:${PORTSDIR}/graphics/jpeg
-CONFIGURE_ARGS+=	--with-jpeg
-.else
-CONFIGURE_ARGS+=	--without-jpeg
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg
 .endif
 
 .if !defined(WITHOUT_VIGRA_PNG)
-LIB_DEPENDS+=		png.6:${PORTSDIR}/graphics/png
-CONFIGURE_ARGS+=	--with-png
-.else
-CONFIGURE_ARGS+=	--without-png
-.endif
-
-.if !defined(WITHOUT_VIGRA_ZLIB)
-CONFIGURE_ARGS+=	--with-zlib
-.else
-CONFIGURE_ARGS+=	--without-zlib
+LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png
 .endif
 
 .if !defined(WITHOUT_VIGRA_FFTW)
-LIB_DEPENDS+=		fftw3:${PORTSDIR}/math/fftw3
-CONFIGURE_ARGS+=	--with-fftw
-.else
-CONFIGURE_ARGS+=	--without-fftw
+LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
 .endif
 
-post-patch:
-	${REINPLACE_CMD} -e 's/--mode=/-m /g' ${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's/png_set_gray_1_2_4_to_8/png_set_expand_gray_1_2_4_to_8/g' \
-		${WRKSRC}/src/impex/png.cxx
+.if !defined(WITHOUT_VIGRA_HDF5)
+LIB_DEPENDS+=	hdf5:${PORTSDIR}/science/hdf5
+.endif
 
 .include <bsd.port.mk>
