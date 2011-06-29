@@ -7,6 +7,7 @@
 
 PORTNAME=	geos
 PORTVERSION=	3.3.0
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/geos/
 
@@ -19,5 +20,8 @@ USE_AUTOTOOLS=	libtool
 USE_BZIP2=	YES
 USE_GMAKE=	YES
 USE_LDCONFIG=	YES
+
+post-install:
+		@${LN} -s ${PREFIX}/lib/libgeos-${PORTVERSION}.so ${PREFIX}/lib/libgeos.so.0
 
 .include <bsd.port.mk>
