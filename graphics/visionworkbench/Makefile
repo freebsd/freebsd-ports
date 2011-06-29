@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	visionworkbench
-PORTVERSION=	2.1.0
-PORTREVISION=	1
+PORTVERSION=	2.2.0
 CATEGORIES=	graphics
 MASTER_SITES=	http://ti.arc.nasa.gov/m/project/nasa-vision-workbench/
 DISTNAME=	VisionWorkbench-${PORTVERSION}
