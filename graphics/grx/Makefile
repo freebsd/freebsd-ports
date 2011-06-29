@@ -100,7 +100,7 @@ post-patch:
 		 s|^(LDOPT =)|\1 ${LDFLAGS}|;' \
 		-e 's|lib64|lib|' \
 		${WRKSRC}/makedefs.grx
-	@${REINPLACE_CMD} -e 's/gcc/${CC}/' -e 's|lib64|lib|' \
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|' -e 's|lib64|lib|' \
 		 ${WRKSRC}/src/makefile.[lx]*
 
 .include <bsd.port.post.mk>
