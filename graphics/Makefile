@@ -565,6 +565,7 @@
     SUBDIR += ogre3d
     SUBDIR += openclipart
     SUBDIR += opencv
+    SUBDIR += opencv-core
     SUBDIR += opendis
     SUBDIR += opendx
     SUBDIR += openexr_ctl
