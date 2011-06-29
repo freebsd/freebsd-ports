@@ -74,8 +74,12 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/modules/preprocess
 %%EXAMPLESDIR%%/raddb/modules/radutmp
 %%EXAMPLESDIR%%/raddb/modules/realm
+%%EXAMPLESDIR%%/raddb/modules/redis
+%%EXAMPLESDIR%%/raddb/modules/rediswho
+%%EXAMPLESDIR%%/raddb/modules/replicate
 %%EXAMPLESDIR%%/raddb/modules/smbpasswd
 %%EXAMPLESDIR%%/raddb/modules/smsotp
+%%EXAMPLESDIR%%/raddb/modules/soh
 %%EXAMPLESDIR%%/raddb/modules/sql_log
 %%EXAMPLESDIR%%/raddb/modules/sqlcounter_expire_on_login
 %%EXAMPLESDIR%%/raddb/modules/sradutmp
@@ -101,6 +105,7 @@ bin/smbencrypt
 %%EXAMPLESDIR%%/raddb/sites-available/proxy-inner-tunnel
 %%EXAMPLESDIR%%/raddb/sites-available/robust-proxy-accounting
 %%EXAMPLESDIR%%/raddb/sites-available/status
+%%EXAMPLESDIR%%/raddb/sites-available/soh
 %%EXAMPLESDIR%%/raddb/sites-available/virtual.example.com
 %%EXAMPLESDIR%%/raddb/sites-available/vmps
 %%EXAMPLESDIR%%/raddb/sites-enabled/control-socket
@@ -402,6 +407,16 @@ bin/smbencrypt
 %%LIBDIR%%/rlm_realm.a
 %%LIBDIR%%/rlm_realm.la
 %%LIBDIR%%/rlm_realm.so
+%%LIBDIR%%/rlm_soh.so
+%%LIBDIR%%/rlm_soh-%%PORTVERSION%%.so
+%%LIBDIR%%/rlm_soh.la
+%%LIBDIR%%/rlm_soh.a
+%%LIBDIR%%/rlm_soh-%%PORTVERSION%%.la
+%%LIBDIR%%/rlm_replicate-%%PORTVERSION%%.so
+%%LIBDIR%%/rlm_replicate.so
+%%LIBDIR%%/rlm_replicate-%%PORTVERSION%%.la
+%%LIBDIR%%/rlm_replicate.la
+%%LIBDIR%%/rlm_replicate.a
 %%EXPM%%%%RLMRUBY%%%%LIBDIR%%/rlm_ruby-%%PORTVERSION%%.la
 %%EXPM%%%%RLMRUBY%%%%LIBDIR%%/rlm_ruby-%%PORTVERSION%%.so
 %%EXPM%%%%RLMRUBY%%%%LIBDIR%%/rlm_ruby.a
@@ -594,6 +609,7 @@ include/freeradius/vqp.h
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5607.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5904.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc/rfc5997.txt
+%%PORTDOCS%%%%DOCSDIR%%/rfc/rfc6158.txt
 %%PORTDOCS%%%%DOCSDIR%%/rlm_dbm
 %%PORTDOCS%%%%DOCSDIR%%/rlm_eap
 %%PORTDOCS%%%%DOCSDIR%%/rlm_expiration
@@ -609,6 +625,7 @@ include/freeradius/vqp.h
 %%PORTDOCS%%%%DOCSDIR%%/rlm_sqlcounter
 %%PORTDOCS%%%%DOCSDIR%%/rlm_sqlippool
 %%PORTDOCS%%%%DOCSDIR%%/snmp
+%%PORTDOCS%%%%DOCSDIR%%/SoH.txt
 %%PORTDOCS%%%%DOCSDIR%%/tuning_guide
 %%PORTDOCS%%%%DOCSDIR%%/Acct-Type.rst
 %%PORTDOCS%%%%DOCSDIR%%/Autz-Type.rst
@@ -649,6 +666,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.aptis
 %%DATADIR%%/dictionary.aruba
 %%DATADIR%%/dictionary.ascend
+%%DATADIR%%/dictionary.ascend.illegal
 %%DATADIR%%/dictionary.asn
 %%DATADIR%%/dictionary.avaya
 %%DATADIR%%/dictionary.azaire
@@ -671,6 +689,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.dhcp
 %%DATADIR%%/dictionary.digium
 %%DATADIR%%/dictionary.epygi
+%%DATADIR%%/dictionary.eltex
 %%DATADIR%%/dictionary.ericsson
 %%DATADIR%%/dictionary.erx
 %%DATADIR%%/dictionary.extreme
@@ -702,6 +721,7 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.microsoft
 %%DATADIR%%/dictionary.mikrotik
 %%DATADIR%%/dictionary.motorola
+%%DATADIR%%/dictionary.motorola.illegal
 %%DATADIR%%/dictionary.motorola.wimax
 %%DATADIR%%/dictionary.navini
 %%DATADIR%%/dictionary.netscreen
@@ -755,8 +775,10 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.telkom
 %%DATADIR%%/dictionary.trapeze
 %%DATADIR%%/dictionary.tropos
+%%DATADIR%%/dictionary.ukerna
 %%DATADIR%%/dictionary.unix
 %%DATADIR%%/dictionary.usr
+%%DATADIR%%/dictionary.usr.illegal
 %%DATADIR%%/dictionary.utstarcom
 %%DATADIR%%/dictionary.valemount
 %%DATADIR%%/dictionary.versanet
@@ -771,6 +793,14 @@ include/freeradius/vqp.h
 %%DATADIR%%/dictionary.xylan
 %%DATADIR%%/dictionary.zyxel
 @dirrm %%DATADIR%%
+@dirrmtry share/freeradius
+@dirrmtry share/examples/freeradius/raddb/sites-available
+@dirrmtry share/examples/freeradius/raddb/modules
+@dirrmtry share/examples/freeradius/raddb
+@dirrmtry share/examples/freeradius
+@dirrmtry share/doc/freeradius/rfc
+@dirrmtry share/doc/freeradius
+@dirrmtry %%LIBDIR%%
 @exec if [ ! -d /var/log/radacct ]; then mkdir -p /var/log/radacct; chmod -R go= /var/log/radacct; fi
 @exec for i in /var/log/radius.log /var/log/radutmp /var/log/radwtmp; do if [ ! -f ${i} ]; then touch ${i}; chmod go= ${i}; fi; done
 @exec mkdir -p /var/run/radiusd
