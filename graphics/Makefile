@@ -208,6 +208,7 @@
     SUBDIR += freeglut
     SUBDIR += freeimage
     SUBDIR += frei0r
+    SUBDIR += frei0r-plugins-gavl
     SUBDIR += frontline
     SUBDIR += ftgl
     SUBDIR += fujiplay
