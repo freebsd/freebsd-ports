@@ -27,7 +27,7 @@ OPTIONS=	DEVEL "Install development files (library and headers)" off
 
 USE_SCONS=	yes
 SCONS_TARGET=	all
-SCONS_ARGS=	--prefix=${PREFIX}
+SCONS_ARGS=	--prefix=${PREFIX} --cxx=${CXX} --cpp=${CPP}
 
 USERS=	mongodb
 GROUPS=	mongodb
