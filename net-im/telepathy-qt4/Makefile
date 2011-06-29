@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	telepathy-qt4
-PORTVERSION=	0.6.0
+PORTVERSION=	0.7.1
 CATEGORIES=	net-im
 MASTER_SITES=	http://telepathy.freedesktop.org/releases/${PORTNAME}/
 
@@ -36,6 +36,8 @@ PORTEXAMPLES=	Makefile accounts contact-messenger \
 pre-configure:
 	${REINPLACE_CMD} -e '/add_subdirectory(tests)/ d' \
 		${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e '/^add_dependencies(doxygen-doc / d' \
+		${WRKSRC}/TelepathyQt4/CMakeLists.txt
 .ifdef(NOPORTEXAMPLES)
 	${REINPLACE_CMD} -e '/add_subdirectory(examples)/ d' \
 		${WRKSRC}/CMakeLists.txt
