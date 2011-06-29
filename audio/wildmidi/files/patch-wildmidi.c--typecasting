@@ -1,0 +1,27 @@
+--- src/wildmidi.c.orig	2010-07-30 09:33:46.000000000 +0900
++++ src/wildmidi.c	2011-05-28 23:13:47.000000000 +0900
+@@ -618,7 +618,7 @@
+ 		return -1;
+ 	}
+ 
+-	buffer = (unsigned char *) mmap(NULL, max_buffer, mmmode, mmflags, audio_fd, 0);
++	buffer = (char *) mmap(NULL, max_buffer, mmmode, mmflags, audio_fd, 0);
+ 	if (buffer == MAP_FAILED) {
+ 		printf("couldn't mmap %s\r\n",strerror(errno));
+ 		shutdown_output();
+@@ -659,12 +659,13 @@
+ 				shutdown_output();
+ 				return -1;
+ 			}
+-			if ((count.ptr < counter) || (count.ptr >= (counter+4))) {
++			if (((unsigned long int)count.ptr < counter) ||
++			    ((unsigned long int)count.ptr >= (counter+4))) {
+ 				break;
+ 			}
+ 			usleep(500);
+ 		}
+-		if (count.ptr < counter) {
++		if ((unsigned long int)count.ptr < counter) {
+ 			free_size = max_buffer - counter;
+ 		} else {
+ 			free_size = count.ptr - counter;

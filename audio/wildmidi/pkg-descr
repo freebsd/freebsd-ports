@@ -1,0 +1,15 @@
+WildMIDI is a simple software midi player which has a core softsynth library
+that can be used with other applications.
+
+The WildMIDI library uses Gravis Ultrasound patch files to convert MIDI files
+into audio which is them passed back to the calling application for further
+processing or output. The API of the library is designed so that it is easy to
+include WildMIDI into applications that wish to include MIDI file playback.
+With multiple MIDI file support you can develop applications to mix several
+midi files together at the same time and with the next release you will be
+able to use a different patch set for each MIDI file.
+
+The wildmidi player is a demonstration program to show the capabilities of
+libWildMidi.
+
+WWW: http://wildmidi.sourceforge.net/
