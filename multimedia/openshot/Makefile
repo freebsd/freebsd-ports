@@ -8,7 +8,7 @@
 
 PORTNAME=		openshot
 PORTVERSION=		1.3.0
-PORTREVISION=		1
+PORTREVISION=		2
 CATEGORIES=		multimedia
 MASTER_SITES=		http://launchpad.net/openshot/${PORTMAJORVERSION}/${PORTVERSION}/+download/
 
@@ -16,7 +16,7 @@ MAINTAINER=		rodrigo@bebik.net
 COMMENT=		A non-linear video editor
 
 RUN_DEPENDS=		ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
-			${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r \
+			frei0r-plugins>=0:${PORTSDIR}/graphics/frei0r-plugins \
 			${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas \
 			${PYTHON_SITELIBDIR}/httplib2/__init__.py:${PORTSDIR}/www/py-httplib2 \
 			${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \

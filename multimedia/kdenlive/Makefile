@@ -6,7 +6,7 @@
 
 PORTNAME=	kdenlive
 PORTVERSION=	0.7.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia kde
 MASTER_SITES=	SF
 
@@ -41,7 +41,7 @@ RUN_DEPENDS+=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor
 .endif
 
 .ifdef(WITH_FREI0R)
-RUN_DEPENDS+=	frei0r>=1.1.22:${PORTSDIR}/graphics/frei0r
+RUN_DEPENDS+=	frei0r-plugins>=0:${PORTSDIR}/graphics/frei0r-plugins
 .endif
 
 .ifdef(WITH_LADSPA)
