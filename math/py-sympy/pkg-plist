@@ -53,9 +53,6 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/concrete/summations.py
 %%PYTHON_SITELIBDIR%%/sympy/concrete/summations.pyc
 %%PYTHON_SITELIBDIR%%/sympy/concrete/summations.pyo
-%%PYTHON_SITELIBDIR%%/sympy/concrete/sums_products.py
-%%PYTHON_SITELIBDIR%%/sympy/concrete/sums_products.pyc
-%%PYTHON_SITELIBDIR%%/sympy/concrete/sums_products.pyo
 %%PYTHON_SITELIBDIR%%/sympy/concrete/tests/test_gosper.py
 %%PYTHON_SITELIBDIR%%/sympy/concrete/tests/test_gosper.pyc
 %%PYTHON_SITELIBDIR%%/sympy/concrete/tests/test_gosper.pyo
@@ -77,24 +74,36 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/core/assumptions.py
 %%PYTHON_SITELIBDIR%%/sympy/core/assumptions.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/assumptions.pyo
-%%PYTHON_SITELIBDIR%%/sympy/core/ast_parser.py
-%%PYTHON_SITELIBDIR%%/sympy/core/ast_parser.pyc
-%%PYTHON_SITELIBDIR%%/sympy/core/ast_parser.pyo
-%%PYTHON_SITELIBDIR%%/sympy/core/ast_parser_python24.py
-%%PYTHON_SITELIBDIR%%/sympy/core/ast_parser_python24.pyc
-%%PYTHON_SITELIBDIR%%/sympy/core/ast_parser_python24.pyo
 %%PYTHON_SITELIBDIR%%/sympy/core/basic.py
 %%PYTHON_SITELIBDIR%%/sympy/core/basic.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/basic.pyo
 %%PYTHON_SITELIBDIR%%/sympy/core/cache.py
 %%PYTHON_SITELIBDIR%%/sympy/core/cache.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/cache.pyo
+%%PYTHON_SITELIBDIR%%/sympy/core/compatibility.py
+%%PYTHON_SITELIBDIR%%/sympy/core/compatibility.pyc
+%%PYTHON_SITELIBDIR%%/sympy/core/compatibility.pyo
+%%PYTHON_SITELIBDIR%%/sympy/core/containers.py
+%%PYTHON_SITELIBDIR%%/sympy/core/containers.pyc
+%%PYTHON_SITELIBDIR%%/sympy/core/containers.pyo
+%%PYTHON_SITELIBDIR%%/sympy/core/core.py
+%%PYTHON_SITELIBDIR%%/sympy/core/core.pyc
+%%PYTHON_SITELIBDIR%%/sympy/core/core.pyo
+%%PYTHON_SITELIBDIR%%/sympy/core/coreerrors.py
+%%PYTHON_SITELIBDIR%%/sympy/core/coreerrors.pyc
+%%PYTHON_SITELIBDIR%%/sympy/core/coreerrors.pyo
 %%PYTHON_SITELIBDIR%%/sympy/core/decorators.py
 %%PYTHON_SITELIBDIR%%/sympy/core/decorators.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/decorators.pyo
 %%PYTHON_SITELIBDIR%%/sympy/core/evalf.py
 %%PYTHON_SITELIBDIR%%/sympy/core/evalf.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/evalf.pyo
+%%PYTHON_SITELIBDIR%%/sympy/core/expr.py
+%%PYTHON_SITELIBDIR%%/sympy/core/expr.pyc
+%%PYTHON_SITELIBDIR%%/sympy/core/expr.pyo
+%%PYTHON_SITELIBDIR%%/sympy/core/exprtools.py
+%%PYTHON_SITELIBDIR%%/sympy/core/exprtools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/core/exprtools.pyo
 %%PYTHON_SITELIBDIR%%/sympy/core/facts.py
 %%PYTHON_SITELIBDIR%%/sympy/core/facts.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/facts.pyo
@@ -125,6 +134,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/core/sets.py
 %%PYTHON_SITELIBDIR%%/sympy/core/sets.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/sets.pyo
+%%PYTHON_SITELIBDIR%%/sympy/core/singleton.py
+%%PYTHON_SITELIBDIR%%/sympy/core/singleton.pyc
+%%PYTHON_SITELIBDIR%%/sympy/core/singleton.pyo
 %%PYTHON_SITELIBDIR%%/sympy/core/symbol.py
 %%PYTHON_SITELIBDIR%%/sympy/core/symbol.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/symbol.pyo
@@ -146,6 +158,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_complex.py
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_complex.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_complex.pyo
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_containers.py
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_containers.pyc
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_containers.pyo
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_count_ops.py
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_count_ops.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_count_ops.pyo
@@ -167,6 +182,12 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_expand.py
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_expand.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_expand.pyo
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_expr.py
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_expr.pyc
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_expr.pyo
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_exprtools.py
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_exprtools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_exprtools.pyo
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_facts.py
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_facts.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_facts.pyo
@@ -179,15 +200,15 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_match.py
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_match.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_match.pyo
-%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_multidimensional.py
-%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_multidimensional.pyc
-%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_multidimensional.pyo
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_numbers.py
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_numbers.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_numbers.pyo
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_operations.py
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_operations.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_operations.pyo
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_priority.py
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_priority.pyc
+%%PYTHON_SITELIBDIR%%/sympy/core/tests/test_priority.pyo
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_relational.py
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_relational.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_relational.pyo
@@ -209,6 +230,27 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_var.py
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_var.pyc
 %%PYTHON_SITELIBDIR%%/sympy/core/tests/test_var.pyo
+%%PYTHON_SITELIBDIR%%/sympy/external/__init__.py
+%%PYTHON_SITELIBDIR%%/sympy/external/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sympy/external/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/external/importtools.py
+%%PYTHON_SITELIBDIR%%/sympy/external/importtools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/external/importtools.pyo
+%%PYTHON_SITELIBDIR%%/sympy/external/tests/test_autowrap.py
+%%PYTHON_SITELIBDIR%%/sympy/external/tests/test_autowrap.pyc
+%%PYTHON_SITELIBDIR%%/sympy/external/tests/test_autowrap.pyo
+%%PYTHON_SITELIBDIR%%/sympy/external/tests/test_codegen.py
+%%PYTHON_SITELIBDIR%%/sympy/external/tests/test_codegen.pyc
+%%PYTHON_SITELIBDIR%%/sympy/external/tests/test_codegen.pyo
+%%PYTHON_SITELIBDIR%%/sympy/external/tests/test_numpy.py
+%%PYTHON_SITELIBDIR%%/sympy/external/tests/test_numpy.pyc
+%%PYTHON_SITELIBDIR%%/sympy/external/tests/test_numpy.pyo
+%%PYTHON_SITELIBDIR%%/sympy/external/tests/test_sage.py
+%%PYTHON_SITELIBDIR%%/sympy/external/tests/test_sage.pyc
+%%PYTHON_SITELIBDIR%%/sympy/external/tests/test_sage.pyo
+%%PYTHON_SITELIBDIR%%/sympy/external/tests/test_scipy.py
+%%PYTHON_SITELIBDIR%%/sympy/external/tests/test_scipy.pyc
+%%PYTHON_SITELIBDIR%%/sympy/external/tests/test_scipy.pyo
 %%PYTHON_SITELIBDIR%%/sympy/functions/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/functions/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/functions/__init__.pyo
@@ -278,6 +320,12 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/functions/special/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/functions/special/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/functions/special/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/functions/special/bessel.py
+%%PYTHON_SITELIBDIR%%/sympy/functions/special/bessel.pyc
+%%PYTHON_SITELIBDIR%%/sympy/functions/special/bessel.pyo
+%%PYTHON_SITELIBDIR%%/sympy/functions/special/bsplines.py
+%%PYTHON_SITELIBDIR%%/sympy/functions/special/bsplines.pyc
+%%PYTHON_SITELIBDIR%%/sympy/functions/special/bsplines.pyo
 %%PYTHON_SITELIBDIR%%/sympy/functions/special/delta_functions.py
 %%PYTHON_SITELIBDIR%%/sympy/functions/special/delta_functions.pyc
 %%PYTHON_SITELIBDIR%%/sympy/functions/special/delta_functions.pyo
@@ -296,6 +344,12 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/functions/special/tensor_functions.py
 %%PYTHON_SITELIBDIR%%/sympy/functions/special/tensor_functions.pyc
 %%PYTHON_SITELIBDIR%%/sympy/functions/special/tensor_functions.pyo
+%%PYTHON_SITELIBDIR%%/sympy/functions/special/tests/test_bessel.py
+%%PYTHON_SITELIBDIR%%/sympy/functions/special/tests/test_bessel.pyc
+%%PYTHON_SITELIBDIR%%/sympy/functions/special/tests/test_bessel.pyo
+%%PYTHON_SITELIBDIR%%/sympy/functions/special/tests/test_bsplines.py
+%%PYTHON_SITELIBDIR%%/sympy/functions/special/tests/test_bsplines.pyc
+%%PYTHON_SITELIBDIR%%/sympy/functions/special/tests/test_bsplines.pyo
 %%PYTHON_SITELIBDIR%%/sympy/functions/special/tests/test_delta_functions.py
 %%PYTHON_SITELIBDIR%%/sympy/functions/special/tests/test_delta_functions.pyc
 %%PYTHON_SITELIBDIR%%/sympy/functions/special/tests/test_delta_functions.pyo
@@ -398,6 +452,12 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/interactive/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/interactive/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/interactive/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/interactive/printing.py
+%%PYTHON_SITELIBDIR%%/sympy/interactive/printing.pyc
+%%PYTHON_SITELIBDIR%%/sympy/interactive/printing.pyo
+%%PYTHON_SITELIBDIR%%/sympy/interactive/session.py
+%%PYTHON_SITELIBDIR%%/sympy/interactive/session.pyc
+%%PYTHON_SITELIBDIR%%/sympy/interactive/session.pyo
 %%PYTHON_SITELIBDIR%%/sympy/logic/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/logic/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/logic/__init__.pyo
@@ -407,6 +467,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/logic/algorithms/dpll.py
 %%PYTHON_SITELIBDIR%%/sympy/logic/algorithms/dpll.pyc
 %%PYTHON_SITELIBDIR%%/sympy/logic/algorithms/dpll.pyo
+%%PYTHON_SITELIBDIR%%/sympy/logic/algorithms/dpll2.py
+%%PYTHON_SITELIBDIR%%/sympy/logic/algorithms/dpll2.pyc
+%%PYTHON_SITELIBDIR%%/sympy/logic/algorithms/dpll2.pyo
 %%PYTHON_SITELIBDIR%%/sympy/logic/boolalg.py
 %%PYTHON_SITELIBDIR%%/sympy/logic/boolalg.pyc
 %%PYTHON_SITELIBDIR%%/sympy/logic/boolalg.pyo
@@ -467,27 +530,39 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/calculus/quadrature.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/calculus/quadrature.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/calculus/quadrature.pyo
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/conftest.py
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/conftest.pyc
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/conftest.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/ctx_base.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/ctx_base.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/ctx_base.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/ctx_fp.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/ctx_fp.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/ctx_fp.pyo
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/ctx_iv.py
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/ctx_iv.pyc
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/ctx_iv.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/ctx_mp.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/ctx_mp.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/ctx_mp.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/ctx_mp_python.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/ctx_mp_python.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/ctx_mp_python.pyo
-%%PYTHON_SITELIBDIR%%/sympy/mpmath/conftest.py
-%%PYTHON_SITELIBDIR%%/sympy/mpmath/conftest.pyc
-%%PYTHON_SITELIBDIR%%/sympy/mpmath/conftest.pyo
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/function_docs.py
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/function_docs.pyc
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/function_docs.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/bessel.py
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/bessel.pyc
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/bessel.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/elliptic.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/elliptic.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/elliptic.pyo
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/expintegrals.py
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/expintegrals.pyc
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/expintegrals.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/factorials.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/factorials.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/factorials.pyo
@@ -497,15 +572,24 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/hypergeometric.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/hypergeometric.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/hypergeometric.pyo
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/orthogonal.py
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/orthogonal.pyc
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/orthogonal.pyo
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/qfunctions.py
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/qfunctions.pyc
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/qfunctions.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/rszeta.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/rszeta.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/rszeta.pyo
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/theta.py
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/theta.pyc
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/theta.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/zeta.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/zeta.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/zeta.pyo
-%%PYTHON_SITELIBDIR%%/sympy/mpmath/function_docs.py
-%%PYTHON_SITELIBDIR%%/sympy/mpmath/function_docs.pyc
-%%PYTHON_SITELIBDIR%%/sympy/mpmath/function_docs.pyo
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/zetazeros.py
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/zetazeros.pyc
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/functions/zetazeros.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/identification.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/identification.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/identification.pyo
@@ -518,24 +602,24 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/gammazeta.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/gammazeta.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/gammazeta.pyo
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libelefun.py
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libelefun.pyc
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libelefun.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libhyper.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libhyper.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libhyper.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libintmath.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libintmath.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libintmath.pyo
-%%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libelefun.py
-%%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libelefun.pyc
-%%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libelefun.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libmpc.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libmpc.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libmpc.pyo
-%%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libmpi.py
-%%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libmpi.pyc
-%%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libmpi.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libmpf.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libmpf.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libmpf.pyo
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libmpi.py
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libmpi.pyc
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp/libmpi.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/math2.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/math2.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/math2.pyo
@@ -557,6 +641,15 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/extratest_bessel.py
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/extratest_bessel.pyc
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/extratest_bessel.pyo
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/extratest_gamma.py
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/extratest_gamma.pyc
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/extratest_gamma.pyo
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/extratest_zeta.py
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/extratest_zeta.pyc
+%%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/extratest_zeta.pyo
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/runtests.py
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/runtests.pyc
 %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests/runtests.pyo
@@ -677,21 +770,33 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/ntheory/primetest.py
 %%PYTHON_SITELIBDIR%%/sympy/ntheory/primetest.pyc
 %%PYTHON_SITELIBDIR%%/sympy/ntheory/primetest.pyo
-%%PYTHON_SITELIBDIR%%/sympy/ntheory/residue.py
-%%PYTHON_SITELIBDIR%%/sympy/ntheory/residue.pyc
-%%PYTHON_SITELIBDIR%%/sympy/ntheory/residue.pyo
+%%PYTHON_SITELIBDIR%%/sympy/ntheory/residue_ntheory.py
+%%PYTHON_SITELIBDIR%%/sympy/ntheory/residue_ntheory.pyc
+%%PYTHON_SITELIBDIR%%/sympy/ntheory/residue_ntheory.pyo
 %%PYTHON_SITELIBDIR%%/sympy/ntheory/tests/test_ntheory.py
 %%PYTHON_SITELIBDIR%%/sympy/ntheory/tests/test_ntheory.pyc
 %%PYTHON_SITELIBDIR%%/sympy/ntheory/tests/test_ntheory.pyo
 %%PYTHON_SITELIBDIR%%/sympy/parsing/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/parsing/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/parsing/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/parsing/ast_parser.py
+%%PYTHON_SITELIBDIR%%/sympy/parsing/ast_parser.pyc
+%%PYTHON_SITELIBDIR%%/sympy/parsing/ast_parser.pyo
+%%PYTHON_SITELIBDIR%%/sympy/parsing/ast_parser_python24.py
+%%PYTHON_SITELIBDIR%%/sympy/parsing/ast_parser_python24.pyc
+%%PYTHON_SITELIBDIR%%/sympy/parsing/ast_parser_python24.pyo
 %%PYTHON_SITELIBDIR%%/sympy/parsing/mathematica.py
 %%PYTHON_SITELIBDIR%%/sympy/parsing/mathematica.pyc
 %%PYTHON_SITELIBDIR%%/sympy/parsing/mathematica.pyo
 %%PYTHON_SITELIBDIR%%/sympy/parsing/maxima.py
 %%PYTHON_SITELIBDIR%%/sympy/parsing/maxima.pyc
 %%PYTHON_SITELIBDIR%%/sympy/parsing/maxima.pyo
+%%PYTHON_SITELIBDIR%%/sympy/parsing/sympy_parser.py
+%%PYTHON_SITELIBDIR%%/sympy/parsing/sympy_parser.pyc
+%%PYTHON_SITELIBDIR%%/sympy/parsing/sympy_parser.pyo
+%%PYTHON_SITELIBDIR%%/sympy/parsing/sympy_tokenize.py
+%%PYTHON_SITELIBDIR%%/sympy/parsing/sympy_tokenize.pyc
+%%PYTHON_SITELIBDIR%%/sympy/parsing/sympy_tokenize.pyo
 %%PYTHON_SITELIBDIR%%/sympy/parsing/tests/test_mathematica.py
 %%PYTHON_SITELIBDIR%%/sympy/parsing/tests/test_mathematica.pyc
 %%PYTHON_SITELIBDIR%%/sympy/parsing/tests/test_mathematica.pyo
@@ -701,30 +806,195 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/physics/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/physics/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/physics/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/hydrogen.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/hydrogen.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/hydrogen.pyo
 %%PYTHON_SITELIBDIR%%/sympy/physics/matrices.py
 %%PYTHON_SITELIBDIR%%/sympy/physics/matrices.pyc
 %%PYTHON_SITELIBDIR%%/sympy/physics/matrices.pyo
 %%PYTHON_SITELIBDIR%%/sympy/physics/paulialgebra.py
 %%PYTHON_SITELIBDIR%%/sympy/physics/paulialgebra.pyc
 %%PYTHON_SITELIBDIR%%/sympy/physics/paulialgebra.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/qho_1d.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/qho_1d.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/qho_1d.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/__init__.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/anticommutator.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/anticommutator.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/anticommutator.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/cartesian.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/cartesian.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/cartesian.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/circuitplot.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/circuitplot.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/circuitplot.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/commutator.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/commutator.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/commutator.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/constants.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/constants.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/constants.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/dagger.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/dagger.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/dagger.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/gate.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/gate.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/gate.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/grover.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/grover.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/grover.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/hilbert.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/hilbert.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/hilbert.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/innerproduct.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/innerproduct.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/innerproduct.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/kronecker.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/kronecker.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/kronecker.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/matrixcache.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/matrixcache.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/matrixcache.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/matrixutils.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/matrixutils.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/matrixutils.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/operator.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/operator.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/operator.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/piab.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/piab.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/piab.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/qapply.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/qapply.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/qapply.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/qexpr.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/qexpr.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/qexpr.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/qft.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/qft.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/qft.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/qubit.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/qubit.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/qubit.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/represent.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/represent.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/represent.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/shor.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/shor.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/shor.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/spin.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/spin.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/spin.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/state.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/state.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/state.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tensorproduct.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tensorproduct.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tensorproduct.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_anticommutator.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_anticommutator.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_anticommutator.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_cartesian.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_cartesian.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_cartesian.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_commutator.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_commutator.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_commutator.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_constants.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_constants.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_constants.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_dagger.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_dagger.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_dagger.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_gate.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_gate.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_gate.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_grover.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_grover.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_grover.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_hilbert.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_hilbert.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_hilbert.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_innerproduct.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_innerproduct.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_innerproduct.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_kronecker.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_kronecker.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_kronecker.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_matrixutils.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_matrixutils.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_matrixutils.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_operator.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_operator.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_operator.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_piab.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_piab.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_piab.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_qapply.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_qapply.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_qapply.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_qexpr.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_qexpr.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_qexpr.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_qft.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_qft.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_qft.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_qubit.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_qubit.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_qubit.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_represent.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_represent.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_represent.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_shor.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_shor.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_shor.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_spin.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_spin.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_spin.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_state.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_state.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_state.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_tensorproduct.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_tensorproduct.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests/test_tensorproduct.pyo
 %%PYTHON_SITELIBDIR%%/sympy/physics/secondquant.py
 %%PYTHON_SITELIBDIR%%/sympy/physics/secondquant.pyc
 %%PYTHON_SITELIBDIR%%/sympy/physics/secondquant.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/sho.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/sho.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/sho.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_clebsch_gordan.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_clebsch_gordan.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_clebsch_gordan.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_hydrogen.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_hydrogen.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_hydrogen.pyo
 %%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_paulialgebra.py
 %%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_paulialgebra.pyc
 %%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_paulialgebra.pyo
 %%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_physics_matrices.py
 %%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_physics_matrices.pyc
 %%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_physics_matrices.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_qho_1d.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_qho_1d.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_qho_1d.pyo
 %%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_secondquant.py
 %%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_secondquant.pyc
 %%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_secondquant.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_sho.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_sho.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_sho.pyo
 %%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_units.py
 %%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_units.pyc
 %%PYTHON_SITELIBDIR%%/sympy/physics/tests/test_units.pyo
 %%PYTHON_SITELIBDIR%%/sympy/physics/units.py
 %%PYTHON_SITELIBDIR%%/sympy/physics/units.pyc
 %%PYTHON_SITELIBDIR%%/sympy/physics/units.pyo
+%%PYTHON_SITELIBDIR%%/sympy/physics/wigner.py
+%%PYTHON_SITELIBDIR%%/sympy/physics/wigner.pyc
+%%PYTHON_SITELIBDIR%%/sympy/physics/wigner.pyo
 %%PYTHON_SITELIBDIR%%/sympy/plotting/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/plotting/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/plotting/__init__.pyo
@@ -785,54 +1055,282 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/polys/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/polys/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/polys/__init__.pyo
-%%PYTHON_SITELIBDIR%%/sympy/polys/algorithms.py
-%%PYTHON_SITELIBDIR%%/sympy/polys/algorithms.pyc
-%%PYTHON_SITELIBDIR%%/sympy/polys/algorithms.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/constructor.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/constructor.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/constructor.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/densearith.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/densearith.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/densearith.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/densebasic.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/densebasic.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/densebasic.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/densepolys.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/densepolys.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/densepolys.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/densetools.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/densetools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/densetools.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/__init__.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/algebraicfield.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/algebraicfield.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/algebraicfield.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/characteristiczero.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/characteristiczero.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/characteristiczero.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/compositedomain.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/compositedomain.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/compositedomain.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/domain.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/domain.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/domain.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/expressiondomain.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/expressiondomain.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/expressiondomain.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/field.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/field.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/field.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/finitefield.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/finitefield.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/finitefield.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/fractionfield.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/fractionfield.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/fractionfield.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/gmpyfinitefield.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/gmpyfinitefield.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/gmpyfinitefield.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/gmpyintegerring.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/gmpyintegerring.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/gmpyintegerring.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/gmpyrationalfield.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/gmpyrationalfield.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/gmpyrationalfield.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/groundtypes.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/groundtypes.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/groundtypes.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/integerring.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/integerring.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/integerring.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/modularinteger.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/modularinteger.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/modularinteger.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/mpmathcomplexdomain.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/mpmathcomplexdomain.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/mpmathcomplexdomain.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/mpmathrealdomain.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/mpmathrealdomain.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/mpmathrealdomain.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/polynomialring.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/polynomialring.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/polynomialring.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/pythoncomplexdomain.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/pythoncomplexdomain.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/pythoncomplexdomain.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/pythonfinitefield.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/pythonfinitefield.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/pythonfinitefield.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/pythonintegerring.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/pythonintegerring.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/pythonintegerring.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/pythonrationalfield.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/pythonrationalfield.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/pythonrationalfield.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/pythonrationaltype.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/pythonrationaltype.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/pythonrationaltype.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/pythonrealdomain.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/pythonrealdomain.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/pythonrealdomain.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/rationalfield.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/rationalfield.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/rationalfield.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/realdomain.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/realdomain.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/realdomain.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/ring.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/ring.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/ring.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/simpledomain.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/simpledomain.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/simpledomain.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/sympyfinitefield.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/sympyfinitefield.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/sympyfinitefield.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/sympyintegerring.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/sympyintegerring.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/sympyintegerring.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/sympyrationalfield.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/sympyrationalfield.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/sympyrationalfield.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/sympyrealdomain.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/sympyrealdomain.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/domains/sympyrealdomain.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/euclidtools.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/euclidtools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/euclidtools.pyo
 %%PYTHON_SITELIBDIR%%/sympy/polys/factortools.py
 %%PYTHON_SITELIBDIR%%/sympy/polys/factortools.pyc
 %%PYTHON_SITELIBDIR%%/sympy/polys/factortools.pyo
-%%PYTHON_SITELIBDIR%%/sympy/polys/galoispolys.py
-%%PYTHON_SITELIBDIR%%/sympy/polys/galoispolys.pyc
-%%PYTHON_SITELIBDIR%%/sympy/polys/galoispolys.pyo
-%%PYTHON_SITELIBDIR%%/sympy/polys/integerpolys.py
-%%PYTHON_SITELIBDIR%%/sympy/polys/integerpolys.pyc
-%%PYTHON_SITELIBDIR%%/sympy/polys/integerpolys.pyo
-%%PYTHON_SITELIBDIR%%/sympy/polys/monomial.py
-%%PYTHON_SITELIBDIR%%/sympy/polys/monomial.pyc
-%%PYTHON_SITELIBDIR%%/sympy/polys/monomial.pyo
-%%PYTHON_SITELIBDIR%%/sympy/polys/polynomial.py
-%%PYTHON_SITELIBDIR%%/sympy/polys/polynomial.pyc
-%%PYTHON_SITELIBDIR%%/sympy/polys/polynomial.pyo
-%%PYTHON_SITELIBDIR%%/sympy/polys/rootfinding.py
-%%PYTHON_SITELIBDIR%%/sympy/polys/rootfinding.pyc
-%%PYTHON_SITELIBDIR%%/sympy/polys/rootfinding.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/galoistools.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/galoistools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/galoistools.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/groebnertools.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/groebnertools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/groebnertools.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/monomialtools.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/monomialtools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/monomialtools.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/numberfields.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/numberfields.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/numberfields.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/orthopolys.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/orthopolys.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/orthopolys.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/partfrac.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/partfrac.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/partfrac.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyclasses.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyclasses.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyclasses.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyconfig.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyconfig.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyconfig.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/polycontext.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/polycontext.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/polycontext.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyerrors.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyerrors.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyerrors.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyfuncs.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyfuncs.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyfuncs.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyoptions.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyoptions.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyoptions.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyroots.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyroots.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyroots.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/polytools.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/polytools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/polytools.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyutils.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyutils.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/polyutils.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/rationaltools.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/rationaltools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/rationaltools.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/rootisolation.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/rootisolation.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/rootisolation.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/rootoftools.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/rootoftools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/rootoftools.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/sparsearith.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/sparsearith.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/sparsearith.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/sparsebasic.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/sparsebasic.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/sparsebasic.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/sparsepolys.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/sparsepolys.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/sparsepolys.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/sparsetools.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/sparsetools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/sparsetools.pyo
 %%PYTHON_SITELIBDIR%%/sympy/polys/specialpolys.py
 %%PYTHON_SITELIBDIR%%/sympy/polys/specialpolys.pyc
 %%PYTHON_SITELIBDIR%%/sympy/polys/specialpolys.pyo
-%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_galoispolys.py
-%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_galoispolys.pyc
-%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_galoispolys.pyo
-%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_integerpolys.py
-%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_integerpolys.pyc
-%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_integerpolys.pyo
-%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polynomial.py
-%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polynomial.pyc
-%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polynomial.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/sqfreetools.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/sqfreetools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/sqfreetools.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_constructor.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_constructor.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_constructor.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_densearith.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_densearith.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_densearith.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_densebasic.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_densebasic.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_densebasic.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_densetools.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_densetools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_densetools.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_domains.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_domains.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_domains.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_euclidtools.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_euclidtools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_euclidtools.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_factortools.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_factortools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_factortools.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_galoistools.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_galoistools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_galoistools.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_groebnertools.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_groebnertools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_groebnertools.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_monomialtools.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_monomialtools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_monomialtools.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_numberfields.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_numberfields.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_numberfields.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_orthopolys.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_orthopolys.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_orthopolys.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_partfrac.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_partfrac.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_partfrac.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polyclasses.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polyclasses.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polyclasses.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polyfuncs.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polyfuncs.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polyfuncs.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polyoptions.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polyoptions.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polyoptions.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polyroots.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polyroots.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polyroots.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polytools.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polytools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polytools.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polyutils.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polyutils.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_polyutils.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_rationaltools.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_rationaltools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_rationaltools.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_rootisolation.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_rootisolation.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_rootisolation.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_rootoftools.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_rootoftools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_rootoftools.pyo
 %%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_specialpolys.py
 %%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_specialpolys.pyc
 %%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_specialpolys.pyo
-%%PYTHON_SITELIBDIR%%/sympy/polys/wrappers.py
-%%PYTHON_SITELIBDIR%%/sympy/polys/wrappers.pyc
-%%PYTHON_SITELIBDIR%%/sympy/polys/wrappers.pyo
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_sqfreetools.py
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_sqfreetools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/polys/tests/test_sqfreetools.pyo
 %%PYTHON_SITELIBDIR%%/sympy/printing/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/printing/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/printing/__init__.pyo
 %%PYTHON_SITELIBDIR%%/sympy/printing/ccode.py
 %%PYTHON_SITELIBDIR%%/sympy/printing/ccode.pyc
 %%PYTHON_SITELIBDIR%%/sympy/printing/ccode.pyo
+%%PYTHON_SITELIBDIR%%/sympy/printing/codeprinter.py
+%%PYTHON_SITELIBDIR%%/sympy/printing/codeprinter.pyc
+%%PYTHON_SITELIBDIR%%/sympy/printing/codeprinter.pyo
 %%PYTHON_SITELIBDIR%%/sympy/printing/conventions.py
 %%PYTHON_SITELIBDIR%%/sympy/printing/conventions.pyc
 %%PYTHON_SITELIBDIR%%/sympy/printing/conventions.pyo
+%%PYTHON_SITELIBDIR%%/sympy/printing/fcode.py
+%%PYTHON_SITELIBDIR%%/sympy/printing/fcode.pyc
+%%PYTHON_SITELIBDIR%%/sympy/printing/fcode.pyo
 %%PYTHON_SITELIBDIR%%/sympy/printing/gtk.py
 %%PYTHON_SITELIBDIR%%/sympy/printing/gtk.pyc
 %%PYTHON_SITELIBDIR%%/sympy/printing/gtk.pyo
@@ -863,9 +1361,6 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/printing/pretty/tests/test_pretty.py
 %%PYTHON_SITELIBDIR%%/sympy/printing/pretty/tests/test_pretty.pyc
 %%PYTHON_SITELIBDIR%%/sympy/printing/pretty/tests/test_pretty.pyo
-%%PYTHON_SITELIBDIR%%/sympy/printing/pretty/tests/test_pretty_unicode.py
-%%PYTHON_SITELIBDIR%%/sympy/printing/pretty/tests/test_pretty_unicode.pyc
-%%PYTHON_SITELIBDIR%%/sympy/printing/pretty/tests/test_pretty_unicode.pyo
 %%PYTHON_SITELIBDIR%%/sympy/printing/preview.py
 %%PYTHON_SITELIBDIR%%/sympy/printing/preview.pyc
 %%PYTHON_SITELIBDIR%%/sympy/printing/preview.pyo
@@ -884,9 +1379,15 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_ccode.py
 %%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_ccode.pyc
 %%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_ccode.pyo
+%%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_codeprinter.py
+%%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_codeprinter.pyc
+%%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_codeprinter.pyo
 %%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_conventions.py
 %%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_conventions.pyc
 %%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_conventions.pyo
+%%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_fcode.py
+%%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_fcode.pyc
+%%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_fcode.pyo
 %%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_gtk.py
 %%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_gtk.pyc
 %%PYTHON_SITELIBDIR%%/sympy/printing/tests/test_gtk.pyo
@@ -929,6 +1430,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/series/order.py
 %%PYTHON_SITELIBDIR%%/sympy/series/order.pyc
 %%PYTHON_SITELIBDIR%%/sympy/series/order.pyo
+%%PYTHON_SITELIBDIR%%/sympy/series/residues.py
+%%PYTHON_SITELIBDIR%%/sympy/series/residues.pyc
+%%PYTHON_SITELIBDIR%%/sympy/series/residues.pyo
 %%PYTHON_SITELIBDIR%%/sympy/series/series.py
 %%PYTHON_SITELIBDIR%%/sympy/series/series.pyc
 %%PYTHON_SITELIBDIR%%/sympy/series/series.pyo
@@ -950,6 +1454,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/series/tests/test_order.py
 %%PYTHON_SITELIBDIR%%/sympy/series/tests/test_order.pyc
 %%PYTHON_SITELIBDIR%%/sympy/series/tests/test_order.pyo
+%%PYTHON_SITELIBDIR%%/sympy/series/tests/test_residues.py
+%%PYTHON_SITELIBDIR%%/sympy/series/tests/test_residues.pyc
+%%PYTHON_SITELIBDIR%%/sympy/series/tests/test_residues.pyo
 %%PYTHON_SITELIBDIR%%/sympy/series/tests/test_series.py
 %%PYTHON_SITELIBDIR%%/sympy/series/tests/test_series.pyc
 %%PYTHON_SITELIBDIR%%/sympy/series/tests/test_series.pyo
@@ -962,9 +1469,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/simplify/cse_opts.py
 %%PYTHON_SITELIBDIR%%/sympy/simplify/cse_opts.pyc
 %%PYTHON_SITELIBDIR%%/sympy/simplify/cse_opts.pyo
-%%PYTHON_SITELIBDIR%%/sympy/simplify/rewrite.py
-%%PYTHON_SITELIBDIR%%/sympy/simplify/rewrite.pyc
-%%PYTHON_SITELIBDIR%%/sympy/simplify/rewrite.pyo
+%%PYTHON_SITELIBDIR%%/sympy/simplify/epathtools.py
+%%PYTHON_SITELIBDIR%%/sympy/simplify/epathtools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/simplify/epathtools.pyo
 %%PYTHON_SITELIBDIR%%/sympy/simplify/simplify.py
 %%PYTHON_SITELIBDIR%%/sympy/simplify/simplify.pyc
 %%PYTHON_SITELIBDIR%%/sympy/simplify/simplify.pyo
@@ -974,6 +1481,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/simplify/tests/test_cse.py
 %%PYTHON_SITELIBDIR%%/sympy/simplify/tests/test_cse.pyc
 %%PYTHON_SITELIBDIR%%/sympy/simplify/tests/test_cse.pyo
+%%PYTHON_SITELIBDIR%%/sympy/simplify/tests/test_epathtools.py
+%%PYTHON_SITELIBDIR%%/sympy/simplify/tests/test_epathtools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/simplify/tests/test_epathtools.pyo
 %%PYTHON_SITELIBDIR%%/sympy/simplify/tests/test_rewrite.py
 %%PYTHON_SITELIBDIR%%/sympy/simplify/tests/test_rewrite.pyc
 %%PYTHON_SITELIBDIR%%/sympy/simplify/tests/test_rewrite.pyo
@@ -983,12 +1493,21 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/simplify/tests/test_sqrtdenest.py
 %%PYTHON_SITELIBDIR%%/sympy/simplify/tests/test_sqrtdenest.pyc
 %%PYTHON_SITELIBDIR%%/sympy/simplify/tests/test_sqrtdenest.pyo
+%%PYTHON_SITELIBDIR%%/sympy/simplify/tests/test_traversaltools.py
+%%PYTHON_SITELIBDIR%%/sympy/simplify/tests/test_traversaltools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/simplify/tests/test_traversaltools.pyo
+%%PYTHON_SITELIBDIR%%/sympy/simplify/traversaltools.py
+%%PYTHON_SITELIBDIR%%/sympy/simplify/traversaltools.pyc
+%%PYTHON_SITELIBDIR%%/sympy/simplify/traversaltools.pyo
 %%PYTHON_SITELIBDIR%%/sympy/slow_tests/test_core.py
 %%PYTHON_SITELIBDIR%%/sympy/slow_tests/test_core.pyc
 %%PYTHON_SITELIBDIR%%/sympy/slow_tests/test_core.pyo
 %%PYTHON_SITELIBDIR%%/sympy/solvers/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/solvers/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/solvers/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/solvers/inequalities.py
+%%PYTHON_SITELIBDIR%%/sympy/solvers/inequalities.pyc
+%%PYTHON_SITELIBDIR%%/sympy/solvers/inequalities.pyo
 %%PYTHON_SITELIBDIR%%/sympy/solvers/ode.py
 %%PYTHON_SITELIBDIR%%/sympy/solvers/ode.pyc
 %%PYTHON_SITELIBDIR%%/sympy/solvers/ode.pyo
@@ -1007,6 +1526,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_constantsimp.py
 %%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_constantsimp.pyc
 %%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_constantsimp.pyo
+%%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_inequalities.py
+%%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_inequalities.pyc
+%%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_inequalities.pyo
 %%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_numeric.py
 %%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_numeric.pyc
 %%PYTHON_SITELIBDIR%%/sympy/solvers/tests/test_numeric.pyo
@@ -1034,15 +1556,21 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/statistics/tests/test_statistics.py
 %%PYTHON_SITELIBDIR%%/sympy/statistics/tests/test_statistics.pyc
 %%PYTHON_SITELIBDIR%%/sympy/statistics/tests/test_statistics.pyo
-%%PYTHON_SITELIBDIR%%/sympy/test_external/test_codegen_c_cc.py
-%%PYTHON_SITELIBDIR%%/sympy/test_external/test_codegen_c_cc.pyc
-%%PYTHON_SITELIBDIR%%/sympy/test_external/test_codegen_c_cc.pyo
-%%PYTHON_SITELIBDIR%%/sympy/test_external/test_numpy.py
-%%PYTHON_SITELIBDIR%%/sympy/test_external/test_numpy.pyc
-%%PYTHON_SITELIBDIR%%/sympy/test_external/test_numpy.pyo
-%%PYTHON_SITELIBDIR%%/sympy/test_external/test_sage.py
-%%PYTHON_SITELIBDIR%%/sympy/test_external/test_sage.pyc
-%%PYTHON_SITELIBDIR%%/sympy/test_external/test_sage.pyo
+%%PYTHON_SITELIBDIR%%/sympy/tensor/__init__.py
+%%PYTHON_SITELIBDIR%%/sympy/tensor/__init__.pyc
+%%PYTHON_SITELIBDIR%%/sympy/tensor/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/tensor/index_methods.py
+%%PYTHON_SITELIBDIR%%/sympy/tensor/index_methods.pyc
+%%PYTHON_SITELIBDIR%%/sympy/tensor/index_methods.pyo
+%%PYTHON_SITELIBDIR%%/sympy/tensor/indexed.py
+%%PYTHON_SITELIBDIR%%/sympy/tensor/indexed.pyc
+%%PYTHON_SITELIBDIR%%/sympy/tensor/indexed.pyo
+%%PYTHON_SITELIBDIR%%/sympy/tensor/tests/test_index_methods.py
+%%PYTHON_SITELIBDIR%%/sympy/tensor/tests/test_index_methods.pyc
+%%PYTHON_SITELIBDIR%%/sympy/tensor/tests/test_index_methods.pyo
+%%PYTHON_SITELIBDIR%%/sympy/tensor/tests/test_indexed.py
+%%PYTHON_SITELIBDIR%%/sympy/tensor/tests/test_indexed.pyc
+%%PYTHON_SITELIBDIR%%/sympy/tensor/tests/test_indexed.pyo
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/thirdparty/__init__.pyo
@@ -1340,6 +1868,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/utilities/__init__.py
 %%PYTHON_SITELIBDIR%%/sympy/utilities/__init__.pyc
 %%PYTHON_SITELIBDIR%%/sympy/utilities/__init__.pyo
+%%PYTHON_SITELIBDIR%%/sympy/utilities/autowrap.py
+%%PYTHON_SITELIBDIR%%/sympy/utilities/autowrap.pyc
+%%PYTHON_SITELIBDIR%%/sympy/utilities/autowrap.pyo
 %%PYTHON_SITELIBDIR%%/sympy/utilities/benchmarking.py
 %%PYTHON_SITELIBDIR%%/sympy/utilities/benchmarking.pyc
 %%PYTHON_SITELIBDIR%%/sympy/utilities/benchmarking.pyo
@@ -1349,6 +1880,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/utilities/compilef.py
 %%PYTHON_SITELIBDIR%%/sympy/utilities/compilef.pyc
 %%PYTHON_SITELIBDIR%%/sympy/utilities/compilef.pyo
+%%PYTHON_SITELIBDIR%%/sympy/utilities/cythonutils.py
+%%PYTHON_SITELIBDIR%%/sympy/utilities/cythonutils.pyc
+%%PYTHON_SITELIBDIR%%/sympy/utilities/cythonutils.pyo
 %%PYTHON_SITELIBDIR%%/sympy/utilities/decorator.py
 %%PYTHON_SITELIBDIR%%/sympy/utilities/decorator.pyc
 %%PYTHON_SITELIBDIR%%/sympy/utilities/decorator.pyo
@@ -1367,6 +1901,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/utilities/memoization.py
 %%PYTHON_SITELIBDIR%%/sympy/utilities/memoization.pyc
 %%PYTHON_SITELIBDIR%%/sympy/utilities/memoization.pyo
+%%PYTHON_SITELIBDIR%%/sympy/utilities/misc.py
+%%PYTHON_SITELIBDIR%%/sympy/utilities/misc.pyc
+%%PYTHON_SITELIBDIR%%/sympy/utilities/misc.pyo
 %%PYTHON_SITELIBDIR%%/sympy/utilities/pkgdata.py
 %%PYTHON_SITELIBDIR%%/sympy/utilities/pkgdata.pyc
 %%PYTHON_SITELIBDIR%%/sympy/utilities/pkgdata.pyo
@@ -1379,6 +1916,9 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/utilities/source.py
 %%PYTHON_SITELIBDIR%%/sympy/utilities/source.pyc
 %%PYTHON_SITELIBDIR%%/sympy/utilities/source.pyo
+%%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_autowrap.py
+%%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_autowrap.pyc
+%%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_autowrap.pyo
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_code_quality.py
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_code_quality.pyc
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_code_quality.pyo
@@ -1403,84 +1943,93 @@ bin/isympy
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_source.py
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_source.pyc
 %%PYTHON_SITELIBDIR%%/sympy/utilities/tests/test_source.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/assumptions/handlers
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/assumptions/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/assumptions
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/concrete/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/concrete
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/core/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/core
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/functions/combinatorial/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/functions/combinatorial
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/functions/elementary/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/functions/elementary
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/functions/special/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/functions/special
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/functions
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/galgebra/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/galgebra
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/geometry/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/geometry
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/integrals/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/integrals
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/interactive
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/logic/algorithms
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/logic/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/logic/utilities
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/logic
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/matrices/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/matrices
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/mpmath/calculus
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/mpmath/matrices
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/mpmath
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/ntheory/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/ntheory
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/parsing/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/parsing
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/physics/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/physics
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/plotting/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/plotting
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/polys/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/polys
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/printing/pretty/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/printing/pretty
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/printing/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/printing
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/series/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/series
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/simplify/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/simplify
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/slow_tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/solvers/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/solvers
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/statistics/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/statistics
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/test_external
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/app
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/font
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/gl
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/graphics
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers/directsound
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers/openal
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media
+%%PYTHON_SITELIBDIR%%/sympy/utilities/timeutils.py
+%%PYTHON_SITELIBDIR%%/sympy/utilities/timeutils.pyc
+%%PYTHON_SITELIBDIR%%/sympy/utilities/timeutils.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/utilities/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/utilities/mathml/data
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/utilities/mathml
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/utilities
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/window/xlib
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/window/win32
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/window/carbon
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/window
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text/formats
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/text
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/window/carbon
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/window/win32
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/window/xlib
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/window
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers/openal
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers/directsound
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media/drivers
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/media
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image/codecs
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/image
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/graphics
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/gl
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/font
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet/app
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet/pyglet
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty/pyglet
 @dirrm %%PYTHON_SITELIBDIR%%/sympy/thirdparty
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/utilities/mathml/data
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/utilities/mathml
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/utilities/tests
-@dirrm %%PYTHON_SITELIBDIR%%/sympy/utilities
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/tensor/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/tensor
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/statistics/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/statistics
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/solvers/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/solvers
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/slow_tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/simplify/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/simplify
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/series/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/series
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/printing/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/printing/pretty/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/printing/pretty
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/printing
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/polys/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/polys/domains
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/polys
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/plotting/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/plotting
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/physics/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/physics/quantum/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/physics/quantum
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/physics
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/parsing/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/parsing
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/ntheory/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/ntheory
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/mpmath/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/mpmath/matrices
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/mpmath/libmp
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/mpmath/functions
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/mpmath/calculus
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/mpmath
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/matrices/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/matrices
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/logic/utilities
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/logic/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/logic/algorithms
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/logic
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/interactive
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/integrals/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/integrals
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/geometry/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/geometry
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/galgebra/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/galgebra
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/functions/special/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/functions/special
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/functions/elementary/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/functions/elementary
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/functions/combinatorial/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/functions/combinatorial
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/functions
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/external/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/external
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/core/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/core
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/concrete/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/concrete
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/assumptions/tests
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/assumptions/handlers
+@dirrm %%PYTHON_SITELIBDIR%%/sympy/assumptions
 @dirrm %%PYTHON_SITELIBDIR%%/sympy
