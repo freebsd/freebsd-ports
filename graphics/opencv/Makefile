@@ -202,23 +202,6 @@ CMAKE_ARGS+=	-DBUILD_TESTS:BOOL=Off \
 
 .include <bsd.port.pre.mk>
 
-# This whole block looks a bit hackish, but it works...
-.if ${ARCH} == "amd64" && ${OSVERSION} < 700042
-USE_GCC=	4.2+
-.else
-CMAKE_OUTSOURCE=	yes
-.if ${ARCH} == "i386" && ${OSVERSION} >= 700042 && ${OSVERSION} < 800107
-USE_GCC=	4.4+
-.endif
-.endif
-
-# Any other way to override CFLAGS and CXXFLAGS?
-.ifdef(USE_GCC)
-CMAKE_SOURCE_PATH=	-DCMAKE_C_FLAGS:STRING="${CFLAGS:C/-Wl[^ ]*//g}" \
-			-DCMAKE_CXX_FLAGS:STRING="${CXXFLAGS:C/-Wl[^ ]*//g}" \
-			${WRKSRC}
-.endif
-
 post-patch:
 	@${MKDIR} ${CONFIGURE_WRKSRC}
 	@${REINPLACE_CMD} -e 's:set(OPENCV_SOVERSION.*:set(OPENCV_SOVERSION "$${OPENCV_VERSION_MAJOR}"):' \
