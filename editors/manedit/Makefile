@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	editors
 MASTER_SITES=	http://distro.ibiblio.org/pub/linux/distributions/amigolinux/download/Applications/Editors/manedit-0.8.1/
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A UNIX manual page editor and viewer
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/${PORTNAME}
