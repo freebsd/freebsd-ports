@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.7.1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
