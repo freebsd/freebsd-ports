@@ -7,6 +7,7 @@
 
 PORTNAME=	php52
 PORTVERSION=	5.2.17
+PORTREVISION=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -46,7 +47,8 @@ OPTIONS=	CLI "Build CLI version" on \
 		DISCARD "Enable discard-path support (CGI only)" off \
 		FASTCGI "Enable fastcgi support (CGI only)" on \
 		FPM "Enable fastcgi process manager (CGI only)" off \
-		PATHINFO "Enable path-info-check support (CGI only)" on
+		PATHINFO "Enable path-info-check support (CGI only)" on \
+		LINKTHR "Link thread lib (for threaded extensions)" off
 
 CONFLICTS=	php4-4* php5-5.3*
 
@@ -169,6 +171,10 @@ CONFIGURE_ENV+=	ac_cv_pthreads_lib="" \
 		lt_cv_path_SED="sed"
 
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+
+.if defined(WITH_LINKTHR)
+CONFIGURE_ENV+=        LIBS="${LIBS} ${PTHREAD_LIBS}"
+.endif
 
 .if defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--enable-debug
