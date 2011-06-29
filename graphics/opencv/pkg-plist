@@ -78,7 +78,6 @@ libdata/pkgconfig/opencv.pc
 @dirrm %%DATADIR%%/lbpcascades
 @dirrm %%DATADIR%%/haarcascades
 %%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
-@dirrm include/opencv2/video
 @dirrm include/opencv2/objdetect
 @dirrm include/opencv2/legacy
 @dirrm include/opencv2/highgui
