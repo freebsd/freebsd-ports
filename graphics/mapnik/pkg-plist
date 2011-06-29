@@ -103,9 +103,13 @@ include/mapnik/proj_transform.hpp
 include/mapnik/distance.hpp
 lib/libmapnik.so
 lib/libmapnik.so.0
-lib/mapnik/input/postgis.input
+%%GDAL%%lib/mapnik/input/gdal.input
+%%OGR%%lib/mapnik/input/ogr.input
+%%OSM%%lib/mapnik/input/osm.input
+%%POSTGIS%%lib/mapnik/input/postgis.input
 lib/mapnik/input/raster.input
 lib/mapnik/input/shape.input
+%%SQLITE%%lib/mapnik/input/sqlite.input
 lib/mapnik/fonts/unifont-5.1.20080907.ttf
 lib/mapnik/fonts/DejaVuSerif-BoldItalic.ttf
 lib/mapnik/fonts/DejaVuSerifCondensed-BoldItalic.ttf

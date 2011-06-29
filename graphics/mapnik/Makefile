@@ -7,8 +7,9 @@
 
 PORTNAME=	mapnik
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	graphics geography
-MASTER_SITES=	${MASTER_SITE_BERLIOS}/${PORTNAME}/
+MASTER_SITES=	BERLIOS
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	A Free Toolkit For Developing Mapping Applications
@@ -28,16 +29,23 @@ BUILD_DEPENDS=	${LOCALBASE}/bin/freetype-config:${PORTSDIR}/print/freetype2 \
 LICENSE=	LGPL21
 LICENSE_FILE=   ${WRKSRC}/COPYING
 
-USE_PGSQL=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	2.5+
 USE_LDCONFIG=	yes
 USE_SCONS=	yes
 USE_AUTOTOOLS=	libltdl
 USE_GNOME=	pkgconfig libxml2
+MAKE_JOBS_SAFE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-OPTIONS=	CAIRO "Enable cairo rendering" on
+INPUT_PLUGINS=	raster shape
+
+OPTIONS=	CAIRO "Enable cairo rendering" on \
+		POSTGIS "Postgis input plugin" on \
+		GDAL "gdal input plugin" off \
+		OGR "ogr input plugin" off \
+		SQLITE "SQLite input plugin" off \
+		OSM "OSM input plugin" off
 
 .include <bsd.port.options.mk>
 
@@ -49,10 +57,52 @@ LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo \
 BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}cairo>=1.8.2:${PORTSDIR}/graphics/py-cairo
 .endif
 
+.if !defined(WITHOUT_POSTGIS)
+INPUT_PLUGINS+=	postgis
+USE_PGSQL=	yes
+PLIST_SUB+=	POSTGIS=""
+.else
+PLIST_SUB+=	POSTGIS="@comment "
+.endif
+
+.if defined(WITH_GDAL)
+INPUT_PLUGINS+=	gdal
+LIB_DEPENDS+=	gdal:${PORTSDIR}/graphics/gdal
+PLIST_SUB+=	GDAL=""
+.else
+PLIST_SUB+=	GDAL="@comment "
+.endif
+
+.if defined(WITH_OGR)
+INPUT_PLUGINS+=	ogr
+LIB_DEPENDS+=	gdal:${PORTSDIR}/graphics/gdal
+PLIST_SUB+=	OGR=""
+.else
+PLIST_SUB+=	OGR="@comment "
+.endif
+
+.if defined(WITH_SQLITE)
+INPUT_PLUGINS+=	sqlite
+LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
+PLIST_SUB+=	SQLITE=""
+.else
+PLIST_SUB+=	SQLITE="@comment "
+.endif
+
+.if defined(WITH_OSM)
+INPUT_PLUGINS+=	osm
+LIB_DEPENDS+=	curl.6:${PORTSDIR}/ftp/curl
+PLIST_SUB+=	OSM=""
+.else
+PLIST_SUB+=	OSM="@comment "
+.endif
+
+SCONS_ENV+=	INPUT_PLUGINS="`${ECHO} ${INPUT_PLUGINS} | ${TR} ' ' ,`"
+
 .include <bsd.port.pre.mk>
 
 .if defined (MAKE_JOBS_NUMBER)
-SCONS_ARGS+=     JOBS=${MAKE_JOBS_NUMBER}
+SCONS_ENV+=	JOBS=${MAKE_JOBS_NUMBER}
 .endif
 
 post-patch:
