@@ -22,6 +22,8 @@ RUN_DEPENDS=	rubygem-activesupport>=2.3.4:${PORTSDIR}/devel/rubygem-activesuppor
   rubygem-rubigen>=1.5.3:${PORTSDIR}/devel/rubygem-rubigen
 
 BROKEN=	Depends on exact 2.3.4 version of activesupport
+DEPRECATED=	broken since 2010/09/22
+EXPIRATION_DATE=	2011-08-01
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
