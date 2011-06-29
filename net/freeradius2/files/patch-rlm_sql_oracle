@@ -1,6 +1,6 @@
-diff -urN ../freeradius-server-2.1.10/src/modules/rlm_sql/drivers/rlm_sql_oracle/configure src/modules/rlm_sql/drivers/rlm_sql_oracle/configure
---- ../freeradius-server-2.1.10/src/modules/rlm_sql/drivers/rlm_sql_oracle/configure	2010-09-28 07:03:56.000000000 -0400
-+++ src/modules/rlm_sql/drivers/rlm_sql_oracle/configure	2010-05-24 01:40:58.000000000 -0400
+diff -urN src/modules/rlm_sql/drivers/rlm_sql_oracle/configure ./configure
+--- src/modules/rlm_sql/drivers/rlm_sql_oracle/configure	2011-06-20 10:57:14.000000000 -0400
++++ src/modules/rlm_sql/drivers/rlm_sql_oracle/configure	2011-06-21 15:18:44.000000000 -0400
 @@ -1,5 +1,5 @@
  #! /bin/sh
 -# From configure.in Revision: 1.10 .
@@ -560,9 +560,9 @@ diff -urN ../freeradius-server-2.1.10/src/modules/rlm_sql/drivers/rlm_sql_oracle
  			{ echo "$as_me:$LINENO: result: yes" >&5
  echo "${ECHO_T}yes" >&6; }
  		fi
-diff -urN ../freeradius-server-2.1.10/src/modules/rlm_sql/drivers/rlm_sql_oracle/configure.in src/modules/rlm_sql/drivers/rlm_sql_oracle/configure.in
---- ../freeradius-server-2.1.10/src/modules/rlm_sql/drivers/rlm_sql_oracle/configure.in	2010-09-28 07:03:56.000000000 -0400
-+++ src/modules/rlm_sql/drivers/rlm_sql_oracle/configure.in	2010-05-24 01:40:58.000000000 -0400
+diff -urN src/modules/rlm_sql/drivers/rlm_sql_oracle/configure.in ./configure.in
+--- src/modules/rlm_sql/drivers/rlm_sql_oracle/configure.in	2011-06-20 10:57:14.000000000 -0400
++++ src/modules/rlm_sql/drivers/rlm_sql_oracle/configure.in	2011-06-21 15:18:44.000000000 -0400
 @@ -1,5 +1,5 @@
  AC_INIT(sql_oracle.c)
 -AC_REVISION($Revision: 1.10 $)
@@ -570,7 +570,7 @@ diff -urN ../freeradius-server-2.1.10/src/modules/rlm_sql/drivers/rlm_sql_oracle
  AC_DEFUN(modname,[rlm_sql_oracle])
  
  fail=
-@@ -18,120 +18,145 @@
+@@ -18,125 +18,145 @@
  	dnl # defined anyways.
  	dnl #
  
@@ -697,46 +697,49 @@ diff -urN ../freeradius-server-2.1.10/src/modules/rlm_sql/drivers/rlm_sql_oracle
 -		if test "x$oracle_lib_dir" != "x" ; then
 -			ORACLE_LIBDIR_SWITCH="-L${oracle_lib_dir} "
 -		fi
--		LIBS="$old_LIBS $ORACLE_LIBDIR_SWITCH -lclntsh -lnnz10"
--		AC_TRY_LINK([#include <oci.h>
--	
--				static OCIEnv           *p_env;
--				static OCIError         *p_err;
--				static OCISvcCtx        *p_svc;
--				static OCIStmt          *p_sql;
--				static OCIDefine        *p_dfn    = (OCIDefine *) 0;
--				static OCIBind          *p_bnd    = (OCIBind *) 0;
--			],
--			[
--				  int             p_bvi;
--				  char            p_sli[20];
--				  int             rc;
--				  char            errbuf[100];
--				  int             errcode;
--				
--				  rc = OCIInitialize((ub4) OCI_DEFAULT, (dvoid *)0,  /* Initialize OCI */
--				          (dvoid * (*)(dvoid *, size_t)) 0,
--				          (dvoid * (*)(dvoid *, dvoid *, size_t))0,
--				          (void (*)(dvoid *, dvoid *)) 0 );
+-		for oracle_version in 10 11 9 ""; do
+-			LIBS="$old_LIBS $ORACLE_LIBDIR_SWITCH -lclntsh -lnnz${oracle_version}"
+-			AC_TRY_LINK([#include <oci.h>
+-		
+-					static OCIEnv           *p_env;
+-					static OCIError         *p_err;
+-					static OCISvcCtx        *p_svc;
+-					static OCIStmt          *p_sql;
+-					static OCIDefine        *p_dfn    = (OCIDefine *) 0;
+-					static OCIBind          *p_bnd    = (OCIBind *) 0;
+-				],
+-				[
+-					  int             p_bvi;
+-					  char            p_sli[20];
+-					  int             rc;
+-					  char            errbuf[100];
+-					  int             errcode;
+-					
+-					  rc = OCIInitialize((ub4) OCI_DEFAULT, (dvoid *)0,  /* Initialize OCI */
+-							  (dvoid * (*)(dvoid *, size_t)) 0,
+-							  (dvoid * (*)(dvoid *, dvoid *, size_t))0,
+-							  (void (*)(dvoid *, dvoid *)) 0 );
 -
--			],
--			ORACLE_LIBS="$ORACLE_LIBDIR_SWITCH -lclntsh -lnnz10",
--			ORACLE_LIBS=
--		)
+-				],
+-				ORACLE_LIBS="$ORACLE_LIBDIR_SWITCH -lclntsh -lnnz${oracle_version}",
+-				ORACLE_LIBS=
 +		FR_LOCATE_DIR(oracle_include_dir,oci.h)
- 
--		LIBS="$old_LIBS"
++
 +		for try in /usr/local/include/oracle /usr/local/oracle/include $oracle_include_dir; do
 +			CFLAGS="$old_CFLAGS -I$try"
 +			AC_TRY_COMPILE([#include <oci.h>],
 +				[ int a = 1; ],
 +				ORACLE_INCLUDE="-I$try",
 +				ORACLE_INCLUDE=
-+			)
+ 			)
+-			if test "x$ORACLE_LIBS" != "x"; then
+-				break
 +			if test "x$ORACLE_INCLUDE" != "x"; then
 +				break;
-+			fi
-+		done
+ 			fi
+ 		done
+-
+-		LIBS="$old_LIBS"
  		CFLAGS="$old_CFLAGS"
  	fi
  
@@ -795,7 +798,7 @@ diff -urN ../freeradius-server-2.1.10/src/modules/rlm_sql/drivers/rlm_sql_oracle
 +
  		if test "x$ORACLE_LIBS" = "x"; then
  			AC_MSG_WARN([oracle libraries not found.  Use --with-oracle-lib-dir=<path>.])
--			fail="$fail libclntsh libnnz10"
+-			fail="$fail libclntsh libnnz${oracle_version}"
 +			fail="$fail liboracleclient"
  		else
 -			sql_oracle_ldflags="${sql_oracle_ldflags} $ORACLE_LIBS"

@@ -8,8 +8,7 @@
 #
 
 PORTNAME=	freeradius
-DISTVERSION=	2.1.10
-PORTREVISION=	2
+DISTVERSION=	2.1.11
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -60,6 +59,8 @@ OPTIONS=	USER		"Run as user freeradius, group freeradius" on \
 		UDPFROMTO	"Compile in UDPFROMTO support" off
 
 .include <bsd.port.options.mk>
+
+LICENSE=	GPLv2
 
 # Default requirements for rc script
 _REQUIRE=	NETWORKING SERVERS
@@ -156,8 +157,6 @@ WITH_EXPERIMENTAL=	yes
 USE_PERL5=	yes
 CONFIGURE_ARGS+=--with-rlm_perl
 PLIST_SUB+=	RLMPERL=""
-# temporary workaround for libtool issue until FR 2.2.x is released
-CFLAGS+=	-DHAVE_LT_DLADVISE_INIT
 .else
 CONFIGURE_ARGS+=--without-perl --without-rlm_perl
 PLIST_SUB+=	RLMPERL="@comment "
@@ -168,8 +167,6 @@ USE_PYTHON=	yes
 CONFIGURE_ARGS+=--with-rlm_python \
 		--with-rlm-python-lib-dir=${PYTHON_LIBDIR} \
 		--with-rlm-python-include-dir=${PYTHON_INCLUDEDIR}
-# temporary workaround for libtool issue until FR 2.2.x is released
-CFLAGS+=	-DHAVE_LT_DLADVISE_INIT
 PLIST_SUB+=	RLMPYTHON=""
 .else
 CONFIGURE_ARGS+=--without-rlm_python
