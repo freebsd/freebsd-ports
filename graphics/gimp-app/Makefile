@@ -8,7 +8,7 @@
 
 PORTNAME=	gimp-app
 DISTVERSION=	2.6.11
-PORTREVISION?=	2
+PORTREVISION?=	3
 PORTEPOCH?=	1
 CATEGORIES?=	graphics gnome
 MASTER_SITES=	ftp://ftp.gimp.org/pub/%SUBDIR%/ \
@@ -124,12 +124,11 @@ LIB_DEPENDS+=		exif.12:${PORTSDIR}/graphics/libexif
 CONFIGURE_ARGS+=	--without-libexif
 .endif
 
-.if defined(WITH_GVFS) || ${HAVE_GNOME:Mgvfs}!=""
-LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
-USE_GNOME+=	gvfs
-.  if ${HAVE_GNOME:Mlibgnomeui}!=""
-USE_GNOME+=	libgnomeui
-.  endif
+.if defined(WITH_GVFS)
+USE_GNOME+=		gvfs
+.else
+LIB_DEPENDS+=		curl.6:${PORTSDIR}/ftp/curl
+CONFIGURE_ARGS+=	--without-gvfs
 .endif
 
 .if defined(WITH_HELPBROWSER)
