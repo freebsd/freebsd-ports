@@ -7,7 +7,7 @@
 
 PORTNAME=	saga
 PORTVERSION=	2.0.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -21,7 +21,7 @@ LIB_DEPENDS=	proj.6:${PORTSDIR}/graphics/proj \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		iodbc.3:${PORTSDIR}/databases/libiodbc \
 		las.1:${PORTSDIR}/devel/liblas \
-		cv.2:${PORTSDIR}/graphics/opencv
+		opencv_legacy.2:${PORTSDIR}/graphics/opencv
 
 USE_WX=		2.8
 USE_LDCONFIG=	yes
@@ -72,6 +72,9 @@ PLIST_SUB+=	HARU="@comment "
 .include <bsd.port.pre.mk>
 
 post-patch:
+	@${REINPLACE_CMD} -e 's/-lcv/-lopencv_legacy/g' \
+		${WRKSRC}/configure \
+		${WRKSRC}/src/modules_images/modules_opencv/opencv/Makefile.in
 	@for f in `${FIND} '${WRKSRC}' -name Makefile.in` \
 		${WRKSRC}/configure; do \
 		${REINPLACE_CMD} -e's|wx-config |${WX_CONFIG} |g' "$$f"; \

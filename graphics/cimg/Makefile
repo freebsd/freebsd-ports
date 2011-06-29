@@ -7,6 +7,7 @@
 
 PORTNAME=	cimg
 PORTVERSION=	1.4.8
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	graphics devel
 MASTER_SITES=	SF/${PORTNAME}		\
@@ -48,7 +49,7 @@ USE_FORTRAN=	yes
 LIB_DEPENDS+=	png:${PORTSDIR}/graphics/png		\
 		jpeg:${PORTSDIR}/graphics/jpeg		\
 		tiff:${PORTSDIR}/graphics/tiff		\
-		cv:${PORTSDIR}/graphics/opencv		\
+		opencv_legacy.2:${PORTSDIR}/graphics/opencv		\
 		IlmImf:${PORTSDIR}/graphics/OpenEXR	\
 		gimp-2.0:${PORTSDIR}/graphics/gimp-app	\
 		fftw3:${PORTSDIR}/math/fftw3		\
