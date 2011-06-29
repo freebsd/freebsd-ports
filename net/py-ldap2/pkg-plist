@@ -21,12 +21,33 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/cidict.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/cidict.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/cidict.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls.py
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls.pyc
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/libldap.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/libldap.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/libldap.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/ppolicy.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/ppolicy.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/ppolicy.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/psearch.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/psearch.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/psearch.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/readentry.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/readentry.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/readentry.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/simple.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/simple.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/simple.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/dn.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/dn.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/dn.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/extop/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/extop/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/extop/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/extop/dds.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/extop/dds.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/extop/dds.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/filter.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/filter.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/filter.pyo
@@ -36,6 +57,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/ldapobject.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/ldapobject.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/ldapobject.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/logger.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/logger.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/logger.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/modlist.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/modlist.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/modlist.pyo
@@ -64,6 +88,8 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldif.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldif.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/schema
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/extop
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
