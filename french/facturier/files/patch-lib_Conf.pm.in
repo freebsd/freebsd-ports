@@ -45,7 +45,7 @@
   #facturier : si le facturier est dans /var/www/html, alors :
   #$BASEAD ="/var/www/html/facturier";
 - $BASEAD ="chemin repertoire principal (facturier)";
-+ $BASEAD ="%%FACT_REP%%/";
++ $BASEAD ="%%WWWDIR%%/";
  
   
   
