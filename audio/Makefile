@@ -799,6 +799,7 @@
     SUBDIR += wavpack
     SUBDIR += wavplay
     SUBDIR += whysynth
+    SUBDIR += wildmidi
     SUBDIR += wmalbum
     SUBDIR += wmauda
     SUBDIR += wmcdplay
