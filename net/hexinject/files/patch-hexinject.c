@@ -1,11 +1,13 @@
---- ./hexinject.c.orig	2010-10-24 06:23:57.000000000 +0200
-+++ ./hexinject.c	2010-10-24 06:24:17.000000000 +0200
-@@ -424,7 +424,7 @@
-     if ( (fp = pcap_open_live( options.device, // name of the device
-                                BUFSIZ,         // portion of the packet to capture
-                                1,              // promiscuous mode
--                               -1,             // read timeout
-+                               1000,             // read timeout
-                                errbuf          // error buffer
-                               )) == NULL)
+--- ./hexinject.c.orig	2011-06-11 15:56:47.000000000 +0200
++++ ./hexinject.c	2011-06-28 18:11:46.000000000 +0200
+@@ -678,8 +678,8 @@
+     }
+ 
+     /* Set read timeout */
+-    if(pcap_set_timeout(fp, -1) != 0) {
+-        fprintf(stderr,"Unable to set read timeout: the interface may be already activated\n");
++    if(pcap_set_timeout(fp, 1000) != 0) {
++        fprintf(stderr,"Unable to set read timeout: the interface may be already activated (%s)\n", errbuf);
+         return 1;
+     }
  
