@@ -1,6 +1,5 @@
 bin/bayer
 bin/blend
-bin/cnet_editor
 bin/colormap
 bin/contourgen
 bin/correlate
@@ -23,7 +22,6 @@ include/vw/BundleAdjustment/AdjustBase.h
 include/vw/BundleAdjustment/AdjustRef.h
 include/vw/BundleAdjustment/AdjustRobustRef.h
 include/vw/BundleAdjustment/AdjustRobustSparse.h
-include/vw/BundleAdjustment/AdjustRobustSparseKGCP.h
 include/vw/BundleAdjustment/AdjustSparse.h
 include/vw/BundleAdjustment/BundleAdjustReport.h
 include/vw/BundleAdjustment/CameraRelation.h
@@ -33,6 +31,7 @@ include/vw/BundleAdjustment/ModelBase.h
 include/vw/Camera.h
 include/vw/Camera/BayerFilter.h
 include/vw/Camera/CAHVModel.h
+include/vw/Camera/CAHVOREModel.h
 include/vw/Camera/CAHVORModel.h
 include/vw/Camera/CameraGeometry.h
 include/vw/Camera/CameraModel.h
@@ -59,6 +58,7 @@ include/vw/Cartography/PointImageManipulation.h
 include/vw/Cartography/Projection.h
 include/vw/Cartography/SimplePointImageManipulation.h
 include/vw/Cartography/ToastTransform.h
+include/vw/Cartography/detail/BresenhamLine.h
 include/vw/Core.h
 include/vw/Core/Cache.h
 include/vw/Core/CompoundTypes.h
@@ -72,6 +72,8 @@ include/vw/Core/Log.h
 include/vw/Core/ProgressCallback.h
 include/vw/Core/Settings.h
 include/vw/Core/Stopwatch.h
+include/vw/Core/System.h
+include/vw/Core/TemporaryFile.h
 include/vw/Core/Thread.h
 include/vw/Core/ThreadPool.h
 include/vw/Core/ThreadQueue.h
@@ -86,7 +88,15 @@ include/vw/FileIO/DiskImageResourcePBM.h
 include/vw/FileIO/DiskImageResourcePDS.h
 include/vw/FileIO/DiskImageResourcePNG.h
 include/vw/FileIO/DiskImageView.h
+include/vw/FileIO/GdalIO.h
+include/vw/FileIO/JpegIO.h
 include/vw/FileIO/KML.h
+include/vw/FileIO/MemoryImageResource.h
+include/vw/FileIO/MemoryImageResourceGDAL.h
+include/vw/FileIO/MemoryImageResourceJPEG.h
+include/vw/FileIO/MemoryImageResourcePNG.h
+include/vw/FileIO/PngIO.h
+include/vw/FileIO/ScanlineIO.h
 include/vw/HDR.h
 include/vw/HDR/CameraCurve.h
 include/vw/HDR/GlobalToneMap.h
@@ -105,6 +115,7 @@ include/vw/Image/ImageIO.h
 include/vw/Image/ImageMath.h
 include/vw/Image/ImageResource.h
 include/vw/Image/ImageResourceImpl.h
+include/vw/Image/ImageResourceStream.h
 include/vw/Image/ImageResourceView.h
 include/vw/Image/ImageView.h
 include/vw/Image/ImageViewBase.h
@@ -174,6 +185,7 @@ include/vw/Mosaic/GMapQuadTreeConfig.h
 include/vw/Mosaic/GigapanQuadTreeConfig.h
 include/vw/Mosaic/ImageComposite.h
 include/vw/Mosaic/KMLQuadTreeConfig.h
+include/vw/Mosaic/QuadTreeConfig.h
 include/vw/Mosaic/QuadTreeGenerator.h
 include/vw/Mosaic/TMSQuadTreeConfig.h
 include/vw/Mosaic/ToastQuadTreeConfig.h
@@ -181,6 +193,9 @@ include/vw/Mosaic/UniviewQuadTreeConfig.h
 include/vw/Stereo.h
 include/vw/Stereo/AffineMixtureComponent.h
 include/vw/Stereo/Correlate.h
+include/vw/Stereo/Correlate.tcc
+include/vw/Stereo/CorrelateResearch.h
+include/vw/Stereo/CorrelateResearch.tcc
 include/vw/Stereo/CorrelatorView.h
 include/vw/Stereo/DisparityMap.h
 include/vw/Stereo/EMSubpixelCorrelatorView.h
@@ -196,45 +211,51 @@ include/vw/Stereo/StereoView.h
 include/vw/Stereo/SubpixelView.h
 include/vw/Stereo/UniformMixtureComponent.h
 include/vw/config.h
+include/vw/tools.h
+include/vw/tools/Common.h
 include/vw/vw.h
-lib/libvw-2.1.0.so
+lib/libvw-2.2.0.so
 lib/libvw.la
 lib/libvw.so
-lib/libvwBundleAdjustment-2.1.0.so
+lib/libvwBundleAdjustment-2.2.0.so
 lib/libvwBundleAdjustment.la
 lib/libvwBundleAdjustment.so
-lib/libvwCamera-2.1.0.so
+lib/libvwCamera-2.2.0.so
 lib/libvwCamera.la
 lib/libvwCamera.so
-lib/libvwCartography-2.1.0.so
+lib/libvwCartography-2.2.0.so
 lib/libvwCartography.la
 lib/libvwCartography.so
-lib/libvwCore-2.1.0.so
+lib/libvwCore-2.2.0.so
 lib/libvwCore.la
 lib/libvwCore.so
-lib/libvwFileIO-2.1.0.so
+lib/libvwFileIO-2.2.0.so
 lib/libvwFileIO.la
 lib/libvwFileIO.so
-lib/libvwHDR-2.1.0.so
+lib/libvwHDR-2.2.0.so
 lib/libvwHDR.la
 lib/libvwHDR.so
-lib/libvwImage-2.1.0.so
+lib/libvwImage-2.2.0.so
 lib/libvwImage.la
 lib/libvwImage.so
-lib/libvwInterestPoint-2.1.0.so
+lib/libvwInterestPoint-2.2.0.so
 lib/libvwInterestPoint.la
 lib/libvwInterestPoint.so
-lib/libvwMath-2.1.0.so
+lib/libvwMath-2.2.0.so
 lib/libvwMath.la
 lib/libvwMath.so
-lib/libvwMosaic-2.1.0.so
+lib/libvwMosaic-2.2.0.so
 lib/libvwMosaic.la
 lib/libvwMosaic.so
-lib/libvwStereo-2.1.0.so
+lib/libvwStereo-2.2.0.so
 lib/libvwStereo.la
 lib/libvwStereo.so
+lib/libvwTools-2.2.0.so
+lib/libvwTools.la
+lib/libvwTools.so
 @dirrm include/vw/BundleAdjustment
 @dirrm include/vw/Camera
+@dirrm include/vw/Cartography/detail
 @dirrm include/vw/Cartography
 @dirrm include/vw/Core
 @dirrm include/vw/FileIO
@@ -244,4 +265,5 @@ lib/libvwStereo.so
 @dirrm include/vw/Math
 @dirrm include/vw/Mosaic
 @dirrm include/vw/Stereo
+@dirrm include/vw/tools
 @dirrm include/vw
