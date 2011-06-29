@@ -1,15 +1,15 @@
---- lib/Makefile.in.orig	2010-05-20 17:06:32.285300994 +0000
-+++ lib/Makefile.in	2010-05-20 17:08:39.765460763 +0000
-@@ -1127,8 +1127,6 @@
+--- lib/Makefile.in.orig	2011-06-27 17:51:45.965708112 +0200
++++ lib/Makefile.in	2011-06-27 17:54:57.569892443 +0200
+@@ -1333,8 +1333,6 @@
  ARG_NONNULL_H = arg-nonnull.h
  CXXDEFS_H = c++defs.h
  GPERF = gperf
 -charset_alias = $(DESTDIR)$(libdir)/charset.alias
 -charset_tmp = $(DESTDIR)$(libdir)/charset.tmp
+ UNUSED_PARAMETER_H = unused-parameter.h
  WARN_ON_USE_H = warn-on-use.h
  all: $(BUILT_SOURCES) config.h
- 	$(MAKE) $(AM_MAKEFLAGS) all-recursive
-@@ -1981,31 +1979,10 @@
+@@ -2263,31 +2261,10 @@
  	fi ; \
  	if $$need_charset_alias; then \
  	  $(mkinstalldirs) $(DESTDIR)$(libdir) ; \
