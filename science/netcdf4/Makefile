@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netcdf
-PORTVERSION=	4.1.2
+PORTVERSION=	4.1.3
 CATEGORIES=	science
 MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
@@ -19,12 +19,18 @@ CONFLICTS=	hdf-4.* netcdf-3.*
 LATEST_LINK?=	netcdf4
 PORTSCOUT=	limit:^4\.
 
+OPTIONS=	DAP	"Build DAP client and remote testing" off \
+		FORTRAN	"Build library for Fortran" off \
+		SZIP	"SZIP support (required if HDF5 was built with SZIP)" off
+
 CONFIGURE_ARGS=	--enable-cxx --enable-cxx-4 --enable-netcdf-4 --enable-shared \
 		--with-hdf5=${LOCALBASE} --with-zlib=/usr
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC -DPIC
 GNU_CONFIGURE=	yes
-LIB_DEPENDS=	hdf5.6:${PORTSDIR}/science/hdf5-18
-MAKE_ENV=	MAKEINFOFLAGS="--no-split" INFODIR="${PREFIX}/${INFO_PATH}"
+LDFLAGS+=	-L${LOCALBASE}/lib
+LIB_DEPENDS=	hdf5.7:${PORTSDIR}/science/hdf5-18
+MAKE_ENV=	INFODIR="${PREFIX}/${INFO_PATH}" MAKEINFOFLAGS="--no-split"
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 
@@ -32,10 +38,6 @@ INFO=		netcdf netcdf-c netcdf-cxx netcdf-f77 netcdf-f90 \
 		netcdf-install netcdf-tutorial
 MAN1=		nccopy.1 ncdump.1 ncgen.1 ncgen3.1
 MAN3=		netcdf.3
-
-OPTIONS=	DAP	"Build DAP client and remote testing" off \
-		FORTRAN	"Build library for Fortran" off \
-		SZIP	"SZIP support (required if HDF5 was built with SZIP)" off
 
 .include <bsd.port.options.mk>
 
@@ -65,11 +67,6 @@ CONFIGURE_ARGS+=--with-szlib=${LOCALBASE}
 LIB_DEPENDS+=	sz.2:${PORTSDIR}/science/szip
 .endif
 
-#post-patch:
-#	@${REINPLACE_CMD} -e \
-#		's|$$(libdir)/pkgconfig|$$(prefix)/libdata/pkgconfig|' \
-#		${WRKSRC}/Makefile.in
-
 post-configure:
 	@cd ${WRKSRC}/man4 && ${SETENV} ${MAKE_ENV} ${MAKE} maintainer-clean-aminfo
 .for i in ${INFO}
@@ -78,8 +75,8 @@ post-configure:
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}/
-	@cd ${WRKSRC}/man4 && ${INSTALL_DATA} *.html *.info *.pdf *.ps *.txt ${DOCSDIR}/
+	${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC}/man4 && ${INSTALL_DATA} *.html *.pdf *.txt ${DOCSDIR}/
 .endif
 
 regression-test: build
