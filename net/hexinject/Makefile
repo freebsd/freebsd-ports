@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hexinject
-PORTVERSION=	1.2
+PORTVERSION=	1.3
 CATEGORIES=	net security
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}-${PORTVERSION}
@@ -20,7 +20,16 @@ PLIST_FILES=	bin/${PORTNAME}
 
 WRKSRC=	${WRKDIR}/${PORTNAME}
 
+post-patch:
+	${REINPLACE_CMD} -e '2s#-lpcap#-L${LOCALBASE}/lib -lpcap#' ${WRKSRC}/Makefile
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSREL} < 8
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap
+.endif
+
+.include <bsd.port.post.mk>
