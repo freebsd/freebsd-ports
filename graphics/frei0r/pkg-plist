@@ -42,8 +42,6 @@ lib/frei0r-1/divide.so
 lib/frei0r-1/dodge.so
 lib/frei0r-1/edgeglow.so
 lib/frei0r-1/equaliz0r.so
-lib/frei0r-1/facebl0r.so
-lib/frei0r-1/facedetect.so
 lib/frei0r-1/flippo.so
 lib/frei0r-1/gamma.so
 lib/frei0r-1/glow.so
@@ -76,10 +74,8 @@ lib/frei0r-1/plasma.so
 lib/frei0r-1/pr0be.so
 lib/frei0r-1/pr0file.so
 lib/frei0r-1/primaries.so
-lib/frei0r-1/rgbparade.so
 lib/frei0r-1/saturat0r.so
 lib/frei0r-1/saturation.so
-lib/frei0r-1/scale0tilt.so
 lib/frei0r-1/scanline0r.so
 lib/frei0r-1/screen.so
 lib/frei0r-1/select0r.so
@@ -104,8 +100,7 @@ lib/frei0r-1/transparency.so
 lib/frei0r-1/twolay0r.so
 lib/frei0r-1/uvmap.so
 lib/frei0r-1/value.so
-lib/frei0r-1/vectorscope.so
 lib/frei0r-1/vertigo.so
 lib/frei0r-1/xfade0r.so
 libdata/pkgconfig/frei0r.pc
-@dirrm lib/frei0r-1
+@dirrmtry lib/frei0r-1
