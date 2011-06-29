@@ -1,5 +1,5 @@
---- setupext.py.orig    2010-07-28 11:18:08.000000000 -0400
-+++ setupext.py 2010-07-28 11:21:02.000000000 -0400
+--- setupext.py.orig	2010-07-07 09:41:55.000000000 +0800
++++ setupext.py	2011-06-27 16:14:58.000000000 +0800
 @@ -68,6 +68,9 @@
      'freebsd4' : ['/usr/local', '/usr'],
      'freebsd5' : ['/usr/local', '/usr'],
@@ -13,22 +13,36 @@
 @@ -789,7 +792,7 @@
          module.libraries.extend(wxlibs)
          return
-
+ 
 -    get_pkgconfig(module, '', flags='--cppflags --libs', pkg_config_exec='wx-config')
 +    get_pkgconfig(module, '', flags='--cppflags --libs', pkg_config_exec=wxconfig)
-
+ 
  # Make sure you use the Tk version given by Tkinter.TkVersion
  # or else you'll build for a wrong version of the Tcl
-@@ -1092,9 +1095,9 @@
-
+@@ -828,8 +831,12 @@
+                 gotit = False
+ 
+     if gotit:
++        try:
++          tk_v = Tkinter.__version__.split()[-2]
++        except (AttributeError, IndexError):
++          tk_v = 'version not identified'
+         print_status("Tkinter", "Tkinter: %s, Tk: %s, Tcl: %s" %
+-                     (Tkinter.__version__.split()[-2], Tkinter.TkVersion, Tkinter.TclVersion))
++                     (tk_v, Tkinter.TkVersion, Tkinter.TclVersion))
+     else:
+         print_status("Tkinter", "no")
+     if explanation is not None:
+@@ -1092,9 +1099,9 @@
+ 
          # Add final versions of directories and libraries to module lists
          tcl_lib, tcl_inc, tk_lib, tk_inc = result
 -        module.include_dirs.extend([tcl_inc, tk_inc])
 -        module.library_dirs.extend([tcl_lib, tk_lib])
 -        module.libraries.extend(['tk' + tk_ver, 'tcl' + tk_ver])
-+        module.include_dirs.extend(["%%TCL_INCLUDEDIR%%", "%%TK_INCLUDEDIR%%"])
-+        module.library_dirs.extend(["%%TCL_LIBDIR%%", "%%TK_LIBDIR%%"])
-+        module.libraries.extend(['tk' + "%%TK_VER%%", 'tcl' + "%%TCL_VER%%"])
-
++        module.include_dirs.extend(["/usr/local/include/tcl8.5", "/usr/local/include/tk8.5"])
++        module.library_dirs.extend(["/usr/local/lib/tcl8.5", "/usr/local/lib/tk8.5"])
++        module.libraries.extend(['tk' + "85", 'tcl' + "85"])
+ 
      return message
-
+ 
