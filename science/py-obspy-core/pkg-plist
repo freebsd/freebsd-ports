@@ -36,9 +36,13 @@ bin/obspy-runtests
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/__init__.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/example.npz
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/slist.ascii
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/slist2.ascii
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/slist_2_traces.ascii
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/slist_float.ascii
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/slist_unknown.ascii
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/tspair.ascii
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/tspair2.ascii
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/tspair_2_traces.ascii
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/tspair_float.ascii
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/data/tspair_unknown.ascii
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_ascii.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_ascii.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/obspy/core/tests/test_ascii.pyo
