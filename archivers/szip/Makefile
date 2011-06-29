@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.compressconsult.com/szip/ \
 		ftp://ftp.sai.msu.su/pub/unix/Archivers/
 DISTNAME=	sz${PORTVERSION:S/.//}_src
 
-MAINTAINER=	garga@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast compression utility
 
 USE_GMAKE=	yes
