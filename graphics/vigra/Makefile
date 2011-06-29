@@ -55,7 +55,7 @@ LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
 .endif
 
 .if !defined(WITHOUT_VIGRA_HDF5)
-LIB_DEPENDS+=	hdf5:${PORTSDIR}/science/hdf5
+LIB_DEPENDS+=	hdf5:${PORTSDIR}/science/hdf5-18
 .endif
 
 .include <bsd.port.mk>
