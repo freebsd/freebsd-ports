@@ -93,6 +93,7 @@ libdata/pkgconfig/slang.pc
 %%DATADIR%%/scripts/lsrpm
 %%DATADIR%%/scripts/sldb
 %%DATADIR%%/scripts/slprof
+%%DATADIR%%/scripts/slstkchk
 %%DATADIR%%/scripts/svnsh
 %%DATADIR%%/select.sl
 %%DATADIR%%/setfuns.sl
