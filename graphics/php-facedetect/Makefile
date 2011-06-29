@@ -7,7 +7,7 @@
 
 PORTNAME=	facedetect
 PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.xarg.org/download/
 PKGNAMEPREFIX=	php-
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	php-
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Face detection extension for PHP using OpenCV library
 
-LIB_DEPENDS=	cv.2:${PORTSDIR}/graphics/opencv
+LIB_DEPENDS=	opencv_legacy.2:${PORTSDIR}/graphics/opencv
 
 LICENSE=	PHP30
 
@@ -36,8 +36,5 @@ CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 .if ${ARCH} == "amd64"
 USE_GCC=	4.2+
 .endif
-
-post-patch:
-	@${TOUCH} ${WRKSRC}/cvconfig.h
 
 .include <bsd.port.post.mk>

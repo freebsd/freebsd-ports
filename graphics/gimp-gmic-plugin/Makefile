@@ -7,7 +7,7 @@
 
 PORTNAME=	gmic
 PORTVERSION=	1.4.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME} \
 		SF/${PORTNAME}/old
@@ -22,7 +22,7 @@ LIB_DEPENDS=	GraphicsMagick++.6:${PORTSDIR}/graphics/GraphicsMagick13 \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		Magick++.4:${PORTSDIR}/graphics/ImageMagick \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		cv.2:${PORTSDIR}/graphics/opencv \
+		opencv_legacy.2:${PORTSDIR}/graphics/opencv \
 		fftw3.5:${PORTSDIR}/math/fftw3 \
 		gimp-2.0:${PORTSDIR}/graphics/gimp-app
 
@@ -56,7 +56,11 @@ PLIST_SUB+=	BASH="@comment "
 .endif
 
 post-patch:
+	@${REINPLACE_CMD} -e 's/-lcv/-lopencv_legacy/g' \
+		-e 's/-lhighgui/-lopencv_legacy/g' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's#/usr/X11R6#${PREFIX}#g' \
+		-e 's/-lcv -lhighgui/-lopencv_legacy/g' \
 		${WRKSRC}/src/Makefile
 
 do-install:

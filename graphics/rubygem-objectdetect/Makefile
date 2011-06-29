@@ -7,14 +7,16 @@
 
 PORTNAME=	objectdetect
 PORTVERSION=	0.0.3
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics rubygems
-MASTER_SITES=	RG
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	mm
+DISTFILES=	${PORTNAME}-${PORTVERSION}-opencv23.gem
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A simple library for detecting objects in pictures
 
-LIB_DEPENDS=	cv.2:${PORTSDIR}/graphics/opencv
+LIB_DEPENDS=	opencv_legacy.2:${PORTSDIR}/graphics/opencv
 
 LICENSE=	MIT
 
