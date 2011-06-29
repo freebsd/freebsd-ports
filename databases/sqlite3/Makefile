@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	3.7.6.3
+PORTVERSION=	3.7.7
 CATEGORIES=	databases
 MASTER_SITES=	http://www.sqlite.org/ http://www2.sqlite.org/
-DISTNAME=	sqlite-src-3070603
+DISTNAME=	sqlite-src-3070700
 
 MAINTAINER=	pavelivolkov@googlemail.com
 COMMENT=	An SQL database engine in a C library
 
 LICENSE=	unknown
 LICENSE_NAME=	Public Domain
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 LICENSE_TEXT=	Description of the license can be obtained from the following URL: http://www.sqlite.org/copyright.html
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 
 CONFLICTS=	sqlite34-[0-9]*
 
@@ -43,6 +43,7 @@ OPTIONS=	\
 		RTREE		"Enable R*Tree module"			off \
 		RAMTABLE	"Store temporary tables in RAM = ${RAMTABLE}" off \
 		UPD_DEL_LIMIT	"ORDER BY and LIMIT on UPDATE and DELETE" off \
+		URI		"Enable use the URI filename"		off \
 		SOUNDEX		"Enables the soundex() SQL function"	off \
 		METADATA	"Enable column metadata"		on \
 		STAT2		"Help SQLite to chose a better query plan" off \
@@ -103,6 +104,21 @@ LDFLAGS+=		-fstack-protector
 CFLAGS+=		-DSQLITE_OMIT_AUTORESET=1
 .endif
 
+#		NAME83		"Enable use 8.3 filename for temp files" off \
+# Some devices are compelled to use an older file system with 8+3 filename
+# restrictions for backwards compatibility, or due to other non-technical factors.
+# http://www.sqlite.org/shortnames.html
+.if defined(WITH_NAME83)
+CFLAGS+=		-DSQLITE_ENABLE_8_3_NAMES=1
+.endif
+
+# The default numeric file permissions for newly created database files under unix.
+# If not specified, the default is 0644 which means that the files is globally
+# readable but only writable by the creator.
+.ifdef DEFAULT_FILE_PERMISSIONS
+CFLAGS+=		-DSQLITE_DEFAULT_FILE_PERMISSIONS=${DEFAULT_FILE_PERMISSIONS}
+.endif
+
 # This macro sets the default size of the page-cache for temporary files
 # created by SQLite to store intermediate results, in pages.
 .ifdef TEMP_CACHE_SIZE
@@ -117,6 +133,10 @@ CFLAGS+=		-DSQLITE_ENABLE_MEMORY_MANAGEMENT=1
 CFLAGS+=		-DSQLITE_ENABLE_UPDATE_DELETE_LIMIT=1
 .endif
 
+.if defined(WITH_URI)
+CFLAGS+=		-DSQLITE_USE_URI=1
+.endif
+
 .if defined(WITH_SOUNDEX)
 CFLAGS+=		-DSQLITE_SOUNDEX=1
 .endif
@@ -126,7 +146,7 @@ CFLAGS+=		-DSQLITE_ENABLE_STAT2=1
 .endif
 
 .if defined(WITH_FTS3)
-CFLAGS+=		-DSQLITE_ENABLE_FTS3=1 -DSQLITE_ENABLE_FTS3_PARENTHESIS=1
+CFLAGS+=		-DSQLITE_ENABLE_FTS3=1 -DSQLITE_ENABLE_FTS3_PARENTHESIS=1 -DSQLITE_ENABLE_FTS4=1
 .endif
 
 .if defined(WITH_RTREE)
@@ -197,15 +217,27 @@ RUN_DEPENDS+=		${LOCALBASE}/lib/tcl8/${TCL_VER}:${PORTSDIR}/lang/tcl-modules
 .endif
 .endif
 
+.ifmake test
 # To test you must specify the value of TESTUSER variable.
 # It must correspond to a normal (not root) user, from which it will be tested.
 # Execute: make TESTUSER=ordinary_user_login_name test
-.ifmake test
 .ifndef TESTUSER
 IGNORE=	set the value of the variable TESTUSER corresponding normal (not root) user, from which will be tested
 .endif
 .ifndef WITH_TCLWRAPPER
 IGNORE=	for the purpose of test you want to include TCL wrapper
+.endif
+.ifdef WITH_NAME83
+IGNORE=	use 8.3 file name limit is violated during testing
+# ${WRKSRC} contains the names of "databases" and "sqlite-src-3070700" violation of the agreement 8.3 file names and directories.
+# You can test by running mount in the place where the restriction of 8.3 is observed.
+# mount -t nullfs ${WRKSRC} /mnt
+# cd /mnt
+# chown -R ${TESTUSER} /mnt
+# su ${TESTUSER} -c "limits -n 1999 make test"
+# chown -R ${USER} /mnt
+# cd
+# umount /mnt
 .endif
 .endif
 
