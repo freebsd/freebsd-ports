@@ -1,0 +1,10 @@
+--- babl/Makefile.in.orig	2011-06-29 09:41:40.000000000 -0500
++++ babl/Makefile.in	2011-06-29 09:42:07.000000000 -0500
+@@ -930,7 +930,6 @@
+ @HAVE_INTROSPECTION_TRUE@            --library=babl-$(BABL_API_VERSION) \
+ @HAVE_INTROSPECTION_TRUE@            --libtool="$(LIBTOOL)" \
+ @HAVE_INTROSPECTION_TRUE@            --output $@ \
+-@HAVE_INTROSPECTION_TRUE@            --pkg babl \
+ @HAVE_INTROSPECTION_TRUE@            -DBABL_IS_BEING_COMPILED \
+ @HAVE_INTROSPECTION_TRUE@	    -I$(top_srcdir) \
+ @HAVE_INTROSPECTION_TRUE@	    -I$(top_builddir) \
