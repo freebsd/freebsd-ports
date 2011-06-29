@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Astro-SIMBAD-Client
-PORTVERSION=	0.019
+PORTVERSION=	0.021
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wenheping@gmail.com
+MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An object-oriented interface to SIMBAD4
 
 RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
