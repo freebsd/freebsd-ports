@@ -6,5 +6,5 @@ SHA256 (bsd-jdk15-patches-9.tar.bz2) = f197da850f02456c5ca4f7593401ee6afaf02fa1d
 SIZE (bsd-jdk15-patches-9.tar.bz2) = 802562
 SHA256 (jce_policy-1_5_0.zip) = 4de78da737c6d66b74eb6caebf6bdb0648825a95e2909e815678a0d306bf6d8b
 SIZE (jce_policy-1_5_0.zip) = 8826
-SHA256 (tzupdater-1_3_38-2011e.zip) = cfe7683d5721ab322a8e847f741a24f0bf35f5654a8ff86c3e234220f9b770b1
-SIZE (tzupdater-1_3_38-2011e.zip) = 258948
+SHA256 (tzupdater-1_3_39-2011g.zip) = 0db7131275df13827d2ca3a20c35e916cbc5a058215d3b09442d5d1bba0768f6
+SIZE (tzupdater-1_3_39-2011g.zip) = 258027
