@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cone
-PORTVERSION=	0.77
+PORTVERSION=	0.89
 PORTREVISION=	1
 CATEGORIES=	mail
 # This is for beta versions, leave it in please:
@@ -15,7 +15,7 @@ CATEGORIES=	mail
 # This is for release versions, leave it in please:
 MASTER_SITES=	SF/courier/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ler@lerctr.org
+MAINTAINER=	uffe@uffe.org
 COMMENT=	Console based mail client with POP3/IMAP/SMAP support
 
 LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell
