@@ -7,6 +7,7 @@
 
 PORTNAME=	libssh2
 PORTVERSION=	1.2.8
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh2.org/download/
@@ -18,8 +19,10 @@ LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_OPENSSL=	yes
+USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
+PATCH_STRIP=	-p1
 
 OPTIONS=	GCRYPT "Use libgcrypt instead of OpenSSL" off \
 		TRACE "Enable debug packet traces" off \
