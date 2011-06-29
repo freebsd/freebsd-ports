@@ -12,6 +12,8 @@ CATEGORIES=	graphics
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	OpenGL utility toolkit
 
+CONFLICTS=	freeglut-[0-9]*
+
 USE_GL=		glu
 USE_XORG=	glproto x11 xext xxf86vm xdamage xfixes xi xmu dri2proto
 
