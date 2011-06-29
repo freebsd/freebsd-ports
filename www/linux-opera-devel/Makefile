@@ -27,7 +27,7 @@ COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_LINUX=	yes
 USE_LINUX_APPS=	aspell naslibs png xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
@@ -36,8 +36,8 @@ WANT_GNOME=	yes
 
 NO_BUILD=	yes
 
-OPERA_VER=	11.11
-OPERA_BUILD=	2109
+OPERA_VER=	11.50
+OPERA_BUILD=	1074
 DATADIR=	${PREFIX}/share/${UNIQUENAME}
 DOCSDIR=	${PREFIX}/share/doc/${UNIQUENAME}
 
