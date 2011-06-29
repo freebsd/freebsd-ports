@@ -7,7 +7,7 @@
 
 PORTNAME=	ffmpeg
 PORTVERSION=	0.7.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -15,7 +15,8 @@ MASTER_SITES=	http://ffmpeg.org/releases/
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Realtime audio/video encoder/converter and streaming server
 
-BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm
+BUILD_DEPENDS=	yasm:${PORTSDIR}/devel/yasm \
+		${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 
 CONFLICTS=	ffmpeg-20*
 
@@ -30,20 +31,20 @@ OPTIONS=	ALSA	"Enable alsa input/output device" off \
 		AMR_NB	"AMR Narrow Band audio encoder (opencore)" off \
 		AMR_WB	"AMR Wide Band audio decoder (opencore)" off \
 		CELT	"Enable CELT/Opus decoding via libcelt" off \
-		CPUDETECT "Enable runtime CPU detection" on \
 		DIRAC	"Dirac codec via libdirac" off \
 		FAAC	"FAAC mp4/aac audio encoder" off \
 		FFSERVER "Build and install ffserver" on \
 		FREETYPE "Text on top of video frames (freetype2)" on \
+		FREI0R	"Frei0r wrapper filter" on \
 		GSM	"GSM audio codec" off \
 		LAME	"LAME MP3 encoder" off \
+		OPENCV  "OpenCV video filtering support" on \
 		OPENJPEG	"JPEG 2000 decoder" off \
 		OPTIMIZED_CFLAGS "Additional optimizations" off \
 		RTMP	"RTMP[E] support via librtmp" off \
 		SCHROEDINGER	"Dirac codec via libschroedinger" on \
 		SDL	"SDL support (build ffplay)" off \
 		SPEEX	"Speex audio decoder" off \
-		SSSE3	"Use binutils from ports (SSSE3 support)" on \
 		THEORA	"Theora encoder (implies OGG)" on \
 		VAAPI	"GPU acceleration support (libva)" off \
 		VDPAU	"Nvidia vdpau support" off \
@@ -53,10 +54,6 @@ OPTIONS=	ALSA	"Enable alsa input/output device" off \
 		VP8	"VP8 codec via libvpx" on \
 		X264	"H.264 encoder" on \
 		XVID	"Xvid encoder via xvidcore" on
-
-# Currently not supported because of cyclic dependencies:
-#		OPENCV  "OpenCV video filtering support" off \
-#		FREI0R	"Frei0r wrapper filter" off \
 
 COMPAT_HEADERS=libavcodec/avcodec.h \
 	libavcodec/opt.h \
@@ -87,6 +84,9 @@ COMPAT_HEADERS=libavcodec/avcodec.h \
 
 .include <bsd.port.pre.mk>
 
+CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
+
 CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--mandir="${PREFIX}/man" \
 		--enable-shared \
@@ -96,6 +96,7 @@ CONFIGURE_ARGS+=--prefix="${PREFIX}" \
 		--enable-pthreads \
 		--enable-x11grab \
 		--enable-memalign-hack \
+		--enable-runtime-cpudetect \
 		--cc="${CC}" \
 		--extra-cflags="${FFMPEG_CFLAGS} -I${LOCALBASE}/include" \
 		--extra-ldflags="-L${LOCALBASE}/lib ${FFMPEG_LDFLAGS}" \
@@ -118,16 +119,6 @@ PORTDOCS=	*
 CONFIGURE_ARGS+=	--disable-debug
 .else
 CONFIGURE_ARGS+=	--disable-stripping
-.endif
-
-.if !defined(WITHOUT_CPUDETECT)
-CONFIGURE_ARGS+=	--enable-runtime-cpudetect
-.endif
-
-.if !defined(WITHOUT_SSSE3)
-BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
-CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
-MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
 .if !defined(WITHOUT_FFSERVER)
@@ -234,14 +225,13 @@ CONFIGURE_ARGS+=	--enable-libfreetype
 CONFIGURE_ARGS+=	--disable-libfreetype
 .endif
 
-# Currently not supported because of cyclic dependencies
 # frei0r
-#.if defined(WITH_FREI0R)
-#BUILD_DEPENDS+=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
-#CONFIGURE_ARGS+=	--enable-frei0r
-#.else
+.if !defined(WITHOUT_FREI0R)
+BUILD_DEPENDS+=	${LOCALBASE}/include/frei0r.h:${PORTSDIR}/graphics/frei0r
+CONFIGURE_ARGS+=	--enable-frei0r
+.else
 CONFIGURE_ARGS+=	--disable-frei0r
-#.endif
+.endif
 
 # gsm
 .if defined(WITH_GSM)
@@ -259,14 +249,13 @@ CONFIGURE_ARGS+=	--enable-libmp3lame
 CONFIGURE_ARGS+=	--disable-libmp3lame
 .endif
 
-# Currently not supported because of cyclic dependencies
 # opencv
-#.if defined(WITH_OPENCV)
-#LIB_DEPENDS+=	cv.2:${PORTSDIR}/graphics/opencv
-#CONFIGURE_ARGS+=	--enable-libopencv
-#.else
+.if !defined(WITHOUT_OPENCV)
+LIB_DEPENDS+=	opencv_imgproc.2:${PORTSDIR}/graphics/opencv-core
+CONFIGURE_ARGS+=	--enable-libopencv
+.else
 CONFIGURE_ARGS+=	--disable-libopencv
-#.endif
+.endif
 
 # openjpeg
 .if defined(WITH_OPENJPEG)
@@ -419,6 +408,7 @@ post-patch:
 		s|gsm/gsm.h|gsm.h|g" \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 	@${REINPLACE_CMD} -e 's|-ldl||; s|$$(LIBMAJOR)|${SHLIB_VER}|g;' \
+		-e 's|opencv opencv/cxcore.h|opencv-core opencv2/core/core_c.h|g' \
 		${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
 .if defined(WITH_SDL)
 	@${REINPLACE_CMD} -E \
