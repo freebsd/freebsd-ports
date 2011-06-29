@@ -49,6 +49,7 @@
     SUBDIR += nomyso
     SUBDIR += o3read
     SUBDIR += osm2mp
+    SUBDIR += osm2pgsql
     SUBDIR += p5-Boulder
     SUBDIR += p5-Convert-ASCII-Armour
     SUBDIR += p5-Convert-ASN1

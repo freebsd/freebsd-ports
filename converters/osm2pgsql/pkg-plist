@@ -1,0 +1,21 @@
+bin/osm2pgsql
+lib/osm2pgsql/gazetteer.la
+lib/osm2pgsql/gazetteer.so
+share/gazetteer/extract_countrynames.sql
+share/gazetteer/gazetteer-functions.sql
+share/gazetteer/gazetteer-index.sql
+share/gazetteer/gazetteer-loaddata.sql
+share/gazetteer/gazetteer-tables.sql
+share/gazetteer/import_country_name.sql
+share/gazetteer/import_country_osm_grid.sql
+share/gazetteer/import_gb_postcode.sql
+share/gazetteer/import_gb_postcodearea.sql
+share/gazetteer/import_specialwords.sql
+share/gazetteer/import_us_state.sql
+share/gazetteer/import_us_statecounty.sql
+share/gazetteer/import_worldboundaries.sql
+%%DATADIR%%/900913.sql
+%%DATADIR%%/default.style
+@dirrm %%DATADIR%%
+@dirrm share/gazetteer
+@dirrm lib/osm2pgsql
