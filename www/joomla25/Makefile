@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	joomla
-PORTVERSION=	1.6.1
+PORTVERSION=	1.6.4
 CATEGORIES=	www
-MASTER_SITES=	http://joomlacode.org/gf/download/frsrelease/14236/62391/
+MASTER_SITES=	http://joomlacode.org/gf/download/frsrelease/15063/65931/
 DISTNAME=	Joomla_${PORTVERSION}-Stable-Full_Package
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A dynamic web content management system (CMS)
@@ -26,7 +25,7 @@ SUB_FILES=	pkg-message
 
 do-extract:
 	@${MKDIR} ${WRKSRC}
-	@${TAR} -yxf ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME}${EXTRACT_SUFX} -C ${WRKSRC}
+	@${TAR} -yxf ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} -C ${WRKSRC}
 
 do-install:
 	@${MKDIR} ${WWWDIR}
