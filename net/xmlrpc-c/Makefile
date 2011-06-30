@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	xmlrpc-c
-PORTVERSION=	1.06.42
+PORTVERSION=	1.16.35
 CATEGORIES=	net
 MASTER_SITES=	SF/${PORTNAME}/Xmlrpc-c%20Super%20Stable/${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -15,11 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	XML-RPC library for C and C++
 
-MAKE_JOBS_UNSAFE=	yes
-
 OPTIONS=	DEBUG "Compile with debugging information" off \
 		CURL "Compile with curl support" on \
-		LIBWWW "Compile with libwww support" off
+		LIBWWW "Compile with libwww support" on
 
 CONFLICTS=	xmlrpc-epi-0.* xmlrpc-c-devel-[0-9]*
 
@@ -30,8 +28,8 @@ USE_AUTOTOOLS=	libtool:env
 GNU_CONFIGURE=	yes
 MAKEFILE=	GNUmakefile
 MAKE_ARGS=	LIBTOOL="${LIBTOOL}" \
-		CFLAGS_COMMON="${CFLAGS}" \
-		CXXFLAGS_COMMON="${CXXFLAGS}"
+		CFLAGS_COMMON="${CFLAGS}"
+MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
 
 LICENSE=	BSD
@@ -56,12 +54,6 @@ CONFIGURE_ARGS+=	--enable-libwww-client
 CONFIGURE_ARGS+=	--disable-libwww-client
 .endif
 
-.if defined(WITHOUT_LIBWWW) && defined(WITHOUT_CURL)
-PLIST_SUB+=	CLIENT="@comment "
-.else
-PLIST_SUB+=	CLIENT=""
-.endif
-
 post-extract:
 	@${FIND} ${WRKSRC} -type l -name blddir | ${XARGS} ${RM}
 	@${FIND} ${WRKSRC} -type l -name srcdir | ${XARGS} ${RM}
@@ -69,5 +61,7 @@ post-extract:
 post-patch:
 	@${GREP} -lR '\-lpthread' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|-lpthread|${PTHREAD_LIBS}|g'
+	@${REINPLACE_CMD} -e '/#include.*features.h/d' \
+		${WRKSRC}/tools/xmlrpc_pstream/xmlrpc_pstream.cpp
 
 .include <bsd.port.post.mk>

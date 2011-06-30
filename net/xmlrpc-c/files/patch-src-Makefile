@@ -1,0 +1,11 @@
+--- src/Makefile.orig	2011-03-25 13:23:24.000000000 -0300
++++ src/Makefile	2011-06-29 15:49:47.000000000 -0300
+@@ -70,7 +70,7 @@
+ else
+   XMLRPC_XML_PARSER = xmlrpc_expat
+   XML_PARSER_LIBDEP = \
+-    -L$(BLDDIR)/lib/expat/xmlparse -lxmlrpc_xmlparse \
++    -L$(BLDDIR)/lib/expat/xmlparse ../lib/expat/xmlparse/libxmlrpc_xmlparse.so \
+     -L$(BLDDIR)/lib/expat/xmltok -lxmlrpc_xmltok
+   XML_PARSER_LIBDEP_DEP = $(LIBXMLRPC_XMLPARSE) $(LIBXMLRPC_XMLTOK)
+ endif
