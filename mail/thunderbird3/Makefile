@@ -1,15 +1,15 @@
-# New ports collection makefile for:    mozilla-thunderbird
-# Date created:         4 September 2003
-# Whom:             Joe Marcus Clarke <marcus@FreeBSD.org>
+# New ports collection makefile for:	mozilla-thunderbird
+# Date created:			4 September 2003
+# Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	thunderbird
-DISTVERSION=	3.0.11
+DISTVERSION=	3.1.11
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source/
+MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
 DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 
 MAINTAINER=	gecko@FreeBSD.org
@@ -17,11 +17,10 @@ COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
 BUILD_DEPENDS=	nspr>=4.8:${PORTSDIR}/devel/nspr
 
-DEPRECATED=	Upstream support dropped. Please consider using mail/thunderbird instead
 USE_AUTOTOOLS=	autoconf213
 LATEST_LINK=	thunderbird3
 USE_GECKO=	gecko
-CONFLICTS_INSTALL=	thunderbird-3.1*
+CONFLICTS_INSTALL=	thunderbird-5.0*
 USE_MOZILLA=	-png -nss -dbm -jpeg -xft
 MOZ_TOOLKIT=	cairo-gtk2
 
@@ -38,7 +37,8 @@ MOZ_PROTOCOLS=	http,ftp,file,viewsource,res,data
 MOZ_GRAPHICS=	default,-xbm
 MOZ_OPTIONS=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
 	--enable-single-profile --disable-profilesharing \
-	--enable-application=mail --enable-official-branding
+	--enable-application=mail --enable-official-branding \
+	--disable-updater --disable-necko-wifi
 MOZ_MK_OPTIONS=	MOZ_MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
 MOZ_EXPORT=		MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
 MOZILLA_PLIST_DIRS=	bin lib
@@ -54,7 +54,7 @@ OPTIONS=
 
 .include <bsd.port.pre.mk>
 
-WRKSRC=		${WRKDIR}/comm-1.9.1
+WRKSRC=		${WRKDIR}/comm-1.9.2
 MOZSRC:=	${WRKSRC}/mozilla
 
 .if ${OSVERSION} < 700000
@@ -62,6 +62,15 @@ LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 EXTRA_PATCHES=	${FILESDIR}/releng6_pulseaudio
 .else
 EXTRA_PATCHES=	${FILESDIR}/liboggplay_oss
+.endif
+
+.if ${ARCH} == powerpc64
+.if ${OSVERSION} < 900033
+BROKEN=		Needs binutils 2.17.50 to build
+.else
+CONFIGURE_ENV+=	UNAME_m="powerpc64"
+CFLAGS+=	-mminimal-toc
+.endif
 .endif
 
 GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 '%{\!pg: %{pthread:' | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
@@ -74,9 +83,10 @@ MOZ_OPTIONS+=	--disable-gnomeui
 .endif
 
 .if defined(WITHOUT_DBUS)
-MOZ_OPTIONS+=	--disable-dbus
+MOZ_OPTIONS+=	--disable-dbus --disable-libnotify
 .else
-LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		notify.1:${PORTSDIR}/devel/libnotify
 .endif
 
 post-extract::
