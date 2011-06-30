@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-xraylib
 PORTVERSION=	1.0.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
