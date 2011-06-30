@@ -6,25 +6,24 @@
 #
 
 PORTNAME=	IO-Compress
-PORTVERSION=	2.035
+PORTVERSION=	2.037
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PMQS
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Perl5 compression modules (bzip2, deflate, gzip, zlib, zip)
-
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Compress/Raw/Zlib.pm:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib \
-		${SITE_PERL}/${PERL_ARCH}/Compress/Raw/Bzip2.pm:${PORTSDIR}/archivers/p5-Compress-Raw-Bzip2
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
-CONFLICTS=	p5-Compress-Zlib-2* p5-IO-Compress-Base-2* p5-IO-Compress-Zlib-2* p5-IO-Compress-Bzip2-2*
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	YES
+RUN_DEPENDS=	p5-Compress-Raw-Bzip2>=2.037:${PORTSDIR}/archivers/p5-Compress-Raw-Bzip2 \
+		p5-Compress-Raw-Zlib>=2.037:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
+
+CONFLICTS=	p5-Compress-Zlib-2* p5-IO-Compress-Base-2* p5-IO-Compress-Zlib-2* p5-IO-Compress-Bzip2-2*
+
+PERL_CONFIGURE=	yes
 
 MAN3=		Compress::Zlib.3 \
 		File::GlobMapper.3 \
