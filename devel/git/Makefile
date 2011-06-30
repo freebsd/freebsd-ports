@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	git
-PORTVERSION=	1.7.5.4
+PORTVERSION=	1.7.6
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
 MASTER_SITE_SUBDIR=	software/scm/${PORTNAME}
@@ -128,6 +128,8 @@ MAN1=		git.1 \
 		git-send-email.1 \
 		git-send-pack.1 \
 		git-sh-setup.1 \
+		git-sh-i18n.1 \
+		git-sh-i18n--envsubst.1 \
 		git-shell.1 \
 		git-shortlog.1 \
 		git-show-branch.1 \
@@ -175,7 +177,8 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	LIBMD_SHA1=yes \
 		V=1
 MAKE_ARGS+=	prefix="${PREFIX}"
