@@ -15,8 +15,7 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	IDE/GUI for the R-project
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R
-RUN_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R \
-		seq2:${PORTSDIR}/misc/seq2
+RUN_DEPENDS=	${LOCALBASE}/bin/R:${PORTSDIR}/math/R
 
 LICENSE=	GPLv2
 
