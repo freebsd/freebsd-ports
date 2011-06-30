@@ -88,6 +88,8 @@ share/mime/packages/opera-widget.xml
 %%DATADIR%%/files_old.sig
 %%DATADIR%%/html40_entities.dtd
 %%DATADIR%%/lngcode.txt
+%%DATADIR%%/locale/af/af.lng
+%%DATADIR%%/locale/az/az.lng
 %%DATADIR%%/locale/be/be.lng
 %%DATADIR%%/locale/be/bookmarks.adr
 %%DATADIR%%/locale/be/search.ini
@@ -96,6 +98,7 @@ share/mime/packages/opera-widget.xml
 %%DATADIR%%/locale/bg/bookmarks.adr
 %%DATADIR%%/locale/bg/search.ini
 %%DATADIR%%/locale/bg/standard_speeddial.ini
+%%DATADIR%%/locale/bn/bn.lng
 %%DATADIR%%/locale/cs/bookmarks.adr
 %%DATADIR%%/locale/cs/cs.lng
 %%DATADIR%%/locale/cs/search.ini
@@ -146,19 +149,21 @@ share/mime/packages/opera-widget.xml
 %%DATADIR%%/locale/it/standard_speeddial.ini
 %%DATADIR%%/locale/ja/bookmarks.adr
 %%DATADIR%%/locale/ja/ja.lng
-%%DATADIR%%/locale/ja/license.txt
 %%DATADIR%%/locale/ja/search.ini
 %%DATADIR%%/locale/ja/standard_speeddial.ini
 %%DATADIR%%/locale/ka/ka.lng
 %%DATADIR%%/locale/ko/ko.lng
 %%DATADIR%%/locale/lt/lt.lng
+%%DATADIR%%/locale/me/me.lng
 %%DATADIR%%/locale/mk/mk.lng
+%%DATADIR%%/locale/ms/ms.lng
 %%DATADIR%%/locale/nb/bookmarks.adr
 %%DATADIR%%/locale/nb/nb.lng
 %%DATADIR%%/locale/nb/search.ini
 %%DATADIR%%/locale/nb/standard_speeddial.ini
 %%DATADIR%%/locale/nl/nl.lng
 %%DATADIR%%/locale/nn/nn.lng
+%%DATADIR%%/locale/pa/pa.lng
 %%DATADIR%%/locale/pl/bookmarks.adr
 %%DATADIR%%/locale/pl/pl.lng
 %%DATADIR%%/locale/pl/search.ini
@@ -185,13 +190,17 @@ share/mime/packages/opera-widget.xml
 %%DATADIR%%/locale/sr/sr.lng
 %%DATADIR%%/locale/sr/standard_speeddial.ini
 %%DATADIR%%/locale/sv/sv.lng
+%%DATADIR%%/locale/sw/sw.lng
 %%DATADIR%%/locale/ta/ta.lng
 %%DATADIR%%/locale/te/te.lng
+%%DATADIR%%/locale/th/th.lng
+%%DATADIR%%/locale/tl/tl.lng
 %%DATADIR%%/locale/tr/tr.lng
 %%DATADIR%%/locale/uk/bookmarks.adr
 %%DATADIR%%/locale/uk/search.ini
 %%DATADIR%%/locale/uk/standard_speeddial.ini
 %%DATADIR%%/locale/uk/uk.lng
+%%DATADIR%%/locale/uz/uz.lng
 %%DATADIR%%/locale/vi/vi.lng
 %%DATADIR%%/locale/zh-cn/bookmarks.adr
 %%DATADIR%%/locale/zh-cn/browser.js
@@ -202,6 +211,7 @@ share/mime/packages/opera-widget.xml
 %%DATADIR%%/locale/zh-tw/browser.js
 %%DATADIR%%/locale/zh-tw/turbosettings.xml
 %%DATADIR%%/locale/zh-tw/zh-tw.lng
+%%DATADIR%%/locale/zu/zu.lng
 %%DATADIR%%/mathml.dtd
 %%DATADIR%%/package-id.ini
 %%DATADIR%%/package/lib/binprint.sh
@@ -315,13 +325,18 @@ share/mime/packages/opera-widget.xml
 @dirrm %%DATADIR%%/skin
 @dirrm %%DATADIR%%/package/lib
 @dirrm %%DATADIR%%/package
+@dirrm %%DATADIR%%/locale/zu
 @dirrm %%DATADIR%%/locale/zh-tw
 @dirrm %%DATADIR%%/locale/zh-cn
 @dirrm %%DATADIR%%/locale/vi
+@dirrm %%DATADIR%%/locale/uz
 @dirrm %%DATADIR%%/locale/uk
 @dirrm %%DATADIR%%/locale/tr
+@dirrm %%DATADIR%%/locale/tl
+@dirrm %%DATADIR%%/locale/th
 @dirrm %%DATADIR%%/locale/te
 @dirrm %%DATADIR%%/locale/ta
+@dirrm %%DATADIR%%/locale/sw
 @dirrm %%DATADIR%%/locale/sv
 @dirrm %%DATADIR%%/locale/sr
 @dirrm %%DATADIR%%/locale/sk
@@ -330,10 +345,13 @@ share/mime/packages/opera-widget.xml
 @dirrm %%DATADIR%%/locale/pt-BR
 @dirrm %%DATADIR%%/locale/pt
 @dirrm %%DATADIR%%/locale/pl
+@dirrm %%DATADIR%%/locale/pa
 @dirrm %%DATADIR%%/locale/nn
 @dirrm %%DATADIR%%/locale/nl
 @dirrm %%DATADIR%%/locale/nb
+@dirrm %%DATADIR%%/locale/ms
 @dirrm %%DATADIR%%/locale/mk
+@dirrm %%DATADIR%%/locale/me
 @dirrm %%DATADIR%%/locale/lt
 @dirrm %%DATADIR%%/locale/ko
 @dirrm %%DATADIR%%/locale/ka
@@ -357,8 +375,11 @@ share/mime/packages/opera-widget.xml
 @dirrm %%DATADIR%%/locale/de
 @dirrm %%DATADIR%%/locale/da
 @dirrm %%DATADIR%%/locale/cs
+@dirrm %%DATADIR%%/locale/bn
 @dirrm %%DATADIR%%/locale/bg
 @dirrm %%DATADIR%%/locale/be
+@dirrm %%DATADIR%%/locale/az
+@dirrm %%DATADIR%%/locale/af
 @dirrm %%DATADIR%%/locale
 @dirrm %%DATADIR%%/extra
 @dirrm %%DATADIR%%/defaults
