@@ -7,6 +7,7 @@
 
 PORTNAME=	jjclient
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/justjournal/JustJournal%20UNIX%20Client/${PORTVERSION} \
 		http://www.justjournal.com/software/unix/
@@ -15,7 +16,7 @@ MASTER_SITES=	SF/justjournal/JustJournal%20UNIX%20Client/${PORTVERSION} \
 MAINTAINER=	luke@justjournal.com
 COMMENT=	A command line client for posting JustJournal entries
 
-LIB_DEPENDS+=	xmlrpc.9:${PORTSDIR}/net/xmlrpc-c
+LIB_DEPENDS+=	xmlrpc.3:${PORTSDIR}/net/xmlrpc-c
 
 PLIST_FILES=	bin/jjclient
 
