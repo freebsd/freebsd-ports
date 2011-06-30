@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	skipfish
-PORTVERSION=	1.88b
+PORTVERSION=	2.00b
 CATEGORIES=	security www
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
@@ -31,6 +31,7 @@ post-patch:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/skipfish ${PREFIX}/bin/skipfish
+	${INSTALL_SCRIPT} ${WRKSRC}/sfscandiff ${PREFIX}/bin/sfscandiff
 	(cd ${WRKSRC}/assets/ && ${COPYTREE_SHARE} . ${DATADIR}/assets/)
 	(cd ${WRKSRC}/dictionaries/ && ${COPYTREE_SHARE} . ${DATADIR}/dictionaries/)
 .if !defined(NOPORTDOCS)

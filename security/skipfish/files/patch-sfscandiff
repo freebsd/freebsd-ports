@@ -1,0 +1,8 @@
+--- ./sfscandiff.orig	2011-06-29 20:06:17.000000000 -0400
++++ ./sfscandiff	2011-06-29 20:06:20.000000000 -0400
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ echo "sfscandiff - skipfish scan result comparator (lcamtuf@google.com)" 1>&2
+ 
