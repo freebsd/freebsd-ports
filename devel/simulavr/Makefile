@@ -7,7 +7,7 @@
 
 PORTNAME=	simulavr
 PORTVERSION=	0.1.2
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SAVANNAH}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -32,12 +32,6 @@ MAN1=		simulavr.1 simulavr-disp.1
 INFO=		simulavr
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-.if ${OSVERSION} >= 700042
-BROKEN=		Does not compile
-.endif
-.endif
 
 do-install:
 		${RM} -f ${TMPPLIST}
