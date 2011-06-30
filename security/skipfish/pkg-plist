@@ -1,4 +1,5 @@
 bin/skipfish
+bin/sfscandiff
 %%DATADIR%%/assets/COPYING
 %%DATADIR%%/assets/i_high.png
 %%DATADIR%%/assets/i_low.png
