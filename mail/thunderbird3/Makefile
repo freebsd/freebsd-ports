@@ -57,13 +57,6 @@ OPTIONS=
 WRKSRC=		${WRKDIR}/comm-1.9.2
 MOZSRC:=	${WRKSRC}/mozilla
 
-.if ${OSVERSION} < 700000
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
-EXTRA_PATCHES=	${FILESDIR}/releng6_pulseaudio
-.else
-EXTRA_PATCHES=	${FILESDIR}/liboggplay_oss
-.endif
-
 .if ${ARCH} == powerpc64
 .if ${OSVERSION} < 900033
 BROKEN=		Needs binutils 2.17.50 to build
