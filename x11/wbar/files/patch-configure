@@ -1,0 +1,11 @@
+--- ./configure.orig	2011-06-30 10:09:16.000000000 +0200
++++ ./configure	2011-06-30 10:09:46.000000000 +0200
+@@ -7766,7 +7766,7 @@
+    make update-po | perl -ne 'print if /:$/'
+    echo ""
+    for file in $(ls *.po); do \
+-       sed -i '/^\"POT-Creation-Date:.*\\n.*$/d' $file
++       sed -i.bak -e '/^\"POT-Creation-Date:.*\\n.*$/d' $file
+    done
+    cd ..
+    echo "======================================="

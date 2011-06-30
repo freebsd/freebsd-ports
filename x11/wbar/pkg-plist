@@ -1,31 +1,26 @@
 @comment $FreeBSD$
 bin/wbar
-%%DATADIR%%/dot.wbar
-%%DATADIR%%/iconpack/comic.ttf
-%%DATADIR%%/iconpack/wbar.osx/acroread.png
-%%DATADIR%%/iconpack/wbar.osx/beagle.png
-%%DATADIR%%/iconpack/wbar.osx/blender.png
-%%DATADIR%%/iconpack/wbar.osx/cedega.png
-%%DATADIR%%/iconpack/wbar.osx/firefox.png
-%%DATADIR%%/iconpack/wbar.osx/font.ttf
-%%DATADIR%%/iconpack/wbar.osx/gearth.png
-%%DATADIR%%/iconpack/wbar.osx/gimp.png
-%%DATADIR%%/iconpack/wbar.osx/gmplayer.png
-%%DATADIR%%/iconpack/wbar.osx/gnucash.png
-%%DATADIR%%/iconpack/wbar.osx/gqview.png
-%%DATADIR%%/iconpack/wbar.osx/inkscape.png
-%%DATADIR%%/iconpack/wbar.osx/mlgui.png
-%%DATADIR%%/iconpack/wbar.osx/nautilus.png
-%%DATADIR%%/iconpack/wbar.osx/ooffice.png
-%%DATADIR%%/iconpack/wbar.osx/osxbarback.png
-%%DATADIR%%/iconpack/wbar.osx/picasa.png
-%%DATADIR%%/iconpack/wbar.osx/psi.png
-%%DATADIR%%/iconpack/wbar.osx/skype.png
-%%DATADIR%%/iconpack/wbar.osx/thunderbird.png
-%%DATADIR%%/iconpack/wbar.osx/vmware.png
-%%DATADIR%%/iconpack/wbar.osx/xmms.png
-%%PORTDOCS%%%%DOCSDIR%%/README
-@dirrm %%DATADIR%%/iconpack/wbar.osx
-@dirrm %%DATADIR%%/iconpack
+bin/wbar-config
+etc/default/wbar/wbar.cfg
+etc/xdg/autostart/wbar.desktop
+%%NLS%%share/locale/de/LC_MESSAGES/wbar.mo
+%%NLS%%share/locale/es/LC_MESSAGES/wbar.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/wbar.mo
+share/pixmaps/wbar.png
+share/pixmaps/wbar/anjuta.png
+share/pixmaps/wbar/bluefish.png
+share/pixmaps/wbar/gimp.png
+share/pixmaps/wbar/ooffice.png
+share/pixmaps/wbar/osxbarback.png
+share/pixmaps/wbar/pidgin.png
+share/pixmaps/wbar/synaptic.png
+share/pixmaps/wbar/terminal.png
+share/pixmaps/wbar/wbar.png
+@dirrm share/pixmaps/wbar
+%%DATADIR%%/glade/wbar.glade
+@dirrm %%DATADIR%%/glade
 @dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm etc/default/wbar
+@dirrm etc/default
+@dirrmtry etc/xdg/autostart
+@dirrmtry etc/xdg
