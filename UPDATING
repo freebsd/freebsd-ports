@@ -5,7 +5,7 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
-20110629:
+20110630:
   AFFECTS: users of math/octave-forge* and benchmarks/octave-forge-benchmark
   AUTHOR: stephen@FreeBSD.org
 
