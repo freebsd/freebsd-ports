@@ -14,6 +14,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Terminal Multiplexer
 
+LICENSE=        BSD
+
 HAS_CONFIGURE=	yes
 
 MAN1=		tmux.1
