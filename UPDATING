@@ -6,6 +6,26 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20110630:
+  AFFECTS: users of mail/thunderbird
+  AUTHOR: gecko@FreeBSD.org
+
+  The mail/thunderbird port has been updated to 5.0. If you want to stay with
+  Thunderbird 3.1 please run:
+
+  # portupgrade -o mail/thunderbird3 mail/thunderbird
+  # portupgrade -o mail/thunderbird3-i18n mail/thunderbird-i18n (if installed)
+  or
+  # portmaster -o mail/thunderbird3 mail/thunderbird
+  # portmaster -o mail/thunderbird3-i18n mail/thunderbird-i18n (if installed)
+
+  Do not select the OPTIMIZED_CFLAGS option on a system with less then
+  2 GB of RAM otherwise you will run out of memory during the build.
+
+  Please make sure all your addons are compatible with Thunderbird 5.0 and
+  backup your ~/.thunderbird directory prior to the first launch of Thunderbird
+  5.0.
+
+20110630:
   AFFECTS: users of x11/wbar
   AUTHOR: nivit@FreeBSD.org
 

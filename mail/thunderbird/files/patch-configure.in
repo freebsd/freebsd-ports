@@ -1,6 +1,6 @@
---- configure.in.orig	2009-08-14 11:24:58.206076928 +0200
-+++ configure.in	2009-08-14 11:25:29.601293359 +0200
-@@ -5680,7 +5680,7 @@
+--- configure.in.orig	2011-03-14 14:50:16.000000000 +0100
++++ configure.in	2011-04-22 12:52:35.061444423 +0200
+@@ -1420,7 +1420,7 @@
      CPU_ARCH=sparc
      ;;
  
@@ -8,4 +8,22 @@
 +amd64 | x86_64 | ia64)
      CPU_ARCH="$OS_TEST"
      ;;
+ 
+@@ -1440,7 +1440,7 @@
+ dnl ===============================================================
+ INTEL_ARCHITECTURE=
+ case "$OS_TEST" in
+-    x86_64|i?86)
++    amd64|x86_64|i?86)
+       INTEL_ARCHITECTURE=1
  esac
+ 
+@@ -4388,7 +4388,7 @@
+ LDFLAGS=$_SAVE_LDFLAGS
+ LIBS=$_SAVE_LIBS
+ 
+-if test "${ZLIB_DIR}" -a -d "${ZLIB_DIR}" -a "$SYSTEM_ZLIB" = 1; then
++if test "${ZLIB_DIR}" -a "${ZLIB_DIR}" != "/usr" -a -d "${ZLIB_DIR}" -a "$SYSTEM_ZLIB" = 1; then
+     ZLIB_CFLAGS="-I${ZLIB_DIR}/include"
+     ZLIB_LIBS="-L${ZLIB_DIR}/lib ${ZLIB_LIBS}"
+ fi
