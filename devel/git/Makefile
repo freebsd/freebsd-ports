@@ -183,6 +183,8 @@ USE_OPENSSL=	yes
 USE_RC_SUBR=	git_daemon
 WANT_PERL=	yes
 
+CONFIGURE_ARGS=	--enable-pthreads=${PTHREAD_LIBS}
+
 OPTIONS=	GUI "Enable building of GUI tools" off \
 		SVN "Enable required dependencies for SVN tools" off \
 		SVN_FBSD "Use subversion-freebsd dependency (implies SVN)" off \
