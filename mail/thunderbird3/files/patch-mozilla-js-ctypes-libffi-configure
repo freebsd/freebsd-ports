@@ -1,0 +1,14 @@
+B
+--- mozilla/js/ctypes/libffi/configure.orig	2011-02-26 21:17:36.000000000 +0100
++++ mozilla/js/ctypes/libffi/configure	2011-02-26 21:18:35.000000000 +0100
+@@ -21036,6 +21036,9 @@
+ 
+   powerpc-*-freebsd*)
+	TARGET=POWERPC_FREEBSD; TARGETDIR=powerpc
+ 	;;
++  powerpc64-*-freebsd*)
++	TARGET=POWERPC; TARGETDIR=powerpc
++	;;
+   powerpc*-*-rtems*)
+ 	TARGET=POWERPC; TARGETDIR=powerpc
+ 	;;
