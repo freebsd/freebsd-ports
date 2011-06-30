@@ -3914,6 +3914,9 @@ freewais-sf                     ports/net/freewais-sf
 freeway                         ports/www/freeway
 freeze                          ports/archivers/freeze
 frei0r                          ports/graphics/frei0r
+frei0r-plugins                  ports/graphics/frei0r-plugins
+frei0r-plugins-gavl             ports/graphics/frei0r-plugins-gavl
+frei0r-plugins-opencv           ports/graphics/frei0r-plugins-opencv
 freqsdwn                        ports/sysutils/freqsdwn
 freshmeat-submit                ports/misc/freshmeat-submit
 fressh                          ports/security/fressh
@@ -10505,6 +10508,7 @@ opencore-amr                    ports/audio/opencore-amr
 opencryptoki                    ports/security/opencryptoki
 openct                          ports/security/openct
 opencv                          ports/graphics/opencv
+opencv-core                     ports/graphics/opencv-core
 opencvs                         ports/devel/opencvs
 opencyc                         ports/misc/opencyc
 opendbx                         ports/databases/opendbx
@@ -10661,6 +10665,7 @@ osgg                            ports/games/osgg
 osh                             ports/shells/osh
 osiris                          ports/security/osiris
 osm2mp                          ports/converters/osm2mp
+osm2pgsql                       ports/converters/osm2pgsql
 osmo                            ports/deskutils/osmo
 osmose                          ports/emulators/osmose
 osmosis                         ports/astro/osmosis
@@ -21680,9 +21685,11 @@ py-oauth                        ports/net/py-oauth
 py-oauth2                       ports/net/py-oauth2
 py-obspy-core                   ports/science/py-obspy-core
 py-obspy.gse2                   ports/science/py-obspy.gse2
+py-obspy.imaging                ports/science/py-obspy.imaging
 py-obspy.mseed                  ports/science/py-obspy.mseed
 py-obspy.signal                 ports/science/py-obspy.signal
 py-obspy.wav                    ports/science/py-obspy.wav
+py-obspy.xseed                  ports/science/py-obspy.xseed
 py-ocempgui                     ports/devel/py-ocempgui
 py-odbc                         ports/databases/py-odbc
 py-ode                          ports/devel/py-ode
@@ -26150,6 +26157,7 @@ wifimgr                         ports/net-mgmt/wifimgr
 wikicalc                        ports/www/wikicalc
 wikindx                         ports/www/wikindx
 wildmagic                       ports/graphics/wildmagic
+wildmidi                        ports/audio/wildmidi
 wiliki                          ports/www/wiliki
 win32-codecs                    ports/multimedia/win32-codecs
 windowlab                       ports/x11-wm/windowlab
