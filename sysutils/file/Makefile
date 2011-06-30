@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	file
-PORTVERSION=	5.05
+PORTVERSION=	5.07
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
 		ftp://ftp.gw.com/mirrors/unix/file/ \
 		ftp://ftp.fu-berlin.de/unix/tools/file/
 
-MAINTAINER=	jharris@widomaker.com
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Utility to determine file type
 
 USE_AUTOTOOLS=	libtool
@@ -26,7 +26,7 @@ MAN1=		file.1
 MAN3=		libmagic.3
 MAN5=		magic.5
 
-regression-test: build
+check regression-test test: build
 	@( cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} check ; )
 
 post-patch:
