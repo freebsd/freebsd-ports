@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-symbolic
 PORTVERSION=	1.0.9
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 
 PATCH_SITES=	http://www.baycom.org/~tom/octave/

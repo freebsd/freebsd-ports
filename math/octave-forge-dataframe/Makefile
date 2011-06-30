@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-dataframe
 PORTVERSION=	0.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org

@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge-linear-algebra
 PORTVERSION=	2.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
