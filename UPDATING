@@ -5,6 +5,18 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110629:
+  AFFECTS: users of math/octave-forge* and benchmarks/octave-forge-benchmark
+  AUTHOR: stephen@FreeBSD.org
+
+  The octave-forge* port structure has been completely redesigned.  This was
+  to make them compatible with portmaster and other port installation tools.
+
+  Before using the new octave-forge* ports, the old octave-forge* ports must
+  be completely removed with, for example, the command:
+
+  # pkg_delete "octave-forge*"
+
 20110630:
   AFFECTS: users of mail/thunderbird
   AUTHOR: gecko@FreeBSD.org
