@@ -1,0 +1,224 @@
+#!%%PERL%% -w
+
+# This script synchronizes the packages in $tardir with those installed by the
+# octave packaging system.  It uninstalls those packages for which it or its
+# dependencies are not contained $tardir.  It installs those packages for which
+# it and its dependencies are in $tardir.  Packages are uninstalled or
+# installed in the correct order, so that dependency requirements are always
+# satisfied.
+
+my $tardir = "%%PREFIX%%/share/octave/tarballs";
+
+use strict;
+use Archive::Tar;
+use IO::Zlib;
+use File::Remove qw(remove);
+
+# %long_form is a hash that does conversions like
+# $long_form{"odepkg"} == "odepkg-0.8.8.tar.gz"
+
+my %long_form;
+while (<$tardir/*>) {
+  if (!-l && /([^\/]+)$/) {
+    my $n = $1;
+    $n =~ /(.*)\-/;
+    $long_form{$1} = $n;
+  }
+}
+while (my $p = <%%PREFIX%%/share/octave/packages/*>) {
+  $p =~ s+.*/++;
+  $p =~ /(.*)\-/;
+  $long_form{$1} = "$p.tar.gz";
+}
+
+# Get the list of packages in $tardir.
+
+my %in_tarballs;
+while (<$tardir/*>) {
+  if (!-l && /([^\/]+)$/) {
+    my $n = $1;
+    $in_tarballs{$n} = 1;
+  }
+}
+
+my %is_installed;  # Those packages that are installed.  For these the hash
+                   # returns a list of the packages requiring it.
+my %to_remove;     # Those packages that need to be uninstalled.  For these
+                   # the hash returns a list of the packages requiring it.
+my $nr_to_remove;  # The number of packages that need to be uninstalled.
+my %to_install;    # Those packages that remain to be installed.  For these
+                   # the hash returns a list of the dependencies.
+
+# Calculate which entries of %is_installed exist.
+
+%is_installed = ();
+while (my $p = <%%PREFIX%%/share/octave/packages/*>) {
+  $p =~ s+.*/++;
+  $is_installed{"$p.tar.gz"} = "";
+}
+
+# Compare %is_installed with the output of pkg('list') in octave.  If it is
+# different then the octave packaging system is probably corrupt, so we clean
+# out everything.
+
+my %check_installed;
+open(O,"octave -H -q --no-site-file --eval \"pkg('list')\" |") || die;
+<O>;
+my $out = join "",<O>;
+while ($out =~ s/^\s*(\S+)\s*\|\s*(\S+).*$//m) {
+  $check_installed{"$1-$2.tar.gz"} = "";
+}
+close O;
+foreach my $p (sort keys %is_installed) {
+  if (defined($is_installed{$p}) && !defined($check_installed{$p})) {
+    print "The octave packaging system is probably corrupt, so it will be rebuilt.\n";
+    remove( \1, "%%PREFIX%%/libexec/octave/packages",
+                "%%PREFIX%%/share/octave/octave_packages",
+                "%%PREFIX%%/share/octave/packages");
+    %is_installed = ();
+    last;
+  }
+}
+
+# Fill in the values of %is_installed by checking the dependencies.
+
+while (my $p = <%%PREFIX%%/share/octave/packages/*>) {
+  $p =~ s+.*/++;
+  open(D,"%%PREFIX%%/share/octave/packages/$p/packinfo/DESCRIPTION") || die $!;
+  foreach my $l (<D>) {
+    if ($l=~s/Depends:\s*//) {
+      foreach my $ll (split ",",$l) {
+        chomp($ll);
+        $ll = lc($ll);
+        $ll =~ s/^\s+//;
+        $ll =~ s/\s.*//;
+        if (defined $long_form{$ll}) {
+          my $depends = $long_form{$ll};
+          if (defined $is_installed{$depends}) {
+            $is_installed{$depends} .= ($is_installed{$depends} eq ""?"":"|")."$p.tar.gz";
+          }
+        }
+      }
+    }
+  }
+  close D;
+}
+ 
+# Find which packages need to be uninstalled.
+
+%to_remove = ();
+$nr_to_remove = 0;
+foreach (keys %is_installed) {
+  if (defined($is_installed{$_}) && !defined($in_tarballs{$_})) {
+    $to_remove{$_} = $is_installed{$_};
+    $nr_to_remove++;
+  }
+}
+
+if ($nr_to_remove>0) {
+
+# The function make_ordered_list_to_remove() is a recursive depth first
+# search to put the packages to be removed in correct order according to
+# dependency.  The result is put into @ordered_list_to_remove.
+
+  my @ordered_list_to_remove;
+
+  sub make_ordered_list_to_remove {
+    foreach my $p (split /\|/,$_[0]) {
+      if (defined $to_remove{$p} || defined $is_installed{$p}) {
+        make_ordered_list_to_remove($is_installed{$p});
+        push @ordered_list_to_remove,$p;
+        undef $to_remove{$p};
+        undef $is_installed{$p};
+      }
+    }
+  }
+
+
+  make_ordered_list_to_remove(join("|",sort keys %to_remove));
+
+# Remove the packages that need to be uninstalled.
+
+  foreach my $p (@ordered_list_to_remove) {
+    print "load-octave-pkg: octave is uninstalling $p.\n";
+    $p =~ s/\-[\d\.]+\.tar\.gz//;
+    system "octave -H -q --no-site-file --eval \"pkg('uninstall','$p')\" > /dev/null";
+  }
+}
+
+# Clean out any crud that might be left over.
+
+my @pkg = <%%PREFIX%%/share/octave/packages/*>;
+if ($#pkg==-1) {
+  print "load-octave-pkg: there are currently no octave packages installed.\n";
+  remove( \1, "%%PREFIX%%/libexec/octave/packages",
+              "%%PREFIX%%/share/octave/octave_packages",
+              "%%PREFIX%%/share/octave/packages");
+}
+
+# Recalculate which entries of %is_installed exist.
+
+%is_installed = ();
+while (my $p = <%%PREFIX%%/share/octave/packages/*>) {
+  $p =~ s+.*/++;
+  $is_installed{"$p.tar.gz"} = "";
+}
+
+# Calculate which packages need to be installed, and fill in the values of
+# %is_tarballs by checking the dependencies.
+
+%to_install = ();
+foreach (keys %in_tarballs) {
+  if (defined($in_tarballs{$_}) && !defined($is_installed{$_})) {
+    my $tar = Archive::Tar->new("$tardir/$_",COMPRESS_GZIP);
+    die if !defined($tar);
+    my @list_of_files = grep /^.*\/DESCRIPTION$/, $tar->list_files();
+    die if $#list_of_files!=0;
+    my $descr = $tar->get_content($list_of_files[0]);
+    foreach my $l (split /\n/,$descr) {
+      if ($l=~s/Depends:\s*//) {
+        foreach my $ll (split ",",$l) {
+          $ll = lc($ll);
+          $ll =~ s/^\s+//;
+          $ll =~ s/\s.*//;
+          if ($ll ne "octave") {
+            $to_install{$_} .= (defined($to_install{$_})?"|":"").(defined($long_form{$ll})?$long_form{$ll}:$ll);
+          }
+        }
+      }
+    }
+    $to_install{$_} .= "";
+  }
+}
+
+# The function make_ordered_list_to_install() is a recursive depth first
+# search to put the packages to be installed in correct order according to
+# dependency.  The result is put into @ordered_list_to_install.
+
+my @ordered_list_to_install;
+
+sub make_ordered_list_to_install {
+  my $retval = 1;
+  foreach my $p (split /\|/,$_[0]) {
+    if (!defined $in_tarballs{$p}) {
+      $retval = 0;
+    } elsif (defined $to_install{$p}) {
+      if (make_ordered_list_to_install($to_install{$p})) {
+        push @ordered_list_to_install,$p;
+        undef $to_install{$p};
+      } else {
+        $retval = 0;
+      }
+    }
+  }
+  return $retval;
+}
+
+make_ordered_list_to_install(join("|",sort keys %to_install));
+
+# Now install the packages that need to be installed.
+
+foreach my $p (@ordered_list_to_install) {
+  print "load-octave-pkg: octave is installing $p.\n";
+  system "octave -H -q --no-site-file --eval \"pkg('install','$tardir/$p')\" > /dev/null\n";
+}
