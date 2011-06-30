@@ -30,7 +30,7 @@ PLIST_SUB+=	VTK="@comment "
 .endif
 
 GDCM_MAJ=	2.0
-GDCM_MIN=	17
+GDCM_MIN=	18
 
 PLIST_SUB+=	GDCM_MAJ="${GDCM_MAJ}" \
 		GDCM_MIN="${GDCM_MIN}"
@@ -49,6 +49,7 @@ CMAKE_ARGS+=	-DGDCM_DOCUMENTATION:BOOL=YES \
 MAN1=		gdcm2vtk.1 gdcmconv.1 gdcmanon.1 gdcmgendir.1 \
 		gdcmdump.1 gdcmimg.1 gdcminfo.1 gdcmpdf.1 \
 		gdcmraw.1 gdcmscanner.1 gdcmtar.1 gdcmviewer.1
+MAN3=		libopenjpeg.3
 PORTDOCS=	*
 post-install:
 	${MKDIR} ${DOCSDIR}
@@ -65,5 +66,8 @@ MANUAL_PACKAGE_BUILD=	hangs on pointyhat
 
 post-patch:
 	${REINPLACE_CMD} -e 's| NAMELINK_SKIP||; s| NAMELINK_ONLY||' ${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e 's|share/man|man|g; /DESTINATION/s|$${OPENJPEG_INSTALL_DOC_DIR}|${DOCSDIR}|g' \
+	   ${WRKSRC}/Utilities/gdcmopenjpeg-v1/CMakeLists.txt \
+	   ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.post.mk>
