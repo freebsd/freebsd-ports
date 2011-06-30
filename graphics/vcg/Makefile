@@ -16,8 +16,6 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Visualization Tool for compiler graphs
 
-BROKEN=	Does not fetch 
-
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 
 USE_XORG=	x11 xext
