@@ -534,6 +534,7 @@
     SUBDIR += merlin
     SUBDIR += mindfocus
     SUBDIR += mindguard
+    SUBDIR += minetest
     SUBDIR += mirrormagic
     SUBDIR += miscom
     SUBDIR += mkgichessclub
