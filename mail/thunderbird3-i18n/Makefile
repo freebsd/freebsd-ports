@@ -5,9 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	thunderbird3-i18n
-PORTVERSION=	3.0.11
-PORTREVISION=	1
+PORTNAME=	thunderbird-i18n
+PORTVERSION=	3.1.11
 CATEGORIES=	mail
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -22,13 +21,14 @@ RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-swit
 .endif
 
 NO_BUILD=	yes
-USE_THUNDERBIRD=	30
+USE_THUNDERBIRD=	31
 USE_XPI=	*thunderbird*
 
-THUNDERBIRD_I18N_ALL=	af ar be bg bn-BD ca cs da de el en-GB es-AR es-ES et \
-			eu fi fr fy-NL ga-IE gl he hu id is it ja ka ko lt \
-			nb-NO nl nn-NO pa-IN pl pt-BR pt-PT ro ru si sk sq sr \
-			sv-SE ta-LK tr uk vi zh-CN zh-TW
+THUNDERBIRD_I18N_ALL=	af ar be bg bn-BD ca cs da de el en-GB en-US es-AR es-ES \
+			et eu fi fr fy-NL ga-IE he hu id is it ja ko lt nb-NO nl \
+			nn-NO pa-IN pl pt-BR pt-PT ro ru si sk sl sq sv-SE tr uk \
+			zh-CN zh-TW
+
 .ifdef PACKAGE_BUILDING
 THUNDERBIRD_I18N?=	all
 .else
