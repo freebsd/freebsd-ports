@@ -5,16 +5,8 @@
 # $FreeBSD$
 #
 
-# The reason for this port is because the octave packaging system and the
-# FreeBSD packaging system are not very robust.  When it works, it works
-# beautifully.  But if something goes wrong, the octave packaging system
-# can be left in a rather unusable stat.
-# pkg_delete -r octave-forge-base-${PORTVERSION}
-# gives the user an opportunity to start with a completely new slate.
-
 PORTNAME=	octave-forge-base
-PORTVERSION=	1.0
-PORTREVISION=	4
+PORTVERSION=	1.1
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -23,14 +15,24 @@ EXTRACT_ONLY=	#none
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge baseport for all packages
 
-RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave
+RUN_DEPENDS+=	octave:${PORTSDIR}/math/octave \
+		gmake:${PORTSDIR}/devel/gmake \
+		p5-Archive-Tar>=0:${PORTSDIR}/archivers/p5-Archive-Tar \
+		p5-IO-Zlib>=0:${PORTSDIR}/archivers/p5-IO-Zlib \
+		p5-File-Remove>=0:${PORTSDIR}/devel/p5-File-Remove
+
+USE_PERL=	yes
+SUB_FILES=	load-octave-pkg
+SUB_LIST+=	PERL=${PERL}
 
 do-build:
 	@${DO_NADA}
 
 do-install:
-	${MKDIR} ${LOCALBASE}/share/octave/tarballs
-	${MKDIR} ${LOCALBASE}/share/octave/packages
-	${MKDIR} ${LOCALBASE}/libexec/octave/packages
+	${MKDIR} ${PREFIX}/share/octave/tarballs
+	${MKDIR} ${PREFIX}/share/octave/packages
+	${MKDIR} ${PREFIX}/libexec/octave/packages
+	${INSTALL_SCRIPT} ${WRKDIR}/load-octave-pkg ${PREFIX}/libexec/octave
+	${PREFIX}/libexec/octave/load-octave-pkg
 
 .include <bsd.port.mk>
