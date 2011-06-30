@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thunderbird-i18n
-PORTVERSION=	3.1.11
+PORTVERSION=	5.0
 CATEGORIES=	mail
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -16,6 +16,8 @@ DIST_SUBDIR=	xpi/${DISTNAME}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for Thunderbird
 
+EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+
 .ifndef WITHOUT_SWITCHER
 RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
 .endif
@@ -24,15 +26,15 @@ NO_BUILD=	yes
 USE_THUNDERBIRD=	yes
 USE_XPI=	*thunderbird
 
-THUNDERBIRD_I18N_ALL=	af ar be bg bn-BD ca cs da de el en-GB en-US es-AR es-ES \
-			et eu fi fr fy-NL ga-IE he hu id is it ja ko lt nb-NO nl \
-			nn-NO pa-IN pl pt-BR pt-PT ro ru si sk sl sq sv-SE tr uk \
-			zh-CN zh-TW
+THUNDERBIRD_I18N_ALL=	ar bg br ca cs da de en-GB en-US es-AR es-ES et eu fi fr \
+			fy-NL ga-IE gd gl he hu is it ja ko lt nb-NO nl nn-NO \
+			pa-IN pl pt-BR pt-PT rm ru si sk sl sq sv-SE ta-LK tr uk \
+			zh-TW
 
 .ifdef PACKAGE_BUILDING
 THUNDERBIRD_I18N?=	all
 .else
-THUNDERBIRD_I18N?=	zh-CN es-ES pt-BR ru ja de fr pa-IN ko it
+THUNDERBIRD_I18N?=	es-ES pt-BR ru ja de fr pa-IN ko it
 .endif
 
 .if ${THUNDERBIRD_I18N} == all
@@ -45,8 +47,8 @@ WDIR=	langpack-*@thunderbird.mozilla.org
 XPI_DISTNAMES=	${THUNDERBIRD_I18N_}
 .for dist in ${XPI_DISTNAMES}
 XPI_ID_${dist}=		langpack-${dist}@thunderbird.mozilla.org
-XPI_FILES_${dist}=	chrome.manifest install.rdf chrome/${dist}.jar defaults/pref/all-l10n.js
-XPI_DIRS_${dist}=	chrome defaults/pref defaults
+XPI_FILES_${dist}=	chrome.manifest install.rdf chrome/${dist}.jar
+XPI_DIRS_${dist}=	chrome
 .endfor
 
 do-extract:
@@ -56,7 +58,9 @@ do-extract:
 		if ! (${EXTRACT_CMD} ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack-$$lang@thunderbird.mozilla.org);\
 		then \
 			exit 1; \
-		fi \
+		fi; \
+		cd ${WRKSRC}/langpack-$$lang@thunderbird.mozilla.org/chrome; \
+		${LOCALBASE}/bin/zip -r $$lang.jar $$lang; \
 	done
 
 do-install:
@@ -68,8 +72,8 @@ do-install:
 	@${ECHO_CMD} '@exec ${INSTALL} -d ${XPI_SLDIRS_ALL:S,^${PREFIX},%D,}' ${_A}
 	@${ECHO_CMD} '@exec for _dir in ${XPI_LINKFARMS} ; { \
 		${LN} -sf ${XPI_LIBDIR}/${WDIR} $$_dir/ ${_Q}; }' ${_A}
-	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS} ; { ${RM} -f $$_dir/${WDIR} ; }' ${_A}
-	@${ECHO_CMD} '@unexec rmdir ${XPI_DIRS_TRY:S,^,%D/,} ${_Q}' ${_A}
+	@${ECHO_CMD} '@unexec for _dir in ${XPI_LINKFARMS} ${XPI_LIBDIR}; { ${RM} -fR $$_dir/${WDIR} ; }' ${_A}
+	@${ECHO_CMD} '@unexec ${RMDIR} ${XPI_DIRS_TRY:S,^,%D/,} ${_Q}' ${_A}
 
 post-patch:
 	${FIND} ${WRKSRC} -name install.rdf -print0 | \

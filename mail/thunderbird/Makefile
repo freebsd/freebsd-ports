@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thunderbird
-DISTVERSION=	3.1.11
+DISTVERSION=	5.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
@@ -15,11 +15,13 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Mozilla Thunderbird is standalone mail and news that stands above
 
-BUILD_DEPENDS=	nspr>=4.8:${PORTSDIR}/devel/nspr
+BUILD_DEPENDS=	nspr>=4.8.7:${PORTSDIR}/devel/nspr
+LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
+		event-1.4:${PORTSDIR}/devel/libevent
 
 USE_AUTOTOOLS=	autoconf213
 USE_GECKO=	gecko
-CONFLICTS_INSTALL=	thunderbird-3.0*
+CONFLICTS_INSTALL=	thunderbird-3.1*
 USE_MOZILLA=	-png -nss -dbm -jpeg -xft
 MOZ_TOOLKIT=	cairo-gtk2
 
@@ -31,16 +33,19 @@ MAKE_ENV=	PTHREAD_LDFLAGS="${PTHREAD_LIBS}"
 HAS_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+USE_GL=		gl
 
-MOZ_PROTOCOLS=	http,ftp,file,viewsource,res,data
+MOZ_PROTOCOLS=	http,ftp,file,viewsource,res,data,wyciwyg
 MOZ_GRAPHICS=	default,-xbm
 MOZ_OPTIONS=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
 	--enable-single-profile --disable-profilesharing \
 	--enable-application=mail --enable-official-branding \
-	--disable-updater --disable-necko-wifi
+	--disable-updater --disable-necko-wifi \
+	--with-system-libevent=${LOCALBASE}
 MOZ_MK_OPTIONS=	MOZ_MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
 MOZ_EXPORT=		MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
-MOZILLA_PLIST_DIRS=	bin lib
+GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/bin lib/${MOZILLA}/idl \
+			lib/${MOZILLA}/include lib/${MOZILLA}/lib
 MOZ_PKGCONFIG_FILES=
 
 PORTNAME_ICON=	${PORTNAME}.png
@@ -53,15 +58,8 @@ OPTIONS=
 
 .include <bsd.port.pre.mk>
 
-WRKSRC=		${WRKDIR}/comm-1.9.2
+WRKSRC=		${WRKDIR}/comm-miramar
 MOZSRC:=	${WRKSRC}/mozilla
-
-.if ${OSVERSION} < 700000
-LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
-EXTRA_PATCHES=	${FILESDIR}/releng6_pulseaudio
-.else
-EXTRA_PATCHES=	${FILESDIR}/liboggplay_oss
-.endif
 
 .if ${ARCH} == powerpc64
 .if ${OSVERSION} < 900033
@@ -88,13 +86,21 @@ LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		notify.1:${PORTSDIR}/devel/libnotify
 .endif
 
+.if ${ARCH} == amd64 || ${ARCH} == i386
+BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
+.endif
+
 post-extract::
 	${SED} -e 's|@PORTNAME_ICON@|${PORTNAME_ICON}|' \
 		<${FILESDIR}/thunderbird.desktop.in >${WRKDIR}/${MOZILLA_EXEC_NAME}.desktop
 
 post-patch:
+	@${GREP} -Flr \"/proc ${MOZSRC}/ipc/chromium/src/base | ${XARGS} ${REINPLACE_CMD} \
+		-e 's|/proc/self/fd|/dev/fd|' \
+		-e 's|/proc["/]|/compat/linux&|'
 	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
 		${MOZSRC}/storage/build/Makefile.in \
+		${MOZSRC}/toolkit/library/Makefile.in \
 		${MOZSRC}/db/sqlite3/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${MOZSRC}/security/manager/ssl/src/Makefile.in \

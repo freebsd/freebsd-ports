@@ -1,0 +1,22 @@
+--- mozilla/js/src/Makefile.in.orig	2011-03-17 18:51:39.000000000 +0100
++++ mozilla/js/src/Makefile.in	2011-03-18 19:41:09.000000000 +0100
+@@ -612,7 +612,7 @@
+ # to reliably get limit macros defined, we'd always have to define the
+ # one below before including any header, but that's obscure and
+ # fragile, so we do it here.
+-DEFINES		+= -D__STDC_LIMIT_MACROS
++DEFINES		+= -D__STDC_LIMIT_MACROS -D__STDC_CONSTANT_MACROS
+ 
+ INCLUDES	+= -I$(srcdir)
+ 
+@@ -666,7 +666,8 @@
+ endif # WINNT
+ 
+ ifeq ($(OS_ARCH),FreeBSD)
+-EXTRA_LIBS	+= -pthread
++DEFINES		+= -DFREEBSD
++EXTRA_LIBS	+= -pthread -lc
+ endif
+ ifeq ($(OS_ARCH),IRIX)
+ ifdef USE_N32
+
