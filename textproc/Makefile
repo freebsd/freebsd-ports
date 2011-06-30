@@ -305,7 +305,7 @@
     SUBDIR += kmfl-khmer
     SUBDIR += kmfl-sil-ezra
     SUBDIR += kmfl-sil-galatia
-    SUBDIR += kmfl-sil-ipa-unicode5
+    SUBDIR += kmfl-sil-ipa-unicode
     SUBDIR += kmfl-sil-panafrican-latin
     SUBDIR += kmfl-sil-yi
     SUBDIR += kmfl-varamozhi-malayalam
