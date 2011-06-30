@@ -7,6 +7,7 @@
 
 PORTNAME=	swfed
 PORTVERSION=	0.44
+PORTREVISION=	1
 CATEGORIES=	graphics www
 MASTER_SITES=	SFJP
 MASTER_SITE_SUBDIR=	${PORTNAME}/52477
@@ -16,6 +17,8 @@ MAINTAINER=	yoya@awm.jp
 COMMENT=	A PHP extension to edit SWF file
 
 BUILD_DEPENDS=	re2c:${PORTSDIR}/devel/re2c
+LIB_DEPENDS=	gif.5:${PORTSDIR}/graphics/giflib \
+		png.6:${PORTSDIR}/graphics/png
 
 DEFAULT_PHP_VER=	5
 IGNORE_WITH_PHP=	4
@@ -29,25 +32,6 @@ PORTDOCS=	readme.txt
 PORTEXAMPLES=	*
 
 PLIST_SUB=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
-
-OPTIONS=	GIF	"With gif image support" on \
-		PNG	"With png image support" on
-
-.include <bsd.port.pre.mk>
-
-.if defined(WITH_GIF)
-LIB_DEPENDS+=	gif.5:${PORTSDIR}/graphics/giflib
-CONFIGURE_ARGS+=	--with-gif-dir=yes
-.else
-CONFIGURE_ARGS+=	--with-gif-dir=no
-.endif
-
-.if defined(WITH_PNG)
-LIB_DEPENDS+=	png.6:${PORTSDIR}/graphics/png
-CONFIGURE_ARGS+=	--with-png-dir=yes
-.else
-CONFIGURE_ARGS+=	--with-png-dir=no
-.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -67,4 +51,4 @@ x-generate-plist:
 	${FIND} ${WWWDIR} -type d -depth | ${SORT} -r | ${SED} -e 's,${WWWDIR},@dirrm %%WWWDIR%%,g' >> pkg-plist.new
 	${ECHO} '@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%' >> pkg-plist.new
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
