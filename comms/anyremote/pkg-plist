@@ -84,6 +84,7 @@ bin/anyremote
 %%DATADIR%%/cfg-data/Server-mode/amixer.cfg
 %%DATADIR%%/cfg-data/Server-mode/miro.cfg
 %%DATADIR%%/cfg-data/Server-mode/mpris.cfg
+%%DATADIR%%/cfg-data/Server-mode/cmus.cfg
 %%DATADIR%%/cfg-data/Utils/gradient.png
 %%DATADIR%%/cfg-data/Utils/message.sh
 %%DATADIR%%/cfg-data/Utils/all-in-1.py
@@ -201,6 +202,7 @@ bin/anyremote
 %%DATADIR%%/cfg-data/iViewer/totem.cfg
 %%DATADIR%%/cfg-data/iViewer/iviewer-template.cfg
 %%DATADIR%%/cfg-data/iViewer/juk.cfg
+%%DATADIR%%/cfg-data/iViewer/vlc.cfg
 @dirrm %%DATADIR%%/cfg-data/AT-mode
 @dirrm %%DATADIR%%/cfg-data/Bemused-emulation
 @dirrm %%DATADIR%%/cfg-data/Icons/16
