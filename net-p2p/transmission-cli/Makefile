@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	transmission
-PORTVERSION=	2.31
-PORTREVISION?=	0	
+PORTVERSION=	2.32
+PORTREVISION?=	0
 CATEGORIES?=	net-p2p
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
 PKGNAMESUFFIX?=	-cli
@@ -30,7 +30,6 @@ USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}"
 CONFIGURE_ARGS=--with-zlib=/usr \
 		--disable-libappindicator \
 		--disable-gconf2 \
