@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Compress-Raw-Lzma
-PORTVERSION=	2.035
+PORTVERSION=	2.037
 CATEGORIES=	archivers perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:PMQS
@@ -37,7 +37,7 @@ LIB_DEPENDS=	lzma:${PORTSDIR}/archivers/${LZMA_DEPEND}
 
 pre-build:
 .if ${LZMA_DEPEND} == "sys"
-	${REINPLACE_CMD} -e "/^LDDLFLAGS/ s|${LOCALBASE}/lib|/usr/lib|" ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e "/^LDDLFLAGS/ s|${LOCALBASE}/lib|${LIBDIR}|" ${WRKSRC}/Makefile
 .endif
 
 .include <bsd.port.post.mk>
