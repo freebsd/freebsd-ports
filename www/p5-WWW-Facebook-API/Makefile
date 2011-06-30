@@ -7,6 +7,7 @@
 
 PORTNAME=	WWW-Facebook-API
 PORTVERSION=	0.4.18
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,12 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	clsung@FreeBSD.org
 COMMENT=	Facebook API implementation in Perl
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/version.pm:${PORTSDIR}/devel/p5-version \
-		${SITE_PERL}/${PERL_ARCH}/Crypt/SSLeay.pm:${PORTSDIR}/security/p5-Crypt-SSLeay \
-		${SITE_PERL}/${PERL_ARCH}/Readonly.pm:${PORTSDIR}/devel/p5-Readonly \
-		${SITE_PERL}/JSON/Any.pm:${PORTSDIR}/converters/p5-JSON-Any \
-		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Crypt-SSLeay>=0:${PORTSDIR}/security/p5-Crypt-SSLeay \
+		p5-JSON-Any>=0:${PORTSDIR}/converters/p5-JSON-Any \
+		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww 
 
 PERL_CONFIGURE=	yes
 
@@ -54,4 +53,10 @@ MAN3=		WWW::Facebook::API.3 \
 		WWW::Facebook::API::Users.3 \
 		WWW::Facebook::API::Video.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-version>=0:${PORTSDIR}/devel/p5-version
+.endif
+
+.include <bsd.port.post.mk>
