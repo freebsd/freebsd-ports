@@ -22,6 +22,9 @@ USE_RUBY=		yes
 USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes
 
+DEPRECATED=	no supported version of FreeBSD have < 1.8.7.p72
+EXPIRATION_DATE=	2011-07-30
+
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VERSION_CODE} >= 187000
