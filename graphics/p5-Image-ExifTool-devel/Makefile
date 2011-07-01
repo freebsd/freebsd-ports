@@ -66,10 +66,10 @@ post-install:
 
 # Maintainer section
 mantags:
-	@cd ${LOCALBASE}/lib/perl5/${PERL_VERSION}/man/man3/ && \
-		ls Image::ExifTool::* | \
-		cut -f5 -d: | \
-		cut -f1 -d. | \
+	@cd ${MAN3PREFIX}/man/man3/ && \
+		${LS} Image::ExifTool::* | \
+		${CUT} -f5 -d: | \
+		${CUT} -f1 -d. | \
 		${TR} "\n" " "
 
 .include <bsd.port.mk>
