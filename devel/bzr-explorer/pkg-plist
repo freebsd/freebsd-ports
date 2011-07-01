@@ -73,6 +73,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/commands.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/commands.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/commands.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/compatibility.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/compatibility.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/compatibility.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/custom_dialogs.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/custom_dialogs.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/custom_dialogs.pyo
@@ -185,6 +188,7 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/wt_browser.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/lib/wt_browser.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/ar/LC_MESSAGES/explorer.mo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/bg/LC_MESSAGES/explorer.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/ca/LC_MESSAGES/explorer.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/cs/LC_MESSAGES/explorer.mo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/da/LC_MESSAGES/explorer.mo
@@ -241,6 +245,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_welcome.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_welcome.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/test_welcome.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/__init__.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/__init__.pyo
@@ -260,6 +267,7 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/tab_widget.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/tab_widget.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/skin/logos
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/skin
@@ -335,6 +343,8 @@
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/cs
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/ca/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/ca
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/bg/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/bg
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/ar/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale/ar
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/locale
