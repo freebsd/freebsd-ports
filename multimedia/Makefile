@@ -322,6 +322,7 @@
     SUBDIR += umplayer
     SUBDIR += umr
     SUBDIR += v4l_compat
+    SUBDIR += v4l_utils
     SUBDIR += vamps
     SUBDIR += vcdgear
     SUBDIR += vcdimager
