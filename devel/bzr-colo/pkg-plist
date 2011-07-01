@@ -10,6 +10,8 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/explorer/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/explorer/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/explorer/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/explorer/tools.xml
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/folder.png
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/info.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/info.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/info.pyo
@@ -31,6 +33,12 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/test_sync.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/test_sync.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/test_sync.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/test_trace.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/test_trace.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tests/test_trace.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/trace.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/trace.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/trace.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tutorial.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tutorial.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/colo/tutorial.pyo
