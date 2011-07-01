@@ -6,11 +6,14 @@
 
 PORTNAME=	gdcm
 PORTVERSION=	${GDCM_MAJ}.${GDCM_MIN}
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	SF/gdcm/gdcm%202.x/GDCM%20${PORTVERSION}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Grassroots DICOM library
+
+LIB_DEPENDS=	openjpeg.2:${PORTSDIR}/graphics/openjpeg
 
 OPTIONS=	VTK "Build the VTK bindings" off
 
@@ -39,7 +42,8 @@ CMAKE_OUTSOURCE=yes
 CMAKE_ARGS+=	-DGDCM_BUILD_APPLICATIONS:BOOL=YES \
     		-DGDCM_BUILD_SHARED_LIBS:BOOL=YES \
 		-DGDCM_BUILD_EXAMPLES:BOOL=NO \
-		-DGDCM_INSTALL_DATA_DIR:STRING=${DATADIR}
+		-DGDCM_INSTALL_DATA_DIR:STRING=${DATADIR} \
+		-DGDCM_USE_SYSTEM_OPENJPEG:BOOL=YES
 
 .if !defined(NOPORTDOCS)
 BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
@@ -49,7 +53,6 @@ CMAKE_ARGS+=	-DGDCM_DOCUMENTATION:BOOL=YES \
 MAN1=		gdcm2vtk.1 gdcmconv.1 gdcmanon.1 gdcmgendir.1 \
 		gdcmdump.1 gdcmimg.1 gdcminfo.1 gdcmpdf.1 \
 		gdcmraw.1 gdcmscanner.1 gdcmtar.1 gdcmviewer.1
-MAN3=		libopenjpeg.3
 PORTDOCS=	*
 post-install:
 	${MKDIR} ${DOCSDIR}
@@ -66,8 +69,6 @@ MANUAL_PACKAGE_BUILD=	hangs on pointyhat
 
 post-patch:
 	${REINPLACE_CMD} -e 's| NAMELINK_SKIP||; s| NAMELINK_ONLY||' ${WRKSRC}/CMakeLists.txt
-	${REINPLACE_CMD} -e 's|share/man|man|g; /DESTINATION/s|$${OPENJPEG_INSTALL_DOC_DIR}|${DOCSDIR}|g' \
-	   ${WRKSRC}/Utilities/gdcmopenjpeg-v1/CMakeLists.txt \
-	   ${WRKSRC}/CMakeLists.txt
+	${REINPLACE_CMD} -e 's|share/man|man|g;' ${WRKSRC}/CMakeLists.txt
 
 .include <bsd.port.post.mk>

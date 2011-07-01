@@ -263,9 +263,6 @@ include/gdcm-%%GDCM_MAJ%%/gdcmjpeg/jmorecfg.h
 include/gdcm-%%GDCM_MAJ%%/gdcmjpeg/jpegint.h
 include/gdcm-%%GDCM_MAJ%%/gdcmjpeg/jpeglib.h
 include/gdcm-%%GDCM_MAJ%%/gdcmjpeg/jversion.h
-include/gdcm-%%GDCM_MAJ%%/gdcmopenjpeg/gdcmopenjpeg-1.4/openjpeg.h
-include/gdcm-%%GDCM_MAJ%%/gdcmopenjpeg/openjpeg.h
-include/gdcm-%%GDCM_MAJ%%/gdcmopenjpeg/openjpeg_mangle.h
 include/gdcm-%%GDCM_MAJ%%/zipstreamimpl.h
 %%VTK%%include/gdcm-%%GDCM_MAJ%%/vtkGDCMImageReader.h
 %%VTK%%include/gdcm-%%GDCM_MAJ%%/vtkGDCMImageWriter.h
@@ -287,9 +284,6 @@ lib/gdcm-%%GDCM_MAJ%%/GDCMConfigVersion.cmake
 lib/gdcm-%%GDCM_MAJ%%/GDCMTargets-release.cmake
 lib/gdcm-%%GDCM_MAJ%%/GDCMTargets.cmake
 lib/gdcm-%%GDCM_MAJ%%/UseGDCM.cmake
-lib/gdcmopenjpeg-1.4/GDCMTargets-release.cmake
-lib/gdcmopenjpeg-1.4/GDCMTargets.cmake
-lib/gdcmopenjpeg-1.4/OpenJPEGConfig.cmake
 lib/libgdcmCommon.so
 lib/libgdcmCommon.so.%%GDCM_MAJ%%
 lib/libgdcmCommon.so.%%GDCM_MAJ%%.%%GDCM_MIN%%
@@ -320,9 +314,6 @@ lib/libgdcmjpeg16.so.%%GDCM_MAJ%%.%%GDCM_MIN%%
 lib/libgdcmjpeg8.so
 lib/libgdcmjpeg8.so.%%GDCM_MAJ%%
 lib/libgdcmjpeg8.so.%%GDCM_MAJ%%.%%GDCM_MIN%%
-lib/libgdcmopenjpeg.so
-lib/libgdcmopenjpeg.so.1.4
-lib/libgdcmopenjpeg.so.1.4.0
 lib/libgdcmuuid.so
 lib/libgdcmuuid.so.%%GDCM_MAJ%%
 lib/libgdcmuuid.so.%%GDCM_MAJ%%.%%GDCM_MIN%%
@@ -340,12 +331,9 @@ lib/libgdcmzlib.so.%%GDCM_MAJ%%.%%GDCM_MIN%%
 %%DATADIR%%/XML/Part7.xml
 %%DATADIR%%/XML/cp699.xml
 %%DATADIR%%/XML/UIDs.xml
-@dirrm include/gdcm-%%GDCM_MAJ%%/gdcmopenjpeg/gdcmopenjpeg-1.4
-@dirrm include/gdcm-%%GDCM_MAJ%%/gdcmopenjpeg
 @dirrm include/gdcm-%%GDCM_MAJ%%/gdcmjpeg/8
 @dirrm include/gdcm-%%GDCM_MAJ%%/gdcmjpeg/16
 @dirrm include/gdcm-%%GDCM_MAJ%%/gdcmjpeg/12
 @dirrm include/gdcm-%%GDCM_MAJ%%/gdcmjpeg
 @dirrm include/gdcm-%%GDCM_MAJ%%/gdcmcharls
 @dirrm include/gdcm-%%GDCM_MAJ%%
-@dirrm lib/gdcmopenjpeg-1.4
