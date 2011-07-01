@@ -42,6 +42,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/commit_data.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/commit_data.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/commit_data.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/compatibility.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/compatibility.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/compatibility.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/conditional_dataview.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/conditional_dataview.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/qbzr/lib/conditional_dataview.pyo
