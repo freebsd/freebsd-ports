@@ -151,6 +151,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/graph/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/graph/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/graph/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/graph/test/AbstractVertexListTest.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/graph/test/AbstractVertexListTest.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/graph/test/AbstractVertexListTest.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/graph/test/DenseGraphTest.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/graph/test/DenseGraphTest.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/apgl/graph/test/DenseGraphTest.pyo
