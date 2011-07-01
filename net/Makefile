@@ -4,6 +4,7 @@
     COMMENT = Networking tools
 
     SUBDIR += 3proxy
+    SUBDIR += 44bsd-rdist
     SUBDIR += 6tunnel
     SUBDIR += AquaGatekeeper
     SUBDIR += AquaGatekeeper2
@@ -1097,6 +1098,7 @@
     SUBDIR += trafshow3
     SUBDIR += tramp
     SUBDIR += trickle
+    SUBDIR += tridiavnc
     SUBDIR += tryst
     SUBDIR += tryst-examples
     SUBDIR += tsclient
