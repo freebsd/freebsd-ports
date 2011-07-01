@@ -1,5 +1,5 @@
---- makefile.orig	Wed Apr 25 18:30:29 2001
-+++ makefile	Mon Sep  4 21:17:17 2006
+--- ./makefile.orig	2001-04-25 18:30:29.000000000 +0200
++++ ./makefile	2011-07-01 03:41:44.000000000 +0200
 @@ -8,17 +8,17 @@
  
  .PHONY : pccts cccc test install
