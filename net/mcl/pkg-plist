@@ -1,8 +1,0 @@
-bin/fcast
-bin/flute
-bin/robcast_client
-bin/robcast_server
-lib/libmclalc.a
-include/mcl_lib_api.h
-include/alc/mcl_lib_api_alc.h
-@dirrm include/alc
