@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	commons-discovery
-PORTVERSION=	0.4
-PORTREVISION=	2
+PORTVERSION=	0.5
 CATEGORIES=	java devel
 MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_BINARIES}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
 PKGNAMEPREFIX=	jakarta-
+DISTNAME=	${PORTNAME}-${PORTVERSION}-bin
 
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A Java library for locating resources (including classes)
@@ -19,6 +19,7 @@ COMMENT=	A Java library for locating resources (including classes)
 USE_JAVA=	YES
 JAVA_VERSION=	1.3+
 NO_BUILD=	YES
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -32,8 +33,8 @@ do-install:
 	@${ECHO_MSG} " [ DONE ]"
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} -n ">> Installing documentation..."
-	@cd ${WRKSRC}/docs && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
-	@cd ${WRKSRC}/docs && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
+	@cd ${WRKSRC}/apidocs && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
+	@cd ${WRKSRC}/apidocs && ${FIND} . -type f -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
 	@${ECHO_MSG} " [ DONE ]"
 .endif
 
