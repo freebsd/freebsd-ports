@@ -11,12 +11,13 @@ CATEGORIES=	irc ipv6
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	db@db.net
+MAINTAINER=	db@FreeBSD.org
 COMMENT=	A fast irc daemon with a number of new features
 
 MAN8=		ircd.8
 
 USE_GMAKE=	yes
+USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 
 USE_RC_SUBR=	ircd-hybrid.sh
