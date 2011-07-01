@@ -18,6 +18,8 @@ COMMENT=	Portable, Extensible Toolkit for Scientific computation
 RUN_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh	\
 		qsub:${PORTSDIR}/sysutils/torque
 
+BROKEN=		does not configure
+
 SLAVEDIRS=	math/petsc-mpich
 
 HAS_CONFIGURE=		yes
