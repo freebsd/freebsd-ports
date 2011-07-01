@@ -7224,6 +7224,7 @@ kmfl-european-latin             ports/textproc/kmfl-european-latin
 kmfl-khmer                      ports/textproc/kmfl-khmer
 kmfl-sil-ezra                   ports/textproc/kmfl-sil-ezra
 kmfl-sil-galatia                ports/textproc/kmfl-sil-galatia
+kmfl-sil-ipa-unicode            ports/textproc/kmfl-sil-ipa-unicode
 kmfl-sil-panafrican-latin       ports/textproc/kmfl-sil-panafrican-latin
 kmfl-sil-yi                     ports/textproc/kmfl-sil-yi
 kmfl-varamozhi-malayalam        ports/textproc/kmfl-varamozhi-malayalam
@@ -9220,6 +9221,7 @@ mindfocus                       ports/games/mindfocus
 mindguard                       ports/games/mindguard
 mindterm-binary                 ports/security/mindterm-binary
 mined                           ports/editors/mined
+minetest                        ports/games/minetest
 ming                            ports/graphics/ming
 mingplot                        ports/graphics/mingplot
 mingw32-bin-msvcrt              ports/devel/mingw32-bin-msvcrt
@@ -23504,6 +23506,7 @@ rubygem-prawn-layout            ports/print/rubygem-prawn-layout
 rubygem-prawn-security          ports/print/rubygem-prawn-security
 rubygem-prawn-svg               ports/print/rubygem-prawn-svg
 rubygem-ptreloaded              ports/devel/rubygem-ptreloaded
+rubygem-puppet-module           ports/sysutils/rubygem-puppet-module
 rubygem-qmail                   ports/mail/rubygem-qmail
 rubygem-rack                    ports/www/rubygem-rack
 rubygem-rack-cache              ports/www/rubygem-rack-cache
