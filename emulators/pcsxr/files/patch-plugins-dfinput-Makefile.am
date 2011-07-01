@@ -1,5 +1,5 @@
---- plugins/dfinput/Makefile.am.orig	2011-01-21 18:22:58.498759182 +0100
-+++ plugins/dfinput/Makefile.am	2011-01-21 18:23:49.747937779 +0100
+--- plugins/dfinput/Makefile.am.orig	2011-06-30 08:58:33.770048349 +0200
++++ plugins/dfinput/Makefile.am	2011-06-30 09:00:09.852609400 +0200
 @@ -1,14 +1,14 @@
 -bindir = @libdir@/games/psemu/
 -libdir = @libdir@/games/psemu/
@@ -8,7 +8,7 @@
  
  lib_LTLIBRARIES = libDFInput.la
  
- libDFInput_la_SOURCES = cfg.c pad.c pad.h sdljoy.c xkb.c analog.c
+ libDFInput_la_SOURCES = cfg.c pad.c pad.h sdljoy.c xkb.c analog.c util.c util.h
 -libDFInput_la_LDFLAGS = -module -avoid-version 
 -libDFInput_la_LIBADD = -lpthread -lX11 $(SDL_LIBS)
 +libDFInput_la_LDFLAGS = -module -avoid-version -pthread

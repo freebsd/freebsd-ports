@@ -1,5 +1,5 @@
---- plugins/dfsound/Makefile.am.orig	2011-01-21 18:22:58.487759739 +0100
-+++ plugins/dfsound/Makefile.am	2011-01-21 18:24:59.271659928 +0100
+--- plugins/dfsound/Makefile.am.orig	2011-07-01 09:14:20.495315356 +0200
++++ plugins/dfsound/Makefile.am	2011-07-01 09:13:24.000000000 +0200
 @@ -1,15 +1,15 @@
  AM_CPPFLAGS = -I../../include
  
@@ -10,7 +10,7 @@
  
  lib_LTLIBRARIES = libDFSound.la
  
- libDFSound_la_SOURCES = spu.c cfg.c dma.c freeze.c registers.c
+ libDFSound_la_SOURCES = adsr.c adsr.h spu.c spu.h cfg.c cfg.h dma.c dma.h gauss_i.h freeze.c reverb.c reverb.h registers.c registers.h externals.c externals.h dsoundoss.h psemuxa.h regs.h xa.c xa.h stdafx.h
  
  libDFSound_la_CPPFLAGS = $(AM_CPPFLAGS)
 -libDFSound_la_LDFLAGS = -module -avoid-version 
@@ -20,17 +20,17 @@
  
  if SOUND_ALSA
  libDFSound_la_SOURCES += alsa.c
-@@ -41,11 +41,11 @@
+@@ -47,11 +47,11 @@
  
  bin_PROGRAMS = cfgDFSound
  cfgDFSound_CPPFLAGS = -DLOCALE_DIR=\"${datadir}/locale/\" \
 -	-DDATADIR=\"${datadir}/psemu/\" \
 +	-DDATADIR=\"${datadir}/pcsxr/\" \
- 	$(GTK2_CFLAGS) $(GLADE2_CFLAGS) $(AM_CPPFLAGS)
+ 	$(GTK2_CFLAGS) $(AM_CPPFLAGS)
  cfgDFSound_SOURCES = spucfg-0.1df/main.c
- cfgDFSound_LDADD = $(GTK2_LIBS) $(GLADE2_LIBS)
+ cfgDFSound_LDADD = $(GTK2_LIBS)
  
- glade_DATA = spucfg-0.1df/dfsound.glade2
+ glade_DATA = spucfg-0.1df/dfsound.ui
 -gladedir = $(datadir)/psemu/
 +gladedir = $(datadir)/pcsxr/
  EXTRA_DIST = $(glade_DATA)

@@ -1,26 +1,38 @@
-bin/pcsx
-%%NLS%%share/locale/fr_FR/LC_MESSAGES/pcsx.mo
-%%NLS%%share/locale/it/LC_MESSAGES/pcsx.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/pcsx.mo
-%%NLS%%share/locale/ru_RU/LC_MESSAGES/pcsx.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/pcsx.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/pcsx.mo
+bin/pcsxr
+%%NLS%%share/locale/fr_FR/LC_MESSAGES/pcsxr.mo
+%%NLS%%share/locale/it/LC_MESSAGES/pcsxr.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/pcsxr.mo
+%%NLS%%share/locale/ru_RU/LC_MESSAGES/pcsxr.mo
+%%NLS%%share/locale/hu_HU/LC_MESSAGES/pcsxr.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/pcsxr.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pcsxr.mo
+%%NLS%%@dirrmtry share/locale/hu_HU/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/hu_HU
 %%NLS%%@dirrmtry share/locale/ru_RU/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ru_RU
-share/pcsxr/dfcdrom.glade2
 share/pcsxr/dfbinimage.glade2
-share/pcsxr/dfsound.glade2
-share/pcsxr/dfxvideo.glade2
 share/pcsxr/gxvideo.glade
-share/pcsxr/sio1.glade2
 share/pcsxr/peopsxgl.ui
 share/pcsxr/dfinput.ui
 share/pcsxr/dfnet.ui
-share/pcsxr/pcsx.glade2
-share/pcsxr/pcsx.jpg
+share/pcsxr/dfxvideo.ui
+share/pcsxr/dfcdrom.ui
+share/pcsxr/sio1.ui
+share/pcsxr/gpu.png
+share/pcsxr/dfsound.ui
+share/pcsxr/spu.png
+share/pcsxr/cd.png
+share/pcsxr/iso-reopen.png
+share/pcsxr/cdr.png
+share/pcsxr/pcsxr.glade2
+share/pcsxr/iso-open.png
+share/pcsxr/play.png
+share/pcsxr/pad.png
+share/pcsxr/memcard.png
+share/pcsxr/pcsxr.png
 @dirrm share/pcsxr
-share/pixmaps/pcsx-icon.png
-share/applications/pcsx.desktop
+share/pixmaps/pcsxr-icon.png
+share/applications/pcsxr.desktop
 @dirrmtry share/applications
 lib/pcsxr/cfgDFXVideo
 lib/pcsxr/cfgpeopsxgl
