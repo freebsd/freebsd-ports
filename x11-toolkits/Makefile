@@ -253,6 +253,7 @@
     SUBDIR += skinlf
     SUBDIR += slgtk
     SUBDIR += slgtkdatabox
+    SUBDIR += slingshot
     SUBDIR += soqt
     SUBDIR += swt
     SUBDIR += swt-devel

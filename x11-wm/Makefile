@@ -136,6 +136,7 @@
     SUBDIR += obconf
     SUBDIR += obmenu
     SUBDIR += obpager
+    SUBDIR += olvwm
     SUBDIR += openbox
     SUBDIR += oroborus
     SUBDIR += pager
