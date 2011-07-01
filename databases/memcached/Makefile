@@ -7,7 +7,7 @@
 
 PORTNAME=	memcached
 PORTVERSION=	1.4.5
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_GENTOO}
@@ -32,7 +32,7 @@ MAN1=		memcached.1
 PLIST_FILES=	bin/memcached \
 		bin/memcached-tool \
 		include/memcached/protocol_binary.h
-PLIST_DIRS=	include/memcached
+PLIST_DIRS=	include/memcached /var/run/memcached
 
 PORTDOCS=	protocol.txt threads.txt readme.txt
 
@@ -67,6 +67,8 @@ post-configure:
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/memcached-tool ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/doc/${MAN1} ${MAN1PREFIX}/man/man1
+	@${MKDIR} -p /var/run/memcached
+	@${CHOWN} nobody:nobody /var/run/memcached
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	@${MKDIR} ${DOCSDIR}
