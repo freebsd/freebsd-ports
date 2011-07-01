@@ -19,9 +19,10 @@ LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
+USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--enable-shared --disable-trace
 USE_LDCONFIG=	yes
 
