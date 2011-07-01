@@ -13,6 +13,8 @@
 #				Default is empty "".
 # memcached_user (user):	Set user to run memcached.
 #				Default is "nobody".
+# memcached_profiles (str):     Set to "" by default.
+#                               Define your profiles here.
 #
 
 . /etc/rc.subr
@@ -20,13 +22,61 @@
 name="memcached"
 rcvar=${name}_enable
 
+_pidprefix="/var/run/memcached/memcached"
+pidfile="${_pidprefix}.pid"
+
 load_rc_config ${name}
+
+if [ -n "$2" ]; then
+	profile="$2"
+	if [ "x${memcached_profiles}" != "x" ]; then
+		pidfile="${_pidprefix}.${profile}.pid"
+		eval memcached_enable="\${memcached_${profile}_enable:-${memcached_enable}}"
+		eval memcached_flags="\${memcached_${profile}_flags:-${memcached_flags}}"
+	else
+		echo "$0: extra argument ignored"
+	fi
+else
+	if [ "x${memcached_profiles}" != "x" -a "x$1" != "x" ]; then
+		for profile in ${memcached_profiles}; do
+			eval _enable="\${memcached_${profile}_enable}"
+			case "x${_enable:-${memcached_enable}}" in
+			x|x[Nn][Oo]|x[Nn][Oo][Nn][Ee])
+				continue
+				;;
+			x[Yy][Ee][Ss])
+				;;
+			*)
+				if test -z "$_enable"; then
+					_var=memcached_enable
+				else
+					_var=memcached_"${profile}"_enable
+				fi
+				echo "Bad value" \
+				    "'${_enable:-${memcached_enable}}'" \
+				    "for ${_var}. " \
+				    "Profile ${profile} skipped."
+				continue
+				;;
+			esac
+			echo "===> memcached profile: ${profile}"
+			/usr/local/etc/rc.d/memcached $1 ${profile}
+			retcode="$?"
+			if [ "0${retcode}" -ne 0 ]; then
+				failed="${profile} (${retcode}) ${failed:-}"
+			else
+				success="${profile} ${success:-}"
+			fi
+		done
+		exit 0
+	fi
+fi
 
 : ${memcached_enable="NO"}
 : ${memcached_user="nobody"}
 
 command=%%PREFIX%%/bin/memcached
-command_args="-d -u ${memcached_user}"
+command_args="-d -u ${memcached_user} -P ${pidfile} "
 
 unset memcached_user
 
