@@ -97,6 +97,11 @@ PATCH_DIST_ARGS=	-d ${WRKSRC} -p1 --forward --quiet
 
 .include <bsd.port.options.mk>
 
+# Fix build WITH_DEBUG
+.if defined(WITH_DEBUG)
+DEBUG_FLAGS=	-g -O1
+.endif
+
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
