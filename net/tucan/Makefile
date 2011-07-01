@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	tucan
-PORTVERSION=	0.3.9
-PORTREVISION=	4
+PORTVERSION=	0.3.10
 CATEGORIES=	net
-MASTER_SITES=	http://forja.rediris.es/frs/download.php/1470/ \
+MASTER_SITES=	http://forja.rediris.es/frs/download.php/2051/ \
 		http://build-tucan-doc.googlecode.com/files/
 
 MAINTAINER=	gustau.perez@gmail.com
@@ -51,7 +50,7 @@ do-install:
 	(cd ${WRKSRC}/i18n/ && ${COPYTREE_SHARE} \* ${DATADIR}/i18n/)
 	(cd ${WRKSRC}/media/ && ${COPYTREE_SHARE} \* ${DATADIR}/media/)
 	(cd ${WRKSRC}/ui/ && ${COPYTREE_SHARE} \* ${DATADIR}/ui/)
-	${INSTALL_DATA} ${WRKSRC}/media/tucan.svg ${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/media/tucan.png ${PREFIX}/share/pixmaps/
 	${INSTALL_MAN} ${WRKSRC}/tucan.1.gz ${PREFIX}/man/man1/
 	${INSTALL} ${WRKSRC}/tucan.desktop ${PREFIX}/share/applications/
 
