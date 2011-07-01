@@ -7,6 +7,7 @@
 
 PORTNAME=	gns3
 PORTVERSION=	0.7.3
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/gns-3/GNS3/${PORTVERSION}
 DISTNAME=	GNS3-${PORTVERSION}-src
@@ -17,11 +18,9 @@ COMMENT=	Graphical Cisco network simulator
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		${PYTHON_SITELIBDIR}/PyQt4/QtSvg.so:${PORTSDIR}/graphics/py-qt4-svg \
 		${PYTHON_SITELIBDIR}/PyQt4/QtNetwork.so:${PORTSDIR}/net/py-qt4-network \
-		dynamips:${PORTSDIR}/emulators/dynamips-devel \
+		dynamips:${PORTSDIR}/emulators/dynamips-community \
 		dynagen:${PORTSDIR}/emulators/dynagen \
 		qemu>=0.11:${PORTSDIR}/emulators/qemu
-
-BROKEN=		conflicting dependencies
 
 USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	yes
