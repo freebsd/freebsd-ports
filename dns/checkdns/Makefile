@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.enderunix.org/checkdns/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A domain name server analysis and reporting tool
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 SUB_FILES=	pkg-message
 
@@ -24,6 +24,7 @@ PORTDOCS=	AUTHORS COPYING ChangeLog INSTALL README THANKS TODO
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|g' ${WRKSRC}/main.c \
 		${WRKSRC}/INSTALL ${WRKSRC}/README ${WRKSRC}/checkdns.conf-dist
+	@${REINPLACE_CMD} -e 's|CC = gcc|CC = ${CC} -include string.h|' ${WRKSRC}/Makefile
 
 post-install:
 	@if [ ! -f ${PREFIX}/etc/checkdns.conf ]; then \
