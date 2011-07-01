@@ -1,5 +1,5 @@
---- chu.c.orig	Wed Mar 17 11:42:18 1999
-+++ chu.c	Mon Sep 18 17:46:42 2006
+--- chu.c.orig	1999-03-17 11:42:18.000000000 -0500
++++ chu.c	2011-07-01 08:42:06.000000000 -0400
 @@ -20,15 +20,21 @@
  #include <stdlib.h>
  #include <string.h>
@@ -56,7 +56,7 @@
    return (double) offset; 
  }
  
-@@ -655,12 +677,17 @@
+@@ -655,13 +677,18 @@
      tv.tv_usec += 1000000;
    }
  
@@ -70,7 +70,35 @@
 +  if (fabs(d) < ((double)1000000))
 +    do_adjtime((int)-d);
    else
-+#endif
  #endif
++#endif
    {
      printf("standard adjustment ");
+ 
+@@ -1267,7 +1294,7 @@
+   return fname;
+ }
+ 
+-void main(int argc, char **argv)
++int main(int argc, char **argv)
+ {
+   FILE *fp;
+   signed char buf[8192];
+@@ -1278,7 +1305,7 @@
+ 
+   fname = parseArgs(argc, argv);
+   if (fname == NULL)
+-    return;
++    return 0;
+ 
+   /* Set priority to maximum -- just long enough for us
+      to open the audio device and timestamp it.  This should
+@@ -1293,7 +1320,7 @@
+   if (fp == NULL)
+   {
+     printf("fopen(): Unable to open file: %s  %s\n", fname, strerror(errno));
+-    return;
++    return 0;
+   }
+ 
+   gettimeofday(&starttime, &tz);
