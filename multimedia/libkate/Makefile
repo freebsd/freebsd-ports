@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	multimedia
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	barbara.xxx1975@libero.it
 COMMENT=	Codec for karaoke and text encapsulation for Ogg
 
 BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
