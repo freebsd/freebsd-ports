@@ -1,5 +1,5 @@
---- plugins/bladesio1/Makefile.am.orig	2011-01-25 07:30:23.176137395 +0100
-+++ plugins/bladesio1/Makefile.am	2011-01-25 16:41:47.451078804 +0100
+--- plugins/bladesio1/Makefile.am.orig	2011-06-30 08:51:19.659732652 +0200
++++ plugins/bladesio1/Makefile.am	2011-06-30 08:52:16.694874269 +0200
 @@ -1,5 +1,5 @@
 -bindir = @libdir@/games/psemu/
 -libdir = @libdir@/games/psemu/
@@ -14,13 +14,13 @@
  AM_CPPFLAGS = -DLOCALE_DIR=\"${datadir}/locale/\" \
 -	-DDATADIR=\"${datadir}/psemu/\" \
 +	-DDATADIR=\"${datadir}/pcsxr/\" \
- 	$(GTK2_CFLAGS) $(GLADE2_CFLAGS) \
+ 	$(GTK2_CFLAGS) \
  	-I../../libpcsxcore -I../../include
  
 @@ -16,5 +16,5 @@
- cfgBladeSio1_LDADD = $(GTK2_LIBS) $(GLADE2_LIBS)
+ cfgBladeSio1_LDADD = $(GTK2_LIBS)
  
- glade_DATA = sio1.glade2
+ glade_DATA = sio1.ui
 -gladedir = $(datadir)/psemu/
-+gladedir = $(datadir)/pcsxr
++gladedir = $(datadir)/pcsxr/
  EXTRA_DIST = $(glade_DATA)

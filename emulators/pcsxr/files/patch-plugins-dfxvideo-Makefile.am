@@ -1,12 +1,12 @@
---- plugins/dfxvideo/Makefile.am.orig	2011-01-21 18:16:02.202890852 +0100
-+++ plugins/dfxvideo/Makefile.am	2011-01-21 18:17:12.618830029 +0100
+--- plugins/dfxvideo/Makefile.am.orig	2011-06-30 09:12:42.916385383 +0200
++++ plugins/dfxvideo/Makefile.am	2011-06-30 09:14:44.735162351 +0200
 @@ -7,13 +7,13 @@
  	$(STRIP_FPIC) $(NASM) -f elf -d ELF -I${srcdir}/ $<
  
  AM_CPPFLAGS = -DLOCALE_DIR=\"${datadir}/locale/\" \
 -	-DDATADIR=\"${datadir}/psemu/\" \
 +	-DDATADIR=\"${datadir}/pcsxr/\" \
- 	$(GTK2_CFLAGS) $(GLADE2_CFLAGS) \
+ 	$(GTK2_CFLAGS)\
  	-I../../libpcsxcore \
  	-I../../include
  
@@ -18,9 +18,9 @@
  lib_LTLIBRARIES = libDFXVideo.la
  
 @@ -30,5 +30,5 @@
- cfgDFXVideo_LDADD = $(GTK2_LIBS) $(GLADE2_LIBS) -lXext
+ cfgDFXVideo_LDADD = $(GTK2_LIBS) -lXext
  
- glade_DATA = gpucfg-0.1df/dfxvideo.glade2
+ glade_DATA = gpucfg-0.1df/dfxvideo.ui
 -gladedir = $(datadir)/psemu/
 +gladedir = $(datadir)/pcsxr/
  EXTRA_DIST = $(glade_DATA)

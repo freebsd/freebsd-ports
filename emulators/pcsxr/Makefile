@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pcsxr
-PORTVERSION=	1.9.92.r62569
+PORTVERSION=	1.9.92.r68256
 CATEGORIES=	emulators
 MASTER_SITES=	http://contribs.martymac.org/FreeBSD-ports/distfiles/ \
 		LOCAL/martymac
@@ -37,7 +37,7 @@ CONFIGURE_ARGS=	--enable-opengl --enable-libcdio
 USE_LDCONFIG=	yes
 
 USE_DOS2UNIX=	yes
-DOS2UNIX_REGEX=	.*\.(c|h|cpp|hpp)
+DOS2UNIX_REGEX=	.*\.(c|h|cpp|hpp|am)
 
 USE_GNOME=	gtk20 desktopfileutils glib20 libglade2
 USE_ICONV=	yes
@@ -45,7 +45,7 @@ USE_XORG=	x11 xv xext xxf86vm xtst
 USE_SDL=	sdl
 USE_GL=	gl
 
-MAN1=	pcsx.1
+MAN1=	pcsxr.1
 PORTDOCS=	ChangeLog README
 
 # Default CDROM device to use with dfcdrom,
