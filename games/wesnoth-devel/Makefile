@@ -18,6 +18,8 @@ COMMENT=	A fantasy turn-based strategy game
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/x11-fonts/junicode:extract
 
+BROKEN=		incomplete plist
+
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 LICENSE_FILE=	${WRKSRC}/COPYING
