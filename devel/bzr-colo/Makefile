@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	bzr-colo
-PORTVERSION=	0.2.1
+PORTVERSION=	0.3.0
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/63041404/ \
+MASTER_SITES=	https://launchpadlibrarian.net/74164744/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	c-s@c-s.li
 COMMENT=	Plugin for bzr to support colocated branches
 
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng
 
 LICENSE=	GPLv2
 
