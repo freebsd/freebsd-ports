@@ -7,9 +7,10 @@
 
 PORTNAME=	postgis
 PORTVERSION=	1.5.2
+PORTREVISION=	1
 CATEGORIES=	databases geography
 MASTER_SITES=	http://postgis.refractions.net/download/ \
-  		http://www.postgis.org/download/
+ 		http://www.postgis.org/download/
 
 MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	Adds support for geographic objects to PostgreSQL databases
@@ -25,15 +26,27 @@ USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_PERL5_BUILD=	yes
 
+OPTIONS=	LOADERGUI "Enable shp2pgsql-gui" Off
+
+.include <bsd.port.options.mk>
+
 INSTALL_TARGET=	install
 
 GNU_CONFIGURE=	yes
+.if defined(WITH_LOADERGUI)
+USE_GNOME=	libxml2 gtk20
+CONFIGURE_ARGS=	--with-projdir=${LOCALBASE} --with-gui
+PLIST_SUB+=	LOADERGUI=""
+.else
 USE_GNOME=	libxml2
+CONFIGURE_ARGS=	--with-projdir=${LOCALBASE}
+PLIST_SUB+=	LOADERGUI="@comment "
+.endif
+
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV=	DATADIR=${DATADIR} DOCSDIR=${DOCSDIR}
 MAKE_JOBS_UNSAFE=	yes
-CONFIGURE_ARGS=	--with-projdir=${LOCALBASE}
 
 .include <bsd.port.pre.mk>
 

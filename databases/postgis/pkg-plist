@@ -1,5 +1,6 @@
 bin/pgsql2shp
 bin/shp2pgsql
+%%LOADERGUI%%bin/shp2pgsql-gui
 lib/postgresql/liblwgeom.so
 lib/postgresql/liblwgeom.so.1
 lib/postgresql/postgis-1.5.so
