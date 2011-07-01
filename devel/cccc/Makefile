@@ -24,6 +24,9 @@ MAKE_JOBS_UNSAFE=	yes
 PORTDOCS=	readme.txt changes.txt
 PLIST_FILES=	bin/cccc
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|=g++|=${CXX}|' ${WRKSRC}/*/posix*.mak
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/cccc/cccc ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
