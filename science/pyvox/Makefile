@@ -6,35 +6,61 @@
 # $FreeBSD$
 #
 
-PORTNAME=	bblimage
-PORTVERSION=	0.66
-PORTREVISION=	3
+PORTNAME=	pyvox
+PORTVERSION=	0.72
 CATEGORIES=	science
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	miwi
+MASTER_SITES=	http://www.med.upenn.edu/bbl/downloads/pyvox/
 EXTRACT_SUFX=	.src.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of software tools for medical image processing
 
-DEPRECATED=	No more upstream, looks like an abandonware
-EXPIRATION_DATE=	2011-08-01
+LICENSE=	MIT
 
-LIB_DEPENDS=	Xm.2:${PORTSDIR}/x11-toolkits/lesstif
+LIB_DEPENDS=	lapack.4:${PORTSDIR}/math/lapack
 
-USE_XORG=	x11
-USE_PYTHON=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-lapack --with-python
-USE_GMAKE=	yes
-USE_LDCONFIG=	yes
+GNU_CONFIGURE=		yes
+LAPACK?=		-llapack -lblas
+CONFIGURE_ARGS =	--with-lapack="${LAPACK}" --with-python="${PYTHON_CMD}"
+CONFIGURE_ENV=		ac_cv_header_tgmath_h=no
+USE_GMAKE=		yes
+USE_LDCONFIG=		yes
+USE_PYTHON=		2.5+
 
-MAN1=	anonbblanz.1 bblimage.1 binnseg.1 conseg.1 decomment.1 dumpbblanz.1 \
-	imstack.1 inleav2.1 lovar.1 qdv.1 rpsamp.1 skmiv.1 swab.1 usb2uc.1 \
-	vibihist.1 vihist.1
-MAN5=	cdata.5 mri_data.5 param.5
+.if defined(WITHOUT_X11)
+CONFIGURE_ARGS+=--without-x
+PLIST_SUB+=	X11="@comment "
+.else
+CONFIGURE_ARGS+=--with-x
+BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/Pmw/__init__.py:${PORTSDIR}/x11-toolkits/py-Pmw
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Pmw/__init__.py:${PORTSDIR}/x11-toolkits/py-Pmw
+USE_MOTIF=	yes
+USE_TK =	82+
+CFLAGS+=	-DUSE_COMPOSITELESS_PHOTO_PUT_BLOCK -I${LOCALBASE}/include \
+		-I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR}
+PLIST_SUB+=	X11=""
+.endif
+
+MAN1=	affreg.1 anonavw.1 bredit.1 decomment.1 dumpavw.1 editavw.1 makeavw.1 pyvox.1 \
+	reged.1 regedit.1 qdv.1
+MAN5=	cdata.5 param.5
+
+.include <bsd.port.pre.mk>
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|python1\.5|${PYTHON_VERSION}|g" ${WRKSRC}/configure ${WRKSRC}/Makefile.in
+.if defined(WITHOUT_X11)
+	@${REINPLACE_CMD} -e '\|pmw=yes|s|yes|no|' -e '\|tkinter=yes|s|yes|no|' \
+		${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '\|#include "tk.h"|d' ${WRKSRC}/include/pyvox.h
+.else
+	@${REINPLACE_CMD} -e 's|-ltk|&${USE_TK}|' \
+		${WRKSRC}/Makefile.in
+.endif
 
-.include <bsd.port.mk>
+.if defined(MAINTAINER_MODE)
+check regress regression-test test: build
+	 @(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} \
+	 ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} regress)
+.endif
+
+.include <bsd.port.post.mk>
