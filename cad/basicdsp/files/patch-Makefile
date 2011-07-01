@@ -1,5 +1,5 @@
---- Makefile.orig	2008-11-06 19:34:34.000000000 +0000
-+++ Makefile	2008-11-07 03:24:20.000000000 +0000
+--- Makefile.orig	2011-07-01 07:56:12.000000000 -0400
++++ Makefile	2011-07-01 08:11:05.000000000 -0400
 @@ -1,5 +1,5 @@
 -CXXFLAGS	= -O9 -g -Wall `wx-config --cxxflags` -g -Wall -pg
 -LDFLAGS	= `wx-config --libs` -lm -g -pg
@@ -8,7 +8,7 @@
  
  OBJS 	= 	aboutdialog.o book.o core.o displayslider.o graphframe.o gui.o linux.o vu_meter.o spectrumplot.o fft4g.o wav_streamer.o
  
-@@ -7,8 +7,8 @@
+@@ -7,9 +7,9 @@
  
  gui.o:	help.h gui.cpp
  
@@ -18,4 +18,6 @@
 +#	./mkhelp > help.h
  
  basicdsp:	help.h $(OBJS)
- 	g++ $(LDFLAGS) $(OBJS) -o basicdsp
+-	g++ $(LDFLAGS) $(OBJS) -o basicdsp
++	${CXX} $(LDFLAGS) $(OBJS) -o basicdsp
+ 
