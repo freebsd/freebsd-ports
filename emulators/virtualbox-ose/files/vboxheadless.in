@@ -13,9 +13,15 @@
 # vboxheadless_machines (str):        Space separated list of machines 
 # vboxheadless_user (str):            Default user account to run with.
 #                                     (default: %%VBOXUSER%%)
+# vboxheadless_stop (str):            Default stop cmd for VBoxManage controlvm.
+#                                     (default: savestate)
+# vboxheadless_delay (int):           Default startup/shutdown delay in seconds.
+#                                     (default: 0)
 # vboxheadless_<machine>_name (str):  Virtualbox machine name or UUID.
 # vboxheadless_<machine>_user (str):  User account to run with.
 # vboxheadless_<machine>_flags (str): Additional flags for VBoxHeadless.
+# vboxheadless_<machine>_stop (str):  Stop command for VBoxManage controlvm.
+# vboxheadless_<machine>_delay (int): Startup and shutdown delay in seconds.
 
 . /etc/rc.subr
 
@@ -31,7 +37,7 @@ status_cmd="${name}_status"
 
 vboxheadless_start()
 {
-	local machine mpidfile pid vmname vmuser vmflags
+	local machine mpidfile pid vmname vmuser vmflags vmdelay
 
 	echo "Starting Virtual Machines:"
 	for machine in ${vboxheadless_machines}; do
@@ -40,6 +46,7 @@ vboxheadless_start()
 		eval vmname="\${vboxheadless_${machine}_name:-${machine}}"
 		eval vmuser="\${vboxheadless_${machine}_user:-${vboxheadless_user}}"
 		eval vmflags="\${vboxheadless_${machine}_flags:-}"
+		eval vmdelay="\${vboxheadless_${machine}_delay:-${vboxheadless_delay}}"
 
 		HOME=$(/usr/sbin/pw usershow -7 -n "${vmuser}" | /usr/bin/cut -d: -f6)
 
@@ -57,6 +64,7 @@ vboxheadless_start()
 			continue
 		fi
 
+		/bin/sleep ${vmdelay}
 		/usr/bin/install -o ${vmuser} -g wheel -m 644 /dev/null ${mpidfile}
 		/usr/sbin/daemon -f -p ${mpidfile} -u ${vmuser} ${command} --startvm "${vmname}" ${vmflags}
 		echo "Started"
@@ -65,7 +73,7 @@ vboxheadless_start()
 
 vboxheadless_stop()
 {
-	local machine mpidfile pid vmname vmuser
+	local machine mpidfile pid vmname vmuser vmstop vmdelay
 
 	echo "Saving states for Virtual Machines:"
 	for machine in ${vboxheadless_machines}; do
@@ -73,11 +81,14 @@ vboxheadless_stop()
 		pid=$(check_pidfile $mpidfile $command)
 		eval vmname="\${vboxheadless_${machine}_name:-${machine}}"
 		eval vmuser="\${vboxheadless_${machine}_user:-${vboxheadless_user}}"
+		eval vmstop="\${vboxheadless_${machine}_stop:-${vboxheadless_stop}}"
+		eval vmdelay="\${vboxheadless_${machine}_delay:-${vboxheadless_delay}}"
 
 		/usr/bin/printf "%25s " "${vmname}"
 
 		if [ -n "${pid}" ]; then
-			/usr/bin/su ${vmuser} -c "%%PREFIX%%/bin/VBoxManage controlvm '${vmname}' savestate >/dev/null" 2>/dev/null
+			/bin/sleep ${vmdelay}
+			/usr/bin/su ${vmuser} -c "%%PREFIX%%/bin/VBoxManage controlvm '${vmname}' ${vmstop} >/dev/null" 2>/dev/null
 			wait_for_pids $pid >/dev/null
 			echo "Stopped"
 		else
@@ -115,6 +126,8 @@ load_rc_config $name
 
 : ${vboxheadless_enable="NO"}
 : ${vboxheadless_user="%%VBOXUSER%%"}
+: ${vboxheadless_stop="savestate"}
+: ${vboxheadless_delay="0"}
 
 cmd_arg="$1" ; shift
 
