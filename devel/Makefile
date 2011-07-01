@@ -674,6 +674,7 @@
     SUBDIR += ifd-test
     SUBDIR += imake
     SUBDIR += inilib
+    SUBDIR += iniparser
     SUBDIR += initutil
     SUBDIR += insight
     SUBDIR += ioncube
