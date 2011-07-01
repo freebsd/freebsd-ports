@@ -65,19 +65,19 @@ bin/offlineimap
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/debuglock.py
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/debuglock.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/ui/debuglock.pyo
-%%PYTHON_SITELIBDIR%%/offlineimap/ui/detector.py
-%%PYTHON_SITELIBDIR%%/offlineimap/ui/detector.pyc
-%%PYTHON_SITELIBDIR%%/offlineimap/ui/detector.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/offlineimap/ui
-%%PYTHON_SITELIBDIR%%/offlineimap/__init__.py
-%%PYTHON_SITELIBDIR%%/offlineimap/__init__.pyc
-%%PYTHON_SITELIBDIR%%/offlineimap/__init__.pyo
 %%PYTHON_SITELIBDIR%%/offlineimap/CustomConfig.py
 %%PYTHON_SITELIBDIR%%/offlineimap/CustomConfig.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/CustomConfig.pyo
+%%PYTHON_SITELIBDIR%%/offlineimap/__init__.py
+%%PYTHON_SITELIBDIR%%/offlineimap/__init__.pyc
+%%PYTHON_SITELIBDIR%%/offlineimap/__init__.pyo
 %%PYTHON_SITELIBDIR%%/offlineimap/accounts.py
 %%PYTHON_SITELIBDIR%%/offlineimap/accounts.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/accounts.pyo
+%%PYTHON_SITELIBDIR%%/offlineimap/imaplib2.py
+%%PYTHON_SITELIBDIR%%/offlineimap/imaplib2.pyc
+%%PYTHON_SITELIBDIR%%/offlineimap/imaplib2.pyo
 %%PYTHON_SITELIBDIR%%/offlineimap/imaplibutil.py
 %%PYTHON_SITELIBDIR%%/offlineimap/imaplibutil.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/imaplibutil.pyo
@@ -102,14 +102,16 @@ bin/offlineimap
 %%PYTHON_SITELIBDIR%%/offlineimap/threadutil.py
 %%PYTHON_SITELIBDIR%%/offlineimap/threadutil.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/threadutil.pyo
-%%PYTHON_SITELIBDIR%%/offlineimap/version.py
-%%PYTHON_SITELIBDIR%%/offlineimap/version.pyc
-%%PYTHON_SITELIBDIR%%/offlineimap/version.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/offlineimap
-%%PORTDOCS%%%%DOCSDIR%%/COPYING
-%%PORTDOCS%%%%DOCSDIR%%/COPYRIGHT
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.html
-%%PORTDOCS%%%%DOCSDIR%%/UPGRADING
+%%PORTDOCS%%%%DOCSDIR%%/Changelog.draft.rst
+%%PORTDOCS%%%%DOCSDIR%%/Changelog.maint.rst
+%%PORTDOCS%%%%DOCSDIR%%/Changelog.rst
+%%PORTDOCS%%%%DOCSDIR%%/FAQ.rst
+%%PORTDOCS%%%%DOCSDIR%%/INSTALL.rst
+%%PORTDOCS%%%%DOCSDIR%%/MANUAL.rst
+%%PORTDOCS%%%%DOCSDIR%%/README.rst
+%%PORTDOCS%%%%DOCSDIR%%/SubmittingPatches.rst
+%%PORTDOCS%%%%DOCSDIR%%/UPGRADE.rst
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%EXAMPLESDIR%%/offlineimap.conf
 %%EXAMPLESDIR%%/offlineimap.conf.minimal
