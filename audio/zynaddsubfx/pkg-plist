@@ -1,13 +1,16 @@
 bin/zynaddsubfx
-%%DATADIR%%/banks/Misc/0008-SuperSaw 3.xiz
-%%DATADIR%%/banks/Misc/0007-SuperSaw 2.xiz
+%%DATADIR%%/banks/Misc/0070-SuperSaw 6.xiz
+%%DATADIR%%/banks/Misc/0069-SuperSaw 5.xiz
+%%DATADIR%%/banks/Misc/0068-SuperSaw 4.xiz
+%%DATADIR%%/banks/Misc/0067-SuperSaw 3.xiz
+%%DATADIR%%/banks/Misc/0066-SuperSaw 2.xiz
+%%DATADIR%%/banks/Misc/0065-SuperSaw 1.xiz
 %%DATADIR%%/banks/Misc/0002-Bells 1.xiz
+%%DATADIR%%/banks/Misc/0005-Bells 4.xiz
+%%DATADIR%%/banks/Misc/0036-Trash Synth 4.xiz
 %%DATADIR%%/banks/Misc/0035-Trash Synth 3.xiz
 %%DATADIR%%/banks/Misc/0034-Trash Synth 2.xiz
 %%DATADIR%%/banks/Misc/0003-Bells 2.xiz
-%%DATADIR%%/banks/Misc/0009-SuperSaw 4.xiz
-%%DATADIR%%/banks/Misc/0006-SuperSaw 1.xiz
-%%DATADIR%%/banks/Misc/0010-SuperSaw 5.xiz
 %%DATADIR%%/banks/Misc/0033-Trash Synth 1.xiz
 %%DATADIR%%/banks/Misc/0004-Bells 3.xiz
 %%DATADIR%%/banks/Misc/0001-Memories.xiz
@@ -34,6 +37,8 @@ bin/zynaddsubfx
 %%DATADIR%%/banks/Fantasy/0009-Space Voice2.xiz
 %%DATADIR%%/banks/Fantasy/0035-ImpossibleDream3.xiz
 %%DATADIR%%/banks/Fantasy/0010-Space Voice3.xiz
+%%DATADIR%%/banks/Guitar/0097-Space Guitar.xiz
+%%DATADIR%%/banks/Guitar/0066-Electric Guitar.xiz
 %%DATADIR%%/banks/Guitar/0005-Dist Guitar 5.xiz
 %%DATADIR%%/banks/Guitar/0004-Dist Guitar 4.xiz
 %%DATADIR%%/banks/Guitar/0034-Trash Guitar 2.xiz
@@ -46,7 +51,9 @@ bin/zynaddsubfx
 %%DATADIR%%/banks/Pads/0066-Flanged Pad 1.xiz
 %%DATADIR%%/banks/Pads/0004-Analog Pad 2.xiz
 %%DATADIR%%/banks/Pads/0003-Analog Pad 1.xiz
+%%DATADIR%%/banks/Pads/0097-Bell Pad.xiz
 %%DATADIR%%/banks/Pads/0006-Square Pad 2.xiz
+%%DATADIR%%/banks/Pads/0037-Synth Pad 5.xiz
 %%DATADIR%%/banks/Pads/0034-Synth Pad 2.xiz
 %%DATADIR%%/banks/Pads/0033-Synth Pad 1.xiz
 %%DATADIR%%/banks/Pads/0036-Synth Pad 4.xiz
@@ -57,6 +64,7 @@ bin/zynaddsubfx
 %%DATADIR%%/banks/Pads/0009-Resonance Pad2.xiz
 %%DATADIR%%/banks/Pads/0005-Square Pad 1.xiz
 %%DATADIR%%/banks/Pads/0065-Soft Pad.xiz
+%%DATADIR%%/banks/Plucked/0065-Plucked Pad1.xiz
 %%DATADIR%%/banks/Plucked/0036-Plucked Wah.xiz
 %%DATADIR%%/banks/Plucked/0004-Plucked 4.xiz
 %%DATADIR%%/banks/Plucked/0001-Plucked 1.xiz
@@ -71,6 +79,7 @@ bin/zynaddsubfx
 %%DATADIR%%/banks/Organ/0071-Synth Organ.xiz
 %%DATADIR%%/banks/Organ/0004-Organ 4.xiz
 %%DATADIR%%/banks/Organ/0011-Organ 11.xiz
+%%DATADIR%%/banks/Organ/0012-Organ 12.xiz
 %%DATADIR%%/banks/Organ/0097-Accordion Pad 1.xiz
 %%DATADIR%%/banks/Organ/0099-Synth Accordion1.xiz
 %%DATADIR%%/banks/Organ/0100-Synth Accordion2.xiz
@@ -90,6 +99,7 @@ bin/zynaddsubfx
 %%DATADIR%%/banks/Organ/0002-Organ 2.xiz
 %%DATADIR%%/banks/Organ/0072-Fantasy Organ.xiz
 %%DATADIR%%/banks/Organ/0101-Accordion 1.xiz
+%%DATADIR%%/banks/Organ/0040-Church Organ 4.xiz
 %%DATADIR%%/banks/Organ/0041-Church Organ Soft.xiz
 %%DATADIR%%/banks/Organ/0037-Church Organ 1.xiz
 %%DATADIR%%/banks/Organ/0033-Cathedral Organ1.xiz
@@ -97,6 +107,125 @@ bin/zynaddsubfx
 %%DATADIR%%/banks/Organ/0065-Nice Organ 1.xiz
 %%DATADIR%%/banks/Organ/0010-Organ 10.xiz
 %%DATADIR%%/banks/Organ/0070-Soft Organ 2.xiz
+%%DATADIR%%/banks/Collection/0084-Breathy Pad.xiz
+%%DATADIR%%/banks/Collection/0158-Extreme.xiz
+%%DATADIR%%/banks/Collection/0063-Percussion Organ.xiz
+%%DATADIR%%/banks/Collection/0155-Super Pad.xiz
+%%DATADIR%%/banks/Collection/0091-Bright Rush Pipe.xiz
+%%DATADIR%%/banks/Collection/0039-Medium Saw.xiz
+%%DATADIR%%/banks/Collection/0147-Space Voice 2.xiz
+%%DATADIR%%/banks/Collection/0040-Hard Saw.xiz
+%%DATADIR%%/banks/Collection/0095-Soft Voyager Reverse.xiz
+%%DATADIR%%/banks/Collection/0093-Voyager.xiz
+%%DATADIR%%/banks/Collection/0120-Wet Brass.xiz
+%%DATADIR%%/banks/Collection/0002-Vibraphone.xiz
+%%DATADIR%%/banks/Collection/0033-Sweep Synth.xiz
+%%DATADIR%%/banks/Collection/0062-Hammond Organ.xiz
+%%DATADIR%%/banks/Collection/0071-Ocarina.xiz
+%%DATADIR%%/banks/Collection/0108-Yaooww.xiz
+%%DATADIR%%/banks/Collection/0020-Fantasia.xiz
+%%DATADIR%%/banks/Collection/0086-ReedBank.xiz
+%%DATADIR%%/banks/Collection/0106-Aooww.xiz
+%%DATADIR%%/banks/Collection/0156-Hyper Pad.xiz
+%%DATADIR%%/banks/Collection/0075-Smooth.xiz
+%%DATADIR%%/banks/Collection/0117-Power Guitar 2.xiz
+%%DATADIR%%/banks/Collection/0059-Soft Organ.xiz
+%%DATADIR%%/banks/Collection/0079-Ice Field.xiz
+%%DATADIR%%/banks/Collection/0087-Sweep Rushes.xiz
+%%DATADIR%%/banks/Collection/0060-Thin Pipe.xiz
+%%DATADIR%%/banks/Collection/0133-Smooth Guitar.xiz
+%%DATADIR%%/banks/Collection/0101-Far Reed.xiz
+%%DATADIR%%/banks/Collection/0016-Full Square.xiz
+%%DATADIR%%/banks/Collection/0023-Whistle.xiz
+%%DATADIR%%/banks/Collection/0036-Bright Synth.xiz
+%%DATADIR%%/banks/Collection/0013-Trem Synth.xiz
+%%DATADIR%%/banks/Collection/0096-Echo Choir.xiz
+%%DATADIR%%/banks/Collection/0107-Daooww.xiz
+%%DATADIR%%/banks/Collection/0038-Slow Saw.xiz
+%%DATADIR%%/banks/Collection/0103-Clarinet.xiz
+%%DATADIR%%/banks/Collection/0051-Decay Bass.xiz
+%%DATADIR%%/banks/Collection/0116-Power Guitar 1.xiz
+%%DATADIR%%/banks/Collection/0089-Medium Rushes.xiz
+%%DATADIR%%/banks/Collection/0160-Wind and Surf.xiz
+%%DATADIR%%/banks/Collection/0045-Hard Stereo Sweep Synth.xiz
+%%DATADIR%%/banks/Collection/0057-Sub Delay.xiz
+%%DATADIR%%/banks/Collection/0054-Distorted Bass.xiz
+%%DATADIR%%/banks/Collection/0146-Space Voice.xiz
+%%DATADIR%%/banks/Collection/0143-Space Piano.xiz
+%%DATADIR%%/banks/Collection/0083-Sweep Pad.xiz
+%%DATADIR%%/banks/Collection/0126-Pan Pipe.xiz
+%%DATADIR%%/banks/Collection/0068-Warm Flute.xiz
+%%DATADIR%%/banks/Collection/0001-Xylophone.xiz
+%%DATADIR%%/banks/Collection/0003-Soft Vibes.xiz
+%%DATADIR%%/banks/Collection/0081-Beyond.xiz
+%%DATADIR%%/banks/Collection/0067-Soft Flute.xiz
+%%DATADIR%%/banks/Collection/0053-Synth Bass.xiz
+%%DATADIR%%/banks/Collection/0114-Overdrive 3.xiz
+%%DATADIR%%/banks/Collection/0090-Bright Rushes.xiz
+%%DATADIR%%/banks/Collection/0024-Wipe Whistle.xiz
+%%DATADIR%%/banks/Collection/0112-Overdrive.xiz
+%%DATADIR%%/banks/Collection/0025-Ghost Whistle.xiz
+%%DATADIR%%/banks/Collection/0099-Sharp and Deep.xiz
+%%DATADIR%%/banks/Collection/0046-Master Synth Low.xiz
+%%DATADIR%%/banks/Collection/0047-Master Synth High.xiz
+%%DATADIR%%/banks/Collection/0134-Nylon Guitar.xiz
+%%DATADIR%%/banks/Collection/0078-Sweep Matrix.xiz
+%%DATADIR%%/banks/Collection/0037-Multi Synth.xiz
+%%DATADIR%%/banks/Collection/0139-Home Piano.xiz
+%%DATADIR%%/banks/Collection/0140-Moonlight Piano.xiz
+%%DATADIR%%/banks/Collection/0123-Prophesy.xiz
+%%DATADIR%%/banks/Collection/0151-Soft Ahh.xiz
+%%DATADIR%%/banks/Collection/0064-Sines.xiz
+%%DATADIR%%/banks/Collection/0052-Steel Bass.xiz
+%%DATADIR%%/banks/Collection/0098-Sharp and Warm.xiz
+%%DATADIR%%/banks/Collection/0010-Trem Lead.xiz
+%%DATADIR%%/banks/Collection/0030-Slow Strings.xiz
+%%DATADIR%%/banks/Collection/0034-Warm Synth.xiz
+%%DATADIR%%/banks/Collection/0109-Yiee.xiz
+%%DATADIR%%/banks/Collection/0150-Full Choir.xiz
+%%DATADIR%%/banks/Collection/0058-Reed Organ.xiz
+%%DATADIR%%/banks/Collection/0092-Bright Rush Long Tail.xiz
+%%DATADIR%%/banks/Collection/0041-Voiced Saw.xiz
+%%DATADIR%%/banks/Collection/0019-Metal Drips.xiz
+%%DATADIR%%/banks/Collection/0152-Breathy Ahh.xiz
+%%DATADIR%%/banks/Collection/0085-Bottle.xiz
+%%DATADIR%%/banks/Collection/0127-Pan Pipe 96.xiz
+%%DATADIR%%/banks/Collection/0029-Full Strings.xiz
+%%DATADIR%%/banks/Collection/0008-Ethereal.xiz
+%%DATADIR%%/banks/Collection/0061-Great Organ.xiz
+%%DATADIR%%/banks/Collection/0110-Eeoow.xiz
+%%DATADIR%%/banks/Collection/0104-Bassoon.xiz
+%%DATADIR%%/banks/Collection/0035-Hard Synth.xiz
+%%DATADIR%%/banks/Collection/0097-Sharp.xiz
+%%DATADIR%%/banks/Collection/0113-Overdrive 2.xiz
+%%DATADIR%%/banks/Collection/0048-Sharp Synth.xiz
+%%DATADIR%%/banks/Collection/0122-Extended Rushes.xiz
+%%DATADIR%%/banks/Collection/0149-Soft Choir.xiz
+%%DATADIR%%/banks/Collection/0132-Trem Guitar.xiz
+%%DATADIR%%/banks/Collection/0005-Silver Bell.xiz
+%%DATADIR%%/banks/Collection/0015-Simple Square.xiz
+%%DATADIR%%/banks/Collection/0125-Pan Pipe 32.xiz
+%%DATADIR%%/banks/Collection/0094-Soft Voyager.xiz
+%%DATADIR%%/banks/Collection/0012-Trem Synth Piano 3.xiz
+%%DATADIR%%/banks/Collection/0088-Rushes.xiz
+%%DATADIR%%/banks/Collection/0004-Simple Chimes.xiz
+%%DATADIR%%/banks/Collection/0042-Sweep Saw.xiz
+%%DATADIR%%/banks/Collection/0131-Lite Guitar.xiz
+%%DATADIR%%/banks/Collection/0080-Hollow Ice Field.xiz
+%%DATADIR%%/banks/Collection/0032-Pizzicato Strings.xiz
+%%DATADIR%%/banks/Collection/0100-Sharp Reed.xiz
+%%DATADIR%%/banks/Collection/0044-Wipe Synth.xiz
+%%DATADIR%%/banks/Collection/0028-Echo Bubbles.xiz
+%%DATADIR%%/banks/Collection/0022-Ultra Soft.xiz
+%%DATADIR%%/banks/Collection/0017-Super Square.xiz
+%%DATADIR%%/banks/Collection/0157-Hyper Matrix.xiz
+%%DATADIR%%/banks/Collection/0073-Variable Reed.xiz
+%%DATADIR%%/banks/Collection/0141-Soft Piano1.xiz
+%%DATADIR%%/banks/Collection/0018-Steel Wire.xiz
+%%DATADIR%%/banks/Collection/0050-Fretless Bass.xiz
+%%DATADIR%%/banks/Collection/0077-Matrix.xiz
+%%DATADIR%%/banks/Collection/0021-Soft.xiz
+%%DATADIR%%/banks/Collection/0142-Soft Piano2.xiz
 %%DATADIR%%/banks/Choir and Voice/0066-Vocal Morph 2.xiz
 %%DATADIR%%/banks/Choir and Voice/0039-Ohh Choir.xiz
 %%DATADIR%%/banks/Choir and Voice/0004-Voice OOH.xiz
@@ -129,6 +258,7 @@ bin/zynaddsubfx
 %%DATADIR%%/banks/SynthPiano/0001-Soft Piano 1.xiz
 %%DATADIR%%/banks/SynthPiano/0007-Termollo1.xiz
 %%DATADIR%%/banks/SynthPiano/0069-Synth Piano 3 det.xiz
+%%DATADIR%%/banks/SynthPiano/0043-Saw Piano 1.xiz
 %%DATADIR%%/banks/SynthPiano/0002-Soft Piano 2.xiz
 %%DATADIR%%/banks/SynthPiano/0066-Synth Piano 2.xiz
 %%DATADIR%%/banks/SynthPiano/0067-Synth Piano 3.xiz
@@ -163,7 +293,6 @@ bin/zynaddsubfx
 %%DATADIR%%/banks/Dual/0036-Rhodes Strings4.xiz
 %%DATADIR%%/banks/Dual/0007-Organ Choir Pad1.xiz
 %%DATADIR%%/banks/Synth/0007-Analog Filter 1.xiz
-%%DATADIR%%/banks/Synth/0065-Computer Lead.xiz
 %%DATADIR%%/banks/Synth/0008-Analog Filter 2.xiz
 %%DATADIR%%/banks/Synth/0005-Pulse Pad 2.xiz
 %%DATADIR%%/banks/Synth/0033-Phased Pad 1.xiz
@@ -176,13 +305,18 @@ bin/zynaddsubfx
 %%DATADIR%%/banks/Synth/0097-FM Synth.xiz
 %%DATADIR%%/banks/Synth/0004-Pulse Pad 1.xiz
 %%DATADIR%%/banks/Synth/0034-Phased Pad 2.xiz
+%%DATADIR%%/banks/Synth/0006-Pulse Pad 3.xiz
+%%DATADIR%%/banks/Synth/0065-Computer Lead1.xiz
+%%DATADIR%%/banks/Synth/0070-Solo Synth 1.xiz
+%%DATADIR%%/banks/Synth/0066-Computer Lead2.xiz
+%%DATADIR%%/banks/Brass/0068-Brass Pad2.xiz
+%%DATADIR%%/banks/Brass/0067-Brass Pad1.xiz
 %%DATADIR%%/banks/Brass/0009-Wah Brass.xiz
 %%DATADIR%%/banks/Brass/0007-Synth Brass 5.xiz
 %%DATADIR%%/banks/Brass/0033-Analog Brass 1.xiz
 %%DATADIR%%/banks/Brass/0036-Analog Brass 4.xiz
 %%DATADIR%%/banks/Brass/0065-Simple Brass.xiz
 %%DATADIR%%/banks/Brass/0006-Synth Brass 4.xiz
-%%DATADIR%%/banks/Brass/0008-Brass Pad.xiz
 %%DATADIR%%/banks/Brass/0010-Solo Synth1.xiz
 %%DATADIR%%/banks/Brass/0001-FM Thrumpet.xiz
 %%DATADIR%%/banks/Brass/0005-Synth Brass 3.xiz
@@ -193,6 +327,8 @@ bin/zynaddsubfx
 %%DATADIR%%/banks/Brass/0066-Fat Brass.xiz
 %%DATADIR%%/banks/Brass/0003-Synth Brazz 1.xiz
 %%DATADIR%%/banks/Brass/0035-Analog Brass 3.xiz
+%%DATADIR%%/banks/Reed and Wind/0040-Reed 8.xiz
+%%DATADIR%%/banks/Reed and Wind/0068-Chorused Flute.xiz
 %%DATADIR%%/banks/Reed and Wind/0039-Reed 7.xiz
 %%DATADIR%%/banks/Reed and Wind/0065-Fat Reed1.xiz
 %%DATADIR%%/banks/Reed and Wind/0005-FM Reed.xiz
@@ -209,6 +345,8 @@ bin/zynaddsubfx
 %%DATADIR%%/banks/Reed and Wind/0006-Clarinet.xiz
 %%DATADIR%%/banks/Reed and Wind/0036-Reed 4.xiz
 %%DATADIR%%/banks/Reed and Wind/0033-Reed 1.xiz
+%%DATADIR%%/banks/Arpeggios/0068-Glass Arpeggio1.xiz
+%%DATADIR%%/banks/Arpeggios/0069-Glass Arpeggio2.xiz
 %%DATADIR%%/banks/Arpeggios/0037-Echo FX.xiz
 %%DATADIR%%/banks/Arpeggios/0011-Arpeggio11.xiz
 %%DATADIR%%/banks/Arpeggios/0042-Soft Arpeggio4.xiz
@@ -225,7 +363,6 @@ bin/zynaddsubfx
 %%DATADIR%%/banks/Arpeggios/0041-Soft Arpeggio3.xiz
 %%DATADIR%%/banks/Arpeggios/0007-Arpeggio7.xiz
 %%DATADIR%%/banks/Arpeggios/0002-Arpeggio2.xiz
-%%DATADIR%%/banks/Arpeggios/0068-Glass Arpeggio.xiz
 %%DATADIR%%/banks/Arpeggios/0009-Arpeggio9.xiz
 %%DATADIR%%/banks/Arpeggios/0004-Arpeggio4.xiz
 %%DATADIR%%/banks/Arpeggios/0039-Soft Arpeggio1.xiz
@@ -244,24 +381,29 @@ bin/zynaddsubfx
 %%DATADIR%%/banks/Noises/0002-Ioioioioioi.xiz
 %%DATADIR%%/banks/Noises/0001-Synth Effect.xiz
 %%DATADIR%%/banks/Noises/0003-Noise1.xiz
+%%DATADIR%%/banks/Strings/0073-Morph Strings1.xiz
 %%DATADIR%%/banks/Strings/0034-Dark Strings.xiz
 %%DATADIR%%/banks/Strings/0045-Soft Saw Pad.xiz
 %%DATADIR%%/banks/Strings/0016-Sweep Pad 1.xiz
 %%DATADIR%%/banks/Strings/0019-Sweep Pad 3Wah.xiz
 %%DATADIR%%/banks/Strings/0033-Strings1.xiz
-%%DATADIR%%/banks/Strings/0067-Dual StringsOct.xiz
+%%DATADIR%%/banks/Strings/0068-Dual Strings Oct2.xiz
+%%DATADIR%%/banks/Strings/0067-Dual Strings Oct1.xiz
 %%DATADIR%%/banks/Strings/0020-Sweep Pad 4.xiz
 %%DATADIR%%/banks/Strings/0048-Wah1.xiz
 %%DATADIR%%/banks/Strings/0007-Saw Strings 7.xiz
 %%DATADIR%%/banks/Strings/0017-Sweep Pad 1 Fat.xiz
 %%DATADIR%%/banks/Strings/0044-Saw Pad.xiz
-%%DATADIR%%/banks/Strings/0012-Strings Pad2.xiz
-%%DATADIR%%/banks/Strings/0013-Strings Pad3.xiz
 %%DATADIR%%/banks/Strings/0005-Saw Strings 5.xiz
 %%DATADIR%%/banks/Strings/0036-Fast Attack.xiz
 %%DATADIR%%/banks/Strings/0051-Synth Violin 2 Fat.xiz
 %%DATADIR%%/banks/Strings/0002-Saw Strings 2.xiz
-%%DATADIR%%/banks/Strings/0011-Strings Pad1.xiz
+%%DATADIR%%/banks/Strings/0015-Strings Pad6.xiz
+%%DATADIR%%/banks/Strings/0014-Strings Pad5.xiz
+%%DATADIR%%/banks/Strings/0013-Strings Pad4.xiz
+%%DATADIR%%/banks/Strings/0012-Strings Pad3.xiz
+%%DATADIR%%/banks/Strings/0011-Strings Pad2.xiz
+%%DATADIR%%/banks/Strings/0010-Strings Pad1.xiz
 %%DATADIR%%/banks/Strings/0047-Vibratto Saw1.xiz
 %%DATADIR%%/banks/Strings/0041-Saw 1.xiz
 %%DATADIR%%/banks/Strings/0001-Saw Strings 1.xiz
@@ -302,16 +444,12 @@ bin/zynaddsubfx
 %%DATADIR%%/banks/Rhodes/0003-DX Rhodes 3.xiz
 %%DATADIR%%/banks/Rhodes/0035-FM Rhodes 3.xiz
 %%DATADIR%%/banks/Rhodes/0001-DX Rhodes 1.xiz
+%%DATADIR%%/banks/Rhodes/0068-RhodesPad2.xiz
+%%DATADIR%%/banks/Rhodes/0067-RhodesPad1.xiz
 %%DATADIR%%/banks/Splited/0002-Strings and Reed2.xiz
 %%DATADIR%%/banks/Splited/0033-Choir and Reed.xiz
 %%DATADIR%%/banks/Splited/0003-Strings and Flute.xiz
 %%DATADIR%%/banks/Splited/0001-Strings and Reed1.xiz
-%%DATADIR%%/presets/Long Reverb.Peffect.xpz
-%%DATADIR%%/presets/plucked1.Poscilgen.xpz
-%%DATADIR%%/presets/ChurchOrgan01.Poscilgen.xpz
-%%DATADIR%%/presets/WahWah1.Peffect.xpz
-%%DATADIR%%/presets/A01.Presonance.xpz
-@dirrm %%DATADIR%%/presets
 @dirrm %%DATADIR%%/banks/SynthPiano
 @dirrm %%DATADIR%%/banks/Synth
 @dirrm %%DATADIR%%/banks/Strings
@@ -326,8 +464,10 @@ bin/zynaddsubfx
 @dirrm %%DATADIR%%/banks/Guitar
 @dirrm %%DATADIR%%/banks/Fantasy
 @dirrm %%DATADIR%%/banks/Dual
+@dirrm %%DATADIR%%/banks/default_bank
 @dirrm %%DATADIR%%/banks/Drums
 @dirrm %%DATADIR%%/banks/Choir and Voice
+@dirrm %%DATADIR%%/banks/Collection
 @dirrm %%DATADIR%%/banks/Brass
 @dirrm %%DATADIR%%/banks/Bass
 @dirrm %%DATADIR%%/banks/Arpeggios

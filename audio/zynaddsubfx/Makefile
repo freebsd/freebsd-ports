@@ -6,37 +6,77 @@
 #
 
 PORTNAME=	zynaddsubfx
-PORTVERSION=	2.2.1
-PORTREVISION=	9
+PORTVERSION=	2.4.1
 CATEGORIES=	audio
 MASTER_SITES=	SF
 DISTNAME=	ZynAddSubFX-${PORTVERSION}
 
-PATCH_SITES=	http://www.student.nada.kth.se/~d00-llu/code_patches/
-PATCHFILES=	zyn-jackmidi-051205.diff
-PATCH_DIST_STRIP=	-p2
-
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mva@FreeBSD.org
 COMMENT=	A realtime software synthesizer
 
 LIB_DEPENDS=	dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat \
 		fftw3.5:${PORTSDIR}/math/fftw3 \
-		fltk.1:${PORTSDIR}/x11-toolkits/fltk \
-		expat.6:${PORTSDIR}/textproc/expat2 \
-		jack.0:${PORTSDIR}/audio/jack
-BUILD_DEPENDS=	${LOCALBASE}/include/mxml.h:${PORTSDIR}/textproc/mxml \
-		jackit>=0.109.2:${PORTSDIR}/audio/jack
-
-# Between 0.109.0 and earlier versions there was an api change in JACK.
-# However, the library version number was not changed.  The line above
-# is supposed to work around that.
+		expat.6:${PORTSDIR}/textproc/expat2
+BUILD_DEPENDS=	${LOCALBASE}/include/mxml.h:${PORTSDIR}/textproc/mxml
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/dssi
+CXXFLAGS+=	-I${LOCALBASE}/include
 MAKE_JOBS_UNSAFE=	yes
+
+OPTIONS=	ALSAMIDI	"Enable midi input through ALSA" off \
+		GUI		"Enable graphical front-end" on \
+		JACK		"Enable sound output through JackAudio" off \
+		PORTAUDIO	"Enable sound output through PortAudio" off
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_ALSAMIDI)
+LIB_DEPENDS+=	asound.2:${PORTSDIR}/audio/alsa-lib
+.endif
+
+.if (defined(WITH_JACK) && defined(WITH_PORTAUDIO))
+BROKEN=		only one output type can be chosen
+.endif
+
+.if defined(WITH_JACK)
+LIB_DEPENDS+=	jack.0:${PORTSDIR}/audio/jack
+.endif
+
+.if defined(WITH_PORTAUDIO)
+LIB_DEPENDS+=	portaudio.0:${PORTSDIR}/audio/portaudio
+.endif
+
+.if !defined(WITHOUT_GUI)
+LIB_DEPENDS+=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
+.endif
+
+post-patch:
+	${REINPLACE_CMD} -e \
+		's|CXXFLAGS= -O2 -Wall -g -fPIC|CXXFLAGS=${CXXFLAGS}|g' \
+		${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e \
+		's|LIBS= -lm  -lmxml -lz|LIBS= -lm  -lmxml -lz -L${LOCALBASE}/lib|g' \
+		${WRKSRC}/Makefile
+
+.if !defined(WITH_ALSAMIDI)
+	${REINPLACE_CMD} -e 's|LINUX_MIDIIN=ALSA|LINUX_MIDIIN=OSS|g' \
+		${WRKSRC}/Makefile.inc
+.endif
+.if defined(WITH_JACK)
+	${REINPLACE_CMD} -e 's|LINUX_AUDIOOUT=OSS|LINUX_AUDIOOUT=OSS_AND_JACK|g' \
+		${WRKSRC}/Makefile.inc
+.endif
+.if defined(WITH_PORTAUDIO)
+	${REINPLACE_CMD} -e 's|LINUX_AUDIOOUT=OSS|LINUX_AUDIOOUT=PA|g' \
+		${WRKSRC}/Makefile.inc
+.endif
+.if defined(WITHOUT_GUI)
+	${REINPLACE_CMD} -e 's|DISABLE_GUI=NO|DISABLE_GUI=YES|g' \
+		${WRKSRC}/Makefile.inc
+.endif
 
 do-install:
 		${INSTALL_PROGRAM} ${WRKSRC}/zynaddsubfx ${PREFIX}/bin
@@ -45,9 +85,5 @@ do-install:
 		cd ${WRKDIR}/${DISTNAME}/banks && ${FIND} . -type d -exec ${MKDIR} ${DATADIR}/banks/{} \;
 		cd ${WRKDIR}/${DISTNAME}/banks && ${FIND} . -type f \
 			-exec ${INSTALL_DATA} {} ${DATADIR}/banks/{} \;
-		${MKDIR} ${DATADIR}/presets
-		cd ${WRKDIR}/${DISTNAME}/presets && ${FIND} . -type d -exec ${MKDIR} ${DATADIR}/presets/{} \;
-		cd ${WRKDIR}/${DISTNAME}/presets && ${FIND} . -type f \
-			-exec ${INSTALL_DATA} {} ${DATADIR}/presets/{} \;
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
