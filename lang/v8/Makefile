@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	v8
-PORTVERSION=	3.4.4
+PORTVERSION=	3.4.8
 PORTREVISION=	0
 CATEGORIES=	lang
 MASTER_SITES=	http://github.com/${PORTNAME}/${PORTNAME}/tarball/${PORTVERSION}/
@@ -17,7 +17,7 @@ COMMENT=	Google\'s open source JavaScript engine
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
-GITVERSION=	0-gf985a1d
+GITVERSION=	0-g76efc8a
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${GITVERSION:S/^0-g//}
 USE_SCONS=	yes
