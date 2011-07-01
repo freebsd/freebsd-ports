@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nmap
-PORTVERSION=	5.51
-PORTREVISION=	2
+DISTVERSION=	5.59BETA1
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		LOCAL/ohauer
@@ -15,10 +14,10 @@ MASTER_SITES=	http://nmap.org/dist/ \
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Port scanning utility for large networks
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
-
 # http://nmap.org/book/man-legal.html
 LICENSE=	GPLv2
+
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_LUA=	5.1
 LUA_COMPS=	lua
