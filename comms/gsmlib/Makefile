@@ -10,27 +10,27 @@ PORTNAME=	gsmlib
 PORTVERSION=	1.10
 PORTREVISION=	5
 CATEGORIES=	comms
-MASTER_SITES=	http://www.pxh.de/fs/gsmlib/download/
+MASTER_SITES=	DEBIAN
+#TODO: examine the Debian patches, and changes in the Mandrake
+#gsmlib-1.11-0.2mdv2007.0.src.rpm, for use in this port
+DISTFILES=	gsmlib_1.10.orig.tar.gz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library to access GSM mobile phones through GSM modems
 
-DEPRECATED=	Look like an abandonware, no more public distfile
-EXPIRATION_DATE=	2011-08-01
-
 USE_GNOME=	gnometarget lthack
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
 
 MAN1=	gsmctl.1 gsmpb.1 gsmsendsms.1 gsmsmsstore.1
 MAN7=	gsminfo.7
 MAN8=	gsmsmsd.8
 
-CPPFLAGS=	-I${LOCALBASE}/include -DBROKEN_STRFTIME -DHAVE_DECL_GETOPT \
-			${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS+=	-I${LOCALBASE}/include -DBROKEN_STRFTIME -DHAVE_DECL_GETOPT \
+		${PTHREAD_CFLAGS}
+LDFLAGS+=	${PTHREAD_LIBS} -L${LOCALBASE}/lib
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls
