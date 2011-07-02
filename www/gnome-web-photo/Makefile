@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	gnome-web-photo
-PORTVERSION=	0.10
+PORTVERSION=	0.10.1
 CATEGORIES=	www
 MASTER_SITES=	GNOME
 
@@ -26,7 +26,8 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--with-gtk=2.0
+CONFIGURE_ARGS=	--disable-silent-rules \
+		--with-gtk=2.0
 
 GCONF_SCHEMAS=	thumbnailer.schemas
 
