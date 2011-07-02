@@ -69,11 +69,6 @@ post-patch:
 		${WRKSRC}/tools/wormsuspects.pl
 
 post-install:
-# XXX Workaround: can be removed if the bug described in ports/152498 is fixed!
-	@${EGREP} -e '^@exec.*${PW}' -e '^@exec ${INSTALL} -d -g' ${TMPPLIST} > ${WRKDIR}/.PLIST.ugid
-	@${EGREP} -v -e '^@exec.*${PW}' -e '^@exec ${INSTALL} -d -g' ${TMPPLIST} >> ${WRKDIR}/.PLIST.ugid
-	@${MV} -v ${WRKDIR}/.PLIST.ugid ${TMPPLIST}
-
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
