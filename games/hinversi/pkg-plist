@@ -1,3 +1,4 @@
+bin/hinversi-cgi
 bin/hinversi-cli
 include/hinversi/abClient.h
 include/hinversi/aiManager.h
@@ -7,10 +8,11 @@ include/hinversi/naiv-client.h
 include/hinversi/othello.h
 include/hinversi/ringbuf.h
 include/hinversi/simpleClient.h
+lib/libhinversi.a
 lib/libhinversi.la
 lib/libhinversi.so
 lib/libhinversi.so.0
 libdata/pkgconfig/libhinversi.pc
-share/locale/de/LC_MESSAGES/hinversi.mo
-share/locale/pt_BR/LC_MESSAGES/hinversi.mo
+%%NLS%%share/locale/de/LC_MESSAGES/hinversi.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/hinversi.mo
 @dirrm include/hinversi
