@@ -6,7 +6,7 @@
 #    $MCom: ports/lang/librep/Makefile,v 1.2 2006/09/10 00:51:12 mezz Exp $
 
 PORTNAME=	librep
-PORTVERSION=	0.91.1
+PORTVERSION=	0.92.0
 CATEGORIES=	lang elisp gnome
 MASTER_SITES=	http://download.tuxfamily.org/librep/
 
@@ -25,10 +25,7 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-aclocaldir=${PREFIX}/share/aclocal
-CONFIGURE_TARGET=	${GNUHOST}
 USE_LDCONFIG=	yes
-
-PLIST_SUB=	GNUHOST="${GNUHOST}" VERSION="${PORTVERSION}"
 
 MANCOMPRESSED=	yes
 MAN1=		rep.1 rep-remote.1 rep-xgettext.1 repdoc.1
@@ -36,7 +33,6 @@ INFO=		librep
 
 CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-GNUHOST=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
 .include <bsd.port.pre.mk>
 
