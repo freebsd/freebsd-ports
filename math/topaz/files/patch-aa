@@ -13,7 +13,7 @@
  # for FreeBSD
 -CFLAGS= -I/usr/local/include -I/usr/local/include/ncurses -I/usr/X11R6/include -O2 -Wall -DTOPAZLINUX -DTOPAZ_NCURSES -DTOPAZ_EUC
 -TOPAZLIB=  -L/usr/local/lib -lm -lncurses -lgnugetopt  -lreadline -lhistory
-+CXXFLAGS+= -I${LOCALBASE}/include/ncurses -I${LOCALBASE}/include -DTOPAZLINUX -DTOPAZ_NCURSES -DTOPAZ_EUC
++CXXFLAGS+= -I${LOCALBASE}/include -DTOPAZLINUX -DTOPAZ_NCURSES -DTOPAZ_EUC
 +TOPAZLIB=  -lm -lncurses  -lreadline -lhistory
  PSLIB=  -lm
 -VIEWLIB= -lm -L/usr/X11R6/lib -lX11

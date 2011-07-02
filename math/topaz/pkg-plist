@@ -27,13 +27,13 @@ lib/topaz/topaz
 lib/topaz/topaz.sh
 lib/topaz/tpv2ps
 lib/topaz/tpvview
-share/examples/topaz/fit.tpz
-share/examples/topaz/parts.tpz
-share/examples/topaz/sample.txt
-share/examples/topaz/stdfontset.tpz
-share/examples/topaz/step.tpz
-share/examples/topaz/symbolfontset.tpz
-share/examples/topaz/text.tpz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/fit.tpz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/parts.tpz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sample.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stdfontset.tpz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/step.tpz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/symbolfontset.tpz
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/text.tpz
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm lib/topaz/_topaz
 @dirrm lib/topaz
-@dirrm share/examples/topaz

@@ -68,6 +68,6 @@
 +	$(BSD_INSTALL_DATA) ./cuirc.lnx $(INSTALLDIR)/_topaz/cui.rc
 +	$(BSD_INSTALL_DATA) ./topazfontmap $(INSTALLDIR)/_topaz
 +	$(BSD_INSTALL_DATA) ./topazkfontmap $(INSTALLDIR)/_topaz
-+	-mkdir -p $(PREFIX)/share/examples/topaz
-+	$(BSD_INSTALL_DATA) ./sample/* ${PREFIX}/share/examples/topaz
++#	-mkdir -p $(PREFIX)/share/examples/topaz
++#	$(BSD_INSTALL_DATA) ./sample/* ${PREFIX}/share/examples/topaz
  
