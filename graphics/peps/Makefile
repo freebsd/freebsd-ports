@@ -9,24 +9,37 @@ PORTNAME=	peps
 PORTVERSION=	2.0
 PORTREVISION=	4
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://ftp.peps.redprince.net/unix/peps/
+MASTER_SITES=	http://peps.redprince.net/peps/ \
+		ftp://ftp.peps.redprince.net/unix/peps/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts EPS images to anti-aliased bitmaps
 
-MAN1=		peps.1
-PLIST_FILES=	bin/peps \
-		etc/peps.mime \
-		share/doc/${DISTNAME}/peps.pdf
-PLIST_DIRS=	share/doc/${DISTNAME}
-
 USE_GHOSTSCRIPT_RUN=	yes
-MAKE_ENV=	DOCDIR=${PREFIX}/share/doc MAN1DIR=${MANPREFIX}/man/man1 \
-		ETC=${PREFIX}/etc XBINDIR=${PREFIX}/bin
+MAKE_ENV=	GSPATH="${LOCALBASE}/bin/gs" GZPATH="/usr/bin/gzip" \
+		ETC="${PREFIX}/etc"
 
-.if !defined(WITHOUT_X11)
+MAN1=		peps.1
+PORTDOCS=	peps.pdf
+PLIST_FILES=	bin/peps \
+		etc/peps.mime
+
+.if defined(WITHOUT_X11)
+ALL_TARGET=	peps
+.else
 PLIST_FILES+=	bin/xpeps
-INSTALL_TARGET=	install xinstall
+.endif
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/peps ${PREFIX}/bin
+.if !defined(WITHOUT_X11)
+	${INSTALL_PROGRAM} ${WRKSRC}/xpeps ${PREFIX}/bin
+.endif
+	${INSTALL_MAN} ${WRKSRC}/peps.1 ${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/peps.mime ${PREFIX}/etc
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/peps.pdf ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
