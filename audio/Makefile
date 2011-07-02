@@ -613,6 +613,7 @@
     SUBDIR += prokyon3
     SUBDIR += puddletag
     SUBDIR += pulseaudio
+    SUBDIR += pure-audio
     SUBDIR += py-ao
     SUBDIR += py-apetag
     SUBDIR += py-cddb

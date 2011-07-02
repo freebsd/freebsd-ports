@@ -1,0 +1,11 @@
+lib/pure/audio.pure
+lib/pure/audio.so
+lib/pure/fftw.pure
+lib/pure/fftw.so
+lib/pure/portaudio.pure
+lib/pure/realtime.pure
+lib/pure/realtime.so
+lib/pure/samplerate.pure
+lib/pure/sfinfo.so
+lib/pure/sndfile.pure
+lib/pure/srcprocess.so
