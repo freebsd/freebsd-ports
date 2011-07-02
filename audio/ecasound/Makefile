@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ecasound
-PORTVERSION=	2.7.2
-PORTREVISION=	1
+PORTVERSION=	2.8.1
 CATEGORIES=	audio
 MASTER_SITES=	http://ecasound.seul.org/download/
 
@@ -23,9 +22,12 @@ OPTIONS=	ARTS		"Enable aRts support"		off \
 		OIL		"Enable liboil support"		off \
 		SAMPLERATE	"Enable libsamplerate support"	off
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-pyecasound \
 		--disable-rubyecasound \
 		--enable-sys-readline
