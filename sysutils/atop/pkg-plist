@@ -1,0 +1,7 @@
+bin/atop
+bin/atopsar
+%%PORTDOCS%%%%DOCSDIR%%/AUTHOR
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@unexec rmdir %%LOGDIR%% 2> /dev/null || true

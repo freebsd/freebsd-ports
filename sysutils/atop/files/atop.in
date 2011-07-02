@@ -1,0 +1,44 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: atop
+# REQUIRE: DAEMON
+# BEFORE: LOGIN
+# KEYWORD: shutdown
+
+# Define these atop_* variables in one of these files:
+#       /etc/rc.conf
+#       /etc/rc.conf.local
+#       /etc/rc.conf.d/atop
+#
+# DO NOT CHANGE THESE DEFAULT VALUES HERE
+#
+atop_enable="${atop_enable-NO}"
+atop_pidfile="/var/run/atop.pid"
+
+. /etc/rc.subr
+
+name="atop"
+rcvar=`set_rcvar`
+command="%%PREFIX%%/bin/atop"
+start_cmd="atop_start"
+
+atop_start()
+{
+    if [ -z "$rc_fast" -a -n "$rc_pid" ]; then
+	echo 1>&2 "${name} already running? (pid=$rc_pid)."
+	return 1
+    fi
+    check_startmsgs && echo "Starting ${name}."
+    /usr/sbin/daemon -p $pidfile ${command} -w /var/log/atop/atop_`date '+%Y%m%d'` ${atop_flags} ${atop_interval}
+    _run_rc_postcmd
+}
+
+load_rc_config $name
+
+: ${atop_interval=10}
+: ${atop_flags=""}
+
+pidfile="${atop_pidfile}"
+
+run_rc_command "$1"
