@@ -1,0 +1,53 @@
+--- ./configure.orig	2011-06-10 21:06:55.900306000 +0900
++++ ./configure	2011-06-16 20:04:32.000000000 +0900
+@@ -657,6 +657,7 @@
+ LIBEV_LIBS
+ LIBEV_LA
+ LIBEV_CFLAGS
++LIBEV_INCLUDES
+ WITH_LIBEV_FALSE
+ WITH_LIBEV_TRUE
+ GETTEXT_PACKAGE
+@@ -15573,6 +15574,7 @@
+ 
+ libev_available=no
+ 
++LIBEV_CFLAGS='-DEV_COMPAT3=0'
+ 
+ # Check whether --with-libev was given.
+ if test "${with_libev+set}" = set; then :
+@@ -15590,7 +15592,7 @@
+     libev_prefixes="$with_libev"
+   fi
+   for libev_prefix in $libev_prefixes; do
+-    CFLAGS="$CFLAGS -I$libev_prefix/include"
++    CFLAGS="$CFLAGS -I$libev_prefix/include ${LIBEV_CFLAGS}"
+     LDFLAGS="$LDFLAGS -L$libev_prefix/lib"
+     libev_available=no
+     for ac_header in ev.h
+@@ -15668,7 +15670,7 @@
+     CFLAGS="$_SAVE_CFLAGS"
+     LDFLAGS="$_SAVE_LDFLAGS"
+     if test "x$libev_available" != "xno"; then
+-      LIBEV_CFLAGS="-I$libev_prefix/include"
++      LIBEV_INCLUDES="-I$libev_prefix/include"
+       LIBEV_LA=""
+       LIBEV_LIBS="-L$libev_prefix/lib -lev"
+       break
+@@ -15933,7 +15935,7 @@
+ 
+ $as_echo "#define HAVE_LIBEV 1" >>confdefs.h
+ 
+-    LIBEV_CFLAGS='-I$(top_srcdir)/libev-'4.04
++    LIBEV_INCLUDES='-I$(top_srcdir)/libev-'4.04
+     LIBEV_LA='$(top_builddir)/libev-'4.04'/libev.la'
+     LIBEV_LIBS='$(LIBEV_LA)'
+   fi
+@@ -15954,6 +15956,7 @@
+ 
+ 
+ 
++
+ { $as_echo "$as_me:${as_lineno-$LINENO}: checking package-platform" >&5
+ $as_echo_n "checking package-platform... " >&6; }
+ 
