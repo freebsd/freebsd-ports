@@ -6,8 +6,7 @@
 #    $MCom: ports/audio/terminatorx/Makefile,v 1.6 2007/08/04 03:51:28 marcus Exp $
 
 PORTNAME=	terminatorx
-PORTVERSION=	3.82
-PORTREVISION=	13
+PORTVERSION=	3.83
 CATEGORIES=	audio
 MASTER_SITES=	http://terminatorx.org/dist/
 DISTNAME=	terminatorX-${PORTVERSION}
@@ -21,26 +20,30 @@ LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		lrdf.2:${PORTSDIR}/textproc/liblrdf \
 		jack.0:${PORTSDIR}/audio/jack
 
-USE_BZIP2=	yes
-INSTALLS_OMF=	yes
-USE_XORG=	x11 xext xi xxf86dga ice sm
-USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20 libxml2
-USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-USE_AUTOTOOLS=	autoconf autoheader
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--disable-alsa \
-		--disable-alsamidi
-MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
-		AUTOHEADER="${TRUE}"
-
-MAN1=		terminatorX.1
-
 OPTIONS=	MPG123 "mpg123 support" on \
 		SOX "sox (.au) support" on \
 		VORBIS "OGG Vorbis support" on \
 		MAD "MPEG Audio Decoder (libmad) support" on
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_BZIP2=	yes
+USE_XORG=	x11 xext xi xxf86dga ice sm
+USE_GNOME=	gnomehack gnomehier gtk20 libxml2
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	aclocal autoheader automake autoconf
+ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--disable-alsa \
+		--disable-alsamidi \
+		--disable-scheduler
+INSTALLS_OMF=	yes
+
+MAN1=		terminatorX.1
+
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
 .include <bsd.port.pre.mk>
 
@@ -86,8 +89,9 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/gnome-support/${file} \
 		${PREFIX}/share/mime-info
 .endfor
+	@${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/gnome-support/terminatorX.desktop \
-		${PREFIX}/share/gnome/apps/Multimedia
+		${PREFIX}/share/applications
 	@${MKDIR} ${PREFIX}/share/gnome/help/terminatorX/C
 	${INSTALL_DATA} ${WRKSRC}/doc/terminatorX-manual/C/terminatorX-manual.xml \
 		${PREFIX}/share/gnome/help/terminatorX/C/terminatorX.xml
