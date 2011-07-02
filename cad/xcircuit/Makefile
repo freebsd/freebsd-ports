@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xcircuit
-PORTVERSION=	3.6.167
+PORTVERSION=	3.7.26
 PORTEPOCH=	1
 CATEGORIES=	cad
 MASTER_SITES=	http://opencircuitdesign.com/xcircuit/archive/
@@ -32,8 +32,8 @@ CFLAGS+=	-fPIC
 
 MAN1=		xcircuit.1
 
-# Restrict to stable (even) versions, indicated by the second component.
-PORTSCOUT=	limitw:1,even
+# Restrict to stable (odd) versions, indicated by the second component.
+PORTSCOUT=	limitw:1,odd
 
 .include <bsd.port.pre.mk>
 
