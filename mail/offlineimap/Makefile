@@ -7,6 +7,7 @@
 
 PORTNAME=	offlineimap
 DISTVERSION=	6.3.3
+PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	http://download.github.com/ \
 		${MASTER_SITE_LOCAL}
