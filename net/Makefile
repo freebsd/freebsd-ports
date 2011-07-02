@@ -831,6 +831,7 @@
     SUBDIR += ptpd
     SUBDIR += ptpd2
     SUBDIR += ptunnel
+    SUBDIR += pure-sockets
     SUBDIR += pvm
     SUBDIR += pvm++
     SUBDIR += pxe
