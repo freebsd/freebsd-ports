@@ -7,14 +7,14 @@
 
 PORTNAME=	fxite
 PORTVERSION=	0.6
-PORTREVISION=	22
+PORTREVISION=	23
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	An advanced cross-platform text editor
 
-LIB_DEPENDS=	fxscintilla.21:${PORTSDIR}/x11-toolkits/fxscintilla
+LIB_DEPENDS=	fxscintilla.22:${PORTSDIR}/x11-toolkits/fxscintilla
 
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
