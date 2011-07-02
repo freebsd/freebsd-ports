@@ -75,7 +75,6 @@
     SUBDIR += facile
     SUBDIR += fann
     SUBDIR += fbm
-    SUBDIR += femlab
     SUBDIR += fftw
     SUBDIR += fftw-float
     SUBDIR += fftw3
