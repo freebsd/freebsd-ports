@@ -7,7 +7,7 @@
 
 PORTNAME=	pidgin-bs
 PORTVERSION=	1.3.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-im
 MASTER_SITES=	SF/${PORTNAME}/bot-sentry/${PORTVERSION}
 DISTNAME=	bot-sentry-${PORTVERSION}
@@ -15,7 +15,7 @@ DISTNAME=	bot-sentry-${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Pidgin plugin to prevent instant message spam
 
-LIB_DEPENDS=	purple.8:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS=	purple.9:${PORTSDIR}/net-im/libpurple
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 
 GNU_CONFIGURE=	yes
