@@ -143,6 +143,7 @@ callweaver:*:444:444::0:0:Callweaver account:/var/lib/callweaver:/usr/sbin/nolog
 courier:*:465:465::0:0:Courier Mail Server:/nonexistent:/usr/sbin/nologin
 _bbstored:*:505:505::0:0:BoxBackup Store Daemon:/nonexistent:/bin/sh
 radmind:*:506:506::0:0:radmind User:/var/radmind:/usr/sbin/nologin
+skkserv:*:507:507::0:0:skkserv User:/nonexistent:/usr/sbin/nologin
 nullmail:*:522:522::0:0:Nullmailer Mail System:/var/spool/nullmailer:/bin/sh
 dkimproxy:*:525:525::0:0:DKIM Proxy Owner:/nonexistent:/usr/sbin/nologin
 pgbouncer:*:534:534::0:0:Pgbouncer Daemon:/nonexistent:/usr/sbin/nologin

@@ -134,6 +134,7 @@ callweaver:*:444:
 courier:*:465:
 _bbstored:*:505:
 radmind:*:506:
+skkserv:*:507:
 nullmail:*:522:
 dkimproxy:*:525:
 pgbouncer:*:534:

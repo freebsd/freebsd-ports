@@ -12,7 +12,7 @@ name=skkserv
 rcvar=`set_rcvar`
 command=%%PREFIX%%/sbin/skkserv
 
-: ${skkserv_flags:="-a 127.0.0.1"}
+: ${skkserv_flags:="-a 127.0.0.1 -u skkserv"}
 
 load_rc_config ${name}
 run_rc_command $1
