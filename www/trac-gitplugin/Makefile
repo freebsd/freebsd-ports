@@ -6,31 +6,30 @@
 #
 
 PORTNAME=	gitplugin
-PORTVERSION=	0.12.0.2.7757
+PORTVERSION=	0.12.0.5
 CATEGORIES=	www devel python
-MASTER_SITES=	http://apt.douglasthrift.net/files/${PORTNAME}/ \
+MASTER_SITES=	https://download.github.com/ \
+		http://apt.douglasthrift.net/files/${PORTNAME}/ \
 		http://code.douglasthrift.net/files/${PORTNAME}/
 PKGNAMEPREFIX=	trac-
-DISTNAME=	${PORTNAME}-r${PORTVERSION:E}
+DISTNAME=	hvr-trac-git-plugin-v${PORTVERSION}-15-g${GITPLUGIN_HASH}
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	Git plugin for Trac
 
 RUN_DEPENDS=	git:${PORTSDIR}/devel/git \
 		tracd:${PORTSDIR}/www/trac
-BUILD_DEPENDS=	easy_install:${PORTSDIR}/devel/py-setuptools
+
 LICENSE=	GPLv2
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
-USE_ZIP=		yes
 PYDISTUTILS_PKGNAME=	TracGit
-PYDISTUTILS_PKGVERSION=	${PORTVERSION:R}dev
-WRKSRC=			${WRKDIR}/${PORTNAME}/${PORTVERSION:C/(.[0-9]+){3}$//}
+PYDISTUTILS_PKGVERSION=	${PORTVERSION}dev
+WRKSRC=			${WRKDIR}/hvr-trac-git-plugin-${GITPLUGIN_HASH}
 
 PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
-post-extract:
-	${CHMOD} -R a+r ${WRKSRC}
+GITPLUGIN_HASH=	2c21931
 
 .include <bsd.port.mk>
