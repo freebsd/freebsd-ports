@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail_Queue
-PORTVERSION=	1.2.6
+PORTVERSION=	1.2.7
 CATEGORIES=	mail www pear
 
 MAINTAINER=	miwi@FreeBSD.org
@@ -14,15 +14,10 @@ COMMENT=	PEAR class for put mails in queue and send them later in background
 
 BUILD_DEPENDS=	${PEARDIR}/Mail.php:${PORTSDIR}/mail/pear-Mail \
 		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/Mail.php:${PORTSDIR}/mail/pear-Mail \
+		${PEARDIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime
 
-#CATEGORY=	Mail
-FILES=		Mail/Queue.php Mail/Queue/Body.php \
-		Mail/Queue/Container.php Mail/Queue/Error.php \
-		Mail/Queue/Container/creole.php Mail/Queue/Container/db.php \
-		Mail/Queue/Container/mdb.php Mail/Queue/Container/mdb2.php
-DOCS=		README TODO add_example.php base.php \
-		mdb_mail_queue_schema.xml mysql.sql pgsql.sql send_example.php
+PEAR_AUTOINSTALL=	yes
 
 OPTIONS=	PEAR_DB "PEAR::DB support" off \
 		PEAR_MDB "PEAR::MDB support" off \
