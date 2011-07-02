@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}.src
 MAINTAINER=	vanilla@FreeBSD.org
 COMMENT=	A C++ wrapper for BSD-style sockets
 
+BROKEN=		does not build
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/spnetkit
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
