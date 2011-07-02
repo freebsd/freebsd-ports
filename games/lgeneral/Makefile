@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lgeneral
-PORTVERSION=	1.2
+PORTVERSION=	1.2.1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
@@ -16,7 +16,7 @@ COMMENT=	A turn-based strategy engine inspired by Panzer General
 USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 MAN1=		lgc-pg.1
 MAN6=		lgeneral.6
