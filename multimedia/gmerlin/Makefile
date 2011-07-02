@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmerlin
-PORTVERSION=	0.4.1
-PORTREVISION=	7
+PORTVERSION=	1.0.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
@@ -16,28 +15,10 @@ COMMENT=	Multimedia framework
 
 LIB_DEPENDS=	gavl.1:${PORTSDIR}/multimedia/gavl
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--without-doxygen --without-texinfo --disable-alsa \
-		--disable-v4l --disable-alsamixer --disable-camelot \
-		--without-cpuflags --disable-v4l2 --disable-v4lconvert
-USE_GNOME=	gtk20 gnomehack libxml2
-USE_GL=		gl
-USE_XORG=	x11 xv xinerama ice
-USE_GETTEXT=	yes
-USE_LDCONFIG=	yes
-
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include/libvisual-0.4 -I${LOCALBASE}/include"
-
-PORTDOCS=	README
-
-INFO=		gmerlin
-MAN1=		gmerlin_play.1
-
 OPTIONS=	PULSEAUDIO "Enable PulseAudio support" on \
 		QUICKTIME "Enable QuickTime support" on \
-		LIBVISUAL "Enable libvisual support" on \
-		LIBCDIO	"Enable libcdio support" on \
+		VISUAL "Enable libvisual support" on \
+		CDIO	"Enable libcdio support" on \
 		MUSICBRAINZ "Enable MusicBrainz support" on \
 		CDDB	"Enable CDDB support" on \
 		ESOUND	"Enable ESounD support" off \
@@ -45,14 +26,32 @@ OPTIONS=	PULSEAUDIO "Enable PulseAudio support" on \
 		JPEG	"Enable JPEG support" on \
 		PNG	"Enable PNG support" on \
 		TIFF	"Enable TIFF support" on \
-		MJPEGTOOLS "Enable mjpegtools support" on \
 		PLUGINCFG "Build plugin configurator" on \
 		PLAYER	"Build player" on \
 		KBD	"Build keyboard daemon" on \
 		TRANSCODER "Build transcoder" on \
+		RECORDER "Build recorder" on \
 		VISUALIZER "Build visualizer" on \
 		THUMBNAILER "Build thumbnailer" on \
 		OPTIMIZED_CFLAGS "Additional optimizations" on
+
+USE_GNOME=	gnomehack gtk20 libxml2
+USE_XORG=	ice x11 xinerama xv
+USE_GL=		gl
+USE_GETTEXT=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--disable-alsa --disable-v4l --disable-v4l2 \
+		--disable-camelot --disable-alsamixer --disable-v4lconvert \
+		--without-doxygen --without-cpuflags 
+USE_LDCONFIG=	yes
+INSTALL_ICONS=	yes
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
+INFO=		gmerlin
+MAN1=		gmerlin_play.1
 
 .include <bsd.port.pre.mk>
 
@@ -72,13 +71,13 @@ CONFIGURE_ARGS+=--disable-lqt
 PLIST_SUB+=	QUICKTIME="@comment "
 .endif
 
-.if !defined(WITHOUT_LIBVISUAL)
+.if !defined(WITHOUT_VISUAL)
 LIB_DEPENDS+=	visual-0.4:${PORTSDIR}/graphics/libvisual04
 .else
 CONFIGURE_ARGS+=--disable-libvisual
 .endif
 
-.if !defined(WITHOUT_LIBCDIO)
+.if !defined(WITHOUT_CDIO)
 LIB_DEPENDS+=	cdio.12:${PORTSDIR}/sysutils/libcdio
 PLIST_SUB+=	CDIO=""
 .else
@@ -138,12 +137,6 @@ CONFIGURE_ARGS+=--disable-libtiff
 PLIST_SUB+=	TIFF="@comment "
 .endif
 
-.if !defined(WITHOUT_MJPEGTOOLS)
-LIB_DEPENDS+=	lavjpeg-2.0.0:${PORTSDIR}/multimedia/mjpegtools
-.else
-CONFIGURE_ARGS+=--disable-mjpegtools
-.endif
-
 # applications
 .if !defined(WITHOUT_PLUGINCFG)
 PLIST_SUB+=	PLUGINCFG=""
@@ -175,6 +168,13 @@ CONFIGURE_ARGS+=--disable-transcoder
 PLIST_SUB+=	TRANSCODER="@comment "
 .endif
 
+.if !defined(WITHOUT_RECORDER)
+PLIST_SUB+=	RECORDER=""
+.else
+CONFIGURE_ARGS+=--disable-recorder
+PLIST_SUB+=	RECORDER="@comment "
+.endif
+
 .if !defined(WITHOUT_VISUALIZER)
 PLIST_SUB+=	VISUALIZER=""
 .else
@@ -196,22 +196,27 @@ CXXFLAGS+=	-O3 -funroll-all-loops -fomit-frame-pointer -ffast-math
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O3.*-ffast-math||g; \
-		s|-DGTK_DISABLE_DEPRECATED||; \
-		/LIBS/ s|-ldl||g; s|^LDFLAGS="|&$${LDFLAGS} |' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-ldl||; s|-lpthread|${PTHREAD_LIBS}|; \
-		/^LIBS = / s|$$| @LIBINTL@ ${PTHREAD_LIBS}|' \
-		${WRKSRC}/lib/Makefile.in ${WRKSRC}/tests/Makefile.in \
-		${WRKSRC}/apps/cmdlineplayer/Makefile.in \
-		${WRKSRC}/apps/kbd/Makefile.in \
-		${WRKSRC}/apps/player/Makefile.in \
-		${WRKSRC}/apps/transcoder/Makefile.in \
-		${WRKSRC}/apps/thumbnailer/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|-O3.*-ffast-math||g ; \
+		 s|-DGTK_DISABLE_DEPRECATED||g ; \
+		 /LIBS/ s|-ldl||g ; \
+		 s|^LDFLAGS="|&$${LDFLAGS} |g' ${WRKSRC}/configure
+.for file in apps/cmdlineplayer/Makefile.in apps/kbd/Makefile.in \
+	apps/player/Makefile.in apps/transcoder/Makefile.in \
+	apps/thumbnailer/Makefile.in lib/Makefile.in tests/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|-ldl||g ; \
+		 s|-lpthread|${PTHREAD_LIBS}|g ; \
+		 /^LIBS = / s|$$| @LIBINTL@ ${PTHREAD_LIBS}|g' ${WRKSRC}/${file}
+.endfor
+.for file in doc/Makefile.in
+	@${REINPLACE_CMD} -e \
+		 's|^texinfo_|#texinfo_|g' ${WRKSRC}/${file}
+.endfor
 
-.if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${DOCSDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
