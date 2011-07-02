@@ -1,5 +1,5 @@
 --- skkserv/skkserv.c.orig	1997-01-21 04:16:36.000000000 +0900
-+++ skkserv/skkserv.c	2008-11-02 00:07:53.000000000 +0900
++++ skkserv/skkserv.c	2011-07-02 22:05:16.000000000 +0900
 @@ -124,6 +124,8 @@
  int	clientsock[MAXCLNT];	/* socket for each client */
  int	nclients;	/* max index for active clients */
@@ -57,7 +57,18 @@
    if (portnum == 0) {
  #ifdef PORTNUM
      portnum = PORTNUM;
-@@ -476,7 +498,7 @@
+@@ -382,6 +404,10 @@
+   code = KANA_END;
+ 
+   while ((c = fgetc(jisho)) != EOF) {
++	if (c == '>') {
++		fgets(buf, BUFSIZE, jisho);
++		continue;
++	}
+     target = ((c & 0xff)<< 8) | (fgetc(jisho) & 0xff);
+     if (target == STRMARK) {
+       fgets(buf, BUFSIZE, jisho);
+@@ -476,7 +502,7 @@
  
      if (FD_ISSET(initsock, &readfds)) {
        len = sizeof(from);
