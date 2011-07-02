@@ -18,13 +18,14 @@ COMMENT?=	Syslogd supporting SQL, TCP and TLS
 
 USE_LDCONFIG=	yes
 
+LIB_DEPENDS+=	ee:${PORTSDIR}/devel/libee \
+		estr:${PORTSDIR}/devel/libestr
+
 .ifdef MNAME
 RUN_DEPENDS=	rsyslog>=${PORTVERSION}:${PORTSDIR}/sysutils/rsyslog6-devel
 PLIST=		${.CURDIR}/pkg-plist
 LATEST_LINK=	rsyslog6-devel-${MNAME}
 .else
-LIB_DEPENDS=	ee:${PORTSDIR}/devel/libee \
-		estr:${PORTSDIR}/devel/libestr
 LATEST_LINK=	rsyslog6-devel
 .endif
 
@@ -39,7 +40,8 @@ EXTRA_PATCHES+=	${FILESDIR}/extra-patch-sane-hostname
 .endif
 
 CONFLICTS=	rsyslog-devel-[!6].[0-9]*
-CPPFLAGS+=	-I${LOCALBASE}/include
+CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 
@@ -48,10 +50,12 @@ CONFIGURE_ARGS+=--enable-rtinst --enable-debug
 .endif
 
 .include <bsd.port.pre.mk>
+
 .if ${ARCH} == "i386"
 CPPFLAGS+=-march=i686
 .endif
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" LIBESTR_CFLAGS="${CPPFLAGS}" LIBESTR_LIBS="${LDFLAGS} -lestr"  LIBEE_CFLAGS="${CPPFLAGS}" LIBEE_LIBS="${LDFLAGS} -lee"
+
+CONFIGURE_ENV+=	CFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" LIBESTR_CFLAGS="${CFLAGS}" LIBESTR_LIBS="${LDFLAGS} -lestr"  LIBEE_CFLAGS="${CFLAGS}" LIBEE_LIBS="${LDFLAGS} -lee"
 
 .ifndef MNAME
 MAN8=	rsyslogd.8
@@ -60,7 +64,7 @@ MAN5=	rsyslog.conf.5
 USE_RC_SUBR=	${PORTNAME}d
 SUB_FILES=	pkg-message
 
-CONFIGURE_ARGS+=--enable-imfile --enable-mail --enable-imtemplate --enable-testbench=no
+CONFIGURE_ARGS+=	--enable-imfile --enable-mail --enable-imtemplate --enable-testbench=no
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
