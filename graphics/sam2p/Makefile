@@ -7,10 +7,10 @@
 #
 
 PORTNAME=	sam2p
-PORTVERSION=	0.47
+PORTVERSION=	0.48
 PORTEPOCH=	1
 CATEGORIES=	graphics
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts raster (bitmap) image formats into PS or PDF files
@@ -18,6 +18,9 @@ COMMENT=	Converts raster (bitmap) image formats into PS or PDF files
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		cjpeg:${PORTSDIR}/graphics/jpeg \
 		tif22pnm:${PORTSDIR}/graphics/tif22pnm
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_PERL5_BUILD=	yes
 USE_GHOSTSCRIPT_RUN=	yes
@@ -35,11 +38,11 @@ PLIST_FILES=	bin/${PORTNAME}
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
+	@${MKDIR} ${EXAMPLESDIR}
 	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 
