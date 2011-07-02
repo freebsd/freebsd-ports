@@ -17,7 +17,7 @@
         vpopmail.o db.o field.o badhosts.o
  
 -INSTALL_DIR = /usr/local/apache/cgi-bin/vqregister
-+INSTALL_DIR = ${WWW_DIR}/cgi-bin/vqregister
++INSTALL_DIR = ${WWWDIR}
  INSTALL_BIN = vqregister.cgi
  INSTALL_UID = vpopmail
  INSTALL_GID = vchkpw
