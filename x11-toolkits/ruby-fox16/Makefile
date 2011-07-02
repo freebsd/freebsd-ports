@@ -7,7 +7,7 @@
 
 PORTNAME=	fox
 PORTVERSION=	1.6.19
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-toolkits ruby
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	fxruby
@@ -22,7 +22,7 @@ LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16 \
 		png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		fxscintilla.21:${PORTSDIR}/x11-toolkits/fxscintilla
+		fxscintilla.22:${PORTSDIR}/x11-toolkits/fxscintilla
 
 LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}16
 
