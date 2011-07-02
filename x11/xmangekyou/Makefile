@@ -9,21 +9,16 @@ PORTNAME=	xmangekyou
 PORTVERSION=	2.0.1
 PORTREVISION=	3
 CATEGORIES=	x11
-MASTER_SITES=	http://hp.vector.co.jp/authors/VA014157/myfreesoft/ \
-		ftp://ftp.vector.co.jp/pack/unix/art/anime/
+MASTER_SITES=	http://ftp.vector.co.jp/pack/unix/art/anime/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A kaleidoscope on X
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-08-01
-
+USE_XORG=	x11 xpm xaw
 ALL_TARGET=	xmangekyou
 
-USE_XORG=	x11 xpm xaw
-
-MAN1=		xmangekyou.1
 MANCOMPRESSED=	yes
+MAN1=		xmangekyou.1
 PORTDOCS=	COPYRIGHT.euc HISTORY.euc README.euc
 PLIST_FILES=	bin/xmangekyou lib/X11/XMangekyou/animation.dat
 PLIST_DIRS=	lib/X11/XMangekyou
