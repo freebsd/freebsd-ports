@@ -8,15 +8,12 @@ PORTNAME=	ack
 PORTVERSION=	1.39
 PORTREVISION=	1
 CATEGORIES=	japanese converters
-MASTER_SITES=	ftp://ftp.vector.co.jp/pack/unix/util/text/conv/code/
+MASTER_SITES=	http://ftp.vector.co.jp/pack/unix/util/text/conv/code/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kanji code converter
-
-DEPRECATED=	Look like an abandonware, no more public distifles
-EXPIRATION_DATE=	2011-08-01
 
 ALL_TARGET=	ack
 
