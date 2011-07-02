@@ -1,2 +1,4 @@
-SHA256 (convertall-0.5.0.tar.gz) = f2d77a1f2372c352ab60bc4e9c815f3c290d3666d68fa4225818aa530ca1596f
-SIZE (convertall-0.5.0.tar.gz) = 59849
+SHA256 (convertall-0.5.1.tar.gz) = 3e474257dfa0fb451ffff5dd70d5f4274984937d6ff090d09326ab5c404f4a2e
+SIZE (convertall-0.5.1.tar.gz) = 60067
+SHA256 (convertall-i18n-0.5.1b.tar.gz) = 16ba35fc35c8acfd1187c85f65330b8e8cee0841cd98ec911c0dd9444dfcf640
+SIZE (convertall-i18n-0.5.1b.tar.gz) = 140977
