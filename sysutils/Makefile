@@ -798,7 +798,6 @@
     SUBDIR += sec
     SUBDIR += sensors-applet
     SUBDIR += serpentine
-    SUBDIR += service-config
     SUBDIR += setcdboot
     SUBDIR += setquota
     SUBDIR += sformat
