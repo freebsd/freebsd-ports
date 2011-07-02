@@ -7,12 +7,15 @@
 #
 
 PORTNAME=	ragel
-PORTVERSION=	6.6
+PORTVERSION=	6.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.complang.org/ragel/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compile regular languages into executable C/C++ code
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
