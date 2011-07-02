@@ -6,56 +6,38 @@
 #
 
 PORTNAME=	ttt
-PORTVERSION=	2003.03.14
-PORTREVISION=	5
+PORTVERSION=	2011.04
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.billsgames.com/unix/x/ttt/
+MASTER_SITES=	ftp://ftp.tuxpaint.org/unix/x/ttt/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple one or two player Tic Tac Toe game
-
-USE_GMAKE=	yes
-USE_SDL=	mixer sdl
-
-OPTIONS=	OPTIMIZED_CFLAGS "Enable compilation optimizations" on
 
 # net/ttt
 CONFLICTS=	ttt-1*
 NO_LATEST_LINK=	yes
 
-.include <bsd.port.pre.mk>
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
+USE_SDL=	sdl
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	aclocal automake autoheader autoconf
+AUTOMAKE_ARGS=	--add-missing --force
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
-# Fix Makefile.
-	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}| ; \
-		s|\(-Wall\)|${CFLAGS} \1|' \
-		${WRKSRC}/${MAKEFILE}
+	@${REINPLACE_CMD} -e \
+		'/SDL_mixer/d' ${WRKSRC}/configure.ac
+	@${REINPLACE_CMD} -e \
+		's|\./images|${DATADIR}/images|g' ${WRKSRC}/src/init.c
 
-# Enable/disable compilation optimizations.
-.if defined(WITHOUT_OPTIMIZED_CFLAGS)
-	@${REINPLACE_CMD} -e 's|-O2||' ${WRKSRC}/${MAKEFILE}
-.endif
+post-install:
+	@${MKDIR} ${DATADIR}/images
+	${INSTALL_DATA} ${WRKSRC}/images/*.bmp ${DATADIR}/images
 
-# Fix paths to ${DATADIR}.
-	@${REINPLACE_CMD} -e 's|\(images/\)|${DATADIR}/\1| ; \
-		s|\(sounds/\)|${DATADIR}/\1|' \
-		${WRKSRC}/ttt.c
-
-do-install:
-# Program.
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-
-# Data.
-	${MKDIR} ${DATADIR}
-.for d in images sounds
-	${CP} -R ${WRKSRC}/${d} ${DATADIR}
-.endfor
-
-# Fix wrong permissions.
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
-	@${FIND} ${DATADIR} -type f -print0 | \
-		${XARGS} -0 ${CHMOD} ${SHAREMODE}
-	@${FIND} ${DATADIR} -type d -print0 | \
-		${XARGS} -0 ${CHMOD} ${BINMODE}
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
