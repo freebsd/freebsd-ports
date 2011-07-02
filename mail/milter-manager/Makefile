@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	milter-manager
-PORTVERSION=	1.4.2
+PORTVERSION=	1.8.0
 CATEGORIES=	mail ruby
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME:S/-/%20/}/${PORTVERSION}
 
@@ -14,7 +14,7 @@ MAINTAINER=	umq@ueo.co.jp
 COMMENT=	A super milter that can invoke several milters selectively
 
 BUILD_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/glib2.so:${PORTSDIR}/devel/ruby-glib2
 
 USE_RC_SUBR=	milter-manager
 GNU_CONFIGURE=	yes
@@ -41,6 +41,6 @@ USE_RUBY=	yes
 
 MANLANG=	"" ja
 MAN1=		milter-manager-log-analyzer.1 milter-manager.1 milter-performance-check.1 \
-		milter-test-client.1 milter-test-server.1
+		milter-report-statistics.1 milter-test-client.1 milter-test-server.1
 
 .include <bsd.port.mk>

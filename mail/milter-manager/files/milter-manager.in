@@ -83,7 +83,7 @@ if [ -n "$2" ]; then
 	    command_args="${command_args} --socket-group-name ${miltermanager_socket_gid}"
 	fi
 	if [ -n "${miltermanager_socket}" ] ; then
-	    command_args="${command_args} --spec ${miltermanager_socket}"
+	    command_args="${command_args} --connection-spec ${miltermanager_socket}"
 	fi
 	command_args="${command_args} --daemon"
     else
@@ -122,7 +122,7 @@ else
 	    command_args="${command_args} --socket-group-name ${miltermanager_socket_gid}"
 	fi
 	if [ -n "${miltermanager_socket}" ] ; then
-	    command_args="${command_args} --spec ${miltermanager_socket}"
+	    command_args="${command_args} --connection-spec ${miltermanager_socket}"
 	fi
 	if checkyesno miltermanager_debug ; then
 	    command_args="${command_args} --verbose"
