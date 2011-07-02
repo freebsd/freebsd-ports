@@ -20,6 +20,8 @@ RUN_DEPENDS=	${SCILAB_CMD}:${PORTSDIR}/math/scilab
 
 USE_ZIP=	yes
 
+BROKEN=		doesn't not compile with opencv-2.3
+
 SCILAB_CMD=	${LOCALBASE}/bin/scilab
 CONTRIBDIR?=	share/scilab/contrib
 TOOLBOXDIR_REL?=	${CONTRIBDIR}/${PORTNAME}
