@@ -1,78 +1,12 @@
 bin/pdfedit
-%%DOCSDIR%%/AUTHORS
-%%DOCSDIR%%/Changelog
-%%DOCSDIR%%/LICENSE.GPL
-%%DOCSDIR%%/README
-%%DOCSDIR%%/README-Tango
-%%DOCSDIR%%/README.cygwin
-%%DOCSDIR%%/gui/images/command_options_cmdedit.png
-%%DOCSDIR%%/gui/images/options_commandline.png
-%%DOCSDIR%%/gui/images/options_editor.png
-%%DOCSDIR%%/gui/images/options_execute.png
-%%DOCSDIR%%/gui/images/options_lookandfeel.png
-%%DOCSDIR%%/gui/images/options_objecttree.png
-%%DOCSDIR%%/gui/images/options_paths.png
-%%DOCSDIR%%/gui/images/options_toolbars.png
-%%DOCSDIR%%/gui/images/pagespace.png
-%%DOCSDIR%%/gui/images/pdfedit.png
-%%DOCSDIR%%/gui/images/propedit_all.png
-%%DOCSDIR%%/gui/images/propedit_catalog.png
-%%DOCSDIR%%/gui/images/propedit_edit.png
-%%DOCSDIR%%/gui/images/propedit_edit_add.png
-%%DOCSDIR%%/gui/images/propedit_edit_del.png
-%%DOCSDIR%%/gui/images/propedit_edit_ref.png
-%%DOCSDIR%%/gui/images/propedit_gfx_selection.png
-%%DOCSDIR%%/gui/images/propedit_impor.png
-%%DOCSDIR%%/gui/images/propedit_multiselection.png
-%%DOCSDIR%%/gui/images/propedit_op_desc.png
-%%DOCSDIR%%/gui/images/propedit_op_modes.png
-%%DOCSDIR%%/gui/images/propedit_opt_editor.png
-%%DOCSDIR%%/gui/images/propedit_opt_objtree.png
-%%DOCSDIR%%/gui/images/propedit_outlines.png
-%%DOCSDIR%%/gui/images/propedit_pages.png
-%%DOCSDIR%%/gui/images/propedit_rclick.png
-%%DOCSDIR%%/gui/images/propedit_stream.png
-%%DOCSDIR%%/gui/images/propedit_text_selection.png
-%%DOCSDIR%%/gui/images/theme1.png
-%%DOCSDIR%%/gui/images/theme2.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/dialog_addFont.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/dialog_dashpattern.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/dialog_editPageMetrics.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/dialog_extractedText.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/dialog_findText.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/insert_pages.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/menu_edit.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/menu_file.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/menu_help.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/menu_page.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/menu_tools.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/menu_view.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/toolbars_draw.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/toolbars_dynamic.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/toolbars_main.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/toolbars_operator.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/toolbars_page.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/toolbars_revision.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/toolbars_selectionmode.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/toolbars_text.png
-%%DOCSDIR%%/gui/menuAndToolbarsFun/images/toolbars_treeview.png
-%%DOCSDIR%%/images/filedialog.png
-%%DOCSDIR%%/images/inputitem.png
-%%DOCSDIR%%/images/inputtext.png
-%%DOCSDIR%%/images/messageb1.png
-%%DOCSDIR%%/images/pdfedit.png
-%%DOCSDIR%%/images/qchkbox-w.png
-%%DOCSDIR%%/images/qcombo1-w.png
-%%DOCSDIR%%/images/qgrpbox-w.png
-%%DOCSDIR%%/images/qlined-w.png
-%%DOCSDIR%%/images/qradiobt-w.png
-%%DOCSDIR%%/images/qsdateed.png
-%%DOCSDIR%%/images/qspinbox-w.png
-%%DOCSDIR%%/images/qstimeed.png
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS
+%%PORTDOCS%%%%DOCSDIR%%/Changelog
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/callback.qs
 %%DATADIR%%/delinearize.qs
 %%DATADIR%%/dialog_lib.qs
 %%DATADIR%%/dialogs.qs
+%%DATADIR%%/flatten.qs
 %%DATADIR%%/help/cs/index.html
 %%DATADIR%%/help/cs/keyboard.html
 %%DATADIR%%/help/images/filedialog.png
@@ -165,6 +99,7 @@ bin/pdfedit
 %%DATADIR%%/icon/draw_rect.png
 %%DATADIR%%/icon/expand.png
 %%DATADIR%%/icon/first.png
+%%DATADIR%%/icon/flatten.png
 %%DATADIR%%/icon/help.png
 %%DATADIR%%/icon/hicolor/about.png
 %%DATADIR%%/icon/hicolor/add_text.png
@@ -290,8 +225,10 @@ bin/pdfedit
 %%DATADIR%%/lang/pdfedit_cs.qm
 %%DATADIR%%/lang/pdfedit_de.qm
 %%DATADIR%%/lang/pdfedit_es.qm
+%%DATADIR%%/lang/pdfedit_fr.qm
 %%DATADIR%%/lang/pdfedit_ru.qm
 %%DATADIR%%/lang/pdfedit_sk.qm
+%%DATADIR%%/lang/pdfedit_zh_TW.qm
 %%DATADIR%%/menu.qs
 %%DATADIR%%/mode.conf
 %%DATADIR%%/operator.hint
@@ -299,6 +236,7 @@ bin/pdfedit
 %%DATADIR%%/pdfeditrc
 %%DATADIR%%/pdfoperator.qs
 %%DATADIR%%/scripts/delinearize.qs
+%%DATADIR%%/scripts/flatten.qs
 %%DATADIR%%/scripts/pdftoxml.qs
 %%DATADIR%%/scripts/update.qs
 %%DATADIR%%/test.qs
@@ -311,9 +249,4 @@ bin/pdfedit
 @dirrm %%DATADIR%%/help/cs
 @dirrm %%DATADIR%%/help
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/images
-@dirrm %%DOCSDIR%%/gui/menuAndToolbarsFun/images
-@dirrm %%DOCSDIR%%/gui/menuAndToolbarsFun
-@dirrm %%DOCSDIR%%/gui/images
-@dirrm %%DOCSDIR%%/gui
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
