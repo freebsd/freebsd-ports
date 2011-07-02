@@ -25,7 +25,7 @@ MAKE_ARGS+=	APXS="${APXS}"
 
 .include <bsd.port.options.mk>
 
-.if defined(WIT_PGSQL)
+.if defined(WITH_PGSQL)
 USE_PGSQL=	YES
 AP_EXTRAS+=	-DNEED_PGSQL
 .endif
