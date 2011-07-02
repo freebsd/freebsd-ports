@@ -14,8 +14,6 @@
     SUBDIR += abi-compliance-checker
     SUBDIR += ace
     SUBDIR += ace+tao-doc
-    SUBDIR += acovea
-    SUBDIR += acovea-gtk
     SUBDIR += acpicatools
     SUBDIR += activitymail
     SUBDIR += adabooch
@@ -801,7 +799,6 @@
     SUBDIR += libev
     SUBDIR += libevent
     SUBDIR += libevent2
-    SUBDIR += libevocosm
     SUBDIR += libexecinfo
     SUBDIR += libffi
     SUBDIR += libfirm
