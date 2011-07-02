@@ -14,6 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JBoss 3.x, an open-source J2EE application server
 
+BROKEN=		Does not build
 DEPRECATED=	Depends on expired Java 1.4
 EXPIRATION_DATE=2011-07-28
 
