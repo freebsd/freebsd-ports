@@ -1,6 +1,7 @@
 @comment $FreeBSD:
 sbin/circe-redirect
 sbin/circe-context-daemon
+sbin/circe-daemon
 sbin/circe-flush-state
 sbin/circe-get-context
 sbin/circe-get-redirect-url
@@ -16,6 +17,7 @@ etc/ipfw.common.dist
 etc/ipfw.end.dist
 etc/ipfw.init.dist
 etc/ipfw.local.dist
+etc/rc.d/circed
 %%SITE_PERL%%/LibNAC.pm
 @unexec rmdir %D/etc/env 2>/dev/null || true
 @unexec rmdir %D/share/nac 2>/dev/null || true

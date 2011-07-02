@@ -6,28 +6,32 @@
 #
 
 PORTNAME=	circe
-PORTVERSION=	0.1.2
+PORTVERSION=	0.2.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://bws.berkeley.edu/ports/
 
 MAINTAINER=	circe-port-maintainers@bws.berkeley.edu
-COMMENT=	Code that implements a perl based circe captive portal system
+COMMENT=	A captive portal-based network access control solution in perl
 
 DIST_SUBDIR=	${PORTNAME}
 
 BUILD_DEPENDS=	${SITE_PERL}/mach/Net/IP/Match/XS.pm:${PORTSDIR}/net-mgmt/p5-Net-IP-Match-XS \
 		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
 		${SITE_PERL}/mach/IO.pm:${PORTSDIR}/devel/p5-IO \
-		${SITE_PERL}/mach/IO/Interface.pm:${PORTSDIR}/net/p5-IO-Interface \
 		${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
 		${SITE_PERL}/mach/Sys/Syslog.pm:${PORTSDIR}/sysutils/p5-Sys-Syslog \
-		${SITE_PERL}/mach/TryCatch.pm:${PORTSDIR}/lang/p5-TryCatch
+		${SITE_PERL}/mach/TryCatch.pm:${PORTSDIR}/lang/p5-TryCatch \
+		${SITE_PERL}/Data/Validate/IP.pm:${PORTSDIR}/net-mgmt/p5-Data-Validate-IP \
+		${SITE_PERL}/Regexp/Common.pm:${PORTSDIR}/textproc/p5-Regexp-Common \
+		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
+		${SITE_PERL}/mach/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB \
+		${SITE_PERL}/Proc/PID/File.pm:${PORTSDIR}/devel/p5-Proc-PID-File
 
 MANCOMPRESSED=	no
 
-WRKSRC=	${WRKDIR}
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|$$(SITE_PERL)|${SITE_PERL}|g' ${WRKSRC}/Makefile
+
+WRKSRC=	${WRKDIR}
 
 .include <bsd.port.mk>

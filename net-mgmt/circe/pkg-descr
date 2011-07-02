@@ -1,4 +1,5 @@
-Circe is a captive portal system. It is built using Perl and is a program that
-allows you to monitor and control who has access between two networks.
+Circe is a captive portal-based network access control solution written in perl
+and developed at the University of California, Berkeley for use in Residential 
+Computing and campus wireless.
 
 WWW: http://bws.berkeley.edu/
