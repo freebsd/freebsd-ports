@@ -1,6 +1,8 @@
 bin/grc
 bin/grcat
 etc/grc.conf
+%%DATADIR%%/conf.configure
+%%DATADIR%%/conf.cvs
 %%DATADIR%%/conf.diff
 %%DATADIR%%/conf.esperanto
 %%DATADIR%%/conf.gcc
@@ -12,5 +14,4 @@ etc/grc.conf
 %%DATADIR%%/conf.proftpd
 %%DATADIR%%/conf.traceroute
 %%DATADIR%%/conf.wdiff
-%%DATADIR%%/conf.cvs
 @dirrm %%DATADIR%%
