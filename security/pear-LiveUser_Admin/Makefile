@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	LiveUser_Admin
-PORTVERSION=	0.3.9
+PORTVERSION=	0.4.0
 CATEGORIES=	security www pear
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	PEAR user authentication and permission management framework
 
 BUILD_DEPENDS=	${PEARDIR}/LiveUser/LiveUser.php:${PORTSDIR}/security/pear-LiveUser
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/LiveUser/LiveUser.php:${PORTSDIR}/security/pear-LiveUser
 
 LATEST_LINK=	pear-LiveUser_Admin
 OPTIONS=	PEAR_DB "PEAR::DB support" off \
@@ -23,26 +23,7 @@ OPTIONS=	PEAR_DB "PEAR::DB support" off \
 		PEAR_XML_TREE "PEAR::XML_Tree support" off \
 		PEAR_CRYPT_RC4 "PEAR::Crypt_RC4 support" off
 
-CATEGORY=	LiveUser/Admin
-FILES=		Auth/Common.php Auth/DB.php Auth/MDB.php Auth/MDB2.php \
-		Auth/PDO.php Auth/Storage/DB.php Auth/Storage/MDB.php \
-		Auth/Storage/MDB2.php Auth/Storage/PDO.php \
-		Perm/Storage/DB.php Perm/Storage/MDB.php Perm/Storage/MDB2.php \
-		Perm/Storage/PDO.php Perm/Complex.php Perm/Medium.php Perm/Simple.php \
-		Storage/DB.php Storage/MDB.php Storage/MDB2.php Storage/SQL.php \
-		Storage/PDO.php Admin.php Storage.php
-EXAMPLES=	example1/Application.php example1/Area.php \
-		example1/Area_Admin_Areas.php example1/config.inc.php \
-		example1/Group.php example1/GroupRights.php \
-		example1/ImplyRights.php example1/index.php \
-		example1/OutputRightsConstants.php example1/Rights.php \
-		example1/Subgroups.php example1/Translation.php example1/User.php \
-		example1/UserGroup.php example1/UserRights.php example3/area51.php \
-		example3/coffeemaker.php example3/conf.php example3/demodata.xml \
-		example3/example.php example3/index.html example3/loginscreen.php \
-		example3/main.php example3/nav.php example3/testarea.php README \
-
-_EXAMPLESDIR=	docs/examples
+PEAR_AUTOINSTALL=	yes
 
 .include <bsd.port.pre.mk>
 
