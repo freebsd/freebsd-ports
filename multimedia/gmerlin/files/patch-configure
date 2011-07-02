@@ -1,0 +1,23 @@
+--- configure.orig	2011-01-08 09:50:08.000000000 +0900
++++ configure	2011-06-29 01:06:34.000000000 +0900
+@@ -1042,6 +1042,7 @@
+ with_x
+ enable_pulseaudio
+ enable_lqt
++enable_v4lconvert
+ enable_libvisual
+ enable_libcdio
+ enable_musicbrainz
+@@ -15115,9 +15116,9 @@
+ V4LCONVERT_REQUIRED="0.5.7"
+ have_v4lconvert=false
+ 
+-# Check whether --enable-lqt was given.
+-if test "${enable_lqt+set}" = set; then :
+-  enableval=$enable_lqt; case "${enableval}" in
++# Check whether --enable-v4lconvert was given.
++if test "${enable_v4lconvert+set}" = set; then :
++  enableval=$enable_v4lconvert; case "${enableval}" in
+                  yes) test_v4lconvert=true ;;
+                  no) test_v4lconvert=false ;;
+                esac

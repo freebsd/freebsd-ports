@@ -8,11 +8,14 @@ bin/gmerlin_imgdiff
 bin/gmerlin_play
 %%PLUGINCFG%%bin/gmerlin_plugincfg
 bin/gmerlin_psnr
+%%RECORDER%%bin/gmerlin_recorder
 %%PLAYER%%bin/gmerlin_remote
+bin/gmerlin_ssim
 %%TRANSCODER%%bin/gmerlin_transcoder
 %%TRANSCODER%%bin/gmerlin_transcoder_remote
-%%VISUALIZER%%bin/gmerlin_visualizer
+bin/gmerlin_vanalyze
 bin/gmerlin_visualize
+%%VISUALIZER%%bin/gmerlin_visualizer
 bin/gmerlin_visualizer_slave
 bin/gmerlin_vpsnr
 include/gmerlin/accelerator.h
@@ -26,8 +29,7 @@ include/gmerlin/charset.h
 include/gmerlin/cmdline.h
 include/gmerlin/converters.h
 include/gmerlin/edl.h
-include/gmerlin/encoderinfo.h
-include/gmerlin/fifo.h
+include/gmerlin/encoder.h
 include/gmerlin/fileformat.h
 include/gmerlin/filters.h
 include/gmerlin/gui_gtk/aboutwindow.h
@@ -46,6 +48,7 @@ include/gmerlin/gui_gtk/logwindow.h
 include/gmerlin/gui_gtk/message.h
 include/gmerlin/gui_gtk/multiinfo.h
 include/gmerlin/gui_gtk/plugin.h
+include/gmerlin/gui_gtk/presetmenu.h
 include/gmerlin/gui_gtk/question.h
 include/gmerlin/gui_gtk/scrolltext.h
 include/gmerlin/gui_gtk/slider.h
@@ -62,7 +65,10 @@ include/gmerlin/parameter.h
 include/gmerlin/player.h
 include/gmerlin/playermsg.h
 include/gmerlin/plugin.h
+include/gmerlin/pluginfuncs.h
 include/gmerlin/pluginregistry.h
+include/gmerlin/preset.h
+include/gmerlin/recorder.h
 include/gmerlin/remote.h
 include/gmerlin/serialize.h
 include/gmerlin/singlepic.h
@@ -94,6 +100,8 @@ lib/gmerlin/plugins/fa_sampleformat.la
 lib/gmerlin/plugins/fa_sampleformat.so
 lib/gmerlin/plugins/fa_volume.la
 lib/gmerlin/plugins/fa_volume.so
+lib/gmerlin/plugins/fv_bitshift.la
+lib/gmerlin/plugins/fv_bitshift.so
 lib/gmerlin/plugins/fv_blur.la
 lib/gmerlin/plugins/fv_blur.so
 lib/gmerlin/plugins/fv_colorbalance.la
@@ -112,6 +120,8 @@ lib/gmerlin/plugins/fv_equalizer.la
 lib/gmerlin/plugins/fv_equalizer.so
 lib/gmerlin/plugins/fv_flip.la
 lib/gmerlin/plugins/fv_flip.so
+lib/gmerlin/plugins/fv_framerate.la
+lib/gmerlin/plugins/fv_framerate.so
 lib/gmerlin/plugins/fv_interlace.la
 lib/gmerlin/plugins/fv_interlace.so
 lib/gmerlin/plugins/fv_invert_rgb.la
@@ -120,12 +130,12 @@ lib/gmerlin/plugins/fv_oldcolor.la
 lib/gmerlin/plugins/fv_oldcolor.so
 lib/gmerlin/plugins/fv_pixelformat.la
 lib/gmerlin/plugins/fv_pixelformat.so
-lib/gmerlin/plugins/fv_tlp.la
-lib/gmerlin/plugins/fv_tlp.so
 lib/gmerlin/plugins/fv_tcdisplay.la
 lib/gmerlin/plugins/fv_tcdisplay.so
 lib/gmerlin/plugins/fv_tctweak.la
 lib/gmerlin/plugins/fv_tctweak.so
+lib/gmerlin/plugins/fv_tlp.la
+lib/gmerlin/plugins/fv_tlp.so
 lib/gmerlin/plugins/fv_transform.la
 lib/gmerlin/plugins/fv_transform.so
 lib/gmerlin/plugins/fv_zoom.la
@@ -146,6 +156,8 @@ lib/gmerlin/plugins/i_oss.la
 lib/gmerlin/plugins/i_oss.so
 %%PULSEAUDIO%%lib/gmerlin/plugins/i_pulse.la
 %%PULSEAUDIO%%lib/gmerlin/plugins/i_pulse.so
+lib/gmerlin/plugins/i_x11.la
+lib/gmerlin/plugins/i_x11.so
 lib/gmerlin/plugins/ir_bmp.la
 lib/gmerlin/plugins/ir_bmp.so
 lib/gmerlin/plugins/ir_gavl.la
@@ -197,8 +209,10 @@ libdata/pkgconfig/gmerlin.pc
 %%KBD%%share/applications/gmerlin-kbd.desktop
 %%PLAYER%%share/applications/gmerlin-player.desktop
 %%PLUGINCFG%%share/applications/gmerlin-plugincfg.desktop
+%%RECORDER%%share/applications/gmerlin-recorder.desktop
 %%TRANSCODER%%share/applications/gmerlin-transcoder.desktop
 %%VISUALIZER%%share/applications/gmerlin-visualizer.desktop
+%%PORTDOCS%%%%DOCSDIR%%/README
 %%DATADIR%%/icons/about_16.png
 %%DATADIR%%/icons/add_16.png
 %%DATADIR%%/icons/audio_16.png
@@ -263,6 +277,7 @@ libdata/pkgconfig/gmerlin.pc
 %%DATADIR%%/icons/plugincfg_icon.png
 %%DATADIR%%/icons/quit_16.png
 %%DATADIR%%/icons/record_16.png
+%%DATADIR%%/icons/recorder_icon.png
 %%DATADIR%%/icons/refresh_16.png
 %%DATADIR%%/icons/rename_16.png
 %%DATADIR%%/icons/repeat_mode_1.png
@@ -271,6 +286,7 @@ libdata/pkgconfig/gmerlin.pc
 %%DATADIR%%/icons/right_16.png
 %%DATADIR%%/icons/run_16.png
 %%DATADIR%%/icons/save_16.png
+%%DATADIR%%/icons/snapshot_16.png
 %%DATADIR%%/icons/sort_16.png
 %%DATADIR%%/icons/state_buffering_1.png
 %%DATADIR%%/icons/state_buffering_2.png
@@ -334,12 +350,21 @@ libdata/pkgconfig/gmerlin.pc
 %%DATADIR%%/skins/Default/volume_slider_cl.png
 %%DATADIR%%/skins/Default/volume_slider_hl.png
 %%DATADIR%%/skins/Default/volume_slider_in.png
+share/icons/hicolor/48x48/apps/gmerlin-alsamixer.png
+share/icons/hicolor/48x48/apps/gmerlin-camelot.png
+share/icons/hicolor/48x48/apps/gmerlin-kbd.png
+share/icons/hicolor/48x48/apps/gmerlin-player.png
+share/icons/hicolor/48x48/apps/gmerlin-plugincfg.png
+share/icons/hicolor/48x48/apps/gmerlin-recorder.png
+share/icons/hicolor/48x48/apps/gmerlin-transcoder.png
+share/icons/hicolor/48x48/apps/gmerlin-visualizer.png
 share/locale/de/LC_MESSAGES/gmerlin.mo
 @dirrm %%DATADIR%%/skins/Default
 @dirrm %%DATADIR%%/skins
 @dirrm %%DATADIR%%/osd
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
 @dirrm lib/gmerlin/plugins
 @dirrm lib/gmerlin
