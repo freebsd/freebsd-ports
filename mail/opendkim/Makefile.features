@@ -19,12 +19,12 @@ CONFIGURE_ARGS+=	--enable-allsymbols
 CONFIGURE_ARGS+=	--enable-atps
 .endif
 
-.if defined(WITH_BODYLENGTH_DB) && !defined(WITHOUT_BODYLENGTH_DB)
-CONFIGURE_ARGS+=	--enable-bodylength_db
-.endif
-
 .if defined(WITH_CODECOVERAGE) && !defined(WITHOUT_CODECOVERAGE)
 CONFIGURE_ARGS+=	--enable-codecoverage
+.endif
+
+.if defined(WITH_DB_HANDLE_POOLS) && !defined(WITHOUT_DB_HANDLE_POOLS)
+CONFIGURE_ARGS+=	--enable-db_handle_pools
 .endif
 
 .if defined(WITH_DEFAULT_SENDER) && !defined(WITHOUT_DEFAULT_SENDER)
@@ -49,8 +49,8 @@ WITH_OPENLDAP=		yes
 CONFIGURE_ARGS+=	--enable-ldap_caching
 .endif
 
-.if defined(WITH_MAXVERIFY) && !defined(WITHOUT_MAXVERIFY)
-CONFIGURE_ARGS+=	--enable-maxverify
+.if defined(WITH_LUA_GLOBALS) && !defined(WITHOUT_LUA_GLOBALS)
+CONFIGURE_ARGS+=	--enable-lua_globals
 .endif
 
 .if defined(WITH_OVERSIGN) && !defined(WITHOUT_OVERSIGN)
@@ -64,6 +64,10 @@ CONFIGURE_ARGS+=	--enable-parsetime
 
 .if defined(WITH_POSTGRES_RECONNECT_HACK) && !defined(WITHOUT_POSTGRES_RECONNECT_HACK)
 CONFIGURE_ARGS+=	--enable-postgres_reconnect_hack
+.endif
+
+.if defined(WITH_RATE_LIMIT) && !defined(WITHOUT_RATE_LIMIT)
+CONFIGURE_ARGS+=	--enable-rate_limit
 .endif
 
 .if defined(WITH_RBL) && !defined(WITHOUT_RBL)
@@ -98,7 +102,7 @@ CONFIGURE_ARGS+=	--enable-selector_header
 CONFIGURE_ARGS+=	--enable-sender_macro
 .endif
 
-.if defined(WITH_STATS) || defined(WITH_STATS_I) || defined(WITH_STATSEXT)
+.if defined(WITH_STATS) || defined(WITH_STATSEXT)
 CONFIGURE_ARGS+=	--enable-stats
 MAN8+=			opendkim-stats.8
 PLIST_SUB+=		STATS=""
@@ -112,4 +116,8 @@ CONFIGURE_ARGS+=	--enable-statsext
 
 .if defined(WITH_VBR) && !defined(WITHOUT_VBR)
 CONFIGURE_ARGS+=	--enable-vbr
+.endif
+
+.if defined(WITH_XTAGS) && !defined(WITHOUT_XTAGS)
+CONFIGURE_ARGS+=	--enable-xtags
 .endif

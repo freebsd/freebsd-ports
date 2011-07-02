@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	opendkim
-PORTVERSION=	2.3.2
-PORTREVISION=	1
+PORTVERSION=	2.4.1
 CATEGORIES=	mail security
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -18,10 +17,12 @@ COMMENT=	DKIM library and milter implementation
 LICENSE=	BSD SENDMAIL
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
 LICENSE_FILE_SENDMAIL=	${WRKSRC}/LICENSE.Sendmail
 LICENSE_GROUPS_SENDMAIL=	FSF OSI
 LICENSE_NAME_SENDMAIL=	Sendmail Open Source License
 LICENSE_PERMS_SENDMAIL=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+
 GNU_CONFIGURE=	yes
 USE_OPENSSL=	yes
 USE_RC_SUBR=	milter-opendkim
@@ -36,7 +37,9 @@ SUB_FILES=	pkg-message
 
 OPTIONS= \
 	ARLIB		"Asynchronous thread-safe DNS library"	On  \
+	GNUTLS		"Use GnuTLS instead of OpenSSL"		Off \
 	LUA		"Describe filter policy with lua"	Off \
+	MEMCACHED	"Use memcached as a data set"		Off \
 	OPENDBX		"Store filter policies via OpenDBX"	Off \
 	OPENLDAP	"Store filter policies in LDAP"		Off \
 	POPAUTH		"Use POP authentication DB"		Off \
@@ -92,6 +95,9 @@ LIB_DEPENDS+=		unbound:${PORTSDIR}/dns/unbound
 PLIST_SUB+=		ARLIB="@comment "
 .else
 .if defined(WITH_ARLIB)
+. if ${CC} == "clang"
+BROKEN=		ARLIB option does not compile with clang
+. endif
 PLIST_SUB+=		ARLIB=""
 CONFIGURE_ARGS+=	--enable-arlib
 MAN3=			ar.3
@@ -105,6 +111,10 @@ CONFIGURE_ARGS+=	--enable-popauth
 .endif
 .if defined(WITH_QUERY_CACHE) && !defined(WITHOUT_QUERY_CACHE)
 CONFIGURE_ARGS+=	--enable-query_cache
+.endif
+.if defined(WITH_MEMCACHED)
+CONFIGURE_ARGS+=	--with-libmemcached
+LIB_DEPENDS+=		memcached:${PORTSDIR}/databases/libmemcached
 .endif
 .if defined(WITH_OPENDBX)
 CONFIGURE_ARGS+=	--with-odbx

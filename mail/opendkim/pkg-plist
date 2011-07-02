@@ -15,7 +15,7 @@ include/opendkim/dkim.h
 lib/libopendkim.a
 lib/libopendkim.la
 lib/libopendkim.so
-lib/libopendkim.so.3
+lib/libopendkim.so.5
 %%ARLIB%%libdata/pkgconfig/ar.pc
 libdata/pkgconfig/opendkim.pc
 sbin/opendkim
