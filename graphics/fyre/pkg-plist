@@ -4,14 +4,14 @@ share/applications/fyre.desktop
 %%DATADIR%%/about-box.fa
 %%DATADIR%%/animation-render.glade
 %%DATADIR%%/explorer.glade
-%%DATADIR%%/fyre-16x16.png
-%%DATADIR%%/fyre-32x32.png
-%%DATADIR%%/fyre-48x48.png
 %%DATADIR%%/metadata-emblem.png
+share/icons/hicolor/16x16/apps/fyre.png
+share/icons/hicolor/22x22/apps/fyre.png
+share/icons/hicolor/24x24/apps/fyre.png
 share/icons/hicolor/48x48/mimetypes/application-x-fyre-animation.png
+share/icons/hicolor/scalable/apps/fyre.svg
 share/mime/application/x-fyre-animation.xml
 share/mime/packages/fyre.xml
-share/pixmaps/fyre-48x48.png
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
