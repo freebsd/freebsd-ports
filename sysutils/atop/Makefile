@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	atop
-PORTVERSION=	1.26.b3
+PORTVERSION=	1.26.b4
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=atop-freebsd
@@ -24,6 +24,8 @@ LOGDIR?=	/var/log/atop
 
 USE_RC_SUBR=	atop
 PLIST_SUB+=	LOGDIR="${LOGDIR}"
+SUB_FILES=	pkg-message
+SUB_LIST=	LOGDIR="${LOGDIR}"
 
 do-install:
 		@${INSTALL_PROGRAM} ${WRKSRC}/atop ${PREFIX}/bin
@@ -38,5 +40,6 @@ do-install:
 		${INSTALL_MAN} ${WRKSRC}/AUTHOR ${WRKSRC}/ChangeLog \
 		${WRKSRC}/README ${DOCSDIR}
 .endif
+		@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
