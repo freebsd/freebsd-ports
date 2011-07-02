@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	corsixth
-DISTVERSION=	0.Beta6
+DISTVERSION=	0.Beta7
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
-PROJECTHOST=	corsix-th
 DISTNAME=	CorsixTH-${DISTVERSION:S/0.//}-Source
 
 MAINTAINER=	mad@madpilot.net
 COMMENT=	Open source clone of Theme Hospital
 
 LICENSE=	MIT
+
+PROJECTHOST=	corsix-th
 
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 

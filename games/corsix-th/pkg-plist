@@ -89,6 +89,7 @@ bin/CorsixTH
 %%DATADIR%%/Lua/dialogs/fax.lua
 %%DATADIR%%/Lua/dialogs/fullscreen.lua
 %%DATADIR%%/Lua/dialogs/furnish_corridor.lua
+%%DATADIR%%/Lua/dialogs/graphs.lua
 %%DATADIR%%/Lua/dialogs/hire_staff.lua
 %%DATADIR%%/Lua/dialogs/hospital_policy.lua
 %%DATADIR%%/Lua/dialogs/information.lua
@@ -119,6 +120,7 @@ bin/CorsixTH
 %%DATADIR%%/Lua/dialogs/town_map.lua
 %%DATADIR%%/Lua/dialogs/tree_ctrl.lua
 %%DATADIR%%/Lua/dialogs/watch.lua
+%%DATADIR%%/Lua/diseases/alien_dna.lua
 %%DATADIR%%/Lua/diseases/baldness.lua
 %%DATADIR%%/Lua/diseases/bloaty_head.lua
 %%DATADIR%%/Lua/diseases/broken_heart.lua
@@ -176,11 +178,13 @@ bin/CorsixTH
 %%DATADIR%%/Lua/humanoid_actions/seek_toilets.lua
 %%DATADIR%%/Lua/humanoid_actions/spawn.lua
 %%DATADIR%%/Lua/humanoid_actions/staff_reception.lua
+%%DATADIR%%/Lua/humanoid_actions/sweep_floor.lua
 %%DATADIR%%/Lua/humanoid_actions/use_object.lua
 %%DATADIR%%/Lua/humanoid_actions/use_screen.lua
 %%DATADIR%%/Lua/humanoid_actions/use_staffroom.lua
 %%DATADIR%%/Lua/humanoid_actions/walk.lua
 %%DATADIR%%/Lua/key_mapping.lua
+%%DATADIR%%/Lua/languages/czech.lua
 %%DATADIR%%/Lua/languages/danish.lua
 %%DATADIR%%/Lua/languages/developer.lua
 %%DATADIR%%/Lua/languages/dutch.lua
@@ -226,6 +230,7 @@ bin/CorsixTH
 %%DATADIR%%/Lua/objects/machines/blood_machine.lua
 %%DATADIR%%/Lua/objects/machines/cardio.lua
 %%DATADIR%%/Lua/objects/machines/cast_remover.lua
+%%DATADIR%%/Lua/objects/machines/dna_fixer.lua
 %%DATADIR%%/Lua/objects/machines/electrolyser.lua
 %%DATADIR%%/Lua/objects/machines/hair_restorer.lua
 %%DATADIR%%/Lua/objects/machines/inflator.lua
@@ -262,6 +267,7 @@ bin/CorsixTH
 %%DATADIR%%/Lua/rooms/blood_machine_room.lua
 %%DATADIR%%/Lua/rooms/cardiogram.lua
 %%DATADIR%%/Lua/rooms/decontamination.lua
+%%DATADIR%%/Lua/rooms/dna_fixer.lua
 %%DATADIR%%/Lua/rooms/electrolysis.lua
 %%DATADIR%%/Lua/rooms/fracture_clinic.lua
 %%DATADIR%%/Lua/rooms/general_diag.lua
