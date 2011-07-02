@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sawfish
-PORTVERSION=	1.8.0
+PORTVERSION=	1.8.1
 PORTEPOCH=	2
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://download.tuxfamily.org/sawfish/
@@ -18,7 +18,7 @@ COMMENT=	Lisp configurable window manager
 
 BUILD_DEPENDS=	rep-gtk2>=0.90:${PORTSDIR}/x11-toolkits/rep-gtk2
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
-		rep.15:${PORTSDIR}/lang/librep
+		rep.16:${PORTSDIR}/lang/librep
 RUN_DEPENDS=	rep-gtk2>=0.90:${PORTSDIR}/x11-toolkits/rep-gtk2
 
 USE_XZ=		yes
@@ -30,10 +30,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--localstatedir=${PREFIX}/share \
 		--datadir=${PREFIX}/share
-CONFIGURE_TARGET=	${GNUHOST}
 INSTALLS_ICONS=	yes
-
-PLIST_SUB=	GNUHOST="${GNUHOST}" VERSION="${PORTVERSION}"
 
 MANCOMPRESSED=	yes
 MAN1=		sawfish.1 sawfish-client.1 sawfish-config.1
@@ -41,7 +38,6 @@ INFO=		sawfish
 
 CPPFLAGS=	-I${LOCALBASE}/include
 LDFLAGS=	-L${LOCALBASE}/lib
-GNUHOST=	${ARCH}-pc-freebsd${OSREL:C/\..*//}
 
 post-patch:
 	@${REINPLACE_CMD} -e \

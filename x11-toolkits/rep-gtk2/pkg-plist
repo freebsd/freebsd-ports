@@ -1,11 +1,8 @@
 include/rep-gtk/rep-gtk.h
-lib/rep/%%GNUHOST%%/gui/gtk-2/gtk.a
-lib/rep/%%GNUHOST%%/gui/gtk-2/gtk.la
-lib/rep/%%GNUHOST%%/gui/gtk-2/gtk.so
-lib/rep/%%GNUHOST%%/gui/gtk-2/types.a
-lib/rep/%%GNUHOST%%/gui/gtk-2/types.la
-lib/rep/%%GNUHOST%%/gui/gtk-2/types.so
+lib/rep/gui/gtk-2/gtk.a
+lib/rep/gui/gtk-2/gtk.la
+lib/rep/gui/gtk-2/gtk.so
 libdata/pkgconfig/rep-gtk.pc
-@dirrm lib/rep/%%GNUHOST%%/gui/gtk-2
-@dirrm lib/rep/%%GNUHOST%%/gui
+@dirrm lib/rep/gui/gtk-2
+@dirrm lib/rep/gui
 @dirrm include/rep-gtk
