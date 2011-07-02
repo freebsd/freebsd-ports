@@ -8,15 +8,12 @@
 PORTNAME=	luna
 PORTVERSION=	1.9
 CATEGORIES=	astro games
-MASTER_SITES=	ftp://ftp.vector.co.jp/pack/dos/edu/science/space/
+MASTER_SITES=	http://ftp.vector.co.jp/pack/dos/edu/science/space/
 DISTNAME=	luna19s
 EXTRACT_SUFX=	.lzh
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Display the moon's phase
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-08-01
 
 EXTRACT_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
