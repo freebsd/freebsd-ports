@@ -42,6 +42,7 @@
     SUBDIR += asusoled
     SUBDIR += ataidle
     SUBDIR += atitvout
+    SUBDIR += atop
     SUBDIR += automounter
     SUBDIR += autopsy
     SUBDIR += avfs
