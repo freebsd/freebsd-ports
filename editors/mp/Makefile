@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mp
-PORTVERSION=	5.1.4
+PORTVERSION=	5.2.0
 CATEGORIES=	editors
 MASTER_SITES=	http://triptico.com/download/
 
@@ -68,8 +68,9 @@ CONFIGURE_ARGS+=	--with-pcre
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|<ncursesw/|<|g ; \
-		s|-I/usr/local/include||g ; \
-		s|-L/usr/local/lib||g' ${WRKSRC}/config.sh
+		 s|-I/usr/local/include||g ; \
+		 s|-L/usr/local/lib||g ; \
+		 s|-lX11||g' ${WRKSRC}/config.sh
 	@${REINPLACE_CMD} -e 's|<ncursesw/|<|g' ${WRKSRC}/mpv_curses.c
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' ${WRKSRC}/mpdm/config.sh
 	@${REINPLACE_CMD} -e 's|<malloc\.h>|<stdlib.h>|g' ${WRKSRC}/mpsl/mpsl_d.c
