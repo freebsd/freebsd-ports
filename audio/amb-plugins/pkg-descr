@@ -2,4 +2,4 @@ A set of ambisonics plugins, mainly to be used within Ardour.  Mono
 and stereo to B-format panning, horizontal rotator, square, hexagon
 and cube decoders.
 
-WWW:	http://www.kokkinizita.net/linuxaudio/ladspa/index.html
+WWW:	http://kokkinizita.linuxaudio.org/linuxaudio/ladspa/index.html
