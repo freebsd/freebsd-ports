@@ -9,7 +9,7 @@ PORTNAME=	lbreakout
 PORTVERSION=	010315
 PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	SF/lgames/${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	SF/lgames/${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A nice clone of classical Breakout game
