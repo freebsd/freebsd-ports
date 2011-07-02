@@ -56,7 +56,6 @@ share/applications/lgeneral.desktop
 %%DATADIR%%/themes/default/menu1_buttons.bmp
 %%DATADIR%%/themes/default/menu2_buttons.bmp
 %%DATADIR%%/themes/default/menu3_buttons.bmp
-%%DATADIR%%/themes/default/menu4_buttons.bmp
 %%DATADIR%%/themes/default/module_buttons.bmp
 %%DATADIR%%/themes/default/scen_dlg_buttons.bmp
 %%DATADIR%%/themes/default/scroll_buttons.bmp
