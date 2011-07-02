@@ -81,7 +81,7 @@ CONFIGURE_ARGS+=	--audio-card-list=ac97,es1370,sb16,cs4231a,adlib,gus
 CONFIGURE_ARGS+=	--disable-bsd-user
 
 .if defined(WITH_SAMBA)
-RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba34
+RUN_DEPENDS+=	${LOCALBASE}/sbin/smbd:${PORTSDIR}/net/samba35
 .endif
 
 .if defined(WITH_KQEMU)
