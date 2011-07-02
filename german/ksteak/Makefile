@@ -17,6 +17,9 @@ COMMENT=	KDE frontend for steak, an english - german dictionary
 
 RUN_DEPENDS=	steak:${PORTSDIR}/german/steak
 
+DEPRECATED=	Development has ceased.
+EXPIRATION_DATE=	2011-09-01
+
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
 USE_GMAKE=	yes
