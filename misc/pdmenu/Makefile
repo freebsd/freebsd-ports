@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdmenu
-PORTVERSION=	1.2.99
+PORTVERSION=	1.3.0
 CATEGORIES=	misc
 MASTER_SITES=	DEBIAN
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -33,11 +33,17 @@ MAN1=		pdmenu.1
 MAN5=		pdmenurc.5
 PLIST_FILES=	bin/pdmenu \
 		etc/pdmenurc \
+		share/locale/da/LC_MESSAGES/pdmenu.mo \
 		share/locale/es/LC_MESSAGES/pdmenu.mo \
 		share/locale/fr/LC_MESSAGES/pdmenu.mo \
+		share/locale/ru/LC_MESSAGES/pdmenu.mo \
 		%%DATADIR%%/editdir.pl \
 		%%DATADIR%%/showdir.pl
 PLIST_DIRS=	%%DATADIR%%
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^LANGS/s|=.*$$|= da es fr ru|g' ${WRKSRC}/Makefile
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/pdmenu ${PREFIX}/bin
@@ -46,7 +52,7 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/pdmenurc.man ${MAN5PREFIX}/man/man5/pdmenurc.5
 	@${MKDIR} ${DATADIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.pl ${DATADIR}
-.for lang in es fr
+.for lang in da es fr ru
 	@${MKDIR} ${PREFIX}/share/locale/${lang}/LC_MESSAGES
 	${INSTALL_DATA} ${WRKSRC}/po/${lang}.mo \
 		${PREFIX}/share/locale/${lang}/LC_MESSAGES/pdmenu.mo
