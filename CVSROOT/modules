@@ -149,6 +149,7 @@ ports_x11_wm                    ports/x11-wm
 44bsd-csh                       ports/shells/44bsd-csh
 44bsd-hunt                      ports/games/44bsd-hunt
 44bsd-more                      ports/sysutils/44bsd-more
+44bsd-rdist                     ports/net/44bsd-rdist
 4stattack                       ports/games/4stattack
 4va                             ports/graphics/4va
 54321                           ports/games/54321
@@ -5939,6 +5940,7 @@ infobus                         ports/java/infobus
 inform                          ports/games/inform
 inform7                         ports/games/inform7
 inilib                          ports/devel/inilib
+iniparser                       ports/devel/iniparser
 initutil                        ports/devel/initutil
 inkscape                        ports/graphics/inkscape
 inn                             ports/news/inn
@@ -10436,6 +10438,7 @@ okle                            ports/multimedia/okle
 oldrunner                       ports/games/oldrunner
 oleo                            ports/math/oleo
 olsrd                           ports/net/olsrd
+olvwm                           ports/x11-wm/olvwm
 omake                           ports/devel/omake
 omcmd                           ports/net/omcmd
 omega                           ports/games/omega
@@ -24169,6 +24172,7 @@ slige                           ports/games/slige
 slim                            ports/x11/slim
 slim-themes                     ports/x11-themes/slim-themes
 slime                           ports/editors/slime
+slingshot                       ports/x11-toolkits/slingshot
 slirc                           ports/irc/slirc
 slirp                           ports/net/slirp
 slisp                           ports/lang/slisp
@@ -25382,6 +25386,7 @@ triangle                        ports/math/triangle
 tribler                         ports/net-p2p/tribler
 trickle                         ports/net/trickle
 trickyirc                       ports/irc/trickyirc
+tridiavnc                       ports/net/tridiavnc
 trigger                         ports/games/trigger
 trimines                        ports/games/trimines
 trinokiller                     ports/security/trinokiller
