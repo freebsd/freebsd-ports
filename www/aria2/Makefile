@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	aria2
-PORTVERSION=	1.11.2
+PORTVERSION=	1.12.0
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
@@ -42,12 +42,16 @@ PLIST_FILES=	bin/aria2c \
 		share/doc/aria2/bash_completion/aria2c \
 		share/doc/aria2/xmlrpc/aria2mon \
 		share/doc/aria2/xmlrpc/aria2rpc \
-		share/doc/aria2/xmlrpc/README.txt
+		share/doc/aria2/xmlrpc/README.txt \
+		share/doc/aria2/ru/aria2c.1.html \
+		share/doc/aria2/ru/aria2c.1.asciidoc
 
 PLIST_DIRS=	share/doc/aria2/bash_completion \
 		share/doc/aria2/xmlrpc \
+		share/doc/aria2/ru \
 		share/doc/aria2
 
+MANLANG=	"" ru
 MAN1=		aria2c.1
 
 OPTIONS=	SQLITE "Support for Firefox cookies" Off
@@ -59,10 +63,6 @@ CONFIGURE_ARGS+=	--with-sqlite3
 LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
 .else
 CONFIGURE_ARGS+=	--without-sqlite3
-.endif
-
-.if ${OSVERSION} < 700000
-BROKEN=		Does not compile on FreeBSD 6.X
 .endif
 
 .include <bsd.port.post.mk>
