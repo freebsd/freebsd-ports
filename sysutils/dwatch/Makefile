@@ -7,19 +7,28 @@
 
 PORTNAME=	dwatch
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://siag.nu/pub/dwatch/ \
-		http://siag.nu/pub/dwatch/
+MASTER_SITES=	http://siag.nu/pub/dwatch/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Dwatch - A Daemon Watcher
+COMMENT=	A Daemon Watcher
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 MAN1=		dwatch.1
+PLIST_FILES=	bin/dwatch etc/dwatch.conf-dist
 
-pre-install:
+CFLAGS+=	-DETCDIR="\"${PREFIX}/etc\"" \
+		-DPS="\"/bin/ps -ax\""
+
+do-build:
+	(cd ${BUILD_WRKSRC}; ${CC} ${CFLAGS} -o dwatch dwatch.c)
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/dwatch ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/dwatch.1 ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/dwatch.conf ${PREFIX}/etc/dwatch.conf-dist
-
-post-install:
-	${STRIP_CMD} ${PREFIX}/bin/dwatch
 
 .include <bsd.port.mk>
