@@ -8,12 +8,14 @@
 PORTNAME=	hffzip
 PORTVERSION=	1.01
 CATEGORIES=	archivers
-MASTER_SITES=	http://retis.sssup.it/~scordino/projects/ \
-		http://ngsoftwareltd.com/freebsd/distfiles/
+MASTER_SITES=	http://retis.sssup.it/~scordino/code/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File compressor based on Huffman coding
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
