@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ocre
-PORTVERSION=	0.034
-PORTREVISION=	3
+PORTVERSION=	0.037
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://lem.eui.upm.es/pub/ocre/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/}
@@ -20,6 +19,8 @@ LIB_DEPENDS=	aspell.16:${PORTSDIR}/textproc/aspell
 RUN_DEPENDS=	display:${PORTSDIR}/graphics/ImageMagick \
 		gnuplot:${PORTSDIR}/math/gnuplot \
 		ispell:${PORTSDIR}/textproc/ispell
+
+LICENSE=	GPLv2
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/${PORTNAME}
 
