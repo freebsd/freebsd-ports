@@ -43,9 +43,30 @@
 %%PYTHON_SITELIBDIR%%/Pyro4/util.py
 %%PYTHON_SITELIBDIR%%/Pyro4/util.pyc
 %%PYTHON_SITELIBDIR%%/Pyro4/util.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/Pyro4/socketserver
-@dirrm %%PYTHON_SITELIBDIR%%/Pyro4/test
-@dirrm %%PYTHON_SITELIBDIR%%/Pyro4/
+%%PORTDOCS%%%%DOCSDIR%%/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/make.bat
+%%PORTDOCS%%%%DOCSDIR%%/source/Introduction.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/Tutorial.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/alternative.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/changelog.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/conf.py
+%%PORTDOCS%%%%DOCSDIR%%/source/config.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/index.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/licensedisclaimer.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/other.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/socketserver.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/upgrading.rst
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/async/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/async/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/async/client_batch.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/async/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/attributes/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/attributes/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/attributes/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/autoproxy/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/autoproxy/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/autoproxy/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/autoproxy/thingy.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/autoreconnect/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/autoreconnect/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/autoreconnect/clientNS.py
@@ -55,8 +76,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/banks/banks.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/banks/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/banks/server.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/batchedcalls/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/batchedcalls/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/batchedcalls/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/batchedcalls/server.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/benchmark/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/benchmark/bench.py
@@ -82,8 +103,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/distributed-computing/dispatcher.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/distributed-computing/worker.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/distributed-computing/workitem.py
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/echoserver/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/echoserver/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/echoserver/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eventloop/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eventloop/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eventloop/server.py
@@ -117,30 +138,69 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shoppingcart/clients.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shoppingcart/shoppingcart.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/shoppingcart/shopserver.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stdinstdout/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stdinstdout/inputoutput.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stdinstdout/program.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stockquotes/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stockquotes/phase1/aggregator.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stockquotes/phase1/main.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stockquotes/phase1/stockmarket.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stockquotes/phase1/viewer.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stockquotes/phase2/aggregator.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stockquotes/phase2/main.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stockquotes/phase2/stockmarket.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stockquotes/phase2/viewer.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stockquotes/phase3/aggregator.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stockquotes/phase3/stockmarket.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/stockquotes/phase3/viewer.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/timeout/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/timeout/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/timeout/server.py
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/autoreconnect
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/banks
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/batchedcalls
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/benchmark
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/callback
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/chatbox
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/circular
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/distributed-computing
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/echoserver
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/eventloop
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/exceptions
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hugetransfer
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nameserverstress
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nonameserver
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oneway
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/proxysharing
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/robots
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/servertypes
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/shoppingcart
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/warehouse/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/warehouse/phase1/person.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/warehouse/phase1/visit.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/warehouse/phase1/warehouse.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/warehouse/phase2/person.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/warehouse/phase2/visit.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/warehouse/phase2/warehouse.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/warehouse/phase3/person.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/warehouse/phase3/visit.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/warehouse/phase3/warehouse.py
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/warehouse/phase3
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/warehouse/phase2
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/warehouse/phase1
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/warehouse
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/timeout
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stockquotes/phase3
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stockquotes/phase2
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stockquotes/phase1
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stockquotes
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stdinstdout
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/shoppingcart
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/servertypes
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/robots
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/proxysharing
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/oneway
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nonameserver
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/nameserverstress
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/hugetransfer
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/exceptions
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/eventloop
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/echoserver
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/distributed-computing
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/circular
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/chatbox
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/callback
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/benchmark
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/batchedcalls
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/banks
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/autoreconnect
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/autoproxy
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/attributes
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/async
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%%%DOCSDIR%%/index.html
-%%PORTDOCS%%%%DOCSDIR%%/socketserver_api.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/source
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/Pyro4/test
+@dirrm %%PYTHON_SITELIBDIR%%/Pyro4/socketserver
+@dirrm %%PYTHON_SITELIBDIR%%/Pyro4
