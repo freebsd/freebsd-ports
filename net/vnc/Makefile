@@ -7,7 +7,7 @@
 
 PORTNAME=	vnc
 PORTVERSION=	4.1.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.realvnc.com/:vnc
 DISTNAME=	vnc-4_1_3-unixsrc
@@ -18,6 +18,7 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Display X and Win32 desktops on remote X/Win32/Java displays
 
 RUN_DEPENDS=	xorg-fonts>=7.2:${PORTSDIR}/x11-fonts/xorg-fonts \
+		showrgb:${PORTSDIR}/x11/rgb \
 		xauth:${PORTSDIR}/x11/xauth
 
 LICENSE=	GPLv2
