@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Automatically retrieving extra information for songs
 
+DEPRECATED=	Upcoming ruby-gnome removes dependencies
+EXPIRATION_DATE=	2011-08-02
+
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/mp3info.rb:${PORTSDIR}/audio/ruby-mp3info \
 		${RUBY_SITEARCHLIBDIR}/gnome2.so:${PORTSDIR}/x11/ruby-gnome2 \
 		${RUBY_SITEARCHLIBDIR}/libglade2.so:${PORTSDIR}/devel/ruby-libglade2

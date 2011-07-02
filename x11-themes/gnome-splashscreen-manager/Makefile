@@ -15,6 +15,9 @@ DISTNAME=	gnome-art-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome splash screen manager
 
+DEPRECATED=	Upcoming ruby-gnome removes dependencies
+EXPIRATION_DATE=	2011-08-02
+
 BUILD_DEPENDS=	gnome-session:${PORTSDIR}/x11/gnome-session \
 		ruby-glade-create-template:${PORTSDIR}/devel/ruby-libglade2 \
 		${RUBY_SITEARCHLIBDIR}/gnome2.so:${PORTSDIR}/x11/ruby-gnome2 \

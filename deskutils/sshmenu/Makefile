@@ -13,6 +13,9 @@ MASTER_SITES=	SF/${PORTNAME}
 MAINTAINER=	swills@FreeBSD.org
 COMMENT=	GNOME panel applet for managing ssh connections
 
+DEPRECATED=	Upcoming ruby-gnome removes dependencies
+EXPIRATION_DATE=	2011-08-02
+
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/panelapplet2.so:${PORTSDIR}/x11-toolkits/ruby-panelapplet \
 		${RUBY_SITEARCHLIBDIR}/gconf2.so:${PORTSDIR}/devel/ruby-gconf2 \
 		${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2

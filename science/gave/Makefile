@@ -15,6 +15,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	murashin@gfd-dennou.org
 COMMENT=	A gtk+ based grid data analyser and viewer written in Ruby
 
+DEPRECATED=	Upcoming ruby-gnome removes dependencies
+EXPIRATION_DATE=	2011-08-02
+
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/narray.so:${PORTSDIR}/math/ruby-narray \
 		${RUBY_SITEARCHLIBDIR}/numru/dcl_raw.so:${PORTSDIR}/science/ruby-dcl \
 		${RUBY_SITEARCHLIBDIR}/numru/netcdfraw.so:${PORTSDIR}/math/ruby-netcdf \

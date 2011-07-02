@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.miketech.net/gnome-art/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Frontend for art.gnome.org
 
+DEPRECATED=	Upcoming ruby-gnome removes dependencies
+EXPIRATION_DATE=	2011-08-02
+
 RUN_DEPENDS=	gnome-splashscreen-manager:${PORTSDIR}/x11-themes/gnome-splashscreen-manager
 
 WRKSRC=		${WRKDIR}/${PORTNAME}/${PORTNAME}
