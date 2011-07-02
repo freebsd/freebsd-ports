@@ -7,9 +7,9 @@
 
 PORTNAME=	xdeblock
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.vector.co.jp/pack/unix/game/action/block/
+MASTER_SITES=	http://ftp.vector.co.jp/pack/unix/game/action/block/
 DISTFILES=	${PORTNAME}.tgz
 
 MAINTAINER=	ports@FreeBSD.org

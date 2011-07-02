@@ -1,5 +1,5 @@
-*** Imakefile.orig	Sat Nov 16 13:06:36 1996
---- Imakefile	Thu Jan 15 00:00:00 2000
+*** Imakefile.orig	1996-11-16 13:06:36.000000000 +0900
+--- Imakefile	2011-04-15 01:51:45.000000000 +0900
 ***************
 *** 10,16 ****
   XCOMM    Set xdeblock working directory.
@@ -35,4 +35,23 @@
 !     XPMLIB_DIR 			= -L$(USRLIBDIR)
   
   XCOMM =====================================================================
+  
+***************
+*** 46,53 ****
+  
+  PROGRAMS = xdeblo
+  
+! CFLAGS = $(CDEBUGFLAGS) $(CCOPTIONS) $(THREADS_CFLAGS) $(ALLDEFINES)\
+!          $(XPM_INC) $(DEBUG_D) $(ALLINCLUDES)
+  
+  all:: $(PROGRAMS)
+  
+--- 46,53 ----
+  
+  PROGRAMS = xdeblo
+  
+! CFLAGS += $(CDEBUGFLAGS) $(CCOPTIONS) $(THREADS_CFLAGS) $(ALLDEFINES)\
+!           $(XPM_INC) $(DEBUG_D) $(ALLINCLUDES)
+  
+  all:: $(PROGRAMS)
   
