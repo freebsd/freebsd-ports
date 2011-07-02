@@ -2246,3 +2246,6 @@ net/rqm||2011-07-01|The mbone is no more
 net/sdr||2011-07-01|The mbone is no more
 net/udpcast||2011-07-01|The mbone is no more
 net/wb||2011-07-01|The mbone is no more
+math/femlab||2011-07-02|Has expired: No more distfile, looks like abandonware
+japanese/wikicker||2011-07-02|Has expired: Looks like an abandonware
+emulators/vmware3||2011-07-02|Has expired: No more distfiles available. emulators/virtualbox-ose can be used as a replacement

@@ -370,7 +370,6 @@
     SUBDIR += web1913-fpw
     SUBDIR += webalizer
     SUBDIR += weblint97
-    SUBDIR += wikicker
     SUBDIR += wnn7egg
     SUBDIR += wordnet-fpw
     SUBDIR += wwasw-fpw
