@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	fxscintilla
-PORTVERSION=	2.11.0
-PORTREVISION=	2
+PORTVERSION=	2.22.0
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Fox toolkit reimplementation of Scintilla editing widget
 
-LIB_DEPENDS+=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16
+LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16
 
 USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
