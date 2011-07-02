@@ -21,7 +21,7 @@ USE_MYSQL=	yes
 USE_APACHE=	13
 AP_GENPLIST=	yes
 PORTDOCS=	README USAGE
-PLIST_FILES+=	%%APACHEMODDIR%%/mod_auth_mysql.so 
+PLIST_FILES+=	%%APACHEMODDIR%%/mod_auth_mysql.so
 
 post-patch:
 	${REINPLACE_CMD} -e 's,/usr,${LOCALBASE},g' -e 's,apxs,${APXS},' ${WRKSRC}/Makefile
