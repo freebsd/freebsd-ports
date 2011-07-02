@@ -18,6 +18,9 @@ COMMENT=	An english <-> german dictionary under the GPL
 
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 
+DEPRECATED=	Development has ceased.
+EXPIRATION_DATE=	2011-09-01
+
 USE_XORG=	xt
 MAKE_JOBS_UNSAFE=	yes
 
