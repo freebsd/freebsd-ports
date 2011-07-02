@@ -6,25 +6,40 @@
 #
 
 PORTNAME=	hinversi
-PORTVERSION=	0.8.1
-PORTREVISION=	2
+PORTVERSION=	0.8.2
 CATEGORIES=	games
-MASTER_SITES=	http://asturio.gmxhome.de/ CENKES
+MASTER_SITES=	SF/${PORTNAME}/latest
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reversi/Othello clone
 
-USE_GETTEXT=	yes
+OPTIONS=	NLS "Native Language Support via gettext utilities" on
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
+USE_GNOME=	gnomehack
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-libintl-prefix=${LOCALBASE} \
-		--disable-static
-MAN1=	hinversi-cli.1
+
+MAN1=		hinversi-cli.1
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITHOUT_NLS)
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.else
+USE_GETTEXT=	yes
+CONFIGURE_ARGS+=--with-libintl-prefix=${LOCALBASE}
+PLIST_SUB+=	NLS=""
+.endif
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^mkdir_p/s|=.*|=$$(mkinstalldirs)|'\
-		${WRKSRC}/po/Makefile.in.in
-	@${REINPLACE_CMD} -e '/^pkgconfigdir/s|=.*|=${PREFIX}/libdata/pkgconfig|'\
-		${WRKSRC}/lib/Makefile.in
+.for file in cgi/Makefile.in human-cli/Makefile.in lib/Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/AM_CFLAGS/s|-O3|| ; \
+		 /_la_LIBADD/s|=$$|= $$(LTLIBINTL)|' ${WRKSRC}/${file}
+.endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
