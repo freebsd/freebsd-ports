@@ -3,7 +3,8 @@ include/simage.h
 lib/libsimage.a
 lib/libsimage.la
 lib/libsimage.so
-lib/libsimage.so.26
+lib/libsimage.so.27
+libdata/pkgconfig/simage.pc
 share/Coin/conf/simage-default.cfg
 share/aclocal/simage.m4
 @dirrm share/Coin/conf
