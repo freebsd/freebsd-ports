@@ -65,7 +65,6 @@ bin/NaturalDocs
 %%SITE_PERL%%/NaturalDocs/Version.pm
 %%PORTDOCS%%%%DOCSDIR%%/customizinglanguages.html
 %%PORTDOCS%%%%DOCSDIR%%/customizingtopics.html
-%%PORTDOCS%%%%DOCSDIR%%/documenting/XGen.pl
 %%PORTDOCS%%%%DOCSDIR%%/documenting/reference.html
 %%PORTDOCS%%%%DOCSDIR%%/documenting/walkthrough.html
 %%PORTDOCS%%%%DOCSDIR%%/documenting.html
@@ -75,8 +74,6 @@ bin/NaturalDocs
 %%PORTDOCS%%%%DOCSDIR%%/example/Small.css
 %%PORTDOCS%%%%DOCSDIR%%/example/showstyle.html
 %%PORTDOCS%%%%DOCSDIR%%/examples.css
-%%PORTDOCS%%%%DOCSDIR%%/images/fadetowhite.gif
-%%PORTDOCS%%%%DOCSDIR%%/images/fadetowhite.png
 %%PORTDOCS%%%%DOCSDIR%%/images/header/background.png
 %%PORTDOCS%%%%DOCSDIR%%/images/header/leftside.png
 %%PORTDOCS%%%%DOCSDIR%%/images/header/logo.png
@@ -85,10 +82,7 @@ bin/NaturalDocs
 %%PORTDOCS%%%%DOCSDIR%%/images/header/overleftmargin.png
 %%PORTDOCS%%%%DOCSDIR%%/images/header/overmenu.png
 %%PORTDOCS%%%%DOCSDIR%%/images/header/overmenubg.png
-%%PORTDOCS%%%%DOCSDIR%%/images/header/paypal.png
 %%PORTDOCS%%%%DOCSDIR%%/images/header/rightside.png
-%%PORTDOCS%%%%DOCSDIR%%/images/languages.png
-%%PORTDOCS%%%%DOCSDIR%%/images/logo.gif
 %%PORTDOCS%%%%DOCSDIR%%/images/menu/about.png
 %%PORTDOCS%%%%DOCSDIR%%/images/menu/background.png
 %%PORTDOCS%%%%DOCSDIR%%/images/menu/bottomleft.png
@@ -96,11 +90,9 @@ bin/NaturalDocs
 %%PORTDOCS%%%%DOCSDIR%%/images/menu/community.png
 %%PORTDOCS%%%%DOCSDIR%%/images/menu/customizing.png
 %%PORTDOCS%%%%DOCSDIR%%/images/menu/using.png
-%%PORTDOCS%%%%DOCSDIR%%/images/versionbubble.png
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/javascript/BrowserStyles.js
 %%PORTDOCS%%%%DOCSDIR%%/javascript/PNGHandling.js
-%%PORTDOCS%%%%DOCSDIR%%/javascript/awstats_misc_tracker.js
 %%PORTDOCS%%%%DOCSDIR%%/keywords.html
 %%PORTDOCS%%%%DOCSDIR%%/languages.html
 %%PORTDOCS%%%%DOCSDIR%%/menu.html
