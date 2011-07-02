@@ -6,13 +6,14 @@
 #
 
 PORTNAME=		jline
-PORTVERSION=		0.9.91
-PORTREVISION=	1
+PORTVERSION=		0.9.94
 CATEGORIES=		devel java
 MASTER_SITES=		SF
 
 MAINTAINER=	mkamm@gmx.net
 COMMENT=	JLine is a Java library for handling console input
+
+LICENSE=	BSD
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_JAVA=	yes
