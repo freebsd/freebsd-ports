@@ -7,6 +7,7 @@
 
 PORTNAME=	widelands
 DISTVERSION=	build16
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://launchpadlibrarian.net/69520494/
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
