@@ -8,6 +8,7 @@
 
 PORTNAME=	nanoblogger
 PORTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://nanoblogger.sourceforge.net/downloads/
 
@@ -25,6 +26,8 @@ post-patch:
 	@${REINPLACE_CMD} -e "s,%%LOCALBASE%%,${LOCALBASE},g" ${WRKSRC}/nb
 	@${REINPLACE_CMD} -e "s,%%DATADIR%%,${DATADIR},g" ${WRKSRC}/nb
 	@${REINPLACE_CMD} -e "s,%%DOCSDIR%%,${DOCSDIR},g" ${WRKSRC}/nb
+	@${RM} ${WRKSRC}/plugins/page/format/*.orig
+	@${RM} ${WRKSRC}/plugins/entry/format/*.orig
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/nb ${PREFIX}/bin
