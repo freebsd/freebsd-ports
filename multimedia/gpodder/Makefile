@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpodder
-PORTVERSION=	2.14
+PORTVERSION=	2.15
 CATEGORIES=	multimedia
 MASTER_SITES=	BERLIOS \
 		http://thp.io/2010/mygpoclient/:mygpoclient \
@@ -19,15 +19,15 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	A GTK2 podcast aggregrator written in Python
 
-RUN_DEPENDS=	py*-pysqlite>=2.3:${PORTSDIR}/databases/py-pysqlite23 \
-		py*-sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
-		py*-dbus>=0:${PORTSDIR}/devel/py-dbus \
-		py*-notify>=0:${PORTSDIR}/devel/py-notify \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pysqlite>=2.3:${PORTSDIR}/databases/py-pysqlite23 \
+		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}dbus>=0:${PORTSDIR}/devel/py-dbus \
+		${PYTHON_PKGNAMEPREFIX}notify>=0:${PORTSDIR}/devel/py-notify \
 		xdg-open:${PORTSDIR}/devel/xdg-utils \
 		wget:${PORTSDIR}/ftp/wget \
 		gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
-		py*-feedparser>=0:${PORTSDIR}/textproc/py-feedparser \
-		py*-simplejson>=0:${PORTSDIR}/devel/py-simplejson
+		${PYTHON_PKGNAMEPREFIX}feedparser>=0:${PORTSDIR}/textproc/py-feedparser \
+		${PYTHON_PKGNAMEPREFIX}simplejson>=0:${PORTSDIR}/devel/py-simplejson
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -54,19 +54,19 @@ MGC_WRKSRC=	${WRKDIR}/${MGC_DISTNAME}/mygpoclient
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_COVERART)
-RUN_DEPENDS+=	py*-imaging>=0:${PORTSDIR}/graphics/py-imaging
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging
 .endif
 
 .if defined(WITH_IPOD)
 LIB_DEPENDS+=	gpod.7:${PORTSDIR}/audio/libgpod
-RUN_DEPENDS+=	py*-mad>=0:${PORTSDIR}/audio/py-mad
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}mad>=0:${PORTSDIR}/audio/py-mad
 .if !exists(${PYTHON_SITELIBDIR}/gpod/__init__.py)
 IGNORE=		requires Python bindings for libgpod. Please uninstall libgpod and reinstall with Python support
 .endif
 .endif
 
 .if defined(WITH_MP3TAG)
-RUN_DEPENDS+=	py*-eyed3>=0:${PORTSDIR}/audio/py-eyed3
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}eyed3>=0:${PORTSDIR}/audio/py-eyed3
 .endif
 
 .if defined(WITH_OGG2MP3)
