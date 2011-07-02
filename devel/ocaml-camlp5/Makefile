@@ -7,16 +7,13 @@
 #
 
 PORTNAME=	camlp5
-PORTVERSION=	6.02.2.p${PATCHLEVEL}
+PORTVERSION=	6.02.3
 CATEGORIES=	devel
 MASTER_SITES=	http://cristal.inria.fr/~ddr/camlp5/distrib/src/ \
 		http://pauillac.inria.fr/~ddr/camlp5/distrib/src/
 PKGNAMEPREFIX=	ocaml-
-DISTNAME=	${PORTNAME}-${PORTVERSION:R}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	${UNIQUENAME}
-
-PATCH_SITES=	${MASTER_SITES}
 
 MAINTAINER=	umq@ueo.co.jp
 COMMENT=	A preprocessor-pretty-printer of OCaml
@@ -43,11 +40,6 @@ MLINKS=		camlp5.1 camlp5o.1 camlp5.1 camlp5o.opt.1 camlp5.1 camlp5r.1 \
 PORTDOCS=	CHANGES DEVEL ICHANGES INSTALL LICENSE MODE README UPGRADING
 
 .include <bsd.port.pre.mk>
-PATCHLEVEL=	3
-PATCHFILES!=	/usr/bin/jot -s " " -w \
-		patch-${PORTVERSION:R}-%d \
-		${PATCHLEVEL} 1 ${PATCHLEVEL}
-
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
