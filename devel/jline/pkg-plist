@@ -1,10 +1,9 @@
-%%JAVAJARDIR%%/jline-0.9.91.jar
+%%JAVAJARDIR%%/jline-0.9.94.jar
 %%JAVAJARDIR%%/jline.jar
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/allclasses-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/allclasses-noframe.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/constant-values.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/deprecated-list.html
-%%PORTDOCS%%%%DOCSDIR%%/apidocs/files
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/help-doc.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/index-all.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/index.html
@@ -71,6 +70,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/options
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/overview-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/package-list
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/packages
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/packages.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/resources/inherit.gif
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/src-html/jline/ANSIBuffer.ANSICodes.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/src-html/jline/ANSIBuffer.html
@@ -100,9 +101,9 @@
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/src-html/jline/UnixTerminal.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/src-html/jline/UnsupportedTerminal.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/src-html/jline/WindowsTerminal.html
+%%PORTDOCS%%%%DOCSDIR%%/apidocs/serialized-form.html
 %%PORTDOCS%%%%DOCSDIR%%/apidocs/stylesheet.css
 %%PORTDOCS%%%%DOCSDIR%%/examples/jline/example/Example.java
-%%PORTDOCS%%%%DOCSDIR%%/examples/jline/example/Example.java.rej
 %%PORTDOCS%%%%DOCSDIR%%/examples/jline/example/PasswordReader.java
 %%PORTDOCS%%%%DOCSDIR%%/examples/jline/example/english.gz
 %%PORTDOCS%%%%DOCSDIR%%/examples/JLineCompleter.py
