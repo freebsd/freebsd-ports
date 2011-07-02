@@ -16,6 +16,7 @@ DISTNAME=	Colorer-take5.beta2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A syntax highlighting and text parsing library
 
+BROKEN=		Does not build
 DEPRECATED=	Depends on deprecated Java 1.4
 EXPIRATION_DATE=2011-07-28
 
