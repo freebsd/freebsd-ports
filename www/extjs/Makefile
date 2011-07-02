@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	extjs
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2a
 CATEGORIES=	www
 MASTER_SITES=	http://extjs.cachefly.net/ \
 		http://mirror.joehorn.idv.tw/extjs/
@@ -15,10 +15,10 @@ DISTNAME=	ext-${PORTVERSION}-gpl
 MAINTAINER=	joehorn@gmail.com
 COMMENT=	A JavaScript platform for rapid development of cross-browser web apps
 
-WRKSRC=		${WRKDIR}/ext-${PORTVERSION}
-
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/license.txt
+
+WRKSRC=		${WRKDIR}/ext-${PORTVERSION}
 
 USE_ZIP=	yes
 NO_BUILD=	yes
@@ -27,9 +27,9 @@ OPTIONS=	DOC	"Install with documents" on \
 		EXAMPLE "Install with examples" on
 
 WWW_SUB=	"bootstrap.js build builds ext-all-debug-w-comments.js \
-		 ext-all-debug.js ext-all.js ext-debug.js ext.js index.html \
-		 jsbuilder license.txt locale overview pkgs release-notes.html \
-		 resources src welcome"
+		 ext-all-debug.js ext-all-dev.js ext-all.js ext-debug.js \
+		 ext-dev.js ext.js index.html jsbuilder license.txt locale \
+		 overview pkgs release-notes.html resources src welcome"
 
 .include <bsd.port.pre.mk>
 
