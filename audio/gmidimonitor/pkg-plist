@@ -1,3 +1,0 @@
-bin/gmidimonitor
-%%DATADIR%%/gmidimonitor.glade
-@dirrm %%DATADIR%%

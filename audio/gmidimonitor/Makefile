@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmidimonitor
-PORTVERSION=	3.4
-PORTREVISION=	3
+PORTVERSION=	3.6
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/gmidimonitor/
 
@@ -18,10 +17,26 @@ LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		lash.2:${PORTSDIR}/audio/lash
 
 USE_BZIP2=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--disable-alsamidi
-CONFIGURE_ENV=	"CFLAGS=${CFLAGS} -I${LOCALBASE}/include"
-USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
+MAKE_JOBS_SAFE=	yes
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+PLIST_FILES=	bin/gmidimonitor %%DATADIR%%/gmidimonitor.ui
+PLIST_DIRS=	%%DATADIR%%
+
+.if defined(MAKE_JOBS_NUMBER)
+MAKE_JOBS_ARGS=	-j${MAKE_JOBS_NUMBER}
+.endif
+
+do-configure:
+	@(cd ${WRKSRC} && ./waf configure --prefix=${PREFIX} --alsa=no)
+
+do-build:
+	@(cd ${WRKSRC} && ./waf ${MAKE_JOBS_ARGS})
+
+do-install:
+	@(cd ${WRKSRC} && ./waf install)
 
 .include <bsd.port.mk>
