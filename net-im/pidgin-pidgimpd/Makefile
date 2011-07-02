@@ -7,7 +7,7 @@
 
 PORTNAME=	pidgimpd
 PORTVERSION=	1.1.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net-im audio
 MASTER_SITES=	http://ayeon.org/projects/pidgimpd/
 PKGNAMEPREFIX=	pidgin-
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	pidgin-
 MAINTAINER=	hrkfdn@gmail.com
 COMMENT=	PidgiMPD is a Pidgin plugin for monitoring/controlling MPD
 
-LIB_DEPENDS=	purple.8:${PORTSDIR}/net-im/libpurple \
+LIB_DEPENDS=	purple.9${PORTSDIR}/net-im/libpurple \
 		mpd.3:${PORTSDIR}/audio/libmpd
 BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin

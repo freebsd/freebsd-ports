@@ -151,10 +151,10 @@ lib/purple-2/statenotify.so
 %%TCL:%%lib/purple-2/tcl.so
 %%DBUS%%lib/libpurple-client.la
 %%DBUS%%lib/libpurple-client.so
-%%DBUS%%lib/libpurple-client.so.8
+%%DBUS%%lib/libpurple-client.so.9
 lib/libpurple.la
 lib/libpurple.so
-lib/libpurple.so.8
+lib/libpurple.so.9
 libdata/pkgconfig/purple.pc
 share/aclocal/purple.m4
 share/locale/af/LC_MESSAGES/pidgin.mo
