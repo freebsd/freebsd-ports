@@ -8,15 +8,12 @@
 PORTNAME=	uudx
 PORTVERSION=	2.99
 CATEGORIES=	converters
-MASTER_SITES=	ftp://ftp.vector.co.jp/pack/dos/util/bin/conv/
+MASTER_SITES=	http://ftp.vector.co.jp/pack/dos/util/bin/conv/
 DISTNAME=	${PORTNAME}_${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.lzh
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extractor from uuencoded files
-
-DEPRECATE=	No more public distfiles
-EXPIRATION_DATE=	2011-08-01
 
 EXTRACT_DEPENDS=lha:${PORTSDIR}/archivers/lha
 BUILD_DEPENDS=	nkf:${PORTSDIR}/japanese/nkf
