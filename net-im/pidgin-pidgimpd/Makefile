@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	pidgin-
 MAINTAINER=	hrkfdn@gmail.com
 COMMENT=	PidgiMPD is a Pidgin plugin for monitoring/controlling MPD
 
-LIB_DEPENDS=	purple.9${PORTSDIR}/net-im/libpurple \
+LIB_DEPENDS=	purple.9:${PORTSDIR}/net-im/libpurple \
 		mpd.3:${PORTSDIR}/audio/libmpd
 BUILD_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin
