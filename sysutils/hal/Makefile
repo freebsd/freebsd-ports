@@ -8,7 +8,7 @@
 
 PORTNAME=	hal
 DISTVERSION=	0.5.14
-PORTREVISION=	15
+PORTREVISION=	16
 CATEGORIES=	sysutils
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 
