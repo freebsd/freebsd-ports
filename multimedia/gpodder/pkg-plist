@@ -21,8 +21,6 @@ bin/gpodder-backup
 %%PYTHON_SITELIBDIR%%/gpodder/gpodderosx.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/gpopymtp.py
 %%PYTHON_SITELIBDIR%%/gpodder/gpopymtp.pyc
-%%PYTHON_SITELIBDIR%%/gpodder/gstreamer.py
-%%PYTHON_SITELIBDIR%%/gpodder/gstreamer.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/gtkui/__init__.py
 %%PYTHON_SITELIBDIR%%/gpodder/gtkui/__init__.pyc
 %%PYTHON_SITELIBDIR%%/gpodder/gtkui/base.py
@@ -179,8 +177,6 @@ share/dbus-1/services/org.gpodder.service
 %%DATADIR%%/podcast-3.png
 %%DATADIR%%/podcast-4.png
 %%DATADIR%%/podcast-all.png
-%%DATADIR%%/video-locked.png
-%%DATADIR%%/video.png
 %%DATADIR%%/ui/desktop/gpodder.ui
 %%DATADIR%%/ui/desktop/gpodderaddpodcast.ui
 %%DATADIR%%/ui/desktop/gpodderchannel.ui
@@ -193,6 +189,8 @@ share/dbus-1/services/org.gpodder.service
 %%DATADIR%%/ui/desktop/gpoddershownotes.ui
 %%DATADIR%%/ui/desktop/gpoddersyncprogress.ui
 %%DATADIR%%/ui/gpodderwelcome.ui
+%%DATADIR%%/video-locked.png
+%%DATADIR%%/video.png
 share/icons/hicolor/16x16/apps/gpodder.png
 share/icons/hicolor/22x22/apps/gpodder.png
 share/icons/hicolor/24x24/apps/gpodder.png
@@ -220,15 +218,15 @@ share/locale/ru/LC_MESSAGES/gpodder.mo
 share/locale/sv/LC_MESSAGES/gpodder.mo
 share/locale/uk/LC_MESSAGES/gpodder.mo
 share/pixmaps/gpodder.png
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrm %%DATADIR%%/ui/desktop
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/mygpoclient
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder/gtkui/interface
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder/gtkui/desktop
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder/gtkui
 @dirrm %%PYTHON_SITELIBDIR%%/gpodder
-@dirrmtry share/applications
-@dirrmtry share/locale/kk/LC_MESSAGES
-@dirrmtry share/locale/kk
