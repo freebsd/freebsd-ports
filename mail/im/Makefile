@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	im
-PORTVERSION=	150
+PORTVERSION=	151
 CATEGORIES=	mail
-MASTER_SITES=	http://tats.haun.org/im/ \
-		${MASTER_SITE_PORTS_JP}
+MASTER_SITES=	http://tats.haun.org/im/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of user interfaces of Email and NetNews
 
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--libdir=${PREFIX}/etc \
-		--with-hostname=_domain_of_your_mail_address_
+CONFIGURE_ARGS=	--with-hostname=_domain_of_your_mail_address_
 MAKE_ARGS=	prefix=${PREFIX} imlibdir=${ETCDIR}
 
 # Use RPOP instead of APOP
