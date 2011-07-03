@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tagsoup
-PORTVERSION=	0.12
-PORTREVISION=	1
+PORTVERSION=	0.12.2
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,6 +15,7 @@ COMMENT=	A Haskell library for extracting information from HTML documents
 LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
+USE_CABAL=	text
 
 PORTDATA=		*
 INSTALL_PORTDATA=	cd ${WRKSRC} && \
