@@ -41,6 +41,8 @@ USE_RC_SUBR+=	pdns-recursor
 
 .if defined(WITH_SETUID)
 EXTRA_PATCHES+=	${PATCHDIR}/extrapatch-setuid
+USERS=		pdns_recursor
+GROUPS=		pdns
 .endif
 
 .if defined(WITH_LUA)
@@ -70,12 +72,6 @@ post-patch:
 		${WRKSRC}/Makefile
 	@${REINPLACE_CMD} -e 's;"/etc/powerdns/";"${PREFIX}/etc/pdns/";' \
 		${WRKSRC}/config.h
-
-.if defined(WITH_SETUID)
-pre-install:
-		@${ECHO} "==>  Creating custom user to run pdns_recursor..."
-		@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-.endif
 
 post-install:
 .if !exists(${PREFIX}/etc/pdns/recursor.conf)
