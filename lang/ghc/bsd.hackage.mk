@@ -102,6 +102,7 @@ MonadCatchIO-mtl_port=		devel/hs-MonadCatchIO-mtl
 mtl_port=			devel/hs-mtl
 mueval_port=			devel/hs-mueval		# executable
 mwc-random_port=		math/hs-mwc-random
+mysql_port=			databases/hs-mysql
 network_port=			net/hs-network
 ObjectName_port=		devel/hs-ObjectName
 oeis_port=			www/hs-oeis
