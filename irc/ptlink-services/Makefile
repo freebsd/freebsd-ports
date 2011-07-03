@@ -16,10 +16,16 @@ DISTNAME=	PTlinkIRC.${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PTlink IRC services
 
+DEPRECATED=	No upstream source, no distfile and no maintainer
+EXPIRATION_DATE=2011-09-03
+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_MYSQL=	yes
+
+USERS=		ircd
+GROUPS=		${USERS}
 
 USE_RC_SUBR=	ptlink-services.sh
 SUB_FILES=	pkg-message
@@ -30,7 +36,6 @@ CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR} --localstatedir=/var \
 		--with-pidfile=/var/run/ircsvs.pid
 
 post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CHOWN} -R ircd:ircd ${SYSCONFDIR}
 	@${CAT} ${PKGMESSAGE}
 
