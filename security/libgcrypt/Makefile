@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	libgcrypt
-PORTVERSION=	1.4.6
+PORTVERSION=	1.5.0
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -13,11 +13,12 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	umq@ueo.co.jp
 COMMENT=	General purpose crypto library based on code used in GnuPG
 
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
+LICENSE_FILE=	${WRKSRC}/COPYING ${WRKSRC}/COPYING.LIB
+
 LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error
 
-LICENSE=	GPLv2 LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING ${WRKSRC}/COPYING.LIB
-LICENSE_COMB=	multi
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 USE_CSTD=	gnu89
@@ -33,6 +34,10 @@ INFO=	gcrypt
 
 .if ${ARCH} == "powerpc"
 CONFIGURE_ARGS+=	--disable-asm
+.elif ${ARCH} == "i386"
+.if (${OSVERSION} < 900033)
+CONFIGURE_ARGS+=  --disable-aesni-support
+.endif
 .endif
 .if (${OSVERSION} < 700000)
 CONFIGURE_ARGS+=	--disable-padlock-support
