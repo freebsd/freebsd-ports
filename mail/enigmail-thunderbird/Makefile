@@ -5,18 +5,15 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	1.1.2
-
 COMMENT=	A GnuPG extension for the Thunderbird mail client
 
-EXTRACT_DEPENDS=autoconf-2.13:${PORTSDIR}/devel/autoconf213
+EXTRACT_DEPENDS=autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
+		yasm:${PORTSDIR}/devel/yasm
 
 MASTERDIR=	${.CURDIR}/../enigmail
 
 GECKO=		thunderbird
 GECKO_PORTDIR=	mail/${GECKO}
-GECKO_EXTDIR=	comm-1.9.2
-
-MAKE_JOBS_UNSAFE=	yes
+GECKO_EXTDIR=	comm-miramar
 
 .include "${MASTERDIR}/Makefile"

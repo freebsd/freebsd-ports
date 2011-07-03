@@ -5,15 +5,12 @@
 # $FreeBSD$
 #
 
-PORTVERSION=	0.96.0
-PORTREVISION=	2
-
 COMMENT=	A GnuPG extension for the Seamonkey mail client
 
 MASTERDIR=	${.CURDIR}/../enigmail
 
 GECKO=		seamonkey
 GECKO_PORTDIR=	www/${GECKO}
-GECKO_WRKSRC=	${WRKDIR}/../../../${GECKO_PORTDIR}/work/mozilla
+GECKO_EXTDIR=	comm-2.0
 
 .include "${MASTERDIR}/Makefile"

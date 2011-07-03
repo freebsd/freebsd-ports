@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	enigmail
-PORTVERSION?=	1.0.1
-PORTREVISION=	1
+PORTVERSION?=	1.2
+PORTREVISION?=	0
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.mozilla-enigmail.org/download/source/
 PKGNAMEPREFIX=	${GECKO}-
@@ -23,6 +23,10 @@ EXTRACT_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/${GECKO_PORTDIR}:configure \
 BUILD_DEPENDS=	${GECKO:C/[0-9]//}:${PORTSDIR}/${GECKO_PORTDIR}
 RUN_DEPENDS=	${GECKO:C/[0-9]//}:${PORTSDIR}/${GECKO_PORTDIR} \
 		gpg:${PORTSDIR}/security/gnupg
+
+.if ${PORTVERSION} == "1.2"
+IGNORE=		doesn't currently build
+.endif
 
 .if !defined(GECKO)
 GECKO=		libxul
@@ -48,12 +52,6 @@ XPI_FILE=	${DISTNAME}-${GECKO}-freebsd${OSVERSION:C/([0-9]).+/\1/}-${ARCH}.xpi
 PLIST_FILES=	%%DATADIR%%/${XPI_FILE}
 PLIST_DIRS=	%%DATADIR%%
 
-.if ${ARCH} == "sparc64"
-.if ${GECKO} == "seamonkey" || ${GECKO} == "thunderbird"
-BROKEN=		Does not install on sparc64
-.endif
-.endif
-
 do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR}
@@ -67,13 +65,19 @@ pre-patch:
 		`${FIND} ${WRKSRC} -name autoconf.mk`
 
 do-build:
-	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} export)
-	@(cd ${MOZSRC}/modules/libreg; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS})
-	@(cd ${MOZSRC}/xpcom/string; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS})
-	@(cd ${MOZSRC}/xpcom; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS})
-	@(cd ${MOZSRC}/xpcom/obsolete; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS})
-	@(cd ${WRKSRC}/mailnews/extensions/enigmail; ./makemake -r; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS});
-	@(cd ${WRKSRC}/mailnews/extensions/enigmail; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} xpi);
+	@(${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_base)
+	@(${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_nspr)
+	@(${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_js)
+	@(${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC} export)
+	@(${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/modules/libreg)
+	@(${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom/string)
+	@(${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom)
+.if ${PORTVERSION} == "1.0.1"
+	@(${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom/obsolete)
+.endif
+	@(cd ${WRKSRC}/mailnews/extensions/enigmail; ./makemake -r);
+	@(cd ${WRKSRC}/mailnews/extensions/enigmail; ${SETENV} ${MAKE_ENV} ${GMAKE});
+	@(cd ${WRKSRC}/mailnews/extensions/enigmail; ${SETENV} ${MAKE_ENV} ${GMAKE} xpi);
 
 do-install:
 	${MKDIR} ${DATADIR}
