@@ -1,0 +1,11 @@
+--- dev/ptx/Makefile.orig	2011-07-03 14:54:06.000000000 +0900
++++ dev/ptx/Makefile	2011-07-03 14:54:14.000000000 +0900
+@@ -7,7 +7,7 @@
+ SRCS    = ptx.c ptx_iic.c ptx_tuner.c ptx_dma.c ptx_proc.c ptx_sysctl.c
+ SRCS    += bus_if.h device_if.h pci_if.h
+ 
+-KMODDIR = /boot/modules
++KMODDIR?=	/boot/modules
+ 
+ #DEBUG_FLAGS = -g
+ 

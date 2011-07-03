@@ -1,0 +1,27 @@
+#!/bin/sh
+# $FreeBSD$
+
+# PROVIDE: ptx
+# REQUIRE: LOGIN abi
+# KEYWORD: nojail
+
+. /etc/rc.subr
+
+name="ptx"
+rcvar=`set_rcvar`
+start_cmd="ptx_start"
+stop_cmd="ptx_stop"
+
+ptx_start()
+{
+	load_kld %%PREFIX%%/%%KMODDIR%%/ptx.ko
+}
+ptx_stop()
+{
+# XXX: unloading is still unstable
+#	/sbin/kldunload ptx
+}
+
+: ${ptx_enable="YES"}
+load_rc_config $name
+run_rc_command "$1"
