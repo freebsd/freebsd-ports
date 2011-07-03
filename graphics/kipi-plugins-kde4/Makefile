@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	kipi-plugins
-PORTVERSION=	1.8.0
-PORTREVISION=	4
+PORTVERSION=	1.9.0
 PORTEPOCH=	1
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF/kipi/${PORTNAME}/${PORTVERSION}
@@ -64,9 +63,5 @@ PLIST_SUB+=	PIMLIBS=""
 CMAKE_ARGS+=	-DWITH_KdepimLibs:BOOL=OFF
 PLIST_SUB+=	PIMLIBS="@comment "
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|<endian.h>|<sys/endian.h>|g' \
-		${PATCH_WRKSRC}/dngconverter/dngwriter/extra/dng_sdk/dng_flags.h
 
 .include <bsd.port.mk>
