@@ -21,6 +21,8 @@ RESTRICTED=	Redistribution of the software is not allowed
 
 CONFLICTS=	linux-shoutcast-[0-9]*
 
+USERS=		${PORTNAME}
+GROUPS=		${USERS}
 USE_RC_SUBR=	shoutcast.sh
 PORTDOCS=	README.TXT
 WRKSRC=		${WRKDIR}
@@ -45,8 +47,5 @@ do-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README.TXT ${DOCSDIR}
 .endif
-
-post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
