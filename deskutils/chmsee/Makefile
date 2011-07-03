@@ -7,6 +7,7 @@
 
 PORTNAME=	chmsee
 PORTVERSION=	1.3.1.1
+PORTREVISION=	1
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -14,7 +15,7 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	A viewer for Microsoft Help "CHM" files
 
 LIB_DEPENDS=	chm.0:${PORTSDIR}/misc/chmlib \
-		gcrypt.17:${PORTSDIR}/security/libgcrypt
+		gcrypt.18:${PORTSDIR}/security/libgcrypt
 
 LICENSE=	GPLv2
 

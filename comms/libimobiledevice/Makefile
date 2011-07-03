@@ -6,7 +6,7 @@
 
 PORTNAME=	libimobiledevice
 PORTVERSION=	1.0.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	comms
 MASTER_SITES=	http://www.${PORTNAME}.org/downloads/
 
@@ -18,7 +18,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING.LESSER
 
 LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls \
 		tasn1.4:${PORTSDIR}/security/libtasn1 \
-		gcrypt.17:${PORTSDIR}/security/libgcrypt \
+		gcrypt.18:${PORTSDIR}/security/libgcrypt \
 		plist.1:${PORTSDIR}/devel/libplist \
 		usbmuxd.1:${PORTSDIR}/comms/usbmuxd
 

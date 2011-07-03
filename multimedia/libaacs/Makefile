@@ -7,6 +7,7 @@
 
 PORTNAME=	libaacs
 PORTVERSION=	0.1.20110218
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	CRITICAL
 
@@ -14,7 +15,7 @@ MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Advanced Access Content System implementation
 
 BUILD_DEPENDS=	${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex
-LIB_DEPENDS=	gcrypt.17:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error
 
 USE_LDCONFIG=	yes

@@ -8,7 +8,7 @@
 
 PORTNAME=	seahorse-plugins
 PORTVERSION=	2.30.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Plug-ins for the Seahorse key and password management application
 
 LIB_DEPENDS=	cryptui.0:${PORTSDIR}/security/seahorse \
-		gcrypt.17:${PORTSDIR}/security/libgcrypt
+		gcrypt.18:${PORTSDIR}/security/libgcrypt
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
