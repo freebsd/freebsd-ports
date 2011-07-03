@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	decorator
-PORTVERSION=	3.2.0
+PORTVERSION=	3.3.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,11 +18,5 @@ USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
 DOCSDIR=	${PREFIX}/share/doc/py-${PORTNAME}
-
-post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/documentation.* ${DOCSDIR}
-.endif
 
 .include <bsd.port.mk>
