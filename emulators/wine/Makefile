@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	wine
-DISTVERSION=	1.3.21
+DISTVERSION=	1.3.22
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	emulators
@@ -31,7 +31,7 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CPPFLAGS=	"-I${LOCALBASE}/include"
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=--datadir=${DATADIR} --verbose --disable-tests \
+CONFIGURE_ARGS+=--verbose --disable-tests \
 		--with-glu --with-opengl --with-xrandr \
 		--without-capi --without-gphoto --without-gsm \
 		--without-mpg123 --with-oss --without-sane \
@@ -134,9 +134,11 @@ post-install:
 	          ${MAN1PREFIX}/man/de.UTF-8/man1/wineserver.1 \
 	          ${MAN1PREFIX}/man/fr.UTF-8/man1/wine.1 \
 	          ${MAN1PREFIX}/man/fr.UTF-8/man1/winemaker.1 \
-	          ${MAN1PREFIX}/man/fr.UTF-8/man1/wineserver.1
+	          ${MAN1PREFIX}/man/fr.UTF-8/man1/wineserver.1 \
+	          ${MAN1PREFIX}/man/pl.UTF-8/man1/wine.1
 	@-${RMDIR} -p ${MAN1PREFIX}/man/de.UTF-8/man1 \
-	              ${MAN1PREFIX}/man/fr.UTF-8/man1
+	              ${MAN1PREFIX}/man/fr.UTF-8/man1 \
+	              ${MAN1PREFIX}/man/pl.UTF-8/man1
 	${MV} -f ${WINELIBDIR}/libwine.so.1.0 ${WINELIBDIR}/libwine.so.1
 	${LN} -sf libwine.so.1 ${WINELIBDIR}/libwine.so
 .if !defined(NOPORTDOCS)
@@ -148,8 +150,6 @@ post-install:
 	@${INSTALL_DATA} ${WRKSRC}/tools/winedump/README ${DOCSDIR}/README.winedump
 .endif
 	@${MKDIR} ${DESKTOPDIR}
-	${MV} ${DATADIR}/applications/wine.desktop ${DESKTOPDIR}/
-	@${RMDIR} ${DATADIR}/applications
 	@${ECHO}
 	@${CAT} ${PKGMESSAGE}
 
