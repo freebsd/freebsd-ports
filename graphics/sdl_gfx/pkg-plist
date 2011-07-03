@@ -7,6 +7,6 @@ include/SDL/SDL_rotozoom.h
 lib/libSDL_gfx.a
 lib/libSDL_gfx.la
 lib/libSDL_gfx.so
-lib/libSDL_gfx.so.18
+lib/libSDL_gfx.so.22
 libdata/pkgconfig/SDL_gfx.pc
 @dirrmtry include/SDL
