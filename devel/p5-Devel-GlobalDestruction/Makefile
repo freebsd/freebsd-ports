@@ -22,4 +22,14 @@ PERL_CONFIGURE=	5.8.0+
 
 MAN3=	Devel::GlobalDestruction.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+PLIST_SUB+=	NEW_PERL_PLIST="@comment "
+PLIST_SUB+=	OLD_PERL_PLIST=""
+.else
+PLIST_SUB+=	NEW_PERL_PLIST=""
+PLIST_SUB+=	OLD_PERL_PLIST="@comment "
+.endif
+
+.include <bsd.port.post.mk>
