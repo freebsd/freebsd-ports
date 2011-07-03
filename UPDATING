@@ -88,6 +88,18 @@ you update your ports collection, before attempting any port upgrades.
   or
   # portupgrade -o databases/py-sqlalchemy06 databases/py-sqlalchemy
 
+20110622:
+  AFFECTS: users of lang/perl5.12
+  AUTHOR: skv@FreeBSD.org
+
+  lang/perl5.12 has been updated to 5.12.4.  You should update everything
+  that depends on perl.  The easiest way to do that is to use
+  "perl-after-upgrade" script supplied with lang/perl5.12.
+  Please see its manual page for details.
+
+  If you want to switch to lang/perl5.12 from lang/perl5.{8,10} please
+  follow instructions in the entry 20100715 in this file.
+
 20110620:
   AFFECTS: users of net/samba35
   AUTHOR: timur@FreeBSD.org

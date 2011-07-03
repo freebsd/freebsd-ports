@@ -30,6 +30,7 @@ MAN1+=	perl5120delta.1
 MAN1+=	perl5121delta.1
 MAN1+=	perl5122delta.1
 MAN1+=	perl5123delta.1
+MAN1+=	perl5124delta.1
 MAN1+=	perl561delta.1
 MAN1+=	perl56delta.1
 MAN1+=	perl570delta.1
