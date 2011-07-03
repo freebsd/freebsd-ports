@@ -6,14 +6,16 @@
 #
 
 PORTNAME=	hsqldb
-PORTVERSION=	1.8.0.10
+PORTVERSION=	1.8.1.3
 CATEGORIES=	databases java
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}_1_8_0
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}_1_8_1
 DISTNAME=	hsqldb_${PORTVERSION:S/./_/g}
 #EXTRACT_SUFX=	.zip
 
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	An embeddable SQL database written in Java
+
+LICENSE=	BSD
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+

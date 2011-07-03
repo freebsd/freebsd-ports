@@ -23,7 +23,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/guide/ch09.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/guide.css
 %%PORTDOCS%%%%DOCSDIR%%/guide/guide.html
-%%PORTDOCS%%%%DOCSDIR%%/guide/guide.pdf
 %%PORTDOCS%%%%DOCSDIR%%/guide/index.html
 %%PORTDOCS%%%%DOCSDIR%%/guide/pr01.html
 %%PORTDOCS%%%%DOCSDIR%%/images/sqlDDL.gif
@@ -95,7 +94,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/Trigger.html
 %%PORTDOCS%%%%DOCSDIR%%/src/org/hsqldb/WebServer.html
 %%PORTDOCS%%%%DOCSDIR%%/src/resources/inherit.gif
-%%PORTDOCS%%%%DOCSDIR%%/src/.cvsignore
 %%PORTDOCS%%%%DOCSDIR%%/src/allclasses-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/src/allclasses-noframe.html
 %%PORTDOCS%%%%DOCSDIR%%/src/constant-values.html
@@ -155,7 +153,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/databaseinjar.txt
 %%PORTDOCS%%%%DOCSDIR%%/hsqldb_lic.txt
 %%PORTDOCS%%%%DOCSDIR%%/hsqlFindFile.html
-%%PORTDOCS%%%%DOCSDIR%%/hsqlSoftwareLinks.html
 %%PORTDOCS%%%%DOCSDIR%%/hypersonic_lic.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme-docauthors.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme_linux.txt
