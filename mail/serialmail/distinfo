@@ -1,6 +1,4 @@
-MD5 (serialmail-0.75.tar.gz) = e6a3049863ae8577b1780fcd9fbc98a9
 SHA256 (serialmail-0.75.tar.gz) = 1825c911087f28692c3441d4f95747201c520a22575ab3e6132b5c14097038f3
 SIZE (serialmail-0.75.tar.gz) = 55079
-MD5 (serialmail-auth.patch) = 71eab909047c7151d42ce5bb6757f272
 SHA256 (serialmail-auth.patch) = 374b911e6758636865a44af6bf0ec2988b831a7ffddef205f4ca8f9be05dd905
 SIZE (serialmail-auth.patch) = 24469

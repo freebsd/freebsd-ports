@@ -1,6 +1,4 @@
-MD5 (smtpd-2.0.tar.gz) = c1b4e15db9bd7f6fd2ef846fd2e22d4b
 SHA256 (smtpd-2.0.tar.gz) = 97dba8fb50d7c1eafd65c05f351280f9ebc77d3dcd4e671f064e0a442d300299
 SIZE (smtpd-2.0.tar.gz) = 62605
-MD5 (patch-smtpd-2.0-RBL.gz) = 5c54365520f439db27d5ed428139429c
 SHA256 (patch-smtpd-2.0-RBL.gz) = d016e22870d352313e78b5e1ecf9c49785cd43d91db07494b1999569989d76a7
 SIZE (patch-smtpd-2.0-RBL.gz) = 3829

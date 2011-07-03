@@ -1,6 +1,4 @@
-MD5 (autorespond-2.0.5.tar.gz) = 7263dbd061819f59151cc402729bb469
 SHA256 (autorespond-2.0.5.tar.gz) = d678dbaaf059a146055ed0bf597b03d4bd2d0edb247bd066dfa488b6af8ef8b5
 SIZE (autorespond-2.0.5.tar.gz) = 9707
-MD5 (autorespond-2.0.5-conf-strcasestr.patch) = 62cae25b6efe210f25ed8ccc2f0588ed
 SHA256 (autorespond-2.0.5-conf-strcasestr.patch) = 5e688f868ea098effe78eeaf4a42f95f454fe11445893cd6a0bdfa70536f9c23
 SIZE (autorespond-2.0.5-conf-strcasestr.patch) = 7140
