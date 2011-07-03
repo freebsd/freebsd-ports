@@ -7,6 +7,7 @@
 
 PORTNAME=	filezilla
 PORTVERSION=	3.5.0
+PORTREVISION=	1
 CATEGORIES=	ftp
 MASTER_SITES=	SF/${PORTNAME}/FileZilla_Client/${PORTVERSION}
 DISTNAME=	FileZilla_${PORTVERSION}_src
@@ -16,7 +17,7 @@ COMMENT=	Fast and reliable cross-platform FTP, FTPS and SFTP client
 
 RUN_DEPENDS=	xdg-open:${PORTSDIR}/devel/xdg-utils
 BUILD_DEPENDS=	${RUN_DEPENDS}
-LIB_DEPENDS=	gcrypt.17:${PORTSDIR}/security/libgcrypt \
+LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt \
 		gnutls.47:${PORTSDIR}/security/gnutls \
 		idn.17:${PORTSDIR}/dns/libidn \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \

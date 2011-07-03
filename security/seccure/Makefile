@@ -7,6 +7,7 @@
 
 PORTNAME=	seccure
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://point-at-infinity.org/seccure/ \
 		${MASTER_SITE_NETBSD}
@@ -14,7 +15,7 @@ MASTER_SITES=	http://point-at-infinity.org/seccure/ \
 MAINTAINER=	rpsfa@rit.edu
 COMMENT=	Elliptic Curve Crypto Utility for Reliable Encryption
 
-LIB_DEPENDS=	gcrypt.17:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt
 
 MAN1=		seccure.1
 

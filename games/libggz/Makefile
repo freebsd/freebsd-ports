@@ -8,13 +8,13 @@
 
 PORTNAME=	libggz
 PORTVERSION=	${GGZ_VERSION}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	games
 
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - Base Library
 
-LIB_DEPENDS=	gcrypt.17:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack gnometarget

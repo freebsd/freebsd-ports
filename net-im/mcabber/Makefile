@@ -7,7 +7,7 @@
 
 PORTNAME=	mcabber
 PORTVERSION=	0.10.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.lilotux.net/~mikael/mcabber/files/ CENKES
 
@@ -60,7 +60,7 @@ CONFIGURE_ARGS+=--disable-enchant
 
 .if defined(WITH_OTR)
 LIB_DEPENDS+=	otr.4:${PORTSDIR}/security/libotr \
-		gcrypt.17:${PORTSDIR}/security/libgcrypt
+		gcrypt.18:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=--enable-otr
 PLIST_SUB+=	OTR=""
 .else

@@ -16,7 +16,7 @@ MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	RADIUS authentication plugin for OpenVPN
 
 RUN_DEPENDS=	openvpn:${PORTSDIR}/security/openvpn
-LIB_DEPENDS=	gcrypt.17:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt
 
 LICENCE=	GPLv2
 

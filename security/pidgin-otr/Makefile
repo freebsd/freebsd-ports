@@ -8,7 +8,7 @@
 
 PORTNAME=	otr
 PORTVERSION=	3.2.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security net
 MASTER_SITES=	http://www.cypherpunks.ca/otr/ \
 		http://dougbarton.us/Downloads/

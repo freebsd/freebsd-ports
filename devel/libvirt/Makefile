@@ -7,6 +7,7 @@
 
 PORTNAME=	libvirt
 PORTVERSION=	0.9.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/
 
@@ -31,7 +32,7 @@ USE_PYTHON_BUILD=	yes
 PLIST_SUB=	PORTVERSION="-${PORTVERSION}"
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
-		gcrypt.17:${PORTSDIR}/security/libgcrypt \
+		gcrypt.18:${PORTSDIR}/security/libgcrypt \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		gnutls.47:${PORTSDIR}/security/gnutls
 
