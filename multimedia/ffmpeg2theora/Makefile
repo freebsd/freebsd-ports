@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://v2v.cc/~j/ffmpeg2theora/downloads/
 
-MAINTAINER=	anders@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reencode many media file formats to Ogg Theora
 
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
