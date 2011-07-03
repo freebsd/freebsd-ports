@@ -18,8 +18,6 @@ COMMENT=	The xine backend for Phonon
 
 LIB_DEPENDS=	xine.1:${PORTSDIR}/multimedia/libxine
 
-BROKEN=		does not compile
-
 CONFLICTS=	phonon-4.3.0*
 
 PHONON_BRANCH=	stable
