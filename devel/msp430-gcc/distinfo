@@ -1,6 +1,4 @@
-MD5 (gcc-core-3.4.4.tar.bz2) = 9dd911fd9bc136ca42b73c68735d853b
 SHA256 (gcc-core-3.4.4.tar.bz2) = a390ca6123fe71c665f4422e124ced31efbbe98dd08e8f8d171caeba892ab472
 SIZE (gcc-core-3.4.4.tar.bz2) = 13153342
-MD5 (msp430-gcc-3.4.4.20050317.tar.bz2) = 20b2a266c6ade18fe08bb2b89ac6ba5c
 SHA256 (msp430-gcc-3.4.4.20050317.tar.bz2) = 3ea247fea72b2a4280ae6bbb9028bda84b48fbaae23a1e8332a87f3e16d31ffe
 SIZE (msp430-gcc-3.4.4.20050317.tar.bz2) = 139578

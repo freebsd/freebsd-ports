@@ -1,6 +1,4 @@
-MD5 (distcc-3.1.tar.bz2) = a1a9d3853df7133669fffec2a9aab9f3
 SHA256 (distcc-3.1.tar.bz2) = f55dbafd76bed3ce57e1bbcdab1329227808890d90f4c724fcd2d53f934ddd89
 SIZE (distcc-3.1.tar.bz2) = 588820
-MD5 (distcc-avahi-080101.patch) = 461b21ec45c9314b70fb04b634e581de
 SHA256 (distcc-avahi-080101.patch) = 4e506a8a2299af18839c443b8665ea4fe4492bf3ecae010d262406c01509058e
 SIZE (distcc-avahi-080101.patch) = 387519
