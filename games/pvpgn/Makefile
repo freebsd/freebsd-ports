@@ -23,6 +23,9 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 SED_SCRIPT=	-e 's|%%PREFIX%%|${PREFIX}|g'
 
+USERS=		bnetd
+GROUPS=		${USERS}
+
 RC_DIR=		${PREFIX}/etc/rc.d
 RC_SUFX=	.sh
 SED_SCRIPT+=	-e 's|%%RC_DIR%%|${RC_DIR}|g' \
