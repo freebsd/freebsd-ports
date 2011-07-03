@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	commons-io
-PORTVERSION=	1.4
+PORTVERSION=	2.0.1
 CATEGORIES=	devel java
 MASTER_SITES=	${MASTER_SITE_APACHE_COMMONS_SOURCE}
 MASTER_SITE_SUBDIR=	${PORTNAME:S,commons-,,}
@@ -18,8 +18,10 @@ COMMENT=	A collection of I/O utilities for Java
 
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
+LICENSE=	ASL
+
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 USE_ANT=	yes
 
 MAKE_ARGS=	-cp ${JAVALIBDIR}/junit.jar
