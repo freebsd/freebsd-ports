@@ -20,6 +20,7 @@ COMMENT=	A simulator for AVR microcontrollers
 BUILD_DEPENDS=	${LOCALBASE}/avr/include/avr/io.h:${PORTSDIR}/devel/avr-libc \
 		avr-ld:${PORTSDIR}/devel/avr-binutils \
 		doxygen:${PORTSDIR}/devel/doxygen \
+		texi2dvi:${PORTSDIR}/print/texinfo \
 		latex:${PORTSDIR}/print/teTeX
 
 #USE_BZIP2=	yes
