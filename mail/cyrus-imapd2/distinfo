@@ -1,6 +1,4 @@
-MD5 (cyrus-imapd-2.1.18.tar.gz) = 52e4849e6cfea03c89bc3ab6d5b4e85b
 SHA256 (cyrus-imapd-2.1.18.tar.gz) = dbf0df884014b409145e927b822c8dd98b92a6c5fedb06fa440a034597225031
 SIZE (cyrus-imapd-2.1.18.tar.gz) = 1711522
-MD5 (cyrus-imapd-2.1.16-ipv6-20031121.diff.gz) = 1a0afe2b9b4980ff7a2406c8a29e5d64
 SHA256 (cyrus-imapd-2.1.16-ipv6-20031121.diff.gz) = 1187f3e61e151c679ac0e9b85a4fc31294d31b2e5dad19d53f8890988b2c79c7
 SIZE (cyrus-imapd-2.1.16-ipv6-20031121.diff.gz) = 33500

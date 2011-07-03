@@ -1,6 +1,4 @@
-MD5 (procmail-3.22.tar.gz) = 1678ea99b973eb77eda4ecf6acae53f1
 SHA256 (procmail-3.22.tar.gz) = 087c75b34dd33d8b9df5afe9e42801c9395f4bf373a784d9bc97153b0062e117
 SIZE (procmail-3.22.tar.gz) = 226817
-MD5 (procmail-authenticate.c-userMaildir.patch) = 01f6d12151f5fdf4240c9f01dbcd5f1d
 SHA256 (procmail-authenticate.c-userMaildir.patch) = 917109cf589cec322303a1258b231ef93c18138ea3ec4d32094abee8cf7086e8
 SIZE (procmail-authenticate.c-userMaildir.patch) = 468
