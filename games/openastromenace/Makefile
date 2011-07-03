@@ -27,6 +27,7 @@ WANT_SDL=	yes
 USE_SDL=	sdl
 USE_CMAKE=	yes
 WRKSRC=		${WRKDIR}/OpenAstroMenaceSVN
+USE_DOS2UNIX=	yes
 
 OPTIONS=	EN	"English language pack"	on \
 		DE	"German language pack"	off \
@@ -42,6 +43,10 @@ LANGPACK=	de
 LANGPACK=	ru
 .else
 IGNORE=		cannot be build without/with multiple language packs. Please rerun 'make config' and select single language pack
+.endif
+
+.if !defined(WITHOUT_NOUVEAU)
+CFLAGS+=	-DOLD_MESA
 .endif
 
 post-patch:
