@@ -2,10 +2,10 @@ Index: bgpd/bgpd.conf.5
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/bgpd.conf.5,v
 retrieving revision 1.1.1.7
-retrieving revision 1.7
-diff -u -p -r1.1.1.7 -r1.7
+retrieving revision 1.8
+diff -u -p -r1.1.1.7 -r1.8
 --- bgpd/bgpd.conf.5	14 Feb 2010 20:19:57 -0000	1.1.1.7
-+++ bgpd/bgpd.conf.5	10 Apr 2010 12:16:23 -0000	1.7
++++ bgpd/bgpd.conf.5	2 Jul 2011 16:06:38 -0000	1.8
 @@ -1,4 +1,4 @@
 -.\" $OpenBSD: bgpd.conf.5,v 1.94 2009/06/07 00:31:22 claudio Exp $
 +.\" $OpenBSD: bgpd.conf.5,v 1.104 2010/03/05 15:25:00 claudio Exp $
@@ -17,11 +17,29 @@ diff -u -p -r1.1.1.7 -r1.7
  .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  .\"
 -.Dd $Mdocdate: June 7 2009 $
-+.Dd $Mdocdate: December 16 2009 $
++.Dd $Mdocdate: October 23 2010 $
  .Dt BGPD.CONF 5
  .Os
  .Sh NAME
-@@ -93,7 +93,7 @@ Set the local
+@@ -26,7 +26,7 @@
+ The
+ .Xr bgpd 8
+ daemon implements the Border Gateway Protocol version 4 as described
+-in RFC 1771.
++in RFC 4271.
+ .Sh SECTIONS
+ The
+ .Nm
+@@ -38,6 +38,8 @@ configuration file.
+ .It Sy Global Configuration
+ Global settings for
+ .Xr bgpd 8 .
++.It Sy Routing Domain Configuration
++The definition and properties for BGP MPLS VPNs are set in this section.
+ .It Sy Neighbors and Groups
+ .Xr bgpd 8
+ establishes sessions with
+@@ -93,7 +95,7 @@ Set the local
  .Em autonomous system
  number to
  .Ar as-number .
@@ -30,16 +48,86 @@ diff -u -p -r1.1.1.7 -r1.7
  2-byte AS number which is used for neighbors which do not support 4-byte AS
  numbers.
  The default for the secondary AS is 23456.
-@@ -313,7 +313,7 @@ is only compared between peers belonging
+@@ -143,13 +145,13 @@ The default is 120 seconds.
+ .It Xo
+ .Ic dump
+ .Op Ic rib Ar name
+-.Pq Ic table Ns \&| Ns Ic table-mp
++.Pq Ic table Ns | Ns Ic table-mp
+ .Ar file Op Ar timeout
+ .Xc
+ .It Xo
+ .Ic dump
+-.Pq Ic all Ns \&| Ns Ic updates
+-.Pq Ic in Ns \&| Ns Ic out
++.Pq Ic all Ns | Ns Ic updates
++.Pq Ic in Ns | Ns Ic out
+ .Ar file Op Ar timeout
+ .Xc
+ Dump the RIB, a.k.a. the
+@@ -195,7 +197,7 @@ dump updates out "/tmp/updates-out-%H%M"
+ .Pp
+ .It Xo
+ .Ic fib-update
+-.Pq Ic yes Ns \&| Ns Ic no
++.Pq Ic yes Ns | Ns Ic no
+ .Xc
+ If set to
+ .Ic no ,
+@@ -242,12 +244,12 @@ Log received and sent updates.
+ .Xc
+ .It Xo
+ .Ic network
+-.Pq Ic inet Ns \&| Ns Ic inet6
++.Pq Ic inet Ns | Ns Ic inet6
+ .Ic static Op Ic set ...\&
+ .Xc
+ .It Xo
+ .Ic network
+-.Pq Ic inet Ns \&| Ns Ic inet6
++.Pq Ic inet Ns | Ns Ic inet6
+ .Ic connected Op Ic set ...\&
+ .Xc
+ Announce the specified network as belonging to our AS.
+@@ -278,7 +280,7 @@ section.
+ .Ic nexthop
+ .Ic qualify
+ .Ic via
+-.Pq Ic bgp Ns \&| Ns Ic default
++.Pq Ic bgp Ns | Ns Ic default
+ .Xc
+ If set to
+ .Ic bgp ,
+@@ -295,7 +297,7 @@ daemons like
+ .Ic rde
+ .Ic med
+ .Ic compare
+-.Pq Ic always Ns \&| Ns Ic strict
++.Pq Ic always Ns | Ns Ic strict
+ .Xc
+ If set to
+ .Ic always ,
+@@ -313,20 +315,31 @@ is only compared between peers belonging
  .Ic rib Ar name
  .Op Ic no Ic evaluate
  .Xc
 -Creat an additional RIB named
++.It Xo
++.Ic rde
++.Ic rib Ar name
++.Op Ic rtable Ar number
++.Xc
 +Create an additional RIB named
  .Ar name .
  It is possible to disable the decision process per RIB with the
  .Ic no Ic evaluate
-@@ -321,7 +321,7 @@ flag.
+ flag.
++If a
++.Ic rtable
++is specified, routes will be exported to the given kernel routing table.
++Currently the routing table must belong to the default routing domain and
++nexthop verification happens on table 0.
++Routes in the specified table will not be considered for nexthop verification.
  .Ic Adj-RIB-In
  and
  .Ic Loc-RIB
@@ -48,12 +136,189 @@ diff -u -p -r1.1.1.7 -r1.7
  .Pp
  .It Xo
  .Ic rde
-@@ -483,6 +483,17 @@ Only routes for that address family and 
+ .Ic route-age
+-.Pq Ic ignore Ns \&| Ns Ic evaluate
++.Pq Ic ignore Ns | Ns Ic evaluate
+ .Xc
+ If set to
+ .Ic evaluate ,
+@@ -339,7 +352,7 @@ The default is
+ .Pp
+ .It Xo
+ .Ic route-collector
+-.Pq Ic yes Ns \&| Ns Ic no
++.Pq Ic yes Ns | Ns Ic no
+ .Xc
+ If set to
+ .Ic yes ,
+@@ -361,13 +374,24 @@ to the local machine.
+ Work with the given kernel routing table
+ instead of the default table,
+ .Ar 0 .
+-Note that this table is used for nexthop verification as well.
+-Directly connected networks are always taken into account, even though
+-their routes live in table 0.
++Note that table 0 is used for nexthop verification.
++Routes in the specified table will not be considered for nexthop verification.
++This is the same as using the following syntax:
++.Bd -literal -offset indent
++rde rib Loc-RIB rtable number
++.Ed
++.Pp
++.It Ic socket Qo Ar path Qc Op Ic restricted
++Set the control socket location to
++.Ar path .
++If
++.Ic restricted
++is specified a restricted control socket will be created.
++By default /var/run/bgpd.sock is used and no restricted socket is created.
+ .Pp
+ .It Xo
+ .Ic transparent-as
+-.Pq Ic yes Ns \&| Ns Ic no
++.Pq Ic yes Ns | Ns Ic no
+ .Xc
+ If set to
+ .Ic yes ,
+@@ -376,6 +400,111 @@ to EBGP neighbors are not prepended with
+ The default is
+ .Ic no .
+ .El
++.Sh ROUTING DOMAIN CONFIGURATION
++.Xr bgpd 8
++supports the setup and distribution of Virtual Private Networks.
++It is possible to import and export prefixes between routing domains.
++Each routing domain is specified by an
++.Ic rdomain
++section, which allows properties to be set specifically for that rdomain:
++.Bd -literal -offset indent
++rdomain 1 {
++	descr "a rdomain"
++	rd 65002:1
++	import-target rt 65002:42
++	export-target rt 65002:42
++	network 192.168.1/24
++	depend on mpe0
++}
++.Ed
++.Pp
++There are several routing domain properties:
++.Pp
++.Bl -tag -width Ds -compact
++.It Ic depend on Ar interface
++Routes added to the rdomain will use this interface as the outgoing interface.
++Normally this will be an MPLS Provider Edge,
++.Xr mpe 4 ,
++interface that is part of the rdomain.
++Local networks will be announced with the MPLS label specified on the interface.
++.Pp
++.It Ic descr Ar description
++Add a description.
++The description is used when logging but has no further meaning to
++.Xr bgpd 8 .
++.Pp
++.It Ic export-target Ar subtype Ar as-number Ns Li : Ns Ar local
++.It Ic export-target Ar subtype Ar IP Ns Li : Ns Ar local
++Specify an extended community which will be attached to announced networks.
++More than one
++.Ic export-target
++can be specified.
++See also the
++.Sx ATTRIBUTE SET
++section for further information about the encoding.
++The
++.Ar subtype
++should be set to
++.Ar rt
++for best compatibility with other implementations.
++.Pp
++.It Xo
++.Ic fib-update
++.Pq Ic yes Ns | Ns Ic no
++.Xc
++If set to
++.Ic no ,
++do not update the Forwarding Information Base, a.k.a. the kernel
++routing table.
++The default is
++.Ic yes .
++.Pp
++.It Ic import-target Ar subtype Ar as-number Ns Li : Ns Ar local
++.It Ic import-target Ar subtype Ar IP Ns Li : Ns Ar local
++Only prefixes matching one of the specified
++.Ic import-targets
++will be imported into the rdomain.
++More than one
++.Ic import-target
++can be specified.
++See also the
++.Sx ATTRIBUTE SET
++section for further information about the encoding of extended communities.
++The
++.Ar subtype
++should be set to
++.Ar rt
++for best compatibility with other implementations.
++.Pp
++.It Ic network Ar arguments ...
++Define which networks should be exported into this VPN.
++See also the
++.Ic nexthop
++section in
++.Sx GLOBAL CONFIGURATION
++for further information about the arguments.
++.Pp
++.It Ic rd Ar as-number Ns Li : Ns Ar local
++.It Ic rd Ar IP Ns Li : Ns Ar local
++The Route Distinguishers uniquely identifies a set of VPN prefixes.
++Only prefixes matching the
++.Ic rd
++will be imported into the routing domain.
++The purpose of the
++.Ic rd
++is solely to allow one to create distinct routes to a common address prefix.
++The
++.Ar as-number
++or
++.Ar IP
++of a
++.Ic rd
++should be set to a number or IP that was assigned by an appropriate authority.
++Whereas
++.Ar local
++can be chosen by the local operator.
++.Pp
++.El
+ .Sh NEIGHBORS AND GROUPS
+ .Xr bgpd 8
+ establishes TCP connections to other BGP speakers called
+@@ -470,21 +599,35 @@ The default for IBGP peers is
+ .Pp
+ .It Xo
+ .Ic announce
+-.Pq Ic IPv4 Ns \&| Ns Ic IPv6
+-.Pq Ic none Ns \&| Ns Ic unicast
++.Pq Ic IPv4 Ns | Ns Ic IPv6
++.Pq Ic none Ns | Ns Ic unicast Ns | Ns Ic vpn
+ .Xc
+ For the given address family, control which subsequent address families
+ (at the moment, only
+ .Em none ,
+-which disables the announcement of that address family, and
+-.Em unicast
+-are supported) are announced during the capabilities negotiation.
++which disables the announcement of that address family,
++.Em unicast ,
++and
++.Em vpn ,
++which allows the distribution of BGP MPLS VPNs, are supported) are announced
++during the capabilities negotiation.
+ Only routes for that address family and subsequent address family will be
  announced and processed.
  .Pp
  .It Xo
 +.Ic announce as-4byte
-+.Pq Ic yes Ns \&| Ns Ic no
++.Pq Ic yes Ns | Ns Ic no
 +.Xc
 +If set to
 +.Ic no ,
@@ -64,15 +329,18 @@ diff -u -p -r1.1.1.7 -r1.7
 +.Pp
 +.It Xo
  .Ic announce capabilities
- .Pq Ic yes Ns \&| Ns Ic no
+-.Pq Ic yes Ns \&| Ns Ic no
++.Pq Ic yes Ns | Ns Ic no
  .Xc
-@@ -493,6 +504,29 @@ This can be helpful to connect to old or
+ If set to
+ .Ic no ,
+@@ -493,6 +636,29 @@ This can be helpful to connect to old or
  The default is
  .Ic yes .
  .Pp
 +.It Xo
 +.Ic announce refresh
-+.Pq Ic yes Ns \&| Ns Ic no
++.Pq Ic yes Ns | Ns Ic no
 +.Xc
 +If set to
 +.Ic no ,
@@ -82,7 +350,7 @@ diff -u -p -r1.1.1.7 -r1.7
 +.Pp
 +.It Xo
 +.Ic announce restart
-+.Pq Ic yes Ns \&| Ns Ic no
++.Pq Ic yes Ns | Ns Ic no
 +.Xc
 +If set to
 +.Ic yes ,
@@ -96,7 +364,7 @@ diff -u -p -r1.1.1.7 -r1.7
  .It Ic demote Ar group
  Increase the
  .Xr carp 4
-@@ -504,7 +538,7 @@ The demotion counter will be increased a
+@@ -504,7 +670,7 @@ The demotion counter will be increased a
  .Xr bgpd 8
  starts and decreased
  60 seconds after the session went to state
@@ -105,7 +373,27 @@ diff -u -p -r1.1.1.7 -r1.7
  For neighbors added at runtime, the demotion counter is only increased after
  the session has been
  .Em ESTABLISHED
-@@ -589,6 +623,12 @@ Inherited from the global configuration 
+@@ -548,8 +714,8 @@ Do not start the session when bgpd comes
+ .Pp
+ .It Xo
+ .Ic dump
+-.Pq Ic all Ns \&| Ns Ic updates
+-.Pq Ic in Ns \&| Ns Ic out
++.Pq Ic all Ns | Ns Ic updates
++.Pq Ic in Ns | Ns Ic out
+ .Ar file Op Ar timeout
+ .Xc
+ Do a peer specific MRT dump.
+@@ -564,7 +730,7 @@ section in
+ .Pp
+ .It Xo
+ .Ic enforce neighbor-as
+-.Pq Ic yes Ns \&| Ns Ic no
++.Pq Ic yes Ns | Ns Ic no
+ .Xc
+ If set to
+ .Ic yes ,
+@@ -589,10 +755,16 @@ Inherited from the global configuration 
  Set the minimal acceptable holdtime.
  Inherited from the global configuration if not given.
  .Pp
@@ -117,8 +405,23 @@ diff -u -p -r1.1.1.7 -r1.7
 +.Pp
  .It Xo
  .Ic ipsec
- .Pq Ic ah Ns \&| Ns Ic esp
-@@ -639,11 +679,11 @@ is responsible for managing the session 
+-.Pq Ic ah Ns \&| Ns Ic esp
+-.Pq Ic in Ns \&| Ns Ic out
++.Pq Ic ah Ns | Ns Ic esp
++.Pq Ic in Ns | Ns Ic out
+ .Ic spi Ar spi-number authspec Op Ar encspec
+ .Xc
+ Enable IPsec with static keying.
+@@ -627,7 +799,7 @@ Keys must be given in hexadecimal format
+ .Pp
+ .It Xo
+ .Ic ipsec
+-.Pq Ic ah Ns \&| Ns Ic esp
++.Pq Ic ah Ns | Ns Ic esp
+ .Ic ike
+ .Xc
+ Enable IPsec with dynamic keying.
+@@ -639,11 +811,11 @@ is responsible for managing the session 
  With
  .Xr isakmpd 8 ,
  it is sufficient to copy the peer's public key, found in
@@ -132,7 +435,7 @@ diff -u -p -r1.1.1.7 -r1.7
  The local public key must be copied to the peer in the same way.
  As
  .Xr bgpd 8
-@@ -698,7 +738,7 @@ Do not attempt to actively open a TCP co
+@@ -698,7 +870,7 @@ Do not attempt to actively open a TCP co
  .It Ic remote-as Ar as-number
  Set the AS number of the remote system.
  .Pp
@@ -141,10 +444,51 @@ diff -u -p -r1.1.1.7 -r1.7
  Bind the neighbor to the specified RIB.
  .Pp
  .It Ic route-reflector Op Ar address
-@@ -917,6 +957,31 @@ may be set to
+@@ -732,8 +904,8 @@ These sets are rewritten into filter rul
+ .Pp
+ .It Xo
+ .Ic softreconfig
+-.Pq Ic in Ns \&| Ns Ic out
+-.Pq Ic yes Ns \&| Ns Ic no
++.Pq Ic in Ns | Ns Ic out
++.Pq Ic yes Ns | Ns Ic no
+ .Xc
+ Turn soft reconfiguration on or off for the specified direction.
+ If soft reconfiguration is turned on, filter changes will be applied on
+@@ -760,7 +932,7 @@ tcp md5sig key deadbeef
+ .Pp
+ .It Xo
+ .Ic transparent-as
+-.Pq Ic yes Ns \&| Ns Ic no
++.Pq Ic yes Ns | Ns Ic no
+ .Xc
+ If set to
+ .Ic yes ,
+@@ -772,7 +944,7 @@ setting.
+ .Pp
+ .It Xo
+ .Ic ttl-security
+-.Pq Ic yes Ns \&| Ns Ic no
++.Pq Ic yes Ns | Ns Ic no
+ .Xc
+ Enable or disable ttl-security.
+ When enabled,
+@@ -849,6 +1021,10 @@ is matched against a part of the
+ .Em AS path
+ specified by the
+ .Ar as-type .
++.Ar as-number
++may be set to
++.Ic neighbor-as ,
++which is expanded to the current neighbor remote AS number.
+ .Ar as-type
+ is one of the following operators:
+ .Pp
+@@ -917,7 +1093,32 @@ may be set to
  which is expanded to the current neighbor remote AS number.
  .Pp
  .It Xo
+-.Pq Ic from Ns \&| Ns Ic to
 +.Ic ext-community
 +.Ar subtype Ar as-number Ns Li : Ns Ar local
 +.Xc
@@ -170,10 +514,45 @@ diff -u -p -r1.1.1.7 -r1.7
 +section for further information about the encoding.
 +.Pp
 +.It Xo
- .Pq Ic from Ns \&| Ns Ic to
++.Pq Ic from Ns | Ns Ic to
  .Ar peer
  .Xc
-@@ -1028,6 +1093,12 @@ matches a rule which has the
+ This rule applies only to
+@@ -945,7 +1146,7 @@ if enclosed in curly brackets:
+ deny from { 128.251.16.1, 251.128.16.2, group hojo }
+ .Ed
+ .Pp
+-.It Pq Ic inet Ns \&| Ns Ic inet6
++.It Pq Ic inet Ns | Ns Ic inet6
+ This rule applies only to routes matching the stated address family.
+ The address family needs to be set only in rules that use
+ .Ic prefixlen
+@@ -953,6 +1154,24 @@ without specifying a
+ .Ic prefix
+ beforehand.
+ .Pp
++.It Ic max-as-len Ar len
++This rule applies only to
++.Em UPDATES
++where the
++.Em AS path
++has more than
++.Ar len
++elements.
++.Pp
++.It Ic max-as-seq Ar len
++This rule applies only to
++.Em UPDATES
++where a single
++.Em AS number
++is repeated more than
++.Ar len
++times.
++.Pp
+ .It Xo
+ .Ic prefix
+ .Ar address Ns Li / Ns Ar len
+@@ -1028,6 +1247,12 @@ matches a rule which has the
  option set, this rule is considered the last matching rule, and evaluation
  of subsequent rules is skipped.
  .Pp
@@ -186,7 +565,7 @@ diff -u -p -r1.1.1.7 -r1.7
  .It Ic set Ar attribute ...
  All matching rules can set the
  .Em AS path attributes
-@@ -1079,6 +1150,48 @@ Alternately, well-known communities may 
+@@ -1079,6 +1304,48 @@ Alternately, well-known communities may 
  or
  .Ic NO_PEER .
  .Pp
@@ -235,7 +614,7 @@ diff -u -p -r1.1.1.7 -r1.7
  .It Ic localpref Ar number
  Set the
  .Em LOCAL_PREF
-@@ -1108,6 +1221,20 @@ otherwise it will be set to
+@@ -1108,6 +1375,20 @@ otherwise it will be set to
  .Ar number .
  .Pp
  .It Xo
@@ -256,7 +635,19 @@ diff -u -p -r1.1.1.7 -r1.7
  .Ic nexthop
  .Sm off
  .Po Ar address \*(Ba
-@@ -1181,8 +1308,8 @@ For prefixes with equally long paths, th
+@@ -1157,9 +1438,8 @@ times to the
+ .Em AS path .
+ .Pp
+ .It Ic rtlabel Ar label
+-Add the prefix with the specified
+-.Ar label
+-to the kernel routing table.
++Add the prefix to the kernel routing table with the specified
++.Ar label .
+ .Pp
+ .It Ic weight Ar number
+ The
+@@ -1181,8 +1461,8 @@ For prefixes with equally long paths, th
  is selected.
  .El
  .Sh FILES

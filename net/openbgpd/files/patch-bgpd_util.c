@@ -2,10 +2,10 @@ Index: bgpd/util.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/util.c,v
 retrieving revision 1.1.1.6
-retrieving revision 1.5
-diff -u -p -r1.1.1.6 -r1.5
+retrieving revision 1.6
+diff -u -p -r1.1.1.6 -r1.6
 --- bgpd/util.c	14 Feb 2010 20:19:57 -0000	1.1.1.6
-+++ bgpd/util.c	10 Apr 2010 12:16:23 -0000	1.5
++++ bgpd/util.c	2 Jul 2011 16:06:38 -0000	1.6
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: util.c,v 1.6 2009/06/12 16:42:53 claudio Exp $ */
 +/*	$OpenBSD: util.c,v 1.11 2010/03/29 09:04:43 claudio Exp $ */
@@ -22,7 +22,13 @@ diff -u -p -r1.1.1.6 -r1.5
  #include <netinet/in.h>
  #include <arpa/inet.h>
  #include <netdb.h>
-@@ -32,11 +35,24 @@ const char *
+@@ -28,15 +31,30 @@
+ #include "bgpd.h"
+ #include "rde.h"
+ 
++const char	*aspath_delim(u_int8_t, int);
++
+ const char *
  log_addr(const struct bgpd_addr *addr)
  {
  	static char	buf[48];
@@ -50,7 +56,7 @@ diff -u -p -r1.1.1.6 -r1.5
  }
  
  const char *
-@@ -90,6 +106,64 @@ log_as(u_int32_t as)
+@@ -90,6 +108,96 @@ log_as(u_int32_t as)
  	return (buf);
  }
  
@@ -107,15 +113,81 @@ diff -u -p -r1.1.1.6 -r1.5
 +	case EXT_COMMUNITY_BGP_COLLECT:
 +		return ("bdc");	/* bgp data collection */
 +	default:
-+		snprintf(etype, sizeof(etype), "[%i]", (int)subtype);
++		snprintf(etype, sizeof(etype), "[%u]", subtype);
 +		return (etype);
++	}
++}
++
++const char *
++aspath_delim(u_int8_t seg_type, int closing)
++{
++	static char db[8];
++
++	switch (seg_type) {
++	case AS_SET:
++		if (!closing)
++			return ("{ ");
++		else
++			return (" }");
++	case AS_SEQUENCE:
++		return ("");
++	case AS_CONFED_SEQUENCE:
++		if (!closing)
++			return ("( ");
++		else
++			return (" )");
++	case AS_CONFED_SET:
++		if (!closing)
++			return ("[ ");
++		else
++			return (" ]");
++	default:
++		if (!closing)
++			snprintf(db, sizeof(db), "!%u ", seg_type);
++		else
++			snprintf(db, sizeof(db), " !%u", seg_type);
++		return (db);
 +	}
 +}
 +
  int
  aspath_snprint(char *buf, size_t size, void *data, u_int16_t len)
  {
-@@ -276,3 +350,115 @@ inet6applymask(struct in6_addr *dest, co
+@@ -118,16 +226,10 @@ aspath_snprint(char *buf, size_t size, v
+ 		seg_len = seg[1];
+ 		seg_size = 2 + sizeof(u_int32_t) * seg_len;
+ 
+-		if (seg_type == AS_SET) {
+-			if (total_size != 0)
+-				r = snprintf(buf, size, " { ");
+-			else
+-				r = snprintf(buf, size, "{ ");
+-			UPDATE();
+-		} else if (total_size != 0) {
+-			r = snprintf(buf, size, " ");
+-			UPDATE();
+-		}
++		r = snprintf(buf, size, "%s%s",
++		    total_size != 0 ? " " : "",
++		    aspath_delim(seg_type, 0));
++		UPDATE();
+ 
+ 		for (i = 0; i < seg_len; i++) {
+ 			r = snprintf(buf, size, "%s",
+@@ -138,10 +240,8 @@ aspath_snprint(char *buf, size_t size, v
+ 				UPDATE();
+ 			}
+ 		}
+-		if (seg_type == AS_SET) {
+-			r = snprintf(buf, size, " }");
+-			UPDATE();
+-		}
++		r = snprintf(buf, size, "%s", aspath_delim(seg_type, 1));
++		UPDATE();
+ 	}
+ 	/* ensure that we have a valid C-string especially for empty as path */
+ 	if (size > 0)
+@@ -276,3 +376,115 @@ inet6applymask(struct in6_addr *dest, co
  	for (i = 0; i < 16; i++)
  		dest->s6_addr[i] = src->s6_addr[i] & mask.s6_addr[i];
  }

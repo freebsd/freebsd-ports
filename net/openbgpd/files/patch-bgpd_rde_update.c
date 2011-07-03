@@ -2,17 +2,16 @@ Index: bgpd/rde_update.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/rde_update.c,v
 retrieving revision 1.1.1.7
-retrieving revision 1.6
-diff -u -p -r1.1.1.7 -r1.6
+diff -u -p -r1.1.1.7 rde_update.c
 --- bgpd/rde_update.c	14 Feb 2010 20:19:57 -0000	1.1.1.7
-+++ bgpd/rde_update.c	14 Feb 2010 19:53:36 -0000	1.6
++++ bgpd/rde_update.c	3 Jul 2011 04:45:50 -0000
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: rde_update.c,v 1.68 2009/06/06 01:10:29 claudio Exp $ */
 +/*	$OpenBSD: rde_update.c,v 1.77 2010/01/13 06:02:37 claudio Exp $ */
  
  /*
   * Copyright (c) 2004 Claudio Jeker <claudio@openbsd.org>
-@@ -17,19 +17,26 @@
+@@ -17,19 +17,27 @@
   */
  #include <sys/types.h>
  #include <sys/queue.h>
@@ -22,6 +21,7 @@ diff -u -p -r1.1.1.7 -r1.6
  #include <sys/hash.h>
 +#endif /* defined(__FreeBSD__) */
  
++#include <limits.h>
  #include <stdlib.h>
  #include <string.h>
 +#if defined(__FreeBSD__)	/* limits.h */
@@ -41,7 +41,7 @@ diff -u -p -r1.1.1.7 -r1.6
  
  /* update stuff. */
  struct update_prefix {
-@@ -65,10 +72,12 @@ RB_GENERATE(uptree_attr, update_attr, en
+@@ -65,10 +73,12 @@ RB_GENERATE(uptree_attr, update_attr, en
  void
  up_init(struct rde_peer *peer)
  {
@@ -58,7 +58,7 @@ diff -u -p -r1.1.1.7 -r1.6
  	RB_INIT(&peer->up_prefix);
  	RB_INIT(&peer->up_attrs);
  	peer->up_pcnt = 0;
-@@ -103,8 +112,10 @@ up_clear(struct uplist_attr *updates, st
+@@ -103,8 +113,10 @@ up_clear(struct uplist_attr *updates, st
  void
  up_down(struct rde_peer *peer)
  {
@@ -71,7 +71,7 @@ diff -u -p -r1.1.1.7 -r1.6
  
  	RB_INIT(&peer->up_prefix);
  	RB_INIT(&peer->up_attrs);
-@@ -120,19 +131,19 @@ up_prefix_cmp(struct update_prefix *a, s
+@@ -120,19 +132,19 @@ up_prefix_cmp(struct update_prefix *a, s
  {
  	int	i;
  
@@ -96,7 +96,7 @@ diff -u -p -r1.1.1.7 -r1.6
  		i = memcmp(&a->prefix.v6, &b->prefix.v6,
  		    sizeof(struct in6_addr));
  		if (i > 0)
-@@ -140,6 +151,25 @@ up_prefix_cmp(struct update_prefix *a, s
+@@ -140,6 +152,25 @@ up_prefix_cmp(struct update_prefix *a, s
  		if (i < 0)
  			return (-1);
  		break;
@@ -122,7 +122,7 @@ diff -u -p -r1.1.1.7 -r1.6
  	default:
  		fatalx("pt_prefix_cmp: unknown af");
  	}
-@@ -174,18 +204,8 @@ up_add(struct rde_peer *peer, struct upd
+@@ -174,18 +205,8 @@ up_add(struct rde_peer *peer, struct upd
  	struct uplist_attr	*upl = NULL;
  	struct uplist_prefix	*wdl = NULL;
  
@@ -143,7 +143,7 @@ diff -u -p -r1.1.1.7 -r1.6
  
  	/* 1. search for attr */
  	if (a != NULL && (na = RB_FIND(uptree_attr, &peer->up_attrs, a)) ==
-@@ -270,21 +290,14 @@ up_test_update(struct rde_peer *peer, st
+@@ -270,21 +291,14 @@ up_test_update(struct rde_peer *peer, st
  		/* Do not send routes back to sender */
  		return (0);
  
@@ -169,7 +169,7 @@ diff -u -p -r1.1.1.7 -r1.6
  
  	if (p->aspath->peer->conf.ebgp == 0 && peer->conf.ebgp == 0) {
  		/*
-@@ -325,13 +338,13 @@ up_test_update(struct rde_peer *peer, st
+@@ -325,13 +339,13 @@ up_test_update(struct rde_peer *peer, st
  	}
  
  	/* well known communities */
@@ -186,7 +186,7 @@ diff -u -p -r1.1.1.7 -r1.6
  	    COMMUNITY_WELLKNOWN, COMMUNITY_NO_EXPSUBCONFED))
  		return (0);
  
-@@ -362,7 +375,7 @@ up_generate(struct rde_peer *peer, struc
+@@ -362,7 +376,7 @@ up_generate(struct rde_peer *peer, struc
  		if (ua == NULL)
  			fatal("up_generate");
  
@@ -195,7 +195,7 @@ diff -u -p -r1.1.1.7 -r1.6
  			log_warnx("generation of bgp path attributes failed");
  			free(ua);
  			return (-1);
-@@ -444,18 +457,12 @@ up_generate_updates(struct filter_head *
+@@ -444,18 +458,12 @@ up_generate_updates(struct filter_head *
  /* send a default route to the specified peer */
  void
  up_generate_default(struct filter_head *rules, struct rde_peer *peer,
@@ -216,7 +216,7 @@ diff -u -p -r1.1.1.7 -r1.6
  		return;
  
  	asp = path_get();
-@@ -471,7 +478,7 @@ up_generate_default(struct filter_head *
+@@ -471,7 +479,7 @@ up_generate_default(struct filter_head *
  
  	/* filter as usual */
  	bzero(&addr, sizeof(addr));
@@ -225,7 +225,7 @@ diff -u -p -r1.1.1.7 -r1.6
  
  	if (rde_filter(peer->ribid, &fasp, rules, peer, asp, &addr, 0, NULL,
  	    DIR_OUT) == ACTION_DENY) {
-@@ -491,6 +498,43 @@ up_generate_default(struct filter_head *
+@@ -491,6 +499,43 @@ up_generate_default(struct filter_head *
  	path_put(asp);
  }
  
@@ -269,7 +269,7 @@ diff -u -p -r1.1.1.7 -r1.6
  u_char	up_attr_buf[4096];
  
  /* only for IPv4 */
-@@ -551,28 +595,41 @@ up_get_nexthop(struct rde_peer *peer, st
+@@ -551,28 +596,41 @@ up_get_nexthop(struct rde_peer *peer, st
  
  int
  up_generate_mp_reach(struct rde_peer *peer, struct update_attr *upa,
@@ -319,7 +319,7 @@ diff -u -p -r1.1.1.7 -r1.6
  			    &peer->remote_addr.v6, sizeof(struct in6_addr))))
  				memcpy(&upa->mpattr[4], &peer->local_v6_addr.v6,
  				    sizeof(struct in6_addr));
-@@ -603,6 +660,68 @@ up_generate_mp_reach(struct rde_peer *pe
+@@ -603,6 +661,68 @@ up_generate_mp_reach(struct rde_peer *pe
  			memcpy(&upa->mpattr[4], &peer->local_v6_addr.v6,
  			    sizeof(struct in6_addr));
  		return (0);
@@ -388,7 +388,7 @@ diff -u -p -r1.1.1.7 -r1.6
  	default:
  		break;
  	}
-@@ -611,7 +730,7 @@ up_generate_mp_reach(struct rde_peer *pe
+@@ -611,7 +731,7 @@ up_generate_mp_reach(struct rde_peer *pe
  
  int
  up_generate_attr(struct rde_peer *peer, struct update_attr *upa,
@@ -397,7 +397,7 @@ diff -u -p -r1.1.1.7 -r1.6
  {
  	struct attr	*oa, *newaggr = NULL;
  	u_char		*pdata;
-@@ -643,8 +762,8 @@ up_generate_attr(struct rde_peer *peer, 
+@@ -643,8 +763,8 @@ up_generate_attr(struct rde_peer *peer, 
  	wlen += r; len -= r;
  	free(pdata);
  
@@ -408,7 +408,7 @@ diff -u -p -r1.1.1.7 -r1.6
  		nexthop = up_get_nexthop(peer, a);
  		if ((r = attr_write(up_attr_buf + wlen, len, ATTR_WELL_KNOWN,
  		    ATTR_NEXTHOP, &nexthop, 4)) == -1)
-@@ -659,9 +778,11 @@ up_generate_attr(struct rde_peer *peer, 
+@@ -659,9 +779,11 @@ up_generate_attr(struct rde_peer *peer, 
  	/*
  	 * The old MED from other peers MUST not be announced to others
  	 * unless the MED is originating from us or the peer is an IBGP one.
@@ -421,7 +421,7 @@ diff -u -p -r1.1.1.7 -r1.6
  		tmp32 = htonl(a->med);
  		if ((r = attr_write(up_attr_buf + wlen, len, ATTR_OPTIONAL,
  		    ATTR_MED, &tmp32, 4)) == -1)
-@@ -791,7 +912,7 @@ up_generate_attr(struct rde_peer *peer, 
+@@ -791,7 +913,7 @@ up_generate_attr(struct rde_peer *peer, 
  
  	/* write mp attribute to different buffer */
  	if (ismp)
@@ -430,7 +430,7 @@ diff -u -p -r1.1.1.7 -r1.6
  			return (-1);
  
  	/* the bgp path attributes are now stored in the global buf */
-@@ -810,6 +931,7 @@ up_dump_prefix(u_char *buf, int len, str
+@@ -810,6 +932,7 @@ up_dump_prefix(u_char *buf, int len, str
  {
  	struct update_prefix	*upp;
  	int			 r, wpos = 0;
@@ -438,7 +438,7 @@ diff -u -p -r1.1.1.7 -r1.6
  
  	while ((upp = TAILQ_FIRST(prefix_head)) != NULL) {
  		if ((r = prefix_write(buf + wpos, len - wpos,
-@@ -820,13 +942,14 @@ up_dump_prefix(u_char *buf, int len, str
+@@ -820,13 +943,14 @@ up_dump_prefix(u_char *buf, int len, str
  			log_warnx("dequeuing update failed.");
  		TAILQ_REMOVE(upp->prefix_h, upp, prefix_l);
  		peer->up_pcnt--;
@@ -460,7 +460,7 @@ diff -u -p -r1.1.1.7 -r1.6
  		}
  		free(upp);
  	}
-@@ -844,16 +967,21 @@ up_dump_attrnlri(u_char *buf, int len, s
+@@ -844,16 +968,21 @@ up_dump_attrnlri(u_char *buf, int len, s
  	 * It is possible that a queued path attribute has no nlri prefix.
  	 * Ignore and remove those path attributes.
  	 */
@@ -484,7 +484,7 @@ diff -u -p -r1.1.1.7 -r1.6
  		} else
  			break;
  
-@@ -884,7 +1012,7 @@ up_dump_attrnlri(u_char *buf, int len, s
+@@ -884,7 +1013,7 @@ up_dump_attrnlri(u_char *buf, int len, s
  	if (TAILQ_EMPTY(&upa->prefix_h)) {
  		if (RB_REMOVE(uptree_attr, &peer->up_attrs, upa) == NULL)
  			log_warnx("dequeuing update failed.");
@@ -493,7 +493,7 @@ diff -u -p -r1.1.1.7 -r1.6
  		free(upa->attr);
  		free(upa->mpattr);
  		free(upa);
-@@ -895,12 +1023,13 @@ up_dump_attrnlri(u_char *buf, int len, s
+@@ -895,12 +1024,13 @@ up_dump_attrnlri(u_char *buf, int len, s
  }
  
  u_char *
@@ -509,7 +509,7 @@ diff -u -p -r1.1.1.7 -r1.6
  
  	/*
  	 * reserve space for withdraw len, attr len, the attribute header
-@@ -912,7 +1041,7 @@ up_dump_mp_unreach(u_char *buf, u_int16_
+@@ -912,7 +1042,7 @@ up_dump_mp_unreach(u_char *buf, u_int16_
  		return (NULL);
  
  	datalen = up_dump_prefix(buf + wpos, *len - wpos,
@@ -518,7 +518,7 @@ diff -u -p -r1.1.1.7 -r1.6
  	if (datalen == 0)
  		return (NULL);
  
-@@ -920,9 +1049,11 @@ up_dump_mp_unreach(u_char *buf, u_int16_
+@@ -920,9 +1050,11 @@ up_dump_mp_unreach(u_char *buf, u_int16_
  
  	/* prepend header, need to do it reverse */
  	/* safi & afi */
@@ -532,7 +532,7 @@ diff -u -p -r1.1.1.7 -r1.6
  	memcpy(buf + wpos, &tmp, sizeof(u_int16_t));
  
  	/* attribute length */
-@@ -959,33 +1090,39 @@ up_dump_mp_unreach(u_char *buf, u_int16_
+@@ -959,33 +1091,39 @@ up_dump_mp_unreach(u_char *buf, u_int16_
  	return (buf + wpos);
  }
  
@@ -578,7 +578,7 @@ diff -u -p -r1.1.1.7 -r1.6
  
  	/*
  	 * reserve space for attr len, the attributes, the
-@@ -993,12 +1130,12 @@ up_dump_mp_reach(u_char *buf, u_int16_t 
+@@ -993,12 +1131,12 @@ up_dump_mp_reach(u_char *buf, u_int16_t 
  	 */
  	wpos = 2 + 2 + upa->attr_len + 4 + upa->mpattr_len;
  	if (*len < wpos)
@@ -593,7 +593,7 @@ diff -u -p -r1.1.1.7 -r1.6
  
  	if (upa->mpattr_len == 0 || upa->mpattr == NULL)
  		fatalx("mulitprotocol update without MP attrs");
-@@ -1038,7 +1175,7 @@ up_dump_mp_reach(u_char *buf, u_int16_t 
+@@ -1038,7 +1176,7 @@ up_dump_mp_reach(u_char *buf, u_int16_t 
  	if (TAILQ_EMPTY(&upa->prefix_h)) {
  		if (RB_REMOVE(uptree_attr, &peer->up_attrs, upa) == NULL)
  			log_warnx("dequeuing update failed.");
@@ -602,7 +602,7 @@ diff -u -p -r1.1.1.7 -r1.6
  		free(upa->attr);
  		free(upa->mpattr);
  		free(upa);
-@@ -1046,6 +1183,5 @@ up_dump_mp_reach(u_char *buf, u_int16_t 
+@@ -1046,6 +1184,5 @@ up_dump_mp_reach(u_char *buf, u_int16_t 
  	}
  
  	*len = datalen + 4;

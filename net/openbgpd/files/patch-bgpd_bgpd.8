@@ -2,10 +2,10 @@ Index: bgpd/bgpd.8
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/bgpd.8,v
 retrieving revision 1.1.1.8
-retrieving revision 1.8
-diff -u -p -r1.1.1.8 -r1.8
+retrieving revision 1.9
+diff -u -p -r1.1.1.8 -r1.9
 --- bgpd/bgpd.8	14 Feb 2010 20:19:57 -0000	1.1.1.8
-+++ bgpd/bgpd.8	2 Mar 2010 05:48:19 -0000	1.8
++++ bgpd/bgpd.8	2 Jul 2011 16:06:38 -0000	1.9
 @@ -1,4 +1,4 @@
 -.\" $OpenBSD: bgpd.8,v 1.28 2009/01/13 23:01:36 sthen Exp $
 +.\" $OpenBSD: bgpd.8,v 1.33 2009/12/16 15:40:55 claudio Exp $
@@ -17,24 +17,32 @@ diff -u -p -r1.1.1.8 -r1.8
  .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  .\"
 -.Dd $Mdocdate: January 13 2009 $
-+.Dd $Mdocdate: December 16 2009 $
++.Dd $Mdocdate: June 27 2010 $
  .Dt BGPD 8
  .Os
  .Sh NAME
-@@ -24,9 +24,9 @@
+@@ -24,12 +24,8 @@
  .Nm bgpd
  .Bk -words
  .Op Fl cdnv
 -.Oo Xo
 -.Fl D Ar macro Ns = Ns Ar value Oc
 -.Xc
-+.Oo
-+.Fl D Ar macro Ns = Ns Ar value
-+.Oc
++.Op Fl D Ar macro Ns = Ns Ar value
  .Op Fl f Ar file
- .Op Fl r Ar path
- .Op Fl s Ar path
-@@ -48,9 +48,9 @@ Please refer to that document for more i
+-.Op Fl r Ar path
+-.Op Fl s Ar path
+ .Ek
+ .Sh DESCRIPTION
+ .Nm
+@@ -42,15 +38,15 @@ concerning
+ with other BGP systems.
+ .Nm
+ uses the Border Gateway Protocol, Version 4,
+-as described in RFC 1771.
++as described in RFC 4271.
+ Please refer to that document for more information about BGP.
+ .Pp
  .Nm
  is usually started at boot time, and can be enabled by
  setting the following in
@@ -46,7 +54,7 @@ diff -u -p -r1.1.1.8 -r1.8
  .Pp
  See
  .Xr rc 8
-@@ -117,7 +117,7 @@ Use
+@@ -117,25 +113,16 @@ Use
  .Ar file
  as the configuration file,
  instead of the default
@@ -55,7 +63,17 @@ diff -u -p -r1.1.1.8 -r1.8
  .It Fl n
  Configtest mode.
  Only check the configuration file for validity.
-@@ -135,7 +135,7 @@ Produce more verbose output.
+-.It Fl r Ar path
+-Open a second, restricted, control socket that
+-.Xr bgpctl 8
+-can use.
+-Only
+-.Em show
+-requests are allowed on this socket.
+-.It Fl s Ar path
+-Use an alternate location for the default control socket.
+ .It Fl v
+ Produce more verbose output.
  .El
  .Sh FILES
  .Bl -tag -width "/var/run/bgpd.sockXXX" -compact
@@ -64,7 +82,19 @@ diff -u -p -r1.1.1.8 -r1.8
  default
  .Nm
  configuration file
-@@ -165,6 +165,11 @@ control socket
+@@ -150,9 +137,9 @@ control socket
+ .Xr bgplg 8 ,
+ .Xr bgplgsh 8
+ .Rs
+-.%R RFC 1771
++.%R RFC 4271
+ .%T "A Border Gateway Protocol 4 (BGP-4)"
+-.%D March 1995
++.%D January 2006
+ .Re
+ .Rs
+ .%R RFC 1997
+@@ -165,6 +152,11 @@ control socket
  .%D August 1998
  .Re
  .Rs
@@ -76,7 +106,7 @@ diff -u -p -r1.1.1.8 -r1.8
  .%R RFC 2796
  .%T "BGP Route Reflection - An Alternative to Full Mesh IBGP"
  .%D April 2000
-@@ -175,11 +180,6 @@ control socket
+@@ -175,11 +167,6 @@ control socket
  .%D September 2000
  .Re
  .Rs
@@ -88,12 +118,17 @@ diff -u -p -r1.1.1.8 -r1.8
  .%R RFC 3682
  .%T "The Generalized TTL Security Mechanism (GTSM)"
  .%D February 2004
-@@ -190,6 +190,16 @@ control socket
+@@ -190,6 +177,21 @@ control socket
  .%D April 2004
  .Re
  .Rs
 +.%R RFC 4360
 +.%T "BGP Extended Communities Attribute"
++.%D February 2006
++.Re
++.Rs
++.%R RFC 4364
++.%T "BGP/MPLS IP Virtual Private Networks (VPNs)"
 +.%D February 2006
 +.Re
 +.Rs
@@ -105,7 +140,7 @@ diff -u -p -r1.1.1.8 -r1.8
  .%R RFC 4760
  .%T "Multiprotocol Extensions for BGP-4"
  .%D January 2007
-@@ -199,6 +209,16 @@ control socket
+@@ -199,6 +201,21 @@ control socket
  .%T "BGP Support for Four-octet AS Number Space"
  .%D May 2007
  .Re
@@ -118,6 +153,11 @@ diff -u -p -r1.1.1.8 -r1.8
 +.%R draft-ietf-idr-optional-transitive-00
 +.%T "Error Handling for Optional Transitive BGP Attributes"
 +.%D April 2009
++.Re
++.Rs
++.%R draft-ietf-idr-fsm-subcode-00
++.%T "Subcodes for BGP Finite State Machine Error"
++.%D September 2010
 +.Re
  .Sh HISTORY
  The

@@ -3,8 +3,8 @@ Index: openbsd-compat/pfkey_compat.c
 RCS file: openbsd-compat/pfkey_compat.c
 diff -N openbsd-compat/pfkey_compat.c
 --- /dev/null	1 Jan 1970 00:00:00 -0000
-+++ openbsd-compat/pfkey_compat.c	30 Jun 2009 06:40:07 -0000	1.1
-@@ -0,0 +1,27 @@
++++ openbsd-compat/pfkey_compat.c	2 Jul 2011 16:06:38 -0000	1.2
+@@ -0,0 +1,32 @@
 +#include "bgpd.h"
 +#include "session.h"
 +
@@ -32,3 +32,8 @@ diff -N openbsd-compat/pfkey_compat.c
 +	return (0);
 +}
 +
++int
++pfkey_read(int sd, struct sadb_msg *h)
++{
++	return (1);
++}

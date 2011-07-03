@@ -2,10 +2,9 @@ Index: bgpd/rde_decide.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/rde_decide.c,v
 retrieving revision 1.1.1.6
-retrieving revision 1.2
-diff -u -p -r1.1.1.6 -r1.2
+diff -u -p -r1.1.1.6 rde_decide.c
 --- bgpd/rde_decide.c	14 Feb 2010 20:19:57 -0000	1.1.1.6
-+++ bgpd/rde_decide.c	22 Oct 2009 15:12:21 -0000	1.2
++++ bgpd/rde_decide.c	3 Jul 2011 04:44:36 -0000
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: rde_decide.c,v 1.58 2009/06/29 14:10:13 claudio Exp $ */
 +/*	$OpenBSD: rde_decide.c,v 1.59 2009/08/06 08:53:11 claudio Exp $ */
@@ -43,3 +42,12 @@ diff -u -p -r1.1.1.6 -r1.2
  	    (xp->aspath->nexthop != NULL &&
  	    xp->aspath->nexthop->state != NEXTHOP_REACH))
  		/* xp is ineligible */
+@@ -263,7 +269,7 @@ prefix_evaluate(struct prefix *p, struct
+ 		 */
+ 		rde_generate_updates(re->ribid, xp, re->active);
+ 		if ((re->flags & F_RIB_NOFIB) == 0)
+-			rde_send_kroute(xp, re->active);
++			rde_send_kroute(xp, re->active, re->ribid);
+ 
+ 		re->active = xp;
+ 		if (xp != NULL)
