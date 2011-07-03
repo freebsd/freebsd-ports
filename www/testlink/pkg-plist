@@ -77,6 +77,7 @@
 %%WWWDIR%%/gui/templates/execute/bugDelete.tpl
 %%WWWDIR%%/gui/templates/execute/editExecution.tpl
 %%WWWDIR%%/gui/templates/execute/execExport.tpl
+%%WWWDIR%%/gui/templates/execute/execHistory.tpl
 %%WWWDIR%%/gui/templates/execute/execNavigator.tpl
 %%WWWDIR%%/gui/templates/execute/execNotes.tpl
 %%WWWDIR%%/gui/templates/execute/execSetResults.tpl
@@ -242,47 +243,7 @@
 %%WWWDIR%%/gui/templates/usermanagement/usersEdit.tpl
 %%WWWDIR%%/gui/templates/usermanagement/usersView.tpl
 %%WWWDIR%%/gui/templates/workAreaSimple.tpl
-%%WWWDIR%%/gui/templates_c/%%05^055^055DF0AD%%inc_del_onclick.tpl.php
-%%WWWDIR%%/gui/templates_c/%%11^116^1166AC39%%input_dimensions.conf%7CmainPage.php
-%%WWWDIR%%/gui/templates_c/%%19^194^19441EB5%%inc_refreshTreeWithFilters.tpl.php
-%%WWWDIR%%/gui/templates_c/%%25^252^2520047E%%projectEdit.tpl.php
-%%WWWDIR%%/gui/templates_c/%%2B^2B1^2B14B811%%inc_testsuite_viewer_rw.tpl.php
-%%WWWDIR%%/gui/templates_c/%%2E^2E1^2E11686C%%tcView_viewer.tpl.php
-%%WWWDIR%%/gui/templates_c/%%31^31A^31A35F5F%%inc_filter_panel.tpl.php
-%%WWWDIR%%/gui/templates_c/%%4E^4E2^4E21677E%%opt_transfer.inc.tpl.php
-%%WWWDIR%%/gui/templates_c/%%56^560^56038526%%inc_head.tpl.php
-%%WWWDIR%%/gui/templates_c/%%5A^5AB^5AB28840%%containerNew.tpl.php
-%%WWWDIR%%/gui/templates_c/%%5D^5DA^5DAE1AB0%%inc_ext_js.tpl.php
-%%WWWDIR%%/gui/templates_c/%%6C^6CF^6CF653EB%%input_dimensions.conf.php
-%%WWWDIR%%/gui/templates_c/%%72^72D^72DAF6E8%%main.tpl.php
-%%WWWDIR%%/gui/templates_c/%%74^746^746826BD%%mainPageLeft.tpl.php
-%%WWWDIR%%/gui/templates_c/%%7B^7B8^7B846452%%inc_testsuite_viewer_ro.tpl.php
-%%WWWDIR%%/gui/templates_c/%%7F^7FF^7FFDA7BA%%inc_help.tpl.php
-%%WWWDIR%%/gui/templates_c/%%84^842^842B53B9%%input_dimensions.conf%7CcontainerEdit.php
-%%WWWDIR%%/gui/templates_c/%%85^851^85132294%%error_icon.tpl.php
-%%WWWDIR%%/gui/templates_c/%%85^851^8516F146%%inc_attachments.tpl.php
-%%WWWDIR%%/gui/templates_c/%%86^869^86926229%%tcTree.tpl.php
-%%WWWDIR%%/gui/templates_c/%%86^86A^86A1E9DD%%projectView.tpl.php
-%%WWWDIR%%/gui/templates_c/%%93^934^9343D7AD%%inc_update.tpl.php
-%%WWWDIR%%/gui/templates_c/%%A1^A1C^A1CBA8B1%%mainPage.tpl.php
-%%WWWDIR%%/gui/templates_c/%%A3^A3A^A3A847C8%%inc_tcbody.tpl.php
-%%WWWDIR%%/gui/templates_c/%%A5^A55^A55CC92A%%inc_tree_control.tpl.php
-%%WWWDIR%%/gui/templates_c/%%A5^A5F^A5FC8C29%%input_dimensions.conf%7CtcNew.php
-%%WWWDIR%%/gui/templates_c/%%B0^B05^B05B9B66%%input_dimensions.conf%7CprojectEdit.php
-%%WWWDIR%%/gui/templates_c/%%B3^B39^B39DACD9%%inc_jsCfieldsValidation.tpl.php
-%%WWWDIR%%/gui/templates_c/%%B6^B6A^B6AD6561%%containerView.tpl.php
-%%WWWDIR%%/gui/templates_c/%%BB^BB4^BB4E6982%%tcView.tpl.php
-%%WWWDIR%%/gui/templates_c/%%C6^C6B^C6B55F84%%input_dimensions.conf%7CtreeFilterForm.php
-%%WWWDIR%%/gui/templates_c/%%CC^CC0^CC0255CA%%staticPage.tpl.php
-%%WWWDIR%%/gui/templates_c/%%CF^CF9^CF93EEF2%%input_dimensions.conf%7CprojectView.php
-%%WWWDIR%%/gui/templates_c/%%D4^D4D^D4D455CA%%tcNew.tpl.php
-%%WWWDIR%%/gui/templates_c/%%D7^D7E^D7E0C57C%%inc_filter_panel_js.tpl.php
-%%WWWDIR%%/gui/templates_c/%%E2^E21^E21A3209%%inc_msg_from_array.tpl.php
-%%WWWDIR%%/gui/templates_c/%%E2^E29^E296DC1C%%input_dimensions.conf%7CnavBar.php
-%%WWWDIR%%/gui/templates_c/%%E6^E68^E6831641%%navBar.tpl.php
-%%WWWDIR%%/gui/templates_c/%%EB^EBA^EBAFA72D%%tcEdit_New_viewer.tpl.php
-%%WWWDIR%%/gui/templates_c/%%F1^F13^F1313A5A%%frmInner.tpl.php
-%%WWWDIR%%/gui/templates_c/%%F5^F50^F501ED3C%%mainPageRight.tpl.php
+%%WWWDIR%%/gui/themes/default/css/custom.css.example
 %%WWWDIR%%/gui/themes/default/css/testlink.css
 %%WWWDIR%%/gui/themes/default/css/tl_documents.css
 %%WWWDIR%%/gui/themes/default/css/tl_print.css
@@ -644,6 +605,7 @@
 %%WWWDIR%%/lib/execute/bugDelete.php
 %%WWWDIR%%/lib/execute/editExecution.php
 %%WWWDIR%%/lib/execute/execExport.php
+%%WWWDIR%%/lib/execute/execHistory.php
 %%WWWDIR%%/lib/execute/execNavigator.php
 %%WWWDIR%%/lib/execute/execNotes.php
 %%WWWDIR%%/lib/execute/execSetResults.php
@@ -772,6 +734,7 @@
 %%WWWDIR%%/lib/requirements/reqSpecCommands.class.php
 %%WWWDIR%%/lib/requirements/reqSpecEdit.php
 %%WWWDIR%%/lib/requirements/reqSpecListTree.php
+%%WWWDIR%%/lib/requirements/reqSpecPrint.php
 %%WWWDIR%%/lib/requirements/reqSpecSearch.php
 %%WWWDIR%%/lib/requirements/reqSpecSearchForm.php
 %%WWWDIR%%/lib/requirements/reqSpecView.php
@@ -826,64 +789,77 @@
 %%WWWDIR%%/lib/usermanagement/usersEdit.php
 %%WWWDIR%%/lib/usermanagement/usersView.php
 %%WWWDIR%%/linkto.php
+%%WWWDIR%%/locale/cs_CZ/custom_strings.txt.example
 %%WWWDIR%%/locale/cs_CZ/description.php
 %%WWWDIR%%/locale/cs_CZ/strings.txt
 %%WWWDIR%%/locale/cs_CZ/texts.php
+%%WWWDIR%%/locale/de_DE/custom_strings.txt.example
 %%WWWDIR%%/locale/de_DE/description.php
 %%WWWDIR%%/locale/de_DE/strings.txt
 %%WWWDIR%%/locale/de_DE/texts.php
+%%WWWDIR%%/locale/en_GB/custom_strings.txt.example
 %%WWWDIR%%/locale/en_GB/description.php
 %%WWWDIR%%/locale/en_GB/strings.txt
 %%WWWDIR%%/locale/en_GB/texts.php
+%%WWWDIR%%/locale/en_US/custom_strings.txt.example
 %%WWWDIR%%/locale/en_US/description.php
 %%WWWDIR%%/locale/en_US/strings.txt
 %%WWWDIR%%/locale/en_US/texts.php
+%%WWWDIR%%/locale/es_AR/custom_strings.txt.example
 %%WWWDIR%%/locale/es_AR/description.php
 %%WWWDIR%%/locale/es_AR/strings.txt
 %%WWWDIR%%/locale/es_AR/texts.php
+%%WWWDIR%%/locale/es_ES/custom_strings.txt.example
 %%WWWDIR%%/locale/es_ES/description.php
 %%WWWDIR%%/locale/es_ES/strings.txt
 %%WWWDIR%%/locale/es_ES/texts.php
+%%WWWDIR%%/locale/fi_FI/custom_strings.txt.example
 %%WWWDIR%%/locale/fi_FI/description.php
 %%WWWDIR%%/locale/fi_FI/strings.txt
 %%WWWDIR%%/locale/fi_FI/texts.php
+%%WWWDIR%%/locale/fr_FR/custom_strings.txt.example
 %%WWWDIR%%/locale/fr_FR/description.php
 %%WWWDIR%%/locale/fr_FR/strings.txt
 %%WWWDIR%%/locale/fr_FR/texts.php
+%%WWWDIR%%/locale/id_ID/custom_strings.txt.example
 %%WWWDIR%%/locale/id_ID/description.php
 %%WWWDIR%%/locale/id_ID/strings.txt
 %%WWWDIR%%/locale/id_ID/texts.php
+%%WWWDIR%%/locale/it_IT/custom_strings.txt.example
 %%WWWDIR%%/locale/it_IT/description.php
 %%WWWDIR%%/locale/it_IT/strings.txt
 %%WWWDIR%%/locale/it_IT/texts.php
+%%WWWDIR%%/locale/ja_JP/custom_strings.txt.example
 %%WWWDIR%%/locale/ja_JP/description.php
 %%WWWDIR%%/locale/ja_JP/strings.txt
 %%WWWDIR%%/locale/ja_JP/texts.php
+%%WWWDIR%%/locale/ko_KR/custom_strings.txt.example
 %%WWWDIR%%/locale/ko_KR/description.php
 %%WWWDIR%%/locale/ko_KR/strings.txt
 %%WWWDIR%%/locale/ko_KR/texts.php
+%%WWWDIR%%/locale/nl_NL/custom_strings.txt.example
 %%WWWDIR%%/locale/nl_NL/description.php
 %%WWWDIR%%/locale/nl_NL/strings.txt
 %%WWWDIR%%/locale/nl_NL/texts.php
+%%WWWDIR%%/locale/pl_PL/custom_strings.txt.example
 %%WWWDIR%%/locale/pl_PL/description.php
 %%WWWDIR%%/locale/pl_PL/strings.txt
 %%WWWDIR%%/locale/pl_PL/texts.php
+%%WWWDIR%%/locale/pt_BR/custom_strings.txt.example
 %%WWWDIR%%/locale/pt_BR/description.php
 %%WWWDIR%%/locale/pt_BR/strings.txt
 %%WWWDIR%%/locale/pt_BR/texts.php
+%%WWWDIR%%/locale/ru_RU/custom_strings.txt.example
 %%WWWDIR%%/locale/ru_RU/description.php
 %%WWWDIR%%/locale/ru_RU/strings.txt
 %%WWWDIR%%/locale/ru_RU/texts.php
 %%WWWDIR%%/locale/tl_lang_parser.php
+%%WWWDIR%%/locale/zh_CN/custom_strings.txt.example
 %%WWWDIR%%/locale/zh_CN/description.php
 %%WWWDIR%%/locale/zh_CN/strings.txt
 %%WWWDIR%%/locale/zh_CN/texts.php
 %%WWWDIR%%/login.php
 %%WWWDIR%%/logout.php
-%%WWWDIR%%/logs/audits.log
-%%WWWDIR%%/logs/config_check.txt
-%%WWWDIR%%/logs/userlog0.log
-%%WWWDIR%%/logs/userlog1.log
 %%WWWDIR%%/lostPassword.php
 %%WWWDIR%%/sysinfo.php
 %%WWWDIR%%/third_party/Zend/Registry.php
@@ -1102,6 +1078,431 @@
 %%WWWDIR%%/third_party/adodb/xsl/remove-0.3.xsl
 %%WWWDIR%%/third_party/adodb_xml/class.ADODB_XML.php
 %%WWWDIR%%/third_party/adodb_xml/class.xml.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Autoloader.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/CachedObjectStorage/APC.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/CachedObjectStorage/CacheBase.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/CachedObjectStorage/DiscISAM.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/CachedObjectStorage/ICache.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/CachedObjectStorage/Memcache.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/CachedObjectStorage/Memory.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/CachedObjectStorage/MemoryGZip.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/CachedObjectStorage/MemorySerialized.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/CachedObjectStorage/PHPTemp.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/CachedObjectStorage/Wincache.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/CachedObjectStorageFactory.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Calculation.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Calculation/Database.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Calculation/DateTime.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Calculation/Engineering.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Calculation/Exception.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Calculation/ExceptionHandler.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Calculation/Financial.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Calculation/FormulaParser.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Calculation/FormulaToken.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Calculation/Function.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Calculation/Functions.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Calculation/Logical.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Calculation/LookupRef.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Calculation/MathTrig.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Calculation/Statistical.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Calculation/TextData.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Calculation/functionlist.txt
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Cell.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Cell/AdvancedValueBinder.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Cell/DataType.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Cell/DataValidation.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Cell/DefaultValueBinder.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Cell/Hyperlink.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Cell/IValueBinder.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Comment.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/DocumentProperties.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/DocumentSecurity.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/HashTable.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/IComparable.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/IOFactory.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/NamedRange.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Reader/CSV.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Reader/DefaultReadFilter.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Reader/Excel2003XML.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Reader/Excel2007.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Reader/Excel2007/Theme.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Reader/Excel5.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Reader/Excel5/Escher.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Reader/Gnumeric.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Reader/IReadFilter.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Reader/IReader.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Reader/OOCalc.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Reader/SYLK.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/ReferenceHelper.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/RichText.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/RichText/ITextElement.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/RichText/Run.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/RichText/TextElement.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Settings.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/CodePage.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/Date.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/Drawing.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/Escher.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/Escher/DgContainer.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/Escher/DgContainer/SpgrContainer.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/Escher/DgContainer/SpgrContainer/SpContainer.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/Escher/DggContainer.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/Escher/DggContainer/BstoreContainer.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE/Blip.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/Excel5.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/File.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/Font.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/CHANGELOG.TXT
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/CholeskyDecomposition.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/EigenvalueDecomposition.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/LUDecomposition.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/Matrix.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/QRDecomposition.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/SingularValueDecomposition.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/docs/docs.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/docs/download.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/docs/example.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/docs/includes/credits.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/docs/includes/footer.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/docs/includes/header.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/docs/includes/navbar.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/docs/index.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/docs/package.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/docs/test.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/examples/LMQuadTest.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/examples/LagrangeInterpolation.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/examples/LagrangeInterpolation2.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/examples/LevenbergMarquardt.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/examples/MagicSquareExample.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/examples/Stats.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/examples/benchmark.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/examples/polyfit.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/examples/tile.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/tests/TestMatrix.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/utils/Error.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/utils/Maths.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/OLE.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/OLE/ChainedBlockStream.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/OLE/PPS.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/OLE/PPS/File.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/OLE/PPS/Root.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/OLERead.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PCLZip/gnu-lgpl.txt
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PCLZip/pclzip.lib.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PCLZip/readme.txt
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/2dbarcodes.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/CHANGELOG.TXT
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/LICENSE.TXT
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/README.TXT
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/barcodes.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/cache/chapter_demo_1.txt
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/cache/chapter_demo_2.txt
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/cache/table_data_demo.txt
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/cache/utf8test.txt
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/config/lang/bra.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/config/lang/eng.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/config/lang/ger.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/config/lang/ita.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/config/tcpdf_config.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/config/tcpdf_config_alt.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/README.TXT
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/ZarBold.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/ZarBold.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/almohanad.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/almohanad.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/almohanad.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/arialunicid0-chinese-simplified.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/arialunicid0-chinese-traditional.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/arialunicid0-japanese.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/arialunicid0-korean.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/arialunicid0.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/chinese.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/courier.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavu-fonts-ttf-2.30/AUTHORS
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavu-fonts-ttf-2.30/BUGS
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavu-fonts-ttf-2.30/LICENSE
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavu-fonts-ttf-2.30/NEWS
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavu-fonts-ttf-2.30/README
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavu-fonts-ttf-2.30/langcover.txt
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavu-fonts-ttf-2.30/status.txt
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavu-fonts-ttf-2.30/unicover.txt
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusans.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusans.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusans.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansb.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansb.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansb.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansbi.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansbi.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansbi.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusanscondensed.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusanscondensed.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusanscondensed.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusanscondensedb.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusanscondensedb.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusanscondensedb.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusanscondensedbi.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusanscondensedbi.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusanscondensedbi.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusanscondensedi.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusanscondensedi.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusanscondensedi.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansi.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansi.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansi.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansmono.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansmono.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansmono.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansmonob.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansmonob.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansmonob.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansmonobi.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansmonobi.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansmonobi.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansmonoi.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansmonoi.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavusansmonoi.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserif.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserif.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserif.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifb.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifb.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifb.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifbi.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifbi.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifbi.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifcondensed.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifcondensed.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifcondensed.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifcondensedb.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifcondensedb.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifcondensedb.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifcondensedbi.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifcondensedbi.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifcondensedbi.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifcondensedi.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifcondensedi.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifcondensedi.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifi.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifi.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavuserifi.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freefont-20090104/AUTHORS
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freefont-20090104/COPYING
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freefont-20090104/CREDITS
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freefont-20090104/ChangeLog
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freefont-20090104/INSTALL
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freefont-20090104/README
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freemono.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freemono.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freemono.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freemonob.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freemonob.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freemonob.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freemonobi.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freemonobi.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freemonobi.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freemonoi.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freemonoi.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freemonoi.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freesans.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freesans.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freesans.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freesansb.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freesansb.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freesansb.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freesansbi.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freesansbi.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freesansbi.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freesansi.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freesansi.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freesansi.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freeserif.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freeserif.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freeserif.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freeserifb.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freeserifb.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freeserifb.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freeserifbi.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freeserifbi.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freeserifbi.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freeserifi.ctg.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freeserifi.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freeserifi.z
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/helvetica.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/helveticab.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/helveticabi.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/helveticai.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/hysmyeongjostdmedium.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/kozgopromedium.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/kozminproregular.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/msungstdlight.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/stsongstdlight.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/symbol.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/times.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/timesb.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/timesbi.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/timesi.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/uni2cid_ac15.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/uni2cid_ag15.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/uni2cid_aj16.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/uni2cid_ak12.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/README.TXT
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc/cp1250.map
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc/cp1251.map
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc/cp1252.map
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc/cp1253.map
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc/cp1254.map
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc/cp1255.map
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc/cp1257.map
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc/cp1258.map
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc/cp874.map
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc/iso-8859-1.map
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc/iso-8859-11.map
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc/iso-8859-15.map
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc/iso-8859-16.map
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc/iso-8859-2.map
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc/iso-8859-4.map
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc/iso-8859-5.map
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc/iso-8859-7.map
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc/iso-8859-9.map
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc/koi8-r.map
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc/koi8-u.map
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/freetype6.dll
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/makeallttffonts.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/makefont.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/pfm2afm
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/pfm2afm.exe
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/src/pfm2afm-src.tar.gz
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/src/readme.txt
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/src/ttf2ufm-src.tar.gz
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/ttf2ufm
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/ttf2ufm.exe
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/zlib1.dll
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/zapfdingbats.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/zarbold.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/htmlcolors.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/images/_blank.png
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/images/alpha.png
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/images/bug.eps
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/images/image_demo.jpg
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/images/image_with_alpha.png
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/images/img.png
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/images/logo_example.gif
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/images/logo_example.jpg
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/images/logo_example.png
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/images/pelican.ai
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/images/tcpdf_cell.png
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/images/tcpdf_logo.jpg
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/images/tcpdf_signature.png
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/images/testsvg.svg
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/images/tiger.ai
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/images/tux.svg
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/pdf417.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/qrcode.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/tcpdf.crt
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/tcpdf.fdf
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/tcpdf.p12
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/tcpdf.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/unicode_data.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PasswordHasher.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/String.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/XMLWriter.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/ZipArchive.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/ZipStreamWrapper.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/trend/bestFitClass.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/trend/exponentialBestFitClass.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/trend/linearBestFitClass.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/trend/logarithmicBestFitClass.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/trend/polynomialBestFitClass.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/trend/powerBestFitClass.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/trend/trendClass.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Style.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Style/Alignment.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Style/Border.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Style/Borders.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Style/Color.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Style/Conditional.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Style/Fill.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Style/Font.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Style/NumberFormat.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Style/Protection.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Worksheet.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Worksheet/BaseDrawing.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Worksheet/CellIterator.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Worksheet/ColumnDimension.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Worksheet/Drawing.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Worksheet/Drawing/Shadow.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Worksheet/HeaderFooter.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Worksheet/HeaderFooterDrawing.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Worksheet/MemoryDrawing.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Worksheet/PageMargins.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Worksheet/PageSetup.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Worksheet/Protection.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Worksheet/Row.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Worksheet/RowDimension.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Worksheet/RowIterator.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Worksheet/SheetView.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/WorksheetIterator.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/CSV.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel2007.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel2007/Comments.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel2007/ContentTypes.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel2007/DocProps.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel2007/Drawing.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel2007/Rels.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel2007/StringTable.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel2007/Style.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel2007/Theme.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel2007/Workbook.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel2007/Worksheet.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel2007/WriterPart.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel5.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel5/BIFFwriter.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel5/Escher.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel5/Font.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel5/Parser.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel5/Workbook.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel5/Worksheet.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel5/Xf.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/HTML.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/IWriter.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/PDF.php
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/cs/config
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/cs/functions
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/da/config
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/da/functions
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/de/config
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/de/functions
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/en/uk/config
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/es/config
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/es/functions
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/fi/config
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/fi/functions
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/fr/config
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/fr/functions
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/hu/config
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/hu/functions
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/it/config
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/it/functions
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/nl/config
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/nl/functions
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/no/config
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/no/functions
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/pl/config
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/pl/functions
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/pt/br/config
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/pt/br/functions
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/pt/config
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/pt/functions
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/ru/config
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/ru/functions
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/sv/config
+%%WWWDIR%%/third_party/codeplex/PHPExcel/locale/sv/functions
+%%WWWDIR%%/third_party/codeplex/changelog.txt
+%%WWWDIR%%/third_party/codeplex/install.txt
+%%WWWDIR%%/third_party/codeplex/license.txt
 %%WWWDIR%%/third_party/color_picker/img/logo.gif
 %%WWWDIR%%/third_party/color_picker/img/pixel.gif
 %%WWWDIR%%/third_party/color_picker/img/sel.gif
@@ -1201,6 +1602,7 @@
 %%WWWDIR%%/third_party/ext-js/css/theme-gray/list-view.css
 %%WWWDIR%%/third_party/ext-js/css/theme-gray/menu.css
 %%WWWDIR%%/third_party/ext-js/css/theme-gray/panel.css
+%%WWWDIR%%/third_party/ext-js/css/theme-gray/pivotgrid.css
 %%WWWDIR%%/third_party/ext-js/css/theme-gray/progress.css
 %%WWWDIR%%/third_party/ext-js/css/theme-gray/qtips.css
 %%WWWDIR%%/third_party/ext-js/css/theme-gray/resizable.css
@@ -1679,6 +2081,7 @@
 %%WWWDIR%%/third_party/ext-js/images/gray/grid/page-prev.gif
 %%WWWDIR%%/third_party/ext-js/images/gray/grid/refresh.gif
 %%WWWDIR%%/third_party/ext-js/images/gray/grid/row-expand-sprite.gif
+%%WWWDIR%%/third_party/ext-js/images/gray/grid/sort-hd.gif
 %%WWWDIR%%/third_party/ext-js/images/gray/grid/sort_asc.gif
 %%WWWDIR%%/third_party/ext-js/images/gray/grid/sort_desc.gif
 %%WWWDIR%%/third_party/ext-js/images/gray/menu/group-checked.gif
@@ -2021,8 +2424,9 @@
 %%WWWDIR%%/third_party/ext-js/images/yourtheme/window/top-bottom.psd
 %%WWWDIR%%/third_party/ext-js/index.html
 %%WWWDIR%%/third_party/ext-js/license.txt
-%%WWWDIR%%/third_party/ext-js/resources.jsb
+%%WWWDIR%%/third_party/ext-js/release-notes.html
 %%WWWDIR%%/third_party/ext-js/src/locale/ext-lang-af.js
+%%WWWDIR%%/third_party/ext-js/src/locale/ext-lang-am.js
 %%WWWDIR%%/third_party/ext-js/src/locale/ext-lang-bg.js
 %%WWWDIR%%/third_party/ext-js/src/locale/ext-lang-ca.js
 %%WWWDIR%%/third_party/ext-js/src/locale/ext-lang-cs.js
@@ -2572,8 +2976,6 @@
 %%WWWDIR%%/third_party/pchart/pChart/pCache.class
 %%WWWDIR%%/third_party/pchart/pChart/pChart.class
 %%WWWDIR%%/third_party/pchart/pChart/pData.class
-%%WWWDIR%%/third_party/phpexcel/oleread.inc
-%%WWWDIR%%/third_party/phpexcel/reader.php
 %%WWWDIR%%/third_party/phpmailer/LICENSE
 %%WWWDIR%%/third_party/phpmailer/README
 %%WWWDIR%%/third_party/phpmailer/aboutus.html
@@ -3347,7 +3749,6 @@
 @dirrm %%WWWDIR%%/third_party/phpmailer/examples
 @dirrm %%WWWDIR%%/third_party/phpmailer/docs
 @dirrm %%WWWDIR%%/third_party/phpmailer
-@dirrm %%WWWDIR%%/third_party/phpexcel
 @dirrm %%WWWDIR%%/third_party/pchart/pChart
 @dirrm %%WWWDIR%%/third_party/pchart/Fonts
 @dirrm %%WWWDIR%%/third_party/pchart
@@ -3519,6 +3920,67 @@
 @dirrm %%WWWDIR%%/third_party/dBug
 @dirrm %%WWWDIR%%/third_party/color_picker/img
 @dirrm %%WWWDIR%%/third_party/color_picker
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/locale/sv
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/locale/ru
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/locale/pt/br
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/locale/pt
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/locale/pl
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/locale/no
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/locale/nl
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/locale/it
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/locale/hu
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/locale/fr
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/locale/fi
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/locale/es
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/locale/en/uk
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/locale/en
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/locale/de
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/locale/da
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/locale/cs
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/locale
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel5
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Writer/Excel2007
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Writer
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Worksheet/Drawing
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Worksheet
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Style
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/trend
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/images
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/src
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils/enc
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/utils
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/freefont-20090104
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts/dejavu-fonts-ttf-2.30
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/fonts
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/config/lang
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/config
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF/cache
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PDF
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/PCLZip
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/OLE/PPS
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/OLE
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/utils
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/tests
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/examples
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/docs/includes
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA/docs
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/JAMA
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/Escher/DggContainer/BstoreContainer/BSE
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/Escher/DggContainer/BstoreContainer
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/Escher/DggContainer
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/Escher/DgContainer/SpgrContainer
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/Escher/DgContainer
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared/Escher
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Shared
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/RichText
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Reader/Excel5
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Reader/Excel2007
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Reader
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Cell
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/Calculation
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel/CachedObjectStorage
+@dirrm %%WWWDIR%%/third_party/codeplex/PHPExcel
+@dirrm %%WWWDIR%%/third_party/codeplex
 @dirrm %%WWWDIR%%/third_party/adodb_xml
 @dirrm %%WWWDIR%%/third_party/adodb/xsl
 @dirrm %%WWWDIR%%/third_party/adodb/tests
