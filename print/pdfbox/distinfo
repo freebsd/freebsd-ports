@@ -1,0 +1,6 @@
+SHA256 (pdfbox/pdfbox-app-1.6.0.jar) = d02d4ed9e67230e49f692e28a3a9b66e3a804146ef84270876b4f570467c87e2
+SIZE (pdfbox/pdfbox-app-1.6.0.jar) = 10308868
+SHA256 (pdfbox/fontbox-1.6.0.jar) = 068b3d515c7e75db03c88d1c079f17d9aa8022a36769db2c03a61d316f14a0d7
+SIZE (pdfbox/fontbox-1.6.0.jar) = 174824
+SHA256 (pdfbox/jempbox-1.6.0.jar) = c12bd94ee35a3d3d9c0dcf125f52e4e33657cd30d8c184911b24c71f0ff691b6
+SIZE (pdfbox/jempbox-1.6.0.jar) = 51360
