@@ -34,6 +34,56 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="7e4e5c53-a56c-11e0-b180-00216aa06fc2">
+    <topic>phpmyadmin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><lt>3.4.3.1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2011-5.php">
+	  <p>It was possible to manipulate the PHP session superglobal using
+	    some of the Swekey authentication code. This could open a path for
+	    other attacks.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2011-6.php">
+	  <p>An unsanitized key from the Servers array is written in a comment
+	    of the generated config. An attacker can modify this key by
+	    modifying the SESSION superglobal array. This allows the attacker to
+	    close the comment and inject code.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2011-7.php">
+	  <p>Through a possible bug in PHP running on Windows systems a null
+	    byte can truncate the pattern string allowing an attacker to inject
+	    the /e modifier causing the preg_replace function to execute its
+	    second argument as PHP code.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2011-8.php">
+	  <p>Fixed filtering of a file path in the MIME-type transformation
+	    code, which allowed for directory traversal.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+	<cvename>CVE-2011-2505</cvename>
+	<cvename>CVE-2011-2506</cvename>
+	<cvename>CVE-2011-2507</cvename>
+	<cvename>CVE-2011-2508</cvename>
+	<url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-5.php</url>
+	<url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-6.php</url>
+	<url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-7.php</url>
+	<url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-8.php</url>
+    </references>
+    <dates>
+      <discovery>2011-07-02</discovery>
+      <entry>2011-07-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="40544e8c-9f7b-11e0-9bec-6c626dd55a41">
     <topic>asterisk -- multiple vulnerabilities</topic>
     <affects>
