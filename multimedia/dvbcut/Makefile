@@ -10,7 +10,7 @@ PORTVERSION=	0.6.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www.mr511.de/dvbcut/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	se@FreeBSD.org
 COMMENT=	Qt application for cutting of MPEG PS and MPEG TS streams (DVB)
 
 BUILD_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer
@@ -46,7 +46,7 @@ QTCFGLIBS+=	${PTHREAD_LIBS}
 .else
 USE_CMAKE=	yes
 CMAKE_USE_PTHREAD= yes
-QT_COMPONENTS=  corelib qt3support xml network gui qmake_build
+QT_COMPONENTS=  corelib qt3support xml network gui qmake_build moc_build uic_build
 CXXFLAGS+=	-I${PREFIX}/include \
 		-I${PREFIX}/include/libavcodec \
 		-I${PREFIX}/include/libavformat \
