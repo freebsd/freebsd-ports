@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	moodle
-PORTVERSION=	2.0.3
+PORTVERSION=	2.1
 CATEGORIES=	www
-MASTER_SITES=	http://download.moodle.org/stable20/ \
-		http://download2.moodle.org/stable20/ \
-		http://download3.moodle.org/stable20/ \
-		http://download4.moodle.org/stable20/
+MASTER_SITES=	http://download.moodle.org/stable21/ \
+		http://download2.moodle.org/stable21/ \
+		http://download3.moodle.org/stable21/ \
+		http://download4.moodle.org/stable21/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	wen@FreeBSD.org
@@ -20,8 +20,8 @@ COMMENT=	Course management system based on social constructionism
 BUILD_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
 RUN_DEPENDS=	${PHPBASE}/lib/php/${PHP_EXT_DIR}/intl.so:${PORTSDIR}/devel/pecl-intl
 
-CONFLICTS=	moodle-1.*.*
-LATEST_LINK=	moodle20
+CONFLICTS=	moodle-1.*.* moodle-2.0.*
+LATEST_LINK=	moodle21
 
 USE_PHP=	session gd pcre mbstring iconv tokenizer curl xml xmlrpc ctype \
 		soap openssl simplexml spl dom json zip zlib
