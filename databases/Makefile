@@ -111,6 +111,7 @@
     SUBDIR += hamsterdb
     SUBDIR += hiredis
     SUBDIR += hk_classes
+    SUBDIR += hs-mysql
     SUBDIR += hsqldb
     SUBDIR += hypertable
     SUBDIR += innobackup
