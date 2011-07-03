@@ -1,0 +1,10 @@
+--- pre-setup.rb.orig	2011-07-03 13:33:30.719509068 -0400
++++ pre-setup.rb	2011-07-03 13:33:32.614509597 -0400
+@@ -21,6 +21,7 @@
+ # Create mo files.
+ #
+ begin 
++  require 'rubygems'
+   require 'gettext'
+ 
+   Dir.glob("po/*/*.po") do |file|
