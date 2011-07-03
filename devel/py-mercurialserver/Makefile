@@ -24,13 +24,15 @@ SVERSION=	1.1
 
 HGUSER=		hg
 HGGROUP=	hg
+USERS=		${HGUSER}
+GROUPS=		${HGGROUP}
 
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=YES
 PYDISTUTILS_PKGNAME=${SNAME}
 PYDISTUTILS_PKGVERSION=${SVERSION}
 
-CONF_FILES=	access.conf \
+HGSVCONF_FILES=	access.conf \
 		remote-hgrc.d/access.rc \
 		remote-hgrc.d/logging.rc
 
@@ -38,16 +40,11 @@ CONF_FILES=	access.conf \
 pre-patch:
 	${SED} -I .orig -e "s#/etc/mercurial-server/#${PREFIX}/etc/${PORTNAME}/#" ${WRKSRC}/src/init/dot-mercurial-server
 
-pre-su-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} GITUSER=${HGUSER} \
-		GITGROUP=${HGGROUP} GITHOME=${HGHOME} \
-		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 post-install:
 	${MKDIR} ${PREFIX}/etc/${PORTNAME}/remote-hgrc.d
 	${MKDIR} ${PREFIX}/etc/${PORTNAME}/keys/users
 	${MKDIR} ${PREFIX}/etc/${PORTNAME}/keys/root
-.for i in ${CONF_FILES}
+.for i in ${HGSVCONF_FILES}
 	${INSTALL_DATA} ${WRKSRC}/src/init/conf/${i} ${PREFIX}/etc/${PORTNAME}/${i}
 .endfor
 	${MV} ${PREFIX}/hg/dot-mercurial-server ${PREFIX}/hg/.mercurial-server
