@@ -21,6 +21,8 @@ ONLY_FOR_ARCHS=	i386 amd64 ia64
 NO_BUILD=	YES
 RESTRICTED=	Redistribution of the software is not allowed
 
+USERS=		${PORTNAME}
+GROUPS=		${USERS}
 USE_RC_SUBR=	shoutcast.sh
 PORTDOCS=	README.TXT
 WRKSRC=		${WRKDIR}
@@ -48,7 +50,6 @@ do-install:
 .endif
 
 post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${BRANDELF} -t Linux ${PREFIX}/sbin/sc_serv
 
 .include <bsd.port.mk>
