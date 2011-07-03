@@ -3,6 +3,7 @@ bin/vym
 %%DATADIR%%/demos/lifeforms.vym
 %%DATADIR%%/demos/math.vym
 %%DATADIR%%/demos/time-management.vym
+%%DATADIR%%/demos/vym-contribute.vym
 %%DATADIR%%/demos/vym-projectplan.vym
 %%DATADIR%%/exports/orange-blue.conf
 %%DATADIR%%/exports/template-orange-blue/META-INF/manifest.xml
@@ -13,7 +14,6 @@ bin/vym
 %%DATADIR%%/exports/template-orange-blue/meta.xml
 %%DATADIR%%/exports/template-orange-blue/mimetype
 %%DATADIR%%/exports/template-orange-blue/page-template.xml
-%%DATADIR%%/exports/template-orange-blue/section-template.xml
 %%DATADIR%%/exports/template-orange-blue/settings.xml
 %%DATADIR%%/exports/template-orange-blue/styles.xml
 %%DATADIR%%/flags/flag-arrow-2down.png
@@ -40,13 +40,16 @@ bin/vym
 %%DATADIR%%/flags/flag-smiley-omg.png
 %%DATADIR%%/flags/flag-smiley-sad.png
 %%DATADIR%%/flags/flag-stopsign.png
+%%DATADIR%%/flags/flag-target.png
 %%DATADIR%%/flags/flag-thumb-down.png
 %%DATADIR%%/flags/flag-thumb-up.png
 %%DATADIR%%/flags/flag-tmpUnscrolled-right.png
 %%DATADIR%%/flags/flag-url-16x16.png
+%%DATADIR%%/flags/flag-url-bugzilla-novell-closed.png
+%%DATADIR%%/flags/flag-url-bugzilla-novell.png
 %%DATADIR%%/flags/flag-url.png
 %%DATADIR%%/flags/flag-vymlink.png
-%%DATADIR%%/flags/flags.xcf
+%%DATADIR%%/flags/flag-wip.png
 %%DATADIR%%/flags/freemind/attach.png
 %%DATADIR%%/flags/freemind/back.png
 %%DATADIR%%/flags/freemind/bell.png
@@ -77,8 +80,6 @@ bin/vym
 %%DATADIR%%/flags/freemind/warning.png
 %%DATADIR%%/flags/freemind/wizard.png
 %%DATADIR%%/flags/freemind/xmag.png
-%%DATADIR%%/icons/cursor.xcf
-%%DATADIR%%/icons/cursor16.xcf
 %%DATADIR%%/icons/cursorcolorpicker.png
 %%DATADIR%%/icons/cursorcolorpicker16.png
 %%DATADIR%%/icons/cursorcopy.png
@@ -90,8 +91,10 @@ bin/vym
 %%DATADIR%%/icons/editcut.png
 %%DATADIR%%/icons/editpaste.png
 %%DATADIR%%/icons/editsort.png
+%%DATADIR%%/icons/editsortback.png
 %%DATADIR%%/icons/edittrash.png
 %%DATADIR%%/icons/exit.png
+%%DATADIR%%/icons/file-document-export.png
 %%DATADIR%%/icons/fileclose.png
 %%DATADIR%%/icons/filenew.png
 %%DATADIR%%/icons/filenewcopy.png
@@ -107,12 +110,13 @@ bin/vym
 %%DATADIR%%/icons/formatcolorsubtree.png
 %%DATADIR%%/icons/formatfixedfont.png
 %%DATADIR%%/icons/formatvarfont.png
+%%DATADIR%%/icons/headingeditor.png
 %%DATADIR%%/icons/history.png
-%%DATADIR%%/icons/icons.xcf
 %%DATADIR%%/icons/modecolor.png
 %%DATADIR%%/icons/modecopy.png
 %%DATADIR%%/icons/modelink.png
 %%DATADIR%%/icons/newbranch.png
+%%DATADIR%%/icons/newmapcenter.png
 %%DATADIR%%/icons/redo.png
 %%DATADIR%%/icons/text_block.png
 %%DATADIR%%/icons/text_bold.png
@@ -123,6 +127,7 @@ bin/vym
 %%DATADIR%%/icons/text_sub.png
 %%DATADIR%%/icons/text_super.png
 %%DATADIR%%/icons/text_under.png
+%%DATADIR%%/icons/treeeditor.png
 %%DATADIR%%/icons/undo.png
 %%DATADIR%%/icons/up.png
 %%DATADIR%%/icons/viewmag+.png
@@ -135,28 +140,18 @@ bin/vym
 %%DATADIR%%/icons/vym.icns
 %%DATADIR%%/icons/vym.ico
 %%DATADIR%%/icons/vym.png
-%%DATADIR%%/icons/vym.xcf
 %%DATADIR%%/icons/vym.xpm
-%%DATADIR%%/lang/vym_de.qm
-%%DATADIR%%/lang/vym_de.ts
-%%DATADIR%%/lang/vym_en.qm
-%%DATADIR%%/lang/vym_en.ts
-%%DATADIR%%/lang/vym_es.qm
-%%DATADIR%%/lang/vym_es.ts
-%%DATADIR%%/lang/vym_fr.qm
-%%DATADIR%%/lang/vym_fr.ts
-%%DATADIR%%/lang/vym_it.qm
-%%DATADIR%%/lang/vym_it.ts
-%%DATADIR%%/lang/vym_pt_BR.qm
-%%DATADIR%%/lang/vym_pt_BR.ts
-%%DATADIR%%/lang/vym_ru.qm
-%%DATADIR%%/lang/vym_ru.ts
-%%DATADIR%%/lang/vym_sv.qm
-%%DATADIR%%/lang/vym_sv.ts
-%%DATADIR%%/lang/vym_zh_CN.qm
-%%DATADIR%%/lang/vym_zh_CN.ts
-%%DATADIR%%/lang/vym_zh_TW.qm
-%%DATADIR%%/lang/vym_zh_TW.ts
+%%NLS%%%%DATADIR%%/lang/vym_cs_CZ.qm
+%%NLS%%%%DATADIR%%/lang/vym_de_DE.qm
+%%NLS%%%%DATADIR%%/lang/vym_en.qm
+%%NLS%%%%DATADIR%%/lang/vym_es.qm
+%%NLS%%%%DATADIR%%/lang/vym_fr.qm
+%%NLS%%%%DATADIR%%/lang/vym_it.qm
+%%NLS%%%%DATADIR%%/lang/vym_pt_BR.qm
+%%NLS%%%%DATADIR%%/lang/vym_ru.qm
+%%NLS%%%%DATADIR%%/lang/vym_sv.qm
+%%NLS%%%%DATADIR%%/lang/vym_zh_CN.qm
+%%NLS%%%%DATADIR%%/lang/vym_zh_TW.qm
 %%DATADIR%%/macros/macro-1.vys
 %%DATADIR%%/macros/macro-10.vys
 %%DATADIR%%/macros/macro-11.vys
@@ -169,24 +164,13 @@ bin/vym
 %%DATADIR%%/macros/macro-7.vys
 %%DATADIR%%/macros/macro-8.vys
 %%DATADIR%%/macros/macro-9.vys
-%%DATADIR%%/scripts/exportvym
-%%DATADIR%%/scripts/niceXML
-%%DATADIR%%/scripts/release-mac
-%%DATADIR%%/scripts/update-bookmarks
-%%DATADIR%%/styles/cm.xsl
 %%DATADIR%%/styles/kdebookmarks2vym.xsl
-%%DATADIR%%/styles/mmap2vym.xsl
-%%DATADIR%%/styles/tm.xsl
 %%DATADIR%%/styles/vym.css
-%%DATADIR%%/styles/vym2html.xsl
 %%DATADIR%%/styles/vym2kdebookmarks.xsl
 %%DATADIR%%/styles/vym2taskjuggler.xsl
-%%DATADIR%%/styles/vym2txt.xsl
-%%DATADIR%%/styles/vym2xhtml.xsl
 @dirrm %%DATADIR%%/styles
-@dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/macros
-@dirrm %%DATADIR%%/lang
+%%NLS%%@dirrm %%DATADIR%%/lang
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/flags/freemind
 @dirrm %%DATADIR%%/flags
