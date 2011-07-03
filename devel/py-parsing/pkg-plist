@@ -12,6 +12,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/module-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing-module.html
+%%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.And-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.CaselessKeyword-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.CaselessLiteral-class.html
@@ -45,8 +46,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.ParserElement-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.QuotedString-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.RecursiveGrammarException-class.html
-%%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.Regex.compiledREtype-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.Regex-class.html
+%%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.Regex.compiledREtype-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.SkipTo-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.StringEnd-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.StringStart-class.html
@@ -59,7 +60,6 @@
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.WordEnd-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.WordStart-class.html
 %%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing.ZeroOrMore-class.html
-%%PORTDOCS%%%%DOCSDIR%%/pyparsing.pyparsing-pysrc.html
 %%PORTDOCS%%%%DOCSDIR%%/redirect.html
 %%PORTDOCS%%%%DOCSDIR%%/toc-everything.html
 %%PORTDOCS%%%%DOCSDIR%%/toc-pyparsing.pyparsing-module.html
@@ -72,6 +72,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/TAP.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/adventureEngine.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/apicheck.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/btpyparse.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/cLibHeader.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chemicalFormulas.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/commasep.py
@@ -87,11 +88,13 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eval_arith.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/excelExpr.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fourFn.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gen_ctypes.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/getNTPservers.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/getNTPserversNew.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/greeting.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/greetingInGreek.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/greetingInKorean.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/groupUsingListAllMatches.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/holaMundo.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/htmlStripper.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/httpServerLogParser.py
@@ -114,6 +117,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/parseResultsSumExample.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/partial_gene_match.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pgn.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/protobuf_parser.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pymicko.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pythonGrammarParser.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/readJson.py
@@ -134,6 +138,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stackish.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/stateMachine2.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tagCapture.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/test_bibparse.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/urlExtractor.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/urlExtractorNew.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/withAttribute.py
