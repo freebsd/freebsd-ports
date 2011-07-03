@@ -38,7 +38,7 @@ OPTIONS=	DEBUGGING	"Build with debugging support"		off \
 
 PORTSCOUT=	limitw:1,even
 
-PERL_VERSION=	5.12.3
+PERL_VERSION=	5.12.4
 PERL_ARCH=	mach
 SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VERSION}
 SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
