@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openbgpd
-PORTVERSION=	4.7.20100410
+PORTVERSION=	4.9.20110612
 CATEGORIES=	net
 MASTER_SITES=	${MASTER_SITE_OPENBSD}
 MASTER_SITE_SUBDIR=	OpenBGPD
@@ -33,6 +33,8 @@ MANCOMPRESSED=	yes
 USE_RC_SUBR=	${PORTNAME}.sh
 PLIST_FILES=	sbin/bgpctl sbin/bgpd
 SUB_FILES=	pkg-message
+USERS=		_bgpd
+GROUPS=		_bgpd
 
 MAN5=		bgpd.conf.5
 MAN8=		bgpctl.8 bgpd.8
@@ -48,7 +50,6 @@ post-patch:
 		${WRKSRC}/bgpctl/bgpctl.8
 
 post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -2,10 +2,10 @@ Index: bgpctl/bgpctl.8
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpctl/bgpctl.8,v
 retrieving revision 1.1.1.6
-retrieving revision 1.4
-diff -u -p -r1.1.1.6 -r1.4
+retrieving revision 1.5
+diff -u -p -r1.1.1.6 -r1.5
 --- bgpctl/bgpctl.8	14 Feb 2010 20:20:13 -0000	1.1.1.6
-+++ bgpctl/bgpctl.8	4 Feb 2010 16:22:26 -0000	1.4
++++ bgpctl/bgpctl.8	2 Jul 2011 16:06:35 -0000	1.5
 @@ -1,4 +1,4 @@
 -.\" $OpenBSD: bgpctl.8,v 1.49 2009/06/06 06:11:17 claudio Exp $
 +.\" $OpenBSD: bgpctl.8,v 1.52 2009/11/03 08:09:15 jmc Exp $
@@ -17,11 +17,45 @@ diff -u -p -r1.1.1.6 -r1.4
  .\" OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
  .\"
 -.Dd $Mdocdate: June 6 2009 $
-+.Dd $Mdocdate: November 2 2009 $
++.Dd $Mdocdate: May 3 2010 $
  .Dt BGPCTL 8
  .Os
  .Sh NAME
-@@ -79,7 +79,15 @@ The options are as follows:
+@@ -32,8 +32,7 @@ The
+ program controls the
+ .Xr bgpd 8
+ daemon.
+-Commands to switch between displays may be abbreviated to the
+-minimum unambiguous prefix; for example,
++Commands may be abbreviated to the minimum unambiguous prefix; for example,
+ .Cm s s
+ for
+ .Cm show summary .
+@@ -53,11 +52,19 @@ to communicate with
+ .Pp
+ The commands are as follows:
+ .Bl -tag -width xxxxxx
+-.It Cm fib couple
+-Insert the learned routes into the Forwarding Information Base
++.It Xo
++.Cm fib
++.Op Cm table Ar number
++.Cm couple
++.Xc
++Insert the learned routes into the specified Forwarding Information Base
+ a.k.a. the kernel routing table.
+-.It Cm fib decouple
+-Remove the learned routes from the Forwarding Information Base
++.It Xo
++.Cm fib
++.Op Cm table Ar number
++.Cm decouple
++.Xc
++Remove the learned routes from the specified Forwarding Information Base
+ a.k.a. the kernel routing table.
+ .It Xo
+ .Cm irrfilter
+@@ -79,7 +86,15 @@ The options are as follows:
  Use
  .Ar directory
  to write the filter files to.
@@ -37,7 +71,48 @@ diff -u -p -r1.1.1.6 -r1.4
  .It Cm neighbor Ar peer Cm up
  Take the BGP session to the specified neighbor up.
  .Ar peer
-@@ -246,7 +254,7 @@ in a terse format.
+@@ -98,8 +113,10 @@ Note that the neighbor is not obliged to
+ all, even if it announced the route refresh capability.
+ .Ar peer
+ may be the neighbor's address or description.
+-.It Cm network add Ar prefix
++.It Cm network add Ar prefix Op Ar arguments
+ Add the specified prefix to the list of announced networks.
++It is possible to set various path attributes with additional
++.Ar arguments .
+ .It Cm network delete Ar prefix
+ Remove the specified prefix from the list of announced networks.
+ .It Cm network flush
+@@ -122,7 +139,7 @@ view of the Forwarding Information Base.
+ can be an IP address, in which case the route to this address is shown,
+ or a flag:
+ .Pp
+-.Bl -tag -width connected -compact
++.Bl -tag -width tableXnumber -compact
+ .It Cm connected
+ Show only connected routes.
+ .It Cm static
+@@ -133,6 +150,14 @@ Show only routes originating from
+ itself.
+ .It Cm nexthop
+ Show only routes required to reach a BGP nexthop.
++.It Cm inet
++Show only IPv4 routes.
++.It Cm inet6
++Show only IPv6 routes.
++.It Cm table Ar number
++Show the routing table with ID
++.Ar number
++instead of the default routing table with ID 0.
+ .El
+ .It Cm show interfaces
+ Show the interface states.
+@@ -243,10 +268,12 @@ and message counters.
+ .It Cm show summary terse
+ Show a list of all neighbors, including information about the session state,
+ in a terse format.
++.It Cm show tables
++Show a list of all currently loaded fib routing tables.
  .El
  .Sh FILES
  .Bl -tag -width "/var/run/bgpd.sockXXX" -compact

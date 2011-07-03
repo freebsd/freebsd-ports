@@ -2,13 +2,13 @@ Index: bgpd/control.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/control.c,v
 retrieving revision 1.1.1.7
-retrieving revision 1.1.1.8
-diff -u -p -r1.1.1.7 -r1.1.1.8
+retrieving revision 1.1.1.9
+diff -u -p -r1.1.1.7 -r1.1.1.9
 --- bgpd/control.c	14 Feb 2010 20:19:57 -0000	1.1.1.7
-+++ bgpd/control.c	14 Feb 2010 20:27:06 -0000	1.1.1.8
++++ bgpd/control.c	12 Jun 2011 10:44:24 -0000	1.1.1.9
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: control.c,v 1.61 2009/05/05 20:09:19 sthen Exp $ */
-+/*	$OpenBSD: control.c,v 1.68 2010/01/13 06:02:37 claudio Exp $ */
++/*	$OpenBSD: control.c,v 1.70 2010/10/29 12:51:53 henning Exp $ */
  
  /*
   * Copyright (c) 2003, 2004 Henning Brauer <henning@openbsd.org>
@@ -32,8 +32,9 @@ diff -u -p -r1.1.1.7 -r1.1.1.8
  
  	session_socket_blockmode(connfd, BM_NONBLOCK);
  
- 	if ((ctl_conn = malloc(sizeof(struct ctl_conn))) == NULL) {
+-	if ((ctl_conn = malloc(sizeof(struct ctl_conn))) == NULL) {
 -		log_warn("session_control_accept");
++	if ((ctl_conn = calloc(1, sizeof(struct ctl_conn))) == NULL) {
 +		log_warn("control_accept");
  		close(connfd);
  		return (0);
@@ -48,7 +49,17 @@ diff -u -p -r1.1.1.7 -r1.1.1.8
  	struct peer		*p;
  	struct ctl_neighbor	*neighbor;
  	struct ctl_show_rib_request	*ribreq;
-@@ -328,13 +329,19 @@ control_dispatch_msg(struct pollfd *pfd,
+@@ -305,7 +306,8 @@ control_dispatch_msg(struct pollfd *pfd,
+ 			break;
+ 		case IMSG_CTL_FIB_COUPLE:
+ 		case IMSG_CTL_FIB_DECOUPLE:
+-			imsg_compose_parent(imsg.hdr.type, 0, NULL, 0);
++			imsg_compose_parent(imsg.hdr.type, imsg.hdr.peerid,
++			    0, NULL, 0);
+ 			break;
+ 		case IMSG_CTL_NEIGHBOR_UP:
+ 		case IMSG_CTL_NEIGHBOR_DOWN:
+@@ -328,13 +330,19 @@ control_dispatch_msg(struct pollfd *pfd,
  					control_result(c, CTL_RES_OK);
  					break;
  				case IMSG_CTL_NEIGHBOR_DOWN:
@@ -72,7 +83,30 @@ diff -u -p -r1.1.1.7 -r1.1.1.8
  					control_result(c, CTL_RES_OK);
  					break;
  				case IMSG_CTL_NEIGHBOR_RREFRESH:
-@@ -370,7 +377,7 @@ control_dispatch_msg(struct pollfd *pfd,
+@@ -352,13 +360,19 @@ control_dispatch_msg(struct pollfd *pfd,
+ 				    "wrong length");
+ 			break;
+ 		case IMSG_CTL_RELOAD:
++		case IMSG_CTL_SHOW_INTERFACE:
++		case IMSG_CTL_SHOW_FIB_TABLES:
++			c->ibuf.pid = imsg.hdr.pid;
++			imsg_compose_parent(imsg.hdr.type, 0, imsg.hdr.pid,
++			    imsg.data, imsg.hdr.len - IMSG_HEADER_SIZE);
++			break;
+ 		case IMSG_CTL_KROUTE:
+ 		case IMSG_CTL_KROUTE_ADDR:
+ 		case IMSG_CTL_SHOW_NEXTHOP:
+-		case IMSG_CTL_SHOW_INTERFACE:
+ 			c->ibuf.pid = imsg.hdr.pid;
+-			imsg_compose_parent(imsg.hdr.type, imsg.hdr.pid,
+-			    imsg.data, imsg.hdr.len - IMSG_HEADER_SIZE);
++			imsg_compose_parent(imsg.hdr.type, imsg.hdr.peerid,
++			    imsg.hdr.pid, imsg.data, imsg.hdr.len -
++			    IMSG_HEADER_SIZE);
+ 			break;
+ 		case IMSG_CTL_SHOW_RIB:
+ 		case IMSG_CTL_SHOW_RIB_AS:
+@@ -370,7 +384,7 @@ control_dispatch_msg(struct pollfd *pfd,
  				neighbor->descr[PEER_DESCR_LEN - 1] = 0;
  				ribreq->peerid = 0;
  				p = NULL;
@@ -81,7 +115,7 @@ diff -u -p -r1.1.1.7 -r1.1.1.8
  					p = getpeerbyaddr(&neighbor->addr);
  					if (p == NULL) {
  						control_result(c,
-@@ -397,8 +404,7 @@ control_dispatch_msg(struct pollfd *pfd,
+@@ -397,8 +411,7 @@ control_dispatch_msg(struct pollfd *pfd,
  					break;
  				}
  				if ((imsg.hdr.type == IMSG_CTL_SHOW_RIB_PREFIX)
@@ -91,7 +125,7 @@ diff -u -p -r1.1.1.7 -r1.1.1.8
  					/* malformed request, must specify af */
  					control_result(c, CTL_RES_PARSE_ERROR);
  					break;
-@@ -425,6 +431,20 @@ control_dispatch_msg(struct pollfd *pfd,
+@@ -425,6 +438,20 @@ control_dispatch_msg(struct pollfd *pfd,
  			imsg_compose_rde(imsg.hdr.type, 0,
  			    imsg.data, imsg.hdr.len - IMSG_HEADER_SIZE);
  			break;
@@ -101,7 +135,7 @@ diff -u -p -r1.1.1.7 -r1.1.1.8
 +				break;
 +
 +			/* forward to other processes */
-+			imsg_compose_parent(imsg.hdr.type, imsg.hdr.pid,
++			imsg_compose_parent(imsg.hdr.type, 0, imsg.hdr.pid,
 +			    imsg.data, imsg.hdr.len - IMSG_HEADER_SIZE);
 +			imsg_compose_rde(imsg.hdr.type, 0,
 +			    imsg.data, imsg.hdr.len - IMSG_HEADER_SIZE);

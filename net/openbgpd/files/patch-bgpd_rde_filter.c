@@ -2,10 +2,10 @@ Index: bgpd/rde_filter.c
 ===================================================================
 RCS file: /home/cvs/private/hrs/openbgpd/bgpd/rde_filter.c,v
 retrieving revision 1.1.1.7
-retrieving revision 1.6
-diff -u -p -r1.1.1.7 -r1.6
+retrieving revision 1.7
+diff -u -p -r1.1.1.7 -r1.7
 --- bgpd/rde_filter.c	14 Feb 2010 20:19:57 -0000	1.1.1.7
-+++ bgpd/rde_filter.c	10 Apr 2010 12:16:23 -0000	1.6
++++ bgpd/rde_filter.c	2 Jul 2011 16:06:38 -0000	1.7
 @@ -1,4 +1,4 @@
 -/*	$OpenBSD: rde_filter.c,v 1.56 2009/06/06 01:10:29 claudio Exp $ */
 +/*	$OpenBSD: rde_filter.c,v 1.62 2010/03/05 15:25:00 claudio Exp $ */
@@ -18,10 +18,10 @@ diff -u -p -r1.1.1.7 -r1.6
  
 +	if (asp->flags & F_ATTR_PARSE_ERR)
 +		/*
-+	 	 * don't try to filter bad updates but let them through
++	 	 * don't try to filter bad updates just deny them
 +		 * so they act as implicit withdraws
 +		 */
-+		return (action);
++		return (ACTION_DENY);
 +
  	TAILQ_FOREACH(f, rules, entry) {
  		if (dir != f->dir)
@@ -71,12 +71,51 @@ diff -u -p -r1.1.1.7 -r1.6
  		}
  	}
  }
-@@ -281,12 +299,17 @@ rde_filter_match(struct filter_rule *f, 
+@@ -251,11 +269,21 @@ int
+ rde_filter_match(struct filter_rule *f, struct rde_aspath *asp,
+     struct bgpd_addr *prefix, u_int8_t plen, struct rde_peer *peer)
+ {
+-	int	as, type;
++	u_int32_t	pas;
++	int		cas, type;
+ 
+-	if (asp != NULL && f->match.as.type != AS_NONE)
+-		if (aspath_match(asp->aspath, f->match.as.type,
+-		    f->match.as.as) == 0)
++	if (asp != NULL && f->match.as.type != AS_NONE) {
++		if (f->match.as.flags & AS_FLAG_NEIGHBORAS)
++			pas = peer->conf.remote_as;
++		else
++			pas = f->match.as.as;
++		if (aspath_match(asp->aspath, f->match.as.type, pas) == 0)
++			return (0);
++	}
++
++	if (asp != NULL && f->match.aslen.type != ASLEN_NONE)
++		if (aspath_lenmatch(asp->aspath, f->match.aslen.type,
++		    f->match.aslen.aslen) == 0)
+ 			return (0);
+ 
+ 	if (asp != NULL && f->match.community.as != COMMUNITY_UNSET) {
+@@ -263,10 +291,10 @@ rde_filter_match(struct filter_rule *f, 
+ 		case COMMUNITY_ERROR:
+ 			fatalx("rde_apply_set bad community string");
+ 		case COMMUNITY_NEIGHBOR_AS:
+-			as = peer->conf.remote_as;
++			cas = peer->conf.remote_as;
+ 			break;
+ 		default:
+-			as = f->match.community.as;
++			cas = f->match.community.as;
+ 			break;
+ 		}
+ 
+@@ -281,12 +309,17 @@ rde_filter_match(struct filter_rule *f, 
  			break;
  		}
  
 -		if (rde_filter_community(asp, as, type) == 0)
-+		if (community_match(asp, as, type) == 0)
++		if (community_match(asp, cas, type) == 0)
  			return (0);
  	}
 +	if (asp != NULL &&
@@ -92,7 +131,7 @@ diff -u -p -r1.1.1.7 -r1.6
  			/* don't use IPv4 rules for IPv6 and vice versa */
  			return (0);
  
-@@ -322,7 +345,7 @@ rde_filter_match(struct filter_rule *f, 
+@@ -322,7 +355,7 @@ rde_filter_match(struct filter_rule *f, 
  	} else if (f->match.prefixlen.op != OP_NONE) {
  		/* only prefixlen without a prefix */
  
@@ -101,7 +140,7 @@ diff -u -p -r1.1.1.7 -r1.6
  			/* don't use IPv4 rules for IPv6 and vice versa */
  			return (0);
  
-@@ -356,19 +379,6 @@ rde_filter_match(struct filter_rule *f, 
+@@ -356,19 +389,6 @@ rde_filter_match(struct filter_rule *f, 
  }
  
  int
@@ -121,7 +160,7 @@ diff -u -p -r1.1.1.7 -r1.6
  rde_filter_equal(struct filter_head *a, struct filter_head *b,
      struct rde_peer *peer, enum directions dir)
  {
-@@ -476,6 +486,12 @@ filterset_cmp(struct filter_set *a, stru
+@@ -476,6 +496,12 @@ filterset_cmp(struct filter_set *a, stru
  		return (a->action.community.type - b->action.community.type);
  	}
  
@@ -134,7 +173,7 @@ diff -u -p -r1.1.1.7 -r1.6
  	if (a->type == ACTION_SET_NEXTHOP && b->type == ACTION_SET_NEXTHOP) {
  		/*
  		 * This is the only interesting case, all others are considered
-@@ -483,7 +499,7 @@ filterset_cmp(struct filter_set *a, stru
+@@ -483,13 +509,29 @@ filterset_cmp(struct filter_set *a, stru
  		 * reject it at the same time. Allow one IPv4 and one IPv6
  		 * per filter set or only one of the other nexthop modifiers.
  		 */
@@ -143,7 +182,29 @@ diff -u -p -r1.1.1.7 -r1.6
  	}
  
  	/* equal */
-@@ -574,6 +590,19 @@ filterset_equal(struct filter_set_head *
+ 	return (0);
+ }
+ 
++void
++filterset_move(struct filter_set_head *source, struct filter_set_head *dest)
++{
++	struct filter_set	*s;
++
++	TAILQ_INIT(dest);
++
++	if (source == NULL)
++		return;
++
++	while ((s = TAILQ_FIRST(source)) != NULL) {
++		TAILQ_REMOVE(source, s, entry);
++		TAILQ_INSERT_TAIL(dest, s, entry);
++	}
++}
++
+ int
+ filterset_equal(struct filter_set_head *ah, struct filter_set_head *bh)
+ {
+@@ -574,6 +616,19 @@ filterset_equal(struct filter_set_head *
  			if (strcmp(as, bs) == 0)
  				continue;
  			break;
@@ -163,7 +224,7 @@ diff -u -p -r1.1.1.7 -r1.6
  		}
  		/* compare failed */
  		return (0);
-@@ -616,7 +645,14 @@ filterset_name(enum action_types type)
+@@ -616,7 +671,14 @@ filterset_name(enum action_types type)
  	case ACTION_RTLABEL:
  	case ACTION_RTLABEL_ID:
  		return ("rtlabel");

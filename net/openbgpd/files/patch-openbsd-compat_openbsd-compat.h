@@ -3,10 +3,10 @@ Index: openbsd-compat/openbsd-compat.h
 RCS file: openbsd-compat/openbsd-compat.h
 diff -N openbsd-compat/openbsd-compat.h
 --- /dev/null	1 Jan 1970 00:00:00 -0000
-+++ openbsd-compat/openbsd-compat.h	4 Feb 2010 16:22:51 -0000	1.4
++++ openbsd-compat/openbsd-compat.h	3 Jul 2011 04:46:38 -0000	1.6
 @@ -0,0 +1,87 @@
 +/*
-+ * $hrs: openbgpd/openbsd-compat/openbsd-compat.h,v 1.4 2010/02/04 16:22:51 hrs Exp $
++ * $hrs: openbgpd/openbsd-compat/openbsd-compat.h,v 1.6 2011/07/03 04:46:38 hrs Exp $
 + */
 +
 +#ifndef _OPENBSD_COMPAT_H
