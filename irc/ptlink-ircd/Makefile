@@ -21,6 +21,12 @@ USE_GMAKE=	yes
 USE_RC_SUBR=	ptlink-ircd.sh
 SUB_FILES=	pkg-message
 
+USERS=		${PORTNAME:L}
+GROUPS=		${USERS}
+
+DEPRECATED=	No upstream source, no distfile and no maintainer
+EXPIRATION_DATE=2011-09-03
+
 SYSCONFDIR=	${PREFIX}/etc/ptlink-ircd
 
 CONFIGURE_ARGS=	--sysconfdir=${SYSCONFDIR} --localstatedir=/var \
@@ -35,7 +41,6 @@ CONFIGURE_ARGS+=--with-ssl=openssl
 .endif
 
 post-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CHOWN} -R ircd:ircd ${SYSCONFDIR}
 	@${CAT} ${PKGMESSAGE}
 
