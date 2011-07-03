@@ -18,6 +18,10 @@ COMMENT=	Archiver & backup program w/ builtin compression
 ALL_TARGET=	${PORTNAME}
 MAN1=		afio.1
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|^CC=.*$$|CC=${CC}|' \
+		${WRKSRC}/Makefile
+
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
