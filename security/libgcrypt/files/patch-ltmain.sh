@@ -1,6 +1,19 @@
---- scripts/ltmain.sh.orig	Wed Jul 17 15:42:41 2002
+--- ltmain.sh	Wed Jul 17 15:42:41 2002
 +++ ltmain.sh	Wed Jul 17 15:47:36 2002
-@@ -1062,8 +1062,16 @@
+@@ -2077,10 +2077,12 @@
+ 	fi
+
+ 	# Install the pseudo-library for information purposes.
++	if /usr/bin/false; then
+ 	func_basename "$file"
+ 	name="$func_basename_result"
+ 	instname="$dir/$name"i
+ 	func_show_eval "$install_prog $instname $destdir/$name" 'exit $?'
++	fi
+
+ 	# Maybe install the static library, too.
+ 	test -n "$old_library" && staticlibs="$staticlibs $dir/$old_library"
+@@ -4560,8 +4562,16 @@
  	continue
  	;;
  
@@ -17,16 +30,3 @@
  	continue
  	;;
  
-@@ -4247,10 +4255,12 @@
- 	fi
- 
- 	# Install the pseudo-library for information purposes.
-+	if /usr/bin/false; then
- 	name=`$echo "X$file" | $Xsed -e 's%^.*/%%'`
- 	instname="$dir/$name"i
- 	$show "$install_prog $instname $destdir/$name"
- 	$run eval "$install_prog $instname $destdir/$name" || exit $?
-+	fi
- 
- 	# Maybe install the static library, too.
- 	test -n "$old_library" && staticlibs="$staticlibs $dir/$old_library"
