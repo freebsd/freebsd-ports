@@ -1,0 +1,12 @@
+%%XPI_XPIDIR%%/GPL.txt
+%%XPI_XPIDIR%%/NoScript_License.txt
+%%XPI_XPIDIR%%/chrome/noscript.jar
+%%XPI_XPIDIR%%/chrome.manifest
+%%XPI_XPIDIR%%/components/noscriptService.js
+%%XPI_XPIDIR%%/defaults/preferences/noscript.js
+%%XPI_XPIDIR%%/install.rdf
+%%XPI_XPIDIR%%/mozilla.cfg
+@dirrm %%XPI_XPIDIR%%/chrome
+@dirrm %%XPI_XPIDIR%%/components
+@dirrm %%XPI_XPIDIR%%/defaults/preferences
+@dirrm %%XPI_XPIDIR%%/defaults

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	noscript
-PORTVERSION=	2.1.1.1
+PORTVERSION=	2.1.1.2
 DISTVERSIONSUFFIX=	-fx+sm+fn
 CATEGORIES=	www
 
@@ -15,10 +15,6 @@ COMMENT=	A security-enhancing Java/JS filtering extension
 
 XPI_ID=		{73a6fe31-595d-460b-a920-fcc0f8843232}
 XPI_NUM=	722
-XPI_FILES=	.autoreg GPL.txt NoScript_License.txt chrome/noscript.jar \
-		chrome.manifest components/noscriptService.js \
-		defaults/preferences/noscript.js install.rdf mozilla.cfg
-XPI_DIRS=	chrome components defaults/preferences defaults
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
