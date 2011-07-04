@@ -1,5 +1,5 @@
---- makefile.orig	2011-03-17 18:41:24.000000000 -0400
-+++ makefile	2011-05-01 19:57:17.000000000 -0400
+--- makefile.orig	2011-05-02 05:11:17.000000000 -0400
++++ makefile	2011-07-03 21:09:17.000000000 -0400
 @@ -7,14 +7,14 @@
  # Also works with ming32-make on Windows.
  
@@ -22,8 +22,8 @@
 +AR = $(CXX) -shared
  RANLIB = touch
  
- # Environment variable windir always defined on Win32
-@@ -30,7 +30,8 @@
+ ifdef GTK3
+@@ -36,7 +36,8 @@
  COMPLIB=..\bin\scintilla.a
  else
  DEL = rm -f
@@ -33,7 +33,7 @@
  endif
  
  vpath %.h ../src ../include ../lexlib
-@@ -47,22 +48,22 @@
+@@ -55,24 +56,24 @@
  endif
  
  ifdef DEBUG
@@ -44,7 +44,9 @@
 +CXXFLAGS+=-DNDEBUG -Os $(CXXBASEFLAGS) $(THREADFLAGS)
  endif
  
--CONFIGFLAGS:=$(shell pkg-config --cflags gtk+-2.0)
+ CFLAGS:=$(CXXFLAGS)
+ 
+-CONFIGFLAGS:=$(shell pkg-config --cflags $(GTKVERSION))
 +CONFIGFLAGS:=$(shell pkg-config --cflags gtk+-2.0 gthread-2.0)
  MARSHALLER=scintilla-marshal.o
  
@@ -52,8 +54,8 @@
 -	$(CC) $(CONFIGFLAGS) $(CXXFLAGS) -c $<
 +	$(CC) $(PICFLAGS) $(CONFIGFLAGS) $(CXXFLAGS) -c $<
  .c.o:
--	$(CCOMP) $(CONFIGFLAGS) $(CXXFLAGS) -w -c $<
-+	$(CCOMP) $(PICFLAGS) $(CONFIGFLAGS) $(CXXFLAGS) -w -c $<
+-	$(CCOMP) $(CONFIGFLAGS) $(CFLAGS) -w -c $<
++	$(CCOMP) $(PICFLAGS) $(CONFIGFLAGS) $(CFLAGS) -w -c $<
  
  LEXOBJS:=$(addsuffix .o,$(basename $(notdir $(wildcard ../lexers/Lex*.cxx))))
  
@@ -62,7 +64,7 @@
  
  clean:
  	$(DEL) *.o $(COMPLIB)
-@@ -75,9 +76,11 @@
+@@ -85,9 +86,11 @@
  	ScintillaBase.o ContractionState.o Editor.o ExternalLexer.o PropSetSimple.o PlatGTK.o \
  	KeyMap.o LineMarker.o PositionCache.o ScintillaGTK.o CellBuffer.o ViewStyle.o \
  	RESearch.o RunStyles.o Selection.o Style.o Indicator.o AutoComplete.o UniConversion.o XPM.o \
