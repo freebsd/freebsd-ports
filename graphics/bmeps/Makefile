@@ -6,36 +6,45 @@
 #
 
 PORTNAME=	bmeps
-PORTVERSION=	2.1.5
-CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
+PORTVERSION=	2.2.20a
+CATEGORIES=	graphics perl5
+MASTER_SITES=	SF/dktools/dktools/dktools-${PORTVERSION:S,a,,}
+DISTNAME=	dktools-${PORTVERSION}
 
 MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	Convert bitmap images (PNG/JPEG/NetPBM) to EPS
 
-LIB_DEPENDS=	dkbif.1:${PORTSDIR}/devel/dklibs
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/bsdlic.txt
 
-MAKE_JOBS_SAFE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include"
+LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
+		netpbm:${PORTSDIR}/graphics/netpbm \
+		png:${PORTSDIR}/graphics/png
+
+USE_ZIP=	yes
+USE_PERL5=	yes
 GNU_CONFIGURE=	yes
-MAKE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
+USE_AUTOTOOLS=	aclocal autoconf
 
-.if !defined(NO_INSTALL_MANPAGES)
-MAN1=	bmeps.1
-.endif
+MAKE_ARGS=	bmeps
+WRKSRC=		${WRKDIR}/${DISTNAME:S,a,,}
 
-post-install:
-.if !defined(NO_INSTALL_MANPAGES)
-	${MKDIR} ${MAN1PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/man/man1/${PORTNAME}.1 ${MANPREFIX}/man/man1
-.endif
+CFLAGS+=	-I${PREFIX}/include
+LDFLAGS+=	-L${PREFIX}/lib
 
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/DOCU/*.css ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/DOCU/*.pdf ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/DOCU/*.png ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/DOCU/*.html ${DOCSDIR}
-.endif
+CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/dktools\
+		--with-lzw\
+		--libdir=${PREFIX}/lib\
+		--includedir=${PREFIX}/include
+
+MAN1=		bmeps.1
+
+do-install:
+	@${MKDIR}		${DATADIR}
+	@${INSTALL_PROGRAM}	${WRKSRC}/bmeps					${PREFIX}/bin
+	@${INSTALL_MAN}		${WRKSRC}/man/man1/bmeps.1			${PREFIX}/man/man1
+	@${INSTALL_DATA}	${WRKSRC}/bmeps.str				${DATADIR}
+	@${INSTALL_DATA}	${WRKSRC}/share/dktools/en/bmeps.stt.bz2	${DATADIR}
+	@${INSTALL_DATA}	${WRKSRC}/share/dktools/en/bmeps.txt		${DATADIR}
 
 .include <bsd.port.mk>
