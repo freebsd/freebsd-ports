@@ -8,7 +8,7 @@
 
 PORTNAME=	libsoup
 PORTVERSION=	2.32.2
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -32,6 +32,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 PLIST_SUB=	VERSION="2.4"
 
 .include <bsd.port.pre.mk>
+
+LIB_DEPENDS+=	gcrypt.18:${PORTSDIR}/security/libgcrypt
 
 .if defined(SOUP_SLAVE)
 LIB_DEPENDS+=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
