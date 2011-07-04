@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	lyx
-PORTVERSION=	${MAJOR_VERSION}.10
+PORTVERSION=	${MAJOR_VERSION}.${MINOR_VERSION}
+PORTREVISION=	1
 CATEGORIES=	print editors
 MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/${MAJOR_VERSION}.x/ \
 		http://www-ftp.lip6.fr/ftp/pub/lyx/stable/${MAJOR_VERSION}.x/ \
@@ -18,21 +19,24 @@ MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/${MAJOR_VERSION}.x/ \
 MAINTAINER=	kubito@gmail.com
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG) (stable)
 
-LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs
-
 LICENSE=	GPLv2
 
-CONFLICTS=	lyx-1.4* lyx-devel-*
-MAJOR_VERSION=	1.6
+LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs
 
-USE_BZIP=	yes
+LATEST_LINK=	lyx16
+CONFLICTS=	lyx-1.4* lyx-devel-* lyx-2*
+MAJOR_VERSION=	1.6
+MINOR_VERSION=	10
+
+USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	gui moc_build uic_build rcc_build
 USE_PYTHON=	yes
 USE_PERL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}"
+CPPFLAGS=	${PTHREAD_CFLAGS}
+CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--with-frontend=qt4 \
 		--without-included-boost \
 		--without-included-gettext \
