@@ -6,7 +6,7 @@
 #   $MCom: ports/devel/libsoup-gnome/Makefile,v 1.1 2010/06/05 21:11:10 kwm Exp $
 #
 
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 PKGNAMESUFFIX=	-gnome
 
