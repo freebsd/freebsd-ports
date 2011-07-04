@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	asterisk16
-PORTVERSION=	1.6.2.3
-PORTREVISION=	2
+PORTVERSION=	1.6.2.4
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
