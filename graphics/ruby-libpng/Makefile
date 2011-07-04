@@ -18,6 +18,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A libpng wrapper class for Ruby
 
+DEPRECATED=	Doesn't work with Ruby 1.9
+EXPIRATION_DATE=	2011-08-03
+
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_RUBY=	yes

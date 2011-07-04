@@ -17,6 +17,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby binding to libmagic(3)
 
+DEPRECATED=	Doesn't work with Ruby 1.9
+EXPIRATION_DATE=	2011-08-03
+
 LIB_DEPENDS=	magic.1:${PORTSDIR}/sysutils/file
 
 USE_RUBY=	yes

@@ -16,6 +16,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby library which wraps libnmz of Namazu
 
+DEPRECATED=	Doesn't work with Ruby 1.9
+EXPIRATION_DATE=	2011-08-03
+
 LIB_DEPENDS=	nmz.8:${PORTSDIR}/japanese/namazu2
 
 USE_RUBY=	yes

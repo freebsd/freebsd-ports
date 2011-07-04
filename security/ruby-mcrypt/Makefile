@@ -17,6 +17,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby interface to the mcrypt library
 
+DEPRECATED=	Doesn't work with Ruby 1.9
+EXPIRATION_DATE=	2011-08-03
+
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt/
 
 USE_RUBY=	yes

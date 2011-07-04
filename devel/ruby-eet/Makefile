@@ -15,6 +15,9 @@ DISTNAME=	ruby-eet-${PORTVERSION}
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby support for reading and writing EET files
 
+DEPRECATED=	Doesn't work with Ruby 1.9
+EXPIRATION_DATE=	2011-08-03
+
 LIB_DEPENDS=	eet.5:${PORTSDIR}/devel/eet
 
 USE_RUBY=	yes

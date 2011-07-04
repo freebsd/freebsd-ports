@@ -16,6 +16,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A RFC2822/MIME compliant mail manipulating library for Ruby
 
+DEPRECATED=	Doesn't work with Ruby 1.9
+EXPIRATION_DATE=	2011-08-03
+
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 USE_RUBY_FEATURES=	racc-runtime

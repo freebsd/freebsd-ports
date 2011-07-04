@@ -13,6 +13,9 @@ DISTNAME=	KirbyBase-${PORTVERSION}
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Small and Plain-text DBMS Written in Ruby
 
+DEPRECATED=	Doesn't work with Ruby 1.9
+EXPIRATION_DATE=	2011-08-03
+
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 GEM_NAME=	${DISTNAME}
