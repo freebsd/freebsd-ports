@@ -49,6 +49,7 @@ share/pixmaps/Sci48M.png
 %%DATADIR%%/fortran.properties
 %%DATADIR%%/freebasic.properties
 %%DATADIR%%/gap.properties
+%%DATADIR%%/haskell.properties
 %%DATADIR%%/html.properties
 %%DATADIR%%/inno.properties
 %%DATADIR%%/kix.properties
