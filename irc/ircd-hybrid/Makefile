@@ -20,6 +20,9 @@ USE_GMAKE=	yes
 USE_CSTD=	gnu89
 GNU_CONFIGURE=	yes
 
+USERS=		ircd
+GROUPS=		${USERS}
+
 USE_RC_SUBR=	ircd-hybrid.sh
 SUB_FILES=	pkg-message
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
@@ -79,14 +82,13 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc/ircd-hybrid \
 	--ohelpdir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/help/opers \
 	--messagedir=${PREFIX}/share/${PORTNAME}-${PORTVERSION}/messages \
 
-pre-install:
-	${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+pre-su-install:
 	${MKDIR} ${PREFIX}/etc/ircd-hybrid ${PREFIX}/share/${PORTNAME}-${PORTVERSION}
 	${MKDIR} ${PREFIX}/share/${PORTNAME}-${PORTVERSION}/help/
-	${MKDIR} /var/run/ircd
-	${CHOWN} ircd:ircd /var/run/ircd
 
 post-install:
+	${MKDIR} /var/run/ircd
+	${CHOWN} ircd:ircd /var/run/ircd
 	${INSTALL_SCRIPT} ${WRKSRC}/etc/example.conf.quick ${PREFIX}/etc/ircd-hybrid
 	${INSTALL_SCRIPT} ${WRKSRC}/etc/example.efnet.conf ${PREFIX}/etc/ircd-hybrid
 	${INSTALL_SCRIPT} ${WRKSRC}/etc/simple.conf ${PREFIX}/etc/ircd-hybrid
