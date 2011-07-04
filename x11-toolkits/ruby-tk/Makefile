@@ -29,6 +29,10 @@ USE_TK=		84+
 
 .include <bsd.port.pre.mk>
 
+.if ${RUBY_VER} == 1.9
+BROKEN=	does not build with ruby 1.9
+.endif
+
 CONFIGURE_ARGS=	${RUBY_CONFIGURE_ARGS} \
 		--with-X11-dir=${LOCALBASE} \
 		--with-tcl-include=${TCL_INCLUDEDIR} \

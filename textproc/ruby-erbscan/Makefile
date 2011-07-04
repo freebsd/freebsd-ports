@@ -20,12 +20,10 @@ USE_RUBY_EXTCONF=	yes
 
 INSTALL_TARGET=	site-install
 
-RUBY_REQUIRE=	Ruby > 180
-
 .include <bsd.port.pre.mk>
 
-.if !defined(RUBY_PROVIDED)
-IGNORE=		only works with Ruby 1.8.0 or later
+.if ${RUBY_VER} == 1.9
+BROKEN=	does not build with ruby 1.9
 .endif
 
 post-patch:

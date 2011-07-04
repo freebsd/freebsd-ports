@@ -31,6 +31,10 @@ DOCS=		Changes \
 
 .include <bsd.port.pre.mk>
 
+.if ${RUBY_VER} == 1.9
+BROKEN=	does not build with ruby 1.9
+.endif
+
 post-build:
 .if !defined(NOPORTDOCS)
 	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} \

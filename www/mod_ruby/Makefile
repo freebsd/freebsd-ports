@@ -36,6 +36,10 @@ DOCS_JA=	README.ja doc/default.css doc/*.ja.*
 
 .include <bsd.port.pre.mk>
 
+.if ${RUBY_VER} == 1.9
+BROKEN=	does not build with ruby 1.9
+.endif
+
 .if ${APACHE_VERSION} > 20
 CONFIGURE_ARGS+=	--with-apr-includes="`${LOCALBASE}/bin/apr-1-config --includedir`"
 .endif

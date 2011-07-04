@@ -27,12 +27,10 @@ RUBY_SHEBANG_FILES=	${WRKSRC}/samples/*.rb
 DOCSDIR=	${RUBY_MODDOCDIR}
 PORTDOCS=	ChangeLog NEWS README
 
-RUBY_REQUIRE=	Ruby >= 184
-
 .include <bsd.port.pre.mk>
 
-.if !defined(RUBY_PROVIDED)
-IGNORE=		requires Ruby 1.8.4 or later
+.if ${RUBY_VER} == 1.9
+BROKEN=	does not build with ruby 1.9
 .endif
 
 post-install: doc-install
