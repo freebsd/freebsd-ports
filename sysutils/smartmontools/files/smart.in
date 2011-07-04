@@ -63,6 +63,8 @@ case "${daily_status_smart_enable}" in
 				status=$?
 				if [ ${status} -eq 0 ]; then
 					echo "OK"
+				elif [ ${status} -eq 32 ]; then
+					echo "OK (but has failed in the past)"
 				elif [ $((status & 3)) -ne 0 ]; then
 					rc=2
 					${trim_junk} "${tmpfile}"
