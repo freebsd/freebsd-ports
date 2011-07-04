@@ -8,6 +8,8 @@
 
 PORTNAME=	otr
 PORTVERSION=	3.2.0
+# Please do not bump PORTREVISION for this port unless you have
+# confirmed via testing that it is necessary
 PORTREVISION=	7
 CATEGORIES=	security net
 MASTER_SITES=	http://www.cypherpunks.ca/otr/ \
