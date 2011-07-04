@@ -8,6 +8,8 @@
 
 PORTNAME=	libotr
 PORTVERSION=	3.2.0
+# Please do not bump PORTREVISION for this port unless you have
+# confirmed via testing that it is necessary
 PORTREVISION=	4
 CATEGORIES=	security
 MASTER_SITES=	http://www.cypherpunks.ca/otr/ \
