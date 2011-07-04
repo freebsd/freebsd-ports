@@ -1,25 +1,32 @@
 #!/bin/sh
+
 # $FreeBSD$
-
+#
 # PROVIDE: atop
-# REQUIRE: DAEMON
-# BEFORE: LOGIN
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
-
+#
 # Define these atop_* variables in one of these files:
 #       /etc/rc.conf
 #       /etc/rc.conf.local
 #       /etc/rc.conf.d/atop
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
-#
-atop_enable="${atop_enable-NO}"
-atop_pidfile="/var/run/atop.pid"
 
 . /etc/rc.subr
 
 name="atop"
 rcvar=`set_rcvar`
+
+load_rc_config $name
+
+: ${atop_enable:=NO}
+: ${atop_logdir="%%LOGDIR%%"}
+: ${atop_interval=10}
+: ${atop_keepdays=30}
+
+pidfile="${atop_pidfile:-'/var/run/atop.pid'}"
+
 command="%%PREFIX%%/bin/atop"
 extra_commands="rotate"
 start_cmd="atop_start"
@@ -45,14 +52,5 @@ atop_rotate()
     /usr/bin/find $atop_logdir -name atop_???????? -mtime +${atop_keepdays} -exec rm {} \;
     run_rc_command "restart"
 }
-
-load_rc_config $name
-
-: ${atop_logdir="%%LOGDIR%%"}
-: ${atop_interval=10}
-: ${atop_keepdays=30}
-: ${atop_flags=""}
-
-pidfile="${atop_pidfile}"
 
 run_rc_command "$1"
