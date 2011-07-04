@@ -1,6 +1,6 @@
---- Makefile.in.orig	Tue Dec 19 12:03:37 2006
-+++ Makefile.in	Tue Dec 19 19:38:22 2006
-@@ -474,7 +474,12 @@
+--- Makefile.in.orig	2011-07-04 10:58:49.000000000 +0200
++++ Makefile.in	2011-07-04 21:17:31.000000000 +0200
+@@ -481,7 +481,12 @@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  AUTOMAKE_OPTIONS = foreign subdir-objects
@@ -14,17 +14,17 @@
  DIST_SUBDIRS = ${SUBDIRS} examples myspell lib5
  filterdir = ${pkglibdir}
  optdir = ${pkgdatadir}
-@@ -562,7 +567,7 @@
+@@ -569,7 +574,7 @@
  	lib/string_list-c.cpp lib/find_speller.cpp lib/speller-c.cpp \
  	lib/string_pair_enumeration-c.cpp lib/new_checker.cpp \
  	modules/filter/url.cpp $(am__append_3)
 -libaspell_la_LIBADD = $(LTLIBINTL) $(PTHREAD_LIB)
 +libaspell_la_LIBADD = $(LTLIBINTL) $(PTHREAD_LIB) $(LTLIBINTL)
- @INCREMENTED_SONAME_FALSE@libaspell_la_LDFLAGS = -version-info 16:4:1 -no-undefined
- @INCREMENTED_SONAME_TRUE@libaspell_la_LDFLAGS = -version-info 16:4:0 -no-undefined
+ @INCREMENTED_SONAME_FALSE@libaspell_la_LDFLAGS = -version-info 16:5:1 -no-undefined
+ @INCREMENTED_SONAME_TRUE@libaspell_la_LDFLAGS = -version-info 16:5:0 -no-undefined
  @PSPELL_COMPATIBILITY_TRUE@libpspell_la_SOURCES = lib/dummy.cpp
-@@ -571,7 +576,7 @@
- @INCREMENTED_SONAME_TRUE@@PSPELL_COMPATIBILITY_TRUE@libpspell_la_LDFLAGS = -version-info 16:4:0 -no-undefined
+@@ -578,7 +583,7 @@
+ @INCREMENTED_SONAME_TRUE@@PSPELL_COMPATIBILITY_TRUE@libpspell_la_LDFLAGS = -version-info 16:5:0 -no-undefined
  word_list_compress_SOURCES = prog/compress.c
  aspell_SOURCES = prog/aspell.cpp prog/check_funs.cpp prog/checker_string.cpp
 -aspell_LDADD = libaspell.la $(CURSES_LIB)
