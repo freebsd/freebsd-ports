@@ -6,6 +6,7 @@
 
 PORTNAME=	coda
 PORTVERSION=	6.9.4
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.coda.cs.cmu.edu/pub/coda/src/ \
 		ftp://ftp.planetmirror.com/pub/coda/src/ \
@@ -19,6 +20,8 @@ COMMENT=	Server programs for a replicated high-performance network file system
 LIB_DEPENDS=	lwp.2:${PORTSDIR}/devel/lwp \
 		rpc2.9:${PORTSDIR}/devel/rpc2 \
 		rvmlwp.3:${PORTSDIR}/devel/rvm
+
+CONFLICTS=	openafs-[0-9]*
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

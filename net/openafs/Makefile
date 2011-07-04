@@ -8,7 +8,7 @@
 
 PORTNAME=	openafs
 DISTVERSION=	1.6.0pre6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net kld
 MASTER_SITES=	http://dl.central.org/dl/openafs/candidate/${DISTVERSION}/:openafs \
 		http://dl.openafs.org/dl/openafs/candidate/${DISTVERSION}/:openafs \
@@ -81,7 +81,7 @@ PLIST_SUB+=	FUSE=""
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 
-CONFLICTS=	heimdal-[0-9]*
+CONFLICTS=	coda-server-6.[0-9]* heimdal-[0-9]*
 
 .include "Makefile.man"
 
