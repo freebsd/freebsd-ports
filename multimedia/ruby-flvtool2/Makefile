@@ -19,4 +19,8 @@ COMMENT=	Manipulation tool for Macromedia Flash Video files
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${RUBY_VER} == 1.9
+BROKEN=	does not build with ruby 1.9
+.endif
+.include <bsd.port.post.mk>
