@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	freeipmi
-PORTVERSION=	1.0.4
-PORTREVISION=	1
+PORTVERSION=	1.0.5
 CATEGORIES=	sysutils
 MASTER_SITES=	GNU/${PORTNAME}/ \
 		http://ftp.gluster.com/pub/${PORTNAME}/${PORTVERSION}/ \
@@ -16,10 +15,10 @@ MASTER_SITES=	GNU/${PORTNAME}/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Library and tools to support IPMI-capable hardware
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	argp:${PORTSDIR}/devel/argp-standalone \
 		gcrypt:${PORTSDIR}/security/libgcrypt
-
-LICENSE=	GPLv3
 
 OPTIONS=	DEBUG	"Debugging features" off \
 		IOPERM	"Use i386_set_ioperm (i386/amd64 only)" off
@@ -29,7 +28,8 @@ CONFIGURE_ARGS=	--disable-init-scripts \
 		--disable-logrotate-config \
 		--localstatedir=/var \
 		--sysconfdir=${CONF_DIR} \
-		--with-ipmi-monitoring-sdr-cache-dir=${CACHE_DIR}/ipmimonitoringsdrcache
+		--with-ipmi-monitoring-sdr-cache-dir=${CACHE_DIR}/ipmimonitoringsdrcache \
+		--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" PTHREAD_LIBS=${PTHREAD_LIBS}
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes

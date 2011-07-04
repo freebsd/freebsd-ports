@@ -172,6 +172,10 @@ lib/libipmimonitoring.a
 lib/libipmimonitoring.la
 lib/libipmimonitoring.so
 lib/libipmimonitoring.so.5
+libdata/pkgconfig/libfreeipmi.pc
+libdata/pkgconfig/libipmiconsole.pc
+libdata/pkgconfig/libipmidetect.pc
+libdata/pkgconfig/libipmimonitoring.pc
 sbin/bmc-config
 sbin/bmc-device
 sbin/bmc-info
