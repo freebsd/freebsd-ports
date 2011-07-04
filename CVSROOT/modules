@@ -9078,6 +9078,7 @@ mediaproxy                      ports/net/mediaproxy
 mediatomb                       ports/net/mediatomb
 mediawiki                       ports/www/mediawiki
 mediawiki115                    ports/www/mediawiki115
+mediawiki116                    ports/www/mediawiki116
 medit                           ports/science/medit
 mednafen                        ports/emulators/mednafen
 medusa                          ports/security/medusa
@@ -19419,6 +19420,7 @@ pdcurses-the                    ports/devel/pdcurses-the
 pdf-renderer                    ports/print/pdf-renderer
 pdf2djvu                        ports/converters/pdf2djvu
 pdf2svg                         ports/graphics/pdf2svg
+pdfbox                          ports/print/pdfbox
 pdfcrack                        ports/security/pdfcrack
 pdfcube                         ports/print/pdfcube
 pdfedit                         ports/editors/pdfedit
@@ -21181,6 +21183,7 @@ ptools                          ports/games/ptools
 ptpd                            ports/net/ptpd
 ptpd2                           ports/net/ptpd2
 ptunnel                         ports/net/ptunnel
+ptx-kmod                        ports/multimedia/ptx-kmod
 pty                             ports/devel/pty
 ptypes                          ports/devel/ptypes
 publib                          ports/devel/publib
