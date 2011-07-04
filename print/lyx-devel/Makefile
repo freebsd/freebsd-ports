@@ -17,7 +17,7 @@ MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/devel/${PORTNAME}-${MAJOR_VERSION}/${PRE
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-${MAJOR_VERSION}.${MINOR_VERSION}${PRERELEASE}
 
-MAINTAINER=	aldis@bsdroot.lv
+MAINTAINER=	kubito@gmail.com
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG) (stable)
 
 LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs
