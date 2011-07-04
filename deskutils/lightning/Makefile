@@ -7,7 +7,7 @@
 
 PORTNAME=	lightning
 DISTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	calendar/${PORTNAME}/releases/${DISTVERSION}b1/source
@@ -16,8 +16,7 @@ DISTNAME=	${PORTNAME}-sunbird-${DISTVERSION}b1.source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	An integrated calendar for Thunderbird and SeaMonkey
 
-OPTIONS+=	THUNDERBIRD "Install Thunderbird 3.0" on \
-		SEAMONKEY "Install SeaMonkey 2.0" off
+RUN_DEPENDS+=	${LOCALBASE}/lib/seamonkey/seamonkey-bin:${PORTSDIR}/www/seamonkey2
 
 CONFLICTS_BUILD=	spidermonkey-1.[0-7]*
 USE_AUTOTOOLS=	autoconf213 libtool
@@ -47,14 +46,6 @@ LATEST_LINK=	mozilla-lightning
 .include <bsd.init.mk>
 .include <bsd.libnames.mk>
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_THUNDERBIRD)
-RUN_DEPENDS+=	${LOCALBASE}/lib/thunderbird/thunderbird-bin:${PORTSDIR}/mail/thunderbird3
-.endif
-
-.if defined(WITH_SEAMONKEY)
-RUN_DEPENDS+=	${LOCALBASE}/lib/seamonkey/seamonkey-bin:${PORTSDIR}/www/seamonkey2
-.endif
 
 XPI_FILE=	${DISTNAME:C/.source//:C/-sunbird//}-freebsd${OSVERSION:C/([0-9]).+/\1/}-${ARCH}.xpi
 PLIST_FILES=	%%DATADIR%%/${XPI_FILE}
