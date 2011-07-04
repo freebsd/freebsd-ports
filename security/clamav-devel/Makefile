@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	clamav
-PORTVERSION=	20110223
+PORTVERSION=	20110704
 CATEGORIES=	security
 MASTER_SITES=	http://www.clamav.net/snapshot/ \
 		LOCAL/garga/clamav-devel
@@ -32,6 +32,7 @@ OPTIONS=	ARC "Enable arch archives support" On \
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
+USE_GMAKE=	yes
 USE_RC_SUBR=	clamav-clamd clamav-freshclam
 CLAM_CONF_FILES=	clamd freshclam
 
@@ -68,7 +69,8 @@ LDFLAGS+=	-L${LOCALBASE}/lib \
 # force to use -lthr until it's not fixed.
 PTHREAD_LIBS=	-lthr
 
-MAN1=		clamconf.1 \
+MAN1=		clambc.1 \
+		clamconf.1 \
 		clamscan.1 \
 		freshclam.1 \
 		sigtool.1 \
@@ -147,7 +149,6 @@ CONFIGURE_ARGS+=--without-iconv
 
 .if (defined(WITH_LLVM) || defined(WITH_LLVM_PORTS)) && ( ${ARCH} == "i386" || ${ARCH} == "amd64" )
 CONFIGURE_ARGS+=--enable-llvm
-USE_GMAKE=	yes
 . if defined(WITH_LLVM_PORTS)
 BUILD_DEPENDS+=	llvm-config:${PORTSDIR}/devel/llvm
 CONFIGURE_ARGS+=--with-system-llvm=${LOCALBASE}/bin/llvm-config
@@ -228,7 +229,7 @@ pre-configure:
 .if defined(WITH_TESTS) && ${OSVERSION} >= 700000
 post-build:
 	@if [ ! -f "${PY_NO_THREAD}" ]; then \
-		${MAKE} -C ${WRKSRC} check; \
+		${GMAKE} -C ${WRKSRC} check; \
 	fi
 .endif
 
