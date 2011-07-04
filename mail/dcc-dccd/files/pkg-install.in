@@ -1,37 +1,11 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/mail/dcc-dccd/files/pkg-install.in,v 1.1 2010-01-31 03:45:21 pgollucci Exp $
+# $FreeBSD: /tmp/pcvs/ports/mail/dcc-dccd/files/pkg-install.in,v 1.2 2011-07-04 19:39:45 crees Exp $
 
 PREFIX=${PKG_PREFIX:-%%PREFIX%%}
 
-DCCUSER=%%DCCUSER%%
-DCCUID=%%DCCUID%%
-DCCGROUP=%%DCCGROUP%%
-DCCGID=%%DCCGID%%
 DCCHOME=%%DCCHOME%%
 
-if [ "$2" = "PRE-INSTALL" ]; then
-
-	if ! pw groupshow "$DCCGROUP" 2>/dev/null 1>&2; then
-		if pw groupadd $DCCGROUP -g $DCCGID; then
-			echo "=> Added group \"$DCCGROUP\"."
-		else
-			echo "=> Adding group \"$DCCGROUP\" failed..."
-			exit 1
-		fi
-	fi
-
-	if ! pw usershow "$DCCUSER" 2>/dev/null 1>&2; then
-		if pw useradd $DCCUSER -u $DCCUID -g $DCCGROUP -h - \
-			-s "/sbin/nologin" -d "$DCCHOME" \
-			-c "Distributed Checksum Clearinghouse"; \
-		then
-			echo "=> Added user \"$DCCUSER\"."
-		else
-			echo "=> Adding user \"$DCCUSER\" failed..."
-			exit 1
-		fi
-	fi
-elif [ "$2" = "POST-INSTALL" ]; then
+if [ "$2" = "POST-INSTALL" ]; then
 
 	echo "=> Generating unique passwords for your DCC install..."
 	echo "=>"
