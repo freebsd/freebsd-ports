@@ -54,7 +54,7 @@ PORTNAME_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png
 SYSTEM_PREFS=	${FAKEDIR}/lib/${PORTNAME}/defaults/pref/${PORTNAME}.js
 MOZ_PIS_SCRIPTS=moz_pis_S50cleanhome
 
-OPTIONS=
+OPTIONS=	LIGHTNING       "Enable calendar extension" off
 
 .include <bsd.port.pre.mk>
 
@@ -88,6 +88,16 @@ LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 
 .if ${ARCH} == amd64 || ${ARCH} == i386
 BUILD_DEPENDS+=	yasm:${PORTSDIR}/devel/yasm
+.endif
+
+.if defined(WITH_LIGHTNING)
+MOZ_OPTIONS+=	--enable-calendar
+MOZ_MK_OPTIONS+= MOZ_CO_PROJECT=calendar
+LIGHTNING_DIR=	share/lightning
+SUB_FILES+=	pkg-message
+PKGMESSAGE=	${WRKDIR}/pkg-message
+.else
+MOZ_OPTIONS+=	--disable-calendar
 .endif
 
 post-extract::
@@ -124,10 +134,19 @@ pre-install:
 	@${ECHO_CMD} 'share/applications/${PORTNAME}.desktop' >> ${PLIST}
 	@${ECHO_CMD} 'share/pixmaps/${PORTNAME_ICON}' >> ${PLIST}
 	@${ECHO_CMD} '@dirrmtry share/applications' >> ${PLIST}
+.if defined(WITH_LIGHTNING)
+	@${PRINTF} '%s/lightning-${PORTNAME}.xpi\n@dirrmtry %s\n' \
+		${LIGHTNING_DIR} ${LIGHTNING_DIR} >> ${PLIST}
+.endif
 
 post-install:
 	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKDIR}/${MOZILLA_EXEC_NAME}.desktop ${PREFIX}/share/applications
 	${LN} -sf ${PORTNAME_ICON_SRC} ${PREFIX}/share/pixmaps/${PORTNAME_ICON}
+.if defined(WITH_LIGHTNING)
+	${MKDIR} ${PREFIX}/${LIGHTNING_DIR}
+	${INSTALL_DATA} ${MOZSRC}/dist/xpi-stage/lightning.xpi ${PREFIX}/${LIGHTNING_DIR}/lightning-${PORTNAME}.xpi
+	@${CAT} ${PKGMESSAGE}
+.endif
 
 .include <bsd.port.post.mk>
