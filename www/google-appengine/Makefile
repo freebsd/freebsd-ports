@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-appengine
-PORTVERSION=	1.4.3
+PORTVERSION=	1.5.1
 PORTREVISION=	0
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -42,12 +42,16 @@ XARGS_ARGS=	-0
 REINPLACE_ARGS=	-i.bak -e 's,/usr/bin/env python,&${PYTHON_VER},'
 
 GAEDATADIR=	google lib new_project_template templates tools
-GAEDOCSREL=	20110330
+GAEDOCSREL=	20110620
 GAESCRIPTS=	appcfg.py bulkload_client.py bulkloader.py dev_appserver.py remote_api_shell.py
 
 post-patch:
 	@${FIND} ${FIND_FILES} | ${XARGS} ${XARGS_ARGS} ${REINPLACE_CMD}
 	@${FIND} ${FIND_FILES_BAK} -delete
+.if !defined(NOPORTDOCS)
+	@cd ${WRKDIR}/google-appengine-docs-${GAEDOCSREL}/appengine/docs && \
+	${RM} -R java]java java\  python\  python\ java
+.endif
 
 do-install:
 	${MKDIR} ${DATADIR}
