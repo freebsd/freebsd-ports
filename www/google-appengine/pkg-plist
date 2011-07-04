@@ -57,6 +57,7 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/FirePython-ProfilingGraphExample.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/FirePython-ProfilingGraphLog.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/TextMateWithFirePython.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/add-more-services.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/aral.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/corner_map.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/fantasm-fsm.png
@@ -110,9 +111,6 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/using_xmpp.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/versions.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/business/index.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/business/roadmap.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/business/sla.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/business/support.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/casestudies.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/community.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/css/local_extensions.css
@@ -123,16 +121,62 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/adminconsole/roles.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/billing.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/domain.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/apis.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/blobstore/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/blobstore/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/blobstore/reference.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/capabilities/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/capabilities/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/capabilities/reference.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/channel/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/channel/javascript.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/channel/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/channel/reference.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/datastore/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/datastore/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/datastore/reference.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/datastore/transactions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/gettingstarted/devenvironment.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/gettingstarted/handlingforms.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/gettingstarted/helloworld.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/gettingstarted/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/gettingstarted/introduction.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/gettingstarted/uploading.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/gettingstarted/usingdatastore.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/gettingstarted/usingusers.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/mail/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/mail/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/mail/reference.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/memcache/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/memcache/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/memcache/reference.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/reference.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/runtime.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/taskqueue/delay.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/taskqueue/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/taskqueue/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/taskqueue/reference.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/urlfetch/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/urlfetch/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/urlfetch/reference.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/users/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/users/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/go/users/reference.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/add_domain.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/add_new_urls.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/add_to_domain.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/authoptions.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/datastore_admin.png
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/datastore_options.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/dev-web-server_download-app.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/img_backends.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/img_logs.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/instances_viewer.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/apis.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/backends/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/backends/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/blobstore/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/blobstore/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/capabilities/index.html
@@ -141,6 +185,7 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/channel/javascript.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/channel/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/config/appconfig.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/config/backends.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/config/cron.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/config/dos.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/config/index.html
@@ -148,13 +193,13 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/config/queue.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/config/webxml.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/configyaml/appconfig_yaml.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/configyaml/backends.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/configyaml/cron.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/configyaml/dos.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/configyaml/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/configyaml/indexconfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/configyaml/queue.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/datastore/async.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/datastore/dataclasses.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/datastore/entities.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/datastore/hr/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/datastore/hr/overview.html
@@ -194,7 +239,14 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/allclasses-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/allclasses-noframe.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/LifecycleManager.ShutdownHook.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/LifecycleManager.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/NamespaceManager.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/backends/BackendService.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/backends/BackendServiceFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/backends/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/backends/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/backends/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/blobstore/BlobInfo.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/blobstore/BlobInfoFactory.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/blobstore/BlobKey.html
@@ -284,6 +336,18 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/files/AppEngineFile.FileSystem.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/files/AppEngineFile.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/files/FileReadChannel.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/files/FileService.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/files/FileServiceFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/files/FileWriteChannel.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/files/FinalizationException.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/files/KeyOrderingException.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/files/LockException.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/files/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/files/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/files/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/images/Composite.Anchor.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/images/Composite.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/images/CompositeTransform.html
@@ -349,6 +413,7 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/QueueConstants.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/QueueFactory.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/QueueFailureException.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/QueueNameMismatchException.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/RetryOptions.Builder.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/RetryOptions.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/taskqueue/TaskAlreadyExistsException.html
@@ -439,7 +504,10 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/runtime.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/taskqueue/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/taskqueue/overview-pull.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/taskqueue/overview-push.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/taskqueue/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/taskqueue/rest.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/ant.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/appstats.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/devserver.html
@@ -551,6 +619,12 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/xmpp/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/xmpp/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/apis.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/backends/exceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/backends/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/backends/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/backends/logserviceapi.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/backends/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/backends/runtimeapi.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/blobstore/blobinfoclass.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/blobstore/blobkeyclass.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/blobstore/blobreaderclass.html
@@ -568,11 +642,13 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/channel/javascript.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/channel/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/config/appconfig.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/config/backends.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/config/cron.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/config/dos.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/config/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/config/indexconfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/config/queue.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/datastore/async.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/datastore/datamodeling.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/datastore/entities.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/datastore/entitiesandmodels.html
@@ -659,14 +735,43 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/taskqueue/exceptions.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/taskqueue/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/taskqueue/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/taskqueue/overview-pull.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/taskqueue/overview-push.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/taskqueue/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/taskqueue/queues.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/taskqueue/rest.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/taskqueue/taskretryoptions.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/taskqueue/tasks.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/appstats.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/devserver.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/libraries.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/localunittesting.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/definition-functions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/descriptor/descriptorlibrary.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/descriptor/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/messages/enumclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/messages/enumfieldclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/messages/exceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/messages/fieldclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/messages/fieldclasses.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/messages/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/messages/messageclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/messages/messagefieldclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/messages/variantclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/overview.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/remote/exceptions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/remote/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/remote/httprequeststateclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/remote/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/remote/requeststateclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/remote/rpcstatusclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/remote/serviceclass.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/transport/httptransport.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/transport/transport.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/webapp/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/protorpc/webapp/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/uploadinganapp.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/uploadingdata.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/tools/webapp/blobstorehandlers.html
@@ -713,7 +818,7 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/3scale_logo.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/appengine-noborder-120x30.gif
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/appengine-silver-120x30.gif
-%%PORTDOCS%%%%DOCSDIR%%/appengine/images/appengine_lowres.gif
+%%PORTDOCS%%%%DOCSDIR%%/appengine/images/appengine_lowres.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/arrow-48.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/bestbuy-logo.jpg
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/buddypoke.gif
@@ -738,7 +843,6 @@ bin/remote_api_shell.py
 %%PORTDOCS%%%%DOCSDIR%%/appengine/js/ui.tabs.js
 %%PORTDOCS%%%%DOCSDIR%%/appengine/kb/adminconsole.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/kb/billing.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/kb/business.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/kb/commontasks.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/kb/general.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/kb/index.html
@@ -783,14 +887,22 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/api/apiproxy_rpc.py
 %%DATADIR%%/google/appengine/api/apiproxy_stub.py
 %%DATADIR%%/google/appengine/api/apiproxy_stub_map.py
+%%DATADIR%%/google/appengine/api/app_identity/__init__.py
+%%DATADIR%%/google/appengine/api/app_identity/app_identity.py
+%%DATADIR%%/google/appengine/api/app_identity/app_identity_service_pb.py
+%%DATADIR%%/google/appengine/api/app_identity/app_identity_stub.py
 %%DATADIR%%/google/appengine/api/app_logging.py
 %%DATADIR%%/google/appengine/api/appinfo.py
 %%DATADIR%%/google/appengine/api/appinfo_errors.py
 %%DATADIR%%/google/appengine/api/appinfo_includes.py
+%%DATADIR%%/google/appengine/api/backendinfo.py
+%%DATADIR%%/google/appengine/api/backends/__init__.py
+%%DATADIR%%/google/appengine/api/backends/backends.py
 %%DATADIR%%/google/appengine/api/blobstore/__init__.py
 %%DATADIR%%/google/appengine/api/blobstore/blobstore.py
 %%DATADIR%%/google/appengine/api/blobstore/blobstore_service_pb.py
 %%DATADIR%%/google/appengine/api/blobstore/blobstore_stub.py
+%%DATADIR%%/google/appengine/api/blobstore/dict_blob_storage.py
 %%DATADIR%%/google/appengine/api/blobstore/file_blob_storage.py
 %%DATADIR%%/google/appengine/api/capabilities/__init__.py
 %%DATADIR%%/google/appengine/api/capabilities/capability_service_pb.py
@@ -799,6 +911,7 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/api/channel/channel.py
 %%DATADIR%%/google/appengine/api/channel/channel_service_pb.py
 %%DATADIR%%/google/appengine/api/channel/channel_service_stub.py
+%%DATADIR%%/google/appengine/api/conf.py
 %%DATADIR%%/google/appengine/api/croninfo.py
 %%DATADIR%%/google/appengine/api/datastore.py
 %%DATADIR%%/google/appengine/api/datastore_admin.py
@@ -809,9 +922,12 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/api/dosinfo.py
 %%DATADIR%%/google/appengine/api/files/__init__.py
 %%DATADIR%%/google/appengine/api/files/blobstore.py
+%%DATADIR%%/google/appengine/api/files/crc32c.py
 %%DATADIR%%/google/appengine/api/files/file.py
 %%DATADIR%%/google/appengine/api/files/file_service_pb.py
 %%DATADIR%%/google/appengine/api/files/file_service_stub.py
+%%DATADIR%%/google/appengine/api/files/records.py
+%%DATADIR%%/google/appengine/api/files/shuffle_types_pb.py
 %%DATADIR%%/google/appengine/api/files/testutil.py
 %%DATADIR%%/google/appengine/api/images/__init__.py
 %%DATADIR%%/google/appengine/api/images/images_not_implemented_stub.py
@@ -826,6 +942,7 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/api/logservice/__init__.py
 %%DATADIR%%/google/appengine/api/logservice/log_service_pb.py
 %%DATADIR%%/google/appengine/api/logservice/logservice.py
+%%DATADIR%%/google/appengine/api/logservice/logservice_stub.py
 %%DATADIR%%/google/appengine/api/mail.py
 %%DATADIR%%/google/appengine/api/mail_errors.py
 %%DATADIR%%/google/appengine/api/mail_service_pb.py
@@ -848,7 +965,11 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/api/rdbms.py
 %%DATADIR%%/google/appengine/api/rdbms_mysqldb.py
 %%DATADIR%%/google/appengine/api/rdbms_sqlite.py
-%%DATADIR%%/google/appengine/api/runtime.py
+%%DATADIR%%/google/appengine/api/runtime/__init__.py
+%%DATADIR%%/google/appengine/api/runtime/runtime.py
+%%DATADIR%%/google/appengine/api/system/__init__.py
+%%DATADIR%%/google/appengine/api/system/system_service_pb.py
+%%DATADIR%%/google/appengine/api/system/system_stub.py
 %%DATADIR%%/google/appengine/api/taskqueue/__init__.py
 %%DATADIR%%/google/appengine/api/taskqueue/taskqueue.py
 %%DATADIR%%/google/appengine/api/taskqueue/taskqueue_service_pb.py
@@ -897,6 +1018,8 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/dist/tempfile.py
 %%DATADIR%%/google/appengine/ext/__init__.py
 %%DATADIR%%/google/appengine/ext/admin/__init__.py
+%%DATADIR%%/google/appengine/ext/admin/templates/backend.html
+%%DATADIR%%/google/appengine/ext/admin/templates/backends.html
 %%DATADIR%%/google/appengine/ext/admin/templates/base.html
 %%DATADIR%%/google/appengine/ext/admin/templates/cron.html
 %%DATADIR%%/google/appengine/ext/admin/templates/css/ae.css
@@ -997,6 +1120,7 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/ext/ereporter/ereporter.py
 %%DATADIR%%/google/appengine/ext/ereporter/report_generator.py
 %%DATADIR%%/google/appengine/ext/ereporter/templates/report.html
+%%DATADIR%%/google/appengine/ext/go/__init__.py
 %%DATADIR%%/google/appengine/ext/gql/__init__.py
 %%DATADIR%%/google/appengine/ext/key_range/__init__.py
 %%DATADIR%%/google/appengine/ext/mapreduce/__init__.py
@@ -1008,6 +1132,8 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/ext/mapreduce/hooks.py
 %%DATADIR%%/google/appengine/ext/mapreduce/input_readers.py
 %%DATADIR%%/google/appengine/ext/mapreduce/main.py
+%%DATADIR%%/google/appengine/ext/mapreduce/mapper_pipeline.py
+%%DATADIR%%/google/appengine/ext/mapreduce/mapreduce_pipeline.py
 %%DATADIR%%/google/appengine/ext/mapreduce/model.py
 %%DATADIR%%/google/appengine/ext/mapreduce/namespace_range.py
 %%DATADIR%%/google/appengine/ext/mapreduce/operation/__init__.py
@@ -1016,6 +1142,7 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/ext/mapreduce/operation/db.py
 %%DATADIR%%/google/appengine/ext/mapreduce/output_writers.py
 %%DATADIR%%/google/appengine/ext/mapreduce/quota.py
+%%DATADIR%%/google/appengine/ext/mapreduce/shuffler.py
 %%DATADIR%%/google/appengine/ext/mapreduce/static/base.css
 %%DATADIR%%/google/appengine/ext/mapreduce/static/detail.html
 %%DATADIR%%/google/appengine/ext/mapreduce/static/jquery-1.4.2.min.js
@@ -1056,8 +1183,10 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_index.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_login.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_main.py
+%%DATADIR%%/google/appengine/tools/dev_appserver_multiprocess.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_oauth.py
 %%DATADIR%%/google/appengine/tools/dev_appserver_upload.py
+%%DATADIR%%/google/appengine/tools/gen_protorpc.py
 %%DATADIR%%/google/appengine/tools/os_compat.py
 %%DATADIR%%/google/appengine/tools/remote_api_shell.py
 %%DATADIR%%/google/appengine/tools/requeue.py
@@ -1096,6 +1225,7 @@ bin/remote_api_shell.py
 %%DATADIR%%/google/storage/speckle/proto/sql_pb2.py
 %%DATADIR%%/google/storage/speckle/python/__init__.py
 %%DATADIR%%/google/storage/speckle/python/api/__init__.py
+%%DATADIR%%/google/storage/speckle/python/api/converters.py
 %%DATADIR%%/google/storage/speckle/python/api/rdbms.py
 %%DATADIR%%/google/storage/speckle/python/api/rdbms_apiproxy.py
 %%DATADIR%%/lib/antlr3/AUTHORS
@@ -4127,6 +4257,31 @@ bin/remote_api_shell.py
 %%DATADIR%%/lib/ipaddr/ipaddr/__init__.py
 %%DATADIR%%/lib/ipaddr/ipaddr/ipaddr_test.py
 %%DATADIR%%/lib/ipaddr/ipaddr/setup.py
+%%DATADIR%%/lib/protorpc/LICENSE
+%%DATADIR%%/lib/protorpc/protorpc/__init__.py
+%%DATADIR%%/lib/protorpc/protorpc/definition.py
+%%DATADIR%%/lib/protorpc/protorpc/descriptor.py
+%%DATADIR%%/lib/protorpc/protorpc/generate.py
+%%DATADIR%%/lib/protorpc/protorpc/generate_proto.py
+%%DATADIR%%/lib/protorpc/protorpc/generate_python.py
+%%DATADIR%%/lib/protorpc/protorpc/message_types.py
+%%DATADIR%%/lib/protorpc/protorpc/messages.py
+%%DATADIR%%/lib/protorpc/protorpc/protobuf.py
+%%DATADIR%%/lib/protorpc/protorpc/protojson.py
+%%DATADIR%%/lib/protorpc/protorpc/protourlencode.py
+%%DATADIR%%/lib/protorpc/protorpc/registry.py
+%%DATADIR%%/lib/protorpc/protorpc/remote.py
+%%DATADIR%%/lib/protorpc/protorpc/static/base.html
+%%DATADIR%%/lib/protorpc/protorpc/static/forms.html
+%%DATADIR%%/lib/protorpc/protorpc/static/forms.js
+%%DATADIR%%/lib/protorpc/protorpc/static/jquery-1.4.2.min.js
+%%DATADIR%%/lib/protorpc/protorpc/static/jquery.json-2.2.min.js
+%%DATADIR%%/lib/protorpc/protorpc/static/methods.html
+%%DATADIR%%/lib/protorpc/protorpc/transport.py
+%%DATADIR%%/lib/protorpc/protorpc/util.py
+%%DATADIR%%/lib/protorpc/protorpc/webapp/__init__.py
+%%DATADIR%%/lib/protorpc/protorpc/webapp/forms.py
+%%DATADIR%%/lib/protorpc/protorpc/webapp/service_handlers.py
 %%DATADIR%%/lib/simplejson/simplejson/__init__.py
 %%DATADIR%%/lib/simplejson/simplejson/decoder.py
 %%DATADIR%%/lib/simplejson/simplejson/encoder.py
@@ -4231,6 +4386,10 @@ bin/remote_api_shell.py
 @dirrm %%DATADIR%%/lib/webob
 @dirrm %%DATADIR%%/lib/simplejson/simplejson
 @dirrm %%DATADIR%%/lib/simplejson
+@dirrm %%DATADIR%%/lib/protorpc/protorpc/webapp
+@dirrm %%DATADIR%%/lib/protorpc/protorpc/static
+@dirrm %%DATADIR%%/lib/protorpc/protorpc
+@dirrm %%DATADIR%%/lib/protorpc
 @dirrm %%DATADIR%%/lib/ipaddr/ipaddr
 @dirrm %%DATADIR%%/lib/ipaddr
 @dirrm %%DATADIR%%/lib/graphy/graphy/backends/google_chart_api
@@ -5069,6 +5228,7 @@ bin/remote_api_shell.py
 @dirrm %%DATADIR%%/google/appengine/ext/mapreduce
 @dirrm %%DATADIR%%/google/appengine/ext/key_range
 @dirrm %%DATADIR%%/google/appengine/ext/gql
+@dirrm %%DATADIR%%/google/appengine/ext/go
 @dirrm %%DATADIR%%/google/appengine/ext/ereporter/templates
 @dirrm %%DATADIR%%/google/appengine/ext/ereporter
 @dirrm %%DATADIR%%/google/appengine/ext/deferred
@@ -5106,6 +5266,8 @@ bin/remote_api_shell.py
 @dirrm %%DATADIR%%/google/appengine/base
 @dirrm %%DATADIR%%/google/appengine/api/xmpp
 @dirrm %%DATADIR%%/google/appengine/api/taskqueue
+@dirrm %%DATADIR%%/google/appengine/api/system
+@dirrm %%DATADIR%%/google/appengine/api/runtime
 @dirrm %%DATADIR%%/google/appengine/api/prospective_search
 @dirrm %%DATADIR%%/google/appengine/api/oauth
 @dirrm %%DATADIR%%/google/appengine/api/namespace_manager
@@ -5118,6 +5280,8 @@ bin/remote_api_shell.py
 @dirrm %%DATADIR%%/google/appengine/api/channel
 @dirrm %%DATADIR%%/google/appengine/api/capabilities
 @dirrm %%DATADIR%%/google/appengine/api/blobstore
+@dirrm %%DATADIR%%/google/appengine/api/backends
+@dirrm %%DATADIR%%/google/appengine/api/app_identity
 @dirrm %%DATADIR%%/google/appengine/api
 @dirrm %%DATADIR%%/google/appengine
 @dirrm %%DATADIR%%/google
@@ -5136,7 +5300,15 @@ bin/remote_api_shell.py
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/users
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/urlfetch
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/tools/webapp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/tools/protorpc/webapp
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/tools/protorpc/transport
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/tools/protorpc/remote
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/tools/protorpc/messages
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/tools/protorpc/descriptor
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/tools/protorpc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/tools/descriptor
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/tools
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/taskqueue/pull
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/taskqueue
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/prospectivesearch
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/oauth
@@ -5152,6 +5324,7 @@ bin/remote_api_shell.py
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/channel
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/capabilities
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/blobstore
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python/backends
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/python
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/xmpp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/users
@@ -5206,10 +5379,12 @@ bin/remote_api_shell.py
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/memcache
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/mail
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/files
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/channel
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/capabilities
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/blobstore
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/backends
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google
@@ -5228,9 +5403,25 @@ bin/remote_api_shell.py
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/channel
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/capabilities
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/blobstore
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/backends
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/images
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/datastore
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/go/users
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/go/urlfetch
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/go/taskqueue
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/go/memcache
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/go/mail
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/go/gettingstarted
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/go/datastore
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/go/config
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/go/channel
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/go/capabilities
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/go/blobstore
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/go
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/config
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/appengine/python/taskqueue
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/appengine/python
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/appengine
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/adminconsole
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/css
@@ -5247,4 +5438,8 @@ bin/remote_api_shell.py
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/articles
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/appengine/docs/datastore
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/appengine/docs/python/tools/descriptor
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/appengine/docs/python/taskqueue/pull
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/appengine/docs/go/config
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/appengine/docs/config
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/appengine/docs/appengine/python/taskqueue
