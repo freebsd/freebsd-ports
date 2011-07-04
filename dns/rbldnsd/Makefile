@@ -32,12 +32,10 @@ MAN8=		rbldnsd.8
 
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	rbldnsd
+USERS=		rbldns
+GROUPS=		${USERS}
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
-
-pre-install:
-		@${ECHO} "==>  Creating custom user to run rbldnsd..."
-		@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 		@if [ ! -d ${ROOTDIR} ]; then \
