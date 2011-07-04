@@ -21,6 +21,8 @@ LICENSE_FILE=	${WRKSRC}/LICENSE
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
+USERS=		${TRIRCD_USER}
+GROUPS=		${TRIRCD_GROUP}
 TRIRCD_MAXCLIENTS?=	128
 
 TRIRCD_USER?=	trircd
@@ -45,13 +47,10 @@ CONFIGURE_ENV+=	MD5SUMS="\"${MD5} -r\""
 
 USE_RC_SUBR=	trircd
 
-SUB_LIST+=	TRIRCD_USER="${TRIRCD_USER}" TRIRCD_GROUP="${TRIRCD_GROUP}" \
-		TRIRCD_RUNDIR="${TRIRCD_RUNDIR}" TRIRCD_LOGDIR="${TRIRCD_LOGDIR}" \
+SUB_LIST+=	TRIRCD_RUNDIR="${TRIRCD_RUNDIR}" TRIRCD_LOGDIR="${TRIRCD_LOGDIR}" \
 		TRIRCD_CONFDIR="${TRIRCD_CONFDIR}"
 
-SUB_FILES+=	pkg-install pkg-deinstall pkg-message
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
+SUB_FILES+=	pkg-deinstall pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 .if !defined(NO_INSTALL_MANPAGES)
@@ -67,9 +66,6 @@ CONFIGURE_ARGS+=--enable-openssl=${OPENSSLBASE}
 .endif
 
 .include <bsd.port.pre.mk>
-
-PW?=		/usr/sbin/pw
-SUB_LIST+=	MKDIR="${MKDIR}" PW="${PW}" CHMOD="${CHMOD}" CHOWN="${CHOWN}"
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
 CFLAGS+=	-fPIC
@@ -89,9 +85,6 @@ post-patch:
 
 post-configure:
 	@${REINPLACE_CMD} -e "s,/var/log/tr-ircd,${TRIRCD_LOGDIR}," ${WRKSRC}/include/ircpath.h
-
-pre-install:
-	@${SH} ${PKGINSTALL}
 
 post-install:
 	@${MKDIR} ${TRIRCD_CONFDIR}
