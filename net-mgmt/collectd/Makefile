@@ -225,7 +225,7 @@ PLIST_SUB+=	DISK="@comment "
 
 .if defined(WITH_GCRYPT)
 CONFIGURE_ARGS+=--with-libgcrypt-prefix=${LOCALBASE}
-LIB_DEPENDS+=	gcrypt.17:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gcrypt.18:${PORTSDIR}/security/libgcrypt
 .endif
 
 .if defined(WITH_NUTUPS)
