@@ -29,6 +29,7 @@ OPTIONS=	CGI		"Install collection.cgi (requires RRDTOOL)" 	Off \
 		CURL_XML	"Input: CURL XML generic web statistics"	Off \
 		DBI		"Input: database abstraction library"		Off \
 		DISK		"Input: Disk performance statistics"		Off \
+		GCRYPT		"Build with libgcrypt"				Off \
 		NUTUPS		"Input: NUT UPS daemon" 			Off \
 		INTERFACE 	"Input: Network interfaces (libstatgrab)" 	On  \
 		MBMON		"Input: MBMon" 					Off \
@@ -220,6 +221,11 @@ PLIST_SUB+=	DISK=""
 .else
 CONFIGURE_ARGS+=--disable-disk
 PLIST_SUB+=	DISK="@comment "
+.endif
+
+.if defined(WITH_GCRYPT)
+CONFIGURE_ARGS+=--with-libgcrypt-prefix=${LOCALBASE}
+LIB_DEPENDS+=	gcrypt.17:${PORTSDIR}/security/libgcrypt
 .endif
 
 .if defined(WITH_NUTUPS)
