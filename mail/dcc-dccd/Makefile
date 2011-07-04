@@ -56,9 +56,10 @@ OPTIONS=	DCCIFD	"DCC interface daemon (for SpamAssassin etc)"	on \
 ## User for DCC files and SUID binaries
 #
 DCCUSER?=	dcc
-DCCUID?=	112
 DCCGROUP?=	dcc
-DCCGID?=	112
+
+USERS=		${DCCUSER}
+GROUPS=		${DCCGROUP}
 
 PLIST_SUB+=	DCCUSER="${DCCUSER}"
 
@@ -69,9 +70,8 @@ CONFIGURE_ARGS=	--with-uid=${DCCUSER} --bindir=${PREFIX}/bin --mandir=${MANPREFI
 
 .include <bsd.port.options.mk>
 
-SUB_FILES=		pkg-install pkg-deinstall pkg-message
-SUB_LIST+=		WRKSRC=${WRKSRC} DCCUSER=${DCCUSER} DCCUID=${DCCUID} \
-			DCCGROUP=${DCCGROUP} DCCGID=${DCCGID} DCCHOME=${DCCHOME}
+SUB_FILES=		pkg-install pkg-message
+SUB_LIST+=		WRKSRC=${WRKSRC} DCCHOME=${DCCHOME}
 
 ## /var/dcc home support
 #
@@ -175,10 +175,6 @@ pre-everything::
 	@${ECHO_MSG} ' '
 	@${ECHO_MSG} 'A description of ALT_HOME may be found in the port's Makefile.'
 	@${ECHO_MSG} ' '
-
-pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-	${SH} ${PKGINSTALL} ${PREFIX} PRE-INSTALL
 
 post-install:
 
