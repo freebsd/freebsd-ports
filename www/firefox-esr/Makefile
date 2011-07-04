@@ -16,7 +16,8 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}.source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Web browser based on the browser portion of Mozilla
 
-BUILD_DEPENDS=	nspr>=4.8.7:${PORTSDIR}/devel/nspr
+BUILD_DEPENDS=	nspr>=4.8.7:${PORTSDIR}/devel/nspr \
+		cairo>=1.10.2_1,1:${PORTSDIR}/graphics/cairo
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		event-1.4:${PORTSDIR}/devel/libevent
 
