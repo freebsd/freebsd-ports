@@ -15,6 +15,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby extension module to use the functions of Perl from Ruby
 
+DEPRECATED=	Doesn't work with Ruby 1.9
+EXPIRATION_DATE=	2011-08-03
+
 USE_PERL5=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes

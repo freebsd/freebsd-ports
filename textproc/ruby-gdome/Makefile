@@ -18,6 +18,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A Ruby extension that wraps around gdome2
 
+DEPRECATED=	Doesn't work with Ruby 1.9
+EXPIRATION_DATE=	2011-08-03
+
 LIB_DEPENDS=	gdome.8:${PORTSDIR}/textproc/gdome2
 
 USE_BZIP2=	yes

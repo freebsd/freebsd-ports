@@ -17,6 +17,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	The Ruby Object Message Proxy
 
+DEPRECATED=	Doesn't work with Ruby 1.9
+EXPIRATION_DATE=	2011-08-03
+
 IGNOREFILES=	romp.html
 
 USE_RUBY=	yes

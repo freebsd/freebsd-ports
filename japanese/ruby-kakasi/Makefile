@@ -14,6 +14,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	KAKASI module for Ruby
 
+DEPRECATED=	Doesn't work with Ruby 1.9
+EXPIRATION_DATE=	2011-08-03
+
 LIB_DEPENDS=	kakasi.3:${PORTSDIR}/japanese/kakasi
 
 USE_RUBY=	yes
