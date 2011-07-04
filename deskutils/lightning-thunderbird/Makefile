@@ -7,7 +7,7 @@
 
 PORTNAME=	lightning
 DISTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	calendar/${PORTNAME}/releases/${DISTVERSION}b2/source
@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}b2.source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	An integrated calendar for Thunderbird 3.1
 
-RUN_DEPENDS+=	${LOCALBASE}/lib/thunderbird/thunderbird-bin:${PORTSDIR}/mail/thunderbird
+RUN_DEPENDS+=	${LOCALBASE}/lib/thunderbird/thunderbird-bin:${PORTSDIR}/mail/thunderbird3
 
 CONFLICTS_BUILD=	spidermonkey-1.[0-7]*
 USE_AUTOTOOLS=	autoconf213 libtool
