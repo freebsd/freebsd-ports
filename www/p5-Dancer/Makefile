@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Dancer
-PORTVERSION=	1.3040
+PORTVERSION=	1.3060
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:XSAWYERX
+MASTER_SITE_SUBDIR=	CPAN:SUKRIA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	kuriyama@FreeBSD.org
@@ -51,6 +51,8 @@ MAN3=	Dancer.3 \
 	Dancer::FileUtils.3 \
 	Dancer::HTTP.3 \
 	Dancer::Handler::Debug.3 \
+	Dancer::Hook.3 \
+	Dancer::Hook::Properties.3 \
 	Dancer::Introduction.3 \
 	Dancer::Logger.3 \
 	Dancer::Logger::Abstract.3 \
