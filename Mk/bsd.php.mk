@@ -83,10 +83,6 @@ PHP_SAPI?=	""
 .endif	# .if exists(${PHPBASE}/etc/php.conf)
 PHP_EXT_INC?=	""
 
-# compatability shim
-.if defined(BROKEN_WITH_PHP)
-IGNORE_WITH_PHP=${BROKEN_WITH_PHP}
-.endif
 .if defined(IGNORE_WITH_PHP)
 .	for VER in ${IGNORE_WITH_PHP}
 .		if ${PHP_VER} == "${VER}"
