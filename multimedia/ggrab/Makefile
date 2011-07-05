@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.menzebach.de/ggrab/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-linux
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Records MPEG2 streams directly from your Dbox2 over Ethernet
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	misc kde
 MASTER_SITES=	SF/gwenview/gwenview/${PORTVERSION}
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Localized messages and documentation for Gwenview
 
 CONFLICTS=	gwenview-0.[0-9]* gwenview-1.[0-3]*

@@ -11,7 +11,7 @@ CATEGORIES=		german kde
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	markus
 
-MAINTAINER=		markus@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		KDE utility to search within the Heise Register
 
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure

@@ -11,7 +11,7 @@ CATEGORIES=	ftp kde
 MASTER_SITES=	http://download.berlios.de/kasablanca/ \
 		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical ftp client for KDE
 
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure

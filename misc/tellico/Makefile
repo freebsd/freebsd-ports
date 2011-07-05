@@ -11,7 +11,7 @@ PORTREVISION=	7
 CATEGORIES=	misc kde
 MASTER_SITES=	http://tellico-project.org/files/
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection manager for KDE
 
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \

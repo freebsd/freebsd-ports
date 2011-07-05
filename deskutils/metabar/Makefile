@@ -10,7 +10,7 @@ PORTREVISION=	9
 CATEGORIES=	deskutils kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Sidebar plugin for Konqueror
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

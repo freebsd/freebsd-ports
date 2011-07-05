@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
-MAINTAINER=	rnoland@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python/GTK based settings manager for CompizConfig
 
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compizconfig-python.pc:${PORTSDIR}/x11-wm/compizconfig-python

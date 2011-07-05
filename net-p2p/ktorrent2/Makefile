@@ -12,7 +12,7 @@ CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${PORTVERSION}/ \
 		http://www.brueffer.de/distfiles/
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BitTorrent client for KDE
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp

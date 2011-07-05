@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
-MAINTAINER=	rnoland@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Emerald Window Decorator
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz

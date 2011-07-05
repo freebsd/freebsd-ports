@@ -10,7 +10,7 @@ PORTREVISION=	6
 CATEGORIES=	audio kde
 MASTER_SITES=	SF/k3b/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	K3b plugin for Monkey's Audio files
 
 LIB_DEPENDS=	k3b:${PORTSDIR}/sysutils/k3b

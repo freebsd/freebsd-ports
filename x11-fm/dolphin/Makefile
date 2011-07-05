@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	x11-fm kde
 MASTER_SITES=	http://www.brueffer.de/distfiles/
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	File manager for KDE
 
 USE_KDELIBS_VER=3

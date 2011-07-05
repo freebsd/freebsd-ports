@@ -10,7 +10,7 @@ PORTREVISION=	5
 CATEGORIES=	net kde
 MASTER_SITES=	http://www.eris23.de/knemo/
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Network monitor for KDE
 
 USE_BZIP2=	yes

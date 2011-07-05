@@ -11,7 +11,7 @@ PORTREVISION=	5
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://qsynaptics.sourceforge.net/
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE control center module for Synaptics touchpads
 
 LIB_DEPENDS=	synaptics:${PORTSDIR}/x11/libsynaptics
