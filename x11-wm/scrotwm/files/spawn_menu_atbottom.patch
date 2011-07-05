@@ -1,6 +1,15 @@
---- scrotwm.c.orig	2009-10-24 07:10:36.000000000 +0200
-+++ scrotwm.c	2009-10-24 07:11:10.000000000 +0200
-@@ -2812,7 +2812,8 @@
+--- scrotwm.c.orig	2011-07-01 12:27:56.000000000 +0200
++++ scrotwm.c	2011-07-01 12:29:49.000000000 +0200
+@@ -3891,14 +3891,16 @@
+ 					" -nb $bar_color"
+ 					" -nf $bar_font_color"
+ 					" -sb $bar_border"
+-					" -sf $bar_color",	0);
++					" -sf $bar_color"
++					" -b",	0);
+ 	setconfspawn("uniconify",	"dmenu"
+ 					" -i"
+ 					" -fn $bar_font"
  					" -nb $bar_color"
  					" -nf $bar_font_color"
  					" -sb $bar_border"
