@@ -10,7 +10,7 @@ in your /etc/rc.conf.
 
 You will also need to add "rotate" command to the system crontab:
 
-0 0 * * *		%%PREFIX%%/etc/rc.d/atop rotate
+0 0 * * *		%%PREFIX%%/etc/rc.d/atop rotate >dev/null
 
 To change number of days to keep the logs (default - 30) use atop_keepdays
 variable in your /etc/rc.conf file.
