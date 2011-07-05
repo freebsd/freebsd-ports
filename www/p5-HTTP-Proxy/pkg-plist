@@ -11,6 +11,7 @@
 %%SITE_PERL%%/HTTP/Proxy/Engine/Legacy.pm
 %%SITE_PERL%%/HTTP/Proxy/Engine/NoFork.pm
 %%SITE_PERL%%/HTTP/Proxy/Engine/ScoreBoard.pm
+%%SITE_PERL%%/HTTP/Proxy/Engine/Threaded.pm
 %%SITE_PERL%%/HTTP/Proxy/FilterStack.pm
 %%SITE_PERL%%/HTTP/Proxy/HeaderFilter.pm
 %%SITE_PERL%%/HTTP/Proxy/HeaderFilter/simple.pm
