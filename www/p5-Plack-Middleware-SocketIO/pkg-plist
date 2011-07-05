@@ -1,0 +1,14 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/SocketIO/.packlist
+%%SITE_PERL%%/Plack/Middleware/SocketIO.pm
+%%SITE_PERL%%/Plack/Middleware/SocketIO/Base.pm
+%%SITE_PERL%%/Plack/Middleware/SocketIO/Connection.pm
+%%SITE_PERL%%/Plack/Middleware/SocketIO/Handle.pm
+%%SITE_PERL%%/Plack/Middleware/SocketIO/Htmlfile.pm
+%%SITE_PERL%%/Plack/Middleware/SocketIO/JSONPPolling.pm
+%%SITE_PERL%%/Plack/Middleware/SocketIO/Resource.pm
+%%SITE_PERL%%/Plack/Middleware/SocketIO/WebSocket.pm
+%%SITE_PERL%%/Plack/Middleware/SocketIO/XHRMultipart.pm
+%%SITE_PERL%%/Plack/Middleware/SocketIO/XHRPolling.pm
+@dirrm %%SITE_PERL%%/Plack/Middleware/SocketIO
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware/SocketIO
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Middleware
