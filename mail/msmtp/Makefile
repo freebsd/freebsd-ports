@@ -14,21 +14,21 @@ MASTER_SITES=	SF
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	SMTP plugin for MUAs
 
+LICENSE=	GPLv3
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 MAN1=	msmtp.1
 INFO=	msmtp
-
-LICENSE=	GPLv3
 
 OPTIONS=	GNUTLS "Adds GnuTLS support" off \
 		OPENSSL "Adds support for SSL (Secure Socket Layer)" on \
 		GSASL "Adds GSASL support" off \
 		NLS "Native Language Support via gettext utilities" on \
 		IDN "Enable Internationalized Domain Names" on \
+		GNOME_KEYRING "Build with GNOME Keyring auth support" off
 
 .include       <bsd.port.options.mk>
 
@@ -59,6 +59,13 @@ LIB_DEPENDS+=	idn.17:${PORTSDIR}/dns/libidn
 CONFIGURE_ARGS+=	--with-libidn
 .else
 CONFIGURE_ARGS+=	--without-libidn
+.endif
+
+.if !defined(WITH_GNOME_KEYRING)
+CONFIGURE_ARGS+=	--without-gnome-keyring
+.else
+CONFIGURE_ARGS+=	--with-gnome-keyring
+LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/gnome-keyring
 .endif
 
 .if !defined(WITHOUT_NLS)
