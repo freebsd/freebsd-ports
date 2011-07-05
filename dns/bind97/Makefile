@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	bind97
-PORTVERSION=	9.7.3.1
+PORTVERSION=	9.7.3.3
 PORTREVISION?=	0
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
@@ -20,7 +20,7 @@ MAINTAINER=	dougb@FreeBSD.org
 COMMENT?=	The BIND DNS suite with updated DNSSEC and threads
 
 # ISC releases things like 9.4.0b3, which our versioning doesn't like
-ISCVERSION=	9.7.3-P1
+ISCVERSION=	9.7.3-P3
 
 MAKE_JOBS_UNSAFE=	yes
 
