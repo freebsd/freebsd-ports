@@ -10,7 +10,7 @@ PORTREVISION=	13
 CATEGORIES=	math kde
 MASTER_SITES=	SF/${PORTNAME}/releases/${PORTVERSION}
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced graphic calculator
 
 USE_KDELIBS_VER=3

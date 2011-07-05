@@ -10,7 +10,7 @@ PORTREVISION=	9
 CATEGORIES=		deskutils kde
 MASTER_SITES=		SF
 
-MAINTAINER=		markus@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Drop stack applet for KDE
 
 USE_AUTOTOOLS=	libtool

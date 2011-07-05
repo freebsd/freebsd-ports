@@ -10,7 +10,7 @@ PORTREVISION=	7
 CATEGORIES=	deskutils kde
 MASTER_SITES=	http://www.michael-vonrueden.de/${PORTNAME}/
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Panel applet for web searches using clipboard entries
 
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-old_configure

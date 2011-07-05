@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES?=	misc kde
 MASTER_SITES=	SF/k3b/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Localized messages and documentation for K3b
 
 USE_KDELIBS_VER=3

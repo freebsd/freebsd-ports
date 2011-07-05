@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI for potrace, a program for tracing bitmap images
 
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure

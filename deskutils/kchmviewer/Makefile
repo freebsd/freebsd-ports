@@ -12,7 +12,7 @@ CATEGORIES=	deskutils kde
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-2
 DISTNAME=	${PORTNAME}-${PORTVERSION}-2
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Qt/KDE viewer for CHM files
 
 LIB_DEPENDS+=	chm:${PORTSDIR}/misc/chmlib

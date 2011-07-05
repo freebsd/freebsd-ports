@@ -11,7 +11,7 @@ PORTREVISION=	9
 CATEGORIES=	graphics kde
 MASTER_SITES=	SF
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image viewer and browser for the KDE environment
 
 LIB_DEPENDS=	kipi.2:${PORTSDIR}/graphics/libkipi \

@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	markus
 DISTNAME=	PDITOOL
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Extracts or converts .pdi file sets to .iso
 
 WRKSRC=		${WRKDIR}

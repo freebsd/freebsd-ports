@@ -10,7 +10,7 @@ PORTREVISION=	4
 CATEGORIES=	ftp kde
 MASTER_SITES=	http://www.kftp.org/uploads/files/
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphical FTP client for KDE
 
 USE_BZIP2=	yes

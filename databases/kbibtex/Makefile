@@ -10,7 +10,7 @@ PORTREVISION=	3
 CATEGORIES=	databases kde
 MASTER_SITES=	http://www.unix-ag.uni-kl.de/~fischer/${PORTNAME}/download/
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	BibTeX editor for KDE
 
 LIB_DEPENDS=	yaz.4:${PORTSDIR}/net/yaz

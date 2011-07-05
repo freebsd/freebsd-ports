@@ -11,7 +11,7 @@ CATEGORIES=		print kde
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}-KDE3
 DISTNAME=		${PORTNAME}-${PORTVERSION}-KDE3
 
-MAINTAINER=		markus@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Create covers, labels and booklets for your CD cases
 
 USE_KDELIBS_VER=	3

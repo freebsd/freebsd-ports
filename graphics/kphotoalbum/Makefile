@@ -10,7 +10,7 @@ PORTREVISION=	9
 CATEGORIES=		graphics kde
 MASTER_SITES=		http://www.kphotoalbum.org/data/download/
 
-MAINTAINER=		markus@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		Image database for KDE
 
 LIB_DEPENDS=		kipi.2:${PORTSDIR}/graphics/libkipi \

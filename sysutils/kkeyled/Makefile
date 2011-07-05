@@ -10,7 +10,7 @@ PORTREVISION=	5
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Panel applet to display the keyboard's LED states
 
 USE_BZIP2=	yes

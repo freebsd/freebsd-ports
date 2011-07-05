@@ -14,7 +14,7 @@ MASTER_SITES=	http://www.notmart.org/files/ \
 MASTER_SITE_SUBDIR=	markus
 PKGNAMEPREFIX=	kde-style-
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE style and window decoration
 
 USE_BZIP2=	yes

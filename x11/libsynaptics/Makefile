@@ -12,7 +12,7 @@ CATEGORIES=	x11
 MASTER_SITES=	http://qsynaptics.sourceforge.net/ \
 		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library to access the Xorg/XFree86 Synaptics TouchPad Driver
 
 USE_BZIP2=	yes

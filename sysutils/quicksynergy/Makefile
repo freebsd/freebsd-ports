@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/Linux/${PORTVERSION}
 
-MAINTAINER=	rnoland@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical interface for easily configuring Synergy2
 
 BUILD_DEPENDS=	synergys:${PORTSDIR}/sysutils/synergy

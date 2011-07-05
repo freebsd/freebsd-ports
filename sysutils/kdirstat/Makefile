@@ -11,7 +11,7 @@ PORTREVISION=	6
 CATEGORIES=	sysutils kde
 MASTER_SITES=	http://kdirstat.sourceforge.net/download/
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small KDE utility that sums up disk usage for directory trees
 
 EXTRA_PATCHES=	${.CURDIR}/../../x11/kde3/files/extrapatch-configure

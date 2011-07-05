@@ -10,7 +10,7 @@ PORTREVISION=	3
 CATEGORIES=	sysutils kde
 MASTER_SITES=	SF/${PORTNAME}/KShutdown/${PORTVERSION}%20for%20KDE%203
 
-MAINTAINER=	markus@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Advanced shutdown utility for KDE
 
 USE_BZIP2=	yes
