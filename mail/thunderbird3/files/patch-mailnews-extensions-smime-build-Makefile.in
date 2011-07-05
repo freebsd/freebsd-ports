@@ -1,0 +1,16 @@
+$FreeBSD$
+
+This is from ports/156912; it fixes the build failure due to the gmake-3.81-ism
+in mailnews/extensions/smime/build/Makefile.in
+
+--- mailnews/extensions/smime/build/Makefile.in.orig	2011-05-09 18:49:18.458634807 +0100
++++ mailnews/extensions/smime/build/Makefile.in	2011-05-09 18:50:07.015309434 +0100
+@@ -81,7 +81,7 @@
+ 		$(NULL)
+ 
+ ifndef MOZ_STATIC_MAIL_BUILD
+-SHARED_LIBRARY_LIBS + = ../../../base/util/$(LIB_PREFIX)msgbsutl_s.$(LIB_SUFFIX)
++SHARED_LIBRARY_LIBS += ../../../base/util/$(LIB_PREFIX)msgbsutl_s.$(LIB_SUFFIX)
+ endif
+ 
+ ifdef MOZILLA_INTERNAL_API
