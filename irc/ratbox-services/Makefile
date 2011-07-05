@@ -19,6 +19,9 @@ COMMENT=	A highly configurable services package for use with ircd-ratbox
 
 USE_RC_SUBR=	ratbox-services.sh
 
+USERS=		ircservices
+GROUPS=		${USERS}
+
 LOGDIR?=	/var/log
 RUNDIR?=	/var/run
 DBDIR?=		/var/db/${PORTNAME}
@@ -168,7 +171,6 @@ post-patch:
 			${WRKSRC}/tools/dbupgrade.pl
 
 pre-su-install:
-	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	${MKDIR} ${DATADIR}/help
 
 post-install:
