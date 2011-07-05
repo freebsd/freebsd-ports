@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abi-compliance-checker
-PORTVERSION=	1.23.3
+PORTVERSION=	1.23.5
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://linuxtesting.org/downloads/ \
 		LOCAL/bf
