@@ -6,7 +6,6 @@ bin/plackup
 %%SITE_PERL%%/Plack/App/CGIBin.pm
 %%SITE_PERL%%/Plack/App/Cascade.pm
 %%SITE_PERL%%/Plack/App/Directory.pm
-%%SITE_PERL%%/Plack/App/FCGIDispatcher.pm
 %%SITE_PERL%%/Plack/App/File.pm
 %%SITE_PERL%%/Plack/App/PSGIBin.pm
 %%SITE_PERL%%/Plack/App/URLMap.pm

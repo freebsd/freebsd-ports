@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-Session
-PORTVERSION=	0.43
+PORTVERSION=	0.44
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TOKUHIROM
@@ -18,10 +18,13 @@ COMMENT=	Perl extension of yet another session manager
 RUN_DEPENDS=	\
 	p5-Class-Accessor>=0.31:${PORTSDIR}/devel/p5-Class-Accessor \
 	p5-CGI-Simple>=1.103:${PORTSDIR}/www/p5-CGI-Simple \
+	p5-CHI>0:${PORTSDIR}/devel/p5-CHI \
 	p5-Digest-SHA1>=2.11:${PORTSDIR}/security/p5-Digest-SHA1 \
+	p5-HTML-StickyQuery>0:${PORTSDIR}/www/p5-HTML-StickyQuery \
 	p5-libwww>=5.818:${PORTSDIR}/www/p5-libwww \
 	p5-UNIVERSAL-require>=0.05:${PORTSDIR}/devel/p5-UNIVERSAL-require \
 	p5-URI>=1.38:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
