@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	rosegarden
-PORTVERSION=	11.02
-PORTREVISION=	1
+PORTVERSION=	11.06
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	The Rosegarden Editor and Sequencer suite
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	dssi_osc_update:${PORTSDIR}/audio/dssi \
 		makedepend:${PORTSDIR}/devel/makedepend
@@ -24,8 +25,6 @@ LIB_DEPENDS+=	lrdf.2:${PORTSDIR}/textproc/liblrdf \
 		asound.2:${PORTSDIR}/audio/alsa-lib \
 		lirc_client:${PORTSDIR}/comms/lirc
 
-LICENSE=	GPLv2
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_QT_VER=	4
@@ -33,7 +32,7 @@ QT_COMPONENTS=	gui xml network corelib sql qt3support \
 		rcc_build moc_build uic_build linguist_build
 LDFLAGS+=	-L${LOCALBASE}/lib
 CPPFLAGS+=	-I${LOCALBASE}/include
-CONFIGURE_ENV+=	QTLIBDIR=${QT_LIBDIR} LDFLAGS="${LDFLAGS}" CPPFLAGS="${CPPFLAGS}"
+CONFIGURE_ENV+=	QTLIBDIR=${QT_LIBDIR} LDFLAGS="${LDFLAGS}"
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 INSTALLS_ICONS=	yes
