@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	scrotwm
-PORTVERSION=	0.9.31
+PORTVERSION=	0.9.32
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://opensource.conformal.com/snapshots/scrotwm/ \
-		http://scrotwm.org/snapshot/
+MASTER_SITES=	http://opensource.conformal.com/snapshots/scrotwm/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	aragon@phat.za.net
@@ -20,11 +19,9 @@ OPTIONS=	DMENU "Depend on x11/dmenu" Off \
 
 .include <bsd.port.pre.mk>
 
-USE_XORG=	x11 xproto xrandr
-USE_XLIB=	yes
+USE_XORG=	x11 xproto xrandr xt
 
 MAN1=		scrotwm.1
-PLIST_FILES=	bin/scrotwm bin/startscrotwm lib/libswmhack.so etc/scrotwm.conf
 USE_LDCONFIG=yes
 
 .if defined(WITH_DMENU)
@@ -34,6 +31,9 @@ RUN_DEPENDS+=	dmenu:${PORTSDIR}/x11/dmenu
 EXTRA_PATCHES+=	${FILESDIR}/spawn_menu_atbottom.patch
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/scrotwm.*
+
 do-build:
 	${CC} ${CFLAGS} -I${X11BASE}/include \
 		-I${WRKSRC}/linux -lutil -L${X11BASE}/lib -lX11 -lXrandr \
@@ -42,13 +42,15 @@ do-build:
 		-o ${WRKSRC}/libswmhack.so ${WRKSRC}/lib/swm_hack.c
 
 do-install:
+	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_LIB} ${WRKSRC}/libswmhack.so ${PREFIX}/lib
+	${INSTALL_MAN} ${WRKSRC}/scrotwm.1 ${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/scrotwm.conf ${PREFIX}/etc/scrotwm.conf.sample
+	@if [ ! -f ${PREFIX}/etc/scrotwm.conf ]; then \
+		${CP} -p ${PREFIX}/etc/scrotwm.conf.sample ${PREFIX}/etc/scrotwm.conf ; \
+	fi
 	${INSTALL_SCRIPT} ${FILESDIR}/startscrotwm ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/libswmhack.so ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKSRC}/scrotwm.conf ${PREFIX}/etc
-	${INSTALL_MAN} ${WRKSRC}/scrotwm.1 ${PREFIX}/man/man1
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|/etc/|${PREFIX}/etc/|g' ${WRKSRC}/scrotwm.*
+	${INSTALL_SCRIPT} ${WRKSRC}/screenshot.sh ${EXAMPLESDIR}/
 
 .include <bsd.port.post.mk>
