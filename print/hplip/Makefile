@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hplip
-PORTVERSION=	3.11.3
+PORTVERSION=	3.11.5
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -21,7 +21,8 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 RUN_DEPENDS=	espgs:${PORTSDIR}/print/cups-pstoraster \
 		foomatic-rip:${PORTSDIR}/print/foomatic-filters \
 		${PYTHON_SITELIBDIR}/gtk-2.0/gobject/_gobject.so:${PORTSDIR}/devel/py-gobject \
-		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus
+		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus \
+		xdg-open:${PORTSDIR}/devel/xdg-utils
 
 CONFLICTS=	hpijs-[0-9]*
 
@@ -41,7 +42,7 @@ CONFIGURE_ARGS=	--enable-foomatic-ppd-install \
 		--with-mimedir=${PREFIX}/etc/cups \
 		--with-docdir=${DOCSDIR} \
 		--with-drvdir=${PREFIX}/libexec/cups/driver
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
