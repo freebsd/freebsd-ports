@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110705:
+  AFFECTS: users of security/libgcrypt and any port that depends on it
+  AUTHOR: swills@FreeBSD.org
+  
+  The libgcrypt port has been updated to 1.5.0 and all shared libraries'
+  versions have been bumped. So you need to rebuild all applications that
+  depend on libgcrypt. Do something like:
+
+  # portmaster -r libgcrypt
+
+  or 
+
+  # portupgrade -rf libgcrypt
+
 20110703:
   AFFECTS: users of print/lyx and print/lyx-devel
   AUTHOR: makc@FreeBSD.org
