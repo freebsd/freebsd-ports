@@ -1,4 +1,4 @@
-The Saxon 8.0 package is a collection of tools for processing XML documents.
+The Saxon-B 9.1 package is a collection of tools for processing XML documents.
 The main components are:
 
 - An XSLT 2.0 processor, that can be used from the command line, or invoked
@@ -19,4 +19,4 @@ So you can use Saxon to process XML by writing XSLT stylesheets, by writing
 XQuery queries, by writing Java applications, or by combinations of the
 approaches.
 
-WWW: http://www.saxonica.com/
+WWW: http://saxon.sourceforge.net/

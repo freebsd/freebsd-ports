@@ -6,14 +6,13 @@
 #
 
 PORTNAME=	saxon
-PORTVERSION=	8.9.0.4
-PORTREVISION=	1
+PORTVERSION=	9.1.0.7
 PORTEPOCH=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	SF/${PORTNAME}/Saxon-B/${PORTVERSION}
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}b${PORTVERSION:S,.,-,g}j.zip \
-		${PORTNAME}-resources8-9
+		${PORTNAME}-resources9-1-0-1
 
 MAINTAINER=	hq@FreeBSD.org
 COMMENT=	An XSLT 2.0 / XPath 2.0 / XQuery 1.0 processor for Java
@@ -21,6 +20,7 @@ COMMENT=	An XSLT 2.0 / XPath 2.0 / XQuery 1.0 processor for Java
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 OPTIONS=	JDOM "Install Jdom support" off \
+		DOM4J "Install dom4j support" off \
 		XOM "Install XOM support" off
 
 USE_ZIP=	yes
@@ -31,7 +31,8 @@ NO_BUILD=	yes
 
 CONFLICTS=	saxon-6.*
 
-JARFILES=	saxon8-sql.jar saxon8.jar saxon8-xpath.jar saxon8-dom.jar
+JARFILES=	saxon9-sql.jar saxon9.jar saxon9-xpath.jar saxon9-dom.jar \
+		saxon9-xqj.jar saxon9-s9api.jar
 PLIST_FILES+=	${JARFILES:S,^,%%JAVAJARDIR%%/,} bin/saxon bin/saxon-xquery
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
@@ -40,12 +41,17 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_JDOM)
-JARFILES+=	saxon8-jdom.jar
+JARFILES+=	saxon9-jdom.jar
 RUN_DEPENDS+=	${JAVALIBDIR}/jdom.jar:${PORTSDIR}/java/jdom
 .endif
 
+.if defined(WITH_DOM4J)
+JARFILES+=	saxon9-dom4j.jar
+RUN_DEPENDS+=	${JAVALIBDIR}/dom4j.jar:${PORTSDIR}/textproc/dom4j
+.endif
+
 .if defined(WITH_XOM)
-JARFILES+=	saxon8-xom.jar
+JARFILES+=	saxon9-xom.jar
 RUN_DEPENDS+=	${JAVALIBDIR}/xom.jar:${PORTSDIR}/textproc/xom
 .endif
 
