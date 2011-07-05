@@ -1,0 +1,10 @@
+--- Makefile.orig	2011-07-04 06:54:35.758509756 -0700
++++ Makefile	2011-07-04 20:41:59.302137908 -0700
+@@ -7,7 +7,6 @@
+ # To profile, put -DPROF in DEFS and -pg in CFLAGS, and recompile.
+ 
+ BINDIR?=	/bin
+-NOSHARED?=	YES
+ 
+ PROG=	csh
+ DFLAGS=-DBUILTIN -DFILEC -DNLS -DSHORT_STRINGS
