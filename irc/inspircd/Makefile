@@ -19,6 +19,9 @@ USE_BZIP2=	yes
 USE_RC_SUBR=	${PORTNAME}
 MAKEFILE=	BSDmakefile
 
+USERS=		${INSPIRCD_USR}
+GROUPS=		${INSPIRCD_GRP}
+
 INSPIRCD_USR?=	ircd
 INSPIRCD_UID?=	72
 INSPIRCD_GRP?=	ircd
@@ -27,13 +30,9 @@ INSPIRCD_RUN?=	/var/run/${PORTNAME}
 INSPIRCD_LOG?=	/var/log/${PORTNAME}/ircd.log
 SUB_LIST+=	PORTNAME=${PORTNAME}         \
 		INSPIRCD_USR=${INSPIRCD_USR} \
-		INSPIRCD_UID=${INSPIRCD_UID} \
 		INSPIRCD_GRP=${INSPIRCD_GRP} \
-		INSPIRCD_GID=${INSPIRCD_GID} \
-		INSPIRCD_RUN=${INSPIRCD_RUN} \
-		INSPIRCD_LOG=${INSPIRCD_LOG}
 PLIST_SUB+=	INSPIRCD_GRP=${INSPIRCD_GRP}
-SUB_FILES+=	pkg-install pkg-deinstall
+SUB_FILES+=	pkg-deinstall
 
 # Configure script is written in perl
 USE_PERL5_BUILD=yes
@@ -99,7 +98,7 @@ PLIST_SUB+=	GNUTLS="@comment "
 .endif
 
 .if defined(WITH_OPENSSL) && !defined(WITHOUT_OPENSSL)
-.include <${PORTSDIR}/Mk/bsd.openssl.mk>
+.include <bsd.openssl.mk>
 CONFIGURE_ARGS+=	--enable-openssl
 PLIST_SUB+=	OPENSSL=""
 .else
@@ -108,13 +107,9 @@ PLIST_SUB+=	OPENSSL="@comment "
 
 CONFIGURE_ARGS+=	--enable-extras=${EXTRAS}
 
-pre-install:
-	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 post-install:
 	@${STRIP_CMD} ${PREFIX}/lib/${PORTNAME}/modules/*.so
 	@${STRIP_CMD} ${PREFIX}/bin/${PORTNAME}
-	${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .for FILE in inspircd.censor inspircd.conf inspircd.filter inspircd.helpop-full \
 	inspircd.helpop inspircd.motd inspircd.quotes inspircd.rules links.conf modules.conf opers.conf
 	@if ${TEST} -f ${ETCDIR}/${FILE} &&              \
