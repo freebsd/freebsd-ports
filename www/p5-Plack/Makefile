@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Plack
-PORTVERSION=	0.9979
+PORTVERSION=	0.9980
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
@@ -38,7 +38,6 @@ MAN3=	HTTP::Message::PSGI.3 \
 	Plack::App::CGIBin.3 \
 	Plack::App::Cascade.3 \
 	Plack::App::Directory.3 \
-	Plack::App::FCGIDispatcher.3 \
 	Plack::App::File.3 \
 	Plack::App::PSGIBin.3 \
 	Plack::App::URLMap.3 \
