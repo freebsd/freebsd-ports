@@ -25,6 +25,9 @@ MAN8=		ircd.8
 USE_RC_SUBR=	ircd-ratbox.sh
 USE_PERL5_BUILD=	yes
 
+USERS=		ircd
+GROUPS=		${USERS}
+
 LOGDIR=		/var/log/${PORTNAME}
 RUNDIR=		/var/run/${PORTNAME}
 SUB_FILES=	pkg-message pkg-install
@@ -179,13 +182,12 @@ pre-build:
 	${PERL} ${WRKSRC}/contrib/ircd-shortcut.pl
 
 pre-su-install:
-	@${SETENV} "PKG_PREFIX=${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	${MKDIR} ${PREFIX}/etc/${PORTNAME}
-	${CHOWN} ircd:ircd ${PREFIX}/etc/${PORTNAME}
 	${MKDIR} ${DATADIR}/help
 	${MKDIR} ${PREFIX}/lib/${PORTNAME}/modules
 
 post-install:
+	${CHOWN} -R ircd:ircd ${PREFIX}/etc/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC}/doc && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}
