@@ -11,7 +11,7 @@ share/applications/gsmartcontrol.desktop
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE_gsmartcontrol.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE_hz.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE_pcrecpp.txt
-%%PORTDOCS%%%%DOCSDIR%%/LICENSE_whatever.txt
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE_unlicense.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE_zlib.txt
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
@@ -31,9 +31,9 @@ share/icons/hicolor/48x48/apps/gsmartcontrol.png
 share/icons/hicolor/64x64/apps/gsmartcontrol.png
 share/pixmaps/gsmartcontrol.png
 share/pixmaps/gsmartcontrol.xpm
-@dirrm share/icons/hicolor/256x256/apps
-@dirrm share/icons/hicolor/256x256
-@dirrm share/icons
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
+@dirrmtry share/icons
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib/cron-based_noadmin
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/contrib
