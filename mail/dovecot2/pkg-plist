@@ -1,3 +1,4 @@
+@stopdaemon dovecot
 bin/doveadm
 bin/doveconf
 bin/dsync

@@ -51,10 +51,8 @@ PORTDOCS=	*
 PORTEXAMPLES=	*
 .endif
 
-DOVECOT_UID?=	143
-DOVECOT_GID?=	143
-DOVENULL_UID?=	144
-DOVENULL_GID?=	144
+USERS=		${PORTNAME} dovenull
+GROUPS=		${USERS}
 
 PROTOCOLS=	imap pop3
 
@@ -159,8 +157,8 @@ CONFIGURE_ARGS+=--without-sqlite
 PLIST_SUB+=	SQL="@comment "
 .endif
 
-SUB_LIST=	REQUIRE="${_REQUIRE}" DOVECOT_UID=${DOVECOT_UID} DOVECOT_GID=${DOVECOT_GID} DOVENULL_UID=${DOVENULL_UID} DOVENULL_GID=${DOVENULL_GID}
-SUB_FILES=	pkg-install pkg-deinstall pkg-message
+SUB_LIST=	REQUIRE="${_REQUIRE}"
+SUB_FILES=	pkg-deinstall pkg-message
 
 MAN1=		deliver.1 \
 		doveadm-altmove.1 \
@@ -205,9 +203,6 @@ post-patch:
 		' ${WRKSRC}/src/auth/mech-gssapi.c ${WRKSRC}/configure
 .endif
 
-pre-su-install:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
@@ -216,7 +211,6 @@ post-install:
 .if !defined(NOPORTDOCS)
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
