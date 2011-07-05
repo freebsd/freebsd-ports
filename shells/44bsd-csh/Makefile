@@ -21,7 +21,7 @@ NO_WRKSUBDIR=	yes
 MAN1=		44bsd-csh.1
 PORTDOCS=	paper.ascii.gz
 post-extract:
-	cd ${WRKSRC} ; co RCS/*,v
+	cd ${WRKSRC} ; co RCS/*,v; chmod u+w *
 	cd ${WRKSRC}/USD.doc ; co RCS/*,v
 
 post-build:
