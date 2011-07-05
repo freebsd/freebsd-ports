@@ -5594,6 +5594,7 @@ hs-mtl                          ports/devel/hs-mtl
 hs-mtl-docs                     ports/devel/hs-mtl-docs
 hs-mueval                       ports/devel/hs-mueval
 hs-mwc-random                   ports/math/hs-mwc-random
+hs-mysql                        ports/databases/hs-mysql
 hs-network                      ports/net/hs-network
 hs-objectname                   ports/devel/hs-ObjectName
 hs-oeis                         ports/www/hs-oeis
@@ -8801,6 +8802,7 @@ lsh                             ports/security/lsh
 lshell                          ports/shells/lshell
 lsknobs                         ports/ports-mgmt/lsknobs
 lsof                            ports/sysutils/lsof
+lsw                             ports/x11/lsw
 lsysexp                         ports/biology/lsysexp
 lt-aspell                       ports/textproc/lt-aspell
 ltl                             ports/math/ltl
@@ -8879,8 +8881,8 @@ lyntin                          ports/net/lyntin
 lynx                            ports/www/lynx
 lynx-current                    ports/www/lynx-current
 lyx                             ports/print/lyx
-lyx-devel                       ports/print/lyx-devel
 lyx14                           ports/print/lyx14
+lyx16                           ports/print/lyx16
 lzip                            ports/archivers/lzip
 lzlib                           ports/archivers/lzlib
 lzma                            ports/archivers/lzma
