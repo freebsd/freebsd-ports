@@ -13,6 +13,7 @@ dialer:*:68:
 network:*:69:
 pgsql:*:70:
 ircd:*:72:
+ircservices:*:73:
 simscan:*:74:
 hybserv:*:76:
 audit:*:77:
