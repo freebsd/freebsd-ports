@@ -26,6 +26,7 @@ load_rc_config "$name"
 : ${zm_enable="NO"}
 
 stop_cmd="zm_stop"
+status_cmd="zm_status"
 
 load_rc_config "$name"
 : ${zm_enable="NO"}
@@ -33,6 +34,10 @@ load_rc_config "$name"
 zm_stop() {
   ${command} ${command_args}
 }
+
+zm_status() (
+  %%PREFIX%%/bin/${name}dc.pl status
+)
 
 sleep 10
 
