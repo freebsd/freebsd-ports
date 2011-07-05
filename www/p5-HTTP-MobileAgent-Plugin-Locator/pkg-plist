@@ -1,0 +1,18 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/MobileAgent/Plugin/Locator/.packlist
+%%SITE_PERL%%/HTTP/MobileAgent/Plugin/Locator.pm
+%%SITE_PERL%%/HTTP/MobileAgent/Plugin/Locator/Base.pm
+%%SITE_PERL%%/HTTP/MobileAgent/Plugin/Locator/DoCoMo/BasicLocation.pm
+%%SITE_PERL%%/HTTP/MobileAgent/Plugin/Locator/DoCoMo/GPS.pm
+%%SITE_PERL%%/HTTP/MobileAgent/Plugin/Locator/EZweb/BasicLocation.pm
+%%SITE_PERL%%/HTTP/MobileAgent/Plugin/Locator/EZweb/GPS.pm
+%%SITE_PERL%%/HTTP/MobileAgent/Plugin/Locator/SoftBank/BasicLocation.pm
+%%SITE_PERL%%/HTTP/MobileAgent/Plugin/Locator/SoftBank/GPS.pm
+%%SITE_PERL%%/HTTP/MobileAgent/Plugin/Locator/Willcom/BasicLocation.pm
+@dirrm %%SITE_PERL%%/HTTP/MobileAgent/Plugin/Locator/Willcom
+@dirrm %%SITE_PERL%%/HTTP/MobileAgent/Plugin/Locator/SoftBank
+@dirrm %%SITE_PERL%%/HTTP/MobileAgent/Plugin/Locator/EZweb
+@dirrm %%SITE_PERL%%/HTTP/MobileAgent/Plugin/Locator/DoCoMo
+@dirrm %%SITE_PERL%%/HTTP/MobileAgent/Plugin/Locator
+@dirrmtry %%SITE_PERL%%/HTTP/MobileAgent/Plugin
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/MobileAgent/Plugin/Locator
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTTP/MobileAgent/Plugin
