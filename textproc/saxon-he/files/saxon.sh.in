@@ -4,7 +4,7 @@
 
 IAM="`basename "$0"`"
 
-if [ "${IAM}" = "saxon-xquery" ]
+if [ "${IAM}" = "saxon-he-xquery" ]
 then
 	LAUNCHER_CLASS="net.sf.saxon.Query"
 else
