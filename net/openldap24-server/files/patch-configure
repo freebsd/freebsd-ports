@@ -1,6 +1,6 @@
---- configure.orig	2011-03-23 18:52:17.000000000 -0700
-+++ configure	2011-04-02 15:28:05.563816386 -0700
-@@ -21598,7 +21598,7 @@
+--- configure.orig	2011-06-30 08:13:36.000000000 -0700
++++ configure	2011-07-01 16:50:58.734235092 -0700
+@@ -21600,7 +21600,7 @@
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -9,7 +9,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -21646,7 +21646,7 @@
+@@ -21648,7 +21648,7 @@
    $as_echo_n "(cached) " >&6
  else
    ac_check_lib_save_LIBS=$LIBS
@@ -18,7 +18,7 @@
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -21936,7 +21936,7 @@
+@@ -21938,7 +21938,7 @@
  		cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
@@ -27,12 +27,3 @@
  
  int
  main ()
-@@ -22234,7 +22234,7 @@
- 
- 
- 	if test $ol_cv_lib_fetch != no ; then
--		LUTIL_LIBS="$LUTIL_LIBS $ol_link_fetch"
-+		LIBS="$LIBS $ol_link_fetch"
- 		ol_link_fetch=freebsd
- 
- 	elif test $ol_with_fetch != auto ; then
