@@ -12,6 +12,7 @@ bin/dancer
 %%SITE_PERL%%/Dancer/Development/Integration.pod
 %%SITE_PERL%%/Dancer/Engine.pm
 %%SITE_PERL%%/Dancer/Error.pm
+%%SITE_PERL%%/Dancer/Factory/Hook.pm
 %%SITE_PERL%%/Dancer/FileUtils.pm
 %%SITE_PERL%%/Dancer/GetOpt.pm
 %%SITE_PERL%%/Dancer/HTTP.pm
@@ -19,6 +20,8 @@ bin/dancer
 %%SITE_PERL%%/Dancer/Handler/Debug.pm
 %%SITE_PERL%%/Dancer/Handler/PSGI.pm
 %%SITE_PERL%%/Dancer/Handler/Standalone.pm
+%%SITE_PERL%%/Dancer/Hook.pm
+%%SITE_PERL%%/Dancer/Hook/Properties.pm
 %%SITE_PERL%%/Dancer/Introduction.pod
 %%SITE_PERL%%/Dancer/Logger.pm
 %%SITE_PERL%%/Dancer/Logger/Abstract.pm
@@ -71,7 +74,9 @@ bin/dancer
 @dirrm %%SITE_PERL%%/Dancer/Object
 @dirrm %%SITE_PERL%%/Dancer/Logger/Capture
 @dirrm %%SITE_PERL%%/Dancer/Logger
+@dirrm %%SITE_PERL%%/Dancer/Hook
 @dirrm %%SITE_PERL%%/Dancer/Handler
+@dirrm %%SITE_PERL%%/Dancer/Factory
 @dirrm %%SITE_PERL%%/Dancer/Development
 @dirrm %%SITE_PERL%%/Dancer
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Dancer
