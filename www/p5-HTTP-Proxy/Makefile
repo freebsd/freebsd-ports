@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTTP-Proxy
-PORTVERSION=	0.24
+PORTVERSION=	0.25
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -33,6 +33,7 @@ MAN3=		\
 		HTTP::Proxy::Engine::Legacy.3 \
 		HTTP::Proxy::Engine::NoFork.3 \
 		HTTP::Proxy::Engine::ScoreBoard.3 \
+		HTTP::Proxy::Engine::Threaded.3 \
 		HTTP::Proxy::FilterStack.3 \
 		HTTP::Proxy::HeaderFilter.3 \
 		HTTP::Proxy::HeaderFilter::simple.3 \
