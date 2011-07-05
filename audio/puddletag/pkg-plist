@@ -11,6 +11,9 @@ bin/puddletag
 %%PYTHON_SITELIBDIR%%/puddlestuff/actiondlg.py
 %%PYTHON_SITELIBDIR%%/puddlestuff/actiondlg.pyc
 %%PYTHON_SITELIBDIR%%/puddlestuff/actiondlg.pyo
+%%PYTHON_SITELIBDIR%%/puddlestuff/audio_filter.py
+%%PYTHON_SITELIBDIR%%/puddlestuff/audio_filter.pyc
+%%PYTHON_SITELIBDIR%%/puddlestuff/audio_filter.pyo
 %%PYTHON_SITELIBDIR%%/puddlestuff/audioinfo/__init__.py
 %%PYTHON_SITELIBDIR%%/puddlestuff/audioinfo/__init__.pyc
 %%PYTHON_SITELIBDIR%%/puddlestuff/audioinfo/__init__.pyo
@@ -113,9 +116,15 @@ bin/puddletag
 %%PYTHON_SITELIBDIR%%/puddlestuff/mainwin/tagtools.py
 %%PYTHON_SITELIBDIR%%/puddlestuff/mainwin/tagtools.pyc
 %%PYTHON_SITELIBDIR%%/puddlestuff/mainwin/tagtools.pyo
-%%PYTHON_SITELIBDIR%%/puddlestuff/masstagging.py
-%%PYTHON_SITELIBDIR%%/puddlestuff/masstagging.pyc
-%%PYTHON_SITELIBDIR%%/puddlestuff/masstagging.pyo
+%%PYTHON_SITELIBDIR%%/puddlestuff/masstag/__init__.py
+%%PYTHON_SITELIBDIR%%/puddlestuff/masstag/__init__.pyc
+%%PYTHON_SITELIBDIR%%/puddlestuff/masstag/__init__.pyo
+%%PYTHON_SITELIBDIR%%/puddlestuff/masstag/config.py
+%%PYTHON_SITELIBDIR%%/puddlestuff/masstag/config.pyc
+%%PYTHON_SITELIBDIR%%/puddlestuff/masstag/config.pyo
+%%PYTHON_SITELIBDIR%%/puddlestuff/masstag/dialogs.py
+%%PYTHON_SITELIBDIR%%/puddlestuff/masstag/dialogs.pyc
+%%PYTHON_SITELIBDIR%%/puddlestuff/masstag/dialogs.pyo
 %%PYTHON_SITELIBDIR%%/puddlestuff/musiclib.py
 %%PYTHON_SITELIBDIR%%/puddlestuff/musiclib.pyc
 %%PYTHON_SITELIBDIR%%/puddlestuff/musiclib.pyo
@@ -190,6 +199,7 @@ share/pixmaps/puddletag.png
 share/pixmaps/puddletag.xpm
 @dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/tagsources/mp3tag
 @dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/tagsources
+@dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/masstag
 @dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/mainwin
 @dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/libraries
 @dirrm %%PYTHON_SITELIBDIR%%/puddlestuff/audioinfo
