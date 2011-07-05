@@ -20,6 +20,7 @@ include/ldap_cdefs.h
 include/ldap_features.h
 include/ldap_schema.h
 include/ldap_utf8.h
+include/ldif.h
 include/slapi-plugin.h
 lib/liblber-2.4.so
 lib/liblber-2.4.so.%%SHLIB_MAJOR%%
