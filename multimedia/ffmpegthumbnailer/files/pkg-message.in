@@ -1,0 +1,2 @@
+Gnome users may bind ffmpegthumbnailer to nautilus using:
+%%DATADIR%%/bind-nautilus.sh.

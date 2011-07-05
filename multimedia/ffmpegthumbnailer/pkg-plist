@@ -10,4 +10,6 @@ lib/libffmpegthumbnailer.la
 lib/libffmpegthumbnailer.so
 lib/libffmpegthumbnailer.so.4
 libdata/pkgconfig/libffmpegthumbnailer.pc
+%%DATADIR%%/bind-nautilus.sh
 @dirrm include/libffmpegthumbnailer
+@dirrm %%DATADIR%%
