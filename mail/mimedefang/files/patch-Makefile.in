@@ -1,38 +1,30 @@
---- ./Makefile.in.orig	2010-02-16 17:29:59.000000000 +0100
-+++ ./Makefile.in	2010-05-09 16:46:21.000000000 +0200
-@@ -201,7 +201,7 @@
- 		chown "$(DEFANGUSER)" $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-ip-key > /dev/null 2>&1 || true; \
- 		mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ > /dev/null 2>&1 || true; \
- 		chown "$(DEFANGUSER)" $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ || true; \
--		chmod 700 $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ || exit 1; \
-+		chmod 710 $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ || exit 1; \
- 		mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)@QDIR@ > /dev/null 2>&1 || true; \
- 		chown "$(DEFANGUSER)" $(DESTDIR)$(RPM_INSTALL_ROOT)@QDIR@ || true; \
- 		chmod 700 $(DESTDIR)$(RPM_INSTALL_ROOT)@QDIR@ || exit 1; \
-@@ -215,12 +215,11 @@
- 	-mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)$(MANDIR)/man5 && chmod 755 $(DESTDIR)$(RPM_INSTALL_ROOT)$(MANDIR)/man5
- 	-mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)$(MANDIR)/man7 && chmod 755 $(DESTDIR)$(RPM_INSTALL_ROOT)$(MANDIR)/man7
+--- Makefile.in.orig	2010-06-16 23:06:45.000000000 +0400
++++ Makefile.in	2011-06-21 22:17:55.182195879 +0400
+@@ -217,13 +217,7 @@
  	-mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)$(MANDIR)/man8 && chmod 755 $(DESTDIR)$(RPM_INSTALL_ROOT)$(MANDIR)/man8
--	-test ! -d $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ && mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ && chmod 700 $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ || true
-+	-test ! -d $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ && mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ && chmod 710 $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ || true
+ 	-test ! -d $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ && mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ && chmod 700 $(DESTDIR)$(RPM_INSTALL_ROOT)@SPOOLDIR@ || true
  	-test ! -d $(DESTDIR)$(RPM_INSTALL_ROOT)@QDIR@ && mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)@QDIR@ && chmod 700 $(DESTDIR)$(RPM_INSTALL_ROOT)@QDIR@ || true
- 
+-
 -	if test -f $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter ; then \
 -		@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter.example || exit 1; \
 -	else \
-+	@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter.example
-+	if !(test -f $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter) ; then \
- 		@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter || exit 1; \
- 	fi
- 
-@@ -242,9 +241,8 @@
+-		@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter || exit 1; \
+-	fi
+-
++	@INSTALL@ -m 644 examples/suggested-minimum-filter-for-windows-clients $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/mimedefang-filter.example || exit 1
+ 	@INSTALL@ -m 755 mimedefang-multiplexor   $(DESTDIR)$(RPM_INSTALL_ROOT)$(prefix)/bin/mimedefang-multiplexor
+ 	@INSTALL@ -m 755 md-mx-ctrl               $(DESTDIR)$(RPM_INSTALL_ROOT)$(prefix)/bin/md-mx-ctrl
+ 	@INSTALL@ -m 755 watch-mimedefang         $(DESTDIR)$(RPM_INSTALL_ROOT)$(prefix)/bin/watch-mimedefang
+@@ -242,11 +236,7 @@
  	if test "$(HAVE_SPAM_ASSASSIN)" = "yes" ; then \
  		mkdir -p $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR} > /dev/null 2>&1 ; \
  		chmod 755 $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR} ;\
 -		if test -f $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/sa-mimedefang.cf ; then \
- 			@INSTALL@ -m 644 SpamAssassin/spamassassin.cf $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/sa-mimedefang.cf.example || exit 1; \
+-			@INSTALL@ -m 644 SpamAssassin/spamassassin.cf $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/sa-mimedefang.cf.example || exit 1; \
 -		else \
-+		if !(test -f $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/sa-mimedefang.cf) ; then \
- 			@INSTALL@ -m 644 SpamAssassin/spamassassin.cf $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/sa-mimedefang.cf || exit 1; \
- 		fi \
+-			@INSTALL@ -m 644 SpamAssassin/spamassassin.cf $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/sa-mimedefang.cf || exit 1; \
+-		fi \
++		@INSTALL@ -m 644 SpamAssassin/spamassassin.cf $(DESTDIR)$(RPM_INSTALL_ROOT)${CONFDIR}/sa-mimedefang.cf.example || exit 1 ; \
  	fi
+ 
+ 	@echo ""

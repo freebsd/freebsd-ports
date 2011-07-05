@@ -1,11 +1,9 @@
---- ./mimedefang.pl.in.orig	2010-02-24 15:55:03.000000000 +0100
-+++ ./mimedefang.pl.in	2010-05-09 16:46:21.000000000 +0200
-@@ -184,7 +184,7 @@
+--- mimedefang.pl.in.orig	2011-02-18 22:08:53.000000000 +0300
++++ mimedefang.pl.in	2011-02-18 22:09:18.000000000 +0300
+@@ -172,7 +172,7 @@
  $Fprotd6Host = "127.0.0.1:10200";
  
- $SophieSock = "@SPOOLDIR@/sophie";
--$ClamdSock  = "@SPOOLDIR@/clamd.sock";
-+$ClamdSock  = "/var/run/clamav/clamd.sock";
- $TrophieSock = "@SPOOLDIR@/trophie";
- 
- package MIME::Parser::ParanoidFiler;
+ $SophieSock = '@SPOOLDIR@/sophie';
+-$ClamdSock  = '@SPOOLDIR@/clamd.sock';
++$ClamdSock  = '/var/run/clamav/clamd.sock';
+ $TrophieSock = '@SPOOLDIR@/trophie';

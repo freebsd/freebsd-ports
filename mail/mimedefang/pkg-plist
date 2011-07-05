@@ -5,12 +5,13 @@ bin/md-mx-ctrl
 bin/watch-mimedefang
 bin/watch-multiple-mimedefangs.tcl
 etc/rc.d/mimedefang
-@unexec if cmp -s %D/etc/mimedefang/mimedefang-filter %D/etc/mimedefang/mimedefang-filter.example; then rm -f %D/etc/mimedefang/mimedefang-filter; fi
-etc/mimedefang/mimedefang-filter.example
-@unexec if cmp -s %D/etc/mimedefang/sa-mimedefang.cf %D/etc/mimedefang/sa-mimedefang.cf.example; then rm -f %D/etc/mimedefang/sa-mimedefang.cf; fi
-etc/mimedefang/sa-mimedefang.cf.example
+@unexec if cmp -s %D/%%ETCDIR%%/mimedefang-filter %D/%%ETCDIR%%/mimedefang-filter.example; then rm -f %D/%%ETCDIR%%/mimedefang-filter; fi
+%%ETCDIR%%/mimedefang-filter.example
+@exec [ -f %B/mimedefang-filter ] || cp -p %D/%F %B/mimedefang-filter
+@unexec if cmp -s %D/%%ETCDIR%%/sa-mimedefang.cf %D/%%ETCDIR%%/sa-mimedefang.cf.example; then rm -f %D/%%ETCDIR%%/sa-mimedefang.cf; fi
+%%ETCDIR%%/sa-mimedefang.cf.example
+@exec [ -f %B/sa-mimedefang.cf ] || cp -p %D/%F %B/sa-mimedefang.cf
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.ANOMY
 %%PORTDOCS%%%%DOCSDIR%%/README.SPAMASSASSIN
 %%PORTDOCS%%%%DOCSDIR%%/README.SOPHIE
 %%PORTDOCS%%%%DOCSDIR%%/README.NONROOT
@@ -23,7 +24,7 @@ etc/mimedefang/sa-mimedefang.cf.example
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/suggested-minimum-filter-for-windows-clients
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm etc/mimedefang
+@dirrmtry %%ETCDIR%%
 @cwd /var/spool
 @dirrm MIMEDefang
 @dirrm MD-Quarantine
