@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.68
-PORTREVISION=	1
+PORTVERSION=	2.71
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/
 
@@ -22,6 +21,7 @@ BUILD_DEPENDS=	\
 	${SITE_PERL}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+LICENSE=	GPLv2
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 
@@ -50,6 +50,8 @@ MAN8=	mimedefang.8 mimedefang.pl.8 mimedefang-multiplexor.8 \
 
 SUB_FILES=	pkg-message
 
+CONFIG_FILES=	mimedefang-filter sa-mimedefang.cf
+
 .include <bsd.port.pre.mk>
 
 .if !exists( /usr/include/libmilter/mfapi.h )
@@ -73,6 +75,12 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README* ${DOCSDIR}/
 .endif
+.for f in ${CONFIG_FILES}
+	@if [ ! -f ${ETCDIR}/${f} ]; then \
+		${CP} -p ${ETCDIR}/${f}.example ${ETCDIR}/${f} ; \
+	fi
+.endfor
+
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples/ && ${INSTALL_DATA} stream-by-domain-filter \
