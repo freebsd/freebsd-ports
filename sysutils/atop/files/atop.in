@@ -11,6 +11,20 @@
 #       /etc/rc.conf.local
 #       /etc/rc.conf.d/atop
 #
+# Add the following lines to /etc/rc.conf to enable atop in daemon mode:
+# atop_enable (bool):         Set to "NO" by default.
+#                             Set it to "YES" to enable atop in daemon mode
+# atop_interval (str):        Set to 10 by default
+#                             Interval for data capture.
+# atop_logdir (str):          Set to "%%LOGDIR%%".
+#                             Directory to store atop binary logs
+# atop_keepdays (str):        Set to 30 by default.
+#                             Number of days to keep the logs when "rotate"
+#                             command is running.
+# atop_flags (str):           Set to "" by default.
+#                             Extra flags passed to start command.
+#
+#
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
 
 . /etc/rc.subr
@@ -25,7 +39,7 @@ load_rc_config $name
 : ${atop_interval=10}
 : ${atop_keepdays=30}
 
-pidfile="${atop_pidfile:-'/var/run/atop.pid'}"
+pidfile=${atop_pidfile:-'/var/run/atop.pid'}
 
 command="%%PREFIX%%/bin/atop"
 extra_commands="rotate"
@@ -45,7 +59,6 @@ atop_start()
 
 atop_rotate()
 {
-    
     echo "Rotating logfile (${name})."
     # write final sample and stop
     sig_stop=SIGUSR2
