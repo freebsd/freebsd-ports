@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bombono
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.0.2
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/bombono/bombono-dvd/1.0
 DISTNAME=	bombono-dvd-${PORTVERSION}
