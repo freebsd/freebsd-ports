@@ -7,7 +7,7 @@
 
 PORTNAME=	mtools
 PORTVERSION=	4.0.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	mtools
@@ -63,9 +63,9 @@ post-patch:
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/mtools.conf ${PREFIX}/etc/mtools.conf.sample
-.if !exists(${PREFIX}/etc/mtools.conf)
-	@cd ${PREFIX}/etc && ${CP} -f mtools.conf.sample mtools.conf
-.endif
+	@if [ ! -f ${PREFIX}/etc/mtools.conf ]; then \
+		cd ${PREFIX}/etc && ${CP} -p mtools.conf.sample mtools.conf; \
+	fi
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
