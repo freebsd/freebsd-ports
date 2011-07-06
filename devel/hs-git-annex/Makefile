@@ -28,6 +28,8 @@ RUN_DEPENDS=	ghc:${PORTSDIR}/lang/ghc \
 		hs-SHA>=0:${PORTSDIR}/security/hs-SHA \
 		hs-dataenc>=0:${PORTSDIR}/converters/hs-dataenc
 
+BROKEN=		does not configure
+
 USE_PERL5=	yes
 USE_GMAKE=	yes
 
