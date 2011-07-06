@@ -5,6 +5,13 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110706:
+  AFFECTS: users of multimedia/zoneminder
+  AUTHOR: bsam@FreeBSD.org
+
+  RC script was renamed from zm to zoneminder. So do variables at
+  /etc/rc.conf[.local]. One should fix the latter file.
+
 20110705:
   AFFECTS: users of security/libgcrypt and any port that depends on it
   AUTHOR: swills@FreeBSD.org
