@@ -7,7 +7,7 @@
 
 PORTNAME=	zoneminder
 PORTVERSION=	1.24.4
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	multimedia
 MASTER_SITES=	http://www2.zoneminder.com/downloads/ \
 		http://www.zoneminder.com/downloads/
@@ -38,7 +38,7 @@ GNU_CONFIGURE=	yes
 USE_PHP=	json mysql session
 USE_PERL5=	yes
 USE_MYSQL=	yes
-USE_RC_SUBR=	zm
+USE_RC_SUBR=	zoneminder
 
 CONFIGURE_ARGS=	--with-mysql=${LOCALBASE} \
 		--with-webdir=${WWWDIR}/data \
