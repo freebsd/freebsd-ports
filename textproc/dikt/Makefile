@@ -5,13 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	dikt
-PORTVERSION=	2d
+PORTVERSION=	2g
 CATEGORIES=	textproc net kde
 MASTER_SITES=	GOOGLE_CODE
-EXTRACT_SUFX=	.tbz
+EXTRACT_SUFX=	.txz
 
 MAINTAINER=	goran.tal@gmail.com
 COMMENT=	Dictionary for KDE4
+
+USE_XZ=		yes
 
 USE_KDE4=	kdelibs kdeprefix kdehier automoc4
 USE_QT_VER=	4
