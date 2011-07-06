@@ -4,6 +4,7 @@
     COMMENT = Multimedia software
 
     SUBDIR += 2mandvd
+    SUBDIR += ab25
     SUBDIR += abby
     SUBDIR += acidrip
     SUBDIR += aegisub
