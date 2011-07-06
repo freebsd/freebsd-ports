@@ -31,13 +31,9 @@
 #   Set to "%%TOMCAT_HOME%%/temp" by default.
 #   Set the CATALINA_TMPDIR variable for the Tomcat process
 #
-# tomcat%%TOMCAT_VERSION%%_stdout_log (str)
-#   Set to "%%STDOUT_LOG%%" by default.
-#   Set the location for the Tomcat process log (standard output)
-#
-# tomcat%%TOMCAT_VERSION%%_stderr_log (str)
-#   Set to "%%STDERR_LOG%%" by default.
-#   Set the location for the Tomcat process log (error output)
+# tomcat%%TOMCAT_VERSION%%_catalina_log (str)
+#   Set to ">> %%STDOUT_LOG%% 2>> %%STDERR_LOG%%" by default.
+#   Set the Tomcat Console logger
 #
 # tomcat%%TOMCAT_VERSION%%_stop_timeout (num)
 #   Set to "10" by default.
@@ -65,8 +61,7 @@ tomcat%%TOMCAT_VERSION%%_user="${tomcat%%TOMCAT_VERSION%%_user:-"%%USER%%"}"
 tomcat%%TOMCAT_VERSION%%_catalina_home="${tomcat%%TOMCAT_VERSION%%_catalina_home:-"%%TOMCAT_HOME%%"}"
 tomcat%%TOMCAT_VERSION%%_catalina_base="${tomcat%%TOMCAT_VERSION%%_catalina_base:-"%%TOMCAT_HOME%%"}"
 tomcat%%TOMCAT_VERSION%%_catalina_tmpdir="${tomcat%%TOMCAT_VERSION%%_catalina_tmpdir:-"%%TOMCAT_HOME%%/temp"}"
-tomcat%%TOMCAT_VERSION%%_stdout_log="${tomcat%%TOMCAT_VERSION%%_stdout_log:-"%%STDOUT_LOG%%"}"
-tomcat%%TOMCAT_VERSION%%_stderr_log="${tomcat%%TOMCAT_VERSION%%_stderr_log:-"%%STDERR_LOG%%"}"
+tomcat%%TOMCAT_VERSION%%_catalina_log="${tomcat%%TOMCAT_VERSION%%_catalina_log:-">> %%STDOUT_LOG%% 2>> %%STDERR_LOG%%"}"
 tomcat%%TOMCAT_VERSION%%_stop_timeout="${tomcat%%TOMCAT_VERSION%%_stop_timeout:-"10"}"
 
 . /etc/rc.subr
@@ -103,13 +98,10 @@ java_command="%%LOCALBASE%%/bin/java \
 	-Djava.io.tmpdir=${tomcat%%TOMCAT_VERSION%%_catalina_tmpdir} \
 	${java_class}"
 
-log_args=">> ${tomcat%%TOMCAT_VERSION%%_stdout_log} \
-	2>> ${tomcat%%TOMCAT_VERSION%%_stderr_log} "
-
 required_files="${tomcat%%TOMCAT_VERSION%%_catalina_home}/conf/server.xml"
 
 command="/usr/sbin/daemon"
-flags="-p ${pidfile} ${java_command} start ${tomcat%%TOMCAT_VERSION%%_flags} ${log_args}"
+flags="-p ${pidfile} ${java_command} start ${tomcat%%TOMCAT_VERSION%%_flags} ${tomcat%%TOMCAT_VERSION%%_catalina_log}"
 
 start_precmd="pid_touch"
 stop_cmd="tomcat_stop"
