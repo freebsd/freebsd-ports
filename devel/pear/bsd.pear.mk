@@ -190,10 +190,10 @@ do-autogenerate-plist:
 	${AWK} '{ print $$2 }' | ${SED} -e "s|${PREFIX}/||g"`; \
 	for f in $${FILES}; do ${ECHO_CMD} $${f} >> ${TMPPLIST}; done; \
 	for d in $${FILES}; do ${ECHO_CMD} $${d}; done | ${DIRFILTER} | \
-	    while read dir; do ${ECHO_CMD} "@unexec rmdir $${dir} 2>/dev/null || true" >> ${TMPPLIST}; \
+	    while read dir; do ${ECHO_CMD} "@unexec rmdir %D/$${dir} 2>/dev/null || true" >> ${TMPPLIST}; \
 	    done;
 	@${ECHO_CMD} "@dirrm ${LPKGREGDIR}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir ${LPKGREGDIR:H} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${LPKGREGDIR:H} 2>/dev/null || true" >> ${TMPPLIST}
 
 . if defined(PEAR_AUTOINSTALL)
 pre-install:	pear-pre-install do-generate-deinstall-script
