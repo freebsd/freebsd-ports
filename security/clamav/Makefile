@@ -147,7 +147,6 @@ USE_GMAKE=	yes
 . if defined(WITH_LLVM_PORTS)
 BUILD_DEPENDS+=	${LOCALBASE}/bin/llvm-config:${PORTSDIR}/devel/llvm
 CONFIGURE_ARGS+=-with-system-llvm=${LOCALBASE}/bin/llvm-config
-BROKEN=	Not building with last llvm version
 . endif
 . if defined(WITH_LLVM) && defined(WITH_LLVM_PORTS)
 IGNORE=Select only one LLVM
