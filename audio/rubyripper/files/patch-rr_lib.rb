@@ -1,6 +1,14 @@
 --- rr_lib.rb.orig
 +++ rr_lib.rb
-@@ -70,6 +70,7 @@
+@@ -22,6 +22,7 @@
+ $rr_version = '0.6.0' #application wide setting
+ 
+ begin
++	require 'rubygems'
+ 	require 'gettext'
+ 	include GetText
+ 	bindtextdomain("rubyripper")
+@@ -70,6 +71,7 @@
  	Thread.new do
  	 	if installed('eject') ; `eject #{cdrom}`
  		elsif installed('diskutil'); `diskutil eject #{cdrom}` #Mac users don't got eject, but diskutil
@@ -8,7 +16,7 @@
  		else puts _("No eject utility found!")
  		end
  	end
-@@ -573,15 +574,15 @@
+@@ -573,15 +575,15 @@
  			end
  		end
  		
@@ -27,7 +35,7 @@
  			"for device %s on your system! These permissions are\n"\
  			"necessary for cdparanoia to scan your drive.\n\n%s\n"\
  			"You might want to add yourself to the necessary group in /etc/group")\
-@@ -605,13 +606,13 @@
+@@ -605,13 +607,13 @@
  			return true
  		end
  		
@@ -43,7 +51,7 @@
  			"for device %s on your system! These permissions are\n"\
  			"necessary for cdparanoia to scan your drive.\n\n%s\n"\
  			"You might want to add yourself to the necessary group in /etc/group")\
-@@ -2524,7 +2525,7 @@
+@@ -2524,7 +2526,7 @@
  	# 6) is req_matches_all <= req_matches_errors
  
  	def checkConfig
