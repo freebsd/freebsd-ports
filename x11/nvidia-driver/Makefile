@@ -75,8 +75,7 @@ PLIST_SUB+=	XSERVVERSION=${XSERVVERSION} LIBGLVERSION=${LIBGLVERSION} \
 		MODULESDIR=${MODULESDIR}
 
 .if !defined(WITHOUT_LINUX)
-CONFLICTS=	linux-dri-[0-9]* linux-f10-dri-[0-9]* linux-f8-dri-[0-9]* \
-		linux_dri-[0-9]* linux_dri-devel-[0-9]*
+CONFLICTS=	linux[-_]dri-[0-9]* linux-f10-dri-[0-9]*
 USE_LINUX=	yes
 PLIST_SUB+=	LINUX=""
 .else
@@ -103,6 +102,15 @@ post-patch: .SILENT
 		s/int nprot/&, vm_memattr_t *memattr/' \
 			${WRKSRC}/src/nvidia_dev.c
 .endif
+# Fix the build against Clang (also GCC with -Wformat-security)
+.if ${NVVERSION} >= 2704106
+	${REINPLACE_CMD} -E \
+		's/(^ +)snprintf(\(.+)(, .+)(, .+)\)/\1strlcpy\2\4\3)/' \
+			${WRKSRC}/src/nvidia_os.c
+.endif
+# Fix an apparent typo (present in several versions since 260.19.12)
+	${REINPLACE_CMD} -e 's/status != status/status != RM_OK/' \
+		${WRKSRC}/src/nvidia_os.c
 .if defined(WITH_FREEBSD_AGP)
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
 		${WRKSRC}/src/nv-freebsd.h
@@ -125,7 +133,8 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -e '/libvdpau[[:blank:]_][^n]/d ; \
 		s/name libvdpau/&_nvidia/' ${WRKSRC}/lib/Makefile
 .endif
-# Don't build any binaries (nvidia-settings and nvidia-xconfig) and manuals
+# Don't build any binaries (native nvidia-settings and nvidia-xconfig are
+# provided by corresponding ports) and manuals
 .if ${NVVERSION} < 974600 || ${NVVERSION} >= 1952200
 	${REINPLACE_CMD} -E 's/(extension).*/\1/' ${WRKSRC}/x11/Makefile
 .else
@@ -141,7 +150,8 @@ post-patch: .SILENT
 
 pre-su-install:
 # While this port silently assumes PREFIX == LOCALBASE, at least try to
-# pretend we support different paths thereof
+# pretend we support different paths thereof and make sure these directories
+# exist
 	@cd ${PREFIX}/${MODULESDIR} && ${MKDIR} drivers extensions
 
 post-install: .SILENT
