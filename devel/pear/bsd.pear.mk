@@ -105,7 +105,7 @@ ${v}DIRS+=		${XD}
 . endfor
 .endfor
 
-pre-install:
+pear-pre-install:
 .if exists(${LOCALBASE}/lib/php.DIST_PHP)	\
 	|| exists(${PHP_BASE}/lib/php.DIST_PHP)	\
 	|| exists(${LOCALBASE}/.PEAR.pkg)	\
@@ -179,30 +179,31 @@ do-install-${t}-msg: .USE
 
 do-autogenerate-plist:
 	@${ECHO_MSG} "===>   Verifying plist for PREFIX"
-	@FILES=`${PEAR} list-files ${WRKDIR}/package.xml | ${TAIL} +4 | \
+	@FILES=`${PEAR} list-files ${PEARPKGREF} | ${TAIL} +4 | \
 	${AWK} '{ print $$2 }' | ${GREP} -v -E "^${PREFIX}/"` || exit 0; \
 	if ${TEST} -n "$${FILES}"; then \
 	echo "Package files outside PREFIX, cannot use autoinstall ..."; \
 	exit 1; fi;
 	@${ECHO_MSG} "===>   Generating packing list with pear"
-	@${ECHO_CMD} "${LPKGREGDIR}/package.xml" > ${PLIST}
-	@FILES=`${PEAR} list-files ${WRKDIR}/package.xml | ${TAIL} +4 | \
+	@${ECHO_CMD} "${LPKGREGDIR}/package.xml" > ${TMPPLIST}
+	@FILES=`${PEAR} list-files ${PEARPKGREF} | ${TAIL} +4 | \
 	${AWK} '{ print $$2 }' | ${SED} -e "s|${PREFIX}/||g"`; \
-	for f in $${FILES}; do ${ECHO_CMD} $${f} >> ${PLIST}; done; \
+	for f in $${FILES}; do ${ECHO_CMD} $${f} >> ${TMPPLIST}; done; \
 	for d in $${FILES}; do ${ECHO_CMD} $${d}; done | ${DIRFILTER} | \
-	    while read dir; do ${ECHO_CMD} "@dirrmtry $${dir}" >> ${PLIST}; \
+	    while read dir; do ${ECHO_CMD} "@unexec rmdir $${dir} 2>/dev/null || true" >> ${TMPPLIST}; \
 	    done;
-	@${ECHO_CMD} "@dirrm ${LPKGREGDIR}" >> ${PLIST}
-	@${ECHO_CMD} "@dirrmtry ${LPKGREGDIR:H}" >> ${PLIST}
+	@${ECHO_CMD} "@dirrm ${LPKGREGDIR}" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir ${LPKGREGDIR:H} 2>/dev/null || true" >> ${TMPPLIST}
 
 . if defined(PEAR_AUTOINSTALL)
-pre-install:	do-autogenerate-plist do-generate-deinstall-script
-do-install:	do-auto-install
+pre-install:	pear-pre-install do-generate-deinstall-script
+do-install:	do-auto-install do-autogenerate-plist pear-post-install
 
 . else
-pre-install: 	do-generate-plist do-generate-deinstall-script
+pre-install:	pear-pre-install do-generate-plist do-generate-deinstall-script
 do-install: 	do-install-files do-install-docs do-install-tests do-install-sqls \
-		do-install-scriptfiles do-install-examples do-install-data
+		do-install-scriptfiles do-install-examples do-install-data \
+		pear-post-install
 . endif
 
 do-auto-install:
@@ -295,7 +296,7 @@ do-install-examples: do-install-examples-msg
 do-generate-deinstall-script:
 	@${SED} ${_SUB_LIST_TEMP} -e '/^@comment /d' ${PORTSDIR}/devel/pear/pear-deinstall.in > ${WRKDIR}/pear-deinstall
 
-post-install:
+pear-post-install:
 	@${MKDIR} ${PKGREGDIR}
 	@${INSTALL_DATA} ${WRKDIR}/package.xml ${PKGREGDIR}
 .if !defined(PEAR_AUTOINSTALL)
