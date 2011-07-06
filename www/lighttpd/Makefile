@@ -6,13 +6,17 @@
 #
 
 PORTNAME?=	lighttpd
-PORTVERSION=	1.4.28
-PORTREVISION=	4
+PORTVERSION=	1.4.29
 CATEGORIES?=	www
 MASTER_SITES?=	http://download.lighttpd.net/lighttpd/releases-1.4.x/
 
 MAINTAINER?=	mm@FreeBSD.org
 COMMENT?=	A secure, fast, compliant, and very flexible Web Server
+
+.if !defined(_BUILDING_LIGHTTPD_MODULE)
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
+.endif
 
 BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
@@ -22,8 +26,6 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	lthack
 
 .if !defined(_BUILDING_LIGHTTPD_MODULE)
-LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/COPYING
 USE_AUTOTOOLS=	libtool
 .else
 USE_AUTOTOOLS=	autoconf autoheader aclocal automake libtool
