@@ -1,44 +1,40 @@
 #!/bin/sh
 
 # $FreeBSD$
-
+#
 # PROVIDE: zoneminder
 # REQUIRE: mysql apache
 # KEYWORD: shutdown
-
+#
 # Add the following line to /etc/rc.conf.local or /etc/rc.conf
 # to enable this service:
 #
-# zm_enable (bool):   Set to NO by default.
-#                     Set it to YES to enable zoneminder.
-#
+# zoneminder_enable (bool):	Set to NO by default.
+#				Set it to YES to enable zoneminder.
 
 . /etc/rc.subr
 
-name="zm"
+name="zoneminder"
 rcvar=${name}_enable
 
-command=%%PREFIX%%/bin/${name}pkg.pl
-command_args="$1"
-pidfile=/var/run/${name}/${name}.pid
-
 load_rc_config "$name"
-: ${zm_enable="NO"}
+: ${zoneminder_enable="NO"}
+
+command=%%PREFIX%%/bin/zmpkg.pl
+command_args="$1"
+pidfile=/var/run/zm/zm.pid
 
 stop_cmd="zm_stop"
 status_cmd="zm_status"
-
-load_rc_config "$name"
-: ${zm_enable="NO"}
 
 zm_stop() {
   ${command} ${command_args}
 }
 
-zm_status() (
-  %%PREFIX%%/bin/${name}dc.pl status
-)
+zm_status() {
+  %%PREFIX%%/bin/zmdc.pl status
+}
 
-sleep 10
+[ "${command_args}" = "faststart" ] && echo -n "zoneminder: 10 seconds pause..." && sleep 10 && echo " done"
 
 run_rc_command "$1"
