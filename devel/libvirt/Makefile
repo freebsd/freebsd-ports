@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libvirt
-PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTVERSION=	0.9.3
 CATEGORIES=	devel
 MASTER_SITES=	http://libvirt.org/sources/
 
@@ -16,6 +15,7 @@ COMMENT=	Toolkit to interact with virtualization capabilities
 
 LICENSE=	LGPL3
 GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	automake autoconf
 CONFIGURE_ARGS=	--without-libssh2 \
 		--without-sasl \
 		--without-yajl \
@@ -27,6 +27,7 @@ CONFIGURE_ARGS=	--without-libssh2 \
 		--without-network
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack
+GNOME_MAKEFILEIN=	Makefile.am
 USE_LDCONFIG=	yes
 USE_PYTHON_BUILD=	yes
 PLIST_SUB=	PORTVERSION="-${PORTVERSION}"
