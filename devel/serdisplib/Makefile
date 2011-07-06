@@ -13,6 +13,8 @@ MASTER_SITES=	SF
 MAINTAINER=	bsdfan@nurfuerspam.de
 COMMENT=	Library to drive graphical LC- and OLED displays
 
+BROKEN=		does not build
+
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
