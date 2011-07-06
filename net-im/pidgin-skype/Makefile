@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pidgin-skype
-PORTVERSION=	0.0.0.608
+PORTVERSION=	0.0.0.612
 CATEGORIES=	net-im
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	mandree
@@ -15,12 +15,12 @@ DISTFILES=	pidgin-skype-svn-r${PORTVERSION:E}.tar.xz
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Plugin to use Skype chat from Pidgin (with Skype running)
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	${LOCALBASE}/include/pidgin/pidgin.h:${PORTSDIR}/net-im/pidgin \
     ${LOCALBASE}/bin/skype:${PORTSDIR}/net-im/skype
 RUN_DEPENDS=	pidgin:${PORTSDIR}/net-im/pidgin \
     ${LOCALBASE}/bin/skype:${PORTSDIR}/net-im/skype
-
-LICENSE=	GPLv2
 
 USE_GMAKE=	yes
 USE_GNOME=	glib20
