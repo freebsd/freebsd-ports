@@ -98,7 +98,7 @@ PLIST_SUB+=	GNUTLS="@comment "
 .endif
 
 .if defined(WITH_OPENSSL) && !defined(WITHOUT_OPENSSL)
-.include <bsd.openssl.mk>
+.include <${PORTSDIR}/Mk/bsd.openssl.mk>
 CONFIGURE_ARGS+=	--enable-openssl
 PLIST_SUB+=	OPENSSL=""
 .else
