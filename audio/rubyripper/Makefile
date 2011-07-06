@@ -7,8 +7,9 @@
 
 PORTNAME=	rubyripper
 DISTVERSION=	0.6.0
+PORTREVISION=	1
 CATEGORIES=	audio sysutils ruby
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Digital audio CD extraction tool for accurate ripping
@@ -18,7 +19,7 @@ LICENSE=	GPLv3
 # cdparanoia is not really required for build, but it would not configure
 # without it (ideally, configure script should be fixed instead of forcing
 # superfluous build dependency)
-BUILD_DEPENDS=	${RUBY_SITELIBDIR}/gettext.rb:${PORTSDIR}/devel/ruby-gettext \
+BUILD_DEPENDS=	rubygem-gettext:${PORTSDIR}/devel/rubygem-gettext \
 		cdparanoia:${PORTSDIR}/audio/cdparanoia
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
@@ -31,8 +32,7 @@ USE_RUBY=	yes
 INSTALLS_ICONS=	yes
 
 DESKTOP_ENTRIES="Rubyripper" "Secure Audio Disc Ripper" \
-		"${PORTNAME}.png" "rrip_gtk2" \
-		"Audio;AudioVideo;" ${FALSE}
+		"${PORTNAME}.png" "rrip_gtk2" "Audio;AudioVideo;" false
 
 post-patch:
 # fix an apparent typo
