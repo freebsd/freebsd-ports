@@ -27,13 +27,9 @@
 #   Set to "%%TOMCAT_HOME%%/temp" by default.
 #   Set the CATALINA_TMPDIR variable for the Tomcat process
 #
-# tomcat7_stdout_log (str)
-#   Set to "%%TOMCAT_HOME%%/logs/stdout.txt" by default.
-#   Set the location for the Tomcat process log (standard output)
-#
-# tomcat7_stderr_log (str)
-#   Set to "%%TOMCAT_HOME%%/logs/stderr.txt" by default.
-#   Set the location for the Tomcat process log (error output)
+# tomcat7_catalina_log (str)
+#   Set to ">> %%TOMCAT_HOME%%/logs/catalina.out 2>&1" by default.
+#   Set the Tomcat Console logger
 #
 # tomcat7_stop_timeout (num)
 #   Set to "10" by default.
@@ -61,8 +57,7 @@ tomcat7_user="${tomcat7_user:-"%%TOMCAT_USER%%"}"
 tomcat7_catalina_home="%%TOMCAT_HOME%%"
 tomcat7_catalina_base="${tomcat7_catalina_base:-"%%TOMCAT_HOME%%"}"
 tomcat7_catalina_tmpdir="${tomcat7_catalina_tmpdir:-"%%TOMCAT_HOME%%/temp"}"
-tomcat7_stdout_log="${tomcat7_stdout_log:-"%%TOMCAT_HOME%%/logs/stdout.txt"}"
-tomcat7_stderr_log="${tomcat7_stderr_log:-"%%TOMCAT_HOME%%/logs/stderr.txt"}"
+tomcat7_catalina_log="${tomcat7_catalina_log:-">> %%TOMCAT_HOME%%/logs/catalina.out 2>&1"}"
 tomcat7_stop_timeout="${tomcat7_stop_timeout:-"10"}"
 
 . /etc/rc.subr
@@ -99,13 +94,10 @@ java_command="%%LOCALBASE%%/bin/java \
 	-Djava.io.tmpdir=${tomcat7_catalina_tmpdir} \
 	${java_class}"
 
-log_args=">> ${tomcat7_stdout_log} \
-	2>> ${tomcat7_stderr_log} "
-
 required_files="${tomcat7_catalina_base}/conf/server.xml"
 
 command="/usr/sbin/daemon"
-flags="-p ${pidfile} ${java_command} start ${tomcat7_flags} ${log_args}"
+flags="-p ${pidfile} ${java_command} start ${tomcat7_flags} ${tomcat7_catalina_log}"
 
 start_precmd="pid_touch"
 stop_cmd="tomcat_stop"
