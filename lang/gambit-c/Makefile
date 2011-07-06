@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gambit-c
-DISTVERSION=	v4_6_0
+DISTVERSION=	v4_6_1
 PORTEPOCH=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://www.iro.umontreal.ca/~gambit/download/gambit/v4.6/source/
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	pmn@bakarika.net
 COMMENT=	Gambit programming system where the compiler generates portable C code
 
-MAN1= gsi.1
+MAN1=		gsi.1
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

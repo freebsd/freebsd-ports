@@ -1,5 +1,5 @@
-bin/gambc-cc.bat
-bin/gambc-doc.bat
+bin/gambc-cc
+bin/gambc-doc
 bin/gsc-gambit
 bin/gsc-script
 bin/gsi-gambit
@@ -10,7 +10,7 @@ bin/scheme-r5rs
 bin/scheme-srfi-0
 bin/six
 bin/six-script
-include/gambit-c/gambit-not406000.h
+include/gambit-c/gambit-not406001.h
 include/gambit-c/gambit.h
 lib/gambit-c/_eval#.scm
 lib/gambit-c/_gambc.c
