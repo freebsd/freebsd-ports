@@ -77,6 +77,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	2.7.${SQUID_STABLE_VER}
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://mirrors.ccs.neu.edu/Squid/ \
@@ -107,8 +108,8 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www2.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v2/2.7/changesets
-PATCHFILES=
 PATCH_DIST_STRIP=	-p1
+PATCHFILES=	# empty
 
 MAINTAINER=	tmseck@web.de
 COMMENT=	HTTP Caching Proxy
@@ -199,10 +200,10 @@ sbin=		RunCache squidclient squid
 
 CONFIGURE_ARGS=	--bindir=${PREFIX}/sbin  \
 		--sbindir=${PREFIX}/sbin  \
-		--datadir=${PREFIX}/etc/squid \
+		--datadir=${ETCDIR} \
 		--libexecdir=${PREFIX}/libexec/squid \
 		--localstatedir=/var/squid \
-		--sysconfdir=${PREFIX}/etc/squid \
+		--sysconfdir=${ETCDIR} \
 		--enable-removal-policies="lru heap" \
 		--disable-linux-netfilter \
 		--disable-linux-tproxy \
@@ -383,20 +384,19 @@ CONFIGURE_ARGS+=	--enable-err-languages="${SQUID_LANGUAGES}" \
 # Finally, add additional user specified configuration options:
 CONFIGURE_ARGS+=	${SQUID_CONFIGURE_ARGS}
 
-CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" \
-			CPPFLAGS="${CPPFLAGS}"\
-			LDFLAGS="${LDFLAGS}" \
+CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}" \
 			GREP="${GREP}"
 
-PLIST_DIRS=	etc/squid/icons libexec/squid
-PLIST_FILES=	${etc_files:S,^,etc/,} ${icon_files:S,^,etc/squid/icons/,} \
+PLIST_DIRS=	%%ETCDIR%%/icons libexec/squid
+PLIST_FILES=	${etc_files:S,^,etc/,} ${icon_files:S,^,%%ETCDIR%%/icons/,} \
 		${libexec:S,^,libexec/squid/,} ${sbin:S,^,sbin/,}
 
 .for d in ${SQUID_LANGUAGES}
-PLIST_DIRS+=	etc/squid/errors/${d}
-PLIST_FILES+=	${error_files:S,^,etc/squid/errors/${d}/,}
+PLIST_DIRS+=	%%ETCDIR%%/errors/${d}
+PLIST_FILES+=	${error_files:S,^,%%ETCDIR%%/errors/${d}/,}
 .endfor
-PLIST_DIRS+=	etc/squid/errors etc/squid
+PLIST_DIRS+=	%%ETCDIR%%/errors
+PLIST_DIRSTRY+=	%%ETCDIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' \
