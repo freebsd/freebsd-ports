@@ -1,4 +1,4 @@
 SHA256 (lua-5.1.4.tar.gz) = b038e225eaf2a5b57c9bcc35cd13aa8c6c8288ef493d52970c9545074098af3a
 SIZE (lua-5.1.4.tar.gz) = 216679
-SHA256 (patch-lua-5.1.4-2) = a7f8ca9a3be52daecb3d3c9988d08ccc2bf9f785b075a0bc6463038356a9ec4c
-SIZE (patch-lua-5.1.4-2) = 5473
+SHA256 (patch-lua-5.1.4-3) = 260fcbdb558001f0a8a8e49bdcb83bf9bdcf9065bb82b661f458ee061f5ff44c
+SIZE (patch-lua-5.1.4-3) = 5004
