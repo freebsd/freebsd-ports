@@ -13,15 +13,15 @@ MASTER_SITES=	http://gruntle.org/projects/irssi/insub/
 MAINTAINER=	adamw@FreeBSD.org
 COMMENT=	Some scripts for expressing how you feel on IRC and the web
 
+RUN_DEPENDS=	cowsay:${PORTSDIR}/games/cowsay \
+		figlet:${PORTSDIR}/misc/figlet
+
 NO_BUILD=	YES
 
 USE_BZIP2=	YES
 USE_PERL5=	5.6+
 
 SCRIPT=	${PORTNAME}.pl
-
-RUN_DEPENDS=	cowsay:${PORTSDIR}/games/cowsay \
-		figlet:${PORTSDIR}/misc/figlet
 
 do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/${SCRIPT} ${PREFIX}/bin/${SCRIPT:R}
