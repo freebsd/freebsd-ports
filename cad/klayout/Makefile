@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	klayout
-PORTVERSION=	0.21.5
+PORTVERSION=	0.21.11
 CATEGORIES=	cad
 MASTER_SITES=	http://www.klayout.de/
 
@@ -18,6 +18,8 @@ USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui network moc_build sql uic_build \
 		rcc_build qt3support xml
 PLIST_FILES=	bin/klayout \
+		bin/strm2cif \
+		bin/strm2dxf \
 		bin/strm2gds \
 		bin/strm2oas \
 		bin/strm2txt \
