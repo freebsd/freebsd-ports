@@ -7,15 +7,13 @@
 
 PORTNAME=	wbar
 PORTVERSION=	2.2.2
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A quick launch bar for fluxbox, WindowMaker, Xfce, etc
-
-RUN_DEPENDS=	pidof:${PORTSDIR}/sysutils/pidof
 
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX}
 
