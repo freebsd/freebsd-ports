@@ -61,7 +61,7 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.0.${SQUID_STABLE_VER}
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://mirrors.ccs.neu.edu/Squid/ \
@@ -190,10 +190,10 @@ sbin=		RunAccel RunCache squidclient squid
 CONFIGURE_ARGS=	--with-default-user=${SQUID_UID} \
 		--bindir=${PREFIX}/sbin  \
 		--sbindir=${PREFIX}/sbin  \
-		--datadir=${PREFIX}/etc/squid \
+		--datadir=${ETCDIR} \
 		--libexecdir=${PREFIX}/libexec/squid \
 		--localstatedir=/var/squid \
-		--sysconfdir=${PREFIX}/etc/squid \
+		--sysconfdir=${ETCDIR} \
 		--enable-removal-policies="lru heap" \
 		--disable-linux-netfilter \
 		--disable-linux-tproxy \
@@ -383,19 +383,18 @@ CONFIGURE_ARGS+=	--enable-err-languages="${SQUID_LANGUAGES}" \
 # Finally, add additional user specified configuration options:
 CONFIGURE_ARGS+=	${SQUID_CONFIGURE_ARGS}
 
-CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" \
-			CPPFLAGS="${CPPFLAGS}"\
-			LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 
-PLIST_DIRS=	etc/squid/icons libexec/squid
-PLIST_FILES=	${etc_files:S,^,etc/,} ${icon_files:S,^,etc/squid/icons/,} \
+PLIST_DIRS=	%%ETCDIR%%/icons libexec/squid
+PLIST_FILES=	${etc_files:S,^,etc/,} ${icon_files:S,^,%%ETCDIR%%/icons/,} \
 		${libexec:S,^,libexec/squid/,} ${sbin:S,^,sbin/,}
 
 .for d in ${SQUID_LANGUAGES} templates
-PLIST_DIRS+=	etc/squid/errors/${d}
-PLIST_FILES+=	${error_files:S,^,etc/squid/errors/${d}/,}
+PLIST_DIRS+=	%%ETCDIR%%/errors/${d}
+PLIST_FILES+=	${error_files:S,^,%%ETCDIR%%/errors/${d}/,}
 .endfor
-PLIST_DIRS+=	etc/squid/errors etc/squid
+PLIST_DIRS+=	%%ETCDIR%%/errors
+PLIST_DIRSTRY+=	%%ETCDIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
