@@ -33,7 +33,6 @@ sbin/assplog
 %%DATADIR%%/files/rcptreplrules.txt
 %%DATADIR%%/files/redre.txt
 %%DATADIR%%/files/strictspf.txt
-%%DATADIR%%/files/subjectre.txt
 %%DATADIR%%/files/suspiciousre.txt
 %%DATADIR%%/files/suspiciousvirus.txt
 %%DATADIR%%/files/tlds-alpha-by-domain.txt
