@@ -72,7 +72,6 @@ MASTER_SITE_SUBDIR=	squid
 DISTNAME=	squid-3.1.${SQUID_STABLE_VER}
 DIST_SUBDIR=	squid3.1
 
-PATCHFILES=
 PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www2.us.squid-cache.org/%SUBDIR%/ \
 		http://www1.at.squid-cache.org/%SUBDIR%/ \
@@ -82,13 +81,14 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www2.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v3/3.1/changesets
+PATCHFILES=	# empty
 
 MAINTAINER=	tmseck@web.de
 COMMENT=	HTTP Caching Proxy
 
 LATEST_LINK=	squid31
 
-SQUID_STABLE_VER=	12
+SQUID_STABLE_VER=	14
 
 CONFLICTS_INSTALL=	squid-2.[0-9].* squid-3.[^1].* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
@@ -216,10 +216,10 @@ sbin=		squidclient squid
 CONFIGURE_ARGS=	--with-default-user=${SQUID_UID} \
 		--bindir=${PREFIX}/sbin  \
 		--sbindir=${PREFIX}/sbin  \
-		--datadir=${PREFIX}/etc/squid \
+		--datadir=${ETCDIR} \
 		--libexecdir=${PREFIX}/libexec/squid \
 		--localstatedir=/var/squid \
-		--sysconfdir=${PREFIX}/etc/squid \
+		--sysconfdir=${ETCDIR} \
 		--with-logdir=/var/log/squid \
 		--with-pidfile=/var/run/squid/squid.pid \
 		--enable-removal-policies="lru heap" \
@@ -415,21 +415,20 @@ WITH_DEBUG?=		yes
 # Finally, add additional user specified configuration options:
 CONFIGURE_ARGS+=	${SQUID_CONFIGURE_ARGS}
 
-CONFIGURE_ENV+=		CFLAGS="${CFLAGS}" \
-			CPPFLAGS="${CPPFLAGS}"\
-			LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 
-PLIST_DIRS=	etc/squid/icons libexec/squid
-PLIST_FILES=	${etc_files:S,^,etc/,} ${icon_files:S,^,etc/squid/icons/,} \
+PLIST_DIRS=	%%ETCDIR%%/icons libexec/squid
+PLIST_FILES=	${etc_files:S,^,etc/,} ${icon_files:S,^,%%ETCDIR%%/icons/,} \
 		${libexec:S,^,libexec/squid/,} ${sbin:S,^,sbin/,}
 
-PLIST_FILES+=	etc/squid/errors/COPYRIGHT etc/squid/errors/TRANSLATORS
+PLIST_FILES+=	%%ETCDIR%%/errors/COPYRIGHT %%ETCDIR%%/errors/TRANSLATORS
 .for d in ${error_dirs}
-PLIST_DIRS+=	etc/squid/errors/${d}
-PLIST_FILES+=	${error_files:S,^,etc/squid/errors/${d}/,}
+PLIST_DIRS+=	%%ETCDIR%%/errors/${d}
+PLIST_FILES+=	${error_files:S,^,%%ETCDIR%%/errors/${d}/,}
 .endfor
-PLIST_FILES+=	${error_dir_links:S,^,etc/squid/errors/,}
-PLIST_DIRS+=	etc/squid/errors etc/squid
+PLIST_FILES+=	${error_dir_links:S,^,%%ETCDIR%%/errors/,}
+PLIST_DIRS+=	%%ETCDIR%%/errors
+PLIST_DIRSTRY+=	%%ETCDIR%%
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
