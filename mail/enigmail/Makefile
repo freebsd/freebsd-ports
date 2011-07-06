@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	${GECKO}-
 MAINTAINER=	ale@FreeBSD.org
 COMMENT?=	A GnuPG extension for the Mozilla mail clients
 
-EXTRACT_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/${GECKO_PORTDIR}:configure \
+EXTRACT_DEPENDS+=	${NONEXISTENT}:${PORTSDIR}/${GECKO_PORTDIR}:${GECKO_TARGET} \
 		${GECKO:C/[0-9]//}:${PORTSDIR}/${GECKO_PORTDIR} \
 		gmake:${PORTSDIR}/devel/gmake \
 		intltool-extract:${PORTSDIR}/textproc/intltool \
@@ -24,14 +24,16 @@ BUILD_DEPENDS=	${GECKO:C/[0-9]//}:${PORTSDIR}/${GECKO_PORTDIR}
 RUN_DEPENDS=	${GECKO:C/[0-9]//}:${PORTSDIR}/${GECKO_PORTDIR} \
 		gpg:${PORTSDIR}/security/gnupg
 
-.if ${PORTVERSION} == "1.2"
-IGNORE=		doesn't currently build
-.endif
-
 .if !defined(GECKO)
 GECKO=		libxul
 GECKO_PORTDIR=	www/${GECKO}
 IGNORE=		is an abstract port: use one of the slave ports
+.endif
+
+.if ${PORTVERSION} == "1.2"
+GECKO_TARGET=	build
+.else
+GECKO_TARGET=	configure
 .endif
 
 .if defined(GECKO_EXTDIR)
@@ -65,19 +67,21 @@ pre-patch:
 		`${FIND} ${WRKSRC} -name autoconf.mk`
 
 do-build:
-	@(${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_base)
-	@(${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_nspr)
-	@(${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_js)
-	@(${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC} export)
-	@(${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/modules/libreg)
-	@(${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom/string)
-	@(${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom)
+.if ${GECKO_TARGET} == "configure"
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_base)
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_nspr)
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_js)
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC} export)
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/modules/libreg)
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom/string)
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom)
 .if ${PORTVERSION} == "1.0.1"
-	@(${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom/obsolete)
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom/obsolete)
 .endif
-	@(cd ${WRKSRC}/mailnews/extensions/enigmail; ./makemake -r);
-	@(cd ${WRKSRC}/mailnews/extensions/enigmail; ${SETENV} ${MAKE_ENV} ${GMAKE});
-	@(cd ${WRKSRC}/mailnews/extensions/enigmail; ${SETENV} ${MAKE_ENV} ${GMAKE} xpi);
+.endif
+	cd ${WRKSRC}/mailnews/extensions/enigmail && ./makemake -r
+	cd ${WRKSRC}/mailnews/extensions/enigmail && ${SETENV} ${MAKE_ENV} ${GMAKE}
+	cd ${WRKSRC}/mailnews/extensions/enigmail && ${SETENV} ${MAKE_ENV} ${GMAKE} xpi
 
 do-install:
 	${MKDIR} ${DATADIR}
