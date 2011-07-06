@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	taskcoach
-PORTVERSION=	1.2.12
+PORTVERSION=	1.2.22
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Release-${PORTVERSION}
 DISTNAME=	TaskCoach-${PORTVERSION}
@@ -25,7 +25,16 @@ USE_WX=		2.8
 WX_COMPS=	python:lib
 WX_UNICODE=	yes
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|taskcoach.py|taskcoach|' \
+		${WRKSRC}/build.in/fedora/taskcoach.desktop
 post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/taskcoach.py ${PREFIX}/bin/taskcoach
+	@${MKDIR} ${PREFIX}/share/applications/
+	@${INSTALL_DATA} ${WRKSRC}/build.in/fedora/taskcoach.desktop \
+		${PREFIX}/share/applications/
+	@${MKDIR} ${PREFIX}/share/pixmaps
+	@${INSTALL_DATA} ${WRKSRC}/icons.in/taskcoach.png \
+		${PREFIX}/share/pixmaps
 
 .include <bsd.port.mk>

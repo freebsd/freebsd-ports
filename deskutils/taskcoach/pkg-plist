@@ -245,6 +245,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/entry.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/entry.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/entry.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/export.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/export.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/export.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/iphone.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/iphone.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/dialog/iphone.pyo
@@ -326,6 +329,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer/factory.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer/factory.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer/factory.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer/inplace_editor.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer/inplace_editor.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer/inplace_editor.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer/mixin.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer/mixin.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer/mixin.pyo
@@ -338,6 +344,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer/task.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer/task.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/viewer/task.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/windowdimensionstracker.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/windowdimensionstracker.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/windowdimensionstracker.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/wizard/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/wizard/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/wizard/__init__.pyo
@@ -668,6 +677,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/win32.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/win32.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/win32.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/xsm.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/xsm.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/xsm.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/syncml/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/syncml/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/syncml/__init__.pyo
@@ -725,36 +737,6 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/aui/tabmdi.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/aui/tabmdi.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/aui/tabmdi.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/__init__.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/__init__.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/__init__.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxDrawer.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxDrawer.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxDrawer.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxReportScheduler.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxReportScheduler.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxReportScheduler.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxSchedule.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxSchedule.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxSchedule.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxScheduleUtils.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxScheduleUtils.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxScheduleUtils.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxScheduler.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxScheduler.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxScheduler.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxSchedulerConstants.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxSchedulerConstants.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxSchedulerConstants.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxSchedulerCore.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxSchedulerCore.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxSchedulerCore.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxSchedulerPaint.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxSchedulerPaint.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxSchedulerPaint.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxSchedulerPrint.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxSchedulerPrint.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar/wxSchedulerPrint.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/chardet/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/chardet/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/chardet/__init__.pyo
@@ -890,6 +872,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/zoneinfo/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/zoneinfo/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/zoneinfo/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/deltaTime.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/deltaTime.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/deltaTime.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/desktop/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/desktop/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/desktop/__init__.pyo
@@ -920,6 +905,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pybonjour.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pybonjour.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pybonjour.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pyparsing.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pyparsing.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/pyparsing.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/sized_controls.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/sized_controls.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/sized_controls.pyo
@@ -938,6 +926,36 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wmi.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wmi.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wmi.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxDrawer.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxDrawer.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxDrawer.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxReportScheduler.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxReportScheduler.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxReportScheduler.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedule.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedule.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedule.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxScheduleUtils.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxScheduleUtils.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxScheduleUtils.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxScheduler.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxScheduler.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxScheduler.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedulerConstants.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedulerConstants.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedulerConstants.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedulerCore.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedulerCore.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedulerCore.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedulerPaint.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedulerPaint.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedulerPaint.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedulerPrint.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedulerPrint.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedulerPrint.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/__init__.pyo
@@ -947,18 +965,15 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/buttonbox.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/buttonbox.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/buttonbox.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/calendar.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/calendar.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/calendar.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/calendarconfig.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/calendarconfig.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/calendarconfig.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/calendarwidget.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/calendarwidget.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/calendarwidget.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/colorselect.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/colorselect.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/colorselect.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/combo.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/combo.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/combo.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/conflict.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/conflict.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/conflict.pyo
@@ -1022,10 +1037,21 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/ultimatetreectrl.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/ultimatetreectrl.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/ultimatetreectrl.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/display.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/display.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/display.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/font.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/font.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/font.pyo
 share/applications/taskcoach.desktop
 share/pixmaps/taskcoach.png
 @dirrmtry share/applications
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/timeline
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/squaremap
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/lockfile
@@ -1033,7 +1059,6 @@ share/pixmaps/taskcoach.png
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil/zoneinfo
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/dateutil
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/chardet
-@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/calendar
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/aui
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/syncml
