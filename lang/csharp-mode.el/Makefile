@@ -6,30 +6,28 @@
 #
 
 PORTNAME=	csharp-mode.el
-PORTVERSION=	0.7.0
-PORTREVISION=	4
+PORTVERSION=	0.8.5
 CATEGORIES=	lang elisp
-MASTER_SITES=	http://mfgames.com/releases/csharp-mode/ \
-		http://gentoo.kiev.ua/ftp/distfiles/ \
-		http://unix.miet.ru/pub/linux/gentoo/distfiles/
-DISTNAME=	${PORTNAME:S|.el$||}-${PORTVERSION}
+MASTER_SITES=	GOOGLE_CODE
+DISTNAME=	${PORTNAME:S|.el$||}-${PORTVERSION}.el
+EXTRACT_SUFX=	# none
 
 MAINTAINER=	mva@FreeBSD.org
 COMMENT=	Emacs/XEmacs major mode for editing C\# source code
 
-USE_BZIP2=	yes
+PROJECTHOST=	csharpmode
 NO_WRKSUBDIR=	yes
+NO_BUILD=	yes
+EXTRACT_CMD=	${CP}
+EXTRACT_BEFORE_ARGS=	# none
+EXTRACT_AFTER_ARGS=	.
 
 USE_EMACS=	yes
 
-PLIST_FILES=	${EMACS_SITE_LISPDIR}/csharp-mode.el \
-		${EMACS_SITE_LISPDIR}/csharp-mode.elc
+PLIST_FILES=	${EMACS_SITE_LISPDIR}/csharp-mode.el
 
 post-patch:
 	@${MV} ${WRKSRC}/csharp-mode-${PORTVERSION}.el ${WRKSRC}/csharp-mode.el
-
-do-build:
-	cd ${WRKSRC} && ${EMACS_CMD} -batch -q -f batch-byte-compile csharp-mode.el
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/csharp-mode.* ${PREFIX}/${EMACS_SITE_LISPDIR}
