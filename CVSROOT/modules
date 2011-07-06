@@ -12571,6 +12571,7 @@ p5-HTTP-MHTTP                   ports/www/p5-HTTP-MHTTP
 p5-HTTP-Message                 ports/www/p5-HTTP-Message
 p5-HTTP-MobileAgent             ports/www/p5-HTTP-MobileAgent
 p5-HTTP-MobileAgent-Plugin-Charset  ports/www/p5-HTTP-MobileAgent-Plugin-Charset
+p5-HTTP-MobileAgent-Plugin-Locator  ports/www/p5-HTTP-MobileAgent-Plugin-Locator
 p5-HTTP-MobileAttribute         ports/www/p5-HTTP-MobileAttribute
 p5-HTTP-Negotiate               ports/www/p5-HTTP-Negotiate
 p5-HTTP-Parser                  ports/www/p5-HTTP-Parser
@@ -13776,6 +13777,7 @@ p5-Plack-Middleware-JSConcat    ports/www/p5-Plack-Middleware-JSConcat
 p5-Plack-Middleware-Precompressed  ports/www/p5-Plack-Middleware-Precompressed
 p5-Plack-Middleware-ReverseProxy  ports/www/p5-Plack-Middleware-ReverseProxy
 p5-Plack-Middleware-Session     ports/www/p5-Plack-Middleware-Session
+p5-Plack-Middleware-SocketIO    ports/www/p5-Plack-Middleware-SocketIO
 p5-Plack-Middleware-Status      ports/www/p5-Plack-Middleware-Status
 p5-Plack-Middleware-Throttle    ports/www/p5-Plack-Middleware-Throttle
 p5-Plack-Middleware-XForwardedFor  ports/www/p5-Plack-Middleware-XForwardedFor
@@ -16857,6 +16859,7 @@ p5-http-message                 ports/www/p5-HTTP-Message
 p5-http-mhttp                   ports/www/p5-HTTP-MHTTP
 p5-http-mobileagent             ports/www/p5-HTTP-MobileAgent
 p5-http-mobileagent-plugin-charset  ports/www/p5-HTTP-MobileAgent-Plugin-Charset
+p5-http-mobileagent-plugin-locator  ports/www/p5-HTTP-MobileAgent-Plugin-Locator
 p5-http-mobileattribute         ports/www/p5-HTTP-MobileAttribute
 p5-http-negotiate               ports/www/p5-HTTP-Negotiate
 p5-http-parser                  ports/www/p5-HTTP-Parser
@@ -17975,6 +17978,7 @@ p5-plack-middleware-jsconcat    ports/www/p5-Plack-Middleware-JSConcat
 p5-plack-middleware-precompressed  ports/www/p5-Plack-Middleware-Precompressed
 p5-plack-middleware-reverseproxy  ports/www/p5-Plack-Middleware-ReverseProxy
 p5-plack-middleware-session     ports/www/p5-Plack-Middleware-Session
+p5-plack-middleware-socketio    ports/www/p5-Plack-Middleware-SocketIO
 p5-plack-middleware-status      ports/www/p5-Plack-Middleware-Status
 p5-plack-middleware-throttle    ports/www/p5-Plack-Middleware-Throttle
 p5-plack-middleware-xforwardedfor  ports/www/p5-Plack-Middleware-XForwardedFor
