@@ -7,7 +7,7 @@
 
 PORTNAME=	trac
 PORTVERSION=	0.12.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel python
 MASTER_SITES=	http://ftp.edgewall.com/pub/trac/ \
 		ftp://ftp.edgewall.com/pub/trac/
@@ -18,7 +18,8 @@ COMMENT=	An enhanced wiki and issue tracking system for software projects
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.5:${PORTSDIR}/textproc/py-genshi \
 		${PYTHON_PKGNAMEPREFIX}Babel>=0.9:${PORTSDIR}/devel/py-babel
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}Genshi>=0.5:${PORTSDIR}/textproc/py-genshi \
+		${PYTHON_PKGNAMEPREFIX}Babel>=0.9:${PORTSDIR}/devel/py-babel
 
 OPTIONS=	SILVERCITY "Use Silvercity for syntax highlighting" On \
 		DOCUTILS   "Allow additional text markup" On \
@@ -26,12 +27,15 @@ OPTIONS=	SILVERCITY "Use Silvercity for syntax highlighting" On \
 		TZ         "Process Time Zones" On \
 		PGSQL	   "Use PostgreSQL instead of SQLite3" Off \
 		SUBVERSION "Support for subversion RCS" On
-CONFLICTS=	ja-trac-*
+CONFLICTS=	ja-trac-[0-9]*
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	Trac
 PYDISTUTILS_NOEGGINFO=	yes
+
+USE_RC_SUBR=	tracd
+SUB_LIST=	PYTHON_CMD=${PYTHON_CMD}
 
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
