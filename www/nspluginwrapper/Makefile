@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	nspluginwrapper
-PORTVERSION=	1.4.2
+PORTVERSION=	1.4.4
 CATEGORIES=	www linux emulators
-MASTER_SITES=	http://nspluginwrapper.davidben.net/download/ \
+MASTER_SITES=	http://nspluginwrapper.org/download/ \
 		LOCAL/jkim \
 		LOCAL/jkim:binfile
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${BINFILE}:binfile
