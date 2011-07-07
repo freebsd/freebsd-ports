@@ -12,7 +12,7 @@ CATEGORIES=	audio kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTNAME}/${PORTVERSION}/src
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Media player for KDE
 
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
@@ -43,6 +43,10 @@ OPTIONS=	GPOD "iPod support" on \
 		HIDEMENUBAR "Revert the 'Hide Menubar' feature" off \
 
 .include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 1.9
+BROKEN=	does not build with ruby 1.9
+.endif
 
 CONFIGURE_ARGS+=--without-exscalibar \
 		--with-mp4v2 \
