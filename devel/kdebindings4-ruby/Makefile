@@ -48,4 +48,14 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 .include "${.CURDIR}/../../devel/kdebindings4/files/Makefile.kdebindings"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+#KrossRuby is broken with Ruby 1.9, see http://bugs.kde.org/243565
+.if ${RUBY_VER} == 1.9
+CMAKE_ARGS+=	-DENABLE_KROSSRUBY=OFF
+PLIST_SUB+=	KROSS="@comment "
+.else
+PLIST_SUB+=	KROSS=""
+.endif
+
+.include <bsd.port.post.mk>
