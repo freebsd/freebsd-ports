@@ -465,6 +465,7 @@
     SUBDIR += pear-Contact_Vcard_Build
     SUBDIR += pear-Contact_Vcard_Parse
     SUBDIR += pear-Horde_Imap_Client
+    SUBDIR += pear-Horde_Kolab_Storage
     SUBDIR += pear-Horde_Mail
     SUBDIR += pear-Horde_Mime
     SUBDIR += pear-Horde_Mime_Viewer

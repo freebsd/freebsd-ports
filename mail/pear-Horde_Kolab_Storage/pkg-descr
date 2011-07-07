@@ -1,0 +1,5 @@
+Storing user data in an IMAP account belonging to the user is one of the Kolab
+server core concepts. This package provides all the necessary means to deal
+with this type of data storage effectively.
+
+WWW: http://pear.horde.org
