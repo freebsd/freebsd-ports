@@ -2621,6 +2621,7 @@
     SUBDIR += pear-HTML_Template_Sigma
     SUBDIR += pear-HTML_TreeMenu
     SUBDIR += pear-Horde_Autoloader
+    SUBDIR += pear-Horde_Cli
     SUBDIR += pear-Horde_Exception
     SUBDIR += pear-Horde_Injector
     SUBDIR += pear-Horde_Lock
