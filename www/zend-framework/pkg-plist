@@ -6097,7 +6097,6 @@ bin/zf.php
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.form.introduction.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.form.quickstart.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.form.standardDecorators.html
-%%PORTDOCS%%%%DOCSDIR%%/manual/zend.form.standardElements.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.gdata.authsub.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.gdata.books.html
 %%PORTDOCS%%%%DOCSDIR%%/manual/zend.gdata.calendar.html
@@ -6638,6 +6637,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Value/ArrayCollectionTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Value/MessageBodyTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/Value/MessageHeaderTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/_files/acl.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/_files/services/My/ServiceA.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/_files/services/ServiceC.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Amf/_files/testdata
@@ -6682,6 +6682,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/appconfig.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/appconfig.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/appconfig.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/appconfig.yml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/bar/Bootstrap.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/bar/controllers/.placeholder
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Application/_files/modules/baz/controllers/.placeholder
@@ -6944,6 +6945,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/config.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/config.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/constants.yaml
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/indentedcomments.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/inlinecomments.yaml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/invalid.ini
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Config/_files/invalid.json
@@ -8533,6 +8535,8 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/TestAdapterTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/ZF10645-PutContentType.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/ZF2098-multibytepostdata.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/ZF4236-clientbodyretainsfieldordering.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/ZF4236-fileuploadrequest.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/ZF4238-zerolineresponse.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/ZF7038-multipartarrayrequest.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Http/Client/_files/ZF9404-doubleContentLength.php
@@ -8615,6 +8619,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Json/Server/Smd/ServiceTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Json/Server/SmdTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Json/ServerTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Json/_files/ZF11356-NamespacedClass.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/JsonTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Layout/AllTests.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/Layout/FunctionalTest.php
@@ -9809,6 +9814,7 @@ bin/zf.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/XmlRpc/ServerTest.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/XmlRpc/TestProvider.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/XmlRpc/ValueTest.php
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/XmlRpc/_files/ZF1897-response-chunked.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/_files/_testDir1/Class1.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/_files/_testDir1/Class1/Subclass2.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tests/Zend/_files/_testDir1/Class3.php
@@ -9827,6 +9833,7 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/_files/_testDir1/Class1
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/_files/_testDir1
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/_files
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/XmlRpc/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/XmlRpc/Server
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/XmlRpc/Request
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/XmlRpc
@@ -10145,6 +10152,7 @@ bin/zf.php
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Layout/_files/functional-test-app
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Layout/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Layout
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Json/_files
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Json/Server/Smd
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Json/Server
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/tests/Zend/Json
