@@ -1,0 +1,5 @@
+The Horde_Notification library provides a subject-observer pattern
+for raising and showing messages of different types and to different
+listeners.
+
+WWW: http://pear.horde.org
