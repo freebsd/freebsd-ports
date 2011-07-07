@@ -2258,3 +2258,14 @@ archivers/lzo|archivers/lzo2|2011-07-07|Use lzo2 instead.
 www/horde4-browser||2011-07-07|Removed
 www/horde4-template||2011-07-07|Removed
 deskutils/horde4-itip||2011-07-07|Removed
+deskutils/horde4-alarm||2011-07-07|Removed
+devel/horde4-content||2011-07-07|Removed
+devel/horde4-rdo||2011-07-07|Removed
+devel/horde4-date||2011-07-07|Removed
+devel/horde4-autoloader||2011-07-07|Removed
+devel/horde4-cache||2011-07-07|Removed
+devel/horde4-dateparser||2011-07-07|Removed
+devel/horde4-translation||2011-07-07|Removed
+devel/horde4-streamfilter||2011-07-07|Removed
+devel/horde4-constraint||2011-07-07|Removed
+devel/horde4-streamwrapper||2011-07-07|Removed
