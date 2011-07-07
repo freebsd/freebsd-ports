@@ -1396,6 +1396,7 @@
     SUBDIR += pear-Horde_Form
     SUBDIR += pear-Horde_Http
     SUBDIR += pear-Horde_Routes
+    SUBDIR += pear-Horde_Service_Facebook
     SUBDIR += pear-Horde_SessionHandler
     SUBDIR += pear-Horde_Template
     SUBDIR += pear-Services_Amazon
