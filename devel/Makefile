@@ -2621,6 +2621,7 @@
     SUBDIR += pear-HTML_Template_Sigma
     SUBDIR += pear-HTML_TreeMenu
     SUBDIR += pear-Horde_Role
+    SUBDIR += pear-Horde_Stream_Filter
     SUBDIR += pear-I18N
     SUBDIR += pear-Math_Fraction
     SUBDIR += pear-Net_Gearman
