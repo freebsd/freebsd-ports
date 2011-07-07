@@ -1,0 +1,4 @@
+The Horde_Secret library provides an API for encrypting and decrypting
+small pieces of data with the use of a shared key.
+
+WWW: http://pear.horde.org
