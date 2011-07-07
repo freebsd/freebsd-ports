@@ -244,6 +244,7 @@ aalib                           ports/graphics/aalib
 aamath                          ports/math/aamath
 aap                             ports/devel/aap
 aaphoto                         ports/graphics/aaphoto
+ab25                            ports/multimedia/ab25
 abacus                          ports/deskutils/abacus
 abakus                          ports/math/abakus
 abby                            ports/multimedia/abby
@@ -23756,6 +23757,7 @@ sawfish                         ports/x11-wm/sawfish
 sawfish-themes                  ports/x11-themes/sawfish-themes
 saxon                           ports/textproc/saxon
 saxon-devel                     ports/textproc/saxon-devel
+saxon-he                        ports/textproc/saxon-he
 sb16config                      ports/sysutils/sb16config
 sbagen                          ports/audio/sbagen
 sbcl                            ports/lang/sbcl
