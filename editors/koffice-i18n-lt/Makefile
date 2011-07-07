@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	Attic/koffice-${PORTVERSION}/src/koffice-l10n
 PKGNAMEPREFIX=	lt-
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lithuanian messages and documentation for koffice
 
 USE_KDELIBS_VER=3

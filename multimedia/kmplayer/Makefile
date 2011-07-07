@@ -14,7 +14,7 @@ MASTER_SITES=	http://freebsd.ricin.com/ports/distfiles/ \
 		http://kmplayer.kde.org/pkgs/
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE frontend to MPlayer, Xine, GStreamer
 
 # It seems neither cairo nor npplayer can be disabled if the deps are present

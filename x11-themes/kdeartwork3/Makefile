@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Additional themes, sounds, wallpapers and window styles for KDE
 
 CONFLICTS=	phase-[0-9]* kde-windeco-smoothblend-[0.9]*

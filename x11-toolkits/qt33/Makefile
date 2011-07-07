@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_QT}
 DISTNAME=	qt-x11-free-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multiplatform C++ application framework
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

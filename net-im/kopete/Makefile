@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	kdenetwork-
 DISTNAME=	kdenetwork-3.5.10
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE multi-protocol instant messenger (IM)
 
 RUN_DEPENDS=	${QT_PREFIX}/lib/plugins/crypto/libqca-tls.so:${PORTSDIR}/security/qca-tls

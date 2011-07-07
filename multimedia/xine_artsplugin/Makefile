@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	kdemultimedia-
 DISTNAME=	kdemultimedia-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xine-based multimedia backend for KDE
 
 LIB_DEPENDS+=	xine:${PORTSDIR}/multimedia/libxine

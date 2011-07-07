@@ -13,7 +13,7 @@ MASTER_SITES=	# none
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER?=	kde@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Additional plugins and scripts for some KDE applications
 
 RUN_DEPENDS=	${ATLANTIKDESIGNER_DEP}:${PORTSDIR}/games/atlantikdesigner \

@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	sr-Latn-
 DISTNAME=	${PORTNAME}-sr@Latn-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Serbian (latin alphabet) messages and documentation for KDE3
 
 USE_KDELIBS_VER=3

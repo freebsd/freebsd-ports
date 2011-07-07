@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	kdenetwork-
 DISTNAME=	kdenetwork-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lanbrowsing facility and backend for KDE
 
 RUN_DEPENDS=	nmblookup:${PORTSDIR}/${SAMBA_PORT}

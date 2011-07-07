@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	kdegraphics-
 DISTNAME=	kdegraphics-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE image viewer
 
 CONFLICTS=	kdegraphics-3.1.* kdegraphics-3.2.[0-3]

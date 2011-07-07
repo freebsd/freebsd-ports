@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	sr-
 DISTNAME=	${PORTNAME}-sr@Latn-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Serbian messages and documentation for koffice
 
 USE_KDELIBS_VER=3

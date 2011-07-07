@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITES_PYQT3}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	${PYQT3_DISTNAME}
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python bindings for the Qt toolkit
 
 LIB_DEPENDS=	qscintilla.7:${PORTSDIR}/x11-toolkits/qscintilla

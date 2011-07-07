@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	kdemultimedia-
 DISTNAME=	kdemultimedia-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE audio player
 
 LIB_DEPENDS=	akode:${PORTSDIR}/audio/akode \

@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	kdebase-
 DISTNAME=	kdebase-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility needed to enable XComposite support in KDE
 
 USE_KDELIBS_VER=3

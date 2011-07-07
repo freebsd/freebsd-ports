@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Signature randomiser, available standalone or as a plugin within KMail
 
 KDE_SPLIT=	${KSIG_PORTNAME:S/${KDE_SPLIT_DIST}-//}

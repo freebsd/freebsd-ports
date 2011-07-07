@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	kdeutils-
 DISTNAME=	kdeutils-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	APM monitor for KDE
 
 OPTIONS=	#no options for amd64

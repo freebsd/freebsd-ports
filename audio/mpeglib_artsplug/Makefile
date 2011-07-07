@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	kdemultimedia-
 DISTNAME=	kdemultimedia-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Legacy KDE audio backend
 
 LIB_DEPENDS=	ogg:${PORTSDIR}/audio/libogg \

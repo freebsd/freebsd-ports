@@ -7,7 +7,7 @@
 PORTNAME?=		kdelibs3
 PKGNAMESUFFIX?=		-nocups
 
-MAINTAINER=		kde@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 
 PLIST=			${.CURDIR}/pkg-plist
 WITHOUT_CUPS=		yes
