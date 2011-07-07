@@ -46,7 +46,7 @@ QTCFGLIBS+=	${PTHREAD_LIBS}
 .else
 USE_CMAKE=	yes
 CMAKE_USE_PTHREAD= yes
-QT_COMPONENTS=  corelib qt3support xml network gui qmake_build moc_build uic_build
+QT_COMPONENTS=  gui qt3support xml  moc_build qmake_build rcc_build uic_build
 CXXFLAGS+=	-I${PREFIX}/include \
 		-I${PREFIX}/include/libavcodec \
 		-I${PREFIX}/include/libavformat \
