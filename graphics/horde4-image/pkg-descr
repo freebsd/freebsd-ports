@@ -1,4 +1,0 @@
-This package provides an Image utility API, with backends for: * GD * GIF * PNG
-* SVG * SWF * ImageMagick convert command line tool * Imagick Extension
-
-WWW: http://www.horde.org
