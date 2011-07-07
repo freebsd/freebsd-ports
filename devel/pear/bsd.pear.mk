@@ -5,13 +5,12 @@
 MASTER_SITES?=	http://pear.php.net/get/ \
 		http://us.pear.php.net/get/ \
 		http://de.pear.php.net/get/
-PKGNAMEPREFIX=	pear-
 .if defined(PEAR_DIST_SUFX)
 EXTRACT_SUFX=	${PEAR_DIST_SUFX}
 .else
 EXTRACT_SUFX=	.tgz
 .endif
-DIST_SUBDIR=	PEAR
+DIST_SUBDIR?=	PEAR
 
 RUN_DEPENDS+=	pear:${PORTSDIR}/devel/pear
 
@@ -26,9 +25,10 @@ NO_BUILD=	yes
 .endif
 
 .if defined(PEAR_CHANNEL) && ${PEAR_CHANNEL} != ""
-PKGNAMEPREFIX=	pear-${PEAR_CHANNEL}-
+PKGNAMEPREFIX?=	pear-${PEAR_CHANNEL}-
 PEARPKGREF=	${PEAR_CHANNEL}/${PORTNAME}
 .else
+PKGNAMEPREFIX?=	pear-
 PEARPKGREF=	${PORTNAME}
 .endif
 
@@ -61,7 +61,7 @@ LINSTDIR=	${LPEARDIR}
 .endif
 INSTDIR=	${PHP_BASE}/${LINSTDIR}
 
-SUB_LIST+=	PEAR_CHANNEL=${PEAR_CHANNEL}
+SUB_LIST+=	PKG_NAME=${PEARPKGREF}
 
 .if !defined(USE_PHPIZE) && !exists(${.CURDIR}/pkg-plist)
 PLIST=		${WRKDIR}/PLIST
