@@ -261,7 +261,7 @@ _DB_43P=	43 ${_DB_44P}
 _DB_44P=	44 ${_DB_46P}
 _DB_46P=	46 ${_DB_47P}
 _DB_47P=	47 ${_DB_48P}
-_DB_48P=	48 ${_DB_51P}
+_DB_48P=	48
 _DB_51P=	51
 
 # Override the global WITH_BDB_VER with the
