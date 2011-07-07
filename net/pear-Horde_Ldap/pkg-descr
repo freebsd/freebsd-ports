@@ -1,0 +1,4 @@
+This package provides a set of classes for connecting to LDAP servers
+and working with directory objects.
+
+WWW: http://pear.horde.org
