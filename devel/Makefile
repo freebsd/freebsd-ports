@@ -2630,6 +2630,7 @@
     SUBDIR += pear-Horde_Stream_Filter
     SUBDIR += pear-Horde_Stream_Wrapper
     SUBDIR += pear-Horde_Support
+    SUBDIR += pear-Horde_Token
     SUBDIR += pear-Horde_Translation
     SUBDIR += pear-Horde_Util
     SUBDIR += pear-Horde_View
