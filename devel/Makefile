@@ -2626,6 +2626,7 @@
     SUBDIR += pear-Horde_Cli
     SUBDIR += pear-Horde_Constraint
     SUBDIR += pear-Horde_Controller
+    SUBDIR += pear-Horde_Core
     SUBDIR += pear-Horde_Data
     SUBDIR += pear-Horde_Date
     SUBDIR += pear-Horde_Date_Parser
