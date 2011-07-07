@@ -23,6 +23,9 @@ INSTALL_TARGET=	site-install
 DOCS=		${RUBY_RD_HTML_FILES}
 
 .include <bsd.port.pre.mk>
+.if ${RUBY_VER} == 1.9
+BROKEN=	does not build with ruby 1.9
+.endif
 
 post-install: doc-install
 
@@ -34,8 +37,4 @@ doc-install:
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
-.if ${RUBY_VER} == 1.9
-BROKEN=	does not build with ruby 1.9
-.endif
 .include <bsd.port.post.mk>
