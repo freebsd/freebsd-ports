@@ -185,19 +185,19 @@ do-autogenerate-plist:
 	echo "Package files outside PREFIX, cannot use autoinstall ..."; \
 	exit 1; fi;
 	@${ECHO_MSG} "===>   Generating packing list with pear"
-	@${ECHO_CMD} "${LPKGREGDIR}/package.xml" > ${TMPPLIST}
+	@${ECHO_CMD} "${LPKGREGDIR}/package.xml" > ${PLIST}
 	@FILES=`${PEAR} list-files ${PEARPKGREF} | ${TAIL} +4 | \
 	${AWK} '{ print $$2 }' | ${SED} -e "s|${PREFIX}/||g"`; \
-	for f in $${FILES}; do ${ECHO_CMD} $${f} >> ${TMPPLIST}; done; \
+	for f in $${FILES}; do ${ECHO_CMD} $${f} >> ${PLIST}; done; \
 	for d in $${FILES}; do ${ECHO_CMD} $${d}; done | ${DIRFILTER} | \
-	    while read dir; do ${ECHO_CMD} "@unexec rmdir %D/$${dir} 2>/dev/null || true" >> ${TMPPLIST}; \
+	    while read dir; do ${ECHO_CMD} "@dirrmtry $${dir}" >> ${PLIST}; \
 	    done;
-	@${ECHO_CMD} "@dirrm ${LPKGREGDIR}" >> ${TMPPLIST}
-	@${ECHO_CMD} "@unexec rmdir %D/${LPKGREGDIR:H} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@dirrm ${LPKGREGDIR}" >> ${PLIST}
+	@${ECHO_CMD} "@dirrmtry ${LPKGREGDIR:H}" >> ${PLIST}
 
 . if defined(PEAR_AUTOINSTALL)
-pre-install:	pear-pre-install do-generate-deinstall-script
-do-install:	do-auto-install do-autogenerate-plist pear-post-install
+pre-install:	pear-pre-install do-generate-deinstall-script do-auto-install do-autogenerate-plist
+do-install:	pear-post-install
 
 . else
 pre-install:	pear-pre-install do-generate-plist do-generate-deinstall-script
