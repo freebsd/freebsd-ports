@@ -555,17 +555,7 @@
     SUBDIR += highlighterkit
     SUBDIR += horde-chora
     SUBDIR += horde-whups
-    SUBDIR += horde4-autoloader
-    SUBDIR += horde4-cache
-    SUBDIR += horde4-constraint
-    SUBDIR += horde4-content
-    SUBDIR += horde4-date
-    SUBDIR += horde4-dateparser
-    SUBDIR += horde4-rdo
-    SUBDIR += horde4-streamfilter
-    SUBDIR += horde4-streamwrapper
     SUBDIR += horde4-timeobjects
-    SUBDIR += horde4-translation
     SUBDIR += hp48cc
     SUBDIR += hp48xgcc
     SUBDIR += hs-Boolean

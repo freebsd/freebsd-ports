@@ -1,7 +1,0 @@
-************************************************************************
-Stream_Wrapper has been installed in %%HORDIR%%/.
-
-Horde must be configured and the tables created; if not, see
-`pkg_info -Dx horde-base'.
-
-************************************************************************
