@@ -1393,6 +1393,7 @@
     SUBDIR += pear-HTTP_WebDAV_Client
     SUBDIR += pear-HTTP_WebDAV_Server
     SUBDIR += pear-Horde_Browser
+    SUBDIR += pear-Horde_Feed
     SUBDIR += pear-Horde_Form
     SUBDIR += pear-Horde_Http
     SUBDIR += pear-Horde_Routes
