@@ -555,6 +555,7 @@
     SUBDIR += highlighterkit
     SUBDIR += horde-chora
     SUBDIR += horde-whups
+    SUBDIR += horde4-content
     SUBDIR += horde4-timeobjects
     SUBDIR += hp48cc
     SUBDIR += hp48xgcc
