@@ -12,4 +12,6 @@ USE_GETTEXT=	yes
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4
 USE_CMAKE=	yes
 
+MAKE_JOBS_SAFE=	yes
+
 .endif

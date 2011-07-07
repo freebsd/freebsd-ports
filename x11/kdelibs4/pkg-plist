@@ -3691,6 +3691,7 @@ share/mime/application/x-kvtml.xml
 share/mime/application/x-kwallet.xml
 share/mime/application/x-kwordquiz.xml
 share/mime/application/x-mimearchive.xml
+share/mime/application/x-mobipocket-ebook.xml
 share/mime/application/x-nzb.xml
 share/mime/application/x-plasma.xml
 share/mime/application/x-quanta.xml

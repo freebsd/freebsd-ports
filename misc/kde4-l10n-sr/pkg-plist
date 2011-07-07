@@ -785,6 +785,7 @@ share/locale/sr/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/sr/LC_MESSAGES/audiorename_plugin.mo
 share/locale/sr/LC_MESSAGES/autorefresh.mo
 share/locale/sr/LC_MESSAGES/babelfish.mo
+share/locale/sr/LC_MESSAGES/blogilo.mo
 share/locale/sr/LC_MESSAGES/bomber.mo
 share/locale/sr/LC_MESSAGES/bovo.mo
 share/locale/sr/LC_MESSAGES/dirfilterplugin.mo
@@ -1067,6 +1068,7 @@ share/locale/sr/LC_MESSAGES/kteatime.mo
 share/locale/sr/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/sr/LC_MESSAGES/ktexteditor_codesnippets_core.mo
 share/locale/sr/LC_MESSAGES/ktexteditor_plugins.mo
+share/locale/sr/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
 share/locale/sr/LC_MESSAGES/kthememanager.mo
 share/locale/sr/LC_MESSAGES/ktimer.mo
 share/locale/sr/LC_MESSAGES/ktraderclient.mo
@@ -1096,6 +1098,7 @@ share/locale/sr/LC_MESSAGES/libakonadi.mo
 share/locale/sr/LC_MESSAGES/libkasten.mo
 share/locale/sr/LC_MESSAGES/libkblog.mo
 share/locale/sr/LC_MESSAGES/libkcal.mo
+share/locale/sr/LC_MESSAGES/libkcalutils.mo
 share/locale/sr/LC_MESSAGES/libkcddb.mo
 share/locale/sr/LC_MESSAGES/libkcompactdisc.mo
 share/locale/sr/LC_MESSAGES/libkdegames.mo
@@ -1342,6 +1345,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/sr@ijekavian/LC_MESSAGES/audiorename_plugin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/autorefresh.mo
 share/locale/sr@ijekavian/LC_MESSAGES/babelfish.mo
+share/locale/sr@ijekavian/LC_MESSAGES/blogilo.mo
 share/locale/sr@ijekavian/LC_MESSAGES/bomber.mo
 share/locale/sr@ijekavian/LC_MESSAGES/bovo.mo
 share/locale/sr@ijekavian/LC_MESSAGES/dirfilterplugin.mo
@@ -1624,6 +1628,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/kteatime.mo
 share/locale/sr@ijekavian/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/sr@ijekavian/LC_MESSAGES/ktexteditor_codesnippets_core.mo
 share/locale/sr@ijekavian/LC_MESSAGES/ktexteditor_plugins.mo
+share/locale/sr@ijekavian/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
 share/locale/sr@ijekavian/LC_MESSAGES/kthememanager.mo
 share/locale/sr@ijekavian/LC_MESSAGES/ktimer.mo
 share/locale/sr@ijekavian/LC_MESSAGES/ktraderclient.mo
@@ -1653,6 +1658,7 @@ share/locale/sr@ijekavian/LC_MESSAGES/libakonadi.mo
 share/locale/sr@ijekavian/LC_MESSAGES/libkasten.mo
 share/locale/sr@ijekavian/LC_MESSAGES/libkblog.mo
 share/locale/sr@ijekavian/LC_MESSAGES/libkcal.mo
+share/locale/sr@ijekavian/LC_MESSAGES/libkcalutils.mo
 share/locale/sr@ijekavian/LC_MESSAGES/libkcddb.mo
 share/locale/sr@ijekavian/LC_MESSAGES/libkcompactdisc.mo
 share/locale/sr@ijekavian/LC_MESSAGES/libkdegames.mo
@@ -1899,6 +1905,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/audiorename_plugin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/autorefresh.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/babelfish.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/blogilo.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/bomber.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/bovo.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/dirfilterplugin.mo
@@ -2181,6 +2188,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/kteatime.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/ktexteditor_codesnippets_core.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/ktexteditor_plugins.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/kthememanager.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/ktimer.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/ktraderclient.mo
@@ -2210,6 +2218,7 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/libakonadi.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libkasten.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libkblog.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libkcal.mo
+share/locale/sr@ijekavianlatin/LC_MESSAGES/libkcalutils.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libkcddb.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libkcompactdisc.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/libkdegames.mo
@@ -2456,6 +2465,7 @@ share/locale/sr@latin/LC_MESSAGES/audiocd_encoder_vorbis.mo
 share/locale/sr@latin/LC_MESSAGES/audiorename_plugin.mo
 share/locale/sr@latin/LC_MESSAGES/autorefresh.mo
 share/locale/sr@latin/LC_MESSAGES/babelfish.mo
+share/locale/sr@latin/LC_MESSAGES/blogilo.mo
 share/locale/sr@latin/LC_MESSAGES/bomber.mo
 share/locale/sr@latin/LC_MESSAGES/bovo.mo
 share/locale/sr@latin/LC_MESSAGES/dirfilterplugin.mo
@@ -2738,6 +2748,7 @@ share/locale/sr@latin/LC_MESSAGES/kteatime.mo
 share/locale/sr@latin/LC_MESSAGES/ktesnippets_editor.mo
 share/locale/sr@latin/LC_MESSAGES/ktexteditor_codesnippets_core.mo
 share/locale/sr@latin/LC_MESSAGES/ktexteditor_plugins.mo
+share/locale/sr@latin/LC_MESSAGES/ktexteditorkabcbridge_plugin.mo
 share/locale/sr@latin/LC_MESSAGES/kthememanager.mo
 share/locale/sr@latin/LC_MESSAGES/ktimer.mo
 share/locale/sr@latin/LC_MESSAGES/ktraderclient.mo
@@ -2767,6 +2778,7 @@ share/locale/sr@latin/LC_MESSAGES/libakonadi.mo
 share/locale/sr@latin/LC_MESSAGES/libkasten.mo
 share/locale/sr@latin/LC_MESSAGES/libkblog.mo
 share/locale/sr@latin/LC_MESSAGES/libkcal.mo
+share/locale/sr@latin/LC_MESSAGES/libkcalutils.mo
 share/locale/sr@latin/LC_MESSAGES/libkcddb.mo
 share/locale/sr@latin/LC_MESSAGES/libkcompactdisc.mo
 share/locale/sr@latin/LC_MESSAGES/libkdegames.mo
