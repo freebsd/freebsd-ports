@@ -12,7 +12,7 @@ CATEGORIES=	deskutils kde
 MASTER_SITES=	SF/k${PORTNAME}/
 DISTNAME=	k${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A KDE twin-panel e-text/e-book viewer
 
 USE_BZIP2=	yes

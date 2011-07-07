@@ -10,7 +10,7 @@ PORTVERSION=	1.5
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MP3/Ogg/FLAC tag editor for KDE
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \

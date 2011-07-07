@@ -12,7 +12,7 @@ CATEGORIES=	archivers kde
 MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/
 DISTNAME=	17829-${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kioslave for KDE to handle 7zip files
 
 RUN_DEPENDS=	7za:${PORTSDIR}/archivers/p7zip

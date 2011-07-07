@@ -11,7 +11,7 @@ CATEGORIES=	math kde
 MASTER_SITES=	http://purinchu.net/abakus/ \
 		http://www.athame.co.uk/mirror/
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Michael Pyne's Abakus Calculator
 
 BUILD_DEPENDS=	scons:${PORTSDIR}/devel/scons
