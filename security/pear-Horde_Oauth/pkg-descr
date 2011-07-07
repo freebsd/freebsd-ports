@@ -1,0 +1,4 @@
+This Horde package provides an OAuth consumer (http://oauth.net)
+and OAuth infrastruture, and in the future will provide an OAuth server.
+
+WWW: http://pear.horde.org
