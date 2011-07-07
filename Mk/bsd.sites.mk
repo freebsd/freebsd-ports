@@ -550,17 +550,22 @@ MASTER_SITE_GNU+=	\
 
 .if !defined(IGNORE_MASTER_SITE_GNUPG)
 MASTER_SITE_GNUPG+= 	\
-	http://ftp.linux.it/pub/mirrors/gnupg/%SUBDIR%/ \
-	ftp://ftp.demon.nl/pub/mirrors/gnupg/%SUBDIR%/ \
-	ftp://sunsite.dk/pub/security/gcrypt/%SUBDIR%/ \
-	ftp://ftp.jyu.fi/pub/crypt/gcrypt/%SUBDIR%/ \
+	http://gnupg.org.favoritelinks.net/%SUBDIR%/ \
+	http://mirror.tje.me.uk/pub/mirrors/ftp.gnupg.org/%SUBDIR%/ \
+	http://dotsrc.org/%SUBDIR%/ \
 	ftp://ftp.freenet.de/pub/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	ftp://ftp.surfnet.nl/pub/security/gnupg/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
-	ftp://sunsite.cnlab-switch.ch/mirror/gcrypt/%SUBDIR%/ \
 	ftp://ftp.iasi.roedu.net/pub/mirrors/ftp.gnupg.org/%SUBDIR%/ \
-	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/gnupg/&,} \
-	ftp://igloo.linux.gr/pub/crypto/gnupg/%SUBDIR%/ \
+	ftp://mirror.cict.fr/gnupg/%SUBDIR%/ \
+	http://artfiles.org/gnupg.org/%SUBDIR%/ \
+	ftp://ftp.franken.de/pub/crypt/mirror/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
+	ftp://ftp.crysys.hu/pub/gnupg/%SUBDIR%/ \
+	ftp://ftp.hi.is/pub/mirrors/gnupg/%SUBDIR%/ \
+	http://ftp.heanet.ie/mirrors/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
+	http://gpg-mirror.5coluna.com/ftp/%SUBDIR%/ \
+	ftp://ftp.sunet.se/pub/security/gnupg/%SUBDIR%/ \
+	ftp://mirror.switch.ch/mirror/gnupg/%SUBDIR%/ \
+	http://www.mirrorservice.org/sites/ftp.gnupg.org/gcrypt/%SUBDIR%/ \
 	ftp://ftp.gnupg.org/gcrypt/%SUBDIR%/
 .endif
 
