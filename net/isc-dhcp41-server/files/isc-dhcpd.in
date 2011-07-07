@@ -432,7 +432,7 @@ setup_flags ()
 	if eval "[ -n \"\${${name}_pidfile}\" ]"; then
 		eval "rc_flags=\"\${rc_flags} -pf \${${name}_pidfile}\""
 	fi
-	if eval "[ -n \"\${dhcpd_withuser}\" ]"; then
+	if eval "[ -n \"\${${name}_withuser}\" ]"; then
 		eval "rc_flags=\"\${rc_flags} -user \${${name}_withuser}\""
 	fi
 	if eval "[ -n \"\${${name}_withgroup}\" ]"; then
