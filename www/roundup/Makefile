@@ -6,20 +6,23 @@
 #
 
 PORTNAME=	roundup
-PORTVERSION=	1.4.16
+PORTVERSION=	1.4.18
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	An Issue-Tracking System for Knowledge Workers
 
+LICENSE=	PSFL
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
-USE_GETTEXT=	yes
 
 OPTIONS=	SQLITE	"Support Sqlite as backend" on
 OPTIONS+=	PGSQL	"Support posggresql as backend" off
 OPTIONS+=	MYSQL	"Support mysql as backend" off
+OPTIONS+=	NLS	"Native Language Support" on
 
 .include <bsd.port.pre.mk>
 
@@ -37,6 +40,13 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopgmodule.so:${PORTSDIR}/databases/py-psy
 
 .if defined(WITH_MYSQL)
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment"
 .endif
 
 .if !defined(NO_INSTALL_MANPAGES)
