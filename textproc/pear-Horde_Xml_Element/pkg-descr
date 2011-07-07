@@ -1,0 +1,6 @@
+This package provides an element object that can be used to provide
+SimpleXML-like functionality over a DOM object. The main advantage over
+using SimpleXML is the ability to add multiple levels of new elements
+in a single call, without introducing "ghost" objects.
+
+WWW: http://pear.horde.org
