@@ -493,6 +493,7 @@
     SUBDIR += pear-Doctrine
     SUBDIR += pear-Doctrine12
     SUBDIR += pear-Horde_Db
+    SUBDIR += pear-Horde_Imsp
     SUBDIR += pear-Horde_Memcache
     SUBDIR += pear-MDB
     SUBDIR += pear-MDB2
