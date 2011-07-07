@@ -7,6 +7,7 @@
 
 PORTNAME=	mediawiki
 PORTVERSION=	1.17.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://dumps.wikimedia.org/mediawiki/${PORTVERSION:R}/
 
@@ -15,7 +16,7 @@ COMMENT=	The wiki engine used by Wikipedia
 
 CONFLICTS=	mediawiki-1.1[0-68-9].*
 
-USE_PHP=	iconv mbstring pcre session xml zlib readline dom
+USE_PHP=	ctype iconv mbstring pcre session xml zlib readline dom
 IGNORE_WITH_PHP=	4
 WANT_PHP_WEB=	yes
 MEDIAWIKIDIR?=	www/mediawiki
