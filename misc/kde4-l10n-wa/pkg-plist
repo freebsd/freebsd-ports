@@ -93,6 +93,7 @@ share/locale/wa/LC_MESSAGES/imagerename_plugin.mo
 share/locale/wa/LC_MESSAGES/joystick.mo
 share/locale/wa/LC_MESSAGES/kaccess.mo
 share/locale/wa/LC_MESSAGES/kactivitymanagerd.mo
+share/locale/wa/LC_MESSAGES/kalarm.mo
 share/locale/wa/LC_MESSAGES/kate.mo
 share/locale/wa/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/wa/LC_MESSAGES/kateopenheader.mo
@@ -231,9 +232,11 @@ share/locale/wa/LC_MESSAGES/kio_timeline.mo
 share/locale/wa/LC_MESSAGES/kio_trash.mo
 share/locale/wa/LC_MESSAGES/kioclient.mo
 share/locale/wa/LC_MESSAGES/kioexec.mo
+share/locale/wa/LC_MESSAGES/kjots.mo
 share/locale/wa/LC_MESSAGES/klettres.mo
 share/locale/wa/LC_MESSAGES/klipper.mo
 share/locale/wa/LC_MESSAGES/kmahjongg.mo
+share/locale/wa/LC_MESSAGES/kmail.mo
 share/locale/wa/LC_MESSAGES/kmenuedit.mo
 share/locale/wa/LC_MESSAGES/kmimetypefinder.mo
 share/locale/wa/LC_MESSAGES/kmines.mo
@@ -241,8 +244,10 @@ share/locale/wa/LC_MESSAGES/knetattach.mo
 share/locale/wa/LC_MESSAGES/knotify4.mo
 share/locale/wa/LC_MESSAGES/konqueror.mo
 share/locale/wa/LC_MESSAGES/konsole.mo
+share/locale/wa/LC_MESSAGES/kontact.mo
 share/locale/wa/LC_MESSAGES/kontactinterfaces.mo
 share/locale/wa/LC_MESSAGES/kopete.mo
+share/locale/wa/LC_MESSAGES/korganizer.mo
 share/locale/wa/LC_MESSAGES/kpartsaver.mo
 share/locale/wa/LC_MESSAGES/kpasswdserver.mo
 share/locale/wa/LC_MESSAGES/kpat.mo
@@ -285,6 +290,7 @@ share/locale/wa/LC_MESSAGES/kxkb.mo
 share/locale/wa/LC_MESSAGES/lancelot.mo
 share/locale/wa/LC_MESSAGES/libkcompactdisc.mo
 share/locale/wa/LC_MESSAGES/libkdegames.mo
+share/locale/wa/LC_MESSAGES/libkdepim.mo
 share/locale/wa/LC_MESSAGES/libkholidays.mo
 share/locale/wa/LC_MESSAGES/libkmahjongg.mo
 share/locale/wa/LC_MESSAGES/libkmime.mo
@@ -292,6 +298,8 @@ share/locale/wa/LC_MESSAGES/libkonq.mo
 share/locale/wa/LC_MESSAGES/libksane.mo
 share/locale/wa/LC_MESSAGES/libkscreensaver.mo
 share/locale/wa/LC_MESSAGES/libkworkspace.mo
+share/locale/wa/LC_MESSAGES/libmessagelist.mo
+share/locale/wa/LC_MESSAGES/libmessageviewer.mo
 share/locale/wa/LC_MESSAGES/libphonon.mo
 share/locale/wa/LC_MESSAGES/libplasma.mo
 share/locale/wa/LC_MESSAGES/libplasmaclock.mo

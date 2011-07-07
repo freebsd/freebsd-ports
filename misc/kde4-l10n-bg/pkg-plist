@@ -3,6 +3,7 @@ share/apps/kvtml/bg/easy.kvtml
 share/apps/kvtml/bg/hard.kvtml
 share/apps/kvtml/bg/medium.kvtml
 share/locale/bg/LC_MESSAGES/adblock.mo
+share/locale/bg/LC_MESSAGES/akregator.mo
 share/locale/bg/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/bg/LC_MESSAGES/amor.mo
 share/locale/bg/LC_MESSAGES/ark.mo
@@ -13,6 +14,7 @@ share/locale/bg/LC_MESSAGES/audiorename_plugin.mo
 share/locale/bg/LC_MESSAGES/autorefresh.mo
 share/locale/bg/LC_MESSAGES/babelfish.mo
 share/locale/bg/LC_MESSAGES/blinken.mo
+share/locale/bg/LC_MESSAGES/blogilo.mo
 share/locale/bg/LC_MESSAGES/bomber.mo
 share/locale/bg/LC_MESSAGES/bovo.mo
 share/locale/bg/LC_MESSAGES/dirfilterplugin.mo
@@ -33,8 +35,11 @@ share/locale/bg/LC_MESSAGES/imgalleryplugin.mo
 share/locale/bg/LC_MESSAGES/jovie.mo
 share/locale/bg/LC_MESSAGES/joystick.mo
 share/locale/bg/LC_MESSAGES/juk.mo
+share/locale/bg/LC_MESSAGES/kabcclient.mo
 share/locale/bg/LC_MESSAGES/kaccess.mo
+share/locale/bg/LC_MESSAGES/kaddressbook.mo
 share/locale/bg/LC_MESSAGES/kajongg.mo
+share/locale/bg/LC_MESSAGES/kalarm.mo
 share/locale/bg/LC_MESSAGES/kalgebra.mo
 share/locale/bg/LC_MESSAGES/kalzium.mo
 share/locale/bg/LC_MESSAGES/kanagram.mo
@@ -130,6 +135,7 @@ share/locale/bg/LC_MESSAGES/kdecalendarsystems.mo
 share/locale/bg/LC_MESSAGES/kdelibs4.mo
 share/locale/bg/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/bg/LC_MESSAGES/kdepasswd.mo
+share/locale/bg/LC_MESSAGES/kdepimwizards.mo
 share/locale/bg/LC_MESSAGES/kdeqt.mo
 share/locale/bg/LC_MESSAGES/kdesu.mo
 share/locale/bg/LC_MESSAGES/kdesud.mo
@@ -194,6 +200,7 @@ share/locale/bg/LC_MESSAGES/kio_bookmarks.mo
 share/locale/bg/LC_MESSAGES/kio_finger.mo
 share/locale/bg/LC_MESSAGES/kio_fish.mo
 share/locale/bg/LC_MESSAGES/kio_floppy.mo
+share/locale/bg/LC_MESSAGES/kio_groupwise.mo
 share/locale/bg/LC_MESSAGES/kio_help4.mo
 share/locale/bg/LC_MESSAGES/kio_imap4.mo
 share/locale/bg/LC_MESSAGES/kio_info.mo
@@ -219,7 +226,9 @@ share/locale/bg/LC_MESSAGES/kio_zeroconf.mo
 share/locale/bg/LC_MESSAGES/kioclient.mo
 share/locale/bg/LC_MESSAGES/kioexec.mo
 share/locale/bg/LC_MESSAGES/kiten.mo
+share/locale/bg/LC_MESSAGES/kjots.mo
 share/locale/bg/LC_MESSAGES/kjumpingcube.mo
+share/locale/bg/LC_MESSAGES/kleopatra.mo
 share/locale/bg/LC_MESSAGES/klettres.mo
 share/locale/bg/LC_MESSAGES/klines.mo
 share/locale/bg/LC_MESSAGES/klinkstatus.mo
@@ -227,6 +236,8 @@ share/locale/bg/LC_MESSAGES/klipper.mo
 share/locale/bg/LC_MESSAGES/klock.mo
 share/locale/bg/LC_MESSAGES/kmag.mo
 share/locale/bg/LC_MESSAGES/kmahjongg.mo
+share/locale/bg/LC_MESSAGES/kmail.mo
+share/locale/bg/LC_MESSAGES/kmailcvt.mo
 share/locale/bg/LC_MESSAGES/kmenuedit.mo
 share/locale/bg/LC_MESSAGES/kmimetypefinder.mo
 share/locale/bg/LC_MESSAGES/kmines.mo
@@ -236,6 +247,8 @@ share/locale/bg/LC_MESSAGES/kmouth.mo
 share/locale/bg/LC_MESSAGES/kmplot.mo
 share/locale/bg/LC_MESSAGES/knetattach.mo
 share/locale/bg/LC_MESSAGES/knetwalk.mo
+share/locale/bg/LC_MESSAGES/knode.mo
+share/locale/bg/LC_MESSAGES/knotes.mo
 share/locale/bg/LC_MESSAGES/knotify4.mo
 share/locale/bg/LC_MESSAGES/kolf.mo
 share/locale/bg/LC_MESSAGES/kolourpaint.mo
@@ -244,7 +257,10 @@ share/locale/bg/LC_MESSAGES/kompare.mo
 share/locale/bg/LC_MESSAGES/konqueror.mo
 share/locale/bg/LC_MESSAGES/konquest.mo
 share/locale/bg/LC_MESSAGES/konsole.mo
+share/locale/bg/LC_MESSAGES/konsolekalendar.mo
+share/locale/bg/LC_MESSAGES/kontact.mo
 share/locale/bg/LC_MESSAGES/kopete.mo
+share/locale/bg/LC_MESSAGES/korganizer.mo
 share/locale/bg/LC_MESSAGES/kpartsaver.mo
 share/locale/bg/LC_MESSAGES/kpasswdserver.mo
 share/locale/bg/LC_MESSAGES/kpat.mo
@@ -255,6 +271,8 @@ share/locale/bg/LC_MESSAGES/krandr.mo
 share/locale/bg/LC_MESSAGES/krdb.mo
 share/locale/bg/LC_MESSAGES/krdc.mo
 share/locale/bg/LC_MESSAGES/kreadconfig.mo
+share/locale/bg/LC_MESSAGES/kres_groupwise.mo
+share/locale/bg/LC_MESSAGES/kres_remote.mo
 share/locale/bg/LC_MESSAGES/kreversi.mo
 share/locale/bg/LC_MESSAGES/krfb.mo
 share/locale/bg/LC_MESSAGES/kruler.mo
@@ -283,6 +301,7 @@ share/locale/bg/LC_MESSAGES/kteatime.mo
 share/locale/bg/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/bg/LC_MESSAGES/kthememanager.mo
 share/locale/bg/LC_MESSAGES/ktimer.mo
+share/locale/bg/LC_MESSAGES/ktimetracker.mo
 share/locale/bg/LC_MESSAGES/ktouch.mo
 share/locale/bg/LC_MESSAGES/ktraderclient.mo
 share/locale/bg/LC_MESSAGES/ktuberling.mo
@@ -294,6 +313,7 @@ share/locale/bg/LC_MESSAGES/kurifilter.mo
 share/locale/bg/LC_MESSAGES/kuser.mo
 share/locale/bg/LC_MESSAGES/kwalletd.mo
 share/locale/bg/LC_MESSAGES/kwalletmanager.mo
+share/locale/bg/LC_MESSAGES/kwatchgnupg.mo
 share/locale/bg/LC_MESSAGES/kwin.mo
 share/locale/bg/LC_MESSAGES/kwin_art_clients.mo
 share/locale/bg/LC_MESSAGES/kwin_clients.mo
@@ -310,14 +330,20 @@ share/locale/bg/LC_MESSAGES/libkcddb.mo
 share/locale/bg/LC_MESSAGES/libkcompactdisc.mo
 share/locale/bg/LC_MESSAGES/libkdeedu.mo
 share/locale/bg/LC_MESSAGES/libkdegames.mo
+share/locale/bg/LC_MESSAGES/libkdepim.mo
 share/locale/bg/LC_MESSAGES/libkexiv2.mo
 share/locale/bg/LC_MESSAGES/libkholidays.mo
+share/locale/bg/LC_MESSAGES/libkleopatra.mo
 share/locale/bg/LC_MESSAGES/libkmime.mo
 share/locale/bg/LC_MESSAGES/libkonq.mo
+share/locale/bg/LC_MESSAGES/libkpgp.mo
 share/locale/bg/LC_MESSAGES/libksane.mo
 share/locale/bg/LC_MESSAGES/libkscreensaver.mo
+share/locale/bg/LC_MESSAGES/libksieve.mo
 share/locale/bg/LC_MESSAGES/libkunitconversion.mo
 share/locale/bg/LC_MESSAGES/libkworkspace.mo
+share/locale/bg/LC_MESSAGES/libmessagelist.mo
+share/locale/bg/LC_MESSAGES/libmessageviewer.mo
 share/locale/bg/LC_MESSAGES/libphonon.mo
 share/locale/bg/LC_MESSAGES/libplasma.mo
 share/locale/bg/LC_MESSAGES/libplasmaclock.mo
@@ -326,6 +352,9 @@ share/locale/bg/LC_MESSAGES/lokalize.mo
 share/locale/bg/LC_MESSAGES/lskat.mo
 share/locale/bg/LC_MESSAGES/marble.mo
 share/locale/bg/LC_MESSAGES/marble_qt.mo
+share/locale/bg/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
+share/locale/bg/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
+share/locale/bg/LC_MESSAGES/messageviewer_text_xdiff_plugin.mo
 share/locale/bg/LC_MESSAGES/mf_konqplugin.mo
 share/locale/bg/LC_MESSAGES/minitoolsplugin.mo
 share/locale/bg/LC_MESSAGES/mplayerthumbs.mo

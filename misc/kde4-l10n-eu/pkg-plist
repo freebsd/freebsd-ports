@@ -3,6 +3,7 @@ share/doc/HTML/eu/common/gpl-translated.html
 share/doc/HTML/eu/common/kde-localised.css
 share/doc/HTML/eu/common/lgpl-translated.html
 share/locale/eu/LC_MESSAGES/adblock.mo
+share/locale/eu/LC_MESSAGES/akregator.mo
 share/locale/eu/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/eu/LC_MESSAGES/amor.mo
 share/locale/eu/LC_MESSAGES/ark.mo
@@ -42,7 +43,9 @@ share/locale/eu/LC_MESSAGES/kabc_net.mo
 share/locale/eu/LC_MESSAGES/kabcformat_binary.mo
 share/locale/eu/LC_MESSAGES/kaccess.mo
 share/locale/eu/LC_MESSAGES/kactivitymanagerd.mo
+share/locale/eu/LC_MESSAGES/kaddressbook.mo
 share/locale/eu/LC_MESSAGES/kajongg.mo
+share/locale/eu/LC_MESSAGES/kalarm.mo
 share/locale/eu/LC_MESSAGES/kalzium.mo
 share/locale/eu/LC_MESSAGES/kanagram.mo
 share/locale/eu/LC_MESSAGES/kapman.mo
@@ -144,6 +147,7 @@ share/locale/eu/LC_MESSAGES/kdecalendarsystems.mo
 share/locale/eu/LC_MESSAGES/kdelibs4.mo
 share/locale/eu/LC_MESSAGES/kdelibs_colors4.mo
 share/locale/eu/LC_MESSAGES/kdepasswd.mo
+share/locale/eu/LC_MESSAGES/kdepimwizards.mo
 share/locale/eu/LC_MESSAGES/kdeqt.mo
 share/locale/eu/LC_MESSAGES/kdesu.mo
 share/locale/eu/LC_MESSAGES/kdesud.mo
@@ -207,6 +211,7 @@ share/locale/eu/LC_MESSAGES/kio_bookmarks.mo
 share/locale/eu/LC_MESSAGES/kio_finger.mo
 share/locale/eu/LC_MESSAGES/kio_fish.mo
 share/locale/eu/LC_MESSAGES/kio_floppy.mo
+share/locale/eu/LC_MESSAGES/kio_groupwise.mo
 share/locale/eu/LC_MESSAGES/kio_help4.mo
 share/locale/eu/LC_MESSAGES/kio_imap4.mo
 share/locale/eu/LC_MESSAGES/kio_info.mo
@@ -231,7 +236,9 @@ share/locale/eu/LC_MESSAGES/kio_zeroconf.mo
 share/locale/eu/LC_MESSAGES/kioclient.mo
 share/locale/eu/LC_MESSAGES/kioexec.mo
 share/locale/eu/LC_MESSAGES/kiten.mo
+share/locale/eu/LC_MESSAGES/kjots.mo
 share/locale/eu/LC_MESSAGES/kjumpingcube.mo
+share/locale/eu/LC_MESSAGES/kleopatra.mo
 share/locale/eu/LC_MESSAGES/klettres.mo
 share/locale/eu/LC_MESSAGES/klines.mo
 share/locale/eu/LC_MESSAGES/klinkstatus.mo
@@ -239,6 +246,8 @@ share/locale/eu/LC_MESSAGES/klipper.mo
 share/locale/eu/LC_MESSAGES/klock.mo
 share/locale/eu/LC_MESSAGES/kmag.mo
 share/locale/eu/LC_MESSAGES/kmahjongg.mo
+share/locale/eu/LC_MESSAGES/kmail.mo
+share/locale/eu/LC_MESSAGES/kmailcvt.mo
 share/locale/eu/LC_MESSAGES/kmenuedit.mo
 share/locale/eu/LC_MESSAGES/kmimetypefinder.mo
 share/locale/eu/LC_MESSAGES/kmines.mo
@@ -248,6 +257,8 @@ share/locale/eu/LC_MESSAGES/kmouth.mo
 share/locale/eu/LC_MESSAGES/kmplot.mo
 share/locale/eu/LC_MESSAGES/knetattach.mo
 share/locale/eu/LC_MESSAGES/knetwalk.mo
+share/locale/eu/LC_MESSAGES/knode.mo
+share/locale/eu/LC_MESSAGES/knotes.mo
 share/locale/eu/LC_MESSAGES/knotify4.mo
 share/locale/eu/LC_MESSAGES/kolf.mo
 share/locale/eu/LC_MESSAGES/kolourpaint.mo
@@ -255,7 +266,10 @@ share/locale/eu/LC_MESSAGES/kompare.mo
 share/locale/eu/LC_MESSAGES/konqueror.mo
 share/locale/eu/LC_MESSAGES/konquest.mo
 share/locale/eu/LC_MESSAGES/konsole.mo
+share/locale/eu/LC_MESSAGES/konsolekalendar.mo
+share/locale/eu/LC_MESSAGES/kontact.mo
 share/locale/eu/LC_MESSAGES/kopete.mo
+share/locale/eu/LC_MESSAGES/korganizer.mo
 share/locale/eu/LC_MESSAGES/kpartsaver.mo
 share/locale/eu/LC_MESSAGES/kpasswdserver.mo
 share/locale/eu/LC_MESSAGES/kpat.mo
@@ -268,6 +282,8 @@ share/locale/eu/LC_MESSAGES/krdb.mo
 share/locale/eu/LC_MESSAGES/krdc.mo
 share/locale/eu/LC_MESSAGES/kreadconfig.mo
 share/locale/eu/LC_MESSAGES/kremotecontroldaemon.mo
+share/locale/eu/LC_MESSAGES/kres_groupwise.mo
+share/locale/eu/LC_MESSAGES/kres_remote.mo
 share/locale/eu/LC_MESSAGES/kreversi.mo
 share/locale/eu/LC_MESSAGES/krfb.mo
 share/locale/eu/LC_MESSAGES/kruler.mo
@@ -297,6 +313,7 @@ share/locale/eu/LC_MESSAGES/kteatime.mo
 share/locale/eu/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/eu/LC_MESSAGES/kthememanager.mo
 share/locale/eu/LC_MESSAGES/ktimer.mo
+share/locale/eu/LC_MESSAGES/ktimetracker.mo
 share/locale/eu/LC_MESSAGES/ktouch.mo
 share/locale/eu/LC_MESSAGES/ktraderclient.mo
 share/locale/eu/LC_MESSAGES/ktron.mo
@@ -310,6 +327,7 @@ share/locale/eu/LC_MESSAGES/kurifilter.mo
 share/locale/eu/LC_MESSAGES/kuser.mo
 share/locale/eu/LC_MESSAGES/kwalletd.mo
 share/locale/eu/LC_MESSAGES/kwalletmanager.mo
+share/locale/eu/LC_MESSAGES/kwatchgnupg.mo
 share/locale/eu/LC_MESSAGES/kwin.mo
 share/locale/eu/LC_MESSAGES/kwin_art_clients.mo
 share/locale/eu/LC_MESSAGES/kwin_clients.mo
@@ -328,16 +346,22 @@ share/locale/eu/LC_MESSAGES/libkcddb.mo
 share/locale/eu/LC_MESSAGES/libkdcraw.mo
 share/locale/eu/LC_MESSAGES/libkdeedu.mo
 share/locale/eu/LC_MESSAGES/libkdegames.mo
+share/locale/eu/LC_MESSAGES/libkdepim.mo
 share/locale/eu/LC_MESSAGES/libkexiv2.mo
 share/locale/eu/LC_MESSAGES/libkholidays.mo
+share/locale/eu/LC_MESSAGES/libkleopatra.mo
 share/locale/eu/LC_MESSAGES/libkmahjongg.mo
 share/locale/eu/LC_MESSAGES/libkmime.mo
 share/locale/eu/LC_MESSAGES/libkonq.mo
+share/locale/eu/LC_MESSAGES/libkpgp.mo
 share/locale/eu/LC_MESSAGES/libkremotecontrol.mo
 share/locale/eu/LC_MESSAGES/libksane.mo
 share/locale/eu/LC_MESSAGES/libkscreensaver.mo
+share/locale/eu/LC_MESSAGES/libksieve.mo
 share/locale/eu/LC_MESSAGES/libkunitconversion.mo
 share/locale/eu/LC_MESSAGES/libkworkspace.mo
+share/locale/eu/LC_MESSAGES/libmessagelist.mo
+share/locale/eu/LC_MESSAGES/libmessageviewer.mo
 share/locale/eu/LC_MESSAGES/liboktetacore.mo
 share/locale/eu/LC_MESSAGES/liboktetakasten.mo
 share/locale/eu/LC_MESSAGES/libphonon.mo
@@ -348,6 +372,8 @@ share/locale/eu/LC_MESSAGES/librtm.mo
 share/locale/eu/LC_MESSAGES/libtaskmanager.mo
 share/locale/eu/LC_MESSAGES/lokalize.mo
 share/locale/eu/LC_MESSAGES/lskat.mo
+share/locale/eu/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
+share/locale/eu/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
 share/locale/eu/LC_MESSAGES/mf_konqplugin.mo
 share/locale/eu/LC_MESSAGES/minitoolsplugin.mo
 share/locale/eu/LC_MESSAGES/nepomukqueryservice.mo

@@ -8,6 +8,7 @@ share/locale/th/LC_MESSAGES/adblock.mo
 share/locale/th/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/th/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/th/LC_MESSAGES/akonadi_ical_resource.mo
+share/locale/th/LC_MESSAGES/akregator.mo
 share/locale/th/LC_MESSAGES/akregator_konqplugin.mo
 share/locale/th/LC_MESSAGES/amor.mo
 share/locale/th/LC_MESSAGES/ark.mo
@@ -40,10 +41,12 @@ share/locale/th/LC_MESSAGES/kabc_dir.mo
 share/locale/th/LC_MESSAGES/kabc_file.mo
 share/locale/th/LC_MESSAGES/kabc_ldapkio.mo
 share/locale/th/LC_MESSAGES/kabc_net.mo
+share/locale/th/LC_MESSAGES/kabcclient.mo
 share/locale/th/LC_MESSAGES/kabcformat_binary.mo
 share/locale/th/LC_MESSAGES/kaccess.mo
 share/locale/th/LC_MESSAGES/kaccessibleapp.mo
 share/locale/th/LC_MESSAGES/kactivitymanagerd.mo
+share/locale/th/LC_MESSAGES/kaddressbook.mo
 share/locale/th/LC_MESSAGES/kalzium.mo
 share/locale/th/LC_MESSAGES/kapman.mo
 share/locale/th/LC_MESSAGES/kapptemplate.mo
@@ -229,11 +232,15 @@ share/locale/th/LC_MESSAGES/kio_trash.mo
 share/locale/th/LC_MESSAGES/kio_zeroconf.mo
 share/locale/th/LC_MESSAGES/kioclient.mo
 share/locale/th/LC_MESSAGES/kioexec.mo
+share/locale/th/LC_MESSAGES/kjots.mo
+share/locale/th/LC_MESSAGES/kleopatra.mo
 share/locale/th/LC_MESSAGES/klines.mo
 share/locale/th/LC_MESSAGES/klipper.mo
 share/locale/th/LC_MESSAGES/klock.mo
 share/locale/th/LC_MESSAGES/kmag.mo
 share/locale/th/LC_MESSAGES/kmahjongg.mo
+share/locale/th/LC_MESSAGES/kmail.mo
+share/locale/th/LC_MESSAGES/kmailcvt.mo
 share/locale/th/LC_MESSAGES/kmenuedit.mo
 share/locale/th/LC_MESSAGES/kmimetypefinder.mo
 share/locale/th/LC_MESSAGES/kmines.mo
@@ -242,12 +249,16 @@ share/locale/th/LC_MESSAGES/kmousetool.mo
 share/locale/th/LC_MESSAGES/kmouth.mo
 share/locale/th/LC_MESSAGES/knetattach.mo
 share/locale/th/LC_MESSAGES/knetwalk.mo
+share/locale/th/LC_MESSAGES/knode.mo
+share/locale/th/LC_MESSAGES/knotes.mo
 share/locale/th/LC_MESSAGES/knotify4.mo
 share/locale/th/LC_MESSAGES/kollision.mo
 share/locale/th/LC_MESSAGES/kolourpaint.mo
 share/locale/th/LC_MESSAGES/konqueror.mo
 share/locale/th/LC_MESSAGES/konsole.mo
+share/locale/th/LC_MESSAGES/kontact.mo
 share/locale/th/LC_MESSAGES/kopete.mo
+share/locale/th/LC_MESSAGES/korganizer.mo
 share/locale/th/LC_MESSAGES/kpartsaver.mo
 share/locale/th/LC_MESSAGES/kpasswdserver.mo
 share/locale/th/LC_MESSAGES/kpat.mo
@@ -258,6 +269,7 @@ share/locale/th/LC_MESSAGES/krandr.mo
 share/locale/th/LC_MESSAGES/krdb.mo
 share/locale/th/LC_MESSAGES/krdc.mo
 share/locale/th/LC_MESSAGES/kreadconfig.mo
+share/locale/th/LC_MESSAGES/kres_blog.mo
 share/locale/th/LC_MESSAGES/kreversi.mo
 share/locale/th/LC_MESSAGES/krfb.mo
 share/locale/th/LC_MESSAGES/kruler.mo
@@ -284,6 +296,7 @@ share/locale/th/LC_MESSAGES/kteatime.mo
 share/locale/th/LC_MESSAGES/ktexteditor_plugins.mo
 share/locale/th/LC_MESSAGES/kthememanager.mo
 share/locale/th/LC_MESSAGES/ktimer.mo
+share/locale/th/LC_MESSAGES/ktimetracker.mo
 share/locale/th/LC_MESSAGES/ktraderclient.mo
 share/locale/th/LC_MESSAGES/ktux.mo
 share/locale/th/LC_MESSAGES/kuiserver.mo
@@ -309,6 +322,7 @@ share/locale/th/LC_MESSAGES/libkcompactdisc.mo
 share/locale/th/LC_MESSAGES/libkdcraw.mo
 share/locale/th/LC_MESSAGES/libkdeedu.mo
 share/locale/th/LC_MESSAGES/libkdegames.mo
+share/locale/th/LC_MESSAGES/libkdepim.mo
 share/locale/th/LC_MESSAGES/libkexiv2.mo
 share/locale/th/LC_MESSAGES/libkholidays.mo
 share/locale/th/LC_MESSAGES/libkldap.mo
@@ -324,6 +338,9 @@ share/locale/th/LC_MESSAGES/libkscreensaver.mo
 share/locale/th/LC_MESSAGES/libkunitconversion.mo
 share/locale/th/LC_MESSAGES/libkworkspace.mo
 share/locale/th/LC_MESSAGES/libmailtransport.mo
+share/locale/th/LC_MESSAGES/libmessagecore.mo
+share/locale/th/LC_MESSAGES/libmessagelist.mo
+share/locale/th/LC_MESSAGES/libmessageviewer.mo
 share/locale/th/LC_MESSAGES/liboktetakasten.mo
 share/locale/th/LC_MESSAGES/libphonon.mo
 share/locale/th/LC_MESSAGES/libplasma.mo
@@ -332,6 +349,9 @@ share/locale/th/LC_MESSAGES/libplasmaweather.mo
 share/locale/th/LC_MESSAGES/libtaskmanager.mo
 share/locale/th/LC_MESSAGES/lokalize.mo
 share/locale/th/LC_MESSAGES/marble.mo
+share/locale/th/LC_MESSAGES/messageviewer_text_calendar_plugin.mo
+share/locale/th/LC_MESSAGES/messageviewer_text_vcard_plugin.mo
+share/locale/th/LC_MESSAGES/messageviewer_text_xdiff_plugin.mo
 share/locale/th/LC_MESSAGES/mf_konqplugin.mo
 share/locale/th/LC_MESSAGES/minitoolsplugin.mo
 share/locale/th/LC_MESSAGES/mplayerthumbs.mo
