@@ -1,0 +1,11 @@
+The Horde_Mail library is a fork of the PEAR Mail library that provides
+additional functionality, including (but not limited to):
+* Allows a stream to be passed in.
+* Allows raw headertext to be used in the outgoing messages (required for
+  things like message redirection pursuant to RFC 5322 [3.6.6]).
+* Native PHP 5 code.
+* PHPUnit test suite.
+* Provides more comprehensive sendmail error messages.
+* Uses Exceptions instead of PEAR_Errors.
+
+WWW: http://pear.horde.org
