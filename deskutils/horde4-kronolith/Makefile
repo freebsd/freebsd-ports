@@ -6,27 +6,66 @@
 #
 
 PORTNAME=	kronolith
-PORTVERSION=	3.0.2
-DISTVERSIONPREFIX=
-DISTVERSIONSUFFIX=
-CATEGORIES=	deskutils www
-MASTER_SITES=		http://pear.horde.org/get/ \
-			LOCAL/beech
-PKGNAMEPREFIX=	horde4-
-EXTRACT_SUFX=	.tgz
+PORTVERSION=	3.0.5
+CATEGORIES=	deskutils www pear
+PKGNAMEPREFIX=	horde-
 
-MAINTAINER=	beech@FreeBSD.org
-COMMENT=	Calendar application
+MAINTAINER=	mm@FreeBSD.org
+COMMENT=	Horde web based calendar
 
-RUN_DEPENDS+=	${LOCALBASE}/share/pear/Date/Holidays.php:${PORTSDIR}/devel/pear-Date_Holidays \
-		${HORBAS}/Rdo.php:${PORTSDIR}/devel/horde4-rdo \
-		${HORBAS}/content/Application.php:${PORTSDIR}/devel/horde4-content
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-CONFLICTS=	kronolith-2.*
-USE_HORDE=	base
-USE_GETTEXT=	yes
-PORTDOCS=	README CHANGES CREDITS INSTALL RELEASE_NOTES UPGRADING TODO \
-		lighttpd-kronolith.conf
+OPTIONS=	DATE_HOLIDAYS "Install PEAR Date_Holidays" On \
+		TIMEOBJECTS "Install Horde timeobjects" On \
+		XMLWRITER "Depend on PHP xmlwriter extension" Off
 
-.include "${.CURDIR}/../../www/horde4-base/bsd.horde4.mk"
-.include <bsd.port.mk>
+USE_PHP=	gettext json simplexml
+USE_HORDE_BUILD=	Horde_Role
+USE_HORDE_RUN=	Horde_Role \
+		content \
+		horde \
+		Horde_Auth \
+		Horde_Autoloader \
+		Horde_Core \
+		Horde_Data \
+		Horde_Date \
+		Horde_Date_Parser \
+		Horde_Exception \
+		Horde_Form \
+		Horde_Group \
+		Horde_Http \
+		Horde_History \
+		Horde_Icalendar \
+		Horde_Image \
+		Horde_Lock \
+		Horde_LoginTasks \
+		Horde_Mail \
+		Horde_Mime \
+		Horde_Nls \
+		Horde_Notification \
+		Horde_Perms \
+		Horde_Serialize \
+		Horde_Share \
+		Horde_Support \
+		Horde_Text_Filter \
+		Horde_Url \
+		Horde_Util \
+		Horde_View
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_DATE_HOLIDAYS)
+RUN_DEPENDS+=	${PEARDIR}/Date/Holidays.php:${PORTSDIR}/devel/pear-Date_Holidays
+.endif
+
+.if !defined(WITHOUT_TIMEOBJECTS)
+USE_HORDE_RUN+=	timeobjects
+.endif
+
+.if defined(WITH_XMLWRITER)
+USE_PHP+=	xmlwriter
+.endif
+
+.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
+.include <bsd.port.post.mk>
