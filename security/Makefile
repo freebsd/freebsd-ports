@@ -607,6 +607,7 @@
     SUBDIR += pear-HTML_Crypt
     SUBDIR += pear-Horde_Auth
     SUBDIR += pear-Horde_Group
+    SUBDIR += pear-Horde_Perms
     SUBDIR += pear-Horde_Secret
     SUBDIR += pear-LiveUser
     SUBDIR += pear-LiveUser_Admin
