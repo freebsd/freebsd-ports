@@ -13,8 +13,6 @@ CATEGORIES=	www pear
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Horde web based address book
 
-CONFLICTS=	horde-3*
-
 LICENSE=	ASL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
