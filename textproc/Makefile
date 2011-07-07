@@ -957,6 +957,7 @@
     SUBDIR += pear-Horde_Text_Filter_Csstidy
     SUBDIR += pear-Horde_Text_Flowed
     SUBDIR += pear-Horde_Xml_Element
+    SUBDIR += pear-Horde_Xml_Wbxml
     SUBDIR += pear-Numbers_Roman
     SUBDIR += pear-Numbers_Words
     SUBDIR += pear-Spreadsheet_Excel_Writer
