@@ -1,0 +1,5 @@
+This package provides supporting functionality for Horde that is not tied
+to Horde but is used by it.
+These classes can be used outside of Horde as well.
+
+WWW: http://pear.horde.org
