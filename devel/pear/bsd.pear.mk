@@ -303,3 +303,6 @@ pear-post-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
 	${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 .endif
+
+show-depends: patch
+	@${PEAR} package-dependencies ${WRKDIR}/package.xml
