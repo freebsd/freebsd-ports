@@ -6,18 +6,43 @@
 #
 
 PORTNAME=	mnemo
-PORTVERSION=	2.2.4
-DISTVERSIONSUFFIX=
-PORTREVISION=	1
-PORTEPOCH=	1
-CATEGORIES=	deskutils www
+PORTVERSION=	3.0.1
+CATEGORIES=	deskutils www pear
+PKGNAMEPREFIX=	horde-
 
-MAINTAINER=	beech@FreeBSD.org
-COMMENT=	Notes and memos application
+MAINTAINER=	mm@FreeBSD.org
+COMMENT=	Horde web based notes manager
 
-USE_HORDE=	base
-USE_GETTEXT=	yes
-PORTDOCS=	README CHANGES CREDITS INSTALL RELEASE_NOTES TODO UPGRADING
+LICENSE=	ASL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-.include "${.CURDIR}/../../www/horde-base/bsd.horde.mk"
-.include <bsd.port.mk>
+OPTIONS=	PDF "Support PDF generation" On
+
+USE_PHP=	gettext
+USE_HORDE_BUILD=	Horde_Role
+USE_HORDE_RUN=	Horde_Role \
+		horde \
+		Horde_Auth \
+		Horde_Core \
+		Horde_Data \
+		Horde_Exception \
+		Horde_Form \
+		Horde_Group \
+		Horde_History \
+		Horde_Icalendar \
+		Horde_Injector \
+		Horde_Perms \
+		Horde_Prefs \
+		Horde_Share \
+		Horde_Support \
+		Horde_Text_Filter \
+		Horde_Util
+
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_PDF)
+USE_HORDE_RUN+=	Horde_Pdf
+.endif
+
+.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
+.include <bsd.port.post.mk>
