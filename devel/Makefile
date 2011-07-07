@@ -2629,6 +2629,7 @@
     SUBDIR += pear-Horde_Controller
     SUBDIR += pear-Horde_Core
     SUBDIR += pear-Horde_Data
+    SUBDIR += pear-Horde_DataTree
     SUBDIR += pear-Horde_Date
     SUBDIR += pear-Horde_Date_Parser
     SUBDIR += pear-Horde_Exception
