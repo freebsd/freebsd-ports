@@ -2625,6 +2625,7 @@
     SUBDIR += pear-Horde_Cli
     SUBDIR += pear-Horde_Constraint
     SUBDIR += pear-Horde_Controller
+    SUBDIR += pear-Horde_Date
     SUBDIR += pear-Horde_Exception
     SUBDIR += pear-Horde_Injector
     SUBDIR += pear-Horde_Lock
