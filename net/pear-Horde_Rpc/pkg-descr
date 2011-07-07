@@ -1,0 +1,4 @@
+The Horde_Rpc library provides a common abstracted interface to various
+remote methods of accessing Horde functionality.
+
+WWW: http://pear.horde.org
