@@ -605,6 +605,7 @@
     SUBDIR += pear-File_Passwd
     SUBDIR += pear-File_SMBPasswd
     SUBDIR += pear-HTML_Crypt
+    SUBDIR += pear-Horde_Secret
     SUBDIR += pear-LiveUser
     SUBDIR += pear-LiveUser_Admin
     SUBDIR += pear-Net_Portscan
