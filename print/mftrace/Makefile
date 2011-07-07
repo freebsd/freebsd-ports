@@ -7,11 +7,11 @@
 #
 
 PORTNAME=	mftrace
-PORTVERSION=	1.2.15
-PORTREVISION=	4
+PORTVERSION=	1.2.16
+PORTREVISION=	0
 CATEGORIES=	print
-MASTER_SITES=	LOCAL/nivit/${PORTNAME}/ \
-		http://lilypond.org/download/sources/mftrace/
+MASTER_SITES=	http://lilypond.org/download/sources/mftrace/ \
+		LOCAL/nivit/${PORTNAME}/
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	Scalable PostScript (Type1) Fonts for MetaFont
