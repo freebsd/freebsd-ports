@@ -2627,6 +2627,7 @@
     SUBDIR += pear-Horde_Lock
     SUBDIR += pear-Horde_LoginTasks
     SUBDIR += pear-Horde_Notification
+    SUBDIR += pear-Horde_Prefs
     SUBDIR += pear-Horde_Role
     SUBDIR += pear-Horde_Serialize
     SUBDIR += pear-Horde_Stream_Filter

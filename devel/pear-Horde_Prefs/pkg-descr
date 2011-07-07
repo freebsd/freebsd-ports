@@ -1,0 +1,5 @@
+The Horde_Prefs package provides a common abstracted interface into
+the various preferences storage mediums. It also includes all
+of the functions for retrieving, storing, and checking preference values.
+
+WWW: http://pear.horde.org
