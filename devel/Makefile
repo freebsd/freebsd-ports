@@ -2620,6 +2620,7 @@
     SUBDIR += pear-HTML_Template_PHPLIB
     SUBDIR += pear-HTML_Template_Sigma
     SUBDIR += pear-HTML_TreeMenu
+    SUBDIR += pear-Horde_Autoloader
     SUBDIR += pear-Horde_Role
     SUBDIR += pear-Horde_Stream_Filter
     SUBDIR += pear-I18N
