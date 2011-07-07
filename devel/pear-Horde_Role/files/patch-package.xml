@@ -1,0 +1,19 @@
+--- package.xml.orig	2011-07-06 19:43:43.648445754 +0200
++++ package.xml	2011-07-06 19:44:38.243342032 +0200
+@@ -33,16 +33,6 @@
+  <contents>
+   <dir baseinstalldir="/" name="/">
+    <file baseinstalldir="/" md5sum="439c9f2fe87c01e0d3a8131d81a13f56" name="Horde/Role.php" role="php">
+-    <tasks:postinstallscript>
+-     <tasks:paramgroup>
+-      <tasks:id>first</tasks:id>
+-      <tasks:param>
+-       <tasks:name>horde_dir</tasks:name>
+-       <tasks:prompt>Filesystem location for the base Horde application</tasks:prompt>
+-       <tasks:type>string</tasks:type>
+-      </tasks:param>
+-     </tasks:paramgroup>
+-    </tasks:postinstallscript>
+    </file>
+    <file baseinstalldir="/" md5sum="a076d676b0ec3a5394c98770c8ccb000" name="Horde.php" role="php" />
+    <file baseinstalldir="/" md5sum="801c6dc09a5c93f9f140ed423164f788" name="Horde.xml" role="php" />

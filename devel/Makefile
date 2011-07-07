@@ -2620,6 +2620,7 @@
     SUBDIR += pear-HTML_Template_PHPLIB
     SUBDIR += pear-HTML_Template_Sigma
     SUBDIR += pear-HTML_TreeMenu
+    SUBDIR += pear-Horde_Role
     SUBDIR += pear-I18N
     SUBDIR += pear-Math_Fraction
     SUBDIR += pear-Net_Gearman
