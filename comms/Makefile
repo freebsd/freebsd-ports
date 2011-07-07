@@ -104,6 +104,7 @@
     SUBDIR += p5-SMS-Send-TW-emome
     SUBDIR += p5-SMS-SMS77
     SUBDIR += pear-Horde_ActiveSync
+    SUBDIR += pear-Horde_SyncMl
     SUBDIR += picocom
     SUBDIR += pr
     SUBDIR += predict
