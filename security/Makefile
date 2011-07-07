@@ -609,6 +609,7 @@
     SUBDIR += pear-Horde_Group
     SUBDIR += pear-Horde_Perms
     SUBDIR += pear-Horde_Secret
+    SUBDIR += pear-Horde_Share
     SUBDIR += pear-LiveUser
     SUBDIR += pear-LiveUser_Admin
     SUBDIR += pear-Net_Portscan
