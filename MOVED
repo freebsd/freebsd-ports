@@ -2256,3 +2256,4 @@ sysutils/service-config||2011-07-02|Has expired: "mastersite disappeared"
 print/lyx-devel||2011-07-03|print/lyx has been updated to a newer version, use it instead
 archivers/lzo|archivers/lzo2|2011-07-07|Use lzo2 instead.
 www/horde4-browser||2011-07-07|Removed
+www/horde4-template||2011-07-07|Removed
