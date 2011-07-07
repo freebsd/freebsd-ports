@@ -2648,6 +2648,7 @@
     SUBDIR += pear-Horde_Support
     SUBDIR += pear-Horde_Token
     SUBDIR += pear-Horde_Translation
+    SUBDIR += pear-Horde_Tree
     SUBDIR += pear-Horde_Util
     SUBDIR += pear-Horde_View
     SUBDIR += pear-I18N
