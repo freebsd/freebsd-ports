@@ -625,6 +625,7 @@
     SUBDIR += pear-File_Find
     SUBDIR += pear-File_Fstab
     SUBDIR += pear-File_Gettext
+    SUBDIR += pear-Horde_Log
     SUBDIR += pear-I18Nv2
     SUBDIR += pear-Log
     SUBDIR += pear-Translation2
