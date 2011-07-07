@@ -27,6 +27,8 @@ RESTRICTED=	Redistribution of pre-compiled binaries is not permitted
 INSTALL_DIR=	${PREFIX}/ventrilo-server
 USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}.sh
 VENT_USER=	${PORTNAME}
+USERS=		${VENT_USER}
+GROUPS=		${USERS}
 WRKSRC=	${WRKDIR}/ventsrv
 SUB_FILES=	pkg-message
 
@@ -35,8 +37,6 @@ IGNORE=	distfile can only be fetched if you accept the license. Go to http://www
 .endif
 
 do-install:
-	@ ${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 	@${MKDIR} ${INSTALL_DIR}
 	@${CHOWN} ${VENT_USER} ${INSTALL_DIR}
 	${INSTALL_PROGRAM} ${WRKSRC}/ventrilo_srv ${INSTALL_DIR}
@@ -53,10 +53,6 @@ do-install:
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
-
-post-deinstall:
-	@ ${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGDEINSTALL} ${PORTNAME} POST-DEINSTALL
 
 PKGDEINSTALL=	${PKGINSTALL}
 

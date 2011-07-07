@@ -77,6 +77,7 @@ ladvd:*:142:
 dovecot:*:143:
 dovenull:*:144:
 webcamd:*:145:
+ventrilo:*:146:
 rbldns:*:153:
 sfs:*:171:
 agk:*:172:
