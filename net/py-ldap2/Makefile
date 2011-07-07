@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ldap2
-PORTVERSION=	2.4.0
+PORTVERSION=	2.4.1
 CATEGORIES=	net python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -13,6 +13,8 @@ DISTNAME=	python-ldap-${PORTVERSION}
 
 MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	An LDAP module for python, for OpenLDAP2
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}asn1-modules>=0:${PORTSDIR}/devel/py-asn1-modules
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
