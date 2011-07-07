@@ -1,5 +1,5 @@
+@comment $FreeBSD$
 #!/bin/sh
-# $FreeBSD$
 
 EASYINSTALL_PTH=%%EASYINSTALL_PTH%%
 
