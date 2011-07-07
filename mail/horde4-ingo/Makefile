@@ -6,31 +6,32 @@
 #
 
 PORTNAME=	ingo
-PORTVERSION=	1.2.5
-DISTVERSIONSUFFIX=
-PORTREVISION=	1
-PORTEPOCH=	1
-CATEGORIES=	mail www
+PORTVERSION=	2.0.3
+CATEGORIES=	mail www pear
+PKGNAMEPREFIX=	horde-
 
-MAINTAINER=	beech@FreeBSD.org
-COMMENT=	Email-filter management application
+MAINTAINER=	mm@FreeBSD.org
+COMMENT=	Horde email filter rules manager
 
-#-----------------------------------------------------------------------
-# You may define this option:
-#
-# - WITH_SIEVE	: if you run timsieved (with Cyrus).
-#
-#-----------------------------------------------------------------------
+LICENSE=	ASL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-.if defined(WITH_SIEVE) || exists(${LOCALBASE}/cyrus/bin/timsieved)
-RUN_DEPENDS+=	${PEARDIR}/Net/Sieve.php:${PORTSDIR}/net/pear-Net_Sieve
-.endif
+USE_PHP=	gettext
+USE_HORDE_BUILD=	Horde_Role
+USE_HORDE_RUN=	Horde_Role \
+		horde \
+		Horde_Auth \
+		Horde_Autoloader \
+		Horde_Core \
+		Horde_Exception \
+		Horde_Group \
+		Horde_Form \
+		Horde_Imap_Client \
+		Horde_Mime \
+		Horde_Perms \
+		Horde_Share \
+		Horde_Util
 
-BROKEN=		Rewrite in progress
-USE_PHP=	imap
-USE_HORDE=	base pkg-message
-USE_GETTEXT=	yes
-PORTDOCS=	README CHANGES CREDITS INSTALL RELEASE_NOTES TODO
-
-.include "${.CURDIR}/../../www/horde-base/bsd.horde.mk"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
+.include <bsd.port.post.mk>
