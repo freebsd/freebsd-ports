@@ -12,7 +12,7 @@ include/qtruby/marshall_primitives.h
 include/qtruby/marshall_types.h
 include/qtruby/qtruby.h
 include/qtruby/smokeruby.h
-lib/kde4/krossruby.so
+%%KROSS%%lib/kde4/krossruby.so
 lib/kde4/krubypluginfactory.so
 lib/libqtruby4shared.so
 lib/libqtruby4shared.so.2
