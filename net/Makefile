@@ -755,6 +755,7 @@
     SUBDIR += pear-Horde_Kolab_Server
     SUBDIR += pear-Horde_Kolab_Session
     SUBDIR += pear-Horde_Ldap
+    SUBDIR += pear-Horde_Scribe
     SUBDIR += pear-Horde_Url
     SUBDIR += pear-Net_CDDB
     SUBDIR += pear-Net_CheckIP
