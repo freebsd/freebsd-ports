@@ -1,0 +1,4 @@
+The Horde_Text_Flowed:: class provides common methods for manipulating text
+using the encoding described in RFC 3676 ('flowed' text).
+
+WWW: http://pear.horde.org

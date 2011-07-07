@@ -954,6 +954,7 @@
     SUBDIR += pear-File_MARC
     SUBDIR += pear-Horde_Text_Filter
     SUBDIR += pear-Horde_Text_Filter_Csstidy
+    SUBDIR += pear-Horde_Text_Flowed
     SUBDIR += pear-Numbers_Roman
     SUBDIR += pear-Numbers_Words
     SUBDIR += pear-Spreadsheet_Excel_Writer
