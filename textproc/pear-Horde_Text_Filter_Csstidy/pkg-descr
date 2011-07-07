@@ -1,0 +1,6 @@
+The Horde_Text_Filter_Csstidy:: class provides the PHP-based library needed
+to perform optimization/compression on CSS code. It is provided in a separate
+package as the code is under the GPLv2 license instead of the LGPLv2 license
+used for the Text_Filter class.
+
+WWW: http://pear.horde.org
