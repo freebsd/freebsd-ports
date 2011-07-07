@@ -1,0 +1,4 @@
+Horde package providing classes for parsing command line arguments with
+various actions, providing help, grouping options, and more.
+
+WWW: http://pear.horde.org
