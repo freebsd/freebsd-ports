@@ -1,0 +1,9 @@
+This package provides a data import and export API, with backends for:
+* CSV
+* TSV
+* iCalendar
+* vCard
+* vNote
+* vTodo
+
+WWW: http://pear.horde.org
