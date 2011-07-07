@@ -13,8 +13,6 @@ PKGNAMEPREFIX=	horde-
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Horde web based webmail system
 
-CONFLICTS=	horde-3*
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
