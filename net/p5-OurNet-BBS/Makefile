@@ -42,6 +42,8 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Class/MethodMaker.pm:${PORTSDIR}/devel/
 		${SITE_PERL}/enum.pm:${PORTSDIR}/devel/p5-enum
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+PORTSCOUT=	skipv:1.67
+
 PERL_CONFIGURE=	5.7.3+
 
 MAN1=		bbsboard.1 bbscomd.1 bbsmail.1
