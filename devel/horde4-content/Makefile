@@ -7,39 +7,25 @@
 
 PORTNAME=	content
 PORTVERSION=	1.0.0
-DISTVERSIONPREFIX=
-DISTVERSIONSUFFIX=
-CATEGORIES=	devel www
-MASTER_SITES=		http://pear.horde.org/get/ \
-			LOCAL/beech
-PKGNAMEPREFIX=	horde4-
-DISTNAME=	content-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
+CATEGORIES=	devel www pear
+PKGNAMEPREFIX=	horde-
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Horde tagging application
 
-BROKEN=		Rewrite in progress
-USE_HORDE=	base
-USE_GETTEXT=	yes
+CONFLICTS=	horde-3*
 
-post-extract:
-	@${MKDIR} ${WRKSRC}/config && ${TOUCH} ${WRKSRC}/config/placeholder.dist
+USE_PHP=	gettext
+USE_HORDE_BUILD=	Horde_Role
+USE_HORDE_RUN=	Horde_Role \
+		Horde_Core \
+		Horde_Date \
+		Horde_Exception \
+		Horde_Db \
+		Horde_Injector \
+		Horde_Rdo \
+		Horde_Util
 
-do-install:
-	@${INSTALL} -d ${HORDIR}/
-#	@${CP} ${WRKSRC}/lib/Horde/content.php ${HORBAS}/
-	@${CP} -Rp ${WRKSRC}/app/ ${HORDIR}/
-	@${CP} -Rp ${WRKSRC}/config/ ${HORDIR}/
-	@${CP} -Rp ${WRKSRC}/lib/ ${HORDIR}/
-	@${CP} -Rp ${WRKSRC}/migration/ ${HORDIR}/	
-	@${ECHO_CMD} @exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} %D/${HORDIR:S|^${PREFIX}/||}/ >> ${TMPPLIST}
-	@${ECHO_CMD} @exec ${CHMOD} -R o-rwx %D/${HORDIR:S|^${PREFIX}/||}/ >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${TOUCH} ${HORLOG};${CHOWN} ${WWWOWN}:${WWWGRP} ${HORLOG}" >> ${TMPPLIST}
-
-	@${ECHO_MSG}
-	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
-
-.include "${.CURDIR}/../../www/horde4-base/bsd.horde4.mk"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
+.include <bsd.port.post.mk>
