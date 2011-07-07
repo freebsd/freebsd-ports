@@ -2628,6 +2628,7 @@
     SUBDIR += pear-Horde_Stream_Filter
     SUBDIR += pear-Horde_Stream_Wrapper
     SUBDIR += pear-Horde_Support
+    SUBDIR += pear-Horde_Translation
     SUBDIR += pear-I18N
     SUBDIR += pear-Math_Fraction
     SUBDIR += pear-Net_Gearman
