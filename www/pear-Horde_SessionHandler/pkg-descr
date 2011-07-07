@@ -1,0 +1,4 @@
+Horde_SessionHandler defines an API for implementing
+custom session handlers for PHP.
+
+WWW: http://pear.horde.org
