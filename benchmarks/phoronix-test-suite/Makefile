@@ -22,7 +22,6 @@ OPTIONS=	BASH_COMPLETIONS "Install bash completions" off \
 USE_PHP=	zip json openssl gd zlib pcntl posix curl
 USE_PHP_BUILD=	yes
 WANT_PHP_CLI=	yes
-USE_GZIP=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/phoronix-test-suite
 MAN1=		phoronix-test-suite.1

@@ -15,7 +15,6 @@ MAINTAINER=	onemda@gmail.com
 COMMENT=	The Unix port of fractint
 
 USE_GMAKE=	yes
-USE_GZIP=	yes
 USE_XORG=	x11
 
 ALL_TARGET=	${PORTNAME}

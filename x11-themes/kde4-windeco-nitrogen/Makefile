@@ -16,7 +16,6 @@ DISTNAME=	99551-${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}-Source
 MAINTAINER=	decept0@gmail.com
 COMMENT=	KDE4 window decoration
 
-USE_GZIP=	yes
 USE_KDE4=	kdelibs kdehier kdeprefix automoc4 workspace
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build

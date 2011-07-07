@@ -16,7 +16,6 @@ COMMENT=	PC-BSD Support Library
 
 WRKSRC=		${WRKDIR}/libpcbsd
 
-USE_GZIP=	yes
 USE_CMAKE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib qmake_build moc_build rcc_build uic_build

@@ -17,7 +17,6 @@ COMMENT=	C++ XML parser library
 
 LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
-USE_GZIP=	yes
 USE_CMAKE=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes

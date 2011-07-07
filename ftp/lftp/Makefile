@@ -25,7 +25,6 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 LICENSE=	GPLv3
 
 USE_ICONV=	yes
-USE_GZIP=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 GNU_CONFIGURE=	yes
