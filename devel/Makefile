@@ -2669,6 +2669,7 @@
     SUBDIR += pear-XML_Tree
     SUBDIR += pear-XML_Util
     SUBDIR += pear-XML_XPath
+    SUBDIR += pear-channel-horde
     SUBDIR += pear-codegen
     SUBDIR += pecl-automap
     SUBDIR += pecl-bbcode
