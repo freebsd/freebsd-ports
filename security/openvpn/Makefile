@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	openvpn
-DISTVERSION=	2.2.0
+DISTVERSION=	2.2.1
 CATEGORIES=	security net
 # MASTER_SITES points to hosts in distinct data centers,
 # so just one MASTER_SITES entry should be OK.
@@ -44,18 +44,6 @@ SUB_LIST+=	OSVERSION=${OSVERSION}
 CFLAGS+=	-DLOG_OPENVPN=${LOG_OPENVPN}
 .endif
 
-pre-configure:
-.ifdef (LOG_OPENVPN)
-	@${ECHO} "Building with LOG_OPENVPN=${LOG_OPENVPN}"
-.else
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "      LOG_OPENVPN={Valid syslog facility, default LOG_DAEMON}"
-	@${ECHO} "      EXAMPLE:  make LOG_OPENVPN=LOG_DAEMON"
-	@${ECHO} ""
-.endif
-
 LIB_DEPENDS+=	lzo2.2:${PORTSDIR}/archivers/lzo2
 
 .if defined(WITH_PW_SAVE)
@@ -68,6 +56,9 @@ LIB_DEPENDS+=	pkcs11-helper.1:${PORTSDIR}/security/pkcs11-helper
 CONFIGURE_ARGS+=	--disable-pkcs11
 .endif
 
+post-extract:
+	@${RM} ${WRKSRC}/easy-rsa/2.0/openssl-1.0.0.cnf-old-copy
+
 post-patch:
 	@${FIND} ${WRKSRC}/easy-rsa/?.0 -type f \
 	    -exec ${REINPLACE_CMD} -e 's;#!/bin/bash;#!/bin/sh;' \
@@ -75,6 +66,18 @@ post-patch:
 	@${FIND} ${WRKSRC}/plugin -name Makefile \
 	    -exec ${REINPLACE_CMD} -e 's;gcc;${CC};g' '{}' +
 	@${FIND} ${WRKSRC} \( -name \*.orig -o -name \*.bak \) -delete
+
+pre-configure:
+.ifdef (LOG_OPENVPN)
+	@${ECHO} "Building with LOG_OPENVPN=${LOG_OPENVPN}"
+.else
+	@${ECHO} ""
+	@${ECHO} "You may use the following build options:"
+	@${ECHO} ""
+	@${ECHO} "      LOG_OPENVPN={Valid syslog facility, default LOG_DAEMON}"
+	@${ECHO} "      EXAMPLE:  make LOG_OPENVPN=LOG_DAEMON"
+	@${ECHO} ""
+.endif
 
 post-build:
 	cd ${WRKSRC}/plugin/down-root && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS}

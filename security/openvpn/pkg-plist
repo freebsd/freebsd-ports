@@ -43,7 +43,8 @@ lib/openvpn-down-root.so
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/inherit-inter
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/list-crl
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/openssl-0.9.6.cnf
-%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/openssl.cnf
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/openssl-0.9.8.cnf
+%%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/openssl-1.0.0.cnf
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/pkitool
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/revoke-full
 %%PORTDOCS%%%%DOCSDIR%%/easy-rsa/2.0/sign-req
