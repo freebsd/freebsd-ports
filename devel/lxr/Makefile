@@ -21,7 +21,6 @@ BUILD_DEPENDS=	exctags:${PORTSDIR}/devel/ctags \
 
 PATCH_STRIP=	-p1
 
-USE_GZIP=	yes
 USE_PERL5=	yes
 NO_BUILD=	yes
 

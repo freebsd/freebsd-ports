@@ -17,7 +17,6 @@ COMMENT=	A simple software midi player and a core softsynth library
 LICENSE_COMB=	multi
 LICENSE=	GPLv3 LGPL3
 
-USE_GZIP=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

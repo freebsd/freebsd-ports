@@ -16,7 +16,6 @@ COMMENT=	C++ logging library
 
 LICENSE=	MIT
 
-USE_GZIP=	yes
 USE_CMAKE=	yes
 USE_LDCONFIG=	yes
 USE_GCC=	4.2+
