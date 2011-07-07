@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 PKGNAMESUFFIX?=	# empty
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Base set of libraries needed by KDE programs
 
 LIB_DEPENDS=	IlmImf:${PORTSDIR}/graphics/OpenEXR \

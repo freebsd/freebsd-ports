@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	stable/koffice-${PORTVERSION}/src/koffice-l10n
 PKGNAMEPREFIX=	ca-
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Catalan messages and documentation for koffice
 
 USE_KDELIBS_VER=3

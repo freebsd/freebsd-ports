@@ -15,7 +15,7 @@ MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${KDE_VERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Audio system for the KDE integrated X11 desktop
 
 LIB_DEPENDS+=	audiofile:${PORTSDIR}/audio/libaudiofile \

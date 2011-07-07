@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Various plugins for Noatun
 
 LIB_DEPENDS=	noatun:${PORTSDIR}/multimedia/kdemultimedia3

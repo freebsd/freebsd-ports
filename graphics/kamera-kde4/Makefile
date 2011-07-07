@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	kdegraphics-
 DISTNAME=	kdegraphics-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Digital camera support for KDE
 
 LIB_DEPENDS+=	gphoto2:${PORTSDIR}/graphics/libgphoto2

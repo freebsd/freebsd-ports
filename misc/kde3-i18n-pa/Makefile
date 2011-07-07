@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src/kde-i18n
 PKGNAMEPREFIX=	pa-
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Panjabi messages and documentation for KDE3
 
 USE_KDELIBS_VER=3

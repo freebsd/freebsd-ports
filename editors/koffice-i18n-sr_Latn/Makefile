@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	sr-Latn-
 DISTNAME=       ${PORTNAME:S/i18n/l10n/}-sr@Latn-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Serbian (latin alphabet) messages and documentation for koffice
 
 DISTNAME_OVERRIDE=yes

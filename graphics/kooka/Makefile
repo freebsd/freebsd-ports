@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	kdegraphics-
 DISTNAME=	kdegraphics-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Raster image scan program for KDE
 
 LIB_DEPENDS=	sane.1:${PORTSDIR}/graphics/sane-backends

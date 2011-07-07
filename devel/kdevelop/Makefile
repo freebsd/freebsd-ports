@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	stable/${KDE_VERSION}/src
 # DISTNAME=	${KDE_DISTNAME}
 DIST_SUBDIR=	KDE
 
-MAINTAINER?=	kde@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	IDE for a wide variety of programming tasks
 
 BUILD_DEPENDS=	cervisia:${PORTSDIR}/devel/kdesdk3 \

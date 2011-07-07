@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics utilities for the KDE3 integrated X11 desktop
 
 BUILD_DEPENDS=	kpsewhich:${PORTSDIR}/print/teTeX-base

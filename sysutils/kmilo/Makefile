@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	kdeutils-
 DISTNAME=	kdeutils-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enables special keys on custom keyboards
 
 USE_KDELIBS_VER=3

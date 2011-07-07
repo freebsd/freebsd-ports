@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	kdeartwork-
 DISTNAME=	kdeartwork-${PORTVERSION}
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Support for xscreensaver blankers in KDE
 
 USE_KDELIBS_VER=3

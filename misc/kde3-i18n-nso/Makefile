@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	Attic/${PORTVERSION:S/.0//}/src/kde-i18n
 PKGNAMEPREFIX=	nso-
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Northern Sotho messages and documentation for KDE3
 
 USE_KDELIBS_VER=3

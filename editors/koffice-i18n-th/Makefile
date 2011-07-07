@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	Attic/koffice-${PORTVERSION:S/.0//}/src/
 PKGNAMEPREFIX=	th-
 DIST_SUBDIR=	KDE
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Thai messages and documentation for koffice
 
 USE_KDELIBS_VER=3

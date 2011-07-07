@@ -11,7 +11,7 @@ CATEGORIES=		databases
 MASTER_SITES=		${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/koffice-1.6.3/src
 
-MAINTAINER=		kde@FreeBSD.org
+MAINTAINER=		ports@FreeBSD.org
 COMMENT=		MS Access import plugin for Kexi
 
 LIB_DEPENDS=		kexicore:${PORTSDIR}/editors/koffice-kde3

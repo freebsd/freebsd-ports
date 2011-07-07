@@ -11,7 +11,7 @@ CATEGORIES=	x11-toolkits
 MASTER_SITES=	${MASTER_SITES_QSCI1}
 DISTNAME=	${QSCI1_DISTNAME}
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QT port of the Scintilla C++ editor class
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
