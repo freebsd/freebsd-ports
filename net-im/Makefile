@@ -155,6 +155,7 @@
     SUBDIR += qutim-plugin-jabber
     SUBDIR += qwit
     SUBDIR += qwit-devel
+    SUBDIR += ramblercontacts
     SUBDIR += rubygem-termtter
     SUBDIR += rubygem-xmpp4r
     SUBDIR += sendxmpp
