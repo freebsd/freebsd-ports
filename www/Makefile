@@ -1392,6 +1392,7 @@
     SUBDIR += pear-HTTP_Upload
     SUBDIR += pear-HTTP_WebDAV_Client
     SUBDIR += pear-HTTP_WebDAV_Server
+    SUBDIR += pear-Horde_SessionHandler
     SUBDIR += pear-Horde_Template
     SUBDIR += pear-Services_Amazon
     SUBDIR += pear-Services_Amazon_S3
