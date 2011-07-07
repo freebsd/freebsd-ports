@@ -1,0 +1,4 @@
+This Horde package provides a text-based diff engine and renderers
+for multiple diff output formats.
+
+WWW: http://pear.horde.org
