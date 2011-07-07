@@ -6,100 +6,52 @@
 #
 
 PORTNAME=	imp
-PORTVERSION=	5.0.4
-DISTVERSIONPREFIX=
-DISTVERSIONSUFFIX=
-CATEGORIES=	mail www
-MASTER_SITES=		http://pear.horde.org/get/ \
-			LOCAL/beech
-PKGNAMEPREFIX=	horde4-
-EXTRACT_SUFX=	.tgz
+PORTVERSION=	5.0.8
+CATEGORIES=	mail www pear
+PKGNAMEPREFIX=	horde-
 
-MAINTAINER=	beech@FreeBSD.org
-COMMENT=	Webmail system for IMAP/POP3 mailboxes
+MAINTAINER=	mm@FreeBSD.org
+COMMENT=	Horde web based webmail system
 
-#-----------------------------------------------------------------------
-# You may define these options:
-#
-# - WITHOUT_LDAP	: if you do not need OpenLDAP;
-#
-# - WITHOUT_SMIME	: disable S/MIME;
-#
-# - WITHOUT_SUPPORTED_DB: if you run a database not in the ports tree;
-#
-# - WITHOUT_ASPELL	: for spelling bees...
-#
-# - WITH_ISPELL		: if you prefer ispell;
-#
-# - NOCRYPT		: if crypto is restricted in your country;
-#
-# - WITHOUT_SSL		: if you have not installed c-client WITH_SSL;
-#
-# - WITH_VALID_CERT	: if you own a valid SSL certificate;
-#
-# - WITH_HTML		: enable HTML composition mode;
-#-----------------------------------------------------------------------
+CONFLICTS=	horde-3*
 
-LATEST_LINK=	horde4-imp
-RUN_DEPENDS+=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-USE_PHP=	imap
-. if !defined(WITHOUT_LDAP)
-USE_PHP+=	ldap
-. endif
+USE_HORDE_BUILD=	Horde_Role
+USE_HORDE_RUN=	Horde_Role \
+		horde \
+		Horde_Auth \
+		Horde_Browser \
+		Horde_Compress \
+		Horde_Core \
+		Horde_Crypt \
+		Horde_Date \
+		Horde_Editor \
+		Horde_Exception \
+		Horde_Form \
+		Horde_Icalendar \
+		Horde_Image \
+		Horde_Imap_Client \
+		Horde_Itip \
+		Horde_LoginTasks \
+		Horde_Mail \
+		Horde_Mime \
+		Horde_Mime_Viewer \
+		Horde_Nls \
+		Horde_Notification \
+		Horde_Perms \
+		Horde_Serialize \
+		Horde_SpellChecker \
+		Horde_Support \
+		Horde_Text_Filter \
+		Horde_Text_Flowed \
+		Horde_Token \
+		Horde_Tree \
+		Horde_Url \
+		Horde_Util \
+		Horde_View
 
-.if !defined(WITHOUT_SMIME)
-USE_PHP+=	openssl
-.endif
-
-.if !defined(NOCRYPT)
-RUN_DEPENDS+=
-${PEARDIR}/Mail/mimeDecode.php:${PORTSDIR}/mail/pear-Mail_mimeDecode \
-		${LOCALBASE}/bin/gpg:${PORTSDIR}/security/gnupg
-.endif
-
-.if !defined(WITHOUT_ASPELL)
-RUN_DEPENDS+=	${LOCALBASE}/bin/aspell:${PORTSDIR}/textproc/aspell
-.elif defined(WITH_ISPELL)
-RUN_DEPENDS+=	${LOCALBASE}/bin/ispell:${PORTSDIR}/textproc/ispell
-.endif
-
-.if defined(WITH_HTML)
-RUN_DEPENDS+=	${PEARDIR}/HTTP/Request.php:${PORTSDIR}/www/pear-HTTP_Request
-.endif
-
-CONFLICTS=	imp-4.*
-USE_HORDE=	base
-USE_GETTEXT=	yes
-PORTDOCS=	README CHANGES CREDITS INSTALL	\
-		RELEASE_NOTES  UPGRADING
-
-pre-configure:
-.if !defined(WITHOUT_ASPELL)
-	@${REINPLACE_CMD} -e "s:%%ASPELL%%:${LOCALBASE}/bin/aspell:" \
-		${WRKSRC}/config/conf.xml
-.elif defined(WITH_ISPELL)
-	@${REINPLACE_CMD} -e "s:%%ASPELL%%:${LOCALBASE}/bin/ispell:" \
-		${WRKSRC}/config/conf.xml
-.else
-	@${REINPLACE_CMD} -e "s:%%ASPELL%%::" ${WRKSRC}/config/conf.xml
-.endif
-.if !defined(NOCRYPT)
-	@${REINPLACE_CMD} -e "s:%%GPG%%:${LOCALBASE}/bin/gpg:" \
-		${WRKSRC}/config/conf.xml
-.else
-	@${REINPLACE_CMD} -e "s:%%GPG%%::" ${WRKSRC}/config/conf.xml
-.endif
-
-pre-install:
-.if !defined(BATCH) && !defined(WITHOUT_SSL)
-	@if ! ${GREP} -q -e 'CCLIENT_SSLENABLED "yes"' ${PORTREV_H}; then \
-	    ${ECHO_MSG} "" ; \
-	    ${ECHO_MSG} "Please configure c-client with SSL support." ; \
-	    ${ECHO_MSG} "" ; \
-	    ${FALSE} ; \
-	fi
-.endif
-
-.include "${.CURDIR}/../../www/horde4-base/bsd.horde4.mk"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
+.include <bsd.port.post.mk>
