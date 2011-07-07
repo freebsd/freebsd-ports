@@ -6,23 +6,60 @@
 #
 
 PORTNAME=	turba
-PORTVERSION=	2.3.5
-DISTVERSIONSUFFIX=
-PORTREVISION=	1
-CATEGORIES=	mail www
+PORTVERSION=	3.0.4
+PKGNAMEPREFIX=	horde-
+CATEGORIES=	www pear
 
-MAINTAINER=	beech@FreeBSD.org
-COMMENT=	Contact management application
+MAINTAINER=	mm@FreeBSD.org
+COMMENT=	Horde web based address book
 
-USE_HORDE=	base
-USE_PHP=	ldap
-USE_GETTEXT=	yes
+CONFLICTS=	horde-3*
 
-PORTDOCS=	README CHANGES CREDITS INSTALL LDAP RELEASE_NOTES TODO UPGRADING
+LICENSE=	ASL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
-pre-patch:
-	@${REINPLACE_CMD} -e "s:/usr/bin/ldapadd:${LOCALBASE}/bin/ldapadd:"	\
-		${WRKSRC}/scripts/ldap/addou.pl
+OPTIONS=	FACEBOOK "Support connections with Facebook" Off \
+		IMSP "Support IMSP addressbooks" Off \
+		LDAP "Support LDAP Addressbooks" Off
 
-.include "${.CURDIR}/../../www/horde-base/bsd.horde.mk"
-.include <bsd.port.mk>
+USE_PHP=	gettext hash json
+USE_HORDE_BUILD=	Horde_Role
+USE_HORDE_RUN=	Horde_Role \
+		horde \
+		Horde_Auth \
+		Horde_Core \
+		Horde_Data \
+		Horde_Date \
+		Horde_Exception \
+		Horde_Form \
+		Horde_Group \
+		Horde_History \
+		Horde_Icalendar \
+		Horde_Mail \
+		Horde_Mime \
+		Horde_Nls \
+		Horde_Perms \
+		Horde_Prefs \
+		Horde_Serialize \
+		Horde_Share \
+		Horde_Support \
+		Horde_Url \
+		Horde_Util \
+		Horde_View
+
+.include <bsd.port.pre.mk>
+
+.if defined(WITH_FACEBOOK)
+USE_HORDE_RUN+=	Horde_Service_Facebook
+.endif
+
+.if defined(WITH_IMSP)
+USE_HORDE_RUN+=	Horde_Imsp
+.endif
+
+.if defined(WITH_LDAP)
+USE_HORDE_RUN+=	Horde_Ldap
+.endif
+
+.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
+.include <bsd.port.post.mk>
