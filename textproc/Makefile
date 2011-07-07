@@ -953,6 +953,7 @@
     SUBDIR += pear-File_Fortune
     SUBDIR += pear-File_MARC
     SUBDIR += pear-Horde_Kolab_Format
+    SUBDIR += pear-Horde_Pdf
     SUBDIR += pear-Horde_SpellChecker
     SUBDIR += pear-Horde_Text_Diff
     SUBDIR += pear-Horde_Text_Filter
