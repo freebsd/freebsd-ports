@@ -1,0 +1,5 @@
+This package provides classes for mapping URLs into the controllers and
+actions of an MVC system. It is a port of a Python library, Routes,
+by Ben Bangert (http://routes.groovie.org).
+
+WWW: http://pear.horde.org
