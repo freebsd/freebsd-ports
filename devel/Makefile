@@ -2636,6 +2636,7 @@
     SUBDIR += pear-Horde_History
     SUBDIR += pear-Horde_Icalendar
     SUBDIR += pear-Horde_Injector
+    SUBDIR += pear-Horde_Itip
     SUBDIR += pear-Horde_Lock
     SUBDIR += pear-Horde_LoginTasks
     SUBDIR += pear-Horde_Nls
