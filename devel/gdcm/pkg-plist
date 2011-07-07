@@ -1,5 +1,3 @@
-bin/gdcm2pnm
-bin/gdcm2vtk
 bin/gdcmanon
 bin/gdcmconv
 bin/gdcmdump
@@ -9,7 +7,9 @@ bin/gdcminfo
 bin/gdcmraw
 bin/gdcmscanner
 bin/gdcmtar
-bin/gdcmviewer
+%%VTK%%bin/gdcmviewer
+%%VTK%%bin/gdcm2pnm
+%%VTK%%bin/gdcm2vtk
 include/gdcm-%%GDCM_MAJ%%/gdcmASN1.h
 include/gdcm-%%GDCM_MAJ%%/gdcmAnonymizeEvent.h
 include/gdcm-%%GDCM_MAJ%%/gdcmAnonymizer.h
