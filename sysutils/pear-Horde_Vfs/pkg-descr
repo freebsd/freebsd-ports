@@ -1,0 +1,13 @@
+This package provides a Virtual File System API, with backends for:
+* SQL
+* FTP
+* Local filesystems
+* Hybrid SQL and filesystem
+* Samba
+* SSH2/SFTP
+* IMAP (Kolab)
+
+Reading, writing and listing of files are all supported, and there are both
+object-based and array-based interfaces to directory listings.
+
+WWW: http://pear.horde.org

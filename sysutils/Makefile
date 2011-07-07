@@ -626,6 +626,7 @@
     SUBDIR += pear-File_Fstab
     SUBDIR += pear-File_Gettext
     SUBDIR += pear-Horde_Log
+    SUBDIR += pear-Horde_Vfs
     SUBDIR += pear-I18Nv2
     SUBDIR += pear-Log
     SUBDIR += pear-Translation2
