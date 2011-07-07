@@ -464,6 +464,7 @@
     SUBDIR += pathalias
     SUBDIR += pear-Contact_Vcard_Build
     SUBDIR += pear-Contact_Vcard_Parse
+    SUBDIR += pear-Horde_Mail
     SUBDIR += pear-MIME_Type
     SUBDIR += pear-Mail
     SUBDIR += pear-Mail_Mbox
