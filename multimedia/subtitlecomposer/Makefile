@@ -11,7 +11,7 @@ PORTREVISION=	4
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/subcomposer/subcomposer/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Subtitle editor for KDE
 
 USE_BZIP2=	yes

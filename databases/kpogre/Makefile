@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	databases kde
 MASTER_SITES=	SF
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PostgreSQL administration tool for KDE
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx

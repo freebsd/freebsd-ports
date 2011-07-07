@@ -11,7 +11,7 @@ PORTREVISION=	8
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qwt widget library for technical purposes (old version)
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake

@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	misc kde
 MASTER_SITES=	SF/${PORTNAME}/Source%20Packages/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A new K-menu for KDE
 
 USE_CMAKE=	yes

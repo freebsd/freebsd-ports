@@ -12,7 +12,7 @@ CATEGORIES=	x11-themes
 MASTER_SITES=	http://beta.smileaf.org/files/kdmtheme/ \
 		${MASTER_SITE_GENTOO:S/%SUBDIR%/distfiles/}
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDM Theme Manager
 
 USE_KDEBASE_VER=3

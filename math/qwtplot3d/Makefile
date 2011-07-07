@@ -13,7 +13,7 @@ CATEGORIES=	math
 MASTER_SITES=	SF
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	makc@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 3D plotting widget for scientific data and mathematical expressions
 
 BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
