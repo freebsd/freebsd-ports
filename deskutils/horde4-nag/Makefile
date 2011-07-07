@@ -6,24 +6,40 @@
 #
 
 PORTNAME=	nag
-PORTVERSION=	3.0.1
-DISTVERSIONPREFIX=
-DISTVERSIONSUFFIX=
-CATEGORIES=	deskutils www
-MASTER_SITES=		http://pear.horde.org/get/ \
-			LOCAL/beech
-PKGNAMEPREFIX=	horde4-
-EXTRACT_SUFX=	.tgz
+PORTVERSION=	3.0.2
+CATEGORIES=	deskutils www pear
+PKGNAMEPREFIX=	horde-
 
-MAINTAINER=	beech@FreeBSD.org
-COMMENT=	Simple multiuser task list manager
+MAINTAINER=	mm@FreeBSD.org
+COMMENT=	Horde web based task list manager
 
-CONFLICTS=	nag-2.*
-USE_HORDE=	base
-USE_GETTEXT=	yes
-PORTDOCS=	README CHANGES CREDITS INSTALL \
-		RELEASE_NOTES UPGRADING
-LATEST_LINK=	horde4-nag
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-.include "${.CURDIR}/../../www/horde4-base/bsd.horde4.mk"
-.include <bsd.port.mk>
+USE_PHP=	gettext
+USE_HORDE_BUILD=	Horde_Role
+USE_HORDE_RUN=	Horde_Role \
+		horde \
+		Horde_Auth \
+		Horde_Core \
+		Horde_Data \
+		Horde_Date \
+		Horde_Date_Parser \
+		Horde_Exception \
+		Horde_Form \
+		Horde_Group \
+		Horde_History \
+		Horde_Icalendar \
+		Horde_Mime \
+		Horde_Perms \
+		Horde_Prefs \
+		Horde_Share \
+		Horde_Support \
+		Horde_Text_Filter \
+		Horde_Url \
+		Horde_Util \
+		Horde_View
+
+.include <bsd.port.pre.mk>
+.include "${PORTSDIR}/devel/pear-channel-horde/bsd.horde.mk"
+.include <bsd.port.post.mk>

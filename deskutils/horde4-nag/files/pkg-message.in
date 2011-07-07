@@ -1,6 +1,0 @@
-************************************************************************
-Nag has been installed in %%HORDIR%% with your blank
-configuration files.
-
-Horde must be configured; if not, see `pkg_info -Dx horde-base'.
-************************************************************************
