@@ -1,0 +1,31 @@
+@comment $FreeBSD$
+@unexec %D/etc/rc.d/isc-dhcpd forcestop 2>/dev/null || true
+%%IPV6%%@unexec %D/etc/rc.d/isc-dhcpd6 forcestop 2>/dev/null || true
+@unexec if cmp -s %D/etc/dhcpd.conf.sample %D/etc/dhcpd.conf; then rm -f %D/etc/dhcpd.conf; fi
+etc/dhcpd.conf.sample
+@exec if [ ! -f %D/etc/dhcpd.conf ] ; then cp -p %D/%F %B/dhcpd.conf; fi
+%%IPV6%%@unexec if cmp -s %D/etc/dhcpd6.conf.sample %D/etc/dhcpd6.conf; then rm -f %D/etc/dhcpd6.conf; fi
+%%IPV6%%etc/dhcpd6.conf.sample
+%%IPV6%%@exec if [ ! -f %D/etc/dhcpd6.conf ] ; then cp -p %D/%F %B/dhcpd6.conf; fi
+%%IPV6%%etc/rc.d/isc-dhcpd6
+sbin/dhcpd
+bin/omshell
+%%LDAP%%bin/dhcpd-conf-to-ldap
+include/dhcpctl.h
+include/isc-dhcp/dst.h
+include/omapip/alloc.h
+include/omapip/buffer.h
+include/omapip/omapip.h
+include/omapip/omapip_p.h
+include/omapip/hash.h
+include/omapip/trace.h
+include/omapip/convert.h
+include/omapip/isclib.h
+include/omapip/result.h
+lib/libdhcpctl.a
+lib/libomapi.a
+lib/libdst.a
+%%LDAP%%%%SCHEMA_DIR%%/dhcp.schema
+%%LDAP%%@dirrm %%SCHEMA_DIR%%
+@dirrm include/omapip
+@dirrm include/isc-dhcp
