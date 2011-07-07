@@ -1,6 +1,6 @@
-Mnemo is the Horde notes and memos application. It lets users keep
-free-text notes and other bits of information which doesn't fit as a
-contact, a todo item, an event, etc. It is very similar in
-functionality to the Palm Memo application.
+The Mnemo Note Manager is the Horde notes/memos application. It allows users
+to keep web-based notes and freeform text. Notes may be shared with other
+users via shared notepads. It requires the Horde Application Framework and
+an SQL database or Kolab server for backend storage.
 
-WWW: http://horde.org/
+WWW: http://www.horde.org/apps/mnemo/
