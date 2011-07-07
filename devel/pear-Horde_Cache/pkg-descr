@@ -1,0 +1,6 @@
+This Horde package provides a simple, functional caching API, with the option
+to store the cached data on the filesystem, in one of the PHP opcode cache
+systems (APC, eAcclerator, XCache, or Zend Performance Suite's content cache),
+memcached, or an SQL table.
+
+WWW: http://pear.horde.org
