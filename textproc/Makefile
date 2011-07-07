@@ -952,6 +952,7 @@
     SUBDIR += pdftohtml
     SUBDIR += pear-File_Fortune
     SUBDIR += pear-File_MARC
+    SUBDIR += pear-Horde_Kolab_Format
     SUBDIR += pear-Horde_Text_Filter
     SUBDIR += pear-Horde_Text_Filter_Csstidy
     SUBDIR += pear-Horde_Text_Flowed
