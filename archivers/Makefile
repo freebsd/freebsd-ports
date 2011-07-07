@@ -76,7 +76,6 @@
     SUBDIR += lzlib
     SUBDIR += lzma
     SUBDIR += lzmalib
-    SUBDIR += lzo
     SUBDIR += lzo2
     SUBDIR += lzop
     SUBDIR += macutils
