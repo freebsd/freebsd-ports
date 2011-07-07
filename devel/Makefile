@@ -2629,6 +2629,7 @@
     SUBDIR += pear-Horde_Injector
     SUBDIR += pear-Horde_Lock
     SUBDIR += pear-Horde_LoginTasks
+    SUBDIR += pear-Horde_Nls
     SUBDIR += pear-Horde_Notification
     SUBDIR += pear-Horde_Prefs
     SUBDIR += pear-Horde_Role
