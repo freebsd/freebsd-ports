@@ -1,6 +1,7 @@
-Horde is a framework used by several applications written in PHP.
+The Horde Application Framework is a flexible, modular, general-purpose web
+application framework written in PHP. It provides an extensive array
+of components that are targeted at the common problems and tasks involved
+in developing modern web applications. It is the basis for a large number
+of production-level web applications, notably the Horde Groupware suites.
 
-Horde is used by these ports: mail/imp, mail/turba, devel/chora,
-deskutils/kronolith, deskutils/nag, mail/ingo and deskutils/mnemo.
-
-WWW: http://www.horde.org/
+WWW: http://www.horde.org
