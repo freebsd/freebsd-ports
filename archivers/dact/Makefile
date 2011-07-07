@@ -15,14 +15,16 @@ MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Dynamic Adaptive Compression Tool
 
 LIB_DEPENDS=	mcrypt.8:${PORTSDIR}/security/libmcrypt \
-		lzo.1:${PORTSDIR}/archivers/lzo
+		lzo2.2:${PORTSDIR}/archivers/lzo2
+
+BROKEN=	needs to be upgraded to lzo2 according to ports/156954
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS=	${CXXFLAGS} -I${LOCALBASE}/include
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 MAKE_ARGS=	TOBUILD="dact libdact.so dact.conf"
 
 MAN1=		dact.1
