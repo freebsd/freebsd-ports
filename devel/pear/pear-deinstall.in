@@ -8,14 +8,7 @@ if [ x$2 != xDEINSTALL ]; then
     exit
 fi
 
-PKG_NAME=${1%%-[0-9._]*}
-CHANNEL=%%PEAR_CHANNEL%%
+PACKAGE=%%PKG_NAME%%
 PEAR=${PKG_PREFIX}/bin/pear
 
-if [ -z "$CHANNEL" ]; then
-	PACKAGE=$(echo $PKG_NAME | sed "s/pear-//")
-	${PEAR} uninstall -r -n ${PACKAGE} || true
-else
-	PACKAGE=$(echo $PKG_NAME | sed "s/pear-${CHANNEL}-//")
-	${PEAR} uninstall -r -n ${CHANNEL}/${PACKAGE} || true
-fi
+${PEAR} uninstall -r -n ${PACKAGE} || true
