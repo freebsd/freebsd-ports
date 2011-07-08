@@ -47,6 +47,8 @@ OPTIONS=	X11 "Build GUI client; yate-gtk2" on \
 		H323 "H323 software channel/protocol support" on \
 		FAX "Fax software channel/driver support" off
 
+USERS=		${PORTNAME}
+GROUPS=		${USERS}
 DOCSDIR=	${LOCALBASE}/share/doc/yate
 PLIST_SUB=	BRISTUFF="@comment "
 PLIST_SUB+=	VERSION=${PORTVERSION:S/.p2//}
@@ -124,9 +126,6 @@ PLIST_SUB+=	WITH_FAX="@comment "
 post-patch:
 	${REINPLACE_CMD} -e 's,%%LOCALBASE%%,${LOCALBASE},g' \
 		${WRKSRC}/modules/Makefile.in
-
-pre-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
