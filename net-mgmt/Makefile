@@ -281,6 +281,7 @@
     SUBDIR += torrus
     SUBDIR += trafd
     SUBDIR += vidalia
+    SUBDIR += virt-viewer
     SUBDIR += wdiag
     SUBDIR += weathermap
     SUBDIR += weplab
