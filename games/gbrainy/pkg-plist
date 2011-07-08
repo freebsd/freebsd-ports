@@ -7,6 +7,7 @@ lib/gbrainy/gbrainy.exe.config
 libdata/pkgconfig/gbrainy.pc
 share/applications/gbrainy.desktop
 share/games/gbrainy/box.svg
+share/games/gbrainy/classic_background.svg
 share/games/gbrainy/clock.svg
 share/games/gbrainy/dartboard.svg
 share/games/gbrainy/family.svg
@@ -15,8 +16,10 @@ share/games/gbrainy/games.xml
 share/games/gbrainy/horses_men.svg
 share/games/gbrainy/lever.svg
 share/games/gbrainy/money.svg
+share/games/gbrainy/notebook_background.svg
 share/games/gbrainy/password.svg
 share/games/gbrainy/tennis.svg
+share/games/gbrainy/themes.xml
 share/games/gbrainy/verbal_analogies.xml
 share/gnome/help/gbrainy/C/customgame.page
 share/gnome/help/gbrainy/C/difficulty.page
@@ -144,6 +147,27 @@ share/gnome/help/gbrainy/de/pause.page
 share/gnome/help/gbrainy/de/score.page
 share/gnome/help/gbrainy/de/times.page
 share/gnome/help/gbrainy/de/tips.page
+share/gnome/help/gbrainy/el/customgame.page
+share/gnome/help/gbrainy/el/difficulty.page
+share/gnome/help/gbrainy/el/export.page
+share/gnome/help/gbrainy/el/figures/all-games.png
+share/gnome/help/gbrainy/el/figures/gbrainy.png
+share/gnome/help/gbrainy/el/figures/logic-games.png
+share/gnome/help/gbrainy/el/figures/math-games.png
+share/gnome/help/gbrainy/el/figures/memory-games.png
+share/gnome/help/gbrainy/el/figures/verbal-games.png
+share/gnome/help/gbrainy/el/gameplay.page
+share/gnome/help/gbrainy/el/gametypes.page
+share/gnome/help/gbrainy/el/history.page
+share/gnome/help/gbrainy/el/index.page
+share/gnome/help/gbrainy/el/legal.xml
+share/gnome/help/gbrainy/el/license.page
+share/gnome/help/gbrainy/el/multiplayer.page
+share/gnome/help/gbrainy/el/newgame.page
+share/gnome/help/gbrainy/el/pause.page
+share/gnome/help/gbrainy/el/score.page
+share/gnome/help/gbrainy/el/times.page
+share/gnome/help/gbrainy/el/tips.page
 share/gnome/help/gbrainy/es/customgame.page
 share/gnome/help/gbrainy/es/difficulty.page
 share/gnome/help/gbrainy/es/export.page
@@ -270,6 +294,48 @@ share/gnome/help/gbrainy/nl/pause.page
 share/gnome/help/gbrainy/nl/score.page
 share/gnome/help/gbrainy/nl/times.page
 share/gnome/help/gbrainy/nl/tips.page
+share/gnome/help/gbrainy/pt_BR/customgame.page
+share/gnome/help/gbrainy/pt_BR/difficulty.page
+share/gnome/help/gbrainy/pt_BR/export.page
+share/gnome/help/gbrainy/pt_BR/figures/all-games.png
+share/gnome/help/gbrainy/pt_BR/figures/gbrainy.png
+share/gnome/help/gbrainy/pt_BR/figures/logic-games.png
+share/gnome/help/gbrainy/pt_BR/figures/math-games.png
+share/gnome/help/gbrainy/pt_BR/figures/memory-games.png
+share/gnome/help/gbrainy/pt_BR/figures/verbal-games.png
+share/gnome/help/gbrainy/pt_BR/gameplay.page
+share/gnome/help/gbrainy/pt_BR/gametypes.page
+share/gnome/help/gbrainy/pt_BR/history.page
+share/gnome/help/gbrainy/pt_BR/index.page
+share/gnome/help/gbrainy/pt_BR/legal.xml
+share/gnome/help/gbrainy/pt_BR/license.page
+share/gnome/help/gbrainy/pt_BR/multiplayer.page
+share/gnome/help/gbrainy/pt_BR/newgame.page
+share/gnome/help/gbrainy/pt_BR/pause.page
+share/gnome/help/gbrainy/pt_BR/score.page
+share/gnome/help/gbrainy/pt_BR/times.page
+share/gnome/help/gbrainy/pt_BR/tips.page
+share/gnome/help/gbrainy/ro/customgame.page
+share/gnome/help/gbrainy/ro/difficulty.page
+share/gnome/help/gbrainy/ro/export.page
+share/gnome/help/gbrainy/ro/figures/all-games.png
+share/gnome/help/gbrainy/ro/figures/gbrainy.png
+share/gnome/help/gbrainy/ro/figures/logic-games.png
+share/gnome/help/gbrainy/ro/figures/math-games.png
+share/gnome/help/gbrainy/ro/figures/memory-games.png
+share/gnome/help/gbrainy/ro/figures/verbal-games.png
+share/gnome/help/gbrainy/ro/gameplay.page
+share/gnome/help/gbrainy/ro/gametypes.page
+share/gnome/help/gbrainy/ro/history.page
+share/gnome/help/gbrainy/ro/index.page
+share/gnome/help/gbrainy/ro/legal.xml
+share/gnome/help/gbrainy/ro/license.page
+share/gnome/help/gbrainy/ro/multiplayer.page
+share/gnome/help/gbrainy/ro/newgame.page
+share/gnome/help/gbrainy/ro/pause.page
+share/gnome/help/gbrainy/ro/score.page
+share/gnome/help/gbrainy/ro/times.page
+share/gnome/help/gbrainy/ro/tips.page
 share/gnome/help/gbrainy/sl/customgame.page
 share/gnome/help/gbrainy/sl/difficulty.page
 share/gnome/help/gbrainy/sl/export.page
@@ -333,27 +399,6 @@ share/gnome/help/gbrainy/sr@latin/pause.page
 share/gnome/help/gbrainy/sr@latin/score.page
 share/gnome/help/gbrainy/sr@latin/times.page
 share/gnome/help/gbrainy/sr@latin/tips.page
-share/gnome/help/gbrainy/ro/customgame.page
-share/gnome/help/gbrainy/ro/difficulty.page
-share/gnome/help/gbrainy/ro/export.page
-share/gnome/help/gbrainy/ro/figures/all-games.png
-share/gnome/help/gbrainy/ro/figures/gbrainy.png
-share/gnome/help/gbrainy/ro/figures/logic-games.png
-share/gnome/help/gbrainy/ro/figures/math-games.png
-share/gnome/help/gbrainy/ro/figures/memory-games.png
-share/gnome/help/gbrainy/ro/figures/verbal-games.png
-share/gnome/help/gbrainy/ro/gameplay.page
-share/gnome/help/gbrainy/ro/gametypes.page
-share/gnome/help/gbrainy/ro/history.page
-share/gnome/help/gbrainy/ro/index.page
-share/gnome/help/gbrainy/ro/legal.xml
-share/gnome/help/gbrainy/ro/license.page
-share/gnome/help/gbrainy/ro/multiplayer.page
-share/gnome/help/gbrainy/ro/newgame.page
-share/gnome/help/gbrainy/ro/pause.page
-share/gnome/help/gbrainy/ro/score.page
-share/gnome/help/gbrainy/ro/times.page
-share/gnome/help/gbrainy/ro/tips.page
 share/icons/hicolor/16x16/apps/gbrainy.png
 share/icons/hicolor/32x32/apps/gbrainy.png
 share/icons/hicolor/48x48/apps/gbrainy.png
@@ -400,14 +445,24 @@ share/pixmaps/gbrainy.png
 share/pixmaps/gbrainy.svg
 share/pixmaps/gbrainy16.png
 share/pixmaps/gbrainy48.png
-@dirrm share/gnome/help/gbrainy/ro/figures
-@dirrm share/gnome/help/gbrainy/ro
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/sr@latin/LC_MESSAGES
+@dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrm share/gnome/help/gbrainy/sr@latin/figures
 @dirrm share/gnome/help/gbrainy/sr@latin
 @dirrm share/gnome/help/gbrainy/sr/figures
 @dirrm share/gnome/help/gbrainy/sr
 @dirrm share/gnome/help/gbrainy/sl/figures
 @dirrm share/gnome/help/gbrainy/sl
+@dirrm share/gnome/help/gbrainy/ro/figures
+@dirrm share/gnome/help/gbrainy/ro
+@dirrm share/gnome/help/gbrainy/pt_BR/figures
+@dirrm share/gnome/help/gbrainy/pt_BR
 @dirrm share/gnome/help/gbrainy/nl/figures
 @dirrm share/gnome/help/gbrainy/nl
 @dirrm share/gnome/help/gbrainy/hu/figures
@@ -420,6 +475,8 @@ share/pixmaps/gbrainy48.png
 @dirrm share/gnome/help/gbrainy/fr
 @dirrm share/gnome/help/gbrainy/es/figures
 @dirrm share/gnome/help/gbrainy/es
+@dirrm share/gnome/help/gbrainy/el/figures
+@dirrm share/gnome/help/gbrainy/el
 @dirrm share/gnome/help/gbrainy/de/figures
 @dirrm share/gnome/help/gbrainy/de
 @dirrm share/gnome/help/gbrainy/da/figures
