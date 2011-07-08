@@ -22,4 +22,6 @@ USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=  yes
 
+BROKEN=		does not install
+
 .include <bsd.port.mk>
