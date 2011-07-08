@@ -1,5 +1,5 @@
-SHA256 (sbcl-1.0.43-source.tar.bz2) = 98ad7abf7c3649890b52b40fedef07c1c0b3449be7ddd3fba6f2015f999c5e33
-SIZE (sbcl-1.0.43-source.tar.bz2) = 3504724
+SHA256 (sbcl-1.0.49-source.tar.bz2) = 1be0c302084d9b02a147f3e9a1a86d1eb11c3351abb0367f483907b84da96ae8
+SIZE (sbcl-1.0.49-source.tar.bz2) = 3542474
 SHA256 (sbcl-1.0.31-amd64-freebsd8-binary.tar.bz2) = 06a1e4e3a5f5f8e012ff6037a51624d7d1f34bff0979ce45e70418a293412b4e
 SIZE (sbcl-1.0.31-amd64-freebsd8-binary.tar.bz2) = 8397764
 SHA256 (sbcl-1.0.31-amd64-freebsd7-binary.tar.bz2) = fcbd5ed1948312a7b6eff7e6daf736e41be945a2c57bcee4b64f172ddde518b8
