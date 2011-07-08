@@ -38,7 +38,7 @@ CONFIGURE_ARGS+=	--enable-openssl
 CONFIGURE_ARGS+=	--disable-openssl
 .endif
 
-.include <../ecore-main/Makefile.inc>
+.include "../ecore-main/Makefile.inc"
 
 CONFIGURE_ARGS+=	--enable-ecore-con \
 			--enable-ecore-ipc
