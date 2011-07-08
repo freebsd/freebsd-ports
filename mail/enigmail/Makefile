@@ -68,15 +68,15 @@ pre-patch:
 
 do-build:
 .if ${GECKO_TARGET} == "configure"
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_base)
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_nspr)
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_js)
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC} export)
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/modules/libreg)
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom/string)
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom)
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_base
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_nspr
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC} tier_js
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${WRKSRC} export
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/modules/libreg
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom/string
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom
 .if ${PORTVERSION} == "1.0.1"
-	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom/obsolete)
+	${SETENV} ${MAKE_ENV} ${GMAKE} -C ${MOZSRC}/xpcom/obsolete
 .endif
 .endif
 	cd ${WRKSRC}/mailnews/extensions/enigmail && ./makemake -r
