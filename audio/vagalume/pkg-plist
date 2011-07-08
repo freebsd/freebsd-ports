@@ -16,6 +16,7 @@ share/pixmaps/vagalume.xpm
 %%DATADIR%%/icons/hicolor/scalable/apps/media-playback-stop.svg
 %%DATADIR%%/icons/hicolor/scalable/apps/media-skip-forward.svg
 %%DATADIR%%/icons/hicolor/scalable/apps/process-stop.svg
+%%NLS%%share/locale/ca/LC_MESSAGES/vagalume.mo
 %%NLS%%share/locale/de/LC_MESSAGES/vagalume.mo
 %%NLS%%share/locale/es/LC_MESSAGES/vagalume.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/vagalume.mo
