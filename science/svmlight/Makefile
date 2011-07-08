@@ -8,7 +8,7 @@
 PORTNAME=	svmlight
 PORTVERSION=	6.02
 CATEGORIES=	science
-MASTER_SITES=	http://kodiak.cs.cornell.edu/svm_light/v${PORTVERSION}/
+MASTER_SITES=	http://osmot.cs.cornell.edu/svm_light/v${PORTVERSION}/
 DISTNAME=	svm_light
 
 PATCH_SITES=	http://cpansearch.perl.org/src/KWILLIAMS/Algorithm-SVMLight-0.09/
