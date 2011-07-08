@@ -43,6 +43,10 @@ OPTIONS=	GRASS "Enable GRASS support" Off \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile on 7.X
+.endif
+
 .if !defined (QTDIR)
 QTDIR=		${QT_PREFIX}
 .endif
