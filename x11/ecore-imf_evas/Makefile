@@ -27,7 +27,7 @@ USE_LDCONFIG=	yes
 BUILD_WRKSRC=	${WRKSRC}/src/lib/ecore_imf_evas
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-.include <../../devel/ecore-main/Makefile.inc>
+.include "../../devel/ecore-main/Makefile.inc"
 
 CONFIGURE_ARGS+=	--enable-ecore-con \
 			--enable-ecore-config \
