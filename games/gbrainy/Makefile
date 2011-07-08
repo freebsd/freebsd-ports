@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gbrainy
-PORTVERSION=	1.65
+PORTVERSION=	2.00
 CATEGORIES=	games
 MASTER_SITES=	http://gent.softcatala.org/jmas/gbrainy/
 
@@ -15,14 +15,14 @@ COMMENT=	A brain teaser game and trainer
 
 BUILD_DEPENDS=	mautil:${PORTSDIR}/devel/mono-addins \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GNOME=	desktopfileutils gnometarget gnomehack gtksharp20 gnomesharp20
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=  CPPFLAGS="-I${LOCALBASE}/include" \
-                LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN6=		gbrainy.6
 INSTALLS_ICONS=	yes
