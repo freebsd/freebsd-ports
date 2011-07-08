@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	wine
-DISTVERSION=	1.3.22
-PORTREVISION=	1
+DISTVERSION=	1.3.23
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -107,8 +106,10 @@ CONFIGURE_ARGS+=	--without-xslt
 .ifdef WITH_OPENAL
 CONFIGURE_ARGS+=	--with-openal
 USE_OPENAL=		yes
+PLIST_SUB=		OPENAL=""
 .else
 CONFIGURE_ARGS+=	--without-openal
+PLIST_SUB=		OPENAL="@comment "
 .endif
 
 .ifdef WITH_WINEMAKER
@@ -117,12 +118,6 @@ RUN_DEPENDS+=	p5-XML-LibXML>0:${PORTSDIR}/textproc/p5-XML-LibXML
 
 .if ${OSVERSION} < 800000
 IGNORE=		lacks required sound support on FreeBSD before 8.0
-.endif
-
-post-patch:
-.if ${OSVERSION} < 700041
-	${REINPLACE_CMD} 's/-lpthread/-lthr/g' ${WRKSRC}/configure
-	${REINPLACE_CMD} '/ac_hal_libs=/s/"$$/ -lthr"/' ${WRKSRC}/configure
 .endif
 
 pre-build:

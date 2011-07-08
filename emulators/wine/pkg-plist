@@ -255,8 +255,8 @@ include/wine/windows/dxerr9.h
 include/wine/windows/dxfile.h
 include/wine/windows/dxgi.h
 include/wine/windows/dxgi.idl
+include/wine/windows/dxgiformat.h
 include/wine/windows/dxgitype.h
-include/wine/windows/dxgitype.idl
 include/wine/windows/dyngraph.idl
 include/wine/windows/endpointvolume.h
 include/wine/windows/endpointvolume.idl
@@ -1107,6 +1107,7 @@ lib/wine/fakedlls/olesvr.dll16
 lib/wine/fakedlls/olesvr32.dll
 lib/wine/fakedlls/olethk32.dll
 lib/wine/fakedlls/oleview.exe
+%%OPENAL%%lib/wine/fakedlls/openal32.dll
 lib/wine/fakedlls/opengl32.dll
 lib/wine/fakedlls/pdh.dll
 lib/wine/fakedlls/pidgen.dll
@@ -1205,6 +1206,7 @@ lib/wine/fakedlls/user32.dll
 lib/wine/fakedlls/userenv.dll
 lib/wine/fakedlls/usp10.dll
 lib/wine/fakedlls/uxtheme.dll
+lib/wine/fakedlls/vbscript.dll
 lib/wine/fakedlls/vcomp.dll
 lib/wine/fakedlls/vdhcp.vxd
 lib/wine/fakedlls/vdmdbg.dll
@@ -1598,6 +1600,7 @@ lib/wine/olesvr.dll16.so
 lib/wine/olesvr32.dll.so
 lib/wine/olethk32.dll.so
 lib/wine/oleview.exe.so
+%%OPENAL%%lib/wine/openal32.dll.so
 lib/wine/opengl32.dll.so
 lib/wine/pdh.dll.so
 lib/wine/pidgen.dll.so
@@ -1696,6 +1699,7 @@ lib/wine/user32.dll.so
 lib/wine/userenv.dll.so
 lib/wine/usp10.dll.so
 lib/wine/uxtheme.dll.so
+lib/wine/vbscript.dll.so
 lib/wine/vcomp.dll.so
 lib/wine/vdhcp.vxd.so
 lib/wine/vdmdbg.dll.so
