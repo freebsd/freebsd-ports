@@ -119,7 +119,6 @@
     SUBDIR += horde-kronolith
     SUBDIR += horde-mnemo
     SUBDIR += horde-nag
-    SUBDIR += horde4-groupware
     SUBDIR += horde4-kronolith
     SUBDIR += hot-babe
     SUBDIR += howm
