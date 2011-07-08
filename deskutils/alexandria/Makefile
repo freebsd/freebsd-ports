@@ -15,6 +15,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	mitsuru@riken.jp
 COMMENT=	A GNOME application to help you manage your book collection
 
+DEPRECATED=	Upcoming ruby-gnome removes dependencies
+EXPIRATION_DATE=	2011-08-08
+
 BUILD_DEPENDS=	rake:${PORTSDIR}/devel/rubygem-rake
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/gettext.rb:${PORTSDIR}/devel/ruby-gettext \
 		${RUBY_SITEARCHLIBDIR}/gnome2.so:${PORTSDIR}/x11/ruby-gnome2 \
