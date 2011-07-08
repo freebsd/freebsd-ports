@@ -20,6 +20,6 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--enable-shared --with-yaz=${LOCALBASE}/bin
 USE_LDCONFIG=	yes
 
-MAN8=		yazpp-config.8
+MAN1=		yazpp-config.1
 
 .include <bsd.port.mk>
