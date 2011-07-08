@@ -1,8 +1,12 @@
-Blackbox is that fast, lightweight window manager for the X Window System, you
-have been looking for without all those annoying library dependencies. Blackbox
-is built with C++ and contains completely original code.
+Blackbox is the fast, lightweight window manager for the X Window System you
+have been looking for, without all those annoying dependencies.  It is built
+with C++ and contains completely original code (even though the graphics
+implementation is similar to that of Window Maker).
 
 Blackbox is written to the NetWM specification, which allows integration with
 modern desktop managers including KDE and Gnome.
+
+The port also provides root window changing tools, bsetroot and bsetbg, that
+can be installed alone, without the window manager and accompanying files.
 
 WWW: http://blackboxwm.sourceforge.net/
