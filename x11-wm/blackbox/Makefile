@@ -7,7 +7,7 @@
 
 PORTNAME=	blackbox
 PORTVERSION=	0.70.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/${PORTNAME}wm/${PORTNAME}wm/Blackbox%20${PORTVERSION}
 
@@ -16,22 +16,34 @@ COMMENT=	A small and fast window manager for X11R6
 
 LICENSE=	MIT
 
-CONFLICTS=	boxtools-*
-
-PORTDOCS=	AUTHORS COMPLIANCE ChangeLog README RELNOTES TODO
-MAN1=		blackbox.1
-
 GNU_CONFIGURE=	yes
 USE_ICONV=	yes
 USE_GNOME=	gnomehack pkgconfig
 USE_XORG=	x11 xft
 
-post-patch:
-	@${REINPLACE_CMD} -e 's#-pedantic##' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's# bsetroot.1 bsetbg.1##' \
-		${WRKSRC}/doc/Makefile.in
+MAN1=		bsetbg.1 bsetroot.1
+PORTDOCS=	README.bbtools README.bsetbg
+
+OPTIONS=	TOOLS_ONLY "Do not install window manager, only tools" off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_TOOLS_ONLY)
+PKGNAMESUFFIX=	-tools
+COMMENT+=	(tools only)
+MAKE_ARGS=	SUBDIRS="doc lib util" bin_PROGRAMS=bsetroot
+INSTALL_TARGET=	-C util install		# XXX dirty hack :(
+.else
+MAN1+=		blackbox.1
+PORTDOCS+=	AUTHORS COMPLIANCE ChangeLog README RELNOTES TODO
+.endif
 
 post-install:
+.if defined(WITH_TOOLS_ONLY)
+	@${REINPLACE_CMD} -E '/[^s]\/blackbox|bstyleconvert|lib|include/d' \
+		${TMPPLIST}
+	${INSTALL_MAN} ${MAN1:S#^#${WRKSRC}/doc/#} ${MANPREFIX}/man/man1
+.endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${PORTDOCS:S#^#${WRKSRC}/#} ${DOCSDIR}

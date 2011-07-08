@@ -2271,3 +2271,4 @@ devel/horde4-constraint||2011-07-07|Removed
 devel/horde4-streamwrapper||2011-07-07|Removed
 graphics/horde4-image||2011-07-07|Removed
 security/horde4-auth||2011-07-07|Removed
+x11-wm/boxtools|x11-wm/blackbox|2011-07-08|Ports merged together
