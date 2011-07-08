@@ -1,0 +1,7 @@
+@comment $FreeBSD$
+bin/virt-viewer
+%%DATADIR%%/ui/about.glade
+%%DATADIR%%/ui/auth.glade
+%%DATADIR%%/ui/viewer.glade
+@dirrm %%DATADIR%%/ui
+@dirrm %%DATADIR%%
