@@ -671,7 +671,6 @@
     SUBDIR += ruby-mp3tag
     SUBDIR += ruby-musicbrainz
     SUBDIR += ruby-musicextras
-    SUBDIR += ruby-ogginfo
     SUBDIR += ruby-shout
     SUBDIR += ruby-smf
     SUBDIR += ruby-taglib
