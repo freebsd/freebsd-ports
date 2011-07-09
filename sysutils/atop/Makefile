@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	atop
-PORTVERSION=	1.26.b5
+PORTVERSION=	1.26.b6
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=atop-freebsd
@@ -38,6 +38,7 @@ do-install:
 .if !defined(NOPORTDOCS)
 		${MKDIR} ${DOCSDIR}
 		${INSTALL_MAN} ${WRKSRC}/AUTHOR ${WRKSRC}/ChangeLog \
+		${WRKSRC}/ChangeLog.FreeBSD ${WRKSRC}/README.FreeBSD \
 		${WRKSRC}/README ${DOCSDIR}
 .endif
 		@${CAT} ${PKGMESSAGE}
