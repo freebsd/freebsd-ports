@@ -16,6 +16,8 @@ COMMENT=	Horde web based address book
 LICENSE=	ASL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LATEST_LINK=	horde4-${PORTNAME}
+
 OPTIONS=	FACEBOOK "Support connections with Facebook" Off \
 		IMSP "Support IMSP addressbooks" Off \
 		LDAP "Support LDAP Addressbooks" Off

@@ -16,6 +16,8 @@ COMMENT=	Horde web based calendar
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LATEST_LINK=	horde4-${PORTNAME}
+
 OPTIONS=	DATE_HOLIDAYS "Install PEAR Date_Holidays" On \
 		TIMEOBJECTS "Install Horde timeobjects" On \
 		XMLWRITER "Depend on PHP xmlwriter extension" Off

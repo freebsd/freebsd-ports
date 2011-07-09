@@ -15,6 +15,8 @@ COMMENT=	Horde timeobjects application
 
 CONFLICTS=	horde-3*
 
+LATEST_LINK=	horde4-${PORTNAME}
+
 USE_PHP=	gettext
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \

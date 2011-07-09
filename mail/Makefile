@@ -195,6 +195,10 @@
     SUBDIR += horde-mimp
     SUBDIR += horde-turba
     SUBDIR += horde-vacation
+    SUBDIR += horde4-imp
+    SUBDIR += horde4-ingo
+    SUBDIR += horde4-turba
+    SUBDIR += horde4-webmail
     SUBDIR += hotwayd
     SUBDIR += hs-mime
     SUBDIR += ifile
