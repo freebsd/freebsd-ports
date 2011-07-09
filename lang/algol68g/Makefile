@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	algol68g
-PORTVERSION=	2.1.2
-PORTREVISION=	2
+PORTVERSION=	2.2.0
 CATEGORIES=	lang
-MASTER_SITES=	http://www.xs4all.nl/~jmvdveer/
+MASTER_SITES=	http://jmvdveer.home.xs4all.nl/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	johans@FreeBSD.org
