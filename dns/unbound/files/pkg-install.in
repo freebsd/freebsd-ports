@@ -4,27 +4,10 @@
 #
 
 PW=/usr/sbin/pw
-UID=59
 USER="unbound"
 PREFIX="%%PREFIX%%"
 
 case $2 in
-
-PRE-INSTALL)
-	if ${PW} user show "${USER}" 2>/dev/null; then
-		echo "You already have a user \"${USER}\", so I will use it."
-	else
-		if ${PW} useradd ${USER} -u ${UID} -g daemon -h - \
-			-d "/nonexistent" -s /usr/sbin/nologin -c "unbound dns resolver"
-		then
-			echo "Added user \"${USER}\"."
-		else
-			echo "Adding user \"${USER}\" failed..."
-			exit 1
-		fi
-	fi
-	;;
-
 POST-INSTALL)
 	chown "${USER}" $PREFIX/etc/unbound
 	;;
