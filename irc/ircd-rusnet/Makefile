@@ -25,8 +25,8 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	irc_cv_mathlib=-lm
 
-USER=		ircd
-GROUP=		${USER}
+USERS=		ircd
+GROUPS=		${USERS}
 NETWORK=	RusNet
 
 VARDIR?=	/var
@@ -38,7 +38,7 @@ IRCD_RUNDIR?=	${VARDIR}/run/ircd
 
 CONFIGURE_ARGS=	--sysconfdir=${IRCD_CONFDIR} --codepagedir=${IRCD_CODEPAGES} \
 		--logdir=${IRCD_LOGDIR} --localstatedir=${IRCD_RUNDIR} \
-		--with-user=${USER} --with-group=${GROUP} --with-netname=${NETWORK}
+		--with-user=${USERS} --with-group=${GROUPS} --with-netname=${NETWORK}
 
 ALL_TARGET=	server tkserv client
 BUILD_WRKSRC=	${WRKSRC}/build
@@ -74,12 +74,6 @@ CONFIGURE_ARGS+=--enable-dsm
 
 .include <bsd.port.pre.mk>
 
-pre-configure:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-CONFIGURE
-
-pre-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/ircd.sh.sample ${PREFIX}/etc/rc.d
 	${CP} ${FILESDIR}/ircd.motd.sample ${IRCD_CONFDIR}
@@ -92,8 +86,8 @@ post-install:
 .for logfile in ${LOGS}
 	${TOUCH} ${IRCD_LOGDIR}/${logfile}
 .endfor
-	@${CHOWN} -R ${USER}:${GROUP} ${IRCD_LOGDIR}
-	@${CHOWN} -R ${USER}:${GROUP} ${IRCD_RUNDIR}
+	@${CHOWN} -R ${USERS}:${GROUPS} ${IRCD_LOGDIR}
+	@${CHOWN} -R ${USERS}:${GROUPS} ${IRCD_RUNDIR}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
