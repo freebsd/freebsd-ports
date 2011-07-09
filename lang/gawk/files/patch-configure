@@ -1,11 +1,11 @@
---- configure.orig	Sun Mar  4 10:17:16 2007
-+++ configure	Sun Mar  4 10:17:29 2007
-@@ -8113,7 +8113,7 @@
+--- configure.orig	2011-06-23 08:39:36.000000000 +0200
++++ configure	2011-07-01 16:56:31.000000000 +0200
+@@ -8220,7 +8220,7 @@ fi
  for ac_header in arpa/inet.h fcntl.h limits.h locale.h libintl.h mcheck.h \
- 	netdb.h netinet/in.h  signum.h stdarg.h string.h \
+ 	netdb.h netinet/in.h stdarg.h stddef.h string.h \
  	sys/param.h sys/socket.h sys/time.h unistd.h \
 -	termios.h stropts.h wchar.h wctype.h
 +	termios.h stropts.h
  do :
- as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
- if eval "test \"\${$as_ac_Header+set}\" = set"; then
+   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ ac_fn_c_check_header_mongrel "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default"

@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	gawk
-PORTVERSION=	3.1.8
+PORTVERSION=	4.0.0
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	gawk
@@ -13,8 +13,11 @@ MASTER_SITE_SUBDIR=	gawk
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	The GNU version of Awk
 
+LIB_DEPENDS=	sigsegv:${PORTSDIR}/devel/libsigsegv
+
 INFO=		gawk gawkinet
 
+USE_XZ=		true
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-libiconv-prefix=${LOCALBASE} \
 		--with-libintl-prefix=${LOCALBASE} \

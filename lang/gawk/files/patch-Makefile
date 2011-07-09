@@ -1,11 +1,11 @@
---- Makefile.in.orig	Sun Mar  4 10:18:08 2007
-+++ Makefile.in	Sun Mar  4 10:19:23 2007
-@@ -936,7 +936,7 @@
+--- Makefile.in.orig	2011-07-01 16:58:19.000000000 +0200
++++ Makefile.in	2011-07-01 16:58:47.000000000 +0200
+@@ -1014,7 +1014,7 @@ install-exec-hook:
  	(cd $(DESTDIR)$(bindir); \
  	$(LN) gawk$(EXEEXT) gawk-$(VERSION)$(EXEEXT) 2>/dev/null ; \
  	$(LN) pgawk$(EXEEXT) pgawk-$(VERSION)$(EXEEXT) 2>/dev/null ; \
--	if [ ! -f awk$(EXEEXT) ]; \
+-	if [ ! -f awk ]; \
 +	if ! /usr/bin/which -s awk; \
- 	then	$(LN_S) gawk$(EXEEXT) awk$(EXEEXT); \
+ 	then	$(LN_S) gawk$(EXEEXT) awk; \
  	fi; exit 0)
  
