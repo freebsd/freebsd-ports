@@ -1,0 +1,9 @@
+The "Virtual Machine Manager" application (virt-manager for short package name)
+is a desktop user interface for managing virtual machines. It presents a summary
+view of running domains, their live performance & resource utilization
+statistics. The detailed view graphs performance & utilization over time.
+Wizards enable the creation of new domains, and configuration & adjustment of a
+domain's resource allocation & virtual hardware. An embedded VNC client viewer
+presents a full graphical console to the guest domain.
+
+WWW: http://virt-manager.org

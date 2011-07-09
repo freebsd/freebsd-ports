@@ -1,0 +1,108 @@
+bin/virt-manager
+libexec/virt-manager-launch
+share/applications/virt-manager.desktop
+share/dbus-1/services/virt-manager.service
+%%DATADIR%%/pixmaps/device_cpu.png
+%%DATADIR%%/pixmaps/device_mem.png
+%%DATADIR%%/pixmaps/device_pci.png
+%%DATADIR%%/pixmaps/device_serial.png
+%%DATADIR%%/pixmaps/device_usb.png
+%%DATADIR%%/pixmaps/hicolor/16x16/actions/icon_console.png
+%%DATADIR%%/pixmaps/hicolor/16x16/actions/vm_new.png
+%%DATADIR%%/pixmaps/hicolor/22x22/actions/icon_console.png
+%%DATADIR%%/pixmaps/hicolor/22x22/actions/vm_new.png
+%%DATADIR%%/pixmaps/hicolor/24x24/actions/icon_console.png
+%%DATADIR%%/pixmaps/hicolor/24x24/actions/vm_new.png
+%%DATADIR%%/pixmaps/hicolor/32x32/actions/icon_console.png
+%%DATADIR%%/pixmaps/hicolor/32x32/actions/vm_new.png
+%%DATADIR%%/pixmaps/icon_details.png
+%%DATADIR%%/pixmaps/state_crashed.png
+%%DATADIR%%/pixmaps/state_paused.png
+%%DATADIR%%/pixmaps/state_progress.png
+%%DATADIR%%/pixmaps/state_running.png
+%%DATADIR%%/pixmaps/state_shutoff.png
+%%DATADIR%%/pixmaps/state_unknown.png
+%%DATADIR%%/pixmaps/virt-manager-icon.svg
+%%DATADIR%%/pixmaps/vm_clone_wizard.png
+%%DATADIR%%/pixmaps/vm_delete_wizard.png
+%%DATADIR%%/pixmaps/vm_import_wizard.png
+%%DATADIR%%/pixmaps/vm_large.png
+%%DATADIR%%/pixmaps/vm_medium.png
+%%DATADIR%%/pixmaps/vm_new_wizard.png
+%%DATADIR%%/pixmaps/vm_small.png
+%%DATADIR%%/pixmaps/vm_tiny.png
+%%DATADIR%%/virt-manager.py
+%%DATADIR%%/virtManager/IPy.py
+%%DATADIR%%/virtManager/__init__.py
+%%DATADIR%%/virtManager/about.py
+%%DATADIR%%/virtManager/addhardware.py
+%%DATADIR%%/virtManager/asyncjob.py
+%%DATADIR%%/virtManager/baseclass.py
+%%DATADIR%%/virtManager/choosecd.py
+%%DATADIR%%/virtManager/clone.py
+%%DATADIR%%/virtManager/config.py
+%%DATADIR%%/virtManager/connect.py
+%%DATADIR%%/virtManager/connection.py
+%%DATADIR%%/virtManager/console.py
+%%DATADIR%%/virtManager/create.py
+%%DATADIR%%/virtManager/createinterface.py
+%%DATADIR%%/virtManager/createmeter.py
+%%DATADIR%%/virtManager/createnet.py
+%%DATADIR%%/virtManager/createpool.py
+%%DATADIR%%/virtManager/createvol.py
+%%DATADIR%%/virtManager/delete.py
+%%DATADIR%%/virtManager/details.py
+%%DATADIR%%/virtManager/domain.py
+%%DATADIR%%/virtManager/engine.py
+%%DATADIR%%/virtManager/error.py
+%%DATADIR%%/virtManager/graphwidgets.py
+%%DATADIR%%/virtManager/halhelper.py
+%%DATADIR%%/virtManager/host.py
+%%DATADIR%%/virtManager/interface.py
+%%DATADIR%%/virtManager/keyring.py
+%%DATADIR%%/virtManager/libvirtobject.py
+%%DATADIR%%/virtManager/manager.py
+%%DATADIR%%/virtManager/mediadev.py
+%%DATADIR%%/virtManager/migrate.py
+%%DATADIR%%/virtManager/netdev.py
+%%DATADIR%%/virtManager/network.py
+%%DATADIR%%/virtManager/preferences.py
+%%DATADIR%%/virtManager/remote.py
+%%DATADIR%%/virtManager/secret.py
+%%DATADIR%%/virtManager/serialcon.py
+%%DATADIR%%/virtManager/storagebrowse.py
+%%DATADIR%%/virtManager/storagepool.py
+%%DATADIR%%/virtManager/storagevol.py
+%%DATADIR%%/virtManager/systray.py
+%%DATADIR%%/virtManager/uihelpers.py
+%%DATADIR%%/virtManager/util.py
+%%DATADIR%%/vmm-about.glade
+%%DATADIR%%/vmm-add-hardware.glade
+%%DATADIR%%/vmm-choose-cd.glade
+%%DATADIR%%/vmm-clone.glade
+%%DATADIR%%/vmm-create-interface.glade
+%%DATADIR%%/vmm-create-net.glade
+%%DATADIR%%/vmm-create-pool.glade
+%%DATADIR%%/vmm-create-vol.glade
+%%DATADIR%%/vmm-create.glade
+%%DATADIR%%/vmm-delete.glade
+%%DATADIR%%/vmm-details.glade
+%%DATADIR%%/vmm-host.glade
+%%DATADIR%%/vmm-manager.glade
+%%DATADIR%%/vmm-migrate.glade
+%%DATADIR%%/vmm-open-connection.glade
+%%DATADIR%%/vmm-preferences.glade
+%%DATADIR%%/vmm-progress.glade
+%%DATADIR%%/vmm-storage-browse.glade
+@dirrm %%DATADIR%%/virtManager
+@dirrm %%DATADIR%%/pixmaps/hicolor/16x16/actions
+@dirrm %%DATADIR%%/pixmaps/hicolor/16x16
+@dirrm %%DATADIR%%/pixmaps/hicolor/22x22/actions
+@dirrm %%DATADIR%%/pixmaps/hicolor/22x22
+@dirrm %%DATADIR%%/pixmaps/hicolor/24x24/actions
+@dirrm %%DATADIR%%/pixmaps/hicolor/24x24
+@dirrm %%DATADIR%%/pixmaps/hicolor/32x32/actions
+@dirrm %%DATADIR%%/pixmaps/hicolor/32x32
+@dirrm %%DATADIR%%/pixmaps/hicolor
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%
