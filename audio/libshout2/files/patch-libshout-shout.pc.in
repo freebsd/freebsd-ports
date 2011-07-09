@@ -1,0 +1,10 @@
+--- shout.pc.in.orig		2007-12-11 14:35:45.000000000 +0100
++++ shout.pc.in		2007-12-11 14:35:56.000000000 +0100
+@@ -10,6 +10,6 @@
+ Name: Shout
+ Description: Audio streaming library for icecast encoders
+ Version: @VERSION@
+-Requires: @SHOUT_REQUIRES@
++Requires.private: @SHOUT_REQUIRES@
+ Libs: -L${libdir} -lshout
+ Cflags: -I${includedir} @PTHREAD_CPPFLAGS@ @SHOUT_CFLAGS@
