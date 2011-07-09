@@ -287,6 +287,7 @@
     SUBDIR += treeline
     SUBDIR += tuxcards
     SUBDIR += vboxgtk
+    SUBDIR += virt-manager
     SUBDIR += vnc2flv
     SUBDIR += vym
     SUBDIR += wammu
