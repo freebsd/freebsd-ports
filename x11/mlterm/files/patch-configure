@@ -1,0 +1,10 @@
+--- configure.orig	2011-07-09 14:35:10.000000000 +0900
++++ configure	2011-07-09 14:36:32.000000000 +0900
+@@ -20868,6 +20868,7 @@
+ 	have_vte=yes
+ fi
+ 	if test "$have_vte" = "yes" ; then
++		MAKE_DIRS="gtk ${MAKE_DIRS}"
+ 		OUTPUT_FILES="gtk/Makefile ${OUTPUT_FILES}"
+ 		# "tr ..." is hack for cygwin.
+ 		# (removing \r which is output by win32 native pkg-config.)
