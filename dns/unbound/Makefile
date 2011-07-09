@@ -19,6 +19,8 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--with-ssl=${OPENSSLBASE} --with-ldns-builtin
 USE_LDCONFIG=	yes
 
+USERS=		${PORTNAME}
+
 USE_RC_SUBR=	unbound
 
 MAN1=		unbound-host.1
@@ -29,8 +31,6 @@ MAN8=		unbound.8 unbound-anchor.8 unbound-control.8 unbound-checkconf.8
 PORTDOCS=	CREDITS Changelog FEATURES LICENSE README README.svn \
 		README.tests TODO control_proto_spec.txt ietf67-design-02.odp \
 		ietf67-design-02.pdf requirements.txt
-PKGINSTALL=	${WRKDIR}/pkg-install
-PKGDEINSTALL=	${WRKDIR}/pkg-deinstall
 SUB_FILES=	pkg-install pkg-deinstall
 PLIST_SUB+=	PYTHON=${PYTHON}
 
@@ -83,9 +83,6 @@ CONFIGURE_ARGS+=	--without-pthreads
 post-patch:
 	@${MKDIR} ${WRKSRC}/balancer
 	@${RM} ${WRKSRC}/util/configlexer.c
-
-pre-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
