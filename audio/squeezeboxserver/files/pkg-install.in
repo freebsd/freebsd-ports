@@ -1,12 +1,7 @@
 #!/bin/sh
-# $FreeBSD: /tmp/pcvs/ports/audio/squeezeboxserver/files/pkg-install.in,v 1.10 2009-10-14 22:33:31 brooks Exp $
+# $FreeBSD: /tmp/pcvs/ports/audio/squeezeboxserver/files/pkg-install.in,v 1.11 2011-07-09 17:44:14 crees Exp $
 
 name=%%PORTNAME%%
-u=%%SLIMUSER%%
-g=%%SLIMGROUP%%
-ugid=104
-homedir=/nonexistent
-shell=/sbin/nologin
 comment="Slim Devices SlimServer/SqueezeCenter pseudo-user"
 slimdir="%%PREFIX%%/%%SLIMDIR%%"
 statedir=%%SLIMDBDIR%%
@@ -23,29 +18,6 @@ serverlogfile=/var/log/${name}/server.log
 serverlogline="${serverlogfile}	${u}:${g} 644 3	   100	*     J     ${pidfile}"
 
 case $2 in
-PRE-INSTALL)
-	if pw group show "${g}" >/dev/null 2>&1; then
-		echo "Using existing group \"${g}\"."
-	else
-		echo "Creating group \"${g}\", (gid: ${ugid})."
-		pw groupadd ${g} -g ${ugid}
-		if [ $? != 0 ]; then
-			echo "Failed to add group \"${g}\"."
-			exit 1
-		fi
-	fi
-	if pw user show "${u}" >/dev/null 2>&1; then
-		echo "Using existing user \"${u}\"."
-	else
-		echo "Creating user \"${u}\", (uid: ${ugid})."
-		pw useradd ${u} -u ${ugid} -g ${ugid} -h - \
-		    -d ${homedir} -s ${shell} -c "${comment}"
-		if [ $? != 0 ]; then
-			echo "Failed to add user \"${u}\"."
-			exit 1
-		fi
-	fi
-	;;
 POST-INSTALL)
 	if egrep -q "^${serverlogfile}\>" ${newsyslogfile}; then
 		echo "Using existing ${newsyslogfile} entry."
