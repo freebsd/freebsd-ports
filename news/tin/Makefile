@@ -6,21 +6,20 @@
 #
 
 PORTNAME=	tin
-PORTVERSION=	1.8.3
-PORTREVISION=	9
+PORTVERSION=	1.9.6
 CATEGORIES+=	news ipv6
-MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/stable/ \
-		ftp://ftp.sunet.se/pub/news/readers/tin/stable/ \
-		ftp://sunsite.icm.edu.pl/pub/unix/news/tin/stable/ \
-		ftp://ftp.ka.nu/pub/news/clients/tin/stable/ \
-		ftp://ftp.tau.ac.il/pub/unix/news/tin/stable/ \
-		ftp://ftp.cuhk.edu.hk/pub/packages/news/tin/stable/ \
+MASTER_SITES=	ftp://ftp.tin.org/pub/news/clients/tin/v${PORTVERSION:R}/ \
+		ftp://ftp.sunet.se/pub/news/readers/tin/v${PORTVERSION:R}/ \
+		ftp://sunsite.icm.edu.pl/pub/unix/news/tin/v${PORTVERSION:R}/ \
+		ftp://ftp.ka.nu/pub/news/clients/tin/v${PORTVERSION:R}/ \
+		ftp://ftp.tau.ac.il/pub/unix/news/tin/v${PORTVERSION:R}/ \
+		ftp://ftp.cuhk.edu.hk/pub/packages/news/tin/v${PORTVERSION:R}/ \
 		ftp://ftp.funet.fi/pub/unix/news/tin-unoff/ \
 		ftp://ftp.lip6.fr/pub/unix/news/readers/tin-unoff/ \
-		ftp://ftp.karlsruhe.org/pub/news/clients/tin/stable/ \
-		ftp://ftp.akk.uni-karlsruhe.de/pub/news/clients/tin/stable/ \
-		ftp://ftp.cs.tu-berlin.de/pub/net/news/tin/stable/ \
-		ftp://ftp.informatik.uni-hamburg.de/pub/soft/news/tin/stable/
+		ftp://ftp.karlsruhe.org/pub/news/clients/tin/v${PORTVERSION:R}/ \
+		ftp://ftp.akk.uni-karlsruhe.de/pub/news/clients/tin/v${PORTVERSION:R}/ \
+		ftp://ftp.cs.tu-berlin.de/pub/net/news/tin/v${PORTVERSION:R}/ \
+		ftp://ftp.informatik.uni-hamburg.de/pub/soft/news/tin/v${PORTVERSION:R}/
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Easy-to-use threaded newsreader with NOV/NNTP support
@@ -67,7 +66,7 @@ CFLAGS+=	-DNNTP_SERVER_FILE=\\\"${PREFIX}/etc/nntpserver\\\"
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
 ALL_TARGET=	build
-MAN1=		tin.1 w2r.pl.1 opt-case.pl.1 tinews.pl.1
+MAN1=		tin.1 w2r.pl.1 opt-case.pl.1 tinews.pl.1 tinurl_handler.pl.1
 MAN5=		tin.5 tin_mbox.5 tin_mmdf.5
 MLINKS=		tin.1 rtin.1
 
@@ -113,16 +112,16 @@ post-patch:
 		-e 's:/etc/nntpserver:${PREFIX}/etc/nntpserver:g' \
 		-e 's:/usr/lib/news:${PREFIX}/news/lib:g' \
 		-e 's:/etc/mime\.types:${PREFIX}/etc/mime.types:g' \
-		-e 's:url_handler\.sh:tinurl_handler.sh:g' \
+		-e 's:url_handler\.pl:tinurl_handler.pl:g' \
 		${WRKSRC}/doc/tin.1 ${WRKSRC}/doc/tin.5
 	${REINPLACE_CMD} \
 		-e 's:/etc/mime\.types:${PREFIX}/etc/mime.types:g' \
 		${WRKSRC}/src/mimetypes.c
 	${REINPLACE_CMD} \
-		-e 's:url_handler\.sh:tinurl_handler.sh:g' \
+		-e 's:url_handler\.pl:tinurl_handler.pl:g' \
 		${WRKSRC}/src/Makefile.in ${WRKSRC}/include/tin.h
-	${MV}   ${WRKSRC}/tools/url_handler.sh \
-		${WRKSRC}/tools/tinurl_handler.sh
+	${MV}   ${WRKSRC}/tools/url_handler.pl \
+		${WRKSRC}/tools/tinurl_handler.pl
 
 .ifdef	WITH_CANLOCK
 MAKE_ARGS+=	CANLIB='-L../libcanlock -lcanlock' \
