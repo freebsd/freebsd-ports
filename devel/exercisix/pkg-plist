@@ -1,0 +1,4 @@
+include/exercisix.hh
+share/examples/exercisix/BSDmakefile
+share/examples/exercisix/example.cc
+@dirrm share/examples/exercisix

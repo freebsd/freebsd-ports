@@ -369,6 +369,7 @@
     SUBDIR += etoile-unitkit
     SUBDIR += eventxx
     SUBDIR += evolution-gconf-tools
+    SUBDIR += exercisix
     SUBDIR += f77flow
     SUBDIR += fam
     SUBDIR += fampp
