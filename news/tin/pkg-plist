@@ -4,11 +4,12 @@ bin/tin
 @exec ln -fs %f %B/rtin
 @unexec rm -f %B/rtin
 bin/tinews.pl
-bin/tinurl_handler.sh
+bin/tinurl_handler.pl
 bin/w2r.pl
 @unexec if cmp -s %D/etc/tin.defaults %D/etc/tin.defaults.dist; then rm -f %D/etc/tin.defaults; fi
 etc/tin.defaults.dist
 @exec [ -f %B/tin.defaults ] || cp %B/%f %B/tin.defaults
+%%NLS%%share/locale/da/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/de/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/en_GB/LC_MESSAGES/tin.mo
 %%NLS%%share/locale/et/LC_MESSAGES/tin.mo
