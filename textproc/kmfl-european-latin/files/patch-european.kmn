@@ -1,13 +1,15 @@
---- european.kmn.orig	2010-06-29 10:41:38.000000000 +0000
-+++ european.kmn	2010-06-29 10:42:30.000000000 +0000
-@@ -5,15 +5,15 @@
+--- european.kmn	2011-07-04 13:23:20.000000000 +0200
++++ european.kmn	2011-07-04 13:23:10.000000000 +0200
+@@ -4,18 +4,18 @@
+ c http://www.tavultesoft.com/forums/category.php?ForumSourceID=1&SourceID=348
  
  VERSION 7.0
- NAME "European Latin"
+-store(&NAME) 'EuroLatin Keyboard'
 -store(&BITMAP) 'latin.ico'
-+store(&BITMAP) 'latin.bmp'
- store(&COPYRIGHT) 'Copyright (C) 1994-2008 Tavultesoft Pty Ltd'
- 
++store(&NAME) 'European Latin Keyboard 1.6'
++store(&BITMAP) 'latin.png'
+ store(&COPYRIGHT) 'Copyright (C) 1994-2011 Tavultesoft Pty Ltd'
+      
  store(&mnemoniclayout) '1'
  
  c KeymanWeb-specific header statements
@@ -16,15 +18,18 @@
 -store(&KMW_EmbedJS) 'european_js.txt'
 +c store(&KMW_HelpFile) 'european.html'
 +c store(&KMW_EmbedJS) 'european_js.txt'
+ store(&ETHNOLOGUECODE) 'aae acf act afr aig ale aln als arg ast bah bar bch bda bgx bis bjs bjt ble bos bre bsc bzj bzk cae cat ces cim cks cor cos cou cqu crh crs csb csk cwt cym dan deu drt dsb dyo eja eml ems eng epo esi esk ess est esu eus ext fao fap fax ffm fil fin fit fkv fly fra frc frk frp frr frs fry fub fuc fue fuf fuh fui ful fuq fur fuv gag gaz gcf gcl gcr gct geh ghc gla gle glg glv gos gsl gsw gul gyn hat hbs hhr hrv hsb hun hwc icr ikt ipk isl ist ita jam jut kal kea kmv knf kqe krl krx ksh ktu lad lat lav lij lim lit liv lld lmo lou ltz lud mey mfe mfv mhn mkw mlo mlt mwl nap nde nds ndv nld nor oci olo oor pap pbo pbp pcd pdc pdt pfl pis pms pol por prg qub qud que quf qug quh quk qul qup qur qus quw qux quy quz qva qvc qve qvh qvi qvj qvl qvm qvn qvo qvp qvs qvw qvz qwa qwc qwh qws qxa qxc qxh qxl qxn qxo qxp qxr qxt qxu qxw rcf rmc rmf rmn rmo rmw rmy roh rom ron rop ruo rup ruq sag sav scn sco sdc sdn sdt sdz sia sje sjt sju sli slk slv sma sme smj smn sms snf snj spa spq sqi src srm srn sro srp srr ssw stl stq svc swe swg swh sxu szl tch tcs tgh tgl tpi trf tuk tur twd vec vel vep vic vls vmf vot wae wep wln wof wol wym xav xho yor zaa zab zac zad zae zaf zai zam zao zap zaq zar zas zat zav zaw zax zca zch zea zeh zgb zgm zgn zha zhd zhn zlj zln zlq zoo zpa zpb zpc zpd zpe zpf zpg zph zpi zpj zpk zpl zpm zpn zpo zpp zpq zpr zps zpt zpu zpv zpw zpx zpy zpz zqe zrp zsr zte ztg ztl ztm ztn ztp ztq zts ztt ztu ztx zty zul zyb zyg zyj zyn grn nhd gui gun gug gnw'
+-store(&WINDOWSLANGUAGES) 'x0436 x041C x0484 x042C x042D x0813 x080C x0414 x141A x0416 x047E x0403 x0483 x041A x041A x0405 x0406 x0413 x0C09 x2809 x1009 x4009 x1809 x2009 x4409 x1409 x4809 x1C09 x2409 x3409 x0809 x0409 x2C09 x3009 x0425 x0438 x040B x0C0C x140C x180C x100C x0462 x040C x083C x0456 x0C07 x1407 x1007 x0807 x0407 x046F x040E x040F x0810 x0410 x043F x0426 x0427 x082E x046E x043A x0481 x047C x0814 x0482 x0415 x0816 x046B x086B x0C6B x0417 x0418 x243B x103B x143B x0C3B x043B x083B x183B x1C3B x181A x081A x041B x0424 x0C0A x2C0A x400A x340A x240A x140A x300A x440A x100A x480A x080A x4C0A x180A x3C0A x280A x500A x1C0A x380A x540A x200A x040A x0441 x081D x041D x041F x0422 x0452 x0488 x0434 x046A x0435'
++c store(&WINDOWSLANGUAGES) 'x0436 x041C x0484 x042C x042D x0813 x080C x0414 x141A x0416 x047E x0403 x0483 x041A x041A x0405 x0406 x0413 x0C09 x2809 x1009 x4009 x1809 x2009 x4409 x1409 x4809 x1C09 x2409 x3409 x0809 x0409 x2C09 x3009 x0425 x0438 x040B x0C0C x140C x180C x100C x0462 x040C x083C x0456 x0C07 x1407 x1007 x0807 x0407 x046F x040E x040F x0810 x0410 x043F x0426 x0427 x082E x046E x043A x0481 x047C x0814 x0482 x0415 x0816 x046B x086B x0C6B x0417 x0418 x243B x103B x143B x0C3B x043B x083B x183B x1C3B x181A x081A x041B x0424 x0C0A x2C0A x400A x340A x240A x140A x300A x440A x100A x480A x080A x4C0A x180A x3C0A x280A x500A x1C0A x380A x540A x200A x040A x0441 x081D x041D x041F x0422 x0452 x0488 x0434 x046A x0435'
  
  begin Unicode > use(Main)
  
-@@ -70,7 +70,7 @@
- store(ringO) 'åÅůŮ'
- store(ringK) 'aAuU'
- 
+@@ -98,7 +98,7 @@
+ '=' dk(1) + "'" >  U+A78C c Lowercase Saltillo
+ '=' dk(1) + '"' >  U+A78B c Uppercase Saltillo
+    
 -c \
 +c backslash
- store(specialO) 'ĸŉſÐðØø¡¦§¨©ª¬­®¯°±²³´µ¶·¸¹º¿×÷†‡‰–—•'
- store(specialK) "knsDdOo!|S:cf~-r_*+23'uP.,1m?x/tT%NM>"
+ store(specialO) '©ÐðƐɛªǤǥĸ—º–ŉØø¶℗®§ſ‡†µ×¡¦¨¬­¯°±´·¸¿÷‰•¹²³⁴⁵⁶⁷⁸⁹⁰'
+ store(specialK) "cDdEefGgkMmNnOoPprSsTtux!|:~-_*+'.,?/%>1234567890"
  
