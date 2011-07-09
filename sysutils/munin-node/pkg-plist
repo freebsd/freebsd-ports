@@ -164,6 +164,7 @@ sbin/munin-run
 %%DATADIR%%/plugins/smart_
 %%DATADIR%%/plugins/snmp__cpuload
 %%DATADIR%%/plugins/snmp__df
+%%DATADIR%%/plugins/snmp__df_ram
 %%DATADIR%%/plugins/snmp__fc_if_
 %%DATADIR%%/plugins/snmp__fc_if_err_
 %%DATADIR%%/plugins/snmp__if_
