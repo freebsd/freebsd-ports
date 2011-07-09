@@ -1,3 +1,4 @@
+bin/dgawk
 bin/gawk
 bin/gawk-%%VERSION%%
 bin/igawk
@@ -15,35 +16,26 @@ share/awk/gettime.awk
 share/awk/group.awk
 share/awk/join.awk
 share/awk/libintl.awk
-share/awk/nextfile.awk
 share/awk/noassign.awk
 share/awk/ord.awk
 share/awk/passwd.awk
+share/awk/quicksort.awk
 share/awk/readable.awk
 share/awk/rewind.awk
 share/awk/round.awk
 share/awk/strtonum.awk
+share/awk/walkarray.awk
 share/awk/zerofile.awk
-%%NLS%%share/locale/ast/LC_MESSAGES/gawk.mo
-%%NLS%%share/locale/ca/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/da/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/de/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gawk.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gawk.mo
-%%NLS%%share/locale/ga/LC_MESSAGES/gawk.mo
-%%NLS%%share/locale/he/LC_MESSAGES/gawk.mo
-%%NLS%%share/locale/id/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gawk.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/gawk.mo
-%%NLS%%share/locale/ro/LC_MESSAGES/gawk.mo
-%%NLS%%share/locale/rw/LC_MESSAGES/gawk.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gawk.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/gawk.mo
-%%NLS%%share/locale/vi/LC_MESSAGES/gawk.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/gawk.mo
 @dirrm share/awk
 @dirrm libexec/awk
 @dirrmtry share/locale/ast/LC_MESSAGES
