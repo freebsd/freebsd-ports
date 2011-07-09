@@ -3273,6 +3273,7 @@
     SUBDIR += rubygem-facets
     SUBDIR += rubygem-fast-stemmer
     SUBDIR += rubygem-fastercsv
+    SUBDIR += rubygem-fastri
     SUBDIR += rubygem-fastthread
     SUBDIR += rubygem-fattr
     SUBDIR += rubygem-ffi
