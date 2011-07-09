@@ -50,8 +50,8 @@ RUN_DEPENDS+=	${SITE_PERL}/DBIx/Class.pm:${PORTSDIR}/databases/p5-DBIx-Class \
 # Work around a bug in p5-Package-Stash port
 RUN_DEPENDS+=	p5-Package-DeprecationManager>=0.10:${PORTSDIR}/devel/p5-Package-DeprecationManager
 
-PKGINSTALL=	${WRKDIR}/pkg-install
-
+USERS=		${SLIMUSER}
+GROUPS=		${SLIMGROUP}
 USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>
