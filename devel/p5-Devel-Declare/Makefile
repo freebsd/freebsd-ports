@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Devel-Declare
-PORTVERSION=	0.006004
+PORTVERSION=	0.006005
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Adding keywords to perl, in perl
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Sub/Name.pm:${PORTSDIR}/devel/p5-Sub-Name \
 		p5-B-Hooks-EndOfScope>=0.05:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
