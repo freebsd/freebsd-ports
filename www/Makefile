@@ -931,6 +931,7 @@
     SUBDIR += p5-Flea
     SUBDIR += p5-Flickr-API
     SUBDIR += p5-Flickr-Upload
+    SUBDIR += p5-Furl
     SUBDIR += p5-Gantry
     SUBDIR += p5-Geo-Caching
     SUBDIR += p5-Google-Code-Upload
