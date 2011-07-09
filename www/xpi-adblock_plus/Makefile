@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	adblock_plus
-PORTVERSION=	1.3.8
-DISTVERSIONSUFFIX=	-sm+tb+fx+fn
+PORTVERSION=	1.3.9
+DISTVERSIONSUFFIX=	-fx+tb+sm+fn
 CATEGORIES=	www
 
 MAINTAINER=	ale@FreeBSD.org
@@ -26,7 +26,7 @@ XPI_FILES=	chrome/adblockplus.jar chrome.manifest components/Initializer.js \
 		modules/Matcher.jsm modules/ObjectTabs.jsm \
 		modules/Prefs.jsm modules/Public.jsm \
 		modules/RequestNotifier.jsm modules/SubscriptionClasses.jsm \
-		modules/Synchronizer.jsm modules/Utils.jsm
+		modules/Sync.jsm modules/Synchronizer.jsm modules/Utils.jsm
 
 XPI_DIRS=	chrome components defaults/preferences defaults modules
 
