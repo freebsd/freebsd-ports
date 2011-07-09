@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	log2timeline
-PORTVERSION=	0.52
+PORTVERSION=	0.60
 CATEGORIES=	security
 MASTER_SITES=	http://log2timeline.net/files/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -49,16 +49,20 @@ WRKSRC=	${WRKDIR}/${PORTNAME}
 MAN1=	l2t_process.1 \
 	log2timeline.1 \
 	timescanner.1
-MAN3=	Log2t::BinRead.3 \
+MAN3=	Log2Timeline.3 \
+	Log2t::BinRead.3 \
 	Log2t::Numbers.3 \
 	Log2t::Time.3 \
+	Log2t::base::input.3 \
 	Log2t::input::encase_dirlisting.3 \
 	Log2t::input::evt.3 \
 	Log2t::input::evtx.3 \
 	Log2t::input::ff_bookmark.3 \
 	Log2t::input::firefox2.3 \
 	Log2t::input::ftk_dirlisting.3 \
+	Log2t::input::jp_ntfs_change.3 \
 	Log2t::input::mcafee.3 \
+	Log2t::input::mft.3 \
 	Log2t::input::mssql_errlog.3 \
 	Log2t::input::opera.3 \
 	Log2t::input::pcap.3 \
@@ -73,6 +77,6 @@ MAN3=	Log2t::BinRead.3 \
 	Log2t::output::csv.3 \
 	Log2t::output::tab.3 \
 	Parse::Evtx.3 \
-	Parse::Evtx::Chunk.3 \
+	Parse::Evtx::Chunk.3
 
 .include <bsd.port.mk>

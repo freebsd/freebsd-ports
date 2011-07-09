@@ -1,14 +1,18 @@
-bin/glog2timeline
 bin/l2t_process
 bin/log2timeline
 bin/timescanner
 bin/update_log2timeline
+%%SITE_PERL%%/Log2Timeline.pm
 %%SITE_PERL%%/Log2t/BinRead.pm
 %%SITE_PERL%%/Log2t/Common.pm
 %%SITE_PERL%%/Log2t/Network.pm
 %%SITE_PERL%%/Log2t/Numbers.pm
 %%SITE_PERL%%/Log2t/Time.pm
 %%SITE_PERL%%/Log2t/Win.pm
+%%SITE_PERL%%/Log2t/WinReg.pm
+%%SITE_PERL%%/Log2t/PreProc/user_browser.pm
+%%SITE_PERL%%/Log2t/PreProc/win_sysinfo.pm
+%%SITE_PERL%%/Log2t/base/input.pm
 %%SITE_PERL%%/Log2t/input/apache2_access.pm
 %%SITE_PERL%%/Log2t/input/apache2_error.pm
 %%SITE_PERL%%/Log2t/input/chrome.pm
@@ -24,10 +28,13 @@ bin/update_log2timeline
 %%SITE_PERL%%/Log2t/input/iehistory.pm
 %%SITE_PERL%%/Log2t/input/iis.pm
 %%SITE_PERL%%/Log2t/input/isatxt.pm
+%%SITE_PERL%%/Log2t/input/jp_ntfs_change.pm
 %%SITE_PERL%%/Log2t/input/linux.lst
 %%SITE_PERL%%/Log2t/input/mactime.pm
 %%SITE_PERL%%/Log2t/input/mcafee.pm
+%%SITE_PERL%%/Log2t/input/mft.pm
 %%SITE_PERL%%/Log2t/input/mssql_errlog.pm
+%%SITE_PERL%%/Log2t/input/ntuser.pm
 %%SITE_PERL%%/Log2t/input/opera.pm
 %%SITE_PERL%%/Log2t/input/oxml.pm
 %%SITE_PERL%%/Log2t/input/pcap.pm
@@ -36,17 +43,23 @@ bin/update_log2timeline
 %%SITE_PERL%%/Log2t/input/recycler.pm
 %%SITE_PERL%%/Log2t/input/restore.pm
 %%SITE_PERL%%/Log2t/input/safari.pm
+%%SITE_PERL%%/Log2t/input/sam.pm
+%%SITE_PERL%%/Log2t/input/security.pm
 %%SITE_PERL%%/Log2t/input/setupapi.pm
+%%SITE_PERL%%/Log2t/input/skype_sql.pm
+%%SITE_PERL%%/Log2t/input/software.pm
 %%SITE_PERL%%/Log2t/input/sol.pm
 %%SITE_PERL%%/Log2t/input/squid.pm
 %%SITE_PERL%%/Log2t/input/syslog.pm
+%%SITE_PERL%%/Log2t/input/system.pm
 %%SITE_PERL%%/Log2t/input/tln.pm
-%%SITE_PERL%%/Log2t/input/userassist.pm
 %%SITE_PERL%%/Log2t/input/volatility.pm
-%%SITE_PERL%%/Log2t/input/web.lst
+%%SITE_PERL%%/Log2t/input/webhist.lst
+%%SITE_PERL%%/Log2t/input/win7.lst
+%%SITE_PERL%%/Log2t/input/win7_no_reg.lst
 %%SITE_PERL%%/Log2t/input/win_link.pm
-%%SITE_PERL%%/Log2t/input/winvista.lst
 %%SITE_PERL%%/Log2t/input/winxp.lst
+%%SITE_PERL%%/Log2t/input/winxp_no_reg.lst
 %%SITE_PERL%%/Log2t/input/wmiprov.pm
 %%SITE_PERL%%/Log2t/input/xpfirewall.pm
 %%SITE_PERL%%/Log2t/output/beedocs.pm
@@ -108,6 +121,8 @@ bin/update_log2timeline
 %%SITE_PERL%%/Parse/Evtx/VariantType/Type0x94.pm
 %%SITE_PERL%%/Parse/Evtx/VariantType/Type0x95.pm
 %%SITE_PERL%%/mach/auto/Log2t/.packlist
+@dirrm %%SITE_PERL%%/Log2t/PreProc
+@dirrm %%SITE_PERL%%/Log2t/base
 @dirrm %%SITE_PERL%%/Log2t/input
 @dirrm %%SITE_PERL%%/Log2t/output
 @dirrm %%SITE_PERL%%/Log2t
