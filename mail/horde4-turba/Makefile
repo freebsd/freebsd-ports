@@ -8,7 +8,7 @@
 PORTNAME=	turba
 PORTVERSION=	3.0.4
 PKGNAMEPREFIX=	horde-
-CATEGORIES=	www pear
+CATEGORIES=	mail www pear
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Horde web based address book
