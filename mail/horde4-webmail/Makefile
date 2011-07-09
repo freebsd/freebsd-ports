@@ -15,6 +15,8 @@ COMMENT=	Horde Groupware Webmail Edition
 
 CONFLICTS=	horde-groupware-4*
 
+LATEST_LINK=	horde4-${PORTNAME}
+
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
 		content \

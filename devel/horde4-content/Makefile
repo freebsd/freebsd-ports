@@ -13,6 +13,8 @@ PKGNAMEPREFIX=	horde-
 MAINTAINER=	mm@FreeBSD.org
 COMMENT=	Horde tagging application
 
+LATEST_LINK=	horde4-${PORTNAME}
+
 USE_PHP=	gettext
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \

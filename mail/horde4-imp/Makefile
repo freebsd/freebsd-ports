@@ -16,6 +16,8 @@ COMMENT=	Horde web based webmail system
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+LATEST_LINK=	horde4-${PORTNAME}
+
 USE_HORDE_BUILD=	Horde_Role
 USE_HORDE_RUN=	Horde_Role \
 		horde \

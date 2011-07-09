@@ -16,6 +16,8 @@ COMMENT=	Horde web based notes manager
 LICENSE=	ASL
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
+LATEST_LINK=	horde4-${PORTNAME}
+
 OPTIONS=	PDF "Support PDF generation" On
 
 USE_PHP=	gettext
