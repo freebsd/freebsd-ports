@@ -36,6 +36,7 @@ libexec/fetchmailconf.py
 %%NLS%%share/locale/tr/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/fetchmail.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/fetchmail.mo
+@exec /usr/bin/install -d -m 755 -o fetchmail -g fetchmail /var/run/fetchmail
 @unexec if cmp -s %D/etc/fetchmailrc.sample %D/etc/fetchmailrc; then rm -f %D/etc/fetchmailrc; fi
 etc/fetchmailrc.sample
 @exec if [ ! -f %D/etc/fetchmailrc ] ; then cp -p %D/%F %B/fetchmailrc; fi

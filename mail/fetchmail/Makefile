@@ -21,6 +21,9 @@ COMMENT=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
+USERS=		${PORTNAME}
+GROUPS=		${USERS}
+
 USE_RC_SUBR=	fetchmail
 FETCHMAILRC=	${PREFIX}/etc/fetchmailrc
 SUB_FILES=	pkg-message
@@ -108,9 +111,6 @@ pre-patch:
 
 post-build:
 	@cd ${WRKSRC} && ${MAKE} check
-
-pre-su-install:
-	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 .if !defined(NOPORTDOCS)
