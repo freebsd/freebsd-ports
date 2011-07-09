@@ -85,6 +85,7 @@ CONFIGURE_ARGS+=	--disable-pic-port
 PLIST_SUB+=		PIC="@comment "
 .else
 BUILD_DEPENDS+=		gpasm:${PORTSDIR}/devel/gputils
+RUN_DEPENDS+=		gpasm:${PORTSDIR}/devel/gputils
 PLIST_SUB+=		PIC=""
 .endif
 
@@ -93,6 +94,7 @@ CONFIGURE_ARGS+=	--disable-pic16-port
 PLIST_SUB+=		PIC16="@comment "
 .else
 BUILD_DEPENDS+=		gpasm:${PORTSDIR}/devel/gputils
+RUN_DEPENDS+=		gpasm:${PORTSDIR}/devel/gputils
 PLIST_SUB+=		PIC16=""
 .endif
 
