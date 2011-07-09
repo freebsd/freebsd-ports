@@ -5,22 +5,21 @@
 # $FreeBSD$
 
 PORTNAME=	kmfl-european-latin
-PORTVERSION=	1.2
-PORTREVISION=	5
+PORTVERSION=	1.6
 CATEGORIES=	textproc
-MASTER_SITES=	http://eurolatin.keymankeyboards.com/ \
-		http://anthesphoria.net/FreeBSD/ports/distfiles/
-DISTNAME=	eurolatin-${PORTVERSION}
+MASTER_SITES=	http://www.tavultesoft.com/eurolatin/ \
+		http://anthesphoria.net/FreeBSD/ports/distfiles/${DIST_SUBDIR}/
+DISTNAME=	eurolatin-source-${PORTVERSION}
 DIST_SUBDIR=	kmfl
 
 MAINTAINER=	nikola.lecic@anthesphoria.net
-COMMENT=	Paneuropean Latin KMFL keyboard covering 42 languages
+COMMENT=	Paneuropean Latin KMFL keyboard covering 120 languages
 
+BUILD_DEPENDS=	base64:${PORTSDIR}/converters/base64
 RUN_DEPENDS=	kmflcomp:${PORTSDIR}/textproc/kmflcomp
 
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/EuroLatin\ Source\ Files
 USE_DOS2UNIX=	european.kmn
-NO_BUILD=	yes
 USE_ZIP=	yes
 
 DOCSDIR_REL=	share/doc/kmfl/${PORTNAME}
@@ -29,24 +28,25 @@ KMFL_DIR=	share/kmfl
 KMFL_ICONS_DIR=	share/kmfl/icons
 
 PORTDOCS=	*
-DOCSLIST=	eurolatin12.pdf european.html licence.txt readme.html \
-	       	welcome.htm
+DOCSLIST=	EuroLatin\ Keyman\ Desktop\ Keyboard\ Files/eurolatin1.6.pdf \
+		EuroLatin\ KeymanWeb\ Keyboard\ Files/european.html \
+		licence.txt
 PLIST_FILES=	${KMFL_DIR}/european.kmn \
-		${KMFL_ICONS_DIR}/european.bmp \
-		${KMFL_ICONS_DIR}/latin.bmp \
-		${KMFL_ICONS_DIR}/latin.ico
+		${KMFL_ICONS_DIR}/latin.png
 PLIST_DIRSTRY=	${KMFL_ICONS_DIR} \
 		${KMFL_DIR}
+
+do-build:
+	base64 -d ${FILESDIR}/latin.png.base64.txt > ${WRKSRC}/latin.png
 
 do-install:
 	${MKDIR} ${LOCALBASE}/${KMFL_DIR} ${LOCALBASE}/${KMFL_ICONS_DIR}
 	${INSTALL_DATA} ${WRKSRC}/*.kmn ${LOCALBASE}/${KMFL_DIR}
-	${INSTALL_DATA} ${WRKSRC}/*.bmp ${WRKSRC}/*.ico \
-	       ${LOCALBASE}/${KMFL_ICONS_DIR}
+	${INSTALL_DATA} ${WRKSRC}/latin.png ${LOCALBASE}/${KMFL_ICONS_DIR}
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	for doc in ${DOCSLIST} ; do \
-		${INSTALL_DATA} ${WRKSRC}/$$doc ${DOCSDIR} ; \
+		${INSTALL_DATA} ${WRKSRC}/"$$doc" ${DOCSDIR} ; \
 	done
 .endif
 

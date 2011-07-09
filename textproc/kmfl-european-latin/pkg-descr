@@ -1,6 +1,8 @@
-This keyboard is designed to enable simple input of most Latin script
-languages, including all major European Latin-script languages. The
-keyboard is written in KMN Keyboard Language by the KMN language
+This keyboard is designed to enable simple input in all European
+languages which use Latin-script, and in most Latin-script languages
+from the rest of the world.
+
+The keyboard is written in KMN Keyboard Language by the KMN language
 developer, Tavultesoft (http://www.tavultesoft.com). The keyboard
 uses punctuation and letter keys in sequence to access diacritic and
 other letters.
@@ -8,7 +10,7 @@ other letters.
 This port installs the keyboard so that it can be used through SCIM or
 IBus KMFL IMEngine (textproc/scim-kmfl-imengine, textproc/ibus-kmfl).
 
-Some of the supported languages include: Afrikaans, Albanian,
+It currently covers 120 languages including: Afrikaans, Albanian,
 Balearic, Basque, Breton, Catalan, Croatian, Czech, Danish, Dutch,
 Esperanto, Estonian, Faroese, Finnish, French, Gaelic, Galician,
 German, Hungarian, Icelandic, Inuktitut, Italian, Kashubian, Ladin,
