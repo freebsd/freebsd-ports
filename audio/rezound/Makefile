@@ -14,26 +14,28 @@ MASTER_SITES=	SF/${PORTNAME}/ReZound/${DISTVERSION}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Graphical audio file editor
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	FOX-1.4:${PORTSDIR}/x11-toolkits/fox14
 
 USE_BISON=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=	--disable-alsa
+CONFIGURE_ARGS=	--disable-alsa
 
 OPTIONS=	LARGEFILE	"Enable 64-bit I/O support (not yet!)"	off \
-		JACK		"Enable Jack audio server support"	on \
+		JACK		"Enable Jack audio server support"	off \
 		AUDIOFILE	"Enable Audio File Library support"	on \
 		PORTAUDIO	"Enable PortAudio support"		on \
 		OGG		"Enable OGG support"			on \
 		VORBIS		"Enable Vorbis support"			on \
 		FLAC		"Enable FLAC support"			on \
-		FFTW		"Enable FFTW support"			on \
+		FFTW		"Enable FFTW support"			off \
 		SOUNDTOUCH	"Enable SoundTouch features"		on \
 		LADSPA		"Enable LADSPA plugin support"		on \
-		LAME		"Enable loading and saving MP3s"	on \
-		CDRDAO		"Enable burning audio files to CD"	on \
-		NLS		"Enable National Language Support"	on
+		LAME		"Enable loading and saving MP3 files"	on \
+		CDRDAO		"Enable burning audio files to CD"	off \
+		NLS		"Enable Native Language Support"	on
 
 .include <bsd.port.pre.mk>
 
@@ -104,9 +106,8 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-patch: .SILENT
-	${REINPLACE_CMD} -e '/atoll/d' ${WRKSRC}/config/platform/bsd.h
-	${REINPLACE_CMD} -e '/round/d' ${WRKSRC}/config/platform/bsd.h
-	${REINPLACE_CMD} -e '/nearbyint/d' ${WRKSRC}/config/platform/bsd.h
+	${REINPLACE_CMD} -E '/atoll|round|nearbyint/d' \
+		${WRKSRC}/config/platform/bsd.h
 	${REINPLACE_CMD} -E 's,(_nl_expand_alias \()\),\1...), ; \
 		/^C(XX)?FLAGS=/d ; /CXXFLAGS="\$$CXXFLAGS -[gW]/d' \
 			${WRKSRC}/configure
