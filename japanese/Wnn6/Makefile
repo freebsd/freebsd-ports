@@ -21,6 +21,8 @@ DISTDIR=	${MOUNT_PT}/fbsd
 MOUNT_PT?=	/cdrom
 MOUNT_DEV?=	/dev/acd0c
 
+USERS=		wnn
+
 RESTRICTED=	"You should buy from Omron Software Co., Ltd."
 NO_BUILD=	yes
 IS_INTERACTIVE=	yes
@@ -81,7 +83,7 @@ pre-extract::
 post-extract:
 	@/sbin/umount ${MOUNT_PT}
 
-pre-install:
+pre-su-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
