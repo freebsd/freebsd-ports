@@ -24,6 +24,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	License analysis tool for Open Source software
 
+DEPRECATED=	Broken for four months with no-one caring
+EXPIRATION_DATE=2011-08-09
+
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
 		${SITE_PERL}/Text/Template.pm:${PORTSDIR}/textproc/p5-Text-Template \
 		svn:${PORTSDIR}/devel/subversion
@@ -40,6 +43,8 @@ RUN_DEPENDS=	cabextract:${PORTSDIR}/archivers/cabextract \
 
 BROKEN=		does not compile
 
+USERS=		fossy
+GROUPS=		${USERS}
 USE_APACHE=	2.0+
 USE_CDRTOOLS=	yes
 USE_GMAKE=	yes
