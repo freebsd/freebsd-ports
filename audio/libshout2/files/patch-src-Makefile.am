@@ -1,0 +1,22 @@
+--- src/Makefile.am.orig	2006-01-03 20:22:17.000000000 +0100
++++ src/Makefile.am	2006-05-28 18:37:22.000000000 +0200
+@@ -26,7 +26,7 @@
+ AM_CFLAGS = @XIPH_CFLAGS@
+ 
+ libshout_la_LIBADD = net/libicenet.la timing/libicetiming.la avl/libiceavl.la\
+-		httpp/libicehttpp.la $(MAYBE_THREAD_LIB) $(THEORA_LIBS) $(VORBIS_LIBS)
++		httpp/libicehttpp.la $(MAYBE_THREAD_LIB) $(THEORA_LIBS) $(SPEEX_LIBS) $(VORBIS_LIBS)
+ 
+ INCLUDES = -I$(top_builddir)/include
+ 
+--- src/Makefile.in.orig	2006-01-03 20:24:29.000000000 +0100
++++ src/Makefile.in	2006-05-28 18:37:56.000000000 +0200
+@@ -261,7 +261,7 @@
+ libshout_la_SOURCES = shout.c util.c ogg.c vorbis.c mp3.c $(MAYBE_THEORA) $(MAYBE_SPEEX)
+ AM_CFLAGS = @XIPH_CFLAGS@
+ libshout_la_LIBADD = net/libicenet.la timing/libicetiming.la avl/libiceavl.la\
+-		httpp/libicehttpp.la $(MAYBE_THREAD_LIB) $(THEORA_LIBS) $(VORBIS_LIBS)
++		httpp/libicehttpp.la $(MAYBE_THREAD_LIB) $(THEORA_LIBS) $(SPEEX_LIBS) $(VORBIS_LIBS)
+ 
+ INCLUDES = -I$(top_builddir)/include
+ all: all-recursive
