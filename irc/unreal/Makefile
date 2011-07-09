@@ -13,7 +13,7 @@ MASTER_SITES=	http://unrealircd.pimpmylinux.org/ \
 		http://unrealircd.icedslash.com/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	gerrit.beine@gmx.de
+MAINTAINER=	tanawts@gmail.com
 COMMENT=	Unreal - the next generation ircd
 
 LIB_DEPENDS=	cares.2:${PORTSDIR}/dns/c-ares
