@@ -679,6 +679,7 @@
     SUBDIR += ruby-xmms
     SUBDIR += ruby-xmms2
     SUBDIR += rubygem-librmpd
+    SUBDIR += rubygem-ogginfo
     SUBDIR += rubygem-ruby-mp3info
     SUBDIR += rubyripper
     SUBDIR += s3mod
