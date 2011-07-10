@@ -7,6 +7,7 @@
 
 PORTNAME=	gmpc-mserver
 PORTVERSION=	0.20.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://download.sarine.nl/Programs/gmpc/${PORTVERSION}/ \
 		http://freebsd.unixfreunde.de/sources/
@@ -16,7 +17,7 @@ COMMENT=	Lets you stream music files to your mpd that are not in your database
 
 LIB_DEPENDS=	mpd.3:${PORTSDIR}/audio/libmpd \
 		tag.1:${PORTSDIR}/audio/taglib \
-		microhttpd.12:${PORTSDIR}/www/libmicrohttpd
+		microhttpd.20:${PORTSDIR}/www/libmicrohttpd
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gmpc.pc:${PORTSDIR}/audio/gmpc
 RUN_DEPENDS=	gmpc:${PORTSDIR}/audio/gmpc
 
