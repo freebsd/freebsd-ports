@@ -25,7 +25,7 @@ LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \
 		gmp.10:${PORTSDIR}/math/gmp \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt \
 		extractor.3:${PORTSDIR}/textproc/libextractor \
-		microhttpd.12:${PORTSDIR}/www/libmicrohttpd
+		microhttpd.20:${PORTSDIR}/www/libmicrohttpd
 
 BROKEN=		does not configure
 
