@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qtiplot
-DISTVERSION=	0.9.8.5
+DISTVERSION=	0.9.8.6
 CATEGORIES=	math
 MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 PKGNAMESUFFIX=	-doc

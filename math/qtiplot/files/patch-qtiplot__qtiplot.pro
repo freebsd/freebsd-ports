@@ -71,20 +71,3 @@
    }
  
    win32 {
-@@ -228,16 +216,3 @@
- 	RC_FILE	= qtiplot.rc
- 	include(../3rdparty/QtSolutions/qtbrowserplugin/src/qtbrowserplugin.pri)
- }
--
--QT          += sql
--LIBS        += src/plugins/libQtiPlotdBasePlugin.a
--LIBS        += src/plugins/libQtiPlotDatabasePlugin.a
--LIBS        += src/plugins/libQtiPlotCsvPlugin.a
--LIBS        += src/plugins/libQtiPlotTexPlugin.a
--LIBS        += src/plugins/libQtiPlotOdsPlugin.a
--LIBS        += src/plugins/libQtiPlotExcelPlugin.a
--LIBS        += src/plugins/libQtiPlotOriginPlugin.a
--LIBS        += src/plugins/libQtiPlotEmfExportPlugin.a
--LIBS        += ../3rdparty/quazip/lib/libquazip.a
--LIBS        += ../3rdparty/EmfEngine/libEmfEngine.a
--LIBS        += -lgdiplus

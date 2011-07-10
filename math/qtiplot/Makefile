@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	qtiplot
-DISTVERSION=	0.9.8.5
-PORTREVISION=	1
+DISTVERSION=	0.9.8.6
 CATEGORIES=	math science
 MASTER_SITES=	BERLIOS http://soft.proindependent.com/src/
 
@@ -15,8 +14,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	An Origin clone for data analysis and scientific plotting
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libmuparser.a:${PORTSDIR}/math/muparser
-LIB_DEPENDS=	gsl.16:${PORTSDIR}/math/gsl \
-		boost_date_time:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	gsl.16:${PORTSDIR}/math/gsl
 # use bundled modified libraries
 # 		qwt.5:${PORTSDIR}/x11-toolkits/qwt5 \
 # 		qwtplot3d-qt4:${PORTSDIR}/math/qwtplot3d-qt4
@@ -27,7 +25,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	gui opengl svg qt3support network assistantclient \
 		moc_build qmake_build rcc_build
 HAS_CONFIGURE=	yes
-QMAKE_ARGS+=	-unix -recursive PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
+QMAKE_ARGS+=	-recursive PREFIX=${PREFIX} LOCALBASE=${LOCALBASE} \
 		PYTHON_CMD=${PYTHON_CMD}
 USE_DOS2UNIX=	*.pro
 MAKE_JOBS_SAFE=	yes
