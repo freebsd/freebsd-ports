@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	keynav
-DISTVERSION=	0.20101224.3183
+DISTVERSION=	0.20110708.0
 PORTEPOCH=	1
 CATEGORIES=	x11
 MASTER_SITES=	http://semicomplete.googlecode.com/files/
@@ -26,10 +26,6 @@ PORTEXAMPLES=	keynavrc
 MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.pre.mk>
-
-.if (${OSVERSION} <= 700000)
-IGNORE=	does not build on 6.x
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/keynav ${PREFIX}/bin
