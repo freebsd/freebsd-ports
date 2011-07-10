@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	pcsc-lite
-PORTVERSION=	1.7.2
+PORTVERSION=	1.7.4
 PORTEPOCH=	2
 CATEGORIES=	devel security
-MASTER_SITES=	https://alioth.debian.org/frs/download.php/3533/
+MASTER_SITES=	https://alioth.debian.org/frs/download.php/3598/
 
 MAINTAINER=	arved@FreeBSD.org
 COMMENT=	A smartcard development library
