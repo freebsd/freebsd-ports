@@ -12,7 +12,7 @@ MASTER_SITES=	SF/py${PORTNAME}/py${PORTNAME}/py${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	pydns-${PORTVERSION}
 
-MAINTAINER=	linimon@FreeBSD.org
+MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	DNS (Domain Name Service) library for Python
 
 USE_PYTHON=	yes
