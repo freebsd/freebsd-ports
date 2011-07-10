@@ -223,6 +223,7 @@
     SUBDIR += hs-Diff
     SUBDIR += hs-HaXml
     SUBDIR += hs-bytestring-csv
+    SUBDIR += hs-case-insensitive
     SUBDIR += hs-citeproc-hs
     SUBDIR += hs-feed
     SUBDIR += hs-highlighting-kate
