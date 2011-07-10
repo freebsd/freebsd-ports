@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	convertible
-PORTVERSION=	1.0.9.1
-PORTREVISION=	2
+PORTVERSION=	1.0.10.0
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -16,7 +15,7 @@ COMMENT=	Haskell type classes and instances for converting between types
 LICENSE=	LGPL21
 FILE_LICENSE=	COPYRIGHT
 
-USE_CABAL=	mtl
+USE_CABAL=	mtl text>=0.7
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
