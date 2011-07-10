@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bsdbuild
-PORTVERSION=	2.8
+PORTVERSION=	2.9
 CATEGORIES=	devel
 MASTER_SITES=	http://stable.hypertriton.com/bsdbuild/
 
