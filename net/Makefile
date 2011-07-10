@@ -1141,6 +1141,7 @@
     SUBDIR += vde2
     SUBDIR += vinagre
     SUBDIR += vino
+    SUBDIR += vmware-vsphere-cli
     SUBDIR += vnc
     SUBDIR += vncreflector
     SUBDIR += vnstat
