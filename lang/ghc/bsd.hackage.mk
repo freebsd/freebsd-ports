@@ -29,6 +29,7 @@ bsd-sysctl_port=		devel/hs-bsd-sysctl
 c2hs_port=			devel/hs-c2hs		# executable
 cabal-install_port=		devel/hs-cabal-install	# executable
 cairo_port=			graphics/hs-cairo
+case-insensitive_port=		textproc/hs-case-insensitive
 category-extras_port=		math/hs-category-extras # BROKEN
 cgi_port=			www/hs-cgi
 checkers_port=			devel/hs-checkers       # BROKEN
