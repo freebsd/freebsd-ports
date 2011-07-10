@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	eclipse-devel
-PORTVERSION=	3.6.1
-#PORTREVISION=	3
+PORTVERSION=	3.7.0
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.eclipse.org/technology/linuxtools/eclipse-build/3.6.x_Helios/:1 \
-		http://download.eclipse.org/tools/orbit/downloads/drops/R20100519200754/bundles/:2 \
+MASTER_SITES=	http://download.eclipse.org/technology/linuxtools/eclipse-build/3.7.x_Indigo/:1 \
+		http://download.eclipse.org/tools/orbit/downloads/drops/R20110523182458/repository/plugins/:2 \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:4,} \
 		${MASTER_SITE_SOURCEFORGE:S,%SUBDIR%/,junit/junit/${JUNIT3_VERSION}/:5,} \
 		http://cloud.github.com/downloads/KentBeck/junit/:6
@@ -20,7 +19,7 @@ DISTFILES=	${ECLIPSE_BUILD_SRCFILE}:1 \
 		${JUNIT3_SRCFILE}:5 \
 		${JUNIT4_SRCFILE}:6
 DIST_SUBDIR=	eclipse
-EXTRACT_ONLY=	${ECLIPSE_BUILD_SRCFILE} ${ANT_SRCFILE}
+EXTRACT_ONLY=	${ECLIPSE_BUILD_SRCFILE}
 
 MAINTAINER=	freebsd-eclipse@FreeBSD.org
 COMMENT=	An open extensible IDE for anything and nothing in particular
@@ -31,12 +30,10 @@ PATCH_DEPENDS=	ant:${PORTSDIR}/devel/apache-ant \
 		zip:${PORTSDIR}/archivers/zip \
 		${DEPEND_JAVA}
 BUILD_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \
+		rsync:${PORTSDIR}/net/rsync \
 		unzip:${PORTSDIR}/archivers/unzip \
 		zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
-
-BROKEN=		unfetchable
-IGNORE=		is currently older than java/eclipse
 
 OPTIONS=	TESTS	"Build SDK test suite"	off
 
@@ -48,7 +45,8 @@ USE_GL=		glu
 USE_GMAKE=	yes
 USE_GNOME=	desktopfileutils gconf2 gtk20 gnomevfs2 libgnome libgnomeui pkgconfig
 USE_JAVA=	yes
-USE_BZIP2=	yes
+USE_XZ=		yes
+BZIP2_SUFX=	.tar.bz2
 
 JAVA_BUILD=	yes
 JAVA_OS=	native
@@ -56,29 +54,29 @@ JAVA_RUN=	yes
 JAVA_VERSION=	1.6
 JAVA_VENDOR=	openjdk
 
-ECLIPSE_BUILD_SRCFILE=	eclipse-build-0.6.1${EXTRACT_SUFX}
-ECLIPSE_SRCFILE=	eclipse-${PORTVERSION}-src${EXTRACT_SUFX}
-ECLIPSE_TEST_SRCFILE=	eclipse-sdktests-${PORTVERSION}-src${EXTRACT_SUFX}
-ECLIPSE_TEST_SCRIPTFILE=eclipse-sdktests-${PORTVERSION}-scripts${EXTRACT_SUFX}
-ECLIPSE_JAR_BUNDLES=	com.ibm.icu_4.2.1.v20100412.jar \
-			com.jcraft.jsch_0.1.41.v200903070017.jar \
-			javax.servlet_2.5.0.v200910301333.jar \
-			javax.servlet.jsp_2.0.0.v200806031607.jar \
-			org.apache.commons.codec_1.3.0.v20080530-1600.jar \
-			org.apache.commons.el_1.0.0.v200806031608.jar \
-			org.apache.commons.httpclient_3.1.0.v201005080502.jar \
-			org.apache.commons.logging_1.0.4.v201005080501.jar \
-			org.apache.jasper_5.5.17.v200903231320.jar \
-			org.apache.lucene_1.9.1.v20100518-1140.jar \
-			org.apache.lucene.analysis_1.9.1.v20100518-1140.jar \
-			org.mortbay.jetty.util_6.1.23.v201004211559.jar \
-			org.mortbay.jetty.server_6.1.23.v201004211559.jar \
+ECLIPSE_BUILD_SRCFILE=	eclipse-build-5791c48513b4207ab1eec1e00bed4b2186f9aad5${EXTRACT_SUFX}
+ECLIPSE_SRCFILE=	eclipse-${PORTVERSION}-src${BZIP2_SUFX}
+ECLIPSE_TEST_SRCFILE=	eclipse-sdktests-${PORTVERSION}-src${BZIP2_SUFX}
+ECLIPSE_TEST_SCRIPTFILE=eclipse-sdktests-${PORTVERSION}-scripts${BZIP2_SUFX}
+ECLIPSE_JAR_BUNDLES=	com.ibm.icu_4.4.2.v20110208.jar \
+			com.jcraft.jsch_0.1.41.v201101211617.jar \
+			javax.servlet.jsp_2.0.0.v201101211617.jar \
+			javax.servlet_2.5.0.v201103041518.jar \
+			org.apache.commons.codec_1.3.0.v201101211617.jar \
+			org.apache.commons.el_1.0.0.v201101211617.jar \
+			org.apache.commons.httpclient_3.1.0.v201012070820.jar \
+			org.apache.commons.logging_1.0.4.v201101211617.jar \
+			org.apache.jasper_5.5.17.v201101211617.jar \
+			org.apache.lucene.core_2.9.1.v201101211721.jar \
+			org.apache.lucene.analysis_2.9.1.v201101211721.jar \
 			org.hamcrest.core_1.1.0.v20090501071000.jar \
-			org.objectweb.asm_3.2.0.v200909071300.jar
-ECLIPSE_SAT4J_BUNDLES=	org.sat4j.core_2.2.0.v20100429.jar \
-			org.sat4j.pb_2.2.0.v20100429.jar
-ANT_VERSION=		1.7.1
-ANT_SRCFILE=		apache-ant-${ANT_VERSION}-bin${EXTRACT_SUFX}
+			org.mortbay.jetty.util_6.1.23.v201012071420.jar \
+			org.mortbay.jetty.server_6.1.23.v201012071420.jar \
+			org.objectweb.asm_3.3.1.v201105211655.jar
+ECLIPSE_SAT4J_BUNDLES=	org.sat4j.core_2.3.0.v20110329.jar \
+			org.sat4j.pb_2.3.0.v20110329.jar
+ANT_VERSION=		1.8.2
+ANT_SRCFILE=		apache-ant-${ANT_VERSION}-bin${BZIP2_SUFX}
 ANT_BUNDLES=		ant-antlr.jar \
 			ant-apache-bcel.jar \
 			ant-apache-bsf.jar \
@@ -86,22 +84,25 @@ ANT_BUNDLES=		ant-antlr.jar \
 			ant-apache-oro.jar \
 			ant-apache-regexp.jar \
 			ant-apache-resolver.jar \
+			ant-apache-xalan2.jar \
 			ant-commons-logging.jar \
 			ant-commons-net.jar \
 			ant.jar \
 			ant-javamail.jar \
 			ant-jdepend.jar \
+			ant-jmf.jar \
 			ant-jsch.jar \
 			ant-junit.jar \
+			ant-junit4.jar \
 			ant-launcher.jar \
-			ant-nodeps.jar \
 			ant-swing.jar \
-			ant-trax.jar
+			ant-testutil.jar
 JUNIT3_VERSION=		3.8.2
 JUNIT3_SRCFILE=		junit${JUNIT3_VERSION}.zip
 JUNIT4_VERSION=		4.8.2
 JUNIT4_SRCFILE=		junit-${JUNIT4_VERSION}.jar
 FBSD_SUPPORT_SRCFILE=	freebsd-support.patch
+ECLIPSE_GENERATED_BUILDSCRIPTS=	eclipse-build-generatedScripts.tar.bz2
 
 MAKE_ARGS=	-DbuildOs=freebsd -DbuildArch=${ARCH:C/amd64/x86_64/:C/i386/x86/} -Dprefix=${PREFIX} -Dlocalbase=${LOCALBASE} -Dlabel=${PORTVERSION}
 MAKE_ENV+=	GRE_HOME=${PREFIX}/lib/${GECKO} _JAVA_OPTIONS="-Xmx1024m" JAVA_VENDOR=${JAVA_VENDOR}
@@ -137,6 +138,8 @@ ALL_TARGET=	provision.tests
 
 # Copy the eclipse source file to the work area
 post-extract:
+	@(cd ${WRKDIR} && ${BZIP2_CMD} ${EXTRACT_BEFORE_ARGS} ${_DISTDIR}/${ANT_SRCFILE} ${EXTRACT_AFTER_ARGS})
+
 	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${ECLIPSE_SRCFILE} ${BUILD_WRKSRC}
 	@${CP} ${FILESDIR}/${FBSD_SUPPORT_SRCFILE} ${BUILD_WRKSRC}/patches/
 	@${MKDIR} ${BUILD_WRKSRC}/bundles
@@ -162,6 +165,8 @@ pre-patch:
 
 # Fixup boot classes path
 post-patch:
+	@(cd ${BUILD_WRKSRC}/generatedScripts; tar cjf ${BUILD_WRKSRC}/eclipse-build-generatedScripts.tar.bz2 plugins)
+
 	@${REINPLACE_CMD} -e "s+%%BOOTCLASSPATH%%+${BOOTCLASSPATH}+g" ${BUILD_WRKSRC}/build.properties
 	@${REINPLACE_CMD} -e "s+%%BOOTCLASSPATH%%+${BOOTCLASSPATH}+g" ${BUILD_WRKSRC}/pdebuild.properties
 	@${REINPLACE_CMD} -e "s+%%PORTNAME%%+${PORTNAME}+g" ${BUILD_WRKSRC}/build.xml
@@ -181,6 +186,15 @@ post-patch:
 	@${REINPLACE_CMD} -e "s+=/usr/share/java/junit.jar+=${BUILD_WRKSRC}/bundles/junit.jar+" ${BUILD_WRKSRC}/jdtnonosgidependencies.properties
 	@${REINPLACE_CMD} -e "s+=/usr/share/java/junit4.jar+=${BUILD_WRKSRC}/bundles/junit4.jar+" ${BUILD_WRKSRC}/jdtnonosgidependencies.properties
 	@${REINPLACE_CMD} -e "s+/usr/share/java/junit4.jar+${BUILD_WRKSRC}/bundles/junit4.jar+" ${BUILD_WRKSRC}/build.xml
+
+	@${MV} ${BUILD_WRKSRC}/dependencyManifests/com.jcraft.jsch_0.1.41.v200903070017.jar ${BUILD_WRKSRC}/dependencyManifests/com.jcraft.jsch_0.1.41.v201101211617.jar
+	@${MV} ${BUILD_WRKSRC}/dependencyManifests/org.apache.commons.el_1.0.0.v200806031608.jar ${BUILD_WRKSRC}/dependencyManifests/org.apache.commons.el_1.0.0.v201101211617.jar
+	@${MV} ${BUILD_WRKSRC}/dependencyManifests/org.apache.commons.httpclient_3.1.0.v201005080502.jar ${BUILD_WRKSRC}/dependencyManifests/org.apache.commons.httpclient_3.1.0.v201012070820.jar
+	@${MV} ${BUILD_WRKSRC}/dependencyManifests/org.apache.jasper_5.5.17.v200903231320.jar ${BUILD_WRKSRC}/dependencyManifests/org.apache.jasper_5.5.17.v201101211617.jar
+	@${MV} ${BUILD_WRKSRC}/dependencyManifests/org.mortbay.jetty.server_6.1.23.v201004211559.jar ${BUILD_WRKSRC}/dependencyManifests/org.mortbay.jetty.server_6.1.23.v201012071420.jar
+	@${MV} ${BUILD_WRKSRC}/dependencyManifests/org.mortbay.jetty.util_6.1.23.v201004211559.jar ${BUILD_WRKSRC}/dependencyManifests/org.mortbay.jetty.util_6.1.23.v201012071420.jar
+	@${MV} ${BUILD_WRKSRC}/dependencyManifests/org.objectweb.asm_3.3.1.v201101071600.jar ${BUILD_WRKSRC}/dependencyManifests/org.objectweb.asm_3.3.1.v201105211655.jar
+
 .if defined(WITH_TESTS)
 	@(cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${ANT} ${MAKE_ARGS} applyTestPatches)
 .endif
@@ -210,6 +224,7 @@ do-install:
 	-@update-desktop-database
 	@(cd ${PREFIX}; ${FIND} -s lib/${PORTNAME} -not -type d) >> ${TMPPLIST}
 	@(cd ${PREFIX}; ${FIND} -s -d lib/${PORTNAME} -type d) | ${SED} -ne "s,^,@dirrm ,p" >> ${TMPPLIST}
+	@${ECHO_CMD} "@exec ${MKDIR} %D/share/${PORTNAME}/dropins 2>/dev/null || true " >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/share/${PORTNAME}/dropins 2>/dev/null || true " >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/share/${PORTNAME} 2>/dev/null || true " >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec ${PREFIX}/bin/update-desktop-database > /dev/null || /usr/bin/true" >> ${TMPPLIST}

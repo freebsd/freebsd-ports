@@ -1,48 +1,38 @@
 $FreeBSD$
 
---- eclipse-build-0.5.0.orig/ChangeLog	2009-11-11 07:59:07.000000000 -0500
-+++ eclipse-build-0.5.0/ChangeLog	2009-12-23 16:23:06.355139641 -0500
-@@ -1,7 +1,3 @@
--2009-11-11  Alexander Kurtakov  <akurtako@redhat.com>
--
--	* pdebuild/eclipse-pdebuild.sh: Do not escape $orbitDepsDir.
--
- 2009-11-05  Alexander Kurtakov  <akurtako@redhat.com>
- 	Fix for bug #294264.
- 	* build.xml: Use ${buildWorkspace} instead of $HOME/workspace.
 --- eclipse-build-0.5.0.orig/build.properties	2009-09-30 14:07:21.000000000 -0400
 +++ eclipse-build-0.5.0/build.properties	2009-12-23 16:23:06.355139641 -0500
-@@ -26,7 +26,7 @@
+@@ -28,7 +28,7 @@
  collectingFolder=eclipse
  archivePrefix=eclipse
  generateFeatureVersionSuffix=true
--bootclasspath=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
+-bootclasspath=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
 +bootclasspath=%%BOOTCLASSPATH%%
  build.compiler=org.eclipse.jdt.core.JDTCompilerAdapter
  JavaSE-1.6=${bootclasspath}
  CDC-1.0/Foundation-1.0=${bootclasspath}
-@@ -47,21 +47,21 @@
+@@ -49,21 +49,21 @@
  CDC-1.1/PersonalBasis-1.1=${bootclasspath}
  CDC-1.1/PersonalJava-1.1=${bootclasspath}
  # Somehow bootclasspath isn't expanded when used by antRunner
--JavaSE-1.6=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--CDC-1.0/Foundation-1.0=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--CDC-1.1/Foundation-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--OSGi/Minimum-1.0=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--OSGi/Minimum-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--OSGi/Minimum-1.2=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--JRE-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--J2SE-1.2=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--J2SE-1.3=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--J2SE-1.4=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--J2SE-1.5=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--JavaSE-1.6=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--PersonalJava-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--PersonalJava-1.2=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--CDC-1.0/PersonalBasis-1.0=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--CDC-1.0/PersonalJava-1.0=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--CDC-1.1/PersonalBasis-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--CDC-1.1/PersonalJava-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
+-JavaSE-1.6=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-CDC-1.0/Foundation-1.0=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-CDC-1.1/Foundation-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-OSGi/Minimum-1.0=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-OSGi/Minimum-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-OSGi/Minimum-1.2=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-JRE-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-J2SE-1.2=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-J2SE-1.3=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-J2SE-1.4=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-J2SE-1.5=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-JavaSE-1.6=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-PersonalJava-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-PersonalJava-1.2=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-CDC-1.0/PersonalBasis-1.0=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-CDC-1.0/PersonalJava-1.0=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-CDC-1.1/PersonalBasis-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-CDC-1.1/PersonalJava-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
 +JavaSE-1.6=%%BOOTCLASSPATH%%
 +CDC-1.0/Foundation-1.0=%%BOOTCLASSPATH%%
 +CDC-1.1/Foundation-1.1=%%BOOTCLASSPATH%%
@@ -87,47 +77,25 @@ $FreeBSD$
  			<arg value="eclipse" />
  			<arg value="${buildDirectory}" />
  		</exec>
-@@ -292,8 +291,10 @@
- 	<target name="applyPatches" depends="insertBuildId" unless="patch.complete">
- 		<!-- eclipse-build-only patches -->
- 		<patch patchfile="${basedir}/patches/eclipse-buildswtnatives.patch" dir="${buildDirectory}" strip="1" />
--		<patch patchfile="${basedir}/patches/eclipse-swt-buildagainstxulrunner.patch" dir="${buildDirectory}" strip="1" />
--		<patch patchfile="${basedir}/patches/eclipse-addArchesAnd64bitSWT.patch" dir="${buildDirectory}" strip="1" />
-+ 		<exec executable="${localbase}/bin/gpatch" dir="${buildDirectory}">
-+ 			<arg value="-p1" />
-+ 			<arg value="-i${basedir}/patches/eclipse-swt-buildagainstxulrunner.patch" />
-+ 		</exec>
- 		<patch patchfile="${basedir}/patches/eclipse-add-archs-filesystem.patch" dir="${buildDirectory}" strip="1" />
- 		<patch patchfile="${basedir}/patches/eclipse-add-archs-swt.patch" dir="${buildDirectory}" strip="1" />
- 		<patch patchfile="${basedir}/patches/eclipse-add-archs-executable.patch" dir="${buildDirectory}" strip="1" />
-@@ -306,9 +307,15 @@
- 		<patch patchfile="${basedir}/patches/eclipse-nosourcebundlesfordependencies.patch" dir="${buildDirectory}" strip="1" />
- 		<patch patchfile="${basedir}/patches/eclipse-use-newer-commons-codec.patch" dir="${buildDirectory}" strip="1" />
- 		<patch patchfile="${basedir}/patches/junit4-nochecksum.patch" dir="${buildDirectory}" strip="0" />
--		<patch patchfile="${basedir}/patches/bz318912.patch" dir="${buildDirectory}" strip="0" />
-+ 		<exec executable="${localbase}/bin/gpatch" dir="${buildDirectory}">
-+ 			<arg value="-p0" />
-+ 			<arg value="-i${basedir}/patches/bz318912.patch" />
-+ 		</exec>
- 		<patch patchfile="${basedir}/patches/osgi-util.patch" dir="${buildDirectory}" strip="1" />
--		<patch patchfile="${basedir}/patches/eclipse-swt-compile-xpt.patch" dir="${buildDirectory}" strip="1" />
-+ 		<exec executable="${localbase}/bin/gpatch" dir="${buildDirectory}">
-+ 			<arg value="-p1" />
-+ 			<arg value="-i${basedir}/patches/eclipse-swt-compile-xpt.patch" />
-+ 		</exec>
- 		<replace file="${buildDirectory}/plugins/org.eclipse.pde.build/templates/package-build/build.properties" token="/usr/share/eclipse" value="/usr/${libDir}/eclipse" />
- 		<chmod dir="${buildDirectory}/plugins/org.eclipse.pde.build/templates/package-build" includes="*.sh" perm="a+x" />
- 		<!-- end eclipse-build-only patches -->
-@@ -321,6 +328,10 @@
- 			<replacefilter token="@build_os@" value="${buildOs}" />
+@@ -319,6 +318,10 @@
  		</replace>
- 		<patch patchfile="${basedir}/patches/java-home.patch" dir="${buildDirectory}" strip="2" />
-+ 		<exec executable="${localbase}/bin/gpatch" dir="${buildDirectory}">
-+ 			<arg value="-p2" />
-+ 			<arg value="-i${basedir}/patches/freebsd-support.patch" />
-+ 		</exec>
+ 		<patch patchfile="${basedir}/patches/eclipse-core-resources-compilation-profile.patch" dir="${buildDirectory}" strip="0" />
+ 		<patch patchfile="${basedir}/patches/eclipse-equinox-util.patch" dir="${buildDirectory}" strip="0" />
++		<exec executable="${localbase}/bin/gpatch" dir="${buildDirectory}">
++			<arg value="-p2" />
++			<arg value="-i${basedir}/patches/freebsd-support.patch" />
++		</exec>
  		<echo file="patch-stamp" />
  	</target>
+ 
+@@ -704,7 +707,7 @@
+ 	<target name="provision.sdk" depends="p2prep" unless="provision.sdk.complete">
+ 		<echo message="Installing into:  ${provisionDir}" />
+ 		<antcall target="provision">
+-			<param name="p2.director.installIU" value="org.eclipse.sdk.ide" />
++			<param name="p2.director.installIU" value="org.eclipse.sdk.ide,org.eclipse.equinox.initializer" />
+ 			<param name="profileName" value="SDKProfile" />
+ 		</antcall>
  
 @@ -804,7 +815,8 @@
  		<!--
@@ -139,24 +107,18 @@ $FreeBSD$
  			<arg value="-t${timestamp}" />
  			<arg value="-a${buildArch}" />
  			<arg value="-o${buildOs}" />
-@@ -906,26 +918,25 @@
- 
- 	<target name="installIntoDestDir">
- 		<mkdir dir="${installationDir}" />
--		<exec executable="cp" failonerror="true">
--			<arg value="-rd" />
--			<arg value="--no-target-directory" />
--			<arg value="${provisionDir}" />
--			<arg value="${installationDir}" />
-+   		<exec executable="cp" failonerror="true">
-+  			<arg value="-RL" />
-+  			<arg value="${provisionDir}/" />
-+  			<arg value="${installationDir}" />
- 		</exec>
+@@ -965,7 +969,7 @@
+                 </exec>
  
  		<!-- install desktop file -->
 -		<copy file="eclipse.desktop" todir="${destDir}${prefix}/share/applications" />
 +		<copy file="eclipse.desktop" tofile="${destDir}${prefix}/share/applications/%%PORTNAME%%.desktop" />
+ 		<!-- install Eclipse Java code formatter launcher -->
+ 		<property name="efj" value="${destDir}${prefix}/bin/efj"/>
+ 		<copy file="efj.sh" todir="${efj}" />
+@@ -975,16 +979,16 @@
+ 	    <property name="launcherJar" refid="equinoxLauncher"/>
+ 		<replace file="${efj}/efj.sh" token="@LAUNCHER@" value="${launcherJar}"/>
  		<!-- install icons -->
 -		<copy file="${buildDirectory}/plugins/org.eclipse.platform/eclipse.png" tofile="${destDir}${prefix}/share/icons/hicolor/16x16/apps/eclipse.png" />
 -		<copy file="${buildDirectory}/plugins/org.eclipse.platform/eclipse32.png" tofile="${destDir}${prefix}/share/icons/hicolor/32x32/apps/eclipse.png" />
@@ -165,21 +127,21 @@ $FreeBSD$
 +		<copy file="${buildDirectory}/plugins/org.eclipse.platform/eclipse32.png" tofile="${destDir}${prefix}/share/icons/hicolor/32x32/apps/%%PORTNAME%%.png" />
 +		<copy file="${buildDirectory}/plugins/org.eclipse.platform/eclipse48.png" tofile="${destDir}${prefix}/share/icons/hicolor/48x48/apps/%%PORTNAME%%.png" />
  		<mkdir dir="${destDir}${prefix}/share/pixmaps" />
--		<symlink link="${destDir}${prefix}/share/pixmaps/eclipse.png" resource="../icons/hicolor/48x48/apps/eclipse.png" />
-+		<symlink link="${destDir}${prefix}/share/pixmaps/%%PORTNAME%%.png" resource="../icons/hicolor/48x48/apps/%%PORTNAME%%.png" />
+-		<symlink link="${destDir}${prefix}/share/pixmaps/eclipse.png" resource="../icons/hicolor/48x48/apps/eclipse.png" overwrite="true"/>
++		<symlink link="${destDir}${prefix}/share/pixmaps/%%PORTNAME%%.png" resource="../icons/hicolor/48x48/apps/%%PORTNAME%%.png" overwrite="true"/>
  		<!--shared dropins folder for architecture-independent plugins-->
 -		<mkdir dir="${destDir}${prefix}/share/eclipse/dropins" />
 +		<mkdir dir="${destDir}${prefix}/share/%%PORTNAME%%/dropins" />
  		<!-- eclipse binary -->
  		<mkdir dir="${destDir}${prefix}/bin" />
--		<symlink link="${destDir}${prefix}/bin/eclipse" resource="../${libDir}/eclipse/eclipse" />
-+		<symlink link="${destDir}${prefix}/bin/%%PORTNAME%%" resource="../${libDir}/%%PORTNAME%%/eclipse" />
- 		<!-- FIXME:  we really shouldn't need this anymore but at least pdebuild.sh will need to be updated -->
- 		<!-- Create the "startup.jar" symlink -->
- 		<fileset dir="${installationDir}/plugins" includes="org.eclipse.equinox.launcher_*" id="startupjar" />
-@@ -938,7 +949,7 @@
- 		<symlink link="${installationDir}/swt-gtk.jar" resource="plugins/${swtjarpath}" />
- 		<symlink link="${installationDir}/swt.jar" resource="plugins/${swtjarpath}" />
+-		<symlink link="${destDir}${prefix}/bin/eclipse" resource="../${libDir}/eclipse/eclipse" overwrite="true"/>
++		<symlink link="${destDir}${prefix}/bin/%%PORTNAME%%" resource="../${libDir}/%%PORTNAME%%/eclipse" overwrite="true"/>
+ 		<!-- Create the "swt.jar" and friends symlinks  -->
+ 		<fileset dir="${installationDir}/plugins" includes="org.eclipse.swt.gtk.${buildOs}.${buildArch}_*" id="swtjar" />
+ 		<property name="swtjarpath" refid="swtjar" />
+@@ -992,7 +996,7 @@
+ 		<symlink link="${installationDir}/swt-gtk.jar" resource="plugins/${swtjarpath}" overwrite="true"/>
+ 		<symlink link="${installationDir}/swt.jar" resource="plugins/${swtjarpath}" overwrite="true"/>
  
 -		<echo append="true" file="${installationDir}/eclipse.ini" message="-Dorg.eclipse.equinox.p2.reconciler.dropins.directory=${prefix}/share/eclipse/dropins" />
 +		<echo append="true" file="${installationDir}/eclipse.ini" message="-Dorg.eclipse.equinox.p2.reconciler.dropins.directory=${prefix}/share/%%PORTNAME%%/dropins" />
@@ -206,14 +168,14 @@ $FreeBSD$
  			<arg value="s@${provisionDir}@${installationDir}@g;s@${installationDir}@${prefix}/${libDir}/eclipse@g" />
  			<srcfile />
  			<fileset dir="${installationDir}/${profileDir}">
-@@ -1027,9 +1038,11 @@
+@@ -1101,9 +1105,11 @@
  		</apply>
  		
  		<!-- Move config file to /etc -->
 +		<!--
  		<mkdir dir="${destDir}/etc" />
  		<move file="${installationDir}/eclipse.ini" tofile="${destDir}/etc/eclipse.ini" />
- 		<symlink link="${installationDir}/eclipse.ini" resource="/etc/eclipse.ini" />
+ 		<symlink link="${installationDir}/eclipse.ini" resource="/etc/eclipse.ini" overwrite="true"/>
 +		-->
  
  	</target>
@@ -237,11 +199,11 @@ $FreeBSD$
 -os=linux
 +os=freebsd
  
- buildId=M20100211-1343
- buildTag=vM20100211-1343
--label=3.6.0
--bootclasspath=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
-+label=3.6.1
+ buildId=3.7.0-I20110613-1736
+ buildTag=3.7.0-I20110613-1736
+-label=3.7.0-I20110613-1736
+-bootclasspath=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
++label=3.7.0
 +bootclasspath=%%BOOTCLASSPATH%%
  #build.compiler=org.eclipse.jdt.core.JDTCompilerAdapter
  
@@ -250,25 +212,24 @@ $FreeBSD$
  CDC-1.1/PersonalBasis-1.1=${bootclasspath}
  CDC-1.1/PersonalJava-1.1=${bootclasspath}
  # Somehow bootclasspath isn't expanded when used by antRunner
--JavaSE-1.6=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--CDC-1.0/Foundation-1.0=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--CDC-1.1/Foundation-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--OSGi/Minimum-1.0=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--OSGi/Minimum-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--OSGi/Minimum-1.2=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--JRE-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--J2SE-1.2=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--J2SE-1.3=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--J2SE-1.4=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--J2SE-1.5=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--JavaSE-1.6=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--PersonalJava-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--PersonalJava-1.2=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--CDC-1.0/PersonalBasis-1.0=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--CDC-1.0/PersonalJava-1.0=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--CDC-1.1/PersonalBasis-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
--CDC-1.1/PersonalJava-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar
-\ No newline at end of file
+-JavaSE-1.6=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-CDC-1.0/Foundation-1.0=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-CDC-1.1/Foundation-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-OSGi/Minimum-1.0=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-OSGi/Minimum-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-OSGi/Minimum-1.2=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-JRE-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-J2SE-1.2=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-J2SE-1.3=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-J2SE-1.4=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-J2SE-1.5=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-JavaSE-1.6=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-PersonalJava-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-PersonalJava-1.2=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-CDC-1.0/PersonalBasis-1.0=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-CDC-1.0/PersonalJava-1.0=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-CDC-1.1/PersonalBasis-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
+-CDC-1.1/PersonalJava-1.1=/usr/lib/jvm/java/jre/lib/rt.jar:/usr/lib/jvm/java/jre/lib/jce.jar:/usr/lib/jvm/default-java/jre/lib/rt.jar:/usr/lib/jvm/default-java/jre/lib/jce.jar:/usr/lib64/jvm/java/jre/lib/rt.jar:/usr/lib64/jvm/java/jre/lib/jce.jar
 +JavaSE-1.6=%%BOOTCLASSPATH%%
 +CDC-1.0/Foundation-1.0=%%BOOTCLASSPATH%%
 +CDC-1.1/Foundation-1.1=%%BOOTCLASSPATH%%
@@ -289,10 +250,10 @@ $FreeBSD$
 +CDC-1.1/PersonalJava-1.1=%%BOOTCLASSPATH%%
 --- eclipse-build-0.5.0.orig/pdebuild.xml	2009-12-23 16:22:44.090824173 -0500
 +++ eclipse-build-0.5.0/pdebuild.xml	2009-12-23 16:24:47.491322864 -0500
-@@ -200,6 +200,7 @@
+@@ -206,6 +206,7 @@
  			<arg line="-DbuildOs=${buildOs} " />
  			<arg line="-DbuildId=${buildId} " />
- 			<arg line="-debug -consolelog " />
+ 			<arg line="-debug -consolelog" />
 +			<arg line="-vmargs -Xmx1024 " />
  		</java>
  		<taskdef name="eclipse.versionReplacer"
@@ -309,3 +270,32 @@ $FreeBSD$
 +Exec=%%PORTNAME%%
  Terminal=false
  Categories=Development;IDE;Java;
+--- eclipse-build-5791c48513b4207ab1eec1e00bed4b2186f9aad5/dependencies.properties.orig	Thu Jun 30 16:45:54 2011
++++ eclipse-build-5791c48513b4207ab1eec1e00bed4b2186f9aad5/dependencies.properties	Thu Jun 30 16:46:18 2011
+@@ -1,15 +1,15 @@
+ com.ibm.icu_4.4.2.v20110208.jar=/usr/lib/eclipse/plugins/com.ibm.icu_4.4.2.v20110208.jar:/usr/lib64/eclipse/plugins/com.ibm.icu_4.4.2.v20110208.jar:/usr/share/java/com.ibm.icu-4.4.jar:/usr/share/java/com.ibm.icu.jar
+-com.jcraft.jsch_0.1.41.v200903070017.jar=/usr/share/java/jsch.jar
++com.jcraft.jsch_0.1.41.v201101211617.jar=/usr/share/java/jsch.jar
+ javax.servlet_2.5.0.v201103041518.jar=/usr/share/java/tomcat6-servlet-2.5-api.jar:/usr/share/java/servlet-api-2.5.jar
+ javax.servlet.jsp_2.0.0.v201101211617.jar=/usr/share/java/tomcat6-jsp-2.1-api.jar:/usr/share/java/jsp-api-2.0.jar
+ org.apache.commons.codec_1.3.0.v201101211617.jar=/usr/share/java/commons-codec.jar
+-org.apache.commons.el_1.0.0.v200806031608.jar=/usr/share/java/commons-el.jar
+-org.apache.commons.httpclient_3.1.0.v201005080502.jar=/usr/share/java/commons-httpclient.jar
++org.apache.commons.el_1.0.0.v201101211617.jar=/usr/share/java/commons-el.jar
++org.apache.commons.httpclient_3.1.0.v201012070820.jar=/usr/share/java/commons-httpclient.jar
+ org.apache.commons.logging_1.0.4.v201101211617.jar=/usr/share/java/commons-logging.jar
+-org.apache.jasper_5.5.17.v200903231320.jar=/usr/share/eclipse/plugins/org.apache.jasper_5.5.17.v200706111724.jar:/usr/share/java/jasper-5.5.26.jar
++org.apache.jasper_5.5.17.v201101211617.jar=/usr/share/eclipse/plugins/org.apache.jasper_5.5.17.v200706111724.jar:/usr/share/java/jasper-5.5.26.jar
+ org.apache.lucene.core_2.9.1.v201101211721.jar=/usr/share/java/lucene.jar:/usr/share/java/lucene-core.jar
+ org.apache.lucene.analysis_2.9.1.v201101211721.jar=/usr/share/java/lucene-contrib/lucene-analyzers.jar:/usr/share/java/lucene-analyzers.jar
+-org.mortbay.jetty.util_6.1.23.v201004211559.jar=/usr/share/java/jetty/jetty-util.jar:/usr/share/java/jetty-util.jar
+-org.mortbay.jetty.server_6.1.23.v201004211559.jar=/usr/share/java/jetty/jetty.jar:/usr/share/java/jetty.jar
++org.mortbay.jetty.util_6.1.23.v201012071420.jar=/usr/share/java/jetty/jetty-util.jar:/usr/share/java/jetty-util.jar
++org.mortbay.jetty.server_6.1.23.v201012071420.jar=/usr/share/java/jetty/jetty.jar:/usr/share/java/jetty.jar
+ org.sat4j.core_2.3.0.v20110329.jar=/usr/share/java/org.sat4j.core.jar:/usr/share/sat4j/org.sat4j.core.jar
+ org.sat4j.pb_2.3.0.v20110329.jar=/usr/share/java/org.sat4j.pb.jar:/usr/share/sat4j/org.sat4j.pb.jar
+--- eclipse-build-5791c48513b4207ab1eec1e00bed4b2186f9aad5/sdkdependencies.properties.orig	Fri Jul  1 20:12:45 2011
++++ eclipse-build-5791c48513b4207ab1eec1e00bed4b2186f9aad5/sdkdependencies.properties	Fri Jul  1 20:16:04 2011
+@@ -1,1 +1,1 @@
+-org.objectweb.asm_3.3.1.v201101071600.jar=/usr/share/java/objectweb-asm/asm-all.jar:/usr/share/java/asm3-all.jar
++org.objectweb.asm_3.3.1.v201105211655.jar=/usr/share/java/objectweb-asm/asm-all.jar:/usr/share/java/asm3-all.jar
