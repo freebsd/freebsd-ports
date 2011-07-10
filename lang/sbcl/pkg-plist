@@ -89,6 +89,7 @@ lib/sbcl/sb-grovel/sb-grovel.asd
 lib/sbcl/sb-grovel/sb-grovel.fasl
 lib/sbcl/sb-introspect/introspect.fasl
 lib/sbcl/sb-introspect/introspect.lisp
+lib/sbcl/sb-introspect/load-test.lisp
 lib/sbcl/sb-introspect/sb-introspect.asd
 lib/sbcl/sb-introspect/sb-introspect.fasl
 lib/sbcl/sb-introspect/test-driver.fasl
