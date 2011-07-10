@@ -16,7 +16,7 @@ MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Small open-source XQuery extension of the XOM library
 
 RUN_DEPENDS=	${JAVALIBDIR}/xom.jar:${PORTSDIR}/textproc/xom \
-		${JAVALIBDIR}/saxon8.jar:${PORTSDIR}/textproc/saxon-devel
+		${JAVALIBDIR}/saxon9.jar:${PORTSDIR}/textproc/saxon-devel
 
 OPTIONS=	XQUERY_TOOL "Install the XQuery command-line tool" on
 
