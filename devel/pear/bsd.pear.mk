@@ -177,27 +177,30 @@ do-install-${t}-msg: .USE
 .  endif
 . endfor
 
-do-autogenerate-plist:
-	@${ECHO_MSG} "===>   Verifying plist for PREFIX"
-	@FILES=`${PEAR} list-files ${PEARPKGREF} | ${TAIL} +4 | \
-	${AWK} '{ print $$2 }' | ${GREP} -v -E "^${PREFIX}/"` || exit 0; \
-	if ${TEST} -n "$${FILES}"; then \
-	echo "Package files outside PREFIX, cannot use autoinstall ..."; \
-	exit 1; fi;
+do-autogenerate-plist: patch
 	@${ECHO_MSG} "===>   Generating packing list with pear"
+	@${LN} -sf ${WRKDIR}/package.xml ${WRKSRC}/package.xml
+	@cd ${WRKSRC} && ${PEAR} install -n -f -P ${WRKDIR}/inst package.xml > /dev/null 2> /dev/null
+.for R in .channels .depdb .depdblock .filemap .lock .registry
+	@${RM} -rf ${WRKDIR}/inst/${PREFIX}/${LPEARDIR}/${R}
+.endfor
+	@FILES=`cd ${WRKDIR}/inst && ${FIND} . -type f | ${CUT} -c 2- | \
+	${GREP} -v -E "^${PREFIX}/"` || exit 0; \
+	${ECHO_CMD} $${FILES}; if ${TEST} -n "$${FILES}"; then \
+	${ECHO_CMD} "Cannot generate packing list: package files outside PREFIX"; \
+	exit 1; fi;
 	@${ECHO_CMD} "${LPKGREGDIR}/package.xml" > ${PLIST}
-	@FILES=`${PEAR} list-files ${PEARPKGREF} | ${TAIL} +4 | \
-	${AWK} '{ print $$2 }' | ${SED} -e "s|${PREFIX}/||g"`; \
-	for f in $${FILES}; do ${ECHO_CMD} $${f} >> ${PLIST}; done; \
-	for d in $${FILES}; do ${ECHO_CMD} $${d}; done | ${DIRFILTER} | \
-	    while read dir; do ${ECHO_CMD} "@dirrmtry $${dir}" >> ${PLIST}; \
-	    done;
+	@cd ${WRKDIR}/inst/${PREFIX} && ${FIND} . -type f | ${SORT} \
+	| ${CUT} -c 3- >> ${PLIST}
+	@DIRS=`cd ${WRKDIR}/inst/${PREFIX} && ${FIND} . -type d | ${SORT} -r | \
+	${CUT} -c 3-`; \
+	for d in $${DIRS}; do ${ECHO_CMD} "@dirrmtry $${d}" >> ${PLIST}; done
 	@${ECHO_CMD} "@dirrm ${LPKGREGDIR}" >> ${PLIST}
 	@${ECHO_CMD} "@dirrmtry ${LPKGREGDIR:H}" >> ${PLIST}
 
 . if defined(PEAR_AUTOINSTALL)
-pre-install:	pear-pre-install do-generate-deinstall-script do-auto-install do-autogenerate-plist
-do-install:	pear-post-install
+pre-install:	pear-pre-install do-autogenerate-plist do-generate-deinstall-script
+do-install:	do-auto-install pear-post-install
 
 . else
 pre-install:	pear-pre-install do-generate-plist do-generate-deinstall-script
@@ -208,7 +211,6 @@ do-install: 	do-install-files do-install-docs do-install-tests do-install-sqls \
 
 do-auto-install:
 	@${ECHO_MSG} "===>   Installing package with pear"
-	@${LN} -sf ${WRKDIR}/package.xml ${WRKSRC}/package.xml
 	@cd ${WRKSRC} && ${PEAR} install -n -f package.xml
 
 do-install-files: do-install-files-msg
