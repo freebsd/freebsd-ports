@@ -104,7 +104,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		${LOCALBASE}/lib/libcppunit.so:${PORTSDIR}/devel/cppunit \
 		${LOCALBASE}/lib/libmdbsql.a:${PORTSDIR}/databases/mdbtools \
 		${LOCALBASE}/lib/libboost_regex.a:${PORTSDIR}/devel/boost-libs \
-		${LOCALBASE}/lib/libvigraimpex.a:${PORTSDIR}/graphics/vigra
+		${LOCALBASE}/bin/vigra-config:${PORTSDIR}/graphics/vigra
 
 USE_BDB=	yes
 USE_PERL5_BUILD=	yes
