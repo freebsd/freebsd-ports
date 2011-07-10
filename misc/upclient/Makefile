@@ -10,8 +10,7 @@ PORTVERSION=	5.0.b8
 PORTREVISION=	6
 CATEGORIES=	misc
 MASTER_SITES=	http://uptimes.hostingwired.com/files/ \
-		SF/${PORTNAME}/UpClient%205%20beta/5.0b8%20Security%20Update		
-
+		SF/${PORTNAME}/UpClient%205%20beta/5.0b8%20Security%20Update
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -56,6 +55,7 @@ post-patch:
 	@${REINPLACE_CMD} ${REINPLACE_SUB:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/} \
 		${WRKSRC}/scripts/upchk ${WRKSRC}/scripts/clientchk \
 		${WRKSRC}/src/Makefile
+	${REINPLACE_CMD} -e 's/CC=gcc/CC=${CC}/' ${WRKSRC}/src/Makefile
 
 # Install
 #
