@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	polyparse
-PORTVERSION=	1.5
-PORTREVISION=	1
+PORTVERSION=	1.6
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,6 +16,7 @@ LICENSE=	LGPL21
 FILE_LICENSE=	COPYRIGHT
 
 CABAL_SETUP=	Setup.hs
+USE_CABAL=	text
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
