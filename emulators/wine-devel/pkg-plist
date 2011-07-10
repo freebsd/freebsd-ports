@@ -296,6 +296,9 @@ include/wine/windows/htiframe.h
 include/wine/windows/htiframe.idl
 include/wine/windows/htmlhelp.h
 include/wine/windows/http.h
+include/wine/windows/httprequest.h
+include/wine/windows/httprequest.idl
+include/wine/windows/httprequestid.h
 include/wine/windows/i_cryptasn1tls.h
 include/wine/windows/iads.h
 include/wine/windows/iads.idl
@@ -434,6 +437,8 @@ include/wine/windows/ntstatus.h
 include/wine/windows/oaidl.h
 include/wine/windows/oaidl.idl
 include/wine/windows/objbase.h
+include/wine/windows/objectarray.h
+include/wine/windows/objectarray.idl
 include/wine/windows/objidl.h
 include/wine/windows/objidl.idl
 include/wine/windows/objsafe.h
@@ -586,6 +591,8 @@ include/wine/windows/vfwmsgs.h
 include/wine/windows/vmr9.h
 include/wine/windows/vmr9.idl
 include/wine/windows/vmrender.idl
+include/wine/windows/vsstyle.h
+include/wine/windows/vssym32.h
 include/wine/windows/wbemcli.h
 include/wine/windows/wbemcli.idl
 include/wine/windows/werapi.h
@@ -638,6 +645,8 @@ include/wine/windows/winver.h
 include/wine/windows/wmistr.h
 include/wine/windows/wnaspi32.h
 include/wine/windows/wownt32.h
+include/wine/windows/wpcapi.h
+include/wine/windows/wpcapi.idl
 include/wine/windows/ws2def.h
 include/wine/windows/ws2ipdef.h
 include/wine/windows/ws2spi.h
