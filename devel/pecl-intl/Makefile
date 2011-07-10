@@ -7,7 +7,7 @@
 
 PORTNAME=	intl
 PORTVERSION=	1.1.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel pear
 MASTER_SITES=	http://pecl.php.net/get/
 PKGNAMEPREFIX=	pecl-
@@ -17,7 +17,7 @@ DIST_SUBDIR=	PECL
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A PECL extension to support Internationalization(ICU)
 
-LIB_DEPENDS=	icui18n.46:${PORTSDIR}/devel/icu
+LIB_DEPENDS=	icui18n.48:${PORTSDIR}/devel/icu
 
 LICENSE=	PHP301
 

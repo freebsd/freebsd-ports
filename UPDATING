@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110711:
+  AFFECTS: users of devel/icu
+  AUTHORS: bapt@FreeBSD.org
+
+  icu has been updated to version 4.8. Please rebuild all ports that depends
+  on it.
+
+  If you use portmaster:
+  # portmaster -r icu
+
+  If you use portupgrade:
+  # portupgrade -fr devel/icu
+
+
 20110706:
   AFFECTS: users of multimedia/zoneminder
   AUTHOR: bsam@FreeBSD.org

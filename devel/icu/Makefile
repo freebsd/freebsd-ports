@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	icu
-PORTVERSION=	4.6.1
-
+PORTVERSION=	4.8
 CATEGORIES=	devel
 MASTER_SITES=	http://download.icu-project.org/files/icu4c/${PORTVERSION}/
 DISTNAME=	icu4c-${PORTVERSION:S/./_/g}
@@ -27,15 +26,13 @@ LICENSE_NAME=	ICU license
 LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
 LICENSE_FILE=	${WRKSRC}/../unicode-license.txt
 
-CONFLICTS=	icu2-[0-9]* icu-4.4*
-
 GNU_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	runConfigureICU
-CONFIGURE_ARGS+=	${OPSYS}
-CONFIGURE_ARGS+=	--enable-shared
-CONFIGURE_ARGS+=	--enable-static
-CONFIGURE_ARGS+=	--enable-samples=no
-CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
+CONFIGURE_ARGS+=	${OPSYS} \
+			--enable-shared \
+			--enable-static \
+			--enable-samples=no \
+			--mandir=${MANPREFIX}/man
 MAKE_JOBS_UNSAFE=	yes
 
 USE_GMAKE=		yes

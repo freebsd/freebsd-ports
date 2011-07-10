@@ -8,7 +8,7 @@
 
 PORTNAME=	webkit
 PORTVERSION=	1.2.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://webkitgtk.org/
 PKGNAMESUFFIX=	-gtk2
@@ -22,7 +22,7 @@ LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
 		curl.6:${PORTSDIR}/ftp/curl \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup \
-		icutu.46:${PORTSDIR}/devel/icu
+		icutu.48:${PORTSDIR}/devel/icu
 
 USE_GETTEXT=	yes
 WANT_GSTREAMER=	yes
