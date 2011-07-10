@@ -20,6 +20,7 @@ bin/sd
 %%SITE_PERL%%/App/SD/CLI/Command/Help.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Log.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Help/Authors.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Help/Commands.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Help/Settings.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Help/Search.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Help/Tickets.pm
@@ -47,6 +48,7 @@ bin/sd
 %%SITE_PERL%%/App/SD/CLI/Command/Ticket/Attachment/Create.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Ticket/Attachment/Search.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Ticket/Details.pm
+%%SITE_PERL%%/App/SD/CLI/Command/Ticket/Review.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Ticket/Comment/Create.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Ticket/Comment/Update.pm
 %%SITE_PERL%%/App/SD/CLI/Command/Version.pm

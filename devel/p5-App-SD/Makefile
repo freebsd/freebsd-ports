@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	App-SD
-PORTVERSION=	0.74
+PORTVERSION=	0.75
 CATEGORIES=	devel www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SPANG
@@ -41,15 +41,19 @@ MAN3=	App::SD::ForeignReplica::PullEncoder.3 \
 	App::SD::Replica::gcode::PullEncoder.3 \
 	App::SD::Replica::rt::PullEncoder.3 \
 	App::SD::Test.3 \
-	App::SD::Replica::gcode.3 \
 	App::SD::Replica::trac.3 \
+	App::SD::Replica::github.3 \
 	App::SD::Replica::github::PullEncoder.3 \
 	App::SD::Replica::debbugs::PushEncoder.3 \
 	App::SD::Replica::trac::PullEncoder.3 \
 	App::SD::CLI::Command.3 \
 	App::SD::CLI::Model::Ticket.3 \
 	App::SD::Replica::debbugs::PullEncoder.3 \
-	App::SD::ForeignReplica.3
+	App::SD::ForeignReplica.3 \
+	App::SD::Util.3 \
+	App::SD.3
+
+MAN1=	sd.1
 
 .include <bsd.port.options.mk>
 
