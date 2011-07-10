@@ -16,6 +16,8 @@ COMMENT=	General purpose media decoding library
 
 LIB_DEPENDS=	gavl.1:${PORTSDIR}/multimedia/gavl
 
+BROKEN=		does not compile
+
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 CONFIGURE_ARGS=	--without-cpuflags --without-doxygen
