@@ -12,7 +12,7 @@ include/turbojpeg.h
 lib/libjpeg.a
 lib/libjpeg.la
 lib/libjpeg.so
-lib/libjpeg.so.62
+lib/libjpeg.so.%%SOVERSION%%
 lib/libturbojpeg.a
 lib/libturbojpeg.la
 lib/libturbojpeg.so
