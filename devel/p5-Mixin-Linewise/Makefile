@@ -7,6 +7,7 @@
 
 PORTNAME=	Mixin-Linewise
 PORTVERSION=	0.003
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
@@ -15,11 +16,19 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Write your linewise code for handles; this does the rest
 
-LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1
+LICENSE_COMB=	dual
 
-BUILD_DEPENDS+=	p5-Sub-Exporter>=0.900:${PORTSDIR}/devel/p5-Sub-Exporter
-RUN_DEPENDS+=	p5-Sub-Exporter>=0.900:${PORTSDIR}/devel/p5-Sub-Exporter
+.include <bsd.port.pre.mk>
+
+BUILD_DEPENDS+=	p5-Sub-Exporter>=0.900:${PORTSDIR}/devel/p5-Sub-Exporter \
+	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String
+RUN_DEPENDS+=	p5-Sub-Exporter>=0.900:${PORTSDIR}/devel/p5-Sub-Exporter \
+	p5-IO-String>=0:${PORTSDIR}/devel/p5-IO-String
+
+.if ${PERL_LEVEL} < 501001
+TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
+.endif
 
 PERL_CONFIGURE=	yes
 
@@ -35,4 +44,4 @@ PLIST_DIRS+=	%%SITE_PERL%%/Mixin/Linewise \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mixin/Linewise \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mixin
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
