@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Custom
-PORTVERSION=	0.1693
+PORTVERSION=	0.1700
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KIMOTO
@@ -32,6 +32,7 @@ LICENSE=	ART10 GPLv1
 MAN3=		DBIx::Custom.3 \
 		DBIx::Custom::Guide.3 \
 		DBIx::Custom::Model.3 \
+		DBIx::Custom::Order.3 \
 		DBIx::Custom::Query.3 \
 		DBIx::Custom::QueryBuilder.3 \
 		DBIx::Custom::Result.3 \
