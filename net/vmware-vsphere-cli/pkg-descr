@@ -1,0 +1,14 @@
+The vSphere SDK for Perl provides an easy-to-use Perl scripting interface to
+the vSphere API. SDK ships with utilities, and documentation for building
+vSphere management applications.
+
+The vSphere Command-Line Interface (vSphere CLI) command set allows you to 
+run common system administration commands against ESX/ESXi systems from any 
+machine with network access to those systems. You can also run most vSphere 
+CLI commands against a vCenter Server system and target any ESX/ESXi system 
+that vCenter Server system manages.
+
+vSphere CLI commands are especially useful for ESXi hosts because ESXi does 
+not include a service console.
+
+WWW: http://downloads.vmware.com/d/info/datacenter_downloads/vmware_vsphere_4/
