@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	Horde_Role
-DISTVERSION=	1.0.0
+PORTVERSION=	1.0.0
+PORTREVISION=	1
 CATEGORIES=	devel www pear
 
 MAINTAINER=	mm@FreeBSD.org
@@ -21,11 +22,11 @@ post-install:
 	@${MKDIR} ${PREFIX}/${HORDE_DIR}
 	@${TOUCH} ${PREFIX}/${HORDE_DIR}/.keep_me
 	@${ECHO_CMD} "${HORDE_DIR}/.keep_me" >> ${TMPPLIST}
-	@${ECHO_CMD} "@exec ${PEAR} config-set horde_dir %D/${HORDE_DIR}" >> \
+	@${ECHO_CMD} "@exec ${PEAR} config-set horde_dir %D/${HORDE_DIR} system" >> \
 		${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/${HORDE_DIR} 2>/dev/null || true" >> \
 		${TMPPLIST}
 	@${ECHO_CMD} "===>   Configuring PEAR horde_dir"
-	@${PEAR} config-set horde_dir ${PREFIX}/${HORDE_DIR}
+	@${PEAR} config-set horde_dir ${PREFIX}/${HORDE_DIR} system
 
 .include <bsd.port.post.mk>
