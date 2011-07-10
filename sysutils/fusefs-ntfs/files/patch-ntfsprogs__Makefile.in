@@ -1,0 +1,15 @@
+--- ./ntfsprogs/Makefile.in.orig	2011-07-08 16:21:25.000000000 +0100
++++ ./ntfsprogs/Makefile.in	2011-07-08 16:21:40.000000000 +0100
+@@ -1073,12 +1073,8 @@
+ # mkfs.ntfs[.8] hard link
+ 
+ @ENABLE_NTFSPROGS_TRUE@install-exec-hook:
+-@ENABLE_NTFSPROGS_TRUE@	$(INSTALL) -d $(DESTDIR)/sbin
+-@ENABLE_NTFSPROGS_TRUE@	$(LN_S) -f $(sbindir)/mkntfs $(DESTDIR)/sbin/mkfs.ntfs
+ 
+ @ENABLE_NTFSPROGS_TRUE@install-data-hook:
+-@ENABLE_NTFSPROGS_TRUE@	$(INSTALL) -d $(DESTDIR)$(man8dir)
+-@ENABLE_NTFSPROGS_TRUE@	$(LN_S) -f mkntfs.8 $(DESTDIR)$(man8dir)/mkfs.ntfs.8
+ 
+ @ENABLE_NTFSPROGS_TRUE@uninstall-local:
+ @ENABLE_NTFSPROGS_TRUE@	$(RM) -f $(DESTDIR)/sbin/mkfs.ntfs
