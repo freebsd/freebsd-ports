@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	erf
-PORTVERSION=	1.0.0.0
-PORTREVISION=	2
+PORTVERSION=	2.0.0.0
 CATEGORIES=	math haskell
 
 MAINTAINER=	haskell@FreeBSD.org
