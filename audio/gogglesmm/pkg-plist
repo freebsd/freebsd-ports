@@ -1,6 +1,11 @@
 bin/gogglesmm
 share/applications/gogglesmm.desktop
+share/icons/hicolor/16x16/apps/gogglesmm.png
+share/icons/hicolor/22x22/apps/gogglesmm.png
+share/icons/hicolor/24x24/apps/gogglesmm.png
+share/icons/hicolor/32x32/apps/gogglesmm.png
 share/icons/hicolor/48x48/apps/gogglesmm.png
+share/icons/hicolor/scalable/apps/gogglesmm.svg
 %%NLS%%share/locale/de/LC_MESSAGES/gogglesmm.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gogglesmm.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gogglesmm.mo
@@ -8,7 +13,17 @@ share/icons/hicolor/48x48/apps/gogglesmm.png
 %%NLS%%share/locale/hu/LC_MESSAGES/gogglesmm.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/gogglesmm.mo
 @dirrmtry share/applications
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
