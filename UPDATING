@@ -30,7 +30,7 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of print/lyx and print/lyx-devel
   AUTHOR: makc@FreeBSD.org
 
-  print/lyx has been updated to 2.0. print/lyx16 has been added to portstree
+  print/lyx has been updated to 2.0. print/lyx16 has been added to ports tree
   for those who prefers to stick with the last stable in lyx-1.6.x series.
 
 20110630:
@@ -215,7 +215,7 @@ you update your ports collection, before attempting any port upgrades.
   AUTHOR: crees@FreeBSD.org
 
   Sympa previously used to install to ${PREFIX}/sympa, which goes against
-  the general rules for hierachy. Most files which were previously found
+  the general rules for hierarchy. Most files which were previously found
   in ${PREFIX}/sympa should now be found in ${PREFIX}/libexec/sympa.
 
   Any configuration in httpd.conf files etc will need to be updated to the
