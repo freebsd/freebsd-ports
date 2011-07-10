@@ -124,36 +124,37 @@ bin/phplist
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/common/images/locked.gif
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/common/images/reset.gif
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/common/images/unlocked.gif
+%%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_about.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_about/logo_fckeditor.gif
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_about/logo_fredck.gif
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_about/sponsors/spellchecker_net.gif
-%%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_about.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_anchor.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_button.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_checkbox.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_colorselector.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_div.html
-%%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_docprops/fck_document_preview.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_docprops.html
+%%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_docprops/fck_document_preview.html
+%%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_flash.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_flash/fck_flash.js
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_flash/fck_flash_preview.html
-%%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_flash.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_form.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_hiddenfield.html
+%%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_image.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_image/fck_image.js
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_image/fck_image_preview.html
-%%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_image.html
-%%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_link/fck_link.js
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_link.html
+%%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_link/fck_link.js
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_listprop.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_paste.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_radiobutton.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_replace.html
-%%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_select/fck_select.js
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_select.html
+%%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_select/fck_select.js
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_smiley.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_source.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_specialchar.html
+%%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_spellerpages.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/blank.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/controlWindow.js
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/controls.html
@@ -164,13 +165,12 @@ bin/phplist
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/spellchecker.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/spellerStyle.css
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/wordWindow.js
-%%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_spellerpages.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_table.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_tablecell.html
+%%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_template.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_template/images/template1.gif
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_template/images/template2.gif
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_template/images/template3.gif
-%%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_template.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_textarea.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_textfield.html
 %%WWWDIR%%/lists/admin/FCKeditor/editor/dtd/fck_dtd_test.html
@@ -675,6 +675,7 @@ bin/phplist
 %%WWWDIR%%/lists/admin/import4.php
 %%WWWDIR%%/lists/admin/importadmin.php
 %%WWWDIR%%/lists/admin/index.php
+%%WWWDIR%%/lists/admin/info.php
 %%WWWDIR%%/lists/admin/info/be-nl/admin.php
 %%WWWDIR%%/lists/admin/info/be-nl/adminattributes.php
 %%WWWDIR%%/lists/admin/info/be-nl/attributes.php
@@ -1037,7 +1038,6 @@ bin/phplist
 %%WWWDIR%%/lists/admin/info/vi/templates.php
 %%WWWDIR%%/lists/admin/info/vi/usermgt.php
 %%WWWDIR%%/lists/admin/info/vi/vote.php
-%%WWWDIR%%/lists/admin/info.php
 %%WWWDIR%%/lists/admin/init.php
 %%WWWDIR%%/lists/admin/initialise.php
 %%WWWDIR%%/lists/admin/js/jslib.js
@@ -2046,8 +2046,8 @@ bin/phplist
 %%WWWDIR%%/lists/admin/plugins/defaultplugin/helloworld.php
 %%WWWDIR%%/lists/admin/plugins/defaultplugin/main.php
 %%WWWDIR%%/lists/admin/plugins/helloworld.php
-%%WWWDIR%%/lists/admin/plugins/sidebar/main.php
 %%WWWDIR%%/lists/admin/plugins/sidebar.php
+%%WWWDIR%%/lists/admin/plugins/sidebar/main.php
 %%WWWDIR%%/lists/admin/preparesend.php
 %%WWWDIR%%/lists/admin/processbounces.php
 %%WWWDIR%%/lists/admin/processqueue.php
@@ -2095,6 +2095,9 @@ bin/phplist
 %%WWWDIR%%/lists/admin/viewtemplate.php
 %%WWWDIR%%/lists/admin/vote.php
 %%WWWDIR%%/lists/config/.htaccess
+@unexec if cmp -s %D/%%WWWDIR%%/lists/config/config.php-dist %D/%%WWWDIR%%/lists/config/config.php; then rm -f %D/%%WWWDIR%%/lists/config/config.php; fi
+%%WWWDIR%%/lists/config/config.php-dist
+@exec [ -f %D/%%WWWDIR%%/lists/config/config.php ] || cp %D/%%WWWDIR%%/lists/config/config.php-dist %D/%%WWWDIR%%/lists/config/config.php
 %%WWWDIR%%/lists/config/footer.inc
 %%WWWDIR%%/lists/config/header.inc
 %%WWWDIR%%/lists/dl.php
@@ -2260,131 +2263,128 @@ bin/phplist
 %%WWWDIR%%/lists/texts/usa.inc
 %%WWWDIR%%/lists/texts/vietnamese.inc
 %%WWWDIR%%/lists/ut.php
-@unexec if cmp -s %D/%%WWWDIR%%/lists/config/config.php-dist %D/%%WWWDIR%%/lists/config/config.php; then rm -f %D/%%WWWDIR%%/lists/config/config.php; fi
-%%WWWDIR%%/lists/config/config.php-dist
-@exec cd %D/%%WWWDIR%%/lists/config/&&cp -n config.php-dist config.php
+@dirrm %%WWWDIR%%/lists/texts
+@dirrm %%WWWDIR%%/lists/styles
+@dirrm %%WWWDIR%%/lists/js
 @dirrm %%WWWDIR%%/lists/images/smiley
 @dirrm %%WWWDIR%%/lists/images
 @dirrmtry %%WWWDIR%%/lists/config
-@dirrm %%WWWDIR%%/lists/js
-@dirrm %%WWWDIR%%/lists/admin/images/tabs
-@dirrm %%WWWDIR%%/lists/admin/images
+@dirrm %%WWWDIR%%/lists/admin/styles
+@dirrm %%WWWDIR%%/lists/admin/plugins/sidebar
+@dirrm %%WWWDIR%%/lists/admin/plugins/defaultplugin
+@dirrm %%WWWDIR%%/lists/admin/plugins
 @dirrm %%WWWDIR%%/lists/admin/phpmailer/language
 @dirrm %%WWWDIR%%/lists/admin/phpmailer
+@dirrm %%WWWDIR%%/lists/admin/onyxrss
+@dirrm %%WWWDIR%%/lists/admin/lan/zh-tw
+@dirrm %%WWWDIR%%/lists/admin/lan/vi
+@dirrm %%WWWDIR%%/lists/admin/lan/pt-br
+@dirrm %%WWWDIR%%/lists/admin/lan/pl
+@dirrm %%WWWDIR%%/lists/admin/lan/nl
+@dirrm %%WWWDIR%%/lists/admin/lan/ja
+@dirrm %%WWWDIR%%/lists/admin/lan/it
+@dirrm %%WWWDIR%%/lists/admin/lan/hu
+@dirrm %%WWWDIR%%/lists/admin/lan/fr
+@dirrm %%WWWDIR%%/lists/admin/lan/fa
+@dirrm %%WWWDIR%%/lists/admin/lan/es
+@dirrm %%WWWDIR%%/lists/admin/lan/en
+@dirrm %%WWWDIR%%/lists/admin/lan/de
+@dirrm %%WWWDIR%%/lists/admin/lan/da
+@dirrm %%WWWDIR%%/lists/admin/lan/cn
+@dirrm %%WWWDIR%%/lists/admin/lan/be-nl
+@dirrm %%WWWDIR%%/lists/admin/lan
+@dirrm %%WWWDIR%%/lists/admin/js
+@dirrm %%WWWDIR%%/lists/admin/info/vi
+@dirrm %%WWWDIR%%/lists/admin/info/pt-br
+@dirrm %%WWWDIR%%/lists/admin/info/pl
+@dirrm %%WWWDIR%%/lists/admin/info/nl
+@dirrm %%WWWDIR%%/lists/admin/info/ja
+@dirrm %%WWWDIR%%/lists/admin/info/it
+@dirrm %%WWWDIR%%/lists/admin/info/hu
+@dirrm %%WWWDIR%%/lists/admin/info/fr
+@dirrm %%WWWDIR%%/lists/admin/info/fa
+@dirrm %%WWWDIR%%/lists/admin/info/es
+@dirrm %%WWWDIR%%/lists/admin/info/en
+@dirrm %%WWWDIR%%/lists/admin/info/de
+@dirrm %%WWWDIR%%/lists/admin/info/be-nl
+@dirrm %%WWWDIR%%/lists/admin/info
+@dirrm %%WWWDIR%%/lists/admin/images/tabs
+@dirrm %%WWWDIR%%/lists/admin/images
+@dirrm %%WWWDIR%%/lists/admin/help/vi
+@dirrm %%WWWDIR%%/lists/admin/help/pt-br
+@dirrm %%WWWDIR%%/lists/admin/help/pl
+@dirrm %%WWWDIR%%/lists/admin/help/nl
+@dirrm %%WWWDIR%%/lists/admin/help/ja
+@dirrm %%WWWDIR%%/lists/admin/help/it
+@dirrm %%WWWDIR%%/lists/admin/help/hu
+@dirrm %%WWWDIR%%/lists/admin/help/fr
+@dirrm %%WWWDIR%%/lists/admin/help/fa
+@dirrm %%WWWDIR%%/lists/admin/help/es
+@dirrm %%WWWDIR%%/lists/admin/help/en
+@dirrm %%WWWDIR%%/lists/admin/help/de
+@dirrm %%WWWDIR%%/lists/admin/help/be-nl
+@dirrm %%WWWDIR%%/lists/admin/help
+@dirrm %%WWWDIR%%/lists/admin/data
+@dirrm %%WWWDIR%%/lists/admin/commonlib/pages
+@dirrm %%WWWDIR%%/lists/admin/commonlib/lib/FirePHPCore
+@dirrm %%WWWDIR%%/lists/admin/commonlib/lib
+@dirrm %%WWWDIR%%/lists/admin/commonlib
+@dirrm %%WWWDIR%%/lists/admin/auth
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/skins/silver/images
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/skins/silver
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/skins/office2003/images
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/skins/office2003
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/skins/default/images
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/skins/default
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/skins
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/plugins/tablecommands
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/plugins/simplecommands
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/plugins/placeholder/lang
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/plugins/placeholder
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/plugins/dragresizetable
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/plugins/bbcode/_sample
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/plugins/bbcode
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/plugins/autogrow
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/plugins
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/lang
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/js
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/images/smiley/msn
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/images/smiley
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/images
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/filemanager/connectors/phplist
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/filemanager/connectors
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/filemanager/browser/default/js
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/filemanager/browser/default/images/icons/32
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/filemanager/browser/default/images/icons
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/filemanager/browser/default/images
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/filemanager/browser/default/js
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/filemanager/browser/default
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/filemanager/browser
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/filemanager
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/lang
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/skins/default/images
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/skins/default
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/skins/silver/images
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/skins/silver
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/skins/office2003/images
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/skins/office2003
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/skins
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/css/images
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/css/behaviors
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/css
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/_source/commandclasses
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/_source/internals
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/_source/classes
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/_source
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/js
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dtd
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_template/images
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_template
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_spellerpages/spellerpages/server-scripts
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_spellerpages/spellerpages
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_spellerpages
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_flash
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_select
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_link
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_image
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/common/images
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/common
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_template/images
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_template
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_flash
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_docprops
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_about/sponsors
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_about
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_link
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/fck_docprops
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/common/images
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog/common
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dialog
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/dtd
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/plugins/bbcode/_sample
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/plugins/bbcode
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/plugins/dragresizetable
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/plugins/placeholder/lang
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/plugins/placeholder
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/plugins/tablecommands
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/plugins/autogrow
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/plugins/simplecommands
-@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/plugins
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/css/images
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/css/behaviors
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/css
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/_source/internals
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/_source/commandclasses
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/_source/classes
+@dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor/_source
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor/editor
 @dirrm %%WWWDIR%%/lists/admin/FCKeditor
-@dirrm %%WWWDIR%%/lists/admin/js
-@dirrm %%WWWDIR%%/lists/admin/info/vi
-@dirrm %%WWWDIR%%/lists/admin/info/nl
-@dirrm %%WWWDIR%%/lists/admin/info/de
-@dirrm %%WWWDIR%%/lists/admin/info/hu
-@dirrm %%WWWDIR%%/lists/admin/info/pt-br
-@dirrm %%WWWDIR%%/lists/admin/info/fr
-@dirrm %%WWWDIR%%/lists/admin/info/es
-@dirrm %%WWWDIR%%/lists/admin/info/fa
-@dirrm %%WWWDIR%%/lists/admin/info/ja
-@dirrm %%WWWDIR%%/lists/admin/info/en
-@dirrm %%WWWDIR%%/lists/admin/info/pl
-@dirrm %%WWWDIR%%/lists/admin/info/it
-@dirrm %%WWWDIR%%/lists/admin/info/be-nl
-@dirrm %%WWWDIR%%/lists/admin/info
-@dirrm %%WWWDIR%%/lists/admin/lan/vi
-@dirrm %%WWWDIR%%/lists/admin/lan/nl
-@dirrm %%WWWDIR%%/lists/admin/lan/zh-tw
-@dirrm %%WWWDIR%%/lists/admin/lan/cn
-@dirrm %%WWWDIR%%/lists/admin/lan/de
-@dirrm %%WWWDIR%%/lists/admin/lan/hu
-@dirrm %%WWWDIR%%/lists/admin/lan/da
-@dirrm %%WWWDIR%%/lists/admin/lan/pt-br
-@dirrm %%WWWDIR%%/lists/admin/lan/fr
-@dirrm %%WWWDIR%%/lists/admin/lan/es
-@dirrm %%WWWDIR%%/lists/admin/lan/fa
-@dirrm %%WWWDIR%%/lists/admin/lan/ja
-@dirrm %%WWWDIR%%/lists/admin/lan/en
-@dirrm %%WWWDIR%%/lists/admin/lan/pl
-@dirrm %%WWWDIR%%/lists/admin/lan/it
-@dirrm %%WWWDIR%%/lists/admin/lan/be-nl
-@dirrm %%WWWDIR%%/lists/admin/lan
-@dirrm %%WWWDIR%%/lists/admin/onyxrss
-@dirrm %%WWWDIR%%/lists/admin/auth
-@dirrm %%WWWDIR%%/lists/admin/commonlib/pages
-@dirrm %%WWWDIR%%/lists/admin/commonlib/lib/FirePHPCore
-@dirrm %%WWWDIR%%/lists/admin/commonlib/lib
-@dirrm %%WWWDIR%%/lists/admin/commonlib
-@dirrm %%WWWDIR%%/lists/admin/help/vi
-@dirrm %%WWWDIR%%/lists/admin/help/nl
-@dirrm %%WWWDIR%%/lists/admin/help/de
-@dirrm %%WWWDIR%%/lists/admin/help/hu
-@dirrm %%WWWDIR%%/lists/admin/help/pt-br
-@dirrm %%WWWDIR%%/lists/admin/help/fr
-@dirrm %%WWWDIR%%/lists/admin/help/es
-@dirrm %%WWWDIR%%/lists/admin/help/fa
-@dirrm %%WWWDIR%%/lists/admin/help/ja
-@dirrm %%WWWDIR%%/lists/admin/help/en
-@dirrm %%WWWDIR%%/lists/admin/help/pl
-@dirrm %%WWWDIR%%/lists/admin/help/it
-@dirrm %%WWWDIR%%/lists/admin/help/be-nl
-@dirrm %%WWWDIR%%/lists/admin/help
-@dirrm %%WWWDIR%%/lists/admin/plugins/defaultplugin
-@dirrm %%WWWDIR%%/lists/admin/plugins/sidebar
-@dirrm %%WWWDIR%%/lists/admin/plugins
-@dirrm %%WWWDIR%%/lists/admin/styles
-@dirrm %%WWWDIR%%/lists/admin/data
 @dirrm %%WWWDIR%%/lists/admin
-@dirrm %%WWWDIR%%/lists/texts
-@dirrm %%WWWDIR%%/lists/styles
 @dirrmtry %%WWWDIR%%/lists
 @dirrmtry %%WWWDIR%%
