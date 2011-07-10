@@ -19,15 +19,18 @@ USE_QMAIL_BUILD=	yes
 
 GNU_CONFIGURE=	yes
 
+USERS=		${PORTNAME}
+GROUPS=		${USERS}
+
 WORKDIR?=	${QMAIL_PREFIX}/${PORTNAME}
 QMAIL_QUEUE=	${QMAIL_PREFIX}/bin/qmail-queue
 
 SUB_FILES=	pkg-message \
-		pkg-install \
-		pkg-deinstall
+		pkg-install
 SUB_LIST=	QMAIL_PREFIX=${QMAIL_PREFIX} \
 		SIMSCAN_DIR=${PORTNAME}
-PLIST_SUB=	QMAIL_PREFIX=${QMAIL_PREFIX}
+PLIST_SUB=	QMAIL_PREFIX=${QMAIL_PREFIX} \
+		SIMSCAN_DIR=${PORTNAME}
 
 OPTIONS=	CLAMAV "Support for ClamAV Virus Scanning" on \
 		RIPMIME "Ripmime Processing (if Clamav ScanMail disabled)" on \
