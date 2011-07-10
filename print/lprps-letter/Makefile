@@ -32,6 +32,9 @@ PS=		${PAPERSIZE:U}
 	@${FALSE}
 .endif
 
+post-patch:
+	${REINPLACE_CMD} -e 's/^\(CC[^g]*\)cc$$/\1${CC}/' ${WRKSRC}/Makefile
+
 do-install:
 	${MKDIR} ${DATADIR}
 	cd ${WRKSRC} && \
