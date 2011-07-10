@@ -109,7 +109,7 @@ USE_AUTOTOOLS=	autoconf
 CONFIGURE_ARGS+=--with-icu
 PATCH_SITES+=	http://people.freebsd.org/~girgen/postgresql-icu/:icu
 PATCHFILES+=	pg-900-icu-2010-09-19.diff.gz:icu
-LIB_DEPENDS+=	icudata.46:${PORTSDIR}/devel/icu
+LIB_DEPENDS+=	icudata.48:${PORTSDIR}/devel/icu
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-icu4
 .  endif
 

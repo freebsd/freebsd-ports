@@ -7,6 +7,7 @@
 
 PORTNAME=	libreoffice
 PORTVERSION=	3.3.3
+PORTREVISION=	1
 LOVERSION=	${PORTVERSION}.1
 CATEGORIES=	editors
 MASTER_SITES=	http://ftp.osuosl.org/pub/tdf/libreoffice/src/ \
@@ -82,7 +83,7 @@ EXTRACT_BEFORE_ARGS=
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		xml2.5:${PORTSDIR}/textproc/libxml2 \
 		expat.6:${PORTSDIR}/textproc/expat2 \
-		icutu.46:${PORTSDIR}/devel/icu \
+		icutu.48:${PORTSDIR}/devel/icu \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		curl.6:${PORTSDIR}/ftp/curl \
 		hunspell-1.2.0:${PORTSDIR}/hungarian/hunspell \

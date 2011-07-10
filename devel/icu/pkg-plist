@@ -196,6 +196,17 @@ include/unicode/brkiter.h
 include/unicode/bmsearch.h
 include/unicode/bms.h
 include/unicode/basictz.h
+include/unicode/appendable.h
+include/unicode/bytestrie.h
+include/unicode/bytestriebuilder.h
+include/unicode/messagepattern.h
+include/unicode/stringtriebuilder.h
+include/unicode/ucharstrie.h
+include/unicode/ucharstriebuilder.h
+include/unicode/ustringtrie.h
+include/unicode/alphaindex.h
+include/unicode/udateintervalformat.h
+include/unicode/upluralrules.h
 include/layout/plruns.h
 include/layout/playout.h
 include/layout/loengine.h
