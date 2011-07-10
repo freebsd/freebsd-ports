@@ -41,13 +41,13 @@ OPTIONS+=	DHCP_PARANOIA "Enable support for chroot" on \
 
 # PORTREVISION and CONFLICTS handling
 .if ${SUBSYS} == client
-CONFLICTS=	isc-dhcp3?-client*
+CONFLICTS=	isc-dhcp3?-client* isc-dhcp4[2-9]-client*
 DHCP_PORTREVISION=	${PORTREVISION_CLIENT}
 .elif ${SUBSYS} == relay
-CONFLICTS=	isc-dhcp3?-relay*
+CONFLICTS=	isc-dhcp3?-relay* isc-dhcp4[2-9]-relay*
 DHCP_PORTREVISION=	${PORTREVISION_RELAY}
 .else
-CONFLICTS=	isc-dhcp3?-server*
+CONFLICTS=	isc-dhcp3?-server* isc-dhcp4[2-9]-server*
 DHCP_PORTREVISION=	${PORTREVISION_SERVER}
 .endif
 
