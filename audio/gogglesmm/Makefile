@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gogglesmm
-PORTVERSION=	0.12.1
-PORTREVISION=	2
+PORTVERSION=	0.12.2
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
@@ -42,12 +41,12 @@ PORTDOCS=	README AUTHORS
 
 .include <bsd.port.options.mk>
 .if (defined(WITHOUT_FOX16) && defined(WITHOUT_FOX17)) || (defined(WITH_FOX16) && defined(WITH_FOX17))
-IGNORE=	You should choose between FOX16 and FOX17
+IGNORE=	you should choose between FOX16 and FOX17
 .endif
 
 .if defined(WITH_FOX16)
 LIB_DEPENDS+=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16
-.endif 
+.endif
 
 .if defined(WITH_FOX17)
 LIB_DEPENDS+=	FOX-1.7:${PORTSDIR}/x11-toolkits/fox17
@@ -83,6 +82,9 @@ USE_GETTEXT=	yes
 .if defined(WITHOUT_NEWREMOTE)
 CONFIGURE_ARGS+=--without-new-remote
 .endif
+
+pre-install:
+	@${MKDIR} ${PREFIX}/share/applications
 
 post-install:
 .if !defined(NOPORTDOCS)
