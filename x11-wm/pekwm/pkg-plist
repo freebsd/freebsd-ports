@@ -1,5 +1,6 @@
 bin/pekwm
 %%ETCDIR%%/autoproperties
+%%ETCDIR%%/autoproperties_typerules
 %%ETCDIR%%/config
 %%ETCDIR%%/keys
 %%ETCDIR%%/menu
