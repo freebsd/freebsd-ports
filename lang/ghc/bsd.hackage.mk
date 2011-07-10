@@ -84,6 +84,7 @@ hslogger_port=			devel/hs-hslogger
 html_port=			textproc/hs-html
 HTTP_port=			www/hs-HTTP
 http-server_port=		www/hs-http-server
+http-types_port=		www/hs-http-types
 HUnit_port=			devel/hs-HUnit
 hxt_port=			textproc/hs-hxt
 hxt-charproperties_port=	textproc/hs-hxt-charproperties
