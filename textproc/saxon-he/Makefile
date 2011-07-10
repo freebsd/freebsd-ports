@@ -7,6 +7,7 @@
 
 PORTNAME=	saxon-he
 PORTVERSION=	9.3.0.5
+PORTREVISION=	1
 CATEGORIES=	textproc java
 MASTER_SITES=	SF/saxon/Saxon-HE/9.3
 DISTNAME=	saxonhe${PORTVERSION:S,.,-,g}j.zip \
@@ -28,6 +29,7 @@ NO_BUILD=	yes
 
 JARFILES=	saxon9he.jar
 PLIST_FILES+=	${JARFILES:S,^,%%DATADIR%%/,} bin/saxon-he bin/saxon-he-xquery
+PLIST_DIRS+=	%%DATADIR%%
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*
 .endif
