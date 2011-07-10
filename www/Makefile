@@ -316,6 +316,7 @@
     SUBDIR += hs-cgi
     SUBDIR += hs-fastcgi
     SUBDIR += hs-http-server
+    SUBDIR += hs-http-types
     SUBDIR += hs-oeis
     SUBDIR += hs-scgi
     SUBDIR += hs-url
