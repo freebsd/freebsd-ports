@@ -23,6 +23,8 @@ Such ports are listed below:
 
 Dist			Port			Why
 ------------------------------------------------------------------------------
+VMware-vSphere-Perl*	net/vmware-vsphere-cli	May not be redistributed.
+						Must accept license to download.
 TrueCrypt*		security/truecrypt	May not be redistributed.
 						Crypto; export-controlled.
 						Must accept license to download.
