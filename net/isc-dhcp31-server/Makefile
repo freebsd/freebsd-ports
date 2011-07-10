@@ -41,15 +41,15 @@ OPTIONS=	DHCP_PARANOIA "add -user, -group and -chroot options" on \
 
 # PORTREVISION handling
 .if ${SUBSYS} == client
-CONFLICTS=	isc-dhcp41-client*
+CONFLICTS=	isc-dhcp4[1-9]-client*
 DHCP_PORTREVISION=	${PORTREVISION_CLIENT}
 .elif ${SUBSYS} == relay
-CONFLICTS=	isc-dhcp41-relay*
+CONFLICTS=	isc-dhcp4[1-9]-relay*
 DHCP_PORTREVISION=	${PORTREVISION_RELAY}
 .elif ${SUBSYS} == devel
 DHCP_PORTREVISION=	${PORTREVISION_DEVEL}
 .else
-CONFLICTS=	isc-dhcp41-server*
+CONFLICTS=	isc-dhcp4[1-9]-server*
 DHCP_PORTREVISION=	${PORTREVISION_SERVER}
 .endif
 
