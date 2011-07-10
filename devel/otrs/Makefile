@@ -53,6 +53,8 @@ OPTIONS=	MYSQL "MySQL database support" on \
 USE_BZIP2=	yes
 
 OTRSDIR=	${PREFIX}/otrs
+USERS=		${PORTNAME}
+GROUPS=		${USERS}
 
 SUB_FILES=	pkg-install pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
@@ -165,7 +167,6 @@ do-build:
 .endif
 
 do-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${MKDIR} ${ROOT_DIRS_LIST:S!^!${OTRSDIR}/!} ${BIN_DIRS_LIST:S!^!${OTRSDIR}/bin/!} \
 		${SCRIPTS_DIRS_LIST:S!^!${OTRSDIR}/scripts/!}
 	@${INSTALL_DATA} ${WRKSRC}/.*.dist ${OTRSDIR}/
