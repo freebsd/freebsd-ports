@@ -9,9 +9,6 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/about.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/about.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/about.pyo
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/annotate.py
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/annotate.pyc
-%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/annotate.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/archive.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/archive.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/archive.pyo
@@ -63,6 +60,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/docklog.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/docklog.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/docklog.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/filedata.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/filedata.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/filedata.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/filedialogs.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/filedialogs.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/filedialogs.pyo
@@ -99,6 +99,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/hginit.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/hginit.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/hginit.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/hgrcutil.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/hgrcutil.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/hgrcutil.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/htmldelegate.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/htmldelegate.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/htmldelegate.pyo
@@ -129,6 +132,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/merge.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/merge.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/merge.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/messageentry.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/messageentry.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/messageentry.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/modeltest.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/modeltest.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/modeltest.pyo
@@ -228,6 +234,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/run.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/run.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/run.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/rupdate.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/rupdate.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/rupdate.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/serve.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/serve.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/hgqt/serve.pyo
@@ -288,6 +297,9 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/__version__.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/__version__.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/__version__.pyo
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/bugtraq.py
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/bugtraq.pyc
+%%PYTHON_SITELIBDIR%%/tortoisehg/util/bugtraq.pyo
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/cachethg.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/cachethg.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/cachethg.pyo
@@ -469,6 +481,7 @@ share/pixmaps/tortoisehg/icons/scalable/actions/hg-revert.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-status.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-tag.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-transplant.svg
+share/pixmaps/tortoisehg/icons/scalable/actions/hg-unbundle.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-undo.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-update.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/hg-verify.svg
@@ -478,11 +491,14 @@ share/pixmaps/tortoisehg/icons/scalable/actions/new-group.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/process-stop.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/qfinish.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/qimport.svg
+share/pixmaps/tortoisehg/icons/scalable/actions/status-check.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/tasktab-refresh.svg
+share/pixmaps/tortoisehg/icons/scalable/actions/thg-add-subrepo.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/thg-console.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/thg-log-load-all.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/thg-mq.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/thg-password.svg
+share/pixmaps/tortoisehg/icons/scalable/actions/thg-qrefresh.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/thg-qreorder.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/thg-reporegistry.svg
 share/pixmaps/tortoisehg/icons/scalable/actions/thg-repository-open.svg
@@ -511,7 +527,10 @@ share/pixmaps/tortoisehg/icons/scalable/status/thg-error.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-file-merged.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-file-p0.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-file-p1.svg
+share/pixmaps/tortoisehg/icons/scalable/status/thg-git-subrepo.svg
+share/pixmaps/tortoisehg/icons/scalable/status/thg-subrepo.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-success.svg
+share/pixmaps/tortoisehg/icons/scalable/status/thg-svn-subrepo.svg
 share/pixmaps/tortoisehg/icons/scalable/status/thg-warning.svg
 share/pixmaps/tortoisehg/icons/settings_repo.ico
 share/pixmaps/tortoisehg/icons/settings_user.ico

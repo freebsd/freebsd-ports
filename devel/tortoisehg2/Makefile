@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tortoisehg
-PORTVERSION=	2.0.5
+PORTVERSION=	2.1.1
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
 
