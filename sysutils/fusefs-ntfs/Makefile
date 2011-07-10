@@ -5,11 +5,11 @@
 #
 
 PORTNAME=	ntfs
-PORTVERSION=	2010.10.2
+PORTVERSION=	2011.4.12
 CATEGORIES=	sysutils
 MASTER_SITES=	http://tuxera.com/opensource/
 PKGNAMEPREFIX=	fusefs-
-DISTNAME=	${PORTNAME}-3g-${PORTVERSION}
+DISTNAME=	${PORTNAME}-3g_ntfsprogs-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -25,8 +25,8 @@ USE_AUTOTOOLS=	libtool
 USE_ICONV=	yes
 CONFIGURE_ARGS=	--exec-prefix=${PREFIX} --disable-mount-helper \
 		--disable-mtab --with-fuse=external
-CONFIGURE_ENV=	CPPFLAGS="-I${WRKSRC}/include/ntfs-3g/ -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS=-I${WRKSRC}/include/ntfs-3g/ -I${LOCALBASE}/include
+CONFIGURE_ENV="LDFLAGS=-L${LOCALBASE}/lib"
 
 OPTIONS=	LOCK "Lock the device when mounting (avoids access)" on \
 		UBLIO "Enable user space cache for improved speed" on
@@ -34,7 +34,10 @@ OPTIONS=	LOCK "Lock the device when mounting (avoids access)" on \
 SUB_FILES=	pkg-message
 DOCSDIR=	${PREFIX}/share/doc/ntfs-3g
 
-MAN8=		ntfs-3g.8 ntfs-3g.probe.8 ntfs-3g.secaudit.8 ntfs-3g.usermap.8
+MAN8=		mkntfs.8 ntfs-3g.8 ntfs-3g.probe.8 \
+		ntfs-3g.secaudit.8 ntfs-3g.usermap.8 ntfscat.8 ntfsclone.8 \
+		ntfscluster.8 ntfscmp.8 ntfscp.8 ntfsfix.8 ntfsinfo.8 \
+		ntfslabel.8 ntfsls.8 ntfsprogs.8 ntfsresize.8 ntfsundelete.8
 
 .include <bsd.port.pre.mk>
 

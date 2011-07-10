@@ -3,6 +3,12 @@ bin/ntfs-3g
 bin/ntfs-3g.probe
 bin/ntfs-3g.secaudit
 bin/ntfs-3g.usermap
+bin/ntfscat
+bin/ntfscluster
+bin/ntfscmp
+bin/ntfsfix
+bin/ntfsinfo
+bin/ntfsls
 include/ntfs-3g/acls.h
 include/ntfs-3g/attrib.h
 include/ntfs-3g/attrlist.h
@@ -37,11 +43,18 @@ include/ntfs-3g/support.h
 include/ntfs-3g/types.h
 include/ntfs-3g/unistr.h
 include/ntfs-3g/volume.h
+include/ntfs-3g/xattrs.h
 lib/libntfs-3g.a
 lib/libntfs-3g.la
 lib/libntfs-3g.so
-lib/libntfs-3g.so.80
+lib/libntfs-3g.so.81
 libdata/pkgconfig/libntfs-3g.pc
+sbin/mkntfs
+sbin/ntfsclone
+sbin/ntfscp
+sbin/ntfslabel
+sbin/ntfsresize
+sbin/ntfsundelete
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
