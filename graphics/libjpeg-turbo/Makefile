@@ -8,6 +8,7 @@
 
 PORTNAME=	libjpeg-turbo
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
@@ -18,10 +19,15 @@ BUILD_DEPENDS=	nasm:${PORTSDIR}/devel/nasm
 
 CONFLICTS=	jpeg-[0-9]*
 ONLY_FOR_ARCHS=	amd64 i386
-USE_AUTOTOOLS=	autoconf autoheader aclocal automake libtool
-ACLOCAL_ARGS=	-I.
+USE_AUTOTOOLS=	libtool
+CONFIGURE_ENV=	SO_MAJOR_VERSION=${SOVERSION}
+CONFIGURE_ARGS=	--with-jpeg8
 USE_LDCONFIG=	yes
 
 MAN1=		cjpeg.1 djpeg.1 jpegtran.1 rdjpgcom.1 wrjpgcom.1
+PLIST_SUB=	SOVERSION=${SOVERSION}
+
+# chase graphics/jpeg
+SOVERSION=	11
 
 .include <bsd.port.mk>
