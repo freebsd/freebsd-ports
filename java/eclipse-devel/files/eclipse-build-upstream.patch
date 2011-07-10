@@ -25,8 +25,8 @@ Index: build.xml
  		</ant>
  	</target>
  
-@@ -315,7 +316,10 @@
- 		<!-- end back-ported patches -->
+@@ -312,7 +313,10 @@
+ 		<!-- end eclipse-build-only patches -->
  		<!-- Only build for one target (bug #293952) -->
  		<copy file="${buildConfigs}/eclipse-build-config/build.properties.in" tofile="${buildConfigs}/eclipse-build-config/build.properties" />
 -		<replace file="${buildConfigs}/eclipse-build-config/build.properties" token="@build_arch@" value="${buildArch}" />
@@ -34,9 +34,9 @@ Index: build.xml
 +			<replacefilter token="@build_arch@" value="${buildArch}" />
 +			<replacefilter token="@build_os@" value="${buildOs}" />
 +		</replace>
- 		<patch patchfile="${basedir}/patches/java-home.patch" dir="${buildDirectory}" strip="2" />
+ 		<patch patchfile="${basedir}/patches/eclipse-core-resources-compilation-profile.patch" dir="${buildDirectory}" strip="0" />
+ 		<patch patchfile="${basedir}/patches/eclipse-equinox-util.patch" dir="${buildDirectory}" strip="0" />
  		<echo file="patch-stamp" />
- 	</target>
 @@ -399,6 +403,7 @@
  		<!--
  		<ant antfile="build.xml" dir="${eclipse.pdebuild.scripts}">
@@ -121,6 +121,15 @@ Index: build.xml
  			<param name="p2.ws" value="gtk" />
  			<param name="p2.arch" value="${buildArch}" />
  			<param name="p2.repo" value="${reposource}" />
+@@ -750,7 +753,7 @@
+ 			<param name="p2.director.profile" value="${profileName}" />
+ 			<param name="p2.director.install.path" value="${provisionDir}" />
+ 			<param name="p2.director.extraArgs" value="-profileProperties org.eclipse.update.install.features=true" />
+-			<param name="p2.os" value="linux" />
++			<param name="p2.os" value="${buildOs}" />
+ 			<param name="p2.ws" value="gtk" />
+ 			<param name="p2.arch" value="${buildArch}" />
+ 			<param name="p2.repo" value="${reposource}" />
 @@ -800,6 +806,8 @@
  		-->
  		<exec executable="${basedir}/runtests.sh" dir="${basedir}">
@@ -139,6 +148,15 @@ Index: build.xml
  		<property name="swtjarpath" refid="swtjar" />
  		<symlink link="${installationDir}/swt-gtk-${label}.jar" resource="plugins/${swtjarpath}" />
  		<symlink link="${installationDir}/swt-gtk.jar" resource="plugins/${swtjarpath}" />
+@@ -1023,7 +1027,7 @@
+                         <param name="p2.director.profile" value="PlatformProfile" />
+                         <param name="p2.director.install.path" value="${installationDir}" />
+                         <param name="p2.director.extraArgs" value="-purgeHistory" />
+-			<param name="p2.os" value="linux" />
++			<param name="p2.os" value="${buildOs}" />
+                         <param name="p2.ws" value="gtk" />
+                         <param name="p2.arch" value="${buildArch}" />
+                         <param name="p2.repo" value="${installationDir}" />
 Index: pdebuild.xml
 ===================================================================
 --- pdebuild.xml	(revision 23733)
@@ -310,3 +328,15 @@ Index: runtests.sh
           h)
               usage
               exit 1
+--- task-src/org/eclipse/linuxtools/eclipsebuild/SymlinkNonOSGiJars.java~	Thu Feb 25 21:14:10 2010
++++ task-src/org/eclipse/linuxtools/eclipsebuild/SymlinkNonOSGiJars.java	Fri Nov  5 11:39:46 2010
+@@ -36,8 +36,8 @@
+     	for (Iterator<Object> jarIter = jarLocations.iterator(); jarIter.hasNext();) {
+ 			
+     		String origLocation = (String) jarIter.next();
+ 			
+-			String systemLocations = (String) dependencies.get(origLocation);
++			String systemLocations = getProject().replaceProperties((String) dependencies.get(origLocation));
+ 			String[] systemLocationList = systemLocations.split(":");
+ 			String attemptedLocations = "";
+ 			for (int j = 0; j < systemLocationList.length; j++) {

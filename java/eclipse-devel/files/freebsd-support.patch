@@ -10,12 +10,12 @@ $FreeBSD$
  		case $MODEL in
  			"x86_64")
  				defaultOSArch="x86_64"
-@@ -98,6 +98,7 @@
+@@ -112,6 +113,7 @@
  	"SunOS")
  		makefile="make_solaris.mak"
  		defaultOS="solaris"
 +		MAKE=make
- 		[ -d /usr/jdk/jdk1.5.0_01 ] && javaHome="/usr/jdk/jdk1.5.0_01"
+ 		[ -d /usr/jdk/jdk1.5.0_01 ] && defaultJavaHome="/usr/jdk/jdk1.5.0_01"
  		OUTPUT_DIR="../../bin/$defaultWS/$defaultOS/$defaultOSArch"
  		#PATH=/usr/ccs/bin:/opt/SUNWspro/bin:$PATH
 @@ -119,6 +121,24 @@
@@ -276,7 +276,7 @@ $FreeBSD$
           id="org.eclipse.swt.gtk.solaris.sparc"
           os="solaris"
           ws="gtk"
-@@ -707,6 +729,26 @@
+@@ -556,6 +578,26 @@
           fragment="true"/>
  
     <plugin
@@ -300,9 +300,9 @@ $FreeBSD$
 +         fragment="true"/>
 +
 +   <plugin
-          id="org.eclipse.equinox.launcher.motif.aix.ppc"
+          id="org.eclipse.equinox.launcher.gtk.aix.ppc"
           os="aix"
-          ws="motif"
+          ws="gtk"
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.core.filesystem/natives/unix/freebsd/Makefile	1969-12-31 19:00:00.000000000 -0500
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.core.filesystem/natives/unix/freebsd/Makefile	2009-12-23 15:14:12.391816744 -0500
 @@ -0,0 +1,36 @@
@@ -1019,8 +1019,8 @@ $FreeBSD$
 +Bundle-Name: %pluginName
 +Bundle-Vendor: %providerName
 +Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.x86_64;singleton:=true
-+Bundle-Version: 1.0.200.qualifier
-+Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.1.0,1.2.0)"
++Bundle-Version: 1.1.100.qualifier
++Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.1.0,1.3.0)"
 +Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=freebsd) (osgi.arch=x86_64))
 +Bundle-Localization: launcher.gtk.freebsd.x86_64
 +Eclipse-BundleShape: dir
@@ -1269,8 +1269,8 @@ $FreeBSD$
 +Bundle-Name: %pluginName
 +Bundle-Vendor: %providerName
 +Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.x86;singleton:=true
-+Bundle-Version: 1.0.200.qualifier
-+Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.1.0,1.2.0)"
++Bundle-Version: 1.1.100.qualifier
++Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.1.0,1.3.0)"
 +Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=freebsd) (osgi.arch=x86))
 +Bundle-Localization: launcher.gtk.freebsd.x86
 +Eclipse-BundleShape: dir
@@ -1483,8 +1483,8 @@ $FreeBSD$
 +Bundle-Name: %pluginName
 +Bundle-Vendor: %providerName
 +Bundle-SymbolicName: org.eclipse.equinox.launcher.gtk.freebsd.x86_64;singleton:=true
-+Bundle-Version: 1.0.200.qualifier
-+Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.1.0,1.2.0)"
++Bundle-Version: 1.1.100.qualifier
++Fragment-Host: org.eclipse.equinox.launcher;bundle-version="[1.1.0,1.3.0)"
 +Eclipse-PlatformFilter: (& (osgi.ws=gtk) (osgi.os=freebsd) (osgi.arch=x86_64))
 +Bundle-Localization: launcher.gtk.freebsd.x86_64
 +Eclipse-BundleShape: dir
@@ -1657,177 +1657,34 @@ $FreeBSD$
 +###############################################################################
 +pluginName = Equinox Launcher FreeBSD X86_64 Fragment
 +providerName = Eclipse.org - Equinox
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.p2.metadata.generator/src/org/eclipse/equinox/internal/p2/metadata/generator/features/ProductFile.java	2009-03-09 18:37:22.000000000 -0400
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.p2.metadata.generator/src/org/eclipse/equinox/internal/p2/metadata/generator/features/ProductFile.java	2009-12-23 15:14:12.431975410 -0500
-@@ -27,11 +27,13 @@
- 	private final static SAXParserFactory parserFactory = SAXParserFactory.newInstance();
- 
- 	private static final String PROGRAM_ARGS = "programArgs"; //$NON-NLS-1$
-+	private static final String PROGRAM_ARGS_FREEBSD = "programArgsFre"; //$NON-NLS-1$
- 	private static final String PROGRAM_ARGS_LINUX = "programArgsLin"; //$NON-NLS-1$
- 	private static final String PROGRAM_ARGS_MAC = "programArgsMac"; //$NON-NLS-1$
- 	private static final String PROGRAM_ARGS_SOLARIS = "programArgsSol"; //$NON-NLS-1$
- 	private static final String PROGRAM_ARGS_WIN = "programArgsWin"; //$NON-NLS-1$
- 	private static final String VM_ARGS = "vmArgs"; //$NON-NLS-1$
-+	private static final String VM_ARGS_FREEBSD = "vmArgsFre"; //$NON-NLS-1$
- 	private static final String VM_ARGS_LINUX = "vmArgsLin"; //$NON-NLS-1$
- 	private static final String VM_ARGS_MAC = "vmArgsMac"; //$NON-NLS-1$
- 	private static final String VM_ARGS_SOLARIS = "vmArgsSol"; //$NON-NLS-1$
-@@ -53,6 +55,7 @@
- 	private static final String OS_LINUX = "linux";//$NON-NLS-1$
- 	private static final String OS_SOLARIS = "solaris";//$NON-NLS-1$
- 	private static final String OS_MACOSX = "macosx";//$NON-NLS-1$
-+	private static final String OS_FREEBSD = "freebsd";//$NON-NLS-1$
- 
- 	private static final String PRODUCT = "product"; //$NON-NLS-1$
- 	private static final String CONFIG_INI = "configIni"; //$NON-NLS-1$
-@@ -70,16 +73,18 @@
- 	private static final int STATE_PLUGINS = 4;
- 	private static final int STATE_FEATURES = 5;
- 	private static final int STATE_PROGRAM_ARGS = 6;
--	private static final int STATE_PROGRAM_ARGS_LINUX = 7;
--	private static final int STATE_PROGRAM_ARGS_MAC = 8;
--	private static final int STATE_PROGRAM_ARGS_SOLARIS = 9;
--	private static final int STATE_PROGRAM_ARGS_WIN = 10;
--	private static final int STATE_VM_ARGS = 11;
--	private static final int STATE_VM_ARGS_LINUX = 12;
--	private static final int STATE_VM_ARGS_MAC = 13;
--	private static final int STATE_VM_ARGS_SOLARIS = 14;
--	private static final int STATE_VM_ARGS_WIN = 15;
--	private static final int STATE_CONFIG_INI = 16;
-+	private static final int STATE_PROGRAM_ARGS_FREEBSD = 7;
-+	private static final int STATE_PROGRAM_ARGS_LINUX = 8;
-+	private static final int STATE_PROGRAM_ARGS_MAC = 9;
-+	private static final int STATE_PROGRAM_ARGS_SOLARIS = 10;
-+	private static final int STATE_PROGRAM_ARGS_WIN = 11;
-+	private static final int STATE_VM_ARGS = 12;
-+	private static final int STATE_VM_ARGS_FREEBSD = 13;
-+	private static final int STATE_VM_ARGS_LINUX = 14;
-+	private static final int STATE_VM_ARGS_MAC = 15;
-+	private static final int STATE_VM_ARGS_SOLARIS = 16;
-+	private static final int STATE_VM_ARGS_WIN = 17;
-+	private static final int STATE_CONFIG_INI = 18;
- 
- 	private int state = STATE_START;
- 
-@@ -190,6 +195,8 @@
- 			key = VM_ARGS_MAC;
- 		} else if (os.equals(OS_SOLARIS)) {
- 			key = VM_ARGS_SOLARIS;
-+		} else if (os.equals(OS_FREEBSD)) {
-+			key = VM_ARGS_FREEBSD;
- 		}
- 
- 		String prefix = launcherArgs.getProperty(VM_ARGS);
-@@ -213,6 +220,8 @@
- 			key = PROGRAM_ARGS_MAC;
- 		} else if (os.equals(OS_SOLARIS)) {
- 			key = PROGRAM_ARGS_SOLARIS;
-+		} else if (os.equals(OS_FREEBSD)) {
-+			key = PROGRAM_ARGS_FREEBSD;
- 		}
- 
- 		String prefix = launcherArgs.getProperty(PROGRAM_ARGS);
-@@ -264,6 +273,8 @@
- 					processLinux(attributes);
- 				} else if (OS_MACOSX.equals(localName)) {
- 					processMac(attributes);
-+				} else if (OS_FREEBSD.equals(localName)) {
-+					processFreeBSD(attributes);
- 				}
- 				if ("ico".equals(localName)) { //$NON-NLS-1$
- 					processIco(attributes);
-@@ -275,6 +286,8 @@
- 			case STATE_LAUNCHER_ARGS :
- 				if (PROGRAM_ARGS.equals(localName)) {
- 					state = STATE_PROGRAM_ARGS;
-+				} else if (PROGRAM_ARGS_FREEBSD.equals(localName)) {
-+					state = STATE_PROGRAM_ARGS_FREEBSD;
- 				} else if (PROGRAM_ARGS_LINUX.equals(localName)) {
- 					state = STATE_PROGRAM_ARGS_LINUX;
- 				} else if (PROGRAM_ARGS_MAC.equals(localName)) {
-@@ -285,6 +298,8 @@
- 					state = STATE_PROGRAM_ARGS_WIN;
- 				} else if (VM_ARGS.equals(localName)) {
- 					state = STATE_VM_ARGS;
-+				} else if (VM_ARGS_FREEBSD.equals(localName)) {
-+					state = STATE_VM_ARGS_FREEBSD;
- 				} else if (VM_ARGS_LINUX.equals(localName)) {
- 					state = STATE_VM_ARGS_LINUX;
- 				} else if (VM_ARGS_MAC.equals(localName)) {
-@@ -330,11 +345,13 @@
- 				break;
- 
- 			case STATE_PROGRAM_ARGS :
-+			case STATE_PROGRAM_ARGS_FREEBSD :
- 			case STATE_PROGRAM_ARGS_LINUX :
- 			case STATE_PROGRAM_ARGS_MAC :
- 			case STATE_PROGRAM_ARGS_SOLARIS :
- 			case STATE_PROGRAM_ARGS_WIN :
- 			case STATE_VM_ARGS :
-+			case STATE_VM_ARGS_FREEBSD :
- 			case STATE_VM_ARGS_LINUX :
- 			case STATE_VM_ARGS_MAC :
- 			case STATE_VM_ARGS_SOLARIS :
-@@ -356,6 +373,9 @@
- 			case STATE_PROGRAM_ARGS :
- 				addLaunchArgumentToMap(PROGRAM_ARGS, String.valueOf(ch, start, length));
- 				break;
-+			case STATE_PROGRAM_ARGS_FREEBSD :
-+				addLaunchArgumentToMap(PROGRAM_ARGS_FREEBSD, String.valueOf(ch, start, length));
-+				break;
- 			case STATE_PROGRAM_ARGS_LINUX :
- 				addLaunchArgumentToMap(PROGRAM_ARGS_LINUX, String.valueOf(ch, start, length));
- 				break;
-@@ -371,6 +391,9 @@
- 			case STATE_VM_ARGS :
- 				addLaunchArgumentToMap(VM_ARGS, String.valueOf(ch, start, length));
- 				break;
-+			case STATE_VM_ARGS_FREEBSD :
-+				addLaunchArgumentToMap(VM_ARGS_FREEBSD, String.valueOf(ch, start, length));
-+				break;
- 			case STATE_VM_ARGS_LINUX :
- 				addLaunchArgumentToMap(VM_ARGS_LINUX, String.valueOf(ch, start, length));
- 				break;
-@@ -500,6 +523,12 @@
- 		result.add(attributes.getValue(WIN32_48_LOW));
- 	}
- 
-+	private void processFreeBSD(Attributes attributes) {
-+		if (!osMatch(OS_FREEBSD))
-+			return;
-+		result.add(attributes.getValue("icon")); //$NON-NLS-1$
-+	}
-+
- 	private void processLinux(Attributes attributes) {
- 		if (!osMatch(OS_LINUX))
- 			return;
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.p2.publisher/src/org/eclipse/equinox/internal/p2/publisher/eclipse/BrandingIron.java	2009-05-20 00:10:51.000000000 -0400
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.p2.publisher/src/org/eclipse/equinox/internal/p2/publisher/eclipse/BrandingIron.java	2009-12-23 15:14:12.440005914 -0500
-@@ -93,6 +93,8 @@
- 			brandAIX();
+--- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.p2.publisher.eclipse/src/org/eclipse/equinox/internal/p2/publisher/eclipse/BrandingIron.java	2009-05-20 00:10:51.000000000 -0400
++++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.p2.publisher.eclipse/src/org/eclipse/equinox/internal/p2/publisher/eclipse/BrandingIron.java	2009-12-23 15:14:12.440005914 -0500
+@@ -111,6 +111,8 @@
+ 			brandAIX(descriptor);
  		else if ("hpux".equals(os)) //$NON-NLS-1$
- 			brandHPUX();
+ 			brandHPUX(descriptor);
 +		else if ("freebsd".equals(os)) //$NON-NLS-1$
-+			brandFreeBSD();
++			brandFreeBSD(descriptor);
  		else
- 			renameLauncher();
- 	}
-@@ -224,6 +226,12 @@
+ 			renameLauncher(descriptor);
+ 		descriptor.setExecutableName(name, true);
+@@ -166,6 +168,14 @@
  		}
  	}
  
-+	private void brandFreeBSD() throws Exception {
-+		renameLauncher();
++	private void brandFreeBSD(ExecutablesDescriptor descriptor) throws Exception {
++		renameLauncher(descriptor);
++
++		File root = descriptor.getLocation();
 +		if (brandIcons)
-+			copy(new File(icons[0]), new File(root, "icon.xpm")); //$NON-NLS-1$
++			Utils.copy(new File(icons[0]), new File(root, "icon.xpm")); //$NON-NLS-1$
 +	}
 +
- 	private void moveContents(File source, File target) {
- 		if (!source.exists())
- 			return;
---- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.p2.publisher/src/org/eclipse/equinox/internal/p2/publisher/eclipse/ProductFile.java	2009-04-29 16:41:50.000000000 -0400
-+++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.p2.publisher/src/org/eclipse/equinox/internal/p2/publisher/eclipse/ProductFile.java	2009-12-23 15:14:12.441010216 -0500
+ 	private void brandMac(ExecutablesDescriptor descriptor) throws Exception {
+ 		//Initially the files are in: <root>/Eclipse.app/ 
+ 		//and they must appear in <root>/MyAppName.app/
+--- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.equinox.p2.publisher.eclipse/src/org/eclipse/equinox/internal/p2/publisher/eclipse/ProductFile.java	2009-04-29 16:41:50.000000000 -0400
++++ build/eclipse-3.5.2-src/plugins/org.eclipse.equinox.p2.publisher.eclipse/src/org/eclipse/equinox/internal/p2/publisher/eclipse/ProductFile.java	2009-12-23 15:14:12.441010216 -0500
 @@ -47,11 +47,13 @@
  	private final static SAXParserFactory parserFactory = SAXParserFactory.newInstance();
  
@@ -2144,7 +2001,7 @@ $FreeBSD$
   		<ant antfile="${assembleScriptName}" dir="${buildDirectory}">			
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/BrandingIron.java	2009-08-19 15:25:06.000000000 -0400
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/BrandingIron.java	2009-12-23 15:14:12.471129495 -0500
-@@ -80,6 +80,8 @@
+@@ -93,6 +93,8 @@
  			brandAIX();
  		else if ("hpux".equals(os)) //$NON-NLS-1$
  			brandHPUX();
@@ -2153,7 +2010,7 @@ $FreeBSD$
  		else
  			renameLauncher();
  	}
-@@ -110,6 +112,12 @@
+@@ -224,6 +226,12 @@
  		}
  	}
  
@@ -2163,9 +2020,9 @@ $FreeBSD$
 +			Utils.copy(new File(icons[0]), new File(root, "icon.xpm")); //$NON-NLS-1$
 +	}
 +
- 	private void brandSolaris() throws Exception {
- 		renameLauncher();
- 		if (brandIcons == false)
+ 	private void moveContents(File source, File target) {
+ 		if (!source.exists())
+ 			return;
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/ProductFile.java	2009-05-06 16:48:13.000000000 -0400
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.pde.build/src/org/eclipse/pde/internal/build/ProductFile.java	2009-12-23 15:14:12.472135194 -0500
 @@ -29,11 +29,13 @@
@@ -2995,34 +2852,6 @@ $FreeBSD$
  		;;
  	*)
  		SWT_OS=`uname -s | tr -s '[:upper:]' '[:lower:]'`
-@@ -114,7 +116,13 @@
- fi
- 
- if [ -z "${MOZILLA_INCLUDES}" -a -z "${MOZILLA_LIBS}" ]; then
--	if [ x`pkg-config --exists mozilla-xpcom && echo YES` = "xYES" ]; then
-+	if [ x`pkg-config --exists libxul && echo YES` = "xYES" ]; then
-+		XULRUNNER_INCLUDES=`pkg-config --cflags libxul`
-+		XULRUNNER_LIBS="`pkg-config --libs libxul` -lxpcomglue"
-+		export XULRUNNER_INCLUDES
-+		export XULRUNNER_LIBS
-+		MAKE_MOZILLA="make_xulrunner make_xpcominit"
-+	elif [ x`pkg-config --exists mozilla-xpcom && echo YES` = "xYES" ]; then
- 		MOZILLA_INCLUDES=`pkg-config --cflags mozilla-xpcom`
- 		MOZILLA_LIBS=`pkg-config --libs mozilla-xpcom`
- 		export MOZILLA_INCLUDES
-@@ -126,12 +134,6 @@
- 		export MOZILLA_INCLUDES
- 		export MOZILLA_LIBS
- 		MAKE_MOZILLA="make_mozilla make_xpcominit"
--	elif [ x`pkg-config --exists libxul && echo YES` = "xYES" ]; then
--		XULRUNNER_INCLUDES=`pkg-config --cflags libxul-unstable`
--		XULRUNNER_LIBS="`pkg-config --libs libxul-unstable` -lxpcomglue"
--		export XULRUNNER_INCLUDES
--		export XULRUNNER_LIBS
--		MAKE_MOZILLA="make_xulrunner make_xpcominit"
- 	else
- 		echo "None of the following libraries were found:  Mozilla/XPCOM, Firefox/XPCOM, or XULRunner/XPCOM"
- 		echo "    *** Mozilla embedding support will not be compiled."
 --- build.orig/eclipse-3.5.2-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_freebsd.mak	2007-06-20 12:01:22.000000000 -0400
 +++ build/eclipse-3.5.2-src/plugins/org.eclipse.swt/Eclipse SWT PI/gtk/library/make_freebsd.mak	2009-12-23 15:17:21.337309883 -0500
 @@ -39,6 +39,7 @@
@@ -3232,7 +3061,7 @@ $FreeBSD$
 +Bundle-Name: %fragmentName
 +Bundle-Vendor: %providerName
 +Bundle-SymbolicName: org.eclipse.swt.gtk.freebsd.x86; singleton:=true
-+Bundle-Version: 3.6.1.qualifier
++Bundle-Version: 3.7.0.qualifier
 +Bundle-ManifestVersion: 2
 +Bundle-Localization: fragment
 +Export-Package: 
@@ -5055,7 +4884,7 @@ $FreeBSD$
 +	<property name="swt.arch" value="x86" />
 +
 +	<!-- These properties are used by eclipse when exporting as Deployable plugin and fragments -->
-+	<property name="version.suffix" value="3.6.1" />
++	<property name="version.suffix" value="3.7.0" />
 +
 +	<import file="../org.eclipse.swt/buildFragment.xml"/>
 +</project>
@@ -5113,7 +4942,7 @@ $FreeBSD$
 +Bundle-Name: %fragmentName
 +Bundle-Vendor: %providerName
 +Bundle-SymbolicName: org.eclipse.swt.gtk.freebsd.x86_64; singleton:=true
-+Bundle-Version: 3.5.0.qualifier
++Bundle-Version: 3.7.0.qualifier
 +Bundle-ManifestVersion: 2
 +Bundle-Localization: fragment
 +Export-Package: 
@@ -6936,7 +6765,7 @@ $FreeBSD$
 +	<property name="swt.arch" value="x86_64" />
 +
 +	<!-- These properties are used by eclipse when exporting as Deployable plugin and fragments -->
-+	<property name="version.suffix" value="3.6.1" />
++	<property name="version.suffix" value="3.7.0" />
 +
 +	<import file="../org.eclipse.swt/buildFragment.xml"/>
 +</project>
@@ -7504,19 +7333,19 @@ $FreeBSD$
 +}
 --- build/eclipse-3.6.1-src/pluginVersions.properties~	Fri Oct  1 17:18:03 2010
 +++ build/eclipse-3.6.1-src/pluginVersions.properties	Wed Oct 20 20:19:42 2010
-@@ -33,6 +33,7 @@
- org.eclipse.equinox.launcher.motif.hpux.ia64_32,0.0.0=R36x_v20100810
- org.eclipse.equinox.http,0.0.0=v20100503
- org.eclipse.swt.gtk.linux.x86_64,0.0.0=v3655c
-+org.eclipse.swt.gtk.freebsd.x86_64,0.0.0=v3655c
- org.eclipse.swt.photon.qnx.x86,0.0.0=v3655c
- org.eclipse.equinox.p2.ui.admin,0.0.0=v20100503
- org.eclipse.equinox.weaving.caching.j9,0.0.0=v20100503
-@@ -244,6 +245,7 @@
- org.eclipse.swt.examples,0.0.0=v3655c
- org.eclipse.cvs,0.0.0=v20100414
- org.eclipse.swt.gtk.linux.x86,0.0.0=v3655c
-+org.eclipse.swt.gtk.freebsd.x86,0.0.0=v3655c
- org.eclipse.equinox.log,0.0.0=v20100503
+@@ -34,6 +34,7 @@
+ org.eclipse.equinox.launcher.motif.hpux.ia64_32,0.0.0=v20110502
+ org.eclipse.equinox.http,0.0.0=v20110413
+ org.eclipse.swt.gtk.linux.x86_64,0.0.0=v3735b
++org.eclipse.swt.gtk.freebsd.x86_64,0.0.0=v3735b
+ org.eclipse.equinox.p2.ui.admin,0.0.0=v20110502-1955
+ org.eclipse.equinox.p2.publisher.eclipse,0.0.0=v20110511
+ org.eclipse.equinox.weaving.caching.j9,0.0.0=v20110502
+@@ -245,6 +246,7 @@
+ org.eclipse.swt.examples,0.0.0=v3735b
+ org.eclipse.cvs,0.0.0=v20110505-0800
+ org.eclipse.swt.gtk.linux.x86,0.0.0=v3735b
++org.eclipse.swt.gtk.freebsd.x86,0.0.0=v3735b
+ org.eclipse.equinox.log,0.0.0=v20110502
  org.eclipse.equinox.jmx.client,0.0.0=v20100503
  org.eclipse.ui.win32,0.0.0=I20100509-0800
