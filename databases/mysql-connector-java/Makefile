@@ -16,6 +16,8 @@ COMMENT=	MySQL Connector/J: JDBC interface for MySQL
 
 RUN_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j
 
+USE_ZIP=	yes
+
 CONFLICTS=	mysql-connector-java*-5.0.*
 
 LICENSE=	GPLv2
