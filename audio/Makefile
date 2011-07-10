@@ -680,6 +680,7 @@
     SUBDIR += rubygem-librmpd
     SUBDIR += rubygem-ogginfo
     SUBDIR += rubygem-ruby-mp3info
+    SUBDIR += rubygem-shout
     SUBDIR += rubyripper
     SUBDIR += s3mod
     SUBDIR += sbagen
