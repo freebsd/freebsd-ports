@@ -7,12 +7,14 @@
 
 PORTNAME=	paexec
 PORTVERSION=	0.16.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Parallel executor, distributes tasks over network
+
+LICENSE=	MIT
 
 LIB_DEPENDS=	maa:${PORTSDIR}/devel/libmaa
 BUILD_DEPENDS=	mk-configure>=0.20:${PORTSDIR}/devel/mk-configure
@@ -20,28 +22,31 @@ RUN_DEPENDS=	runawk:${PORTSDIR}/lang/runawk
 
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+MAKE_ENV+=	SUBPRJ_DFLT="${SUBPRJ_DFLT}"
 
-DOCS=		NEWS README TODO
-MAN1=		paexec.1 paexec_reorder.1
+SUBPRJ_DFLT=	${PORTNAME}
 
-USE_PERL5_BUILD=	yes
+.if !defined(NOPORTDOCS)
+PORTDOCS=	*
+SUBPRJ_DFLT+=	doc
+.endif
 
-LICENSE=	MIT
+.if !defined(NOPORTEXAMPLES)
+PORTEXAMPLES=	*
+SUBPRJ_DFLT+=	examples
+MAKE_ENV+=	EGDIR="${EXAMPLESDIR}"
+.endif
+
+PLIST_FILES=	bin/${PORTNAME} \
+		bin/${PORTNAME}_reorder
+
+MAN1=		${PORTNAME}.1 \
+		${PORTNAME}_reorder.1
 
 do-build:
 	@${SETENV} ${MAKE_ENV} LDFLAGS="${LDFLAGS}" ${LOCALBASE}/bin/mkcmake -C ${WRKSRC}
 
 do-install:
-	@${SETENV} ${MAKE_ENV} LDFLAGS="${LDFLAGS}" ${LOCALBASE}/bin/mkcmake -C ${WRKSRC} install
-.if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${CP} -R ${WRKSRC}/examples/* ${EXAMPLESDIR}
-.endif
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-.for doc in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/doc/${doc} ${DOCSDIR}
-.endfor
-.endif
+	@${SETENV} ${MAKE_ENV} LDFLAGS="${LDFLAGS}" ${LOCALBASE}/bin/mkcmake -C ${WRKSRC} ${INSTALL_TARGET}
 
 .include <bsd.port.mk>
