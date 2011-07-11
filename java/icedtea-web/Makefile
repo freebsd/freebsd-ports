@@ -20,7 +20,7 @@ JAVA_VENDOR=	openjdk
 USE_XORG=	x11
 
 OPTIONS=	PLUGIN "Enable the browser plug-in" on \
-		RHINO "Enable support for Proxy Auto Config files" off \
+		RHINO "Add support for Proxy Auto Config files" off \
 		TEST "Add support for running regression test" off
 
 MAN1=		javaws.1
@@ -64,6 +64,7 @@ CONFIGURE_ARGS+=--disable-plugin
 
 .if defined(WITH_RHINO)
 CONFIGURE_ARGS+=--with-rhino=${JAVASHAREDIR}/rhino/rhino.jar
+BUILD_DEPENDS+=	${JAVASHAREDIR}/rhino/rhino.jar:${PORTSDIR}/lang/rhino
 RUN_DEPENDS+=	${JAVASHAREDIR}/rhino/rhino.jar:${PORTSDIR}/lang/rhino
 .else
 CONFIGURE_ARGS+=--with-rhino=no
