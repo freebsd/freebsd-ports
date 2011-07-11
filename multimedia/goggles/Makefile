@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.fifthplanet.net/files/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A FOX frontend to the Ogle DVD player
 
+DEPRECATED=	Abandonware, see: http://www.fifthplanet.net/2010/01/dead-projects-goggles-dvd-player.html
+EXPIRATION_DATE=	2011-08-01
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.11:${PORTSDIR}/multimedia/ogle
 LIB_DEPENDS=	FOX-1.4:${PORTSDIR}/x11-toolkits/fox14
 RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle

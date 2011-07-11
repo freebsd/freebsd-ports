@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}_gui-${PORTVERSION}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	An add-on graphical user interface for Ogle
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2011-08-01
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.11:${PORTSDIR}/multimedia/ogle
 LIB_DEPENDS=	glade-2.0:${PORTSDIR}/devel/libglade2 \
 		xml2.5:${PORTSDIR}/textproc/libxml2
