@@ -62,6 +62,7 @@ CONFIGURE_ARGS+=--with-nntp-default-server=news \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-mime-default-charset=US-ASCII \
 		--enable-ipv6
+MAKE_ARGS+=	MAKE=${GMAKE}
 CFLAGS+=	-DNNTP_SERVER_FILE=\\\"${PREFIX}/etc/nntpserver\\\"
 CPPFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV=	LDFLAGS='${LDFLAGS} -L${LOCALBASE}/lib'
@@ -96,6 +97,10 @@ RUN_DEPENDS+=		metamail:${PORTSDIR}/mail/metamail
 CONFIGURE_ARGS+=	--with-metamail=${PREFIX}/bin/metamail
 .endif
 
+.ifdef	WITH_CANLOCK
+CONFIGURE_ARGS+=	--enable-cancel-locks
+.endif
+
 .ifdef	WITHOUT_NLS
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=		NLS="@comment "
@@ -122,16 +127,6 @@ post-patch:
 		${WRKSRC}/src/Makefile.in ${WRKSRC}/include/tin.h
 	${MV}   ${WRKSRC}/tools/url_handler.pl \
 		${WRKSRC}/tools/tinurl_handler.pl
-
-.ifdef	WITH_CANLOCK
-MAKE_ARGS+=	CANLIB='-L../libcanlock -lcanlock' \
-		CANLOCK=-DUSE_CANLOCK
-.endif
-
-pre-build:
-.ifdef	WITH_CANLOCK
-	cd ${WRKSRC}/src; ${GMAKE} canlock
-.endif
 
 post-build:
 .ifndef	WITHOUT_NLS
