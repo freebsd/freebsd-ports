@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libnatpmp
-PORTVERSION=	20101211
+PORTVERSION=	20110618
 CATEGORIES=	net
 MASTER_SITES=	http://miniupnp.free.fr/files/
 
@@ -22,6 +22,6 @@ PLIST_FILES=	bin/natpmpc \
 		include/natpmp.h \
 		lib/libnatpmp.a \
 		lib/libnatpmp.so \
-		lib/libnatpmp.so.0
+		lib/libnatpmp.so.1
 
 .include <bsd.port.mk>
