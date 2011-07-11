@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	libass
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.12
 CATEGORIES=	multimedia devel
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Portable ASS/SSA subtitle renderer
 
-LICENSE=	GPLv2
+LICENSE=	ISCL
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		enca.5:${PORTSDIR}/converters/enca \
@@ -21,7 +21,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		expat.6:${PORTSDIR}/textproc/expat2
 
 USE_GNOME=	pkgconfig gnomehack
-USE_BZIP2=	yes
+USE_XZ=	yes
 USE_LDCONFIG=	yes
 
 GNU_CONFIGURE=	yes
