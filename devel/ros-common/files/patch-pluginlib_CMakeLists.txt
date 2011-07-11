@@ -1,11 +1,14 @@
 --- pluginlib/CMakeLists.txt.orig	2010-06-14 22:45:37.000000000 +0200
 +++ pluginlib/CMakeLists.txt	2010-11-26 15:06:15.000000000 +0100
-@@ -19,7 +19,7 @@
+@@ -19,7 +19,11 @@
  rosbuild_add_boost_directories()
  
  rosbuild_add_library(poco_lite src/Exception.cpp src/File.cpp src/Manifest.cpp src/Mutex.cpp src/Path.cpp src/SharedLibrary.cpp src/StringTokenizer.cpp src/Timestamp.cpp src/UnicodeConverter.cpp src/AtomicCounter.cpp src/UTF16Encoding.cpp src/UTF8Encoding.cpp src/TextEncoding.cpp src/ASCIIEncoding.cpp src/Latin1Encoding.cpp src/Latin9Encoding.cpp src/Windows1252Encoding.cpp src/RWLock.cpp src/DirectoryIterator.cpp src/Bugcheck.cpp src/Environment.cpp src/TextIterator.cpp src/Debugger.cpp src/TextConverter.cpp)
--target_link_libraries(poco_lite dl)
++if (${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
 +target_link_libraries(poco_lite)
++else (${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
+ target_link_libraries(poco_lite dl)
++endif (${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
  
  rosbuild_add_library(boost_fs_wrapper src/boost_fs_wrapper.cpp)
  rosbuild_link_boost(boost_fs_wrapper system filesystem) 
