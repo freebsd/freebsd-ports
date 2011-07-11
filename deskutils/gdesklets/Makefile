@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	gdesklets
-PORTVERSION=	0.36.1
-PORTREVISION=	3
+PORTVERSION=	0.36.2
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	http://www.gdesklets.de/files/ \
-		GENTOO/distfiles
+MASTER_SITES=	GENTOO/distfiles
+# XXX		currently broken: http://www.gdesklets.de/files/
+DISTNAME=	gDesklets-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A framework for Gnome 2.x for desktop applets
 
-BROKEN=	Does not fetch
+USE_BZIP2=	yes
 
 LIB_DEPENDS=	gtop-2.0.7:${PORTSDIR}/devel/libgtop
 
