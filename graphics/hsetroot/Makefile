@@ -9,7 +9,7 @@ PORTNAME=	hsetroot
 PORTVERSION=	1.0.2
 PORTREVISION=	9
 CATEGORIES=	graphics
-MASTER_SITES=	http://thegraveyard.org/files/
+MASTER_SITES=	http://cdn.thegraveyard.org/releases/hsetroot/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to compose wallpapers for X
