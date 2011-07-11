@@ -5,27 +5,7 @@ bin/lwp-download
 bin/lwp-dump
 bin/lwp-mirror
 bin/lwp-request
-bin/lwp-rget
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/.packlist
-%%SITE_PERL%%/Bundle/LWP.pm
-%%SITE_PERL%%/File/Listing.pm
-%%SITE_PERL%%/HTML/Form.pm
-%%SITE_PERL%%/HTTP/Config.pm
-%%SITE_PERL%%/HTTP/Cookies.pm
-%%SITE_PERL%%/HTTP/Cookies/Microsoft.pm
-%%SITE_PERL%%/HTTP/Cookies/Netscape.pm
-%%SITE_PERL%%/HTTP/Daemon.pm
-%%SITE_PERL%%/HTTP/Date.pm
-%%SITE_PERL%%/HTTP/Headers.pm
-%%SITE_PERL%%/HTTP/Headers/Auth.pm
-%%SITE_PERL%%/HTTP/Headers/ETag.pm
-%%SITE_PERL%%/HTTP/Headers/Util.pm
-%%SITE_PERL%%/HTTP/Message.pm
-%%SITE_PERL%%/HTTP/Negotiate.pm
-%%SITE_PERL%%/HTTP/Request.pm
-%%SITE_PERL%%/HTTP/Request/Common.pm
-%%SITE_PERL%%/HTTP/Response.pm
-%%SITE_PERL%%/HTTP/Status.pm
 %%SITE_PERL%%/LWP.pm
 %%SITE_PERL%%/LWP/Authen/Basic.pm
 %%SITE_PERL%%/LWP/Authen/Digest.pm
@@ -33,7 +13,6 @@ bin/lwp-rget
 %%SITE_PERL%%/LWP/ConnCache.pm
 %%SITE_PERL%%/LWP/Debug.pm
 %%SITE_PERL%%/LWP/DebugFile.pm
-%%SITE_PERL%%/LWP/MediaTypes.pm
 %%SITE_PERL%%/LWP/MemberMixin.pm
 %%SITE_PERL%%/LWP/Protocol.pm
 %%SITE_PERL%%/LWP/Protocol/GHTTP.pm
@@ -43,9 +22,6 @@ bin/lwp-rget
 %%SITE_PERL%%/LWP/Protocol/ftp.pm
 %%SITE_PERL%%/LWP/Protocol/gopher.pm
 %%SITE_PERL%%/LWP/Protocol/http.pm
-%%SITE_PERL%%/LWP/Protocol/http10.pm
-%%SITE_PERL%%/LWP/Protocol/https.pm
-%%SITE_PERL%%/LWP/Protocol/https10.pm
 %%SITE_PERL%%/LWP/Protocol/loopback.pm
 %%SITE_PERL%%/LWP/Protocol/mailto.pm
 %%SITE_PERL%%/LWP/Protocol/nntp.pm
@@ -53,27 +29,9 @@ bin/lwp-rget
 %%SITE_PERL%%/LWP/RobotUA.pm
 %%SITE_PERL%%/LWP/Simple.pm
 %%SITE_PERL%%/LWP/UserAgent.pm
-%%SITE_PERL%%/LWP/media.types
-%%SITE_PERL%%/Net/HTTP.pm
-%%SITE_PERL%%/Net/HTTP/Methods.pm
-%%SITE_PERL%%/Net/HTTP/NB.pm
-%%SITE_PERL%%/Net/HTTPS.pm
-%%SITE_PERL%%/WWW/RobotRules.pm
-%%SITE_PERL%%/WWW/RobotRules/AnyDBM_File.pm
 %%SITE_PERL%%/lwpcook.pod
 %%SITE_PERL%%/lwptut.pod
-@dirrmtry %%SITE_PERL%%/WWW/RobotRules
-@dirrmtry %%SITE_PERL%%/WWW
-@dirrmtry %%SITE_PERL%%/Net/HTTP
-@dirrmtry %%SITE_PERL%%/Net
 @dirrmtry %%SITE_PERL%%/LWP/Protocol
 @dirrmtry %%SITE_PERL%%/LWP/Authen
 @dirrmtry %%SITE_PERL%%/LWP
-@dirrmtry %%SITE_PERL%%/HTTP/Request
-@dirrmtry %%SITE_PERL%%/HTTP/Headers
-@dirrmtry %%SITE_PERL%%/HTTP/Cookies
-@dirrmtry %%SITE_PERL%%/HTTP
-@dirrmtry %%SITE_PERL%%/HTML
-@dirrmtry %%SITE_PERL%%/File
-@dirrmtry %%SITE_PERL%%/Bundle
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP
