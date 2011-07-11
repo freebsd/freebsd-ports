@@ -1,7 +1,6 @@
 lib/pgtcl/libpgtcl%%PORTVERSION%%.so
 lib/pgtcl/pkgIndex.tcl
 @dirrm lib/pgtcl
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL.html
 %%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/legalnotice.html
 %%PORTDOCS%%%%DOCSDIR%%/pg-blocking.html
