@@ -18,6 +18,15 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_strerror.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_verbosity.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_version.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_pool.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_memory_allocators.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_generate_hash_value.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_sasl.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_user_data.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_analyze.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_result_st.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_dump.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Memcached/libmemcached/memcached_flush_buffers.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Memcached/libmemcached/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Memcached/libmemcached/libmemcached.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Memcached/libmemcached/libmemcached.so
