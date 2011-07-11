@@ -42,3 +42,7 @@ SHA256 (eclipse/org.sat4j.core_2.2.0.v20100429.jar) = 4c3c8b6c3b05576fd1adba3c1c
 SIZE (eclipse/org.sat4j.core_2.2.0.v20100429.jar) = 193845
 SHA256 (eclipse/org.sat4j.pb_2.2.0.v20100429.jar) = 4c57e12cd17a128e14d3cf093ec265e6991a74fcba096c0d284145bf2cd0d44d
 SIZE (eclipse/org.sat4j.pb_2.2.0.v20100429.jar) = 121389
+SHA256 (eclipse/eclipse-sdktests-3.6.2-src.tar.bz2) = d23ad060f949a5eac8b3f965c0a617f98e57ef8302e7d05824b599befa6adc5f
+SIZE (eclipse/eclipse-sdktests-3.6.2-src.tar.bz2) = 108186287
+SHA256 (eclipse/eclipse-sdktests-3.6.2-scripts.tar.bz2) = 073d1ad08dc50a63deea7f883dae599bd530b90f9e11d788349d419a30a29e0d
+SIZE (eclipse/eclipse-sdktests-3.6.2-scripts.tar.bz2) = 5548
