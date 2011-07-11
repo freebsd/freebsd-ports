@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	django-haystack
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.4
 CATEGORIES=	www databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	kristaps.kulis@gmail.com
 COMMENT=	Pluggable search for Django
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
-
 LICENSE=	BSD
+
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
