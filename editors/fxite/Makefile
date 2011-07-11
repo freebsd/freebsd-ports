@@ -16,15 +16,12 @@ COMMENT=	An advanced cross-platform text editor
 
 LIB_DEPENDS=	fxscintilla.22:${PORTSDIR}/x11-toolkits/fxscintilla
 
+BROKEN=		does not compile
+
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lintl"
 
 PLIST_FILES=	bin/fxite
 
-.include <bsd.port.pre.mk>
-.if ${OSVERSION} < 701101
-BROKEN=		does not build on pre 701101; needs strndup
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
