@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	mpdscribble
-PORTVERSION=	0.21
+PORTVERSION=	0.22
 CATEGORIES=	audio
 MASTER_SITES=	SF/musicpd/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	Musicpd last.fm client
 
-LIB_DEPENDS+=	mpdclient.2:${PORTSDIR}/audio/libmpdclient
-
 LICENSE=	GPLv2
+
+LIB_DEPENDS+=	mpdclient.2:${PORTSDIR}/audio/libmpdclient
 
 USE_BZIP2=	yes
 USE_GNOME=	glib20 pkgconfig
