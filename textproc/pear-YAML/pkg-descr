@@ -1,0 +1,4 @@
+Symfony YAML is a PHP library that parses YAML strings and converts them to
+PHP arrays. It can also converts PHP arrays to YAML strings.
+
+WWW: http://components.symfony-project.org/yaml/
