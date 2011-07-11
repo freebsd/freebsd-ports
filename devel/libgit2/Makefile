@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libgit2
-PORTVERSION=	0.12.0
+PORTVERSION=	0.13.0
 CATEGORIES=	devel
 MASTER_SITES=	http://cloud.github.com/downloads/libgit2/libgit2/
 
@@ -15,23 +15,10 @@ COMMENT=	Portable, pure C implementation of the Git core
 
 LICENSE=	GPLv2
 
-USE_PYTHON_BUILD=	yes
 USE_LDCONFIG=	yes
-
-WAF_ARGS=	--sha1=builtin
+USE_CMAKE=	yes
+CMAKE_USE_PTHREAD=	yes
 
 MAKE_JOBS_SAFE=	yes
-
-post-configure:
-	@${REINPLACE_CMD} -e 's|LIBDIR}/pkgconfig|PREFIX}/libdata/pkgconfig|' ${WRKSRC}/wscript
-
-do-configure:
-	@cd ${WRKSRC}; ${CONFIGURE_ENV} ./waf configure ${WAF_ARGS}
-
-do-build:
-	@cd ${WRKSRC}; ${MAKE_ENV} ./waf build -j ${MAKE_JOBS_NUMBER}
-
-do-install:
-	@cd ${WRKSRC}; ${MAKE_ENV} ./waf install
 
 .include <bsd.port.mk>
