@@ -1,0 +1,7 @@
+%%SITE_PERL%%/LWP/Protocol/https.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Protocol/https/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Protocol/https
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP/Protocol
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/LWP
+@dirrmtry %%SITE_PERL%%/LWP/Protocol
+@dirrmtry %%SITE_PERL%%/LWP

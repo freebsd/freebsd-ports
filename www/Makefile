@@ -1104,6 +1104,7 @@
     SUBDIR += p5-LWP-ConnCache-MaxKeepAliveRequests
     SUBDIR += p5-LWP-MediaTypes
     SUBDIR += p5-LWP-Online
+    SUBDIR += p5-LWP-Protocol-https
     SUBDIR += p5-LWP-UserAgent-Determined
     SUBDIR += p5-LWP-UserAgent-POE
     SUBDIR += p5-LWP-UserAgent-WithCache
