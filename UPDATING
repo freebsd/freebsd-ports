@@ -6,8 +6,22 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20110711:
+  AFFECTS: users of www/p5-libwww
+  AUTHOR:  mandree@FreeBSD.org
+
+  portmaster cannot currently the upgrade of www/p5-libwww from version
+  5 to version 6.  To upgrade p5-libwww, use portupgrade instead, or
+  deinstall p5-libwww before reinstalling:
+
+  If you use portmaster:
+  # pkg_delete -f 'p5-libwww-5*' ; portmaster www/p5-libwww
+
+  If you use portupgrade, no special treatment is necessary.
+
+
+20110711:
   AFFECTS: users of devel/icu
-  AUTHORS: bapt@FreeBSD.org
+  AUTHOR:  bapt@FreeBSD.org
 
   icu has been updated to version 4.8. Please rebuild all ports that depends
   on it.
