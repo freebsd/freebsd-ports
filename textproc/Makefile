@@ -976,6 +976,7 @@
     SUBDIR += pear-XML_Feed_Parser
     SUBDIR += pear-XML_HTMLSax
     SUBDIR += pear-XML_Wddx
+    SUBDIR += pear-YAML
     SUBDIR += pecl-ctemplate
     SUBDIR += pecl-doublemetaphone
     SUBDIR += pecl-enchant
