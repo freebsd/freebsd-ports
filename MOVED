@@ -2274,3 +2274,5 @@ security/horde4-auth||2011-07-07|Removed
 x11-wm/boxtools|x11-wm/blackbox|2011-07-08|Ports merged together
 audio/ruby-ogginfo||2011-07-09|Replaced with audio/rubygem-ogginfo
 audio/ruby-shout||2011-07-10|Replaced with audio/rubygem-shout
+textproc/xpp3||2011-07-11|Removed depends on an expired ports
+textproc/xmlpull||2011-07-11|Has expired: Upstream disapear and distfile is no more available
