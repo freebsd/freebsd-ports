@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	openjdk6
-PORTVERSION=	b22
-PORTREVISION=	6
+PORTVERSION=	b23
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		http://download.java.net/jaxp/openjdk/jdk6/:jaxp \
-		https://java.net/downloads/jax-ws/OpenJDK6/:jaxws \
+		http://download.java.net/glassfish/components/jax-ws/openjdk/jdk6:jaxws \
 		https://java.net/downloads/jax-ws/OpenJDK6/:jaf \
 		http://icedtea.classpath.org/builds/icedtea6/src/ \
 		http://icedtea.classpath.org/download/drops/:jaxp \
 		http://icedtea.classpath.org/download/drops/:jaxws \
 		http://icedtea.classpath.org/download/drops/:jaf \
 		${MASTER_SITE_APACHE:S,%SUBDIR%/,ant/binaries/:ant,} \
-		http://icedtea.classpath.org/download/source/:itweb \
 		http://download.java.net/openjdk/jtreg/promoted/${JTREGVERSION}/:jtreg
 DISTNAME=	openjdk-6-src-${PORTVERSION}-${OPENJDK_BUILDDATE}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
@@ -40,16 +38,15 @@ RUN_DEPENDS=	javavm:${PORTSDIR}/java/javavmwrapper \
 
 LICENSE=	GPLv2
 
-OPENJDK_BUILDDATE=	28_feb_2011
+OPENJDK_BUILDDATE=	05_jul_2011
 
 OPTIONS=	DEBUG "Enable legacy debugging support" off \
 		FASTDEBUG "Include fastdebug build" off \
-		ICEDTEA "Apply additional patches from IcedTea" off \
+		ICEDTEA "Apply additional patches from IcedTea" on \
 		IPV6 "Enable IPv6 support" off \
 		POLICY "Install the Unlimited Strength Policy Files" off \
 		SOUND "Enable sound support" off \
-		TEST "Add support for running regression test" off \
-		WEB "Enable the browser plugin and Java Web Start" off
+		TEST "Add support for running regression test" off
 
 # java extracts directly to the cwd
 WRKSRC=		${WRKDIR}
@@ -59,14 +56,12 @@ USE_MOTIF=	yes
 USE_XORG=	xtst xi xt x11
 MAKE_JOBS_UNSAFE=	yes
 
-JAXP_BUILD=	144_01
+JAXP_BUILD=	144_03
 JAXPFILE=	jaxp${JAXP_BUILD}.zip
-JAXWS_BUILD=	b20
-JAXWSFILE=	jdk6-jaxws-${JAXWS_BUILD}.zip
+JAXWS_BUILD=	2_1_6-2011_06_08
+JAXWSFILE=	jdk6-jaxws${JAXWS_BUILD}.zip
 JAF_BUILD=	b20
 JAFFILE=	jdk6-jaf-${JAF_BUILD}.zip
-ITWEBVERSION=	1.0.3
-ITWEBFILE=	icedtea-web-${ITWEBVERSION}${EXTRACT_SUFX}
 JTREGVERSION=	b02
 JTREGFILE=	jtreg-4.1-bin-${JTREGVERSION}_21_may_2010.zip
 
@@ -143,7 +138,8 @@ MAKE_ENV+=	SKIP_FASTDEBUG_BUILD=true
 .endif
 
 .if defined(WITH_ICEDTEA)
-EXTRA_PATCHES+=	${FILESDIR}/icedtea/jpegclasses.patch
+EXTRA_PATCHES+=	${FILESDIR}/icedtea/applet_hole.patch \
+		${FILESDIR}/icedtea/jpegclasses.patch
 .endif
 
 .if !defined(WITH_IPV6)
@@ -165,23 +161,6 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/dejavu:${PORTSDIR}/x11-fonts/dejavu
 USE_DISPLAY=	yes
 .endif
 
-.if defined(WITH_WEB)
-DISTFILES+=	${ITWEBFILE}:itweb
-EXTRACT_ONLY+=	${ITWEBFILE}
-EXTRA_PATCHES+=	${FILESDIR}/plugin.patch
-BUILD_DEPENDS+=	${LOCALBASE}/bin/pkg-config:${PORTSDIR}/devel/pkg-config \
-		${LOCALBASE}/libdata/pkgconfig/glib-2.0.pc:${PORTSDIR}/devel/glib20 \
-		${LOCALBASE}/libdata/pkgconfig/gtk+-2.0.pc:${PORTSDIR}/x11-toolkits/gtk20 \
-		${LOCALBASE}/libdata/pkgconfig/mozilla-plugin.pc:${PORTSDIR}/www/libxul
-ITWEBDIR=	${WRKDIR}/icedtea-web-${ITWEBVERSION}
-ITWEB_JAVAC=	${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/bin/javac
-ITWEB_JAR=	${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/bin/jar
-.if defined(WITH_DEBUG)
-ITWEB_DEBUG_FLAGS=-g
-.endif
-ITWEB_JAVAC_FLAGS=${ITWEB_DEBUG_FLAGS} -encoding utf-8 -J-Xmx1024m -source 6 -target 6
-.endif
-
 .if !defined(DISABLE_MAKE_JOBS)
 .if defined(MAKE_JOBS_NUMBER)
 BUILD_JOBS_NUMBER=	${MAKE_JOBS_NUMBER}
@@ -192,7 +171,6 @@ MAKE_ENV+=	HOTSPOT_BUILD_JOBS=${BUILD_JOBS_NUMBER}
 .endif
 
 COPYDIRS=	\
-	hotspot/src/os/linux/launcher \
 	hotspot/src/os/linux/vm \
 	hotspot/src/os_cpu/linux_x86/vm \
 	hotspot/agent/src/os/linux \
@@ -231,7 +209,7 @@ post-extract:
 		for f in *; do \
 			if [ -f $$f ]; then \
 				t=`echo ${WRKDIR}/$$d/$$f | ${SED} 's/linux/bsd/g; s/Linux/Bsd/g'`; \
-				${SED} 's/linux/bsd/g; s/Linux/Bsd/g' < $$f > $$t; \
+				${SED} 's/linux/bsd/g; s/Linux/Bsd/g; s/LINUX/BSD/g' < $$f > $$t; \
 			fi; \
 		done; \
 	done
@@ -256,77 +234,8 @@ post-patch:
 		${WRKSRC}/jdk/make/javax/crypto/Makefile
 .endif
 
-.if defined(WITH_WEB) || defined(WITH_TEST)
-post-build:
-.if defined(WITH_WEB)
-	@${MKDIR} ${ITWEBDIR}/build/lib
-	@( \
-		cd ${ITWEBDIR}/plugin/icedteanp; \
-		${MAKE} -f ${FILESDIR}/Makefile.plugin depend all install \
-		    DEBUG_FLAGS="${ITWEB_DEBUG_FLAGS}" \
-		    LIBDIR=${ITWEBDIR}/build/lib \
-		    LIBOWN=${UID} \
-		    LIBGRP=`${ID} -g` \
-		    LOCALBASE=${LOCALBASE} \
-		    JDK_UPDATE_VERSION=50 \
-		    PLUGIN_VERSION="IcedTea-Web ${ITWEBVERSION}" \
-	)
-	@${FIND} -s ${ITWEBDIR}/netx -name '*.java' > \
-	    ${ITWEBDIR}/netx-source-files.txt
-	@${MKDIR} ${ITWEBDIR}/netx.build/lib
-	@${ITWEB_JAVAC} ${ITWEB_JAVAC_FLAGS} -d ${ITWEBDIR}/netx.build \
-	    @${ITWEBDIR}/netx-source-files.txt
-	@${CP} -r ${ITWEBDIR}/netx/net/sourceforge/jnlp/resources \
-	    ${ITWEBDIR}/netx.build/net/sourceforge/jnlp
-	@( \
-		cd ${ITWEBDIR}/netx.build; \
-		${ITWEB_JAR} cf ${ITWEBDIR}/build/lib/netx.jar \
-		    javax/jnlp net \
-	)
-	@( \
-		cd ${ITWEBDIR}/netx; \
-		${ITWEB_JAR} uf ${ITWEBDIR}/build/lib/netx.jar \
-		    `${FIND} . -type f -not -name '*.java'` \
-	)
-	@${CP} ${ITWEBDIR}/netx/net/sourceforge/jnlp/resources/about.jnlp \
-	    ${ITWEBDIR}/build/lib
-	@${FIND} -s ${ITWEBDIR}/plugin/icedteanp/java -name '*.java' > \
-	    ${ITWEBDIR}/liveconnect-source-files.txt
-	@${MKDIR} ${ITWEBDIR}/liveconnect/lib
-	@${ITWEB_JAVAC} ${ITWEB_JAVAC_FLAGS} -d ${ITWEBDIR}/liveconnect \
-	    -classpath ${ITWEBDIR}/netx.build \
-	    @${ITWEBDIR}/liveconnect-source-files.txt
-	@( \
-		cd ${ITWEBDIR}/liveconnect; \
-		${ITWEB_JAR} cf ${ITWEBDIR}/build/lib/plugin.jar \
-		    netscape sun/applet \
-	)
-	@${FIND} -s ${ITWEBDIR}/extra -name '*.java' > \
-	    ${ITWEBDIR}/extra-source-files.txt
-	@${MKDIR} ${ITWEBDIR}/extra-lib
-	@${ITWEB_JAVAC} ${ITWEB_JAVAC_FLAGS} -d ${ITWEBDIR}/extra-lib \
-	    -classpath ${ITWEBDIR}/netx.build \
-	    @${ITWEBDIR}/extra-source-files.txt
-	@${CP} -r ${ITWEBDIR}/extra/net/sourceforge/jnlp/about/resources \
-	    ${ITWEBDIR}/extra-lib/net/sourceforge/jnlp/about
-	@( \
-		cd ${ITWEBDIR}/extra-lib; \
-		${ITWEB_JAR} cf ${ITWEBDIR}/build/lib/about.jar net \
-	)
-	@${MKDIR} ${ITWEBDIR}/build/lib/desktop
-	@${SED} 's|PATH_TO_ITWEB_SETTINGS|${PREFIX}/openjdk6/bin/itweb-settings|' \
-	    ${ITWEBDIR}/itweb-settings.desktop.in > \
-	    ${ITWEBDIR}/build/lib/desktop/itweb-settings.desktop
-	@${SED} 's|PATH_TO_JAVAWS|${PREFIX}/openjdk6/bin/javaws|' \
-	    ${ITWEBDIR}/javaws.desktop.in > \
-	    ${ITWEBDIR}/build/lib/desktop/javaws.desktop
-	@${CP} ${ITWEBDIR}/javaws.png ${ITWEBDIR}/build/lib/desktop
-	@${CP} -Rp ${ITWEBDIR}/build/lib \
-	    ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/jre
-	@${CP} ${ITWEBDIR}/netx/javaws.1 \
-	    ${WRKSRC}/build/${OPENJDK_OSARCH}/j2sdk-image/man/man1/javaws.1
-.endif
 .if defined(WITH_TEST)
+post-build:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "Run \"make test\" to execute regression test (it could take a few hours to complete)."
 .if defined(DISPLAY)
@@ -346,7 +255,6 @@ test: build-depends build
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "You can run \"make test\" again to re-execute only the failed tests."
 	@${ECHO_MSG} ""
-.endif
 .endif
 
 do-install:
