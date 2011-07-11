@@ -1,6 +1,6 @@
---- modules/highgui/src/cap_ffmpeg.cpp.orig	2011-06-21 15:24:06.000000000 +0200
-+++ modules/highgui/src/cap_ffmpeg.cpp	2011-06-27 08:36:37.096041264 +0200
-@@ -53,7 +53,8 @@
+--- modules/highgui/src/cap_ffmpeg_impl.hpp.orig	2011-07-11 09:39:11.188904113 +0200
++++ modules/highgui/src/cap_ffmpeg_impl.hpp	2011-07-11 09:39:41.732624055 +0200
+@@ -57,7 +57,8 @@
  #define UINT64_C
  #define __STDC_CONSTANT_MACROS
  // force re-inclusion of stdint.h to get INT64_C macro

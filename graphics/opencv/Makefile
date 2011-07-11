@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	opencv
-DISTVERSION=	2.3.0rc
+PORTVERSION=	2.3.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}library/${PORTNAME}-unix/${DISTVERSION:R}
 DISTNAME=	OpenCV-${DISTVERSION}
@@ -216,6 +216,8 @@ post-patch:
 		-e '/add_subdirectory(include)/ d' \
 		-e 's|opencv.pc|opencv-core.pc|g' \
 		-e 's|OpenCVConfig.cmake|OpenCVConfig-core.cmake|g' \
+		-e 's|    set(root_files README)||g' \
+		-e 's|    install(CODE "exec_program.*||g' \
 		${WRKSRC}/CMakeLists.txt
 	@${SED} -E -e \
 		's|Name:.*|Name: OpenCV-core|' -e \

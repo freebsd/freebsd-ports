@@ -54,6 +54,7 @@ lib/libopencv_objdetect.so.2
 lib/libopencv_objdetect.so.2.3.0
 libdata/pkgconfig/opencv.pc
 %%PYTHON%%%%PYTHON_SITELIBDIR%%/cv.so
+share/OpenCV
 %%DATADIR%%/OpenCVConfig.cmake
 %%DATADIR%%/haarcascades/haarcascade_eye.xml
 %%DATADIR%%/haarcascades/haarcascade_eye_tree_eyeglasses.xml
