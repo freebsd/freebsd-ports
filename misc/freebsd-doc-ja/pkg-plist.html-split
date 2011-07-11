@@ -295,10 +295,10 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x-xdm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11-wm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/x11.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x13037.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x28966.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x29010.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x29054.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x13087.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x29013.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x29057.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/x29101.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/LEGALNOTICE.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/changes.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/dads-after-port-mk.html
