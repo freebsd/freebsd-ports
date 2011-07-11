@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	droid-fonts-ttf
-PORTVERSION=	20100214
-PORTREVISION=	1
+PORTVERSION=	20110324
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://android.git.kernel.org/?p=platform/frameworks/base.git\;a=blob_plain\;f=data/fonts/:droid
 DISTFILES=	DroidSans-Bold.ttf:droid \
@@ -25,14 +24,14 @@ DISTFILES=	DroidSans-Bold.ttf:droid \
 		DroidSerif-Regular.ttf:droid \
 		NOTICE:droid
 
-MAINTAINER=	duchateau.olivier@gmail.com
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	The Droid typeface family
-
-BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
 LICENSE=	ASL
 LICENSE_FILE=	${DISTDIR}/NOTICE
+
+BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
+		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
 
 NO_WRKSUBDIR=	yes
 
