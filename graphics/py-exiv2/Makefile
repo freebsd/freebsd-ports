@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	exiv2
-PORTVERSION=	0.2.2
-PORTREVISION=	1
+PORTVERSION=	0.3.0
 CATEGORIES=	graphics python
-MASTER_SITES=	http://launchpadlibrarian.net/49194059/ \
+MASTER_SITES=	http://launchpadlibrarian.net/61465005/ \
 		http://www.dindin.ru/download/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	py${PORTNAME}-${PORTVERSION}
@@ -28,7 +27,7 @@ USE_LDCONFIG=	yes
 SCONS_ENV+=	PREFIX=${PREFIX} CPPPATH=${PREFIX}/include LIBPATH=${PREFIX}/lib
 SCONS_BUILDENV=	${SCONS_ENV} CXXFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-SCONS_ARGS+=	 prefix=${PREFIX} use_env=1
+SCONS_ARGS+=	prefix=${PREFIX} use_env=1
 
 post-patch:
 	${REINPLACE_CMD} -e 's|python_inc_path\]|python_inc_path,\
