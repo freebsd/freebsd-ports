@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	pgtcl
-PORTVERSION=	1.8.0
+PORTVERSION=	1.9.0
 CATEGORIES=	databases tcl
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/2835/:src
+MASTER_SITES=	SF/pgtclng/pgtclng/${PORTVERSION}:src	\
+		SF/pgtclng/Manual/20110321:doc
+MASTER_SITE_SUBDIR=	pgtclng
 DISTNAME=	${PORTNAME}${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
 
@@ -25,7 +27,7 @@ LIBDIR=		${PREFIX}/lib/${PORTNAME}
 PLIST_SUB+=	PORTVERSION=${PORTVERSION}
 .if !defined(NOPORTDOCS)
 EXTRACT_ONLY=	${_DISTFILES:M*tar.gz}
-DISTFILES+=	pgtcldocs-20101010.zip:doc
+DISTFILES+=	pgtcldocs-20110321.zip:doc
 MASTER_SITES+=	http://pgfoundry.org/frs/download.php/2836/:doc
 BUILD_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 .endif
