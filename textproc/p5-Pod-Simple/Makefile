@@ -5,13 +5,16 @@
 #
 
 PORTNAME=	Pod-Simple
-PORTVERSION=	3.16
+PORTVERSION=	3.17
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Framework for parsing Pod
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PORTSCOUT=	skipv:31337-0.02
 
