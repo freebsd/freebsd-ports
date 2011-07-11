@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	libroxml
-PORTVERSION=	2.0.2
+PORTVERSION=	2.0.3
 CATEGORIES=	textproc
 MASTER_SITES=	GOOGLE_CODE
-DISTNAME=	libroxml-${PORTVERSION}
 
 MAINTAINER=	gaod@hychen.org
 COMMENT=	A minimum, easy-to-use, C implementation for xml file parsing
