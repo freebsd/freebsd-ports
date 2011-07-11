@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	deluge
-DISTVERSION=	1.3.1
+DISTVERSION=	1.3.2
 PORTEPOCH=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.deluge-torrent.org/source/
 EXTRACT_SUFX=	.tar.lzma
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	Bittorrent client using Python, GTK+2 and libtorrent-rasterbar
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0.6:${PORTSDIR}/devel/py-setuptools
@@ -23,12 +23,10 @@ RUN_DEPENDS=	boost-python-libs>=1.41.0:${PORTSDIR}/devel/boost-python-libs \
 		${PYTHON_PKGNAMEPREFIX}setuptools>=0.6:${PORTSDIR}/devel/py-setuptools \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.9:${PORTSDIR}/devel/py-simplejson \
 		${PYTHON_PKGNAMEPREFIX}xdg>=0.18:${PORTSDIR}/devel/py-xdg \
-		${PYTHON_PKGNAMEPREFIX}libtorrent-rasterbar$>=0.15.1:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15-python \
+		${PYTHON_PKGNAMEPREFIX}libtorrent-rasterbar>=0.15.1:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15-python \
 		${PYTHON_PKGNAMEPREFIX}openssl>=0.8:${PORTSDIR}/security/py-openssl \
 		${PYTHON_PKGNAMEPREFIX}chardet>=1.0.1:${PORTSDIR}/textproc/py-chardet \
 		${PYTHON_PKGNAMEPREFIX}mako>=0.2.5:${PORTSDIR}/textproc/py-mako
-
-BROKEN=		bad dependency object
 
 USE_RC_SUBR=	deluged
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
@@ -49,12 +47,7 @@ MAN1=		deluge.1 deluge-console.1 deluge-gtk.1 deluge-web.1 deluged.1
 
 PORTDOCS=	*
 
-DESKTOP_ENTRIES=	"Deluge" \
-			"A peer-to-peer file sharing program utilizing the Bittorrent protocol" \
-			"${PYTHONPREFIX_SITELIBDIR}/${PYEASYINSTALL_EGG}/share/pixmaps/deluge.png" \
-			"deluge" \
-			"Network;FileTransfer;P2P;" \
-			"true"
+PLIST_SUB+=	PYDOTVER="${PYTHON_VERSION:S/thon//}"
 
 .include <bsd.port.pre.mk>
 
@@ -71,7 +64,7 @@ WITHOUT_PSYCO=	yes
 PLIST_FILES+=	${PYTHON_SITELIBDIR:S;${LOCALBASE}/;;}/easy-install.pth
 . endif
 
-# only touch site.py{,c,o} if we installed it ourselves
+# only touch site.py{c,o} if we installed it ourselves
 . for file in site.py site.pyc site.pyo
 .  if !exists(${PYTHONPREFIX_SITELIBDIR}/${file})
 PLIST_FILES+=	${PYTHON_SITELIBDIR:S;${LOCALBASE}/;;}/${file}
@@ -100,16 +93,41 @@ INSTALLS_ICONS=	yes
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-			${WRKSRC}/setup.py
 	${REINPLACE_CMD} -e '/"new_release_check":/s|True,|False,|g ; \
-		 /"geoip_db_location":/s|/usr/share/GeoIP/GeoIP.dat|${LOCALBASE}/share/GeoIP/GeoIP.dat|g' \
+		/"geoip_db_location":/s|/usr/share/GeoIP/GeoIP.dat|${LOCALBASE}/share/GeoIP/GeoIP.dat|g' \
 			${WRKSRC}/deluge/core/preferencesmanager.py
 	${REINPLACE_CMD} -e '/"check_new_releases":/s|True,|False,|g ; \
-		 /"show_new_releases":/s|True,|False,|g' \
+		/"show_new_releases":/s|True,|False,|g' \
 			${WRKSRC}/deluge/ui/gtkui/gtkui.py
+	${REINPLACE_CMD} -e 's|GTK|GTK;|' \
+		${WRKSRC}/deluge/data/share/applications/deluge.desktop
 
 post-install:
+# do these by hand, else they wind up in the wrong place
+	if [ ! -d ${PREFIX}/share/icons/hicolor/scalable/apps ]; then \
+	${MKDIR} ${PREFIX}/share/icons/hicolor/scalable/apps ; \
+	fi
+	${INSTALL_DATA} ${WRKSRC}/deluge/data/icons/scalable/apps/deluge.svg \
+		${PREFIX}/share/icons/hicolor/scalable/apps
+.for size in 16 22 24 32 36 48 64 72 96 128 192 256
+	if [ ! -d ${PREFIX}/share/icons/hicolor/${size}x${size}/apps ]; then \
+		${MKDIR} ${PREFIX}/share/icons/hicolor/${size}x${size}/apps ; \
+	fi
+	${INSTALL_DATA} ${WRKSRC}/deluge/data/icons/hicolor/${size}x${size}/apps/deluge.png \
+		${PREFIX}/share/icons/hicolor/${size}x${size}/apps
+.endfor
+	if [ ! -d ${PREFIX}/share/applications ]; then \
+		${MKDIR} ${PREFIX}/share/applications ; \
+	fi
+	${INSTALL_DATA} ${WRKSRC}/deluge/data/share/applications/deluge.desktop \
+	${PREFIX}/share/applications
+	if [ ! -d ${PREFIX}/share/pixmaps ]; then \
+	${MKDIR} ${PREFIX}/share/pixmaps ; \
+	fi
+.for file in png xpm
+	${INSTALL_DATA} ${WRKSRC}/deluge/data/pixmaps/deluge.${file} \
+		${PREFIX}/share/pixmaps
+.endfor
 .if !defined(WITHOUT_PYGTK)
 	-update-desktop-database
 .endif

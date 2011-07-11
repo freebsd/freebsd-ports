@@ -336,12 +336,15 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/data/pixmaps/flags/zw.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/data/pixmaps/inactive.svg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/data/pixmaps/inactive16.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/data/pixmaps/loading.gif
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/data/pixmaps/lock48.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/data/pixmaps/magnet.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/data/pixmaps/queued.svg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/data/pixmaps/queued16.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/data/pixmaps/seeding.svg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/data/pixmaps/seeding16.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/data/pixmaps/tracker_all16.png
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/data/pixmaps/tracker_warning16.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/data/pixmaps/traffic.svg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/data/pixmaps/traffic16.png
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/decorators.py
@@ -378,6 +381,7 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/eu/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/fa/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/fi/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/fo/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/fr/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/fy/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/gl/LC_MESSAGES/deluge.mo
@@ -396,13 +400,17 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/ko/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/ku/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/la/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/lb/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/lt/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/lv/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/mk/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/ml/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/ms/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/nb/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/nds/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/nl/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/nn/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/oc/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/pl/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/pms/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/pt/LC_MESSAGES/deluge.mo
@@ -415,11 +423,13 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/sr/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/sv/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/ta/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/te/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/th/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/tl/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/tlh/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/tr/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/uk/LC_MESSAGES/deluge.mo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/ur/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/vi/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/zh_CN/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/zh_HK/LC_MESSAGES/deluge.mo
@@ -439,14 +449,14 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/pluginmanagerbase.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/pluginmanagerbase.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/pluginmanagerbase.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/AutoAdd-1.02-py2.6.egg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Blocklist-1.2-py2.6.egg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Execute-1.2-py2.6.egg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Extractor-0.1-py2.6.egg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Label-0.1-py2.6.egg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Notifications-0.1-py2.6.egg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Scheduler-0.2-py2.6.egg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/WebUi-0.1-py2.6.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/AutoAdd-1.02-%%PYDOTVER%%.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Blocklist-1.2-%%PYDOTVER%%.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Execute-1.2-%%PYDOTVER%%.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Extractor-0.1-%%PYDOTVER%%.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Label-0.1-%%PYDOTVER%%.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Notifications-0.1-%%PYDOTVER%%.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Scheduler-0.2-%%PYDOTVER%%.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/WebUi-0.1-%%PYDOTVER%%.egg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/__init__.pyo
@@ -1380,58 +1390,57 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/web.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/web.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/web.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/applications/deluge.desktop
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/128x128/apps/deluge.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16/apps/deluge.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/192x192/apps/deluge.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/22x22/apps/deluge.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/24x24/apps/deluge.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/256x256/apps/deluge.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/32x32/apps/deluge.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/36x36/apps/deluge.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/48x48/apps/deluge.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/64x64/apps/deluge.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/72x72/apps/deluge.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/96x96/apps/deluge.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/scalable/apps/deluge.svg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/deluge.png
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps/deluge.xpm
+share/applications/deluge.desktop
+share/icons/hicolor/128x128/apps/deluge.png
+share/icons/hicolor/16x16/apps/deluge.png
+share/icons/hicolor/192x192/apps/deluge.png
+share/icons/hicolor/22x22/apps/deluge.png
+share/icons/hicolor/24x24/apps/deluge.png
+share/icons/hicolor/256x256/apps/deluge.png
+share/icons/hicolor/32x32/apps/deluge.png
+share/icons/hicolor/36x36/apps/deluge.png
+share/icons/hicolor/48x48/apps/deluge.png
+share/icons/hicolor/64x64/apps/deluge.png
+share/icons/hicolor/72x72/apps/deluge.png
+share/icons/hicolor/96x96/apps/deluge.png
+share/icons/hicolor/scalable/apps/deluge.svg
+share/pixmaps/deluge.png
+share/pixmaps/deluge.xpm
 bin/deluge
 bin/deluge-console
 bin/deluge-gtk
 bin/deluge-web
 bin/deluged
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/pixmaps
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/scalable/apps
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/scalable
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/96x96/apps
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/96x96
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/72x72/apps
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/72x72
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/64x64/apps
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/64x64
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/48x48/apps
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/48x48
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/36x36/apps
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/36x36
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/32x32/apps
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/32x32
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/256x256/apps
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/256x256
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/24x24/apps
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/24x24
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/22x22/apps
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/22x22
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/192x192/apps
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/192x192
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16/apps
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/16x16
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/128x128/apps
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor/128x128
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons/hicolor
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/icons
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share/applications
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/share
+@dirrmtry share/pixmaps
+@dirrmtry share/icons/hicolor/scalable/apps
+@dirrmtry share/icons/hicolor/scalable
+@dirrmtry share/icons/hicolor/96x96/apps
+@dirrmtry share/icons/hicolor/96x96
+@dirrmtry share/icons/hicolor/72x72/apps
+@dirrmtry share/icons/hicolor/72x72
+@dirrmtry share/icons/hicolor/64x64/apps
+@dirrmtry share/icons/hicolor/64x64
+@dirrmtry share/icons/hicolor/48x48/apps
+@dirrmtry share/icons/hicolor/48x48
+@dirrmtry share/icons/hicolor/36x36/apps
+@dirrmtry share/icons/hicolor/36x36
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor/256x256/apps
+@dirrmtry share/icons/hicolor/256x256
+@dirrmtry share/icons/hicolor/24x24/apps
+@dirrmtry share/icons/hicolor/24x24
+@dirrmtry share/icons/hicolor/22x22/apps
+@dirrmtry share/icons/hicolor/22x22
+@dirrmtry share/icons/hicolor/192x192/apps
+@dirrmtry share/icons/hicolor/192x192
+@dirrmtry share/icons/hicolor/16x16/apps
+@dirrmtry share/icons/hicolor/16x16
+@dirrmtry share/icons/hicolor/128x128/apps
+@dirrmtry share/icons/hicolor/128x128
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/vista/toolbar
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/vista/tabs
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/web/themes/images/vista/sizer
@@ -1515,7 +1524,7 @@ bin/deluged
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/console/commands
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui/console
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/ui
-@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins
+@dirrmtry %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/zh_TW/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/zh_TW
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/zh_HK/LC_MESSAGES
@@ -1524,6 +1533,8 @@ bin/deluged
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/zh_CN
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/vi/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/vi
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/ur/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/ur
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/uk/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/uk
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/tr/LC_MESSAGES
@@ -1534,6 +1545,8 @@ bin/deluged
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/tl
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/th/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/th
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/te/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/te
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/ta/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/ta
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/sv/LC_MESSAGES
@@ -1558,6 +1571,10 @@ bin/deluged
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/pms
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/pl/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/pl
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/oc/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/oc
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/nn/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/nn
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/nl/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/nl
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/nds/LC_MESSAGES
@@ -1566,12 +1583,16 @@ bin/deluged
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/nb
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/ms/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/ms
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/ml/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/ml
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/mk/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/mk
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/lv/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/lv
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/lt/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/lt
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/lb/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/lb
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/la/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/la
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/ku/LC_MESSAGES
@@ -1608,6 +1629,8 @@ bin/deluged
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/fy
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/fr/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/fr
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/fo/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/fo
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/fi/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/fi
 @dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/fa/LC_MESSAGES
