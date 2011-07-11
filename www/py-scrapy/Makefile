@@ -20,6 +20,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}twisted>=8.2.0:${PORTSDIR}/devel/py-twisted 
 		${PYTHON_PKGNAMEPREFIX}libxml2>=2.7.6:${PORTSDIR}/textproc/py-libxml2 \
 		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 
+BROKEN=		does not compile
+
 USE_PYTHON=	2.5-2.7
 USE_PYDISTUTILS=yes
 
