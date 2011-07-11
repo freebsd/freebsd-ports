@@ -6,6 +6,18 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20110711:
+  AFFECTS: users of java/openjdk6
+  AUTHOR: jkim@FreeBSD.org
+
+  java/openjdk6 has been updated to b23 and "WEB" option (for web browser
+  plug-in and Java Web Start) has been deprecated. If you need the same
+  functionality, rebuild the port with "ICEDTEA" option first, then install
+  a new port java/icedtea-web with "PLUGIN" option (default). Also, if you
+  have a symlink to the previous IcedTeaPlugin.so in ~/.mozilla/plugins,
+  for example, you need to remove it. Note system-wide symlinks are now
+  automatically created by java/icedtea-web for your convenience.
+
+20110711:
   AFFECTS: users of www/p5-libwww
   AUTHOR: mandree@FreeBSD.org
 
