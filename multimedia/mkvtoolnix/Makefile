@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	mkvtoolnix
-PORTVERSION=	4.8.0
+PORTVERSION=	4.9.0
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://www.bunkus.org/videotools/mkvtoolnix/sources/ \
 		CRITICAL
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Tools to extract from/get info about/create Matroska media streams
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		expat.6:${PORTSDIR}/textproc/expat2 \
@@ -21,9 +24,6 @@ LIB_DEPENDS=	FLAC.10:${PORTSDIR}/audio/flac \
 		ogg.7:${PORTSDIR}/audio/libogg \
 		boost_regex.4:${PORTSDIR}/devel/boost-libs \
 		curl.6:${PORTSDIR}/ftp/curl
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes

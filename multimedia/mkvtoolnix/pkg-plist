@@ -12,6 +12,7 @@ bin/mkvpropedit
 share/locale/de/LC_MESSAGES/mkvtoolnix.mo
 share/locale/es/LC_MESSAGES/mkvtoolnix.mo
 share/locale/fr/LC_MESSAGES/mkvtoolnix.mo
+share/locale/it/LC_MESSAGES/mkvtoolnix.mo
 share/locale/ja/LC_MESSAGES/mkvtoolnix.mo
 share/locale/nl/LC_MESSAGES/mkvtoolnix.mo
 share/locale/ru/LC_MESSAGES/mkvtoolnix.mo
