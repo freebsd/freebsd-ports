@@ -1,6 +1,6 @@
---- modules/CMakeLists.txt.orig	2011-06-27 13:43:54.557252854 +0200
-+++ modules/CMakeLists.txt	2011-06-27 13:44:14.656997882 +0200
-@@ -8,29 +8,29 @@
+--- modules/CMakeLists.txt.orig	2011-07-04 06:21:57.000000000 +0200
++++ modules/CMakeLists.txt	2011-07-11 09:33:56.265459094 +0200
+@@ -8,25 +8,25 @@
  endif()
  
  add_subdirectory(calib3d)
@@ -9,10 +9,6 @@
  add_subdirectory(features2d)
 -add_subdirectory(flann)
 +#add_subdirectory(flann)
- 
- if(MSVC OR MINGW)
-   add_subdirectory(ffmpeg)
- endif()
  
  if(BUILD_TESTS)
 -  add_subdirectory(ts)

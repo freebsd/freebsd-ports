@@ -1,6 +1,6 @@
---- modules/CMakeLists.txt.orig	2011-06-21 15:24:05.000000000 +0200
-+++ modules/CMakeLists.txt	2011-06-27 13:29:25.803871762 +0200
-@@ -7,34 +7,34 @@
+--- modules/CMakeLists.txt.orig	2011-07-04 06:21:57.000000000 +0200
++++ modules/CMakeLists.txt	2011-07-11 09:35:33.207215658 +0200
+@@ -7,30 +7,30 @@
    add_subdirectory(androidcamera)
  endif()
  
@@ -10,10 +10,6 @@
 -add_subdirectory(features2d)
 +#add_subdirectory(features2d)
  add_subdirectory(flann)
- 
- if(MSVC OR MINGW)
-   add_subdirectory(ffmpeg)
- endif()
  
 -if(BUILD_TESTS)
 +#if(BUILD_TESTS)
