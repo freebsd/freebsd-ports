@@ -13,7 +13,7 @@ MASTER_SITES=	SF/${PORTNAME}/Hunspell/${PORTVERSION}:code \
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}:code	\
 		hu_HU-${DICTVERSION}${EXTRACT_SUFX}:data
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Improved spell-checker for Hungarian and other languages
 
 #EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
