@@ -12,6 +12,7 @@ MASTER_SITES=	http://icedtea.classpath.org/download/source/
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	A free Java plug-in and Java Web Start for OpenJDK
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
