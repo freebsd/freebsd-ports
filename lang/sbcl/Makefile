@@ -36,9 +36,13 @@ CPPFLAGS+=	-I.
 SBCL_HOME=	${PREFIX}/lib/sbcl/
 
 OPTIONS=	SBCL "Use installed SBCL binary if available" off \
-		THREADS "Enable experimental threading support" off \
 		PDF "Build PDF documentation" on \
 		PS "Build PostScript documentation" off
+
+#
+# Broken
+#
+#		THREADS "Enable experimental threading support" off
 
 #LICENSE=	BSD
 #LICENSE_FILE=	${WRKSRC}/COPYING
@@ -196,9 +200,9 @@ post-patch:
 		-e 's|ld \$$SO_FLAGS|${LD} \$$SO_FLAGS|' \
 			 ${WRKSRC}/tests/foreign.test.sh
 	@${FIND} ${WRKSRC} \( -name '*.orig' -o -name '*.bak' \) -delete
-.if defined(WITH_THREADS)
-	@${CP} ${FILESDIR}/customize-target-features.lisp ${WRKSRC}
-.endif
+#.if defined(WITH_THREADS)
+#	@${CP} ${FILESDIR}/customize-target-features.lisp ${WRKSRC}
+#.endif
 	@${REINPLACE_CMD} -E -e 's,makeinfo,makeinfo --no-split,g' \
 		${WRKSRC}/doc/internals/Makefile
 
