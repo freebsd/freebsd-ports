@@ -74,7 +74,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		PASSENGER_MODULE	"3rd party passenger module" off \
 		SLOWFS_CACHE_MODULE	"3rd party slowfs_cache module" off \
 		SUPERVISORD_MODULE	"3rd party supervisord module" off \
-		SYSLOG_SUPPORT          "3rd party syslog support" off \
+		SYSLOG_SUPPORT		"3rd party syslog support" off \
 		UDPLOG_MODULE		"3rd party udplog (syslog) module" off
 
 WANT_GNOME=	yes
@@ -194,19 +194,21 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_cache_purge-${NGINX_CACHE_PURGE_MODUL
 .endif
 
 .if defined(WITH_ECHO_MODULE)
-NGINX_ECHO_MODULE_VERSION=	0.34
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:echo/}
-MASTER_SITE_SUBDIR+=	osa/:echo
-DISTFILES+=	ngx_echo_module-${NGINX_ECHO_MODULE_VERSION}.tar.gz:echo
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_echo_module-${NGINX_ECHO_MODULE_VERSION}
+NGINX_ECHO_MODULE_VERSION=	0.36
+GIT_ECHO_MODULE_VERSION=	0-g13dd12f
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	http://download.github.com/:echo
+DISTFILES+=	agentzh-echo-nginx-module-v${NGINX_ECHO_MODULE_VERSION}-${GIT_ECHO_MODULE_VERSION}.tar.gz:echo
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-echo-nginx-module-${GIT_ECHO_MODULE_VERSION:S/^0-g//}
 .endif
 
 .if defined(WITH_HEADERS_MORE_MODULE)
-NGINX_HEADERS_MORE_MODULE_VERSION=	0.14
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:headers_more/}
-MASTER_SITE_SUBDIR+=	osa/:headers_more
-DISTFILES+=	ngx_headers_more_module-${NGINX_HEADERS_MORE_MODULE_VERSION}.tar.gz:headers_more
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_headers_more_module-${NGINX_HEADERS_MORE_MODULE_VERSION}
+NGINX_HEADERS_MORE_MODULE_VERSION=	0.15
+GIT_HEADERS_MORE_MODULE_VERSION=	0-g137855d
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	http://download.github.com/:headers_more
+DISTFILES+=	agentzh-headers-more-nginx-module-v${NGINX_HEADERS_MORE_MODULE_VERSION}-${GIT_HEADERS_MORE_MODULE_VERSION}.tar.gz:headers_more
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-headers-more-nginx-module-${GIT_HEADERS_MORE_MODULE_VERSION:S/^0-g//}
 .endif
 
 .if defined(WITH_HTTP_DAV_MODULE)
@@ -313,8 +315,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_response-${NGINX_RESPONSE_MODULE
 
 .if defined(WITH_HTTP_SUBS_FILTER_MODULE)
 NGINX_HTTP_SUBS_FILTER_MODULE_VERSION=	0.5.2.r45
-MASTER_SITES+=  ${MASTER_SITE_LOCAL:S/$/:subs_filter/}
-MASTER_SITE_SUBDIR+=    osa/:subs_filter
+MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:subs_filter/}
+MASTER_SITE_SUBDIR+=	osa/:subs_filter
 DISTFILES+=	ngx_http_subs_filter_module-${NGINX_HTTP_SUBS_FILTER_MODULE_VERSION}.tar.gz:subs_filter
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_subs_filter_module-${NGINX_HTTP_SUBS_FILTER_MODULE_VERSION}
 .endif
@@ -388,11 +390,12 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_MODULE_VERSION}
 .endif
 
 .if defined(WITH_MEMC_MODULE)
-NGINX_MEMC_MODULE_VERSION=	0.11
-MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:memc/}
-MASTER_SITE_SUBDIR+=	osa/:memc
-DISTFILES+=	ngx_http_memc_module-${NGINX_MEMC_MODULE_VERSION}.tar.gz:memc
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_http_memc_module-${NGINX_MEMC_MODULE_VERSION}
+NGINX_MEMC_MODULE_VERSION=	0.12
+GIT_MEMC_MODULE_VERSION=	0-g4f1952c
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	http://download.github.com/:memc
+DISTFILES+=	agentzh-memc-nginx-module-v${NGINX_MEMC_MODULE_VERSION}-${GIT_MEMC_MODULE_VERSION}.tar.gz:echo
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-memc-nginx-module-${GIT_MEMC_MODULE_VERSION:S/^0-g//}
 .endif
 
 .if defined(WITHOUT_HTTP_REWRITE_MODULE) || defined(WITHOUT_PCRE)
