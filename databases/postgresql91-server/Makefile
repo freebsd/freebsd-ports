@@ -15,6 +15,8 @@ PKGNAMESUFFIX?=	-server
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
 
+BROKEN=		incomplete plist
+
 CONFLICTS?=	${PORTNAME}-client-[78]* \
 		${PORTNAME}-client-9.[02-9]* \
 		${PORTNAME}${PKGNAMESUFFIX}-[78]* \
