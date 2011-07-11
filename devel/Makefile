@@ -2592,6 +2592,7 @@
     SUBDIR += pear-Date_Holidays_Ukraine
     SUBDIR += pear-Event_Dispatcher
     SUBDIR += pear-FSM
+    SUBDIR += pear-File_Iterator
     SUBDIR += pear-HTML_BBCodeParser
     SUBDIR += pear-HTML_CSS
     SUBDIR += pear-HTML_Common
