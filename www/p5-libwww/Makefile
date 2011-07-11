@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-Encode-Locale>=0:${PORTSDIR}/converters/p5-Encode-Locale \
 		p5-HTTP-Message>=6:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-HTTP-Negotiate>=6:${PORTSDIR}/www/p5-HTTP-Negotiate \
 		p5-LWP-MediaTypes>=6:${PORTSDIR}/www/p5-LWP-MediaTypes \
-		p5-NTLM>=1.020:${PORTSDIR}/security/p5-Authen-NTLM \
+		p5-NTLM>=1.02:${PORTSDIR}/security/p5-Authen-NTLM \
 		p5-Net-HTTP>=6:${PORTSDIR}/net/p5-Net-HTTP \
 		p5-URI>=1.10:${PORTSDIR}/net/p5-URI \
 		p5-WWW-RobotRules>=6:${PORTSDIR}/www/p5-WWW-RobotRules
