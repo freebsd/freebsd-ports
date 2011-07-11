@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.cozmixng.org/~kou/download/ \
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	An RD-document-based presentation application
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/GPL
+
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		rd2:${PORTSDIR}/textproc/ruby-rdtool \
 		${RUBY_SITELIBDIR}/div.rb:${PORTSDIR}/www/ruby-div \
@@ -22,16 +25,13 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		ruby-pwgen:${PORTSDIR}/security/ruby-password \
 		rubygem-tweetstream>=0.0.0:${PORTSDIR}/net/rubygem-tweetstream
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/GPL
-
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 .if defined(WITHOUT_NLS)
 PLIST_SUB+=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
-RUN_DEPENDS+=	${RUBY_SITELIBDIR}/gettext.rb:${PORTSDIR}/devel/ruby-gettext
+RUN_DEPENDS+=	rubygem-gettext>0:${PORTSDIR}/devel/rubygem-gettext
 PLIST_SUB+=	NLS=""
 .endif
 
