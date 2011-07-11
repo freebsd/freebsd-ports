@@ -2,6 +2,8 @@
 #
 # Common code for PEAR channels
 
+PKGNAMEPREFIX?=	pear-channel-
+
 MASTER_SITES?=	#no master sites
 DISTFILES?=	#no distfiles
 
@@ -11,6 +13,8 @@ RUN_DEPENDS?=	${LOCALBASE}/bin/pear:${PORTSDIR}/devel/pear
 NO_BUILD?=	yes
 
 LPEARDIR?=	share/pear
+
+PEAR_CHANNEL_ALIAS?=	${PORTNAME}
 PEAR_CHANNEL_REG?=	${FILESDIR}/${PEAR_CHANNEL_HOST}.reg
 
 PLIST_FILES=	${LPEARDIR}/.channels/.alias/${PEAR_CHANNEL_ALIAS}.txt \
@@ -18,6 +22,11 @@ PLIST_FILES=	${LPEARDIR}/.channels/.alias/${PEAR_CHANNEL_ALIAS}.txt \
 		"@exec ${MKDIR} %D/${LPEARDIR}/.registry/.channel.${PEAR_CHANNEL_HOST}"
 PLIST_DIRS=	${LPEARDIR}/.registry/.channel.${PEAR_CHANNEL_HOST}
 
+.if !defined(PEAR_CHANNEL_HOST)
+IGNORE=		Please set PEAR_CHANNEL_HOST
+.elif !exists(${PEAR_CHANNEL_REG})
+IGNORE=		Cannot find registry file: ${PEAR_CHANNEL_REG}
+.endif
 
 do-install:
 	@${MKDIR} ${PREFIX}/${LPEARDIR}/.registry/.channel.${PEAR_CHANNEL_HOST}
