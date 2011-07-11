@@ -7,6 +7,7 @@
 
 PORTNAME=	octave
 PORTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	ftp://ftp.gnu.org/gnu/octave/ \
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/numanal/Octave/bleeding-edge/
@@ -18,10 +19,10 @@ BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot \
 		${LOCALBASE}/bin/gperf:${PORTSDIR}/devel/gperf \
 		gsed:${PORTSDIR}/textproc/gsed \
 		dvips:${PORTSDIR}/print/dvipsk-tetex \
-		${PREFIX}/bin/makeinfo:${PORTSDIR}/print/texinfo
+		${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		gsed:${PORTSDIR}/textproc/gsed \
-		${PREFIX}/bin/makeinfo:${PORTSDIR}/print/texinfo
+		${LOCALBASE}/bin/makeinfo:${PORTSDIR}/print/texinfo
 LIB_DEPENDS=	GraphicsMagick.1:${PORTSDIR}/graphics/GraphicsMagick \
 		arpack:${PORTSDIR}/math/arpack \
 		curl:${PORTSDIR}/ftp/curl \
@@ -120,13 +121,12 @@ post-install:
 	@${FIND} -s $d -not -type d | \
 		${SED} -e 's#^${PREFIX}/##' >> ${WRKDIR}/PLIST
 	@${FIND} -s $d -type d -empty | \
-		${SED} -e 's,^${PREFIX}/,@exec mkdir -p %D/,' \
+		${SED} -e 's,^${PREFIX}/,@exec ${MKDIR} %D/,' \
 		-e 's,$$, 2>/dev/null || true,' >> ${WRKDIR}/PLIST
 	@${FIND} -s $d -type d -depth | \
 		${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${WRKDIR}/PLIST
 .endfor
 	cd ${WRKDIR} ; ${SED} -i -e "/PLIST/ r PLIST" ${TMPPLIST}
-
 
 check:
 	(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_ARGS} check)
