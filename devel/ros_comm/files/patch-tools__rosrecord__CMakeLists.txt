@@ -1,0 +1,14 @@
+--- tools/rosrecord/CMakeLists.txt.orig	2011-07-06 22:07:22.000000000 +0200
++++ tools/rosrecord/CMakeLists.txt	2011-07-08 17:38:01.000000000 +0200
+@@ -12,7 +12,11 @@
+ #rosbuild_add_executable(demo src/demo/demo.cpp)
+ 
+ rosbuild_add_library(rosrecorder src/rosrecord/recorder.cpp)
++if (${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
++rosbuild_link_boost(rosrecorder iostreams system filesystem)
++else (${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
+ rosbuild_link_boost(rosrecorder iostreams system filesystem-mt)
++endif (${CMAKE_SYSTEM_NAME} STREQUAL "FreeBSD")
+ 
+ rosbuild_add_executable(rosrecord src/rosrecord/rosrecord.cpp)
+ target_link_libraries(rosrecord rosrecorder)
