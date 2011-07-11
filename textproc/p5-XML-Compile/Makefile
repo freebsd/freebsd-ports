@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Compile
-PORTVERSION=	1.21
+PORTVERSION=	1.22
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MARKOV
@@ -15,12 +15,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Compilation based XML processing
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	p5-Log-Report>=0.90:${PORTSDIR}/devel/p5-Log-Report \
 		p5-XML-LibXML>=1.70:${PORTSDIR}/textproc/p5-XML-LibXML \
 		p5-MIME-Base64>=3.10:${PORTSDIR}/converters/p5-MIME-Base64 \
 		p5-Test-Deep>=0.095:${PORTSDIR}/devel/p5-Test-Deep \
 		p5-XML-Compile-Tester>=0.05:${PORTSDIR}/devel/p5-XML-Compile-Tester
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
 
