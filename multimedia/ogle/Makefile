@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Open DVD player that supports DVD menus
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2011-08-01
+
 LIB_DEPENDS=	a52.0:${PORTSDIR}/audio/liba52 \
 		dvdread.4:${PORTSDIR}/multimedia/libdvdread \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \

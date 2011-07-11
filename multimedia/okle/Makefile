@@ -14,6 +14,9 @@ MASTER_SITES=	http://okle.sourceforge.net/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A KDE frontend to the Ogle DVD player
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2011-08-01
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/ogle/libdvdcontrol.so.11:${PORTSDIR}/multimedia/ogle
 RUN_DEPENDS=	ogle:${PORTSDIR}/multimedia/ogle
 

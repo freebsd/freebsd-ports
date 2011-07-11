@@ -14,6 +14,9 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Gui, which shall simplify shrinking a DVD-9 to a DVD-5
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2011-08-01
+
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread
 RUN_DEPENDS=	transcode:${PORTSDIR}/multimedia/transcode \
