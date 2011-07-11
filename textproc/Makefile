@@ -1355,14 +1355,12 @@
     SUBDIR += xmlindent
     SUBDIR += xmlppm
     SUBDIR += xmlprpr
-    SUBDIR += xmlpull
     SUBDIR += xmlroff
     SUBDIR += xmlstarlet
     SUBDIR += xmlto
     SUBDIR += xmlwrapp
     SUBDIR += xom
     SUBDIR += xp
-    SUBDIR += xpp3
     SUBDIR += xqilla
     SUBDIR += xslide.el
     SUBDIR += xslint
