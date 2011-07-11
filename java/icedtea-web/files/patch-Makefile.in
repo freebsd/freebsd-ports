@@ -1,0 +1,45 @@
+--- Makefile.in.orig	2011-06-08 17:59:15.371244000 -0400
++++ Makefile.in	2011-07-11 16:37:49.000000000 -0400
+@@ -758,7 +758,7 @@
+ 
+ netx-source-files.txt:
+ 	find $(NETX_SRCDIR) -name '*.java' | sort > $@
+-@WITH_RHINO_FALSE@	sed -i '/RhinoBasedPacEvaluator/ d' $@
++@WITH_RHINO_FALSE@	sed -i -e '/RhinoBasedPacEvaluator/ d' $@
+ 
+ stamps/netx.stamp: netx-source-files.txt stamps/bootstrap-directory.stamp
+ 	mkdir -p $(NETX_DIR)
+@@ -897,7 +897,7 @@
+ 	fi
+ 
+ check-pac-functions: stamps/bootstrap-directory.stamp
+-	./jrunscript $(abs_top_srcdir)/tests/netx/pac/pac-funcs-test.js \
++	$(SHELL) jrunscript $(abs_top_srcdir)/tests/netx/pac/pac-funcs-test.js \
+ 	  $$(readlink -f $(abs_top_srcdir)/netx/net/sourceforge/jnlp/runtime/pac-funcs.js)
+ 
+ junit-runner-source-files.txt:
+@@ -926,10 +926,11 @@
+ 
+ run-netx-unit-tests: stamps/netx-unit-tests-compile.stamp \
+  $(JUNIT_RUNNER_JAR)
+-	cp {$(NETX_UNIT_TEST_SRCDIR),$(NETX_UNIT_TEST_DIR)}/net/sourceforge/jnlp/basic.jnlp
++	cp $(NETX_UNIT_TEST_SRCDIR)/net/sourceforge/jnlp/basic.jnlp \
++	  $(NETX_UNIT_TEST_DIR)/net/sourceforge/jnlp
+ 	cd $(NETX_UNIT_TEST_DIR) ; \
+ 	class_names= ; \
+-	for test in `find -type f` ; do \
++	for test in `find . -type f` ; do \
+ 	  class_name=`echo $$test | sed -e 's|\.class$$||' -e 's|^\./||'` ; \
+ 	  class_name=`echo $$class_name | sed -e 's|/|.|g' ` ; \
+ 	  class_names="$$class_names $$class_name" ; \
+@@ -963,9 +964,7 @@
+ @ENABLE_PLUGIN_TRUE@	 $(PLUGIN_TEST_SRCS) ;
+ @ENABLE_PLUGIN_TRUE@	$(BOOT_DIR)/bin/jar cf plugin/tests/LiveConnect/PluginTest.jar \
+ @ENABLE_PLUGIN_TRUE@	  plugin/tests/LiveConnect/*.class ;
+-@ENABLE_PLUGIN_TRUE@	cp -pPR $(SRC_DIR_LINK) $(abs_top_srcdir)/plugin/tests/LiveConnect/*.{js,html} \
+-@ENABLE_PLUGIN_TRUE@	  plugin/tests/LiveConnect ;
+-@ENABLE_PLUGIN_TRUE@	echo "Done. Now launch \"firefox file://`pwd`/index.html\"" ;
++@ENABLE_PLUGIN_TRUE@	echo "Done. Now launch \"firefox file://$(abs_top_srcdir)/plugin/tests/LiveConnect/index.html\"" ;
+ @ENABLE_PLUGIN_TRUE@	mkdir -p stamps
+ @ENABLE_PLUGIN_TRUE@	touch stamps/plugin-tests.stamp
+ 
