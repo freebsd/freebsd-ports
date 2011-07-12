@@ -36,11 +36,11 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		nss3.1:${PORTSDIR}/security/nss \
 		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring \
 		ibus.2:${PORTSDIR}/textproc/ibus \
-		cups.2:${PORTSDIR}/print/cups-client \
-		gcrypt.so:${PORTSDIR}/security/libgcrypt
+		cups.2:${PORTSDIR}/print/cups-client
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
-		${LOCALBASE}/lib/X11/fonts/Droid/fonts.dir:${PORTSDIR}/x11-fonts/droid-fonts-ttf
+		${LOCALBASE}/lib/X11/fonts/Droid/fonts.dir:${PORTSDIR}/x11-fonts/droid-fonts-ttf \
+		${LOCALBASE}/lib/libgcrypt.so:${PORTSDIR}/security/libgcrypt
 
 ONLY_FOR_ARCHS=	i386 amd64
 USE_XZ=		yes
