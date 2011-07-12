@@ -73,6 +73,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		MEMC_MODULE		"3rd party memc (memcached) module" off \
 		PASSENGER_MODULE	"3rd party passenger module" off \
 		SLOWFS_CACHE_MODULE	"3rd party slowfs_cache module" off \
+		SRCACHE_MODULE		"3rd party srcache module" off \
 		SUPERVISORD_MODULE	"3rd party supervisord module" off \
 		SYSLOG_SUPPORT		"3rd party syslog support" off \
 		UDPLOG_MODULE		"3rd party udplog (syslog) module" off
@@ -197,7 +198,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_cache_purge-${NGINX_CACHE_PURGE_MODUL
 NGINX_ECHO_MODULE_VERSION=	0.36
 GIT_ECHO_MODULE_VERSION=	0-g13dd12f
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	http://download.github.com/:echo
+MASTER_SITES+=	https://github.com/agentzh/echo-nginx-module/tarball/v${NGINX_ECHO_MODULE_VERSION}/:echo
 DISTFILES+=	agentzh-echo-nginx-module-v${NGINX_ECHO_MODULE_VERSION}-${GIT_ECHO_MODULE_VERSION}.tar.gz:echo
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-echo-nginx-module-${GIT_ECHO_MODULE_VERSION:S/^0-g//}
 .endif
@@ -206,7 +207,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-echo-nginx-module-${GIT_ECHO_MODU
 NGINX_HEADERS_MORE_MODULE_VERSION=	0.15
 GIT_HEADERS_MORE_MODULE_VERSION=	0-g137855d
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	http://download.github.com/:headers_more
+MASTER_SITES+=	https://github.com/agentzh/headers-more-nginx-module/tarball/v${NGINX_HEADERS_MORE_MODULE_VERSION}/:headers_more
 DISTFILES+=	agentzh-headers-more-nginx-module-v${NGINX_HEADERS_MORE_MODULE_VERSION}-${GIT_HEADERS_MORE_MODULE_VERSION}.tar.gz:headers_more
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-headers-more-nginx-module-${GIT_HEADERS_MORE_MODULE_VERSION:S/^0-g//}
 .endif
@@ -393,8 +394,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_MODULE_VERSION}
 NGINX_MEMC_MODULE_VERSION=	0.12
 GIT_MEMC_MODULE_VERSION=	0-g4f1952c
 FETCH_ARGS=	-pRr
-MASTER_SITES+=	http://download.github.com/:memc
-DISTFILES+=	agentzh-memc-nginx-module-v${NGINX_MEMC_MODULE_VERSION}-${GIT_MEMC_MODULE_VERSION}.tar.gz:echo
+MASTER_SITES+=	https://github.com/agentzh/memc-nginx-module/tarball/v${NGINX_MEMC_MODULE_VERSION}/:memc
+DISTFILES+=	agentzh-memc-nginx-module-v${NGINX_MEMC_MODULE_VERSION}-${GIT_MEMC_MODULE_VERSION}.tar.gz:memc
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-memc-nginx-module-${GIT_MEMC_MODULE_VERSION:S/^0-g//}
 .endif
 
@@ -424,6 +425,15 @@ NGINX_SLOWFS_CACHE_MODULE_VERSION=	1.6
 MASTER_SITES+=	http://labs.frickle.com/files/:slowfs_cache
 DISTFILES+=	ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_MODULE_VERSION}.tar.gz:slowfs_cache
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_slowfs_cache-${NGINX_SLOWFS_CACHE_MODULE_VERSION}
+.endif
+
+.if defined(WITH_SRCACHE_MODULE)
+NGINX_SRCACHE_MODULE_VERSION=	0.12
+GIT_SRCACHE_MODULE_VERSION=	0-g362530f
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/agentzh/srcache-nginx-module/tarball/v${NGINX_SRCACHE_MODULE_VERSION}/:srcache
+DISTFILES+=	agentzh-srcache-nginx-module-v${NGINX_SRCACHE_MODULE_VERSION}-${GIT_SRCACHE_MODULE_VERSION}.tar.gz:srcache
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-srcache-nginx-module-${GIT_SRCACHE_MODULE_VERSION:S/^0-g//}
 .endif
 
 .if defined(WITH_SUPERVISORD_MODULE)
