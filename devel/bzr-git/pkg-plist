@@ -36,9 +36,6 @@ bin/bzr-upload-pack
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/info.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/info.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/info.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/inventory.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/inventory.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/inventory.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/mapping.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/mapping.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/mapping.pyo
@@ -117,9 +114,6 @@ bin/bzr-upload-pack
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_transportgit.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_transportgit.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_transportgit.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_versionedfiles.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_versionedfiles.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_versionedfiles.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_workingtree.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_workingtree.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_workingtree.pyo
@@ -129,9 +123,6 @@ bin/bzr-upload-pack
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tree.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tree.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tree.pyo
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/versionedfiles.py
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/versionedfiles.pyc
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/versionedfiles.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/workingtree.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/workingtree.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/workingtree.pyo
