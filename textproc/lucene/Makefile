@@ -5,17 +5,19 @@
 # $FreeBSD$
 
 PORTNAME=	lucene
-PORTVERSION=	2.4.1
+PORTVERSION=	2.9.4
 CATEGORIES=	textproc java devel
-MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%,lucene/java,}
+MASTER_SITES=	${MASTER_SITE_APACHE:S,%SUBDIR%,lucene/java/$(PORTVERSION),}
 DISTNAME=	lucene-${PORTVERSION}
 
 MAINTAINER=	gerrit.beine@gmx.de
 COMMENT=	A full-text search engine for Java
 
+LICENSE=	ASL
+
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.5+
+JAVA_VERSION=	1.4+
 
 OPTIONS=	DOCS    "Install docs & examples" on \
 		CONTRIB "Install contribs" off
@@ -25,15 +27,21 @@ PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}-core-${PORTVERSION}.jar
 CONTRIBS=	analyzers \
 		ant \
 		benchmark \
+		collation	\
+		bdb	\
+		bdb-je	\
 		instantiated \
 		highlighter \
 		lucli \
 		memory \
 		misc \
 		queries \
+		queryparser	\
 		regex \
-		similarity \
+		remote	\
+		smartcn \
 		snowball \
+		spatial \
 		spellchecker \
 		surround \
 		swing \
@@ -62,6 +70,11 @@ DEMODIR=	src/demo/org/apache/lucene/demo
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}-core-${PORTVERSION}.jar ${JAVAJARDIR}
 .if defined(WITH_CONTRIB)
+	${MV} ${WRKSRC}/contrib/analyzers/common/*.jar ${WRKSRC}/contrib/analyzers/
+	${RMDIR} ${WRKSRC}/contrib/analyzers/common
+	${MV} ${WRKSRC}/contrib/analyzers/smartcn/ ${WRKSRC}/contrib/
+	${MV} ${WRKSRC}/contrib/db/bdb/ ${WRKSRC}/contrib/bdb
+	${MV} ${WRKSRC}/contrib/db/bdb-je/ ${WRKSRC}/contrib/bdb-je
 	${INSTALL_DATA} \
 	    ${CONTRIBS:C,^(.*)$,${WRKSRC}/contrib/\1/${PORTNAME}-\1-${PORTVERSION}.jar,} \
 	    ${JAVAJARDIR}
