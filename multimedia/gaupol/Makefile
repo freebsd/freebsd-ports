@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gaupol
-PORTVERSION=	0.17.2
+PORTVERSION=	0.18
 CATEGORIES=	multimedia python
-MASTER_SITES=	http://download.gna.org/gaupol/0.17/ \
+MASTER_SITES=	http://download.gna.org/gaupol/${PORTVERSION}/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	c-s@c-s.li

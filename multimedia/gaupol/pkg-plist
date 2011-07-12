@@ -462,12 +462,14 @@ bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/view.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/view.pyo
 share/applications/gaupol.desktop
+share/applications/mimeinfo.cache
 %%DATADIR%%/extensions/bookmarks/add-bookmark-dialog.ui
 %%DATADIR%%/extensions/bookmarks/bookmark.png
 %%DATADIR%%/extensions/bookmarks/bookmarks.gaupol-extension
 %%DATADIR%%/extensions/bookmarks/bookmarks.py
 %%DATADIR%%/extensions/bookmarks/bookmarks.pyo
 %%DATADIR%%/extensions/bookmarks/bookmarks.ui.xml
+%%DATADIR%%/extensions/custom-framerates/custom-framerates.gaupol-extension
 %%DATADIR%%/extensions/side-pane/side-pane.gaupol-extension
 %%DATADIR%%/extensions/side-pane/side-pane.py
 %%DATADIR%%/extensions/side-pane/side-pane.pyo
@@ -545,6 +547,7 @@ share/icons/hicolor/scalable/apps/gaupol.svg
 %%NLS%%share/locale/he/LC_MESSAGES/gaupol.mo
 %%NLS%%share/locale/hu/LC_MESSAGES/gaupol.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/gaupol.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/gaupol.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/gaupol.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/gaupol.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/gaupol.mo
@@ -567,6 +570,7 @@ share/icons/hicolor/scalable/apps/gaupol.svg
 @dirrm %%DATADIR%%/iso-codes
 @dirrm %%DATADIR%%/headers
 @dirrm %%DATADIR%%/extensions/side-pane
+@dirrm %%DATADIR%%/extensions/custom-framerates
 @dirrm %%DATADIR%%/extensions/bookmarks
 @dirrm %%DATADIR%%/extensions
 @dirrm %%DATADIR%%
