@@ -7,7 +7,7 @@
 
 PORTNAME=	compiz
 PORTVERSION=	0.8.4
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
@@ -17,6 +17,8 @@ COMMENT=	Compiz Composite/Window Manager
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		gtop-2.0.7:${PORTSDIR}/devel/libgtop \
 		startup-notification-1.0:${PORTSDIR}/x11/startup-notification
+RUN_DEPENDS=	glxinfo:${PORTSDIR}/graphics/mesa-demos \
+		nvidia-settings:${PORTSDIR}/x11/nvidia-settings
 
 XORG_CAT=	app
 GNU_CONFIGURE=	yes
@@ -65,8 +67,7 @@ GCONF_SCHEMAS=	gwd.schemas \
 		compiz-zoom.schemas
 
 CONFIGURE_ARGS=	--disable-kde4
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 OPTIONS=	RSVG "Enable librsvg2 support" on \
 		GTK "Enable gtk2 support" on \

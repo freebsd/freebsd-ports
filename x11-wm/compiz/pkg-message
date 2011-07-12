@@ -7,4 +7,3 @@ value of:
 desktop->gnome->session->required_components->windowmanager = compiz-manager
 
 This will enable compiz as your default window manager.
-

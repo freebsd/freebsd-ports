@@ -36,7 +36,7 @@ XFWM="%%LOCALBASE%%/bin/xfwm"
 COMPIZ_NAME="compiz" # Final name for compiz (compiz.real) 
 
 # For Xgl LD_PRELOAD
-LIBGL_NVIDIA="/usr/lib/nvidia/libGL.so.1.2.xlibmesa"
+LIBGL_NVIDIA="%%LOCALBASE%%/lib/libGL.so"
 LIBGL_FGLRX="/usr/lib/fglrx/libGL.so.1.2.xlibmesa"
 
 # Minimum amount of memory (in kilo bytes) that nVidia cards need
@@ -206,7 +206,7 @@ check_xgl()
 # Check if the nVidia card has enough video ram to make sense
 check_nvidia_memory()
 {
-	MEM=$(${NVIDIA_SETTINGS} -q VideoRam | egrep Attribute\ \'VideoRam\'\ .*: | cut -d: -f3 | sed 's/[^0-9]//g')
+	MEM=$(${NVIDIA_SETTINGS} -q VideoRam | grep "Attribute 'VideoRam'"| cut -d: -f3 | sed 's/[^0-9]//g')
 	if [ $MEM -lt $NVIDIA_MEMORY ]; then
 		verbose "Less than ${NVIDIA_MEMORY}kb of memory and nVidia";
 		return 1;
