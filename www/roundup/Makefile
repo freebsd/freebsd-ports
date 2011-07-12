@@ -7,6 +7,7 @@
 
 PORTNAME=	roundup
 PORTVERSION=	1.4.18
+PORTREVISION=	1
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 
@@ -16,6 +17,7 @@ COMMENT=	An Issue-Tracking System for Knowledge Workers
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
+USE_GETTEXT=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 
@@ -43,10 +45,9 @@ RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}MySQLdb>=0:${PORTSDIR}/databases/py-MySQLdb
 .endif
 
 .if !defined(WITHOUT_NLS)
-USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .else
-PLIST_SUB+=	NLS="@comment"
+PLIST_SUB+=	NLS="@comment "
 .endif
 
 .if !defined(NO_INSTALL_MANPAGES)
