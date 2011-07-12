@@ -29,8 +29,7 @@ OPTIONS=	JACK "JACK support" on \
 		ALSA "ALSA support" off \
 		PORTAUDIO "PortAudio support" off \
 		LIBARCHIVE "LibArchive support" off \
-		LASH "Lash support" off \
-		PORTAUDIO "Portaudio support" off \
+		LASH "Lash support" off
 
 post-patch:
 		${REINPLACE_CMD} -e "s|includes = \[\]|includes = \['-I${QT_INCDIR}/QtCore', '-I${QT_INCDIR}/QtXml', '-I${QT_INCDIR}/QtGui',  '-I${QT_INCDIR}', '-I${QT_INCDIR}/Qt', '-I${LOCALBASE}/include'\]|g; s|ldflags = \[\]|ldflags = \['-L${QT_LIBDIR}','-L${LOCALBASE}/lib'\,'-lQtCore', '-lQtGui', '-lQtXml', '-lQtNetwork', '${PTHREAD_LIBS}']|g" ${WRKSRC}/Sconstruct
