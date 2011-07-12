@@ -69,8 +69,11 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_UPSTREAM_HASH	"3rd party upstream hash module" off \
 		HTTP_UPSTREAM_KEEPALIVE "3rd party upstream keepalive module" off \
 		HTTP_ZIP_MODULE		"3rd party http_zip module" off \
+		DEVEL_KIT_MODULE	"3rd party devel_kit module" off \
+		LUA_MODULE		"3rd party lua module" off \
 		MEMC_MODULE		"3rd party memc (memcached) module" off \
 		PASSENGER_MODULE	"3rd party passenger module" off \
+		REDIS2_MODULE		"3rd party redis2 module" off \
 		SLOWFS_CACHE_MODULE	"3rd party slowfs_cache module" off \
 		SRCACHE_MODULE		"3rd party srcache module" off \
 		SUPERVISORD_MODULE	"3rd party supervisord module" off \
@@ -389,6 +392,29 @@ DISTFILES+=	mod_zip-${NGINX_ZIP_MODULE_VERSION}.tar.gz:zip
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_MODULE_VERSION}
 .endif
 
+.if defined(WITH_DEVEL_KIT_MODULE)
+NGINX_DEVEL_KIT_MODULE_VERSION=	0.2.17
+GIT_DEVEL_KIT_MODULE_VERSION=	0-gbc97eea
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/simpl/ngx_devel_kit/tarball/v${NGINX_DEVEL_KIT_MODULE_VERSION}/:devel_kit
+DISTFILES+=	simpl-ngx_devel_kit-v${NGINX_DEVEL_KIT_MODULE_VERSION}-${GIT_DEVEL_KIT_MODULE_VERSION}.tar.gz:devel_kit
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/simpl-ngx_devel_kit-${GIT_DEVEL_KIT_MODULE_VERSION:S/^0-g//}
+.endif
+
+.if defined(WITH_LUA_MODULE)
+.if !defined(WITH_DEVEL_KIT_MODULE)
+BROKEN=		for lua module build devel_kit also should be defined
+.endif
+USE_LUA=	5.1+
+NGINX_LUA_MODULE_VERSION=	0.2.0
+GIT_LUA_MODULE_VERSION=	0-g8e7d37e
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/chaoslawful/lua-nginx-module/tarball/v${NGINX_LUA_MODULE_VERSION}/:lua
+DISTFILES+=	chaoslawful-lua-nginx-module-v${NGINX_LUA_MODULE_VERSION}-${GIT_LUA_MODULE_VERSION}.tar.gz:lua
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/chaoslawful-lua-nginx-module-${GIT_LUA_MODULE_VERSION:S/^0-g//}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-chaoslawful-lua-nginx-module::config
+.endif
+
 .if defined(WITH_MEMC_MODULE)
 NGINX_MEMC_MODULE_VERSION=	0.12
 GIT_MEMC_MODULE_VERSION=	0-g4f1952c
@@ -417,6 +443,15 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger::build::nginx.rb
 CONFIGURE_ENV+=	OPTIMIZE="yes"
 CFLAGS+=	-DNDEBUG
 .endif
+.endif
+
+.if defined(WITH_REDIS2_MODULE)
+NGINX_REDIS2_MODULE_VERSION=	0.07rc5
+GIT_REDIS2_MODULE_VERSION=	0-g1e01aca
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/agentzh/redis2-nginx-module/tarball/v${NGINX_REDIS2_MODULE_VERSION}/:redis2
+DISTFILES+=	agentzh-redis2-nginx-module-v${NGINX_REDIS2_MODULE_VERSION}-${GIT_REDIS2_MODULE_VERSION}.tar.gz:redis2
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-redis2-nginx-module-${GIT_REDIS2_MODULE_VERSION:S/^0-g//}
 .endif
 
 .if defined(WITH_SLOWFS_CACHE_MODULE)
@@ -510,6 +545,11 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!$$HTTP_ACCESSKEY_MODULE!ngx_http_accesskey_module!' \
 		${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}/config
+.endif
+.if defined(WITH_LUA_MODULE)
+	@${REINPLACE_CMD} \
+		's!%%PREFIX%%!${PREFIX}!' \
+		${WRKDIR}/chaoslawful-lua-nginx-module-${GIT_LUA_MODULE_VERSION:S/^0-g//}/config
 .endif
 .if defined(WITH_PASSENGER_MODULE)
 	@${REINPLACE_CMD} 's!-lpthread!${PTHREAD_LIBS}!g' \
