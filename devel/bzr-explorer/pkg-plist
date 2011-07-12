@@ -248,6 +248,21 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/send2trash/__init__.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/send2trash/__init__.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/send2trash/__init__.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/send2trash/plat_osx.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/send2trash/plat_osx.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/send2trash/plat_osx.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/send2trash/plat_other.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/send2trash/plat_other.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/send2trash/plat_other.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/send2trash/plat_win.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/send2trash/plat_win.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/send2trash/plat_win.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/send2trash/test_plat_other.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/send2trash/test_plat_other.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/send2trash/test_plat_other.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/__init__.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/__init__.pyo
@@ -267,6 +282,7 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/tab_widget.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets/tab_widget.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/widgets
+@dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty/send2trash
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/thirdparty
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests
 @dirrm %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/skin/logos
