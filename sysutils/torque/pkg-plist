@@ -13,6 +13,8 @@ bin/qchkpt
 bin/qdel
 bin/qdisable
 bin/qenable
+bin/qgpumode
+bin/qgpureset
 bin/qhold
 bin/qmgr
 bin/qmove
@@ -50,55 +52,60 @@ sbin/pbs_server
 sbin/qnoded
 sbin/qschedd
 sbin/qserverd
-%%EXAMPLESDIR%%/torque.setup
-%%EXAMPLESDIR%%/var/spool/torque/pbs_environment
-%%EXAMPLESDIR%%/var/spool/torque/sched_priv/dedicated_time
-%%EXAMPLESDIR%%/var/spool/torque/sched_priv/holidays
-%%EXAMPLESDIR%%/var/spool/torque/sched_priv/resource_group
-%%EXAMPLESDIR%%/var/spool/torque/sched_priv/sched_config
-%%EXAMPLESDIR%%/var/spool/torque/server_name
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/undelivered
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/spool
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/queues
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/jobs
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/hostlist
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/disallowed_types
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/arrays
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_users
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_svr
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_hosts
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_groups
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/accounting
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_logs
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/sched_priv/accounting
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/sched_priv
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/sched_logs
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/mom_priv/jobs
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/mom_priv
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/mom_logs
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/checkpoint
-@dirrm %%EXAMPLESDIR%%/var/spool/torque/aux
-@dirrm %%EXAMPLESDIR%%/var/spool/torque
-@dirrm %%EXAMPLESDIR%%/var/spool
-@dirrm %%EXAMPLESDIR%%/var
-@dirrm %%EXAMPLESDIR%%
-@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/undelivered
-@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/spool
-@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/queues
-@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/jobs
-@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/hostlist
-@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/disallowed_types
-@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/arrays
-@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_users
-@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_svr
-@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_hosts
-@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_groups
-@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/accounting
-@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_logs
-@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/sched_priv/accounting
-@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/sched_logs
-@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/mom_priv/jobs
-@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/mom_logs
-@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/checkpoint
-@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/aux
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/torque.setup
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/var/spool/torque/pbs_environment
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/var/spool/torque/sched_priv/dedicated_time
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/var/spool/torque/sched_priv/holidays
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/var/spool/torque/sched_priv/resource_group
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/var/spool/torque/sched_priv/sched_config
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/var/spool/torque/server_name
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/var/spool/torque/server_priv/nodes
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/undelivered
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/spool
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/queues
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/jobs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/hostlist
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/disallowed_types
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/credentials
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/arrays
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_users
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_svr
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_hosts
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_groups
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv/accounting
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_priv
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/server_logs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/sched_priv/accounting
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/sched_priv
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/sched_logs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/mom_priv/jobs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/mom_priv
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/mom_logs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/job_logs
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/checkpoint
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque/aux
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool/torque
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var/spool
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/var
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/undelivered
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/spool
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/queues
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/jobs
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/hostlist
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/disallowed_types
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/credentials
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/arrays
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_users
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_svr
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_hosts
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/acl_groups
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_priv/accounting
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/server_logs
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/sched_priv/accounting
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/sched_logs
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/mom_priv/jobs
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/mom_logs
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/job_logs
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/checkpoint
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/var/spool/torque/aux
