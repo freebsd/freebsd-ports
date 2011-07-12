@@ -24,20 +24,18 @@ OPTIONS=	PLUGIN "Enable the browser plug-in" on \
 		RHINO "Add support for Proxy Auto Config files" off \
 		TEST "Add support for running regression test" off
 
-MAN1=		javaws.1
-PLIST_FILES=	bin/itweb-settings bin/javaws \
+MAN1=		itweb-javaws.1
+PLIST_FILES=	bin/itweb-javaws bin/itweb-settings \
+		share/applications/itweb-javaws.desktop \
 		share/applications/itweb-settings.desktop \
-		share/applications/javaws.desktop \
-		share/pixmaps/javaws.png
+		share/pixmaps/itweb-javaws.png
 PORTDATA=	about.jar about.jnlp netx.jar
 PORTDOCS=	netx
 
 BUILD_DEPENDS+=	${LOCALBASE}/bin/zip:${PORTSDIR}/archivers/zip \
-		${LOCALBASE}/bin/pkg-config:${PORTSDIR}/devel/pkg-config \
-		${LOCALBASE}/bin/ginstall:${PORTSDIR}/sysutils/coreutils
+		${LOCALBASE}/bin/pkg-config:${PORTSDIR}/devel/pkg-config
 
 CONFIGURE_ARGS+=--with-ecj=no --with-jdk-home="${JAVA_HOME}"
-CONFIGURE_ENV+=	INSTALL_DATA="${LOCALBASE}/bin/ginstall"
 
 .include <bsd.port.pre.mk>
 
@@ -87,10 +85,13 @@ pre-extract:
 
 post-install:
 	${MKDIR} ${DESKTOPDIR}
-	${INSTALL_DATA} ${WRKSRC}/itweb-settings.desktop \
-	    ${WRKSRC}/javaws.desktop ${DESKTOPDIR}
+	${REINPLACE_CMD} -e 's|^Icon=javaws|Icon=itweb-javaws|' \
+	    ${WRKSRC}/itweb-javaws.desktop ${WRKSRC}/itweb-settings.desktop
+	${INSTALL_DATA} ${WRKSRC}/itweb-javaws.desktop \
+	    ${WRKSRC}/itweb-settings.desktop ${DESKTOPDIR}
 	${MKDIR} ${PREFIX}/share/pixmaps
-	${INSTALL_DATA} ${WRKSRC}/javaws.png ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/javaws.png \
+	    ${PREFIX}/share/pixmaps/itweb-javaws.png
 .if defined(WITH_TEST)
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Run \"make test\" to execute regression test."
