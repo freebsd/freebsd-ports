@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}-std-${RELEASE_DATE}
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Linux binary release of DivX (TM) Codec
 
+DEPRECATED=	No more needed
+EXPIRATION_DATE=	2011-08-01
+
 RESTRICTED=	unsure of licensing issues
 
 ONLY_FOR_ARCHS=	i386 amd64
