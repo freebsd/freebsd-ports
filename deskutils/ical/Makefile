@@ -9,20 +9,20 @@
 PORTNAME=	ical
 PORTVERSION=	2.2
 PORTREVISION=	3
-CATEGORIES=	deskutils tk
+CATEGORIES?=	deskutils tk
 MASTER_SITES=	ftp://ftp.sunet.se/pub/vendor/sco/skunkware/src/shellutil/
 
-MAINTAINER=	obrien@FreeBSD.org
-COMMENT=	A calendar application
+MAINTAINER?=	obrien@FreeBSD.org
+COMMENT?=	A calendar application
 
-LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
+USE_TK=		yes
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-tclconfig=${PREFIX}/lib/tcl8.4 \
-		--with-tclhdir=${PREFIX}/include/tcl8.4 \
-		--with-tclsh=${PREFIX}/bin/tclsh8.4 \
-		--with-tkconfig=${PREFIX}/lib/tk8.4 \
-		--with-tkhdir=${PREFIX}/include/tk8.4
+CONFIGURE_ARGS=	--with-tclconfig=${TCL_LIBDIR} \
+		--with-tclhdir=${TCL_INCLUDEDIR} \
+		--with-tclsh=${TCLSH} \
+		--with-tkconfig=${TK_LIBDIR} \
+		--with-tkhdir=${TK_INCLUDEDIR}
 
 MAN1=		ical.1
 
