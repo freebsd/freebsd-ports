@@ -7,7 +7,7 @@
 
 PORTNAME=	lprof
 PORTVERSION=	20080514
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	graphics
 MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|amdmi3|}
@@ -19,7 +19,7 @@ COMMENT=	Open source color profiler
 LIB_DEPENDS=	lcms.1:${PORTSDIR}/graphics/lcms \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
-		vigraimpex.2:${PORTSDIR}/graphics/vigra
+		vigraimpex.3:${PORTSDIR}/graphics/vigra
 
 USE_BZIP2=	yes
 USE_XORG=	x11 xext sm ice xxf86vm
