@@ -6,6 +6,7 @@
 
 PORTNAME=	ntfs
 PORTVERSION=	2011.4.12
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://tuxera.com/opensource/
 PKGNAMEPREFIX=	fusefs-
@@ -20,6 +21,7 @@ LIB_DEPENDS=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 
 CONFLICTS_BUILD=	bonobo-1.*
+CONFLICTS_INSTALL=	ntfsprogs-*
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 USE_ICONV=	yes
