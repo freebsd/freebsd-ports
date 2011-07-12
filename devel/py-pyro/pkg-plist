@@ -45,20 +45,34 @@
 %%PYTHON_SITELIBDIR%%/Pyro4/util.pyo
 %%PORTDOCS%%%%DOCSDIR%%/Makefile
 %%PORTDOCS%%%%DOCSDIR%%/make.bat
-%%PORTDOCS%%%%DOCSDIR%%/source/Introduction.rst
-%%PORTDOCS%%%%DOCSDIR%%/source/Tutorial.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/_static/pyro-large.png
+%%PORTDOCS%%%%DOCSDIR%%/source/_static/pyro.png
+%%PORTDOCS%%%%DOCSDIR%%/source/_static/tf_pyrotaunt.png
 %%PORTDOCS%%%%DOCSDIR%%/source/alternative.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/api.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/api/config.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/api/constants.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/api/core.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/api/echoserver.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/api/errors.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/api/main.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/api/naming.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/api/socketserver.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/api/util.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/changelog.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/conf.py
 %%PORTDOCS%%%%DOCSDIR%%/source/config.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/index.rst
-%%PORTDOCS%%%%DOCSDIR%%/source/licensedisclaimer.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/install.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/intro.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/license.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/other.rst
-%%PORTDOCS%%%%DOCSDIR%%/source/socketserver.rst
+%%PORTDOCS%%%%DOCSDIR%%/source/tutorials.rst
 %%PORTDOCS%%%%DOCSDIR%%/source/upgrading.rst
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/async/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/async/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/async/client_batch.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/async/client_callchain.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/async/server.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/attributes/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/attributes/client.py
@@ -156,6 +170,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/timeout/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/timeout/client.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/timeout/server.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unixdomainsock/Readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unixdomainsock/client.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/unixdomainsock/server.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/warehouse/Readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/warehouse/phase1/person.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/warehouse/phase1/visit.py
@@ -170,6 +187,7 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/warehouse/phase2
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/warehouse/phase1
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/warehouse
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/unixdomainsock
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/timeout
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stockquotes/phase3
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/stockquotes/phase2
@@ -199,6 +217,8 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/attributes
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/async
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/api
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/source/_static
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/source
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/Pyro4/test
