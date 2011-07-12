@@ -1,6 +1,77 @@
 --- Makefile.in.orig	2011-06-08 17:59:15.371244000 -0400
-+++ Makefile.in	2011-07-11 16:37:49.000000000 -0400
-@@ -758,7 +758,7 @@
++++ Makefile.in	2011-07-12 13:22:56.000000000 -0400
+@@ -275,14 +275,14 @@
+ 
+ 
+ # binary names
+-javaws := $(shell echo javaws | sed '@program_transform_name@')
++itweb_javaws := $(shell echo itweb-javaws | sed '@program_transform_name@')
+ itweb_settings := $(shell echo itweb-settings | sed '@program_transform_name@')
+ 
+ # the launcher needs to know $(bindir) and $(datadir) which can be different at
+ # make-time from configure-time
+ edit_launcher_script = sed \
+   -e 's|[@]LAUNCHER_BOOTCLASSPATH[@]|$(LAUNCHER_BOOTCLASSPATH)|g' \
+-  -e 's|[@]JAVAWS_BIN_LOCATION[@]|$(bindir)/$(javaws)|g' \
++  -e 's|[@]JAVAWS_BIN_LOCATION[@]|$(bindir)/$(itweb_javaws)|g' \
+   -e 's|[@]ITWEB_SETTINGS_BIN_LOCATION[@]|$(bindir)/$(itweb_settings)|g' \
+   -e 's|[@]JAVA[@]|$(JAVA)|g' \
+   -e 's|[@]JRE[@]|$(JRE)|g'
+@@ -621,8 +621,8 @@
+ # Top-Level Targets
+ # =================
+ 
+-all-local: stamps/netx-dist.stamp extra-lib/about.jar stamps/plugin.stamp launcher.build/$(javaws) \
+- javaws.desktop stamps/docs.stamp launcher.build/$(itweb_settings) itweb-settings.desktop
++all-local: stamps/netx-dist.stamp extra-lib/about.jar stamps/plugin.stamp launcher.build/$(itweb_javaws) \
++ itweb-javaws.desktop stamps/docs.stamp launcher.build/$(itweb_settings) itweb-settings.desktop
+ 
+ check-local: $(RHINO_TESTS) $(JUNIT_TESTS)
+ 
+@@ -642,24 +642,26 @@
+ @ENABLE_PLUGIN_TRUE@	${INSTALL_PROGRAM} $(PLUGIN_DIR)/IcedTeaPlugin.so $(DESTDIR)$(libdir)
+ @ENABLE_PLUGIN_TRUE@	${INSTALL_DATA} $(abs_top_builddir)/liveconnect/lib/classes.jar $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/plugin.jar
+ 	${INSTALL_DATA} $(NETX_DIR)/lib/classes.jar $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/netx.jar
+-	${INSTALL_PROGRAM} launcher.build/$(javaws) $(DESTDIR)$(bindir)
++	${INSTALL_SCRIPT} launcher.build/$(itweb_javaws) $(DESTDIR)$(bindir)
+ 	${INSTALL_DATA} extra-lib/about.jar $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/about.jar
+-	${INSTALL_PROGRAM} launcher.build/$(itweb_settings) $(DESTDIR)$(bindir)
++	${INSTALL_SCRIPT} launcher.build/$(itweb_settings) $(DESTDIR)$(bindir)
+ 
+ install-data-local:
+ 	${mkinstalldirs} -d $(DESTDIR)$(mandir)/man1
+-	${INSTALL_DATA} $(NETX_SRCDIR)/javaws.1 $(DESTDIR)$(mandir)/man1
++	${INSTALL_DATA} $(NETX_SRCDIR)/javaws.1 $(DESTDIR)$(mandir)/man1/itweb-javaws.1
+ 	${INSTALL_DATA} $(NETX_RESOURCE_DIR)/about.jnlp $(DESTDIR)$(datarootdir)/$(PACKAGE_NAME)
+ @ENABLE_DOCS_TRUE@	${mkinstalldirs} $(DESTDIR)$(htmldir)
+ @ENABLE_DOCS_TRUE@	(cd ${abs_top_builddir}/docs/netx; \
+ @ENABLE_DOCS_TRUE@	 for files in $$(find . -type f); \
+ @ENABLE_DOCS_TRUE@	 do \
+-@ENABLE_DOCS_TRUE@	   ${INSTALL_DATA} -D $${files} $(DESTDIR)$(htmldir)/netx/$${files}; \
++@ENABLE_DOCS_TRUE@	   mkdir -p `dirname $(DESTDIR)$(htmldir)/netx/$${files}`; \
++@ENABLE_DOCS_TRUE@	   ${INSTALL_DATA} $${files} $(DESTDIR)$(htmldir)/netx/$${files}; \
+ @ENABLE_DOCS_TRUE@	 done)
+ @ENABLE_DOCS_TRUE@@ENABLE_PLUGIN_TRUE@	(cd ${abs_top_builddir}/docs/plugin; \
+ @ENABLE_DOCS_TRUE@@ENABLE_PLUGIN_TRUE@	 for files in $$(find . -type f); \
+ @ENABLE_DOCS_TRUE@@ENABLE_PLUGIN_TRUE@	 do \
+-@ENABLE_DOCS_TRUE@@ENABLE_PLUGIN_TRUE@	   ${INSTALL_DATA} -D $${files} $(DESTDIR)$(htmldir)/plugin/$${files}; \
++@ENABLE_DOCS_TRUE@@ENABLE_PLUGIN_TRUE@	   mkdir -p `dirname $(DESTDIR)$(htmldir)/plugin/$${files}`; \
++@ENABLE_DOCS_TRUE@@ENABLE_PLUGIN_TRUE@	   ${INSTALL_DATA} $${files} $(DESTDIR)$(htmldir)/plugin/$${files}; \
+ @ENABLE_DOCS_TRUE@@ENABLE_PLUGIN_TRUE@	 done)
+ 
+ uninstall-local:
+@@ -668,8 +670,8 @@
+ 	rm -f $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/netx.jar
+ 	rm -f $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/about.jnlp
+ 	rm -f $(DESTDIR)$(datadir)/$(PACKAGE_NAME)/about.jar
+-	rm -f $(DESTDIR)$(mandir)/man1/javaws.1
+-	rm -f $(DESTDIR)$(bindir)/$(javaws)
++	rm -f $(DESTDIR)$(mandir)/man1/itweb-javaws.1
++	rm -f $(DESTDIR)$(bindir)/$(itweb_javaws)
+ 	rm -f $(DESTDIR)$(bindir)/$(itweb_settings)
+ 	rm -rf $(DESTDIR)$(htmldir)
+ 
+@@ -758,7 +760,7 @@
  
  netx-source-files.txt:
  	find $(NETX_SRCDIR) -name '*.java' | sort > $@
@@ -9,7 +80,67 @@
  
  stamps/netx.stamp: netx-source-files.txt stamps/bootstrap-directory.stamp
  	mkdir -p $(NETX_DIR)
-@@ -897,7 +897,7 @@
+@@ -770,7 +772,8 @@
+ 	(cd $(NETX_RESOURCE_DIR); \
+ 	 for files in $$(find . -type f); \
+ 	 do \
+-	   ${INSTALL_DATA} -D $${files} \
++	   mkdir -p `dirname $(NETX_DIR)/net/sourceforge/jnlp/resources/$${files}`; \
++	   ${INSTALL_DATA} $${files} \
+ 	   $(NETX_DIR)/net/sourceforge/jnlp/resources/$${files}; \
+ 	 done)
+ 	cp -a $(NETX_SRCDIR)/net/sourceforge/jnlp/runtime/pac-funcs.js \
+@@ -798,10 +801,10 @@
+ 	rm -f stamps/netx.stamp
+ 
+ clean-desktop-files:
+-	rm -f javaws.desktop
++	rm -f itweb-javaws.desktop
+ 	rm -f itweb-settings.desktop
+ 
+-# extras -- used to create about.jar for javaws.
++# extras -- used to create about.jar for itweb-javaws.
+ extra-source-files.txt:
+ 	find $(abs_top_srcdir)/extra -name '*.java' | sort > $@
+ 
+@@ -813,7 +816,8 @@
+ 	(cd $(NETX_EXTRA_DIR); \
+ 	 for files in $$(find . -type f); \
+ 	 do \
+-	   ${INSTALL_DATA} -D $${files} \
++	   mkdir -p `dirname $(NETX_EXTRA_DIST_DIR)/$${files}`; \
++	   ${INSTALL_DATA} $${files} \
+ 	   $(NETX_EXTRA_DIST_DIR)/$${files}; \
+ 	 done)
+ 	mkdir -p stamps
+@@ -827,7 +831,7 @@
+ extra-lib/about.jar: stamps/extra-class-files.stamp
+ 	$(BOOT_DIR)/bin/jar cf $@ -C extra-lib net ;
+ 
+-launcher.build/$(javaws): launcher/javaws.in
++launcher.build/$(itweb_javaws): launcher/javaws.in
+ 	mkdir -p launcher.build
+ 	$(edit_launcher_script) < $< > $@
+ 
+@@ -836,14 +840,14 @@
+ 	$(edit_launcher_script) < $< > $@
+ 
+ clean-launchers:
+-	rm -f launcher.build/$(javaws)
++	rm -f launcher.build/$(itweb_javaws)
+ 	rm -f launcher.build/$(itweb_settings)
+ 	if [ -e launcher.build ] ; then \
+ 	  rmdir launcher.build ; \
+ 	fi
+ 
+-javaws.desktop: javaws.desktop.in
+-	sed "s#PATH_TO_JAVAWS#$(bindir)/$(javaws)#" < $(srcdir)/javaws.desktop.in > javaws.desktop
++itweb-javaws.desktop: javaws.desktop.in
++	sed "s#PATH_TO_JAVAWS#$(bindir)/$(itweb_javaws)#" < $(srcdir)/javaws.desktop.in > itweb-javaws.desktop
+ 
+ itweb-settings.desktop: $(srcdir)/itweb-settings.desktop.in
+ 	sed "s#PATH_TO_ITWEB_SETTINGS#$(bindir)/$(itweb_settings)#" \
+@@ -897,7 +901,7 @@
  	fi
  
  check-pac-functions: stamps/bootstrap-directory.stamp
@@ -18,13 +149,13 @@
  	  $$(readlink -f $(abs_top_srcdir)/netx/net/sourceforge/jnlp/runtime/pac-funcs.js)
  
  junit-runner-source-files.txt:
-@@ -926,10 +926,11 @@
+@@ -926,10 +930,11 @@
  
  run-netx-unit-tests: stamps/netx-unit-tests-compile.stamp \
   $(JUNIT_RUNNER_JAR)
 -	cp {$(NETX_UNIT_TEST_SRCDIR),$(NETX_UNIT_TEST_DIR)}/net/sourceforge/jnlp/basic.jnlp
 +	cp $(NETX_UNIT_TEST_SRCDIR)/net/sourceforge/jnlp/basic.jnlp \
-+	  $(NETX_UNIT_TEST_DIR)/net/sourceforge/jnlp
++	  $(NETX_UNIT_TEST_DIR)/net/sourceforge/jnlp/basic.jnlp
  	cd $(NETX_UNIT_TEST_DIR) ; \
  	class_names= ; \
 -	for test in `find -type f` ; do \
@@ -32,14 +163,14 @@
  	  class_name=`echo $$test | sed -e 's|\.class$$||' -e 's|^\./||'` ; \
  	  class_name=`echo $$class_name | sed -e 's|/|.|g' ` ; \
  	  class_names="$$class_names $$class_name" ; \
-@@ -963,9 +964,7 @@
+@@ -963,9 +968,7 @@
  @ENABLE_PLUGIN_TRUE@	 $(PLUGIN_TEST_SRCS) ;
  @ENABLE_PLUGIN_TRUE@	$(BOOT_DIR)/bin/jar cf plugin/tests/LiveConnect/PluginTest.jar \
  @ENABLE_PLUGIN_TRUE@	  plugin/tests/LiveConnect/*.class ;
 -@ENABLE_PLUGIN_TRUE@	cp -pPR $(SRC_DIR_LINK) $(abs_top_srcdir)/plugin/tests/LiveConnect/*.{js,html} \
 -@ENABLE_PLUGIN_TRUE@	  plugin/tests/LiveConnect ;
 -@ENABLE_PLUGIN_TRUE@	echo "Done. Now launch \"firefox file://`pwd`/index.html\"" ;
-+@ENABLE_PLUGIN_TRUE@	echo "Done. Now launch \"firefox file://$(abs_top_srcdir)/plugin/tests/LiveConnect/index.html\"" ;
++@ENABLE_PLUGIN_TRUE@	echo "Done. Now launch \"firefox file://`realpath plugin/tests/LiveConnect`/index.html\"" ;
  @ENABLE_PLUGIN_TRUE@	mkdir -p stamps
  @ENABLE_PLUGIN_TRUE@	touch stamps/plugin-tests.stamp
  
