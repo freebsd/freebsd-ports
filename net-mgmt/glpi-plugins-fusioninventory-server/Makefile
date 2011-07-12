@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	server
-PORTVERSION=	2.3.0
+PORTVERSION=	2.3.6
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://forge.fusioninventory.org/attachments/download/257/
+MASTER_SITES=	http://forge.fusioninventory.org/attachments/download/410/
 PKGNAMEPREFIX=	glpi-plugins-fusioninventory-
-DISTNAME=	fusioninventory_2.3.0-BETA1
+DISTNAME=	fusioninventory-for-glpi-metapackage_${PORTVERSION}
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Plugin of glpi to get information of networking devices
