@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	bzr-explorer
-PORTVERSION=	1.1.3
+PORTVERSION=	1.1.4
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/71441202/ \
+MASTER_SITES=	https://launchpadlibrarian.net/74990225/ \
 		http://www.c-s.li/ports/
 
 MAINTAINER=	c-s@c-s.li
