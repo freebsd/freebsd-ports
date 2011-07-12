@@ -7,6 +7,7 @@
 
 PORTNAME=	glpi
 DISTVERSION=	0.78.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://glpi-project.org/IMG/gz/ \
 		http://download.gna.org/kanicule/freebsd/distfiles/
@@ -14,7 +15,7 @@ MASTER_SITES=	http://glpi-project.org/IMG/gz/ \
 MAINTAINER=	mathias@monnerville.com
 COMMENT=	Free IT and asset management software
 
-USE_PHP=	mysql pcre session xml json
+USE_PHP=	mysql mbstring pcre session xml json
 WANT_PHP_WEB=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
@@ -24,7 +25,18 @@ CPIOARGS=	--quiet -pdum -R
 
 GLPIDIR?=	www/${PORTNAME}
 
+OPTIONS=	LDAP "With LDAP support" off \
+		IMAP "With imap support" off
+
 .include <bsd.port.pre.mk>
+
+.if defined(WITH_LDAP)
+USE_PHP+=	ldap
+.endif
+
+.if defined(WITH_IMAP)
+USE_PHP+=	imap
+.endif
 
 post-extract:
 	@${FIND} ${WRKSRC} -name '*~' -delete
