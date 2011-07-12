@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.eboai.org/pub/users/chip/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	laszlof
 
-DEPRECATE=	No more public distfile
+DEPRECATED=	No more public distfile
 EXPIRATION_DATE=	2011-08-01
 
 MAINTAINER=	ports@FreeBSD.org
