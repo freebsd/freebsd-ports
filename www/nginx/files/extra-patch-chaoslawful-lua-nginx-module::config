@@ -1,0 +1,19 @@
+--- ../chaoslawful-lua-nginx-module-8e7d37e/config.orig	2011-07-12 11:24:16.000000000 +0400
++++ ../chaoslawful-lua-nginx-module-8e7d37e/config	2011-07-12 11:26:45.000000000 +0400
+@@ -104,12 +104,12 @@
+ 
+         if [ $ngx_found = no ]; then
+             # FreeBSD
+-            ngx_feature="lua library in /usr/local/../lua51/"
+-            ngx_feature_path="/usr/local/include/lua51"
++            ngx_feature="lua library in %%PREFIX%%/lua51/"
++            ngx_feature_path="%%PREFIX%%/include/lua51"
+             if [ $NGX_RPATH = YES ]; then
+-                ngx_feature_libs="-R/usr/local/lib/lua51 -L/usr/local/lib/lua51 -llua -lm"
++                ngx_feature_libs="-R%%PREFIX%%/lib/lua51 -L%%PREFIX%%/lib/lua51 -llua -lm"
+             else
+-                ngx_feature_libs="-L/usr/local/lib/lua51 -llua -lm"
++                ngx_feature_libs="-L%%PREFIX%%/lib/lua51 -llua -lm"
+             fi
+             . auto/feature
+         fi
