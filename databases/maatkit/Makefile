@@ -6,25 +6,26 @@
 #
 
 PORTNAME=	maatkit
-PORTVERSION=	7119
+PORTVERSION=	7540
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	skreuzer@FreeBSD.org
 COMMENT=	Collection of essential command-line utilities for MySQL
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
 		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
 		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 PERL_CONFIGURE=	yes
 
 MAN1=	maatkit.1p \
 	mk-archiver.1p \
 	mk-checksum-filter.1p \
+	mk-config-diff.1p \
 	mk-deadlock-logger.1p \
 	mk-duplicate-key-checker.1p \
 	mk-error-log.1p \
@@ -51,6 +52,8 @@ MAN1=	maatkit.1p \
 	mk-slave-restart.1p \
 	mk-table-checksum.1p \
 	mk-table-sync.1p \
+	mk-table-usage.1p \
+	mk-tcp-model.1p \
 	mk-upgrade.1p \
 	mk-variable-advisor.1p \
 	mk-visual-explain.1p
