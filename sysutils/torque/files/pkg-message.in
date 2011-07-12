@@ -3,7 +3,7 @@ You can find an example configuration in
 
 	%%PREFIX%%/share/examples/torque/var/spool/torque
 
-On all machines, both server and computing nodes:
+On all machines, both server and compute nodes:
 
 	1. Run
 
@@ -15,7 +15,7 @@ On all machines, both server and computing nodes:
 		/var/spool/torque/server_name
 
 ******************************************************************************
-On computing nodes:
+On compute nodes:
 
 	1. Put '$pbsserver ip.address.of.server' into
 	
@@ -26,12 +26,12 @@ On computing nodes:
 		pbs_mom_enable="YES"
 
 	This may include the server if you allow it to be used
-	as a computing node as well.
+	as a compute node as well.
 
 ******************************************************************************
 On the server:
 
-	1. Put hostnames of computing nodes, one per line, into
+	1. Put hostnames of compute nodes, one per line, into
 
 		/var/spool/torque/server_priv/nodes
 
@@ -50,9 +50,9 @@ On the server:
 	The recommended <admin> user is root.
 
 ******************************************************************************
-After installation is complete on the server and computing nodes:
+After installation is complete on the server and compute nodes:
 
-	1. Start node services on all computing nodes with:
+	1. Start node services on all compute nodes with:
 
 		%%PREFIX%%/etc/rc.d/pbs_mom restart
 
