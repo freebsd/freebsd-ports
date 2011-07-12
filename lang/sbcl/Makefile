@@ -94,6 +94,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_THREADS)
+IGNORE=	does not build with threads, disable threads for now
+.endif
+
 .if !defined(WITHOUT_PDF)
 BUILD_DEPENDS+=	latex:${PORTSDIR}/print/teTeX-base \
 		texi2dvi:${PORTSDIR}/print/texinfo
@@ -200,9 +204,9 @@ post-patch:
 		-e 's|ld \$$SO_FLAGS|${LD} \$$SO_FLAGS|' \
 			 ${WRKSRC}/tests/foreign.test.sh
 	@${FIND} ${WRKSRC} \( -name '*.orig' -o -name '*.bak' \) -delete
-#.if defined(WITH_THREADS)
-#	@${CP} ${FILESDIR}/customize-target-features.lisp ${WRKSRC}
-#.endif
+.if defined(WITH_THREADS)
+	@${CP} ${FILESDIR}/customize-target-features.lisp ${WRKSRC}
+.endif
 	@${REINPLACE_CMD} -E -e 's,makeinfo,makeinfo --no-split,g' \
 		${WRKSRC}/doc/internals/Makefile
 
