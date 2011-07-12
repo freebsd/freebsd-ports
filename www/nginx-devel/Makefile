@@ -74,6 +74,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		LUA_MODULE		"3rd party lua module" off \
 		MEMC_MODULE		"3rd party memc (memcached) module" off \
 		PASSENGER_MODULE	"3rd party passenger module" off \
+		POSTGRES_MODULE		"3rd party postgresql module" off \
 		REDIS2_MODULE		"3rd party redis2 module" off \
 		SLOWFS_CACHE_MODULE	"3rd party slowfs_cache module" off \
 		SRCACHE_MODULE		"3rd party srcache module" off \
@@ -446,6 +447,15 @@ CFLAGS+=	-DNDEBUG
 .endif
 .endif
 
+.if defined(WITH_POSTGRES_MODULE)
+USE_PGSQL=	yes
+NGINX_POSTGRES_MODULE_VERSION=	0.8
+MASTER_SITES+=	http://labs.frickle.com/files/:postgres
+DISTFILES+=	ngx_postgres-${NGINX_POSTGRES_MODULE_VERSION}.tar.gz:postgres
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/ngx_postgres-${NGINX_POSTGRES_MODULE_VERSION}
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_postgres::config
+.endif
+
 .if defined(WITH_REDIS2_MODULE)
 NGINX_REDIS2_MODULE_VERSION=	0.07rc5
 GIT_REDIS2_MODULE_VERSION=	0-g1e01aca
@@ -566,6 +576,11 @@ post-patch:
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/build/common_library.rb
 	@${REINPLACE_CMD} 's!-lpthread!${PTHREAD_LIBS}!g' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/lib/phusion_passenger/platform_info/compiler.rb
+.endif
+.if defined(WITH_POSTGRES_MODULE)
+	@${REINPLACE_CMD} \
+		's!%%PREFIX%%!${PREFIX}!' \
+		${WRKDIR}/ngx_postgres-${NGINX_POSTGRES_MODULE_VERSION}/config
 .endif
 .if defined(WITH_SUPERVISORD_MODULE)
 	( cd ${WRKDIR}/nginx_upstream_fair-${NGINX_UPSTREAM_FAIR_VERSION} && \
