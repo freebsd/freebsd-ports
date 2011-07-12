@@ -2,6 +2,7 @@
 %%SITE_PERL%%/maatkit.pod
 bin/mk-archiver
 bin/mk-checksum-filter
+bin/mk-config-diff
 bin/mk-deadlock-logger
 bin/mk-duplicate-key-checker
 bin/mk-error-log
@@ -28,6 +29,8 @@ bin/mk-slave-prefetch
 bin/mk-slave-restart
 bin/mk-table-checksum
 bin/mk-table-sync
+bin/mk-table-usage
+bin/mk-tcp-model
 bin/mk-upgrade
 bin/mk-visual-explain
 bin/mk-variable-advisor
