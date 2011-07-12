@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	PF
-PORTVERSION=	0.0.5
+PORTVERSION=	0.0.6
 CATEGORIES=	security python
 MASTER_SITES=	SF/py-${PORTNAME:L}/py-${PORTNAME:L}/${DISTNAME}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -24,9 +24,6 @@ USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	${PYTHON_PKGNAMEPREFIX:C/[0-9]+//}_${PORTNAME}
 
 SUB_FILES=	pkg-message
-
-post-patch:
-	@${REINPLACE_CMD} -e 's#"0.0.4"#"0.0.5"#g' ${WRKSRC}/setup.py
 
 post-install:
 .if !defined(BATCH)
