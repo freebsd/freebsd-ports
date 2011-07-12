@@ -16,7 +16,7 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	A Perl interface to Last.fm / AudioScrobbler
 
 BUILD_DEPENDS=	${SITE_PERL}/Config/IniFiles.pm:${PORTSDIR}/devel/p5-Config-IniFiles \
-		${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww
+		p5-libwww>=5:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
