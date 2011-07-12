@@ -22,7 +22,7 @@ RUN_DEPENDS=	onsgmls:${PORTSDIR}/textproc/opensp \
 		${SITE_PERL}/${PERL_ARCH}/HTML/Parser.pm:${PORTSDIR}/www/p5-HTML-Parser \
 		${SITE_PERL}/HTML/Encoding.pm:${PORTSDIR}/www/p5-HTML-Encoding \
 		${SITE_PERL}/HTML/Template.pm:${PORTSDIR}/www/p5-HTML-Template \
-		${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		p5-libwww>=5.817:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/JSON.pm:${PORTSDIR}/converters/p5-JSON \
 		${SITE_PERL}/Net/IP.pm:${PORTSDIR}/net-mgmt/p5-Net-IP \
 		${SITE_PERL}/${PERL_ARCH}/SGML/Parser/OpenSP.pm:${PORTSDIR}/textproc/p5-SGML-Parser-OpenSP \

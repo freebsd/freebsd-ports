@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	A Perl interface to the Akismet comment and trackback spam blocker
 
-BUILD_DEPENDS+=	${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS+=	${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww
+BUILD_DEPENDS=	p5-libwww>=5.09:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-libwww>=5.09:${PORTSDIR}/www/p5-libwww
 
 .if !defined(WITHOUT_TEST_POD_COVERAGE)
 BUILD_DEPENDS+=	${SITE_PERL}/Test/Pod/Coverage.pm:${PORTSDIR}/devel/p5-Test-Pod-Coverage

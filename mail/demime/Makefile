@@ -15,7 +15,7 @@ DISTFILES=	${PORTNAME}.${PORTVERSION} ${PORTNAME}_junkmail.cf
 MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	A tool to scrub mime from mailing lists
 
-RUN_DEPENDS=	${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \
+RUN_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/HTML/FormatText.pm:${PORTSDIR}/textproc/p5-HTML-Format \
 		${SITE_PERL}/HTML/Element.pm:${PORTSDIR}/www/p5-HTML-Tree \
 		${SITE_PERL}/HTML/Tagset.pm:${PORTSDIR}/www/p5-HTML-Tagset

@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl Interface to XML based eBay API
 
-BUILD_DEPENDS=	${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \
+BUILD_DEPENDS=	p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/XML/Dumper.pm:${PORTSDIR}/textproc/p5-XML-Dumper \
 		${SITE_PERL}/DateTime/Precise.pm:${PORTSDIR}/devel/p5-DateTime-Precise \

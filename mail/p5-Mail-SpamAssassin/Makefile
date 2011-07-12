@@ -19,13 +19,13 @@ COMMENT=	A highly efficient mail filter for identifying spam
 RUN_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 		p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-HTML-Parser>=3.43:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect \
 		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
 BUILD_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 		p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
 		p5-HTML-Parser>=3.43:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/Bundle/LWP.pm:${PORTSDIR}/www/p5-libwww \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect \
 		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
 
