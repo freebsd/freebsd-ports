@@ -7,13 +7,14 @@
 
 PORTNAME=	scenarios
 PORTVERSION=	1.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	http://trilogyrelease.bungie.org/files/:bungie \
+MASTER_SITES=	http://files3.bungie.org/trilogy/:bungie \
 		http://files5.bungie.org/marathon/:rubicon \
 		http://nardofiles.bungie.org/:nardofiles \
 		http://eternal.bungie.org/files/_releases/:eternal \
-		SF/emr3:emr
+		SF/../emr3:emr \
+		http://ryoko.treellama.org/:gray
 PKGNAMEPREFIX=	alephone-
 DISTFILES=	#
 DIST_SUBDIR=	alephone
@@ -29,11 +30,12 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 OPTIONS=	EMR "Install Excalibur: Morgana's Revenge data" off \
-		ETERNAL "Install Eternal data" off \
+		ETERNAL "Install Eternal X data" off \
 		EVIL "Install Marathon Evil data" on \
 		RED "Install Marathon Red data" on \
 		RUBICON "Install Rubicon X data" off \
-		TI "Install Tempus Irae data" off
+		TI "Install Tempus Irae data" off \
+		GRAY "Install The gray incident data" off
 
 SUB_FILES=	wrapper
 
@@ -42,7 +44,8 @@ SUB_FILES=	wrapper
 DATADIR!=	cd ${PORTSDIR}/games/alephone && ${MAKE} -V DATADIR
 
 .if defined(WITH_EMR)
-EMR_FILE=	emr-20070121.tar.gz
+FETCH_ARGS=	-Fpr
+EMR_FILE=	emr-3.0-0602.tgz
 DISTFILES+=	${EMR_FILE}:emr
 PLIST_SUB+=	EMR=""
 AO_PACKS+=	emr
@@ -51,8 +54,8 @@ PLIST_SUB+=	EMR="@comment "
 .endif
 
 .if defined(WITH_ETERNAL)
-DISTFILES+=	Eternal5SDL512${EXTRACT_SUFX}:eternal
-EXTRACT_ONLY+=	Eternal5SDL512${EXTRACT_SUFX}
+DISTFILES+=	EternalXv103Full${EXTRACT_SUFX}:eternal
+EXTRACT_ONLY+=	EternalXv103Full${EXTRACT_SUFX}
 PLIST_SUB+=	ETERNAL=""
 AO_PACKS+=	eternal
 .else
@@ -95,6 +98,15 @@ AO_PACKS+=	tempus_irae
 PLIST_SUB+=	TI="@comment "
 .endif
 
+.if defined(WITH_GRAY)
+DISTFILES+=	tgi${EXTRACT_SUFX}:gray
+EXTRACT_ONLY+=	tgi${EXTRACT_SUFX}
+PLIST_SUB+=	GRAY=""
+AO_PACKS+=	gray
+.else
+PLIST_SUB+=	GRAY="@comment "
+.endif
+
 .if empty(AO_PACKS)
 IGNORE=		needs at least one option
 .endif
@@ -103,14 +115,16 @@ post-extract:
 .if defined(WITH_EMR)
 	@${TAR} zxf ${DISTDIR}/${DIST_SUBDIR}/${EMR_FILE} -C ${WRKDIR}
 	@${MKDIR} ${WRKSRC}/emr
-	@cd ${WRKSRC}/${EMR_FILE:S/.tar.gz//} && \
+	@cd ${WRKSRC}/${EMR_FILE:S/-0602.tgz//} && \
 		${MV} share-emr/* ../emr && \
 		${MV} share-doc-emr ../emr/docs && \
 		${MV} README ../emr/docs
 .endif
 .if defined(WITH_ETERNAL)
-	@cd ${WRKSRC} && ${MV} "Eternal Mk V SDL 512" eternal
-	@cd ${WRKSRC}/eternal && ${RM} *.exe *.dll
+	@cd ${WRKSRC} && ${MV} "Eternal X 1.0.3" eternal
+	@cd ${WRKSRC}/eternal && \
+		${FIND} . -type d -print0 | ${XARGS} -0 ${CHMOD} 755 && \
+		${FIND} . -type f -print0 | ${XARGS} -0 ${CHMOD} 644
 .endif
 .if !defined(WITHOUT_EVIL)
 	@cd ${WRKSRC} && ${MV} "Marathon EVIL" evil
@@ -126,6 +140,9 @@ post-extract:
 	@cd ${WRKSRC}/tempus_irae && \
 		${FIND} . -type d -print0 | ${XARGS} -0 ${CHMOD} 755 && \
 		${FIND} . -type f -print0 | ${XARGS} -0 ${CHMOD} 644
+.endif
+.if defined(WITH_GRAY)
+	@cd ${WRKSRC} && ${MV} "The Gray Incident" gray
 .endif
 
 pre-install:
