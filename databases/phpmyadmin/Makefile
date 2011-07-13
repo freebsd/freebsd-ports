@@ -95,13 +95,6 @@ USE_PHP+=	${opt:L}
 
 .SILENT:
 
-pre-everything::
-	${ECHO_MSG} "This version of phpmyadmin requires PHP 5.2+ and MySQL"
-	${ECHO_MSG} "5.0+.  If you need to use an older version of PHP or"
-	${ECHO_MSG} "manage older MYSQL databases, please use the"
-	${ECHO_MSG} "databases/phpmyadmin211 port instead."
-	${ECHO_MSG} ""
-
 # When creating a package, empty directories will not be generated
 # from the pkg tarball.	 Therefore make sure no directories are empty.
 
