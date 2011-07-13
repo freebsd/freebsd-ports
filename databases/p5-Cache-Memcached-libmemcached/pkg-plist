@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Cache/Memcached/libmemcached.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Memcached/libmemcached/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Memcached/libmemcached
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache/Memcached
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Cache
+@dirrmtry %%SITE_PERL%%/Cache/Memcached
+@dirrmtry %%SITE_PERL%%/Cache

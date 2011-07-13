@@ -275,6 +275,7 @@
     SUBDIR += p5-Cache-Memcached-Fast
     SUBDIR += p5-Cache-Memcached-Managed
     SUBDIR += p5-Cache-Memcached-XS
+    SUBDIR += p5-Cache-Memcached-libmemcached
     SUBDIR += p5-Class-DBI
     SUBDIR += p5-Class-DBI-AbstractSearch
     SUBDIR += p5-Class-DBI-AsForm
