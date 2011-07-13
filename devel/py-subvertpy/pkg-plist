@@ -54,5 +54,5 @@ bin/subvertpy-fast-export
 %%PYTHON_SITELIBDIR%%/subvertpy/tests/test_wc.pyc
 %%PYTHON_SITELIBDIR%%/subvertpy/tests/test_wc.pyo
 %%PYTHON_SITELIBDIR%%/subvertpy/wc.so
-@dirrmtry %%PYTHON_SITELIBDIR%%/subvertpy/tests
-@dirrmtry %%PYTHON_SITELIBDIR%%/subvertpy
+@dirrm %%PYTHON_SITELIBDIR%%/subvertpy/tests
+@dirrm %%PYTHON_SITELIBDIR%%/subvertpy
