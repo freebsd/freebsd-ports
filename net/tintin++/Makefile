@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tintin++
-PORTVERSION=	2.00.6
+PORTVERSION=	2.00.7
 CATEGORIES+=	net games
 MASTER_SITES=	SF/tintin/TinTin%2B%2B%20Source%20Code/${PORTVERSION}/
 DISTNAME=	tintin-${PORTVERSION}
@@ -18,11 +18,14 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
-CONFIGURE_ARGS+=--includedir=${LOCALBASE}/include --libdir=${LOCALBASE}/lib \
+OPTIONS=	BIG5 "Big5 support" off
+
+CONFIGURE_ARGS=	--includedir=${LOCALBASE}/include \
+		--libdir=${LOCALBASE}/lib \
 		--prefix=${PREFIX}
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
-		ac_cv_file__dev_ptmx=no
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" ac_cv_file__dev_ptmx=no
 GNU_CONFIGURE=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/tt/src
 
@@ -31,14 +34,20 @@ DOCS=		CREDITS FAQ README SCRIPTS TODO \
 PLIST_FILES=	bin/tt++
 PORTDOCS=	${DOCS:T}
 
+.include <bsd.port.options.mk>
+
+.if defined(WITH_BIG5)
+CONFIGURE_ARGS+=--enable-big5
+.endif
+
 post-configure:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/Makefile
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/tt++ ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/tt++ ${PREFIX}/bin/
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d ${DOCSDIR}
-	@cd ${WRKSRC}/.. && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
+	${INSTALL} -d ${DOCSDIR}/
+	cd ${WRKSRC}/../ && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}/
 .endif
 
 .include <bsd.port.mk>

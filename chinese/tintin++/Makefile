@@ -11,7 +11,7 @@ MAINTAINER=	sunpoet@FreeBSD.org
 
 MASTERDIR=	${.CURDIR}/../../net/tintin++
 
-CONFIGURE_ARGS=	--enable-big5
+WITH_BIG5=	yes
 
 NO_LATEST_LINK=	yes
 
