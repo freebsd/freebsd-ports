@@ -94,6 +94,9 @@ bin/qemuwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/HypervisorManager.py
 %%PYTHON_SITELIBDIR%%/GNS3/HypervisorManager.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/HypervisorManager.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/IDLEPCDialog.py
+%%PYTHON_SITELIBDIR%%/GNS3/IDLEPCDialog.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/IDLEPCDialog.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/IOSDialog.py
 %%PYTHON_SITELIBDIR%%/GNS3/IOSDialog.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/IOSDialog.pyo
@@ -109,6 +112,7 @@ bin/qemuwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/Lang_es.qm
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/Lang_fa.qm
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/Lang_fr.qm
+%%PYTHON_SITELIBDIR%%/GNS3/Langs/Lang_gr.qm
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/Lang_it.qm
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/Lang_jp.qm
 %%PYTHON_SITELIBDIR%%/GNS3/Langs/Lang_kr.qm
@@ -357,6 +361,9 @@ bin/qemuwrapper.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_About.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_About.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_About.pyo
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_IDLEPCDialog.py
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_IDLEPCDialog.pyc
+%%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_IDLEPCDialog.pyo
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_IOSDialog.py
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_IOSDialog.pyc
 %%PYTHON_SITELIBDIR%%/GNS3/Ui/Form_IOSDialog.pyo
