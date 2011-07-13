@@ -5801,6 +5801,7 @@ iceauth                         ports/x11/iceauth
 icebreaker                      ports/games/icebreaker
 icecast                         ports/audio/icecast
 icecast2                        ports/audio/icecast2
+icedtea-web                     ports/java/icedtea-web
 icedtea6-stubs                  ports/java/icedtea6-stubs
 icegenerator                    ports/audio/icegenerator
 ices                            ports/audio/ices
