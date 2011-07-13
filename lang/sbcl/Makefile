@@ -23,8 +23,6 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:R}-source${SBCLPATCHLEVEL}
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A Common Lisp development system derived from the CMU CL system
 
-BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
-
 # More platforms are supported, but on Linux.
 ONLY_FOR_ARCHS=	i386 amd64
 ONLY_FOR_ARCHS_REASON=	is a native code compiler, and has not been ported to this architecture yet
@@ -96,6 +94,10 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 .if defined(WITH_THREADS)
 IGNORE=	does not build with threads, disable threads for now
+.endif
+
+.if !defined(NOPORTDOCS) || !defined(WITHOUT_PDF) || !defined(WITHOUT_PS)
+BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
 .endif
 
 .if !defined(WITHOUT_PDF)
