@@ -3564,13 +3564,3 @@ diff -NupwB sshd_config sshd_config
  # Example of overriding settings on a per-user basis
  #Match User anoncvs
  #	X11Forwarding no
-diff -NupwB version.h version.h
---- version.h	2009-02-22 19:09:26.000000000 -0500
-+++ version.h	2009-05-14 12:42:05.000000000 -0400
-@@ -3,4 +3,5 @@
- #define SSH_VERSION	"OpenSSH_5.2"
- 
- #define SSH_PORTABLE	"p1"
--#define SSH_RELEASE	SSH_VERSION SSH_PORTABLE
-+#define SSH_HPN         "-hpn13v6"
-+#define SSH_RELEASE	SSH_VERSION SSH_PORTABLE SSH_HPN
