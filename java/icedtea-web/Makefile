@@ -16,8 +16,10 @@ LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_JAVA=	1.6
+USE_JAVA=	yes
+JAVA_OS=	native
 JAVA_VENDOR=	openjdk
+JAVA_VERSION=	1.6
 USE_XORG=	x11
 
 OPTIONS=	PLUGIN "Enable the browser plug-in" on \
