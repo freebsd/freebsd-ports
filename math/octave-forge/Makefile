@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge
 PORTVERSION=	20110205
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -33,7 +33,7 @@ OPTIONS=	\
 	ENGINE "Install package: engine" On \
 	ES "Install package: es" Off \
 	FENV "Install package: fenv" On \
-	FITS "Install package: fits" Off \
+	FITS "Install package: fits" On \
 	FINANCIAL "Install package: financial" On \
 	FL_CORE "Install package: fl-core" On \
 	FPL "Install package: fpl" On \
