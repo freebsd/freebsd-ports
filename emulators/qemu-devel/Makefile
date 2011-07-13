@@ -13,7 +13,10 @@ MASTER_SITES=	SAVANNAH:release \
 MASTER_SITE_SUBDIR=	qemu/:release nox/:snapshot
 PKGNAMESUFFIX=	-devel
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
-DIST_SUBDIR=	qemu
+DIST_SUBDIR=	qemu/${PORTVERSION}
+
+PATCH_SITES=	http://code.gns3.net/qemu-patches/raw-file/0b69b9be6a8e/
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	nox@FreeBSD.org
 COMMENT=	QEMU CPU Emulator - development version
@@ -33,8 +36,9 @@ OPTIONS=	SAMBA "samba dependency (for -smb)" Off \
 		SDL "SDL/X dependency (graphical output)" On \
 		GNUTLS "gnutls dependency (vnc encryption)" On \
 		CURL "libcurl dependency (remote images)" On \
-		PCAP "pcap dependency (networking with bpf)" On \
 		CDROM_DMA "IDE CDROM DMA" On \
+		PCAP "pcap dependency (networking with bpf)" On \
+		GNS3 "gns3 patches (udp, promiscuous multicast)" Off \
 		ADD_AUDIO "Emulate more audio hardware (experimental!)" Off \
 		ALL_TARGETS "Also build bsd-user targets (for testing)" Off
 
@@ -48,6 +52,16 @@ PLIST_SUB+=	ALLTARGETS=""
 .if ${ARCH} == "sparc64"
 IGNORE=		bsd-user targets not tested on sparc64
 .endif
+.endif
+
+.if defined(WITH_GNS3)
+PATCHFILES+=	hw_e1000_c.patch
+PATCHFILES+=	net_c.patch
+PATCHFILES+=	net_h.patch
+PATCHFILES+=	net_udp_c.patch
+PATCHFILES+=	net_udp_h.patch
+PATCHFILES+=	Makefile_objs.patch
+EXTRA_PATCHES+=	${FILESDIR}/gns3-qemu-options.hx.patch
 .endif
 
 WITHOUT_CPU_CFLAGS=yes	#to avoid problems with register allocation
@@ -132,6 +146,7 @@ post-patch:
 
 .if defined(WITH_PCAP)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/pcap-patch
+	@${REINPLACE_CMD} -f ${FILESDIR}/pcap-client-type.sed ${WRKSRC}/net.h
 .endif
 .if defined(WITHOUT_CDROM_DMA)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/cdrom-dma-patch

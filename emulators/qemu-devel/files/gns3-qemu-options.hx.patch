@@ -1,0 +1,11 @@
+--- a/qemu-options.hx
++++ b/qemu-options.hx
+@@ -1050,6 +1050,8 @@ DEF("net", HAS_ARG, QEMU_OPTION_net,
+     "                connect the user mode network stack to VLAN 'n', configure its\n"
+     "                DHCP server and enabled optional services\n"
+ #endif
++    "-net udp[,vlan=n],sport=sport,dport=dport,daddr=host\n"
++    "                connect the vlan 'n' to a udp host (for dynamips/pemu/GNS3)\n"
+ #ifdef _WIN32
+     "-net tap[,vlan=n][,name=str],ifname=name\n"
+     "                connect the host TAP network interface to VLAN 'n'\n"
