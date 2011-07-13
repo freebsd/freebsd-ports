@@ -9,13 +9,15 @@ PORTNAME=	akode-plugins-${PORTNAMESUFX}
 PORTVERSION=	2.0.2
 PORTREVISION=	4
 CATEGORIES=	audio kde
-MASTER_SITES=	${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=distfiles
-DISTNAME=	30375-akode-${PORTVERSION}.tar.bz2
-EXTRACT_SUFX=	# none
+MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	laszlof
+DISTNAME=	30375-akode-${PORTVERSION}
 
 MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Pulseaudio output plugin for akode
+LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	pulse-simple:${PORTSDIR}/audio/pulseaudio
 

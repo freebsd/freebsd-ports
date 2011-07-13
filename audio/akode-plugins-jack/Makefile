@@ -9,13 +9,15 @@ PORTNAME=	akode-plugins-${PORTNAMESUFX}
 PORTVERSION=	2.0.2
 PORTEPOCH=	1
 CATEGORIES=	audio kde
-MASTER_SITES=	${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=distfiles
-DISTNAME=	30375-akode-${PORTVERSION}.tar.bz2
-EXTRACT_SUFX=	# none
+MASTER_SITES=	http://www.kde-apps.org/CONTENT/content-files/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=laszlof
+DISTNAME=	30375-akode-${PORTVERSION}
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Jack output plugin for akode
+LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	jack:${PORTSDIR}/audio/jack
 
