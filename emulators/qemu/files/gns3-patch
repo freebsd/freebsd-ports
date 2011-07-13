@@ -1,0 +1,160 @@
+diff -crB qemu-0.11.0/hw/e1000.c qemu-0.11.0.patched/hw/e1000.c
+*** qemu-0.11.0/hw/e1000.c	2009-09-24 05:01:32.000000000 +1000
+--- qemu-0.11.0.patched/hw/e1000.c	2009-11-01 14:08:38.000000000 +1100
+***************
+*** 550,556 ****
+      if (rctl & E1000_RCTL_UPE)			// promiscuous
+          return 1;
+  
+!     if ((buf[0] & 1) && (rctl & E1000_RCTL_MPE))	// promiscuous mcast
+          return 1;
+  
+      if ((rctl & E1000_RCTL_BAM) && !memcmp(buf, bcast, sizeof bcast))
+--- 550,556 ----
+      if (rctl & E1000_RCTL_UPE)			// promiscuous
+          return 1;
+  
+!     if ((buf[0] & 1)) // && (rctl & E1000_RCTL_MPE))	// promiscuous mcast
+          return 1;
+  
+      if ((rctl & E1000_RCTL_BAM) && !memcmp(buf, bcast, sizeof bcast))
+diff -crB qemu-0.11.0/hw/eepro100.c qemu-0.11.0.patched/hw/eepro100.c
+*** qemu-0.11.0/hw/eepro100.c	2009-09-24 05:01:32.000000000 +1000
+--- qemu-0.11.0.patched/hw/eepro100.c	2009-10-31 18:17:43.000000000 +1100
+***************
+*** 1484,1490 ****
+          assert(!(s->configuration[21] & BIT(3)));
+          int mcast_idx = compute_mcast_idx(buf);
+          if (!(s->mult[mcast_idx >> 3] & (1 << (mcast_idx & 7)))) {
+!             return size;
+          }
+          rfd_status |= 0x0002;
+      } else if (s->configuration[15] & 1) {
+--- 1484,1490 ----
+          assert(!(s->configuration[21] & BIT(3)));
+          int mcast_idx = compute_mcast_idx(buf);
+          if (!(s->mult[mcast_idx >> 3] & (1 << (mcast_idx & 7)))) {
+!             //return size;
+          }
+          rfd_status |= 0x0002;
+      } else if (s->configuration[15] & 1) {
+diff -uprB qemu-0.11.0/net.c qemu-0.11.0.patched/net.c
+--- qemu-0.11.0/net.c
++++ qemu-0.11.0.patched/net.c
+@@ -2513,6 +2513,73 @@ static int net_socket_mcast_init(VLANSta
+ 
+ }
+ 
++typedef struct DUDPState {
++	VLANClientState *vc;
++	int rfd;
++	struct sockaddr_in sender;
++} DUDPState;
++
++// Called when packet is received
++static void dudp_send (void *opaque) { 
++	DUDPState *s=opaque;
++	uint8_t buf[4096];
++	int size;
++	
++	//printf ("dudp_send()     ");
++	size = recvfrom(s->rfd,buf,sizeof(buf),0,NULL,NULL);
++	//printf ("Receiving packet size=%i\n",size);
++	if (size > 0) {
++		qemu_send_packet(s->vc, buf, size);
++	}
++}
++
++// Called when packet is sended
++static ssize_t dudp_receive(VLANClientState *vc, const uint8_t *buf, size_t size) {
++	DUDPState *s = vc->opaque;
++	int res;
++	
++	//printf ("dusp_receive(). Sending   packet size=%i)\n", (int)size);
++	res = sendto(s->rfd, buf, size, 0, (struct sockaddr *)&s->sender, sizeof (s->sender));
++	return res;
++}
++
++static int net_dudp_init(VLANState *vlan, const char *model, const char *name,
++						 int lport, char *rhost, int rport) {
++	DUDPState *s;
++	struct sockaddr_in receiver;
++	int res;
++	
++	s=qemu_mallocz(sizeof(DUDPState));
++	if (!s) {
++		return -1;
++	}
++
++	printf ("\nnet_dudp_init(%i,%s,%i)\n", lport, rhost, rport);
++	
++	s->rfd=socket(AF_INET,SOCK_DGRAM,IPPROTO_UDP);
++	
++	receiver.sin_family=AF_INET;
++	receiver.sin_addr.s_addr=INADDR_ANY;
++	receiver.sin_port=htons(lport);
++	res=bind(s->rfd, (struct sockaddr *)&receiver, sizeof (receiver));
++	
++	if (res == -1) {
++		fprintf (stderr,"bind error:%s\n",strerror(errno));
++		return res;
++	}
++
++	memset ((char*)&s->sender,sizeof(s->sender),0);
++	s->sender.sin_family=AF_INET;
++	s->sender.sin_port=htons(rport);
++	inet_aton(rhost,&s->sender.sin_addr);
++	
++	s->vc= qemu_new_vlan_client(vlan, model, name, NULL, dudp_receive, NULL, NULL, s);
++	
++	qemu_set_fd_handler(s->rfd, dudp_send, NULL, s);
++	snprintf(s->vc->info_str, sizeof(s->vc->info_str),"dcap: %i->%s:%i",lport,rhost,rport);
++	return 0;
++}
++
+ typedef struct DumpState {
+     VLANClientState *pcap_vc;
+     int fd;
+@@ -3085,7 +3152,29 @@ int net_client_init(Monitor *mon, const 
+ 	ret = net_vde_init(vlan, device, name, vde_sock, vde_port, vde_group, vde_mode);
+     } else
+ #endif
+-    if (!strcmp(device, "dump")) {
++    if (!strcmp(device, "udp")) {
++        int sport,dport;
++        char daddr[128];
++
++        vlan->nb_host_devs++;
++        if (get_param_value(daddr, sizeof(daddr), "dport",p)<=0) {
++            printf ("must specify destination address with daddr=\n");
++            exit(0);
++        }
++
++        dport=atoi(daddr);
++        if (get_param_value(daddr, sizeof(daddr), "sport",p)<=0) {
++            printf ("must specify destination address with saddr=\n");
++            exit(0);
++        }
++        sport=atoi(daddr);
++        if (get_param_value(daddr, sizeof(daddr), "daddr",p)<=0) {
++            printf ("must specify destination address with daddr=\n");
++            exit(0);
++        }
++
++        ret = net_dudp_init(vlan, device, name, sport, daddr, dport);
++    } else if (!strcmp(device, "dump")) {
+         int len = 65536;
+ 
+         if (get_param_value(buf, sizeof(buf), "len", p) > 0) {
+diff -uprB qemu-0.11.0/qemu-options.hx qemu-0.11.0.patched/qemu-options.hx
+--- qemu-0.11.0/qemu-options.hx
++++ qemu-0.11.0.patched/qemu-options.hx
+@@ -782,6 +782,8 @@ DEF("net", HAS_ARG, QEMU_OPTION_net,
+     "                connect the user mode network stack to VLAN 'n', configure its\n"
+     "                DHCP server and enabled optional services\n"
+ #endif
++    "-net udp[,vlan=n],sport=sport,dport=dport,daddr=host\n"
++    "                connect the vlan 'n' to a udp host (for dynamips/pemu/GNS3)\n"
+ #ifdef _WIN32
+     "-net tap[,vlan=n][,name=str],ifname=name\n"
+     "                connect the host TAP network interface to VLAN 'n'\n"
