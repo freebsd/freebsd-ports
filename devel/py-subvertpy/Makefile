@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	subvertpy
-PORTVERSION=	0.8.0
+PORTVERSION=	0.8.2
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/65469707/ \
+MASTER_SITES=	https://launchpadlibrarian.net/73700574/ \
 		http://www.c-s.li/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	c-s@c-s.li
 COMMENT=	Python bindings for subversion
 
-BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
-
 LICENSE=	GPLv2
+
+BUILD_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_PYTHON=	2.5+
