@@ -7,7 +7,7 @@
 
 PORTNAME=	openssh
 DISTVERSION=	5.2p1
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	1
 CATEGORIES=	security ipv6
 .if defined(OPENSSH_SNAPSHOT)
@@ -48,6 +48,7 @@ PRECIOUS=		ssh_config sshd_config ssh_host_key ssh_host_key.pub \
 			ssh_host_dsa_key.pub
 ETCOLD=			${PREFIX}/etc
 PORTABLE_SUFFIX=	-portable
+SSH_VERSION=		${DISTVERSION}
 
 SUDO?=		# empty
 MAKE_ENV+=	SUDO="${SUDO}"
@@ -145,6 +146,7 @@ CFLAGS+=		-DCHROOT
 
 .if defined(WITH_HPN)
 EXTRA_PATCHES+=	${FILESDIR}/openssh-5.2p1-hpn13v6.diff
+SSH_VERSION:=	${SSH_VERSION}-hpn13v6
 .endif
 
 # See http://dev.inversepath.com/trac/openssh-lpk
@@ -177,6 +179,9 @@ PATCH_SITES+=		http://www.roumenpetrov.info/openssh/x509-6.2/
 PATCHFILES+=		openssh-5.2p1+x509-6.2.diff.gz
 PLIST_SUB+=		X509=""
 .else
+EXTRA_PATCHES+=		${FILESDIR}/VersionAddendum-ssh.1.patch \
+			${FILESDIR}/VersionAddendum-ssh_config.5.patch \
+			${FILESDIR}/VersionAddendum-sshd_config.5.patch
 PLIST_SUB+=		X509="@comment "
 .endif
 
@@ -229,18 +234,11 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-ldes|-lcrypto|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${LOCALBASE}|' \
 		-e 's|%%RC_SCRIPT_NAME%%|${RC_SCRIPT_NAME}|' ${WRKSRC}/sshd.8
-	@${REINPLACE_CMD} -E -e 's|SSH_VERSION|TMP_SSH_VERSION|' \
-		-e 's|.*SSH_RELEASE.*||' ${WRKSRC}/version.h
-	@${ECHO_CMD} '#define FREEBSD_PORT_VERSION	" FreeBSD-${PKGNAME}"' >> \
-		${WRKSRC}/version.h
-	@${ECHO_CMD} '#define SSH_VERSION	TMP_SSH_VERSION SSH_PORTABLE FREEBSD_PORT_VERSION' >> \
-		${WRKSRC}/version.h
-	@${ECHO_CMD} '#define SSH_RELEASE	TMP_SSH_VERSION SSH_PORTABLE FREEBSD_PORT_VERSION' >> \
-		${WRKSRC}/version.h
-.if defined(WITH_HPN)
-	@${REINPLACE_CMD} -e 's|TMP_SSH_VERSION SSH_PORTABLE|TMP_SSH_VERSION SSH_PORTABLE SSH_HPN|' \
-		${WRKSRC}/version.h
-.endif
+.for f in ssh_config ssh_config.5 sshd_config sshd_config.5
+	@${REINPLACE_CMD} -e 's|%%ADDENDUM%%|${PKGNAME}|' ${WRKSRC}/${f}
+.endfor
+	@${REINPLACE_CMD} -e 's|%%SSH_VERSION%%|${SSH_VERSION}|' \
+		-e 's|%%ADDENDUM%%|${PKGNAME}|' ${WRKSRC}/version.h
 
 pre-su-install:
 	@${MKDIR} ${EMPTYDIR}
