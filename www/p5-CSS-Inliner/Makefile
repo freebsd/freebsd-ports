@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CSS-Inliner
-PORTVERSION=	3275
+PORTVERSION=	3295
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,20 +14,23 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	vivek@khera.org
 COMMENT=	Library for converting CSS blocks and files to inline styles
 
-RUN_DEPENDS=	p5-CSS-Simple>=3211:${PORTSDIR}/textproc/p5-CSS-Simple \
-		p5-HTML-Query>=0.07:${PORTSDIR}/www/p5-HTML-Query \
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
+RUN_DEPENDS=	p5-HTML-Query>=0.07:${PORTSDIR}/www/p5-HTML-Query \
 		p5-HTML-Tree>=3.23:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
-LICENSE_COMB=	dual
-LICENSE=	ART10 GPLv1
-
 PERL_CONFIGURE=	yes
 
-MAN3=		CSS::Inliner.3
+MAN3=		CSS::Inliner.3 CSS::Inliner::Parser.3
 PLIST_FILES=	%%SITE_PERL%%/CSS/Inliner.pm \
+		%%SITE_PERL%%/CSS/Inliner/Parser.pm \
 		%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Inliner/.packlist
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Inliner
+PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS/Inliner \
+		%%SITE_PERL%%/CSS/Inliner
+PLIST_DIRSTRY=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/CSS \
+		%%SITE_PERL%%/CSS
 
 .include <bsd.port.mk>
