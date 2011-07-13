@@ -72,7 +72,7 @@ close O;
 foreach my $p (sort keys %is_installed) {
   if (defined($is_installed{$p}) && !defined($check_installed{$p})) {
     print "The octave packaging system is probably corrupt, so it will be rebuilt.\n";
-    remove( \1, "%%PREFIX%%/libexec/octave/packages",
+    remove( \1, "%%PREFIX%%/lib/octave/packages",
                 "%%PREFIX%%/share/octave/octave_packages",
                 "%%PREFIX%%/share/octave/packages");
     %is_installed = ();
@@ -151,7 +151,7 @@ if ($nr_to_remove>0) {
 my @pkg = <%%PREFIX%%/share/octave/packages/*>;
 if ($#pkg==-1) {
   print "load-octave-pkg: there are currently no octave packages installed.\n";
-  remove( \1, "%%PREFIX%%/libexec/octave/packages",
+  remove( \1, "%%PREFIX%%/lib/octave/packages",
               "%%PREFIX%%/share/octave/octave_packages",
               "%%PREFIX%%/share/octave/packages");
 }
