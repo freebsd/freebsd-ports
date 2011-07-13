@@ -7,22 +7,35 @@
 
 PORTNAME=	sympa
 PORTVERSION=	6.1.5
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sympa.org/distribution/ \
 		http://www.sympa.org/distribution/old/
 
-MAINTAINER=	crees@freebsd.org
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	Sympa is an electronic mailing list manager
 
-BUILD_DEPENDS+=	${SITE_PERL}/Mail/Mailer.pm:${PORTSDIR}/mail/p5-Mail-Tools \
-		${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		${SITE_PERL}/Crypt/CipherSaber.pm:${PORTSDIR}/security/p5-Crypt-CipherSaber \
-		${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap \
-		${SITE_PERL}/${PERL_ARCH}/Locale/Msgcat.pm:${PORTSDIR}/misc/p5-Locale-Msgcat \
-		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-		${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
+BUILD_DEPENDS+=								\
+	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
+	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI	\
+	${SITE_PERL}/File/Copy/Recursive.pm:${PORTSDIR}/devel/p5-File-Copy-Recursive \
+	${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy	\
+	${SITE_PERL}/Locale/Messages.pm:${PORTSDIR}/devel/p5-Locale-libintl \
+	${SITE_PERL}/Term/ProgressBar.pm:${PORTSDIR}/devel/p5-Term-ProgressBar \
+	${SITE_PERL}/MIME/EncWords.pm:${PORTSDIR}/mail/p5-MIME-EncWords	\
+	${SITE_PERL}/MIME/Tools.pm:${PORTSDIR}/mail/p5-MIME-Tools	\
+	${SITE_PERL}/Mail/Mailer.pm:${PORTSDIR}/mail/p5-Mail-Tools	\
+	${SITE_PERL}/${PERL_ARCH}/Locale/Msgcat.pm:${PORTSDIR}/misc/p5-Locale-Msgcat \
+	${SITE_PERL}/Net/LDAP.pm:${PORTSDIR}/net/p5-perl-ldap		\
+	${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask	\
+	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
+	${SITE_PERL}/Crypt/CipherSaber.pm:${PORTSDIR}/security/p5-Crypt-CipherSaber \
+	${SITE_PERL}/HTML/Formatter.pm:${PORTSDIR}/textproc/p5-HTML-Format	\
+	${SITE_PERL}/mach/Unicode/LineBreak.pm:${PORTSDIR}/textproc/p5-Unicode-LineBreak \
+	${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
+	${SITE_PERL}/HTML/StripScripts/Parser.pm:${PORTSDIR}/www/p5-HTML-StripScripts-Parser \
+	${SITE_PERL}/HTML/Tree.pm:${PORTSDIR}/www/p5-HTML-Tree		\
+	${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
@@ -71,6 +84,10 @@ CONFLICTS=	sympa-5*
 
 DB_TYPE=
 
+.if ${DB_TYPE} == "mysql"
+USE_MYSQL=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_FASTCGI)
@@ -85,16 +102,20 @@ BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD
 .elif ${DB_TYPE} == "Sybase"
 BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Sybase.pm:${PORTSDIR}/databases/p5-DBD-Sybase
 .elif ${DB_TYPE} == "mysql"
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
+. if exists (${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}/Makefile)
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql${MYSQL_VER}
+. else
+IGNORE=	Your MySQL installation is at ${MYSQL_VER}, and there is no p5-DBD-mysql${MYSQL_VER} port
+. endif
 .endif
 
 pre-fetch:
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "      DB_TYPE=type                    Optional: mysql, Oracle, Pg or Sybase"
-	@${ECHO} "      WITH_FASTCGI                    Use FastCGI instead of plain CGI"
-	@${ECHO} ""
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "You may use the following build options:"
+	@${ECHO_MSG} ""
+	@${ECHO_MSG} "	DB_TYPE=type	Optional: mysql, Oracle, Pg or Sybase"
+	@${ECHO_MSG} "	WITH_FASTCGI	Use FastCGI instead of plain CGI (Apache only)"
+	@${ECHO_MSG} ""
 
 pre-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
@@ -110,7 +131,6 @@ post-patch:
 		${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e 's/\$$(DESTDIR)\$$(sampledir)/\$$(sampledir)/g' \
 		${WRKSRC}/doc/sample/Makefile.in
-#	@${FIND} ${WRKSRC} \( -name "*.orig" -or -name "*.bak" \) -delete
 
 post-install:
 	@PKG_PREFIX=${PREFIX} DB_TYPE=${DB_TYPE} WITH_FASTCGI=${WITH_FASTCGI} \
