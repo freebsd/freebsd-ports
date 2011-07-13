@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Mechanize-Pluggable
-PORTVERSION=	1.08
+PORTVERSION=	1.10
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,24 +14,27 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Custmomize WWW::Mechanize via plugins
 
-BUILD_DEPENDS=	${SITE_PERL}/HTML/Form.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/HTML/HeadParser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/${PERL_ARCH}/Data/Dump/Streamer.pm:${PORTSDIR}/devel/p5-Data-Dump-Streamer \
-		${SITE_PERL}/Class/Inspector.pm:${PORTSDIR}/devel/p5-Class-Inspector \
-		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
-RUN_DEPENDS=	${SITE_PERL}/HTML/Form.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/HTML/HeadParser.pm:${PORTSDIR}/www/p5-HTML-Parser \
-		${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/${PERL_ARCH}/Data/Dump/Streamer.pm:${PORTSDIR}/devel/p5-Data-Dump-Streamer \
-		${SITE_PERL}/Class/Inspector.pm:${PORTSDIR}/devel/p5-Class-Inspector \
-		${SITE_PERL}/WWW/Mechanize.pm:${PORTSDIR}/www/p5-WWW-Mechanize
-
-MAN3=	WWW::Mechanize::Pluggable.3 \
-	WWW::Mechanize::Pluggable::Design.3 \
-	WWW::Mechanize::Plugin::Cookbook.3 \
-	WWW::Mechanize::Plugin::HelloWorld.3
+RUN_DEPENDS=	p5-Data-Dump-Streamer>=0:${PORTSDIR}/devel/p5-Data-Dump-Streamer \
+		p5-HTML-Form>=1.038:${PORTSDIR}/www/p5-HTML-Form \
+		p5-HTML-Parser>=2.28:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-HTTP-Daemon>=0:${PORTSDIR}/www/p5-HTTP-Daemon \
+		p5-HTTP-Message>=1.3:${PORTSDIR}/www/p5-HTTP-Message \
+		p5-URI>=1.25:${PORTSDIR}/net/p5-URI \
+		p5-WWW-Mechanize>=1.66:${PORTSDIR}/www/p5-WWW-Mechanize \
+		p5-libwww>=6:${PORTSDIR}/www/p5-libwww
+TEST_DEPENDS=	p5-Test-Exception>=0.2:${PORTSDIR}/devel/p5-Test-Exception
 
 PERL_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+MAN3=		WWW::Mechanize::Pluggable.3 \
+		WWW::Mechanize::Pluggable::Design.3 \
+		WWW::Mechanize::Plugin::Cookbook.3 \
+		WWW::Mechanize::Plugin::HelloWorld.3
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500809
+RUN_DEPENDS+=	p5-Module-Pluggable>=0:${PORTSDIR}/devel/p5-Module-Pluggable
+.endif
+
+.include <bsd.port.post.mk>
