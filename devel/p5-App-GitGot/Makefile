@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	App-GitGot
-PORTVERSION=	1.0
+PORTVERSION=	1.01
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:GENEHACK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Tool to make it easier to manage multiple git repositories
 
-LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Config-INI>=0:${PORTSDIR}/devel/p5-Config-INI \
 		p5-Data-Dumper>=0:${PORTSDIR}/devel/p5-Data-Dumper \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
-		p5-Git-Wrapper>=0:${PORTSDIR}/devel/p5-Git-Wrapper \
+		p5-Git-Wrapper>=0.014:${PORTSDIR}/devel/p5-Git-Wrapper \
 		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-App-Cmd>=0:${PORTSDIR}/devel/p5-MooseX-App-Cmd \
 		p5-Net-GitHub>=0:${PORTSDIR}/net/p5-Net-GitHub \
