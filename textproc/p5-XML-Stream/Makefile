@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Stream
-DISTVERSION=	1.23_04
+DISTVERSION=	1.23_05
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DAPATRICK
@@ -16,16 +16,22 @@ MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XML::Stream provides you with access to XML Stream
 
 RUN_DEPENDS=	p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL
-BUILD_DEPENDS=	${RUN_DEPENDS}
-
 TEST_DEPENDS=	p5-Test-Simple>=0.92:${PORTSDIR}/devel/p5-Test-Simple
 
-USE_PERL5=	5.8.0+
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
-MAN3=		XML::Stream.3 XML::Stream::Namespace.3 XML::Stream::Node.3 \
-		XML::Stream::Parser.3 XML::Stream::Parser::DTD.3 \
-		XML::Stream::Tree.3 \
-		XML::Stream::IO::Select::Win32.3
+MAN3=		XML::Stream.3 \
+		XML::Stream::IO::Select::Win32.3 \
+		XML::Stream::Namespace.3 \
+		XML::Stream::Node.3 \
+		XML::Stream::Parser.3 \
+		XML::Stream::Parser::DTD.3 \
+		XML::Stream::Tree.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501200
+BUILD_DEPENDS+=	p5-Module-Build>=0.3603:${PORTSDIR}/devel/p5-Module-Build
+.endif
+
+.include <bsd.port.post.mk>
