@@ -73,6 +73,11 @@ FFLAGARCH=
 FLAGARCH=	-DLINUX64
 FFLAGARCH=	-fdefault-integer-8 -fdefault-real-8
 .endif
+
+.if ${ARCH} == "amd64"
+# python 2.7 causes process runaway
+PYTHON_VERSION=	2.6
+.endif
 # Avoid renaming .f into .F
 #F90FLAGS=	-x f77-cpp-input ${FFLAGS}
 
