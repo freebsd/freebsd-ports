@@ -71,6 +71,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_UPSTREAM_KEEPALIVE "3rd party upstream keepalive module" off \
 		HTTP_ZIP_MODULE		"3rd party http_zip module" off \
 		DEVEL_KIT_MODULE	"3rd party devel_kit module" off \
+		CHUNKIN_MODULE		"3rd party chunkin module" off \
 		LUA_MODULE		"3rd party lua module" off \
 		MEMC_MODULE		"3rd party memc (memcached) module" off \
 		PASSENGER_MODULE	"3rd party passenger module" off \
@@ -80,7 +81,8 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		SRCACHE_MODULE		"3rd party srcache module" off \
 		SUPERVISORD_MODULE	"3rd party supervisord module" off \
 		SYSLOG_SUPPORT		"3rd party syslog support" off \
-		UDPLOG_MODULE		"3rd party udplog (syslog) module" off
+		UDPLOG_MODULE		"3rd party udplog (syslog) module" off \
+		XSS_MODULE		"3rd party xss module" off
 
 WANT_GNOME=	yes
 MAKE_JOBS_SAFE=	yes
@@ -221,10 +223,12 @@ CONFIGURE_ARGS+=--with-http_dav_module
 .endif
 
 .if defined(WITH_HTTP_EVAL_MODULE)
-NGINX_EVAL_MODULE_VERSION=	1.0.1
-MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:eval
-DISTFILES+=	nginx_eval_module-${NGINX_EVAL_MODULE_VERSION}.tar.gz:eval
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_eval_module-${NGINX_EVAL_MODULE_VERSION}
+NGINX_EVAL_MODULE_VERSION=	1.0.3
+GIT_EVAL_MODULE_VERSION=	0-g125fa2e
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/vkholodkov/nginx-eval-module/tarball/${NGINX_EVAL_MODULE_VERSION}/:eval
+DISTFILES+=	vkholodkov-nginx-eval-module-${NGINX_EVAL_MODULE_VERSION}-${GIT_EVAL_MODULE_VERSION}.tar.gz:eval
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/vkholodkov-nginx-eval-module-${GIT_EVAL_MODULE_VERSION:S/^0-g//}
 .endif
 
 .if defined(WITH_HTTP_FANCYINDEX_MODULE)
@@ -394,6 +398,15 @@ DISTFILES+=	mod_zip-${NGINX_ZIP_MODULE_VERSION}.tar.gz:zip
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/mod_zip-${NGINX_ZIP_MODULE_VERSION}
 .endif
 
+.if defined(WITH_CHUNKIN_MODULE)
+NGINX_CHUNKIN_MODULE_VERSION=	0.22rc1
+GIT_CHUNKIN_MODULE_VERSION=	0-gb0a3ee3
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/agentzh/chunkin-nginx-module/tarball/v${NGINX_CHUNKIN_MODULE_VERSION}/:chunkin
+DISTFILES+=	agentzh-chunkin-nginx-module-v${NGINX_CHUNKIN_MODULE_VERSION}-${GIT_CHUNKIN_MODULE_VERSION}.tar.gz:chunkin
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-chunkin-nginx-module-${GIT_CHUNKIN_MODULE_VERSION:S/^0-g//}
+.endif
+
 .if defined(WITH_DEVEL_KIT_MODULE)
 NGINX_DEVEL_KIT_MODULE_VERSION=	0.2.17
 GIT_DEVEL_KIT_MODULE_VERSION=	0-gbc97eea
@@ -500,6 +513,15 @@ MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:udplog
 DISTFILES+=	nginx_udplog_module-${NGINX_UDPLOG_MODULE_VERSION}.tar.gz:udplog
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_udplog_module-${NGINX_UDPLOG_MODULE_VERSION}
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_http_udplog_module.c
+.endif
+
+.if defined(WITH_XSS_MODULE)
+NGINX_XSS_MODULE_VERSION=	0.03rc3
+GIT_XSS_MODULE_VERSION=	0-g8618dd3
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/agentzh/xss-nginx-module/tarball/v${NGINX_XSS_MODULE_VERSION}/:xss
+DISTFILES+=	agentzh-xss-nginx-module-v${NGINX_XSS_MODULE_VERSION}-${GIT_XSS_MODULE_VERSION}.tar.gz:xss
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/agentzh-xss-nginx-module-${GIT_XSS_MODULE_VERSION:S/^0-g//}
 .endif
 
 .if defined(WITH_WWW)
