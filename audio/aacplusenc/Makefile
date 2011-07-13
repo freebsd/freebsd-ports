@@ -16,6 +16,8 @@ COMMENT=	aacPlus v2 command-line encoder
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 
+BROKEN=		unfetchable
+
 RESTRICTED=	unclear legal status, probably need licenses from 3GPP, Via Licensing and Coding Technologies
 
 PLIST_FILES=	bin/aacplusenc
