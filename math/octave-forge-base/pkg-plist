@@ -1,9 +1,7 @@
 libexec/octave/load-octave-pkg
-@exec mkdir -p %D/libexec/octave/packages
-@exec mkdir -p %D/share/octave/packages
 @exec mkdir -p %D/share/octave/tarballs
 @exec %D/libexec/octave/load-octave-pkg
-@unexec rm -rf %D/libexec/octave/packages >/dev/null 2>&1 || true
+@unexec rm -rf %D/lib/octave/packages >/dev/null 2>&1 || true
 @unexec rm -f %D/share/octave/octave_packages >/dev/null 2>&1 || true
 @unexec rm -rf %D/share/octave/packages >/dev/null 2>&1 || true
 @dirrmtry share/octave/tarballs

@@ -7,6 +7,7 @@
 
 PORTNAME=	octave-forge-base
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -30,8 +31,6 @@ do-build:
 
 do-install:
 	${MKDIR} ${PREFIX}/share/octave/tarballs
-	${MKDIR} ${PREFIX}/share/octave/packages
-	${MKDIR} ${PREFIX}/libexec/octave/packages
 	${INSTALL_SCRIPT} ${WRKDIR}/load-octave-pkg ${PREFIX}/libexec/octave
 	${PREFIX}/libexec/octave/load-octave-pkg
 
