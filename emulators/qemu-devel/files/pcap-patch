@@ -85,18 +85,6 @@
  if test "$slirp" = "yes" ; then
    echo "CONFIG_SLIRP=y" >> $config_host_mak
    QEMU_INCLUDES="-I\$(SRC_PATH)/slirp $QEMU_INCLUDES"
---- net.h.orig	2010-01-29 14:36:00.000000000 -0500
-+++ net.h	2010-01-29 14:36:00.000000000 -0500
-@@ -33,7 +33,8 @@ typedef enum {
-     NET_CLIENT_TYPE_TAP,
-     NET_CLIENT_TYPE_SOCKET,
-     NET_CLIENT_TYPE_VDE,
--    NET_CLIENT_TYPE_DUMP
-+    NET_CLIENT_TYPE_DUMP,
-+    NET_CLIENT_TYPE_PCAP
- } net_client_type;
- 
- typedef int (NetCanReceive)(VLANClientState *);
 Index: net.c
 @@ -37,6 +37,11 @@
  #include "qemu_socket.h"

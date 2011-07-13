@@ -1,0 +1,2 @@
+/^    NET_CLIENT_TYPE_DUMP$/i\
+\    NET_CLIENT_TYPE_PCAP,
