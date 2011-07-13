@@ -7,7 +7,7 @@
 
 PORTNAME=	qemu
 PORTVERSION=	0.11.1
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	emulators
 MASTER_SITES=	${MASTER_SITE_SAVANNAH} \
 		http://bellard.org/qemu/
@@ -34,6 +34,7 @@ OPTIONS=	KQEMU "Build with (alpha!) accelerator module" Off \
 		GNUTLS "gnutls dependency (vnc encryption)" On \
 		CURL "libcurl dependency (remote images)" On \
 		PCAP "pcap dependency (networking with bpf)" On \
+		GNS3 "gns3 patches (udp, promiscuous multicast)" On \
 		CDROM_DMA "IDE CDROM DMA" On \
 		ADD_AUDIO "Emulate more audio hardware (experimental!)" Off \
 		ALL_TARGETS "Also build non-x86 targets" On
@@ -117,6 +118,9 @@ post-patch:
 .endif
 .if defined(WITH_PCAP)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/pcap-patch
+.endif
+.if defined(WITH_GNS3)
+	@cd ${WRKSRC} && ${PATCH} -p1 --quiet < ${FILESDIR}/gns3-patch
 .endif
 .if defined(WITHOUT_CDROM_DMA)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/cdrom-dma-patch
