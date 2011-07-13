@@ -9,11 +9,12 @@
 %%SITE_PERL%%/XML/Stream/XPath/Value.pm
 %%SITE_PERL%%/XML/Stream/XPath/Op.pm
 %%SITE_PERL%%/XML/Stream/XPath/Query.pm
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Stream
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Stream/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML/Stream
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/XML
-@dirrmtry %%SITE_PERL%%/XML/Stream/Parser
-@dirrmtry %%SITE_PERL%%/XML/Stream/XPath
-@dirrmtry %%SITE_PERL%%/XML/Stream/IO/Select
-@dirrmtry %%SITE_PERL%%/XML/Stream/IO
-@dirrmtry %%SITE_PERL%%/XML/Stream
+@dirrm %%SITE_PERL%%/XML/Stream/Parser
+@dirrm %%SITE_PERL%%/XML/Stream/XPath
+@dirrm %%SITE_PERL%%/XML/Stream/IO/Select
+@dirrm %%SITE_PERL%%/XML/Stream/IO
+@dirrm %%SITE_PERL%%/XML/Stream
 @dirrmtry %%SITE_PERL%%/XML
