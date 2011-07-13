@@ -16,6 +16,9 @@ COMMENT=	A set of PHP-scripts to manage MySQL over the web
 
 LICENSE=	GPLv2
 
+DEPRECATED=	No longer supported by the phpMyAdmin project
+EXPIRATION_DATE=	2012-01-12
+
 USE_BZIP2=	yes
 NO_BUILD=	yes
 .if !defined(WITHOUT_PHP_DEPENDS)
