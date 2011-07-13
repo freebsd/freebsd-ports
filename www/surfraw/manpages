@@ -1,10 +1,11 @@
 MLINKS= \
 elvi.1sr W.1 \
 elvi.1sr acronym.1sr \
+elvi.1sr ads.1sr \
 elvi.1sr alioth.1sr \
-elvi.1sr altavista.1sr \
 elvi.1sr amazon.1sr \
 elvi.1sr archpkg.1sr \
+elvi.1sr archwiki.1sr \
 elvi.1sr arxiv.1sr \
 elvi.1sr ask.1sr \
 elvi.1sr aur.1sr \
@@ -13,7 +14,8 @@ elvi.1sr bbcnews.1sr \
 elvi.1sr bing.1sr \
 elvi.1sr bookfinder.1sr \
 elvi.1sr bugmenot.1sr \
-elvi.1sr cddb.1sr \
+elvi.1sr bugzilla.1sr \
+elvi.1sr cablesearch.1sr \
 elvi.1sr cia.1sr \
 elvi.1sr cite.1sr \
 elvi.1sr cliki.1sr \
@@ -34,14 +36,13 @@ elvi.1sr debsec.1sr \
 elvi.1sr debvcsbrowse.1sr \
 elvi.1sr debwiki.1sr \
 elvi.1sr deja.1sr \
+elvi.1sr deli.1sr \
 elvi.1sr discogs.1sr \
 elvi.1sr dmoz.1sr \
 elvi.1sr duckduckgo.1sr \
 elvi.1sr ebay.1sr \
 elvi.1sr etym.1sr \
 elvi.1sr excite.1sr \
-elvi.1sr fast.1sr \
-elvi.1sr filesearching.1sr \
 elvi.1sr finkpkg.1sr \
 elvi.1sr foldoc.1sr \
 elvi.1sr freebsd.1sr \
@@ -69,10 +70,11 @@ elvi.1sr musicbrainz.1sr \
 elvi.1sr netbsd.1sr \
 elvi.1sr ntrs.1sr \
 elvi.1sr openbsd.1sr \
+elvi.1sr openports.1sr \
 elvi.1sr opensearch.1sr \
+elvi.1sr pasearch.1sr \
 elvi.1sr pgpkeys.1sr \
 elvi.1sr piratebay.1sr \
-elvi.1sr port.1sr \
 elvi.1sr pubmed.1sr \
 elvi.1sr rae.1sr \
 elvi.1sr rfc.1sr \
@@ -80,6 +82,8 @@ elvi.1sr rhyme.1sr \
 elvi.1sr rpmsearch.1sr \
 elvi.1sr scholar.1sr \
 elvi.1sr scicom.1sr \
+elvi.1sr scirus.1sr \
+elvi.1sr scitopia.1sr \
 elvi.1sr scpan.1sr \
 elvi.1sr scroogle.1sr \
 elvi.1sr slashdot.1sr \
@@ -87,6 +91,7 @@ elvi.1sr slinuxdoc.1sr \
 elvi.1sr sourceforge.1sr \
 elvi.1sr springer.1sr \
 elvi.1sr stockquote.1sr \
+elvi.1sr stack.1sr \
 elvi.1sr sunonesearch.1sr \
 elvi.1sr thesaurus.1sr \
 elvi.1sr translate.1sr \
@@ -100,7 +105,9 @@ elvi.1sr webster.1sr \
 elvi.1sr wetandwild.1sr \
 elvi.1sr wikipedia.1sr \
 elvi.1sr woffle.1sr \
+elvi.1sr worldwidescience.1sr \
 elvi.1sr yahoo.1sr \
+elvi.1sr yandex.1sr \
 elvi.1sr youtube.1sr \
 elvi.1sr yubnub.1sr \
 surfraw.1 sr.1
