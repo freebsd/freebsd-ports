@@ -143,7 +143,8 @@
 %%PHPBBDIR%%/docs/corners_right.gif
 %%PHPBBDIR%%/docs/corners_right.png
 %%PHPBBDIR%%/docs/hook_system.html
-%%PHPBBDIR%%/docs/nginx.conf.sample
+%%PHPBBDIR%%/docs/lighttpd.sample.conf
+%%PHPBBDIR%%/docs/nginx.sample.conf
 %%PHPBBDIR%%/docs/site_logo.gif
 %%PHPBBDIR%%/docs/stylesheet.css
 %%PHPBBDIR%%/download/file.php
@@ -223,6 +224,8 @@
 %%PHPBBDIR%%/includes/acm/acm_memcache.php
 %%PHPBBDIR%%/includes/acm/acm_memory.php
 %%PHPBBDIR%%/includes/acm/acm_null.php
+%%PHPBBDIR%%/includes/acm/acm_redis.php
+%%PHPBBDIR%%/includes/acm/acm_wincache.php
 %%PHPBBDIR%%/includes/acm/acm_xcache.php
 %%PHPBBDIR%%/includes/acp/acp_attachments.php
 %%PHPBBDIR%%/includes/acp/acp_ban.php
@@ -320,6 +323,7 @@
 %%PHPBBDIR%%/includes/diff/diff.php
 %%PHPBBDIR%%/includes/diff/engine.php
 %%PHPBBDIR%%/includes/diff/renderer.php
+%%PHPBBDIR%%/includes/error_collector.php
 %%PHPBBDIR%%/includes/functions.php
 %%PHPBBDIR%%/includes/functions_admin.php
 %%PHPBBDIR%%/includes/functions_compress.php
@@ -366,6 +370,7 @@
 %%PHPBBDIR%%/includes/search/index.htm
 %%PHPBBDIR%%/includes/search/search.php
 %%PHPBBDIR%%/includes/session.php
+%%PHPBBDIR%%/includes/startup.php
 %%PHPBBDIR%%/includes/template.php
 %%PHPBBDIR%%/includes/ucp/info/ucp_attachments.php
 %%PHPBBDIR%%/includes/ucp/info/ucp_groups.php
