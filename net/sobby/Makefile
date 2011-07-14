@@ -7,7 +7,7 @@
 
 PORTNAME=	sobby
 PORTVERSION=	0.4.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	http://releases.0x539.de/sobby/
 
@@ -18,7 +18,7 @@ LIB_DEPENDS=	sigc-2.0.0:${PORTSDIR}/devel/libsigc++20 \
 		obby-0.4.1:${PORTSDIR}/devel/obby \
 		net6-1.3.0:${PORTSDIR}/net/net6 \
 		xml++-2.6.2:${PORTSDIR}/textproc/libxml++26 \
-		glibmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
+		glibmm-2.4.1:${PORTSDIR}/devel/glibmm
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
