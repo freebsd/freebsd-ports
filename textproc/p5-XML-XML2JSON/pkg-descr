@@ -1,0 +1,20 @@
+XML::XML2JSON is a Perl module to convert XML to JSON (and JSON to XML) using
+the following rules from Google (http://code.google.com/apis/gdata/json.html):
+
+Basic:
+- The feed is represented as a JSON object; each nested element or attribute
+  is represented as a name/value property of the object.
+- Attributes are converted to String properties.
+- Child elements are converted to Object properties.
+- Elements that may appear more than once are converted to Array properties.
+- Text values of tags are converted to $t properties.
+
+Namespace:
+- If an element has a namespace alias, the alias and element are concatenated
+  using "$". For example, ns:element becomes ns$element.
+
+XML:
+- XML version and encoding attributes are converted to version and encoding
+  attributes of the root element, respectively.
+
+WWW: http://search.cpan.org/dist/XML-XML2JSON/
