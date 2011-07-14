@@ -12,7 +12,7 @@ MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Simple configuration manager for portshaker
 
 BUILD_DEPENDS=	portshaker:${PORTSDIR}/ports-mgmt/portshaker
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 MASTERDIR=	${.CURDIR}/../portshaker
 BUILD_WRKSRC=	${WRKSRC}/examples
