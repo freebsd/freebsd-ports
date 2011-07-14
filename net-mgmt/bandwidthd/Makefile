@@ -17,6 +17,8 @@ COMMENT=	Tracks bandwidth usage by IP address
 
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 
+USE_CSTD=	c89
+
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
 USE_ICONV=	YES
