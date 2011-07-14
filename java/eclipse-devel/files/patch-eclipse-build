@@ -107,7 +107,7 @@ $FreeBSD$
  			<arg value="-t${timestamp}" />
  			<arg value="-a${buildArch}" />
  			<arg value="-o${buildOs}" />
-@@ -958,14 +962,14 @@
+@@ -958,7 +962,7 @@
  	<target name="installIntoDestDir">
  		<mkdir dir="${installationDir}" />
                  <exec executable="rsync" failonerror="true">
@@ -116,17 +116,18 @@ $FreeBSD$
                         <arg value="--exclude=dropins" />
                         <arg value="${provisionDir}/" />
                         <arg value="${installationDir}/" />
-                 </exec>
+@@ -966,25 +970,21 @@
  
  		<!-- install desktop file -->
--		<copy file="eclipse.desktop" todir="${destDir}${prefix}/share/applications" />
-+		<copy file="eclipse.desktop" tofile="${destDir}${prefix}/share/applications/%%PORTNAME%%.desktop" />
- 		<!-- install Eclipse Java code formatter launcher -->
- 		<property name="efj" value="${destDir}${prefix}/bin/efj"/>
- 		<copy file="efj.sh" todir="${efj}" />
-@@ -975,16 +979,16 @@
+ 		<copy file="eclipse.desktop" todir="${destDir}${prefix}/share/applications" />
+-		<!-- install Eclipse Java code formatter launcher -->
+-		<property name="efj" value="${destDir}${prefix}/bin/efj"/>
+-		<copy file="efj.sh" todir="${efj}" />
+ 	    <fileset id="equinoxLauncher" dir="${installationDir}/plugins">
+ 	      <include name="org.eclipse.equinox.launcher_*.jar" />
+ 	    </fileset>
  	    <property name="launcherJar" refid="equinoxLauncher"/>
- 		<replace file="${efj}/efj.sh" token="@LAUNCHER@" value="${launcherJar}"/>
+-		<replace file="${efj}/efj.sh" token="@LAUNCHER@" value="${launcherJar}"/>
  		<!-- install icons -->
 -		<copy file="${buildDirectory}/plugins/org.eclipse.platform/eclipse.png" tofile="${destDir}${prefix}/share/icons/hicolor/16x16/apps/eclipse.png" />
 -		<copy file="${buildDirectory}/plugins/org.eclipse.platform/eclipse32.png" tofile="${destDir}${prefix}/share/icons/hicolor/32x32/apps/eclipse.png" />
