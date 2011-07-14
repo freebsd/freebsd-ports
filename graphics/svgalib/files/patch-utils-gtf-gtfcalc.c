@@ -1,5 +1,5 @@
---- utils/gtf/gtfcalc.c.orig	Tue Jan 23 12:48:50 2007
-+++ utils/gtf/gtfcalc.c	Tue Jan 23 12:49:18 2007
+--- utils/gtf/gtfcalc.c.orig	1999-07-17 14:13:02.000000000 +0200
++++ utils/gtf/gtfcalc.c	2011-07-01 01:48:14.000000000 +0200
 @@ -45,6 +45,7 @@
  #include <string.h>
  #include <ctype.h>
@@ -21,3 +21,12 @@
  
  static void GetInternalConstants(GTF_constants *c)
  /****************************************************************************
+@@ -329,7 +332,7 @@
+ 
+ #ifdef	TESTING_GTF
+ 
+-void main(int argc,char *argv[])
++int main(int argc,char *argv[])
+ {
+ 	FILE		*f;
+ 	double		xPixels,yPixels,freq;
