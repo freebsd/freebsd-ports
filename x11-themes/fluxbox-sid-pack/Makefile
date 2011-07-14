@@ -15,6 +15,9 @@ DISTNAME=	sidpack
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Sid themes pack for fluxbox
 
+DEPRECATED=	No longer maintained by upstream
+EXPIRATION_DATE=	2011-08-14
+
 RUN_DEPENDS=	fluxbox:${PORTSDIR}/x11-wm/fluxbox
 
 INSTALL_DIR=	${LOCALBASE}/share/fluxbox/
