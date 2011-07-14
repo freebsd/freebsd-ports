@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Geo-Distance
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	math perl5 geography
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Calculate Distances and Closest Locations
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
