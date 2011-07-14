@@ -1,5 +1,0 @@
-TV RSS Linux Client fetches RSS feed and lets user download or auto
-download torrents based on regular expressions and launch BitTorrent
-client of choice. Requires Gtk2-Perl and XML::RAI.
-
-WWW: http://tvtrss.sourceforge.net/

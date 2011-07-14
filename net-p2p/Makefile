@@ -115,7 +115,6 @@
     SUBDIR += transmission-qt4
     SUBDIR += transmisson-remote-gui
     SUBDIR += tribler
-    SUBDIR += tvrss
     SUBDIR += uhub
     SUBDIR += unworkable
     SUBDIR += valknut
