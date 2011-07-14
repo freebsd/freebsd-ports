@@ -15,6 +15,8 @@ COMMENT=	A profiling library/utilities for C/C++ programs
 
 USE_LDCONFIG=	yes
 
+USE_CSTD=	gnu89
+
 WRKSRC=		${WRKDIR}/${PORTNAME}-devel-${PORTVERSION}
 
 DOCS=		README.txt README1ST.txt CHANGES.txt \
