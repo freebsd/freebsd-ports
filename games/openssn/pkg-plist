@@ -1,7 +1,16 @@
 bin/openssn
 share/games/openssn/data/font.dat
+share/games/openssn/data/information.txt
 share/games/openssn/data/largefont.dat
+share/games/openssn/data/mission0.dat
+share/games/openssn/data/mission1.dat
+share/games/openssn/data/mission2.dat
+share/games/openssn/data/orders0.txt
+share/games/openssn/data/orders1.txt
+share/games/openssn/data/orders2.txt
 share/games/openssn/data/ships0.dat
+share/games/openssn/data/ships1.dat
+share/games/openssn/data/ships2.dat
 share/games/openssn/images/A13off.png
 share/games/openssn/images/A13on.png
 share/games/openssn/images/A23off.png
@@ -31,6 +40,7 @@ share/games/openssn/images/assigntrackeron.png
 share/games/openssn/images/blip.png
 share/games/openssn/images/centerbuttondown.png
 share/games/openssn/images/centerbuttonup.png
+share/games/openssn/images/cutarray.png
 share/games/openssn/images/depthdownoff.png
 share/games/openssn/images/depthdownon.png
 share/games/openssn/images/depthupoff.png
@@ -107,6 +117,9 @@ share/games/openssn/images/sonardown.png
 share/games/openssn/images/sonarup.png
 share/games/openssn/images/sphericaltowed.png
 share/games/openssn/images/styllus.png
+share/games/openssn/images/sub_menu.png
+share/games/openssn/images/sub_rising.png
+share/games/openssn/images/sub_surfacing.png
 share/games/openssn/images/sweep0.png
 share/games/openssn/images/sweep1.png
 share/games/openssn/images/sweep10.png
@@ -163,6 +176,14 @@ share/games/openssn/images/upbuttondown.png
 share/games/openssn/images/upbuttonup.png
 share/games/openssn/images/uppercrtoff.png
 share/games/openssn/images/uppercrton.png
+share/games/openssn/ships/class1.shp
+share/games/openssn/ships/class2.shp
+share/games/openssn/ships/class3.shp
+share/games/openssn/ships/class4.shp
+share/games/openssn/ships/class5.shp
+share/games/openssn/ships/class6.shp
+share/games/openssn/ships/information.txt
+@dirrm share/games/openssn/ships
 @dirrm share/games/openssn/images
 @dirrm share/games/openssn/data
 @dirrm share/games/openssn

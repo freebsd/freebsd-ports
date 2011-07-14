@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	openssn
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.6
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -16,6 +15,6 @@ COMMENT=	A modern submarine simulator
 
 USE_SDL=	sdl gfx image
 USE_XORG=	x11 xau xdmcp xext xmu xpm xxf86vm
-WRKSRC=		${WRKDIR}/${PORTNAME}/src
+WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .include <bsd.port.mk>
