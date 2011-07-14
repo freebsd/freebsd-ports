@@ -7,7 +7,7 @@
 
 PORTNAME=	vdr-plugin-reelchannelscan
 PORTVERSION=	0.6.1b1.7.15
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/nox \
 		http://ppa.launchpad.net/yavdr/stable-vdr/ubuntu/pool/main/v/vdr-plugin-reelchannelscan/
