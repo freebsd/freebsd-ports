@@ -7,6 +7,7 @@
 
 PORTNAME=	eclipse-devel
 PORTVERSION=	3.7.0
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.eclipse.org/technology/linuxtools/eclipse-build/3.7.x_Indigo/:1 \
 		http://download.eclipse.org/tools/orbit/downloads/drops/R20110523182458/repository/plugins/:2 \

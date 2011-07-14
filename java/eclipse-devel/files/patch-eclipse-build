@@ -107,7 +107,15 @@ $FreeBSD$
  			<arg value="-t${timestamp}" />
  			<arg value="-a${buildArch}" />
  			<arg value="-o${buildOs}" />
-@@ -965,7 +969,7 @@
+@@ -958,14 +962,14 @@
+ 	<target name="installIntoDestDir">
+ 		<mkdir dir="${installationDir}" />
+                 <exec executable="rsync" failonerror="true">
+-                       <arg value="-vrpl" />
++                       <arg value="-vrpL" />
+                        <arg value="--exclude=dropins" />
+                        <arg value="${provisionDir}/" />
+                        <arg value="${installationDir}/" />
                  </exec>
  
  		<!-- install desktop file -->
