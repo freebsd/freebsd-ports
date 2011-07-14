@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ctags
-PORTVERSION=	5.7j1
+PORTVERSION=	5.8j2
 CATEGORIES=	japanese devel
 MASTER_SITES=	http://hp.vector.co.jp/authors/VA025040/ctags/downloads/
 
