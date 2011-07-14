@@ -16,6 +16,10 @@ COMMENT=	A program fetching the covers of your digital music albums
 
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging
 
+DEPRECATED=	required Amazon Developer Tokens are no longer available
+EXPIRATION_DATE=	2011-08-14
+IGNORE=		${DEPRECATED}
+
 USE_XORG=	x11
 USE_GNOME=	pygtk2
 USE_PYTHON=	2.5+
