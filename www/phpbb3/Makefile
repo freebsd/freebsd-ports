@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	phpbb
-PORTVERSION=	3.0.8
+PORTVERSION=	3.0.9
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpbb.com/files/release/ \
 		http://d10xg45o6p6dbl.cloudfront.net/projects/p/phpbb/
@@ -20,7 +20,7 @@ CONFLICTS=	phpbb-tw-[0-9]* phpbb-devel-[0-9]* \
 
 USE_BZIP2=	yes
 
-# The phpBB2 port supports a number of variables that may be tweaked at build
+# The phpBB3 port supports a number of variables that may be tweaked at build
 # time.  Perform a "make options" to see more information on these variables.
 #
 WWWDOCROOT?=	www
