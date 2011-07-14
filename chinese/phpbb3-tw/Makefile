@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	phpbb
-PORTVERSION=	3.0.8
+PORTVERSION=	3.0.9
 CATEGORIES=	chinese www
 MASTER_SITES=	http://www.phpbb-tw.net/phpbb/download/ \
-	http://freebsd.ee.ccu.edu.tw/phpBB/
+		http://freebsd.ee.ccu.edu.tw/phpBB/
 PKGNAMESUFFIX=	-tw
 DISTNAME=	phpBB-${PORTVERSION}
 
@@ -22,7 +22,7 @@ LATEST_LINK=	${PKGNAMEPREFIX}${PORTNAME}3${PKGNAMESUFFIX}
 
 USE_ZIP=	yes
 
-# The phpBB2 port supports a number of variables that may be tweaked at build
+# The phpBB3 port supports a number of variables that may be tweaked at build
 # time.  Perform a "make options" to see more information on these variables.
 #
 WWWDOCROOT?=	www
