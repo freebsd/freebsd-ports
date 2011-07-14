@@ -34,13 +34,9 @@ CPPFLAGS+=	-I.
 SBCL_HOME=	${PREFIX}/lib/sbcl/
 
 OPTIONS=	SBCL "Use installed SBCL binary if available" off \
+		THREADS "Enable experimental threading support" off \
 		PDF "Build PDF documentation" on \
 		PS "Build PostScript documentation" off
-
-#
-# Broken
-#
-#		THREADS "Enable experimental threading support" off
 
 #LICENSE=	BSD
 #LICENSE_FILE=	${WRKSRC}/COPYING
@@ -91,10 +87,6 @@ SBCLPATCHLEVEL=	-r${PORTVERSION:E}
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_THREADS)
-IGNORE=	does not build with threads, disable threads for now
-.endif
 
 .if !defined(NOPORTDOCS) || !defined(WITHOUT_PDF) || !defined(WITHOUT_PS)
 BUILD_DEPENDS=	dot:${PORTSDIR}/graphics/graphviz
