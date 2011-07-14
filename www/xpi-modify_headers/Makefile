@@ -8,6 +8,7 @@
 PORTNAME=	modify_headers
 PORTVERSION=	0.7.0.2
 DISTVERSIONSUFFIX=	-fx+sm
+PORTREVISION=	1
 CATEGORIES=	www
 
 MAINTAINER=	kamikaze@bsdforen.de
@@ -64,6 +65,9 @@ XPI_DIRS=	chrome/content/bindings \
 		components \
 		defaults/preferences \
 		defaults
+
+post-patch:
+		@${FIND} ${WRKSRC} -name \*.orig -exec ${RM} \{} \;
 
 .include "../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
