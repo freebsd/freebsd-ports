@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	HTML-Format
-PORTVERSION=	2.07
+PORTVERSION=	2.08
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A module to format HTML to text or PS
 
-BUILD_DEPENDS=	${SITE_PERL}/HTML/Element.pm:${PORTSDIR}/www/p5-HTML-Tree \
-		${SITE_PERL}/Font/AFM.pm:${PORTSDIR}/x11-fonts/p5-Font-AFM \
-		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp
+BUILD_DEPENDS=	p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
+		p5-Font-AFM>=0:${PORTSDIR}/x11-fonts/p5-Font-AFM \
+		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	yes
