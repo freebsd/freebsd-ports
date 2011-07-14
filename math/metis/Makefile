@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	metis
-PORTVERSION=	4.0
-PORTREVISION=	3
+PORTVERSION=	4.0.3
 CATEGORIES=	math
 MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/	\
 		http://www-users.cs.umn.edu/~karypis/metis/metis/files/
