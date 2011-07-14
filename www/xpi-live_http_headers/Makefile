@@ -8,6 +8,7 @@
 PORTNAME=	live_http_headers
 PORTVERSION=	0.17
 DISTVERSIONSUFFIX=	-fx+sm
+PORTREVISION=	1
 CATEGORIES=	www
 PKGNAMEPREFIX=	xpi-
 
@@ -33,6 +34,11 @@ XPI_DIRS=	chrome/icons/default \
 		components \
 		defaults/preferences \
 		defaults
+
+USE_DOS2UNIX=	yes
+
+post-patch:
+	@${FIND} ${WRKSRC} -name \*.orig -exec ${RM} \{} \;
 
 .include "../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
