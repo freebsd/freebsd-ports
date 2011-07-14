@@ -8,7 +8,7 @@ PORTNAME=	Horde_Browser
 DISTVERSION=	1.0.2
 CATEGORIES=	www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Browser API
 
 USE_HORDE_RUN=	Horde_Exception Horde_Util

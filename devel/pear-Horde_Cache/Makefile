@@ -9,7 +9,7 @@ PORTVERSION=	1.0.4
 CATEGORIES=	devel www pear
 PKGNAMEPREFIX=	pear-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Caching API
 
 OPTIONS=	APC "Require APC PHP extension" Off \

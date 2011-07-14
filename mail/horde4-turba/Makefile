@@ -10,7 +10,7 @@ PORTVERSION=	3.0.4
 PKGNAMEPREFIX=	horde-
 CATEGORIES=	mail www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde web based address book
 
 LICENSE=	ASL

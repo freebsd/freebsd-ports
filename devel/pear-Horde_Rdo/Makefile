@@ -9,7 +9,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	devel www pear
 MASTER_SITES=	http://pear.horde.org/get/
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Rampage Data Objects
 
 USE_HORDE_RUN=	Horde_Db

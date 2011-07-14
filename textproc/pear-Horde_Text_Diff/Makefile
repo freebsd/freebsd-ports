@@ -8,7 +8,7 @@ PORTNAME=	Horde_Text_Diff
 PORTVERSION=	1.0.1
 CATEGORIES=	textproc www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde engine for performing and rendering text diffs
 
 USE_HORDE_RUN=	Horde_Exception Horde_Util

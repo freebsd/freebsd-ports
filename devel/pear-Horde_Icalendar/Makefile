@@ -8,7 +8,7 @@ PORTNAME=	Horde_Icalendar
 PORTVERSION=	1.0.1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde iCalendar API
 
 USE_HORDE_RUN=	Horde_Date Horde_Exception Horde_Mime Horde_Support \

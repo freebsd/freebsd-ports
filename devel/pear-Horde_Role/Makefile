@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0
 PORTREVISION=	1
 CATEGORIES=	devel www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	PEAR installer role for Horde components
 
 PATCH_WRKSRC=	${WRKDIR}

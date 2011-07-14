@@ -8,7 +8,7 @@ PORTNAME=	Horde_Xml_Wbxml
 PORTVERSION=	1.0.1
 CATEGORIES=	textproc www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde API for encoding and decoding WBXML documents
 
 USE_HORDE_RUN=	Horde_Util

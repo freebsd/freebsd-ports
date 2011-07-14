@@ -8,7 +8,7 @@ PORTNAME=	Horde_Imsp
 DISTVERSION=	1.0.2
 CATEGORIES=	databases www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde IMSP API
 
 USE_HORDE_RUN=	Horde_Translation

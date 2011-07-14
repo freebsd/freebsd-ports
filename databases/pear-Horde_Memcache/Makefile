@@ -8,7 +8,7 @@ PORTNAME=	Horde_Memcache
 PORTVERSION=	1.0.3
 CATEGORIES=	databases www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Memcache API
 
 USE_PHP=	memcache hash

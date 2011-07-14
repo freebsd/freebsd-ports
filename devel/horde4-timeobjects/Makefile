@@ -10,7 +10,7 @@ PORTVERSION=	1.0.1
 CATEGORIES=	devel www pear
 PKGNAMEPREFIX=	horde-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde timeobjects application
 
 CONFLICTS=	horde-3*

@@ -8,7 +8,7 @@ PORTNAME=	Horde_Kolab_Storage
 PORTVERSION=	1.0.0
 CATEGORIES=	mail www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde library for handling Kolab data stored on an IMAP server
 
 USE_HORDE_RUN=	Horde_Cache \

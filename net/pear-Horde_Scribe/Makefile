@@ -8,7 +8,7 @@ PORTNAME=	Horde_Scribe
 DISTVERSION=	1.0.0
 CATEGORIES=	net www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Scribe client
 
 .include <bsd.port.pre.mk>

@@ -10,7 +10,7 @@ PORTVERSION=	4.0.7
 PKGNAMEPREFIX=
 CATEGORIES=	www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Application Framework
 
 CONFLICTS=	horde-3*

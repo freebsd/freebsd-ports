@@ -8,7 +8,7 @@ PORTNAME=	Horde_Prefs
 PORTVERSION=	1.1.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Preferences API
 
 USE_HORDE_RUN=	Horde_Exception Horde_Mime Horde_Translation Horde_Util

@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	devel www pear
 PKGNAMEPREFIX=	horde-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde tagging application
 
 LATEST_LINK=	horde4-${PORTNAME}

@@ -9,7 +9,7 @@ DISTVERSION=	1.0.3
 CATEGORIES=	graphics www pear
 PKGNAMEPREFIX=	pear-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Image API
 
 OPTIONS=	GD "Depend on PHP gd extension" Off

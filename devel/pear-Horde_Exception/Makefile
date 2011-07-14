@@ -8,7 +8,7 @@ PORTNAME=	Horde_Exception
 DISTVERSION=	1.0.4
 CATEGORIES=	devel www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Exception Handler
 
 .include <bsd.port.pre.mk>

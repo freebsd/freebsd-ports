@@ -8,7 +8,7 @@ PORTNAME=	Horde_Feed
 DISTVERSION=	1.1.0
 CATEGORIES=	www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Feed libraries
 
 USE_PHP=	dom

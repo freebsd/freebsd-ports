@@ -9,7 +9,7 @@ PORTNAME=	Horde_Template
 DISTVERSION=	1.0.0
 CATEGORIES=	www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Template System
 
 .include <bsd.port.pre.mk>

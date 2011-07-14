@@ -8,7 +8,7 @@ PORTNAME=	Horde_Alarm
 DISTVERSION=	1.0.3
 CATEGORIES=	devel www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	PEAR Horde alarm libraries
 
 USE_HORDE_RUN=	Horde_Date Horde_Exception Horde_Translation

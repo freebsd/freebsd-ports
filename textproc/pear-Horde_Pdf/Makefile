@@ -9,7 +9,7 @@ PORTNAME=	Horde_Pdf
 PORTVERSION=	1.0.0
 CATEGORIES=	textproc www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde PDF library
 
 USE_HORDE_RUN=	Horde_Exception

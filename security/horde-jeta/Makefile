@@ -10,7 +10,7 @@ PORTVERSION=	1.0
 PORTREVISION=	7
 CATEGORIES=	security www
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde wrapper around various Java SSH applets
 
 USE_HORDE=	base pkg-message

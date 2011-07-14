@@ -8,7 +8,7 @@ PORTNAME=	Horde_Mail
 PORTVERSION=	1.0.0
 CATEGORIES=	mail www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Mail Library
 
 USE_HORDE_RUN=	Horde_Exception

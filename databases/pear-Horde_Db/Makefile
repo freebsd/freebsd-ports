@@ -9,7 +9,7 @@ PORTVERSION=	1.0.2
 CATEGORIES=	databases www pear
 PKGNAMEPREFIX=	pear-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Database Libraries
 
 OPTIONS=	MYSQL "Depend on mysql PHP extension" On \

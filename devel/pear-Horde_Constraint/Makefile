@@ -8,7 +8,7 @@ PORTNAME=	Horde_Constraint
 PORTVERSION=	1.0.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Constraint library
 
 .include <bsd.port.pre.mk>

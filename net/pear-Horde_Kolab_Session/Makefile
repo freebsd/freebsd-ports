@@ -8,7 +8,7 @@ PORTNAME=	Horde_Kolab_Session
 PORTVERSION=	1.0.0
 CATEGORIES=	net www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde library for managing an active Kolab session
 
 USE_HORDE_RUN=	Horde_Exception \

@@ -12,7 +12,7 @@ PKGNAMEPREFIX=	pear-
 
 OPTIONS=	GEOIP "Depend on geoip PHP extension" Off
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Native Language Support
 
 USE_HORDE_RUN=	Horde_Translation Horde_Util

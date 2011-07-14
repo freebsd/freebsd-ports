@@ -8,7 +8,7 @@ PORTNAME=	Horde_Perms
 PORTVERSION=	1.0.1
 CATEGORIES=	security www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Permissions System
 
 USE_HORDE_RUN=	Horde_Db Horde_Exception Horde_Group Horde_Util \

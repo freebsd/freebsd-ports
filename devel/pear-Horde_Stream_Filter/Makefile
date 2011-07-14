@@ -9,7 +9,7 @@ PORTNAME=	Horde_Stream_Filter
 DISTVERSION=	1.0.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Stream filters
 
 .include <bsd.port.pre.mk>

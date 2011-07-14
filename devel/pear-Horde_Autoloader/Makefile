@@ -9,7 +9,7 @@ PORTNAME=	Horde_Autoloader
 DISTVERSION=	1.0.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Autoloader
 
 .include <bsd.port.pre.mk>

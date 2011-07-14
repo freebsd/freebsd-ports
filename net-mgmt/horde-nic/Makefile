@@ -12,7 +12,7 @@ PORTREVISION=	7
 CATEGORIES=	net-mgmt
 MASTER_SITES=	CENKES http://freebsd.alaskaparadise.com/source/
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Network service monitor
 
 USE_HORDE=	base pkg-message

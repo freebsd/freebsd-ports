@@ -8,7 +8,7 @@ PORTNAME=	Horde_Auth
 PORTVERSION=	1.1.0
 CATEGORIES=	security www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Authentication API
 
 USE_HORDE_RUN=	Horde_Exception Horde_Util

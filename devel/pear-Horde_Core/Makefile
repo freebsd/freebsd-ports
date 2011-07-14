@@ -9,7 +9,7 @@ PORTVERSION=	1.3.0
 CATEGORIES=	devel www pear
 PKGNAMEPREFIX=	pear-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Core Framework libraries
 
 CONFLICTS=	horde-3*

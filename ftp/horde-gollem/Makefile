@@ -10,7 +10,7 @@ PORTVERSION=	1.1.2
 PORTREVISION=	1
 CATEGORIES=	ftp www
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Web-based File Manager
 
 USE_HORDE=	base

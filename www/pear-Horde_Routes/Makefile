@@ -9,7 +9,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	www pear
 MASTER_SITES=	http://pear.horde.org/get/
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Routes URL mapping system
 
 USE_HORDE_RUN=	Horde_Exception

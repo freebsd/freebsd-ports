@@ -12,7 +12,7 @@ PORTREVISION=	7
 CATEGORIES=	www
 MASTER_SITES=	CENKES
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Bookmark manager
 
 USE_HORDE=	base pkg-message
