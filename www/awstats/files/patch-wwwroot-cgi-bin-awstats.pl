@@ -1,6 +1,17 @@
---- wwwroot/cgi-bin/awstats.pl.orig	2009-10-10 08:36:38.000000000 -0400
-+++ wwwroot/cgi-bin/awstats.pl	2009-10-28 21:33:22.000000000 -0400
-@@ -3040,7 +3040,7 @@
+--- wwwroot/cgi-bin/awstats.pl.orig	2011-07-06 08:11:37.000000000 +0100
++++ wwwroot/cgi-bin/awstats.pl	2011-07-06 08:16:32.000000000 +0100
+@@ -1353,9 +1353,7 @@
+ #------------------------------------------------------------------------------
+ sub OptimizeArray {
+ 	my $array = shift;
+-	my @arrayunreg = map {
+-		if (/\(\?[-\w]*:(.*)\)/) { $1 }
+-	} @$array;
++	my @arrayunreg = map { UnCompileRegex($_) } @$array;
+ 	my $notcasesensitive = shift;
+ 	my $searchlist       = 0;
+ 	if ($Debug) {
+@@ -3049,7 +3047,7 @@
  # Debian package :                    		"/usr/share/awstats/plugins"
  	my @PossiblePluginsDir = (
  		"$DIR/plugins",
@@ -9,3 +20,12 @@
  		"/usr/share/awstats/plugins"
  	);
  	my %DirAddedInINC = ();
+@@ -7809,7 +7807,7 @@
+ # Return:		standardregex
+ #------------------------------------------------------------------------------
+ sub UnCompileRegex {
+-	shift =~ /\(\?[-\w]*:(.*)\)/;
++	shift =~ /\(\?[-^\w]*:(.*)\)/;
+ 	return $1;
+ }
+ 
