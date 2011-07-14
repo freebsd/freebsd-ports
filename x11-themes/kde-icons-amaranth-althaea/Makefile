@@ -13,6 +13,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/^.//}
 
 COMMENT=	KDE iconset like Crystal SVG, but simpler and with more shadows
 
+BROKEN=	Does not fetch
 WRKSRC=		"${WRKDIR}/Altheae"
 
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"

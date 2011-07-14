@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-default-${PORTVERSION}
 
 COMMENT=	KDE Realistic complete photo-based iconset
 
+BROKEN=	Does not fetch
+
 WRKSRC=		"${WRKDIR}/Realistic"
 
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
