@@ -14,19 +14,18 @@ MASTER_SITES=	SF
 MAINTAINER=	mark@foster.cc
 COMMENT=	Multithread daapd yet another Server for Apple iTunes
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 DEPRECATED=	Use audio/firefly instead
 
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
+LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		id3tag.0:${PORTSDIR}/audio/libid3tag
 
 CONFLICTS=	firefly-[0-9]*
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS+="${PTHREAD_CFLAGS}" \
-		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--with-id3tag=${PREFIX} \
+CONFIGURE_ARGS=	--with-id3tag=${LOCALBASE} \
 		--with-gdbm-includes=${LOCALBASE}/include
 
 USE_ICONV=	yes
@@ -76,7 +75,7 @@ post-install:
 	@${CHOWN} ${DAAPD_USER}:${DAAPD_GROUP} ${DATADIR}
 	@${ECHO_MSG}
 	@${ECHO_MSG} "This port installs a sample configuration file in"
-	@${ECHO_MSG} "${LOCALBASE}/etc/mt-daapd.conf.sample"
+	@${ECHO_MSG} "${PREFIX}/etc/mt-daapd.conf.sample"
 	@${ECHO_MSG} "You probably should move/copy this file to mt-daapd.conf"
 	@${ECHO_MSG} "and customize to fit your needs."
 	@${ECHO_MSG}
