@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpodder
-PORTVERSION=	2.15
+PORTVERSION=	2.16
 CATEGORIES=	multimedia
 MASTER_SITES=	BERLIOS \
 		http://thp.io/2010/mygpoclient/:mygpoclient \
@@ -19,6 +19,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	A GTK2 podcast aggregrator written in Python
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pysqlite>=2.3:${PORTSDIR}/databases/py-pysqlite23 \
 		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}dbus>=0:${PORTSDIR}/devel/py-dbus \
@@ -28,9 +31,6 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pysqlite>=2.3:${PORTSDIR}/databases/py-pysql
 		gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
 		${PYTHON_PKGNAMEPREFIX}feedparser>=0:${PORTSDIR}/textproc/py-feedparser \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=0:${PORTSDIR}/devel/py-simplejson
-
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	COVERART "Cover Art syncing support" off \
 		IPOD "iPod synchronization support" off \
