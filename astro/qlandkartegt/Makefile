@@ -7,6 +7,7 @@
 
 PORTNAME=	qlandkartegt
 PORTVERSION=	1.1.1
+PORTREVISION=	1
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/QLandkarteGT%20${PORTVERSION}
 
@@ -14,7 +15,8 @@ MAINTAINER=	i@levsha.me
 COMMENT=	The ultimate outdoor aficionado's tool
 
 LIB_DEPENDS=	gdal:${PORTSDIR}/graphics/gdal \
-		proj.6:${PORTSDIR}/graphics/proj
+		proj.6:${PORTSDIR}/graphics/proj \
+		gps.20:${PORTSDIR}/astro/gpsd
 
 LICENSE=	GPLv2
 
