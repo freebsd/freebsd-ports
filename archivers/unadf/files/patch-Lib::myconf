@@ -1,7 +1,11 @@
---- Lib/myconf	Sat Aug 19 03:08:08 2000
-+++ Lib/myconf.new	Mon Jun 23 01:32:48 2003
-@@ -31,17 +31,17 @@
- gcc myctest.c -o myctest
+--- Lib/myconf.orig	2000-08-19 03:08:08.000000000 +0200
++++ Lib/myconf	2011-07-05 11:45:16.000000000 +0200
+@@ -28,20 +28,20 @@
+ 
+ END
+ 
+-gcc myctest.c -o myctest
++$CC myctest.c -o myctest
  rm myctest.c
  
 -if [ `myctest |cut -d' ' -f 1` != 4 ]
@@ -22,4 +26,3 @@
      then 
      echo "#ifndef LITT_ENDIAN" >defendian.h
      echo "#define LITT_ENDIAN 1" >>defendian.h 
-
