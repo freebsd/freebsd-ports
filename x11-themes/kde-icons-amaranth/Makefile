@@ -13,6 +13,8 @@ DISTNAME=	${PORTNAME}-default-${PORTVERSION:C/^.//}
 
 COMMENT=	KDE smooth iconset
 
+BROKEN=	Does not fetch
+
 WRKSRC=		"${WRKDIR}/Amaranth"
 
 .include "${.CURDIR}/../kde-icons-noia/Makefile.icons"
