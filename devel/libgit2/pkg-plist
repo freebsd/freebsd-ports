@@ -1,4 +1,9 @@
 include/git2.h
+include/git2/branch.h
+include/git2/net.h
+include/git2/reflog.h
+include/git2/refspec.h
+include/git2/remote.h
 include/git2/config.h
 include/git2/oid.h
 include/git2/odb.h
@@ -7,7 +12,9 @@ include/git2/commit.h
 include/git2/index.h
 include/git2/odb_backend.h
 include/git2/repository.h
+include/git2/status.h
 include/git2/thread-utils.h
+include/git2/transport.h
 include/git2/types.h
 include/git2/object.h
 include/git2/tag.h
@@ -18,7 +25,7 @@ include/git2/common.h
 include/git2/zlib.h
 include/git2/errors.h
 include/git2/blob.h
-lib/libgit2.so.0.13.0
+lib/libgit2.so.0.14.0
 lib/libgit2.so.0
 lib/libgit2.so
 @dirrm include/git2
