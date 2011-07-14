@@ -9,7 +9,7 @@ PORTNAME=	horde
 PORTVERSION=	20110304
 CATEGORIES=	devel www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	PEAR channel ${PEAR_CHANNEL_HOST}
 
 PEAR_CHANNEL_HOST=	pear.horde.org

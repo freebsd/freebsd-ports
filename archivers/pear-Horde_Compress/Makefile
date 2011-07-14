@@ -9,7 +9,7 @@ PORTVERSION=	1.0.3
 CATEGORIES=	archivers www pear
 PKGNAMEPREFIX=	pear-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Compression API
 
 OPTIONS=	ZLIB "Depend on PHP zlib extension" On

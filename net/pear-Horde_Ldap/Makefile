@@ -8,7 +8,7 @@ PORTNAME=	Horde_Ldap
 DISTVERSION=	1.1.2
 CATEGORIES=	net www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde LDAP libraries
 
 USE_PHP=	ldap

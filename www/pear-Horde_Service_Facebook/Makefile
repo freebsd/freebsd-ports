@@ -8,7 +8,7 @@ PORTNAME=	Horde_Service_Facebook
 DISTVERSION=	1.0.2
 CATEGORIES=	www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Facebook client
 
 USE_PHP=	json simplexml

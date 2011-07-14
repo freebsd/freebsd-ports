@@ -12,7 +12,7 @@ PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	deskutils www
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Calendar application
 
 RUN_DEPENDS=	${LOCALBASE}/share/pear/Date/Holidays.php:${PORTSDIR}/devel/pear-Date_Holidays

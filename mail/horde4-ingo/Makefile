@@ -10,7 +10,7 @@ PORTVERSION=	2.0.3
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	horde-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde email filter rules manager
 
 LICENSE=	ASL

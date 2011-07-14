@@ -8,7 +8,7 @@ PORTNAME=	Horde_Util
 DISTVERSION=	1.0.4
 CATEGORIES=	devel www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Utility Libraries
 
 USE_PHP=	dom

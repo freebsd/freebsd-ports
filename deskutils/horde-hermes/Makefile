@@ -1,6 +1,6 @@
 # Ports collection makefile for:  horde-hermes
 # Date created:			  Jul 20, 2008
-# Whom:				  Beech Rintoul <beech@FreeBSD.org
+# Whom:				  Beech Rintoul <horde@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.0.1
 PORTREVISION=	2
 CATEGORIES=	deskutils www
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Time tracking application
 
 USE_HORDE=	base pkg-message

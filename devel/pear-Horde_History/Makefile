@@ -9,7 +9,7 @@ PORTNAME=	Horde_History
 PORTVERSION=	1.0.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde API for tracking the history of an object
 
 USE_HORDE_RUN=	Horde_Db Horde_Exception

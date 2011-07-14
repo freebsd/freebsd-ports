@@ -8,7 +8,7 @@ PORTNAME=	Horde_Controller
 PORTVERSION=	1.0.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Controller libraries
 
 USE_HORDE_RUN=	Horde_Exception Horde_Injector Horde_Log Horde_Support \

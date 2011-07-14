@@ -9,7 +9,7 @@ PORTNAME=	Horde_Secret
 PORTVERSION=	1.0.0
 CATEGORIES=	security www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Secret Encryption API
 
 RUN_DEPENDS=	${PEARDIR}/Crypt/Blowfish.php:${PORTSDIR}/security/pear-Crypt_Blowfish

@@ -8,7 +8,7 @@ PORTNAME=	Horde_Url
 DISTVERSION=	1.0.0
 CATEGORIES=	net www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde URL class
 
 USE_HORDE_RUN=	Horde_Exception

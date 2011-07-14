@@ -8,7 +8,7 @@ PORTNAME=	Horde_Mime
 PORTVERSION=	1.0.4
 CATEGORIES=	mail www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde MIME Library
 
 USE_HORDE_RUN=	Horde_Exception Horde_Mail Horde_Stream_Filter Horde_Support \

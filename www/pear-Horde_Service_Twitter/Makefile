@@ -8,7 +8,7 @@ PORTNAME=	Horde_Service_Twitter
 DISTVERSION=	1.1.0
 CATEGORIES=	www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Twitter client
 
 USE_HORDE_RUN=	Horde_Controller Horde_Exception Horde_Http \

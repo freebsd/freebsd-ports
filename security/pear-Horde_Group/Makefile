@@ -8,7 +8,7 @@ PORTNAME=	Horde_Group
 PORTVERSION=	1.0.1
 CATEGORIES=	security www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde User Groups System
 
 USE_HORDE_RUN=	Horde_Exception Horde_Util

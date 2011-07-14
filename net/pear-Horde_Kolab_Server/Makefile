@@ -10,7 +10,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	net www pear
 PKGNAMEPREFIX=	pear-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde library for manipulating the Kolab user database
 
 OPTIONS=	LDAP "Enable LDAP support" On

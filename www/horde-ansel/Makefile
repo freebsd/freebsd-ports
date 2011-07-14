@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	www
 DIST_SUBDIR=	horde
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Image gallery
 
 USE_HORDE=	base pkg-message

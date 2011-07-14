@@ -8,7 +8,7 @@ PORTNAME=	Horde_Rpc
 DISTVERSION=	1.0.1
 CATEGORIES=	net www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde RPC API
 
 USE_HORDE_RUN=	Horde_ActiveSync Horde_Core Horde_Exception Horde_Lock \

@@ -8,7 +8,7 @@ PORTNAME=	Horde_Xml_Element
 PORTVERSION=	1.0.0
 CATEGORIES=	textproc www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Xml Element object
 
 USE_PHP=	dom

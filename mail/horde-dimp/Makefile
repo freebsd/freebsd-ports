@@ -10,7 +10,7 @@ PORTVERSION=	1.1.6
 PORTREVISION=	2
 CATEGORIES=	mail www
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Dynamic webmail system
 
 RUN_DEPENDS+=	${PEARDIR}/Auth/SASL.php:${PORTSDIR}/security/pear-Auth_SASL \

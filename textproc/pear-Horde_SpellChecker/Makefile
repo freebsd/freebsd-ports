@@ -8,7 +8,7 @@ PORTNAME=	Horde_SpellChecker
 PORTVERSION=	1.0.0
 CATEGORIES=	textproc www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Spellcheck API
 
 USE_HORDE_RUN=	Horde_Exception Horde_Util

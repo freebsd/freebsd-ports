@@ -8,7 +8,7 @@ PORTNAME=	Horde_LoginTasks
 PORTVERSION=	1.0.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Login Tasks System
 
 USE_HORDE_RUN=	Horde_Translation

@@ -10,7 +10,7 @@ PORTVERSION=	3.0.2
 CATEGORIES=	deskutils www pear
 PKGNAMEPREFIX=	horde-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde web based task list manager
 
 LICENSE=	GPLv2

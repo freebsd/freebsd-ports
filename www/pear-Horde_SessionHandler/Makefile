@@ -8,7 +8,7 @@ PORTNAME=	Horde_SessionHandler
 DISTVERSION=	1.0.0
 CATEGORIES=	www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Session Handler API
 
 USE_HORDE_RUN=	Horde_Exception Horde_Util

@@ -8,7 +8,7 @@ PORTNAME=	Horde_Token
 PORTVERSION=	1.0.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Token API
 
 USE_HORDE_RUN=	Horde_Exception Horde_Translation Horde_Url Horde_Util

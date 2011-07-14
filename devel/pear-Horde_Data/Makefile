@@ -8,7 +8,7 @@ PORTNAME=	Horde_Data
 PORTVERSION=	1.0.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Data API
 
 USE_HORDE_RUN=	Horde_Browser Horde_Exception Horde_Icalendar Horde_Mime \

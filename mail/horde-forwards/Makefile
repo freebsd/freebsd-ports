@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	mail www
 DIST_SUBDIR=	horde
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	E-mail forward
 
 #-----------------------------------------------------------------------

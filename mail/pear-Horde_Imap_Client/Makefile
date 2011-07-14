@@ -9,7 +9,7 @@ PORTVERSION=	1.0.9
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	pear-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde IMAP abstraction interface
 
 OPTIONS=	IMAP "Require PHP imap extension" On \

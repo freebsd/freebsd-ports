@@ -10,7 +10,7 @@ PORTVERSION=	5.0.8
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	horde-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde web based webmail system
 
 LICENSE=	GPLv2

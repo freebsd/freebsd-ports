@@ -8,7 +8,7 @@ PORTNAME=	Horde_SyncMl
 DISTVERSION=	1.0.3
 CATEGORIES=	comms www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde API for processing SyncML requests
 
 USE_HORDE_RUN=	Horde_Date Horde_Icalendar Horde_Log Horde_Support \

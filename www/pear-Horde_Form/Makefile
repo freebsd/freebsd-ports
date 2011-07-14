@@ -8,7 +8,7 @@ PORTNAME=	Horde_Form
 DISTVERSION=	1.0.3
 CATEGORIES=	www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Form API
 
 USE_HORDE_RUN=	Horde_Core Horde_Date Horde_Exception Horde_Mime \

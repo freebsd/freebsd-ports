@@ -9,7 +9,7 @@ PORTVERSION=	1.0.0
 CATEGORIES=	sysutils www pear
 PKGNAMEPREFIX=	pear-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Logging library
 
 OPTIONS=	SCRIBE "Enable scribe support" Off

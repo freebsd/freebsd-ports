@@ -1,6 +1,6 @@
 # Ports collection makefile for:  horde-whups
 # Date created:			  Feb 28, 2008
-# Whom:				  Beech Rintoul <beech@FreeBSD.org
+# Whom:				  Beech Rintoul <horde@FreeBSD.org
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	1.0.1
 PORTREVISION=	4
 CATEGORIES=	devel www
 
-MAINTAINER=	beech@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Bug tracking/ticketing system
 
 USE_HORDE=	base pkg-message

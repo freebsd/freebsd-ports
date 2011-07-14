@@ -9,7 +9,7 @@ PORTVERSION=	1.0.3
 CATEGORIES=	sysutils www pear
 PKGNAMEPREFIX=	pear-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Virtual File System API
 
 OPTIONS=	FTP "Depend on FTP PHP extension" Off

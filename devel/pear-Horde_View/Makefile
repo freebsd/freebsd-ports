@@ -8,7 +8,7 @@ PORTNAME=	Horde_View
 PORTVERSION=	1.0.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde View API
 
 USE_HORDE_RUN=	Horde_Exception Horde_Support Horde_Util

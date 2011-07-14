@@ -9,7 +9,7 @@ PORTNAME=	Horde_Date
 PORTVERSION=	1.0.3
 CATEGORIES=	devel www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Date package
 
 USE_HORDE_RUN=	Horde_Exception Horde_Nls Horde_Translation

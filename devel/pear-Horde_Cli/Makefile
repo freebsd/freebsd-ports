@@ -8,7 +8,7 @@ PORTNAME=	Horde_Cli
 PORTVERSION=	1.0.2
 CATEGORIES=	devel www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Command Line Interface API
 
 USE_HORDE_RUN=	Horde_Support Horde_Translation

@@ -10,7 +10,7 @@ PORTVERSION=	1.0.3
 CATEGORIES=	security www pear
 PKGNAMEPREFIX=	pear-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Cryptography API
 
 OPTIONS=	BCMATH "Depend on bcmath PHP extension" Off

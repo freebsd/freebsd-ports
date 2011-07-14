@@ -8,7 +8,7 @@ PORTNAME=	Horde_Tree
 PORTVERSION=	1.0.0
 CATEGORIES=	devel www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Tree API
 
 USE_HORDE_RUN=	Horde_Exception Horde_Url Horde_Util

@@ -8,7 +8,7 @@ PORTNAME=	Horde_Kolab_Format
 PORTVERSION=	1.0.0
 CATEGORIES=	textproc www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde library for reading/writing Kolab data formats
 
 USE_PHP=	dom

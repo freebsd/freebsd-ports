@@ -8,7 +8,7 @@ PORTNAME=	Horde_Mime_Viewer
 PORTVERSION=	1.0.4
 CATEGORIES=	mail www pear
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde MIME Viewer Library
 
 CONFLICTS=	horde-3*
