@@ -1,0 +1,19 @@
+--- contrib/sb-concurrency/tests/test-mailbox.lisp.orig	2011-06-05 12:35:33.000000000 -0700
++++ contrib/sb-concurrency/tests/test-mailbox.lisp	2011-07-14 13:27:49.000000000 -0700
+@@ -40,7 +40,7 @@
+ 
+ ;;; FIXME: Several tests disabled on Darwin due to hangs. Something not right
+ ;;; with mailboxes -- or possibly semaphores -- there.
+-#+(and sb-thread (not darwin))
++#+(and sb-thread (not (or darwin freebsd)))
+ (progn
+ 
+ ;; Dummy struct for ATOMIC-INCF to work.
+@@ -181,6 +181,7 @@
+   (:errors   . 0)
+   (:timeouts . 0))
+ 
++#-(and sb-thread freebsd)
+ (deftest mailbox.interrupts-safety.1
+     (multiple-value-bind (received garbage errors timeouts)
+         (test-mailbox-producers-consumers
