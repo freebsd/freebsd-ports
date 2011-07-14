@@ -14,6 +14,8 @@ MASTER_SITES=	http://cs-people.bu.edu/dbera/projects/mget/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Multithreaded commandline web-download manager
 
+USE_CSTD=	gnu89
+
 CFLAGS+=	-DHAS_HERROR -DHAVE_GETOPT_LONG -DHAVE_INET_NTOP -DHAVE_IPV6 \
 		${PTHREAD_CFLAGS}
 LDFLAGS+=	${PTHREAD_LIBS}
