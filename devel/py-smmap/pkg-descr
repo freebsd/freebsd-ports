@@ -1,0 +1,5 @@
+smmap is a pure python implementation of a sliding memory map to help unifying
+memory mapped access on 32 and 64 bit systems and to help managing resources
+more efficiently.
+
+WWW:	https://github.com/Byron/smmap
