@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	busybox
-PORTVERSION=	1.18.4
+PORTVERSION=	1.18.5
 CATEGORIES=	sysutils misc shells
-MASTER_SITES=	http://www.busybox.net/downloads/ \
-		${MASTER_SITE_GENTOO}
-MASTER_SITE_SUBDIR=	distfiles
+MASTER_SITES=	http://www.busybox.net/downloads/
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Busybox for FreeBSD
