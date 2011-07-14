@@ -11177,6 +11177,7 @@ p5-Cache-Memcached-Fast         ports/databases/p5-Cache-Memcached-Fast
 p5-Cache-Memcached-Managed      ports/databases/p5-Cache-Memcached-Managed
 p5-Cache-Memcached-Tie          ports/devel/p5-Cache-Memcached-Tie
 p5-Cache-Memcached-XS           ports/databases/p5-Cache-Memcached-XS
+p5-Cache-Memcached-libmemcached  ports/databases/p5-Cache-Memcached-libmemcached
 p5-Cache-Mmap                   ports/devel/p5-Cache-Mmap
 p5-Cache-Simple-TimedExpiry     ports/devel/p5-Cache-Simple-TimedExpiry
 p5-Cairo                        ports/graphics/p5-Cairo
@@ -15321,6 +15322,7 @@ p5-cache-cache                  ports/devel/p5-Cache-Cache
 p5-cache-fastmmap               ports/devel/p5-Cache-FastMmap
 p5-cache-memcached              ports/databases/p5-Cache-Memcached
 p5-cache-memcached-fast         ports/databases/p5-Cache-Memcached-Fast
+p5-cache-memcached-libmemcached  ports/databases/p5-Cache-Memcached-libmemcached
 p5-cache-memcached-managed      ports/databases/p5-Cache-Memcached-Managed
 p5-cache-memcached-tie          ports/devel/p5-Cache-Memcached-Tie
 p5-cache-memcached-xs           ports/databases/p5-Cache-Memcached-XS
