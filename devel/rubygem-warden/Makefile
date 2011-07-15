@@ -9,7 +9,7 @@ PORTVERSION=	1.0.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Rack middleware that provides authentication for rack applications
 
 RUN_DEPENDS=	rubygem-rack>=1.0:${PORTSDIR}/www/rubygem-rack

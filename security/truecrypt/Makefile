@@ -16,7 +16,7 @@ DISTFILES=	${TC_SRCFILE}:tc \
 		pkcs11t.h:rsa
 EXTRACT_ONLY=	${TC_SRCFILE} wxWidgets-${WX_VER}.tar.gz
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Free open-source disk encryption software
 
 BUILD_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod \

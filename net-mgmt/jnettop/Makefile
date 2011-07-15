@@ -10,7 +10,7 @@ PORTVERSION=	0.13.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.13
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Traffic visualizer, similiar to nettop
 
 MAN8=		jnettop.8

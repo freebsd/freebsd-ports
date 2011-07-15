@@ -12,7 +12,7 @@ CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.pmacct.net/ \
 		http://people.rit.edu/rpsfa/
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Accounting and aggregation tool for IPv4 and IPv6 traffic
 
 USE_RC_SUBR=	pmacctd

@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	isc-
 PKGNAMESUFFIX=	42-${SUBSYS}
 DISTNAME=	${PORTNAME}-${DISTVERSION}-${PATCHLEVEL}
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT?=	The ISC Dynamic Host Configuration Protocol server
 
 USE_GMAKE=	yes

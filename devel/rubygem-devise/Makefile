@@ -9,7 +9,7 @@ PORTVERSION=	1.3.4
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Flexible authentication solution for Rails with Warden
 
 RUN_DEPENDS=	rubygem-bcrypt-ruby>=2.1.2:${PORTSDIR}/security/rubygem-bcrypt-ruby \

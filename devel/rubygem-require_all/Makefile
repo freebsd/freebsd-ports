@@ -9,7 +9,7 @@ PORTVERSION=	1.2.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	A wonderfully simple way to load your code
 
 USE_RUBY=	yes

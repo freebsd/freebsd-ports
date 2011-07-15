@@ -10,7 +10,7 @@ PORTVERSION=	1.1.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Integrate DataMapper with Rails 3
 
 RUN_DEPENDS=	rubygem-actionpack>=3.0.4:${PORTSDIR}/www/rubygem-actionpack \

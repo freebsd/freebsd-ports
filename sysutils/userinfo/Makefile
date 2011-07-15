@@ -10,7 +10,7 @@ PORTVERSION=	2.3
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Show information about local users
 
 USE_AUTOTOOLS=	libtool

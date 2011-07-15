@@ -21,7 +21,7 @@ MASTER_SITE_SUBDIR=	. old
 PKGNAMESUFFIX=	-mysql
 .endif
 
-MAINTAINER?=	rpsfa@rit.edu
+MAINTAINER?=	zi@FreeBSD.org
 COMMENT?=	A free RADIUS server implementation
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm

@@ -11,7 +11,7 @@ MASTER_SITES=	http://buhacoff.net/software/check_email_delivery/archive/ \
 		http://people.rit.edu/rpsfa/
 PKGNAMEPREFIX=	nagios-
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Nagios Plugin to monitor your mail environment
 
 RUN_DEPENDS=	p5-Net-SMTP-TLS>=0:${PORTSDIR}/mail/p5-Net-SMTP-TLS \

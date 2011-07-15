@@ -9,7 +9,7 @@ PORTVERSION=	0.2.2
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	A rails wrapper for the PDFKit library
 
 RUN_DEPENDS=	rubygem-pdfkit>=0.4.1:${PORTSDIR}/graphics/rubygem-pdfkit
