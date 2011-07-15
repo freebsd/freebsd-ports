@@ -9,7 +9,7 @@ PORTVERSION=	1.3.1
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Adds DataMapper support to devise
 
 RUN_DEPENDS=	rubygem-devise>=1.3.0:${PORTSDIR}/devel/rubygem-devise \

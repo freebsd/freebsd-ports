@@ -9,7 +9,7 @@ PORTVERSION=	1.8.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Mechanism to parse ruby loquacious files
 
 USE_RUBY=	yes

@@ -9,7 +9,7 @@ PORTVERSION=	1.4.0
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Forms made easy
 
 USE_RUBY=	yes

@@ -10,7 +10,7 @@ PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	A small website management system
 
 RUN_DEPENDS=	rubygem-redcloth>=4.2:${PORTSDIR}/www/rubygem-redcloth \

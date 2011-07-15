@@ -9,7 +9,7 @@ PORTVERSION=	1.5.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Logging library based on Java's log4j
 
 RUN_DEPENDS=	rubygem-little_plugger>=1.1.2:${PORTSDIR}/devel/rubygem-little_plugger \

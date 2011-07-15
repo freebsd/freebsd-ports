@@ -10,7 +10,7 @@ PORTVERSION=	0.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Vendor specific SNMP plugins for Nagios
 
 BUILD_DEPENDS=	snmpcheck:${PORTSDIR}/net-mgmt/net-snmp

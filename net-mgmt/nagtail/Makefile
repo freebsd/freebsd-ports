@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.vanheusden.com/nagtail/ \
 		http://people.rit.edu/rpsfa/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Tail for the nagios status.dat file
 
 USE_GMAKE=	yes

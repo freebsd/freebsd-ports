@@ -9,7 +9,7 @@ PORTVERSION=	0.6.1
 CATEGORIES=	dns rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	A pure Ruby DNS library
 
 RUN_DEPENDS=	rubygem-rcov>=0:${PORTSDIR}/devel/rubygem-rcov

@@ -12,7 +12,7 @@ CATEGORIES=	security
 MASTER_SITES=	http://point-at-infinity.org/seccure/ \
 		${MASTER_SITE_NETBSD}
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Elliptic Curve Crypto Utility for Reliable Encryption
 
 LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt

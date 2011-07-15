@@ -12,7 +12,7 @@ MASTER_SITES=	ftp://ftp.yar.ru/pub/source/le/%SUBDIR%/ \
 		http://people.rit.edu/~rpsfa/distfiles/
 MASTER_SITE_SUBDIR=	. old
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Text editor with block and binary operations
 
 USE_BZIP2=	yes

@@ -11,7 +11,7 @@ MASTER_SITES=	http://buhacoff.net/2009/products/check_mysql_slave/archive/ \
 		http://people.rit.edu/rpsfa/
 PKGNAMEPREFIX=	nagios-
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Nagios Plugin to monitor MySQL replication on a slave
 
 RUN_DEPENDS=	p5-DBI>=1.60.7:${PORTSDIR}/databases/p5-DBI \

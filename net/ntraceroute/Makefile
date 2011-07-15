@@ -14,7 +14,7 @@ DISTNAME=	traceroute.c
 EXTRACT_SUFX=
 DIST_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	rpsfa@rit.edu
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Ubiquitous network routing analysis tool
 
 WRKSRC=		${WRKDIR}
