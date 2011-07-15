@@ -4841,6 +4841,7 @@ fetch-url-list-int:
 	${_MASTER_SITES_ENV}; \
 	for _file in ${DISTFILES}; do \
 		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
+			fileptn=`${ECHO_CMD} $$file | ${SED} 's|/|\\\\/|g;s/\./\\\\./g;s/\+/\\\\+/g;s/\?/\\\\?/g'` ; \
 		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
 		if [ ! -z "${LISTALL}" -o ! -f $$file -a ! -f $${file##*/} ]; then \
 			if [ ! -z "$$select" ] ; then \
@@ -4857,8 +4858,8 @@ fetch-url-list-int:
 				SORTED_MASTER_SITES_CMD_TMP="${SORTED_MASTER_SITES_DEFAULT_CMD}" ; \
 			fi ; \
 			for site in `eval $$SORTED_MASTER_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
-				DIR=${DIST_SUBDIR}; \
-				CKSIZE=`${AWK} "/^SIZE \($${DIR:+$$DIR/}$$file\)/"'{print $$4}' ${DISTINFO_FILE}`; \
+				DIR=${DIST_SUBDIR:S/\//\\\\\//g:S/./\\\\./g:S/+/\\\\+/g:S/?/\\\\?/g}; \
+				CKSIZE=`${AWK} "/^SIZE \($${DIR:+$$DIR\/}$$fileptn\)/"'{print $$4}' ${DISTINFO_FILE}`; \
 				case $${file} in \
 				*/*)	args="-o $${file} $${site}$${file}";; \
 				*)		args=$${site}$${file};; \
@@ -4872,6 +4873,7 @@ fetch-url-list-int:
 	${_PATCH_SITES_ENV} ; \
 	for _file in ${PATCHFILES}; do \
 		file=`${ECHO_CMD} $$_file | ${SED} -E -e 's/:[^:]+$$//'` ; \
+			fileptn=`${ECHO_CMD} $$file | ${SED} 's|/|\\\\/|g;s/\./\\\\./g;s/\+/\\\\+/g;s/\?/\\\\?/g'` ; \
 		select=`${ECHO_CMD} $${_file#$${file}} | ${SED} -e 's/^://' -e 's/,/ /g'` ; \
 		if [ ! -z "${LISTALL}" -o ! -f $$file -a ! -f $${file##*/} ]; then \
 			if [ ! -z "$$select" ] ; then \
@@ -4888,8 +4890,8 @@ fetch-url-list-int:
 				SORTED_PATCH_SITES_CMD_TMP="${SORTED_PATCH_SITES_DEFAULT_CMD}" ; \
 			fi ; \
 			for site in `eval $$SORTED_PATCH_SITES_CMD_TMP ${_RANDOMIZE_SITES}`; do \
-				DIR=${DIST_SUBDIR}; \
-				CKSIZE=`${AWK} "/^SIZE \($${DIR:+$$DIR/}$$file\)/"'{print $$4}' ${DISTINFO_FILE}`; \
+				DIR=${DIST_SUBDIR:S/\//\\\\\//g:S/./\\\\./g:S/+/\\\\+/g:S/?/\\\\?/g}; \
+				CKSIZE=`${AWK} "/^SIZE \($${DIR:+$$DIR\/}$$fileptn\)/"'{print $$4}' ${DISTINFO_FILE}`; \
 				case $${file} in \
 				*/*)	args="-o $${file} $${site}$${file}";; \
 				*)		args=$${site}$${file};; \
