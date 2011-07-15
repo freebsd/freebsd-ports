@@ -1,0 +1,42 @@
+#!/bin/sh
+#
+# 
+#
+# PROVIDE: opendnssec
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+#
+# Add the following line to /etc/rc.conf to enable nsd:
+#
+# opendnssec_enable="YES"
+#
+
+
+. /etc/rc.subr
+
+name=opendnssec
+rcvar=`set_rcvar`
+
+load_rc_config $name
+
+opendnssec_enable=${opendnssec_enable-"NO"}
+
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+extra_commands="reload ksm hsm signer enforcer"
+
+procname=${opendnssec_procname}
+
+
+opendnssec_start()
+{
+    %%PREFIX%%/sbin/ods-control start
+}
+
+opendnssec_stop()
+{
+    %%PREFIX%%/sbin/ods-control stop
+}
+
+run_rc_command "$1"
+

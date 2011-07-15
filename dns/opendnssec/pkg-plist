@@ -25,7 +25,8 @@ sbin/ods-signer
 sbin/ods-signerd
 %%DATADIR%%/conf.rnc
 %%DATADIR%%/conf.rng
-%%DATADIR%%/database_create.sqlite3
+%%SQLITE%%%%DATADIR%%/database_create.sqlite3
+%%MYSQL%%%%DATADIR%%/database_create.mysql
 %%DATADIR%%/kasp.rnc
 %%DATADIR%%/kasp.rng
 %%DATADIR%%/kasp2html.xsl
