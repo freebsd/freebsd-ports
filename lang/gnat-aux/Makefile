@@ -29,9 +29,9 @@ USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
 ALL_TARGET=		default
 
-SNAPSHOT=		20110325
+SNAPSHOT=		20110627
 GCC_BRANCH=		4.6
-GCC_POINT=		0
+GCC_POINT=		1
 LANGS=			c
 
 THREAD_MODEL=		posix
@@ -139,7 +139,6 @@ BUILD_DEPENDS=	dejagnu>=1.4:${PORTSDIR}/misc/dejagnu
 ADA_CONFIGURE_ENV=	CC=${FULL_GNATGCC}
 ADA_CONFIGURE_ENV+=	PATH=${FULL_PATH}
 ADA_CONFIGURE_ENV+=	CONFIG_SHELL=${SH}
-ADA_CONFIGURE_ENV+=	MAKEINFO=/usr/bin/false
 ADA_MAKE_ENV=		PATH=${FULL_PATH}
 ADA_MAKE_ENV+=		LD_LIBRARY_PATH=${WRKSRC}/gcc
 
@@ -205,7 +204,7 @@ test: build
 .endif
 
 do-install:
-	cd ${WRKSRC} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} install-strip
+	cd ${WRKSRC} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} install-strip DESTDIR=${DESTDIR}
 
 post-install:
 	${RM} -f ${WRKDIR}/PLIST.lib
