@@ -10,11 +10,13 @@ PORTNAME=	cryptgps
 PORTVERSION=	0.2.1
 PORTREVISION=	2
 CATEGORIES=	security
-MASTER_SITES=	http://www.ocaml-programming.de/packages/
+MASTER_SITES=	http://download.camlcity.org/download/
 PKGNAMEPREFIX=	ocaml-
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Symmetric cryptographic algorithms package for OCaml
+
+LICENSE=	MIT
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_GMAKE=	yes
