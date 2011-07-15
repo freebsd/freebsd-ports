@@ -12774,6 +12774,7 @@ p5-LWP-Authen-Wsse              ports/www/p5-LWP-Authen-Wsse
 p5-LWP-ConnCache-MaxKeepAliveRequests  ports/www/p5-LWP-ConnCache-MaxKeepAliveRequests
 p5-LWP-MediaTypes               ports/www/p5-LWP-MediaTypes
 p5-LWP-Online                   ports/www/p5-LWP-Online
+p5-LWP-Protocol-http10          ports/www/p5-LWP-Protocol-http10
 p5-LWP-Protocol-https           ports/www/p5-LWP-Protocol-https
 p5-LWP-UserAgent-Determined     ports/www/p5-LWP-UserAgent-Determined
 p5-LWP-UserAgent-POE            ports/www/p5-LWP-UserAgent-POE
@@ -14911,6 +14912,7 @@ p5-XML-Validator-Schema         ports/textproc/p5-XML-Validator-Schema
 p5-XML-WBXML                    ports/converters/p5-XML-WBXML
 p5-XML-Writer                   ports/textproc/p5-XML-Writer
 p5-XML-XBEL                     ports/textproc/p5-XML-XBEL
+p5-XML-XML2JSON                 ports/textproc/p5-XML-XML2JSON
 p5-XML-XPath                    ports/textproc/p5-XML-XPath
 p5-XML-XPathEngine              ports/textproc/p5-XML-XPathEngine
 p5-XML-XQL                      ports/textproc/p5-XML-XQL
@@ -17170,6 +17172,7 @@ p5-lwp-authen-wsse              ports/www/p5-LWP-Authen-Wsse
 p5-lwp-conncache-maxkeepaliverequests  ports/www/p5-LWP-ConnCache-MaxKeepAliveRequests
 p5-lwp-mediatypes               ports/www/p5-LWP-MediaTypes
 p5-lwp-online                   ports/www/p5-LWP-Online
+p5-lwp-protocol-http10          ports/www/p5-LWP-Protocol-http10
 p5-lwp-protocol-https           ports/www/p5-LWP-Protocol-https
 p5-lwp-useragent-determined     ports/www/p5-LWP-UserAgent-Determined
 p5-lwp-useragent-poe            ports/www/p5-LWP-UserAgent-POE
@@ -19249,6 +19252,7 @@ p5-xml-wbxml                    ports/converters/p5-XML-WBXML
 p5-xml-writer                   ports/textproc/p5-XML-Writer
 p5-xml-xbel                     ports/textproc/p5-XML-XBEL
 p5-xml-xerces                   ports/textproc/p5-XML-Xerces
+p5-xml-xml2json                 ports/textproc/p5-XML-XML2JSON
 p5-xml-xpath                    ports/textproc/p5-XML-XPath
 p5-xml-xpathengine              ports/textproc/p5-XML-XPathEngine
 p5-xml-xql                      ports/textproc/p5-XML-XQL
@@ -22104,6 +22108,7 @@ py-ski                          ports/games/py-ski
 py-slimmer                      ports/www/py-slimmer
 py-smb                          ports/net/py-smb
 py-smbpasswd                    ports/net/py-smbpasswd
+py-smmap                        ports/devel/py-smmap
 py-snmp                         ports/net-mgmt/py-snmp
 py-snmp2                        ports/net-mgmt/py-snmp2
 py-snmp4                        ports/net-mgmt/py-snmp4
@@ -24219,7 +24224,6 @@ shttpd                          ports/www/shttpd
 shttpscanner                    ports/security/shttpscanner
 shuffle                         ports/misc/shuffle
 shuffle-db                      ports/misc/shuffle-db
-shujit                          ports/java/shujit
 sic                             ports/irc/sic
 siconv                          ports/converters/siconv
 sid                             ports/devel/sid
@@ -24318,7 +24322,6 @@ skyeye                          ports/emulators/skyeye
 skyfish                         ports/net/skyfish
 skype                           ports/net-im/skype
 skype-devel                     ports/net-im/skype-devel
-skype12                         ports/net-im/skype12
 skype20                         ports/net-im/skype20
 skystar2                        ports/net/skystar2
 skytemplate                     ports/www/skytemplate
@@ -25646,7 +25649,6 @@ tv-fonts                        ports/x11-fonts/tv-fonts
 tvbrowser                       ports/misc/tvbrowser
 tvmet                           ports/math/tvmet
 tvp                             ports/games/tvp
-tvrss                           ports/net-p2p/tvrss
 tvtwm                           ports/x11-wm/tvtwm
 tw_cli                          ports/sysutils/tw_cli
 twander                         ports/x11-fm/twander
