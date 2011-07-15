@@ -1,16 +1,18 @@
---- CMakeLists.txt.orig	2011-01-07 23:03:06.000000000 +0200
-+++ CMakeLists.txt	2011-01-07 23:42:55.000000000 +0200
-@@ -121,19 +121,6 @@
+--- CMakeLists.txt.orig	2011-07-12 14:07:10.000000000 +0300
++++ CMakeLists.txt	2011-07-12 14:09:57.000000000 +0300
+@@ -148,21 +148,6 @@
  configure_file (${CMAKE_CURRENT_SOURCE_DIR}/Clipper/data/Clipper.conf.in ${CMAKE_CURRENT_BINARY_DIR}/Clipper/data/Clipper.conf)
  add_subdirectory (Clipper)
  
 -############# CLOCK #################
+-set (with_ical "yes")
 -pkg_check_modules ("LIBICAL_PACKAGE" "libical")
 -if ("${LIBICAL_PACKAGE_FOUND}" STREQUAL "")
+-	set (with_ical "no")
 -	message (STATUS "Could not find libical; Clock plugin won't be built with iCal support.")
 -endif()
 -set (GETTEXT_CLOCK ${GETTEXT_PLUGINS})
--set (VERSION_CLOCK "2.1.1")
+-set (VERSION_CLOCK "2.1.2")
 -set (PACKAGE_CLOCK "cd-clock")
 -set (clockuserdirname "clock")
 -set (clockdatadir "${pluginsdatadir}/clock")
@@ -19,16 +21,25 @@
 -
  ############# COMPIZ_ICON #################
  set (GETTEXT_COMPIZ_ICON ${GETTEXT_PLUGINS})
- set (VERSION_COMPIZ_ICON "1.1.5")
-@@ -299,6 +286,7 @@
+ set (VERSION_COMPIZ_ICON "1.1.6")
+@@ -224,7 +209,7 @@
+ 
+ # Valac is only riquired to convert vala files to C files.
+ #  So we can directly use produced files (c, h, vapi) without using valac.
+-set (with_vala "yes")
++set (with_vala "no")
+ set (with_valac "no")
+ find_program (VALAC_EXE valac)
+ message (STATUS "VALAC_EXE: ${VALAC_EXE}")
+@@ -470,6 +455,7 @@
  endif()
  
  ############# KEYBOARD_INDICATOR #################
 +if (NOT "${enable_keyboard_indicator}" STREQUAL "no")
+ set (with_keyboard_indicator "no")
  pkg_check_modules (KEYBOARD_INDICATOR_PACKAGE libxklavier)
  if ("${KEYBOARD_INDICATOR_PACKAGE_FOUND}" STREQUAL "")
- 	message (STATUS "Could not find libxklavier; Cairo-Dock won't be built with keyboard-indicator applet.")
-@@ -310,6 +298,7 @@
+@@ -483,6 +469,7 @@
  	configure_file (${CMAKE_CURRENT_SOURCE_DIR}/keyboard-indicator/data/keyboard-indicator.conf.in ${CMAKE_CURRENT_BINARY_DIR}/keyboard-indicator/data/keyboard-indicator.conf)
  	add_subdirectory ("keyboard-indicator")
  endif()
@@ -36,7 +47,7 @@
  
  ############# LOGOUT #################
  set (GETTEXT_LOGOUT ${GETTEXT_PLUGINS})
-@@ -546,6 +535,7 @@
+@@ -800,6 +787,7 @@
  add_subdirectory (systray)
  
  ############# TERMINAL #################
@@ -44,7 +55,7 @@
  pkg_check_modules (TERMINAL_PACKAGE vte)
  if ("${TERMINAL_PACKAGE_FOUND}" STREQUAL "")
  	message (STATUS "Could not find libvte; Cairo-Dock won't be built with terminal applet.")
-@@ -557,6 +547,7 @@
+@@ -813,6 +801,7 @@
  	configure_file (${CMAKE_CURRENT_SOURCE_DIR}/terminal/data/terminal.conf.in ${CMAKE_CURRENT_BINARY_DIR}/terminal/data/terminal.conf)
  	add_subdirectory (terminal)
  endif()
@@ -52,15 +63,15 @@
  
  ############# TOMBOY #################
  set (GETTEXT_TOMBOY ${GETTEXT_PLUGINS})
-@@ -585,6 +576,7 @@
+@@ -841,6 +830,7 @@
  add_subdirectory (weather)
  
  ############# WEBLETS #################
 +if (NOT "${enable_weblets}" STREQUAL "no")
- pkg_check_modules (WEBKIT webkit-1.0)
- if (NOT "${enable_weblets}" STREQUAL "no")
- 	if ("${WEBKIT_FOUND}" STREQUAL "")
-@@ -598,6 +590,7 @@
+ set (with_weblets "no")
+ if (NOT "${enable-weblets}" STREQUAL "no")
+ 	pkg_check_modules (WEBKIT webkit-1.0)
+@@ -856,6 +846,7 @@
  		add_subdirectory ("weblets")
  	endif()
  endif()
@@ -68,3 +79,19 @@
  
  ############# WIFI #################
  set (GETTEXT_WIFI ${GETTEXT_PLUGINS})
+@@ -866,6 +857,7 @@
+ add_subdirectory (wifi)
+ 
+ ############# XFCE-INTEGRATION #################
++if (NOT "${enable_xfce_integration}" STREQUAL "no")
+ set (with_xfce_integration "no")
+ if (NOT "${enable-xfce-integration}" STREQUAL "no")
+ 	pkg_check_modules (XFCE_INTEGRATION_THUNAR thunar-vfs-1)
+@@ -880,6 +872,7 @@
+ 		add_subdirectory ("xfce-integration")
+ 	endif()
+ endif()
++endif()
+ 
+ ############# XGAMMA #################
+ pkg_check_modules (XGAMMA_PACKAGE x11 xxf86vm)

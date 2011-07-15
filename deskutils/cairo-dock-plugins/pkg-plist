@@ -27,6 +27,7 @@ lib/cairo-dock/libcd-netspeed.so
 lib/cairo-dock/libcd-powermanager.so
 lib/cairo-dock/libcd-quick-browser.so
 lib/cairo-dock/libcd-rendering.so
+lib/cairo-dock/libcd-Remote-Control.so
 lib/cairo-dock/libcd-shortcuts.so
 lib/cairo-dock/libcd-showDesktop.so
 lib/cairo-dock/libcd-show_mouse.so
@@ -41,10 +42,18 @@ lib/cairo-dock/libcd-weather.so
 lib/cairo-dock/libcd-wifi.so
 lib/cairo-dock/libcd_gnome-integration.so
 %%XFCE_INTEGRATION%%lib/cairo-dock/libcd_xfce-integration.so
+%%PYTHON_SITELIBDIR%%/CDApplet.py
+%%PYTHON_SITELIBDIR%%/CDApplet.pyc
+%%PYTHON_SITELIBDIR%%/CDApplet-1.0-%%PYVER%%.egg-info
+%%PYTHON_SITELIBDIR%%/CDBashApplet.py
+%%PYTHON_SITELIBDIR%%/CDBashApplet.pyc
+%%PYTHON_SITELIBDIR%%/CDBashApplet-1.0-%%PYVER%%.egg-info
 share/locale/fr/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/id/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/it/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/ja/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/nl/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/pl/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/pt/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/pt_BR/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/ru/LC_MESSAGES/cairo-dock-plugins.mo
@@ -58,7 +67,9 @@ share/locale/hu/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/uk/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/zh_TW/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/ar/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/el/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/et/LC_MESSAGES/cairo-dock-plugins.mo
+share/locale/eu/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/sk/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/sr/LC_MESSAGES/cairo-dock-plugins.mo
 share/locale/tr/LC_MESSAGES/cairo-dock-plugins.mo
@@ -132,6 +143,7 @@ share/cairo-dock/plug-ins/compiz-icon/4.svg
 share/cairo-dock/plug-ins/compiz-icon/icon.png
 share/cairo-dock/plug-ins/compiz-icon/preview.jpg
 share/cairo-dock/plug-ins/Dbus/Dbus.conf
+share/cairo-dock/plug-ins/Dbus/CDBashApplet.sh
 share/cairo-dock/plug-ins/Dbus/icon.svg
 share/cairo-dock/plug-ins/desklet-rendering/icon.svg
 share/cairo-dock/plug-ins/desklet-rendering/branche1.svg
@@ -164,6 +176,7 @@ share/cairo-dock/plug-ins/drop-indicator/default-hover-indicator.svg
 share/cairo-dock/plug-ins/dustbin/dustbin.conf
 share/cairo-dock/plug-ins/dustbin/preview.jpg
 share/cairo-dock/plug-ins/dustbin/icon.png
+share/cairo-dock/plug-ins/dustbin/themes/default/preview
 share/cairo-dock/plug-ins/dustbin/themes/default/trashcan_full.svg
 share/cairo-dock/plug-ins/dustbin/themes/default/trashcan_empty.svg
 share/cairo-dock/plug-ins/gnome-integration/icon.png
@@ -188,6 +201,7 @@ share/cairo-dock/plug-ins/kde-integration/icon.png
 %%KEYBOARD_INDICATOR%%share/cairo-dock/plug-ins/keyboard-indicator/keyboard-indicator.conf
 %%KEYBOARD_INDICATOR%%share/cairo-dock/plug-ins/keyboard-indicator/icon.png
 %%KEYBOARD_INDICATOR%%share/cairo-dock/plug-ins/keyboard-indicator/preview.jpg
+share/cairo-dock/plug-ins/logout/emblem-reboot.png
 share/cairo-dock/plug-ins/logout/logout.conf
 share/cairo-dock/plug-ins/logout/icon.svg
 share/cairo-dock/plug-ins/logout/icon-scheduling.png
@@ -241,6 +255,10 @@ share/cairo-dock/plug-ins/powermanager/preview.jpg
 share/cairo-dock/plug-ins/quick_browser/quick-browser.conf
 share/cairo-dock/plug-ins/quick_browser/icon.svg
 share/cairo-dock/plug-ins/quick_browser/preview.jpg
+share/cairo-dock/plug-ins/Remote-Control/Remote-Control.conf
+share/cairo-dock/plug-ins/Remote-Control/preview.jpg
+share/cairo-dock/plug-ins/Remote-Control/icon.png
+share/cairo-dock/plug-ins/Remote-Control/arrows.svg
 share/cairo-dock/plug-ins/rendering/rendering.conf
 share/cairo-dock/plug-ins/rendering/icon.svg
 share/cairo-dock/plug-ins/rendering/preview-caroussel.jpg
@@ -282,10 +300,10 @@ share/cairo-dock/plug-ins/switcher/workspaces.svg
 share/cairo-dock/plug-ins/switcher/switcher.conf
 share/cairo-dock/plug-ins/System-monitor/nvidia-config
 share/cairo-dock/plug-ins/System-monitor/System-Monitor.conf
+share/cairo-dock/plug-ins/System-monitor/button-cpu.svg
+share/cairo-dock/plug-ins/System-monitor/button-ram.svg
 share/cairo-dock/plug-ins/System-monitor/icon.png
 share/cairo-dock/plug-ins/System-monitor/preview.jpg
-share/cairo-dock/plug-ins/System-monitor/button-cpu.png
-share/cairo-dock/plug-ins/System-monitor/button-ram.png
 share/cairo-dock/plug-ins/systray/systray.conf
 share/cairo-dock/plug-ins/systray/icon.png
 share/cairo-dock/plug-ins/systray/preview.jpg
@@ -378,6 +396,7 @@ share/cairo-dock/plug-ins/wifi/preview.jpg
 share/cairo-dock/plug-ins/Xgamma/Xgamma.conf
 share/cairo-dock/plug-ins/Xgamma/icon.png
 share/cairo-dock/plug-ins/Xgamma/preview.jpg
+@dirrmtry lib/pkgconfig
 %%ALSA_MIXER%%@dirrm share/cairo-dock/plug-ins/AlsaMixer
 @dirrm share/cairo-dock/plug-ins/Animated-icons
 @dirrm share/cairo-dock/plug-ins/Cairo-Penguin/themes/Classic
@@ -416,6 +435,7 @@ share/cairo-dock/plug-ins/Xgamma/preview.jpg
 @dirrm share/cairo-dock/plug-ins/netspeed
 @dirrm share/cairo-dock/plug-ins/powermanager
 @dirrm share/cairo-dock/plug-ins/quick_browser
+@dirrm share/cairo-dock/plug-ins/Remote-Control
 @dirrm share/cairo-dock/plug-ins/RSSreader
 @dirrm share/cairo-dock/plug-ins/rendering
 @dirrm share/cairo-dock/plug-ins/shortcuts
