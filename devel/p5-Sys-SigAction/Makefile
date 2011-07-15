@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Sys-SigAction
-PORTVERSION=	0.13
+PORTVERSION=	0.15
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	svysh@pn.sinp.msu.ru
 COMMENT=	Perl extension for Consistent Signal Handling
 
-LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
