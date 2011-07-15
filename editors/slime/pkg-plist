@@ -8,6 +8,7 @@
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-autodoc.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-banner.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-c-p-c.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-cl-indent.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-clipboard.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-compiler-notes-tree.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-editing-commands.el
@@ -17,9 +18,10 @@
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-fontifying-fu.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-fuzzy.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-highlight-edits.el
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-indentation-fu.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-hyperdoc.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-indentation.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-mdot-fu.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-media.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-motd.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-mrepl.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-package-fu.el
@@ -31,6 +33,8 @@
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-sbcl-exts.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-scheme.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-scratch.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-snapshot.el
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-sprof.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-tramp.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-typeout-frame.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/slime-xref-browser.el
@@ -40,14 +44,17 @@
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/swank-clipboard.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/swank-fancy-inspector.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/swank-fuzzy.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/swank-indentation-fu.lisp
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/swank-hyperdoc.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/swank-indentation.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/swank-listener-hooks.lisp
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/swank-media.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/swank-motd.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/swank-package-fu.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/swank-presentation-streams.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/swank-presentations.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/swank-sbcl-exts.lisp
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/swank-snapshot.lisp
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/contrib/swank-sprof.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/hyperspec.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/hyperspec.elc
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/metering.lisp
@@ -57,6 +64,7 @@
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/slime-autoloads.elc
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/slime.el
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/slime.elc
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/start-swank.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-abcl.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-allegro.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-backend.lisp
@@ -68,7 +76,8 @@
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-gray.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-lispworks.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-loader.lisp
-%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-openmcl.lisp
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-match.lisp
+%%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-rpc.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-sbcl.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-scl.lisp
 %%EMACS_LIBDIR%%/%%EMACS_VER%%/site-lisp/slime/swank-source-file-cache.lisp
