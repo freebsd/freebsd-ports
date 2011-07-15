@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/\./_/g}
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	JCE Unlimited Strength Jurisdiction Policy Files
 
+DEPRECATED=	Only for Java 1.4, which is deprecated
+EXPIRATION_DATE=2011-07-28
+
 USE_ZIP=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4
