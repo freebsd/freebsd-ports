@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	runsomebrowser
-PORTVERSION=	0.1
+PORTVERSION=	0.2
 CATEGORIES=	www
 MASTER_SITES=	http://personalpages.tds.net/~jwbacon/Ports/distfiles/ \
 		http://jbacon.dyndns.org/~bacon/Ports/distfiles/
