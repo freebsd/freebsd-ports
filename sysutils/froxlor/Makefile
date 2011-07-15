@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	froxlor
-PORTVERSION=	0.9.17
+PORTVERSION=	0.9.22
 CATEGORIES=	sysutils www
 MASTER_SITES=	http://files.froxlor.org/releases/
 
@@ -19,7 +19,9 @@ NO_BUILD=	YES
 
 SUB_FILES+=	pkg-message pkg-deinstall
 
-USE_PHP=	xml bcmath posix filter
+USE_PHP=	xml bcmath posix filter session ftp mysqli gettext
+
+USE_GETTEXT=	RUN
 
 OPTIONS=	APACHE "Use Apache (2.2) as http server" On \
 		MYSQL "Use MySQL as database server" On \
@@ -76,10 +78,10 @@ RUN_DEPENDS+=	awstats:${PORTSDIR}/www/awstats
 
 do-install:
 	cd ${WRKDIR}/${PORTNAME} && \
-	${FIND} . | ${CPIO} --quiet -pdm -L ${WWWDIR}
+	${FIND} . ! -name .gitignore | \
+	${CPIO} --quiet -pdm -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 post-install:
-	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.pre.mk>

@@ -17,6 +17,8 @@ www/froxlor/actions/admin/settings/185.spf.php
 www/froxlor/actions/admin/settings/190.ticket.php
 www/froxlor/actions/admin/settings/200.aps.php
 www/froxlor/actions/admin/settings/210.security.php
+www/froxlor/actions/admin/settings/215.backup.php
+www/froxlor/actions/admin/settings/220.quota.php
 www/froxlor/admin_admins.php
 www/froxlor/admin_aps.php
 www/froxlor/admin_configfiles.php
@@ -31,7 +33,9 @@ www/froxlor/admin_phpsettings.php
 www/froxlor/admin_settings.php
 www/froxlor/admin_templates.php
 www/froxlor/admin_tickets.php
+www/froxlor/admin_traffic.php
 www/froxlor/admin_updates.php
+www/froxlor/cache/.keep
 www/froxlor/customer_aps.php
 www/froxlor/customer_autoresponder.php
 www/froxlor/customer_domains.php
@@ -42,32 +46,174 @@ www/froxlor/customer_index.php
 www/froxlor/customer_mysql.php
 www/froxlor/customer_tickets.php
 www/froxlor/customer_traffic.php
-www/froxlor/images/ball.gif
-www/froxlor/images/changelanguage.gif
-www/froxlor/images/default.png
-www/froxlor/images/endsection.gif
-www/froxlor/images/error.gif
-www/froxlor/images/error.png
-www/froxlor/images/footer.gif
-www/froxlor/images/header.gif
-www/froxlor/images/header_r.gif
-www/froxlor/images/info.png
-www/froxlor/images/login.gif
-www/froxlor/images/logininternal.gif
-www/froxlor/images/multiserver/no.png
-www/froxlor/images/multiserver/server.png
-www/froxlor/images/multiserver/tick.png
-www/froxlor/images/multiserver/view.png
-www/froxlor/images/order_asc.gif
-www/froxlor/images/order_desc.gif
-www/froxlor/images/section.gif
-www/froxlor/images/shadow.gif
-www/froxlor/images/subsection.gif
-www/froxlor/images/title.gif
-www/froxlor/images/traffic_blue.gif
-www/froxlor/images/traffic_green.gif
-www/froxlor/images/traffic_red.gif
-www/froxlor/images/traffic_yellow.gif
+www/froxlor/images/Classic/ball.gif
+www/froxlor/images/Classic/changelanguage.gif
+www/froxlor/images/Classic/changetheme.png
+www/froxlor/images/Classic/default.png
+www/froxlor/images/Classic/endsection.gif
+www/froxlor/images/Classic/error.gif
+www/froxlor/images/Classic/error.png
+www/froxlor/images/Classic/footer.gif
+www/froxlor/images/Classic/header_r.gif
+www/froxlor/images/Classic/info.png
+www/froxlor/images/Classic/login.gif
+www/froxlor/images/Classic/logininternal.gif
+www/froxlor/images/Classic/logo.png
+www/froxlor/images/Classic/order_asc.gif
+www/froxlor/images/Classic/order_desc.gif
+www/froxlor/images/Classic/section.gif
+www/froxlor/images/Classic/shadow.gif
+www/froxlor/images/Classic/subsection.gif
+www/froxlor/images/Classic/title.gif
+www/froxlor/images/Classic/traffic_blue.gif
+www/froxlor/images/Classic/traffic_green.gif
+www/froxlor/images/Classic/traffic_red.gif
+www/froxlor/images/Classic/traffic_yellow.gif
+www/froxlor/images/Froxlor/bar.gif
+www/froxlor/images/Froxlor/bargrey.gif
+www/froxlor/images/Froxlor/barred.gif
+www/froxlor/images/Froxlor/bg_cover.gif
+www/froxlor/images/Froxlor/header_g.png
+www/froxlor/images/Froxlor/icons/aps.png
+www/froxlor/images/Froxlor/icons/aps_upload.png
+www/froxlor/images/Froxlor/icons/archive_ticket.png
+www/froxlor/images/Froxlor/icons/autoresponder.png
+www/froxlor/images/Froxlor/icons/autoresponder_add.png
+www/froxlor/images/Froxlor/icons/backup.png
+www/froxlor/images/Froxlor/icons/backup_big.png
+www/froxlor/images/Froxlor/icons/bad.png
+www/froxlor/images/Froxlor/icons/button_ok.png
+www/froxlor/images/Froxlor/icons/cancel.png
+www/froxlor/images/Froxlor/icons/categories.png
+www/froxlor/images/Froxlor/icons/categories_big.png
+www/froxlor/images/Froxlor/icons/category_add.png
+www/froxlor/images/Froxlor/icons/category_add_big.png
+www/froxlor/images/Froxlor/icons/category_edit.png
+www/froxlor/images/Froxlor/icons/category_edit_big.png
+www/froxlor/images/Froxlor/icons/category_new.png
+www/froxlor/images/Froxlor/icons/clock.png
+www/froxlor/images/Froxlor/icons/clock_add.png
+www/froxlor/images/Froxlor/icons/clock_delete.png
+www/froxlor/images/Froxlor/icons/clock_edit.png
+www/froxlor/images/Froxlor/icons/clock_error.png
+www/froxlor/images/Froxlor/icons/clock_go.png
+www/froxlor/images/Froxlor/icons/clock_link.png
+www/froxlor/images/Froxlor/icons/clock_pause.png
+www/froxlor/images/Froxlor/icons/clock_play.png
+www/froxlor/images/Froxlor/icons/clock_red.png
+www/froxlor/images/Froxlor/icons/clock_stop.png
+www/froxlor/images/Froxlor/icons/delete.png
+www/froxlor/images/Froxlor/icons/display.png
+www/froxlor/images/Froxlor/icons/domain_add.png
+www/froxlor/images/Froxlor/icons/domain_add_big.png
+www/froxlor/images/Froxlor/icons/domain_edit.png
+www/froxlor/images/Froxlor/icons/domain_edit_big.png
+www/froxlor/images/Froxlor/icons/domains.png
+www/froxlor/images/Froxlor/icons/domains_big.png
+www/froxlor/images/Froxlor/icons/down.png
+www/froxlor/images/Froxlor/icons/edit.png
+www/froxlor/images/Froxlor/icons/email_add.png
+www/froxlor/images/Froxlor/icons/email_add_big.png
+www/froxlor/images/Froxlor/icons/email_edit.png
+www/froxlor/images/Froxlor/icons/email_edit_big.png
+www/froxlor/images/Froxlor/icons/emails.png
+www/froxlor/images/Froxlor/icons/emails_big.png
+www/froxlor/images/Froxlor/icons/encrypted.png
+www/froxlor/images/Froxlor/icons/file.gif
+www/froxlor/images/Froxlor/icons/find.png
+www/froxlor/images/Froxlor/icons/flag.png
+www/froxlor/images/Froxlor/icons/folder.gif
+www/froxlor/images/Froxlor/icons/group_edit.png
+www/froxlor/images/Froxlor/icons/group_edit_big.png
+www/froxlor/images/Froxlor/icons/help.png
+www/froxlor/images/Froxlor/icons/htaccess.png
+www/froxlor/images/Froxlor/icons/htaccess_add.png
+www/froxlor/images/Froxlor/icons/htaccess_add_big.png
+www/froxlor/images/Froxlor/icons/htaccess_big.png
+www/froxlor/images/Froxlor/icons/htpasswd.png
+www/froxlor/images/Froxlor/icons/htpasswd_add.png
+www/froxlor/images/Froxlor/icons/htpasswd_add_big.png
+www/froxlor/images/Froxlor/icons/htpasswd_big.png
+www/froxlor/images/Froxlor/icons/htpasswd_edit.png
+www/froxlor/images/Froxlor/icons/htpasswd_edit_big.png
+www/froxlor/images/Froxlor/icons/info.png
+www/froxlor/images/Froxlor/icons/ipsports.png
+www/froxlor/images/Froxlor/icons/ipsports_add.png
+www/froxlor/images/Froxlor/icons/ipsports_add_big.png
+www/froxlor/images/Froxlor/icons/ipsports_big.png
+www/froxlor/images/Froxlor/icons/ipsports_edit.png
+www/froxlor/images/Froxlor/icons/ipsports_edit_big.png
+www/froxlor/images/Froxlor/icons/link.gif
+www/froxlor/images/Froxlor/icons/mail.png
+www/froxlor/images/Froxlor/icons/messages.png
+www/froxlor/images/Froxlor/icons/mysql_add.png
+www/froxlor/images/Froxlor/icons/mysql_add_big.png
+www/froxlor/images/Froxlor/icons/mysql_edit.png
+www/froxlor/images/Froxlor/icons/mysql_edit_big.png
+www/froxlor/images/Froxlor/icons/mysqls.png
+www/froxlor/images/Froxlor/icons/mysqls_big.png
+www/froxlor/images/Froxlor/icons/ok.png
+www/froxlor/images/Froxlor/icons/parent.gif
+www/froxlor/images/Froxlor/icons/password.png
+www/froxlor/images/Froxlor/icons/phpsettings.png
+www/froxlor/images/Froxlor/icons/phpsettings_add.png
+www/froxlor/images/Froxlor/icons/phpsettings_add_big.png
+www/froxlor/images/Froxlor/icons/phpsettings_big.png
+www/froxlor/images/Froxlor/icons/phpsettings_edit.png
+www/froxlor/images/Froxlor/icons/phpsettings_edit_big.png
+www/froxlor/images/Froxlor/icons/rename.gif
+www/froxlor/images/Froxlor/icons/replace_vars.png
+www/froxlor/images/Froxlor/icons/res_recalculate.png
+www/froxlor/images/Froxlor/icons/res_recalculate_big.png
+www/froxlor/images/Froxlor/icons/settings.png
+www/froxlor/images/Froxlor/icons/settings_big.png
+www/froxlor/images/Froxlor/icons/syslog.png
+www/froxlor/images/Froxlor/icons/syslog_big.png
+www/froxlor/images/Froxlor/icons/syslog_truncate.png
+www/froxlor/images/Froxlor/icons/syslog_truncate_big.png
+www/froxlor/images/Froxlor/icons/tag_blue.png
+www/froxlor/images/Froxlor/icons/tag_orange.png
+www/froxlor/images/Froxlor/icons/templates.png
+www/froxlor/images/Froxlor/icons/templates_add.png
+www/froxlor/images/Froxlor/icons/templates_add_big.png
+www/froxlor/images/Froxlor/icons/templates_big.png
+www/froxlor/images/Froxlor/icons/templates_edit.png
+www/froxlor/images/Froxlor/icons/templates_edit_big.png
+www/froxlor/images/Froxlor/icons/text_align_center.png
+www/froxlor/images/Froxlor/icons/text_align_justify.png
+www/froxlor/images/Froxlor/icons/text_align_left.png
+www/froxlor/images/Froxlor/icons/text_align_right.png
+www/froxlor/images/Froxlor/icons/ticket_add.png
+www/froxlor/images/Froxlor/icons/ticket_add_big.png
+www/froxlor/images/Froxlor/icons/ticket_answer.png
+www/froxlor/images/Froxlor/icons/ticket_archive.png
+www/froxlor/images/Froxlor/icons/ticket_archive_big.png
+www/froxlor/images/Froxlor/icons/ticket_archive_search.png
+www/froxlor/images/Froxlor/icons/ticket_archive_search_big.png
+www/froxlor/images/Froxlor/icons/ticket_close.png
+www/froxlor/images/Froxlor/icons/ticket_new.png
+www/froxlor/images/Froxlor/icons/ticket_new_big.png
+www/froxlor/images/Froxlor/icons/ticket_reopen.png
+www/froxlor/images/Froxlor/icons/ticket_reply.png
+www/froxlor/images/Froxlor/icons/ticket_reply_big.png
+www/froxlor/images/Froxlor/icons/ticket_show.png
+www/froxlor/images/Froxlor/icons/tickets.png
+www/froxlor/images/Froxlor/icons/tickets_big.png
+www/froxlor/images/Froxlor/icons/traffic.png
+www/froxlor/images/Froxlor/icons/traffic_big.png
+www/froxlor/images/Froxlor/icons/trash.png
+www/froxlor/images/Froxlor/icons/trash_big.png
+www/froxlor/images/Froxlor/icons/up.png
+www/froxlor/images/Froxlor/icons/user_add.png
+www/froxlor/images/Froxlor/icons/user_add_big.png
+www/froxlor/images/Froxlor/icons/user_edit.png
+www/froxlor/images/Froxlor/icons/user_edit_big.png
+www/froxlor/images/Froxlor/icons/warning.png
+www/froxlor/images/Froxlor/logo.png
+www/froxlor/images/Froxlor/traffic_blue.gif
+www/froxlor/images/Froxlor/traffic_green.gif
+www/froxlor/images/Froxlor/traffic_red.gif
+www/froxlor/images/Froxlor/traffic_yellow.gif
 www/froxlor/index.php
 www/froxlor/install/froxlor.sql
 www/froxlor/install/install.php
@@ -76,6 +222,7 @@ www/froxlor/install/lng/french.lng.php
 www/froxlor/install/lng/german.lng.php
 www/froxlor/install/scripts/htpasswd-htaccess-remover.php
 www/froxlor/install/scripts/language-check.php
+www/froxlor/install/tsmarty2c.php
 www/froxlor/install/updates/froxlor/0.9/update_0.9.inc.php
 www/froxlor/install/updates/froxlor/0.9/update_1.0.inc.php
 www/froxlor/install/updates/froxlor/upgrade_syscp.inc.php
@@ -87,6 +234,124 @@ www/froxlor/install/updates/syscp/1.2/update_1.2-beta1_1.2.19.inc.php
 www/froxlor/install/updates/syscp/1.2/update_1.2.19_1.4.inc.php
 www/froxlor/install/updates/syscp/1.4/update_1.4.inc.php
 www/froxlor/install/updatesql.php
+www/froxlor/lib/classes/Smarty
+www/froxlor/lib/classes/Smarty-3.0.8/COPYING.lib
+www/froxlor/lib/classes/Smarty-3.0.8/README
+www/froxlor/lib/classes/Smarty-3.0.8/SMARTY2_BC_NOTES
+www/froxlor/lib/classes/Smarty-3.0.8/change_log.txt
+www/froxlor/lib/classes/Smarty-3.0.8/demo/configs/test.conf
+www/froxlor/lib/classes/Smarty-3.0.8/demo/index.php
+www/froxlor/lib/classes/Smarty-3.0.8/demo/index_php_template.php
+www/froxlor/lib/classes/Smarty-3.0.8/demo/templates/footer.tpl
+www/froxlor/lib/classes/Smarty-3.0.8/demo/templates/header.tpl
+www/froxlor/lib/classes/Smarty-3.0.8/demo/templates/index.tpl
+www/froxlor/lib/classes/Smarty-3.0.8/demo/templates/index_view.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/Smarty.class.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/debug.tpl
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/block.php.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/block.textformat.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/function.counter.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/function.cycle.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/function.fetch.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/function.html_checkboxes.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/function.html_image.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/function.html_options.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/function.html_radios.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/function.html_select_date.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/function.html_select_time.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/function.html_table.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/function.mailto.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/function.math.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifier.capitalize.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifier.date_format.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifier.debug_print_var.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifier.escape.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifier.regex_replace.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifier.replace.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifier.spacify.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifier.truncate.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifiercompiler.cat.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifiercompiler.count_characters.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifiercompiler.count_paragraphs.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifiercompiler.count_sentences.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifiercompiler.count_words.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifiercompiler.default.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifiercompiler.indent.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifiercompiler.lower.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifiercompiler.noprint.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifiercompiler.string_format.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifiercompiler.strip.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifiercompiler.strip_tags.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifiercompiler.upper.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/modifiercompiler.wordwrap.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/outputfilter.trimwhitespace.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/shared.escape_special_chars.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/shared.make_timestamp.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/shared.mb_str_replace.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins/variablefilter.htmlspecialchars.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_cacheresource_file.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_append.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_assign.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_block.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_break.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_call.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_capture.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_config_load.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_continue.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_debug.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_eval.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_extends.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_for.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_foreach.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_function.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_if.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_include.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_include_php.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_insert.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_ldelim.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_nocache.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_private_block_plugin.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_private_function_plugin.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_private_modifier.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_private_object_block_function.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_private_object_function.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_private_print_expression.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_private_registered_block.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_private_registered_function.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_private_special_variable.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_rdelim.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_section.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compile_while.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_compilebase.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_config.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_config_file_compiler.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_configfilelexer.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_configfileparser.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_data.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_debug.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_filter.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_filter_handler.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_function_call_handler.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_get_include_path.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_nocache_insert.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_parsetree.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_register.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_resource_eval.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_resource_extends.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_resource_file.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_resource_php.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_resource_registered.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_resource_stream.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_resource_string.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_smartytemplatecompiler.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_template.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_templatecompilerbase.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_templatelexer.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_templateparser.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_utility.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_wrapper.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_internal_write_file.php
+www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins/smarty_security.php
 www/froxlor/lib/classes/aps/class.ApsInstaller.php
 www/froxlor/lib/classes/aps/class.ApsParser.php
 www/froxlor/lib/classes/aps/class.ApsUpdater.php
@@ -436,6 +701,10 @@ www/froxlor/lib/classes/logger/class.FileLogger.php
 www/froxlor/lib/classes/logger/class.FroxlorLogger.php
 www/froxlor/lib/classes/logger/class.MysqlLogger.php
 www/froxlor/lib/classes/logger/class.SysLogger.php
+www/froxlor/lib/classes/output/class.Minify_HTML.php
+www/froxlor/lib/classes/output/class.htmlform.php
+www/froxlor/lib/classes/output/class.languageSelect.php
+www/froxlor/lib/classes/output/class.linker.php
 www/froxlor/lib/classes/output/class.paging.php
 www/froxlor/lib/classes/phpinterface/class.phpinterface.php
 www/froxlor/lib/classes/phpinterface/class.phpinterface_fcgid.php
@@ -448,10 +717,51 @@ www/froxlor/lib/configfiles/gentoo.inc.php
 www/froxlor/lib/configfiles/hardy.inc.php
 www/froxlor/lib/configfiles/lenny.inc.php
 www/froxlor/lib/configfiles/lucid.inc.php
+www/froxlor/lib/configfiles/squeeze.inc.php
 www/froxlor/lib/configfiles/suse10.inc.php
 www/froxlor/lib/configfiles_index.inc.php
 www/froxlor/lib/cron_init.php
 www/froxlor/lib/cron_shutdown.php
+www/froxlor/lib/formfields/admin/admin/formfield.admin_add.php
+www/froxlor/lib/formfields/admin/admin/formfield.admin_edit.php
+www/froxlor/lib/formfields/admin/cronjobs/formfield.cronjobs_edit.php
+www/froxlor/lib/formfields/admin/customer/formfield.customer_add.php
+www/froxlor/lib/formfields/admin/customer/formfield.customer_edit.php
+www/froxlor/lib/formfields/admin/domains/formfield.domains_add.php
+www/froxlor/lib/formfields/admin/domains/formfield.domains_edit.php
+www/froxlor/lib/formfields/admin/ipsandports/formfield.ipsandports_add.php
+www/froxlor/lib/formfields/admin/ipsandports/formfield.ipsandports_edit.php
+www/froxlor/lib/formfields/admin/phpconfig/formfield.phpconfig_add.php
+www/froxlor/lib/formfields/admin/phpconfig/formfield.phpconfig_edit.php
+www/froxlor/lib/formfields/admin/templates/formfield.filetemplate_add.php
+www/froxlor/lib/formfields/admin/templates/formfield.filetemplate_edit.php
+www/froxlor/lib/formfields/admin/templates/formfield.template_add.php
+www/froxlor/lib/formfields/admin/templates/formfield.template_edit.php
+www/froxlor/lib/formfields/admin/tickets/formfield.category_edit.php
+www/froxlor/lib/formfields/admin/tickets/formfield.category_new.php
+www/froxlor/lib/formfields/admin/tickets/formfield.ticket_new.php
+www/froxlor/lib/formfields/admin/tickets/formfield.ticket_reply.php
+www/froxlor/lib/formfields/customer/autoresponder/formfield.autoresponder_add.php
+www/froxlor/lib/formfields/customer/autoresponder/formfield.autoresponder_edit.php
+www/froxlor/lib/formfields/customer/domains/formfield.domains_add.php
+www/froxlor/lib/formfields/customer/domains/formfield.domains_edit.php
+www/froxlor/lib/formfields/customer/email/formfield.emails_accountchangepasswd.php
+www/froxlor/lib/formfields/customer/email/formfield.emails_accountchangequota.php
+www/froxlor/lib/formfields/customer/email/formfield.emails_add.php
+www/froxlor/lib/formfields/customer/email/formfield.emails_addaccount.php
+www/froxlor/lib/formfields/customer/email/formfield.emails_addforwarder.php
+www/froxlor/lib/formfields/customer/email/formfield.emails_edit.php
+www/froxlor/lib/formfields/customer/extras/formfield.backup.php
+www/froxlor/lib/formfields/customer/extras/formfield.htaccess_add.php
+www/froxlor/lib/formfields/customer/extras/formfield.htaccess_edit.php
+www/froxlor/lib/formfields/customer/extras/formfield.htpasswd_add.php
+www/froxlor/lib/formfields/customer/extras/formfield.htpasswd_edit.php
+www/froxlor/lib/formfields/customer/ftp/formfield.ftp_add.php
+www/froxlor/lib/formfields/customer/ftp/formfield.ftp_edit.php
+www/froxlor/lib/formfields/customer/mysql/formfield.mysql_add.php
+www/froxlor/lib/formfields/customer/mysql/formfield.mysql_edit.php
+www/froxlor/lib/formfields/customer/tickets/formfield.ticket_add.php
+www/froxlor/lib/formfields/customer/tickets/formfield.ticket_reply.php
 www/froxlor/lib/functions.php
 www/froxlor/lib/functions/aps/function.domainHasApsInstances.php
 www/froxlor/lib/functions/aps/function.getXPathValue.php
@@ -518,10 +828,12 @@ www/froxlor/lib/functions/froxlor/function.createAWStatsConf.php
 www/froxlor/lib/functions/froxlor/function.createAWStatsVhost.php
 www/froxlor/lib/functions/froxlor/function.customerHasPerlEnabled.php
 www/froxlor/lib/functions/froxlor/function.domainHasMainSubDomains.php
+www/froxlor/lib/functions/froxlor/function.generatePassword.php
 www/froxlor/lib/functions/froxlor/function.getAdmins.php
 www/froxlor/lib/functions/froxlor/function.getCustomerDetail.php
 www/froxlor/lib/functions/froxlor/function.getCustomerIdByDomain.php
 www/froxlor/lib/functions/froxlor/function.getCustomers.php
+www/froxlor/lib/functions/froxlor/function.getFilesystemQuota.php
 www/froxlor/lib/functions/froxlor/function.getIpAddresses.php
 www/froxlor/lib/functions/froxlor/function.getIpPortCombinations.php
 www/froxlor/lib/functions/froxlor/function.getLanguages.php
@@ -529,6 +841,7 @@ www/froxlor/lib/functions/froxlor/function.getLoginNameByUid.php
 www/froxlor/lib/functions/froxlor/function.getPhpConfigs.php
 www/froxlor/lib/functions/froxlor/function.getServerId.php
 www/froxlor/lib/functions/froxlor/function.getSessionUserDetail.php
+www/froxlor/lib/functions/froxlor/function.getThemes.php
 www/froxlor/lib/functions/froxlor/function.inserttask.php
 www/froxlor/lib/functions/froxlor/function.isCustomerStdSubdomain.php
 www/froxlor/lib/functions/froxlor/function.isUtf8.php
@@ -557,6 +870,7 @@ www/froxlor/lib/functions/phphelpers/function.html_entity_decode_complete.php
 www/froxlor/lib/functions/phphelpers/function.htmlentities_array.php
 www/froxlor/lib/functions/phphelpers/function.intval_ressource.php
 www/froxlor/lib/functions/phphelpers/function.replace_variables.php
+www/froxlor/lib/functions/phphelpers/function.size_readable.php
 www/froxlor/lib/functions/phphelpers/function.str_replace_array.php
 www/froxlor/lib/functions/phphelpers/function.stripslashes_array.php
 www/froxlor/lib/functions/phphelpers/function.stripslashes_complete.php
@@ -568,6 +882,7 @@ www/froxlor/lib/functions/settings/function.storeSettingField.php
 www/froxlor/lib/functions/settings/function.storeSettingHostname.php
 www/froxlor/lib/functions/settings/function.storeSettingIpAddress.php
 www/froxlor/lib/functions/settings/function.storeSettingMysqlAccessHost.php
+www/froxlor/lib/functions/smarty_plugins/gettext-prefilter.php
 www/froxlor/lib/functions/system/function.checklastguid.php
 www/froxlor/lib/functions/validate/function.appendOpenbasedirPath.php
 www/froxlor/lib/functions/validate/function.buildValidMailFrom.php
@@ -608,6 +923,9 @@ www/froxlor/lng/slovak.lng.php
 www/froxlor/lng/spanish.lng.php
 www/froxlor/lng/swedish.lng.php
 www/froxlor/lng/zh-cn.lng.php
+www/froxlor/locales/de/LC_MESSAGES/default.mo
+www/froxlor/locales/de/LC_MESSAGES/default.po
+www/froxlor/packages/.keep
 www/froxlor/scripts/cron_apsinstaller.php
 www/froxlor/scripts/cron_apsupdater.php
 www/froxlor/scripts/cron_autoresponder.php
@@ -619,6 +937,7 @@ www/froxlor/scripts/froxlor_master_cronjob.php
 www/froxlor/scripts/jobs/cron_apsinstaller.php
 www/froxlor/scripts/jobs/cron_apsupdater.php
 www/froxlor/scripts/jobs/cron_autoresponder.php
+www/froxlor/scripts/jobs/cron_backup.php
 www/froxlor/scripts/jobs/cron_lighttp.htaccess.php
 www/froxlor/scripts/jobs/cron_tasks.inc.dns.10.bind.php
 www/froxlor/scripts/jobs/cron_tasks.inc.http.10.apache.php
@@ -634,181 +953,426 @@ www/froxlor/scripts/jobs/cron_traffic.php
 www/froxlor/scripts/jobs/cron_usage.inc.diskspace.php
 www/froxlor/scripts/jobs/cron_usage_report.php
 www/froxlor/scripts/jobs/cron_used_tickets_reset.php
-www/froxlor/templates/admin/admins/admins.tpl
-www/froxlor/templates/admin/admins/admins_add.tpl
-www/froxlor/templates/admin/admins/admins_admin.tpl
-www/froxlor/templates/admin/admins/admins_edit.tpl
-www/froxlor/templates/admin/aps/askyesno.tpl
-www/froxlor/templates/admin/aps/footer.tpl
-www/froxlor/templates/admin/aps/header.tpl
-www/froxlor/templates/admin/aps/infobox.tpl
-www/froxlor/templates/admin/aps/manage_instances.tpl
-www/froxlor/templates/admin/aps/manage_instances_error.tpl
-www/froxlor/templates/admin/aps/manage_instances_install.tpl
-www/froxlor/templates/admin/aps/manage_instances_package.tpl
-www/froxlor/templates/admin/aps/manage_instances_success.tpl
-www/froxlor/templates/admin/aps/manage_instances_taskactive.tpl
-www/froxlor/templates/admin/aps/manage_instances_uninstall.tpl
-www/froxlor/templates/admin/aps/manage_packages.tpl
-www/froxlor/templates/admin/aps/manage_packages_detail.tpl
-www/froxlor/templates/admin/aps/manage_packages_download.tpl
-www/froxlor/templates/admin/aps/manage_packages_row.tpl
-www/froxlor/templates/admin/aps/upload.tpl
-www/froxlor/templates/admin/configfiles/choose.tpl
-www/froxlor/templates/admin/configfiles/choose_daemon.tpl
-www/froxlor/templates/admin/configfiles/choose_distribution.tpl
-www/froxlor/templates/admin/configfiles/choose_service.tpl
-www/froxlor/templates/admin/configfiles/configfiles.tpl
-www/froxlor/templates/admin/configfiles/configfiles_commands.tpl
-www/froxlor/templates/admin/configfiles/configfiles_file.tpl
-www/froxlor/templates/admin/configfiles/configfiles_files.tpl
-www/froxlor/templates/admin/configfiles/wizard.tpl
-www/froxlor/templates/admin/cronjobs/cronjob_edit.tpl
-www/froxlor/templates/admin/cronjobs/cronjobs.tpl
-www/froxlor/templates/admin/cronjobs/cronjobs_cronjob.tpl
-www/froxlor/templates/admin/customers/customers.tpl
-www/froxlor/templates/admin/customers/customers_add.tpl
-www/froxlor/templates/admin/customers/customers_customer.tpl
-www/froxlor/templates/admin/customers/customers_edit.tpl
-www/froxlor/templates/admin/domains/domains.tpl
-www/froxlor/templates/admin/domains/domains_add.tpl
-www/froxlor/templates/admin/domains/domains_domain.tpl
-www/froxlor/templates/admin/domains/domains_edit.tpl
-www/froxlor/templates/admin/froxlorclients/froxlorclient_settings.tpl
-www/froxlor/templates/admin/froxlorclients/froxlorclient_settingsend.tpl
-www/froxlor/templates/admin/froxlorclients/froxlorclient_settingsoverview.tpl
-www/froxlor/templates/admin/froxlorclients/froxlorclient_settingsoverviewgroup.tpl
-www/froxlor/templates/admin/froxlorclients/froxlorclients.tpl
-www/froxlor/templates/admin/froxlorclients/froxlorclients_add.tpl
-www/froxlor/templates/admin/froxlorclients/froxlorclients_client.tpl
-www/froxlor/templates/admin/froxlorclients/froxlorclients_edit.tpl
-www/froxlor/templates/admin/froxlorclients/froxlorclients_view.tpl
-www/froxlor/templates/admin/index/change_language.tpl
-www/froxlor/templates/admin/index/change_password.tpl
-www/froxlor/templates/admin/index/index.tpl
-www/froxlor/templates/admin/ipsandports/ipsandports.tpl
-www/froxlor/templates/admin/ipsandports/ipsandports_add.tpl
-www/froxlor/templates/admin/ipsandports/ipsandports_edit.tpl
-www/froxlor/templates/admin/ipsandports/ipsandports_ipandport.tpl
-www/froxlor/templates/admin/logger/logger.tpl
-www/froxlor/templates/admin/logger/logger_action.tpl
-www/froxlor/templates/admin/logger/logger_log.tpl
-www/froxlor/templates/admin/message/message.tpl
-www/froxlor/templates/admin/phpconfig/overview.tpl
-www/froxlor/templates/admin/phpconfig/overview_add.tpl
-www/froxlor/templates/admin/phpconfig/overview_edit.tpl
-www/froxlor/templates/admin/phpconfig/overview_overview.tpl
-www/froxlor/templates/admin/settings/settings.tpl
-www/froxlor/templates/admin/settings/settings_form_begin.tpl
-www/froxlor/templates/admin/settings/settings_form_end.tpl
-www/froxlor/templates/admin/settings/settings_group.tpl
-www/froxlor/templates/admin/settings/settings_overview.tpl
-www/froxlor/templates/admin/settings/settings_overviewgroup.tpl
-www/froxlor/templates/admin/settings/updatecounters.tpl
-www/froxlor/templates/admin/settings/updatecounters_row_admin.tpl
-www/froxlor/templates/admin/settings/updatecounters_row_customer.tpl
-www/froxlor/templates/admin/templates/filetemplates_add.tpl
-www/froxlor/templates/admin/templates/filetemplates_edit.tpl
-www/froxlor/templates/admin/templates/templates.tpl
-www/froxlor/templates/admin/templates/templates_add_1.tpl
-www/froxlor/templates/admin/templates/templates_add_2.tpl
-www/froxlor/templates/admin/templates/templates_edit.tpl
-www/froxlor/templates/admin/templates/templates_filetemplate.tpl
-www/froxlor/templates/admin/templates/templates_template.tpl
-www/froxlor/templates/admin/ticket/archive.tpl
-www/froxlor/templates/admin/ticket/archived_tickets.tpl
-www/froxlor/templates/admin/ticket/archivesearch.tpl
-www/froxlor/templates/admin/ticket/categories.tpl
-www/froxlor/templates/admin/ticket/tickets.tpl
-www/froxlor/templates/admin/ticket/tickets_categories.tpl
-www/froxlor/templates/admin/ticket/tickets_customer.tpl
-www/froxlor/templates/admin/ticket/tickets_editcategory.tpl
-www/froxlor/templates/admin/ticket/tickets_new.tpl
-www/froxlor/templates/admin/ticket/tickets_newcategory.tpl
-www/froxlor/templates/admin/ticket/tickets_reply.tpl
-www/froxlor/templates/admin/ticket/tickets_tickets.tpl
-www/froxlor/templates/admin/ticket/tickets_tickets_list.tpl
-www/froxlor/templates/admin/ticket/tickets_tickets_main.tpl
-www/froxlor/templates/admin/ticket/tickets_view.tpl
-www/froxlor/templates/admin/update/index.tpl
-www/froxlor/templates/admin/update/noupdatesavail.tpl
-www/froxlor/templates/admin/update/preconfigitem.tpl
-www/froxlor/templates/admin/update/update_end.tpl
-www/froxlor/templates/admin/update/update_start.tpl
-www/froxlor/templates/customer/aps/askyesno.tpl
-www/froxlor/templates/customer/aps/data.tpl
-www/froxlor/templates/customer/aps/footer.tpl
-www/froxlor/templates/customer/aps/header.tpl
-www/froxlor/templates/customer/aps/infobox.tpl
-www/froxlor/templates/customer/aps/installer.tpl
-www/froxlor/templates/customer/aps/package.tpl
-www/froxlor/templates/customer/aps/package_status.tpl
-www/froxlor/templates/customer/aps/search.tpl
-www/froxlor/templates/customer/domains/domainlist.tpl
-www/froxlor/templates/customer/domains/domains.tpl
-www/froxlor/templates/customer/domains/domains_add.tpl
-www/froxlor/templates/customer/domains/domains_delimiter.tpl
-www/froxlor/templates/customer/domains/domains_domain.tpl
-www/froxlor/templates/customer/domains/domains_edit.tpl
-www/froxlor/templates/customer/email/account_add.tpl
-www/froxlor/templates/customer/email/account_changepw.tpl
-www/froxlor/templates/customer/email/account_changequota.tpl
-www/froxlor/templates/customer/email/autoresponder.tpl
-www/froxlor/templates/customer/email/autoresponder_add.tpl
-www/froxlor/templates/customer/email/autoresponder_autoresponder.tpl
-www/froxlor/templates/customer/email/autoresponder_edit.tpl
-www/froxlor/templates/customer/email/email.tpl
-www/froxlor/templates/customer/email/emails.tpl
-www/froxlor/templates/customer/email/emails_add.tpl
-www/froxlor/templates/customer/email/emails_domain.tpl
-www/froxlor/templates/customer/email/emails_edit.tpl
-www/froxlor/templates/customer/email/emails_edit_forwarder.tpl
-www/froxlor/templates/customer/email/emails_email.tpl
-www/froxlor/templates/customer/email/forwarder_add.tpl
-www/froxlor/templates/customer/extras/extras.tpl
-www/froxlor/templates/customer/extras/htaccess.tpl
-www/froxlor/templates/customer/extras/htaccess_add.tpl
-www/froxlor/templates/customer/extras/htaccess_edit.tpl
-www/froxlor/templates/customer/extras/htaccess_htaccess.tpl
-www/froxlor/templates/customer/extras/htpasswds.tpl
-www/froxlor/templates/customer/extras/htpasswds_add.tpl
-www/froxlor/templates/customer/extras/htpasswds_edit.tpl
-www/froxlor/templates/customer/extras/htpasswds_htpasswd.tpl
-www/froxlor/templates/customer/ftp/accounts.tpl
-www/froxlor/templates/customer/ftp/accounts_account.tpl
-www/froxlor/templates/customer/ftp/accounts_add.tpl
-www/froxlor/templates/customer/ftp/accounts_edit.tpl
-www/froxlor/templates/customer/ftp/ftp.tpl
-www/froxlor/templates/customer/index/change_language.tpl
-www/froxlor/templates/customer/index/change_password.tpl
-www/froxlor/templates/customer/index/index.tpl
-www/froxlor/templates/customer/mysql/mysql.tpl
-www/froxlor/templates/customer/mysql/mysqls.tpl
-www/froxlor/templates/customer/mysql/mysqls_add.tpl
-www/froxlor/templates/customer/mysql/mysqls_database.tpl
-www/froxlor/templates/customer/mysql/mysqls_edit.tpl
-www/froxlor/templates/customer/ticket/ticket.tpl
-www/froxlor/templates/customer/ticket/tickets.tpl
-www/froxlor/templates/customer/ticket/tickets_new.tpl
-www/froxlor/templates/customer/ticket/tickets_reply.tpl
-www/froxlor/templates/customer/ticket/tickets_tickets.tpl
-www/froxlor/templates/customer/ticket/tickets_tickets_list.tpl
-www/froxlor/templates/customer/ticket/tickets_tickets_main.tpl
-www/froxlor/templates/customer/traffic/traffic.tpl
-www/froxlor/templates/customer/traffic/traffic_details.tpl
-www/froxlor/templates/customer/traffic/traffic_month.tpl
-www/froxlor/templates/customer/traffic/traffic_traffic.tpl
-www/froxlor/templates/footer.tpl
-www/froxlor/templates/formfields/bool.tpl
-www/froxlor/templates/formfields/hidden.tpl
-www/froxlor/templates/formfields/label.tpl
-www/froxlor/templates/formfields/option.tpl
-www/froxlor/templates/formfields/string.tpl
-www/froxlor/templates/formfields/text.tpl
-www/froxlor/templates/header.tpl
-www/froxlor/templates/login/fpwd.tpl
-www/froxlor/templates/login/login.tpl
-www/froxlor/templates/main.css
+www/froxlor/smarty.c
+www/froxlor/temp/.keep
+www/froxlor/templates/Classic/admin/admins/admins.tpl
+www/froxlor/templates/Classic/admin/admins/admins_add.tpl
+www/froxlor/templates/Classic/admin/admins/admins_admin.tpl
+www/froxlor/templates/Classic/admin/admins/admins_edit.tpl
+www/froxlor/templates/Classic/admin/aps/askyesno.tpl
+www/froxlor/templates/Classic/admin/aps/footer.tpl
+www/froxlor/templates/Classic/admin/aps/header.tpl
+www/froxlor/templates/Classic/admin/aps/infobox.tpl
+www/froxlor/templates/Classic/admin/aps/manage_instances.tpl
+www/froxlor/templates/Classic/admin/aps/manage_instances_error.tpl
+www/froxlor/templates/Classic/admin/aps/manage_instances_install.tpl
+www/froxlor/templates/Classic/admin/aps/manage_instances_package.tpl
+www/froxlor/templates/Classic/admin/aps/manage_instances_success.tpl
+www/froxlor/templates/Classic/admin/aps/manage_instances_taskactive.tpl
+www/froxlor/templates/Classic/admin/aps/manage_instances_uninstall.tpl
+www/froxlor/templates/Classic/admin/aps/manage_packages.tpl
+www/froxlor/templates/Classic/admin/aps/manage_packages_detail.tpl
+www/froxlor/templates/Classic/admin/aps/manage_packages_download.tpl
+www/froxlor/templates/Classic/admin/aps/manage_packages_row.tpl
+www/froxlor/templates/Classic/admin/aps/upload.tpl
+www/froxlor/templates/Classic/admin/configfiles/choose.tpl
+www/froxlor/templates/Classic/admin/configfiles/choose_daemon.tpl
+www/froxlor/templates/Classic/admin/configfiles/choose_distribution.tpl
+www/froxlor/templates/Classic/admin/configfiles/choose_service.tpl
+www/froxlor/templates/Classic/admin/configfiles/configfiles.tpl
+www/froxlor/templates/Classic/admin/configfiles/configfiles_commands.tpl
+www/froxlor/templates/Classic/admin/configfiles/configfiles_file.tpl
+www/froxlor/templates/Classic/admin/configfiles/configfiles_files.tpl
+www/froxlor/templates/Classic/admin/configfiles/wizard.tpl
+www/froxlor/templates/Classic/admin/cronjobs/cronjob_edit.tpl
+www/froxlor/templates/Classic/admin/cronjobs/cronjobs.tpl
+www/froxlor/templates/Classic/admin/cronjobs/cronjobs_cronjob.tpl
+www/froxlor/templates/Classic/admin/customers/customers.tpl
+www/froxlor/templates/Classic/admin/customers/customers_add.tpl
+www/froxlor/templates/Classic/admin/customers/customers_customer.tpl
+www/froxlor/templates/Classic/admin/customers/customers_edit.tpl
+www/froxlor/templates/Classic/admin/domains/domains.tpl
+www/froxlor/templates/Classic/admin/domains/domains_add.tpl
+www/froxlor/templates/Classic/admin/domains/domains_domain.tpl
+www/froxlor/templates/Classic/admin/domains/domains_edit.tpl
+www/froxlor/templates/Classic/admin/froxlorclients/froxlorclient_settings.tpl
+www/froxlor/templates/Classic/admin/froxlorclients/froxlorclient_settingsend.tpl
+www/froxlor/templates/Classic/admin/froxlorclients/froxlorclient_settingsoverview.tpl
+www/froxlor/templates/Classic/admin/froxlorclients/froxlorclient_settingsoverviewgroup.tpl
+www/froxlor/templates/Classic/admin/froxlorclients/froxlorclients.tpl
+www/froxlor/templates/Classic/admin/froxlorclients/froxlorclients_add.tpl
+www/froxlor/templates/Classic/admin/froxlorclients/froxlorclients_client.tpl
+www/froxlor/templates/Classic/admin/froxlorclients/froxlorclients_edit.tpl
+www/froxlor/templates/Classic/admin/froxlorclients/froxlorclients_view.tpl
+www/froxlor/templates/Classic/admin/index/change_language.tpl
+www/froxlor/templates/Classic/admin/index/change_password.tpl
+www/froxlor/templates/Classic/admin/index/change_theme.tpl
+www/froxlor/templates/Classic/admin/index/index.tpl
+www/froxlor/templates/Classic/admin/index/overview_item.tpl
+www/froxlor/templates/Classic/admin/ipsandports/ipsandports.tpl
+www/froxlor/templates/Classic/admin/ipsandports/ipsandports_add.tpl
+www/froxlor/templates/Classic/admin/ipsandports/ipsandports_edit.tpl
+www/froxlor/templates/Classic/admin/ipsandports/ipsandports_ipandport.tpl
+www/froxlor/templates/Classic/admin/logger/logger.tpl
+www/froxlor/templates/Classic/admin/logger/logger_action.tpl
+www/froxlor/templates/Classic/admin/logger/logger_log.tpl
+www/froxlor/templates/Classic/admin/message/message.tpl
+www/froxlor/templates/Classic/admin/phpconfig/overview.tpl
+www/froxlor/templates/Classic/admin/phpconfig/overview_add.tpl
+www/froxlor/templates/Classic/admin/phpconfig/overview_edit.tpl
+www/froxlor/templates/Classic/admin/phpconfig/overview_overview.tpl
+www/froxlor/templates/Classic/admin/settings/settings.tpl
+www/froxlor/templates/Classic/admin/settings/settings_form_begin.tpl
+www/froxlor/templates/Classic/admin/settings/settings_form_end.tpl
+www/froxlor/templates/Classic/admin/settings/settings_group.tpl
+www/froxlor/templates/Classic/admin/settings/settings_overview.tpl
+www/froxlor/templates/Classic/admin/settings/settings_overviewgroup.tpl
+www/froxlor/templates/Classic/admin/settings/updatecounters.tpl
+www/froxlor/templates/Classic/admin/settings/updatecounters_row_admin.tpl
+www/froxlor/templates/Classic/admin/settings/updatecounters_row_customer.tpl
+www/froxlor/templates/Classic/admin/templates/filetemplates_add.tpl
+www/froxlor/templates/Classic/admin/templates/filetemplates_edit.tpl
+www/froxlor/templates/Classic/admin/templates/templates.tpl
+www/froxlor/templates/Classic/admin/templates/templates_add_1.tpl
+www/froxlor/templates/Classic/admin/templates/templates_add_2.tpl
+www/froxlor/templates/Classic/admin/templates/templates_edit.tpl
+www/froxlor/templates/Classic/admin/templates/templates_filetemplate.tpl
+www/froxlor/templates/Classic/admin/templates/templates_template.tpl
+www/froxlor/templates/Classic/admin/tickets/archive.tpl
+www/froxlor/templates/Classic/admin/tickets/archived_tickets.tpl
+www/froxlor/templates/Classic/admin/tickets/archivesearch.tpl
+www/froxlor/templates/Classic/admin/tickets/categories.tpl
+www/froxlor/templates/Classic/admin/tickets/tickets.tpl
+www/froxlor/templates/Classic/admin/tickets/tickets_categories.tpl
+www/froxlor/templates/Classic/admin/tickets/tickets_customer.tpl
+www/froxlor/templates/Classic/admin/tickets/tickets_editcategory.tpl
+www/froxlor/templates/Classic/admin/tickets/tickets_new.tpl
+www/froxlor/templates/Classic/admin/tickets/tickets_newcategory.tpl
+www/froxlor/templates/Classic/admin/tickets/tickets_reply.tpl
+www/froxlor/templates/Classic/admin/tickets/tickets_tickets.tpl
+www/froxlor/templates/Classic/admin/tickets/tickets_tickets_list.tpl
+www/froxlor/templates/Classic/admin/tickets/tickets_tickets_main.tpl
+www/froxlor/templates/Classic/admin/tickets/tickets_view.tpl
+www/froxlor/templates/Classic/admin/traffic/index.tpl
+www/froxlor/templates/Classic/admin/traffic/index_table.tpl
+www/froxlor/templates/Classic/admin/traffic/index_table_row.tpl
+www/froxlor/templates/Classic/admin/update/index.tpl
+www/froxlor/templates/Classic/admin/update/noupdatesavail.tpl
+www/froxlor/templates/Classic/admin/update/preconfigitem.tpl
+www/froxlor/templates/Classic/admin/update/update_end.tpl
+www/froxlor/templates/Classic/admin/update/update_start.tpl
+www/froxlor/templates/Classic/customer/aps/askyesno.tpl
+www/froxlor/templates/Classic/customer/aps/data.tpl
+www/froxlor/templates/Classic/customer/aps/footer.tpl
+www/froxlor/templates/Classic/customer/aps/header.tpl
+www/froxlor/templates/Classic/customer/aps/infobox.tpl
+www/froxlor/templates/Classic/customer/aps/installer.tpl
+www/froxlor/templates/Classic/customer/aps/package.tpl
+www/froxlor/templates/Classic/customer/aps/package_status.tpl
+www/froxlor/templates/Classic/customer/aps/search.tpl
+www/froxlor/templates/Classic/customer/autoresponder/autoresponder.tpl
+www/froxlor/templates/Classic/customer/autoresponder/autoresponder_add.tpl
+www/froxlor/templates/Classic/customer/autoresponder/autoresponder_autoresponder.tpl
+www/froxlor/templates/Classic/customer/autoresponder/autoresponder_edit.tpl
+www/froxlor/templates/Classic/customer/domains/domainlist.tpl
+www/froxlor/templates/Classic/customer/domains/domains.tpl
+www/froxlor/templates/Classic/customer/domains/domains_add.tpl
+www/froxlor/templates/Classic/customer/domains/domains_delimiter.tpl
+www/froxlor/templates/Classic/customer/domains/domains_domain.tpl
+www/froxlor/templates/Classic/customer/domains/domains_edit.tpl
+www/froxlor/templates/Classic/customer/email/account_add.tpl
+www/froxlor/templates/Classic/customer/email/account_changepw.tpl
+www/froxlor/templates/Classic/customer/email/account_changequota.tpl
+www/froxlor/templates/Classic/customer/email/email.tpl
+www/froxlor/templates/Classic/customer/email/emails.tpl
+www/froxlor/templates/Classic/customer/email/emails_add.tpl
+www/froxlor/templates/Classic/customer/email/emails_domain.tpl
+www/froxlor/templates/Classic/customer/email/emails_edit.tpl
+www/froxlor/templates/Classic/customer/email/emails_edit_forwarder.tpl
+www/froxlor/templates/Classic/customer/email/emails_email.tpl
+www/froxlor/templates/Classic/customer/email/forwarder_add.tpl
+www/froxlor/templates/Classic/customer/extras/backup.tpl
+www/froxlor/templates/Classic/customer/extras/extras.tpl
+www/froxlor/templates/Classic/customer/extras/htaccess.tpl
+www/froxlor/templates/Classic/customer/extras/htaccess_add.tpl
+www/froxlor/templates/Classic/customer/extras/htaccess_edit.tpl
+www/froxlor/templates/Classic/customer/extras/htaccess_htaccess.tpl
+www/froxlor/templates/Classic/customer/extras/htpasswds.tpl
+www/froxlor/templates/Classic/customer/extras/htpasswds_add.tpl
+www/froxlor/templates/Classic/customer/extras/htpasswds_edit.tpl
+www/froxlor/templates/Classic/customer/extras/htpasswds_htpasswd.tpl
+www/froxlor/templates/Classic/customer/ftp/accounts.tpl
+www/froxlor/templates/Classic/customer/ftp/accounts_account.tpl
+www/froxlor/templates/Classic/customer/ftp/accounts_add.tpl
+www/froxlor/templates/Classic/customer/ftp/accounts_edit.tpl
+www/froxlor/templates/Classic/customer/ftp/ftp.tpl
+www/froxlor/templates/Classic/customer/index/change_language.tpl
+www/froxlor/templates/Classic/customer/index/change_password.tpl
+www/froxlor/templates/Classic/customer/index/change_theme.tpl
+www/froxlor/templates/Classic/customer/index/index.tpl
+www/froxlor/templates/Classic/customer/mysql/mysql.tpl
+www/froxlor/templates/Classic/customer/mysql/mysqls.tpl
+www/froxlor/templates/Classic/customer/mysql/mysqls_add.tpl
+www/froxlor/templates/Classic/customer/mysql/mysqls_database.tpl
+www/froxlor/templates/Classic/customer/mysql/mysqls_edit.tpl
+www/froxlor/templates/Classic/customer/tickets/ticket.tpl
+www/froxlor/templates/Classic/customer/tickets/tickets.tpl
+www/froxlor/templates/Classic/customer/tickets/tickets_new.tpl
+www/froxlor/templates/Classic/customer/tickets/tickets_reply.tpl
+www/froxlor/templates/Classic/customer/tickets/tickets_tickets.tpl
+www/froxlor/templates/Classic/customer/tickets/tickets_tickets_list.tpl
+www/froxlor/templates/Classic/customer/tickets/tickets_tickets_main.tpl
+www/froxlor/templates/Classic/customer/traffic/traffic.tpl
+www/froxlor/templates/Classic/customer/traffic/traffic_details.tpl
+www/froxlor/templates/Classic/customer/traffic/traffic_month.tpl
+www/froxlor/templates/Classic/customer/traffic/traffic_traffic.tpl
+www/froxlor/templates/Classic/footer.tpl
+www/froxlor/templates/Classic/formfields/bool.tpl
+www/froxlor/templates/Classic/formfields/hidden.tpl
+www/froxlor/templates/Classic/formfields/label.tpl
+www/froxlor/templates/Classic/formfields/option.tpl
+www/froxlor/templates/Classic/formfields/string.tpl
+www/froxlor/templates/Classic/formfields/text.tpl
+www/froxlor/templates/Classic/header.tpl
+www/froxlor/templates/Classic/js/froxlor.js
+www/froxlor/templates/Classic/js/jquery.min.js
+www/froxlor/templates/Classic/login/fpwd.tpl
+www/froxlor/templates/Classic/login/login.tpl
+www/froxlor/templates/Classic/main.css
+www/froxlor/templates/Classic/misc/alreadyinstalledhint.tpl
+www/froxlor/templates/Classic/misc/configurehint.tpl
+www/froxlor/templates/Classic/misc/error.tpl
+www/froxlor/templates/Classic/misc/form/input_text.tpl
+www/froxlor/templates/Classic/misc/form/input_textarea.tpl
+www/froxlor/templates/Classic/misc/form/table_end.tpl
+www/froxlor/templates/Classic/misc/form/table_row.tpl
+www/froxlor/templates/Classic/misc/form/table_section.tpl
+www/froxlor/templates/Classic/misc/htmlarrowcode.tpl
+www/froxlor/templates/Classic/misc/htmlsearchcode.tpl
+www/froxlor/templates/Classic/misc/htmlsortcode.tpl
+www/froxlor/templates/Classic/misc/question_yesno.tpl
+www/froxlor/templates/Classic/misc/question_yesno_checkbox.tpl
+www/froxlor/templates/Classic/misc/success.tpl
+www/froxlor/templates/Classic/navigation_element.tpl
+www/froxlor/templates/Classic/navigation_link.tpl
+www/froxlor/templates/Froxlor/admin/admins/admins.tpl
+www/froxlor/templates/Froxlor/admin/admins/admins_add.tpl
+www/froxlor/templates/Froxlor/admin/admins/admins_admin.tpl
+www/froxlor/templates/Froxlor/admin/admins/admins_edit.tpl
+www/froxlor/templates/Froxlor/admin/aps/askyesno.tpl
+www/froxlor/templates/Froxlor/admin/aps/footer.tpl
+www/froxlor/templates/Froxlor/admin/aps/header.tpl
+www/froxlor/templates/Froxlor/admin/aps/infobox.tpl
+www/froxlor/templates/Froxlor/admin/aps/manage_instances.tpl
+www/froxlor/templates/Froxlor/admin/aps/manage_instances_error.tpl
+www/froxlor/templates/Froxlor/admin/aps/manage_instances_install.tpl
+www/froxlor/templates/Froxlor/admin/aps/manage_instances_package.tpl
+www/froxlor/templates/Froxlor/admin/aps/manage_instances_success.tpl
+www/froxlor/templates/Froxlor/admin/aps/manage_instances_taskactive.tpl
+www/froxlor/templates/Froxlor/admin/aps/manage_instances_uninstall.tpl
+www/froxlor/templates/Froxlor/admin/aps/manage_packages.tpl
+www/froxlor/templates/Froxlor/admin/aps/manage_packages_detail.tpl
+www/froxlor/templates/Froxlor/admin/aps/manage_packages_download.tpl
+www/froxlor/templates/Froxlor/admin/aps/manage_packages_row.tpl
+www/froxlor/templates/Froxlor/admin/aps/upload.tpl
+www/froxlor/templates/Froxlor/admin/configfiles/choose.tpl
+www/froxlor/templates/Froxlor/admin/configfiles/choose_daemon.tpl
+www/froxlor/templates/Froxlor/admin/configfiles/choose_distribution.tpl
+www/froxlor/templates/Froxlor/admin/configfiles/choose_service.tpl
+www/froxlor/templates/Froxlor/admin/configfiles/configfiles.tpl
+www/froxlor/templates/Froxlor/admin/configfiles/configfiles_commands.tpl
+www/froxlor/templates/Froxlor/admin/configfiles/configfiles_file.tpl
+www/froxlor/templates/Froxlor/admin/configfiles/configfiles_files.tpl
+www/froxlor/templates/Froxlor/admin/configfiles/wizard.tpl
+www/froxlor/templates/Froxlor/admin/cronjobs/cronjob_edit.tpl
+www/froxlor/templates/Froxlor/admin/cronjobs/cronjobs.tpl
+www/froxlor/templates/Froxlor/admin/cronjobs/cronjobs_cronjob.tpl
+www/froxlor/templates/Froxlor/admin/customers/customers.tpl
+www/froxlor/templates/Froxlor/admin/customers/customers_add.tpl
+www/froxlor/templates/Froxlor/admin/customers/customers_customer.tpl
+www/froxlor/templates/Froxlor/admin/customers/customers_edit.tpl
+www/froxlor/templates/Froxlor/admin/domains/domains.tpl
+www/froxlor/templates/Froxlor/admin/domains/domains_add.tpl
+www/froxlor/templates/Froxlor/admin/domains/domains_domain.tpl
+www/froxlor/templates/Froxlor/admin/domains/domains_edit.tpl
+www/froxlor/templates/Froxlor/admin/froxlorclients/froxlorclient_settings.tpl
+www/froxlor/templates/Froxlor/admin/froxlorclients/froxlorclient_settingsend.tpl
+www/froxlor/templates/Froxlor/admin/froxlorclients/froxlorclient_settingsoverview.tpl
+www/froxlor/templates/Froxlor/admin/froxlorclients/froxlorclient_settingsoverviewgroup.tpl
+www/froxlor/templates/Froxlor/admin/froxlorclients/froxlorclients.tpl
+www/froxlor/templates/Froxlor/admin/froxlorclients/froxlorclients_add.tpl
+www/froxlor/templates/Froxlor/admin/froxlorclients/froxlorclients_client.tpl
+www/froxlor/templates/Froxlor/admin/froxlorclients/froxlorclients_edit.tpl
+www/froxlor/templates/Froxlor/admin/froxlorclients/froxlorclients_tasks.tpl
+www/froxlor/templates/Froxlor/admin/froxlorclients/froxlorclients_tasks_head.tpl
+www/froxlor/templates/Froxlor/admin/froxlorclients/froxlorclients_view.tpl
+www/froxlor/templates/Froxlor/admin/froxlorclients/froxlorclients_view_clientinfo.tpl
+www/froxlor/templates/Froxlor/admin/index/change_language.tpl
+www/froxlor/templates/Froxlor/admin/index/change_password.tpl
+www/froxlor/templates/Froxlor/admin/index/change_theme.tpl
+www/froxlor/templates/Froxlor/admin/index/index.tpl
+www/froxlor/templates/Froxlor/admin/index/overview_item.tpl
+www/froxlor/templates/Froxlor/admin/ipsandports/ipsandports.tpl
+www/froxlor/templates/Froxlor/admin/ipsandports/ipsandports_add.tpl
+www/froxlor/templates/Froxlor/admin/ipsandports/ipsandports_edit.tpl
+www/froxlor/templates/Froxlor/admin/ipsandports/ipsandports_ipandport.tpl
+www/froxlor/templates/Froxlor/admin/logger/logger.tpl
+www/froxlor/templates/Froxlor/admin/logger/logger_action.tpl
+www/froxlor/templates/Froxlor/admin/logger/logger_log.tpl
+www/froxlor/templates/Froxlor/admin/message/message.tpl
+www/froxlor/templates/Froxlor/admin/phpconfig/overview.tpl
+www/froxlor/templates/Froxlor/admin/phpconfig/overview_add.tpl
+www/froxlor/templates/Froxlor/admin/phpconfig/overview_edit.tpl
+www/froxlor/templates/Froxlor/admin/phpconfig/overview_overview.tpl
+www/froxlor/templates/Froxlor/admin/settings/settings.tpl
+www/froxlor/templates/Froxlor/admin/settings/settings_form_begin.tpl
+www/froxlor/templates/Froxlor/admin/settings/settings_form_end.tpl
+www/froxlor/templates/Froxlor/admin/settings/settings_group.tpl
+www/froxlor/templates/Froxlor/admin/settings/settings_overview.tpl
+www/froxlor/templates/Froxlor/admin/settings/settings_overviewgroup.tpl
+www/froxlor/templates/Froxlor/admin/settings/updatecounters.tpl
+www/froxlor/templates/Froxlor/admin/settings/updatecounters_row_admin.tpl
+www/froxlor/templates/Froxlor/admin/settings/updatecounters_row_customer.tpl
+www/froxlor/templates/Froxlor/admin/templates/filetemplates_add.tpl
+www/froxlor/templates/Froxlor/admin/templates/filetemplates_edit.tpl
+www/froxlor/templates/Froxlor/admin/templates/templates.tpl
+www/froxlor/templates/Froxlor/admin/templates/templates_add_1.tpl
+www/froxlor/templates/Froxlor/admin/templates/templates_add_2.tpl
+www/froxlor/templates/Froxlor/admin/templates/templates_edit.tpl
+www/froxlor/templates/Froxlor/admin/templates/templates_filetemplate.tpl
+www/froxlor/templates/Froxlor/admin/templates/templates_template.tpl
+www/froxlor/templates/Froxlor/admin/tickets/archive.tpl
+www/froxlor/templates/Froxlor/admin/tickets/archived_tickets.tpl
+www/froxlor/templates/Froxlor/admin/tickets/archivesearch.tpl
+www/froxlor/templates/Froxlor/admin/tickets/categories.tpl
+www/froxlor/templates/Froxlor/admin/tickets/tickets.tpl
+www/froxlor/templates/Froxlor/admin/tickets/tickets_categories.tpl
+www/froxlor/templates/Froxlor/admin/tickets/tickets_customer.tpl
+www/froxlor/templates/Froxlor/admin/tickets/tickets_editcategory.tpl
+www/froxlor/templates/Froxlor/admin/tickets/tickets_new.tpl
+www/froxlor/templates/Froxlor/admin/tickets/tickets_newcategory.tpl
+www/froxlor/templates/Froxlor/admin/tickets/tickets_reply.tpl
+www/froxlor/templates/Froxlor/admin/tickets/tickets_tickets.tpl
+www/froxlor/templates/Froxlor/admin/tickets/tickets_tickets_list.tpl
+www/froxlor/templates/Froxlor/admin/tickets/tickets_tickets_main.tpl
+www/froxlor/templates/Froxlor/admin/tickets/tickets_view.tpl
+www/froxlor/templates/Froxlor/admin/traffic/index.tpl
+www/froxlor/templates/Froxlor/admin/traffic/index_table.tpl
+www/froxlor/templates/Froxlor/admin/traffic/index_table_row.tpl
+www/froxlor/templates/Froxlor/admin/update/index.tpl
+www/froxlor/templates/Froxlor/admin/update/noupdatesavail.tpl
+www/froxlor/templates/Froxlor/admin/update/preconfigitem.tpl
+www/froxlor/templates/Froxlor/admin/update/update_end.tpl
+www/froxlor/templates/Froxlor/admin/update/update_start.tpl
+www/froxlor/templates/Froxlor/customer/aps/askyesno.tpl
+www/froxlor/templates/Froxlor/customer/aps/data.tpl
+www/froxlor/templates/Froxlor/customer/aps/footer.tpl
+www/froxlor/templates/Froxlor/customer/aps/header.tpl
+www/froxlor/templates/Froxlor/customer/aps/infobox.tpl
+www/froxlor/templates/Froxlor/customer/aps/installer.tpl
+www/froxlor/templates/Froxlor/customer/aps/package.tpl
+www/froxlor/templates/Froxlor/customer/aps/package_status.tpl
+www/froxlor/templates/Froxlor/customer/aps/search.tpl
+www/froxlor/templates/Froxlor/customer/autoresponder/autoresponder.tpl
+www/froxlor/templates/Froxlor/customer/autoresponder/autoresponder_add.tpl
+www/froxlor/templates/Froxlor/customer/autoresponder/autoresponder_autoresponder.tpl
+www/froxlor/templates/Froxlor/customer/autoresponder/autoresponder_edit.tpl
+www/froxlor/templates/Froxlor/customer/domains/domainlist.tpl
+www/froxlor/templates/Froxlor/customer/domains/domains.tpl
+www/froxlor/templates/Froxlor/customer/domains/domains_add.tpl
+www/froxlor/templates/Froxlor/customer/domains/domains_delimiter.tpl
+www/froxlor/templates/Froxlor/customer/domains/domains_domain.tpl
+www/froxlor/templates/Froxlor/customer/domains/domains_edit.tpl
+www/froxlor/templates/Froxlor/customer/email/account_add.tpl
+www/froxlor/templates/Froxlor/customer/email/account_changepw.tpl
+www/froxlor/templates/Froxlor/customer/email/account_changequota.tpl
+www/froxlor/templates/Froxlor/customer/email/email.tpl
+www/froxlor/templates/Froxlor/customer/email/emails.tpl
+www/froxlor/templates/Froxlor/customer/email/emails_add.tpl
+www/froxlor/templates/Froxlor/customer/email/emails_domain.tpl
+www/froxlor/templates/Froxlor/customer/email/emails_edit.tpl
+www/froxlor/templates/Froxlor/customer/email/emails_edit_forwarder.tpl
+www/froxlor/templates/Froxlor/customer/email/emails_email.tpl
+www/froxlor/templates/Froxlor/customer/email/forwarder_add.tpl
+www/froxlor/templates/Froxlor/customer/extras/backup.tpl
+www/froxlor/templates/Froxlor/customer/extras/extras.tpl
+www/froxlor/templates/Froxlor/customer/extras/htaccess.tpl
+www/froxlor/templates/Froxlor/customer/extras/htaccess_add.tpl
+www/froxlor/templates/Froxlor/customer/extras/htaccess_edit.tpl
+www/froxlor/templates/Froxlor/customer/extras/htaccess_htaccess.tpl
+www/froxlor/templates/Froxlor/customer/extras/htpasswds.tpl
+www/froxlor/templates/Froxlor/customer/extras/htpasswds_add.tpl
+www/froxlor/templates/Froxlor/customer/extras/htpasswds_edit.tpl
+www/froxlor/templates/Froxlor/customer/extras/htpasswds_htpasswd.tpl
+www/froxlor/templates/Froxlor/customer/ftp/accounts.tpl
+www/froxlor/templates/Froxlor/customer/ftp/accounts_account.tpl
+www/froxlor/templates/Froxlor/customer/ftp/accounts_add.tpl
+www/froxlor/templates/Froxlor/customer/ftp/accounts_edit.tpl
+www/froxlor/templates/Froxlor/customer/ftp/ftp.tpl
+www/froxlor/templates/Froxlor/customer/index/change_language.tpl
+www/froxlor/templates/Froxlor/customer/index/change_password.tpl
+www/froxlor/templates/Froxlor/customer/index/change_theme.tpl
+www/froxlor/templates/Froxlor/customer/index/index.tpl
+www/froxlor/templates/Froxlor/customer/mysql/mysql.tpl
+www/froxlor/templates/Froxlor/customer/mysql/mysqls.tpl
+www/froxlor/templates/Froxlor/customer/mysql/mysqls_add.tpl
+www/froxlor/templates/Froxlor/customer/mysql/mysqls_database.tpl
+www/froxlor/templates/Froxlor/customer/mysql/mysqls_edit.tpl
+www/froxlor/templates/Froxlor/customer/tickets/ticket.tpl
+www/froxlor/templates/Froxlor/customer/tickets/tickets.tpl
+www/froxlor/templates/Froxlor/customer/tickets/tickets_new.tpl
+www/froxlor/templates/Froxlor/customer/tickets/tickets_reply.tpl
+www/froxlor/templates/Froxlor/customer/tickets/tickets_tickets.tpl
+www/froxlor/templates/Froxlor/customer/tickets/tickets_tickets_list.tpl
+www/froxlor/templates/Froxlor/customer/tickets/tickets_tickets_main.tpl
+www/froxlor/templates/Froxlor/customer/traffic/traffic.tpl
+www/froxlor/templates/Froxlor/customer/traffic/traffic_details.tpl
+www/froxlor/templates/Froxlor/customer/traffic/traffic_month.tpl
+www/froxlor/templates/Froxlor/customer/traffic/traffic_traffic.tpl
+www/froxlor/templates/Froxlor/footer.tpl
+www/froxlor/templates/Froxlor/formfields/bool.tpl
+www/froxlor/templates/Froxlor/formfields/hidden.tpl
+www/froxlor/templates/Froxlor/formfields/label.tpl
+www/froxlor/templates/Froxlor/formfields/option.tpl
+www/froxlor/templates/Froxlor/formfields/string.tpl
+www/froxlor/templates/Froxlor/formfields/text.tpl
+www/froxlor/templates/Froxlor/froxlor.css
+www/froxlor/templates/Froxlor/froxlor_ie.css
+www/froxlor/templates/Froxlor/header.tpl
+www/froxlor/templates/Froxlor/index.tpl
+www/froxlor/templates/Froxlor/js/froxlor.js
+www/froxlor/templates/Froxlor/js/jquery.min.js
+www/froxlor/templates/Froxlor/login/fpwd.tpl
+www/froxlor/templates/Froxlor/login/login.tpl
+www/froxlor/templates/Froxlor/login/login_ftp.tpl
+www/froxlor/templates/Froxlor/misc/alreadyinstalledhint.tpl
+www/froxlor/templates/Froxlor/misc/configurehint.tpl
+www/froxlor/templates/Froxlor/misc/error.tpl
+www/froxlor/templates/Froxlor/misc/form/input_text.tpl
+www/froxlor/templates/Froxlor/misc/form/input_textarea.tpl
+www/froxlor/templates/Froxlor/misc/form/table_end.tpl
+www/froxlor/templates/Froxlor/misc/form/table_row.tpl
+www/froxlor/templates/Froxlor/misc/form/table_section.tpl
+www/froxlor/templates/Froxlor/misc/htmlarrowcode.tpl
+www/froxlor/templates/Froxlor/misc/htmlsearchcode.tpl
+www/froxlor/templates/Froxlor/misc/htmlsortcode.tpl
+www/froxlor/templates/Froxlor/misc/question_yesno.tpl
+www/froxlor/templates/Froxlor/misc/question_yesno_checkbox.tpl
+www/froxlor/templates/Froxlor/misc/success.tpl
+www/froxlor/templates/Froxlor/navigation_element.tpl
+www/froxlor/templates/Froxlor/navigation_link.tpl
+www/froxlor/templates/Froxlor/webftp/webftp_edit.tpl
+www/froxlor/templates/Froxlor/webftp/webftp_edit_new.tpl
+www/froxlor/templates/Froxlor/webftp/webftp_main.tpl
+www/froxlor/templates/Froxlor/webftp/webftp_main_additional.tpl
+www/froxlor/templates/Froxlor/webftp/webftp_main_dir_row.tpl
+www/froxlor/templates/Froxlor/webftp/webftp_main_file_row.tpl
+www/froxlor/templates/Froxlor/webftp/webftp_main_header.tpl
+www/froxlor/templates/Froxlor/webftp/webftp_main_link_row.tpl
+www/froxlor/templates/Froxlor/webftp/webftp_main_multiple.tpl
+www/froxlor/templates/Froxlor/webftp/webftp_main_prompt.tpl
+www/froxlor/templates/Froxlor/webftp/webftp_main_rename.tpl
+www/froxlor/templates/jquery.tablesorter.min.js
 www/froxlor/templates/misc/awstatsmodel/awstats.froxlor.model.conf
 www/froxlor/templates/misc/awstatsmodel/awstats.froxlor.model_log_sql.conf
 www/froxlor/templates/misc/configfiles/debian_lenny/apache2/etc_apache2_mods-enabled_fastcgi.conf
@@ -859,6 +1423,54 @@ www/froxlor/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_conf
 www/froxlor/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_conf_NoAnonymous
 www/froxlor/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_conf_PAMAuthentication
 www/froxlor/templates/misc/configfiles/debian_lenny/pure-ftpd/etc_pure-ftpd_db_mysql.conf
+www/froxlor/templates/misc/configfiles/debian_squeeze/apache2/etc_apache2_mods-enabled_fastcgi.conf
+www/froxlor/templates/misc/configfiles/debian_squeeze/courier/etc_courier_authdaemonrc
+www/froxlor/templates/misc/configfiles/debian_squeeze/courier/etc_courier_authmysqlrc
+www/froxlor/templates/misc/configfiles/debian_squeeze/cron/etc_cron.d_froxlor
+www/froxlor/templates/misc/configfiles/debian_squeeze/dkim/dkim-filter.conf
+www/froxlor/templates/misc/configfiles/debian_squeeze/dovecot/etc_dovecot_dovecot-sql.conf
+www/froxlor/templates/misc/configfiles/debian_squeeze/dovecot/etc_dovecot_dovecot.conf
+www/froxlor/templates/misc/configfiles/debian_squeeze/exim4/etc_exim4_conf.d_acl_30_exim4-config_check_rcpt.rul
+www/froxlor/templates/misc/configfiles/debian_squeeze/exim4/etc_exim4_conf.d_auth_30_froxlor-config
+www/froxlor/templates/misc/configfiles/debian_squeeze/exim4/etc_exim4_conf.d_main_10_froxlor-config_options
+www/froxlor/templates/misc/configfiles/debian_squeeze/exim4/etc_exim4_conf.d_router_180_froxlor-config
+www/froxlor/templates/misc/configfiles/debian_squeeze/exim4/etc_exim4_conf.d_transport_30_froxlor-config
+www/froxlor/templates/misc/configfiles/debian_squeeze/libnss/etc_nss-mysql-root.conf
+www/froxlor/templates/misc/configfiles/debian_squeeze/libnss/etc_nss-mysql.conf
+www/froxlor/templates/misc/configfiles/debian_squeeze/libnss/etc_nsswitch.conf
+www/froxlor/templates/misc/configfiles/debian_squeeze/lighttpd/etc_lighttpd.conf
+www/froxlor/templates/misc/configfiles/debian_squeeze/nginx/etc_init.d_php-fcgi
+www/froxlor/templates/misc/configfiles/debian_squeeze/nginx/etc_nginx_fastcgi.conf
+www/froxlor/templates/misc/configfiles/debian_squeeze/nginx/etc_nginx_nginx.conf
+www/froxlor/templates/misc/configfiles/debian_squeeze/postfix_courier/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/debian_squeeze/postfix_courier/etc_postfix_mysql-virtual_alias_maps.cf
+www/froxlor/templates/misc/configfiles/debian_squeeze/postfix_courier/etc_postfix_mysql-virtual_mailbox_domains.cf
+www/froxlor/templates/misc/configfiles/debian_squeeze/postfix_courier/etc_postfix_mysql-virtual_mailbox_maps.cf
+www/froxlor/templates/misc/configfiles/debian_squeeze/postfix_courier/etc_postfix_mysql-virtual_sender_permissions.cf
+www/froxlor/templates/misc/configfiles/debian_squeeze/postfix_courier/etc_postfix_sasl_smtpd.conf
+www/froxlor/templates/misc/configfiles/debian_squeeze/postfix_dovecot/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/debian_squeeze/postfix_dovecot/etc_postfix_master.cf
+www/froxlor/templates/misc/configfiles/debian_squeeze/postfix_dovecot/etc_postfix_mysql-virtual_alias_maps.cf
+www/froxlor/templates/misc/configfiles/debian_squeeze/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_domains.cf
+www/froxlor/templates/misc/configfiles/debian_squeeze/postfix_dovecot/etc_postfix_mysql-virtual_mailbox_maps.cf
+www/froxlor/templates/misc/configfiles/debian_squeeze/postfix_dovecot/etc_postfix_mysql-virtual_sender_permissions.cf
+www/froxlor/templates/misc/configfiles/debian_squeeze/postfix_mxaccess/etc_postfix_main.cf
+www/froxlor/templates/misc/configfiles/debian_squeeze/postfix_mxaccess/etc_postfix_mx_access
+www/froxlor/templates/misc/configfiles/debian_squeeze/powerdns/etc_powerdns_pdns-froxlor.conf
+www/froxlor/templates/misc/configfiles/debian_squeeze/powerdns/etc_powerdns_pdns.conf
+www/froxlor/templates/misc/configfiles/debian_squeeze/proftpd/etc_proftpd_modules.conf
+www/froxlor/templates/misc/configfiles/debian_squeeze/proftpd/etc_proftpd_proftpd.conf
+www/froxlor/templates/misc/configfiles/debian_squeeze/proftpd/etc_proftpd_sql.conf
+www/froxlor/templates/misc/configfiles/debian_squeeze/pure-ftpd/etc_default_pure-ftpd-common
+www/froxlor/templates/misc/configfiles/debian_squeeze/pure-ftpd/etc_pure-ftpd_conf_Bind
+www/froxlor/templates/misc/configfiles/debian_squeeze/pure-ftpd/etc_pure-ftpd_conf_ChrootEveryone
+www/froxlor/templates/misc/configfiles/debian_squeeze/pure-ftpd/etc_pure-ftpd_conf_CustomerProof
+www/froxlor/templates/misc/configfiles/debian_squeeze/pure-ftpd/etc_pure-ftpd_conf_MaxIdleTime
+www/froxlor/templates/misc/configfiles/debian_squeeze/pure-ftpd/etc_pure-ftpd_conf_MinUID
+www/froxlor/templates/misc/configfiles/debian_squeeze/pure-ftpd/etc_pure-ftpd_conf_MySQLConfigFile
+www/froxlor/templates/misc/configfiles/debian_squeeze/pure-ftpd/etc_pure-ftpd_conf_NoAnonymous
+www/froxlor/templates/misc/configfiles/debian_squeeze/pure-ftpd/etc_pure-ftpd_conf_PAMAuthentication
+www/froxlor/templates/misc/configfiles/debian_squeeze/pure-ftpd/etc_pure-ftpd_db_mysql.conf
 www/froxlor/templates/misc/configfiles/freebsd/dkim/dkim-filter.conf
 www/froxlor/templates/misc/configfiles/freebsd/dkim/postfix_dkim_addition.cf
 www/froxlor/templates/misc/configfiles/freebsd/dovecot/usr_local_etc_dovecot-sql.conf
@@ -888,6 +1500,8 @@ www/froxlor/templates/misc/configfiles/gentoo/cron/etc_cron.d_froxlor
 www/froxlor/templates/misc/configfiles/gentoo/dkim/dkim-filter.conf
 www/froxlor/templates/misc/configfiles/gentoo/dovecot/etc_dovecot_dovecot-sql.conf
 www/froxlor/templates/misc/configfiles/gentoo/dovecot/etc_dovecot_dovecot.conf
+www/froxlor/templates/misc/configfiles/gentoo/dovecot2/etc_dovecot_dovecot-sql.conf
+www/froxlor/templates/misc/configfiles/gentoo/dovecot2/etc_dovecot_dovecot.conf
 www/froxlor/templates/misc/configfiles/gentoo/libnss/etc_libnss-mysql-root.cfg
 www/froxlor/templates/misc/configfiles/gentoo/libnss/etc_libnss-mysql.cfg
 www/froxlor/templates/misc/configfiles/gentoo/libnss/etc_nsswitch.conf
@@ -1021,14 +1635,10 @@ www/froxlor/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_conf
 www/froxlor/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_conf_NoAnonymous
 www/froxlor/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_conf_PAMAuthentication
 www/froxlor/templates/misc/configfiles/ubuntu_lucid/pure-ftpd/etc_pure-ftpd_db_mysql.conf
-www/froxlor/templates/misc/configurehint.tpl
-www/froxlor/templates/misc/error.tpl
-www/froxlor/templates/misc/question_yesno.tpl
-www/froxlor/templates/misc/question_yesno_checkbox.tpl
 www/froxlor/templates/misc/standardcustomer/index.html
-www/froxlor/templates/misc/success.tpl
-www/froxlor/templates/navigation_element.tpl
-www/froxlor/templates/navigation_link.tpl
+www/froxlor/templates_c/.keep
+www/froxlor/webftp.php
+@dirrm www/froxlor/templates_c
 @dirrm www/froxlor/templates/misc/standardcustomer
 @dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/pure-ftpd
 @dirrm www/froxlor/templates/misc/configfiles/ubuntu_lucid/proftpd
@@ -1076,6 +1686,7 @@ www/froxlor/templates/navigation_link.tpl
 @dirrm www/froxlor/templates/misc/configfiles/gentoo/nginx
 @dirrm www/froxlor/templates/misc/configfiles/gentoo/lighttpd
 @dirrm www/froxlor/templates/misc/configfiles/gentoo/libnss
+@dirrm www/froxlor/templates/misc/configfiles/gentoo/dovecot2
 @dirrm www/froxlor/templates/misc/configfiles/gentoo/dovecot
 @dirrm www/froxlor/templates/misc/configfiles/gentoo/dkim
 @dirrm www/froxlor/templates/misc/configfiles/gentoo/cron
@@ -1091,6 +1702,22 @@ www/froxlor/templates/navigation_link.tpl
 @dirrm www/froxlor/templates/misc/configfiles/freebsd/dovecot
 @dirrm www/froxlor/templates/misc/configfiles/freebsd/dkim
 @dirrm www/froxlor/templates/misc/configfiles/freebsd
+@dirrm www/froxlor/templates/misc/configfiles/debian_squeeze/pure-ftpd
+@dirrm www/froxlor/templates/misc/configfiles/debian_squeeze/proftpd
+@dirrm www/froxlor/templates/misc/configfiles/debian_squeeze/powerdns
+@dirrm www/froxlor/templates/misc/configfiles/debian_squeeze/postfix_mxaccess
+@dirrm www/froxlor/templates/misc/configfiles/debian_squeeze/postfix_dovecot
+@dirrm www/froxlor/templates/misc/configfiles/debian_squeeze/postfix_courier
+@dirrm www/froxlor/templates/misc/configfiles/debian_squeeze/nginx
+@dirrm www/froxlor/templates/misc/configfiles/debian_squeeze/lighttpd
+@dirrm www/froxlor/templates/misc/configfiles/debian_squeeze/libnss
+@dirrm www/froxlor/templates/misc/configfiles/debian_squeeze/exim4
+@dirrm www/froxlor/templates/misc/configfiles/debian_squeeze/dovecot
+@dirrm www/froxlor/templates/misc/configfiles/debian_squeeze/dkim
+@dirrm www/froxlor/templates/misc/configfiles/debian_squeeze/cron
+@dirrm www/froxlor/templates/misc/configfiles/debian_squeeze/courier
+@dirrm www/froxlor/templates/misc/configfiles/debian_squeeze/apache2
+@dirrm www/froxlor/templates/misc/configfiles/debian_squeeze
 @dirrm www/froxlor/templates/misc/configfiles/debian_lenny/pure-ftpd
 @dirrm www/froxlor/templates/misc/configfiles/debian_lenny/proftpd
 @dirrm www/froxlor/templates/misc/configfiles/debian_lenny/powerdns
@@ -1110,44 +1737,90 @@ www/froxlor/templates/navigation_link.tpl
 @dirrm www/froxlor/templates/misc/configfiles
 @dirrm www/froxlor/templates/misc/awstatsmodel
 @dirrm www/froxlor/templates/misc
-@dirrm www/froxlor/templates/login
-@dirrm www/froxlor/templates/formfields
-@dirrm www/froxlor/templates/customer/traffic
-@dirrm www/froxlor/templates/customer/ticket
-@dirrm www/froxlor/templates/customer/mysql
-@dirrm www/froxlor/templates/customer/index
-@dirrm www/froxlor/templates/customer/ftp
-@dirrm www/froxlor/templates/customer/extras
-@dirrm www/froxlor/templates/customer/email
-@dirrm www/froxlor/templates/customer/domains
-@dirrm www/froxlor/templates/customer/aps
-@dirrm www/froxlor/templates/customer
-@dirrm www/froxlor/templates/admin/update
-@dirrm www/froxlor/templates/admin/ticket
-@dirrm www/froxlor/templates/admin/templates
-@dirrm www/froxlor/templates/admin/settings
-@dirrm www/froxlor/templates/admin/phpconfig
-@dirrm www/froxlor/templates/admin/message
-@dirrm www/froxlor/templates/admin/logger
-@dirrm www/froxlor/templates/admin/ipsandports
-@dirrm www/froxlor/templates/admin/index
-@dirrm www/froxlor/templates/admin/froxlorclients
-@dirrm www/froxlor/templates/admin/domains
-@dirrm www/froxlor/templates/admin/customers
-@dirrm www/froxlor/templates/admin/cronjobs
-@dirrm www/froxlor/templates/admin/configfiles
-@dirrm www/froxlor/templates/admin/aps
-@dirrm www/froxlor/templates/admin/admins
-@dirrm www/froxlor/templates/admin
+@dirrm www/froxlor/templates/Froxlor/webftp
+@dirrm www/froxlor/templates/Froxlor/misc/form
+@dirrm www/froxlor/templates/Froxlor/misc
+@dirrm www/froxlor/templates/Froxlor/login
+@dirrm www/froxlor/templates/Froxlor/js
+@dirrm www/froxlor/templates/Froxlor/formfields
+@dirrm www/froxlor/templates/Froxlor/customer/traffic
+@dirrm www/froxlor/templates/Froxlor/customer/tickets
+@dirrm www/froxlor/templates/Froxlor/customer/mysql
+@dirrm www/froxlor/templates/Froxlor/customer/index
+@dirrm www/froxlor/templates/Froxlor/customer/ftp
+@dirrm www/froxlor/templates/Froxlor/customer/extras
+@dirrm www/froxlor/templates/Froxlor/customer/email
+@dirrm www/froxlor/templates/Froxlor/customer/domains
+@dirrm www/froxlor/templates/Froxlor/customer/autoresponder
+@dirrm www/froxlor/templates/Froxlor/customer/aps
+@dirrm www/froxlor/templates/Froxlor/customer
+@dirrm www/froxlor/templates/Froxlor/admin/update
+@dirrm www/froxlor/templates/Froxlor/admin/traffic
+@dirrm www/froxlor/templates/Froxlor/admin/tickets
+@dirrm www/froxlor/templates/Froxlor/admin/templates
+@dirrm www/froxlor/templates/Froxlor/admin/settings
+@dirrm www/froxlor/templates/Froxlor/admin/phpconfig
+@dirrm www/froxlor/templates/Froxlor/admin/message
+@dirrm www/froxlor/templates/Froxlor/admin/logger
+@dirrm www/froxlor/templates/Froxlor/admin/ipsandports
+@dirrm www/froxlor/templates/Froxlor/admin/index
+@dirrm www/froxlor/templates/Froxlor/admin/froxlorclients
+@dirrm www/froxlor/templates/Froxlor/admin/domains
+@dirrm www/froxlor/templates/Froxlor/admin/customers
+@dirrm www/froxlor/templates/Froxlor/admin/cronjobs
+@dirrm www/froxlor/templates/Froxlor/admin/configfiles
+@dirrm www/froxlor/templates/Froxlor/admin/aps
+@dirrm www/froxlor/templates/Froxlor/admin/admins
+@dirrm www/froxlor/templates/Froxlor/admin
+@dirrm www/froxlor/templates/Froxlor
+@dirrm www/froxlor/templates/Classic/misc/form
+@dirrm www/froxlor/templates/Classic/misc
+@dirrm www/froxlor/templates/Classic/login
+@dirrm www/froxlor/templates/Classic/js
+@dirrm www/froxlor/templates/Classic/formfields
+@dirrm www/froxlor/templates/Classic/customer/traffic
+@dirrm www/froxlor/templates/Classic/customer/tickets
+@dirrm www/froxlor/templates/Classic/customer/mysql
+@dirrm www/froxlor/templates/Classic/customer/index
+@dirrm www/froxlor/templates/Classic/customer/ftp
+@dirrm www/froxlor/templates/Classic/customer/extras
+@dirrm www/froxlor/templates/Classic/customer/email
+@dirrm www/froxlor/templates/Classic/customer/domains
+@dirrm www/froxlor/templates/Classic/customer/autoresponder
+@dirrm www/froxlor/templates/Classic/customer/aps
+@dirrm www/froxlor/templates/Classic/customer
+@dirrm www/froxlor/templates/Classic/admin/update
+@dirrm www/froxlor/templates/Classic/admin/traffic
+@dirrm www/froxlor/templates/Classic/admin/tickets
+@dirrm www/froxlor/templates/Classic/admin/templates
+@dirrm www/froxlor/templates/Classic/admin/settings
+@dirrm www/froxlor/templates/Classic/admin/phpconfig
+@dirrm www/froxlor/templates/Classic/admin/message
+@dirrm www/froxlor/templates/Classic/admin/logger
+@dirrm www/froxlor/templates/Classic/admin/ipsandports
+@dirrm www/froxlor/templates/Classic/admin/index
+@dirrm www/froxlor/templates/Classic/admin/froxlorclients
+@dirrm www/froxlor/templates/Classic/admin/domains
+@dirrm www/froxlor/templates/Classic/admin/customers
+@dirrm www/froxlor/templates/Classic/admin/cronjobs
+@dirrm www/froxlor/templates/Classic/admin/configfiles
+@dirrm www/froxlor/templates/Classic/admin/aps
+@dirrm www/froxlor/templates/Classic/admin/admins
+@dirrm www/froxlor/templates/Classic/admin
+@dirrm www/froxlor/templates/Classic
 @dirrm www/froxlor/templates
 @dirrm www/froxlor/temp
 @dirrm www/froxlor/scripts/jobs
 @dirrm www/froxlor/scripts
 @dirrm www/froxlor/packages
+@dirrm www/froxlor/locales/de/LC_MESSAGES
+@dirrm www/froxlor/locales/de
+@dirrm www/froxlor/locales
 @dirrm www/froxlor/lng
 @dirrm www/froxlor/lib/navigation
 @dirrm www/froxlor/lib/functions/validate
 @dirrm www/froxlor/lib/functions/system
+@dirrm www/froxlor/lib/functions/smarty_plugins
 @dirrm www/froxlor/lib/functions/settings
 @dirrm www/froxlor/lib/functions/phphelpers
 @dirrm www/froxlor/lib/functions/output
@@ -1166,6 +1839,24 @@ www/froxlor/templates/navigation_link.tpl
 @dirrm www/froxlor/lib/functions/database
 @dirrm www/froxlor/lib/functions/aps
 @dirrm www/froxlor/lib/functions
+@dirrm www/froxlor/lib/formfields/customer/tickets
+@dirrm www/froxlor/lib/formfields/customer/mysql
+@dirrm www/froxlor/lib/formfields/customer/ftp
+@dirrm www/froxlor/lib/formfields/customer/extras
+@dirrm www/froxlor/lib/formfields/customer/email
+@dirrm www/froxlor/lib/formfields/customer/domains
+@dirrm www/froxlor/lib/formfields/customer/autoresponder
+@dirrm www/froxlor/lib/formfields/customer
+@dirrm www/froxlor/lib/formfields/admin/tickets
+@dirrm www/froxlor/lib/formfields/admin/templates
+@dirrm www/froxlor/lib/formfields/admin/phpconfig
+@dirrm www/froxlor/lib/formfields/admin/ipsandports
+@dirrm www/froxlor/lib/formfields/admin/domains
+@dirrm www/froxlor/lib/formfields/admin/customer
+@dirrm www/froxlor/lib/formfields/admin/cronjobs
+@dirrm www/froxlor/lib/formfields/admin/admin
+@dirrm www/froxlor/lib/formfields/admin
+@dirrm www/froxlor/lib/formfields
 @dirrm www/froxlor/lib/configfiles
 @dirrm www/froxlor/lib/classes/ticket
 @dirrm www/froxlor/lib/classes/phpmailer
@@ -1210,6 +1901,13 @@ www/froxlor/templates/navigation_link.tpl
 @dirrm www/froxlor/lib/classes/domains
 @dirrm www/froxlor/lib/classes/database
 @dirrm www/froxlor/lib/classes/aps
+@dirrm www/froxlor/lib/classes/Smarty-3.0.8/libs/sysplugins
+@dirrm www/froxlor/lib/classes/Smarty-3.0.8/libs/plugins
+@dirrm www/froxlor/lib/classes/Smarty-3.0.8/libs
+@dirrm www/froxlor/lib/classes/Smarty-3.0.8/demo/templates
+@dirrm www/froxlor/lib/classes/Smarty-3.0.8/demo/configs
+@dirrm www/froxlor/lib/classes/Smarty-3.0.8/demo
+@dirrm www/froxlor/lib/classes/Smarty-3.0.8
 @dirrm www/froxlor/lib/classes
 @dirrm www/froxlor/lib
 @dirrm www/froxlor/install/updates/syscp/1.4
@@ -1224,8 +1922,11 @@ www/froxlor/templates/navigation_link.tpl
 @dirrm www/froxlor/install/scripts
 @dirrm www/froxlor/install/lng
 @dirrm www/froxlor/install
-@dirrm www/froxlor/images/multiserver
+@dirrm www/froxlor/images/Froxlor/icons
+@dirrm www/froxlor/images/Froxlor
+@dirrm www/froxlor/images/Classic
 @dirrm www/froxlor/images
+@dirrm www/froxlor/cache
 @dirrm www/froxlor/actions/admin/settings
 @dirrm www/froxlor/actions/admin
 @dirrm www/froxlor/actions
