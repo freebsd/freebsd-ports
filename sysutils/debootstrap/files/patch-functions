@@ -1,19 +1,26 @@
---- functions.orig	2011-02-22 01:25:08.000000000 +0100
-+++ functions	2011-03-14 20:42:00.536562918 +0100
-@@ -232,7 +232,11 @@
- 	# args: dest checksum size
+--- functions.orig	2011-05-20 19:57:18.000000000 +0200
++++ functions	2011-07-15 17:15:49.989386001 +0200
+@@ -236,9 +236,17 @@
  	local expchecksum="$2"
  	local expsize="$3"
--	relchecksum=`sha${SHA_SIZE}sum < "$1" | sed 's/ .*$//'`
-+	if [ "`uname -s`" = "FreeBSD" ]; then
-+		relchecksum=`sha${SHA_SIZE} < "$1"`
-+	else
-+		relchecksum=`sha${SHA_SIZE}sum < "$1" | sed 's/ .*$//'`
-+	fi
+ 	if [ "$DEBOOTSTRAP_CHECKSUM_FIELD" = "MD5SUM" ]; then
+-		relchecksum=`md5sum < "$1" | sed 's/ .*$//'`
++		if [ "`uname -s`" = "FreeBSD" ]; then
++			relchecksum=`md5 < "$1"`
++		else
++			relchecksum=`md5sum < "$1" | sed 's/ .*$//'`
++		fi
+ 	else
+-		relchecksum=`sha${SHA_SIZE}sum < "$1" | sed 's/ .*$//'`
++		if [ "`uname -s`" = "FreeBSD" ]; then
++			relchecksum=`sha${SHA_SIZE} < "$1"`
++		else
++			relchecksum=`sha${SHA_SIZE}sum < "$1" | sed 's/ .*$//'`
++		fi		
+ 	fi
  	relsize=`wc -c < "$1"`
  	if [ "$expsize" -ne "$relsize" ] || [ "$expchecksum" != "$relchecksum" ]; then
- 		return 1
-@@ -510,9 +514,9 @@
+@@ -524,9 +532,9 @@
  		local i=
  		if [ "$normi" != "" ]; then
  			i="$normi"
@@ -25,7 +32,7 @@
  			i="$gzi"
  		fi
  		if [ "$i" != "" ]; then
-@@ -538,11 +542,11 @@
+@@ -552,11 +560,11 @@
  			ext="$ext $normi ."
  			i="$normi"
  		fi
@@ -39,7 +46,7 @@
  			ext="$ext $gzi gz"
  			i="${i:-$gzi}"
  		fi
-@@ -676,7 +680,7 @@
+@@ -690,7 +698,7 @@
  	    for c in $COMPONENTS; do
  		local path="dists/$SUITE/$c/binary-$ARCH/Packages"
  		local pkgdest="$TARGET/$($DLDEST pkg "$SUITE" "$c" "$ARCH" "$m" "$path")"
@@ -48,7 +55,7 @@
  			rm -f "$pkgdest"
  			gunzip "$pkgdest.gz"
  		elif get "$m/$path" "$pkgdest"; then
-@@ -934,12 +938,16 @@
+@@ -948,12 +956,16 @@
  	    hurd-*)
  		;;
  	    *)
@@ -71,7 +78,7 @@
  		if [ -d "$TARGET/sys" ] && \
  		   grep -q '[[:space:]]sysfs' /proc/filesystems 2>/dev/null; then
  			umount_on_exit /sys
-@@ -964,13 +972,17 @@
+@@ -978,13 +990,17 @@
  	    hurd-*)
  		setup_devices_hurd ;;
  	    *)
@@ -94,7 +101,7 @@
  			fi
  		fi
  		;;
-@@ -1178,12 +1190,14 @@
+@@ -1197,12 +1213,14 @@
  	    kfreebsd-*|hurd-*)
  		;;
  	    *)
