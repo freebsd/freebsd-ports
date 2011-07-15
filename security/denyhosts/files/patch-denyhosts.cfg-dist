@@ -66,3 +66,14 @@ $FreeBSD$
  #
  # Misc
  #LOCK_FILE = /tmp/denyhosts.lock
+@@ -414,7 +414,9 @@
+ # See this faq entry for more details:
+ #    http://denyhosts.sf.net/faq.html#userdef_regex
+ #
+-#USERDEF_FAILED_ENTRY_REGEX=
++USERDEF_FAILED_ENTRY_REGEX=[a|A]uthentication error for (?P<invalid>invalid user |illegal user )?(?P<user>.*?) from (::ffff:)?(?P<host>\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3})
++USERDEF_FAILED_ENTRY_REGEX=[a|A]uthentication error for (?P<invalid>invalid user |illegal user )?(?P<user>.*?) from (?P<host>.*)
++# sorry no entries for IPv6 address yet :(
+ #
+ #
+ ######################################################################
