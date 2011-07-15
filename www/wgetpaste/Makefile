@@ -27,17 +27,14 @@ post-patch:
 		-e 's|/etc/|${PREFIX}/etc/|g' \
 		-e 's|\(INFO_COMMAND=\).*|\1"pkg_info -aE"|' \
 		-e 's|\(INFO_ARGS=\).*|\1|' \
-		${WRKSRC}/${PORTNAME}
+			${WRKSRC}/${PORTNAME}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${WRKSRC}/_${PORTNAME} \
-		${PREFIX}/share/zsh/site-functions
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${PORTNAME}.example \
-		${PREFIX}/etc/${PORTNAME}.conf.sample
-	${MKDIR} ${PREFIX}/etc/${PORTNAME}.d
-	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/zlin.conf \
-		${PREFIX}/etc/${PORTNAME}.d
+	${INSTALL_SCRIPT} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
+	${MKDIR} ${PREFIX}/share/zsh/site-functions/
+	${INSTALL_DATA} ${WRKSRC}/_${PORTNAME} ${PREFIX}/share/zsh/site-functions/
+	${INSTALL_DATA} ${DISTDIR}/${PORTNAME}.example ${PREFIX}/etc/${PORTNAME}.conf.sample
+	${MKDIR} ${PREFIX}/etc/${PORTNAME}.d/
+	${INSTALL_DATA} ${DISTDIR}/zlin.conf ${PREFIX}/etc/${PORTNAME}.d/
 
 .include <bsd.port.mk>
