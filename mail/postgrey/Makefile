@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	postgrey
-PORTVERSION=	1.33
-PORTREVISION=	1
+PORTVERSION=	1.34
 CATEGORIES=	mail
 MASTER_SITES=	http://postgrey.schweikert.ch/pub/ \
 		http://postgrey.schweikert.ch/pub/old/
