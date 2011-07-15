@@ -7,6 +7,7 @@
 
 PORTNAME=	hdf-java
 PORTVERSION=	2.7
+PORTREVISION=	1
 CATEGORIES=	science java
 MASTER_SITES=	http://www.hdfgroup.org/ftp/HDF5/hdf-java/src/ \
 		http://www.predatorlabs.net/dl/
@@ -15,7 +16,7 @@ EXTRACT_SUFX=	-src.tar
 MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	Java interface to HDF5
 
-LIB_DEPENDS=	hdf5.6:${PORTSDIR}/science/hdf5-18
+LIB_DEPENDS=	hdf5.7:${PORTSDIR}/science/hdf5-18
 
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+

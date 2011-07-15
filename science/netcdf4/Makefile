@@ -7,6 +7,7 @@
 
 PORTNAME=	netcdf
 PORTVERSION=	4.1.3
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	http://www.unidata.ucar.edu/downloads/netcdf/ftp/ \
 		ftp://ftp.unidata.ucar.edu/pub/netcdf/ \
@@ -29,7 +30,7 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CPPFLAGS+=	-I${LOCALBASE}/include -fPIC -DPIC
 GNU_CONFIGURE=	yes
 LDFLAGS+=	-L${LOCALBASE}/lib
-LIB_DEPENDS=	hdf5.6:${PORTSDIR}/science/hdf5-18
+LIB_DEPENDS=	hdf5.7:${PORTSDIR}/science/hdf5-18
 MAKE_ENV=	INFODIR="${PREFIX}/${INFO_PATH}" MAKEINFOFLAGS="--no-split"
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes

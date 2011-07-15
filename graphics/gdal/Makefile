@@ -7,7 +7,7 @@
 
 PORTNAME=	gdal
 PORTVERSION=	1.8.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://download.osgeo.org/gdal/ \
 		ftp://ftp.remotesensing.org/pub/gdal/ \
@@ -120,7 +120,7 @@ CONFIGURE_ARGS+=	--with-hdf4=${LOCALBASE}
 
 .if defined(WITH_HDF5)
 .if (${NETCDF_VER} == "4")
-LIB_DEPENDS+=		hdf5.6:${PORTSDIR}/science/hdf5-18
+LIB_DEPENDS+=		hdf5.7:${PORTSDIR}/science/hdf5-18
 .else
 LIB_DEPENDS+=		hdf5.0:${PORTSDIR}/science/hdf5
 .endif

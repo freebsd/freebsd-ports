@@ -7,7 +7,7 @@
 
 PORTNAME=	gnudatalanguage
 DISTVERSION=	0.9.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	science lang
 MASTER_SITES=	SF/${PORTNAME}/gdl/${DISTVERSION}
 .if defined(BUILD_PYTHON_MODULE)
@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=--with-Magick=no
 .endif
 
 .if !defined(WITHOUT_HDF5)
-LIB_DEPENDS+=	hdf5.6:${PORTSDIR}/science/hdf5-18
+LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18
 CONFIGURE_ARGS+=--with-hdf5=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-hdf5=no
