@@ -7,7 +7,7 @@
 
 PORTNAME=		aster
 DISTVERSION=		${ASTER_DISTVERSION}
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		french cad
 
 MAINTAINER=	thierry@FreeBSD.org
@@ -39,7 +39,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/aster/ASTK/ASTK_SERV:${PORTSDIR}/cad/astk-serveur	\
 		${PYNUMPY}
 LIB_DEPENDS+=	tcl${SHORT_TCL_VER}:${PORTSDIR}/lang/tcl${SHORT_TCL_VER}	\
 		tk${SHORT_TK_VER}:${PORTSDIR}/x11-toolkits/tk${SHORT_TK_VER}	\
-		hdf5.6:${PORTSDIR}/science/hdf5-18				\
+		hdf5.7:${PORTSDIR}/science/hdf5-18				\
 		med.2:${PORTSDIR}/french/med
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Gnuplot:${PORTSDIR}/math/py-gnuplot	\
 		${LOCALBASE}/bin/onmetis.exe:${PORTSDIR}/math/metis-edf		\

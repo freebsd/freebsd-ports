@@ -7,6 +7,7 @@
 
 PORTNAME=	cdo
 PORTVERSION=	1.5.0
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	https://code.zmaw.de/attachments/download/898/ \
 		LOCAL/sunpoet
@@ -50,7 +51,7 @@ WITH_HDF5=	yes
 CONFIGURE_ARGS+=--with-hdf5=${LOCALBASE} --with-zlib=/usr
 WITH_SZIP=	yes
 .if (${HDF5_VER} == 18)
-LIB_DEPENDS+=	hdf5.6:${PORTSDIR}/science/hdf5-18
+LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18
 .else
 LIB_DEPENDS+=	hdf5.0:${PORTSDIR}/science/hdf5
 .endif

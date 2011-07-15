@@ -9,8 +9,8 @@ CATEGORIES=	cad science
 MASTERDIR=	${.CURDIR}/../salome
 
 PORTNAME=	salome
+PORTREVISION=	3
 PKGNAMESUFFIX=	-kernel
-PORTREVISION=	1
 SAL_MODULE_UPPER=	KERNEL
 
 .include "${MASTERDIR}/Makefile"

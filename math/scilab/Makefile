@@ -7,6 +7,7 @@
 
 PORTNAME=	scilab
 PORTVERSION=	5.3.2
+PORTREVISION=	1
 CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/:scilab \
 		http://www.predatorlabs.net/dl/:jgraphx \
@@ -88,7 +89,7 @@ JGRAPHX_JAR=	jgraphx-${JGRAPHX_VERSION:C/\./_/g}.jar
 
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-bin-JAVA_HOME
 
-LIB_DEPENDS+=	hdf5.6:${PORTSDIR}/science/hdf5-18
+LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18
 
 GUI_DEPENDS=	${JAVALIBDIR}/flexdock.jar:${PORTSDIR}/devel/flexdock \
 		${JAVALIBDIR}/jogl.jar:${PORTSDIR}/graphics/jogl \
