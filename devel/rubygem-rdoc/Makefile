@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rdoc
-PORTVERSION=	3.6
+PORTVERSION=	3.6.1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -16,8 +16,6 @@ COMMENT=	RDoc produces HTML and command-line documentation for Ruby projects
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
-
-RUBY_VERSION=	1.9
 
 PLIST_FILES=	bin/rdoc bin/ri
 
