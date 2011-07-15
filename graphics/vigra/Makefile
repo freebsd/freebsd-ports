@@ -11,7 +11,7 @@
 
 PORTNAME=	vigra
 PORTVERSION=	1.7.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://hci.iwr.uni-heidelberg.de/vigra/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -56,7 +56,7 @@ LIB_DEPENDS+=	fftw3:${PORTSDIR}/math/fftw3
 .endif
 
 .if !defined(WITHOUT_VIGRA_HDF5)
-LIB_DEPENDS+=	hdf5.6:${PORTSDIR}/science/hdf5-18
+LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18
 .endif
 
 .include <bsd.port.mk>
