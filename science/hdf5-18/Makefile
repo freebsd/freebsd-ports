@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hdf5
-PORTVERSION=	1.8.6
+PORTVERSION=	1.8.7
 CATEGORIES=	science archivers graphics
 MASTER_SITES=	ftp://ftp.hdfgroup.org/HDF5/prev-releases/hdf5-${PORTVERSION}/src/
 #DISTNAME=	${PORTNAME}-${PORTVERSION}-patch1
