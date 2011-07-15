@@ -16,7 +16,7 @@
 -    struct cdrom_tochdr tocHdr;
 -    if(ioctl(theFd, CDROMREADTOCHDR, &tocHdr) < 0) {
 +    struct ioc_toc_header tocHdr;
-+    if(ioctl(theFd, CDIOREADTOCENTRY, &tocHdr) < 0) {
++    if(ioctl(theFd, CDIOREADTOCHEADER, &tocHdr) < 0) {
          close(theFd);
          Exception e(std::string("Cannot read TOC: ") + cuename);
          THROW(e);

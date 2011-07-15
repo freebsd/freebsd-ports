@@ -1,5 +1,5 @@
---- plugins/dfbinimage2/FileInterface.cpp.orig	2008-08-24 14:27:09.000000000 +0000
-+++ plugins/dfbinimage2/FileInterface.cpp	2010-04-22 06:01:39.002592019 +0000
+--- plugins/dfbinimage2/FileInterface.cpp.orig	2011-07-01 06:50:32.771525631 +0200
++++ plugins/dfbinimage2/FileInterface.cpp	2011-07-01 08:34:37.050364589 +0200
 @@ -35,7 +35,9 @@
  #include <fcntl.h>
  #include <sys/stat.h>
@@ -32,22 +32,15 @@
      bufferPos.setMSF(MSFTime(255,255,255));
  }
  
-@@ -482,9 +484,16 @@
+@@ -482,9 +484,9 @@
      char *buf = (char*)fileBuffer;
      int cnt;
      for(cnt = 0; cnt < bufferFrames; cnt++) {
 -        memcpy(buf, seekTime.getMSFbuf(), 3);
 -        if(ioctl(theFd, CDROMREADRAW, buf)<0)
 -            break;
-+        if (lseek(theFd,
-+                  seekTime.getMSF().m() * bytesPerMinute +
-+                  seekTime.getMSF().s() * bytesPerSecond +
-+                  seekTime.getMSF().f() * bytesPerFrame,
-+                  SEEK_SET) == -1) {
-+          return;
-+        }
-+        if (read(theFd, buf, bytesPerFrame) == -1) {
-+          return;
++        if (pread(theFd, buf, bytesPerFrame, seekTime.getAbsoluteFrame() * bytesPerFrame) != bytesPerFrame) {
++            break;
 +        }
          buf += bytesPerFrame;
          seekTime += CDTime(0,0,1);
