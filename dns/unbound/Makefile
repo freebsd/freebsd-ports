@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unbound
-PORTVERSION=	1.4.11
+PORTVERSION=	1.4.12
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
@@ -37,11 +37,12 @@ PLIST_SUB+=	PYTHON=${PYTHON}
 OPTIONS=	LIBEVENT "is useful when using many (10000) outgoing ports" off \
 		THREADS "build with threads support" on \
 		PYTHON "build python bindings" off \
-		GOST "build GOST support (requires OpenSSL from ports)" on
+		GOST "build GOST support (requires OpenSSL from ports)" off
 
 .include <bsd.port.options.mk>
 
-LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2
+LIB_DEPENDS+=	expat.6:${PORTSDIR}/textproc/expat2 \
+		ldns:${PORTSDIR}/dns/ldns
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=	yes
