@@ -86,7 +86,7 @@ Index: Makefile
  INCDIR   = $(PREFIX)/include
  LOCDIR   = ./locale
 +ifdef FREEBSD
-+LIBS     = -ljpeg -lpthread -lrt $(shell pkg-config --libs freetype2 fontconfig) -liconv -lintl
++LIBS     = -ljpeg -lpthread -lrt $(shell pkg-config --libs freetype2 fontconfig) -liconv -lintl -lutil
 +else
  LIBS     = -ljpeg -lpthread -ldl -lcap -lrt $(shell pkg-config --libs freetype2 fontconfig)
 +endif
@@ -900,25 +900,23 @@ diff -u -r1.1.1.2 -r1.3
  cString DayDateTime(time_t t = 0);
  cString TimeToString(time_t t);
 Index: vdr.c
-===================================================================
-RCS file: /progs/network/ccvs/vdr/vdr.c,v
-retrieving revision 1.1.1.5
-retrieving revision 1.7
-diff -u -r1.1.1.5 -r1.7
---- vdr.c	2010/06/07 09:07:28	1.1.1.5
-+++ vdr.c	2010/06/07 09:12:57	1.7
-@@ -32,8 +32,10 @@
+--- vdr.c
++++ vdr.c
+@@ -32,8 +32,13 @@
  #include <pwd.h>
  #include <signal.h>
  #include <stdlib.h>
 +#ifndef __FreeBSD__
  #include <sys/capability.h>
  #include <sys/prctl.h>
++#else
++#include <sys/types.h>
++#include <login_cap.h>
 +#endif
  #include <termios.h>
  #include <unistd.h>
  #include "audio.h"
-@@ -107,12 +109,15 @@
+@@ -107,12 +112,15 @@ static bool SetUser(const char *UserName
          fprintf(stderr, "vdr: cannot set user id %u: %s\n", (unsigned int)user->pw_uid, strerror(errno));
          return false;
          }
@@ -934,7 +932,7 @@ diff -u -r1.1.1.5 -r1.7
  static bool DropCaps(void)
  {
    // drop all capabilities except selected ones
-@@ -139,6 +144,7 @@
+@@ -139,6 +147,7 @@ static bool SetKeepCaps(bool On)
       }
    return true;
  }
@@ -942,7 +940,7 @@ diff -u -r1.1.1.5 -r1.7
  
  static void SignalHandler(int signum)
  {
-@@ -388,14 +394,18 @@
+@@ -388,14 +397,18 @@ int main(int argc, char *argv[])
    if (VdrUser && geteuid() == 0) {
       StartedAsRoot = true;
       if (strcmp(VdrUser, "root")) {
@@ -961,6 +959,31 @@ diff -u -r1.1.1.5 -r1.7
          }
       }
  
+@@ -539,6 +552,24 @@ int main(int argc, char *argv[])
+            CodeSet++; // skip the dot
+         }
+      }
++#ifdef __FreeBSD__
++  // If we are started without a locale query login.conf(5) for
++  // a lang setting
++
++  if (!CodeSet || !strcmp(CodeSet, "US-ASCII")) {
++     struct passwd *User = getpwnam(VdrUser);
++     login_cap_t *Lc = login_getuserclass(User);
++     if (!Lc)
++        Lc = login_getpwclass(User);
++     if (Lc) {
++        const char *Lang = login_getcapstr(Lc, "lang", NULL, NULL);
++        if (Lang && setlocale(LC_CTYPE, Lang)) {
++           CodeSet = nl_langinfo(CODESET);
++	   }
++        login_close(Lc);
++        }
++     }
++#endif
+   if (CodeSet) {
+      bool known = SI::SetSystemCharacterTable(CodeSet);
+      isyslog("codeset is '%s' - %s", CodeSet, known ? "known" : "unknown");
 Index: PLUGINS/src/svdrpdemo/svdrpdemo.c
 ===================================================================
 RCS file: /progs/network/ccvs/vdr/PLUGINS/src/svdrpdemo/svdrpdemo.c,v
