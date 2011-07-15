@@ -17,7 +17,9 @@ include/cairo-dock/cairo-dock/cairo-dock-callbacks.h
 include/cairo-dock/cairo-dock/cairo-dock-class-manager.h
 include/cairo-dock/cairo-dock/cairo-dock-config.h
 include/cairo-dock/cairo-dock/cairo-dock-container.h
+include/cairo-dock/cairo-dock/cairo-dock-core.h
 include/cairo-dock/cairo-dock/cairo-dock-data-renderer.h
+include/cairo-dock/cairo-dock/cairo-dock-data-renderer-manager.h
 include/cairo-dock/cairo-dock/cairo-dock-dbus.h
 include/cairo-dock/cairo-dock/cairo-dock-desklet-factory.h
 include/cairo-dock/cairo-dock/cairo-dock-desklet-manager.h
@@ -34,26 +36,18 @@ include/cairo-dock/cairo-dock/cairo-dock-flying-container.h
 include/cairo-dock/cairo-dock/cairo-dock-global-variables.h
 include/cairo-dock/cairo-dock/cairo-dock-gui-factory.h
 include/cairo-dock/cairo-dock/cairo-dock-gui-manager.h
-include/cairo-dock/cairo-dock/cairo-dock-icon-loader.h
-include/cairo-dock/cairo-dock/cairo-dock-icons.h
+include/cairo-dock/cairo-dock/cairo-dock-icon-factory.h
+include/cairo-dock/cairo-dock/cairo-dock-icon-manager.h
+include/cairo-dock/cairo-dock/cairo-dock-icon-facility.h
+include/cairo-dock/cairo-dock/cairo-dock-image-buffer.h
 include/cairo-dock/cairo-dock/cairo-dock-indicator-manager.h
-include/cairo-dock/cairo-dock/cairo-dock-internal-accessibility.h
-include/cairo-dock/cairo-dock/cairo-dock-internal-background.h
-include/cairo-dock/cairo-dock/cairo-dock-internal-desklets.h
-include/cairo-dock/cairo-dock/cairo-dock-internal-dialogs.h
-include/cairo-dock/cairo-dock/cairo-dock-internal-icons.h
-include/cairo-dock/cairo-dock/cairo-dock-internal-indicators.h
-include/cairo-dock/cairo-dock/cairo-dock-internal-labels.h
-include/cairo-dock/cairo-dock/cairo-dock-internal-position.h
-include/cairo-dock/cairo-dock/cairo-dock-internal-system.h
-include/cairo-dock/cairo-dock/cairo-dock-internal-taskbar.h
-include/cairo-dock/cairo-dock/cairo-dock-internal-views.h
 include/cairo-dock/cairo-dock/cairo-dock-keybinder.h
 include/cairo-dock/cairo-dock/cairo-dock-keyfile-utilities.h
 include/cairo-dock/cairo-dock/cairo-dock-launcher-manager.h
-include/cairo-dock/cairo-dock/cairo-dock-load.h
 include/cairo-dock/cairo-dock/cairo-dock-log.h
-include/cairo-dock/cairo-dock/cairo-dock-modules.h
+include/cairo-dock/cairo-dock/cairo-dock-manager.h
+include/cairo-dock/cairo-dock/cairo-dock-module-factory.h
+include/cairo-dock/cairo-dock/cairo-dock-module-manager.h
 include/cairo-dock/cairo-dock/cairo-dock-notifications.h
 include/cairo-dock/cairo-dock/cairo-dock-opengl-font.h
 include/cairo-dock/cairo-dock/cairo-dock-opengl-path.h
@@ -65,6 +59,7 @@ include/cairo-dock/cairo-dock/cairo-dock-struct.h
 include/cairo-dock/cairo-dock/cairo-dock-surface-factory.h
 include/cairo-dock/cairo-dock/cairo-dock-task.h
 include/cairo-dock/cairo-dock/cairo-dock-themes-manager.h
+include/cairo-dock/cairo-dock/gldi-config.h
 include/cairo-dock/icon-factory/cairo-dock-applet-factory.h
 include/cairo-dock/icon-factory/cairo-dock-application-factory.h
 include/cairo-dock/icon-factory/cairo-dock-desktop-file-factory.h
@@ -74,7 +69,7 @@ include/cairo-dock/implementations/cairo-dock-gauge.h
 include/cairo-dock/implementations/cairo-dock-graph.h
 lib/libgldi.so
 lib/libgldi.so.2
-lib/libgldi.so.2.2.0-4
+lib/libgldi.so.2.3.0~3
 libdata/pkgconfig/cairo-dock.pc
 libdata/pkgconfig/gldi.pc
 share/applications/cairo-dock-cairo.desktop
@@ -163,6 +158,8 @@ share/applications/cairo-dock.desktop
 %%DATADIR%%/rotate-desklet.svg
 %%DATADIR%%/separator.desktop
 %%DATADIR%%/themes.conf
+%%DATADIR%%/themes/_default_/preview
+%%DATADIR%%/themes/_default_/readme
 %%DATADIR%%/themes/_default_/active.png
 %%DATADIR%%/themes/_default_/bg.svg
 %%DATADIR%%/themes/_default_/cairo-dock.conf
@@ -175,6 +172,10 @@ share/applications/cairo-dock.desktop
 %%DATADIR%%/themes/_default_/launchers/01gimp.desktop
 %%DATADIR%%/themes/_default_/launchers/01gnome-terminal.desktop
 %%DATADIR%%/themes/_default_/launchers/01inkscape.desktop
+%%DATADIR%%/themes/_default_/launchers/01separator.desktop
+%%DATADIR%%/themes/_default_/launchers/01thunderbird.desktop
+%%DATADIR%%/themes/_default_/launchers/02separator.desktop
+%%DATADIR%%/themes/_default_/launchers/03separator.desktop
 %%DATADIR%%/themes/_default_/plug-ins/Animated-icons/Animated-icons.conf
 %%DATADIR%%/themes/_default_/plug-ins/Clipper/Clipper.conf
 %%DATADIR%%/themes/_default_/plug-ins/Dbus/Dbus.conf
@@ -187,12 +188,20 @@ share/applications/cairo-dock.desktop
 %%DATADIR%%/themes/_default_/plug-ins/musicPlayer/musicPlayer.conf
 %%DATADIR%%/themes/_default_/plug-ins/quick-browser/quick-browser.conf
 %%DATADIR%%/themes/_default_/plug-ins/rendering/rendering.conf
+%%DATADIR%%/themes/_default_/plug-ins/Recent-Events/Recent-Events.conf
 %%DATADIR%%/themes/_default_/plug-ins/shortcuts/shortcuts.conf
 %%DATADIR%%/themes/_default_/plug-ins/showDesktop/showDesktop.conf
 %%DATADIR%%/themes/_default_/plug-ins/stack/stack.conf
 %%DATADIR%%/themes/_default_/plug-ins/switcher/switcher.conf
+share/cairo-dock/icons/theme-distant.svg
+share/cairo-dock/icons/theme-local.svg
+share/cairo-dock/icons/theme-new.svg
+share/cairo-dock/icons/theme-updated.svg
+share/cairo-dock/icons/theme-user.svg
+share/cairo-dock/icons/balloons.png
 share/locale/ar/LC_MESSAGES/cairo-dock.mo
 share/locale/be/LC_MESSAGES/cairo-dock.mo
+share/locale/bn/LC_MESSAGES/cairo-dock.mo
 share/locale/ca/LC_MESSAGES/cairo-dock.mo
 share/locale/cs/LC_MESSAGES/cairo-dock.mo
 share/locale/de/LC_MESSAGES/cairo-dock.mo
@@ -204,16 +213,21 @@ share/locale/eu/LC_MESSAGES/cairo-dock.mo
 share/locale/fi/LC_MESSAGES/cairo-dock.mo
 share/locale/fo/LC_MESSAGES/cairo-dock.mo
 share/locale/fr/LC_MESSAGES/cairo-dock.mo
+share/locale/gl/LC_MESSAGES/cairo-dock.mo
 share/locale/hu/LC_MESSAGES/cairo-dock.mo
 share/locale/it/LC_MESSAGES/cairo-dock.mo
 share/locale/ja/LC_MESSAGES/cairo-dock.mo
+share/locale/ko/LC_MESSAGES/cairo-dock.mo
 share/locale/nb/LC_MESSAGES/cairo-dock.mo
 share/locale/nl/LC_MESSAGES/cairo-dock.mo
 share/locale/oc/LC_MESSAGES/cairo-dock.mo
+share/locale/pl/LC_MESSAGES/cairo-dock.mo
 share/locale/pt/LC_MESSAGES/cairo-dock.mo
 share/locale/pt_BR/LC_MESSAGES/cairo-dock.mo
+share/locale/ro/LC_MESSAGES/cairo-dock.mo
 share/locale/ru/LC_MESSAGES/cairo-dock.mo
 share/locale/sk/LC_MESSAGES/cairo-dock.mo
+share/locale/sl/LC_MESSAGES/cairo-dock.mo
 share/locale/sr/LC_MESSAGES/cairo-dock.mo
 share/locale/sv/LC_MESSAGES/cairo-dock.mo
 share/locale/tr/LC_MESSAGES/cairo-dock.mo
@@ -236,12 +250,14 @@ share/pixmaps/cairo-dock.svg
 @dirrm %%DATADIR%%/themes/_default_/plug-ins/dialog-rendering
 @dirrm %%DATADIR%%/themes/_default_/plug-ins/GMenu
 @dirrm %%DATADIR%%/themes/_default_/plug-ins/Dbus
+@dirrm %%DATADIR%%/themes/_default_/plug-ins/Recent-Events
 @dirrm %%DATADIR%%/themes/_default_/plug-ins/Clipper
 @dirrm %%DATADIR%%/themes/_default_/plug-ins/Animated-icons
 @dirrm %%DATADIR%%/themes/_default_/plug-ins
 @dirrm %%DATADIR%%/themes/_default_/launchers
 @dirrm %%DATADIR%%/themes/_default_
 @dirrm %%DATADIR%%/themes
+@dirrm share/cairo-dock/icons
 @dirrm %%DATADIR%%/gauges/Turbo-night-fuel
 @dirrm %%DATADIR%%/gauges/Battery
 @dirrm %%DATADIR%%/gauges

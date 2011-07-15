@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	cairo-dock
-DISTVERSION=	2.2.0-4
+DISTVERSION=	2.3.0~3
 CATEGORIES=	deskutils
-MASTER_SITES=	http://launchpadlibrarian.net/56954298/
+MASTER_SITES=	http://launchpadlibrarian.net/73753213/
 
 MAINTAINER=	fidaj@ukr.net
 COMMENT=	Cairo-Dock is a light and eye-candy dock
@@ -27,6 +27,7 @@ USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		cairo-dock.1
+MANCOMPRESSED=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|libdir}/pkgconfig|prefix}/libdata/pkgconfig| ; s|datadir}/man|prefix}/man|' \
