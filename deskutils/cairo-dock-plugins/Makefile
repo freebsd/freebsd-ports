@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	cairo-dock-plugins
-DISTVERSION=	2.2.0-4
-PORTREVISION=	1
+DISTVERSION=	2.3.0~3
 CATEGORIES=	deskutils
-MASTER_SITES=	http://launchpadlibrarian.net/56955156/
+MASTER_SITES=	http://launchpadlibrarian.net/73753265/
 
 MAINTAINER=	fidaj@ukr.net
 COMMENT=	Cairo-Dock-Plugins for Cairo-Dock
@@ -25,11 +24,13 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig glib20 gtk20 librsvg2 libxml2
 USE_LDCONFIG=	yes
+USE_PYTHON=	yes
 USE_XORG=	xrender
 USE_DOS2UNIX=	YES
 USE_CMAKE=	yes
 USE_GCC=	4.5+
 MAKE_JOBS_SAFE=	YES
+PLIST_SUB+=	PYVER="${PYTHON_VERSION:S/thon//}"
 
 OPTIONS=	GMENU "Common Applications menu" On \
 		KEYBOARD_INDICATOR "Control the keyboard layout" Off \
