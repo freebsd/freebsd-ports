@@ -17,7 +17,7 @@ DISTNAME=	30375-akode-${PORTVERSION}
 MAINTAINER=	swhetzel@gmail.com
 COMMENT=	Musepack decoder plugin for akode
 LICENSE=	LGPL20
-LICENSE_FILE=	${WORKSRC}/COPYING
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFLICTS=	kdemultimedia-3.[1-3]*
 
