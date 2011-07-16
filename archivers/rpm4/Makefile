@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	rpm
-PORTVERSION=	4.9.0
+PORTVERSION=	4.9.1
 CATEGORIES=	archivers
 MASTER_SITES=	http://rpm.org/releases/rpm-${PORTVERSION:R}.x/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.rpm.org/pub/rpm/dist/rpm-${PORTVERSION:E}.x/
@@ -33,7 +33,9 @@ CONFLICTS=	rpm-3.*
 CPPFLAGS+=	-I${LOCALBASE}/include/nspr -I${LOCALBASE}/include/nss/nss \
 		-I${BDB_INCLUDE_DIR} -I${LUA_INCDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib/nss -L${BDB_LIB_DIR} -L${LUA_LIBDIR}
-CONFIGURE_ARGS+=--with-external-db
+CONFIGURE_ARGS+=--with-external-db \
+		LUA_CFLAGS=-I${LUA_INCDIR} \
+		LUA_LIBS="-L${LUA_LIBDIR} -llua-${LUA_VER} -lm"
 
 .include <bsd.port.options.mk>
 
@@ -44,7 +46,7 @@ LIB_DEPENDS+=   lzma.5:${PORTSDIR}/archivers/xz
 .ifndef	WITHOUT_PYTHON
 CONFIGURE_ARGS+=--enable-python
 USE_PYTHON=	2.6+
-PLIST_SUB+=	PYTHON=""
+PLIST_SUB+=	PYTHON="" VERSION=${PORTVERSION}
 CPPFLAGS+=	-I${PYTHON_INCLUDEDIR}
 LDFLAGS+=	-L${PYTHON_LIBDIR}
 .else
