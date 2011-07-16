@@ -47,6 +47,10 @@ PICFLAG?=       -fPIC
 PICFLAG?=       -fpic
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64
+.endif
+
 USE_FORTRAN=	yes
 
 WRKSRC=		${WRKDIR}/ARPACK
