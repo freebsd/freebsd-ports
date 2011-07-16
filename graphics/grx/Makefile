@@ -90,6 +90,10 @@ CONFIGURE_ARGS+=--disable-zlib
 CONFIGURE_ARGS+=--enable-x86_64
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 post-patch:
 	@${GREP} -ERl '<(malloc|alloca)\.h>' ${WRKSRC} | ${XARGS} \
 		${REINPLACE_CMD} -Ee 's|<(malloc\|alloca)\.h>|<stdlib.h>|'
