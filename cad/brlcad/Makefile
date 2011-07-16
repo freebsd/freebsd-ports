@@ -165,6 +165,10 @@ EXTRA_LIBS=	${PTHREAD_LIBS}
 CONFIGURE_ARGS+=	--disable-debug --enable-optimized
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64: invokes i386 assembler
+.endif
+
 post-patch:
 	${REINPLACE_CMD} "s+-exact Tcl 8\.5\.1+Tcl 8.5+" ${WRKSRC}/src/other/tcl/library/init.tcl
 
