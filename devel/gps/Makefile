@@ -7,6 +7,7 @@
 
 PORTNAME=	gps
 PORTVERSION=	5.0.0
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://downloads.dragonlace.net/src/ \
 		http://dragonlace.mirrors.ada.cx/src/
