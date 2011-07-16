@@ -61,4 +61,10 @@ post-patch:
 		's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
 		-e 's|int_p_NULL|NULL|g' ${WRKSRC}/core/external/cimg.h
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64: uses i386-specific options
+.endif
+
+.include <bsd.port.post.mk>
