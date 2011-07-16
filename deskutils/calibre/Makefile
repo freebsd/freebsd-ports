@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	calibre
-PORTVERSION=	0.8.6
-PORTREVISION=	1
+PORTVERSION=	0.8.9
 CATEGORIES=	deskutils python
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -19,7 +18,7 @@ LIB_DEPENDS=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick \
 		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4 \
 		wmflite:${PORTSDIR}/graphics/libwmf \
 		chm.0:${PORTSDIR}/misc/chmlib \
-		icudata.46:${PORTSDIR}/devel/icu
+		icudata.48:${PORTSDIR}/devel/icu
 BUILD_DEPENDS=	py*-setuptools>=0:${PORTSDIR}/devel/py-setuptools \
 		py*-sip>=0:${PORTSDIR}/devel/py-sip \
 		py*-qt4-core>=0:${PORTSDIR}/devel/py-qt4-core \
