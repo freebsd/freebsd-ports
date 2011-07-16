@@ -28,4 +28,8 @@ MAKE_JOBS_SAFE=	yes
 LIB_DEPENDS+=	boost_thread:${PORTSDIR}/devel/boost-libs
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not configure on sparc64
+.endif
+
 .include <bsd.port.post.mk>
