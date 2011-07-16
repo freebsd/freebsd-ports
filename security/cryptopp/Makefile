@@ -41,4 +41,10 @@ do-install:
 	${CP} ${WRKSRC}/License.txt ${PREFIX}/share/doc/cryptopp/License
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64: unrecognized C++ options
+.endif
+
+.include <bsd.port.post.mk>
