@@ -91,6 +91,10 @@ PICFLAG?=		-fpic
 CONFIGURE_ENV +=	SHLIB_${flag}FLAGS="${PICFLAG}"
 .endfor
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64: assertions fail
+.endif
+
 .if !defined(LIBRMATH_SLAVEPORT)
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=		atlas.2:${PORTSDIR}/math/atlas
