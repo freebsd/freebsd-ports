@@ -38,6 +38,10 @@ RUN_DEPENDS=	xz>0:${PORTSDIR}/archivers/xz
 BROKEN=		does not compile on 7.X
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not configure on sparc64
+.endif
+
 post-configure:
 	@${FIND} ${WRKSRC} -name 'Makefile' | ${XARGS} ${REINPLACE_CMD} \
 	    -e 's,LIBTOOL_LINK_FLAGS = -R -R,LIBTOOL_LINK_FLAGS = -R,' \
