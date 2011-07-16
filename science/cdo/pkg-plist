@@ -1,0 +1,10 @@
+bin/cdi
+bin/cdo
+%%NETCDF%%bin/cdotest
+include/cdi.h
+include/cdi.inc
+lib/libcdi.a
+lib/libcdi.la
+lib/libcdi.so
+lib/libcdi.so.0
+libdata/pkgconfig/cdi.pc
