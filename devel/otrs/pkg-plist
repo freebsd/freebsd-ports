@@ -836,7 +836,7 @@ otrs/var/httpd/htdocs/skins/Customer/default/img/tr_hover.png
 otrs/var/httpd/htdocs/skins/Customer/default/img/tr_hover_next_bg.png
 otrs/var/httpd/htdocs/skins/Customer/ivory/css/Core.Default.css
 otrs/var/packages/Support-1.2.6.opm
-otrs/var/packages/iPhoneHandle-1.0.2.opm
+otrs/var/packages/iPhoneHandle-1.0.3.opm
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilEscalationDeadlineExpires.de.xml
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilEscalationDeadlineExpires.en.xml
 otrs/var/stats/ListOfOpenTicketsSortedByTimeLeftUntilResponseDeadlineExpires.de.xml
@@ -893,6 +893,7 @@ otrs/Kernel/Language/hu.pm
 otrs/Kernel/Language/it.pm
 otrs/Kernel/Language/ja.pm
 otrs/Kernel/Language/lv.pm
+otrs/Kernel/Language/lt.pm
 otrs/Kernel/Language/nb_NO.pm
 otrs/Kernel/Language/nl.pm
 otrs/Kernel/Language/pl.pm
