@@ -5,43 +5,24 @@
 # $FreeBSD$
 
 PORTNAME=	kcheckers
-PORTVERSION=	0.6
-PORTREVISION=	6
+PORTVERSION=	0.8.1
 CATEGORIES=	games
-MASTER_SITES=	http://wibix.de/infusions/pro_download_panel/downloads/
+MASTER_SITES=	SF/qcheckers/${PORTNAME}/${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	Qt version of the classic boardgame checkers
 
-BUILD_DEPENDS=	qmake:${PORTSDIR}/devel/qmake
-
-USE_QT_VER=	3
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui qmake_build moc_build rcc_build
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
 
-PLIST_FILES=	bin/kcheckers %%DATADIR%%/kcheckers.pdn
-PLIST_DIRS=	%%DATADIR%%
-
-.if !defined(NOPORTDOCS)
-PORTDOCS=	AUTHORS ChangeLog README
-.endif
-
 post-patch:
-	cd ${WRKSRC} && ${REINPLACE_CMD} -e \
-		's|/usr/local/share/kcheckers|${DATADIR}|g' kcheckers.pro
+	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/common.h
+	@${REINPLACE_CMD} -e 's|..PREFIX/share/kcheckers|${DATADIR}|' \
+		-e 's|..PREFIX|${PREFIX}|' ${WRKSRC}/kcheckers.pro
 
 do-configure:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} qmake \
-		-spec ${PREFIX}/share/qt/mkspecs/freebsd-g++ kcheckers.pro
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/kcheckers ${PREFIX}/bin
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/kcheckers.pdn ${DATADIR}
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-.for file in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
-.endfor
-.endif
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${QMAKE} ${QMAKEFLAGS} kcheckers.pro
 
 .include <bsd.port.mk>
