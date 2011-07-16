@@ -42,4 +42,42 @@ you can try using irrecord like described here:
 
 	file://%%LOCALBASE%%/share/doc/lirc/html/help.html#new_remote
 
+Update for webcamd >= 3.0.0.1:
+
+webcamd 3.0.0.1 now supports /dev/input/eventX (X there can be for
+example 0, 8, 16 etc) and uses it exclusively for almost all tuners,
+only mceusb IR-only devices now support both interfaces.  So if you
+don't get a /dev/lircX device node anymore and want to make lirc
+use a remote with such a tuner you now need the lirc devinput driver,
+if you start lircd via the rc.d script set lircd_flags and lircd_device
+in rc.conf(5), like:
+
+	lircd_flags="-H devinput"
+	lircd_device="/dev/input/event0"
+
+The example lircd.conf includes the devinput config file too so if
+all goes well irw(1) should still work with such tuners and show
+buttons pressed, and if not and the tuner's Linux driver uses the
+rc.core interface you can often still add a custom keymap, only
+with devinput you no longer want to use irrecord(1) but ir-keytable(1)
+which is part of the multimedia/v4l-utils port.  Using that tool
+you can e.g. check remote events coming in on /dev/input/eventX,
+
+	ir-keytable -d /dev/input/eventX -t
+
+list the current keytable,
+
+	ir-keytable -d /dev/input/eventX -r
+
+or add scancodes on the fly by loading a custom keymap,
+
+	ir-keytable -d /dev/input/eventX -w keymap.txt
+
+(on Linux this can be automated using udev, don't know if we need
+something like that also...)  Some (Linux-centric, so not all of
+them apply) notes re ir-keytable(1) and the lirc devinput change
+are also here:
+
+	http://forum.xbmc.org/showthread.php?t=101151
+
 **********************************************************************

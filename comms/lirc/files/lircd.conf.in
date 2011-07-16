@@ -7,7 +7,7 @@
 #
 # contributed by 
 #
-# brand:                       webcamd RC5 emulation
+# brand:                       webcamd <= 0.1.26 RC5 emulation
 # model no. of remote control: 
 # devices being controlled by this remote:
 #
@@ -16,7 +16,7 @@
 
 begin remote
 
-  name  webcamd_RC5_emu
+  name  webcamd_0.1.26_RC5_emu
   bits           13
   flags RC5
   eps            30
