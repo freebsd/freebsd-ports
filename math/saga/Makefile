@@ -7,7 +7,7 @@
 
 PORTNAME=	saga
 PORTVERSION=	2.0.7
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=	SF/saga-gis/SAGA%20-%20${PORTVERSION:C/\.[[:digit:]]*$//}/SAGA%20${PORTVERSION}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -38,7 +38,8 @@ DESKTOP_ENTRIES=	"SAGA GIS" "${COMMENT}" "${DATADIR}/saga_icon_32.xpm" \
 
 OPTIONS=	UNICODE "Enable Unicode Support" On \
 		PYTHON "Enable Python bindings" On \
-		HARU "Enable Haru Free PDF Library (optional)" Off
+		HARU "Enable Haru Free PDF Library (optional)" Off \
+		VIGRA "Enable 'Vision with Generic Algorithms' Library" Off
 
 .include <bsd.port.options.mk>
 
@@ -67,6 +68,14 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/libhpdf.so:${PORTSDIR}/print/libharu
 PLIST_SUB+=	HARU=""
 .else
 PLIST_SUB+=	HARU="@comment "
+.endif
+
+.if defined(WITH_VIGRA)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libvigraimpex.so:${PORTSDIR}/graphics/vigra
+RUN_DEPENDS+=	${LOCALBASE}/lib/libvigraimpex.so:${PORTSDIR}/graphics/vigra
+PLIST_SUB+=	VIGRA=""
+.else
+PLIST_SUB+=	VIGRA="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
