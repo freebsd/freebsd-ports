@@ -32,6 +32,10 @@ LIB_DEPENDS+=	icuuc:${PORTSDIR}/devel/icu
 BJAM_OPTIONS+=	-sICU_PATH=${LOCALBASE}
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64: invokes i386 assembler
+.endif
+
 post-patch: customize-boost-build
 # The following directory is empty and causes issues with pkg_{add,delete}
 	${RMDIR} ${WRKSRC}/boost/interprocess/containers/detail

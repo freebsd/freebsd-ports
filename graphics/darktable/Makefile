@@ -57,4 +57,10 @@ post-patch:
 # Do not install useless documentation files
 	@${REINPLACE_CMD} -e 's, install-dtdocDATA,,' ${WRKSRC}/Makefile.in
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64: invokes i386 assembler
+.endif
+
+.include <bsd.port.post.mk>
