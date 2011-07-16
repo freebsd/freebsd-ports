@@ -325,6 +325,7 @@
     SUBDIR += teTeX-base
     SUBDIR += teTeX-texmf
     SUBDIR += tex
+    SUBDIR += tex-mfpic
     SUBDIR += tex-omegaware-old
     SUBDIR += tex-texmflocal
     SUBDIR += texinfo
