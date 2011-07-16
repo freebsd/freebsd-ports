@@ -70,4 +70,10 @@ do-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${i}.1 ${MANPREFIX}/man/man1
 .endfor
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64
+.endif
+
+.include <bsd.port.post.mk>
