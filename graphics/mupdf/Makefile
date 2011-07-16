@@ -59,4 +59,10 @@ post-patch:	.SILENT
 pre-install:	.SILENT
 	${FIND} ${WRKSRC} -name pdf\*.1 -exec ${SH} -c 'mv {} $$(dirname {})/mu_$$(basename {})' \;
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64 : uses i386-specific options
+.endif
+
+.include <bsd.port.post.mk>
