@@ -137,6 +137,7 @@
     SUBDIR += latex-biblist
     SUBDIR += latex-bytefield
     SUBDIR += latex-caption
+    SUBDIR += latex-chapterfolder
     SUBDIR += latex-circ
     SUBDIR += latex-cjk
     SUBDIR += latex-csquotes

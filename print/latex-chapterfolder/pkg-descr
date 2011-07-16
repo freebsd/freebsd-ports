@@ -1,0 +1,7 @@
+This package simplifies working with folder structures that match the
+chapter/section/subsection structure. It provides macros to define a
+folder that contains the file for a chapter/section/subsection, and
+provides macros that allow inclusion without using the full path,
+rather the path relative to the current folder of the
+chapter/section/subsection. It makes easy changing the name of a
+folder, for example.
