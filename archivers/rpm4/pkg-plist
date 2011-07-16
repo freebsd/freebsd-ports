@@ -110,7 +110,7 @@ lib/rpm/javadeps
 lib/rpm/rpmdeps
 lib/rpm/rpmrc
 lib/rpm/macros
-lib/rpm/rpmpopt-4.9.0
+lib/rpm/rpmpopt-%%VERSION%%
 lib/rpm/find-provides
 lib/rpm/find-requires
 lib/rpm/mkinstalldirs
