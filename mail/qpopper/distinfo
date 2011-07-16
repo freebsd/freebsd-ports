@@ -1,4 +1,2 @@
-SHA256 (qpopper4.0.9.tar.gz) = c98830ba61c20c38d64c2c2e84fe7f21642b25cfc15f6257f4cad474d01d4c5d
-SIZE (qpopper4.0.9.tar.gz) = 2767261
-SHA256 (qpopper4.0.9-ipv6-20060626.diff.gz) = 73070ad24cb088bf74e58745ccd61442caa32d0a0e61a0a4c33aa6998704d476
-SIZE (qpopper4.0.9-ipv6-20060626.diff.gz) = 10986
+SHA256 (qpopper4.1.0.tar.gz) = 1bc21f83cda47e9b2d5d8ceecc49f169e10fdb9b99ddddcd543218fad269b0de
+SIZE (qpopper4.1.0.tar.gz) = 1239530

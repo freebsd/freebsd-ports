@@ -1,9 +1,9 @@
---- popper/scram.c.orig	Tue Jul 25 04:07:21 2000
-+++ popper/scram.c	Wed Nov  1 11:46:31 2000
-@@ -17,7 +17,10 @@
- #include <sys/types.h>
+--- popper/scram.c.orig	2008-06-21 18:32:58.000000000 -0700
++++ popper/scram.c	2011-06-08 21:50:54.000000000 -0700
+@@ -18,7 +18,10 @@
  #include <netinet/in.h>
  
+ #include "uint4.h"
 -#include "md5.h"
 +#include <md5.h>
 +
@@ -11,4 +11,4 @@
 +
  #include "hmac-md5.h"
  #include "scram.h"
- 
+

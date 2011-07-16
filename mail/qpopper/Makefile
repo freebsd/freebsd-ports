@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qpopper
-PORTVERSION=	4.0.9
+PORTVERSION=	4.1.0
 PORTREVISION=	3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.qualcomm.com/eudora/servers/unix/popper/ \
@@ -60,12 +60,6 @@ OPTIONS=	APOP_ONLY	"build with APOP authentication only" off \
 		U_OPTION	"include support for user .qpopper-options" on
 
 .include <bsd.port.options.mk>
-
-.if !defined(WITHOUT_IPV6)
-PATCH_SITES=	http://www.imasy.or.jp/~ume/ipv6/
-PATCHFILES=	qpopper4.0.9-ipv6-20060626.diff.gz
-PATCH_DIST_STRIP=	-p1
-.endif
 
 .if defined(WITHOUT_APOP)
 QPOPAUTH=	"@comment "
