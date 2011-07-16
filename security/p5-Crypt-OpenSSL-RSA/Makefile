@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Crypt-OpenSSL-RSA
-PORTVERSION=	0.26
-PORTREVISION=	1
+PORTVERSION=	0.27
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,8 +14,6 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module to RSA encode and decode strings using OpenSSL
 
-BUILD_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-Bignum \
-		p5-Crypt-OpenSSL-Random>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-Random
 RUN_DEPENDS=	p5-Crypt-OpenSSL-Bignum>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-Bignum \
 		p5-Crypt-OpenSSL-Random>=0:${PORTSDIR}/security/p5-Crypt-OpenSSL-Random
 
@@ -25,9 +22,6 @@ USE_OPENSSL=	yes
 MAKE_ARGS=	PASTHRU_INC=-I${OPENSSLINC}
 
 MAN3=		Crypt::OpenSSL::RSA.3
-
-post-patch:
-	@${REINPLACE_CMD} -e "9 s|require AutoLoader;|use AutoLoader 'AUTOLOAD';|" ${WRKSRC}/RSA.pm
 
 regression-test: build
 	cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} ${MAKE_ARGS} test
