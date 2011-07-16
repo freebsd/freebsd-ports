@@ -391,6 +391,7 @@ lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
 %%RUBY_LIBDIR%%/openssl/bn.rb
 %%RUBY_LIBDIR%%/openssl/buffering.rb
 %%RUBY_LIBDIR%%/openssl/cipher.rb
+%%RUBY_LIBDIR%%/openssl/config.rb
 %%RUBY_LIBDIR%%/openssl/digest.rb
 %%RUBY_LIBDIR%%/openssl/pkcs7.rb
 %%RUBY_LIBDIR%%/openssl/ssl.rb
