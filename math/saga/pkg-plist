@@ -138,6 +138,8 @@ lib/saga/libtin_viewer.la
 lib/saga/libtin_viewer.so
 lib/saga/libtransect.la
 lib/saga/libtransect.so
+%%VIGRA%%lib/saga/libvigra.la
+%%VIGRA%%lib/saga/libvigra.so
 share/saga/saga_icon_32.xpm
 share/saga/saga_tip.txt
 @dirrm share/saga
