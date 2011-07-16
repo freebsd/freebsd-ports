@@ -1,0 +1,39 @@
+#!/bin/sh
+#
+# PROVIDE: memcacheq
+# REQUIRE: DAEMON
+#
+# Add the following lines to /etc/rc.conf to run memcacheq:
+#
+# memcacheq_enable (bool):	Set it to "YES" to enable memcacheq.
+#				Default is "NO".
+# memcacheq_flags (flags):	Set extra flags here.
+#				Default is empty "".
+# memcacheq_user (user):	Set user to run memcacheq.
+#				Default is "nobody".
+#
+
+. /etc/rc.subr
+
+name="memcacheq"
+rcvar=${name}_enable
+
+load_rc_config ${name}
+
+: ${memcacheq_enable="NO"}
+: ${memcacheq_user="nobody"}
+: ${memcacheq_pidfile="/var/db/memcacheq/memcacheq.pid"}
+
+stop_postcmd()
+{
+    sleep 3
+    kill -9 `cat ${pidfile}`
+}
+
+pidfile=${memcacheq_pidfile}
+command=%%PREFIX%%/bin/memcacheq
+command_args="-d -N -H /var/db/memcacheq -R -L 1024 -B 1024 -u ${memcacheq_user} -P ${pidfile}"
+
+stop_postcmd="stop_postcmd"
+
+run_rc_command "$1"
