@@ -6,25 +6,13 @@
 #
 
 PORTNAME=	cdo
-PORTVERSION=	1.5.0
-PORTREVISION=	1
+PORTVERSION=	1.5.1
 CATEGORIES=	science
-MASTER_SITES=	https://code.zmaw.de/attachments/download/898/ \
+MASTER_SITES=	https://code.zmaw.de/attachments/download/1531/ \
 		LOCAL/sunpoet
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Climate Data Operators
-
-GNU_CONFIGURE=	yes
-
-CONFIGURE_ARGS=	--program-transform-name=""
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
-
-PLIST_FILES=	bin/cdo
-
-NETCDF_VER?=	4
-HDF5_VER?=	18
 
 OPTIONS=	HDF5	"HDF5 support"		on \
 		JASPER	"Japser support"	off \
@@ -32,13 +20,20 @@ OPTIONS=	HDF5	"HDF5 support"		on \
 		PROJ	"PROJ support"		on \
 		SZIP	"SZIP support"		on
 
-.include <bsd.port.pre.mk>
+CFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CONFIGURE_ARGS=	--enable-cdi-lib --program-transform-name="" --with-zlib=/usr
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+GNU_CONFIGURE=	yes
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+USE_GNOME=	gnomehack
+USE_LDCONFIG=	yes
 
-.if (${OSVERSION} >= 700000) || (${ARCH} != "sparc64")
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -DPTHREAD_MUTEXATTR_CONDATTR"
-.endif
+NETCDF_VER?=	4
+HDF5_VER?=	18
 
-.if (!defined(WITHOUT_NETCDF) && !defined(WITHOUT_HDF5) && (${NETCDF_VER} == 4) && (${HDF5_VER} == 16))
+.include <bsd.port.options.mk>
+
+.if !defined(WITHOUT_NETCDF) && !defined(WITHOUT_HDF5) && ${NETCDF_VER} == 4 && ${HDF5_VER} == 16
 IGNORE=		netCDF 4 requires HDF5 1.8
 .endif
 
@@ -48,7 +43,7 @@ WITH_HDF5=	yes
 .endif
 
 .if !defined(WITHOUT_HDF5)
-CONFIGURE_ARGS+=--with-hdf5=${LOCALBASE} --with-zlib=/usr
+CONFIGURE_ARGS+=--with-hdf5=${LOCALBASE}
 WITH_SZIP=	yes
 .if (${HDF5_VER} == 18)
 LIB_DEPENDS+=	hdf5.7:${PORTSDIR}/science/hdf5-18
@@ -69,7 +64,9 @@ LIB_DEPENDS+=	netcdf.7:${PORTSDIR}/science/netcdf4
 .else
 LIB_DEPENDS+=	netcdf.4:${PORTSDIR}/science/netcdf
 .endif
-PLIST_FILES+=	bin/cdotest
+PLIST_SUB=	NETCDF=""
+.else
+PLIST_SUB=	NETCDF="@comment "
 .endif
 
 .if !defined(WITHOUT_PROJ)
@@ -82,23 +79,26 @@ CONFIGURE_ARGS+=--with-szlib=${LOCALBASE}
 LIB_DEPENDS+=	sz.2:${PORTSDIR}/science/szip
 .endif
 
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} != "sparc64"
+CFLAGS+=	-DPTHREAD_MUTEXATTR_CONDATTR
+.endif
+
 post-patch:
 .if !defined(WITHOUT_NETCDF)
-	${REINPLACE_CMD} \
-		-e '/bin_PROGRAMS = / s|$$| cdotest$$(EXEEXT)|' \
-		-e '/noinst_PROGRAMS = / s| cdotest$$(EXEEXT)||' \
+	@${REINPLACE_CMD} \
+		-e '/bin_PROGRAMS = / s|$$| cdotest|' \
+		-e '/noinst_PROGRAMS = / s| cdotest||' \
 			${WRKSRC}/src/Makefile.in
 .endif
 
 post-build:
 .if !defined(WITHOUT_NETCDF)
-	@cd "${WRKSRC}/src" && ${SETENV} CDO_PATH="${WRKSRC}/src/cdo" "${WRKSRC}/src/cdotest"
+	@cd ${WRKSRC}/src/ && ${SETENV} CDO_PATH=${WRKSRC}/src/cdo ${WRKSRC}/src/cdotest
 .endif
 
-post-install:
-	@${CAT} ${PKGMESSAGE}
-
 regression-test:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE} check
+	@cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} check
 
 .include <bsd.port.post.mk>
