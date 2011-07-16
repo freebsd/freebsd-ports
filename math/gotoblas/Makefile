@@ -41,10 +41,14 @@ PLIST_FILES=	${GOTOFILES:S|^|lib/|}
 
 BUILD_DEPENDS+=	${LOCALBASE}/bin/as:${PORTSDIR}/devel/binutils
 
-.if ${ARCH} == "amd64" || ${ARCH} == "alpha" || ${ARCH} == "sparc64" || ${ARCH} == "ia64"
+.if ${ARCH} == "amd64" || ${ARCH} == "ia64" || ${ARCH} == "sparc64"
 MAKE_FLAGS+=	BINARY64=1
 .else
 MAKE_FLAGS+=	BINARY32=1
+.endif
+
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not link: searches for x86-specific optimizations
 .endif
 
 .if defined(WITH_INTERFACE64)
