@@ -22,6 +22,7 @@ FETCH_ARGS=	-p
 
 .if ${ARCH} == "sparc64"
 PICFLAG?=	-fPIC
+BROKEN=		Does not compile on sparc64: assertions fail
 .else
 PICFLAG?=	-fpic
 .endif
