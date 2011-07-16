@@ -42,6 +42,10 @@ CFLAGS+=	-DHAVE_LINUX_INTEGER_TYPES
 EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-va-va_trace.c
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64
+.endif
+
 .if !defined(WITH_DEBUG)
 CFLAGS+=	-DNDEBUG
 .else
