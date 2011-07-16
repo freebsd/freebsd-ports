@@ -27,8 +27,8 @@ PLIST_FILES=	bin/mkclean bin/mkWDclean bin/mkvtree
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not configure on sparc64
 .endif
 
 do-install:
