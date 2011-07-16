@@ -1,47 +1,12 @@
---- popper/Makefile.in.orig	Tue Apr 26 05:14:37 2005
-+++ popper/Makefile.in	Sat May  7 20:37:09 2005
-@@ -119,9 +119,9 @@
-                     pop_msg.o pop_parse.o pop_pass.o pop_quit.o \
-                     pop_rset.o pop_send.o pop_stat.o pop_updt.o \
-                     pop_user.o pop_xtnd.o pop_xmit.o popper.o \
--                    pop_bull.o xtnd_xlst.o pop_uidl.o mktemp.o \
--                    pop_rpop.o pop_apop.o md5.o pop_auth.o pop_pope.o \
--                    pop_extend.o scram.o hmac.o base64.o pop_util.o \
-+                    pop_bull.o xtnd_xlst.o pop_uidl.o \
-+                    pop_rpop.o pop_apop.o pop_auth.o pop_pope.o \
-+                    pop_extend.o scram.o hmac.o pop_util.o \
-                     get_sub_opt.o msg_ptr.o drac.o pop_config.o pop_tls.o \
-                     pop_tls_openssl.o pop_tls_sslplus.o sslplus_utils.o \
-                     main.o pop_cache.o genpath.o 
-@@ -132,17 +132,17 @@
-                     pop_msg.c pop_parse.c pop_pass.c pop_quit.c \
-                     pop_rset.c pop_send.c pop_stat.c pop_updt.c \
-                     pop_user.c pop_xtnd.c pop_xmit.c popper.c \
--                    pop_bull.c xtnd_xlst.c pop_uidl.c mktemp.c \
--                    pop_rpop.c pop_apop.c md5.c pop_auth.c pop_pope.c \
--                    pop_extend.c scram.c hmac.c base64.c pop_util.c \
-+                    pop_bull.c xtnd_xlst.c pop_uidl.c \
-+                    pop_rpop.c pop_apop.c pop_auth.c pop_pope.c \
-+                    pop_extend.c scram.c hmac.c pop_util.c \
-                     get_sub_opt.c msg_ptr.c drac.c pop_config.c pop_tls.c \
-                     pop_tls_openssl.c pop_tls_sslplus.c sslplus_utils.c \
-                     main.c pop_cache.c genpath.c 
- 
--POPAUTHOBJS     =   base64.o scram.o md5.o \
-+POPAUTHOBJS     =   scram.o \
-                     hmac.o popauth.o 
- 
--POPAUTHSRCS     =   base64.c scram.c md5.c \
-+POPAUTHSRCS     =   scram.c \
-                     hmac.c popauth.c
- 
- INCLUDES        =   ${srcdir}/popper.h \
-@@ -195,7 +195,7 @@
+--- popper/Makefile.in.orig	2011-06-08 23:45:12.000000000 -0700
++++ popper/Makefile.in	2011-06-08 23:45:40.000000000 -0700
+@@ -213,7 +213,7 @@
  	        ${LIBS} ${LDFLAGS}
  
- popauth: ${POPAUTHOBJS}
--	${CC}  -o popauth ${POPAUTHOBJS} ${NETWORK_LIBS} ${DBM_LIBS} \
-+	${CC}  -o popauth ${POPAUTHOBJS} ${LIBS} ${NETWORK_LIBS} ${DBM_LIBS} \
+ popauth: ${POPAUTHOBJS} ${MISSING_OBJS}
+-	${CC}  -o popauth ${POPAUTHOBJS} ${NETWORK_LIBS} \
++	${CC}  -o popauth ${POPAUTHOBJS} ${NETWORK_LIBS} ${LIBS}\
+ 	       ${DBM_LIBS} ${MISSING_OBJS} \
  		${common_dir}/libcommon.a
  
- poppassd: common_library
+
