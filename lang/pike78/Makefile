@@ -97,6 +97,9 @@ ONLY_FOR_ARCHS=	i386 amd64 sparc64
 BROKEN=		segfaults during build
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not link on sparc64
+.endif
 
 .ifdef(WITHOUT_RELOCATABLE_DUMPED_MODULES)
 CONFIGURE_ARGS+=	--without-relocatable-dumped-modules
