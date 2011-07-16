@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	webcamd
-PORTVERSION=	0.1.26
+PORTVERSION=	3.0.0.1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.selasky.org/hans_petter/video4bsd/releases/
+MASTER_SITES=	http://www.selasky.org/hans_petter/distfiles/ \
+		http://hselasky.homeunix.org:8192/distfiles/
 
 MAINTAINER=	hselasky@FreeBSD.org
 COMMENT=	A port of Linux USB webcam and DVB drivers into userspace
