@@ -39,6 +39,10 @@ SUB_LIST=		CURVE_USER=${CURVE_USER} \
 BROKEN=		does not configure on 9.X
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 post-patch:
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/freebsd.patch
 
