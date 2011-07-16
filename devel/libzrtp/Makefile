@@ -27,6 +27,10 @@ RESTRICTED=	Forbidden by license
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not link on sparc64
+.endif
+
 # Check for sources
 .if !exists(${DISTDIR}/${DISTFILES})
 DISTFILE_INSTRUCTIONS=\n\

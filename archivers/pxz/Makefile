@@ -35,6 +35,10 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not link on sparc64
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} -e 's/CC=.*/CC:=$${CC}/g' ${WRKSRC}/Makefile
 
