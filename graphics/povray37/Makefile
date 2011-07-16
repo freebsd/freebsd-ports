@@ -125,6 +125,10 @@ PLIST_SUB+=	HTML="@comment "
 PLIST_SUB+=	HTML=""
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64: thread-local storage not supported
+.endif
+
 CONFIGURE_ARGS+=CXXFLAGS="${CXXFLAGS} ${INCLUDES}"
 
 MAN1=		${UNIQUENAME}.1
