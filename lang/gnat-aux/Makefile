@@ -18,7 +18,7 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 LIB_DEPENDS+=	mpfr.4:${PORTSDIR}/math/mpfr
 LIB_DEPENDS+=	mpc.2:${PORTSDIR}/math/mpc
 
-ONLY_FOR_ARCHES=	i386 amd64
+ONLY_FOR_ARCHS=	i386 amd64
 
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
