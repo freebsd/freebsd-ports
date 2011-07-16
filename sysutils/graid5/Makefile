@@ -28,9 +28,9 @@ MAKE_ENV+=	KMODDIR=${KMODDIR}
 MANCOMPRESSED=	yes
 MAN8=		${PORTNAME}.8
 
-.if !exists(/usr/src/sys/Makefile)
+.if !exists(${SRC_BASE}/sys/Makefile)
 IGNORE=	requires kernel source files
-.elif !exists(/usr/src/sbin/geom/Makefile)
+.elif !exists(${SRC_BASE}/sbin/geom/Makefile)
 IGNORE=	requires sbin source files
 .endif
 
