@@ -39,8 +39,8 @@ CONFIGURE_ARGS=	--parrot-config=parrot-${PARROT_VERSION}/installable_parrot_conf
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=	dependency devel/icu is broken on 6.x
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64
 .endif
 
 USE_BISON=	build
