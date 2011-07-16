@@ -21,4 +21,10 @@ CMAKE_USE_PTHREAD=	yes
 
 MAKE_JOBS_SAFE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64: thread-local storage not supported
+.endif
+
+.include <bsd.port.post.mk>
