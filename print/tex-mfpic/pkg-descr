@@ -1,0 +1,3 @@
+Mfpic is a scheme for producing pictures from (La)TeX commands.
+Commands \mfpic and \endmfpic (in LaTeX, the mfpic environment) enclose
+a group in which drawing commands may be placed.
