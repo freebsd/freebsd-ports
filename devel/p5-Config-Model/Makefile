@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	1.244
+PORTVERSION=	1.249
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DDUMONT
@@ -18,7 +18,8 @@ COMMENT=	Model to create configuration validation tool
 
 LICENSE=	LGPL21
 
-BUILD_DEPENDS=	p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
+BUILD_DEPENDS=	p5-File-Copy-Recursive>=0:${PORTSDIR}/devel/p5-File-Copy-Recursive \
+		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-Log-Log4perl>=1.11:${PORTSDIR}/devel/p5-Log-Log4perl
 RUN_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Carp-Assert-More>=0:${PORTSDIR}/devel/p5-Carp-Assert-More \
@@ -93,9 +94,56 @@ MAN3=		Config::Model.3 \
 		Config::Model::models::Debian::Dpkg::Source::Options.3 \
 		Config::Model::models::Fstab.3 \
 		Config::Model::models::Fstab::FsLine.3 \
+		Config::Model::models::LCDd.3 \
+		Config::Model::models::LCDd::CFontz.3 \
+		Config::Model::models::LCDd::CFontz633.3 \
+		Config::Model::models::LCDd::CFontzPacket.3 \
+		Config::Model::models::LCDd::CwLnx.3 \
+		Config::Model::models::LCDd::EyeboxOne.3 \
+		Config::Model::models::LCDd::IOWarrior.3 \
+		Config::Model::models::LCDd::IrMan.3 \
+		Config::Model::models::LCDd::MD8800.3 \
+		Config::Model::models::LCDd::MtxOrb.3 \
+		Config::Model::models::LCDd::NoritakeVFD.3 \
+		Config::Model::models::LCDd::SureElec.3 \
+		Config::Model::models::LCDd::bayrad.3 \
+		Config::Model::models::LCDd::curses.3 \
+		Config::Model::models::LCDd::ea65.3 \
+		Config::Model::models::LCDd::g15.3 \
+		Config::Model::models::LCDd::glcdlib.3 \
+		Config::Model::models::LCDd::glk.3 \
+		Config::Model::models::LCDd::hd44780.3 \
+		Config::Model::models::LCDd::icp_a106.3 \
+		Config::Model::models::LCDd::imon.3 \
+		Config::Model::models::LCDd::imonlcd.3 \
+		Config::Model::models::LCDd::irtrans.3 \
+		Config::Model::models::LCDd::joy.3 \
+		Config::Model::models::LCDd::lb216.3 \
+		Config::Model::models::LCDd::lcdm001.3 \
+		Config::Model::models::LCDd::lcterm.3 \
+		Config::Model::models::LCDd::lirc.3 \
+		Config::Model::models::LCDd::lis.3 \
+		Config::Model::models::LCDd::mdm166a.3 \
+		Config::Model::models::LCDd::menu.3 \
+		Config::Model::models::LCDd::ms6931.3 \
+		Config::Model::models::LCDd::mtc_s16209x.3 \
+		Config::Model::models::LCDd::mx5000.3 \
+		Config::Model::models::LCDd::picolcd.3 \
+		Config::Model::models::LCDd::pyramid.3 \
+		Config::Model::models::LCDd::sed1330.3 \
+		Config::Model::models::LCDd::sed1520.3 \
+		Config::Model::models::LCDd::serialPOS.3 \
+		Config::Model::models::LCDd::serialVFD.3 \
+		Config::Model::models::LCDd::server.3 \
+		Config::Model::models::LCDd::shuttleVFD.3 \
+		Config::Model::models::LCDd::sli.3 \
+		Config::Model::models::LCDd::stv5730.3 \
+		Config::Model::models::LCDd::svga.3 \
+		Config::Model::models::LCDd::t6963.3 \
+		Config::Model::models::LCDd::text.3 \
+		Config::Model::models::LCDd::tyan.3 \
+		Config::Model::models::LCDd::ula200.3 \
+		Config::Model::models::LCDd::xosd.3 \
 		Config::Model::models::PopCon.3
-
-post-extract:
-	@${CHMOD} u-x ${WRKSRC}/lib/Config/Model/FuseUI.pm
 
 .include <bsd.port.mk>
