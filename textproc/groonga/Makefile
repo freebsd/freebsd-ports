@@ -26,6 +26,10 @@ MAN1=	groonga.1
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
 .if defined(WITH_MECAB) || exists(${LOCALBASE}/lib/libmecab.so)
 CONFIGURE_ARGS+=	--with-mecab
 LIB_DEPENDS+=	mecab:${PORTSDIR}/japanese/mecab
