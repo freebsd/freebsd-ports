@@ -20,6 +20,7 @@ COMMENT=	LAPACK95, Fortran90/95 wrapper for LAPACK
 .include <bsd.port.pre.mk>
 .if ${ARCH} == "sparc64"
 PICFLAG?=       -fPIC
+BROKEN=		Does not link on sparc64
 .else
 PICFLAG?=       -fpic
 .endif

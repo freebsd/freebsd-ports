@@ -42,6 +42,7 @@ ALL_TARGET=
 
 .if ${ARCH} == "sparc64"
 PICFLAG?=	-fPIC
+BROKEN=		Does not link on sparc64
 .else
 PICFLAG?=	-fpic
 .endif
