@@ -7,9 +7,8 @@
 PORTNAME=	akonadi
 PORTVERSION=	1.6.0
 CATEGORIES=	databases kde ipv6
-MASTER_SITES=	http://download.${PORTNAME}-project.org/ \
-		http://www.mp.kernel.org/gentoo/distfiles/ \
-		http://ktown.kde.org/~dirk/
+MASTER_SITES=	${MASTER_SITE_KDE}
+MASTER_SITE_SUBDIR=	stable/${PORTNAME}/src/
 DIST_SUBDIR=	KDE
 
 MAINTAINER=	kde@FreeBSD.org
