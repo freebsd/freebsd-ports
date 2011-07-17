@@ -16,6 +16,8 @@ COMMENT=	Digital audio CD extraction tool for accurate ripping
 
 LICENSE=	GPLv3
 
+BROKEN=		unsatisfiable dependency requirement
+
 # cdparanoia is not really required for build, but it would not configure
 # without it (ideally, configure script should be fixed instead of forcing
 # superfluous build dependency)
