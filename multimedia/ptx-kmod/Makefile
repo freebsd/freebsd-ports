@@ -41,6 +41,10 @@ _KERNCONF?=$K
 IGNORE=		requires kernel source to be installed
 .endif
 
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile on FreeBSD 7.X
+.endif
+
 do-install:
 	@${MKDIR} ${PREFIX}/${KMODDIR}
 	${INSTALL_KLD} ${BUILD_WRKSRC}/ptx.ko ${PREFIX}/${KMODDIR}
