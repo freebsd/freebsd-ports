@@ -7,6 +7,7 @@
 
 PORTNAME=	memcacheq
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_GENTOO}
@@ -27,7 +28,6 @@ GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=	--with-libevent=${LOCALBASE} --with-bdb=${LOCALBASE} --enable-threads
 
 PLIST_FILES=	bin/memcacheq
-PLIST_DIRS=	${DOCSDIR_REL}
 PORTDOCS=	README
 
 MCQDIR?=	/var/db/memcacheq
@@ -36,7 +36,6 @@ MCQDIR?=	/var/db/memcacheq
 
 post-install:
 .if !defined(NOPORTDOCS)
-	@${ECHO_MSG} "===>   Installing documentation for ${PKGNAME}"
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
