@@ -6,18 +6,19 @@
 #
 
 PORTNAME=	wsgi_xmlrpc
-PORTVERSION=	0.2.5p
-PORTREVISION=	1
+PORTVERSION=	0.2.8
 CATEGORIES=	devel python
-MASTER_SITES=   http://devel.sippysoft.com:8080/~bamby/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	wsgi-xmlrpc-0.2.5pre
+DISTNAME=	${PORTNAME:S/_/-/}-${PORTVERSION}
 
 MAINTAINER=	geka@sippysoft.com
 COMMENT=	WSGI application for a simple XMLRPC method dispatching
 
+LICENSE=	ASL
+
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
-PYDISTUTILS_PKGVERSION= ${PORTVERSION:S/p/pre/}
+PLIST_FILES=	%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
 
 .include <bsd.port.mk>
