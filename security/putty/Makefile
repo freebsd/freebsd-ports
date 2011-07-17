@@ -6,39 +6,69 @@
 #
 
 PORTNAME=	putty
-PORTVERSION=	0.60
-PORTREVISION=	1
+PORTVERSION=	0.61
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://the.earth.li/~sgtatham/putty/%SUBDIR%/ \
 		ftp://ftp.chiark.greenend.org.uk/users/sgtatham/putty-latest/
 MASTER_SITE_SUBDIR=	${PORTVERSION}
 
-MAINTAINER=	beat@FreeBSD.org
+# Beat Gaetzi (beat@) is permitted to take maintainership back
+# or commit to this port without my prior approval.
+MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Secure shell and telnet client
 
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/unix
 MAKEFILE=	Makefile.gtk
-CFLAGS+=	-DBSD_PTYS -DOMIT_UTMP
 
 PLIST_FILES=	bin/plink bin/pscp bin/psftp bin/puttygen
 MAN1=		plink.1 pscp.1 psftp.1 puttygen.1
 
-.if !defined(WITHOUT_GTK)
-USE_GNOME=	gtk12
+OPTIONS=	GSSAPI "Enable GSSAPI support (broken on 9-CURRENT)" on \
+		GTK    "Enable GTK+ 2 GUI" on
+
+.include <bsd.port.options.mk>
+
+CFLAGS+=	-DBSD_PTYS -DOMIT_UTMP -DIPV6
+
+.if !defined(WITHOUT_GTK) && !defined(WITHOUT_X11)
+USE_GNOME=	gtk20
 PLIST_FILES+=	bin/pterm bin/putty bin/puttytel
 MAN1+=		pterm.1 putty.1 puttytel.1
-MAKE_ENV+=	PUTTY_WITH_GTK=yes
-CFLAGS+=	`${GTK_CONFIG} --cflags`
+MAKE_ARGS+=	PUTTY_WITH_GTK=yes GTK_CONFIG="pkg-config gtk+-2.0 x11 --cflags"
+.else
+MAKE_ARGS+=	GTK_CONFIG=:
 .endif
 
-.if !defined(WITHOUT_IPV6)
-CFLAGS+=	-DIPV6
+.include <bsd.port.pre.mk>
+
+.if !defined(WITHOUT_GSSAPI)
+_COMPAT=		-DSTATIC_GSSAPI
+.if ${OSVERSION} >= 900000
+BROKEN=		FreeBSD 9's Kerberos misses MD2, use WITHOUT_GSSAPI=1
 .endif
+.else
+_COMPAT=		-DNO_GSSAPI
+.endif
+
+_COMPAT+=	-DOMIT_UTMP
+
+.if defined(WITH_DEBUG) && ${WITH_DEBUG} != "no"
+XFLAGS=		-DDEBUG
+.endif
+
+.if ${CC:T} == clang
+XFLAGS+=	-Wno-empty-body
+.endif
+
+MAKE_ARGS+=	COMPAT="${_COMPAT}" \
+		XFLAGS="${XFLAGS}" \
+		INSTALL_DATA="${INSTALL_DATA}" \
+		INSTALL_PROGRAM="${INSTALL_PROGRAM}"
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,gtk-config,${GTK_CONFIG},g; \
-			      s,prefix=/usr/local,prefix=${PREFIX},' \
+	@${REINPLACE_CMD} -e 's,prefix=/usr/local,prefix=${PREFIX},;\
+			      s,make,${GMAKE},' \
 		${WRKSRC}/${MAKEFILE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
