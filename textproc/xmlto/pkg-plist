@@ -1,13 +1,13 @@
-@comment $FreeBSD$
 bin/xmlif
 bin/xmlto
 %%DATADIR%%/format/docbook/awt
 %%DATADIR%%/format/docbook/dvi
+%%DATADIR%%/format/docbook/epub
 %%DATADIR%%/format/docbook/fo
 %%DATADIR%%/format/docbook/html
 %%DATADIR%%/format/docbook/html-nochunks
-%%DATADIR%%/format/docbook/xhtml
-%%DATADIR%%/format/docbook/xhtml-nochunks
+%%DATADIR%%/format/docbook/htmlhelp
+%%DATADIR%%/format/docbook/javahelp
 %%DATADIR%%/format/docbook/man
 %%DATADIR%%/format/docbook/mif
 %%DATADIR%%/format/docbook/pcl
@@ -15,19 +15,8 @@ bin/xmlto
 %%DATADIR%%/format/docbook/ps
 %%DATADIR%%/format/docbook/svg
 %%DATADIR%%/format/docbook/txt
-%%DATADIR%%/format/docbook/htmlhelp
-%%DATADIR%%/format/docbook/javahelp
-@dirrm %%DATADIR%%/format/docbook
-%%DATADIR%%/format/xhtml1/dvi
-%%DATADIR%%/format/xhtml1/fo
-%%DATADIR%%/format/xhtml1/pdf
-%%DATADIR%%/format/xhtml1/ps
-%%DATADIR%%/format/xhtml1/txt
-%%DATADIR%%/format/xhtml1/awt
-%%DATADIR%%/format/xhtml1/mif
-%%DATADIR%%/format/xhtml1/pcl
-%%DATADIR%%/format/xhtml1/svg
-@dirrm %%DATADIR%%/format/xhtml1
+%%DATADIR%%/format/docbook/xhtml
+%%DATADIR%%/format/docbook/xhtml-nochunks
 %%DATADIR%%/format/fo/awt
 %%DATADIR%%/format/fo/dvi
 %%DATADIR%%/format/fo/mif
@@ -36,7 +25,18 @@ bin/xmlto
 %%DATADIR%%/format/fo/ps
 %%DATADIR%%/format/fo/svg
 %%DATADIR%%/format/fo/txt
-@dirrm %%DATADIR%%/format/fo
-@dirrm %%DATADIR%%/format
+%%DATADIR%%/format/xhtml1/awt
+%%DATADIR%%/format/xhtml1/dvi
+%%DATADIR%%/format/xhtml1/fo
+%%DATADIR%%/format/xhtml1/mif
+%%DATADIR%%/format/xhtml1/pcl
+%%DATADIR%%/format/xhtml1/pdf
+%%DATADIR%%/format/xhtml1/ps
+%%DATADIR%%/format/xhtml1/svg
+%%DATADIR%%/format/xhtml1/txt
 %%DATADIR%%/xmlto.mak
+@dirrm %%DATADIR%%/format/xhtml1
+@dirrm %%DATADIR%%/format/fo
+@dirrm %%DATADIR%%/format/docbook
+@dirrm %%DATADIR%%/format
 @dirrm %%DATADIR%%

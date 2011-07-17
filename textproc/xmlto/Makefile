@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmlto
-PORTVERSION=	0.0.23
+PORTVERSION=	0.0.24
 CATEGORIES=	textproc
 MASTER_SITES=	https://fedorahosted.org/releases/x/m/xmlto/
 
