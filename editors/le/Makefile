@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	le
-PORTVERSION=	1.14.5
+PORTVERSION=	1.14.6
 CATEGORIES=	editors
 MASTER_SITES=	ftp://ftp.yar.ru/pub/source/le/%SUBDIR%/ \
 		http://people.rit.edu/~rpsfa/distfiles/
@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	. old
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Text editor with block and binary operations
 
+LICENSE=	GPLv3
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 
@@ -22,8 +24,6 @@ MAN1=		le.1
 PORTDOCS=	*
 PORTDATA=	*
 PLIST_FILES=	bin/le
-
-LICENSE=	GPLv3
 
 MISC_DATA=	colors-black colors-blue colors-defbg colors-green \
 		colors-white keymap-emacs mainmenu mainmenu-ru syntax
