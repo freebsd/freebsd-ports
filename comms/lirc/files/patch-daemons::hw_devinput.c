@@ -16,7 +16,7 @@
  	int rd;
  	ir_code value;
  
-@@ -399,6 +405,23 @@ char *devinput_rec(struct ir_remote *rem
+@@ -399,6 +405,38 @@ char *devinput_rec(struct ir_remote *rem
  	LOGPRINTF(1, "time %ld.%06ld  type %d  code %d  value %d", event.time.tv_sec, event.time.tv_usec, event.type,
  		  event.code, event.value);
  
@@ -28,11 +28,26 @@
 +		if (scancodeevent.type == EV_MSC &&
 +		    event.value == scancodeevent.value) {
 +			if (rptevent.type == EV_KEY && rptevent.value != 0) {
++				struct timeval difft;
++
++			        difft = event.time;
++				difft.tv_sec -= scancodeevent.time.tv_sec;
++				difft.tv_usec -= scancodeevent.time.tv_usec;
++				if (difft.tv_usec < 0) {
++					difft.tv_sec--;
++					difft.tv_usec += 1000000;
++				}
++				scancodeevent = event;
 +				event = rptevent;
-+				event.value = 2;
-+				repeat_state = RPT_YES;
++				if (difft.tv_sec == 0) {
++					event.value = 2;
++					repeat_state = RPT_YES;
++				} else {
++					event.value = 1;
++					repeat_state = RPT_NO;
++				}
 +			}
-+		} else if (rptevent.type == EV_KEY && rptevent.value == 0) {
++		} else if (rptevent.type == EV_KEY && rptevent.value <= 1) {
 +			scancodeevent = event;
 +		}
 +	}
@@ -40,7 +55,7 @@
  	value = (unsigned)event.value;
  #ifdef EV_SW
  	if (value == 2 && (event.type == EV_KEY || event.type == EV_SW)) {
-@@ -418,6 +441,9 @@ char *devinput_rec(struct ir_remote *rem
+@@ -418,6 +456,9 @@ char *devinput_rec(struct ir_remote *rem
  		if (event.value == 2) {
  			repeat_state = RPT_YES;
  		} else {
