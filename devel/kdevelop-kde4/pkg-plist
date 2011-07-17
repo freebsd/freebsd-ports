@@ -323,6 +323,7 @@ share/locale/sv/LC_MESSAGES/kdevelop.mo
 share/locale/sv/LC_MESSAGES/kdevformatters.mo
 share/locale/sv/LC_MESSAGES/kdevgdb.mo
 share/locale/sv/LC_MESSAGES/kdevmakebuilder.mo
+share/locale/sv/LC_MESSAGES/kdevmanpage.mo
 share/locale/sv/LC_MESSAGES/kdevokteta.mo
 share/locale/sv/LC_MESSAGES/kdevqthelp.mo
 share/locale/th/LC_MESSAGES/kdevcustommake.mo
@@ -334,6 +335,7 @@ share/locale/uk/LC_MESSAGES/kdevelop.mo
 share/locale/uk/LC_MESSAGES/kdevformatters.mo
 share/locale/uk/LC_MESSAGES/kdevgdb.mo
 share/locale/uk/LC_MESSAGES/kdevmakebuilder.mo
+share/locale/uk/LC_MESSAGES/kdevmanpage.mo
 share/locale/uk/LC_MESSAGES/kdevokteta.mo
 share/locale/uk/LC_MESSAGES/kdevqthelp.mo
 share/locale/zh_CN/LC_MESSAGES/kdevcmake.mo
