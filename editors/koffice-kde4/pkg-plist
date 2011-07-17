@@ -566,6 +566,7 @@ lib/kde4/kspreadtextmodule.so
 lib/kde4/kspreadtrigonometrymodule.so
 lib/kde4/kwordkword1dot3import.so
 lib/kde4/kwordpart.so
+lib/kde4/mswordodf_import.so
 lib/kde4/musicshape.so
 lib/kde4/okularGenerator_odp.so
 lib/kde4/oowriterexport.so
@@ -694,6 +695,9 @@ lib/libkowidgets.so.8.0.0
 lib/libkowmf.so
 lib/libkowmf.so.8
 lib/libkowmf.so.8.0.0
+lib/libkowv2.so
+lib/libkowv2.so.4
+lib/libkowv2.so.4.0.1
 lib/libkplatokernel.so
 lib/libkplatokernel.so.8
 lib/libkplatokernel.so.8.0.0
@@ -2782,6 +2786,7 @@ share/kde4/services/kword_docx_import.desktop
 share/kde4/services/kword_hancomword_import.desktop
 share/kde4/services/kword_html_export.desktop
 share/kde4/services/kword_html_import.desktop
+share/kde4/services/kword_msword-odf_import.desktop
 share/kde4/services/kword_oowriter_export.desktop
 share/kde4/services/kword_oowriter_import.desktop
 share/kde4/services/kword_palmdoc_export.desktop

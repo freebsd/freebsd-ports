@@ -7,7 +7,7 @@
 
 PORTNAME=	koffice
 PORTVERSION=	2.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	editors kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KOFFICE2_BRANCH}/${PORTNAME}-${PORTVERSION}/
@@ -33,13 +33,14 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 		poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4 \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		gsl.16:${PORTSDIR}/math/gsl \
-		wv2.4:${PORTSDIR}/textproc/wv2 \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		qimageblitz.4:${PORTSDIR}/x11/qimageblitz \
 		fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 		fftw3.5:${PORTSDIR}/math/fftw3 \
 		dcmdata.3:${PORTSDIR}/devel/dcmtk
 RUN_DEPENDS=	${LOCALBASE}/lib/libpqxx.a:${PORTSDIR}/databases/postgresql-libpqxx30
+
+CONFLICTS=	calligra-[0-9]*
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
@@ -110,10 +111,6 @@ post-patch:
 		${PATCH_WRKSRC}/cmake/modules/FindImageMagick.cmake
 	${REINPLACE_CMD} -e 's|/usr/include|${LOCALBASE}/include|' \
 		${PATCH_WRKSRC}/cmake/modules/FindWPD.cmake
-	${REINPLACE_CMD} -e 's|-DHAVE_ICONV_H|-DHAVE_ICONV_H -L${LOCALBASE}/lib -liconv -Wl,-rpath -Wl,${LOCALBASE}/lib -liconv|' \
-		${PATCH_WRKSRC}/filters/kword/CMakeLists.txt
-	${REINPLACE_CMD} -e '/add_subdirectory(wv2)/d' \
-		${PATCH_WRKSRC}/filters/kword/msword-odf/CMakeLists.txt
 
 post-install:
 	@-update-mime-database ${PREFIX}/share/mime
