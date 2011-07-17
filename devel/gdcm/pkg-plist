@@ -337,5 +337,6 @@ lib/libgdcmzlib.so.%%GDCM_MAJ%%.%%GDCM_MIN%%
 @dirrm include/gdcm-%%GDCM_MAJ%%/gdcmjpeg
 @dirrm include/gdcm-%%GDCM_MAJ%%/gdcmcharls
 @dirrm include/gdcm-%%GDCM_MAJ%%
+@dirrm lib/gdcm-%%GDCM_MAJ%%
 @dirrm %%DATADIR%%/XML
 @dirrm %%DATADIR%%
