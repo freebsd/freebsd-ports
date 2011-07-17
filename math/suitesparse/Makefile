@@ -53,9 +53,12 @@ LAPACK=		-pthread -lalapack_r
 
 .if ${ARCH} == "sparc64" || ${ARCH} == "amd64"
 FPIC=	-fPIC
-BROKEN=		Does not link on sparc64
 .else
 FPIC=	-fpic
+.endif
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not link on sparc64
 .endif
 
 USE_LDCONFIG=	yes
