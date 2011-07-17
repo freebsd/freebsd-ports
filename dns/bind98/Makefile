@@ -199,6 +199,7 @@ post-patch:
 	@${MV} ${WRKSRC}/bin/${FILE} ${WRKSRC}/bin/${FILE}.Dist
 	@${SED} -e 's#/etc/named.conf#${BIND_DESTETC}/named.conf#g' \
 		-e 's#/etc/rndc.conf#${BIND_DESTETC}/rndc.conf#g' \
+		-e "s#/var\/run\/named\/named.pid#/var/run/named/pid#" \
 		${WRKSRC}/bin/${FILE}.Dist > ${WRKSRC}/bin/${FILE}
 .endfor
 	@${MV} ${WRKSRC}/Makefile.in ${WRKSRC}/Makefile.in.Dist
