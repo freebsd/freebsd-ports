@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	gnucash
-PORTVERSION=	2.4.5
+PORTVERSION=	2.4.7
 CATEGORIES=	finance gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
@@ -24,8 +24,8 @@ RUN_DEPENDS=	guile>=1.8.6:${PORTSDIR}/lang/guile \
 		${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
 		${SITE_PERL}/Finance/Quote.pm:${PORTSDIR}/finance/p5-Finance-Quote
 
-OPTIONS=	AQBANKING	"AqBanking support (HBCI/OpenHBCI)"	on \
-		OFX		"OFX support"				on \
+OPTIONS=	AQBANKING	"AqBanking support (HBCI/OpenHBCI)"	off \
+		OFX		"OFX support"				off \
 		DATABASE	"Enable SQL database backends"		off \
 		WEBKIT		"Use webkit instead of gtkhtml for the HTML engine" off \
 		PYTHON		"Install Python bindings"		off
