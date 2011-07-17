@@ -31,6 +31,7 @@ USE_PERL5_BUILD=	yes
 ALL_TARGET=		default
 CC=			gnatgcc
 
+CONFIGURE_ENV+=		AWK=/usr/bin/awk
 MAKE_ENV+=		ADA_PROJECT_PATH=${PREFIX}/lib/gnat
 
 OPTIONS=		SYSLOG "Enable system logging" on
