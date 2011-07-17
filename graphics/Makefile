@@ -88,8 +88,6 @@
     SUBDIR += corona
     SUBDIR += cosmoplayer
     SUBDIR += crw
-    SUBDIR += crystalentitylayer
-    SUBDIR += crystalspace
     SUBDIR += cthumb
     SUBDIR += cuneiform
     SUBDIR += curator
