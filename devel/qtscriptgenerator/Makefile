@@ -59,10 +59,4 @@ do-install:
 	${MKDIR} ${INSTALL_QT_PLUGINS_DIR}/script
 	cd ${WRKSRC}/plugins/script/ && ${COPYTREE_SHARE} \* ${INSTALL_QT_PLUGINS_DIR}/script
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not build on 6.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
