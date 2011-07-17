@@ -7,6 +7,7 @@
 
 PORTNAME=	musicpd
 PORTVERSION=	0.16.3
+PORTREVISION=	1
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF/${PORTNAME}/mpd/${PORTVERSION}
 DISTNAME=	mpd-${PORTVERSION}
@@ -57,6 +58,7 @@ OPTIONS=	ID3TAG          "Support ID3 v1/v2 tags"                on \
 		PULSEAUDIO	"Support PulseAudio sound server"	off \
 		JACK		"Support JACK audio server"		off \
 		SHOUTCAST	"Support for OGG Icecast and Shoutcast"	off \
+		SNDFILE		"Adds support for libsndfile"		on \
 		LAME		"Support for MP3 Icecast Streams"	off \
 		HTTPD		"Support for httpd output streaming"	off \
 		SAMPLERATE	"Support sample rate conversion"	off
@@ -221,6 +223,13 @@ CONFIGURE_ARGS+=--enable-vorbis-encoder \
 		--enable-shout
 .else
 CONFIGURE_ARGS+=--disable-shout
+.endif
+
+.if defined(WITH_SNDFILE)
+LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile
+CONFIGURE_ARGS+=	--enable-sndfile
+.else
+CONFIGURE_ARGS+=	--disable-sndfile
 .endif
 
 .if defined(WITHOUT_SAMPLERATE)
