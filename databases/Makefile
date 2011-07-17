@@ -263,6 +263,7 @@
     SUBDIR += oracle8-client
     SUBDIR += oracle_odbc_driver
     SUBDIR += p5-Amazon-SimpleDB
+    SUBDIR += p5-AnyEvent-BDB
     SUBDIR += p5-AnyEvent-DBD-Pg
     SUBDIR += p5-AnyEvent-Redis
     SUBDIR += p5-ApacheDBILogConfig

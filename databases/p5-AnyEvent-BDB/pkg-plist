@@ -1,0 +1,5 @@
+%%SITE_PERL%%/AnyEvent/BDB.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/BDB/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/BDB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
+@dirrmtry %%SITE_PERL%%/AnyEvent
