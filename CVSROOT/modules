@@ -7550,6 +7550,7 @@ latex-biblatex                  ports/print/latex-biblatex
 latex-biblist                   ports/print/latex-biblist
 latex-bytefield                 ports/print/latex-bytefield
 latex-caption                   ports/print/latex-caption
+latex-chapterfolder             ports/print/latex-chapterfolder
 latex-circ                      ports/print/latex-circ
 latex-cjk                       ports/print/latex-cjk
 latex-csquotes                  ports/print/latex-csquotes
@@ -25180,6 +25181,7 @@ tetrons                         ports/games/tetrons
 tetzle                          ports/games/tetzle
 tevent                          ports/devel/tevent
 tex                             ports/print/tex
+tex-mfpic                       ports/print/tex-mfpic
 tex-omegaware-old               ports/print/tex-omegaware-old
 tex-texmflocal                  ports/print/tex-texmflocal
 tex2im                          ports/textproc/tex2im
