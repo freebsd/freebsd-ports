@@ -1,6 +1,6 @@
---- configure.bak	2011-07-17 15:43:48.000000000 -0600
-+++ configure	2011-07-17 15:44:10.000000000 -0600
-@@ -3920,8 +3920,8 @@
+--- configure.in.bak	2011-07-17 15:38:31.000000000 -0600
++++ configure.in	2011-07-17 15:39:11.000000000 -0600
+@@ -20,8 +20,8 @@
      # -Wno-return-type is necessary for Xlib header files on many systems:
      CFLAGS="-Wall -Wno-return-type -O2 $X_CFLAGS"
      CFLAGS_D="-Wall -Wno-return-type -g -DDEBUG $X_CFLAGS"
