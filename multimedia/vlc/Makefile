@@ -17,7 +17,8 @@ MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSIO
 MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	Qt4 based multimedia player and streaming server
 
-LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg
+LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
+		gcrypt.18:${PORTSDIR}/security/libgcrypt
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
@@ -116,6 +117,7 @@ CONFIGURE_ARGS+=	--enable-vlc \
 			--enable-oss \
 			--enable-postproc \
 			--enable-sftp \
+			--enable-libgcrypt \
 			--disable-alsa \
 			--disable-dc1394 \
 			--disable-directfb \
@@ -351,10 +353,10 @@ COFIGURE_ARGS+=--disable-gnomevfs
 .endif
 
 .if defined(WITHOUT_GNUTLS)
-CONFIGURE_ARGS+=--disable-gnutls --enable-libgcrypt
+CONFIGURE_ARGS+=--disable-gnutls
 .else
 LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
-CONFIGURE_ARGS+=--enable-gnutls --enable-libgcrypt
+CONFIGURE_ARGS+=--enable-gnutls
 .endif
 
 .if defined(WITH_GOOM)
