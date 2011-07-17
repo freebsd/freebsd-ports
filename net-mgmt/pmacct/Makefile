@@ -15,6 +15,8 @@ MASTER_SITES=	http://www.pmacct.net/ \
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Accounting and aggregation tool for IPv4 and IPv6 traffic
 
+LICENSE=	GPLv2
+
 USE_RC_SUBR=	pmacctd
 SUB_FILES=	pkg-message
 GNU_CONFIGURE=	yes
