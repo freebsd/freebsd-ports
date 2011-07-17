@@ -8,7 +8,7 @@
 #
 
 PORTNAME=	nettle
-PORTVERSION=	2.1
+PORTVERSION=	2.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.lysator.liu.se/~nisse/archive/ \
 		ftp://ftp.lysator.liu.se/pub/security/lsh/
@@ -16,18 +16,17 @@ MASTER_SITES=	http://www.lysator.liu.se/~nisse/archive/ \
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A low-level cryptographic library
 
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
+
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
-LICENSE=	GPLv2 LGPL21
-LICENSE_COMB=	multi
-LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
-LICENSE_FILE_LGPL21=	${WRKSRC}/COPYING.LIB
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--enable-shared
 
+CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 USE_LDCONFIG=	yes
 
