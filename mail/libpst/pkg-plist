@@ -1,4 +1,5 @@
 bin/lspst
+bin/nick2ldif
 bin/pst2ldif
 bin/readpst
 %%PST2DII%%bin/pst2dii
