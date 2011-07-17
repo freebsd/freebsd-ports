@@ -7,7 +7,7 @@
 
 PORTNAME?=	wireshark
 PORTVERSION=	1.6.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.wireshark.org/download/src/ \
     		http://wireshark.osmirror.nl/download/src/ \
@@ -148,12 +148,13 @@ CONFIGURE_ARGS+=	--with-geoip=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--with-geoip=no
 .endif
 
-.if exists(${LOCALBASE}/lib/libgnutls.so) || defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
+.if exists(${LOCALBASE}/lib/libgnutls.so) || !defined(WITHOUT_GNUTLS)
+LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls \
+    		gcrypt.18:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=--with-libgnutls-prefix=${LOCALBASE}
 .endif
 
-.if exists(${LOCALBASE}/lib/libgcrypt.so) || defined(WITH_LIBGCRYPT)
+.if exists(${LOCALBASE}/lib/libgcrypt.so) || !defined(WITHOUT_LIBGCRYPT)
 LIB_DEPENDS+=	gcrypt.18:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=--with-libgcrypt-prefix=${LOCALBASE}
 .endif
