@@ -1,17 +1,15 @@
---- Makefile.gtk.orig	Sun Apr 29 22:41:48 2007
-+++ Makefile.gtk	Thu May  3 13:52:34 2007
-@@ -99,8 +99,8 @@
- # TOOLPATH = /opt/gcc/bin
- CC = $(TOOLPATH)cc
+--- ./Makefile.gtk.orig	2011-07-12 20:29:31.000000000 +0200
++++ ./Makefile.gtk	2011-07-17 14:56:18.000000000 +0200
+@@ -119,7 +119,7 @@
+ 
+ unexport CFLAGS # work around a weird issue with krb5-config
  
 -CFLAGS = -O2 -Wall -Werror -g -I.././ -I../charset/ -I../windows/ -I../unix/ \
--		-I../mac/ -I../macosx/ `gtk-config --cflags` -D _FILE_OFFSET_BITS=64
-+CFLAGS += -O2 -Wall -g -I.././ -I../charset/ -I../windows/ -I../unix/ \
-+		-I../mac/ -I../macosx/ -D _FILE_OFFSET_BITS=64
- XLDFLAGS = $(LDFLAGS) `gtk-config --libs`
++CFLAGS := $(CFLAGS) -Wall -Werror -I.././ -I../charset/ -I../windows/ -I../unix/ \
+ 		-I../macosx/ $(shell $(GTK_CONFIG) --cflags) -D _FILE_OFFSET_BITS=64
+ XLDFLAGS = $(LDFLAGS) $(shell $(GTK_CONFIG) --libs)
  ULDFLAGS = $(LDFLAGS)
- INSTALL=install
-@@ -116,7 +116,11 @@
+@@ -146,7 +146,11 @@
  .SUFFIXES:
  
  
@@ -21,9 +19,9 @@
 +all: plink pscp psftp puttygen
 +endif
  
- plink: be_all_s.o cmdline.o cproxy.o ldisc.o logging.o misc.o pinger.o \
- 		portfwd.o proxy.o raw.o rlogin.o settings.o ssh.o sshaes.o \
-@@ -905,7 +909,7 @@
+ plink: be_all_s.o cmdline.o cproxy.o ldisc.o logging.o misc.o pgssapi.o \
+ 		pinger.o portfwd.o proxy.o raw.o rlogin.o settings.o ssh.o \
+@@ -851,7 +855,7 @@
  	$(CC) $(COMPAT) $(CFLAGS) $(XFLAGS) -c ../unix/xpmputty.c
  
  version.o: FORCE
@@ -32,7 +30,7 @@
  		$(CC) $(COMPAT) $(XFLAGS) $(CFLAGS) `cat ../version.def` -c ../version.c; \
  	else \
  		$(CC) $(COMPAT) $(XFLAGS) $(CFLAGS) $(VER) -c ../version.c; \
-@@ -914,6 +918,8 @@
+@@ -861,6 +865,8 @@
  	$(INSTALL_PROGRAM) -m 755 plink $(DESTDIR)$(bindir)/plink
  	$(INSTALL_PROGRAM) -m 755 pscp $(DESTDIR)$(bindir)/pscp
  	$(INSTALL_PROGRAM) -m 755 psftp $(DESTDIR)$(bindir)/psftp
@@ -41,7 +39,7 @@
  	$(INSTALL_PROGRAM) -m 755 pterm $(DESTDIR)$(bindir)/pterm
  	if test -n "$(UTMP_GROUP)"; then \
  	  chgrp $(UTMP_GROUP) $(DESTDIR)$(bindir)/pterm && \
-@@ -923,15 +929,17 @@
+@@ -870,15 +876,17 @@
  	    chmod 4755 $(DESTDIR)$(bindir)/pterm; \
  	fi
  	$(INSTALL_PROGRAM) -m 755 putty $(DESTDIR)$(bindir)/putty
