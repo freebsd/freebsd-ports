@@ -1,3 +1,4 @@
+bin/nettle-hash
 bin/nettle-lfib-stream
 bin/pkcs1-conv
 bin/sexp-conv
@@ -17,6 +18,7 @@ include/nettle/ctr.h
 include/nettle/des-compat.h
 include/nettle/des.h
 include/nettle/dsa.h
+include/nettle/gcm.h
 include/nettle/hmac.h
 include/nettle/knuth-lfib.h
 include/nettle/macros.h
@@ -41,11 +43,11 @@ include/nettle/yarrow.h
 lib/libhogweed.a
 lib/libhogweed.so
 lib/libhogweed.so.2
-lib/libhogweed.so.2.0
+lib/libhogweed.so.2.1
 lib/libnettle.a
 lib/libnettle.so
 lib/libnettle.so.4
-lib/libnettle.so.4.0
+lib/libnettle.so.4.1
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
