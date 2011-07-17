@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	circe
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://bws.berkeley.edu/ports/
 
@@ -25,6 +25,7 @@ BUILD_DEPENDS=	${SITE_PERL}/mach/Net/IP/Match/XS.pm:${PORTSDIR}/net-mgmt/p5-Net-
 		${SITE_PERL}/Regexp/Common.pm:${PORTSDIR}/textproc/p5-Regexp-Common \
 		${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
 		${SITE_PERL}/mach/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB \
+		${SITE_PERL}/Crypt/CBC.pm:${PORTSDIR}/security/p5-Crypt-CBC \
 		${SITE_PERL}/Proc/PID/File.pm:${PORTSDIR}/devel/p5-Proc-PID-File
 
 MANCOMPRESSED=	no
