@@ -17,7 +17,9 @@ COMMENT=	Tracks bandwidth usage by IP address
 
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 
+.if ${CC} == "clang"
 USE_CSTD=	c89
+.endif
 
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
