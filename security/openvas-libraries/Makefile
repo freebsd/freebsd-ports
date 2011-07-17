@@ -14,7 +14,8 @@ MASTER_SITES=	http://wald.intevation.org/frs/download.php/600/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libraries for OpenVAS
 
-LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls \
+		gcrypt.18:${PORTSDIR}/security/libgcrypt
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
