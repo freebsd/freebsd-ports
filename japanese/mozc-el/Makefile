@@ -36,6 +36,10 @@ PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/mozc.el \
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 800000
+BROKEN=		does not compile on FreeBSD 7.X
+.endif
+
 .if defined(WITH_DEBUG_CODE)
 BUILD_MODE=Debug
 .else
