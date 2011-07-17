@@ -5,17 +5,18 @@
 # $FreeBSD$
 
 PORTNAME=	cego
-PORTVERSION=	2.10.7
+PORTVERSION=	2.10.8
 CATEGORIES=	databases
 MASTER_SITES=	http://www.lemke-it.com/
 
 MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	A relational and transactional database system
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	lfc.1:${PORTSDIR}/devel/lfc \
 		lfcxml.1:${PORTSDIR}/devel/lfcxml
 
-LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 CPPFLAGS=	"-I${LOCALBASE}/include"
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
