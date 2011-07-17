@@ -7,6 +7,7 @@
 
 PORTNAME=	json_pure
 PORTVERSION=	1.5.3
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -18,4 +19,10 @@ USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 PLIST_FILES=	bin/edit_json.rb bin/prettify_json.rb
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} < 1.9
+USE_RUBY_FEATURES=	iconv
+.endif
+
+.include <bsd.port.post.mk>
