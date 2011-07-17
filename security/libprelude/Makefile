@@ -13,7 +13,8 @@ MASTER_SITE_SUBDIR=	${PORTNAME} ${PORTNAME}/old
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Framework library for Prelude NIDS
 
-LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls \
+		gcrypt.18:${PORTSDIR}/security/libgcrypt
 
 OPTIONS=	PERL "Include Perl bindings" off \
 		PYTHON "Include Python bindings" off
