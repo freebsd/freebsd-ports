@@ -8,10 +8,10 @@
 
 PORTNAME=	ctrlproxy
 PORTVERSION=	3.0.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	irc
-MASTER_SITES=	http://www.ctrlproxy.org/releases/ \
-		LOCAL/chinsan/ctrlproxy/
+MASTER_SITES=	http://launchpadlibrarian.net/50016234/ \
+		LOCAL/ashish/
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	Flexible IRC proxy
