@@ -2280,3 +2280,4 @@ www/horde4-meta||2011-07-14|Removed
 graphics/crystalentitylayer||2011-07-17|Removed
 graphics/crystalspace||2011-07-17|Has expired: has been broken for a year
 hungarian/hunspell|textproc/hunspell|2011-07-18|moved to textproc as it is language independent
+mail/qmail-vida||2011-07-18|Has expired: UID collisions, IGNOREd for four years with no-one caring
