@@ -1,5 +1,4 @@
 # ex:ts=8
-# ex:ts=8
 # New ports collection makefile for:	nettle
 # Date created:			Dec 6, 2001
 # Whom:				ijliao
@@ -10,8 +9,10 @@
 PORTNAME=	nettle
 PORTVERSION=	2.2
 CATEGORIES=	security
-MASTER_SITES=	http://www.lysator.liu.se/~nisse/archive/ \
-		ftp://ftp.lysator.liu.se/pub/security/lsh/
+MASTER_SITES=	${MASTER_SITE_GNU} \
+		http://www.lysator.liu.se/~nisse/archive/:liu \
+		ftp://ftp.lysator.liu.se/pub/security/lsh/:liu
+MASTER_SITE_SUBDIR=	${PORTNAME}/:DEFAULT
 
 MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A low-level cryptographic library
