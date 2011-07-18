@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110718:
+  AFFECTS: users of hungarian/hunspell
+  AUTHOR: jlaffaye@FreeBSD.org
+
+  The hunspell port has been moved to textproc/hunspell.
+  To update the installed port run the command
+
+  # portmaster -o textproc/hunspell hungarian/hunspell
+  or
+  # portupgrade -o textproc/hunspell hungarian/hunspell
+
 20110711:
   AFFECTS: users of java/openjdk6
   AUTHOR: jkim@FreeBSD.org

@@ -13,7 +13,7 @@ MASTER_SITES=	SF/hunspell/MyThes/${PORTVERSION}/
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Simple thesaurus library
 
-LIB_DEPENDS=	hunspell-1.2.0:${PORTSDIR}/hungarian/hunspell
+LIB_DEPENDS=	hunspell-1.2.0:${PORTSDIR}/textproc/hunspell
 
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes

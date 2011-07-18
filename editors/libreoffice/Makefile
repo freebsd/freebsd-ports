@@ -86,7 +86,7 @@ LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
 		icutu.48:${PORTSDIR}/devel/icu \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		curl.6:${PORTSDIR}/ftp/curl \
-		hunspell-1.2.0:${PORTSDIR}/hungarian/hunspell \
+		hunspell-1.2.0:${PORTSDIR}/textproc/hunspell \
 		poppler.6:${PORTSDIR}/graphics/poppler \
 		wpd-0.9.9:${PORTSDIR}/textproc/libwpd \
 		wpg-0.2.2:${PORTSDIR}/graphics/libwpg \

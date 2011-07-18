@@ -98,7 +98,7 @@ BUILD_DEPENDS+=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg
 CONFIGURE_ARGS+=	--with-provider-video=ffmpegsource --with-provider-audio=ffmpegsource
 .endif
 .if defined(WITH_HUNSPELL)
-BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/hunspell.pc:${PORTSDIR}/hungarian/hunspell
+BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/hunspell.pc:${PORTSDIR}/textproc/hunspell
 .endif
 .if defined(WITH_LUA)
 USE_LUA=	5.1+
