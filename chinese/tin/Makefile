@@ -11,6 +11,8 @@ CATEGORIES=	chinese
 
 MAINTAINER=	leeym@FreeBSD.org
 
+BROKEN=		does not patch
+
 EXTRA_PATCHES=	${.CURDIR}/files/patch-attrib.c \
 		${.CURDIR}/files/patch-cook.c \
 		${.CURDIR}/files/patch-mail.c \
