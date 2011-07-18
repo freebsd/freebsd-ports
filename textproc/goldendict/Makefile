@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	bsam@FreeBSD.org
 COMMENT=	A feature-rich dictionary lookup program (with QT lib)
 
-LIB_DEPENDS=	hunspell-1.2.0:${PORTSDIR}/hungarian/hunspell \
+LIB_DEPENDS=	hunspell-1.2.0:${PORTSDIR}/textproc/hunspell \
 		execinfo:${PORTSDIR}/devel/libexecinfo \
 		vorbis:${PORTSDIR}/audio/libvorbis
 

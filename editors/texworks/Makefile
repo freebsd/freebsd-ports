@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 MAINTAINER=	trebestie@gmail.com
 COMMENT=	A simple TeX front-end program
 
-BUILD_DEPENDS=	hunspell:${PORTSDIR}/hungarian/hunspell
+BUILD_DEPENDS=	hunspell:${PORTSDIR}/textproc/hunspell
 LIB_DEPENDS=	poppler-qt4:${PORTSDIR}/graphics/poppler-qt4 \
 		dbus:${PORTSDIR}/devel/dbus
 

@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ltdl.h:${PORTSDIR}/devel/libltdl
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
-		hunspell-1.2.0:${PORTSDIR}/hungarian/hunspell
+		hunspell-1.2.0:${PORTSDIR}/textproc/hunspell
 
 LATEST_LINK=	${PORTNAME}4
 
