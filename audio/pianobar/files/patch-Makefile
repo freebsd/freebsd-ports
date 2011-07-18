@@ -1,16 +1,35 @@
---- Makefile.orig	2011-04-27 14:11:06.000000000 -0500
-+++ Makefile	2011-04-30 09:03:16.000000000 -0500
-@@ -4,11 +4,10 @@
+--- Makefile.orig	2011-07-09 03:40:54.000000000 -0500
++++ Makefile	2011-07-18 09:00:04.740569788 -0500
+@@ -4,12 +4,12 @@
  BINDIR:=${PREFIX}/bin
  LIBDIR:=${PREFIX}/lib
  INCDIR:=${PREFIX}/include
 -MANDIR:=${PREFIX}/share/man
 +MANDIR:=${PREFIX}/man
  DYNLINK:=0
--CFLAGS:=-O2 -DNDEBUG
-+CFLAGS:=-Wall -std=c99 -O2 -DNDEBUG -pedantic -I/usr/local/include -L/usr/local/lib -lao
- LDFLAGS:=
--CC:=c99
  
- PIANOBAR_DIR=src
- PIANOBAR_SRC=\
+ # Respect environment variables set by user; does not work with :=
+ ifeq (${CFLAGS},)
+-	CFLAGS=-O2 -DNDEBUG
++	CFLAGS=-O2 -DNDEBUG -I/usr/local/include
+ endif
+ ifeq (${CC},cc)
+ 	CC=c99
+@@ -74,7 +74,7 @@
+ 	LIBFAAD_LDFLAGS=
+ else
+ 	LIBFAAD_CFLAGS=-DENABLE_FAAD
+-	LIBFAAD_LDFLAGS=-lfaad
++	LIBFAAD_LDFLAGS=-L/usr/local/lib -lfaad
+ endif
+ 
+ ifeq (${DISABLE_MAD}, 1)
+@@ -82,7 +82,7 @@
+ 	LIBMAD_LDFLAGS=
+ else
+ 	LIBMAD_CFLAGS=-DENABLE_MAD
+-	LIBMAD_LDFLAGS=-lmad
++	LIBMAD_LDFLAGS=-L/usr/local/lib -lmad
+ endif
+ 
+ # build pianobar

@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pianobar
-PORTVERSION=	2011.04.27
+PORTVERSION=	2011.07.09
 CATEGORIES=	audio
-MASTER_SITES=	http://6xq.net/media/00/16/
+MASTER_SITES=	http://6xq.net/static/projects/${PORTNAME}/
 
 MAINTAINER=	john@pcbsd.org
 COMMENT=	Command line Pandora player
@@ -17,6 +17,8 @@ LIB_DEPENDS=	ao:${PORTSDIR}/audio/libao \
 	faad:${PORTSDIR}/audio/faad \
 	mad:${PORTSDIR}/audio/libmad
 
+LICENSE=	MIT
+
 MAN1=	pianobar.1
 MAN_COMPRESSED=	no
 
@@ -24,5 +26,7 @@ PLIST_FILES=	bin/pianobar
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
+
+CFLAGS=
 
 .include <bsd.port.mk>
