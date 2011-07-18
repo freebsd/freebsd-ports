@@ -1949,8 +1949,6 @@ cryptopp                        ports/security/cryptopp
 cryptoslam                      ports/games/cryptoslam
 cryptplug                       ports/security/cryptplug
 cryptstring                     ports/security/cryptstring
-crystalentitylayer              ports/graphics/crystalentitylayer
-crystalspace                    ports/graphics/crystalspace
 cs                              ports/misc/cs
 cs-aspell                       ports/textproc/cs-aspell
 csb-aspell                      ports/textproc/csb-aspell
@@ -9095,6 +9093,7 @@ meld                            ports/textproc/meld
 memcached                       ports/databases/memcached
 memcached12                     ports/databases/memcached12
 memcachedb                      ports/databases/memcachedb
+memcacheq                       ports/databases/memcacheq
 memcheck                        ports/devel/memcheck
 memdump                         ports/sysutils/memdump
 memfetch                        ports/sysutils/memfetch
@@ -10769,6 +10768,7 @@ p5-Any-Moose                    ports/devel/p5-Any-Moose
 p5-AnyData                      ports/devel/p5-AnyData
 p5-AnyEvent                     ports/devel/p5-AnyEvent
 p5-AnyEvent-AIO                 ports/devel/p5-AnyEvent-AIO
+p5-AnyEvent-BDB                 ports/databases/p5-AnyEvent-BDB
 p5-AnyEvent-DBD-Pg              ports/databases/p5-AnyEvent-DBD-Pg
 p5-AnyEvent-DBI                 ports/devel/p5-AnyEvent-DBI
 p5-AnyEvent-DBI-Abstract        ports/devel/p5-AnyEvent-DBI-Abstract
@@ -10984,6 +10984,7 @@ p5-BBS-UserInfo-Maple3itoc      ports/net/p5-BBS-UserInfo-Maple3itoc
 p5-BBS-UserInfo-Ptt             ports/net/p5-BBS-UserInfo-Ptt
 p5-BBS-UserInfo-SOB             ports/net/p5-BBS-UserInfo-SOB
 p5-BBS-UserInfo-Wretch          ports/net/p5-BBS-UserInfo-Wretch
+p5-BDB                          ports/databases/p5-BDB
 p5-BFD                          ports/devel/p5-BFD
 p5-BIND-Conf_Parser             ports/dns/p5-BIND-Conf_Parser
 p5-BIND-Config-Parser           ports/dns/p5-BIND-Config-Parser
@@ -15012,6 +15013,7 @@ p5-any-moose                    ports/devel/p5-Any-Moose
 p5-anydata                      ports/devel/p5-AnyData
 p5-anyevent                     ports/devel/p5-AnyEvent
 p5-anyevent-aio                 ports/devel/p5-AnyEvent-AIO
+p5-anyevent-bdb                 ports/databases/p5-AnyEvent-BDB
 p5-anyevent-dbd-pg              ports/databases/p5-AnyEvent-DBD-Pg
 p5-anyevent-dbi                 ports/devel/p5-AnyEvent-DBI
 p5-anyevent-dbi-abstract        ports/devel/p5-AnyEvent-DBI-Abstract
@@ -15236,6 +15238,7 @@ p5-bbs-userinfo-maple3itoc      ports/net/p5-BBS-UserInfo-Maple3itoc
 p5-bbs-userinfo-ptt             ports/net/p5-BBS-UserInfo-Ptt
 p5-bbs-userinfo-sob             ports/net/p5-BBS-UserInfo-SOB
 p5-bbs-userinfo-wretch          ports/net/p5-BBS-UserInfo-Wretch
+p5-bdb                          ports/databases/p5-BDB
 p5-beanstalk-client             ports/net/p5-Beanstalk-Client
 p5-benchmark-forking            ports/benchmarks/p5-Benchmark-Forking
 p5-benchmark-stopwatch          ports/benchmarks/p5-Benchmark-Stopwatch
