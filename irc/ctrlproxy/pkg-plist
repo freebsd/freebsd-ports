@@ -12,8 +12,6 @@ etc/ctrlproxy/config
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/user-guide.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/default/networks
-@dirrm %%DATADIR%%/default
 @dirrm %%DATADIR%%
 @dirrm etc/ctrlproxy
 @dirrm lib/ctrlproxy
