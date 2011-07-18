@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTVERSION}/
 
-MAINTAINER=	ports@eitanadler.com
+MAINTAINER=	cy@eitanadler.com
 COMMENT=	Window Manager designed for speed, usability and consistency
 
 WANT_GNOME=	yes
@@ -42,6 +42,7 @@ OPTIONS=	GNOMEDESKTOP	"Enable GNOME desktop support"		off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GNOMEDESKTOP)
+BROKEN=		fails to install
 USE_GNOME+=	gnomedesktop
 CONFIGURE_ARGS+=--enable-menus-gnome2
 INSTALL_TARGET=	install install-gnome
