@@ -16,12 +16,10 @@ COMMENT=	Digital audio CD extraction tool for accurate ripping
 
 LICENSE=	GPLv3
 
-BROKEN=		unsatisfiable dependency requirement
-
-# cdparanoia is not really required for build, but it would not configure
-# without it (ideally, configure script should be fixed instead of forcing
-# superfluous build dependency)
-BUILD_DEPENDS=	rubygem-gettext:${PORTSDIR}/devel/rubygem-gettext \
+# cdparanoia is not really required for the build, but the port would not
+# configure without it (ideally, configure script should be fixed instead
+# of forcing this superfluous build dependency)
+BUILD_DEPENDS=	rgettext:${PORTSDIR}/devel/rubygem-gettext \
 		cdparanoia:${PORTSDIR}/audio/cdparanoia
 RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
