@@ -1,0 +1,7 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+
+mv ${WRKSRC}/mirror.pl ${WRKSRC}/mirror.pl.bak
+sed <${WRKSRC}/mirror.pl.bak >${WRKSRC}/mirror.pl s+!!PREFIX!!+$PREFIX+g

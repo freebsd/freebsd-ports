@@ -1,0 +1,80 @@
+*** mirror.defaults.orig	Fri May 29 20:57:46 1998
+--- mirror.defaults	Mon Jun  8 14:01:11 1998
+***************
+*** 11,39 ****
+  	# The LOCAL hostname - if not the same as `hostname`
+  	# (I advertise the name sunsite.org.uk but the machine is
+  	#  really swallow.sunsite.org.uk.)
+! 	hostname=sunsite.org.uk
+  	# Keep all local_dirs relative to here
+! 	local_dir=/public/
+  	# The local_dir must exist FIRST
+  	#local_dir_check=true
+! 	remote_password=wizards@sunsite.org.uk
+  	mail_to=
+  	# Don't mirror file modes.  Set all dirs/files to these
+  	dir_mode=0755
+  	file_mode=0444
+  	# By defaults files are owned by root.zero
+! 	user=0
+! 	group=0
+  #       # Keep a log file in each updated directory
+  #       update_log=.mirror
+! 	update_log=
+  	# Don't overwrite my mirror log with the remote one.
+  	# Don't pull back any of their mirror temporary files.
+  	# nor any FSP or gopher files...
+  	exclude_patt=(^|/)(\.mirror$|\.mirror\.log|core$|\.cap|\.in\..*\.$|MIRROR\.LOG|#.*#|\.FSP|\.cache|\.zipped|\.notar|\.message|lost\+found/|Network Trash Folder)|suky.mpe?g
+  	# Do not to compress anything
+  	compress_patt=
+! 	compress_prog=compress
+  	# Don't compress information files, files that don't benifit from
+  	# being compressed, files that tell ftpd, gopher, wais... to do things,
+  	# the sources for compression programs...
+--- 11,39 ----
+  	# The LOCAL hostname - if not the same as `hostname`
+  	# (I advertise the name sunsite.org.uk but the machine is
+  	#  really swallow.sunsite.org.uk.)
+! 	# hostname=sunsite.org.uk
+  	# Keep all local_dirs relative to here
+! 	local_dir=/home/ftp/pub
+  	# The local_dir must exist FIRST
+  	#local_dir_check=true
+! 	# remote_password=wizards@sunsite.org.uk
+  	mail_to=
+  	# Don't mirror file modes.  Set all dirs/files to these
+  	dir_mode=0755
+  	file_mode=0444
+  	# By defaults files are owned by root.zero
+! 	# user=0
+! 	# group=0
+  #       # Keep a log file in each updated directory
+  #       update_log=.mirror
+! 	# update_log=
+  	# Don't overwrite my mirror log with the remote one.
+  	# Don't pull back any of their mirror temporary files.
+  	# nor any FSP or gopher files...
+  	exclude_patt=(^|/)(\.mirror$|\.mirror\.log|core$|\.cap|\.in\..*\.$|MIRROR\.LOG|#.*#|\.FSP|\.cache|\.zipped|\.notar|\.message|lost\+found/|Network Trash Folder)|suky.mpe?g
+  	# Do not to compress anything
+  	compress_patt=
+! 	compress_prog=gzip
+  	# Don't compress information files, files that don't benifit from
+  	# being compressed, files that tell ftpd, gopher, wais... to do things,
+  	# the sources for compression programs...
+***************
+*** 47,53 ****
+  	# rpm and deb are package formats used on RedHat and Debian Linux
+  	compress_excl+|-z(\d+)?$|\.tgz|_tgz|\.tar\.Z|\.tar\.gz|\.taz$|\.arc$|\.zip$|\.lzh$|\.zoo$|\.exe$|\.lha$|\.zom$|\.gif$|\.jpeg$|\.jpg$|\.mpeg$|\.au$|\.shk$|rpm$|deb$|read.*me|index|info|faq|gzip|compress|(^|/)\.\.?$
+  	# Don't delete own mirror log, .notar or .cache files (incl in subdirs)
+! #       delete_excl=(^|/)\.(mirror|notar|cache)$
+  	# Ignore any local readme and .mirror files
+  	local_ignore=README.doc.ic|(^|/)\.(mirror|notar)$
+  	# Automatically delete local copies of files that the
+--- 47,53 ----
+  	# rpm and deb are package formats used on RedHat and Debian Linux
+  	compress_excl+|-z(\d+)?$|\.tgz|_tgz|\.tar\.Z|\.tar\.gz|\.taz$|\.arc$|\.zip$|\.lzh$|\.zoo$|\.exe$|\.lha$|\.zom$|\.gif$|\.jpeg$|\.jpg$|\.mpeg$|\.au$|\.shk$|rpm$|deb$|read.*me|index|info|faq|gzip|compress|(^|/)\.\.?$
+  	# Don't delete own mirror log, .notar or .cache files (incl in subdirs)
+!         delete_excl=(^|/)\.(mirror|notar|cache)$
+  	# Ignore any local readme and .mirror files
+  	local_ignore=README.doc.ic|(^|/)\.(mirror|notar)$
+  	# Automatically delete local copies of files that the
