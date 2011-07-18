@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	testdisk
-PORTVERSION=	6.11
-PORTREVISION=	1
+PORTVERSION=	6.12
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.cgsecurity.org/
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
@@ -22,20 +21,21 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib"
 CONFIGURE_ARGS=	--without-ewf
 
-MAN1=		testdisk.1 photorec.1
-PLIST_FILES=	sbin/testdisk sbin/photorec
+MAN8=		fidentify.8 testdisk.8 photorec.8
+PLIST_FILES=	bin/fidentify bin/testdisk bin/photorec
 PORTDOCS=	*
 
 OPTIONS=	ICONV "Use iconv extensions" on \
-		NTFSPROGS "Use ntfs extensions" off \
+		NTFS3G "Use fusefs-ntfs extensions" off \
+		NTFSPROGS "Use ntfsprogs extensions" off \
 		PROGSREISERFS "Use reiserfs extensions" off
 #		E2FSPROGS "Use ext2fs extensions" off \
 
 .include <bsd.port.pre.mk>
 
-.if !defined(NOPORTDOCS)
-DISTFILES+=	${PORTNAME}-doc-${PORTVERSION}${EXTRACT_SUFX}
-.endif
+#.if !defined(NOPORTDOCS)
+#DISTFILES+=	${PORTNAME}-doc-${PORTVERSION}${EXTRACT_SUFX}
+#.endif
 
 .if !defined(WITHOUT_ICONV)
 LIB_DEPENDS+=   iconv.3:${PORTSDIR}/converters/libiconv
@@ -51,7 +51,16 @@ CONFIGURE_ARGS+=--without-iconv
 #CONFIGURE_ARGS+=--without-ext2fs
 #.endif
 
+.if defined(WITH_NTFS3G)
+LIB_DEPENDS+=	ntfs-3g.81:${PORTSDIR}/sysutils/fusefs-ntfs
+.else
+CONFIGURE_ARGS+=--without-ntfs3g
+.endif
+
 .if defined(WITH_NTFSPROGS)
+.if defined(WITH_NTFS3G)
+IGNORE=	WITH_NTFSPROGS does not work if WITH_NTFS3G is defined
+.endif
 LIB_DEPENDS+=	ntfs.10:${PORTSDIR}/sysutils/ntfsprogs
 .else
 CONFIGURE_ARGS+=--without-ntfs
@@ -66,6 +75,7 @@ CONFIGURE_ARGS+=--without-reiserfs
 post-patch:
 .if !defined(NOPORTDOCS)
 	@${REINPLACE_CMD} -e 's|/doc/.(PACKAGE)-.(VERSION)|/doc/${PORTNAME}|' ${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e '/doc\/testdisk\/html/d' ${WRKSRC}/Makefile.in
 .else
 	@${REINPLACE_CMD} -e '/\/doc\/$$(PACKAGE)-$$(VERSION)/d' ${WRKSRC}/Makefile.in
 .endif
