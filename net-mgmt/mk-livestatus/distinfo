@@ -1,2 +1,2 @@
-SHA256 (mk-livestatus-1.1.10.tar.gz) = e2d5bead5d29b39d6b3d55e90fad80c636ab3a3d4e26c796a07060b349eb67e7
-SIZE (mk-livestatus-1.1.10.tar.gz) = 326243
+SHA256 (check_mk/mk-livestatus-1.1.11i1.tar.gz) = a59dade0db4bf08fab54b6eccc7ce76bd30ae5c107dedd00eed0a15ada64c618
+SIZE (check_mk/mk-livestatus-1.1.11i1.tar.gz) = 333896
