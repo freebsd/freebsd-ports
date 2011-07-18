@@ -26,6 +26,12 @@ MAKE_JOBS_UNSAFE=	yes
 
 PORTSCOUT=	skipv:1.04
 
+USERS=		alias
+.for usersuffix in d l p q r s
+USERS+=		${PORTNAME}${usersuffix}
+.endfor
+GROUPS=		${PORTNAME} qnofiles
+
 .if defined(SLAVE_LDAP) || \
     defined(SLAVE_MYSQL)
 BARRIER_MAILDIRQUOTA_PATCH=	yes
@@ -246,10 +252,8 @@ SLAVEPORT_LINE=	${PKGMESSAGE_SUFFIX}
 SLAVEPORT_LINE=	spamcontrol
 .endif
 
-SUB_FILES+=	mailer.conf.sample bootfiles.sed enable-qmail
-SUB_LIST+=	ECHO_CMD=${ECHO_CMD}
-# pkg-install could not be added to SUB_FILES because it's executed on do-configure:
-PKGINSTALL?=	${WRKDIR}/pkg-install
+SUB_FILES+=	mailer.conf.sample bootfiles.sed enable-qmail pkg-install
+SUB_LIST+=	ECHO_CMD=${ECHO_CMD} RCDLINK=${RCDLINK}
 
 .if defined(PKGMESSAGE_SUFFIX)
 SUB_FILES+=	pkg-message-${PKGMESSAGE_SUFFIX}
@@ -512,9 +516,11 @@ PATCHFILES+=	enhacelogging-ldap-${LDAP_PATCH_DATE}_4.patch:ldapenhacelog
 .endif
 
 .if defined(SLAVE_SPAMCONTROL)
-MASTER_SITES+=	http://www.superscript.com/ucspi-ssl/:ucspi_ssl \
+MASTER_SITES+=	${MASTER_SITE_LOCAL:S/$/:ucspi_ssl/} \
+		http://www.superscript.com/ucspi-ssl/:ucspi_ssl \
 		http://dev.qmailrocks.org/downloads/qmailrocks_3.0-beta/:ucspi_ssl \
 		${MASTER_SITE_GENTOO:S/$/:ucspi_ssl/}
+MASTER_SITE_SUBDIR+=	garga/ucspi-ssl/:ucspi_ssl
 DISTFILES+=	ucspi-ssl-0.70.tar.gz:ucspi_ssl
 
 MASTER_SITES+=	http://www.fehcom.de/qmail/spamcontrol/:ucspi_ssl_patch
@@ -724,9 +730,6 @@ post-patch:
 .endif
 
 do-configure:
-	@${SED} -e 's,%%RCDLINK%%,${RCDLINK},g; s,%%LOCALBASE%%,${LOCALBASE},g' \
-		${FILESDIR}/pkg-install.in > ${WRKDIR}/pkg-install
-	@${SETENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} ${PREFIX} > ${WRKSRC}/conf-qmail
 .if defined(WITH_BIG_CONCURRENCY_PATCH) \

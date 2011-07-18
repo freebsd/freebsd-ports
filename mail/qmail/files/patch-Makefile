@@ -1,0 +1,31 @@
+$FreeBSD$
+
+This turns off the auto-finding of UIDs -- we shouldn't have the users
+until pre-install!
+
+We use a new file, auto_uids.c.dist to record our UIDs
+
+--- Makefile.orig	2011-06-05 10:00:58.752481173 +0100
++++ Makefile	2011-06-05 10:04:27.265135390 +0100
+@@ -110,19 +110,8 @@
+ compile auto_split.c
+ 	./compile auto_split.c
+ 
+-auto_uids.c: \
+-auto-uid auto-gid conf-users conf-groups
+-	( ./auto-uid auto_uida `head -1 conf-users` \
+-	&&./auto-uid auto_uidd `head -2 conf-users | tail -1` \
+-	&&./auto-uid auto_uidl `head -3 conf-users | tail -1` \
+-	&&./auto-uid auto_uido `head -4 conf-users | tail -1` \
+-	&&./auto-uid auto_uidp `head -5 conf-users | tail -1` \
+-	&&./auto-uid auto_uidq `head -6 conf-users | tail -1` \
+-	&&./auto-uid auto_uidr `head -7 conf-users | tail -1` \
+-	&&./auto-uid auto_uids `head -8 conf-users | tail -1` \
+-	&&./auto-gid auto_gidq `head -1 conf-groups` \
+-	&&./auto-gid auto_gidn `head -2 conf-groups | tail -1` \
+-	) > auto_uids.c.tmp && mv auto_uids.c.tmp auto_uids.c
++auto_uids.c:
++	mv auto_uids.c.dist auto_uids.c
+ 
+ auto_uids.o: \
+ compile auto_uids.c

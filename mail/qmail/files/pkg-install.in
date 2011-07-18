@@ -6,66 +6,8 @@
 export PATH=/bin:/sbin:/usr/bin:/usr/sbin
 
 PREFIX=${PKG_PREFIX:-%%PREFIX%%}
-UID=`id -u`
 
-addGroup() {
-	NGROUP=$1
-	NGID=$2
-
-	if ! pw groupshow ${NGROUP} >/dev/null 2>&1; then
-		if ! pw groupadd ${NGROUP} -g ${NGID} >/dev/null 2>&1; then
-			echo "Failed to add group '${NGROUP}' as gid '${NGID}'"
-			exit 1
-		fi
-	fi
-
-	CHECKGID=`pw groupshow ${NGROUP} 2>/dev/null | cut -d: -f3`
-	if [ "${CHECKGID}" != "${NGID}" ]; then
-		echo "Group '$NGROUP' should have gid '$NGID'"
-		exit 1
-	fi
-}
-
-addUser() {
-	NUSER=$1
-	NUID=$2
-	NGROUP=$3
-	NHOME=${4:-${PREFIX}}
-
-	if ! pw usershow ${NUSER} >/dev/null 2>&1; then
-		if ! pw useradd ${NUSER} -g ${NGROUP} -d ${NHOME} -s /nonexistent -u ${NUID} >/dev/null 2>&1; then
-			echo "Failed to add user '${NUSER}' as uid '${NUID}'"
-			exit 1
-		fi
-	fi
-
-	CHECKUID=`pw usershow ${NUSER} 2>/dev/null | cut -d: -f3`
-	if [ "${CHECKUID}" != "${NUID}" ]; then
-		echo "User '$NUSER' should have uid '$NUID'"
-		exit 1
-	fi
-}
-
-if [ "$UID" != "0" ]; then
-	echo "It is necessary to add missing qmail users/groups at"
-	echo "this stage.  Please either add them manually or retry"
-	echo "as root."
-	exit 1
-fi
-
-if [ "$2" = "PRE-INSTALL" ]; then
-	addGroup qmail    82
-	addGroup qnofiles 81
-
-	addUser alias  81 qnofiles ${PREFIX}/alias
-	addUser qmaild 82 qnofiles
-	addUser qmaill 83 qnofiles
-	addUser qmailp 84 qnofiles
-	addUser qmailq 85 qmail
-	addUser qmailr 86 qmail
-	addUser qmails 87 qmail
-
-elif [ "$2" = "POST-INSTALL" ]; then
+if [ "$2" = "POST-INSTALL" ]; then
 	${PREFIX}/configure/install x
 
 	[ -e ${PREFIX}/control/me ] || (cd ${PREFIX}/configure && ./config)
