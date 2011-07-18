@@ -2,6 +2,8 @@
 # $FreeBSD$
 #
 
+DIST_SUBDIR=	${PORTNAME}
+
 CONFLICTS=	bugzilla-4.*
 
 PORTSCOUT=	limitw:1,even
