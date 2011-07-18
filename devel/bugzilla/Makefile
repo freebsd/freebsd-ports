@@ -7,6 +7,7 @@
 
 PORTNAME=	bugzilla
 PORTVERSION=	4.0.1
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	webtools webtools/archived
@@ -190,8 +191,8 @@ do-install:	.SILENT
 		${FIND} . -type f -exec ${INSTALL_DATA} "{}" "${WWWDIR}/contrib/{}" \;
 .endif
 # This are empty directories but they are needed,
-# else ckecksetup.pl does not work as expected!
-	${MKDIR} ${WWWDIR}/lib ${WWWDIR}/t
+# else ckecksetup.pl will fail!
+	${MKDIR} ${WWWDIR}/lib ${WWWDIR}/t ${WWWDIR}/xt
 .if !defined(BATCH)
 	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}

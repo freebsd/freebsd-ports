@@ -11,7 +11,6 @@ CATEGORIES=	german
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=bugzilla-de/${PORTVERSION:R}/${PORTVERSION}
 DISTNAME=	germzilla-${PORTVERSION}-1.utf-8
-DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	German localization for Bugzilla
