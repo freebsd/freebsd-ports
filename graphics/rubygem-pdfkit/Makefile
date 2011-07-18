@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	pdfkit
-PORTVERSION=	0.5.0
+PORTVERSION=	0.5.2
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
