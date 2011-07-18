@@ -6,9 +6,10 @@
 
 PORTNAME=	ourmon
 PORTVERSION=	2.8.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net-mgmt
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}281
+MASTER_SITES=	SF
+MASTER_SITE_SUBDIR=${PORTNAME}/${PORTNAME}/${PORTNAME}281
 DISTNAME=	ourmon281
 
 MAINTAINER=	manos@cs.pdx.edu
@@ -19,10 +20,11 @@ BUILD_DEPENDS=	${LOCALBASE}/lib/libpcap.a:${PORTSDIR}/net/libpcap \
 RUN_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 
 WRKSRC=			${WRKDIR}/mrourmon
-USE_APACHE=		1.3
+USE_APACHE=		13+
 USE_PERL5=		yes
 NO_BUILD=		yes
 NO_INSTALL_MANPAGES=	yes
+IS_INTERACTIVE=		yes
 
 SUB_FILES=	pkg-message
 
@@ -36,8 +38,12 @@ pre-everything::
 	@${ECHO_MSG} "interactive steps, use the created by port instead."
 	@${ECHO_MSG} "==================================================="
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|%%WWWDIR%%|${WWWDIR}|g' ${WRKSRC}/configure.pl
+
 do-install:
 	@cd ${WRKSRC} && ${PERL5} configure.pl ${PREFIX}
+	@${FIND} ${WRKSRC} \( -name '*.orig' -o -name '*.bak' -o -name '*.o' \) -delete
 	@${CP} -R ${WRKSRC} ${PREFIX}
 
 post-install:
