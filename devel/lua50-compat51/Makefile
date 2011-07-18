@@ -18,9 +18,8 @@ COMMENT=	Lua 5.1 package compatibility layer for Lua 5.0.x
 USE_LUA=	5.0
 WRKSRC=		${WRKDIR}/compat-${CVER}${CREV}
 
-MAKE_ENV=	CVER="${CVER}"
+MAKE_ENV+=	CVER="${CVER}"
 PLIST_FILES=	%%LUA_MODSHAREDIR%%/compat-${CVER}.lua \
-		%%LUA_MODLIBDIR%%/lcompat-${CVER}.so \
 		%%LUA_MODLIBDIR%%/lcompat-${CVER}.so \
 		%%LUA_INCDIR%%/compat-${CVER}.h
 
