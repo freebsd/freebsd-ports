@@ -1,7 +1,0 @@
-#!%%PYTHON_CMD%%
-
-# $FreeBSD$
-
-from flexget import main
-
-main()
