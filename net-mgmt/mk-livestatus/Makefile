@@ -6,9 +6,11 @@
 #
 
 PORTNAME=	mk-livestatus
-PORTVERSION=	1.1.10
+PORTVERSION=	1.1.11i1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://mathias-kettner.de/download/
+MASTER_SITES=	http://mathias-kettner.de/download/ \
+		LOCAL/ohauer
+DIST_SUBDIR=	check_mk
 
 MAINTAINER=	ohauer@FreeBSD.org
 COMMENT=	Nagios event broker module
