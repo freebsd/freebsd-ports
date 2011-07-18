@@ -1,0 +1,19 @@
+--- pkg_libchk.orig	2011-07-16 21:42:34.990085774 +0400
++++ pkg_libchk	2011-07-16 21:45:53.405082081 +0400
+@@ -23,6 +23,7 @@
+ 
+ readonly name=pkg_libchk
+ readonly version=1.6.1
++readonly osname=`uname -s`
+ 
+ # Use a line break as delimiter.
+ IFS='
+@@ -206,7 +207,7 @@
+ 	# We cannot handle non-native binaries,
+ 	# so assume everything is in order.
+ 	if ! readelf -e "$1" 2>&1 | \
+-		grep -E "^[[:space:]]*OS/ABI:[[:space:]]*UNIX - $OSTYPE\$" \
++		grep -E "^[[:space:]]*OS/ABI:[[:space:]]*UNIX - $osname\$" \
+ 		> /dev/null
+ 	then
+ 		return 2

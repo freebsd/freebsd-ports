@@ -7,6 +7,7 @@
 
 PORTNAME=	bsdadminscripts
 PORTVERSION=	6.1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils ports-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
