@@ -53,6 +53,7 @@
     SUBDIR += llnlxdir
     SUBDIR += llnlxftp
     SUBDIR += mget
+    SUBDIR += mirror
     SUBDIR += muddleftpd
     SUBDIR += multiget
     SUBDIR += ncftp1
