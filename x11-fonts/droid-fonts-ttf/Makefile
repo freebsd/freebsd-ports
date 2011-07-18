@@ -8,64 +8,68 @@
 PORTNAME=	droid-fonts-ttf
 PORTVERSION=	20110324
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://android.git.kernel.org/?p=platform/frameworks/base.git\;a=blob_plain\;f=data/fonts/:droid
-DISTFILES=	DroidSans-Bold.ttf:droid \
-		DroidSans.ttf:droid \
-		DroidSansArabic.ttf:droid \
-		DroidSansFallback.ttf:droid \
-		DroidSansFallbackLegacy.ttf:droid \
-		DroidSansHebrew.ttf:droid \
-		DroidSansJapanese.ttf:droid \
-		DroidSansMono.ttf:droid \
-		DroidSansThai.ttf:droid \
-		DroidSerif-Bold.ttf:droid \
-		DroidSerif-BoldItalic.ttf:droid \
-		DroidSerif-Italic.ttf:droid \
-		DroidSerif-Regular.ttf:droid \
-		NOTICE:droid
+MASTER_SITES=	LOCAL/sunpoet/
 
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	The Droid typeface family
 
 LICENSE=	ASL
-LICENSE_FILE=	${DISTDIR}/NOTICE
+LICENSE_FILE=	${WRKSRC}/NOTICE
 
-BUILD_DEPENDS=	mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale \
-		mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir
+BUILD_DEPENDS=	mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
+		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
-NO_WRKSUBDIR=	yes
+USE_BZIP2=	yes
 
-PLIST_SUB=	FONTDIR="${FONTDIR:S|${LOCALBASE}/||}"
-
-SUB_FILES=	pkg-message
+FONTDIR=	lib/X11/fonts/Droid
 PKGMESSAGE=	${WRKDIR}/pkg-message
+PLIST_SUB=	FONTDIR=${FONTDIR}
+SUB_FILES=	pkg-message
 SUB_LIST=	FONTDIR=${FONTDIR}
 
-FONTNAME=	Droid
-FONTDIR=	${LOCALBASE}/lib/X11/fonts/${FONTNAME}
-
-MKFONTSCL_CMD=	${LOCALBASE}/bin/mkfontscale
-MKFONTDIR_CMD=	${LOCALBASE}/bin/mkfontdir
-
-NO_MTREE=	yes
-
-do-extract:
-	@${MKDIR} ${WRKDIR}/ttf
-	@${CP} -p ${DISTDIR}/*.ttf ${WRKDIR}/ttf
-
 do-build:
-	@cd ${WRKDIR}/ttf && \
-		${MKFONTSCL_CMD} && \
-		${MKFONTDIR_CMD}
+	@cd ${WRKSRC}/ && \
+		${LOCALBASE}/bin/mkfontscale && \
+		${LOCALBASE}/bin/mkfontdir
 
 do-install:
-	@${MKDIR} ${FONTDIR}
-	@cd ${WRKDIR} && \
-		${INSTALL_DATA} ttf/* ${FONTDIR}
+	${MKDIR} ${PREFIX}/${FONTDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} *.ttf fonts.* ${PREFIX}/${FONTDIR}/
 
 post-install:
-	@${ECHO_MSG}
 	@${CAT} ${PKGMESSAGE}
-	@${ECHO_MSG}
+
+# maintainer section:
+# http://android.git.kernel.org/?p=platform/frameworks/base.git;a=tree;f=data/fonts
+
+MS_WRKSRC=	${WRKSRC}/${PORTNAME}-${MS_VERSION}
+MS_MASTER_SITE=	http://android.git.kernel.org/?p=platform/frameworks/base.git\;a=blob_plain\;f=data/fonts
+MS_DISTFILES=	DroidSans-Bold.ttf \
+		DroidSans.ttf \
+		DroidSansArabic.ttf \
+		DroidSansFallback.ttf \
+		DroidSansFallbackLegacy.ttf \
+		DroidSansHebrew.ttf \
+		DroidSansJapanese.ttf \
+		DroidSansMono.ttf \
+		DroidSansThai.ttf \
+		DroidSerif-Bold.ttf \
+		DroidSerif-BoldItalic.ttf \
+		DroidSerif-Italic.ttf \
+		DroidSerif-Regular.ttf \
+		NOTICE
+
+.if defined(MS_VERSION)
+maketar: do-clean extract
+	${MKDIR} ${MS_WRKSRC}
+.for distfile in ${MS_DISTFILES}
+	${FETCH_CMD} -o ${MS_WRKSRC}/${distfile} ${MS_MASTER_SITE}/${distfile}
+.endfor
+	cd ${WRKSRC}/ && ${TAR} -jcf ${PORTNAME}-${MS_VERSION}.tar.bz2 ${PORTNAME}-${MS_VERSION}/
+	${SED} -i '' -e 's|${PORTVERSION}|${MS_VERSION}|' ${.CURDIR}/Makefile
+	${INSTALL} -m 644 ${WRKSRC}/${PORTNAME}-${MS_VERSION}.tar.bz2 ${DISTDIR}/
+	cd ${.CURDIR}/ && ${MAKE} makesum
+	${ECHO_MSG} '*** Update from ${PORTVERSION} to ${MS_VERSION} ***'
+.endif
 
 .include <bsd.port.mk>
