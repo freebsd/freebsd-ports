@@ -1,0 +1,5 @@
+grepip searches the named input FILE (or standard input if no files are named),
+for lines containing an IP address matched to the given CIDR.
+grepip finds IP in any context of a line, while grepcidr only if all line is IP.
+
+WWW: http://www.lexa.ru/lexa/
