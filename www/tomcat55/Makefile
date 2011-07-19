@@ -7,10 +7,11 @@
 
 PORTNAME=	tomcat
 PORTVERSION=	5.5.33
+PORTREVISION=	1
 CATEGORIES=	www java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	tomcat/tomcat-5/v${PORTVERSION}/bin
-DISTFILES=	apache-tomcat-${PORTVERSION}.tar.gz
+DISTNAME=	apache-tomcat-${PORTVERSION}
 
 MAINTAINER=	jhelfman@experts-exchange.com
 COMMENT=	Open-source Java web server by Apache, 5.5.x branch
@@ -61,6 +62,7 @@ SUB_LIST=	AJP_1_3_PORT=${AJP_1_3_PORT} \
 		HTTP_TIMEOUT=${HTTP_TIMEOUT} \
 		JAR_FILE=${JAR_FILE} \
 		JAVA_HOME=${JAVA_HOME} \
+		LOG_ARGS=${LOG_ARGS} \
 		LOG_DIR=${LOG_DIR} \
 		PID_FILE=${PID_FILE} \
 		PORTNAME=${PORTNAME} \
@@ -89,15 +91,10 @@ RUN_DEPENDS+=	cronolog:${PORTSDIR}/sysutils/cronolog
 RUN_DEPENDS+=	cronolog:${PORTSDIR}/sysutils/cronolog-devel
 .endif
 
-.if ( defined(WITH_CRONOLOG) || (WITH_CRONOLOG_DEVEL) )
-LOG_PROCESSOR?= ${LOCALBASE}/sbin/cronolog
-LOG_PROCESSOR_DIRECTIVES?= "\$$CATALINA_OUT \$$CATALINA_BASE/logs/catalina.out.\%Y_\%m_\%d.out"
-LOG_PROCESSOR_OPTS?= --link
-REDIRECT?=     "2\>\&1"
-SUB_LIST+=     LOG_PROCESSOR=${LOG_PROCESSOR} \
-	       LOG_PROCESSOR_DIRECTIVES=${LOG_PROCESSOR_DIRECTIVES} \
-	       LOG_PROCESSOR_OPTS=${LOG_PROCESSOR_OPTS} \
-	       REDIRECT=${REDIRECT}
+.if !( defined(WITH_CRONOLOG) || (WITH_CRONOLOG_DEVEL) )
+LOG_ARGS?=">> \$${tomcat\%\%TOMCAT_VERSION\%\%_stdout_log} 2>> \$${tomcat\%\%TOMCAT_VERSION\%\%_stderr_log}"
+.else
+LOG_ARGS?="2>\&1 | ${LOCALBASE}/sbin/cronolog --link \$${tomcat\%\%TOMCAT_VERSION\%\%_catalina_base}/logs/catalina.out \$${tomcat\%\%TOMCAT_VERSION\%\%_catalina_base}/logs/catalina.\%Y_\%m_\%d.out \&"
 .endif
 
 .if ( defined(WITH_CRONOLOG) && defined(WITH_CRONOLOG_DEVEL) )
@@ -115,11 +112,6 @@ pre-patch:
 	@${ECHO_MSG} "   AJP 1.3 connector port:   ${AJP_1_3_PORT}"
 	@${ECHO_MSG} "   Logfile stdout:           ${STDOUT_LOG}"
 	@${ECHO_MSG} "   Logfile stderr:           ${STDERR_LOG}"
-
-post-patch:
-.if ( defined(WITH_CRONOLOG) || (WITH_CRONOLOG_DEVEL) )
-	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/logprocessor-cronolog
-.endif
 
 	@${ECHO_MSG} -n ">> Removing unneeded files..."
 	@${FIND} ${WRKSRC} -type f \( -name '*.bak' -or -name '*.bat' -or -name '*.dll' -or -name '*.exe' -or -name '*.orig' \) -delete

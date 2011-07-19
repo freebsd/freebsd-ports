@@ -102,8 +102,7 @@ java_command="%%LOCALBASE%%/bin/java \
 	-Djava.io.tmpdir=${tomcat%%TOMCAT_VERSION%%_catalina_tmpdir} \
 	org.apache.catalina.startup.Bootstrap"
 
-log_args=">> ${tomcat%%TOMCAT_VERSION%%_stdout_log} \
-	2>> ${tomcat%%TOMCAT_VERSION%%_stderr_log} "
+log_args="%%LOG_ARGS%%"
 
 # Subvert the check_pid_file procname check.
 if [ -f $pidfile ]; then
@@ -132,31 +131,20 @@ pid_touch ()
 }
 
 tomcat%%TOMCAT_VERSION%%_stop() {
-	rc_pid=$(check_pidfile $pidfile $procname)
-
-	if [ -z `cat $pidfile` ]; then
-		[ -n `cat $pidfile` ] && return 0
-		if [ -n `cat $pidfile` ]; then
-			echo "${name} not running? (check $pidfile)."
-		else
-			echo "${name} not running?"
-		fi
+	if [ ! -s "$pidfile" ]; then
+		echo "${name} not running? (check $pidfile)."
 		return 1
 	fi
 	
 	echo "Stopping ${name}."
 	${java_command} stop
 	tomcat_wait_max_for_pid ${tomcat%%TOMCAT_VERSION%%_stop_timeout} `cat $pidfile`
-	kill -KILL ${rc_pid} 2> /dev/null && echo "Killed."
-	echo -n > ${pidfile}
+	kill -KILL `cat $pidfile` 2> /dev/null && echo "Killed."
+	rm -f ${pidfile}
 }
 
 tomcat%%TOMCAT_VERSION%%_status() {
-	if [ ! -f $pidfile ]; then
-          pid_touch
-        fi
-
-	if [ -z `cat $pidfile` ]; then
+	if [ ! -s "$pidfile" ]; then
 	  echo "${name} is not running."
 	  return 1
 	else
@@ -181,4 +169,5 @@ tomcat_wait_max_for_pid() {
 	fi
 }
 
+cd ${tomcat%%TOMCAT_VERSION%%_catalina_base}
 run_rc_command "$1"
