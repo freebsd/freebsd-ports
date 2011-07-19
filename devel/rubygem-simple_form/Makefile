@@ -4,16 +4,19 @@
 #
 # $FreeBSD$
 
-PORTNAME=	simple_form
-PORTVERSION=	1.4.0
-CATEGORIES=	devel rubygems
-MASTER_SITES=	RG
+PORTNAME=		simple_form
+PORTVERSION=		1.4.2
+CATEGORIES=		devel rubygems
+MASTER_SITES=		RG
 
-MAINTAINER=	zi@FreeBSD.org
-COMMENT=	Forms made easy
+MAINTAINER=		zi@FreeBSD.org
+COMMENT=		Forms made easy
 
-USE_RUBY=	yes
-USE_RUBYGEMS=	yes
+RUN_DEPENDS=		rubygem-activemodel>=3.0:${PORTSDIR}/databases/rubygem-activemodel \
+			rubygem-actionpack>=3.0:${PORTSDIR}/www/rubygem-actionpack
+
+USE_RUBY=		yes
+USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes
 
 .include <bsd.port.mk>
