@@ -5716,7 +5716,6 @@ htx                             ports/converters/htx
 hu-aspell                       ports/hungarian/aspell
 hu-hu-phone                     ports/hungarian/hu-phone
 hu-hu-zipcodes                  ports/hungarian/hu-zipcodes
-hu-hunspell                     ports/hungarian/hunspell
 hu-ispell                       ports/hungarian/ispell
 hu-jdictionary-eng-hun          ports/hungarian/jdictionary-eng-hun
 hu-jdictionary-eng-hun-expr     ports/hungarian/jdictionary-eng-hun-expr
@@ -5733,6 +5732,7 @@ hugs                            ports/lang/hugs
 hulgalugha                      ports/misc/hulgalugha
 humanzip                        ports/textproc/humanzip
 hunch                           ports/security/hunch
+hunspell                        ports/textproc/hunspell
 hupnp                           ports/net/hupnp
 husky-base                      ports/news/husky-base
 husky-base-devel                ports/news/husky-base-devel
@@ -6204,6 +6204,7 @@ ja-font-ipa-uigothic            ports/japanese/font-ipa-uigothic
 ja-font-ipaex                   ports/japanese/font-ipaex
 ja-font-kochi                   ports/japanese/font-kochi
 ja-font-migmix                  ports/japanese/font-migmix
+ja-font-migu                    ports/japanese/font-migu
 ja-font-mona-ipa                ports/japanese/font-mona-ipa
 ja-font-motoya-al               ports/japanese/font-motoya-al
 ja-font-mplus                   ports/japanese/font-mplus
@@ -8722,6 +8723,7 @@ ljsm                            ports/www/ljsm
 lla                             ports/net/lla
 llgal                           ports/www/llgal
 lll_spect                       ports/math/lll_spect
+llnlxdir                        ports/ftp/llnlxdir
 llvm                            ports/devel/llvm
 llvm-devel                      ports/devel/llvm-devel
 llvm-etoile                     ports/devel/llvm-etoile
@@ -9253,6 +9255,7 @@ mird                            ports/databases/mird
 miredo                          ports/net/miredo
 mirmon                          ports/misc/mirmon
 miro                            ports/multimedia/miro
+mirror                          ports/ftp/mirror
 mirrormagic                     ports/games/mirrormagic
 misc_deco                       ports/misc/deco
 misc_nut                        ports/misc/nut
@@ -22503,7 +22506,6 @@ qmail-scanner                   ports/mail/qmail-scanner
 qmail-scanner1                  ports/mail/qmail-scanner1
 qmail-spamcontrol               ports/mail/qmail-spamcontrol
 qmail-tls                       ports/mail/qmail-tls
-qmail-vida                      ports/mail/qmail-vida
 qmailadmin                      ports/mail/qmailadmin
 qmailadmin-devel                ports/mail/qmailadmin-devel
 qmailanalog                     ports/mail/qmailanalog
