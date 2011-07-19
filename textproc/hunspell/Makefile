@@ -7,7 +7,7 @@
 
 PORTNAME=	hunspell
 PORTVERSION=	1.3.2
-CATEGORIES=	hungarian textproc
+CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/Hunspell/${PORTVERSION}
 
 MAINTAINER=	bapt@FreeBSD.org
