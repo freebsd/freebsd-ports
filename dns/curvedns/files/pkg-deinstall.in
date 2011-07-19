@@ -1,6 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD$
-#
-
-rm -rf %%PREFIX%%/etc/curvedns
