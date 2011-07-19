@@ -19,7 +19,7 @@ MASTER_SITE_SUBDIR=	OpenSSH/portable
 PKGNAMESUFFIX=	${PORTABLE_SUFFIX}${GSSAPI_SUFFIX}${BASE_SUFFIX}
 DISTNAME=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	magik@roorback.net
 COMMENT=	The portable version of OpenBSD's OpenSSH
 
 .if defined(OPENSSH_SNAPSHOT)
