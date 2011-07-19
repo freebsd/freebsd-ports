@@ -132,6 +132,7 @@
     SUBDIR += cpupowerd
     SUBDIR += cramfs
     SUBDIR += crashme
+    SUBDIR += createrepo
     SUBDIR += cromwell
     SUBDIR += cronolog
     SUBDIR += cronolog-devel
