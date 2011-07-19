@@ -1,5 +1,5 @@
-Hydra is a parallized login hacker utility. Hydra can brute force attack on 
-FTP, POP3, IMAP, Telnet, HTTP Auth, NNTP, VNC, ICQ, Socks5, PCNFS and more 
+Hydra is a parallized login hacker utility. Hydra can brute force attack on
+FTP, POP3, IMAP, Telnet, HTTP Auth, NNTP, VNC, ICQ, Socks5, PCNFS and more
 services within SSL support. This port is provided as a standalone program to
 avoid installing a full Nessus scanner system.
 

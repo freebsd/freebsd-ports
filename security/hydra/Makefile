@@ -7,18 +7,22 @@
 #
 
 PORTNAME=	hydra
-PORTVERSION=	6.4
+PORTVERSION=	6.5
 CATEGORIES=	security
 MASTER_SITES=	http://freeworld.thc.org/releases/
 EXTRACT_SUFX=	-src.tar.gz
+
+PATCH_SITES=	http://freeworld.thc.org/thc-hydra/
+PATCHFILES=	hydra-6.5-fix.diff
 
 MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	Brute force attack utility working on multiple network services
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
 NO_LATEST_LINK=	yes
-PLIST_FILES=	bin/hydra bin/pw-inspector
+PLIST_FILES=	bin/hydra bin/pw-inspector bin/dpl4hydra.sh
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_OPENSSL=	yes
@@ -60,6 +64,7 @@ post-patch:
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/hydra ${PREFIX}/bin
 	@${INSTALL_PROGRAM} ${WRKSRC}/pw-inspector ${PREFIX}/bin
+	@${INSTALL_SCRIPT} ${WRKSRC}/dpl4hydra.sh ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/hydra.1 ${MANPREFIX}/man/man1/hydra.1
 	@${INSTALL_MAN} ${WRKSRC}/pw-inspector.1 ${MANPREFIX}/man/man1/pw-inspector.1
 .if defined(WITH_X11)
