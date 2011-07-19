@@ -5,16 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	logging
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Logging library based on Java's log4j
 
-RUN_DEPENDS=	rubygem-little_plugger>=1.1.2:${PORTSDIR}/devel/rubygem-little_plugger \
-		rubygem-flexmock>=0.8.11:${PORTSDIR}/devel/ruby-flexmock \
-		rlock:${PORTSDIR}/devel/rubygem-lockfile
+RUN_DEPENDS=	rubygem-little_plugger>=1.1.2:${PORTSDIR}/devel/rubygem-little_plugger
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
