@@ -7,6 +7,7 @@
 
 PORTNAME=		curvedns
 PORTVERSION=		0.88.b
+PORTREVISION=		1
 CATEGORIES=		dns
 MASTER_SITES=		http://curvedns.on2it.net/releases/
 DISTNAME=		curvedns-0.88-unstable
@@ -22,16 +23,12 @@ HAS_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	configure.nacl
 ALL_TARGET=		# yes, an empty target.
 
-CURVE_USER=		bind
-CURVE_GROUP=		bind
+USERS=			bind
+GROUPS=			bind
 CURVE_UID=		53
 CURVE_GID=		53
 
-SUB_FILES=		pkg-install pkg-message pkg-deinstall
-SUB_LIST=		CURVE_USER=${CURVE_USER} \
-			CURVE_GROUP=${CURVE_GROUP} \
-			CURVE_UID=${CURVE_UID} \
-			CURVE_GID=${CURVE_GID}
+SUB_FILES=		pkg-message
 
 .include <bsd.port.pre.mk>
 
@@ -55,14 +52,14 @@ post-configure:
 post-install:
 	${CP} ${WRKSRC}/curvedns ${WRKSRC}/curvedns-keygen ${PREFIX}/bin/
 	${MKDIR} ${PREFIX}/etc/curvedns/log ${PREFIX}/etc/curvedns/env
-	${CP} ${WRKSRC}/contrib/curvedns-run ${PREFIX}/etc/curvedns/run
-	${CP} ${WRKSRC}/contrib/curvedns-log-run ${PREFIX}/etc/curvedns/log/run
-	${ECHO} ${CURVE_UID} > ${PREFIX}/etc/curvedns/env/UID
-	${ECHO} ${CURVE_GID} > ${PREFIX}/etc/curvedns/env/GID
+	${CP} ${WRKSRC}/contrib/curvedns-run ${PREFIX}/etc/curvedns/run.sample
+	${CP} ${WRKSRC}/contrib/curvedns-log-run ${PREFIX}/etc/curvedns/log/run.sample
+	${ECHO_CMD} ${CURVE_UID} > ${PREFIX}/etc/curvedns/env/UID
+	${ECHO_CMD} ${CURVE_GID} > ${PREFIX}/etc/curvedns/env/GID
 	${CHOWN} -R ${CURVE_UID}:${CURVE_GID} ${PREFIX}/etc/curvedns
-	${CHMOD} 755 ${PREFIX}/etc/curvedns/run ${PREFIX}/etc/curvedns/log/run
+	${CHMOD} 755 ${PREFIX}/etc/curvedns/run.sample \
+		${PREFIX}/etc/curvedns/log/run.sample
 	${CHMOD} 0700 ${PREFIX}/etc/curvedns/env
-	${SH} ${PKGINSTALL}
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

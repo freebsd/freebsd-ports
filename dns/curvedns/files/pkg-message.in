@@ -7,6 +7,8 @@
 
 ------- configure -----------------------------------------
  $EDITOR %%PREFIX%%/etc/curvedns/run
+ # set user to "bind" (required)
+ # adjust IP / ports (if desired)
 
 ------- prepare/startup -----------------------------------
  mkdir /var/service

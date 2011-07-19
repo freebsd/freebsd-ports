@@ -1,3 +1,13 @@
 bin/curvedns
 bin/curvedns-keygen
-@dirrmtry etc/curvedns
+%%ETCDIR%%/env/UID
+%%ETCDIR%%/env/GID
+@unexec cmp -s %B/%F %B/run && rm -f %B/run || true
+%%ETCDIR%%/run.sample
+@exec [ -f %%ETCDIR%%/run ] || cp -p %%ETCDIR%%/run.sample %%ETCDIR%%/run
+@unexec cmp -s %B/%F %B/run && rm -f %B/run || true
+%%ETCDIR%%/log/run.sample
+@exec [ -f %%ETCDIR%%/log/run ] || cp -p %%ETCDIR%%/log/run.sample %%ETCDIR%%/log/run
+@dirrmtry %%ETCDIR%%/env
+@dirrmtry %%ETCDIR%%/log
+@dirrmtry %%ETCDIR%%
