@@ -153,7 +153,7 @@ do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${GMAKE} build build_doc
 
 test: install
-	cd ${WRKSRC}/regtests && python2.6 testsuite.py
+	cd ${WRKSRC}/regtests && python${PYTHON_VER} testsuite.py
 
 do-install:
 	cd ${WRKSRC} && ${GMAKE} install
