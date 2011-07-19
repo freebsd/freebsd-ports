@@ -1,19 +1,12 @@
-Hungarian Spell Checher utility with Hungarian dictionary
-and affix files.  It has several advantages over ispell.
-It has better affix rules than hu-ispell. 
+Hunspell is a wildly use spell checker
 
-It is installing hungarian dictionary by default, but other dictionaries can
-be found at: http://wiki.services.openoffice.org/wiki/Dictionaries
+Main features:
+- Extended support for language peculiarities; Unicode character encoding,
+  compounding and complex morphology.
+- Improved suggestion using n-gram similarity, rule and dictionary based
+  pronounciation data.
+- Morphological analysis, stemming and generation.
+- Hunspell is based on MySpell and works also with MySpell dictionaries.
+- C++ library under GPL/LGPL/MPL tri-license.
 
-Magyar helyes.r.s ellen.rz. hunspell. El.ny.k az ispell-hez k.pest:
-- T.bb karakter v.ltoz.ssal j.r. tipikus hib.kra jav.t.si javaslat.
-- Helyes .sszetett sz.nak l.tsz. szavak tilt.sa.
-- 6-3-as szab.ly
-- mozg.szab.ly
-- .sszet.teli szab.lyok
-- t.bbsz.r.s k.pz.k helyes haszn.lata
-- .kezetes.t.si javaslatok
-Alepesetben csak a magyar sz.t.rat install.lja, de tov.bbi sz.t.rak
-el.rhet.ek: http://wiki.services.openoffice.org/wiki/Dictionaries
-
-WWW: http://magyarispell.sourceforge.net/
+WWW: http://hunspell.sourceforge.net/

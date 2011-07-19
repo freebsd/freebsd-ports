@@ -1,22 +1,21 @@
-
-$FreeBSD$
-
---- src/tools/hunspell.cxx.orig
-+++ src/tools/hunspell.cxx
-@@ -61,26 +61,22 @@
+--- ./src/tools/hunspell.cxx.orig	2011-01-21 18:01:29.000000000 +0100
++++ ./src/tools/hunspell.cxx	2011-07-19 07:16:58.346225286 +0200
+@@ -61,28 +61,23 @@
  #include "firstparser.hxx"
  
  #define LIBDIR \
 -    "/usr/share/hunspell:" \
 -    "/usr/share/myspell:" \
--    "/usr/share/myspell/dicts"
+-    "/usr/share/myspell/dicts:" \
+-    "/Library/Spelling"
 +    "%%PREFIX%%/share/hunspell:" \
 +    "%%PREFIX%%/share/myspell:" \
-+    "%%PREFIX%%/share/myspell/dicts"
++    "%%PREFIX%%/share/myspell/dicts:"
  #define USEROOODIR \
      ".openoffice.org/3/user/wordbook:" \
      ".openoffice.org2/user/wordbook:" \
-     ".openoffice.org2.0/user/wordbook"
+     ".openoffice.org2.0/user/wordbook:" \
+     "Library/Spelling"
  #define OOODIR \
 -    "/opt/openoffice.org/basis3.0/share/dict/ooo:" \
 -    "/usr/lib/openoffice.org/basis3.0/share/dict/ooo:" \

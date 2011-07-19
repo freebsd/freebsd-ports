@@ -7,19 +7,18 @@
 
 PORTNAME=	mythes
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/hunspell/MyThes/${PORTVERSION}/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Simple thesaurus library
 
-LIB_DEPENDS=	hunspell-1.2.0:${PORTSDIR}/textproc/hunspell
+LIB_DEPENDS=	hunspell-1.3.0:${PORTSDIR}/textproc/hunspell
 
-USE_GNOME=	gnomehack
+USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	HUNSPELL_CFLAGS=-I${LOCALBASE}/include/hunspell \
-	       	HUNSPELL_LIBS="-L${LOCALBASE}/lib -lhunspell-1.2"
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.mk>

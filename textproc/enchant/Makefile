@@ -56,7 +56,7 @@ PLIST_SUB+=	HSPELL="@comment "
 .endif
 
 .if defined(WITH_HUNSPELL)
-LIB_DEPENDS+=	hunspell-1.2.0:${PORTSDIR}/textproc/hunspell
+LIB_DEPENDS+=	hunspell-1.3.0:${PORTSDIR}/textproc/hunspell
 CONFIGURE_ARGS+=--enable-myspell
 PLIST_SUB+=	HUNSPELL=""
 .else
