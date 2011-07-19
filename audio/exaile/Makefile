@@ -7,7 +7,6 @@
 
 PORTNAME=	exaile
 PORTVERSION=	${PORTVERSION_MAJOR}.${PORTVERSION_MINOR} # See below
-PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://launchpad.net/${LP_DIR}/ \
 		http://wickedmachine.net/mirror/
@@ -15,10 +14,10 @@ MASTER_SITES=	http://launchpad.net/${LP_DIR}/ \
 MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	A full featured python-based music player for GTK+
 
-RUN_DEPENDS=	py*-mutagen>=1.11:${PORTSDIR}/audio/py-mutagen
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+RUN_DEPENDS=	py*-mutagen>=1.11:${PORTSDIR}/audio/py-mutagen
 
 FETCH_ARGS=	-pRr
 USE_GNOME=	pygtk2 librsvg2
@@ -39,7 +38,7 @@ OPTIONS=	BAD "Install bad GStreamer plugins" On \
 		SEXY "UI enhancements"  On
 
 PORTVERSION_MAJOR=	0.3.2
-PORTVERSION_MINOR=	1
+PORTVERSION_MINOR=	2
 LP_DIR=		${PORTNAME}/${PORTVERSION_MAJOR}/${PORTVERSION}/+download
 
 MANCOMPRESSED=	yes
