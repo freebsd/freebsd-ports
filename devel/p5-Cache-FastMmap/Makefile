@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Cache-FastMmap
-PORTVERSION=	1.36
+PORTVERSION=	1.39
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,6 +16,6 @@ COMMENT=	Uses an mmap'ed file to act as a shared memory interprocess cache
 
 PERL_CONFIGURE=	yes
 
-MAN3=		Cache::FastMmap.3 Cache::FastMmap::CImpl.3
+MAN3=		Cache::FastMmap.3
 
 .include <bsd.port.mk>
