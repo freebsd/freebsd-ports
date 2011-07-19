@@ -65,5 +65,5 @@ etc/rc.d/pbid
 @dirrm %%DATADIR%%/module-examples
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%
-@unexec rm -r /usr/pbi/.hashdir >/dev/null 2>/dev/null
-@unexec rm -r /usr/pbi >/dev/null 2>/dev/null
+@unexec rmdir /usr/pbi/.hashdir >/dev/null 2>/dev/null
+@unexec rmdir /usr/pbi >/dev/null 2>/dev/null
