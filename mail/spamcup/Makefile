@@ -7,15 +7,18 @@
 
 PORTNAME=	spamcup
 PORTVERSION=	1.09
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for automatic spam reporting via Spamcop.net
 
+LICENSE=	GPL
+
 RUN_DEPENDS=	${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/Getopt/ArgvFile.pm:${PORTSDIR}/devel/p5-Getopt-ArgvFile
+		${SITE_PERL}/Getopt/ArgvFile.pm:${PORTSDIR}/devel/p5-Getopt-ArgvFile \
+		${SITE_PERL}/HTML/Form.pm:${PORTSDIR}/www/p5-HTML-Form
 
 PERL_CONFIGURE=	yes
 
