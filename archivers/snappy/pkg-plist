@@ -11,4 +11,5 @@ lib/libsnappy.so.2
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/format_description.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
