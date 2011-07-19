@@ -7,12 +7,26 @@
 # installed in the correct order, so that dependency requirements are always
 # satisfied.
 
-my $tardir = "%%PREFIX%%/share/octave/tarballs";
+my $prefix = defined($ENV{"PKG_PREFIX"}) ? $ENV{"PKG_PREFIX"} : "%%PREFIX%%";
+my $tardir = "$prefix/share/octave/tarballs";
 
 use strict;
 use Archive::Tar;
 use IO::Zlib;
 use File::Remove qw(remove);
+
+# Interrogate octave to see where it stores its packages.
+
+open(OCTAVE,"octave -H -q --no-site-file --eval \"pkg('prefix');pkg('global_list')\" |") || die;
+my $install_prefix = <OCTAVE> || die;
+chomp $install_prefix;
+$install_prefix =~ s/.*\s+//;
+my $arch_dep_prefix = <OCTAVE> || die;
+chomp $arch_dep_prefix;
+$arch_dep_prefix =~ s/.*\s+//;
+my $global_list = <OCTAVE> || die;
+chomp $global_list;
+close OCTAVE;
 
 # %long_form is a hash that does conversions like
 # $long_form{"odepkg"} == "odepkg-0.8.8.tar.gz"
@@ -25,7 +39,7 @@ while (<$tardir/*>) {
     $long_form{$1} = $n;
   }
 }
-while (my $p = <%%PREFIX%%/share/octave/packages/*>) {
+while (my $p = <$install_prefix/*>) {
   $p =~ s+.*/++;
   $p =~ /(.*)\-/;
   $long_form{$1} = "$p.tar.gz";
@@ -52,7 +66,7 @@ my %to_install;    # Those packages that remain to be installed.  For these
 # Calculate which entries of %is_installed exist.
 
 %is_installed = ();
-while (my $p = <%%PREFIX%%/share/octave/packages/*>) {
+while (my $p = <$install_prefix/*>) {
   $p =~ s+.*/++;
   $is_installed{"$p.tar.gz"} = "";
 }
@@ -62,19 +76,17 @@ while (my $p = <%%PREFIX%%/share/octave/packages/*>) {
 # out everything.
 
 my %check_installed;
-open(O,"octave -H -q --no-site-file --eval \"pkg('list')\" |") || die;
-<O>;
-my $out = join "",<O>;
+open(OCTAVE,"octave -H -q --no-site-file --eval \"pkg('list')\" |") || die;
+<OCTAVE>;
+my $out = join "",<OCTAVE>;
 while ($out =~ s/^\s*(\S+)\s*\|\s*(\S+).*$//m) {
   $check_installed{"$1-$2.tar.gz"} = "";
 }
-close O;
+close OCTAVE;
 foreach my $p (sort keys %is_installed) {
   if (defined($is_installed{$p}) && !defined($check_installed{$p})) {
     print "The octave packaging system is probably corrupt, so it will be rebuilt.\n";
-    remove( \1, "%%PREFIX%%/lib/octave/packages",
-                "%%PREFIX%%/share/octave/octave_packages",
-                "%%PREFIX%%/share/octave/packages");
+    remove( \1, $arch_dep_prefix, $global_list, $install_prefix);
     %is_installed = ();
     last;
   }
@@ -82,9 +94,9 @@ foreach my $p (sort keys %is_installed) {
 
 # Fill in the values of %is_installed by checking the dependencies.
 
-while (my $p = <%%PREFIX%%/share/octave/packages/*>) {
+while (my $p = <$install_prefix/*>) {
   $p =~ s+.*/++;
-  open(D,"%%PREFIX%%/share/octave/packages/$p/packinfo/DESCRIPTION") || die $!;
+  open(D,"$install_prefix/$p/packinfo/DESCRIPTION") || die $!;
   foreach my $l (<D>) {
     if ($l=~s/Depends:\s*//) {
       foreach my $ll (split ",",$l) {
@@ -148,18 +160,16 @@ if ($nr_to_remove>0) {
 
 # Clean out any crud that might be left over.
 
-my @pkg = <%%PREFIX%%/share/octave/packages/*>;
+my @pkg = <$install_prefix/*>;
 if ($#pkg==-1) {
   print "load-octave-pkg: there are currently no octave packages installed.\n";
-  remove( \1, "%%PREFIX%%/lib/octave/packages",
-              "%%PREFIX%%/share/octave/octave_packages",
-              "%%PREFIX%%/share/octave/packages");
+  remove( \1, $arch_dep_prefix, $global_list, $install_prefix);
 }
 
 # Recalculate which entries of %is_installed exist.
 
 %is_installed = ();
-while (my $p = <%%PREFIX%%/share/octave/packages/*>) {
+while (my $p = <$install_prefix/*>) {
   $p =~ s+.*/++;
   $is_installed{"$p.tar.gz"} = "";
 }
