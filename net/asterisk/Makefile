@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	asterisk
-PORTVERSION=	1.8.4.4
+PORTVERSION=	1.8.5.0
 CATEGORIES=	net
 MASTER_SITES=	http://downloads.asterisk.org/pub/telephony/asterisk/ \
 		http://downloads.asterisk.org/pub/telephony/asterisk/old-releases/
@@ -159,11 +159,11 @@ CONFIGURE_ARGS+=	--with-postgres
 
 .if !defined(WITH_MYSQL)
 PLIST_SUB+=	WITH_MYSQL="@comment "
+CONFIGURE_ARGS+=	--without-mysql
 .else
 PLIST_SUB+=	WITH_MYSQL=""
 USE_MYSQL=	yes
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-menuselect-tree-mysql.diff
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-addons__.moduleinfo.diff
+CONFIGURE_ARGS+=	--with-mysql
 .endif
 
 .if !defined(WITH_OGGVORBIS)
@@ -255,10 +255,6 @@ LIB_DEPENDS+=	neon.27:${PORTSDIR}/www/neon29
 PLIST_SUB+=	WITH_EXCHANGE=""
 .endif
 
-.if defined(WITH_NEWG711)
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-menuselect-tree-g711-new-codec.diff
-.endif
-
 .if !defined(WITH_SRTP)
 PLIST_SUB+=	WITH_SRTP="@comment "
 CONFIGURE_ARGS+=	--without-srtp
@@ -279,24 +275,25 @@ CONFIGURE_ARGS+=	--without-lua
 PLIST_SUB+=	WITH_LUA="@comment "
 .endif
 
-.if defined(WITH_MISC_PATCHES)
-EXTRA_PATCHES+=	${PATCHDIR}/dtmf_debug.diff
-EXTRA_PATCHES+=	${PATCHDIR}/feature_disconnect.diff
-EXTRA_PATCHES+=	${PATCHDIR}/sip_force_callid.diff
-EXTRA_PATCHES+=	${PATCHDIR}/sip_set_auth.diff
-.if defined(WITH_CODEC_PATCH)
-EXTRA_PATCHES+=	${PATCHDIR}/rtp_force_dtmf-codecnego.diff
-.else
-EXTRA_PATCHES+=	${PATCHDIR}/rtp_force_dtmf-nocodecnego.diff
-.endif
-.endif
-
 post-extract:
 	${MKDIR} ${WRKSRC}/codecs/ilbc
 	${FIND} ${WRKSRC} -name '*.d' -delete
 
 post-patch:
 	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
+
+post-configure:
+.if defined(WITH_MYSQL) || defined(WITH_NEWG711)
+	@cd ${WRKSRC} && make menuselect.makeopts
+.if defined(WITH_MYSQL)
+	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_config_mysql menuselect.makeopts
+	@cd ${WRKSRC} && ./menuselect/menuselect --enable app_mysql menuselect.makeopts
+	@cd ${WRKSRC} && ./menuselect/menuselect --enable cdr_mysql menuselect.makeopts
+.endif
+.if defined(WITH_NEWG711)
+	@cd ${WRKSRC} && ./menuselect/menuselect --enable  G711_NEW_ALGORITHM menuselect.makeopts
+.endif
+.endif
 
 post-install:
 	@${CHOWN} -R ${ASTERISK_USER}:${ASTERISK_GROUP} ${VARDIR}/db/asterisk ${VARDIR}/log/asterisk ${VARDIR}/spool/asterisk
