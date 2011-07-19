@@ -55,14 +55,6 @@
  	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/system"
  	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/tmp"
  	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/voicemail"
-@@ -544,6 +552,7 @@
- 	$(INSTALL) -d "$(DESTDIR)$(ASTDATADIR)/static-http"
- 	$(INSTALL) -d "$(DESTDIR)$(ASTMANDIR)/man8"
- 	$(INSTALL) -d "$(DESTDIR)$(AGI_DIR)"
-+	$(INSTALL) -d "$(DESTDIR)$(ASTDBDIR)"
- 
- bininstall: _all installdirs $(SUBDIRS_INSTALL)
- 	$(INSTALL) -m 755 main/asterisk $(DESTDIR)$(ASTSBINDIR)/
 @@ -603,7 +612,7 @@
  	@exit 1
  endif

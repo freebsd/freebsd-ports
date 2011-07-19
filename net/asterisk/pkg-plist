@@ -659,9 +659,9 @@ share/asterisk/phoneprov/000000000000.cfg
 share/asterisk/phoneprov/polycom.xml
 share/asterisk/phoneprov/polycom_line.xml
 share/asterisk/phoneprov/snom-mac.xml
-share/asterisk/sounds/en/CHANGES-asterisk-core-en-1.4.20
-share/asterisk/sounds/en/CREDITS-asterisk-core-en-1.4.20
-share/asterisk/sounds/en/LICENSE-asterisk-core-en-1.4.20
+share/asterisk/sounds/en/CHANGES-asterisk-core-en-1.4.21
+share/asterisk/sounds/en/CREDITS-asterisk-core-en-1.4.21
+share/asterisk/sounds/en/LICENSE-asterisk-core-en-1.4.21
 share/asterisk/sounds/en/ascending-2tone.gsm
 share/asterisk/sounds/en/conf-adminmenu-162.gsm
 share/asterisk/sounds/en/conf-extended.gsm
@@ -671,6 +671,8 @@ share/asterisk/sounds/en/conf-now-recording.gsm
 share/asterisk/sounds/en/conf-now-unmuted.gsm
 share/asterisk/sounds/en/conf-roll-callcomplete.gsm
 share/asterisk/sounds/en/conf-usermenu-162.gsm
+share/asterisk/sounds/en/confbridge-join.gsm
+share/asterisk/sounds/en/confbridge-leave.gsm
 share/asterisk/sounds/en/descending-2tone.gsm
 share/asterisk/sounds/en/spy-dahdi.gsm
 share/asterisk/sounds/en/vm-Urgent.gsm
@@ -1114,7 +1116,7 @@ share/asterisk/sounds/en/vm-undeleted.gsm
 share/asterisk/sounds/en/vm-unknown-caller.gsm
 share/asterisk/sounds/en/vm-whichbox.gsm
 share/asterisk/sounds/en/vm-youhave.gsm
-share/asterisk/sounds/.asterisk-core-sounds-en-gsm-1.4.20
+share/asterisk/sounds/.asterisk-core-sounds-en-gsm-1.4.21
 share/asterisk/static-http/ajamdemo.html
 share/asterisk/static-http/astman.css
 share/asterisk/static-http/astman.js
@@ -1149,6 +1151,7 @@ share/asterisk/static-http/mantest.html
 @dirrm share/asterisk/sounds/en
 @dirrm share/asterisk/sounds/es
 @dirrm share/asterisk/sounds/fr
+@dirrm share/asterisk/sounds/ru
 @dirrm share/asterisk/sounds
 @dirrm share/asterisk/phoneprov
 @dirrm share/asterisk/moh
@@ -1172,11 +1175,11 @@ share/asterisk/static-http/mantest.html
 @exec mkdir -p %D/share/asterisk/sounds/es
 @exec mkdir -p %D/share/asterisk/sounds/fr
 @exec mkdir -p %D/share/asterisk/sounds/en_AU
+@exec mkdir -p %D/share/asterisk/sounds/ru
 @cwd %%VARDIR%%
 spool/asterisk/voicemail/default/1234/en/busy.gsm
 spool/asterisk/voicemail/default/1234/en/unavail.gsm
 @exec mkdir -p %D/log/asterisk/cdr-csv
-@exec mkdir -p %D/log/asterisk/cel-csv
 @exec mkdir -p %D/log/asterisk/cdr-custom
 @exec mkdir -p %D/log/asterisk/cel-custom
 @exec mkdir -p %D/spool/asterisk/dictate
@@ -1204,7 +1207,6 @@ spool/asterisk/voicemail/default/1234/en/unavail.gsm
 @dirrm spool/asterisk/tmp
 @dirrm spool/asterisk
 @dirrm log/asterisk/cdr-csv
-@dirrm log/asterisk/cel-csv
 @dirrm log/asterisk/cdr-custom
 @dirrm log/asterisk/cel-custom
 @dirrm log/asterisk
