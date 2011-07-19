@@ -23,6 +23,7 @@ MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Bidimensional Anisotrope Mesh Generator
 
 RESTRICTED=	No resale, contact author for commercial usage
+BROKEN=		fails to fetch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
