@@ -774,6 +774,9 @@ share/gps/plug-ins/aws.py
 share/gps/plug-ins/aws.xml
 share/gps/plug-ins/aws_api.xml
 share/gps/plug-ins/wsdl2aws.xml
+%%DOCSDIR%%/aws.info-1
+%%DOCSDIR%%/aws.info-2
+%%DOCSDIR%%/aws.info-3
 @dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%/web_elements/icons
 @dirrm %%EXAMPLESDIR%%/web_elements/javascripts

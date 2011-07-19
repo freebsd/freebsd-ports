@@ -1,0 +1,30 @@
+--- templates_parser/docs/gentexifile.orig	2011-01-09 15:48:02.000000000 +0100
++++ templates_parser/docs/gentexifile	2011-07-17 16:14:44.000000000 +0200
+@@ -32,24 +32,17 @@
+ TARGET=`basename ${SOURCE}`.texi
+ TMPTAR=${TARGET}.tmp
+ 
+-awk=`type gawk 2>/dev/null`
+-if [ x"$awk" = x ]; then
+-   awk="awk"
+-else
+-   awk="gawk"
+-fi
+-
+-$awk 'BEGIN{out=1}$1=="end"&&substr($0,1,1)=="e"{out=1}out==1{print}$1=="private"&&$2!="with"&&out==1{out=0; print "   --  implementation removed"}' ${SOURCE} > genout
++${AWK} 'BEGIN{out=1}$1=="end"&&substr($0,1,1)=="e"{out=1}out==1{print}$1=="private"&&$2!="with"&&out==1{out=0; print "   --  implementation removed"}' ${SOURCE} > genout
+ 
+ rm -f ${TMPTAR}
+ 
+ if [ $# = 1 ]; then
+ echo "@TPEXP{"           >>${TMPTAR}
+-sed -f ada.sed genout    >>${TMPTAR}
++sed -E -f ada.sed genout >>${TMPTAR}
+ echo "}"                 >>${TMPTAR}
+ else
+ echo "@smallexample"     >>${TMPTAR}
+-sed -f ada.sed genout    >>${TMPTAR}
++sed -E -f ada.sed genout >>${TMPTAR}
+ echo "@end smallexample" >>${TMPTAR}
+ fi
+ 

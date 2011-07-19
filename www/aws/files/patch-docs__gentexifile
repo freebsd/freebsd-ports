@@ -1,0 +1,27 @@
+--- docs/gentexifile.orig	2011-01-09 15:48:05.000000000 +0100
++++ docs/gentexifile	2011-07-17 16:15:21.000000000 +0200
+@@ -32,14 +32,7 @@
+ TARGET=`basename ${SOURCE}`.texi
+ TMPTAR=${TARGET}.tmp
+ 
+-awk=`type gawk 2>/dev/null`
+-if [ x"$awk" = x ]; then
+-   awk="awk"
+-else
+-   awk="gawk"
+-fi
+-
+-$awk 'BEGIN{out=1}$1=="end"&&substr($0,1,1)=="e"{out=1}out==1{print}$1=="private"&&$2!="with"&&out==1{out=0; print "   --  implementation removed"}' ${SOURCE} > genout
++${AWK} 'BEGIN{out=1}$1=="end"&&substr($0,1,1)=="e"{out=1}out==1{print}$1=="private"&&$2!="with"&&out==1{out=0; print "   --  implementation removed"}' ${SOURCE} > genout
+ 
+ rm -f ${TMPTAR}
+ 
+@@ -51,7 +44,7 @@
+ echo "@group"            >>${TMPTAR}
+ fi
+ echo ""                  >>${TMPTAR}
+-sed -f ada.sed genout    >>${TMPTAR}
++sed -E -f ada.sed genout >>${TMPTAR}
+ echo ""                  >>${TMPTAR}
+ if [ $# = 1 ]; then
+ echo "@end group"        >>${TMPTAR}
