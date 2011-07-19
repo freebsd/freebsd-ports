@@ -6,6 +6,7 @@
 
 PORTNAME=	kdesdk
 PORTVERSION=	${KDE4_VERSION}
+PORTREVISION=	1
 CATEGORIES=	devel kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	${KDE4_BRANCH}/${PORTVERSION}/src
@@ -18,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/ltdl.h:${PORTSDIR}/devel/libltdl
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash
 LIB_DEPENDS=	svn_client-1.0:${PORTSDIR}/devel/subversion \
 		boost_thread.4:${PORTSDIR}/devel/boost-libs \
-		hunspell-1.2.0:${PORTSDIR}/textproc/hunspell
+		hunspell-1.3.0:${PORTSDIR}/textproc/hunspell
 
 LATEST_LINK=	${PORTNAME}4
 

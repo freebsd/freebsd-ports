@@ -7,6 +7,7 @@
 
 PORTNAME=	textroom
 PORTVERSION=	0.8.2
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	SF
 
@@ -14,7 +15,7 @@ MAINTAINER=	admin@mjbrune.org
 COMMENT=	A full screen text editor
 
 BUILD_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
-LIB_DEPENDS=	hunspell-1.2:${PORTSDIR}/textproc/hunspell \
+LIB_DEPENDS=	hunspell-1.3:${PORTSDIR}/textproc/hunspell \
 		xml++-2.6.2:${PORTSDIR}/textproc/libxml++26 \
 		curl.6:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
