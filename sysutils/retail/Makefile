@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	retail
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://xjack.org/retail/download/ \
-		http://itdev.spb.ru/mirror/
+		http://olevole.ru/freebsd/distfiles/
 
-MAINTAINER=	oleg.ginzburg@nevosoft.ru
+MAINTAINER=	olevole@olevole.ru
 COMMENT=	A program for incremental logfile reader
 
 GNU_CONFIGURE=	yes
