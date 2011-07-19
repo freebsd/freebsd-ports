@@ -14,7 +14,7 @@
 %%DATADIR%%/profiles/statusrc
 %%DATADIR%%/tests/byobu-time-notifications
 %%DATADIR%%/windows/common
-%%DOCSDIR%%/help.txt
+%%PORTDOCS%%%%DOCSDIR%%/help.txt
 bin/byobu
 bin/byobu-config
 bin/byobu-disable
@@ -72,12 +72,12 @@ lib/byobu/whoami
 lib/byobu/wifi_quality
 share/applications/byobu.desktop
 @dirrmtry share/applications
-@dirrmtry lib/byobu
-@dirrm %%DOCSDIR%%
-@dirrmtry %%DATADIR%%/windows
-@dirrmtry %%DATADIR%%/tests
-@dirrmtry %%DATADIR%%/profiles
-@dirrmtry %%DATADIR%%/pixmaps
-@dirrmtry %%DATADIR%%/keybindings
-@dirrmtry %%DATADIR%%/ec2
-@dirrmtry %%DATADIR%%
+@dirrm lib/byobu
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/windows
+@dirrm %%DATADIR%%/tests
+@dirrm %%DATADIR%%/profiles
+@dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/keybindings
+@dirrm %%DATADIR%%/ec2
+@dirrm %%DATADIR%%
