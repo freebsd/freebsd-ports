@@ -14,6 +14,9 @@ MASTER_SITES=	http://openinfosecfoundation.org/download/ \
 MAINTAINER=	eksffa@freebsdbrasil.com.br
 COMMENT=	Open Source next generation IDS/IPS engine by OISF
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		yaml:${PORTSDIR}/textproc/libyaml \
 		pcap.1:${PORTSDIR}/net/libpcap
@@ -28,7 +31,10 @@ USE_RC_SUBR=	suricata
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
 
 OPTIONS=	IPFW "Enable IPFW/IPDIVERT for IPS usage" on \
-		PRELUDE "Enable Prelude NIDS integration" off
+		PRELUDE "Enable Prelude NIDS integration" off \
+		DAG "Enable Endace DAG Support" off
+
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib
 
 SUB_FILES=	pkg-message
 HAS_CONFIGURE=	yes
@@ -39,9 +45,6 @@ CONFIG_DIR?=	${PREFIX}/etc/suricata
 CONFIG_FILES=	suricata.yaml classification.config
 RULES_DIR=	${PREFIX}/etc/suricata/rules
 LOGS_DIR=	/var/log/suricata
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 .include <bsd.port.pre.mk>
 
@@ -60,6 +63,10 @@ PLIST_SUB+=		PRELUDE=""
 
 .if defined(WITH_IPFW)
 CONFIGURE_ARGS+=	--enable-ipfw
+.endif
+
+.if defined(WITH_DAG)
+CONFIGURE_ARGS+=	--enable-dag
 .endif
 
 pre-install:
