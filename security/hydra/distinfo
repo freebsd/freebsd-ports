@@ -1,2 +1,4 @@
-SHA256 (hydra-6.4-src.tar.gz) = 21abade4b39ab816dfb53b578163d678cfe176749cb13f80dc71d08fbac66d8f
-SIZE (hydra-6.4-src.tar.gz) = 501251
+SHA256 (hydra-6.5-src.tar.gz) = 1225b0f4bde4d80946c0cb2f24e39e7a14954c21d3e82fd7c83c683d32023da4
+SIZE (hydra-6.5-src.tar.gz) = 633851
+SHA256 (hydra-6.5-fix.diff) = 57db2a46c9e470d1768bb771ac5fff3ea1ca70d7465661ac327f834cfec08e92
+SIZE (hydra-6.5-fix.diff) = 1671
