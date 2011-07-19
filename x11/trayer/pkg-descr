@@ -1,9 +1,9 @@
-trayer is small program designed to provide systray functionality
-present in GNOME/KDE desktop enviroments for window managers 
-which doesn't support that function. It's similar to other 
-applications such as 'peksystray' and 'docker'.
+Trayer is a small program designed to provide system tray functionality that
+commonly found in GNOME/KDE desktop environments, for window managers which
+lack this feature.  It is similar to other applications such as `peksystray'
+and `docker'.
 
-trayer code was extracted from fbpanel application, you can find more
-about it on it's homepage
+Trayer code was extracted from fbpanel, lightweight X11 desktop panel (port
+`x11/fbpanel' also available).  You can find more about it on its homepage.
 
 WWW: http://fbpanel.sourceforge.net/
