@@ -97,6 +97,7 @@
     SUBDIR += bison
     SUBDIR += bisoncpp
     SUBDIR += bisongen
+    SUBDIR += blame
     SUBDIR += bmake
     SUBDIR += bncsutil-ghost++
     SUBDIR += bnf
