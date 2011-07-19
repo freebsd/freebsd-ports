@@ -738,6 +738,7 @@
 %%ZOPEBASEDIR%%/lib/python/OFS/subscribers.pyc
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/__init__.py
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/__init__.pyc
+%%ZOPEBASEDIR%%/lib/python/OFS/tests/export.xml
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/mime.types-1
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/mime.types-2
 %%ZOPEBASEDIR%%/lib/python/OFS/tests/test.gif
@@ -2848,6 +2849,8 @@
 %%ZOPEBASEDIR%%/lib/python/ZEO/tests/multi.py
 %%ZOPEBASEDIR%%/lib/python/ZEO/tests/multi.pyc
 %%ZOPEBASEDIR%%/lib/python/ZEO/tests/registerDB.test
+%%ZOPEBASEDIR%%/lib/python/ZEO/tests/servertesting.py
+%%ZOPEBASEDIR%%/lib/python/ZEO/tests/servertesting.pyc
 %%ZOPEBASEDIR%%/lib/python/ZEO/tests/speed.py
 %%ZOPEBASEDIR%%/lib/python/ZEO/tests/speed.pyc
 %%ZOPEBASEDIR%%/lib/python/ZEO/tests/stress.py
@@ -2864,6 +2867,8 @@
 %%ZOPEBASEDIR%%/lib/python/ZEO/tests/testTransactionBuffer.pyc
 %%ZOPEBASEDIR%%/lib/python/ZEO/tests/testZEO.py
 %%ZOPEBASEDIR%%/lib/python/ZEO/tests/testZEO.pyc
+%%ZOPEBASEDIR%%/lib/python/ZEO/tests/testZEO2.py
+%%ZOPEBASEDIR%%/lib/python/ZEO/tests/testZEO2.pyc
 %%ZOPEBASEDIR%%/lib/python/ZEO/tests/testZEOOptions.py
 %%ZOPEBASEDIR%%/lib/python/ZEO/tests/testZEOOptions.pyc
 %%ZOPEBASEDIR%%/lib/python/ZEO/tests/test_cache.py
@@ -2871,10 +2876,6 @@
 %%ZOPEBASEDIR%%/lib/python/ZEO/tests/zeo-fan-out.test
 %%ZOPEBASEDIR%%/lib/python/ZEO/tests/zeoserver.py
 %%ZOPEBASEDIR%%/lib/python/ZEO/tests/zeoserver.pyc
-%%ZOPEBASEDIR%%/lib/python/ZEO/tests/testZEO2.py
-%%ZOPEBASEDIR%%/lib/python/ZEO/tests/testZEO2.pyc
-%%ZOPEBASEDIR%%/lib/python/ZEO/tests/servertesting.py
-%%ZOPEBASEDIR%%/lib/python/ZEO/tests/servertesting.pyc
 %%ZOPEBASEDIR%%/lib/python/ZEO/util.py
 %%ZOPEBASEDIR%%/lib/python/ZEO/util.pyc
 %%ZOPEBASEDIR%%/lib/python/ZEO/version.txt
@@ -3013,13 +3014,13 @@
 %%ZOPEBASEDIR%%/lib/python/ZODB/scripts/space.pyc
 %%ZOPEBASEDIR%%/lib/python/ZODB/scripts/stats.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/scripts/stats.pyc
+%%ZOPEBASEDIR%%/lib/python/ZODB/scripts/strip_versions.py
+%%ZOPEBASEDIR%%/lib/python/ZODB/scripts/strip_versions.pyc
+%%ZOPEBASEDIR%%/lib/python/ZODB/scripts/strip_versions.test
 %%ZOPEBASEDIR%%/lib/python/ZODB/scripts/tests.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/scripts/tests.pyc
 %%ZOPEBASEDIR%%/lib/python/ZODB/scripts/zodbload.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/scripts/zodbload.pyc
-%%ZOPEBASEDIR%%/lib/python/ZODB/scripts/strip_versions.py
-%%ZOPEBASEDIR%%/lib/python/ZODB/scripts/strip_versions.pyc
-%%ZOPEBASEDIR%%/lib/python/ZODB/scripts/strip_versions.test
 %%ZOPEBASEDIR%%/lib/python/ZODB/serialize.py
 %%ZOPEBASEDIR%%/lib/python/ZODB/serialize.pyc
 %%ZOPEBASEDIR%%/lib/python/ZODB/storage.xml
@@ -3936,6 +3937,7 @@
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Manaus
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Marigot
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Martinique
+%%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Matamoros
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Mazatlan
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Mendoza
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Menominee
@@ -3954,6 +3956,7 @@
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Noronha
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/North_Dakota/Center
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/North_Dakota/New_Salem
+%%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Ojinaga
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Panama
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Pangnirtung
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Paramaribo
@@ -3970,6 +3973,7 @@
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Resolute
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Rio_Branco
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Rosario
+%%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Santa_Isabel
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Santarem
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Santiago
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/America/Santo_Domingo
@@ -4046,6 +4050,7 @@
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Kamchatka
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Karachi
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Kashgar
+%%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Kathmandu
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Katmandu
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Kolkata
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Krasnoyarsk
@@ -4059,6 +4064,7 @@
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Manila
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Muscat
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Nicosia
+%%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Novokuznetsk
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Novosibirsk
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Omsk
 %%ZOPEBASEDIR%%/lib/python/pytz/zoneinfo/Asia/Oral
@@ -8889,6 +8895,7 @@
 %%ZOPEBASEDIR%%/skel/lib/python/README.txt.in
 %%ZOPEBASEDIR%%/skel/log/README.txt
 %%ZOPEBASEDIR%%/skel/var/README.txt
+@exec /bin/mkdir -p %D/%%ZOPEBASEDIR%%/skel/etc/package-includes
 @dirrm %%ZOPEBASEDIR%%/skel/var
 @dirrm %%ZOPEBASEDIR%%/skel/log
 @dirrm %%ZOPEBASEDIR%%/skel/lib/python
@@ -9581,9 +9588,9 @@
 @dirrm %%ZOPEBASEDIR%%/lib/python/AccessControl/securitySuite
 @dirrm %%ZOPEBASEDIR%%/lib/python/AccessControl/dtml
 @dirrm %%ZOPEBASEDIR%%/lib/python/AccessControl
+@dirrmtry %%ZOPEBASEDIR%%/lib/python
+@dirrmtry %%ZOPEBASEDIR%%/lib
 @dirrm %%ZOPEBASEDIR%%/doc
 @dirrm %%ZOPEBASEDIR%%/bin
 @dirrmtry %%ZOPEBASEDIR%%/Products
-@dirrmtry %%ZOPEBASEDIR%%/lib/python
-@dirrmtry %%ZOPEBASEDIR%%/lib
 @dirrmtry %%ZOPEBASEDIR%%

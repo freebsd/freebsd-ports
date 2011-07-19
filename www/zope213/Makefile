@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	zope211
-PORTVERSION=	2.11.6
+PORTVERSION=	2.11.8
 CATEGORIES=	www python zope
-MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
+MASTER_SITES=	http://old.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-final
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	zope
@@ -51,7 +51,7 @@ ISBATCH=	""
 .endif
 
 post-patch:
-	@${FIND} ${WRKSRC} -name '*.orig' -print0 | ${XARGS} -0 -- ${RM}
+	@${FIND} ${WRKSRC} -name '*.orig' -delete
 	@${REINPLACE_CMD} \
 		-e 's,^\(ACCEPTABLE="\).*"$$,\1${PYTHON_PORTVERSION}",g' \
 		-e 's,^\(TARGET="\).*"$$,\1${PYTHON_PORTVERSION}",g' \
@@ -64,9 +64,6 @@ post-configure:
 		-e 's,^.*LN.*PYTHON.*$$,,g' \
 		${WRKSRC}/${MAKEFILE}
 
-post-build:
-	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/
-
 post-install:
 	${MV} ${ZOPEBASEDIR}/skel/etc/zope.conf.in \
 		${ZOPEBASEDIR}/skel/etc/zope.conf.sample.in
@@ -74,6 +71,8 @@ post-install:
 	${MKDIR} ${ZOPEBASEDIR}/Products
 	${INSTALL_DATA} ${FILESDIR}/Products_00readme-freebsd.txt \
 		${ZOPEBASEDIR}/Products/00readme-freebsd.txt
+
+	-@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${ZOPEBASEDIR}/
 
 .for d in lib bin doc skel Products
 	${FIND} ${ZOPEBASEDIR}/$d -type f -print0 | ${XARGS} -0 -- ${CHMOD} a-w+r
