@@ -16,4 +16,4 @@ local socket address.
 ipcperl is an example of an ipchandle server. It invokes a perl
 subroutine for each request.
 
-WWW: http://www.superscript.com/ucspi-ipc/intro.html
+WWW: http://www.superscript.com/ucspi-ipc/

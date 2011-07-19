@@ -13,10 +13,6 @@ MASTER_SITES=	http://www.superscript.com/ucspi-ipc/
 MAINTAINER=	lx@redundancy.redundancy.org
 COMMENT=	UCSPI tools for building local-domain client-server applications
 
-BROKEN=		mastersite disappeared
-DEPRECATED=	"${BROKEN}"
-EXPIRATION_DATE=	2011-06-29
- 
 USE_PERL5=	yes
 
 DISABLE_SIZE=	yes
