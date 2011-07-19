@@ -10,6 +10,4 @@ packaging system.
 Another purpose of the script "load-octave-pkg" is to attempt to correct any
 errors created by the octave packaging system.
 
-Also, deinstalling this port will completely clean the octave packages.
-
 WWW: http://octave.sourceforge.net/
