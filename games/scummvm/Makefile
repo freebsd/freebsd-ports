@@ -101,6 +101,10 @@ CONFIGURE_ARGS+=--disable-fluidsynth
 CONFIGURE_ARGS+=--disable-mt32emu
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64: invokes i386 asm
+.endif
+
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/scummvm ${PREFIX}/bin
 	@${INSTALL_MAN} ${WRKSRC}/dists/scummvm.6 ${PREFIX}/man/man6
