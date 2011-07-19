@@ -287,9 +287,6 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/remindercontroller.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/remindercontroller.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/remindercontroller.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/render.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/render.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/gui/render.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/splash.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/splash.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/gui/splash.pyo
@@ -680,6 +677,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/xsm.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/xsm.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/xsm.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/render.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/render.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/render.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/syncml/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/syncml/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/syncml/__init__.pyo
@@ -956,6 +956,12 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedulerPrint.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedulerPrint.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler/wxSchedulerPrint.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/tools/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/tools/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/tools/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/tools/anonymize.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/tools/anonymize.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/tools/anonymize.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/__init__.pyo
@@ -1051,6 +1057,7 @@ share/pixmaps/taskcoach.png
 @dirrmtry share/applications
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/tools
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/wxScheduler
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/timeline
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/thirdparty/squaremap
