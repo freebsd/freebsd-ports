@@ -1924,7 +1924,6 @@ net-p2p/linux-edonkey-tool-recovermet||2011-05-02|Has expired: Upstream disapear
 net-mgmt/junipoll||2011-05-02|Removed, depends on expired net-mgmt/p5-Altoids
 net-mgmt/annextools||2011-05-02|Has expired: Upstream disapear and distfile is no more available
 net-mgmt/asused||2011-05-02|Has expired: Upstream disapear and distfile is no more available
-net-mgmt/grepip||2011-05-02|Has expired: Upstream disapear and distfile is no more available
 net-mgmt/ipsectrace||2011-05-02|Has expired: Upstream disapear and distfile is no more available
 net-mgmt/knowlan||2011-05-02|Has expired: Upstream disapear and distfile is no more available
 net-mgmt/p5-Altoids||2011-05-02|Has expired: Upstream disapear and distfile is no more available

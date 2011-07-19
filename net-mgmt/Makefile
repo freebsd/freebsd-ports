@@ -78,6 +78,7 @@
     SUBDIR += glpi-plugins-tracker-server
     SUBDIR += gps
     SUBDIR += grepcidr
+    SUBDIR += grepip
     SUBDIR += gsnmp
     SUBDIR += hastmon
     SUBDIR += horde-nic
