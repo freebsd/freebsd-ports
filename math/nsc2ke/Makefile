@@ -21,6 +21,8 @@ COMMENT=	A Navier-Stokes solver
 
 RESTRICTED=	No resale, contact author for commercial usage
 
+BROKEN=		fails to fetch
+
 USE_FORTRAN=	yes
 FFLAGS+=	-O2
 
