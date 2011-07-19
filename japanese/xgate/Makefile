@@ -19,6 +19,8 @@ COMMENT=	xGate webmail system implemented by Servlet over IMAP4/POP3
 RUN_DEPENDS=	tomcat41ctl:${PORTSDIR}/www/tomcat41 \
 		${JAVA_HOME}/jre/lib/security/.jce_policy14:${PORTSDIR}/security/jce_policy14
 
+BROKEN=		fails to fetch
+
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.4+
@@ -38,7 +40,7 @@ PORTDOCS=	AdminGuide_V3.5.pdf		\
 		UserGuide_V3.5.pdf		\
 		xGate32to35migration.pdf
 
-RESTRICTED=	"Commercial license"
+RESTRICTED=	Commercial license
 
 .include <bsd.port.pre.mk>
 
