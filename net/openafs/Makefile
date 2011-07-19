@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	openafs
-DISTVERSION=	1.6.0pre6
-PORTREVISION=	2
+DISTVERSION=	1.6.0pre7
 CATEGORIES=	net kld
 MASTER_SITES=	http://dl.central.org/dl/openafs/candidate/${DISTVERSION}/:openafs \
 		http://dl.openafs.org/dl/openafs/candidate/${DISTVERSION}/:openafs \
@@ -22,6 +21,11 @@ EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}-src.tar.bz2 \
 
 MAINTAINER=	kaduk@mit.edu
 COMMENT=	AFS implementation from openafs.org
+
+LICENSE=	IPLv1
+LICENSE_NAME=	IBM Public License Version 1.0
+LICENSE_FILE=	${WRKSRC}/doc/LICENSE
+LICENSE_PERMS=	auto-accept
 
 OPTIONS=	FUSE "Build afsd.fuse (enable fuse support)" off
 
@@ -85,9 +89,10 @@ CONFLICTS=	coda-server-6.[0-9]* heimdal-[0-9]*
 
 .include "Makefile.man"
 
+# Do not show users the reminder about cleandepend and depend
 post-extract:
 	${MKDIR} ${WRKDIR}/conf
-	cd ${KERNCONFDIR} && /usr/sbin/config -d ${WRKDIR}/conf ${_KERNCONF}
+	cd ${KERNCONFDIR} && /usr/sbin/config -d ${WRKDIR}/conf ${_KERNCONF} >/dev/null
 
 create-sample-files:
 	@${ECHO_CMD} openafs.org > ${WRKDIR}/ThisCell
