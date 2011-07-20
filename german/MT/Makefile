@@ -5,14 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	MT
 CATEGORIES=	german www
-DISTNAME=	MTOS-${PORTVERSION}-de
+DISTNAME=	MTOS-${PORTVERSION}-${PKGNAMEPREFIX:S,-,,}
 
-COMMENT=	german localization of the MovableType publishing system
+COMMENT=	German localization of the MovableType publishing system
 
-MASTERDIR=	${.CURDIR}/../../www/${PORTNAME}
-
+MASTERDIR=	${.CURDIR}/../../www/MT
 CONFLICTS=	MT-[2-5].* fr-MT-[2-5].* ja-MT-[2-5].* ru-MT-[2-5].*
 
 .include "${MASTERDIR}/Makefile"

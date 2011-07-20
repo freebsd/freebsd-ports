@@ -5,17 +5,15 @@
 # $FreeBSD$
 #
 
-PORTNAME=	MT
 CATEGORIES=	russian www
 MASTER_SITES=	http://movable-type.ru/downloads/
-DISTNAME=	MTOS-${PORTVERSION}-ru
+DISTNAME=	MTOS-${PORTVERSION}-${PKGNAMEPREFIX:S,-,,}
 
 COMMENT=	Russian localization of the MovableType publishing system
 
 PROJECTHOST=	movabletype
-MASTERDIR=	${.CURDIR}/../../www/${PORTNAME}
-
-MT_LANG=	ru
+MASTERDIR=	${.CURDIR}/../../www/MT
+MT_LANG=	${PKGNAMEPREFIX:S,-,,}
 CONFLICTS=	MT-[2-5].* de-MT-[2-5].* fr-MT-[2-5].* ja-MT-[2-5].*
 
 MT_DOCS_URL=	https://github.com/saahov/movabletype/wiki

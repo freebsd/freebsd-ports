@@ -5,15 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	MT
 CATEGORIES=	japanese www
-DISTNAME=	MTOS-${PORTVERSION}-ja
+DISTNAME=	MTOS-${PORTVERSION}-${PKGNAMEPREFIX:S,-,,}
 
 COMMENT=	Japanese localization of the MovableType publishing system
 
-MASTERDIR=	${.CURDIR}/../../www/${PORTNAME}
-
-MT_LANG=	ja
+MASTERDIR=	${.CURDIR}/../../www/MT
+MT_LANG=	${PKGNAMEPREFIX:S,-,,}
 CONFLICTS=	MT-[2-5].* de-MT-[2-5].* fr-MT-[2-5].* ru-MT-[2-5].*
 
 MT_DOCS_URL=	http://movabletype.jp/documentation/

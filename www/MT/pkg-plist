@@ -495,8 +495,6 @@
 %%CGIDIR%%/plugins/Markdown/Readme.text
 %%CGIDIR%%/plugins/Markdown/Markdown.pl
 %%CGIDIR%%/plugins/Markdown/License.text
-%%LANG_RU%%%%CGIDIR%%/mt-add-notify.cgi
-%%LANG_RU%%%%CGIDIR%%/lib/MT/App/NotifyList.pm
 %%LANG_RU%%%%CGIDIR%%/plugins/YandexOpenId/tmpl/auth_yandex.tmpl
 %%LANG_RU%%%%CGIDIR%%/plugins/YandexOpenId/lib/MT/Auth/Yandex.pm
 %%LANG_RU%%%%CGIDIR%%/plugins/YandexOpenId/config.yaml
@@ -2391,8 +2389,6 @@
 %%CGIDIR%%/extlib/XML/Atom/Client.pm
 %%CGIDIR%%/extlib/XML/Atom/Category.pm
 %%CGIDIR%%/extlib/XML/Atom/Base.pm
-%%CGIDIR%%/extlib/XML/Atom/Author.pm
-%%CGIDIR%%/extlib/XML/Atom/API.pm
 %%CGIDIR%%/extlib/XML/Atom.pm
 %%CGIDIR%%/extlib/WWW/RobotRules/AnyDBM_File.pm
 %%CGIDIR%%/extlib/WWW/RobotRules.pm

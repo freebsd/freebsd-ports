@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	MT
-PORTVERSION?=	5.11
+PORTVERSION=	5.12
 CATEGORIES?=	www
 MASTER_SITES?=	http://movabletype.org/downloads/stable/
 DISTNAME?=	MTOS-${PORTVERSION}-en
 
-MAINTAINER?=	takefu@airport.fm
+MAINTAINER=	takefu@airport.fm
 COMMENT?=	A web-based personal publishing system for weblogs
 
 CONFLICTS?=	de-MT-[2-5].* fr-MT-[2-5].* ja-MT-[2-5].* ru-MT-[2-5].*
