@@ -22,6 +22,7 @@
     SUBDIR += gimp-help
     SUBDIR += homard
     SUBDIR += hunspell
+    SUBDIR += hyphen
     SUBDIR += ispell
     SUBDIR += jdictionary-fre-hun
     SUBDIR += kde3-i18n
