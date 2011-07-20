@@ -1,0 +1,12 @@
+--- Makefile.orig	2011-07-20 11:12:34.000000000 +0100
++++ Makefile	2011-07-20 11:14:15.000000000 +0100
+@@ -7,7 +7,8 @@
+ RUN_PREFIX?=$(PREFIX)
+ 
+ # use GTK3-based webkit when it is available
+-USE_GTK3 = $(shell pkg-config --exists gtk+-3.0 webkitgtk-3.0 && echo 1)
++# USE_GTK3 = $(shell pkg-config --exists gtk+-3.0 webkitgtk-3.0 && echo 1)
++USE_GTK3 = 0
+ 
+ ifeq ($(USE_GTK3),1)
+ 	REQ_PKGS += gtk+-3.0 webkitgtk-3.0
