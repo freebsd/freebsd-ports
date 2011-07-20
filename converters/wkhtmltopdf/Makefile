@@ -57,6 +57,10 @@ MAKE_ARGS+=	INSTALL_ROOT="${PREFIX}"
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} < 700000
+BROKEN=		Does not build below FreeBSD 7.x
+.endif
+
 .if defined(WITH_BUNDLED_LIBS)
 CONFIGURE_ARGS+=	-qt-libtiff -qt-libpng -qt-libmng -qt-libjpeg
 .else
