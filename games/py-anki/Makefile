@@ -5,8 +5,6 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	1
-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Spaced-repetition memory training library
 
