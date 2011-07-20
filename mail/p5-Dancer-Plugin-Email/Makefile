@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Dancer-Plugin-Email
-PORTVERSION=	0.1203
+PORTVERSION=	0.1300
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:IRONCAMEL
@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	magik@roorback.net
 COMMENT=	Simple email handling for Dancer applications
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Dancer>=1.2:${PORTSDIR}/www/p5-Dancer \
 		p5-Authen-SASL>=0:${PORTSDIR}/security/p5-Authen-SASL \
@@ -27,6 +30,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Dancer::Plugin::Email.3
+MAN3=	Dancer::Plugin::README.3 \
+	Dancer::Plugin::Email.3
 
 .include <bsd.port.mk>
