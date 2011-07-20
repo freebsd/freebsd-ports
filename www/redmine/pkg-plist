@@ -1308,6 +1308,7 @@
 %%WWWDIR%%/test/unit/helpers/search_helper_test.rb
 %%WWWDIR%%/test/unit/helpers/sort_helper_test.rb
 %%WWWDIR%%/test/unit/helpers/timelog_helper_test.rb
+%%WWWDIR%%/test/unit/initializers/patches_test.rb
 %%WWWDIR%%/test/unit/issue_category_test.rb
 %%WWWDIR%%/test/unit/issue_nested_set_test.rb
 %%WWWDIR%%/test/unit/issue_priority_test.rb
@@ -1380,6 +1381,7 @@
 %%WWWDIR%%/test/unit/wiki_page_test.rb
 %%WWWDIR%%/test/unit/wiki_redirect_test.rb
 %%WWWDIR%%/test/unit/wiki_test.rb
+%%WWWDIR%%/test/unit/workflow_test.rb
 %%WWWDIR%%/tmp/test/empty
 %%WWWDIR%%/vendor/gems/coderay-0.9.7/.specification
 %%WWWDIR%%/vendor/gems/coderay-0.9.7/FOLDERS
@@ -1731,6 +1733,66 @@
 %%WWWDIR%%/vendor/plugins/rfpdf/lib/core/rfpdf.rb
 %%WWWDIR%%/vendor/plugins/rfpdf/lib/core/rmagick.rb
 %%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/.noencode
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSans-Bold.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSans-Bold.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSans-BoldOblique.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSans-BoldOblique.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSans-ExtraLight.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSans-ExtraLight.rb
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSans-ExtraLight.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSans-Oblique.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSans-Oblique.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSans.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSans.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansCondensed-Bold.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansCondensed-Bold.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansCondensed-BoldOblique.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansCondensed-BoldOblique.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansCondensed-Oblique.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansCondensed-Oblique.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansCondensed.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansCondensed.rb
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansCondensed.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansCondensedb.rb
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansCondensedbi.rb
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansCondensedi.rb
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansMono-Bold.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansMono-Bold.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansMono-BoldOblique.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansMono-BoldOblique.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansMono-Oblique.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansMono-Oblique.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansMono.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansMono.rb
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansMono.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansMonob.rb
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansMonobi.rb
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansMonoi.rb
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSansbi.rb
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerif-Bold.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerif-Bold.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerif-BoldOblique.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerif-BoldOblique.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerif-Oblique.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerif-Oblique.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerif.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerif.rb
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerif.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerifCondensed-Bold.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerifCondensed-Bold.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerifCondensed-BoldOblique.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerifCondensed-BoldOblique.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerifCondensed-Oblique.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerifCondensed-Oblique.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerifCondensed.ctg.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerifCondensed.rb
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerifCondensed.z
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerifCondensedb.rb
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerifCondensedbi.rb
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerifCondensedi.rb
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerifb.rb
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerifbi.rb
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/DejaVuSerifi.rb
 %%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/FreeMono.ctg.z
 %%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/FreeMono.z
 %%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/FreeMonoBold.ctg.z
@@ -1757,6 +1819,9 @@
 %%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/dejavu-ttf-2.15/langcover.txt
 %%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/dejavu-ttf-2.15/status.txt
 %%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/dejavu-ttf-2.15/unicover.txt
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/dejavusans.rb
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/dejavusansb.rb
+%%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/dejavusansi.rb
 %%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/freefont/AUTHORS
 %%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/freefont/CREDITS
 %%WWWDIR%%/vendor/plugins/rfpdf/lib/fonts/freefont/ChangeLog
@@ -3954,6 +4019,7 @@
 @dirrm %%WWWDIR%%/test/unit/lib/redmine/export
 @dirrm %%WWWDIR%%/test/unit/lib/redmine
 @dirrm %%WWWDIR%%/test/unit/lib
+@dirrm %%WWWDIR%%/test/unit/initializers
 @dirrm %%WWWDIR%%/test/unit/helpers
 @dirrm %%WWWDIR%%/test/unit
 @dirrm %%WWWDIR%%/test/mocks/test
