@@ -1243,6 +1243,7 @@
     SUBDIR += sphinxsearch
     SUBDIR += sphinxsearch-devel
     SUBDIR += sr-aspell
+    SUBDIR += sr-hunspell
     SUBDIR += srilm
     SUBDIR += ss-hunspell
     SUBDIR += ssddiff
