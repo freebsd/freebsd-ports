@@ -1279,6 +1279,7 @@
     SUBDIR += texi2db
     SUBDIR += texi2html
     SUBDIR += textogif
+    SUBDIR += ti-hunspell
     SUBDIR += tidyp
     SUBDIR += tinyxml
     SUBDIR += tk-aspell
