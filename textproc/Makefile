@@ -1283,6 +1283,7 @@
     SUBDIR += tidyp
     SUBDIR += tinyxml
     SUBDIR += tk-aspell
+    SUBDIR += tk-hunspell
     SUBDIR += tkdiff
     SUBDIR += tkxmlive
     SUBDIR += tl-aspell
