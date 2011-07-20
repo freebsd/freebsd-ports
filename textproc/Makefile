@@ -1384,6 +1384,7 @@
     SUBDIR += yaml-mode.el
     SUBDIR += yaml-mode.el-emacs21
     SUBDIR += yi-aspell
+    SUBDIR += yi-hunspell
     SUBDIR += yodl
     SUBDIR += yould
     SUBDIR += zu-aspell
