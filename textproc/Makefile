@@ -1284,6 +1284,7 @@
     SUBDIR += tkxmlive
     SUBDIR += tl-aspell
     SUBDIR += tn-aspell
+    SUBDIR += tn-hunspell
     SUBDIR += tnef2txt
     SUBDIR += tokyodystopia
     SUBDIR += tr-aspell
