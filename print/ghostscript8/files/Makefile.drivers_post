@@ -119,7 +119,7 @@ CONFIGURE_ARGS+=--with-x \
 		--x-libraries=${X11BASE}/lib
 CONFLICTS_INSTALL+=	ghostscript8-nox11-[0-9]*
 .if defined(WITH_GTK)
-USE_GNOME=	atk gdkpixbuf glib20 gtk20
+USE_GNOME=	atk gdkpixbuf2 glib20 gtk20
 CONFIGURE_ARGS+=--enable-gtk
 .else
 CONFIGURE_ARGS+=--disable-gtk
