@@ -1388,5 +1388,6 @@
     SUBDIR += yodl
     SUBDIR += yould
     SUBDIR += zu-aspell
+    SUBDIR += zu-hunspell
 
 .include <bsd.port.subdir.mk>
