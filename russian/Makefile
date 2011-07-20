@@ -17,6 +17,7 @@
     SUBDIR += fortuneru
     SUBDIR += gd
     SUBDIR += gimp-help
+    SUBDIR += hunspell
     SUBDIR += ircd-hybrid
     SUBDIR += kde3-i18n
     SUBDIR += kde4-l10n
