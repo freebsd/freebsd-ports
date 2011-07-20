@@ -14,9 +14,11 @@ MASTER_SITES=	SF/${PORTNAME}/Lincity%20Development%20Source/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Rich city simulation game for X
 
-USE_CSTD=	c89
-
 LIB_DEPENDS=	png:${PORTSDIR}/graphics/png
+
+.if ${CC} == "clang"
+USE_CSTD=	c89
+.endif
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
