@@ -1,8 +1,11 @@
 bin/cego
 bin/cgadm
+bin/cgbackup
 bin/cgblow
 bin/cgclt
 bin/cglog
+bin/cgmkdb
+bin/cgrecover
 include/cego/CegoAdmNet.h
 include/cego/CegoBlob.h
 include/cego/CegoCheckObject.h
