@@ -1291,6 +1291,7 @@
     SUBDIR += tralics
     SUBDIR += trang
     SUBDIR += translate-toolkit
+    SUBDIR += ts-hunspell
     SUBDIR += tth
     SUBDIR += txt2html
     SUBDIR += txt2man
