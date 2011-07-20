@@ -1235,6 +1235,7 @@
     SUBDIR += slides
     SUBDIR += sml-fxp
     SUBDIR += smu
+    SUBDIR += so-hunspell
     SUBDIR += soothsayer
     SUBDIR += soprano
     SUBDIR += source-highlight
