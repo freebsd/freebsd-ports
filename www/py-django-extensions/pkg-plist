@@ -64,22 +64,6 @@
 %%PYTHON_SITELIBDIR%%/django_extensions/jobs/yearly/__init__.py
 %%PYTHON_SITELIBDIR%%/django_extensions/jobs/yearly/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django_extensions/jobs/yearly/__init__.pyo
-%%PYTHON_SITELIBDIR%%/django_extensions/locale/zh/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/django_extensions/locale/tr/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/django_extensions/locale/sk/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/django_extensions/locale/ru/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/django_extensions/locale/ro/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/django_extensions/locale/ja/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/django_extensions/locale/it/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/django_extensions/locale/hu/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/django_extensions/locale/fr/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/django_extensions/locale/et/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/django_extensions/locale/es/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/django_extensions/locale/en/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/django_extensions/locale/el/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/django_extensions/locale/de/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/django_extensions/locale/da/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/django_extensions/locale/cs/LC_MESSAGES/django.po
 %%PYTHON_SITELIBDIR%%/django_extensions/management/__init__.py
 %%PYTHON_SITELIBDIR%%/django_extensions/management/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django_extensions/management/__init__.pyo
@@ -125,6 +109,9 @@
 %%PYTHON_SITELIBDIR%%/django_extensions/management/commands/export_emails.py
 %%PYTHON_SITELIBDIR%%/django_extensions/management/commands/export_emails.pyc
 %%PYTHON_SITELIBDIR%%/django_extensions/management/commands/export_emails.pyo
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/find_template.py
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/find_template.pyc
+%%PYTHON_SITELIBDIR%%/django_extensions/management/commands/find_template.pyo
 %%PYTHON_SITELIBDIR%%/django_extensions/management/commands/generate_secret_key.py
 %%PYTHON_SITELIBDIR%%/django_extensions/management/commands/generate_secret_key.pyc
 %%PYTHON_SITELIBDIR%%/django_extensions/management/commands/generate_secret_key.pyo
@@ -244,39 +231,6 @@
 @dirrm %%PYTHON_SITELIBDIR%%/django_extensions/media
 @dirrm %%PYTHON_SITELIBDIR%%/django_extensions/management/commands
 @dirrm %%PYTHON_SITELIBDIR%%/django_extensions/management
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/zh/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/zh
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/tr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/tr
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/sk/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/sk
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/ru/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/ru
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/ro/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/ro
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/ja/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/ja
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/it/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/it
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/hu/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/hu
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/fr/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/fr
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/et/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/et
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/es/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/es
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/en/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/en
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/el/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/el
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/de/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/de
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/da/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/da
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/cs/LC_MESSAGES
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale/cs
-@dirrm %%PYTHON_SITELIBDIR%%/django_extensions/locale
 @dirrm %%PYTHON_SITELIBDIR%%/django_extensions/jobs/yearly
 @dirrm %%PYTHON_SITELIBDIR%%/django_extensions/jobs/weekly
 @dirrm %%PYTHON_SITELIBDIR%%/django_extensions/jobs/monthly
