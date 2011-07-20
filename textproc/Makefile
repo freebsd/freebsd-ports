@@ -1244,6 +1244,7 @@
     SUBDIR += sphinxsearch-devel
     SUBDIR += sr-aspell
     SUBDIR += srilm
+    SUBDIR += ss-hunspell
     SUBDIR += ssddiff
     SUBDIR += stardict-BritannicaConcise
     SUBDIR += stardict-MerrianWebster
