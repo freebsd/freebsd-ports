@@ -16,6 +16,7 @@
 %%DATADIR%%/Apache/Ocsinventory/Interface/Updates.pm
 %%DATADIR%%/Apache/Ocsinventory/Map.pm
 %%DATADIR%%/Apache/Ocsinventory/SOAP.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Datafilter.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Download.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Download/Inventory.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Example.pm
@@ -23,6 +24,9 @@
 %%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Ipdiscover.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Notify.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Registry.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Snmp.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Snmp/Data.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Snmp/Inventory.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Update.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/Communication.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/Communication/Session.pm
@@ -40,292 +44,805 @@
 %%DATADIR%%/Apache/Ocsinventory/Server/Inventory/Update/Hardware.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/Modperl1.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/Modperl2.pm
+%%DATADIR%%/Apache/Ocsinventory/Server/Support.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/System.pm
 %%DATADIR%%/Apache/Ocsinventory/Server/System/Config.pm
-%%DATADIR%%/binutils/soap-client.pl
-%%DATADIR%%/binutils/soap-client.README
-%%DATADIR%%/binutils/ipdiscover-util.pl
-%%DATADIR%%/binutils/ipdiscover-util.README
-%%DATADIR%%/binutils/ocsinventory-injector.pl
-%%DATADIR%%/binutils/ocsinventory-injector.README
-%%DATADIR%%/binutils/ocsinventory-log.pl
-%%DATADIR%%/binutils/ocsinventory-log.README
-%%DATADIR%%/binutils/ocs-errors
+%%DATADIR%%/Apache/Ocsinventory/Server/Useragent.pm
 %%DATADIR%%/binutils/create-release-tarball.sh
+%%DATADIR%%/binutils/ipdiscover-util.README
+%%DATADIR%%/binutils/ipdiscover-util.pl
+%%DATADIR%%/binutils/ocs-errors
+%%DATADIR%%/binutils/ocsinventory-injector.README
+%%DATADIR%%/binutils/ocsinventory-injector.pl
+%%DATADIR%%/binutils/ocsinventory-log.README
+%%DATADIR%%/binutils/ocsinventory-log.pl
+%%DATADIR%%/binutils/soap-client.README
+%%DATADIR%%/binutils/soap-client.pl
 %%DATADIR%%/dtd/Interface/get_computers_V1-request.dtd
+%%DATADIR%%/dtd/download_request.dtd
 %%DATADIR%%/dtd/file_request.dtd
 %%DATADIR%%/dtd/inventory_reply.dtd
 %%DATADIR%%/dtd/inventory_request.dtd
 %%DATADIR%%/dtd/prolog_reply.dtd
 %%DATADIR%%/dtd/prolog_request.dtd
+%%DATADIR%%/dtd/snmp_request.dtd
 %%DATADIR%%/dtd/update_reply.dtd
 %%DATADIR%%/dtd/update_request.dtd
+%%DATADIR%%/etc/logrotate.d/ocsinventory-server
 %%DATADIR%%/etc/ocsinventory/ocsinventory-reports.conf
 %%DATADIR%%/etc/ocsinventory/ocsinventory-server.conf
-%%DATADIR%%/etc/logrotate.d/ocsinventory-server
-%%DATADIR%%/ocsreports/admin_attrib.php
-%%DATADIR%%/ocsreports/admin_language.php
-%%DATADIR%%/ocsreports/ajout_maj.php
-%%DATADIR%%/ocsreports/all_soft.php
-%%DATADIR%%/ocsreports/blacklist.php
-%%DATADIR%%/ocsreports/confiGale.php
-%%DATADIR%%/ocsreports/console.php
+%%DATADIR%%/etc/ocsinventory/snmp_com.txt
+%%DATADIR%%/ocsreports/Changes
+%%DATADIR%%/ocsreports/backend/AUTH/auth.php
+%%DATADIR%%/ocsreports/backend/AUTH/methode/always_ok.php
+%%DATADIR%%/ocsreports/backend/AUTH/methode/cas.php
+%%DATADIR%%/ocsreports/backend/AUTH/methode/ldap.php
+%%DATADIR%%/ocsreports/backend/AUTH/methode/local.php
+%%DATADIR%%/ocsreports/backend/identity/identity.php
+%%DATADIR%%/ocsreports/backend/identity/methode/ldap.php
+%%DATADIR%%/ocsreports/backend/identity/methode/local.php
+%%DATADIR%%/ocsreports/backend/ipdiscover/ipdiscover.php
+%%DATADIR%%/ocsreports/backend/ipdiscover/methode/local.php
+%%DATADIR%%/ocsreports/backend/require/cas.config.php
+%%DATADIR%%/ocsreports/backend/require/connexion.php
+%%DATADIR%%/ocsreports/backend/require/lib/phpcas/CAS.php
+%%DATADIR%%/ocsreports/backend/require/lib/phpcas/COPYRIGHT
+%%DATADIR%%/ocsreports/backend/require/lib/phpcas/PGTStorage/pgt-db.php
+%%DATADIR%%/ocsreports/backend/require/lib/phpcas/PGTStorage/pgt-file.php
+%%DATADIR%%/ocsreports/backend/require/lib/phpcas/PGTStorage/pgt-main.php
+%%DATADIR%%/ocsreports/backend/require/lib/phpcas/README
+%%DATADIR%%/ocsreports/backend/require/lib/phpcas/client.php
+%%DATADIR%%/ocsreports/backend/require/lib/phpcas/domxml-php4-php5.php
+%%DATADIR%%/ocsreports/backend/require/lib/phpcas/languages/english.php
+%%DATADIR%%/ocsreports/backend/require/lib/phpcas/languages/french.php
+%%DATADIR%%/ocsreports/backend/require/lib/phpcas/languages/german.php
+%%DATADIR%%/ocsreports/backend/require/lib/phpcas/languages/greek.php
+%%DATADIR%%/ocsreports/backend/require/lib/phpcas/languages/japanese.php
+%%DATADIR%%/ocsreports/backend/require/lib/phpcas/languages/languages.php
 %%DATADIR%%/ocsreports/css/boxsizing.htc
+%%DATADIR%%/ocsreports/css/graphic.css
 %%DATADIR%%/ocsreports/css/ocsreports.css
 %%DATADIR%%/ocsreports/css/onglets.css
 %%DATADIR%%/ocsreports/css/winclassic.css
-%%DATADIR%%/ocsreports/cvs.php
 %%DATADIR%%/ocsreports/dbconfig.inc.php
-%%DATADIR%%/ocsreports/dico.php
-%%DATADIR%%/ocsreports/donAdmini.php
-%%DATADIR%%/ocsreports/donnees.php
-%%DATADIR%%/ocsreports/doublons.php
-%%DATADIR%%/ocsreports/download.php
 %%DATADIR%%/ocsreports/favicon.ico
-%%DATADIR%%/ocsreports/fichierConf.class.php
 %%DATADIR%%/ocsreports/files/ocsbase.sql
+%%DATADIR%%/ocsreports/files/ocsbase_new.sql
 %%DATADIR%%/ocsreports/files/oui.txt
-%%DATADIR%%/ocsreports/footer.php
-%%DATADIR%%/ocsreports/group_show.php
-%%DATADIR%%/ocsreports/groups.php
-%%DATADIR%%/ocsreports/header.php
+%%DATADIR%%/ocsreports/fonts/verdana.ttf
 %%DATADIR%%/ocsreports/image/Gest_admin1.png
 %%DATADIR%%/ocsreports/image/Gest_admin2.png
 %%DATADIR%%/ocsreports/image/activer.png
-%%DATADIR%%/ocsreports/image/adm.png
-%%DATADIR%%/ocsreports/image/adm_a.png
-%%DATADIR%%/ocsreports/image/administration.png
-%%DATADIR%%/ocsreports/image/administration_a.png
-%%DATADIR%%/ocsreports/image/agent.png
-%%DATADIR%%/ocsreports/image/agent_a.png
-%%DATADIR%%/ocsreports/image/aide.png
-%%DATADIR%%/ocsreports/image/aide_a.png
-%%DATADIR%%/ocsreports/image/archive.png
+%%DATADIR%%/ocsreports/image/aff_all.png
 %%DATADIR%%/ocsreports/image/archives.png
 %%DATADIR%%/ocsreports/image/banner-ocs.png
-%%DATADIR%%/ocsreports/image/bios.png
-%%DATADIR%%/ocsreports/image/bios_a.png
-%%DATADIR%%/ocsreports/image/bios_d.png
 %%DATADIR%%/ocsreports/image/blanc.png
+%%DATADIR%%/ocsreports/image/cadena_ferme.png
+%%DATADIR%%/ocsreports/image/cadena_op.png
+%%DATADIR%%/ocsreports/image/cadena_ouvert.png
 %%DATADIR%%/ocsreports/image/cal.gif
-%%DATADIR%%/ocsreports/image/codes.png
-%%DATADIR%%/ocsreports/image/codes_a.png
 %%DATADIR%%/ocsreports/image/compress.png
-%%DATADIR%%/ocsreports/image/configuration.png
-%%DATADIR%%/ocsreports/image/configuration_a.png
-%%DATADIR%%/ocsreports/image/connexion.png
-%%DATADIR%%/ocsreports/image/controleur.png
-%%DATADIR%%/ocsreports/image/controleur_a.png
+%%DATADIR%%/ocsreports/image/config_search.png
 %%DATADIR%%/ocsreports/image/controleur_d.png
 %%DATADIR%%/ocsreports/image/deconnexion.png
 %%DATADIR%%/ocsreports/image/delete_all.png
-%%DATADIR%%/ocsreports/image/dictionnaire.png
-%%DATADIR%%/ocsreports/image/dictionnaire_a.png
-%%DATADIR%%/ocsreports/image/disque.png
-%%DATADIR%%/ocsreports/image/disque_a.png
-%%DATADIR%%/ocsreports/image/disque_d.png
-%%DATADIR%%/ocsreports/image/doublons.png
-%%DATADIR%%/ocsreports/image/doublons_a.png
 %%DATADIR%%/ocsreports/image/down.png
+%%DATADIR%%/ocsreports/image/error.png
 %%DATADIR%%/ocsreports/image/fond.png
 %%DATADIR%%/ocsreports/image/fond_orig.png
-%%DATADIR%%/ocsreports/image/groups.png
-%%DATADIR%%/ocsreports/image/groups_a.png
-%%DATADIR%%/ocsreports/image/imprimante.png
-%%DATADIR%%/ocsreports/image/imprimante_a.png
-%%DATADIR%%/ocsreports/image/imprimante_d.png
-%%DATADIR%%/ocsreports/image/imprimer.png
-%%DATADIR%%/ocsreports/image/interdit.jpg
-%%DATADIR%%/ocsreports/image/label.png
-%%DATADIR%%/ocsreports/image/label_a.png
-%%DATADIR%%/ocsreports/image/local.png
-%%DATADIR%%/ocsreports/image/local_a.png
-%%DATADIR%%/ocsreports/image/logiciels.png
-%%DATADIR%%/ocsreports/image/logiciels_a.png
-%%DATADIR%%/ocsreports/image/logiciels_d.png
-%%DATADIR%%/ocsreports/image/logo OCS-ng-48.png
+%%DATADIR%%/ocsreports/image/green.png
+%%DATADIR%%/ocsreports/image/groups_search.png
+%%DATADIR%%/ocsreports/image/info.png
+%%DATADIR%%/ocsreports/image/logo OCS-ng-96.png
+%%DATADIR%%/ocsreports/image/logo OCS-ng-96_registry.png
 %%DATADIR%%/ocsreports/image/mail.gif
-%%DATADIR%%/ocsreports/image/memoire.png
-%%DATADIR%%/ocsreports/image/memoire_a.png
-%%DATADIR%%/ocsreports/image/memoire_d.png
-%%DATADIR%%/ocsreports/image/message.gif
-%%DATADIR%%/ocsreports/image/modem.png
-%%DATADIR%%/ocsreports/image/modem_a.png
-%%DATADIR%%/ocsreports/image/modem_d.png
+%%DATADIR%%/ocsreports/image/mass_affect.png
 %%DATADIR%%/ocsreports/image/modif.png
 %%DATADIR%%/ocsreports/image/modif_a.png
 %%DATADIR%%/ocsreports/image/modif_all.png
-%%DATADIR%%/ocsreports/image/modif_anul.png
 %%DATADIR%%/ocsreports/image/modif_anul_v2.png
 %%DATADIR%%/ocsreports/image/modif_tab.png
-%%DATADIR%%/ocsreports/image/modif_valid.png
 %%DATADIR%%/ocsreports/image/modif_valid_v2.png
-%%DATADIR%%/ocsreports/image/moniteur.png
-%%DATADIR%%/ocsreports/image/moniteur_a.png
-%%DATADIR%%/ocsreports/image/moniteur_d.png
+%%DATADIR%%/ocsreports/image/no_show.png
 %%DATADIR%%/ocsreports/image/norm_left.gif
 %%DATADIR%%/ocsreports/image/norm_left_on.gif
 %%DATADIR%%/ocsreports/image/norm_right.gif
 %%DATADIR%%/ocsreports/image/norm_right.gif.png
 %%DATADIR%%/ocsreports/image/norm_right_on.gif
 %%DATADIR%%/ocsreports/image/norm_right_on.gif.png
-%%DATADIR%%/ocsreports/image/oeil.png
-%%DATADIR%%/ocsreports/image/pack.png
-%%DATADIR%%/ocsreports/image/pack_a.png
-%%DATADIR%%/ocsreports/image/paquets.png
-%%DATADIR%%/ocsreports/image/paquets_a.png
-%%DATADIR%%/ocsreports/image/paquets_d.png
-%%DATADIR%%/ocsreports/image/pass.png
-%%DATADIR%%/ocsreports/image/pass_a.png
-%%DATADIR%%/ocsreports/image/peripherique.png
-%%DATADIR%%/ocsreports/image/peripherique_a.png
-%%DATADIR%%/ocsreports/image/peripherique_d.png
-%%DATADIR%%/ocsreports/image/port.png
-%%DATADIR%%/ocsreports/image/port_a.png
-%%DATADIR%%/ocsreports/image/port_d.png
+%%DATADIR%%/ocsreports/image/not_supported.png
+%%DATADIR%%/ocsreports/image/plus.png
 %%DATADIR%%/ocsreports/image/prec16.png
 %%DATADIR%%/ocsreports/image/prec24.png
-%%DATADIR%%/ocsreports/image/processeur.png
-%%DATADIR%%/ocsreports/image/processeur_a.png
-%%DATADIR%%/ocsreports/image/processeur_d.png
+%%DATADIR%%/ocsreports/image/print.png
 %%DATADIR%%/ocsreports/image/proch16.png
 %%DATADIR%%/ocsreports/image/proch24.png
-%%DATADIR%%/ocsreports/image/recherche.png
-%%DATADIR%%/ocsreports/image/recherche_a.png
-%%DATADIR%%/ocsreports/image/recurrence.png
-%%DATADIR%%/ocsreports/image/recurrence_a.png
 %%DATADIR%%/ocsreports/image/red.png
-%%DATADIR%%/ocsreports/image/regconfig.png
-%%DATADIR%%/ocsreports/image/regconfig_a.png
-%%DATADIR%%/ocsreports/image/registre.png
-%%DATADIR%%/ocsreports/image/registre_a.png
-%%DATADIR%%/ocsreports/image/registre_d.png
-%%DATADIR%%/ocsreports/image/repartition.png
-%%DATADIR%%/ocsreports/image/repartition_a.png
-%%DATADIR%%/ocsreports/image/reseau.png
-%%DATADIR%%/ocsreports/image/reseau_a.png
-%%DATADIR%%/ocsreports/image/reseau_d.png
-%%DATADIR%%/ocsreports/image/rien.png
-%%DATADIR%%/ocsreports/image/rien_a.png
-%%DATADIR%%/ocsreports/image/securite.png
-%%DATADIR%%/ocsreports/image/securite_a.png
-%%DATADIR%%/ocsreports/image/slot.png
-%%DATADIR%%/ocsreports/image/slot_a.png
-%%DATADIR%%/ocsreports/image/slot_d.png
-%%DATADIR%%/ocsreports/image/son.png
-%%DATADIR%%/ocsreports/image/son_a.png
-%%DATADIR%%/ocsreports/image/son_d.png
-%%DATADIR%%/ocsreports/image/spec.png
-%%DATADIR%%/ocsreports/image/spec_a.png
+%%DATADIR%%/ocsreports/image/show.png
 %%DATADIR%%/ocsreports/image/stat.png
-%%DATADIR%%/ocsreports/image/stockage.png
-%%DATADIR%%/ocsreports/image/stockage_a.png
-%%DATADIR%%/ocsreports/image/stockage_d.png
+%%DATADIR%%/ocsreports/image/stat1.png
+%%DATADIR%%/ocsreports/image/success.png
+%%DATADIR%%/ocsreports/image/sup_search.png
 %%DATADIR%%/ocsreports/image/supp.png
+%%DATADIR%%/ocsreports/image/supported.png
 %%DATADIR%%/ocsreports/image/suppv.png
-%%DATADIR%%/ocsreports/image/test.jpg
-%%DATADIR%%/ocsreports/image/ttaff.png
-%%DATADIR%%/ocsreports/image/ttlogiciels.png
-%%DATADIR%%/ocsreports/image/ttlogiciels_a.png
-%%DATADIR%%/ocsreports/image/ttmachines.png
-%%DATADIR%%/ocsreports/image/ttmachines_a.png
-%%DATADIR%%/ocsreports/image/ttmachinesred.png
-%%DATADIR%%/ocsreports/image/ttmachinesred_a.png
+%%DATADIR%%/ocsreports/image/tele_search.png
 %%DATADIR%%/ocsreports/image/up.png
-%%DATADIR%%/ocsreports/image/utilisateur OK.png
-%%DATADIR%%/ocsreports/image/utilisateurOK_a.png
-%%DATADIR%%/ocsreports/image/utilisateurs.png
-%%DATADIR%%/ocsreports/image/utilisateurs_.png
-%%DATADIR%%/ocsreports/image/utilisateurs_a.png
-%%DATADIR%%/ocsreports/image/video.png
-%%DATADIR%%/ocsreports/image/video_a.png
-%%DATADIR%%/ocsreports/image/video_d.png
+%%DATADIR%%/ocsreports/image/warning.png
 %%DATADIR%%/ocsreports/index.php
 %%DATADIR%%/ocsreports/install.php
-%%DATADIR%%/ocsreports/ipcsv.php
-%%DATADIR%%/ocsreports/ipdiscover.php
 %%DATADIR%%/ocsreports/js/datetimepicker.js
+%%DATADIR%%/ocsreports/js/function.js
 %%DATADIR%%/ocsreports/js/range.js
 %%DATADIR%%/ocsreports/js/slider.js
 %%DATADIR%%/ocsreports/js/timer.js
-%%DATADIR%%/ocsreports/label.php
-%%DATADIR%%/ocsreports/languages/brazilian_portuguese.png
-%%DATADIR%%/ocsreports/languages/brazilian_portuguese.txt
-%%DATADIR%%/ocsreports/languages/english.png
-%%DATADIR%%/ocsreports/languages/english.txt
-%%DATADIR%%/ocsreports/languages/french.png
-%%DATADIR%%/ocsreports/languages/french.txt
-%%DATADIR%%/ocsreports/languages/german.png
-%%DATADIR%%/ocsreports/languages/german.txt
-%%DATADIR%%/ocsreports/languages/hungarian.png
-%%DATADIR%%/ocsreports/languages/hungarian.txt
-%%DATADIR%%/ocsreports/languages/italian.png
-%%DATADIR%%/ocsreports/languages/italian.txt
-%%DATADIR%%/ocsreports/languages/polish.png
-%%DATADIR%%/ocsreports/languages/polish.txt
-%%DATADIR%%/ocsreports/languages/portuguese.png
-%%DATADIR%%/ocsreports/languages/portuguese.txt
-%%DATADIR%%/ocsreports/languages/russian.png
-%%DATADIR%%/ocsreports/languages/russian.txt
-%%DATADIR%%/ocsreports/languages/slovenian.png
-%%DATADIR%%/ocsreports/languages/slovenian.txt
-%%DATADIR%%/ocsreports/languages/spanish.png
-%%DATADIR%%/ocsreports/languages/spanish.txt
-%%DATADIR%%/ocsreports/languages/turkish.png
-%%DATADIR%%/ocsreports/languages/turkish.txt
+%%DATADIR%%/ocsreports/js/tooltip.js
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Area2D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Bar2D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Candlestick.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Column2D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Column3D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Doughnut2D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Funnel.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Gantt.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Line.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_MSArea2D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_MSBar2D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_MSColumn2D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_MSColumn2DLineDY.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_MSColumn3D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_MSColumn3DLineDY.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_MSLine.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Pie2D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_Pie3D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_StackedArea2D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_StackedBar2D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_StackedColumn2D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts/FCF_StackedColumn3D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/FusionCharts/FCF_Area2D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/FusionCharts/FCF_Column2D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/FusionCharts/FCF_Column3D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/FusionCharts/FCF_Line.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/FusionCharts/FCF_MSColumn3D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/FusionCharts/FCF_MSColumn3DLineDY.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/FusionCharts/FCF_Pie3D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/FusionCharts/FCF_StackedColumn3D.swf
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/FusionCharts/FusionCharts.js
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/ArrayExample/Combination.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/ArrayExample/MultiSeries.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/ArrayExample/SingleSeries.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/ArrayExample/Stacked.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/BasicExample/BasicChart.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/BasicExample/BasicDataXML.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/BasicExample/Data/Data.xml
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/BasicExample/MultiChart.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/BasicExample/SimpleChart.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/BasicExample/dataXML.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB/MS_SQL_Script.sql
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB/UTFExampleTablesCreation.sql
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB/dump.sql
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DBExample/BasicDBExample.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DBExample/Default.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DBExample/Detailed.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB_DrillDown/Default.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB_DrillDown/Detailed.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB_JS/Default.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB_dataURL/Default.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB_dataURL/PieData.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/Default.htm
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/FormBased/Chart.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/FormBased/Default.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/Includes/DBConn.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/Includes/FC_Colors.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/Includes/FusionCharts.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/NoChart.html
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/Data/FrenchData.xml
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/Data/JapaneseData.xml
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/FrenchDBExample.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/FrenchXMLFileExample.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/JapaneseDBExample.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/JapaneseXMLFileExample.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/PieDataFrench.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/PieDataJapanese.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/_notes/dwsync.xml
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/ArrayExample/Combination.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/ArrayExample/MultiSeries.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/ArrayExample/SingleSeries.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/ArrayExample/Stacked.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/BasicExample/CreateChartFromExtData.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/BasicExample/Data/Data.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/BasicExample/FirstChart.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/BasicExample/MultiChart.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/BasicExample/SimpleChart.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DB/MS_SQL_Script.sql
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DB/UTFExampleTablesCreation.sql
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DB/dump.sql
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DBExample/BasicDBExample.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DB_DrillDown/Default.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DB_DrillDown/Detailed.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DB_dataURL/Default.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DB_dataURL/PieData.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/Default.htm
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/FormBased/Chart.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/FormBased/Default.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/Includes/DBConn.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/Includes/FusionCharts.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/Includes/FusionCharts_Gen.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/NoChart.html
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/Data/DataFrench.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/Data/DataJapanese.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/FrenchDBExample.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/FrenchXMLFileExample.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/JapaneseDBExample.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/JapaneseXMLFileExample.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/PieDataFrench.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/PieDataJapanese.php
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/_notes/dwsync.xml
+%%DATADIR%%/ocsreports/libraries/FusionChartsFree/Readme.txt
+%%DATADIR%%/ocsreports/libraries/gz.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/README
+%%DATADIR%%/ocsreports/libraries/jpgraph/VERSION
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/demoapp/barcode_image.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/demoapp/barcode_menu.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/demoapp/index.html
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/examples/barcode_errhandling_ex0.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/examples/barcode_ex0.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/examples/barcode_ex1.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/examples/barcode_ex2.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/examples/barcode_ex3.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/examples/barcode_ex4.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/examples/barcode_usps_example.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/mkbarcode.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/flag_mapping
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/flags.dat
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/flags_thumb100x100.dat
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/flags_thumb35x35.dat
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/flags_thumb60x60.dat
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts/DejaVuSans-Bold.ttf
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts/DejaVuSans-BoldOblique.ttf
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts/DejaVuSans-Oblique.ttf
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts/DejaVuSans.ttf
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts/FF_FONT0-Bold.gdf
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts/FF_FONT0.gdf
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts/FF_FONT1-Bold.gdf
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts/FF_FONT1.gdf
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts/FF_FONT2-Bold.gdf
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts/FF_FONT2.gdf
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/gd_image.inc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/imageSmoothArc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/imgdata_balls.inc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/imgdata_bevels.inc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/imgdata_diamonds.inc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/imgdata_pushpins.inc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/imgdata_squares.inc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/imgdata_stars.inc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpg-config.inc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_antispam-digits.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_antispam.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_bar.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_canvas.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_canvtools.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_contour.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_date.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_errhandler.inc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_error.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_flags.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_gantt.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_gb2312.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_gradient.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_iconplot.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_imgtrans.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_led.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_legend.inc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_line.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_log.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_meshinterpolate.inc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_mgraph.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_pie.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_pie3d.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_plotband.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_plotline.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_plotmark.inc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_polar.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_radar.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_regstat.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_rgb.inc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_scatter.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_stock.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_table.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_text.inc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_theme.inc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_ttf.inc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_utils.inc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/jpgraph_windrose.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/lang/de.inc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/lang/en.inc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/lang/prod.inc.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/themes/AquaTheme.class.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/themes/GreenTheme.class.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/themes/OceanTheme.class.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/themes/OrangeTheme.class.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/themes/PastelTheme.class.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/themes/RoseTheme.class.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/themes/SoftyTheme.class.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/themes/UniversalTheme.class.php
+%%DATADIR%%/ocsreports/libraries/jpgraph/src/themes/VividTheme.class.php
 %%DATADIR%%/ocsreports/libraries/zip.lib.php
-%%DATADIR%%/ocsreports/local.php
-%%DATADIR%%/ocsreports/machine.php
-%%DATADIR%%/ocsreports/multicritere.php
-%%DATADIR%%/ocsreports/opt_download.php
-%%DATADIR%%/ocsreports/opt_frequency.php
-%%DATADIR%%/ocsreports/opt_ipdiscover.php
-%%DATADIR%%/ocsreports/opt_param.php
-%%DATADIR%%/ocsreports/opt_prolog.php
-%%DATADIR%%/ocsreports/opt_suppr.php
-%%DATADIR%%/ocsreports/pass.php
-%%DATADIR%%/ocsreports/popup_rules_redistribution.php
-%%DATADIR%%/ocsreports/preferences.php
-%%DATADIR%%/ocsreports/req.class.php
-%%DATADIR%%/ocsreports/reqRegistre.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_admininfo/cd_admininfo.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_bios/cd_bios.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_comments/cd_comments.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_config.txt
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_configuration/affect_again.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_configuration/cd_configuration.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_controllers/cd_controllers.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_drives/cd_drives.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_inputs/cd_inputs.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_memories/cd_memories.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_mobile/cd_mobile.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_modems/cd_modems.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_monitors/cd_monitors.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_networks/cd_networks.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_packets/cd_packets.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_ports/cd_ports.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_printers/cd_printers.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_processors/cd_processors.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_registry/cd_registry.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_slots/cd_slots.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_softwares/cd_softwares.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_sounds/cd_sounds.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_storages/cd_storages.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_videos/cd_videos.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/cd_vm/cd_vm.php
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_admininfo.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_admininfo_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_bios.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_bios_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_bios_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_comments.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_comments_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_comments_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_configuration.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_configuration_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_controllers.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_controllers_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_controllers_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_default.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_default_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_default_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_drives.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_drives_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_drives_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_inputs.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_inputs_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_inputs_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_kerberos.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_kerberos_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_kerberos_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_memories.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_memories_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_memories_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_mobile.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_mobile_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_mobile_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_modems.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_modems_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_modems_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_monitors.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_monitors_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_monitors_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_networks.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_networks_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_networks_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_packets.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_packets_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_packets_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_ports.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_ports_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_ports_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_printers.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_printers_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_printers_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_processors.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_processors_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_processors_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_registry.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_registry_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_registry_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_slots.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_slots_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_slots_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_softwares.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_softwares_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_softwares_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_sounds.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_sounds_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_sounds_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_storages.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_storages_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_storages_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_videos.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_videos_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_videos_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_vm.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_vm_a.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/img/cd_vm_d.png
+%%DATADIR%%/ocsreports/plugins/computer_detail/require/fonction.php
+%%DATADIR%%/ocsreports/plugins/language/brazilian_portuguese/brazilian_portuguese.png
+%%DATADIR%%/ocsreports/plugins/language/brazilian_portuguese/brazilian_portuguese.txt
+%%DATADIR%%/ocsreports/plugins/language/english/english.png
+%%DATADIR%%/ocsreports/plugins/language/english/english.txt
+%%DATADIR%%/ocsreports/plugins/language/french/french.png
+%%DATADIR%%/ocsreports/plugins/language/french/french.txt
+%%DATADIR%%/ocsreports/plugins/language/german/german.png
+%%DATADIR%%/ocsreports/plugins/language/german/german.txt
+%%DATADIR%%/ocsreports/plugins/language/hungarian/hungarian.png
+%%DATADIR%%/ocsreports/plugins/language/hungarian/hungarian.txt
+%%DATADIR%%/ocsreports/plugins/language/italian/italian.png
+%%DATADIR%%/ocsreports/plugins/language/italian/italian.txt
+%%DATADIR%%/ocsreports/plugins/language/lang_config.txt
+%%DATADIR%%/ocsreports/plugins/language/language.php
+%%DATADIR%%/ocsreports/plugins/language/polish/polish.png
+%%DATADIR%%/ocsreports/plugins/language/polish/polish.txt
+%%DATADIR%%/ocsreports/plugins/language/portuguese/portuguese.png
+%%DATADIR%%/ocsreports/plugins/language/portuguese/portuguese.txt
+%%DATADIR%%/ocsreports/plugins/language/russian/russian.png
+%%DATADIR%%/ocsreports/plugins/language/russian/russian.txt
+%%DATADIR%%/ocsreports/plugins/language/slovenian/slovenian.png
+%%DATADIR%%/ocsreports/plugins/language/slovenian/slovenian.txt
+%%DATADIR%%/ocsreports/plugins/language/spanish/spanish.png
+%%DATADIR%%/ocsreports/plugins/language/spanish/spanish.txt
+%%DATADIR%%/ocsreports/plugins/language/turkish/turkish.png
+%%DATADIR%%/ocsreports/plugins/language/turkish/turkish.txt
+%%DATADIR%%/ocsreports/plugins/main_sections/conf/4all_config.txt
+%%DATADIR%%/ocsreports/plugins/main_sections/conf/admin_config.txt
+%%DATADIR%%/ocsreports/plugins/main_sections/conf/dde_teledeploy_config.txt
+%%DATADIR%%/ocsreports/plugins/main_sections/conf/ladmin_config.txt
+%%DATADIR%%/ocsreports/plugins/main_sections/conf/sadmin_config.txt
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_admininfo.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_admininfo_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_all_computers.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_all_computers_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_all_computersred.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_all_computersred_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_all_soft.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_all_soft_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_codes.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_codes_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_config.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_config_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_dict.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_dict_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_doubles.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_doubles_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_groups.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_groups_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_help.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_help_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_ipdiscover.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_ipdiscover_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_label.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_label_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_local.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_local_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_logs.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_logs_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_multi_search.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_multi_search_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_pass.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_pass_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_regconfig.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_regconfig_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_repart_tag.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_repart_tag_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_stats.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_stats_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_teledeploy.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_teledeploy_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_upload_file.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_upload_file_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_users.png
+%%DATADIR%%/ocsreports/plugins/main_sections/img/ms_users_a.png
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_admininfo/ms_admininfo.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_all_computers/ms_all_computers.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_all_soft/ms_all_soft.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_computer/ms_computer.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_config/ms_add_key.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_config/ms_adminvalues.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_config/ms_blacklist.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_config/ms_config.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_config/ms_custom_download.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_config/ms_custom_frequency.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_config/ms_custom_ipdiscover.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_config/ms_custom_param.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_config/ms_custom_prolog.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_config/ms_label.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_config/require/function_blacklist.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_console/ms_console.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_debug/ms_debug.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_dict/ms_dict.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_doubles/ms_doubles.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_export/ms_csv.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_export/ms_soft_csv.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_groups/ms_custom_groups.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_groups/ms_group_show.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_groups/ms_groups.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_help/ms_help.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_ipdiscover/ms_admin_ipdiscover.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_ipdiscover/ms_custom_info.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_ipdiscover/ms_ipdiscover.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_ipdiscover/ms_ipdiscover_analyse.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_logs/ms_logs.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_multi_search/ms_custom_lock.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_multi_search/ms_custom_sup.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_multi_search/ms_custom_tag.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_multi_search/ms_multi_search.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_regconfig/ms_regconfig.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_regconfig/require/function_regconfig.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_repart_tag/ms_repart_tag.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_scripts/ms_update_new_tag.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_search_soft/info.txt
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_search_soft/js/autocomplete-3-2.js
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_search_soft/js/print.js
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_search_soft/ms_options.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_search_soft/ms_search_soft.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_search_soft/require/fonction.inc.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_snmp/ms_snmp.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_snmp/ms_snmp_detail.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_snmp/require/function_snmp.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_stats/jp_activity_stats.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_stats/jp_teledeploy_speed_stats.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_stats/jp_teledeploy_stats.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_stats/ms_stats.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_stats/ms_stats_connexion.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_teledeploy/ms_custom_pack.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_teledeploy/ms_rules_redistrib.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_teledeploy/ms_server_redistrib.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_teledeploy/ms_speed_stat.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_teledeploy/ms_tele_activate.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_teledeploy/ms_tele_actives.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_teledeploy/ms_tele_compress.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_teledeploy/ms_tele_massaffect.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_teledeploy/ms_tele_package.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_teledeploy/ms_tele_popup_active.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_teledeploy/ms_tele_stats.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_teledeploy_workflow/ms_admin_management.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_teledeploy_workflow/ms_teledeploy_workflow.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_teledeploy_workflow/require/function_admin_management.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_upload_file/ms_local.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_upload_file/ms_upload_file.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_upload_file/ms_upload_file_popup.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_upload_file/ms_view_file.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_users/ms_admin_user_group.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_users/ms_config_account.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_users/ms_custom_perim.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_users/ms_new_profil.php
+%%DATADIR%%/ocsreports/plugins/main_sections/ms_users/ms_users.php
+%%DATADIR%%/ocsreports/plugins/main_sections/section_html.php
+%%DATADIR%%/ocsreports/plugins/main_sections/sections.php
+%%DATADIR%%/ocsreports/plugins/options_config/del_old_computors.php
+%%DATADIR%%/ocsreports/plugins/snmp_detail/sd_admininfo/sd_admininfo.php
+%%DATADIR%%/ocsreports/plugins/snmp_detail/sd_cards/sd_cards.php
+%%DATADIR%%/ocsreports/plugins/snmp_detail/sd_cartridges/sd_cartridges.php
+%%DATADIR%%/ocsreports/plugins/snmp_detail/sd_cpus/sd_cpus.php
+%%DATADIR%%/ocsreports/plugins/snmp_detail/sd_drives/sd_drives.php
+%%DATADIR%%/ocsreports/plugins/snmp_detail/sd_fans/sd_fans.php
+%%DATADIR%%/ocsreports/plugins/snmp_detail/sd_inputs/sd_inputs.php
+%%DATADIR%%/ocsreports/plugins/snmp_detail/sd_localprinters/sd_localprinters.php
+%%DATADIR%%/ocsreports/plugins/snmp_detail/sd_memories/sd_memories.php
+%%DATADIR%%/ocsreports/plugins/snmp_detail/sd_modems/sd_modems.php
+%%DATADIR%%/ocsreports/plugins/snmp_detail/sd_networks/sd_networks.php
+%%DATADIR%%/ocsreports/plugins/snmp_detail/sd_ports/sd_ports.php
+%%DATADIR%%/ocsreports/plugins/snmp_detail/sd_powersupplies/sd_powersupplies.php
+%%DATADIR%%/ocsreports/plugins/snmp_detail/sd_softwares/sd_softwares.php
+%%DATADIR%%/ocsreports/plugins/snmp_detail/sd_sounds/sd_sounds.php
+%%DATADIR%%/ocsreports/plugins/snmp_detail/sd_storages/sd_storages.php
+%%DATADIR%%/ocsreports/plugins/snmp_detail/sd_switch/sd_switch.php
+%%DATADIR%%/ocsreports/plugins/snmp_detail/sd_trays/sd_trays.php
+%%DATADIR%%/ocsreports/plugins/snmp_detail/sd_videos/sd_videos.php
+%%DATADIR%%/ocsreports/plugins/snmp_detail/snmp_config.txt
+%%DATADIR%%/ocsreports/require/aide_developpement.php
+%%DATADIR%%/ocsreports/require/fichierConf.class.php
+%%DATADIR%%/ocsreports/require/footer.php
+%%DATADIR%%/ocsreports/require/function_admininfo.php
+%%DATADIR%%/ocsreports/require/function_commun.php
+%%DATADIR%%/ocsreports/require/function_computers.php
 %%DATADIR%%/ocsreports/require/function_config_generale.php
+%%DATADIR%%/ocsreports/require/function_console.php
+%%DATADIR%%/ocsreports/require/function_cookies.php
 %%DATADIR%%/ocsreports/require/function_dico.php
+%%DATADIR%%/ocsreports/require/function_files.php
+%%DATADIR%%/ocsreports/require/function_graphic.php
+%%DATADIR%%/ocsreports/require/function_groups.php
+%%DATADIR%%/ocsreports/require/function_index.php
+%%DATADIR%%/ocsreports/require/function_ipdiscover.php
+%%DATADIR%%/ocsreports/require/function_machine.php
 %%DATADIR%%/ocsreports/require/function_opt_param.php
 %%DATADIR%%/ocsreports/require/function_rules.php
+%%DATADIR%%/ocsreports/require/function_search.php
 %%DATADIR%%/ocsreports/require/function_server.php
+%%DATADIR%%/ocsreports/require/function_ssl.php
+%%DATADIR%%/ocsreports/require/function_stats.php
 %%DATADIR%%/ocsreports/require/function_table_html.php
-%%DATADIR%%/ocsreports/resultats.php
-%%DATADIR%%/ocsreports/rules_redistrib.php
-%%DATADIR%%/ocsreports/security.php
-%%DATADIR%%/ocsreports/server_redistrib.php
-%%DATADIR%%/ocsreports/tele_activate.php
-%%DATADIR%%/ocsreports/tele_actives.php
-%%DATADIR%%/ocsreports/tele_affect.php
-%%DATADIR%%/ocsreports/tele_compress.php
-%%DATADIR%%/ocsreports/tele_massaffect.php
-%%DATADIR%%/ocsreports/tele_package.php
-%%DATADIR%%/ocsreports/tele_stats.php
-%%DATADIR%%/ocsreports/uploadfile.php
-%%DATADIR%%/ocsreports/users.php
+%%DATADIR%%/ocsreports/require/function_telediff.php
+%%DATADIR%%/ocsreports/require/function_telediff_wk.php
+%%DATADIR%%/ocsreports/require/function_users.php
+%%DATADIR%%/ocsreports/require/header.php
+%%DATADIR%%/ocsreports/require/html_header.php
+%%DATADIR%%/ocsreports/require/maps.php
+%%DATADIR%%/ocsreports/tools/recompose_paquet.php
+%%DATADIR%%/ocsreports/var.php
 %%DATADIR%%/setup.sh
+@dirrm %%DATADIR%%/ocsreports/tools
 @dirrm %%DATADIR%%/ocsreports/require
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/sd_videos
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/sd_trays
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/sd_switch
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/sd_storages
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/sd_sounds
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/sd_softwares
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/sd_powersupplies
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/sd_ports
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/sd_networks
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/sd_modems
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/sd_memories
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/sd_localprinters
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/sd_inputs
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/sd_fans
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/sd_drives
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/sd_cpus
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/sd_cartridges
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/sd_cards
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/sd_admininfo
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/require
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail/img
+@dirrm %%DATADIR%%/ocsreports/plugins/snmp_detail
+@dirrm %%DATADIR%%/ocsreports/plugins/options_config
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_users
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_upload_file
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_teledeploy_workflow/require
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_teledeploy_workflow
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_teledeploy
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_stats
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_snmp/require
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_snmp
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_search_soft/require
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_search_soft/js
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_search_soft
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_scripts
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_repart_tag
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_regconfig/require
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_regconfig
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_multi_search
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_logs
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_ipdiscover/require
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_ipdiscover
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_help
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_groups
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_export
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_doubles
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_dict
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_debug
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_console
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_config/require
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_config
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_computer
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_all_soft
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_all_computers
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/ms_admininfo
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/img
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/conf/old_conf
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections/conf
+@dirrm %%DATADIR%%/ocsreports/plugins/main_sections
+@dirrm %%DATADIR%%/ocsreports/plugins/language/turkish
+@dirrm %%DATADIR%%/ocsreports/plugins/language/spanish
+@dirrm %%DATADIR%%/ocsreports/plugins/language/slovenian
+@dirrm %%DATADIR%%/ocsreports/plugins/language/russian
+@dirrm %%DATADIR%%/ocsreports/plugins/language/portuguese
+@dirrm %%DATADIR%%/ocsreports/plugins/language/polish
+@dirrm %%DATADIR%%/ocsreports/plugins/language/italian
+@dirrm %%DATADIR%%/ocsreports/plugins/language/hungarian
+@dirrm %%DATADIR%%/ocsreports/plugins/language/german
+@dirrm %%DATADIR%%/ocsreports/plugins/language/french
+@dirrm %%DATADIR%%/ocsreports/plugins/language/english
+@dirrm %%DATADIR%%/ocsreports/plugins/language/brazilian_portuguese
+@dirrm %%DATADIR%%/ocsreports/plugins/language
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/require
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/img
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_vm
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_videos
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_storages
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_sounds
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_softwares
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_slots
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_registry
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_processors
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_printers
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_ports
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_packets
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_networks
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_monitors
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_modems
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_mobile
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_memories
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_inputs
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_drives
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_controllers
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_configuration
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_comments
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_bios
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail/cd_admininfo
+@dirrm %%DATADIR%%/ocsreports/plugins/computer_detail
+@dirrm %%DATADIR%%/ocsreports/plugins
+@dirrm %%DATADIR%%/ocsreports/libraries/jpgraph/src/themes
+@dirrm %%DATADIR%%/ocsreports/libraries/jpgraph/src/lang
+@dirrm %%DATADIR%%/ocsreports/libraries/jpgraph/src/fonts
+@dirrm %%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/examples
+@dirrm %%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode/demoapp
+@dirrm %%DATADIR%%/ocsreports/libraries/jpgraph/src/barcode
+@dirrm %%DATADIR%%/ocsreports/libraries/jpgraph/src
+@dirrm %%DATADIR%%/ocsreports/libraries/jpgraph
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/_notes
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example/Data
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/UTF8Example
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/Includes
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/FormBased
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DB_dataURL
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DB_DrillDown
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DBExample
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/DB
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/BasicExample/Data
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/BasicExample
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass/ArrayExample
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHPClass
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/_notes
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example/Data
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/UTF8Example
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/Includes
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/FormBased
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB_dataURL
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB_JS
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB_DrillDown
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DBExample
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/DB
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/BasicExample/Data
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/BasicExample
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP/ArrayExample
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/PHP
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code/FusionCharts
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Code
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree/Charts
+@dirrm %%DATADIR%%/ocsreports/libraries/FusionChartsFree
 @dirrm %%DATADIR%%/ocsreports/libraries
-@dirrm %%DATADIR%%/ocsreports/languages
 @dirrm %%DATADIR%%/ocsreports/js
 @dirrm %%DATADIR%%/ocsreports/image
+@dirrm %%DATADIR%%/ocsreports/fonts
 @dirrm %%DATADIR%%/ocsreports/files
 @dirrm %%DATADIR%%/ocsreports/css
+@dirrm %%DATADIR%%/ocsreports/backend/require/lib/phpcas/languages
+@dirrm %%DATADIR%%/ocsreports/backend/require/lib/phpcas/PGTStorage
+@dirrm %%DATADIR%%/ocsreports/backend/require/lib/phpcas
+@dirrm %%DATADIR%%/ocsreports/backend/require/lib
+@dirrm %%DATADIR%%/ocsreports/backend/require
+@dirrm %%DATADIR%%/ocsreports/backend/ipdiscover/methode
+@dirrm %%DATADIR%%/ocsreports/backend/ipdiscover
+@dirrm %%DATADIR%%/ocsreports/backend/identity/methode
+@dirrm %%DATADIR%%/ocsreports/backend/identity
+@dirrm %%DATADIR%%/ocsreports/backend/AUTH/methode
+@dirrm %%DATADIR%%/ocsreports/backend/AUTH
+@dirrm %%DATADIR%%/ocsreports/backend
 @dirrm %%DATADIR%%/ocsreports
-@dirrm %%DATADIR%%/binutils
 @dirrm %%DATADIR%%/etc/ocsinventory
 @dirrm %%DATADIR%%/etc/logrotate.d
 @dirrm %%DATADIR%%/etc
 @dirrm %%DATADIR%%/dtd/Interface
 @dirrm %%DATADIR%%/dtd
+@dirrm %%DATADIR%%/binutils
 @dirrm %%DATADIR%%/Apache/Ocsinventory/Server/System
 @dirrm %%DATADIR%%/Apache/Ocsinventory/Server/Inventory/Update
 @dirrm %%DATADIR%%/Apache/Ocsinventory/Server/Inventory
 @dirrm %%DATADIR%%/Apache/Ocsinventory/Server/Communication
+@dirrm %%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Snmp
 @dirrm %%DATADIR%%/Apache/Ocsinventory/Server/Capacities/Download
 @dirrm %%DATADIR%%/Apache/Ocsinventory/Server/Capacities
 @dirrm %%DATADIR%%/Apache/Ocsinventory/Server

@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	Ocsinventory
-PORTVERSION=	1.1.2.1
-PORTREVISION=	1
+PORTVERSION=	2.0
 PORTEPOCH=	1
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://launchpad.net/ocsinventory-unix-agent/stable-1.1.2/ocsinventory-unix-agent-${PORTVERSION}/+download/
+MASTER_SITES=	http://launchpad.net/ocsinventory-unix-agent/stable-${PORTVERSION}/${PORTVERSION}/+download/
 PKGNAMESUFFIX=	-Agent
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Keep track of the computers configuration and software
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
@@ -25,12 +26,12 @@ BUILD_DEPENDS=	dmidecode:${PORTSDIR}/sysutils/dmidecode \
 		lspci:${PORTSDIR}/sysutils/pciutils
 
 FETCH_ARGS=
-LICENSE=	GPLv2
 USE_PERL5=	yes
 PERL_CONFIGURE=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 MAN1=		ocsinventory-agent.1
-MAN3=		Ocsinventory::Agent::XML::Inventory.3
+MAN3=		Ocsinventory::Agent::XML::Inventory.3 \
+		Ocsinventory::Agent::Common.3
 SUB_FILES=	pkg-message
 SUB_LIST=	SITE_PERL=${SITE_PERL}
 
