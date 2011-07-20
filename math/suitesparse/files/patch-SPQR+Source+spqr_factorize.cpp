@@ -4,7 +4,7 @@
  // =============================================================================
  
  #include "spqr.hpp"
-+#include <string.h>
++#include <string>
  
  #define FCHUNK 32        // FUTURE: make a parameter; Householder block size
  

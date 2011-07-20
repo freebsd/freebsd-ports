@@ -7,7 +7,7 @@
 
 PORTNAME=	suitesparse
 PORTVERSION=	3.6.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	math
 MASTER_SITES=	http://www.cise.ufl.edu/research/sparse/SuiteSparse/
 DISTNAME=	SuiteSparse-${PORTVERSION}
@@ -15,50 +15,50 @@ DISTNAME=	SuiteSparse-${PORTVERSION}
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	SuiteSparse is a set of packages for sparse matrices calculation
 
-.if defined (WITH_METIS)
-LIB_DEPENDS=	metis:${PORTSDIR}/math/metis
-.endif
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
 
 .if defined (WITH_METIS)
-RESTRICTED=	GPL and METIS license contradicts
+LIB_DEPENDS=	metis:${PORTSDIR}/math/metis
+
+RESTRICTED=	GPL and METIS licenses are contradictory
 .endif
 
 CONFLICTS=	umfpack-*
 
 .include <bsd.port.pre.mk>
 
-USE_BLAS?=	reference
-
 .if exists(${LOCALBASE}/lib/libgoto2.so)
-USE_BLAS=     gotoblas
+WITH_BLAS?=	gotoblas
 .elif exists(${LOCALBASE}/lib/libatlas_r.so)
-USE_BLAS=     atlas
+WITH_BLAS?=	atlas
+.else
+WITH_BLAS?=	reference
 .endif
 
-.if ${USE_BLAS} == reference
+CFLAGS+=	${PTHREAD_CFLAGS}
+LDFLAGS+=	-L${LOCALBASE}/lib
+
+.if ${WITH_BLAS} == reference
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 BLAS=		-lblas
 LAPACK=		-llapack
-.elif ${USE_BLAS} == gotoblas
+.elif ${WITH_BLAS} == gotoblas
 LIB_DEPENDS+=	goto2:${PORTSDIR}/math/gotoblas
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
-BLAS=		-pthread -lgoto2p
-LAPACK=		-pthread -lgoto2p
-.elif ${USE_BLAS} == atlas
+BLAS =		-lgoto2p ${PTHREAD_LIBS}
+LAPACK =	-lgoto2p ${PTHREAD_LIBS}
+.elif ${WITH_BLAS} == atlas
 LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
-BLAS=		-pthread -lptf77blas -lptcblas -latlas_r
-LAPACK=		-pthread -lalapack_r
-.endif
-
-.if ${ARCH} == "sparc64" || ${ARCH} == "amd64"
-FPIC=	-fPIC
-.else
-FPIC=	-fpic
+BLAS=		-lptf77blas -lptcblas -latlas_r ${PTHREAD_LIBS}
+LAPACK =	-lalapack_r ${PTHREAD_LIBS}
 .endif
 
 .if ${ARCH} == "sparc64"
-BROKEN=		Does not link on sparc64
+PICFLAG?=	-fPIC
+.else
+PICFLAG?=	-fpic
 .endif
 
 USE_LDCONFIG=	yes
@@ -66,82 +66,59 @@ USE_GMAKE=	yes
 USE_FORTRAN=	yes
 WRKSRC=${WRKDIR}/SuiteSparse
 WRKSRC_SHARED=${WRKSRC}_shared
-CFLAGS_SHARED=${CFLAGS} ${FPIC}
-FFLAGS_SHARED=${CFLAGS} ${FPIC}
 SVERSION=1
-FORTRANRUNTIME=-lgfortran -lgfortranbegin
 
 .if defined (WITH_METIS)
 METIS=${LOCALBASE}/lib/libmetis.a
 METIS_PATH=${LOCALBASE}/include/metis
 CHOLMOD_CONFIG =
 .else
-CHOLMOD_CONFIG = -DNPARTITION
+CHOLMOD_CONFIG =	-DNPARTITION
 .endif
 
 post-patch:
-	${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
-	@${REINPLACE_CMD} -e 's|%%CC%%|${CC}|g' \
-			  -e 's|%%CXX%%|${CXX}|g' \
-			  -e 's|%%F77%%|${F77}|g' \
-			  -e 's|%%BLAS%%|-L${LOCALBASE}/lib ${BLAS}|g' \
-			  -e 's|%%FORTRANRUNTIME%%|${FORTRANRUNTIME}|g' \
-			  -e 's|%%LAPACK%%|-L${LOCALBASE}/lib ${LAPACK}|g' \
-			  -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-			  -e 's|%%METIS_PATH%%|${METIS_PATH}|g' \
-			  -e 's|%%METIS%%|${METIS}|g' \
-			  -e 's|%%CHOLMOD_CONFIG%%|${CHOLMOD_CONFIG}|g' \
-				 ${WRKSRC}/UFconfig/UFconfig.mk \
-				 ${WRKSRC_SHARED}/UFconfig/UFconfig.mk\
-				 ${WRKSRC}/CSparse/Lib/Makefile \
-				 ${WRKSRC_SHARED}/CSparse/Lib/Makefile \
-				 ${WRKSRC}/CSparse3/Lib/Makefile \
-				 ${WRKSRC_SHARED}/CSparse3/Lib/Makefile
+	@${FIND} -X ${WRKSRC} -type f -name 'Makefile' -or -name '*.mk' | ${XARGS} \
+	${REINPLACE_CMD} -e '\|^AR =|s|ar|${AR}|' \
+			-e '\|^BLAS =|s|=.*|= ${LDFLAGS} ${BLAS}|' \
+			-e '\|^CC =|d' \
+			-e '\|^CFLAGS =|{s|-O[1-9]\{0,1\}||g;s|=|= ${CFLAGS} $${PICFLAG} |;}' \
+			-e '\|^CHOLMOD_CONFIG =|s|=.*|= ${CHOLMOD_CONFIG}|' \
+			-e '\|^CPLUSPLUS =|s|=.*|= ${CXX}|' \
+			-e '\|^F77 =|d' \
+			-e '\|^F77FLAGS =|s|=.*|= ${FFLAGS} $${PICFLAG}|' \
+			-e '\|^LAPACK =|s|=.*|= ${LDFLAGS} ${LAPACK}|' \
+			-e '\|^METIS =|s|=.*|= ${METIS}|' \
+			-e '\|^METIS_PATH =|s|=.*|= ${METIS_PATH}|' \
+			-e 's|-I\$$(METIS_PATH)/Lib|-I${METIS_PATH}|' \
+			-e '\|^RANLIB =|s|ranlib|${RANLIB}|' \
+			-e '\|^SPQR_CONFIG =|s|=.*|= ${CHOLMOD_CONFIG}|' \
+			-e 's|/usr/local|${LOCALBASE}|g'
+	@${CP} -r ${WRKSRC} ${WRKSRC_SHARED}
 
-	@${REINPLACE_CMD}  -e 's|%%CFLAGS%%|${CFLAGS}|g' \
-			   -e 's|%%FFLAGS%%|${FFLAGS}|g' \
-				 ${WRKSRC}/UFconfig/UFconfig.mk \
-				 ${WRKSRC}/CSparse/Lib/Makefile \
-				 ${WRKSRC}/CSparse3/Lib/Makefile
-
-	@${REINPLACE_CMD}  -e 's|%%CFLAGS%%|${CFLAGS_SHARED}|g' \
-			   -e 's|%%FFLAGS%%|${FFLAGS_SHARED}|g' \
-				 ${WRKSRC_SHARED}/UFconfig/UFconfig.mk \
-				 ${WRKSRC_SHARED}/CSparse/Lib/Makefile \
-				 ${WRKSRC_SHARED}/CSparse3/Lib/Makefile
 do-build:
-	cd ${WRKSRC} ; ${GMAKE}
-	cd ${WRKSRC_SHARED} ; ${GMAKE}
-	${RM} -rf ${WRKDIR}/tmp_static
-	${MKDIR} ${WRKDIR}/tmp_static
-	cd ${WRKDIR}/tmp_static
-	${FIND} ${WRKSRC} -name "*\.a" -exec ${MV} {} ${WRKDIR}/tmp_static \;
-	${RM} -rf ${WRKDIR}/tmp_shared
-	${MKDIR} ${WRKDIR}/tmp_shared
-	${FIND} ${WRKSRC_SHARED} -name "*\.a" -exec ${MV} {} ${WRKDIR}/tmp_shared \;
+	@cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} PICFLAG= \
+		${GMAKE} ${_MAKE_JOBS} ${MAKE_ARGS}
+	@cd ${WRKSRC_SHARED} ; ${SETENV} ${MAKE_ENV} PICFLAG=${PICFLAG} \
+		${GMAKE} ${_MAKE_JOBS} ${MAKE_ARGS}
+
 post-build:
-	cd ${WRKDIR}/tmp_shared ; for i in `ls *.a | ${SED}  's/\.a//' `; do \
-		ld -Bshareable -o $${i}.so.${SVERSION} -x -soname $${i}.so.${SVERSION} --whole-archive $${i}.a ;\
-		${LN} -s $${i}.so.${SVERSION} $${i}.so ;\
+	@for i in `find ${WRKSRC_SHARED} -type f -name '*.a'` ; do \
+		j=$${i##*/} ; ${LD} -Bshareable -o $${i%.a}.so.${SVERSION} -x \
+		-soname $${j%.a}.so.${SVERSION} --whole-archive $${i} ; \
 	done
 
 do-install:
-	${MKDIR} ${PREFIX}/include/suitesparse
-	${LN} -sf ${PREFIX}/include/suitesparse ${PREFIX}/include/ufsparse
-	${INSTALL_DATA} ${WRKSRC}/UFconfig/UFconfig.h                        ${PREFIX}/include/suitesparse
-	${INSTALL_DATA} ${WRKSRC}/UMFPACK/Include/*.h                        ${PREFIX}/include/suitesparse
-	${INSTALL_DATA} ${WRKSRC}/AMD/Include/*.h			     ${PREFIX}/include/suitesparse
-	${INSTALL_DATA} ${WRKSRC}/BTF/Include/*.h			     ${PREFIX}/include/suitesparse
-	${INSTALL_DATA} ${WRKSRC}/CCOLAMD/Include/*.h   	             ${PREFIX}/include/suitesparse
-	${INSTALL_DATA} ${WRKSRC}/CHOLMOD/Include/*.h                 	     ${PREFIX}/include/suitesparse
-	${INSTALL_DATA} ${WRKSRC}/COLAMD/Include/*.h    	             ${PREFIX}/include/suitesparse
-	${INSTALL_DATA} ${WRKSRC}/CXSparse/Include/*.h 	                     ${PREFIX}/include/suitesparse
-	${INSTALL_DATA} ${WRKSRC}/KLU/Include/*.h                            ${PREFIX}/include/suitesparse
-	${INSTALL_DATA} ${WRKSRC}/CAMD/Include/*.h		             ${PREFIX}/include/suitesparse
-	${INSTALL_DATA} ${WRKSRC}/SPQR/Include/*.h		             ${PREFIX}/include/suitesparse
-	${INSTALL_DATA} ${WRKSRC}/SPQR/Include/*.hpp		             ${PREFIX}/include/suitesparse
-	${INSTALL_DATA} ${WRKDIR}/tmp_static/*.a                             ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/*.so.${SVERSION}                    ${PREFIX}/lib
-	${INSTALL_DATA} ${WRKDIR}/tmp_shared/*.so                    ${PREFIX}/lib
+	@${MKDIR} ${PREFIX}/include/suitesparse
+	@${LN} -sf ${PREFIX}/include/suitesparse ${PREFIX}/include/ufsparse
+.for d in AMD BTF CAMD CCOLAMD CHOLMOD COLAMD CXSparse KLU SPQR UMFPACK
+	@${INSTALL_DATA} ${WRKSRC}/${d}/Include/*.h ${PREFIX}/include/suitesparse
+.endfor
+	@${INSTALL_DATA} ${WRKSRC}/UFconfig/*.h ${PREFIX}/include/suitesparse
+	@${INSTALL_DATA} ${WRKSRC}/SPQR/Include/*.hpp ${PREFIX}/include/suitesparse
+	@for i in `find ${WRKSRC_SHARED} -type f -name '*.a'` ; do \
+		${INSTALL_DATA} ${WRKSRC}/$${i##${WRKSRC_SHARED}/} \
+		$${i%.a}.so.${SVERSION} ${PREFIX}/lib ; \
+		j=$${i##*/} ;  ${LN} -sf $${j%.a}.so.${SVERSION} ${PREFIX}/lib/$${j%.a}.so ; \
+	done
 
 .include <bsd.port.post.mk>
