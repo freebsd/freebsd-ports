@@ -7,6 +7,7 @@
 
 PORTNAME=	rdoc
 PORTVERSION=	3.6.1
+PORTREVISION=	1
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
@@ -17,6 +18,11 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-PLIST_FILES=	bin/rdoc bin/ri
+GEM_ENV+=	RUBYLIB=${PREFIX}/${GEM_LIB_DIR}/lib
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+pre-install:
+RUBYGEM_ARGS+=	--bindir ${WRKDIR}
+
+.include <bsd.port.post.mk>
