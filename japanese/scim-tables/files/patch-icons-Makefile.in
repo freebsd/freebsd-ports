@@ -1,10 +1,9 @@
---- icons/Makefile.in.orig	Wed Oct 11 08:55:05 2006
-+++ icons/Makefile.in	Sun Nov 26 12:00:00 2006
-@@ -234,54 +234,9 @@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+--- icons/Makefile.in.orig	2011-05-17 11:57:00.000000000 -0700
++++ icons/Makefile.in	2011-07-18 15:46:13.144512805 -0700
+@@ -274,63 +274,9 @@
+ top_srcdir = @top_srcdir@
  MAINTAINERCLEANFILES = Makefile.in
--INST_ICONS = table.png	\
+ INST_ICONS = table.png	\
 -			  Amharic.png   \
 -			  Arabic.png    \
 -			  Array30.png   \
@@ -15,8 +14,6 @@
 -			  Cantonese.png \
 -			  CantonHK.png	\
 -			  CNS11643.png	\
--			  Quick.png	\
--			  Stroke5.png	\
 -			  Dayi.png      \
 -			  Erbi.png      \
 -			  Erbi-QS.png   \
@@ -27,34 +24,44 @@
 -			  Hanja.png     \
 -			  Hindi-inscript.png	\
 -			  Hindi-phonetic.png	\
--			  HIRAGANA.png  \
+-			  Hindi-remington.png   \
+ 			  HIRAGANA.png  \
+-			  IPA-X-SAMPA.png  \
 -			  Jyutping.png  \
--			  KATAKANA.png  \
+ 			  KATAKANA.png  \
 -			  Kannada-inscript.png	\
 -			  Kannada-kgp.png	\
 -			  LaTeX.png     \
 -			  Malayalam-inscript.png	\
+-			  Malayalam-phonetic.png	\
+-			  Marathi-remington.png   \
 -			  Nepali.png    \
 -			  Nippon.png    \
 -			  Punjabi-inscript.png	\
 -			  Punjabi-jhelum.png	\
 -			  Punjabi-phonetic.png	\
+-			  Punjabi-remington.png \
+-			  Quick.png	\
+-			  RussianTraditional.png        \
 -			  Simplex.png   \
+-			  SmartCangJie6.png    \
+-			  Stroke5.png	\
 -			  Tamil-inscript.png	\
 -			  Tamil-phonetic.png	\
 -			  Tamil-remington.png   \
 -			  Telugu-inscript.png	\
+-			  Tamil-tamil99.png   \
 -			  Thai.png	\
+-			  Translit.png	\
+-			  Ukrainian-Translit.png	\
+-			  Uyghur.png	\
 -			  Viqr.png      \
 -			  Wu.png        \
 -			  Wubi.png      \
 -			  Yawerty.png   \
 -			  ZhuYin.png    \
--			  Ziranma.png	\
--		          IPA-X-SAMPA.png 
-+INST_ICONS = HIRAGANA.png  \
-+		KATAKANA.png  \
-+		Nippon.png
+-			  Ziranma.png
++			  Nippon.png
  
  EXTRA_DIST = $(INST_ICONS)
  icondir = $(SCIM_ICONDIR)

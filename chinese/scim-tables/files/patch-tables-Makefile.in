@@ -1,10 +1,10 @@
---- tables/Makefile.in.orig	Mon Apr 30 09:55:09 2007
-+++ tables/Makefile.in	Mon Apr 30 09:55:31 2007
-@@ -234,7 +234,7 @@
- target_alias = @target_alias@
+--- tables/Makefile.in.orig	2011-05-17 11:57:01.000000000 -0700
++++ tables/Makefile.in	2011-07-19 09:49:34.052939809 -0700
+@@ -290,7 +290,7 @@
+ top_srcdir = @top_srcdir@
  MAINTAINERCLEANFILES = Makefile.in
  CLEANFILES = *.bak 
--SUBDIRS = additional am ar bn gu hi ja kn ko ml ne pa ru ta te th vi zh
+-SUBDIRS = additional am ar bn gr gu he hi ja kn ko ml mr ne pa ru ta te th vi zh ug uk
 +SUBDIRS = zh
  all: all-recursive
  

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scim-table-imengine
-PORTVERSION=	0.5.7
-PORTREVISION=	7
+PORTVERSION=	0.5.10
 CATEGORIES=	textproc
 MASTER_SITES=	SF/scim/scim-tables/${PORTVERSION}
 DISTNAME=	scim-tables-${PORTVERSION}
@@ -16,7 +15,7 @@ MAINTAINER=	lx@FreeBSD.org
 COMMENT=	SCIM table based input method engine
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
@@ -28,8 +27,9 @@ MAN1=		scim-make-table.1
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl" \
+CPPFLAGS=	-I${LOCALBASE}/include -D__STDC_ISO_10646__
+
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lintl" \
 		PREFIX="${PREFIX}"
 
 PLIST_SUB=	SKIM="@comment "

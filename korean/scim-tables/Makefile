@@ -6,8 +6,7 @@
 #    $MCom: ports/korean/scim-tables/Makefile,v 1.1 2006/09/30 03:44:11 ahze Exp $
 
 PORTNAME=	scim-tables
-PORTVERSION=	0.5.7
-PORTREVISION=	5
+PORTVERSION=	0.5.10
 CATEGORIES=	korean
 MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 
@@ -15,7 +14,7 @@ MAINTAINER=	lx@FreeBSD.org
 COMMENT=	SCIM table based Korean input methods
 
 BUILD_DEPENDS=	scim-make-table:${PORTSDIR}/textproc/scim-table-imengine
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	scim-make-table:${PORTSDIR}/textproc/scim-table-imengine
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

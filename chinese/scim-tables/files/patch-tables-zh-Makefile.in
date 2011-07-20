@@ -1,9 +1,9 @@
---- tables/zh/Makefile.in.old	Mon Apr 30 09:56:00 2007
-+++ tables/zh/Makefile.in	Mon Apr 30 09:56:30 2007
-@@ -247,7 +247,7 @@
- subdirs = @subdirs@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+--- tables/zh/Makefile.in.orig	2011-05-17 11:57:03.000000000 -0700
++++ tables/zh/Makefile.in	2011-07-19 09:51:34.062955257 -0700
+@@ -287,7 +287,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
 -SCIM_MAKE_TABLE = $(top_builddir)/src/scim-make-table
 +SCIM_MAKE_TABLE = scim-make-table
  scim_tables_source = \
