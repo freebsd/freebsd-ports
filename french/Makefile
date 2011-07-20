@@ -21,6 +21,7 @@
     SUBDIR += gibi
     SUBDIR += gimp-help
     SUBDIR += homard
+    SUBDIR += hunspell
     SUBDIR += ispell
     SUBDIR += jdictionary-fre-hun
     SUBDIR += kde3-i18n
