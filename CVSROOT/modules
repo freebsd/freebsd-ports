@@ -1065,6 +1065,7 @@ blackshadeselite                ports/games/blackshadeselite
 blacs                           ports/math/blacs
 bladeenc                        ports/audio/bladeenc
 blam                            ports/net/blam
+blame                           ports/devel/blame
 blas                            ports/math/blas
 blat                            ports/biology/blat
 bld                             ports/net/bld
@@ -1914,6 +1915,7 @@ crawl                           ports/www/crawl
 cre                             ports/games/cre
 cream                           ports/editors/cream
 create-cert                     ports/security/create-cert
+createrepo                      ports/sysutils/createrepo
 createtorrent                   ports/net-p2p/createtorrent
 credis                          ports/databases/credis
 creox                           ports/audio/creox
@@ -4918,6 +4920,7 @@ greed                           ports/games/greed
 gregarius                       ports/www/gregarius
 gregexp                         ports/misc/gregexp
 grepcidr                        ports/net-mgmt/grepcidr
+grepip                          ports/net-mgmt/grepip
 grepmail                        ports/mail/grepmail
 gresolver                       ports/dns/gresolver
 gretl                           ports/math/gretl
@@ -9842,6 +9845,7 @@ nagios-check_clamav             ports/net-mgmt/nagios-check_clamav
 nagios-check_cpu_usage          ports/net-mgmt/nagios-check_cpu_usage
 nagios-check_email_delivery     ports/net-mgmt/nagios-check_email_delivery
 nagios-check_hdd_health         ports/net-mgmt/nagios-check_hdd_health
+nagios-check_hp_bladechassis    ports/net-mgmt/nagios-check_hp_bladechassis
 nagios-check_ice                ports/net-mgmt/nagios-check_ice
 nagios-check_kumofs             ports/net-mgmt/nagios-check_kumofs
 nagios-check_memcached_paranoid  ports/net-mgmt/nagios-check_memcached_paranoid
@@ -22597,6 +22601,7 @@ qt4-qt3support                  ports/devel/qt4-qt3support
 qt4-qtconfig                    ports/misc/qt4-qtconfig
 qt4-qtdemo                      ports/misc/qt4-qtdemo
 qt4-qtestlib                    ports/devel/qt4-qtestlib
+qt4-qtsolutions-singleapplication  ports/devel/qt4-qtsolutions-singleapplication
 qt4-qvfb                        ports/devel/qt4-qvfb
 qt4-rcc                         ports/devel/qt4-rcc
 qt4-script                      ports/devel/qt4-script
