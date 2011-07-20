@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scim-tables
-PORTVERSION=	0.5.7
-PORTREVISION=	5
+PORTVERSION=	0.5.10
 CATEGORIES=	chinese
 MASTER_SITES=	SF/scim/${PORTNAME}/${PORTVERSION}
 
@@ -15,15 +14,16 @@ MAINTAINER=	lx@FreeBSD.org
 COMMENT=	SCIM table based Chinese input methods
 
 BUILD_DEPENDS=	scim-make-table:${PORTSDIR}/textproc/scim-table-imengine
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	scim-make-table:${PORTSDIR}/textproc/scim-table-imengine
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>
 
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include -D__STDC_ISO_10646__" \
-		LDFLAGS="-L${LOCALBASE}/lib -lintl" \
+CPPFLAGS+=	-I${LOCALBASE}/include -D__STDC_ISO_10646__
+
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -lintl" \
 		SCIM_DATADIR=${PREFIX}/share/scim \
 		SCIM_ICONDIR=${PREFIX}/share/scim/icons
 

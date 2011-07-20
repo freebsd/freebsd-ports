@@ -1,9 +1,9 @@
---- tables/ko/Makefile.in.orig	Sun Oct 30 22:07:37 2005
-+++ tables/ko/Makefile.in	Tue Nov  1 23:11:58 2005
-@@ -235,7 +235,7 @@
- subdirs = @subdirs@
- sysconfdir = @sysconfdir@
- target_alias = @target_alias@
+--- tables/ko/Makefile.in.orig	2011-05-17 11:57:02.000000000 -0700
++++ tables/ko/Makefile.in	2011-07-19 09:30:04.292794874 -0700
+@@ -274,7 +274,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
 -SCIM_MAKE_TABLE = $(top_builddir)/src/scim-make-table
 +SCIM_MAKE_TABLE = scim-make-table
  scim_tables_source = Hangul.txt.in HangulRomaja.txt.in Hanja.txt.in

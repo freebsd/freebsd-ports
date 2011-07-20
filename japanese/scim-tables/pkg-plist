@@ -1,9 +1,10 @@
+share/scim/icons/HIRAGANA.png
+share/scim/icons/KATAKANA.png
+share/scim/icons/Nippon.png
 share/scim/tables/HIRAGANA.bin
 share/scim/tables/KATAKANA.bin
 share/scim/tables/Nippon.bin
 share/scim/tables/T-Code.bin
 share/scim/tables/TUT-Code.bin
-share/scim/icons/HIRAGANA.png
-share/scim/icons/KATAKANA.png
-share/scim/icons/Nippon.png
+@dirrmtry share/scim/icons
 @dirrmtry share/scim/tables
