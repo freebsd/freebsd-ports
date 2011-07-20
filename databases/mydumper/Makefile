@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	mydumper
-PORTVERSION=	0.2.2
+PORTVERSION=	0.5.0
 CATEGORIES=	databases
 MASTER_SITES=	http://code.launchpad.net/mydumper/${PORTVERSION:R}/${PORTVERSION}/+download/
 
 MAINTAINER=	gslin@gslin.org
 COMMENT=	MySQL Data Dumper
 
+LICENSE=	GPLv3
+
 BUILD_DEPENDS=	${LOCALBASE}/bin/cmake:${PORTSDIR}/devel/cmake
 LIB_DEPENDS=	pcre:${PORTSDIR}/devel/pcre
-
-LICENSE=	GPLv3
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:S/a//}
 
