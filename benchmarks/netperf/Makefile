@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	netperf
-PORTVERSION=	2.4.5
+PORTVERSION=	2.5.0
 CATEGORIES=	benchmarks ipv6
 MASTER_SITES=	ftp://ftp.netperf.org/netperf/
 
