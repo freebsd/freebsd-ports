@@ -21,6 +21,7 @@
     SUBDIR += eric4
     SUBDIR += geonext
     SUBDIR += gimp-help
+    SUBDIR += hunspell
     SUBDIR += ispell
     SUBDIR += ispell-alt
     SUBDIR += ispell-neu
