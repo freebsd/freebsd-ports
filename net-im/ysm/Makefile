@@ -15,7 +15,9 @@ DISTNAME=	${PORTNAME}v${PORTVERSION:S/./_/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command line ICQ client with ICQ2000 and recoding support
 
+.if ${CC} == "clang"
 USE_CSTD=	c89
+.endif
 
 USE_ICONV=	yes
 USE_BZIP2=	yes
