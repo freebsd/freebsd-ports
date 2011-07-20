@@ -1259,6 +1259,7 @@
     SUBDIR += sv-aspell
     SUBDIR += svn2cl
     SUBDIR += sw-aspell
+    SUBDIR += sw-hunspell
     SUBDIR += sxml
     SUBDIR += syck
     SUBDIR += ta-aspell
