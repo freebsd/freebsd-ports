@@ -23,6 +23,12 @@ DOCS=		dbs.man dbs.man.jis dbs_paper.ps Copyright
 EXDIR=		${PREFIX}/share/examples/dbs/
 EXS=		TCP2.cmd TCPvsMPEG.cmd
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000
+BROKEN=		does not compile on FreeBSD 9.X
+.endif
+
 do-build:
 	cd ${WRKSRC}/src; ${MAKE} dir
 	cd ${WRKSRC}/obj/${OPSYS}; ${MAKE} ${ALL_TARGET} PREFIX=${PREFIX}
@@ -37,4 +43,4 @@ do-install:
 	cd ${WRKSRC}/doc; ${CP} -p ${DOCS} ${DOCDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
