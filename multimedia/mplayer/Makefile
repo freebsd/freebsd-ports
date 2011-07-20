@@ -51,6 +51,7 @@ OPTIONS+=	SPEEX "Enable speex audio codec support" on
 OPTIONS+=	THEORA "Enable ogg theora video support" off
 OPTIONS+=	VPX "Enable VP8 video via libvpx" off
 OPTIONS+=	SCHROEDINGER "Dirac codec via libschroedinger" off
+OPTIONS+=	ASS "Enable ASS/SSA subtitle rendering" Off
 .if !defined(PACKAGE_BUILDING)
 OPTIONS+=	WIN32 "Enable win32 codec set on the IA32 arch" on
 .endif
@@ -73,6 +74,12 @@ SUB_FILES=	pkg-message
 
 CONFFILES=	example.conf input.conf menu.conf dvb-menu.conf
 
+# fix for bug when libass is installed, mplayer configure does not
+# uphold --disable-ass
+.if exists(${LOCALBASE}/lib/libass.so)
+WITH_ASS=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
@@ -92,6 +99,15 @@ CONFIGURE_ARGS+=	--disable-ssse3 \
 			--disable-musepack
 
 .include "${.CURDIR}/Makefile.options"
+
+.if defined(WITH_ASS)
+LIB_DEPENDS+=	ass.5:${PORTSDIR}/multimedia/libass
+USE_GNOME+=	pkgconfig
+LIBASS_PKGCONFIG_CFLAGS=	pkg-config --cflags --silence-errors libass
+.else
+CONFIGURE_ARGS+=	--disable-ass --disable-ass-internal
+LIBASS_PKGCONFIG_CFLAGS=	${ECHO_CMD}
+.endif
 
 .if !defined(WITHOUT_GUI) && !defined(WITHOUT_X11)
 MLINKS+=	mplayer.1 gmplayer.1
@@ -266,6 +282,9 @@ post-patch:
 		's|irqp = 1024|irqp = ${DEFAULT_KERN_HZ}|' \
 		${WRKSRC}/mplayer.c
 .endif
+	@${REINPLACE_CMD} \
+		-e 's|%%LIBASS_PKGCONFIG_CFLAGS%%|${LIBASS_PKGCONFIG_CFLAGS}|' \
+			${BUILD_WRKSRC}/${MAKEFILE}
 
 post-configure:
 	@${REINPLACE_CMD} -e 's#-pthread#${PTHREAD_LIBS}#g' \

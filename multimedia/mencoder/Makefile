@@ -41,6 +41,7 @@ OPTIONS+=	X264 "Enable x264 (H.264) video codec support" on
 OPTIONS+=	VPX "Enable VP8 video via libvpx" off
 OPTIONS+=	DIRAC "Enable dirac video codec support" off
 OPTIONS+=	SCHROEDINGER "Dirac codec via libschroedinger" off
+OPTIONS+=	ASS "Enable ASS/SSA subtitle rendering" Off
 OPTIONS+=	REALPLAYER "Enable real player plugin" off
 OPTIONS+=	LIVEMEDIA "Enable LIVE555 streaming support" off
 OPTIONS+=	SMB "Enable Samba input support" off
@@ -63,6 +64,12 @@ TOOLFILES=	aconvert.sh binary_codecs.sh calcbpp.pl \
 		mpconsole.sh mplmult.sh plotpsnr.pl \
 		psnr-video.sh qepdvcd.sh subedit.pl \
 		subsearch.sh w32codec_dl.pl wma2ogg.pl \
+
+# fix for bug when libass is installed, mplayer configure does not
+# uphold --disable-ass
+.if exists(${LOCALBASE}/lib/libass.so)
+WITH_ASS=	yes
+.endif
 
 .include <bsd.port.pre.mk>
 
@@ -89,6 +96,15 @@ CONFIGURE_ARGS+=	--disable-mplayer \
 ALL_TARGET=	mencoder
 
 .include "${.CURDIR}/../mplayer/Makefile.options"
+
+.if defined(WITH_ASS)
+LIB_DEPENDS+=	ass.5:${PORTSDIR}/multimedia/libass
+USE_GNOME+=	pkgconfig
+LIBASS_PKGCONFIG_CFLAGS=	pkg-config --cflags --silence-errors libass
+.else
+CONFIGURE_ARGS+=	--disable-ass --disable-ass-internal
+LIBASS_PKGCONFIG_CFLAGS=	${ECHO_CMD}
+.endif
 
 .if defined(WITH_FONTCONFIG)
 LIB_DEPENDS+=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig
@@ -161,6 +177,9 @@ post-patch:
 		's|/usr/\\:local/\\:etc/\\:mplayer|${DATADIR:S/\//\/\\\:/g}|g ; \
 		 s|/dev/\\:(dvd[[:alnum:]]*[[:>:]])|${DEFAULT_DVD_DEVICE:S/dev\//dev\/\\\:/}|g ; \
 		 s|/dev/\\:(cdrom[[:alnum:]]*[[:>:]])|${DEFAULT_CDROM_DEVICE:S/dev\//dev\/\\\:/}|g'
+	@${REINPLACE_CMD} \
+		-e 's|%%LIBASS_PKGCONFIG_CFLAGS%%|${LIBASS_PKGCONFIG_CFLAGS}|' \
+			${BUILD_WRKSRC}/${MAKEFILE}
 
 post-configure:
 	@${REINPLACE_CMD} -e 's#-pthread#${PTHREAD_LIBS}#g' \
