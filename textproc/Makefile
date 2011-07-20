@@ -1242,6 +1242,7 @@
     SUBDIR += spellutils
     SUBDIR += sphinxsearch
     SUBDIR += sphinxsearch-devel
+    SUBDIR += sq-hunspell
     SUBDIR += sr-aspell
     SUBDIR += sr-hunspell
     SUBDIR += srilm
