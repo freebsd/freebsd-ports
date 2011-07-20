@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	www
 MASTER_SITES=	http://sysoev.ru/nginx/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -157,9 +157,11 @@ CONFIGURE_ARGS+=--http-client-body-temp-path=${NGINX_TMPDIR}/client_body_temp \
 		--http-log-path=${NGINX_ACCESSLOG}
 
 .if defined(WITH_HTTP_ACCEPT_LANGUAGE)
-MASTER_SITES+=	ftp://inside01.p8.ru/nginx/:accept_language
-DISTFILES+=	nginx_accept_language_module.tar.gz:accept_language
-CONFIGURE_ARGS+=--add-module=${WRKDIR}/nginx_accept_language_module
+GIT_ACCEPT_LANGUAGE_MODULE_VERSION=	02262ce
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/giom/nginx_accept_language_module/tarball/master/:accept_language
+DISTFILES+=	giom-nginx_accept_language_module-${GIT_ACCEPT_LANGUAGE_MODULE_VERSION}.tar.gz:accept_language
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/giom-nginx_accept_language_module-${GIT_ACCEPT_LANGUAGE_MODULE_VERSION}
 .endif
 
 .if defined(WITH_HTTP_ACCESSKEY_MODULE)
