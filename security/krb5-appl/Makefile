@@ -7,13 +7,13 @@
 
 PORTNAME=		krb5-appl
 PORTVERSION=		1.0.1
-PORTREVISION=		2
+PORTREVISION=		3
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
 DISTNAME=		${PORTNAME}-${PORTVERSION}-signed
 EXTRACT_SUFX=		.tar
-# PATCHFILES=		2011-005-patch.txt
+PATCHFILES=		2011-005-patch.txt
 
 MAINTAINER=		cy@FreeBSD.org
 COMMENT=		An authentication system developed at MIT, successor to Kerberos IV
@@ -31,7 +31,7 @@ USE_OPENSSL=		yes
 USE_GMAKE=		yes
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
-USE_AUTOTOOLS=		libtool
+USE_AUTOTOOLS=		libtool autoheader autoconf
 CONFIGURE_ARGS?=	--enable-shared --with-krb5=${PREFIX}/bin/krb5-config
 CONFIGURE_ENV=		INSTALL="${INSTALL}" YACC=/usr/bin/yacc \
 			CFLAGS="${CFLAGS}"
