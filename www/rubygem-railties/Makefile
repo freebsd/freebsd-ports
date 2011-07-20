@@ -22,8 +22,4 @@ USE_RAKE=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=  yes
 
-.include <bsd.port.pre.mk>
-.if ${RUBY_VER} == 1.8
-BROKEN=		rdoc 3.x+ does not work with ruby 1.8
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
