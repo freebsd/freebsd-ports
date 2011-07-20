@@ -6,24 +6,19 @@
 #
 
 PORTNAME=	bamg
-PORTVERSION=	0.68
-PORTREVISION=	4
+PORTVERSION=	1.01
 CATEGORIES=	math science
-MASTER_SITES=	http://pauillac.inria.fr/cdrom_a_graver/ftp/bamg/ \
-		http://pauillac.inria.fr/cdrom/ftp/bamg/ \
-		http://www-rocq1.inria.fr/gamma/cdrom/ftp/bamg/	\
-		http://ftp.tuniv.szczecin.pl/pub/Linux/Scilab/INRIA/Gamma/bamg/
-DISTFILES=	${PORTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://www.ann.jussieu.fr/hecht/ftp/bamg/
+DISTFILES=	${PORTNAME}-v${PORTVERSION}${EXTRACT_SUFX}
 .ifndef(NOPORTDOCS)
-DISTFILES+=	${PORTNAME}.ps.gz
-EXTRACT_ONLY=	${PORTNAME}${EXTRACT_SUFX}
+DISTFILES+=	${PORTNAME}.pdf
+EXTRACT_ONLY=	${PORTNAME}-v${PORTVERSION}${EXTRACT_SUFX}
 .endif
 
 MAINTAINER=	stephen@FreeBSD.org
-COMMENT=	Bidimensional Anisotrope Mesh Generator
+COMMENT=	Bidimensional Anisotropic Mesh Generator
 
 RESTRICTED=	No resale, contact author for commercial usage
-BROKEN=		fails to fetch
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
@@ -52,7 +47,7 @@ post-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${GZCAT} ${DISTDIR}/${PORTNAME}.ps.gz > ${DOCSDIR}/${PORTNAME}.ps
+	@${INSTALL_DATA} ${DISTDIR}/${PORTNAME}.pdf ${DOCSDIR}
 	@${ECHO_MSG} "===>  Documentation installed in ${DOCSDIR}."
 .for exdir in ${EXDIRS}
 	@${MKDIR} ${EXAMPLESDIR}/${exdir}

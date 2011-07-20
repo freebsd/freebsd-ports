@@ -1,5 +1,5 @@
-bamg is a Bidimensional Anisotrope Mesh Generator.
+bamg is a Bidimensional Anisotropic Mesh Generator.
 
 Suggested add-on: the port math/freefem++.
 
-WWW: http://www-rocq1.inria.fr/gamma/cdrom/www/bamg/eng.htm
+WWW: http://www.ann.jussieu.fr/hecht/ftp/bamg/
