@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	postgresql
-DISTVERSION?=	9.1beta2
+DISTVERSION?=	9.1beta3
 CATEGORIES?=	databases
 MASTER_SITES=	${MASTER_SITE_PGSQL}
 MASTER_SITE_SUBDIR=	source/v${DISTVERSION}
@@ -14,8 +14,6 @@ PKGNAMESUFFIX?=	-server
 
 MAINTAINER?=	girgen@FreeBSD.org
 COMMENT?=	The most advanced open-source database available anywhere
-
-BROKEN=		incomplete plist
 
 CONFLICTS?=	${PORTNAME}-client-[78]* \
 		${PORTNAME}-client-9.[02-9]* \
@@ -325,6 +323,7 @@ SUB_FILES+=     pkg-install${PKGNAMESUFFIX}
 SUB_LIST=	PG_GROUP=$(PG_GROUP) \
 		PG_USER=$(PG_USER) \
 		PG_UID=$(PG_UID)
+PLIST_SUB+=	PG_USER=$(PG_USER)
 PKGINSTALL=     ${WRKDIR}/pkg-install${PKGNAMESUFFIX}
 .  endif
 .endif
