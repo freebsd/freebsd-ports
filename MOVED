@@ -1118,7 +1118,7 @@ x11-toolkits/hs-GLURaw-ghc|x11-toolkits/hs-GLURaw|2010-05-24|Renamed: No need fo
 x11-toolkits/hs-opengl-ghc|x11-toolkits/hs-OpenGL|2010-05-24|Renamed: Brought in sync with HackageDB and no need for suffix
 x11-toolkits/hs-glut-ghc|x11-toolkits/hs-GLUT|2010-05-24|Renamed: Brought in sync with HackageDB and no need for suffix
 x11-wm/xmonad|x11-wm/hs-xmonad|2010-05-24|Renamed: It has become a Cabal transcript
-x11-wm/xmonad-contrib|hs-xmonad-contrib|2010-05-24|Renamed: It has become a Cabal transcript
+x11-wm/xmonad-contrib|x11-wm/hs-xmonad-contrib|2010-05-24|Renamed: It has become a Cabal transcript
 devel/ruby-game|devel/rubygem-rubygame|2010-05-24|Use devel/rubygem-rubygame instead
 devel/py-ro||2010-05-25|Use devel/py-pyro instead
 devel/runawk|lang/runawk|2010-05-31|Port duplicate with lang/runawk
@@ -2166,7 +2166,7 @@ net/skype|net-im/skype|2011-05-09|Moved to better category
 net/skype-devel|net-im/skype-devel|2011-05-12|Moved to better category
 devel/libchipcard-kde||2011-05-14|obsolete
 sysutils/libgksuui|sysutils/libgksu|2011-05-14|Removed: It is a part of sysutils/libgksu now
-barnyard-sguil|barnyard2-sguil|2011-05-15|barnyard2 has build in sguil support
+security/barnyard-sguil|security/barnyard2-sguil|2011-05-15|barnyard2 has build in sguil support
 multimedia/rebot3||2011-05-16|Removed
 devel/tcl-neo||2011-05-22|Removed: deprecated and no maintainer interest
 www/neowebscript||2011-05-22|Removed: deprecated and no maintainer interest
