@@ -144,6 +144,7 @@
     SUBDIR += el-aspell
     SUBDIR += emacs-wiki
     SUBDIR += en-aspell
+    SUBDIR += en-hunspell
     SUBDIR += enchant
     SUBDIR += eo-aspell
     SUBDIR += eqe
