@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	amule
-PORTVERSION=	10400
-PORTREVISION=	2
+PORTVERSION=	10589
 CATEGORIES=	net-p2p
 MASTER_SITES=	http://amule.sourceforge.net/tarballs/
 PKGNAMESUFFIX=	-devel
@@ -28,8 +27,6 @@ LICENSE_FILE_GPLv2=${WRKSRC}/docs/COPYING
 USE_BZIP2=	yes
 USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
-USE_KDE4=	# empty
-USE_QT_VER=	4
 USE_WX=		2.8
 WX_CONF_ARGS=	absolute
 GNU_CONFIGURE=	yes
@@ -61,14 +58,13 @@ OPTIONS=	ALC "Compile aMule Link Creator for GUI" on \
 		WXUNICODE "Enable Unicode support" on \
 		XAS "Install XChat2 plugin" on
 
-PORTDOCS=	ABOUT-NLS Changelog EC_Protocol.txt \
-		ED2K-Links.HOWTO INSTALL README TODO \
-		amule-win32.HOWTO.txt amulesig.txt license.txt socks4.protocol
+PORTDOCS=	ABOUT-NLS Changelog EC_Protocol.txt INSTALL README TODO \
+		amulesig.txt license.txt
 
 FLEX?=		${LOCALBASE}/bin/flex
 PKG_CONFIG?=	${LOCALBASE}/bin/pkg-config
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITH_DEBUG)
 CONFIGURE_ARGS+=--disable-debug
@@ -175,7 +171,8 @@ CONFIGURE_ENV+=		ac_cv_path_KDE4_CONFIG=${KDE4_PREFIX}/bin/kde4-config \
 			KBUILDSYCOCA=${KDE4_PREFIX}/bin/kbuildsycoca4 \
 			UPDATE_MIME_DATABASE=/usr/bin/true
 CONFIGURE_ARGS+=	--enable-plasmamule
-USE_KDE4+=		kdelibs
+USE_KDE4=		kdelibs
+USE_QT_VER=		4
 QT_COMPONENTS+=		dbus gui moc_build
 PLIST_SUB+=		PLASMAMULE=""
 .else
@@ -232,7 +229,6 @@ post-patch:	.SILENT
 .if !defined(WITHOUT_PLASMAMULE)
 	${REINPLACE_CMD} -e 's|@prefix@|${KDE4_PREFIX}|' \
 		-e 's|LDFLAGS =|& -L${KDE4_PREFIX}/lib |' \
-		-e '/plasma.*feeder.*LDFLAGS/s/=/& -lQtDBus /' \
 		${WRKSRC}/src/utils/plasmamule/Makefile.in
 .endif
 
@@ -240,10 +236,14 @@ post-install:
 .if !defined(WITHOUT_FILEVIEW)
 	${INSTALL_PROGRAM} ${WRKSRC}/src/utils/fileview/mulefileview ${PREFIX}/bin
 .endif
-.if !defined(WITHOUT_PLASMAMULE)
+.if exists(${LOCALBASE}/bin/update-desktop-database)
+. if !defined(WITHOUT_PLASMAMULE)
 	-update-desktop-database ${KDE4_PREFIX}/share/applications
+.  if exists(${LOCALBASE}/bin/update-mime-database)
 	-update-mime-database ${KDE4_PREFIX}/share/mime
-.endif
+.  endif
+. endif
 	-update-desktop-database ${PREFIX}/share/applications
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
