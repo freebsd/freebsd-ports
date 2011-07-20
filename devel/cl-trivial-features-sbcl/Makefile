@@ -17,6 +17,8 @@ COMMENT=	Ensures consistent *FEATURES* in Common Lisp
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/trivial-features.asd:${PORTSDIR}/devel/cl-trivial-features
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/trivial-features/trivial-features.asd:${PORTSDIR}/devel/cl-trivial-features
 
+BROKEN=		fails to build
+
 USE_ASDF_FASL=	yes
 FASL_TARGET=	sbcl
 FASL_BUILD=	yes

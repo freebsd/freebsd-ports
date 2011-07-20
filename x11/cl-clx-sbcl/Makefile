@@ -11,6 +11,8 @@ MASTERDIR=	${.CURDIR}/../../x11/cl-clx
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/clx/clx.asd:${PORTSDIR}/x11/cl-clx
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/clx/clx.asd:${PORTSDIR}/x11/cl-clx
 
+BROKEN=		fails to build
+
 USE_ASDF_FASL=	yes
 FASL_BUILD=	yes
 FASL_TARGET=	sbcl

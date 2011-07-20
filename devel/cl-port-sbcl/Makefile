@@ -17,6 +17,8 @@ COMMENT=	Cross-Lisp portability package
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/port/port.asd:${PORTSDIR}/devel/cl-port
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/port/port.asd:${PORTSDIR}/devel/cl-port
 
+BROKEN=		fails to build
+
 USE_ASDF_FASL=	yes
 FASL_TARGET=	sbcl
 FASL_BUILD=	yes
