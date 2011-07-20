@@ -1317,6 +1317,7 @@
     SUBDIR += urlview
     SUBDIR += utf8proc
     SUBDIR += uz-aspell
+    SUBDIR += uz-hunspell
     SUBDIR += vbindiff
     SUBDIR += wa-aspell
     SUBDIR += wbxml2
