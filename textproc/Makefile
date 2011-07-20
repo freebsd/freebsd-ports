@@ -1321,6 +1321,7 @@
     SUBDIR += vbindiff
     SUBDIR += ve-hunspell
     SUBDIR += wa-aspell
+    SUBDIR += wa-hunspell
     SUBDIR += wbxml2
     SUBDIR += wdiff
     SUBDIR += webcpp
