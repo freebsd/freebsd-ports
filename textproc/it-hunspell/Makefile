@@ -12,7 +12,9 @@ MASTER_SITES=	SF/linguistico/Dizionario%20italiano%20per%20OOo/${PORTVERSION:S/.
 DISTNAME=	italiano_${PORTVERSION:S/./_/g}
 
 MAINTAINER=	bapt@FreeBSD.org
-COMMENT=	Hunspell italian dictionnary
+COMMENT=	Italian hunspell dictionaries
+
+LICENSE=	GPLv3
 
 USE_ZIP=	yes
 NO_BUILD=	yes
