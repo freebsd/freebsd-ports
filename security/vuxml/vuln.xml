@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9a777c23-b310-11e0-832d-00215c6a37bb">
+    <topic>rsync -- incremental recursion memory corruption vulnerability</topic>
+    <affects>
+      <package>
+	<name>rsync</name>
+	<range><gt>3.0</gt><lt>3.0.8</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>rsync development team reports:</p>
+	<blockquote cite="http://rsync.samba.org/ftp/rsync/src/rsync-3.0.8-NEWS">
+	  <p>Fixed a data-corruption issue when preserving hard-links
+	    without preserving file ownership, and doing deletions
+	    either before or during the transfer (CVE-2011-1097).  This
+	    fixes some assert errors in the hard-linking code, and some
+	    potential failed checksums (via -c) that should have matched.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-1097</cvename>
+      <url>https://bugzilla.samba.org/show_bug.cgi?id=7936</url>
+    </references>
+    <dates>
+      <discovery>2011-04-08</discovery>
+      <entry>2011-07-20</entry>
+    </dates>
+  </vuln>
 
  <vuln vid="fd64188d-a71d-11e0-89b4-001ec9578670">
    <topic>BIND -- Remote DoS against authoritative and recursive servers</topic>
