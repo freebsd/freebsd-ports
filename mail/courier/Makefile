@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	courier
-PORTVERSION=	0.63.0
-PORTREVISION=	1
+PORTVERSION=	0.65.3
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
@@ -61,7 +60,7 @@ CALENDIR=	/var/spool/calendar
 MIMETYPES=	${LOCALBASE}/etc/mime.types
 WITH_TRANSPORT=	local esmtp dsn
 
-USE_AUTOTOOLS=	libtool
+USE_AUTOTOOLS=	libtool aclocal
 USE_BZIP2=	yes
 USE_FAM=	yes
 USE_GETTEXT=	yes
@@ -98,6 +97,7 @@ CONFIGURE_ARGS=	--disable-root-check \
 		--with-cachedir=${CACHEDIR} \
 		--with-cacheowner=${CACHEOWN} \
 		--with-calendardir=${CALENDIR} \
+		--with-certsdir=${SYSCONFDIR} \
 		--with-transport='${WITH_TRANSPORT}' \
 		--with-default-maildrop=${MAILDROPDEFAULT} \
 		--with-paranoid-smtpext \
@@ -372,6 +372,11 @@ pre-configure:
 	@if [ -f "${WRKDIR}/courier.cache" -a -s "${WRKDIR}/courier.cache" ]; then \
 		${RM} -f "${WRKDIR}/courier.cache"; \
 	fi
+	@cp ${LOCALBASE}/share/gettext/po/Makefile.in.in ${WRKSRC}/pcp/po
+	@cp ${LOCALBASE}/share/libtool/config/ltmain.sh ${WRKSRC}
+.for oldlt in . bdbobj cgi courier courier/libs courier/filters courier/filters/perlfilter courier/module.dsn courier/module.esmtp courier/module.local courier/module.uucp gdbmobj gpglib http11 imap ldapaddressbook libhmac liblock maildir maildrop makedat md5 numlib pcp random128 rfc822 rfc1035 rfc2045 sha1 tcpd unicode webmail
+	@cd ${WRKSRC}/${oldlt} && ${SETENV} ${SCRIPTS_ENV} ${SH} /usr/local/bin/aclocal
+.endfor
 
 post-build:
 	@${PERL} -pi -e 's|^(auth)\s+(required).*|$$1\t\t$$2\tpam_unix.so\ttry_first_pass|g;' \
