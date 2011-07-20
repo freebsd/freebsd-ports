@@ -1267,6 +1267,7 @@
     SUBDIR += tdhkit
     SUBDIR += tdtd.el
     SUBDIR += te-aspell
+    SUBDIR += te-hunspell
     SUBDIR += teckit
     SUBDIR += tei-guidelines-p3
     SUBDIR += tei-guidelines-p4
