@@ -1319,6 +1319,7 @@
     SUBDIR += uz-aspell
     SUBDIR += uz-hunspell
     SUBDIR += vbindiff
+    SUBDIR += ve-hunspell
     SUBDIR += wa-aspell
     SUBDIR += wbxml2
     SUBDIR += wdiff
