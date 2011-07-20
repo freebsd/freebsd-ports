@@ -9,10 +9,10 @@
 %%PLASMAMULE%%share/kde4/services/plasma-applet-plasmamule.desktop
 %%PLASMAMULE%%share/kde4/services/plasma-engine-plasmamule.desktop
 %%PLASMAMULE%%share/mime/amule.xml
-%%PLASMAMULE%%@exec %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
-%%PLASMAMULE%%@unexec %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
-%%PLASMAMULE%%@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime >/dev/null 2>&1 || true
-%%PLASMAMULE%%@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime >/dev/null 2>&1 || true
+%%PLASMAMULE%%@exec [ -f %%LOCALBASE%%/bin/update-desktop-database ] && %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
+%%PLASMAMULE%%@unexec [ -f %%LOCALBASE%%/bin/update-desktop-database ] && %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
+%%PLASMAMULE%%@exec [ -f %%LOCALBASE%%/bin/update-mime-database ] && %%LOCALBASE%%/bin/update-mime-database %D/share/mime >/dev/null 2>&1 || true
+%%PLASMAMULE%%@unexec [ -f %%LOCALBASE%%/bin/update-mime-database ] && %%LOCALBASE%%/bin/update-mime-database %D/share/mime >/dev/null 2>&1 || true
 %%PLASMAMULE%%@cwd
 %%ALC%%bin/alc
 %%ALCC%%bin/alcc
@@ -162,6 +162,8 @@
 @dirrmtry man/hu
 @dirrmtry man/it/man1
 @dirrmtry man/it
+@dirrmtry man/ru/man1
+@dirrmtry man/ru
 @dirrm %%DATADIR%%/skins
 %%WEBSERVER%%@dirrm %%DATADIR%%/webserver/default
 %%WEBSERVER%%@dirrm %%DATADIR%%/webserver
@@ -176,5 +178,5 @@
 %%NLS%%@dirrmtry share/locale/it_CH
 %%NLS%%@dirrmtry share/locale/ko_KR/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ko_KR
-@exec %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
-@unexec %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
+@exec [ -f %%LOCALBASE%%/bin/update-desktop-database ] && %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
+@unexec [ -f %%LOCALBASE%%/bin/update-desktop-database ] && %%LOCALBASE%%/bin/update-desktop-database %D/share/applications 2>/dev/null || true
