@@ -289,6 +289,7 @@
     SUBDIR += iso8879
     SUBDIR += ispell
     SUBDIR += it-aspell
+    SUBDIR += it-hunspell
     SUBDIR += it-ispell
     SUBDIR += jade
     SUBDIR += jakarta-commons-digester
