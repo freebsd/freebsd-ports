@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Git-Wrapper
-PORTVERSION=	0.014
+PORTVERSION=	0.015
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,9 @@ COMMENT=	Wrap git(7) command-line interface
 BUILD_DEPENDS=	git>=0:${PORTSDIR}/devel/git
 RUN_DEPENDS=	git>=0:${PORTSDIR}/devel/git \
 		p5-File-pushd>=0:${PORTSDIR}/devel/p5-File-pushd
+
+LICENSE_COMB=	dual
+LICENSE=	ART10 GPLv1
 
 PERL_CONFIGURE=	yes
 
