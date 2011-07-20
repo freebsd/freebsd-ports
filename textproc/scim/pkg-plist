@@ -140,17 +140,17 @@ share/locale/zh_TW/LC_MESSAGES/scim.mo
 @dirrm include/scim-1.0/x11
 @dirrm include/scim-1.0/gtk
 @dirrm include/scim-1.0
-@dirrmtry lib/gtk-2.0/immodules
 @dirrm lib/scim-1.0/1.4.0/Config
 @dirrm lib/scim-1.0/1.4.0/Filter
 @dirrm lib/scim-1.0/1.4.0/FrontEnd
 @dirrm lib/scim-1.0/1.4.0/Helper
-@dirrm lib/scim-1.0/1.4.0/IMEngine
-@dirrm lib/scim-1.0/1.4.0/SetupUI
-@dirrm lib/scim-1.0/1.4.0
-@dirrm lib/scim-1.0
-@dirrm %%DATADIR%%/icons
-@dirrm %%DATADIR%%
+@dirrmtry %%DATADIR%%/icons
+@dirrmtry %%DATADIR%%
+@dirrmtry lib/gtk-2.0/immodules
+@dirrmtry lib/scim-1.0/1.4.0/IMEngine
+@dirrmtry lib/scim-1.0/1.4.0/SetupUI
+@dirrmtry lib/scim-1.0/1.4.0
+@dirrmtry lib/scim-1.0
+@dirrmtry share/applications
 @exec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
 @unexec gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
-@dirrmtry share/applications
