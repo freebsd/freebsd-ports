@@ -15,6 +15,8 @@ COMMENT=	Portable Perl-Compatible Regular Expression for Common Lisp
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/cl-ppcre/cl-ppcre.asd:${PORTSDIR}/textproc/cl-ppcre
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/cl-ppcre/cl-ppcre.asd:${PORTSDIR}/textproc/cl-ppcre
 
+BROKEN=		fails to build
+
 USE_ASDF_FASL=	yes
 FASL_TARGET=	sbcl
 FASL_BUILD=	yes

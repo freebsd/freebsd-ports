@@ -17,6 +17,8 @@ COMMENT=	Lisp Markup Language
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/system-registry/lml.asd:${PORTSDIR}/www/cl-lml
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/system-registry/lml.asd:${PORTSDIR}/www/cl-lml
 
+BROKEN=		fails to build
+
 USE_ASDF_FASL=	yes
 FASL_TARGET=	sbcl
 FASL_BUILD=	yes
