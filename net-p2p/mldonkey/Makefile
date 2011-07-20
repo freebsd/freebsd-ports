@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	mldonkey
-PORTVERSION=	3.0.6
+PORTVERSION=	3.0.7
 CATEGORIES+=	net-p2p
 MASTER_SITES=	SF
 
 MAINTAINER?=	lioux@FreeBSD.org
 COMMENT?=	A OCAML client for multiple peer-to-peer networks
 
-BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/Copying.txt
+
+BUILD_DEPENDS=	ocamlc:${PORTSDIR}/lang/ocaml
 
 NO_LATEST_LINK=	yes
 CONFLICTS=	mldonkey{-{core,gui},}-devel-[0-9]*
