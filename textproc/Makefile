@@ -1341,6 +1341,7 @@
     SUBDIR += xerces-c3
     SUBDIR += xerces-j
     SUBDIR += xfce4-dict-plugin
+    SUBDIR += xh-hunspell
     SUBDIR += xhtml
     SUBDIR += xhtml-11
     SUBDIR += xhtml-basic
