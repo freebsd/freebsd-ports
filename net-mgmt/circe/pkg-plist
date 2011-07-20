@@ -18,7 +18,6 @@ etc/ipfw.end.dist
 etc/ipfw.init.dist
 etc/ipfw.local.dist
 etc/rc.d/circed
-%%SITE_PERL%%/LibNAC.pm
 @unexec rmdir %D/etc/env 2>/dev/null || true
 @unexec rmdir %D/share/nac 2>/dev/null || true
 @unexec rmdir %D/libexec/nac 2>/dev/null || true
