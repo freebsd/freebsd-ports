@@ -23,6 +23,7 @@ USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/ATLAS
 USE_LDCONFIG=	yes
 CONFLICTS=	atlas-devel-[0-9]*
+PORTSCOUT=	limitw:1,even
 
 .include <bsd.port.pre.mk>
 
