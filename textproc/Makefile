@@ -144,6 +144,7 @@
     SUBDIR += ecromedos
     SUBDIR += ekhtml
     SUBDIR += el-aspell
+    SUBDIR += el-hyphen
     SUBDIR += emacs-wiki
     SUBDIR += en-aspell
     SUBDIR += en-hunspell
