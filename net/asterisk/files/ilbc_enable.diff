@@ -1,16 +1,6 @@
 
 $FreeBSD$
 
---- menuselect-tree
-+++ menuselect-tree
-@@ -269,7 +269,6 @@
- 	<depend>gsm</depend>
- </member>
- <member name="codec_ilbc" displayname="iLBC Coder/Decoder" remove_on_change="codecs/codec_ilbc.o codecs/codec_ilbc.so">
--	<defaultenabled>no</defaultenabled>
- </member>
- <member name="codec_lpc10" displayname="LPC10 2.4kbps Coder/Decoder" remove_on_change="codecs/codec_lpc10.o codecs/codec_lpc10.so">
- </member>
 diff -druN codecs/ilbc.orig/FrameClassify.c codecs/ilbc/FrameClassify.c
 --- codecs/ilbc.orig/FrameClassify.c	1969-12-31 16:00:00.000000000 -0800
 +++ codecs/ilbc/FrameClassify.c	2006-02-14 11:14:15.000000000 -0800
@@ -7587,13 +7577,3 @@ diff -druN codecs/ilbc.orig/syntFilter.h codecs/ilbc/syntFilter.h
 +#endif
 +
 +
---- codecs/.moduleinfo	2008/08/20 23:00:58	1.1
-+++ codecs/.moduleinfo	2008/08/20 23:01:12
-@@ -11,7 +11,6 @@
- 	<depend>gsm</depend>
- </member>
- <member name="codec_ilbc" displayname="iLBC Coder/Decoder" remove_on_change="codecs/codec_ilbc.o codecs/codec_ilbc.so">
--	<defaultenabled>no</defaultenabled>
- </member>
- <member name="codec_lpc10" displayname="LPC10 2.4kbps Coder/Decoder" remove_on_change="codecs/codec_lpc10.o codecs/codec_lpc10.so">
- </member>
