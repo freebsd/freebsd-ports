@@ -425,6 +425,7 @@
     SUBDIR += nb-aspell
     SUBDIR += nds-aspell
     SUBDIR += nl-aspell
+    SUBDIR += nl-hyphen
     SUBDIR += nl-ispell
     SUBDIR += nltk
     SUBDIR += nn-aspell
