@@ -5,7 +5,7 @@
 #
 
 PORTNAME=	Pod-Simple
-PORTVERSION=	3.17
+PORTVERSION=	3.18
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -45,7 +45,7 @@ MAN3=		Pod::Simple.3 \
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500903
+.if ${PERL_LEVEL} < 501000
 RUN_DEPENDS=	p5-Pod-Escapes>=1.04:${PORTSDIR}/textproc/p5-Pod-Escapes
 BUILD_DEPENDS=	p5-Pod-Escapes>=1.04:${PORTSDIR}/textproc/p5-Pod-Escapes
 .endif
