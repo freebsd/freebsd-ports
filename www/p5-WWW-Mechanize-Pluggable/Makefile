@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WWW-Mechanize-Pluggable
-PORTVERSION=	1.10
+PORTVERSION=	1.12
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,6 +17,7 @@ COMMENT=	Custmomize WWW::Mechanize via plugins
 RUN_DEPENDS=	p5-Data-Dump-Streamer>=0:${PORTSDIR}/devel/p5-Data-Dump-Streamer \
 		p5-HTML-Form>=1.038:${PORTSDIR}/www/p5-HTML-Form \
 		p5-HTML-Parser>=2.28:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-HTTP-Cookies>=0:${PORTSDIR}/www/p5-HTTP-Cookies \
 		p5-HTTP-Daemon>=0:${PORTSDIR}/www/p5-HTTP-Daemon \
 		p5-HTTP-Message>=1.3:${PORTSDIR}/www/p5-HTTP-Message \
 		p5-URI>=1.25:${PORTSDIR}/net/p5-URI \
