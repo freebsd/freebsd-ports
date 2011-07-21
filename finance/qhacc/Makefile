@@ -57,7 +57,7 @@ PLIST_SUB+=	SQLITE="@comment "
 .endif
 
 .if defined(WITH_GPGME)
-LIB_DEPENDS+=	gpgme.18:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=	gpgme.19:${PORTSDIR}/security/gpgme
 CONFIGURE_ARGS+=	--enable-gpg
 PLIST_SUB+=	GPGME=""
 .else

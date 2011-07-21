@@ -44,7 +44,7 @@ USE_GETTEXT=	yes
 .include <bsd.port.pre.mk>
 
 .if exists(${LOCALBASE}/lib/libgpgme.so) || defined(WITH_GPGME)
-LIB_DEPENDS+=	gpgme.18:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=	gpgme.19:${PORTSDIR}/security/gpgme
 .else
 pre-everything::
 	@${ECHO_CMD}

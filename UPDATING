@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110721:
+  AFFECTS: users of security/gpgme
+  AUTHOR: jlaffaye@FreeBSD.org
+
+  gpgme has been updated to version 1.3.1. Please rebuild all ports that depends
+  on it.
+
+  If you use portmaster:
+  # portmaster -r gpgme
+
+  If you use portupgrade:
+  # portupgrade -fr security/gpgme
+
 20110718:
   AFFECTS: users of hungarian/hunspell
   AUTHOR: jlaffaye@FreeBSD.org

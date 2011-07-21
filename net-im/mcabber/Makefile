@@ -38,7 +38,7 @@ OPTIONS=	GPGME "Use security/gpgme for PGP support" off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GPGME)
-LIB_DEPENDS+=	gpgme.18:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=	gpgme.19:${PORTSDIR}/security/gpgme
 CONFIGURE_ARGS+=--enable-gpgme
 .else
 CONFIGURE_ARGS+=--disable-gpgme

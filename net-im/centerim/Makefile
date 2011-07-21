@@ -91,7 +91,7 @@ CONFIGURE_ARGS+=	--disable-jabber
 .if !defined(WITH_GPGME)
 CONFIGURE_ARGS+=	--without-gpgme
 .else
-LIB_DEPENDS+=		gpgme.18:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=		gpgme.19:${PORTSDIR}/security/gpgme
 #CONFIGURE_ARGS+=	--with-gpgme=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-ssl
 .endif

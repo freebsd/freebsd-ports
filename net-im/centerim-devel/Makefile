@@ -8,7 +8,7 @@
 
 PORTNAME=	centerim
 PORTVERSION=	4.22.9.40
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net-im
 MASTER_SITES=	http://www.centerim.org/download/mobshots/ \
 		ftp://ftp.centerim.org/mobshots/
@@ -90,7 +90,7 @@ CONFIGURE_ARGS+=	--disable-jabber
 .if !defined(WITH_GPGME)
 CONFIGURE_ARGS+=	--without-gpgme
 .else
-LIB_DEPENDS+=		gpgme.18:${PORTSDIR}/security/gpgme
+LIB_DEPENDS+=		gpgme.19:${PORTSDIR}/security/gpgme
 #CONFIGURE_ARGS+=	--with-gpgme=${LOCALBASE}
 CONFIGURE_ARGS+=	--with-ssl
 .endif
