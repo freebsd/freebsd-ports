@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	vlc
-DISTVERSION=	1.1.10
-PORTREVISION=	3
+DISTVERSION=	1.1.11
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -17,11 +16,12 @@ MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSIO
 MAINTAINER=	jsa@FreeBSD.org
 COMMENT=	Qt4 based multimedia player and streaming server
 
-LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		gcrypt.18:${PORTSDIR}/security/libgcrypt
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
+		gcrypt.18:${PORTSDIR}/security/libgcrypt \
+		proxy.0:${PORTSDIR}/net/libproxy
 
 OPTIONS=	A52 "A52 DVD audio decoder" On \
 		AALIB "Aalib Console Graphics Support" Off \
@@ -369,7 +369,6 @@ CONFIGURE_ARGS+=--disable-goom
 .if defined(WITHOUT_HTTPD)
 CONFIGURE_ARGS+=--disable-httpd
 .else
-LIB_DEPENDS+=	proxy.0:${PORTSDIR}/net/libproxy
 CONFIGURE_ARGS+=--enable-httpd
 .endif
 
@@ -654,9 +653,9 @@ CONFIGURE_ARGS+=--enable-v4l --enable-v4l2
 
 .if defined(WITH_VAAPI)
 LIB_DEPENDS+=	va.1:${PORTSDIR}/multimedia/libva
-CONFIGURE_ARGS+=--enable-vaapi
+CONFIGURE_ARGS+=--enable-libva
 .else
-CONFIGURE_ARGS+=--disable-vaapi
+CONFIGURE_ARGS+=--disable-libva
 .endif
 
 .if defined(WITHOUT_VCD)
