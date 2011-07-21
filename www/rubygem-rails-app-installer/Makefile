@@ -7,13 +7,14 @@
 
 PORTNAME=	rails-app-installer
 PORTVERSION=	0.2.0
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	An installer for Rails apps
 
-RUN_DEPENDS=	rubygem-sqlite3>=1.1.0:${PORTSDIR}/databases/rubygem-sqlite3 \
+RUN_DEPENDS=	rubygem-sqlite3-ruby>=1.1.0:${PORTSDIR}/databases/rubygem-sqlite3-ruby \
 		rubygem-mongrel>=0.3.13.3:${PORTSDIR}/www/rubygem-mongrel \
 		rubygem-mongrel_cluster>=0.2.0:${PORTSDIR}/www/rubygem-mongrel_cluster
 
