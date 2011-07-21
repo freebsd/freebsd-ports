@@ -18,4 +18,9 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
+REINPLACE_ARGS=	-i ''
+
+post-install:
+	@${REINPLACE_CMD} -e '/s.date/d' ${PREFIX}/${GEM_SPEC}
+
 .include <bsd.port.mk>
