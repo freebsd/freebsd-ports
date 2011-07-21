@@ -386,6 +386,7 @@
     SUBDIR += linuxdoc
     SUBDIR += localize
     SUBDIR += lt-aspell
+    SUBDIR += lt-hyphen
     SUBDIR += lttoolbox
     SUBDIR += ltxml
     SUBDIR += luaexpat
