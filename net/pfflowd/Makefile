@@ -21,9 +21,8 @@ PLIST_FILES=	sbin/pfflowd
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700049
-MAKE_ENV+=	OLD_PFSYNC=1
-EXTRA_PATCHES+=	${FILESDIR}/pf37-pfflowd.c
+.if ${OSVERSION} >= 900000
+BROKEN=		does not compile
 .endif
 
 pre-build:
