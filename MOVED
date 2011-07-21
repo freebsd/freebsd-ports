@@ -2280,3 +2280,5 @@ graphics/crystalentitylayer||2011-07-17|Removed
 graphics/crystalspace||2011-07-17|Has expired: has been broken for a year
 hungarian/hunspell|textproc/hunspell|2011-07-18|moved to textproc as it is language independent
 mail/qmail-vida||2011-07-18|Has expired: UID collisions, IGNOREd for four years with no-one caring
+java/jdk13|java/jdk15|2011-07-21|Has expired: ancient version of Java
+java/linux-sun-jdk13|java/linux-sun-jdk15|2011-07-21|Has expired: ancient version of Java
