@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	sqlite3
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
-DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby interface to the SQLite DB engine version 3
