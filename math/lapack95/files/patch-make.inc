@@ -1,13 +1,13 @@
---- make.inc	2000-11-30 22:18:37.000000000 +0900
-+++ make.inc	2007-09-29 14:02:41.000000000 +0900
+--- make.inc.orig	2000-11-30 08:18:37.000000000 -0500
++++ make.inc	2011-07-21 02:46:07.000000000 -0400
 @@ -3,8 +3,8 @@
  #     UNI-C, Denmark; Univ. of Tennessee, USA; NAG Ltd., UK
  #     August 5, 2000
  #
 -FC	 = f95 -free
 -FC1      = f95 -fixed
-+FC	 = %%FC%% %%FORTRAN_FIXED%%
-+FC1      = %%FC%% %%FORTRAN_FREE%%
++FC	 = %%FC%%
++FC1      = %%FC%%
  # -dcfuns  Enable recognition of non-standard double
  #          precision  complex intrinsic functions
  # -dusty   Allows the compilation and execution of "legacy"
@@ -22,7 +22,8 @@
  OPTS1    = -c $(OPTS0)
  OPTS3    = $(OPTS1) $(MODLIB)
  OPTL     = -o 
- OPTLIB   =
+-OPTLIB   =
++OPTLIB   = %%LDFLAGS%%
  
 -LAPACK_PATH = /usr/local/lib/LAPACK3/
 +LAPACK_PATH = -L%%LOCALBASE%%/lib -L%%PREFIX%%/lib
