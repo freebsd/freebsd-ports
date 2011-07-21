@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	FSA-Rules
-PORTVERSION=	0.28
-PORTREVISION=	4
+PORTVERSION=	0.29
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DWHEELER
@@ -16,9 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Build simple rules-based state machines in Perl
 
-RUN_DEPENDS=	${SITE_PERL}/GraphViz.pm:${PORTSDIR}/graphics/p5-GraphViz \
-		${SITE_PERL}/Text/Wrap.pm:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-GraphViz>=2:${PORTSDIR}/graphics/p5-GraphViz \
+		p5-Text-Tabs+Wrap>=0:${PORTSDIR}/textproc/p5-Text-Tabs+Wrap 
 
 PERL_MODBUILD=	yes
 
