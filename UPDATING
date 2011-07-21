@@ -67,7 +67,6 @@ you update your ports collection, before attempting any port upgrades.
   If you use portupgrade:
   # portupgrade -fr devel/icu
 
-
 20110706:
   AFFECTS: users of multimedia/zoneminder
   AUTHOR: bsam@FreeBSD.org
