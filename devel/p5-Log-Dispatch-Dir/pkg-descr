@@ -1,0 +1,8 @@
+Log::Dispatch::Dir provides a simple object for logging to directories under the
+Log::Dispatch::* system, and automatically rotating them according to different
+constraints. Each message will be logged to a separate file the directory.
+
+Logging to separate files can be useful for example when dumping whole network
+responses (like HTTP::Response content).
+
+WWW: http://search.cpan.org/dist/Log-Dispatch-Dir/
