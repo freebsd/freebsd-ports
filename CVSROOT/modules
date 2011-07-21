@@ -2236,6 +2236,7 @@ de-dtaus                        ports/german/dtaus
 de-eric4                        ports/german/eric4
 de-geonext                      ports/german/geonext
 de-gimp-help                    ports/german/gimp-help
+de-hunspell                     ports/german/hunspell
 de-ispell                       ports/german/ispell
 de-ispell-alt                   ports/german/ispell-alt
 de-ispell-neu                   ports/german/ispell-neu
@@ -3027,6 +3028,7 @@ emu                             ports/x11/emu
 emu10kx                         ports/audio/emu10kx
 emulators_openmsx               ports/emulators/openmsx
 en-aspell                       ports/textproc/en-aspell
+en-hunspell                     ports/textproc/en-hunspell
 enblend                         ports/graphics/enblend
 enca                            ports/converters/enca
 enchant                         ports/textproc/enchant
@@ -3806,6 +3808,8 @@ fr-gfaim                        ports/french/gfaim
 fr-gibi                         ports/french/gibi
 fr-gimp-help                    ports/french/gimp-help
 fr-homard                       ports/french/homard
+fr-hunspell                     ports/french/hunspell
+fr-hyphen                       ports/french/hyphen
 fr-ispell                       ports/french/ispell
 fr-jdictionary-fre-hun          ports/french/jdictionary-fre-hun
 fr-kde3-i18n                    ports/french/kde3-i18n
@@ -5719,6 +5723,7 @@ htx                             ports/converters/htx
 hu-aspell                       ports/hungarian/aspell
 hu-hu-phone                     ports/hungarian/hu-phone
 hu-hu-zipcodes                  ports/hungarian/hu-zipcodes
+hu-hunspell                     ports/hungarian/hunspell
 hu-ispell                       ports/hungarian/ispell
 hu-jdictionary-eng-hun          ports/hungarian/jdictionary-eng-hun
 hu-jdictionary-eng-hun-expr     ports/hungarian/jdictionary-eng-hun-expr
@@ -6100,6 +6105,7 @@ istream                         ports/audio/istream
 isync                           ports/mail/isync
 it-acroread8                    ports/print/it-acroread8
 it-aspell                       ports/textproc/it-aspell
+it-hunspell                     ports/textproc/it-hunspell
 it-ispell                       ports/textproc/it-ispell
 itcl                            ports/lang/itcl
 itext                           ports/devel/itext
@@ -6118,6 +6124,7 @@ iw-culmus                       ports/hebrew/culmus
 iw-elmar-fonts                  ports/hebrew/elmar-fonts
 iw-he2                          ports/hebrew/he2
 iw-hspell                       ports/hebrew/hspell
+iw-hunspell                     ports/hebrew/hunspell
 iw-kde3-i18n                    ports/hebrew/kde3-i18n
 iw-kde4-l10n                    ports/hebrew/kde4-l10n
 iw-koffice-i18n                 ports/hebrew/koffice-i18n
@@ -21341,6 +21348,7 @@ pt-aspell-pt_BR                 ports/portuguese/aspell-pt_BR
 pt-aspell-pt_PT                 ports/portuguese/aspell-pt_PT
 pt-aspell-pt_br                 ports/portuguese/aspell-pt_BR
 pt-aspell-pt_pt                 ports/portuguese/aspell-pt_PT
+pt-hunspell                     ports/portuguese/hunspell
 pt-irpf-pt_BR                   ports/portuguese/irpf-pt_BR
 pt-irpf-pt_br                   ports/portuguese/irpf-pt_BR
 pt-ispell-pt_BR                 ports/portuguese/ispell-pt_BR
@@ -23144,6 +23152,7 @@ ru-fortune-bashorgru            ports/russian/fortune-bashorgru
 ru-fortuneru                    ports/russian/fortuneru
 ru-gd                           ports/russian/gd
 ru-gimp-help                    ports/russian/gimp-help
+ru-hunspell                     ports/russian/hunspell
 ru-ircd-hybrid                  ports/russian/ircd-hybrid
 ru-kde3-i18n                    ports/russian/kde3-i18n
 ru-kde4-l10n                    ports/russian/kde4-l10n
@@ -25381,6 +25390,7 @@ tmu                             ports/x11-fonts/tmu
 tmux                            ports/sysutils/tmux
 tmw                             ports/games/tmw
 tn-aspell                       ports/textproc/tn-aspell
+tn-hunspell                     ports/textproc/tn-hunspell
 tn5250                          ports/net/tn5250
 tn5250j                         ports/net/tn5250j
 tnef                            ports/converters/tnef
@@ -25606,6 +25616,7 @@ tryst                           ports/net/tryst
 tryst-examples                  ports/net/tryst-examples
 trytond                         ports/finance/trytond
 ts                              ports/sysutils/ts
+ts-hunspell                     ports/textproc/ts-hunspell
 tsclient                        ports/net/tsclient
 tse3                            ports/audio/tse3
 tshark                          ports/net/tshark
@@ -25824,6 +25835,7 @@ uird                            ports/comms/uird
 uk-aspell                       ports/ukrainian/aspell
 uk-emacs-koi8u                  ports/ukrainian/emacs-koi8u
 uk-gd                           ports/ukrainian/gd
+uk-hunspell                     ports/ukrainian/hunspell
 uk-ispell                       ports/ukrainian/ispell
 uk-kde3-i18n                    ports/ukrainian/kde3-i18n
 uk-kde4-l10n                    ports/ukrainian/kde4-l10n
@@ -25960,6 +25972,7 @@ uudx                            ports/converters/uudx
 uulib                           ports/converters/uulib
 uwsgi                           ports/www/uwsgi
 uz-aspell                       ports/textproc/uz-aspell
+uz-hunspell                     ports/textproc/uz-hunspell
 uzap                            ports/editors/uzap
 uzbl                            ports/www/uzbl
 v                               ports/x11-toolkits/v
@@ -26033,6 +26046,7 @@ vdr-plugins                     ports/multimedia/vdr-plugins
 vdradmin-am                     ports/www/vdradmin-am
 vdrift                          ports/games/vdrift
 vdrift-data                     ports/games/vdrift-data
+ve-hunspell                     ports/textproc/ve-hunspell
 vectoroids                      ports/games/vectoroids
 ved                             ports/editors/ved
 veditor                         ports/java/veditor
@@ -26061,6 +26075,7 @@ vgba-bin                        ports/emulators/vgba-bin
 vhcp                            ports/net-p2p/vhcp
 vi-aspell                       ports/vietnamese/aspell
 vi-gtk-im-vi                    ports/vietnamese/gtk-im-vi
+vi-hunspell                     ports/vietnamese/hunspell
 vi-kde3-i18n                    ports/vietnamese/kde3-i18n
 vi-libviet                      ports/vietnamese/libviet
 vi-unicode-uhoai                ports/vietnamese/unicode-uhoai
@@ -26225,6 +26240,7 @@ w3mir                           ports/www/w3mir
 w9wm                            ports/x11-wm/w9wm
 w_scan                          ports/multimedia/w_scan
 wa-aspell                       ports/textproc/wa-aspell
+wa-hunspell                     ports/textproc/wa-hunspell
 waccess                         ports/www/waccess
 wackamole                       ports/net/wackamole
 wackford-squeers                ports/net/wackford-squeers
@@ -26919,6 +26935,7 @@ xgrab                           ports/x11/xgrab
 xgraph                          ports/math/xgraph
 xgrasp                          ports/graphics/xgrasp
 xgs                             ports/emulators/xgs
+xh-hunspell                     ports/textproc/xh-hunspell
 xhexagons                       ports/games/xhexagons
 xhime                           ports/games/xhime
 xhippo                          ports/audio/xhippo
@@ -27570,6 +27587,7 @@ yencode                         ports/news/yencode
 yersinia                        ports/security/yersinia
 yfklog                          ports/comms/yfklog
 yi-aspell                       ports/textproc/yi-aspell
+yi-hunspell                     ports/textproc/yi-hunspell
 yii                             ports/www/yii
 yodl                            ports/textproc/yodl
 yorick                          ports/lang/yorick
@@ -27894,6 +27912,7 @@ ztcl                            ports/devel/ztcl
 zthread                         ports/devel/zthread
 ztrack                          ports/games/ztrack
 zu-aspell                       ports/textproc/zu-aspell
+zu-hunspell                     ports/textproc/zu-hunspell
 zutils                          ports/archivers/zutils
 zxfer                           ports/sysutils/zxfer
 zxid                            ports/security/zxid
