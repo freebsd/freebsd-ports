@@ -7,12 +7,15 @@
 
 PORTNAME=	nzbget
 PORTVERSION=	0.7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 
 MAINTAINER=	toxic@doobie.com
 COMMENT=	A binary newsreader supporting NZB files
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2 \
 		sigc-2:${PORTSDIR}/devel/libsigc++20
@@ -47,6 +50,7 @@ CONFIGURE_ARGS+=	--with-tlslib=OpenSSL
 .if defined (WITH_TLSCHECK)
 CONFIGURE_ARGS+=	--with-tlslib=GnuTLS
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gcrypt:${PORTSDIR}/security/libgcrypt
 .endif
 
 post-install:
