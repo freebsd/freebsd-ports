@@ -1247,6 +1247,7 @@
     SUBDIR += skim
     SUBDIR += skribe
     SUBDIR += sl-aspell
+    SUBDIR += sl-hyphen
     SUBDIR += slides
     SUBDIR += sml-fxp
     SUBDIR += smu
