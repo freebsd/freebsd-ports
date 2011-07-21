@@ -35,6 +35,7 @@
     SUBDIR += bedic-data
     SUBDIR += beediff
     SUBDIR += bg-aspell
+    SUBDIR += bg-hyphen
     SUBDIR += bib2html
     SUBDIR += bibtex2html
     SUBDIR += bibtool
