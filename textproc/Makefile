@@ -1227,6 +1227,7 @@
     SUBDIR += simplehtmldom
     SUBDIR += simplexml
     SUBDIR += sk-aspell
+    SUBDIR += sk-hunspell
     SUBDIR += sk-ispell
     SUBDIR += skim
     SUBDIR += skribe
