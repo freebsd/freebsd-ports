@@ -6,57 +6,53 @@
 #
 
 PORTNAME=	megaglest
-PORTVERSION=	3.4.0
+PORTVERSION=	3.5.2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/current_release/
 PKGNAMESUFFIX=	-data
-DISTNAME=	${PORTNAME}-fixed${PKGNAMESUFFIX:S/-/_/}-${PORTVERSION}
-EXTRACT_SUFX=	.7z
+DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}.3
 
 MAINTAINER=	smoeller@nichthelfer.de
 COMMENT=	MegaGlest data files
 
-EXTRACT_DEPENDS=7z:${PORTSDIR}/archivers/p7zip
-
+USE_XZ=		yes
 USE_DOS2UNIX=	*.log *.ini *.html *.txt *.lng
 NO_BUILD=	yes
 
-WRKSRC=		${WRKDIR}/${PORTNAME}_game
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 PLIST=		${WRKDIR}/pkg-plist
 
-do-extract:
-	@${MKDIR} ${WRKSRC}
-	@cd ${WRKSRC} && \
-		${LOCALBASE}/bin/7z x ${DISTDIR}/${DISTFILES} >/dev/null
-
 pre-install:
-	@${ECHO_CMD} "%%DATADIR%%/megaglest.ico" >> ${PLIST}
-
+	${RM} -f ${PLIST}
 .for DIR in data maps scenarios techs tilesets tutorials
 	@cd ${WRKSRC} && \
+		${FIND} ${DIR} -type d -empty | ${SORT} -r | ${SED} -e 's|^|@exec ${MKDIR} %D/%%DATADIR%%/|' -e 's|$$| > /dev/null 2>\&1|' >> ${PLIST} && \
 		${FIND} ${DIR} -type f | ${SORT} | ${SED} -e 's|^|%%DATADIR%%/|' >> ${PLIST} && \
-			${FIND} ${DIR} -type d | ${SORT} -r | ${SED} -e 's|^|@dirrmtry %%DATADIR%%/|' >> ${PLIST}
+		${FIND} ${DIR} -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm %%DATADIR%%/|' >> ${PLIST}
 .endfor
-	@${ECHO_CMD} "@dirrmtry %%DATADIR%%" >> ${PLIST}
+	@${ECHO_CMD} "share/applications/megaglest.desktop" >> ${PLIST}
+	@${ECHO_CMD} "share/icons/megaglest.png" >> ${PLIST}
+	@${ECHO_CMD} "@dirrm %%DATADIR%%" >> ${PLIST}
 
 .if !defined(NOPORTDOCS)
 	@cd ${WRKSRC}/docs && \
 		${FIND} * -type f | ${SORT} | ${SED} -e 's|^|%%PORTDOCS%%%%DOCSDIR%%/|' >> ${PLIST} && \
-			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|%%PORTDOCS%%@dirrmtry %%DOCSDIR%%/|' >> ${PLIST}
-	@${ECHO_CMD} "%%PORTDOCS%%@dirrmtry %%DOCSDIR%%" >> ${PLIST}
+			${FIND} * -type d | ${SORT} -r | ${SED} -e 's|^|%%PORTDOCS%%@dirrm %%DOCSDIR%%/|' >> ${PLIST}
+	@${ECHO_CMD} "%%PORTDOCS%%@dirrm %%DOCSDIR%%" >> ${PLIST}
 .endif
 
 do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}/glest_factions
-.for f in AUTHORS CHANGELOG LICENSE README data_license.txt data_license_readme.txt
+.for f in AUTHORS.data.txt README.data-license.txt cc-by-sa-3.0-unported.txt COPYRIGHT.data.txt
 	${INSTALL_DATA} ${WRKSRC}/docs/${f} ${DOCSDIR}
 .endfor
 	(cd ${WRKSRC}/docs/glest_factions && ${COPYTREE_SHARE} "*" ${DOCSDIR}/glest_factions)
 .endif
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/megaglest.ico ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/megaglest.desktop ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${WRKSRC}/megaglest.png ${PREFIX}/share/icons/
 
 .for DIR in data maps scenarios techs tilesets tutorials
 	${MKDIR} ${DATADIR}/${DIR}
