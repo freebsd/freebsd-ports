@@ -1,16 +1,21 @@
 ###############################################################################
 
-The megaglest game has been installed:
+The megaglest game has been installed.
 
-1) You will find the megaglest configuration files in ~/.megaglest
+1) The megaglest configuration files are stored in ~/.megaglest.
 
-2) If you instlled the megaglest map editor you could lounch it like this:
+2) If you installed the megaglest map editor, you can launch it using the
+   command:
 
    # megaglest_editor
 
-3) If you have problems running megaglest, you should remove your ~/.megaglest 
-   directory and try again
+3) If you have problems running megaglest, remove your ~/.megaglest directory
+   and try again.
 
 4) Enjoy it ;)
+
+5) If you upgraded from version 3.4.0, your personal settings are stored in
+   ~/.megaglest3.4.0.  If you copy glestuser.ini and glestuserkeys.ini to
+   ~/.megaglest, you will have your old settings again.
 
 ###############################################################################
