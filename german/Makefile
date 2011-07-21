@@ -22,6 +22,7 @@
     SUBDIR += geonext
     SUBDIR += gimp-help
     SUBDIR += hunspell
+    SUBDIR += hyphen
     SUBDIR += ispell
     SUBDIR += ispell-alt
     SUBDIR += ispell-neu
