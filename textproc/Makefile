@@ -280,6 +280,7 @@
     SUBDIR += ibus-qt
     SUBDIR += ibus-table
     SUBDIR += id-aspell
+    SUBDIR += id-hyphen
     SUBDIR += idnits
     SUBDIR += iksemel
     SUBDIR += info2html
