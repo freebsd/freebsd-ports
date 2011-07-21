@@ -14,6 +14,8 @@ MASTER_SITES=	CHEESESHOP
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	An Issue-Tracking System for Knowledge Workers
 
+BROKEN=		does not package
+
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
