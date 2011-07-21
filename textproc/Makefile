@@ -154,6 +154,7 @@
     SUBDIR += eruby
     SUBDIR += es-aspell
     SUBDIR += es-hunspell
+    SUBDIR += es-hyphen
     SUBDIR += es-ispell
     SUBDIR += estraier
     SUBDIR += et-aspell
