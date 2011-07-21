@@ -1,0 +1,3 @@
+%%SITE_PERL%%/Log/Dispatch/Dir.pm
+@dirrmtry %%SITE_PERL%%/Log/Dispatch
+@dirrmtry %%SITE_PERL%%/Log
