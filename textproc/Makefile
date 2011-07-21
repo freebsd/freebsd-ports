@@ -1277,6 +1277,7 @@
     SUBDIR += stardict3
     SUBDIR += supercat
     SUBDIR += sv-aspell
+    SUBDIR += sv-hyphen
     SUBDIR += svn2cl
     SUBDIR += sw-aspell
     SUBDIR += sw-hunspell
