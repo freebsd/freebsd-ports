@@ -173,7 +173,7 @@ CMAKE_ARGS+=	-DWITH_XINE:BOOL=Off
 
 .else # !defined(BUILDING_OPENCV_CORE)
 COMMENT=	OpenCV core libraries
-PLIST=		${PKGDIR}/pkg-plist.core
+PLIST=		${PKGDIR}/pkg-plist.oc
 PKGNAMESUFFIX=	-core
 LATEST_LINK=	${PORTNAME}-core
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-opencv-core
