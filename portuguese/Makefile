@@ -7,6 +7,7 @@
     SUBDIR += aspell-pt_BR
     SUBDIR += aspell-pt_PT
     SUBDIR += hunspell
+    SUBDIR += hyphen
     SUBDIR += irpf-pt_BR
     SUBDIR += ispell-pt_BR
     SUBDIR += kde3-i18n
