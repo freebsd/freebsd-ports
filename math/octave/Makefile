@@ -117,7 +117,7 @@ post-install:
 .endfor
 .endif
 	${RM} -f ${WRKDIR}/PLIST
-.for d in ${PREFIX}/include/octave-${OCTAVE_VERSION} ${PREFIX}/share/octave ${PREFIX}/lib/octave/${OCTAVE_VERSION} ${PREFIX}/libexec/octave ${PREFIX}/lib/octave/site
+.for d in ${PREFIX}/include/octave-${OCTAVE_VERSION} ${PREFIX}/share/octave/${OCTAVE_VERSION} ${PREFIX}/share/octave/site ${PREFIX}/lib/octave/${OCTAVE_VERSION}
 	@${FIND} -s $d -not -type d | \
 		${SED} -e 's#^${PREFIX}/##' >> ${WRKDIR}/PLIST
 	@${FIND} -s $d -type d -empty | \
@@ -126,6 +126,15 @@ post-install:
 	@${FIND} -s $d -type d -depth | \
 		${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${WRKDIR}/PLIST
 .endfor
+.for d in ${PREFIX}/libexec/octave/${OCTAVE_VERSION} ${PREFIX}/libexec/octave/api-v45+ ${PREFIX}/libexec/octave/site ${PREFIX}/lib/octave/site
+	@${FIND} -s $d -type d -empty | \
+		${SED} -e 's,^${PREFIX}/,@exec ${MKDIR} %D/,' \
+		-e 's,$$, 2>/dev/null || true,' >> ${WRKDIR}/PLIST
+	@${FIND} -s $d -type d -depth | \
+		${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${WRKDIR}/PLIST
+.endfor
+	${ECHO_CMD} @dirrm libexec/octave >> ${WRKDIR}/PLIST
+	${ECHO_CMD} @dirrm share/octave >> ${WRKDIR}/PLIST
 	cd ${WRKDIR} ; ${SED} -i -e "/PLIST/ r PLIST" ${TMPPLIST}
 
 check:
