@@ -14,8 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	An easy way to use Log::Any in applications
 
-LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-File-HomeDir>=0:${PORTSDIR}/devel/p5-File-HomeDir \
 		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
