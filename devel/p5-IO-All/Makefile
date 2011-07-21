@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-All
-PORTVERSION=	0.41
+PORTVERSION=	0.43
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,9 +14,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	IO::All combines all of the best Perl IO modules
 
-RUN_DEPENDS=	${SITE_PERL}/Tie/File.pm:${PORTSDIR}/devel/p5-Tie-File \
-		${SITE_PERL}/IO/String.pm:${PORTSDIR}/devel/p5-IO-String
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-IO-String>=1.08:${PORTSDIR}/devel/p5-IO-String 
 
 PERL_CONFIGURE=	yes
 
