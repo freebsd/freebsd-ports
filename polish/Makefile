@@ -9,6 +9,7 @@
     SUBDIR += fortunepl
     SUBDIR += gimp-help
     SUBDIR += gnugadu2
+    SUBDIR += hyphen
     SUBDIR += ispell
     SUBDIR += kadu
     SUBDIR += kde3-i18n
