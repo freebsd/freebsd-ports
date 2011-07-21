@@ -23,7 +23,7 @@ JAR_DEPENDS=	${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-
 		${JAVALIBDIR}/commons-collections.jar:${PORTSDIR}/java/jakarta-commons-collections
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 
 USE_ANT=	yes
 ALL_TARGET=	dist

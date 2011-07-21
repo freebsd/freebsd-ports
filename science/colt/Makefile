@@ -15,7 +15,7 @@ MAINTAINER=	wenheping@gmail.com
 COMMENT=	Java package for scalable scientific and technical computing
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 .if !defined(WITHOUT_COMPILE)

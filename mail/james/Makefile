@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java SMTP and POP3 Mail server and NNTP News server
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	YES
 
 USE_RC_SUBR=	james.sh

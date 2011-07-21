@@ -15,7 +15,7 @@ MAINTAINER=		boris@tagnet.ru
 COMMENT=		Resin, a Java-based Application Server, 2.x branch
 
 USE_JAVA=		yes
-JAVA_VERSION=		1.2+
+JAVA_VERSION=		1.5+
 HAS_CONFIGURE=		yes
 USE_PYTHON=		yes
 USE_OPENSSL=		yes

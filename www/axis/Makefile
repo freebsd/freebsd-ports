@@ -34,7 +34,7 @@ RUN_DEPENDS+=	${LOCALBASE}/tomcat5.5:${PORTSDIR}/www/tomcat55
 
 NO_BUILD=	YES
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 USER=		www
 GROUP=		www
 

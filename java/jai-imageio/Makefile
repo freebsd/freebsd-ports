@@ -16,7 +16,7 @@ MAINTAINER=	java@FreeBSD.org
 COMMENT=	Plug-ins for the Java Image I/O Framework
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 ONLY_FOR_ARCHS=	i386

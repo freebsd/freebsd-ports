@@ -36,8 +36,8 @@ USE_ANT=	yes
 USE_GECKO=	libxul
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-JAVA_VERSION=	1.4+
-JAVA_VENDOR=	freebsd bsdjava sun blackdown
+JAVA_VERSION=	1.5+
+JAVA_VENDOR=	freebsd bsdjava sun
 NOCCACHE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-src-${PORTVERSION}/TuxGuitar

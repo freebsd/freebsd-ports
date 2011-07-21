@@ -16,7 +16,7 @@ MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Java project management tool, 2.0 branch
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 SUB_FILES=	m2.sh

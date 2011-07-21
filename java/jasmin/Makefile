@@ -18,7 +18,7 @@ USE_ZIP=	yes
 USE_ANT=	yes
 ALL_TARGET=	jasmin
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.5+
 USE_DOS2UNIX=	yes
 DOS2UNIX_REGEX=	.*\.(txt|xml|j|class|java|mf|css|bnf|html)
 

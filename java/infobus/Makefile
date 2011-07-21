@@ -16,7 +16,7 @@ COMMENT=	Enables dynamic exchange of data between JavaBeans(TM)
 
 USE_ZIP=	YES
 USE_JAVA=	YES
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes

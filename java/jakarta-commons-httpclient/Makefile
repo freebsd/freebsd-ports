@@ -23,7 +23,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-
 RUN_DEPENDS+=	${JAVAJARDIR}/commons-codec.jar:${PORTSDIR}/java/jakarta-commons-codec
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 USE_ANT=	yes
 MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES
 

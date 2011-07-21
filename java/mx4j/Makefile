@@ -15,7 +15,7 @@ MAINTAINER=	simon@olofsson.de
 COMMENT=	Open Source implementation of the Java Management Extensions (JMX)
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	*

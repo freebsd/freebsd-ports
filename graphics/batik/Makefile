@@ -19,7 +19,6 @@ COMMENT=	SVG Toolkit
 USE_ZIP=	yes
 USE_JAVA=	1.5+
 USE_ANT=	yes
-USE_JIKES=	no
 ALL_TARGET=	jars all-jar
 # Prevent out of memory error during build
 MAKE_ENV+=	"ANT_OPTS=-Xmx512m"

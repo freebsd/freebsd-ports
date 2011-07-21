@@ -20,7 +20,7 @@ COMMENT=	JDBC helper library
 BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 USE_ANT=	yes
 
 ALL_TARGET=	dist

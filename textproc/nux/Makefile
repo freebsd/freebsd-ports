@@ -21,7 +21,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/xom.jar:${PORTSDIR}/textproc/xom \
 OPTIONS=	XQUERY_TOOL "Install the XQuery command-line tool" on
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

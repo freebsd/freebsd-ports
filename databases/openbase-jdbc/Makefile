@@ -17,7 +17,7 @@ COMMENT=	The Java JDBC implementation for OpenBase
 
 USE_JAVA=	yes
 USE_ZIP=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 
 NO_BUILD=	yes
 JARFILE=	OpenBaseJDBC.jar

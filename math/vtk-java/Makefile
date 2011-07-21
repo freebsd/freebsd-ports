@@ -18,10 +18,9 @@ WRAP=		Java
 BINARIES=	vtkParseJava vtkWrapJava
 
 USE_JAVA=       yes
-JAVA_VERSION=   1.4+
+JAVA_VERSION=   1.5+
 JAVA_OS=        native
 JAVA_BUILD=     jdk
-#USE_JIKES=      no
 
 JARFILE=	vtk.jar	#	${PORTNAME}.jar
 DESTJARFILE=	vtk.jar #	${PORTNAME}.jar

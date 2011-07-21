@@ -19,8 +19,7 @@ RUN_DEPENDS=	projectx>=0.90.4.00:${PORTSDIR}/multimedia/projectx
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
-USE_JIKES=	no
+JAVA_VERSION=	1.5+
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

@@ -20,8 +20,7 @@ COMMENT=	Java API To Access Microsoft Format Files
 BUILD_DEPENDS=	${JAVALIBDIR}/xalan.jar:${PORTSDIR}/textproc/xalan-j
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
-USE_JIKES=	no
+JAVA_VERSION=	1.5+
 
 NO_WRKSUBDIR=	yes
 

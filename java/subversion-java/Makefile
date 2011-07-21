@@ -16,7 +16,7 @@ MASTERDIR=	${.CURDIR}/../../devel/subversion
 PKGDIR=		${.CURDIR}
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.5+
 JAVA_OS=	native
 JAVA_BUILD=	yes
 JAVA_RUN=	yes

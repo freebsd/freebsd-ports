@@ -22,7 +22,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/commons-pool.jar:${PORTSDIR}/java/jakarta-commons-poo
 		${JAVALIBDIR}/jta.jar:${PORTSDIR}/java/jta
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 
 USE_ANT=	yes
 MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES

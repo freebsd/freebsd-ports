@@ -18,7 +18,7 @@ COMMENT=	Dynamic Finite Element Program Suite
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/Impact
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

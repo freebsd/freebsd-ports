@@ -20,7 +20,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 USE_ANT=	yes
 ALL_TARGET=	clean makeDLL dist
 

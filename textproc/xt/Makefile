@@ -21,7 +21,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/xml-apis.jar:${PORTSDIR}/textproc/xerces-j \
 		${LOCALBASE}/bin/classpath:${PORTSDIR}/java/javavmwrapper
 
 USE_JAVA=	YES
-JAVA_VERSION=	1.1+
+JAVA_VERSION=	1.5+
 NO_BUILD=	YES
 
 .if !defined(NOPORTDOCS)

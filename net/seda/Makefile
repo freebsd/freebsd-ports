@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Architecture for Highly Concurrent Server Applications
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 USE_ANT=	yes
 ALL_TARGET=	dist
 

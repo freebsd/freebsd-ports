@@ -17,11 +17,10 @@ MAINTAINER=	ronald@echteman.nl
 COMMENT=	Wrapper code to start/stop a Java application as a daemon
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 JAVA_OS=	native
 JAVA_BUILD=	jdk
 NEED_JAVAC=	yes
-USE_JIKES=	no
 USE_ANT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -21,7 +21,7 @@ RUN_DEPENDS=	${JAVALIBDIR}/commons-beanutils.jar:${PORTSDIR}/java/jakarta-common
 		${JAVALIBDIR}/commons-logging.jar:${PORTSDIR}/java/jakarta-commons-logging
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 .if !defined(NOPORTDOCS)

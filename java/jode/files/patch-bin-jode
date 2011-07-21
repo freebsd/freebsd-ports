@@ -14,5 +14,5 @@
 -CP=`echo $CLASSPATH | sed s/:/,/`
 -CLASSPATH=@datadir@/jode-@VERSION@.jar:@CLASSPATH@ \
 -@JAVA@ $CLAZZ --classpath $CP $*
-+JAVA_VERSION="1.2+" exec @prefix@/bin/java -cp @datadir@/jode-@VERSION@.jar:@datadir@/getopt.jar \
++JAVA_VERSION="%%JAVA_VERSION%%" exec @prefix@/bin/java -cp @datadir@/jode-@VERSION@.jar:@datadir@/getopt.jar \
 +	$CLAZZ $CP "$@"

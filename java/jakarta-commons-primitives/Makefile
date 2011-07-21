@@ -18,7 +18,7 @@ MAINTAINER=	hq@FreeBSD.org
 COMMENT=	A library supporting Java primitive types
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 USE_ANT=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

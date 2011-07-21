@@ -19,7 +19,7 @@ COMMENT=	XMPCR (USB XM radio) control software
 RUN_DEPENDS=	${JAVA_HOME}/jre/lib/ext/CommDriver.jar:${PORTSDIR}/comms/java-commapi-freebsd
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 JAVA_OS=	native
 
 NO_BUILD=	yes

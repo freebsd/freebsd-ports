@@ -26,11 +26,10 @@ USE_BISON=	build
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.3 1.4 1.5
+JAVA_VERSION=	1.5
 JAVA_OS=	native
 JAVA_BUILD=	jdk
 NEED_JAVAC=	yes
-USE_JIKES=	no
 
 MAN1=		jmp.1
 

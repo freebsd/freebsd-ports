@@ -29,7 +29,7 @@ NO_WRKSUBDIR=	yes
 
 .if !defined(WITHOUT_JAVA)
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 PLIST_SUB+=	JAVA=""
 SUB_LIST+=	JAVA=""
 .else

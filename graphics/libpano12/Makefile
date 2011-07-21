@@ -38,7 +38,7 @@ USE_LDCONFIG=	yes
 
 .if !defined(WITHOUT_JAVA)
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 JAVA_OS=	native
 CONFIGURE_ARGS+=	--with-java=${JAVA_HOME}
 .else

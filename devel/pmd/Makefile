@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 USE_ANT=	yes
 
 MAKE_ARGS=	-cp ${JAVALIBDIR}/junit.jar

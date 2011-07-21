@@ -19,10 +19,9 @@ COMMENT=	Jakarta library with helper utilities for the java.lang API
 LICENSE=	ASL
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 
 USE_ANT=	yes
-USE_JIKES=	no
 
 ALL_TARGET=	jar
 .if !defined(NOPORTDOCS)

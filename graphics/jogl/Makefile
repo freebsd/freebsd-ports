@@ -46,7 +46,7 @@ USE_ZIP=	yes
 USE_ANT=	yes
 USE_LDCONFIG=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 
 BUILD_WRKSRC=	${WRKSRC}/jogl/make
 

@@ -15,7 +15,7 @@ COMMENT=	A pure Java implementation of SSH2
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 USE_ANT=	yes
 
 PLIST_FILES+=	%%JAVAJARDIR%%/${PORTNAME}.jar

@@ -18,7 +18,7 @@ COMMENT=	XML based scripting engine
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

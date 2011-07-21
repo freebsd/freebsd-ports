@@ -16,7 +16,7 @@ MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java 2 SDK Enterprise Edition
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 
 NO_BUILD=	YES
 

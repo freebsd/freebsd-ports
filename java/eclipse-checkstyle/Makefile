@@ -22,7 +22,7 @@ RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 NO_WRKSUBDIR=	yes
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 USE_ZIP=	yes
 
 do-install:

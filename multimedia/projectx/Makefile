@@ -21,8 +21,7 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
-USE_JIKES=	no
+JAVA_VERSION=	1.5+
 
 SUB_FILES=	project-x.sh
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

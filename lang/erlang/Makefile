@@ -58,7 +58,7 @@ OPTIONS=	JAVA	"Enable Java applications"	on \
 
 .if !defined(WITHOUT_JAVA)
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 # Make sure ${JAVA_HOME}/bin is in the path
 CONFIGURE_ENV+=	PATH=${PATH}:${JAVA_HOME}/bin
 MAKE_ENV+=	PATH=${PATH}:${JAVA_HOME}/bin

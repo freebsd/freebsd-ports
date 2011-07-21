@@ -18,7 +18,7 @@ COMMENT=	XInclude task for Jakarta Ant
 BUILD_DEPENDS=	${JAVAJARDIR}/xincluder.jar:${PORTSDIR}/textproc/xincluder
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.1+
+JAVA_VERSION=	1.5+
 USE_ANT=	yes
 
 ALL_TARGET=	jar

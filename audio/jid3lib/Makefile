@@ -14,7 +14,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java ID3 Tag Library
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 USE_ANT=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/jid3lib.jar

@@ -15,7 +15,7 @@ MAINTAINER=	hq@FreeBSD.org
 COMMENT=	High performance collections API for Java
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 .if !defined(NOPORTDOCS)

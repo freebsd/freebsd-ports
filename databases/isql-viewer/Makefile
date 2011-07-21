@@ -26,7 +26,7 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper \
 		${JAVALIBDIR}/mysql-connector-java.jar:${PORTSDIR}/databases/mysql-connector-java
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 ISQL=		iSQL-Viewer

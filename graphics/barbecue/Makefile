@@ -17,7 +17,7 @@ COMMENT=	A Java barcode generator
 RUN_DEPENDS=	${JAVALIBDIR}/jdom.jar:${PORTSDIR}/java/jdom
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 JARFILES=	${PORTNAME}-${PORTVERSION}.jar

@@ -18,7 +18,7 @@ COMMENT=	An embeddable SQL database written in Java
 LICENSE=	BSD
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 USE_ANT=	yes
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

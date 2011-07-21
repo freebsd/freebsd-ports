@@ -22,7 +22,6 @@ JAVA_VERSION=	1.6+
 JAVA_OS=	native
 JAVA_BUILD=	jdk
 NEED_JAVAC=	yes
-USE_JIKES=	no
 
 GNU_CONFIGURE=	yes
 

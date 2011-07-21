@@ -16,7 +16,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	XML parser for Java
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/xerces-${PORTVERSION:S/./_/g}

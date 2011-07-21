@@ -19,7 +19,7 @@ COMMENT=	Viewer for the PDF files written in Java(TM)
 #XXX need info-unzip for archive.zip
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 JAVA_EXTRACT=	yes
 NO_BUILD=	yes
 SUB_FILES+=	AcrobatViewer

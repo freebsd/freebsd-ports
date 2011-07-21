@@ -24,7 +24,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/-src//}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 USE_ANT=	yes
 
 # Prevent out of memory error during build

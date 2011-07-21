@@ -17,7 +17,7 @@ COMMENT=	The JGoodies Looks improve the appearance of your Java applications
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

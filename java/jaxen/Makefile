@@ -15,7 +15,7 @@ MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Java XPath Engine
 
 USE_JAVA=	YES
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 NO_BUILD=	YES
 
 JARFILES=	jaxen-core.jar jaxen-dom.jar jaxen-dom4j.jar jaxen-exml.jar jaxen-full.jar jaxen-jdom.jar lib/saxpath.jar

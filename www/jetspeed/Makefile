@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant \
 WRKSRC=		${WRKDIR}/${DISTNAME:C/-war//}
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 
 NO_BUILD=	yes
 

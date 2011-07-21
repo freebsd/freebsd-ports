@@ -18,8 +18,7 @@ RUN_DEPENDS=	tv_cat:${PORTSDIR}/textproc/p5-xmltv
 LICENSE=	GPLv2
 
 USE_JAVA=	yes
-USE_JIKES=	no
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 USE_ANT=	yes
 MANCOMPRESSED=	yes
 MAN1=		freeguide.1

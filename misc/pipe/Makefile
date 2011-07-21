@@ -19,7 +19,7 @@ COMMENT=	A tool for creating and analysing Petri nets
 USE_ZIP=	yes
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 
 PLIST_FILES=	bin/pipe
 SUB_FILES=	pipe.sh

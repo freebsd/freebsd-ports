@@ -17,7 +17,7 @@ MAINTAINER=	toha@toha.org.ua
 COMMENT=	Java Media Framework
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.5+
 USE_ZIP=	YES
 NO_BUILD=	YES
 

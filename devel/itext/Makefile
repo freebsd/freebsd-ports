@@ -25,7 +25,7 @@ RUN_DEPENDS=	${JAVAJARDIR}/bcmail.jar:${PORTSDIR}/java/bouncycastle \
 
 USE_BZIP2=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 USE_ANT=	yes
 ALL_TARGET=	jar jar.rtf jar.rups
 MAKE_ENV=	ANT_INCLUDE_SHARED_JARS=YES

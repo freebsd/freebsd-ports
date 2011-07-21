@@ -18,7 +18,7 @@ COMMENT=	An OCaml-Java library interface
 
 USE_OCAML=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 
 .include <bsd.port.pre.mk>
 

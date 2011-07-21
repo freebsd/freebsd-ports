@@ -22,7 +22,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mpg123:${PORTSDIR}/audio/mpg123 \
 		${LOCALBASE}/bin/simplemod:${PORTSDIR}/audio/simplemod
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 PLIST_FILES=	share/java/classes/MusicControl-${PORTVERSION}.jar bin/musiccontrol
 

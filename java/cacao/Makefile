@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/share/classpath/glibj.zip:${PORTSDIR}/java/classpath
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libltdl
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 GNU_CONFIGURE=	yes
 MAN1=		cacao.1
 CONFIGURE_ARGS+=	--with-classpath-prefix=${LOCALBASE}

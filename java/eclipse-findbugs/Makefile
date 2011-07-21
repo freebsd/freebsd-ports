@@ -22,7 +22,7 @@ RUN_DEPENDS=	eclipse:${PORTSDIR}/java/eclipse
 NO_BUILD=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 JAVA_OS=	native
 
 PLIST_DIRS=	\

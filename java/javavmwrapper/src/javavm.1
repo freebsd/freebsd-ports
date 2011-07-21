@@ -99,7 +99,6 @@ A space delimited list of Java VM vendors.
 The selected Java VM must have been released by one of the vendors in the list.
 .Pp
 Currently allowed vendors are
-.Ql blackdown ,
 .Ql bsdjava ,
 .Ql freebsd ,
 .Ql ibm ,
@@ -114,14 +113,6 @@ to a version, any Java VM with a version greater than or
 equal to the given version will be used.
 .Pp
 Currently allowed versions are
-.Ql 1.1 ,
-.Ql 1.1+ ,
-.Ql 1.2 ,
-.Ql 1.2+ ,
-.Ql 1.3 ,
-.Ql 1.3+ ,
-.Ql 1.4 ,
-.Ql 1.4+ ,
 .Ql 1.5 ,
 .Ql 1.5+ ,
 .Ql 1.6 ,
@@ -178,16 +169,16 @@ Execute the most up to date and
 .Dq native
 Java VM registered with
 .Nm .
-.It Ev JAVA_VERSION=1.4+ Pa %%LOCALBASE%%/bin/javac MyClass.java
+.It Ev JAVA_VERSION=1.5+ Pa %%LOCALBASE%%/bin/javac MyClass.java
 Compile MyClass.java with a registered Java VM's javac that is at least
-version 1.4.
+version 1.5.
 .It Ev JAVA_OS=native Pa %%LOCALBASE%%/bin/java Fl jar Pa MyApp.jar
 Execute MyApp with the most up to date native Java VM that is registered
 with
 .Nm .
 This is necessary if MyApp uses JNI, for instance.
-.It Ev JAVA_VERSION="1.2 1.4" Pa %%LOCALBASE%%/bin/java Fl jar Pa MyApp.jar
-Execute MyApp with either a Java VM that is either version 1.2 or version 1.4.
+.It Ev JAVA_VERSION="1.5 1.7" Pa %%LOCALBASE%%/bin/java Fl jar Pa MyApp.jar
+Execute MyApp with either a Java VM that is either version 1.5 or version 1.7.
 .It Ev JAVAVM_DRYRUN=yes Pa %%LOCALBASE%%/bin/java
 Don't invoke the Java VM, but print out information about what would have
 been done.

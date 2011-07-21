@@ -17,7 +17,7 @@ MAINTAINER=	hq@FreeBSD.org
 COMMENT=	Utility classes for concurrent Java programming
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.5+
 
 USE_ANT=	yes
 ALL_TARGET=	dist

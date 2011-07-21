@@ -18,7 +18,7 @@ COMMENT=	Platform independent, plugin based dictionary
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

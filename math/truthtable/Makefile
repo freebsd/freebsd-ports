@@ -19,7 +19,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A Truth Tables generator (written in Java)
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

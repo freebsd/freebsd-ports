@@ -17,7 +17,7 @@ MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	The Java JDBC implementation for FrontBase
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 
 NO_BUILD=	yes
 JARFILE=	frontbasejdbc.jar
