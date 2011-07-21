@@ -283,7 +283,7 @@ post-patch:
 	${REINPLACE_CMD} -e 's|/var/lib|${PREFIX}/share|g' ${WRKSRC}/configs/musiconhold.conf.sample
 
 post-configure:
-.if defined(WITH_MYSQL) || defined(WITH_NEWG711)
+.if defined(WITH_MYSQL) || defined(WITH_NEWG711) || defined(WITH_ILBC)
 	@cd ${WRKSRC} && make menuselect.makeopts
 .if defined(WITH_MYSQL)
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable res_config_mysql menuselect.makeopts
@@ -292,6 +292,9 @@ post-configure:
 .endif
 .if defined(WITH_NEWG711)
 	@cd ${WRKSRC} && ./menuselect/menuselect --enable  G711_NEW_ALGORITHM menuselect.makeopts
+.endif
+.if defined(WITH_ILBC)
+	@cd ${WRKSRC} && ./menuselect/menuselect --enable  codec_ilbc menuselect.makeopts
 .endif
 .endif
 
