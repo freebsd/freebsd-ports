@@ -7,6 +7,7 @@
     SUBDIR += hu-phone
     SUBDIR += hu-zipcodes
     SUBDIR += hunspell
+    SUBDIR += hyphen
     SUBDIR += ispell
     SUBDIR += jdictionary-eng-hun
     SUBDIR += jdictionary-eng-hun-expr
