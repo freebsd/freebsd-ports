@@ -82,6 +82,7 @@
     SUBDIR += cwtext
     SUBDIR += cy-aspell
     SUBDIR += da-aspell
+    SUBDIR += da-hyphen
     SUBDIR += dadadodo
     SUBDIR += db2latex
     SUBDIR += dbacl
