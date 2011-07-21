@@ -6,15 +6,15 @@ lib/common-lisp/gpgme/gpgme.lisp
 %%WITH_PTH%%lib/libgpgme-pth.a
 %%WITH_PTH%%lib/libgpgme-pth.la
 %%WITH_PTH%%lib/libgpgme-pth.so
-%%WITH_PTH%%lib/libgpgme-pth.so.18
+%%WITH_PTH%%lib/libgpgme-pth.so.19
 lib/libgpgme-pthread.a
 lib/libgpgme-pthread.la
 lib/libgpgme-pthread.so
-lib/libgpgme-pthread.so.18
+lib/libgpgme-pthread.so.19
 lib/libgpgme.a
 lib/libgpgme.la
 lib/libgpgme.so
-lib/libgpgme.so.18
+lib/libgpgme.so.19
 share/aclocal/gpgme.m4
 @dirrm lib/common-lisp/gpgme
 @dirrmtry lib/common-lisp
