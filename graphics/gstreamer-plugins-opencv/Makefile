@@ -14,4 +14,6 @@ GST_PLUGIN=	opencv
 
 MASTERDIR=	${.CURDIR}/../../multimedia/gstreamer-plugins
 
+BROKEN=		unsatisfiable dependency
+
 .include "${MASTERDIR}/Makefile"
