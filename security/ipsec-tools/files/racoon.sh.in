@@ -1,44 +1,52 @@
 #!/bin/sh
 
-# Start or stop racoon
 # $FreeBSD$
-
+#
 # PROVIDE: racoon
-# REQUIRE: DAEMON
-# BEFORE: LOGIN
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
-
+#
 # Define these racoon_* variables in one of these files:
 #	/etc/rc.conf
 #	/etc/rc.conf.local
 #	/etc/rc.conf.d/racoon
 #
 # DO NOT CHANGE THESE DEFAULT VALUES HERE
-#
-[ -z "$racoon_enable" ] && racoon_enable="NO"	# Disable by default
-#racoon_flags=""				# Flags to racoon program
-racoon_create_dirs=${racoon_create_dirs:-NO}	# Create $required_dirs (for
-						#  /var mfs)?
 
 . /etc/rc.subr
 
 name="racoon"
 rcvar=`set_rcvar`
+
+load_rc_config $name
+
+racoon_enable=${racoon_enable:-"NO"}		# Disable by default
+racoon_create_dirs=${racoon_create_dirs:-"NO"}	# Create $required_dirs
+#racoon_flags=""				# Flags to racoon program
+
 command="%%PREFIX%%/sbin/${name}"
 pidfile="/var/run/${name}.pid"
+
+start_precmd="${name}_prestart"
+stop_postcmd="${name}_cleanup"
+
 socketfile="%%STATEDIR%%/${name}.sock"
 required_files="%%PREFIX%%/etc/${name}/${name}.conf"
 required_dirs="%%STATEDIR%%"
-start_precmd="racoon_cleanup"
-stop_postcmd="racoon_cleanup"
 
-racoon_cleanup() {
+racoon_cleanup()
+{
 	/bin/rm -f ${pidfile}
 	/bin/rm -f ${socketfile}
 }
 
-load_rc_config $name
-if [ "$1" = start -o "$1" = faststart ] && checkyesno "${name}_create_dirs"; then
-	/bin/mkdir -p $required_dirs
-fi
+racoon_prestart()
+{
+	racoon_cleanup
+
+	if checkyesno "${name}_create_dirs"; then
+		/bin/mkdir -p $required_dirs
+	fi
+}
+
 run_rc_command "$1"
