@@ -18,6 +18,7 @@
     SUBDIR += koffice-kde4-l10n
     SUBDIR += libgadu
     SUBDIR += libtlen
+    SUBDIR += mythes
     SUBDIR += php_doc
     SUBDIR += qfaktury
     SUBDIR += qnapi
