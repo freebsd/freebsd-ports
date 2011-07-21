@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gpgme
-PORTVERSION=	1.3.0
-PORTREVISION=	3
+PORTVERSION=	1.3.1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gpgme
@@ -16,6 +15,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	A library to make access to GnuPG easier
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	assuan.0:${PORTSDIR}/security/libassuan \
 		gpg-error.0:${PORTSDIR}/security/libgpg-error
@@ -32,9 +34,6 @@ CONFIGURE_ARGS=	--includedir=${PREFIX}/include/gpgme \
 INFO=		gpgme
 PORTDOCS=	AUTHORS ChangeLog COPYING COPYING.LESSER INSTALL \
 		NEWS README THANKS TODO
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	GNUPG1 "Use GNUPG 1.x instead of GNUPG 2.x" off \
 		PTH "Build alternate lib with GNU portable threads" off \
