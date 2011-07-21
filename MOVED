@@ -2284,3 +2284,5 @@ java/jdk13|java/jdk15|2011-07-21|Has expired: ancient version of Java
 java/linux-sun-jdk13|java/linux-sun-jdk15|2011-07-21|Has expired: ancient version of Java
 java/jboss3||2011-07-21|Has expired: Depends on expired Java 1.4
 textproc/galax||2011-07-21|Has expired: Depends on expired Java 1.4
+devel/colorer||2011-07-21|Has expired: Depends on deprecated Java 1.4
+security/jce_policy14||2011-07-21|Has expired: Only for Java 1.4, which is deprecated
