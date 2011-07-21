@@ -150,6 +150,7 @@
     SUBDIR += eqe
     SUBDIR += eruby
     SUBDIR += es-aspell
+    SUBDIR += es-hunspell
     SUBDIR += es-ispell
     SUBDIR += estraier
     SUBDIR += et-aspell
