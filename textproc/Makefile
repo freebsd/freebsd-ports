@@ -1128,6 +1128,7 @@
     SUBDIR += rnv
     SUBDIR += ro-aspell
     SUBDIR += ro-hunspell
+    SUBDIR += ro-hyphen
     SUBDIR += roap
     SUBDIR += romdict
     SUBDIR += rot
