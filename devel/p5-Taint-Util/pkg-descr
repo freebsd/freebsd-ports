@@ -1,0 +1,6 @@
+Taint::Util wraps perl's internal routines for checking and setting the taint
+flag and thus does not rely on regular expressions for untainting or odd tricks
+involving eval and kill for checking whether data is tainted, instead it checks
+and flips a flag on the scalar in-place.
+
+WWW: http://search.cpan.org/dist/Taint-Util/

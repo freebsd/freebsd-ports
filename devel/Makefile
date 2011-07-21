@@ -2288,6 +2288,7 @@
     SUBDIR += p5-TAP-Formatter-JUnit
     SUBDIR += p5-TAP-Harness-JUnit
     SUBDIR += p5-Taint-Runtime
+    SUBDIR += p5-Taint-Util
     SUBDIR += p5-Task-Weaken
     SUBDIR += p5-Tee
     SUBDIR += p5-Template-Provider-Encode
