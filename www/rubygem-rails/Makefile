@@ -6,6 +6,7 @@
 
 PORTNAME=	rails
 PORTVERSION=	3.0.9
+PORTREVISION=	1
 CATEGORIES=	www rubygems
 MASTER_SITES=	RG
 
@@ -18,6 +19,7 @@ RUN_DEPENDS=	rubygem-activesupport>=${PORTVERSION}:${PORTSDIR}/devel/rubygem-act
 		rubygem-actionmailer>=${PORTVERSION}:${PORTSDIR}/mail/rubygem-actionmailer \
 		rubygem-activeresource>=${PORTVERSION}:${PORTSDIR}/www/rubygem-activeresource \
 		rubygem-railties>=${PORTVERSION}:${PORTSDIR}/www/rubygem-railties \
+		rubygem-sqlite3>=1.3.3:${PORTSDIR}/databases/rubygem-sqlite3 \
 		rubygem-bundler>=1.0:${PORTSDIR}/sysutils/rubygem-bundler
 
 # XXX: rails3 gem no longer has a lib/ dir
