@@ -790,6 +790,7 @@
     SUBDIR += rubygem-postgres
     SUBDIR += rubygem-rbase
     SUBDIR += rubygem-sqlite3
+    SUBDIR += rubygem-sqlite3-ruby
     SUBDIR += sharedance
     SUBDIR += skytools
     SUBDIR += slony1
