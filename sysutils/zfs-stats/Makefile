@@ -7,6 +7,7 @@
 
 PORTNAME=	zfs-stats
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://cloud.github.com/downloads/mmatuska/zfs-stats/
 
@@ -21,7 +22,7 @@ NO_BUILD=	yes
 
 PLIST_FILES=	bin/zfs-stats
 
-do-patch:
+post-patch:
 	@${REINPLACE_CMD} -e "s|/usr/bin/env -iS perl|${PERL}|g" ${WRKSRC}/zfs-stats
 
 do-install:
