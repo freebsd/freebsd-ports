@@ -1,11 +1,11 @@
---- m.fl.orig	2008-08-28 14:00:49.000000000 +0200
-+++ m.fl	2008-08-28 14:00:58.000000000 +0200
+--- m.fl.orig	2011-07-17 14:56:20.000000000 -0400
++++ m.fl	2011-07-17 14:56:31.000000000 -0400
 @@ -231,7 +231,7 @@
        }
      }
    }
 -  code {w->show(argc, argv);
-+  //code {w->show(argc, argv);
++  code {Morse->show(argc, argv);
  while (1) {
    int c = Lesson->select();	// Select random letter
    bool pass = Teacher->teach(c);// Teach/test student
