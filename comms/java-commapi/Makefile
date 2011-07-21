@@ -17,7 +17,7 @@ COMMENT=	Sun's Java Communications API
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 
 NO_CDROM=	Sun has a funky license for this software
 RESTRICTED=	no commercial use

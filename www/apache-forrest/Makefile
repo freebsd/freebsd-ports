@@ -19,7 +19,7 @@ MAINTAINER=		nivit@FreeBSD.org
 COMMENT=		A tool for rapid development of small sites
 
 USE_JAVA=		yes
-JAVA_VERSION=		1.4 1.5
+JAVA_VERSION=		1.5
 
 REPLACE_FILES=		${WRKSRC}/bin/forrest ${WRKSRC}/tools/ant/bin/ant
 

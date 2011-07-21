@@ -18,7 +18,7 @@ MAINTAINER=	brueffer@FreeBSD.org
 COMMENT=	Prototype OpenMP implementation for Java
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

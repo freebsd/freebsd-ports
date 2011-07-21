@@ -18,7 +18,7 @@ COMMENT=	A Java tar archive io package
 RUN_DEPENDS=	${JAVALIBDIR}/activation.jar:${PORTSDIR}/java/jaf
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 
 NO_BUILD=	yes
 

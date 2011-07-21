@@ -16,7 +16,7 @@ MAINTAINER=	mike@vee.net
 COMMENT=	An XML parser written in Java
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.1+
+JAVA_VERSION=	1.5+
 
 NO_WORKSUBDIR=	yes
 NO_BUILD=	yes

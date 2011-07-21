@@ -20,7 +20,7 @@ COMMENT=	Java library for command line arguments and options
 LICENSE=	ASL
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

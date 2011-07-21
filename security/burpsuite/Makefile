@@ -16,7 +16,7 @@ COMMENT=	Burp Suite is an integrated platform for testing web applications
 
 USE_ZIP=	YES
 USE_JAVA=	YES
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 

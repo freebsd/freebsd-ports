@@ -19,7 +19,7 @@ RUN_DEPENDS=	jumpgis:${PORTSDIR}/graphics/jumpgis
 
 TARGET_DIR=	${PREFIX}/jumpgis
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

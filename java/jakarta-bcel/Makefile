@@ -17,7 +17,7 @@ COMMENT=	A library for generating Java bytecode
 
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.5+
 
 PLIST_FILES=	%%JAVAJARDIR%%/bcel.jar
 

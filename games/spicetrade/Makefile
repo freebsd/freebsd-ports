@@ -20,7 +20,7 @@ COMMENT=	Colourful 14th century Arab spice trading game
 NO_PACKAGE=	Package will be 186MB, set FORCE_PACKAGE if you really want to build it
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 NO_BUILD=	yes
 

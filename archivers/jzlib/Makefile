@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A re-implementation of zlib in pure Java
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 
 JAR_FILE=	${WRKSRC}/${PORTNAME}.jar
 

@@ -20,7 +20,7 @@ COMMENT=	The JDBC drivers for Oracle 9i
 RESTRICTED=	'Must be downloaded direct from Oracle via www interface'
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

@@ -17,7 +17,7 @@ COMMENT=	Merchant Of Venice, a stock market trading program
 NO_BUILD=	yes
 USE_JAVA=	yes
 JAVA_RUN=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 
 JARFILE=	${PORTNAME}.jar
 

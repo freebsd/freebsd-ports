@@ -17,7 +17,7 @@ MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Classes to allow a Java applet access to Javascript objects
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 JARFILES=	java40.jar LICENSE.java40.txt

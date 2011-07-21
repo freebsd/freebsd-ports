@@ -18,7 +18,7 @@ COMMENT=	Extensible Site Manager (XSM)
 RUN_DEPENDS=	mvn:${PORTSDIR}/devel/maven2
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/xsm
 

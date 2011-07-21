@@ -18,7 +18,7 @@ COMMENT=	An open source Java written 3D modelling and rendering studio
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 USE_ZIP=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/ArtOfIllusion${PORTVERSION:S/.//g}

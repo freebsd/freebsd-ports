@@ -18,7 +18,7 @@ MAINTAINER=	simon@olofsson.de
 COMMENT=	A Java scripting language
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 SUB_FILES=	${PORTNAME}.sh

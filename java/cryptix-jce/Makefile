@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JCE (Java Cryptography Extension) by Cryptix
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.1+
+JAVA_VERSION=	1.5+
 USE_ZIP=	yes
 NO_BUILD=	yes
 

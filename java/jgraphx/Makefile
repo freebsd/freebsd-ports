@@ -24,7 +24,7 @@ MANUAL_PACKAGE_BUILD=	needs interactive license confirmation
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 JAVA_RUN=	yes
 
 .if !defined(WITHOUT_COMPILE) || !defined(NOPORTDOCS)

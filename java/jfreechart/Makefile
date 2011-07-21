@@ -17,7 +17,7 @@ COMMENT=	A free Java class library for generating charts
 RUN_DEPENDS=	${JAVALIBDIR}/jcommon.jar:${PORTSDIR}/java/jcommon
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.5+
 
 .if !defined(WITHOUT_COMPILE)
 USE_ANT=	yes

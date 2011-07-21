@@ -17,7 +17,7 @@ MAINTAINER=	toha@toha.org.ua
 COMMENT=	Struts framework
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 NO_BUILD=	YES
 USE_ZIP=	YES
 

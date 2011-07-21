@@ -104,7 +104,7 @@ PLIST_SUB+=	BDB_SPOOL="@comment "
 
 .if defined(WITH_JAVA)
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 PLIST_SUB+=	DRMAA=
 CATEGORIES+=	java
 .else

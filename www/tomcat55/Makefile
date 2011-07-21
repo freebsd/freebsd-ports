@@ -20,7 +20,7 @@ OPTIONS=	CRONOLOG "Use Cronolog for Log Processing" Off \
 		CRONOLOG_DEVEL "Use Cronlog-Devel for Log Processing" Off
 
 USE_JAVA=	yes
-JAVA_VERSION?=	1.4+
+JAVA_VERSION?=	1.5+
 JAVA_VENDOR?=	freebsd
 NO_BUILD=	YES
 

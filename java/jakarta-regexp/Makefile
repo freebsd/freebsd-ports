@@ -17,7 +17,7 @@ COMMENT=	Regular expressions for Java
 BUILD_DEPENDS=	${LOCALBASE}/bin/ant:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.5+
 
 PLIST=	${WRKDIR}/PLIST
 

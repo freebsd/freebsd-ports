@@ -18,7 +18,7 @@ COMMENT=	JBoss Mail Services
 RUN_DEPENDS=	${LOCALBASE}/jboss4/server/default/conf/jboss-service.xml:${PORTSDIR}/java/jboss4
 
 USE_JAVA=	YES
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	YES
 USE_ZIP=	YES
 

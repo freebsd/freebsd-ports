@@ -19,7 +19,7 @@ COMMENT=	A lightweight IDE for writing Java programs
 
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	DRJAVAJAR=${DRJAVAJAR}

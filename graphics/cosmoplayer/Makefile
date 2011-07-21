@@ -21,7 +21,7 @@ COMMENT=	Java classes to support VRML
 RUN_DEPENDS=	${JAVALIBDIR}/java40.jar:${PORTSDIR}/devel/netscape-java40
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 JARFILES=	npcosmop211.jar LICENSE.npcosmop211.txt

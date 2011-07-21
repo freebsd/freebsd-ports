@@ -85,7 +85,7 @@ PLIST_SUB+=	JAVA="@comment "
 PLX11=		"@comment "
 .else
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 BUILD_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper
 RUN_DEPENDS+=	javavm:${PORTSDIR}/java/javavmwrapper
 PLIST_SUB+=	JAVA=""

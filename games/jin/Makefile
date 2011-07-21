@@ -17,7 +17,7 @@ COMMENT=	A graphical client for chess servers
 
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 
 SUB_FILES=	${PORTNAME}
 SUB_LIST=	JINJAR=${JINJAR}

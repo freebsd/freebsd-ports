@@ -19,7 +19,7 @@ CONFLICTS=	pccts-[0-9]*
 
 USE_GMAKE=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 
 OPTIONS=	PYTHON "Include Python runtime support" off
 

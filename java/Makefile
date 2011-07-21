@@ -99,8 +99,6 @@
     SUBDIR += jcommon
     SUBDIR += jdbcpool
     SUBDIR += jde
-    SUBDIR += jdk13
-    SUBDIR += jdk13-doc
     SUBDIR += jdk14-doc
     SUBDIR += jdk15
     SUBDIR += jdk15-doc
@@ -126,9 +124,6 @@
     SUBDIR += junit
     SUBDIR += kaffe
     SUBDIR += langspec
-    SUBDIR += linux-blackdown-jdk14
-    SUBDIR += linux-sun-jdk13
-    SUBDIR += linux-sun-jdk14
     SUBDIR += linux-sun-jdk15
     SUBDIR += linux-sun-jdk16
     SUBDIR += linux-sun-jre15

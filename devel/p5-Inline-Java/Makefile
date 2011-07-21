@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-Inline>=0.44:${PORTSDIR}/devel/p5-Inline \
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_JAVA=       yes
-JAVA_VERSION=   1.4+
+JAVA_VERSION=   1.5+
 JAVA_OS=        native
 
 PERL_CONFIGURE=	5.8.1+

@@ -2,4 +2,4 @@
 #
 # $FreeBSD$
 
-JAVA_VERSION="1.4+" "%%LOCALBASE%%/bin/java" -jar "%%JAVAJARDIR%%/jpatch.jar" "$@"
+JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%/bin/java" -jar "%%JAVAJARDIR%%/jpatch.jar" "$@"

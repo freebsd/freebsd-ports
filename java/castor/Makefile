@@ -17,7 +17,7 @@ COMMENT=	Data binding for XML (JAXB) and SQL database (JDO)
 LICENSE=	ASL
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 PLIST_FILES=	%%JAVAJARDIR%%/${PORTNAME}-anttasks.jar \

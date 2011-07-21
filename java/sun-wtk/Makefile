@@ -21,7 +21,7 @@ EXTRACT_DEPENDS+=	unzip:${PORTSDIR}/archivers/unzip
 
 USE_LINUX=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 DOWNLOAD_URL=	https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=j2me_wireless_toolkit-${PORTVERSION:S/./_/}-oth-JPR@CDS-CDS_Developer
 

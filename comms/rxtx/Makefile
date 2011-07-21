@@ -19,7 +19,7 @@ COMMENT=	Native interface to serial ports in Java
 USE_ZIP=	yes
 USE_GMAKE=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.5+
 JAVA_OS=	native
 GNU_CONFIGURE=	yes
 

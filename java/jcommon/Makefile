@@ -15,7 +15,7 @@ MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	A collection of useful classes used by JFreeChart and JFreeReport
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.5+
 
 .if !defined(WITHOUT_COMPILE)
 USE_ANT=	yes

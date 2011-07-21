@@ -19,7 +19,7 @@ COMMENT=	Generic logging wrapper library
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>

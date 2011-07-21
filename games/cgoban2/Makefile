@@ -21,7 +21,7 @@ RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 WRKSRC=		${WRKDIR}/cgoban
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 PLIST_FILES=	bin/cgoban2 %%DATADIR%%/cgoban.jar share/pixmaps/cgoban2.png

@@ -20,7 +20,7 @@ WRKSRC=		${WRKDIR}/geonext_install
 NO_BUILD=	yes
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 DATA=	cacerts didmat.crt geonext.html geonext.jar license.txt index.html\
 	geonext-batik.jar help.jar help_fr.jar help_de.jar help_it.jar \
 	help_uk.jar

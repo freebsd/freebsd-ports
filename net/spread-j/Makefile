@@ -19,7 +19,7 @@ COMMENT=	Java client library for the Spread Group Communication System
 BUILD_DEPENDS=	${ANT}:${PORTSDIR}/devel/apache-ant
 
 USE_JAVA=	YES
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.5+
 PKGMESSAGE=	${WRKSRC}/../license.txt
 
 ANT?=		${LOCALBASE}/bin/ant

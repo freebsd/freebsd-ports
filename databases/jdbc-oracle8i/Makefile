@@ -25,7 +25,7 @@ RESTRICTED=	'Must be downloaded direct from Oracle via www interface'
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+	# Should be "1.2 1.3" but tested OK with 1.4
+JAVA_VERSION=	1.5+
 
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

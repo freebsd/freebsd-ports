@@ -25,24 +25,19 @@ Java_Include_MAINTAINER=	glewis@FreeBSD.org hq@FreeBSD.org
 #
 # JAVA_VERSION		List of space-separated suitable java versions for the
 #					port. An optional "+" allows you to specify a range of
-#					versions. (allowed values: 1.3[+] 1.4[+] 1.5[+] 1.6[+]
-#					1.7[+])
+#					versions. (allowed values: 1.5[+] 1.6[+] 1.7[+])
 #
 # JAVA_OS			List of space-separated suitable JDK port operating systems
 #					for the port. (allowed values: native linux)
 #
 # JAVA_VENDOR		List of space-separated suitable JDK port vendors for the
-#					port. (allowed values: freebsd bsdjava sun blackdown
-#					openjdk)
+#					port. (allowed values: freebsd bsdjava sun openjdk)
 #
 # JAVA_BUILD		When set, it means that the selected JDK port should be
 #					added to build dependencies for the port.
 #
 # JAVA_RUN			This variable works exactly the same as JAVA_BUILD but
 #					regarding run dependencies.
-#
-# USE_JIKES			Whether the port should or should not use jikes(1) to build.
-#					See Stage 6 header for further detail.
 #
 # USE_ANT			Should be defined when the port uses Apache Ant. Ant is thus
 #					considered to be the sub-make command. When no 'do-build'
@@ -69,19 +64,19 @@ Java_Include_MAINTAINER=	glewis@FreeBSD.org hq@FreeBSD.org
 #								(e.g. 'FreeBSD Foundation')
 #
 # JAVA_HOME			Path to the installation directory of the JDK. (e.g.
-#					'/usr/local/jdk1.3.1')
+#					'/usr/local/jdk1.5.0')
 #
 # JAVAC				Path to the Java compiler to use. (e.g.
-#					'/usr/local/jdk1.5.0/bin/javac' or '/usr/local/bin/jikes')
+#					'/usr/local/jdk1.5.0/bin/javac' or '/usr/local/bin/javac')
 #
 # JAR				Path to the JAR tool to use. (e.g.
 #					'/usr/local/jdk1.5.0/bin/jar' or '/usr/local/bin/fastjar')
 #
 # APPLETVIEWER		Path to the appletviewer utility. (e.g.
-#					'/usr/local/linux-jdk1.3.1/bin/appletviewer')
+#					'/usr/local/linux-jdk1.5.0/bin/appletviewer')
 #
 # JAVA				Path to the java executable. Use this for executing Java
-#					programs. (e.g. '/usr/local/jdk1.3.1/bin/java')
+#					programs. (e.g. '/usr/local/jdk1.5.0/bin/java')
 #
 # JAVADOC			Path to the javadoc utility program.
 #
@@ -113,13 +108,10 @@ Java_Include_MAINTAINER=	glewis@FreeBSD.org hq@FreeBSD.org
 # JAVALIBDIR		The directory where JAR files installed by other ports
 #					are located.
 #
-# HAVE_JIKES		Defined and set to "yes" whenever the port will effectively
-#					use Jikes. See stage 6 header for further detail.
-#
 #-------------------------------------------------------------------------------
 # Porter's hints
 #
-# To retrieve the Major version number from JAVA_PORT_VERSION (e.g. "1.3"):
+# To retrieve the Major version number from JAVA_PORT_VERSION (e.g. "1.5"):
 #		-> ${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1.\2/}
 #
 #-------------------------------------------------------------------------------
@@ -164,10 +156,10 @@ SUB_LIST+=		JAVA_OS="${JAVA_OS}"
 .		endif
 
 # The complete list of Java versions, os and vendors supported.
-__JAVA_VERSION_LIST=	1.3 1.4 1.5 1.6 1.7
-_JAVA_VERSION_LIST=		${__JAVA_VERSION_LIST} ${__JAVA_VERSION_LIST:S/$/+/} 1.1+ 1.2+
+__JAVA_VERSION_LIST=	1.5 1.6 1.7
+_JAVA_VERSION_LIST=		${__JAVA_VERSION_LIST} ${__JAVA_VERSION_LIST:S/$/+/}
 _JAVA_OS_LIST=			native linux
-_JAVA_VENDOR_LIST=		freebsd bsdjava sun blackdown openjdk
+_JAVA_VENDOR_LIST=		freebsd bsdjava sun openjdk
 
 # Set all meta-information about JDK ports:
 # port location, corresponding JAVA_HOME, JDK version, OS, vendor
@@ -179,18 +171,10 @@ _JAVA_PORT_NATIVE_FREEBSD_JDK_1_6_INFO=		PORT=java/diablo-jdk16			HOME=${LOCALBA
 											VERSION=1.6.0	OS=native	VENDOR=freebsd
 _JAVA_PORT_NATIVE_FREEBSD_JDK_1_5_INFO=		PORT=java/diablo-jdk15			HOME=${LOCALBASE}/diablo-jdk1.5.0 \
 											VERSION=1.5.0	OS=native	VENDOR=freebsd
-_JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3_INFO=		PORT=java/jdk13					HOME=${LOCALBASE}/jdk1.3.1 \
-											VERSION=1.3.1	OS=native	VENDOR=bsdjava
 _JAVA_PORT_NATIVE_BSDJAVA_JDK_1_5_INFO=		PORT=java/jdk15					HOME=${LOCALBASE}/jdk1.5.0 \
 											VERSION=1.5.0	OS=native	VENDOR=bsdjava
 _JAVA_PORT_NATIVE_BSDJAVA_JDK_1_6_INFO=		PORT=java/jdk16					HOME=${LOCALBASE}/jdk1.6.0 \
 											VERSION=1.6.0	OS=native	VENDOR=bsdjava
-_JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4_INFO=	PORT=java/linux-blackdown-jdk14	HOME=${LOCALBASE}/linux-blackdown-jdk1.4.2 \
-											VERSION=1.4.2	OS=linux	VENDOR=blackdown
-_JAVA_PORT_LINUX_SUN_JDK_1_3_INFO=			PORT=java/linux-sun-jdk13		HOME=${LOCALBASE}/linux-sun-jdk1.3.1 \
-											VERSION=1.3.1	OS=linux	VENDOR=sun
-_JAVA_PORT_LINUX_SUN_JDK_1_4_INFO=			PORT=java/linux-sun-jdk14		HOME=${LOCALBASE}/linux-sun-jdk1.4.2 \
-											VERSION=1.4.2	OS=linux	VENDOR=sun
 _JAVA_PORT_LINUX_SUN_JDK_1_5_INFO=			PORT=java/linux-sun-jdk15		HOME=${LOCALBASE}/linux-sun-jdk1.5.0 \
 											VERSION=1.5.0	OS=linux	VENDOR=sun
 _JAVA_PORT_LINUX_SUN_JDK_1_6_INFO=			PORT=java/linux-sun-jdk16		HOME=${LOCALBASE}/linux-sun-jdk1.6.0 \
@@ -200,7 +184,6 @@ _JAVA_PORT_LINUX_SUN_JDK_1_6_INFO=			PORT=java/linux-sun-jdk16		HOME=${LOCALBASE
 _JAVA_VENDOR_freebsd=		"FreeBSD Foundation"
 _JAVA_VENDOR_bsdjava=		"BSD Java Porting Team"
 _JAVA_VENDOR_openjdk=		"OpenJDK BSD Porting Team"
-_JAVA_VENDOR_blackdown=		Blackdown
 _JAVA_VENDOR_sun=			Sun
 
 # Verbose description for each OS
@@ -208,7 +191,7 @@ _JAVA_OS_native=	Native
 _JAVA_OS_linux=		Linux
 
 # Enforce preferred Java ports according to OS
-.		if (${OSVERSION} >= 600000 && ${OSVERSION} < 800000)
+.		if ${OSVERSION} < 800000
 _JAVA_PREFERRED_PORTS+=	JAVA_PORT_NATIVE_FREEBSD_JDK_1_6
 .		else
 _JAVA_PREFERRED_PORTS+=	JAVA_PORT_NATIVE_BSDJAVA_JDK_1_6
@@ -221,12 +204,8 @@ __JAVA_PORTS_ALL=	JAVA_PORT_NATIVE_FREEBSD_JDK_1_6 \
 					JAVA_PORT_NATIVE_OPENJDK_JDK_1_6 \
 					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_6 \
 					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_5 \
-					JAVA_PORT_NATIVE_BSDJAVA_JDK_1_3 \
 					JAVA_PORT_LINUX_SUN_JDK_1_6 \
-					JAVA_PORT_LINUX_SUN_JDK_1_5 \
-					JAVA_PORT_LINUX_SUN_JDK_1_4 \
-					JAVA_PORT_LINUX_SUN_JDK_1_3 \
-					JAVA_PORT_LINUX_BLACKDOWN_JDK_1_4
+					JAVA_PORT_LINUX_SUN_JDK_1_5
 _JAVA_PORTS_ALL=	${JAVA_PREFERRED_PORTS} \
 					${_JAVA_PREFERRED_PORTS} \
 					${__JAVA_PORTS_ALL}
@@ -234,11 +213,6 @@ _JAVA_PORTS_ALL=	${JAVA_PREFERRED_PORTS} \
 # Set the name of the file that indicates that a JDK is indeed installed, as a
 # relative path within the JAVA_HOME directory.
 _JDK_FILE=bin/javac
-
-# Set the path to Jikes and define the Jikes dependency
-_JIKES_PATH=	${LOCALBASE}/bin/jikes
-DEPEND_JIKES=	${_JIKES_PATH}:${PORTSDIR}/java/jikes
-
 
 #-------------------------------------------------------------------------------
 # Stage 2: Determine which JDK ports are suitable and which JDK ports are
@@ -296,7 +270,7 @@ JAVA_RUN=	jre
 .		undef _JAVA_PORTS_INSTALLED
 .		undef _JAVA_PORTS_POSSIBLE
 .		if defined(JAVA_VERSION)
-_JAVA_VERSION=	${JAVA_VERSION:S/1.1+/1.3+/:S/1.2+/1.3+/:S/1.3+/1.3 1.4+/:S/1.4+/1.4 1.5+/:S/1.5+/1.5 1.6+/:S/1.6+/1.6 1.7+/:S/1.7+/1.7/}
+_JAVA_VERSION=	${JAVA_VERSION:S/1.5+/1.5 1.6+/:S/1.6+/1.6 1.7+/:S/1.7+/1.7/}
 .		else
 _JAVA_VERSION=	${__JAVA_VERSION_LIST}
 .		endif
@@ -391,41 +365,6 @@ JAVA_PORT_OS_DESCRIPTION:=		${JAVA_PORT_OS:S/^/\${_JAVA_OS_/:S/$/}/}
 # Stage 4: Add any dependencies if necessary
 #
 
-# Jikes support: If USE_JIKES is set to YES, then use Jikes. If USE_JIKES is
-# set to NO, then don't use it. If it is set to a different value, then fail
-# with an error message. Otherwise USE_JIKES is not set, in which case it is
-# checked if Jikes is already installed. If it is, then it will be used,
-# otherwise it will not be used.
-#
-# As a result, HAVE_JIKES is defined and set to "yes" when Jikes is used by the
-# port according to the above policy.
-
-.		undef HAVE_JIKES
-
-# Enforce USE_JIKES=NO if not defined and using Java 1.5+
-# XXX: This is a temporary fix to be removed when Jikes supports Java 1.5
-.		if (${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1.\2/} == "1.5") || \
-           (${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1.\2/} == "1.6") || \
-           (${JAVA_PORT_VERSION:C/^([0-9])\.([0-9])(.*)$/\1.\2/} == "1.7")
-USE_JIKES?=		NO
-.		endif
-# First test if USE_JIKES has a valid value
-.		if defined(USE_JIKES) && !(${USE_JIKES:U} == "YES") && !(${USE_JIKES:U} == "NO")
-check-makevars::
-	@${ECHO_CMD} "${PKGNAME}: Makefile error: \"${USE_JIKES}\" is not a valid value for USE_JIKES. It should be YES or NO, or it should be undefined.";
-	@${FALSE}
-.		endif
-# Then test if jikes is needed or available: -> HAVE_JIKES=yes
-.		if (exists(${_JIKES_PATH}) && (!defined(USE_JIKES) || (${USE_JIKES:U} == "YES"))) \
-			|| (defined(USE_JIKES) && (${USE_JIKES:U} == "YES"))
-HAVE_JIKES=		yes
-.		endif
-
-# Add jikes port to the dependencies if needed
-.		if !defined(NO_BUILD) && defined(HAVE_JIKES)
-BUILD_DEPENDS+=	${DEPEND_JIKES}
-.		endif
-
 # Ant Support: USE_ANT --> JAVA_BUILD=jdk
 .		if defined(USE_ANT)
 JAVA_BUILD=		jdk
@@ -452,9 +391,6 @@ RUN_DEPENDS+=		${DEPEND_JAVA}
 .		if defined(USE_ANT)
 ANT?=				${LOCALBASE}/bin/ant
 MAKE_ENV+=			JAVA_HOME=${JAVA_HOME}
-.			if defined(HAVE_JIKES)
-MAKE_ARGS+=			-Dbuild.compiler=jikes
-.			endif
 BUILD_DEPENDS+=		${ANT}:${PORTSDIR}/devel/apache-ant
 ALL_TARGET?=
 .			if !target(do-build)
@@ -469,22 +405,15 @@ do-build:
 #
 # At this stage both JAVA_HOME and JAVA_PORT are definitely given a value.
 #
-# Define the location of the Java compiler. If HAVE_JIKES is defined, then
-# use Jikes.
+# Define the location of the Java compiler.
 
-# Only define JAVAC if a JDK is needed or USE_JIKES=yes
+# Only define JAVAC if a JDK is needed
 .		undef JAVAC
 
 # Then test if a JAVAC has to be set (JAVA_BUILD==jdk)
 .		if defined(JAVA_BUILD)
 .			if (${JAVA_BUILD:U} == "JDK") && !defined(JAVAC)
-# Use jikes if available and not explicitly forbidden (see Stage 6)
-.				if defined(HAVE_JIKES)
-JAVAC?=			${_JIKES_PATH} -bootclasspath ${JAVA_CLASSES}
-# Otherwise use 'javac'
-.				else
 JAVAC?=			${JAVA_HOME}/bin/javac
-.				endif
 .			endif
 .		endif
 

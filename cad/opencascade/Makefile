@@ -33,7 +33,7 @@ USE_TCL_RUN=	84+
 USE_TCL_THREADS=yes
 USE_JAVA=	yes
 USE_XORG=	xmu
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 #.if defined(MAINTAINER_MODE)
 # linux-sun-jdk was required for 6.1, but 6.2 is OK with diablo-jdk.
 #JAVA_OS=	linux

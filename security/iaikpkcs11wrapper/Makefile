@@ -18,7 +18,7 @@ COMMENT=	A PKCS\#11 Java wrapper
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.5+
 JAVA_OS=	native
 USE_GMAKE=	yes
 ALL_TARGET=	release

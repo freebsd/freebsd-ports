@@ -17,7 +17,7 @@ MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Jakarta Object-pooling API
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 
 USE_ANT=	yes
 ALL_TARGET=	build-jar

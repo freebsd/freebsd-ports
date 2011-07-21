@@ -23,7 +23,7 @@ NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
 USE_ZIP=	yes
 
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 JAVA_OS=	native
 
 DATADIR=	${PREFIX}/lib/eclipse/plugins

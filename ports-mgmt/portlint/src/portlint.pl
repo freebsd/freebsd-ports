@@ -2015,8 +2015,7 @@ ruby sed sh sort sysctl touch tr which xargs xmkmf
 		$whole =~ /^JAVA_OS[?:]?=\s*(.*)$/m ||
 		$whole =~ /^JAVA_VENDOR[?:]?=\s*(.*)$/m ||
 		$whole =~ /^JAVA_RUN[?:]?=\s*(.*)$/m ||
-		$whole =~ /^JAVA_BUILD[?:]?=\s*(.*)$/m ||
-		$whole =~ /^USE_JIKES[?:]?=\s*(.*)$/m)) {
+		$whole =~ /^JAVA_BUILD[?:]?=\s*(.*)$/m)) {
 		&perror("FATAL", $file, -1, "the port uses Java features, but USE_JAVA ".
 			"is not defined");
 	}

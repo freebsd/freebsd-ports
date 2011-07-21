@@ -22,7 +22,7 @@ BUILD_DEPENDS=	${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit \
 RUN_DEPENDS=	${JAVAJARDIR}/jakarta-oro.jar:${PORTSDIR}/java/jakarta-oro
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 USE_ANT=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

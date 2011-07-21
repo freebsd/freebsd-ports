@@ -15,7 +15,7 @@ MAINTAINER=	dan@algenta.com
 COMMENT=	Java DNS update client for the ThatIP protocol
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.5+
 USE_ZIP=	yes
 
 NO_BUILD=	yes

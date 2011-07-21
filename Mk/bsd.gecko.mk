@@ -688,7 +688,7 @@ MOZ_OPTIONS+=	--disable-debug				\
 
 .if defined(WITH_JAVA) && defined(_WITH_JAVA)
 USE_JAVA=	yes
-JAVA_VERSION+=	1.4+
+JAVA_VERSION+=	1.5+
 JAVA_OS+=	native
 CONFIGURE_ENV+=	JAVA_HOME="${JAVA_HOME}"
 MOZ_OPTIONS+=	--enable-javaxpcom

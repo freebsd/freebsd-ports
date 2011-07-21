@@ -15,7 +15,7 @@ MAINTAINER=	vd@FreeBSD.org
 COMMENT=	Powerful 100% pure Java text editor
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.5+
 NO_WRKSUBDIR=	yes
 USE_XORG=	x11
 NO_BUILD=	yes

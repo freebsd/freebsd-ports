@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities for manipulating Java Beans using the XPath syntax
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.2+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 
 .include <bsd.port.pre.mk>

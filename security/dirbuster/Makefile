@@ -16,7 +16,7 @@ COMMENT=	DirBuster allows file and directory brute forcing on web servers
 
 USE_ZIP=	YES
 USE_JAVA=	YES
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}

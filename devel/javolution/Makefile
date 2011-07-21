@@ -16,7 +16,7 @@ COMMENT=	A Java solution for real time and embedded systems
 
 USE_ZIP=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 JDKMVERSION=	${JAVA_PORT_VERSION:C/^([0-9]\.[0-9])(.*)$/\1/}
 USE_ANT=	yes
 ALL_TARGET=	${JDKMVERSION}

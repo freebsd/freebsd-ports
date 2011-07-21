@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chess game and PGN viewer/editor written in Java
 
 USE_JAVA=	yes
-JAVA_VERSION=	1.3+
+JAVA_VERSION=	1.5+
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 

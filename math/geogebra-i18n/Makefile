@@ -25,7 +25,7 @@ NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 SUB_FILES=	${PORTNAME:S/-i18n$//}
 
 FIND_DOCS=	-type f \! \( -name *.txt -or -name *.jar \)
