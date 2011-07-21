@@ -6,6 +6,14 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20110721:
+  AFFECTS: users of games/megaglest
+  AUTHOR: smoeller@nichthelfer.de
+
+  If you upgraded from version 3.4.0, your personal settings are stored in
+  ~/.megaglest3.4.0.  If you copy glestuser.ini and glestuserkeys.ini to
+  ~/.megaglest, you will have your old settings again.
+
+20110721:
   AFFECTS: users of security/gpgme
   AUTHOR: jlaffaye@FreeBSD.org
 
