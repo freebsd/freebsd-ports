@@ -17,7 +17,7 @@ LICENSE=	ASL
 
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 
 OPTIONS=	DOCS    "Install docs & examples" on \
 		CONTRIB "Install contribs" off
