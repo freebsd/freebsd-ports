@@ -6,24 +6,18 @@
 #
 
 PORTNAME=	veusz
-PORTVERSION=	1.10
-PORTREVISION=	1
+PORTVERSION=	1.12
 CATEGORIES=	science kde
 MASTER_SITES=	http://download.gna.org/veusz/
 
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Scientific plotting package
 
-RUN_DEPENDS=	${PYNUMPY} \
-		${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
-BUILD_DEPENDS=	${PYNUMPY} \
-		${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
-
 LICENSE=	GPLv2
 
-USE_GL=		gl
-USE_QT_VER=	4
-QT_COMPONENTS=  gui corelib rcc moc uic linguist opengl
+BUILD_DEPENDS=	${PYNUMPY} \
+		${PYTHON_SITELIBDIR}/PyQt4/QtGui.so:${PORTSDIR}/x11-toolkits/py-qt4-gui
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
