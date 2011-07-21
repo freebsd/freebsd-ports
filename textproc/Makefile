@@ -296,6 +296,7 @@
     SUBDIR += ispell
     SUBDIR += it-aspell
     SUBDIR += it-hunspell
+    SUBDIR += it-hyphen
     SUBDIR += it-ispell
     SUBDIR += jade
     SUBDIR += jakarta-commons-digester
