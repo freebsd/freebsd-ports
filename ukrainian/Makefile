@@ -7,6 +7,7 @@
     SUBDIR += emacs-koi8u
     SUBDIR += gd
     SUBDIR += hunspell
+    SUBDIR += hyphen
     SUBDIR += ispell
     SUBDIR += kde3-i18n
     SUBDIR += kde4-l10n
