@@ -16,6 +16,8 @@ COMMENT=	Fortran 77 semantic checking utility
 
 LICENSE=	MIT
 
+PORTSCOUT=	skipv:3.3.a,3.3.b,3.3.c
+
 MAN1=		dcl2inc.1 ftnchek.1
 
 GNU_CONFIGURE=	yes
