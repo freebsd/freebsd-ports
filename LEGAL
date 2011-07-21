@@ -271,14 +271,10 @@ j2sdk-*-doc.zip		java/jdk13-doc		This documentation is under
 						license and export control
 j2sdk-*-doc.zip		java/jdk14-doc		This documentation is under
 						license and export control
-j2sdk-*-linux-i586.bin	java/linux-sun-jdk13	Redistribution of repackaged
-						binaries not permitted
 j2sdk-*-linux-i586.bin	java/linux-sun-jdk14	Redistribution of repackaged
 						binaries not permitted
 j2sdk-*-linux-i586.bin	java/linux-blackdown-jdk14	License does not allow
 						distribution with fee
-j2sdk-1_3_1-src.tar.gz	java/jdk13		Redistribution of pre-compiled
-						binaries is not permitted
 jdk-1_5_0-bin-scsl.*	java/jdk15		Redistribution of pre-compiled
 						binaries is not permitted
 jdk-1_5_0-src-scsl.*	java/jdk15		Redistribution of pre-compiled
