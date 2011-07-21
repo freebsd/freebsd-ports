@@ -16,14 +16,13 @@ DIST_SUBDIR=	xGate
 MAINTAINER=	nork@FreeBSD.org
 COMMENT=	xGate webmail system implemented by Servlet over IMAP4/POP3
 
-RUN_DEPENDS=	tomcat41ctl:${PORTSDIR}/www/tomcat41 \
-		${JAVA_HOME}/jre/lib/security/.jce_policy14:${PORTSDIR}/security/jce_policy14
+RUN_DEPENDS=	tomcat41ctl:${PORTSDIR}/www/tomcat41
 
 BROKEN=		fails to fetch
 
 NO_BUILD=	yes
 USE_JAVA=	yes
-JAVA_VERSION=	1.4+
+JAVA_VERSION=	1.5+
 
 PLIST_SUB=	T=${APP_HOME:S|^${LOCALBASE}/||} \
 		WWWUID=${WWWUID} WWWGID=${WWWGID}
