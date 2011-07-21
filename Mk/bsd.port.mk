@@ -2808,10 +2808,10 @@ MASTER_SORT_AWK+=	/${srt:S|/|\\/|g}/ { good["${srt:S|\\|\\\\|g}"] = good["${srt:
 .endfor
 MASTER_SORT_AWK+=	{ rest = rest " " $$0; } END { n=split(gl, gla); for(i=1;i<=n;i++) { print good[gla[i]]; } print rest; }
 
-SORTED_MASTER_SITES_DEFAULT_CMD=	cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} master-sites-DEFAULT
-SORTED_PATCH_SITES_DEFAULT_CMD=		cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} patch-sites-DEFAULT
-SORTED_MASTER_SITES_ALL_CMD=	cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} master-sites-ALL
-SORTED_PATCH_SITES_ALL_CMD=	cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} patch-sites-ALL
+SORTED_MASTER_SITES_DEFAULT_CMD=	cd ${.CURDIR} && ${MAKE} master-sites-DEFAULT
+SORTED_PATCH_SITES_DEFAULT_CMD=		cd ${.CURDIR} && ${MAKE} patch-sites-DEFAULT
+SORTED_MASTER_SITES_ALL_CMD=	cd ${.CURDIR} && ${MAKE} master-sites-ALL
+SORTED_PATCH_SITES_ALL_CMD=	cd ${.CURDIR} && ${MAKE} patch-sites-ALL
 
 #
 # Sort the master site list according to the patterns in MASTER_SORT
@@ -2823,7 +2823,7 @@ _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//}
 .	if !empty(_S_TEMP)
 .		for _group in ${_S_TEMP:S/^://:S/,/ /g}
 .			if !target(master-sites-${_group})
-SORTED_MASTER_SITES_${_group}_CMD=	cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} master-sites-${_group}
+SORTED_MASTER_SITES_${_group}_CMD=	cd ${.CURDIR} && ${MAKE} master-sites-${_group}
 master-sites-${_group}:
 	@${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} '${_MASTER_SITES_${_group}}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
 .			endif
@@ -2835,7 +2835,7 @@ _S_TEMP=	${_S:S/^${_S:C@/:[^/:]+$@/@}//}
 .	if !empty(_S_TEMP)
 .		for _group in ${_S_TEMP:S/^://:S/,/ /g}
 .			if !target(patch-sites-${_group})
-SORTED_PATCH_SITES_${_group}_CMD=	cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} patch-sites-${_group}
+SORTED_PATCH_SITES_${_group}_CMD=	cd ${.CURDIR} && ${MAKE} patch-sites-${_group}
 patch-sites-${_group}:
 	@${ECHO_CMD} ${_MASTER_SITE_OVERRIDE} `${ECHO_CMD} '${_PATCH_SITES_${_group}}' | ${AWK} '${MASTER_SORT_AWK:S|\\|\\\\|g}'` ${_MASTER_SITE_BACKUP}
 .			endif
@@ -3961,13 +3961,12 @@ do-package: ${TMPPLIST}
 			fi; \
 		fi; \
 	fi
-	@__softMAKEFLAGS='${__softMAKEFLAGS:S/'/'\''/g}'; \
-	if ${PKG_CMD} -b ${PKGNAME} ${PKGFILE}; then \
+	@if ${PKG_CMD} -b ${PKGNAME} ${PKGFILE}; then \
 		if [ -d ${PACKAGES} ]; then \
-			cd ${.CURDIR} && eval ${MAKE} $${__softMAKEFLAGS} package-links; \
+			cd ${.CURDIR} && eval ${MAKE} package-links; \
 		fi; \
 	else \
-		cd ${.CURDIR} && eval ${MAKE} $${__softMAKEFLAGS} delete-package; \
+		cd ${.CURDIR} && eval ${MAKE} delete-package; \
 		exit 1; \
 	fi
 .endif
@@ -4281,8 +4280,6 @@ fix-plist-sequence: ${TMPPLIST}
 
 .if !defined(DISABLE_SECURITY_CHECK)
 .if !target(security-check)
-.if !defined(OLD_SECURITY_CHECK)
-
 security-check:
 # Scan PLIST for:
 #   1.  setugid files
@@ -4309,7 +4306,7 @@ security-check:
 		! ${AWK} -v audit="$${PORTS_AUDIT}" -f ${PORTSDIR}/Tools/scripts/security-check.awk \
 		  ${WRKDIR}/.PLIST.flattened ${WRKDIR}/.PLIST.objdump ${WRKDIR}/.PLIST.setuid ${WRKDIR}/.PLIST.writable; \
 	then \
-		www_site=$$(cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} www-site); \
+		www_site=$$(cd ${.CURDIR} && ${MAKE} www-site); \
 	    if [ ! -z "$${www_site}" ]; then \
 			${ECHO_MSG}; \
 			${ECHO_MSG} "      For more information, and contact details about the security"; \
@@ -4317,102 +4314,6 @@ security-check:
 			${ECHO_MSG} "$${www_site}"; \
 		fi; \
 	fi
-
-
-.else # i.e. defined(OLD_SECURITY_CHECK)
-
-security-check:
-# Scan PLIST for:
-#   1.  setugid files
-#   2.  accept()/recvfrom() which indicates network listening capability
-#   3.  insecure functions (gets/mktemp/tempnam/[XXX])
-#   4.  startup scripts, in conjunction with 2.
-#   5.  world-writable files/dirs
-#
-	-@${RM} -f ${WRKDIR}/.PLIST.setuid ${WRKDIR}/.PLIST.stupid \
-		${WRKDIR}/.PLIST.network ${WRKDIR}/.PLIST.writable; \
-	if [ -n "$$PORTS_AUDIT" ]; then \
-		stupid_functions_regexp=' (gets|mktemp|tempnam|tmpnam|strcpy|strcat|sprintf)$$'; \
-	else \
-		stupid_functions_regexp=' (gets|mktemp|tempnam|tmpnam)$$'; \
-	fi; \
-	for i in `${GREP} -v '^@' ${TMPPLIST}`; do \
-		if [ ! -L "${PREFIX}/$$i" -a -f "${PREFIX}/$$i" ]; then \
-			${OBJDUMP} -R ${PREFIX}/$$i > \
-				${WRKDIR}/.PLIST.objdump 2> /dev/null; \
-			if [ -s ${WRKDIR}/.PLIST.objdump ] ; then \
-				${EGREP} " $$stupid_functions_regexp" \
-					${WRKDIR}/.PLIST.objdump | ${AWK} '{print " " $$3}' | ${TR} -d '\n' \
-					> ${WRKDIR}/.PLIST.stupid; \
-				if [ -n "`${EGREP} ' (accept|recvfrom)$$' ${WRKDIR}/.PLIST.objdump`" ] ; then \
-					if [ -s ${WRKDIR}/.PLIST.stupid ]; then \
-						${ECHO_CMD} -n "${PREFIX}/$$i (USES POSSIBLY INSECURE FUNCTIONS:" >> ${WRKDIR}/.PLIST.network; \
-						${CAT} ${WRKDIR}/.PLIST.stupid >> ${WRKDIR}/.PLIST.network; \
-						${ECHO_CMD} ")" >> ${WRKDIR}/.PLIST.network; \
-					else \
-						${ECHO_CMD} ${PREFIX}/$$i >> ${WRKDIR}/.PLIST.network; \
-					fi; \
-				fi; \
-			fi; \
-			if [ -n "`${FIND} ${PREFIX}/$$i -prune \( -perm -4000 -o -perm -2000 \) \( -perm -0010 -o -perm -0001 \) 2>/dev/null`" ]; then \
-				if [ -s ${WRKDIR}/.PLIST.stupid ]; then \
-					${ECHO_CMD} -n "${PREFIX}/$$i (USES POSSIBLY INSECURE FUNCTIONS:" >> ${WRKDIR}/.PLIST.setuid; \
-					${CAT} ${WRKDIR}/.PLIST.stupid >> ${WRKDIR}/.PLIST.setuid; \
-					${ECHO_CMD} ")" >> ${WRKDIR}/.PLIST.setuid; \
-				else \
-					${ECHO_CMD} ${PREFIX}/$$i >> ${WRKDIR}/.PLIST.setuid; \
-				fi; \
-			fi; \
-		fi; \
-		if [ ! -L "${PREFIX}/$$i" ]; then \
-			if [ -n "`${FIND} ${PREFIX}/$$i -prune -perm -0002 \! -type l 2>/dev/null`" ]; then \
-				 ${ECHO_CMD} ${PREFIX}/$$i >> ${WRKDIR}/.PLIST.writable; \
-			fi; \
-		fi; \
-	done; \
-	${GREP} '^etc/rc.d/' ${TMPPLIST} > ${WRKDIR}/.PLIST.startup; \
-	if [ -s ${WRKDIR}/.PLIST.setuid -o -s ${WRKDIR}/.PLIST.network -o -s ${WRKDIR}/.PLIST.writable ]; then \
-		if [ -n "$$PORTS_AUDIT" ]; then \
-			${ECHO_MSG} "===>  SECURITY REPORT (PARANOID MODE): "; \
-		else \
-			${ECHO_MSG} "===>  SECURITY REPORT: "; \
-		fi; \
-		if [ -s ${WRKDIR}/.PLIST.setuid ] ; then \
-			${ECHO_MSG} "      This port has installed the following binaries,"; \
-			${ECHO_MSG} "      which execute with increased privileges."; \
-			${CAT} ${WRKDIR}/.PLIST.setuid; \
-			${ECHO_MSG}; \
-		fi; \
-		if [ -s ${WRKDIR}/.PLIST.network ] ; then \
-			${ECHO_MSG} "      This port has installed the following files, which may act as network"; \
-			${ECHO_MSG} "      servers and may therefore pose a remote security risk to the system."; \
-			${CAT} ${WRKDIR}/.PLIST.network; \
-			${ECHO_MSG}; \
-			if [ -s ${WRKDIR}/.PLIST.startup ] ; then \
-				${ECHO_MSG} "      This port has installed the following startup scripts,"; \
-				${ECHO_MSG} "      which may cause these network services to be started at boot time."; \
-				${SED} s,^,${PREFIX}/, < ${WRKDIR}/.PLIST.startup; \
-				${ECHO_MSG}; \
-			fi; \
-		fi; \
-		if [ -s ${WRKDIR}/.PLIST.writable ] ; then \
-			${ECHO_MSG} "      This port has installed the following world-writable files/directories."; \
-			${CAT} ${WRKDIR}/.PLIST.writable; \
-			${ECHO_MSG}; \
-		fi; \
-		${ECHO_MSG} "      If there are vulnerabilities in these programs there may be a security"; \
-		${ECHO_MSG} "      risk to the system. The FreeBSD Project makes no guarantee about the"; \
-		${ECHO_MSG} "      security of ports included in the Ports Collection."; \
-		${ECHO_MSG} "      Please type 'make deinstall' to deinstall the port if this is a concern."; \
-		www_site=$$(cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} www-site); \
-	    if [ ! -z "$${www_site}" ]; then \
-			${ECHO_MSG}; \
-			${ECHO_MSG} "      For more information, and contact details about the security"; \
-			${ECHO_MSG} "      status of this software, see the following webpage: "; \
-			${ECHO_MSG} "$${www_site}"; \
-		fi; \
-	fi
-.endif # !defined(OLD_SECURITY_CHECK)
 .endif
 .else # i.e. defined(DISABLE_SECURITY_CHECK)
 security-check:
@@ -4495,7 +4396,7 @@ fetch: ${_FETCH_DEP} ${_FETCH_SEQ}
 ${target}: ${${target:U}_COOKIE}
 .elif !target(${target})
 ${target}: config-conditional
-	@cd ${.CURDIR} && ${MAKE} CONFIG_DONE_${UNIQUENAME:U}=1 ${__softMAKEFLAGS} ${${target:U}_COOKIE}
+	@cd ${.CURDIR} && ${MAKE} CONFIG_DONE_${UNIQUENAME:U}=1 ${${target:U}_COOKIE}
 .elif target(${target}) && defined(IGNORE)
 .endif
 
@@ -4504,19 +4405,19 @@ ${target}: config-conditional
 .if ${UID} != 0 && defined(_${target:U}_SUSEQ) && !defined(INSTALL_AS_USER)
 .if defined(USE_SUBMAKE)
 ${${target:U}_COOKIE}: ${_${target:U}_DEP}
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${_${target:U}_SEQ}
+	@cd ${.CURDIR} && ${MAKE} ${_${target:U}_SEQ}
 .else
 ${${target:U}_COOKIE}: ${_${target:U}_DEP} ${_${target:U}_SEQ}
 .endif
 	@${ECHO_MSG} "===>  Switching to root credentials for '${target}' target"
 	@cd ${.CURDIR} && \
-		${SU_CMD} "${MAKE} ${__softMAKEFLAGS} ${_${target:U}_SUSEQ}"
+		${SU_CMD} "${MAKE} ${_${target:U}_SUSEQ}"
 	@${ECHO_MSG} "===>  Returning to user credentials"
 	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
 .elif defined(USE_SUBMAKE)
 ${${target:U}_COOKIE}: ${_${target:U}_DEP}
 	@cd ${.CURDIR} && \
-		${MAKE} ${__softMAKEFLAGS} ${_${target:U}_SEQ} ${_${target:U}_SUSEQ}
+		${MAKE} ${_${target:U}_SEQ} ${_${target:U}_SUSEQ}
 	@${TOUCH} ${TOUCH_FLAGS} ${.TARGET}
 .else
 ${${target:U}_COOKIE}: ${_${target:U}_DEP} ${_${target:U}_SEQ} ${_${target:U}_SUSEQ}
@@ -4528,7 +4429,7 @@ ${${target:U}_COOKIE}::
 	@if [ -e ${.TARGET} ]; then \
 		${DO_NADA}; \
 	else \
-		cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${.TARGET}; \
+		cd ${.CURDIR} && ${MAKE} ${.TARGET}; \
 	fi
 .endif
 
@@ -4593,7 +4494,7 @@ pre-su-install-script:
 
 .if !target(pretty-print-www-site)
 pretty-print-www-site:
-	@www_site=$$(cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} www-site); \
+	@www_site=$$(cd ${.CURDIR} && ${MAKE} www-site); \
 	if [ -n "$${www_site}" ]; then \
 		${ECHO_MSG} -n " and/or visit the "; \
 		${ECHO_MSG} -n "<a href=\"$${www_site}\">web site</a>"; \
@@ -4611,7 +4512,7 @@ pretty-print-www-site:
 
 .if !target(checkpatch)
 checkpatch:
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} PATCH_CHECK_ONLY=yes ${_PATCH_DEP} ${_PATCH_SEQ}
+	@cd ${.CURDIR} && ${MAKE} PATCH_CHECK_ONLY=yes ${_PATCH_DEP} ${_PATCH_SEQ}
 .endif
 
 # Reinstall
@@ -4633,7 +4534,7 @@ deinstall:
 .if ${UID} != 0 && !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>  Switching to root credentials for '${.TARGET}' target"
 	@cd ${.CURDIR} && \
-		${SU_CMD} "${MAKE} ${__softMAKEFLAGS} ${.TARGET}"
+		${SU_CMD} "${MAKE} ${.TARGET}"
 	@${ECHO_MSG} "===>  Returning to user credentials"
 .else
 	@${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN}"
@@ -4666,7 +4567,7 @@ deinstall-all:
 .if ${UID} != 0 && !defined(INSTALL_AS_USER)
 	@${ECHO_MSG} "===>  Switching to root credentials for '${.TARGET}' target"
 	@cd ${.CURDIR} && \
-		${SU_CMD} "${MAKE} ${__softMAKEFLAGS} ${.TARGET}"
+		${SU_CMD} "${MAKE} ${.TARGET}"
 	@${ECHO_MSG} "===>  Returning to user credentials"
 .else
 	@${ECHO_MSG} "===>  Deinstalling for ${PKGORIGIN}"
@@ -4702,15 +4603,15 @@ do-clean:
 .if !target(clean)
 clean:
 .if !defined(NOCLEANDEPENDS)
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} limited-clean-depends
+	@cd ${.CURDIR} && ${MAKE} limited-clean-depends
 .endif
 	@${ECHO_MSG} "===>  Cleaning for ${PKGNAME}"
 .if target(pre-clean)
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} pre-clean
+	@cd ${.CURDIR} && ${MAKE} pre-clean
 .endif
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} do-clean
+	@cd ${.CURDIR} && ${MAKE} do-clean
 .if target(post-clean)
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} post-clean
+	@cd ${.CURDIR} && ${MAKE} post-clean
 .endif
 .endif
 
@@ -4947,7 +4848,7 @@ checksum_init=\
 
 .if !target(makesum)
 makesum: check-checksum-algorithms
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} fetch NO_CHECKSUM=yes \
+	@cd ${.CURDIR} && ${MAKE} fetch NO_CHECKSUM=yes \
 		DISABLE_SIZE=yes
 	@if [ -f ${DISTINFO_FILE} ]; then ${CAT} /dev/null > ${DISTINFO_FILE}; fi
 	@( \
@@ -5120,7 +5021,7 @@ pre-repackage:
 .if !target(package-noinstall)
 package-noinstall:
 	@${MKDIR} ${WRKDIR}
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} pre-package \
+	@cd ${.CURDIR} && ${MAKE} pre-package \
 		pre-package-script do-package post-package-script
 	@${RM} -f ${TMPPLIST}
 	-@${RMDIR} ${WRKDIR}
@@ -5711,13 +5612,12 @@ readmes:	readme
 .if !target(readme)
 readme:
 	@${RM} -f ${.CURDIR}/README.html
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} ${.CURDIR}/README.html
+	@cd ${.CURDIR} && ${MAKE} ${.CURDIR}/README.html
 .endif
 
 ${.CURDIR}/README.html:
 	@${ECHO_MSG} "===>   Creating README.html for ${PKGNAME}"
-	@__softMAKEFLAGS='${__softMAKEFLAGS:S/'/'\''/g}'; \
-	${SED} -e 's|%%PORT%%|'$$(${ECHO_CMD} ${.CURDIR} | \
+	@${SED} -e 's|%%PORT%%|'$$(${ECHO_CMD} ${.CURDIR} | \
 							  ${SED} -e 's|.*/\([^/]*/[^/]*\)$$|\1|')'|g' \
 			-e 's|%%PKG%%|${PKGNAME}|g' \
 			-e 's|%%COMMENT%%|'"$$(${ECHO_CMD} ${COMMENT:Q})"'|' \
@@ -5727,12 +5627,9 @@ ${.CURDIR}/README.html:
 			-e 's|%%EMAIL%%|'"$$(${ECHO_CMD} "${MAINTAINER}" | \
 								 ${SED} -e 's/([^)]*)//;s/.*<//;s/>.*//')"'|g' \
 			-e 's|%%MAINTAINER%%|${MAINTAINER}|g' \
-			-e 's|%%WEBSITE%%|'"$$(cd ${.CURDIR} && eval ${MAKE} \
-					$${__softMAKEFLAGS} pretty-print-www-site)"'|' \
-			-e 's|%%BUILD_DEPENDS%%|'"$$(cd ${.CURDIR} && eval ${MAKE} \
-					$${__softMAKEFLAGS} pretty-print-build-depends-list)"'|' \
-			-e 's|%%RUN_DEPENDS%%|'"$$(cd ${.CURDIR} && eval ${MAKE} \
-					$${__softMAKEFLAGS} pretty-print-run-depends-list)"'|' \
+			-e 's|%%WEBSITE%%|'"$$(cd ${.CURDIR} && eval ${MAKE} pretty-print-www-site)"'|' \
+			-e 's|%%BUILD_DEPENDS%%|'"$$(cd ${.CURDIR} && eval ${MAKE} pretty-print-build-depends-list)"'|' \
+			-e 's|%%RUN_DEPENDS%%|'"$$(cd ${.CURDIR} && eval ${MAKE} pretty-print-run-depends-list)"'|' \
 			-e 's|%%TOP%%|'"$$(${ECHO_CMD} ${CATEGORIES} | \
 							   ${SED} -e 's| .*||' -e 's|[^/]*|..|g')"'/..|' \
 		${TEMPLATES}/README.port >> ${.TARGET}
@@ -5862,7 +5759,7 @@ generate-plist:
 .endif
 
 ${TMPPLIST}:
-	@cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} generate-plist
+	@cd ${.CURDIR} && ${MAKE} generate-plist
 
 .if !target(add-plist-docs)
 add-plist-docs:
@@ -6404,7 +6301,7 @@ check-desktop-entries:
 				exit 1; \
 			fi; \
 		else \
-			if [ -z "`cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} desktop-categories`" ]; then \
+			if [ -z "`cd ${.CURDIR} && ${MAKE} desktop-categories`" ]; then \
 				${ECHO_MSG} "${PKGNAME}: Makefile error: in desktop entry $$entry: field 5 (Categories) is empty and could not be deduced from the CATEGORIES variable"; \
 				exit 1; \
 			fi; \
@@ -6438,7 +6335,7 @@ install-desktop-entries:
 		pathname="${DESKTOPDIR}/$$filename"; \
 		categories="$$5"; \
 		if [ -z "$$categories" ]; then \
-			categories="`cd ${.CURDIR} && ${MAKE} ${__softMAKEFLAGS} desktop-categories`"; \
+			categories="`cd ${.CURDIR} && ${MAKE} desktop-categories`"; \
 		fi; \
 		${ECHO_CMD} "${_DESKTOPDIR_REL}$$filename" >> ${TMPPLIST}; \
 		${ECHO_CMD} "[Desktop Entry]" > $$pathname; \
