@@ -124,6 +124,11 @@ pre-patch:
 	@${ECHO_MSG} " [ DONE ]"
 .endfor
 
+post-patch-script:
+	@${ECHO_MSG} -n ">> Removing unneeded patched files..."
+	@${FIND} ${WRKSRC} -type f \( -name '*.orig' \) -delete
+	@${ECHO_MSG} " [ DONE ]"
+
 do-install:
 	@${ECHO_MSG} -n ">> Creating destination directory..."
 	@${MKDIR} ${APP_HOME}
