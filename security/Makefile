@@ -212,7 +212,6 @@
     SUBDIR += isnprober
     SUBDIR += its4
     SUBDIR += jbrofuzz
-    SUBDIR += jce_policy14
     SUBDIR += john
     SUBDIR += kedpm
     SUBDIR += keepassx

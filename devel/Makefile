@@ -210,7 +210,6 @@
     SUBDIR += coccinelle
     SUBDIR += codeblocks
     SUBDIR += codeworker
-    SUBDIR += colorer
     SUBDIR += colorgcc
     SUBDIR += commoncpp
     SUBDIR += compiler-rt
