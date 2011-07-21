@@ -1115,6 +1115,7 @@
     SUBDIR += rman
     SUBDIR += rnv
     SUBDIR += ro-aspell
+    SUBDIR += ro-hunspell
     SUBDIR += roap
     SUBDIR += romdict
     SUBDIR += rot
