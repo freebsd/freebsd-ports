@@ -1,0 +1,29 @@
+# New ports collection makefile for:	sk-hyphen
+# Date created:		2011-07-21
+# Whom:			Baptiste Daroussin <bapt@FreeBSD.org>
+#
+# $FreeBSD$
+#
+
+PORTNAME=	sk-hyphen
+PORTVERSION=	2004.04.15
+CATEGORIES=	textproc
+MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
+DISTNAME=	hyph_sk_SK
+
+MAINTAINER=	bapt@FreeBSD.org
+COMMENT=	Slovak hyphenation rules
+
+LICENSE=	LGPL21
+
+USE_ZIP=	yes
+NO_BUILD=	yes
+
+PLIST_FILES=	share/hyphen/hyph_sk_SK.dic
+PLIST_DIRS=	share/hyphen
+
+do-install:
+	@${MKDIR} ${PREFIX}/share/hyphen
+	@${INSTALL_DATA} ${WRKDIR}/hyph_sk_SK.dic ${PREFIX}/share/hyphen
+
+.include <bsd.port.mk>
