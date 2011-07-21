@@ -1,7 +1,7 @@
 lib/libarpack.a
 lib/libarpack.so
 lib/libarpack.so.1
-%%PORTDOCS%%include/arpack.h
+include/arpack.h
 %%PORTDOCS%%%%DOCSDIR%%/ex-complex.doc.gz
 %%PORTDOCS%%%%DOCSDIR%%/ex-nonsym.doc.gz
 %%PORTDOCS%%%%DOCSDIR%%/ex-sym.doc.gz
