@@ -30,6 +30,7 @@
     SUBDIR += koffice-i18n
     SUBDIR += koffice-kde4-l10n
     SUBDIR += med
+    SUBDIR += mythes
     SUBDIR += php_doc
     SUBDIR += tvdownloader
     SUBDIR += verbiste

@@ -18,6 +18,7 @@
     SUBDIR += koffice-i18n-pt_BR
     SUBDIR += koffice-kde4-l10n
     SUBDIR += koffice-kde4-l10n-pt_BR
+    SUBDIR += mythes
     SUBDIR += php_doc-br
     SUBDIR += webalizer-pt_BR
     SUBDIR += webalizer-pt_PT

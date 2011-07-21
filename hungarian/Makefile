@@ -15,5 +15,6 @@
     SUBDIR += kde4-l10n
     SUBDIR += koffice-i18n
     SUBDIR += koffice-kde4-l10n
+    SUBDIR += mythes
 
 .include <bsd.port.subdir.mk>

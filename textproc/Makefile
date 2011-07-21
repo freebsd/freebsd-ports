@@ -36,6 +36,7 @@
     SUBDIR += beediff
     SUBDIR += bg-aspell
     SUBDIR += bg-hyphen
+    SUBDIR += bg-mythes
     SUBDIR += bib2html
     SUBDIR += bibtex2html
     SUBDIR += bibtool
@@ -74,6 +75,7 @@
     SUBDIR += cost
     SUBDIR += crimson
     SUBDIR += cs-aspell
+    SUBDIR += cs-mythes
     SUBDIR += csb-aspell
     SUBDIR += csv2latex
     SUBDIR += csv2xml
@@ -148,6 +150,7 @@
     SUBDIR += emacs-wiki
     SUBDIR += en-aspell
     SUBDIR += en-hunspell
+    SUBDIR += en-mythes
     SUBDIR += enchant
     SUBDIR += eo-aspell
     SUBDIR += eqe
@@ -156,6 +159,7 @@
     SUBDIR += es-hunspell
     SUBDIR += es-hyphen
     SUBDIR += es-ispell
+    SUBDIR += es-mythes
     SUBDIR += estraier
     SUBDIR += et-aspell
     SUBDIR += etoile-lucenekit
@@ -298,6 +302,7 @@
     SUBDIR += it-hunspell
     SUBDIR += it-hyphen
     SUBDIR += it-ispell
+    SUBDIR += it-mythes
     SUBDIR += jade
     SUBDIR += jakarta-commons-digester
     SUBDIR += jakarta-poi
@@ -427,6 +432,7 @@
     SUBDIR += nl-aspell
     SUBDIR += nl-hyphen
     SUBDIR += nl-ispell
+    SUBDIR += nl-mythes
     SUBDIR += nltk
     SUBDIR += nn-aspell
     SUBDIR += no-hunspell
@@ -1129,6 +1135,7 @@
     SUBDIR += ro-aspell
     SUBDIR += ro-hunspell
     SUBDIR += ro-hyphen
+    SUBDIR += ro-mythes
     SUBDIR += roap
     SUBDIR += romdict
     SUBDIR += rot
@@ -1244,10 +1251,12 @@
     SUBDIR += sk-hunspell
     SUBDIR += sk-hyphen
     SUBDIR += sk-ispell
+    SUBDIR += sk-mythes
     SUBDIR += skim
     SUBDIR += skribe
     SUBDIR += sl-aspell
     SUBDIR += sl-hyphen
+    SUBDIR += sl-mythes
     SUBDIR += slides
     SUBDIR += sml-fxp
     SUBDIR += smu
@@ -1278,6 +1287,7 @@
     SUBDIR += supercat
     SUBDIR += sv-aspell
     SUBDIR += sv-hyphen
+    SUBDIR += sv-mythes
     SUBDIR += svn2cl
     SUBDIR += sw-aspell
     SUBDIR += sw-hunspell

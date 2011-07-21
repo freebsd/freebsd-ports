@@ -31,6 +31,7 @@
     SUBDIR += messarge
     SUBDIR += mueller-dic
     SUBDIR += muttprint
+    SUBDIR += mythes
     SUBDIR += napster
     SUBDIR += p5-Convert-Cyrillic
     SUBDIR += p5-Lingua-DetectCyrillic
