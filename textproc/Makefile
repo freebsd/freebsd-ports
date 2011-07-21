@@ -419,6 +419,7 @@
     SUBDIR += nl-ispell
     SUBDIR += nltk
     SUBDIR += nn-aspell
+    SUBDIR += no-hunspell
     SUBDIR += nunnimcax
     SUBDIR += nux
     SUBDIR += ny-aspell
