@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmerlin-avdecoder
-PORTVERSION=	1.0.1
-PORTREVISION=	13
+PORTVERSION=	1.1.0
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin/${PORTNAME}/${PORTVERSION}
 
@@ -15,8 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose media decoding library
 
 LIB_DEPENDS=	gavl.1:${PORTSDIR}/multimedia/gavl
-
-BROKEN=		does not compile
 
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
