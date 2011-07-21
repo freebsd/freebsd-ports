@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	quvi
-PORTVERSION=	0.2.17
+PORTVERSION=	0.2.18
 CATEGORIES=	multimedia devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R}/ \
 		GOOGLE_CODE
@@ -14,11 +14,11 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION:R}/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Query video library for Youtube like websites
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 OPTIONS=	NSFW "Enable adult website support" off
-
-LICENSE=	GPLv3
 
 CPPFLAGS+=	-I${WRKSRC}/include -I${LOCALBASE}/include
 GNU_CONFIGURE=	yes

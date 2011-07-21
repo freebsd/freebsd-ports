@@ -25,6 +25,7 @@ libdata/pkgconfig/libquvi.pc
 %%DATADIR%%/lua/util/trim.lua
 %%DATADIR%%/lua/website/README
 %%DATADIR%%/lua/website/academicearth.lua
+%%DATADIR%%/lua/website/audioboo.lua
 %%DATADIR%%/lua/website/arte.lua
 %%DATADIR%%/lua/website/bikeradar.lua
 %%DATADIR%%/lua/website/blip.lua
@@ -36,6 +37,7 @@ libdata/pkgconfig/libquvi.pc
 %%DATADIR%%/lua/website/clipfish.lua
 %%DATADIR%%/lua/website/collegehumor.lua
 %%DATADIR%%/lua/website/dailymotion.lua
+%%DATADIR%%/lua/website/foxnews.lua
 %%DATADIR%%/lua/website/francetelevisions.lua
 %%DATADIR%%/lua/website/funnyhub.lua
 %%DATADIR%%/lua/website/funnyordie.lua
@@ -46,6 +48,7 @@ libdata/pkgconfig/libquvi.pc
 %%DATADIR%%/lua/website/guardian.lua
 %%DATADIR%%/lua/website/liveleak.lua
 %%DATADIR%%/lua/website/megavideo.lua
+%%DATADIR%%/lua/website/metacafe.lua
 %%DATADIR%%/lua/website/pluzz.lua
 %%DATADIR%%/lua/website/publicsenat.lua
 %%DATADIR%%/lua/website/quvi/bit.lua
@@ -61,6 +64,7 @@ libdata/pkgconfig/libquvi.pc
 %%DATADIR%%/lua/website/theonion.lua
 %%DATADIR%%/lua/website/tmunderground.lua
 %%DATADIR%%/lua/website/vimeo.lua
+%%DATADIR%%/lua/website/yfrog.lua
 %%DATADIR%%/lua/website/youtube.lua
 %%NSFW%%%%DATADIR%%/lua/website/keezmovies.lua
 %%NSFW%%%%DATADIR%%/lua/website/pornhub.lua
