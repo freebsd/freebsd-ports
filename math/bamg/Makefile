@@ -49,6 +49,8 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${DISTDIR}/${PORTNAME}.pdf ${DOCSDIR}
 	@${ECHO_MSG} "===>  Documentation installed in ${DOCSDIR}."
+.endif
+.if !defined(NOPORTEXAMPLES)
 .for exdir in ${EXDIRS}
 	@${MKDIR} ${EXAMPLESDIR}/${exdir}
 	@${INSTALL_DATA} ${WRKSRC}/examples/${exdir}/* ${EXAMPLESDIR}/${exdir}
