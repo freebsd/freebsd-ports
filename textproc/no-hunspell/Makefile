@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	https://alioth.debian.org/frs/download.php/2357/
 DISTNAME=	no_NO-pack2-${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Norwegian (Nynorsk and Bokmaal) hunspell dictionaries
 
 USE_ZIP=	yes

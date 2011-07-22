@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
 DISTNAME=	thes_cs_CZ_v2
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Czech thesaurus
 
 LICENSE=	BSD

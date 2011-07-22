@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	addons/46614
 DISTNAME=	swati_spell_checker-${PORTVERSION}-tb+sm+fx+fn
 EXTRACT_SUFX=	.xpi
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Swati hunspell dictionaries
 
 USE_ZIP=	yes

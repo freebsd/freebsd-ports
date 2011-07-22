@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	addons/46601
 DISTNAME=	venda_spell_checker-${PORTVERSION}-tb+fn+fx+sm
 EXTRACT_SUFX=	.xpi
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Venda hunspell dictionnaries
 
 USE_ZIP=	yes

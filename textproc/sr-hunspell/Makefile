@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	addons/10894
 DISTNAME=	serbian_dictionary-${PORTVERSION}-fx+tb+sm
 EXTRACT_SUFX=	.xpi
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Serbian hunspell dictionnaries
 
 USE_ZIP=	yes

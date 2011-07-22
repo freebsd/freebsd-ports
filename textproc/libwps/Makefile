@@ -10,7 +10,7 @@ PORTVERSION=	0.2.2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	A Microsoft file word processor format import filter library
 
 LIB_DEPENDS=	wpd-0.9.9:${PORTSDIR}/textproc/libwpd

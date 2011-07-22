@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/linguistico/Thesaurus%20OOo%202.x.x/${DISTVERSION}_2008_11_29/
 DISTNAME=	thesaurus2_it_${DISTVERSION}_2008_11_29
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Italian thesaurus
 
 USE_ZIP=	yes

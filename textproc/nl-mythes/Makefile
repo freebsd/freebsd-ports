@@ -12,7 +12,7 @@ MASTER_SITES=	http://data.opentaal.org/opentaalbank/thesaurus/download/
 DISTNAME=	thes_nl
 EXTRACT_SUFX=	.oxt
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Dutch thesaurus
 
 LICENSE=	BSD

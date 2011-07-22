@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/rospell/Romanian%20dictionaries/dict-${PORTVERSION}/
 DISTNAME=	hyph_ro_RO.${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Romanian hyphenation rules
 
 LICENSE=	LGPL21 GPLv2 MPL

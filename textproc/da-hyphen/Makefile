@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
 DISTNAME=	hyph_da_DK
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Danish hyphenation rules
 
 LICENSE=	LGPL21

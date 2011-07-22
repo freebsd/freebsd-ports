@@ -13,7 +13,7 @@ MASTER_SITES=	http://natura.di.uminho.pt/download/sources/Dictionaries/hunspell/
 DISTFILES=	hunspell-pt_PT-${PORTVERSION}.tar.gz \
 		pt_BR-2011-05-27AOC.zip:BR
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Hunspell portuguese dictionnary
 
 # rely on bsdtar ability to extract .gz and .zip archives

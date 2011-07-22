@@ -11,7 +11,7 @@ CATEGORIES=	portuguese textproc
 MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
 DISTNAME=	hyph_pt_PT
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Portuguese hyphenation rules
 
 LICENSE=	LGPL21

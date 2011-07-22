@@ -11,7 +11,7 @@ CATEGORIES=	russian textproc
 MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
 DISTNAME=	hyph_ru_RU
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Russian hyphenation rules
 
 LICENSE=	LGPL21

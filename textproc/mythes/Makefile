@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/hunspell/MyThes/${PORTVERSION}/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Simple thesaurus library
 
 LIB_DEPENDS=	hunspell-1.3.0:${PORTSDIR}/textproc/hunspell

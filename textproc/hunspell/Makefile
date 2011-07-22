@@ -10,7 +10,7 @@ PORTVERSION=	1.3.2
 CATEGORIES=	textproc
 MASTER_SITES=	SF/${PORTNAME}/Hunspell/${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Improved spell-checker for Hungarian and other languages
 
 LICENSE=	GPLv2 LGPL21 MPL

@@ -11,7 +11,7 @@ CATEGORIES=	german textproc
 MASTER_SITES=	http://www.j3e.de/ispell/igerman98/dict/
 DISTNAME=	igerman98-${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Hunspell german dictionnary
 
 BUILD_DEPENDS=	buildhash:${PORTSDIR}/textproc/ispell

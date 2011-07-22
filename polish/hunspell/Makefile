@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://sjp.pl/slownik/ort/
 DISTNAME=	sjp-myspell-pl-${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Polish hunspell dictionaries
 
 LICENSE=	LGPL21 GPLv2 MPL

@@ -11,7 +11,7 @@ CATEGORIES=	french textproc
 MASTER_SITES=	http://www.dicollecte.org/download/fr/
 DISTNAME=	hunspell-fr-moderne-v${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Hunspell modern french dictionnary
 
 USE_ZIP=	yes

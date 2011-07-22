@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	addons/204314
 DISTNAME=	turkmen_spell_checker-${PORTVERSION}-fx+tb+sm
 EXTRACT_SUFX=	.xpi
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Turkmen hunspell dictionaries
 
 USE_ZIP=	yes

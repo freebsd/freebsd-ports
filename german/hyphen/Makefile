@@ -11,7 +11,7 @@ CATEGORIES=	german textproc
 MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
 DISTNAME=	hyph_de_DE
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	German hyphenation rules
 
 LICENSE=	LGPL21

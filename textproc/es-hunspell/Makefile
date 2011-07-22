@@ -12,7 +12,7 @@ MASTER_SITES=	http://extensions.services.openoffice.org/e-files/1639/2/
 DISTNAME=	es_ANY
 EXTRACT_SUFX=	.oxt
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Spanish hunspell dictionaries
 
 LICENSE=	GPLv3 LGPL3 MPL

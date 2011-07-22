@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	addons/46617
 DISTNAME=	tswana_spell_checker-${PORTVERSION}-tb+sm+fx+fn
 EXTRACT_SUFX=	.xpi
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Tswana hunspell dictionaries
 
 USE_ZIP=	yes

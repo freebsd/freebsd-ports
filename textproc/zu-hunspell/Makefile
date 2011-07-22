@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	addons/46490
 DISTNAME=	zulu_spell_checker-${PORTVERSION}-tb+fn+fx+sm
 EXTRACT_SUFX=	.xpi
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Zulu hunspell dictionaries
 
 USE_ZIP=	yes

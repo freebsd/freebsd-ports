@@ -11,7 +11,7 @@ CATEGORIES=	polish textproc
 MASTER_SITES=	SF/synonimy/synonimy/${PORTVERSION}/
 DISTNAME=	OOo2-Thesaurus-${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Polish thesaurus
 
 LICENSE=	LGPL21

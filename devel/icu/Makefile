@@ -12,7 +12,7 @@ MASTER_SITES=	http://download.icu-project.org/files/icu4c/${PORTVERSION}/
 DISTNAME=	icu4c-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	-src.tgz
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	International Components for Unicode (from IBM)
 
 OPTIONS=	THREADS "Build thread-safe version of the library" on

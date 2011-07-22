@@ -11,7 +11,7 @@ CATEGORIES=	hebrew textproc
 MASTER_SITES=	http://hspell.ivrix.org.il/
 DISTNAME=	hspell-${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Hunspell hebrew dictionnary
 
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
