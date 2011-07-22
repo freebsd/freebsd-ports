@@ -41,6 +41,7 @@ OPTIONSFILE=	${PORT_DBDIR}/py-${PORTNAME}/options
 
 .if defined(WITH_POSTGRESQL)
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/_psycopg.so:${PORTSDIR}/databases/py-psycopg2
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-changeset_16520.diff
 .endif
 
 .if defined(WITH_MYSQL)
