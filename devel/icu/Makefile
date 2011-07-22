@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	icu
-PORTVERSION=	4.8
+PORTVERSION=	4.8.1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.icu-project.org/files/icu4c/${PORTVERSION}/
 DISTNAME=	icu4c-${PORTVERSION:S/./_/g}
@@ -15,18 +15,18 @@ EXTRACT_SUFX=	-src.tgz
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	International Components for Unicode (from IBM)
 
+LICENSE=	ICU
+LICENSE_NAME=	ICU license
+LICENSE_FILE=	${WRKSRC}/../unicode-license.txt
+LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
+
+GNU_CONFIGURE=		yes
 OPTIONS=	THREADS "Build thread-safe version of the library" on
 
 USE_LDCONFIG=		yes
 
 WRKSRC=			${WRKDIR}/icu/source
 
-LICENSE=	ICU
-LICENSE_NAME=	ICU license
-LICENSE_PERMS=	${_LICENSE_PERMS_DEFAULT}
-LICENSE_FILE=	${WRKSRC}/../unicode-license.txt
-
-GNU_CONFIGURE=		yes
 CONFIGURE_SCRIPT=	runConfigureICU
 CONFIGURE_ARGS+=	${OPSYS} \
 			--enable-shared \
