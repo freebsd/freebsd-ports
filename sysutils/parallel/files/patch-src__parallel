@@ -1,6 +1,6 @@
---- ./src/parallel.orig	2011-02-03 15:33:39.000000000 -0700
-+++ ./src/parallel	2011-02-12 15:28:20.000000000 -0700
-@@ -3542,28 +3542,42 @@
+--- ./src/parallel.orig	2011-07-22 07:24:21.000000000 -0500
++++ ./src/parallel	2011-07-22 07:33:44.000000000 -0500
+@@ -3963,28 +3963,42 @@
  
  # Maximal command line length (for -m and -X)
  sub max_length {
@@ -19,8 +19,8 @@
 -	    if($::opt_s <= $Limits::Command::line_max_len) {
 -		$Limits::Command::line_max_len = $::opt_s;
 -	    } else {
--		print STDERR "$Global::progname: ",
--		"value for -s option should be < $Limits::Command::line_max_len\n";
+-		print STDERR "$Global::progname: value for -s option ",
+-		"should be < $Limits::Command::line_max_len\n";
 -	    }
 -	} else {
 -	    $Limits::Command::line_max_len = real_max_length();
@@ -28,8 +28,8 @@
 +        $Limits::Command::line_max_len = `getconf ARG_MAX` - 1024;
 +        if ($::opt_s) {
 +            if ($::opt_s > $Limits::Command::line_max_len) {
-+	        print STDERR "$Global::progname: ",
-+	        "you are setting value for -s greater than $Limits::Command::line_max_len\n";
++	      print STDERR "$Global::progname: ",
++	      "you are setting value for -s greater than $Limits::Command::line_max_len\n";
 +            }
 +            $Limits::Command::line_max_len = $::opt_s;
 +        }
@@ -40,8 +40,8 @@
 +#    # Find the max_length of a command line
 +#    # Returns:
 +#    #   number of chars on the longest command line allowed
-+#   if(not $Limits::Command::line_max_len) {
-+#       if($::opt_s) {
++#    if(not $Limits::Command::line_max_len) {
++#	if($::opt_s) {
 +#	    if(is_acceptable_command_line_length($::opt_s)) {
 +#		$Limits::Command::line_max_len = $::opt_s;
 +#	    } else {
@@ -51,8 +51,8 @@
 +#	    if($::opt_s <= $Limits::Command::line_max_len) {
 +#		$Limits::Command::line_max_len = $::opt_s;
 +#	    } else {
-+#		print STDERR "$Global::progname: ",
-+#		"value for -s option should be < $Limits::Command::line_max_len\n";
++#		print STDERR "$Global::progname: value for -s option ",
++#		"should be < $Limits::Command::line_max_len\n";
 +#	    }
 +#	} else {
 +#	    $Limits::Command::line_max_len = real_max_length();
