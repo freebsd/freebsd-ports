@@ -84,7 +84,7 @@ CFLAGS+=	-D__wchar_t=wchar_t
 
 .if !defined(WITHOUT_THREADS)
 .if defined(WITH_PTH)
-BROKEN=			does not build
+BROKEN=			does not build with PTH enabled
 CONFIGURE_ARGS+=	--with-pth
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-configure-pth
 LIB_DEPENDS+=		pth:${PORTSDIR}/devel/pth
