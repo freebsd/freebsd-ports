@@ -1,3 +1,4 @@
+bin/jsonlint
 %%PYTHON_SITELIBDIR%%/demjson.py
 %%PYTHON_SITELIBDIR%%/demjson.pyo
 %%PYTHON_SITELIBDIR%%/demjson.pyc
