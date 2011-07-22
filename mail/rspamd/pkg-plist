@@ -21,6 +21,7 @@ etc/rspamd.xml.sample
 %%ETCDIR%%/lua/regexp/headers.lua
 %%ETCDIR%%/lua/regexp/lotto.lua
 %%ETCDIR%%/lua/rspamd.lua
+%%ETCDIR%%/lua/rspamd.classifiers.lua
 lib/librspamdclient.so.%%RSPAMDVERSION%%
 lib/librspamdclient.so
 lib/librspamdclient_static.a
