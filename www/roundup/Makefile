@@ -6,15 +6,12 @@
 #
 
 PORTNAME=	roundup
-PORTVERSION=	1.4.18
-PORTREVISION=	1
+PORTVERSION=	1.4.19
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 
 MAINTAINER=	sbz@FreeBSD.org
 COMMENT=	An Issue-Tracking System for Knowledge Workers
-
-BROKEN=		does not package
 
 LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
@@ -65,6 +62,9 @@ post-install:
 	@${INSTALL_SCRIPT} ${SCRIPTS:S,^,${WRKSRC}/build/scripts-${PYTHON_VER}/,} ${PREFIX}/bin
 .if !defined(NO_INSTALL_MANPAGES)
 	@${INSTALL_MAN} ${MAN1:S,^,${WRKSRC}/share/man/man1/,} ${MAN1PREFIX}/man/man1
+.endif
+.if !defined(WITHOUT_NLS)
+	@(cd ${WRKSRC}/build/share/locale/ && ${COPYTREE_SHARE} \* ${PREFIX}/share/locale/)
 .endif
 
 .include <bsd.port.post.mk>

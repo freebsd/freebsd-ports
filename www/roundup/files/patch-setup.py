@@ -1,6 +1,6 @@
---- ./setup.py.orig	2011-05-13 11:20:33.000000000 +0200
-+++ ./setup.py	2011-07-11 23:52:17.000000000 +0200
-@@ -71,9 +71,6 @@
+--- ./setup.py.orig	2011-07-22 16:18:25.000000000 +0200
++++ ./setup.py	2011-07-22 16:19:10.000000000 +0200
+@@ -72,9 +72,6 @@
      data_files = [
          ('share/roundup/cgi-bin', ['frontends/roundup.cgi']),
      ]
@@ -10,7 +10,7 @@
  
      # add the templates to the data files lists
      from roundup.init import listTemplates
-@@ -83,14 +80,6 @@
+@@ -84,14 +81,6 @@
          for idir in '. detectors extensions html'.split():
              data_files.append(include(os.path.join(tdir, idir), '*'))
  
