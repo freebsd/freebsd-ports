@@ -11,7 +11,7 @@ CATEGORIES=	polish textproc
 MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
 DISTNAME=	hyph_pl_PL
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Polish hyphenation rules
 
 LICENSE=	LGPL21

@@ -12,7 +12,7 @@ MASTER_SITES=	SF/ispell-uk/spell-uk/${PORTVERSION}
 DISTNAME=	spell-uk-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Ukrainian thesaurus
 
 LICENSE=	LGPL21 GPLv2

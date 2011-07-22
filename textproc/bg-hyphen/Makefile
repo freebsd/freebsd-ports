@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/bgoffice/OpenOffice.org%20Hyphenation%20BG/${PORTVERSION}/
 DISTNAME=	OOo-hyph-bg-${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Bulgarian hyphenation rules
 
 LICENSE=	GPLv2 LGPL21 MPL

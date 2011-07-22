@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/rospell/Romanian%20dictionaries/dict-${PORTVERSION}/
 DISTNAME=	th_ro_RO.${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Romanian thesaurus
 
 LICENSE=	GPLv2

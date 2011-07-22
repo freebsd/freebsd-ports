@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	addons/46611
 DISTNAME=	tsonga_spell_checker-${PORTVERSION}-tb+sm+fx+fn
 EXTRACT_SUFX=	.xpi
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Tsonga hunspell dictionaries
 
 USE_ZIP=	yes

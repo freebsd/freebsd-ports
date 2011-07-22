@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.cs.ru.nl/~biniam/geez/dict/
 DISTNAME=	ti_ER
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Tigrigna hunspell dictionaries
 
 USE_ZIP=	yes

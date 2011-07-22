@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/hunspell/Hyphen/2.7/
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Library for high quality hyphenation and justification
 
 BUILD_DEPENDS=	gawk:${PORTSDIR}/lang/gawk

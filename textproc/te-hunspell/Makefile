@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://ftp.gnu.org/gnu/aspell/dict/te/
 DISTNAME=	aspell6-te-${DISTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Telugu hunspell dictionaries
 
 BUILD_DEPENDS=	wordlist2hunspell:${PORTSDIR}/textproc/hunspell \

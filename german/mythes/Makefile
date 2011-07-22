@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.openthesaurus.de/export/
 DISTNAME=	Deutscher-Thesaurus
 EXTRACT_SUFX=	.oxt
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	German thesaurus
 
 LICENSE=	LGPL21

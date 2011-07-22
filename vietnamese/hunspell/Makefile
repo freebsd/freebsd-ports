@@ -11,7 +11,7 @@ CATEGORIES=	vietnamese textproc
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	vi_VN
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Hunspell vietnamese dictionnary
 
 PROJECTHOST=	hunspell-spellcheck-vi

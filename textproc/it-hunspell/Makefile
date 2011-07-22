@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/linguistico/Dizionario%20italiano%20per%20OOo/${PORTVERSION:S/./_/g}/
 DISTNAME=	italiano_${PORTVERSION:S/./_/g}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Italian hunspell dictionaries
 
 LICENSE=	GPLv3

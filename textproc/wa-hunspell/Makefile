@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://chanae.walon.org/walon/
 DISTNAME=	aspell-wa-${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Wallon hunspell dictionaries
 
 BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell

@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://openthes-es.berlios.de/download/
 DISTNAME=	OOo2-thes_es_ES
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Spanish thesaurus
 
 LICENSE=	LGPL21

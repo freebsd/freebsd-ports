@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://193.2.66.133:85/download/
 DISTNAME=	thes_sl_SI_v2
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Slovenian thesaurus
 
 LICENSE=	LGPL21

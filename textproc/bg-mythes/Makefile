@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/bgoffice/OpenOffice.org%20Thesaurus%20BG/${PORTVERSION}/
 DISTNAME=	OOo-thes-bg-${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Bulgarian thesaurus
 
 LICENSE=	GPLv2 LGPL21 MPL

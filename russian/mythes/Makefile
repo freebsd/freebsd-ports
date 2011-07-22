@@ -11,7 +11,7 @@ CATEGORIES=	russian textproc
 MASTER_SITES=	http://download.i-rs.ru/pub/openoffice/dict/
 DISTNAME=	thes_ru_RU_v2
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Russian thesaurus
 
 LICENSE=	LGPL21

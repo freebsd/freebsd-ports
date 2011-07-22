@@ -11,7 +11,7 @@ CATEGORIES=	hungarian textproc
 MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
 DISTNAME=	thes_hu_HU
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Hungarian thesaurus
 
 LICENSE=	GPLv2

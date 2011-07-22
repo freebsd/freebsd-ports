@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	sv-${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Swedish hunspell dictionaries
 
 PROJECTHOST=	dsso

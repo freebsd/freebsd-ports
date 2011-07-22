@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.shkenca.org/shkarkime/
 DISTNAME=	myspell-sq_AL-${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Albanian hunspell dictionaries
 
 USE_ZIP=	yes

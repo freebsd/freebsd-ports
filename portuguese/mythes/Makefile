@@ -11,7 +11,7 @@ CATEGORIES=	portuguese textproc
 MASTER_SITES=	http://openthesaurus.caixamagica.pt/download/
 DISTNAME=	thes_pt_PT_v2
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Portuguese thesaurus
 
 LICENSE=	GPLv2

@@ -11,7 +11,7 @@ CATEGORIES=	ukrainian textproc
 MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
 DISTNAME=	hyph_uk_UA
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Ukrainian hyphenation rules
 
 LICENSE=	LGPL21

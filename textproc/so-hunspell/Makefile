@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	addons/13375
 DISTNAME=	qaamuuska_af_soomaaliga-${PORTVERSION}-tb+fx
 EXTRACT_SUFX=	.xpi
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Somali hunspell dictionaries
 
 LICENSE=	GPLv2

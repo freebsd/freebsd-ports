@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.sk-spell.sk.cx/files/
 DISTNAME=	hunspell-sk-${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Slovak hunspell dictionaries
 
 LICENSE=	LGPL21 GPLv2 MPL

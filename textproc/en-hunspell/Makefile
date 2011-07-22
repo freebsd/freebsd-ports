@@ -15,7 +15,7 @@ DISTFILES=	hunspell-en_US-${PORTVERSION}-0${EXTRACT_SUFX} \
 		hunspell-en_CA-${PORTVERSION}-0${EXTRACT_SUFX}:CA \
 		en_GB.zip:GB
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Hunspell english dictionnaries
 
 USE_ZIP=	yes

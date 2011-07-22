@@ -13,7 +13,7 @@ CATEGORIES=	french textproc
 MASTER_SITES=	http://www.dicollecte.org/download/fr/
 DISTNAME=	hyph_fr_${PORTVERSION:S/./-/}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	French hyphenation rules
 
 USE_ZIP=	yes

@@ -11,7 +11,7 @@ CATEGORIES=	russian textproc
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	ru_RU_UTF8
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Hunspell russian dictionnary
 
 PROJECTHOST=	hunspell-ru

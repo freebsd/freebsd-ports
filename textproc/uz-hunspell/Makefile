@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www-user.uni-bremen.de/~kmashrab/uzbek-word-list/
 DISTNAME=	uzbek-wordlist-${PORTVERSION}
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Uzbek hunspell dictionaries
 
 USE_BZIP2=	yes

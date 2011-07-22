@@ -35,7 +35,7 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/tdf/libreoffice/src/ \
 		http://hg.services.openoffice.org/binaries/:hgOOo \
 		http://www.numbertext.org/linux/:OOoDTP
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Full integrated office productivity suite
 
 LOFFICE_COMPONENTS=	artwork base bootstrap calc components extensions \
