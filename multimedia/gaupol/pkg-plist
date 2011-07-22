@@ -462,7 +462,6 @@ bin/gaupol
 %%PYTHON_SITELIBDIR%%/gaupol/view.pyc
 %%PYTHON_SITELIBDIR%%/gaupol/view.pyo
 share/applications/gaupol.desktop
-share/applications/mimeinfo.cache
 %%DATADIR%%/extensions/bookmarks/add-bookmark-dialog.ui
 %%DATADIR%%/extensions/bookmarks/bookmark.png
 %%DATADIR%%/extensions/bookmarks/bookmarks.gaupol-extension
