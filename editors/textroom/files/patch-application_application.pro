@@ -45,7 +45,7 @@
      LIBS = -lSDL_mixer \
  	-lSDL \
 -        -lhunspell \
-+	-lhunspell-1.2 \
++	-lhunspell-1.3 \
  	-lglibmm-2.4 \
  	-lcurl \
  	-lxml++-2.6 \
