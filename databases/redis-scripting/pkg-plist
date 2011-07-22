@@ -1,0 +1,17 @@
+bin/redis-benchmark
+bin/redis-check-aof
+bin/redis-check-dump
+bin/redis-cli
+bin/redis-server
+@unexec (cmp -s %D/etc/redis.conf %D/etc/redis.conf.sample && rm -f %D/etc/redis.conf) || true
+etc/redis.conf.sample
+@exec [ -f %B/redis.conf ] || cp %B/%f %B/redis.conf
+@exec [ -d %%REDIS_DBDIR%% ] || mkdir -p %%REDIS_DBDIR%%
+@exec chown %%REDIS_USER%%:%%REDIS_GROUP%% %%REDIS_DBDIR%%
+@unexec if [ -z ${UPGRADE_PORT} ] ; then rmdir %%REDIS_DBDIR%% 2>/dev/null; fi
+@exec [ -d %%REDIS_LOGDIR%% ] || mkdir -p %%REDIS_LOGDIR%%
+@exec chown %%REDIS_USER%%:%%REDIS_GROUP%% %%REDIS_LOGDIR%%
+@unexec if [ -z ${UPGRADE_PORT} ] ; then rmdir %%REDIS_LOGDIR%% 2>/dev/null; fi
+@exec [ -d %%REDIS_RUNDIR%% ] || mkdir -p %%REDIS_RUNDIR%%
+@exec chown %%REDIS_USER%%:%%REDIS_GROUP%% %%REDIS_RUNDIR%%
+@unexec if [ -z ${UPGRADE_PORT} ] ; then rmdir %%REDIS_RUNDIR%% 2>/dev/null; fi

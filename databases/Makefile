@@ -719,6 +719,7 @@
     SUBDIR += rdb
     SUBDIR += rdfdb
     SUBDIR += redis
+    SUBDIR += redis-scripting
     SUBDIR += rrdman
     SUBDIR += rrdtool
     SUBDIR += rrdtool10
