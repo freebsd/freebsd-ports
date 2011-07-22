@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	astah
-PORTVERSION=	6.4
+PORTVERSION=	6.4.1
 CATEGORIES=	devel java
 MASTER_SITES=	#
 PKGNAMESUFFIX=	-community
@@ -25,7 +25,7 @@ USE_JAVA=	yes
 JAVA_OS=	linux
 NO_BUILD=	yes
 
-RESTRICTED=	See http://astah.change-vision.com/en/product/astah-eula.html
+RESTRICTED=	See http://astah.net/faq/community/enduser-license-agreement
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX:S!-!_!}
 REINPLACE_ARGS=	-i ""
 
@@ -37,20 +37,24 @@ IGNORE=		needs you to fetch manually the distribution file\
 .endif
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME}${PKGNAMESUFFIX}
+EXAMPLESDIR=	${PREFIX}/share/examples/${PORTNAME}${PKGNAMESUFFIX}
 DATADIR=	${PREFIX}/share/${PORTNAME}${PKGNAMESUFFIX}
 
 PLIST_FILES=	bin/astah
 .if !defined(NOPORTDATA)
 PORTDATA=	astah-community.jar astah-api.jar astah-gui_en.properties_org \
 		astah.ico astah-doc.ico Welcome.asta Welcome_ja.asta \
-		template
+		lib template
 .endif
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	ReleaseNote-e.html ReleaseNote.html \
-		ProductInformation.txt \
 		API_sample_program_license_agreement-e.txt \
 		API_sample_program_license_agreement.txt
+.endif
+
+.if !defined(NOPORTEXAMPLES)
+PORTEXAMPLES=	astah-key.properties_org
 .endif
 
 post-patch:
@@ -77,6 +81,10 @@ do-install:
 		${SORT} -r >> ${TMPPLIST}
 	@ cd ${PREFIX} && ${FIND} share/doc/${PORTNAME}${PKGNAMESUFFIX}/api -type d -print | \
 		${SORT} -r |  ${SED} -e 's#^#@dirrm #' >> ${TMPPLIST}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/${PORTEXAMPLES} ${EXAMPLESDIR}
 .endif
 
 .include <bsd.port.post.mk>
