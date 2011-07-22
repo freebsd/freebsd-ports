@@ -991,6 +991,7 @@
     SUBDIR += maven-ant-tasks
     SUBDIR += maven2
     SUBDIR += mcpp
+    SUBDIR += mdds
     SUBDIR += memcheck
     SUBDIR += menhir
     SUBDIR += mercator
