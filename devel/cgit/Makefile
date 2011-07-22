@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cgit
-PORTVERSION=	0.9.0.1
+PORTVERSION=	0.9.0.2
 CATEGORIES=	devel www
 MASTER_SITES=	http://hjemli.net/git/cgit/snapshot/:cgit \
 		${MASTER_SITE_KERNEL_ORG:S/$/:git/g}
