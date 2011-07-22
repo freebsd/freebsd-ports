@@ -13,6 +13,8 @@ MASTER_SITES=	SF/a-a-p/Aap/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A build tool alternative to make with internet access and CVS support
 
+LICENSE=	GPLv2
+
 MAN1=		aap.1
 
 NO_BUILD=	yes
@@ -29,10 +31,6 @@ FULLDOCS=no
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-BROKEN=		does not build
-.endif
 
 do-install:
 	@cd ${WRKSRC} && \

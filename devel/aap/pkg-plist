@@ -159,7 +159,7 @@ lib/aap/Exec-%%PORTVERSION%%/tools/mingw.py
 lib/aap/Exec-%%PORTVERSION%%/tools/mingw.pyc
 lib/aap/Exec-%%PORTVERSION%%/tools/msvc.py
 lib/aap/Exec-%%PORTVERSION%%/tools/msvc.pyc
-%%PORTDOCS%%%%DOCSDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/aap/Exec-%%PORTVERSION%%/tools
 @dirrm lib/aap/Exec-%%PORTVERSION%%/modules
 %%PORTDOCS%%@dirrm lib/aap/Exec-%%PORTVERSION%%/doc/html
