@@ -984,6 +984,8 @@ bforce-kst                      ports/comms/bforce-kst
 bft                             ports/science/bft
 bftpd                           ports/ftp/bftpd
 bg-aspell                       ports/textproc/bg-aspell
+bg-hyphen                       ports/textproc/bg-hyphen
+bg-mythes                       ports/textproc/bg-mythes
 bglibs                          ports/devel/bglibs
 bgpq                            ports/net-mgmt/bgpq
 bgpq3                           ports/net-mgmt/bgpq3
@@ -1772,7 +1774,6 @@ color-mate                      ports/editors/color-mate
 color-theme.el                  ports/misc/color-theme.el
 colorcode                       ports/games/colorcode
 colordiff                       ports/textproc/colordiff
-colorer                         ports/devel/colorer
 colorgcc                        ports/devel/colorgcc
 colorize                        ports/sysutils/colorize
 colortail                       ports/misc/colortail
@@ -1953,6 +1954,7 @@ cryptplug                       ports/security/cryptplug
 cryptstring                     ports/security/cryptstring
 cs                              ports/misc/cs
 cs-aspell                       ports/textproc/cs-aspell
+cs-mythes                       ports/textproc/cs-mythes
 csb-aspell                      ports/textproc/csb-aspell
 cscope                          ports/devel/cscope
 cscout                          ports/devel/cscout
@@ -2108,6 +2110,7 @@ d-feet                          ports/devel/d-feet
 d2x                             ports/games/d2x
 d2x-xl                          ports/games/d2x-xl
 da-aspell                       ports/textproc/da-aspell
+da-hyphen                       ports/textproc/da-hyphen
 daa2iso                         ports/sysutils/daa2iso
 dact                            ports/archivers/dact
 dadadodo                        ports/textproc/dadadodo
@@ -2237,6 +2240,7 @@ de-eric4                        ports/german/eric4
 de-geonext                      ports/german/geonext
 de-gimp-help                    ports/german/gimp-help
 de-hunspell                     ports/german/hunspell
+de-hyphen                       ports/german/hyphen
 de-ispell                       ports/german/ispell
 de-ispell-alt                   ports/german/ispell-alt
 de-ispell-neu                   ports/german/ispell-neu
@@ -2251,6 +2255,7 @@ de-ksteak                       ports/german/ksteak
 de-manpages                     ports/german/manpages
 de-mediathek                    ports/german/mediathek
 de-mt                           ports/german/MT
+de-mythes                       ports/german/mythes
 de-pecl-konto_check             ports/german/pecl-konto_check
 de-phone                        ports/german/phone
 de-php_doc                      ports/german/php_doc
@@ -2954,6 +2959,7 @@ ekiga3                          ports/net/ekiga3
 el                              ports/games/el
 el-aspell                       ports/textproc/el-aspell
 el-data                         ports/games/el-data
+el-hyphen                       ports/textproc/el-hyphen
 elan                            ports/lang/elan
 eldav.el                        ports/www/eldav.el
 electric                        ports/cad/electric
@@ -3029,6 +3035,7 @@ emu10kx                         ports/audio/emu10kx
 emulators_openmsx               ports/emulators/openmsx
 en-aspell                       ports/textproc/en-aspell
 en-hunspell                     ports/textproc/en-hunspell
+en-mythes                       ports/textproc/en-mythes
 enblend                         ports/graphics/enblend
 enca                            ports/converters/enca
 enchant                         ports/textproc/enchant
@@ -3109,7 +3116,10 @@ erwn                            ports/www/erwn
 es                              ports/shells/es
 es-acroread8                    ports/print/es-acroread8
 es-aspell                       ports/textproc/es-aspell
+es-hunspell                     ports/textproc/es-hunspell
+es-hyphen                       ports/textproc/es-hyphen
 es-ispell                       ports/textproc/es-ispell
+es-mythes                       ports/textproc/es-mythes
 esdl                            ports/devel/esdl
 esh                             ports/shells/esh
 esmska                          ports/comms/esmska
@@ -3818,6 +3828,7 @@ fr-koffice-i18n                 ports/french/koffice-i18n
 fr-koffice-kde4-l10n            ports/french/koffice-kde4-l10n
 fr-med                          ports/french/med
 fr-mt                           ports/french/MT
+fr-mythes                       ports/french/mythes
 fr-php_doc                      ports/french/php_doc
 fr-tvdownloader                 ports/french/tvdownloader
 fr-verbiste                     ports/french/verbiste
@@ -4072,7 +4083,6 @@ gajim-devel                     ports/net-im/gajim-devel
 gal                             ports/x11-toolkits/gal
 gal2                            ports/x11-toolkits/gal2
 gal2-reference                  ports/x11-toolkits/gal2-reference
-galax                           ports/textproc/galax
 galaxis                         ports/games/galaxis
 galaxyhack                      ports/games/galaxyhack
 galaxymage                      ports/games/galaxymage
@@ -5724,6 +5734,7 @@ hu-aspell                       ports/hungarian/aspell
 hu-hu-phone                     ports/hungarian/hu-phone
 hu-hu-zipcodes                  ports/hungarian/hu-zipcodes
 hu-hunspell                     ports/hungarian/hunspell
+hu-hyphen                       ports/hungarian/hyphen
 hu-ispell                       ports/hungarian/ispell
 hu-jdictionary-eng-hun          ports/hungarian/jdictionary-eng-hun
 hu-jdictionary-eng-hun-expr     ports/hungarian/jdictionary-eng-hun-expr
@@ -5731,6 +5742,7 @@ hu-kde3-i18n                    ports/hungarian/kde3-i18n
 hu-kde4-l10n                    ports/hungarian/kde4-l10n
 hu-koffice-i18n                 ports/hungarian/koffice-i18n
 hu-koffice-kde4-l10n            ports/hungarian/koffice-kde4-l10n
+hu-mythes                       ports/hungarian/mythes
 huc                             ports/lang/huc
 hudson                          ports/www/hudson
 hugelatex                       ports/print/hugelatex
@@ -5841,6 +5853,7 @@ icqlib                          ports/net-im/icqlib
 ics                             ports/science/ics
 icu                             ports/devel/icu
 id-aspell                       ports/textproc/id-aspell
+id-hyphen                       ports/textproc/id-hyphen
 id3ed                           ports/audio/id3ed
 id3el                           ports/audio/id3el
 id3lib                          ports/audio/id3lib
@@ -6062,6 +6075,7 @@ irssi-xmpp                      ports/irc/irssi-xmpp
 irssistats                      ports/irc/irssistats
 irstlm                          ports/textproc/irstlm
 is-aspell                       ports/textproc/is-aspell
+is-hyphen                       ports/textproc/is-hyphen
 isaac-cfd                       ports/science/isaac-cfd
 isabella                        ports/x11-fonts/isabella
 isabelle                        ports/math/isabelle
@@ -6106,7 +6120,9 @@ isync                           ports/mail/isync
 it-acroread8                    ports/print/it-acroread8
 it-aspell                       ports/textproc/it-aspell
 it-hunspell                     ports/textproc/it-hunspell
+it-hyphen                       ports/textproc/it-hyphen
 it-ispell                       ports/textproc/it-ispell
+it-mythes                       ports/textproc/it-mythes
 itcl                            ports/lang/itcl
 itext                           ports/devel/itext
 ithought                        ports/deskutils/ithought
@@ -6678,14 +6694,12 @@ jbigkit                         ports/graphics/jbigkit
 jbootstrap                      ports/java/jbootstrap
 jboss-mailservices              ports/mail/jboss-mailservices
 jboss2                          ports/java/jboss2
-jboss3                          ports/java/jboss3
 jboss4                          ports/java/jboss4
 jboss5                          ports/java/jboss5
 jbrofuzz                        ports/security/jbrofuzz
 jc                              ports/java/jc
 jcalendar                       ports/java/jcalendar
 jcckit                          ports/java/jcckit
-jce_policy14                    ports/security/jce_policy14
 jchessboard                     ports/games/jchessboard
 jcifs                           ports/net/jcifs
 jclassinfo                      ports/devel/jclassinfo
@@ -6702,8 +6716,6 @@ jdic                            ports/x11-toolkits/jdic
 jdictionary                     ports/textproc/jdictionary
 jdictionary-int-eng             ports/textproc/jdictionary-int-eng
 jdiskreport                     ports/sysutils/jdiskreport
-jdk13                           ports/java/jdk13
-jdk13-doc                       ports/java/jdk13-doc
 jdk14-doc                       ports/java/jdk14-doc
 jdk15                           ports/java/jdk15
 jdk15-doc                       ports/java/jdk15-doc
@@ -8462,7 +8474,6 @@ linux-americasarmy              ports/games/linux-americasarmy
 linux-arts                      ports/audio/linux-arts
 linux-aspell                    ports/textproc/linux-aspell
 linux-atk                       ports/accessibility/linux-atk
-linux-blackdown-jdk14           ports/java/linux-blackdown-jdk14
 linux-cairo                     ports/graphics/linux-cairo
 linux-candycruncher-demo        ports/games/linux-candycruncher-demo
 linux-coldwar-demo              ports/games/linux-coldwar-demo
@@ -8658,8 +8669,6 @@ linux-spheresofchaos-demo       ports/games/linux-spheresofchaos-demo
 linux-ssamtfe                   ports/games/linux-ssamtfe
 linux-ssamtse                   ports/games/linux-ssamtse
 linux-steam                     ports/games/linux-steam
-linux-sun-jdk13                 ports/java/linux-sun-jdk13
-linux-sun-jdk14                 ports/java/linux-sun-jdk14
 linux-sun-jdk15                 ports/java/linux-sun-jdk15
 linux-sun-jdk16                 ports/java/linux-sun-jdk16
 linux-sun-jre15                 ports/java/linux-sun-jre15
@@ -8816,6 +8825,7 @@ lsof                            ports/sysutils/lsof
 lsw                             ports/x11/lsw
 lsysexp                         ports/biology/lsysexp
 lt-aspell                       ports/textproc/lt-aspell
+lt-hyphen                       ports/textproc/lt-hyphen
 ltl                             ports/math/ltl
 ltl2ba                          ports/math/ltl2ba
 ltm                             ports/net/ltm
@@ -10117,7 +10127,9 @@ njam                            ports/games/njam
 njplot                          ports/biology/njplot
 nl-acroread8                    ports/print/nl-acroread8
 nl-aspell                       ports/textproc/nl-aspell
+nl-hyphen                       ports/textproc/nl-hyphen
 nl-ispell                       ports/textproc/nl-ispell
+nl-mythes                       ports/textproc/nl-mythes
 nload                           ports/net/nload
 nltk                            ports/textproc/nltk
 nmap                            ports/security/nmap
@@ -10133,6 +10145,7 @@ nntpbtr                         ports/news/nntpbtr
 nntpcache                       ports/news/nntpcache
 nntpswitch                      ports/news/nntpswitch
 no-acroread8                    ports/print/no-acroread8
+no-hunspell                     ports/textproc/no-hunspell
 no-login                        ports/sysutils/no-login
 noattach                        ports/mail/noattach
 noatun-plugins                  ports/multimedia/noatun-plugins
@@ -12885,6 +12898,7 @@ p5-Log-Dispatch                 ports/devel/p5-Log-Dispatch
 p5-Log-Dispatch-Colorful        ports/devel/p5-Log-Dispatch-Colorful
 p5-Log-Dispatch-Config          ports/devel/p5-Log-Dispatch-Config
 p5-Log-Dispatch-Configurator-YAML  ports/devel/p5-Log-Dispatch-Configurator-YAML
+p5-Log-Dispatch-Dir             ports/devel/p5-Log-Dispatch-Dir
 p5-Log-Dispatch-Email-EmailSend  ports/devel/p5-Log-Dispatch-Email-EmailSend
 p5-Log-Dispatch-File-Stamped    ports/devel/p5-Log-Dispatch-File-Stamped
 p5-Log-Dispatch-FileRotate      ports/devel/p5-Log-Dispatch-FileRotate
@@ -14210,6 +14224,7 @@ p5-TAP-Formatter-JUnit          ports/devel/p5-TAP-Formatter-JUnit
 p5-TAP-Harness-JUnit            ports/devel/p5-TAP-Harness-JUnit
 p5-Tail-Stat                    ports/sysutils/p5-Tail-Stat
 p5-Taint-Runtime                ports/devel/p5-Taint-Runtime
+p5-Taint-Util                   ports/devel/p5-Taint-Util
 p5-Tangram                      ports/databases/p5-Tangram
 p5-Task-Catalyst                ports/www/p5-Task-Catalyst
 p5-Task-Math-Symbolic           ports/math/p5-Task-Math-Symbolic
@@ -17165,6 +17180,7 @@ p5-log-dispatch                 ports/devel/p5-Log-Dispatch
 p5-log-dispatch-colorful        ports/devel/p5-Log-Dispatch-Colorful
 p5-log-dispatch-config          ports/devel/p5-Log-Dispatch-Config
 p5-log-dispatch-configurator-yaml  ports/devel/p5-Log-Dispatch-Configurator-YAML
+p5-log-dispatch-dir             ports/devel/p5-Log-Dispatch-Dir
 p5-log-dispatch-email-emailsend  ports/devel/p5-Log-Dispatch-Email-EmailSend
 p5-log-dispatch-file-stamped    ports/devel/p5-Log-Dispatch-File-Stamped
 p5-log-dispatch-filerotate      ports/devel/p5-Log-Dispatch-FileRotate
@@ -18538,6 +18554,7 @@ p5-t2                           ports/databases/p5-T2
 p5-tagged                       ports/audio/p5-tagged
 p5-tail-stat                    ports/sysutils/p5-Tail-Stat
 p5-taint-runtime                ports/devel/p5-Taint-Runtime
+p5-taint-util                   ports/devel/p5-Taint-Util
 p5-tangram                      ports/databases/p5-Tangram
 p5-tap-formatter-junit          ports/devel/p5-TAP-Formatter-JUnit
 p5-tap-harness-junit            ports/devel/p5-TAP-Harness-JUnit
@@ -20890,6 +20907,8 @@ pl-ekg2                         ports/polish/ekg2
 pl-fortunepl                    ports/polish/fortunepl
 pl-gimp-help                    ports/polish/gimp-help
 pl-gnugadu2                     ports/polish/gnugadu2
+pl-hunspell                     ports/textproc/pl-hunspell
+pl-hyphen                       ports/polish/hyphen
 pl-ispell                       ports/polish/ispell
 pl-kadu                         ports/polish/kadu
 pl-kde3-i18n                    ports/polish/kde3-i18n
@@ -20898,6 +20917,7 @@ pl-koffice-i18n                 ports/polish/koffice-i18n
 pl-koffice-kde4-l10n            ports/polish/koffice-kde4-l10n
 pl-libgadu                      ports/polish/libgadu
 pl-libtlen                      ports/polish/libtlen
+pl-mythes                       ports/polish/mythes
 pl-php_doc                      ports/polish/php_doc
 pl-qfaktury                     ports/polish/qfaktury
 pl-qnapi                        ports/polish/qnapi
@@ -21349,6 +21369,7 @@ pt-aspell-pt_PT                 ports/portuguese/aspell-pt_PT
 pt-aspell-pt_br                 ports/portuguese/aspell-pt_BR
 pt-aspell-pt_pt                 ports/portuguese/aspell-pt_PT
 pt-hunspell                     ports/portuguese/hunspell
+pt-hyphen                       ports/portuguese/hyphen
 pt-irpf-pt_BR                   ports/portuguese/irpf-pt_BR
 pt-irpf-pt_br                   ports/portuguese/irpf-pt_BR
 pt-ispell-pt_BR                 ports/portuguese/ispell-pt_BR
@@ -21365,6 +21386,7 @@ pt-koffice-i18n-pt_br           ports/portuguese/koffice-i18n-pt_BR
 pt-koffice-kde4-l10n            ports/portuguese/koffice-kde4-l10n
 pt-koffice-kde4-l10n-pt_BR      ports/portuguese/koffice-kde4-l10n-pt_BR
 pt-koffice-kde4-l10n-pt_br      ports/portuguese/koffice-kde4-l10n-pt_BR
+pt-mythes                       ports/portuguese/mythes
 pt-php_doc-br                   ports/portuguese/php_doc-br
 pt-webalizer-pt_BR              ports/portuguese/webalizer-pt_BR
 pt-webalizer-pt_PT              ports/portuguese/webalizer-pt_PT
@@ -22981,6 +23003,9 @@ rnews                           ports/www/rnews
 rngstreams                      ports/math/rngstreams
 rnv                             ports/textproc/rnv
 ro-aspell                       ports/textproc/ro-aspell
+ro-hunspell                     ports/textproc/ro-hunspell
+ro-hyphen                       ports/textproc/ro-hyphen
+ro-mythes                       ports/textproc/ro-mythes
 roadmap                         ports/astro/roadmap
 roadnav                         ports/astro/roadnav
 roap                            ports/textproc/roap
@@ -23153,6 +23178,7 @@ ru-fortuneru                    ports/russian/fortuneru
 ru-gd                           ports/russian/gd
 ru-gimp-help                    ports/russian/gimp-help
 ru-hunspell                     ports/russian/hunspell
+ru-hyphen                       ports/russian/hyphen
 ru-ircd-hybrid                  ports/russian/ircd-hybrid
 ru-kde3-i18n                    ports/russian/kde3-i18n
 ru-kde4-l10n                    ports/russian/kde4-l10n
@@ -23166,6 +23192,7 @@ ru-messarge                     ports/russian/messarge
 ru-mt                           ports/russian/MT
 ru-mueller-dic                  ports/russian/mueller-dic
 ru-muttprint                    ports/russian/muttprint
+ru-mythes                       ports/russian/mythes
 ru-napster                      ports/russian/napster
 ru-p5-Convert-Cyrillic          ports/russian/p5-Convert-Cyrillic
 ru-p5-Lingua-DetectCyrillic     ports/russian/p5-Lingua-DetectCyrillic
@@ -23795,6 +23822,7 @@ rubygem-soap4r                  ports/devel/rubygem-soap4r
 rubygem-spreadsheet             ports/textproc/rubygem-spreadsheet
 rubygem-spruz                   ports/devel/rubygem-spruz
 rubygem-sqlite3                 ports/databases/rubygem-sqlite3
+rubygem-sqlite3-ruby            ports/databases/rubygem-sqlite3-ruby
 rubygem-state_machine           ports/devel/rubygem-state_machine
 rubygem-staticmatic             ports/www/rubygem-staticmatic
 rubygem-stemmer                 ports/devel/rubygem-stemmer
@@ -24318,7 +24346,10 @@ sixxs-aiccu                     ports/net/sixxs-aiccu
 sjeng                           ports/games/sjeng
 sjitter                         ports/net-mgmt/sjitter
 sk-aspell                       ports/textproc/sk-aspell
+sk-hunspell                     ports/textproc/sk-hunspell
+sk-hyphen                       ports/textproc/sk-hyphen
 sk-ispell                       ports/textproc/sk-ispell
+sk-mythes                       ports/textproc/sk-mythes
 sk1libs                         ports/graphics/sk1libs
 skadns                          ports/dns/skadns
 skalibs                         ports/devel/skalibs
@@ -24349,6 +24380,8 @@ skytools                        ports/databases/skytools
 skyutils                        ports/misc/skyutils
 sl                              ports/games/sl
 sl-aspell                       ports/textproc/sl-aspell
+sl-hyphen                       ports/textproc/sl-hyphen
+sl-mythes                       ports/textproc/sl-mythes
 sl2tps                          ports/net/sl2tps
 slack                           ports/sysutils/slack
 slapd-cyrus                     ports/mail/slapd-cyrus
@@ -24475,6 +24508,7 @@ snotes                          ports/deskutils/snotes
 snowlog                         ports/sysutils/snowlog
 snownews                        ports/www/snownews
 sntop                           ports/net/sntop
+so-hunspell                     ports/textproc/so-hunspell
 soapui                          ports/devel/soapui
 sobby                           ports/net/sobby
 socat                           ports/net/socat
@@ -24614,6 +24648,7 @@ springlobby                     ports/games/springlobby
 sprinkle                        ports/net/sprinkle
 spserver                        ports/net/spserver
 spybye                          ports/security/spybye
+sq-hunspell                     ports/textproc/sq-hunspell
 sql-ledger                      ports/finance/sql-ledger
 sqlbuddy                        ports/databases/sqlbuddy
 sqlcached                       ports/databases/sqlcached
@@ -24700,6 +24735,7 @@ squsq                           ports/archivers/squsq
 sqwebmail                       ports/mail/sqwebmail
 sr                              ports/lang/sr
 sr-aspell                       ports/textproc/sr-aspell
+sr-hunspell                     ports/textproc/sr-hunspell
 srecord                         ports/devel/srecord
 sredird                         ports/comms/sredird
 srg                             ports/www/srg
@@ -24707,6 +24743,7 @@ srilm                           ports/textproc/srilm
 srm                             ports/security/srm
 srp                             ports/security/srp
 srvx                            ports/irc/srvx
+ss-hunspell                     ports/textproc/ss-hunspell
 ss5                             ports/net/ss5
 ssaha                           ports/biology/ssaha
 ssam                            ports/editors/ssam
@@ -24891,6 +24928,8 @@ susv3                           ports/misc/susv3
 suxus                           ports/x11-fonts/suxus
 sv-acroread8                    ports/print/sv-acroread8
 sv-aspell                       ports/textproc/sv-aspell
+sv-hyphen                       ports/textproc/sv-hyphen
+sv-mythes                       ports/textproc/sv-mythes
 svg2pdf                         ports/graphics/svg2pdf
 svg2png                         ports/graphics/svg2png
 svg2swf                         ports/graphics/svg2swf
@@ -24909,6 +24948,7 @@ svnmerge                        ports/devel/svnmerge
 svntrac                         ports/devel/svntrac
 svr4_base                       ports/emulators/svr4_base
 sw-aspell                       ports/textproc/sw-aspell
+sw-hunspell                     ports/textproc/sw-hunspell
 swaks                           ports/mail/swaks
 swami                           ports/audio/swami
 swank-clojure                   ports/devel/swank-clojure
@@ -25122,6 +25162,7 @@ tdl                             ports/devel/tdl
 tdom                            ports/www/tdom
 tdtd.el                         ports/textproc/tdtd.el
 te-aspell                       ports/textproc/te-aspell
+te-hunspell                     ports/textproc/te-hunspell
 teTeX                           ports/print/teTeX
 teTeX-base                      ports/print/teTeX-base
 teTeX-texmf                     ports/print/teTeX-texmf
@@ -25259,6 +25300,7 @@ thunderbird3                    ports/mail/thunderbird3
 thunderbird3-i18n               ports/mail/thunderbird3-i18n
 thundercache                    ports/www/thundercache
 thundersnarf                    ports/www/thundersnarf
+ti-hunspell                     ports/textproc/ti-hunspell
 tide                            ports/devel/tide
 tidy                            ports/www/tidy
 tidy-devel                      ports/www/tidy-devel
@@ -25328,6 +25370,7 @@ tits                            ports/comms/tits
 tivodecode                      ports/multimedia/tivodecode
 tix                             ports/x11-toolkits/tix
 tk-aspell                       ports/textproc/tk-aspell
+tk-hunspell                     ports/textproc/tk-hunspell
 tk-wrapper                      ports/x11-toolkits/tk-wrapper
 tk82                            ports/x11-toolkits/tk82
 tk83                            ports/x11-toolkits/tk83
@@ -25836,12 +25879,14 @@ uk-aspell                       ports/ukrainian/aspell
 uk-emacs-koi8u                  ports/ukrainian/emacs-koi8u
 uk-gd                           ports/ukrainian/gd
 uk-hunspell                     ports/ukrainian/hunspell
+uk-hyphen                       ports/ukrainian/hyphen
 uk-ispell                       ports/ukrainian/ispell
 uk-kde3-i18n                    ports/ukrainian/kde3-i18n
 uk-kde4-l10n                    ports/ukrainian/kde4-l10n
 uk-koffice-i18n                 ports/ukrainian/koffice-i18n
 uk-koffice-kde4-l10n            ports/ukrainian/koffice-kde4-l10n
 uk-monacofonts                  ports/ukrainian/monacofonts
+uk-mythes                       ports/ukrainian/mythes
 uk-phone                        ports/misc/uk-phone
 uk-postcodes                    ports/misc/uk-postcodes
 uk-webalizer                    ports/ukrainian/webalizer
@@ -27629,6 +27674,7 @@ zend-framework                  ports/www/zend-framework
 zendoptimizer                   ports/devel/ZendOptimizer
 zenity                          ports/x11/zenity
 zenmap                          ports/security/zenmap
+zenoss                          ports/net-mgmt/zenoss
 zenphoto                        ports/www/zenphoto
 zephulor                        ports/games/zephulor
 zephyr                          ports/net-im/zephyr
