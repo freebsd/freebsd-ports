@@ -5,14 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	ezprint
-PORTVERSION=	0.2.2
+PORTVERSION=	0.3.1
 CATEGORIES=	graphics rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	A rails wrapper for the PDFKit library
 
-RUN_DEPENDS=	rubygem-pdfkit>=0.4.1:${PORTSDIR}/graphics/rubygem-pdfkit
+RUN_DEPENDS=	rubygem-pdfkit>=0.5.0:${PORTSDIR}/graphics/rubygem-pdfkit
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
