@@ -2,24 +2,24 @@
 
 English Instructions:
  Please tell your users to merge their old dotfiles with the new ones, in
- 	%%PREFIX%%/share/skel/zh_TW.Big5/dot.*
+ 	%%PREFIX%%/share/skel/zh_TW.UTF-8/dot.*
 
  For future adduser
-	# adduser -k /usr/local/share/skel/zh_TW.Big5
+	# adduser -k /usr/local/share/skel/zh_TW.UTF-8
 
  Finally, tuning your /etc/make.conf.  Please SEE ALSO following file.
- ==> %%PREFIX%%/share/skel/zh_TW.Big5/make.conf
+ ==> %%PREFIX%%/share/skel/zh_TW.UTF-8/make.conf
 
 **************************************************************************
 
-¤¤¤åÁcÅé(BIG5)»¡©ú:
- ½Ð§iª¾±zªº¨Ï¥ÎªÌ¤ñ¹ï¥L­ÌªºÂÂ³]©w¸ò·s³]©w¡A©ñ¦b
- %%PREFIX%%/share/skel/zh_TW.Big5/dot.*
+ä¸­æ–‡ç¹é«”(UTF-8)èªªæ˜Ž:
+ è«‹å‘ŠçŸ¥æ‚¨çš„ä½¿ç”¨è€…æ¯”å°ä»–å€‘çš„èˆŠè¨­å®šè·Ÿæ–°è¨­å®šï¼Œæ”¾åœ¨
+ %%PREFIX%%/share/skel/zh_TW.UTF-8/dot.*
 
- ­Y¤§«á·s¼W¨Ï¥ÎªÌªº¸Ü¡A½Ð¥Î¤U­±Ãþ¦ü¤è¦¡¡G
-	# adduser -k /usr/local/share/skel/zh_TW.Big5
+ è‹¥ä¹‹å¾Œæ–°å¢žä½¿ç”¨è€…çš„è©±ï¼Œè«‹ç”¨ä¸‹é¢é¡žä¼¼æ–¹å¼ï¼š
+	# adduser -k /usr/local/share/skel/zh_TW.UTF-8
  
- ³Ì«á¡A½Ð°Ñ¦Ò¤U­±³oÀÉ®×¨Ó­×§ïO /etc/make.conf ¥H°µ§ó¦nªº³]©w¡G 
- ==> %%PREFIX%%/share/skel/zh_TW.Big5/make.conf
+ æœ€å¾Œï¼Œè«‹åƒè€ƒä¸‹é¢é€™æª”æ¡ˆä¾†ä¿®æ”¹ /etc/make.conf ä»¥åšæ›´å¥½çš„è¨­å®šï¼š 
+ ==> %%PREFIX%%/share/skel/zh_TW.UTF-8/make.conf
 
 ************************************************************************** 
