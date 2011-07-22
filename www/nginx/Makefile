@@ -69,8 +69,9 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_UPSTREAM_HASH	"3rd party upstream hash module" off \
 		HTTP_UPSTREAM_KEEPALIVE "3rd party upstream keepalive module" off \
 		HTTP_ZIP_MODULE		"3rd party http_zip module" off \
-		DEVEL_KIT_MODULE	"3rd party devel_kit module" off \
 		CHUNKIN_MODULE		"3rd party chunkin module" off \
+		DEVEL_KIT_MODULE	"3rd party devel_kit module" off \
+		GRIDFS_MODULE		"3rd party gridfs module" off \
 		LUA_MODULE		"3rd party lua module" off \
 		MEMC_MODULE		"3rd party memc (memcached) module" off \
 		PASSENGER_MODULE	"3rd party passenger module" off \
@@ -417,6 +418,19 @@ DISTFILES+=	simpl-ngx_devel_kit-v${NGINX_DEVEL_KIT_MODULE_VERSION}-${GIT_DEVEL_K
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/simpl-ngx_devel_kit-${GIT_DEVEL_KIT_MODULE_VERSION:S/^0-g//}
 .endif
 
+.if defined(WITH_GRIDFS_MODULE)
+NGINX_GRIDFS_MODULE_VERSION=	0.8
+GIT_GRIDFS_MODULE_VERSION=	0-gb5f8113
+MONGO_C_DRIVER_VERSION=		0.3.1
+GIT_MONGO_C_DRIVER_VERSION=	0-g9b4b232
+FETCH_ARGS=	-pRr
+MASTER_SITES+=	https://github.com/mdirolf/nginx-gridfs/tarball/v${NGINX_GRIDFS_MODULE_VERSION}/:gridfs
+MASTER_SITES+=	https://github.com/mongodb/mongo-c-driver/tarball/v${MONGO_C_DRIVER_VERSION}/:mongo_c
+DISTFILES+=	mdirolf-nginx-gridfs-v${NGINX_GRIDFS_MODULE_VERSION}-${GIT_GRIDFS_MODULE_VERSION}.tar.gz:gridfs
+DISTFILES+=	mongodb-mongo-c-driver-v${MONGO_C_DRIVER_VERSION}-${GIT_MONGO_C_DRIVER_VERSION}.tar.gz:mongo_c
+CONFIGURE_ARGS+=--add-module=${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_MODULE_VERSION:S/^0-g//}
+.endif
+
 .if defined(WITH_LUA_MODULE)
 .if !defined(WITH_DEVEL_KIT_MODULE)
 BROKEN=		for lua module build devel_kit also should be defined
@@ -471,8 +485,8 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-ngx_postgres::config
 .endif
 
 .if defined(WITH_REDIS2_MODULE)
-NGINX_REDIS2_MODULE_VERSION=	0.07rc5
-GIT_REDIS2_MODULE_VERSION=	0-g1e01aca
+NGINX_REDIS2_MODULE_VERSION=	0.07
+GIT_REDIS2_MODULE_VERSION=	0-g6f7fc37
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/agentzh/redis2-nginx-module/tarball/v${NGINX_REDIS2_MODULE_VERSION}/:redis2
 DISTFILES+=	agentzh-redis2-nginx-module-v${NGINX_REDIS2_MODULE_VERSION}-${GIT_REDIS2_MODULE_VERSION}.tar.gz:redis2
@@ -571,6 +585,14 @@ pre-everything::
 .endif
 	@${ECHO_MSG}
 
+post-extract:
+.if defined(WITH_GRIDFS_MODULE)
+	@${RMDIR} ${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_MODULE_VERSION:S/^0-g//}/mongo-c-driver/
+	@${MV} \
+	${WRKDIR}/mongodb-mongo-c-driver-${GIT_MONGO_C_DRIVER_VERSION:S/^0-g//}/ \
+	${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_MODULE_VERSION:S/^0-g//}/mongo-c-driver/
+.endif
+
 post-patch:
 	@${REINPLACE_CMD} 's!%%HTTP_PORT%%!${HTTP_PORT}!; \
 		s!%%PREFIX%%!${PREFIX}!' \
@@ -579,6 +601,18 @@ post-patch:
 	@${REINPLACE_CMD} \
 		's!$$HTTP_ACCESSKEY_MODULE!ngx_http_accesskey_module!' \
 		${WRKDIR}/nginx-accesskey-${NGINX_ACCESSKEY_MODULE_VERSION}/config
+.endif
+# linker error acquire if --std=c99 defined, add "static" to inline function
+.if defined(WITH_HTTP_ZIP_MODULE)
+	@${REINPLACE_CMD} \
+		's!^inline!static inline!' \
+		${WRKDIR}/mod_zip-${NGINX_ZIP_MODULE_VERSION}/ngx_http_zip_parsers.*
+.endif
+# Respect CFLAGS by remove needless --std=c99 flag
+.if defined(WITH_GRIDFS_MODULE)
+	@${REINPLACE_CMD} \
+		's!--std=c99!-DMONGO_HAVE_STDINT!' \
+		${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_MODULE_VERSION:S/^0-g//}/config
 .endif
 .if defined(WITH_LUA_MODULE)
 	@${REINPLACE_CMD} \
