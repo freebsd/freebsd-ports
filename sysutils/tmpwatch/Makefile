@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	tmpwatch
-PORTVERSION=	2.10.2
+PORTVERSION=	2.10.3
 CATEGORIES=	sysutils
 MASTER_SITES=	https://fedorahosted.org/releases/t/m/tmpwatch/
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	A utility for removing files based on when they were last accessed
 
-USE_BZIP2=	yes
-
 LICENSE=	GPLv2
+
+USE_BZIP2=	yes
 
 GNU_CONFIGURE=	yes
 
