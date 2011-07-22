@@ -15,10 +15,11 @@ MASTER_SITES=	http://brick.kernel.dk/snaps/
 MAINTAINER=	brucec@FreeBSD.org
 COMMENT=	FIO - flexible IO tester
 
-USE_BZIP2=	yes
-USE_GMAKE=	yes
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_BZIP2=	yes
+USE_GMAKE=	yes
 
 OPTIONS=	GNUPLOT "Support for plotting graphs" off
 
