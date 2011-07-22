@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mmix
-PORTVERSION=	20110605
+PORTVERSION=	20110719
 CATEGORIES=	lang
 MASTER_SITES=	http://www-cs-faculty.stanford.edu/~knuth/programs/ \
 		http://mirror.mcx2.org/
