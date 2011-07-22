@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pl-hunspell
-PORTVERSION=	20110721
+PORTVERSION=	20110722
 CATEGORIES=	textproc
 MASTER_SITES=	http://sjp.pl/slownik/ort/
 DISTNAME=	sjp-myspell-pl-${PORTVERSION}
