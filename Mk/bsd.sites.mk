@@ -845,7 +845,6 @@ MASTER_SITE_NETLIB+=	\
 	http://netlib.amss.ac.cn/%SUBDIR%/ \
 	http://netlib.caspur.it/%SUBDIR%/ \
 	http://netlib.ccp14.ac.uk/%SUBDIR%/ \
-	http://netlib.enseeiht.fr/%SUBDIR%/ \
 	http://netlib.linux-mirror.org/%SUBDIR%/ \
 	http://phase.hpcc.jp/mirrors/netlib/%SUBDIR%/
 .endif
