@@ -985,6 +985,7 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/distutils/tests/test_util.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_version.py
 %%PYTHON_LIBDIR%%/distutils/tests/test_versionpredicate.py
+%%PYTHON_LIBDIR%%/distutils/tests/xxmodule.c
 %%PYTHON_LIBDIR%%/distutils/text_file.py
 %%PYTHON_LIBDIR%%/distutils/unixccompiler.py
 %%PYTHON_LIBDIR%%/distutils/util.py
@@ -1872,7 +1873,7 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/json/scanner.py
 %%PYTHON_LIBDIR%%/json/tool.py
 %%PYTHON_LIBDIR%%/keyword.py
-%%PYTHON_LIBDIR%%/lib-dynload/Python-%%PYVER%%-py%%PYVER%%.egg-info
+%%PYTHON_LIBDIR%%/lib-dynload/Python-%%PYVER_WITHPAT%%-py%%PYVER%%.egg-info
 %%PYTHON_LIBDIR%%/lib-dynload/_bisect.so
 %%PYTHON_LIBDIR%%/lib-dynload/_codecs_cn.so
 %%PYTHON_LIBDIR%%/lib-dynload/_codecs_hk.so
@@ -2385,8 +2386,6 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/__pycache__/autotest.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/buffer_tests.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/buffer_tests.cpython-32.pyo
-%%PYTHON_LIBDIR%%/test/__pycache__/cjkencodings_test.cpython-32.pyc
-%%PYTHON_LIBDIR%%/test/__pycache__/cjkencodings_test.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/curses_tests.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/curses_tests.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/datetimetester.cpython-32.pyc
@@ -2535,6 +2534,8 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_codecencodings_cn.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_codecencodings_hk.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_codecencodings_hk.cpython-32.pyo
+%%PYTHON_LIBDIR%%/test/__pycache__/test_codecencodings_iso2022.cpython-32.pyc
+%%PYTHON_LIBDIR%%/test/__pycache__/test_codecencodings_iso2022.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_codecencodings_jp.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_codecencodings_jp.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_codecencodings_kr.cpython-32.pyc
@@ -2817,6 +2818,8 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_module.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_modulefinder.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_modulefinder.cpython-32.pyo
+%%PYTHON_LIBDIR%%/test/__pycache__/test_msilib.cpython-32.pyc
+%%PYTHON_LIBDIR%%/test/__pycache__/test_msilib.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_multibytecodec.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_multibytecodec.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_multibytecodec_support.cpython-32.pyc
@@ -3053,6 +3056,8 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_threadsignals.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_time.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_time.cpython-32.pyo
+%%PYTHON_LIBDIR%%/test/__pycache__/test_timeit.cpython-32.pyc
+%%PYTHON_LIBDIR%%/test/__pycache__/test_timeit.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_timeout.cpython-32.pyc
 %%PYTHON_LIBDIR%%/test/__pycache__/test_timeout.cpython-32.pyo
 %%PYTHON_LIBDIR%%/test/__pycache__/test_tk.cpython-32.pyc
@@ -3189,7 +3194,53 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/cfgparser.2
 %%PYTHON_LIBDIR%%/test/cfgparser.3
 %%PYTHON_LIBDIR%%/test/check_soundcard.vbs
-%%PYTHON_LIBDIR%%/test/cjkencodings_test.py
+%%PYTHON_LIBDIR%%/test/cjkencodings/big5-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/big5.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/big5hkscs-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/big5hkscs.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/cp949-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/cp949.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_jisx0213-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_jisx0213.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_jp-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_jp.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_kr-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_kr.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gb18030-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gb18030.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gb2312-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gb2312.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gbk-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gbk.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/hz-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/hz.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/iso2022_jp-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/iso2022_jp.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/iso2022_kr-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/iso2022_kr.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/johab-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/johab.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/cp949.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_jisx0213-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_jisx0213.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_jp-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_jp.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_kr-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/euc_kr.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gb18030-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gb18030.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gb2312-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gb2312.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gbk-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/gbk.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/hz-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/hz.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/johab-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/johab.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/shift_jis-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/shift_jis.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/shift_jisx0213-utf8.txt
+%%PYTHON_LIBDIR%%/test/cjkencodings/shift_jisx0213.txt
 %%PYTHON_LIBDIR%%/test/cmath_testcases.txt
 %%PYTHON_LIBDIR%%/test/curses_tests.py
 %%PYTHON_LIBDIR%%/test/datetimetester.py
@@ -3499,6 +3550,7 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/test_codeccallbacks.py
 %%PYTHON_LIBDIR%%/test/test_codecencodings_cn.py
 %%PYTHON_LIBDIR%%/test/test_codecencodings_hk.py
+%%PYTHON_LIBDIR%%/test/test_codecencodings_iso2022.py
 %%PYTHON_LIBDIR%%/test/test_codecencodings_jp.py
 %%PYTHON_LIBDIR%%/test/test_codecencodings_kr.py
 %%PYTHON_LIBDIR%%/test/test_codecencodings_tw.py
@@ -3645,6 +3697,7 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/test_mmap.py
 %%PYTHON_LIBDIR%%/test/test_module.py
 %%PYTHON_LIBDIR%%/test/test_modulefinder.py
+%%PYTHON_LIBDIR%%/test/test_msilib.py
 %%PYTHON_LIBDIR%%/test/test_multibytecodec.py
 %%PYTHON_LIBDIR%%/test/test_multibytecodec_support.py
 %%PYTHON_LIBDIR%%/test/test_multiprocessing.py
@@ -3763,6 +3816,7 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/test_threading_local.py
 %%PYTHON_LIBDIR%%/test/test_threadsignals.py
 %%PYTHON_LIBDIR%%/test/test_time.py
+%%PYTHON_LIBDIR%%/test/test_timeit.py
 %%PYTHON_LIBDIR%%/test/test_timeout.py
 %%PYTHON_LIBDIR%%/test/test_tk.py
 %%PYTHON_LIBDIR%%/test/test_tokenize.py
@@ -4286,6 +4340,7 @@ libdata/pkgconfig/python-3.2.pc
 @dirrm %%PYTHON_LIBDIR%%/sqlite3/test
 @dirrm %%PYTHON_LIBDIR%%/sqlite3
 @dirrm %%PYTHON_LIBDIR%%/test/__pycache__
+@dirrm %%PYTHON_LIBDIR%%/test/cjkencodings
 @dirrm %%PYTHON_LIBDIR%%/test/decimaltestdata
 @dirrm %%PYTHON_LIBDIR%%/test/encoded_modules/__pycache__
 @dirrm %%PYTHON_LIBDIR%%/test/encoded_modules
