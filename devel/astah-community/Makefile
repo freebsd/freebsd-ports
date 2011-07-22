@@ -29,7 +29,7 @@ RESTRICTED=	See http://astah.net/faq/community/enduser-license-agreement
 WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX:S!-!_!}
 REINPLACE_ARGS=	-i ""
 
-.if !exists(${DISTDIR}/${DISTFILES})
+.if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX})
 DOWNLOAD_URL=	http://members.change-vision.com/files/${PORTNAME}${PKGNAMESUFFIX:S!-!_!}/${PORTVERSION:S!.!_!}/${DISTFILES}
 IGNORE=		needs you to fetch manually the distribution file\
 		from ${DOWNLOAD_URL}, \
