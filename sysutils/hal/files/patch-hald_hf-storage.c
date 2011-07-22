@@ -1,5 +1,5 @@
 --- hald/freebsd/hf-storage.c.orig	2009-08-24 08:42:29.000000000 -0400
-+++ hald/freebsd/hf-storage.c	2010-08-29 12:22:03.000000000 -0400
++++ hald/freebsd/hf-storage.c	2011-07-20 20:52:51.000000000 -0400
 @@ -30,6 +30,7 @@
  #include <limits.h>
  #include <inttypes.h>
@@ -50,7 +50,21 @@
        geom_obj->type = -1;	/* We use -1 here to denote a missing type. */
        geom_obj->hash = hash;
  
-@@ -589,11 +621,18 @@ hf_storage_devd_notify (const char *syst
+@@ -458,6 +490,13 @@ hf_storage_parse_conftxt (const char *co
+                             {
+                               g_free(geom_obj->class);
+ 			      geom_obj->class = g_strdup(fields[12]);
++			      if (! strcmp(geom_obj->class, "BSD") &&
++				    geom_obj->type == FS_UNUSED)
++				{
++			          geom_obj->type = FS_BSDFFS;
++				  g_free(geom_obj->str_type);
++				  geom_obj->str_type = g_strdup("freebsd-ufs");
++				}
+ 			    }
+ 			}
+ 		    }
+@@ -589,11 +628,18 @@ hf_storage_devd_notify (const char *syst
    char *conftxt;
    GSList *new_disks;
  
@@ -70,7 +84,7 @@
    new_disks = hf_storage_parse_conftxt(conftxt);
    g_free(conftxt);
  
-@@ -669,7 +708,7 @@ hf_storage_conftxt_timeout_cb (gpointer 
+@@ -669,7 +715,7 @@ hf_storage_conftxt_timeout_cb (gpointer 
    if (hf_is_waiting)
      return TRUE;
  
