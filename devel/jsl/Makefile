@@ -28,7 +28,7 @@ CFLAGS+=	-fPIC
 JSLCFG_CMD=	${UNAME} -sr | ${SED} 's, ,,'
 
 post-patch:
-	${LN} -s Linux_All.mk ${WRKSRC}/config/$$(${JSLCFG_CMD}).mk
+	${GREP} -v 'CC =' ${WRKSRC}/config/Linux_All.mk > ${WRKSRC}/config/$$(${JSLCFG_CMD}).mk
 
 do-install:
 	${INSTALL} ${WRKSRC}/$$(${JSLCFG_CMD})_DBG.OBJ/jsl ${PREFIX}/bin/jsl
