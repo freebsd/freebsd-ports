@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	jasperserver
-PORTVERSION=	4.0.0
-PORTREVISION=	2
+PORTVERSION=	4.1.0
 CATEGORIES=	databases print java
 MASTER_SITES=	SF/${PORTNAME}/JasperServer/JasperServer%20${PORTVERSION}/:source1
 DISTFILES=	jasperreports-server-cp-${PORTVERSION}-src.zip:source1 \
-		jasperreports-server-cp-${PORTVERSION}-maven-repository.zip:source1
+		jasperreports-server-${PORTVERSION}-maven-repository.zip:source1
 EXTRACT_ONLY=	jasperreports-server-cp-${PORTVERSION}-src.zip
 
 MAINTAINER=	jhelfman@experts-exchange.com
@@ -29,7 +28,7 @@ WRKDIR=		${WRKDIRPREFIX}${.CURDIR}/work
 SQLSRC=		${WRKSRC}/install_resources/sql
 JS=		${SRCDIR}/${PORTNAME}
 JSREPO=		${JS}-repo
-JSMAVENARCH=	jasperreports-server-cp-${PORTVERSION}-maven-repository.zip
+JSMAVENARCH=	jasperreports-server-${PORTVERSION}-maven-repository.zip
 
 NO_WRKSUBDIR=	yes
 USE_JAVA=	yes
@@ -43,7 +42,8 @@ DOS2UNIX_REGEX=	.*(css|dtd|java|js|txt|wsdd|xml|xsl)$$
 OPTIONS=	TOMCAT5 "Enable Tomcat 5.x support"	on \
 		TOMCAT6 "Enable Tomcat 6.x support"	off \
 		MYSQL   "Enable Mysql 5.x support"	on \
-		POSTGRESQL "Enable PostgreSQL 8.x support" off
+		POSTGRESQL "Enable PostgreSQL 8.x support" off \
+		POSTGRESQL9 "Enable PostgreSQL 9.x support" off
 
 REPLACE_FILES=	${JS}/jasperserver-war/src/main/webappAdditions/WEB-INF/web.xml
 REPLACE_LIST_TEMP=	${SUB_LIST:S/$/!g/:S/^/ -e s!%%/:S/=/%%!/}
@@ -73,16 +73,24 @@ PLIST_SUB+=	JDBC="mysql-connector-java-5.1.10.jar"
 .endif
 
 #use version 84, application is certified against this version
+#use version 90, application is reported to work against this version
 .if defined(WITH_POSTGRESQL)
+WANT_PGSQL_VER=	84
+JDBC=		postgresql-8.4-702.jdbc4.jar
+DISTFILES+=	postgresql-8.4-702.jdbc4.jar:source2
+.elif defined(WITH_POSTGRESQL9)
+WANT_PGSQL_VER=	90
+JDBC=	postgresql-9.0-801.jdbc4.jar
+DISTFILES+=	postgresql-9.0-801.jdbc4.jar:source2
+.endif
+
+.if ( defined(WITH_POSTGRESQL) || (WITH_POSTGRESQL9) )
 USE_PGSQL=	yes
-WANT_PGSQL_VER= 84
 MYNAME?=	pgsql
 MYPASS?=	pgsql
 DATABASE=	postgresql
-JDBC=		postgresql-8.4-702.jdbc4.jar
 PLIST_SUB+=	JDBC=${JDBC}
 MASTER_SITES+=	http://jdbc.postgresql.org/download/:source2
-DISTFILES+=	postgresql-8.4-702.jdbc4.jar:source2
 .endif
 
 .if defined(WITH_TOMCAT5)
@@ -108,7 +116,7 @@ JDBCLOC=	lib
 DBHOST?=	localhost
 
 APP_PROPERTIES=	${SRCDIR}/${PORTNAME}/buildomatic/default_master.properties
-MAIL_PROPERTIES=${SRCDIR}/${PORTNAME}/buildomatic/build_conf/default/webapp/WEB-INF/js.quartz.properties
+QTZ_PROPERTIES=	${SRCDIR}/${PORTNAME}/${PORTNAME}-war/target/${PORTNAME}/WEB-INF/js.quartz.properties
 
 JSPORT?=	8080
 JSEXTRA?=
@@ -127,7 +135,11 @@ IGNORE=	you can only define one application server
 IGNORE=	choose at least one application server
 .elif ( defined(WITH_MYSQL) && defined(WITH_POSTGRESQL) )
 IGNORE=	you can only define one database
-.elif ( !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL) )
+.elif ( defined(WITH_MYSQL) && defined(WITH_POSTGRESQL9) )
+IGNORE=	you can only define one database
+.elif ( defined(WITH_POSTGRESQL) && defined(WITH_POSTGRESQL9) )
+IGNORE=	you can only define one database
+.elif ( !defined(WITH_MYSQL) && !defined(WITH_POSTGRESQL) && !defined(WITH_POSTGRESQL9) )
 IGNORE=	choose at least one database
 .endif
 
@@ -185,16 +197,21 @@ do-build:
 	@( ${CP} ${WRKDIR}/web.xml ${JS}/jasperserver-war/src/main/webappAdditions/WEB-INF/web.xml )
 	@( cd ${WRKSRC} && ./js-ant build-ce )
 
-	@${ECHO} "quartz.delegateClass=org.quartz.impl.jdbcjobstore.StdJDBCDelegate" > ${MAIL_PROPERTIES}
-	@${ECHO} "quartz.tablePrefix=QRTZ_" >> ${MAIL_PROPERTIES}
-	@${ECHO} "quartz.extraSettings=${JSEXTRA}" >> ${MAIL_PROPERTIES}
-	@${ECHO} "report.scheduler.web.deployment.uri=http://localhost:${JSPORT}/${PORTNAME}" >> ${MAIL_PROPERTIES}
-	@${ECHO} "report.scheduler.mail.sender.host=${JSMAILHOST}" >> ${MAIL_PROPERTIES}
-	@${ECHO} "report.scheduler.mail.sender.username=${JSMAILUSER}" >> ${MAIL_PROPERTIES}
-	@${ECHO} "report.scheduler.mail.sender.password=${JSMAILPASS}" >> ${MAIL_PROPERTIES}
-	@${ECHO} "report.scheduler.mail.sender.from=${JSMAILFROM}" >> ${MAIL_PROPERTIES}
-	@${ECHO} "report.scheduler.mail.sender.protocol=${JSMAILPROTO}" >> ${MAIL_PROPERTIES}
-	@${ECHO} "report.scheduler.mail.sender.port=${JSMAILPORT}" >> ${MAIL_PROPERTIES}
+.if !( defined(WITH_POSTGRESQL) || (WITH_POSTGRESQL9) )
+	@${ECHO} "quartz.delegateClass=org.quartz.impl.jdbcjobstore.StdJDBCDelegate" > ${QTZ_PROPERTIES}
+.else
+	@${ECHO} "quartz.delegateClass=org.quartz.impl.jdbcjobstore.PostgreSQLDelegate" > ${QTZ_PROPERTIES}
+.endif
+
+	@${ECHO} "quartz.tablePrefix=QRTZ_" >> ${QTZ_PROPERTIES}
+	@${ECHO} "quartz.extraSettings=${JSEXTRA}" >> ${QTZ_PROPERTIES}
+	@${ECHO} "report.scheduler.web.deployment.uri=http://localhost:${JSPORT}/${PORTNAME}" >> ${QTZ_PROPERTIES}
+	@${ECHO} "report.scheduler.mail.sender.host=${JSMAILHOST}" >> ${QTZ_PROPERTIES}
+	@${ECHO} "report.scheduler.mail.sender.username=${JSMAILUSER}" >> ${QTZ_PROPERTIES}
+	@${ECHO} "report.scheduler.mail.sender.password=${JSMAILPASS}" >> ${QTZ_PROPERTIES}
+	@${ECHO} "report.scheduler.mail.sender.from=${JSMAILFROM}" >> ${QTZ_PROPERTIES}
+	@${ECHO} "report.scheduler.mail.sender.protocol=${JSMAILPROTO}" >> ${QTZ_PROPERTIES}
+	@${ECHO} "report.scheduler.mail.sender.port=${JSMAILPORT}" >> ${QTZ_PROPERTIES}
 
 post-build:
 	@if [ -L ~/.m2 ]; then ${RM} -f ~/.m2; fi
@@ -204,11 +221,13 @@ do-install:
 	@${INSTALL_DATA} ${FILESDIR}/jasperserverCreateDefaultSecurity-${DATABASE}.sql ${JSHOME}
 	@( cd ${SQLSRC} && ${INSTALL_DATA} ${DATABASE}/js-create.ddl ${JSHOME} )
 	@( cd ${SQLSRC} && ${INSTALL_DATA} ${DATABASE}/quartz.ddl ${JSHOME} )
-	@${INSTALL} -m 440 ${MAIL_PROPERTIES} ${JSHOME}/WEB-INF/
+	@( cd ${SQLSRC} && ${INSTALL_DATA} ${DATABASE}/upgrade-${DATABASE}-4.0.0-4.1.0-ce.sql ${JSHOME} )
+	@${INSTALL} -m 440 ${QTZ_PROPERTIES} ${JSHOME}/WEB-INF/
 
-.if ( defined(WITH_TOMCAT6) || defined(WITH_TOMCAT5) && !defined(WITH_MYSQL) )
+#removed shipped driver from vendor
+.if ( defined(WITH_TOMCAT6) || defined(WITH_TOMCAT5) && !defined(WITH_MYSQL) && defined(WITH_POSTGRESQL) || defined(WITH_POSTGRESQL9) )
 	${INSTALL_DATA} ${DISTDIR}/${JDBC} ${APPHOME}/${JDBCLOC}
-	@${RM} ${APPHOME}/${JDBCLOC}/postgresql-8.1-407.jdbc3.jar
+	@${RM} ${APPHOME}/${JDBCLOC}/postgresql-9.0-801.jdbc3.jar
 .endif
 
 post-install:

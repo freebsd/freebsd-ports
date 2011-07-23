@@ -8,6 +8,7 @@ The %%DATABASE%% schema and default security credentials have been copied to:
 
 - %%JSHOME%%/js-create.ddl
 - %%JSHOME%%/quartz.ddl 
+- %%JSHOME%%/upgrade-%%DATABASE%%-4.0.0-4.1.0-ce.sql
 and 
 - %%JSHOME%%/jasperserverCreateDefaultSecurity-%%DATABASE%%.sql 
 
@@ -28,20 +29,12 @@ Alternatively, you may choose to use the following method to create a suitable d
 
 ==============  W A R N I N G   I M P O R T A N T   N O T E  =================
 
-If UPGRADING from 3.5.0 to 4.0:
-(taken from release notes of 4.0 from vendor)
+If UPGRADING from 4.0.0 to 4.1.0:
+(taken from release notes of 4.1.0 from vendor)
 
-If you are upgrading from an older JasperServer version such as 3.5 then you
-must first upgrade to JasperServer 3.7 before upgrading to 4.0.
-Upgrading directly from JasperServer 3.5 to 4.0 is not a "certified" (i.e. fully
-QA tested) procedure.
-
-The steps to carry out this operation are fully documented in the JasperReports
-Server Installation Guide for the 3.7 release.  You will need to download the 
-JasperServer 3.7 release package to get the relevant files and documentation.
-To download the JasperServer 3.7 WAR file distribution zip package, go to the
-JasperForge.org website and to the JasperServer project.
-
+To upgrade from 4.0.0 to 4.1.0, refer to the recommended
+procedure described in the Installation Guide Chapter 8 
+"Upgrade from 4.0.0 to 4.1.0"
 ==============  W A R N I N G   I M P O R T A N T   N O T E  =================
 
 WWW: http://jasperforge.org/projects/jasperserver
