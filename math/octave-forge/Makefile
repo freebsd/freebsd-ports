@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge
 PORTVERSION=	20110205
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -31,7 +31,7 @@ OPTIONS=	\
 	DATAFRAME "Install package: dataframe" On \
 	ECONOMETRICS "Install package: econometrics" On \
 	ENGINE "Install package: engine" On \
-	ES "Install package: es" Off \
+	ES "Install package: es" On \
 	FENV "Install package: fenv" On \
 	FITS "Install package: fits" On \
 	FINANCIAL "Install package: financial" On \
@@ -74,7 +74,7 @@ OPTIONS=	\
 	PDB "Install package: pdb" On \
 	PHYSICALCONSTANTS "Install package: physicalconstants" On \
 	PLOT "Install package: plot" On \
-	PT_BR "Install package: pt_br" Off \
+	PT_BR "Install package: pt_br" On \
 	QUATERNION "Install package: quaternion" On \
 	SECS1D "Install package: secs1d" On \
 	SECS2D "Install package: secs2d" On \
