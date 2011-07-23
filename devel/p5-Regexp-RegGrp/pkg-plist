@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Regexp/RegGrp.pm
+%%SITE_PERL%%/Regexp/RegGrp/Data.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/RegGrp/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp/RegGrp
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Regexp
+@dirrm %%SITE_PERL%%/Regexp/RegGrp
+@dirrmtry %%SITE_PERL%%/Regexp

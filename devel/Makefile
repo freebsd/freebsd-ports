@@ -2180,6 +2180,7 @@
     SUBDIR += p5-Regexp-Assemble-Compressed
     SUBDIR += p5-Regexp-Bind
     SUBDIR += p5-Regexp-Grammars
+    SUBDIR += p5-Regexp-RegGrp
     SUBDIR += p5-Regexp-Shellish
     SUBDIR += p5-Regexp-Subst-Parallel
     SUBDIR += p5-Religion
