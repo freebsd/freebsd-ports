@@ -26,6 +26,8 @@ USE_RC_SUBR=	memcached
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=		--with-libevent=${LOCALBASE} --program-prefix=
 
+PORTSCOUT=	ignore
+
 OPTIONS=	REPCACHED	"Enable data replication feature"	off \
 		SASL		"Enable SASL support"			off
 
@@ -55,9 +57,8 @@ CONFIGURE_ARGS+=	--enable-replication --disable-threads
 LIB_DEPENDS+=		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 CONFIGURE_ARGS+=	--enable-sasl
 CFLAGS+=		-I${LOCALBASE}/include
-CPPFLAGS=		${CFLAGS}
 LDFLAGS+=		-L${LOCALBASE}/lib
-CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
 .else
 CONFIGURE_ARGS+=	--disable-sasl
 .endif
