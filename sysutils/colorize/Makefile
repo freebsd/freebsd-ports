@@ -8,13 +8,12 @@
 PORTNAME=	colorize
 PORTVERSION=	0.3.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://colorize.raszi.hu/downloads/
+MASTER_SITES=	ftp://ftp.lissyara.su/distfiles/ \
+		ftp://p3-800.lissyara.su/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	admin@lissyara.su
 COMMENT=	A robust log colorizer
-
-BROKEN=	Does not fetch
 
 RUN_DEPENDS=	${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
 
@@ -22,6 +21,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 
 NO_BUILD=	yes
 USE_PERL5=	yes
+SUB_FILES=	pkg-message
 
 MAN1=		colorize.1
 MANCOMPRESSED=	yes
