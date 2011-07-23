@@ -39,6 +39,8 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/solfege/mpd/rhythmwidget.pyc
 %%DATADIR%%/solfege/mpd/mpdutils.py
 %%DATADIR%%/solfege/mpd/mpdutils.pyc
+%%DATADIR%%/solfege/soundcard/solfege_c_midi.py
+%%DATADIR%%/solfege/soundcard/solfege_c_midi.pyc
 %%DATADIR%%/solfege/soundcard/alsa_sequencer.py
 %%DATADIR%%/solfege/soundcard/alsa_sequencer.pyc
 %%DATADIR%%/solfege/soundcard/soundcardexceptions.py
@@ -142,6 +144,19 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/help/C/profile-manager.html
 %%DATADIR%%/help/C/figures/profile-manager.png
 %%DATADIR%%/help/C/figures/statistics.png
+%%DATADIR%%/help/C/ly/theory-intervals-seconds.png
+%%DATADIR%%/help/C/ly/theory-intervals-fifths-1.png
+%%DATADIR%%/help/C/ly/theory-intervals-fifths.png
+%%DATADIR%%/help/C/ly/theory-intervals-seconds-2.png
+%%DATADIR%%/help/C/ly/theory-intervals-sixths.png
+%%DATADIR%%/help/C/ly/theory-intervals-thirds.png
+%%DATADIR%%/help/C/ly/inverting-intervals.png
+%%DATADIR%%/help/C/ly/theory-intervals-seconds-1.png
+%%DATADIR%%/help/C/ly/theory-intervals-fourths.png
+%%DATADIR%%/help/C/ly/theory-intervals-seconds-3.png
+%%DATADIR%%/help/C/ly/theory-intervals-1.png
+%%DATADIR%%/help/C/ly/theory-intervals-fifths-2.png
+%%DATADIR%%/help/C/ly/theory-intervals-sevenths.png
 %%DATADIR%%/help/eo/solfege-intro.html
 %%DATADIR%%/help/eo/idbyname.html
 %%DATADIR%%/help/eo/rhythmdictation-module.html
@@ -227,6 +242,14 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/help/eo/figures/elembuilder-harmonic-progressions.png
 %%DATADIR%%/help/eo/figures/singinterval.png
 %%DATADIR%%/help/eo/figures/idbyname-intonation.png
+%%DATADIR%%/help/eo/ly/theory-intervals-seconds.png
+%%DATADIR%%/help/eo/ly/theory-intervals-fifths.png
+%%DATADIR%%/help/eo/ly/theory-intervals-sixths.png
+%%DATADIR%%/help/eo/ly/theory-intervals-thirds.png
+%%DATADIR%%/help/eo/ly/inverting-intervals.png
+%%DATADIR%%/help/eo/ly/theory-intervals-fourths.png
+%%DATADIR%%/help/eo/ly/theory-intervals-1.png
+%%DATADIR%%/help/eo/ly/theory-intervals-sevenths.png
 %%DATADIR%%/help/et/extending-solfege.html
 %%DATADIR%%/help/et/idbyname.html
 %%DATADIR%%/help/et/solfege-intro.html
@@ -312,6 +335,14 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/help/et/figures/elembuilder-harmonic-progressions.png
 %%DATADIR%%/help/et/figures/singinterval.png
 %%DATADIR%%/help/et/figures/idbyname-intonation.png
+%%DATADIR%%/help/et/ly/theory-intervals-seconds.png
+%%DATADIR%%/help/et/ly/theory-intervals-fifths.png
+%%DATADIR%%/help/et/ly/theory-intervals-sixths.png
+%%DATADIR%%/help/et/ly/theory-intervals-thirds.png
+%%DATADIR%%/help/et/ly/inverting-intervals.png
+%%DATADIR%%/help/et/ly/theory-intervals-fourths.png
+%%DATADIR%%/help/et/ly/theory-intervals-1.png
+%%DATADIR%%/help/et/ly/theory-intervals-sevenths.png
 %%DATADIR%%/help/fr/idbyname.html
 %%DATADIR%%/help/fr/rhythmdictation-module.html
 %%DATADIR%%/help/fr/mpd-module.html
@@ -330,12 +361,28 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/help/fr/figures/trainingset-editor.png
 %%DATADIR%%/help/fr/figures/nameinterval.png
 %%DATADIR%%/help/fr/figures/elembuilder-harmonic-progressions.png
+%%DATADIR%%/help/fr/ly/theory-intervals-seconds.png
+%%DATADIR%%/help/fr/ly/theory-intervals-fifths.png
+%%DATADIR%%/help/fr/ly/theory-intervals-sixths.png
+%%DATADIR%%/help/fr/ly/theory-intervals-thirds.png
+%%DATADIR%%/help/fr/ly/inverting-intervals.png
+%%DATADIR%%/help/fr/ly/theory-intervals-fourths.png
+%%DATADIR%%/help/fr/ly/theory-intervals-1.png
+%%DATADIR%%/help/fr/ly/theory-intervals-sevenths.png
 %%DATADIR%%/help/gl/idbyname.html
 %%DATADIR%%/help/gl/rhythmdictation-module.html
 %%DATADIR%%/help/gl/rhythmdictation2-module.html
 %%DATADIR%%/help/gl/about-statistics.html
 %%DATADIR%%/help/gl/mpd-module.html
 %%DATADIR%%/help/gl/profile-manager.html
+%%DATADIR%%/help/gl/ly/theory-intervals-seconds.png
+%%DATADIR%%/help/gl/ly/theory-intervals-fifths.png
+%%DATADIR%%/help/gl/ly/theory-intervals-sixths.png
+%%DATADIR%%/help/gl/ly/theory-intervals-thirds.png
+%%DATADIR%%/help/gl/ly/inverting-intervals.png
+%%DATADIR%%/help/gl/ly/theory-intervals-fourths.png
+%%DATADIR%%/help/gl/ly/theory-intervals-1.png
+%%DATADIR%%/help/gl/ly/theory-intervals-sevenths.png
 %%DATADIR%%/help/nb/idbyname.html
 %%DATADIR%%/help/nb/rhythmdictation-module.html
 %%DATADIR%%/help/nb/rhythmdictation2-module.html
@@ -355,6 +402,14 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/help/nb/figures/trainingset-editor.png
 %%DATADIR%%/help/nb/figures/nameinterval.png
 %%DATADIR%%/help/nb/figures/elembuilder-harmonic-progressions.png
+%%DATADIR%%/help/nb/ly/theory-intervals-seconds.png
+%%DATADIR%%/help/nb/ly/theory-intervals-fifths.png
+%%DATADIR%%/help/nb/ly/theory-intervals-sixths.png
+%%DATADIR%%/help/nb/ly/theory-intervals-thirds.png
+%%DATADIR%%/help/nb/ly/inverting-intervals.png
+%%DATADIR%%/help/nb/ly/theory-intervals-fourths.png
+%%DATADIR%%/help/nb/ly/theory-intervals-1.png
+%%DATADIR%%/help/nb/ly/theory-intervals-sevenths.png
 %%DATADIR%%/help/nl/idbyname.html
 %%DATADIR%%/help/nl/rhythmdictation-module.html
 %%DATADIR%%/help/nl/rhythmdictation2-module.html
@@ -390,6 +445,14 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/help/nl/figures/elembuilder-harmonic-progressions.png
 %%DATADIR%%/help/nl/figures/singinterval.png
 %%DATADIR%%/help/nl/figures/idbyname-intonation.png
+%%DATADIR%%/help/nl/ly/theory-intervals-seconds.png
+%%DATADIR%%/help/nl/ly/theory-intervals-fifths.png
+%%DATADIR%%/help/nl/ly/theory-intervals-sixths.png
+%%DATADIR%%/help/nl/ly/theory-intervals-thirds.png
+%%DATADIR%%/help/nl/ly/inverting-intervals.png
+%%DATADIR%%/help/nl/ly/theory-intervals-fourths.png
+%%DATADIR%%/help/nl/ly/theory-intervals-1.png
+%%DATADIR%%/help/nl/ly/theory-intervals-sevenths.png
 %%DATADIR%%/help/pl/solfege-intro.html
 %%DATADIR%%/help/pl/idbyname.html
 %%DATADIR%%/help/pl/rhythmdictation-module.html
@@ -475,6 +538,14 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/help/pl/figures/elembuilder-harmonic-progressions.png
 %%DATADIR%%/help/pl/figures/singinterval.png
 %%DATADIR%%/help/pl/figures/idbyname-intonation.png
+%%DATADIR%%/help/pl/ly/theory-intervals-seconds.png
+%%DATADIR%%/help/pl/ly/theory-intervals-fifths.png
+%%DATADIR%%/help/pl/ly/theory-intervals-sixths.png
+%%DATADIR%%/help/pl/ly/theory-intervals-thirds.png
+%%DATADIR%%/help/pl/ly/inverting-intervals.png
+%%DATADIR%%/help/pl/ly/theory-intervals-fourths.png
+%%DATADIR%%/help/pl/ly/theory-intervals-1.png
+%%DATADIR%%/help/pl/ly/theory-intervals-sevenths.png
 %%DATADIR%%/help/pt_BR/idbyname.html
 %%DATADIR%%/help/pt_BR/rhythmdictation-module.html
 %%DATADIR%%/help/pt_BR/rhythmdictation2-module.html
@@ -494,12 +565,28 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/help/pt_BR/figures/nameinterval.png
 %%DATADIR%%/help/pt_BR/figures/elembuilder-harmonic-progressions.png
 %%DATADIR%%/help/pt_BR/figures/idbyname-intonation.png
+%%DATADIR%%/help/pt_BR/ly/theory-intervals-seconds.png
+%%DATADIR%%/help/pt_BR/ly/theory-intervals-fifths.png
+%%DATADIR%%/help/pt_BR/ly/theory-intervals-sixths.png
+%%DATADIR%%/help/pt_BR/ly/theory-intervals-thirds.png
+%%DATADIR%%/help/pt_BR/ly/inverting-intervals.png
+%%DATADIR%%/help/pt_BR/ly/theory-intervals-fourths.png
+%%DATADIR%%/help/pt_BR/ly/theory-intervals-1.png
+%%DATADIR%%/help/pt_BR/ly/theory-intervals-sevenths.png
 %%DATADIR%%/help/ru/idbyname.html
 %%DATADIR%%/help/ru/rhythmdictation-module.html
 %%DATADIR%%/help/ru/rhythmdictation2-module.html
 %%DATADIR%%/help/ru/about-statistics.html
 %%DATADIR%%/help/ru/mpd-module.html
 %%DATADIR%%/help/ru/profile-manager.html
+%%DATADIR%%/help/ru/ly/theory-intervals-seconds.png
+%%DATADIR%%/help/ru/ly/theory-intervals-fifths.png
+%%DATADIR%%/help/ru/ly/theory-intervals-sixths.png
+%%DATADIR%%/help/ru/ly/theory-intervals-thirds.png
+%%DATADIR%%/help/ru/ly/inverting-intervals.png
+%%DATADIR%%/help/ru/ly/theory-intervals-fourths.png
+%%DATADIR%%/help/ru/ly/theory-intervals-1.png
+%%DATADIR%%/help/ru/ly/theory-intervals-sevenths.png
 %%DATADIR%%/help/tr/idbyname.html
 %%DATADIR%%/help/tr/rhythmdictation-module.html
 %%DATADIR%%/help/tr/rhythmdictation2-module.html
@@ -518,6 +605,14 @@ share/pixmaps/solfege.svg
 %%DATADIR%%/help/tr/figures/trainingset-editor.png
 %%DATADIR%%/help/tr/figures/nameinterval.png
 %%DATADIR%%/help/tr/figures/elembuilder-harmonic-progressions.png
+%%DATADIR%%/help/tr/ly/theory-intervals-seconds.png
+%%DATADIR%%/help/tr/ly/theory-intervals-fifths.png
+%%DATADIR%%/help/tr/ly/theory-intervals-sixths.png
+%%DATADIR%%/help/tr/ly/theory-intervals-thirds.png
+%%DATADIR%%/help/tr/ly/inverting-intervals.png
+%%DATADIR%%/help/tr/ly/theory-intervals-fourths.png
+%%DATADIR%%/help/tr/ly/theory-intervals-1.png
+%%DATADIR%%/help/tr/ly/theory-intervals-sevenths.png
 %%DATADIR%%/exercises/standard/csound-tree.txt
 %%DATADIR%%/exercises/standard/debugtree.txt
 %%DATADIR%%/exercises/standard/learningtree.txt
@@ -2693,24 +2788,34 @@ share/pixmaps/solfege.svg
 @dirrm %%DATADIR%%/lesson-files
 @dirrm %%DATADIR%%/learningtrees
 @dirrm %%DATADIR%%/help/tr/figures
+@dirrm %%DATADIR%%/help/tr/ly
 @dirrm %%DATADIR%%/help/tr
 @dirrm %%DATADIR%%/help/ru/figures
+@dirrm %%DATADIR%%/help/ru/ly
 @dirrm %%DATADIR%%/help/ru
 @dirrm %%DATADIR%%/help/pt_BR/figures
+@dirrm %%DATADIR%%/help/pt_BR/ly
 @dirrm %%DATADIR%%/help/pt_BR
 @dirrm %%DATADIR%%/help/nb/figures
+@dirrm %%DATADIR%%/help/nb/ly
 @dirrm %%DATADIR%%/help/nb
 @dirrm %%DATADIR%%/help/nl/figures
+@dirrm %%DATADIR%%/help/nl/ly
 @dirrm %%DATADIR%%/help/nl
 @dirrm %%DATADIR%%/help/gl/figures
+@dirrm %%DATADIR%%/help/gl/ly
 @dirrm %%DATADIR%%/help/gl
 @dirrm %%DATADIR%%/help/fr/figures
+@dirrm %%DATADIR%%/help/fr/ly
 @dirrm %%DATADIR%%/help/fr
 @dirrm %%DATADIR%%/help/eo/figures
+@dirrm %%DATADIR%%/help/eo/ly
 @dirrm %%DATADIR%%/help/eo
 @dirrm %%DATADIR%%/help/et/figures
+@dirrm %%DATADIR%%/help/et/ly
 @dirrm %%DATADIR%%/help/et
 @dirrm %%DATADIR%%/help/pl/figures
+@dirrm %%DATADIR%%/help/pl/ly
 @dirrm %%DATADIR%%/help/pl
 @dirrm %%DATADIR%%/help/C/scales/images/triads
 @dirrm %%DATADIR%%/help/C/scales/images/quadriads
