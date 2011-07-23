@@ -1,6 +1,14 @@
---- zmrx.c.orig	Sun Oct 13 12:25:53 1996
-+++ zmrx.c	Mon Oct 14 20:17:03 1996
-@@ -70,7 +70,7 @@
+--- ./zmrx.c.orig	1996-12-11 23:24:08.000000000 -0800
++++ ./zmrx.c	2011-07-22 17:33:19.603250928 -0700
+@@ -15,6 +15,7 @@
+ 
+ #include <ctype.h>
+ #include <stdio.h>
++#include <stdlib.h>
+ #include <fcntl.h>
+ #include <sys/stat.h>
+ #include <string.h>
+@@ -70,7 +71,7 @@
  
  	cps = ftell(fp) / duration;
  
@@ -9,7 +17,7 @@
  		name,ftell(fp),percentage,cps);
  }
  
-@@ -223,7 +223,7 @@
+@@ -223,7 +224,7 @@
  	}
  
  	if (opt_v) {
@@ -18,7 +26,7 @@
  	}
  
  	sscanf(rx_data_subpacket + strlen(rx_data_subpacket) + 1,
-@@ -342,7 +342,7 @@
+@@ -342,7 +343,7 @@
  	 */
  
  	if (opt_v) {
