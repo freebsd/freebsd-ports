@@ -7,7 +7,7 @@
 
 PORTNAME=	octave-forge
 PORTVERSION=	20110205
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -25,7 +25,7 @@ OPTIONS=	\
 	BIOINFO "Install package: bioinfo" On \
 	CIVIL_ENGINEERING "Install package: civil-engineering" On \
 	COMBINATORICS "Install package: combinatorics" On \
-	COMMUNICATIONS "Install package: communications" Off \
+	COMMUNICATIONS "Install package: communications" On \
 	CONTROL "Install package: control" On \
 	DATA_SMOOTHING "Install package: data-smoothing" On \
 	DATAFRAME "Install package: dataframe" On \
@@ -38,7 +38,7 @@ OPTIONS=	\
 	FL_CORE "Install package: fl-core" On \
 	FPL "Install package: fpl" On \
 	FUZZY_LOGIC_TOOLKIT "Install package: fuzzy-logic-toolkit" On \
-	GA "Install package: ga" Off \
+	GA "Install package: ga" On \
 	GENERAL "Install package: general" On \
 	GENERATE_HTML "Install package: generate_html" On \
 	GNUPLOT "Install package: gnuplot" On \
