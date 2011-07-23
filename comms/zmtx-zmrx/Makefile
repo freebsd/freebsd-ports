@@ -19,6 +19,7 @@ MAKEFILE=	makefile
 MAKE_JOBS_SAFE=	yes
 MAN1=		zmrx.1 zmtx.1
 PLIST_FILES=	bin/zmrx bin/zmtx
+USE_CSTD=	gnu89
 
 do-install:
 .for f in zmrx zmtx

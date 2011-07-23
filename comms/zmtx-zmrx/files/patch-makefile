@@ -1,0 +1,10 @@
+--- ./makefile.orig	1996-12-11 23:24:07.000000000 -0800
++++ ./makefile	2011-07-22 17:33:29.953245477 -0700
+@@ -1,6 +1,5 @@
+-CC=gcc
+ #CFLAGS=-O -DUNITE
+-CFLAGS=-O -DSUNOS4
++CFLAGS+=-DSUNOS4
+ 
+ all:	zmtx zmrx
+ 
