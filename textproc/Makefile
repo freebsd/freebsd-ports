@@ -464,6 +464,7 @@
     SUBDIR += p5-CSS
     SUBDIR += p5-CSS-Croco
     SUBDIR += p5-CSS-Minifier-XS
+    SUBDIR += p5-CSS-Packer
     SUBDIR += p5-CSS-SAC
     SUBDIR += p5-CSS-Simple
     SUBDIR += p5-CSS-Squish
