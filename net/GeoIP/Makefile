@@ -7,6 +7,7 @@
 
 PORTNAME=	GeoIP
 PORTVERSION=	1.4.8
+PORTREVISION=	1
 CATEGORIES=	net geography
 MASTER_SITES=	http://geolite.maxmind.com/download/geoip/api/c/
 
@@ -21,6 +22,10 @@ USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 
 MAN1=		geoiplookup.1 geoipupdate.1 geoiplookup6.1
+
+run-autotools:
+	@${REINPLACE_CMD} -e '/^LIBTOOL=/s^\$$(top_builddir)/libtool^${LIBTOOL}^g' \
+	${WRKSRC}/aclocal.m4
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/geoipupdate.sh ${PREFIX}/bin/
