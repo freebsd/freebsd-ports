@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	GeoIP
-PORTVERSION=	1.4.7
+PORTVERSION=	1.4.8
 CATEGORIES=	net geography
 MASTER_SITES=	http://geolite.maxmind.com/download/geoip/api/c/
 
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Find the country that any IP address or hostname originates from
+
+CONFIGURE_ARGS=	CC="${CC}" PATH="${PATH}" \
+			CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
 USE_GNOME=	gnometarget
 USE_AUTOTOOLS=	libtool
