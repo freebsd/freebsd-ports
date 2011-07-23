@@ -66,8 +66,8 @@ libdata/pkgconfig/mono-addins.pc
 @dirrm lib/mono/gac/policy.0.5.Mono.Addins.Setup
 @dirrm lib/mono/gac/policy.0.5.Mono.Addins.MSBuild/0.0.0.0__0738eb9f132ed756
 @dirrm lib/mono/gac/policy.0.5.Mono.Addins.MSBuild
-@dirrm lib/mono/gac/policy.0.5.Mono.Addins.Gui/0.0.0.0__0738eb9f132ed756
-@dirrm lib/mono/gac/policy.0.5.Mono.Addins.Gui
+%%OPT_GTK2%%@dirrm lib/mono/gac/policy.0.5.Mono.Addins.Gui/0.0.0.0__0738eb9f132ed756
+%%OPT_GTK2%%@dirrm lib/mono/gac/policy.0.5.Mono.Addins.Gui
 @dirrm lib/mono/gac/policy.0.5.Mono.Addins.CecilReflector/0.0.0.0__0738eb9f132ed756
 @dirrm lib/mono/gac/policy.0.5.Mono.Addins.CecilReflector
 @dirrm lib/mono/gac/policy.0.5.Mono.Addins
