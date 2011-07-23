@@ -7,13 +7,11 @@
 
 PORTNAME=	octave-forge-communications
 PORTVERSION=	1.0.10
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-
-BROKEN=		Does not build with Octave-3.4.0
 
 GNU_CONFIGURE=	yes
 RUN_DEPENDS+=	${TARBALLS_DIR}/signal.tar.gz:${PORTSDIR}/math/octave-forge-signal
