@@ -14289,6 +14289,7 @@ p5-Term-Screen                  ports/devel/p5-Term-Screen
 p5-Term-Shell                   ports/devel/p5-Term-Shell
 p5-Term-ShellUI                 ports/shells/p5-Term-ShellUI
 p5-Term-Size                    ports/devel/p5-Term-Size
+p5-Term-Sk                      ports/devel/p5-Term-Sk
 p5-Term-Title                   ports/devel/p5-Term-Title
 p5-Term-UI                      ports/devel/p5-Term-UI
 p5-Term-VT102                   ports/devel/p5-Term-VT102
@@ -18619,6 +18620,7 @@ p5-term-screen                  ports/devel/p5-Term-Screen
 p5-term-shell                   ports/devel/p5-Term-Shell
 p5-term-shellui                 ports/shells/p5-Term-ShellUI
 p5-term-size                    ports/devel/p5-Term-Size
+p5-term-sk                      ports/devel/p5-Term-Sk
 p5-term-title                   ports/devel/p5-Term-Title
 p5-term-ui                      ports/devel/p5-Term-UI
 p5-term-visual                  ports/devel/p5-Term-Visual
@@ -22028,6 +22030,7 @@ py-pylons                       ports/www/py-pylons
 py-pymarc                       ports/devel/py-pymarc
 py-pymc                         ports/math/py-pymc
 py-pyme                         ports/security/py-pyme
+py-pymysql                      ports/databases/py-pymysql
 py-pynzb                        ports/news/py-pynzb
 py-pypcap                       ports/net/py-pypcap
 py-pypgsql                      ports/databases/py-pyPgSQL
@@ -22879,6 +22882,7 @@ redeclipse                      ports/games/redeclipse
 redet                           ports/textproc/redet
 redir                           ports/net/redir
 redis                           ports/databases/redis
+redis-scripting                 ports/databases/redis-scripting
 redland                         ports/textproc/redland
 redland-bindings                ports/textproc/redland-bindings
 redland-bindings-python         ports/textproc/redland-bindings-python
