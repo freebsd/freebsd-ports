@@ -7,13 +7,11 @@
 
 PORTNAME=	octave-forge-pt_br
 PORTVERSION=	1.0.9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 
 MAINTAINER=	stephen@FreeBSD.org
 COMMENT=	Octave-forge package ${OCTAVE_PKGNAME}
-
-BROKEN=		Does not build with octave-3.4.0
 
 WRKSRC=		${WRKDIR}/pt_BR/src
 
