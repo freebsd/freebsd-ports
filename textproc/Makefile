@@ -513,6 +513,7 @@
     SUBDIR += p5-IDNA-Punycode
     SUBDIR += p5-IO-CSVHeaderFile
     SUBDIR += p5-JavaScript-Minifier-XS
+    SUBDIR += p5-JavaScript-Packer
     SUBDIR += p5-KinoSearch
     SUBDIR += p5-Kwalify
     SUBDIR += p5-LaTeX-Driver
