@@ -6,6 +6,7 @@
 #
 
 WITHOUT_X11=	yes
+PORTSCOUT=	ignore
 
 MASTERDIR=	${.CURDIR}/../ImageMagick
 
