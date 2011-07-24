@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	i2p
-PORTVERSION=	0.8.1
+PORTVERSION=	0.8.7
 CATEGORIES=	net-p2p java security
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}:i2p \
 		http://mirror.i2p2.de/:i2p \
@@ -19,14 +19,15 @@ EXTRACT_ONLY=	i2psource_${PORTVERSION}${EXTRACT_SUFX}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	An anonymizing network
 
+LICENSE=	ASL EULA
+LICENSE_COMB=	multi
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/gmp
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
-LICENSE=	ASL EULA
 LICENSE_NAME_EULA=	End User License Agreement
 LICENSE_PERMS_EULA=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 LICENSE_FILE_EULA=	${WRKSRC}/LICENSE.txt
-LICENSE_COMB=	multi
 LICENSE_DISTFILES_ASL=	${JETTY_DISTFILE}
 LICENSE_DISTFILES_EULA=	i2psource_${PORTVERSION}${EXTRACT_SUFX}
 
