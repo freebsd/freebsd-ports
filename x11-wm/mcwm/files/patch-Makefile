@@ -1,14 +1,16 @@
---- Makefile.orig	2011-04-12 11:25:25.000000000 +0200
-+++ Makefile	2011-04-12 11:34:56.000000000 +0200
-@@ -3,12 +3,11 @@
+--- Makefile.orig	2011-07-23 09:36:24.000000000 +0200
++++ Makefile	2011-07-23 17:19:30.000000000 +0200
+@@ -3,13 +3,12 @@ DIST=mcwm-$(VERSION)
  SRC=mcwm.c list.c config.h events.h list.h
  DISTFILES=LICENSE Makefile NEWS README TODO WISHLIST mcwm.man $(SRC)
  
 -CC=gcc
 -CFLAGS=-g -std=c99 -Wall -Wextra -O2 -I/usr/local/include #-DDEBUG #-DDMALLOC
--LDFLAGS=-L/usr/local/lib -lxcb -lxcb-keysyms -lxcb-icccm -lxcb-atom #-ldmalloc
-+CFLAGS+=-g -std=c99 -Wall -Wextra -O2 -I/usr/local/include 
-+LDFLAGS+=-L/usr/local/lib -lxcb -lxcb-keysyms -lxcb-icccm -lxcb-atom 
+-LDFLAGS=-L/usr/local/lib -lxcb -lxcb-randr -lxcb-keysyms -lxcb-icccm \
+-	-lxcb-atom #-ldmalloc
++CFLAGS+=-g -std=c99 -Wall -Wextra -I/usr/local/include 
++LDFLAGS+=-L/usr/local/lib -lxcb -lxcb-randr -lxcb-keysyms -lxcb-icccm \
++	-lxcb-atom 
  
  RM=/bin/rm
 -PREFIX=/usr/local
@@ -16,7 +18,7 @@
  
  TARGETS=mcwm
  OBJS=mcwm.o list.o
-@@ -27,12 +26,13 @@
+@@ -28,13 +27,14 @@ mcwm.o: mcwm.c events.h list.h config.h 
  list.o: list.c list.h Makefile
  
  install: $(TARGETS)
@@ -30,7 +32,9 @@
  deinstall:
 -	$(RM) $(PREFIX)/bin/mcwm
 -	$(RM) $(PREFIX)/man/man1/mcwm.1
+-
 +	$(RM) ${DESTDIR}$(PREFIX)/bin/mcwm
- 
++	
  $(DIST).tar.bz2:
  	mkdir $(DIST)
+ 	cp $(DISTFILES) $(DIST)/
