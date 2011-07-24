@@ -1,0 +1,8 @@
+Markov bots like Hailo and AI::MegaHAL are fun. But to get them working you
+either need to train them on existing training material or make your own.
+
+Bot::Training provides a pluggable way to install already existing training
+files via the CPAN. Bot::Training also comes with a command-line interface
+called bot-training.
+
+WWW: http://search.cpan.org/dist/Bot-Training/
