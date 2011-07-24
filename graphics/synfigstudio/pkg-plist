@@ -93,6 +93,8 @@ include/synfigapp-0.0/synfigapp/valuenodeconstunsetstatic.h
 lib/libsynfigapp.la
 lib/libsynfigapp.so
 lib/libsynfigapp.so.0
+share/mime/application/x-sif.xml
+share/mime/packages/synfigstudio.xml
 share/applications/synfigstudio.desktop
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
@@ -106,7 +108,9 @@ share/locale/it/LC_MESSAGES/synfigstudio.mo
 share/locale/ca/LC_MESSAGES/synfigstudio.mo
 share/locale/es/LC_MESSAGES/synfigstudio.mo
 share/locale/fr/LC_MESSAGES/synfigstudio.mo
+share/locale/pt_BR/LC_MESSAGES/synfigstudio.mo
 share/locale/ru/LC_MESSAGES/synfigstudio.mo
+share/locale/sk/LC_MESSAGES/synfigstudio.mo
 share/locale/zh_CN/LC_MESSAGES/synfigstudio.mo
 share/mime-info/synfigstudio.keys
 share/mime-info/synfigstudio.mime
@@ -120,6 +124,12 @@ share/icons/hicolor/64x64/apps/synfig_icon.png
 share/icons/hicolor/scalable/apps/synfig_icon.svg
 share/pixmaps/sif_icon.png
 share/pixmaps/synfig_icon.png
+share/pixmaps/synfigstudio/action_flat_interpolation_icon.png
+share/pixmaps/synfigstudio/action_interpolate_interpolation_icon.png
+share/pixmaps/synfigstudio/action_peak_interpolation_icon.png
+share/pixmaps/synfigstudio/action_rounded_interpolation_icon.png
+share/pixmaps/synfigstudio/action_squared_interpolation_icon.png
+share/pixmaps/synfigstudio/layer_geometry_advanced_outline_icon.png
 share/pixmaps/synfigstudio/splash_screen.png
 share/pixmaps/synfigstudio/layer_blur_blur_icon.png
 share/pixmaps/synfigstudio/layer_example_metaballs_icon.png

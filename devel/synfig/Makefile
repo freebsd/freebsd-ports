@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	synfig
-DISTVERSION=	0.62.02
-PORTREVISION=	1
+DISTVERSION=	0.63.00
 CATEGORIES=	devel graphics multimedia
 MASTER_SITES=	SF
 
@@ -36,9 +35,15 @@ ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu`
 
 post-patch:
 	@${REINPLACE_CMD} -e '/optimization_flags/s|CXXFLAGS=|#CXXFLAGS=| ; \
-		 /optimization_flags/s|CFLAGS=|#CFLAGS=|' ${WRKSRC}/configure
+		 /optimization_flags/s|CFLAGS=|#CFLAGS=|' -e \
+		's|no_NO|no|g' -e \
+		's|pl_PL|pl|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e '/url_fclose/s|&formatc|formatc|g' \
 		${WRKSRC}/src/modules/mod_libavcodec/trgt_av.cpp
+
+# FIX LC_MESSAGES
+	${MV} ${WRKSRC}/po/no_NO.gmo ${WRKSRC}/po/no.gmo
+	${MV} ${WRKSRC}/po/pl_PL.gmo ${WRKSRC}/po/pl.gmo
 
 post-install:
 .if !defined(NOPORTDOCS)
