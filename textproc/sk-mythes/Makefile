@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sk-mythes
-PORTVERSION=	2011.06.08
+PORTVERSION=	2011.07.23.
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.sk-spell.sk.cx/thesaurus/download/
 DISTNAME=	OOo-Thesaurus2-sk_SK
