@@ -1,5 +1,6 @@
-QComicBook is a viewer for comic book archives containing jpeg/png
-images, which aims at convenience and simplicity. Features include:
+QComicBook is a viewer for comic book archives (.cbr, .cbz and
+alike) containing jpeg/png/xpm/gif/bmp images, which aims at speed,
+convenience and ease of use. Features include:
 
 	* automatic handling of archives
 	* full-screen mode
@@ -8,6 +9,7 @@ images, which aims at convenience and simplicity. Features include:
 	* page scaling (fit to window witdth/height, whole page)
 	* mouse or keyboard navigation, whatever you prefer
 	* bookmarks
+	* PDF support
 	* and more... 
 
 WWW: http://qcomicbook.linux-projects.net/

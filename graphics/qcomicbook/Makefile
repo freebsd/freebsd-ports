@@ -6,22 +6,24 @@
 #
 
 PORTNAME=	qcomicbook
-PORTVERSION=	0.6.0
+PORTVERSION=	0.8.1
 CATEGORIES=	graphics
 MASTER_SITES=	http://qcomicbook.linux-projects.net/releases/
 
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	QT-based comic book archive viewer
 
-BUILD_DEPENDS=	lrelease-qt4:${PORTSDIR}/devel/qt4-linguist
-RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
-		unrar:${PORTSDIR}/archivers/unrar
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
+BUILD_DEPENDS=	lrelease-qt4:${PORTSDIR}/devel/qt4-linguist
+LIB_DEPENDS=	poppler-qt4.3:${PORTSDIR}/graphics/poppler-qt4
+RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip \
+		unrar:${PORTSDIR}/archivers/unrar
+
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui moc_build qmake_build rcc_build uic_build
+QT_COMPONENTS=	corelib gui moc_build qmake_build rcc_build uic_build \
+		xml
 USE_CMAKE=	yes
 MAKE_JOBS_SAFE=	yes
 
@@ -29,14 +31,21 @@ PLIST_FILES=	\
 		${DESKTOPDIR:S,^${PREFIX}/,,}/${PORTNAME}.desktop \
 		bin/qcomicbook \
 		share/pixmaps/qcomicbook.png \
+		share/qcomicbook/i18n/qcomicbook_cs_CZ.qm \
+		share/qcomicbook/i18n/qcomicbook_de_DE.qm \
 		share/qcomicbook/i18n/qcomicbook_es_ES.qm \
 		share/qcomicbook/i18n/qcomicbook_it_IT.qm \
 		share/qcomicbook/i18n/qcomicbook_fi_FI.qm \
 		share/qcomicbook/i18n/qcomicbook_fr_FR.qm \
 		share/qcomicbook/i18n/qcomicbook_fr_CA.qm \
+		share/qcomicbook/i18n/qcomicbook_ko_KR.qm \
+		share/qcomicbook/i18n/qcomicbook_nl_NL.qm \
 		share/qcomicbook/i18n/qcomicbook_pl_PL.qm \
 		share/qcomicbook/i18n/qcomicbook_pt_BR.qm \
-		share/qcomicbook/i18n/qcomicbook_uk_UA.qm
+		share/qcomicbook/i18n/qcomicbook_ru_RU.qm \
+		share/qcomicbook/i18n/qcomicbook_uk_UA.qm \
+		share/qcomicbook/i18n/qcomicbook_zh_CN.qm
+
 #
 PLIST_DIRS=	share/qcomicbook/i18n \
 		share/qcomicbook
