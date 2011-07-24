@@ -7,6 +7,7 @@
 
 PORTNAME=	estraier
 PORTVERSION=	1.2.30
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://fallabs.com/estraier/
 
