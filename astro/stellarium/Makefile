@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stellarium
-PORTVERSION=	0.10.6
+PORTVERSION=	0.11.0
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Stellarium-sources/${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
@@ -30,7 +30,7 @@ PORTDOCS=	AUTHORS ChangeLog README
 
 DESKTOP_ENTRIES="Stellarium" "View the sky" \
 		"${DATADIR}/data/stellarium.ico" "${PORTNAME}" \
-		"Application;Astronomy;Education;Science;" ${FALSE}
+		"Application;Astronomy;Education;Science;" false
 
 OPTIONS=	MORE_STARS	"Install extra star catalogs (1.2GB)"	off
 
