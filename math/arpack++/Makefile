@@ -18,7 +18,7 @@ PATCH_SITES=	http://reuter.mit.edu/blue/software/ \
 PATCHFILES=	arpack++1.2.patch.diff
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	ARPACK++ is an object-oriented version of the ARPACK package
 
 RUN_DEPENDS=	${LOCALBASE}/lib/libsuperlu.a:${PORTSDIR}/math/superlu

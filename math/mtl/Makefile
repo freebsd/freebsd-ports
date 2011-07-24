@@ -12,7 +12,7 @@ CATEGORIES=	math devel
 MASTER_SITES=	http://www.osl.iu.edu/download/research/mtl/
 DISTNAME=	${PORTNAME}-2.1.2-22
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	The Matrix Template Library
 
 GNU_CONFIGURE=	yes

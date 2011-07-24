@@ -12,7 +12,7 @@ PORTEPOCH=	1
 CATEGORIES=	math parallel
 MASTER_SITES=	ftp://ftp.mcs.anl.gov/pub/petsc/release-snapshots/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Portable, Extensible Toolkit for Scientific computation
 
 RUN_DEPENDS=	ksh:${PORTSDIR}/shells/pdksh	\

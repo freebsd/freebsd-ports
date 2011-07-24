@@ -14,7 +14,7 @@ MASTER_SITES=	GNU \
 		http://gnunet.org/download/
 DISTNAME=	GNUnet-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	An anonymous, distributed, reputation-based network
 
 LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns \

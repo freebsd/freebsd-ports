@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.tau.ac.il/~stoledo/taucs/${PORTVERSION}/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	C library of sparse linear solvers
 
 USE_FORTRAN=	yes
