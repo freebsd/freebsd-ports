@@ -1,4 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/.packlist
+bin/hypnotoad
+bin/mojo
+bin/morbo
 %%SITE_PERL%%/Mojo.pm
 %%SITE_PERL%%/Mojo/Asset.pm
 %%SITE_PERL%%/Mojo/Asset/File.pm
@@ -6,7 +8,6 @@
 %%SITE_PERL%%/Mojo/Base.pm
 %%SITE_PERL%%/Mojo/ByteStream.pm
 %%SITE_PERL%%/Mojo/Cache.pm
-%%SITE_PERL%%/Mojo/Client.pm
 %%SITE_PERL%%/Mojo/Command.pm
 %%SITE_PERL%%/Mojo/Content.pm
 %%SITE_PERL%%/Mojo/Content/MultiPart.pm
@@ -16,12 +17,18 @@
 %%SITE_PERL%%/Mojo/Cookie/Response.pm
 %%SITE_PERL%%/Mojo/CookieJar.pm
 %%SITE_PERL%%/Mojo/DOM.pm
+%%SITE_PERL%%/Mojo/DOM/CSS.pm
+%%SITE_PERL%%/Mojo/DOM/Collection.pm
+%%SITE_PERL%%/Mojo/DOM/HTML.pm
 %%SITE_PERL%%/Mojo/Date.pm
 %%SITE_PERL%%/Mojo/Exception.pm
 %%SITE_PERL%%/Mojo/Headers.pm
 %%SITE_PERL%%/Mojo/HelloWorld.pm
 %%SITE_PERL%%/Mojo/Home.pm
 %%SITE_PERL%%/Mojo/IOLoop.pm
+%%SITE_PERL%%/Mojo/IOWatcher.pm
+%%SITE_PERL%%/Mojo/IOWatcher/Epoll.pm
+%%SITE_PERL%%/Mojo/IOWatcher/KQueue.pm
 %%SITE_PERL%%/Mojo/JSON.pm
 %%SITE_PERL%%/Mojo/Loader.pm
 %%SITE_PERL%%/Mojo/Log.pm
@@ -30,11 +37,13 @@
 %%SITE_PERL%%/Mojo/Message/Response.pm
 %%SITE_PERL%%/Mojo/Parameters.pm
 %%SITE_PERL%%/Mojo/Path.pm
+%%SITE_PERL%%/Mojo/Resolver.pm
 %%SITE_PERL%%/Mojo/Server.pm
 %%SITE_PERL%%/Mojo/Server/CGI.pm
 %%SITE_PERL%%/Mojo/Server/Daemon.pm
 %%SITE_PERL%%/Mojo/Server/FastCGI.pm
 %%SITE_PERL%%/Mojo/Server/Hypnotoad.pm
+%%SITE_PERL%%/Mojo/Server/Morbo.pm
 %%SITE_PERL%%/Mojo/Server/PSGI.pm
 %%SITE_PERL%%/Mojo/Template.pm
 %%SITE_PERL%%/Mojo/Transaction.pm
@@ -43,10 +52,12 @@
 %%SITE_PERL%%/Mojo/URL.pm
 %%SITE_PERL%%/Mojo/Upload.pm
 %%SITE_PERL%%/Mojo/UserAgent.pm
+%%SITE_PERL%%/Mojo/UserAgent/Transactor.pm
 %%SITE_PERL%%/Mojo/Util.pm
 %%SITE_PERL%%/Mojolicious.pm
 %%SITE_PERL%%/Mojolicious/Command/Cgi.pm
 %%SITE_PERL%%/Mojolicious/Command/Daemon.pm
+%%SITE_PERL%%/Mojolicious/Command/Eval.pm
 %%SITE_PERL%%/Mojolicious/Command/Fastcgi.pm
 %%SITE_PERL%%/Mojolicious/Command/Generate.pm
 %%SITE_PERL%%/Mojolicious/Command/Generate/App.pm
@@ -72,7 +83,7 @@
 %%SITE_PERL%%/Mojolicious/Guides/Routing.pod
 %%SITE_PERL%%/Mojolicious/Lite.pm
 %%SITE_PERL%%/Mojolicious/Plugin.pm
-%%SITE_PERL%%/Mojolicious/Plugin/AgentCondition.pm
+%%SITE_PERL%%/Mojolicious/Plugin/CallbackCondition.pm
 %%SITE_PERL%%/Mojolicious/Plugin/Charset.pm
 %%SITE_PERL%%/Mojolicious/Plugin/Config.pm
 %%SITE_PERL%%/Mojolicious/Plugin/DefaultHelpers.pm
@@ -81,6 +92,7 @@
 %%SITE_PERL%%/Mojolicious/Plugin/HeaderCondition.pm
 %%SITE_PERL%%/Mojolicious/Plugin/I18n.pm
 %%SITE_PERL%%/Mojolicious/Plugin/JsonConfig.pm
+%%SITE_PERL%%/Mojolicious/Plugin/Mount.pm
 %%SITE_PERL%%/Mojolicious/Plugin/PodRenderer.pm
 %%SITE_PERL%%/Mojolicious/Plugin/PoweredBy.pm
 %%SITE_PERL%%/Mojolicious/Plugin/RequestTimer.pm
@@ -93,34 +105,39 @@
 %%SITE_PERL%%/Mojolicious/Sessions.pm
 %%SITE_PERL%%/Mojolicious/Static.pm
 %%SITE_PERL%%/Mojolicious/Types.pm
+%%SITE_PERL%%/Mojolicious/public/amelia.png
 %%SITE_PERL%%/Mojolicious/public/css/prettify-mojo.css
 %%SITE_PERL%%/Mojolicious/public/css/prettify.css
-%%SITE_PERL%%/Mojolicious/public/js/jquery.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-wiki.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-css.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-lisp.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-sql.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-scala.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-yaml.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-vhdl.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-apollo.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-vb.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-hs.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-proto.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-ml.js
-%%SITE_PERL%%/Mojolicious/public/js/prettify.js
-%%SITE_PERL%%/Mojolicious/public/js/lang-lua.js
 %%SITE_PERL%%/Mojolicious/public/failraptor.png
-%%SITE_PERL%%/Mojolicious/public/mojolicious-box.png
-%%SITE_PERL%%/Mojolicious/public/mojolicious-noraptor.png
-%%SITE_PERL%%/Mojolicious/public/mojolicious-white.png
-%%SITE_PERL%%/Mojolicious/public/mojolicious-clouds.png
-%%SITE_PERL%%/Mojolicious/public/mojolicious-black.png
-%%SITE_PERL%%/Mojolicious/public/mojolicious-arrow.png
-%%SITE_PERL%%/Mojolicious/public/amelia.png
 %%SITE_PERL%%/Mojolicious/public/favicon.ico
-%%SITE_PERL%%/Mojolicious/public/mojolicious-pinstripe.gif
+%%SITE_PERL%%/Mojolicious/public/js/jquery.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-apollo.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-clj.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-css.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-go.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-hs.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-lisp.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-lua.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-ml.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-n.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-proto.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-scala.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-sql.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-tex.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-vb.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-vhdl.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-wiki.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-xq.js
+%%SITE_PERL%%/Mojolicious/public/js/lang-yaml.js
+%%SITE_PERL%%/Mojolicious/public/js/prettify.js
+%%SITE_PERL%%/Mojolicious/public/mojolicious-arrow.png
+%%SITE_PERL%%/Mojolicious/public/mojolicious-black.png
+%%SITE_PERL%%/Mojolicious/public/mojolicious-box.png
+%%SITE_PERL%%/Mojolicious/public/mojolicious-clouds.png
+%%SITE_PERL%%/Mojolicious/public/mojolicious-noraptor.png
 %%SITE_PERL%%/Mojolicious/public/mojolicious-notfound.png
+%%SITE_PERL%%/Mojolicious/public/mojolicious-pinstripe.gif
+%%SITE_PERL%%/Mojolicious/public/mojolicious-white.png
 %%SITE_PERL%%/Mojolicious/templates/exception.development.html.ep
 %%SITE_PERL%%/Mojolicious/templates/exception.html.ep
 %%SITE_PERL%%/Mojolicious/templates/mojobar.html.ep
@@ -129,36 +146,27 @@
 %%SITE_PERL%%/Mojolicious/templates/perldoc.html.ep
 %%SITE_PERL%%/README.pod
 %%SITE_PERL%%/Test/Mojo.pm
+%%SITE_PERL%%/mach/auto/Mojolicious/.packlist
 %%SITE_PERL%%/ojo.pm
-bin/hypnotoad
-bin/mojo
+@dirrmtry %%SITE_PERL%%/mach/auto/Mojolicious
 @dirrmtry %%SITE_PERL%%/Test
+@dirrmtry %%SITE_PERL%%/Mojolicious/templates
+@dirrmtry %%SITE_PERL%%/Mojolicious/public/js
+@dirrmtry %%SITE_PERL%%/Mojolicious/public/css
+@dirrmtry %%SITE_PERL%%/Mojolicious/public
 @dirrmtry %%SITE_PERL%%/Mojolicious/Routes
 @dirrmtry %%SITE_PERL%%/Mojolicious/Plugin
 @dirrmtry %%SITE_PERL%%/Mojolicious/Guides
 @dirrmtry %%SITE_PERL%%/Mojolicious/Command/Generate
 @dirrmtry %%SITE_PERL%%/Mojolicious/Command
-@dirrmtry %%SITE_PERL%%/Mojolicious/templates
-@dirrmtry %%SITE_PERL%%/Mojolicious/public/js
-@dirrmtry %%SITE_PERL%%/Mojolicious/public/css
-@dirrmtry %%SITE_PERL%%/Mojolicious/public
 @dirrmtry %%SITE_PERL%%/Mojolicious
-@dirrmtry %%SITE_PERL%%/MojoX/Session/Cookie
-@dirrmtry %%SITE_PERL%%/MojoX/Session
-@dirrmtry %%SITE_PERL%%/MojoX/Routes
-@dirrmtry %%SITE_PERL%%/MojoX/Dispatcher/Routes
-@dirrmtry %%SITE_PERL%%/MojoX/Dispatcher
-@dirrmtry %%SITE_PERL%%/MojoX
+@dirrmtry %%SITE_PERL%%/Mojo/UserAgent
 @dirrmtry %%SITE_PERL%%/Mojo/Transaction
-@dirrmtry %%SITE_PERL%%/Mojo/Template
-@dirrmtry %%SITE_PERL%%/Mojo/Server/Daemon
 @dirrmtry %%SITE_PERL%%/Mojo/Server
 @dirrmtry %%SITE_PERL%%/Mojo/Message
-@dirrmtry %%SITE_PERL%%/Mojo/Filter
+@dirrmtry %%SITE_PERL%%/Mojo/IOWatcher
+@dirrmtry %%SITE_PERL%%/Mojo/DOM
 @dirrmtry %%SITE_PERL%%/Mojo/Cookie
 @dirrmtry %%SITE_PERL%%/Mojo/Content
-@dirrmtry %%SITE_PERL%%/Mojo/Command/Generate
-@dirrmtry %%SITE_PERL%%/Mojo/Command
 @dirrmtry %%SITE_PERL%%/Mojo/Asset
 @dirrmtry %%SITE_PERL%%/Mojo
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious
