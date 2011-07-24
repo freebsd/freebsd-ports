@@ -4,4 +4,4 @@ or C++). The standard method of using eval {}; if ($@) {} is often prone
 to subtle bugs, primarily that its far too easy to stomp on the error in
 error handlers. And also eval/if isn't the nicest idiom.
 
-WWW: http://search.cpan.org/dist/TryCatch
+WWW: http://search.cpan.org/dist/TryCatch/
