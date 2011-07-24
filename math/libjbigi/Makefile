@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libjbigi
-PORTVERSION=	0.7.2
-PORTREVISION=	2
+PORTVERSION=	0.8.7
 CATEGORIES=	math java
 MASTER_SITES=	http://mirror.i2p2.de/ \
 		${MASTER_SITE_GOOGLE_CODE}
@@ -16,7 +15,7 @@ DISTNAME=	i2psource_${PORTVERSION}
 MAINTAINER=	lioux@FreeBSD.org
 COMMENT=	i2p JNI to GNU MP Bignum library (libgmp)
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/gmp
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 USE_BZIP2=	yes
 USE_JAVA=	yes
@@ -32,7 +31,7 @@ PLIST_FILES=	%%JAVAJARDIR%%/jbigi.jar
 JBIGI_BUILD_ENV=	\
 			CC="${CC}" \
 			CFLAGS="${CFLAGS} -fPIC -DPIC" \
-			LDFLAGS="${LDFLAGS} -static" \
+			LDFLAGS="${LDFLAGS}" \
 			JAVA_HOME="${JAVA_HOME}" \
 			LOCALBASE="${LOCALBASE}"
 JBIGI_LIBS=	\
@@ -43,10 +42,6 @@ do-install:
 		${JAVAJARDIR}
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "amd64"
-BROKEN=	doesn't build: relocation R_X86_64_32 can not be used when making a shared object; recompile with -fPIC
-.endif
 
 .if ${ARCH} == "i386"
 JBIGI_BUILD_JCPUID=	yes
@@ -67,7 +62,7 @@ do-build:
 # jbigi
 	cd ${BUILD_WRKSRC}/jbigi && \
 		${ENV} ${JBIGI_BUILD_ENV} \
-			${SH} ./build_jbigi.sh static
+			${SH} ./build_jbigi.sh dynamic
 ## prepare jar
 .ifdef(JBIGI_BUILD_JCPUID)
 # jcpuid
