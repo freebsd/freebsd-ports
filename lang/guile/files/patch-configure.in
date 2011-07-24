@@ -1,5 +1,5 @@
---- configure.in.orig	2008-12-08 17:42:52.000000000 +0000
-+++ configure.in	2010-03-17 21:41:00.869992126 +0000
+--- configure.in.orig	2008-12-08 18:42:52.000000000 +0100
++++ configure.in	2011-07-07 15:40:43.000000000 +0200
 @@ -622,7 +622,7 @@
  #
  AC_CHECK_HEADERS([complex.h fenv.h io.h libc.h limits.h malloc.h memory.h process.h string.h \
@@ -37,3 +37,21 @@
  
      # On past versions of Solaris, believe 8 through 10 at least, you
      # had to write "pthread_once_t foo = { PTHREAD_ONCE_INIT };".
+@@ -1277,7 +1280,7 @@
+     if test "$GCC" = "yes"; then
+       # Since GCC only issues a warning for missing braces, so we need
+       # `-Werror' to catch it.
+-      CFLAGS="-Werror -Wmissing-braces $CFLAGS"
++      CFLAGS="-Wmissing-braces $CFLAGS"
+     fi
+ 
+     AC_CACHE_CHECK([whether PTHREAD_ONCE_INIT needs braces],
+@@ -1428,7 +1431,7 @@
+     # not be "warning free"
+     if test "${GUILE_ERROR_ON_WARNING}" = yes
+     then
+-	CFLAGS="${CFLAGS} -Werror"
++	CFLAGS="${CFLAGS}"
+ 	enable_compile_warnings=no
+     fi
+     ;;
