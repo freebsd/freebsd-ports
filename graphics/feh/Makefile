@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	feh
-PORTVERSION=	1.14.1
+PORTVERSION=	1.14.2
 CATEGORIES=	graphics
 MASTER_SITES=	http://feh.finalrewind.org/ \
 		${MASTER_SITE_LOCAL}
