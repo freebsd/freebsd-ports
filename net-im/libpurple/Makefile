@@ -8,7 +8,7 @@
 
 PORTNAME?=	libpurple
 PORTVERSION=	2.9.0
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES?=	net-im
 MASTER_SITES=	SF/pidgin/Pidgin/${PORTVERSION}
 DISTNAME=	pidgin-${PORTVERSION}
@@ -23,6 +23,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=--disable-gtkui \
 		--disable-consoleui \
 		--with-dynamic_prpls=${PRPL_MODULES:S/,$//} \
+		--enable-static \
 		--disable-nm
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
