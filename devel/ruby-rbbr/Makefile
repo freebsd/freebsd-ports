@@ -40,4 +40,12 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 1.9
+PLIST_SUB+=	CYMO="@comment "
+.else
+PLIST_SUB+=	CYMO=""
+.endif
+
+.include <bsd.port.post.mk>
