@@ -7,7 +7,7 @@
 
 PORTNAME=	rezound
 DISTVERSION=	0.12.3beta
-PORTREVISION=	11
+PORTREVISION=	12
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/ReZound/${DISTVERSION}
 
@@ -38,12 +38,6 @@ OPTIONS=	LARGEFILE	"Enable 64-bit I/O support (not yet!)"	off \
 		NLS		"Enable Native Language Support"	on
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 700042
-.if ${ARCH} == "amd64" || ${ARCH} == "sparc64"
-BROKEN=		Does not compile with GCC 4.2
-.endif
-.endif
 
 .if defined(WITH_LARGEFILE)
 CONFIGURE_ARGS+=	--enable-largefile
@@ -98,7 +92,6 @@ RUN_DEPENDS+=	cdrdao:${PORTSDIR}/sysutils/cdrdao
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-CONFIGURE_ARGS+=	--enable-nls
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=	--disable-nls
@@ -109,8 +102,11 @@ post-patch: .SILENT
 	${REINPLACE_CMD} -E '/atoll|round|nearbyint/d' \
 		${WRKSRC}/config/platform/bsd.h
 	${REINPLACE_CMD} -E 's,(_nl_expand_alias \()\),\1...), ; \
-		/^C(XX)?FLAGS=/d ; /CXXFLAGS="\$$CXXFLAGS -[gW]/d' \
+		/^C(XX)?FLAGS=/d ; /CXXFLAGS="\$$CXXFLAGS -[gW]/d ; \
+		/^return /s,\(int\)( n?gettext),(long)\1,' \
 			${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's,WORDS_BIGENDIN,WORDS_BIGENDIAN,' \
+		${WRKSRC}/src/backend/COSSSoundPlayer.cpp
 	${REINPLACE_CMD} -e 's,$$(prefix)/doc,$$(datadir)/doc,' \
 		${WRKSRC}/config/am_include.mk ${WRKSRC}/Makefile.in \
 		${WRKSRC}/src/Makefile.in ${WRKSRC}/src/misc/Makefile.in \
