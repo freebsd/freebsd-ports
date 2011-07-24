@@ -6,22 +6,24 @@
 #
 
 PORTNAME=	Mojolicious
-PORTVERSION=	1.34
+PORTVERSION=	1.64
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Mojolicious/KRAIH
+#MASTER_SITE_SUBDIR=	Mojolicious/KRAIH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mopsfelder@gmail.com
 COMMENT=	A high level MVC web framework written in Perl
 
-PERL_CONFIGURE=	yes
-
 LICENSE=	ART20
+
 LICENSE_FILES=	${WRKSRC}/LICENSE
 
+PERL_CONFIGURE=	yes
+
 MAN1=		hypnotoad.1 \
-		mojo.1
+		mojo.1 \
+		morbo.1
 MAN3=		Mojo.3 \
 		Mojo::Asset.3 \
 		Mojo::Asset::File.3 \
@@ -29,7 +31,6 @@ MAN3=		Mojo.3 \
 		Mojo::Base.3 \
 		Mojo::ByteStream.3 \
 		Mojo::Cache.3 \
-		Mojo::Client.3 \
 		Mojo::Command.3 \
 		Mojo::Content.3 \
 		Mojo::Content::MultiPart.3 \
@@ -39,12 +40,18 @@ MAN3=		Mojo.3 \
 		Mojo::Cookie::Response.3 \
 		Mojo::CookieJar.3 \
 		Mojo::DOM.3 \
+		Mojo::DOM::Collection.3 \
+		Mojo::DOM::CSS.3 \
+		Mojo::DOM::HTML.3 \
 		Mojo::Date.3 \
 		Mojo::Exception.3 \
 		Mojo::Headers.3 \
 		Mojo::HelloWorld.3 \
 		Mojo::Home.3 \
 		Mojo::IOLoop.3 \
+		Mojo::IOWatcher.3 \
+		Mojo::IOWatcher::Epoll.3 \
+		Mojo::IOWatcher::KQueue.3 \
 		Mojo::JSON.3 \
 		Mojo::Loader.3 \
 		Mojo::Log.3 \
@@ -53,11 +60,13 @@ MAN3=		Mojo.3 \
 		Mojo::Message::Response.3 \
 		Mojo::Parameters.3 \
 		Mojo::Path.3 \
+		Mojo::Resolver.3 \
 		Mojo::Server.3 \
 		Mojo::Server::CGI.3 \
 		Mojo::Server::Daemon.3 \
 		Mojo::Server::FastCGI.3 \
 		Mojo::Server::Hypnotoad.3 \
+		Mojo::Server::Morbo.3 \
 		Mojo::Server::PSGI.3 \
 		Mojo::Template.3 \
 		Mojo::Transaction.3 \
@@ -66,10 +75,12 @@ MAN3=		Mojo.3 \
 		Mojo::URL.3 \
 		Mojo::Upload.3 \
 		Mojo::UserAgent.3 \
+		Mojo::UserAgent::Transactor.3 \
 		Mojo::Util.3 \
 		Mojolicious.3 \
 		Mojolicious::Command::Cgi.3 \
 		Mojolicious::Command::Daemon.3 \
+		Mojolicious::Command::Eval.3 \
 		Mojolicious::Command::Fastcgi.3 \
 		Mojolicious::Command::Generate.3 \
 		Mojolicious::Command::Generate::App.3 \
@@ -95,7 +106,7 @@ MAN3=		Mojo.3 \
 		Mojolicious::Guides::Routing.3 \
 		Mojolicious::Lite.3 \
 		Mojolicious::Plugin.3 \
-		Mojolicious::Plugin::AgentCondition.3 \
+		Mojolicious::Plugin::CallbackCondition.3 \
 		Mojolicious::Plugin::Charset.3 \
 		Mojolicious::Plugin::Config.3 \
 		Mojolicious::Plugin::DefaultHelpers.3 \
@@ -104,6 +115,7 @@ MAN3=		Mojo.3 \
 		Mojolicious::Plugin::HeaderCondition.3 \
 		Mojolicious::Plugin::I18n.3 \
 		Mojolicious::Plugin::JsonConfig.3 \
+		Mojolicious::Plugin::Mount.3 \
 		Mojolicious::Plugin::PodRenderer.3 \
 		Mojolicious::Plugin::PoweredBy.3 \
 		Mojolicious::Plugin::RequestTimer.3 \
