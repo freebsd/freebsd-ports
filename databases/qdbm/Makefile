@@ -6,12 +6,9 @@
 #    $MCom: ports-stable/databases/qdbm/Makefile,v 1.6 2008/03/29 20:07:25 ahze Exp $
 
 PORTNAME=	qdbm
-PORTVERSION=	1.8.77
-PORTREVISION=	1
+PORTVERSION=	1.8.78
 CATEGORIES=	databases
-MASTER_SITES=	SF/qdbm/qdbm/${PORTVERSION} \
-		http://qdbm.sourceforge.net/
-
+MASTER_SITES=	http://fallabs.com/qdbm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	Quick Database Manager
@@ -30,7 +27,7 @@ CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
 MAKE_ARGS=	RELCFLAGS="${CFLAGS}" \
 		MYDATADIR="${DOCSDIR}" MYDOCS="${PORTDOCS}"
 .if !defined(NOPORTDOCS)
-PORTDOCS=	spex.html spex-ja.html ChangeLog NEWS
+PORTDOCS=	ChangeLog NEWS
 .endif
 
 MAN1=	cbcodec.1 cbtest.1 crmgr.1 crtest.1 crtsv.1 dpmgr.1 dptest.1 \
