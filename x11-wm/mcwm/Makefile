@@ -13,11 +13,11 @@ MASTER_SITES=	http://hack.org/mc/hacks/mcwm/
 MAINTAINER=	jakub_lach@mailplus.pl
 COMMENT=	A small window manager inspired by CTWM, evilwm, and tinywm
 
-BUILD_DEPENDS=	xcb-util>=0.3.6:${PORTSDIR}/x11/xcb-util
-RUN_DEPENDS=	xcb-util>=0.3.6:${PORTSDIR}/x11/xcb-util
-
 LICENSE=	ISCL
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	xcb-util>=0.3.6:${PORTSDIR}/x11/xcb-util
+RUN_DEPENDS=	xcb-util>=0.3.6:${PORTSDIR}/x11/xcb-util
 
 MAKE_JOBS_SAFE=	yes
 
