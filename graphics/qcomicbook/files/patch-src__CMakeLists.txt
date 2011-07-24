@@ -1,0 +1,11 @@
+--- src/CMakeLists.txt.orig	2011-07-08 07:18:50.000000000 -0300
++++ src/CMakeLists.txt	2011-07-24 15:33:02.000000000 -0300
+@@ -116,6 +116,8 @@
+ QT4_WRAP_UI(qcomicbook_ui_src ${qcomicbook_ui})
+ ###QT4_ADD_TRANSLATION(qcomicbook_qm ../lang/pl_PL.ts)
+ 
++link_directories(${POPPLER_LIBDIR})
++
+ ADD_EXECUTABLE(qcomicbook ${qcomicbook_src} ${qcomicbook_moc_src} ${qcomicbook_ui_src} ${qcomicbook_res})
+ ADD_DEPENDENCIES(qcomicbook translations)
+ TARGET_LINK_LIBRARIES(qcomicbook ${QT_LIBRARIES})
