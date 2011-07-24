@@ -7,6 +7,7 @@
 
 PORTNAME=	WWW-Mechanize
 PORTVERSION=	1.68
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	This module is to help you automate interaction with a website
 
-RUN_DEPENDS=	p5-HTML-Parser>=3.33:${PORTSDIR}/www/p5-HTML-Parser \
+RUN_DEPENDS=	p5-HTML-Form>=1.038:${PORTSDIR}/www/p5-HTML-Form \
+		p5-HTML-Parser>=3.33:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-HTTP-Server-Simple>=0.35:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
