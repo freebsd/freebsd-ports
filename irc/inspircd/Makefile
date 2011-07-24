@@ -12,7 +12,7 @@ CATEGORIES=	irc
 MASTER_SITES=	SF/${PORTNAME}/InspIRCd-2.0/${PORTVERSION}
 DISTNAME=	InspIRCd-${PORTVERSION}
 
-MAINTAINER=	brain@inspircd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modular C++ IRC daemon
 
 USE_BZIP2=	yes
@@ -52,7 +52,7 @@ OPTIONS=	LDAPAUTH    "Build m_ldapauth module"          off \
 		GNUTLS	    "Build m_ssl_gnutls module"        off \
 		OPENSSL     "Build m_ssl_openssl module"       off
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 post-extract:
 	@(cd ${WRKDIR} && ${MV} ${PORTNAME} ${DISTNAME})
@@ -98,7 +98,7 @@ PLIST_SUB+=	GNUTLS="@comment "
 .endif
 
 .if defined(WITH_OPENSSL) && !defined(WITHOUT_OPENSSL)
-.include <${PORTSDIR}/Mk/bsd.openssl.mk>
+USE_OPENSSL=yes
 CONFIGURE_ARGS+=	--enable-openssl
 PLIST_SUB+=	OPENSSL=""
 .else
@@ -119,4 +119,4 @@ post-install:
 	fi
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
