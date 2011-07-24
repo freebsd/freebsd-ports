@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-Reporter
-PORTVERSION=	1.57
+PORTVERSION=	1.58
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,13 +19,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN1=		cpantest.1
 MAN3=		Test::Reporter.3 \
 		Test::Reporter::Transport.3 \
 		Test::Reporter::Transport::File.3 \
-		Test::Reporter::Transport::HTTPGateway.3 \
-		Test::Reporter::Transport::Mail::Send.3 \
-		Test::Reporter::Transport::Net::SMTP.3 \
-		Test::Reporter::Transport::Net::SMTP::TLS.3
+		Test::Reporter::Transport::Null.3
 
 .include <bsd.port.mk>
