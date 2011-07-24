@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	i3
-DISTVERSION=	3.e-bf2
+DISTVERSION=	3.e-bf3
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://i3.zekjur.net/downloads/ \
+MASTER_SITES=	http://i3wm.org/downloads/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dhn
 
@@ -40,10 +40,6 @@ MAN1=	i3.1 \
 	i3-input.1
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=	Does not compile on FreeBSD 6.X
-.endif
 
 post-extract:
 	@cd ${WRKSRC} && ${CP} i3.config config.sample
