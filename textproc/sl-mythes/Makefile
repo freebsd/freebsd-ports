@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sl-mythes
-PORTVERSION=	2011.07.21
+PORTVERSION=	2011.07.24
 CATEGORIES=	textproc
 MASTER_SITES=	http://193.2.66.133:85/download/
 DISTNAME=	thes_sl_SI_v2
