@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	youtube
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://mirror.4bit.ws/ \
 		${MASTER_SITE_LOCAL}
