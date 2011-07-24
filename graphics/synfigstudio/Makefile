@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	synfigstudio
-DISTVERSION=	0.62.02
+DISTVERSION=	0.63.00
 CATEGORIES=	graphics multimedia
 MASTER_SITES=	SF/synfig/${PORTNAME}/${PORTVERSION}
 
@@ -27,8 +27,12 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 USE_LDCONFIG=	yes
 
 post-patch:
-	@${REINPLACE_CMD} '/optimization_flags/s|CXXFLAGS=|#CXXFLAGS=| ; \
-		 /optimization_flags/s|CFLAGS=|#CFLAGS=|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e '/optimization_flags/s|CXXFLAGS=|#CXXFLAGS=| ; \
+		 /optimization_flags/s|CFLAGS=|#CFLAGS=|' -e \
+		's|sk_SK|sk|g' ${WRKSRC}/configure
+
+# FIX LC_MESSAGES
+	${MV} ${WRKSRC}/po/sk_SK.gmo ${WRKSRC}/po/sk.gmo
 
 post-install:
 .if !defined(NOPORTDOCS)

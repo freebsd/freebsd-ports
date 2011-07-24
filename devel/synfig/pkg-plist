@@ -119,9 +119,11 @@ include/synfig-0.0/synfig/valuenode_greyed.h
 include/synfig-0.0/synfig/valuenode_not.h
 include/synfig-0.0/synfig/valuenode_or.h
 include/synfig-0.0/synfig/valuenode_pow.h
+include/synfig-0.0/synfig/valuenode_wplist.h
 include/synfig-0.0/synfig/vector.h
 include/synfig-0.0/synfig/version.h
 include/synfig-0.0/synfig/waypoint.h
+include/synfig-0.0/synfig/widthpoint.h
 lib/libsynfig.la
 lib/libsynfig.so
 lib/libsynfig.so.0
@@ -177,6 +179,10 @@ share/locale/en_GB/LC_MESSAGES/synfig.mo
 share/locale/it/LC_MESSAGES/synfig.mo
 share/locale/es/LC_MESSAGES/synfig.mo
 share/locale/fr/LC_MESSAGES/synfig.mo
+share/locale/no/LC_MESSAGES/synfig.mo
+share/locale/pl/LC_MESSAGES/synfig.mo
+share/locale/pt_BR/LC_MESSAGES/synfig.mo
+share/locale/ro/LC_MESSAGES/synfig.mo
 share/locale/ru/LC_MESSAGES/synfig.mo
 share/locale/zh_CN/LC_MESSAGES/synfig.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
