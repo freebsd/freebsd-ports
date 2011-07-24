@@ -9085,6 +9085,7 @@ mdbconv                         ports/palm/mdbconv
 mdbtools                        ports/databases/mdbtools
 mdcp                            ports/sysutils/mdcp
 mdcrack                         ports/security/mdcrack
+mdds                            ports/devel/mdds
 mdf2iso                         ports/sysutils/mdf2iso
 mdh                             ports/deskutils/mdh
 mdk                             ports/lang/mdk
@@ -11192,6 +11193,7 @@ p5-CSS-Croco                    ports/textproc/p5-CSS-Croco
 p5-CSS-DOM                      ports/www/p5-CSS-DOM
 p5-CSS-Inliner                  ports/www/p5-CSS-Inliner
 p5-CSS-Minifier-XS              ports/textproc/p5-CSS-Minifier-XS
+p5-CSS-Packer                   ports/textproc/p5-CSS-Packer
 p5-CSS-SAC                      ports/textproc/p5-CSS-SAC
 p5-CSS-Simple                   ports/textproc/p5-CSS-Simple
 p5-CSS-Squish                   ports/textproc/p5-CSS-Squish
@@ -12502,6 +12504,7 @@ p5-HTML-Location                ports/www/p5-HTML-Location
 p5-HTML-Macro                   ports/www/p5-HTML-Macro
 p5-HTML-Mason                   ports/www/p5-HTML-Mason
 p5-HTML-MobileConverter         ports/www/p5-HTML-MobileConverter
+p5-HTML-Packer                  ports/textproc/p5-HTML-Packer
 p5-HTML-Pager                   ports/www/p5-HTML-Pager
 p5-HTML-Parser                  ports/www/p5-HTML-Parser
 p5-HTML-Parser-Simple           ports/www/p5-HTML-Parser-Simple
@@ -12783,6 +12786,7 @@ p5-Jabber-SimpleSend            ports/net-im/p5-Jabber-SimpleSend
 p5-Java                         ports/devel/p5-Java
 p5-JavaScript                   ports/lang/p5-JavaScript
 p5-JavaScript-Minifier-XS       ports/textproc/p5-JavaScript-Minifier-XS
+p5-JavaScript-Packer            ports/textproc/p5-JavaScript-Packer
 p5-JavaScript-RPC               ports/net/p5-JavaScript-RPC
 p5-JavaScript-SpiderMonkey      ports/lang/p5-JavaScript-SpiderMonkey
 p5-JavaScript-Squish            ports/lang/p5-JavaScript-Squish
@@ -13926,6 +13930,7 @@ p5-Regexp-DefaultFlags          ports/textproc/p5-Regexp-DefaultFlags
 p5-Regexp-Grammars              ports/devel/p5-Regexp-Grammars
 p5-Regexp-Log                   ports/textproc/p5-Regexp-Log
 p5-Regexp-Log-Common            ports/textproc/p5-Regexp-Log-Common
+p5-Regexp-RegGrp                ports/devel/p5-Regexp-RegGrp
 p5-Regexp-Shellish              ports/devel/p5-Regexp-Shellish
 p5-Regexp-Subst-Parallel        ports/devel/p5-Regexp-Subst-Parallel
 p5-Relations                    ports/databases/p5-Relations
@@ -15931,6 +15936,7 @@ p5-css-croco                    ports/textproc/p5-CSS-Croco
 p5-css-dom                      ports/www/p5-CSS-DOM
 p5-css-inliner                  ports/www/p5-CSS-Inliner
 p5-css-minifier-xs              ports/textproc/p5-CSS-Minifier-XS
+p5-css-packer                   ports/textproc/p5-CSS-Packer
 p5-css-sac                      ports/textproc/p5-CSS-SAC
 p5-css-simple                   ports/textproc/p5-CSS-Simple
 p5-css-squish                   ports/textproc/p5-CSS-Squish
@@ -16801,6 +16807,7 @@ p5-html-location                ports/www/p5-HTML-Location
 p5-html-macro                   ports/www/p5-HTML-Macro
 p5-html-mason                   ports/www/p5-HTML-Mason
 p5-html-mobileconverter         ports/www/p5-HTML-MobileConverter
+p5-html-packer                  ports/textproc/p5-HTML-Packer
 p5-html-pager                   ports/www/p5-HTML-Pager
 p5-html-parser                  ports/www/p5-HTML-Parser
 p5-html-parser-simple           ports/www/p5-HTML-Parser-Simple
@@ -17052,6 +17059,7 @@ p5-jabber-simplesend            ports/net-im/p5-Jabber-SimpleSend
 p5-java                         ports/devel/p5-Java
 p5-javascript                   ports/lang/p5-JavaScript
 p5-javascript-minifier-xs       ports/textproc/p5-JavaScript-Minifier-XS
+p5-javascript-packer            ports/textproc/p5-JavaScript-Packer
 p5-javascript-rpc               ports/net/p5-JavaScript-RPC
 p5-javascript-spidermonkey      ports/lang/p5-JavaScript-SpiderMonkey
 p5-javascript-squish            ports/lang/p5-JavaScript-Squish
@@ -18230,6 +18238,7 @@ p5-regexp-defaultflags          ports/textproc/p5-Regexp-DefaultFlags
 p5-regexp-grammars              ports/devel/p5-Regexp-Grammars
 p5-regexp-log                   ports/textproc/p5-Regexp-Log
 p5-regexp-log-common            ports/textproc/p5-Regexp-Log-Common
+p5-regexp-reggrp                ports/devel/p5-Regexp-RegGrp
 p5-regexp-shellish              ports/devel/p5-Regexp-Shellish
 p5-regexp-subst-parallel        ports/devel/p5-Regexp-Subst-Parallel
 p5-relations                    ports/databases/p5-Relations
