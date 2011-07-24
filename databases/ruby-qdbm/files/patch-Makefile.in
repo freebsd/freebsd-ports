@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2006-09-06 03:37:33.000000000 +0000
++++ Makefile.in	2011-07-21 03:18:15.000000000 +0000
+@@ -54,7 +54,7 @@
+ 	rm -rf casket *~
+ 
+ 
+-install :
++install : all
+ 	cd depot ; make install
+ 	cd curia ; make install
+ 	cd villa ; make install
