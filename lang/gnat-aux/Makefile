@@ -28,6 +28,7 @@ USE_BISON=		build
 USE_PERL5_BUILD=	yes
 USE_LDCONFIG=		yes
 ALL_TARGET=		default
+MAKE_JOBS_SAFE=		yes
 
 SNAPSHOT=		20110627
 GCC_BRANCH=		4.6
@@ -175,6 +176,12 @@ post-extract:
 	# The only shared lib is libc.so.7, so it should work for a long time.
 	# if FBSD 9.0 upgrades libc, a compat8x requirement could be added
 	# for FreeBSD 7.x and 8.x
+
+.if ${OSVERSION} > 900000
+	# Since June 7, bootstrap compiler's include-fixed headers have been
+	# incompatible with FreeBSD 9.0-CURRENT
+	${RM} -rf ${BOOTSTRAP_PREFIX}/lib/gcc/${BOOTSTRAP_TRIPLET}/include-fixed
+.endif
 .endif
 
 do-configure:
