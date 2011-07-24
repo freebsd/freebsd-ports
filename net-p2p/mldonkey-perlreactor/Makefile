@@ -12,7 +12,7 @@ MASTER_SITES=	SF/remotefilesync/perlreactor/perlreactor%20${PORTVERSION}
 PKGNAMESUFFIX=	-perlreactor
 DISTNAME=	perlreactor_${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Automatically add links found in web pages to MLDonkey queue
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww

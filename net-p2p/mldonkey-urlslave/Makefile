@@ -13,7 +13,7 @@ MASTER_SITES=	http://home.ircnet.de/cru/ed2k_urlslave/dist/
 PKGNAMESUFFIX=	-urlslave
 DISTNAME=	mlurlslave-v${PORTVERSION:S/^0.0.//}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ enabled Perl script for adding ed2k:// links to MLDonkey
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Gtk.pm:${PORTSDIR}/x11-toolkits/p5-Gtk

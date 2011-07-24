@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.tof2k.com/gkremldk/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 EXTRACT_SUFX=	.tbz
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shows current mldonkey donwload/upload rates and allows setting them
 
 BUILD_DEPENDS=	\

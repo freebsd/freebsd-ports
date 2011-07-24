@@ -10,7 +10,7 @@ PORTVERSION=	0.4.0
 CATEGORIES=	net-im
 MASTER_SITES=	SF
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Google Talk's implementation of Jingle and Jingle-Audio
 
 BUILD_DEPENDS=	\
