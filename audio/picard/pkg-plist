@@ -91,9 +91,9 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/plugins/__init__.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/__init__.pyo
-%%PYTHON_SITELIBDIR%%/picard/plugins/addrelease.py
-%%PYTHON_SITELIBDIR%%/picard/plugins/addrelease.pyc
-%%PYTHON_SITELIBDIR%%/picard/plugins/addrelease.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/classicdiscnumber.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/classicdiscnumber.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/classicdiscnumber.pyo
 %%PYTHON_SITELIBDIR%%/picard/plugins/coverart.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/coverart.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/coverart.pyo
@@ -106,9 +106,9 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/plugins/featartist.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/featartist.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/featartist.pyo
-%%PYTHON_SITELIBDIR%%/picard/plugins/fix_mp4_meta.py
-%%PYTHON_SITELIBDIR%%/picard/plugins/fix_mp4_meta.pyc
-%%PYTHON_SITELIBDIR%%/picard/plugins/fix_mp4_meta.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/featartistsintitles.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/featartistsintitles.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/featartistsintitles.pyo
 %%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/__init__.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/__init__.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/lastfm/__init__.pyo
@@ -118,9 +118,9 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/plugins/open_in_gui.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/open_in_gui.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/open_in_gui.pyo
-%%PYTHON_SITELIBDIR%%/picard/plugins/originalreleasedate.py
-%%PYTHON_SITELIBDIR%%/picard/plugins/originalreleasedate.pyc
-%%PYTHON_SITELIBDIR%%/picard/plugins/originalreleasedate.pyo
+%%PYTHON_SITELIBDIR%%/picard/plugins/release_type.py
+%%PYTHON_SITELIBDIR%%/picard/plugins/release_type.pyc
+%%PYTHON_SITELIBDIR%%/picard/plugins/release_type.pyo
 %%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/__init__.py
 %%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/__init__.pyc
 %%PYTHON_SITELIBDIR%%/picard/plugins/replaygain/__init__.pyo
@@ -226,6 +226,9 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/options/ratings.py
 %%PYTHON_SITELIBDIR%%/picard/ui/options/ratings.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/options/ratings.pyo
+%%PYTHON_SITELIBDIR%%/picard/ui/options/releases.py
+%%PYTHON_SITELIBDIR%%/picard/ui/options/releases.pyc
+%%PYTHON_SITELIBDIR%%/picard/ui/options/releases.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/options/renaming.py
 %%PYTHON_SITELIBDIR%%/picard/ui/options/renaming.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/options/renaming.pyo
@@ -301,6 +304,9 @@ bin/picard
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_ratings.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_ratings.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_ratings.pyo
+%%PYTHON_SITELIBDIR%%/picard/ui/ui_options_releases.py
+%%PYTHON_SITELIBDIR%%/picard/ui/ui_options_releases.pyc
+%%PYTHON_SITELIBDIR%%/picard/ui/ui_options_releases.pyo
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_renaming.py
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_renaming.pyc
 %%PYTHON_SITELIBDIR%%/picard/ui/ui_options_renaming.pyo
@@ -362,32 +368,41 @@ share/icons/hicolor/32x32/apps/picard.png
 share/icons/hicolor/48x48/apps/picard.png
 share/locale/af/LC_MESSAGES/picard.mo
 share/locale/ar/LC_MESSAGES/picard.mo
+share/locale/ast/LC_MESSAGES/picard.mo
 share/locale/bg/LC_MESSAGES/picard.mo
 share/locale/ca/LC_MESSAGES/picard.mo
 share/locale/cs/LC_MESSAGES/picard.mo
 share/locale/cy/LC_MESSAGES/picard.mo
 share/locale/da/LC_MESSAGES/picard.mo
 share/locale/de/LC_MESSAGES/picard.mo
+share/locale/el/LC_MESSAGES/picard.mo
 share/locale/en/LC_MESSAGES/picard.mo
 share/locale/en_CA/LC_MESSAGES/picard.mo
 share/locale/en_GB/LC_MESSAGES/picard.mo
+share/locale/eo/LC_MESSAGES/picard.mo
 share/locale/es/LC_MESSAGES/picard.mo
 share/locale/et/LC_MESSAGES/picard.mo
 share/locale/fa/LC_MESSAGES/picard.mo
 share/locale/fi/LC_MESSAGES/picard.mo
+share/locale/fo/LC_MESSAGES/picard.mo
 share/locale/fr/LC_MESSAGES/picard.mo
+share/locale/fr_CA/LC_MESSAGES/picard.mo
 share/locale/fy/LC_MESSAGES/picard.mo
 share/locale/gl/LC_MESSAGES/picard.mo
 share/locale/he/LC_MESSAGES/picard.mo
 share/locale/hi/LC_MESSAGES/picard.mo
 share/locale/hu/LC_MESSAGES/picard.mo
+share/locale/id/LC_MESSAGES/picard.mo
 share/locale/is/LC_MESSAGES/picard.mo
 share/locale/it/LC_MESSAGES/picard.mo
+share/locale/ja/LC_MESSAGES/picard.mo
 share/locale/kn/LC_MESSAGES/picard.mo
 share/locale/ko/LC_MESSAGES/picard.mo
 share/locale/lt/LC_MESSAGES/picard.mo
 share/locale/nb/LC_MESSAGES/picard.mo
+share/locale/nds/LC_MESSAGES/picard.mo
 share/locale/nl/LC_MESSAGES/picard.mo
+share/locale/oc/LC_MESSAGES/picard.mo
 share/locale/pl/LC_MESSAGES/picard.mo
 share/locale/pt/LC_MESSAGES/picard.mo
 share/locale/pt_BR/LC_MESSAGES/picard.mo
@@ -398,12 +413,24 @@ share/locale/sk/LC_MESSAGES/picard.mo
 share/locale/sl/LC_MESSAGES/picard.mo
 share/locale/sr/LC_MESSAGES/picard.mo
 share/locale/sv/LC_MESSAGES/picard.mo
+share/locale/ta/LC_MESSAGES/picard.mo
 share/locale/tr/LC_MESSAGES/picard.mo
+share/locale/uk/LC_MESSAGES/picard.mo
 share/locale/zh_CN/LC_MESSAGES/picard.mo
 @dirrmtry share/locale/sco/LC_MESSAGES
 @dirrmtry share/locale/sco
+@dirrmtry share/locale/oc/LC_MESSAGES
+@dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/fy/LC_MESSAGES
 @dirrmtry share/locale/fy
+@dirrmtry share/locale/fr_CA/LC_MESSAGES
+@dirrmtry share/locale/fr_CA
+@dirrmtry share/locale/fo/LC_MESSAGES
+@dirrmtry share/locale/fo
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrmtry share/icons/hicolor/48x48/apps
 @dirrmtry share/icons/hicolor/48x48
 @dirrmtry share/icons/hicolor/32x32/apps

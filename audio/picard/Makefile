@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	picard
-PORTVERSION=	0.14
-PORTREVISION=	1
+PORTVERSION=	0.15
 CATEGORIES=	audio python
 MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 		ftp://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
@@ -16,6 +15,9 @@ MASTER_SITES=	http://ftp.musicbrainz.org/pub/musicbrainz/picard/ \
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Next generation MusicBrainz Tagger
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 LIB_DEPENDS=	ofa.0:${PORTSDIR}/audio/libofa \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
@@ -30,9 +32,6 @@ USE_GETTEXT=	yes
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 INSTALLS_ICONS=	yes
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|'picard.plugins',|'picard.plugins', 'picard.plugins.lastfm', 'picard.plugins.replaygain',|" \
