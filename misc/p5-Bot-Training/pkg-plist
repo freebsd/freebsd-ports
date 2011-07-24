@@ -1,0 +1,8 @@
+bin/bot-training
+%%SITE_PERL%%/Bot/Training.pm
+%%SITE_PERL%%/Bot/Training/Plugin.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bot/Training/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bot/Training
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bot
+@dirrmtry %%SITE_PERL%%/Bot/Training
+@dirrmtry %%SITE_PERL%%/Bot
