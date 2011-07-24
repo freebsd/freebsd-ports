@@ -16,9 +16,16 @@ MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	IPv6 network diagnostic tools
 
 LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-suid-install
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-rdnssd-rdnssd.h
+.endif
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -43,4 +50,4 @@ post-install:
 .endfor
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
