@@ -16,6 +16,8 @@ DISTNAME=	tutorial.zip tut-examples.zip tut-swing.zip tut-bookstore-21.zip \
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Official Java 2 SDK tutorial
 
+BROKEN=		unfetchable
+
 NO_WRKSUBDIR=	yes
 RESTRICTED=	This software is under license and export control.
 NO_BUILD=	yes
