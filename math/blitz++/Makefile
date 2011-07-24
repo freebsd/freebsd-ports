@@ -13,7 +13,7 @@ CATEGORIES=	math
 MASTER_SITES=	SF/blitz/blitz/Blitz%2B%2B%20${PORTVERSION}
 DISTNAME=	blitz-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A C++ class library for scientific computing
 
 .ifndef NOPORTDOCS
