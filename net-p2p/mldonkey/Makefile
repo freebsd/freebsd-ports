@@ -10,7 +10,7 @@ PORTVERSION=	3.0.7
 CATEGORIES+=	net-p2p
 MASTER_SITES=	SF
 
-MAINTAINER?=	lioux@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A OCAML client for multiple peer-to-peer networks
 
 LICENSE=	GPLv2

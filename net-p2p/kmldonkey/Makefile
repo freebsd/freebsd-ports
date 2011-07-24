@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/apps/KDE3.x/network
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.pre/pre/}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE integration for MLDonkey eDonkey P2P client
 
 LICENSE=	GPLv2

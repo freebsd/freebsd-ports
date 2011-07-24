@@ -13,7 +13,7 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 PKGNAMESUFFIX=	-serverspy
 DISTNAME=	mlservspy-${PORTVERSION}
 
-MAINTAINER=	lioux@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MLDonkey Server Spy broadcasts your whereabouts on the eDonkey network
 
 RUN_DEPENDS=	\
