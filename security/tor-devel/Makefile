@@ -6,38 +6,48 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.3.1-alpha
-PORTREVISION=	1
+DISTVERSION=	0.2.3.2-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
 		http://cyberside.net.ee/tor/ \
 		http://mirrors.chaos-darmstadt.de/tor-mirror/dist/ \
+		http://mirror.tor.hu/dist/ \
+		http://onion.anonymo.us.org/dist/ \
+		http://theonionrouter.com/dist/ \
 		http://tor-www.5coluna.com/dist/ \
 		http://tor.amorphis.eu/dist/ \
 		http://tor.askapache.com/dist/ \
 		http://tor.beme-it.de/dist/ \
-		http://tor.boinc.ch/dist/ \
 		http://tor.ccc.de/dist/ \
+		http://tor.cyberarmy.at/dist/ \
 		http://tor.homosu.net/dist/ \
 		http://tor.idnr.ws/dist/ \
+		http://tor.kamagurka.org/dist/ \
 		http://tor.searchprivate.com/dist/ \
 		http://tor.taiga-san.net/dist/ \
+		http://tor.webersiedlung.at/dist/ \
+		http://tordistua.reactor-xg.kiev.ua/ \
 		http://torproj.xpdm.us/dist/ \
 		http://torproject.nwlinux.us/dist/ \
 		http://www.oignon.net/dist/ \
 		http://www.torproject.org.nyud.net/dist/ \
-		http://www.torproject.us/dist/
+		http://www.torproject.us/dist/ \
+		http://www.torservers.net/mirrors/torproject.org/dist/
 PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	An anonymizing overlay network for TCP
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--with-openssl-dir="${OPENSSLBASE}" --disable-asciidoc
-CPPFLAGS+=	-I${LOCALBASE}/include/event2
-LDFLAGS+=	-L${LOCALBASE}/lib/event2
-CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--with-openssl-dir="${OPENSSLBASE}" --disable-asciidoc
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" \
+		TOR_CPPFLAGS_libevent="-I${LOCALBASE}/include/event2 -I${LOCALBASE}/include" \
+		TOR_LDFLAGS_libevent="-L${LOCALBASE}/lib/event2" \
+		TOR_LIBEVENT_LIBS="${TOR_LIBEVENT_LIBS}"
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -56,13 +66,9 @@ GROUPS =	_tor
 USERS=		_tor
 
 CONFLICTS=		tor-[0-9]*
-CONFLICTS_BUILD=	libevent-[01]*
 
 MANCOMPRESSED=	no
 MAN1=		tor.1 tor-resolve.1 torify.1 tor-gencert.1
-
-LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/LICENSE
 
 .include <bsd.port.pre.mk>
 
@@ -74,6 +80,7 @@ WITH_OPENSSL_PORT=	yes
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 
 .if defined(WITH_BUFFEREVENTS)
+BROKEN =	there are unresolved problems with BUFFEREVENTS; please disable this option
 CONFIGURE_ARGS+=	--enable-bufferevents
 .else
 CONFIGURE_ARGS+=	--disable-bufferevents
@@ -95,9 +102,17 @@ CONFIGURE_ARGS+=	--disable-instrument-downloads
 BUILD_DEPENDS +=	${LOCALBASE}/lib/event2/libevent.a:${PORTSDIR}/devel/libevent2
 CONFIGURE_ARGS+=	--enable-static-tor --with-libevent-dir=${LOCALBASE}/lib/event2 \
 			--with-zlib-dir=/usr/lib
+TOR_LIBEVENT_LIBS=	${LOCALBASE}/lib/event2/libevent.a
+.if defined(WITH_BUFFEREVENTS)
+TOR_LIBEVENT_LIBS:=	${LOCALBASE}/lib/event2/libevent_openssl.a ${TOR_LIBEVENT_LIBS}
+.endif
 .else
 CONFIGURE_ARGS+=	--enable-linker-hardening
 LIB_DEPENDS+=		event-2.0:${PORTSDIR}/devel/libevent2
+TOR_LIBEVENT_LIBS=	-levent-2.0
+.if defined(WITH_BUFFEREVENTS)
+TOR_LIBEVENT_LIBS:=	-levent_openssl-2.0 ${TOR_LIBEVENT_LIBS}
+.endif
 .endif
 
 .if defined(WITH_TCMALLOC)

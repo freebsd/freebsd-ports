@@ -1,0 +1,67 @@
+--- configure.orig	2011-07-18 13:22:21.000000000 -0400
++++ configure	2011-07-23 16:09:51.000000000 -0400
+@@ -2579,7 +2579,7 @@
+ # Check whether --enable-linker-hardening was given.
+ if test "${enable_linker_hardening+set}" = set; then
+   enableval=$enable_linker_hardening; if test x$enableval = xyes; then
+-    LDFLAGS="$LDFLAGS -z relro -z now"
++    LDFLAGS="$LDFLAGS -Wl,-z,relro -Wl,-z,now"
+ fi
+ fi
+ 
+@@ -6816,7 +6816,7 @@
+ ac_res=$ac_cv_search_clock_gettime
+ if test "$ac_res" != no; then
+   test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"
+-  have_rt=yes
++#  have_rt=yes
+ fi
+ 
+     if test "$have_rt" = yes; then
+@@ -6825,6 +6825,7 @@
+ fi
+ 
+ 
++if false ; then
+ trylibeventdir=""
+ 
+ # Check whether --with-libevent-dir was given.
+@@ -7235,6 +7236,7 @@
+ LIBS="$tor_saved_LIBS"
+ LDFLAGS="$tor_saved_LDFLAGS"
+ CPPFLAGS="$tor_saved_CPPFLAGS"
++fi
+ 
+ 
+ 
+@@ -7607,6 +7609,7 @@
+ fi
+ 
+ 
++if false ; then
+ if test "$enable_static_libevent" = "yes"; then
+    if test "$tor_cv_library_libevent_dir" = "(system)"; then
+      { { echo "$as_me:$LINENO: error: \"You must specify an explicit --with-libevent-dir=x option when using --enable-static-libevent\"" >&5
+@@ -7618,6 +7621,7 @@
+ else
+      TOR_LIBEVENT_LIBS="-levent"
+ fi
++fi
+ 
+ if test "$enable_bufferevents" = "yes" ; then
+   if test "$ac_cv_header_event2_bufferevent_ssl_h" != "yes" ; then
+@@ -7750,12 +7754,14 @@
+ #define USE_BUFFEREVENTS 1
+ _ACEOF
+ 
++if false ; then
+   if test "$enable_static_libevent" = "yes"; then
+     TOR_LIBEVENT_LIBS="$TOR_LIBDIR_libevent/libevent_openssl.a $TOR_LIBEVENT_LIBS"
+   else
+     TOR_LIBEVENT_LIBS="-levent_openssl $TOR_LIBEVENT_LIBS"
+   fi
+ fi
++fi
+ 
+ 
+ 
