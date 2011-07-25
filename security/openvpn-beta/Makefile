@@ -13,6 +13,11 @@ PKGNAMESUFFIX=	-beta
 MAINTAINER=	ecrist@secure-computing.net
 COMMENT=	Secure IP/Ethernet tunnel daemon
 
+# ecrist will update the -beta port as soon as there are formal
+# upstream test releases derived from openvpn-devel; in the meanwhile,
+# move users to -devel.
+DEPRECATED=	use openvpn-devel instead for now, there are currently no formal -betas.
+
 CONFLICTS=	openvpn-devel-[0-9]* openvpn-2.0*
 
 USE_XZ=		yes
@@ -30,6 +35,8 @@ OPTIONS=	PW_SAVE "Interactive passwords may be read from a file" off \
 
 USE_RC_SUBR=	openvpn.sh
 USE_LDCONFIG=	${PREFIX}/lib
+
+LIB_DEPENDS+=	lzo2.2:${PORTSDIR}/archivers/lzo2
 
 SUB_FILES=	pkg-message pkg-req
 SUB_LIST+=	OSVERSION=${OSVERSION}
@@ -50,16 +57,6 @@ pre-fetch:
 	@${ECHO} "      LOG_OPENVPN={Valid syslog facility}"
 	@${ECHO} "      EXAMPLE:  make LOG_OPENVPN=LOG_DAEMON"
 	@${ECHO} ""
-.endif
-
-# NOTE: there is no way to explicitly specify the LZO version to OpenVPN,
-# if LZO2 and LZO1 are installed, OpenVPN will pick LZO2.
-# So depend on LZO1 only if it's already there and LZO2 isn't.
-# PACKAGE_BUILDING will also force LZO2.
-.if exists(${LOCALBASE}/lib/liblzo2.so.2) || !exists(${LOCALBASE}/lib/liblzo.so.1) || defined(PACKAGE_BUILDING)
-LIB_DEPENDS+=	lzo2.2:${PORTSDIR}/archivers/lzo2
-.else
-LIB_DEPENDS+=	lzo.1:${PORTSDIR}/archivers/lzo
 .endif
 
 .if defined(WITH_PW_SAVE)
