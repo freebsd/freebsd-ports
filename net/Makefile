@@ -121,6 +121,7 @@
     SUBDIR += dimes
     SUBDIR += diradmin
     SUBDIR += dosdetector
+    SUBDIR += dropbox-api-command
     SUBDIR += dtcp
     SUBDIR += dtcpclient
     SUBDIR += e169-stats
