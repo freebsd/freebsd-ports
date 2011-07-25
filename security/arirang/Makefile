@@ -7,7 +7,7 @@
 
 PORTNAME=	arirang
 PORTVERSION=	2.02
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	security www
 MASTER_SITES=	http://monkey.org/~pilot/arirang/
@@ -24,6 +24,8 @@ USE_LIBRUBY=	yes
 
 USE_OPENSSL=	yes
 
+CFLAGS+=	-I${LOCALBASE}/include/ruby-${RUBY_VER} -I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/arirang ${PREFIX}/sbin
 	${MKDIR} ${PREFIX}/share/arirang
@@ -31,4 +33,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/scanrule/*.uxe ${PREFIX}/share/arirang
 	${INSTALL_DATA} ${WRKSRC}/script/*.rb ${PREFIX}/share/arirang
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${RUBY_VER} == 1.9
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-ruby19
+.endif
+.include <bsd.port.post.mk>
