@@ -8,7 +8,7 @@
 PORTREVISION=	0
 PKGNAMESUFFIX=	-qt4
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast and lightweight QT4 BitTorrent client
 
 LIB_DEPENDS=	${GEN_LIB_DEPENDS}

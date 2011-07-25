@@ -22,7 +22,7 @@ MASTER_SITES=	ftp://ftp.opera.com/pub/opera/linux/${OPERA_VER:S/.//}/ \
 PKGNAMEPREFIX=	linux-
 DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.i386.linux
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A blazingly fast, full-featured, standards-compliant browser
 
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
