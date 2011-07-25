@@ -63,6 +63,8 @@ IGNORE=		requires kernel source to be installed
 
 .include <bsd.port.pre.mk>
 
+CONFIGURE_ENV+=	HOSTCC="${CC}"
+
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbisfile.6:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ENV+=	OGG_SUPPORT=YES
