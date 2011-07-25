@@ -12,12 +12,12 @@ MASTER_SITES=	http://www.j3e.de/ispell/igerman98/dict/
 DISTNAME=	igerman98-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
-COMMENT=	Hunspell german dictionnary
+COMMENT=	Hunspell german dictionary
 
 BUILD_DEPENDS=	buildhash:${PORTSDIR}/textproc/ispell
 
 USE_BZIP2=	yes
-WRKSRC=	${WRKDIR}/igerman98-${PORTVERSION}
+WRKSRC=		${WRKDIR}/igerman98-${PORTVERSION}
 USE_GMAKE=	yes
 
 ALL_TARGET=	hunspell-all
@@ -43,18 +43,18 @@ PLIST_FILES+=	share/hunspell/${ALIAS}.aff \
 .endfor
 
 do-install:
-		@${MKDIR} ${PREFIX}/share/hunspell
-		@${INSTALL_DATA} ${WRKSRC}/hunspell/*.aff \
-			${WRKSRC}/hunspell/*.dic \
-			${PREFIX}/share/hunspell/
-		@cd ${PREFIX}/share/hunspell; \
-		for alias in ${DEALIASES}; do \
-			${LN} -s de_DE.aff $${alias}.aff ; \
-			${LN} -s de_DE.dic $${alias}.dic ; \
-		done; \
-		for alias in ${CHALIASES}; do \
-			${LN} -s de_CH.aff $${alias}.aff ; \
-			${LN} -s de_CH.dic $${alias}.dic ; \
-		done;
+	@${MKDIR} ${PREFIX}/share/hunspell
+	@${INSTALL_DATA} ${WRKSRC}/hunspell/*.aff \
+		${WRKSRC}/hunspell/*.dic \
+		${PREFIX}/share/hunspell/
+	@cd ${PREFIX}/share/hunspell; \
+	for alias in ${DEALIASES}; do \
+		${LN} -s de_DE.aff $${alias}.aff ; \
+		${LN} -s de_DE.dic $${alias}.dic ; \
+	done; \
+	for alias in ${CHALIASES}; do \
+		${LN} -s de_CH.aff $${alias}.aff ; \
+		${LN} -s de_CH.dic $${alias}.dic ; \
+	done;
 
 .include <bsd.port.mk>

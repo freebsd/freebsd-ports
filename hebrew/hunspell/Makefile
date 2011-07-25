@@ -12,7 +12,7 @@ MASTER_SITES=	http://hspell.ivrix.org.il/
 DISTNAME=	hspell-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
-COMMENT=	Hunspell hebrew dictionnary
+COMMENT=	Hunspell hebrew dictionary
 
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 

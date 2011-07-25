@@ -14,7 +14,7 @@ DISTFILES=	hunspell-pt_PT-${PORTVERSION}.tar.gz \
 		pt_BR-2011-05-27AOC.zip:BR
 
 MAINTAINER=	office@FreeBSD.org
-COMMENT=	Hunspell portuguese dictionnary
+COMMENT=	Hunspell portuguese dictionary
 
 # rely on bsdtar ability to extract .gz and .zip archives
 EXTRACT_CMD=	${CAT}

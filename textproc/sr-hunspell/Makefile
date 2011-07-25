@@ -14,7 +14,7 @@ DISTNAME=	serbian_dictionary-${PORTVERSION}-fx+tb+sm
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	office@FreeBSD.org
-COMMENT=	Serbian hunspell dictionnaries
+COMMENT=	Serbian hunspell dictionaries
 
 USE_ZIP=	yes
 NO_BUILD=	yes
