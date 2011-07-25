@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="9f14cb36-b6fc-11e0-a044-445c73746d79">
+    <topic>opensaml2 -- unauthenticated login</topic>
+    <affects>
+      <package>
+	<name>opensaml2</name>
+	<range><gt>0</gt><lt>2.4.3</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OpenSAML developer reports:</p>
+	<blockquote cite="https://groups.google.com/a/shibboleth.net/group/announce/browse_thread/thread/cf3e0d76afbb57d9">
+	  <p>The Shibboleth software relies on the OpenSAML libraries to perform 
+             verification of signed XML messages such as attribute queries or 
+             SAML assertions. Both the Java and C++ versions are vulnerable to a 
+             so-called "wrapping attack" that allows a remote, unauthenticated 
+             attacker to craft specially formed messages that can be successfully 
+             verified, but contain arbitrary content.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <mlist msgid="CA530061.113D6%cantor.2@osu.edu">https://groups.google.com/a/shibboleth.net/group/announce/browse_thread/thread/cf3e0d76afbb57d9</mlist>
+    </references>
+    <dates>
+      <discovery>2011-07-25</discovery>
+      <entry>2011-07-25</entry>
+    </dates>
+  </vuln>
   <vuln vid="9a777c23-b310-11e0-832d-00215c6a37bb">
     <topic>rsync -- incremental recursion memory corruption vulnerability</topic>
     <affects>
