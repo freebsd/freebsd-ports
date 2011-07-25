@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	Config-Model
-PORTVERSION=	1.249
+PORTVERSION=	1.250
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DDUMONT
@@ -88,7 +88,10 @@ MAN3=		Config::Model.3 \
 		Config::Model::models::Debian::Dpkg::Control::Source.3 \
 		Config::Model::models::Debian::Dpkg::Copyright.3 \
 		Config::Model::models::Debian::Dpkg::Copyright::Content.3 \
+		Config::Model::models::Debian::Dpkg::Copyright::FileLicense.3 \
+		Config::Model::models::Debian::Dpkg::Copyright::GlobalLicense.3 \
 		Config::Model::models::Debian::Dpkg::Copyright::License.3 \
+		Config::Model::models::Debian::Dpkg::Copyright::LicenseSpec.3 \
 		Config::Model::models::Debian::Dpkg::Meta.3 \
 		Config::Model::models::Debian::Dpkg::Source.3 \
 		Config::Model::models::Debian::Dpkg::Source::Options.3 \

@@ -55,8 +55,13 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright.pod
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/Content.pl
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/Content.pod
-%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/License.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/FileLicense.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/FileLicense.pod
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/GlobalLicense.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/GlobalLicense.pod
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/License.pod
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/LicenseSpec.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/LicenseSpec.pod
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Meta.pl
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Meta.pod
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Source.pl
