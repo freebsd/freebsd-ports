@@ -17,6 +17,8 @@ COMMENT=	C++-based FTP/HTTP server that supports modules
 LOGFILE=	share/fhttpd/fhttpd.log
 PLIST_SUB+=	LOGFILE=${LOGFILE}
 
+CXXFLAGS+=	-Wno-deprecated -Wno-write-strings
+
 post-extract:
 	@${CP} ${FILESDIR}/fhttpd.sh ${WRKSRC}
 
