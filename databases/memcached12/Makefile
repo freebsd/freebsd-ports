@@ -26,7 +26,7 @@ USE_RC_SUBR=	memcached
 GNU_CONFIGURE=	YES
 CONFIGURE_ARGS=		--with-libevent=${LOCALBASE} --program-prefix=
 
-PORTSCOUT=	ignore
+PORTSCOUT=	ignore:1
 
 OPTIONS=	REPCACHED	"Enable data replication feature"	off \
 		SASL		"Enable SASL support"			off
