@@ -18,7 +18,7 @@
  ADDRUNCFLAGS=
  ADDDYNLIBCFLAGS=
  
-@@ -45,13 +45,13 @@
+@@ -45,13 +45,14 @@
  
  # For NetBSD, use:
  # ------------------------
@@ -36,6 +36,7 @@
 +INSTALL_PROGRAM=${BSD_INSTALL_PROGRAM}
 +INSTALL_SCRIPT=${BSD_INSTALL_SCRIPT}
 +INSTALL_DATA=${BSD_INSTALL_DATA}
++LD=${CC} -rdynamic
  
  # For Solaris 2 (not SunOS 4), use:
  # ---------------------------------
