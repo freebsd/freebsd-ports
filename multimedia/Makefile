@@ -275,6 +275,7 @@
     SUBDIR += py-pybmp
     SUBDIR += py-qt4-multimedia
     SUBDIR += py-qt4-phonon
+    SUBDIR += py-tvnamer
     SUBDIR += pyjama
     SUBDIR += qdvdauthor
     SUBDIR += qmmp
