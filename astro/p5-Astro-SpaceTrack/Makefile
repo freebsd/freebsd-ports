@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Astro-SpaceTrack
-PORTVERSION=	0.053
+PORTVERSION=	0.054
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,22 +17,21 @@ COMMENT=	Retrieve orbital data from www.space-track.org
 LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-LWP-Protocol-https>=0:${PORTSDIR}/www/p5-LWP-Protocol-https \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	-y
-USE_PERL5_RUN=	5.6.2+
+CONFIGURE_ARGS=	-y
 
 MAN1=		SpaceTrack.1
 MAN3=		Astro::SpaceTrack.3
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.if ${PERL_LEVEL} < 501000
+RUN_DEPENDS+=	p5-IO-Compress>=0:${PORTSDIR}/archivers/p5-IO-Compress
 .endif
 
 .include <bsd.port.post.mk>
