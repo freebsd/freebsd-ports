@@ -1,4 +1,4 @@
-#! /usr/local/bin/perl -WT
+#! /usr/local/bin/perl -W
     eval 'exec /usr/local/bin/perl -S $0 ${1+"$@"}'
         if 0; #$running_under_some_shell
 
@@ -21,6 +21,7 @@ pkgs_which --man
     --verbose, -v      also print unmatched files
     --sort, -s         sort package and file lists
     --[no-]cacheall    read and cache all package file lists first
+    --[no-]find        descend directories on the command line [default]
 
     --debug, -d        emit additional debug information on stderr
 
@@ -135,6 +136,7 @@ my $verbose = 0;
 my $quiet = 0;
 my $origins = 0;
 my $sort = 0;
+my $find = 1;
 
 GetOptions('help|h|?' => \$help,
 	    'man' => \$man,
@@ -143,7 +145,8 @@ GetOptions('help|h|?' => \$help,
 	    'origins|o' => \$origins,
 	    'quiet|q' => sub { $quiet = 1; $verbose = 0;},
 	    'sort|s' => \$sort,
-	    'verbose|v' => sub { $verbose ++; $quiet = 0; })
+	    'verbose|v' => sub { $verbose ++; $quiet = 0; },
+	    'find|f!' => \$find)
 	    or pod2usage(2);
 pod2usage(1) if $help;
 pod2usage(-exitstatus => 0, -verbose => 2) if $man;
@@ -177,20 +180,28 @@ while ($idx <= $#ARGV) {
 	$idx++;
     } else {
 	warn "Cannot stat $ARGV[$idx]: $!, skipping";
-	delete $ARGV[$idx];
+	delete $ARGV[$idx]; # leaves indices stable
+	$idx++;
 	$rc = 1;
     }
 };
 
 # Obtain file list
-File::Find::find({wanted => \&wanted,
-		  no_chdir => 1,
-		  untaint => 1},
-	      @ARGV);
+if ($find) {
+    File::Find::find({wanted => \&wanted,
+	    no_chdir => 1,
+	    untaint => 1},
+	@ARGV);
+} else {
+    foreach my $i (@ARGV) {
+	$i =~ qr|^([-+@\w./]+)$|;
+	$ufiles{$1} = 1;
+    }
+}
 
 my @notfound=(); # to record files not matched
 
-# Obtain packge info if desired
+# Obtain package info if desired
 my ($f2p, $pfl) = readcache() if $cacheall;
 my %p2o = readorigins() if $cacheall and $origins;
 
@@ -349,8 +360,16 @@ L<pkg_info>(8), L<portmaster>(8), L<portupgrade>(8), L<pkg_which>(8)
 
 =head1 HISTORY
 
-pkgs_which made its first appearance in the FreeBSD ports tree on
-2011-03-12. The current CVS Version tag is:
+0.2.0 2011-07-25
+  - fixed a bug where skipping non-existent command line arguments
+    failed and resulted in an unterminated (endless) loop.
+
+  - added the --no-find option
+
+0.1.0 2011-03-12
+  - pkgs_which made its first appearance in the FreeBSD ports tree
+
+The current CVS Version tag is:
 
  $FreeBSD$
 
