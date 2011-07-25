@@ -1,21 +1,21 @@
---- CMakeLists.txt.orig	2009-09-21 13:54:49.000000000 -0500
-+++ CMakeLists.txt	2010-01-17 21:14:51.000000000 -0600
-@@ -41,6 +41,7 @@
+--- CMakeLists.txt.orig	2010-10-15 13:35:00.000000000 +0000
++++ CMakeLists.txt	2011-07-25 03:34:11.000000000 +0000
+@@ -53,6 +53,7 @@
  option(ENABLE_TAUCS "Enable Taucs linear algebra solver" ON)
  option(ENABLE_TETGEN "Enable Tetgen mesh generator" ON)
  option(ENABLE_TETGEN_NEW "Enable experimental version of Tetgen" OFF)
 +option(INSTALL_DOCS "Install the docs (FreeBSD only)" ON)
  
  set(GMSH_MAJOR_VERSION 2)
- set(GMSH_MINOR_VERSION 4)
-@@ -478,13 +479,17 @@
- if(ENABLE_TAUCS)
-   find_library(TAUCS_LIB taucs)
+ set(GMSH_MINOR_VERSION 5)
+@@ -574,13 +575,17 @@
+   endif(NOT HAVE_METIS)
+   find_library(TAUCS_LIB taucs PATH_SUFFIXES lib)
    if(TAUCS_LIB)
--    find_path(TAUCS_INC "taucs.h" PATH_SUFFIXES src include)
+-    find_path(TAUCS_INC "taucs.h" PATH_SUFFIXES src include taucs)
 -    if(TAUCS_INC)
--      set(HAVE_TAUCS TRUE)
--      list(APPEND CONFIG_OPTIONS "Taucs")
+-      set_config_option(HAVE_TAUCS "Taucs")
+-      add_definitions(-DTAUCS_CILK)
 -      list(APPEND EXTERNAL_LIBRARIES ${TAUCS_LIB})
 -      list(APPEND EXTERNAL_INCLUDES ${TAUCS_INC})
 -    endif(TAUCS_INC)
@@ -33,32 +33,16 @@
    endif(TAUCS_LIB)
  endif(ENABLE_TAUCS)
  
-@@ -518,7 +523,7 @@
+@@ -673,7 +678,7 @@
    list(LENGTH OCC_LIBS NUM_OCC_LIBS)
    if(NUM_OCC_LIBS EQUAL NUM_OCC_LIBS_REQUIRED)
      find_path(OCC_INC "BRep_Tool.hxx" PATHS ENV CASROOT PATH_SUFFIXES inc 
 -              include opencascade)
 +              include opencascade OpenCAS/ros/inc)
      if(OCC_INC)
-       set(HAVE_OCC TRUE)
-       list(APPEND CONFIG_OPTIONS "OpenCascade")
-@@ -654,15 +659,6 @@
- if(HAVE_LAPACK AND LAPACK_FLAGS)
-   set_target_properties(shared PROPERTIES LINK_FLAGS ${LAPACK_FLAGS})
- endif(HAVE_LAPACK AND LAPACK_FLAGS)
--if(HAVE_FLTK)
--  target_link_libraries(shared ${FLTK_LIBRARIES} ${EXTERNAL_LIBRARIES} 
--                        ${OPENGL_LIBRARIES} ${LAPACK_LIBRARIES})
--elseif(HAVE_OPENGL)
--  target_link_libraries(shared ${EXTERNAL_LIBRARIES} ${OPENGL_LIBRARIES}
--                        ${LAPACK_LIBRARIES})
--else(HAVE_FLTK)
--  target_link_libraries(shared ${EXTERNAL_LIBRARIES} ${LAPACK_LIBRARIES})
--endif(HAVE_FLTK)
- 
- # binary targets
- if(HAVE_FLTK)
-@@ -762,13 +758,15 @@
+       set_config_option(HAVE_OCC "OpenCascade")
+       list(APPEND EXTERNAL_LIBRARIES ${OCC_LIBS})
+@@ -969,11 +974,13 @@
  install(TARGETS gmsh DESTINATION ${GMSH_BIN} OPTIONAL)
  install(TARGETS lib shared DESTINATION lib OPTIONAL)
  install(FILES ${GMSH_API} DESTINATION include/gmsh)
@@ -75,8 +59,5 @@
 +  install(FILES ${DEMO_FILES} DESTINATION ${GMSH_DOC}/demos)
 +endif(INSTALL_DOCS)
  if(UNIX AND NOT CYGWIN)
--  install(FILES ${CMAKE_SOURCE_DIR}/doc/gmsh.1 DESTINATION share/man/man1)
-+  install(FILES ${CMAKE_SOURCE_DIR}/doc/gmsh.1 DESTINATION man/man1)
+   install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/doc/gmsh.1 DESTINATION ${GMSH_MAN})
  endif(UNIX AND NOT CYGWIN)
- 
- find_program(MAKEINFO makeinfo)
