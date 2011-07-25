@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	gnarr
-PORTVERSION=	2
-PORTREVISION=	1
+PORTVERSION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://sacredchao.net/~piman/archive/
+MASTER_SITES=	http://www.volny.cz/nakamura/gnarr/
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	A program for generating battle cries
