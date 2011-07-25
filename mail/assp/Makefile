@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	assp
-PORTVERSION=	1.9.1.3
+PORTVERSION=	1.9.1.1
+PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.ringofsaturn.com/distfiles/
 DISTNAME=	${PORTNAME:U}_${PORTVERSION}-Install

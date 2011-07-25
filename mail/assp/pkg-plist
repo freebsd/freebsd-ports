@@ -21,7 +21,6 @@ sbin/assplog
 %%DATADIR%%/files/invalidhelo.txt
 %%DATADIR%%/files/invalidptr.txt
 %%DATADIR%%/files/ipnp.txt
-%%DATADIR%%/files/noblocking.txt
 %%DATADIR%%/files/nodelay.txt
 %%DATADIR%%/files/nodelayhelosre.txt
 %%DATADIR%%/files/nogrip.txt
