@@ -11049,6 +11049,7 @@ p5-Bit-Vector-Minimal           ports/math/p5-Bit-Vector-Minimal
 p5-Blog-Spam                    ports/www/p5-Blog-Spam
 p5-Bloom-Filter                 ports/textproc/p5-Bloom-Filter
 p5-Bot-BasicBot                 ports/irc/p5-Bot-BasicBot
+p5-Bot-Training                 ports/misc/p5-Bot-Training
 p5-Boulder                      ports/converters/p5-Boulder
 p5-Brackup                      ports/sysutils/p5-Brackup
 p5-Bread-Board                  ports/devel/p5-Bread-Board
@@ -15304,6 +15305,7 @@ p5-blog-spam                    ports/www/p5-Blog-Spam
 p5-bloom-filter                 ports/textproc/p5-Bloom-Filter
 p5-boolean                      ports/devel/p5-boolean
 p5-bot-basicbot                 ports/irc/p5-Bot-BasicBot
+p5-bot-training                 ports/misc/p5-Bot-Training
 p5-boulder                      ports/converters/p5-Boulder
 p5-brackup                      ports/sysutils/p5-Brackup
 p5-bread-board                  ports/devel/p5-Bread-Board
