@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sciplore-mindmapping
-PORTVERSION=	0.b015
+PORTVERSION=	0.b016
 CATEGORIES=	deskutils java
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	splmm/beta15
@@ -17,10 +17,10 @@ DISTNAME=	SciPlore_MindMapping_AllOS_v015b
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Mind Mapping tool with Reference and PDF Management
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
-
-LICENSE=	GPLv2
 
 USE_ZIP=	yes
 USE_JAVA=	yes
