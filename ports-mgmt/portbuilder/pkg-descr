@@ -1,8 +1,8 @@
 A concurrent ports building tool.  Although FreeBSD ports supports building a
-single port using multiple jobs (via MAKE_JOBS) however it cannot build
-multiple ports concurrently.  This tool accomplishes just that.
+single port using multiple jobs (via MAKE_JOBS), it cannot build multiple ports
+concurrently.  This tool accomplishes just that.
 
-Some of its key features:
+Some of it's key features:
  * Concurrent port building
  * Load control
  * Top like UI

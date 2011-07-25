@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	portbuilder
-DISTVERSION=	0.1.3
+DISTVERSION=	0.1.3.1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://cloud.github.com/downloads/DragonSA/portbuilder/
 
@@ -15,7 +15,17 @@ COMMENT=	Concurrent FreeBSD port builder
 LICENSES=	BSD
 
 USE_PYTHON=	2.6+
-USE_PYDISTUTILS=	yes
+USE_PYDISTUTILS=yes
 USE_XZ=		yes
+
+PORTDOCS=	BUGS ChangeLog COPYRIGHT README
+
+post-install:
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
+.endif
 
 .include <bsd.port.mk>
