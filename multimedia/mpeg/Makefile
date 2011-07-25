@@ -9,9 +9,7 @@ PORTNAME=	mpeg
 PORTVERSION=	1.2.2
 PORTREVISION=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	ftp://ftp.uni-koeln.de/graph/mpeg/ \
-		ftp://ftp.mni.mcgill.ca/pub/mpeg/ \
-		ftp://ftp.u-aizu.ac.jp/pub/graphics/image/mpeg/mni.mcgill.ca/
+MASTER_SITES=	ftp://ftp.u-aizu.ac.jp/pub/graphics/image/mpeg/mni.mcgill.ca/
 DISTNAME=	MPEGv${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
@@ -20,8 +18,11 @@ COMMENT=	PVRG's MPEG video stream encoder
 WRKSRC=		${WRKDIR}/mpegdir
 MAN1=		mpeg.1
 
-pre-build:
+post-patch:
 	@-${MV} ${WRKSRC}/makefile ${WRKSRC}/Makefile
+	${REINPLACE_CMD} -e 's/cc/${CC}/g' ${WRKSRC}/Makefile
+
+pre-build:
 	cd ${WRKSRC} && lex -lt lexer.l >lexer.c
 
 do-install:
