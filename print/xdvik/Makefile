@@ -25,6 +25,7 @@ LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib
 
 USE_GMAKE=	yes
 USE_MOTIF=	yes
+MAKE_JOBS_UNSAFE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-system-t1lib \
 		--with-t1lib-libdir=${LIBT1_PREFIX}/lib \
