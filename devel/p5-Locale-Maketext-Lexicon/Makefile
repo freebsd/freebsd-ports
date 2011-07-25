@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Locale-Maketext-Lexicon
-PORTVERSION=	0.86
+PORTVERSION=	0.87
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	Locale/DRTECH
@@ -15,10 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Use other catalog formats in Locale::Maketext
 
-BUILD_DEPENDS=	p5-Locale-Maketext>=1.17:${PORTSDIR}/devel/p5-Locale-Maketext
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Locale-Maketext>=1.17:${PORTSDIR}/devel/p5-Locale-Maketext
 
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	yes
 
 MAN1=		xgettext.pl.1
 MAN3=		Locale::Maketext::Extract.3 \
