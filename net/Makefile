@@ -32,6 +32,7 @@
     SUBDIR += asterisk-app-ldap
     SUBDIR += asterisk-app-notify
     SUBDIR += asterisk-oh323
+    SUBDIR += asterisk10
     SUBDIR += asterisk14
     SUBDIR += asterisk14-addons
     SUBDIR += asterisk16
