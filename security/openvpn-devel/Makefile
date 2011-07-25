@@ -15,8 +15,9 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	ecrist@secure-computing.net
 COMMENT=	Secure IP/Ethernet tunnel daemon
 
-WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}
 LICENSE=	GPLv2
+
+WRKSRC=		${WRKDIR}/${PORTNAME}${PKGNAMESUFFIX}
 
 CONFLICTS=	openvpn-2.0* openvpn-beta-[0-9]*
 
@@ -26,6 +27,8 @@ CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}/lib \
 		--with-lzo-headers=${LOCALBASE}/include \
 		--disable-depr-random-resolv
 INSTALL_TARGET=	install mandir=${MANPREFIX}/man
+
+LIB_DEPENDS+=	lzo2.2:${PORTSDIR}/archivers/lzo2
 
 MAN8=		openvpn.8
 
@@ -54,16 +57,6 @@ pre-fetch:
 	@${ECHO} "      LOG_OPENVPN={Valid syslog facility}"
 	@${ECHO} "      EXAMPLE:  make LOG_OPENVPN=LOG_DAEMON"
 	@${ECHO} ""
-.endif
-
-# NOTE: there is no way to explicitly specify the LZO version to OpenVPN,
-# if LZO2 and LZO1 are installed, OpenVPN will pick LZO2.
-# So depend on LZO1 only if it's already there and LZO2 isn't.
-# PACKAGE_BUILDING will also force LZO2.
-.if exists(${LOCALBASE}/lib/liblzo2.so.2) || !exists(${LOCALBASE}/lib/liblzo.so.1) || defined(PACKAGE_BUILDING)
-LIB_DEPENDS+=	lzo2.2:${PORTSDIR}/archivers/lzo2
-.else
-LIB_DEPENDS+=	lzo.1:${PORTSDIR}/archivers/lzo
 .endif
 
 .if defined(WITH_PW_SAVE)
