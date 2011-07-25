@@ -1,0 +1,10 @@
+--- configure.orig	1996-04-19 12:22:41.000000000 +0200
++++ configure	2011-07-25 20:21:58.000000000 +0200
+@@ -513,7 +513,6 @@ fi
+ 
+ 
+ 
+-CC=gcc
+ for ac_prog in 'bison -y' byacc
+ do
+ # Extract the first word of "$ac_prog", so it can be a program name with args.

@@ -1,6 +1,6 @@
---- Makefile.in.orig	1996-06-04 19:54:32.000000000 +0800
-+++ Makefile.in	2008-08-24 21:42:48.000000000 +0800
-@@ -41,9 +41,10 @@
+--- Makefile.in.orig	1996-06-04 13:54:32.000000000 +0200
++++ Makefile.in	2011-07-25 20:21:13.000000000 +0200
+@@ -41,9 +41,10 @@ exec_prefix = @exec_prefix@
  #manprefix =
  
  bindir = @bindir@
@@ -12,7 +12,7 @@
  
  MAINCF = $(libdir)/emil.cf
  CHARFILE = $(libdir)/charsets.cpl
-@@ -262,6 +263,12 @@
+@@ -262,6 +263,12 @@ install: installdirs
  		$(INSTALL_DATA) emil.cf.$(manext) $(mandir)/man$(manext); \
  	fi ;
  	@echo " " ;

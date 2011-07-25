@@ -1,6 +1,6 @@
---- mimeparse.c~	Tue Jun  4 06:36:59 1996
-+++ mimeparse.c	Tue Apr 21 05:02:15 1998
-@@ -219,8 +219,39 @@
+--- mimeparse.c.orig	1996-06-04 15:36:59.000000000 +0200
++++ mimeparse.c	2011-07-25 20:21:13.000000000 +0200
+@@ -219,8 +219,39 @@ parse_mime_siblings(struct message *m)
  	    inbuf->bodystart,
  	    inbuf->bodyend);
  #endif

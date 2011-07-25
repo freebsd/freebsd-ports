@@ -1,12 +1,12 @@
---- emil.man~	Tue Jun  4 04:42:42 1996
-+++ emil.man	Tue Apr 21 04:08:04 1998
+--- emil.man.orig	1996-06-04 13:42:42.000000000 +0200
++++ emil.man	2011-07-25 20:21:13.000000000 +0200
 @@ -1,4 +1,4 @@
 -.TH EMIL 8 "19 December 1994"
 +.TH EMIL 1 "19 December 1994"
  
  .SH NAME
  
-@@ -63,7 +63,7 @@
+@@ -63,7 +63,7 @@ the changes in encoding and formatting i
  .BR no 
  spooling. 
  
@@ -15,7 +15,7 @@
  invoke sendmail or other programs for it's output. 
  When used like this, emil does not close the connection with the calling 
  sendmail until it returns an EX_OK from the called program, 
-@@ -151,17 +151,17 @@
+@@ -151,17 +151,17 @@ RFC822.
  .TP
  .BI "\-H " Recipient_header_encoding
  Recipient header encoding. One of Se, 7bit, 8bit, BAse64 or Quoted-printable.
@@ -36,7 +36,7 @@
  
  .RE
  Beware, when applying the Sender_charset option, there is no
-@@ -243,7 +243,7 @@
+@@ -243,7 +243,7 @@ Torbjorn Wictorin (Torbjorn.Wictorin@its
  
  .SH "SEE ALSO"
  

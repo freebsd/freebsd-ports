@@ -1,5 +1,5 @@
---- emil.cf.man~	Sat Feb 10 05:16:17 1996
-+++ emil.cf.man	Tue Apr 21 04:10:45 1998
+--- emil.cf.man.orig	1996-02-10 14:16:17.000000000 +0100
++++ emil.cf.man	2011-07-25 20:21:13.000000000 +0200
 @@ -1,6 +1,6 @@
 -.TH EMIL.CF 8 "19 December 1994"
 +.TH EMIL.CF 1 "19 December 1994"
@@ -9,7 +9,7 @@
  .SH SYNOPSIS
  .B group
  .IR  "Group_Name" ":" 
-@@ -45,7 +45,7 @@
+@@ -45,7 +45,7 @@ emil.cf \- configuration file for emil(8
  .SH DESCRIPTION
  The file 
  MAINCF
@@ -18,7 +18,7 @@
  Internet 
  message. Conversion is controlled by the combination of 
  .IR Sender,
-@@ -127,7 +127,7 @@
+@@ -127,7 +127,7 @@ european languages.
  Pick one of Base64, Quoted-printable, 8bit or Se, 7bit.
  7bit is default. If BAse64 or Quoted-Printable is selected
  headers are converted according to RFC1522 (MIME-II).
@@ -27,7 +27,7 @@
  
  .TP
  .B "match"
-@@ -205,7 +205,7 @@
+@@ -205,7 +205,7 @@ sender, recipient and mail relay. These 
  Martin Wendel (Martin.Wendel@its.uu.se) and
  Torbjorn Wictorin (Torbjorn.Wictorin@its.uu.se)
  .SH "SEE ALSO"
