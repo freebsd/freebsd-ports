@@ -8,7 +8,7 @@
 PORTREVISION=	0
 PKGNAMESUFFIX=	-daemon
 
-MAINTAINER=	mezz@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A fast and lightweight daemon BitTorrent client
 
 RUN_DEPENDS=	${GEN_RUN_DEPENDS}
