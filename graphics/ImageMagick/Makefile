@@ -7,6 +7,7 @@
 
 PORTNAME=	ImageMagick
 DISTVERSION=	6.7.0-10
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://ftp.nluug.nl/pub/ImageMagick/ \
@@ -22,7 +23,7 @@ USE_AUTOTOOLS=	libltdl
 # For some reason, using our libtool breaks the build into pieces:
 #USE_AUTOTOOLS+=	libtool
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-shared --without-dps
 USE_GMAKE=	yes
 MAKE_JOBS_SAFE=	yes
@@ -170,14 +171,9 @@ PLIST_SUB+=		OPENEXR="@comment "
 .if defined(WITH_IMAGEMAGICK_DJVU)
 . if ${_IMAGEMAGICK_THREADS} == "no"
 IGNORE=DjVu requires threads${_IMAGEMAGICK_THREADS_IGNORE_MSG}
-. else
-.  if defined(WITHOUT_X11)
-LIB_DEPENDS+=		djvulibre:${PORTSDIR}/graphics/djvulibre-nox11
-.  else
-LIB_DEPENDS+=		djvulibre:${PORTSDIR}/graphics/djvulibre
-.  endif
-PLIST_SUB+=		DJVU=""
 . endif
+LIB_DEPENDS+=		djvulibre:${PORTSDIR}/graphics/djvulibre-nox11
+PLIST_SUB+=		DJVU=""
 .else
 CONFIGURE_ARGS+=	--without-djvu
 PLIST_SUB+=		DJVU="@comment "
@@ -271,7 +267,7 @@ CONFIGURE_ARGS+=	--without-gvc
 .endif
 
 # LZMA support
-.if !defined(WITHOUT_LZMA)
+.if !defined(WITHOUT_IMAGEMAGICK_LZMA)
 . if (${OSVERSION} >= 900000 && ${OSVERSION} < 900012) || (${OSVERSION} < 800505)
 LIB_DEPENDS+=		lzma:${PORTSDIR}/archivers/xz
 . endif
