@@ -1,5 +1,6 @@
 %%SITE_PERL%%/DBIx/Custom.pm
 %%SITE_PERL%%/DBIx/Custom/Guide.pod
+%%SITE_PERL%%/DBIx/Custom/Guide/Ja.pod
 %%SITE_PERL%%/DBIx/Custom/Model.pm
 %%SITE_PERL%%/DBIx/Custom/Order.pm
 %%SITE_PERL%%/DBIx/Custom/Query.pm
@@ -13,5 +14,6 @@
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/DBIx
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%
 @dirrmtry %%SITE_PERL%%/DBIx/Custom/SQL
+@dirrmtry %%SITE_PERL%%/DBIx/Custom/Guide
 @dirrmtry %%SITE_PERL%%/DBIx/Custom
 @dirrmtry %%SITE_PERL%%/DBIx

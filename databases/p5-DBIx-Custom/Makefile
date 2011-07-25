@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Custom
-PORTVERSION=	0.1700
+PORTVERSION=	0.1701
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KIMOTO
@@ -15,22 +15,19 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Customizable DBI
 
-BUILD_DEPENDS=	p5-DBD-SQLite>=1.25:${PORTSDIR}/databases/p5-DBD-SQLite \
-		p5-DBI>=1.60.5:${PORTSDIR}/databases/p5-DBI \
-		p5-Object-Simple>=3.0616:${PORTSDIR}/devel/p5-Object-Simple \
-		p5-Time-Piece>=1.15:${PORTSDIR}/devel/p5-Time-Piece
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 RUN_DEPENDS=	p5-DBD-SQLite>=1.25:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-DBI>=1.60.5:${PORTSDIR}/databases/p5-DBI \
-		p5-Object-Simple>=3.0616:${PORTSDIR}/devel/p5-Object-Simple \
+		p5-Object-Simple>=3.0621:${PORTSDIR}/devel/p5-Object-Simple \
 		p5-Time-Piece>=1.15:${PORTSDIR}/devel/p5-Time-Piece
 
 PERL_CONFIGURE=	yes
 
-LICENSE_COMB=	dual
-LICENSE=	ART10 GPLv1
-
 MAN3=		DBIx::Custom.3 \
 		DBIx::Custom::Guide.3 \
+		DBIx::Custom::Guide::Ja.3 \
 		DBIx::Custom::Model.3 \
 		DBIx::Custom::Order.3 \
 		DBIx::Custom::Query.3 \
