@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jwasm
-PORTVERSION=	205
+PORTVERSION=	206
 CATEGORIES=	devel
 MASTER_SITES=	http://www.japheth.de/Download/JWasm/
 DISTNAME=	JWasm${PORTVERSION}s
