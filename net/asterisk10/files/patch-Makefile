@@ -1,5 +1,5 @@
---- Makefile.orig	2011-02-01 19:02:06.000000000 +0100
-+++ Makefile	2011-05-22 18:45:02.809438425 +0200
+--- Makefile.orig	2011-07-19 23:31:16.000000000 +0200
++++ Makefile	2011-07-23 00:32:54.955232647 +0200
 @@ -122,7 +122,7 @@
  OVERWRITE=y
  
@@ -9,22 +9,20 @@
  
  # Asterisk.conf is located in ASTETCDIR or by using the -C flag
  # when starting Asterisk
-@@ -220,11 +220,13 @@
-   _ASTCFLAGS+=-isystem /usr/local/include
- endif
- 
-+ifneq ($(OSARCH),FreeBSD)
- ifeq ($(findstring -march,$(_ASTCFLAGS) $(ASTCFLAGS)),)
-   ifneq ($(PROC),ultrasparc)
-     _ASTCFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
+@@ -226,9 +226,11 @@
+   ifneq ($(AST_MARCH_NATIVE),)
+     _ASTCFLAGS+=$(AST_MARCH_NATIVE)
+   else
++    ifneq ($(OSARCH),FreeBSD)
+     ifneq ($(PROC),ultrasparc)
+       _ASTCFLAGS+=$(shell if $(CC) -march=$(PROC) -S -o /dev/null -xc /dev/null >/dev/null 2>&1; then echo "-march=$(PROC)"; fi)
+     endif
++    endif
    endif
  endif
-+endif
  
- ifeq ($(PROC),ppc)
-   _ASTCFLAGS+=-fsigned-char
-@@ -235,7 +237,7 @@
-     _ASTCFLAGS+=-march=i686
+@@ -243,7 +245,7 @@
+     endif
    endif
    # -V is understood by BSD Make, not by GNU make.
 -  BSDVERSION=$(shell make -V OSVERSION -f /usr/share/mk/bsd.port.subdir.mk)
@@ -32,22 +30,21 @@
    _ASTCFLAGS+=$(shell if test $(BSDVERSION) -lt 500016 ; then echo "-D_THREAD_SAFE"; fi)
  endif
  
-@@ -462,8 +464,13 @@
- 		$(INSTALL) -m 644 $$x "$(DESTDIR)$(ASTDATADIR)/static-http" ; \
- 	done
- 	$(INSTALL) -m 644 doc/core-en_US.xml "$(DESTDIR)$(ASTDATADIR)/static-http";
-+
+@@ -476,8 +478,12 @@
+ 			$(INSTALL) -m 644 $$n "$(DESTDIR)$(ASTDATADIR)/static-http/docs" ; \
+ 		done \
+ 	fi
 +	if [ ! -d $(DESTDIR)$(DOCSDIR)/images ]; then \
 +		$(MKDIR) $(DESTDIR)$(DOCSDIR)/images; \
 +	fi
 +
  	for x in images/*.jpg; do \
--		$(INSTALL) -m 644 $$x "$(DESTDIR)$(ASTDATADIR)/images" ; \
+-		$(INSTALL) -m 644 $$x $(DESTDIR)$(ASTDATADIR)/images ; \
 +		$(INSTALL) -m 644 $$x $(DESTDIR)$(DOCSDIR)/images ; \
  	done
  	$(MAKE) -C sounds install
  
-@@ -523,6 +530,7 @@
+@@ -537,6 +543,7 @@
  	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/dictate"
  	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/meetme"
  	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/monitor"
@@ -55,7 +52,7 @@
  	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/system"
  	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/tmp"
  	$(INSTALL) -d "$(DESTDIR)$(ASTSPOOLDIR)/voicemail"
-@@ -603,7 +612,7 @@
+@@ -617,7 +624,7 @@
  	@exit 1
  endif
  
@@ -64,7 +61,7 @@
  	@if [ -x /usr/sbin/asterisk-post-install ]; then \
  		/usr/sbin/asterisk-post-install $(DESTDIR) . ; \
  	fi
-@@ -645,29 +654,18 @@
+@@ -659,29 +666,18 @@
  		else \
  			echo "Installing $$x" ; \
  		fi ; \
@@ -99,7 +96,7 @@
  		echo "Updating asterisk.conf" ; \
  		sed -e 's|^astetcdir.*$$|astetcdir => $(ASTETCDIR)|' \
  			-e 's|^astmoddir.*$$|astmoddir => $(MODULES_DIR)|' \
-@@ -681,6 +679,7 @@
+@@ -695,6 +691,7 @@
  			-e 's|^astlogdir.*$$|astlogdir => $(ASTLOGDIR)|' \
  			$(DESTDIR)$(ASTCONFPATH) > $(DESTDIR)$(ASTCONFPATH).tmp ; \
  		$(INSTALL) -m 644 $(DESTDIR)$(ASTCONFPATH).tmp $(DESTDIR)$(ASTCONFPATH) ; \
