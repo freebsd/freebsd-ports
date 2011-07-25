@@ -27,3 +27,14 @@
  
  /* CHROOTDIR
   *
+@@ -245,8 +245,8 @@
+  * define IRC_USER to that user name.  This should only be defined if you
+  * are running as root and even then perhaps not.
+  */
+-/* #define IRC_USER  "<user name>" */
+-/* #define IRC_GROUP "<group name>" */
++#define IRC_USER  "%%USERS%%"
++#define IRC_GROUP "%%GROUPS%%"
+
+
+ /* SHOW_INVISIBLE_LUSERS

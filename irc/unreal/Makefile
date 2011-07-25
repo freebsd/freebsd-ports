@@ -9,12 +9,14 @@ PORTNAME=	Unreal
 PORTVERSION=	3.2.8.1
 PORTREVISION=	3
 CATEGORIES=	irc ipv6
-MASTER_SITES=	http://unrealircd.pimpmylinux.org/ \
-		http://unrealircd.icedslash.com/
+MASTER_SITES=	http://www.unrealircd.com/downloads/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	tanawts@gmail.com
 COMMENT=	Unreal - the next generation ircd
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	cares.2:${PORTSDIR}/dns/c-ares
 
@@ -28,10 +30,15 @@ LOGDIR=		/var/log/ircd
 HAS_CONFIGURE=	yes
 USE_RC_SUBR=	unrealircd.sh
 
+USERS=		ircd
+GROUPS=		ircd
+
 SUB_LIST+=	RUNDIR=${RUNDIR}
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
+CFLAGS+=	${CPPFLAGS}
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-listen=5 \
 		--with-dpath=${CONFIGDIR} \
 		--with-spath=${PREFIX}/libexec/ircd \
@@ -41,8 +48,6 @@ CONFIGURE_ARGS=	--with-listen=5 \
 		--with-permissions=0600 \
 		--with-fd-setsize=1024 \
 		--enable-dynamic-linking
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
-		CFLAGS="${CPPFLAGS} ${CFLAGS}"
 
 OPTIONS=	HUB "Configure as a hub (otherwise configure as a leaf)" on \
 		NOSPOOF "Enable anti-spoof protection" off \
@@ -115,6 +120,8 @@ post-extract:
 post-patch:
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," \
 		-e "s,%%RUNDIR%%,${RUNDIR}," \
+		-e "s,%%USERS%%,${USERS}," \
+		-e "s,%%GROUPS%%,${GROUPS}," \
 		-e "s,%%LOGDIR%%,${LOGDIR}," ${WRKSRC}/include/config.h
 	@${REINPLACE_CMD} -e "s,%%PREFIX%%,${PREFIX}," \
 		-e "s,%%LOGDIR%%,${LOGDIR}," ${WRKSRC}/doc/example.conf
