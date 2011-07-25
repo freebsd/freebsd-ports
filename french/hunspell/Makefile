@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.dicollecte.org/download/fr/
 DISTNAME=	hunspell-fr-moderne-v${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
-COMMENT=	Hunspell modern french dictionnary
+COMMENT=	Hunspell modern french dictionary
 
 USE_ZIP=	yes
 NO_BUILD=	yes
@@ -27,13 +27,13 @@ PLIST_FILES+=	share/hunspell/${ALIAS}.aff \
 PLIST_DIRS=	share/hunspell
 
 do-install:
-		@${MKDIR} ${PREFIX}/share/hunspell
-		@${INSTALL_DATA} ${WRKDIR}/fr-moderne.aff ${PREFIX}/share/hunspell/fr_FR.aff
-		@${INSTALL_DATA} ${WRKDIR}/fr-moderne.dic ${PREFIX}/share/hunspell/fr_FR.dic
-		@cd ${PREFIX}/share/hunspell; \
-		for alias in ${FRALIASES}; do \
-			${LN} -s fr_FR.aff $${alias}.aff ; \
-			${LN} -s fr_FR.dic $${alias}.dic ; \
-		done
+	@${MKDIR} ${PREFIX}/share/hunspell
+	@${INSTALL_DATA} ${WRKDIR}/fr-moderne.aff ${PREFIX}/share/hunspell/fr_FR.aff
+	@${INSTALL_DATA} ${WRKDIR}/fr-moderne.dic ${PREFIX}/share/hunspell/fr_FR.dic
+	@cd ${PREFIX}/share/hunspell; \
+	for alias in ${FRALIASES}; do \
+		${LN} -s fr_FR.aff $${alias}.aff ; \
+		${LN} -s fr_FR.dic $${alias}.dic ; \
+	done
 
 .include <bsd.port.mk>

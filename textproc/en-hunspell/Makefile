@@ -16,7 +16,7 @@ DISTFILES=	hunspell-en_US-${PORTVERSION}-0${EXTRACT_SUFX} \
 		en_GB.zip:GB
 
 MAINTAINER=	office@FreeBSD.org
-COMMENT=	Hunspell english dictionnaries
+COMMENT=	Hunspell english dictionaries
 
 USE_ZIP=	yes
 NO_BUILD=	yes

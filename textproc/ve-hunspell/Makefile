@@ -14,7 +14,7 @@ DISTNAME=	venda_spell_checker-${PORTVERSION}-tb+fn+fx+sm
 EXTRACT_SUFX=	.xpi
 
 MAINTAINER=	office@FreeBSD.org
-COMMENT=	Venda hunspell dictionnaries
+COMMENT=	Venda hunspell dictionaries
 
 USE_ZIP=	yes
 NO_BUILD=	yes
