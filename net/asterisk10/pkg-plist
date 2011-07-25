@@ -12,6 +12,8 @@ etc/asterisk/cli.conf-dist
 etc/asterisk/cli_aliases.conf-dist
 @unexec if cmp -s %D/etc/asterisk/cli_permissions.conf %D/etc/asterisk/cli_permissions.conf-dist; then rm -f %D/etc/asterisk/cli_permissions.conf; fi
 etc/asterisk/cli_permissions.conf-dist
+@unexec if cmp -s %D/etc/asterisk/confbridge.conf %D/etc/asterisk/confbridge.conf-dist; then rm -f %D/etc/asterisk/confbridge.conf; fi
+etc/asterisk/confbridge.conf-dist
 @unexec if cmp -s %D/etc/asterisk/console.conf %D/etc/asterisk/console.conf-dist; then rm -f %D/etc/asterisk/console.conf; fi
 etc/asterisk/console.conf-dist
 @unexec if cmp -s %D/etc/asterisk/dbsep.conf %D/etc/asterisk/dbsep.conf-dist; then rm -f %D/etc/asterisk/dbsep.conf; fi
@@ -196,6 +198,7 @@ etc/asterisk/res_fax.conf-dist
 @exec if test ! -e %D/etc/asterisk/cdr_syslog.conf; then cp -p %D/etc/asterisk/cdr_syslog.conf-dist %D/etc/asterisk/cdr_syslog.conf; fi
 @exec if test ! -e %D/etc/asterisk/cdr_sqlite3_custom.conf; then cp -p %D/etc/asterisk/cdr_sqlite3_custom.conf-dist %D/etc/asterisk/cdr_sqlite3_custom.conf; fi
 @exec if test ! -e %D/etc/asterisk/cli.conf; then cp -p %D/etc/asterisk/cli.conf-dist %D/etc/asterisk/cli.conf; fi
+@exec if test ! -e %D/etc/asterisk/confbridge.conf; then cp -p %D/etc/asterisk/confbridge.conf-dist %D/etc/asterisk/confbridge.conf; fi
 @exec if test ! -e %D/etc/asterisk/console.conf; then cp -p %D/etc/asterisk/console.conf-dist %D/etc/asterisk/console.conf; fi
 @exec if test ! -e %D/etc/asterisk/extensions.lua; then cp -p %D/etc/asterisk/extensions.lua-dist %D/etc/asterisk/extensions.lua; fi
 @exec if test ! -e %D/etc/asterisk/extensions_minivm.conf; then cp -p %D/etc/asterisk/extensions_minivm.conf-dist %D/etc/asterisk/extensions_minivm.conf; fi
@@ -298,6 +301,7 @@ include/asterisk/autochan.h
 include/asterisk/calendar.h
 include/asterisk/ccss.h
 include/asterisk/cel.h
+include/asterisk/celt.h
 include/asterisk/channelstate.h
 include/asterisk/data.h
 include/asterisk/event.h
@@ -305,9 +309,13 @@ include/asterisk/event_defs.h
 include/asterisk/extconf.h
 include/asterisk/frame_defs.h
 include/asterisk/framehook.h
+include/asterisk/format.h
+include/asterisk/format_cap.h
+include/asterisk/format_pref.h
 include/asterisk/fskmodem_float.h
 include/asterisk/fskmodem_int.h
 include/asterisk/hashtab.h
+include/asterisk/message.h
 include/asterisk/mod_format.h
 include/asterisk/netsock2.h
 include/asterisk/network.h
@@ -320,6 +328,7 @@ include/asterisk/rtp_engine.h
 include/asterisk/select.h
 include/asterisk/security_events.h
 include/asterisk/security_events_defs.h
+include/asterisk/silk.h
 include/asterisk/stun.h
 include/asterisk/syslog.h
 include/asterisk/tcptls.h
@@ -435,12 +444,10 @@ lib/asterisk/modules/bridge_multiplexed.so
 lib/asterisk/modules/bridge_simple.so
 lib/asterisk/modules/bridge_softmix.so
 %%WITH_ODBC%%lib/asterisk/modules/cdr_adaptive_odbc.so
-%%WITH_JABBER%%lib/asterisk/modules/chan_jingle.so
 lib/asterisk/modules/chan_bridge.so
 lib/asterisk/modules/chan_unistim.so
 lib/asterisk/modules/codec_g722.so
 lib/asterisk/modules/format_g719.so
-lib/asterisk/modules/format_sln16.so
 lib/asterisk/modules/format_siren14.so
 lib/asterisk/modules/format_siren7.so
 lib/asterisk/modules/func_aes.so
@@ -452,6 +459,7 @@ lib/asterisk/modules/func_dialgroup.so
 lib/asterisk/modules/func_dialplan.so
 lib/asterisk/modules/func_extstate.so
 lib/asterisk/modules/func_iconv.so
+lib/asterisk/modules/func_jitterbuffer.so
 lib/asterisk/modules/func_lock.so
 lib/asterisk/modules/func_module.so
 lib/asterisk/modules/func_shell.so
@@ -467,6 +475,8 @@ lib/asterisk/modules/res_clialiases.so
 %%WITH_CURL%%lib/asterisk/modules/res_config_curl.so
 %%WITH_H323%%lib/asterisk/modules/res_config_ldap.so
 %%WITH_SQLITE%%lib/asterisk/modules/res_config_sqlite.so
+lib/asterisk/modules/res_format_attr_celt.so
+lib/asterisk/modules/res_format_attr_silk.so
 lib/asterisk/modules/res_limit.so
 lib/asterisk/modules/res_phoneprov.so
 lib/asterisk/modules/res_realtime.so
@@ -509,12 +519,10 @@ lib/asterisk/modules/app_playback.so
 lib/asterisk/modules/app_privacy.so
 lib/asterisk/modules/app_queue.so
 lib/asterisk/modules/app_read.so
-lib/asterisk/modules/app_readfile.so
 lib/asterisk/modules/app_record.so
 lib/asterisk/modules/app_sayunixtime.so
 lib/asterisk/modules/app_senddtmf.so
 lib/asterisk/modules/app_sendtext.so
-lib/asterisk/modules/app_setcallerid.so
 lib/asterisk/modules/app_sms.so
 lib/asterisk/modules/app_softhangup.so
 lib/asterisk/modules/app_speech_utils.so
@@ -537,7 +545,6 @@ lib/asterisk/modules/cdr_manager.so
 %%WITH_MYSQL%%lib/asterisk/modules/cdr_mysql.so
 %%WITH_POSTGRES%%lib/asterisk/modules/cdr_pgsql.so
 %%WITH_RADIUS%%lib/asterisk/modules/cdr_radius.so
-%%WITH_SQLITE%%lib/asterisk/modules/cdr_sqlite.so
 %%WITH_SQLITE%%lib/asterisk/modules/cdr_sqlite3_custom.so
 lib/asterisk/modules/cdr_syslog.so
 lib/asterisk/modules/cel_custom.so
@@ -633,6 +640,7 @@ lib/asterisk/modules/res_smdi.so
 %%WITH_SNMP%%lib/asterisk/modules/res_snmp.so
 lib/asterisk/modules/res_speech.so
 sbin/astcanary
+sbin/astdb2sqlite3
 sbin/asterisk
 sbin/astgenkey
 sbin/autosupport
@@ -1124,13 +1132,9 @@ share/asterisk/static-http/core-en_US.xml
 share/asterisk/static-http/prototype.js
 share/asterisk/static-http/mantest.html
 %%WITH_DAHDI%%lib/asterisk/modules/app_flash.so
-%%WITH_DAHDI%%lib/asterisk/modules/app_meetme.so
-%%WITH_DAHDI%%lib/asterisk/modules/app_page.so
-%%WITH_DAHDI%%lib/asterisk/modules/app_dahdibarge.so
 %%WITH_DAHDI%%lib/asterisk/modules/app_dahdiras.so
 %%WITH_ODBC%%lib/asterisk/modules/cdr_odbc.so
 %%WITH_FREETDS%%lib/asterisk/modules/cdr_tds.so
-%%WITH_H323%%lib/asterisk/modules/chan_h323.so
 %%WITH_DAHDI%%lib/asterisk/modules/chan_dahdi.so
 %%WITH_DAHDI%%lib/asterisk/modules/codec_dahdi.so
 %%WITH_ODBC%%lib/asterisk/modules/res_config_odbc.so
@@ -1151,7 +1155,6 @@ share/asterisk/static-http/mantest.html
 @dirrm share/asterisk/sounds/en
 @dirrm share/asterisk/sounds/es
 @dirrm share/asterisk/sounds/fr
-@dirrm share/asterisk/sounds/ru
 @dirrm share/asterisk/sounds
 @dirrm share/asterisk/phoneprov
 @dirrm share/asterisk/moh
