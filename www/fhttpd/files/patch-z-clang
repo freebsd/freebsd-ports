@@ -1,0 +1,125 @@
+--- fhttpd.cc.orig	2011-07-25 19:48:25.000000000 +0100
++++ fhttpd.cc	2011-07-25 19:48:57.000000000 +0100
+@@ -1321,10 +1321,14 @@
+      if(args){
+       if(!pipe(procpipe1)){ 
+        signal(SIGCHLD,SIG_IGN);
+-       switch(!fork()){
++       switch(fork()){
+         case -1: h=-1;
+          break;
+-        case 0:  
++        case 0:
++         close(procpipe1[1]);
++         h=procpipe1[0];
++         break;
++        default:
+          close(procpipe1[0]);
+          if(procpipe1[1]!=1){
+           dup2(procpipe1[1],1);
+@@ -1372,9 +1376,6 @@
+          execve(args->params[1],args->params+1,((ControlFTPServerApp*)client->app)->execenv);
+          _exit(-1);
+          break;
+-        default:
+-         close(procpipe1[1]);
+-         h=procpipe1[0];
+         }
+        }
+       }
+@@ -1557,10 +1558,13 @@
+     if(args){
+      if(!pipe(procpipe1)){ 
+       signal(SIGCHLD,SIG_IGN);
+-      switch(!fork()){
++      switch(fork()){
+        case -1: h=-1;
+         break;
+-       case 0:  
++       case 0:
++        close(procpipe1[0]);
++        h=procpipe1[1];
++       default:  
+         close(procpipe1[1]);
+         if(procpipe1[0]){
+          dup2(procpipe1[0],0);
+@@ -1608,9 +1612,6 @@
+         execve(args->params[1],args->params+1,((ControlFTPServerApp*)client->app)->execenv);
+         _exit(-1);
+         break;
+-       default:
+-        close(procpipe1[0]);
+-        h=procpipe1[1];
+        }
+       }
+      }
+@@ -3347,7 +3348,7 @@
+  }
+ }
+ 
+-main(int argc,char **argv,char **env){
++int main(int argc,char **argv,char **env){
+ int h;
+ char tmpstr[10],*pathbuffer,*logfilename=NULL;
+ char *configfile=FHTTPD_CONFIG_FILE;
+diff -urN fhttpd-log.cc fhttpd-log.cc
+--- fhttpd-log.cc	2011-07-25 19:37:32.000000000 +0100
++++ fhttpd-log.cc	2011-07-25 19:38:01.000000000 +0100
+@@ -355,10 +355,10 @@
+   for(i=0;i<req->nlines;i++){
+    switch(req->lines[i].paramc){
+    case 1:
+-    fprintf(logfile,"%s.%06ld %s %d %d %d %s\n",tmpline1,t_usec,tmpline2,clientid,requestid,instid,req->lines[i].params[0]);
++    fprintf(logfile,"%s.%06ld %s %d %d %d %s\n",tmpline1,(unsigned long)t_usec,tmpline2,clientid,requestid,instid,req->lines[i].params[0]);
+     break;
+    case 2:
+-    fprintf(logfile,"%s.%06ld %s %d %d %d %s %s\n",tmpline1,t_usec,tmpline2,clientid,requestid,instid,req->lines[i].params[0],req->lines[i].params[1]);
++    fprintf(logfile,"%s.%06ld %s %d %d %d %s %s\n",tmpline1,(unsigned long)t_usec,tmpline2,clientid,requestid,instid,req->lines[i].params[0],req->lines[i].params[1]);
+     break;
+     }
+    }
+diff -urN process.cc process.cc
+--- process.cc	1999-04-12 14:40:09.000000000 +0100
++++ process.cc	2011-07-25 19:38:01.000000000 +0100
+@@ -1840,7 +1840,7 @@
+     if(*ctrlapp->query_type_buffer)
+       AddLine("CONTENT_TYPE",ctrlapp->query_type_buffer);
+     if(ctrlapp->ifmodifiedsince){
+-      sprintf(numbuffer,"%lu",ctrlapp->ifmodifiedsince);
++      sprintf(numbuffer,"%lu",(unsigned long)ctrlapp->ifmodifiedsince);
+       AddLine("HTTP_IF_MODIFIED_SINCE",numbuffer);
+     }
+     if(*ctrlapp->auth_user_buffer){
+diff -urN pseudopoll.c pseudopoll.c
+--- pseudopoll.c	2011-07-25 19:37:32.000000000 +0100
++++ pseudopoll.c	2011-07-25 19:38:01.000000000 +0100
+@@ -22,7 +22,7 @@
+ static int fdssize=0;
+ static int fdsbytes=0;
+ 
+-inline int pseudopoll(struct pollfd *fds,unsigned long nfds,int timeout){
++int pseudopoll(struct pollfd *fds,unsigned long nfds,int timeout){
+ 
+ int i,j,s,newfdsbytes,omitfd,byteposition,currfd,maxfd1=0;
+ char *newreadfds_c,*newwritefds_c,bit;
+diff -urN servproc.c servproc.c
+--- servproc.c	1999-05-17 13:31:52.000000000 +0100
++++ servproc.c	2011-07-25 19:38:43.000000000 +0100
+@@ -426,7 +426,7 @@
+ __s32 q;
+ 
+ char *p;
+-int i,j,maxfds,sopt,soptlen=sizeof(int);
++int i,j,maxfds,sopt; socklen_t soptlen=sizeof(socklen_t);
+ int sizeknown=0;
+ long rln,l,dl;
+ 
+@@ -2297,7 +2297,7 @@
+ char tmp_str[256], *p,*p1;
+ uid_t my_uid;
+ FILE *passwdfile;
+-int i,this_application,port_name_error=0,i0=0,i1=0,sopt,soptlen=sizeof(int);
++int i,this_application,port_name_error=0,i0=0,i1=0,sopt;socklen_t soptlen=sizeof(socklen_t);
+ 
+ if(argc<=0) return APP_ERR_INSANE; /* sanity check */
+ if(!argv) return APP_ERR_INSANE;
