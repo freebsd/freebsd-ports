@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gmsh
-PORTVERSION=	2.4.2
-PORTREVISION=	5
+PORTVERSION=	2.5.0
 CATEGORIES=	cad
 MASTER_SITES=	http://www.geuz.org/gmsh/src/ \
 		http://glaros.dtc.umn.edu/gkhome/fetch/sw/metis/
@@ -23,6 +22,8 @@ COMMENT=	An automatic 3D finite element mesh generator
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		lapack.4:${PORTSDIR}/math/lapack
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
 
 SLAVEDIRS=	cad/gmsh-occ
 
@@ -73,7 +74,7 @@ IGNORE=		requires that WITHOUT_METIS is not set if WITH_TAUCS is set
 .if !defined(WITHOUT_METIS)
 CMAKE_ARGS+=	-DENABLE_METIS=ON
 .if defined(NOPORTDOCS)
-IGNORE=		The license for Metis requires that its documentation is included
+IGNORE=		the license for Metis requires that its documentation is included
 .endif
 DISTFILES+=	manual.pdf
 PLIST_SUB+=	METIS=""
@@ -189,6 +190,10 @@ post-extract:
 	@${ECHO} "There might be licensing issues with using Taucs with Gmsh" >> ${PKGMESSAGE}
 	@${ECHO} "because Taucs requires Metis." >> ${PKGMESSAGE}
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e s+share/doc/gmsh+${DOCSDIR_REL}+ \
+		-e s+share/man/man1+man/man1+ ${WRKSRC}/CMakeLists.txt
 
 post-install:
 .if !defined(WITHOUT_SHARED_LIB)
