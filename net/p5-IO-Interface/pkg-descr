@@ -5,5 +5,4 @@ for identifying runtime characteristics of cards, such as broadcast
 addresses, and finding interfaces that satisfy certain criteria,
 such as the ability to multicast.
 
--Anton
-<tobez@FreeBSD.org>
+WWW: http://search.cpan.org/dist/IO-Interface/
