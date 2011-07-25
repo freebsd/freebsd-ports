@@ -5,7 +5,7 @@
 # $FreeBSD$
 #
 
-PORTNAME=	yphen
+PORTNAME=	hyphen
 PORTVERSION=	2007.04.16
 CATEGORIES=	polish textproc
 MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
