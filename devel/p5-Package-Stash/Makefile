@@ -18,6 +18,9 @@ COMMENT=	Routines for manipulating stashes
 LICENSE=	ART20 GPLv1
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	\
+	p5-Package-DeprecationManager>=0:${PORTSDIR}/devel/p5-Package-DeprecationManager \
+	p5-Package-Stash-XS>=0.22:${PORTSDIR}/devel/p5-Package-Stash-XS
 RUN_DEPENDS=	\
 	p5-Package-DeprecationManager>=0:${PORTSDIR}/devel/p5-Package-DeprecationManager \
 	p5-Package-Stash-XS>=0.22:${PORTSDIR}/devel/p5-Package-Stash-XS
