@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	celestia
-PORTVERSION=	1.6.0
-PORTREVISION=	4
+PORTVERSION=	1.6.1
 CATEGORIES=	astro
 MASTER_SITES=	SF/${PORTNAME}/Celestia-source/${PORTVERSION}
 PKGNAMESUFFIX=	-${CELESTIA_UI}
@@ -22,13 +21,14 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-USE_GL=		gl
-USE_XORG=	x11 xt xext xmu xi
 USE_GETTEXT=	yes
+USE_GL=		gl
+USE_LUA=	5.0+	# should be optional, but the build fails without it
 WANT_GNOME=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CXXFLAGS+=	-fsigned-char	# fix text rendering (see Gentoo bug 316573)
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 UI_LIST=	glut gtk gnome kde
 CELESTIA_UI?=	glut
@@ -88,15 +88,16 @@ PORTDOCS=	AUTHORS ChangeLog README
 DESKTOP_ENTRIES="Celestia" "Explore space" "celestia.png" "celestia" \
 		"Application;Astronomy;Education;Science;" ${STARTUP_NOTIFY}
 
-# Lua support should be optional, but the build fails without it
-USE_LUA=	5.0+
-CONFIGURE_ARGS+=	--with-lua LUA_CFLAGS=-I${LUA_INCDIR} \
-		LUA_LIBS=-L${LUA_LIBDIR} LUALIB_LIBS=-llua
-
-pre-patch:
+post-patch:
+# Fix Lua discovery pkg-config(1) calls
+	@${REINPLACE_CMD} -E 's|lua5\.?|lua-5.|' ${WRKSRC}/configure
+# Remove controversial compiler options (respect our C[XX]FLAGS)
 .for o in O2 ffast-math fexpensive-optimizations fomit-frame-pointer
 	@${REINPLACE_CMD} -e 's|-${o}||g' ${WRKSRC}/configure
 .endfor
+# Allow add-ons to be placed inside user's home directory
+	@${REINPLACE_CMD} -e '/^#/!s|"extras"|& "~/.celestia"|' \
+		${WRKSRC}/celestia.cfg
 # Inhibit installation of copies of GPL (lots of them; use LICENSE framework
 # instead) and remove bogus argument from mv(1)
 	@${REINPLACE_CMD} -e 's|COPYING||g ; s| -b|| ' ${WRKSRC}/Makefile.in
@@ -108,7 +109,7 @@ pre-patch:
 post-install:
 # Technically, we should only install icon explicitly for GLUT UI, since
 # correct icons are properly installed for other cases, but doing it here
-# does not hurt and simplifies PLIST issues
+# does not hurt and simplifies PLIST handling
 	${INSTALL_DATA} ${WRKSRC}/src/celestia/gtk/data/celestia.png \
 		${PREFIX}/share/pixmaps
 .if !defined(NOPORTDOCS)
