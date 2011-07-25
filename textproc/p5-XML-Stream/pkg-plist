@@ -3,6 +3,7 @@
 %%SITE_PERL%%/XML/Stream/Node.pm
 %%SITE_PERL%%/XML/Stream/Parser.pm
 %%SITE_PERL%%/XML/Stream/Parser/DTD.pm
+%%SITE_PERL%%/XML/Stream/Tools.pm
 %%SITE_PERL%%/XML/Stream/Tree.pm
 %%SITE_PERL%%/XML/Stream/IO/Select/Win32.pm
 %%SITE_PERL%%/XML/Stream/XPath.pm
