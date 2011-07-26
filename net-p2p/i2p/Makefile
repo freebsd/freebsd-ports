@@ -22,7 +22,8 @@ COMMENT=	An anonymizing network
 LICENSE=	ASL EULA
 LICENSE_COMB=	multi
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/gmp
+BUILD_DEPENDS=	${LOCALBASE}/lib/libgmp.a:${PORTSDIR}/math/gmp \
+		msgfmt:${PORTSDIR}/devel/gettext
 RUN_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 
 LICENSE_NAME_EULA=	End User License Agreement
