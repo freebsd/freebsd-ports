@@ -6,40 +6,62 @@
 #
 
 PORTNAME=	unadf
-PORTVERSION=	0.7.9b
-PORTREVISION=	2
+PORTVERSION=	0.7.12
 CATEGORIES=	archivers
-MASTER_SITES=	http://perso.club-internet.fr/lclevy/adflib/
-DISTNAME=	adflib
+MASTER_SITES=	http://lclevy.free.fr/adflib/
+DISTNAME=	adflib-${DISTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	uffe@uffe.org
 COMMENT=	Extracts files from .adf-files used by Amiga emulators
 
-DEPRECATED=	Looks like an abandonware, no more public distfile
-EXPIRATION_DATE=	2011-08-01
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-NO_WRKSUBDIR=	yes
-PLIST_FILES=	bin/unadf
-PORTDOCS=	API.txt api_device.html api_dir.html api_env.html api_file.html \
-		api_index.html api_native.html api_salv.html api_volume.html
-USE_ZIP=	yes
+USE_BZIP2=	yes
+
 MAKE_JOBS_UNSAFE=	yes
 
-post-patch:
-	@${REINPLACE_CMD} -e "s@tests lib demo@lib demo@g" ${WRKSRC}/Makefile
-	@${REINPLACE_CMD} 's|CFLAGS=-I$$(LIBDIR) -O2 -Wall -Wno-uninitialized -pedantic|CFLAGS+= -I$$(LIBDIR)|' \
-			${WRKSRC}/Demo/Makefile
-	@${REINPLACE_CMD} -e 's|CFLAGS=|CFLAGS+=|' \
-			-e 's|-Wall -O2 -pedantic||' \
-			-e 's|CC=|CC?=|' \
-			${WRKSRC}/Lib/Makefile
+USE_AUTOTOOLS=	libtoolize aclocal autoconf autoheader automake
+
+#
+# args below adapted from adflib: autogen.sh
+#
+LIBTOOLIZE_ARGS=--copy --force
+AUTOMAKE_ARGS=	--add-missing
+
+#
+# ports/aclocal workaround:
+#
+# aclocal only scans version-specific dir: ${LOCALBASE}/share/aclocal-<version>/
+# hence aclocal does not find 3rd party m4 files (libtool.m4 etc)
+# http://www.freebsd.org/cgi/query-pr.cgi?ports/98435
+ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
+
+PLIST_FILES=	bin/unadf
+
+DOCS=		API.txt api_device.html api_dir.html api_env.html api_file.html \
+		api_index.html api_native.html api_salv.html api_volume.html version0.7.9d_gary.txt
+
+FAQS=		FAQ/adf_info.html FAQ/adf_info.txt FAQ/adf_info_V0_9.txt
+
+FAQSIMGS=	FAQ/image/adf_dir.gif FAQ/image/adf_file.gif
+
+PORTDOCS=	*
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/Demo/unadf ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/examples/unadf ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/Docs/${i} ${DOCSDIR}
+.for i in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}
+.endfor
+	${MKDIR} ${DOCSDIR}/FAQ
+.for i in ${FAQS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}/FAQ
+.endfor
+	${MKDIR} ${DOCSDIR}/FAQ/image
+.for i in ${FAQSIMGS}
+	${INSTALL_DATA} ${WRKSRC}/doc/${i} ${DOCSDIR}/FAQ/image
 .endfor
 .endif
 
