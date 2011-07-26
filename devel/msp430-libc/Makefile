@@ -6,35 +6,59 @@
 #
 
 PORTNAME=	libc
-PORTVERSION=	1.0.20050912
-PORTREVISION=	1
+PORTVERSION=	1.0.${LIBCVERSION}
 CATEGORIES=	devel
-MASTER_SITES=	http://lev.serebryakov.spb.ru/download/msp430/
-PKGNAMEPREFIX=	msp430-
-DISTFILES=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}
+PKGNAMEPREFIX=	${LIBCTARGET}-
+MASTER_SITES=	SF/mspgcc/${PKGNAMEPREFIX}${PORTNAME}
+DISTFILES=	${PKGNAMEPREFIX}${PORTNAME}-${LIBCVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Libc for TI's msp430 MCUs cross-development
 
-BUILD_DEPENDS=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc
+LIBCVERSION=	20110612
+LIBCTARGET=	msp430
+
+BUILD_DEPENDS=	${PREFIX}/${LIBCTARGET}/include/${LIBCTARGET}.h:${PORTSDIR}/devel/${LIBCTARGET}mcu
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME}/src
+OPTIONS=	GCC4 "Use new msp430-gcc4 compiler" on \
+		GCC3 "Use old msp430-gcc3 compiler" off
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
+MAKE_ENV=	PATH=${PREFIX}/bin:${PATH} PREFIX=${PREFIX}
+WRKSRC=		${WRKDIR}/${PKGNAMEPREFIX}libc-${LIBCVERSION}/src
 
-PLIST_SUB+=	LIBC_TARG=${PKGNAMEPREFIX:S/-$//}
+.include <bsd.port.options.mk>
 
-post-configure:
-	${REINPLACE_CMD} "s|prefix = /usr/local/msp430|prefix = ${PREFIX}|" ${WRKSRC}/Makefile
+.if defined(WITH_GCC4)
+.if defined(WITH_GCC3)
+BROKEN=	Please, select msp430-gcc-4 or msp430-gcc-3, not both
+.endif
+PKGNAMESUFFIX=	-gcc4
+BUILD_DEPENDS+=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc
+CONFLICTS=	${PKGNAMEPREFIX}${PORTNAME}-gcc3-*
+PLIST_SUB+=	GCC3="@comment " GCC4=""
+NEEDGCCVERSION=	4
+.elif defined(WITH_GCC3)
+PKGNAMESUFFIX=	-gcc3
+BUILD_DEPENDS+=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc3
+CONFLICTS=	${PKGNAMEPREFIX}${PORTNAME}-gcc4-*
+PLIST_SUB+=	GCC3="" GCC4="@comment "
+NEEDGCCVERSION=	3
+.else
+BROKEN=	Please, select msp430-gcc-4 either msp430-gcc-3
+.endif
 
-post-install:
-	@${MKDIR} ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/share/mspgcc
-	@tar --exclude CVS -C ${WRKDIR}/${PKGNAMEPREFIX}${PORTNAME} -cf - doc | \
-		tar -xf - -C ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/share/mspgcc
-	@tar --exclude CVS -C ${WRKDIR} -cf - examples | \
-		tar -xf - -C ${PREFIX}/${PKGNAMEPREFIX:S/-$//}/share/mspgcc
+pre-configure:
+	@HAVEGCCVERSION=`${PKGNAMEPREFIX}gcc -v 2>&1 | ${GREP} "gcc version " | ${CUT} -d" " -f 3 | ${CUT} -d. -f 1` ; \
+	 if [ "$${HAVEGCCVERSION}" = "" ] ; then \
+	 	${ECHO_MSG} "ERROR: Can not find any version of msp430-gcc" ; \
+	 	${FALSE} ; \
+	 elif [ "$${HAVEGCCVERSION}" != "${NEEDGCCVERSION}" ] ; then \
+	 	${ECHO_MSG} "ERROR: Need msp430-gcc-${NEEDGCCVERSION} but found msp430-gcc-$${HAVEGCCVERSION}" ; \
+	 	${FALSE} ; \
+	 fi
+
 
 .include <bsd.port.mk>

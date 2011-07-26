@@ -6,41 +6,55 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	${BINUTILVERSION}
+PORTVERSION=	${BINUTILVERSION}.${MSPGCCVERSION}
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_SOURCEWARE}
+DISTNAME=	${PORTNAME}-${BINUTILVERSION}
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		mspgcc-${MSPGCCVERSION}${EXTRACT_SUFX}:mspgcc
+MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
+		SF/mspgcc/mspgcc:mspgcc
 MASTER_SITE_SUBDIR=	binutils/releases
+
 PKGNAMEPREFIX=	msp430-
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	GNU binutils for TI's msp430 MCUs cross-development
+LICENSE=	GPLv3
 
-BINUTILVERSION=	2.16.1
+BINUTILVERSION=	2.21.1
+MSPGCCVERSION=	20110716
+PATCHVERSION=	20110716
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--target=${PKGNAMEPREFIX:S/-$//} \
 		--with-gcc --with-gnu-ld --with-gnu-as \
-		--disable-nls
-INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
-MAN1=		${PKGNAMEPREFIX}ar.1 ${PKGNAMEPREFIX}nm.1 \
-		${PKGNAMEPREFIX}objdump.1 ${PKGNAMEPREFIX}ranlib.1 \
-		${PKGNAMEPREFIX}size.1 ${PKGNAMEPREFIX}strings.1 \
-		${PKGNAMEPREFIX}strip.1 ${PKGNAMEPREFIX}objcopy.1 \
-		${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}nlmconv.1 \
-		${PKGNAMEPREFIX}c++filt.1 ${PKGNAMEPREFIX}as.1 \
-		${PKGNAMEPREFIX}ld.1 ${PKGNAMEPREFIX}dlltool.1 \
-		${PKGNAMEPREFIX}readelf.1 ${PKGNAMEPREFIX}windres.1
+		--disable-nls --disable-werror
 
-INFO=		bfd binutils standards configure as ld
+MAN1=		${PKGNAMEPREFIX}addr2line.1 ${PKGNAMEPREFIX}ar.1 \
+		${PKGNAMEPREFIX}as.1 ${PKGNAMEPREFIX}c++filt.1 \
+		${PKGNAMEPREFIX}dlltool.1 ${PKGNAMEPREFIX}elfedit.1 \
+		${PKGNAMEPREFIX}gprof.1 ${PKGNAMEPREFIX}ld.1 \
+		${PKGNAMEPREFIX}nlmconv.1 ${PKGNAMEPREFIX}nm.1 \
+		${PKGNAMEPREFIX}objcopy.1 ${PKGNAMEPREFIX}objdump.1 \
+		${PKGNAMEPREFIX}ranlib.1 ${PKGNAMEPREFIX}readelf.1 \
+		${PKGNAMEPREFIX}size.1 ${PKGNAMEPREFIX}strings.1 \
+		${PKGNAMEPREFIX}strip.1 ${PKGNAMEPREFIX}windmc.1 \
+		${PKGNAMEPREFIX}windres.1
+
+
+INFO=		as bfd binutils configure gprof ld standards
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 
 PLIST_SUB+=	BINUTILS_TARG=${PKGNAMEPREFIX:S/-$//}
 
-BINARIES=	addr2line ar as c++filt ld nm objcopy objdump ranlib \
-		readelf size strings strip
+BINARIES=	addr2line ar as c++filt elfedit gprof ld nm objcopy objdump \
+		ranlib readelf size strings strip
 
+pre-patch:
+	@cd ${WRKSRC} && ${PATCH} -s -p1 < ../mspgcc-${MSPGCCVERSION}/${PKGNAMEPREFIX}${PORTNAME}-${BINUTILVERSION}-${PATCHVERSION}.patch
+		
 pre-configure:
 	${CHMOD} 755 ${WRKSRC}/configure
 

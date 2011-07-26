@@ -1,8 +1,6 @@
 libc for TI's msp430 MCUs cross-development
 
-
- This port installs libc, libm and some docs and examples.
- Docs and examples could be found at ${PREFIX}/msp430/share/mspgcc
+ This port installs msp530mcu and msp430libc.
 
 GCC site:    http://gcc.gnu.org/
 MSP430 site: http://www.ti.com/msp430/
