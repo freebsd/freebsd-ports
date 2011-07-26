@@ -9,20 +9,18 @@ PORTNAME=	parrot
 PORTVERSION=	${PARROT_VERSION}
 PORTREVISION=	1
 CATEGORIES=	lang
-MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/devel/${PORTVERSION}/
+MASTER_SITES=	ftp://ftp.parrot.org/pub/parrot/releases/stable/${PORTVERSION}/
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parrot - virtual machine for dynamic languages
+
+LICENSE=	ART20
 
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/bin/pcre-config:${PORTSDIR}/devel/pcre
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 		icudata.48:${PORTSDIR}/devel/icu
-
-BROKEN=		incomplete plist
-
-LICENSE=	ART20
 
 MAKE_JOBS_UNSAFE=	yes
 

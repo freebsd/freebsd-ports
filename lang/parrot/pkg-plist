@@ -9,6 +9,7 @@ bin/pbc_disassemble
 bin/pbc_dump
 bin/pbc_merge
 bin/pbc_to_exe
+bin/winxed
 include/parrot/%%PARROT_VER%%/imcc/api.h
 include/parrot/%%PARROT_VER%%/imcc/embed.h
 include/parrot/%%PARROT_VER%%/imcc/yyscanner.h
@@ -148,6 +149,7 @@ include/parrot/%%PARROT_VER%%/pmc/pmc_packfiledirectory.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_packfileopmap.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_packfilerawsegment.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_packfilesegment.h
+include/parrot/%%PARROT_VER%%/pmc/pmc_packfileview.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_parrotinterpreter.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_parrotlibrary.h
 include/parrot/%%PARROT_VER%%/pmc/pmc_parrotthread.h
@@ -270,6 +272,7 @@ lib/parrot/%%PARROT_VER%%/languages/tge/TGE/Parser.pg
 lib/parrot/%%PARROT_VER%%/languages/tge/TGE/Rule.pir
 lib/parrot/%%PARROT_VER%%/languages/tge/TGE/Tree.pir
 lib/parrot/%%PARROT_VER%%/languages/tge/tgc.pir
+lib/parrot/%%PARROT_VER%%/languages/winxed/winxed.pbc
 lib/parrot/%%PARROT_VER%%/library/Archive/Tar.pbc
 lib/parrot/%%PARROT_VER%%/library/Archive/Tar.pir
 lib/parrot/%%PARROT_VER%%/library/Archive/Zip.pbc
@@ -619,6 +622,7 @@ src/parrot/%%PARROT_VER%%/pmc/packfiledirectory.dump
 src/parrot/%%PARROT_VER%%/pmc/packfileopmap.dump
 src/parrot/%%PARROT_VER%%/pmc/packfilerawsegment.dump
 src/parrot/%%PARROT_VER%%/pmc/packfilesegment.dump
+src/parrot/%%PARROT_VER%%/pmc/packfileview.dump
 src/parrot/%%PARROT_VER%%/pmc/parrotinterpreter.dump
 src/parrot/%%PARROT_VER%%/pmc/parrotlibrary.dump
 src/parrot/%%PARROT_VER%%/pmc/parrotthread.dump
@@ -709,6 +713,7 @@ src/parrot/%%PARROT_VER%%/vtable.tbl
 @dirrm lib/parrot/%%PARROT_VER%%/library/CGI
 @dirrm lib/parrot/%%PARROT_VER%%/library/Archive
 @dirrm lib/parrot/%%PARROT_VER%%/library
+@dirrm lib/parrot/%%PARROT_VER%%/languages/winxed
 @dirrm lib/parrot/%%PARROT_VER%%/languages/tge/TGE
 @dirrm lib/parrot/%%PARROT_VER%%/languages/tge
 @dirrm lib/parrot/%%PARROT_VER%%/languages/pge/PGE
