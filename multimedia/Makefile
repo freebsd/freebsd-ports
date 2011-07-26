@@ -272,6 +272,7 @@
     SUBDIR += py-kaa-metadata
     SUBDIR += py-mlt
     SUBDIR += py-openlp
+    SUBDIR += py-periscope
     SUBDIR += py-pybmp
     SUBDIR += py-qt4-multimedia
     SUBDIR += py-qt4-phonon

@@ -1,0 +1,19 @@
+periscope is a subtitles searching module written in python that
+tries to find a correct match for a given video file. The goal
+behind periscope is that it will only return only correct subtitles
+so that you can simply relax and enjoy your video without having
+to double-check that the subtitles match your video before watching
+it. This is done by using as much info as available from your file
+and on the websites. Some websites allow you to use hash of the
+files, the size/length of the video or the exact file name.
+
+As a python module, periscope should be easily integrated in many
+projects that allow plugins to be written in python. The fact that
+the plugin is shared between all the applications means that separate
+application and their plugin (file browser, video player, media
+center application, ...) don't have to maintain the code to search,
+parse and download subtitles and the user preference about languages.
+
+The subtitles websites are handled as plugins.
+
+WWW: http://code.google.com/p/periscope/
