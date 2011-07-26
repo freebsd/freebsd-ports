@@ -17,7 +17,10 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	townwear@gmail.com
 COMMENT=	A 2ch browser
 
+BROKEN=		does not link
+
 LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
+		gcrypt:${PORTSDIR}/security/libgcrypt \
 		gtkmm:${PORTSDIR}/x11-toolkits/gtkmm24
 
 LICENSE=	GPLv2
