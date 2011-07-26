@@ -23,6 +23,9 @@ USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 USE_LDCONFIG=	yes
 
+# Use GNU89 inline semantics
+USE_CSTD=	gnu89
+
 .if !defined(NOPORTEXAMPLES)
 PORTEXAMPLES=	*
 
