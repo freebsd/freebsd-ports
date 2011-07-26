@@ -1,0 +1,5 @@
+bin/periscope
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
+%%DESKTOPDIR%%/periscope.desktop
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
