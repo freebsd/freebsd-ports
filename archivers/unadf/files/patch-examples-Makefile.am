@@ -1,0 +1,9 @@
+--- examples/Makefile.am.orig	2011-06-21 22:09:04.000000000 +0200
++++ examples/Makefile.am	2011-06-21 22:07:12.000000000 +0200
+@@ -3,4 +3,5 @@
+ unadf_LDADD = $(top_srcdir)/src/libadf.la
+ unadf_DEPENDENCIES = $(top_srcdir)/src/libadf.la
+ AM_CPPFLAGS = -I$(top_srcdir)/src -I$(top_srcdir)/src/$(NATIVE_DIR)
++AM_LDFLAGS = -static-libtool-libs
+ 
+
