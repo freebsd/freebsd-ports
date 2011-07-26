@@ -1,9 +1,9 @@
---- src/Makefile.orig	2011-02-27 23:30:20.000000000 +0300
-+++ src/Makefile	2011-06-12 11:41:48.000000000 +0400
+--- src/Makefile.orig	2011-06-08 18:48:21.000000000 +0400
++++ src/Makefile	2011-07-26 18:26:07.000000000 +0400
 @@ -1,5 +1,4 @@
  #CXXFLAGS= -ggdb3
 -CXXFLAGS= -O3 -fomit-frame-pointer
- override CXXFLAGS+= -Wall -fsigned-char
+ override CXXFLAGS+= -Wall -fsigned-char -fno-exceptions -fno-rtti
  
  PLATFORM= $(shell uname -s)
 @@ -21,8 +20,8 @@
