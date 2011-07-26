@@ -22,4 +22,10 @@ RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb \
 USE_RUBY=	yes
 GNU_CONFIGURE=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 1.9
+BROKEN= does not build with ruby 1.9
+.endif
+
+.include <bsd.port.post.mk>
