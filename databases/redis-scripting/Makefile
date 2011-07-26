@@ -8,7 +8,7 @@
 PORTNAME=	redis-scripting
 PORTVERSION=	2.2.111
 CATEGORIES=	databases
-MASTER_SITES=	GOOGLE_CODE
+MASTER_SITES=	http://redis.googlecode.com/files/
 DISTNAME=	${PORTNAME:C/\-.*$//}-${PORTVERSION}-${PORTNAME:C/^.*\-//}
 
 MAINTAINER=	osa@FreeBSD.org
