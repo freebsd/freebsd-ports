@@ -23,7 +23,10 @@ LIB_DEPENDS=	pth.20:${PORTSDIR}/devel/pth-hard \
 		idn.17:${PORTSDIR}/dns/libidn \
 		expat.6:${PORTSDIR}/textproc/expat2 \
 		tasn1.4:${PORTSDIR}/security/libtasn1 \
-		gnutls.47:${PORTSDIR}/security/gnutls
+		gnutls.47:${PORTSDIR}/security/gnutls \
+		gcrypt.18:${PORTSDIR}/security/libgcrypt
+
+BROKEN=		does not link
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
