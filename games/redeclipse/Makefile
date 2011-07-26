@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	redeclipse
-PORTVERSION=	1.0
+PORTVERSION=	1.1
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}_${PORTVERSION}
-DISTNAME=	${PORTNAME}_${PORTVERSION}_linux
+DISTNAME=	${PORTNAME}_${PORTVERSION}_linux_bsd
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A single-player and multi-player first-person ego-shooter
