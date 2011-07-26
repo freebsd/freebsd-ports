@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sharutils
-PORTVERSION=	4.10
+PORTVERSION=	4.11.1
 CATEGORIES=	archivers
 MASTER_SITES=	GNU
 
@@ -32,10 +32,5 @@ PLIST_SUB+=	NLS=""
 USE_GETTEXT=	yes
 CONFIGURE_ARGS+=--with-libintl-prefix="${LOCALBASE}"
 .endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|@SH@|${SH}|' \
-		${WRKSRC}/src/mail-files.in ${WRKSRC}/src/mailshar.in
-	@${REINPLACE_CMD} -e 's|@PERL@|${PERL}|' ${WRKSRC}/src/remsync.in
 
 .include <bsd.port.mk>
