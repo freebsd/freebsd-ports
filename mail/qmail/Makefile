@@ -728,6 +728,8 @@ post-patch:
 .if ( ${ARCH} == "amd64" || ${ARCH} == "ia64" ) && !defined(SLAVE_LDAP)
 	@${PATCH} -d ${WRKSRC} < ${FILESDIR}/extra-patch-amd64
 .endif
+	@${REINPLACE_CMD} -e "s/void *main/int main/g" ${WRKSRC}/*.c
+	@${REINPLACE_CMD} -e "/int main/ s/argc, *argv/int argc, char **argv/" ${WRKSRC}/install.c
 
 do-configure:
 	@${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/conf-cc
