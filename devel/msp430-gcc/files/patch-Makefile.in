@@ -1,17 +1,37 @@
---- Makefile.in.orig	Tue Aug  3 13:53:30 2004
-+++ Makefile.in	Tue Aug  3 13:53:56 2004
-@@ -19885,10 +19885,10 @@
- maybe-install-libiberty:
+--- Makefile.in.orig	2009-04-25 08:10:29.000000000 +0400
++++ Makefile.in	2011-06-22 00:04:31.000000000 +0400
+@@ -2611,7 +2611,6 @@
+     maybe-install-libcpp \
+     maybe-install-libdecnumber \
+     maybe-install-libgui \
+-    maybe-install-libiberty \
+     maybe-install-libiconv \
+     maybe-install-libtool \
+     maybe-install-m4 \
+@@ -2688,7 +2687,6 @@
+     maybe-install-libcpp \
+     maybe-install-libdecnumber \
+     maybe-install-libgui \
+-    maybe-install-libiberty \
+     maybe-install-libiconv \
+     maybe-install-libtool \
+     maybe-install-m4 \
+@@ -28741,12 +28739,12 @@
+ maybe-install-libiberty: install-libiberty
  
  install-libiberty: installdirs
+-	@: $(MAKE); $(unstage)
 -	@r=`${PWD_COMMAND}`; export r; \
 -	s=`cd $(srcdir); ${PWD_COMMAND}`; export s; \
--	$(SET_LIB_PATH) \
--	(cd libiberty && $(MAKE) $(FLAGS_TO_PASS) install)
+-	$(HOST_EXPORTS) \
+-	(cd $(HOST_SUBDIR)/libiberty && \
+-	  $(MAKE) $(FLAGS_TO_PASS)  install)
++#	@: $(MAKE); $(unstage)
 +#	@r=`${PWD_COMMAND}`; export r; \
 +#	s=`cd $(srcdir); ${PWD_COMMAND}`; export s; \
-+#	$(SET_LIB_PATH) \
-+#	(cd libiberty && $(MAKE) $(FLAGS_TO_PASS) install)
++#	$(HOST_EXPORTS) \
++#	(cd $(HOST_SUBDIR)/libiberty && \
++#	  $(MAKE) $(FLAGS_TO_PASS)  install)
  
+ @endif libiberty
  
- .PHONY: configure-libtool maybe-configure-libtool

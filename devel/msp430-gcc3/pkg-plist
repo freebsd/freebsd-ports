@@ -47,4 +47,3 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkheaders
 @dirrm libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%
 @dirrm libexec/gcc/%%GCC_TARG%%
 @dirrmtry libexec/gcc
-

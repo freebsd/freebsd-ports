@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110726:
+  AFFECTS: users of devel/msp430-gcc
+  AUTHOR: lev@FreeBSD.org
+
+  msp430-gcc was updated to lates gcc-4.5.3 version.
+  If you want to use old gcc-3.4.4, run command:
+
+  # portmaster -o devel/msp430-gcc3 devel/msp430-gcc
+  or
+  # portupgrade -o devel/msp430-gcc3 devel/msp430-gcc
+  
+  before updating devel/msp430-libc port.
+
 20110721:
   AFFECTS: users of games/megaglest
   AUTHOR: smoeller@nichthelfer.de
