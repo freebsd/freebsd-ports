@@ -36,6 +36,8 @@ BUILD_DEPENDS=	gpatch:${PORTSDIR}/devel/patch \
 		zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
 
+BROKEN=		fails to package
+
 OPTIONS=	TESTS	"Build SDK test suite"	off
 
 ONLY_FOR_ARCHS=	i386 amd64
