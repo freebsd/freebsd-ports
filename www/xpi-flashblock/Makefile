@@ -10,7 +10,7 @@ PORTVERSION=	1.5.15.1
 DISTVERSIONSUFFIX=	-fx
 CATEGORIES=	www
 
-MAINTAINER=	simon@olofsson.de
+MAINTAINER=	barbara.xxx1975@libero.it
 COMMENT=	Replaces Flash objects with a button you can click to view them
 
 XPI_ID=		{3d7eb24f-2740-49df-8937-200b1cc08f8a}
