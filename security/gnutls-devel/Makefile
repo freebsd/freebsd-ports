@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	2.99.2
+PORTVERSION=	2.99.4
 CATEGORIES=	security net
 MASTER_SITES=	http://alpha.gnu.org/gnu/gnutls/ \
 		ftp://ftp.gnutls.org/pub/gnutls/devel/
@@ -16,11 +16,12 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
 LIB_DEPENDS=	gpg-error.0:${PORTSDIR}/security/libgpg-error \
-		nettle.4:${PORTSDIR}/security/nettle
+		nettle.4:${PORTSDIR}/security/nettle \
+		p11-kit.0:${PORTSDIR}/security/p11-kit
 
 CONFLICTS=	gnutls-[0-9]*
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_ICONV=	yes
 USE_GNOME=	pkgconfig ltverhack
 GNU_CONFIGURE=	yes
