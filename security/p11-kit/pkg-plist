@@ -1,0 +1,39 @@
+bin/p11-kit
+include/p11-kit-1/p11-kit/p11-kit.h
+include/p11-kit-1/p11-kit/pin.h
+include/p11-kit-1/p11-kit/uri.h
+include/p11-kit-1/p11-kit/pkcs11.h
+lib/libp11-kit.so.0
+lib/libp11-kit.so
+lib/libp11-kit.la
+libdata/pkgconfig/p11-kit-1.pc
+share/gtk-doc/html/p11-kit/api-index-full.html
+share/gtk-doc/html/p11-kit/config-format.html
+share/gtk-doc/html/p11-kit/config-global.html
+share/gtk-doc/html/p11-kit/config-locations.html
+share/gtk-doc/html/p11-kit/config-module.html
+share/gtk-doc/html/p11-kit/config.html
+share/gtk-doc/html/p11-kit/gtk-doc.css
+share/gtk-doc/html/p11-kit/home.png
+share/gtk-doc/html/p11-kit/index.html
+share/gtk-doc/html/p11-kit/index.sgml
+share/gtk-doc/html/p11-kit/left.png
+share/gtk-doc/html/p11-kit/p11-kit-Future.html
+share/gtk-doc/html/p11-kit/p11-kit-Modules.html
+share/gtk-doc/html/p11-kit/p11-kit-PIN-Callbacks.html
+share/gtk-doc/html/p11-kit/p11-kit-URIs.html
+share/gtk-doc/html/p11-kit/p11-kit-Utilities.html
+share/gtk-doc/html/p11-kit/p11-kit.devhelp
+share/gtk-doc/html/p11-kit/p11-kit.devhelp2
+share/gtk-doc/html/p11-kit/up.png
+share/gtk-doc/html/p11-kit/reference.html
+share/gtk-doc/html/p11-kit/right.png
+share/gtk-doc/html/p11-kit/sharing-initialize.html
+share/gtk-doc/html/p11-kit/sharing-module.html
+share/gtk-doc/html/p11-kit/sharing.html
+share/gtk-doc/html/p11-kit/style.css
+@dirrm share/gtk-doc/html/p11-kit
+@dirrmtry share/gtk-doc/html
+@dirrmtry share/gtk-doc
+@dirrm include/p11-kit-1/p11-kit
+@dirrm include/p11-kit-1
