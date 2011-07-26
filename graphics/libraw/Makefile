@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libraw
-PORTVERSION=	0.13.6
+PORTVERSION=	0.13.7
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.libraw.su/data/
 DISTNAME=	LibRaw-${PORTVERSION}
@@ -78,11 +78,7 @@ do-install:
 	libraw_internal.h libraw_types.h libraw_version.h
 	@${INSTALL_DATA} ${WRKSRC}/${PORTNAME}/${f} ${PREFIX}/include/libraw
 .endfor
-.for f in libraw.a libraw_r.a
-	@${INSTALL_DATA} ${WRKSRC}/lib/${f} ${PREFIX}/lib
-.endfor
-
-.for f in libraw.so.2 libraw_r.so.2
+.for f in libraw.a libraw_r.a libraw.so.2 libraw_r.so.2
 	@${INSTALL_DATA} ${WRKSRC}/lib/.libs/${f} ${PREFIX}/lib
 .endfor
 .for f in libraw libraw_r
