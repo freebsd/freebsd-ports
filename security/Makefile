@@ -346,6 +346,7 @@
     SUBDIR += ossec-hids-server
     SUBDIR += osslsigncode
     SUBDIR += outguess
+    SUBDIR += p11-kit
     SUBDIR += p5-Apache-Htpasswd
     SUBDIR += p5-Auth-YubikeyDecrypter
     SUBDIR += p5-AuthCAS
