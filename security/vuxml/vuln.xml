@@ -34,6 +34,52 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d79fc873-b5f9-11e0-89b4-001ec9578670">
+    <topic>phpmyadmin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpmyadmin</name>
+	<range><lt>3.4.3.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2011-9.php">
+	  <p>XSS in table Print view.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2011-10.php">
+	  <p>Via a crafted MIME-type transformation parameter, an attacker can
+	    perform a local file inclusion.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2011-11.php">
+	  <p>In the 'relational schema' code a parameter was not sanitized before
+	    being used to concatenate a class name.</p>
+	  <p>The end result is a local file inclusion vulnerability and code
+	    execution.</p>
+	</blockquote>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2011-12.php">
+	  <p>It was possible to manipulate the PHP session superglobal using some
+	    of the Swekey authentication code.</p>
+	  <p>This is very similar to PMASA-2011-5, documented in
+	    7e4e5c53-a56c-11e0-b180-00216aa06fc2</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+        <cvename>CVE-2011-2642</cvename>
+        <cvename>CVE-2011-2643</cvename>
+        <url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-9.php</url>
+        <url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-10.php</url>
+        <url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-11.php</url>
+        <url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-12.php</url>
+    </references>
+    <dates>
+      <discovery>2011-07-23</discovery>
+      <entry>2011-07-24</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="9f14cb36-b6fc-11e0-a044-445c73746d79">
     <topic>opensaml2 -- unauthenticated login</topic>
     <affects>
