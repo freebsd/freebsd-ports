@@ -16,7 +16,10 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A mailwatch plugin for xfce
 
-LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
+LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls \
+		gcrypt.18:${PORTSDIR}/security/libgcrypt
+
+BROKEN=		does not link
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
