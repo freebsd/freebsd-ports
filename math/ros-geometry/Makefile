@@ -60,6 +60,11 @@ post-extract:
 	${CP} ${_DISTDIR}/eigen-3.0prebeta3.tar.bz2 ${WRKSRC}/eigen/build
 	${MKDIR} ${WRKSRC}/kdl/build
 	${CP} ${_DISTDIR}/kdl-32171.tar.gz ${WRKSRC}/kdl/build
+	# already extract and mark as such because we have to patch it (clang)
+	# fixed in bullet 2.77
+	(cd ${WRKSRC}/bullet/build ; \
+	 ${TAR} -xf bullet-2.76-patched2.tar.gz ; \
+	 ${TOUCH} bullet_svn/unpacked)
 
 do-build:
 	(cd ${WRKSRC} ; ${MAKE_ENV} ${LOCALBASE}/bin/rosmake ${MAKE_ARGS})
