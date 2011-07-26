@@ -15,11 +15,22 @@ MASTER_SITE_SUBDIR=	dannyboy
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CD-player with text-based user interface
 
-MAKE_ARGS=	CFLAGS="${CFLAGS} -c -ansi"
+MAKE_ARGS=	CFLAGS="${CFLAGS} -c -ansi"	\
+		BINPATH="${PREFIX}/bin/"	\
+		MANPATH="${MANPREFIX}/man/man1/"
 MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		cdplay.1
 PLIST_FILES=	bin/cdplay
+
+post-patch:
+	${REINPLACE_CMD}			\
+		-e 's/^CC=/CC?=/'		\
+		-e 's/^OPTIMISE=.*$$/OPTIMISE=/'\
+		-e 's/^CFLAGS=/CFLAGS+=/'	\
+		-e 's/^BINPATH=/BINPATH?=/'	\
+		-e 's/^MANPATH=/MANPATH?=/'	\
+		${WRKSRC}/Makefile
 
 pre-patch:
 	@${GUNZIP_CMD} ${WRKSRC}/cdplay.1.gz
