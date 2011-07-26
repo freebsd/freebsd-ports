@@ -47,6 +47,8 @@ include/fxt/aux2/scale2d.h
 include/fxt/aux2/shift2d.h
 include/fxt/aux2/transpose.h
 include/fxt/aux2/transpose2.h
+include/fxt/bits/print-bin.h
+include/fxt/bits/radix-m4.h
 include/fxt/bits-all.h
 include/fxt/bits/average.h
 include/fxt/bits/bin2naf.h
@@ -120,8 +122,6 @@ include/fxt/bits/nextgray.h
 include/fxt/bits/parenwords.h
 include/fxt/bits/parity.h
 include/fxt/bits/pcrc64.h
-include/fxt/bits/printbin.h
-include/fxt/bits/printbitset.h
 include/fxt/bits/revbin-upd.h
 include/fxt/bits/revbin.h
 include/fxt/bits/revgraycode.h
@@ -134,6 +134,7 @@ include/fxt/bmat-all.h
 include/fxt/bmat/bitmat-funcs.h
 include/fxt/bmat/bitmat-inline.h
 include/fxt/bpol-all.h
+include/fxt/bpol/mersenne-coprime.h
 include/fxt/bpol/all-irredpoly.h
 include/fxt/bpol/bitpol-arith.h
 include/fxt/bpol/bitpol-degree.h
@@ -165,6 +166,7 @@ include/fxt/bpol/poly-tab.h
 include/fxt/chirpzt-all.h
 include/fxt/chirpzt/chirpzt.h
 include/fxt/comb-all.h
+include/fxt/comb/perm-st-pref.h
 include/fxt/comb/big-fact2perm.h
 include/fxt/comb/binary-debruijn.h
 include/fxt/comb/binary-necklace.h
@@ -298,6 +300,7 @@ include/fxt/correlation/slowcorr.h
 include/fxt/dctdst-all.h
 include/fxt/dctdst/dctdst.h
 include/fxt/ds-all.h
+include/fxt/ds/priorityqueue1.h
 include/fxt/ds/bitarray.h
 include/fxt/ds/coroutine.h
 include/fxt/ds/deque.h
@@ -515,6 +518,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-func-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-func-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/arith/zero-divisors-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/radix-m4-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/radix-m4-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/all-dbs-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/all-dbs-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/bin2naf-demo.cc
@@ -644,6 +649,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/thue-morse-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/zorder-texpic-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/bits/zorder-texpic-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-st-pref-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/perm-st-pref-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/acgray-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/acgray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/comb/bell-number-demo.cc
@@ -1012,6 +1019,8 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fft/walsh-bench.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fft/walsh-eigenvec-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/fft/walsh-eigenvec-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gf2n/lfsr-trace0-generators-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gf2n/lfsr-trace0-generators-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gf2n/all-irredpoly-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gf2n/all-irredpoly-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gf2n/all-normalpoly-demo.cc
@@ -1078,6 +1087,12 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gf2n/primefact-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gf2n/qmatrix-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gf2n/qmatrix-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph/graph-debruijn-m-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph/graph-perm-pref-rot-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph/graph-perm-pref-rot-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph/graph-perm-pref-rev-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph/graph-debruijn-m-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph/graph-perm-pref-rev-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph/graph-acgray-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph/graph-acgray-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph/graph-complementshift-demo.cc
@@ -1180,6 +1195,7 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/symbolify-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/unique-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sort/unique-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/nextarg.h
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/topics.txt
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sort
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/perm
