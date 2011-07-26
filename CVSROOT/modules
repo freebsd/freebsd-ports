@@ -9672,8 +9672,10 @@ msn-proxy                       ports/net-im/msn-proxy
 msort                           ports/textproc/msort
 msp430-binutils                 ports/devel/msp430-binutils
 msp430-gcc                      ports/devel/msp430-gcc
+msp430-gcc3                     ports/devel/msp430-gcc3
 msp430-gdb                      ports/devel/msp430-gdb
 msp430-libc                     ports/devel/msp430-libc
+msp430mcu                       ports/devel/msp430mcu
 mspdebug                        ports/devel/mspdebug
 msql                            ports/databases/msql
 msql3                           ports/databases/msql3
