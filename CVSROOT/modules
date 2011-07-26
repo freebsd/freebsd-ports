@@ -640,6 +640,7 @@ arpscan                         ports/net-mgmt/arpscan
 arpwatch                        ports/net-mgmt/arpwatch
 arss                            ports/audio/arss
 artemis                         ports/biology/artemis
+artha                           ports/textproc/artha
 arts                            ports/audio/arts
 arts++                          ports/net-mgmt/arts++
 artswrapper                     ports/audio/artswrapper
@@ -703,6 +704,7 @@ asterisk-fop                    ports/www/asterisk-fop
 asterisk-gui                    ports/www/asterisk-gui
 asterisk-oh323                  ports/net/asterisk-oh323
 asterisk-stat                   ports/www/asterisk-stat
+asterisk10                      ports/net/asterisk10
 asterisk14                      ports/net/asterisk14
 asterisk14-addons               ports/net/asterisk14-addons
 asterisk16                      ports/net/asterisk16
@@ -2605,6 +2607,7 @@ drm                             ports/games/drm
 droid-fonts-ttf                 ports/x11-fonts/droid-fonts-ttf
 drood                           ports/www/drood
 dropbear                        ports/security/dropbear
+dropbox-api-command             ports/net/dropbox-api-command
 drpython                        ports/devel/drpython
 drraw                           ports/www/drraw
 drumpiler                       ports/audio/drumpiler
@@ -22255,7 +22258,9 @@ py-turbojson11                  ports/devel/py-turbojson11
 py-turbokid                     ports/devel/py-turbokid
 py-turbomail                    ports/mail/py-turbomail
 py-turpial                      ports/net-im/py-turpial
+py-tvdb_api                     ports/www/py-tvdb_api
 py-tvgrab                       ports/textproc/py-tvgrab
+py-tvnamer                      ports/multimedia/py-tvnamer
 py-twisted                      ports/devel/py-twisted
 py-twistedConch                 ports/security/py-twistedConch
 py-twistedCore                  ports/devel/py-twistedCore
