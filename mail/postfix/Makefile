@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfix
-PORTVERSION=	2.8.3
+PORTVERSION=	2.8.4
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.porcupine.org/mirrors/postfix-release/official/ \
@@ -29,6 +29,8 @@ CONFLICTS=	courier-0.* postfix-1.* postfix-2.[0-79].* postfix-base-2.[0-79].* \
 IS_INTERACTIVE=	yes
 .endif
 
+USERS=		postfix
+GROUPS=		mail maildrop postfix
 MAKE_JOBS_SAFE=	yes
 USE_SUBMAKE=	yes
 USE_PERL5_BUILD=yes
@@ -347,9 +349,6 @@ do-configure:
 	(cd ${WRKSRC} && ${MAKE} -f Makefile.init makefiles ${MAKEFILEFLAGS} \
 	CCARGS="${POSTFIX_CCARGS}" AUXLIBS="${POSTFIX_AUXLIBS}" && \
 	${ECHO} "all: default" >> Makefile)
-
-pre-su-install:
-	@${SETENV} ${SCRIPTS_ENV} PKG_PREFIX="${PREFIX}" ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 	@cd ${WRKSRC} && ${SH} postfix-install -non-interactive install_root=/ tempdir=/tmp \
