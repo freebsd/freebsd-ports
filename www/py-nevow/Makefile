@@ -18,6 +18,8 @@ EXTRACT_SUFX=	.tar.gz?format=raw
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A web application templating system, based on the the Twisted Woven
 
+BROKEN=		does not build
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 USE_TWISTED=	web
