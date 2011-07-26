@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	darktable
-PORTVERSION=	0.7.1
-PORTREVISION=	1
+PORTVERSION=	0.9
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/0.7
+MASTER_SITES=	SF
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A virtual lighttable and darkroom for photographers
@@ -18,44 +17,91 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	exiv2.10:${PORTSDIR}/graphics/exiv2 \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
-		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
 		lensfun.2:${PORTSDIR}/graphics/lensfun \
-		lcms.1:${PORTSDIR}/graphics/lcms \
-		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
+		lcms2.2:${PORTSDIR}/graphics/lcms2 \
 		curl.6:${PORTSDIR}/ftp/curl
 
-GNU_CONFIGURE=	yes
+USE_CMAKE=	yes
+CMAKE_OUTSOURCE=	yes
+CMAKE_VERBOSE=	yes
 USE_GETTEXT=	yes
-USE_GMAKE=	yes
-USE_GNOME=	libglade2 librsvg2 gconf2
-GCONF_SCHEMAS=	${PORTNAME}.schemas
+USE_GNOME=	librsvg2
 USE_SQLITE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--disable-silent-rules --disable-gkeyring
+USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 MAN1=		${PORTNAME}.1
 
+OPTIONS=	GCONF	"Enable GConf backend"			off \
+		GPHOTO	"Enable camera support via libgphoto2"	on \
+		FLICKR	"Enable Flickr support via flickcurl"	off \
+		KWALLET	"Enable KWallet support (requires dbus-glib)" off \
+		GKEYRING "Enable GNOME Keyring support"		off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_GCONF)
+USE_GNOME+=	gconf2
+CMAKE_ARGS+=	-DDONT_INSTALL_GCONF_SCHEMAS:BOOL=ON	# bogus name, no typo
+GCONF_SCHEMAS=	${PORTNAME}.schemas
+.else
+CMAKE_ARGS+=	-DUSE_GCONF_BACKEND:BOOL=OFF
+PLIST_FILES+=	share/darktable/darktablerc
+.endif
+
+.if defined(WITH_GPHOTO)
+LIB_DEPENDS+=	gphoto2.2:${PORTSDIR}/graphics/libgphoto2
+PLIST_FILES+=	lib/darktable/plugins/lighttable/libcamera.so \
+		lib/darktable/plugins/lighttable/libcapture.so \
+		lib/darktable/views/libcapture.so
+.else
+CMAKE_ARGS+=	-DUSE_CAMERA_SUPPORT:BOOL=OFF
+.endif
+
+.if defined(WITH_FLICKR)
+LIB_DEPENDS+=	flickcurl.0:${PORTSDIR}/www/flickcurl
+PLIST_FILES+=	lib/darktable/plugins/imageio/storage/libflickr.so
+.endif
+
+.if defined(WITH_KWALLET)
+LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
+.endif
+
+.if defined(WITH_GKEYRING)
+LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
+.endif
+
 post-patch:
-# BSD readlink(1) is incompatible with one from GNU coreutils
-	@${REINPLACE_CMD} -e 's,readlink -f,realpath,' \
-		${WRKSRC}/tools/create_version_h.sh
-# Adjust location of `gnome-keyring.h' header file
-	@${REINPLACE_CMD} -e 's,gnome-keyring\.h,gnome-keyring-1/&,' \
-		${WRKSRC}/src/common/pwstorage/backend_gkeyring.c
-# Remove `-g' from C[PP]FLAGS
-	@${REINPLACE_CMD} -e 's, -g$$,,' \
-		${WRKSRC}/src/LibRaw/Makefile.in \
-		${WRKSRC}/src/iop/Makefile.in
-	@${REINPLACE_CMD} -E 's,[[:blank:]]-g([^t]),\1,' \
-		${WRKSRC}/src/imageio/format/Makefile.in \
-		${WRKSRC}/src/imageio/storage/Makefile.in \
-		${WRKSRC}/src/libs/Makefile.in \
-		${WRKSRC}/src/iop/Makefile.in \
-		${WRKSRC}/src/views/Makefile.in
-# Drop `-Werror' to fix the build of `common/image.c' on i386
-	@${REINPLACE_CMD} -e 's,-Werror ,,' ${WRKSRC}/src/Makefile.in
-# Do not install useless documentation files
-	@${REINPLACE_CMD} -e 's, install-dtdocDATA,,' ${WRKSRC}/Makefile.in
+# Do not install useless (to end-user) documentation files
+	@${REINPLACE_CMD} -e '/DOC_FILES/d' ${WRKSRC}/doc/CMakeLists.txt
+# Respect CFLAGS for release builds; also disable -Werror for Unix since
+# unfortunately build fails with it for now
+	@${REINPLACE_CMD} -e '/-O3/s,^,#, ; s,NOT APPLE,& AND NOT UNIX,' \
+		${WRKSRC}/src/CMakeLists.txt
+# Remove `-g' from common CFLAGS which are used for release builds as well
+	@${REINPLACE_CMD} -e '/-msse2/s, -g,,' ${WRKSRC}/src/CMakeLists.txt
+# In FreeBSD, <malloc.h> has been replaced by <stdlib.h>
+	@${REINPLACE_CMD} -e '/include/s,<malloc,<stdlib,' \
+		${WRKSRC}/src/rawspeed/RawSpeed/StdAfx.h
+# Fix GConf schemas installation prefix
+	@${REINPLACE_CMD} -e 's,/etc/gconf/schemas,.&,' \
+		${WRKSRC}/data/CMakeLists.txt
+# Adjust manpages path
+	@${REINPLACE_CMD} -e 's,share/man/man1,man/man1,' \
+		${WRKSRC}/doc/CMakeLists.txt
+# Comment out optional components to prevent unregistered dependencies if
+# they are not explicitly selected via OPTIONS (make config)
+.if !defined(WITH_FLICKR)
+	@${REINPLACE_CMD} -e '/FLICKCURL/s,^find_package,#&,' \
+		${WRKSRC}/src/CMakeLists.txt
+.endif
+.if !defined(WITH_KWALLET)
+	@${REINPLACE_CMD} -e '/DBUSGLIB/s,^find_package,#&,' \
+		${WRKSRC}/src/CMakeLists.txt
+.endif
+.if !defined(WITH_GKEYRING)
+	@${REINPLACE_CMD} -e '/GnomeKeyring/s,^find_package,#&,' \
+		${WRKSRC}/src/CMakeLists.txt
+.endif
 
 .include <bsd.port.pre.mk>
 
