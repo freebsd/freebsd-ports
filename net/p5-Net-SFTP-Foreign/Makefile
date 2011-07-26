@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net-SFTP-Foreign
-PORTVERSION=	1.62
+PORTVERSION=	1.67
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	Net::SFTP::Foreign - Secure File Transfer Protocol client
 
 BUILD_DEPENDS=	${SITE_PERL}/File/Which.pm:${PORTSDIR}/sysutils/p5-File-Which \
 		${SITE_PERL}/${PERL_ARCH}/Sort/Key.pm:${PORTSDIR}/devel/p5-Sort-Key
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
 
