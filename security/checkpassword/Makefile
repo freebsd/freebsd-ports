@@ -23,7 +23,11 @@ MAKE_JOBS_SAFE=	yes
 PLIST_FILES=	bin/checkpassword
 PORTDOCS=	CHANGES FILES README SYSDEPS TARGETS TODO VERSION
 
+post-patch:
+	@${REINPLACE_CMD} -e "s/gcc/${CC}/g" ${WRKSRC}/find-systype.sh
+
 do-configure:
+	@${ECHO_CMD} '${CC} ${CFLAGS} -s -lcrypt' > ${WRKSRC}/conf-cc
 	@${ECHO_CMD} '${CC} ${CFLAGS} -s -lcrypt' > ${WRKSRC}/conf-ld
 	@${ECHO_CMD} ${PREFIX} >${WRKSRC}/conf-home
 
