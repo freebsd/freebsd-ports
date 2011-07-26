@@ -91,7 +91,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>OpenSAML developer reports:</p>
-	<blockquote cite="https://groups.google.com/a/shibboleth.net/group/announce/browse_thread/thread/cf3e0d76afbb57d9">
+	<blockquote cite="http://shibboleth.internet2.edu/secadv/secadv_20110725.txt">
 	  <p>The Shibboleth software relies on the OpenSAML libraries to perform 
              verification of signed XML messages such as attribute queries or 
              SAML assertions. Both the Java and C++ versions are vulnerable to a 
@@ -102,6 +102,7 @@ Note:  Please add new entries to the beginning of this file.
       </body>
     </description>
     <references>
+      <cvename>CVE-2011-1411</cvename>
       <mlist msgid="CA530061.113D6%cantor.2@osu.edu">https://groups.google.com/a/shibboleth.net/group/announce/browse_thread/thread/cf3e0d76afbb57d9</mlist>
     </references>
     <dates>
