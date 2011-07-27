@@ -1,4 +1,18 @@
 bin/subtitleeditor
+lib/subtitleeditor/plugins/actions/libdocumentsnavigation.la
+lib/subtitleeditor/plugins/actions/libdocumentsnavigation.so
+lib/subtitleeditor/plugins/actions/libinsertsubtitlefromkeyframe.la
+lib/subtitleeditor/plugins/actions/libinsertsubtitlefromkeyframe.so
+lib/subtitleeditor/plugins/actions/libsortsubtitles.la
+lib/subtitleeditor/plugins/actions/libsortsubtitles.so
+lib/subtitleeditor/plugins/actions/libtypewriter.la
+lib/subtitleeditor/plugins/actions/libtypewriter.so
+lib/subtitleeditor/plugins/subtitleformats/libsami.la
+lib/subtitleeditor/plugins/subtitleformats/libsami.so
+lib/subtitleeditor/plugins/subtitleformats/libsbv.la
+lib/subtitleeditor/plugins/subtitleformats/libsbv.so
+lib/subtitleeditor/plugins/subtitleformats/libsprucestl.la
+lib/subtitleeditor/plugins/subtitleformats/libsprucestl.so
 lib/libsubtitleeditor.la
 lib/libsubtitleeditor.so
 lib/libsubtitleeditor.so.0
@@ -106,6 +120,8 @@ share/icons/hicolor/22x22/apps/subtitleeditor.png
 share/icons/hicolor/24x24/apps/subtitleeditor.png
 share/icons/hicolor/32x32/apps/subtitleeditor.png
 share/icons/hicolor/scalable/apps/subtitleeditor.svg
+share/locale/bg/LC_MESSAGES/subtitleeditor.mo
+share/locale/el/LC_MESSAGES/subtitleeditor.mo
 share/locale/ca/LC_MESSAGES/subtitleeditor.mo
 share/locale/cs/LC_MESSAGES/subtitleeditor.mo
 share/locale/da/LC_MESSAGES/subtitleeditor.mo
@@ -177,7 +193,6 @@ share/subtitleeditor/plugins-description/subtitleformats/substationalpha.se-plug
 share/subtitleeditor/plugins-description/subtitleformats/subtitleeditorproject.se-plugin
 share/subtitleeditor/plugins-description/subtitleformats/subviewer2.se-plugin
 share/subtitleeditor/plugins-description/subtitleformats/timedtextauthoringformat1.se-plugin
-share/subtitleeditor/plugins-share/bitc/dialog-bitc.ui
 share/subtitleeditor/plugins-share/changeframerate/dialog-change-framerate.ui
 share/subtitleeditor/plugins-share/configurekeyboardshortcuts/dialog-configure-keyboard-shortcuts.ui
 share/subtitleeditor/plugins-share/errorchecking/dialog-error-checking.ui
@@ -210,8 +225,19 @@ share/subtitleeditor/ui/dialog-open-document.ui
 share/subtitleeditor/ui/dialog-save-document.ui
 share/subtitleeditor/ui/dialog-script-properties.ui
 share/subtitleeditor/ui/subtitleeditor.ui
+share/subtitleeditor/plugins-description/actions/documentsnavigation.se-plugin
+share/subtitleeditor/plugins-description/actions/insertsubtitlefromkeyframe.se-plugin
+share/subtitleeditor/plugins-description/actions/sortsubtitles.se-plugin
+share/subtitleeditor/plugins-description/actions/typewriter.se-plugin
+share/subtitleeditor/plugins-description/subtitleformats/sami.se-plugin
+share/subtitleeditor/plugins-description/subtitleformats/sbv.se-plugin
+share/subtitleeditor/plugins-description/subtitleformats/sprucestl.se-plugin
+share/subtitleeditor/plugins-share/advancedsubstationalpha/dialog-advancedsubstationalpha-preferences.ui
+share/subtitleeditor/plugins-share/substationalpha/dialog-substationalpha-preferences.ui
 @dirrmtry %%DESKTOPDIR%%
 @dirrm share/subtitleeditor/ui
+@dirrm share/subtitleeditor/plugins-share/substationalpha
+@dirrm share/subtitleeditor/plugins-share/advancedsubstationalpha
 @dirrm share/subtitleeditor/plugins-share/viewmanager
 @dirrm share/subtitleeditor/plugins-share/textcorrection
 @dirrm share/subtitleeditor/plugins-share/styleeditor

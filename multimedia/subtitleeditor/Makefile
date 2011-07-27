@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	subtitleeditor
-PORTVERSION=	0.34.0
-PORTREVISION=	3
+PORTVERSION=	0.39.0
 CATEGORIES=	multimedia
-MASTER_SITES=	http://download.gna.org/${PORTNAME}/0.34/
+MASTER_SITES=	http://download.gna.org/${PORTNAME}/${PORTVERSION:C/\.[0-9]*$//}/ \
+		CRITICAL
 
-MAINTAINER=	pav@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Subtitle editor
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
