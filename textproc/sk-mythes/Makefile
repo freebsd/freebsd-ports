@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sk-mythes
-PORTVERSION=	2011.07.23.
+PORTVERSION=	2011.07.26
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.sk-spell.sk.cx/thesaurus/download/
 DISTNAME=	OOo-Thesaurus2-sk_SK
@@ -18,13 +18,14 @@ LICENSE=	BSD
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	share/mythes/th_sk_SK_v2.dat \
 		share/mythes/th_sk_SK_v2.idx
-PLIST_DIRS=	share/mythes
+PLIST_DIRSTRY=	share/mythes
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/mythes
-	@${INSTALL_DATA} ${WRKDIR}/th_sk_SK_v2.* ${PREFIX}/share/mythes
+	${MKDIR} ${PREFIX}/share/mythes/
+	${INSTALL_DATA} ${WRKSRC}/th_sk_SK_v2.dat ${WRKSRC}/th_sk_SK_v2.idx ${PREFIX}/share/mythes/
 
 .include <bsd.port.mk>
