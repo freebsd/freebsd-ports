@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	httping
-PORTVERSION=	1.4.4
+PORTVERSION=	1.5.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.vanheusden.com/httping/ \
 		CRITICAL
@@ -21,16 +21,10 @@ MAKE_JOBS_SAFE=	yes
 MAN1=		httping.1
 PLIST_FILES=	bin/httping
 
-.include <bsd.port.pre.mk>
-
-.if(${OSVERSION} >= 701101)
 CFLAGS+=	-D_GNU_SOURCE
-.else
-EXTRA_PATCHES=	${FILESDIR}/extrapatch-mssl.c
-.endif
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
