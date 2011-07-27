@@ -1,0 +1,129 @@
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -4,6 +4,11 @@
+ 
+ option(USE_GCONF_BACKEND "Detect and use gconf backend if available." ON)
+ option(USE_CAMERA_SUPPORT "Detect and use camera support if available." ON)
++option(USE_NLS "Build Native Language Support (using gettext)" ON)
++option(USE_FLICKR "Enable Flickr support" ON)
++option(USE_KWALLET "Build kwallet password storage backend" ON)
++option(USE_GNOME_KEYRING "Build gnome-keyring password storage backend" ON)
++option(BUILD_SLIDESHOW "Build the opengl slideshow viewer" ON)
+ option(USE_OPENMP "Use openmp threading support." ON)
+ option(USE_OPENCL "Use OpenCL support." ON)
+ option(USE_DARKTABLE_PROFILING OFF)
+@@ -101,6 +106,7 @@
+ mark_as_advanced(LIB_INSTALL)
+ 
+ #need to put here do setting LOCALE_DIR variable
++if(USE_NLS)
+ find_package(Gettext)
+ if(Gettext_FOUND)
+ 	if(NOT LOCALE_DIR)
+@@ -125,6 +131,7 @@
+ 		endif()
+ 	endif(NOT LOCALE_DIR)
+ endif(Gettext_FOUND)
++endif(USE_NLS)
+ 
+ # needed to generate file "create_preferences.sh" accordingly
+ if(USE_OPENCL)
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -124,51 +124,61 @@
+   add_definitions(${${lib}_DEFINITIONS})
+ endforeach(lib)
+ 
+-find_package(Gettext)
+-if(Gettext_FOUND)
+-  include_directories(${Gettext_INCLUDE_DIRS})
+-  list(APPEND LIBS ${Gettext_LIBRARIES})
+-  add_definitions("-DUSE_GETTEXT")
+-  message(STATUS "Internationalization: Enabled")
+-else()
+-  message(STATUS "Internationalization: Disabled (libintl not found)")
+-endif()
+-
+-find_package(FLICKCURL)
+-if(FLICKCURL_FOUND)
+-  include_directories(${FLICKCURL_INCLUDE_DIRS})
+-  list(APPEND LIBS ${FLICKCURL_LIBRARIES})
+-  add_definitions(${FLICKCURL_DEFINITIONS})
+-endif(FLICKCURL_FOUND)
++if(USE_NLS)
++  find_package(Gettext)
++  if(Gettext_FOUND)
++    include_directories(${Gettext_INCLUDE_DIRS})
++    list(APPEND LIBS ${Gettext_LIBRARIES})
++    add_definitions("-DUSE_GETTEXT")
++    message(STATUS "Internationalization: Enabled")
++  else()
++    message(STATUS "Internationalization: Disabled (libintl not found)")
++  endif()
++endif(USE_NLS)
++
++if(USE_FLICKR)
++  find_package(FLICKCURL)
++  if(FLICKCURL_FOUND)
++    include_directories(${FLICKCURL_INCLUDE_DIRS})
++    list(APPEND LIBS ${FLICKCURL_LIBRARIES})
++    add_definitions(${FLICKCURL_DEFINITIONS})
++  endif(FLICKCURL_FOUND)
++endif(USE_FLICKR)
+ 
+ #
+ # Detect compile of optional pwstorage backends
+ #
++if(USE_KWALLET) 
+ find_package(DBUSGLIB)
+-if(DBUSGLIB_FOUND)
+-  list(APPEND SOURCES "common/pwstorage/backend_kwallet.c")
+-  include_directories(${DBUSGLIB_INCLUDE_DIRS})
+-  list(APPEND LIBS ${DBUSGLIB_LIBRARIES})
+-  add_definitions("-DHAVE_KWALLET")
+-endif(DBUSGLIB_FOUND)
+-
+-find_package(GnomeKeyring)
+-if(GNOMEKEYRING_FOUND)
+-  set(SOURCES ${SOURCES} "common/pwstorage/backend_gkeyring.c")
+-  include_directories(${GnomeKeyring_INCLUDE_DIRS})
+-  list(APPEND LIBS ${GnomeKeyring_LIBRARIES})
+-  add_definitions("-DHAVE_GKEYRING")
+-endif(GNOMEKEYRING_FOUND)
++  if(DBUSGLIB_FOUND)
++    list(APPEND SOURCES "common/pwstorage/backend_kwallet.c")
++    include_directories(${DBUSGLIB_INCLUDE_DIRS})
++    list(APPEND LIBS ${DBUSGLIB_LIBRARIES})
++    add_definitions("-DHAVE_KWALLET")
++  endif(DBUSGLIB_FOUND)
++endif(USE_KWALLET)
++
++if(USE_GNOME_KEYRING)
++  find_package(GnomeKeyring)
++  if(GNOMEKEYRING_FOUND)
++    set(SOURCES ${SOURCES} "common/pwstorage/backend_gkeyring.c")
++    include_directories(${GnomeKeyring_INCLUDE_DIRS})
++    list(APPEND LIBS ${GnomeKeyring_LIBRARIES})
++    add_definitions("-DHAVE_GKEYRING")
++  endif(GNOMEKEYRING_FOUND)
++endif(USE_GNOME_KEYRING)
+ 
+ # have a small test program, to be run as root on some systems to enable the driver to run cl stuff
+ add_subdirectory(cltest)
+ 
+ # build opengl slideshow viewer?
+-find_package(SDL)
+-find_package(OpenGL)
+-if(SDL_FOUND AND OPENGL_FOUND)
+-  add_subdirectory(dtview)
+-endif(SDL_FOUND AND OPENGL_FOUND)
++if(BUILD_SLIDESHOW) 
++  find_package(SDL)
++  find_package(OpenGL)
++  if(SDL_FOUND AND OPENGL_FOUND)
++    add_subdirectory(dtview)
++  endif(SDL_FOUND AND OPENGL_FOUND)
++endif(BUILD_SLIDESHOW)
+ 
+ # needed for the file manager
+ if(APRIL_FOOLS)
