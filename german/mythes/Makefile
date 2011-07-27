@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mythes
-PORTVERSION=	2011.07.20
+PORTVERSION=	2011.07.26
 CATEGORIES=	german textproc
 MASTER_SITES=	http://www.openthesaurus.de/export/
 DISTNAME=	Deutscher-Thesaurus
@@ -19,26 +19,25 @@ LICENSE=	LGPL21
 
 USE_ZIP=	yes
 NO_BUILD=	yes
-
-DEALIASES=	de_AT de_BE de_CH de_LI de_LU
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	share/mythes/th_de_DE_v2.idx \
 		share/mythes/th_de_DE_v2.dat
+PLIST_DIRSTRY=	share/mythes
+
+DEALIASES=	de_AT de_BE de_CH de_LI de_LU
 
 .for ALIAS in ${DEALIASES}
 PLIST_FILES+=	share/mythes/th_${ALIAS}_v2.idx \
 		share/mythes/th_${ALIAS}_v2.dat
 .endfor
 
-PLIST_DIRS=	share/mythes
-
 do-install:
-	@${MKDIR} ${PREFIX}/share/mythes
-	@${INSTALL_DATA} ${WRKDIR}/th_de_DE_v2.* ${PREFIX}/share/mythes
-	@cd ${PREFIX}/share/mythes; \
-	for alias in ${DEALIASES}; do \
-	  ${LN} -s th_de_DE_v2.idx th_$${alias}_v2.idx ; \
-	  ${LN} -s th_de_DE_v2.dat th_$${alias}_v2.dat ; \
-	done
+	${MKDIR} ${PREFIX}/share/mythes/
+	${INSTALL_DATA} ${WRKSRC}/th_de_DE_v2.dat ${WRKSRC}/th_de_DE_v2.idx ${PREFIX}/share/mythes/
+.for ALIAS in ${DEALIASES}
+	${LN} -s th_de_DE_v2.dat ${PREFIX}/share/mythes/th_${ALIAS}_v2.dat
+	${LN} -s th_de_DE_v2.idx ${PREFIX}/share/mythes/th_${ALIAS}_v2.idx
+.endfor
 
 .include <bsd.port.mk>
