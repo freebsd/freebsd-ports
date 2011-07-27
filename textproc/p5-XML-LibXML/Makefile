@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-LibXML
-PORTVERSION=	1.80
+PORTVERSION=	1.84
 PORTEPOCH=	1
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
@@ -15,12 +15,11 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Interface to Gnome libxml2 library
 
-CONFLICTS=	p5-XML-LibXML-XPathContext-* p5-XML-LibXML-Common-*
-
 BUILD_DEPENDS=	p5-XML-NamespaceSupport>=1.07:${PORTSDIR}/textproc/p5-XML-NamespaceSupport \
 		p5-XML-SAX>=0.11:${PORTSDIR}/textproc/p5-XML-SAX
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-XML-NamespaceSupport>=1.07:${PORTSDIR}/textproc/p5-XML-NamespaceSupport \
+		p5-XML-SAX>=0.11:${PORTSDIR}/textproc/p5-XML-SAX
 
 PERL_CONFIGURE=	5.6.1+
 CONFIGURE_ENV=	XMLPREFIX=${LOCALBASE}
@@ -28,6 +27,8 @@ CONFIGURE_ENV=	XMLPREFIX=${LOCALBASE}
 PKGDEINSTALL=	${PKGINSTALL}
 
 WRKSRC=		${WRKDIR}/${DISTNAME:C/00.$//}
+
+CONFLICTS=	p5-XML-LibXML-XPathContext-[0-9]* p5-XML-LibXML-Common-[0-9]*
 
 MAN3=		XML::LibXML.3 XML::LibXML::Attr.3 XML::LibXML::Boolean.3 \
 		XML::LibXML::CDATASection.3 XML::LibXML::Comment.3 \
@@ -47,6 +48,6 @@ MAN3=		XML::LibXML.3 XML::LibXML::Attr.3 XML::LibXML::Boolean.3 \
 		XML::LibXML::Common.3 XML::LibXML::RegExp.3
 
 post-install:
-	@PKG_PREFIX=${PREFIX} ${PERL} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	@PKG_PREFIX=${PREFIX} ${PERL} -I${PREFIX}/${SITE_PERL_REL}/${PERL_ARCH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
