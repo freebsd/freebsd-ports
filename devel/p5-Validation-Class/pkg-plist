@@ -1,0 +1,5 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Validation/Class/.packlist
+%%SITE_PERL%%/Validation/Class.pm
+@dirrmtry %%SITE_PERL%%/Validation
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Validation/Class
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Validation
