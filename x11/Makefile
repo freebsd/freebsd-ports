@@ -65,6 +65,7 @@
     SUBDIR += fbsd-icons
     SUBDIR += fireflies
     SUBDIR += fixesproto
+    SUBDIR += florence
     SUBDIR += fluxbg
     SUBDIR += fpc-x11
     SUBDIR += fstobdf

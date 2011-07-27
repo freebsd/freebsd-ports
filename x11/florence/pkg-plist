@@ -1,0 +1,146 @@
+bin/florence
+bin/florence_applet
+lib/bonobo/servers/florence.server
+share/applications/florence.desktop
+%%DATADIR%%/florence.conf
+%%DATADIR%%/florence.css
+%%DATADIR%%/florence.glade
+%%DATADIR%%/florence.rnc
+%%DATADIR%%/layouts/compact-alt.xml
+%%DATADIR%%/layouts/compact.xml
+%%DATADIR%%/layouts/florence-alt.xml
+%%DATADIR%%/layouts/florence.xml
+%%DATADIR%%/relaxng/README
+%%DATADIR%%/relaxng/florence.rng
+%%DATADIR%%/relaxng/style.rng
+%%DATADIR%%/relaxng/svg-animation.rng
+%%DATADIR%%/relaxng/svg-animevents-attrib.rng
+%%DATADIR%%/relaxng/svg-basic-clip.rng
+%%DATADIR%%/relaxng/svg-basic-filter.rng
+%%DATADIR%%/relaxng/svg-basic-font.rng
+%%DATADIR%%/relaxng/svg-basic-graphics-attrib.rng
+%%DATADIR%%/relaxng/svg-basic-structure.rng
+%%DATADIR%%/relaxng/svg-basic-text.rng
+%%DATADIR%%/relaxng/svg-clip.rng
+%%DATADIR%%/relaxng/svg-conditional.rng
+%%DATADIR%%/relaxng/svg-container-attrib.rng
+%%DATADIR%%/relaxng/svg-core-attrib.rng
+%%DATADIR%%/relaxng/svg-cursor.rng
+%%DATADIR%%/relaxng/svg-datatypes.rng
+%%DATADIR%%/relaxng/svg-docevents-attrib.rng
+%%DATADIR%%/relaxng/svg-extensibility.rng
+%%DATADIR%%/relaxng/svg-extresources-attrib.rng
+%%DATADIR%%/relaxng/svg-filter.rng
+%%DATADIR%%/relaxng/svg-font.rng
+%%DATADIR%%/relaxng/svg-gradient.rng
+%%DATADIR%%/relaxng/svg-graphevents-attrib.rng
+%%DATADIR%%/relaxng/svg-graphics-attrib.rng
+%%DATADIR%%/relaxng/svg-hyperlink.rng
+%%DATADIR%%/relaxng/svg-image.rng
+%%DATADIR%%/relaxng/svg-marker.rng
+%%DATADIR%%/relaxng/svg-mask.rng
+%%DATADIR%%/relaxng/svg-opacity-attrib.rng
+%%DATADIR%%/relaxng/svg-paint-attrib.rng
+%%DATADIR%%/relaxng/svg-pattern.rng
+%%DATADIR%%/relaxng/svg-profile.rng
+%%DATADIR%%/relaxng/svg-script.rng
+%%DATADIR%%/relaxng/svg-shape.rng
+%%DATADIR%%/relaxng/svg-structure.rng
+%%DATADIR%%/relaxng/svg-style.rng
+%%DATADIR%%/relaxng/svg-text.rng
+%%DATADIR%%/relaxng/svg-view.rng
+%%DATADIR%%/relaxng/svg-viewport-attrib.rng
+%%DATADIR%%/relaxng/svg-xlink-attrib.rng
+%%DATADIR%%/relaxng/svg11.rng
+%%DATADIR%%/styles/bright/default.svg
+%%DATADIR%%/styles/bright/florence.defs
+%%DATADIR%%/styles/bright/florence.style
+%%DATADIR%%/styles/default/florence.defs
+%%DATADIR%%/styles/default/florence.style
+%%DATADIR%%/styles/default/symbols.xml
+%%DATADIR%%/styles/hard/default.svg
+%%DATADIR%%/styles/hard/florence.defs
+%%DATADIR%%/styles/hard/florence.style
+%%DATADIR%%/styles/hard/high.svg
+%%DATADIR%%/styles/hard/mini.svg
+%%DATADIR%%/styles/hard/return.svg
+%%DATADIR%%/styles/hard/small.svg
+%%DATADIR%%/styles/hard/space.svg
+%%DATADIR%%/styles/hard/tiny.svg
+%%DATADIR%%/styles/hard/wide.svg
+%%DATADIR%%/styles/hard/xl.svg
+%%DATADIR%%/styles/hard/xxl.svg
+%%DATADIR%%/svg11/README
+%%DATADIR%%/svg11/svg-animation.rnc
+%%DATADIR%%/svg11/svg-animevents-attrib.rnc
+%%DATADIR%%/svg11/svg-basic-clip.rnc
+%%DATADIR%%/svg11/svg-basic-filter.rnc
+%%DATADIR%%/svg11/svg-basic-font.rnc
+%%DATADIR%%/svg11/svg-basic-graphics-attrib.rnc
+%%DATADIR%%/svg11/svg-basic-structure.rnc
+%%DATADIR%%/svg11/svg-basic-text.rnc
+%%DATADIR%%/svg11/svg-clip.rnc
+%%DATADIR%%/svg11/svg-conditional.rnc
+%%DATADIR%%/svg11/svg-container-attrib.rnc
+%%DATADIR%%/svg11/svg-core-attrib.rnc
+%%DATADIR%%/svg11/svg-cursor.rnc
+%%DATADIR%%/svg11/svg-datatypes.rnc
+%%DATADIR%%/svg11/svg-docevents-attrib.rnc
+%%DATADIR%%/svg11/svg-extensibility.rnc
+%%DATADIR%%/svg11/svg-extresources-attrib.rnc
+%%DATADIR%%/svg11/svg-filter.rnc
+%%DATADIR%%/svg11/svg-font.rnc
+%%DATADIR%%/svg11/svg-gradient.rnc
+%%DATADIR%%/svg11/svg-graphevents-attrib.rnc
+%%DATADIR%%/svg11/svg-graphics-attrib.rnc
+%%DATADIR%%/svg11/svg-hyperlink.rnc
+%%DATADIR%%/svg11/svg-image.rnc
+%%DATADIR%%/svg11/svg-marker.rnc
+%%DATADIR%%/svg11/svg-mask.rnc
+%%DATADIR%%/svg11/svg-opacity-attrib.rnc
+%%DATADIR%%/svg11/svg-paint-attrib.rnc
+%%DATADIR%%/svg11/svg-pattern.rnc
+%%DATADIR%%/svg11/svg-profile.rnc
+%%DATADIR%%/svg11/svg-script.rnc
+%%DATADIR%%/svg11/svg-shape.rnc
+%%DATADIR%%/svg11/svg-structure.rnc
+%%DATADIR%%/svg11/svg-style.rnc
+%%DATADIR%%/svg11/svg-text.rnc
+%%DATADIR%%/svg11/svg-view.rnc
+%%DATADIR%%/svg11/svg-viewport-attrib.rnc
+%%DATADIR%%/svg11/svg-xlink-attrib.rnc
+%%DATADIR%%/svg11/svg11.rnc
+share/gnome/help/florence/C/figures/behaviour.png
+share/gnome/help/florence/C/figures/florence.png
+share/gnome/help/florence/C/figures/layout.png
+share/gnome/help/florence/C/figures/style.png
+share/gnome/help/florence/C/figures/window.png
+share/gnome/help/florence/C/florence.xml
+share/gnome/help/florence/C/gfdl.dbk
+share/gnome/help/florence/fr/figures/behaviour.png
+share/gnome/help/florence/fr/figures/florence.png
+share/gnome/help/florence/fr/figures/layout.png
+share/gnome/help/florence/fr/figures/style.png
+share/gnome/help/florence/fr/figures/window.png
+share/gnome/help/florence/fr/florence.xml
+share/locale/fr/LC_MESSAGES/florence.mo
+share/omf/florence/florence-C.omf
+share/omf/florence/florence-fr.omf
+share/pixmaps/florence.svg
+@dirrm lib/bonobo/servers
+@dirrm lib/bonobo
+@dirrm share/gnome/help/florence/fr/figures
+@dirrm share/gnome/help/florence/fr
+@dirrm share/gnome/help/florence/C/figures
+@dirrm share/gnome/help/florence/C
+@dirrm share/gnome/help/florence
+@dirrm share/omf/florence
+@dirrm share/omf
+@dirrm %%DATADIR%%/svg11
+@dirrm %%DATADIR%%/styles/hard
+@dirrm %%DATADIR%%/styles/default
+@dirrm %%DATADIR%%/styles/bright
+@dirrm %%DATADIR%%/styles
+@dirrm %%DATADIR%%/relaxng
+@dirrm %%DATADIR%%/layouts
+@dirrm %%DATADIR%%
