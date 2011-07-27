@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hllib
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.2
 CATEGORIES=	games devel
 MASTER_SITES=	http://nemesis.thewavelength.net/files/files/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
@@ -22,10 +22,11 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/HLLib
 CFLAGS+=	-fpic
 
-PLIST_FILES=	include/hl.h lib/libhl.so.${PORTVERSION} \
+HLLIB_VERS=	2.3.0
+PLIST_FILES=	include/hl.h lib/libhl.so.${HLLIB_VERS} \
 		lib/libhl.so.2 lib/libhl.so
 
-post-extract:
+post-patch:
 # Allow propagating of CXX, CXXFLAGS, and PREFIX; fix Linuxism and symlinks
 	@${REINPLACE_CMD} -E 's,^([CP][^=]*)=,\1?=, ; s,g root,g wheel, ; \
 		s,s \$$\(PREFIX\)/lib/,s ,' ${WRKSRC}/Makefile
