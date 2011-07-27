@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	xz
-PORTVERSION=	5.0.1
+PORTVERSION=	5.0.3
 CATEGORIES=	archivers
 #MASTER_SITES=	http://tukaani.org/xz/
-# tukaani.org doesn't interop with fetch(1) as of 2011-02-28
+# tukaani.org doesn't interop with fetch(1) as of 2011-07-27
 MASTER_SITES=	${MASTER_SITE_NETBSD}
 
 MAINTAINER=	naddy@FreeBSD.org
