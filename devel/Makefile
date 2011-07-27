@@ -2500,6 +2500,7 @@
     SUBDIR += p5-VCS
     SUBDIR += p5-VCS-CVS
     SUBDIR += p5-VCS-Lite
+    SUBDIR += p5-Validation-Class
     SUBDIR += p5-Variable-Magic
     SUBDIR += p5-Version-Requirements
     SUBDIR += p5-Want
