@@ -30,6 +30,8 @@ RUN_DEPENDS=	dvdauthor:${PORTSDIR}/multimedia/dvdauthor \
 LIB_DEPENDS+=	avformat.1:${PORTSDIR}/multimedia/ffmpeg \
 		exif:${PORTSDIR}/graphics/libexif
 
+BROKEN=		does not build
+
 USE_BZIP2=	yes
 USE_WX=		2.8
 WX_COMPS=	wx svg
