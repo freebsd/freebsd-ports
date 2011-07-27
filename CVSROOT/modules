@@ -9672,10 +9672,8 @@ msn-proxy                       ports/net-im/msn-proxy
 msort                           ports/textproc/msort
 msp430-binutils                 ports/devel/msp430-binutils
 msp430-gcc                      ports/devel/msp430-gcc
-msp430-gcc3                     ports/devel/msp430-gcc3
 msp430-gdb                      ports/devel/msp430-gdb
 msp430-libc                     ports/devel/msp430-libc
-msp430mcu                       ports/devel/msp430mcu
 mspdebug                        ports/devel/mspdebug
 msql                            ports/databases/msql
 msql3                           ports/databases/msql3
@@ -10729,6 +10727,7 @@ outguess                        ports/security/outguess
 ovs                             ports/mail/ovs
 ovt                             ports/science/ovt
 p0f                             ports/net-mgmt/p0f
+p11-kit                         ports/security/p11-kit
 p2c                             ports/lang/p2c
 p3scan                          ports/mail/p3scan
 p4                              ports/devel/p4
@@ -21973,6 +21972,7 @@ py-pdf                          ports/print/py-pdf
 py-peak-rules                   ports/devel/py-PEAK-Rules
 py-pefile                       ports/devel/py-pefile
 py-period                       ports/devel/py-period
+py-periscope                    ports/multimedia/py-periscope
 py-pexpect                      ports/misc/py-pexpect
 py-pf                           ports/security/py-PF
 py-pg8000                       ports/databases/py-pg8000
