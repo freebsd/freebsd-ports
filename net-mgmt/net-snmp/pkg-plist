@@ -1,10 +1,13 @@
+bin/agentxtrap
 bin/encode_keychange
 bin/fixproc
 bin/ipf-mod.pl
 bin/mib2c
 bin/mib2c-update
+bin/net-snmp-cert
 bin/net-snmp-config
 bin/net-snmp-create-v3-user
+bin/snmp-bridge-mib
 bin/snmpbulkget
 bin/snmpbulkwalk
 bin/snmpcheck
@@ -59,6 +62,7 @@ include/net-snmp/agent/scalar_group.h
 include/net-snmp/agent/serialize.h
 include/net-snmp/agent/set_helper.h
 include/net-snmp/agent/snmp_agent.h
+include/net-snmp/agent/snmp_get_statistic.h
 include/net-snmp/agent/snmp_vars.h
 include/net-snmp/agent/stash_cache.h
 include/net-snmp/agent/stash_to_next.h
@@ -78,8 +82,9 @@ include/net-snmp/definitions.h
 include/net-snmp/library/README
 include/net-snmp/library/asn1.h
 include/net-snmp/library/callback.h
+include/net-snmp/library/cert_util.h
+include/net-snmp/library/oid.h
 include/net-snmp/library/check_varbind.h
-include/net-snmp/library/cmu_compat.h
 include/net-snmp/library/container.h
 include/net-snmp/library/container_binary_array.h
 include/net-snmp/library/container_iterator.h
@@ -127,6 +132,12 @@ include/net-snmp/library/snmp_transport.h
 include/net-snmp/library/snmpusm.h
 include/net-snmp/library/snmpv3-security-includes.h
 include/net-snmp/library/snmpv3.h
+include/net-snmp/library/snmpIPv6BaseDomain.h
+include/net-snmp/library/snmpUDPBaseDomain.h
+include/net-snmp/library/snmpUDPIPv4BaseDomain.h
+include/net-snmp/library/snmpTCPBaseDomain.h
+include/net-snmp/library/snmpSocketBaseDomain.h
+include/net-snmp/library/snmpIPv4BaseDomain.h
 include/net-snmp/library/system.h
 include/net-snmp/library/text_utils.h
 include/net-snmp/library/tools.h
@@ -139,6 +150,7 @@ include/net-snmp/library/winservice.h
 include/net-snmp/machine/generic.h
 include/net-snmp/mib_api.h
 include/net-snmp/net-snmp-config.h
+include/net-snmp/net-snmp-features.h
 include/net-snmp/net-snmp-includes.h
 include/net-snmp/output_api.h
 include/net-snmp/pdu_api.h
@@ -154,6 +166,7 @@ include/net-snmp/system/darwin.h
 include/net-snmp/system/darwin7.h
 include/net-snmp/system/darwin8.h
 include/net-snmp/system/darwin9.h
+include/net-snmp/system/darwin10.h
 include/net-snmp/system/dragonfly.h
 include/net-snmp/system/dynix.h
 include/net-snmp/system/freebsd.h
@@ -223,6 +236,8 @@ lib/libnetsnmptrapd.so.%%SHLIB_VERSION%%
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/NetSNMP/default_store.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/SNMP.pm
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/NetSNMP/.packlist
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/NetSNMP/NetSNMP.bs
+%%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bundle/NetSNMP/NetSNMP.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/ASN/ASN.bs
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/ASN/ASN.so
 %%WITH_PERL%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/NetSNMP/ASN/autosplit.ix
@@ -346,6 +361,7 @@ sbin/snmptrapd
 %%DATADIR%%/mib2c-data/syntax-StorageType-dependencies.m2i
 %%DATADIR%%/mib2c-data/syntax-TestAndIncr-get.m2i
 %%DATADIR%%/mibs/AGENTX-MIB.txt
+%%DATADIR%%/mibs/BRIDGE-MIB.txt
 %%DATADIR%%/mibs/DISMAN-EVENT-MIB.txt
 %%DATADIR%%/mibs/DISMAN-SCHEDULE-MIB.txt
 %%DATADIR%%/mibs/DISMAN-SCRIPT-MIB.txt
@@ -363,11 +379,11 @@ sbin/snmptrapd
 %%DATADIR%%/mibs/IP-FORWARD-MIB.txt
 %%DATADIR%%/mibs/IP-MIB.txt
 %%DATADIR%%/mibs/IPV6-ICMP-MIB.txt
+%%DATADIR%%/mibs/IPV6-FLOW-LABEL-MIB.txt
 %%DATADIR%%/mibs/IPV6-MIB.txt
 %%DATADIR%%/mibs/IPV6-TC.txt
 %%DATADIR%%/mibs/IPV6-TCP-MIB.txt
 %%DATADIR%%/mibs/IPV6-UDP-MIB.txt
-%%DATADIR%%/mibs/MTA-MIB.txt
 %%DATADIR%%/mibs/NET-SNMP-AGENT-MIB.txt
 %%DATADIR%%/mibs/NET-SNMP-EXAMPLES-MIB.txt
 %%DATADIR%%/mibs/NET-SNMP-EXTEND-MIB.txt
@@ -375,7 +391,6 @@ sbin/snmptrapd
 %%DATADIR%%/mibs/NET-SNMP-PASS-MIB.txt
 %%DATADIR%%/mibs/NET-SNMP-TC.txt
 %%DATADIR%%/mibs/NET-SNMP-VACM-MIB.txt
-%%DATADIR%%/mibs/NETWORK-SERVICES-MIB.txt
 %%DATADIR%%/mibs/NOTIFICATION-LOG-MIB.txt
 %%DATADIR%%/mibs/RFC-1215.txt
 %%DATADIR%%/mibs/RFC1155-SMI.txt
@@ -399,6 +414,7 @@ sbin/snmptrapd
 %%DATADIR%%/mibs/SNMPv2-TC.txt
 %%DATADIR%%/mibs/SNMPv2-TM.txt
 %%DATADIR%%/mibs/TCP-MIB.txt
+%%DATADIR%%/mibs/TUNNEL-MIB.txt
 %%DATADIR%%/mibs/TRANSPORT-ADDRESS-MIB.txt
 %%DATADIR%%/mibs/UCD-DEMO-MIB.txt
 %%DATADIR%%/mibs/UCD-DISKIO-MIB.txt

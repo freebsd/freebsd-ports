@@ -1,11 +1,11 @@
---- configure.orig	2009-01-25 21:34:07.000000000 +0900
-+++ configure	2009-01-25 21:34:30.000000000 +0900
-@@ -6074,7 +6074,7 @@
+--- configure.orig	2011-07-01 19:36:41.000000000 -0300
++++ configure	2011-07-27 09:10:11.000000000 -0300
+@@ -7544,7 +7544,7 @@
  
- 
+ # On IRIX 5.3, sys/types and inttypes.h are conflicting.
  for ac_header in sys/types.h sys/stat.h stdlib.h string.h memory.h strings.h \
 -		  inttypes.h stdint.h unistd.h
 +		  inttypes.h stdint.h unistd.h stdarg.h
- do
- as_ac_Header=`echo "ac_cv_header_$ac_header" | $as_tr_sh`
- echo "$as_me:$LINENO: checking for $ac_header" >&5
+ do :
+   as_ac_Header=`$as_echo "ac_cv_header_$ac_header" | $as_tr_sh`
+ ac_fn_c_check_header_compile "$LINENO" "$ac_header" "$as_ac_Header" "$ac_includes_default
