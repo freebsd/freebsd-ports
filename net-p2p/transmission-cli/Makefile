@@ -12,7 +12,7 @@ CATEGORIES?=	net-p2p
 MASTER_SITES=	http://download.m0k.org/${PORTNAME}/files/
 PKGNAMESUFFIX?=	-cli
 
-MAINTAINER?=	ports@FreeBSD.org
+MAINTAINER?=	crees@FreeBSD.org
 COMMENT?=	A lightweight CLI (command line) BitTorrent client and utilities
 
 SLAVEPORT?=	cli
