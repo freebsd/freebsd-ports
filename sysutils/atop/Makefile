@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	atop
-PORTVERSION=	1.26.b6
+PORTVERSION=	1.26.b7
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=atop-freebsd
@@ -16,7 +16,9 @@ MAINTAINER=	samm@os2.kiev.ua
 COMMENT=	ASCII Monitor for system resources and process activity
 
 LICENSE=	GPLv2
+
 USE_BZIP2=	yes
+USE_NCURSES=	yes
 MAKEFILE=	Makefile.fbsd
 MAN1=		atop.1 atopsar.1
 MAN5=		atoprc.5
