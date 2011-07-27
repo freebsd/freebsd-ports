@@ -42,6 +42,7 @@ post-patch:
 
 do-configure:
 	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-cc
+	${ECHO_CMD} "${CC} ${CFLAGS}" > ${WRKSRC}/src/conf-ld
 	${ECHO_CMD} "${PREFIX}" > ${WRKSRC}/src/conf-home
 	${ECHO_CMD} "${PREFIX}/bin" > ${WRKSRC}/src/conf-tcpbin
 	${ECHO_CMD} "/etc/ssl" > ${WRKSRC}/src/conf-cadir
