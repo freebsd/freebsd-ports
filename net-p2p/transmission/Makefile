@@ -12,7 +12,7 @@ MASTER_SITES=	# empty
 DISTFILES=	# empty
 EXTRACT_ONLY=	# empty
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	crees@FreeBSD.org
 COMMENT=	The "meta-port" for Transmission BitTorrent client
 
 RUN_DEPENDS=	transmission-cli:${PORTSDIR}/net-p2p/transmission-cli \
