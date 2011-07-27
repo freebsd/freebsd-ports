@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	ircii
-PORTVERSION=	20081115
+PORTVERSION=	20110228
 CATEGORIES=	irc ipv6
-MASTER_SITES=	ftp://ftp.warped.com/pub/ircII/ \
+MASTER_SITES=	ftp://ircii.warped.com/pub/ircII/ \
 		ftp://ftp.irc.org/irc/clients/unix/ircII/
 
 MAINTAINER=	sylvio@FreeBSD.org
