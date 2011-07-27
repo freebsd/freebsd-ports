@@ -7,6 +7,7 @@
 
 PORTNAME=	sylpheed
 PORTVERSION=	3.1.1
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/  \
 		CRITICAL
@@ -55,7 +56,8 @@ CONFIGURE_ARGS+=--disable-ssl
 
 .if defined(WITH_GPGME)
 LIB_DEPENDS+=	gpgme.19:${PORTSDIR}/security/gpgme
-RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
+RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg \
+		pinentry-gtk-2:${PORTSDIR}/security/pinentry-gtk2
 CONFIGURE_ARGS+=--enable-gpgme
 .else
 CONFIGURE_ARGS+=--disable-gpgme
