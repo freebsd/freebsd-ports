@@ -97,7 +97,7 @@ $FreeBSD$
  			<param name="profileName" value="SDKProfile" />
  		</antcall>
  
-@@ -804,7 +815,8 @@
+@@ -829,7 +833,8 @@
  		<!--
  		<echo message="Calling runtests with (debug, verbose) = (${testSwitches})" />
  		-->
@@ -107,7 +107,7 @@ $FreeBSD$
  			<arg value="-t${timestamp}" />
  			<arg value="-a${buildArch}" />
  			<arg value="-o${buildOs}" />
-@@ -958,7 +962,7 @@
+@@ -958,33 +963,29 @@
  	<target name="installIntoDestDir">
  		<mkdir dir="${installationDir}" />
                  <exec executable="rsync" failonerror="true">
@@ -116,13 +116,14 @@ $FreeBSD$
                         <arg value="--exclude=dropins" />
                         <arg value="${provisionDir}/" />
                         <arg value="${installationDir}/" />
-@@ -966,25 +970,21 @@
+                 </exec>
  
  		<!-- install desktop file -->
- 		<copy file="eclipse.desktop" todir="${destDir}${prefix}/share/applications" />
+-		<copy file="eclipse.desktop" todir="${destDir}${prefix}/share/applications" />
 -		<!-- install Eclipse Java code formatter launcher -->
 -		<property name="efj" value="${destDir}${prefix}/bin/efj"/>
 -		<copy file="efj.sh" todir="${efj}" />
++		<copy file="eclipse.desktop" tofile="${destDir}${prefix}/share/applications/%%PORTNAME%%.desktop" />
  	    <fileset id="equinoxLauncher" dir="${installationDir}/plugins">
  	      <include name="org.eclipse.equinox.launcher_*.jar" />
  	    </fileset>
@@ -148,7 +149,7 @@ $FreeBSD$
  		<!-- Create the "swt.jar" and friends symlinks  -->
  		<fileset dir="${installationDir}/plugins" includes="org.eclipse.swt.gtk.${buildOs}.${buildArch}_*" id="swtjar" />
  		<property name="swtjarpath" refid="swtjar" />
-@@ -992,7 +996,7 @@
+@@ -992,7 +993,7 @@
  		<symlink link="${installationDir}/swt-gtk.jar" resource="plugins/${swtjarpath}" overwrite="true"/>
  		<symlink link="${installationDir}/swt.jar" resource="plugins/${swtjarpath}" overwrite="true"/>
  
@@ -157,7 +158,7 @@ $FreeBSD$
  
  		<!-- Extract SWT JNI .so files -->
  		<java classname="org.eclipse.core.launcher.Main" fork="true" failonerror="true" dir="${destDir}">
-@@ -990,8 +1001,8 @@
+@@ -1064,8 +1065,8 @@
  			<arg value="s@/@_@g" />
  		</exec>
  		<apply executable="sed" failonerror="true" verbose="true">
@@ -168,7 +169,7 @@ $FreeBSD$
  			<srcfile />
  			<fileset dir="${installationDir}">
  				<include name="metadata/content.xml" />
-@@ -1012,7 +1023,7 @@
+@@ -1086,7 +1087,7 @@
  			</fileset>
  		</apply>
  		<apply executable="sed" failonerror="true" verbose="true">
