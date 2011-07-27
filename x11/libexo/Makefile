@@ -6,7 +6,7 @@
 #    $MCom: ports/x11/libexo/Makefile,v 1.1 2006/10/02 21:05:55 ahze Exp $
 
 PORTNAME=	libexo
-PORTVERSION=	0.6.1
+PORTVERSION=	0.6.2
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/exo/${PORTVERSION:R}
@@ -14,7 +14,7 @@ DISTNAME=	exo-${PORTVERSION}
 DIST_SUBDIR=	xfce4
 
 MAINTAINER=	oliver@FreeBSD.org
-COMMENT=	Terminal library, extensions to Xfce by os-cillation
+COMMENT=	Application library for the Xfce environment
 
 BUILD_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${SITE_PERL}/URI.pm:${PORTSDIR}/net/p5-URI
@@ -31,8 +31,11 @@ USE_GNOME=	gnomehack glib20 gtk20 intltool intlhack pkgconfig \
 USE_LDCONFIG=	yes
 USE_PERL5=	yes
 USE_XFCE=	configenv libutil
-
+USE_XORG=	x11
+CONFIGURE_ARGS+=--enable-gio-unix \
+		--with-gio-module-dir=${PREFIX}/lib/gio/modules
 CONFIGURE_ENV+=	ac_cv_prog_AWK="${AWK}"
+
 OPTIONS=	APIDOCS	"Install api documentation"		off \
 		PYTHON	"Enable Python support"			off \
 		NLS	"Enable Native Language Support"	on

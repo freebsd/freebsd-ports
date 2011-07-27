@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Terminal
-PORTVERSION=	0.4.7
-PORTREVISION=	1
+PORTVERSION=	0.4.8
 CATEGORIES=	x11 xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME:L}/${PORTVERSION:R}
@@ -27,6 +26,7 @@ USE_XFCE=	configenv libexo
 USE_XORG=	x11
 
 CONFIGURE_ARGS=	--without-gnome-default-appsdir
+CONFIGURE_ENV+=	ac_cv_prog_AWK="${AWK}"
 
 OPTIONS=	DBUS	"Enable D-BUS support"			on \
 		NLS	"Enable Native Language Support"	on

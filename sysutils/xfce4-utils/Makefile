@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	xfce4-utils
-PORTVERSION=	4.8.1
-PORTREVISION=	1
+PORTVERSION=	4.8.2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/xfce-utils/${PORTVERSION:R}
@@ -23,8 +22,9 @@ BUILD_DEPENDS=	p5-XML-Parser>=2.40:${PORTSDIR}/textproc/p5-XML-Parser
 
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/4//}
 
-CONFIGURE_ARGS+=--with-xsession-prefix=${PREFIX} \
-		--disable-debug
+CONFIGURE_ARGS+=--with-xsession-prefix=${PREFIX}
+CONFIGURE_ENV+=	ac_cv_prog_AWK="${AWK}"
+
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
