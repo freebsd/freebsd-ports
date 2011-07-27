@@ -14,6 +14,9 @@ MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v1.0/
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A lightweight, featureful, and fast GTK+ based e-mail client
 
+DEPRECATED=	Use mail/sylpheed3 instead
+EXPIRATION_DATE=	2011-08-27
+
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 USE_BZIP2=	yes
