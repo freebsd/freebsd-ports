@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pl-hunspell
-PORTVERSION=	20110722
+PORTVERSION=	20110727
 CATEGORIES=	textproc
 MASTER_SITES=	http://sjp.pl/slownik/ort/
 DISTNAME=	sjp-myspell-pl-${PORTVERSION}
@@ -22,14 +22,14 @@ NO_BUILD=	yes
 
 PLIST_FILES=	share/hunspell/pl_PL.aff \
 		share/hunspell/pl_PL.dic
-PLIST_DIRS=	share/hunspell
+PLIST_DIRSTRY=	share/hunspell
 
 post-extract:
 	@${MKDIR} ${WRKSRC}
 	@${EXTRACT_CMD} ${WRKDIR}/pl_PL.zip -d ${WRKSRC}
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hunspell
-	@${INSTALL_DATA} ${WRKSRC}/pl_PL.* ${PREFIX}/share/hunspell
+	${MKDIR} ${PREFIX}/share/hunspell/
+	${INSTALL_DATA} ${WRKSRC}/pl_PL.aff ${WRKSRC}/pl_PL.dic ${PREFIX}/share/hunspell/
 
 .include <bsd.port.mk>
