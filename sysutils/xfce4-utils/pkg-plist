@@ -34,10 +34,13 @@ share/applications/xfrun4.desktop
 %%DOCSDIR%%/html/el/BSD.html
 %%DOCSDIR%%/html/el/GPL.html
 %%DOCSDIR%%/html/el/LGPL.html
+%%DOCSDIR%%/html/el/images/about-dialog.png
+%%DOCSDIR%%/html/el/images/default-session.png
+%%DOCSDIR%%/html/el/images/run-dialog.png
+%%DOCSDIR%%/html/el/images/xfce-mouse.png
 %%DOCSDIR%%/html/el/index.html
 %%DOCSDIR%%/html/el/xfce-user-guide.html
 %%DOCSDIR%%/html/el/xfce-utils.html
-%%DOCSDIR%%/html/el/images
 %%DOCSDIR%%/html/gl/BSD.html
 %%DOCSDIR%%/html/gl/GPL.html
 %%DOCSDIR%%/html/gl/LGPL.html
@@ -66,6 +69,13 @@ share/applications/xfrun4.desktop
 %%DOCSDIR%%/html/sv/index.html
 %%DOCSDIR%%/html/sv/xfce-user-guide.html
 %%DOCSDIR%%/html/sv/xfce-utils.html
+%%DOCSDIR%%/html/tr/BSD.html
+%%DOCSDIR%%/html/tr/GPL.html
+%%DOCSDIR%%/html/tr/LGPL.html
+%%DOCSDIR%%/html/tr/images
+%%DOCSDIR%%/html/tr/index.html
+%%DOCSDIR%%/html/tr/xfce-user-guide.html
+%%DOCSDIR%%/html/tr/xfce-utils.html
 %%DOCSDIR%%/html/ug/BSD.html
 %%DOCSDIR%%/html/ug/GPL.html
 %%DOCSDIR%%/html/ug/LGPL.html
@@ -74,6 +84,13 @@ share/applications/xfrun4.desktop
 %%DOCSDIR%%/html/ug/xfce-user-guide.html
 %%DOCSDIR%%/html/ug/xfce-utils.html
 %%DOCSDIR%%/html/xfce-utils.css
+%%DOCSDIR%%/html/zh_CN/BSD.html
+%%DOCSDIR%%/html/zh_CN/GPL.html
+%%DOCSDIR%%/html/zh_CN/LGPL.html
+%%DOCSDIR%%/html/zh_CN/images
+%%DOCSDIR%%/html/zh_CN/index.html
+%%DOCSDIR%%/html/zh_CN/xfce-user-guide.html
+%%DOCSDIR%%/html/zh_CN/xfce-utils.html
 share/icons/hicolor/48x48/apps/xfce4-logo.png
 %%NLS%%share/locale/af/LC_MESSAGES/xfce-utils.mo
 %%NLS%%share/locale/am/LC_MESSAGES/xfce-utils.mo
@@ -131,6 +148,7 @@ share/icons/hicolor/48x48/apps/xfce4-logo.png
 %%NLS%%share/locale/sq/LC_MESSAGES/xfce-utils.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/xfce-utils.mo
 %%NLS%%share/locale/ta/LC_MESSAGES/xfce-utils.mo
+%%NLS%%share/locale/te/LC_MESSAGES/xfce-utils.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/xfce-utils.mo
 %%NLS%%share/locale/ug/LC_MESSAGES/xfce-utils.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/xfce-utils.mo
@@ -149,6 +167,8 @@ share/xsessions/xfce.desktop
 %%NLS%%@dirrmtry share/locale/ur
 %%NLS%%@dirrmtry share/locale/ug/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ug
+%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/te
 %%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/si
 %%NLS%%@dirrmtry share/locale/mr/LC_MESSAGES
@@ -165,11 +185,14 @@ share/xsessions/xfce.desktop
 %%NLS%%@dirrmtry share/locale/bn_IN
 %%NLS%%@dirrmtry share/locale/ast/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ast
+@dirrm %%DOCSDIR%%/html/zh_CN
 @dirrm %%DOCSDIR%%/html/ug
+@dirrm %%DOCSDIR%%/html/tr
 @dirrm %%DOCSDIR%%/html/sv
 @dirrm %%DOCSDIR%%/html/ja
 @dirrm %%DOCSDIR%%/html/it
 @dirrm %%DOCSDIR%%/html/gl
+@dirrm %%DOCSDIR%%/html/el/images
 @dirrm %%DOCSDIR%%/html/el
 @dirrm %%DOCSDIR%%/html/da
 @dirrm %%DOCSDIR%%/html/C/images

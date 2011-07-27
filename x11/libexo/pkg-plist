@@ -307,21 +307,12 @@ share/xfce4/helpers/xterm.desktop
 @dirrm include/exo-1
 @dirrmtry etc/xdg/xfce4
 @dirrmtry etc/xdg
-@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/_exo.a
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/_exo.la
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/_exo.so
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/exo/__init__.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/exo/__init__.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/%%EXODIR%%/exo/__init__.pyo
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.py
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.pyc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/pyexo.pyo
-%%PYTHON%%share/pygtk/2.0/defs/%%EXODIR%%/exo.defs
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/%%EXODIR%%/exo
 %%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/%%EXODIR%%
 %%PYTHON%%@dirrm share/pygtk/2.0/defs/%%EXODIR%%
 %%PYTHON%%@dirrmtry share/pygtk/2.0/defs
 %%PYTHON%%@dirrmtry share/pygtk/2.0
 %%PYTHON%%@dirrmtry share/pygtk
+@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
+
