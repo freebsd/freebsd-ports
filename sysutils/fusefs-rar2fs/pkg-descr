@@ -1,0 +1,9 @@
+rar2fs is a FUSE based file system that can mount a source RAR
+archive/volume or a directory containing any number of RAR
+archives and access (read only) the contents as plain files/directories.
+Other files located in the source directory are handled transparently.
+Both compressed and non-compressed archives/volumes are supported but
+full media seek support (aka. indexing) is only available for
+non-compressed plaintext archives.
+
+WWW: http://code.google.com/p/rar2fs/
