@@ -11,7 +11,7 @@ PORTREVISION=	9
 CATEGORIES=	mail ipv6
 MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v1.0/
 
-MAINTAINER=	oliver@FreeBSD.org
+MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A lightweight, featureful, and fast GTK+ based e-mail client
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
