@@ -36,10 +36,10 @@ WITH_NCURSES_PORT=	yes
 .if ${RUBY_VER} == 1.8
 RUN_DEPENDS+=	${LOCALBASE}/bin/gem:${PORTSDIR}/devel/ruby-gems
 .else
-RUN_DEPENDS+=	rubygem-actionpack:${PORTSDIR}/www/rubygem-actionpack	\
-		rubygem-sqlite3:${PORTSDIR}/databases/rubygem-sqlite3	\
-		rubygem-activerecord:${PORTSDIR}/databases/rubygem-activerecord \
-		rubygem-activesupport:${PORTSDIR}/devel/rubygem-activesupport \
+RUN_DEPENDS+=	rubygem-actionpack>0:${PORTSDIR}/www/rubygem-actionpack	\
+		rubygem-sqlite3>0:${PORTSDIR}/databases/rubygem-sqlite3	\
+		rubygem-activerecord>0:${PORTSDIR}/databases/rubygem-activerecord \
+		rubygem-activesupport>0:${PORTSDIR}/devel/rubygem-activesupport \
 		${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/converters/ruby-iconv
 .endif
 
