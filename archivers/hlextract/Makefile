@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hlextract
-PORTVERSION=	2.3.0
+PORTVERSION=	2.4.2
 CATEGORIES=	archivers games
 MASTER_SITES=	http://nemesis.thewavelength.net/files/files/
 DISTNAME=	hllib${PORTVERSION:S/.//g}
@@ -24,9 +24,9 @@ WRKSRC=		${WRKDIR}/HLExtract
 
 PLIST_FILES=	bin/${PORTNAME}
 
-post-extract:
+post-patch:
 	@${REINPLACE_CMD} -e 's,linux/limits,sys/param, ; \
-		s,HLExtract\.exe,hlextract,' ${WRKSRC}/Main.c
+		s,HLExtract\.exe,${PORTNAME},' ${WRKSRC}/Main.c
 
 do-build:
 	${CC} ${CFLAGS} -I${LOCALBASE}/include -L${LOCALBASE}/lib \
