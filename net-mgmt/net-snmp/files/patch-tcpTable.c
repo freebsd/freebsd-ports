@@ -1,12 +1,13 @@
---- agent/mibgroup/mibII/tcpTable.c.orig	Wed Jun  9 05:53:17 2004
-+++ agent/mibgroup/mibII/tcpTable.c	Thu Jun 24 23:21:32 2004
-@@ -275,6 +277,9 @@
- 
+--- agent/mibgroup/mibII/tcpTable.c.orig	2011-07-01 19:35:46.000000000 -0300
++++ agent/mibgroup/mibII/tcpTable.c	2011-07-27 10:00:57.000000000 -0300
+@@ -298,8 +298,10 @@
+ #ifndef NETSNMP_FEATURE_REMOVE_TCP_COUNT_CONNECTIONS
  int
  TCP_Count_Connections( void ) {
 +#if (defined(CAN_USE_SYSCTL) && defined(TCPCTL_PCBLIST))
-+    tcpTable_load(NULL, NULL);
-+#endif
+     tcpTable_load(NULL, NULL);
      return tcp_estab;
++#endif
  }
+ #endif /* NETSNMP_FEATURE_REMOVE_TCP_COUNT_CONNECTIONS */
  
