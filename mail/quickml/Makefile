@@ -36,6 +36,10 @@ CONFIGURE_ARGS+=	--with-rubydir="${RUBY_LIBDIR}"
 
 .include <bsd.port.pre.mk>
 
+.if ${RUBY_VER} == 1.9
+EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-ruby19-Makefile.in
+.endif
+
 .if !defined(WITHOUT_LIMIT)
 PATCH_DIST_STRIP=	-p1
 .endif
