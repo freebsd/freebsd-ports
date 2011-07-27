@@ -7,6 +7,7 @@
 
 PORTNAME=	darktable
 PORTVERSION=	0.9
+PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF
 
@@ -37,7 +38,7 @@ OPTIONS=	GCONF	"Enable GConf backend"			off \
 		SLIDESHOW "Build OpenGL/SDL slideshow viewer"	off \
 		KWALLET	"Enable KWallet support (requires dbus-glib)" off \
 		GKEYRING "Enable GNOME Keyring support"		off \
-		NLS	"Enable Native Language Support"	off
+		NLS	"Enable Native Language Support"	on
 
 .include <bsd.port.pre.mk>
 
