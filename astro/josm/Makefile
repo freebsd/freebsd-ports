@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	josm
-PORTVERSION=	4064
+PORTVERSION=	4223
 CATEGORIES=	astro java
 MASTER_SITES=	http://josm.openstreetmap.de/download/:josm \
 		http://mirror.amdmi3.ru/distfiles/:josm \
@@ -20,10 +20,6 @@ COMMENT=	A comprehensive editor for OpenStreetMap.org database
 
 NO_WRKSUBDIR=	yes
 
-USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui imageformats moc_build network script \
-		rcc_build uic_build webkit
-
 USE_JAVA=	YES
 JAVA_VERSION=	1.5+
 
@@ -33,8 +29,18 @@ SUB_LIST=	JARNAME=${DISTNAME}
 WEBKITIMG=	webkit-image
 WEBKITIMG_SRC=	${WEBKITIMG}.cpp
 
-PLIST_FILES=	bin/josm ${JAVAJARDIR:C,${PREFIX}/?,,}/${DISTNAME} \
-		bin/webkit-image
+PLIST_FILES=	bin/josm ${JAVAJARDIR:C,${PREFIX}/?,,}/${DISTNAME}
+
+OPTIONS=	WEBKIT_IMAGE "Build webkit-image (needed for Yahoo imagery)" on
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_WEBKIT_IMAGE)
+PLIST_FILES+=	bin/webkit-image
+
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui imageformats moc_build network script \
+		rcc_build uic_build webkit
 
 do-build:
 	cd ${WRKSRC} && \
@@ -42,11 +48,16 @@ do-build:
 		${CXX} ${CFLAGS} ${PTHREAD_LIBS} -I. -I${QT_INCDIR} -L${QT_LIBDIR} \
 		${DISTDIR}/${WEBKITIMG_SRC} -o ${WEBKITIMG} -lQtCore -lQtWebKit \
 		-lQtGui
+.else
+NO_BUILD=	yes
+.endif
 
 do-install:
 	${MKDIR} ${JAVAJARDIR}/
 	${INSTALL_DATA} ${DISTDIR}/${DISTNAME} ${JAVAJARDIR}/
 	${INSTALL_SCRIPT} ${WRKDIR}/josm.sh ${PREFIX}/bin/josm
+.if defined(WITH_WEBKIT_IMAGE)
 	${INSTALL_PROGRAM} ${WRKDIR}/${WEBKITIMG} ${PREFIX}/bin
+.endif
 
 .include <bsd.port.mk>
