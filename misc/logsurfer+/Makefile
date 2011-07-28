@@ -5,34 +5,38 @@
 # $FreeBSD$
 #
 
-PORTNAME=	logsurfer
-PORTVERSION=	1.5b
+PORTNAME=	logsurfer+
+PORTVERSION=	1.7
 CATEGORIES=	misc
-MASTER_SITES=	ftp://ftp.cert.dfn.de/pub/tools/audit/logsurfer/%SUBDIR%/ \
-		ftp://ftp.tuwien.ac.at/infosys/security/dfn/tools/audit/logsurfer/%SUBDIR%/
-EXTRACT_SUFX=	.tar
+MASTER_SITES=	http://kerryt.orconhosting.net.nz/ \
+		http://www.crypt.gen.nz/logsurfer/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Process logfiles and conditionally perform certain actions
 
-DEPRECATED=	Look like an abandonware, no more public distifles
-EXPIRATION_DATE=	2011-08-01
+LICENSE=	BSD
+
+SUB_FILES=	pkg-message
+EXAMPLE_FILES=	context_arg_test.conf echo_test.conf \
+		lines_test.conf syslog_test.conf
 
 GNU_CONFIGURE=	YES
-CONFIGURE_ARGS+=	--with-etc-dir=${PREFIX}/etc
+CONFIGURE_ARGS+=--with-etcdir=${ETCDIR}
 
 MAN1=		logsurfer.1
 MAN4=		logsurfer.conf.4
 
 post-install:
-	@${MKDIR} ${PREFIX}/share/examples/logsurfer
-	${INSTALL_DATA} ${WRKSRC}/config-examples/README \
-		${PREFIX}/share/examples/logsurfer
+	@${MKDIR} ${ETCDIR}
+.for conf in ${EXAMPLE_FILES}
+	${INSTALL_DATA} ${WRKSRC}/config-examples/${conf} ${ETCDIR}/${conf}.sample
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ChangeLog README
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for doc in ChangeLog README
+	${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
 .endfor
 .endif
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
