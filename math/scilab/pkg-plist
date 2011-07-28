@@ -11,6 +11,7 @@ libdata/pkgconfig/scilab.pc
 share/applications/scilab-adv-cli.desktop
 share/applications/scilab-cli.desktop
 share/applications/scilab.desktop
+%%DATADIR%%/contrib/loader.sce
 %%DATADIR%%/contrib/toolbox_skeleton/DESCRIPTION
 %%DATADIR%%/contrib/toolbox_skeleton/DESCRIPTION-FUNCTIONS
 %%DATADIR%%/contrib/toolbox_skeleton/builder.sce

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	scilab
-PORTVERSION=	5.3.2
-PORTREVISION=	1
+PORTVERSION=	5.3.3
 CATEGORIES=	math cad parallel java
 MASTER_SITES=	http://www.scilab.org/download/${PORTVERSION}/:scilab \
 		http://www.predatorlabs.net/dl/:jgraphx \
@@ -187,11 +186,8 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-NOPORTDOCS
 post-patch:
 	@# Configure fixes
 	@${REINPLACE_CMD} -e 's|-ldl | |' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-L$$with_umfpack_library|-L$$with_umfpack_library -lgfortran|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-lumfpack|-lumfpack -lamd -L$$with_umfpack_library -lgfortran|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lumfpack|-lumfpack -lamd -lcholmod -lcolamd $$BLAS_LIBS $$LAPACK_LIBS|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|TCLTK_LIBS=" -ldl"|TCLTK_LIBS=" "|' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|"x=" ==|"x" =|g' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|"x" ==|"x" =|g' ${WRKSRC}/configure
 	@# Build fixes
 	@${REINPLACE_CMD} -e 's|$$(CFLAGS:-O%=)|-I${LOCALBASE}/include -L${LOCALBASE}/lib|' ${WRKSRC}/modules/elementary_functions/Makefile.in
 	@${REINPLACE_CMD} -e 's|freebsd|__FreeBSD__|g' ${WRKSRC}/modules/sparse/includes/spConfig.h
