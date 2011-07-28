@@ -8,8 +8,7 @@
 PORTNAME=	elm
 PORTVERSION=	2.4h4.1
 CATEGORIES=	korean mail
-MASTER_SITES=	ftp://ftp.kaist.ac.kr/pub/hangul/mail/old/Others/ \
-		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/mail/old/Others/
+MASTER_SITES=	ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/mail/old/Others/
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
