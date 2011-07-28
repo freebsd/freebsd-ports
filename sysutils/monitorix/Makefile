@@ -123,6 +123,7 @@ do-install:
 .endif
 
 post-install:
+	@${MKDIR} ${DATADIR}
 	@${INSTALL_DATA} ${WRKSRC}/monitorix.conf ${PREFIX}/etc/monitorix.conf.sample
 	@if [ ! -f ${PREFIX}/etc/monitorix.conf ]; then \
 		${CP} -p ${PREFIX}/etc/monitorix.conf.sample \
