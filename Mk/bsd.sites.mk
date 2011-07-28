@@ -363,8 +363,6 @@ MASTER_SITE_FEDORA_LINUX+= \
 	http://ftp.jaist.ac.jp/pub/Linux/Fedora/core/%SUBDIR%/ \
 	ftp://ftp.jaist.ac.jp/pub/Linux/Fedora/core/%SUBDIR%/ \
 	http://ftp.riken.jp/Linux/fedora/core/%SUBDIR%/ \
-	http://ftp.kaist.ac.kr/pub/fedora/linux/core/%SUBDIR%/ \
-	ftp://ftp.kaist.ac.kr/fedora/linux/core/%SUBDIR%/ \
 	ftp://ftp.kreonet.re.kr/pub/Linux/fedora/core/%SUBDIR%/ \
 	ftp://fedora.ifc.unam.mx/linux/fedora/core/%SUBDIR%/ \
 	ftp://ftp.easynet.nl/mirror/fedora/linux/core/%SUBDIR%/ \
@@ -780,7 +778,6 @@ MASTER_SITE_MOZILLA+= \
 	ftp://ftp.fh-wolfenbuettel.de/pub/www/mozilla/%SUBDIR%/ \
 	ftp://ftp.informatik.rwth-aachen.de/pub/mirror/ftp.mozilla.org/pub/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/mozilla/&,} \
-	ftp://ftp.kaist.ac.kr/pub/mozilla/%SUBDIR%/ \
 	http://ftp.twaren.net/Unix/Mozilla/%SUBDIR%/
 .endif
 
@@ -886,7 +883,6 @@ MASTER_SITE_OPENBSD+= \
 	http://www.mirrorservice.org/pub/OpenBSD/%SUBDIR%/ \
 	http://mirror.switch.ch/ftp/pub/OpenBSD/%SUBDIR%/ \
 	http://ftp.jaist.ac.jp/pub/OpenBSD/%SUBDIR%/ \
-	http://ftp.kaist.ac.kr/pub/OpenBSD/%SUBDIR%/ \
 	http://ftp.cc.uoc.gr/mirrors/OpenBSD/%SUBDIR%/ \
 	http://mirror.hostfuss.com/pub/OpenBSD/%SUBDIR%/ \
 	http://ivete.fis.unb.br/mirror/OpenBSD/%SUBDIR%/ \
