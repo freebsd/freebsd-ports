@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	darktable
-PORTVERSION=	0.9
-PORTREVISION=	1
+PORTVERSION=	0.9.1
 CATEGORIES=	graphics
-MASTER_SITES=	SF
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION:R}
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	A virtual lighttable and darkroom for photographers
@@ -25,7 +24,6 @@ LIB_DEPENDS=	exiv2.10:${PORTSDIR}/graphics/exiv2 \
 USE_CMAKE=	yes
 CMAKE_OUTSOURCE=	yes
 CMAKE_VERBOSE=	yes
-USE_GETTEXT=	yes
 USE_GNOME=	librsvg2
 USE_SQLITE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/${PORTNAME}
@@ -91,7 +89,9 @@ LIB_DEPENDS+=	gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
 CMAKE_ARGS+=	-DUSE_GNOME_KEYRING:BOOL=OFF
 .endif
 
-.if defined(WITHOUT_NLS)
+.if defined(WITH_NLS)
+USE_GETTEXT=	yes
+.else
 CMAKE_ARGS+=	-DUSE_NLS:BOOL=OFF
 .endif
 
@@ -104,9 +104,6 @@ post-patch:
 		${WRKSRC}/src/CMakeLists.txt
 # Remove `-g' from common CFLAGS which are used for release builds as well
 	@${REINPLACE_CMD} -e '/-msse2/s, -g,,' ${WRKSRC}/src/CMakeLists.txt
-# In FreeBSD, <malloc.h> has been replaced by <stdlib.h>
-	@${REINPLACE_CMD} -e '/include/s,<malloc,<stdlib,' \
-		${WRKSRC}/src/rawspeed/RawSpeed/StdAfx.h
 # Fix GConf schemas installation prefix
 	@${REINPLACE_CMD} -e 's,/etc/gconf/schemas,.&,' \
 		${WRKSRC}/data/CMakeLists.txt
@@ -115,7 +112,7 @@ post-patch:
 		${WRKSRC}/doc/CMakeLists.txt
 
 post-install:
-.if defined(WITHOUT_NLS)
+.if !defined(WITH_NLS)
 	@${REINPLACE_CMD} -e '/LC_MESSAGES/d' ${TMPPLIST}
 .endif
 
