@@ -3558,6 +3558,7 @@ flobopuyo                       ports/games/flobopuyo
 flog                            ports/sysutils/flog
 flood                           ports/www/flood
 flops                           ports/benchmarks/flops
+florence                        ports/x11/florence
 flounder                        ports/science/flounder
 flow-extract                    ports/net-mgmt/flow-extract
 flow-tools                      ports/net-mgmt/flow-tools
@@ -4024,6 +4025,7 @@ fusefs-libs                     ports/sysutils/fusefs-libs
 fusefs-mhddfs                   ports/sysutils/fusefs-mhddfs
 fusefs-ntfs                     ports/sysutils/fusefs-ntfs
 fusefs-pod                      ports/sysutils/fusefs-pod
+fusefs-rar2fs                   ports/sysutils/fusefs-rar2fs
 fusefs-s3fs                     ports/sysutils/fusefs-s3fs
 fusefs-smbnetfs                 ports/sysutils/fusefs-smbnetfs
 fusefs-sqlfs                    ports/sysutils/fusefs-sqlfs
@@ -5970,6 +5972,7 @@ inputproto                      ports/x11/inputproto
 insight                         ports/devel/insight
 insighttoolkit                  ports/science/InsightToolkit
 inspircd                        ports/irc/inspircd
+inspircd12                      ports/irc/inspircd12
 installwatch                    ports/sysutils/installwatch
 instant-server                  ports/misc/instant-server
 instead                         ports/games/instead
@@ -9672,8 +9675,10 @@ msn-proxy                       ports/net-im/msn-proxy
 msort                           ports/textproc/msort
 msp430-binutils                 ports/devel/msp430-binutils
 msp430-gcc                      ports/devel/msp430-gcc
+msp430-gcc3                     ports/devel/msp430-gcc3
 msp430-gdb                      ports/devel/msp430-gdb
 msp430-libc                     ports/devel/msp430-libc
+msp430mcu                       ports/devel/msp430mcu
 mspdebug                        ports/devel/mspdebug
 msql                            ports/databases/msql
 msql3                           ports/databases/msql3
@@ -14692,6 +14697,7 @@ p5-VCS-CVS                      ports/devel/p5-VCS-CVS
 p5-VCS-Lite                     ports/devel/p5-VCS-Lite
 p5-VUser-Google-ProvisioningAPI  ports/www/p5-VUser-Google-ProvisioningAPI
 p5-Validate-Net                 ports/net/p5-Validate-Net
+p5-Validation-Class             ports/devel/p5-Validation-Class
 p5-Validator-Custom             ports/textproc/p5-Validator-Custom
 p5-Variable-Magic               ports/devel/p5-Variable-Magic
 p5-Verilog-Perl                 ports/cad/p5-Verilog-Perl
@@ -19028,6 +19034,7 @@ p5-uuid                         ports/devel/p5-UUID
 p5-uuid-tiny                    ports/devel/p5-UUID-Tiny
 p5-v6                           ports/lang/p5-v6
 p5-validate-net                 ports/net/p5-Validate-Net
+p5-validation-class             ports/devel/p5-Validation-Class
 p5-validator-custom             ports/textproc/p5-Validator-Custom
 p5-variable-magic               ports/devel/p5-Variable-Magic
 p5-vcg                          ports/graphics/p5-VCG
