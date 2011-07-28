@@ -1,6 +1,5 @@
 %%DOCSDIR%%/AUTHORS
 %%DOCSDIR%%/COPYING
-%%DOCSDIR%%/COPYING.LIB
 %%DOCSDIR%%/COPYRIGHTS
 %%DOCSDIR%%/CRAN_mirrors.csv
 %%DOCSDIR%%/FAQ
@@ -101,7 +100,6 @@ lib/R/include/Rinternals.h
 lib/R/include/Rmath.h
 lib/R/include/Rversion.h
 lib/R/include/S.h
-%%LIBR%%lib/R/lib/libR.a
 %%LIBR%%lib/R/lib/libR.so
 %%LIBR%%lib/R/lib/libR.so.%%R_SOVERSION%%
 %%LAPACK%%lib/R/lib/libRblas.so
@@ -869,7 +867,6 @@ lib/R/library/nnet/libs/nnet.so
 %%NLS%%lib/R/library/nnet/po/fr/LC_MESSAGES/R-nnet.mo
 lib/R/library/rpart/DESCRIPTION
 lib/R/library/rpart/INDEX
-lib/R/library/rpart/LICENCE
 lib/R/library/rpart/Meta/Rd.rds
 lib/R/library/rpart/Meta/data.rds
 lib/R/library/rpart/Meta/hsearch.rds
@@ -1066,6 +1063,7 @@ lib/R/library/survival/Meta/hsearch.rds
 lib/R/library/survival/Meta/links.rds
 lib/R/library/survival/Meta/nsInfo.rds
 lib/R/library/survival/Meta/package.rds
+lib/R/library/survival/Meta/vignette.rds
 lib/R/library/survival/NAMESPACE
 lib/R/library/survival/NEWS.Rd
 lib/R/library/survival/R/survival
@@ -1074,7 +1072,13 @@ lib/R/library/survival/R/survival.rdx
 lib/R/library/survival/data/Rdata.rdb
 lib/R/library/survival/data/Rdata.rds
 lib/R/library/survival/data/Rdata.rdx
+lib/R/library/survival/doc/cgd.dat
+lib/R/library/survival/doc/d3.rda
 lib/R/library/survival/doc/index.html
+lib/R/library/survival/doc/raheart.rda
+lib/R/library/survival/doc/timedep.Rnw
+lib/R/library/survival/doc/timedep.pdf
+lib/R/library/survival/doc/timedep.R
 lib/R/library/survival/doc/validate.tex
 lib/R/library/survival/help/AnIndex
 lib/R/library/survival/help/aliases.rds
@@ -1836,13 +1840,13 @@ lib/R/share/texmf/tex/latex/upquote.sty
 @dirrm lib/R/library/KernSmooth/Meta
 @dirrm lib/R/library/KernSmooth
 @dirrm lib/R/library
-@dirrm lib/R/lib
+@dirrmtry lib/R/lib
 @dirrm lib/R/include/R_ext
 @dirrm lib/R/include
 @dirrm lib/R/etc
 @dirrm lib/R/bin/exec
 @dirrm lib/R/bin
-@dirrm lib/R
+@dirrmtry lib/R
 %%PORTDOCS%%%%DVI_MANUAL%%@dirrm %%DOCSDIR%%/manual/images
 @dirrm %%DOCSDIR%%/manual
 @dirrm %%DOCSDIR%%/html

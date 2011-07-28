@@ -7,6 +7,7 @@
 
 PORTNAME=	ess
 PORTVERSION=	5.13
+PORTREVISION=	1
 CATEGORIES=	math
 MASTER_SITES=	http://ess.r-project.org/downloads/ess/
 EXTRACT_SUFX=	.tgz
