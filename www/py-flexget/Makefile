@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	flexget
-PORTVERSION=	1.0r2283
+PORTVERSION=	1.0r2288
 CATEGORIES=	www python
 MASTER_SITES=	http://download.flexget.com/unstable/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -21,7 +21,6 @@ BUILD_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}setuptools>=0:${PORTSDIR}/devel/py-setupt
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.7:${PORTSDIR}/databases/py-sqlalchemy \
 		${PYTHON_SITELIBDIR}/yaml/__init__.py:${PORTSDIR}/devel/py-yaml \
 		${PYTHON_PKGNAMEPREFIX}Jinja2>=0.11:${PORTSDIR}/devel/py-Jinja2 \
-		${PYTHON_PKGNAMEPREFIX}setuptools>=0:${PORTSDIR}/devel/py-setuptools \
 		${PYTHON_PKGNAMEPREFIX}pygooglechart>=0:${PORTSDIR}/graphics/py-pygooglechart \
 		${PYTHON_PKGNAMEPREFIX}progressbar>=0:${PORTSDIR}/misc/py-progressbar \
 		${PYTHON_PKGNAMEPREFIX}pynzb>=0:${PORTSDIR}/news/py-pynzb \
