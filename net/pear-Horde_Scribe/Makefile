@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Scribe
-DISTVERSION=	1.0.0
+DISTVERSION=	1.0.1
 CATEGORIES=	net www pear
 
 MAINTAINER=	horde@FreeBSD.org
