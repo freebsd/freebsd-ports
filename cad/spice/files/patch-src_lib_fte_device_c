@@ -1,6 +1,23 @@
---- src/lib/fte/device.c.orig	Thu Jul 29 19:09:59 1993
-+++ src/lib/fte/device.c	Thu Sep 30 13:16:51 2004
-@@ -619,7 +619,7 @@
+--- src/lib/fte/device.c.orig	1993-07-30 02:09:59.000000000 +0000
++++ src/lib/fte/device.c	2011-07-26 23:17:58.000000000 +0000
+@@ -14,6 +14,8 @@
+ #include "ftedefs.h"
+ #include "dgen.h"
+ 
++void com_alter_common(wordlist *wl, int do_model);
++
+ static wordlist *devexpand();
+ 
+ /*
+@@ -576,6 +578,7 @@
+     com_alter_common(wl, 1);
+ }
+ 
++void
+ com_alter_common(wl, do_model)
+     wordlist *wl;
+     int	do_model;
+@@ -619,7 +622,7 @@
  	n2 = names;
      }
  
@@ -9,7 +26,7 @@
  	fprintf(cp_err, "alter: don't understand \"%s\"\n", names->pn_name);
  	fprintf(cp_err, "usage: alter dev param = expression\n");
  	fprintf(cp_err, "  or   alter @dev[param] = expression\n");
-@@ -661,7 +661,9 @@
+@@ -661,7 +664,9 @@
      }
  
      dv = ft_evaluate(n2->pn_right);
