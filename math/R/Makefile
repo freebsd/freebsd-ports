@@ -7,8 +7,7 @@
 #
 
 PORTNAME?=	R
-PORTVERSION=	2.13.0
-PORTREVISION=	1
+PORTVERSION=	2.13.1
 CATEGORIES=	math lang
 MASTER_SITES=	http://cran.r-project.org/src/base/R-2/ \
 		ftp://cran.r-project.org/pub/R/src/base/R-2/ \
@@ -46,28 +45,32 @@ CONFIGURE_ARGS =	--enable-memory-profiling rdocdir=${DOCSDIR} \
 CONFIGURE_ENV=		FCFLAGS="${FFLAGS}" \
 			INSTALL_DATA="${INSTALL} ${COPY} ${_SHROWNGRP} -m 644" \
 			R_LD_LIBRARY_PATH="${R_LD_LIBRARY_PATH}" TAR="${TAR}"
-MAN1=		R.1 Rscript.1
 OPTIONS=	ATLAS		"Use ATLAS instead of BLAS/LAPACK" off \
-		GHOSTSCRIPT	"Enable the [dev2]bitmap() graphics devices" on \
 		ICU		"Improve collation in multibyte locales with ICU" on \
+		NLS		"Build with NLS support" on \
+		PCRE_PORT	"Use PCRE port instead of bundled source" on \
+		THREADS		"Build a multithreaded R" on
+.if !defined(LIBR_SLAVEPORT)
+OPTIONS+=	GHOSTSCRIPT	"Enable the [dev2]bitmap() graphics devices" on \
 		JPEG		"Enable the jpeg() graphics device" on \
 		LETTER_PAPER	"Use US Letter paper" off \
 		LIBR		"Install libR, and a dynamically-linked, rather than a static R" on \
-		NLS		"Build with NLS support" on \
 		PANGOCAIRO	"Enable cairo and pango in the X11() graphics device" on \
-		PCRE_PORT	"Use PCRE port instead of bundled source" on \
 		PNG		"Enable the png() graphics device" on \
 		TCLTK		"Use Tcl/Tk (for the tcltk package)" on \
-		THREADS		"Build a multithreaded R" on \
 		X11		"Enable the X11() graphics device" on \
 		DVI_MANUALS	"Install DVI manuals (requires TeX)" off \
 		INFO_MANUALS	"Install GNU info manuals" on
+.endif # !LIBR_SLAVEPORT
 PLIST_SUB=		R_SOVERSION="${R_SOVERSION}" \
 			RBLAS_SOVERSION="${RBLAS_SOVERSION}" \
 			RLAPACK_SOVERSION="${RLAPACK_SOVERSION}"
 R_LD_LIBRARY_PATH=	${LOCALBASE}/lib/${_GCC_BUILD_DEPENDS}:${LOCALBASE}/lib
 USE_ICONV=		yes
+.if !defined(LIBR_SLAVEPORT)
+MAN1=		R.1 Rscript.1
 USE_LDCONFIG=		${PREFIX}/lib/R/lib
+.endif # !LIBR_SLAVEPORT
 WANT_GNOME=		yes
 .endif # LIBRMATH_SLAVEPORT
 CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS}"
@@ -91,10 +94,6 @@ PICFLAG?=		-fpic
 CONFIGURE_ENV +=	SHLIB_${flag}FLAGS="${PICFLAG}"
 .endfor
 
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not install on sparc64: assertions fail
-.endif
-
 .if !defined(LIBRMATH_SLAVEPORT)
 .if defined(WITH_ATLAS)
 LIB_DEPENDS+=		atlas.2:${PORTSDIR}/math/atlas
@@ -111,15 +110,42 @@ PLIST_SUB+=		LAPACK=""
 PLIST_SUB+=		LAPACK="@comment "
 .endif
 
-.if !defined(WITHOUT_GHOSTSCRIPT)
-USE_GHOSTSCRIPT_RUN=	yes
-.endif
-
 .if defined(WITHOUT_ICU)
 CONFIGURE_ARGS+=	--without-ICU
 .else
 LIB_DEPENDS+=		icui18n:${PORTSDIR}/devel/icu
 CONFIGURE_ARGS+=	--with-ICU
+.endif
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=		yes
+PLIST_SUB+=		NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=		NLS="@comment "
+.endif
+
+.if defined(WITHOUT_PCRE_PORT)
+CONFIGURE_ARGS+=	--without-system-pcre
+.else
+LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
+CONFIGURE_ARGS+=	--with-system-pcre
+.endif
+
+.if defined(WITHOUT_THREADS)
+CONFIGURE_ARGS+=	--disable-threads
+.else
+CONFIGURE_ARGS+=	--enable-threads=posix
+.endif
+
+.if defined(LIBR_SLAVEPORT)
+
+CONFIGURE_ARGS+=	--disable-BLAS-shlib --without-pic --without-x
+
+.else # LIBR_SLAVEPORT
+
+.if !defined(WITHOUT_GHOSTSCRIPT)
+USE_GHOSTSCRIPT_RUN=	yes
 .endif
 
 .if defined(WITHOUT_JPEG)
@@ -140,25 +166,10 @@ CONFIGURE_ARGS+=	--enable-R-shlib
 PLIST_SUB+=		LIBR=""
 .endif
 
-.if !defined(WITHOUT_NLS)
-USE_GETTEXT=		yes
-PLIST_SUB+=		NLS=""
-.else
-CONFIGURE_ARGS+=	--disable-nls
-PLIST_SUB+=		NLS="@comment "
-.endif
-
 .if defined(WITHOUT_PANGOCAIRO)
-CONFIGURE_ARGS+=	--with-cairo=no
+CONFIGURE_ARGS+=	--without-cairo
 .else
 USE_GNOME+=		pango
-.endif
-
-.if defined(WITHOUT_PCRE_PORT)
-CONFIGURE_ARGS+=	--without-system-pcre
-.else
-LIB_DEPENDS+=		pcre.0:${PORTSDIR}/devel/pcre
-CONFIGURE_ARGS+=	--with-system-pcre
 .endif
 
 .if defined(WITHOUT_PNG)
@@ -179,12 +190,6 @@ CONFIGURE_ARGS+=	--with-tcltk \
 			--with-tcl-config=${TCL_LIBDIR}/tclConfig.sh \
 			--with-tk-config=${TK_LIBDIR}/tkConfig.sh
 PLIST_SUB+=		TCLTK=""
-.endif
-
-.if defined(WITHOUT_THREADS)
-CONFIGURE_ARGS+=	--disable-threads
-.else
-CONFIGURE_ARGS+=	--enable-threads=posix
 .endif
 
 .if defined(WITHOUT_X11)
@@ -209,6 +214,7 @@ PLIST_SUB+=		DVI_MANUAL=""
 .else
 PLIST_SUB+=		DVI_MANUAL="@comment "
 .endif
+.endif # LIBR_SLAVEPORT
 .endif # !LIBRMATH_SLAVEPORT
 
 post-patch:
@@ -232,12 +238,20 @@ post-patch:
 	done)
 .endif
 
-.if defined(WITH_LIBR)
-post-build:
+.if defined(LIBR_SLAVEPORT)
+do-build:
+.for d in include extra
+	@(cd ${WRKSRC}/src/${d}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
+	${MAKE_ARGS} R)
+.endfor
 	@(cd ${WRKSRC}/src/main; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} \
-	${MAKE_ARGS} libR.a)
+	${MAKE_ARGS} Makefile Makedeps libR.a)
 
-.endif
+do-install:
+	@${MKDIR} ${PREFIX}/lib/R/lib
+	@${INSTALL_DATA} ${WRKSRC}/src/main/libR.a ${PREFIX}/lib/R/lib
+
+.else # LIBR_SLAVEPORT
 
 check regression-test test: build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} LANGUAGE=en \
@@ -250,9 +264,6 @@ check-all: build
 	check-all)
 
 post-install:
-.if defined(WITH_LIBR)
-	@${INSTALL_LIB} ${WRKSRC}/src/main/libR.a ${PREFIX}/lib/R/lib
-.endif
 .for L in R Rblas Rlapack
 	@(cd ${PREFIX}/lib/R/lib; if [ -f lib${L}.so ] ; then \
 	${LN} -sf lib${L}.so lib${L}.so.${${L:U}_SOVERSION} ; fi)
@@ -264,11 +275,13 @@ post-install:
 	done)
 .endif
 
+.endif # LIBR_SLAVEPORT
 .else # !LIBRMATH_SLAVEPORT
 do-install:
 	@${INSTALL_DATA} ${WRKSRC}/src/include/Rmath.h ${PREFIX}/include
-	@${INSTALL_LIB} ${BUILD_WRKSRC}/libRmath.a ${PREFIX}/lib
-	@${INSTALL_LIB} ${BUILD_WRKSRC}/libRmath.so \
+	@${INSTALL_DATA} ${BUILD_WRKSRC}/libRmath.a ${PREFIX}/lib
+	@${STRIP_CMD} ${BUILD_WRKSRC}/libRmath.so
+	@${INSTALL_DATA} ${BUILD_WRKSRC}/libRmath.so \
 	${PREFIX}/lib/libRmath.so.${RMATH_SOVERSION}
 	@(cd ${PREFIX}/lib; ${LN} -sf libRmath.so.${RMATH_SOVERSION} libRmath.so)
 
