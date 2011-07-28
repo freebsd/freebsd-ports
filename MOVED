@@ -2292,3 +2292,4 @@ dns/dhid||2011-07-28|Has expired: Unmaintained, distfile has changed with no exp
 math/librandlib|math/randlib|2011-07-28|move to a location that matches the name
 science/bblimage|science/pyvox|2011-07-28|track the upstream name change
 net-im/gnome-jabber|net-im/empathy|2011-07-28|Has expired: No longer maintain by upstream since 2005, use net-im/empathy instead
+misc/logsurfer|misc/logsurfer+|2011-07-25|Renamed
