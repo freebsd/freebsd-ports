@@ -37,7 +37,6 @@
     SUBDIR += gale
     SUBDIR += gicq
     SUBDIR += gloox
-    SUBDIR += gnome-jabber
     SUBDIR += gnomeicu
     SUBDIR += gossip
     SUBDIR += grouch
