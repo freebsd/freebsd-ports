@@ -16,30 +16,30 @@ MAINTAINER=	yurkis@gmail.com
 COMMENT=	QT4 Solutions Single Application Framework
 
 USE_QT_VER=	4
-QT_COMPONENTS=  qmake_build moc_build rcc_build uic_build gui network
+QT_COMPONENTS=	qmake_build moc_build rcc_build uic_build gui network
+HAS_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
-SUB_PROJECT_NAME=qtsingleapplication
+WRKSRC=		${WRKDIR}/qt-solutions-qt-solutions/${SUB_PROJECT_NAME}
+BUILD_WRKSRC=	${WRKSRC}/buildlib
 
-WRKSRC=${WRKDIR}/qt-solutions-qt-solutions/${SUB_PROJECT_NAME}
-BUILD_WRKSRC=${WRKSRC}/buildlib
+PLIST_FILES=	${LIBRARY_HEADERS:S,^,include/,} \
+		lib/${LIBRARY_NAME} \
+		lib/${LIBRARY_NAME}.1
 
-QMAKE_PRO=buildlib.pro
+SUB_PROJECT_NAME=	qtsingleapplication
+QMAKE_PRO=	buildlib.pro
 
-USE_LDCONFIG = ${PREFIX}/lib
-
-LIBRARY_SUFFIX=SingleApplication
-LIBRARY_HEADERS=${WRKSRC}/src/qtsingleapplication.h ${WRKSRC}/src/qtsinglecoreapplication.h
-
-HAS_CONFIGURE=  yes
+LIBRARY_NAME=	libQtSolutions_SingleApplication-head.so
+LIBRARY_HEADERS=	qtsingleapplication.h qtsinglecoreapplication.h
 
 do-configure:
-	cd ${BUILD_WRKSRC} && ${QMAKE} ${QMAKE_PRO}
+	cd ${BUILD_WRKSRC} && ${QMAKE} ${QMAKEFLAGS} ${QMAKE_PRO}
 
 do-install:
-	${INSTALL_LIB} ${WRKSRC}/lib/libQtSolutions_${LIBRARY_SUFFIX}-head.so.1.0.0 ${PREFIX}/lib
-	${LN} -sf ${PREFIX}/lib/libQtSolutions_${LIBRARY_SUFFIX}-head.so.1.0.0 ${PREFIX}/lib/libQtSolutions_${LIBRARY_SUFFIX}-head.so.1.0
-	${LN} -sf ${PREFIX}/lib/libQtSolutions_${LIBRARY_SUFFIX}-head.so.1.0.0 ${PREFIX}/lib/libQtSolutions_${LIBRARY_SUFFIX}-head.so.1
-	${LN} -sf ${PREFIX}/lib/libQtSolutions_${LIBRARY_SUFFIX}-head.so.1.0.0 ${PREFIX}/lib/libQtSolutions_${LIBRARY_SUFFIX}-head.so
-	${INSTALL_DATA} ${LIBRARY_HEADERS} ${PREFIX}/include
+	${MKDIR} ${PREFIX}/include ${PREFIX}/lib
+	cd ${WRKSRC}/src && ${INSTALL_DATA} ${LIBRARY_HEADERS} ${PREFIX}/include
+	${INSTALL_LIB} ${WRKSRC}/lib/${LIBRARY_NAME}.1.0.0 ${PREFIX}/lib/${LIBRARY_NAME}.1
+	${LN} -sf ${PREFIX}/lib/${LIBRARY_NAME}.1 ${PREFIX}/lib/${LIBRARY_NAME}
 
 .include <bsd.port.mk>
