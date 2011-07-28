@@ -160,6 +160,7 @@
     SUBDIR += ldouble
     SUBDIR += lensnns
     SUBDIR += levmar
+    SUBDIR += libR
     SUBDIR += libRmath
     SUBDIR += libjbigi
     SUBDIR += liblbfgs
