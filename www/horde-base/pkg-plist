@@ -296,7 +296,6 @@
 %%HORDIR%%/lib/Horde/Image/svg.php
 %%HORDIR%%/lib/Horde/Image/swf.php
 %%HORDIR%%/lib/Horde/Kolab.php
-%%HORDIR%%/lib/Horde/Kolab/Deprecated.php
 %%HORDIR%%/lib/Horde/Kolab/Filter/Base.php
 %%HORDIR%%/lib/Horde/Kolab/Filter/Content.php
 %%HORDIR%%/lib/Horde/Kolab/Filter/Incoming.php
@@ -359,10 +358,13 @@
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Combined.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Combined/Decorator/Cache.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Decorator/Log.php
-%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Fwthree.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Xacl/Cache.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Xacl/Configuration.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Xacl/Decorator/Log.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Helper/Freebusy/Owa.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Helper/Freebusy/StatusMap.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Helper/Freebusy/StatusMap/Config.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Helper/Freebusy/StatusMap/Default.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Imap.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Logger.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Object/Event.php
@@ -371,9 +373,12 @@
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Owner/Event/Kolab.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Owner/Kolab.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params/Freebusy/Folder.php
-%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params/Freebusy/Owner.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params/Freebusy/Folder/Named.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params/Freebusy/Folder/Request.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params/Freebusy/Resource/Kolab.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params/Owner.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params/Owner/Named.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params/Owner/Request.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params/User.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Report.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Request.php
@@ -385,6 +390,7 @@
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource/Event/Decorator/Mcache.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource/Event/Fwthree.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource/Event/Kolab.php
+%%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource/Event/Owa.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource/Kolab.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/User.php
 %%HORDIR%%/lib/Horde/Kolab/FreeBusy/User/Decorator/Log.php
@@ -438,26 +444,10 @@
 %%HORDIR%%/lib/Horde/Kolab/Server/ldap.php
 %%HORDIR%%/lib/Horde/Kolab/Server/test.php
 %%HORDIR%%/lib/Horde/Kolab/Session.php
-%%HORDIR%%/lib/Horde/Kolab/Storage.php
-%%HORDIR%%/lib/Horde/Kolab/Storage/Cache.php
-%%HORDIR%%/lib/Horde/Kolab/Storage/Data.php
-%%HORDIR%%/lib/Horde/Kolab/Storage/Folder.php
-%%HORDIR%%/lib/Horde/Kolab/Storage/List.php
-%%HORDIR%%/lib/Horde/Kolab/Storage/Namespace.php
-%%HORDIR%%/lib/Horde/Kolab/Storage/Namespace/Config.php
-%%HORDIR%%/lib/Horde/Kolab/Storage/Namespace/Element.php
-%%HORDIR%%/lib/Horde/Kolab/Storage/Namespace/Element/Other.php
-%%HORDIR%%/lib/Horde/Kolab/Storage/Namespace/Element/Personal.php
-%%HORDIR%%/lib/Horde/Kolab/Storage/Namespace/Element/Shared.php
-%%HORDIR%%/lib/Horde/Kolab/Storage/Namespace/Element/SharedWithPrefix.php
-%%HORDIR%%/lib/Horde/Kolab/Storage/Namespace/Fixed.php
-%%HORDIR%%/lib/Horde/Kolab/Storage/Namespace/Imap.php
-%%HORDIR%%/lib/Horde/Kolab/Storage/Perms.php
 %%HORDIR%%/lib/Horde/Kolab/Test.php
 %%HORDIR%%/lib/Horde/Kolab/Test/Filter.php
 %%HORDIR%%/lib/Horde/Kolab/Test/FreeBusy.php
 %%HORDIR%%/lib/Horde/Kolab/Test/Server.php
-%%HORDIR%%/lib/Horde/Kolab/Test/Storage.php
 %%HORDIR%%/lib/Horde/LDAP.php
 %%HORDIR%%/lib/Horde/Lens.php
 %%HORDIR%%/lib/Horde/Lens/Interface.php
@@ -635,6 +625,7 @@
 %%HORDIR%%/lib/Horde/Share/kolab.php
 %%HORDIR%%/lib/Horde/Share/sql.php
 %%HORDIR%%/lib/Horde/Share/sql_hierarchical.php
+%%HORDIR%%/lib/Horde/Share/sqlng.php
 %%HORDIR%%/lib/Horde/SpellChecker.php
 %%HORDIR%%/lib/Horde/SpellChecker/aspell.php
 %%HORDIR%%/lib/Horde/String.php
@@ -932,6 +923,10 @@
 %%HORDIR%%/scripts/ldap/horde.prefs.acl
 %%HORDIR%%/scripts/ldap/horde.schema
 %%HORDIR%%/scripts/set_perms.sh
+%%HORDIR%%/scripts/share-stress-test-conf.php.dist
+%%HORDIR%%/scripts/share-stress-test-sql.xml
+%%HORDIR%%/scripts/share-stress-test-sqlng.xml
+%%HORDIR%%/scripts/share-stress-test.php
 %%HORDIR%%/scripts/sql/README
 %%HORDIR%%/scripts/sql/README.OCI8
 %%HORDIR%%/scripts/sql/create.mssql.sql
@@ -4250,9 +4245,6 @@
 @dirrm %%HORDIR%%/lib/Horde/Lock
 @dirrm %%HORDIR%%/lib/Horde/Lens
 @dirrm %%HORDIR%%/lib/Horde/Kolab/Test
-@dirrm %%HORDIR%%/lib/Horde/Kolab/Storage/Namespace/Element
-@dirrm %%HORDIR%%/lib/Horde/Kolab/Storage/Namespace
-@dirrm %%HORDIR%%/lib/Horde/Kolab/Storage
 @dirrm %%HORDIR%%/lib/Horde/Kolab/Server/Object
 @dirrm %%HORDIR%%/lib/Horde/Kolab/Server
 @dirrm %%HORDIR%%/lib/Horde/Kolab/Resource/Itip/Response/Type
@@ -4272,12 +4264,17 @@
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource/Event
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource/Decorator
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Resource
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params/Owner
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params/Freebusy/Resource
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params/Freebusy/Folder
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params/Freebusy
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Params
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Owner/Event
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Owner
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Object
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Helper/Freebusy/StatusMap
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Helper/Freebusy
+@dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Helper
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Xacl/Decorator
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Xacl
 @dirrm %%HORDIR%%/lib/Horde/Kolab/FreeBusy/Export/Freebusy/Decorator
@@ -4356,3 +4353,4 @@
 @dirrm %%HORDIR%%/admin
 @dirrmtry %%HORDIR%%
 @dirrmtry %%HORBAS%%
+
