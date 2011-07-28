@@ -203,3 +203,5 @@ libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%/install-tools/mkinstalldirs
 @dirrm libexec/gcc/%%GCC_TARG%%/%%GCC_REV%%
 @dirrmtry libexec/gcc/%%GCC_TARG%%
 @dirrmtry libexec/gcc
+@dirrmtry %%GCC_TARG%%/bin
+@dirrmtry %%GCC_TARG%%/info

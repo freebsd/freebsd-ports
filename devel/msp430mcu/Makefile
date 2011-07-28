@@ -7,10 +7,10 @@
 
 PORTNAME=	${MCUTARGET}mcu
 PORTVERSION=	1.0.${MCUVERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	SF/mspgcc/${PORTNAME}
-DISTFILES=	${PORTNAME}-${MCUVERSION}${EXTRACT_SUFX}
+DISTNAME=	${PORTNAME}-${MCUVERSION}
 
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Header files for TI's msp430 MCUs cross-development
@@ -33,9 +33,11 @@ pre-install:
 	@cd ${WRKSRC}/analysis/ldscripts && ${FIND} . ! -type d | ${SORT}    | ${SED} 's,^.,${MCULIBPATH}/ldscripts,'         >> ${PLIST}
 	@cd ${WRKSRC}/analysis/ldscripts && ${FIND} . -type d ! -name '.' | ${SORT} -r | ${SED} 's,^.,@dirrm ${MCULIBPATH}/ldscripts,'  >> ${PLIST}
 	@${ECHO} "@dirrm ${MCUINCPATH}" >> ${PLIST}
-	
+	@${ECHO} "@dirrmtry ${MCUINCPATH}" >> ${PLIST}
+	@${ECHO} "@dirrmtry ${MCULIBPATH}/ldscripts" >> ${PLIST}
+	@${ECHO} "@dirrmtry ${MCULIBPATH}" >> ${PLIST}
 
 do-install:
-	@cd ${WRKSRC} && MSP430MCU_ROOT=${WRKSRC} sh scripts/install.sh ${PREFIX}
+	@cd ${WRKSRC} && MSP430MCU_ROOT=${WRKSRC} ${SH} scripts/install.sh ${PREFIX}
 
 .include <bsd.port.mk>
