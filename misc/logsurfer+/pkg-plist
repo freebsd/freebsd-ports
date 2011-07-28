@@ -1,6 +1,10 @@
 bin/logsurfer
-%%PORTDOCS%%share/doc/logsurfer/ChangeLog
-%%PORTDOCS%%share/doc/logsurfer/README
-%%PORTDOCS%%@dirrm share/doc/logsurfer
-share/examples/logsurfer/README
-@dirrm share/examples/logsurfer
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+%%ETCDIR%%/context_arg_test.conf.sample
+%%ETCDIR%%/echo_test.conf.sample
+%%ETCDIR%%/lines_test.conf.sample
+%%ETCDIR%%/syslog_test.conf.sample
+@dirrmtry %%ETCDIR%%
+@unexec if [ -d %D/%%ETCDIR%% ]; then echo "==> If you are permanently removing this port, you should do a ``rm -rf ${PKG_PREFIX}/etc/logsurfer+`` to remove any configuration files left."; fi
