@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	shibboleth-sp
-PORTVERSION=	2.4.2
+PORTVERSION=	2.4.3
 CATEGORIES=	security www
-MASTER_SITES=	http://shibboleth.internet2.edu/downloads/shibboleth/cppsp/${PORTVERSION}/
+MASTER_SITES=	http://www.shibboleth.net/downloads/service-provider/${PORTVERSION}/
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	C++ Shibboleth Service Provider (Internet2) for Apache
 
 LIB_DEPENDS=	saml.7:${PORTSDIR}/security/opensaml2
