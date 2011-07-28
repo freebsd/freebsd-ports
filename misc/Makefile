@@ -387,6 +387,7 @@
     SUBDIR += p5-Array-RefElem
     SUBDIR += p5-Asterisk
     SUBDIR += p5-Bot-Training
+    SUBDIR += p5-Bot-Training-MegaHAL
     SUBDIR += p5-Business-Hours
     SUBDIR += p5-Business-ISBN
     SUBDIR += p5-Business-ISBN-Data
