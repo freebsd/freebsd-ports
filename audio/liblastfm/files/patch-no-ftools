@@ -1,0 +1,36 @@
+--- admin/findsrc.rb.orig	2010-09-19 10:35:34.783333338 +0200
++++ admin/findsrc.rb	2010-09-19 10:35:57.730000003 +0200
+@@ -1,6 +1,6 @@
+ #!/usr/bin/ruby
+ require 'find'
+-require "#{File.dirname __FILE__}/platform"
++require "#{Dir.getwd}/admin/platform.rb"
+ 
+ def findsrc dir='.'
+   excludes = ['.svn','.git','_include','tests','_build']
+--- admin/qpp.orig	2010-09-19 10:36:09.276666670 +0200
++++ admin/qpp	2010-09-19 10:36:16.926666670 +0200
+@@ -2,9 +2,8 @@
+ # Creates a qmake .pro file for all valid SOURCES, HEADERS, FORMS and
+ # RESOURCES under each argument to ARGV as directories
+ 
+-cwd=File.dirname __FILE__
+ require 'find'
+-require "#{cwd}/findsrc"
++require "#{Dir.getwd}/admin/findsrc.rb"
+ 
+ sources = Array.new
+ headers = Array.new
+--- admin/Makefile.rb.orig	2010-09-19 10:35:38.086666671 +0200
++++ admin/Makefile.rb	2010-09-19 10:36:05.816666671 +0200
+@@ -4,9 +4,8 @@
+ # and then creates the directory _include and creates files named after the 
+ # class names in there which #include the file that contains the class
+ 
+-cwd = File.dirname( __FILE__ )
+ require 'find'
+-require "#{cwd}/platform.rb"
++require "#{Dir.getwd}/admin/platform.rb"
+ 
+ 
+ ######################################################################### defs

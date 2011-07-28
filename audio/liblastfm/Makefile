@@ -41,10 +41,5 @@ post-extract:
 		-e 's|linux:|unix:|'  ${WRKSRC}/.qmake.cache
 	${FIND} ${WRKSRC}/admin -type f | ${XARGS} \
 		 ${REINPLACE_CMD} -e 's|#!/usr/bin/ruby|#!${RUBY_WITH_SUFFIX}|'
-.if ${RUBY_VER} == 1.9
-	${REINPLACE_CMD} -e "s|'ftools'|'fileutils'|" ${WRKSRC}/admin/qpp ${WRKSRC}/admin/Makefile.rb
-	${REINPLACE_CMD} -e "s|require \"#{cwd}/platform.rb\"|require_relative \"platform.rb\"|" ${WRKSRC}/admin/Makefile.rb
-	${REINPLACE_CMD} -e "s|ruby admin/lastfm.h.rb|${RUBY_WITH_SUFFIX} admin/lastfm.h.rb|" ${WRKSRC}/admin/Makefile.rb
-.endif
 
 .include <bsd.port.post.mk>
