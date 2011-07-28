@@ -2290,3 +2290,4 @@ java/linux-blackdown-jdk14||2011-07-21|Has expired: ancient version of Java
 java/linux-sun-jdk14|java/linux-sun-jdk15|2011-07-21|Has expired: ancient version of Java
 dns/dhid||2011-07-28|Has expired: Unmaintained, distfile has changed with no explanation
 math/librandlib|math/randlib|2011-07-28|move to a location that matches the name
+science/bblimage|science/pyvox|2011-07-28|track the upstream name change
