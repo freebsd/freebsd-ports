@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	HTML-Selector-XPath
-PORTVERSION=	0.04
+PORTVERSION=	0.07
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	smatsui@karashi.org
 COMMENT=	HTML::Selector::XPath - CSS Selector to XPath compiler
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/More.pm:${PORTSDIR}/devel/p5-Test-Simple
+TEST_DEPENDS=	p5-Test-Base>=0:${PORTSDIR}/devel/p5-Test-Base
 
 PERL_CONFIGURE=	yes
 
