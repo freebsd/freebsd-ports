@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	audacious
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.4
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 MASTER_SITE_SUBDIR=oliver
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	A media player based on BMP and XMMS
