@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	audacious-plugins
-PORTVERSION=	2.5.1
-PORTREVISION=	1
+PORTVERSION=	2.5.4
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	oliver@FreeBSD.org
 COMMENT=	Plugins needed for audacious

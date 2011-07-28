@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-xmms-plugin
 PORTVERSION=	0.5.3
+PORTREVISION=	1
 CATEGORIES=	multimedia audio xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=/src/panel-plugins/${PORTNAME}/${PORTVERSION:R}
