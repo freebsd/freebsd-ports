@@ -13,7 +13,7 @@ MASTER_SITE_SUBDIR=	addons/46599
 DISTNAME=	xhosa_spell_checker-${PORTVERSION}-tb+fn+fx+sm
 EXTRACT_SUFX=	.xpi
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Xhosa hunspell dictionaries
 
 USE_ZIP=	yes
