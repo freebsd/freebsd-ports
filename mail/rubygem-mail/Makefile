@@ -6,7 +6,8 @@
 #
 
 PORTNAME=	mail
-PORTVERSION=	2.3.0
+PORTVERSION=	2.2.19
+PORTEPOCH=	1
 CATEGORIES=	mail rubygems
 MASTER_SITES=	RG
 
@@ -17,6 +18,7 @@ LICENSE=	MIT
 
 RUN_DEPENDS=	rubygem-treetop>=1.4.8:${PORTSDIR}/devel/rubygem-treetop \
 		rubygem-mime-types>=1.16:${PORTSDIR}/misc/rubygem-mime-types \
+		rubygem-activesupport>=2.3.6:${PORTSDIR}/devel/rubygem-activesupport \
 		rubygem-i18n>=0.4.0:${PORTSDIR}/devel/rubygem-i18n
 
 USE_RUBY=		yes
