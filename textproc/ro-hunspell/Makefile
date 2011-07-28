@@ -11,6 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/rospell/Romanian%20dictionaries/dict-${PORTVERSION}/
 DISTNAME=	ro_RO.${PORTVERSION}
 
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Romanian hunspell dictionaries
 
 LICENSE=	LGPL21 GPLv2 MPL
