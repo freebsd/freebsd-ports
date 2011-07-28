@@ -7,6 +7,7 @@
 
 PORTNAME=	hunspell
 PORTVERSION=	20110609
+PORTREVISION=	1
 CATEGORIES=	german textproc
 MASTER_SITES=	http://www.j3e.de/ispell/igerman98/dict/
 DISTNAME=	igerman98-${PORTVERSION}
@@ -17,44 +18,35 @@ COMMENT=	Hunspell german dictionary
 BUILD_DEPENDS=	buildhash:${PORTSDIR}/textproc/ispell
 
 USE_BZIP2=	yes
-WRKSRC=		${WRKDIR}/igerman98-${PORTVERSION}
-USE_GMAKE=	yes
-
 ALL_TARGET=	hunspell-all
+USE_GMAKE=	yes
+USE_PERL5_BUILD=	yes
 
-PLIST_FILES=	share/hunspell/de_DE.aff \
-		share/hunspell/de_DE.dic \
+PLIST_FILES=	share/hunspell/de_AT.aff \
+		share/hunspell/de_AT.dic \
 		share/hunspell/de_CH.aff \
 		share/hunspell/de_CH.dic \
-		share/hunspell/de_AU.aff \
-		share/hunspell/de_AU.dic
-PLIST_DIRS=	share/hunspell
+		share/hunspell/de_DE.aff \
+		share/hunspell/de_DE.dic
+PLIST_DIRSTRY=	share/hunspell
 
-DEALIASES=	de_BE de_LU
 CHALIASES=	de_LI
-
-.for ALIAS in ${DEALIASES}
-PLIST_FILES+=	share/hunspell/${ALIAS}.aff \
-		share/hunspell/${ALIAS}.dic
-.endfor
-.for ALIAS in ${CHALIASES}
+DEALIASES=	de_BE de_LU
+.for ALIAS in ${CHALIASES} ${DEALIASES}
 PLIST_FILES+=	share/hunspell/${ALIAS}.aff \
 		share/hunspell/${ALIAS}.dic
 .endfor
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hunspell
-	@${INSTALL_DATA} ${WRKSRC}/hunspell/*.aff \
-		${WRKSRC}/hunspell/*.dic \
-		${PREFIX}/share/hunspell/
-	@cd ${PREFIX}/share/hunspell; \
-	for alias in ${DEALIASES}; do \
-		${LN} -s de_DE.aff $${alias}.aff ; \
-		${LN} -s de_DE.dic $${alias}.dic ; \
-	done; \
-	for alias in ${CHALIASES}; do \
-		${LN} -s de_CH.aff $${alias}.aff ; \
-		${LN} -s de_CH.dic $${alias}.dic ; \
-	done;
+	${MKDIR} ${PREFIX}/share/hunspell/
+	${INSTALL_DATA} ${WRKSRC}/hunspell/*.aff ${WRKSRC}/hunspell/*.dic ${PREFIX}/share/hunspell/
+.for ALIAS in ${CHALIASES}
+	${LN} -s de_CH.aff ${PREFIX}/share/hunspell/${ALIAS}.aff
+	${LN} -s de_CH.dic ${PREFIX}/share/hunspell/${ALIAS}.dic
+.endfor
+.for ALIAS in ${DEALIASES}
+	${LN} -s de_DE.aff ${PREFIX}/share/hunspell/${ALIAS}.aff
+	${LN} -s de_DE.dic ${PREFIX}/share/hunspell/${ALIAS}.dic
+.endfor
 
 .include <bsd.port.mk>
