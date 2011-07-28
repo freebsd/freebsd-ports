@@ -9,8 +9,6 @@ PORTNAME=	hpscat
 PORTVERSION=	1.3jshin
 CATEGORIES=	korean print
 MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/ \
-		ftp://ftp.kaist.ac.kr/pub/hangul/print/hpscat/ \
-		ftp://ftp.kaist.ac.kr/pub/hangul/editor/ked/ \
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/print/hpscat/ \
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/editor/ked/
 DISTNAME=	hpscat-jshin

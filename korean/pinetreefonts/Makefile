@@ -10,7 +10,6 @@ PORTVERSION=	1.01
 PORTREVISION=	2
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=	ftp://cglab.snu.ac.kr/pub/hangul/n3f/tar/ \
-		ftp://ftp.kaist.ac.kr/pub/hangul/fonts/ \
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/fonts/ \
 		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 DISTNAME=	pinetree.precomposed-${PORTVERSION}-bdf

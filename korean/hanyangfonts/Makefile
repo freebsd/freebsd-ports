@@ -10,7 +10,6 @@ PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	korean x11-fonts
 MASTER_SITES=   ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/ \
-		ftp://ftp.kaist.ac.kr/pub/hangul/fonts/ \
 		ftp://ftp.kreonet.re.kr/pub/hangul/cair-archive/fonts/
 DISTNAME=	hanyang-font-pcf
 
