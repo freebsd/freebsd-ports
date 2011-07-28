@@ -5,6 +5,8 @@
 etc/monitorix.conf.sample
 @exec if [ ! -f %D/etc/monitorix.conf ]; then cp %B/%f %D/etc/monitorix.conf; fi
 sbin/monitorix
+@exec mkdir -p %D/%%DATADIR%%
+@dirrmtry %%DATADIR%%
 %%CGIDIR%%/monitorix.cgi
 @dirrmtry %%CGIDIR%%
 %%REPORTS%%%%WWWDIR%%/reports/ca.html
