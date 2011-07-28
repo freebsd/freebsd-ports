@@ -8,6 +8,7 @@
 PORTNAME=	fwbuilder
 DISTVERSION=	4.2.2
 PORTVERSION=	${DISTVERSION}
+PORTREVISION=	1
 CATEGORIES=	security
 BUILD=		3541
 .if defined(DEVEL)
@@ -30,7 +31,7 @@ CONFLICTS=	fwbuilder-[23].* fwbuilder-devel-* \
 		libfwbuilder-[23].* libfwbuilder-devel-*
 .endif
 LIB_DEPENDS=	xslt.2:${PORTSDIR}/textproc/libxslt \
-		netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
+		netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 
 PLIST_SUB=	BUILD_VERSION=${DISTVERSION}.${BUILD}
 USE_QT_VER=	4

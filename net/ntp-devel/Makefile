@@ -7,6 +7,7 @@
 
 PORTNAME=	ntp
 PORTVERSION=	4.2.7p181
+PORTREVISION=	1
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ntp-dev/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
@@ -55,7 +56,7 @@ pre-everything::
 # NTP autodects net-snmp and if found builds and installs a binary that
 # uses it. If detected, modify dependencies and package list.
 BUILD_DEPENDS=	${LOCALBASE}/bin/net-snmp-config:${PORTSDIR}/net-mgmt/net-snmp
-LIB_DEPENDS=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 PLIST_SUB+=	NETSNMP=""
 .else
 PLIST_SUB+=	NETSNMP="@comment "
