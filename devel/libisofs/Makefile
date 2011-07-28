@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libisofs
-PORTVERSION=	1.0.8
+PORTVERSION=	1.1.2
 CATEGORIES=	devel
 MASTER_SITES=	http://files.libburnia-project.org/releases/
 
@@ -16,9 +16,10 @@ COMMENT=	Libburnia ISO9660 filesystem creation library
 LIB_DEPENDS=	burn.4:${PORTSDIR}/devel/libburn
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	CFLAGS="-I${PREFIX}/include" LDFLAGS="-L${PREFIX}/lib -liconv"
-
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>
