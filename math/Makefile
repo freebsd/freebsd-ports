@@ -168,7 +168,6 @@
     SUBDIR += libneural
     SUBDIR += liborigin
     SUBDIR += libqalculate
-    SUBDIR += librandlib
     SUBDIR += libranlip
     SUBDIR += libtommath
     SUBDIR += libtsnnls
@@ -496,6 +495,7 @@
     SUBDIR += qtoctave
     SUBDIR += qwtplot3d
     SUBDIR += qwtplot3d-qt4
+    SUBDIR += randlib
     SUBDIR += rapid
     SUBDIR += reed-solomon
     SUBDIR += rkward
