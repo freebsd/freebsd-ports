@@ -6,35 +6,30 @@
 #
 
 PORTNAME=	xorriso
-PORTVERSION=	0.4.0
+PORTVERSION=	1.1.2
 CATEGORIES=	sysutils
 MASTER_SITES=	http://files.libburnia-project.org/releases/
-DISTNAME=	libisoburn
-DISTFILES=	${DISTNAME}-${PORTVERSION}.pl01${EXTRACT_SUFX}
+DISTNAME=	libisoburn-${PORTVERSION}
 
-MAINTAINER=	fbsd@opal.com
+MAINTAINER=	shuvaev@physik.uni-wuerzburg.de
 COMMENT=	ISO image manipulation tool based on Libburnia
 
-BUILD_DEPENDS=	pkg-config:${PORTSDIR}/devel/pkg-config
-LIB_DEPENDS=	burn.4:${PORTSDIR}/devel/libburn \
-		isofs.6:${PORTSDIR}/devel/libisofs
-
-WRKSRC=		${WRKDIR}/${DISTNAME}-${PORTVERSION}
+BUILD_DEPENDS=	libburn>=1.1.0:${PORTSDIR}/devel/libburn \
+		libisofs>=1.1.2:${PORTSDIR}/devel/libisofs
+RUN_DEPENDS=	libburn>=1.1.0:${PORTSDIR}/devel/libburn \
+		libisofs>=1.1.2:${PORTSDIR}/devel/libisofs
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	CFLAGS="-I${PREFIX}/include" \
-		LDFLAGS="-lcam -L${PREFIX}/lib -liconv"
-
-WANT_GNOME=	yes
-USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
+USE_GNOME=	gnomehack pkgconfig
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
+WANT_GNOME=	yes
 
-MAN1=		xorriso.1
+INFO=		xorriso xorrisofs
+MAN1=		xorriso.1 xorrisofs.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|(libdir)/pkgconfig|(prefix)/libdata/pkgconfig|;' \
-	${WRKSRC}/Makefile.in
+	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' ${WRKSRC}/configure
 
 .include <bsd.port.mk>

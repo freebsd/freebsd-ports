@@ -3,6 +3,7 @@ bin/xorrecord
 bin/xorriso
 bin/xorrisofs
 include/libisoburn/libisoburn.h
+include/libisoburn/xorriso.h
 lib/libisoburn.a
 lib/libisoburn.la
 lib/libisoburn.so
