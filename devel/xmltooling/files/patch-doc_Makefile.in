@@ -1,5 +1,5 @@
---- doc/Makefile.in.orig	2011-05-01 01:06:10.813553015 +0200
-+++ doc/Makefile.in	2011-05-01 01:06:53.643189373 +0200
+--- doc/Makefile.in.orig	2011-07-25 16:15:04.474558171 -0400
++++ doc/Makefile.in	2011-07-25 16:16:15.041554095 -0400
 @@ -233,7 +233,7 @@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
@@ -18,12 +18,14 @@
  all: all-am
  
  .SUFFIXES:
-@@ -455,8 +455,6 @@
+@@ -455,10 +455,6 @@
  
  
  install-data-hook:
--	cp -r api $(DESTDIR)$(pkgdocdir)
--	rm -rf `find $(DESTDIR)$(pkgdocdir)/api -name .svn`
+-	if test -d api ; then \
+-		cp -r api $(DESTDIR)$(pkgdocdir); \
+-		rm -rf `find $(DESTDIR)$(pkgdocdir)/api -name .svn`; \
+-	fi;
  
  # Tell versions [3.59,3.63) of GNU make to not export all variables.
  # Otherwise a system limit (for SysV at least) may be exceeded.

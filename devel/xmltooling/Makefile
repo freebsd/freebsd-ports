@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	xmltooling
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	devel security
-MASTER_SITES=	http://shibboleth.internet2.edu/downloads/opensaml/cpp/2.4.1/
+MASTER_SITES=	http://www.shibboleth.net/downloads/c++-opensaml/2.4.3/
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Low level XML support for SAML
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
