@@ -7,7 +7,7 @@
 
 PORTNAME=	collectd
 PORTVERSION=	4.10.3
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -322,7 +322,7 @@ PLIST_SUB+=	RRD="@comment "
 .endif
 
 .if defined(WITH_SNMP)
-LIB_DEPENDS+=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=--enable-snmp
 PLIST_SUB+=	SNMP=""
 .else

@@ -7,6 +7,7 @@
 
 PORTNAME=	hplip
 PORTVERSION=	3.11.5
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	SF
 
@@ -119,7 +120,7 @@ PLIST_SUB+=	FAX="@comment "
 
 .if defined(WITH_SNMP)
 USE_OPENSSL=	yes
-LIB_DEPENDS+=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--enable-network-build
 . if ${ARCH} == i386
 # http://www.freebsd.org/cgi/query-pr.cgi?pr=ports/144833

@@ -7,6 +7,7 @@
 
 PORTNAME=	xymon
 PORTVERSION=	4.3.3
+PORTREVISION=	1
 CATEGORIES=	net-mgmt www
 MASTER_SITES=	SF/xymon/Xymon/${PORTVERSION}
 PKGNAMESUFFIX=	-server${PKGNAMESUFFIX2}
@@ -72,7 +73,7 @@ USE_OPENLDAP=	yes
 
 .if defined(WITH_NETSNMP)
 MAKE_ENV+=	WITH_NETSNMP=1
-LIB_DEPENDS+=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 .endif
 
 

@@ -7,7 +7,7 @@
 
 PORTNAME=	cyrus-imapd
 PORTVERSION=	2.4.10
-#PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/
 #MASTER_SITES=	http://www.cyrusimap.org/releases/snapshots/
@@ -150,7 +150,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/lib/libdrac.a:${PORTSDIR}/mail/drac
 .endif
 
 .if defined(WITH_SNMP)
-LIB_DEPENDS+=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=--with-snmp=${LOCALBASE}
 .else
 CONFIGURE_ARGS+=--with-snmp=no

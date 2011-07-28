@@ -7,13 +7,14 @@
 
 PORTNAME=	sdig
 PORTVERSION=	0.45
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Translate IP/DNS/WINS/MAC address into port description
 
-LIB_DEPENDS=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

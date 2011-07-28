@@ -6,7 +6,7 @@
 
 PORTNAME=	callweaver
 PORTVERSION=	1.2.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://devs.callweaver.org/release/
 EXTRACT_SUFX=	.tgz
@@ -150,7 +150,7 @@ PLIST_SUB+=	LDAP="@comment "
 .endif
 
 .if defined(WITH_SNMP)
-LIB_DEPENDS+=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 CONFIGURE_ARGS+=	--with-res_snmp
 PLIST_SUB+=	SNMP=""
 .else

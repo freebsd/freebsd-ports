@@ -7,7 +7,7 @@
 
 PORTNAME=	freeradius
 PORTVERSION?=	1.1.8
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -188,7 +188,7 @@ WITH_EXPERIMENTAL=	yes
 .endif
 
 .ifdef(WITH_SNMP)
-LIB_DEPENDS+=	netsnmp.20:${PORTSDIR}/net-mgmt/net-snmp
+LIB_DEPENDS+=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
 .else
 CONFIGURE_ARGS+=--without-snmp
 .endif
