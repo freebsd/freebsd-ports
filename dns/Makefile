@@ -19,7 +19,6 @@
     SUBDIR += crossip
     SUBDIR += curvedns
     SUBDIR += ddclient
-    SUBDIR += dhid
     SUBDIR += dhisd
     SUBDIR += djbdns
     SUBDIR += djbdns-tools

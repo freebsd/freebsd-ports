@@ -1,4 +1,0 @@
-
-Before dhid can run, you will need to register with a DHIS provider.
-See http://www.dhis.org/dhis/services/ for a list of providers.
-Enter the DHIS account information into the dhid.conf file.
