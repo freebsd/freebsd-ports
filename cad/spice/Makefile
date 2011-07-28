@@ -18,6 +18,8 @@ EXTRACT_ONLY=	spice3f5${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general-purpose circuit simulation program
 
+LICENSE=	BSD
+
 WRKSRC=		${WRKDIR}/${PORTNAME}3f5
 MAN1=		sconvert.1 nutmeg.1 spice.1
 MAN3=		mfb.3
@@ -52,8 +54,8 @@ post-install:
 	${MKDIR} ${DOCSDIR}
 	${CAT} ${DISTDIR}/${DIST_SUBDIR}/*.ps > ${DOCSDIR}/spice3f3.ps
 	${GZIP_CMD} ${DOCSDIR}/*.ps
+.endif
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKSRC}/examples/*.cir ${EXAMPLESDIR}
-.endif
 
 .include <bsd.port.post.mk>
