@@ -1,7 +1,13 @@
 bin/scanbuttond
-etc/scanbuttond/buttonpressed.sh
-etc/scanbuttond/initscanner.sh
-etc/scanbuttond/meta.conf
+@unexec if cmp -s %D/etc/scanbuttond/buttonpressed.sh.sample %D/etc/scanbuttond/buttonpressed.sh; then rm -f %D/etc/scanbuttond/buttonpressed.sh; fi
+etc/scanbuttond/buttonpressed.sh.sample
+@exec if [ ! -f %D/etc/scanbuttond/buttonpressed.sh ] ; then cp -p %D/%F %B/buttonpressed.sh; fi
+@unexec if cmp -s %D/etc/scanbuttond/initscanner.sh.sample %D/etc/scanbuttond/initscanner.sh; then rm -f %D/etc/scanbuttond/initscanner.sh; fi
+etc/scanbuttond/initscanner.sh.sample
+@exec if [ ! -f %D/etc/scanbuttond/initscanner.sh ] ; then cp -p %D/%F %B/initscanner.sh; fi
+@unexec if cmp -s %D/etc/scanbuttond/meta.conf.sample %D/etc/scanbuttond/meta.conf; then rm -f %D/etc/scanbuttond/meta.conf; fi
+etc/scanbuttond/meta.conf.sample
+@exec if [ ! -f %D/etc/scanbuttond/meta.conf ] ; then cp -p %D/%F %B/meta.conf; fi
 lib/libscanbtnd-backend_epson.la
 lib/libscanbtnd-backend_epson.so
 lib/libscanbtnd-backend_epson.so.1
