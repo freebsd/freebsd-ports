@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	opensaml2
-PORTVERSION=	2.4.1
+PORTVERSION=	2.4.3
 CATEGORIES=	security
-MASTER_SITES=	http://shibboleth.internet2.edu/downloads/opensaml/cpp/${PORTVERSION}/
+MASTER_SITES=	http://www.shibboleth.net/downloads/c++-opensaml/${PORTVERSION}/
 DISTNAME=	opensaml-${PORTVERSION}
 
-MAINTAINER=	janos.mohacsi@bsd.hu
+MAINTAINER=	swills@FreeBSD.org
 COMMENT=	Open source implentation of SAML2
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
