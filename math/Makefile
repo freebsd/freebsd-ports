@@ -49,6 +49,7 @@
     SUBDIR += clarence
     SUBDIR += cln
     SUBDIR += clp
+    SUBDIR += coinmp
     SUBDIR += concorde
     SUBDIR += convertall
     SUBDIR += coq
