@@ -14,6 +14,9 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	jeremy@algenta.com
 COMMENT=	Workflow-ng module for Drupal 5
 
+DEPRECATED=	Use drupal[67] instead
+EXPIRATION_DATE=2011-08-29
+
 DRUPAL5_MODULE=	yes
 MODULE_DIRS=	cclinks states workflow_ng/icons workflow_ng/modules workflow_ng
 MODULE_FILES=	cclinks/cclinks.info cclinks/cclinks.install cclinks/cclinks.module \

@@ -14,6 +14,9 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	jeremy@algenta.com
 COMMENT=	Content Construction Kit (CCK) module for Drupal 5
 
+DEPRECATED=	Use drupal[67] instead
+EXPIRATION_DATE=2011-08-29
+
 DRUPAL5_MODULE=	yes
 MODULE_DIRS=	po theme
 MODULE_FILES=	content.css content.info content.install content.module content_admin.css \

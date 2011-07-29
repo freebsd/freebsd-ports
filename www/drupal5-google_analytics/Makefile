@@ -13,6 +13,9 @@ CATEGORIES=	www
 MAINTAINER=	nick@foobar.org
 COMMENT=	Adds the Google Analytics web statistics tracking system to your website.
 
+DEPRECATED=	Use drupal[67] instead
+EXPIRATION_DATE=2011-08-29
+
 DRUPAL5_MODULE=	yes
 MODULE_FILES=	googleanalytics.info googleanalytics.install googleanalytics.js \
 		googleanalytics.module po/ca.po po/de.po po/es.po po/fr.po \

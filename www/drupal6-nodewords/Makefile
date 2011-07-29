@@ -44,5 +44,5 @@ MODULE_FILES=	includes/forum.inc includes/image.inc includes/node.inc \
 DOC_FILES=	README.txt CHANGELOG.txt API.txt LICENSE.txt
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
+.include "${PORTSDIR}/Mk/bsd.drupal.mk"
 .include <bsd.port.post.mk>

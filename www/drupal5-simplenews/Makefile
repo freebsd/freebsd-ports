@@ -14,6 +14,9 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	g_glasson@jimali.dyndns.org
 COMMENT=	A simple newsletter module which allows both anonymous as well as registered users to subscribe to different newsletters.
 
+DEPRECATED=	Use drupal[67] instead
+EXPIRATION_DATE=2011-08-29
+
 DRUPAL5_MODULE=	yes
 MODULE_DIRS=	po
 MODULE_FILES=	simplenews.info simplenews.install simplenews.module sn-cron.png sn-saved.png \

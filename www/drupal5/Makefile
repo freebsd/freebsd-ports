@@ -17,6 +17,9 @@ COMMENT=	A database driven web content management system (CMS)
 
 DRUPAL5_PORT=	yes
 
+DEPRECATED=	Use drupal[67] instead
+EXPIRATION_DATE=2011-08-29
+
 USE_PHP=	gd pcre session xml mbstring
 WANT_PHP_WEB=	yes
 

@@ -65,5 +65,5 @@ MODULE_FILES=	auth/services_keyauth/services_keyauth.admin.inc \
 DOC_FILES=	LICENSE.txt README.txt
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
+.include "${PORTSDIR}/Mk/bsd.drupal.mk"
 .include <bsd.port.post.mk>

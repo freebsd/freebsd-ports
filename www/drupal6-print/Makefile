@@ -35,5 +35,5 @@ DOC_FILES=	CHANGELOG.txt CREDITS.txt INSTALL.txt \
 		LICENSE.txt MAINTAINERS.txt README.txt
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
+.include "${PORTSDIR}/Mk/bsd.drupal.mk"
 .include <bsd.port.post.mk>

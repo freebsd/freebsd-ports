@@ -39,5 +39,5 @@ MODULE_DIRS=	components tests translations
 DOC_FILES=	CHANGELOG.txt INSTALL.txt README.txt THEMING.txt LICENSE.txt
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
+.include "${PORTSDIR}/Mk/bsd.drupal.mk"
 .include <bsd.port.post.mk>
