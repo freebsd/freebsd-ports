@@ -7,6 +7,7 @@
 
 PORTNAME=	hunspell
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	ukrainian textproc
 MASTER_SITES=	SF/ispell-uk/spell-uk/${PORTVERSION}
 DISTNAME=	spell-uk-${PORTVERSION}
@@ -17,19 +18,16 @@ COMMENT=	Hunspell ukrainian dictionary
 
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
-WRKSRC=	${WRKDIR}/spell-uk-${PORTVERSION}
+ALL_TARGET=	myspell
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 
-ALL_TARGET=	myspell
-
-PLIST_FILES=	share/hunspell/uk_UA.aff \
-		share/hunspell/uk_UA.dic
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/uk_UA.aff \
+		%%DATADIR%%/uk_UA.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-		@${MKDIR} ${PREFIX}/share/hunspell
-		@${INSTALL_DATA} ${WRKSRC}/dist/myspell-uk-${PORTVERSION}/uk_UA.aff \
-			${WRKSRC}/dist/myspell-uk-${PORTVERSION}/uk_UA.dic \
-			${PREFIX}/share/hunspell/
+	${MKDIR} ${DATADIR}/
+	cd ${WRKSRC}/dist/my${DISTNAME}/ && ${INSTALL_DATA} uk_UA.aff uk_UA.dic ${DATADIR}/
+
 .include <bsd.port.mk>

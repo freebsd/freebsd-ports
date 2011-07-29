@@ -7,6 +7,7 @@
 
 PORTNAME=	hyphen
 PORTVERSION=	2007.02.17
+PORTREVISION=	1
 CATEGORIES=	german textproc
 MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
 DISTNAME=	hyph_de_DE
@@ -19,20 +20,19 @@ LICENSE=	LGPL21
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-DEALIASES=	de_AT de_BE de_CH de_LI de_LU
+PLIST_FILES=	%%DATADIR%%/hyph_de_DE.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
-PLIST_FILES=	share/hyphen/hyph_de_DE.dic
+DEALIASES=	de_AT de_BE de_CH de_LI de_LU
 .for ALIAS in ${DEALIASES}
-PLIST_FILES+=	share/hyphen/hyph_${ALIAS}.dic
+PLIST_FILES+=	%%DATADIR%%/hyph_${ALIAS}.dic
 .endfor
-PLIST_DIRS=	share/hyphen
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hyphen
-	@${INSTALL_DATA} ${WRKDIR}/hyph_de_DE.dic ${PREFIX}/share/hyphen
-	@cd ${PREFIX}/share/hyphen; \
-	for alias in ${DEALIASES}; do \
-	  ${LN} -s hyph_de_DE.dic hyph_$${alias}.dic ; \
-	done
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKDIR}/hyph_de_DE.dic ${DATADIR}/
+.for ALIAS in ${DEALIASES}
+	${LN} -s hyph_de_DE.dic ${DATADIR}/hyph_${ALIAS}.dic
+.endfor
 
 .include <bsd.port.mk>

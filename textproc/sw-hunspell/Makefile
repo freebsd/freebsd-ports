@@ -5,30 +5,32 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sw-hunspell
+PORTNAME=	hunspell
 PORTVERSION=	1.46
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	GOOGLE_CODE
+PKGNAMEPREFIX=	sw-
 DISTNAME=	sv-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Swedish hunspell dictionaries
 
-PROJECTHOST=	dsso
 USE_ZIP=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+PROJECTHOST=	dsso
 
-PLIST_FILES=	share/hunspell/sv_SE.aff \
-		share/hunspell/sv_SE.dic \
-		share/hunspell/sv_FI.aff \
-		share/hunspell/sv_FI.dic
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/sv_FI.aff \
+		%%DATADIR%%/sv_FI.dic \
+		%%DATADIR%%/sv_SE.aff \
+		%%DATADIR%%/sv_SE.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hunspell
-	@${INSTALL_DATA} ${WRKDIR}/sv_SE* ${PREFIX}/share/hunspell
-	@cd ${PREFIX}/share/hunspell; \
-	${LN} -s sv_SE.aff sv_FI.aff; \
-	${LN} -s sv_SE.dic sv_FI.dic
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/sv_SE.aff ${WRKSRC}/sv_SE.dic ${DATADIR}/
+	${LN} -s sv_SE.aff ${DATADIR}/sv_FI.aff
+	${LN} -s sv_SE.dic ${DATADIR}/sv_FI.dic
 
 .include <bsd.port.mk>

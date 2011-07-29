@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ro-hyphen
+PORTNAME=	hyphen
 PORTVERSION=	3.3.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/rospell/Romanian%20dictionaries/dict-${PORTVERSION}/
+PKGNAMEPREFIX=	ro-
 DISTNAME=	hyph_ro_RO.${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
@@ -20,11 +22,11 @@ LICENSE_COMB=	dual
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	share/hyphen/hyph_ro_RO.dic
-PLIST_DIRS=	share/hyphen
+PLIST_FILES=	%%DATADIR%%/hyph_ro_RO.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hyphen
-	@${INSTALL_DATA} ${WRKDIR}/hyph_ro_RO.* ${PREFIX}/share/hyphen
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKDIR}/hyph_ro_RO.dic ${DATADIR}/
 
 .include <bsd.port.mk>

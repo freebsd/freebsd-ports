@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ro-hunspell
+PORTNAME=	hunspell
 PORTVERSION=	3.3.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/rospell/Romanian%20dictionaries/dict-${PORTVERSION}/
+PKGNAMEPREFIX=	ro-
 DISTNAME=	ro_RO.${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
@@ -20,12 +22,12 @@ LICENSE_COMB=	dual
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	share/hunspell/ro_RO.aff \
-		share/hunspell/ro_RO.dic
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/ro_RO.aff \
+		%%DATADIR%%/ro_RO.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hunspell
-	@${INSTALL_DATA} ${WRKDIR}/ro_RO.* ${PREFIX}/share/hunspell
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKDIR}/ro_RO.aff ${WRKDIR}/ro_RO.dic ${DATADIR}/
 
 .include <bsd.port.mk>

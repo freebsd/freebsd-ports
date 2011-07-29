@@ -7,6 +7,7 @@
 
 PORTNAME=	hunspell
 PORTVERSION=	20110608
+PORTREVISION=	1
 CATEGORIES=	portuguese textproc
 MASTER_SITES=	http://natura.di.uminho.pt/download/sources/Dictionaries/hunspell/ \
 		http://www.broffice.org/files/:BR
@@ -18,23 +19,20 @@ COMMENT=	Hunspell portuguese dictionary
 
 # rely on bsdtar ability to extract .gz and .zip archives
 EXTRACT_CMD=	${CAT}
-EXTRACT_BEFORE_ARGS=
+EXTRACT_BEFORE_ARGS=	# empty
 
 NO_BUILD=	yes
-WRKSRC=	${WRKDIR}/hunspell-pt_PT-${PORTVERSION}
+WRKSRC=		${WRKDIR}/hunspell-pt_PT-${PORTVERSION}
 
-PLIST_FILES=	share/hunspell/pt_PT.aff \
-		share/hunspell/pt_PT.dic \
-		share/hunspell/pt_BR.aff \
-		share/hunspell/pt_BR.dic
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/pt_BR.aff \
+		%%DATADIR%%/pt_BR.dic \
+		%%DATADIR%%/pt_PT.aff \
+		%%DATADIR%%/pt_PT.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-		@${MKDIR} ${PREFIX}/share/hunspell
-		@${INSTALL_DATA} ${WRKDIR}/pt_BR.aff \
-			${WRKDIR}/pt_BR.dic \
-			${WRKSRC}/pt_PT.aff \
-			${WRKSRC}/pt_PT.dic \
-			${PREFIX}/share/hunspell/
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKDIR}/pt_BR.aff ${WRKDIR}/pt_BR.dic \
+	  	${WRKSRC}/pt_PT.aff ${WRKSRC}/pt_PT.dic ${DATADIR}/
 
 .include <bsd.port.mk>

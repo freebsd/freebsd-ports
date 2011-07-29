@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	bg-mythes
+PORTNAME=	mythes
 PORTVERSION=	4.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/bgoffice/OpenOffice.org%20Thesaurus%20BG/${PORTVERSION}/
+PKGNAMEPREFIX=	bg-
 DISTNAME=	OOo-thes-bg-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
@@ -20,13 +22,12 @@ LICENSE_COMB=	dual
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	share/mythes/th_bg_BG.dat \
-		share/mythes/th_bg_BG.idx
-
-PLIST_DIRS=	share/mythes
+PLIST_FILES=	%%DATADIR%%/th_bg_BG.dat \
+		%%DATADIR%%/th_bg_BG.idx
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/mythes
-	@${INSTALL_DATA} ${WRKSRC}/th_bg_BG.* ${PREFIX}/share/mythes
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/th_bg_BG.dat ${WRKSRC}/th_bg_BG.idx ${DATADIR}/
 
 .include <bsd.port.mk>

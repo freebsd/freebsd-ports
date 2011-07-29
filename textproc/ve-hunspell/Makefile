@@ -5,11 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ve-hunspell
+PORTNAME=	hunspell
 PORTVERSION=	20110323
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	addons/46601
+PKGNAMEPREFIX=	ve-
 DISTNAME=	venda_spell_checker-${PORTVERSION}-tb+fn+fx+sm
 EXTRACT_SUFX=	.xpi
 
@@ -18,14 +20,15 @@ COMMENT=	Venda hunspell dictionaries
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/dictionaries
 
-PLIST_FILES=	share/hunspell/ve.aff \
-		share/hunspell/ve.dic
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/ve.aff \
+		%%DATADIR%%/ve.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hunspell
-	@${INSTALL_DATA} ${WRKDIR}/dictionaries/ve-ZA.aff ${PREFIX}/share/hunspell/ve.aff
-	@${INSTALL_DATA} ${WRKDIR}/dictionaries/ve-ZA.dic ${PREFIX}/share/hunspell/ve.dic
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/ve-ZA.aff ${DATADIR}/ve.aff
+	${INSTALL_DATA} ${WRKSRC}/ve-ZA.dic ${DATADIR}/ve.dic
 
 .include <bsd.port.mk>

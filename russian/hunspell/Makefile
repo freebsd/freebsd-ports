@@ -7,6 +7,7 @@
 
 PORTNAME=	hunspell
 PORTVERSION=	20110701
+PORTREVISION=	1
 CATEGORIES=	russian textproc
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	ru_RU_UTF8
@@ -14,18 +15,16 @@ DISTNAME=	ru_RU_UTF8
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Hunspell russian dictionary
 
-PROJECTHOST=	hunspell-ru
 USE_ZIP=	yes
 NO_BUILD=	yes
+PROJECTHOST=	hunspell-ru
 
-PLIST_FILES=	share/hunspell/ru_RU.aff \
-		share/hunspell/ru_RU.dic
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/ru_RU.aff \
+		%%DATADIR%%/ru_RU.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-		@${MKDIR} ${PREFIX}/share/hunspell
-		@${INSTALL_DATA} ${WRKDIR}/ru_RU.aff \
-			${WRKDIR}/ru_RU.dic \
-			${PREFIX}/share/hunspell/
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKDIR}/ru_RU.aff ${WRKDIR}/ru_RU.dic ${DATADIR}/
 
 .include <bsd.port.mk>

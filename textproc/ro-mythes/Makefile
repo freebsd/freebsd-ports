@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ro-mythes
+PORTNAME=	mythes
 PORTVERSION=	3.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/rospell/Romanian%20dictionaries/dict-${PORTVERSION}/
+PKGNAMEPREFIX=	ro-
 DISTNAME=	th_ro_RO.${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
@@ -18,13 +20,14 @@ LICENSE=	GPLv2
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	share/mythes/th_ro_RO.dat \
-		share/mythes/th_ro_RO.idx
-PLIST_DIRS=	share/mythes
+PLIST_FILES=	%%DATADIR%%/th_ro_RO.dat \
+		%%DATADIR%%/th_ro_RO.idx
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/mythes
-	@${INSTALL_DATA} ${WRKDIR}/th_ro_RO.* ${PREFIX}/share/mythes
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/th_ro_RO.dat ${WRKSRC}/th_ro_RO.idx ${DATADIR}/
 
 .include <bsd.port.mk>

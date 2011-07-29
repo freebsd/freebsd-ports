@@ -5,11 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ts-hunspell
+PORTNAME=	hunspell
 PORTVERSION=	20110323
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	addons/46611
+PKGNAMEPREFIX=	ts-
 DISTNAME=	tsonga_spell_checker-${PORTVERSION}-tb+sm+fx+fn
 EXTRACT_SUFX=	.xpi
 
@@ -19,13 +21,13 @@ COMMENT=	Tsonga hunspell dictionaries
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	share/hunspell/ts_ZA.aff \
-		share/hunspell/ts_ZA.dic
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/ts_ZA.aff \
+		%%DATADIR%%/ts_ZA.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hunspell
-	@${INSTALL_DATA} ${WRKDIR}/dictionaries/ts-ZA.aff ${PREFIX}/share/hunspell/ts_ZA.aff
-	@${INSTALL_DATA} ${WRKDIR}/dictionaries/ts-ZA.dic ${PREFIX}/share/hunspell/ts_ZA.dic
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKDIR}/dictionaries/ts-ZA.aff ${DATADIR}/ts_ZA.aff
+	${INSTALL_DATA} ${WRKDIR}/dictionaries/ts-ZA.dic ${DATADIR}/ts_ZA.dic
 
 .include <bsd.port.mk>

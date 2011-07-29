@@ -7,6 +7,7 @@
 
 PORTNAME=	hyphen
 PORTVERSION=	2004.04.15
+PORTREVISION=	1
 CATEGORIES=	portuguese textproc
 MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
 DISTNAME=	hyph_pt_PT
@@ -19,13 +20,13 @@ LICENSE=	LGPL21
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	share/hyphen/hyph_pt_PT.dic \
-		share/hyphen/hyph_pt_BR.dic
-PLIST_DIRS=	share/hyphen
+PLIST_FILES=	%%DATADIR%%/hyph_pt_BR.dic \
+		%%DATADIR%%/hyph_pt_PT.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hyphen
-	@${INSTALL_DATA} ${WRKDIR}/hyph_pt_PT.dic ${PREFIX}/share/hyphen
-	@cd ${PREFIX}/share/hyphen; ${LN} -s hyph_pt_PT.dic hyph_pt_BR.dic
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKDIR}/hyph_pt_PT.dic ${DATADIR}/
+	${LN} -s hyph_pt_PT.dic ${DATADIR}/hyph_pt_BR.dic
 
 .include <bsd.port.mk>

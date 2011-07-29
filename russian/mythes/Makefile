@@ -7,6 +7,7 @@
 
 PORTNAME=	mythes
 PORTVERSION=	2007.06.13
+PORTREVISION=	1
 CATEGORIES=	russian textproc
 MASTER_SITES=	http://download.i-rs.ru/pub/openoffice/dict/
 DISTNAME=	thes_ru_RU_v2
@@ -18,19 +19,18 @@ LICENSE=	LGPL21
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	share/mythes/th_ru_RU_v2.dat \
-		share/mythes/th_ru_RU_v2.idx \
-		share/mythes/th_ru_UA_v2.dat \
-		share/mythes/th_ru_UA_v2.idx
-
-PLIST_DIRS=	share/mythes
+PLIST_FILES=	%%DATADIR%%/th_ru_RU_v2.dat \
+		%%DATADIR%%/th_ru_RU_v2.idx \
+		%%DATADIR%%/th_ru_UA_v2.dat \
+		%%DATADIR%%/th_ru_UA_v2.idx
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-		@${MKDIR} ${PREFIX}/share/mythes
-		@${INSTALL_DATA} ${WRKDIR}/th_ru_RU_v2.* ${PREFIX}/share/mythes
-		@cd ${PREFIX}/share/mythes; \
-		${LN} -s th_ru_RU_v2.dat th_ru_UA_v2.dat; \
-		${LN} -s th_ru_RU_v2.idx th_ru_UA_v2.idx
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/th_ru_RU_v2.dat ${WRKSRC}/th_ru_RU_v2.idx ${DATADIR}/
+	${LN} -s th_ru_RU_v2.dat ${DATADIR}/th_ru_UA_v2.dat
+	${LN} -s th_ru_RU_v2.idx ${DATADIR}/th_ru_UA_v2.idx
 
 .include <bsd.port.mk>

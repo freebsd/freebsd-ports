@@ -5,11 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	zu-hunspell
+PORTNAME=	hunspell
 PORTVERSION=	20110323
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	addons/46490
+PKGNAMEPREFIX=	zu-
 DISTNAME=	zulu_spell_checker-${PORTVERSION}-tb+fn+fx+sm
 EXTRACT_SUFX=	.xpi
 
@@ -18,14 +20,15 @@ COMMENT=	Zulu hunspell dictionaries
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/dictionaries
 
-PLIST_FILES=	share/hunspell/zu.aff \
-		share/hunspell/zu.dic
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/zu.aff \
+		%%DATADIR%%/zu.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hunspell
-	@${INSTALL_DATA} ${WRKDIR}/dictionaries/zu-ZA.aff ${PREFIX}/share/hunspell/zu.aff
-	@${INSTALL_DATA} ${WRKDIR}/dictionaries/zu-ZA.dic ${PREFIX}/share/hunspell/zu.dic
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/zu-ZA.aff ${DATADIR}/zu.aff
+	${INSTALL_DATA} ${WRKSRC}/zu-ZA.dic ${DATADIR}/zu.dic
 
 .include <bsd.port.mk>

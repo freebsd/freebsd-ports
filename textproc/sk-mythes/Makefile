@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sk-mythes
+PORTNAME=	mythes
 PORTVERSION=	2011.07.26
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.sk-spell.sk.cx/thesaurus/download/
+PKGNAMEPREFIX=	sk-
 DISTNAME=	OOo-Thesaurus2-sk_SK
 
 MAINTAINER=	office@FreeBSD.org
@@ -20,12 +22,12 @@ USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	share/mythes/th_sk_SK_v2.dat \
-		share/mythes/th_sk_SK_v2.idx
-PLIST_DIRSTRY=	share/mythes
+PLIST_FILES=	%%DATADIR%%/th_sk_SK_v2.dat \
+		%%DATADIR%%/th_sk_SK_v2.idx
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	${MKDIR} ${PREFIX}/share/mythes/
-	${INSTALL_DATA} ${WRKSRC}/th_sk_SK_v2.dat ${WRKSRC}/th_sk_SK_v2.idx ${PREFIX}/share/mythes/
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/th_sk_SK_v2.dat ${WRKSRC}/th_sk_SK_v2.idx ${DATADIR}/
 
 .include <bsd.port.mk>
