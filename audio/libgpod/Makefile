@@ -62,6 +62,7 @@ PLIST_SUB+=	MONO="@comment "
 
 .if defined(WITH_IMOBILE) && (${OSVERSION} > 900002 || \
     ${OSVERSION} < 900000 && ${OSVERSION} > 800107)
+COMMENT:=	${COMMENT:S,iPod,&/iPhone,}
 LIB_DEPENDS+=	imobiledevice.1:${PORTSDIR}/comms/libimobiledevice
 CONFIGURE_ENV+=	LIBUSB_CFLAGS=" " LIBUSB_LIBS="-lusb"
 .else
