@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		samba34
-PORTVERSION=		3.4.9
-PORTREVISION?=	2
+PORTVERSION=		3.4.14
+PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
 MASTER_SITE_SUBDIR=	. old-versions rc pre
@@ -16,7 +16,7 @@ DISTNAME=		${PORTNAME:S|34$||}-${PORTVERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|al
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
 
-CONFLICTS?=		ja-samba-[235].* samba-[235].* sharity-light-1.* tdb-1.*
+CONFLICTS?=		samba3[2356]-3.*
 # Additional patches from Sernet.de
 PATCH_STRIP=		-p1
 EXTRA_PATCHES=		${PATCHDIR}/sernet.patch
@@ -136,7 +136,7 @@ CONFIGURE_ARGS+=	--with-pam --with-readline=/usr \
 			--without-libsmbclient \
 			--without-libaddns \
 			--without-libnetapi \
-			--without-libsmbsharemodes
+			--without-libsmbsharemodes --disable-pie
 
 .if !defined(WITHOUT_LDAP)
 SAMBA_WANT_LDAP=	yes

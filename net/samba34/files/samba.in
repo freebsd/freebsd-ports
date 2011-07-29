@@ -28,8 +28,43 @@
 
 name="samba"
 rcvar=$(set_rcvar)
-
+set_rcvar ${rcvar} "NO" "Samba service" > /dev/null
+# Defaults
+eval ${rcvar}=\${${rcvar}:=NO}
+samba_config_default="%%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%%"
+samba_config=${samba_config="${samba_config_default}"}
+command_args=${samba_config:+-s "${samba_config}"}
+# Fetch parameters from configuration file
+testparm_command="%%PREFIX%%/bin/testparm"
+smbcontrol_command="%%PREFIX%%/bin/smbcontrol"
+samba_parm="${testparm_command} -s -v --parameter-name"
+samba_idmap=$(${samba_parm} 'idmap uid' "${samba_config}" 2>/dev/null)
+samba_lockdir=$(${samba_parm} 'lock directory' "${samba_config}" 2>/dev/null)
+# Load configuration
 load_rc_config "${name}"
+# Setup dependent variables
+if [ -n "${rcvar}" ] && checkyesno "${rcvar}"; then
+    nmbd_enable=${nmbd_enable=YES}
+    smbd_enable=${smbd_enable=YES}
+%%WINBIND%%    # Check that winbindd is actually configured
+%%WINBIND%%    if [ -n "${samba_idmap}" ]; then
+%%WINBIND%%	winbindd_enable=${winbindd_enable=YES}
+%%WINBIND%%    fi
+fi
+# XXX: Hack to enable check of the dependent variables
+eval real_${rcvar}="\${${rcvar}:=NO}"	${rcvar}=YES
+# nmbd
+nmbd_enable=${nmbd_enable:=NO}
+nmbd_flags=${nmbd_flags="-D"}
+set_rcvar nmbd_enable "NO" "nmb daemon" >/dev/null
+# smbd
+smbd_enable=${smbd_enable:=NO}
+smbd_flags=${smbd_flags="-D"}
+set_rcvar smbd_enable "NO" "smb daemon" >/dev/null
+%%WINBIND%%# winbindd
+%%WINBIND%%winbindd_enable=${winbindd_enable:=NO}
+%%WINBIND%%winbindd_flags=${winbindd_flags=''}
+%%WINBIND%%set_rcvar winbindd_enable "NO" "winbind daemon" >/dev/null
 # Custom commands
 extra_commands="reload status"
 start_precmd="samba_start_precmd"
@@ -40,40 +75,13 @@ restart_precmd="samba_checkconfig"
 reload_precmd="samba_checkconfig"
 reload_cmd="samba_reload_cmd"
 rcvar_cmd="samba_rcvar_cmd"
-# Defaults
-samba_enable=${samba_enable:=NO}
-samba_config_default="%%SAMBA_CONFDIR%%/%%SAMBA_CONFIG%%"
-samba_config=${samba_config="${samba_config_default}"}
-command_args=${samba_config:+-s "${samba_config}"}
-testparm_command="%%PREFIX%%/bin/testparm"
-smbcontrol_command="%%PREFIX%%/bin/smbcontrol"
-# Fetch parameters from configuration file
-samba_parm="${testparm_command} -s -v --parameter-name"
-%%WINBIND%%samba_idmap=$(${samba_parm} 'idmap uid' "${samba_config}" 2>/dev/null)
-samba_lockdir=$(${samba_parm} 'lock directory' "${samba_config}" 2>/dev/null)
-# Setup dependent variables
-if [ -n "${rcvar}" ] && checkyesno "${rcvar}"; then
-    nmbd_enable=${nmbd_enable=YES}
-    smbd_enable=${smbd_enable=YES}
-%%WINBIND%%    # Check that winbindd is actually configured
-%%WINBIND%%    if [ -n "${samba_idmap}" ]; then
-%%WINBIND%%	winbindd_enable=${winbindd_enable=YES}
-%%WINBIND%%    fi
-fi
-# Defaults for dependent variables
-nmbd_enable=${nmbd_enable:=NO}
-nmbd_flags=${nmbd_flags="-D"}
-smbd_enable=${smbd_enable:=NO}
-smbd_flags=${smbd_flags="-D"}
-%%WINBIND%%winbindd_enable=${winbindd_enable:=NO}
-%%WINBIND%%winbindd_flags=${winbindd_flags=''}
+#
 samba_daemons="nmbd smbd"
 %%WINBIND%%samba_daemons="${samba_daemons} winbindd"
-# Hack to enable check of dependent variables
-eval real_${rcvar}="\${${rcvar}:=NO}"	${rcvar}=YES
 # Requirements
 required_files="${samba_config}"
 required_dirs="${samba_lockdir}"
+
 samba_checkconfig() {
     echo -n "Performing sanity check on Samba configuration: "
     if ${testparm_command} -s ${samba_config:+"${samba_config}"} >/dev/null 2>&1; then
@@ -82,6 +90,7 @@ samba_checkconfig() {
 	echo "FAILED"
 	return 1
     fi
+    return 0
 }
 
 samba_start_precmd() {
@@ -99,20 +108,13 @@ samba_start_precmd() {
 }
 
 samba_rcvar_cmd() {
+    local rcvar
+    rcvar=$(set_rcvar ${name})
+    eval ${rcvar}=\${real_${rcvar}}
     # Prevent recursive calling
     unset "${rc_arg}_cmd" "${rc_arg}_precmd" "${rc_arg}_postcmd"
     # Check master variable
-    echo "# ${name}"
-    if [ -n "${rcvar}" ]; then
-	# Use original configured value
-	if checkyesno "real_${rcvar}"; then
-	    echo "\$${rcvar}=YES"
-	else
-	    echo "\$${rcvar}=NO"
-	fi
-    fi
-    # Check dependent variables
-    samba_cmd "${_rc_prefix}${rc_arg}" ${rc_extra_args}
+    run_rc_command "${_rc_prefix}${rc_arg}" ${rc_extra_args}
 }
 
 samba_reload_cmd() {
@@ -121,7 +123,7 @@ samba_reload_cmd() {
     unset "${rc_arg}_cmd" "${rc_arg}_precmd" "${rc_arg}_postcmd"
     # Apply to all daemons
     for name in ${samba_daemons}; do
-    	rcvar=$(set_rcvar)
+    	rcvar=$(set_rcvar ${name})
 	command="%%PREFIX%%/sbin/${name}"
 	pidfile="%%SAMBA_RUNDIR%%/${name}${pid_extra}.pid"
 	# Daemon should be enabled and running
@@ -137,30 +139,30 @@ samba_reload_cmd() {
 }
 
 samba_cmd() {
-    local name rcvar command pidfile samba_daemons result _result
+    local name rcvar rcvars v command pidfile samba_daemons result
     # Prevent recursive calling
     unset "${rc_arg}_cmd" "${rc_arg}_precmd" "${rc_arg}_postcmd"
-    # Stop processes in the reverse to order
+    # Stop processes in the reverse order
     if [ "${rc_arg}" = "stop" ] ; then
 	samba_daemons=$(reverse_list ${samba_daemons})
     fi
-    # Apply to all daemons
+    # Assume success
     result=0
+    # Apply to all daemons
     for name in ${samba_daemons}; do
-	rcvar=$(set_rcvar)
+	rcvar=$(set_rcvar ${name})
+	# XXX
+	rcvars=''; v=''
 	command="%%PREFIX%%/sbin/${name}"
 	pidfile="%%SAMBA_RUNDIR%%/${name}${pid_extra}.pid"
 	# Daemon should be enabled and running
 	if [ -n "${rcvar}" ] && checkyesno "${rcvar}"; then
 	    run_rc_command "${_rc_prefix}${rc_arg}" ${rc_extra_args}
-	    # Collect return values
-	    _result=$?
-	    if [ ${_result} != 0 ]; then
-		result=${_result}
-	    fi
+	    # If any of the of the commands failed, take it as a total result
+	    result=$((${result} || $?))
 	fi
     done
-    return $result
+    return ${result}
 }
 
 run_rc_command "$1"
