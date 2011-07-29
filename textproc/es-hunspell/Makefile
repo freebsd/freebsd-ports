@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	es-hunspell
+PORTNAME=	hunspell
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://extensions.services.openoffice.org/e-files/1639/2/
+PKGNAMEPREFIX=	es-
 DISTNAME=	es_ANY
 EXTRACT_SUFX=	.oxt
 
@@ -21,27 +23,24 @@ LICENSE_COMB=	dual
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-ESALIASES=	es_AR es_BO es_CL es_CO es_CR es_CU es_DO es_EC es_GT es_HN es_MX \
-		es_NI es_PA es_PE es_PR es_PY es_SV es_US es_UY es_VE
+PLIST_FILES=	%%DATADIR%%/es_ES.aff \
+		%%DATADIR%%/es_ES.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
-PLIST_FILES=	share/hunspell/es_ES.aff \
-		share/hunspell/es_ES.dic
-
+ESALIASES=	es_AR es_BO es_CL es_CO es_CR es_CU es_DO es_EC es_GT es_HN \
+		es_MX es_NI es_PA es_PE es_PR es_PY es_SV es_US es_UY es_VE
 .for ALIAS in ${ESALIASES}
-PLIST_FILES+=	share/hunspell/${ALIAS}.aff \
-		share/hunspell/${ALIAS}.dic
+PLIST_FILES+=	%%DATADIR%%/${ALIAS}.aff \
+		%%DATADIR%%/${ALIAS}.dic
 .endfor
 
-PLIST_DIRS=	share/hunspell
-
 do-install:
-	@${MKDIR} ${PREFIX}/share/hunspell
-	@${INSTALL_DATA} ${WRKDIR}/es_ANY.aff ${PREFIX}/share/hunspell/es_ES.aff
-	@${INSTALL_DATA} ${WRKDIR}/es_ANY.dic ${PREFIX}/share/hunspell/es_ES.dic
-	@cd ${PREFIX}/share/hunspell; \
-	for alias in ${ESALIASES}; do \
-		${LN} -s es_ES.aff $${alias}.aff ; \
-		${LN} -s es_ES.dic $${alias}.dic ; \
-	done
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKDIR}/es_ANY.aff ${DATADIR}/es_ES.aff
+	${INSTALL_DATA} ${WRKDIR}/es_ANY.dic ${DATADIR}/es_ES.dic
+.for ALIAS in ${ESALIASES}
+	${LN} -s es_ES.aff ${DATADIR}/${ALIAS}.aff
+	${LN} -s es_ES.dic ${DATADIR}/${ALIAS}.dic
+.endfor
 
 .include <bsd.port.mk>

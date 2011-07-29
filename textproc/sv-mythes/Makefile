@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sv-mythes
+PORTNAME=	mythes
 PORTVERSION=	2008.06.10
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
+PKGNAMEPREFIX=	sv-
 DISTNAME=	thes_sv_SE_v2
 
 MAINTAINER=	office@FreeBSD.org
@@ -18,18 +20,18 @@ LICENSE=	MIT
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	share/mythes/th_sv_SE.dat \
-		share/mythes/th_sv_SE.idx \
-		share/mythes/th_sv_FI.dat \
-		share/mythes/th_sv_FI.idx
-PLIST_DIRS=	share/mythes
+PLIST_FILES=	%%DATADIR%%/th_sv_SE.dat \
+		%%DATADIR%%/th_sv_SE.idx \
+		%%DATADIR%%/th_sv_FI.dat \
+		%%DATADIR%%/th_sv_FI.idx
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/mythes
-	@${INSTALL_DATA} ${WRKDIR}/th_sv_SE.* ${PREFIX}/share/mythes
-	@cd ${PREFIX}/share/mythes; \
-	${LN} -s th_sv_SE.dat th_sv_FI.dat; \
-	${LN} -s th_sv_SE.idx th_sv_FI.idx
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/th_sv_SE.dat ${WRKSRC}/th_sv_SE.idx ${DATADIR}/
+	${LN} -s th_sv_SE.dat ${DATADIR}/th_sv_FI.dat
+	${LN} -s th_sv_SE.idx ${DATADIR}/th_sv_FI.idx
 
 .include <bsd.port.mk>

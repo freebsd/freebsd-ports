@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	es-mythes
+PORTNAME=	mythes
 PORTVERSION=	20101002
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://openthes-es.berlios.de/download/
+PKGNAMEPREFIX=	es-
 DISTNAME=	OOo2-thes_es_ES
 
 MAINTAINER=	office@FreeBSD.org
@@ -18,27 +20,25 @@ LICENSE=	LGPL21
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
-ESALIASES=	es_AR es_BO es_CL es_CO es_CR es_CU es_DO es_EC es_GT es_HN es_MX \
-		es_NI es_PA es_PE es_PR es_PY es_SV es_US es_UY es_VE
+PLIST_FILES=	%%DATADIR%%/th_es_ES_v2.dat \
+		%%DATADIR%%/th_es_ES_v2.idx
+PLIST_DIRSTRY=	%%DATADIR%%
 
-PLIST_FILES=	share/mythes/th_es_ES_v2.dat \
-		share/mythes/th_es_ES_v2.idx
-
+ESALIASES=	es_AR es_BO es_CL es_CO es_CR es_CU es_DO es_EC es_GT es_HN \
+		es_MX es_NI es_PA es_PE es_PR es_PY es_SV es_US es_UY es_VE
 .for ALIAS in ${ESALIASES}
-PLIST_FILES+=	share/mythes/th_${ALIAS}_v2.dat \
-		share/mythes/th_${ALIAS}_v2.idx
+PLIST_FILES+=	%%DATADIR%%/th_${ALIAS}_v2.dat \
+		%%DATADIR%%/th_${ALIAS}_v2.idx
 .endfor
 
-PLIST_DIRS=	share/mythes
-
 do-install:
-	@${MKDIR} ${PREFIX}/share/mythes
-	@${INSTALL_DATA} ${WRKDIR}/th_es_ES_v2.* ${PREFIX}/share/mythes
-	@cd ${PREFIX}/share/mythes; \
-	for alias in ${ESALIASES}; do \
-	  ${LN} -s th_es_ES_v2.idx th_$${alias}_v2.idx ; \
-	  ${LN} -s th_es_ES_v2.dat th_$${alias}_v2.dat ; \
-	done
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/th_es_ES_v2.dat ${WRKSRC}/th_es_ES_v2.idx ${DATADIR}/
+.for ALIAS in ${ESALIASES}
+	${LN} -s th_es_ES_v2.dat ${DATADIR}/th_${ALIAS}_v2.dat
+	${LN} -s th_es_ES_v2.idx ${DATADIR}/th_${ALIAS}_v2.idx
+.endfor
 
 .include <bsd.port.mk>

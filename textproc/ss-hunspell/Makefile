@@ -5,11 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ss-hunspell
+PORTNAME=	hunspell
 PORTVERSION=	20110323
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	addons/46614
+PKGNAMEPREFIX=	ss-
 DISTNAME=	swati_spell_checker-${PORTVERSION}-tb+sm+fx+fn
 EXTRACT_SUFX=	.xpi
 
@@ -18,14 +20,15 @@ COMMENT=	Swati hunspell dictionaries
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/dictionaries
 
-PLIST_FILES=	share/hunspell/ss_ZA.aff \
-		share/hunspell/ss_ZA.dic
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/ss_ZA.aff \
+		%%DATADIR%%/ss_ZA.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hunspell
-	@${INSTALL_DATA} ${WRKDIR}/dictionaries/ss-ZA.aff ${PREFIX}/share/hunspell/ss_ZA.aff
-	@${INSTALL_DATA} ${WRKDIR}/dictionaries/ss-ZA.dic ${PREFIX}/share/hunspell/ss_ZA.dic
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/ss-ZA.aff ${DATADIR}/ss_ZA.aff
+	${INSTALL_DATA} ${WRKSRC}/ss-ZA.dic ${DATADIR}/ss_ZA.dic
 
 .include <bsd.port.mk>

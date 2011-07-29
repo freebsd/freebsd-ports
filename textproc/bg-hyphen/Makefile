@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	bg-hyphen
+PORTNAME=	hyphen
 PORTVERSION=	4.3
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/bgoffice/OpenOffice.org%20Hyphenation%20BG/${PORTVERSION}/
+PKGNAMEPREFIX=	bg-
 DISTNAME=	OOo-hyph-bg-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
@@ -20,11 +22,11 @@ LICENSE_COMB=	dual
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	share/hyphen/hyph_bg_BG.dic
-PLIST_DIRS=	share/hyphen
+PLIST_FILES=	%%DATADIR%%/hyph_bg_BG.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hyphen/
-	@${INSTALL_DATA} ${WRKSRC}/hyph_bg_BG.dic ${PREFIX}/share/hyphen
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/hyph_bg_BG.dic ${DATADIR}/
 
 .include <bsd.port.mk>

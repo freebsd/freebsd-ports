@@ -5,11 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	tn-hunspell
+PORTNAME=	hunspell
 PORTVERSION=	20110323
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	addons/46617
+PKGNAMEPREFIX=	tn-
 DISTNAME=	tswana_spell_checker-${PORTVERSION}-tb+sm+fx+fn
 EXTRACT_SUFX=	.xpi
 
@@ -18,19 +20,19 @@ COMMENT=	Tswana hunspell dictionaries
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/dictionaries
 
-PLIST_FILES=	share/hunspell/tn_ZA.aff \
-		share/hunspell/tn_ZA.dic \
-		share/hunspell/tn_BW.aff \
-		share/hunspell/tn_BW.dic
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/tn_BW.aff \
+		%%DATADIR%%/tn_BW.dic \
+		%%DATADIR%%/tn_ZA.aff \
+		%%DATADIR%%/tn_ZA.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hunspell
-	@${INSTALL_DATA} ${WRKDIR}/dictionaries/tn-ZA.aff ${PREFIX}/share/hunspell/tn_ZA.aff
-	@${INSTALL_DATA} ${WRKDIR}/dictionaries/tn-ZA.dic ${PREFIX}/share/hunspell/tn_ZA.dic
-	@cd ${PREFIX}/share/hunspell ; \
-	${LN} -s tn_ZA.aff tn_BW.aff ; \
-	${LN} -s tn_ZA.dic tn_BW.dic
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/tn-ZA.aff ${DATADIR}/tn_ZA.aff
+	${INSTALL_DATA} ${WRKSRC}/tn-ZA.dic ${DATADIR}/tn_ZA.dic
+	${LN} -s tn_ZA.aff ${DATADIR}/tn_BW.aff
+	${LN} -s tn_ZA.dic ${DATADIR}/tn_BW.dic
 
 .include <bsd.port.mk>

@@ -5,11 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sr-hunspell
+PORTNAME=	hunspell
 PORTVERSION=	0.18
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	addons/10894
+PKGNAMEPREFIX=	sr-
 DISTNAME=	serbian_dictionary-${PORTVERSION}-fx+tb+sm
 EXTRACT_SUFX=	.xpi
 
@@ -18,20 +20,19 @@ COMMENT=	Serbian hunspell dictionaries
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/dictionaries
 
-PLIST_FILES=	share/hunspell/sr_YU.aff \
-		share/hunspell/sr_YU.dic \
-		share/hunspell/sh_YU.aff \
-		share/hunspell/sh_YU.dic
-
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/sh_YU.aff \
+		%%DATADIR%%/sh_YU.dic \
+		%%DATADIR%%/sr_YU.aff \
+		%%DATADIR%%/sr_YU.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hunspell
-	@${INSTALL_DATA} ${WRKDIR}/dictionaries/sr-RS-Cyrl.aff ${PREFIX}/share/hunspell/sr_YU.aff
-	@${INSTALL_DATA} ${WRKDIR}/dictionaries/sr-RS-Cyrl.dic ${PREFIX}/share/hunspell/sr_YU.dic
-	@${INSTALL_DATA} ${WRKDIR}/dictionaries/sr-RS-Latn.aff ${PREFIX}/share/hunspell/sh_YU.aff
-	@${INSTALL_DATA} ${WRKDIR}/dictionaries/sr-RS-Latn.dic ${PREFIX}/share/hunspell/sh_YU.dic
-
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/sr-RS-Latn.aff ${DATADIR}/sh_YU.aff
+	${INSTALL_DATA} ${WRKSRC}/sr-RS-Latn.dic ${DATADIR}/sh_YU.dic
+	${INSTALL_DATA} ${WRKSRC}/sr-RS-Cyrl.aff ${DATADIR}/sr_YU.aff
+	${INSTALL_DATA} ${WRKSRC}/sr-RS-Cyrl.dic ${DATADIR}/sr_YU.dic
 
 .include <bsd.port.mk>

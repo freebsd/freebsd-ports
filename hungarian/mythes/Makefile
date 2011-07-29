@@ -7,6 +7,7 @@
 
 PORTNAME=	mythes
 PORTVERSION=	2003.09.29
+PORTREVISION=	1
 CATEGORIES=	hungarian textproc
 MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
 DISTNAME=	thes_hu_HU
@@ -18,13 +19,14 @@ LICENSE=	GPLv2
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	share/mythes/th_hu_HU.dat \
-		share/mythes/th_hu_HU.idx
-PLIST_DIRS=	share/mythes
+PLIST_FILES=	%%DATADIR%%/th_hu_HU.dat \
+		%%DATADIR%%/th_hu_HU.idx
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/mythes
-	@${INSTALL_DATA} ${WRKDIR}/th_hu_HU.* ${PREFIX}/share/mythes
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/th_hu_HU.dat ${WRKSRC}/th_hu_HU.idx ${DATADIR}/
 
 .include <bsd.port.mk>

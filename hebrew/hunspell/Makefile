@@ -7,6 +7,7 @@
 
 PORTNAME=	hunspell
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	hebrew textproc
 MASTER_SITES=	http://hspell.ivrix.org.il/
 DISTNAME=	hspell-${PORTVERSION}
@@ -16,22 +17,21 @@ COMMENT=	Hunspell hebrew dictionary
 
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
-GNU_CONFIGURE=	yes
+ALL_TARGET=	myspell
 CONFIGURE_ARGS=	--enable-fatverb
+GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
-ALL_TARGET=	myspell
 
-PLIST_FILES=	share/hunspell/he.aff \
-		share/hunspell/he.dic
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/he.aff \
+		%%DATADIR%%/he.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 post-patch:
-		@${REINPLACE_CMD} 's|/usr/bin/perl|${PERL}|g' ${WRKSRC}/pmerge
+	@${REINPLACE_CMD} 's|/usr/bin/perl|${PERL}|g' ${WRKSRC}/pmerge
+
 do-install:
-		@${MKDIR} ${PREFIX}/share/hunspell
-		@${INSTALL_DATA} ${WRKSRC}/he.aff \
-			${WRKSRC}/he.dic \
-			${PREFIX}/share/hunspell/
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/he.aff ${WRKSRC}/he.dic ${DATADIR}/
 
 .include <bsd.port.mk>

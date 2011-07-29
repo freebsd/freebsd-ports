@@ -5,11 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	yi-hunspell
+PORTNAME=	hunspell
 PORTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	addons/222538
+PKGNAMEPREFIX=	yi-
 DISTNAME=	yiddish_spell_checker__yivo_-${PORTVERSION}-fx+tb+sm+fn
 EXTRACT_SUFX=	.xpi
 
@@ -18,13 +20,14 @@ COMMENT=	Yiddish hunspell dictionaries
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/dictionaries
 
-PLIST_FILES=	share/hunspell/yi.aff \
-		share/hunspell/yi.dic
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/yi.aff \
+		%%DATADIR%%/yi.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hunspell
-	@${INSTALL_DATA} ${WRKDIR}/dictionaries/* ${PREFIX}/share/hunspell/
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/yi.aff ${WRKSRC}/yi.dic ${DATADIR}/
 
 .include <bsd.port.mk>

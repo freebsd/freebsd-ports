@@ -5,11 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	xh-hunspell
+PORTNAME=	hunspell
 PORTVERSION=	20110323
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	addons/46599
+PKGNAMEPREFIX=	xh-
 DISTNAME=	xhosa_spell_checker-${PORTVERSION}-tb+fn+fx+sm
 EXTRACT_SUFX=	.xpi
 
@@ -18,14 +20,15 @@ COMMENT=	Xhosa hunspell dictionaries
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/dictionaries
 
-PLIST_FILES=	share/hunspell/xh.aff \
-		share/hunspell/xh.dic
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/xh.aff \
+		%%DATADIR%%/xh.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hunspell
-	@${INSTALL_DATA} ${WRKDIR}/dictionaries/xh-ZA.aff ${PREFIX}/share/hunspell/xh.aff
-	@${INSTALL_DATA} ${WRKDIR}/dictionaries/xh-ZA.dic ${PREFIX}/share/hunspell/xh.dic
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/xh-ZA.aff ${DATADIR}/xh.aff
+	${INSTALL_DATA} ${WRKSRC}/xh-ZA.dic ${DATADIR}/xh.dic
 
 .include <bsd.port.mk>

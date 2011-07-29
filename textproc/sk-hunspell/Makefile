@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sk-hunspell
+PORTNAME=	hunspell
 PORTVERSION=	20110228
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.sk-spell.sk.cx/files/
+PKGNAMEPREFIX=	sk-
 DISTNAME=	hunspell-sk-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
@@ -20,12 +22,12 @@ LICENSE_COMB=	dual
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	share/hunspell/sk_SK.aff \
-		share/hunspell/sk_SK.dic
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/sk_SK.aff \
+		%%DATADIR%%/sk_SK.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hunspell
-	@${INSTALL_DATA} ${WRKSRC}/sk_SK* ${PREFIX}/share/hunspell
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/sk_SK.aff ${WRKSRC}/sk_SK.dic ${DATADIR}/
 
 .include <bsd.port.mk>

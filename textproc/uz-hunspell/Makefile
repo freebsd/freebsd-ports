@@ -5,26 +5,27 @@
 # $FreeBSD$
 #
 
-PORTNAME=	uz-hunspell
+PORTNAME=	hunspell
 PORTVERSION=	0.6
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www-user.uni-bremen.de/~kmashrab/uzbek-word-list/
+PKGNAMEPREFIX=	uz-
 DISTNAME=	uzbek-wordlist-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Uzbek hunspell dictionaries
 
 USE_BZIP2=	yes
-WRKSRC=	${WRKDIR}/${DISTNAME}/hunspell
 ALL_TARGET=	uz_UZ.dic
+WRKSRC=		${WRKDIR}/${DISTNAME}/hunspell
 
-PLIST_FILES=	share/hunspell/uz_UZ.dic \
-		share/hunspell/uz_UZ.aff
-
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/uz_UZ.aff \
+		%%DATADIR%%/uz_UZ.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hunspell
-	@${INSTALL_DATA} ${WRKSRC}/uz* ${PREFIX}/share/hunspell
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/uz_UZ.aff ${WRKSRC}/uz_UZ.dic ${DATADIR}/
 
 .include <bsd.port.mk>

@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	ti-hunspell
+PORTNAME=	hunspell
 PORTVERSION=	20090911
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.cs.ru.nl/~biniam/geez/dict/
+PKGNAMEPREFIX=	ti-
 DISTNAME=	ti_ER
 
 MAINTAINER=	office@FreeBSD.org
@@ -16,18 +18,18 @@ COMMENT=	Tigrigna hunspell dictionaries
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	share/hunspell/ti_ER.dic \
-		share/hunspell/ti_ER.aff \
-		share/hunspell/ti_ET.dic \
-		share/hunspell/ti_ET.aff
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/ti_ER.dic \
+		%%DATADIR%%/ti_ER.aff \
+		%%DATADIR%%/ti_ET.dic \
+		%%DATADIR%%/ti_ET.aff
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hunspell
-	@${INSTALL_DATA} ${WRKDIR}/ti_ER* ${PREFIX}/share/hunspell
-	@cd ${PREFIX}/share/hunspell; \
-	${LN} -s ti_ER.aff ti_ET.aff; \
-	${LN} -s ti_ER.dic ti_ET.dic
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/ti_ER.aff ${WRKSRC}/ti_ER.dic ${DATADIR}/
+	${LN} -s ti_ER.aff ${DATADIR}/ti_ET.aff
+	${LN} -s ti_ER.dic ${DATADIR}/ti_ET.dic
 
 .include <bsd.port.mk>

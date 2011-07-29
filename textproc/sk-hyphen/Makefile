@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sk-hyphen
+PORTNAME=	hyphen
 PORTVERSION=	2004.04.15
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
+PKGNAMEPREFIX=	sk-
 DISTNAME=	hyph_sk_SK
 
 MAINTAINER=	office@FreeBSD.org
@@ -19,11 +21,11 @@ LICENSE=	LGPL21
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	share/hyphen/hyph_sk_SK.dic
-PLIST_DIRS=	share/hyphen
+PLIST_FILES=	%%DATADIR%%/hyph_sk_SK.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hyphen
-	@${INSTALL_DATA} ${WRKDIR}/hyph_sk_SK.dic ${PREFIX}/share/hyphen
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKDIR}/hyph_sk_SK.dic ${DATADIR}/
 
 .include <bsd.port.mk>

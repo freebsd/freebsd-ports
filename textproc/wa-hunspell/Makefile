@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	wa-hunspell
+PORTNAME=	hunspell
 PORTVERSION=	0.4.15
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://chanae.walon.org/walon/
+PKGNAMEPREFIX=	wa-
 DISTNAME=	aspell-wa-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
@@ -16,18 +18,15 @@ COMMENT=	Wallon hunspell dictionaries
 
 BUILD_DEPENDS=	aspell:${PORTSDIR}/textproc/aspell
 
+USE_BZIP2=	yes
 ALL_TARGET=	myspell
 
-USE_BZIP2=	yes
-WRKSRC=	${WRKDIR}/${DISTNAME}
-
-PLIST_FILES=	share/hunspell/wa.aff \
-		share/hunspell/wa.dic
-
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/wa.aff \
+		%%DATADIR%%/wa.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hunspell
-	@${INSTALL_DATA} ${WRKSRC}/wa.aff ${WRKSRC}/wa.dic ${PREFIX}/share/hunspell
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/wa.aff ${WRKSRC}/wa.dic ${DATADIR}/
 
 .include <bsd.port.mk>

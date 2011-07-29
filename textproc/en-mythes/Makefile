@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	en-mythes
+PORTNAME=	mythes
 PORTVERSION=	2006.12.08
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
+PKGNAMEPREFIX=	en-
 DISTNAME=	thes_en_US_v2
 
 MAINTAINER=	office@FreeBSD.org
@@ -18,27 +20,25 @@ LICENSE=	LGPL21
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+
+PLIST_FILES=	%%DATADIR%%/th_en_US_v2.dat \
+		%%DATADIR%%/th_en_US_v2.idx
+PLIST_DIRSTRY=	%%DATADIR%%
 
 USALIASES=	en_AG en_AU en_BS en_BW en_BZ en_CA en_DK en_GB en_GH en_IE \
 		en_IN en_JM en_NA en_NG en_NZ en_PH en_SG en_TT en_ZA en_ZW
-
-PLIST_FILES=	share/mythes/th_en_US_v2.dat \
-		share/mythes/th_en_US_v2.idx
-
 .for ALIAS in ${USALIASES}
-PLIST_FILES+=	share/mythes/th_${ALIAS}_v2.dat \
-		share/mythes/th_${ALIAS}_v2.idx
+PLIST_FILES+=	%%DATADIR%%/th_${ALIAS}_v2.dat \
+		%%DATADIR%%/th_${ALIAS}_v2.idx
 .endfor
 
-PLIST_DIRS=	share/mythes
-
 do-install:
-	@${MKDIR} ${PREFIX}/share/mythes
-	@${INSTALL_DATA} ${WRKDIR}/th_en_US_v2.* ${PREFIX}/share/mythes
-	@cd ${PREFIX}/share/mythes; \
-	for alias in ${USALIASES}; do \
-	  ${LN} -s th_en_US_v2.idx th_$${alias}_v2.idx ; \
-	  ${LN} -s th_en_US_v2.dat th_$${alias}_v2.dat ; \
-	done
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/th_en_US_v2.dat ${WRKSRC}/th_en_US_v2.idx ${DATADIR}/
+.for ALIAS in ${USALIASES}
+	${LN} -s th_en_US_v2.dat ${DATADIR}/th_${ALIAS}_v2.dat
+	${LN} -s th_en_US_v2.idx ${DATADIR}/th_${ALIAS}_v2.idx
+.endfor
 
 .include <bsd.port.mk>

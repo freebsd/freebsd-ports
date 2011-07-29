@@ -7,6 +7,7 @@
 
 PORTNAME=	hyphen
 PORTVERSION=	2007.05.17
+PORTREVISION=	1
 CATEGORIES=	hungarian textproc
 MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
 DISTNAME=	hyph_hu_HU
@@ -19,11 +20,11 @@ LICENSE=	LGPL21
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	share/hyphen/hyph_hu_HU.dic
-PLIST_DIRS=	share/hyphen
+PLIST_FILES=	%%DATADIR%%/hyph_hu_HU.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hyphen
-	@${INSTALL_DATA} ${WRKDIR}/hyph_hu_HU.dic ${PREFIX}/share/hyphen
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKDIR}/hyph_hu_HU.dic ${DATADIR}/
 
 .include <bsd.port.mk>

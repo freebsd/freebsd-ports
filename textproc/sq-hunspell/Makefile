@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	sq-hunspell
+PORTNAME=	hunspell
 PORTVERSION=	1.6.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.shkenca.org/shkarkime/
+PKGNAMEPREFIX=	sq-
 DISTNAME=	myspell-sq_AL-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
@@ -17,12 +19,12 @@ COMMENT=	Albanian hunspell dictionaries
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	share/hunspell/sq_AL.aff \
-		share/hunspell/sq_AL.dic
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/sq_AL.aff \
+		%%DATADIR%%/sq_AL.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hunspell
-	@${INSTALL_DATA} ${WRKSRC}/sq_AL.* ${PREFIX}/share/hunspell
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/sq_AL.aff ${WRKSRC}/sq_AL.dic ${DATADIR}/
 
 .include <bsd.port.mk>

@@ -5,10 +5,12 @@
 # $FreeBSD$
 #
 
-PORTNAME=	cs-mythes
+PORTNAME=	mythes
 PORTVERSION=	2007.09.26
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
+PKGNAMEPREFIX=	cs-
 DISTNAME=	thes_cs_CZ_v2
 
 MAINTAINER=	office@FreeBSD.org
@@ -18,13 +20,14 @@ LICENSE=	BSD
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
-PLIST_FILES=	share/mythes/th_cs_CZ_v2.dat \
-		share/mythes/th_cs_CZ_v2.idx
-PLIST_DIRS=	share/mythes
+PLIST_FILES=	%%DATADIR%%/th_cs_CZ_v2.dat \
+		%%DATADIR%%/th_cs_CZ_v2.idx
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/mythes
-	@${INSTALL_DATA} ${WRKDIR}/th_cs_CZ_v2.* ${PREFIX}/share/mythes
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/th_cs_CZ_v2.dat ${WRKSRC}/th_cs_CZ_v2.idx ${DATADIR}/
 
 .include <bsd.port.mk>

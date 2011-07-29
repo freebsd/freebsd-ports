@@ -7,6 +7,7 @@
 
 PORTNAME=	hunspell
 PORTVERSION=	20080604
+PORTREVISION=	1
 CATEGORIES=	vietnamese textproc
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	vi_VN
@@ -14,18 +15,17 @@ DISTNAME=	vi_VN
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Hunspell vietnamese dictionary
 
-PROJECTHOST=	hunspell-spellcheck-vi
 USE_ZIP=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+PROJECTHOST=	hunspell-spellcheck-vi
 
-PLIST_FILES=	share/hunspell/vi_VN.aff \
-		share/hunspell/vi_VN.dic
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/vi_VN.aff \
+		%%DATADIR%%/vi_VN.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-		@${MKDIR} ${PREFIX}/share/hunspell
-		@${INSTALL_DATA} ${WRKDIR}/vi_VN.aff \
-			${WRKDIR}/vi_VN.dic \
-			${PREFIX}/share/hunspell/
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/vi_VN.aff ${WRKSRC}/vi_VN.dic ${DATADIR}/
 
 .include <bsd.port.mk>

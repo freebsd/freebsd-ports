@@ -5,11 +5,13 @@
 # $FreeBSD$
 #
 
-PORTNAME=	tk-hunspell
+PORTNAME=	hunspell
 PORTVERSION=	0.01
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	addons/204314
+PKGNAMEPREFIX=	tk-
 DISTNAME=	turkmen_spell_checker-${PORTVERSION}-fx+tb+sm
 EXTRACT_SUFX=	.xpi
 
@@ -18,13 +20,14 @@ COMMENT=	Turkmen hunspell dictionaries
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/dictionaries
 
-PLIST_FILES=	share/hunspell/tk.aff \
-		share/hunspell/tk.dic
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/tk.aff \
+		%%DATADIR%%/tk.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/hunspell
-	@${INSTALL_DATA} ${WRKDIR}/dictionaries/tk* ${PREFIX}/share/hunspell/
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/tk.aff ${WRKSRC}/tk.dic ${DATADIR}/
 
 .include <bsd.port.mk>

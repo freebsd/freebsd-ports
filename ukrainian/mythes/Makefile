@@ -5,8 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mythe
+PORTNAME=	mythes
 PORTVERSION=	1.6.5
+PORTREVISION=	1
 CATEGORIES=	ukrainian textproc
 MASTER_SITES=	SF/ispell-uk/spell-uk/${PORTVERSION}
 DISTNAME=	spell-uk-${PORTVERSION}
@@ -20,15 +21,15 @@ LICENSE_COMB=	dual
 
 USE_PERL5_BUILD=	yes
 
-PLIST_FILES=	share/mythes/th_uk_UA.dat \
-		share/mythes/th_uk_UA.idx
-PLIST_DIRS=	share/mythes
+PLIST_FILES=	%%DATADIR%%/th_uk_UA.dat \
+		%%DATADIR%%/th_uk_UA.idx
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-build:
 	@${PERL} ${WRKSRC}/bin/th_gen_idx.pl < ${WRKSRC}/src/thesaurus/th_uk_UA.dat > ${WRKSRC}/src/thesaurus/th_uk_UA.idx
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/mythes
-	@${INSTALL_DATA} ${WRKSRC}/src/thesaurus/th_uk_UA.* ${PREFIX}/share/mythes
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/src/thesaurus/th_uk_UA.dat ${WRKSRC}/src/thesaurus/th_uk_UA.idx ${DATADIR}/
 
 .include <bsd.port.mk>
