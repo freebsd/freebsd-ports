@@ -12,6 +12,7 @@
     SUBDIR += bdftopcf
     SUBDIR += bitstream-vera
     SUBDIR += c64bdf
+    SUBDIR += cantarell-fonts
     SUBDIR += charis
     SUBDIR += code2000
     SUBDIR += code2001
