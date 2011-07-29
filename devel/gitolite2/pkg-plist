@@ -1,0 +1,34 @@
+bin/gl-auth-command
+bin/gl-setup
+libexec/gitolite/gitolite.pm
+libexec/gitolite/gitolite_env.pm
+libexec/gitolite/gitolite_rc.pm
+libexec/gitolite/gl-auth-command
+libexec/gitolite/gl-compile-conf
+libexec/gitolite/gl-conf-convert
+libexec/gitolite/gl-dont-panic
+libexec/gitolite/gl-install
+libexec/gitolite/gl-mirror-shell
+libexec/gitolite/gl-mirror-sync
+libexec/gitolite/gl-query-rc
+libexec/gitolite/gl-setup
+libexec/gitolite/gl-setup-authkeys
+libexec/gitolite/gl-time
+libexec/gitolite/gl-tool
+libexec/gitolite/sshkeys-lint
+%%DATADIR%%/conf/example.conf
+%%DATADIR%%/conf/example.gitolite.rc
+%%DATADIR%%/conf/VERSION
+%%DATADIR%%/hooks/common/gitolite-hooked
+%%DATADIR%%/hooks/common/gl-pre-git.hub-sample
+%%DATADIR%%/hooks/common/post-receive.mirrorpush
+%%DATADIR%%/hooks/common/update
+%%DATADIR%%/hooks/common/update.secondary.sample
+%%DATADIR%%/hooks/gitolite-admin/post-update
+@dirrm %%DATADIR%%/conf
+@dirrm %%DATADIR%%/hooks/gitolite-admin
+@dirrm %%DATADIR%%/hooks/common
+@dirrm %%DATADIR%%/hooks
+@dirrm %%DATADIR%%
+@dirrm libexec/gitolite
+%%GITUSER%%@dirrmtry git
