@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jpmobile
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	japanese www rubygems
 MASTER_SITES=	RG
 
@@ -27,7 +27,7 @@ OPTIONS=	GEOKIT		"Run with geokit" Off \
 
 .include <bsd.port.options.mk>
 
-.if defined(WITH_GEOKIT)
+.if !defined(WITHOUT_GEOKIT)
 RUN_DEPENDS+=	rubygem-geokit>=1.5.0:${PORTSDIR}/graphics/rubygem-geokit
 .endif
 
