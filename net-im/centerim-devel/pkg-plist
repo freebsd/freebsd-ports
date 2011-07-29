@@ -1,8 +1,8 @@
-bin/centerim
-bin/cimformathistory
-bin/cimextracthistory.pl
-bin/cimconv
 bin/CenterIMLog2HTML.py
+bin/centerim
+bin/cimconv
+bin/cimextracthistory.pl
+bin/cimformathistory
 %%DATADIR%%/email.wav
 %%DATADIR%%/msg.wav
 %%DATADIR%%/offline.wav
@@ -24,6 +24,6 @@ bin/CenterIMLog2HTML.py
 %%NLS%%share/locale/ru/LC_MESSAGES/centerim.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/centerim.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/centerim.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/centerim.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/centerim.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/centerim.mo
 @dirrm %%DATADIR%%
