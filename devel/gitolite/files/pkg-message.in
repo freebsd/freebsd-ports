@@ -1,0 +1,18 @@
+==============================================================================
+
+Final gitolite installation instructions:
+
+Any ssh user can be a gitolite provider. Simply run the following command as
+the user:
+
+%%PREFIX%%/bin/gl-setup /path/to/admin.ssh.key.pub
+
+This will setup up the configuration files for gitolite, designating where the
+repositories are located and other options.
+
+The admin ssh key allows full access to the gitolite-admin repository where
+additional users and repositories can be configured.
+
+By default, the git user is created for use by gitolite.
+
+==============================================================================

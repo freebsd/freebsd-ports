@@ -1,0 +1,11 @@
+--- src/gl-install	2011-07-26 11:16:41.000000000 -0700
++++ src/gl-install	2011-07-28 07:30:17.000000000 -0700
+@@ -70,7 +70,7 @@
+ 
+ # "src" and "doc" will be overwritten on each install, but not conf
+ if ($GL_PACKAGE_HOOKS) {
+-    system("cp -R -p $GL_PACKAGE_HOOKS $GL_ADMINDIR");
++    system("cp -f -R -p $GL_PACKAGE_HOOKS $GL_ADMINDIR");
+ } else {
+     system("cp -R -p $ENV{GL_BINDIR}/../src $ENV{GL_BINDIR}/../doc $ENV{GL_BINDIR}/../hooks $GL_ADMINDIR");
+     system("cp       $ENV{GL_BINDIR}/../conf/VERSION                        $GL_ADMINDIR/conf");

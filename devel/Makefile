@@ -476,6 +476,7 @@
     SUBDIR += git-annex
     SUBDIR += git-merge-changelog
     SUBDIR += gitg
+    SUBDIR += gitolite
     SUBDIR += gittrac
     SUBDIR += glade2
     SUBDIR += glade3
