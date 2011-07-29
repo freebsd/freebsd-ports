@@ -39,8 +39,8 @@ PORTDOCS=	ChangeLog NEWS README*
 
 .if defined(WITH_PYTHON)
 USE_PYTHON=	yes
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gobject/__init__.py:${PORTSDIR}/devel/py-gobject \
-		${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen \
+USE_GNOME+=	pygobject
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen \
 		swig:${PORTSDIR}/devel/swig13
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 PLIST_SUB+=	PYTHON=""

@@ -17,10 +17,8 @@ DISTNAME=	py${PORTNAME}-gtk-${PORTVERSION}
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Python modules for Clutter-gtk toolkit
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gobject/__init__.py:${PORTSDIR}/devel/py-gobject \
-		${LOCALBASE}/libdata/pkgconfig/pyclutter-1.0.pc:${PORTSDIR}/graphics/py-clutter
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gobject/__init__.py:${PORTSDIR}/devel/py-gobject \
-		${LOCALBASE}/libdata/pkgconfig/pyclutter-1.0.pc:${PORTSDIR}/graphics/py-clutter
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pyclutter-1.0.pc:${PORTSDIR}/graphics/py-clutter
+RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/pyclutter-1.0.pc:${PORTSDIR}/graphics/py-clutter
 LIB_DEPENDS=	clutter-gtk-0.10:${PORTSDIR}/graphics/clutter-gtk
 
 USE_GMAKE=	yes
