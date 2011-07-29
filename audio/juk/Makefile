@@ -35,7 +35,6 @@ USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/kdemultimedia-${PORTVERSION}
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 CONFIGURE_ARGS+=CFLAGS=-I${LOCALBASE}/include/tunepimp-0.4 \
 		LDFLAGS=-L${LOCALBASE}/lib/tunepimp-0.4
 

@@ -25,7 +25,6 @@ USE_CMAKE=	yes
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	${PREFIX}/lib ${PREFIX}/lib/kde4
-INSTALLS_ICONS=	yes
 USE_KDE4=	kdehier kdeprefix kdelibs automoc4 runtime
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui network opengl script svg webkit \

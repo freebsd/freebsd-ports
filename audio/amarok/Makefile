@@ -30,7 +30,6 @@ USE_GETTEXT=	yes
 USE_SDL=	sdl
 USE_RUBY=	yes
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 
 OPTIONS=	GPOD "iPod support" on \
 		NJB "Creative Nomad and Dell support" on \

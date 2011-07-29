@@ -26,7 +26,6 @@ USE_AUTOTOOLS=	libtool
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-INSTALLS_ICONS=	yes
 CONFIGURE_ARGS += 	--with-qt-dir=${QT_PREFIX} \
 			--with-extra-includes=${LOCALBASE}/include \
 			--with-extra-libs=${LOCALBASE}/lib
