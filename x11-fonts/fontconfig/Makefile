@@ -3,12 +3,12 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-fonts/fontconfig/Makefile,v 1.25 2009/11/22 04:17:16 marcus Exp $
+#   $MCom: ports/x11-fonts/fontconfig/Makefile,v 1.29 2011/04/30 20:43:31 mezz Exp $
 #
 
 PORTNAME=	fontconfig
 PORTVERSION=	2.8.0
-PORTREVISION?=	0
+PORTREVISION?=	1
 PORTEPOCH?=	1
 CATEGORIES=	x11-fonts
 MASTER_SITES=	http://www.freedesktop.org/software/fontconfig/release/
@@ -28,9 +28,9 @@ USE_GNOME=	gnomehack pkgconfig ltverhack
 CONFIGURE_ARGS=	--with-confdir=${PREFIX}/etc/fonts \
 		--with-expat-includes=${LOCALBASE}/include \
 		--with-expat-lib=${LOCALBASE}/lib \
-		--with-default-fonts=${LOCALBASE}/lib/X11/fonts \
+		--with-default-fonts=${PREFIX}/share/fonts \
+		--with-add-fonts=${LOCALBASE}/lib/X11/fonts \
 		--with-cache-dir=/var/db/fontconfig \
-		--without-add-fonts \
 		--disable-docs
 MAKE_ENV=	LC_ALL=C
 MAKE_JOBS_SAFE=	yes
