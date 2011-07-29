@@ -5,10 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=	pl-hunspell
-PORTVERSION=	20110727
+PORTNAME=	hunspell
+PORTVERSION=	20110729
 CATEGORIES=	textproc
 MASTER_SITES=	http://sjp.pl/slownik/ort/
+PKGNAMEPREFIX=	pl-
 DISTNAME=	sjp-myspell-pl-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
@@ -20,16 +21,16 @@ LICENSE_COMB=	dual
 USE_ZIP=	yes
 NO_BUILD=	yes
 
-PLIST_FILES=	share/hunspell/pl_PL.aff \
-		share/hunspell/pl_PL.dic
-PLIST_DIRSTRY=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/pl_PL.aff \
+		%%DATADIR%%/pl_PL.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 post-extract:
 	@${MKDIR} ${WRKSRC}
 	@${EXTRACT_CMD} ${WRKDIR}/pl_PL.zip -d ${WRKSRC}
 
 do-install:
-	${MKDIR} ${PREFIX}/share/hunspell/
-	${INSTALL_DATA} ${WRKSRC}/pl_PL.aff ${WRKSRC}/pl_PL.dic ${PREFIX}/share/hunspell/
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/pl_PL.aff ${WRKSRC}/pl_PL.dic ${DATADIR}/
 
 .include <bsd.port.mk>
