@@ -14,6 +14,9 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/drupal/files/projects/
 MAINTAINER=	nick@foobar.org
 COMMENT=	Access control system for the Drupal based on Taxonomy classification
 
+DEPRECATED=	Use drupal[67] instead
+EXPIRATION_DATE=2011-08-29
+
 DRUPAL5_MODULE=	yes
 MODULE_FILES=	admin.css taxonomy_access.info taxonomy_access.install \
 		taxonomy_access.module taxonomy_access_admin.inc

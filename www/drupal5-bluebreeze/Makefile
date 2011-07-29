@@ -14,6 +14,9 @@ MASTER_SITES=	${MASTER_SITE_DRUPAL}
 MAINTAINER=	g_glasson@jimali.dyndns.org
 COMMENT=	The bluebreeze theme wants to combine style with good usability
 
+DEPRECATED=	Use drupal[67] instead
+EXPIRATION_DATE=2011-08-29
+
 DRUPAL5_THEME=	yes
 MODULE_DIRS=	bluebreeze-fixed images
 MODULE_FILES=	block.tpl.php box.tpl.php comment.tpl.php favicon.ico layout.css logo.png \

@@ -152,5 +152,5 @@ MODULE_FILES=	contrib/image_attach/tests/image_attach.test \
 DOC_FILES=	LICENSE.txt CHANGELOG.txt INSTALL.txt README.txt
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
+.include "${PORTSDIR}/Mk/bsd.drupal.mk"
 .include <bsd.port.post.mk>

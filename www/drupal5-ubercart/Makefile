@@ -14,6 +14,9 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	jeremy@algenta.com
 COMMENT=	Ubercart modules for Drupal 5
 
+DEPRECATED=	Use drupal[67] instead
+EXPIRATION_DATE=2011-08-29
+
 RUN_DEPENDS=	${LOCALBASE}/${DRUPAL_BASE}/sites/all/modules/tapir:${PORTSDIR}/www/drupal5-tapir \
 		${LOCALBASE}/${DRUPAL_BASE}/sites/all/modules/ubrowser:${PORTSDIR}/www/drupal5-ubrowser \
 		${LOCALBASE}/${DRUPAL_BASE}/sites/all/modules/token:${PORTSDIR}/www/drupal5-token \

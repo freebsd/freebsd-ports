@@ -12,6 +12,9 @@ CATEGORIES=	www
 MAINTAINER=	g_glasson@jimali.dyndns.org
 COMMENT=	Controls how content lists are generated
 
+DEPRECATED=	Use drupal[67] instead
+EXPIRATION_DATE=2011-08-29
+
 DRUPAL5_MODULE=	yes
 MODULE_DIRS=	po modules
 MODULE_FILES=	go-bottom.png go-down.png go-top.png go-up.png user-trash.png \

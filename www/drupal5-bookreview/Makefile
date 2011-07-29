@@ -14,6 +14,9 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	g_glasson@jimali.dyndns.org
 COMMENT=	The book review module allows a site to publish book reviews.
 
+DEPRECATED=	Use drupal[67] instead
+EXPIRATION_DATE=2011-08-29
+
 DRUPAL5_MODULE=	yes
 MODULE_DIRS=	po
 MODULE_FILES=	bookreview.info bookreview.install bookreview.module bookreview.css \

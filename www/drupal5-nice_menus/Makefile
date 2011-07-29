@@ -13,6 +13,9 @@ CATEGORIES=	www
 MAINTAINER=	nick@foobar.org
 COMMENT=	CSS / Javascript pull-down menus for Drupal
 
+DEPRECATED=	Use drupal[67] instead
+EXPIRATION_DATE=2011-08-29
+
 DRUPAL5_MODULE=	yes
 
 MODULE_FILES=	po/ja.po po/nice_menus.pot arrow-down.png arrow-left.png \

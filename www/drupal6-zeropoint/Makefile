@@ -145,6 +145,6 @@ MODULE_FILES=	_custom/custom-style.css _custom/headerimg/credits.txt \
 DOC_FILES=	CHANGELOG.txt LICENSE.txt README.txt
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
+.include "${PORTSDIR}/Mk/bsd.drupal.mk"
 .include <bsd.port.post.mk>
 

@@ -250,5 +250,5 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
+.include "${PORTSDIR}/Mk/bsd.drupal.mk"
 .include <bsd.port.post.mk>

@@ -12,6 +12,9 @@ CATEGORIES=	www
 MAINTAINER=	nick@foobar.org
 COMMENT=	A Drupal module which implements the TinyMCE WYSIWYG content editor
 
+DEPRECATED=	Use drupal[67] instead
+EXPIRATION_DATE=2011-08-29
+
 TINYMCEDIR=	www/tinymce
 TINYMCE_MODDIR=	${PORTNAME:C|^|${DRUPAL_MODDIR}/|}
 

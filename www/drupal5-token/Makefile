@@ -14,6 +14,9 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	jeremy@algenta.com
 COMMENT=	Token module for Drupal 5
 
+DEPRECATED=	Use drupal[67] instead
+EXPIRATION_DATE=2011-08-29
+
 DRUPAL5_MODULE=	yes
 MODULE_FILES=	token_cck.inc token_comment.inc token_node.inc \
 		token_taxonomy.inc token_user.inc token.inc \

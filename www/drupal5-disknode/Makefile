@@ -14,6 +14,9 @@ MASTER_SITES=	${MASTER_SITE_DRUPAL}
 MAINTAINER=	g_glasson@jimali.dyndns.org
 COMMENT=	File download module
 
+DEPRECATED=	Use drupal[67] instead
+EXPIRATION_DATE=2011-08-29
+
 DRUPAL5_MODULE=	yes
 MODULE_DIRS=	po
 MODULE_FILES=	po/disknode-module.pot disknode.browse.tpl.inc disknode.inc \

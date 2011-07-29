@@ -13,6 +13,9 @@ CATEGORIES=	www
 MAINTAINER=	nick@foobar.org
 COMMENT=	Allows web site owners to display ads on their site using Google AdSense
 
+DEPRECATED=	Use drupal[67] instead
+EXPIRATION_DATE=2011-08-29
+
 DRUPAL5_MODULE=	yes
 MODULE_FILES=	adsense.admin.inc adsense.info adsense.install \
 		adsense.module cse/help/adsense_cse.help.inc \

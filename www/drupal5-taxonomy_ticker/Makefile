@@ -14,6 +14,9 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/drupal/files/projects/
 MAINTAINER=	nick@foobar.org
 COMMENT=	Drupal module to provide scrolling ticker for content
 
+DEPRECATED=	Use drupal[67] instead
+EXPIRATION_DATE=2011-08-29
+
 DRUPAL5_MODULE=	yes
 
 MODULE_FILES=	taxonomy_ticker.css taxonomy_ticker.info \

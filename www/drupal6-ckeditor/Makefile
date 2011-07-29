@@ -317,7 +317,7 @@ DOC_FILES=	ckeditor/LICENSE.html ckeditor/INSTALL.html \
 		LICENSE.txt CHANGELOG.txt
 
 .include <bsd.port.pre.mk>
-.include "${.CURDIR}/../../www/drupal5/bsd.drupal.mk"
+.include "${PORTSDIR}/Mk/bsd.drupal.mk"
 
 post-extract:
 	@cd ${WRKSRC} && ${TAR} xf ${DISTDIR}/${DIST_SUBDIR}/ckeditor_3.3.tar.gz

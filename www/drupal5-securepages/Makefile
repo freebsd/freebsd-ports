@@ -14,6 +14,9 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set which pages are always going to be used in secure mode (SSL)
 
+DEPRECATED=	Use drupal[67] instead
+EXPIRATION_DATE=2011-08-29
+
 DRUPAL5_MODULE=	yes
 MODULE_DIRS=	po
 MODULE_FILES=	securepages.install securepages.module securepages.info

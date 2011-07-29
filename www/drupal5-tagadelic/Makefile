@@ -14,6 +14,9 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Tagadelic module for Drupal 5
 
+DEPRECATED=	Use drupal[67] instead
+EXPIRATION_DATE=2011-08-29
+
 DRUPAL5_MODULE=	yes
 MODULE_DIRS=	po
 MODULE_FILES=	tagadelic.info tagadelic.css tagadelic.module \
