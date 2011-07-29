@@ -6,25 +6,30 @@
 #
 
 PORTNAME=	jpmobile
-PORTVERSION=	0.1.6
+PORTVERSION=	1.0.0
 CATEGORIES=	japanese www rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A Rails plugin for Japanese mobile-phones
 
-RUN_DEPENDS=	rubygem-rails>=3.0.3:${PORTSDIR}/www/rubygem-rails
-
 LICENSE=	MIT
+
+RUN_DEPENDS=	rubygem-rails>=3.0.3:${PORTSDIR}/www/rubygem-rails
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-OPTIONS=	IPADDRESSES	"IP address validation support"	On \
+OPTIONS=	GEOKIT		"Run with geokit" Off \
+		IPADDRESSES	"IP address validation support"	On \
 		TERMINFO	"terminal information support"	On
 
 .include <bsd.port.options.mk>
+
+.if defined(WITH_GEOKIT)
+RUN_DEPENDS+=	rubygem-geokit>=1.5.0:${PORTSDIR}/graphics/rubygem-geokit
+.endif
 
 .if defined(WITH_IPADDRESSES)
 RUN_DEPENDS+=	ja-jpmobile-ipaddresses>=0.0.1:${PORTSDIR}/japanese/rubygem-jpmobile-ipaddresses
