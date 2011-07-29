@@ -30,6 +30,4 @@ USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
-INSTALLS_ICONS=	yes
-
 .include <bsd.port.mk>

@@ -28,7 +28,6 @@ USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}"	\
 		PTHREAD_LIBS="${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--disable-fast-perl
-INSTALLS_ICONS=	yes
 
 USE_FORTRAN=	yes
 FORTRANLIBDIR2=	`${DIRNAME} \\`${FC} -print-libgcc-file-name\\``/../../../

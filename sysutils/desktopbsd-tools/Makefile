@@ -23,8 +23,6 @@ USE_LDCONFIG=	yes
 USE_BZIP2=	yes
 USE_KDEBASE_VER=3
 
-INSTALLS_ICONS=	yes
-
 QMAKE?=		qmake
 QMAKESPEC?=	${LOCALBASE}/share/qt/mkspecs/freebsd-g++
 MAKE_ENV=	QTDIR="${QT_PREFIX}"
