@@ -25,7 +25,20 @@ USE_GMAKE=	yes
 
 pre-configure:
 	@${ECHO_CMD} "--->  Configuring for zlib-${ZLIB_VERSION}"
-	@cd ${WRKDIR}/zlib-${ZLIB_VERSION} && ./configure -s
+	@(cd ${WRKDIR}/zlib-${ZLIB_VERSION} && \
+	    ${SET_LATE_CONFIGURE_ARGS} \
+	    if ! ${SETENV} CC="${CC}" CPP="${CPP}" CXX="${CXX}" \
+	    CFLAGS="${CFLAGS}" CPPFLAGS="${CPPFLAGS}" CXXFLAGS="${CXXFLAGS}" \
+	    INSTALL="/usr/bin/install -c ${_BINOWNGRP}" \
+	    INSTALL_DATA="${INSTALL_DATA}" \
+	    INSTALL_LIB="${INSTALL_LIB}" \
+	    INSTALL_PROGRAM="${INSTALL_PROGRAM}" \
+	    INSTALL_SCRIPT="${INSTALL_SCRIPT}" \
+	    ${CONFIGURE_ENV} ./${CONFIGURE_SCRIPT} --shared; then \
+		 ${ECHO_MSG} "===>  Script \"${CONFIGURE_SCRIPT}\" failed unexpectedly."; \
+		 (${ECHO_CMD} ${CONFIGURE_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
+		 ${FALSE}; \
+	    fi)
 
 pre-build:
 	@${ECHO_CMD} "--->  Building for zlib-${ZLIB_VERSION}"
