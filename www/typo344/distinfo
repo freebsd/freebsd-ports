@@ -1,2 +1,4 @@
-SHA256 (blankpackage-4.4.8.tar.gz) = 73eeadbd7ad5784b0cf493c1c770c028beef97c6294a55a45e285c8c1e4cd646
-SIZE (blankpackage-4.4.8.tar.gz) = 18440068
+SHA256 (typo3_src-4.4.9.tar.gz) = a1e8ecb9debc7b519deecd6dce52ffa2bdbc890de013bdc8efef19961e1c72f5
+SIZE (typo3_src-4.4.9.tar.gz) = 18532217
+SHA256 (dummy-4.4.9.tar.gz) = 968b1cca33f4556f1d6f210032f0f1e054a7b810ad76efbd9ce3f3ff39634745
+SIZE (dummy-4.4.9.tar.gz) = 7669
