@@ -934,7 +934,6 @@ bbe                             ports/textproc/bbe
 bbftp                           ports/ftp/bbftp
 bbjd                            ports/misc/bbjd
 bbkeys                          ports/x11-wm/bbkeys
-bblimage                        ports/science/bblimage
 bblog                           ports/www/bblog
 bbmail                          ports/mail/bbmail
 bbpager                         ports/x11-wm/bbpager
@@ -2356,7 +2355,6 @@ dhcping                         ports/net/dhcping
 dhcprelay                       ports/net/dhcprelay
 dhcprelya                       ports/net/dhcprelya
 dhex                            ports/editors/dhex
-dhid                            ports/dns/dhid
 dhisd                           ports/dns/dhisd
 dhttpd                          ports/www/dhttpd
 di                              ports/sysutils/di
@@ -4640,7 +4638,6 @@ gnome-icons-snow-apple          ports/x11-themes/gnome-icons-snow-apple
 gnome-icons-snowish             ports/x11-themes/gnome-icons-snowish
 gnome-icons-stylish             ports/x11-themes/gnome-icons-stylish
 gnome-icons-ximian-south        ports/x11-themes/gnome-icons-ximian-south
-gnome-jabber                    ports/net-im/gnome-jabber
 gnome-js-common                 ports/devel/gnome-js-common
 gnome-keyring                   ports/security/gnome-keyring
 gnome-keyring-sharp             ports/security/gnome-keyring-sharp
@@ -7694,6 +7691,7 @@ libGLw                          ports/graphics/libGLw
 libICE                          ports/x11/libICE
 libIDL                          ports/devel/libIDL
 libPropList                     ports/devel/libPropList
+libR                            ports/math/libR
 libRmath                        ports/math/libRmath
 libSM                           ports/x11/libSM
 libX11                          ports/x11/libX11
@@ -8193,7 +8191,7 @@ libqrencode                     ports/graphics/libqrencode
 libquantum                      ports/science/libquantum
 libquicktime                    ports/multimedia/libquicktime
 libquicktime-lame               ports/multimedia/libquicktime-lame
-librandlib                      ports/math/librandlib
+libr                            ports/math/libR
 libranlip                       ports/math/libranlip
 libraw                          ports/graphics/libraw
 librcc                          ports/devel/librcc
@@ -11059,6 +11057,7 @@ p5-Blog-Spam                    ports/www/p5-Blog-Spam
 p5-Bloom-Filter                 ports/textproc/p5-Bloom-Filter
 p5-Bot-BasicBot                 ports/irc/p5-Bot-BasicBot
 p5-Bot-Training                 ports/misc/p5-Bot-Training
+p5-Bot-Training-MegaHAL         ports/misc/p5-Bot-Training-MegaHAL
 p5-Boulder                      ports/converters/p5-Boulder
 p5-Brackup                      ports/sysutils/p5-Brackup
 p5-Bread-Board                  ports/devel/p5-Bread-Board
@@ -15316,6 +15315,7 @@ p5-bloom-filter                 ports/textproc/p5-Bloom-Filter
 p5-boolean                      ports/devel/p5-boolean
 p5-bot-basicbot                 ports/irc/p5-Bot-BasicBot
 p5-bot-training                 ports/misc/p5-Bot-Training
+p5-bot-training-megahal         ports/misc/p5-Bot-Training-MegaHAL
 p5-boulder                      ports/converters/p5-Boulder
 p5-brackup                      ports/sysutils/p5-Brackup
 p5-bread-board                  ports/devel/p5-Bread-Board
@@ -22479,6 +22479,7 @@ pythonchess                     ports/games/pythonchess
 pythondirector                  ports/net/pythondirector
 pythontidy                      ports/devel/pythontidy
 pytone                          ports/audio/pytone
+pyvox                           ports/science/pyvox
 pyweather                       ports/astro/pyweather
 pyweblib                        ports/www/pyweblib
 pyxmame                         ports/emulators/pyxmame
@@ -22829,6 +22830,7 @@ ramond                          ports/net-mgmt/ramond
 rancid                          ports/net-mgmt/rancid
 rancid-devel                    ports/net-mgmt/rancid-devel
 rand                            ports/textproc/rand
+randlib                         ports/math/randlib
 randomio                        ports/benchmarks/randomio
 randrproto                      ports/x11/randrproto
 ranpwd                          ports/security/ranpwd
