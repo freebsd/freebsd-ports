@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	urwid
-PORTVERSION=	0.9.9.1
+PORTVERSION=	0.9.9.2
 CATEGORIES=	devel python
 MASTER_SITES=	http://excess.org/urwid/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -29,13 +29,13 @@ PORTEXAMPLES=	bigtext.py \
 EXAMPLESDIR=	${PREFIX}/share/examples/py-${PORTNAME}
 
 post-patch:
-	@# disable setuptools for now
-	${REINPLACE_CMD} 's/setuptools/xxsetuptools/g' ${WRKSRC}/setup.py
+# disable setuptools for now
+	@${REINPLACE_CMD} 's/setuptools/xxx/g' ${WRKSRC}/setup.py
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
-	@${MKDIR} ${EXAMPLESDIR}
-	@${INSTALL_DATA} ${PORTEXAMPLES:S,^,${WRKSRC}/,} ${EXAMPLESDIR}
+	${MKDIR} ${EXAMPLESDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTEXAMPLES} ${EXAMPLESDIR}/
 .endif
 
 .include <bsd.port.mk>
