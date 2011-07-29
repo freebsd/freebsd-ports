@@ -7,7 +7,7 @@
 
 PORTNAME=		usbhotkey
 PORTVERSION=		0.3.1
-PORTREVISION=	5
+PORTREVISION=		5
 CATEGORIES=		sysutils
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
@@ -26,10 +26,12 @@ HAS_CONFIGURE=		yes
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_PTHREADS)
-CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS} -I${LOCALBASE}/include \
+			-I${LOCALBASE}/include/ruby-${RUBY_VER} -I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}" \
 			LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS} -L${LOCALBASE}/lib"
 .else
-CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include \
+			-I${LOCALBASE}/include/ruby-${RUBY_VER} -I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}" \
 			LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 .endif
 
@@ -37,6 +39,10 @@ CONFIGURE_ENV+=		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
 LIB_DEPENDS+=		Imlib.5:${PORTSDIR}/graphics/imlib
 .else
 CONFIGURE_ARGS+=	--without-Imlib
+.endif
+
+.if ${RUBY_VER} == 1.9
+EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-main.c
 .endif
 
 .include <bsd.port.post.mk>
