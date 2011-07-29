@@ -32,10 +32,17 @@ include/gammu/gammu-types.h
 include/gammu/gammu-unicode.h
 include/gammu/gammu-wap.h
 include/gammu/gammu.h
-lib/libGammu.a
-lib/libgsmsd.a
 libdata/pkgconfig/gammu.pc
 libdata/pkgconfig/gammu-smsd.pc
+lib/libGammu.so
+lib/libGammu.so.7
+lib/libGammu.so.7.1.30.0
+lib/libgsmsd.so
+lib/libgsmsd.so.7
+lib/libgsmsd.so.7.1.30.0
+share/gammu/gnapplet.ini
+share/gammu/gnapplet.sis
+share/gammu/series60-remote.sis
 share/locale/af/LC_MESSAGES/gammu.mo
 share/locale/af/LC_MESSAGES/libgammu.mo
 share/locale/ar/LC_MESSAGES/gammu.mo
@@ -118,5 +125,6 @@ share/locale/zh_TW/LC_MESSAGES/libgammu.mo
 %%PYTHON_SITELIBDIR%%/gammu/worker.pyo
 @dirrmtry share/locale/sw/LC_MESSAGES
 @dirrmtry share/locale/sw
+@dirrm share/gammu
 @dirrm include/gammu
 @dirrm %%PYTHON_SITELIBDIR%%/gammu
