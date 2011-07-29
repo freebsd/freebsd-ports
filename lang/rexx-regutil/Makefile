@@ -8,7 +8,7 @@
 PORTNAME=	regutil
 PORTVERSION=	1.26
 CATEGORIES=	lang
-MASTER_SITES=	http://www.tavi.co.uk/distfiles/ http://pages.interlog.com/~pjtm/
+MASTER_SITES=	http://home.interlog.com/~ptjm/ http://www.tavi.co.uk/distfiles/
 PKGNAMEPREFIX=	rexx-
 DISTNAME=	regutil126
 
