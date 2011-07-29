@@ -14,12 +14,11 @@ MASTER_SITES=	SF/zero-install/injector/${PORTVERSION}
 MAINTAINER=	a134qaed@gmail.com
 COMMENT=	0install injector
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gtk/_gtk.so:${PORTSDIR}/x11-toolkits/py-gtk2 \
-				${PYTHON_SITELIBDIR}/gtk-2.0/gobject/_gobject.so:${PORTSDIR}/devel/py-gobject \
-				gpg:${PORTSDIR}/security/gnupg \
+RUN_DEPENDS=			gpg:${PORTSDIR}/security/gnupg \
 				lzma:${PORTSDIR}/archivers/lzma
 
 USE_BZIP2=	yes
+USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 PLIST_SUB=	PYTHON_VER=${PYTHON_VER}

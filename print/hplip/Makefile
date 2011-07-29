@@ -21,7 +21,6 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		dbus-1.3:${PORTSDIR}/devel/dbus
 RUN_DEPENDS=	espgs:${PORTSDIR}/print/cups-pstoraster \
 		foomatic-rip:${PORTSDIR}/print/foomatic-filters \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gobject/_gobject.so:${PORTSDIR}/devel/py-gobject \
 		${PYTHON_SITELIBDIR}/dbus/_dbus.py:${PORTSDIR}/devel/py-dbus \
 		xdg-open:${PORTSDIR}/devel/xdg-utils
 
@@ -29,7 +28,7 @@ CONFLICTS=	hpijs-[0-9]*
 
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	2.5+
-USE_GNOME=	pkgconfig
+USE_GNOME=	pkgconfig pygobject
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-foomatic-ppd-install \
