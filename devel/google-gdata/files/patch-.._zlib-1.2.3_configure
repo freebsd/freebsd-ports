@@ -1,0 +1,37 @@
+
+$FreeBSD$
+
+--- ../zlib-1.2.3/configure.orig
++++ ../zlib-1.2.3/configure
+@@ -32,7 +32,7 @@
+ mandir=${mandir-'${prefix}/share/man'}
+ shared_ext='.so'
+ shared=0
+-gcc=0
++has_cc=0
+ old_cc="$CC"
+ old_cflags="$CFLAGS"
+ 
+@@ -63,17 +63,17 @@
+ int hello() {return getchar();}
+ EOF
+ 
+-test -z "$CC" && echo Checking for gcc...
+-cc=${CC-gcc}
++test -z "$CC" && echo Checking for cc...
++cc=${CC-cc}
+ cflags=${CFLAGS-"-O3"}
+ # to force the asm version use: CFLAGS="-O3 -DASMV" ./configure
+ case "$cc" in
+-  *gcc*) gcc=1;;
++  cc|gcc|clang) has_cc=1;;
+ esac
+ 
+-if test "$gcc" -eq 1 && ($cc -c $cflags $test.c) 2>/dev/null; then
++if test "$has_cc" -eq 1 && ($cc -c $cflags $test.c) 2>/dev/null; then
+   CC="$cc"
+-  SFLAGS=${CFLAGS-"-fPIC -O3"}
++  SFLAGS="$CFLAGS -fPIC -O3"
+   CFLAGS="$cflags"
+   case `(uname -s || echo unknown) 2>/dev/null` in
+   Linux | linux | GNU | GNU/*) LDSHARED=${LDSHARED-"$cc -shared -Wl,-soname,libz.so.1"};;

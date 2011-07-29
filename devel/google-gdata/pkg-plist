@@ -42,7 +42,6 @@ libdata/pkgconfig/gdata-sharp-health.pc
 libdata/pkgconfig/gdata-sharp-photos.pc
 libdata/pkgconfig/gdata-sharp-spreadsheets.pc
 libdata/pkgconfig/gdata-sharp-youtube.pc
-@dirrm lib/pkgconfig
 @dirrm lib/mono/gac/Google.GData.YouTube/1.4.0.2__af04a32718ae8833
 @dirrm lib/mono/gac/Google.GData.YouTube
 @dirrm lib/mono/gac/Google.GData.Spreadsheets/1.4.0.2__3f77feb76ff0d9a1
