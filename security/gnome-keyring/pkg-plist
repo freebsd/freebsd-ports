@@ -191,8 +191,6 @@ share/locale/zh_TW/LC_MESSAGES/gnome-keyring.mo
 @dirrm include/gp11
 @dirrm include/gcr/gcr
 @dirrm include/gcr
-@dirrmtry share/GConf/gsettings
-@dirrmtry share/GConf
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/xh/LC_MESSAGES
