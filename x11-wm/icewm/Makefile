@@ -42,9 +42,9 @@ OPTIONS=	GNOMEDESKTOP	"Enable GNOME desktop support"		off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GNOMEDESKTOP)
-USE_GNOME+=	gnomedesktop
+USE_GNOME+=	gnomedesktop libgnomeui
 CONFIGURE_ARGS+=--enable-menus-gnome2
-INSTALL_TARGET=	install install-gnome
+INSTALL_TARGET=	install 
 PLIST_SUB+=	GNOMEDESKTOP=""
 .else
 PLIST_SUB+=	GNOMEDESKTOP="@comment "
