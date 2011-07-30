@@ -18,6 +18,8 @@ RUN_DEPENDS=	cdialog:${PORTSDIR}/devel/cdialog
 
 CONFLICTS=	gammu-devel-[1-9]* gammu-python-[1-9]*
 
+OPTIONS=	BASH "Install bash completion script" off
+
 CMAKE_ARGS+=	-DINSTALL_LIBDATA_DIR=${LOCALBASE}/libdata
 
 USE_CMAKE=	yes
@@ -50,8 +52,19 @@ post-install:
 
 post-patch:
 	@${REINPLACE_CMD} -i '' -e 's:bash:sh:' -e 's:dialog:cdialog:' ${WRKSRC}/utils/gammu-config
+	@${REINPLACE_CMD} -i '' -e 's:/etc/bash_completion.d:${PREFIX}/etc/bash_completion.d:' \
+		${WRKSRC}/contrib/CMakeLists.txt
 .if ${OSVERSION} < 700042
 	@${REINPLACE_CMD} -e 's@ -Wno-pointer-sign@@g' ${WRKSRC}/CMakeLists.txt
+.endif
+
+.if defined(WITH_BASH)
+BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash
+RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
+PLIST_FILES+=	etc/bash_completion.d/gammu
+PLIST_DIRSTRY+=	etc/bash_completion.d
+.else
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-contrib_CMakeLists.txt
 .endif
 
 .include <bsd.port.post.mk>
