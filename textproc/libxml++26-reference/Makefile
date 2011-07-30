@@ -9,7 +9,7 @@
 PORTREVISION=	0
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libxml++-2.6.pc:${PORTSDIR}/textproc/libxml++26 \
-		${LOCALBASE}/share/glibmm-2.4/doctool/doc-install.pl:${PORTSDIR}/devel/glibmm-reference
+		glibmm-reference>=0:${PORTSDIR}/devel/glibmm-reference
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

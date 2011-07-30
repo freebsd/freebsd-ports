@@ -525,6 +525,7 @@
     SUBDIR += gpsim
     SUBDIR += gputils
     SUBDIR += grantlee
+    SUBDIR += gsettings-desktop-schemas
     SUBDIR += gsoap
     SUBDIR += gstreamer-plugins-gconf
     SUBDIR += gstreamer-plugins-gio

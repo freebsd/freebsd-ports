@@ -20,7 +20,11 @@ include/gio-unix-2.0/gio/gunixinputstream.h
 include/gio-unix-2.0/gio/gunixmounts.h
 include/gio-unix-2.0/gio/gunixoutputstream.h
 include/gio-unix-2.0/gio/gunixsocketaddress.h
+include/glib-2.0/gio/gaction.h
+include/glib-2.0/gio/gactiongroup.h
 include/glib-2.0/gio/gappinfo.h
+include/glib-2.0/gio/gapplication.h
+include/glib-2.0/gio/gapplicationcommandline.h
 include/glib-2.0/gio/gasyncinitable.h
 include/glib-2.0/gio/gasyncresult.h
 include/glib-2.0/gio/gbufferedinputstream.h
@@ -84,10 +88,14 @@ include/glib-2.0/gio/gnetworkaddress.h
 include/glib-2.0/gio/gnetworkservice.h
 include/glib-2.0/gio/goutputstream.h
 include/glib-2.0/gio/gpermission.h
+include/glib-2.0/gio/gpollableinputstream.h
+include/glib-2.0/gio/gpollableoutputstream.h
 include/glib-2.0/gio/gproxy.h
 include/glib-2.0/gio/gproxyaddress.h
 include/glib-2.0/gio/gproxyaddressenumerator.h
 include/glib-2.0/gio/gproxyresolver.h
+include/glib-2.0/gio/gsimpleaction.h
+include/glib-2.0/gio/gsimpleactiongroup.h
 include/glib-2.0/gio/gresolver.h
 include/glib-2.0/gio/gseekable.h
 include/glib-2.0/gio/gsettings.h
@@ -105,8 +113,14 @@ include/glib-2.0/gio/gsocketlistener.h
 include/glib-2.0/gio/gsocketservice.h
 include/glib-2.0/gio/gsrvtarget.h
 include/glib-2.0/gio/gtcpconnection.h
+include/glib-2.0/gio/gtcpwrapperconnection.h
 include/glib-2.0/gio/gthemedicon.h
 include/glib-2.0/gio/gthreadedsocketservice.h
+include/glib-2.0/gio/gtlsbackend.h
+include/glib-2.0/gio/gtlscertificate.h
+include/glib-2.0/gio/gtlsclientconnection.h
+include/glib-2.0/gio/gtlsconnection.h
+include/glib-2.0/gio/gtlsserverconnection.h
 include/glib-2.0/gio/gvfs.h
 include/glib-2.0/gio/gvolume.h
 include/glib-2.0/gio/gvolumemonitor.h
@@ -319,6 +333,7 @@ share/locale/th/LC_MESSAGES/glib20.mo
 share/locale/tl/LC_MESSAGES/glib20.mo
 share/locale/tr/LC_MESSAGES/glib20.mo
 share/locale/tt/LC_MESSAGES/glib20.mo
+share/locale/ug/LC_MESSAGES/glib20.mo
 share/locale/uk/LC_MESSAGES/glib20.mo
 share/locale/vi/LC_MESSAGES/glib20.mo
 share/locale/wa/LC_MESSAGES/glib20.mo
@@ -328,8 +343,9 @@ share/locale/zh_CN/LC_MESSAGES/glib20.mo
 share/locale/zh_HK/LC_MESSAGES/glib20.mo
 share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @exec mkdir -p %D/share/glib-2.0/schemas
-@dirrmtry share/GConf/gsettings
-@dirrmtry share/GConf
+@exec mkdir -p %D/share/GConf/gsettings
+@dirrm share/GConf/gsettings
+@dirrm share/GConf
 @exec glib-compile-schemas --uninstall %D/share/glib-2.0/schemas
 @dirrm share/glib-2.0/schemas
 @dirrm share/glib-2.0/gettext/po
@@ -352,6 +368,8 @@ share/locale/zh_TW/LC_MESSAGES/glib20.mo
 @dirrmtry share/locale/yi
 @dirrmtry share/locale/xh/LC_MESSAGES
 @dirrmtry share/locale/xh
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/tt/LC_MESSAGES
 @dirrmtry share/locale/tt
 @dirrmtry share/locale/tl/LC_MESSAGES

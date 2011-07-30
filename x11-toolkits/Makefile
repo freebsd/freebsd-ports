@@ -54,6 +54,8 @@
     SUBDIR += gtk12
     SUBDIR += gtk20
     SUBDIR += gtk20-reference
+    SUBDIR += gtk30
+    SUBDIR += gtk30-reference
     SUBDIR += gtkada
     SUBDIR += gtkdatabox
     SUBDIR += gtkextra
@@ -69,6 +71,8 @@
     SUBDIR += gtkmm20-reference
     SUBDIR += gtkmm24
     SUBDIR += gtkmm24-reference
+    SUBDIR += gtkmm30
+    SUBDIR += gtkmm30-reference
     SUBDIR += gtksourceview
     SUBDIR += gtksourceview-reference
     SUBDIR += gtksourceview-sharp

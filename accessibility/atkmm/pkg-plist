@@ -40,10 +40,14 @@ include/atkmm-1.6/atkmm/text.h
 include/atkmm-1.6/atkmm/value.h
 include/atkmm-1.6/atkmm/wrap_init.h
 lib/atkmm-1.6/include/atkmmconfig.h
+lib/atkmm-1.6/proc/m4/convert.m4
+lib/atkmm-1.6/proc/m4/convert_atk.m4
 lib/libatkmm-1.6.la
 lib/libatkmm-1.6.so
 lib/libatkmm-1.6.so.2
 libdata/pkgconfig/atkmm-1.6.pc
+@dirrm lib/atkmm-1.6/proc/m4
+@dirrm lib/atkmm-1.6/proc
 @dirrm lib/atkmm-1.6/include
 @dirrm lib/atkmm-1.6
 @dirrm include/atkmm-1.6/atkmm/private

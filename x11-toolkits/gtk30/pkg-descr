@@ -3,8 +3,8 @@ essentially provides the building blocks from which GUIs can be
 built.  It is highly themable, and its functionality is highly
 extensible.
 
-GTK+-2 is a very stable release, similar only in design to GTK+-1.
-GTK+-2 can coexist happily alongside GTK+-1, but applications are
+GTK+-3 is a very stable release, similar only in design to GTK+-2.
+GTK+-3 can coexist happily alongside GTK+-2, but applications are
 written for one version or the other.
 
 WWW: http://www.gtk.org/

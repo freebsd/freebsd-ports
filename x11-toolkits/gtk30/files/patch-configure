@@ -1,6 +1,6 @@
---- configure.orig	2009-12-26 21:41:27.000000000 +0100
-+++ configure	2009-12-26 21:51:04.000000000 +0100
-@@ -33884,9 +33884,9 @@
+--- configure.orig	2011-03-21 20:08:47.000000000 +0100
++++ configure	2011-03-21 20:10:50.000000000 +0100
+@@ -23728,9 +23728,9 @@
         INTROSPECTION_COMPILER=`$PKG_CONFIG --variable=g_ir_compiler gobject-introspection-1.0`
         INTROSPECTION_GENERATE=`$PKG_CONFIG --variable=g_ir_generate gobject-introspection-1.0`
         INTROSPECTION_GIRDIR=`$PKG_CONFIG --variable=girdir gobject-introspection-1.0`

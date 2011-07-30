@@ -1,0 +1,12 @@
+--- docs/reference/gtk/Makefile.in.orig	2011-02-01 22:06:23.000000000 +0000
++++ docs/reference/gtk/Makefile.in	2011-02-01 22:07:12.000000000 +0000
+@@ -735,8 +735,7 @@ CLEANFILES = $(SCANOBJ_FILES) $(REPORT_F
+ 
+ ########################################################################
+ man_MANS = \
+-	gtk-query-immodules-3.0.1	\
+-	gtk-update-icon-cache.1
++	gtk-query-immodules-3.0.1
+ 
+ MAINTAINERCLEANFILES = $(man_MANS) $(BUILT_SOURCES)
+ all: all-am

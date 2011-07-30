@@ -1,0 +1,8 @@
+--- glib-2.0.pc.in.orig	2011-01-06 07:29:30.000000000 +0000
++++ glib-2.0.pc.in	2011-01-06 07:29:41.000000000 +0000
+@@ -12,4 +12,4 @@
+ Version: @VERSION@
+ Libs: -L${libdir} -lglib-2.0 @INTLLIBS@
+ Libs.private: @ICONV_LIBS@
+-Cflags: -I${includedir}/glib-2.0 -I${libdir}/glib-2.0/include @GLIB_EXTRA_CFLAGS@
++Cflags: -I${includedir}/glib-2.0 @GLIB_EXTRA_CFLAGS@
