@@ -1,5 +1,14 @@
---- Makefile.orig	2011-04-05 06:22:54.000000000 +1000
-+++ Makefile	2011-06-04 06:02:31.347404317 +1000
+--- Makefile.orig	2011-06-14 11:27:10.000000000 +1000
++++ Makefile	2011-07-29 05:26:08.226244817 +1000
+@@ -16,7 +16,7 @@
+ # along with this program; if not, write to the Free Software
+ # Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+ 
+-CC = gcc
++CC ?= gcc
+ INSTALL = /usr/bin/install
+ PREFIX ?= /usr/local
+ LDFLAGS ?= -s
 @@ -38,8 +38,14 @@
  	PORTS_CFLAGS = `pkg-config --cflags libelf libusb`
  	PORTS_LDFLAGS = `pkg-config --libs libelf libusb` -ltermcap
