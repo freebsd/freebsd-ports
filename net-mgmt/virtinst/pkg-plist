@@ -6,6 +6,9 @@ bin/virt-install
 %%PYTHON_SITELIBDIR%%/virtconv/__init__.py
 %%PYTHON_SITELIBDIR%%/virtconv/__init__.pyc
 %%PYTHON_SITELIBDIR%%/virtconv/__init__.pyo
+%%PYTHON_SITELIBDIR%%/virtconv/_config.py
+%%PYTHON_SITELIBDIR%%/virtconv/_config.pyc
+%%PYTHON_SITELIBDIR%%/virtconv/_config.pyo
 %%PYTHON_SITELIBDIR%%/virtconv/diskcfg.py
 %%PYTHON_SITELIBDIR%%/virtconv/diskcfg.pyc
 %%PYTHON_SITELIBDIR%%/virtconv/diskcfg.pyo
@@ -15,6 +18,9 @@ bin/virt-install
 %%PYTHON_SITELIBDIR%%/virtconv/netdevcfg.py
 %%PYTHON_SITELIBDIR%%/virtconv/netdevcfg.pyc
 %%PYTHON_SITELIBDIR%%/virtconv/netdevcfg.pyo
+%%PYTHON_SITELIBDIR%%/virtconv/parsers/__init__.py
+%%PYTHON_SITELIBDIR%%/virtconv/parsers/__init__.pyc
+%%PYTHON_SITELIBDIR%%/virtconv/parsers/__init__.pyo
 %%PYTHON_SITELIBDIR%%/virtconv/parsers/ovf.py
 %%PYTHON_SITELIBDIR%%/virtconv/parsers/ovf.pyc
 %%PYTHON_SITELIBDIR%%/virtconv/parsers/ovf.pyo
@@ -48,6 +54,9 @@ bin/virt-install
 %%PYTHON_SITELIBDIR%%/virtinst/DomainFeatures.py
 %%PYTHON_SITELIBDIR%%/virtinst/DomainFeatures.pyc
 %%PYTHON_SITELIBDIR%%/virtinst/DomainFeatures.pyo
+%%PYTHON_SITELIBDIR%%/virtinst/DomainNumatune.py
+%%PYTHON_SITELIBDIR%%/virtinst/DomainNumatune.pyc
+%%PYTHON_SITELIBDIR%%/virtinst/DomainNumatune.pyo
 %%PYTHON_SITELIBDIR%%/virtinst/FullVirtGuest.py
 %%PYTHON_SITELIBDIR%%/virtinst/FullVirtGuest.pyc
 %%PYTHON_SITELIBDIR%%/virtinst/FullVirtGuest.pyo
@@ -111,6 +120,9 @@ bin/virt-install
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualDisk.py
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualDisk.pyc
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualDisk.pyo
+%%PYTHON_SITELIBDIR%%/virtinst/VirtualFilesystem.py
+%%PYTHON_SITELIBDIR%%/virtinst/VirtualFilesystem.pyc
+%%PYTHON_SITELIBDIR%%/virtinst/VirtualFilesystem.pyo
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualGraphics.py
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualGraphics.pyc
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualGraphics.pyo
@@ -123,6 +135,9 @@ bin/virt-install
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualNetworkInterface.py
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualNetworkInterface.pyc
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualNetworkInterface.pyo
+%%PYTHON_SITELIBDIR%%/virtinst/VirtualSmartCardDevice.py
+%%PYTHON_SITELIBDIR%%/virtinst/VirtualSmartCardDevice.pyc
+%%PYTHON_SITELIBDIR%%/virtinst/VirtualSmartCardDevice.pyo
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualVideoDevice.py
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualVideoDevice.pyc
 %%PYTHON_SITELIBDIR%%/virtinst/VirtualVideoDevice.pyo
@@ -135,6 +150,9 @@ bin/virt-install
 %%PYTHON_SITELIBDIR%%/virtinst/__init__.py
 %%PYTHON_SITELIBDIR%%/virtinst/__init__.pyc
 %%PYTHON_SITELIBDIR%%/virtinst/__init__.pyo
+%%PYTHON_SITELIBDIR%%/virtinst/_config.py
+%%PYTHON_SITELIBDIR%%/virtinst/_config.pyc
+%%PYTHON_SITELIBDIR%%/virtinst/_config.pyo
 %%PYTHON_SITELIBDIR%%/virtinst/_util.py
 %%PYTHON_SITELIBDIR%%/virtinst/_util.pyc
 %%PYTHON_SITELIBDIR%%/virtinst/_util.pyo
