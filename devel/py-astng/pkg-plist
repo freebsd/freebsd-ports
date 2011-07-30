@@ -64,6 +64,7 @@
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/data2/clientmodule_test.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/data2/suppliermodule_test.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/absimp/__init__.py
+%%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/absimp/string.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/absimp/sidepackage/__init__.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/descriptor_crash.py
 %%PYTHON_SITELIBDIR%%/logilab/astng/test/regrtest_data/package/__init__.py
