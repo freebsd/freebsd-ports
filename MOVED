@@ -2298,3 +2298,4 @@ devel/gir-repository-libnotify||2010-07-30|Removed
 graphics/gir-repository-goocanvas||2010-07-30|Removed
 graphics/gir-repository-poppler||2010-07-30|Removed
 x11-toolkits/gir-repository-vte||2010-07-30|Removed
+mail/rubygem-smtp_tls||2011-07-30|Has expired: no supported version of FreeBSD have < 1.8.7.p72
