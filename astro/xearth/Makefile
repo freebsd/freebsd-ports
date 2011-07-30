@@ -9,11 +9,9 @@ PORTNAME=	xearth
 PORTVERSION=	1.1
 PORTREVISION=	2
 CATEGORIES=	astro geography
-MASTER_SITES=	ftp://cag.lcs.mit.edu/pub/tuna/ \
-		${MASTER_SITE_XCONTRIB:S/$/:xcontrib/} \
-		${MASTER_SITE_LOCAL:S/$/:local/}
-MASTER_SITE_SUBDIR=	applications/:xcontrib simon/:local
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:xcontrib,local
+MASTER_SITES=	XCONTRIB/applications \
+		http://seis.bris.ac.uk/~mexas/ \
+		LOCAL/simon
 
 MAINTAINER=	mexas@bristol.ac.uk
 COMMENT=	Set the root window to the image of earth
