@@ -1,6 +1,6 @@
 #!/bin/sh
 #
-#	$FreeBSD: /tmp/pcvs/ports/mail/postfix27/files/pkg-install.in,v 1.5 2011-01-24 23:38:35 sahil Exp $
+#	$FreeBSD: /tmp/pcvs/ports/mail/postfix27/files/pkg-install.in,v 1.6 2011-07-30 01:34:53 sahil Exp $
 #
 
 # If the POSTFIX_DEFAULT_MTA environment variable is set to YES, it
@@ -56,64 +56,6 @@ yesno() {
       done
 }
 
-if [ "$2" = "PRE-INSTALL" ]; then
-      USER=postfix
-      UID=125
-      GROUP=postfix
-      GID=125
-      GROUP2=maildrop
-      GID2=126
-
-      if /usr/sbin/pw groupshow "${GROUP}" 2>/dev/null; then
-	      echo "You already have a group \"${GROUP}\", so I will use it."
-      else
-	      if /usr/sbin/pw groupadd ${GROUP} -g ${GID}; then
-		      echo "Added group \"${GROUP}\"."
-	      else
-		      echo "Adding group \"${GROUP}\" failed..."
-		      echo "Please create it, and try again."
-		      exit 1
-	      fi
-      fi
-
-      if /usr/sbin/pw groupshow "${GROUP2}" 2>/dev/null; then
-	      echo "You already have a group \"${GROUP2}\", so I will use it."
-      else
-	      if /usr/sbin/pw groupadd ${GROUP2} -g ${GID2}; then
-		      echo "Added group \"${GROUP2}\"."
-	      else
-		      echo "Adding group \"${GROUP2}\" failed..."
-		      echo "Please create it, and try again."
-		      exit 1
-	      fi
-      fi
-
-      if /usr/sbin/pw user show "${USER}" 2>/dev/null; then
-	      echo "You already have a user \"${USER}\", so I will use it."
-      else
-	      if /usr/sbin/pw useradd ${USER} -u ${UID} -g ${GROUP} -h - -d /var/spool/postfix -s ${NOLOGIN} -c "Postfix Mail System"; then
-		      echo "Added user \"${USER}\"."
-	      else
-		      echo "Adding user \"${USER}\" failed..."
-		      echo "Please create it, and try again."
-		      exit 1
-	      fi
-      fi
-
-      if /usr/sbin/pw show group mail | grep -q "${USER}" 2>/dev/null; then
-	      echo "You already have user \"${USER}\" in group \"mail\", so I will use it."
-      else
-	      echo "You need user \"${USER}\" added to group \"mail\"."
-	      if yesno "Would you like me to add it" y; then
-		      /usr/sbin/pw groupmod mail -m ${USER} || exit
-		      echo "Done."
-	      else
-		      echo "Please create it, and try again."
-		      exit 1
-	      fi
-      fi
-fi
-
 if [ "$2" = "POST-INSTALL" ]; then
 	SAMPLES="main.cf master.cf" 
 	for file in $SAMPLES
@@ -129,20 +71,6 @@ if [ "$2" = "POST-INSTALL" ]; then
 	readme_directory=${READMEDIR} \
 	upgrade-package
 fi
-
-replace() {
-      local orig repl
-
-	orig=$1
-	repl=$2
-	if [ -e ${orig} ]; then
-		/bin/mv -f ${orig} ${orig}.OFF
-		/bin/chmod 0 ${orig}.OFF
-	fi
-	if [ -e ${repl} ]; then
-		/bin/ln -s ${repl} ${orig}
-	fi
-}
 
 if [ "$2" = "POST-INSTALL" -a -z "${PACKAGE_BUILDING}" ]; then
 	egrep -q "^sendmail.*${PREFIX}/sbin/sendmail"    ${MC} && \
