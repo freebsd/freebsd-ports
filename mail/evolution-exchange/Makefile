@@ -64,6 +64,7 @@ IGNORE=	build fails when ${LOCALBASE}/include/mapi.h exists in system, run pkg_i
 post-patch:
 	@${REINPLACE_CMD} -e 's|-ldb|-l${BDB_LIB_NAME}|g' \
 		-e 's|-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi|${KRB5_LIB}|g' \
+		-e 's|-DGTK_DISABLE_DEPRECATED||g' \
 		-e 's|-Wmissing-include-dirs||g' \
 		${WRKSRC}/configure
 

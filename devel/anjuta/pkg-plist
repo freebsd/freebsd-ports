@@ -129,7 +129,6 @@ lib/anjuta/anjuta-starter.plugin
 %%SVN%%lib/anjuta/anjuta-subversion.plugin
 lib/anjuta/anjuta-terminal.plugin
 lib/anjuta/anjuta-tools.plugin
-lib/anjuta/anjuta-vala.plugin
 lib/anjuta/file-manager.plugin
 lib/anjuta/gbf-am.plugin
 lib/anjuta/gbf-mkfile.plugin
@@ -163,8 +162,6 @@ lib/anjuta/libanjuta-gtodo.la
 lib/anjuta/libanjuta-gtodo.so
 lib/anjuta/libanjuta-language-cpp-java.la
 lib/anjuta/libanjuta-language-cpp-java.so
-lib/anjuta/libanjuta-language-vala.la
-lib/anjuta/libanjuta-language-vala.so
 lib/anjuta/libanjuta-loader.la
 lib/anjuta/libanjuta-loader.so
 lib/anjuta/libanjuta-message-view.la

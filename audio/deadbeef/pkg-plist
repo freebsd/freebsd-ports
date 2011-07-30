@@ -211,6 +211,8 @@ share/icons/hicolor/scalable/apps/deadbeef.svg
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
+@dirrmtry %%NLS%%share/locale/lg/LC_MESSAGES
+@dirrmtry %%NLS%%share/locale/lg
 @dirrmtry %%NLS%%share/locale/km/LC_MESSAGES
 @dirrmtry %%NLS%%share/locale/km
 %%DATADIR%%/pixmaps/noartwork.jpg

@@ -38,4 +38,8 @@ GCONF_SCHEMAS=	gnome-dictionary.schemas gnome-screenshot.schemas \
 		gnome-search-tool.schemas baobab.schemas \
 		gnome-system-log.schemas
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/gsearchtool/libgnomeui-deprecated/Makefile.in
+
 .include <bsd.port.mk>

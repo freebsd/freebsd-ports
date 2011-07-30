@@ -1,0 +1,22 @@
+--- telepathy-glib/Makefile.in.orig	2011-07-22 13:41:13.000000000 +0200
++++ telepathy-glib/Makefile.in	2011-07-22 14:00:23.000000000 +0200
+@@ -1649,7 +1649,7 @@
+ @HAVE_INTROSPECTION_TRUE@	$(AM_V_GEN)$(INTROSPECTION_SCANNER) -v \
+ @HAVE_INTROSPECTION_TRUE@		--namespace TelepathyGLib \
+ @HAVE_INTROSPECTION_TRUE@		--nsversion=0.12 \
+-@HAVE_INTROSPECTION_TRUE@		$(gi_identifier_prefix_arg)=Tp \
++@HAVE_INTROSPECTION_TRUE@		--identifier-prefix=Tp \
+ @HAVE_INTROSPECTION_TRUE@		-I$(top_builddir) \
+ @HAVE_INTROSPECTION_TRUE@		-I$(top_srcdir) \
+ @HAVE_INTROSPECTION_TRUE@		--include=GLib-2.0 \
+@@ -1658,7 +1658,9 @@
+ @HAVE_INTROSPECTION_TRUE@		--library=libtelepathy-glib.la \
+ @HAVE_INTROSPECTION_TRUE@		--pkg gio-2.0 \
+ @HAVE_INTROSPECTION_TRUE@		--pkg dbus-glib-1 \
+-@HAVE_INTROSPECTION_TRUE@		$(gi_warn_all_arg) \
++@HAVE_INTROSPECTION_TRUE@		--pkg-export telepathy-glib \
++@HAVE_INTROSPECTION_TRUE@		--c-include="telepathy-glib/telepathy-glib.h" \
++@HAVE_INTROSPECTION_TRUE@		--warn-all \
+ @HAVE_INTROSPECTION_TRUE@		--output _gen/$@.tmp \
+ @HAVE_INTROSPECTION_TRUE@		$(INTROSPECTION_FILES)
+ @HAVE_INTROSPECTION_TRUE@	@xsltproc $(srcdir)/kludge.xsl _gen/$@.tmp > $@

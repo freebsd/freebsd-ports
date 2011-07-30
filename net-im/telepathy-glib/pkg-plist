@@ -236,8 +236,8 @@ share/gtk-doc/html/telepathy-glib/telepathy-glib-util.html
 share/gtk-doc/html/telepathy-glib/telepathy-glib.devhelp
 share/gtk-doc/html/telepathy-glib/telepathy-glib.devhelp2
 share/gtk-doc/html/telepathy-glib/up.png
-share/vala-0.10/vapi/telepathy-glib.deps
-share/vala-0.10/vapi/telepathy-glib.vapi
+share/vala-0.12/vapi/telepathy-glib.deps
+share/vala-0.12/vapi/telepathy-glib.vapi
 @dirrm share/gtk-doc/html/telepathy-glib
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
