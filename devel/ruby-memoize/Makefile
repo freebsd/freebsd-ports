@@ -8,15 +8,13 @@
 PORTNAME=	memoize
 PORTVERSION=	1.3.1
 CATEGORIES=	devel ruby
-MASTER_SITES=	http://rubyforge.org/frs/download.php/61790/ \
-		${MASTER_SITE_LOCAL:S|%SUBDIR%|tota/memoize|}
+MASTER_SITES=	RF
+MASTER_SITE_SUBDIR=	shards
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=	${RUBY_PKGNAMEPREFIX:S|${RUBY_SUFFIX}-||}
 
 MAINTAINER=	tota@FreeBSD.org
 COMMENT=	A method that speeds methods up at the cost of memory
-
-FETCH_ARGS=	-Fpr
 
 USE_RUBY=	yes
 USE_RAKE=	yes
