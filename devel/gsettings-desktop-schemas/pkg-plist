@@ -1,0 +1,10 @@
+include/gsettings-desktop-schemas/gdesktop-enums.h
+libdata/pkgconfig/gsettings-desktop-schemas.pc
+share/GConf/gsettings/gsettings-desktop-schemas.convert
+share/locale/cs/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/de/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/es/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/ja/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/sl/LC_MESSAGES/gsettings-desktop-schemas.mo
+share/locale/sv/LC_MESSAGES/gsettings-desktop-schemas.mo
+@dirrm include/gsettings-desktop-schemas

@@ -1,7 +1,3 @@
-share/glibmm-%%API_VERSION%%/doctool/doc-install.pl
-share/glibmm-%%API_VERSION%%/doctool/doc-postprocess.pl
-share/glibmm-%%API_VERSION%%/doctool/doxygen.css
-share/glibmm-%%API_VERSION%%/doctool/tagfile-to-devhelp2.xsl
 share/devhelp/books/glibmm-%%API_VERSION%%/glibmm-%%API_VERSION%%.devhelp2
 @dirrmtry share/devhelp/books/glibmm-%%API_VERSION%%
 @dirrmtry share/devhelp/books

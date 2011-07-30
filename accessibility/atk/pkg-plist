@@ -128,10 +128,13 @@ share/locale/yi/LC_MESSAGES/atk10.mo
 share/locale/zh_CN/LC_MESSAGES/atk10.mo
 share/locale/zh_HK/LC_MESSAGES/atk10.mo
 share/locale/zh_TW/LC_MESSAGES/atk10.mo
+share/locale/zu/LC_MESSAGES/atk10.mo
 @dirrm include/atk-1.0/atk
 @dirrm include/atk-1.0
 @dirrmtry share/gir-1.0
 @dirrmtry lib/girepository-1.0
+@dirrmtry share/locale/zu/LC_MESSAGES
+@dirrmtry share/locale/zu
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
 @dirrmtry share/locale/yi/LC_MESSAGES

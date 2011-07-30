@@ -1,6 +1,6 @@
---- gir/Makefile.in.orig	2010-09-29 01:50:46.000000000 +0000
-+++ gir/Makefile.in	2010-09-29 01:52:35.000000000 +0000
-@@ -393,13 +393,13 @@
+--- Makefile.in.orig	2010-12-24 00:50:07.000000000 +0100
++++ Makefile.in	2010-12-24 00:51:39.000000000 +0100
+@@ -864,13 +864,13 @@
  GLib_2_0_gir_PACKAGES = glib-2.0
  GLib_2_0_gir_CFLAGS = \
              -I$(GLIB_INCLUDEDIR) \
@@ -14,5 +14,5 @@
 -                $(GLIB_LIBDIR)/glib-2.0/include/glibconfig.h \
 +                $(GLIB_INCLUDEDIR)/glibconfig.h \
  	$(GLIB_INCLUDEDIR)/glib/*.h \
-                 glib-2.0.c
+                 gir/glib-2.0.c
  

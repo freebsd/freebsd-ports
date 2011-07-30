@@ -3,11 +3,11 @@
 # Whom:                 		Adam Weinberger <adamw@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/glibmm/Makefile,v 1.96 2010/09/19 20:53:57 kwm Exp $
+#   $MCom: ports/devel/glibmm/Makefile,v 1.114 2011/06/14 12:43:33 kwm Exp $
 #
 
 PORTNAME=	glibmm
-PORTVERSION=	2.25.5
+PORTVERSION=	2.28.2
 PORTREVISION?=	0
 PORTEPOCH=	1
 CATEGORIES=	devel
@@ -17,7 +17,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ interfaces for glib2
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 
 PLIST_SUB=	VERSION="2.4" API_VERSION="2.4"
 

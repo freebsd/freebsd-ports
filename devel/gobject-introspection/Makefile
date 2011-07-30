@@ -3,20 +3,18 @@
 # Whom:					Alexander Logvinov <avl@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/gobject-introspection/Makefile,v 1.26 2010/10/07 10:28:00 kwm Exp $
+#   $MCom: ports/devel/gobject-introspection/Makefile,v 1.39 2011/06/11 19:51:15 mezz Exp $
 #
 
 PORTNAME=	gobject-introspection
-PORTVERSION=	0.9.12
-PORTREVISION=	1
+PORTVERSION=	0.10.8
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
-DIST_SUBDIR=	gnome2
+DIST_SUBDIR=	gnome3
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Generate interface introspection data for GObject libraries
 
-BUILD_DEPENDS=	flex:${PORTSDIR}/textproc/flex
 LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi \
 		cairo.2:${PORTSDIR}/graphics/cairo
 
@@ -24,15 +22,14 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack glib20 ltverhack
-USE_PYTHON=	2.5+
-USE_BISON=	both
+USE_PYTHON=	yes
+USE_BISON=	build
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=yes
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--disable-tests
 
 # Force it to put the .cache in ${WRKSRC} instead of ~/.cache. ports/143260
@@ -47,4 +44,3 @@ post-patch:
 		${WRKSRC}/giscanner/sourcescanner.py
 
 .include <bsd.port.post.mk>
-

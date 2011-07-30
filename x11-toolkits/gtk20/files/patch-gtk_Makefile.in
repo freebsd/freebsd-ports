@@ -2,9 +2,19 @@ Stock icons. This was removed in 2.21.x, however it is used by atleast firefox.
 
 https://bugzilla.gnome.org/show_bug.cgi?id=629878
 
---- gtk/Makefile.in.orig	2010-11-21 16:06:15.000000000 +0100
-+++ gtk/Makefile.in	2010-11-21 16:36:39.000000000 +0100
-@@ -1352,9 +1352,9 @@
+--- gtk/Makefile.in.orig	2011-03-04 12:02:32.000000000 +0100
++++ gtk/Makefile.in	2011-03-04 12:03:28.000000000 +0100
+@@ -71,8 +71,7 @@
+ @HAVE_INTROSPECTION_TRUE@@USE_X11_TRUE@am__append_15 = --add-include-path=$(top_builddir)/gdk/x11
+ @HAVE_INTROSPECTION_TRUE@am__append_16 = Gtk-2.0.gir
+ @HAVE_INTROSPECTION_TRUE@am__append_17 = $(gir_DATA) $(typelibs_DATA)
+-bin_PROGRAMS = gtk-query-immodules-2.0$(EXEEXT) \
+-	gtk-update-icon-cache$(EXEEXT)
++bin_PROGRAMS = gtk-query-immodules-2.0$(EXEEXT)
+ @OS_WIN32_TRUE@am__append_18 = \
+ @OS_WIN32_TRUE@	$(GTK_UPDATE_ICON_CACHE_MANIFEST)
+ 
+@@ -1358,9 +1357,9 @@
  # gtk-update-icon-cache.exe doesn't require any special privileges.
  @OS_WIN32_TRUE@GTK_UPDATE_ICON_CACHE_MANIFEST = gtk-update-icon-cache.exe.manifest
  gtk_query_immodules_2_0_DEPENDENCIES = $(DEPS)
@@ -16,7 +26,7 @@ https://bugzilla.gnome.org/show_bug.cgi?id=629878
  gtk_update_icon_cache_SOURCES = updateiconcache.c 
  STOCK_ICONS = \
  	stock-icons/16/document-open-recent.png		\
-@@ -1595,7 +1595,171 @@
+@@ -1601,7 +1600,171 @@  	
  	stock-icons/24/folder-remote.png 		\
  	stock-icons/24/user-home.png 			\
  	stock-icons/24/user-desktop.png 		\
@@ -189,10 +199,10 @@ https://bugzilla.gnome.org/show_bug.cgi?id=629878
  
  @CROSS_COMPILING_FALSE@gtk_update_icon_cache_program = \
  @CROSS_COMPILING_FALSE@	   ./gtk-update-icon-cache
-@@ -2866,6 +3030,88 @@
+@@ -2873,6 +3036,88 @@
  	   && $(LN_S) folder.png user-desktop.png 			\
- 	   && $(RM) text-x-generic.png 					\
- 	   && $(LN_S) document-x-generic.png text-x-generic.png 	\
+ 	   && $(RM) user-home.png.png 					\
+ 	   && $(LN_S) folder.png user-home.png 				\
 +	   && $(LN_S) application-exit.png gtk-quit.png                 \
 +	   && $(LN_S) dialog-info.png gtk-info.png                      \
 +	   && $(LN_S) document-new.png gtk-file.png                     \

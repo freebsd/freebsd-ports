@@ -316,6 +316,7 @@
     SUBDIR += gstreamer-plugins-libvisual
     SUBDIR += gstreamer-plugins-opencv
     SUBDIR += gthumb
+    SUBDIR += gtk-update-icon-cache
     SUBDIR += gtkam
     SUBDIR += gtkdps
     SUBDIR += gtkgraph

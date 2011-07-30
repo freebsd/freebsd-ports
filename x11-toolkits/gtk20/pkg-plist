@@ -1,7 +1,6 @@
 bin/gtk-builder-convert
 bin/gtk-demo
 bin/gtk-query-immodules-2.0
-bin/gtk-update-icon-cache
 etc/gtk-2.0/gtk.immodules
 etc/gtk-2.0/im-multipress.conf
 include/gail-1.0/gail/gailwidget.h
@@ -87,6 +86,7 @@ include/gtk-2.0/gtk/gtkcolorseldialog.h
 include/gtk-2.0/gtk/gtkcombo.h
 include/gtk-2.0/gtk/gtkcombobox.h
 include/gtk-2.0/gtk/gtkcomboboxentry.h
+include/gtk-2.0/gtk/gtkcomboboxtext.h
 include/gtk-2.0/gtk/gtkcontainer.h
 include/gtk-2.0/gtk/gtkctree.h
 include/gtk-2.0/gtk/gtkcurve.h
@@ -487,8 +487,6 @@ share/locale/ja/LC_MESSAGES/gtk20-properties.mo
 share/locale/ja/LC_MESSAGES/gtk20.mo
 share/locale/ka/LC_MESSAGES/gtk20-properties.mo
 share/locale/ka/LC_MESSAGES/gtk20.mo
-share/locale/kg/LC_MESSAGES/gtk20-properties.mo
-share/locale/kg/LC_MESSAGES/gtk20.mo
 share/locale/kk/LC_MESSAGES/gtk20-properties.mo
 share/locale/kk/LC_MESSAGES/gtk20.mo
 share/locale/kn/LC_MESSAGES/gtk20-properties.mo
@@ -497,8 +495,6 @@ share/locale/ko/LC_MESSAGES/gtk20-properties.mo
 share/locale/ko/LC_MESSAGES/gtk20.mo
 share/locale/ku/LC_MESSAGES/gtk20-properties.mo
 share/locale/ku/LC_MESSAGES/gtk20.mo
-share/locale/lg/LC_MESSAGES/gtk20-properties.mo
-share/locale/lg/LC_MESSAGES/gtk20.mo
 share/locale/li/LC_MESSAGES/gtk20-properties.mo
 share/locale/li/LC_MESSAGES/gtk20.mo
 share/locale/lt/LC_MESSAGES/gtk20-properties.mo
@@ -611,10 +607,12 @@ share/themes/Raleigh/gtk-2.0/gtkrc
 @exec /usr/bin/find %%LOCALBASE%%/share/icons -type d -depth 1 -exec %D/bin/gtk-update-icon-cache -q -f {} \; 2>/dev/null || /usr/bin/true
 @unexec /usr/bin/find %%LOCALBASE%%/share/icons -type f -depth 2 -name icon-theme.cache -delete 2>/dev/null || /usr/bin/true
 @dirrm share/themes/Raleigh/gtk-2.0
-@dirrm share/themes/Raleigh
+@dirrmtry share/themes/Raleigh
 @dirrm share/themes/Emacs/gtk-2.0-key
-@dirrm share/themes/Emacs
+@dirrmtry share/themes/Emacs
 @dirrm share/themes/Default/gtk-2.0-key
+@dirrmtry share/themes/Default
+@dirrmtry share/themes
 @dirrm share/gtk-2.0/demo
 @dirrm share/gtk-2.0
 @dirrm include/gtk-unix-print-2.0/gtk
@@ -629,8 +627,6 @@ share/themes/Raleigh/gtk-2.0/gtkrc
 @exec /bin/mkdir -p %D/lib/gtk-2.0/modules
 @exec /bin/mkdir -p %D/lib/gtk-2.0/%%GTK2_VERSION%%/engines
 @exec /bin/mkdir -p %D/lib/gtk-2.0/%%GTK2_VERSION%%/loaders
-@dirrmtry share/themes/Default
-@dirrmtry share/themes
 @dirrmtry lib/gtk-2.0/modules
 @dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/printbackends
 @dirrmtry lib/gtk-2.0/%%GTK2_VERSION%%/modules
@@ -680,14 +676,10 @@ share/themes/Raleigh/gtk-2.0/gtkrc
 @dirrmtry share/locale/mi
 @dirrmtry share/locale/mai/LC_MESSAGES
 @dirrmtry share/locale/mai
-@dirrmtry share/locale/lg/LC_MESSAGES
-@dirrmtry share/locale/lg
 @dirrmtry share/locale/ku/LC_MESSAGES
 @dirrmtry share/locale/ku
 @dirrmtry share/locale/kk/LC_MESSAGES
 @dirrmtry share/locale/kk
-@dirrmtry share/locale/kg/LC_MESSAGES
-@dirrmtry share/locale/kg
 @dirrmtry share/locale/io/LC_MESSAGES
 @dirrmtry share/locale/io
 @dirrmtry share/locale/ia/LC_MESSAGES

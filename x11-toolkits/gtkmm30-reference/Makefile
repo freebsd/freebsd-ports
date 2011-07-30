@@ -5,22 +5,19 @@
 # $FreeBSD$
 #
 
-PORTREVISION=	6
+PORTREVISION=	0
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtkmm-2.0.pc:${PORTSDIR}/x11-toolkits/gtkmm20
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gtkmm-3.0.pc:${PORTSDIR}/x11-toolkits/gtkmm30 \
+		glibmm-reference>=0:${PORTSDIR}/devel/glibmm-reference
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-DOCSDIR=	${PREFIX}/share/doc/gtkmm-2.0
-
-post-patch:
-	@${FIND} ${WRKSRC}/examples -name Makefile.in \
-		| ${XARGS} ${REINPLACE_CMD} -e '/^install-am:/ s| all-am||'
+DOCSDIR=	${PREFIX}/share/doc/gtkmm-3.0
 
 do-install:
 .if !defined(NOPORTDOCS)
-.for d in docs examples
+.for d in docs
 	@cd ${WRKSRC}/${d} && ${GMAKE} install
 .endfor
 .endif

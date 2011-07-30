@@ -3,11 +3,11 @@
 # Whom:                Alexander Nedotsukov <bland@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports-stable/devel/libsigc++20/Makefile,v 1.3 2010/06/23 22:49:38 kwm Exp $
+#   $MCom: ports/devel/libsigc++20/Makefile,v 1.17 2011/07/25 09:19:14 kwm Exp $
 #
 
 PORTNAME=	libsigc++
-PORTVERSION=	2.2.8
+PORTVERSION=	2.2.10
 CATEGORIES=	devel
 MASTER_SITES=	GNOME
 
@@ -17,7 +17,7 @@ COMMENT=	Callback Framework for C++
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_AUTOTOOLS=	libtool
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 LATEST_LINK=	libsigc++20

@@ -3,11 +3,11 @@
 # Whom:					Maxim Sobolev <sobomax@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/accessibility/atk/Makefile,v 1.108 2010/09/27 08:35:36 kwm Exp $
+#   $MCom: ports/accessibility/atk/Makefile,v 1.114 2011/06/13 20:32:27 kwm Exp $
 #
 
 PORTNAME=	atk
-PORTVERSION=	1.32.0
+PORTVERSION=	2.0.1
 PORTREVISION?=	0
 CATEGORIES=	accessibility devel
 MASTER_SITES=	GNOME
@@ -16,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A GNOME accessibility toolkit (ATK)
 
-USE_BZIP2=	yes
+USE_XZ=		yes
 
 .if !defined(REFERENCE_PORT)
 
@@ -30,8 +30,8 @@ USE_GNOME=	gnomehack glib20 ltverhack referencehack
 CONFIGURE_ARGS=	--enable-static \
 		--disable-gtk-doc \
 		--with-html-dir=${PREFIX}/share/doc
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
+CPPFLAGS=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		AUTOCONF=${TRUE} AUTOMAKE=${TRUE}
 
 post-patch:

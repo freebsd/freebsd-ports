@@ -3,10 +3,10 @@
 # Whom:			Ade Lovett <ade@lovett.com>
 #
 # $FreeBSD$
-#    $MCom: ports/graphics/gdk-pixbuf2/Makefile,v 1.9 2010/11/09 09:35:01 kwm Exp $
+#    $MCom: ports/graphics/gdk-pixbuf2/Makefile,v 1.15 2011/06/27 21:10:23 kwm Exp $
 
 PORTNAME?=	gdk-pixbuf
-PORTVERSION=	2.22.1
+PORTVERSION=	2.23.5
 CATEGORIES?=	graphics
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/gdk-pixbuf/${PORTVERSION:R}
@@ -23,7 +23,7 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		jasper.4:${PORTSDIR}/graphics/jasper
 
 LATEST_LINK=	gdk-pixbuf2
-USE_BZIP2=	yes
+USE_XZ=		yes
 USE_GMAKE=	yes
 USE_XORG=	xt xi x11
 USE_AUTOTOOLS=	libtool

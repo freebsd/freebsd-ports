@@ -100,6 +100,7 @@ share/locale/dz/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/el/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/en_CA/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/en_GB/LC_MESSAGES/gdk-pixbuf.mo
+share/locale/en@shaw/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/eo/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/es/LC_MESSAGES/gdk-pixbuf.mo
 share/locale/et/LC_MESSAGES/gdk-pixbuf.mo
@@ -222,6 +223,8 @@ share/locale/zh_TW/LC_MESSAGES/gdk-pixbuf.mo
 @dirrmtry share/locale/ia
 @dirrmtry share/locale/hy/LC_MESSAGES
 @dirrmtry share/locale/hy
+@dirrmtry share/locale/en@shaw/LC_MESSAGES
+@dirrmtry share/locale/en@shaw
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
 @dirrmtry share/locale/crh/LC_MESSAGES
