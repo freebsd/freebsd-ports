@@ -18,13 +18,16 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
     		gmp.10:${PORTSDIR}/math/gmp
 RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
 
+USE_CSTD=	c89
+
 USE_XZ=		yes
 USE_GNOME=	gnomehack
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--with-aclocaldir=${PREFIX}/share/aclocal
+CONFIGURE_ARGS=	--with-aclocaldir=${PREFIX}/share/aclocal \
+		--with-stack-direction=-1
 USE_LDCONFIG=	yes
 
 MANCOMPRESSED=	yes
