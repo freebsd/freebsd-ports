@@ -22,7 +22,7 @@ lib/libkik.so.13
 lib/libmkf.a
 lib/libmkf.la
 lib/libmkf.so
-lib/libmkf.so.15
+lib/libmkf.so.16
 lib/libvte-mlterm.a
 lib/libvte-mlterm.la
 lib/libvte-mlterm.so

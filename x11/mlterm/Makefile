@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mlterm
-PORTVERSION=	3.0.5
+PORTVERSION=	3.0.6
 CATEGORIES=	x11
 MASTER_SITES=	SF/${PORTNAME}/01release/${PORTNAME}-${PORTVERSION}
 
@@ -24,7 +24,6 @@ USE_GETTEXT=	yes
 CONFIGURE_ARGS=	--with-imagelib=gdk-pixbuf2 --enable-utmp \
 		--mandir="${LOCALBASE}/man" --enable-optimize-redrawing \
 		--with-tools="mlclient,mlconfig,mlterm-menu,mlcc,w3mmlconfig,mlimgloader" \
-		--with-type-engines="xcore,xft" \
 		--disable-iiimf
 CONFIGURE_ENV=	LIBS="${LIBS} -L${LOCALBASE}/lib ${PTHREAD_LIBS} -lintl" CFLAGS="${CFLAGS} -I${LOCALBASE}/include"
 MAKE_JOBS_UNSAFE=	yes
@@ -32,7 +31,8 @@ OPTIONS=	FRIBIDI	"Use Fribidi for BiDi rendering" off \
 		UIM "uim support (experimental)" off \
 		M17NLIB "m17n library support (experimental)" off \
 		SCIM "SCIM support (experimental)" off \
-		IBUS "IBUS support (experimental)" off
+		IBUS "IBUS support (experimental)" off \
+		CAIRO "Use Cairo for type engine (experimental)" off
 
 .include <bsd.port.pre.mk>
 
@@ -63,7 +63,6 @@ CONFIGURE_ARGS+=	--disable-m17nlib
 PLIST_SUB+=	M17NLIB="@comment "
 .endif
 
-
 .if defined(WITH_SCIM)
 CONFIGURE_ARGS+=	--enable-scim
 MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
@@ -83,6 +82,15 @@ PLIST_SUB+=	IBUS=""
 CONFIGURE_ARGS+=	--disable-ibus
 PLIST_SUB+=	IBUS="@comment "
 .endif
+
+.if defined(WITH_CAIRO)
+CONFIGURE_ARGS+=	--with-type-engines="xcore,xft,cairo"
+MAKE_ENV=	LIBS_LOCAL=-L${LOCALBASE}/lib
+LIB_DEPENDS+=	cairo.2:${PORTSDIR}/graphics/cairo
+.else
+CONFIGURE_ARGS+=	--with-type-engines="xcore,xft"
+.endif
+
 
 .if ${OSVERSION} >= 900004
 MAKE_ENV=	LIBS_LOCAL=-lutempter
