@@ -262,8 +262,6 @@
     SUBDIR += gimp-save-for-web
     SUBDIR += gimpfx-foundry
     SUBDIR += gimpshop
-    SUBDIR += gir-repository-goocanvas
-    SUBDIR += gir-repository-poppler
     SUBDIR += giram
     SUBDIR += gkrellkam
     SUBDIR += gkrellkam2
