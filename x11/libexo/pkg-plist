@@ -27,9 +27,6 @@ include/exo-1/exo/exo-utils.h
 include/exo-1/exo/exo-wrap-table.h
 include/exo-1/exo/exo-xsession-client.h
 include/exo-1/exo/exo.h
-lib/gio/modules/libexo-module-1.a
-lib/gio/modules/libexo-module-1.la
-lib/gio/modules/libexo-module-1.so
 lib/libexo-1.a
 lib/libexo-1.la
 lib/libexo-1.so
