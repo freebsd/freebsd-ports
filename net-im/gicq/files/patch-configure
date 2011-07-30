@@ -1,0 +1,20 @@
+--- configure.orig	2011-07-01 11:28:05.000000000 +0200
++++ configure	2011-07-01 11:31:14.000000000 +0200
+@@ -1340,7 +1340,7 @@
+ cat > conftest.$ac_ext <<EOF
+ #line 1342 "configure"
+ #include "confdefs.h"
+-main(){return(0);}
++int main(){return(0);}
+ EOF
+ if { (eval echo configure:1346: \"$ac_link\") 1>&5; (eval $ac_link) 2>&5; } && test -s conftest; then
+   ac_cv_prog_cxx_works=yes
+@@ -3979,7 +3979,7 @@
+   echo $ac_n "(cached) $ac_c" 1>&6
+ else
+   ac_save_LIBS="$LIBS"
+-LIBS="-licq "`glib-config --libs`" $LIBS"
++LIBS="-licq "`$GLIB_CONFIG --libs`" $LIBS"
+ cat > conftest.$ac_ext <<EOF
+ #line 3985 "configure"
+ #include "confdefs.h"
