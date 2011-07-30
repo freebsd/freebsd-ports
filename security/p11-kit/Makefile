@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p11-kit
-PORTVERSION=	0.2
+PORTVERSION=	0.3
 CATEGORIES=	security devel
 MASTER_SITES=	http://p11-glue.freedesktop.org/releases/
 
@@ -16,7 +16,7 @@ COMMENT=	Library for loading and enumurating of PKCS\#11 modules
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc --disable-nls
 
-USE_AUTOTOOLS=	libtool autoconf
+USE_AUTOTOOLS=	libtool
 USE_GNOME=	ltverhack gnomehack
 USE_LDCONFIG=	yes
 
