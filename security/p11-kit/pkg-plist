@@ -3,9 +3,11 @@ include/p11-kit-1/p11-kit/p11-kit.h
 include/p11-kit-1/p11-kit/pin.h
 include/p11-kit-1/p11-kit/uri.h
 include/p11-kit-1/p11-kit/pkcs11.h
-lib/libp11-kit.so.0
-lib/libp11-kit.so
+lib/libp11-kit.a
 lib/libp11-kit.la
+lib/libp11-kit.so
+lib/libp11-kit.so.0
+lib/p11-kit-proxy.so
 libdata/pkgconfig/p11-kit-1.pc
 share/gtk-doc/html/p11-kit/api-index-full.html
 share/gtk-doc/html/p11-kit/config-format.html
