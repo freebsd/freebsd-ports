@@ -2469,6 +2469,8 @@
 %%WWWDIR%%/language/common/hu.js
 %%WWWDIR%%/language/common/it.inc.php
 %%WWWDIR%%/language/common/it.js
+%%WWWDIR%%/language/common/ko.inc.php
+%%WWWDIR%%/language/common/ko.js
 %%WWWDIR%%/language/common/nb.inc.php
 %%WWWDIR%%/language/common/nb.js
 %%WWWDIR%%/language/common/nl.inc.php
@@ -2502,6 +2504,7 @@
 %%WWWDIR%%/language/countries/fr.inc.php
 %%WWWDIR%%/language/countries/hu.inc.php
 %%WWWDIR%%/language/countries/it.inc.php
+%%WWWDIR%%/language/countries/ko.inc.php
 %%WWWDIR%%/language/countries/nb.inc.php
 %%WWWDIR%%/language/countries/nl.inc.php
 %%WWWDIR%%/language/countries/pl.inc.php
@@ -2529,6 +2532,7 @@
 %%WWWDIR%%/language/filetypes/hu.inc.php
 %%WWWDIR%%/language/filetypes/it.inc.php
 %%WWWDIR%%/language/filetypes/ja.inc.php
+%%WWWDIR%%/language/filetypes/ko.inc.php
 %%WWWDIR%%/language/filetypes/nb.inc.php
 %%WWWDIR%%/language/filetypes/nl.inc.php
 %%WWWDIR%%/language/filetypes/no.inc.php
@@ -2554,6 +2558,7 @@
 %%WWWDIR%%/language/lostpassword/es.inc.php
 %%WWWDIR%%/language/lostpassword/et.inc.php
 %%WWWDIR%%/language/lostpassword/fr.inc.php
+%%WWWDIR%%/language/lostpassword/ko.inc.php
 %%WWWDIR%%/language/lostpassword/nb.inc.php
 %%WWWDIR%%/language/lostpassword/nl.inc.php
 %%WWWDIR%%/language/lostpassword/pl.inc.php
@@ -2575,6 +2580,8 @@
 %%WWWDIR%%/modules/ab2users/language/et.js
 %%WWWDIR%%/modules/ab2users/language/fr.inc.php
 %%WWWDIR%%/modules/ab2users/language/fr.js
+%%WWWDIR%%/modules/ab2users/language/ko.inc.php
+%%WWWDIR%%/modules/ab2users/language/ko.js
 %%WWWDIR%%/modules/ab2users/language/nb.inc.php
 %%WWWDIR%%/modules/ab2users/language/nb.js
 %%WWWDIR%%/modules/ab2users/language/nl.js
@@ -2654,6 +2661,8 @@
 %%WWWDIR%%/modules/addressbook/language/hu.js
 %%WWWDIR%%/modules/addressbook/language/it.inc.php
 %%WWWDIR%%/modules/addressbook/language/it.js
+%%WWWDIR%%/modules/addressbook/language/ko.inc.php
+%%WWWDIR%%/modules/addressbook/language/ko.js
 %%WWWDIR%%/modules/addressbook/language/nb.inc.php
 %%WWWDIR%%/modules/addressbook/language/nb.js
 %%WWWDIR%%/modules/addressbook/language/nl.inc.php
@@ -2742,6 +2751,8 @@
 %%WWWDIR%%/modules/backupmanager/language/en.js
 %%WWWDIR%%/modules/backupmanager/language/fr.inc.php
 %%WWWDIR%%/modules/backupmanager/language/fr.js
+%%WWWDIR%%/modules/backupmanager/language/ko.inc.php
+%%WWWDIR%%/modules/backupmanager/language/ko.js
 %%WWWDIR%%/modules/backupmanager/language/nb.inc.php
 %%WWWDIR%%/modules/backupmanager/language/nb.js
 %%WWWDIR%%/modules/backupmanager/language/nl.inc.php
@@ -2774,6 +2785,8 @@
 %%WWWDIR%%/modules/blacklist/language/es.js
 %%WWWDIR%%/modules/blacklist/language/fr.inc.php
 %%WWWDIR%%/modules/blacklist/language/fr.js
+%%WWWDIR%%/modules/blacklist/language/ko.inc.php
+%%WWWDIR%%/modules/blacklist/language/ko.js
 %%WWWDIR%%/modules/blacklist/language/nb.inc.php
 %%WWWDIR%%/modules/blacklist/language/nb.js
 %%WWWDIR%%/modules/blacklist/language/nl.inc.php
@@ -2891,6 +2904,8 @@
 %%WWWDIR%%/modules/bookmarks/language/en.js
 %%WWWDIR%%/modules/bookmarks/language/fr.inc.php
 %%WWWDIR%%/modules/bookmarks/language/fr.js
+%%WWWDIR%%/modules/bookmarks/language/ko.inc.php
+%%WWWDIR%%/modules/bookmarks/language/ko.js
 %%WWWDIR%%/modules/bookmarks/language/nb.inc.php
 %%WWWDIR%%/modules/bookmarks/language/nb.js
 %%WWWDIR%%/modules/bookmarks/language/nl.inc.php
@@ -2976,6 +2991,8 @@
 %%WWWDIR%%/modules/calendar/language/hu.js
 %%WWWDIR%%/modules/calendar/language/it.inc.php
 %%WWWDIR%%/modules/calendar/language/it.js
+%%WWWDIR%%/modules/calendar/language/ko.inc.php
+%%WWWDIR%%/modules/calendar/language/ko.js
 %%WWWDIR%%/modules/calendar/language/nb.inc.php
 %%WWWDIR%%/modules/calendar/language/nb.js
 %%WWWDIR%%/modules/calendar/language/nl.inc.php
@@ -3053,6 +3070,8 @@
 %%WWWDIR%%/modules/calllog/language/en.js
 %%WWWDIR%%/modules/calllog/language/fr.inc.php
 %%WWWDIR%%/modules/calllog/language/fr.js
+%%WWWDIR%%/modules/calllog/language/ko.inc.php
+%%WWWDIR%%/modules/calllog/language/ko.js
 %%WWWDIR%%/modules/calllog/language/nb.inc.php
 %%WWWDIR%%/modules/calllog/language/nb.js
 %%WWWDIR%%/modules/calllog/language/nl.inc.php
@@ -3113,6 +3132,8 @@
 %%WWWDIR%%/modules/cms/language/fr.js
 %%WWWDIR%%/modules/cms/language/it.inc.php
 %%WWWDIR%%/modules/cms/language/it.js
+%%WWWDIR%%/modules/cms/language/ko.inc.php
+%%WWWDIR%%/modules/cms/language/ko.js
 %%WWWDIR%%/modules/cms/language/nb.inc.php
 %%WWWDIR%%/modules/cms/language/nb.js
 %%WWWDIR%%/modules/cms/language/nl.inc.php
@@ -3343,6 +3364,8 @@
 %%WWWDIR%%/modules/comments/language/hu.js
 %%WWWDIR%%/modules/comments/language/it.inc.php
 %%WWWDIR%%/modules/comments/language/it.js
+%%WWWDIR%%/modules/comments/language/ko.inc.php
+%%WWWDIR%%/modules/comments/language/ko.js
 %%WWWDIR%%/modules/comments/language/nb.inc.php
 %%WWWDIR%%/modules/comments/language/nb.js
 %%WWWDIR%%/modules/comments/language/nl.inc.php
@@ -3383,6 +3406,8 @@
 %%WWWDIR%%/modules/currencies/language/et.js
 %%WWWDIR%%/modules/currencies/language/fr.inc.php
 %%WWWDIR%%/modules/currencies/language/fr.js
+%%WWWDIR%%/modules/currencies/language/ko.inc.php
+%%WWWDIR%%/modules/currencies/language/ko.js
 %%WWWDIR%%/modules/currencies/language/nb.inc.php
 %%WWWDIR%%/modules/currencies/language/nb.js
 %%WWWDIR%%/modules/currencies/language/pl.inc.php
@@ -3409,6 +3434,8 @@
 %%WWWDIR%%/modules/customcss/language/en.js
 %%WWWDIR%%/modules/customcss/language/fr.inc.php
 %%WWWDIR%%/modules/customcss/language/fr.js
+%%WWWDIR%%/modules/customcss/language/ko.inc.php
+%%WWWDIR%%/modules/customcss/language/ko.js
 %%WWWDIR%%/modules/customcss/language/nb.inc.php
 %%WWWDIR%%/modules/customcss/language/nb.js
 %%WWWDIR%%/modules/customcss/language/pl.js
@@ -3694,6 +3721,7 @@
 %%WWWDIR%%/modules/dav/language/de.inc.php
 %%WWWDIR%%/modules/dav/language/en.inc.php
 %%WWWDIR%%/modules/dav/language/fr.inc.php
+%%WWWDIR%%/modules/dav/language/ko.inc.php
 %%WWWDIR%%/modules/dav/language/nb.inc.php
 %%WWWDIR%%/modules/dav/language/ru.inc.php
 %%WWWDIR%%/modules/dav/language/sv.inc.php
@@ -3728,6 +3756,7 @@
 %%WWWDIR%%/modules/email/attachment.php
 %%WWWDIR%%/modules/email/classes/cached_imap.class.inc.php
 %%WWWDIR%%/modules/email/classes/email.class.inc.php
+%%WWWDIR%%/modules/email/download_file.php
 %%WWWDIR%%/modules/email/install/install.sql
 %%WWWDIR%%/modules/email/install/uninstall.sql
 %%WWWDIR%%/modules/email/install/updates.inc.php
@@ -3762,6 +3791,8 @@
 %%WWWDIR%%/modules/email/language/hu.js
 %%WWWDIR%%/modules/email/language/it.inc.php
 %%WWWDIR%%/modules/email/language/it.js
+%%WWWDIR%%/modules/email/language/ko.inc.php
+%%WWWDIR%%/modules/email/language/ko.js
 %%WWWDIR%%/modules/email/language/nb.inc.php
 %%WWWDIR%%/modules/email/language/nb.js
 %%WWWDIR%%/modules/email/language/nl.inc.php
@@ -3858,6 +3889,8 @@
 %%WWWDIR%%/modules/emailportlet/language/et.js
 %%WWWDIR%%/modules/emailportlet/language/fr.inc.php
 %%WWWDIR%%/modules/emailportlet/language/fr.js
+%%WWWDIR%%/modules/emailportlet/language/ko.inc.php
+%%WWWDIR%%/modules/emailportlet/language/ko.js
 %%WWWDIR%%/modules/emailportlet/language/nb.inc.php
 %%WWWDIR%%/modules/emailportlet/language/nb.js
 %%WWWDIR%%/modules/emailportlet/language/nl.inc.php
@@ -3933,6 +3966,8 @@
 %%WWWDIR%%/modules/files/language/hu.js
 %%WWWDIR%%/modules/files/language/it.inc.php
 %%WWWDIR%%/modules/files/language/it.js
+%%WWWDIR%%/modules/files/language/ko.inc.php
+%%WWWDIR%%/modules/files/language/ko.js
 %%WWWDIR%%/modules/files/language/nb.inc.php
 %%WWWDIR%%/modules/files/language/nb.js
 %%WWWDIR%%/modules/files/language/nl.inc.php
@@ -4017,6 +4052,7 @@
 %%WWWDIR%%/modules/formprocessor/language/de.inc.php
 %%WWWDIR%%/modules/formprocessor/language/en.inc.php
 %%WWWDIR%%/modules/formprocessor/language/fr.inc.php
+%%WWWDIR%%/modules/formprocessor/language/ko.inc.php
 %%WWWDIR%%/modules/formprocessor/language/nb.inc.php
 %%WWWDIR%%/modules/formprocessor/language/pl.inc.php
 %%WWWDIR%%/modules/formprocessor/language/ru.inc.php
@@ -4035,6 +4071,8 @@
 %%WWWDIR%%/modules/freebusypermissions/language/de.js
 %%WWWDIR%%/modules/freebusypermissions/language/en.inc.php
 %%WWWDIR%%/modules/freebusypermissions/language/en.js
+%%WWWDIR%%/modules/freebusypermissions/language/ko.inc.php
+%%WWWDIR%%/modules/freebusypermissions/language/ko.js
 %%WWWDIR%%/modules/freebusypermissions/language/nl.inc.php
 %%WWWDIR%%/modules/freebusypermissions/language/nl.js
 %%WWWDIR%%/modules/freebusypermissions/scripts.txt
@@ -4060,6 +4098,8 @@
 %%WWWDIR%%/modules/gnupg/language/en.js
 %%WWWDIR%%/modules/gnupg/language/fr.inc.php
 %%WWWDIR%%/modules/gnupg/language/fr.js
+%%WWWDIR%%/modules/gnupg/language/ko.inc.php
+%%WWWDIR%%/modules/gnupg/language/ko.js
 %%WWWDIR%%/modules/gnupg/language/nb.inc.php
 %%WWWDIR%%/modules/gnupg/language/nb.js
 %%WWWDIR%%/modules/gnupg/language/nl.inc.php
@@ -4109,6 +4149,8 @@
 %%WWWDIR%%/modules/groups/language/hu.js
 %%WWWDIR%%/modules/groups/language/it.inc.php
 %%WWWDIR%%/modules/groups/language/it.js
+%%WWWDIR%%/modules/groups/language/ko.inc.php
+%%WWWDIR%%/modules/groups/language/ko.js
 %%WWWDIR%%/modules/groups/language/nb.inc.php
 %%WWWDIR%%/modules/groups/language/nb.js
 %%WWWDIR%%/modules/groups/language/nl.inc.php
@@ -4144,6 +4186,7 @@
 %%WWWDIR%%/modules/imapauth/language/ca.inc.php
 %%WWWDIR%%/modules/imapauth/language/en.inc.php
 %%WWWDIR%%/modules/imapauth/language/fr.inc.php
+%%WWWDIR%%/modules/imapauth/language/ko.inc.php
 %%WWWDIR%%/modules/imapauth/language/nb.inc.php
 %%WWWDIR%%/modules/imapauth/language/ru.inc.php
 %%WWWDIR%%/modules/imapauth/logged_off_scripts.inc.php
@@ -4157,6 +4200,7 @@
 %%WWWDIR%%/modules/language/language/ca.inc.php
 %%WWWDIR%%/modules/language/language/en.inc.php
 %%WWWDIR%%/modules/language/language/fr.inc.php
+%%WWWDIR%%/modules/language/language/ko.inc.php
 %%WWWDIR%%/modules/language/language/nb.inc.php
 %%WWWDIR%%/modules/language/language/nl.inc.php
 %%WWWDIR%%/modules/language/language/ru.inc.php
@@ -4168,6 +4212,7 @@
 %%WWWDIR%%/modules/ldapauth/language/ca.inc.php
 %%WWWDIR%%/modules/ldapauth/language/en.inc.php
 %%WWWDIR%%/modules/ldapauth/language/fr.inc.php
+%%WWWDIR%%/modules/ldapauth/language/ko.inc.php
 %%WWWDIR%%/modules/ldapauth/language/nb.inc.php
 %%WWWDIR%%/modules/ldapauth/themes/Default/images/ldapauth.png
 %%WWWDIR%%/modules/links/LinkDescriptionDialog.js
@@ -4192,6 +4237,8 @@
 %%WWWDIR%%/modules/links/language/et.js
 %%WWWDIR%%/modules/links/language/fr.inc.php
 %%WWWDIR%%/modules/links/language/fr.js
+%%WWWDIR%%/modules/links/language/ko.inc.php
+%%WWWDIR%%/modules/links/language/ko.js
 %%WWWDIR%%/modules/links/language/nb.inc.php
 %%WWWDIR%%/modules/links/language/nb.js
 %%WWWDIR%%/modules/links/language/nl.inc.php
@@ -4232,6 +4279,8 @@
 %%WWWDIR%%/modules/log/language/et.js
 %%WWWDIR%%/modules/log/language/fr.inc.php
 %%WWWDIR%%/modules/log/language/fr.js
+%%WWWDIR%%/modules/log/language/ko.inc.php
+%%WWWDIR%%/modules/log/language/ko.js
 %%WWWDIR%%/modules/log/language/nb.inc.php
 %%WWWDIR%%/modules/log/language/nb.js
 %%WWWDIR%%/modules/log/language/nl.inc.php
@@ -4327,6 +4376,8 @@
 %%WWWDIR%%/modules/mailings/language/fr.js
 %%WWWDIR%%/modules/mailings/language/it.inc.php
 %%WWWDIR%%/modules/mailings/language/it.js
+%%WWWDIR%%/modules/mailings/language/ko.inc.php
+%%WWWDIR%%/modules/mailings/language/ko.js
 %%WWWDIR%%/modules/mailings/language/nb.inc.php
 %%WWWDIR%%/modules/mailings/language/nb.js
 %%WWWDIR%%/modules/mailings/language/nl.inc.php
@@ -4371,6 +4422,8 @@
 %%WWWDIR%%/modules/mediawiki/language/en.js
 %%WWWDIR%%/modules/mediawiki/language/fr.inc.php
 %%WWWDIR%%/modules/mediawiki/language/fr.js
+%%WWWDIR%%/modules/mediawiki/language/ko.inc.php
+%%WWWDIR%%/modules/mediawiki/language/ko.js
 %%WWWDIR%%/modules/mediawiki/language/nb.inc.php
 %%WWWDIR%%/modules/mediawiki/language/nb.js
 %%WWWDIR%%/modules/mediawiki/language/nl.inc.php
@@ -4410,6 +4463,8 @@
 %%WWWDIR%%/modules/modules/language/hu.js
 %%WWWDIR%%/modules/modules/language/it.inc.php
 %%WWWDIR%%/modules/modules/language/it.js
+%%WWWDIR%%/modules/modules/language/ko.inc.php
+%%WWWDIR%%/modules/modules/language/ko.js
 %%WWWDIR%%/modules/modules/language/nb.inc.php
 %%WWWDIR%%/modules/modules/language/nb.js
 %%WWWDIR%%/modules/modules/language/nl.inc.php
@@ -4480,6 +4535,8 @@
 %%WWWDIR%%/modules/notes/language/hu.js
 %%WWWDIR%%/modules/notes/language/it.inc.php
 %%WWWDIR%%/modules/notes/language/it.js
+%%WWWDIR%%/modules/notes/language/ko.inc.php
+%%WWWDIR%%/modules/notes/language/ko.js
 %%WWWDIR%%/modules/notes/language/nb.inc.php
 %%WWWDIR%%/modules/notes/language/nb.js
 %%WWWDIR%%/modules/notes/language/nl.inc.php
@@ -4528,6 +4585,8 @@
 %%WWWDIR%%/modules/phpbb3/language/et.js
 %%WWWDIR%%/modules/phpbb3/language/fr.inc.php
 %%WWWDIR%%/modules/phpbb3/language/fr.js
+%%WWWDIR%%/modules/phpbb3/language/ko.inc.php
+%%WWWDIR%%/modules/phpbb3/language/ko.js
 %%WWWDIR%%/modules/phpbb3/language/nb.inc.php
 %%WWWDIR%%/modules/phpbb3/language/nb.js
 %%WWWDIR%%/modules/phpbb3/language/pl.inc.php
@@ -4587,6 +4646,8 @@
 %%WWWDIR%%/modules/postfixadmin/language/fr.js
 %%WWWDIR%%/modules/postfixadmin/language/it.inc.php
 %%WWWDIR%%/modules/postfixadmin/language/it.js
+%%WWWDIR%%/modules/postfixadmin/language/ko.inc.php
+%%WWWDIR%%/modules/postfixadmin/language/ko.js
 %%WWWDIR%%/modules/postfixadmin/language/nb.inc.php
 %%WWWDIR%%/modules/postfixadmin/language/nb.js
 %%WWWDIR%%/modules/postfixadmin/language/pl.inc.php
@@ -4620,6 +4681,8 @@
 %%WWWDIR%%/modules/reminders/language/et.js
 %%WWWDIR%%/modules/reminders/language/fr.inc.php
 %%WWWDIR%%/modules/reminders/language/fr.js
+%%WWWDIR%%/modules/reminders/language/ko.inc.php
+%%WWWDIR%%/modules/reminders/language/ko.js
 %%WWWDIR%%/modules/reminders/language/nb.inc.php
 %%WWWDIR%%/modules/reminders/language/nb.js
 %%WWWDIR%%/modules/reminders/language/nl.inc.php
@@ -4640,6 +4703,8 @@
 %%WWWDIR%%/modules/search/language/et.js
 %%WWWDIR%%/modules/search/language/fr.inc.php
 %%WWWDIR%%/modules/search/language/fr.js
+%%WWWDIR%%/modules/search/language/ko.inc.php
+%%WWWDIR%%/modules/search/language/ko.js
 %%WWWDIR%%/modules/search/language/nb.inc.php
 %%WWWDIR%%/modules/search/language/nb.js
 %%WWWDIR%%/modules/search/language/nl.inc.php
@@ -4667,6 +4732,8 @@
 %%WWWDIR%%/modules/serverclient/language/en.js
 %%WWWDIR%%/modules/serverclient/language/fr.inc.php
 %%WWWDIR%%/modules/serverclient/language/fr.js
+%%WWWDIR%%/modules/serverclient/language/ko.inc.php
+%%WWWDIR%%/modules/serverclient/language/ko.js
 %%WWWDIR%%/modules/serverclient/language/nb.inc.php
 %%WWWDIR%%/modules/serverclient/language/nb.js
 %%WWWDIR%%/modules/serverclient/language/nl.inc.php
@@ -4692,6 +4759,8 @@
 %%WWWDIR%%/modules/settings/data.php
 %%WWWDIR%%/modules/settings/language/en.inc.php
 %%WWWDIR%%/modules/settings/language/en.js
+%%WWWDIR%%/modules/settings/language/ko.inc.php
+%%WWWDIR%%/modules/settings/language/ko.js
 %%WWWDIR%%/modules/settings/language/nb.inc.php
 %%WWWDIR%%/modules/settings/language/nb.js
 %%WWWDIR%%/modules/settings/language/nl.inc.php
@@ -4720,6 +4789,8 @@
 %%WWWDIR%%/modules/sieve/language/de.js
 %%WWWDIR%%/modules/sieve/language/en.inc.php
 %%WWWDIR%%/modules/sieve/language/en.js
+%%WWWDIR%%/modules/sieve/language/ko.inc.php
+%%WWWDIR%%/modules/sieve/language/ko.js
 %%WWWDIR%%/modules/sieve/language/nl.inc.php
 %%WWWDIR%%/modules/sieve/language/nl.js
 %%WWWDIR%%/modules/sieve/scripts.txt
@@ -4741,12 +4812,15 @@
 %%WWWDIR%%/modules/smime/language/de.js
 %%WWWDIR%%/modules/smime/language/en.inc.php
 %%WWWDIR%%/modules/smime/language/en.js
+%%WWWDIR%%/modules/smime/language/ko.inc.php
+%%WWWDIR%%/modules/smime/language/ko.js
 %%WWWDIR%%/modules/smime/language/nb.inc.php
 %%WWWDIR%%/modules/smime/language/nb.js
 %%WWWDIR%%/modules/smime/language/nl.inc.php
 %%WWWDIR%%/modules/smime/language/nl.js
 %%WWWDIR%%/modules/smime/scripts.txt
 %%WWWDIR%%/modules/smime/test.php
+%%WWWDIR%%/modules/smime/themes/Default/images/certemailmismatch.png
 %%WWWDIR%%/modules/smime/themes/Default/images/invalid.png
 %%WWWDIR%%/modules/smime/themes/Default/images/pubcerts.png
 %%WWWDIR%%/modules/smime/themes/Default/images/signed.png
@@ -4803,6 +4877,8 @@
 %%WWWDIR%%/modules/summary/language/hu.js
 %%WWWDIR%%/modules/summary/language/it.inc.php
 %%WWWDIR%%/modules/summary/language/it.js
+%%WWWDIR%%/modules/summary/language/ko.inc.php
+%%WWWDIR%%/modules/summary/language/ko.js
 %%WWWDIR%%/modules/summary/language/nb.inc.php
 %%WWWDIR%%/modules/summary/language/nb.js
 %%WWWDIR%%/modules/summary/language/nl.inc.php
@@ -4847,6 +4923,7 @@
 %%WWWDIR%%/modules/systemusers/language/en.inc.php
 %%WWWDIR%%/modules/systemusers/language/et.inc.php
 %%WWWDIR%%/modules/systemusers/language/fr.inc.php
+%%WWWDIR%%/modules/systemusers/language/ko.inc.php
 %%WWWDIR%%/modules/systemusers/language/nb.inc.php
 %%WWWDIR%%/modules/systemusers/language/nl.inc.php
 %%WWWDIR%%/modules/systemusers/language/pl.inc.php
@@ -4913,6 +4990,8 @@
 %%WWWDIR%%/modules/tasks/language/hu.js
 %%WWWDIR%%/modules/tasks/language/it.inc.php
 %%WWWDIR%%/modules/tasks/language/it.js
+%%WWWDIR%%/modules/tasks/language/ko.inc.php
+%%WWWDIR%%/modules/tasks/language/ko.js
 %%WWWDIR%%/modules/tasks/language/nb.inc.php
 %%WWWDIR%%/modules/tasks/language/nb.js
 %%WWWDIR%%/modules/tasks/language/nl.inc.php
@@ -4978,6 +5057,8 @@
 %%WWWDIR%%/modules/tools/language/hu.js
 %%WWWDIR%%/modules/tools/language/it.inc.php
 %%WWWDIR%%/modules/tools/language/it.js
+%%WWWDIR%%/modules/tools/language/ko.inc.php
+%%WWWDIR%%/modules/tools/language/ko.js
 %%WWWDIR%%/modules/tools/language/nb.inc.php
 %%WWWDIR%%/modules/tools/language/nb.js
 %%WWWDIR%%/modules/tools/language/nl.inc.php
@@ -5060,6 +5141,8 @@
 %%WWWDIR%%/modules/users/language/hu.js
 %%WWWDIR%%/modules/users/language/it.inc.php
 %%WWWDIR%%/modules/users/language/it.js
+%%WWWDIR%%/modules/users/language/ko.inc.php
+%%WWWDIR%%/modules/users/language/ko.js
 %%WWWDIR%%/modules/users/language/nb.inc.php
 %%WWWDIR%%/modules/users/language/nb.js
 %%WWWDIR%%/modules/users/language/nl.inc.php
@@ -5106,6 +5189,8 @@
 %%WWWDIR%%/modules/wordpress/language/en.js
 %%WWWDIR%%/modules/wordpress/language/fr.inc.php
 %%WWWDIR%%/modules/wordpress/language/fr.js
+%%WWWDIR%%/modules/wordpress/language/ko.inc.php
+%%WWWDIR%%/modules/wordpress/language/ko.js
 %%WWWDIR%%/modules/wordpress/language/nb.inc.php
 %%WWWDIR%%/modules/wordpress/language/nb.js
 %%WWWDIR%%/modules/wordpress/language/nl.inc.php
