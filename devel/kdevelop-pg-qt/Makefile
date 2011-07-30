@@ -17,6 +17,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	Parser-generator from KDevplatform
 
 USE_BZIP2=	yes
+USE_BISON=	build
 USE_KDE4=	automoc4 kdehier kdelibs kdeprefix
 KDE4_BUILDENV=	yes
 USE_QT_VER=	4
