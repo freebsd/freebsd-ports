@@ -15,6 +15,9 @@ MASTER_SITES=	SF
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Python interface to the R Programming Language
 
+LICENSE=	GPLv2 LGPL21 MPL
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
 		R:${PORTSDIR}/math/R
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
@@ -22,7 +25,8 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/numpy:${PORTSDIR}/math/py-numpy \
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib/R/modules -L${LOCALBASE}/lib/R/lib"
+LDFLAGS+=	-L${LOCALBASE}/lib/R/modules -L${LOCALBASE}/lib/R/lib
+MAKE_ENV=	LDFLAGS="${LDFLAGS}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^statichere ,,' ${WRKSRC}/src/rpymodule.c
