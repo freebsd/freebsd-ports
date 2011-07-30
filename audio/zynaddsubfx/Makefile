@@ -53,6 +53,10 @@ LIB_DEPENDS+=	portaudio.0:${PORTSDIR}/audio/portaudio
 LIB_DEPENDS+=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 .endif
 
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64: invokes i386 asm
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e \
 		's|CXXFLAGS= -O2 -Wall -g -fPIC|CXXFLAGS=${CXXFLAGS}|g' \
