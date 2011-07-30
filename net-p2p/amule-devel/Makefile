@@ -25,6 +25,7 @@ LICENSE_COMB=	dual
 LICENSE_FILE_GPLv2=${WRKSRC}/docs/COPYING
 
 USE_BZIP2=	yes
+USE_BISON=	build
 USE_GNOME=	pkgconfig
 USE_GMAKE=	yes
 USE_WX=		2.8

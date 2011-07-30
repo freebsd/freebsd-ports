@@ -114,6 +114,7 @@ USE_GMAKE=	yes
 USE_PYTHON=	yes
 USE_OPENSSL=	yes
 WANT_GNOME=	yes
+USE_BISON=	build
 USE_GSTREAMER=	yes
 USE_XORG=	xaw
 USE_GL=		gl glu
