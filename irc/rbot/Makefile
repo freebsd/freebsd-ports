@@ -7,6 +7,7 @@
 
 PORTNAME=	rbot
 PORTVERSION=	0.9.15
+PORTREVISION=	1
 CATEGORIES=	irc ruby
 MASTER_SITES=	http://ruby-rbot.org/download/
 EXTRACT_SUFX=	.tgz
@@ -15,7 +16,7 @@ MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	Ruby IRC bot similar to infobot
 
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb \
-		${RUBY_PKGNAMEPREFIX}gettext>=1.93.0:${PORTSDIR}/devel/ruby-gettext
+		rubygem-gettext>=1.93.0:${PORTSDIR}/devel/rubygem-gettext
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
