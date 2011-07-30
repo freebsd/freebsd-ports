@@ -3,12 +3,11 @@
 # Whom:					marc@informatik.uni-bremen.de
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/py-gtk2/Makefile,v 1.72 2010/09/28 15:45:26 kwm Exp $
+#   $MCom: ports/x11-toolkits/py-gtk2/Makefile,v 1.78 2011/04/01 12:35:27 kwm Exp $
 #
 
 PORTNAME=	gtk
-PORTVERSION=	2.22.0
-PORTREVISION=	2
+PORTVERSION=	2.24.0
 CATEGORIES=	x11-toolkits python
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/pygtk/${PORTVERSION:C/^([0-9]+\.[0-9]+).*/\1/}
@@ -19,17 +18,13 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A set of Python bindings for GTK+
 
-BUILD_DEPENDS=	\
-		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gobject/_gobject.so:${PORTSDIR}/devel/py-gobject
-RUN_DEPENDS=	\
-		${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo \
-		${PYTHON_SITELIBDIR}/gtk-2.0/gobject/_gobject.so:${PORTSDIR}/devel/py-gobject
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/cairo/__init__.py:${PORTSDIR}/graphics/py-cairo
 
 LATEST_LINK=	py-gtk2
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack libglade2
+USE_GNOME=	gnomehack libglade2 pygobject
 USE_PYTHON=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
