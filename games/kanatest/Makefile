@@ -23,6 +23,8 @@ MAKE_ENV+=	LIBINTL="-lintl"
 post-patch:	.SILENT
 	${REINPLACE_CMD} '/LIBS/s|-lxml|-L${LOCALBASE}/lib &|' \
 		${WRKSRC}/configure
+	${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/src/Makefile.in
 	${REINPLACE_CMD} -e '/^%.mo:/,/^$$/s/test[^;]*/${TRUE}/' \
 		-e '\|/usr/bin| { s||${LOCALBASE}/bin|; s|=|?=|; }' \
 		${WRKSRC}/po/Makefile.in

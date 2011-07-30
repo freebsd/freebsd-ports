@@ -37,6 +37,10 @@ PLIST_SUB+=	NLS="@comment "
 
 .include <bsd.port.pre.mk>
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/src/Makefile.in
+
 pre-install:
 	cd ${WRKDIR}/libfm-${PORTVERSION} && ${CHMOD} 755 install-sh
 

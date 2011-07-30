@@ -21,6 +21,10 @@ CONFIGURE_ARGS+=--disable-install-pam
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-DGTK_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/src/Makefile.in
+
 post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${FILESDIR}/gnomesu-pam.sample ${EXAMPLESDIR}

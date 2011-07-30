@@ -8,7 +8,7 @@
 
 PORTNAME=	anjuta
 PORTVERSION=	2.32.1.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -21,7 +21,6 @@ BUILD_DEPENDS=	autogen:${PORTSDIR}/devel/autogen \
 		p5-Locale-gettext>=1.05:${PORTSDIR}/devel/p5-Locale-gettext
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 		gladeui-1.10:${PORTSDIR}/devel/glade3 \
-		vala-0.10.0:${PORTSDIR}/lang/vala \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
 		gdl-1.3:${PORTSDIR}/x11-toolkits/gdl
 RUN_DEPENDS=	bash:${PORTSDIR}/shells/bash \
@@ -45,6 +44,7 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--with-symbol-db-shm=/tmp \
+		--disable-vala \
 		--enable-introspection=no
 USE_LDCONFIG=	yes
 GCONF_SCHEMAS=	anjuta-build-basic-autotools-plugin.schemas \

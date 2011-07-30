@@ -1,4 +1,4 @@
-bin/gtkhtml-editor-test
+bin/gtkhtml3-editor-test
 include/libgtkhtml-%%VERSION%%/editor/gtkhtml-editor-actions.h
 include/libgtkhtml-%%VERSION%%/editor/gtkhtml-editor-common.h
 include/libgtkhtml-%%VERSION%%/editor/gtkhtml-editor-widgets.h

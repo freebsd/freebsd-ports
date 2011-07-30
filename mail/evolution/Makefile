@@ -107,6 +107,7 @@ post-patch:
 	@${REINPLACE_CMD} -e '/^plugins_standard_always/s/audio-inline//' \
 	    	-e 's|-lkrb5 -lcrypto -lasn1 -lcom_err -lroken -lgssapi|${KRB5_LIB}|g' \
 		-e 's|-Wl,--no-undefined||g' \
+		-e 's|-DGTK_DISABLE_DEPRECATED||g' \
 		-e 's|-Wmissing-include-dirs||g' \
 	    	${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/usr|${LOCALBASE}|g' \

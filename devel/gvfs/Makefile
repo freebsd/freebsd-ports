@@ -88,4 +88,8 @@ CONFIGURE_ARGS+=--disable-hal
 PLIST_SUB+=	HAL="@comment "
 .endif
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|-DG_DISABLE_DEPRECATED||g' \
+		${WRKSRC}/gconf/Makefile.in
+
 .include <bsd.port.post.mk>
