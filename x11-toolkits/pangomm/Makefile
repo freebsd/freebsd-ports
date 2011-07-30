@@ -3,11 +3,11 @@
 # Whom:                Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11-toolkits/pangomm/Makefile,v 1.16 2010/05/04 12:49:38 kwm Exp $
+#   $MCom: ports/x11-toolkits/pangomm/Makefile,v 1.21 2011/03/30 22:18:12 kwm Exp $
 #
 
 PORTNAME=	pangomm
-PORTVERSION=	2.26.3
+PORTVERSION=	2.28.2
 PORTREVISION?=	0
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	GNOME
@@ -25,7 +25,6 @@ LIB_DEPENDS=	glibmm-2.4.1:${PORTSDIR}/devel/glibmm \
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 USE_GMAKE=	yes
-USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GNOME=	gnomehack pango
