@@ -1378,6 +1378,7 @@ camerakit                       ports/graphics/camerakit
 caml-light                      ports/lang/caml-light
 campsite                        ports/www/campsite
 camserv                         ports/multimedia/camserv
+cantarell-fonts                 ports/x11-fonts/cantarell-fonts
 cantus_3                        ports/audio/cantus_3
 caph                            ports/games/caph
 caps-plugins                    ports/audio/caps-plugins
@@ -1768,6 +1769,7 @@ codelite                        ports/editors/codelite
 codeworker                      ports/devel/codeworker
 cog                             ports/sysutils/cog
 coin                            ports/graphics/Coin
+coinmp                          ports/math/coinmp
 coldsync                        ports/palm/coldsync
 cole                            ports/textproc/cole
 collectd                        ports/net-mgmt/collectd
@@ -8785,7 +8787,7 @@ logmon                          ports/sysutils/logmon
 logo                            ports/lang/logo
 logrotate                       ports/sysutils/logrotate
 logserial                       ports/sysutils/logserial
-logsurfer                       ports/misc/logsurfer
+logsurfer+                      ports/misc/logsurfer+
 logtool                         ports/sysutils/logtool
 logtools                        ports/www/logtools
 logwatch                        ports/sysutils/logwatch
