@@ -12,12 +12,14 @@ include/JAGS/compiler/NodeFactory.h
 include/JAGS/compiler/ObsFuncTab.h
 include/JAGS/compiler/ParseTree.h
 include/JAGS/distribution/ArrayDist.h
+include/JAGS/distribution/DistError.h
 include/JAGS/distribution/DistPtr.h
 include/JAGS/distribution/DistTab.h
 include/JAGS/distribution/Distribution.h
 include/JAGS/distribution/ScalarDist.h
 include/JAGS/distribution/VectorDist.h
 include/JAGS/function/ArrayFunction.h
+include/JAGS/function/FuncError.h
 include/JAGS/function/FuncTab.h
 include/JAGS/function/Function.h
 include/JAGS/function/FunctionPtr.h
@@ -50,6 +52,7 @@ include/JAGS/model/MonitorFactory.h
 include/JAGS/model/MonitorInfo.h
 include/JAGS/model/NodeArray.h
 include/JAGS/model/SymTab.h
+include/JAGS/module/ModuleError.h
 include/JAGS/rng/RNG.h
 include/JAGS/rng/RmathRNG.h
 include/JAGS/rng/RNGFactory.h
@@ -74,23 +77,23 @@ include/JAGS/util/integer.h
 include/JAGS/util/logical.h
 include/JAGS/util/nainf.h
 include/JAGS/version.h
-lib/JAGS/modules-%%PORTVERSION%%/basemod.la
-lib/JAGS/modules-%%PORTVERSION%%/basemod.so
-lib/JAGS/modules-%%PORTVERSION%%/bugs.la
-lib/JAGS/modules-%%PORTVERSION%%/bugs.so
-lib/JAGS/modules-%%PORTVERSION%%/dic.la
-lib/JAGS/modules-%%PORTVERSION%%/dic.so
-lib/JAGS/modules-%%PORTVERSION%%/glm.la
-lib/JAGS/modules-%%PORTVERSION%%/glm.so
-lib/JAGS/modules-%%PORTVERSION%%/lecuyer.la
-lib/JAGS/modules-%%PORTVERSION%%/lecuyer.so
-lib/JAGS/modules-%%PORTVERSION%%/mix.la
-lib/JAGS/modules-%%PORTVERSION%%/mix.so
-lib/JAGS/modules-%%PORTVERSION%%/msm.la
-lib/JAGS/modules-%%PORTVERSION%%/msm.so
+lib/JAGS/modules-%%MODULEVERSION%%/basemod.la
+lib/JAGS/modules-%%MODULEVERSION%%/basemod.so
+lib/JAGS/modules-%%MODULEVERSION%%/bugs.la
+lib/JAGS/modules-%%MODULEVERSION%%/bugs.so
+lib/JAGS/modules-%%MODULEVERSION%%/dic.la
+lib/JAGS/modules-%%MODULEVERSION%%/dic.so
+lib/JAGS/modules-%%MODULEVERSION%%/glm.la
+lib/JAGS/modules-%%MODULEVERSION%%/glm.so
+lib/JAGS/modules-%%MODULEVERSION%%/lecuyer.la
+lib/JAGS/modules-%%MODULEVERSION%%/lecuyer.so
+lib/JAGS/modules-%%MODULEVERSION%%/mix.la
+lib/JAGS/modules-%%MODULEVERSION%%/mix.so
+lib/JAGS/modules-%%MODULEVERSION%%/msm.la
+lib/JAGS/modules-%%MODULEVERSION%%/msm.so
 lib/libjags.la
 lib/libjags.so
-lib/libjags.so.2
+lib/libjags.so.3
 lib/libjrmath.la
 lib/libjrmath.so
 lib/libjrmath.so.0
@@ -457,12 +460,13 @@ libexec/jags-terminal
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/R
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/JAGS/modules-%%PORTVERSION%%
+@dirrm lib/JAGS/modules-%%MODULEVERSION%%
 @dirrm lib/JAGS
 @dirrm include/JAGS/util
 @dirrm include/JAGS/sarray
 @dirrm include/JAGS/sampler
 @dirrm include/JAGS/rng
+@dirrm include/JAGS/module
 @dirrm include/JAGS/model
 @dirrm include/JAGS/graph
 @dirrm include/JAGS/function

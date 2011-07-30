@@ -7,21 +7,24 @@
 #
 
 PORTNAME=	mcmc-jags
-PORTVERSION=	2.2.0
+PORTVERSION=	3.0.0
 CATEGORIES=	math
-MASTER_SITES=	SF:1,2,3
-MASTER_SITE_SUBDIR=	${PORTNAME}/JAGS/2.x/Source/:1 \
+MASTER_SITES=	SF:1,2,3,4
+MASTER_SITE_SUBDIR=	${PORTNAME}/JAGS/${PORTVERSION:C|\..*|.x|}/Source/:1 \
 		${PORTNAME}/Examples/2.x/:2 \
-		${PORTNAME}/Manuals/2.x/:3
+		${PORTNAME}/Manuals/2.x/:3 \
+		${PORTNAME}/Manuals/${PORTVERSION:C|\..*|.x|}/:4
 DISTFILES=	${DISTNAME:S/mcmc-//:U}${EXTRACT_SUFX}:1
 .if !defined(NOPORTDOCS)
 DISTFILES+=	classic-bugs.tar.gz:2 jags_developer_manual.pdf:3 \
-		jags_installation_manual.pdf:3 jags_user_manual.pdf:3
+		jags_installation_manual.pdf:4 jags_user_manual.pdf:4
 EXTRACT_ONLY=	${DISTNAME:S/mcmc-//:U}${EXTRACT_SUFX}
 .endif
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Just Another Gibbs Sampler
+
+LICENSE=	GPLv2
 
 OPTIONS=	ATLAS "use ATLAS libraries instead of BLAS and LAPACK" off
 
@@ -35,7 +38,7 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 USE_BISON=	build
-PLIST_SUB=	PORTVERSION=${PORTVERSION}
+PLIST_SUB=	MODULEVERSION=${PORTVERSION:C|\..*||}
 
 MAN1=		jags.1
 
@@ -64,8 +67,8 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for _M in developer installation user
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/jags_${_M}_manual.pdf \
+.for M in developer installation user
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/jags_${M}_manual.pdf \
 		${DOCSDIR}
 .endfor
 .endif
