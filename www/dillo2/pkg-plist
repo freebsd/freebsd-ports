@@ -18,6 +18,7 @@ libexec/dillo/dpi/file/file.dpi
 libexec/dillo/dpi/ftp/ftp.filter.dpi
 libexec/dillo/dpi/hello/hello.filter.dpi
 libexec/dillo/dpi/https/https.filter.dpi
+libexec/dillo/dpi/vsource/vsource.filter.dpi
 @dirrm libexec/dillo/dpi/https
 @dirrm libexec/dillo/dpi/hello
 @dirrm libexec/dillo/dpi/ftp
@@ -26,6 +27,7 @@ libexec/dillo/dpi/https/https.filter.dpi
 @dirrm libexec/dillo/dpi/datauri
 @dirrm libexec/dillo/dpi/cookies
 @dirrm libexec/dillo/dpi/bookmarks
+@dirrm libexec/dillo/dpi/vsource
 @dirrm libexec/dillo/dpi
 @dirrm libexec/dillo
 @dirrmtry etc/dillo

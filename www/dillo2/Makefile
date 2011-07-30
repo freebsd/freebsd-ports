@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	dillo
-PORTVERSION=	2.2
+PORTVERSION=	2.2.1
 CATEGORIES=	www ipv6
-MASTER_SITES=	http://www.dillo.org/download/
+MASTER_SITES=	http://www.dillo.org/download/ LOCAL/bf
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	A fast, small graphical Web browser built upon fltk2
@@ -23,9 +23,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-.ifndef(NO_INSTALL_MANPAGES)
 MAN1=		dillo.1
-.endif
 .ifndef(NOPORTDOCS)
 PORTDOCS=	*
 .endif
@@ -82,17 +80,14 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|dillorc|dillorc.dist|g" ${WRKSRC}/Makefile.in
 	@${REINPLACE_CMD} -e "s|dpidrc|dpidrc.dist|g" ${WRKSRC}/dpid/Makefile.in
 	@${REINPLACE_CMD} -e "s|keysrc|keysrc.dist|g" ${WRKSRC}/src/Makefile.in
-.ifdef(NO_INSTALL_MANPAGES)
-	@${REINPLACE_CMD} -e "\|install-data-am:|s|install-man||" ${WRKSRC}/doc/Makefile.in
-.endif
 .ifdef(NOPORTDOCS)
 	@${REINPLACE_CMD} -e "\|install-data-am:|s|install-dist_docDATA||" ${WRKSRC}/doc/Makefile.in
 .endif
 
 post-install:
-.for _F in dillorc dpidrc keysrc
-. if !exists(${PREFIX}/etc/dillo/${_F})
-	${INSTALL_DATA} ${PREFIX}/etc/dillo/${_F}.dist ${PREFIX}/etc/dillo/${_F}
+.for f in dillorc dpidrc keysrc
+. if !exists(${PREFIX}/etc/dillo/${f})
+	${INSTALL_DATA} ${PREFIX}/etc/dillo/${f}.dist ${PREFIX}/etc/dillo/${f}
 . endif
 .endfor
 .ifndef(NOPORTDOCS)
