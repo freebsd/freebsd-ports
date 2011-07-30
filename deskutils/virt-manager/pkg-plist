@@ -2,43 +2,43 @@ bin/virt-manager
 libexec/virt-manager-launch
 share/applications/virt-manager.desktop
 share/dbus-1/services/virt-manager.service
-%%DATADIR%%/pixmaps/device_cpu.png
-%%DATADIR%%/pixmaps/device_mem.png
-%%DATADIR%%/pixmaps/device_pci.png
-%%DATADIR%%/pixmaps/device_serial.png
-%%DATADIR%%/pixmaps/device_usb.png
-%%DATADIR%%/pixmaps/hicolor/16x16/actions/icon_console.png
-%%DATADIR%%/pixmaps/hicolor/16x16/actions/vm_new.png
-%%DATADIR%%/pixmaps/hicolor/22x22/actions/icon_console.png
-%%DATADIR%%/pixmaps/hicolor/22x22/actions/vm_new.png
-%%DATADIR%%/pixmaps/hicolor/24x24/actions/icon_console.png
-%%DATADIR%%/pixmaps/hicolor/24x24/actions/vm_new.png
-%%DATADIR%%/pixmaps/hicolor/32x32/actions/icon_console.png
-%%DATADIR%%/pixmaps/hicolor/32x32/actions/vm_new.png
-%%DATADIR%%/pixmaps/icon_details.png
-%%DATADIR%%/pixmaps/state_crashed.png
-%%DATADIR%%/pixmaps/state_paused.png
-%%DATADIR%%/pixmaps/state_progress.png
-%%DATADIR%%/pixmaps/state_running.png
-%%DATADIR%%/pixmaps/state_shutoff.png
-%%DATADIR%%/pixmaps/state_unknown.png
-%%DATADIR%%/pixmaps/virt-manager-icon.svg
-%%DATADIR%%/pixmaps/vm_clone_wizard.png
-%%DATADIR%%/pixmaps/vm_delete_wizard.png
-%%DATADIR%%/pixmaps/vm_import_wizard.png
-%%DATADIR%%/pixmaps/vm_large.png
-%%DATADIR%%/pixmaps/vm_medium.png
-%%DATADIR%%/pixmaps/vm_new_wizard.png
-%%DATADIR%%/pixmaps/vm_small.png
-%%DATADIR%%/pixmaps/vm_tiny.png
+share/icons/hicolor/16x16/apps/virt-manager.png
+share/icons/hicolor/22x22/apps/virt-manager.png
+share/icons/hicolor/24x24/apps/virt-manager.png
+share/icons/hicolor/256x256/apps/virt-manager.png
+share/icons/hicolor/32x32/apps/virt-manager.png
+share/icons/hicolor/48x48/apps/virt-manager.png
+%%DATADIR%%/icons/hicolor/16x16/actions/icon_console.png
+%%DATADIR%%/icons/hicolor/16x16/actions/vm_new.png
+%%DATADIR%%/icons/hicolor/22x22/actions/icon_console.png
+%%DATADIR%%/icons/hicolor/22x22/actions/icon_details.png
+%%DATADIR%%/icons/hicolor/22x22/actions/vm_new.png
+%%DATADIR%%/icons/hicolor/22x22/devices/device_cpu.png
+%%DATADIR%%/icons/hicolor/22x22/devices/device_mem.png
+%%DATADIR%%/icons/hicolor/22x22/devices/device_pci.png
+%%DATADIR%%/icons/hicolor/22x22/devices/device_serial.png
+%%DATADIR%%/icons/hicolor/22x22/devices/device_usb.png
+%%DATADIR%%/icons/hicolor/24x24/actions/icon_console.png
+%%DATADIR%%/icons/hicolor/24x24/actions/vm_new.png
+%%DATADIR%%/icons/hicolor/32x32/actions/icon_console.png
+%%DATADIR%%/icons/hicolor/32x32/actions/vm_new.png
+%%DATADIR%%/icons/hicolor/32x32/status/state_paused.png
+%%DATADIR%%/icons/hicolor/32x32/status/state_running.png
+%%DATADIR%%/icons/hicolor/32x32/status/state_shutoff.png
+%%DATADIR%%/icons/hicolor/48x48/actions/vm_clone_wizard.png
+%%DATADIR%%/icons/hicolor/48x48/actions/vm_delete_wizard.png
+%%DATADIR%%/icons/hicolor/48x48/actions/vm_import_wizard.png
+%%DATADIR%%/icons/hicolor/48x48/actions/vm_new_wizard.png
 %%DATADIR%%/virt-manager.py
 %%DATADIR%%/virtManager/IPy.py
 %%DATADIR%%/virtManager/__init__.py
 %%DATADIR%%/virtManager/about.py
 %%DATADIR%%/virtManager/addhardware.py
 %%DATADIR%%/virtManager/asyncjob.py
+%%DATADIR%%/virtManager/autodrawer.py
 %%DATADIR%%/virtManager/baseclass.py
 %%DATADIR%%/virtManager/choosecd.py
+%%DATADIR%%/virtManager/cli.py
 %%DATADIR%%/virtManager/clone.py
 %%DATADIR%%/virtManager/config.py
 %%DATADIR%%/virtManager/connect.py
@@ -56,16 +56,21 @@ share/dbus-1/services/virt-manager.service
 %%DATADIR%%/virtManager/engine.py
 %%DATADIR%%/virtManager/error.py
 %%DATADIR%%/virtManager/graphwidgets.py
+%%DATADIR%%/virtManager/guidiff.py
 %%DATADIR%%/virtManager/halhelper.py
 %%DATADIR%%/virtManager/host.py
+%%DATADIR%%/virtManager/inspection.py
+%%DATADIR%%/virtManager/inspectiondata.py
 %%DATADIR%%/virtManager/interface.py
 %%DATADIR%%/virtManager/keyring.py
+%%DATADIR%%/virtManager/libvirtglib.py
 %%DATADIR%%/virtManager/libvirtobject.py
 %%DATADIR%%/virtManager/manager.py
 %%DATADIR%%/virtManager/mediadev.py
 %%DATADIR%%/virtManager/migrate.py
 %%DATADIR%%/virtManager/netdev.py
 %%DATADIR%%/virtManager/network.py
+%%DATADIR%%/virtManager/nodedev.py
 %%DATADIR%%/virtManager/preferences.py
 %%DATADIR%%/virtManager/remote.py
 %%DATADIR%%/virtManager/secret.py
@@ -94,15 +99,20 @@ share/dbus-1/services/virt-manager.service
 %%DATADIR%%/vmm-preferences.glade
 %%DATADIR%%/vmm-progress.glade
 %%DATADIR%%/vmm-storage-browse.glade
-@dirrm %%DATADIR%%/virtManager
-@dirrm %%DATADIR%%/pixmaps/hicolor/16x16/actions
-@dirrm %%DATADIR%%/pixmaps/hicolor/16x16
-@dirrm %%DATADIR%%/pixmaps/hicolor/22x22/actions
-@dirrm %%DATADIR%%/pixmaps/hicolor/22x22
-@dirrm %%DATADIR%%/pixmaps/hicolor/24x24/actions
-@dirrm %%DATADIR%%/pixmaps/hicolor/24x24
-@dirrm %%DATADIR%%/pixmaps/hicolor/32x32/actions
-@dirrm %%DATADIR%%/pixmaps/hicolor/32x32
-@dirrm %%DATADIR%%/pixmaps/hicolor
+@dirrm %%DATADIR%%/icons/hicolor/16x16/actions
+@dirrm %%DATADIR%%/icons/hicolor/16x16
+@dirrm %%DATADIR%%/icons/hicolor/22x22/actions
+@dirrm %%DATADIR%%/icons/hicolor/22x22/devices
+@dirrm %%DATADIR%%/icons/hicolor/22x22
+@dirrm %%DATADIR%%/icons/hicolor/24x24/actions
+@dirrm %%DATADIR%%/icons/hicolor/24x24
+@dirrm %%DATADIR%%/icons/hicolor/32x32/actions
+@dirrm %%DATADIR%%/icons/hicolor/32x32/status
+@dirrm %%DATADIR%%/icons/hicolor/32x32
+@dirrm %%DATADIR%%/icons/hicolor/48x48/actions
+@dirrm %%DATADIR%%/icons/hicolor/48x48
+@dirrm %%DATADIR%%/icons/hicolor
+@dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/pixmaps
+@dirrm %%DATADIR%%/virtManager
 @dirrm %%DATADIR%%
