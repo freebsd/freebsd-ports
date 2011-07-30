@@ -24,8 +24,6 @@ LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan \
 		execinfo:${PORTSDIR}/devel/libexecinfo
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
-BROKEN=		does not compile
-
 CONFLICTS=	sylpheed-claws
 
 LICENSE=	GPLv3
