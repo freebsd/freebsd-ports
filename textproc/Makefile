@@ -1160,6 +1160,7 @@
     SUBDIR += ruby-format
     SUBDIR += ruby-formvalidator
     SUBDIR += ruby-gdome
+    SUBDIR += ruby-hikidoc
     SUBDIR += ruby-html-fillinform
     SUBDIR += ruby-html-template
     SUBDIR += ruby-htmlrepair
