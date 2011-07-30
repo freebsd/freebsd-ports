@@ -32,7 +32,6 @@ bin/icewmtray
 %%PORTDOCS%%%%DOCSDIR%%/icewm-8.html
 %%PORTDOCS%%%%DOCSDIR%%/icewm-9.html
 %%PORTDOCS%%%%DOCSDIR%%/icewm.html
-%%GNOMEDESKTOP%%share/gnome/wm-properties/IceWM.desktop
 %%DATADIR%%/icons/app_16x16.xpm
 %%DATADIR%%/icons/app_32x32.xpm
 %%DATADIR%%/icons/emacs_16x16.xpm
