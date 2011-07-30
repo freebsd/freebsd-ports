@@ -1,6 +1,5 @@
-
---- common-src/glib-util.c.orig	2010-05-20 13:19:58.000000000 -0400
-+++ common-src/glib-util.c	2010-05-20 13:24:40.000000000 -0400
+--- common-src/glib-util.c.orig	2008-12-01 22:17:19.000000000 +0100
++++ common-src/glib-util.c	2011-06-25 22:43:28.000000000 +0200
 @@ -38,26 +38,15 @@
      if (did_glib_init) return;
      did_glib_init = TRUE;
@@ -47,5 +46,37 @@
  }
  
  typedef enum {
-
-
+@@ -107,29 +107,19 @@
+     return to;
+ }
+ 
+-void g_list_free_full(GList * list) {
+-    GList * cur = list;
+-
+-    while (cur != NULL) {
+-        gpointer data = cur->data;
+-        amfree(data);
+-        cur = g_list_next(cur);
+-    }
+-
+-    g_list_free(list);
+-}
+-
+-void g_slist_free_full(GSList * list) {
++#if (GLIB_MAJOR_VERSION < 2 || (GLIB_MAJOR_VERSION == 2 && GLIB_MINOR_VERSION < 28))
++void _slist_free_full(GSList * list, GDestroyNotify free_fn) {
+     GSList * cur = list;
+ 
+     while (cur != NULL) {
+         gpointer data = cur->data;
+-        amfree(data);
++        free_fn(data);
+         cur = g_slist_next(cur);
+     }
+ 
+     g_slist_free(list);
+ }
++#endif
+ 
+ void g_queue_free_full(GQueue * queue) {
+     while (!g_queue_is_empty(queue)) {
