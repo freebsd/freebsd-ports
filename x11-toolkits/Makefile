@@ -38,7 +38,6 @@
     SUBDIR += gambas2-gb-qt
     SUBDIR += gdl
     SUBDIR += gigi
-    SUBDIR += gir-repository-vte
     SUBDIR += gnocl
     SUBDIR += gnome-desktop-sharp20
     SUBDIR += gnome-sharp20
