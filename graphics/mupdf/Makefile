@@ -6,7 +6,7 @@
 
 PORTNAME=	mupdf
 PORTVERSION=	0.8.165
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE \
@@ -22,7 +22,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		openjpeg.2:${PORTSDIR}/graphics/openjpeg
 
 USE_GMAKE=	yes
-MAKE_ARGS+=	build=native prefix=${PREFIX} verbose=1 mandir=${PREFIX}/man
+MAKE_ARGS+=	build=release prefix=${PREFIX} verbose=1 mandir=${PREFIX}/man
 USE_XORG=	x11 xext
 USE_GNOME=	pkgconfig
 MAN1=		mupdf.1 mu_pdfclean.1 mu_pdfdraw.1 mu_pdfshow.1
@@ -35,6 +35,10 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 OPTIONS=	SCROLL	"Build with scroll hacks" on \
 
 .include <bsd.port.options.mk>
+
+.if ${ARCH} == "amd64" || ${ARCH} == "i386"
+CFLAGS+=	-mfpmath=sse
+.endif
 
 .if defined(WITH_SCROLL)
 EXTRA_PATCHES+=	${FILESDIR}/scroll_hack-apps_pdfapp.c
@@ -60,9 +64,4 @@ pre-install:	.SILENT
 	${FIND} ${WRKSRC} -name pdf\*.1 -exec ${SH} -c 'mv {} $$(dirname {})/mu_$$(basename {})' \;
 
 .include <bsd.port.pre.mk>
-
-.if ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64 : uses i386-specific options
-.endif
-
 .include <bsd.port.post.mk>
