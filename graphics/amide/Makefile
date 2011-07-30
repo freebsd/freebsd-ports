@@ -17,6 +17,8 @@ COMMENT=	Medical Imaging Data Examiner
 
 LICENSE=	GPLv2
 
+BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
