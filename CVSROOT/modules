@@ -4402,11 +4402,6 @@ gindent                         ports/devel/gindent
 gini                            ports/net/gini
 gio-fam-backend                 ports/devel/gio-fam-backend
 gio-sharp                       ports/devel/gio-sharp
-gir-repository                  ports/devel/gir-repository
-gir-repository-goocanvas        ports/graphics/gir-repository-goocanvas
-gir-repository-libnotify        ports/devel/gir-repository-libnotify
-gir-repository-poppler          ports/graphics/gir-repository-poppler
-gir-repository-vte              ports/x11-toolkits/gir-repository-vte
 giram                           ports/graphics/giram
 gish-demo                       ports/games/gish-demo
 gist                            ports/www/gist
@@ -4414,6 +4409,7 @@ git                             ports/devel/git
 git-annex                       ports/devel/git-annex
 git-merge-changelog             ports/devel/git-merge-changelog
 gitg                            ports/devel/gitg
+gitolite                        ports/devel/gitolite
 gittrac                         ports/devel/gittrac
 gjs                             ports/lang/gjs
 gkermit                         ports/comms/gkermit
@@ -4985,6 +4981,7 @@ gscommander                     ports/shells/gscommander
 gsculpt                         ports/graphics/gsculpt
 gsed                            ports/textproc/gsed
 gseen.mod                       ports/irc/gseen.mod
+gsettings-desktop-schemas       ports/devel/gsettings-desktop-schemas
 gsfonts                         ports/print/gsfonts
 gsfv                            ports/security/gsfv
 gshisen                         ports/games/gshisen
@@ -5148,12 +5145,15 @@ gtk-sharp10                     ports/x11-toolkits/gtk-sharp10
 gtk-sharp20                     ports/x11-toolkits/gtk-sharp20
 gtk-theme-switch                ports/x11/gtk-theme-switch
 gtk-theme-switch2               ports/x11/gtk-theme-switch2
+gtk-update-icon-cache           ports/graphics/gtk-update-icon-cache
 gtk-vnc                         ports/net/gtk-vnc
 gtk-xfce-engine                 ports/x11-themes/gtk-xfce-engine
 gtk-zenith-theme                ports/x11-themes/gtk-zenith-theme
 gtk12                           ports/x11-toolkits/gtk12
 gtk20                           ports/x11-toolkits/gtk20
 gtk20-reference                 ports/x11-toolkits/gtk20-reference
+gtk30                           ports/x11-toolkits/gtk30
+gtk30-reference                 ports/x11-toolkits/gtk30-reference
 gtkabale                        ports/games/gtkabale
 gtkada                          ports/x11-toolkits/gtkada
 gtkam                           ports/graphics/gtkam
@@ -5185,6 +5185,8 @@ gtkmm20                         ports/x11-toolkits/gtkmm20
 gtkmm20-reference               ports/x11-toolkits/gtkmm20-reference
 gtkmm24                         ports/x11-toolkits/gtkmm24
 gtkmm24-reference               ports/x11-toolkits/gtkmm24-reference
+gtkmm30                         ports/x11-toolkits/gtkmm30
+gtkmm30-reference               ports/x11-toolkits/gtkmm30-reference
 gtkparasite                     ports/devel/gtkparasite
 gtkpasman                       ports/security/gtkpasman
 gtkperf                         ports/benchmarks/gtkperf
@@ -11801,6 +11803,7 @@ p5-Dancer-Plugin-DataFu         ports/www/p5-Dancer-Plugin-DataFu
 p5-Dancer-Plugin-Database       ports/databases/p5-Dancer-Plugin-Database
 p5-Dancer-Plugin-Email          ports/mail/p5-Dancer-Plugin-Email
 p5-Dancer-Plugin-Feed           ports/www/p5-Dancer-Plugin-Feed
+p5-Dancer-Plugin-ValidationClass  ports/www/p5-Dancer-Plugin-ValidationClass
 p5-Dancer-Session-Memcached     ports/databases/p5-Dancer-Session-Memcached
 p5-Danga-Socket                 ports/devel/p5-Danga-Socket
 p5-Danga-Socket-Callback        ports/devel/p5-Danga-Socket-Callback
@@ -15971,6 +15974,7 @@ p5-dancer-plugin-datafu         ports/www/p5-Dancer-Plugin-DataFu
 p5-dancer-plugin-dbic           ports/databases/p5-Dancer-Plugin-DBIC
 p5-dancer-plugin-email          ports/mail/p5-Dancer-Plugin-Email
 p5-dancer-plugin-feed           ports/www/p5-Dancer-Plugin-Feed
+p5-dancer-plugin-validationclass  ports/www/p5-Dancer-Plugin-ValidationClass
 p5-dancer-session-memcached     ports/databases/p5-Dancer-Session-Memcached
 p5-danga-socket                 ports/devel/p5-Danga-Socket
 p5-danga-socket-callback        ports/devel/p5-Danga-Socket-Callback
@@ -23367,6 +23371,7 @@ ruby-gtkhtml2                   ports/www/ruby-gtkhtml2
 ruby-gtkmozembed                ports/www/ruby-gtkmozembed
 ruby-gtksourceview2             ports/x11-toolkits/ruby-gtksourceview2
 ruby-gtktrayicon                ports/x11/ruby-gtktrayicon
+ruby-hikidoc                    ports/textproc/ruby-hikidoc
 ruby-hmac                       ports/security/ruby-hmac
 ruby-html-fillinform            ports/textproc/ruby-html-fillinform
 ruby-html-template              ports/textproc/ruby-html-template
@@ -23540,6 +23545,7 @@ rubygem-amazon-ecs              ports/www/rubygem-amazon-ecs
 rubygem-amqp                    ports/net/rubygem-amqp
 rubygem-analogger               ports/devel/rubygem-analogger
 rubygem-anemone                 ports/www/rubygem-anemone
+rubygem-app_config              ports/devel/rubygem-app_config
 rubygem-archive-tar-minitar     ports/archivers/rubygem-archive-tar-minitar
 rubygem-arel                    ports/databases/rubygem-arel
 rubygem-arrayfields             ports/devel/rubygem-arrayfields
@@ -23849,7 +23855,6 @@ rubygem-simple_form             ports/devel/rubygem-simple_form
 rubygem-simple_oauth            ports/net/rubygem-simple_oauth
 rubygem-sinatra                 ports/www/rubygem-sinatra
 rubygem-sinatra-respond_to      ports/www/rubygem-sinatra-respond_to
-rubygem-smtp_tls                ports/mail/rubygem-smtp_tls
 rubygem-snmp                    ports/net-mgmt/rubygem-snmp
 rubygem-soap4r                  ports/devel/rubygem-soap4r
 rubygem-spreadsheet             ports/textproc/rubygem-spreadsheet
