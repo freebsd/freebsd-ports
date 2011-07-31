@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Params-Check
-PORTVERSION=	0.28
+PORTVERSION=	0.30
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -29,7 +29,7 @@ post-install:
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500905
+.if ${PERL_LEVEL} < 501000
 RUN_DEPENDS+=	p5-Locale-Maketext-Simple>=0:${PORTSDIR}/devel/p5-Locale-Maketext-Simple
 .endif
 
