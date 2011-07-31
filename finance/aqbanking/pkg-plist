@@ -220,7 +220,7 @@ lib/libaqbankingpp.so.0
 lib/libaqhbci.a
 lib/libaqhbci.la
 lib/libaqhbci.so
-lib/libaqhbci.so.19
+lib/libaqhbci.so.20
 lib/libaqnone.a
 lib/libaqnone.la
 lib/libaqnone.so

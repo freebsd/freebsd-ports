@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	aqbanking
-DISTVERSION=	5.0.7
+PORTVERSION=	5.0.14
 CATEGORIES=	finance
-MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=03&release=80&file=01&dummy=/
+MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=03&release=85&file=01&dummy=/
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Online banking interface and financial data framework
 
-LIB_DEPENDS=	gwenhywfar.60:${PORTSDIR}/devel/gwenhywfar \
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	gwenhywfar.62:${PORTSDIR}/devel/gwenhywfar \
 		gmp.10:${PORTSDIR}/math/gmp
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack pkgconfig
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	APIDOC "Full API documentation (requires Doxygen)" off \
 		KTOBLZCHECK "KtoBlzCheck support" off \
@@ -45,7 +45,8 @@ GWEN_SHLIB_VER=	60
 .include <bsd.port.options.mk>
 
 .if !defined(NOPORTDOCS) && defined(WITH_APIDOC)
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
+		dot:${PORTSDIR}/graphics/graphviz
 CONFIGURE_ARGS+=--enable-full-doc
 PORTDOCS=	apidoc
 .endif
