@@ -7,9 +7,8 @@
 
 PORTNAME=	hunspell
 PORTVERSION=	20110729
-CATEGORIES=	textproc
+CATEGORIES=	polish textproc
 MASTER_SITES=	http://sjp.pl/slownik/ort/
-PKGNAMEPREFIX=	pl-
 DISTNAME=	sjp-myspell-pl-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
