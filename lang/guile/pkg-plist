@@ -129,7 +129,7 @@ lib/libguile-srfi-srfi-60-v-2.so.2
 lib/libguile.a
 lib/libguile.la
 lib/libguile.so
-lib/libguile.so.20
+lib/libguile.so.21
 lib/libguilereadline-v-17.a
 lib/libguilereadline-v-17.la
 lib/libguilereadline-v-17.so
