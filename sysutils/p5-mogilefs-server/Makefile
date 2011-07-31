@@ -5,35 +5,38 @@
 # $FreeBSD$
 #
 
-PORTNAME=	mogilefs-server
-PORTVERSION=	2.46
+PORTNAME=	MogileFS-Server
+PORTVERSION=	2.51
 CATEGORIES=	sysutils perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DORMANDO
 PKGNAMEPREFIX=	p5-
-DISTNAME=	MogileFS-Server-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	MogileFS (distributed filesystem) server
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/IO/AIO.pm:${PORTSDIR}/devel/p5-IO-AIO \
-		${SITE_PERL}/${PERL_ARCH}/Sys/Syslog.pm:${PORTSDIR}/sysutils/p5-Sys-Syslog \
-		${SITE_PERL}/Danga/Socket.pm:${PORTSDIR}/devel/p5-Danga-Socket \
-		${SITE_PERL}/Gearman/Client/Async.pm:${PORTSDIR}/devel/p5-Gearman-Client-Async \
-		${SITE_PERL}/Gearman/Server.pm:${PORTSDIR}/devel/p5-Gearman-Server \
-		${SITE_PERL}/Net/Netmask.pm:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
-		${SITE_PERL}/Perlbal.pm:${PORTSDIR}/www/perlbal \
-		${SITE_PERL}/Sys/Syscall.pm:${PORTSDIR}/devel/p5-Sys-Syscall \
-		${SITE_PERL}/MogileFS/Client.pm:${PORTSDIR}/sysutils/p5-MogileFS-Client \
-		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql
+RUN_DEPENDS=	p5-Danga-Socket>=1.56:${PORTSDIR}/devel/p5-Danga-Socket \
+		p5-DBD-mysql>=0:${PORTSDIR}/databases/p5-DBD-mysql \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
+		p5-IO-AIO>=0:${PORTSDIR}/devel/p5-IO-AIO \
+		p5-MogileFS-Client>=0:${PORTSDIR}/sysutils/p5-MogileFS-Client \
+		p5-Net-Netmask>=0:${PORTSDIR}/net-mgmt/p5-Net-Netmask \
+		p5-Perlbal>=1.79:${PORTSDIR}/www/perlbal \
+		p5-Sys-Syscall>=0.22:${PORTSDIR}/devel/p5-Sys-Syscall \
+		p5-Sys-Syslog>=0:${PORTSDIR}/sysutils/p5-Sys-Syslog
 
 PERL_CONFIGURE=	yes
 
 MAN1=		mogautomount.1 \
 		mogilefsd.1 \
 		mogstored.1
-MAN3=		MogileFS::DevFID.3 \
+MAN3=		MogileFS::Class.3 \
+		MogileFS::DevFID.3 \
+		MogileFS::Device.3 \
+		MogileFS::Domain.3 \
 		MogileFS::FID.3 \
+		MogileFS::Factory.3 \
+		MogileFS::Host.3 \
 		MogileFS::IOStatWatcher.3 \
 		MogileFS::Overview.3 \
 		MogileFS::ReplicationPolicy.3 \

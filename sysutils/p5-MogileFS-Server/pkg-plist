@@ -1,8 +1,7 @@
-%%PORTDOCS%%%%DOCSDIR%%/fsck-notes.txt
-%%PORTDOCS%%%%DOCSDIR%%/memcache-support.txt
-%%PORTDOCS%%%%DOCSDIR%%/pluggable-replication-policies.txt
-%%PORTDOCS%%%%DOCSDIR%%/testing.txt
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Server/.packlist
+bin/mogautomount
+bin/mogdbsetup
+bin/mogilefsd
+bin/mogstored
 %%SITE_PERL%%/MogileFS/Class.pm
 %%SITE_PERL%%/MogileFS/Config.pm
 %%SITE_PERL%%/MogileFS/Connection/Client.pm
@@ -14,6 +13,11 @@
 %%SITE_PERL%%/MogileFS/Domain.pm
 %%SITE_PERL%%/MogileFS/Exception.pm
 %%SITE_PERL%%/MogileFS/FID.pm
+%%SITE_PERL%%/MogileFS/Factory.pm
+%%SITE_PERL%%/MogileFS/Factory/Class.pm
+%%SITE_PERL%%/MogileFS/Factory/Device.pm
+%%SITE_PERL%%/MogileFS/Factory/Domain.pm
+%%SITE_PERL%%/MogileFS/Factory/Host.pm
 %%SITE_PERL%%/MogileFS/HTTPFile.pm
 %%SITE_PERL%%/MogileFS/Host.pm
 %%SITE_PERL%%/MogileFS/IOStatWatcher.pm
@@ -94,10 +98,14 @@
 %%SITE_PERL%%/mogdeps/Perlbal/UploadListener.pm
 %%SITE_PERL%%/mogdeps/Perlbal/Util.pm
 %%SITE_PERL%%/mogdeps/Sys/Syscall.pm
-bin/mogautomount
-bin/mogdbsetup
-bin/mogilefsd
-bin/mogstored
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Server/.packlist
+%%PORTDOCS%%%%DOCSDIR%%/fsck-notes.txt
+%%PORTDOCS%%%%DOCSDIR%%/memcache-support.txt
+%%PORTDOCS%%%%DOCSDIR%%/pluggable-replication-policies.txt
+%%PORTDOCS%%%%DOCSDIR%%/testing.txt
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Server
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS
 @dirrmtry %%SITE_PERL%%/mogdeps/Sys
 @dirrmtry %%SITE_PERL%%/mogdeps/Perlbal/Test
 @dirrmtry %%SITE_PERL%%/mogdeps/Perlbal/Plugin
@@ -116,8 +124,6 @@ bin/mogstored
 @dirrmtry %%SITE_PERL%%/MogileFS/Worker
 @dirrmtry %%SITE_PERL%%/MogileFS/Store
 @dirrmtry %%SITE_PERL%%/MogileFS/ReplicationPolicy
+@dirrmtry %%SITE_PERL%%/MogileFS/Factory
 @dirrmtry %%SITE_PERL%%/MogileFS/Connection
 @dirrmtry %%SITE_PERL%%/MogileFS
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS/Server
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MogileFS
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
