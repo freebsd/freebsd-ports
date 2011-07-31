@@ -7,7 +7,7 @@
 
 PORTNAME=	meep
 PORTVERSION=	1.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	science
 MASTER_SITES=	http://ab-initio.mit.edu/meep/
 
@@ -17,7 +17,7 @@ COMMENT=	FDTD simulation software to model electromagnetic systems
 BUILD_DEPENDS+=	bash:${PORTSDIR}/shells/bash \
 		harminv:${PORTSDIR}/science/harminv \
 		gsed:${PORTSDIR}/textproc/gsed
-LIB_DEPENDS+=	guile.20:${PORTSDIR}/lang/guile \
+LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile \
 		blas.2:${PORTSDIR}/math/blas \
 		ctl.4:${PORTSDIR}/science/libctl \
 		hdf5.0:${PORTSDIR}/science/hdf5

@@ -7,14 +7,14 @@
 
 PORTNAME=	drgeo
 PORTVERSION=	1.1.0
-PORTREVISION=	12
+PORTREVISION=	13
 CATEGORIES=	math
 MASTER_SITES=	SF/ofset/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A GTK interactive geometry sofware
 
-LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
 
 USE_GETTEXT=	yes
 USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libglade2

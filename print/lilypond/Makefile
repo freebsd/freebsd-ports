@@ -9,6 +9,7 @@
 
 PORTNAME=	lilypond
 PORTVERSION=	2.14.1
+PORTREVISION=	1
 CATEGORIES=	print audio
 MASTER_SITES=	http://download.linuxaudio.org/lilypond/sources/v2.14/
 
@@ -23,7 +24,7 @@ BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
 		zip:${PORTSDIR}/archivers/zip \
 		gsed:${PORTSDIR}/textproc/gsed \
 		${LOCALBASE}/share/ghostscript/fonts/c059033l.pfb:${PORTSDIR}/print/gsfonts
-LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile \
+LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile \
     		gmp.10:${PORTSDIR}/math/gmp
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX \
     		mftrace:${PORTSDIR}/print/mftrace \

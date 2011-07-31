@@ -8,7 +8,7 @@
 
 PORTNAME=	gnotime
 PORTVERSION=	2.3.0
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	SF/gttr/${PORTNAME}/${PORTNAME}-${PORTVERSION} \
 		SF/qof/qof/${QOF_VERSION}:qof
@@ -18,7 +18,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A time tracker for gnome2
 
-LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
 
 USE_XORG=	xscrnsaver
 USE_GNOME=	gnomehack gnomeprefix gtkhtml3 intlhack libgnomeui

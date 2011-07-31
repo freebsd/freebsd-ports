@@ -7,6 +7,7 @@
 
 PORTNAME=	snd
 PORTVERSION=	12.3
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	ftp://ccrma-ftp.stanford.edu/pub/Lisp/ \
 		http://mirror.mcx2.org/
@@ -63,7 +64,7 @@ CONFIGURE_ARGS+=	--without-gsl
 
 .if !defined(WITHOUT_GUILE)
 CONFIGURE_ARGS+=	--with-guile
-LIB_DEPENDS+=	guile.20:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile
 PLIST_SUB+=	SCHEME=""
 .else
 CONFIGURE_ARGS+=	--without-guile

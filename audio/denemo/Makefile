@@ -7,6 +7,7 @@
 
 PORTNAME=	denemo
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	GNU
 
@@ -17,7 +18,7 @@ BUILD_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2
 LIB_DEPENDS=	aubio.3:${PORTSDIR}/audio/aubio \
 		fluidsynth.4:${PORTSDIR}/audio/fluidsynth \
 		jack.0:${PORTSDIR}/audio/jack \
-		guile.20:${PORTSDIR}/lang/guile \
+		guile.21:${PORTSDIR}/lang/guile \
 		fftw3.5:${PORTSDIR}/math/fftw3
 RUN_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2
 

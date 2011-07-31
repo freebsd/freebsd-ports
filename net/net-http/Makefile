@@ -8,7 +8,7 @@
 
 PORTNAME=	net-http
 PORTVERSION=	0.3.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net scheme
 MASTER_SITES=	http://evan.prodromou.name/software/net-http/
 
