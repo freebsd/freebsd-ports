@@ -7,6 +7,7 @@
 
 PORTNAME=	Ice
 PORTVERSION=	3.4.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://download.zeroc.com/Ice/3.4/
 
