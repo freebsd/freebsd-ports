@@ -25,12 +25,3 @@
  	}
  
  	# do exists in /proc/diskstats?
-@@ -3766,7 +3763,7 @@
- }
- 
- # check configuration file syntax
--if(system("perl -wc $opt_c >/dev/null 2>&1")) {
-+if(!system("perl -wc $opt_c >/dev/null 2>&1")) {
- 	print("FATAL: configuration file '$opt_c' had compilation errors.\n");
- 	exit(1);
- }

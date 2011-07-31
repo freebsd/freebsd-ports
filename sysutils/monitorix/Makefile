@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	monitorix
-PORTVERSION=	2.1.2
+PORTVERSION=	2.2.0
 PORTREVISION?=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.monitorix.org/ \
@@ -17,19 +17,16 @@ MAINTAINER=	crees@FreeBSD.org
 COMMENT=	A web based monitoring system
 
 LIB_DEPENDS=	rrd:${PORTSDIR}/databases/rrdtool
-RUN_DEPENDS=	${SITE_PERL}/LWP/Parallel.pm:${PORTSDIR}/www/p5-ParallelUA \
-		${SITE_PERL}/CGI.pm:${PORTSDIR}/www/p5-CGI.pm \
-		${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/MIME/Lite.pm:${PORTSDIR}/mail/p5-MIME-Lite
+RUN_DEPENDS=	p5-ParallelUA>=0:${PORTSDIR}/www/p5-ParallelUA \
+		p5-CGI.pm>=0:${PORTSDIR}/www/p5-CGI.pm \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-MIME-Lite>=0:${PORTSDIR}/mail/p5-MIME-Lite
 
 LICENSE=	GPLv2
 
-OPTIONS=	REPORTS "Mail HTML reports to a given address" off
-
-.include <bsd.port.options.mk>
-
 USE_PERL=	5.8+
 MAN5=		monitorix.conf.5
+MAN8=		monitorix.8
 MANCOMPRESSED=	no
 NO_BUILD=	yes
 USE_RC_SUBR=	${PORTNAME}
@@ -56,15 +53,10 @@ PORTDOCS=	COPYING \
 		Changes \
 		README \
 		README.FreeBSD \
+		README.OpenBSD \
+		README.nginx \
 		monitorix-alert.sh \
 		monitorix-apache.conf
-
-.if defined(WITH_REPORTS)
-RUN_DEPENDS+=	metamail>=2.7:${PORTSDIR}/mail/metamail
-PLIST_SUB+=	REPORTS=""
-.else
-PLIST_SUB+=	REPORTS="@comment "
-.endif
 
 pre-everything::
 	@${ECHO_MSG} ""
@@ -77,11 +69,8 @@ pre-everything::
 	@${ECHO_MSG} ""
 
 post-patch:
-# Set FreeBSD path for perl in shebang and absolute sysctl so as not to break
-# in cgi-bin
 .for f in monitorix.cgi monitorix.conf monitorix reports/send_reports
 	@${REINPLACE_CMD} -e "1s|^\(#!\).*|\1${PERL}|" \
-		-e 's|"\([^/]sysctl\)|"/sbin/\1|' \
 		${WRKSRC}/${f}
 .endfor
 # eth0 doesn't exist in FreeBSD! Also let's set our own paths.
@@ -97,33 +86,35 @@ post-patch:
 			${WRKSRC}/monitorix.conf
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/monitorix ${PREFIX}/sbin/
+	@${INSTALL_SCRIPT} ${WRKSRC}/monitorix ${PREFIX}/bin/
 	@${MKDIR} ${WWWDIR}/imgs
 	@${CHOWN} ${WWW_OWNER}:${WWW_GROUP} ${WWWDIR}/imgs
-	@for f in ${WWW_FILES}; do \
-		${INSTALL_DATA} ${WRKSRC}/$${f} ${WWWDIR}/; \
-	done
+.for f in ${WWW_FILES}
+	@${INSTALL_DATA} ${WRKSRC}/${f} ${WWWDIR}/
+.endfor
 	@${MKDIR} ${PREFIX}/${CGIDIR}
 	@${INSTALL_SCRIPT} ${WRKSRC}/monitorix.cgi ${PREFIX}/${CGIDIR}/
 .for m in ${MAN5}
 	@${INSTALL_MAN} ${WRKSRC}/man/man5/$m ${MAN5PREFIX}/man/man5/
 .endfor
-.if defined(WITH_REPORTS)
+.for m in ${MAN8}
+	@${INSTALL_MAN} ${WRKSRC}/man/man8/$m ${MAN8PREFIX}/man/man8/
+.endfor
 	@${MKDIR} ${WWWDIR}/reports
-. for l in ${REPORT_LANG}
+.for l in ${REPORT_LANG}
 	@${INSTALL_DATA} ${WRKSRC}/reports/${l}.html \
 		${WWWDIR}/reports/
-. endfor
-.endif
+.endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@for doc in ${PORTDOCS}; do \
-		${INSTALL_DATA} ${WRKSRC}/$${doc} ${DOCSDIR}; \
-	done
+. for doc in ${PORTDOCS}
+	@${INSTALL_DATA} ${WRKSRC}/${doc} ${DOCSDIR}
+. endfor
 .endif
 
 post-install:
 	@${MKDIR} ${DATADIR}
+	@${MKDIR} ${WWWDIR}/usage
 	@${INSTALL_DATA} ${WRKSRC}/monitorix.conf ${PREFIX}/etc/monitorix.conf.sample
 	@if [ ! -f ${PREFIX}/etc/monitorix.conf ]; then \
 		${CP} -p ${PREFIX}/etc/monitorix.conf.sample \

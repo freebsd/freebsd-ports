@@ -4,16 +4,18 @@
 @unexec if cmp -s %D/etc/monitorix.conf %D/etc/monitorix.conf.sample; then rm -f %D/etc/monitorix.conf; fi
 etc/monitorix.conf.sample
 @exec if [ ! -f %D/etc/monitorix.conf ]; then cp %B/%f %D/etc/monitorix.conf; fi
-sbin/monitorix
+bin/monitorix
 @exec mkdir -p %D/%%DATADIR%%
 @dirrmtry %%DATADIR%%
+@exec mkdir -p %D/%%WWWDIR%%/usage
+@dirrmtry %%WWWDIR%%/usage
 %%CGIDIR%%/monitorix.cgi
 @dirrmtry %%CGIDIR%%
-%%REPORTS%%%%WWWDIR%%/reports/ca.html
-%%REPORTS%%%%WWWDIR%%/reports/de.html
-%%REPORTS%%%%WWWDIR%%/reports/en.html
-%%REPORTS%%%%WWWDIR%%/reports/it.html
-%%REPORTS%%@dirrm %%WWWDIR%%/reports
+%%WWWDIR%%/reports/ca.html
+%%WWWDIR%%/reports/de.html
+%%WWWDIR%%/reports/en.html
+%%WWWDIR%%/reports/it.html
+@dirrm %%WWWDIR%%/reports
 %%WWWDIR%%/logo_bot.png
 %%WWWDIR%%/logo_top.png
 %%WWWDIR%%/monitorixico.png
