@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mDNSResponder
-PORTVERSION=	258.21
+PORTVERSION=	320.5
 CATEGORIES=	net dns
 MASTER_SITES=	http://opensource.apple.com/tarballs/mDNSResponder/
 
