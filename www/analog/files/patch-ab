@@ -1,6 +1,20 @@
---- src/tree.c.orig	Sun Mar 23 13:57:02 2003
-+++ src/tree.c	Sun May 11 10:25:45 2003
-@@ -895,8 +895,16 @@
+--- src/tree.c.orig	2004-12-19 08:51:31.000000000 -0500
++++ src/tree.c	2011-05-12 16:38:50.388298051 -0400
+@@ -769,11 +769,13 @@
+     if (((*name = strstr(whole, "Mosaic")) != NULL && (len = 6)) ||
+ 	((*name = strstr(whole, "mosaic")) != NULL && (len = 6)) ||
+ 	((*name = strstr(whole, "Konqueror")) != NULL && (len = 9)) ||
++	((*name = strstr(whole, "Baiduspider")) != NULL && (len = 11)) ||
+ 	((*name = strstr(whole, "Galeon")) != NULL && (len = 6)) ||
+ 	((*name = strstr(whole, "Phoenix")) != NULL && (len = 7)) ||
+ 	((*name = strstr(whole, "Firebird")) != NULL && (len = 8)) ||
+ 	((*name = strstr(whole, "Firefox")) != NULL && (len = 7)) ||
+ 	((*name = strstr(whole, "Chimera")) != NULL && (len = 7)) ||
++	((*name = strstr(whole, "Chrome")) != NULL && (len = 6)) ||
+ 	((*name = strstr(whole, "Camino")) != NULL && (len = 6)) ||
+ 	((*name = strstr(whole, "Safari")) != NULL && (len = 6)) ||
+ 	((*name = strstr(whole, "WebTV")) != NULL && (len = 5)) ||
+@@ -904,8 +906,16 @@
  	*name = "Macintosh";
      else if (strstr(whole, "Linux") != NULL || strstr(whole, "linux") != NULL)
        *name = "Unix:Linux";
