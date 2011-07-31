@@ -548,7 +548,6 @@
     SUBDIR += mod_realip
     SUBDIR += mod_remoteip
     SUBDIR += mod_rivet
-    SUBDIR += mod_roaming
     SUBDIR += mod_rpaf
     SUBDIR += mod_rpaf2
     SUBDIR += mod_ruby
