@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110731:
+  AFFECTS: users of www/typo3
+  AUTHOR: Helmut Schneider <jumper99@gmx.de>
+
+  www/typo3 has been repocopied to www/typo345. If you need to continue with
+  the old stable version please run
+
+  # portmaster -o www/typo345 www/typo3
+  or
+  # portupgrade -o www/typo345 www/typo3
+
+  Please remember to change the path of your config files too.
+
 20110730:
   AFFECTS: users of x11-toolkits/gtk20
   AUTHOR: gnome@FreeBSD.org
