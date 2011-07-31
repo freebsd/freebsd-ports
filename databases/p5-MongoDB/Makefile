@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MongoDB
-PORTVERSION=	0.43
+PORTVERSION=	0.44
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KRISTINA
@@ -19,17 +19,22 @@ LICENSE=	ASL
 
 BUILD_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Class-Method-Modifiers>=0:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
-		p5-Data-Types>=0:${PORTSDIR}/devel/p5-Data-Types \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash \
+		p5-boolean>=0:${PORTSDIR}/devel/p5-boolean
+RUN_DEPENDS=	p5-Any-Moose>=0:${PORTSDIR}/devel/p5-Any-Moose \
+		p5-Class-Method-Modifiers>=0:${PORTSDIR}/devel/p5-Class-Method-Modifiers \
+		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash \
+		p5-boolean>=0:${PORTSDIR}/devel/p5-boolean
+
+TEST_DEPENDS=	p5-Data-Types>=0:${PORTSDIR}/devel/p5-Data-Types \
+		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
 		p5-JSON>=0:${PORTSDIR}/converters/p5-JSON \
 		p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
-		p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash \
-		p5-boolean>=0:${PORTSDIR}/devel/p5-boolean \
-		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+		p5-Try-Tiny>=0:${PORTSDIR}/lang/p5-Try-Tiny
 
 MAKE_JOBS_UNSAFE=	yes
-
 PERL_CONFIGURE=	yes
 
 MAN3=		MongoDB.3 \
@@ -48,4 +53,10 @@ MAN3=		MongoDB.3 \
 		MongoDB::Timestamp.3 \
 		MongoDB::Tutorial.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500809
+TEST_DEPENDS+=	p5-File-Temp>=0.17:${PORTSDIR}/devel/p5-File-Temp
+.endif
+
+.include <bsd.port.post.mk>
