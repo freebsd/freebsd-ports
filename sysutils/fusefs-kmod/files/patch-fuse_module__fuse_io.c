@@ -4,7 +4,7 @@
  #include <vm/vnode_pager.h>
  #include <vm/vm_object.h>
  
-+#if (__FreeBSD__ >= 8)
++#if (__FreeBSD_version >= 800000)
 +#define vfs_bio_set_validclean vfs_bio_set_valid
 +#endif
 +
