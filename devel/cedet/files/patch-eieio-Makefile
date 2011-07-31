@@ -1,15 +1,15 @@
---- eieio/Makefile.orig	2010-05-17 19:24:01.000000000 +0200
-+++ eieio/Makefile	2010-05-17 19:25:02.000000000 +0200
-@@ -22,7 +22,7 @@
+--- eieio/Makefile.orig	2011-07-30 11:01:42.000000000 +0200
++++ eieio/Makefile	2011-07-30 11:03:02.000000000 +0200
+@@ -19,7 +19,7 @@
  ELISPPRELOAD= cedet-compat
  examples_LISP=chart.el eieio-speedbar.el linemark.el lmcompile.el
  eieio_info_TEXINFOS=eieio.texi
 -MAKEINFO=makeinfo
 +MAKEINFO=makeinfo --force --no-split
- test_LISP=eieio-tests.el eieio-test-methodinvoke.el eieio-perftest.el
+ test_LISP=eieio-tests.el eieio-test-methodinvoke.el eieio-perftest.el eieio-test-mro.el
  Misc_MISC=INSTALL ChangeLog NEWS
- VERSION=1.2
-@@ -30,7 +30,7 @@
+ VERSION=1.3
+@@ -27,7 +27,7 @@
  
  
  
@@ -18,7 +18,7 @@
  
  .PHONY: autoloads
  autoloads: 
-@@ -74,7 +74,7 @@
+@@ -71,7 +71,7 @@
  	@echo "(setq debug-on-error t)" >> $@-compile-script
  	"$(EMACS)" $(EMACSFLAGS) -l $@-compile-script -f batch-byte-compile $^
  
@@ -27,7 +27,7 @@
  	$(MAKEINFO) $<
  
  .PHONY: test
-@@ -97,9 +97,9 @@
+@@ -94,9 +94,9 @@
  
  .PHONY: dist
  

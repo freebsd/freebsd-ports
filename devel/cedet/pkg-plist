@@ -139,6 +139,8 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede/ede-dired.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede/ede-files.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede/ede-files.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede/ede-generic.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede/ede-generic.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede/ede-load.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede/ede-load.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/ede/ede-loaddefs.el
@@ -216,6 +218,7 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio-speedbar.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio-speedbar.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio-test-methodinvoke.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio-test-mro.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio-tests.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/eieio/eieio.elc
@@ -353,6 +356,8 @@ bin/semanticdb.sh
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic-util.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semantic.elc
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semanticdb-cscope.el
+%%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semanticdb-cscope.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semanticdb-debug.el
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semanticdb-debug.elc
 %%EMACS_VERSION_SITE_LISPDIR%%/cedet/semantic/semanticdb-ebrowse.el
