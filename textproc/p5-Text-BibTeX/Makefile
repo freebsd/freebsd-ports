@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Text-BibTeX
-PORTVERSION=	0.58
+PORTVERSION=	0.59
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:AMBS/Text
@@ -15,14 +15,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Manipulate BibTeX files from perl
 
-LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Config-AutoConf>=0.16:${PORTSDIR}/devel/p5-Config-AutoConf \
-		p5-ExtUtils-LibBuilder>0.02:${PORTSDIR}/devel/p5-ExtUtils-LibBuilder \
-		p5-Capture-Tiny>=0.06:${PORTSDIR}/devel/p5-Capture-Tiny
+		p5-ExtUtils-LibBuilder>0.02:${PORTSDIR}/devel/p5-ExtUtils-LibBuilder
+TEST_DEPENDS=	p5-Capture-Tiny>=0.06:${PORTSDIR}/devel/p5-Capture-Tiny
 
 PERL_MODBUILD=	yes
+USE_LDCONFIG=	yes
 
 MAN1=		bt_format_names.1 bt_input.1 bt_language.1 \
 		bt_macros.1 bt_misc.1 bt_post_processing.1 \
@@ -43,7 +44,7 @@ MAN3=		Text::BibTeX.3 \
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "amd64" || ${ARCH} == "ia64"
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -fPIC"
+CFLAGS+=	-fPIC
 .endif
 
 .include <bsd.port.post.mk>
