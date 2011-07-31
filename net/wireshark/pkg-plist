@@ -66,10 +66,12 @@ lib/wireshark/plugins/%%PORTVERSION%%/wimaxasncp.so
 %%DATADIR%%/dftest.html
 %%LUA%%%%DATADIR%%/dtd_gen.lua
 %%DATADIR%%/dumpcap.html
+%%DATADIR%%/diameter/Cisco.xml
 %%DATADIR%%/diameter/Ericsson.xml
 %%DATADIR%%/diameter/TGPPGmb.xml
 %%DATADIR%%/diameter/TGPPRx.xml
 %%DATADIR%%/diameter/TGPPSh.xml
+%%DATADIR%%/diameter/Vodafone.xml
 %%DATADIR%%/diameter/chargecontrol.xml
 %%DATADIR%%/diameter/dictionary.dtd
 %%DATADIR%%/diameter/dictionary.xml
