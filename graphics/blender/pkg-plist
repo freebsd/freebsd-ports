@@ -5,8 +5,6 @@ bin/blender-bin
 bin/blender-thumbnailer.py
 %%MENU%%share/applications/blender.desktop
 share/pixmaps/blender.svg
-%%DATADIR%%/.bfont.ttf
-%%DATADIR%%/.Blanguages
 %%DATADIR%%/scripts/addons/add_curve_aceous_galore.py
 %%DATADIR%%/scripts/addons/add_curve_torus_knots.py
 %%DATADIR%%/scripts/addons/add_mesh_BoltFactory/Boltfactory.py
