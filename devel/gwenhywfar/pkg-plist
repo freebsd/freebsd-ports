@@ -1,4 +1,5 @@
 bin/gct-tool
+bin/gsa
 bin/gwenhywfar-config
 bin/mklistdoc
 bin/typemaker
@@ -53,6 +54,7 @@ include/gwenhywfar4/gwenhywfar/fastbuffer.h
 include/gwenhywfar4/gwenhywfar/fslock.h
 include/gwenhywfar4/gwenhywfar/gui.h
 include/gwenhywfar4/gwenhywfar/gui_be.h
+include/gwenhywfar4/gwenhywfar/gwen_sar_fileheader.h
 include/gwenhywfar4/gwenhywfar/gwendate.h
 include/gwenhywfar4/gwenhywfar/gwenhywfar.h
 include/gwenhywfar4/gwenhywfar/gwenhywfarapi.h
@@ -98,6 +100,7 @@ include/gwenhywfar4/gwenhywfar/plugindescr.h
 include/gwenhywfar4/gwenhywfar/process.h
 include/gwenhywfar4/gwenhywfar/refptr.h
 include/gwenhywfar4/gwenhywfar/ringbuffer.h
+include/gwenhywfar4/gwenhywfar/sar.h
 include/gwenhywfar4/gwenhywfar/sighead.h
 include/gwenhywfar4/gwenhywfar/sigtail.h
 include/gwenhywfar4/gwenhywfar/smalltresor.h
@@ -163,7 +166,7 @@ lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/dbio/xmldb.xml
 lib/libgwenhywfar.a
 lib/libgwenhywfar.la
 lib/libgwenhywfar.so
-lib/libgwenhywfar.so.%%GWEN_SHLIB_VER%%
+lib/libgwenhywfar.so.62
 %%WITH_FOX16%%libdata/pkgconfig/gwengui-fox16.pc
 %%WITH_GTK2%%libdata/pkgconfig/gwengui-gtk2.pc
 %%WITH_QT4%%libdata/pkgconfig/gwengui-qt4.pc
@@ -188,6 +191,7 @@ share/gwenhywfar/typemaker2/c/list2_base.tm2
 share/gwenhywfar/typemaker2/c/struct_base.tm2
 share/gwenhywfar/typemaker2/c/tree_base.tm2
 share/gwenhywfar/typemaker2/c/uint32_t.tm2
+share/gwenhywfar/typemaker2/c/uint64_t.tm2
 share/locale/de/LC_MESSAGES/gwenhywfar.mo
 @dirrm share/gwenhywfar/typemaker2/c
 @dirrm share/gwenhywfar/typemaker2

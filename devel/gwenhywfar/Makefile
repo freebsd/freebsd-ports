@@ -6,25 +6,24 @@
 #
 
 PORTNAME=	gwenhywfar
-PORTVERSION=	4.0.9
-PORTREVISION=	1
+PORTVERSION=	4.2.0
 CATEGORIES=	devel net security
-MASTER_SITES=	http://www2.aquamaniac.de/sites/download/
-DISTFILES=	download.php\?package=01\&release=60\&file=01\&dummy=${DISTNAME}${EXTRACT_SUFX}
+MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=01&release=62&file=01&dummy=/
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Multi-platform helper library for networking and security applications
 
-LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls
+LICENSE=	LGPL21
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt \
+		gnutls.47:${PORTSDIR}/security/gnutls
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	gnomehack pkgconfig
-
-LICENSE=	LGPL21
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	APIDOC "Full API documentation (requires Doxygen)" off \
 		MEMDEBUG "Enable memory debugger statistic" off \
@@ -47,7 +46,8 @@ GWEN_SHLIB_VER=	60
 .include <bsd.port.options.mk>
 
 .if !defined(NOPORTDOCS) && defined(WITH_APIDOC)
-BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen
+BUILD_DEPENDS+=	doxygen:${PORTSDIR}/devel/doxygen \
+		dot:${PORTSDIR}/graphics/graphviz
 CONFIGURE_ARGS+=--enable-full-doc
 PORTDOCS=	apidoc
 .endif
