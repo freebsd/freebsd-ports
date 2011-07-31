@@ -3268,6 +3268,7 @@
     SUBDIR += rubygem-builder
     SUBDIR += rubygem-chronic
     SUBDIR += rubygem-classifier
+    SUBDIR += rubygem-clio
     SUBDIR += rubygem-cloudfiles
     SUBDIR += rubygem-columnize
     SUBDIR += rubygem-configuration
