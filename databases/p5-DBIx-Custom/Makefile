@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	DBIx-Custom
-PORTVERSION=	0.1707
+PORTVERSION=	0.1708
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:KIMOTO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -20,8 +19,7 @@ LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-DBD-SQLite>=1.25:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-DBI>=1.60.5:${PORTSDIR}/databases/p5-DBI \
-		p5-Object-Simple>=3.0621:${PORTSDIR}/devel/p5-Object-Simple \
-		p5-Time-Piece>=1.15:${PORTSDIR}/devel/p5-Time-Piece
+		p5-Object-Simple>=3.0621:${PORTSDIR}/devel/p5-Object-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
