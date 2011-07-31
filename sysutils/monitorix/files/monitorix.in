@@ -20,7 +20,7 @@ start_cmd="${name}_start"
 
 pidfile="/var/run/${name}.pid"
 command_interpreter="."
-procname="%%PREFIX%%/sbin/${name}"
+procname="%%PREFIX%%/bin/${name}"
 
 monitorix_start()
 {
@@ -30,7 +30,7 @@ monitorix_start()
 	fi
 	echo "Starting ${name}."
 	rc_flags="-c %%PREFIX%%/etc/${name}.conf -p ${pidfile} ${rc_flags}"
-	%%PERL%% %%PREFIX%%/sbin/${name} ${rc_flags} ${command_args}
+	%%PERL%% %%PREFIX%%/bin/${name} ${rc_flags} ${command_args}
 }
 
 run_rc_command "$1"
