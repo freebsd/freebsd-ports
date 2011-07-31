@@ -7,6 +7,7 @@
 
 PORTNAME=	dico
 PORTVERSION=	2.1
+PORTREVISION=	1
 CATEGORIES=	net textproc
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -41,7 +42,7 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if defined(WITH_GUILE)
-LIB_DEPENDS+=	guile.20:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile
 PLIST_SUB+=	GUILE=""
 .else
 CONFIGURE_ARGS+=--without-guile

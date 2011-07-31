@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=--enable-snmp
 .endif
 
 .if defined(WITH_CLIENT)
-LIB_DEPENDS+=	guile.20:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile
 CONFIGURE_ARGS+=--enable-client
 PLIST_SUB+=	CLIENT=""
 .else

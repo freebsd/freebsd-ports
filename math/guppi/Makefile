@@ -7,7 +7,7 @@
 
 PORTNAME=	guppi
 PORTVERSION=	0.40.3
-PORTREVISION=	17
+PORTREVISION=	18
 CATEGORIES=	math gnome
 MASTER_SITES=	GNOME
 MASTER_SITE_SUBDIR=	sources/Guppi/0.40
@@ -16,7 +16,7 @@ DISTNAME=	Guppi-${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A plotting program for GNOME
 
-LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

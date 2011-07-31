@@ -8,14 +8,14 @@
 
 PORTNAME=	serveez
 PORTVERSION=	0.1.5
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net devel
 MASTER_SITES=	GNU
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A server framework
 
-LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile
+LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
 
 GUILE_CONFIG?=	${LOCALBASE}/bin/guile-config
 

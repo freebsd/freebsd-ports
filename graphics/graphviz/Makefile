@@ -384,7 +384,7 @@ PLIST_SUB+=		WITH_TCL="@comment "
 .if defined(WITH_GUILE)
 CONFIGURE_ARGS+=	--enable-guile
 PLIST_SUB+=		WITH_GUILE=""
-LIB_DEPENDS+=		guile.20:${PORTSDIR}/lang/guile
+LIB_DEPENDS+=		guile.21:${PORTSDIR}/lang/guile
 MAN3+=			gv.3guile
 .else
 CONFIGURE_ARGS+=	--disable-guile

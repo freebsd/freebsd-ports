@@ -7,6 +7,7 @@
 
 PORTNAME=	texmacs
 PORTVERSION=	1.0.7.10
+PORTREVISION=	1
 CATEGORIES=	editors print
 MASTER_SITES=	ftp://ftp.texmacs.org/pub/TeXmacs/targz/ \
 		http://www.predatorlabs.net/dl/
@@ -16,7 +17,7 @@ MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	A free WYSIWYG scientific text editor
 
 BUILD_DEPENDS=	tex:${PORTSDIR}/print/teTeX-base
-LIB_DEPENDS=	guile.20:${PORTSDIR}/lang/guile \
+LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile \
 		freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX-base
 

@@ -6,6 +6,19 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20110731:
+  AFFECTS: users of lang/guile
+  AUTHOR: jlaffaye@FreeBSD.org
+
+  guile has been updated to version 1.8.8. Please rebuild all ports that
+  depends on it.
+
+  If you use portmaster:
+  # portmaster -r guile
+
+  If you use portupgrade:
+  # portupgrade -fr lang/guile
+
+20110731:
   AFFECTS: users of www/typo3
   AUTHOR: Helmut Schneider <jumper99@gmx.de>
 
