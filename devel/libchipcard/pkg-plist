@@ -1,9 +1,9 @@
-bin/kvkcard
 bin/cardcommander
-bin/memcard
-bin/geldkarte
-bin/chipcard-tool
 bin/chipcard-config
+bin/chipcard-tool
+bin/geldkarte
+bin/kvkcard
+bin/memcard
 etc/chipcard/chipcardc.conf.default
 etc/chipcard/chipcardc.conf.example
 include/libchipcard5/chipcard/card.h
@@ -32,6 +32,14 @@ include/libchipcard5/chipcard/sharedstuff/msgengine.h
 include/libchipcard5/chipcard/sharedstuff/pininfo.h
 include/libchipcard5/chipcard/tlv.h
 include/libchipcard5/chipcard/version.h
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/ddvcard.a
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/ddvcard.la
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/ddvcard.so
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/ddvcard.xml
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/starcoscard.a
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/starcoscard.la
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/starcoscard.so
+lib/gwenhywfar/plugins/%%GWEN_SHLIB_VER%%/ct/starcoscard.xml
 lib/libchipcard.a
 lib/libchipcard.la
 lib/libchipcard.so
@@ -70,24 +78,15 @@ share/chipcard/cards/starcoscard.xml
 share/chipcard/cards/zkacard.xml
 share/chipcard/drivers/cyberjack_pcsc.xml
 share/chipcard/drivers/generic_pcsc.xml
-@dirrmtry share/chipcard/drivers
-@dirrmtry share/chipcard/cards/generic_pcsc
-@dirrmtry share/chipcard/cards/cyberjack_pcsc
-@dirrmtry share/chipcard/cards
-@dirrmtry share/chipcard/apps
-@dirrmtry share/chipcard
-@dirrmtry include/libchipcard5/chipcard/sharedstuff
-@dirrmtry include/libchipcard5/chipcard/ct
-@dirrmtry include/libchipcard5/chipcard/cards
-@dirrmtry include/libchipcard5/chipcard
-@dirrmtry include/libchipcard5
-@dirrmtry etc/chipcard
-@cwd %%GWEN_PLUGINS%%
-ct/ddvcard.a
-ct/ddvcard.la
-ct/ddvcard.so
-ct/ddvcard.xml
-ct/starcoscard.a
-ct/starcoscard.la
-ct/starcoscard.so
-ct/starcoscard.xml
+@dirrm share/chipcard/drivers
+@dirrm share/chipcard/cards/generic_pcsc
+@dirrm share/chipcard/cards/cyberjack_pcsc
+@dirrm share/chipcard/cards
+@dirrm share/chipcard/apps
+@dirrm share/chipcard
+@dirrm include/libchipcard5/chipcard/sharedstuff
+@dirrm include/libchipcard5/chipcard/ct
+@dirrm include/libchipcard5/chipcard/cards
+@dirrm include/libchipcard5/chipcard
+@dirrm include/libchipcard5
+@dirrm etc/chipcard
