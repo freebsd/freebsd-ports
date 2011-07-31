@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	pgj@FreeBSD.org
 COMMENT=	Program set interconverts between various bibliography formats
 
+LICENSE=	GPLv2
+
 USE_GMAKE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}

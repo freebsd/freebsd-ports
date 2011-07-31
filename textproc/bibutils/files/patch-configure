@@ -1,0 +1,13 @@
+--- ./configure.orig	2010-10-10 19:38:32.000000000 +0200
++++ ./configure	2011-07-31 01:05:18.000000000 +0200
+@@ -153,8 +153,8 @@
+ endif
+ 
+ cat $INPUT_FILE | \
+-sed "s/REPLACE_CC/CC=${CC}/" | \
+-sed "s/REPLACE_RANLIB/RANLIB=${RANLIB}/" | \
++sed "s/%%SET_CC%%/CC?=${CC}/" | \
++sed "s/%%SET_RANLIB%%/RANLIB?=${RANLIB}/" | \
+ sed "s|REPLACE_INSTALLDIR|${INSTALLDIR}|" | \
+ sed "s|REPLACE_LIBINSTALLDIR|${LIBINSTALLDIR}|" | \
+ sed "s/REPLACE_POSTFIX/${POSTFIX}/" > $OUTPUT_FILE
