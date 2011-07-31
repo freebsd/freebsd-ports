@@ -37,11 +37,11 @@ you update your ports collection, before attempting any port upgrades.
 
   The gtk-update-icon-cache utility has been slipt out of the gtk20 port.
   Use the following instructions to update your system.
-  
+
   # pkg_delete -f gtk-2.\*
   # portmaster x11-toolkits/gtk20
   # portmaster -a
- 
+
 20110726:
   AFFECTS: users of devel/msp430-gcc
   AUTHOR: lev@FreeBSD.org
@@ -52,7 +52,7 @@ you update your ports collection, before attempting any port upgrades.
   # portmaster -o devel/msp430-gcc3 devel/msp430-gcc
   or
   # portupgrade -o devel/msp430-gcc3 devel/msp430-gcc
-  
+
   before updating devel/msp430-libc port.
 
 20110721:
@@ -135,14 +135,14 @@ you update your ports collection, before attempting any port upgrades.
 20110705:
   AFFECTS: users of security/libgcrypt and any port that depends on it
   AUTHOR: swills@FreeBSD.org
-  
+
   The libgcrypt port has been updated to 1.5.0 and all shared libraries'
   versions have been bumped. So you need to rebuild all applications that
   depend on libgcrypt. Do something like:
 
   # portmaster -r libgcrypt
 
-  or 
+  or
 
   # portupgrade -rf libgcrypt
 
@@ -216,10 +216,10 @@ you update your ports collection, before attempting any port upgrades.
   AFFECTS: users of deskutils/opengoo
   AUTHOR: acm@FreeBSD.org
 
-  desktutils/opengoo has been renamed to deskutils/fengoffice, because 
+  desktutils/opengoo has been renamed to deskutils/fengoffice, because
   The OpenGoo name was changed to Feng Office Community Edition.
 
-  If you want migrate from opengoo to fengoffice,  please see upgrading 
+  If you want migrate from opengoo to fengoffice,  please see upgrading
   section at:
 
   http://fengoffice.com/web/wiki/doku.php/installation
@@ -417,7 +417,7 @@ you update your ports collection, before attempting any port upgrades.
 
   # portmaster -o www/mod_perl2 www/p5-Apache-Reload
   # portmaster -R -r mod_perl2
-  
+
 20110522:
   AFFECTS: users of emulators/virtualbox-ose
   AUTHOR: vbox@FreeBSD.org
@@ -640,7 +640,7 @@ you update your ports collection, before attempting any port upgrades.
   3. Read the instructions
   4. merge your old config with the upgrade430.sh script
   5. fix the hobbit_*_enable lines in /etc/rc.conf
- 
+
   # /usr/local/etc/rc.d/hobbit-server stop
   # /usr/local/etc/rc.d/hobbit-client stop
   # pkg_delete /var/db/pkg/xymon-*
