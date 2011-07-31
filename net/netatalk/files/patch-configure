@@ -1,19 +1,14 @@
 --- configure.orig	2011-07-27 07:59:28.000000000 -0400
-+++ configure	2011-07-30 18:23:04.000000000 -0400
-@@ -20316,10 +20316,10 @@ fi
++++ configure	2011-07-31 04:02:35.000000000 -0400
+@@ -27039,6 +27039,7 @@ fi
  
+         savedcflags="$CFLAGS"
+         savedldflags="$LDFLAGS"
++        saved_CPPFLAGS="$CPPFLAGS"
+ 	ICONV_CFLAGS=""
+ 	ICONV_LIBS=""
  
- # This can be used to rebuild libtool when needed
--LIBTOOL_DEPS="$ac_aux_dir/ltmain.sh"
-+LIBTOOL_DEPS=" /usr/local/share/libtool/config/ltmain.sh"
- 
- # Always use our own libtool.
--LIBTOOL='$(SHELL) $(top_builddir)/libtool'
-+LIBTOOL='$(SHELL) /usr/local/bin/libtool'
- 
- # Prevent multiple expansion
- 
-@@ -31357,7 +31357,7 @@ if test "x$bdb_required" = "xyes"; then
+@@ -31357,7 +31358,7 @@ if test "x$bdb_required" = "xyes"; then
      trybdbdir=""
      dobdbsearch=yes
      bdb_search_dirs="/usr/local /usr"
@@ -22,7 +17,7 @@
  
      bdbfound=no
      savedcflags="$CFLAGS"
-@@ -33387,7 +33387,7 @@ rm -f core conftest.err conftest.$ac_obj
+@@ -33387,7 +33388,7 @@ rm -f core conftest.err conftest.$ac_obj
  fi
  { echo "$as_me:$LINENO: result: $netatalk_cv_HAVE_ACL_GET_PERM_NP" >&5
  echo "${ECHO_T}$netatalk_cv_HAVE_ACL_GET_PERM_NP" >&6; }

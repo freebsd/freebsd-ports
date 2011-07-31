@@ -7,6 +7,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=	SF/netatalk/netatalk/2.2
@@ -23,7 +24,10 @@ USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_PERL5=	yes
+WANT_GNOME=	yes
 USE_RC_SUBR=	netatalk
+CPPFLAGS=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-pkgconfdir=${PREFIX}/etc \
@@ -36,7 +40,8 @@ OPTIONS=	APPLETALK	"Enable AppleTalk protocol support" on \
 		SRVLOC		"Enable Service Location Protocol support" off \
 		PAM		"Enable PAM support" off \
 		TIMELORD	"Enable Timelord network time service" off \
-		KRB5		"Enable Kerberos V UAM" off
+		KRB5		"Enable Kerberos V UAM" off \
+		ZEROCONF	"Enable Zeroconf (Bonjour) support" on
 
 FILES=		AppleVolumes.default AppleVolumes.system afpd.conf \
 		atalkd.conf papd.conf netatalk.conf
@@ -96,6 +101,12 @@ CONFIGURE_ARGS+=	--enable-timelord
 PLIST_SUB+=		TIMELORD=""
 .else
 PLIST_SUB+=		TIMELORD="@comment "
+.endif
+
+.if defined (WITH_ZEROCONF)
+CONFIGURE_ARGS+=	--enable-zeroconf=${LOCALBASE}
+LIB_DEPENDS+=		avahi-client.3:${PORTSDIR}/net/avahi-app
+USE_GNOME+=		pkgconfig
 .endif
 
 post-patch:
