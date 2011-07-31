@@ -20,8 +20,7 @@
 # USE_FORTRAN= knob.  Here is the list of options for that knob:
 #
 #   USE_FORTRAN=	yes		# use gfortran45 (lang/gcc45)
-#   USE_FORTRAN=	g77		# use g77-34 (lang/gcc34; FreeBSD>=7)
-#							# or system f77 (/usr/bin/f77; FreeBSD<=6)
+#   USE_FORTRAN=	g77		# use g77-34 (lang/gcc34)
 #   USE_FORTRAN=	ifort	# use the Intel compiler (lang/ifc)
 #
 # Due to object file incompatiblity between Fortran compilers, we strongly
@@ -85,8 +84,7 @@ RUN_DEPENDS+=	${LOCALBASE}/intel_fc_80/bin/ifort:${PORTSDIR}/lang/ifc
 FC:=	${LOCALBASE}/intel_fc_80/bin/ifort
 F77:=	${LOCALBASE}/intel_fc_80/bin/ifort
 
-# In some case we want to use g77 from lang/gcc34 (FreeBSD>=7) or f77
-# (FreeBSD<=6).
+# g77 from lang/gcc34.
 . elif ${USE_FORTRAN} == g77
 _USE_GCC:=	3.4
 FC:=	g77-34
