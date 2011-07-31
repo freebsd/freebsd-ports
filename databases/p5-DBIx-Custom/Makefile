@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Custom
-PORTVERSION=	0.1701
+PORTVERSION=	0.1707
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:KIMOTO
@@ -18,6 +18,9 @@ COMMENT=	Customizable DBI
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	p5-DBD-SQLite>=1.25:${PORTSDIR}/databases/p5-DBD-SQLite \
+		p5-DBI>=1.60.5:${PORTSDIR}/databases/p5-DBI \
+		p5-Object-Simple>=3.0621:${PORTSDIR}/devel/p5-Object-Simple \
 RUN_DEPENDS=	p5-DBD-SQLite>=1.25:${PORTSDIR}/databases/p5-DBD-SQLite \
 		p5-DBI>=1.60.5:${PORTSDIR}/databases/p5-DBI \
 		p5-Object-Simple>=3.0621:${PORTSDIR}/devel/p5-Object-Simple \
