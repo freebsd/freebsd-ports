@@ -791,6 +791,7 @@
     SUBDIR += rubygem-pg
     SUBDIR += rubygem-postgres
     SUBDIR += rubygem-rbase
+    SUBDIR += rubygem-rubyrep
     SUBDIR += rubygem-sqlite3
     SUBDIR += rubygem-sqlite3-ruby
     SUBDIR += sharedance

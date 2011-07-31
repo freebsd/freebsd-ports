@@ -1,0 +1,175 @@
+#!/bin/sh
+
+# PROVIDE: rubyrep
+# REQUIRE: NETWORKING SERVERS
+# KEYWORD: shutdown
+
+# Add the following line to /etc/rc.conf to enable `rubyrep':
+#rubyrep_enable="YES"
+# and be sure to configure (at least)
+# %%PREFIX%%/etc/rubyrep/rubyrep.conf
+#
+# To replicate more than one database, change
+#rubyrep_multi="NO"
+# to "YES". A rubyrep process will be started for each file with
+# .conf suffix in $rubyrep_config_dir.
+#
+# Additional options:
+#
+#rubyrep_stdout_log="/var/log/rubyrep.fifo"
+#rubyrep_stderr_log="/var/log/rubyrep_err.fifo"
+#rubyrep_fifo_logs="YES"
+# Specify log files for stdout and stderr. Defaults to using fifos;
+# actual log file will have the extension .log. Additional PID files 
+# will be created for each of the processes used to tap the fifos; 
+# these can be used in newsyslog.conf(5) to automate log rotation.
+#
+#rubyrep_config="%%PREFIX%%/etc/rubyrep.conf"
+# Specify full path to default rubyrep configuration file.
+# NOTE: Ignored if $rubyrep_multi is set to "YES"!
+#
+#rubyrep_config_dir="%%PREFIX%%/etc/rubyrep"
+# Specify directory containing config files for rubyrep. Used
+# by $rubyrep_multi, ignored if $rubyrep_multi="NO" (the default).
+#
+#rubyrep_command="replicate"
+# Specify the command to pass to rubyrep. Usually you'll want to
+# replicate (the default), but it is also possible to specify "proxy",
+# "scan" or "sync". Note: This option applies to all databases if
+# $rubyrep_multi="YES"!
+#
+#rubyrep_command_flags=""
+# Specify options to pass to the $rubyrep_command above. For other
+# operating modes than "replicate" this may be necessary, especially
+# if you want useful log output! Run
+#   %%prefix%%/bin/rubyrep <command> --help
+# for further information.
+
+rubyrep_enable="${rubyrep_enable:-"NO"}"
+rubyrep_multi="${rubyrep_multi:-"NO"}"
+rubyrep_command="${rubyrep_command:-"replicate"}"
+rubyrep_command_flags="${rubyrep_command_flags:-""}"
+rubyrep_config="${rubyrep_config:-"%%PREFIX%%/etc/rubyrep.conf"}"
+rubyrep_config_dir="${rubyrep_config_dir:-"%%PREFIX%%/etc/rubyrep"}"
+rubyrep_user="${rubyrep_user:-"daemon"}"
+rubyrep_stdout_log="${rubyrep_stdout_log:-"/var/log/rubyrep.fifo"}"
+rubyrep_stderr_log="${rubyrep_stderr_log:-"/var/log/rubyrep_err.fifo"}"
+rubyrep_fifo_logs="YES"
+
+. /etc/rc.subr
+
+checkfifo() {
+        # Check and create if necessary fifo special files for logging
+        for f in $stdout_log $stderr_log ; do
+                flog_fifo=$f
+                if [ ! -p "$flog_fifo" ] ; then
+                        mkfifo $flog_fifo ; chown ${rubyrep_user} $flog_fifo
+                fi
+        done
+}
+
+pid_touch () {
+        touch $pidfile
+        chown $rubyrep_user $pidfile
+}
+
+rubyrep_prestart() {
+        pid_touch
+	if [ "$rubyrep_fifo_logs"="YES" ] ; then
+	        umask 027
+		checkfifo
+	        for f in $stdout_log $stderr_log ; do
+	                flog_fifo=$f
+	                flog_args=" -t "
+	                if [ "$cfgname" ] ; then
+				local out_log="`dirname $f`/`basename -s .fifo.$cfgname $flog_fifo`.$cfgname.log"
+				local out_pid="/var/run/`basename -s .fifo.$cfgname $flog_fifo`.$cfgname.flog.pid"
+			else
+				local out_log="`dirname $f`/`basename -s .fifo $flog_fifo`.log"
+				local out_pid="/var/run/`basename -s .fifo $flog_fifo`.flog.pid"
+			fi
+
+	                echo "Enabling logging for $flog_fifo ($out_log, $out_pid)..."
+	                echo "%%PREFIX%%/bin/flog $flog_args $out_log < $flog_fifo &"
+	                %%PREFIX%%/bin/flog $flog_args $out_log < $flog_fifo &
+	                echo $! > $out_pid
+	        done
+	fi
+}
+
+rubyrep_stop() {
+	if [ -f "$pidfile" ] ; then
+		kill -9 `cat $pidfile`
+		rm $pidfile
+	else
+		echo "PID file not found ($pidfile)"
+	fi
+}
+
+rubyrep_poststop() {
+	if [ "$rubyrep_fifo_logs"="YES" ] ; then
+	        for f in $stdout_log $stderr_log ; do
+	                flog_fifo=$f
+	                if [ "$cfgname" ] ; then
+				local out_pid="/var/run/`basename -s .fifo.$cfgname $flog_fifo`.$cfgname.flog.pid"
+			else
+				local out_pid="/var/run/`basename -s .fifo $flog_fifo`.flog.pid"
+			fi
+	                kill $out_pid >/dev/null 2>/dev/null
+	                rm $out_pid >/dev/null 2>/dev/null
+	        done
+	fi
+}
+
+rubyrep_init() {
+	if [ "$rubyrep_multi" = "NO" ] ; then
+		cmdline="%%PREFIX%%/bin/rubyrep generate $rubyrep_config"
+		if [ "$1" = "init" -a -f "$rubyrep_config" ] ; then
+			echo "Skipping file $rubyrep_config (already exists)."
+		else
+			echo "Generating template file $rubyrep_config"
+			$cmdline
+		fi
+	else
+		echo 'Command not available when $rubyrep_multi="YES"'.
+		exit
+	fi
+}
+
+name="rubyrep"
+rcvar=`set_rcvar`
+
+# read configuration and set defaults
+load_rc_config $name
+
+extra_commands="init"
+init_cmd="${name}_init"
+
+command="/usr/sbin/daemon"
+start_precmd="${name}_prestart"
+stop_cmd="${name}_stop"
+stop_postcmd="${name}_poststop"
+rubyrep_command_flags="$rubyrep_command_flags"
+
+if [ "$rubyrep_multi" = "NO" ] ; then
+	stdout_log=${rubyrep_stdout_log}
+	stderr_log=${rubyrep_stderr_log}
+	log_args=">> ${stdout_log} 2>> ${stderr_log} "
+	cmdline="%%PREFIX%%/bin/rubyrep $rubyrep_command $rubyrep_command_flags -c $rubyrep_config"
+	pidfile="/var/run/$name.pid"
+	flags="-p ${pidfile} ${cmdline} ${log_args}"
+	run_rc_command "$1"
+elif [ "$rubyrep_multi" = "YES" ] ; then
+	[ ! -d "$rubyrep_config_dir" ] && mkdir -p "$rubyrep_config_dir"
+	for i in `ls $rubyrep_config_dir/*.conf` ; do
+		rubyrep_config=$i
+		cfgname=$(basename -s .conf $i)
+		stdout_log=${rubyrep_stdout_log}.$cfgname
+		stderr_log=${rubyrep_stderr_log}.$cfgname
+		log_args=">> ${stdout_log} 2>> ${stderr_log} "
+		cmdline="%%PREFIX%%/bin/rubyrep $rubyrep_command $rubyrep_command_flags -c $rubyrep_config"
+		pidfile="/var/run/${name}_${cfgname}.pid"
+		flags="-p ${pidfile} ${cmdline} ${log_args}"
+		run_rc_command "$1"
+	done
+fi
