@@ -1,15 +1,15 @@
---- configure.in.orig	2008-12-08 18:42:52.000000000 +0100
-+++ configure.in	2011-07-07 15:40:43.000000000 +0200
-@@ -622,7 +622,7 @@
+--- configure.in.orig	2010-12-13 18:24:39.000000000 +0100
++++ configure.in	2011-07-31 13:17:56.000000000 +0200
+@@ -659,7 +659,7 @@
  #
  AC_CHECK_HEADERS([complex.h fenv.h io.h libc.h limits.h malloc.h memory.h process.h string.h \
  regex.h rxposix.h rx/rxposix.h sys/dir.h sys/ioctl.h sys/select.h \
 -sys/time.h sys/timeb.h sys/times.h sys/stdtypes.h sys/types.h \
 +sys/time.h sys/times.h sys/stdtypes.h sys/types.h \
  sys/utime.h time.h unistd.h utime.h pwd.h grp.h sys/utsname.h \
- direct.h strings.h])
+ direct.h strings.h machine/fpu.h])
  
-@@ -725,12 +725,13 @@
+@@ -762,6 +762,7 @@
  #   sys/param.h - not in mingw
  #   pthread.h - only available with pthreads.  ACX_PTHREAD doesn't
  #       check this specifically, we need it for the timespec test below.
@@ -17,14 +17,16 @@
  #   sethostname - the function itself check because it's not in mingw,
  #       the DECL is checked because Solaris 10 doens't have in any header
  #   strncasecmp - on NetBSD 1.6 the symbol is available in libc but the
- #       declaration cannot be found
+@@ -779,7 +780,7 @@
+ #   vsnprintf - on AIX 5.3, the declaration is only visible with
+ #       `_XOPEN_SOURCE >= 500' or `_ISOC99_SOURCE'.
  #
 -AC_CHECK_HEADERS(crypt.h netdb.h pthread.h sys/param.h sys/resource.h sys/file.h)
 +AC_CHECK_HEADERS(crypt.h netdb.h pthread.h pthread_np.h sys/param.h sys/resource.h sys/file.h)
  AC_CHECK_FUNCS(chroot flock getlogin cuserid getpriority setpriority getpass sethostname gethostname)
- AC_CHECK_DECLS([sethostname, strncasecmp])
+ AC_CHECK_DECLS([sethostname, strncasecmp, unsetenv, hstrerror, cuserid, flock, vsnprintf])
  
-@@ -1260,9 +1261,11 @@
+@@ -1298,9 +1299,11 @@
      #         all; not present on MacOS X or Solaris 10
      #     pthread_get_stackaddr_np - "np" meaning "non portable" says it
      #         all; specific to MacOS X
@@ -37,7 +39,7 @@
  
      # On past versions of Solaris, believe 8 through 10 at least, you
      # had to write "pthread_once_t foo = { PTHREAD_ONCE_INIT };".
-@@ -1277,7 +1280,7 @@
+@@ -1315,7 +1318,7 @@
      if test "$GCC" = "yes"; then
        # Since GCC only issues a warning for missing braces, so we need
        # `-Werror' to catch it.
@@ -46,7 +48,7 @@
      fi
  
      AC_CACHE_CHECK([whether PTHREAD_ONCE_INIT needs braces],
-@@ -1428,7 +1431,7 @@
+@@ -1466,7 +1469,7 @@
      # not be "warning free"
      if test "${GUILE_ERROR_ON_WARNING}" = yes
      then
