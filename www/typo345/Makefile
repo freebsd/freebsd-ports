@@ -15,6 +15,7 @@ COMMENT=	The typo3 content management system
 
 LICENSE=	GPLv2
 
+NO_LATEST_LINK=	yes
 NO_BUILD=	yes
 USE_PHP=	ctype filter json mysql pcre session xml
 WANT_PHP_WEB=	yes
