@@ -5,6 +5,7 @@
 %%SITE_PERL%%/Reflex/Client.pm
 %%SITE_PERL%%/Reflex/Collection.pm
 %%SITE_PERL%%/Reflex/Connector.pm
+%%SITE_PERL%%/Reflex/Eg.pm
 %%SITE_PERL%%/Reflex/Interval.pm
 %%SITE_PERL%%/Reflex/PID.pm
 %%SITE_PERL%%/Reflex/Role.pm
@@ -18,6 +19,14 @@
 %%SITE_PERL%%/Reflex/Callback/CodeRef.pm
 %%SITE_PERL%%/Reflex/Callback/Method.pm
 %%SITE_PERL%%/Reflex/Callback/Promise.pm
+%%SITE_PERL%%/Reflex/Codec/Message.pm
+%%SITE_PERL%%/Reflex/Codec/Message/Datagram.pm
+%%SITE_PERL%%/Reflex/Codec/Message/Eof.pm
+%%SITE_PERL%%/Reflex/Codec/Message/Stream.pm
+%%SITE_PERL%%/Reflex/Decoder/Line.pm
+%%SITE_PERL%%/Reflex/Encoder/Line.pm
+%%SITE_PERL%%/Reflex/Eg/Inheritance/Plain.pm
+%%SITE_PERL%%/Reflex/Eg/Inheritance/Moose.pm
 %%SITE_PERL%%/Reflex/POE/Event.pm
 %%SITE_PERL%%/Reflex/POE/Postback.pm
 %%SITE_PERL%%/Reflex/POE/Session.pm
@@ -26,6 +35,8 @@
 %%SITE_PERL%%/Reflex/Role/Accepting.pm
 %%SITE_PERL%%/Reflex/Role/Collectible.pm
 %%SITE_PERL%%/Reflex/Role/Connecting.pm
+%%SITE_PERL%%/Reflex/Role/Decoding.pm
+%%SITE_PERL%%/Reflex/Role/Encoding.pm
 %%SITE_PERL%%/Reflex/Role/InStreaming.pm
 %%SITE_PERL%%/Reflex/Role/Interval.pm
 %%SITE_PERL%%/Reflex/Role/OutStreaming.pm
@@ -40,8 +51,11 @@
 %%SITE_PERL%%/Reflex/Role/Wakeup.pm
 %%SITE_PERL%%/Reflex/Role/Writable.pm
 %%SITE_PERL%%/Reflex/Role/Writing.pm
+%%SITE_PERL%%/Reflex/Role/Decoding/Datagram.pm
+%%SITE_PERL%%/Reflex/Role/Decoding/Stream.pm
 %%SITE_PERL%%/Reflex/Trait/EmitsOnChange.pm
 %%SITE_PERL%%/Reflex/Trait/Observed.pm
+%%SITE_PERL%%/Reflex/Trait/Watched.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Reflex/.packlist
 %%PORTDOCS%%%%DOCSDIR%%/continuation-passing.otl
 %%PORTDOCS%%%%DOCSDIR%%/manual.otl
@@ -59,11 +73,12 @@
 %%PORTDOCS%%%%DOCSDIR%%/intro/after-awhile-subclass-use.pl
 %%PORTDOCS%%%%DOCSDIR%%/intro/after-awhile-use.pl
 %%PORTDOCS%%%%DOCSDIR%%/intro/intro.pod
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-02-encoding.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-04-inheritance.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-05-composition.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-06-moose-roles.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-07-wheel-run.pl
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-08-observer-trait.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-08-watched-trait.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-11-poco-postback.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-12-poco-event.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/eg-13-irc-bot.pl
@@ -96,6 +111,19 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ReflexPromise.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/Runner.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/RunnerRole.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ZmqSocket.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/eg-61-run-collection.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/eg-52-subclassed-timeout.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/leonerd-resolver-poe.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/test-observer.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/Sidecar.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/sidecar.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/role-injection/BaseUseWith.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/role-injection/EventyRole.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/role-injection/role-injects-itself.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/role-injection/use-with.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/role-injection/EventySubSystem.pm
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/proto/role-injection/BaseClass.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/Or.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/Un.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/And.pm
@@ -117,17 +145,28 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/Ttl/Latch/ClockedNandRS.pm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/fail-ttl-counter.pl
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/ttl/fail-ttl-simple.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/zmq-publish.pl
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/zmq-subscriber.pl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/intro
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ttl/Ttl/Latch
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ttl/Ttl/FlipFlop
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ttl/Ttl
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ttl
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/proto/role-injection
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/proto
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Reflex
 @dirrm %%SITE_PERL%%/Reflex/Trait
+@dirrm %%SITE_PERL%%/Reflex/Role/Decoding
 @dirrm %%SITE_PERL%%/Reflex/Role
 @dirrm %%SITE_PERL%%/Reflex/POE/Wheel
 @dirrm %%SITE_PERL%%/Reflex/POE
+@dirrm %%SITE_PERL%%/Reflex/Encoder
+@dirrm %%SITE_PERL%%/Reflex/Eg/Inheritance
+@dirrm %%SITE_PERL%%/Reflex/Eg
+@dirrm %%SITE_PERL%%/Reflex/Decoder
+@dirrm %%SITE_PERL%%/Reflex/Codec/Message
+@dirrm %%SITE_PERL%%/Reflex/Codec
 @dirrm %%SITE_PERL%%/Reflex/Callback
-@dirrm %%SITE_PERL%%/Reflex
+@dirrmtry %%SITE_PERL%%/Reflex
