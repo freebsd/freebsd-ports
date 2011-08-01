@@ -2419,4 +2419,22 @@ news/bgrab||2011-08-01|Has expired: Looks like an abandonware, no more public di
 news/rkive||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
 polish/sap||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
 print/nenscript||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
-devel/eboxy||2011-08-01|Removed
+devel/eboxy||2011-08-01|Removed: depends on expired sdl_gui
+russian/messarge||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+russian/pgp.language||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+security/ifd-gempc410||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+security/libidea||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+security/rain||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+sysutils/Tee||2011-08-01|Has expired: No more public distfile
+sysutils/curly||2011-08-01|Has expired: No more public distfiles
+sysutils/i855vidctl10||2011-08-01|Has expired: No more public distfiles
+sysutils/ltrace||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+sysutils/rsyslog3-snmp||2011-08-01|Has expired: unsupported upstream
+sysutils/xapply||2011-08-01|Has expired: No more public distfiles
+textproc/asm2html||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+textproc/diff-mode.el||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+vietnamese/gtk-im-vi||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+www/campsite||2011-08-01|Has expired: Does not work
+www/p5-PLP||2011-08-01|Has expired: No more upstream, looks like an abandonware
+www/wcol||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+x11-toolkits/sdl_gui||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles

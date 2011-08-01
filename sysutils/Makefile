@@ -9,7 +9,6 @@
     SUBDIR += DTraceToolkit
     SUBDIR += LPRng
     SUBDIR += LPRngTool
-    SUBDIR += Tee
     SUBDIR += abck
     SUBDIR += abgx360
     SUBDIR += abgx360gui
@@ -136,7 +135,6 @@
     SUBDIR += cromwell
     SUBDIR += cronolog
     SUBDIR += cronolog-devel
-    SUBDIR += curly
     SUBDIR += cvsweb-converters
     SUBDIR += cw
     SUBDIR += daa2iso
@@ -364,7 +362,6 @@
     SUBDIR += httplog
     SUBDIR += hwstat
     SUBDIR += hyperic-sigar
-    SUBDIR += i855vidctl10
     SUBDIR += iat
     SUBDIR += iextract
     SUBDIR += installwatch
@@ -462,7 +459,6 @@
     SUBDIR += lookupd
     SUBDIR += lookupd_ldap
     SUBDIR += lsof
-    SUBDIR += ltrace
     SUBDIR += luckybackup
     SUBDIR += luma
     SUBDIR += lxinput
@@ -725,7 +721,6 @@
     SUBDIR += rsyslog3-mysql
     SUBDIR += rsyslog3-pgsql
     SUBDIR += rsyslog3-relp
-    SUBDIR += rsyslog3-snmp
     SUBDIR += rsyslog4
     SUBDIR += rsyslog4-dbi
     SUBDIR += rsyslog4-devel
@@ -960,7 +955,6 @@
     SUBDIR += wuzzah
     SUBDIR += x86info
     SUBDIR += xacpim
-    SUBDIR += xapply
     SUBDIR += xbatt
     SUBDIR += xbattbar
     SUBDIR += xcdroast

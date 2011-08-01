@@ -76,7 +76,6 @@
     SUBDIR += cakephp11
     SUBDIR += cakephp12
     SUBDIR += calamaris
-    SUBDIR += campsite
     SUBDIR += castget
     SUBDIR += caudium14
     SUBDIR += cblog
@@ -1142,7 +1141,6 @@
     SUBDIR += p5-Newsletter
     SUBDIR += p5-Nginx-ReadBody
     SUBDIR += p5-PHP-Session
-    SUBDIR += p5-PLP
     SUBDIR += p5-POE-Component-Client-HTTP
     SUBDIR += p5-POE-Component-Client-UserAgent
     SUBDIR += p5-POE-Component-Server-HTTP
@@ -1919,7 +1917,6 @@
     SUBDIR += waccess
     SUBDIR += wacko
     SUBDIR += wadcomblog
-    SUBDIR += wcol
     SUBDIR += web-traceroute
     SUBDIR += web2ldap
     SUBDIR += webalizer

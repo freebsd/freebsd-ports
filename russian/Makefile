@@ -28,7 +28,6 @@
     SUBDIR += koi8r-ps
     SUBDIR += ksocrat
     SUBDIR += libcyrillic
-    SUBDIR += messarge
     SUBDIR += mueller-dic
     SUBDIR += muttprint
     SUBDIR += mythes
@@ -38,7 +37,6 @@
     SUBDIR += p5-Lingua-RU-Charset
     SUBDIR += p5-XML-Parser-encodings
     SUBDIR += p5-cyrillic
-    SUBDIR += pgp.language
     SUBDIR += prawda
     SUBDIR += pscyr
     SUBDIR += rubygem-russian

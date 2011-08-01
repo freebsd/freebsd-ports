@@ -23,7 +23,6 @@
     SUBDIR += ascii2pdf
     SUBDIR += asciidoc
     SUBDIR += asm-xml
-    SUBDIR += asm2html
     SUBDIR += aspell
     SUBDIR += aspell-without-dicten
     SUBDIR += ast-aspell
@@ -96,7 +95,6 @@
     SUBDIR += dictem-xemacs21-mule
     SUBDIR += dictfmt
     SUBDIR += dictionary
-    SUBDIR += diff-mode.el
     SUBDIR += diffmark
     SUBDIR += diffsplit
     SUBDIR += diffstat
