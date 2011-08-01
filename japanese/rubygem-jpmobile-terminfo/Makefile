@@ -7,6 +7,7 @@
 
 PORTNAME=	jpmobile-terminfo
 PORTVERSION=	0.0.2
+PORTREVISION=	1
 CATEGORIES=	japanese www rubygems
 MASTER_SITES=	RG
 
@@ -19,4 +20,8 @@ USE_RUBY=	yes
 USE_RUBYGEMS=	yes
 RUBYGEM_AUTOPLIST=	yes
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+PKGNAMEPREFIX:=	${PKGNAMEPREFIX}rubygem-
+
+.include <bsd.port.post.mk>
