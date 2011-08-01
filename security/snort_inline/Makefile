@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	snort_inline
-PORTVERSION=	2.4.5
-PORTREVISION=	1
+PORTVERSION=	2.6.1.5
 CATEGORIES=	security
 MASTER_SITES=	http://freebsd.rogness.net/ports/snort_inline/
 
@@ -21,6 +20,8 @@ CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--enable-inline --enable-ipfw
 
 LIB_DEPENDS+=		dnet:${PORTSDIR}/net/libdnet
+
+USE_LDCONFIG=	yes
 
 OPTIONS=		MYSQL "With MySQL support" off \
 			ODBC "With ODBC support" off \
