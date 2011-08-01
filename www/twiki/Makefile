@@ -10,8 +10,7 @@ PORTVERSION=	4.2.4
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
-MASTER_SITES=	http://twiki.org/p/pub/Codev/Release/ \
-		GENTOO/distfiles
+MASTER_SITES=	http://twiki.org/p/pub/Codev/Release/
 DISTNAME=	TWiki-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
