@@ -33,8 +33,7 @@ OPTIONS+=	LAME "Encoder: lame: Install audio/lame" off \
 OPTIONS+=	LAME "Encoder: lame: Install audio/lame" on \
 		VORBIS "Encoder: oggenc: Install audio/vorbis-tools" off
 .endif
-OPTIONS+=	BLADEENC "Encoder: bladeenc: Install audio/bladeenc" off \
-		FAAC "Encoder: faac: Install audio/faac" off \
+OPTIONS+=	FAAC "Encoder: faac: Install audio/faac" off \
 		FLAC "Encoder: flac: Install audio/flac" off \
 		GOGO "Encoder: gogo: Install audio/gogo" off
 
@@ -57,10 +56,6 @@ CONFIGURE_ARGS+=	--disable-cdpar
 USE_CDRTOOLS=	yes
 .endif
 
-.if defined(WITH_BLADEENC)
-RUN_DEPENDS+=	bladeenc:${PORTSDIR}/audio/bladeenc
-.endif
-
 .if defined(WITH_FAAC)
 RUN_DEPENDS+=	faac:${PORTSDIR}/audio/faac
 .endif
@@ -75,10 +70,6 @@ RUN_DEPENDS+=	gogo:${PORTSDIR}/audio/gogo
 
 .if !defined(WITHOUT_LAME)
 RUN_DEPENDS+=	lame:${PORTSDIR}/audio/lame
-.endif
-
-.if defined(WITH_BLADEENC)
-RUN_DEPENDS+=	bladeenc:${PORTSDIR}/audio/bladeenc
 .endif
 
 .if defined(WITH_VORBIS)
