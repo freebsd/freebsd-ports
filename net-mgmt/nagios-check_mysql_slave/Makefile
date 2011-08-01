@@ -14,11 +14,13 @@ PKGNAMEPREFIX=	nagios-
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	Nagios Plugin to monitor MySQL replication on a slave
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 RUN_DEPENDS=	p5-DBI>=1.60.7:${PORTSDIR}/databases/p5-DBI \
 		p5-DBD-mysql>0:${PORTSDIR}/databases/p5-DBD-mysql
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE
+PORTSCOUT=	ignore=1
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
