@@ -23,11 +23,8 @@ MI_WITH_MAKE?=	yes
 .if (${MI_ELISP_LANG} == "en")
 BUILD_DEPENDS+=	${LOCALBASE}/info/elisp.info:${PORTSDIR}/lang/elisp-manual
 RUN_DEPENDS+=	${LOCALBASE}/info/elisp.info:${PORTSDIR}/lang/elisp-manual
-.elif (${MI_ELISP_LANG} == "ja")
-BUILD_DEPENDS+=	${LOCALBASE}/info/elisp-ja.info:${PORTSDIR}/japanese/elisp-manual
-RUN_DEPENDS+=	${LOCALBASE}/info/elisp-ja.info:${PORTSDIR}/japanese/elisp-manual
 .else
-IGNORE=	cannot install: MI_ELISP_LANG should be "en" or "ja"
+IGNORE=	cannot install: MI_ELISP_LANG should be "en"
 .endif
 MI_INDEX+=	mi-elisp.idx
 PLIST_SUB+=	MI_WITH_ELISP=""
