@@ -35,7 +35,6 @@ OPTIONS=	EXTRA "Extra programs required to record/playback/save" off
 .if defined(WITH_EXTRA)
 RUN_DEPENDS+=	sox:${PORTSDIR}/audio/sox \
 		mpg123:${PORTSDIR}/audio/mpg123 \
-		mpeg_musicin:${PORTSDIR}/audio/mpegaudio \
 		mpeg_encode:${PORTSDIR}/multimedia/mpeg_encode \
 		mplex:${PORTSDIR}/multimedia/mplex
 .endif
