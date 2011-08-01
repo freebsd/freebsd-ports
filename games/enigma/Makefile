@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-64bit
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Enigma is a reimplementation of Oxyd, a puzzle game
 
+BROKEN=		zipios++ has gone
+
 LIB_DEPENDS=	zipios.0:${PORTSDIR}/archivers/zipios++ \
 		xerces-c.27:${PORTSDIR}/textproc/xerces-c2
 BUILD_DEPENDS=	${LOCALBASE}/lib/libenet.a:${PORTSDIR}/net/enet
