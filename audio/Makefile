@@ -511,6 +511,7 @@
     SUBDIR += murmur
     SUBDIR += muse
     SUBDIR += musepack
+    SUBDIR += musescore
     SUBDIR += musica
     SUBDIR += musicbox-tag-editor
     SUBDIR += musiccontrol
