@@ -15,6 +15,9 @@ DISTNAME=	opMixer-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Adjusts a mixer
 
+DEPRECATED=	No more upstream
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	gtkmm-1.2.2:${PORTSDIR}/x11-toolkits/gtkmm12
 
 USE_BZIP2=	yes
