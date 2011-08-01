@@ -7,6 +7,7 @@
 
 PORTNAME=	jpmobile
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	japanese www rubygems
 MASTER_SITES=	RG
 
@@ -25,18 +26,20 @@ OPTIONS=	GEOKIT		"Run with geokit" Off \
 		IPADDRESSES	"IP address validation support"	On \
 		TERMINFO	"terminal information support"	On
 
-.include <bsd.port.options.mk>
+.include <bsd.port.pre.mk>
+
+PKGNAMEPREFIX:=	${PKGNAMEPREFIX}rubygem-
 
 .if !defined(WITHOUT_GEOKIT)
 RUN_DEPENDS+=	rubygem-geokit>=1.5.0:${PORTSDIR}/graphics/rubygem-geokit
 .endif
 
 .if defined(WITH_IPADDRESSES)
-RUN_DEPENDS+=	ja-jpmobile-ipaddresses>=0.0.1:${PORTSDIR}/japanese/rubygem-jpmobile-ipaddresses
+RUN_DEPENDS+=	ja-rubygem-jpmobile-ipaddresses>=0.0.1:${PORTSDIR}/japanese/rubygem-jpmobile-ipaddresses
 .endif
 
 .if defined(WITH_TERMINFO)
-RUN_DEPENDS+=	ja-jpmobile-terminfo>=0.0.2:${PORTSDIR}/japanese/rubygem-jpmobile-terminfo
+RUN_DEPENDS+=	ja-rubygem-jpmobile-terminfo>=0.0.2:${PORTSDIR}/japanese/rubygem-jpmobile-terminfo
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
