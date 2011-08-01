@@ -65,7 +65,6 @@
     SUBDIR += beast
     SUBDIR += bebocd
     SUBDIR += beep
-    SUBDIR += bladeenc
     SUBDIR += blop
     SUBDIR += bmp-crossfade
     SUBDIR += bmp-faad
@@ -92,7 +91,6 @@
     SUBDIR += cddb-bundle
     SUBDIR += cdparanoia
     SUBDIR += cdplay
-    SUBDIR += cdplayer.app
     SUBDIR += celt
     SUBDIR += checkmate
     SUBDIR += cheesetracker
@@ -312,7 +310,6 @@
     SUBDIR += icegenerator
     SUBDIR += ices
     SUBDIR += ices0
-    SUBDIR += id3ed
     SUBDIR += id3el
     SUBDIR += id3lib
     SUBDIR += id3mtag
@@ -438,7 +435,6 @@
     SUBDIR += linux-openal
     SUBDIR += linux-sdl_mixer
     SUBDIR += linux-shoutcast
-    SUBDIR += linux-vsound
     SUBDIR += linuxsampler
     SUBDIR += liquidsoap
     SUBDIR += listener
@@ -504,13 +500,11 @@
     SUBDIR += mpdbrowser
     SUBDIR += mpdcon
     SUBDIR += mpdscribble
-    SUBDIR += mpegaudio
     SUBDIR += mpeglib_artsplug
     SUBDIR += mpg123
     SUBDIR += mpg123.el
     SUBDIR += mpg321
     SUBDIR += mpiosh
-    SUBDIR += mpmf20
     SUBDIR += mt-daapd
     SUBDIR += muine
     SUBDIR += mumble
@@ -521,7 +515,6 @@
     SUBDIR += musicbox-tag-editor
     SUBDIR += musiccontrol
     SUBDIR += musicpd
-    SUBDIR += mutemix
     SUBDIR += mythplugin-mythmusic
     SUBDIR += napster
     SUBDIR += nas
@@ -596,11 +589,9 @@
     SUBDIR += pear-Text_Spell_Audio
     SUBDIR += pecl-id3
     SUBDIR += penguinsap
-    SUBDIR += phatbeat
     SUBDIR += pianobar
     SUBDIR += picard
     SUBDIR += pidgin-musictracker
-    SUBDIR += pimp3
     SUBDIR += play
     SUBDIR += playgsf
     SUBDIR += playmidi
@@ -649,7 +640,6 @@
     SUBDIR += raproxy
     SUBDIR += raul
     SUBDIR += rawrec
-    SUBDIR += rbscrobbler
     SUBDIR += rebot3
     SUBDIR += resid
     SUBDIR += rexima
@@ -658,7 +648,6 @@
     SUBDIR += rio
     SUBDIR += rio500
     SUBDIR += rioutil
-    SUBDIR += ripenc
     SUBDIR += ripit
     SUBDIR += ripperx
     SUBDIR += rosegarden
@@ -799,15 +788,10 @@
     SUBDIR += wildmidi
     SUBDIR += wmalbum
     SUBDIR += wmauda
-    SUBDIR += wmcdplay
-    SUBDIR += wmfmixer
     SUBDIR += wmix
-    SUBDIR += wmmixer
     SUBDIR += wmmp
-    SUBDIR += wmmp3
     SUBDIR += wmrecord
     SUBDIR += wmsmixer
-    SUBDIR += wmusic
     SUBDIR += workman
     SUBDIR += wsoundprefs
     SUBDIR += wsoundserver
@@ -846,7 +830,6 @@
     SUBDIR += xmms-infopipe
     SUBDIR += xmms-jack
     SUBDIR += xmms-kde
-    SUBDIR += xmms-kj
     SUBDIR += xmms-ladspa
     SUBDIR += xmms-liveice
     SUBDIR += xmms-mac
@@ -860,7 +843,6 @@
     SUBDIR += xmms-nsf
     SUBDIR += xmms-openspc
     SUBDIR += xmms-osssurround
-    SUBDIR += xmms-pipe
     SUBDIR += xmms-quix3dn
     SUBDIR += xmms-sapplug
     SUBDIR += xmms-scrobbler
@@ -870,7 +852,6 @@
     SUBDIR += xmms-sid
     SUBDIR += xmms-sndfile
     SUBDIR += xmms-sndstretch
-    SUBDIR += xmms-speex
     SUBDIR += xmms-tfmx
     SUBDIR += xmms-timidity
     SUBDIR += xmms-volnorm
@@ -885,9 +866,7 @@
     SUBDIR += xmradio
     SUBDIR += xoscope
     SUBDIR += xpi-musicpm
-    SUBDIR += xsidplay
     SUBDIR += xsynth-dssi
-    SUBDIR += xtuner
     SUBDIR += xvmixer
     SUBDIR += xwave
     SUBDIR += yammi

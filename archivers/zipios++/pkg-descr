@@ -1,8 +1,0 @@
-Zipios++ is a java.util.zip-like C++ library for reading and writing Zip
-files. Access to individual entries is provided through standard C++
-iostreams. A simple read-only virtual file system that mounts regular
-directories and zip files is also provided.
-
-This port use Debian tarball of CVS version, as last release is from 2001.
-
-WWW: http://zipios.sourceforge.net/

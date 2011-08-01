@@ -1,7 +1,0 @@
-XSIDPLAY is a graphical front end (uses Qt) for libsidplay. SIDPLAY
-emulates the Sound Interface Device chip (MOS 6581, commonly called
-SID) and the Micro Processor Unit (MOS 6510) of the Commodore 64. Listen
-to all those SID-tunes you remember so well again.
-
-WWW: http://www.geocities.com/SiliconValley/Lakes/5147/
-HVSC: http://www.hvsc.c64.org/
