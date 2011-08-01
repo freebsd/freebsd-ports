@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.g/g/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console napster client
 
+DEPRECATED=	Napster service is not working anymore
+EXPIRATION_DATE=	2011-09-01
+
 .if defined(WITH_MP3)
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 .endif

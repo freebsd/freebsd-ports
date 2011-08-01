@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME:L}-${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pure java napster client; also, supports OpenNap & giFT (FastTrack)
 
+DEPRECATED=	Napster service does not exists anymore
+EXPIRATION_DATE=	2011-09-01
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	yes

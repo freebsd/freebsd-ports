@@ -12,6 +12,8 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	SF \
 		http://lopster.sourceforge.net/download/
 
+DEPRECATED=	Napser service is not working anymore
+EXPIRATION_DATE=	2011-09-01
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK+ client for Napster
