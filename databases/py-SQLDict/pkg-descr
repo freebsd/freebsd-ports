@@ -1,8 +1,0 @@
-From the module documentation:
-
-   SQLDict: A helper class for the Python DB API.
-
-   This creates a database interface which works pretty much like a
-   Python dictionary (or shelve).
-
-WWW: http://dustman.net/andy/python/

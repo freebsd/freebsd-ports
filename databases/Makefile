@@ -532,7 +532,6 @@
     SUBDIR += pgaccess
     SUBDIR += pgadmin3
     SUBDIR += pgbouncer
-    SUBDIR += pgcluster
     SUBDIR += pgdbf
     SUBDIR += pgfouine
     SUBDIR += pglesslog
@@ -645,13 +644,11 @@
     SUBDIR += pxlib
     SUBDIR += pxtools
     SUBDIR += py-Elixir
-    SUBDIR += py-MySQL
     SUBDIR += py-MySQLdb
     SUBDIR += py-MySQLdb-devel
     SUBDIR += py-PyGreSQL
     SUBDIR += py-PySQLite10
     SUBDIR += py-PySQLite11
-    SUBDIR += py-SQLDict
     SUBDIR += py-axiom
     SUBDIR += py-bsddb
     SUBDIR += py-bsddb3
@@ -686,7 +683,6 @@
     SUBDIR += py-qt4-sql
     SUBDIR += py-redis
     SUBDIR += py-riak
-    SUBDIR += py-rrdpipe
     SUBDIR += py-rrdtool_lgpl
     SUBDIR += py-simplecouchdb
     SUBDIR += py-south
@@ -814,7 +810,6 @@
     SUBDIR += sqlrelay
     SUBDIR += sqsh
     SUBDIR += squirrel-sql
-    SUBDIR += sybase_ase
     SUBDIR += sybtcl
     SUBDIR += tablelog
     SUBDIR += tcl-Mysql

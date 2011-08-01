@@ -1,5 +1,0 @@
-A set of tools for working with the CHM files, consisting of a C language
-library 'chmlib' and a program called 'chmdump' which dumps out the files in
-a CHM file. 
-
-WWW: http://www.geocities.com/labourvanity/
