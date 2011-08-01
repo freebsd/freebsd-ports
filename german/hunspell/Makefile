@@ -15,7 +15,8 @@ DISTNAME=	igerman98-${PORTVERSION}
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Hunspell german dictionary
 
-BUILD_DEPENDS=	buildhash:${PORTSDIR}/textproc/ispell
+BUILD_DEPENDS=	buildhash:${PORTSDIR}/textproc/ispell \
+		hunspell:${PORTSDIR}/textproc/hunspell
 
 USE_BZIP2=	yes
 ALL_TARGET=	hunspell-all
