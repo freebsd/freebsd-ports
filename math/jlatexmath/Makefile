@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	jlatexmath
-PORTVERSION=	0.9.4
+PORTVERSION=	0.9.6
 CATEGORIES=	math java
 MASTER_SITES=	http://forge.scilab.org/upload/jlatexmath/files/ \
 		http://www.predatorlabs.net/dl/
@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-src-all-${PORTVERSION}
 
 MAINTAINER=	rfarmer@predatorlabs.net
 COMMENT=	Java API to display mathematical formulas written in LaTeX
+
+LICENSE=	GPLv2
 
 USE_ZIP=	yes
 USE_JAVA=	yes
