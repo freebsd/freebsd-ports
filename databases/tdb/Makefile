@@ -6,8 +6,8 @@
 #
 
 PORTNAME=		tdb
-PORTVERSION=		1.2.1
-PORTREVISION=		1
+PORTVERSION=		1.2.9
+PORTREVISION=		0
 PORTEPOCH=		1
 CATEGORIES=		databases
 MASTER_SITES=		ftp://ftp.samba.org/pub/%SUBDIR%/ \
@@ -20,42 +20,81 @@ COMMENT=		Trivial Database
 
 CONFLICTS=		*samba3[0-4]-3.*
 
-USE_PYTHON=		yes
-USE_GMAKE=		yes
+USE_PYTHON_BUILD=	yes
 USE_LDCONFIG=		yes
-GNU_CONFIGURE=		yes
+HAS_CONFIGURE=		yes
+WAF_TOOL=		buildtools/bin/waf
+CONFIGURE_SCRIPT=	${WAF_TOOL} configure
 USE_GNOME=		pkgconfig
-USE_AUTOTOOLS=		autoconf autoheader
 
 LICENSE=		GPLv3
 MAKE_JOBS_SAFE=		yes
 
-IPATHS=			-I${WRKSRC}/libreplace
-AUTOHEADER_ARGS=	${IPATHS}
-AUTOCONF_ARGS=		${IPATHS}
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
-PKGCONFIGDIR_REL?=	${PKGCONFIGDIR:S|^${PREFIX}/||}
-PYTHON_SITELIBDIR_REL?=	${PYTHONPREFIX_SITELIBDIR:S|^${PREFIX}/||}
+PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 
-CONFIGURE_ENV+=		XSLTPROC="/usr/bin/true"
+OPTIONS=		PYTHON		"Python bindings"	on
+
+.include <bsd.port.options.mk>
 
 MAN8=			tdbbackup.8 \
 			tdbdump.8 \
+			tdbrestore.8 \
 			tdbtool.8
 
 PLIST_FILES=		bin/tdbbackup \
 			bin/tdbdump \
+			bin/tdbrestore \
 			bin/tdbtool \
 			include/tdb.h \
-			lib/libtdb.a \
 			lib/libtdb.so \
 			lib/libtdb.so.1 \
-			${PKGCONFIGDIR_REL}/tdb.pc \
-			${PYTHON_SITELIBDIR_REL}/tdb.so
+			%%PKGCONFIGDIR%%/tdb.pc
 
-pre-install:
+CONFIGURE_ENV+=		XSLTPROC="/usr/bin/true"
+CONFIGURE_ENV+=		NOCOLOR=yes
+MAKE_ENV+=		NOCOLOR=yes
+
+CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
+
+.if !defined(DISABLE_MAKE_JOBS)
+CONFIGURE_ARGS+=	--jobs=${MAKE_JOBS_NUMBER}
+_MAKE_JOBS=		--jobs=${MAKE_JOBS_NUMBER}
+.endif
+
+.if defined(WITH_PYTHON)
+USE_PYTHON_RUN=		yes
+PLIST_FILES+=		%%PYTHON_SITELIBDIR%%/tdb.so
+PLIST_DIRSTRY+=		%%PYTHON_SITELIBDIR%% \
+			%%PYTHON_LIBDIR%%
+.else
+CONFIGURE_ARGS+=	--disable-python
+.endif
+
+ALL_TARGET=		build
+INSTALL_TARGET=		install
+
+post-patch:
+			@${REINPLACE_CMD} -e 's|%%PKGCONFIGDIR%%|${PKGCONFIGDIR}|g' \
+				${WRKSRC}/wscript
+
+pre-build:
 .for man in ${MAN8}
-			@${INSTALL_MAN} ${FILESDIR}/${man} ${WRKSRC}/manpages
+			@${MKDIR} ${BUILD_WRKSRC}/bin/default/manpages
+			@${INSTALL_MAN} ${FILESDIR}/${man} ${BUILD_WRKSRC}/bin/default/manpages
 .endfor
+
+do-build:
+			@(cd ${BUILD_WRKSRC}; \
+			if ! ${SETENV} ${MAKE_ENV} ${BUILD_WRKSRC}/${WAF_TOOL} ${_MAKE_JOBS} ${MAKE_ARGS} build; then \
+				if [ x != x${BUILD_FAIL_MESSAGE} ] ; then \
+					${ECHO_MSG} "===> Compilation failed unexpectedly."; \
+					(${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
+				fi; \
+			${FALSE}; \
+			fi)
+
+do-install:
+			@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${INSTALL_WRKSRC}/${WAF_TOOL} ${MAKE_ARGS} install)
 
 .include <bsd.port.mk>
