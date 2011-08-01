@@ -86,9 +86,9 @@
     SUBDIR += hs-OpenGL
     SUBDIR += hs-frantk
     SUBDIR += hs-gtk
+    SUBDIR += hs-gtk2hs
     SUBDIR += hs-gtkglext
     SUBDIR += hs-gtksourceview2
-    SUBDIR += hs-gtk2hs
     SUBDIR += hs-pango
     SUBDIR += hs-vte
     SUBDIR += irrlicht

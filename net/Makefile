@@ -24,7 +24,6 @@
     SUBDIR += arpdig
     SUBDIR += arping
     SUBDIR += arprelease
-#XXX move to net-mgmt
     SUBDIR += asfrecorder
     SUBDIR += asio
     SUBDIR += aslookup
@@ -259,12 +258,12 @@
     SUBDIR += isc-dhcp31-client
     SUBDIR += isc-dhcp31-relay
     SUBDIR += isc-dhcp31-server
-    SUBDIR += isc-dhcp41-server
     SUBDIR += isc-dhcp41-client
     SUBDIR += isc-dhcp41-relay
-    SUBDIR += isc-dhcp42-server
+    SUBDIR += isc-dhcp41-server
     SUBDIR += isc-dhcp42-client
     SUBDIR += isc-dhcp42-relay
+    SUBDIR += isc-dhcp42-server
     SUBDIR += iscsi-target
     SUBDIR += istgt
     SUBDIR += iwi-firmware
@@ -495,8 +494,8 @@
     SUBDIR += p5-BBS-UserInfo-SOB
     SUBDIR += p5-BBS-UserInfo-Wretch
     SUBDIR += p5-Beanstalk-Client
-    SUBDIR += p5-Crypt-DH-GMP
     SUBDIR += p5-Cisco-IPPhone
+    SUBDIR += p5-Crypt-DH-GMP
     SUBDIR += p5-Daemon-Generic
     SUBDIR += p5-Data-IPV4-Range-Parse
     SUBDIR += p5-EasyTCP

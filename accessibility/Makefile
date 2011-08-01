@@ -7,11 +7,11 @@
     SUBDIR += at-poke
     SUBDIR += at-spi
     SUBDIR += at-spi-reference
-    SUBDIR += at-spi2-core
     SUBDIR += at-spi2-atk
+    SUBDIR += at-spi2-core
     SUBDIR += atk
-    SUBDIR += atkmm
     SUBDIR += atk-reference
+    SUBDIR += atkmm
     SUBDIR += dasher
     SUBDIR += eflite
     SUBDIR += gnome-mag

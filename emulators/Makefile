@@ -163,9 +163,9 @@
     SUBDIR += vice
     SUBDIR += virtualbox-ose
     SUBDIR += virtualbox-ose-additions
-    SUBDIR += virtualbox-ose-legacy
     SUBDIR += virtualbox-ose-kmod
     SUBDIR += virtualbox-ose-kmod-legacy
+    SUBDIR += virtualbox-ose-legacy
     SUBDIR += visualboyadvance-m
     SUBDIR += visualos
     SUBDIR += vmips
