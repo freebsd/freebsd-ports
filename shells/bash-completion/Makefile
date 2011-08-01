@@ -7,6 +7,7 @@
 
 PORTNAME=		bash-completion
 PORTVERSION=	1.3
+PORTREVISION=	1
 PORTEPOCH=		1
 CATEGORIES=		shells
 MASTER_SITES=	http://bash-completion.alioth.debian.org/files/
