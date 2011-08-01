@@ -14,6 +14,8 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LGPL'ed Flash 4/5 movie output library with many languages support
 
+BROKEN=	Does not fetch
+
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 		ungif.5:${PORTSDIR}/graphics/libungif
 
