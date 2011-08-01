@@ -23899,6 +23899,7 @@ rubygem-tweetstream             ports/net/rubygem-tweetstream
 rubygem-twitter                 ports/net/rubygem-twitter
 rubygem-twitter-stream          ports/net/rubygem-twitter-stream
 rubygem-twitter4r               ports/net/rubygem-twitter4r
+rubygem-twitter_oauth           ports/security/rubygem-twitter_oauth
 rubygem-tzinfo                  ports/devel/rubygem-tzinfo
 rubygem-unicode                 ports/devel/rubygem-unicode
 rubygem-uuid                    ports/devel/rubygem-uuid
