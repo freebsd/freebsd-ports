@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	dm-devise
-PORTVERSION=	1.3.1
+PORTVERSION=	1.4.0
 CATEGORIES=	databases rubygems
 MASTER_SITES=	RG
 
