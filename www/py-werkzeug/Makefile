@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	werkzeug
-PORTVERSION=	0.6.2
+PORTVERSION=	0.7
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,6 +14,9 @@ DISTNAME=	Werkzeug-${DISTVERSION}
 
 MAINTAINER=	moggie@elasticmind.net
 COMMENT=	Python utilities collection for building WSGI applications
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	easy_install
@@ -25,8 +28,13 @@ EXAMPLESDIR=	${PREFIX}/share/examples/${PYTHON_PKGNAMEPREFIX}${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
-post-install:
 .if !defined(NOPORTEXAMPLES)
+post-build:
+# Bytecode
+	${PYTHON_CMD} -m compileall ${WRKSRC}/examples ; \
+	${PYTHON_CMD} -O -m compileall ${WRKSRC}/examples
+
+post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
