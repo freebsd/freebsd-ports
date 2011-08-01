@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	httpsqs
-PORTVERSION=	1.6
-PORTREVISION=	1
+PORTVERSION=	1.7
 CATEGORIES=	www devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	lichray@gmail.com
 COMMENT=	Simple Queue Service based on HTTP GET/POST protocol
+
+LICENSE=	BSD
 
 LIB_DEPENDS+=	tokyocabinet:${PORTSDIR}/databases/tokyocabinet \
 	event-2.0:${PORTSDIR}/devel/libevent2
@@ -20,8 +21,6 @@ LIB_DEPENDS+=	tokyocabinet:${PORTSDIR}/databases/tokyocabinet \
 BUILD_DEPENDS+=	pkg-config:${PORTSDIR}/devel/pkg-config
 
 MAKE_ENV=	LIBS="${PTHREAD_LIBS}"
-
-LICENSE=	BSD
 
 PLIST_FILES=	bin/${PORTNAME}
 
