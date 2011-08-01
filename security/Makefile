@@ -187,6 +187,7 @@
     SUBDIR += honggfuzz
     SUBDIR += horde-jeta
     SUBDIR += hotssh
+    SUBDIR += hs-Crypto
     SUBDIR += hs-SHA
     SUBDIR += hs-digest
     SUBDIR += httprint
