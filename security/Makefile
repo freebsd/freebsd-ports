@@ -196,7 +196,6 @@
     SUBDIR += idea
     SUBDIR += identify
     SUBDIR += ifd-devkit
-    SUBDIR += ifd-gempc410
     SUBDIR += ifd-slb_rf60
     SUBDIR += ike
     SUBDIR += ike-scan
@@ -244,7 +243,6 @@
     SUBDIR += libgnomesu
     SUBDIR += libgpg-error
     SUBDIR += libgringotts
-    SUBDIR += libidea
     SUBDIR += libident
     SUBDIR += libksba
     SUBDIR += libmcrypt
@@ -721,7 +719,6 @@
     SUBDIR += quantis-kmod
     SUBDIR += racoon2
     SUBDIR += radiusniff
-    SUBDIR += rain
     SUBDIR += rainbowcrack
     SUBDIR += ranpwd
     SUBDIR += rarcrack

@@ -250,7 +250,6 @@
     SUBDIR += ruby-wx
     SUBDIR += sakura
     SUBDIR += scintilla
-    SUBDIR += sdl_gui
     SUBDIR += sdl_pango
     SUBDIR += shared-desktop-ontologies
     SUBDIR += skinlf

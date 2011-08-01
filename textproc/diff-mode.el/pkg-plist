@@ -1,6 +1,0 @@
-share/emacs/site-lisp/diff-mode.el
-@exec mkdir -p %D/lib/xemacs/site-lisp
-@exec ln -sf %D/%F %D/lib/xemacs/site-lisp/diff-mode.el
-@unexec rm %D/lib/xemacs/site-lisp/diff-mode.el
-@dirrm lib/xemacs/site-lisp
-@dirrm lib/xemacs

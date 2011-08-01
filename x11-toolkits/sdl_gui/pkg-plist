@@ -1,6 +1,0 @@
-include/SDL/SDL_gui.h
-lib/libSDL_gui.a
-lib/libSDL_gui.la
-lib/libSDL_gui.so
-lib/libSDL_gui.so.0
-@dirrmtry include/SDL
