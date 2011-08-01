@@ -7,6 +7,7 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.3.2
+PORTREVISION=	1
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
@@ -18,13 +19,13 @@ COMMENT=	A highly efficient mail filter for identifying spam
 
 RUN_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 		p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-HTML-Parser>=3.43:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-HTML-Parser>=3.46:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect \
 		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
 BUILD_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 		p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-HTML-Parser>=3.43:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-HTML-Parser>=3.46:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
 		${SITE_PERL}/${PERL_ARCH}/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect \
 		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
@@ -128,7 +129,11 @@ RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SS
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA.pm:${PORTSDIR}/security/p5-Digest-SHA
 . endif
 RUN_DEPENDS+=	p5-Mail-DKIM>=0.37:${PORTSDIR}/mail/p5-Mail-DKIM
+. if ${PERL_LEVEL} < 501400
 RUN_DEPENDS+=	p5-Crypt-OpenSSL-RSA>=0.24:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA
+. else
+RUN_DEPENDS+=	p5-Crypt-OpenSSL-RSA>=0.26_1:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA
+. endif
 .endif
 
 .if defined(WITH_SACOMPILE)
