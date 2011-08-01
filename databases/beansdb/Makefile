@@ -6,29 +6,19 @@
 #
 
 PORTNAME=	beansdb
-PORTVERSION=	0.3.0
-PORTREVISION=	2
+PORTVERSION=	0.5.3
+PORTREVISION=	0
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	qingfeng@douban.com
 COMMENT=	Yet anonther distributed key-value storage system from Douban Inc
 
-BUILD_DEPENDS=	tokyocabinet>=1.4.30:${PORTSDIR}/databases/tokyocabinet
-LIB_DEPENDS=	tokyocabinet:${PORTSDIR}/databases/tokyocabinet \
-		event-1.4:${PORTSDIR}/devel/libevent
-
 GNU_CONFIGURE=	yes
-USE_LDCONFIG=	yes
-USE_GMAKE=	yes
+CFLAGS+=	-pthread
+MAKE_ENV+=	CFLAGS="${CFLAGS}"
 
 MAN1=		beansdb.1
-PLIST_FILES=	bin/beansdb bin/convert
-
-post-patch:
-	${REINPLACE_CMD} -e 's|#include <mcheck.h>||g' \
-		${WRKSRC}/*.c
-	${REINPLACE_CMD} -e 's|#include <mcheck.h>||g' \
-		${WRKSRC}/tools/*.c
+PLIST_FILES=	bin/beansdb
 
 .include <bsd.port.mk>
