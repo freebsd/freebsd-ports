@@ -8,7 +8,7 @@
 PORTNAME=	live_http_headers
 PORTVERSION=	0.17
 DISTVERSIONSUFFIX=	-fx+sm
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 PKGNAMEPREFIX=	xpi-
 
@@ -36,6 +36,7 @@ XPI_DIRS=	chrome/icons/default \
 		defaults
 
 USE_DOS2UNIX=	yes
+DOS2UNIX_REGEX=	.*\.(js|rdf|txt)
 
 post-patch:
 	@${FIND} ${WRKSRC} -name \*.orig -exec ${RM} \{} \;
