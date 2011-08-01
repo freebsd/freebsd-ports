@@ -4,13 +4,12 @@ bin/rabbit-command
 bin/rabbit-theme-manager
 bin/rabbiter
 bin/rabrick
+bin/rabwii
 %%RUBY_SITELIBDIR%%/rabbit/action.rb
 %%RUBY_SITELIBDIR%%/rabbit/action/basic.rb
 %%RUBY_SITELIBDIR%%/rabbit/action/radio.rb
 %%RUBY_SITELIBDIR%%/rabbit/action/toggle.rb
 %%RUBY_SITELIBDIR%%/rabbit/canvas.rb
-%%RUBY_SITELIBDIR%%/rabbit/comment-canvas.rb
-%%RUBY_SITELIBDIR%%/rabbit/comment/log.rb
 %%RUBY_SITELIBDIR%%/rabbit/config.rb
 %%RUBY_SITELIBDIR%%/rabbit/console.rb
 %%RUBY_SITELIBDIR%%/rabbit/console/roff.rb
@@ -122,8 +121,6 @@ bin/rabrick
 %%RUBY_SITELIBDIR%%/rabbit/renderer/display/base.rb
 %%RUBY_SITELIBDIR%%/rabbit/renderer/display/button-handler.rb
 %%RUBY_SITELIBDIR%%/rabbit/renderer/display/clutter-embed.rb
-%%RUBY_SITELIBDIR%%/rabbit/renderer/display/comment-drawing-area.rb
-%%RUBY_SITELIBDIR%%/rabbit/renderer/display/comment.rb
 %%RUBY_SITELIBDIR%%/rabbit/renderer/display/cursor.rb
 %%RUBY_SITELIBDIR%%/rabbit/renderer/display/drawing-area-base.rb
 %%RUBY_SITELIBDIR%%/rabbit/renderer/display/drawing-area-primitive.rb
@@ -197,6 +194,8 @@ bin/rabrick
 %%RUBY_SITELIBDIR%%/rabbit/theme/clear-blue/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/clock/clock.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/clock/property.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/clutter-comment/clutter-comment.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/clutter-comment/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/color-circle-block-quote/color-circle-block-quote.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/color-circle-block-quote/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/color-circle-common/color-circle-common.rb
@@ -221,12 +220,12 @@ bin/rabrick
 %%RUBY_SITELIBDIR%%/rabbit/theme/color-circle-title-text/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/color-circle/color-circle.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/color-circle/property.rb
-%%RUBY_SITELIBDIR%%/rabbit/theme/comment/comment.rb
-%%RUBY_SITELIBDIR%%/rabbit/theme/comment/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/cozmixng-powered-by/cozmixng-powered-by.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/cozmixng-powered-by/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/cozmixng/cozmixng.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/cozmixng/property.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/dark-gradation/dark-gradation.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/dark-gradation/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/day-white/day-white.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/day-white/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/debian/debian.rb
@@ -263,6 +262,8 @@ bin/rabrick
 %%RUBY_SITELIBDIR%%/rabbit/theme/emphasize-keyword/emphasize-keyword.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/emphasize-keyword/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/entry.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/footer-comment/footer-comment.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/footer-comment/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/footer-logo/footer-logo.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/footer-logo/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/green-circle/green-circle.rb
@@ -367,6 +368,8 @@ bin/rabrick
 %%RUBY_SITELIBDIR%%/rabbit/theme/slide-number/slide-number.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/slide-show/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/slide-show/slide-show.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/stream-comment/property.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/stream-comment/stream-comment.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/table/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/table/table.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/tag/property.rb
@@ -383,262 +386,19 @@ bin/rabrick
 %%RUBY_SITELIBDIR%%/rabbit/theme/title-on-image-toolkit/title-on-image-toolkit.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/title-shadow/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/title-shadow/title-shadow.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/twitter-comment/property.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/twitter-comment/twitter-comment.rb
 %%RUBY_SITELIBDIR%%/rabbit/trackball.rb
+%%RUBY_SITELIBDIR%%/rabbit/twitter.rb
 %%RUBY_SITELIBDIR%%/rabbit/utils.rb
 %%RUBY_SITELIBDIR%%/rabbit/xmlrpc/base.rb
 %%RUBY_SITELIBDIR%%/rabbit/xmlrpc/client.rb
 %%RUBY_SITELIBDIR%%/rabbit/xmlrpc/server.rb
-%%RUBY_SITELIBDIR%%/rwiki/soap/common.rb
-%%RUBY_SITELIBDIR%%/rwiki/soap/driver.rb
-%%RUBY_SITELIBDIR%%/rwiki/soap/servant.rb
-%%DATADIR%%/image/clear-blue-images/clear-blue-headline-background.png
-%%DATADIR%%/image/clear-blue-images/clear-blue-icon.png
-%%DATADIR%%/image/clear-blue-images/clear-blue-images.rb
-%%DATADIR%%/image/clear-blue-images/property.rb
-%%DATADIR%%/image/cozmixng-images/cozmixchu.png
-%%DATADIR%%/image/cozmixng-images/cozmixng-images.rb
-%%DATADIR%%/image/cozmixng-images/powered-by-cozmixng.png
-%%DATADIR%%/image/cozmixng-images/property.rb
-%%DATADIR%%/image/debian-images/bottom.png
-%%DATADIR%%/image/debian-images/debian-images.rb
-%%DATADIR%%/image/debian-images/debian-logo-pink.png
-%%DATADIR%%/image/debian-images/debian-logo.png
-%%DATADIR%%/image/debian-images/debian-whirl.png
-%%DATADIR%%/image/debian-images/item1.png
-%%DATADIR%%/image/debian-images/property.rb
-%%DATADIR%%/image/debian-images/top.png
-%%DATADIR%%/image/rabbit-images/blue-item.png
-%%DATADIR%%/image/rabbit-images/close-quote-blue.png
-%%DATADIR%%/image/rabbit-images/close-quote-brown.png
-%%DATADIR%%/image/rabbit-images/close-quote-light-blue.png
-%%DATADIR%%/image/rabbit-images/goal-flag.png
-%%DATADIR%%/image/rabbit-images/green-item.png
-%%DATADIR%%/image/rabbit-images/kame.png
-%%DATADIR%%/image/rabbit-images/lavie-icon.png
-%%DATADIR%%/image/rabbit-images/lavie-with-logo.png
-%%DATADIR%%/image/rabbit-images/lavie.png
-%%DATADIR%%/image/rabbit-images/mini-alice.png
-%%DATADIR%%/image/rabbit-images/mini-butler-rabbit.png
-%%DATADIR%%/image/rabbit-images/mini-horizontal-bar.png
-%%DATADIR%%/image/rabbit-images/mini-kame-taro.png
-%%DATADIR%%/image/rabbit-images/mini-tanu-kitaro.png
-%%DATADIR%%/image/rabbit-images/mini-usa-taro.png
-%%DATADIR%%/image/rabbit-images/mini-usagi.png
-%%DATADIR%%/image/rabbit-images/mini-vertical-bar.png
-%%DATADIR%%/image/rabbit-images/mini-yukidaru-taro.png
-%%DATADIR%%/image/rabbit-images/open-quote-blue.png
-%%DATADIR%%/image/rabbit-images/open-quote-brown.png
-%%DATADIR%%/image/rabbit-images/open-quote-light-blue.png
-%%DATADIR%%/image/rabbit-images/property.rb
-%%DATADIR%%/image/rabbit-images/rabbit-banner-blue.png
-%%DATADIR%%/image/rabbit-images/rabbit-banner-green.png
-%%DATADIR%%/image/rabbit-images/rabbit-banner-heads.png
-%%DATADIR%%/image/rabbit-images/rabbit-banner-pink.png
-%%DATADIR%%/image/rabbit-images/rabbit-banner.png
-%%DATADIR%%/image/rabbit-images/rabbit-banner2.png
-%%DATADIR%%/image/rabbit-images/rabbit-images.rb
-%%DATADIR%%/image/rabbit-images/rabbit-pink-logo.png
-%%DATADIR%%/image/rabbit-images/rabbit-pink-logo2.png
-%%DATADIR%%/image/rabbit-images/red-item.png
-%%DATADIR%%/image/rabbit-images/red-item2.png
-%%DATADIR%%/image/rabbit-images/start-flag.png
-%%DATADIR%%/image/rabbit-images/tanu-kitaro.png
-%%DATADIR%%/image/rabbit-images/usa-taro.png
-%%DATADIR%%/image/rabbit-images/usagi.png
-%%DATADIR%%/image/rabbit-images/yukiusa.png
-%%DATADIR%%/image/ranguba-images/ranguba-bar.png
-%%DATADIR%%/image/ranguba-images/ranguba-bar.svg
-%%DATADIR%%/image/ranguba-images/ranguba-images.rb
-%%DATADIR%%/image/ranguba-images/ranguba-item-mark-mini.png
-%%DATADIR%%/image/ranguba-images/ranguba-item-mark.png
-%%DATADIR%%/image/ranguba-images/ranguba-item-mark.svg
-%%DATADIR%%/image/ranguba-images/ranguba-mark.png
-%%DATADIR%%/image/ranguba-images/ranguba-mark.svg
-%%DATADIR%%/image/ruby-images/property.rb
-%%DATADIR%%/image/ruby-images/ruby-images.rb
-%%DATADIR%%/image/ruby-images/ruby-pink-circle-icon.png
-%%DATADIR%%/image/ruby-images/ruby-pink-circle-logo.png
-%%DATADIR%%/image/ruby-images/ruby-pink-circle-small-icon.png
-%%DATADIR%%/image/ruby-images/ruby-pink-circle.png
-%%DATADIR%%/image/ruby-images/ruby-pink-polygon-icon.png
-%%DATADIR%%/image/ruby-images/ruby-pink-polygon-logo.png
-%%DATADIR%%/image/ruby-images/ruby-pink-polygon-small-icon.png
-%%DATADIR%%/image/ruby-images/ruby-pink-polygon.png
 %%NLS%%share/locale/en/LC_MESSAGES/rabbit.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/rabbit.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/rabbit.mo
-%%PORTDOCS%%%%DOCSDIR%%/NEWS.en
-%%PORTDOCS%%%%DOCSDIR%%/README.en
-%%PORTDOCS%%%%DOCSDIR%%/ja/NEWS.ja
-%%PORTDOCS%%%%DOCSDIR%%/ja/README.ja
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/asahina/alice.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/asahina/yukiusa.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/blue-circle.rd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/can_rabbit.rd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cozmixng.rd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cozmixng_is_field.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/cozmixng_is_field.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/equation.eps
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/gl-sample.rd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/html_and_wiki.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/html_and_wiki.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/info-window.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/join_cozmixng.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/join_cozmixng.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/gesture-flow.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/gesture.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/gtk+-widget.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/high-light-architecture.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/high-light-expose.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/high-light-expose.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/high-light-widget.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/high-light-widget.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/high-light.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/mask-screenshot.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/mask.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/mask.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/ruby-gnome2-logo.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/ruby-pink-circle-logo.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/skip-up-with-ruby-gnome2.rd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kof2005/widget.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kou/clear-blue-headline-background.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kou/clear-blue-icon.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kou/horizontal-bar.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kou/quote.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/kou/vertical-bar.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lavie.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lightning-talk.rd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lldn/input.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lldn/interface.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lldn/kame.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lldn/lavie.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lldn/lldn.rd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lldn/output.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lldn/rabbit-rwiki.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lldn/rabbit_banner.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/lldn/rabbit_banner2.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/m17n.rd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/banner/bn1.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/banner/bn2.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/banner/bn_psd.psd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/banner/bn_psd2.psd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/tailavi/tailavi-ruby.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/tailavi/tailavi-ruby.psd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/tailavi/tailavi-taiyaki.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/tailavi/tailavi-taiyaki.psd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/tailavi/tailavi-yokubari.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/tailavi/tailavi-yokubari.psd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/tailavi/taiyaki.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/tailavi/taiyaki.psd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/blue_dot.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/green_dot.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/rabbit.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/rabbit_mimi.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/rabbit_mimi2.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/red_dot.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/ruby.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/ruby_new.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/usa1.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/usa2.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/usa3.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/usako_psd.psd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/usako_psd_100.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/momo/usako/usako_psd_200.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ppt/hare-and-tortoise-end.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ppt/hare-and-tortoise-middle.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ppt/hare-and-tortoise-start.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ppt/ppt.rd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ppt/rabbit-with-ruby.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/pre.rd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit-balloon.obj
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit-en.rd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit-history.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit-implementation.rd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit.dia
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit.hiki
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit.rd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit.xcf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/festival/festival.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/gl-sample/gl-sample.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/image-with-frame/image-with-frame.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/image-with-no-shadow-frame/image-with-no-shadow-frame.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/image-without-frame/image-without-frame.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/kof2005/kof2005.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/kof2005/property.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/lightning-talk-with-contact/lightning-talk-with-contact.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/lldn/lldn.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/pdf/pdf.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/pdf/property.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/ppt/ppt.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/rabbit-and-tortoise/rabbit-and-tortoise.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/rectangle-image-slide-number/rectangle-image-slide-number.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/stop-auto-slide/stop-auto-slide.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit/theme/triangle-image-slide-number/triangle-image-slide-number.rb
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit_icon.ico
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/rabbit_icon.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/shocker.jpg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slide-property.hiki
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/slide-property.rab
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sode/kame-color.riff
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/sode/kame.riff
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/spiral.svg
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/table-en.rd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/table.hiki
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/table.rd
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/theme-bench-en.rab
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/theme-bench.rab
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usagi.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usatti/kame-taro.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usatti/rabbit-pink-logo.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usatti/rabbit-pink-logo2.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usatti/ruby-pink-circle-logo.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usatti/ruby-pink-circle.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usatti/ruby-pink-polygon-logo.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usatti/ruby-pink-polygon.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usatti/tanu-kitaro.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usatti/usa-taro.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/usatti/yukidaru-taro.png
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/usatti
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/sode
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/triangle-image-slide-number
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/stop-auto-slide
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/rectangle-image-slide-number
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/rabbit-and-tortoise
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/ppt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/pdf
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/lldn
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/lightning-talk-with-contact
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/kof2005
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/image-without-frame
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/image-with-no-shadow-frame
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/image-with-frame
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/gl-sample
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme/festival
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit/theme
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/rabbit
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/ppt
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/momo/usako
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/momo/tailavi
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/momo/banner
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/momo
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/lldn
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kou
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/kof2005
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/asahina
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/ja
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/image/ruby-images
-@dirrm %%DATADIR%%/image/ranguba-images
-@dirrm %%DATADIR%%/image/rabbit-images
-@dirrm %%DATADIR%%/image/debian-images
-@dirrm %%DATADIR%%/image/cozmixng-images
-@dirrm %%DATADIR%%/image/clear-blue-images
-@dirrm %%DATADIR%%/image
-@dirrm %%DATADIR%%
-@dirrm %%RUBY_SITELIBDIR%%/rwiki/soap
-@dirrm %%RUBY_SITELIBDIR%%/rwiki
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/xmlrpc
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/twitter-comment
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/title-shadow
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/title-on-image-toolkit
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/title-logo
@@ -647,6 +407,7 @@ bin/rabrick
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/timer
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/tag
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/table
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/stream-comment
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/slide-show
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/slide-number
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/slide-logo
@@ -698,6 +459,7 @@ bin/rabrick
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/headline-logo
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/green-circle
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/footer-logo
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/footer-comment
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/emphasize-keyword
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/edge-info-toolkit
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/default-title-text
@@ -715,9 +477,9 @@ bin/rabrick
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/default
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/debian
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/day-white
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/dark-gradation
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/cozmixng-powered-by
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/cozmixng
-@dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/comment
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/color-circle-title-text
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/color-circle-title-slide
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/color-circle-text
@@ -730,6 +492,7 @@ bin/rabrick
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/color-circle-common
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/color-circle-block-quote
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/color-circle
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/clutter-comment
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/clock
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/clear-blue
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/centering-rabbit
@@ -764,6 +527,5 @@ bin/rabrick
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/element
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/div
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/console
-@dirrm %%RUBY_SITELIBDIR%%/rabbit/comment
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/action
 @dirrm %%RUBY_SITELIBDIR%%/rabbit
