@@ -7,7 +7,7 @@
 
 PORTNAME=	enigma
 PORTVERSION=	1.01
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	games
 MASTER_SITES=	BERLIOS/enigma-game
 DISTNAME=	${PORTNAME}-${PORTVERSION}-64bit
@@ -15,10 +15,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-64bit
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Enigma is a reimplementation of Oxyd, a puzzle game
 
-BROKEN=		zipios++ has gone
-
-LIB_DEPENDS=	zipios.0:${PORTSDIR}/archivers/zipios++ \
-		xerces-c.27:${PORTSDIR}/textproc/xerces-c2
+LIB_DEPENDS=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2
 BUILD_DEPENDS=	${LOCALBASE}/lib/libenet.a:${PORTSDIR}/net/enet
 
 USE_GMAKE=	yes
@@ -50,7 +47,7 @@ PLIST_SUB+=	NLS="@comment "
 .endif
 
 post-extract:
-	@${RM} -rf ${WRKSRC}/lib-src/lua ${WRKSRC}/lib-src/zipios++ \
+	@${RM} -rf ${WRKSRC}/lib-src/lua \
 		${WRKSRC}/lib-src/enet ${WRKSRC}/tools ${WRKSRC}/intl
 
 post-patch:
