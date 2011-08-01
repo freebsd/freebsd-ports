@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	stunnel
-PORTVERSION=	4.35
+PORTVERSION=	4.41
 CATEGORIES=	security
 MASTER_SITES=	ftp://ftp.stunnel.org/stunnel/%SUBDIR%/ \
 		http://mirrors.zerg.biz/stunnel/%SUBDIR%/ \
@@ -74,12 +74,14 @@ BROKEN=	'The WITH_UCONTEXT, WITH_FORK and WITH_PTHREAD options are mutually excl
 
 .if defined(WITH_UCONTEXT)
 CONFIGURE_ARGS+=--with-threads=ucontext
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}" LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
+CPPFLAGS+=	${PTHREAD_CFLAGS}
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 .elif defined(WITH_FORK)
 CONFIGURE_ARGS+=--with-threads=fork
 .else
 CONFIGURE_ARGS+=--with-threads=pthread
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS} ${PTHREAD_CFLAGS}" LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
+CPPFLAGS+=	${PTHREAD_CFLAGS}
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 .endif
 
 post-patch:

@@ -2,11 +2,11 @@ Description: Do not install the sample stunnel.pem file.
  This is handled by the FreeBSD port's Makefile.
 Forwarded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
-Last-Update: 2010-09-20
+Last-Update: 2011-06-28
 
 --- tools/Makefile.in.orig
 +++ tools/Makefile.in
-@@ -370,7 +370,7 @@
+@@ -373,7 +373,7 @@
  
  info-am:
  

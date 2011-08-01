@@ -12,8 +12,9 @@ lib/stunnel/libstunnel.so
 %%PORTDOCS%%%%DOCSDIR%%/examples/importCA.html
 %%PORTDOCS%%%%DOCSDIR%%/examples/importCA.sh
 %%PORTDOCS%%%%DOCSDIR%%/examples/script.sh
-%%PORTDOCS%%%%DOCSDIR%%/examples/stunnel.spec
 %%PORTDOCS%%%%DOCSDIR%%/examples/stunnel.init
+%%PORTDOCS%%%%DOCSDIR%%/examples/stunnel.service
+%%PORTDOCS%%%%DOCSDIR%%/examples/stunnel.spec
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/BUGS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
