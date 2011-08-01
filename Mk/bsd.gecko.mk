@@ -14,7 +14,7 @@
 # WITH_GECKO=	libxul
 #
 # The valid backends are:
-# libxul seamonkey
+# libxul
 #
 # See below for more details.
 # ======================= /USERS ================================
@@ -36,8 +36,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 
 # Users should use the following syntax:
 #
-# WITH_GECKO= libxul seamonkey
-#  Use libxul whenever a port supports it, falling back on seamonkey.
+# WITH_GECKO= libxul libxul-devel
+#  Use libxul whenever a port supports it, falling back on libxul-devel.
+#  Note: libxul-devel does not exist at the moment!
 # WITH_GECKO= libxul
 #  Sets your preferred backend. With this example, libxul will always
 #  be chosen, unless the port doesn't support a libxul backend. In that
@@ -47,19 +48,21 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #
 # Ports should use the following:
 #
-# USE_GECKO= libxul seamonkey
+# USE_GECKO= libxul libxul-devel
 #  The list of gecko backends that the port supports. Unless the user
 #  overrides it with WITH_GECKO, the first gecko listed in USE_GECKO
 #  will be the default. In the above example, www/libxul will be used
-#  as a gecko backend unless WITH_GECKO=seamonkey is defined by the user.
+#  as a gecko backend unless WITH_GECKO=libxul-devel is defined by the
+#  user. Note: libxul-devel does not exist at the moment!
 #
 # USE_GECKO= libxul-devel<->libxul
 #  This will sed -e 's/libxul/libxul-devel/' on Makefile.in's and configure 
 #  if ${GECKO}=="libxul-devel"
 #
 #  Example:
-#  USE_GECKO= libxul seamonkey
-#  
+#  USE_GECKO= libxul libxul-devel
+#  Note: libxul-devel does not exist at the moment!
+# 
 #  post-patch:
 #	@${REINPALCE_CMD} -e 's|mozilla-|${GECKO}-|' \
 #		${MOZSRC}/configure
@@ -68,15 +71,16 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #  has been chosen.
 #
 #  Example:
-#  USE_GECKO= libxul seamonkey
+#  USE_GECKO= libxul libxul-devel
+#  Note: libxul-devel does not exist at the moment!
 #  
 #  post-patch:
-#  .if ${GECKO}=="seamonkey"
-#	@${REINPLACE_CMD} -e 's|mozilla-|seamonkey-|' \
+#  .if ${GECKO}=="libxul-devel"
+#	@${REINPLACE_CMD} -e 's|mozilla-|libxul-|' \
 #		${MOZSRC}/configure
 #  .endif
 
-_GECKO_ALL=	seamonkey libxul
+_GECKO_ALL=	libxul
 
 libxul_PLIST=		${LOCALBASE}/lib/libxul/libxul.so
 
@@ -188,9 +192,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port 
 #                         or by the user via defined variable try to find
 #                         the highest stable installed version.
-#                         Available values: yes 11+ 20+ 11 20
+#                         Available values: yes 22+ 20+ 22 20
 #                         NOTE:
-#                         default value 20 is used in case of USE_SEAMONKEY=yes
+#                         default value 22 is used in case of USE_SEAMONKEY=yes
 #
 # USE_SEAMONKEY_BUILD     Add buildtime dependency on SeaMonkey.
 #                         Available values: see USE_SEAMONKEY
@@ -293,12 +297,12 @@ USE_SEAMONKEY:=				${USE_SEAMONKEY_BUILD}
 _SEAMONKEY_BUILD_DEPENDS=	yes
 .endif
 
-_SEAMONKEY_DEFAULT_VERSION=	20
-_SEAMONKEY_VERSIONS=		11 20
-_SEAMONKEY_RANGE_VERSIONS=	11+ 20+
+_SEAMONKEY_DEFAULT_VERSION=	22
+_SEAMONKEY_VERSIONS=		22 20
+_SEAMONKEY_RANGE_VERSIONS=	22+ 20+
 
-# For specifying [20, 11, ..]+
-_SEAMONKEY_11P=	11 ${_SEAMONKEY_20P}
+# For specifying [22, 20, ..]+
+_SEAMONKEY_22P=	22 ${_SEAMONKEY_20P}
 _SEAMONKEY_20P=	20
 
 # Set the default SeaMonkey version and check if USE_SEAMONKEY=yes was given

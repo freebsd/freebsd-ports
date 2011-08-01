@@ -1,5 +1,5 @@
 --- /dev/null	Mon May 26 13:22:00 2003
-+++ xpcom/reflect/xptcall/src/md/unix/xptcstubs_sparc64_freebsd.cpp	Mon May 26 04:12:55 2003
++++ mozilla/xpcom/reflect/xptcall/src/md/unix/xptcstubs_sparc64_freebsd.cpp	Mon May 26 04:12:55 2003
 @@ -0,0 +1,123 @@
 +/* -*- Mode: C++; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*-
 + *
@@ -125,7 +125,7 @@
 +
 +#endif /* sparc || __sparc__ */
 --- /dev/null	Mon May 26 13:22:00 2003
-+++ xpcom/reflect/xptcall/src/md/unix/xptcinvoke_asm_sparc64_freebsd.s	Mon May 26 04:06:09 2003
++++ mozilla/xpcom/reflect/xptcall/src/md/unix/xptcinvoke_asm_sparc64_freebsd.s	Mon May 26 04:06:09 2003
 @@ -0,0 +1,104 @@
 +/* -*- Mode: asm; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*-
 + *
@@ -232,7 +232,7 @@
 +
 +        .size    XPTC_InvokeByIndex, .-XPTC_InvokeByIndex
 --- /dev/null	Mon May 26 14:00:00 2003
-+++ xpcom/reflect/xptcall/src/md/unix/xptcinvoke_sparc64_freebsd.cpp	Mon May 26 14:00:49 2003
++++ mozilla/xpcom/reflect/xptcall/src/md/unix/xptcinvoke_sparc64_freebsd.cpp	Mon May 26 14:00:49 2003
 @@ -0,0 +1,91 @@
 +/* -*- Mode: C++; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*-
 + *

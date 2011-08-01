@@ -1,0 +1,20 @@
+--- configure.in.orig	2011-07-28 00:58:59.534861026 +0200
++++ configure.in	2011-07-28 01:00:05.591863508 +0200
+@@ -1438,7 +1438,7 @@
+     CPU_ARCH=sparc
+     ;;
+ 
+-x86_64 | ia64)
++amd64 | x86_64 | ia64)
+     CPU_ARCH="$OS_TEST"
+     ;;
+ 
+@@ -1458,7 +1458,7 @@
+ dnl ===============================================================
+ INTEL_ARCHITECTURE=
+ case "$OS_TEST" in
+-    x86_64|i?86)
++    amd64|x86_64|i?86)
+       INTEL_ARCHITECTURE=1
+ esac
+ 
