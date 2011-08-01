@@ -112,7 +112,6 @@
     SUBDIR += codeigniter17
     SUBDIR += comclear
     SUBDIR += commonist
-    SUBDIR += contenido
     SUBDIR += coppermine
     SUBDIR += cplanet
     SUBDIR += crawl
