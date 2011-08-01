@@ -33,6 +33,7 @@
     SUBDIR += thunar-vfs
     SUBDIR += tkdesk
     SUBDIR += twander
+    SUBDIR += ultracopier
     SUBDIR += worker
     SUBDIR += x-files
     SUBDIR += xcruise
