@@ -1,0 +1,16 @@
+CodeRay is a Ruby library for syntax highlighting.
+
+Syntax highlighting means: You put your code in, and you get it back colored;
+Keywords, strings, floats, comments - all in different colors. And with line
+numbers.
+
+Syntax Highlighting...
+
+ * makes code easier to read and maintain
+ * lets you detect syntax errors faster
+ * helps you to understand the syntax of a language
+ * looks nice
+ * is what everybody should have on their website
+ * solves all your problems and makes the girls run after you
+
+WWW:	http://coderay.rubychan.de/
