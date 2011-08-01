@@ -6,7 +6,7 @@
 
 PORTNAME=	mencoder
 PORTVERSION=	${MPLAYER_PORT_VERSION}
-PORTREVISION=	1
+PORTREVISION=	2
 COMMENT=	Convenient video file and movie encoder
 RESTRICTED=	Port has restricted dependencies
 
@@ -41,7 +41,7 @@ OPTIONS+=	X264 "Enable x264 (H.264) video codec support" on
 OPTIONS+=	VPX "Enable VP8 video via libvpx" off
 OPTIONS+=	DIRAC "Enable dirac video codec support" off
 OPTIONS+=	SCHROEDINGER "Dirac codec via libschroedinger" off
-OPTIONS+=	ASS "Enable ASS/SSA subtitle rendering" Off
+OPTIONS+=	ASS "Enable ASS/SSA subtitle rendering" on
 OPTIONS+=	REALPLAYER "Enable real player plugin" off
 OPTIONS+=	LIVEMEDIA "Enable LIVE555 streaming support" off
 OPTIONS+=	SMB "Enable Samba input support" off
@@ -64,12 +64,6 @@ TOOLFILES=	aconvert.sh binary_codecs.sh calcbpp.pl \
 		mpconsole.sh mplmult.sh plotpsnr.pl \
 		psnr-video.sh qepdvcd.sh subedit.pl \
 		subsearch.sh w32codec_dl.pl wma2ogg.pl \
-
-# fix for bug when libass is installed, mplayer configure does not
-# uphold --disable-ass
-.if exists(${LOCALBASE}/lib/libass.so)
-WITH_ASS=	yes
-.endif
 
 .include <bsd.port.pre.mk>
 
@@ -99,10 +93,10 @@ ALL_TARGET=	mencoder
 
 .if defined(WITH_ASS)
 LIB_DEPENDS+=	ass.5:${PORTSDIR}/multimedia/libass
-USE_GNOME+=	pkgconfig
+BUILD_DEPENDS +=	pkg-config:${PORTSDIR}/devel/pkg-config
 LIBASS_PKGCONFIG_CFLAGS=	pkg-config --cflags --silence-errors libass
 .else
-CONFIGURE_ARGS+=	--disable-ass --disable-ass-internal
+CONFIGURE_ARGS+=	--disable-ass --disable-ass-internal --disable-enca
 LIBASS_PKGCONFIG_CFLAGS=	${ECHO_CMD}
 .endif
 
