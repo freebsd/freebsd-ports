@@ -81,7 +81,6 @@
     SUBDIR += minicom
     SUBDIR += mlan
     SUBDIR += mlan3
-    SUBDIR += mserver
     SUBDIR += nasawash
     SUBDIR += ncid
     SUBDIR += nec2c
@@ -114,7 +113,6 @@
     SUBDIR += pyla
     SUBDIR += qfaxreader
     SUBDIR += qico
-    SUBDIR += qicosi
     SUBDIR += qpage
     SUBDIR += qrq
     SUBDIR += qsstv
@@ -128,8 +126,6 @@
     SUBDIR += ser2net
     SUBDIR += serialoverip
     SUBDIR += seyon
-    SUBDIR += sms_client
-    SUBDIR += smstools
     SUBDIR += smstools3
     SUBDIR += snooper
     SUBDIR += soundmodem

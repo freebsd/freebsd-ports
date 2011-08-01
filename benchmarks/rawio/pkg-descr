@@ -1,3 +1,0 @@
-Rawio tests the speed of your low-level character I/O devices.
-It is intended for comparisons of storage devices on a single system,
-and is not suited for cross-platform performance testing.

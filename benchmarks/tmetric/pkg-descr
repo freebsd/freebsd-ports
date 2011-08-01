@@ -1,6 +1,0 @@
-A bandwidth measurement tool. It was inspired by pathchar, but the algorithm 
-itself is much more elementary. It basically (and sometimes accurately) 
-assumes that latency is proportional to available bandwidth. Worth a 
-"just-for-fun" run. 
-
-WWW: http://michael.bacarella.com/projects/tmetric/

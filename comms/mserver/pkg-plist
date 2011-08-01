@@ -1,7 +1,0 @@
-sbin/mserver
-sbin/tcpconn
-etc/mserver.conf.default
-etc/rc.d/mserver.sh.sample
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.tcpconn
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

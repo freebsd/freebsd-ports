@@ -138,13 +138,11 @@
     SUBDIR += ruby-lv
     SUBDIR += shftool
     SUBDIR += showkey
-    SUBDIR += siconv
     SUBDIR += ta2as
     SUBDIR += tnef
     SUBDIR += trans
     SUBDIR += tuc
     SUBDIR += unix2dos
-    SUBDIR += utf8conv
     SUBDIR += uudeview
     SUBDIR += uudx
     SUBDIR += uulib

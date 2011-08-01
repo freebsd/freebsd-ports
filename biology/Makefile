@@ -3,7 +3,6 @@
 
     COMMENT = Biology
 
-    SUBDIR += L-Breeder
     SUBDIR += adun
     SUBDIR += ariadne
     SUBDIR += artemis
@@ -18,9 +17,7 @@
     SUBDIR += chemeq
     SUBDIR += clustalw
     SUBDIR += consed
-    SUBDIR += crimap
     SUBDIR += crux
-    SUBDIR += distribfold
     SUBDIR += dna-qc
     SUBDIR += dotter
     SUBDIR += embassy
@@ -39,13 +36,11 @@
     SUBDIR += hmmer
     SUBDIR += iolib
     SUBDIR += jalview
-    SUBDIR += kinemage
     SUBDIR += lagan
     SUBDIR += lamarc
     SUBDIR += libgenome
     SUBDIR += libsbml
     SUBDIR += linux-foldingathome
-    SUBDIR += lsysexp
     SUBDIR += mafft
     SUBDIR += mapm3
     SUBDIR += migrate

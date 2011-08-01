@@ -24,7 +24,6 @@
     SUBDIR += cce
     SUBDIR += cconv
     SUBDIR += celvis
-    SUBDIR += chm2html
     SUBDIR += cless
     SUBDIR += cmexfonts
     SUBDIR += cnprint
@@ -79,7 +78,6 @@
     SUBDIR += msttf
     SUBDIR += muni
     SUBDIR += mutt
-    SUBDIR += ntuttf
     SUBDIR += oicq
     SUBDIR += opendesktop-fonts
     SUBDIR += oto
@@ -114,7 +112,6 @@
     SUBDIR += qt4-codecs-cn
     SUBDIR += qt4-codecs-tw
     SUBDIR += qterm
-    SUBDIR += reciteword
     SUBDIR += scim-array
     SUBDIR += scim-chewing
     SUBDIR += scim-fcitx
@@ -128,7 +125,6 @@
     SUBDIR += tin
     SUBDIR += tintin++
     SUBDIR += tk83
-    SUBDIR += tocps
     SUBDIR += ttf2pt1
     SUBDIR += ttfm
     SUBDIR += unrar
@@ -143,7 +139,6 @@
     SUBDIR += xmms
     SUBDIR += xpdf
     SUBDIR += xsim
-    SUBDIR += xttmgr
     SUBDIR += ydict
     SUBDIR += zhcon
 

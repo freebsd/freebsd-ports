@@ -1,6 +1,0 @@
-bin/crimap
-%%PORTDOCS%%%%DOCSDIR%%/progdoc_v2.4
-%%PORTDOCS%%%%EXAMPLESDIR%%/chr7a.gen
-%%PORTDOCS%%%%EXAMPLESDIR%%/demo.dat
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%

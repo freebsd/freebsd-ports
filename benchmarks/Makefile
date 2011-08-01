@@ -53,7 +53,6 @@
     SUBDIR += pybench
     SUBDIR += raidtest
     SUBDIR += randomio
-    SUBDIR += rawio
     SUBDIR += rubygem-railsbench
     SUBDIR += scimark2
     SUBDIR += scimark2c
@@ -65,7 +64,6 @@
     SUBDIR += sysbench
     SUBDIR += tcpblast
     SUBDIR += thrulay
-    SUBDIR += tmetric
     SUBDIR += ttcp
     SUBDIR += ubench
     SUBDIR += unixbench
