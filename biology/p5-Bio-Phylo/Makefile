@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bio-Phylo
-PORTVERSION=	0.38
+PORTVERSION=	0.39
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RVOSA
@@ -65,6 +65,7 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::NeXML::DOM::Element.3 \
 		Bio::Phylo::NeXML::DOM::Element::Libxml.3 \
 		Bio::Phylo::NeXML::DOM::Element::Twig.3 \
+		Bio::Phylo::NeXML::Entities.3 \
 		Bio::Phylo::NeXML::Meta.3 \
 		Bio::Phylo::NeXML::Meta::XMLLiteral.3 \
 		Bio::Phylo::NeXML::Writable.3 \
@@ -79,6 +80,18 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::Parsers::Table.3 \
 		Bio::Phylo::Parsers::Taxlist.3 \
 		Bio::Phylo::Parsers::Tolweb.3 \
+		Bio::Phylo::Parsers::Ubiocbmeta.3 \
+		Bio::Phylo::Parsers::Ubiometa.3 \
+		Bio::Phylo::Parsers::Ubiosearch.3 \
+		Bio::Phylo::PhyloWS.3 \
+		Bio::Phylo::PhyloWS::Client.3 \
+		Bio::Phylo::PhyloWS::Resource.3 \
+		Bio::Phylo::PhyloWS::Resource::Description.3 \
+		Bio::Phylo::PhyloWS::Service.3 \
+		Bio::Phylo::PhyloWS::Service::Timetree.3 \
+		Bio::Phylo::PhyloWS::Service::Tolweb.3 \
+		Bio::Phylo::PhyloWS::Service::UbioClassificationBank.3 \
+		Bio::Phylo::PhyloWS::Service::UbioNameBank.3 \
 		Bio::Phylo::Project.3 \
 		Bio::Phylo::Set.3 \
 		Bio::Phylo::Taxa.3 \
@@ -105,6 +118,7 @@ MAN3=		Bio::Phylo.3 \
 		Bio::Phylo::Unparsers::Pagel.3 \
 		Bio::Phylo::Unparsers::Phylip.3 \
 		Bio::Phylo::Unparsers::Phyloxml.3 \
+		Bio::Phylo::Unparsers::Rss1.3 \
 		Bio::Phylo::Util::CONSTANT.3 \
 		Bio::Phylo::Util::Dependency.3 \
 		Bio::Phylo::Util::Exceptions.3 \
