@@ -19,8 +19,7 @@ USE_PERL5_RUN=	yes
 ONLY_FOR_ARCHS=	i386 amd64
 NO_BUILD=	yes
 
-OPTIONS=	BLADEENC	"BladeEnc support"		off \
-		BONK		"Bonk support"			off \
+OPTIONS=	BONK		"Bonk support"			off \
 		CDPARANOIA	"CD Ripping support"		on \
 		CDDB		"CDDB support"			on \
 		FAAC		"FAAC support"			on \
@@ -75,10 +74,6 @@ PLIST_SUB+=	AMAROK="@comment "
 .endif
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITH_BLADEENC)
-RUN_DEPENDS+=	bladeenc:${PORTSDIR}/audio/bladeenc
-.endif
 
 .if defined(WITH_BONK)
 RUN_DEPENDS+=	bonk:${PORTSDIR}/audio/bonk
