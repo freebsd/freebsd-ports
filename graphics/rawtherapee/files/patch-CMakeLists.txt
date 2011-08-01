@@ -1,0 +1,15 @@
+--- CMakeLists.txt.orig	2011-07-31 19:25:33.000000000 -0700
++++ CMakeLists.txt	2011-07-31 19:25:45.000000000 -0700
+@@ -322,9 +322,9 @@
+     endif (OPENMP_FOUND)
+ endif (OPTION_OMP)
+ 
+-if (UNIX)
+-    install (PROGRAMS rtstart DESTINATION ${BINDIR})
+-endif (UNIX)
++#if (UNIX)
++#    install (PROGRAMS rtstart DESTINATION ${BINDIR})
++#endif (UNIX)
+ 
+ install (FILES AUTHORS.txt DESTINATION ${CREDITSDIR})
+ install (FILES LICENSE.txt DESTINATION ${LICENCEDIR})
