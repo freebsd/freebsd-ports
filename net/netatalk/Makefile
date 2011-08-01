@@ -26,8 +26,6 @@ USE_GMAKE=	yes
 USE_PERL5=	yes
 WANT_GNOME=	yes
 USE_RC_SUBR=	netatalk
-CPPFLAGS=	-I${LOCALBASE}/include
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS+=	--with-tcp-wrappers \
 			--with-pkgconfdir=${PREFIX}/etc \
@@ -111,7 +109,8 @@ USE_GNOME+=		pkgconfig
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%DB_NAME%%|${BDB_INCLUDE_DIR:T}| ; \
-	    	s|%%DB_LIB%%|-l${BDB_LIB_NAME}|g' \
+	    	s|%%DB_LIB%%|-l${BDB_LIB_NAME}|g ; \
+		s|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/configure
 
 post-install:
