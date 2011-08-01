@@ -330,7 +330,6 @@
     SUBDIR += e_dbus
     SUBDIR += easygit
     SUBDIR += ebnf2yacc
-    SUBDIR += eboxy
     SUBDIR += ecb
     SUBDIR += eclipse-eclemma
     SUBDIR += ecore
