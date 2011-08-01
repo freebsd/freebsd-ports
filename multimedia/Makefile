@@ -80,7 +80,6 @@
     SUBDIR += gnome-mplayer
     SUBDIR += gnome-subtitles
     SUBDIR += gnustep-mplayer
-    SUBDIR += goggles
     SUBDIR += gopchop
     SUBDIR += gpac-libgpac
     SUBDIR += gpac-mp4box
@@ -143,7 +142,6 @@
     SUBDIR += kplayer
     SUBDIR += kplayer-kde4
     SUBDIR += ksubeditor
-    SUBDIR += ldvd
     SUBDIR += libaacs
     SUBDIR += libass
     SUBDIR += libbluray
@@ -171,8 +169,6 @@
     SUBDIR += libvpx
     SUBDIR += libxine
     SUBDIR += libxspf
-    SUBDIR += linux-divx4linux
-    SUBDIR += linux-divx4linux4
     SUBDIR += linux-f10-libtheora
     SUBDIR += linux-f10-libv4l
     SUBDIR += linux-gspca-kmod
@@ -229,11 +225,8 @@
     SUBDIR += noatun-plugins
     SUBDIR += nxtvepg
     SUBDIR += oggvideotools
-    SUBDIR += ogle
-    SUBDIR += ogle-gui
     SUBDIR += ogmrip
     SUBDIR += ogmtools
-    SUBDIR += okle
     SUBDIR += openmovieeditor
     SUBDIR += openquicktime
     SUBDIR += openshot
@@ -304,7 +297,6 @@
     SUBDIR += spigot
     SUBDIR += spook
     SUBDIR += streamanalyze
-    SUBDIR += subconv
     SUBDIR += subtitlecomposer
     SUBDIR += subtitlecomposer-kde4
     SUBDIR += subtitleeditor

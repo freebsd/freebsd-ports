@@ -1,4 +1,0 @@
-mod_url -- an Apache module manipulating euc-kr encoded URL.
-
-WWW: 	http://kle.kldp.org/apache
-Author:	Won Kyu Park <wkpark@kldp.org>

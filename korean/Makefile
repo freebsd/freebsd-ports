@@ -5,14 +5,11 @@
 
     SUBDIR += FreeWnn-lib
     SUBDIR += FreeWnn-server
-    SUBDIR += a2ps
     SUBDIR += acroread8
     SUBDIR += aleefonts-ttf
     SUBDIR += ami
     SUBDIR += baekmukfonts-bdf
     SUBDIR += baekmukfonts-ttf
-    SUBDIR += bitchx
-    SUBDIR += elm
     SUBDIR += engdic
     SUBDIR += eterm
     SUBDIR += gdick
@@ -40,17 +37,13 @@
     SUBDIR += ko.TeX-fonts-base
     SUBDIR += ko.TeX-fonts-extra
     SUBDIR += libhangul
-    SUBDIR += linuxdoc-sgml
     SUBDIR += man-doc
     SUBDIR += mizifont
-    SUBDIR += mod_url
     SUBDIR += munhwafonts-cid
     SUBDIR += nabi
-    SUBDIR += nh2ps
     SUBDIR += nhpf
     SUBDIR += pgp.language
     SUBDIR += php_doc
-    SUBDIR += pinetreefonts
     SUBDIR += qt4-codecs-kr
     SUBDIR += scim-hangul
     SUBDIR += scim-tables

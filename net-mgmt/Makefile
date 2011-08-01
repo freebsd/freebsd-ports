@@ -281,7 +281,6 @@
     SUBDIR += tcptrack
     SUBDIR += tork
     SUBDIR += torrus
-    SUBDIR += trafd
     SUBDIR += vidalia
     SUBDIR += virt-viewer
     SUBDIR += virtinst

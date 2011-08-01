@@ -71,7 +71,6 @@
     SUBDIR += bwping
     SUBDIR += c3270
     SUBDIR += cagibi
-    SUBDIR += callgen323
     SUBDIR += callweaver
     SUBDIR += ccxstream
     SUBDIR += citrix_ica
@@ -362,7 +361,6 @@
     SUBDIR += lua50-luasocket
     SUBDIR += luasocket
     SUBDIR += lvwimax
-    SUBDIR += lyntin
     SUBDIR += mDNSResponder
     SUBDIR += mad_fcl
     SUBDIR += mars_nwe
@@ -873,7 +871,6 @@
     SUBDIR += py-pypcap
     SUBDIR += py-qt4-network
     SUBDIR += py-radix
-    SUBDIR += py-rt
     SUBDIR += py-s3cmd
     SUBDIR += py-smb
     SUBDIR += py-smbpasswd
@@ -979,7 +976,6 @@
     SUBDIR += rubygem-whois
     SUBDIR += rubygem-yadis
     SUBDIR += rude
-    SUBDIR += rwhoisd
     SUBDIR += samba-libsmbclient
     SUBDIR += samba-nmblookup
     SUBDIR += samba-pdbsql
@@ -1100,7 +1096,6 @@
     SUBDIR += tptest
     SUBDIR += traceroute
     SUBDIR += traff
-    SUBDIR += traffic
     SUBDIR += trafshow
     SUBDIR += trafshow3
     SUBDIR += tramp

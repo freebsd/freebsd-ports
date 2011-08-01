@@ -125,8 +125,6 @@ diablo-caffe-freebsd*-*-* java/diablo-jdk15	License does not allow
 						distribution with fee
 diablo-latte-freebsd*-*-* java/diablo-jre15	License does not allow
 						distribution with fee
-divx4linux-*.tgz	multimedia/linux-divx4linux4 Unsure of licensing issues
-divx4linux-*.tar.gz	multimedia/linux-divx4linux Unsure of licensing issues
 djbdns*			dns/djbdns		No license -- see
 						http://cr.yp.to/softwarelaw.html
 djbfft-*		math/djbfft		No license -- see
@@ -422,7 +420,6 @@ rarbsd-*		archivers/rar		Only unmodified, original
 						package can be distributed
 ringtonetools-*		misc/ringtonetools	Not free for commercial
 						organizations
-rkive3.1.tar.Z		news/rkive		Restrictive copyright
 rman-3.*		textproc/rman		Do not sell for profit
 RealPlayer-*.rpm	multimedia/linux-realplayer Redistribution not allowed
 ruby/ruby_cast_256.zip	security/ruby-cast_256	Crypto; export-controlled

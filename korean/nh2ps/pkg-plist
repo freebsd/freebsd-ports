@@ -1,6 +1,0 @@
-bin/nh2ps
-bin/nh2ps_opt
-share/doc/nh2ps/README.filtering_with_gs
-share/doc/nh2ps/README.font
-share/doc/nh2ps/README.nh2ps
-@dirrm share/doc/nh2ps

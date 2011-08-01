@@ -81,7 +81,6 @@
     SUBDIR += elscreen
     SUBDIR += esniper
     SUBDIR += estic
-    SUBDIR += ewipe
     SUBDIR += explosions
     SUBDIR += felis
     SUBDIR += fep
@@ -140,13 +139,11 @@
     SUBDIR += gkrellm-xkb
     SUBDIR += gkrellmbgchg2
     SUBDIR += gkrellmfmonitor
-    SUBDIR += gkrellmfmonitor2
     SUBDIR += gkrellmlaunch
     SUBDIR += gkrellmlaunch2
     SUBDIR += gkrellshoot
     SUBDIR += gkrellshoot2
     SUBDIR += gkrellweather2
-    SUBDIR += gkx86info
     SUBDIR += gkx86info2
     SUBDIR += gman
     SUBDIR += gnome-devel-docs

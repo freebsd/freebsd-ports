@@ -121,7 +121,6 @@
     SUBDIR += grpn
     SUBDIR += gsl
     SUBDIR += guppi
-    SUBDIR += hexcalc
     SUBDIR += hs-Agda
     SUBDIR += hs-Agda-executable
     SUBDIR += hs-category-extras
@@ -488,7 +487,6 @@
     SUBDIR += py-sympy
     SUBDIR += qalculate
     SUBDIR += qd
-    SUBDIR += qgfe
     SUBDIR += qhull
     SUBDIR += qrupdate
     SUBDIR += qtiplot

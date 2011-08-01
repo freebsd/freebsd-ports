@@ -6,7 +6,6 @@
     SUBDIR += PicMonger
     SUBDIR += atp
     SUBDIR += aub
-    SUBDIR += bgrab
     SUBDIR += brag
     SUBDIR += c-nocem
     SUBDIR += cg
@@ -83,7 +82,6 @@
     SUBDIR += py-twistedNews
     SUBDIR += py-yenc
     SUBDIR += rawdog
-    SUBDIR += rkive
     SUBDIR += s-news
     SUBDIR += sabnzbdplus
     SUBDIR += slnr
