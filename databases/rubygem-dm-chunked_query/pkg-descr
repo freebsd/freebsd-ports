@@ -1,0 +1,3 @@
+Allows performing chunked queries on DataMapper Models or Collections.
+
+WWW: http://rubygems.org/gems/dm-chunked_query
