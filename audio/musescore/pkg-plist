@@ -1,0 +1,197 @@
+bin/mscore
+share/applications/mscore.desktop
+share/mscore-1.1/demos/All_Dudes.mscz
+share/mscore-1.1/demos/Estudio-No1-Tarrega.mscx
+share/mscore-1.1/demos/PlanxtyCarolan.mscx
+share/mscore-1.1/demos/Triumph.mscz
+share/mscore-1.1/demos/adeste.mscx
+share/mscore-1.1/demos/bach-bc2.mscx
+share/mscore-1.1/demos/golliwogg.mscx
+share/mscore-1.1/demos/inv1.mscx
+share/mscore-1.1/demos/inv10.mscx
+share/mscore-1.1/demos/inv13.mscx
+share/mscore-1.1/demos/inv4.mscx
+share/mscore-1.1/demos/inv6.mscx
+share/mscore-1.1/demos/italian-1.mscz
+share/mscore-1.1/demos/praeludium1.mscx
+share/mscore-1.1/demos/prelude.mscx
+share/mscore-1.1/demos/promenade.mscx
+share/mscore-1.1/demos/sarabande-gfh.mscz
+share/mscore-1.1/demos/sarabande.xml
+share/mscore-1.1/demos/scales.mscx
+share/mscore-1.1/demos/schnee.mscz
+share/mscore-1.1/demos/sonata16.mscx
+share/mscore-1.1/demos/wtc1fuga5.mscz
+share/mscore-1.1/locale/languages.xml
+share/mscore-1.1/locale/mscore_af.qm
+share/mscore-1.1/locale/mscore_ar.qm
+share/mscore-1.1/locale/mscore_ast.qm
+share/mscore-1.1/locale/mscore_bg.qm
+share/mscore-1.1/locale/mscore_ca.qm
+share/mscore-1.1/locale/mscore_cs.qm
+share/mscore-1.1/locale/mscore_da.qm
+share/mscore-1.1/locale/mscore_de.qm
+share/mscore-1.1/locale/mscore_el.qm
+share/mscore-1.1/locale/mscore_en_GB.qm
+share/mscore-1.1/locale/mscore_en_US.qm
+share/mscore-1.1/locale/mscore_eo.qm
+share/mscore-1.1/locale/mscore_es.qm
+share/mscore-1.1/locale/mscore_eu.qm
+share/mscore-1.1/locale/mscore_fa.qm
+share/mscore-1.1/locale/mscore_fi.qm
+share/mscore-1.1/locale/mscore_fo.qm
+share/mscore-1.1/locale/mscore_fr.qm
+share/mscore-1.1/locale/mscore_gl.qm
+share/mscore-1.1/locale/mscore_he.qm
+share/mscore-1.1/locale/mscore_hi_IN.qm
+share/mscore-1.1/locale/mscore_hr.qm
+share/mscore-1.1/locale/mscore_hu.qm
+share/mscore-1.1/locale/mscore_id.qm
+share/mscore-1.1/locale/mscore_it.qm
+share/mscore-1.1/locale/mscore_ja.qm
+share/mscore-1.1/locale/mscore_ko.qm
+share/mscore-1.1/locale/mscore_lt.qm
+share/mscore-1.1/locale/mscore_nb.qm
+share/mscore-1.1/locale/mscore_nl.qm
+share/mscore-1.1/locale/mscore_pl.qm
+share/mscore-1.1/locale/mscore_pt.qm
+share/mscore-1.1/locale/mscore_pt_BR.qm
+share/mscore-1.1/locale/mscore_ro.qm
+share/mscore-1.1/locale/mscore_ru.qm
+share/mscore-1.1/locale/mscore_sk.qm
+share/mscore-1.1/locale/mscore_sl.qm
+share/mscore-1.1/locale/mscore_sv.qm
+share/mscore-1.1/locale/mscore_th.qm
+share/mscore-1.1/locale/mscore_tr.qm
+share/mscore-1.1/locale/mscore_uk.qm
+share/mscore-1.1/locale/mscore_vi.qm
+share/mscore-1.1/locale/mscore_zh_CN.qm
+share/mscore-1.1/locale/mscore_zh_TW.qm
+share/mscore-1.1/locale/qt_ar.qm
+share/mscore-1.1/locale/qt_ca.qm
+share/mscore-1.1/locale/qt_cs.qm
+share/mscore-1.1/locale/qt_da.qm
+share/mscore-1.1/locale/qt_de.qm
+share/mscore-1.1/locale/qt_el.qm
+share/mscore-1.1/locale/qt_es.qm
+share/mscore-1.1/locale/qt_eu.qm
+share/mscore-1.1/locale/qt_fa.qm
+share/mscore-1.1/locale/qt_fi.qm
+share/mscore-1.1/locale/qt_fr.qm
+share/mscore-1.1/locale/qt_gl.qm
+share/mscore-1.1/locale/qt_he.qm
+share/mscore-1.1/locale/qt_hu.qm
+share/mscore-1.1/locale/qt_id.qm
+share/mscore-1.1/locale/qt_it.qm
+share/mscore-1.1/locale/qt_ja.qm
+share/mscore-1.1/locale/qt_ko.qm
+share/mscore-1.1/locale/qt_lt.qm
+share/mscore-1.1/locale/qt_nl.qm
+share/mscore-1.1/locale/qt_pl.qm
+share/mscore-1.1/locale/qt_pt.qm
+share/mscore-1.1/locale/qt_pt_BR.qm
+share/mscore-1.1/locale/qt_ro.qm
+share/mscore-1.1/locale/qt_ru.qm
+share/mscore-1.1/locale/qt_sk.qm
+share/mscore-1.1/locale/qt_sv.qm
+share/mscore-1.1/locale/qt_tr.qm
+share/mscore-1.1/locale/qt_uk.qm
+share/mscore-1.1/locale/qt_vi.qm
+share/mscore-1.1/locale/qt_zh_CN.qm
+share/mscore-1.1/locale/qt_zh_TW.qm
+share/mscore-1.1/man/MuseScore-da.pdf
+share/mscore-1.1/man/MuseScore-de.pdf
+share/mscore-1.1/man/MuseScore-en.pdf
+share/mscore-1.1/man/MuseScore-es.pdf
+share/mscore-1.1/man/MuseScore-fi.pdf
+share/mscore-1.1/man/MuseScore-fr.pdf
+share/mscore-1.1/man/MuseScore-gl.pdf
+share/mscore-1.1/man/MuseScore-hu.pdf
+share/mscore-1.1/man/MuseScore-it.pdf
+share/mscore-1.1/man/MuseScore-ja.pdf
+share/mscore-1.1/man/MuseScore-nb.pdf
+share/mscore-1.1/man/MuseScore-nl.pdf
+share/mscore-1.1/man/MuseScore-pl.pdf
+share/mscore-1.1/man/MuseScore-pt_BR.pdf
+share/mscore-1.1/man/MuseScore-ro.pdf
+share/mscore-1.1/man/MuseScore-ru.pdf
+share/mscore-1.1/man/MuseScore-zh_CN.pdf
+share/mscore-1.1/plugins/abc_import.js
+share/mscore-1.1/plugins/break/break.js
+share/mscore-1.1/plugins/break/break.ui
+share/mscore-1.1/plugins/chordchart.js
+share/mscore-1.1/plugins/colornotes.js
+share/mscore-1.1/plugins/createscore.js
+share/mscore-1.1/plugins/musescore.com/README.txt
+share/mscore-1.1/plugins/musescore.com/icons/filesaveonline.svg
+share/mscore-1.1/plugins/musescore.com/musescore.com.js
+share/mscore-1.1/plugins/musescore.com/ui/authorize_dialog.ui
+share/mscore-1.1/plugins/musescore.com/ui/musescore_dialog.ui
+share/mscore-1.1/plugins/musescore.com/ui/musescore_progress.ui
+share/mscore-1.1/plugins/musescore.com/ui/start_browser_dialog.ui
+share/mscore-1.1/plugins/notenames.js
+share/mscore-1.1/plugins/removenotes.js
+share/mscore-1.1/plugins/removenotes.ui
+share/mscore-1.1/sound/TimGM6mb.sf2
+share/mscore-1.1/styles/Jazz_Lead_Sheet.mss
+share/mscore-1.1/styles/MuseJazz.mss
+share/mscore-1.1/styles/cchords_muse.xml
+share/mscore-1.1/styles/cchords_nrb.xml
+share/mscore-1.1/styles/cchords_rb.xml
+share/mscore-1.1/styles/cchords_sym.xml
+share/mscore-1.1/styles/chords.xml
+share/mscore-1.1/styles/jazzchords.xml
+share/mscore-1.1/styles/leadsheet.mss
+share/mscore-1.1/styles/stdchords.xml
+share/mscore-1.1/templates/Chamber Orchestra.mscx
+share/mscore-1.1/templates/Choir SATB with Piano.mscx
+share/mscore-1.1/templates/Choir SATB.mscx
+share/mscore-1.1/templates/Concert Band.mscx
+share/mscore-1.1/templates/Hymn.mscz
+share/mscore-1.1/templates/Jazz Lead Sheet.mscz
+share/mscore-1.1/templates/Lead Sheet.mscx
+share/mscore-1.1/templates/Piano.mscx
+share/mscore-1.1/templates/instruments.xml
+share/mscore-1.1/templates/instruments_ca.xml
+share/mscore-1.1/templates/instruments_de.xml
+share/mscore-1.1/templates/instruments_es.xml
+share/mscore-1.1/templates/instruments_fr.xml
+share/mscore-1.1/templates/instruments_gl.xml
+share/mscore-1.1/templates/instruments_it.xml
+share/mscore-1.1/templates/instruments_ja.xml
+share/mscore-1.1/templates/instruments_nb.xml
+share/mscore-1.1/templates/instruments_nl.xml
+share/mscore-1.1/templates/instruments_pt.xml
+share/mscore-1.1/templates/instruments_pt_BR.xml
+share/mscore-1.1/templates/instruments_ru.xml
+share/mscore-1.1/templates/instruments_uk.xml
+share/mscore-1.1/templates/instruments_zh_CN.xml
+share/mscore-1.1/templates/instruments_zh_TW.xml
+share/mscore-1.1/wallpaper/paper1.png
+share/mscore-1.1/wallpaper/paper2.png
+share/mscore-1.1/wallpaper/paper3.png
+share/mscore-1.1/wallpaper/paper4.png
+share/mscore-1.1/wallpaper/paper5.png
+share/pixmaps/mscore.png
+share/pixmaps/mscore.xpm
+%%QT_PLUGINDIR_REL%%/designer/libawlplugin.so
+%%QT_PLUGINDIR_REL%%/script/libqtscript_core.so
+%%QT_PLUGINDIR_REL%%/script/libqtscript_gui.so
+%%QT_PLUGINDIR_REL%%/script/libqtscript_network.so
+%%QT_PLUGINDIR_REL%%/script/libqtscript_uitools.so
+%%QT_PLUGINDIR_REL%%/script/libqtscript_xml.so
+@dirrmtry %%QT_PLUGINDIR_REL%%/script
+@dirrm share/mscore-1.1/wallpaper
+@dirrm share/mscore-1.1/templates
+@dirrm share/mscore-1.1/styles
+@dirrm share/mscore-1.1/sound
+@dirrm share/mscore-1.1/plugins/musescore.com/ui
+@dirrm share/mscore-1.1/plugins/musescore.com/icons
+@dirrm share/mscore-1.1/plugins/musescore.com
+@dirrm share/mscore-1.1/plugins/break
+@dirrm share/mscore-1.1/plugins
+@dirrm share/mscore-1.1/man
+@dirrm share/mscore-1.1/locale
+@dirrm share/mscore-1.1/demos
+@dirrm share/mscore-1.1
+@dirrmtry share/applications

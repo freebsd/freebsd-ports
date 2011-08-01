@@ -1,0 +1,22 @@
+--- mscore/CMakeLists.txt.orig	2011-07-27 17:33:18.000000000 +0400
++++ mscore/CMakeLists.txt	2011-07-29 21:06:37.000000000 +0400
+@@ -255,9 +255,9 @@
+    ${PROJECT_SOURCE_DIR}/mscore
+    ${PROJECT_BINARY_DIR}
+    ${PROJECT_BINARY_DIR}/mscore
++   ${PORTAUDIO_INCDIR}
+    ${ALSA_INCDIR}
+    ${JACK_INCDIR}
+-   ${PORTAUDIO_INCDIR}
+ )
+ 
+ ##
+@@ -352,7 +352,7 @@
+ 
+ add_custom_target(lrelease
+    COMMAND ${PROJECT_SOURCE_DIR}/gen-qt-projectfile ${PROJECT_SOURCE_DIR} > mscore.pro
+-   COMMAND lrelease ${PROJECT_SOURCE_DIR}/share/locale/*.ts
++   COMMAND lrelease-qt4 ${PROJECT_SOURCE_DIR}/share/locale/*.ts
+    WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
+    )
+ 

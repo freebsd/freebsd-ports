@@ -1,0 +1,9 @@
+The only supported sound output is currently JACK. You should make
+sure jackd is running (jackd -r -d oss), then enable it in MuseScore
+preferences:
+
+Edit -> Preferences -> I/O -> [X] Use internal synthesizer ->
+                                             -> [X] JACK Audio Server
+
+Restart MuseScore, and the sound should work. You may still need to
+select different JACK ports for left/right channel in preferences.
