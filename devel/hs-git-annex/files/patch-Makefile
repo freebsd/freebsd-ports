@@ -1,14 +1,12 @@
-diff --git a/Makefile b/Makefile
-index 286c3a6..3ed7a59 100644
---- Makefile
-+++ Makefile
+--- ./Makefile.orig	2011-07-02 21:08:05.000000000 +0200
++++ ./Makefile	2011-08-01 09:35:21.000000000 +0200
 @@ -1,4 +1,4 @@
 -PREFIX=/usr
-+PREFIX=/usr/local
++PREFIX?=/usr/local
  IGNORE=-ignore-package monads-fd
  GHCFLAGS=-O2 -Wall $(IGNORE) -fspec-constr-count=5
  ifdef PROFILE
-@@ -37,12 +37,8 @@ git-annex-shell.1: doc/git-annex-shell.mdwn
+@@ -43,12 +43,8 @@
  install: all
  	install -d $(DESTDIR)$(PREFIX)/bin
  	install $(bins) $(DESTDIR)$(PREFIX)/bin
@@ -22,8 +20,8 @@ index 286c3a6..3ed7a59 100644
 +	install -m 0644 $(mans) $(DESTDIR)$(PREFIX)/man/man1
  
  test: $(bins)
- 	if ! $(GHCMAKE) -O0 test; then \
-@@ -59,21 +55,7 @@ testcoverage: $(bins)
+ 	@if ! $(GHCMAKE) -O0 test; then \
+@@ -65,21 +61,7 @@
  	@hpc report test --exclude=Main --exclude=QC
  	@hpc markup test --exclude=Main --exclude=QC --destdir=.hpc >/dev/null
  
