@@ -9,7 +9,7 @@ PORTNAME=	udmsearch
 PORTVERSION=	3.1.5
 PORTREVISION=	1
 CATEGORIES=	www databases
-MASTER_SITES=	http://search.mnogo.ru/Download/ \
+MASTER_SITES=	http://www.mnogosearch.org/Download/ \
 		http://udmsearch.real-time.com/Download/
 
 MAINTAINER=	ports@FreeBSD.org
