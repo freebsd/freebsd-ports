@@ -107,8 +107,8 @@
     SUBDIR += py-supybot
     SUBDIR += py-supybot-plugins
     SUBDIR += quassel
-    SUBDIR += qwebirc
     SUBDIR += quirc
+    SUBDIR += qwebirc
     SUBDIR += ratbox-respond
     SUBDIR += ratbox-services
     SUBDIR += rbot

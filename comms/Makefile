@@ -93,6 +93,7 @@
     SUBDIR += p5-Device-Modem
     SUBDIR += p5-Device-SerialPort
     SUBDIR += p5-Fax-Hylafax-Client
+    SUBDIR += p5-SMS-SMS77
     SUBDIR += p5-SMS-Send
     SUBDIR += p5-SMS-Send-DeviceGsm
     SUBDIR += p5-SMS-Send-TW-HiAir
@@ -102,7 +103,6 @@
     SUBDIR += p5-SMS-Send-TW-Socket2Air
     SUBDIR += p5-SMS-Send-TW-chtsns
     SUBDIR += p5-SMS-Send-TW-emome
-    SUBDIR += p5-SMS-SMS77
     SUBDIR += pear-Horde_ActiveSync
     SUBDIR += pear-Horde_SyncMl
     SUBDIR += picocom

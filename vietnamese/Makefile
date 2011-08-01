@@ -4,9 +4,9 @@
     COMMENT = Vietnamese support
 
     SUBDIR += aspell
-.if !defined(NO_VIET_KDE)
     SUBDIR += gtk-im-vi
     SUBDIR += hunspell
+.if !defined(NO_VIET_KDE)
     SUBDIR += kde3-i18n
 .endif
     SUBDIR += libviet

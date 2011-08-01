@@ -560,8 +560,8 @@
     SUBDIR += horde4-timeobjects
     SUBDIR += hp48cc
     SUBDIR += hp48xgcc
-    SUBDIR += hs-Boolean
     SUBDIR += hs-BNFC
+    SUBDIR += hs-Boolean
     SUBDIR += hs-DeepArrow
     SUBDIR += hs-HUnit
     SUBDIR += hs-MemoTrie
@@ -620,9 +620,9 @@
     SUBDIR += hs-idoc
     SUBDIR += hs-language-c
     SUBDIR += hs-lazysmallcheck
+    SUBDIR += hs-mmap
     SUBDIR += hs-mtl
     SUBDIR += hs-mtl-docs
-    SUBDIR += hs-mmap
     SUBDIR += hs-mueval
     SUBDIR += hs-parallel
     SUBDIR += hs-pcre-light
@@ -2032,8 +2032,8 @@
     SUBDIR += p5-MouseX-ConfigFromFile
     SUBDIR += p5-MouseX-Getopt
     SUBDIR += p5-MouseX-NativeTraits
-    SUBDIR += p5-MouseX-Traits
     SUBDIR += p5-MouseX-StrictConstructor
+    SUBDIR += p5-MouseX-Traits
     SUBDIR += p5-MouseX-Types
     SUBDIR += p5-MouseX-Types-Path-Class
     SUBDIR += p5-Multiplex-CMD

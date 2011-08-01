@@ -243,8 +243,8 @@
     SUBDIR += hs-hxt-charproperties
     SUBDIR += hs-hxt-regex-xmlschema
     SUBDIR += hs-hxt-unicode
-    SUBDIR += hs-libxml
     SUBDIR += hs-lhs2tex
+    SUBDIR += hs-libxml
     SUBDIR += hs-pandoc
     SUBDIR += hs-pandoc-types
     SUBDIR += hs-parsec

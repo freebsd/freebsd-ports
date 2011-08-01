@@ -327,8 +327,8 @@
     SUBDIR += gx
     SUBDIR += hobbes-icons-xpm
     SUBDIR += hppsmtools
-    SUBDIR += hs-cairo
     SUBDIR += hs-HGL
+    SUBDIR += hs-cairo
     SUBDIR += hs-soegtk
     SUBDIR += hs-svgcairo
     SUBDIR += hsetroot
@@ -848,8 +848,8 @@
     SUBDIR += rubygem-geokit
     SUBDIR += rubygem-graphviz
     SUBDIR += rubygem-gruff
-    SUBDIR += rubygem-imagesize
     SUBDIR += rubygem-image_science
+    SUBDIR += rubygem-imagesize
     SUBDIR += rubygem-objectdetect
     SUBDIR += rubygem-opengl
     SUBDIR += rubygem-pdfkit
