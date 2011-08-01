@@ -1,0 +1,3 @@
+bin/nenscript
+%%PORTDOCS%%%%DOCSDIR%%/readme
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
