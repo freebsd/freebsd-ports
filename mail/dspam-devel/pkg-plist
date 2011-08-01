@@ -11,6 +11,7 @@ bin/dspam_crc
 bin/dspam_dump
 bin/dspam_logrotate
 bin/dspam_merge
+bin/dspam_notify
 %%PGSQL%%bin/dspam_pg2int8
 bin/dspam_stats
 bin/dspam_train
@@ -23,32 +24,34 @@ include/dspam/decode.h
 include/dspam/diction.h
 include/dspam/error.h
 include/dspam/heap.h
-include/dspam/ldap_client.h
 include/dspam/libdspam.h
 include/dspam/libdspam_objects.h
 include/dspam/nodetree.h
+include/dspam/pref.h
+include/dspam/read_config.h
 include/dspam/storage_driver.h
 include/dspam/tokenizer.h
 lib/libdspam.a
 lib/libdspam.la
 lib/libdspam.so
 lib/libdspam.so.7
-%%DYNAMIC%%%%HASH%%lib/libhash_drv.a
-%%DYNAMIC%%%%HASH%%lib/libhash_drv.la
-%%DYNAMIC%%%%HASH%%lib/libhash_drv.so
-%%DYNAMIC%%%%HASH%%lib/libhash_drv.so.7
-%%DYNAMIC%%%%MYSQL%%lib/libmysql_drv.a
-%%DYNAMIC%%%%MYSQL%%lib/libmysql_drv.la
-%%DYNAMIC%%%%MYSQL%%lib/libmysql_drv.so
-%%DYNAMIC%%%%MYSQL%%lib/libmysql_drv.so.7
-%%DYNAMIC%%%%PGSQL%%lib/libpgsql_drv.a
-%%DYNAMIC%%%%PGSQL%%lib/libpgsql_drv.la
-%%DYNAMIC%%%%PGSQL%%lib/libpgsql_drv.so
-%%DYNAMIC%%%%PGSQL%%lib/libpgsql_drv.so.7
-%%DYNAMIC%%%%SQLITE%%lib/libsqlite3_drv.a
-%%DYNAMIC%%%%SQLITE%%lib/libsqlite3_drv.la
-%%DYNAMIC%%%%SQLITE%%lib/libsqlite3_drv.so
-%%DYNAMIC%%%%SQLITE%%lib/libsqlite3_drv.so.7
+%%DYNAMIC%%%%HASH%%lib/dspam/libhash_drv.a
+%%DYNAMIC%%%%HASH%%lib/dspam/libhash_drv.la
+%%DYNAMIC%%%%HASH%%lib/dspam/libhash_drv.so
+%%DYNAMIC%%%%HASH%%lib/dspam/libhash_drv.so.7
+%%DYNAMIC%%%%MYSQL%%lib/dspam/libmysql_drv.a
+%%DYNAMIC%%%%MYSQL%%lib/dspam/libmysql_drv.la
+%%DYNAMIC%%%%MYSQL%%lib/dspam/libmysql_drv.so
+%%DYNAMIC%%%%MYSQL%%lib/dspam/libmysql_drv.so.7
+%%DYNAMIC%%%%PGSQL%%lib/dspam/libpgsql_drv.a
+%%DYNAMIC%%%%PGSQL%%lib/dspam/libpgsql_drv.la
+%%DYNAMIC%%%%PGSQL%%lib/dspam/libpgsql_drv.so
+%%DYNAMIC%%%%PGSQL%%lib/dspam/libpgsql_drv.so.7
+%%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.a
+%%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.la
+%%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.so
+%%DYNAMIC%%%%SQLITE%%lib/dspam/libsqlite3_drv.so.7
+@dirrm lib/dspam
 libdata/pkgconfig/dspam.pc
 %%PORTDOCS%%%%DOCSDIR%%/CHANGELOG
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
@@ -79,39 +82,126 @@ libdata/pkgconfig/dspam.pc
 %%MYSQL%%@dirrm %%EXAMPLESDIR%%/mysql
 %%PGSQL%%%%EXAMPLESDIR%%/pgsql/pgsql_objects.sql
 %%PGSQL%%%%EXAMPLESDIR%%/pgsql/purge.sql
+%%PGSQL%%%%EXAMPLESDIR%%/pgsql/purge-pe.sql
 %%PGSQL%%%%EXAMPLESDIR%%/pgsql/virtual_users.sql
 %%PGSQL%%@dirrm %%EXAMPLESDIR%%/pgsql
 %%SQLITE%%%%EXAMPLESDIR%%/sqlite/purge-2.sql
 %%SQLITE%%%%EXAMPLESDIR%%/sqlite/purge-3.sql
 %%SQLITE%%@dirrm %%EXAMPLESDIR%%/sqlite
 @dirrmtry %%EXAMPLESDIR%%
-%%CGI%%www/vhosts/dspam/admins.sample
-%%CGI%%www/vhosts/dspam/admin.cgi
-%%CGI%%www/vhosts/dspam/admingraph.cgi
-%%CGI%%www/vhosts/dspam/base.css
-%%CGI%%www/vhosts/dspam/configure.pl.sample
-%%CGI%%www/vhosts/dspam/default.prefs.sample
-%%CGI%%www/vhosts/dspam/dspam.cgi
-%%CGI%%www/vhosts/dspam/graph.cgi
-%%CGI%%www/vhosts/dspam/dspam-logo-small.gif
-%%CGI%%www/vhosts/dspam/rgb.txt
-%%CGI%%www/vhosts/dspam/templates/nav_admin_error.html
-%%CGI%%www/vhosts/dspam/templates/nav_admin_preferences.html
-%%CGI%%www/vhosts/dspam/templates/nav_admin_status.html
-%%CGI%%www/vhosts/dspam/templates/nav_admin_user.html
-%%CGI%%www/vhosts/dspam/templates/nav_alerts.html
-%%CGI%%www/vhosts/dspam/templates/nav_analysis.html
-%%CGI%%www/vhosts/dspam/templates/nav_error.html
-%%CGI%%www/vhosts/dspam/templates/nav_fragment.html
-%%CGI%%www/vhosts/dspam/templates/nav_history.html
-%%CGI%%www/vhosts/dspam/templates/nav_performance.html
-%%CGI%%www/vhosts/dspam/templates/nav_preferences.html
-%%CGI%%www/vhosts/dspam/templates/nav_quarantine.html
-%%CGI%%www/vhosts/dspam/templates/nav_viewmessage.html
-%%CGI%%@dirrm www/vhosts/dspam/templates
-%%CGI%%@dirrm www/vhosts/dspam
-%%CGI%%@dirrm www/vhosts
-%%CGI%%@dirrmtry www
+%%WebUI%%%%WWWDIR%%/admins.sample
+%%WebUI%%%%WWWDIR%%/admin.cgi
+%%WebUI%%%%WWWDIR%%/admingraph.cgi
+%%WebUI%%%%WWWDIR%%/base.css
+%%WebUI%%%%WWWDIR%%/configure.pl.sample
+%%WebUI%%%%WWWDIR%%/default.prefs.sample
+%%WebUI%%%%WWWDIR%%/dspam.cgi
+%%WebUI%%%%WWWDIR%%/graph.cgi
+%%WebUI%%%%WWWDIR%%/dspam-logo-small.gif
+%%WebUI%%%%WWWDIR%%/rgb.txt
+%%WebUI%%%%WWWDIR%%/templates/nav_admin_error.html
+%%WebUI%%%%WWWDIR%%/templates/nav_admin_preferences.html
+%%WebUI%%%%WWWDIR%%/templates/nav_admin_status.html
+%%WebUI%%%%WWWDIR%%/templates/nav_admin_user.html
+%%WebUI%%%%WWWDIR%%/templates/nav_alerts.html
+%%WebUI%%%%WWWDIR%%/templates/nav_analysis.html
+%%WebUI%%%%WWWDIR%%/templates/nav_error.html
+%%WebUI%%%%WWWDIR%%/templates/nav_fragment.html
+%%WebUI%%%%WWWDIR%%/templates/nav_history.html
+%%WebUI%%%%WWWDIR%%/templates/nav_performance.html
+%%WebUI%%%%WWWDIR%%/templates/nav_preferences.html
+%%WebUI%%%%WWWDIR%%/templates/nav_quarantine.html
+%%WebUI%%%%WWWDIR%%/templates/nav_viewmessage.html
+%%WebUI%%%%WWWDIR%%/templates/strings.pl
+%%WebUI%%%%WWWDIR%%/templates/de/nav_admin_error.html
+%%WebUI%%%%WWWDIR%%/templates/de/nav_admin_preferences.html
+%%WebUI%%%%WWWDIR%%/templates/de/nav_admin_status.html
+%%WebUI%%%%WWWDIR%%/templates/de/nav_admin_user.html
+%%WebUI%%%%WWWDIR%%/templates/de/nav_alerts.html
+%%WebUI%%%%WWWDIR%%/templates/de/nav_analysis.html
+%%WebUI%%%%WWWDIR%%/templates/de/nav_error.html
+%%WebUI%%%%WWWDIR%%/templates/de/nav_fragment.html
+%%WebUI%%%%WWWDIR%%/templates/de/nav_history.html
+%%WebUI%%%%WWWDIR%%/templates/de/nav_performance.html
+%%WebUI%%%%WWWDIR%%/templates/de/nav_preferences.html
+%%WebUI%%%%WWWDIR%%/templates/de/nav_quarantine.html
+%%WebUI%%%%WWWDIR%%/templates/de/nav_viewmessage.html
+%%WebUI%%%%WWWDIR%%/templates/de/strings.pl
+%%WebUI%%%%WWWDIR%%/templates/es-es/nav_admin_error.html
+%%WebUI%%%%WWWDIR%%/templates/es-es/nav_admin_preferences.html
+%%WebUI%%%%WWWDIR%%/templates/es-es/nav_admin_status.html
+%%WebUI%%%%WWWDIR%%/templates/es-es/nav_admin_user.html
+%%WebUI%%%%WWWDIR%%/templates/es-es/nav_alerts.html
+%%WebUI%%%%WWWDIR%%/templates/es-es/nav_analysis.html
+%%WebUI%%%%WWWDIR%%/templates/es-es/nav_error.html
+%%WebUI%%%%WWWDIR%%/templates/es-es/nav_fragment.html
+%%WebUI%%%%WWWDIR%%/templates/es-es/nav_history.html
+%%WebUI%%%%WWWDIR%%/templates/es-es/nav_performance.html
+%%WebUI%%%%WWWDIR%%/templates/es-es/nav_preferences.html
+%%WebUI%%%%WWWDIR%%/templates/es-es/nav_quarantine.html
+%%WebUI%%%%WWWDIR%%/templates/es-es/nav_viewmessage.html
+%%WebUI%%%%WWWDIR%%/templates/es-es/strings.pl
+%%WebUI%%%%WWWDIR%%/templates/fr/nav_admin_error.html
+%%WebUI%%%%WWWDIR%%/templates/fr/nav_admin_preferences.html
+%%WebUI%%%%WWWDIR%%/templates/fr/nav_admin_status.html
+%%WebUI%%%%WWWDIR%%/templates/fr/nav_admin_user.html
+%%WebUI%%%%WWWDIR%%/templates/fr/nav_alerts.html
+%%WebUI%%%%WWWDIR%%/templates/fr/nav_analysis.html
+%%WebUI%%%%WWWDIR%%/templates/fr/nav_error.html
+%%WebUI%%%%WWWDIR%%/templates/fr/nav_fragment.html
+%%WebUI%%%%WWWDIR%%/templates/fr/nav_history.html
+%%WebUI%%%%WWWDIR%%/templates/fr/nav_performance.html
+%%WebUI%%%%WWWDIR%%/templates/fr/nav_preferences.html
+%%WebUI%%%%WWWDIR%%/templates/fr/nav_quarantine.html
+%%WebUI%%%%WWWDIR%%/templates/fr/nav_viewmessage.html
+%%WebUI%%%%WWWDIR%%/templates/he/nav_admin_error.html
+%%WebUI%%%%WWWDIR%%/templates/he/nav_admin_preferences.html
+%%WebUI%%%%WWWDIR%%/templates/he/nav_admin_status.html
+%%WebUI%%%%WWWDIR%%/templates/he/nav_admin_user.html
+%%WebUI%%%%WWWDIR%%/templates/he/nav_alerts.html
+%%WebUI%%%%WWWDIR%%/templates/he/nav_analysis.html
+%%WebUI%%%%WWWDIR%%/templates/he/nav_error.html
+%%WebUI%%%%WWWDIR%%/templates/he/nav_fragment.html
+%%WebUI%%%%WWWDIR%%/templates/he/nav_history.html
+%%WebUI%%%%WWWDIR%%/templates/he/nav_performance.html
+%%WebUI%%%%WWWDIR%%/templates/he/nav_preferences.html
+%%WebUI%%%%WWWDIR%%/templates/he/nav_quarantine.html
+%%WebUI%%%%WWWDIR%%/templates/he/nav_viewmessage.html
+%%WebUI%%%%WWWDIR%%/templates/pt-br/nav_admin_error.html
+%%WebUI%%%%WWWDIR%%/templates/pt-br/nav_admin_preferences.html
+%%WebUI%%%%WWWDIR%%/templates/pt-br/nav_admin_status.html
+%%WebUI%%%%WWWDIR%%/templates/pt-br/nav_admin_user.html
+%%WebUI%%%%WWWDIR%%/templates/pt-br/nav_alerts.html
+%%WebUI%%%%WWWDIR%%/templates/pt-br/nav_analysis.html
+%%WebUI%%%%WWWDIR%%/templates/pt-br/nav_error.html
+%%WebUI%%%%WWWDIR%%/templates/pt-br/nav_fragment.html
+%%WebUI%%%%WWWDIR%%/templates/pt-br/nav_history.html
+%%WebUI%%%%WWWDIR%%/templates/pt-br/nav_performance.html
+%%WebUI%%%%WWWDIR%%/templates/pt-br/nav_preferences.html
+%%WebUI%%%%WWWDIR%%/templates/pt-br/nav_quarantine.html
+%%WebUI%%%%WWWDIR%%/templates/pt-br/nav_viewmessage.html
+%%WebUI%%%%WWWDIR%%/templates/pt-br/strings.pl
+%%WebUI%%%%WWWDIR%%/templates/ro/nav_admin_error.html
+%%WebUI%%%%WWWDIR%%/templates/ro/nav_admin_preferences.html
+%%WebUI%%%%WWWDIR%%/templates/ro/nav_admin_status.html
+%%WebUI%%%%WWWDIR%%/templates/ro/nav_admin_user.html
+%%WebUI%%%%WWWDIR%%/templates/ro/nav_alerts.html
+%%WebUI%%%%WWWDIR%%/templates/ro/nav_analysis.html
+%%WebUI%%%%WWWDIR%%/templates/ro/nav_error.html
+%%WebUI%%%%WWWDIR%%/templates/ro/nav_fragment.html
+%%WebUI%%%%WWWDIR%%/templates/ro/nav_history.html
+%%WebUI%%%%WWWDIR%%/templates/ro/nav_performance.html
+%%WebUI%%%%WWWDIR%%/templates/ro/nav_preferences.html
+%%WebUI%%%%WWWDIR%%/templates/ro/nav_quarantine.html
+%%WebUI%%%%WWWDIR%%/templates/ro/nav_viewmessage.html
+%%WebUI%%@dirrm %%WWWDIR%%/templates/de
+%%WebUI%%@dirrm %%WWWDIR%%/templates/es-es
+%%WebUI%%@dirrm %%WWWDIR%%/templates/fr
+%%WebUI%%@dirrm %%WWWDIR%%/templates/he
+%%WebUI%%@dirrm %%WWWDIR%%/templates/pt-br
+%%WebUI%%@dirrm %%WWWDIR%%/templates/ro
+%%WebUI%%@dirrm %%WWWDIR%%/templates
+%%WebUI%%@dirrm %%WWWDIR%%
 @dirrm include/dspam
 @cwd %%DSPAM_HOME%%
 firstrun.txt.sample
