@@ -1,0 +1,10 @@
+--- mozilla/js/src/Makefile.in.orig	2009-08-25 18:58:30.000000000 +0200
++++ mozilla/js/src/Makefile.in	2009-08-25 18:58:47.000000000 +0200
+@@ -428,6 +428,7 @@
+ 
+ ifeq ($(OS_ARCH),FreeBSD)
+ EXTRA_LIBS	+= -pthread
++LDFLAGS		+= -lc
+ endif
+ ifeq ($(OS_ARCH),IRIX)
+ ifdef USE_N32
