@@ -1,6 +1,0 @@
-SHA256 (dvi2tty5.0.tar.gz) = 6b551a611f16557394a4a300c3298ae5c6c3f0226f3074fbc898dbd36ba65c92
-SIZE (dvi2tty5.0.tar.gz) = 29087
-SHA256 (dvi2tty-ascii-jtex-patch) = 86243d5a16343ee0ff76d6bbd40338d2220503ba2079d691ed5036dc0cf81fc9
-SIZE (dvi2tty-ascii-jtex-patch) = 10270
-SHA256 (dvi2tty.c-patch) = 38aec52f871804cd9c3731e28d0f37ffa272b7f04a2c353dbcb861b6e56c61e0
-SIZE (dvi2tty.c-patch) = 898

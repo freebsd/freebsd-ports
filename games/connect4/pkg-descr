@@ -1,5 +1,0 @@
-The real-life version of connect4 is basically an upright hollow board
-with several vertical columns and windows. Tokens are placed into the
-columns alternately by each player until one of the players has four
-tokens in a row. These four tokens must be adjacent to each other but
-the series of four can be in any direction.

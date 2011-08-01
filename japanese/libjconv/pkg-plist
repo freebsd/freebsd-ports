@@ -1,9 +1,0 @@
-bin/jconv
-include/jconv.h
-lib/libjconv.a
-lib/libjconv.so
-lib/libjconv.so.0
-etc/libjconv/default.conf
-@dirrm etc/libjconv
-share/doc/libjconv/libjconv.html
-@dirrm share/doc/libjconv

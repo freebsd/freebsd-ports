@@ -35,9 +35,7 @@
     SUBDIR += alienwave
     SUBDIR += allacrost
     SUBDIR += amoebax
-    SUBDIR += amphetamine
     SUBDIR += an
-    SUBDIR += anagramarama
     SUBDIR += angband
     SUBDIR += anki
     SUBDIR += annelid
@@ -134,7 +132,6 @@
     SUBDIR += colorcode
     SUBDIR += columns
     SUBDIR += concentration
-    SUBDIR += connect4
     SUBDIR += connectfive
     SUBDIR += conquest
     SUBDIR += construo
@@ -965,7 +962,6 @@
     SUBDIR += wop
     SUBDIR += wordplay
     SUBDIR += worldofpadman
-    SUBDIR += wrogue
     SUBDIR += wtf
     SUBDIR += xabacus
     SUBDIR += xarchon

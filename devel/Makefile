@@ -148,7 +148,6 @@
     SUBDIR += bzr-upload
     SUBDIR += bzrtools
     SUBDIR += c4
-    SUBDIR += c_c++_reference
     SUBDIR += calibrator
     SUBDIR += cbind
     SUBDIR += cbrowser
@@ -766,7 +765,6 @@
     SUBDIR += libcli
     SUBDIR += libconfig
     SUBDIR += libconfuse
-    SUBDIR += libcoyotl
     SUBDIR += libcwd
     SUBDIR += libdaemon
     SUBDIR += libdap
@@ -796,7 +794,6 @@
     SUBDIR += libffi
     SUBDIR += libfirm
     SUBDIR += libfreefare
-    SUBDIR += libfs++
     SUBDIR += libftdi
     SUBDIR += libgalago
     SUBDIR += libgamepad
@@ -1014,7 +1011,6 @@
     SUBDIR += mk
     SUBDIR += mk-configure
     SUBDIR += mkcmd
-    SUBDIR += mkmf
     SUBDIR += ml-doc
     SUBDIR += mm
     SUBDIR += mm-common
@@ -1828,7 +1824,6 @@
     SUBDIR += p5-IPC-SharedCache
     SUBDIR += p5-IPC-Signal
     SUBDIR += p5-IPC-System-Simple
-    SUBDIR += p5-Include
     SUBDIR += p5-Inline
     SUBDIR += p5-Inline-ASM
     SUBDIR += p5-Inline-CPP
@@ -3341,7 +3336,6 @@
     SUBDIR += rubygem-ncurses
     SUBDIR += rubygem-ncursesw
     SUBDIR += rubygem-needle
-    SUBDIR += rubygem-newgem
     SUBDIR += rubygem-nice-ffi
     SUBDIR += rubygem-notify
     SUBDIR += rubygem-open4
@@ -3551,7 +3545,6 @@
     SUBDIR += tortoisehg1
     SUBDIR += tortoisehg2
     SUBDIR += tpasm
-    SUBDIR += tpg
     SUBDIR += trio
     SUBDIR += truc
     SUBDIR += u-boot

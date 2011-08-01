@@ -82,7 +82,6 @@
     SUBDIR += gimmie
     SUBDIR += gkrellm-gtodo
     SUBDIR += gkrellm-reminder2
-    SUBDIR += gkrellm-timers
     SUBDIR += glabels
     SUBDIR += glipper
     SUBDIR += global-menu
@@ -184,7 +183,6 @@
     SUBDIR += mrundlg
     SUBDIR += msynctool
     SUBDIR += msynctool-devel
-    SUBDIR += multi-backgrounds-daemon
     SUBDIR += multisync
     SUBDIR += multisync-backup
     SUBDIR += multisync-syncml
@@ -234,7 +232,6 @@
     SUBDIR += preferencepanes
     SUBDIR += preferences.app
     SUBDIR += py-dosage
-    SUBDIR += py-tagfu
     SUBDIR += py-vobject
     SUBDIR += pybookreader
     SUBDIR += pypanel
@@ -268,7 +265,6 @@
     SUBDIR += tagutils
     SUBDIR += taskcoach
     SUBDIR += taskjuggler
-    SUBDIR += taskstep
     SUBDIR += taskwarrior
     SUBDIR += teapot
     SUBDIR += tel

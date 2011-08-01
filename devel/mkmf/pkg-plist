@@ -1,8 +1,0 @@
-bin/mkmf
-lib/mkmf/C++.L
-lib/mkmf/C++.l
-lib/mkmf/C++.p
-lib/mkmf/C.L
-lib/mkmf/C.l
-lib/mkmf/C.p
-@dirrm lib/mkmf
