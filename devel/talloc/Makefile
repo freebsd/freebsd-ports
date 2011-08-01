@@ -1,13 +1,13 @@
 # New ports collection makefile for:	talloc
-# Date created:				18 Apr 2009
+# Date created:				1 May 2009
 # Whom:					Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
 #
 
 PORTNAME=		talloc
-PORTVERSION=		2.0.1
-PORTREVISION=		1
+PORTVERSION=		2.0.5
+PORTREVISION=		0
 PORTEPOCH=		0
 CATEGORIES=		devel
 MASTER_SITES=		ftp://ftp.samba.org/pub/%SUBDIR%/ \
@@ -18,36 +18,80 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=		timur@FreeBSD.org
 COMMENT=		Hierarchical pool based memory allocator
 
-CONFLICTS=		samba-3.3*
+CONFLICTS=		samba33-3.*
 
-USE_GMAKE=		yes
+USE_PYTHON_BUILD=	yes
 USE_LDCONFIG=		yes
-GNU_CONFIGURE=		yes
-USE_AUTOTOOLS=		autoconf autoheader
+HAS_CONFIGURE=		yes
+WAF_TOOL=		buildtools/bin/waf
+CONFIGURE_SCRIPT=	${WAF_TOOL} configure
+USE_GNOME=		pkgconfig
 
-IPATHS=			-I${WRKSRC}/libreplace
-AUTOHEADER_ARGS=	${IPATHS}
-AUTOCONF_ARGS=		${IPATHS}
+LICENSE=		GPLv3
+MAKE_JOBS_SAFE=		yes
 
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
-PKGCONFIGDIR_REL?=	${PKGCONFIGDIR:S|^${PREFIX}/||}
+PLIST_SUB+=		PKGCONFIGDIR=${PKGCONFIGDIR:S;${PREFIX}/;;}
 
-CONFIGURE_ENV+=		XSLTPROC="/usr/bin/true"
+OPTIONS=		PYTHON		"Python bindings"	on
+
+.include <bsd.port.options.mk>
 
 MAN3=			talloc.3
 
 PLIST_FILES=		include/talloc.h \
-			lib/libtalloc.a \
 			lib/libtalloc.so \
 			lib/libtalloc.so.2 \
-			${PKGCONFIGDIR_REL}/talloc.pc
+			%%PKGCONFIGDIR%%/talloc.pc
 
-pre-install:
-.if !exists(${WRKSRC}/talloc.3)
-			@${CP} ${FILESDIR}/talloc.3 ${WRKSRC}
+CONFIGURE_ENV+=		XSLTPROC="/usr/bin/true"
+CONFIGURE_ENV+=		NOCOLOR=yes
+MAKE_ENV+=		NOCOLOR=yes
+
+CONFIGURE_ARGS+=	--mandir=${MANPREFIX}/man
+
+.if !defined(DISABLE_MAKE_JOBS)
+CONFIGURE_ARGS+=	--jobs=${MAKE_JOBS_NUMBER}
+_MAKE_JOBS=		--jobs=${MAKE_JOBS_NUMBER}
 .endif
 
-post-install:
-			${LN} -sf libtalloc.so.2 ${PREFIX}/lib/libtalloc.so
+.if defined(WITH_PYTHON)
+USE_PYTHON_RUN=		yes
+PLIST_FILES+=		include/pytalloc.h \
+			lib/libpytalloc-util.so \
+			lib/libpytalloc-util.so.2 \
+			%%PYTHON_SITELIBDIR%%/talloc.so \
+			%%PKGCONFIGDIR%%/pytalloc-util.pc
+PLIST_DIRSTRY+=		%%PYTHON_SITELIBDIR%% \
+			%%PYTHON_LIBDIR%%
+.else
+CONFIGURE_ARGS+=	--disable-python
+.endif
+
+ALL_TARGET=		build
+INSTALL_TARGET=		install
+
+post-patch:
+			@${REINPLACE_CMD} -e 's|%%PKGCONFIGDIR%%|${PKGCONFIGDIR}|g' \
+				${BUILD_WRKSRC}/wscript
+
+pre-build:
+.for man in ${MAN3}
+			@${MKDIR} ${BUILD_WRKSRC}/bin/default
+			@${INSTALL_MAN} ${FILESDIR}/${man} ${BUILD_WRKSRC}/bin/default
+.endfor
+
+do-build:
+			@(cd ${BUILD_WRKSRC}; \
+			if ! ${SETENV} ${MAKE_ENV} ${BUILD_WRKSRC}/${WAF_TOOL} ${_MAKE_JOBS} ${MAKE_ARGS} build; then \
+				if [ x != x${BUILD_FAIL_MESSAGE} ] ; then \
+					${ECHO_MSG} "===> Compilation failed unexpectedly."; \
+					(${ECHO_CMD} ${BUILD_FAIL_MESSAGE}) | ${FMT} 75 79 ; \
+				fi; \
+			${FALSE}; \
+			fi)
+
+do-install:
+			@(cd ${INSTALL_WRKSRC} && ${SETENV} ${MAKE_ENV} ${INSTALL_WRKSRC}/${WAF_TOOL} ${MAKE_ARGS} install)
 
 .include <bsd.port.mk>

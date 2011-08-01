@@ -2,12 +2,12 @@
 .\"     Title: talloc
 .\"    Author: [FIXME: author] [see http://docbook.sf.net/el/author]
 .\" Generator: DocBook XSL Stylesheets v1.75.2 <http://docbook.sf.net/>
-.\"      Date: 12/09/2009
+.\"      Date: 07/29/2011
 .\"    Manual: [FIXME: manual]
 .\"    Source: [FIXME: source]
 .\"  Language: English
 .\"
-.TH "TALLOC" "3" "12/09/2009" "[FIXME: source]" "[FIXME: manual]"
+.TH "TALLOC" "3" "07/29/2011" "[FIXME: source]" "[FIXME: manual]"
 .\" -----------------------------------------------------------------
 .\" * set default formatting
 .\" -----------------------------------------------------------------
@@ -23,7 +23,7 @@ talloc \- hierarchical reference counted memory pool system with destructors
 .SH "SYNOPSIS"
 .sp
 .nf
-#include <talloc/talloc\&.h>
+#include <talloc\&.h>
 .fi
 .SH "DESCRIPTION"
 .PP
@@ -321,7 +321,7 @@ talloc_named(NULL, 0, fmt, \&.\&.\&.);
 .\}
 .SS "void *talloc_new(void *\fIctx\fR);"
 .PP
-This is a utility macro that creates a new memory context hanging off an exiting context, automatically naming it "talloc_new: __location__" where __location__ is the source line it is called from\&. It is particularly useful for creating a new temporary working context\&.
+This is a utility macro that creates a new memory context hanging off an existing context, automatically naming it "talloc_new: __location__" where __location__ is the source line it is called from\&. It is particularly useful for creating a new temporary working context\&.
 .SS "(\fItype\fR *)talloc_realloc(const void *\fIctx\fR, void *\fIptr\fR, \fItype\fR, \fIcount\fR);"
 .PP
 The talloc_realloc() macro changes the size of a talloc pointer\&. It has the following equivalences:
@@ -544,21 +544,6 @@ talloc_set_name_const(ptr, ptr)
 .if n \{\
 .RE
 .\}
-.SS "char *talloc_append_string(const void *\fIt\fR, char *\fIorig\fR, const char *\fIappend\fR);"
-.PP
-The talloc_append_string() function appends the given formatted string to the given string\&.
-.PP
-This function sets the name of the new pointer to the new string\&. This is equivalent to:
-.sp
-.if n \{\
-.RS 4
-.\}
-.nf
-talloc_set_name_const(ptr, ptr)
-.fi
-.if n \{\
-.RE
-.\}
 .SS "char *talloc_vasprintf(const void *\fIt\fR, const char *\fIfmt\fR, va_list \fIap\fR);"
 .PP
 The talloc_vasprintf() function is the talloc equivalent of the C library function vasprintf(3)\&.
@@ -604,7 +589,7 @@ talloc_set_name_const(ptr, ptr)
 .if n \{\
 .RE
 .\}
-.SS "(type *)talloc_array(const void *ctx, type, uint_t count);"
+.SS "(type *)talloc_array(const void *ctx, type, unsigned int count);"
 .PP
 The talloc_array() macro is equivalent to:
 .sp
@@ -619,10 +604,10 @@ The talloc_array() macro is equivalent to:
 .\}
 .PP
 except that it provides integer overflow protection for the multiply, returning NULL if the multiply overflows\&.
-.SS "void *talloc_array_size(const void *ctx, size_t size, uint_t count);"
+.SS "void *talloc_array_size(const void *ctx, size_t size, unsigned int count);"
 .PP
 The talloc_array_size() function is useful when the type is not known\&. It operates in the same way as talloc_array(), but takes a size instead of a type\&.
-.SS "(typeof(ptr)) talloc_array_ptrtype(const void *ctx, ptr, uint_t count);"
+.SS "(typeof(ptr)) talloc_array_ptrtype(const void *ctx, ptr, unsigned int count);"
 .PP
 The talloc_ptrtype() macro should be used when you have a pointer to an array and want to allocate memory of an array to point at with this pointer\&. When compiling with gcc >= 3 it is typesafe\&. Note this is a wrapper of talloc_array_size() and talloc_get_name() will return the current location in the source file\&. and not the type\&.
 .SS "void *talloc_realloc_fn(const void *ctx, void *ptr, size_t size)"
