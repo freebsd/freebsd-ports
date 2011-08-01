@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.metadecks.org/software/aube/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System for sound generation and processing
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	audiofile.0:${PORTSDIR}/audio/libaudiofile
 
 USE_GNOME=	imlib

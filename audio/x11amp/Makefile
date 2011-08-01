@@ -17,6 +17,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/-beta/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11-based MP3 player with nice graphical interface
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2011-09-01
+
 USE_GNOME=	gtk12 esound
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

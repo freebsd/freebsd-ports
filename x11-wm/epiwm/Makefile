@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.nongnu.org/epiwm/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Another fast, small, configurable window manager
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2011-09-01
+
 USE_XORG=	x11 xpm
 USE_GNOME=	imlib
 GNU_CONFIGURE=	yes

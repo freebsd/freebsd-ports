@@ -14,6 +14,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An advanced instrument editor
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	fluidsynth.4:${PORTSDIR}/audio/fluidsynth \
 		audiofile.0:${PORTSDIR}/audio/libaudiofile \
 		sndfile.1:${PORTSDIR}/audio/libsndfile \

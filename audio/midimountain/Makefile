@@ -17,6 +17,9 @@ MASTER_SITES=	http://www.midimountain.com/download/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI sequencer
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2011-09-01
+
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

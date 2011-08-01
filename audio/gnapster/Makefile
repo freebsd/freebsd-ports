@@ -14,6 +14,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME client for the online mp3 community called napster
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2011-09-01
+
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_GNOME=	imlib

@@ -14,6 +14,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SpaceChart is a star chart viewer for GNOME
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2011-09-01
+
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	gnomelibs
