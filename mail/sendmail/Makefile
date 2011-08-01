@@ -409,10 +409,6 @@ help:
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900000
-BROKEN=		does not build
-.endif
-
 .if defined(SENDMAIL_WITH_TLS) || defined(WITH_TLS)
 .if !defined(WITH_OPENSSL_BASE)
 SITE+=	${FILESDIR}/site.config.m4.ssl
