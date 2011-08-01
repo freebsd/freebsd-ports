@@ -6,13 +6,15 @@
 #
 
 PORTNAME=		MarkupSafe
-PORTVERSION=		0.12
+PORTVERSION=		0.15
 CATEGORIES=		textproc python
 MASTER_SITES=		CHEESESHOP
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=		wen@FreeBSD.org
 COMMENT=		Implements a XML/HTML/XHTML Markup safe string for Python
+
+LICENSE=		BSD
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
