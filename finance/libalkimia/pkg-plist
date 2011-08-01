@@ -1,7 +1,10 @@
 include/alkimia/alk_export.h
+include/alkimia/alkcompany.h
+include/alkimia/alkquoteitem.h
 include/alkimia/alkvalue.h
 lib/libalkimia.so
 lib/libalkimia.so.4
-lib/libalkimia.so.4.3.0
+lib/libalkimia.so.4.3.1
 libdata/pkgconfig/libalkimia.pc
+share/apps/cmake/modules/FindLibAlkimia.cmake
 @dirrm include/alkimia
