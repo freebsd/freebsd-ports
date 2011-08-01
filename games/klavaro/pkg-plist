@@ -19,6 +19,7 @@
 %%DATADIR%%/de.words
 %%DATADIR%%/dvorak_br_nativo.kbd
 %%DATADIR%%/dvorak_br_us.kbd
+%%DATADIR%%/dvorak_ca_fr.kbd
 %%DATADIR%%/dvorak_de_neo2.kbd
 %%DATADIR%%/dvorak_eo_eurokeys.kbd
 %%DATADIR%%/dvorak_eo_nativo.kbd
@@ -82,6 +83,8 @@
 %%DATADIR%%/qwerty_br.kbd
 %%DATADIR%%/qwerty_br_abnt2.kbd
 %%DATADIR%%/qwerty_ca_multling.kbd
+%%DATADIR%%/qwerty_ca_quebec.kbd
+%%DATADIR%%/qwerty_cn_us.kbd
 %%DATADIR%%/qwerty_cz.kbd
 %%DATADIR%%/qwerty_dk.kbd
 %%DATADIR%%/qwerty_es.kbd
@@ -89,10 +92,11 @@
 %%DATADIR%%/qwerty_il.kbd
 %%DATADIR%%/qwerty_il_old.kbd
 %%DATADIR%%/qwerty_it.kbd
+%%DATADIR%%/qwerty_no.kbd
 %%DATADIR%%/qwerty_jp.kbd
-%%DATADIR%%/qwerty_nb.kbd
 %%DATADIR%%/qwerty_pk_crulp.kbd
 %%DATADIR%%/qwerty_pk_nla.kbd
+%%DATADIR%%/qwerty_pl_us.kbd
 %%DATADIR%%/qwerty_pt.kbd
 %%DATADIR%%/qwerty_se.kbd
 %%DATADIR%%/qwerty_tr.kbd
