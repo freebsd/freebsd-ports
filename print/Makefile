@@ -148,6 +148,7 @@
     SUBDIR += latex-logreq
     SUBDIR += latex-ltablex
     SUBDIR += latex-mathabx
+    SUBDIR += latex-nomencl
     SUBDIR += latex-pgf
     SUBDIR += latex-prettyref
     SUBDIR += latex-resume
