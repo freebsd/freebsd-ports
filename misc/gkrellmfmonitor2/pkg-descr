@@ -1,6 +1,0 @@
-This plugin monitors a file and displays its contents in gkrellm. File can
-have multiple rows of the form 'name : value : [flag]'. Number of rows as
-well as their contents can change dynamically. If flag non-empty then for
-WARNING value - the orange led will light up and for ALERT value - red.
-
-WWW: http://makovick.googlepages.com/gkrellmplugins

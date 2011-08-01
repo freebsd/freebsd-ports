@@ -32,7 +32,6 @@
     SUBDIR += bbmail
     SUBDIR += biabam
     SUBDIR += biffer
-    SUBDIR += bincimap
     SUBDIR += bmf
     SUBDIR += bogofilter
     SUBDIR += bogofilter-sqlite
@@ -67,7 +66,6 @@
     SUBDIR += claws-mail-tnef
     SUBDIR += claws-mail-vcalendar
     SUBDIR += clawsker
-    SUBDIR += cmail
     SUBDIR += cone
     SUBDIR += contact-lookup-applet
     SUBDIR += coolmail

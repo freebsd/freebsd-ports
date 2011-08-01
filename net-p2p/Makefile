@@ -36,7 +36,6 @@
     SUBDIR += giftcurs
     SUBDIR += giftoxic
     SUBDIR += giftui
-    SUBDIR += gkrellm-gift
     SUBDIR += gkremldk
     SUBDIR += gnewtellium
     SUBDIR += gnunet

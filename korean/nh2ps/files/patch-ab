@@ -1,9 +1,0 @@
-diff -ur ../nh2ps-2.3.orig/nh2ps_opt ./nh2ps_opt
---- ../nh2ps-2.3.orig/nh2ps_opt	Tue Jul 14 16:31:43 1998
-+++ ./nh2ps_opt	Sat Jul 18 22:06:39 1998
-@@ -1,4 +1,4 @@
--#!/usr/local/bin/perl
-+#!/usr/bin/perl
- #
- # nh2ps_opt 2.0
- # - nh2ps hangul, hanja font optimizer

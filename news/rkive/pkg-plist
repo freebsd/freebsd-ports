@@ -1,6 +1,0 @@
-bin/article
-bin/rkive
-bin/ckconfig
-lib/rkive/rkive.cf.sample
-lib/rkive/update_netdocs
-@dirrm lib/rkive
