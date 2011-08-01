@@ -2301,3 +2301,26 @@ x11-toolkits/gir-repository-vte||2010-07-30|Removed
 mail/rubygem-smtp_tls||2011-07-30|Has expired: no supported version of FreeBSD have < 1.8.7.p72
 textproc/pl-hunspell|polish/hunspell|2011-07-31|Move to a better place via repocopy
 www/mod_roaming||2011-08-01|Has expired: no supported browser and no further upstream development; see PR 73383
+archivers/zipios++||2011-08-01|Has expired: No more public distfiles
+astro/sattrack||2011-08-01|Has expired: No more public distfiles
+audio/bladeenc||2011-08-01|Has expired: Looks like an abandonware
+audio/cdplayer.app||2011-08-01|Has expired: Looks like an abandonware, no more public distfile
+audio/id3ed||2011-08-01|Has expired: No more public distfiles, looks like an abandonware
+audio/linux-vsound||2011-08-01|Has expired: Abandonware
+audio/mpegaudio||2011-08-01|Has expired: No more public distfiles
+audio/mpmf20||2011-08-01|Has expired: Abandonware
+audio/mutemix||2011-08-01|Has expired: abandonware, no more public distfiles
+audio/phatbeat||2011-08-01|Has expired: abandonware, no more public distfiles
+audio/pimp3||2011-08-01|Has expired: No more public distfiles
+audio/rbscrobbler||2011-08-01|Has expired: Looks like abandonware, no more public distfile
+audio/ripenc||2011-08-01|Has expired: Looks like and abandonware, No more distfile
+audio/wmcdplay||2011-08-01|Has expired: Looks like an abandonware, no more public distfile
+audio/wmfmixer||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+audio/wmmixer||2011-08-01|Has expired: Looks like an abandonware, no more public distfile
+audio/wmmp3||2011-08-01|Has expired: Looks like an abandonware, no more public distfile
+audio/wmusic||2011-08-01|Has expired: Looks like an abandonware, no more distfiles
+audio/xmms-kj||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
+audio/xmms-pipe||2011-08-01|Has expired: Looks like an abandonware, no more public distfile
+audio/xmms-speex||2011-08-01|Has expired: Looks like an abandonware, no more public distfile
+audio/xsidplay||2011-08-01|Has expired: Looks like an abandonware, no more public distfile
+audio/xtuner||2011-08-01|Has expired: Looks like an abandonware, no more public distfile

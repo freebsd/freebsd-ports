@@ -89,7 +89,6 @@
     SUBDIR += roadmap
     SUBDIR += roadnav
     SUBDIR += saoimage
-    SUBDIR += sattrack
     SUBDIR += sextractor
     SUBDIR += sky2000
     SUBDIR += spacechart

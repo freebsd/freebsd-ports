@@ -1,7 +1,0 @@
-In a nutshell, PhatBeat is a cross-platform (Linux and Windows) beat
-counter for use by collectors, producers, DJs, and others interested
-in beat-oriented music. For now it requires users to tap in the beat
-during listening, after which it calculates and displays the track's
-BPM and the size of a measure in seconds.
-
-WWW: http://www.postreal.org/phatbeat
