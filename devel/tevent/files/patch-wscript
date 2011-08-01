@@ -1,0 +1,11 @@
+--- wscript.orig	2011-07-10 11:52:43.000000000 +0200
++++ wscript	2011-07-30 03:18:21.000000000 +0200
+@@ -69,7 +69,7 @@
+         SRC += ' tevent_epoll.c'
+ 
+     if bld.env.standalone_tevent:
+-        bld.env.PKGCONFIGDIR = '${LIBDIR}/pkgconfig'
++        bld.env.PKGCONFIGDIR = '%%PKGCONFIGDIR%%'
+         bld.PKG_CONFIG_FILES('tevent.pc', vnum=VERSION)
+         private_library = False
+     else:
