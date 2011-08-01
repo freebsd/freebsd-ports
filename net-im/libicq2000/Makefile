@@ -14,6 +14,9 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An opensource C++ library to support icq2000/2001 protocol
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	sigc.1:${PORTSDIR}/devel/libsigc++
 
 USE_AUTOTOOLS=	libtool
