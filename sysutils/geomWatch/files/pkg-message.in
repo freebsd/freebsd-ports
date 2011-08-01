@@ -8,3 +8,7 @@ Finally, to start it, run the following command:
 
 %%PREFIX%%/etc/rc.d/geomWatch start
 
+You can also test your SMTP configuration by running the following command:
+
+%%PREFIX%%/sbin/geomWatch -t
+
