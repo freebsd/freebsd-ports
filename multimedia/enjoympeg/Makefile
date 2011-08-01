@@ -15,6 +15,9 @@ MASTER_SITES=	http://freenet-homepage.de/for_Ki/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	An MPEG-1 video player
 
+DEPRECATED=	Look like an abandonware, no more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	smpeg:${PORTSDIR}/multimedia/smpeg
 
 GNU_CONFIGURE=	yes
