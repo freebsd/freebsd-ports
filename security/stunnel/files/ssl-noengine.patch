@@ -1,11 +1,11 @@
 Description: Disable the OpenSSL engine support for the FreeBSD port.
 Forwaded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
-Last-Update: 2011-02-10
+Last-Update: 2011-06-28
 
 --- src/ssl.c.orig
 +++ src/ssl.c
-@@ -259,6 +259,8 @@
+@@ -258,6 +258,8 @@
  }
  
  static char *init_engine(void) {
