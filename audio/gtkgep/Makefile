@@ -14,6 +14,9 @@ MASTER_SITES=	http://finarfinek.republika.pl/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A guitar effects processor for GTK
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2011-09-01
+
 USE_GNOME=	gnometarget gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=  yes

@@ -10,6 +10,9 @@ PKGNAMESUFFIX=	-gtk
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk interface for TiMidity++
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2011-09-01
+
 MASTERDIR=	${.CURDIR}/../../audio/timidity++
 
 PLIST_FILES=	bin/gtkmidi ${TIMID_LIBDIR}/interface_g.so

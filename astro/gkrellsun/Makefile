@@ -14,6 +14,9 @@ MASTER_SITES=	http://nwalsh.com/hacks/gkrellsun/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Gkrellm-Plugin that displays the local sun rise and sun set times
 
+DEPRECATED=	Abandonware
+EXPIRATION_DATE=	2011-09-01
+
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm/gkrellm.h:${PORTSDIR}/sysutils/gkrellm
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm
 
