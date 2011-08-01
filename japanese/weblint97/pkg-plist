@@ -1,6 +1,0 @@
-bin/jweblint
-%%SITE_PERL%%/html-ext.pl
-%%SITE_PERL%%/htmli18n.pl
-%%PORTDOCS%%share/doc/jweblint/warnings.html
-%%PORTDOCS%%share/doc/jweblint/jmanpage.html
-%%PORTDOCS%%@dirrm share/doc/jweblint

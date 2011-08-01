@@ -35,18 +35,14 @@
     SUBDIR += celrw
     SUBDIR += chasen
     SUBDIR += chasen-base
-    SUBDIR += chimera
     SUBDIR += csrd
     SUBDIR += ctags
     SUBDIR += dbskkd-cdb
     SUBDIR += ddskk
     SUBDIR += devil-fpw
-    SUBDIR += drpl
     SUBDIR += dvi2dvi
-    SUBDIR += dvi2tty
     SUBDIR += dvipsk
     SUBDIR += e2ps
-    SUBDIR += easypr
     SUBDIR += eb
     SUBDIR += ebd-fpw
     SUBDIR += eblook
@@ -60,10 +56,8 @@
     SUBDIR += egg-canna
     SUBDIR += eijiro-fpw
     SUBDIR += elisa8x8
-    SUBDIR += elisp-manual
     SUBDIR += elvis
     SUBDIR += emacs-emcws
-    SUBDIR += emacs-manual
     SUBDIR += epic4
     SUBDIR += epwutil
     SUBDIR += esecanna
@@ -71,7 +65,6 @@
     SUBDIR += esecanna-module-vje30
     SUBDIR += esecanna-module-wnn6
     SUBDIR += eterm
-    SUBDIR += ewipe
     SUBDIR += exmh2
     SUBDIR += flex-sdk
     SUBDIR += flower-fpw
@@ -117,7 +110,6 @@
     SUBDIR += icanna
     SUBDIR += im-ja
     SUBDIR += ipadic
-    SUBDIR += ircII
     SUBDIR += ja6
     SUBDIR += jacode.pl
     SUBDIR += jadetex-ptex
@@ -127,7 +119,6 @@
     SUBDIR += jcode.pl
     SUBDIR += jd
     SUBDIR += jed
-    SUBDIR += jhd
     SUBDIR += jishyo
     SUBDIR += jisx0213-fonts
     SUBDIR += jls
@@ -165,7 +156,6 @@
     SUBDIR += less
     SUBDIR += libicq
     SUBDIR += libjcode
-    SUBDIR += libjconv
     SUBDIR += libslang
     SUBDIR += libtomoe-gtk
     SUBDIR += linux-JM
@@ -193,7 +183,6 @@
     SUBDIR += migemo-xemacs-devel-mule
     SUBDIR += mikachan-ttfonts
     SUBDIR += mime_pls
-    SUBDIR += mimekit
     SUBDIR += ming
     SUBDIR += mobileimap
     SUBDIR += monafonts
@@ -214,7 +203,6 @@
     SUBDIR += navi2ch-emacs21
     SUBDIR += navi2ch-xemacs21-mule
     SUBDIR += ne
-    SUBDIR += nethack32
     SUBDIR += nethack34
     SUBDIR += netype
     SUBDIR += newosaka
@@ -254,12 +242,10 @@
     SUBDIR += p5-WWW-MobileCarrierJP
     SUBDIR += p5-manual
     SUBDIR += p5-nkf
-    SUBDIR += paledit
     SUBDIR += pejv-fpw
     SUBDIR += perl5
     SUBDIR += php5-mecab
     SUBDIR += php_doc
-    SUBDIR += plain2
     SUBDIR += plan
     SUBDIR += platex-japanese
     SUBDIR += platex-jsclasses
@@ -287,7 +273,6 @@
     SUBDIR += qt4-codecs-jp
     SUBDIR += quit
     SUBDIR += rbnamazu
-    SUBDIR += recjis
     SUBDIR += roget-fpw
     SUBDIR += rogue_s
     SUBDIR += rskkserv
@@ -358,7 +343,6 @@
     SUBDIR += today
     SUBDIR += tomoe
     SUBDIR += trac
-    SUBDIR += typist
     SUBDIR += uim-anthy
     SUBDIR += uim-tomoe-gtk
     SUBDIR += vera-fpw
@@ -370,7 +354,6 @@
     SUBDIR += wdic-fpw
     SUBDIR += web1913-fpw
     SUBDIR += webalizer
-    SUBDIR += weblint97
     SUBDIR += wnn7egg
     SUBDIR += wordnet-fpw
     SUBDIR += wwasw-fpw
@@ -381,15 +364,10 @@
     SUBDIR += xgate
     SUBDIR += xjtext
     SUBDIR += xlockmore
-    SUBDIR += xmsgsaver
     SUBDIR += xpdf
-    SUBDIR += xshodo
     SUBDIR += xshodou
     SUBDIR += xtr
     SUBDIR += xv
-    SUBDIR += xvi-euc
-    SUBDIR += xvi-sjis
-    SUBDIR += xyagamo
     SUBDIR += xyaku
     SUBDIR += yasou-fpw
     SUBDIR += yc.el

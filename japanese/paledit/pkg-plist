@@ -1,7 +1,0 @@
-bin/tel10to11
-sbin/paledit
-share/doc/paledit/ChangeLog
-share/doc/paledit/README.ja
-share/doc/paledit/paledit-format.doc
-share/doc/paledit/paledit-protocol.doc
-@dirrm share/doc/paledit
