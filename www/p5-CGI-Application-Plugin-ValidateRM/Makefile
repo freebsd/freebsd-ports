@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	CGI-Application-Plugin-ValidateRM
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -17,7 +17,7 @@ BUILD_DEPENDS=	${SITE_PERL}/HTML/FillInForm.pm:${PORTSDIR}/www/p5-HTML-FillInFor
 		${SITE_PERL}/Data/FormValidator.pm:${PORTSDIR}/textproc/p5-Data-FormValidator \
 		${SITE_PERL}/CGI/Carp.pm:${PORTSDIR}/www/p5-CGI-modules \
 		${SITE_PERL}/CGI/Application.pm:${PORTSDIR}/www/p5-CGI-Application
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	5.8.6+
 
