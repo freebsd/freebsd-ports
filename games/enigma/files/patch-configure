@@ -1,29 +1,29 @@
---- configure.orig	2007-09-08 16:39:18.000000000 +0400
-+++ configure	2008-08-08 00:42:40.000000000 +0400
-@@ -753,8 +753,6 @@
+--- configure.orig	2007-09-08 14:39:18.000000000 +0200
++++ configure	2011-08-01 09:59:45.000000000 +0200
+@@ -753,8 +753,7 @@ CPP
  CXX
  CXXFLAGS
  CCC'
 -ac_subdirs_all='lib-src/zipios++
 -lib-src/enet'
++ac_subdirs_all='lib-src/zipios++'
  
  # Initialize some variables set by options.
  ac_init_help=
-@@ -15277,12 +15275,10 @@
- echo "${ECHO_T}no" >&6; }
- fi
+@@ -15279,10 +15278,10 @@ fi
  
--subdirs="$subdirs lib-src/zipios++"
+ subdirs="$subdirs lib-src/zipios++"
  
 -subdirs="$subdirs lib-src/enet"
  
  
 -ac_config_files="$ac_config_files Makefile m4/Makefile intl/Makefile data/Makefile data/gfx/Makefile data/gfx32/Makefile data/gfx40/Makefile data/gfx48/Makefile data/levels/Makefile data/levels/enigma_tutorial/Makefile data/levels/enigma_i/Makefile data/levels/enigma_ii/Makefile data/levels/enigma_iii/Makefile data/levels/enigma_iv/Makefile data/levels/enigma_v/Makefile data/levels/enigma_vi/Makefile data/levels/enigma_vii/Makefile data/levels/enigma_cross/Makefile data/levels/enigma_esprit/Makefile data/levels/enigma_oxyd/Makefile data/levels/enigma_peroxyd/Makefile data/levels/enigma_oxydmagnum/Makefile data/levels/enigma_oxydextra/Makefile data/levels/enigma_experimental/Makefile data/levels/enigma_stable/Makefile data/levels/enigma_sokoban/Makefile data/levels/enigma_microban/Makefile data/levels/enigma_mas_microban/Makefile data/levels/lib/Makefile data/levels/patches/Makefile data/fonts/Makefile data/sound/Makefile data/soundsets/Makefile data/soundsets/enigma/Makefile data/schemas/Makefile doc/Makefile doc/images/Makefile doc/images/flags25x15/Makefile doc/manual/Makefile doc/manual/images/Makefile doc/reference/Makefile doc/reference/images/Makefile etc/Makefile lib-src/Makefile lib-src/oxydlib/Makefile lib-src/lua/Makefile lib-src/enigma-core/Makefile src/Makefile tools/Makefile etc/enigma.spec etc/enigma.nsi etc/Info.plist po/Makefile.in"
++
 +ac_config_files="$ac_config_files Makefile m4/Makefile data/Makefile data/gfx/Makefile data/gfx32/Makefile data/gfx40/Makefile data/gfx48/Makefile data/levels/Makefile data/levels/enigma_tutorial/Makefile data/levels/enigma_i/Makefile data/levels/enigma_ii/Makefile data/levels/enigma_iii/Makefile data/levels/enigma_iv/Makefile data/levels/enigma_v/Makefile data/levels/enigma_vi/Makefile data/levels/enigma_vii/Makefile data/levels/enigma_cross/Makefile data/levels/enigma_esprit/Makefile data/levels/enigma_oxyd/Makefile data/levels/enigma_peroxyd/Makefile data/levels/enigma_oxydmagnum/Makefile data/levels/enigma_oxydextra/Makefile data/levels/enigma_experimental/Makefile data/levels/enigma_stable/Makefile data/levels/enigma_sokoban/Makefile data/levels/enigma_microban/Makefile data/levels/enigma_mas_microban/Makefile data/levels/lib/Makefile data/levels/patches/Makefile data/fonts/Makefile data/sound/Makefile data/soundsets/Makefile data/soundsets/enigma/Makefile data/schemas/Makefile doc/Makefile doc/images/Makefile doc/images/flags25x15/Makefile doc/manual/Makefile doc/manual/images/Makefile doc/reference/Makefile doc/reference/images/Makefile etc/Makefile lib-src/Makefile lib-src/oxydlib/Makefile lib-src/enigma-core/Makefile src/Makefile etc/enigma.spec etc/enigma.nsi etc/Info.plist po/Makefile.in"
  
  
  ac_config_files="$ac_config_files etc/mingw32-dist.sh"
-@@ -15912,7 +15908,6 @@
+@@ -15912,7 +15911,6 @@ do
      "depfiles") CONFIG_COMMANDS="$CONFIG_COMMANDS depfiles" ;;
      "Makefile") CONFIG_FILES="$CONFIG_FILES Makefile" ;;
      "m4/Makefile") CONFIG_FILES="$CONFIG_FILES m4/Makefile" ;;
@@ -31,7 +31,7 @@
      "data/Makefile") CONFIG_FILES="$CONFIG_FILES data/Makefile" ;;
      "data/gfx/Makefile") CONFIG_FILES="$CONFIG_FILES data/gfx/Makefile" ;;
      "data/gfx32/Makefile") CONFIG_FILES="$CONFIG_FILES data/gfx32/Makefile" ;;
-@@ -15955,10 +15950,8 @@
+@@ -15955,10 +15953,8 @@ do
      "etc/Makefile") CONFIG_FILES="$CONFIG_FILES etc/Makefile" ;;
      "lib-src/Makefile") CONFIG_FILES="$CONFIG_FILES lib-src/Makefile" ;;
      "lib-src/oxydlib/Makefile") CONFIG_FILES="$CONFIG_FILES lib-src/oxydlib/Makefile" ;;
