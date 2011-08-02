@@ -14,6 +14,9 @@ MASTER_SITES=	http://david.bieder.free.fr/eric/taquin/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE puzzle game
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 

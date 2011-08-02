@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An utility to query DNS servers
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 CONFLICTS=	bind9-9.* bind9-sdb-* skalibs-*
 NO_WRKSUBDIR=	yes
 

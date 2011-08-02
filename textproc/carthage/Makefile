@@ -17,6 +17,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A parser and clean-up tool for SGML DTDs
 
 USE_BISON=	build
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_ZIP=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	carthago

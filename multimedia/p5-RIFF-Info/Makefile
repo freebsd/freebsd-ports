@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Probe DivX and AVI files for attributes
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 BUILD_DEPENDS=	${SITE_PERL}/Video/Info.pm:${PORTSDIR}/multimedia/p5-Video-Info
 RUN_DEPENDS=	${SITE_PERL}/Video/Info.pm:${PORTSDIR}/multimedia/p5-Video-Info
 

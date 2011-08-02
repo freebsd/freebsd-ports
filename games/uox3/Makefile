@@ -17,6 +17,9 @@ DISTNAME=	uox3v6902-linux
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GPL'd server for Origin Systems' Ultima Online multiplayer game
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 DIST_SUBDIR=	uox3
 USE_ZIP=	YES
 NO_WRKSUBDIR=	YES

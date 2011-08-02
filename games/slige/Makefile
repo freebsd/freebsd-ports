@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DOOM level generator
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_ZIP=	yes
 NO_WRKSUBDIR=	yes
 

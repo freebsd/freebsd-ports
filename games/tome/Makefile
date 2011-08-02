@@ -15,6 +15,9 @@ DISTNAME=	tome-235-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Roguelike dungeon exploration game based on JRR Tolkien's works
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 SUB_FILES=	pkg-deinstall
 
 ALL_TARGET=	# empty

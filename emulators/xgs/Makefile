@@ -18,6 +18,9 @@ EXTRACT_ONLY=	xgs050.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Apple IIGS emulator stable release
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 BROKEN=		unfetchable
 
 EXTRACT_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip

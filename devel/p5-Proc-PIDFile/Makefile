@@ -15,6 +15,9 @@ DISTNAME=	Proc-PID_File-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module to prevent multiple instances of a process from running
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 PERL_CONFIGURE=	YES
 
 MAN3=		Proc::PID_File.3

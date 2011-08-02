@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.devolution.com/~slouken/projects/splitvt/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Run two shells in a split window/terminal
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 HAS_CONFIGURE=	yes
 ALL_TARGET=
 MAN1=		splitvt.1

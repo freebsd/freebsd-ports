@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.kr.FreeBSD.org/pub/FreeBSD-kr/distfiles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection of various Hangul-related sources
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 BROKEN=	Does not fetch
 
 GNU_CONFIGURE=	YES

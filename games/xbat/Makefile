@@ -15,6 +15,9 @@ DISTNAME=	xev111
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XEVIOUS like shooting game
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 NO_CDROM=	Possible copyright infringement
 
 USE_IMAKE=	yes

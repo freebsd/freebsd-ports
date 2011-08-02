@@ -14,6 +14,9 @@ MASTER_SITES=   ftp://ftp.mizi.com/pub/hanIM/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mizi Research's Korean X11 Input Method
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
 
 USE_IMAKE=	YES

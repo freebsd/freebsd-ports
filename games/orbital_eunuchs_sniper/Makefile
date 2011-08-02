@@ -14,6 +14,9 @@ MASTER_SITES=	http://filesingularity.timedoctor.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An overhead shooting game
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_SDL=	sdl image mixer
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags`" \

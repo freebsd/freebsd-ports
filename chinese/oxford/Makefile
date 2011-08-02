@@ -18,6 +18,9 @@ DISTFILES=	a.zip b.zip c.zip d.zip e.zip f.zip g.zip h.zip i.zip \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A English to Chinese(GB) dictionary
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 DIST_SUBDIR=	oxford
 USE_ZIP=	yes
 NO_BUILD=	yes

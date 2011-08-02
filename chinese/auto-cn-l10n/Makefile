@@ -14,6 +14,9 @@ DISTNAME=	zh-${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The automatic localization for Simplified Chinese zh_CN.eucCN locale
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 NO_BUILD=	yes
 PKGMESSAGE=	${WRKDIR}/pkg-message
 REINPLACE_ARGS=	-i ""

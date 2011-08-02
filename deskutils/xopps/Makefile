@@ -17,6 +17,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool which lets you draw Gantt charts
 
 ALL_TARGET=
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_MOTIF=	yes
 MAKE_ENV=	'MACH=${OPSYS}'
 

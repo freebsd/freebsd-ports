@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.far2wise.net/plod/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system administration journaling tool
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	emacs:${PORTSDIR}/editors/emacs
 
 MAN1=		plod.1

@@ -15,6 +15,9 @@ COMMENT=	A Qt LAN chat, compatible with Vypress Chat
 
 BROKEN=		unfetchable
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_QT_VER=	3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

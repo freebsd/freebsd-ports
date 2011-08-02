@@ -14,6 +14,9 @@ MASTER_SITES=	http://www3.sympatico.ca/john.vanderhoek/tim/src/president/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Play the cardgame President (or Ass) against 3 AIs
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_TK=		84
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-carddir=${PREFIX}/share/games/tvp

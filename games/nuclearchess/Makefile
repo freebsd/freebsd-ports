@@ -14,6 +14,9 @@ MASTER_SITES=	http://user.cs.tu-berlin.de/~karlb/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A chess variant designed to be short and fun for all players
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 GNU_CONFIGURE=	yes
 
 USE_SDL=	sdl image

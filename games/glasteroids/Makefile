@@ -15,6 +15,9 @@ DISTNAME=	Glasteriods
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D Asteroids game for X Window System
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 WRKSRC=		${WRKDIR}/Glasteroids
 
 USE_GL=		glut

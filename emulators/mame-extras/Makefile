@@ -22,6 +22,9 @@ EXTRACT_ONLY=	#
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Additional files for MAME (Multi Arcade Machine Emulator)
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

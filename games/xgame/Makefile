@@ -13,6 +13,9 @@ MASTER_SITES=	http://downloads.tlhiv.org/xgame/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Perl script which enhances gameplay under Linux/Unix
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
 

@@ -14,6 +14,9 @@ MASTER_SITES=	http://fawn.unibw-hamburg.de/steuer/xgammon/Downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A backgammon program for X11
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_IMAKE=	yes
 USE_XORG=	x11 xext xaw xmu xt sm ice
 

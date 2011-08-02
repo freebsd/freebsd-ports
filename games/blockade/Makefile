@@ -15,6 +15,9 @@ DISTFILES=	blockade-1_00-linux.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X version of the `blockade' Macintosh game
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_XORG=	x11
 
 MAN6=		blockade.6

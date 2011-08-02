@@ -15,6 +15,9 @@ DISTFILES=	xspringies.1.1.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mass and spring simulation system
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_IMAKE=	yes
 USE_XORG=	x11 xext
 MAN1=		xspringies.1

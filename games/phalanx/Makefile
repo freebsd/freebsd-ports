@@ -15,6 +15,9 @@ MASTER_SITES=	ftp://ftp.math.muni.cz/pub/math/people/Dobes/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xboard-compatible chess playing program
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 WRKSRC=		${WRKDIR}/Phalanx-XXII
 
 USE_GMAKE=	yes

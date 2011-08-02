@@ -14,6 +14,9 @@ DISTNAME=	wmtimebomb.20
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A minesweeper for WindowMaker
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	wraster.4:${PORTSDIR}/x11-wm/windowmaker
 
 WRKSRC=		${WRKDIR}/wmtimebomb.app

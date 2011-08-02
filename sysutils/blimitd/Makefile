@@ -15,6 +15,9 @@ MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon to enforce login.conf limits
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 WRKSRC=		${WRKDIR}/blimitd
 
 MAN8=		blimitd.8

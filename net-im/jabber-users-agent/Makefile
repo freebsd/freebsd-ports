@@ -16,6 +16,9 @@ DISTNAME=	Users-Agent-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Perl based Jabber User Directory
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 BROKEN=	Does not fetch
 
 NO_BUILD=	yes

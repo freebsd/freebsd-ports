@@ -17,6 +17,9 @@ DISTNAME=	${PORTNAME}-0.45
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gathers news from RDF/RSS and send them to your IM client
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/jabber/jabber.py:${PORTSDIR}/net-im/py-jabber
 
 USE_PYTHON=	2.2+

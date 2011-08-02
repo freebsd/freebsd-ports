@@ -17,6 +17,9 @@ DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-0.2.5a
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GKrellM2 plugin that tracks tasks and to-do items
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkrellm2
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 

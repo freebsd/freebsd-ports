@@ -14,6 +14,9 @@ MASTER_SITES=	http://freebsd.aeternal.net/ports/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	3D single/multiplayer military soccer game for X Window System
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_GL=		glu gl
 USE_XORG=	xmu xi
 WRKSRC=		${WRKDIR}/battleball-2.1-src

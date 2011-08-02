@@ -16,6 +16,9 @@ MASTER_SITES=	http://www.netsw.org/graphic/postscript/interpreter/mgv/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PostScript and PDF previewer
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_XORG=	xpm
 USE_MOTIF=	yes
 GNU_CONFIGURE=	yes

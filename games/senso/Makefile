@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.py
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game to challenge short-term memory
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinter
 
 USE_PYTHON=	yes

@@ -14,6 +14,9 @@ DISTNAME=	BisonGen-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general-purpose parser generator for Python
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_BZIP2=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

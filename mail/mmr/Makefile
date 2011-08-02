@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.devolution.com/~slouken/projects/mmr/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Curses based MIME Mail Reader
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_ICONV=	yes
 MAKE_ARGS=	LIBS='${LDFLAGS}' CXX='${CXX}' CXXFLAGS='${CXXFLAGS}'
 ALL_TARGET=	${PORTNAME}

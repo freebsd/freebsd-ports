@@ -18,6 +18,9 @@ EXTRACT_ONLY=	HLaTeX-1.0.1.tar.gz uhc-fonts-1.0.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX package to use Hangul(UTF-8/UHC/KSX1001)
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 # it depends on teTeX(lambda)
 BUILD_DEPENDS=	texhash:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX

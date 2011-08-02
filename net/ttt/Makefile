@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://ftp.csl.sony.co.jp/pub/kjc/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tele Traffic Tapper, a network traffic monitoring tool
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 BROKEN=	Does not fetch
 
 LIB_DEPENDS=	BLT24:${PORTSDIR}/x11-toolkits/blt

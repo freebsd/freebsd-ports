@@ -15,6 +15,9 @@ DISTNAME=	txl${PORTVERSION}.linux
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The TXL Programming Language (transformation by example)
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 BROKEN=	Does not fetch
 
 USE_LINUX=	yes

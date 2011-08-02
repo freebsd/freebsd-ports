@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.cabaret.demon.co.uk/filepp/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A generic file preprocessor
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 NO_BUILD=	yes

@@ -14,6 +14,9 @@ MASTER_SITES=	http://koala.ilog.fr/ftp/pub/games/znibbles/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multi-player networked nibbles game
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_MOTIF=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

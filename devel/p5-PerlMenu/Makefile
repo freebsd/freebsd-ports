@@ -16,6 +16,9 @@ DISTNAME=	perlmenu.v4.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 module for displaying menus with Curses
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Curses.pm:${PORTSDIR}/devel/p5-Curses
 
 USE_PERL5=	yes

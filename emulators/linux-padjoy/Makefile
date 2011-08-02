@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PSEmu Pro joystick plugin (Linux version)
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	/boot/modules/linux_js.ko:${PORTSDIR}/devel/linux-js
 
 WRKSRC=		${WRKDIR}/padJoy

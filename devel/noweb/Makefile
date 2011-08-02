@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple, extensible literate-programming tool
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 BUILD_DEPENDS=	icont:${PORTSDIR}/lang/icon
 RUN_DEPENDS=	iconx:${PORTSDIR}/lang/icon
 

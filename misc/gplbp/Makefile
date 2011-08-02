@@ -15,6 +15,9 @@ MASTER_SITES=	ftp://ftp.stampede.org/skibum/gplbp/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME Pilot Logbook application
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes

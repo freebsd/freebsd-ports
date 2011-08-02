@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}1_2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Log contents of unwanted UDP packets and TCP connections
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpsuck ${PREFIX}/libexec
 	${INSTALL_PROGRAM} ${WRKSRC}/udpsuck ${PREFIX}/libexec

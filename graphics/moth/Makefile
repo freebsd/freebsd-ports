@@ -16,6 +16,9 @@ DISTFILES=	${PORTNAME}_${PORTVERSION}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple to use 3D mesh editor
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff
 
 USE_GMAKE=	yes

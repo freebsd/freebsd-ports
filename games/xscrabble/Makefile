@@ -15,6 +15,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} ${PORTNAME}_en${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X version of the popular board game
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_BZIP2=	yes
 USE_IMAKE=	yes
 USE_XORG=	xaw

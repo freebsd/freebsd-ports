@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image morphing/warping program
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	mpeg:${PORTSDIR}/multimedia/mpeg \
 		mpeg_play:${PORTSDIR}/multimedia/mpeg_play
 LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \

@@ -14,6 +14,9 @@ MASTER_SITES=	http://glaros.dtc.umn.edu/gkhome/fetch/sw/parmetis/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A package for parallel (mpi) unstructured graph partitioning
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 .if !defined(WITH_OPENMPI)
 RUN_DEPENDS=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/mpich2
 BUILD_DEPENDS=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2

@@ -17,6 +17,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Freely enjoy childlike KISS, French-KISS!
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
 NOT_FOR_ARCHS=	alpha

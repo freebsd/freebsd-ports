@@ -13,6 +13,9 @@ MASTER_SITES=	http://home.clara.net/nox/software/epsmerge/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Merge multiple EPS files into one EPS or PS file
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_PERL5=	yes
 USE_SUBMAKE=	yes
 NO_BUILD=	yes

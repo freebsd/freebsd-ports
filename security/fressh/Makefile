@@ -15,6 +15,9 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free rewritten implementation of the SSH communication protocol
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_BZIP2=	yes
 
 PLIST_FILES=	bin/fressh bin/fressh-add bin/fressh-agent \
