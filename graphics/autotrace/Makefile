@@ -25,7 +25,7 @@ CONFIGURE_ENV=	LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}" \
 
 MAN1=		autotrace.1
 
-OPTIONS=	MING "Enable swf interface" on \
+OPTIONS=	MING "Enable swf interface" off \
 		PSTOEDIT "Convert postscript to other formats" on
 
 .include <bsd.port.pre.mk>
