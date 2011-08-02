@@ -7,7 +7,6 @@
     SUBDIR += WebMagick
     SUBDIR += abyssws
     SUBDIR += ach
-    SUBDIR += adblock
     SUBDIR += admuser
     SUBDIR += adzap
     SUBDIR += amphetadesk
@@ -67,7 +66,6 @@
     SUBDIR += boa
     SUBDIR += bookmarkbridge
     SUBDIR += bozohttpd
-    SUBDIR += bugmenot
     SUBDIR += bugmenot-firefox
     SUBDIR += c-icap
     SUBDIR += cacheboy15-devel
@@ -581,7 +579,6 @@
     SUBDIR += moodle
     SUBDIR += moodle2
     SUBDIR += moonshine
-    SUBDIR += mozex
     SUBDIR += mozplugger
     SUBDIR += multisort
     SUBDIR += mybb
@@ -1479,7 +1476,6 @@
     SUBDIR += polipo
     SUBDIR += pound
     SUBDIR += prado
-    SUBDIR += preferential
     SUBDIR += privoxy
     SUBDIR += privoxy+ipv6
     SUBDIR += protovis
