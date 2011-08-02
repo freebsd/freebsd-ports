@@ -41,4 +41,10 @@ nut_poststop() {
 	${nut_prefix}/libexec/nut/upsdrvctl stop
 }
 
+extra_commands=reload
+reload()
+{
+ kill -HUP `cat $pidfile`
+}
+
 run_rc_command "$1"
