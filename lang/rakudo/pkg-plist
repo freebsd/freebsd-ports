@@ -13,6 +13,7 @@ bin/pbc_to_exe
 bin/perl6
 bin/ufo
 bin/ufobuilder
+bin/winxed
 include/parrot/%%PARROT_VERSION%%/imcc/api.h
 include/parrot/%%PARROT_VERSION%%/imcc/embed.h
 include/parrot/%%PARROT_VERSION%%/imcc/yyscanner.h
@@ -152,6 +153,7 @@ include/parrot/%%PARROT_VERSION%%/pmc/pmc_packfiledirectory.h
 include/parrot/%%PARROT_VERSION%%/pmc/pmc_packfileopmap.h
 include/parrot/%%PARROT_VERSION%%/pmc/pmc_packfilerawsegment.h
 include/parrot/%%PARROT_VERSION%%/pmc/pmc_packfilesegment.h
+include/parrot/%%PARROT_VERSION%%/pmc/pmc_packfileview.h
 include/parrot/%%PARROT_VERSION%%/pmc/pmc_parrotinterpreter.h
 include/parrot/%%PARROT_VERSION%%/pmc/pmc_parrotlibrary.h
 include/parrot/%%PARROT_VERSION%%/pmc/pmc_parrotthread.h
@@ -221,6 +223,7 @@ lib/parrot/%%PARROT_VERSION%%/include/interptrace.pasm
 lib/parrot/%%PARROT_VERSION%%/include/iterator.pasm
 lib/parrot/%%PARROT_VERSION%%/include/libpaths.pasm
 lib/parrot/%%PARROT_VERSION%%/include/longopt.pasm
+lib/parrot/%%PARROT_VERSION%%/include/parrot_version.pir
 lib/parrot/%%PARROT_VERSION%%/include/parrotlib.pbc
 lib/parrot/%%PARROT_VERSION%%/include/pmctypes.pasm
 lib/parrot/%%PARROT_VERSION%%/include/signal.pasm
@@ -268,8 +271,6 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/File/Find.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/File/Find.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/File/Mkdir.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/File/Mkdir.pm
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/File/Tools.pir
-lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/File/Tools.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/HTTP/Server/Simple.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/HTTP/Server/Simple.pm6
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/HTTP/Server/Simple/PSGI.pir
@@ -322,6 +323,8 @@ lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/SVG/Plot/Pie.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/SVG/Plot/Pie.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/SVG/Plot/Positioned.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/SVG/Plot/Positioned.pm
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Shell/Command.pir
+lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Shell/Command.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Term/ANSIColor.pir
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Term/ANSIColor.pm
 lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test.pir
@@ -352,6 +355,7 @@ lib/parrot/%%PARROT_VERSION%%/languages/tge/TGE/Parser.pg
 lib/parrot/%%PARROT_VERSION%%/languages/tge/TGE/Rule.pir
 lib/parrot/%%PARROT_VERSION%%/languages/tge/TGE/Tree.pir
 lib/parrot/%%PARROT_VERSION%%/languages/tge/tgc.pir
+lib/parrot/%%PARROT_VERSION%%/languages/winxed/winxed.pbc
 lib/parrot/%%PARROT_VERSION%%/library/Archive/Tar.pbc
 lib/parrot/%%PARROT_VERSION%%/library/Archive/Tar.pir
 lib/parrot/%%PARROT_VERSION%%/library/Archive/Zip.pbc
@@ -506,7 +510,6 @@ lib/parrot/%%PARROT_VERSION%%/library/dumper.pir
 lib/parrot/%%PARROT_VERSION%%/library/libpcre.pbc
 lib/parrot/%%PARROT_VERSION%%/library/libpcre.pir
 lib/parrot/%%PARROT_VERSION%%/library/ncurses.declarations
-lib/parrot/%%PARROT_VERSION%%/library/ncurses.pasm
 lib/parrot/%%PARROT_VERSION%%/library/ncurses.pbc
 lib/parrot/%%PARROT_VERSION%%/library/ncurses.pir
 lib/parrot/%%PARROT_VERSION%%/library/nqp-rx.pbc
@@ -522,7 +525,6 @@ lib/parrot/%%PARROT_VERSION%%/library/pcore.pir
 lib/parrot/%%PARROT_VERSION%%/library/pcre.pbc
 lib/parrot/%%PARROT_VERSION%%/library/pcre.pir
 lib/parrot/%%PARROT_VERSION%%/library/postgres.declarations
-lib/parrot/%%PARROT_VERSION%%/library/postgres.pasm
 lib/parrot/%%PARROT_VERSION%%/library/postgres.pir
 lib/parrot/%%PARROT_VERSION%%/library/random_lib.pir
 lib/parrot/%%PARROT_VERSION%%/library/uuid.pbc
@@ -534,7 +536,6 @@ lib/parrot/%%PARROT_VERSION%%/tools/build/pmc2c.pl
 lib/parrot/%%PARROT_VERSION%%/tools/dev/create_language.pl
 lib/parrot/%%PARROT_VERSION%%/tools/dev/gen_makefile.pl
 lib/parrot/%%PARROT_VERSION%%/tools/dev/mk_language_shell.pl
-lib/parrot/%%PARROT_VERSION%%/tools/dev/ncidef2pir.pl
 lib/parrot/%%PARROT_VERSION%%/tools/dev/pbc_to_exe.pir
 lib/parrot/%%PARROT_VERSION%%/tools/dev/pprof2cg.pl
 lib/parrot/%%PARROT_VERSION%%/tools/dev/reconfigure.pl
@@ -713,6 +714,7 @@ src/parrot/%%PARROT_VERSION%%/pmc/packfiledirectory.dump
 src/parrot/%%PARROT_VERSION%%/pmc/packfileopmap.dump
 src/parrot/%%PARROT_VERSION%%/pmc/packfilerawsegment.dump
 src/parrot/%%PARROT_VERSION%%/pmc/packfilesegment.dump
+src/parrot/%%PARROT_VERSION%%/pmc/packfileview.dump
 src/parrot/%%PARROT_VERSION%%/pmc/parrotinterpreter.dump
 src/parrot/%%PARROT_VERSION%%/pmc/parrotlibrary.dump
 src/parrot/%%PARROT_VERSION%%/pmc/parrotthread.dump
@@ -805,6 +807,7 @@ src/parrot/%%PARROT_VERSION%%/vtable.tbl
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/library/CGI
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/library/Archive
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/library
+@dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/winxed
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/tge/TGE
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/tge
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/pge/PGE
@@ -812,6 +815,7 @@ src/parrot/%%PARROT_VERSION%%/vtable.tbl
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/XML
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Test
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Term
+@dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/Shell
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/SVG/Plot/Data
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/SVG/Plot
 @dirrmtry lib/parrot/%%PARROT_VERSION%%/languages/perl6/lib/SVG
