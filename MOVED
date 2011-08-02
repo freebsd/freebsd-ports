@@ -2448,3 +2448,7 @@ x11-themes/gnome-art||2011-08-02|Has expired: Upcoming ruby-gnome removes depend
 x11-themes/gnome-splashscreen-manager||2011-08-02|Has expired: Upcoming ruby-gnome removes dependencies
 devel/simian||2011-08-02|Removed BROKEN for more than 6 month
 databases/mysql-gui-tools||2011-08-02|Removed BROKEN for more than 6 month
+www/adblock|www/xpi-adblock|2011-08-02|Depends on obsolete SeaMonkey 1.1
+www/bugmenot|www/bugmenot-firefox|2011-08-02|Depends on obsolete SeaMonkey 1.1
+www/mozex|www/xpi-mozex|2011-08-02|Depends on obsolete SeaMonkey 1.1
+www/preferential||2011-08-02|Depends on obsolete SeaMonkey 1.1
