@@ -2446,3 +2446,5 @@ japanese/gsuica||2011-08-02|Has expired: Upcoming ruby-gnome removes dependencie
 science/gave||2011-08-02|Has expired: Upcoming ruby-gnome removes dependencies
 x11-themes/gnome-art||2011-08-02|Has expired: Upcoming ruby-gnome removes dependencies
 x11-themes/gnome-splashscreen-manager||2011-08-02|Has expired: Upcoming ruby-gnome removes dependencies
+devel/simian||2011-08-02|Removed BROKEN for more than 6 month
+databases/mysql-gui-tools||2011-08-02|Removed BROKEN for more than 6 month

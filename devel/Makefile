@@ -3452,7 +3452,6 @@
     SUBDIR += silc-toolkit
     SUBDIR += silentbob
     SUBDIR += simgear
-    SUBDIR += simian
     SUBDIR += simpletest
     SUBDIR += simulavr
     SUBDIR += skalibs
