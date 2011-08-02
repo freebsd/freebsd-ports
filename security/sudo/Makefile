@@ -10,11 +10,8 @@ PORTVERSION=	1.8.1
 PORTREVISION=	5
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
-		http://www.signal42.com/mirrors/sudo_ftp/ \
-		http://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/sudo/ \
 		http://ftp.arcane-networks.fr/pub/mirrors/sudo/ \
 		http://sudo.p8ra.de/sudo/dist/ \
-		http://www.very-clever.com/download/sudo/ \
 		http://sudo.cybermirror.org/ \
 		http://sudo-ftp.basemirror.de/ \
 		http://core.ring.gr.jp/archives/misc/sudo/ \
@@ -23,8 +20,6 @@ MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		ftp://ftp.sudo.ws/pub/sudo/ \
 		ftp://plier.ucar.edu/pub/sudo/ \
 		ftp://obsd.isc.org/pub/sudo/ \
-		ftp://ftp.tux.org/pub/security/sudo/ \
-		ftp://ftp.cerias.purdue.edu/pub/tools/unix/sysutils/sudo/ \
 		ftp://ftp.uwsg.indiana.edu/pub/security/sudo/ \
 		ftp://sudo.xmundo.net/pub/mirrors/sudo/ \
 		ftp://ftp.tuwien.ac.at/utils/admin-tools/sudo/ \
