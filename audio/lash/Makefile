@@ -14,6 +14,8 @@ MASTER_SITES=	http://download.savannah.gnu.org/releases/lash/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Session management system for JACK audio applications
 
+BROKEN=	Does not fetch
+
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat
