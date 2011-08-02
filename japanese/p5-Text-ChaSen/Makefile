@@ -9,13 +9,12 @@ PORTNAME=	Text-ChaSen
 PORTVERSION=	1.03
 PORTREVISION=	4
 CATEGORIES=	japanese textproc perl5
-MASTER_SITES=	http://chasen.aist-nara.ac.jp/stable/chasen/
+MASTER_SITES=	SFJP
+MASTER_SITE_SUBDIR=	chasen-legacy/32224
 DISTNAME=	chasen-${CHASEN_VERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ChaSen library module for Perl5
-
-BROKEN=	does not fetch
 
 LIB_DEPENDS=	chasen.2:${PORTSDIR}/japanese/chasen-base
 
