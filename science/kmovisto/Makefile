@@ -10,7 +10,7 @@ PORTNAME=	kmovisto
 PORTVERSION=	0.7.0
 PORTREVISION=	7
 CATEGORIES=	science
-MASTER_SITES=	http://mitglied.lycos.de/pageofmh/download/
+MASTER_SITES=	http://mitglied.multimania.de/pageofmh/download/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A real 3-D molecule viewer

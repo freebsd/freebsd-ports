@@ -9,7 +9,7 @@ PORTNAME=	jpcap
 PORTVERSION=	0.7
 PORTREVISION=	1
 CATEGORIES=	net devel java
-MASTER_SITES=	http://netresearch.ics.uci.edu/kfujii/jpcap/
+MASTER_SITES=	http://netresearch.ics.uci.edu/kfujii/Jpcap/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JNI wrapper around libpcap

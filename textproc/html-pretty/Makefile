@@ -7,7 +7,7 @@
 PORTNAME=	html-pretty
 PORTVERSION=	1.01
 CATEGORIES=	textproc www
-MASTER_SITES=	http://www.math.utah.edu/pub/sgml/
+MASTER_SITES=	http://ftp.math.utah.edu:80/pub/sgml/
 DISTNAME=	htmlpty-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

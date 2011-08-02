@@ -9,7 +9,7 @@ PORTNAME=	libijs
 PORTVERSION=	0.35
 PORTREVISION=	1
 CATEGORIES=	print
-MASTER_SITES=	http://www.linuxprinting.org/ijs/download/
+MASTER_SITES=	http://www.openprinting.org/download/ijs/download/
 DISTNAME=	ijs-${PORTVERSION}
 DIST_SUBDIR=	ghostscript
 

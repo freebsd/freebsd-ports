@@ -9,7 +9,7 @@ PORTNAME=	pidgin-rhythmbox
 PORTVERSION=	2.0
 PORTREVISION=	5
 CATEGORIES=	net-im audio
-MASTER_SITES=	http://jon.oberheide.org/projects/pidgin-rhythmbox/downloads/
+MASTER_SITES=	http://jon.oberheide.org/pidgin-rhythmbox/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugin to update your status with info from Rhythmbox

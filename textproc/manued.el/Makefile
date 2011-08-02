@@ -8,8 +8,7 @@
 PORTNAME=	manued.el
 PORTVERSION=	0.9.5
 CATEGORIES=	textproc elisp
-MASTER_SITES=	http://www.mpi-sb.mpg.de/~hitoshi/otherprojects/manued/arcs/ \
-		http://www.archi.is.tohoku.ac.jp/~yamauchi/otherprojects/manued/arcs/
+MASTER_SITES=	http://www.mpi-inf.mpg.de/~hitoshi/otherprojects/manued/arcs/
 DISTNAME=	manued-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

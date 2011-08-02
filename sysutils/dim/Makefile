@@ -8,7 +8,7 @@
 PORTNAME=	dim
 PORTVERSION=	1.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.theory.org/~matt/dim/
+MASTER_SITES=	http://theory.org/~matt/dim/
 DISTNAME=	dim
 EXTRACT_SUFX=	.tar
 
