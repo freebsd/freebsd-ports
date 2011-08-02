@@ -13,6 +13,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PowerMan is a tool for doing remote power control
 
+BROKEN=	does not fetch
+
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 USE_PERL5_BUILD=	yes

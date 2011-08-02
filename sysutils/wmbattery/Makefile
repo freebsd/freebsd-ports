@@ -17,6 +17,8 @@ COMMENT=	Window Maker dockapp that displays info about your battery
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
+BROKEN=	does not fetch
+
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 MAN1=		wmbattery.1

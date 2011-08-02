@@ -15,6 +15,8 @@ MASTER_SITES=	SF/gfs/${PORTNAME}/${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scientific CFD simulator
 
+BROKEN=	does not fetch
+
 LIB_DEPENDS=	gts.5:${PORTSDIR}/graphics/gts
 
 USE_GNOME=	glib20 gnomehack pkgconfig

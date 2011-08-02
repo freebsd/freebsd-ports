@@ -13,6 +13,8 @@ MASTER_SITES=	http://www.clevervest.com/htp/archive/c/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Time synchronization over http utility
 
+BROKEN=	does not fetch
+
 USE_BZIP2=	yes
 
 MANCOMPRESSED=	no
