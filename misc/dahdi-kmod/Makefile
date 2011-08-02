@@ -54,6 +54,10 @@ CONFLICTS=	zaptel-[0-9]*
 IGNORE=		requires firmware(9) support for kernel modules with hyphens
 .endif
 
+.if !exists(${SRC_BASE}/sys/Makefile)
+IGNORE= requires kernel source present in ${SRC_BASE}/sys
+.endif
+
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
 PLIST_SUB+=	X86=""
 _vpmadt032=	VPMADT032
@@ -67,13 +71,6 @@ ${_f}_DIR?=	${${_f}_NAME}.bin
 ${_f}_DISTFILE=	${${_f}_NAME}-${${_f}_VERSION}.tar.gz
 DISTFILES+=	${${_f}_DISTFILE}:firmware
 .endfor
-
-pre-everything::
-	@if [ ! -f /usr/src/sys/Makefile ]; then \
-		${ECHO_MSG} ">> The dahdi port needs FreeBSD kernel source code to compile."; \
-		${ECHO_MSG} ">> Please install FreeBSD kernel source code in /usr/src/sys."; \
-		${FALSE}; \
-	fi
 
 post-extract:
 	@${LN} -s ../../../linux-${OSLEC_VERSION}/drivers/staging ${WRKSRC}/drivers
