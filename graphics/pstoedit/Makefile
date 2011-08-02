@@ -18,7 +18,7 @@ LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 
 OPTIONS=	IMAGEMAGICK "Enable magick++ interface" on \
 		EMF "Enable emf interface" on \
-		MING "Enable swf interface" on \
+		MING "Enable swf interface" off \
 		PLOTUTILS "Enable libplot interface" on
 
 USE_GNOME=	gnomehack pkgconfig
