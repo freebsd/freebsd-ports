@@ -1,18 +1,19 @@
-HLstats is a web based application providing real-time statisitcal
-player and clan rankings for Half-Life servers.
+HLStats consists of a Perl script (the HLStats logging daemon) and a set of
+PHP scripts (which generate statistics Web pages).  HLStats provides player
+and clan rankings for Half-Life servers.  Its features include:
 
--	Real-Time Stats 
--	Track players from multiple servers and multiple Half-Life Mods using
-	one installation of HLstats 
--	Players can be tracked by WONID, STEAMID, VALVEID, IP Address
-	or by Name
--	Clan rankings and statistics 
--	No need for extended periods of lag while parsing a day's worth of
-	log data 
--	Fully supports the Half-Life Standard Log Format 
--	A full history of Rcon commands 
--	Detailed Host Statistics lets the HLstats administrator see which
-	ISPs players are using 
--	Customizable style
+  * Real-time statistics
+  * Track players from multiple servers and multiple Half-Life mods using
+    one installation of HLStats
+  * Players can be tracked by their WON ID (recommended), by IP address,
+    or by name
+  * Clan rankings and statistics
+  * No need for extended periods of lag while parsing a day's worth of log
+    data
+  * Fully supports the Half-Life Standard Log Format
+  * A full history of remote console commands
+  * Detailed host statistics allows HLStats administrator see which ISPs
+    players are using
+  * Customizable style
 
-WWW:	http://www.hlstats-community.org/
+WWW: http://www.hlstats-community.org/
