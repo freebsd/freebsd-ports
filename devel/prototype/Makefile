@@ -9,7 +9,7 @@
 PORTNAME=	prototype
 PORTVERSION=	1.10
 CATEGORIES=	devel
-MASTER_SITES=	http://www.xs4all.nl/~carlo17/prototype/
+MASTER_SITES=	http://carlo17.home.xs4all.nl/prototype/
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ports@FreeBSD.org
