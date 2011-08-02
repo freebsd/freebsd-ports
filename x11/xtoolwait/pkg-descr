@@ -20,5 +20,3 @@ problems: it starts one X client in the background, waits until it has mapped
 a window and then exits.
 
 Xtoolwait is a free implementation of exactly the same idea.
-
-WWW: http://www.hacom.nl/~richard/software/xtoolwait.html

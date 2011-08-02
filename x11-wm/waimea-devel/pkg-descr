@@ -4,5 +4,3 @@ virtual desktops and by using the Cairo graphics library for all rendering,
 Waimea provides a modern vector-based style engine that takes advantage of
 display hardware acceleration when available (through the X Render
 Extension).
-
-WWW: http://www.freedesktop.org/wiki/Software_2fwaimea

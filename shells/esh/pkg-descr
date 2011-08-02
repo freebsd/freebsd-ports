@@ -8,5 +8,3 @@ language at the core. The syntax is a simplified form of Scheme.  The
 current version is 0.8, though it is already stable and
 featureful. The reason for the low version number is lack of
 real-world testing. It is released under the GPL, of course.
-
-WWW: http://slon.ttk.ru/esh/

@@ -10,5 +10,3 @@ command files.
 Pyvox scripts and date files are portable, easily extensible, and suitable
 both for rapid prototyping of new algorithms and analysis protocols, and also
 for efficient, automated processing of the finished analysis protocols.
-
-WWW: http://www.med.upenn.edu/bbl/downloads/pyvox/index.shtml

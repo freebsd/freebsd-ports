@@ -6,5 +6,3 @@ To use this, your script should load this library as
 + require "jcode.pl";
 or
 + require('jcode.pl');
-
-WWW: http://srekcah.org/jcode/

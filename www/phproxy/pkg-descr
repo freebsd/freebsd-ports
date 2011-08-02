@@ -8,5 +8,3 @@ that retrives resources for you. The only IP address shown
 will be the server's IP address. So basically, it is indirect 
 browsing. The only catch being that the server has to has access 
 to those otherwise inaccessible resources.
-
-WWW: http://poxy.sf.net/

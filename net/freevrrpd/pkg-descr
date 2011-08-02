@@ -19,5 +19,3 @@ existing projects.  In this second public release, you can find:
        * Support netmask for Virtual IP addresses
        * Support for monitored circuit and dependances between VRIDs
        * Support for VLAN pseudo devices under *BSD
-
-WWW: http://www.b0l.org/?idcategory=3&idsection=1

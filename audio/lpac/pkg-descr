@@ -10,5 +10,3 @@ music. This may not seem much, but remember you will get back every single
 bit, no matter how often you subsequently compress and decompress a file. It
 is true that general archivers (Zip, LZH, gzip) are lossless, too, but they
 often achieve nearly no compression on audio files.
-
-WWW: http://www.nue.tu-berlin.de/wer/liebchen/lpac.html

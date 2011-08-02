@@ -6,5 +6,3 @@ acts as a relay station and keeps track of transmission times. What timeseal
 does is record your thinking time, so that transmission time is not counted 
 against you. Timeseal will not prevent netlag but it makes the games fairer 
 when lag occurs.
-
-WWW: http://www.freechess.org/WWWhelp/timeseal.html

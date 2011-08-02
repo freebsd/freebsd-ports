@@ -1,4 +1,2 @@
 gx is a small image viewer for Unix written in C++ (using gtkmm). It
 can rotate, rescale, and zoom in/out an image.
-
-WWW: http://perticone.homelinux.net/sergio/c++/gx/

@@ -7,5 +7,3 @@ Applications using H323 include OpenH323, OhPhone, GnomeMeeting
 and Microsoft's NetMeeting.
 
 It makes use of PWLib and the OpenH323 stack from Equivalence Ltd Pty
-
-WWW: http://www.openh323.org/

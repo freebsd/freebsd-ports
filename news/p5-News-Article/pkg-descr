@@ -1,5 +1,3 @@
 This module allows for creating articles from scratch, or reading them
 from various data sources; various header manipulations, and posting
 via NNTP or mailing via a sendmail-workalike.
-
-WWW: http://www.erlenstar.demon.co.uk/perl/

@@ -6,5 +6,3 @@ It accepts calls from any H323 Video Conferencing client,
 including OhPhone (part of OpenH323) and MS NetMeeting.
 
 It makes use of PWLib and the OpenH323 stack from Equivalence Ltd Pty
-
-WWW: http://www.openh323.org/

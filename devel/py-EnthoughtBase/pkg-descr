@@ -10,5 +10,3 @@ application and user data paths on some systems).
 *enthought.logger: Provides convenience functions for creating
 logging handlers.
 *enthought.util: Provides miscellaneous utility functions.
-
-WWW:	http://code.enthought.com/projects/enthought_base.php

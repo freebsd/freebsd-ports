@@ -19,5 +19,3 @@ to verify that your Ident server is working correctly.
  
 I'm currently running this "ident-tester" on port 114 at lysator.liu.se
 (130.236.254.1) if you wish to test your server.
-
-WWW: http://www.simphalempin.com/dev/libident/
