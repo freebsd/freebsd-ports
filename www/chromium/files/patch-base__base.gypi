@@ -1,6 +1,14 @@
---- base/base.gypi.orig	2011-05-06 12:03:16.000000000 +0300
-+++ base/base.gypi	2011-06-05 19:27:52.717164750 +0300
-@@ -190,6 +190,7 @@
+--- base/base.gypi.orig	2011-06-28 22:44:26.635806924 +0300
++++ base/base.gypi	2011-06-28 23:21:49.321810313 +0300
+@@ -94,6 +94,7 @@
+           'files/file_path_watcher_linux.cc',
+           'files/file_path_watcher_mac.cc',
+           'files/file_path_watcher_win.cc',
++          'files/file_path_watcher_freebsd.cc',
+           'fix_wp64.h',
+           'float_util.h',
+           'global_descriptors_posix.cc',
+@@ -189,6 +190,7 @@
            'process_posix.cc',
            'process_util.cc',
            'process_util.h',
@@ -8,7 +16,7 @@
            'process_util_linux.cc',
            'process_util_mac.mm',
            'process_util_posix.cc',
-@@ -363,11 +364,9 @@
+@@ -371,11 +373,9 @@
                  'message_pump_glib_x.cc',
                ],
            }],
@@ -21,20 +29,16 @@
                  'linux_util.cc',
                ],
              },
-@@ -408,10 +407,10 @@
+@@ -413,7 +413,7 @@
+               'string16.cc',
+             ],
            },],
-           ['OS=="freebsd" or OS=="openbsd"', {
+-          ['os_posix==1 and OS!="linux" and OS!="mac"', {
++          ['os_posix==1 and OS!="linux" and OS!="mac" and OS!="freebsd"', {
              'sources!': [
--              'base/files/file_path_watcher_linux.cc',
-+              'files/file_path_watcher_linux.cc',
+               'files/file_path_watcher_linux.cc',
              ],
-             'sources': [
--              'base/files/file_path_watcher_stub.cc',
-+              'files/file_path_watcher_stub.cc',
-             ],
-           }],
-         ],
-@@ -481,6 +480,12 @@
+@@ -491,6 +491,13 @@
              ],
          }],
          [ 'OS == "freebsd" or OS == "openbsd"', {
@@ -43,6 +47,7 @@
 +             'file_util_linux.cc',
 +             'process_linux.cc',
 +             'process_util_linux.cc',
++             'files/file_path_watcher_linux.cc',
 +          ],
            'link_settings': {
              'libraries': [

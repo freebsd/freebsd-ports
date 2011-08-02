@@ -1,11 +1,20 @@
---- ppapi/proxy/ppb_image_data_proxy.cc.orig	2011-04-19 21:36:29.491038804 +0300
-+++ ppapi/proxy/ppb_image_data_proxy.cc	2011-04-19 21:37:11.973039170 +0300
-@@ -21,7 +21,7 @@
- #include "ppapi/proxy/ppapi_messages.h"
- #include "ppapi/shared_impl/image_data_impl.h"
+--- ppapi/proxy/ppb_image_data_proxy.cc.orig	2011-06-28 23:59:12.540806582 +0300
++++ ppapi/proxy/ppb_image_data_proxy.cc	2011-06-28 23:59:15.075806980 +0300
+@@ -111,7 +111,7 @@
  
--#if defined(OS_LINUX)
-+#if defined(OS_LINUX) || defined (OS_FREEBSD)
- #include <sys/shm.h>
- #elif defined(OS_MACOSX)
- #include <sys/stat.h>
+ #if defined(OS_WIN)
+ const ImageHandle ImageData::NullHandle = NULL;
+-#elif defined(OS_MACOSX)
++#elif defined(OS_MACOSX) || defined(OS_FREEBSD)
+ const ImageHandle ImageData::NullHandle = ImageHandle();
+ #else
+ const ImageHandle ImageData::NullHandle = 0;
+@@ -120,7 +120,7 @@
+ ImageHandle ImageData::HandleFromInt(int32_t i) {
+ #if defined(OS_WIN)
+     return reinterpret_cast<ImageHandle>(i);
+-#elif defined(OS_MACOSX)
++#elif defined(OS_MACOSX) || defined(OS_FREEBSD)
+     return ImageHandle(i, false);
+ #else
+     return static_cast<ImageHandle>(i);
