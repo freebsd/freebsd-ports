@@ -34,8 +34,9 @@ MAN1=		cscope.1
 
 .if defined(WITH_XCSCOPE)
 post-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/xcscope/cscope-indexer ${PREFIX}/bin
 	${MKDIR} ${EMACSLISPDIR}
-	${INSTALL_DATA} ${WRKSRC}/contrib/xcscope/xcscope.el ${EMACSLISPDIR}/
+	${INSTALL_DATA} ${WRKSRC}/contrib/xcscope/xcscope.el ${EMACSLISPDIR}
 	${MKDIR} ${XEMACSLISPDIR}
 	${LN} -sf ${EMACSLISPDIR}/xcscope.el ${XEMACSLISPDIR}
 .endif
