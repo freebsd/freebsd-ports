@@ -16,6 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pager for sawfish without GNOME
 
+BROKEN=	does not fetch
+
 BUILD_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
 RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
 

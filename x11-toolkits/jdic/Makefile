@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	JDesktop Integration Components
 
+BROKEN=	does not fetch
+
 # USE_GMAKE conflicts with USE_ANT
 BUILD_DEPENDS=	gmake:${PORTSDIR}/devel/gmake
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt

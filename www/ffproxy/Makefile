@@ -13,6 +13,8 @@ MASTER_SITES=	http://${PORTNAME}.sourceforge.net/${PORTNAME}/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Filtering HTTP proxy server
 
+BROKEN=	does not fetch
+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib"
