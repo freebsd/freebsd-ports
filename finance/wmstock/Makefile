@@ -9,7 +9,7 @@ PORTNAME=	wmstock
 PORTVERSION=	0.11
 PORTREVISION=	3
 CATEGORIES=	finance windowmaker
-MASTER_SITES=	http://mattfischer.com/wmstock/src/
+MASTER_SITES=	http://www.mattfischer.com/wmstock/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cool WindowMaker Dockapp that shows stock ticker(s)
