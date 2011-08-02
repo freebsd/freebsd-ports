@@ -18,6 +18,9 @@ DIST_SUBDIR=	festival
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	American English male voice for Festival speech synthesis system
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	festival:${PORTSDIR}/audio/festival \
  ${LOCALBASE}/share/festival/lib/dicts/ogi_lex.out:${PORTSDIR}/audio/festlex-ogi
 

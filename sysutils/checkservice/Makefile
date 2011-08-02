@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.linvision.com/checkservice/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Checkservice is written to check the status of the services
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	${SITE_PERL}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools
 
 BROKEN=		checksum mismatch

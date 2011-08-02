@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}${DISTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Wild Magic Real-Time 3D Graphics Engine
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2011-09-01
+
 BROKEN=		does not fetch
 
 USE_ZIP=	yes

@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Netdev config analyzer
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2011-09-01
+
 BROKEN=		does not fetch
 
 PLIST_FILES=	bin/${PORTNAME} etc/nipper.conf.sample

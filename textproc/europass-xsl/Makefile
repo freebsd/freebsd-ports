@@ -13,6 +13,9 @@ DISTNAME=	${PORTNAME}-V${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XSL stylesheets to transform Europass documents to HTML
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2011-09-01
+
 BROKEN=		checksum mismatch
 
 USE_ZIP=	yes

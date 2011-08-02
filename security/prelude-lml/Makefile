@@ -13,6 +13,9 @@ MASTER_SITE_SUBDIR=	${PORTNAME} ${PORTNAME}/old
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Prelude Network Intrusion Detection System Log Monitoring Lackey
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS+=	prelude.20:${PORTSDIR}/security/libprelude \
 		pcre.0:${PORTSDIR}/devel/pcre
 
