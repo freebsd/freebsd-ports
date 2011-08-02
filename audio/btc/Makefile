@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for creating bass tablature
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 WRKSRC=		${WRKDIR}
 
 PLIST_FILES=	bin/btc

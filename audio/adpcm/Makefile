@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.shar
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Intel/DVI IMA ADPCM codec library
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 NO_WRKSUBDIR=	true
 EXTRACT_CMD=	${SH}
 EXTRACT_BEFORE_ARGS=
