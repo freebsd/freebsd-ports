@@ -16,6 +16,8 @@ DISTFILES=	${DISTNAME}-full${EXTRACT_SUFX}?format=raw
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An isometric interface to Slash'EM based on Falcon's Eye
 
+BROKEN=	does not fetch
+
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes

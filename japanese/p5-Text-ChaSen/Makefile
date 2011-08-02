@@ -15,6 +15,8 @@ DISTNAME=	chasen-${CHASEN_VERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	ChaSen library module for Perl5
 
+BROKEN=	does not fetch
+
 LIB_DEPENDS=	chasen.2:${PORTSDIR}/japanese/chasen-base
 
 DISTINFO_FILE=	${.CURDIR}/../chasen-base/distinfo

@@ -15,6 +15,8 @@ MASTER_SITES=	http://ghs.tongi.org/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game looking for the difference between two pictures
 
+BROKEN=	does not fetch
+
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	imlib

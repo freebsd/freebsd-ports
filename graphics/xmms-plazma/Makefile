@@ -14,6 +14,8 @@ MASTER_SITES=	http://membres.lycos.fr/diablolight/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plazma is an XMMS visualization plugin
 
+BROKEN=	does not fetch
+
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_GL=		yes

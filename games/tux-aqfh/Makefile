@@ -14,6 +14,8 @@ MASTER_SITES=	http://tuxaqfh.sourceforge.net/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OpenGL adventure game
 
+BROKEN=	does not fetch
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 
 USE_GL=		glut

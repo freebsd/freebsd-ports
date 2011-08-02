@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl extension for executing embedded JavaScript
 
+BROKEN=	does not fetch
+
 LIB_DEPENDS=	js.1:${PORTSDIR}/lang/spidermonkey
 
 MAN3=		JavaScript.3

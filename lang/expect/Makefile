@@ -13,6 +13,8 @@ MASTER_SITES=	http://expect.nist.gov/src/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sophisticated scripter based on tcl/tk
 
+BROKEN=	does not fetch
+
 CONFLICTS=	expect-5.44*
 
 PORTSCOUT=	skipv:5.44.0,5.44.1	# These were recalled by NIST

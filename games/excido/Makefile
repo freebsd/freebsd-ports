@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable fast-paced 3d shooter
 
+BROKEN=	does not fetch
+
 LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}

@@ -17,6 +17,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/a/alpha/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Computer Graphics Kit
 
+BROKEN=	does not fetch
+
 BUILD_DEPENDS=	bjam:${PORTSDIR}/devel/boost-jam \
 		scons:${PORTSDIR}/devel/scons
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \

@@ -14,6 +14,8 @@ MASTER_SITES=	http://download.savannah.gnu.org/releases/dotgnu-pnet/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libjit implements Just-In-Time compilation functionality
 
+BROKEN=	does not fetch
+
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
