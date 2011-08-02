@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Livejournal.com postings recusive copy utility
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
 PLIST_FILES=	bin/ljsm

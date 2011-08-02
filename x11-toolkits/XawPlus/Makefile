@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A replacement for Xaw with a nicer 3-D look and some extensions
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_XORG=	x11 xaw
 WRKSRC=		${WRKDIR}/${PORTNAME}
 

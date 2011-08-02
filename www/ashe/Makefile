@@ -16,6 +16,9 @@ DISTFILES=	xhtml-1.3.tar.Z cci.tar.Z libhtmlw.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple HTML editor
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 NO_WRKSUBDIR=	yes
 CONFIGURE_WRKSRC=	${WRKDIR}/src
 INSTALL_WRKSRC=		${WRKDIR}/src

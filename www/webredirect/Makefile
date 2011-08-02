@@ -16,6 +16,9 @@ COMMENT=	Small web server serving "301 Moved Permanently" only
 
 BROKEN=	Does not fetch
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 ALL_TARGET=	depend all
 
 MAN1=		webredirect.1
