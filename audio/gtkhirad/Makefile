@@ -14,6 +14,9 @@ MASTER_SITES=	http://pcman.sayya.org/gtkhirad/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hinet Radio player using GTK
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	wget:${PORTSDIR}/ftp/wget \
 		mplayer:${PORTSDIR}/multimedia/mplayer
 

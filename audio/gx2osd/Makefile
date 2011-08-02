@@ -13,6 +13,9 @@ MASTER_SITES=	http://eclipser.no-ip.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OSD client for XMMS2
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
 		xerces-c.27:${PORTSDIR}/textproc/xerces-c2

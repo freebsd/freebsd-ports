@@ -18,6 +18,9 @@ EXTRACT_ONLY=	${SRCFILE} ${DATAFILES}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Map portions of the earth from a given longitude/latitude
 
+DEPRECATED=	No more distfiles
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png
 
