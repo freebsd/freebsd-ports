@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION:S/./_/g}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A validating XML editor featuring a word processor-like view
 
+BROKEN=	does not fetch
+
 USE_JAVA=	YES
 JAVA_VERSION=	1.5+
 NO_BUILD=	YES

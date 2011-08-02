@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.zophar.net/unix/Files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nintendo GameBoy(tm) emulator with GNU source code
 
+BROKEN=	does not fech: 302 redirect
+
 PLIST_FILES=	bin/gbe
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

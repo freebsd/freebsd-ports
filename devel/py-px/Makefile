@@ -14,6 +14,8 @@ DIST_SUBDIR=	python
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perforce p4 wrapper and Python Perforce interface
 
+BROKEN=	does not fetch
+
 USE_ZIP=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
