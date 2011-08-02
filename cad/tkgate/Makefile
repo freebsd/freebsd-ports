@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Tcl/Tk based digital circuit editor and simulator
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	tk84.1:${PORTSDIR}/x11-toolkits/tk84
 RUN_DEPENDS=	tclsh8.4:${PORTSDIR}/lang/tcl84
 BUILD_DEPENDS=	xmkmf:${PORTSDIR}/devel/imake

@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.llnl.gov/icc/lc/siop/downloads/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A filesystem metadata benchmark utility
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 PLIST_FILES=	bin/mdtest
 
 OPTIONS=	OPENMPI "Use openmpi instead of mpich2" off
