@@ -15,6 +15,8 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lovely Sister Database
 
+BROKEN=	does not fetch
+
 BUILD_DEPENDS=	${LOCALBASE}/share/flim/${FLIM_COOKIE}:${PORTSDIR}/editors/flim${DEPPORT_SUFFIX}
 
 USE_EMACS=	yes
