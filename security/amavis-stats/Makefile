@@ -9,7 +9,7 @@ PORTNAME=	amavis-stats
 PORTVERSION=	0.1.12
 PORTREVISION=	2
 CATEGORIES=	security
-MASTER_SITES=	http://rekudos.net/download/
+MASTER_SITES=	http://downloads.topicdesk.com/amavis_stats/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple AMaViS statistics generator based on rrdtool

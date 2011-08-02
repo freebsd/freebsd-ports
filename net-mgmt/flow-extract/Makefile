@@ -8,7 +8,7 @@
 PORTNAME=	flow-extract
 PORTVERSION=	2.61
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://nsit.uchicago.edu/groups/security/tools/flow-extract/
+MASTER_SITES=	http://itservices.uchicago.edu/groups/security/tools/flow-extract/
 DISTNAME=	flow-extract-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

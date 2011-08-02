@@ -8,8 +8,7 @@
 PORTNAME=	firetalk
 PORTVERSION=	0.0.11
 CATEGORIES=	net-im
-MASTER_SITES=	http://site.n.ml.org/download/20031016162822/_firetalk/ \
-		http://www.penguinhosting.net/~ian/firetalk/
+MASTER_SITES=	http://site.n.ml.org/download/20030428174342/_firetalk/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multi-protocol chat/instant messaging library

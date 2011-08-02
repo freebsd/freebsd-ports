@@ -9,7 +9,7 @@ PORTNAME=	opensched
 PORTVERSION=	0.1.0
 PORTREVISION=	7
 CATEGORIES=	textproc
-MASTER_SITES=	http://mtechit.com/dlsoftware/opensched/
+MASTER_SITES=	http://hitachi-id.com/dlsoftware/opensched/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A project scheduler

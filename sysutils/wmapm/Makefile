@@ -9,7 +9,7 @@ PORTNAME=	wmapm
 PORTVERSION=	3.1
 PORTREVISION=	2
 CATEGORIES=	sysutils windowmaker
-MASTER_SITES=	http://dockapps.org/files/18/25/
+MASTER_SITES=	http://www.dockapps.org/files/18/25/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Laptop battery status display for WindowMaker

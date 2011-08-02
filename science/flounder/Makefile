@@ -10,7 +10,7 @@ PORTNAME=	flounder
 PORTVERSION=	0.40
 PORTREVISION=	11
 CATEGORIES=	science
-MASTER_SITES=	http://www2.enel.ucalgary.ca/~vigmond/flounder/
+MASTER_SITES=	http://www.enel.ucalgary.ca/People/vigmond/flounder/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org

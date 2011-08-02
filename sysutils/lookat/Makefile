@@ -8,7 +8,7 @@
 PORTNAME=	lookat
 PORTVERSION=	1.4.1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.wagemakers.be/downloads/
+MASTER_SITES=	http://www.wagemakers.be/uploads/fc/38/fc38e0abaf31f0f343d99479b08875dd/
 DISTNAME=	${PORTNAME}_bekijk-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

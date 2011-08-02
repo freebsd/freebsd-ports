@@ -9,7 +9,7 @@ PORTNAME=	linpopup
 PORTVERSION=	1.2.0
 PORTREVISION=	8
 CATEGORIES=	net-im
-MASTER_SITES=	http://www.chez.com/littleigloo/files/
+MASTER_SITES=	http://littleigloo.chez.com/files/
 DISTNAME=	LinPopUp-${PORTVERSION}.src
 
 MAINTAINER=	ports@FreeBSD.org

@@ -9,8 +9,7 @@ PORTNAME=	trayicons
 PORTVERSION=	1.03
 PORTREVISION=	6
 CATEGORIES=	sysutils
-MASTER_SITES=	http://depot.fsck.ch/mirror/distfiles/ \
-		http://sweb.cz/tripie/gkrellm/trayicons/dist/
+MASTER_SITES=	http://tripie.sweb.cz/gkrellm/trayicons/dist/
 PKGNAMEPREFIX=	gkrellm-
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}-${PORTVERSION}
 
