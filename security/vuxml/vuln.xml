@@ -4306,13 +4306,80 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>chromium</name>
-	<range><lt>12.0.742.112</lt></range>
+	<range><lt>13.0.782.107</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
 	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>Fixed in 13.0.782.107:<br/>
+	    [75821] Medium CVE-2011-2358: Always confirm an extension install
+	      via a browser dialog. Credit to Sergey Glazunov.<br/>
+	    [78841] High CVE-2011-2359: Stale pointer due to bad line box
+	      tracking in rendering. Credit to miaubiz and Martin Barbella.<br/>
+	    [79266] Low CVE-2011-2360: Potential bypass of dangerous file
+	      prompt. Credit to kuzzcc.<br/>
+	    [79426] Low CVE-2011-2361: Improve designation of strings in the
+	      basic auth dialog. Credit to kuzzcc.<br/>
+	    [Linux only] [81307] Medium CVE-2011-2782: File permissions error
+	      with drag and drop. Credit to Evan Martin of the Chromium
+	      development community.<br/>
+	    [83273] Medium CVE-2011-2783: Always confirm a developer mode NPAPI
+	      extension install via a browser dialog. Credit to Sergey
+	      Glazunov.<br/>
+	    [83841] Low CVE-2011-2784: Local file path disclosure via GL
+	      program log. Credit to kuzzcc.<br/>
+	    [84402] Low CVE-2011-2785: Sanitize the homepage URL in extensions.
+	      Credit to kuzzcc.<br/>
+	    [84600] Low CVE-2011-2786: Make sure the speech input bubble is
+	      always on-screen. Credit to Olli Pettay of Mozilla.<br/>
+	    [84805] Medium CVE-2011-2787: Browser crash due to GPU lock
+	      re-entrancy issue. Credit to kuzzcc.<br/>
+	    [85559] Low CVE-2011-2788: Buffer overflow in inspector
+	      serialization. Credit to Mikolaj Malecki.<br/>
+	    [85808] Medium CVE-2011-2789: Use after free in Pepper plug-in
+	      instantiation. Credit to Mario Gomes and kuzzcc.<br/>
+	    [86502] High CVE-2011-2790: Use-after-free with floating styles.
+	      Credit to miaubiz.<br/>
+	    [86900] High CVE-2011-2791: Out-of-bounds write in ICU. Credit to
+	      Yang Dingning from NCNIPC, Graduate University of Chinese Academy
+	      of Sciences.<br/>
+	    [87148] High CVE-2011-2792: Use-after-free with float removal.
+	      Credit to miaubiz.<br/>
+	    [87227] High CVE-2011-2793: Use-after-free in media selectors.
+	      Credit to miaubiz.<br/>
+	    [87298] Medium CVE-2011-2794: Out-of-bounds read in text iteration.
+	      Credit to miaubiz.<br/>
+	    [87339] Medium CVE-2011-2795: Cross-frame function leak. Credit to
+	      Shih Wei-Long.<br/>
+	    [87548] High CVE-2011-2796: Use-after-free in Skia. Credit to Google
+	      Chrome Security Team (Inferno) and Kostya Serebryany of the
+	      Chromium development community.<br/>
+	    [87729] High CVE-2011-2797: Use-after-free in resource caching.
+	      Credit to miaubiz.<br/>
+	    [87815] Low CVE-2011-2798: Prevent a couple of internal schemes from
+	      being web accessible. Credit to sirdarckcat of the Google Security
+	      Team.<br/>
+	    [87925] High CVE-2011-2799: Use-after-free in HTML range handling.
+	      Credit to miaubiz.<br/>
+	    [88337] Medium CVE-2011-2800: Leak of client-side redirect target.
+	      Credit to Juho Nurminen.<br/>
+	    [88591] High CVE-2011-2802: v8 crash with const lookups. Credit to
+	      Christian Holler.<br/>
+	    [88827] Medium CVE-2011-2803: Out-of-bounds read in Skia paths.
+	      Credit to Google Chrome Security Team (Inferno).<br/>
+	    [88846] High CVE-2011-2801: Use-after-free in frame loader. Credit
+	      to miaubiz.<br/>
+	    [88889] High CVE-2011-2818: Use-after-free in display box rendering.
+	      Credit to Martin Barbella.<br/>
+	    [89142] High CVE-2011-2804: PDF crash with nested functions. Credit
+	      to Aki Helin of OUSPG.<br/>
+	    [89520] High CVE-2011-2805: Cross-origin script injection. Credit to
+	      Sergey Glazunov.<br/>
+	    [90222] High CVE-2011-2819: Cross-origin violation in base URI
+	      handling. Credit to Sergey Glazunov.</p>
+
 	  <p>Fixed in 12.0.742.112:<br/>
 	    [77493] Medium CVE-2011-2345: Out-of-bounds read in NPAPI string
 	      handling. Credit to Philippe Arteau.<br/>
@@ -4769,11 +4836,41 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2011-2349</cvename>
       <cvename>CVE-2011-2350</cvename>
       <cvename>CVE-2011-2351</cvename>
+      <cvename>CVE-2011-2358</cvename>
+      <cvename>CVE-2011-2359</cvename>
+      <cvename>CVE-2011-2360</cvename>
+      <cvename>CVE-2011-2361</cvename>
+      <cvename>CVE-2011-2782</cvename>
+      <cvename>CVE-2011-2783</cvename>
+      <cvename>CVE-2011-2784</cvename>
+      <cvename>CVE-2011-2785</cvename>
+      <cvename>CVE-2011-2786</cvename>
+      <cvename>CVE-2011-2787</cvename>
+      <cvename>CVE-2011-2788</cvename>
+      <cvename>CVE-2011-2789</cvename>
+      <cvename>CVE-2011-2790</cvename>
+      <cvename>CVE-2011-2791</cvename>
+      <cvename>CVE-2011-2792</cvename>
+      <cvename>CVE-2011-2793</cvename>
+      <cvename>CVE-2011-2794</cvename>
+      <cvename>CVE-2011-2795</cvename>
+      <cvename>CVE-2011-2796</cvename>
+      <cvename>CVE-2011-2797</cvename>
+      <cvename>CVE-2011-2798</cvename>
+      <cvename>CVE-2011-2799</cvename>
+      <cvename>CVE-2011-2800</cvename>
+      <cvename>CVE-2011-2801</cvename>
+      <cvename>CVE-2011-2802</cvename>
+      <cvename>CVE-2011-2803</cvename>
+      <cvename>CVE-2011-2804</cvename>
+      <cvename>CVE-2011-2805</cvename>
+      <cvename>CVE-2011-2818</cvename>
+      <cvename>CVE-2011-2819</cvename>
     </references>
     <dates>
       <discovery>2010-10-19</discovery>
       <entry>2010-12-07</entry>
-      <modified>2011-06-29</modified>
+      <modified>2011-08-02</modified>
     </dates>
   </vuln>
 
