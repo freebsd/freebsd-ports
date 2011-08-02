@@ -1,5 +1,3 @@
 The JRefEntry DTD is a customization of the DocBook RefEntry
 model. The purpose of this customization is to mirror the order and
 nature of structured comment tags in JavaDoc documentation.
-
-WWW: http://docbook.sourceforge.net/projects/jrefentry/

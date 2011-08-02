@@ -18,5 +18,3 @@ You can change encoding style on the fly, or by setting up ~/.exrc.
 With configurations, for Japanese encodings, you can also enjoy the
 embedded canna support.
 See /usr/local/share/vi/README.* for details of multilingual patch.
-
-WWW: http://www.bostic.com/vi/

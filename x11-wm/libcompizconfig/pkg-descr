@@ -13,5 +13,3 @@ compiz and provides the following features:
 		manager like metacity or kwin.
  	- Its own Compiz configuration plugin "ccp" to provide all features
 		of libcompizconfig with compiz.
-
-WWW:	http://forums.compiz-fusion.org/

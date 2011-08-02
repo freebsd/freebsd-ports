@@ -13,5 +13,3 @@ pairs. Each of these structures can be accessed using its direct API, or
 it can be accessed using a dictionary abstraction.  Despite it's name,
 libdict can be used to store any kind of data and any kind of key (provided
 it fits into a 'void' pointer on your system).
-
-WWW: http://www.crazycoder.org/libdict.html

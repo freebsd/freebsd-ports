@@ -7,5 +7,3 @@ Usage:
 	code filter to make EUC code from other code.
 
 	cat JAPANESE_TEXT | nkf -e | osaka
-
-WWW: http://www.power.co.jp/tm/tanaka/unix.html

@@ -5,5 +5,3 @@ in web servers responses. Htpdate can be used as a daemon, to keep your
 computer synchronized.
 Accuracy of htpdate is usually better than 0.5 seconds (even better with
 multiple servers). Htpdate can also work through http proxy.
-
-WWW: http://www.clevervest.com/htp/

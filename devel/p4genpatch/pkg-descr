@@ -8,5 +8,3 @@ number.
 Both utilities were written for development on Perl itself by Andreas Konig
 and Gurusamy Sarathy, and were modified for use with multiple Perforce
 depots by Simon Cozens.
-
-WWW:	http://simon-cozens.org/programmer/secret-software.html

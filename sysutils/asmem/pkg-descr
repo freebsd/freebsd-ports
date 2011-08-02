@@ -2,5 +2,3 @@ The asmem tool is an AfterStep look-n-feel memory utilization monitor for X
 Windows. asmem shows the levels of utilization of the various kinds of memory
 and swap space. Multiple options for customization are available (colors,
 appearance, other stuff). 
-
-WWW: http://www.tigr.net/afterstep/view.php?applet=asmem/data

@@ -18,5 +18,3 @@ You can also use 'k12' as an alias for knmzn12x.pcf, 'k12b' for knmzn12xb.pcf,
 Simple usage:
 	% kterm -fn a12 -fk k12 -fl r12
 	% mule -fn r12
-
-WWW: http://www.din.or.jp/~storm/fonts/
