@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hunspell
-PORTVERSION=	20110731
+PORTVERSION=	20110801
 CATEGORIES=	polish textproc
 MASTER_SITES=	http://sjp.pl/slownik/ort/
 DISTNAME=	sjp-myspell-pl-${PORTVERSION}
@@ -25,8 +25,7 @@ PLIST_FILES=	%%DATADIR%%/pl_PL.aff \
 PLIST_DIRSTRY=	%%DATADIR%%
 
 post-extract:
-	@${MKDIR} ${WRKSRC}
-	@${EXTRACT_CMD} ${WRKDIR}/pl_PL.zip -d ${WRKSRC}
+	@${EXTRACT_CMD} ${WRKDIR}/pl_PL.zip -d ${WRKSRC}/
 
 do-install:
 	${MKDIR} ${DATADIR}/
