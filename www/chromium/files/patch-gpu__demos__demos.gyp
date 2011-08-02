@@ -1,6 +1,6 @@
---- ./gpu/demos/demos.gyp.orig	2010-12-16 02:11:23.000000000 +0100
-+++ ./gpu/demos/demos.gyp	2010-12-20 20:15:08.000000000 +0100
-@@ -11,7 +11,7 @@
+--- gpu/demos/demos.gyp.orig	2011-06-24 11:30:31.000000000 +0300
++++ gpu/demos/demos.gyp	2011-06-26 22:43:26.842781274 +0300
+@@ -14,7 +14,7 @@
        # also be compiled with -fPIC flag. Setting GYP_DEFINES="linux_fpic=1"
        # compiles everything with -fPIC. Disable pepper demos on linux/x64
        # unless linux_fpic is 1.
@@ -9,16 +9,7 @@
          'enable_pepper_demos%': 0,
        }, {
          'enable_pepper_demos%': 1,
-@@ -53,7 +53,7 @@
-         'framework/window.h',
-       ],
-       'conditions': [
--        ['OS=="linux"', {
-+        ['OS=="linux" or OS=="freebsd"', {
-           'dependencies': ['../../build/linux/system.gyp:gtk'],
-         }],
-       ],
-@@ -172,7 +172,7 @@
+@@ -107,7 +107,7 @@
            ],
          },
          'conditions': [

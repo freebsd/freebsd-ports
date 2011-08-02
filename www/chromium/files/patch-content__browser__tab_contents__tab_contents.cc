@@ -1,20 +1,11 @@
---- content/browser/tab_contents/tab_contents.cc.orig	2010-12-16 02:11:56.000000000 +0100
-+++ content/browser/tab_contents/tab_contents.cc	2010-12-20 20:15:08.000000000 +0100
-@@ -407,7 +407,7 @@
-                  NotificationService::AllSources());
-   registrar_.Add(this, NotificationType::RENDER_WIDGET_HOST_DESTROYED,
-                  NotificationService::AllSources());
--#if defined(OS_LINUX)
-+#if defined(TOOLKIT_GTK)
-   registrar_.Add(this, NotificationType::BROWSER_THEME_CHANGED,
-                  NotificationService::AllSources());
- #endif
-@@ -3181,7 +3181,7 @@
-       break;
-     }
+--- content/browser/tab_contents/tab_contents.cc.orig	2011-06-24 11:30:32.000000000 +0300
++++ content/browser/tab_contents/tab_contents.cc	2011-06-26 21:18:24.774780173 +0300
+@@ -1822,7 +1822,7 @@
+   if (!render_view_host->CreateRenderView(string16()))
+     return false;
  
 -#if defined(OS_LINUX)
-+#if defined(TOOLKIT_GTK)
-     case NotificationType::BROWSER_THEME_CHANGED: {
-       renderer_preferences_util::UpdateFromSystemSettings(
-           &renderer_preferences_, profile());
++#if defined(OS_LINUX) || defined(OS_FREEBSD)
+   // Force a ViewMsg_Resize to be sent, needed to make plugins show up on
+   // linux. See crbug.com/83941.
+   if (RenderWidgetHost* render_widget_host = rwh_view->GetRenderWidgetHost())
