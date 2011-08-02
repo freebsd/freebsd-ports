@@ -13,14 +13,12 @@ MASTER_SITES=	http://www.xmlmind.net/xmleditor/_download/ \
 PKGNAMESUFFIX=	-perso
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION:S/./_/g}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	dougb@FreeBSD.org
 COMMENT=	A validating XML editor featuring a word processor-like view
 
 USE_JAVA=	YES
 JAVA_VERSION=	1.5+
 NO_BUILD=	YES
-
-BROKEN=		unfetchable
 
 RESTRICTED=	Licensee may not distribute the Software
 
