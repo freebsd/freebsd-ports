@@ -241,6 +241,7 @@
     SUBDIR += qrfcview
     SUBDIR += qtm
     SUBDIR += recoll
+    SUBDIR += rednotebook
     SUBDIR += remember.el
     SUBDIR += remind
     SUBDIR += rolo
