@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}-cvs-2004-10-21
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module for object-oriented HTML generation
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	forgetHTML

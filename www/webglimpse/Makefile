@@ -17,6 +17,9 @@ COMMENT=	WWW interface to Glimpse search engine
 
 BROKEN=	Does not fetch
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	glimpse:${PORTSDIR}/textproc/glimpse
 
 MAKE_JOBS_SAFE=  yes

@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.dtek.chalmers.se/groups/dvd/dist/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Getting and setting Xv attributes
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 OPTIONS=	GTK1 "GTK1 support (Default is GTK2)" off
 
 USE_XORG=	x11 xv

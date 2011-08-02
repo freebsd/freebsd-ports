@@ -16,6 +16,9 @@ COMMENT=	A fast, portable multithreaded web server
 
 BROKEN=	Does not fetch
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 NO_WRKSUBDIR=	yes
 
 MAN8=	xitami.8

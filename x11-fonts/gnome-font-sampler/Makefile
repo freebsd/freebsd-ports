@@ -15,6 +15,9 @@ DISTNAME=	gfontsampler-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program for viewing several fonts at once
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_XORG=	x11
 USE_GNOME=	libgnomeui gnomeprefix
 USE_AUTOTOOLS=	libtool

@@ -18,6 +18,9 @@ RUN_DEPENDS=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 		${SITE_PERL}/SOAP/Lite.pm:${PORTSDIR}/net/p5-SOAP-Lite \
 		${SITE_PERL}/Digest/Perl/MD5.pm:${PORTSDIR}/security/p5-Digest-Perl-MD5
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 PLIST_FILES=	bin/ljpms
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
