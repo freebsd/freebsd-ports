@@ -73,7 +73,7 @@ RUN_DEPENDS+=	faac:${PORTSDIR}/audio/faac
 .endif
 
 .if defined(WITH_MPP)
-RUN_DEPENDS+=	mppenc:${PORTSDIR}/audio/musepack
+RUN_DEPENDS+=	mpcenc:${PORTSDIR}/audio/musepack
 .endif
 
 .if defined(WITH_REPLAYGAIN)
