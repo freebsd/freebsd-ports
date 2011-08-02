@@ -17,6 +17,8 @@ EXTRACT_ONLY=	# Empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	SGML version of the TEI-Lite DTD
 
+BROKEN=	does not fetch
+
 RUN_DEPENDS=	${XMLCATMGR}:${PORTSDIR}/textproc/xmlcatmgr
 
 NO_BUILD=	yes

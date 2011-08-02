@@ -14,6 +14,8 @@ DISTNAME=	cpg${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web picture gallery script
 
+BROKEN=	does not fetch
+
 USE_PHP=	mysql pcre
 USE_ZIP=	yes
 

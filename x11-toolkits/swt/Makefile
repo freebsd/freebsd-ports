@@ -16,6 +16,8 @@ DISTNAME=	swt-${DISTVERSION}-${DIST_EXT}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standard Widget Toolkit for Java
 
+BROKEN=	does not fetch
+
 ONLY_FOR_ARCHS=	i386 amd64
 
 CONFLICTS=	swt-3.1*

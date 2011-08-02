@@ -14,6 +14,8 @@ MASTER_SITES=	SF/${PORTNAME}/PhpWiki%201.3%20%28current%29/${PORTNAME}-${PORTVER
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PHP WikiWikiWeb
 
+BROKEN=	does not fetch
+
 CONFLICTS+=	phpwiki-1.2*
 LATEST_LINK=	phpwiki13
 
