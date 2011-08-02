@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	bind97
-PORTVERSION=	9.7.3.3
+PORTVERSION=	9.7.4
 PORTREVISION?=	0
 CATEGORIES=	dns net ipv6
 MASTER_SITES=	${MASTER_SITE_ISC} \
@@ -20,7 +20,7 @@ MAINTAINER=	dougb@FreeBSD.org
 COMMENT?=	The BIND DNS suite with updated DNSSEC and threads
 
 # ISC releases things like 9.4.0b3, which our versioning doesn't like
-ISCVERSION=	9.7.3-P3
+ISCVERSION=	9.7.4
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -29,7 +29,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 		--disable-symtable \
 		--with-randomdev=/dev/random
 
-CONFLICTS=	bind9*-9.[4568].* bind9-sdb-* host-*
+CONFLICTS=	bind9*-9.[45689].* bind9-sdb-* host-*
 
 OPTIONS=	SSL "Building without OpenSSL removes DNSSEC" on \
 		IDN "Add IDN support to dig, host, etc." off \
@@ -216,6 +216,8 @@ post-install:
 		${BIND_DESTETC}/rndc.conf.sample
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}/arm ${DOCSDIR}/misc
+	${INSTALL_DATA} ${WRKSRC}/RELEASE-NOTES-BIND-9.7.4.* ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/release-notes.css ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/*.html ${DOCSDIR}/arm
 	${INSTALL_DATA} ${WRKSRC}/doc/arm/Bv9ARM.pdf ${DOCSDIR}/
 	${INSTALL_DATA} ${WRKSRC}/doc/misc/[a-z]* ${DOCSDIR}/misc
