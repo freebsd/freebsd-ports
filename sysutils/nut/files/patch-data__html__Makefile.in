@@ -1,20 +1,20 @@
---- data/html/Makefile.in.orig	2007-07-05 15:21:23.000000000 +0200
-+++ data/html/Makefile.in	2007-08-28 15:25:08.000000000 +0200
-@@ -285,7 +285,7 @@
- uninstall-info-am:
+--- ./data/html/Makefile.in.orig	2011-05-22 13:48:44.069749930 +0300
++++ ./data/html/Makefile.in	2011-05-22 13:49:55.668124441 +0300
+@@ -299,7 +299,7 @@
+ 	-rm -rf .libs _libs
  install-dist_htmlDATA: $(dist_html_DATA)
  	@$(NORMAL_INSTALL)
 -	test -z "$(htmldir)" || $(MKDIR_P) "$(DESTDIR)$(htmldir)"
 +	test -z "$(dist_html_DATA)" -o -z "$(htmldir)" || $(MKDIR_P) "$(DESTDIR)$(htmldir)"
- 	@list='$(dist_html_DATA)'; for p in $$list; do \
+ 	@list='$(dist_html_DATA)'; test -n "$(htmldir)" || list=; \
+ 	for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f=$(am__strip_dir) \
-@@ -302,7 +302,7 @@
- 	done
+@@ -319,7 +319,7 @@
+ 	cd "$(DESTDIR)$(htmldir)" && rm -f $$files
  install-nodist_htmlDATA: $(nodist_html_DATA)
  	@$(NORMAL_INSTALL)
 -	test -z "$(htmldir)" || $(MKDIR_P) "$(DESTDIR)$(htmldir)"
 +	test -z "$(nodist_html_DATA)" -o -z "$(htmldir)" || $(MKDIR_P) "$(DESTDIR)$(htmldir)"
- 	@list='$(nodist_html_DATA)'; for p in $$list; do \
+ 	@list='$(nodist_html_DATA)'; test -n "$(htmldir)" || list=; \
+ 	for p in $$list; do \
  	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
- 	  f=$(am__strip_dir) \
