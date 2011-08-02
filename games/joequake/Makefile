@@ -9,7 +9,7 @@ PORTNAME=	joequake
 PORTVERSION=	0.15b1329
 PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	http://runecentral.com/joequake/
+MASTER_SITES=	http://joequake.runecentral.com/
 DISTNAME=	${PORTNAME}-v${PORTVERSION}-source
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-v0.15b1331-linux${EXTRACT_SUFX}

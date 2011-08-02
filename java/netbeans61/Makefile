@@ -9,7 +9,7 @@ PORTNAME=	netbeans
 PORTVERSION=	6.1
 PORTREVISION=	2
 CATEGORIES=	java devel
-MASTER_SITES=	http://download.netbeans.org/netbeans/6.1/final/zip/
+MASTER_SITES=	http://dlc.sun.com.edgesuite.net/netbeans/6.1/final/zip/
 DISTNAME=	netbeans-${PORTVERSION}-200805300101-ml
 
 MAINTAINER=	ports@FreeBSD.org
