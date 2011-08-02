@@ -8,7 +8,7 @@
 PORTNAME=	noweb
 PORTVERSION=	2.11b
 CATEGORIES=	devel
-MASTER_SITES=	http://www.eecs.harvard.edu/~nr/noweb/dist/
+MASTER_SITES=	ftp://www.eecs.harvard.edu/pub/nr/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org

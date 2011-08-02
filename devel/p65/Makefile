@@ -9,7 +9,7 @@
 PORTNAME=	p65
 PORTVERSION=	1.1
 CATEGORIES=	devel
-MASTER_SITES=	http://hkn.eecs.berkeley.edu/~mcmartin/P65/pl/
+MASTER_SITES=	https://hkn.eecs.berkeley.edu/~mcmartin/P65/pl/
 EXTRACT_SUFX=	# empty
 
 MAINTAINER=	ports@FreeBSD.org

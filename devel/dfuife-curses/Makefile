@@ -8,7 +8,7 @@
 PORTNAME=	dfuife-curses
 PORTVERSION=	1.5.1.20050829
 CATEGORIES=	devel
-MASTER_SITES=	http://exodus.xmms.se/~alex/
+MASTER_SITES=	http://people.xmms2.org/~alex/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	DFUI curses frontend

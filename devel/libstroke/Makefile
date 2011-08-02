@@ -9,7 +9,7 @@ PORTNAME=	libstroke
 PORTVERSION=	0.5.1
 PORTREVISION=	4
 CATEGORIES=	devel
-MASTER_SITES=	http://www.etla.net/libstroke/
+MASTER_SITES=	http://etla.net/libstroke/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A stroke translation library
