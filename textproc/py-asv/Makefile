@@ -8,7 +8,7 @@
 PORTNAME=	asv
 PORTVERSION=	0.5
 CATEGORIES=	textproc python
-MASTER_SITES=	http://tratt.net/laurie/computing/python/asv/releases/
+MASTER_SITES=	http://tratt.net/laurie/src/python/asv/releases/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org

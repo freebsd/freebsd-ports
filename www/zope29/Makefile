@@ -8,7 +8,7 @@
 PORTNAME=	zope29
 PORTVERSION=	2.9.9
 CATEGORIES=	www python zope
-MASTER_SITES=	http://www.zope.org/Products/Zope/${PORTVERSION}/
+MASTER_SITES=	http://old.zope.org/Products/Zope/${PORTVERSION}/
 DISTNAME=	Zope-${PORTVERSION}-final
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	zope

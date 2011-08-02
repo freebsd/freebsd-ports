@@ -9,7 +9,7 @@ PORTNAME=	xcb
 PORTVERSION=	2.4
 PORTREVISION=	2
 CATEGORIES=	x11
-MASTER_SITES=	http://www.goof.com/pcg/marc/data/
+MASTER_SITES=	http://oldhome.schmorp.de/marc/data/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool for managing x11 cut-buffers

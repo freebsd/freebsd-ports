@@ -8,7 +8,7 @@
 PORTNAME=	zope-cmf
 PORTVERSION=	1.4.8
 CATEGORIES=	www zope
-MASTER_SITES=	http://www.zope.org/Products/CMF/CMF-${PORTVERSION}/
+MASTER_SITES=	http://old.zope.org/Products/CMF/CMF-${PORTVERSION}/
 DISTNAME=	CMF-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org

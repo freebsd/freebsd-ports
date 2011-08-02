@@ -9,7 +9,7 @@ PORTNAME=	wmblob
 PORTVERSION=	1.0.3
 PORTREVISION=	7
 CATEGORIES=	x11 windowmaker
-MASTER_SITES=	http://dockapps.org/files/155/541/
+MASTER_SITES=	http://www.dockapps.org/files/155/541/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Showing moving blobs

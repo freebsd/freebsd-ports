@@ -8,7 +8,7 @@
 PORTNAME=	mysqluserfolder
 PORTVERSION=	1.0.5
 CATEGORIES=	www zope
-MASTER_SITES=	http://www.zope.org/Members/vladap/${ZOPEPRODUCTNAME}/release-${PORTVERSION}/
+MASTER_SITES=	http://old.zope.org/Members/vladap/${ZOPEPRODUCTNAME}/release-${PORTVERSION}/
 PKGNAMEPREFIX=	zope-
 DISTNAME=	${ZOPEPRODUCTNAME}-${PORTVERSION}
 

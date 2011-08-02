@@ -9,7 +9,7 @@ PORTNAME=	skippy-xd
 PORTVERSION=	0.5.0
 PORTREVISION=	1
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://thegraveyard.org/files/
+MASTER_SITES=	http://cdn.thegraveyard.org/releases/skippy/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A full-screen X11 task-switcher like Apple's Expose
