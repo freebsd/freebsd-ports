@@ -1786,7 +1786,6 @@ x11/gnome-launch-box||2011-05-01|Has expired: Upstream disapear and distfile is 
 x11/gtk-themepreview||2011-05-01|Has expired: Upstream disapear and distfile is no more available
 x11/gxset||2011-05-01|Has expired: Upstream disapear and distfile is no more available
 x11/portoseguro||2011-05-01|Has expired: Upstream disapear and distfile is no more available
-x11/props||2011-05-01|Has expired: Upstream disapear and distfile is no more available
 x11/wmfstatus||2011-05-01|Has expired: Upstream disapear and distfile is no more available
 x11/wmoldmenu2new||2011-05-01|Has expired: Upstream disapear and distfile is no more available
 x11/xbindkeys_config||2011-05-01|Has expired: Upstream disapear and distfile is no more available
@@ -1811,7 +1810,6 @@ chinese/iiimf-le-ude||2011-05-01|Removed, depends on expired library
 textproc/ctpp|textproc/ctpp2|2011-05-01|Has expired: Deprecated please use ctpp2 textproc/ctpp2
 textproc/dsssl-docbook-cygnus||2011-05-01|Has expired: Distfile is no more available
 textproc/fdp-tools||2011-05-01|Has expired: Distfile is no more available
-textproc/gtkdiff||2011-05-01|Has expired: Upstream disapear and distfile is no more available
 textproc/iiimf-client-lib||2011-05-01|Has expired: Upstream disapear and distfile is no more available
 textproc/iiimf-csconv||2011-05-01|Has expired: Upstream disapear and distfile is no more available
 textproc/iiimf-headers||2011-05-01|Has expired: Upstream disapear and distfile is no more available
