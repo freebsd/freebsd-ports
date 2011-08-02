@@ -15,6 +15,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Macro Assembler for Atmel AVR microcontrollers
 
+BROKEN=	does not fetch
+
 WRKSRC=		${WRKDIR}
 USE_AUTOTOOLS=	aclocal autoconf automake
 AUTOMAKE_ARGS=	-a
