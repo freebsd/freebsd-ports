@@ -2,7 +2,7 @@ bin/args
 bin/car
 bin/commoncpp-config
 bin/mdsum
-bin/scrub
+bin/scrub-files
 bin/sockaddr
 bin/ucommon-config
 bin/zerofill
