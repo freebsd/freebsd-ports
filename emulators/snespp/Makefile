@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.tbrk.org/software/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Kernel module for SNES controllers on a parallel port
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2011-09-01
+
 BROKEN=	does not compile
 
 KMODDIR=	/boot/modules

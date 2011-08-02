@@ -14,6 +14,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modern GUI builder for the GTK+ toolkit
 
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/format.hpp:${PORTSDIR}/devel/boost-libs
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		guiloader-c++.1:${PORTSDIR}/devel/guiloader-c++ \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24

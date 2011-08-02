@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.hlstats-community.org/files/42/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A real-time stats parser for Half Life & its mods
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 
 BROKEN=		checksum mismatch

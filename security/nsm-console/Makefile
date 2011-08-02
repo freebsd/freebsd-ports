@@ -13,6 +13,9 @@ MASTER_SITES=	http://writequit.org/projects/nsm-console/files/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A framework for performing analysis on packet capture files
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2011-09-01
+
 BROKEN=		does not fetch
 
 USE_RUBY=	yes

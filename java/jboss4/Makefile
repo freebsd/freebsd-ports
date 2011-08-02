@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source J2EE application server (4.x family)
 
+DEPRECATED=	BROKEN for more than 6 month
+EXPIRATION_DATE=	2011-09-01
+
 BROKEN=		does not build with new ant
 
 LATEST_LINK=	jboss4
