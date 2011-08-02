@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of utilities for extracting information from DNS records
 
+BROKEN=	does not fetch
+
 USE_PERL5=	YES
 
 NO_BUILD=	YES

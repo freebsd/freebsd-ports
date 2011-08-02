@@ -16,6 +16,8 @@ MASTER_SITES=	http://gnuboy.unix-fu.org/src/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nintendo GameBoy emulator
 
+BROKEN=	does not fetch
+
 LIB_DEPENDS=	vga.1:${PORTSDIR}/graphics/svgalib
 
 USE_SDL=	sdl
