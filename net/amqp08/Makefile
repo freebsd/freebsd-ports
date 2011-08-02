@@ -8,7 +8,7 @@
 PORTNAME=	amqp08
 PORTVERSION=	20090705
 CATEGORIES=	net
-MASTER_SITES=	http://jira.amqp.org/confluence/download/attachments/720900/
+MASTER_SITES=	http://www.amqp.org/confluence/download/attachments/720900/
 DISTNAME=	amqp0-8.xml
 EXTRACT_SUFX=
 DIST_SUBDIR=	amqp
