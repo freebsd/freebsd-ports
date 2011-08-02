@@ -40,7 +40,6 @@
     SUBDIR += fluxbox-tenr-styles-pack
     SUBDIR += fvwm-themes
     SUBDIR += geramik
-    SUBDIR += gnome-art
     SUBDIR += gnome-backgrounds
     SUBDIR += gnome-bluecurve-theme
     SUBDIR += gnome-icons
@@ -62,7 +61,6 @@
     SUBDIR += gnome-icons-stylish
     SUBDIR += gnome-icons-ximian-south
     SUBDIR += gnome-look
-    SUBDIR += gnome-splashscreen-manager
     SUBDIR += gnome-themes
     SUBDIR += gnome-themes-extras
     SUBDIR += gtk-aluminumalloy-cryogenic-theme

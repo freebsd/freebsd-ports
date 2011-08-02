@@ -646,7 +646,6 @@
     SUBDIR += rexima
     SUBDIR += rezound
     SUBDIR += rhythmbox
-    SUBDIR += rio
     SUBDIR += rio500
     SUBDIR += rioutil
     SUBDIR += ripit
@@ -660,7 +659,6 @@
     SUBDIR += ruby-mp3info
     SUBDIR += ruby-mp3tag
     SUBDIR += ruby-musicbrainz
-    SUBDIR += ruby-musicextras
     SUBDIR += ruby-smf
     SUBDIR += ruby-taglib
     SUBDIR += ruby-vorbisfile
