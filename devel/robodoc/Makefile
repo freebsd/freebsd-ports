@@ -8,7 +8,7 @@
 PORTNAME=	robodoc
 PORTVERSION=	4.99.36
 CATEGORIES=	devel
-MASTER_SITES=	http://www.xs4all.nl/~rfsber/Robo/DistSource/
+MASTER_SITES=	http://rfsber.home.xs4all.nl/Robo/DistSource/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Code reference program similar to cxref that produces HTML

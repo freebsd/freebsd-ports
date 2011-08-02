@@ -9,7 +9,7 @@ PORTNAME=	portlet-api
 PORTVERSION=	1.0
 PORTREVISION=	2
 CATEGORIES=	devel java
-MASTER_SITES=	http://www.ibiblio.org/maven/portlet-api/jars/
+MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/maven/portlet-api/
 EXTRACT_SUFX=	.jar
 EXTRACT_ONLY=	# empty
 
