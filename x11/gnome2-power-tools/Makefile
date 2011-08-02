@@ -27,7 +27,6 @@ RUN_DEPENDS=	${LOCALBASE}/share/epiphany-extensions/adblock-patterns:${PORTSDIR}
 		devilspie:${PORTSDIR}/x11-wm/devilspie \
 		${LOCALBASE}/lib/nautilus/extensions-2.0/libnautilus-open-terminal.so:${PORTSDIR}/deskutils/nautilus-open-terminal \
 		gtweakui-menus:${PORTSDIR}/deskutils/gtweakui \
-		gnome-art:${PORTSDIR}/x11-themes/gnome-art \
 		brightside:${PORTSDIR}/x11/brightside \
 		evolution-gconf-filter-exchange:${PORTSDIR}/devel/evolution-gconf-tools \
 		${LOCALBASE}/libexec/quick-lounge-applet:${PORTSDIR}/misc/quick-lounge-applet \
