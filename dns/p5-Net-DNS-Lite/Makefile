@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Net-DNS-Lite
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	dns perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Pure-perl DNS resolver with support for timeout
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
 
