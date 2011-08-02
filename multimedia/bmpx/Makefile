@@ -14,6 +14,9 @@ MASTER_SITES=	http://files.backtrace.info/releases/0.40/
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Media player geared towards usability, technical efficiency and looks
 
+DEPRECATED=	Broken for more than 6 month, development as ceased
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	tag.1:${PORTSDIR}/audio/taglib \
 		cairomm-1.0.1:${PORTSDIR}/graphics/cairomm \
 		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
