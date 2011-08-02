@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tren
-PORTVERSION=	1.239
+PORTVERSION=	1.242
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://www.tundraware.com/Software/tren/
 
