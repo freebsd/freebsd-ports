@@ -7,7 +7,7 @@
 
 PORTNAME=		dm-chunked_query
 PORTVERSION=		0.3.0
-CATEGORIES=		graphics rubygems
+CATEGORIES=		databases rubygems
 MASTER_SITES=		RG
 
 MAINTAINER=		zi@FreeBSD.org
