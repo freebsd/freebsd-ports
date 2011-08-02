@@ -1,0 +1,10 @@
+bin/props
+lib/X11/locale/C/props/C
+lib/X11/locale/C/props/basic_setting
+lib/X11/locale/C/props/en_AU
+lib/X11/locale/C/props/en_CA
+lib/X11/locale/C/props/en_UK
+lib/X11/locale/C/props/en_US
+@dirrm lib/X11/locale/C/props
+@dirrm lib/X11/locale/C
+@dirrm lib/X11/locale

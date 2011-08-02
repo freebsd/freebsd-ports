@@ -1,0 +1,11 @@
+--- props.c.orig	Sun Nov  9 01:18:50 1997
++++ props.c	Sun Nov  9 01:24:50 1997
+@@ -816,7 +816,7 @@
+     else
+     {
+         strcpy(localepath, openwin_dir);
+-        strcat(localepath, "/lib/locale/");
++        strcat(localepath, "/lib/X11/locale/C/");
+         bindtextdomain("props", localepath);
+     }
+ 
