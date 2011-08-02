@@ -2439,3 +2439,10 @@ www/p5-PLP||2011-08-01|Has expired: No more upstream, looks like an abandonware
 www/wcol||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
 x11-toolkits/sdl_gui||2011-08-01|Has expired: Looks like an abandonware, no more public distfiles
 www/contenido||2011-08-01|Has expired: ancient version of PHP needed
+audio/rio||2011-08-02|Has expired: Look like an abandonware, no more public distfile
+audio/ruby-musicextras||2011-08-02|Has expired: Upcoming ruby-gnome removes dependencies
+deskutils/sshmenu||2011-08-02|Has expired: Upcoming ruby-gnome removes dependencies
+japanese/gsuica||2011-08-02|Has expired: Upcoming ruby-gnome removes dependencies
+science/gave||2011-08-02|Has expired: Upcoming ruby-gnome removes dependencies
+x11-themes/gnome-art||2011-08-02|Has expired: Upcoming ruby-gnome removes dependencies
+x11-themes/gnome-splashscreen-manager||2011-08-02|Has expired: Upcoming ruby-gnome removes dependencies

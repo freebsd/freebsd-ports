@@ -255,7 +255,6 @@
     SUBDIR += sliderule
     SUBDIR += snotes
     SUBDIR += splashsetter
-    SUBDIR += sshmenu
     SUBDIR += steadyflow
     SUBDIR += strigi
     SUBDIR += sugarcrm

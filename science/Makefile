@@ -47,7 +47,6 @@
     SUBDIR += fvm
     SUBDIR += g3data
     SUBDIR += gamess
-    SUBDIR += gave
     SUBDIR += gchemutils
     SUBDIR += gdis
     SUBDIR += gerris
