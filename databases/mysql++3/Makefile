@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mysql++
-PORTVERSION=	3.0.8
-PORTREVISION=	1
+PORTVERSION=	3.1.0
 CATEGORIES=	databases devel
 MASTER_SITES=	http://tangentsoft.net/mysql++/releases/ \
 		T32.TecNik93.com/ports/others_ports/${PORTNAME}/sources/
