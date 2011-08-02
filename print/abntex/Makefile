@@ -17,6 +17,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Both classes and styles for both LaTex and bibtex for ABNT rules
 
+BROKEN= does not fetch
+
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}

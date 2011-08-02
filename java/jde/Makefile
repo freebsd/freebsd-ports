@@ -15,6 +15,8 @@ PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Java Development Environment for Emacs
 
+BROKEN=	does not fetch
+
 USE_EMACS=	yes
 
 .include <bsd.port.pre.mk>
