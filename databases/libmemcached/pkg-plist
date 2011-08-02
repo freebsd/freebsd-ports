@@ -14,6 +14,7 @@ include/libhashkit/configure.h
 include/libhashkit/digest.h
 include/libhashkit/function.h
 include/libhashkit/hashkit.h
+include/libhashkit/hashkit.hpp
 include/libhashkit/strerror.h
 include/libhashkit/str_algorithm.h
 include/libhashkit/types.h
@@ -22,6 +23,7 @@ include/libmemcached/allocators.h
 include/libmemcached/analyze.h
 include/libmemcached/array.h
 include/libmemcached/auto.h
+include/libmemcached/basic_string.h
 include/libmemcached/behavior.h
 include/libmemcached/callback.h
 include/libmemcached/configure.h
@@ -40,15 +42,16 @@ include/libmemcached/memcached.hpp
 include/libmemcached/memcached_util.h
 include/libmemcached/memcached/protocol_binary.h
 include/libmemcached/memcached/vbucket.h
+include/libmemcached/namespace.h
 include/libmemcached/options.h
 include/libmemcached/parse.h
-include/libmemcached/prefix_key.h
 include/libmemcached/platform.h
 include/libmemcached/protocol_handler.h
 include/libmemcached/protocol/cache.h
 include/libmemcached/protocol/callback.h
 include/libmemcached/quit.h
 include/libmemcached/result.h
+include/libmemcached/return.h
 include/libmemcached/sasl.h
 include/libmemcached/server.h
 include/libmemcached/server_list.h
@@ -58,6 +61,8 @@ include/libmemcached/strerror.h
 include/libmemcached/string.h
 include/libmemcached/types.h
 include/libmemcached/util.h
+include/libmemcached/util/flush.h
+include/libmemcached/util/pid.h
 include/libmemcached/util/ping.h
 include/libmemcached/util/pool.h
 include/libmemcached/util/version.h
@@ -70,7 +75,7 @@ lib/libhashkit.so
 lib/libhashkit.so.1
 lib/libmemcached.la
 lib/libmemcached.so
-lib/libmemcached.so.7
+lib/libmemcached.so.8
 lib/libmemcachedprotocol.la
 lib/libmemcachedprotocol.so
 lib/libmemcachedprotocol.so.0
