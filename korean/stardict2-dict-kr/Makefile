@@ -15,6 +15,8 @@ DIST_SUBDIR=	stardict
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Korean and foreign language Dictionaries for StarDict
 
+BROKEN=	does not fetch
+
 RUN_DEPENDS=	stardict:${PORTSDIR}/textproc/stardict2
 
 NO_BUILD=	yes

@@ -15,6 +15,8 @@ DISTNAME=	tipp10_source_v2-0-1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 10 finger touch typing learning program
 
+BROKEN=	does not fetch
+
 RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlite2.so:${PORTSDIR}/databases/qt4-sqlite-plugin \
 		${LOCALBASE}/lib/qt4/plugins/sqldrivers/libqsqlite.so:${PORTSDIR}/databases/qt4-sqlite3-plugin
 

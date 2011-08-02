@@ -16,6 +16,8 @@ EXTRACT_ONLY=	# defined
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Test remote system for unsecured mail relay
 
+BROKEN=	does not fetch
+
 USE_PERL5=	yes
 
 NO_WRKSUBDIR=	yes

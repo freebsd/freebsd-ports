@@ -18,6 +18,8 @@ DIST_SUBDIR=	KDE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Maltese messages and documentation for KDE3
 
+BROKEN=	does not fetch
+
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
 USE_GMAKE=	yes

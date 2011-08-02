@@ -14,6 +14,8 @@ MASTER_SITES=	http://www.draves.org/bomb/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive display hack for SVGAlib or X
 
+BROKEN=	does not fetch
+
 LIB_DEPENDS=	esd.2:${PORTSDIR}/audio/esound	\
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		vga.1:${PORTSDIR}/graphics/svgalib \

@@ -14,6 +14,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for handling 3DS (3D Studio) files
 
+BROKEN=	does not fetch
+
 USE_ZIP=	yes
 USE_LDCONFIG=	yes
 USE_GL=		glut

@@ -16,6 +16,8 @@ DISTNAME=	${PORTNAME}-py-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python module for Ming which allows you to create Flash 4/5 movies
 
+BROKEN=	does not fetch
+
 LIB_DEPENDS=	ming.4:${PORTSDIR}/graphics/ming
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/py_ext
