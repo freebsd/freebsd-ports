@@ -8,7 +8,7 @@
 PORTNAME=	htmlpp
 PORTVERSION=	4.2a
 CATEGORIES=	www
-MASTER_SITES=	http://www.imatix.com/pub/tools/
+MASTER_SITES=	http://legacy.imatix.com/pub/tools/
 DISTNAME=	htmlp42a
 EXTRACT_SUFX=	.tgz
 

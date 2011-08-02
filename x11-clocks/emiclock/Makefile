@@ -9,7 +9,7 @@ PORTNAME=	emiclock
 PORTVERSION=	2.0.2
 PORTREVISION=	3
 CATEGORIES=	x11-clocks
-MASTER_SITES=	http://download.vector.co.jp/pack/unix/personal/tokei/
+MASTER_SITES=	http://ftp.vector.co.jp/pack/unix/personal/tokei/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hyper-animated face analog clock for X11

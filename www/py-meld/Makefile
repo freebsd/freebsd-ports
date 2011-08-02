@@ -8,7 +8,7 @@
 PORTNAME=	meld
 PORTVERSION=	2.1.3
 CATEGORIES=	www python
-MASTER_SITES=	http://www.entrian.com/PyMeld/
+MASTER_SITES=	http://entrian.com/PyMeld/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	PyMeld
 EXTRACT_SUFX=	.py

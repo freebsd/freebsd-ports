@@ -9,7 +9,7 @@ PORTNAME=	w9wm
 PORTVERSION=	0.4.2
 PORTREVISION=	2
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://www.grassouille.org/code/w9wm/src/
+MASTER_SITES=	http://www.drieu.org/code/w9wm/src/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A hack of 9wm to give virtual screens
