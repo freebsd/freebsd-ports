@@ -15,6 +15,9 @@ DISTFILES=	inform630_source.zip inform_library611.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiler for producing text adventure games
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 .if !defined(NOPORTDOCS)
 MASTER_SITES+=	ftp://ftp.ifarchive.org/if-archive/infocom/compilers/inform6/manuals/
 DISTFILES+=	designers_manual_4.zip

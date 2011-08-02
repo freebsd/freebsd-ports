@@ -15,6 +15,9 @@ DISTNAME=	iSiloBSD
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts documents from text/HTML to iSilo format
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_ZIP=	yes
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes

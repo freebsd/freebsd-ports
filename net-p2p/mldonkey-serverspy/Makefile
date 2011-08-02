@@ -16,6 +16,9 @@ DISTNAME=	mlservspy-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MLDonkey Server Spy broadcasts your whereabouts on the eDonkey network
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	\
 	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick \
 	${SITE_PERL}/${PERL_ARCH}/auto/TimeDate:${PORTSDIR}/devel/p5-TimeDate \

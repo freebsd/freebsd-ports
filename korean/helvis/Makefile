@@ -16,6 +16,9 @@ DISTNAME=	helvis-1.8h2-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of vi/ex, the standard UNIX editor, supporting Hangul
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 MAN1=		ctags.1 elvis.1 fmt.1 ref.1
 
 post-patch:

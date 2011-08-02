@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.upl.cs.wisc.edu/~hartmann/sweep/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minesweeper-style game for text-mode terminals
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-prefsdir=${DATADIR} \

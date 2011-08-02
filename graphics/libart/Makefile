@@ -14,6 +14,9 @@ MASTER_SITES=	http://tiger.bioinf.cs.uni-potsdam.de/free/Graphics/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for high-performance 2D graphics
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 BROKEN=	Does not fetch
 
 USE_AUTOTOOLS=	libtool

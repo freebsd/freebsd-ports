@@ -14,6 +14,9 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An alternative for S/KEY's key command
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 GNU_CONFIGURE=	yes
 WRKSRC=			${WRKDIR}/${DISTNAME}/obj/FreeBSD
 PATCH_ARGS=	-d ${WRKDIR}/${DISTNAME} --forward --quiet -E ${PATCH_STRIP}

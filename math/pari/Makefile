@@ -15,6 +15,9 @@ DISTNAME=	pari-${MAJOR_VERSION}.${MINOR_VERSION}.${REV_VERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mathematics library and advanced calculator package
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 MAKE_JOBS_UNSAFE=	yes

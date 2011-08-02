@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple program to generate anagrams
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	wordplay

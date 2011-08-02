@@ -15,6 +15,9 @@ DISTFILES=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mode of Emacs for editing MagicPoint files
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 #RUN_DEPENDS=	mgp:${PORTSDIR}/misc/magicpoint
 
 EXTRACT_ONLY=	# empty

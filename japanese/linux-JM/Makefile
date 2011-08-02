@@ -14,6 +14,9 @@ DISTFILES=	${DISTFILES_GNU} ${DISTFILES_OTHERS}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Japanese translated man pages by JM Project
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 CONFLICTS=	ja-samba-2.*
 
 DIST_SUBDIR=	${PORTNAME}

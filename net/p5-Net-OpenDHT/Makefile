@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Access the Open Distributed Hash Table (Open DHT)
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	${SITE_PERL}/Class/Accessor/Chained/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
 		${SITE_PERL}/App/Cache.pm:${PORTSDIR}/devel/p5-App-Cache \
 		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \

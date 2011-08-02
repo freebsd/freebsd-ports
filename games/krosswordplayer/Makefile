@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE crossword puzzle game
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_KDELIBS_VER=3
 USE_AUTOTOOLS=	libtool
 

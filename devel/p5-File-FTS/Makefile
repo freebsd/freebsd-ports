@@ -14,6 +14,9 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Perl extension for File Traversing System
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 PERL_MODBUILD=		yes
 
 MAN3=			File::FTS.3

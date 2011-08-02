@@ -22,6 +22,9 @@ EXTRACT_SUFX=	-src-10.20.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Babies hide under your windows
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_IMAKE=	yes
 USE_XORG=	x11 xext
 

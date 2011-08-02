@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pointless puzzle game for Tcl/Tk
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	wish8.2:${PORTSDIR}/x11-toolkits/tk82
 
 NO_WRKSUBDIR=	yes

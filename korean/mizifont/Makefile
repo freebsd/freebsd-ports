@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.rpm
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mizi Research's Korean X11 Font(ksc5601.1987-[01] encoding)
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 BROKEN=	Does not fetch
 
 EXTRACT_DEPENDS=rpm2cpio:${PORTSDIR}/archivers/rpm

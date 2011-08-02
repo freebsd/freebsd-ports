@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Class used to represent DBI database tables
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 PERL_CONFIGURE=	yes
 
 MAN3=	DBIx::Table.3

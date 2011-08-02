@@ -12,6 +12,9 @@ MASTER_SITES=	ftp://ftp.lexa.ru/pub/domestic/snar/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Safe (in the mean of stack smashing) reincarnation of strcpy et al
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 BROKEN=	does not fetch
 
 ONLY_FOR_ARCHS=	i386

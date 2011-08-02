@@ -14,6 +14,9 @@ MASTER_SITES=	ftp://local-distfiles.freebsd.org.cn/pub/china-ports/hamigua/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very simple Chinese chess program
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	alleg.42:${PORTSDIR}/devel/allegro \
 		lirc_client.2:${PORTSDIR}/comms/lirc
 

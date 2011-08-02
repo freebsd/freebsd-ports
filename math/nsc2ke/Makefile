@@ -19,6 +19,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Navier-Stokes solver
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 RESTRICTED=	No resale, contact author for commercial usage
 
 BROKEN=		fails to fetch

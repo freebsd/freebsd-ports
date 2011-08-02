@@ -15,6 +15,9 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An XML internationalization tool
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 BROKEN=	Does not fetch
 
 LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml

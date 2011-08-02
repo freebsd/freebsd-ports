@@ -16,6 +16,9 @@ MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mozilla/HtmlDoc/Netscape Postscript Filter
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	freetype:${PORTSDIR}/print/freetype2
 
 USE_ICONV=	yes

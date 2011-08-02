@@ -13,6 +13,9 @@ MASTER_SITES=	http://rofi.roger-ferrer.org/eiciel/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GNOME-based ACL editor, with integration into Nautilus
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
 LICENSE=	GPLv2

@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GUI for the ircII Internet Relay Chat client
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	irc:${PORTSDIR}/irc/ircII
 
 USE_TK_RUN=	yes

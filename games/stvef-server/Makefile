@@ -14,6 +14,9 @@ DISTFILES=	stvefLinuxDedicated120.zip
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Star Trek Voyager: Elite Forces dedicated server for Linux
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 ONLY_FOR_ARCHS=	i386
 USE_ZIP=	yes
 USE_LINUX=	yes

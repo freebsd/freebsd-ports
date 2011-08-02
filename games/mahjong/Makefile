@@ -17,6 +17,9 @@ DISTNAME=	mj-${PORTVERSION}-src
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A networked Mah Jong program, together with a computer player
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_PERL5_BUILD=	yes
 USE_GNOME=	gtk12
 USE_GMAKE=	yes

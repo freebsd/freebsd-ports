@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.src.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A set of software tools for medical image processing
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 LICENSE=	MIT
 
 LIB_DEPENDS=	lapack.4:${PORTSDIR}/math/lapack

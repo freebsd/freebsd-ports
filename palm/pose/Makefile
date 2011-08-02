@@ -17,6 +17,9 @@ DISTFILES=	emulator_src_3.5.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Palm OS(R) Emulator
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 USE_GL=		yes

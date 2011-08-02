@@ -15,6 +15,9 @@ DISTNAME=	z80-asm
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Z80 assembly code assembler and disassembler
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 BROKEN=	Does not fetch
 
 MAN1=		z80-asm.1 z80-dis.1

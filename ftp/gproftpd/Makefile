@@ -14,6 +14,9 @@ MASTER_SITES=	http://mange.dynalias.org/linux/gproftpd/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gtk2 Frontend for proftpd daemon
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 BROKEN=	Does not fetch
 
 RUN_DEPENDS=	proftpd:${PORTSDIR}/ftp/proftpd

@@ -17,6 +17,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	QKMJ - QK Ma2Jong4 client
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	compat4x-i386>=0:${PORTSDIR}/misc/compat4x \
 		compat5x-${ARCH}>=0:${PORTSDIR}/misc/compat5x
 

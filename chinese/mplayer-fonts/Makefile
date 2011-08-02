@@ -16,6 +16,9 @@ EXTRACT_ONLY=	${SUBFONT_DISTNAME}.tar.bz2 mplayer-fontmap-chinese.tar.bz2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A chinese font pack for the mplayer OSD and SUB
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libiconv.so.3:${PORTSDIR}/converters/libiconv \
 		${FREETYPE_CONFIG}:${PORTSDIR}/print/freetype2 \
 		${ARPHIC_FONTDIR}/bsmi00lp.ttf:${PORTSDIR}/chinese/arphicttf \

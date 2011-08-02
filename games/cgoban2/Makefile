@@ -15,6 +15,9 @@ DISTNAME=	cgoban-unix-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internet Go Server client and game editor
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 EXTRACT_DEPENDS=unzip:${PORTSDIR}/archivers/unzip
 RUN_DEPENDS=	java:${PORTSDIR}/java/javavmwrapper
 

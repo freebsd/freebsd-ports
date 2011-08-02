@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Console based sudoku games
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 PLIST_FILES=	bin/sudoku \
 		share/sudoku/template
 PLIST_DIRS=	share/sudoku

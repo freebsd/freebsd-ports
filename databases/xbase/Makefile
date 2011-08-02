@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An xbase (i.e. dBase, FoxPro, etc.) compatible C++ class library
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 BROKEN=	Does not fetch
 
 USE_AUTOTOOLS=	libtool

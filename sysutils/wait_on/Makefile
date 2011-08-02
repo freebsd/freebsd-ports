@@ -14,6 +14,9 @@ MASTER_SITES=	http://mirror2.unixfreunde.de/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Enable shell scripts to monitor directories for new files
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 WRKSRC=		${WRKDIR}/wait_on
 
 MAN1=		wait_on.1

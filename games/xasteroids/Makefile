@@ -15,6 +15,9 @@ DISTFILES=	xasteroids.sh.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 based asteroids style arcade game
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_IMAKE=	yes
 USE_XORG=	x11 xext
 NO_WRKSUBDIR=	yes

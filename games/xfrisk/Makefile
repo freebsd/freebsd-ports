@@ -15,6 +15,9 @@ DISTNAME=	XFrisk-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multi-player networked Risk game for X11
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
 NO_CDROM=	Possible trademark infringement

@@ -40,6 +40,9 @@ EXTRACT_ONLY=
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	These are the pawn tablebases (3,4,5 man) for crafty
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	crafty:${PORTSDIR}/games/crafty
 
 NO_BUILD=	yes

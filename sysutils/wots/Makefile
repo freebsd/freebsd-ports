@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.hpcc.uh.edu/~tonyc/tools/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	System log watch/alert utility, similar to swatch, written in Perl
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 BUILD_DEPENDS=	${SITE_PERL}/Mail/Send.pm:${PORTSDIR}/mail/p5-Mail-Tools \
 		${SITE_PERL}/Term/ANSIColor.pm:${PORTSDIR}/devel/p5-Term-ANSIColor
 RUN_DEPENDS:=	${BUILD_DEPENDS}

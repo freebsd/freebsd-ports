@@ -17,6 +17,9 @@ EXTRACT_SUFX=	.tar.Z
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Motorola 6811 simulator
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 NO_WRKSUBDIR=	yes
 
 .include <bsd.port.pre.mk>

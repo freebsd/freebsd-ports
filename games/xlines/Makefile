@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Remove as many balls from board as you can
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_QT_VER=	3
 NO_WRKSUBDIR=	yes
 MAKE_ENV=	PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" PTHREAD_LIBS="${PTHREAD_LIBS}"

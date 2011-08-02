@@ -15,6 +15,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Super-user exec wrapper
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 NO_WRKSUBDIR=	yes
 PORTDOCS=	README
 PLIST_FILES=	bin/${PORTNAME}

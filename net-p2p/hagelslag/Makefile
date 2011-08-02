@@ -14,6 +14,9 @@ MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flexible command-line Gnutella implementation with advanced features
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
 USE_GMAKE=	yes

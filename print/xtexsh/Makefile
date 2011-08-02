@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}-1.4-2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk-based simple TeX interface
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 BROKEN=	Does not fetch
 
 RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX \

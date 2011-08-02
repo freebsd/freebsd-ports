@@ -15,6 +15,9 @@ COMMENT=	An X11 Go (weiqi, baduk) client for the Internet Go Server
 
 LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes

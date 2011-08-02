@@ -14,6 +14,9 @@ MASTER_SITES=	http://hp.vector.co.jp/authors/VA014157/myfreesoft/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Makes the root window bloody
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_XORG=	x11
 MAN1=		xblood.1
 MANCOMPRESSED=	yes

@@ -14,6 +14,9 @@ MASTER_SITES=	http://relax.ath.cx/jfk/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multiplayer 2D shoot'em up game
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 GNU_CONFIGURE=	yes
 USE_SDL=	image sdl
 SUB_FILES=	pkg-message

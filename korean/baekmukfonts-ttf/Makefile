@@ -16,6 +16,9 @@ DISTNAME=	baekmuk${PKGNAMESUFFIX}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Baekmuk family Korean TrueType Fonts
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 FONTDIR=	${PREFIX}/lib/X11/fonts/TrueType

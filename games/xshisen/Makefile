@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.techfirm.co.jp/~masaoki/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shisen-sho puzzle game for X11
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_XORG=	xpm
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--sharedstatedir="${DATADIR}"

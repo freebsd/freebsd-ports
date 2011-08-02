@@ -15,6 +15,9 @@ MASTER_SITES=	http://users.student.lth.se/d00jkr/tuxpuck/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Shufflepuck Cafe Clone
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
 		vorbis.4:${PORTSDIR}/audio/libvorbis \

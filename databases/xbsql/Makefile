@@ -14,6 +14,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SQL wrapper for the XBase DBMS library
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	xbase-2.0.0:${PORTSDIR}/databases/xbase
 
 USE_AUTOTOOLS=	libtool

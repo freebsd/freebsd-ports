@@ -14,6 +14,9 @@ MASTER_SITES=	http://gtkpool.seul.org/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 2D pool game using the GTK+ toolkit
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk12
 USE_PERL5=	yes

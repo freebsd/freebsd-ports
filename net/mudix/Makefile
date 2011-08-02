@@ -15,6 +15,9 @@ MASTER_SITES=	http://dw.nl.eu.org/mudix/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ncurses-based MUD client with triggers, aliases, colors
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/mudix
 ALL_TARGET=	# none

@@ -17,6 +17,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of Cosmo Gang the Puzzle (Namco)
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 NO_CDROM=	Possible copyright infringement
 
 WRKSRC=		${WRKDIR}/cosmo2

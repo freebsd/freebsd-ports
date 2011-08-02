@@ -16,6 +16,9 @@ COMMENT=	An Aggregation-based Traffic Profiler
 
 BROKEN=	Does not fetch
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 .if defined(WITH_X11)
 EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile
 USE_XORG=	x11

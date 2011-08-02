@@ -22,6 +22,9 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Vector font library with free vector font, BIG5 and GB supported
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
 
 VFLIB_VERSION=	2.25.6

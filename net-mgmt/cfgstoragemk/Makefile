@@ -16,6 +16,9 @@ DISTNAME=	cfgstoragemaker-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MRTG configuration generator for storage monitoring via SNMP
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_PERL5=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
