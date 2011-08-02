@@ -17,8 +17,8 @@ COMMENT=	A daemon to monitor and configure modern scanner's buttons
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
-CPPFLAGS="-I${LOCALBASE}/include"
-LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS=	"-I${LOCALBASE}/include"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
