@@ -14,6 +14,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A XMMS future composer input plugin
 
+BROKEN=	does not fetch
+
 BUILD_DEPENDS=	xmms-config:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms
 
