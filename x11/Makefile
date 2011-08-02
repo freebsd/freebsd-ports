@@ -72,6 +72,7 @@
     SUBDIR += gambas2-gb-desktop
     SUBDIR += gambas2-gb-qt-kde
     SUBDIR += gcb
+    SUBDIR += gcursor
     SUBDIR += gdesklets-tasklist
     SUBDIR += gdkxft
     SUBDIR += gdm
