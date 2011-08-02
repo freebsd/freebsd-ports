@@ -9,12 +9,10 @@ PORTNAME=	SoXt
 PORTVERSION=	1.2.2
 PORTREVISION=	9
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	ftp://ftp.coin3d.org/pub/coin/src/
+MASTER_SITES=	http://ftp.coin3d.org/coin/src/all/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI binding for using Open Inventor with Xt/Motif
-
-BROKEN=	Does not fetch
 
 LIB_DEPENDS=	Coin.61:${PORTSDIR}/graphics/Coin
 
