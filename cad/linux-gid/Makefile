@@ -17,6 +17,9 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical pre- and post-processor for numerical simulation programs
 
 BROKEN=		No more fetchable
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 
 CONFLICTS=	id-utils-[0-9]* coreutils-[0-9]*
 ONLY_FOR_ARCHS=	i386 amd64

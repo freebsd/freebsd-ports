@@ -15,6 +15,9 @@ DISTNAME=	fastDNAml_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Faster DNAML, makes phylogenetic trees using maximum likelihood
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 USE_GMAKE=	yes
 do-build:
 	@(cd ${WRKSRC}/source; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})

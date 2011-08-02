@@ -14,6 +14,9 @@ MASTER_SITES=	http://dl.fkb.wormulon.net/xmms-midi/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS input plugin to play midi files
 
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 RUN_DEPENDS=	timidity:${PORTSDIR}/audio/timidity
 
