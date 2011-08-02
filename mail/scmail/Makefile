@@ -8,7 +8,7 @@
 PORTNAME=	scmail
 PORTVERSION=	1.3
 CATEGORIES=	mail
-MASTER_SITES=	http://namazu.org/~satoru/scmail/
+MASTER_SITES=	http://0xcc.net/scmail/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A mail filter written in Scheme

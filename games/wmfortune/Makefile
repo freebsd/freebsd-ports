@@ -9,7 +9,7 @@ PORTNAME=	wmfortune
 PORTVERSION=	0.241
 PORTREVISION=	3
 CATEGORIES=	games windowmaker afterstep
-MASTER_SITES=	http://dockapps.org/files/90/128/
+MASTER_SITES=	http://www.dockapps.org/files/90/128/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A dockapp that outputs fortune messages

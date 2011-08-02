@@ -9,7 +9,7 @@ PORTNAME=	callid
 PORTVERSION=	1.2
 PORTREVISION=	1
 CATEGORIES=	misc
-MASTER_SITES=	http://www.xs4all.nl/~possamai/callid/
+MASTER_SITES=	http://possamai.home.xs4all.nl/callid/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility to log incoming calls using ISDN and output to mysql/php

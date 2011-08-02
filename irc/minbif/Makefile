@@ -9,7 +9,7 @@ PORTNAME=	minbif
 PORTVERSION=	1.0.3
 PORTREVISION=	3
 CATEGORIES=	irc net-im
-MASTER_SITES=	http://minbif.im/attachments/download/50/
+MASTER_SITES=	http://symlink.me/attachments/download/50/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IRC to instant messaging gateway

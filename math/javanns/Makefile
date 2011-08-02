@@ -8,7 +8,7 @@
 PORTNAME=	javanns
 PORTVERSION=	1.1
 CATEGORIES=	math java
-MASTER_SITES=	http://www-ra.informatik.uni-tuebingen.de/downloads/JavaNNS/
+MASTER_SITES=	http://www.ra.cs.uni-tuebingen.de/downloads/JavaNNS/
 DISTNAME=	JavaNNS-LinuxIntel
 
 MAINTAINER=	ports@FreeBSD.org
