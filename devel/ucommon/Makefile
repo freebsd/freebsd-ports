@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ucommon
-PORTVERSION=	5.0.3
+PORTVERSION=	5.0.5
 CATEGORIES=	devel
 MASTER_SITES=	GNU
 MASTER_SITE_SUBDIR=	commoncpp
@@ -19,7 +19,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LDFLAGS="${PTHREAD_LIBS}"
 
-MAN1=	args.1 car.1 commoncpp-config.1 mdsum.1 scrub.1 sockaddr.1 \
+MAN1=	args.1 car.1 commoncpp-config.1 mdsum.1 scrub-files.1 sockaddr.1 \
 	ucommon-config.1 zerofill.1
 
 post-patch:
