@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library of perl modules for managing Network News services
 
+BROKEN=	does not fetch
+
 BUILD_DEPENDS=	${SITE_PERL}/News/Article.pm:${PORTSDIR}/news/p5-News-Article \
 		${SITE_PERL}/Net/NNTP.pm:${PORTSDIR}/net/p5-Net
 RUN_DEPENDS=	${BUILD_DEPENDS}

@@ -14,6 +14,8 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Very advanced network monitoring and control system
 
+BROKEN=	does not fetch
+
 RUN_DEPENDS=	neato:${PORTSDIR}/graphics/graphviz \
 		rrdtool:${PORTSDIR}/databases/rrdtool10 \
 		nmap:${PORTSDIR}/security/nmap \

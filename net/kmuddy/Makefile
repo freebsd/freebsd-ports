@@ -17,6 +17,8 @@ COMMENT=	MUD client for KDE
 LIB_DEPENDS=	mxp:${PORTSDIR}/net/libmxp
 RUN_DEPENDS=	${LOCALBASE}/share/icons/hicolor/index.theme:${PORTSDIR}/misc/hicolor-icon-theme
 
+BROKEN=	does not fetch
+
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GETTEXT=	yes

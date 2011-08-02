@@ -15,6 +15,8 @@ DISTNAME=	Vuze_${PORTVERSION}_source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A BitTorrent client written in Java
 
+BROKEN=	does not fetch
+
 BUILD_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
 		${JAVALIBDIR}/commons-cli.jar:${PORTSDIR}/java/jakarta-commons-cli \
 		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit

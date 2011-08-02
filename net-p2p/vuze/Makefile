@@ -19,6 +19,8 @@ BUILD_DEPENDS=	${JAVALIBDIR}/log4j.jar:${PORTSDIR}/devel/log4j \
 		${JAVALIBDIR}/commons-cli.jar:${PORTSDIR}/java/jakarta-commons-cli \
 		${JAVALIBDIR}/junit.jar:${PORTSDIR}/java/junit
 
+BROKEN=	does not fetch
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 JAVA_OS=	native
