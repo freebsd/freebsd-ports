@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rakudo
-PORTVERSION=	2011.04
+PORTVERSION=	2011.07
 PORTEPOCH=	3
 CATEGORIES=	lang
 MASTER_SITES=	http://cloud.github.com/downloads/rakudo/star/
@@ -15,16 +15,17 @@ DISTNAME=	${PORTNAME}-star-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	The Rakudo Perl 6 Compiler targets the Parrot Virtual Machine
 
+LICENSE=	ART20
+
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4 \
 		${LOCALBASE}/bin/flex:${PORTSDIR}/textproc/flex \
 		${LOCALBASE}/bin/pcre-config:${PORTSDIR}/devel/pcre
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
 		gmp.10:${PORTSDIR}/math/gmp
 
-LICENSE=	ART20
 CONFLICTS=	parrot-[0-9]*
 
-PARROT_VERSION=3.3.0
+PARROT_VERSION=3.6.0
 INSTALL_TARGET=	install
 CONFIGURE_SCRIPT=	Configure.pl
 CONFIGURE_PARROT_ARGS=	--cc=${CC} --cxx=${CXX} --ld=${CC} --ccflags="${CFLAGS}" \
