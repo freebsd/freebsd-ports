@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	Module-Load
-PORTVERSION=	0.18
+PORTVERSION=	0.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Module::Load - runtime require of both modules and files
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 PERL_CONFIGURE=	yes
 
