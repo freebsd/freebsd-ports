@@ -6,16 +6,14 @@ share/gtkcomm/down/DEFAULT_DOWNLOAD_DIR
 share/gtkcomm/gtkcommrc
 share/gtkcomm/gtkrc
 share/gtkcomm/iselrc
-share/gtkcomm/pixmap/bg.xpm
+share/gtkcomm/pixmap/tb_capture.xpm
 share/gtkcomm/pixmap/tb_close.xpm
 share/gtkcomm/pixmap/tb_down.xpm
 share/gtkcomm/pixmap/tb_exit.xpm
-share/gtkcomm/pixmap/tb_macro.xpm
 share/gtkcomm/pixmap/tb_open.xpm
 share/gtkcomm/pixmap/tb_save.xpm
 share/gtkcomm/pixmap/tb_up.xpm
 share/gtkcomm/pixmap/tux-anim.png
-share/gtkcomm/pixmap/tux-anim.xpm
 share/gtkcomm/script/SCRIPT.txt
 share/gtkcomm/script/chol-login.scr
 share/gtkcomm/script/chol-logout.scr

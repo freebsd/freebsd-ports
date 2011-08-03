@@ -6,28 +6,23 @@
 #
 
 PORTNAME=	gtkcomm
-PORTVERSION=	0.6.4
-PORTREVISION=	8
+PORTVERSION=	0.8.1
 CATEGORIES=	korean comms
-MASTER_SITES=	http://download.kldp.net/gtkcomm/
+MASTER_SITES=	http://kldp.net/frs/download.php/480/
 
-MAINTAINER=	cjh@kr.freebsd.org
+MAINTAINER=	ports@freebsd.org
 COMMENT=	Serial controlling software, with gtk+ widget
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	${LOCALBASE}/lib/X11/fonts/local/gulim12.pcf.gz:${PORTSDIR}/korean/baekmukfonts-bdf
 
 USE_PERL5_BUILD=yes
-USE_GNOME=	imlib
+USE_GNOME=	glib20 gtk20
 GNU_CONFIGURE=	yes
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
 
 pre-patch:
 	@${PERL} -pi -e 's^-l(pthread|c_r)^${PTHREAD_LIBS}^g ; \
 		 s|DATADIRNAME=lib|DATADIRNAME=share|g' ${WRKSRC}/configure
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
