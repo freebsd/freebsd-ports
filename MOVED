@@ -2493,3 +2493,4 @@ textproc/ruby-raspell||2011-08-03|Has expired: Doesn't work with Ruby 1.9
 textproc/ruby-tempura||2011-08-03|Has expired: Doesn't work with Ruby 1.9
 textproc/ruby-xtemplate||2011-08-03|Has expired: Doesn't work with Ruby 1.9
 www/ruby-tmpl||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+x11/gcursor||2011-08-03|No longer maintained by upline.
