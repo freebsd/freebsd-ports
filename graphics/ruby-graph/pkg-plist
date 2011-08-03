@@ -1,8 +1,0 @@
-%%RUBY_SITELIBDIR%%/graph/base_extensions.rb
-%%RUBY_SITELIBDIR%%/graph/directed_graph.rb
-%%RUBY_SITELIBDIR%%/graph/graphviz_dot.rb
-@dirrm %%RUBY_SITELIBDIR%%/graph
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/BUGS
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/Changelog
-%%PORTDOCS%%%%RUBY_MODDOCDIR%%/README
-%%PORTDOCS%%@dirrm %%RUBY_MODDOCDIR%%

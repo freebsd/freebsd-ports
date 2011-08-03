@@ -744,8 +744,6 @@
     SUBDIR += ruby-postgres
     SUBDIR += ruby-qdbm
     SUBDIR += ruby-rdbc1
-    SUBDIR += ruby-search-namazu
-    SUBDIR += ruby-sqlite
     SUBDIR += ruby-sybct
     SUBDIR += ruby-tokyocabinet
     SUBDIR += rubygem-activemodel
@@ -781,7 +779,6 @@
     SUBDIR += rubygem-do_postgres
     SUBDIR += rubygem-do_sqlite3
     SUBDIR += rubygem-jdbc-mysql
-    SUBDIR += rubygem-kirbybase
     SUBDIR += rubygem-memcache
     SUBDIR += rubygem-memcache-client
     SUBDIR += rubygem-pg

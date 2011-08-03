@@ -287,12 +287,9 @@
     SUBDIR += rscheme
     SUBDIR += rubinius
     SUBDIR += ruby-doc-stdlib
-    SUBDIR += ruby-extensions
-    SUBDIR += ruby-lua
     SUBDIR += ruby-lua4
     SUBDIR += ruby-man
     SUBDIR += ruby-mode.el
-    SUBDIR += ruby-perl
     SUBDIR += ruby-programmingruby
     SUBDIR += ruby-reference
     SUBDIR += ruby-usersguide

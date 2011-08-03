@@ -1,6 +1,0 @@
-This is a Ruby extension module to use the functions of Perl from Ruby.
-
-You can also call Ruby functions back from within the Perl code.
-
-Author:	Yoshida Masato <yoshidam@yoshidam.net>
-WWW:	http://www.yoshidam.net/Ruby.html#perl

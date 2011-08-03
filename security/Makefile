@@ -730,15 +730,10 @@
     SUBDIR += revelation
     SUBDIR += rkhunter
     SUBDIR += ruby-acl
-    SUBDIR += ruby-aes
-    SUBDIR += ruby-blowfish
     SUBDIR += ruby-camellia
-    SUBDIR += ruby-cast_256
     SUBDIR += ruby-crypt
     SUBDIR += ruby-gpgme
     SUBDIR += ruby-hmac
-    SUBDIR += ruby-mcrypt
-    SUBDIR += ruby-pam
     SUBDIR += ruby-password
     SUBDIR += ruby-tcpwrap
     SUBDIR += rubygem-bcrypt-ruby

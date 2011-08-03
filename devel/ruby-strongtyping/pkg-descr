@@ -1,7 +1,0 @@
-StrongTyping is a little ruby module that provides a convenient way
-for ruby methods to check parameter types, and also dynamically query
-them.  In addition to merely checking a single set of types, it allows
-easy overloading based on a number of different templates.
-
-Author:	Ryan Pavlik <rpav@users.sf.net>
-WWW:	http://mephle.org/StrongTyping/

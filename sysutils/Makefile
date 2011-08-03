@@ -758,7 +758,6 @@
     SUBDIR += rsyslog6-devel-rfc3195
     SUBDIR += rsyslog6-devel-snmp
     SUBDIR += rtty
-    SUBDIR += ruby-log4r
     SUBDIR += ruby-quota
     SUBDIR += rubygem-bundler
     SUBDIR += rubygem-capistrano

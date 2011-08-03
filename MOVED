@@ -2449,3 +2449,47 @@ www/adblock|www/xpi-adblock|2011-08-02|Depends on obsolete SeaMonkey 1.1
 www/bugmenot|www/bugmenot-firefox|2011-08-02|Depends on obsolete SeaMonkey 1.1
 www/mozex|www/xpi-mozex|2011-08-02|Depends on obsolete SeaMonkey 1.1
 www/preferential||2011-08-02|Depends on obsolete SeaMonkey 1.1
+comms/ruby-serialport||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+databases/ruby-search-namazu||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+databases/ruby-sqlite||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+databases/rubygem-kirbybase||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+devel/ruby-eet||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+devel/ruby-filelock||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+devel/ruby-filemagic||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+devel/ruby-metaruby||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+devel/ruby-poll||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+devel/ruby-rrb||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+devel/ruby-strongtyping||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+devel/ruby-textbuf||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+graphics/ruby-graph||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+graphics/ruby-libpng||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+japanese/ruby-kakasi||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+lang/ruby-extensions||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+lang/ruby-lua||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+lang/ruby-perl||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+mail/ruby-tmail||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+math/ruby-bitset||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+math/ruby-bitvector||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+math/ruby-gmp||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+net/ruby-mpi||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+net/ruby-nis||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+net/ruby-pcap||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+net/ruby-romp||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+net/ruby-spread||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+print/ruby-pdflib||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+security/ruby-aes||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+security/ruby-blowfish||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+security/ruby-cast_256||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+security/ruby-mcrypt||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+security/ruby-pam||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+sysutils/ruby-log4r||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+textproc/ruby-csv||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+textproc/ruby-formvalidator||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+textproc/ruby-gdome||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+textproc/ruby-htmltools||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+textproc/ruby-nqxml||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+textproc/ruby-quixml||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+textproc/ruby-raspell||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+textproc/ruby-tempura||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+textproc/ruby-xtemplate||2011-08-03|Has expired: Doesn't work with Ruby 1.9
+www/ruby-tmpl||2011-08-03|Has expired: Doesn't work with Ruby 1.9

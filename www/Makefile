@@ -1635,7 +1635,6 @@
     SUBDIR += ruby-gtkmozembed
     SUBDIR += ruby-http-access
     SUBDIR += ruby-nora
-    SUBDIR += ruby-tmpl
     SUBDIR += ruby-wgettsv
     SUBDIR += rubygem-actionpack
     SUBDIR += rubygem-activeresource
