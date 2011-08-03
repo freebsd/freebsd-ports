@@ -1,15 +1,15 @@
 $FreeBSD$
 
---- src/Makefile.orig	2011-05-19 07:59:49.000000000 -0700
-+++ src/Makefile	2011-05-29 14:41:28.000000000 -0700
+--- src/Makefile.orig	2011-07-28 04:59:26.000000000 -0700
++++ src/Makefile	2011-07-30 00:27:22.000000000 -0700
 @@ -16,17 +16,17 @@
  # You should have received a copy of the GNU Affero General Public License
  # along with this program.  If not, see <http://www.gnu.org/licenses/>.
  #
 -HOST=	DARWIN
--DEFINES=-D$(HOST)	#-DNETWORK_EXTENSIONS #-DDUMP_FUNCS #-DCO_THROTTLE=50
+-DEFINES=-D$(HOST)	# -DNETWORK_EXTENSIONS -DCLOSURES -DCO_THROTTLE=50 -DDUMP_FUNCS
 +HOST=	FREEBSD
-+DEFINES=-D$(HOST) $(EXTRA_DEFINES)	#-DNETWORK_EXTENSIONS #-DDUMP_FUNCS #-DCO_THROTTLE=50
++DEFINES=-D$(HOST) $(EXTRA_DEFINES)	# -DNETWORK_EXTENSIONS -DCLOSURES -DCO_THROTTLE=50 -DDUMP_FUNCS
  DEBUG=	-O -g
 -CCFLAGS=$(DEFINES) $(DEBUG)
 +CCFLAGS=$(DEFINES)
@@ -35,8 +35,8 @@ $FreeBSD$
  a.out:	$(OBJ) always
  	cd comp; $(DMAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' 'YACC=$(YACC)' dgd
  	cd lex; $(DMAKE) 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' dgd
-@@ -54,10 +56,15 @@
- 	@rm -f a.out
+@@ -56,10 +58,15 @@
+ all:	a.out
  
  $(BIN)/driver: a.out
 +	-mkdir $(BIN)
@@ -52,7 +52,7 @@ $FreeBSD$
  
  lint:
  	lint $(LINTFLAGS) $(CFLAGS) $(SRC)
-@@ -83,7 +90,8 @@
+@@ -85,7 +92,8 @@
  
  comp/a.out:
  	cd comp; $(DMAKE) 'DMAKE=$(DMAKE)' 'CC=$(CC)' 'CCFLAGS=$(CCFLAGS)' \
