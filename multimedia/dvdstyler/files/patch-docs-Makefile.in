@@ -1,0 +1,11 @@
+--- docs/Makefile.in.orig
++++ docs/Makefile.in
+@@ -461,7 +461,7 @@ uninstall-man: uninstall-man1
+ 
+ help_%.zip: DVDStylerGuide_%.xml
+ 	t=`mktemp -d tempXXXXXXX`; \
+-	(cd "$$t" && $(XMLTO) --skip-validation htmlhelp ../DVDStylerGuide_$*.xml && rm -f *.hh* && $(ZIP) ../help_$*.zip *.html); \
++	(cd "$$t" && $(XMLTO) --skip-validation htmlhelp ../DVDStylerGuide_$*.xml && rm -f *.hh* *.proc && $(ZIP) ../help_$*.zip *.html); \
+ 	rm -f "$$t"/*.html; \
+ 	if [ -d "images/$*" ]; then \
+ 		$(ZIP) help_$*.zip htmlhelp.hhp toc.hhc images/$*/*.png images/$*/*.jpg; \
