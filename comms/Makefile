@@ -117,7 +117,6 @@
     SUBDIR += qrq
     SUBDIR += qsstv
     SUBDIR += remserial
-    SUBDIR += ruby-serialport
     SUBDIR += rubygem-callsign
     SUBDIR += rubygem-ruby-termios
     SUBDIR += rxtx

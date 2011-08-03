@@ -278,7 +278,6 @@
     SUBDIR += ruby-chasen
     SUBDIR += ruby-eb
     SUBDIR += ruby-gyokuro
-    SUBDIR += ruby-kakasi
     SUBDIR += ruby-man
     SUBDIR += ruby-mecab
     SUBDIR += ruby-ming

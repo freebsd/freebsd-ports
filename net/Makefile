@@ -944,12 +944,7 @@
     SUBDIR += ruby-dict
     SUBDIR += ruby-icmp
     SUBDIR += ruby-ldap
-    SUBDIR += ruby-mpi
     SUBDIR += ruby-net-geoip
-    SUBDIR += ruby-nis
-    SUBDIR += ruby-pcap
-    SUBDIR += ruby-romp
-    SUBDIR += ruby-spread
     SUBDIR += ruby-tcpsocketpipe
     SUBDIR += ruby-tserver
     SUBDIR += rubygem-amqp

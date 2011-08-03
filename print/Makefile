@@ -300,7 +300,6 @@
     SUBDIR += rtf2latex2e
     SUBDIR += ruby-gnomeprint
     SUBDIR += ruby-panda
-    SUBDIR += ruby-pdflib
     SUBDIR += rubygem-color
     SUBDIR += rubygem-colortools
     SUBDIR += rubygem-pdfwriter

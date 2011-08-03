@@ -3201,12 +3201,9 @@
     SUBDIR += ruby-cvs
     SUBDIR += ruby-date2
     SUBDIR += ruby-dialogs
-    SUBDIR += ruby-eet
     SUBDIR += ruby-event-loop
     SUBDIR += ruby-fam
     SUBDIR += ruby-fastri
-    SUBDIR += ruby-filelock
-    SUBDIR += ruby-filemagic
     SUBDIR += ruby-flexmock
     SUBDIR += ruby-gconf2
     SUBDIR += ruby-gemfinder
@@ -3222,11 +3219,9 @@
     SUBDIR += ruby-locale
     SUBDIR += ruby-locale2
     SUBDIR += ruby-memoize
-    SUBDIR += ruby-metaruby
     SUBDIR += ruby-mmap
     SUBDIR += ruby-multi
     SUBDIR += ruby-ncurses
-    SUBDIR += ruby-poll
     SUBDIR += ruby-property
     SUBDIR += ruby-racc
     SUBDIR += ruby-rbbr
@@ -3235,7 +3230,6 @@
     SUBDIR += ruby-rbtree
     SUBDIR += ruby-rcov
     SUBDIR += ruby-robjectteam
-    SUBDIR += ruby-rrb
     SUBDIR += ruby-rreadline
     SUBDIR += ruby-rudl
     SUBDIR += ruby-sdl
@@ -3243,11 +3237,9 @@
     SUBDIR += ruby-sexp
     SUBDIR += ruby-slang
     SUBDIR += ruby-statgrab
-    SUBDIR += ruby-strongtyping
     SUBDIR += ruby-subversion
     SUBDIR += ruby-sysvipc
     SUBDIR += ruby-term-ansicolor
-    SUBDIR += ruby-textbuf
     SUBDIR += ruby-thrift
     SUBDIR += ruby-tzfile
     SUBDIR += ruby-wirble

@@ -608,7 +608,6 @@
     SUBDIR += rss2email
     SUBDIR += ruby-rfilter
     SUBDIR += ruby-rmail
-    SUBDIR += ruby-tmail
     SUBDIR += rubygem-actionmailer
     SUBDIR += rubygem-mail
     SUBDIR += rubygem-mailfactory

@@ -1,5 +1,0 @@
-MetaRuby is a reimplementation of some Ruby parts in Ruby; equivalent
-of Perl's tie command.
-
-Author:	matju (Mathieu Bouchard) <matju@sympatico.ca>
-WWW:	http://raa.ruby-lang.org/project/metaruby/
