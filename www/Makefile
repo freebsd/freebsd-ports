@@ -235,8 +235,6 @@
     SUBDIR += firefox-i18n
     SUBDIR += firefox-remote
     SUBDIR += firefox-sync
-    SUBDIR += firefox35
-    SUBDIR += firefox35-i18n
     SUBDIR += firefox36
     SUBDIR += firefox36-i18n
     SUBDIR += flashplugin-mozilla
