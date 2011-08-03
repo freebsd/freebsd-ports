@@ -9,8 +9,12 @@ PORTNAME=	eboard
 PORTVERSION=	1.1.1
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	SF
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} eboard-extras-1pl2.tar.gz eboard-extras-2.tar.gz
+MASTER_SITES=	SF \
+		SF/${PORTNAME}/eboard-extras/pack%201%20patchlevel%202/:p1 \
+		SF/${PORTNAME}/eboard-extras/pack%202/:p2
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		eboard-extras-1pl2.tar.gz:p1 \
+		eboard-extras-2.tar.gz:p2
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	johans@FreeBSD.org
