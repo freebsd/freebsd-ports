@@ -7,6 +7,7 @@
 
 PORTNAME=	dgd-kernel
 PORTVERSION=	1.3.4
+PORTREVISION=	1
 CATEGORIES=	net games
 MASTER_SITES=	http://ftp.dworkin.nl/kernellib/ \
 		http://ftp.dworkin.nl/kernellib/patches/
