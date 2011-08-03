@@ -15,6 +15,9 @@ MASTER_SITES=	http://gforge.lug.fi.uba.ar/frs/download.php/86/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	Schematic capture and simulation of electrical circuits
 
+DEPRECATED=	Website has disappeared
+EXPIRATION_DATE=2011-09-03
+
 USE_GNOME=	gnomehack gnomeprefix gtksourceview intlhack libglade2 \
 		libgnomeui
 USE_GETTEXT=	yes

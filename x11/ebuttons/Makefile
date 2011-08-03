@@ -16,6 +16,9 @@ MASTER_SITE_SUBDIR=	gahr
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A simple epplet that contains several buttons used to launch programs
 
+DEPRECATED=	Website has disappeared
+EXPIRATION_DATE=2011-09-03
+
 LIB_DEPENDS=	epplet.3:${PORTSDIR}/x11-wm/epplets
 
 PLIST_FILES=	bin/E-Buttons.epplet
