@@ -6,45 +6,36 @@
 #
 
 PORTNAME=	baekmukfonts
-PORTVERSION=	2.0
-PORTREVISION=	2
+PORTVERSION=	2.2
 CATEGORIES=	korean
-MASTER_SITES=	ftp://ftp.mizi.com/pub/baekmuk/obsoletes/
+MASTER_SITES=	http://kldp.net/frs/download.php/1429/
 PKGNAMESUFFIX=	-ttf
-DISTNAME=	baekmuk${PKGNAMESUFFIX}-${PORTVERSION}
+DISTNAME=	${FONTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Baekmuk family Korean TrueType Fonts
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
-FONTDIR=	${PREFIX}/lib/X11/fonts/TrueType
-FONTLIST=	batang gulim dotum hline
 
-.include <bsd.port.pre.mk>
+FONTNAME=	baekmuk
+FONTSDIR=	lib/X11/fonts/${FONTNAME}${PKGNAMESUFFIX}
+PLIST_SUB=	FONTSDIR=${FONTSDIR}
 
 do-install:
-.if !exists(${FONTDIR})
-	@${ECHO} "*********************************************************"
-	@${ECHO} "If you want to use these fonts from X, install"
-	@${ECHO} "one of X-TT servers(x11-servers/Xtt*) and add ${FONTDIR}"
-	@${ECHO} "to your font path in /etc/XF86Config."
-	@${ECHO} "If you want to use these fonts from ghostscript,"
-	@${ECHO} "install korean/ftghostscript5 and edit"
-	@${ECHO} "${LOCALBASE}/share/ghostscript/5.10ft/hangul/hconfig.ps"
-	@${ECHO} "See examples in ${FONTDIR}"
-	@${ECHO} "*********************************************************"
-	${MKDIR} ${FONTDIR}
-.endif
-.for FONTNAME in ${FONTLIST}
-	${INSTALL_DATA} ${WRKSRC}/${FONTNAME}.ttf ${FONTDIR}
-.endfor
-	${INSTALL_DATA} ${FILESDIR}/fonts.dir ${FONTDIR}/fonts.dir.baekmuk
-	${INSTALL_DATA} ${FILESDIR}/fonts.alias ${FONTDIR}/fonts.alias.baekmuk
-	${INSTALL_DATA} ${FILESDIR}/hconfig.ps ${FONTDIR}/hconfig.ps.baekmuk
-	${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+	${MKDIR} ${PREFIX}/${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT ${PREFIX}/${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/COPYRIGHT.ks ${PREFIX}/${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/contrib/hconfig.ps ${PREFIX}/${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ttf/*.ttf ${PREFIX}/${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ttf/fonts.dir ${PREFIX}/${FONTSDIR}
+	${INSTALL_DATA} ${WRKSRC}/ttf/fonts.scale.xtt \
+	    ${PREFIX}/${FONTSDIR}/fonts.scale
 
-.include <bsd.port.post.mk>
+post-install:
+	@-${PREFIX}/bin/fc-cache -s ${PREFIX}/${FONTSDIR} 2>/dev/null
+
+.include <bsd.port.mk>

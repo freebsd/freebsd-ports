@@ -1,7 +1,13 @@
-lib/X11/fonts/TrueType/batang.ttf
-lib/X11/fonts/TrueType/dotum.ttf
-lib/X11/fonts/TrueType/fonts.alias.baekmuk
-lib/X11/fonts/TrueType/fonts.dir.baekmuk
-lib/X11/fonts/TrueType/gulim.ttf
-lib/X11/fonts/TrueType/hconfig.ps.baekmuk
-lib/X11/fonts/TrueType/hline.ttf
+%%FONTSDIR%%/COPYRIGHT
+%%FONTSDIR%%/COPYRIGHT.ks
+%%FONTSDIR%%/README
+%%FONTSDIR%%/batang.ttf
+%%FONTSDIR%%/dotum.ttf
+%%FONTSDIR%%/fonts.dir
+%%FONTSDIR%%/fonts.scale
+%%FONTSDIR%%/gulim.ttf
+%%FONTSDIR%%/hconfig.ps
+%%FONTSDIR%%/hline.ttf
+@exec fc-cache -s %D/%%FONTSDIR%% 2>/dev/null || true
+@unexec fc-cache -s %D/%%FONTSDIR%% 2>/dev/null || true
+@dirrm %%FONTSDIR%%
