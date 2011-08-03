@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	dns
 MASTER_SITES=	http://www.chiark.greenend.org.uk/~ian/adns/ftp/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@eitanadler.com
 COMMENT=	Easy to use, asynchronous-capable DNS client library and utilities
 
 GNU_CONFIGURE=	yes
