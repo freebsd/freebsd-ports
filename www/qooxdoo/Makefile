@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qooxdoo
-PORTVERSION=	1.4
+PORTVERSION=	1.5
 PORTREVISION=	0
 CATEGORIES=	www devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-current/${PORTVERSION}/
@@ -17,8 +17,6 @@ COMMENT=	A comprehensive and innovative Ajax application framework
 
 FIND_FILES=	${WRKSRC} -type f -name "*.py" -print0
 FIND_FILES_BAK=	${WRKSRC} -type f -and \( -name "*.orig" -or -name "*.bak" \)
-
-NO_BUILD=	yes
 
 QXDDIRS=	component framework tool
 
@@ -34,6 +32,10 @@ XARGS_ARGS=	-0
 post-patch:
 	${FIND} ${FIND_FILES} | ${XARGS} ${XARGS_ARGS} ${REINPLACE_CMD}
 	${FIND} ${FIND_FILES_BAK} -delete
+
+do-build:
+	${PYTHON_CMD} -m compileall -f ${WRKSRC}/tool/bin
+	${PYTHON_CMD} -O -m compileall -f ${WRKSRC}/tool/bin
 
 do-install:
 	${MKDIR} ${DATADIR}

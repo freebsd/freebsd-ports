@@ -27,12 +27,17 @@
 %%PORTDOCS%%%%DOCSDIR%%/_images/doublerenderer.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/doublerenderer1.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/eventhandler.jpg
+%%PORTDOCS%%%%DOCSDIR%%/_images/featureconfigeditor.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/feedreader.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/ff.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/file_menu.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/file_menu1.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/flash.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/flow.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/form.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/generate_config2.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/generate_h12.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/generate_x1.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/grid.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/groupbox_clipping.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/groupbox_complete.png
@@ -62,6 +67,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_images/inspector_selenium_toolbar.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/inspector_selenium_window.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/inspector_widgets_window.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/iorequestphases.jpg
 %%PORTDOCS%%%%DOCSDIR%%/_images/irange.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/irange1.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/label.jpg
@@ -145,6 +151,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/_images/tabview.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/testrunner.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/testrunner1.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/testrunner_console.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/testrunner_html.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/testrunner_performance.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/testrunner_widget.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/textfield.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/togglebuttom.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/toolbar.jpg
@@ -153,12 +163,24 @@
 %%PORTDOCS%%%%DOCSDIR%%/_images/tree.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/tree_dependencies_uml.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/tree_uml.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/tutorial_4_2_1-1.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/tutorial_4_2_1-2.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/tutorial_4_2_1-3.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/tutorial_4_2_1-4.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/tutorial_4_4_1-1.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/tutorial_4_4_1-2.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/tutorial_4_5-1.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/tutorial_4_5-2.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/tutorial_details.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/tutorial_input.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/tutorial_list.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/twittermockup1.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/validationmanager.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/validationmanager1.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/virtualcombobox.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/virtuallist.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/virtualselectbox.png
+%%PORTDOCS%%%%DOCSDIR%%/_images/virtualtree.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/webkit_bug.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/webkit_bug1.png
 %%PORTDOCS%%%%DOCSDIR%%/_images/widget.png
@@ -175,6 +197,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/application.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/application/apiviewer.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/application/demobrowser.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/pages/application/featureconfigeditor.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/application/feedreader.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/application/inspector.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/application/inspector_selenium.txt
@@ -186,6 +209,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/application/widgetbrowser.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/communication.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/communication/remote_io.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/pages/communication/request_io.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/pages/communication/rest.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/communication/rpc.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/communication/rpc_java.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/communication/rpc_overview.txt
@@ -284,6 +309,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/gui_toolkit/ui_table_styling.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/gui_toolkit/ui_theming.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/gui_toolkit/ui_using_themes_of_contribs.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/pages/gui_toolkit/ui_webfonts.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/gui_toolkit/ui_widgets.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/gui_toolkit/window_management.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/introduction.txt
@@ -316,6 +342,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/migration/migration_support.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/mobile.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/mobile/mobile_overview.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/pages/mobile/tutorial.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/references.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/snippets.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/snippets/centering_a_window.txt
@@ -334,6 +361,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/snippets/using_complex_namespaces.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tool.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tool/astlets.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tool/ebnf_like.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tool/generator.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tool/generator_config.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tool/generator_config_articles.txt
@@ -342,15 +370,20 @@
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tool/generator_config_macros.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tool/generator_config_ref.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tool/generator_default_jobs.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tool/generator_optimizations.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tool/generator_usage.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tool/source_code_validation.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tool/tools_beyond_python_sdk.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tool/tutorial_basics.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tutorials/tutorial-part-1.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tutorials/tutorial-part-2.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tutorials/tutorial-part-3.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tutorials/tutorial-part-4-1.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tutorials/tutorial-part-4-2-1.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tutorials/tutorial-part-4-2.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tutorials/tutorial-part-4-3.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tutorials/tutorial-part-4-4-1.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/pages/tutorials/tutorial-part-4-5.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/ui_form_handling2/namespace.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/ui_html_editing.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/ui_html_editing/available_shortcuts.txt
@@ -374,6 +407,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/widget/combobox.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/widget/composite.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/widget/datefield.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/pages/widget/flash.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/widget/groupbox.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/widget/hoverbutton.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/widget/html.txt
@@ -414,6 +448,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/widget/virtualcombobox.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/widget/virtuallist.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/widget/virtualselectbox.txt
+%%PORTDOCS%%%%DOCSDIR%%/_sources/pages/widget/virtualtree.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/widget/widget_ref.txt
 %%PORTDOCS%%%%DOCSDIR%%/_sources/pages/widget/window.txt
 %%PORTDOCS%%%%DOCSDIR%%/_static/basic.css
@@ -437,6 +472,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/pages/application.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/application/apiviewer.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/application/demobrowser.html
+%%PORTDOCS%%%%DOCSDIR%%/pages/application/featureconfigeditor.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/application/feedreader.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/application/inspector.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/application/inspector_selenium.html
@@ -448,6 +484,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/pages/application/widgetbrowser.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/communication.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/communication/remote_io.html
+%%PORTDOCS%%%%DOCSDIR%%/pages/communication/request_io.html
+%%PORTDOCS%%%%DOCSDIR%%/pages/communication/rest.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/communication/rpc.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/communication/rpc_java.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/communication/rpc_overview.html
@@ -546,6 +584,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/pages/gui_toolkit/ui_table_styling.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/gui_toolkit/ui_theming.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/gui_toolkit/ui_using_themes_of_contribs.html
+%%PORTDOCS%%%%DOCSDIR%%/pages/gui_toolkit/ui_webfonts.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/gui_toolkit/ui_widgets.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/gui_toolkit/window_management.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/introduction.html
@@ -578,6 +617,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/pages/migration/migration_support.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/mobile.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/mobile/mobile_overview.html
+%%PORTDOCS%%%%DOCSDIR%%/pages/mobile/tutorial.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/references.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/snippets.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/snippets/centering_a_window.html
@@ -596,6 +636,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/pages/snippets/using_complex_namespaces.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/tool.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/tool/astlets.html
+%%PORTDOCS%%%%DOCSDIR%%/pages/tool/ebnf_like.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/tool/generator.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/tool/generator_config.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/tool/generator_config_articles.html
@@ -604,15 +645,20 @@
 %%PORTDOCS%%%%DOCSDIR%%/pages/tool/generator_config_macros.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/tool/generator_config_ref.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/tool/generator_default_jobs.html
+%%PORTDOCS%%%%DOCSDIR%%/pages/tool/generator_optimizations.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/tool/generator_usage.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/tool/source_code_validation.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/tool/tools_beyond_python_sdk.html
+%%PORTDOCS%%%%DOCSDIR%%/pages/tool/tutorial_basics.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/tutorials/tutorial-part-1.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/tutorials/tutorial-part-2.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/tutorials/tutorial-part-3.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/tutorials/tutorial-part-4-1.html
+%%PORTDOCS%%%%DOCSDIR%%/pages/tutorials/tutorial-part-4-2-1.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/tutorials/tutorial-part-4-2.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/tutorials/tutorial-part-4-3.html
+%%PORTDOCS%%%%DOCSDIR%%/pages/tutorials/tutorial-part-4-4-1.html
+%%PORTDOCS%%%%DOCSDIR%%/pages/tutorials/tutorial-part-4-5.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/ui_form_handling2/namespace.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/ui_html_editing.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/ui_html_editing/available_shortcuts.html
@@ -636,6 +682,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/pages/widget/combobox.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/widget/composite.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/widget/datefield.html
+%%PORTDOCS%%%%DOCSDIR%%/pages/widget/flash.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/widget/groupbox.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/widget/hoverbutton.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/widget/html.html
@@ -676,6 +723,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/pages/widget/virtualcombobox.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/widget/virtuallist.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/widget/virtualselectbox.html
+%%PORTDOCS%%%%DOCSDIR%%/pages/widget/virtualtree.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/widget/widget_ref.html
 %%PORTDOCS%%%%DOCSDIR%%/pages/widget/window.html
 %%PORTDOCS%%%%DOCSDIR%%/qooxdoo.pdf
@@ -704,6 +752,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/animation/Tree_Highlight.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/AttributeStyle_1.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/AttributeStyle_2.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/Audio.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/Background.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/Blocker.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/Clip.js
@@ -711,6 +760,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/Dimension.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/Environment.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/Flash.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/Geolocation.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/HtmlArea.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/Iframe.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/Input.js
@@ -718,12 +768,14 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/Location.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/Location_StandardMode.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/Overflow.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/Request.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/ScrollIntoView.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/Selection.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/Selector.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/Video.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/Viewport.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/Viewport_StandardMode.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/WebStorage.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/WebWorker.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/bom/Window.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/data/ExtendedList.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/data/ExtendedTree.js
@@ -744,6 +796,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/data/SearchAsYouType.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/data/SelectBox.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/data/SingleValueBinding.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/data/TreeColumn.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/data/TreeController.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/data/Tree_Columns.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/data/Twitter.js
@@ -816,7 +869,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/root/Inline_Window.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/root/Page.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/showcase/Browser.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/showcase/Calculator.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/showcase/Dialog.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/showcase/Form.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/showcase/Localization.js
@@ -869,8 +921,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/test/UIDeclaration.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/test/Validation.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/test/Virtual_List.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/test/Virtual_ListBinding.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/test/io_HttpRequest.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/test/io_ImageLoader.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/treevirtual/TreeVirtual.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/treevirtual/TreeVirtual_Events.js
@@ -898,6 +948,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/ui/Placement.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/ui/ScrollContainer.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/ui/Shadow.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/ui/WebFonts.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/util/FSMMaze.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/util/FSMMouse.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/util/LayoutApplication.js
@@ -916,7 +967,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/HeaderSimple.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/List.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/ListWithFilter.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/Messenger.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/Pane_Column.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/Pane_GridLines.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/Pane_Row.js
@@ -927,15 +977,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/Table.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/Tree.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/Tree_Columns.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/Tree_Dynamic.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/list/List.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/list/ListItem.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/messenger/Buddy.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/messenger/BuddyCell.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/messenger/BuddyModel.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/messenger/Controller.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/messenger/GroupCell.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/messenger/GroupModel.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/messenger/Roster.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/model/Item.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/tree/TreeItem.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/widget/Atom.js
@@ -991,6 +1035,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/animation/qooxdoo-logo.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/AttributeStyle_1.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/AttributeStyle_2.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/Audio.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/Background.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/Blocker.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/Clip.html
@@ -998,6 +1043,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/Dimension.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/Environment.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/Flash.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/Geolocation.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/HtmlArea.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/Iframe.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/Input.html
@@ -1005,12 +1051,14 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/Location.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/Location_StandardMode.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/Overflow.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/Request.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/ScrollIntoView.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/Selection.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/Selector.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/Video.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/Viewport.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/Viewport_StandardMode.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/WebStorage.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/WebWorker.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/Window.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/bom/blank.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/data/ExtendedList.html
@@ -1035,6 +1083,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/data/TreeController.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/data/Tree_Columns.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/data/Twitter.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/data/Twitter.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/event/ElementResize.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/event/Event.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/event/Event_Bubbling.html
@@ -1103,9 +1152,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/root/Inline_Window.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/root/Page.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/showcase/Browser.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/showcase/Calculator.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/showcase/Dialog.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/showcase/Form.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/showcase/Form.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/showcase/Localization.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/showcase/Maps.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/showcase/Translation.html
@@ -1154,8 +1203,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/test/UIDeclaration.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/test/Validation.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/test/Virtual_List.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/test/Virtual_ListBinding.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/test/io_HttpRequest.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/test/io_ImageLoader.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/treevirtual/TreeVirtual.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/treevirtual/TreeVirtual_Events.html
@@ -1183,6 +1230,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/ui/Placement.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/ui/ScrollContainer.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/ui/Shadow.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/ui/WebFonts.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/ui/json/people.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/virtual/CellEvents.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/virtual/CellSpan.html
@@ -1195,7 +1243,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/virtual/HeaderSimple.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/virtual/List.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/virtual/ListWithFilter.html
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/virtual/Messenger.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/virtual/Pane_Column.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/virtual/Pane_GridLines.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/virtual/Pane_Row.html
@@ -1205,6 +1252,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/virtual/Table.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/virtual/Tree.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/virtual/Tree_Columns.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/virtual/Tree_Dynamic.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/virtual/json/persons.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/virtual/json/tree.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/demo/welcome.html
@@ -1265,6 +1313,15 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/flash/build.xml
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/flash/fo_tester.fla
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/flash/fo_tester.swf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/fonts/fineliner_script-webfont.eot
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/fonts/fineliner_script-webfont.ttf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/fonts/fineliner_script-webfont.woff
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/fonts/tobec___-webfont.eot
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/fonts/tobec___-webfont.ttf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/fonts/tobec___-webfont.woff
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/fonts/yanonekaffeesatz-regular-webfont.eot
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/fonts/yanonekaffeesatz-regular-webfont.ttf
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/fonts/yanonekaffeesatz-regular-webfont.woff
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/html/ModalWindow.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/feed-reader.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/format-indent-less.png
@@ -1283,19 +1340,15 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/htmlarea/insert-table.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/htmlarea/insert-text.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/htmlarea/qooxdoo_logo.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/imicons/christian_schmidt.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/imicons/fabian_jakobs.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/imicons/jonathan_weiss.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/imicons/martin_wittemann.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/imicons/readme.txt
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/imicons/status_away.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/imicons/status_busy.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/imicons/status_offline.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/imicons/status_online.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/imicons/user_add.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/imicons/user_delete.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/loading22.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/multimedia-player-disabled.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/multimedia-player.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/media/audiotest.mp3
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/media/audiotest.ogg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/media/audiotest.wav
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/media/video1.m4v
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/media/video1.ogv
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/media/video1.webm
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/mobile/qooxdoo-logo.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/test/alphaPNG.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/test/combined/icons22.meta
@@ -1319,6 +1372,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/ui/mouse-north.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/ui/mouse-south.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/ui/mouse-west.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/webworker/webworker.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/welcome/feedreader.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/welcome/playground.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/welcome/portal.png
@@ -1335,6 +1389,33 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/tool/default.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/tool/gendata.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/demobrowser/tool/tmpl.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/Manifest.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/config.json
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/generate.py
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/Application.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/ApplicationLowLevel.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/Environment.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/Reporter.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/simulation/Environment.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/test/DemoTest.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/theme/Appearance.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/theme/Color.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/theme/Decoration.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/theme/Font.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/theme/Theme.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/view/FeatureSelector.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/view/HelpWindow.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/view/ImportWindow.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/view/List.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/view/ListItem.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/view/Table.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/index-gui.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/index-lowlevel.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/inspector.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/resource/fce/lowlevel/css/style.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/featureconfigeditor/source/translation/readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/Manifest.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/config.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/generate.py
@@ -1352,10 +1433,11 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/class/feedreader/model/FeedFolder.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/class/feedreader/model/Model.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/class/feedreader/model/__init__.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/class/feedreader/simulation/AddFeed.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/class/feedreader/simulation/DisplayFeeds.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/class/feedreader/simulation/FeedreaderAbstract.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/class/feedreader/simulation/Locale.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/class/feedreader/simulation/mobile/Feedreader.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/class/feedreader/simulation/ria/AddFeed.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/class/feedreader/simulation/ria/DisplayFeeds.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/class/feedreader/simulation/ria/FeedreaderAbstract.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/class/feedreader/simulation/ria/Locale.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/class/feedreader/view/AddFeedWindow.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/class/feedreader/view/Article.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/class/feedreader/view/Header.js
@@ -1372,6 +1454,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/resource/feedreader/images/combined/icons22.b64.meta
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/resource/feedreader/images/loading22.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/resource/feedreader/images/loading66.gif
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/resource/index-ios.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/resource/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/translation/C.po
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/feedreader/source/translation/de.po
@@ -1393,10 +1476,15 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobileshowcase/source/class/mobileshowcase/page/List.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobileshowcase/source/class/mobileshowcase/page/Overview.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobileshowcase/source/class/mobileshowcase/page/Tab.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobileshowcase/source/class/mobileshowcase/page/Toolbar.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobileshowcase/source/class/mobileshowcase/simulation/Mobileshowcase.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobileshowcase/source/class/mobileshowcase/test/DemoTest.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobileshowcase/source/index.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobileshowcase/source/resource/index-ios.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobileshowcase/source/resource/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobileshowcase/source/resource/mobileshowcase/css/styles.css
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobileshowcase/source/resource/mobileshowcase/icon/arrowleft.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobileshowcase/source/resource/mobileshowcase/icon/camera.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/mobileshowcase/source/translation/readme.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/Manifest.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/config.json
@@ -1406,7 +1494,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/class/playground/test/Toolbar.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/class/playground/view/Editor.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/class/playground/view/Header.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/class/playground/view/Log.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/class/playground/view/PlayArea.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/class/playground/view/Toolbar.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/class/playground/view/gist/CheckBox.js
@@ -1425,16 +1512,19 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/keybinding-emacs.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/keybinding-vim.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/mode-c_cpp.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/mode-clojure.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/mode-coffee.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/mode-csharp.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/mode-css.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/mode-html.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/mode-java.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/mode-javascript.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/mode-json.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/mode-perl.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/mode-php.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/mode-python.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/mode-ruby.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/mode-scss.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/mode-svg.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/mode-xml.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/theme-clouds.js
@@ -1451,6 +1541,8 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/theme-pastel_on_dark.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/theme-twilight.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/theme-vibrant_ink.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/worker-coffee.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/worker-css.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/editor/worker-javascript.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/images/loading.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/playground/source/resource/playground/images/logo_gist.png
@@ -2024,6 +2116,16 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/apps/office-chart.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/devices/drive-harddisk.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/devices/drive-optical.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/emotes/face-angel.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/emotes/face-embarrassed.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/emotes/face-kiss.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/emotes/face-laugh.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/emotes/face-plain.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/emotes/face-raspberry.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/emotes/face-sad.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/emotes/face-smile-big.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/emotes/face-smile.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/emotes/face-surprise.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/mimetypes/media-image.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/mimetypes/office-document.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/places/folder-open.png
@@ -2061,9 +2163,9 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/64/devices/scanner.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/qx/static/blank.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/qx/static/blank.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/qxc/application/twitterdemo/twitter_logo_outline.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/animation/icon.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/databinding/icon.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/databinding/twitter_logo_outline.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/dragdrop/icon.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/form/icon.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/htmleditor/format-list-ordered.png
@@ -2138,6 +2240,18 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/theme/window-tr.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/theme/window.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/tree/icon.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/virtuallist/icon.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/virtuallist/imicons/christian_hagendorn.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/virtuallist/imicons/martin_wittemann.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/virtuallist/imicons/readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/virtuallist/imicons/status_away.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/virtuallist/imicons/status_busy.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/virtuallist/imicons/status_offline.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/virtuallist/imicons/status_online.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/virtuallist/imicons/tino_butz.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/virtuallist/imicons/tristan_koch.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/virtuallist/imicons/user_add.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/showcase/virtuallist/imicons/user_delete.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/static/favicon/favicon.ico
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/static/images/colorstrip.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/static/images/contentbackground.gif
@@ -2147,20 +2261,48 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/static/style/hacks/mshtml.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/static/style/hacks/mshtml_6.css
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/static/style/layout.css
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase-0.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase-1.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase-10.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase-11.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase-12.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase-13.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase-2.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase-3.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase-4.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase-5.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase-6.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase-7.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase-8.js
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase-9.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/resource/twitterdemo/twitter_logo_outline.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.0c5f4ffa0c0a.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.0cbf18427d1f.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.10eec4eb06b7.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.11bd60db1402.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.1d2b24573c75.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.27e673afd35f.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.2de4a85b508d.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.39953b71bc58.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.3d84a9137d5f.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.418a43bce37e.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.41a3da345cd6.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.45d5e6d42d5d.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.49170f5b1bed.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.5c1c20413002.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.60412bbd4a2f.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.66531751f46b.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.72d3d8977f94.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.75d082e2bfbf.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.8b8515198fc4.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.8f5681fb5f77.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.94a5470435a9.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.96c2ea15c813.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.9b98f0e7ee33.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.a2cdf4268103.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.aa1616da3563.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.ac8c1909595b.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.ae51541b7984.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.b910ef3ec82a.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.be83c2e22c93.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.cad81b1d987d.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.cc0a461f438c.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.dc6511adc94a.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.e945339caeae.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.eaff5de7c43c.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.f0f9f0f1365a.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.f24ce523db4e.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.f3e0342dcf01.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.f7a3ac1b2219.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.fb928c7d631b.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.feca9293868c.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.fffa5c36ec78.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/build/script/showcase.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/config.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/generate.py
@@ -2198,6 +2340,13 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/class/showcase/page/theme/calc/view/ICalculator.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/class/showcase/page/tree/Content.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/class/showcase/page/tree/Page.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/class/showcase/page/virtuallist/Content.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/class/showcase/page/virtuallist/Page.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/class/showcase/page/virtuallist/messenger/Buddy.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/class/showcase/page/virtuallist/messenger/BuddyModel.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/class/showcase/page/virtuallist/messenger/Group.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/class/showcase/page/virtuallist/messenger/GroupModel.js
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/class/showcase/page/virtuallist/messenger/Roster.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/class/showcase/test/DemoTest.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/class/showcase/theme/Appearance.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/class/showcase/theme/Color.js
@@ -2209,7 +2358,6 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/index.html
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/animation/icon.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/databinding/icon.png
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/databinding/twitter_logo_outline.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/dragdrop/icon.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/form/icon.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/htmleditor/format-list-ordered.png
@@ -2290,6 +2438,18 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/theme/window-tr.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/theme/window.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/tree/icon.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/virtuallist/icon.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/virtuallist/imicons/christian_hagendorn.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/virtuallist/imicons/martin_wittemann.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/virtuallist/imicons/readme.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/virtuallist/imicons/status_away.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/virtuallist/imicons/status_busy.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/virtuallist/imicons/status_offline.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/virtuallist/imicons/status_online.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/virtuallist/imicons/tino_butz.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/virtuallist/imicons/tristan_koch.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/virtuallist/imicons/user_add.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/showcase/virtuallist/imicons/user_delete.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/source/button-pressed.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/source/button.png
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/showcase/source/resource/source/display.png
@@ -2346,6 +2506,7 @@
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgetbrowser/source/resource/widgetbrowser/loading66.gif
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgetbrowser/source/resource/widgetbrowser/people.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgetbrowser/source/resource/widgetbrowser/test.png
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgetbrowser/source/resource/widgetbrowser/tree.json
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/widgetbrowser/source/translation/readme.txt
 %%DATADIR%%/component/apiviewer/Manifest.json
 %%DATADIR%%/component/apiviewer/api.json
@@ -2356,6 +2517,8 @@
 %%DATADIR%%/component/apiviewer/source/class/apiviewer/Application.js
 %%DATADIR%%/component/apiviewer/source/class/apiviewer/ClassLoader.js
 %%DATADIR%%/component/apiviewer/source/class/apiviewer/Controller.js
+%%DATADIR%%/component/apiviewer/source/class/apiviewer/DetailFrameTabView.js
+%%DATADIR%%/component/apiviewer/source/class/apiviewer/LoadingIndicator.js
 %%DATADIR%%/component/apiviewer/source/class/apiviewer/MWidgetRegistry.js
 %%DATADIR%%/component/apiviewer/source/class/apiviewer/ObjectRegistry.js
 %%DATADIR%%/component/apiviewer/source/class/apiviewer/TabViewController.js
@@ -2416,9 +2579,13 @@
 %%DATADIR%%/component/apiviewer/source/resource/apiviewer/image/constructor18.gif
 %%DATADIR%%/component/apiviewer/source/resource/apiviewer/image/cross.gif
 %%DATADIR%%/component/apiviewer/source/resource/apiviewer/image/event18.gif
+%%DATADIR%%/component/apiviewer/source/resource/apiviewer/image/includes.gif
 %%DATADIR%%/component/apiviewer/source/resource/apiviewer/image/information18.png
+%%DATADIR%%/component/apiviewer/source/resource/apiviewer/image/inherited_and_mixins_included.gif
 %%DATADIR%%/component/apiviewer/source/resource/apiviewer/image/interface18.gif
 %%DATADIR%%/component/apiviewer/source/resource/apiviewer/image/interface_warning18.gif
+%%DATADIR%%/component/apiviewer/source/resource/apiviewer/image/loading66.gif
+%%DATADIR%%/component/apiviewer/source/resource/apiviewer/image/method_internal18.gif
 %%DATADIR%%/component/apiviewer/source/resource/apiviewer/image/method_private18.gif
 %%DATADIR%%/component/apiviewer/source/resource/apiviewer/image/method_protected18.gif
 %%DATADIR%%/component/apiviewer/source/resource/apiviewer/image/method_public18.gif
@@ -2439,6 +2606,7 @@
 %%DATADIR%%/component/apiviewer/source/resource/apiviewer/image/package18.gif
 %%DATADIR%%/component/apiviewer/source/resource/apiviewer/image/package_warning18.gif
 %%DATADIR%%/component/apiviewer/source/resource/apiviewer/image/property18.gif
+%%DATADIR%%/component/apiviewer/source/resource/apiviewer/image/property_internal18.gif
 %%DATADIR%%/component/apiviewer/source/resource/apiviewer/image/property_private18.gif
 %%DATADIR%%/component/apiviewer/source/resource/apiviewer/image/property_protected18.gif
 %%DATADIR%%/component/apiviewer/source/resource/apiviewer/image/property_themeable18.gif
@@ -2555,6 +2723,31 @@
 %%DATADIR%%/component/inspector/source/resource/inspector/images/shell/warningIcon.png
 %%DATADIR%%/component/inspector/source/resource/inspector/images/spacer.gif
 %%DATADIR%%/component/inspector/source/translation/readme.txt
+%%DATADIR%%/component/library/formdemo/Manifest.json
+%%DATADIR%%/component/library/formdemo/config.json
+%%DATADIR%%/component/library/formdemo/generate.py
+%%DATADIR%%/component/library/formdemo/source/class/qxc/application/formdemo/Application.js
+%%DATADIR%%/component/library/formdemo/source/class/qxc/application/formdemo/FormItems.js
+%%DATADIR%%/component/library/formdemo/source/index.html
+%%DATADIR%%/component/library/formdemo/source/translation/readme.txt
+%%DATADIR%%/component/library/logpane/Manifest.json
+%%DATADIR%%/component/library/logpane/config.json
+%%DATADIR%%/component/library/logpane/generate.py
+%%DATADIR%%/component/library/logpane/source/class/qxc/ui/logpane/Application.js
+%%DATADIR%%/component/library/logpane/source/class/qxc/ui/logpane/LogView.js
+%%DATADIR%%/component/library/logpane/source/index.html
+%%DATADIR%%/component/library/logpane/source/translation/de.po
+%%DATADIR%%/component/library/logpane/source/translation/en.po
+%%DATADIR%%/component/library/logpane/source/translation/ro.po
+%%DATADIR%%/component/library/logpane/source/translation/sv.po
+%%DATADIR%%/component/library/twitterdemo/Manifest.json
+%%DATADIR%%/component/library/twitterdemo/config.json
+%%DATADIR%%/component/library/twitterdemo/generate.py
+%%DATADIR%%/component/library/twitterdemo/source/class/qxc/application/twitterdemo/Application.js
+%%DATADIR%%/component/library/twitterdemo/source/class/qxc/application/twitterdemo/Demo.js
+%%DATADIR%%/component/library/twitterdemo/source/index.html
+%%DATADIR%%/component/library/twitterdemo/source/resource/qxc/application/twitterdemo/twitter_logo_outline.png
+%%DATADIR%%/component/library/twitterdemo/source/translation/readme.txt
 %%DATADIR%%/component/simulator/Manifest.json
 %%DATADIR%%/component/simulator/config.json
 %%DATADIR%%/component/simulator/generate.py
@@ -2575,6 +2768,13 @@
 %%DATADIR%%/component/simulator/tool/com/thoughtworks/selenium/QxSelenium.class
 %%DATADIR%%/component/simulator/tool/simulator.loader.tmpl.js
 %%DATADIR%%/component/simulator/tool/user-extensions/user-extensions.js
+%%DATADIR%%/component/skeleton/basic/Manifest.tmpl.json
+%%DATADIR%%/component/skeleton/basic/config.tmpl.json
+%%DATADIR%%/component/skeleton/basic/generate.tmpl.py
+%%DATADIR%%/component/skeleton/basic/readme.txt
+%%DATADIR%%/component/skeleton/basic/source/class/custom/Application.tmpl.js
+%%DATADIR%%/component/skeleton/basic/source/script/custom.js
+%%DATADIR%%/component/skeleton/basic/source/translation/readme.txt
 %%DATADIR%%/component/skeleton/bom/config.tmpl.json
 %%DATADIR%%/component/skeleton/bom/generate.tmpl.py
 %%DATADIR%%/component/skeleton/bom/index.html
@@ -2730,9 +2930,13 @@
 %%DATADIR%%/framework/api/resource/apiviewer/image/constructor18.gif
 %%DATADIR%%/framework/api/resource/apiviewer/image/cross.gif
 %%DATADIR%%/framework/api/resource/apiviewer/image/event18.gif
+%%DATADIR%%/framework/api/resource/apiviewer/image/includes.gif
 %%DATADIR%%/framework/api/resource/apiviewer/image/information18.png
+%%DATADIR%%/framework/api/resource/apiviewer/image/inherited_and_mixins_included.gif
 %%DATADIR%%/framework/api/resource/apiviewer/image/interface18.gif
 %%DATADIR%%/framework/api/resource/apiviewer/image/interface_warning18.gif
+%%DATADIR%%/framework/api/resource/apiviewer/image/loading66.gif
+%%DATADIR%%/framework/api/resource/apiviewer/image/method_internal18.gif
 %%DATADIR%%/framework/api/resource/apiviewer/image/method_private18.gif
 %%DATADIR%%/framework/api/resource/apiviewer/image/method_protected18.gif
 %%DATADIR%%/framework/api/resource/apiviewer/image/method_public18.gif
@@ -2753,6 +2957,7 @@
 %%DATADIR%%/framework/api/resource/apiviewer/image/package18.gif
 %%DATADIR%%/framework/api/resource/apiviewer/image/package_warning18.gif
 %%DATADIR%%/framework/api/resource/apiviewer/image/property18.gif
+%%DATADIR%%/framework/api/resource/apiviewer/image/property_internal18.gif
 %%DATADIR%%/framework/api/resource/apiviewer/image/property_private18.gif
 %%DATADIR%%/framework/api/resource/apiviewer/image/property_protected18.gif
 %%DATADIR%%/framework/api/resource/apiviewer/image/property_themeable18.gif
@@ -3222,6 +3427,7 @@
 %%DATADIR%%/framework/api/script/qx.Part.json
 %%DATADIR%%/framework/api/script/qx.Theme.json
 %%DATADIR%%/framework/api/script/qx.application.AbstractGui.json
+%%DATADIR%%/framework/api/script/qx.application.Basic.json
 %%DATADIR%%/framework/api/script/qx.application.IApplication.json
 %%DATADIR%%/framework/api/script/qx.application.Inline.json
 %%DATADIR%%/framework/api/script/qx.application.Mobile.json
@@ -3233,6 +3439,7 @@
 %%DATADIR%%/framework/api/script/qx.bom.Document.json
 %%DATADIR%%/framework/api/script/qx.bom.Element.json
 %%DATADIR%%/framework/api/script/qx.bom.Event.json
+%%DATADIR%%/framework/api/script/qx.bom.FileReader.json
 %%DATADIR%%/framework/api/script/qx.bom.Flash.json
 %%DATADIR%%/framework/api/script/qx.bom.Font.json
 %%DATADIR%%/framework/api/script/qx.bom.GeoLocation.json
@@ -3261,24 +3468,21 @@
 %%DATADIR%%/framework/api/script/qx.bom.client.EcmaScript.json
 %%DATADIR%%/framework/api/script/qx.bom.client.Engine.json
 %%DATADIR%%/framework/api/script/qx.bom.client.Event.json
-%%DATADIR%%/framework/api/script/qx.bom.client.Feature.json
 %%DATADIR%%/framework/api/script/qx.bom.client.Flash.json
 %%DATADIR%%/framework/api/script/qx.bom.client.Html.json
 %%DATADIR%%/framework/api/script/qx.bom.client.Locale.json
-%%DATADIR%%/framework/api/script/qx.bom.client.Multimedia.json
 %%DATADIR%%/framework/api/script/qx.bom.client.OperatingSystem.json
 %%DATADIR%%/framework/api/script/qx.bom.client.PhoneGap.json
-%%DATADIR%%/framework/api/script/qx.bom.client.Platform.json
 %%DATADIR%%/framework/api/script/qx.bom.client.Plugin.json
-%%DATADIR%%/framework/api/script/qx.bom.client.System.json
+%%DATADIR%%/framework/api/script/qx.bom.client.Runtime.json
 %%DATADIR%%/framework/api/script/qx.bom.client.Transport.json
-%%DATADIR%%/framework/api/script/qx.bom.client.Version.json
 %%DATADIR%%/framework/api/script/qx.bom.element.Attribute.json
 %%DATADIR%%/framework/api/script/qx.bom.element.Background.json
 %%DATADIR%%/framework/api/script/qx.bom.element.BoxSizing.json
 %%DATADIR%%/framework/api/script/qx.bom.element.Class.json
 %%DATADIR%%/framework/api/script/qx.bom.element.Clip.json
 %%DATADIR%%/framework/api/script/qx.bom.element.Cursor.json
+%%DATADIR%%/framework/api/script/qx.bom.element.Dataset.json
 %%DATADIR%%/framework/api/script/qx.bom.element.Decoration.json
 %%DATADIR%%/framework/api/script/qx.bom.element.Dimension.json
 %%DATADIR%%/framework/api/script/qx.bom.element.Location.json
@@ -3292,13 +3496,20 @@
 %%DATADIR%%/framework/api/script/qx.bom.media.Abstract.json
 %%DATADIR%%/framework/api/script/qx.bom.media.Audio.json
 %%DATADIR%%/framework/api/script/qx.bom.media.Video.json
+%%DATADIR%%/framework/api/script/qx.bom.request.IRequest.json
+%%DATADIR%%/framework/api/script/qx.bom.request.Jsonp.json
+%%DATADIR%%/framework/api/script/qx.bom.request.Script.json
 %%DATADIR%%/framework/api/script/qx.bom.request.Xhr.json
 %%DATADIR%%/framework/api/script/qx.bom.storage.Abstract.json
 %%DATADIR%%/framework/api/script/qx.bom.storage.Local.json
 %%DATADIR%%/framework/api/script/qx.bom.storage.Session.json
+%%DATADIR%%/framework/api/script/qx.bom.webfonts.Manager.json
+%%DATADIR%%/framework/api/script/qx.bom.webfonts.Validator.json
+%%DATADIR%%/framework/api/script/qx.bom.webfonts.WebFont.json
 %%DATADIR%%/framework/api/script/qx.core.Aspect.json
 %%DATADIR%%/framework/api/script/qx.core.Assert.json
 %%DATADIR%%/framework/api/script/qx.core.AssertionError.json
+%%DATADIR%%/framework/api/script/qx.core.BaseInit.json
 %%DATADIR%%/framework/api/script/qx.core.Environment.json
 %%DATADIR%%/framework/api/script/qx.core.GlobalError.json
 %%DATADIR%%/framework/api/script/qx.core.Init.json
@@ -3307,9 +3518,7 @@
 %%DATADIR%%/framework/api/script/qx.core.Object.json
 %%DATADIR%%/framework/api/script/qx.core.ObjectRegistry.json
 %%DATADIR%%/framework/api/script/qx.core.Property.json
-%%DATADIR%%/framework/api/script/qx.core.Setting.json
 %%DATADIR%%/framework/api/script/qx.core.ValidationError.json
-%%DATADIR%%/framework/api/script/qx.core.Variant.json
 %%DATADIR%%/framework/api/script/qx.core.WindowError.json
 %%DATADIR%%/framework/api/script/qx.data.Array.json
 %%DATADIR%%/framework/api/script/qx.data.Conversion.json
@@ -3329,6 +3538,7 @@
 %%DATADIR%%/framework/api/script/qx.data.store.IStoreDelegate.json
 %%DATADIR%%/framework/api/script/qx.data.store.Json.json
 %%DATADIR%%/framework/api/script/qx.data.store.Jsonp.json
+%%DATADIR%%/framework/api/script/qx.data.store.Rest.json
 %%DATADIR%%/framework/api/script/qx.data.store.Yql.json
 %%DATADIR%%/framework/api/script/qx.dev.Debug.json
 %%DATADIR%%/framework/api/script/qx.dev.ObjectSummary.json
@@ -3398,6 +3608,7 @@
 %%DATADIR%%/framework/api/script/qx.event.type.MouseWheel.json
 %%DATADIR%%/framework/api/script/qx.event.type.Native.json
 %%DATADIR%%/framework/api/script/qx.event.type.Orientation.json
+%%DATADIR%%/framework/api/script/qx.event.type.Rest.json
 %%DATADIR%%/framework/api/script/qx.event.type.Swipe.json
 %%DATADIR%%/framework/api/script/qx.event.type.Tap.json
 %%DATADIR%%/framework/api/script/qx.event.type.Touch.json
@@ -3446,11 +3657,17 @@
 %%DATADIR%%/framework/api/script/qx.io.remote.RequestQueue.json
 %%DATADIR%%/framework/api/script/qx.io.remote.Response.json
 %%DATADIR%%/framework/api/script/qx.io.remote.Rpc.json
+%%DATADIR%%/framework/api/script/qx.io.remote.RpcError.json
 %%DATADIR%%/framework/api/script/qx.io.remote.transport.Abstract.json
 %%DATADIR%%/framework/api/script/qx.io.remote.transport.Iframe.json
 %%DATADIR%%/framework/api/script/qx.io.remote.transport.Script.json
 %%DATADIR%%/framework/api/script/qx.io.remote.transport.XmlHttp.json
+%%DATADIR%%/framework/api/script/qx.io.request.AbstractRequest.json
+%%DATADIR%%/framework/api/script/qx.io.request.Jsonp.json
 %%DATADIR%%/framework/api/script/qx.io.request.Xhr.json
+%%DATADIR%%/framework/api/script/qx.io.request.authentication.Basic.json
+%%DATADIR%%/framework/api/script/qx.io.request.authentication.IAuthentication.json
+%%DATADIR%%/framework/api/script/qx.io.rest.Resource.json
 %%DATADIR%%/framework/api/script/qx.lang.Array.json
 %%DATADIR%%/framework/api/script/qx.lang.Core.json
 %%DATADIR%%/framework/api/script/qx.lang.Date.json
@@ -3474,6 +3691,7 @@
 %%DATADIR%%/framework/api/script/qx.log.appender.Console.json
 %%DATADIR%%/framework/api/script/qx.log.appender.Element.json
 %%DATADIR%%/framework/api/script/qx.log.appender.Native.json
+%%DATADIR%%/framework/api/script/qx.log.appender.NodeConsole.json
 %%DATADIR%%/framework/api/script/qx.log.appender.PhoneGap.json
 %%DATADIR%%/framework/api/script/qx.log.appender.RhinoConsole.json
 %%DATADIR%%/framework/api/script/qx.log.appender.RhinoFile.json
@@ -3554,6 +3772,7 @@
 %%DATADIR%%/framework/api/script/qx.ui.core.scroll.AbstractScrollArea.json
 %%DATADIR%%/framework/api/script/qx.ui.core.scroll.IScrollBar.json
 %%DATADIR%%/framework/api/script/qx.ui.core.scroll.MScrollBarFactory.json
+%%DATADIR%%/framework/api/script/qx.ui.core.scroll.MWheelHandling.json
 %%DATADIR%%/framework/api/script/qx.ui.core.scroll.NativeScrollBar.json
 %%DATADIR%%/framework/api/script/qx.ui.core.scroll.ScrollBar.json
 %%DATADIR%%/framework/api/script/qx.ui.core.scroll.ScrollPane.json
@@ -3689,17 +3908,27 @@
 %%DATADIR%%/framework/api/script/qx.ui.mobile.dialog.Manager.json
 %%DATADIR%%/framework/api/script/qx.ui.mobile.embed.Html.json
 %%DATADIR%%/framework/api/script/qx.ui.mobile.form.Button.json
+%%DATADIR%%/framework/api/script/qx.ui.mobile.form.CheckBox.json
 %%DATADIR%%/framework/api/script/qx.ui.mobile.form.Form.json
 %%DATADIR%%/framework/api/script/qx.ui.mobile.form.Group.json
 %%DATADIR%%/framework/api/script/qx.ui.mobile.form.Input.json
+%%DATADIR%%/framework/api/script/qx.ui.mobile.form.MEnable.json
+%%DATADIR%%/framework/api/script/qx.ui.mobile.form.MState.json
+%%DATADIR%%/framework/api/script/qx.ui.mobile.form.MText.json
 %%DATADIR%%/framework/api/script/qx.ui.mobile.form.MValue.json
 %%DATADIR%%/framework/api/script/qx.ui.mobile.form.PasswordField.json
+%%DATADIR%%/framework/api/script/qx.ui.mobile.form.RadioButton.json
+%%DATADIR%%/framework/api/script/qx.ui.mobile.form.Resetter.json
 %%DATADIR%%/framework/api/script/qx.ui.mobile.form.Row.json
+%%DATADIR%%/framework/api/script/qx.ui.mobile.form.SelectBox.json
 %%DATADIR%%/framework/api/script/qx.ui.mobile.form.Slider.json
 %%DATADIR%%/framework/api/script/qx.ui.mobile.form.TextArea.json
 %%DATADIR%%/framework/api/script/qx.ui.mobile.form.TextField.json
 %%DATADIR%%/framework/api/script/qx.ui.mobile.form.Title.json
 %%DATADIR%%/framework/api/script/qx.ui.mobile.form.ToggleButton.json
+%%DATADIR%%/framework/api/script/qx.ui.mobile.form.renderer.AbstractRenderer.json
+%%DATADIR%%/framework/api/script/qx.ui.mobile.form.renderer.Single.json
+%%DATADIR%%/framework/api/script/qx.ui.mobile.form.renderer.SinglePlaceholder.json
 %%DATADIR%%/framework/api/script/qx.ui.mobile.layout.Abstract.json
 %%DATADIR%%/framework/api/script/qx.ui.mobile.layout.AbstractBox.json
 %%DATADIR%%/framework/api/script/qx.ui.mobile.layout.HBox.json
@@ -3721,6 +3950,9 @@
 %%DATADIR%%/framework/api/script/qx.ui.mobile.page.manager.Simple.json
 %%DATADIR%%/framework/api/script/qx.ui.mobile.tabbar.TabBar.json
 %%DATADIR%%/framework/api/script/qx.ui.mobile.tabbar.TabButton.json
+%%DATADIR%%/framework/api/script/qx.ui.mobile.toolbar.Button.json
+%%DATADIR%%/framework/api/script/qx.ui.mobile.toolbar.Separator.json
+%%DATADIR%%/framework/api/script/qx.ui.mobile.toolbar.ToolBar.json
 %%DATADIR%%/framework/api/script/qx.ui.popup.Manager.json
 %%DATADIR%%/framework/api/script/qx.ui.popup.Popup.json
 %%DATADIR%%/framework/api/script/qx.ui.progressive.Progressive.json
@@ -3822,8 +4054,6 @@
 %%DATADIR%%/framework/api/script/qx.ui.toolbar.ToolBar.json
 %%DATADIR%%/framework/api/script/qx.ui.tooltip.Manager.json
 %%DATADIR%%/framework/api/script/qx.ui.tooltip.ToolTip.json
-%%DATADIR%%/framework/api/script/qx.ui.tree.AbstractTreeItem.json
-%%DATADIR%%/framework/api/script/qx.ui.tree.FolderOpenButton.json
 %%DATADIR%%/framework/api/script/qx.ui.tree.Tree.json
 %%DATADIR%%/framework/api/script/qx.ui.tree.TreeFile.json
 %%DATADIR%%/framework/api/script/qx.ui.tree.TreeFolder.json
@@ -3890,6 +4120,7 @@
 %%DATADIR%%/framework/api/script/qx.ui.virtual.selection.CellRectangle.json
 %%DATADIR%%/framework/api/script/qx.ui.virtual.selection.Column.json
 %%DATADIR%%/framework/api/script/qx.ui.virtual.selection.ISelectionDelegate.json
+%%DATADIR%%/framework/api/script/qx.ui.virtual.selection.MModel.json
 %%DATADIR%%/framework/api/script/qx.ui.virtual.selection.Row.json
 %%DATADIR%%/framework/api/script/qx.ui.window.Desktop.json
 %%DATADIR%%/framework/api/script/qx.ui.window.IDesktop.json
@@ -3910,6 +4141,7 @@
 %%DATADIR%%/framework/api/script/qx.util.ObjectPool.json
 %%DATADIR%%/framework/api/script/qx.util.Permutation.json
 %%DATADIR%%/framework/api/script/qx.util.PropertyUtil.json
+%%DATADIR%%/framework/api/script/qx.util.Request.json
 %%DATADIR%%/framework/api/script/qx.util.ResourceManager.json
 %%DATADIR%%/framework/api/script/qx.util.Serializer.json
 %%DATADIR%%/framework/api/script/qx.util.StringBuilder.json
@@ -3917,6 +4149,7 @@
 %%DATADIR%%/framework/api/script/qx.util.StringSplit.json
 %%DATADIR%%/framework/api/script/qx.util.Template.json
 %%DATADIR%%/framework/api/script/qx.util.TimerManager.json
+%%DATADIR%%/framework/api/script/qx.util.Uri.json
 %%DATADIR%%/framework/api/script/qx.util.Validate.json
 %%DATADIR%%/framework/api/script/qx.util.ValueManager.json
 %%DATADIR%%/framework/api/script/qx.util.format.DateFormat.json
@@ -3944,6 +4177,7 @@
 %%DATADIR%%/framework/source/class/qx/Theme.js
 %%DATADIR%%/framework/source/class/qx/__init__.js
 %%DATADIR%%/framework/source/class/qx/application/AbstractGui.js
+%%DATADIR%%/framework/source/class/qx/application/Basic.js
 %%DATADIR%%/framework/source/class/qx/application/IApplication.js
 %%DATADIR%%/framework/source/class/qx/application/Inline.js
 %%DATADIR%%/framework/source/class/qx/application/Mobile.js
@@ -3956,6 +4190,7 @@
 %%DATADIR%%/framework/source/class/qx/bom/Document.js
 %%DATADIR%%/framework/source/class/qx/bom/Element.js
 %%DATADIR%%/framework/source/class/qx/bom/Event.js
+%%DATADIR%%/framework/source/class/qx/bom/FileReader.js
 %%DATADIR%%/framework/source/class/qx/bom/Flash.js
 %%DATADIR%%/framework/source/class/qx/bom/Font.js
 %%DATADIR%%/framework/source/class/qx/bom/GeoLocation.js
@@ -3985,18 +4220,14 @@
 %%DATADIR%%/framework/source/class/qx/bom/client/EcmaScript.js
 %%DATADIR%%/framework/source/class/qx/bom/client/Engine.js
 %%DATADIR%%/framework/source/class/qx/bom/client/Event.js
-%%DATADIR%%/framework/source/class/qx/bom/client/Feature.js
 %%DATADIR%%/framework/source/class/qx/bom/client/Flash.js
 %%DATADIR%%/framework/source/class/qx/bom/client/Html.js
 %%DATADIR%%/framework/source/class/qx/bom/client/Locale.js
-%%DATADIR%%/framework/source/class/qx/bom/client/Multimedia.js
 %%DATADIR%%/framework/source/class/qx/bom/client/OperatingSystem.js
 %%DATADIR%%/framework/source/class/qx/bom/client/PhoneGap.js
-%%DATADIR%%/framework/source/class/qx/bom/client/Platform.js
 %%DATADIR%%/framework/source/class/qx/bom/client/Plugin.js
-%%DATADIR%%/framework/source/class/qx/bom/client/System.js
+%%DATADIR%%/framework/source/class/qx/bom/client/Runtime.js
 %%DATADIR%%/framework/source/class/qx/bom/client/Transport.js
-%%DATADIR%%/framework/source/class/qx/bom/client/Version.js
 %%DATADIR%%/framework/source/class/qx/bom/client/__init__.js
 %%DATADIR%%/framework/source/class/qx/bom/element/Attribute.js
 %%DATADIR%%/framework/source/class/qx/bom/element/Background.js
@@ -4004,6 +4235,7 @@
 %%DATADIR%%/framework/source/class/qx/bom/element/Class.js
 %%DATADIR%%/framework/source/class/qx/bom/element/Clip.js
 %%DATADIR%%/framework/source/class/qx/bom/element/Cursor.js
+%%DATADIR%%/framework/source/class/qx/bom/element/Dataset.js
 %%DATADIR%%/framework/source/class/qx/bom/element/Decoration.js
 %%DATADIR%%/framework/source/class/qx/bom/element/Dimension.js
 %%DATADIR%%/framework/source/class/qx/bom/element/Location.js
@@ -4020,14 +4252,22 @@
 %%DATADIR%%/framework/source/class/qx/bom/media/Abstract.js
 %%DATADIR%%/framework/source/class/qx/bom/media/Audio.js
 %%DATADIR%%/framework/source/class/qx/bom/media/Video.js
+%%DATADIR%%/framework/source/class/qx/bom/request/IRequest.js
+%%DATADIR%%/framework/source/class/qx/bom/request/Jsonp.js
+%%DATADIR%%/framework/source/class/qx/bom/request/Script.js
 %%DATADIR%%/framework/source/class/qx/bom/request/Xhr.js
 %%DATADIR%%/framework/source/class/qx/bom/request/__init__.js
 %%DATADIR%%/framework/source/class/qx/bom/storage/Abstract.js
 %%DATADIR%%/framework/source/class/qx/bom/storage/Local.js
 %%DATADIR%%/framework/source/class/qx/bom/storage/Session.js
+%%DATADIR%%/framework/source/class/qx/bom/webfonts/Manager.js
+%%DATADIR%%/framework/source/class/qx/bom/webfonts/Validator.js
+%%DATADIR%%/framework/source/class/qx/bom/webfonts/WebFont.js
+%%DATADIR%%/framework/source/class/qx/bom/webfonts/__init__.js
 %%DATADIR%%/framework/source/class/qx/core/Aspect.js
 %%DATADIR%%/framework/source/class/qx/core/Assert.js
 %%DATADIR%%/framework/source/class/qx/core/AssertionError.js
+%%DATADIR%%/framework/source/class/qx/core/BaseInit.js
 %%DATADIR%%/framework/source/class/qx/core/Environment.js
 %%DATADIR%%/framework/source/class/qx/core/GlobalError.js
 %%DATADIR%%/framework/source/class/qx/core/Init.js
@@ -4036,9 +4276,7 @@
 %%DATADIR%%/framework/source/class/qx/core/Object.js
 %%DATADIR%%/framework/source/class/qx/core/ObjectRegistry.js
 %%DATADIR%%/framework/source/class/qx/core/Property.js
-%%DATADIR%%/framework/source/class/qx/core/Setting.js
 %%DATADIR%%/framework/source/class/qx/core/ValidationError.js
-%%DATADIR%%/framework/source/class/qx/core/Variant.js
 %%DATADIR%%/framework/source/class/qx/core/WindowError.js
 %%DATADIR%%/framework/source/class/qx/core/__init__.js
 %%DATADIR%%/framework/source/class/qx/data/Array.js
@@ -4062,6 +4300,7 @@
 %%DATADIR%%/framework/source/class/qx/data/store/IStoreDelegate.js
 %%DATADIR%%/framework/source/class/qx/data/store/Json.js
 %%DATADIR%%/framework/source/class/qx/data/store/Jsonp.js
+%%DATADIR%%/framework/source/class/qx/data/store/Rest.js
 %%DATADIR%%/framework/source/class/qx/data/store/Yql.js
 %%DATADIR%%/framework/source/class/qx/data/store/__init__.js
 %%DATADIR%%/framework/source/class/qx/dev/Debug.js
@@ -4139,6 +4378,7 @@
 %%DATADIR%%/framework/source/class/qx/event/type/MouseWheel.js
 %%DATADIR%%/framework/source/class/qx/event/type/Native.js
 %%DATADIR%%/framework/source/class/qx/event/type/Orientation.js
+%%DATADIR%%/framework/source/class/qx/event/type/Rest.js
 %%DATADIR%%/framework/source/class/qx/event/type/Swipe.js
 %%DATADIR%%/framework/source/class/qx/event/type/Tap.js
 %%DATADIR%%/framework/source/class/qx/event/type/Touch.js
@@ -4182,7 +4422,6 @@
 %%DATADIR%%/framework/source/class/qx/html/Label.js
 %%DATADIR%%/framework/source/class/qx/html/Root.js
 %%DATADIR%%/framework/source/class/qx/html/__init__.js
-%%DATADIR%%/framework/source/class/qx/io/HttpRequest.js
 %%DATADIR%%/framework/source/class/qx/io/ImageLoader.js
 %%DATADIR%%/framework/source/class/qx/io/PartLoader.js
 %%DATADIR%%/framework/source/class/qx/io/ScriptLoader.js
@@ -4196,14 +4435,21 @@
 %%DATADIR%%/framework/source/class/qx/io/remote/RequestQueue.js
 %%DATADIR%%/framework/source/class/qx/io/remote/Response.js
 %%DATADIR%%/framework/source/class/qx/io/remote/Rpc.js
+%%DATADIR%%/framework/source/class/qx/io/remote/RpcError.js
 %%DATADIR%%/framework/source/class/qx/io/remote/__init__.js
 %%DATADIR%%/framework/source/class/qx/io/remote/transport/Abstract.js
 %%DATADIR%%/framework/source/class/qx/io/remote/transport/Iframe.js
 %%DATADIR%%/framework/source/class/qx/io/remote/transport/Script.js
 %%DATADIR%%/framework/source/class/qx/io/remote/transport/XmlHttp.js
 %%DATADIR%%/framework/source/class/qx/io/remote/transport/__init__.js
+%%DATADIR%%/framework/source/class/qx/io/request/AbstractRequest.js
+%%DATADIR%%/framework/source/class/qx/io/request/Jsonp.js
 %%DATADIR%%/framework/source/class/qx/io/request/Xhr.js
 %%DATADIR%%/framework/source/class/qx/io/request/__init__.js
+%%DATADIR%%/framework/source/class/qx/io/request/authentication/Basic.js
+%%DATADIR%%/framework/source/class/qx/io/request/authentication/IAuthentication.js
+%%DATADIR%%/framework/source/class/qx/io/request/authentication/__init__.js
+%%DATADIR%%/framework/source/class/qx/io/rest/Resource.js
 %%DATADIR%%/framework/source/class/qx/lang/Array.js
 %%DATADIR%%/framework/source/class/qx/lang/Core.js
 %%DATADIR%%/framework/source/class/qx/lang/Date.js
@@ -4230,6 +4476,7 @@
 %%DATADIR%%/framework/source/class/qx/log/appender/Console.js
 %%DATADIR%%/framework/source/class/qx/log/appender/Element.js
 %%DATADIR%%/framework/source/class/qx/log/appender/Native.js
+%%DATADIR%%/framework/source/class/qx/log/appender/NodeConsole.js
 %%DATADIR%%/framework/source/class/qx/log/appender/PhoneGap.js
 %%DATADIR%%/framework/source/class/qx/log/appender/RhinoConsole.js
 %%DATADIR%%/framework/source/class/qx/log/appender/RhinoFile.js
@@ -4253,12 +4500,15 @@
 %%DATADIR%%/framework/source/class/qx/test/bom/Class.js
 %%DATADIR%%/framework/source/class/qx/test/bom/Collection.js
 %%DATADIR%%/framework/source/class/qx/test/bom/Cookie.js
+%%DATADIR%%/framework/source/class/qx/test/bom/Dataset.js
 %%DATADIR%%/framework/source/class/qx/test/bom/Element.js
 %%DATADIR%%/framework/source/class/qx/test/bom/Event.js
+%%DATADIR%%/framework/source/class/qx/test/bom/FileReader.js
 %%DATADIR%%/framework/source/class/qx/test/bom/Font.js
 %%DATADIR%%/framework/source/class/qx/test/bom/GeoLocation.js
 %%DATADIR%%/framework/source/class/qx/test/bom/HtmlArea.js
 %%DATADIR%%/framework/source/class/qx/test/bom/Iframe.js
+%%DATADIR%%/framework/source/class/qx/test/bom/Label.js
 %%DATADIR%%/framework/source/class/qx/test/bom/Location.js
 %%DATADIR%%/framework/source/class/qx/test/bom/Selector.js
 %%DATADIR%%/framework/source/class/qx/test/bom/String.js
@@ -4271,11 +4521,16 @@
 %%DATADIR%%/framework/source/class/qx/test/bom/media/Audio.js
 %%DATADIR%%/framework/source/class/qx/test/bom/media/MediaTestCase.js
 %%DATADIR%%/framework/source/class/qx/test/bom/media/Video.js
+%%DATADIR%%/framework/source/class/qx/test/bom/request/Jsonp.js
+%%DATADIR%%/framework/source/class/qx/test/bom/request/Script.js
 %%DATADIR%%/framework/source/class/qx/test/bom/request/Xhr.js
-%%DATADIR%%/framework/source/class/qx/test/bom/request/XhrWithBackend.js
+%%DATADIR%%/framework/source/class/qx/test/bom/request/XhrWithRemote.js
 %%DATADIR%%/framework/source/class/qx/test/bom/storage/Local.js
 %%DATADIR%%/framework/source/class/qx/test/bom/storage/Session.js
 %%DATADIR%%/framework/source/class/qx/test/bom/storage/WebStorageTestCase.js
+%%DATADIR%%/framework/source/class/qx/test/bom/webfonts/Abstract.js
+%%DATADIR%%/framework/source/class/qx/test/bom/webfonts/Manager.js
+%%DATADIR%%/framework/source/class/qx/test/bom/webfonts/Validator.js
 %%DATADIR%%/framework/source/class/qx/test/core/Assert.js
 %%DATADIR%%/framework/source/class/qx/test/core/Environment.js
 %%DATADIR%%/framework/source/class/qx/test/core/EventEmitterDummy.js
@@ -4304,8 +4559,13 @@
 %%DATADIR%%/framework/source/class/qx/test/data/singlevalue/TextFieldDummy.js
 %%DATADIR%%/framework/source/class/qx/test/data/singlevalue/__init__.js
 %%DATADIR%%/framework/source/class/qx/test/data/store/Json.js
+%%DATADIR%%/framework/source/class/qx/test/data/store/JsonLegacy.js
 %%DATADIR%%/framework/source/class/qx/test/data/store/Jsonp.js
+%%DATADIR%%/framework/source/class/qx/test/data/store/JsonpLegacy.js
+%%DATADIR%%/framework/source/class/qx/test/data/store/Rest.js
+%%DATADIR%%/framework/source/class/qx/test/data/store/RestWithRemote.js
 %%DATADIR%%/framework/source/class/qx/test/data/store/__init__.js
+%%DATADIR%%/framework/source/class/qx/test/dev/Debug.js
 %%DATADIR%%/framework/source/class/qx/test/dev/StackTrace.js
 %%DATADIR%%/framework/source/class/qx/test/dev/__init__.js
 %%DATADIR%%/framework/source/class/qx/test/dev/unit/Sinon.js
@@ -4330,6 +4590,7 @@
 %%DATADIR%%/framework/source/class/qx/test/event/type/Mouse.js
 %%DATADIR%%/framework/source/class/qx/test/event/type/Native.js
 %%DATADIR%%/framework/source/class/qx/test/event/type/__init__.js
+%%DATADIR%%/framework/source/class/qx/test/fx/Base.js
 %%DATADIR%%/framework/source/class/qx/test/html/Element.js
 %%DATADIR%%/framework/source/class/qx/test/html/Flash.js
 %%DATADIR%%/framework/source/class/qx/test/html/Iframe.js
@@ -4343,13 +4604,21 @@
 %%DATADIR%%/framework/source/class/qx/test/io/part/MockPackage.js
 %%DATADIR%%/framework/source/class/qx/test/io/part/Package.js
 %%DATADIR%%/framework/source/class/qx/test/io/part/Part.js
-%%DATADIR%%/framework/source/class/qx/test/io/remote/Request.js
+%%DATADIR%%/framework/source/class/qx/test/io/remote/AbstractRequest.js
 %%DATADIR%%/framework/source/class/qx/test/io/remote/RequestIframe.js
+%%DATADIR%%/framework/source/class/qx/test/io/remote/RequestXhr.js
+%%DATADIR%%/framework/source/class/qx/test/io/remote/Rpc.js
 %%DATADIR%%/framework/source/class/qx/test/io/remote/__init__.js
 %%DATADIR%%/framework/source/class/qx/test/io/remote/transport/Iframe.js
 %%DATADIR%%/framework/source/class/qx/test/io/remote/transport/XmlHttp.js
 %%DATADIR%%/framework/source/class/qx/test/io/remote/transport/__init__.js
+%%DATADIR%%/framework/source/class/qx/test/io/request/Jsonp.js
+%%DATADIR%%/framework/source/class/qx/test/io/request/JsonpWithRemote.js
+%%DATADIR%%/framework/source/class/qx/test/io/request/MRequest.js
 %%DATADIR%%/framework/source/class/qx/test/io/request/Xhr.js
+%%DATADIR%%/framework/source/class/qx/test/io/request/XhrWithRemote.js
+%%DATADIR%%/framework/source/class/qx/test/io/rest/Resource.js
+%%DATADIR%%/framework/source/class/qx/test/io/rest/ResourceWithRemote.js
 %%DATADIR%%/framework/source/class/qx/test/lang/Array.js
 %%DATADIR%%/framework/source/class/qx/test/lang/Core.js
 %%DATADIR%%/framework/source/class/qx/test/lang/Function.js
@@ -4380,10 +4649,27 @@
 %%DATADIR%%/framework/source/class/qx/test/mobile/basic/Label.js
 %%DATADIR%%/framework/source/class/qx/test/mobile/container/Composite.js
 %%DATADIR%%/framework/source/class/qx/test/mobile/core/Widget.js
+%%DATADIR%%/framework/source/class/qx/test/mobile/embed/Html.js
+%%DATADIR%%/framework/source/class/qx/test/mobile/form/Button.js
+%%DATADIR%%/framework/source/class/qx/test/mobile/form/CheckBox.js
+%%DATADIR%%/framework/source/class/qx/test/mobile/form/Form.js
+%%DATADIR%%/framework/source/class/qx/test/mobile/form/RadioButton.js
+%%DATADIR%%/framework/source/class/qx/test/mobile/form/SelectBox.js
+%%DATADIR%%/framework/source/class/qx/test/mobile/form/SingleRenderer.js
+%%DATADIR%%/framework/source/class/qx/test/mobile/form/Slider.js
+%%DATADIR%%/framework/source/class/qx/test/mobile/form/TextArea.js
+%%DATADIR%%/framework/source/class/qx/test/mobile/form/TextField.js
+%%DATADIR%%/framework/source/class/qx/test/mobile/form/ToogleButton.js
+%%DATADIR%%/framework/source/class/qx/test/mobile/list/List.js
+%%DATADIR%%/framework/source/class/qx/test/mobile/navigationbar/NavigationBar.js
+%%DATADIR%%/framework/source/class/qx/test/mobile/page/Page.js
+%%DATADIR%%/framework/source/class/qx/test/mobile/tabbar/TabBar.js
+%%DATADIR%%/framework/source/class/qx/test/mobile/toolbar/Toolbar.js
 %%DATADIR%%/framework/source/class/qx/test/performance/BaseCall.js
 %%DATADIR%%/framework/source/class/qx/test/performance/Event.js
 %%DATADIR%%/framework/source/class/qx/test/performance/MMeasure.js
 %%DATADIR%%/framework/source/class/qx/test/performance/Object.js
+%%DATADIR%%/framework/source/class/qx/test/performance/data/Marshaling.js
 %%DATADIR%%/framework/source/class/qx/test/performance/decorator/AbstractDecorator.js
 %%DATADIR%%/framework/source/class/qx/test/performance/decorator/Background.js
 %%DATADIR%%/framework/source/class/qx/test/performance/decorator/BackgroundScale.js
@@ -4411,8 +4697,9 @@
 %%DATADIR%%/framework/source/class/qx/test/theme/manager/Font.js
 %%DATADIR%%/framework/source/class/qx/test/theme/manager/Icon.js
 %%DATADIR%%/framework/source/class/qx/test/theme/manager/__init__.js
-%%DATADIR%%/framework/source/class/qx/test/toolchain/Optimizer.js
+%%DATADIR%%/framework/source/class/qx/test/toolchain/PrivateOptimization.js
 %%DATADIR%%/framework/source/class/qx/test/toolchain/TestRunner.js
+%%DATADIR%%/framework/source/class/qx/test/toolchain/VariantOptimization.js
 %%DATADIR%%/framework/source/class/qx/test/toolchain/__init__.js
 %%DATADIR%%/framework/source/class/qx/test/type/Array.js
 %%DATADIR%%/framework/source/class/qx/test/type/BaseArray.js
@@ -4425,6 +4712,7 @@
 %%DATADIR%%/framework/source/class/qx/test/ui/Insets.js
 %%DATADIR%%/framework/source/class/qx/test/ui/LayoutTestCase.js
 %%DATADIR%%/framework/source/class/qx/test/ui/LocaleSwitch.js
+%%DATADIR%%/framework/source/class/qx/test/ui/RadioItems.js
 %%DATADIR%%/framework/source/class/qx/test/ui/Widget.js
 %%DATADIR%%/framework/source/class/qx/test/ui/Window.js
 %%DATADIR%%/framework/source/class/qx/test/ui/__init__.js
@@ -4442,6 +4730,7 @@
 %%DATADIR%%/framework/source/class/qx/test/ui/core/SizeHintY.js
 %%DATADIR%%/framework/source/class/qx/test/ui/core/Widget.js
 %%DATADIR%%/framework/source/class/qx/test/ui/core/__init__.js
+%%DATADIR%%/framework/source/class/qx/test/ui/decoration/Double.js
 %%DATADIR%%/framework/source/class/qx/test/ui/decoration/Single.js
 %%DATADIR%%/framework/source/class/qx/test/ui/decoration/Uniform.js
 %%DATADIR%%/framework/source/class/qx/test/ui/embed/Flash.js
@@ -4518,6 +4807,10 @@
 %%DATADIR%%/framework/source/class/qx/test/ui/toolbar/OverflowHandling.js
 %%DATADIR%%/framework/source/class/qx/test/ui/tree/Tree.js
 %%DATADIR%%/framework/source/class/qx/test/ui/tree/TreeFolder.js
+%%DATADIR%%/framework/source/class/qx/test/ui/tree/virtual/AbstractTreeTest.js
+%%DATADIR%%/framework/source/class/qx/test/ui/tree/virtual/MultiSelection.js
+%%DATADIR%%/framework/source/class/qx/test/ui/tree/virtual/OneSelection.js
+%%DATADIR%%/framework/source/class/qx/test/ui/tree/virtual/SingleSelection.js
 %%DATADIR%%/framework/source/class/qx/test/ui/tree/virtual/Tree.js
 %%DATADIR%%/framework/source/class/qx/test/ui/tree/virtual/WidgetProvider.js
 %%DATADIR%%/framework/source/class/qx/test/ui/virtual/Axis.js
@@ -4567,10 +4860,12 @@
 %%DATADIR%%/framework/source/class/qx/test/util/Json.js
 %%DATADIR%%/framework/source/class/qx/test/util/NumberFormat.js
 %%DATADIR%%/framework/source/class/qx/test/util/PropertyUtil.js
+%%DATADIR%%/framework/source/class/qx/test/util/Request.js
 %%DATADIR%%/framework/source/class/qx/test/util/ResourceManager.js
 %%DATADIR%%/framework/source/class/qx/test/util/Serializer.js
 %%DATADIR%%/framework/source/class/qx/test/util/StringSplit.js
 %%DATADIR%%/framework/source/class/qx/test/util/Template.js
+%%DATADIR%%/framework/source/class/qx/test/util/Uri.js
 %%DATADIR%%/framework/source/class/qx/test/util/Validate.js
 %%DATADIR%%/framework/source/class/qx/test/util/__init__.js
 %%DATADIR%%/framework/source/class/qx/test/util/placement/BestFitAxis.js
@@ -4666,6 +4961,7 @@
 %%DATADIR%%/framework/source/class/qx/ui/core/scroll/AbstractScrollArea.js
 %%DATADIR%%/framework/source/class/qx/ui/core/scroll/IScrollBar.js
 %%DATADIR%%/framework/source/class/qx/ui/core/scroll/MScrollBarFactory.js
+%%DATADIR%%/framework/source/class/qx/ui/core/scroll/MWheelHandling.js
 %%DATADIR%%/framework/source/class/qx/ui/core/scroll/NativeScrollBar.js
 %%DATADIR%%/framework/source/class/qx/ui/core/scroll/ScrollBar.js
 %%DATADIR%%/framework/source/class/qx/ui/core/scroll/ScrollPane.js
@@ -4779,7 +5075,6 @@
 %%DATADIR%%/framework/source/class/qx/ui/layout/__init__.js
 %%DATADIR%%/framework/source/class/qx/ui/list/List.js
 %%DATADIR%%/framework/source/class/qx/ui/list/core/IListDelegate.js
-%%DATADIR%%/framework/source/class/qx/ui/list/core/MSelectionHandling.js
 %%DATADIR%%/framework/source/class/qx/ui/list/core/MWidgetController.js
 %%DATADIR%%/framework/source/class/qx/ui/list/provider/IListProvider.js
 %%DATADIR%%/framework/source/class/qx/ui/list/provider/WidgetProvider.js
@@ -4819,18 +5114,28 @@
 %%DATADIR%%/framework/source/class/qx/ui/mobile/embed/Html.js
 %%DATADIR%%/framework/source/class/qx/ui/mobile/embed/__init__.js
 %%DATADIR%%/framework/source/class/qx/ui/mobile/form/Button.js
+%%DATADIR%%/framework/source/class/qx/ui/mobile/form/CheckBox.js
 %%DATADIR%%/framework/source/class/qx/ui/mobile/form/Form.js
 %%DATADIR%%/framework/source/class/qx/ui/mobile/form/Group.js
 %%DATADIR%%/framework/source/class/qx/ui/mobile/form/Input.js
+%%DATADIR%%/framework/source/class/qx/ui/mobile/form/MEnable.js
+%%DATADIR%%/framework/source/class/qx/ui/mobile/form/MState.js
+%%DATADIR%%/framework/source/class/qx/ui/mobile/form/MText.js
 %%DATADIR%%/framework/source/class/qx/ui/mobile/form/MValue.js
 %%DATADIR%%/framework/source/class/qx/ui/mobile/form/PasswordField.js
+%%DATADIR%%/framework/source/class/qx/ui/mobile/form/RadioButton.js
+%%DATADIR%%/framework/source/class/qx/ui/mobile/form/Resetter.js
 %%DATADIR%%/framework/source/class/qx/ui/mobile/form/Row.js
+%%DATADIR%%/framework/source/class/qx/ui/mobile/form/SelectBox.js
 %%DATADIR%%/framework/source/class/qx/ui/mobile/form/Slider.js
 %%DATADIR%%/framework/source/class/qx/ui/mobile/form/TextArea.js
 %%DATADIR%%/framework/source/class/qx/ui/mobile/form/TextField.js
 %%DATADIR%%/framework/source/class/qx/ui/mobile/form/Title.js
 %%DATADIR%%/framework/source/class/qx/ui/mobile/form/ToggleButton.js
 %%DATADIR%%/framework/source/class/qx/ui/mobile/form/__init__.js
+%%DATADIR%%/framework/source/class/qx/ui/mobile/form/renderer/AbstractRenderer.js
+%%DATADIR%%/framework/source/class/qx/ui/mobile/form/renderer/Single.js
+%%DATADIR%%/framework/source/class/qx/ui/mobile/form/renderer/SinglePlaceholder.js
 %%DATADIR%%/framework/source/class/qx/ui/mobile/layout/Abstract.js
 %%DATADIR%%/framework/source/class/qx/ui/mobile/layout/AbstractBox.js
 %%DATADIR%%/framework/source/class/qx/ui/mobile/layout/HBox.js
@@ -4858,6 +5163,9 @@
 %%DATADIR%%/framework/source/class/qx/ui/mobile/tabbar/TabBar.js
 %%DATADIR%%/framework/source/class/qx/ui/mobile/tabbar/TabButton.js
 %%DATADIR%%/framework/source/class/qx/ui/mobile/tabbar/__init__.js
+%%DATADIR%%/framework/source/class/qx/ui/mobile/toolbar/Button.js
+%%DATADIR%%/framework/source/class/qx/ui/mobile/toolbar/Separator.js
+%%DATADIR%%/framework/source/class/qx/ui/mobile/toolbar/ToolBar.js
 %%DATADIR%%/framework/source/class/qx/ui/popup/Manager.js
 %%DATADIR%%/framework/source/class/qx/ui/popup/Popup.js
 %%DATADIR%%/framework/source/class/qx/ui/popup/__init__.js
@@ -4986,8 +5294,6 @@
 %%DATADIR%%/framework/source/class/qx/ui/tooltip/Manager.js
 %%DATADIR%%/framework/source/class/qx/ui/tooltip/ToolTip.js
 %%DATADIR%%/framework/source/class/qx/ui/tooltip/__init__.js
-%%DATADIR%%/framework/source/class/qx/ui/tree/AbstractTreeItem.js
-%%DATADIR%%/framework/source/class/qx/ui/tree/FolderOpenButton.js
 %%DATADIR%%/framework/source/class/qx/ui/tree/Tree.js
 %%DATADIR%%/framework/source/class/qx/ui/tree/TreeFile.js
 %%DATADIR%%/framework/source/class/qx/ui/tree/TreeFolder.js
@@ -5002,7 +5308,6 @@
 %%DATADIR%%/framework/source/class/qx/ui/tree/core/MWidgetController.js
 %%DATADIR%%/framework/source/class/qx/ui/tree/provider/IVirtualTreeProvider.js
 %%DATADIR%%/framework/source/class/qx/ui/tree/provider/WidgetProvider.js
-%%DATADIR%%/framework/source/class/qx/ui/tree/selection/MSelectionHandling.js
 %%DATADIR%%/framework/source/class/qx/ui/tree/selection/SelectionManager.js
 %%DATADIR%%/framework/source/class/qx/ui/treevirtual/DefaultDataCellRenderer.js
 %%DATADIR%%/framework/source/class/qx/ui/treevirtual/MFamily.js
@@ -5062,6 +5367,7 @@
 %%DATADIR%%/framework/source/class/qx/ui/virtual/selection/CellRectangle.js
 %%DATADIR%%/framework/source/class/qx/ui/virtual/selection/Column.js
 %%DATADIR%%/framework/source/class/qx/ui/virtual/selection/ISelectionDelegate.js
+%%DATADIR%%/framework/source/class/qx/ui/virtual/selection/MModel.js
 %%DATADIR%%/framework/source/class/qx/ui/virtual/selection/Row.js
 %%DATADIR%%/framework/source/class/qx/ui/virtual/selection/__init__.js
 %%DATADIR%%/framework/source/class/qx/ui/window/Desktop.js
@@ -5084,6 +5390,7 @@
 %%DATADIR%%/framework/source/class/qx/util/ObjectPool.js
 %%DATADIR%%/framework/source/class/qx/util/Permutation.js
 %%DATADIR%%/framework/source/class/qx/util/PropertyUtil.js
+%%DATADIR%%/framework/source/class/qx/util/Request.js
 %%DATADIR%%/framework/source/class/qx/util/ResourceManager.js
 %%DATADIR%%/framework/source/class/qx/util/Serializer.js
 %%DATADIR%%/framework/source/class/qx/util/StringBuilder.js
@@ -5091,6 +5398,7 @@
 %%DATADIR%%/framework/source/class/qx/util/StringSplit.js
 %%DATADIR%%/framework/source/class/qx/util/Template.js
 %%DATADIR%%/framework/source/class/qx/util/TimerManager.js
+%%DATADIR%%/framework/source/class/qx/util/Uri.js
 %%DATADIR%%/framework/source/class/qx/util/Validate.js
 %%DATADIR%%/framework/source/class/qx/util/ValueManager.js
 %%DATADIR%%/framework/source/class/qx/util/__init__.js
@@ -8520,6 +8828,8 @@
 %%DATADIR%%/framework/source/resource/qx/mobile/icon/android/arrow.png
 %%DATADIR%%/framework/source/resource/qx/mobile/icon/android/arrow_pressed.png
 %%DATADIR%%/framework/source/resource/qx/mobile/icon/android/cancel.png
+%%DATADIR%%/framework/source/resource/qx/mobile/icon/android/checkbox-gray.png
+%%DATADIR%%/framework/source/resource/qx/mobile/icon/android/checkbox-green.png
 %%DATADIR%%/framework/source/resource/qx/mobile/icon/android/loading.png
 %%DATADIR%%/framework/source/resource/qx/mobile/icon/android/on_off.png
 %%DATADIR%%/framework/source/resource/qx/mobile/icon/android/scrollbar.png
@@ -8528,6 +8838,7 @@
 %%DATADIR%%/framework/source/resource/qx/mobile/icon/ios/backButton.png
 %%DATADIR%%/framework/source/resource/qx/mobile/icon/ios/backButton_pressed.png
 %%DATADIR%%/framework/source/resource/qx/mobile/icon/ios/cancel.png
+%%DATADIR%%/framework/source/resource/qx/mobile/icon/ios/checkbox.png
 %%DATADIR%%/framework/source/resource/qx/mobile/icon/ios/loading.png
 %%DATADIR%%/framework/source/resource/qx/mobile/icon/ios/on_off.png
 %%DATADIR%%/framework/source/resource/qx/mobile/icon/ios/pinstripes.png
@@ -8535,6 +8846,7 @@
 %%DATADIR%%/framework/source/resource/qx/mobile/icon/ios/toolButton.png
 %%DATADIR%%/framework/source/resource/qx/mobile/icon/ios/toolButton_pressed.png
 %%DATADIR%%/framework/source/resource/qx/mobile/js/LICENSE
+%%DATADIR%%/framework/source/resource/qx/mobile/js/iscroll-debug.js
 %%DATADIR%%/framework/source/resource/qx/mobile/js/iscroll.js
 %%DATADIR%%/framework/source/resource/qx/static/blank.gif
 %%DATADIR%%/framework/source/resource/qx/static/blank.html
@@ -8562,15 +8874,27 @@
 %%DATADIR%%/framework/source/resource/qx/test/part/file3.js
 %%DATADIR%%/framework/source/resource/qx/test/primitive.json
 %%DATADIR%%/framework/source/resource/qx/test/script.js
+%%DATADIR%%/framework/source/resource/qx/test/webfonts/fineliner_script-webfont.eot
+%%DATADIR%%/framework/source/resource/qx/test/webfonts/fineliner_script-webfont.ttf
+%%DATADIR%%/framework/source/resource/qx/test/webfonts/fineliner_script-webfont.woff
+%%DATADIR%%/framework/source/resource/qx/test/webfonts/tobec___-webfont.eot
+%%DATADIR%%/framework/source/resource/qx/test/webfonts/tobec___-webfont.ttf
+%%DATADIR%%/framework/source/resource/qx/test/webfonts/tobec___-webfont.woff
+%%DATADIR%%/framework/source/resource/qx/test/webfonts/yanonekaffeesatz-regular-webfont.eot
+%%DATADIR%%/framework/source/resource/qx/test/webfonts/yanonekaffeesatz-regular-webfont.ttf
+%%DATADIR%%/framework/source/resource/qx/test/webfonts/yanonekaffeesatz-regular-webfont.woff
 %%DATADIR%%/framework/source/resource/qx/test/webworker.js
 %%DATADIR%%/framework/source/resource/qx/test/xmlhttp/404.php
 %%DATADIR%%/framework/source/resource/qx/test/xmlhttp/echo_form_request.php
 %%DATADIR%%/framework/source/resource/qx/test/xmlhttp/echo_get_request.php
 %%DATADIR%%/framework/source/resource/qx/test/xmlhttp/echo_header.php
 %%DATADIR%%/framework/source/resource/qx/test/xmlhttp/echo_post_request.php
+%%DATADIR%%/framework/source/resource/qx/test/xmlhttp/invalid.xml
 %%DATADIR%%/framework/source/resource/qx/test/xmlhttp/loading.php
+%%DATADIR%%/framework/source/resource/qx/test/xmlhttp/long_poll.php
 %%DATADIR%%/framework/source/resource/qx/test/xmlhttp/not_modified.php
 %%DATADIR%%/framework/source/resource/qx/test/xmlhttp/php_version.php
+%%DATADIR%%/framework/source/resource/qx/test/xmlhttp/random.php
 %%DATADIR%%/framework/source/resource/qx/test/xmlhttp/sample.html
 %%DATADIR%%/framework/source/resource/qx/test/xmlhttp/sample.txt
 %%DATADIR%%/framework/source/resource/qx/test/xmlhttp/sample.xml
@@ -8690,18 +9014,41 @@
 %%DATADIR%%/framework/source/translation/it.po
 %%DATADIR%%/framework/source/translation/nl.po
 %%DATADIR%%/framework/source/translation/no.po
+%%DATADIR%%/framework/source/translation/pl.po
 %%DATADIR%%/framework/source/translation/ro.po
 %%DATADIR%%/framework/source/translation/sv.po
 %%DATADIR%%/tool/bin/checklocales.py
+%%DATADIR%%/tool/bin/checklocales.pyc
+%%DATADIR%%/tool/bin/checklocales.pyo
 %%DATADIR%%/tool/bin/compile.py
+%%DATADIR%%/tool/bin/compile.pyc
+%%DATADIR%%/tool/bin/compile.pyo
 %%DATADIR%%/tool/bin/create-application.py
+%%DATADIR%%/tool/bin/create-application.pyc
+%%DATADIR%%/tool/bin/create-application.pyo
 %%DATADIR%%/tool/bin/doc__init__.py
+%%DATADIR%%/tool/bin/doc__init__.pyc
+%%DATADIR%%/tool/bin/doc__init__.pyo
 %%DATADIR%%/tool/bin/ecmalint.py
+%%DATADIR%%/tool/bin/ecmalint.pyc
+%%DATADIR%%/tool/bin/ecmalint.pyo
 %%DATADIR%%/tool/bin/generator.py
+%%DATADIR%%/tool/bin/generator.pyc
+%%DATADIR%%/tool/bin/generator.pyo
+%%DATADIR%%/tool/bin/generator_api.py
+%%DATADIR%%/tool/bin/generator_api.pyc
+%%DATADIR%%/tool/bin/generator_api.pyo
 %%DATADIR%%/tool/bin/generator_compspec.bash
 %%DATADIR%%/tool/bin/iconpackager.py
+%%DATADIR%%/tool/bin/iconpackager.pyc
+%%DATADIR%%/tool/bin/iconpackager.pyo
 %%DATADIR%%/tool/bin/migrator.py
+%%DATADIR%%/tool/bin/migrator.pyc
+%%DATADIR%%/tool/bin/migrator.pyo
 %%DATADIR%%/tool/bin/qxenviron.py
+%%DATADIR%%/tool/bin/qxenviron.pyc
+%%DATADIR%%/tool/bin/qxenviron.pyo
+%%DATADIR%%/tool/config.json
 %%DATADIR%%/tool/data/apidoc/pydoc2qx-xml.xsl
 %%DATADIR%%/tool/data/apidoc/qx-xml.rnc
 %%DATADIR%%/tool/data/apidoc/qx-xml.rng
@@ -8715,6 +9062,8 @@
 %%DATADIR%%/tool/data/cldr/main/af.xml
 %%DATADIR%%/tool/data/cldr/main/af_NA.xml
 %%DATADIR%%/tool/data/cldr/main/af_ZA.xml
+%%DATADIR%%/tool/data/cldr/main/agq.xml
+%%DATADIR%%/tool/data/cldr/main/agq_CM.xml
 %%DATADIR%%/tool/data/cldr/main/ak.xml
 %%DATADIR%%/tool/data/cldr/main/ak_GH.xml
 %%DATADIR%%/tool/data/cldr/main/am.xml
@@ -8743,13 +9092,12 @@
 %%DATADIR%%/tool/data/cldr/main/asa_TZ.xml
 %%DATADIR%%/tool/data/cldr/main/az.xml
 %%DATADIR%%/tool/data/cldr/main/az_AZ.xml
-%%DATADIR%%/tool/data/cldr/main/az_Arab.xml
-%%DATADIR%%/tool/data/cldr/main/az_Arab_IR.xml
 %%DATADIR%%/tool/data/cldr/main/az_Cyrl.xml
 %%DATADIR%%/tool/data/cldr/main/az_Cyrl_AZ.xml
-%%DATADIR%%/tool/data/cldr/main/az_IR.xml
 %%DATADIR%%/tool/data/cldr/main/az_Latn.xml
 %%DATADIR%%/tool/data/cldr/main/az_Latn_AZ.xml
+%%DATADIR%%/tool/data/cldr/main/bas.xml
+%%DATADIR%%/tool/data/cldr/main/bas_CM.xml
 %%DATADIR%%/tool/data/cldr/main/be.xml
 %%DATADIR%%/tool/data/cldr/main/be_BY.xml
 %%DATADIR%%/tool/data/cldr/main/bem.xml
@@ -8797,8 +9145,12 @@
 %%DATADIR%%/tool/data/cldr/main/de_DE.xml
 %%DATADIR%%/tool/data/cldr/main/de_LI.xml
 %%DATADIR%%/tool/data/cldr/main/de_LU.xml
-%%DATADIR%%/tool/data/cldr/main/dv.xml
-%%DATADIR%%/tool/data/cldr/main/dv_MV.xml
+%%DATADIR%%/tool/data/cldr/main/dje.xml
+%%DATADIR%%/tool/data/cldr/main/dje_NE.xml
+%%DATADIR%%/tool/data/cldr/main/dua.xml
+%%DATADIR%%/tool/data/cldr/main/dua_CM.xml
+%%DATADIR%%/tool/data/cldr/main/dyo.xml
+%%DATADIR%%/tool/data/cldr/main/dyo_SN.xml
 %%DATADIR%%/tool/data/cldr/main/dz.xml
 %%DATADIR%%/tool/data/cldr/main/dz_BT.xml
 %%DATADIR%%/tool/data/cldr/main/ebu.xml
@@ -8813,7 +9165,9 @@
 %%DATADIR%%/tool/data/cldr/main/en.xml
 %%DATADIR%%/tool/data/cldr/main/en_AS.xml
 %%DATADIR%%/tool/data/cldr/main/en_AU.xml
+%%DATADIR%%/tool/data/cldr/main/en_BB.xml
 %%DATADIR%%/tool/data/cldr/main/en_BE.xml
+%%DATADIR%%/tool/data/cldr/main/en_BM.xml
 %%DATADIR%%/tool/data/cldr/main/en_BW.xml
 %%DATADIR%%/tool/data/cldr/main/en_BZ.xml
 %%DATADIR%%/tool/data/cldr/main/en_CA.xml
@@ -8821,6 +9175,7 @@
 %%DATADIR%%/tool/data/cldr/main/en_Dsrt_US.xml
 %%DATADIR%%/tool/data/cldr/main/en_GB.xml
 %%DATADIR%%/tool/data/cldr/main/en_GU.xml
+%%DATADIR%%/tool/data/cldr/main/en_GY.xml
 %%DATADIR%%/tool/data/cldr/main/en_HK.xml
 %%DATADIR%%/tool/data/cldr/main/en_IE.xml
 %%DATADIR%%/tool/data/cldr/main/en_IN.xml
@@ -8842,7 +9197,6 @@
 %%DATADIR%%/tool/data/cldr/main/en_VI.xml
 %%DATADIR%%/tool/data/cldr/main/en_ZA.xml
 %%DATADIR%%/tool/data/cldr/main/en_ZW.xml
-%%DATADIR%%/tool/data/cldr/main/en_ZZ.xml
 %%DATADIR%%/tool/data/cldr/main/eo.xml
 %%DATADIR%%/tool/data/cldr/main/es.xml
 %%DATADIR%%/tool/data/cldr/main/es_419.xml
@@ -8871,6 +9225,8 @@
 %%DATADIR%%/tool/data/cldr/main/et_EE.xml
 %%DATADIR%%/tool/data/cldr/main/eu.xml
 %%DATADIR%%/tool/data/cldr/main/eu_ES.xml
+%%DATADIR%%/tool/data/cldr/main/ewo.xml
+%%DATADIR%%/tool/data/cldr/main/ewo_CM.xml
 %%DATADIR%%/tool/data/cldr/main/fa.xml
 %%DATADIR%%/tool/data/cldr/main/fa_AF.xml
 %%DATADIR%%/tool/data/cldr/main/fa_IR.xml
@@ -8898,6 +9254,7 @@
 %%DATADIR%%/tool/data/cldr/main/fr_DJ.xml
 %%DATADIR%%/tool/data/cldr/main/fr_FR.xml
 %%DATADIR%%/tool/data/cldr/main/fr_GA.xml
+%%DATADIR%%/tool/data/cldr/main/fr_GF.xml
 %%DATADIR%%/tool/data/cldr/main/fr_GN.xml
 %%DATADIR%%/tool/data/cldr/main/fr_GP.xml
 %%DATADIR%%/tool/data/cldr/main/fr_GQ.xml
@@ -8914,15 +9271,13 @@
 %%DATADIR%%/tool/data/cldr/main/fr_SN.xml
 %%DATADIR%%/tool/data/cldr/main/fr_TD.xml
 %%DATADIR%%/tool/data/cldr/main/fr_TG.xml
+%%DATADIR%%/tool/data/cldr/main/fr_YT.xml
 %%DATADIR%%/tool/data/cldr/main/fur.xml
 %%DATADIR%%/tool/data/cldr/main/fur_IT.xml
 %%DATADIR%%/tool/data/cldr/main/ga.xml
 %%DATADIR%%/tool/data/cldr/main/ga_IE.xml
 %%DATADIR%%/tool/data/cldr/main/gaa.xml
 %%DATADIR%%/tool/data/cldr/main/gaa_GH.xml
-%%DATADIR%%/tool/data/cldr/main/gez.xml
-%%DATADIR%%/tool/data/cldr/main/gez_ER.xml
-%%DATADIR%%/tool/data/cldr/main/gez_ET.xml
 %%DATADIR%%/tool/data/cldr/main/gl.xml
 %%DATADIR%%/tool/data/cldr/main/gl_ES.xml
 %%DATADIR%%/tool/data/cldr/main/gsw.xml
@@ -8934,9 +9289,6 @@
 %%DATADIR%%/tool/data/cldr/main/gv.xml
 %%DATADIR%%/tool/data/cldr/main/gv_GB.xml
 %%DATADIR%%/tool/data/cldr/main/ha.xml
-%%DATADIR%%/tool/data/cldr/main/ha_Arab.xml
-%%DATADIR%%/tool/data/cldr/main/ha_Arab_NG.xml
-%%DATADIR%%/tool/data/cldr/main/ha_Arab_SD.xml
 %%DATADIR%%/tool/data/cldr/main/ha_GH.xml
 %%DATADIR%%/tool/data/cldr/main/ha_Latn.xml
 %%DATADIR%%/tool/data/cldr/main/ha_Latn_GH.xml
@@ -8944,7 +9296,6 @@
 %%DATADIR%%/tool/data/cldr/main/ha_Latn_NG.xml
 %%DATADIR%%/tool/data/cldr/main/ha_NE.xml
 %%DATADIR%%/tool/data/cldr/main/ha_NG.xml
-%%DATADIR%%/tool/data/cldr/main/ha_SD.xml
 %%DATADIR%%/tool/data/cldr/main/haw.xml
 %%DATADIR%%/tool/data/cldr/main/haw_US.xml
 %%DATADIR%%/tool/data/cldr/main/he.xml
@@ -8970,7 +9321,6 @@
 %%DATADIR%%/tool/data/cldr/main/it.xml
 %%DATADIR%%/tool/data/cldr/main/it_CH.xml
 %%DATADIR%%/tool/data/cldr/main/it_IT.xml
-%%DATADIR%%/tool/data/cldr/main/iu.xml
 %%DATADIR%%/tool/data/cldr/main/iw.xml
 %%DATADIR%%/tool/data/cldr/main/ja.xml
 %%DATADIR%%/tool/data/cldr/main/ja_JP.xml
@@ -8990,8 +9340,6 @@
 %%DATADIR%%/tool/data/cldr/main/kde_TZ.xml
 %%DATADIR%%/tool/data/cldr/main/kea.xml
 %%DATADIR%%/tool/data/cldr/main/kea_CV.xml
-%%DATADIR%%/tool/data/cldr/main/kfo.xml
-%%DATADIR%%/tool/data/cldr/main/kfo_CI.xml
 %%DATADIR%%/tool/data/cldr/main/khq.xml
 %%DATADIR%%/tool/data/cldr/main/khq_ML.xml
 %%DATADIR%%/tool/data/cldr/main/ki.xml
@@ -9012,11 +9360,10 @@
 %%DATADIR%%/tool/data/cldr/main/ko_KR.xml
 %%DATADIR%%/tool/data/cldr/main/kok.xml
 %%DATADIR%%/tool/data/cldr/main/kok_IN.xml
-%%DATADIR%%/tool/data/cldr/main/kpe.xml
-%%DATADIR%%/tool/data/cldr/main/kpe_GN.xml
-%%DATADIR%%/tool/data/cldr/main/kpe_LR.xml
 %%DATADIR%%/tool/data/cldr/main/ksb.xml
 %%DATADIR%%/tool/data/cldr/main/ksb_TZ.xml
+%%DATADIR%%/tool/data/cldr/main/ksf.xml
+%%DATADIR%%/tool/data/cldr/main/ksf_CM.xml
 %%DATADIR%%/tool/data/cldr/main/ksh.xml
 %%DATADIR%%/tool/data/cldr/main/ksh_DE.xml
 %%DATADIR%%/tool/data/cldr/main/ku.xml
@@ -9045,6 +9392,8 @@
 %%DATADIR%%/tool/data/cldr/main/lo_LA.xml
 %%DATADIR%%/tool/data/cldr/main/lt.xml
 %%DATADIR%%/tool/data/cldr/main/lt_LT.xml
+%%DATADIR%%/tool/data/cldr/main/lu.xml
+%%DATADIR%%/tool/data/cldr/main/lu_CD.xml
 %%DATADIR%%/tool/data/cldr/main/luo.xml
 %%DATADIR%%/tool/data/cldr/main/luo_KE.xml
 %%DATADIR%%/tool/data/cldr/main/luy.xml
@@ -9060,8 +9409,8 @@
 %%DATADIR%%/tool/data/cldr/main/mfe_MU.xml
 %%DATADIR%%/tool/data/cldr/main/mg.xml
 %%DATADIR%%/tool/data/cldr/main/mg_MG.xml
-%%DATADIR%%/tool/data/cldr/main/mi.xml
-%%DATADIR%%/tool/data/cldr/main/mi_NZ.xml
+%%DATADIR%%/tool/data/cldr/main/mgh.xml
+%%DATADIR%%/tool/data/cldr/main/mgh_MZ.xml
 %%DATADIR%%/tool/data/cldr/main/mk.xml
 %%DATADIR%%/tool/data/cldr/main/mk_MK.xml
 %%DATADIR%%/tool/data/cldr/main/ml.xml
@@ -9081,6 +9430,8 @@
 %%DATADIR%%/tool/data/cldr/main/ms_MY.xml
 %%DATADIR%%/tool/data/cldr/main/mt.xml
 %%DATADIR%%/tool/data/cldr/main/mt_MT.xml
+%%DATADIR%%/tool/data/cldr/main/mua.xml
+%%DATADIR%%/tool/data/cldr/main/mua_CM.xml
 %%DATADIR%%/tool/data/cldr/main/my.xml
 %%DATADIR%%/tool/data/cldr/main/my_MM.xml
 %%DATADIR%%/tool/data/cldr/main/naq.xml
@@ -9095,8 +9446,11 @@
 %%DATADIR%%/tool/data/cldr/main/ne_IN.xml
 %%DATADIR%%/tool/data/cldr/main/ne_NP.xml
 %%DATADIR%%/tool/data/cldr/main/nl.xml
+%%DATADIR%%/tool/data/cldr/main/nl_AW.xml
 %%DATADIR%%/tool/data/cldr/main/nl_BE.xml
 %%DATADIR%%/tool/data/cldr/main/nl_NL.xml
+%%DATADIR%%/tool/data/cldr/main/nmg.xml
+%%DATADIR%%/tool/data/cldr/main/nmg_CM.xml
 %%DATADIR%%/tool/data/cldr/main/nn.xml
 %%DATADIR%%/tool/data/cldr/main/nn_NO.xml
 %%DATADIR%%/tool/data/cldr/main/no.xml
@@ -9104,8 +9458,8 @@
 %%DATADIR%%/tool/data/cldr/main/nr_ZA.xml
 %%DATADIR%%/tool/data/cldr/main/nso.xml
 %%DATADIR%%/tool/data/cldr/main/nso_ZA.xml
-%%DATADIR%%/tool/data/cldr/main/ny.xml
-%%DATADIR%%/tool/data/cldr/main/ny_MW.xml
+%%DATADIR%%/tool/data/cldr/main/nus.xml
+%%DATADIR%%/tool/data/cldr/main/nus_SD.xml
 %%DATADIR%%/tool/data/cldr/main/nyn.xml
 %%DATADIR%%/tool/data/cldr/main/nyn_UG.xml
 %%DATADIR%%/tool/data/cldr/main/oc.xml
@@ -9132,8 +9486,11 @@
 %%DATADIR%%/tool/data/cldr/main/pt_GW.xml
 %%DATADIR%%/tool/data/cldr/main/pt_MZ.xml
 %%DATADIR%%/tool/data/cldr/main/pt_PT.xml
+%%DATADIR%%/tool/data/cldr/main/pt_ST.xml
 %%DATADIR%%/tool/data/cldr/main/rm.xml
 %%DATADIR%%/tool/data/cldr/main/rm_CH.xml
+%%DATADIR%%/tool/data/cldr/main/rn.xml
+%%DATADIR%%/tool/data/cldr/main/rn_BI.xml
 %%DATADIR%%/tool/data/cldr/main/ro.xml
 %%DATADIR%%/tool/data/cldr/main/ro_MD.xml
 %%DATADIR%%/tool/data/cldr/main/ro_RO.xml
@@ -9148,10 +9505,12 @@
 %%DATADIR%%/tool/data/cldr/main/rw_RW.xml
 %%DATADIR%%/tool/data/cldr/main/rwk.xml
 %%DATADIR%%/tool/data/cldr/main/rwk_TZ.xml
-%%DATADIR%%/tool/data/cldr/main/sa.xml
-%%DATADIR%%/tool/data/cldr/main/sa_IN.xml
+%%DATADIR%%/tool/data/cldr/main/sah.xml
+%%DATADIR%%/tool/data/cldr/main/sah_RU.xml
 %%DATADIR%%/tool/data/cldr/main/saq.xml
 %%DATADIR%%/tool/data/cldr/main/saq_KE.xml
+%%DATADIR%%/tool/data/cldr/main/sbp.xml
+%%DATADIR%%/tool/data/cldr/main/sbp_TZ.xml
 %%DATADIR%%/tool/data/cldr/main/se.xml
 %%DATADIR%%/tool/data/cldr/main/se_FI.xml
 %%DATADIR%%/tool/data/cldr/main/se_NO.xml
@@ -9220,8 +9579,8 @@
 %%DATADIR%%/tool/data/cldr/main/sw.xml
 %%DATADIR%%/tool/data/cldr/main/sw_KE.xml
 %%DATADIR%%/tool/data/cldr/main/sw_TZ.xml
-%%DATADIR%%/tool/data/cldr/main/syr.xml
-%%DATADIR%%/tool/data/cldr/main/syr_SY.xml
+%%DATADIR%%/tool/data/cldr/main/swc.xml
+%%DATADIR%%/tool/data/cldr/main/swc_CD.xml
 %%DATADIR%%/tool/data/cldr/main/ta.xml
 %%DATADIR%%/tool/data/cldr/main/ta_IN.xml
 %%DATADIR%%/tool/data/cldr/main/ta_LK.xml
@@ -9253,16 +9612,12 @@
 %%DATADIR%%/tool/data/cldr/main/trv_TW.xml
 %%DATADIR%%/tool/data/cldr/main/ts.xml
 %%DATADIR%%/tool/data/cldr/main/ts_ZA.xml
-%%DATADIR%%/tool/data/cldr/main/tt.xml
-%%DATADIR%%/tool/data/cldr/main/tt_RU.xml
+%%DATADIR%%/tool/data/cldr/main/twq.xml
+%%DATADIR%%/tool/data/cldr/main/twq_NE.xml
 %%DATADIR%%/tool/data/cldr/main/tzm.xml
 %%DATADIR%%/tool/data/cldr/main/tzm_Latn.xml
 %%DATADIR%%/tool/data/cldr/main/tzm_Latn_MA.xml
 %%DATADIR%%/tool/data/cldr/main/tzm_MA.xml
-%%DATADIR%%/tool/data/cldr/main/ug.xml
-%%DATADIR%%/tool/data/cldr/main/ug_Arab.xml
-%%DATADIR%%/tool/data/cldr/main/ug_Arab_CN.xml
-%%DATADIR%%/tool/data/cldr/main/ug_CN.xml
 %%DATADIR%%/tool/data/cldr/main/uk.xml
 %%DATADIR%%/tool/data/cldr/main/uk_UA.xml
 %%DATADIR%%/tool/data/cldr/main/ur.xml
@@ -9277,22 +9632,28 @@
 %%DATADIR%%/tool/data/cldr/main/uz_Latn.xml
 %%DATADIR%%/tool/data/cldr/main/uz_Latn_UZ.xml
 %%DATADIR%%/tool/data/cldr/main/uz_UZ.xml
+%%DATADIR%%/tool/data/cldr/main/vai.xml
+%%DATADIR%%/tool/data/cldr/main/vai_LR.xml
+%%DATADIR%%/tool/data/cldr/main/vai_Latn.xml
+%%DATADIR%%/tool/data/cldr/main/vai_Latn_LR.xml
+%%DATADIR%%/tool/data/cldr/main/vai_Vaii.xml
+%%DATADIR%%/tool/data/cldr/main/vai_Vaii_LR.xml
 %%DATADIR%%/tool/data/cldr/main/ve.xml
 %%DATADIR%%/tool/data/cldr/main/ve_ZA.xml
 %%DATADIR%%/tool/data/cldr/main/vi.xml
 %%DATADIR%%/tool/data/cldr/main/vi_VN.xml
 %%DATADIR%%/tool/data/cldr/main/vun.xml
 %%DATADIR%%/tool/data/cldr/main/vun_TZ.xml
+%%DATADIR%%/tool/data/cldr/main/wae.xml
+%%DATADIR%%/tool/data/cldr/main/wae_CH.xml
 %%DATADIR%%/tool/data/cldr/main/wal.xml
 %%DATADIR%%/tool/data/cldr/main/wal_ET.xml
-%%DATADIR%%/tool/data/cldr/main/wo.xml
-%%DATADIR%%/tool/data/cldr/main/wo_Latn.xml
-%%DATADIR%%/tool/data/cldr/main/wo_Latn_SN.xml
-%%DATADIR%%/tool/data/cldr/main/wo_SN.xml
 %%DATADIR%%/tool/data/cldr/main/xh.xml
 %%DATADIR%%/tool/data/cldr/main/xh_ZA.xml
 %%DATADIR%%/tool/data/cldr/main/xog.xml
 %%DATADIR%%/tool/data/cldr/main/xog_UG.xml
+%%DATADIR%%/tool/data/cldr/main/yav.xml
+%%DATADIR%%/tool/data/cldr/main/yav_CM.xml
 %%DATADIR%%/tool/data/cldr/main/yo.xml
 %%DATADIR%%/tool/data/cldr/main/yo_NG.xml
 %%DATADIR%%/tool/data/cldr/main/zh.xml
@@ -9318,6 +9679,7 @@
 %%DATADIR%%/tool/data/config/config_schema.json
 %%DATADIR%%/tool/data/config/example.json
 %%DATADIR%%/tool/data/config/schema_sample.json
+%%DATADIR%%/tool/data/generator/basic.loader.js
 %%DATADIR%%/tool/data/generator/generate.tmpl.py
 %%DATADIR%%/tool/data/generator/loader.tmpl.js
 %%DATADIR%%/tool/data/generator/oo.loader.tmpl.js
@@ -9425,6 +9787,8 @@
 %%DATADIR%%/tool/data/migration/1.4/info/02-detection.dat
 %%DATADIR%%/tool/data/migration/1.4/patches/01-main.dat
 %%DATADIR%%/tool/data/migration/1.4/patches/02-detection.dat
+%%DATADIR%%/tool/data/migration/1.5/info/01-main.dat
+%%DATADIR%%/tool/data/migration/1.5/patches/01-main.dat
 %%DATADIR%%/tool/data/publish/index.html
 %%DATADIR%%/tool/data/py/_class_head.py
 %%DATADIR%%/tool/data/py/_fun_head.py
@@ -9441,7 +9805,6 @@
 %%DATADIR%%/tool/pylib/ecmascript/backend/__init__.py
 %%DATADIR%%/tool/pylib/ecmascript/backend/api.py
 %%DATADIR%%/tool/pylib/ecmascript/backend/pretty.py
-%%DATADIR%%/tool/pylib/ecmascript/compiler.py
 %%DATADIR%%/tool/pylib/ecmascript/frontend/Scanner.py
 %%DATADIR%%/tool/pylib/ecmascript/frontend/Scope.py
 %%DATADIR%%/tool/pylib/ecmascript/frontend/Script.py
@@ -9456,6 +9819,7 @@
 %%DATADIR%%/tool/pylib/ecmascript/transform/__init__.py
 %%DATADIR%%/tool/pylib/ecmascript/transform/optimizer/__init__.py
 %%DATADIR%%/tool/pylib/ecmascript/transform/optimizer/basecalloptimizer.py
+%%DATADIR%%/tool/pylib/ecmascript/transform/optimizer/commentoptimizer.py
 %%DATADIR%%/tool/pylib/ecmascript/transform/optimizer/featureoptimizer.py
 %%DATADIR%%/tool/pylib/ecmascript/transform/optimizer/inlineoptimizer.py
 %%DATADIR%%/tool/pylib/ecmascript/transform/optimizer/privateoptimizer.py
@@ -9495,6 +9859,12 @@
 %%DATADIR%%/tool/pylib/generator/code/Script.py
 %%DATADIR%%/tool/pylib/generator/code/TreeCompiler.py
 %%DATADIR%%/tool/pylib/generator/code/__init__.py
+%%DATADIR%%/tool/pylib/generator/code/clazz/MClassCode.py
+%%DATADIR%%/tool/pylib/generator/code/clazz/MClassDependencies.py
+%%DATADIR%%/tool/pylib/generator/code/clazz/MClassHints.py
+%%DATADIR%%/tool/pylib/generator/code/clazz/MClassI18N.py
+%%DATADIR%%/tool/pylib/generator/code/clazz/MClassResources.py
+%%DATADIR%%/tool/pylib/generator/code/clazz/__init__.py
 %%DATADIR%%/tool/pylib/generator/config/Config.py
 %%DATADIR%%/tool/pylib/generator/config/Defaults.py
 %%DATADIR%%/tool/pylib/generator/config/Job.py
@@ -9507,9 +9877,10 @@
 %%DATADIR%%/tool/pylib/generator/resource/ImageClipping.py
 %%DATADIR%%/tool/pylib/generator/resource/Library.py
 %%DATADIR%%/tool/pylib/generator/resource/Resource.py
-%%DATADIR%%/tool/pylib/generator/resource/ResourceHandler.py
+%%DATADIR%%/tool/pylib/generator/resource/ScriptFile.py
 %%DATADIR%%/tool/pylib/generator/resource/__init__.py
 %%DATADIR%%/tool/pylib/generator/runtime/Cache.py
+%%DATADIR%%/tool/pylib/generator/runtime/Generatord.py
 %%DATADIR%%/tool/pylib/generator/runtime/InterruptRegistry.py
 %%DATADIR%%/tool/pylib/generator/runtime/Log.py
 %%DATADIR%%/tool/pylib/generator/runtime/ShellCmd.py
@@ -9655,6 +10026,7 @@
 @dirrm %%DATADIR%%/tool/pylib/generator/runtime
 @dirrm %%DATADIR%%/tool/pylib/generator/resource
 @dirrm %%DATADIR%%/tool/pylib/generator/config
+@dirrm %%DATADIR%%/tool/pylib/generator/code/clazz
 @dirrm %%DATADIR%%/tool/pylib/generator/code
 @dirrm %%DATADIR%%/tool/pylib/generator/action
 @dirrm %%DATADIR%%/tool/pylib/generator
@@ -9669,6 +10041,9 @@
 @dirrm %%DATADIR%%/tool/doc
 @dirrm %%DATADIR%%/tool/data/py
 @dirrm %%DATADIR%%/tool/data/publish
+@dirrm %%DATADIR%%/tool/data/migration/1.5/patches
+@dirrm %%DATADIR%%/tool/data/migration/1.5/info
+@dirrm %%DATADIR%%/tool/data/migration/1.5
 @dirrm %%DATADIR%%/tool/data/migration/1.4/patches
 @dirrm %%DATADIR%%/tool/data/migration/1.4/info
 @dirrm %%DATADIR%%/tool/data/migration/1.4
@@ -9764,6 +10139,7 @@
 @dirrm %%DATADIR%%/framework/source/resource/source/Modern
 @dirrm %%DATADIR%%/framework/source/resource/source
 @dirrm %%DATADIR%%/framework/source/resource/qx/test/xmlhttp
+@dirrm %%DATADIR%%/framework/source/resource/qx/test/webfonts
 @dirrm %%DATADIR%%/framework/source/resource/qx/test/part
 @dirrm %%DATADIR%%/framework/source/resource/qx/test/media
 @dirrm %%DATADIR%%/framework/source/resource/qx/test
@@ -9944,69 +10320,6 @@
 @dirrm %%DATADIR%%/framework/source/resource/qx/decoration/Classic/arrows
 @dirrm %%DATADIR%%/framework/source/resource/qx/decoration/Classic
 @dirrm %%DATADIR%%/framework/source/resource/qx/decoration
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/widget/Windows/window
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/widget/Windows/tree
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/widget/Windows/table
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/widget/Windows/splitpane
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/widget/Windows/menu
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/widget/Windows/datechooser
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/widget/Windows/cursors
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/widget/Windows/core
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/widget/Windows/colorselector
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/widget/Windows/arrows
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/widget/Windows
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/widget
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/64/status
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/64/places
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/64/mimetypes
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/64/devices
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/64/categories
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/64/apps
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/64/actions
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/64
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/48/status
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/48/places
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/48/mimetypes
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/48/devices
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/48/categories
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/48/apps
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/48/actions
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/48
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/32/status
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/32/places
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/32/mimetypes
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/32/devices
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/32/categories
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/32/apps
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/32/actions
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/32
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/22/status
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/22/places
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/22/mimetypes
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/22/devices
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/22/categories
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/22/apps
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/22/actions
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/22
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/16/status
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/16/places
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/16/mimetypes
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/16/devices
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/16/categories
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/16/apps
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/16/actions
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/16
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/128/status
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/128/places
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/128/mimetypes
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/128/devices
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/128/categories
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/128/apps
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/128/actions
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/128
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat/icon
-@dirrm %%DATADIR%%/framework/source/resource/qx/compat
 @dirrm %%DATADIR%%/framework/source/resource/qx
 @dirrm %%DATADIR%%/framework/source/resource
 @dirrm %%DATADIR%%/framework/source/class/qx/xml
@@ -10053,6 +10366,7 @@
 @dirrm %%DATADIR%%/framework/source/class/qx/ui/progressive/headfoot
 @dirrm %%DATADIR%%/framework/source/class/qx/ui/progressive
 @dirrm %%DATADIR%%/framework/source/class/qx/ui/popup
+@dirrm %%DATADIR%%/framework/source/class/qx/ui/mobile/toolbar
 @dirrm %%DATADIR%%/framework/source/class/qx/ui/mobile/tabbar
 @dirrm %%DATADIR%%/framework/source/class/qx/ui/mobile/page/manager
 @dirrm %%DATADIR%%/framework/source/class/qx/ui/mobile/page
@@ -10062,6 +10376,7 @@
 @dirrm %%DATADIR%%/framework/source/class/qx/ui/mobile/list/provider
 @dirrm %%DATADIR%%/framework/source/class/qx/ui/mobile/list
 @dirrm %%DATADIR%%/framework/source/class/qx/ui/mobile/layout
+@dirrm %%DATADIR%%/framework/source/class/qx/ui/mobile/form/renderer
 @dirrm %%DATADIR%%/framework/source/class/qx/ui/mobile/form
 @dirrm %%DATADIR%%/framework/source/class/qx/ui/mobile/embed
 @dirrm %%DATADIR%%/framework/source/class/qx/ui/mobile/dialog
@@ -10139,7 +10454,15 @@
 @dirrm %%DATADIR%%/framework/source/class/qx/test/performance/mock
 @dirrm %%DATADIR%%/framework/source/class/qx/test/performance/element
 @dirrm %%DATADIR%%/framework/source/class/qx/test/performance/decorator
+@dirrm %%DATADIR%%/framework/source/class/qx/test/performance/data
 @dirrm %%DATADIR%%/framework/source/class/qx/test/performance
+@dirrm %%DATADIR%%/framework/source/class/qx/test/mobile/toolbar
+@dirrm %%DATADIR%%/framework/source/class/qx/test/mobile/tabbar
+@dirrm %%DATADIR%%/framework/source/class/qx/test/mobile/page
+@dirrm %%DATADIR%%/framework/source/class/qx/test/mobile/navigationbar
+@dirrm %%DATADIR%%/framework/source/class/qx/test/mobile/list
+@dirrm %%DATADIR%%/framework/source/class/qx/test/mobile/form
+@dirrm %%DATADIR%%/framework/source/class/qx/test/mobile/embed
 @dirrm %%DATADIR%%/framework/source/class/qx/test/mobile/core
 @dirrm %%DATADIR%%/framework/source/class/qx/test/mobile/container
 @dirrm %%DATADIR%%/framework/source/class/qx/test/mobile/basic
@@ -10148,12 +10471,14 @@
 @dirrm %%DATADIR%%/framework/source/class/qx/test/log
 @dirrm %%DATADIR%%/framework/source/class/qx/test/locale
 @dirrm %%DATADIR%%/framework/source/class/qx/test/lang
+@dirrm %%DATADIR%%/framework/source/class/qx/test/io/rest
 @dirrm %%DATADIR%%/framework/source/class/qx/test/io/request
 @dirrm %%DATADIR%%/framework/source/class/qx/test/io/remote/transport
 @dirrm %%DATADIR%%/framework/source/class/qx/test/io/remote
 @dirrm %%DATADIR%%/framework/source/class/qx/test/io/part
 @dirrm %%DATADIR%%/framework/source/class/qx/test/io
 @dirrm %%DATADIR%%/framework/source/class/qx/test/html
+@dirrm %%DATADIR%%/framework/source/class/qx/test/fx
 @dirrm %%DATADIR%%/framework/source/class/qx/test/event/type
 @dirrm %%DATADIR%%/framework/source/class/qx/test/event/message
 @dirrm %%DATADIR%%/framework/source/class/qx/test/event/dispatch
@@ -10167,6 +10492,7 @@
 @dirrm %%DATADIR%%/framework/source/class/qx/test/data/controller
 @dirrm %%DATADIR%%/framework/source/class/qx/test/data
 @dirrm %%DATADIR%%/framework/source/class/qx/test/core
+@dirrm %%DATADIR%%/framework/source/class/qx/test/bom/webfonts
 @dirrm %%DATADIR%%/framework/source/class/qx/test/bom/storage
 @dirrm %%DATADIR%%/framework/source/class/qx/test/bom/request
 @dirrm %%DATADIR%%/framework/source/class/qx/test/bom/media
@@ -10178,6 +10504,9 @@
 @dirrm %%DATADIR%%/framework/source/class/qx/log
 @dirrm %%DATADIR%%/framework/source/class/qx/locale
 @dirrm %%DATADIR%%/framework/source/class/qx/lang
+@dirrm %%DATADIR%%/framework/source/class/qx/io/rest
+@dirrm %%DATADIR%%/framework/source/class/qx/io/request/authentication
+@dirrm %%DATADIR%%/framework/source/class/qx/io/request/auth
 @dirrm %%DATADIR%%/framework/source/class/qx/io/request
 @dirrm %%DATADIR%%/framework/source/class/qx/io/remote/transport
 @dirrm %%DATADIR%%/framework/source/class/qx/io/remote
@@ -10202,6 +10531,7 @@
 @dirrm %%DATADIR%%/framework/source/class/qx/data/controller
 @dirrm %%DATADIR%%/framework/source/class/qx/data
 @dirrm %%DATADIR%%/framework/source/class/qx/core
+@dirrm %%DATADIR%%/framework/source/class/qx/bom/webfonts
 @dirrm %%DATADIR%%/framework/source/class/qx/bom/storage
 @dirrm %%DATADIR%%/framework/source/class/qx/bom/request
 @dirrm %%DATADIR%%/framework/source/class/qx/bom/media
@@ -10344,6 +10674,14 @@
 @dirrm %%DATADIR%%/component/skeleton/contribution/trunk
 @dirrm %%DATADIR%%/component/skeleton/contribution
 @dirrm %%DATADIR%%/component/skeleton/bom
+@dirrm %%DATADIR%%/component/skeleton/basic/source/translation
+@dirrm %%DATADIR%%/component/skeleton/basic/source/script
+@dirrm %%DATADIR%%/component/skeleton/basic/source/resource/custom
+@dirrm %%DATADIR%%/component/skeleton/basic/source/resource
+@dirrm %%DATADIR%%/component/skeleton/basic/source/class/custom
+@dirrm %%DATADIR%%/component/skeleton/basic/source/class
+@dirrm %%DATADIR%%/component/skeleton/basic/source
+@dirrm %%DATADIR%%/component/skeleton/basic
 @dirrm %%DATADIR%%/component/skeleton
 @dirrm %%DATADIR%%/component/simulator/tool/user-extensions
 @dirrm %%DATADIR%%/component/simulator/tool/com/thoughtworks/selenium
@@ -10358,6 +10696,34 @@
 @dirrm %%DATADIR%%/component/simulator/source/class
 @dirrm %%DATADIR%%/component/simulator/source
 @dirrm %%DATADIR%%/component/simulator
+@dirrm %%DATADIR%%/component/library/twitterdemo/source/translation
+@dirrm %%DATADIR%%/component/library/twitterdemo/source/resource/qxc/application/twitterdemo
+@dirrm %%DATADIR%%/component/library/twitterdemo/source/resource/qxc/application
+@dirrm %%DATADIR%%/component/library/twitterdemo/source/resource/qxc
+@dirrm %%DATADIR%%/component/library/twitterdemo/source/resource
+@dirrm %%DATADIR%%/component/library/twitterdemo/source/class/qxc/application/twitterdemo
+@dirrm %%DATADIR%%/component/library/twitterdemo/source/class/qxc/application
+@dirrm %%DATADIR%%/component/library/twitterdemo/source/class/qxc
+@dirrm %%DATADIR%%/component/library/twitterdemo/source/class
+@dirrm %%DATADIR%%/component/library/twitterdemo/source
+@dirrm %%DATADIR%%/component/library/twitterdemo
+@dirrm %%DATADIR%%/component/library/logpane/source/translation
+@dirrm %%DATADIR%%/component/library/logpane/source/resource
+@dirrm %%DATADIR%%/component/library/logpane/source/class/qxc/ui/logpane
+@dirrm %%DATADIR%%/component/library/logpane/source/class/qxc/ui
+@dirrm %%DATADIR%%/component/library/logpane/source/class/qxc
+@dirrm %%DATADIR%%/component/library/logpane/source/class
+@dirrm %%DATADIR%%/component/library/logpane/source
+@dirrm %%DATADIR%%/component/library/logpane
+@dirrm %%DATADIR%%/component/library/formdemo/source/translation
+@dirrm %%DATADIR%%/component/library/formdemo/source/resource
+@dirrm %%DATADIR%%/component/library/formdemo/source/class/qxc/application/formdemo
+@dirrm %%DATADIR%%/component/library/formdemo/source/class/qxc/application
+@dirrm %%DATADIR%%/component/library/formdemo/source/class/qxc
+@dirrm %%DATADIR%%/component/library/formdemo/source/class
+@dirrm %%DATADIR%%/component/library/formdemo/source
+@dirrm %%DATADIR%%/component/library/formdemo
+@dirrm %%DATADIR%%/component/library
 @dirrm %%DATADIR%%/component/inspector/source/translation
 @dirrm %%DATADIR%%/component/inspector/source/resource/inspector/images/shell
 @dirrm %%DATADIR%%/component/inspector/source/resource/inspector/images/icons
@@ -10422,6 +10788,8 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/source/resource/static/favicon
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/source/resource/static
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/source/resource/source
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/source/resource/showcase/virtuallist/imicons
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/source/resource/showcase/virtuallist
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/source/resource/showcase/tree
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/source/resource/showcase/theme
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/source/resource/showcase/table
@@ -10438,6 +10806,8 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/source/class/showcase/ui
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/source/class/showcase/theme
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/source/class/showcase/test
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/source/class/showcase/page/virtuallist/messenger
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/source/class/showcase/page/virtuallist
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/source/class/showcase/page/tree
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/source/class/showcase/page/theme/calc/view
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/source/class/showcase/page/theme/calc/theme/appearance
@@ -10456,11 +10826,14 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/source/class
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/source
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/script
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/twitterdemo
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/static/style/hacks
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/static/style
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/static/images
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/static/favicon
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/static
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/showcase/virtuallist/imicons
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/showcase/virtuallist
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/showcase/tree
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/showcase/theme
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/showcase/table
@@ -10472,6 +10845,9 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/showcase/databinding
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/showcase/animation
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/showcase
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/qxc/application/twitterdemo
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/qxc/application
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/qxc
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/qx/static
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/64/devices
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/64/actions
@@ -10481,6 +10857,7 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/32
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/places
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/mimetypes
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/emotes
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/devices
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/apps
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/showcase/build/resource/qx/icon/Tango/22/actions
@@ -10557,6 +10934,7 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mobileshowcase/source/resource/mobileshowcase
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mobileshowcase/source/resource
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mobileshowcase/source/class/mobileshowcase/test
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mobileshowcase/source/class/mobileshowcase/simulation
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mobileshowcase/source/class/mobileshowcase/page
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mobileshowcase/source/class/mobileshowcase
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/mobileshowcase/source/class
@@ -10569,6 +10947,8 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/feedreader/source/resource/feedreader
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/feedreader/source/resource
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/feedreader/source/class/feedreader/view
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/feedreader/source/class/feedreader/simulation/ria
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/feedreader/source/class/feedreader/simulation/mobile
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/feedreader/source/class/feedreader/simulation
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/feedreader/source/class/feedreader/model
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/feedreader/source/class/feedreader/mobile
@@ -10577,18 +10957,34 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/feedreader/source/class
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/feedreader/source
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/feedreader
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/featureconfigeditor/source/translation
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/featureconfigeditor/source/resource/fce/lowlevel/css
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/featureconfigeditor/source/resource/fce/lowlevel
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/featureconfigeditor/source/resource/fce
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/featureconfigeditor/source/resource
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/view
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/theme
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/test
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/featureconfigeditor/source/class/fce/simulation
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/featureconfigeditor/source/class/fce
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/featureconfigeditor/source/class
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/featureconfigeditor/source
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/featureconfigeditor
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/tool
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/translation
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/welcome
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/webworker
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/ui
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/theme
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/test/combined
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/test
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/mobile
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/media
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/imicons
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/htmlarea
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/html
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/fonts
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/flash
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/data
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/background
@@ -10622,7 +11018,6 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/widget
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/tree
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/model
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/messenger
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual/list
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/virtual
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/util
@@ -10713,64 +11108,16 @@
 @exec mkdir -p %D/%%DATADIR%%/tool/data/migration/0.6.7
 @exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/mobile/icon/common
 @exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/decoration/Modern/treevirtual
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/widget/Windows/window
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/widget/Windows/tree
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/widget/Windows/table
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/widget/Windows/splitpane
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/widget/Windows/menu
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/widget/Windows/datechooser
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/widget/Windows/cursors
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/widget/Windows/core
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/widget/Windows/colorselector
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/widget/Windows/arrows
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/64/status
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/64/places
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/64/mimetypes
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/64/devices
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/64/categories
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/64/apps
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/64/actions
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/48/status
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/48/places
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/48/mimetypes
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/48/devices
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/48/categories
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/48/apps
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/48/actions
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/32/status
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/32/places
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/32/mimetypes
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/32/devices
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/32/categories
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/32/apps
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/32/actions
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/22/status
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/22/places
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/22/mimetypes
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/22/devices
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/22/categories
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/22/apps
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/22/actions
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/16/status
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/16/places
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/16/mimetypes
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/16/devices
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/16/categories
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/16/apps
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/16/actions
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/128/status
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/128/places
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/128/mimetypes
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/128/devices
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/128/categories
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/128/apps
-@exec mkdir -p %D/%%DATADIR%%/framework/source/resource/qx/compat/icon/CrystalClear/128/actions
 @exec mkdir -p %D/%%DATADIR%%/framework/source/class/qx/test/ui/control
 @exec mkdir -p %D/%%DATADIR%%/framework/source/class/qx/test/bom/client
+@exec mkdir -p %D/%%DATADIR%%/framework/source/class/qx/io/request/auth
 @exec mkdir -p %D/%%DATADIR%%/component/skeleton/native/source/resource/custom
 @exec mkdir -p %D/%%DATADIR%%/component/skeleton/mobile/source/resource/custom/icon
+@exec mkdir -p %D/%%DATADIR%%/component/skeleton/basic/source/resource/custom
 @exec mkdir -p %D/%%DATADIR%%/component/simulator/source/translation
 @exec mkdir -p %D/%%DATADIR%%/component/simulator/source/resource
+@exec mkdir -p %D/%%DATADIR%%/component/library/logpane/source/resource
+@exec mkdir -p %D/%%DATADIR%%/component/library/formdemo/source/resource
 @exec mkdir -p %D/%%DATADIR%%/component/inspector/source/class/inspector/test/components/fixture
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/widgetbrowser/source/class/widgetbrowser/theme
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/widgetbrowser/source/class/widgetbrowser/test
@@ -10786,5 +11133,5 @@
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/playground/source/resource/playground/editor/ace/css
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/playground/source/resource/playground/editor/ace/conf/keybindings
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/playground/source/resource/playground/editor/ace/commands
-%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/mobileshowcase/source/resource/mobileshowcase/icon
+%%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/demobrowser/source/resource/demobrowser/demo/icons/imicons
 %%PORTEXAMPLES%%@exec mkdir -p %D/%%EXAMPLESDIR%%/demobrowser/source/class/demobrowser/demo/ui/overview/pages
