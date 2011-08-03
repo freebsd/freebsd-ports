@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A module for date/time sets
 
+DEPRECATED=	Disappear from CPAN
+EXPIRATION_DATE=	2011-09-01
+
 BUILD_DEPENDS=	${SITE_PERL}/Set/Infinite.pm:${PORTSDIR}/devel/p5-Set-Infinite \
 		${SITE_PERL}/Date/ICal.pm:${PORTSDIR}/devel/p5-Date-ICal
 RUN_DEPENDS=	${BUILD_DEPENDS}

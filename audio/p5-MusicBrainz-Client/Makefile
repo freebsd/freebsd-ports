@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Perl module that provides access to the musicbrainz client API
 
+DEPRECATED=	Disappear from CPAN
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MusicBrainz/Queries.pm:${PORTSDIR}/audio/p5-MusicBrainz-Queries
 RUN_DEPENDS=	${BUILD_DEPENDS}
