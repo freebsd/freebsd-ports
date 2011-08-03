@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tdiary
-PORTVERSION=	3.0.2
+PORTVERSION=	3.1.0
 CATEGORIES?=	www ruby
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/ \
 		http://www.tdiary.org/download/
@@ -17,6 +17,10 @@ COMMENT=	A Web-based diary system (like weblog) written in Ruby
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKDIR}/doc/COPYING
+
+RUN_DEPENDS=	hikidoc:${PORTSDIR}/textproc/ruby-hikidoc \
+		rubygem-imagesize>=0.1.1:${PORTSDIR}/graphics/rubygem-imagesize \
+		rd2:${PORTSDIR}/textproc/ruby-rdtool
 
 NO_BUILD=	yes
 USE_RUBY=	yes
@@ -71,18 +75,22 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/web/escape_ext.so:${PORTSDIR}/www/ruby-nora
 .endif
 
 post-extract:
-	${RM} ${WRKSRC}/.gitignore
-	${RM} ${WRKSRC}/.rspec
-	${RM} ${WRKSRC}/Capfile
-	${RM} ${WRKSRC}/Gemfile
-	${RM} ${WRKSRC}/Gemfile.lock
-	${RM} ${WRKSRC}/Rakefile
-	${RM} ${WRKSRC}/config.ru
-	${RM} -r ${WRKSRC}/public
-	${RM} -r ${WRKSRC}/spec
-	${MV} ${WRKSRC}/ChangeLog ${WRKSRC}/doc
-	${MV} ${WRKSRC}/README.md ${WRKSRC}/doc
-	cd ${WRKSRC} && ${MV} doc ${WRKDIR}
+	@${RM} ${WRKSRC}/.gitignore
+	@${RM} ${WRKSRC}/.rspec
+	@${RM} ${WRKSRC}/.travis.yml
+	@${RM} ${WRKSRC}/Capfile
+	@${RM} ${WRKSRC}/Gemfile
+	@${RM} ${WRKSRC}/Gemfile.lock
+	@${RM} ${WRKSRC}/Rakefile
+	@${RM} ${WRKSRC}/config.ru
+	@${RM} -r ${WRKSRC}/public
+	@${RM} -r ${WRKSRC}/spec
+	@${RM} -r ${WRKSRC}/vendor/hikidoc-0.0.6
+	@${RM} -r ${WRKSRC}/vendor/imagesize-0.1.1/*
+	@${RM} -r ${WRKSRC}/vendor/rdtool-0.6.22
+	@${MV} ${WRKSRC}/ChangeLog ${WRKSRC}/doc
+	@${MV} ${WRKSRC}/README.md ${WRKSRC}/doc
+	@cd ${WRKSRC} && ${MV} doc ${WRKDIR}
 
 pre-install:
 	@${SED} -e 's,#!/usr/bin/env ruby,#!${RUBY},' \
@@ -94,6 +102,7 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKDIR}/${TDIARY_SCRIPT} ${PREFIX}/bin
 	@-${MKDIR} ${WWWDIR}
 	@${CP} -pR ${WRKSRC}/ ${WWWDIR}
+	@${LN} -s ${LOCALBASE}/lib/ruby/gems/${RUBY_VER}/gems/imagesize-0.1.1/lib ${WWWDIR}/vendor/imagesize-0.1.1/lib
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 post-install:
@@ -106,7 +115,7 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 
 x-generate-plist:
-	${FIND} ${WWWDIR} -type f | ${SORT} | ${SED} -e 's,${WWWDIR},%%WWWDIR%%,g' > pkg-plist.new
+	${FIND} ${WWWDIR} -type f -o -type l | ${SORT} | ${SED} -e 's,${WWWDIR},%%WWWDIR%%,g' > pkg-plist.new
 	${FIND} ${WWWDIR} -type d -depth | ${SORT} -r | ${SED} -e 's,${WWWDIR},@dirrm %%WWWDIR%%,g' >> pkg-plist.new
 
 .include <bsd.port.post.mk>
