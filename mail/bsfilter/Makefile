@@ -21,8 +21,7 @@ NO_BUILD=	yes
 USE_RUBY=	yes
 
 OPTIONS=	CHASEN "Japanese Morphological Analysis Support" Off \
-		MECAB "Part-of-Speech and Morphological Analyzer" Off \
-		KAKASI "Language processing filter/converter" Off
+		MECAB "Part-of-Speech and Morphological Analyzer" Off
 
 .include <bsd.port.pre.mk>
 
@@ -31,9 +30,6 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/chasen.so:${PORTSDIR}/japanese/ruby-chasen
 .endif
 .if defined(WITH_MECAB)
 RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/MeCab.so:${PORTSDIR}/japanese/ruby-mecab
-.endif
-.if defined(WITH_KAKASI)
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/kakasi.so:${PORTSDIR}/japanese/ruby-kakasi
 .endif
 
 do-install:
