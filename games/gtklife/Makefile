@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	games
 MASTER_SITES=	http://ironphoenix.org/tril/gtklife/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	ports@eitanadler.com
 COMMENT=	A GTK+ implementation of Conway's Game of Life
 
 WANT_GNOME=	yes
