@@ -16,6 +16,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	GraphViz::DBI - graph database tables and relations
 
+BROKEN=	does not fetch
+
+PERL_CONFIGURE=	yes
 BUILD_DEPENDS=	p5-DBI>=0:${PORTSDIR}/databases/p5-DBI \
 		p5-GraphViz>=0:${PORTSDIR}/graphics/p5-GraphViz
 RUN_DEPENDS=	${BUILD_DEPENDS}
