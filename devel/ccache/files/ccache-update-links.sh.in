@@ -32,7 +32,7 @@ esac
 # create compiler links
 for comp in ${CCACHE_COMPILERS}
 do
-	if [ -f "${PREFIX}/bin/${comp}" ] || [ -f "/usr/bin/${comp}" ]; then
+	if command -v "${comp}" >/dev/null; then
 		if [ ! -L "${PREFIX}/${CCLINKDIR}/${comp}" ]; then
 			[ "$1" = "-v" ] && echo "create symlink for ${comp}"
         		ln -sf ${PREFIX}/bin/ccache ${PREFIX}/${CCLINKDIR}/${comp}
