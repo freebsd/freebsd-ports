@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.donuz.de/download/${PORTNAME}/
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A cross platform C++ class library with a Java-like API
 
+DEPRECATED=	Website has disappeared
+EXPIRATION_DATE=2011-09-03
+
 LIB_DEPENDS=	gc.1:${PORTSDIR}/devel/boehm-gc
 
 USE_AUTOTOOLS=	libtool
