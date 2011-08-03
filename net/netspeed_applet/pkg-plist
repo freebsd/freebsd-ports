@@ -11,6 +11,16 @@ share/gnome/help/netspeed_applet/C/figures/settings.png
 share/gnome/help/netspeed_applet/C/figures/wavelan.png
 share/gnome/help/netspeed_applet/C/legal.xml
 share/gnome/help/netspeed_applet/C/netspeed_applet.xml
+share/gnome/help/netspeed_applet/cs/figures/details.png
+share/gnome/help/netspeed_applet/cs/figures/eth_sum_48.png
+share/gnome/help/netspeed_applet/cs/figures/ethernet.png
+share/gnome/help/netspeed_applet/cs/figures/loopback.png
+share/gnome/help/netspeed_applet/cs/figures/netspeed_applet.png
+share/gnome/help/netspeed_applet/cs/figures/plip.png
+share/gnome/help/netspeed_applet/cs/figures/ppp.png
+share/gnome/help/netspeed_applet/cs/figures/settings.png
+share/gnome/help/netspeed_applet/cs/figures/wavelan.png
+share/gnome/help/netspeed_applet/cs/netspeed_applet.xml
 share/gnome/help/netspeed_applet/de/figures/details.png
 share/gnome/help/netspeed_applet/de/figures/eth_sum_48.png
 share/gnome/help/netspeed_applet/de/figures/ethernet.png
@@ -31,6 +41,16 @@ share/gnome/help/netspeed_applet/el/figures/ppp.png
 share/gnome/help/netspeed_applet/el/figures/settings.png
 share/gnome/help/netspeed_applet/el/figures/wavelan.png
 share/gnome/help/netspeed_applet/el/netspeed_applet.xml
+share/gnome/help/netspeed_applet/es/figures/details.png
+share/gnome/help/netspeed_applet/es/figures/eth_sum_48.png
+share/gnome/help/netspeed_applet/es/figures/ethernet.png
+share/gnome/help/netspeed_applet/es/figures/loopback.png
+share/gnome/help/netspeed_applet/es/figures/netspeed_applet.png
+share/gnome/help/netspeed_applet/es/figures/plip.png
+share/gnome/help/netspeed_applet/es/figures/ppp.png
+share/gnome/help/netspeed_applet/es/figures/settings.png
+share/gnome/help/netspeed_applet/es/figures/wavelan.png
+share/gnome/help/netspeed_applet/es/netspeed_applet.xml
 share/gnome/help/netspeed_applet/fr/figures/details.png
 share/gnome/help/netspeed_applet/fr/figures/eth_sum_48.png
 share/gnome/help/netspeed_applet/fr/figures/ethernet.png
@@ -76,6 +96,7 @@ share/icons/hicolor/48x48/apps/netspeed-applet.png
 share/icons/hicolor/scalable/apps/netspeed-applet.svg
 share/locale/ar/LC_MESSAGES/netspeed_applet.mo
 share/locale/cs/LC_MESSAGES/netspeed_applet.mo
+share/locale/da/LC_MESSAGES/netspeed_applet.mo
 share/locale/de/LC_MESSAGES/netspeed_applet.mo
 share/locale/el/LC_MESSAGES/netspeed_applet.mo
 share/locale/es/LC_MESSAGES/netspeed_applet.mo
@@ -83,7 +104,10 @@ share/locale/et/LC_MESSAGES/netspeed_applet.mo
 share/locale/eu/LC_MESSAGES/netspeed_applet.mo
 share/locale/fi/LC_MESSAGES/netspeed_applet.mo
 share/locale/fr/LC_MESSAGES/netspeed_applet.mo
+share/locale/gl/LC_MESSAGES/netspeed_applet.mo
+share/locale/gu/LC_MESSAGES/netspeed_applet.mo
 share/locale/hu/LC_MESSAGES/netspeed_applet.mo
+share/locale/id/LC_MESSAGES/netspeed_applet.mo
 share/locale/it/LC_MESSAGES/netspeed_applet.mo
 share/locale/ja/LC_MESSAGES/netspeed_applet.mo
 share/locale/lt/LC_MESSAGES/netspeed_applet.mo
@@ -91,6 +115,7 @@ share/locale/ms/LC_MESSAGES/netspeed_applet.mo
 share/locale/nb/LC_MESSAGES/netspeed_applet.mo
 share/locale/nl/LC_MESSAGES/netspeed_applet.mo
 share/locale/oc/LC_MESSAGES/netspeed_applet.mo
+share/locale/pa/LC_MESSAGES/netspeed_applet.mo
 share/locale/pl/LC_MESSAGES/netspeed_applet.mo
 share/locale/ps/LC_MESSAGES/netspeed_applet.mo
 share/locale/pt/LC_MESSAGES/netspeed_applet.mo
@@ -100,10 +125,13 @@ share/locale/ru/LC_MESSAGES/netspeed_applet.mo
 share/locale/sl/LC_MESSAGES/netspeed_applet.mo
 share/locale/sv/LC_MESSAGES/netspeed_applet.mo
 share/locale/tr/LC_MESSAGES/netspeed_applet.mo
+share/locale/uk/LC_MESSAGES/netspeed_applet.mo
 share/locale/zh_CN/LC_MESSAGES/netspeed_applet.mo
 share/omf/netspeed_applet/netspeed_applet-C.omf
+share/omf/netspeed_applet/netspeed_applet-cs.omf
 share/omf/netspeed_applet/netspeed_applet-de.omf
 share/omf/netspeed_applet/netspeed_applet-el.omf
+share/omf/netspeed_applet/netspeed_applet-es.omf
 share/omf/netspeed_applet/netspeed_applet-fr.omf
 share/omf/netspeed_applet/netspeed_applet-pt_BR.omf
 share/omf/netspeed_applet/netspeed_applet-sv.omf
@@ -116,10 +144,14 @@ share/omf/netspeed_applet/netspeed_applet-sv.omf
 @dirrm share/gnome/help/netspeed_applet/pt_BR
 @dirrm share/gnome/help/netspeed_applet/fr/figures
 @dirrm share/gnome/help/netspeed_applet/fr
+@dirrm share/gnome/help/netspeed_applet/es/figures
+@dirrm share/gnome/help/netspeed_applet/es
 @dirrm share/gnome/help/netspeed_applet/el/figures
 @dirrm share/gnome/help/netspeed_applet/el
 @dirrm share/gnome/help/netspeed_applet/de/figures
 @dirrm share/gnome/help/netspeed_applet/de
+@dirrm share/gnome/help/netspeed_applet/cs/figures
+@dirrm share/gnome/help/netspeed_applet/cs
 @dirrm share/gnome/help/netspeed_applet/C/figures
 @dirrm share/gnome/help/netspeed_applet/C
 @dirrm share/gnome/help/netspeed_applet
