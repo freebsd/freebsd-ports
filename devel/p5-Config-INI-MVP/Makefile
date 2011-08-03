@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Multi-value capable .ini file reader (for plugins)
 
+DEPRECATED=	Disappear from CPAN
+EXPIRATION_DATE=	2011-09-01
+
 BUILD_DEPENDS=	p5-Config-INI>=0:${PORTSDIR}/devel/p5-Config-INI \
 		p5-Config-MVP>=0.092060:${PORTSDIR}/devel/p5-Config-MVP \
 		p5-Moose>=0.65:${PORTSDIR}/devel/p5-Moose

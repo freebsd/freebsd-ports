@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Provides wrapping functionality for quoted Email and Usenet messages
 
+DEPRECATED=	Disappear from CPAN
+EXPIRATION_DATE=	2011-09-01
+
 BUILD_DEPENDS=	${SITE_PERL}/Text/Format.pm:${PORTSDIR}/textproc/p5-Text-Format
 
 PERL_CONFIGURE=	yes
