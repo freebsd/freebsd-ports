@@ -1,0 +1,372 @@
+--- charproc.c	2003-03-26 12:09:48.000000000 +0900
++++ charproc.c	2006-01-05 11:29:34.569652400 +0900
+@@ -132,6 +132,15 @@ in this Software without prior written a
+ #include <charclass.h>
+ #include <xstrings.h>
+ 
++/* _xutf8 */
++#if OPT_HANGUL
++#include <iconv.h>
++static iconv_t from_utf8_cd = 0;
++static iconv_t to_utf8_cd = 0;
++extern int _xutf8;
++#endif
++/* _xutf8 */
++
+ #if OPT_ZICONBEEP || OPT_TOOLBAR
+ #define HANDLE_STRUCT_NOTIFY 1
+ #else
+@@ -2463,6 +2472,14 @@ v_write(int f, Char * data, int len)
+     int riten;
+     int c = len;
+ 
++#if OPT_HANGUL
++	if (len > 0 && _xutf8) {
++		char *utf8 = (char *)alloca(len*2);
++		c = len = to_utf8(data, len, utf8);
++		data = utf8;
++	}
++#endif
++
+     if (v_bufstr == NULL && len > 0) {
+ 	v_buffer = (Char *) XtMalloc(len);
+ 	v_bufstr = v_buffer;
+@@ -2676,6 +2693,13 @@ in_put(void)
+ 		    /* strip parity bit */
+ 		    for (i = VTbuffer.cnt, cp = VTbuffer.ptr; i > 0; i--)
+ 			*cp++ &= 0177;	/* originally CHAR */
++
++#if OPT_HANGUL
++			if ( _xutf8 ) {
++				VTbuffer.cnt= from_utf8(VTbuffer.buf, VTbuffer.cnt, VTbuffer.ptr);
++			}
++#endif
++
+ 		    if (screen->scrollWidget && screen->scrollttyoutput &&
+ 			screen->topline < 0)
+ 			/* Scroll to bottom */
+@@ -2756,6 +2780,14 @@ in_put(void)
+ 		&& screen->topline < 0)
+ 		WindowScroll(screen, 0);	/* Scroll to bottom */
+ 	    pty_read_bytes += VTbuffer.cnt;
++
++#if OPT_HANGUL
++		if ( _xutf8 ) {
++			if (VTbuffer.cnt > 0 )
++				VTbuffer.cnt= from_utf8(VTbuffer.buf, VTbuffer.cnt, VTbuffer.ptr);
++		}
++#endif
++
+ 	    /* stop speed reading at some point to look for X stuff */
+ 	    /* (4096 is just a random large number.) */
+ 	    if (pty_read_bytes > 4096)
+@@ -4990,9 +5022,16 @@ VTInitialize(Widget wrequest,
+ 
+ #if OPT_HANGUL
+     composer_set_shuffle_active(request->misc.han_allow_shuffle);
++
++	if ( request->screen.han_code == C_UTF8 ) {
++		request->screen.han_code = C_WANSUNG;
++		_xutf8 = 1;
++	}
++
+     wnew->screen.han_code = ((request->screen.han_code >= 0
+ 			      && request->screen.han_code <= 1)
+ 			     ? request->screen.han_code: C_WANSUNG);
++
+     wnew->screen.han_kbd = ((request->screen.han_kbd > 1
+ 			     && request->screen.han_kbd < 4)
+ 			    ? request->screen.han_kbd : 2);
+@@ -6808,3 +6847,221 @@ set_cursor_gcs(TScreen * screen)
+     screen->reversecursorHGC = new_reversecursorHGC;
+ #endif /* OPT_HANGUL */
+ }
++
++#if OPT_HANGUL
++/* _xutf8 */
++static int
++is_wide (int c)
++{
++	if (c < 0x1100) return 0;
++		return ((c >= 0x1100 && c <= 0x115f)
++				|| (c >= 0x2e80 && c <= 0xa4cf && (c & ~0x0011) != 0x300a && c != 0x303f)
++				|| (c >= 0xac00 && c <= 0xd7a3)
++				|| (c >= 0xf900 && c <= 0xfaff)
++				|| (c >= 0xfe30 && c <= 0xfe6f)
++				|| (c >= 0xff00 && c <= 0xff5f)
++				|| (c >= 0xffe0 && c <= 0xffe6));
++}
++
++#define UTF8_COMPUTE(Char, Mask, Len)				\
++	if (Char < 128)									\
++	{												\
++		Len = 1;									\
++		Mask = 0x7f;								\
++	}												\
++	else if ((Char & 0xe0) == 0xc0)					\
++	{												\
++		Len = 2;									\
++		Mask = 0x1f;								\
++	}												\
++	else if ((Char & 0xf0) == 0xe0)					\
++	{												\
++		Len = 3;									\
++		Mask = 0x0f;								\
++	}												\
++	else if ((Char & 0xf8) == 0xf0)					\
++	{												\
++		Len = 4;									\
++		Mask = 0x07;								\
++	}												\
++	else if ((Char & 0xfc) == 0xf8)					\
++	{												\
++		Len = 5;									\
++		Mask = 0x03;								\
++	}												\
++	else if ((Char & 0xfe) == 0xfc)					\
++	{												\
++		Len = 6;									\
++		Mask = 0x01;								\
++	}												\
++	else											\
++		Len = -1;
++
++#define UTF8_GET(Result, Chars, Count, Mask, Len)	\
++	(Result) = (Chars)[0] & (Mask);					\
++	for ((Count) = 1; (Count) < (Len); ++(Count))	\
++	{												\
++		if (((Chars)[(Count)] & 0xc0) != 0x80)		\
++		{											\
++			(Result) = -1;							\
++			break;									\
++		}											\
++		(Result) <<= 6;								\
++		(Result) |= ((Chars)[(Count)] & 0x3f);		\
++	}
++
++static int
++g_utf8_get_char (const char *p, int *len)
++{
++	int i, mask = 0;
++	int result;
++	unsigned char c = (unsigned char) *p;
++
++	UTF8_COMPUTE (c, mask, *len);
++	if (*len == -1)
++		return -1;
++	UTF8_GET (result, p, i, mask, *len);
++
++	return result;
++}
++
++static int
++g_utf8_validate (const char  *str,
++	int          max_len,
++	const char **end)
++{
++
++	const char *p;
++	int retval = 1;
++		  
++	if (end)
++		*end = str;
++
++	p = str;
++			  
++	while ((max_len < 0 || (p - str) < max_len) && *p)
++	{
++		int i, mask = 0, len;
++		int result;
++		unsigned char c = (unsigned char) *p;
++
++		UTF8_COMPUTE (c, mask, len);
++
++		if (len == -1)
++		{
++			retval = 0;
++			break;
++		}
++
++		/* check that the expected number of bytes exists in str */
++		if (max_len >= 0 && ((max_len - (p - str)) < len))
++		{
++			retval = 0;
++			break;
++		}
++
++		UTF8_GET (result, p, i, mask, len);
++
++		if (result == -1)
++		{
++			retval = 0;
++			break;
++		}
++	
++		p += len;
++	}
++
++	if (end)
++		*end = p;
++				  
++	return retval;
++}
++
++int
++from_utf8(char *utf8, size_t len, char *ksc)
++{
++	char * tmp = alloca(len);
++	char *out = tmp;
++	size_t out_len = len;
++	size_t vlen;
++	char *vs, *end;
++
++	if (!from_utf8_cd) {
++		from_utf8_cd = iconv_open("EUC-KR", "UTF-8");
++	}
++
++	vlen = len; 
++	vs = utf8;
++	end = utf8 + len;
++	do {
++		const char *valid_end;
++		if (g_utf8_validate(vs, vlen, &valid_end)) break;
++		vs = (char *) valid_end;
++		*vs++ = '?';
++		vlen = end - vs;
++	} while (1);
++
++	do {
++		int iconv_len = iconv(from_utf8_cd, (const char **)&utf8, 
++							  &len, &out, &out_len);
++		if (iconv_len < 0) {
++			int utf8_bytes;
++			int i = g_utf8_get_char (utf8, &utf8_bytes);
++			if (utf8_bytes <= 0) {
++				utf8_bytes = 1;
++			}
++			if (is_wide(i)) {
++				*out++ = '?'; *out++ = '?'; out_len -= 2;
++			} else {
++				*out++ = '?'; out_len -= 1;
++			}
++			utf8 += utf8_bytes;
++			len -= utf8_bytes;
++		}
++	} while (len > 0);
++	memcpy(ksc, tmp, out - tmp);
++	if (0) {
++		int i;
++		for(i=0;i<out - tmp;i++) {
++			if (ksc[i] & 0x80) {
++				char c = ksc[i+1];
++				ksc[i+1] = ksc[i];
++				ksc[i] = c;
++				i++;
++			}
++		}
++	}
++	return out - tmp;
++}
++
++int
++to_utf8(char *ksc, size_t len, char *utf8)
++{
++	char *out = utf8;
++	size_t out_len = len * 2;
++	if (!to_utf8_cd) {
++		/* johab conversion routine in glibc used in mizi1.5 is completely broken */
++		to_utf8_cd = iconv_open("UTF-8", "EUC-KR");
++	}
++	if (0) {
++		int i;
++		for(i=0;i<len;i++) {
++			if (ksc[i] & 0x80) {
++				char c = ksc[i+1];
++				ksc[i+1] = ksc[i];
++				ksc[i] = c;
++				i++;
++			}
++		}
++	}
++#if 0
++	while ((len > 0) && ((*ksc & 0xff) < 0x80)) {
++		*out++ = *ksc++;
++		len--; out_len--;
++	}
++	if (len == 0) return out - utf8;
++#endif
++	iconv(to_utf8_cd, (const char **)&ksc, &len, &out, &out_len);
++	return out - utf8;
++}
++#endif
+--- hangul.c	2002-06-09 22:54:40.000000000 +0900
++++ hangul.c	2006-01-05 11:24:54.754159800 +0900
+@@ -17,6 +17,8 @@
+ #include "johabcode.h"
+ #include "hfont.h"
+ 
++/* _xutf8 */
++extern int _xutf8;
+ 
+ int han_eng_lift;
+ int han_eng_ascent;
+@@ -80,7 +82,14 @@ HandleChangeKeyboard(Widget w, XEvent *e
+ void 
+ HandleChangeCode(Widget w, XEvent *event, String *params, Cardinal *nparams)
+ {
+-    term->screen.han_code = term->screen.han_code ^ 1;
++	term->screen.han_code++;
++	if (term->screen.han_code == C_UTF8) {
++		term->screen.han_code = C_WANSUNG;
++		_xutf8 = 1;
++	} else {
++		term->screen.han_code = ( _xutf8 ) ? C_WANSUNG : C_JOHAB;
++		_xutf8 = 0;
++	}
+     if (term->screen.han_code == C_WANSUNG) {
+ 	convert_code_to_font = kscode_to_font[term->screen.han_font_type];
+     } else {
+@@ -286,7 +295,11 @@ han_show_status(TScreen *screen, int lef
+ 	set_mode_line();
+ 
+     mode_str = hangul_state ? str_hangul : str_eng;
+-    code_str = (screen->han_code == C_WANSUNG) ? str_wansung : str_johab;
++	if ( _xutf8 )
++		code_str = S_UTF8;
++	else
++		code_str = (screen->han_code == C_WANSUNG) ? str_wansung : str_johab;
++
+     keyboard_str = (screen->han_kbd == 2) ? str_2bul : str_3bul;
+ 
+     if (screen->han_code == C_JOHAB) 
+--- hangul.h	2003-02-18 11:49:49.000000000 +0900
++++ hangul.h	2006-01-05 11:24:54.785399400 +0900
+@@ -15,12 +15,14 @@
+ #define S_ENGLISH	"[영어]"
+ #define S_WANSUNG	"[완성]"
+ #define S_JOHAB	        "[조합]"
++#define S_UTF8		"[UTF8]"
+ #define S_2BULSIK	"[두벌식]"
+ #define S_3BULSIK	"[세벌식]"
+ #define S_CODEINPUT     "문자코드>"
+ 
+ #define C_WANSUNG	0		     /* Hangul Code  */
+ #define C_JOHAB		1
++#define C_UTF8		2
+ #define	TEXT_BUF_SIZE	256
+ 
+ extern Char han_compose_buf[];
+--- main.c	2003-03-26 12:09:48.000000000 +0900
++++ main.c	2006-01-05 11:30:42.846857900 +0900
+@@ -672,6 +672,11 @@ static int tslot;
+ #endif /* USE_SYSV_UTMP */
+ static sigjmp_buf env;
+ 
++#if OPT_HANGUL
++/* _xutf8 */
++int _xutf8 = 0;
++#endif
++
+ /* used by VT (charproc.c) */
+ 
+ static XtResource application_resources[] =
