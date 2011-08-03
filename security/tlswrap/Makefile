@@ -9,7 +9,7 @@ PORTNAME=	tlswrap
 PORTVERSION=	1.0.4
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	http://tlswrap.sunsite.dk/
+MASTER_SITES=	http://www.tlswrap.com/
 DISTNAME=	${PORTNAME}-1.04
 
 MAINTAINER=	johans@FreeBSD.org
