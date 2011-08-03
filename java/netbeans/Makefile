@@ -8,7 +8,7 @@
 
 PORTNAME=	netbeans
 PORTVERSION=	7.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.netbeans.org/netbeans/${PORTVERSION}/final/zip/ \
     		http://dlc.sun.com.edgesuite.net/netbeans/${PORTVERSION}/final/zip/
@@ -41,6 +41,6 @@ do-install:
 	@${LN} -sf ${DATADIR}/bin/netbeans ${PREFIX}/bin/${PORTNAME}-${PORTVERSION}
 
 post-install:
-	@${CHMOD} ${BINMODE} ${DATADIR}/java/maven/bin/mv
+	@${CHMOD} ${BINMODE} ${DATADIR}/java/maven/bin/mvn
 
 .include <bsd.port.mk>
