@@ -23,17 +23,8 @@ USE_GNOME=	libxml2
 USE_PYTHON=	yes
 USE_RC_SUBR=	uwsgi
 
-PLIST_FILES=	bin/${PORTNAME} \
-		${PYTHON_SITELIBDIR}/uwsgidecorators.py
-
-.include <bsd.port.pre.mk>
-
 do-install:
 	@${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin/
 	@${INSTALL_DATA}  ${WRKSRC}/uwsgidecorators.py ${PYTHON_SITELIBDIR}
 
-.if ${OSVERSION} < 700000
-BROKEN=		does not build on 6.X
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
