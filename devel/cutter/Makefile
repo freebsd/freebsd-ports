@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cutter
-PORTVERSION=	1.1.7
+PORTVERSION=	1.1.8
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
@@ -16,7 +16,7 @@ COMMENT=	Unit Testing Framework for C and C++
 LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo \
 		pangocairo:${PORTSDIR}/x11-toolkits/pango
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
+CPPFLAGS=	"-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--disable-gtk-doc-html --with-html-dir=${PREFIX}/share/doc
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
