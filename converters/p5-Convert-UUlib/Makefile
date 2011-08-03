@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 interface to the uulib library (a.k.a. uudeview/uuenview)
 
+BROKEN=	does not fetch
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Convert::UUlib.3

@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Retrieve video properties such as: height width codec fps
 
+BROKEN=	does not fetch
+
+PERL_CONFIGURE=	yes
 PERL_CONFIGURE=	yes
 MANCOMPRESSED=	no
 
