@@ -14,8 +14,11 @@ MASTER_SITES=	http://sparcs.kaist.ac.kr/~firiel/Works/ \
 		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/
 DISTNAME=	pgp263i-${PGP_LANGUAGE}
 
-MAINTAINER=	cjh@kr.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Korean language module for PGP
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
 
 RUN_DEPENDS=	pgp:${PORTSDIR}/security/pgp
 
