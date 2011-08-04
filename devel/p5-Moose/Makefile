@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	2.0010
+PORTVERSION=	2.0202
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:DOY
@@ -103,6 +103,7 @@ MAN3=	Class::MOP::Mixin::HasAttributes.3 \
 	Moose::Error::Confess.3 \
 	Moose::Error::Croak.3 \
 	Moose::Error::Default.3 \
+	Moose::Error::Util.3 \
 	Moose::Exporter.3 \
 	Moose::Intro.3 \
 	Moose::Manual.3 \
@@ -172,9 +173,9 @@ MAN3=	Class::MOP::Mixin::HasAttributes.3 \
 	Moose::Spec::Role.3 \
 	Moose::Unsweetened.3 \
 	Moose::Util.3 \
+	Moose::Util::TypeConstraints::Builtins.3 \
 	Moose::Util::MetaRole.3 \
 	Moose::Util::TypeConstraints.3 \
-	Moose::Util::TypeConstraints::OptimizedConstraints.3 \
 	Test::Moose.3 \
 	oose.3
 
