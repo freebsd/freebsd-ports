@@ -6,29 +6,36 @@
 #
 
 PORTNAME=	avra
-PORTVERSION=	1.2.1
-DISTVERSIONSUFFIX=	-src
-PORTREVISION=	1
+PORTVERSION=	1.3.0
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	aldis@bsdroot.lv
 COMMENT=	Macro Assembler for Atmel AVR microcontrollers
 
-WRKSRC=		${WRKDIR}
-USE_AUTOTOOLS=	aclocal autoconf automake
-AUTOMAKE_ARGS=	-a
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
-PORTDOCS=	README
+WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
-# Install the Avra README file as docs
+USE_BZIP2=	yes
+USE_GMAKE=	yes
+MAKEFILE=	${WRKSRC}/makefiles/Makefile.linux
+MAKE_ARGS=	CC="${CC}" LD="${CC}" CFLAGS="${CFLAGS}" LDFLAGS=""
 
-post-install:
+PORTDOCS=	*
+PORTEXAMPLES=	*
+PLIST_FILES=	bin/avra
+
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/avra ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for i in ${PORTDOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-.endfor
+	@(cd ${WRKSRC}/../doc && ${COPYTREE_SHARE} . ${DOCSDIR})
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/../examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
