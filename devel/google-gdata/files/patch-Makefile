@@ -3,11 +3,13 @@ $FreeBSD$
 
 --- Makefile.orig
 +++ Makefile
-@@ -121,7 +121,7 @@
+@@ -120,8 +120,8 @@
+ 
  install: all
  	for i in $(ALLLIBS); do gacutil -i $$i -package GData-Sharp -root "$(DESTDIR)$(PREFIX)/lib"; done
- 	install -d "$(DESTDIR)$(PREFIX)/lib/pkgconfig"
+-	install -d "$(DESTDIR)$(PREFIX)/lib/pkgconfig"
 -	install -m 644 -t "$(DESTDIR)$(PREFIX)/lib/pkgconfig" $(PKGCONFIG_FILES) 
++	install -d "$(DESTDIR)$(PREFIX)/libdata/pkgconfig"
 +	install -m 644 $(PKGCONFIG_FILES) "$(DESTDIR)$(PREFIX)/libdata/pkgconfig"
  
  uninstall:
