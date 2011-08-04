@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ros
-PORTVERSION=	1.4.8
+PORTVERSION=	1.4.9
 CATEGORIES=	devel
 MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${STACKNAME}/${STACKNAME}-${PORTVERSION}/
 DIST_SUBDIR=	ros
