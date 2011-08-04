@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imp
-PORTVERSION=	5.0.8
+PORTVERSION=	5.0.9
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	horde-
 
