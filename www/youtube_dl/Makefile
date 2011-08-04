@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	youtube_dl
-PORTVERSION=	2011.03.29
+PORTVERSION=	2011.08.04
 CATEGORIES=	www
-MASTER_SITES=	https://github.com/rg3/youtube-dl/raw/${PORTVERSION}/
+MASTER_SITES=	https://raw.github.com/rg3/youtube-dl/${PORTVERSION}/
 DISTNAME=	youtube-dl
 EXTRACT_SUFX=	# empty
 DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
@@ -32,7 +32,7 @@ RUN_DEPENDS+=	rtmpdump:${PORTSDIR}/multimedia/rtmpdump
 .endif
 
 post-extract:
-	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} ${WRKSRC}/youtube-dl
+	@${CP} ${_DISTDIR}/${DISTNAME} ${WRKSRC}/youtube-dl
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/youtube-dl ${PREFIX}/bin/youtube-dl
