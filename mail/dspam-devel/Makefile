@@ -176,7 +176,7 @@ CONFIGURE_ARGS+=	--enable-preferences-extension
 
 .ifndef(WITHOUT_DAEMON)
 CONFIGURE_ARGS+=	--enable-daemon
-USE_RC_SUBR=	${PORTNAME}-${PKGNAMESUFFIX}
+USE_RC_SUBR=	${PORTNAME}${PKGNAMESUFFIX}
 _SED_SCRIPT+=	-e 's,%%DAEMON%%,,g'
 SUB_LIST+=	DSPAM_HOME=${DSPAM_HOME}
 .else
