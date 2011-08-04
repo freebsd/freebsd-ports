@@ -1,24 +1,31 @@
---- Makefile.orig	Sat Jul 13 03:24:16 2002
-+++ Makefile	Mon Oct  7 11:10:48 2002
-@@ -13,15 +13,15 @@
+--- Makefile.orig	2011-01-26 18:36:21.000000000 +0800
++++ Makefile	2011-07-21 09:58:28.753010869 +0800
+@@ -19,8 +19,8 @@
  SHELL = /bin/sh
--CC = gcc
--CFLAGS = -g
-+#CC = gcc
-+#CFLAGS = -g
+ 
+ # The C compiler and linker to use
+-CC	= gcc
+-CFLAGS	= -g -O2 -Wall
++#CC	= gcc
++#CFLAGS	= -g -O2 -Wall
+ LD	= gcc
+ LDFLAGS =
+ 
+@@ -29,7 +29,7 @@
+ XCFLAGS	= -DTLF_FONTS
+ 
+ # Where to install files
+-prefix	= /usr/local
++#prefix	= /usr/local
  
  # Where the executables should be put
--DESTDIR = /usr/local/bin
-+DESTDIR = $(PREFIX)/bin
- 
- # Where the man page should be put
--MANDIR = /usr/local/man/man6
-+MANDIR = $(PREFIX)/man/man6
+ BINDIR	= $(prefix)/bin
+@@ -38,7 +38,7 @@
+ MANDIR	= $(prefix)/man
  
  # Where figlet will search first for fonts (the ".flf" files).
--DEFAULTFONTDIR = /usr/local/share/figlet
-+DEFAULTFONTDIR = $(PREFIX)/share/figlet
- # Use this definition if you can't put things in /usr/local/share/figlet
--DEFAULTFONTDIR = fonts
-+#DEFAULTFONTDIR = fonts
+-DEFAULTFONTDIR = $(prefix)/share/figlet
++DEFAULTFONTDIR = $(datadir)
+ # Use this definition if you can't put things in $(prefix)/share/figlet
+ #DEFAULTFONTDIR = fonts
  
