@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webpy
-PORTVERSION=	0.35
+PORTVERSION=	0.36
 CATEGORIES=	www python
 MASTER_SITES=	http://webpy.org/static/ \
 		CHEESESHOP
