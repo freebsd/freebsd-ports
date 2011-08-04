@@ -1,13 +1,13 @@
---- Makefile.all.orig	2007-12-11 21:44:49.000000000 +0300
-+++ Makefile.all	2008-04-23 20:47:45.000000000 +0400
+--- Makefile.all.orig	2010-05-24 01:03:11.000000000 +0400
++++ Makefile.all	2011-08-04 02:06:46.000000000 +0400
 @@ -1,8 +1,8 @@
  
  ROOT_PATH = ../..
  
--COMPILE = g++ ${PLATFORM_COMPILE_FLAGS} -Wall -g -I${ROOT_PATH} -c
+-COMPILE = g++ ${PLATFORM_COMPILE_FLAGS} -Wall -Wwrite-strings -Wchar-subscripts -Wparentheses -g -I${ROOT_PATH} -c
 -LINK = g++ -I${ROOT_PATH}
-+COMPILE = ${CXX} ${CXXFLAGS} `${SDL_CONFIG} --cflags` -Wall -I${ROOT_PATH} -c
-+LINK = ${CXX} `${SDL_CONFIG} --libs`
++COMPILE = ${CXX} ${CXXFLAGS} `${SDL_CONFIG} --cflags` -Wall -Wwrite-strings -Wchar-subscripts -Wparentheses -I${ROOT_PATH} -c
++LINK = ${CXX} ${LDFLAGS} `${SDL_CONFIG} --libs`
  
  
  
