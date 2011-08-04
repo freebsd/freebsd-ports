@@ -7,21 +7,25 @@
 #
 
 PORTNAME=	linsmith
-PORTVERSION=	0.99.21
+PORTVERSION=	0.99.22
 CATEGORIES=	science hamradio
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-0.9.21
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Smith charting program
 
-LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
-USE_GNOME=	pkgconfig libgnomeprint libgnomeui libxml2
+USE_GNOME=	libgnomeui libxml2
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${CP} ${FILESDIR}/carg.c  ${WRKSRC}/src
