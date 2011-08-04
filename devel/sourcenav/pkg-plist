@@ -107,6 +107,8 @@ sourcenav/share/sdk/lib/libdb.a
 sourcenav/share/sdk/lib/libdbutils.a
 sourcenav/share/sdk/lib/libsnptools.a
 sourcenav/share/sdk/lib/libutils.a
+sourcenav/share/snavigator/bitmaps/tilda_left.xpm
+sourcenav/share/snavigator/bitmaps/tilda_right.xpm
 sourcenav/share/snavigator/bitmaps/add.xpm
 sourcenav/share/snavigator/bitmaps/addall.xpm
 sourcenav/share/snavigator/bitmaps/arrow.xpm
