@@ -8,12 +8,8 @@
 PORTNAME=	jgraph
 PORTVERSION=	8.3
 CATEGORIES=	graphics
-MASTER_SITES=	ftp://cs.utk.edu/pub/plank/jgraph/  \
-		http://www.cs.washington.edu/homes/wolman/
+MASTER_SITES=	http://web.eecs.utk.edu/~plank/plank/jgraph/
 DISTFILES=	${PORTNAME}.shar.Z
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-08-01
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program that generates postscript graphs
