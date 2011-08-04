@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	webmail
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2
 CATEGORIES=	mail www pear
 PKGNAMEPREFIX=	horde-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Groupware Webmail Edition
 
 CONFLICTS=	horde-groupware-4*

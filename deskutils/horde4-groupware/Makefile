@@ -5,11 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	groupware
-PORTVERSION=	4.0.1
+PORTVERSION=	4.0.2
 CATEGORIES=	deskutils www pear
 PKGNAMEPREFIX=	horde-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	horde@FreeBSD.org
 COMMENT=	Horde Groupware
 
 CONFLICTS=	horde-webmail-4*
