@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Astro-FITS-CFITSIO
-PORTVERSION=	1.06
+PORTVERSION=	1.07
 CATEGORIES=	astro perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl extension for using the cfitsio library
 
 LIB_DEPENDS=	cfitsio.0:${PORTSDIR}/astro/cfitsio
