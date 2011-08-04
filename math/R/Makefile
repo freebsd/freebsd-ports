@@ -40,6 +40,7 @@ PLIST_SUB=		RMATH_SOVERSION="${RMATH_SOVERSION}"
 USE_LDCONFIG=		yes
 .else # LIBRMATH_SLAVEPORT
 ALL_TARGET=		all
+INSTALL_TARGET =	install
 CONFIGURE_ARGS =	--enable-memory-profiling rdocdir=${DOCSDIR} \
 			--with-system-bzlib --with-system-zlib
 CONFIGURE_ENV=		FCFLAGS="${FFLAGS}" \
@@ -207,7 +208,8 @@ INFO=		R-FAQ R-admin R-data R-exts R-intro R-lang
 .endif
 
 .if defined(WITH_DVI_MANUALS) && !defined(NOPORTDOCS)
-BUILD_DEPENDS +=	texi2dvi:${PORTSDIR}/print/teTeX-base
+BUILD_DEPENDS +=	texi2dvi:${PORTSDIR}/print/texinfo \
+			tex:${PORTSDIR}/print/teTeX-base
 ALL_TARGET+=		dvi
 INSTALL_TARGET+=	install-dvi
 PLIST_SUB+=		DVI_MANUAL=""
