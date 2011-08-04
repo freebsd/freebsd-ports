@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	file
-PORTVERSION=	5.07
+PORTVERSION=	5.08
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.astron.com/pub/file/ \
-		ftp://ftp.gw.com/mirrors/unix/file/ \
 		ftp://ftp.fu-berlin.de/unix/tools/file/
 
 MAINTAINER=	bf@FreeBSD.org
