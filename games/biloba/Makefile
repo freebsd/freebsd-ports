@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	biloba
-PORTVERSION=	0.6
-PORTREVISION=	5
+PORTVERSION=	0.9.3
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Biloba/${PORTVERSION}
 
@@ -25,10 +24,6 @@ DESKTOP_ENTRIES="Biloba" \
 		"biloba" \
 		"Game;LogicGame;" \
 		false
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
-	    ${WRKSRC}/src/Makefile.server
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/biloba_icon.png ${DATADIR}/
