@@ -23,11 +23,11 @@ COMMENT=	Bayesian spam filter - development version
 PORTVER_MAJ=	3.10.0
 #SNAP_DATE=	.r1
 
-#MIN_OPTIONS_VER=	${PORTNAME}-3.10.0.
+#MIN_OPTIONS_VER=	${PORTNAME}-${PKGNAMESUFFIX}-3.10.0.
 
 .ifdef(SNAP_DATE)
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
+		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}-${PKGNAMESUFFIX}/sources/
 MASTER_SITE_SUBDIR=	itetcu
 WRKSRC=		${WRKDIR}/dspam-${PORTVER_MAJ}
 .else
@@ -146,7 +146,7 @@ CONFIGURE_ARGS+=	--with-dspam-group=${DSPAM_GROUP}
 _SED_SCRIPT=	-e 's,%%DOCSDIR%%,${DOCSDIR},g' \
 		-e 's,%%EXAMPLESDIR%%,${EXAMPLESDIR},g' \
 		-e 's,%%DSPAM_HOME%%,${DSPAM_HOME},g' \
-		-e 's,%%PORTNAME%%,${PORTNAME},g' \
+		-e 's,%%PORTNAME%%,${PORTNAME}-${PKGNAMESUFFIX},g' \
 		-e 's,%%_VAR_DIR%%,${_VAR_DIR},g' \
 		-e '/^%%FreeBSD/D' \
 		-e '/^%%Tecnik%%/D'
@@ -176,7 +176,7 @@ CONFIGURE_ARGS+=	--enable-preferences-extension
 
 .ifndef(WITHOUT_DAEMON)
 CONFIGURE_ARGS+=	--enable-daemon
-USE_RC_SUBR=	${PORTNAME}
+USE_RC_SUBR=	${PORTNAME}-${PKGNAMESUFFIX}
 _SED_SCRIPT+=	-e 's,%%DAEMON%%,,g'
 SUB_LIST+=	DSPAM_HOME=${DSPAM_HOME}
 .else
