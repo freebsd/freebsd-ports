@@ -15,12 +15,13 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}_unixsrc
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Enhanced version of VNC
-MAKE_JOBS_UNSAFE=	yes
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 RUN_DEPENDS=	showrgb:${PORTSDIR}/x11/rgb \
 		xauth:${PORTSDIR}/x11/xauth \
 		xorg-fonts>=7.2:${PORTSDIR}/x11-fonts/xorg-fonts
+
+MAKE_JOBS_UNSAFE=	yes
 
 CONFLICTS=	tridiavnc-[0-9]* vnc-[0-9]*
 
@@ -71,9 +72,11 @@ post-patch:
 
 do-install:
 	@(cd ${WRKSRC}; ./vncinstall ${PREFIX}/bin ${PREFIX}/man)
+.if defined(STRIP) && ${STRIP} != ""
 .for FILE in Xvnc vncviewer vncpasswd vncconnect
 	@${STRIP_CMD} ${PREFIX}/bin/${FILE}
 .endfor
+.endif
 .ifdef(WITH_JVNC_VIEWER)
 	@${MKDIR} ${DATADIR}/classes
 	${INSTALL_DATA} ${WRKSRC}/classes/*.* ${DATADIR}/classes
