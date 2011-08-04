@@ -58,6 +58,12 @@
 %%PYTHON_SITELIBDIR%%/web/wsgiserver/__init__.py
 %%PYTHON_SITELIBDIR%%/web/wsgiserver/__init__.pyc
 %%PYTHON_SITELIBDIR%%/web/wsgiserver/__init__.pyo
+%%PYTHON_SITELIBDIR%%/web/wsgiserver/ssl_builtin.py
+%%PYTHON_SITELIBDIR%%/web/wsgiserver/ssl_builtin.pyc
+%%PYTHON_SITELIBDIR%%/web/wsgiserver/ssl_builtin.pyo
+%%PYTHON_SITELIBDIR%%/web/wsgiserver/ssl_pyopenssl.py
+%%PYTHON_SITELIBDIR%%/web/wsgiserver/ssl_pyopenssl.pyc
+%%PYTHON_SITELIBDIR%%/web/wsgiserver/ssl_pyopenssl.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/web/contrib
 @dirrm %%PYTHON_SITELIBDIR%%/web/wsgiserver
 @dirrm %%PYTHON_SITELIBDIR%%/web
