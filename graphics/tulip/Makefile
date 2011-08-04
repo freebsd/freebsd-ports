@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	tulip
-PORTVERSION=	3.5.0
+PORTVERSION=	3.6.0
 CATEGORIES=	graphics
 MASTER_SITES=	SF/auber/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 DISTFILES=	${DISTNAME}-src${EXTRACT_SUFX}
@@ -30,8 +30,9 @@ USE_PYTHON=	yes
 USE_CMAKE=	yes
 CMAKE_OUTSOURCE=yes
 CMAKE_ARGS+=	-DLOCALBASE:PATH=${LOCALBASE} \
-		-DPYTHON_INCLUDEDIR:PATH=${PYTHON_INCLUDEDIR}
-USE_LDCONFIG=	yes
+		-DPYTHON_INCLUDEDIR:PATH=${PYTHON_INCLUDEDIR} \
+		-DCMAKE_VERBOSE_MAKEFILE:BOOL=TRUE
+USE_LDCONFIG=	${PREFIX}/lib/tlp
 
 WRKSRC=		${WRKDIR}/${DISTNAME}-src
 
@@ -44,12 +45,7 @@ PLIST_SUB+=	TULIP_VERSION=${PORTVERSION} \
 CFLAGS+=	-fPIC
 .endif
 
-#post-extract:
-#	@${FIND} ${WRKSRC} -name "moc_*" -delete
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|<qdir.h>|<QtCore/qdir.h>|' \
-	    ${WRKSRC}/software/tulip/src/Application.cpp
 	@${REINPLACE_CMD} -e 's|<qtimer.h>|<QtCore/qtimer.h>|;s|<qlocale.h>|<QtCore/qlocale.h>|' \
 	    ${WRKSRC}/software/tulip/src/main.cpp
 
