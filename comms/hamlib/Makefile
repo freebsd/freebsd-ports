@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	hamlib
-PORTVERSION=	1.2.13.1
+PORTVERSION=	1.2.14
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF
 
@@ -22,13 +22,14 @@ USE_PYTHON=	yes
 USE_AUTOTOOLS=	autoconf libtool libltdl
 USE_LDCONFIG=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS=	--with-perl-binding --with-python=${PYTHON_CMD} \
+CONFIGURE_ARGS=	--with-perl-binding \
 		--enable-tcl-binding --with-tcl=${TCL_LIBDIR} \
-		--with-python-binding --without-with-rigmatrix
+		--with-python-binding --without-rigmatrix
 PLIST_SUB=	VER=${PORTVERSION} TCL_VER=${TCL_VER}
 
 MAN1=		rigctl.1 rigmem.1 rigswr.1 rotctl.1 rigsmtr.1
 MAN8=		rpc.rigd.8 rpc.rotd.8 rigctld.8 rotctld.8
+LICENCE=	LGPL20
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PYTHON_SITELIBDIR%%|${PYTHON_SITELIBDIR}|g' \

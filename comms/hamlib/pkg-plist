@@ -18,6 +18,9 @@ lib/hamlib/hamlib-alinco.so
 lib/hamlib/hamlib-aor.a
 lib/hamlib/hamlib-aor.la
 lib/hamlib/hamlib-aor.so
+lib/hamlib/hamlib-amsat.a
+lib/hamlib/hamlib-amsat.la
+lib/hamlib/hamlib-amsat.so
 lib/hamlib/hamlib-ars.a
 lib/hamlib/hamlib-ars.la
 lib/hamlib/hamlib-ars.so
@@ -102,6 +105,9 @@ lib/hamlib/hamlib-tapr.so
 lib/hamlib/hamlib-tentec.a
 lib/hamlib/hamlib-tentec.la
 lib/hamlib/hamlib-tentec.so
+lib/hamlib/hamlib-ts7400.a
+lib/hamlib/hamlib-ts7400.la
+lib/hamlib/hamlib-ts7400.so
 lib/hamlib/hamlib-tuner.a
 lib/hamlib/hamlib-tuner.la
 lib/hamlib/hamlib-tuner.so
