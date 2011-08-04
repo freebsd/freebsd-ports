@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	turba
-PORTVERSION=	3.0.4
+PORTVERSION=	3.0.5
 PKGNAMEPREFIX=	horde-
 CATEGORIES=	mail www pear
 
