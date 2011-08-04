@@ -6,23 +6,29 @@
 #
 
 PORTNAME=	teeworlds
-PORTVERSION=	0.5.2
-PORTREVISION=	1
+PORTVERSION=	0.6.0
 CATEGORIES=	games
 MASTER_SITES=	http://www.teeworlds.com/files/ \
-		http://mirror.amdmi3.ru/distfiles/
+		http://mirror.amdmi3.ru/distfiles/ \
+		http://github.com/downloads/matricks/bam/ \
+		http://files.malikania.fr/distfiles/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} bam-${BAM_VERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Platform game featuring buggers equipped with weapons
 
+LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
+
 USE_PYTHON_BUILD=	yes
 
-BAM_VERSION=	0.2.0
+BAM_VERSION=	0.4.0
 BAM_WRKSRC=	${WRKDIR}/bam-${BAM_VERSION}
 BAM_TARGET=	release
 MAKE_JOBS_SAFE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
+
+PORTDOCS=	readme.txt license.txt
 
 OPTIONS=	TEEWORLDS_SERVER_ONLY	"Build dedicated server only"	off
 
@@ -50,19 +56,13 @@ DESKTOP_ENTRIES="Teeworlds" \
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O.||; s|-lpthread|${PTHREAD_LIBS}|; s|^gcc|${CC} ${CFLAGS}|' \
+	@${REINPLACE_CMD} -e 's|-O.||; s|-lpthread|${PTHREAD_LIBS}|; s|^gcc|${CC} ${CFLAGS}|; s|-ldl||g' \
 		${BAM_WRKSRC}/make_unix.sh
-	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/other/sdl/sdl.bam
-	@${REINPLACE_CMD} -e '/sdirs\[\]/,/}/ s|"/.*"|"${DATADIR}"|' \
-		${WRKSRC}/src/engine/e_engine.c
-
-	@${REINPLACE_CMD} -e 's|\(settings.cc.c_compiler = \).*|\1"${CC}"|; \
-		s|\(settings.cc.cxx_compiler = \).*|\1"${CXX}"|' \
-		${BAM_WRKSRC}/src/driver_gcc.bam
-	@${REINPLACE_CMD} -e 's|\(settings.*linker = \).*|\1"${CXX}"|' \
-		${BAM_WRKSRC}/src/base.bam
-	@${REINPLACE_CMD} -e '/settings.cc.flags:Add/ s|-fno-exceptions|& ${CFLAGS}|' \
-		${WRKSRC}/default.bam
+	@${REINPLACE_CMD} -e 's|sdl-config|${SDL_CONFIG}|' ${WRKSRC}/other/sdl/sdl.lua
+	@${REINPLACE_CMD} -e '/aDirs\[\]/,/}/ s|"/.*"|"${DATADIR}"|' \
+		${WRKSRC}/src/engine/shared/storage.cpp
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|; s|g++|${CXX}|' \
+		${BAM_WRKSRC}/src/driver_gcc.lua
 
 # build bam executable - teeworlds own build system
 pre-build:
@@ -70,7 +70,8 @@ pre-build:
 
 # build teeworlds
 do-build:
-	cd ${WRKSRC} && ${BAM_WRKSRC}/src/bam ${_MAKE_JOBS:C/-j/-j /} -v ${BAM_TARGET}
+	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
+		${BAM_WRKSRC}/bam -n -a -v ${_MAKE_JOBS:C/-j/-j /} ${BAM_TARGET}
 
 do-install:
 .if !defined(WITH_TEEWORLDS_SERVER_ONLY)
@@ -80,5 +81,10 @@ do-install:
 	${MKDIR} ${DATADIR}
 	@cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${DATADIR}/
 	${INSTALL_DATA} ${WRKSRC}/other/icons/Teeworlds.ico ${DATADIR}
+.if !defined(NOPORTDOCS)
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/license.txt ${DOCSDIR}/
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}/
+.endif
 
 .include <bsd.port.post.mk>
