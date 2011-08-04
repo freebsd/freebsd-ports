@@ -12,8 +12,11 @@ MASTER_SITES=	ftp://ftp.kr.freebsd.org/pub/users/cjh/gs-ko/
 DISTNAME=	${PORTNAME}
 DISTFILES=	HLaTeX-Myoungjo-OCF-PS.tar.gz HLaTeX-Gothic-OCF-PS.tar.gz
 
-MAINTAINER=	cjh@kr.freebsd.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HLaTeX(OCF format) fonts collection
+
+DEPRECATED=	No more public distfiles
+EXPIRATION_DATE=	2011-09-01
 
 BUILD_DEPENDS=	$(LOCALBASE)/share/ghostscript/fonts/a010013l.pfb:${PORTSDIR}/print/gsfonts
 
