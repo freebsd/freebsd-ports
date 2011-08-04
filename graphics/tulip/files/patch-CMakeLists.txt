@@ -1,70 +1,13 @@
---- CMakeLists.txt.orig	2011-04-04 15:17:26.000000000 +0200
-+++ CMakeLists.txt	2011-04-12 12:07:39.000000000 +0200
-@@ -163,30 +163,24 @@
- FIND_PACKAGE(PythonLibs)
- IF(PYTHONLIBS_FOUND)
-   SET(SIP_LIB siplib)
--  TRY_COMPILE(SIP_OK ${CMAKE_CURRENT_BINARY_DIR}/thirdparty/sip-4.11.2/sipgen ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/sip-4.11.2/sipgen sip CMAKE_FLAGS -DCMAKE_OSX_ARCHITECTURES=${CMAKE_OSX_ARCHITECTURES})
--  IF(SIP_OK)
--    IF(WIN32 AND EXISTS "${CMAKE_CURRENT_BINARY_DIR}/thirdparty/sip-4.11.2/sipgen/Debug/sipgen.exe")
--      SET(SIP_EXE ${CMAKE_CURRENT_BINARY_DIR}/thirdparty/sip-4.11.2/sipgen/Debug/sipgen.exe)
--    ELSE()
--      SET(SIP_EXE ${CMAKE_CURRENT_BINARY_DIR}/thirdparty/sip-4.11.2/sipgen/sipgen)
--    ENDIF()
--    SET(SIP_INCLUDE_DIR ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/sip-4.11.2/siplib/)
--  ENDIF(SIP_OK)
-+  SET(SIP_EXE ${LOCALBASE}/bin/sip)
-+  SET(SIP_INCLUDE_DIR ${PYTHON_INCLUDEDIR})
- ENDIF(PYTHONLIBS_FOUND)
- 
- 
- ## -----------------------------------------------------------------------------------------------
- ## Include file paths
- ## -----------------------------------------------------------------------------------------------
--SET(GZStreamInclude ${PROJECT_SOURCE_DIR}/thirdparty/gzstream/)
--SET(FTGLInclude ${PROJECT_SOURCE_DIR}/thirdparty/ftgl/)
--SET(qscintilla2Include ${PROJECT_SOURCE_DIR}/thirdparty/QScintilla-gpl-2.4.6/Qt4/)
-+SET(GZStreamInclude )
-+SET(FTGLInclude ${LOCALBASE}/include)
-+SET(qscintilla2Include ${LOCALBASE}/include/qt4)
- SET(TulipInclude ${PROJECT_SOURCE_DIR}/library/tulip/include/)
- SET(TulipBuildInclude ${PROJECT_BINARY_DIR}/library/tulip/include/)
- SET(TulipOGLInclude ${PROJECT_SOURCE_DIR}/library/tulip-ogl/include/)
- SET(TulipQtInclude ${PROJECT_SOURCE_DIR}/library/tulip-qt/include/)
- SET(TulipQtBuildInclude ${PROJECT_BINARY_DIR}/library/tulip-qt/include/)
- SET(TulipPluginsManagerInclude ${PROJECT_SOURCE_DIR}/software/plugins-manager/include/)
-+LINK_DIRECTORIES(${LOCALBASE}/lib)
- 
- ## -----------------------------------------------------------------------------------------------
- ## Install paths
-@@ -205,7 +199,7 @@
- SET(TulipPluginsInstallDir ${TulipLibInstallDir}/tlp/)
+--- CMakeLists.txt.orig	2011-08-03 09:12:07.000000000 +0200
++++ CMakeLists.txt	2011-08-03 09:14:33.000000000 +0200
+@@ -230,8 +230,8 @@
+ SET(TulipBitmapInstallDir ${TulipShareInstallDir}/bitmaps/)
+ SET(TulipAppleResourcesDir ${TulipAppleContentsDir}Resources/)
+ ELSE()
+-SET(TulipLibInstallDir lib/)
+-SET(TulipPluginsInstallDir ${TulipLibInstallDir}/tulip/)
++SET(TulipLibInstallDir lib/tlp)
++SET(TulipPluginsInstallDir ${TulipLibInstallDir})
  SET(TulipBinInstallDir bin/)
  SET(TulipIncludeInstallDir include/)
--SET(TulipShareInstallDir share/)
-+SET(TulipShareInstallDir share)
- SET(TulipBitmapInstallDir lib/tlp/bitmaps/)
- ENDIF()
- 
-@@ -327,7 +321,7 @@
- ## -----------------------------------------------------------------------------------------------
- ## Sub dir (no comment)
- ## -----------------------------------------------------------------------------------------------
--ADD_SUBDIRECTORY(thirdparty)
-+#ADD_SUBDIRECTORY(thirdparty)
- ADD_SUBDIRECTORY(library)
- ADD_SUBDIRECTORY(software)
- ADD_SUBDIRECTORY(plugins)
-@@ -377,11 +371,7 @@
- INSTALL(PROGRAMS ${PROJECT_BINARY_DIR}/tulip-config
-         DESTINATION ${TulipBinInstallDir})
- INSTALL(FILES FindTULIP3.cmake 
--        DESTINATION ${TulipShareInstallDir})
--INSTALL(FILES FindGLEW.cmake 
--        DESTINATION ${TulipShareInstallDir})
--INSTALL(FILES FindXML2.cmake 
--        DESTINATION ${TulipShareInstallDir})
-+        DESTINATION ${TulipShareInstallDir}/tulip)
- ## -----------------------------------------------------------------------------------------------
- ## Script for linux Tulip bundle building
- IF(LINUX)
+ SET(TulipShareInstallDir share/tulip)

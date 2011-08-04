@@ -1,6 +1,6 @@
---- library/tulip/src/PluginLibraryLoader.cpp.orig	2010-01-19 19:14:04.000000000 +0000
-+++ library/tulip/src/PluginLibraryLoader.cpp	2010-04-09 12:21:13.000000000 +0000
-@@ -161,7 +161,14 @@
+--- library/tulip/src/PluginLibraryLoader.cpp.orig	2011-08-02 13:57:48.000000000 +0200
++++ library/tulip/src/PluginLibraryLoader.cpp	2011-08-02 13:58:38.000000000 +0200
+@@ -169,7 +169,14 @@
  }
  
  // accepts only file whose name matches *.so or *.dylib
@@ -15,7 +15,7 @@
  #if !defined(__APPLE__)
    const char *suffix = ".so";
    const unsigned long suffix_len = 3;
-@@ -183,9 +190,6 @@
+@@ -191,9 +198,6 @@
    struct dirent **namelist;
    n = scandir((const char *) _pluginPath.c_str(),
          &namelist,
