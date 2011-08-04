@@ -10,17 +10,18 @@
 # or user variables (WITH*) changes please add an entry in ${FILESDIR}/UPDATING
 # Else the port will be broken. Thanks.
 
-PORTNAME=	dspam-devel
+PORTNAME=	dspam
 PORTVERSION=	${PORTVER_MAJ}${SNAP_DATE}
 PORTEPOCH=	1
 CATEGORIES=	mail
 MASTER_SITES=	# set later
+PKGNAMESUFFIX=	-devel
 
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Bayesian spam filter - development version
 
 PORTVER_MAJ=	3.10.0
-SNAP_DATE=	.r1
+#SNAP_DATE=	.r1
 
 #MIN_OPTIONS_VER=	${PORTNAME}-3.10.0.
 
@@ -30,10 +31,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL} \
 MASTER_SITE_SUBDIR=	itetcu
 WRKSRC=		${WRKDIR}/dspam-${PORTVER_MAJ}
 .else
-MASTER_SITES=	http://dspam.irontec.com/sources/ \
-	http://dspam.nuclearelephant.com/sources/ \
-	http://dspam.systemadministrator.org/sources/ \
-	http://dspam.sourceforge.net/sources/ \
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}/ \
 	http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 DISTFILES=	dspam-${PORTVER_MAJ}.tar.gz
 WRKSRC=		${WRKDIR}/dspam-${PORTVER_MAJ}
