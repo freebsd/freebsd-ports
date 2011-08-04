@@ -56,6 +56,7 @@ bin/moose-outdated
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Error/Confess.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Error/Croak.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Error/Default.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Error/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Exporter.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Intro.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Manual.pod
@@ -99,6 +100,7 @@ bin/moose-outdated
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/delete.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/elements.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/first.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/first_index.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/get.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/grep.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/insert.pm
@@ -200,7 +202,7 @@ bin/moose-outdated
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Util.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Util/MetaRole.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Util/TypeConstraints.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Util/TypeConstraints/OptimizedConstraints.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Util/TypeConstraints/Builtins.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Test/Moose.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Moose/Moose.bs
