@@ -1,18 +1,19 @@
 --- CMakeLists.txt.orig	2010-03-14 23:36:45.000000000 -0400
 +++ CMakeLists.txt	2010-11-26 03:08:11.543538713 -0500
 @@ -1,5 +1,5 @@
- # The project's name is VBA-M it uses assembly, C and C++ code
--PROJECT(VBA-M ASM C CXX)
+ # The project's name is VBA-M it uses C and C++ code
+-PROJECT(VBA-M C CXX)
 +PROJECT(VBA-M)
  
- cmake_minimum_required( VERSION 2.4.6 )
+ cmake_minimum_required( VERSION 2.6.0 )
  if( COMMAND cmake_policy )
-@@ -341,8 +341,7 @@
+@@ -344,8 +344,7 @@
  
      INSTALL(PROGRAMS ${CMAKE_CURRENT_BINARY_DIR}/vbam DESTINATION bin)
      INSTALL(FILES ${CMAKE_CURRENT_SOURCE_DIR}/src/sdl/vbam.cfg-example
 -            DESTINATION ${SYSCONFDIR}
 -            RENAME vbam.cfg)
 +            DESTINATION ${SYSCONFDIR})
+ ENDIF( ENABLE_SDL )
  
- ENDIF( CAN_BUILD_VBAM )
+ IF( ENABLE_GTK )

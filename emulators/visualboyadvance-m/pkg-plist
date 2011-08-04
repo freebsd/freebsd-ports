@@ -9,25 +9,31 @@ etc/vbam.cfg-example
 %%GVBAM%%share/icons/hicolor/24x24/apps/vbam.png
 %%GVBAM%%share/icons/hicolor/32x32/apps/vbam.png
 %%GVBAM%%share/icons/hicolor/scalable/apps/vbam.svg
-%%GVBAM%%share/vbam/ui/sound.ui
-%%GVBAM%%share/vbam/ui/gameboyadvance.ui
+%%GVBAM%%%%NLS%%share/locale/en/LC_MESSAGES/gvbam.mo
+%%GVBAM%%%%NLS%%share/locale/fr/LC_MESSAGES/gvbam.mo
+%%GVBAM%%share/vbam/ui/cheatedit.ui
+%%GVBAM%%share/vbam/ui/cheatlist.ui
 %%GVBAM%%share/vbam/ui/display.ui
 %%GVBAM%%share/vbam/ui/gameboy.ui
-%%GVBAM%%share/vbam/ui/vbam.glade
-%%GVBAM%%@dirrmtry share/icons/hicolor/16x16/apps/
-%%GVBAM%%@dirrmtry share/icons/hicolor/22x22/apps/
-%%GVBAM%%@dirrmtry share/icons/hicolor/24x24/apps/
-%%GVBAM%%@dirrmtry share/icons/hicolor/32x32/apps/
-%%GVBAM%%@dirrmtry share/icons/hicolor/scalable/apps/
-%%GVBAM%%@dirrmtry share/icons/hicolor/16x16/
-%%GVBAM%%@dirrmtry share/icons/hicolor/22x22/
-%%GVBAM%%@dirrmtry share/icons/hicolor/24x24/
-%%GVBAM%%@dirrmtry share/icons/hicolor/32x32/
-%%GVBAM%%@dirrmtry share/icons/hicolor/scalable/
-%%GVBAM%%@dirrmtry share/icons/hicolor/
-%%GVBAM%%@dirrmtry share/icons/
+%%GVBAM%%share/vbam/ui/gameboyadvance.ui
+%%GVBAM%%share/vbam/ui/preferences.ui
+%%GVBAM%%share/vbam/ui/sound.ui
+%%GVBAM%%share/vbam/ui/vbam.ui
+%%GVBAM%%share/vbam/vba-over.ini
 %%GVBAM%%@dirrm share/vbam/ui
 %%GVBAM%%@dirrm share/vbam
-%%GVBAM%%@dirrmtry share/applications
+%%GVBAM%%@dirrm share/icons/hicolor/scalable/apps
+%%GVBAM%%@dirrm share/icons/hicolor/scalable
+%%GVBAM%%@dirrm share/icons/hicolor/32x32/apps
+%%GVBAM%%@dirrm share/icons/hicolor/32x32
+%%GVBAM%%@dirrm share/icons/hicolor/24x24/apps
+%%GVBAM%%@dirrm share/icons/hicolor/24x24
+%%GVBAM%%@dirrm share/icons/hicolor/22x22/apps
+%%GVBAM%%@dirrm share/icons/hicolor/22x22
+%%GVBAM%%@dirrm share/icons/hicolor/16x16/apps
+%%GVBAM%%@dirrm share/icons/hicolor/16x16
+%%GVBAM%%@dirrm share/icons/hicolor
+%%GVBAM%%@dirrm share/icons
+%%GVBAM%%@dirrm share/applications
 %%GVBAM%%@exec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 %%GVBAM%%@unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
