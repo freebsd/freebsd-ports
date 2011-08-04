@@ -5,7 +5,7 @@
 
 PORTNAME=	arduino
 PORTVERSION=	0022
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel java lang
 MASTER_SITES=	GOOGLE_CODE
 EXTRACT_SUFX=	.tgz
@@ -23,9 +23,11 @@ NO_BUILD=	yes
 SUB_FILES=	arduino pkg-message
 SUB_LIST=	PORTNAME=${PORTNAME}
 
+REINPLACE_ARGS=	-i ""
+
 DESKTOP_ENTRIES=	"Arduino" "Arduino IDE" \
 			${PREFIX}/${PORTNAME}/reference/img/logo.png \
-			"arduino" "Development;IDE;" false
+			"arduino" "Development;IDE;" "false"
 
 .if !defined(NOPORTDOCS)
 OPTIONS+=	REFDOCS "Install the reference documents" on
@@ -65,8 +67,8 @@ post-extract:
 	@${RM} ${WRKSRC}/lib/librxtxSerial.so
 	@${LN} -s ${JAVA_HOME}/lib/${ARCH}/librxtxSerial.so ${WRKSRC}/lib/
 
-	@${REINPLACE_CMD} 's|stk500|arduino|g' ${WRKSRC}/hardware/arduino/boards.txt
-	@${RM} ${WRKSRC}/hardware/arduino/boards.txt.bak
+	@${REINPLACE_CMD} -e 's|stk500|arduino|g' ${WRKSRC}/hardware/arduino/boards.txt
+	@${REINPLACE_CMD} -e 's|readlink -f|realpath|g' ${WRKSRC}/arduino
 
 post-patch:
 	@${RM} ${WRKSRC}/hardware/arduino/bootloaders/atmega8/*.orig
