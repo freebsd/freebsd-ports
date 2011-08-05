@@ -2910,6 +2910,7 @@
     SUBDIR += py-fortran
     SUBDIR += py-freebsd
     SUBDIR += py-fudge
+    SUBDIR += py-funcparserlib
     SUBDIR += py-fusefs
     SUBDIR += py-game
     SUBDIR += py-gamin
