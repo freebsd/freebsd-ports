@@ -26,6 +26,11 @@ ALL_TARGET=	all ggobirc
 post-patch:
 	@${REINPLACE_CMD} -e 's|ND_coord_i|ND_coord|' \
 		${WRKSRC}/plugins/GraphLayout/graphviz.c
+	@${REINPLACE_CMD} -e 's|#line 0|#line 1|' \
+		${WRKSRC}/src/ggobi-data.c \
+		${WRKSRC}/src/ggobi-renderer-cairo.c \
+		${WRKSRC}/src/ggobi-renderer-factory.c \
+		${WRKSRC}/src/ggobi-renderer.c
 
 post-install:
 	${MKDIR} ${PREFIX}/etc/xdg/ggobi
