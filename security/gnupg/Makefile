@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnupg
-PORTVERSION=	2.0.17
-PORTREVISION=	3
+PORTVERSION=	2.0.18
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNUPG}
 MASTER_SITE_SUBDIR=	gnupg
@@ -17,7 +16,6 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	The GNU Privacy Guard
 
-BUILD_DEPENDS=	libksba>=1.2.0:${PORTSDIR}/security/libksba
 LIB_DEPENDS=	assuan.0:${PORTSDIR}/security/libassuan \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt \
 		gpg-error:${PORTSDIR}/security/libgpg-error \
@@ -115,10 +113,10 @@ CONFIGURE_ARGS+=--with-libcurl=${LOCALBASE}
 verify:	checksum
 	gpg2 --verify ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}.sig
 
-pre-configure:
-	${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@g" ${CONFIGURE_SUB} \
+post-patch:
+	@${REINPLACE_CMD} -e "s@-lpthread@${PTHREAD_LIBS}@g" ${CONFIGURE_SUB} \
 		${WRKSRC}/acinclude.m4 ${WRKSRC}/aclocal.m4 ${WRKSRC}/configure
-	${REINPLACE_CMD} -e "/#include <utmp.h>/d" \
+	@${REINPLACE_CMD} -e "/#include <utmp.h>/d" \
 		${WRKSRC}/tools/symcryptrun.c
 
 post-install:
