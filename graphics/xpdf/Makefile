@@ -26,6 +26,8 @@ LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 		freetype.9:${PORTSDIR}/print/freetype2
 RUN_DEPENDS=	${LOCALBASE}/share/ghostscript/fonts/n021003l.pfb:${PORTSDIR}/print/gsfonts
 
+CONFLICTS=	poppler-utils-0.*
+
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

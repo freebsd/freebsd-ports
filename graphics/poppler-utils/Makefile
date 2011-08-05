@@ -16,4 +16,6 @@ MASTERDIR=	${.CURDIR}/../../graphics/poppler
 SLAVEPORT=	utils
 PLIST=		${.CURDIR}/pkg-plist
 
+CONFLICTS=	xpdf-3.*
+
 .include "${MASTERDIR}/Makefile"
