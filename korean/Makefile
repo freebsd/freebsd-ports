@@ -41,6 +41,7 @@
     SUBDIR += mizifont
     SUBDIR += munhwafonts-cid
     SUBDIR += nabi
+    SUBDIR += nanumcoding-ttf
     SUBDIR += nanumfonts-otf
     SUBDIR += nanumfonts-ttf
     SUBDIR += nhpf
