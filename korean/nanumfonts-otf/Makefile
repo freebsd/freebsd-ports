@@ -48,8 +48,8 @@ PLIST_FILES+=	${FONTSDIR}/fonts.dir \
 		${FONTSDIR}/fonts.scale
 
 do-build:
-	${PREFIX}/bin/mkfontscale ${WRKSRC}
-	${PREFIX}/bin/mkfontdir ${WRKSRC}
+	${LOCALBASE}/bin/mkfontscale ${WRKSRC}
+	${LOCALBASE}/bin/mkfontdir ${WRKSRC}
 
 do-install:
 	${MKDIR} ${PREFIX}/${FONTSDIR}
@@ -63,6 +63,6 @@ post-install:
 	@${ECHO_CMD} "@dirrm ${FONTSDIR}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec fc-cache -s %D/${FONTSDIR} 2>/dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec fc-cache -s %D/${FONTSDIR} 2>/dev/null || true" >> ${TMPPLIST}
-	@-${PREFIX}/bin/fc-cache -s ${PREFIX}/${FONTSDIR} 2>/dev/null
+	@-${LOCALBASE}/bin/fc-cache -s ${PREFIX}/${FONTSDIR} 2>/dev/null
 
 .include <bsd.port.mk>
