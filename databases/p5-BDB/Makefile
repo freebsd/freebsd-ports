@@ -17,6 +17,8 @@ COMMENT=	Asynchronous Berkeley DB access
 
 RUN_DEPENDS=	p5-common-sense>=0:${PORTSDIR}/devel/p5-common-sense
 
+PORTSCOUT=	skipv:1.801
+
 CFLAGS+=	-I${BDB_INCLUDE_DIR}
 MAKE_ENV=	LDFLAGS="${LDFLAGS} ${PTHREAD_LIBS}"
 PERL_CONFIGURE=	yes
