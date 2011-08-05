@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gcc
-PORTVERSION=	${GCCVERSION}.${MSPGCCVERSION}
+PORTVERSION=	${GCCVERSION}.${LTSVERSION}
 PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	devel
@@ -17,10 +17,10 @@ PKGNAMEPREFIX=	msp430-
 DISTNAME=	${PORTNAME}-${GCCVERSION}
 DISTFILES=	${PORTNAME}-core-${GCCVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-g++-${GCCVERSION}${EXTRACT_SUFX} \
-		mspgcc-${MSPGCCVERSION}${EXTRACT_SUFX}:mspgcc
+		mspgcc-${LTSVERSION}${EXTRACT_SUFX}:mspgcc
 
 PATCH_SITES=		${MASTER_SITE_SOURCEFORGE}
-PATCH_SITE_SUBDIR=	mspgcc/Patches/LTS/${MSPGCCVERSION}
+PATCH_SITE_SUBDIR=	mspgcc/Patches/LTS/${LTSVERSION}
 PATCHFILES=		${LTS_PATCHES}
 PATCH_DIST_STRIP=	-p1
 
@@ -40,7 +40,7 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
 CONFLICTS=	msp430-gcc-3.*
 
 GCCVERSION=	4.5.3
-MSPGCCVERSION=	20110716
+LTSVERSION=	20110716
 PATCHVERSION=	20110706
 BUGS_FIXED=	3370978
 LTS_PATCHES!=	for bugid in ${BUGS_FIXED} ; do echo ${PKGNAMEPREFIX}${PORTNAME}-${GCCVERSION}-${PATCHVERSION}-sf$${bugid}.patch ; done
@@ -63,7 +63,7 @@ CONFIGURE_ARGS+=--target=${PKGNAMEPREFIX:S/-$//} \
 		--with-gmp=${LOCALBASE} --with-mpfr=${LOCALBASE} \
 		--with-mpc=${LOCALBASE} --with-libiconv-prefix=${LOCALBASE} \
 		--with-system-zlib --disable-nls \
-		--with-pkgversion="MSPGCC_${MSPGCCVERSION}"
+		--with-pkgversion="MSPGCC_${LTSVERSION}"
 INFO_PATH=	${PKGNAMEPREFIX:S/-$//}/info
 MAKE_ENV=	PATH=${PREFIX}/bin:${PATH}
 MAN1=		${PKGNAMEPREFIX}gcc.1 ${PKGNAMEPREFIX}g++.1 \
@@ -80,7 +80,7 @@ BINARIES=	gcc gcc-${GCCVERSION} c++ g++ gcov cpp
 .include <bsd.port.pre.mk>
 
 pre-patch:
-	@cd ${SRCDIR} && ${PATCH} -s -p1 < ../mspgcc-${MSPGCCVERSION}/${PKGNAMEPREFIX}${PORTNAME}-${GCCVERSION}-${PATCHVERSION}.patch
+	@cd ${SRCDIR} && ${PATCH} -s -p1 < ../mspgcc-${LTSVERSION}/${PKGNAMEPREFIX}${PORTNAME}-${GCCVERSION}-${PATCHVERSION}.patch
 
 pre-configure:
 	cd ${SRCDIR} ; contrib/gcc_update --touch

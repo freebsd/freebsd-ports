@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	binutils
-PORTVERSION=	${BINUTILVERSION}.${MSPGCCVERSION}
-PORTREVISION=	2
+PORTVERSION=	${BINUTILVERSION}.${LTSVERSION}
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_SOURCEWARE} \
 		SF/mspgcc/mspgcc:mspgcc
@@ -15,10 +15,10 @@ MASTER_SITE_SUBDIR=	binutils/releases
 PKGNAMEPREFIX=	msp430-
 DISTNAME=	${PORTNAME}-${BINUTILVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
-		mspgcc-${MSPGCCVERSION}${EXTRACT_SUFX}:mspgcc
+		mspgcc-${LTSVERSION}${EXTRACT_SUFX}:mspgcc
 
 PATCH_SITES=		${MASTER_SITE_SOURCEFORGE}
-PATCH_SITE_SUBDIR=	mspgcc/Patches/LTS/${MSPGCCVERSION}
+PATCH_SITE_SUBDIR=	mspgcc/Patches/LTS/${LTSVERSION}
 PATCHFILES=		${LTS_PATCHES}
 PATCH_DIST_STRIP=	-p1
 
@@ -28,9 +28,9 @@ COMMENT=	GNU binutils for TI's msp430 MCUs cross-development
 LICENSE=	GPLv3
 
 BINUTILVERSION=	2.21.1
-MSPGCCVERSION=	20110716
+LTSVERSION=	20110716
 PATCHVERSION=	20110716
-BUGS_FIXED=	3379341
+BUGS_FIXED=	3379341 3386145 3143071
 LTS_PATCHES!=	for bugid in ${BUGS_FIXED} ; do echo ${PKGNAMEPREFIX}${PORTNAME}-${BINUTILVERSION}-${PATCHVERSION}-sf$${bugid}.patch ; done
 
 USE_BZIP2=	yes
@@ -62,7 +62,7 @@ BINARIES=	addr2line ar as c++filt elfedit gprof ld nm objcopy objdump \
 		ranlib readelf size strings strip
 
 pre-patch:
-	@cd ${WRKSRC} && ${PATCH} -s -p1 < ../mspgcc-${MSPGCCVERSION}/${PKGNAMEPREFIX}${PORTNAME}-${BINUTILVERSION}-${PATCHVERSION}.patch
+	@cd ${WRKSRC} && ${PATCH} -s -p1 < ../mspgcc-${LTSVERSION}/${PKGNAMEPREFIX}${PORTNAME}-${BINUTILVERSION}-${PATCHVERSION}.patch
 
 pre-configure:
 	${CHMOD} 755 ${WRKSRC}/configure
@@ -72,5 +72,9 @@ post-install:
 	@${LN} -f ${PREFIX}/bin/${PKGNAMEPREFIX}$F \
 		${PREFIX}/${PKGNAMEPREFIX:S/-$//}/bin/$F
 .endfor
+
+add-plist-post:
+	@${ECHO_CMD} "@unexec rmdir %D/${INFO_PATH} 2> /dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec rmdir %D/${PKGNAMEPREFIX:S/-$//} 2> /dev/null || true" >> ${TMPPLIST}
 
 .include <bsd.port.mk>
