@@ -102,6 +102,7 @@ CONFIGURE_ARGS+=	--with-profiling=gprof
 .endif
 
 post-patch:
+	${REINPLACE_CMD} -e '/^Libs:/s|$$| ${PTHREAD_LIBS}|' ${WRKSRC}/fox.pc.in
 # CXXFLAGS safeness
 	@${REINPLACE_CMD} -E -e \
 		's|-O2|${CXXFLAGS}|g ; \
