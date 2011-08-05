@@ -757,6 +757,7 @@
     SUBDIR += py-PyX
     SUBDIR += py-aafigure
     SUBDIR += py-amanith
+    SUBDIR += py-blockdiag
     SUBDIR += py-cairo
     SUBDIR += py-cgkit
     SUBDIR += py-chart
