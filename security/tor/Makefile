@@ -15,7 +15,6 @@ MASTER_SITES=	https://www.torproject.org/dist/ \
 		http://mirror.tor.hu/dist/ \
 		http://onion.anonymo.us.org/dist/ \
 		http://theonionrouter.com/dist/ \
-		http://tor-www.5coluna.com/dist/ \
 		http://tor.amorphis.eu/dist/ \
 		http://tor.askapache.com/dist/ \
 		http://tor.beme-it.de/dist/ \
