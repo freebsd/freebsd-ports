@@ -1,0 +1,53 @@
+--- doc/Makefile.in	2011-08-03 12:48:00.783627595 +0200
++++ doc/Makefile.in	2011-08-03 12:48:38.390809562 +0200
+@@ -35,8 +35,8 @@ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+ subdir = doc
+-DIST_COMMON = $(am__dist_doc_DATA_DIST) $(dist_man_MANS) \
+-	$(srcdir)/Makefile.am $(srcdir)/Makefile.in
++DIST_COMMON = $(dist_doc_DATA) $(dist_man_MANS) $(srcdir)/Makefile.am \
++	$(srcdir)/Makefile.in
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4
+ am__aclocal_m4_deps = $(top_srcdir)/m4/gettext.m4 \
+ 	$(top_srcdir)/m4/iconv.m4 $(top_srcdir)/m4/lib-ld.m4 \
+@@ -76,7 +76,6 @@ man1dir = $(mandir)/man1
+ am__installdirs = "$(DESTDIR)$(man1dir)" "$(DESTDIR)$(docdir)"
+ NROFF = nroff
+ MANS = $(dist_man_MANS)
+-am__dist_doc_DATA_DIST = manual.html
+ DATA = $(dist_doc_DATA)
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
+ A2X = @A2X@
+@@ -193,20 +192,20 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = foreign
+-@HAVE_ASCIIDOC_TRUE@ASCIIDOC_ARGS = \
+-@HAVE_ASCIIDOC_TRUE@	-n \
+-@HAVE_ASCIIDOC_TRUE@	-a toc \
+-@HAVE_ASCIIDOC_TRUE@	-a icons
++ASCIIDOC_ARGS = \
++	-n \
++	-a toc \
++	-a icons
+ 
+-@HAVE_ASCIIDOC_TRUE@dist_doc_DATA = \
+-@HAVE_ASCIIDOC_TRUE@	manual.html
++A2X_ARGS = \
++	-d manpage \
++	-f manpage
+ 
+-@HAVE_A2X_TRUE@A2X_ARGS = \
+-@HAVE_A2X_TRUE@	-d manpage \
+-@HAVE_A2X_TRUE@	-f manpage
++dist_doc_DATA = \
++	manual.html
+ 
+-@HAVE_A2X_TRUE@dist_man_MANS = \
+-@HAVE_A2X_TRUE@	calcurse.1
++dist_man_MANS = \
++	calcurse.1
+ 
+ EXTRA_DIST = \
+ 	manual.txt \
