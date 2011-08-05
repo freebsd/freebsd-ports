@@ -793,6 +793,7 @@
     SUBDIR += py-sorl-thumbnail
     SUBDIR += py-soya3d
     SUBDIR += py-visual
+    SUBDIR += py-webcolors
     SUBDIR += pygts
     SUBDIR += pymorph
     SUBDIR += pyro
