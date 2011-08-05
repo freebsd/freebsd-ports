@@ -48,6 +48,7 @@ BROKEN=		does not build on amd64
 .endif
 
 post-patch:
+	${REINPLACE_CMD} -e '/^Libs:/s|$$| ${PTHREAD_LIBS}|' ${WRKSRC}/fox17.pc.in
 .if defined(NOPORTDOCS)
 	${REINPLACE_CMD} -e '/^SUBDIRS/s/ doc//' ${WRKSRC}/Makefile.am ${WRKSRC}/Makefile.in
 .endif
