@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	mathomatic
-PORTVERSION=	15.6.2
+PORTVERSION=	15.6.3
 CATEGORIES=	math
 MASTER_SITES=	http://www.panix.com/~gesslein/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Highly portable, general purpose CAS (Computer Algebra System)
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -21,7 +23,6 @@ MAKE_JOBS_SAFE=	yes
 
 MAKEFILE=	makefile
 
-LICENSE=	GPLv2
 PORTDOCS=	*
 MAN1=		mathomatic.1
 
