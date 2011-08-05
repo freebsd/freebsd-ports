@@ -5,13 +5,15 @@
 # $FreeBSD$
 
 PORTNAME=	calcurse
-PORTVERSION=	2.9.0
+PORTVERSION=	2.9.1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://calcurse.org/files/ \
 		ftp://ftp2.culot.org/culot/
 
 MAINTAINER=	culot@FreeBSD.org
 COMMENT=	A text-based calendar and scheduling application
+
+LICENSE=	BSD
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
