@@ -32,7 +32,7 @@ RUN_DEPENDS+=	rtmpdump:${PORTSDIR}/multimedia/rtmpdump
 .endif
 
 post-extract:
-	@${CP} ${_DISTDIR}/${DISTNAME} ${WRKSRC}/youtube-dl
+	@${CP} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} ${WRKSRC}/youtube-dl
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/youtube-dl ${PREFIX}/bin/youtube-dl
