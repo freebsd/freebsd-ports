@@ -8,8 +8,8 @@
 PORTNAME=	librcd
 PORTVERSION=	0.1.13
 CATEGORIES=	devel
-MASTER_SITES=	SF/rusxmms/Charset%20Detection%20Library/${PORTVERSION} \
-		${MASTER_SITE_LOCAL} \
+#MASTER_SITES=	SF/rusxmms/Charset%20Detection%20Library/${PORTVERSION} \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://ns.ael.ru/~fluffy.khv/distfiles/ \
 		http://dside.dyndns.org/files/rusxmms/
 MASTER_SITE_SUBDIR=	fluffy
