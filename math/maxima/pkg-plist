@@ -114,8 +114,6 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_1.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_10.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_100.html
-%%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_101.html
-%%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_102.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_11.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_12.html
 %%DATADIR%%/%%PORTVERSION%%/doc/html/maxima_13.html
@@ -389,6 +387,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/colnew/load-colnew.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/colnew/prob1.mac
 %%DATADIR%%/%%PORTVERSION%%/share/colnew/prob2.mac
+%%DATADIR%%/%%PORTVERSION%%/share/colnew/prob4.mac
 %%DATADIR%%/%%PORTVERSION%%/share/combinatorics/README
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/Grobner/README
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/Grobner/grobner-demo.output
@@ -424,6 +423,9 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/amatrix/rtest_wilcoxon.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/amatrix/wilcoxon.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/augmented_lagrangian.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/bernstein/bernstein.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/bernstein/bernstein_utilities.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/bernstein/rtest_bernstein.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/bitwise/bitwise.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/bitwise/bitwise_specification.txt
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/bitwise/rtest_bitwise.mac
@@ -497,6 +499,8 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/ezunits/ezunits.dem
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/ezunits/ezunits.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/ezunits/ezunits.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/ezunits/ezunits_db.mac
+%%DATADIR%%/%%PORTVERSION%%/share/contrib/ezunits/ezunits_functions.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/ezunits/physical_constants.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/ezunits/rtestezunits.mac
 %%DATADIR%%/%%PORTVERSION%%/share/contrib/f90.lisp
@@ -917,6 +921,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/blas/dgemv.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/blas/dger.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/blas/dnrm2.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/lapack/dgeqrf.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/blas/drot.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/blas/drotg.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/blas/dsbmv.lisp
@@ -1087,6 +1092,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/lapack/zlange.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/lapack/zlassq.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lapack/load-lapack.lisp
+%%DATADIR%%/%%PORTVERSION%%/share/lapack//rtest_dgeqrf.mac
 %%DATADIR%%/%%PORTVERSION%%/share/lbfgs/f2cl-lbfgs.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lbfgs/lb1.lisp
 %%DATADIR%%/%%PORTVERSION%%/share/lbfgs/lb2.lisp
@@ -1730,9 +1736,11 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_integrate.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_integrate_special.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_lambert_w.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/rtest_log.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_map.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_mset.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_plot.mac
+%%DATADIR%%/%%PORTVERSION%%/tests/rtest_power.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_round.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_scalarp.mac
 %%DATADIR%%/%%PORTVERSION%%/tests/rtest_sign.mac
@@ -1836,6 +1844,7 @@ libexec/maxima/%%PORTVERSION%%/mgnuplot
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/Zeilberger
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/altsimp
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/amatrix
+@dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/bernstein
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/bitwise
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/boolsimp
 @dirrm %%DATADIR%%/%%PORTVERSION%%/share/contrib/descriptive
