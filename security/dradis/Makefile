@@ -15,9 +15,8 @@ DISTNAME=	${PORTNAME}-v${PORTVERSION}
 MAINTAINER=	semprix@gmx.com
 COMMENT=	Opensource framework to enable effective information gathering
 
-RUN_DEPENDS=	ruby18-gems>=1.3.6:${PORTSDIR}/devel/ruby-gems \
-		ruby18-iconv>=1.8.7.302,1:${PORTSDIR}/converters/ruby-iconv \
-		ruby18-wirble>=0.1.3:${PORTSDIR}/devel/ruby-wirble \
+RUN_DEPENDS=	${LOCALBASE}/bin/gem:${PORTSDIR}/devel/ruby-gems \
+		${RUBY_SITELIBDIR}/wirble.rb:${PORTSDIR}/devel/ruby-wirble \
 		rubygem-rake>=0.8.7:${PORTSDIR}/devel/rubygem-rake \
 		rubygem-rails>=3.0.5:${PORTSDIR}/www/rubygem-rails \
 		rubygem-activesupport>=3.0.2:${PORTSDIR}/devel/rubygem-activesupport \
@@ -37,6 +36,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION:R}
 
 NO_BUILD=	yes
 USE_RUBY=	yes
+USE_RUBY_FEATURES=	iconv
 RUBY_SHEBANG_FILES=	server/script/rails server/script/delayed_job
 RUBY_NO_BUILD_DEPENDS=	yes
 
