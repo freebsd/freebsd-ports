@@ -338,6 +338,7 @@
     SUBDIR += vdr-plugin-reelchannelscan
     SUBDIR += vdr-plugin-remote
     SUBDIR += vdr-plugin-skinenigmang
+    SUBDIR += vdr-plugin-sleeptimer
     SUBDIR += vdr-plugin-softdevice
     SUBDIR += vdr-plugin-streamdev
     SUBDIR += vdr-plugin-ttxtsubs
