@@ -7,6 +7,7 @@
 
 PORTNAME=	vdr-plugins
 PORTVERSION=	1.7.19
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	# none
 DISTFILES=	# none
@@ -33,6 +34,7 @@ OPTIONS=	CONTROL "telnet control" On \
 		XINELIBOUTPUT "xineliboutput plugin/viewer" On \
 		LIVE "live web plugin" On \
 		UPNP "UPnP/DLNA plugin (alpha!)" On \
+		SLEEPTIMER "sleep timer plugin" On \
 		VNSISERVER "VNSI server (for xbmc pvr branch - untested)" Off \
 		SOFTDEVICE "softdevice (broken?)" Off \
 		MARKAD "MarkAd plugin" Off
@@ -86,6 +88,9 @@ RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-live.so.${PORTVERSION}:${PORTSDIR}/www
 .endif
 .if defined(WITH_UPNP)
 RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-upnp.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-upnp
+.endif
+.if defined(WITH_SLEEPTIMER)
+RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-sleeptimer.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-sleeptimer
 .endif
 .if defined(WITH_SOFTDEVICE)
 RUN_DEPENDS+=	${LOCALBASE}/lib/vdr/libvdr-softdevice.so.${PORTVERSION}:${PORTSDIR}/multimedia/vdr-plugin-softdevice
