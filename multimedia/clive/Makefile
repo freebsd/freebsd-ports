@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	clive
-PORTVERSION=	2.2.25
+PORTVERSION=	2.2.26
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/${PORTNAME}/2.2
 
 MAINTAINER=	geekounet@poildetroll.net
 COMMENT=	Command line video extraction tool for YouTube and others
+
+LICENSE=	GPLv3
 
 RUN_DEPENDS=	p5-HTML-Parser>=3.59:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-WWW-Curl>=4.05:${PORTSDIR}/www/p5-WWW-Curl \
@@ -22,8 +24,6 @@ RUN_DEPENDS=	p5-HTML-Parser>=3.59:${PORTSDIR}/www/p5-HTML-Parser \
 
 # deskutils/ljclive, multimedia/clive1 (same executable/manpage/distfile name)
 CONFLICTS=	clive-[0-1]* ljclive-[0-9]*
-
-LICENSE=	GPLv3
 
 OPTIONS=	CACHE	 "With video page cache" off \
 		SIGWINCH "With resizing progressbar" on
