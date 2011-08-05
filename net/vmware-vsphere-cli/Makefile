@@ -7,6 +7,7 @@
 
 PORTNAME=		vmware-vsphere-cli
 PORTVERSION=		4.1.0
+PORTREVISION=		1
 CATEGORIES=		net perl5
 MASTER_SITES=		#http://communities.vmware.com/community/vmtn/developer/downloads
 DISTNAME=		VMware-vSphere-Perl-SDK-${PORTVERSION}-${DISTREL}.i386
@@ -67,5 +68,7 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/svmotion ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/vmware-cmd ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/vmkfstools ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/vifs ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/bin/vihostupdate ${PREFIX}/bin
 
 .include <bsd.port.post.mk>

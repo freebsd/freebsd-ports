@@ -23,6 +23,8 @@ bin/vicfg-dns
 bin/vicfg-cfgbackup
 bin/vicfg-authconfig
 bin/vicfg-advcfg
+bin/vifs
+bin/vihostupdate
 bin/svmotion
 %%SITE_PERL%%/WSMan/WSBasic.pm
 %%SITE_PERL%%/WSMan/Stubs/vmware_storagepool.pm
