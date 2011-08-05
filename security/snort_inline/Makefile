@@ -1,4 +1,4 @@
-# New ports collection makefile for:	snort_inline
+#/ New ports collection makefile for:	snort_inline
 # Date created:        4 March 2005
 # Whom:                nick@rogness.net
 #
@@ -27,6 +27,10 @@ OPTIONS=		MYSQL "With MySQL support" off \
 			ODBC "With ODBC support" off \
 			POSTGRESQL "With POSTGRESQL support" off \
 			FLEXRESP "With flexible responses (resp. w/packet resets)" off
+
+BROKEN=		this port does not build properly
+DEPRECATED=		no longer supported upstream
+EXPIRATION_DATE=	2011/09/04
 
 .include <bsd.port.pre.mk>
 
