@@ -4,7 +4,5 @@ transformation used in block sorting compression methods.  The
 difference is a fast, deterministic behaviour in time at some
 compression loss.
 
-WWW:	http://www.compressconsult.com/szip/
-
 - Igor Pokrovsky
 tiamat@comset.net

@@ -4,7 +4,7 @@ you develop for more than one platform or use more than one
 compiler. tmake automates and streamlines this process and lets you
 spend your valuable time on writing code, not makefiles.
 
-WWW: http://www.trolltech.com/products/download/freebies/tmake.html
+WWW: http://tmake.sourceforge.net/
 
 - Roland
 jesse@cs.uni-magdeburg.de
