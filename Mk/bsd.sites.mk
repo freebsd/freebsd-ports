@@ -941,11 +941,9 @@ MASTER_SITE_PERL_CPAN_BY+= \
 	http://ftp.jaist.ac.jp/pub/CPAN/%CPANSORT%/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/lang/CPAN/%CPANSORT%/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/lang/perl/CPAN/%CPANSORT%/%SUBDIR%/ \
-	http://ring.nict.go.jp/archives/CPAN/%CPANSORT%/%SUBDIR%/ \
 	ftp://mirror.hiwaay.net/CPAN/%CPANSORT%/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.funet.fi/pub/languages/perl/CPAN/%CPANSORT%/%SUBDIR%/ \
 	http://at.cpan.org/%CPANSORT%/%SUBDIR%/ \
-	http://ring.riken.jp/archives/CPAN/%CPANSORT%/%SUBDIR%/ \
 	ftp://ftp.auckland.ac.nz/pub/perl/CPAN/%CPANSORT%/%SUBDIR%/ \
 	http://backpan.perl.org/%CPANSORT%/%SUBDIR%/ \
 	ftp://ftp.funet.fi/pub/languages/perl/CPAN/%CPANSORT%/%SUBDIR%/ \
@@ -1099,8 +1097,7 @@ MASTER_SITE_REDHAT_LINUX+= \
 #
 .if !defined(IGNORE_MASTER_SITE_RINGSERVER)
 MASTER_SITE_RINGSERVER+=	\
-	http://ring.nict.go.jp/archives/%SUBDIR%/ \
-	http://ring.riken.jp/archives/%SUBDIR%/
+	http://ring.nict.go.jp/archives/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_RUBY)
