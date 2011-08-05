@@ -41,6 +41,8 @@
     SUBDIR += mizifont
     SUBDIR += munhwafonts-cid
     SUBDIR += nabi
+    SUBDIR += nanumfonts-otf
+    SUBDIR += nanumfonts-ttf
     SUBDIR += nhpf
     SUBDIR += pgp.language
     SUBDIR += php_doc
