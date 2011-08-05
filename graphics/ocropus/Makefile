@@ -44,7 +44,7 @@ USE_SDL=	sdl
 .if !defined(WITH_LEPTONICA)
 CONFIGURE_ARGS+=--without-leptonica
 .else
-LIB_DEPENDS+=	lept.0:${PORTSDIR}/graphics/leptonlib
+LIB_DEPENDS+=	lept.0:${PORTSDIR}/graphics/leptonica
 .endif
 
 pre-configure:
