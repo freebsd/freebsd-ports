@@ -1,14 +1,31 @@
 bin/node
 bin/node-waf
+include/node/ares.h
+include/node/ares_version.h
+include/node/c-ares/ares.h
+include/node/c-ares/ares_version.h
 include/node/config.h
 include/node/eio.h
 include/node/ev.h
+include/node/ev/config_cygwin.h
+include/node/ev/config_darwin.h
+include/node/ev/config_freebsd.h
+include/node/ev/config_linux.h
+include/node/ev/config_sunos.h
+include/node/ev/ev++.h
+include/node/ev/ev_vars.h
+include/node/ev/ev_wrap.h
+include/node/ev/event.h
+include/node/ngx-queue.h
 include/node/node.h
 include/node/node_buffer.h
 include/node/node_config.h
-include/node/node_events.h
 include/node/node_object_wrap.h
 include/node/node_version.h
+include/node/tree.h
+include/node/uv-unix.h
+include/node/uv-win.h
+include/node/uv.h
 include/node/v8-debug.h
 include/node/v8-preparser.h
 include/node/v8-profiler.h
@@ -64,8 +81,9 @@ lib/node/wafadmin/__init__.py
 lib/node/wafadmin/ansiterm.py
 lib/node/wafadmin/pproc.py
 lib/node/wafadmin/py3kfixes.py
-libdata/pkgconfig/nodejs.pc
 @dirrm lib/node/wafadmin/Tools
 @dirrm lib/node/wafadmin
 @dirrm lib/node
+@dirrm include/node/ev
+@dirrm include/node/c-ares
 @dirrm include/node
