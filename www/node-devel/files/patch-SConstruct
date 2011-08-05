@@ -1,0 +1,11 @@
+--- deps/v8/SConstruct.orig	2011-04-06 19:17:46.000000000 +0800
++++ deps/v8/SConstruct	2011-05-12 20:48:13.000000000 +0800
+@@ -178,7 +178,7 @@ LIBRARY_FLAGS = {
+       }
+     },
+     'os:freebsd': {
+-      'CPPPATH' : ['/usr/local/include'],
++      'CPPPATH' : [join(root_dir, 'src'), '/usr/local/include'],
+       'LIBPATH' : ['/usr/local/lib'],
+       'CCFLAGS':      ['-ansi'],
+       'LIBS': ['execinfo']

@@ -1,21 +1,19 @@
 # New ports collection makefile for:		node
-# Date created:					2010-10-26
+# Date created:					2010-04-12
 # Whom:						Jin-Sih Lin <linpct@gmail.com>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	node
-PORTVERSION=	0.4.1
+PORTVERSION=	0.5.3
 CATEGORIES=	www
-MASTER_SITES=	http://nodejs.org/dist/
+MASTER_SITES=	http://nodejs.org/dist/v${PORTVERSION}/
 PKGNAMESUFFIX=	-devel
 DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	linpct@gmail.com
 COMMENT=	V8 javascript for client and server
-
-IGNORE=	is currently suspended, install www/node that is the current stable version
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
@@ -24,13 +22,12 @@ MAN1=		node.1
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	yes
-USE_GNOME=	pkgconfig
+USE_GMAKE=	yes
 
-ONLY_FOR_ARCHS=	i386
+CONFLICTS=	node-0.4.[0-9]*
+
+ONLY_FOR_ARCHS=	i386 amd64
 MAKE_JOBS_SAFE=	yes
-
-CONFLICTS=	node-0.2.[0-9]*
-
 CONFIGURE_ARGS=	--prefix=${PREFIX_RELDEST}
 PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 
