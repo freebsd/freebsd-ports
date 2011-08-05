@@ -7,16 +7,24 @@
 
 PORTNAME=	${MCUTARGET}mcu
 PORTVERSION=	1.0.${MCUVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel
 MASTER_SITES=	SF/mspgcc/${PORTNAME}
 DISTNAME=	${PORTNAME}-${MCUVERSION}
 
+PATCH_SITES=		${MASTER_SITE_SOURCEFORGE}
+PATCH_SITE_SUBDIR=	mspgcc/Patches/LTS/${LTSVERSION}
+PATCHFILES=		${LTS_PATCHES}
+PATCH_DIST_STRIP=	-p1
+
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	Header files for TI's msp430 MCUs cross-development
 
+LTSVERSION=	20110716
 MCUVERSION=	20110613
 MCUTARGET=	msp430
+BUGS_FIXED=	3379189 3384550
+LTS_PATCHES!=	for bugid in ${BUGS_FIXED} ; do echo ${PORTNAME}-${MCUVERSION}-sf$${bugid}.patch ; done
 
 USE_BZIP2=	yes
 NO_BUILD=	yes
@@ -36,6 +44,7 @@ pre-install:
 	@${ECHO} "@dirrmtry ${MCUINCPATH}" >> ${PLIST}
 	@${ECHO} "@dirrmtry ${MCULIBPATH}/ldscripts" >> ${PLIST}
 	@${ECHO} "@dirrmtry ${MCULIBPATH}" >> ${PLIST}
+	@${ECHO} "@dirrmtry ${MCUTARGET}" >> ${PLIST}
 
 do-install:
 	@cd ${WRKSRC} && MSP430MCU_ROOT=${WRKSRC} ${SH} scripts/install.sh ${PREFIX}

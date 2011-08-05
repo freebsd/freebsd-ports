@@ -1,4 +1,4 @@
-@comment $FreeBSD: /tmp/pcvs/ports/devel/msp430-binutils/pkg-plist,v 1.11 2011-07-28 11:52:42 lev Exp $
+@comment $FreeBSD: /tmp/pcvs/ports/devel/msp430-binutils/pkg-plist,v 1.12 2011-08-05 13:21:30 lev Exp $
 bin/%%BINUTILS_TARG%%-addr2line
 bin/%%BINUTILS_TARG%%-ar
 bin/%%BINUTILS_TARG%%-as
@@ -39,4 +39,3 @@ bin/%%BINUTILS_TARG%%-strip
 @dirrm %%BINUTILS_TARG%%/bin
 @dirrm %%BINUTILS_TARG%%/lib/ldscripts
 @dirrm %%BINUTILS_TARG%%/lib
-@dirrmtry %%BINUTILS_TARG%%/info
