@@ -50,6 +50,11 @@ FPIC=	-fPIC
 .else
 FPIC=	-fpic
 .endif
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not link on sparc64
+.endif
+
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 WRKSRC=		${WRKDIR}/SuperLU_MT_2.0
