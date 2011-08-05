@@ -8,7 +8,7 @@
 PORTNAME=	vsftpd
 PORTVERSION=	2.3.4
 CATEGORIES=	ftp ipv6
-MASTER_SITES=	ftp://vsftpd.beasts.org/users/cevans/
+MASTER_SITES=	https://security.appspot.com/downloads/
 PKGNAMESUFFIX?=	${SSL_SUFFIX}${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
