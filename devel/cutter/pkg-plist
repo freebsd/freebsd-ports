@@ -225,6 +225,7 @@ share/aclocal/cutter.m4
 %%DOCSDIR%%/index-1-1-5.html
 %%DOCSDIR%%/index-1-1-6.html
 %%DOCSDIR%%/index-1-1-7.html
+%%DOCSDIR%%/index-1-1-8.html
 %%DOCSDIR%%/index-all.html
 %%DOCSDIR%%/index-deprecated.html
 %%DOCSDIR%%/index.html
@@ -380,6 +381,7 @@ share/aclocal/cutter.m4
 %%DOCSDIR%%/ja/index-1-1-5.html
 %%DOCSDIR%%/ja/index-1-1-6.html
 %%DOCSDIR%%/ja/index-1-1-7.html
+%%DOCSDIR%%/ja/index-1-1-8.html
 %%DOCSDIR%%/ja/index-all.html
 %%DOCSDIR%%/ja/index-deprecated.html
 %%DOCSDIR%%/ja/index.html
