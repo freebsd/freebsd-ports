@@ -9,8 +9,8 @@ PORTNAME=	librcc
 PORTVERSION=	0.2.9
 PORTREVISION=	5
 CATEGORIES=	devel
-MASTER_SITES=	SF/rusxmms/Charset%20Conversion%20Library/${PORTVERSION} \
-		${MASTER_SITE_LOCAL} \
+#MASTER_SITES=	SF/rusxmms/Charset%20Conversion%20Library/${PORTVERSION} \
+MASTER_SITES=	${MASTER_SITE_LOCAL} \
 		http://ns.ael.ru/~fluffy.khv/distfiles/ \
 		http://dside.dyndns.org/files/rusxmms/
 MASTER_SITE_SUBDIR=	fluffy
