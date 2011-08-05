@@ -13,7 +13,7 @@ CATEGORIES=	audio linux
 MASTER_SITES=	http://www.baudline.com/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	baudline_${PORTVERSION:S/.p/pre/}_linux_${ARCH_SUFX}
-EXTRACT_SUFX=	.tar
+EXTRACT_SUFX=	.tar.gz
 
 MAINTAINER=	xride@FreeBSD.org
 COMMENT=	Real-time signal analysis and time-frequency browser
@@ -21,7 +21,7 @@ COMMENT=	Real-time signal analysis and time-frequency browser
 RUN_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/i686/x86/}
-ARCH_SUFX=	${ARCH:S/i386/x86/:S/amd64/x86_64/}
+ARCH_SUFX=	${ARCH:S/i386/i686/:S/amd64/x86_64/}
 USE_LINUX=	yes
 USE_LINUX_APPS=	xorglibs
 ONLY_FOR_ARCHS=	i386 amd64
