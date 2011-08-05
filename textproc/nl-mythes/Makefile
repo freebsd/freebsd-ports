@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mythes
-PORTVERSION=	2011.08.01
+PORTVERSION=	2011.08.04
 CATEGORIES=	textproc
 MASTER_SITES=	http://data.opentaal.org/opentaalbank/thesaurus/download/
 PKGNAMEPREFIX=	nl-
