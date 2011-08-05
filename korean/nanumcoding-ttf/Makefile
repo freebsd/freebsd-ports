@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-ttf
 DISTNAME=	NanumGothicCoding-${PORTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org
-COMMENT=	Nanum Gothic Coding Hangul font (TrueType)
+COMMENT=	NanumGothic Coding Hangul font (TrueType)
 
 LICENSE=	OFL
 LICENSE_NAME=	Open Font License version 1.1
