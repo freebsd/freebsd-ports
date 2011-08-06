@@ -1,0 +1,12 @@
+bin/uim-im-switcher-gtk3
+bin/uim-input-pad-ja-gtk3
+bin/uim-pref-gtk3
+bin/uim-toolbar-gtk3
+bin/uim-toolbar-gtk3-systray
+lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-uim.a
+lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-uim.la
+lib/gtk-3.0/%%GTK3_VERSION%%/immodules/im-uim.so
+libexec/uim-candwin-gtk3
+libexec/uim-candwin-tbl-gtk3
+@exec gtk-query-immodules-3.0 > %D/etc/gtk-3.0/gtk.immodules
+@unexec gtk-query-immodules-3.0 > %D/etc/gtk-3.0/gtk.immodules
