@@ -11,18 +11,11 @@ CATEGORIES=	www ipv6
 MASTER_SITES=	ftp://ftp.opera.com/pub/opera/${MASTER_SITES_VER_PATH}/ \
 		ftp://opera.inode.at/${MASTER_SITES_VER_PATH}/ \
 		http://gd.tuwien.ac.at/infosys/browsers/opera/${MASTER_SITES_VER_PATH}/ \
-		http://ftp.ucr.ac.cr/WWW/opera/${MASTER_SITES_VER_PATH}/ \
-		http://www.microrpm.ca/pub/opera/${MASTER_SITES_VER_PATH}/ \
-		http://opera.eurenet.net/${MASTER_SITES_VER_PATH}/ \
 		ftp://opera.ftp.fu-berlin.de/${MASTER_SITES_VER_PATH}/ \
 		http://ftp.ntua.gr/pub/www/Opera/${MASTER_SITES_VER_PATH}/ \
-		ftp://ftp.wayne.edu/opera/${MASTER_SITES_VER_PATH}/ \
 		http://mirrors.dedipower.com/opera/${MASTER_SITES_VER_PATH}/ \
-		ftp://ftp.mirror.ac.uk/sites/ftp.opera.com/${MASTER_SITES_VER_PATH}/ \
-		http://opera.nedmirror.nl/${MASTER_SITES_VER_PATH}/ \
 		ftp://ftp.tiscali.nl/pub/mirrors/opera/${MASTER_SITES_VER_PATH}/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/${MASTER_SITES_VER_PATH}&,}/ \
-		http://T32.TecNik93.com/FreeBSD/others_ports/${PORTNAME}${PKGNAMESUFFIX}/sources/
+		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/opera/${MASTER_SITES_VER_PATH}&,}/ 
 DISTNAME=	${PORTNAME}-${OPERA_VER}-${OPERA_BUILD}.${ARCH}.freebsd
 
 MAINTAINER=	dinoex@FreeBSD.org
