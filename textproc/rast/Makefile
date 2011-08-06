@@ -33,6 +33,7 @@ CONFIGURE_ARGS=	\
 	--with-filter-moduledir=${PREFIX}/lib/rast/filters
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" LDFLAGS="-lz"
 USE_LDCONFIG=	YES
+MAKE_JOBS_UNSAFE=	yes
 
 MAN1=	rast-config.1 rast-create.1 rast-delete.1 rast-optimize.1 \
 	rast-register.1 rast-search.1
@@ -69,5 +70,9 @@ PLIST_SUB+=		WITH_XMLRPC_C="@comment "
 .include <bsd.port.pre.mk>
 
 DEFAULT_ENCODING?=	euc_jp
+
+.if ${RUBY_VER} == 1.9
+BROKEN=	does not compile with ruby 1.9
+.endif
 
 .include <bsd.port.post.mk>
