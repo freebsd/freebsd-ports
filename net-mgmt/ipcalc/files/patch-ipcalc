@@ -1,0 +1,20 @@
+--- ipcalc.orig	2011-07-05 14:39:13.633969288 +0900
++++ ipcalc	2011-07-05 14:39:29.494250145 +0900
+@@ -2,7 +2,7 @@
+ 
+ 
+ #  IPv4 Calculator
+-#  Copyright (C) Krischan Jodies 2000 - 2004
++#  Copyright (C) Krischan Jodies 2000 - 2006
+ #  krischan()jodies.de, http://jodies.de/ipcalc
+ #   
+ #  This program is free software; you can redistribute it and/or modify
+@@ -1082,7 +1082,7 @@
+ IP Calculator $version
+ 
+ Enter your netmask(s) in CIDR notation (/25) or dotted decimals (255.255.255.0).
+-Inverse netmask are recognized. If you mmit the netmask, ipcalc uses the default
++Inverse netmasks are recognized. If you mmit the netmask, ipcalc uses the default
+ netmask for the class of your network.
+ 
+ Look at the space between the bits of the addresses: The bits before it are 
