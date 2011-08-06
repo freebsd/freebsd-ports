@@ -85,7 +85,6 @@ share/locale/ko/LC_MESSAGES/uim.mo
 %%DATADIR%%/anthy-utf8.scm
 %%DATADIR%%/anthy.scm
 %%DATADIR%%/byeoru-custom.scm
-%%DATADIR%%/byeoru-dic.scm
 %%DATADIR%%/byeoru-key-custom.scm
 %%DATADIR%%/byeoru-symbols.scm
 %%DATADIR%%/byeoru.scm
