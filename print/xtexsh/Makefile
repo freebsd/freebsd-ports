@@ -7,40 +7,48 @@
 
 PORTNAME=	xtexsh
 PORTVERSION=	1.4.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	print
-MASTER_SITES=	ftp://ftp.mat.univie.ac.at/pub/teschl/xtexsh/
-DISTNAME=	${PORTNAME}-1.4-2
+MASTER_SITES=	http://www.mat.univie.ac.at/~gerald/ftp/xtexsh/
+DISTNAME=	${PORTNAME}-${PORTVERSION:R}-${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/Tk-based simple TeX interface
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
+RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base
 
-BROKEN=	Does not fetch
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
-RUN_DEPENDS=	tex:${PORTSDIR}/print/teTeX \
-		wish8.4:${PORTSDIR}/x11-toolkits/tk84
-
-WRKSRC=		${WRKDIR}/${PORTNAME}-1.4
-
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 NO_BUILD=	yes
+
+USE_TK_WRAPPER=	yes
+INSTALLS_ICONS=	yes
 MAN1=		xtexsh.1
 MANCOMPRESSED=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,/usr/bin/wish,${PREFIX}/bin/wish8.4,; \
-		s,/etc,${PREFIX}/etc,; s,bash,sh,' ${WRKSRC}/xtexsh
+	@${REINPLACE_CMD} -e \
+		's|/usr/bin|${LOCALBASE}/bin|g ; \
+		s|"/etc|"${PREFIX}/etc| ; \
+		s|exec bash|exec sh|' ${WRKSRC}/xtexsh
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/xtexsh ${PREFIX}/bin
-	@${INSTALL_MAN} ${WRKSRC}/xtexsh.1.gz ${PREFIX}/man/man1
-	@${INSTALL_DATA} ${WRKSRC}/xtexshrc ${PREFIX}/etc/xtexshrc
-	@${MKDIR} ${PREFIX}/share/xtexsh
-.for f in xtexsh-mini.png xtexsh.png xtexsh.desktop xtexsh.spec
-	@${INSTALL_DATA} ${WRKSRC}/${f} ${DATADIR}
-.endfor
+	${INSTALL_SCRIPT} ${WRKSRC}/xtexsh ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/xtexsh.1.gz ${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/xtexshrc ${PREFIX}/etc
+	@${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/xtexsh.desktop ${PREFIX}/share/applications
+	@${MKDIR} ${PREFIX}/share/icons/locolor/16x16/apps
+	${INSTALL_DATA} ${WRKSRC}/xtexsh-mini.png \
+		${PREFIX}/share/icons/locolor/16x16/apps/xtexsh.png
+	@${MKDIR} ${PREFIX}/share/icons/locolor/32x32/apps
+	${INSTALL_DATA} ${WRKSRC}/xtexsh.png \
+		${PREFIX}/share/icons/locolor/32x32/apps/xtexsh.png
+	@${MKDIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/xtexsh.png ${PREFIX}/share/pixmaps
+
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
