@@ -53,4 +53,12 @@ CONFIGURE_ARGS+=--with-pgsqlincdir=${LOCALBASE}/include \
 post-patch:
 	${REINPLACE_CMD} -e 's|%%PYTHON_VER%%|${PYTHON_VER}|g' ${WRKSRC}/configure
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 1.9
+PLIST_SUB+=	KROSS="@comment "
+.else
+PLIST_SUB+=	KROSS=""
+.endif
+
+.include <bsd.port.post.mk>
