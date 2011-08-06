@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libtorrent-rasterbar
-PORTVERSION=	0.15.6
+PORTVERSION=	0.15.7
 PORTREVISION?=	0
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -17,7 +17,7 @@ COMMENT?=	A C++ library implementing a BitTorrent client
 
 MAKE_JOBS_SAFE=	yes
 
-CONFLICTS+=	libtorrent-rasterbar-0.14.*
+CONFLICTS+=	libtorrent-rasterbar-0.1[46789].*
 
 NO_LATEST_LINK=	yes
 
@@ -41,6 +41,7 @@ CONFIGURE_ARGS+=	--disable-debug \
 		--with-boost-thread=boost_thread \
 		--enable-geoip \
 		--with-libgeoip \
+		--with-openssl=${OPENSSLBASE} \
 		--with-zlib=system
 
 USE_LDCONFIG=	yes
