@@ -8,7 +8,7 @@
 PORTNAME=	vmw
 PORTVERSION=	060510
 CATEGORIES=	emulators
-MASTER_SITES=	http://chitchat.at.infoseek.co.jp/vmware/
+MASTER_SITES=	http://sites.google.com/site/chitchatvmback/storage/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	VM Back Command Line Tools for VMware
