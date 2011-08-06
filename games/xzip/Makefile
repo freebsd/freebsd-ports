@@ -10,11 +10,10 @@ PORTVERSION=	1.8.2
 PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/infocom/interpreters/zip/ \
-	ftp://www.plover.net/if-archive/infocom/interpreters/zip/ \
-	ftp://ftp.guetech.org/if-archive/infocom/interpreters/zip/ \
-	ftp://mirror.holmoak.co.uk/if-archive/infocom/interpreters/zip/ \
-	ftp://ftp.funet.fi/pub/misc/if-archive/infocom/interpreters/zip/ \
-	ftp://wuarchive.wustl.edu/doc/misc/if-archive/infocom/interpreters/zip/
+		ftp://www.plover.net/if-archive/infocom/interpreters/zip/ \
+		ftp://ftp.funet.fi/pub/misc/if-archive/infocom/interpreters/zip/ \
+		ftp://wuarchive.wustl.edu/doc/misc/if-archive/infocom/interpreters/zip/ \
+		http://www.eblong.com/zarf/ftp/xzip182.tar.Z
 DISTNAME=	xzip182
 EXTRACT_SUFX=	.tar.Z
 

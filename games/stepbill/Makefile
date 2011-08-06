@@ -9,7 +9,7 @@ PORTNAME=	stepbill
 PORTVERSION=	2.4
 PORTREVISION=	2
 CATEGORIES=	games gnustep
-MASTER_SITES=	http://www.linuks.mine.nu/stepbill/ \
+MASTER_SITES=	http://gnu.ethz.ch/linuks.mine.nu/stepbill/ \
 		${MASTER_SITE_GNUSTEP_CH}
 
 MAINTAINER=	dinoex@FreeBSD.org

@@ -9,7 +9,7 @@ PORTNAME=	volumecontrol
 PORTVERSION=	0.5
 PORTREVISION=	2
 CATEGORIES=	audio gnustep
-MASTER_SITES=	http://www.linuks.mine.nu/volumecontrol/ \
+MASTER_SITES=	http://gnu.ethz.ch/linuks.mine.nu/volumecontrol/ \
 		${MASTER_SITE_GNUSTEP_CH}
 
 MAINTAINER=	dinoex@FreeBSD.org
