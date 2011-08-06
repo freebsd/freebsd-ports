@@ -8,6 +8,7 @@ lib/libphobos2.a
 %%EXAMPLESDIR%%/samples/d/chello.d
 %%EXAMPLESDIR%%/samples/d/clean.bat
 %%EXAMPLESDIR%%/samples/d/d2html.d
+%%EXAMPLESDIR%%/samples/d/d2html.d.htm
 %%EXAMPLESDIR%%/samples/d/d2html.kwd
 %%EXAMPLESDIR%%/samples/d/dclient.d
 %%EXAMPLESDIR%%/samples/d/dhry.d
@@ -76,6 +77,7 @@ include/d/druntime/import/core/sys/posix/inttypes.di
 include/d/druntime/import/core/sys/posix/net/if_.di
 include/d/druntime/import/core/sys/posix/netinet/in_.di
 include/d/druntime/import/core/sys/posix/netinet/tcp.di
+include/d/druntime/import/core/sys/posix/netdb.di
 include/d/druntime/import/core/sys/posix/poll.di
 include/d/druntime/import/core/sys/posix/pthread.di
 include/d/druntime/import/core/sys/posix/pwd.di
@@ -115,6 +117,7 @@ include/d/phobos2/index.d
 include/d/phobos2/std/__fileinit.d
 include/d/phobos2/std/algorithm.d
 include/d/phobos2/std/array.d
+include/d/phobos2/std/ascii.d
 include/d/phobos2/std/atomics.d
 include/d/phobos2/std/base64.d
 include/d/phobos2/std/bigint.d
@@ -181,7 +184,6 @@ include/d/phobos2/std/metastrings.d
 include/d/phobos2/std/mmfile.d
 include/d/phobos2/std/net/isemail.d
 include/d/phobos2/std/numeric.d
-include/d/phobos2/std/openrj.d
 include/d/phobos2/std/outbuffer.d
 include/d/phobos2/std/parallelism.d
 include/d/phobos2/std/path.d
@@ -234,7 +236,6 @@ include/d/phobos2/unittest.d
 @dirrm include/d/phobos2/etc/c
 @dirrm include/d/phobos2/etc
 @dirrm include/d/phobos2
-@dirrm include/d/druntime/import/std
 @dirrm include/d/druntime/import/core/sys/windows
 @dirrm include/d/druntime/import/core/sys/posix/sys
 @dirrm include/d/druntime/import/core/sys/posix/netinet

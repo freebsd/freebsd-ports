@@ -7,7 +7,7 @@
 
 PORTNAME=	dmd
 PKGNAMESUFFIX=	2
-PORTVERSION=	2.053
+PORTVERSION=	2.054
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	dmd.${PORTVERSION}
@@ -39,6 +39,10 @@ LICENSE_PERMS_DMD=	no-dist-mirror no-dist-sell no-pkg-mirror no-pkg-sell auto-ac
 BROKEN=		does not compile
 .endif
 
+.if ${ARCH} == "amd64"
+ARCH_ARGS+=	"MODEL=64"
+.endif
+
 MODULEDIR=	${PREFIX}/include/d/phobos2
 
 post-patch:
@@ -60,9 +64,9 @@ post-patch:
 
 post-build:
 	cd ${WRKSRC}/../druntime && \
-		${SETENV} PATH=${WRKSRC}:${PATH} ${GMAKE} ${MAKE_FLAGS} posix.mak
+		${SETENV} PATH=${WRKSRC}:${PATH} ${GMAKE} ${MAKE_FLAGS} posix.mak ${ARCH_ARGS}
 	cd ${WRKSRC}/../phobos && \
-		${SETENV} PATH=${WRKSRC}:${PATH} ${GMAKE} ${MAKE_FLAGS} posix.mak
+		${SETENV} PATH=${WRKSRC}:${PATH} ${GMAKE} ${MAKE_FLAGS} posix.mak ${ARCH_ARGS}
 
 do-install:
 	${INSTALL_MAN} ${WRKDIR}/dmd2/man/man1/dmd.1 ${MANPREFIX}/man/man1/dmd2.1
@@ -71,7 +75,11 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/dmd2/linux/bin32/dmd.conf ${PREFIX}/etc/dmd2.conf
 .endif
 	${INSTALL_PROGRAM} ${WRKSRC}/dmd ${PREFIX}/bin/dmd2
+.if ${ARCH} == "amd64"
+	${INSTALL_DATA} ${WRKSRC}/../phobos/generated/freebsd/release/64/libphobos2.a ${PREFIX}/lib
+.else
 	${INSTALL_DATA} ${WRKSRC}/../phobos/generated/freebsd/release/32/libphobos2.a ${PREFIX}/lib
+.endif
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKDIR}/dmd2/linux/bin32/dmd.conf ${EXAMPLESDIR}/dmd2.conf
 	cd ${WRKDIR}/dmd2 && ${COPYTREE_SHARE} samples ${EXAMPLESDIR}
