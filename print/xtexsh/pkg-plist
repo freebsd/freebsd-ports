@@ -2,9 +2,15 @@ bin/xtexsh
 etc/xtexshrc
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/index.html
-%%DATADIR%%/xtexsh-mini.png
-%%DATADIR%%/xtexsh.desktop
-%%DATADIR%%/xtexsh.png
-%%DATADIR%%/xtexsh.spec
-@dirrm %%DATADIR%%
+share/applications/xtexsh.desktop
+share/icons/locolor/16x16/apps/xtexsh.png
+share/icons/locolor/32x32/apps/xtexsh.png
+share/pixmaps/xtexsh.png
+@dirrmtry share/icons/locolor/32x32/apps
+@dirrmtry share/icons/locolor/32x32
+@dirrmtry share/icons/locolor/16x16/apps
+@dirrmtry share/icons/locolor/16x16
+@dirrmtry share/icons/locolor
+@dirrmtry share/icons
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
