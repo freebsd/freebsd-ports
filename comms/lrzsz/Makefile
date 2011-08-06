@@ -9,8 +9,7 @@ PORTNAME=	lrzsz
 PORTVERSION=	0.12.20
 PORTREVISION=	3
 CATEGORIES=	comms
-MASTER_SITES=	http://www.netsw.org/net/modem/protocols/zmodem/lrzsz/ \
-		http://www.ohse.de/uwe/releases/
+MASTER_SITES=	http://www.ohse.de/uwe/releases/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Receive/Send files via X/Y/ZMODEM protocol.  (unrestrictive)
