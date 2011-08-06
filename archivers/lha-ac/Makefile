@@ -10,7 +10,6 @@ PORTVERSION=	1.14i
 PORTREVISION=	10
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP} \
-		http://qgpop.dl.sourceforge.jp/%SUBDIR%/ \
 		http://osdn.dl.sourceforge.jp/%SUBDIR%/
 MASTER_SITE_SUBDIR=	lha/22231
 PKGNAMESUFFIX=	-ac${PKGNAMESUFFIX2}
