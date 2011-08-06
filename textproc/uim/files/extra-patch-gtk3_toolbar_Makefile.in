@@ -1,0 +1,67 @@
+--- gtk3/toolbar/Makefile.in.orig	2011-08-06 18:19:41.000000000 +0900
++++ gtk3/toolbar/Makefile.in	2011-08-06 18:22:42.000000000 +0900
+@@ -86,9 +86,9 @@
+ @GTK3_TRUE@	uim_toolbar_gtk3-toolbar-common-gtk.$(OBJEXT)
+ uim_toolbar_gtk3_OBJECTS = $(am_uim_toolbar_gtk3_OBJECTS)
+ @GTK3_TRUE@uim_toolbar_gtk3_DEPENDENCIES =  \
+-@GTK3_TRUE@	$(top_builddir)/uim/libuim-scm.la \
+-@GTK3_TRUE@	$(top_builddir)/uim/libuim.la \
+-@GTK3_TRUE@	$(top_builddir)/uim/libuim-custom.la
++@GTK3_TRUE@	-luim-scm \
++@GTK3_TRUE@	-luim \
++@GTK3_TRUE@	-luim-custom
+ uim_toolbar_gtk3_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) $(uim_toolbar_gtk3_CFLAGS) \
+ 	$(CFLAGS) $(AM_LDFLAGS) $(LDFLAGS) -o $@
+@@ -102,9 +102,9 @@
+ uim_toolbar_gtk3_systray_OBJECTS =  \
+ 	$(am_uim_toolbar_gtk3_systray_OBJECTS)
+ @GTK3_TRUE@uim_toolbar_gtk3_systray_DEPENDENCIES =  \
+-@GTK3_TRUE@	$(top_builddir)/uim/libuim-scm.la \
+-@GTK3_TRUE@	$(top_builddir)/uim/libuim.la \
+-@GTK3_TRUE@	$(top_builddir)/uim/libuim-custom.la
++@GTK3_TRUE@	-luim-scm \
++@GTK3_TRUE@	-luim \
++@GTK3_TRUE@	-luim-custom
+ uim_toolbar_gtk3_systray_LINK = $(LIBTOOL) --tag=CC $(AM_LIBTOOLFLAGS) \
+ 	$(LIBTOOLFLAGS) --mode=link $(CCLD) \
+ 	$(uim_toolbar_gtk3_systray_CFLAGS) $(CFLAGS) $(AM_LDFLAGS) \
+@@ -420,9 +420,9 @@
+ 
+ @APPLET_GNOME3_TRUE@helper_defs = -DUIM_DATADIR=\""$(datadir)/@PACKAGE@"\"
+ @APPLET_GNOME3_TRUE@uim_toolbar_applet_gnome3_LDADD = @GTK3_LIBS@ @APPLET_GNOME3_LIBS@ \
+-@APPLET_GNOME3_TRUE@			   $(top_builddir)/uim/libuim-scm.la \
+-@APPLET_GNOME3_TRUE@			   $(top_builddir)/uim/libuim.la \
+-@APPLET_GNOME3_TRUE@			   $(top_builddir)/uim/libuim-custom.la
++@APPLET_GNOME3_TRUE@			   -luim-scm \
++@APPLET_GNOME3_TRUE@			   -luim \
++@APPLET_GNOME3_TRUE@			   -luim-custom
+ 
+ @APPLET_GNOME3_TRUE@uim_toolbar_applet_gnome3_CPPFLAGS = \
+ @APPLET_GNOME3_TRUE@			   $(helper_defs) -I$(top_srcdir) -I$(top_builddir)
+@@ -446,9 +446,9 @@
+ @GTK3_TRUE@uim_toolbar_gtk3_SOURCES = ../../helper/toolbar-standalone-gtk.c \
+ @GTK3_TRUE@			       ../../helper/toolbar-common-gtk.c
+ 
+-@GTK3_TRUE@uim_toolbar_gtk3_LDADD = @GTK3_LIBS@ $(top_builddir)/uim/libuim-scm.la \
+-@GTK3_TRUE@			   $(top_builddir)/uim/libuim.la \
+-@GTK3_TRUE@			   $(top_builddir)/uim/libuim-custom.la
++@GTK3_TRUE@uim_toolbar_gtk3_LDADD = @GTK3_LIBS@ -luim-scm \
++@GTK3_TRUE@			   -luim \
++@GTK3_TRUE@			   -luim-custom
+ 
+ @GTK3_TRUE@uim_toolbar_gtk3_CPPFLAGS = -I$(top_srcdir) -I$(top_builddir)
+ @GTK3_TRUE@uim_toolbar_gtk3_CFLAGS = @GTK3_CFLAGS@
+@@ -458,9 +458,9 @@
+ 
+ @GTK3_TRUE@uim_toolbar_gtk3_systray_LDADD = @GTK3_LIBS@ \
+ @GTK3_TRUE@				   @X11_LIBS@ \
+-@GTK3_TRUE@				   $(top_builddir)/uim/libuim-scm.la \
+-@GTK3_TRUE@				   $(top_builddir)/uim/libuim.la \
+-@GTK3_TRUE@				   $(top_builddir)/uim/libuim-custom.la
++@GTK3_TRUE@				   -luim-scm \
++@GTK3_TRUE@				   -luim \
++@GTK3_TRUE@				   -luim-custom
+ 
+ @GTK3_TRUE@uim_toolbar_gtk3_systray_CPPFLAGS = -I$(top_srcdir) -I$(top_builddir)
+ @GTK3_TRUE@uim_toolbar_gtk3_systray_CFLAGS = @GTK3_CFLAGS@
