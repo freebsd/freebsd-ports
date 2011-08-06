@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Facebook-Graph
-PORTVERSION=	1.0200
+PORTVERSION=	1.0300
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RIZEN
@@ -17,13 +17,14 @@ COMMENT=	Perl extension to integrate your apps with Facebook
 
 RUN_DEPENDS=	\
 	p5-Any-Moose>=0.13:${PORTSDIR}/devel/p5-Any-Moose \
-	p5-Crypt-SSLeay>=0.57:${PORTSDIR}/security/p5-Crypt-SSLeay \
 	p5-DateTime>=0.61:${PORTSDIR}/devel/p5-DateTime \
 	p5-DateTime-Format-Strptime>=1.4000:${PORTSDIR}/devel/p5-DateTime-Format-Strptime \
-	p5-Exception-Class>=1.32:${PORTSDIR}/devel/p5-Exception-Class \
 	p5-JSON>=2.16:${PORTSDIR}/converters/p5-JSON \
-	p5-libwww>=5.836:${PORTSDIR}/www/p5-libwww \
+	p5-libwww>=6.02:${PORTSDIR}/www/p5-libwww \
+	p5-LWP-Protocol-https>=6.02:${PORTSDIR}/www/p5-LWP-Protocol-https \
 	p5-MIME-Base64-URLSafe>=0.01:${PORTSDIR}/converters/p5-MIME-Base64-URLSafe \
+	p5-Mozilla-CA>=20110409:${PORTSDIR}/www/p5-Mozilla-CA \
+	p5-Ouch>=0.0400:${PORTSDIR}/devel/p5-Ouch \
 	p5-URI>=1.54:${PORTSDIR}/net/p5-URI \
 	p5-URI-Encode>=0.02:${PORTSDIR}/www/p5-URI-Encode
 BUILD_DEPENDS=	${RUN_DEPENDS}
@@ -37,7 +38,6 @@ MAN3=	Facebook::Graph.3 \
 	Facebook::Graph::Cookbook.3 \
 	Facebook::Graph::Cookbook::Recipe1.3 \
 	Facebook::Graph::Cookbook::Recipe2.3 \
-	Facebook::Graph::Exception.3 \
 	Facebook::Graph::Picture.3 \
 	Facebook::Graph::Publish.3 \
 	Facebook::Graph::Publish::Checkin.3 \
