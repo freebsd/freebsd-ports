@@ -7596,7 +7596,7 @@ lensnns                         ports/math/lensnns
 leo                             ports/editors/leo
 leocad                          ports/cad/leocad
 lep                             ports/security/lep
-leptonlib                       ports/graphics/leptonlib
+leptonica                       ports/graphics/leptonica
 lesspipe                        ports/misc/lesspipe
 lesstif                         ports/x11-toolkits/lesstif
 levmar                          ports/math/levmar
@@ -11804,6 +11804,7 @@ p5-Data-Validate-IP             ports/net-mgmt/p5-Data-Validate-IP
 p5-Data-Validate-URI            ports/www/p5-Data-Validate-URI
 p5-Data-Visitor                 ports/devel/p5-Data-Visitor
 p5-Data-Visitor-Encode          ports/devel/p5-Data-Visitor-Encode
+p5-Date-Business                ports/devel/p5-Date-Business
 p5-Date-Calc                    ports/devel/p5-Date-Calc
 p5-Date-Calc-Iterator           ports/devel/p5-Date-Calc-Iterator
 p5-Date-Calc-XS                 ports/devel/p5-Date-Calc-XS
@@ -15973,6 +15974,7 @@ p5-data-validate-ip             ports/net-mgmt/p5-Data-Validate-IP
 p5-data-validate-uri            ports/www/p5-Data-Validate-URI
 p5-data-visitor                 ports/devel/p5-Data-Visitor
 p5-data-visitor-encode          ports/devel/p5-Data-Visitor-Encode
+p5-date-business                ports/devel/p5-Date-Business
 p5-date-calc                    ports/devel/p5-Date-Calc
 p5-date-calc-iterator           ports/devel/p5-Date-Calc-Iterator
 p5-date-calc-xs                 ports/devel/p5-Date-Calc-XS
@@ -21486,6 +21488,7 @@ py-bittornado-core              ports/net-p2p/py-bittornado-core
 py-bittorrent                   ports/net-p2p/py-bittorrent
 py-bittorrent-core              ports/net-p2p/py-bittorrent-core
 py-bitvector                    ports/math/py-bitvector
+py-blockdiag                    ports/graphics/py-blockdiag
 py-blogofile                    ports/www/py-blogofile
 py-boto                         ports/devel/py-boto
 py-boto-devel                   ports/devel/py-boto-devel
@@ -21638,6 +21641,7 @@ py-freebsd                      ports/devel/py-freebsd
 py-freeimagepy                  ports/graphics/py-freeimagepy
 py-ftputil                      ports/ftp/py-ftputil
 py-fudge                        ports/devel/py-fudge
+py-funcparserlib                ports/devel/py-funcparserlib
 py-funkload                     ports/www/py-funkload
 py-fusefs                       ports/devel/py-fusefs
 py-game                         ports/devel/py-game
@@ -22221,6 +22225,7 @@ py-vorbis                       ports/audio/py-vorbis
 py-vte                          ports/x11-toolkits/py-vte
 py-waf                          ports/devel/py-waf
 py-wax                          ports/x11-toolkits/py-wax
+py-webcolors                    ports/graphics/py-webcolors
 py-weberror                     ports/www/py-WebError
 py-webflash                     ports/www/py-WebFlash
 py-webhelpers                   ports/www/py-webhelpers
