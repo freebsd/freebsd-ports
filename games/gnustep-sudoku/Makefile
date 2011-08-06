@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	sudoku
-PORTVERSION=	0.6
-PORTREVISION=	1
+PORTVERSION=	0.7
 CATEGORIES=	games gnustep
-MASTER_SITES=	http://www.gnustep.it/marko/Sudoku/
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	gap
+
 PKGNAMEPREFIX=	gnustep-
-DISTNAME=	Sudoku6
-EXTRACT_SUFX=	.tgz
+DISTNAME=	Sudoku-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Sudoku solver and generator
