@@ -9,8 +9,7 @@ PORTNAME=	zipper
 PORTVERSION=	1.3
 PORTREVISION=	1
 CATEGORIES=	archivers gnustep
-MASTER_SITES=	http://xanthippe.dyndns.org/Zipper/ \
-		${MASTER_SITE_GNUSTEP_CH}
+MASTER_SITES=	http://xanthippe.dyndns.org/Zipper/
 DISTNAME=	Zipper-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
