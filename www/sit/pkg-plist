@@ -168,6 +168,44 @@
 %%WWWDIR%%/help/da-DK/help.html
 %%WWWDIR%%/help/da-DK/portal_help.html
 %%WWWDIR%%/help/da-DK/tips.txt
+%%WWWDIR%%/help/de-DE/AddressDataProtection.txt
+%%WWWDIR%%/help/de-DE/AutoAssignIncidents.txt
+%%WWWDIR%%/help/de-DE/CTRLAddRemove.txt
+%%WWWDIR%%/help/de-DE/CustomerImpactEngineer.txt
+%%WWWDIR%%/help/de-DE/Dashboard.txt
+%%WWWDIR%%/help/de-DE/EmailDataProtection.txt
+%%WWWDIR%%/help/de-DE/EmailSignatureTip.txt
+%%WWWDIR%%/help/de-DE/InventoryID.txt
+%%WWWDIR%%/help/de-DE/InventoryPrivacy.txt
+%%WWWDIR%%/help/de-DE/KBDistribution.txt
+%%WWWDIR%%/help/de-DE/KBPrivate.txt
+%%WWWDIR%%/help/de-DE/KBRestricted.txt
+%%WWWDIR%%/help/de-DE/LDAPAttributeMap.txt
+%%WWWDIR%%/help/de-DE/MessageTip.txt
+%%WWWDIR%%/help/de-DE/NewSupportedContact.txt
+%%WWWDIR%%/help/de-DE/OtherIncidents.txt
+%%WWWDIR%%/help/de-DE/ProblemDescriptionEngineer.txt
+%%WWWDIR%%/help/de-DE/ProblemReproductionEngineer.txt
+%%WWWDIR%%/help/de-DE/QualificationsTip.txt
+%%WWWDIR%%/help/de-DE/RevokeNotice.txt
+%%WWWDIR%%/help/de-DE/Scheduler.txt
+%%WWWDIR%%/help/de-DE/SchedulerParameters.txt
+%%WWWDIR%%/help/de-DE/SchedulerStatus.txt
+%%WWWDIR%%/help/de-DE/SeparatedBySpaces.txt
+%%WWWDIR%%/help/de-DE/ServiceLevelCustomerPeriod.txt
+%%WWWDIR%%/help/de-DE/ServiceLevelEngineerPeriod.txt
+%%WWWDIR%%/help/de-DE/ServiceLevelLimit.txt
+%%WWWDIR%%/help/de-DE/ServiceLevelTimed.txt
+%%WWWDIR%%/help/de-DE/SetYourStatus.txt
+%%WWWDIR%%/help/de-DE/SiteIncidentVisibility.txt
+%%WWWDIR%%/help/de-DE/TaskPrivacy.txt
+%%WWWDIR%%/help/de-DE/TaskUser.txt
+%%WWWDIR%%/help/de-DE/TelephoneDataProtection.txt
+%%WWWDIR%%/help/de-DE/UserSource.txt
+%%WWWDIR%%/help/de-DE/UserStartdate.txt
+%%WWWDIR%%/help/de-DE/VisibleToCustomer.txt
+%%WWWDIR%%/help/de-DE/WorkAroundsAttemptedEngineer.txt
+%%WWWDIR%%/help/de-DE/portal_help.html
 %%WWWDIR%%/help/en-GB/AddressDataProtection.txt
 %%WWWDIR%%/help/en-GB/AutoAssignIncidents.txt
 %%WWWDIR%%/help/en-GB/CTRLAddRemove.txt
@@ -2095,6 +2133,7 @@
 @dirrm %%WWWDIR%%/help/es-MX
 @dirrm %%WWWDIR%%/help/en-US
 @dirrm %%WWWDIR%%/help/en-GB
+@dirrm %%WWWDIR%%/help/de-DE
 @dirrm %%WWWDIR%%/help/da-DK
 @dirrm %%WWWDIR%%/help/cy-GB
 @dirrm %%WWWDIR%%/help
