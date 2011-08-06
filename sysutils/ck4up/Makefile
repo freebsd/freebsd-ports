@@ -17,7 +17,6 @@ RUN_DEPENDS=	${RUBY_ARCHLIBDIR}/gdbm.so:${PORTSDIR}/databases/ruby-gdbm
 
 NO_BUILD=	yes
 USE_RUBY=	yes
-RUBY_VER=	1.8
 RUBY_NO_BUILD_DEPENDS=	yes
 
 MAN1=		ck4up.1
