@@ -12,6 +12,7 @@ bin/dancer
 %%SITE_PERL%%/Dancer/Development/Integration.pod
 %%SITE_PERL%%/Dancer/Engine.pm
 %%SITE_PERL%%/Dancer/Error.pm
+%%SITE_PERL%%/Dancer/Exception.pm
 %%SITE_PERL%%/Dancer/Factory/Hook.pm
 %%SITE_PERL%%/Dancer/FileUtils.pm
 %%SITE_PERL%%/Dancer/GetOpt.pm
