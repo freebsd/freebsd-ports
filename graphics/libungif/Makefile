@@ -15,6 +15,8 @@ PKGNAMESUFFIX=	${NOX11SUFFIX}${PKGNAMESUFFIX2}
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tools and library routines for working with GIF images
 
+#DEPRECATED=	is replaced by libgif
+
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
