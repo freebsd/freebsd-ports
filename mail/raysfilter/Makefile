@@ -8,7 +8,8 @@
 PORTNAME=	raysfilter
 PORTVERSION=	1.14
 CATEGORIES=	mail
-MASTER_SITES=	http://www.sendmail-filter.lsbu.ac.uk/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=dinoex
 DISTNAME=	rays-filter-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
