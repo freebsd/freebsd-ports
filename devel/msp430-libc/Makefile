@@ -43,7 +43,7 @@ BROKEN=	Please, select msp430-gcc-4 or msp430-gcc-3, not both
 BUILD_DEPENDS+=	${PKGNAMEPREFIX}gcc:${PORTSDIR}/devel/${PKGNAMEPREFIX}gcc
 PLIST_SUB+=	GCC3="@comment " GCC4=""
 NEEDGCCVERSION=	4
-PORTGCCVERSION=	""
+PORTGCCVERSION=
 OTHEGCCVERSION=	3
 .elif defined(WITH_GCC3)
 PLIST_SUB+=	GCC3="" GCC4="@comment "
