@@ -13,7 +13,7 @@ PORTREVISION=	2
 DISTVERSION=	4.0.0beta7
 CATEGORIES=	graphics
 MASTER_SITES=	ftp://ftp.remotesensing.org/pub/libtiff/ \
-		http://dl1.maptools.org/dl/libtiff/
+		http://download.osgeo.org/libtiff/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Tools and library routines for working with TIFF images
