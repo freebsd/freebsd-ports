@@ -982,6 +982,7 @@ lib/wine/fakedlls/httpapi.dll
 lib/wine/fakedlls/iccvid.dll
 lib/wine/fakedlls/icinfo.exe
 lib/wine/fakedlls/icmp.dll
+lib/wine/fakedlls/ieframe.dll
 lib/wine/fakedlls/iexplore.exe
 lib/wine/fakedlls/ifsmgr.vxd
 lib/wine/fakedlls/imaadp32.acm
@@ -1283,6 +1284,7 @@ lib/wine/fakedlls/wow32.dll
 lib/wine/fakedlls/write.exe
 lib/wine/fakedlls/ws2_32.dll
 lib/wine/fakedlls/wscript.exe
+lib/wine/fakedlls/wshom.ocx
 lib/wine/fakedlls/wsock32.dll
 lib/wine/fakedlls/wtsapi32.dll
 lib/wine/fakedlls/wuapi.dll
@@ -1316,6 +1318,7 @@ lib/wine/httpapi.dll.so
 lib/wine/iccvid.dll.so
 lib/wine/icinfo.exe.so
 lib/wine/icmp.dll.so
+lib/wine/ieframe.dll.so
 lib/wine/iexplore.exe.so
 lib/wine/ifsmgr.vxd.so
 lib/wine/imaadp32.acm.so
@@ -1395,6 +1398,7 @@ lib/wine/libgdiplus.def
 lib/wine/libglu32.def
 lib/wine/libhid.def
 lib/wine/libhlink.def
+lib/wine/libieframe.def
 lib/wine/libimagehlp.def
 lib/wine/libimm32.def
 lib/wine/libinetcomm.def
@@ -1776,6 +1780,7 @@ lib/wine/wow32.dll.so
 lib/wine/write.exe.so
 lib/wine/ws2_32.dll.so
 lib/wine/wscript.exe.so
+lib/wine/wshom.ocx.so
 lib/wine/wsock32.dll.so
 lib/wine/wtsapi32.dll.so
 lib/wine/wuapi.dll.so
