@@ -117,4 +117,7 @@ post-extract:
 		${UNZIP_CMD} -qo ${DISTDIR}/Unihan.zip -d ${WRKSRC}/module/dict
 .endif
 
+.if ${RUBY_VER} == 1.9
+BROKEN=	does not work with ruby 1.9
+.endif
 .include <bsd.port.post.mk>
