@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	jpmobile-terminfo
-PORTVERSION=	0.0.2
-PORTREVISION=	1
+PORTVERSION=	0.0.3
 CATEGORIES=	japanese www rubygems
 MASTER_SITES=	RG
 
