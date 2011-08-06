@@ -948,6 +948,7 @@
     SUBDIR += ruby-tcpsocketpipe
     SUBDIR += ruby-tserver
     SUBDIR += rubygem-amqp
+    SUBDIR += rubygem-amqp-utils
     SUBDIR += rubygem-bunny
     SUBDIR += rubygem-geoip
     SUBDIR += rubygem-http_parser.rb
