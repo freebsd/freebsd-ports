@@ -63,4 +63,8 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 .endif
 
+.if ${RUBY_VER} == 1.9
+BROKEN=	does not build with ruby 1.9
+.endif
+
 .include <bsd.port.post.mk>
