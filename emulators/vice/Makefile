@@ -8,8 +8,7 @@ PORTNAME=	vice
 PORTVERSION=	2.3
 PORTREVISION=	1
 CATEGORIES=	emulators
-MASTER_SITES=	http://www.viceteam.org/online/ \
-		http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
+MASTER_SITES=	http://www.zimmers.net/anonftp/pub/cbm/crossplatform/emulators/VICE/ \
 		ftp://ftp.zimmers.net/pub/cbm/crossplatform/emulators/VICE/
 PKGNAMESUFFIX?=	${GNOME_SUFFIX}${PKGNAMESUFFIX2}
 
