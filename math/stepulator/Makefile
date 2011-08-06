@@ -9,7 +9,7 @@ PORTNAME=	stepulator
 PORTVERSION=	1.0
 PORTREVISION=	3
 CATEGORIES=	math gnustep
-MASTER_SITES=	http://www.linuks.mine.nu/stepulator/ \
+MASTER_SITES=	http://gnu.ethz.ch/linuks.mine.nu/stepulator/ \
 		${MASTER_SITE_GNUSTEP_CH}
 DISTNAME=	${PORTNAME}-gs-${PORTVERSION}
 EXTRACT_SUFX=	.tar.Z

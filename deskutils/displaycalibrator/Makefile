@@ -9,7 +9,7 @@ PORTNAME=	displaycalibrator
 PORTVERSION=	0.7
 PORTREVISION=	2
 CATEGORIES=	deskutils gnustep
-MASTER_SITES=	http://www.linuks.mine.nu/displaycalibrator/
+MASTER_SITES=	http://gnu.ethz.ch/linuks.mine.nu/displaycalibrator/
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Frontend to xgamma
