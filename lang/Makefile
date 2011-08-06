@@ -105,7 +105,6 @@
     SUBDIR += gnat-aux
     SUBDIR += gnustep-base
     SUBDIR += gnustep-guile
-    SUBDIR += gnustep-libobjc
     SUBDIR += go
     SUBDIR += gprolog
     SUBDIR += groovy
