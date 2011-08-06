@@ -10,7 +10,6 @@ PORTVERSION=	8
 PORTREVISION=	3
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.ijg.org/files/ \
-		ftp://ftp.uu.net/graphics/jpeg/ \
 		http://sylvana.net/jpegcrop/:exif
 DISTNAME=	jpegsrc.v${DISTVERSION2}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
