@@ -3299,6 +3299,7 @@
     SUBDIR += rubygem-icalendar
     SUBDIR += rubygem-igraph
     SUBDIR += rubygem-inline
+    SUBDIR += rubygem-io-like
     SUBDIR += rubygem-jammit
     SUBDIR += rubygem-jruby-jars
     SUBDIR += rubygem-json
