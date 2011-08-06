@@ -1155,6 +1155,7 @@
     SUBDIR += p5-Plack-Handler-AnyEvent-HTTPD
     SUBDIR += p5-Plack-Handler-AnyEvent-ReverseHTTP
     SUBDIR += p5-Plack-Handler-AnyEvent-SCGI
+    SUBDIR += p5-Plack-Handler-CLI
     SUBDIR += p5-Plack-Handler-SCGI
     SUBDIR += p5-Plack-Middleware-AMF
     SUBDIR += p5-Plack-Middleware-AddDefaultCharset
