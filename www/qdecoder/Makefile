@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	qdecoder
-PORTVERSION=	10.1.6
+PORTVERSION=	11.0.0
 CATEGORIES=	www
-MASTER_SITES=	ftp://ftp.qdecoder.org/pub/qDecoder/
+MASTER_SITES=	SF/${PORTNAME}/ \
+		ftp://ftp.qdecoder.org/pub/qDecoder/
 DISTNAME=	qDecoder-${PORTVERSION}
 
 MAINTAINER=	johans@FreeBSD.org
@@ -27,14 +28,11 @@ OPTIONS=	Q_DEBUG "enable debuging output" off \
 		Q_LFS "enable large-file supports" off \
 		Q_SENDFILE "use sendfile() if possible" off
 
-PLIST_FILES=	include/qDecoder.h \
-		lib/libqDecoder.a \
-		lib/libqDecoder.so \
-		lib/libqDecoder.so.8
+PLIST_FILES=	include/qdecoder.h \
+		lib/libqdecoder.a \
+		lib/libqdecoder.so \
+		lib/libqdecoder.so.11
 
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
-.endif
 .if !defined(NOPORTEXAMPLES)
 PORTEXAMPLES=	*
 .endif
@@ -75,14 +73,9 @@ CONFIGURE_ARGS+="--disable-datastructure"
 .endif
 
 post-install:
-.if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
-	(cd ${WRKSRC} && ${COPYTREE_SHARE} "AUTHORS CHANGES COPYING INSTALL qDecoder.jpg" ${DOCSDIR})
-	(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} "html" ${DOCSDIR})
-.endif
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} "Makefile *.c *.conf *.html* qDecoder-upload" ${EXAMPLESDIR})
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} "Makefile *.c *.html" ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.post.mk>
