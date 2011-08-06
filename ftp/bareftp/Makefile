@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	bareftp
-PORTVERSION=	0.3.7
+PORTVERSION=	0.3.8
 CATEGORIES=	ftp
 MASTER_SITES=	http://www.bareftp.org/release/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mono@FreeBSD.org
 COMMENT=	Ftp client made in C sharp
 
 GNU_CONFIGURE=	yes
