@@ -15,8 +15,6 @@ DISTNAME=	MKGIChessClub-${PORTVERSION}
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A chess playing server with a pure web interface
 
-RUN_DEPENDS=	mysql-server>=4:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
-
 OPTIONS=	GNUCHESS "Install gnuchess robot" on \
 		PHALANX	"Install phalanx robot" on
 
@@ -24,7 +22,8 @@ NO_BUILD=	yes
 
 SUB_FILES=	pkg-message
 
-USE_MYSQL=	yes
+USE_MYSQL=	server
+IGNORE_WITH_MYSQL=	323
 USE_PHP=	mysql pcre session
 USE_PYTHON=	yes
 
