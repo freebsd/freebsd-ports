@@ -17,7 +17,7 @@ MASTER_SITES=	\
 		ftp://ftp.u-aizu.ac.jp/pub/SciEng/nihongo/ftp.cc.monash.edu.au/ \
 		ftp://ftp.funet.fi/pub/culture/japan/mirrors/monash/pub/nihongo/ \
 		ftp://ftp.uni-duisburg.de/Mirrors/ftp.monash.edu.au/pub/nihongo/ \
-		ftp://ftp.cc.monash.edu.au/pub/nihongo/
+		ftp://ftp.monash.edu.au/pub/nihongo/
 EXTRACT_SUFX=
 DISTFILES=	${DICTFILES} ${SRCFILES} ${DOCFILES}
 
