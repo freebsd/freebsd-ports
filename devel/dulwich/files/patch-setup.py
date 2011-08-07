@@ -1,12 +1,13 @@
---- ./setup.py.orig     2010-03-03 16:33:52.000000000 +0100
-+++ ./setup.py  2010-03-03 21:13:31.000000000 +0100
-@@ -3,8 +3,5 @@
- # Copyright (C) 2008-2010 Jelmer Vernooij <jelmer@samba.org>
-
+--- ./setup.py.orig	2011-08-07 14:43:22.000000000 +0200
++++ ./setup.py	2011-08-07 19:49:46.126136349 +0200
+@@ -4,8 +4,4 @@
+ 
 -try:
 -    from setuptools import setup, Extension
+-    has_setuptools = True
 -except ImportError:
 -    from distutils.core import setup, Extension
+-    has_setuptools = False
 +from distutils.core import setup, Extension
++has_setuptools = False
  from distutils.core import Distribution
-
