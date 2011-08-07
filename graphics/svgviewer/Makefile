@@ -9,7 +9,7 @@ PORTNAME=	svgviewer
 PORTVERSION=	0.2.0
 PORTREVISION=	5
 CATEGORIES=	graphics gnustep
-MASTER_SITES=	http://web.telia.com/~u42308495/alex/
+MASTER_SITES=	http://gnu.ethz.ch/debian/svgviewer/
 DISTNAME=	SVGViewer-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
