@@ -10,9 +10,7 @@ PORTVERSION=	1.3
 PORTREVISION=	2
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.openjpeg.org/ \
-		http://openjpeg.googlecode.com/files/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	trasz
+		http://openjpeg.googlecode.com/files/
 DISTNAME=	${PORTNAME}_v${PORTVERSION:S/./_/g}
 
 MAINTAINER=	dinoex@FreeBSD.org
