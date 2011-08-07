@@ -167,7 +167,7 @@ USE_GNUSTEP_LOCAL_APPS+=	\
 	Waiho:ftp/waiho \
 	Affiche:deskutils/affiche \
 	ProjectManager:devel/projectmanager \
-	GMastermind2:games/gmastermind \
+	GMastermind:games/gmastermind \
 	Jigsaw:games/jigsaw \
 	Ticker:www/gnustep-ticker \
 	NoteBook:deskutils/gnustep-notebook \
