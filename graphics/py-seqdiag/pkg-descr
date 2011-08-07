@@ -1,0 +1,7 @@
+`seqdiag` generate sequence-diagram image file from spec-text file.
+
+Features
+  * Generate sequence-diagram from dot like text (basic feature).
+  * Multilingualization for node-label (utf-8 only).
+
+WWW:	http://blockdiag.com/seqdiag/build/html/
