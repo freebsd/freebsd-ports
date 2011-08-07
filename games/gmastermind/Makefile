@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gmastermind
-PORTVERSION=	0.2
-PORTREVISION=	2
+PORTVERSION=	0.6
 CATEGORIES=	games gnustep
-MASTER_SITES=	http://www.gnustep.it/marko/GMastermind/
-DISTNAME=	GMastermind2
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	gap
+DISTNAME=	GMastermind-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	The well-known mastermind game
