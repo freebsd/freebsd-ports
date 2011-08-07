@@ -55,6 +55,9 @@ bin/dulwich
 %%PYTHON_SITELIBDIR%%/dulwich/server.py
 %%PYTHON_SITELIBDIR%%/dulwich/server.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/server.pyo
+%%PYTHON_SITELIBDIR%%/dulwich/walk.py
+%%PYTHON_SITELIBDIR%%/dulwich/walk.pyc
+%%PYTHON_SITELIBDIR%%/dulwich/walk.pyo
 %%PYTHON_SITELIBDIR%%/dulwich/web.py
 %%PYTHON_SITELIBDIR%%/dulwich/web.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/web.pyo
@@ -103,9 +106,15 @@ bin/dulwich
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_server.py
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_server.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_server.pyo
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_walk.py
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_walk.pyc
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_walk.pyo
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_web.py
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_web.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/tests/test_web.pyo
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_utils.py
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_utils.pyc
+%%PYTHON_SITELIBDIR%%/dulwich/tests/test_utils.pyo
 %%PYTHON_SITELIBDIR%%/dulwich/tests/utils.py
 %%PYTHON_SITELIBDIR%%/dulwich/tests/utils.pyc
 %%PYTHON_SITELIBDIR%%/dulwich/tests/utils.pyo
