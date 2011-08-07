@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	scrotwm
-PORTVERSION=	0.9.32
+PORTVERSION=	0.9.33
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://opensource.conformal.com/snapshots/scrotwm/
 EXTRACT_SUFX=	.tgz
