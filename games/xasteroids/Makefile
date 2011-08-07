@@ -9,14 +9,11 @@ PORTNAME=	xasteroids
 PORTVERSION=	5.0
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.opengroup.org/pub/ftp.x.org/R5contrib/
+MASTER_SITES=	ftp://ftp.x.org/R5contrib/
 DISTFILES=	xasteroids.sh.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 based asteroids style arcade game
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
 
 USE_IMAKE=	yes
 USE_XORG=	x11 xext
