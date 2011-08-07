@@ -756,6 +756,7 @@
     SUBDIR += pvmpov
     SUBDIR += py-PyX
     SUBDIR += py-aafigure
+    SUBDIR += py-actdiag
     SUBDIR += py-amanith
     SUBDIR += py-blockdiag
     SUBDIR += py-cairo
