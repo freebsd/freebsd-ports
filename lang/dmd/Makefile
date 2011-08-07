@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dmd
-PORTVERSION=	1.068
+PORTVERSION=	1.069
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -15,7 +15,6 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Official compiler for the D 1.0 programming language
 
 NO_PACKAGE=	Packages are not validation-tested by the developer
-ONLY_FOR_ARCHS=	i386
 USE_ZIP=	yes
 MAN1=		dmd.1
 MAN5=		dmd.conf.5

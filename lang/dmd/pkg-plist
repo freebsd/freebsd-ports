@@ -51,6 +51,9 @@ include/d/phobos/std/c/linux/pthread.d
 include/d/phobos/std/c/linux/socket.d
 include/d/phobos/std/c/locale.d
 include/d/phobos/std/c/math.d
+include/d/phobos/std/c/openbsd/openbsd.d
+include/d/phobos/std/c/openbsd/pthread.d
+include/d/phobos/std/c/openbsd/socket.d
 include/d/phobos/std/c/osx/dyld.d
 include/d/phobos/std/c/osx/getsect.d
 include/d/phobos/std/c/osx/loader.d
@@ -170,6 +173,7 @@ include/d/phobos/unittest.d
 @dirrm include/d/phobos/std/c/solaris
 @dirrm include/d/phobos/std/c/posix
 @dirrm include/d/phobos/std/c/osx
+@dirrm include/d/phobos/std/c/openbsd
 @dirrm include/d/phobos/std/c/linux
 @dirrm include/d/phobos/std/c/freebsd
 @dirrm include/d/phobos/std/c
