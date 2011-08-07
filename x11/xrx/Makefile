@@ -19,4 +19,8 @@ USE_AUTOTOOLS=	libtool
 
 MAN1=		xrx.1 libxrx.1
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|mozilla-plugin|disabled-libxul-plugin|g' \
+		${WRKSRC}/configure
+
 .include <bsd.port.mk>
