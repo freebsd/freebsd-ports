@@ -9,7 +9,8 @@ PORTNAME=	replex
 PORTVERSION=	0.1.6.8
 PORTEPOCH=	1
 CATEGORIES=	multimedia
-MASTER_SITES=	http://www.metzlerbros.org/dvb/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=dinoex
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Remultiplex an MPEG2 TS into a PS for DVD
