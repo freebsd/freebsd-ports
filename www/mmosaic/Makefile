@@ -19,6 +19,7 @@ COMMENT=	Web browser based on Mosaic, but with many modernizations
 
 DEPRECATED=	No more public distfiles
 EXPIRATION_DATE=	2011-09-01
+BROKEN=		fails to fetch
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png
