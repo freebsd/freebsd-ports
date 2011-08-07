@@ -9,7 +9,8 @@ PORTNAME=	knews
 PORTVERSION=	1.0b.1
 PORTREVISION=	11
 CATEGORIES=	news
-MASTER_SITES=	http://www.matematik.su.se/~kjj/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=dinoex
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A threaded nntp newsreader for X
