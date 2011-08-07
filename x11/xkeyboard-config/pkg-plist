@@ -379,5 +379,5 @@ share/X11/xkb/xkbcomp
 @dirrm share/X11/xkb/geometry
 @dirrm share/X11/xkb/compat
 @dirrm share/X11/xkb
-@dirrm share/X11
+@dirrmtry share/X11
 @dirrmtry var/lib/xkb

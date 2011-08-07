@@ -7,7 +7,7 @@
 
 PORTNAME=	xkeyboard-config
 PORTVERSION=	1.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11
 MASTER_SITES=	http://xlibs.freedesktop.org/xkbdesc/
 DISTNAME=	xkeyboard-config-${PORTVERSION}
@@ -23,9 +23,9 @@ USE_GNOME=	intlhack
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-xkb-base=${PREFIX}/share/X11/xkb \
-			--with-xkb-rules-symlink=xorg
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+		--with-xkb-rules-symlink=xorg
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-nls --with-included-gettext
