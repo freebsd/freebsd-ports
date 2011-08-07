@@ -2,6 +2,7 @@ GNUstep/Local/Applications/Jigsaw.app/Jigsaw
 GNUstep/Local/Applications/Jigsaw.app/Resources/GPuzzle2.tiff
 GNUstep/Local/Applications/Jigsaw.app/Resources/Info-gnustep.plist
 GNUstep/Local/Applications/Jigsaw.app/Resources/Jigsaw.desktop
+GNUstep/Local/Applications/Jigsaw.app/Resources/fractal.tiff
 GNUstep/Local/Applications/Jigsaw.app/stamp.make
 GNUstep/Local/Tools/Jigsaw
 @dirrm GNUstep/Local/Applications/Jigsaw.app/Resources

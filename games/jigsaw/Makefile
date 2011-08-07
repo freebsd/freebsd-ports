@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	jigsaw
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.8
 CATEGORIES=	games gnustep
-MASTER_SITES=	http://www.gnustep.it/marko/GPuzzle2/
-DISTNAME=	Jigsaw
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	gap
+DISTNAME=	Jigsaw-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Simulates a jigsaw puzzle and illustrates the use of clipping paths
