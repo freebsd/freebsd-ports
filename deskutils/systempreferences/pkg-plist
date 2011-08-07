@@ -13,7 +13,6 @@ GNUstep/System/Library/Bundles/Defaults.prefPane/Resources/English.lproj/Default
 GNUstep/System/Library/Bundles/Defaults.prefPane/Resources/English.lproj/Defaults.gorm/objects.gorm
 GNUstep/System/Library/Bundles/Defaults.prefPane/Resources/English.lproj/Defaults.plist
 GNUstep/System/Library/Bundles/Defaults.prefPane/Resources/Info-gnustep.plist
-GNUstep/System/Library/Bundles/Defaults.prefPane/Resources/Info.plist
 GNUstep/System/Library/Bundles/Defaults.prefPane/stamp.make
 GNUstep/System/Library/Bundles/FileSystem.prefPane/FileSystem
 GNUstep/System/Library/Bundles/FileSystem.prefPane/Resources/English.lproj/FileSystem.gorm/data.classes
@@ -21,21 +20,35 @@ GNUstep/System/Library/Bundles/FileSystem.prefPane/Resources/English.lproj/FileS
 GNUstep/System/Library/Bundles/FileSystem.prefPane/Resources/English.lproj/FileSystem.gorm/objects.gorm
 GNUstep/System/Library/Bundles/FileSystem.prefPane/Resources/FileSystem.tiff
 GNUstep/System/Library/Bundles/FileSystem.prefPane/Resources/Info-gnustep.plist
-GNUstep/System/Library/Bundles/FileSystem.prefPane/Resources/Info.plist
 GNUstep/System/Library/Bundles/FileSystem.prefPane/stamp.make
+GNUstep/System/Library/Bundles/FontModule.prefPane/FontModule
+GNUstep/System/Library/Bundles/FontModule.prefPane/Resources/English.lproj/.gwdir
+GNUstep/System/Library/Bundles/FontModule.prefPane/Resources/English.lproj/FontModule.gorm/data.classes
+GNUstep/System/Library/Bundles/FontModule.prefPane/Resources/English.lproj/FontModule.gorm/data.info
+GNUstep/System/Library/Bundles/FontModule.prefPane/Resources/English.lproj/FontModule.gorm/objects.gorm
+GNUstep/System/Library/Bundles/FontModule.prefPane/Resources/FontModule.tiff
+GNUstep/System/Library/Bundles/FontModule.prefPane/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/FontModule.prefPane/stamp.make
 GNUstep/System/Library/Bundles/ModifierKeys.prefPane/ModifierKeys
 GNUstep/System/Library/Bundles/ModifierKeys.prefPane/Resources/English.lproj/ModifierKeys.gorm/data.classes
 GNUstep/System/Library/Bundles/ModifierKeys.prefPane/Resources/English.lproj/ModifierKeys.gorm/data.info
 GNUstep/System/Library/Bundles/ModifierKeys.prefPane/Resources/English.lproj/ModifierKeys.gorm/objects.gorm
 GNUstep/System/Library/Bundles/ModifierKeys.prefPane/Resources/Info-gnustep.plist
-GNUstep/System/Library/Bundles/ModifierKeys.prefPane/Resources/Info.plist
 GNUstep/System/Library/Bundles/ModifierKeys.prefPane/Resources/ModifierKeys.tiff
 GNUstep/System/Library/Bundles/ModifierKeys.prefPane/stamp.make
+GNUstep/System/Library/Bundles/Themes.prefPane/Resources/English.lproj/Themes.gorm/data.classes
+GNUstep/System/Library/Bundles/Themes.prefPane/Resources/English.lproj/Themes.gorm/data.info
+GNUstep/System/Library/Bundles/Themes.prefPane/Resources/English.lproj/Themes.gorm/objects.gorm
+GNUstep/System/Library/Bundles/Themes.prefPane/Resources/Info-gnustep.plist
+GNUstep/System/Library/Bundles/Themes.prefPane/Resources/Themes.tiff
+GNUstep/System/Library/Bundles/Themes.prefPane/Resources/gnustep_preview_%%MAJORVERSION%%28.tiff
+GNUstep/System/Library/Bundles/Themes.prefPane/Resources/no_preview.tiff
+GNUstep/System/Library/Bundles/Themes.prefPane/Themes
+GNUstep/System/Library/Bundles/Themes.prefPane/stamp.make
 GNUstep/System/Library/Bundles/TimeZone.prefPane/Resources/English.lproj/TimeZone.gorm/data.classes
 GNUstep/System/Library/Bundles/TimeZone.prefPane/Resources/English.lproj/TimeZone.gorm/data.info
 GNUstep/System/Library/Bundles/TimeZone.prefPane/Resources/English.lproj/TimeZone.gorm/objects.gorm
 GNUstep/System/Library/Bundles/TimeZone.prefPane/Resources/Info-gnustep.plist
-GNUstep/System/Library/Bundles/TimeZone.prefPane/Resources/Info.plist
 GNUstep/System/Library/Bundles/TimeZone.prefPane/Resources/TimeZone.tiff
 GNUstep/System/Library/Bundles/TimeZone.prefPane/Resources/map.tiff
 GNUstep/System/Library/Bundles/TimeZone.prefPane/Resources/zones.db
@@ -45,7 +58,6 @@ GNUstep/System/Library/Bundles/Volumes.prefPane/Resources/English.lproj/Volumes.
 GNUstep/System/Library/Bundles/Volumes.prefPane/Resources/English.lproj/Volumes.gorm/data.info
 GNUstep/System/Library/Bundles/Volumes.prefPane/Resources/English.lproj/Volumes.gorm/objects.gorm
 GNUstep/System/Library/Bundles/Volumes.prefPane/Resources/Info-gnustep.plist
-GNUstep/System/Library/Bundles/Volumes.prefPane/Resources/Info.plist
 GNUstep/System/Library/Bundles/Volumes.prefPane/Resources/Volumes.tiff
 GNUstep/System/Library/Bundles/Volumes.prefPane/Volumes
 GNUstep/System/Library/Bundles/Volumes.prefPane/stamp.make
@@ -58,10 +70,18 @@ GNUstep/System/Tools/SystemPreferences
 @dirrm GNUstep/System/Library/Bundles/TimeZone.prefPane/Resources/English.lproj
 @dirrm GNUstep/System/Library/Bundles/TimeZone.prefPane/Resources
 @dirrm GNUstep/System/Library/Bundles/TimeZone.prefPane
+@dirrm GNUstep/System/Library/Bundles/Themes.prefPane/Resources/English.lproj/Themes.gorm
+@dirrm GNUstep/System/Library/Bundles/Themes.prefPane/Resources/English.lproj
+@dirrm GNUstep/System/Library/Bundles/Themes.prefPane/Resources
+@dirrm GNUstep/System/Library/Bundles/Themes.prefPane
 @dirrm GNUstep/System/Library/Bundles/ModifierKeys.prefPane/Resources/English.lproj/ModifierKeys.gorm
 @dirrm GNUstep/System/Library/Bundles/ModifierKeys.prefPane/Resources/English.lproj
 @dirrm GNUstep/System/Library/Bundles/ModifierKeys.prefPane/Resources
 @dirrm GNUstep/System/Library/Bundles/ModifierKeys.prefPane
+@dirrm GNUstep/System/Library/Bundles/FontModule.prefPane/Resources/English.lproj/FontModule.gorm
+@dirrm GNUstep/System/Library/Bundles/FontModule.prefPane/Resources/English.lproj
+@dirrm GNUstep/System/Library/Bundles/FontModule.prefPane/Resources
+@dirrm GNUstep/System/Library/Bundles/FontModule.prefPane
 @dirrm GNUstep/System/Library/Bundles/FileSystem.prefPane/Resources/English.lproj/FileSystem.gorm
 @dirrm GNUstep/System/Library/Bundles/FileSystem.prefPane/Resources/English.lproj
 @dirrm GNUstep/System/Library/Bundles/FileSystem.prefPane/Resources
