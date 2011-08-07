@@ -69,6 +69,7 @@
     SUBDIR += fxtv
     SUBDIR += gaupol
     SUBDIR += gavl
+    SUBDIR += gcap
     SUBDIR += gcfilms
     SUBDIR += gdialog
     SUBDIR += gdvrecv
