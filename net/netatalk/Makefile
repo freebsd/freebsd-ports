@@ -7,7 +7,7 @@
 
 PORTNAME=	netatalk
 PORTVERSION=	2.2.0
-PORTREVISION=	1
+PORTREVISION=	2
 PORTEPOCH=	1
 CATEGORIES=	net print
 MASTER_SITES=	SF/netatalk/netatalk/2.2
@@ -105,6 +105,12 @@ PLIST_SUB+=		TIMELORD="@comment "
 CONFIGURE_ARGS+=	--enable-zeroconf=${LOCALBASE}
 LIB_DEPENDS+=		avahi-client.3:${PORTSDIR}/net/avahi-app
 USE_GNOME+=		pkgconfig
+.endif
+
+.if ${OSVERSION} < 800031
+PLIST_SUB+=	ATFUNCS="@comment "
+.else
+PLIST_SUB+=	ATFUNCS=""
 .endif
 
 post-patch:
