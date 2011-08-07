@@ -9,8 +9,9 @@ PORTNAME=	charmap
 PORTVERSION=	0.2
 PORTREVISION=	2
 CATEGORIES=	deskutils gnustep
-MASTER_SITES=	http://www.nongnu.org/charmap/ \
-		${MASTER_SITE_GNUSTEP_CH}
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITES=	${MASTER_SITE_GNUSTEP_CH}
+MASTER_SITE_SUBDIR=	charmap
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Character map for GNUstep
