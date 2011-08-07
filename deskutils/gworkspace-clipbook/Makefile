@@ -9,7 +9,7 @@ PORTNAME=	gworkspace
 PORTVERSION=	0.8.3
 PORTREVISION=	2
 CATEGORIES=	deskutils gnustep
-MASTER_SITES=	http://io.debian.net/~tar/debian/gworkspace/
+MASTER_SITES=	http://debian.uni-duisburg-essen.de/misc/GNUstep/Apps/GWorkspace/
 PKGNAMESUFFIX=	-clipbook${PKGNAMESUFFIX2}
 
 MAINTAINER=	dinoex@FreeBSD.org
