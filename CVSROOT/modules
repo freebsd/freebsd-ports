@@ -4738,7 +4738,6 @@ gnustep-ftp                     ports/ftp/gnustep-ftp
 gnustep-gui                     ports/x11-toolkits/gnustep-gui
 gnustep-guile                   ports/lang/gnustep-guile
 gnustep-ladder                  ports/games/gnustep-ladder
-gnustep-libobjc                 ports/lang/gnustep-libobjc
 gnustep-make                    ports/devel/gnustep-make
 gnustep-mplayer                 ports/multimedia/gnustep-mplayer
 gnustep-notebook                ports/deskutils/gnustep-notebook
@@ -7268,6 +7267,9 @@ ko-man-doc                      ports/korean/man-doc
 ko-mizifont                     ports/korean/mizifont
 ko-munhwafonts-cid              ports/korean/munhwafonts-cid
 ko-nabi                         ports/korean/nabi
+ko-nanumcoding-ttf              ports/korean/nanumcoding-ttf
+ko-nanumfonts-otf               ports/korean/nanumfonts-otf
+ko-nanumfonts-ttf               ports/korean/nanumfonts-ttf
 ko-nhpf                         ports/korean/nhpf
 ko-pgp.language                 ports/korean/pgp.language
 ko-php_doc                      ports/korean/php_doc
@@ -13722,6 +13724,7 @@ p5-Plack-App-Proxy              ports/www/p5-Plack-App-Proxy
 p5-Plack-Handler-AnyEvent-HTTPD  ports/www/p5-Plack-Handler-AnyEvent-HTTPD
 p5-Plack-Handler-AnyEvent-ReverseHTTP  ports/www/p5-Plack-Handler-AnyEvent-ReverseHTTP
 p5-Plack-Handler-AnyEvent-SCGI  ports/www/p5-Plack-Handler-AnyEvent-SCGI
+p5-Plack-Handler-CLI            ports/www/p5-Plack-Handler-CLI
 p5-Plack-Handler-SCGI           ports/www/p5-Plack-Handler-SCGI
 p5-Plack-Middleware-AMF         ports/www/p5-Plack-Middleware-AMF
 p5-Plack-Middleware-AddDefaultCharset  ports/www/p5-Plack-Middleware-AddDefaultCharset
@@ -17942,6 +17945,7 @@ p5-plack-app-proxy              ports/www/p5-Plack-App-Proxy
 p5-plack-handler-anyevent-httpd  ports/www/p5-Plack-Handler-AnyEvent-HTTPD
 p5-plack-handler-anyevent-reversehttp  ports/www/p5-Plack-Handler-AnyEvent-ReverseHTTP
 p5-plack-handler-anyevent-scgi  ports/www/p5-Plack-Handler-AnyEvent-SCGI
+p5-plack-handler-cli            ports/www/p5-Plack-Handler-CLI
 p5-plack-handler-scgi           ports/www/p5-Plack-Handler-SCGI
 p5-plack-middleware-adddefaultcharset  ports/www/p5-Plack-Middleware-AddDefaultCharset
 p5-plack-middleware-amf         ports/www/p5-Plack-Middleware-AMF
@@ -23390,10 +23394,12 @@ rubygem-ai4r                    ports/science/rubygem-ai4r
 rubygem-allison                 ports/devel/rubygem-allison
 rubygem-amazon-ecs              ports/www/rubygem-amazon-ecs
 rubygem-amqp                    ports/net/rubygem-amqp
+rubygem-amqp-utils              ports/net/rubygem-amqp-utils
 rubygem-analogger               ports/devel/rubygem-analogger
 rubygem-anemone                 ports/www/rubygem-anemone
 rubygem-app_config              ports/devel/rubygem-app_config
 rubygem-archive-tar-minitar     ports/archivers/rubygem-archive-tar-minitar
+rubygem-archive-zip             ports/archivers/rubygem-archive-zip
 rubygem-arel                    ports/databases/rubygem-arel
 rubygem-arrayfields             ports/devel/rubygem-arrayfields
 rubygem-augeas                  ports/textproc/rubygem-augeas
@@ -23524,6 +23530,7 @@ rubygem-imagesize               ports/graphics/rubygem-imagesize
 rubygem-ini                     ports/textproc/rubygem-ini
 rubygem-inline                  ports/devel/rubygem-inline
 rubygem-innate                  ports/www/rubygem-innate
+rubygem-io-like                 ports/devel/rubygem-io-like
 rubygem-ipaddress               ports/net/rubygem-ipaddress
 rubygem-jammit                  ports/devel/rubygem-jammit
 rubygem-jdbc-mysql              ports/databases/rubygem-jdbc-mysql
@@ -25744,6 +25751,7 @@ uim-el-emacs22                  ports/textproc/uim-el-emacs22
 uim-el-xemacs21-mule            ports/textproc/uim-el-xemacs21-mule
 uim-gnome                       ports/textproc/uim-gnome
 uim-gtk                         ports/textproc/uim-gtk
+uim-gtk3                        ports/textproc/uim-gtk3
 uim-kde                         ports/textproc/uim-kde
 uim-kde4                        ports/textproc/uim-kde4
 uim-m17nlib                     ports/textproc/uim-m17nlib
@@ -25955,6 +25963,7 @@ vdr-plugin-osdteletext          ports/multimedia/vdr-plugin-osdteletext
 vdr-plugin-reelchannelscan      ports/multimedia/vdr-plugin-reelchannelscan
 vdr-plugin-remote               ports/multimedia/vdr-plugin-remote
 vdr-plugin-skinenigmang         ports/multimedia/vdr-plugin-skinenigmang
+vdr-plugin-sleeptimer           ports/multimedia/vdr-plugin-sleeptimer
 vdr-plugin-softdevice           ports/multimedia/vdr-plugin-softdevice
 vdr-plugin-streamdev            ports/multimedia/vdr-plugin-streamdev
 vdr-plugin-ttxtsubs             ports/multimedia/vdr-plugin-ttxtsubs
