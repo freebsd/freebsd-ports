@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mythes
-PORTVERSION=	20101002
-PORTREVISION=	1
+PORTVERSION=	20110802
 CATEGORIES=	textproc
 MASTER_SITES=	http://openthes-es.berlios.de/download/
 PKGNAMEPREFIX=	es-
