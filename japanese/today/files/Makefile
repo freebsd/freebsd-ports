@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 CC ?= cc
-CFLAGS += -DTRANS -DMSG_STYLE -DINTERNAL_KYUREKI_TBL -D_T_SEARCH_CMDPATH=\"${PREFIX}/etc\" #-DUSE_TERMCAP
+CFLAGS += -DTRANS -DMSG_STYLE -DINTERNAL_KYUREKI_TBL -D_T_SEARCH_DEFPATHS=\"${PREFIX}/etc\" #-DUSE_TERMCAP
 LDLIBS = -lm #-ltermcap
 
 HFILES = cdefs.h chu68k.h cmsdos.h cunix.h cwin32.h extern.h
@@ -29,8 +29,8 @@ install: today calendar dayinfo
 	${BSD_INSTALL_DATA} today.cnf ${PREFIX}/etc
 	mkdir -p ${PREFIX}/share/today
 	${BSD_INSTALL_DATA} *.tbl ${PREFIX}/share/today
-	mkdir -p ${PREFIX}/share/doc/ja/today
-	${BSD_INSTALL_DATA} today.doc ${PREFIX}/share/doc/ja/today
+#	mkdir -p ${PREFIX}/share/doc/ja/today
+#	${BSD_INSTALL_DATA} today.doc ${PREFIX}/share/doc/ja/today
 
 calendar: $(OBJS_CAL)
 	$(CC) $(OBJS_CAL) $(LDLIBS) -o $@

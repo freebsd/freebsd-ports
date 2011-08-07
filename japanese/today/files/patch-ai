@@ -1,6 +1,6 @@
---- today.cnf.orig	Sun Mar 14 00:00:00 1999
-+++ today.cnf	Sun Feb 13 15:59:51 2000
-@@ -182,10 +182,10 @@
+--- today.cnf.orig	2011-04-16 21:23:23.000000000 +0900
++++ today.cnf	2011-04-16 21:25:05.000000000 +0900
+@@ -200,10 +200,10 @@
  #
  pager =				# 外部ページャーの指定
  				# 指定しなければ、内蔵ページャー使用
@@ -12,13 +12,13 @@
 +pause_last = no		# 内蔵ページャー 表示終了後一時停止制御
  				#   yes 一時停止
  				#  *no  停止しない
- outputfile = %c%y%m%d.tdy	# 出力ファイル名 (筑湊拂:%c%y%m%d.tdy/%p.tdy)
-@@ -369,7 +369,7 @@
+ outputfile = %c%y%m%d.tdy	# 出力ファイル名 (デフォルト:%c%y%m%d.tdy/%p.tdy)
+@@ -404,7 +404,7 @@
  #
  $common				# 以降 共通環境定義部
  
--#table_path = c:/bin/tbl	# 各テーブルの検索パス名
-+table_path = %%PREFIX%%/share/today	# 各テーブルの検索パス名
+-table_path = %ExecCmdPath%/tbl	# 各テーブルの検索パス名
++table_path = %%DATADIR%%	# 各テーブルの検索パス名
  				# ';' で区切り複数指定可能
- 				# 未定義の場合、環境変数 TODAYTBL の場所
- 
+ 				# 未定義の場合、環境変数 TODAYTBL の場
+ #
