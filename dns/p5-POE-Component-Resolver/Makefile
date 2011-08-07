@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	POE-Component-Resolver
-PORTVERSION=	0.912
+PORTVERSION=	0.913
 CATEGORIES=	dns devel perl5
-MASTER_SITES=	CPAN/${PORTNAME:C/-.*//}/RCAPUTO
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:RCAPUTO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	freebsd@beardz.net
 COMMENT=	A non-blocking getaddrinfo() resolver
 
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 BUILD_DEPENDS=	p5-POE>=1.311:${PORTSDIR}/devel/p5-POE \
 		p5-Scalar-List-Utils>=1.23:${PORTSDIR}/lang/p5-Scalar-List-Utils \
