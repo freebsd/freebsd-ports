@@ -10,7 +10,7 @@ PORTVERSION=	1.8m
 PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://ftp.gmd.de/if-archive/infocom/interpreters/itf/
+		http://ftp.giga.or.at/pub/ifarchive/interpreters-infocom-zcode/old/itf/
 MASTER_SITE_SUBDIR=	mph
 DISTNAME=	unix8m
 EXTRACT_SUFX=	.tgz
