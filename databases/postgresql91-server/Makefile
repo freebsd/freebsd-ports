@@ -90,8 +90,6 @@ USE_OPENSSL=	yes
 CONFIGURE_ARGS+=--with-openssl
 .endif
 
-.include <bsd.port.pre.mk>
-
 .if !defined(SLAVE_ONLY)
 OPTIONS+=	DTRACE "Build with DTrace probes (server only)" off
 OPTIONS+=	PAM "Build with PAM support (server only)" off
@@ -119,6 +117,8 @@ OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" on
 #LIB_DEPENDS+=	icudata.46:${PORTSDIR}/devel/icu
 #EXTRA_PATCHES+=	${FILESDIR}/extra-patch-icu4
 #.  endif
+
+.include <bsd.port.pre.mk>
 
 PATCH_DIST_STRIP=-p1
 
