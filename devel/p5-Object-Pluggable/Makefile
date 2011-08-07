@@ -9,13 +9,17 @@ PORTNAME=	Object-Pluggable
 PORTVERSION=	1.29
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:HINRIK
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	freebsd@beardz.net
 COMMENT=	A base class for creating plugin-enabled objects
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
