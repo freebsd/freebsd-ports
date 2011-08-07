@@ -41,6 +41,10 @@ LIB_DEPENDS+=	lzo2.2:${PORTSDIR}/archivers/lzo2
 SUB_FILES=	pkg-message pkg-req
 SUB_LIST+=	OSVERSION=${OSVERSION}
 
+.if defined(PACKAGE_BUILDING)
+WITHOUT_CHECK=	yes
+.endif
+
 .include <bsd.port.pre.mk>
 
 .ifdef (LOG_OPENVPN)
