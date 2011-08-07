@@ -9,9 +9,9 @@ PORTNAME=	paje
 PORTVERSION=	1.97
 PORTREVISION=	2
 CATEGORIES=	science gnustep
-MASTER_SITES=	http://download.forge.objectweb.org/paje/ \
-		http://download.zh.forge.objectweb.org/paje/
+MASTER_SITES=	SF/${PORTNAME}/Releases
 DISTNAME=	Paje_${PORTVERSION}
+EXTRACT_SUFX=	.tar.gz.gz
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Generic visualization tool for GNUstep (Gantt chart and more)
