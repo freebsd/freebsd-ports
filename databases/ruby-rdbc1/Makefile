@@ -9,7 +9,7 @@ PORTNAME=	rdbc1
 PORTVERSION=	001103
 PORTREVISION=	2
 CATEGORIES=	databases ruby
-MASTER_SITES=	http://member.nifty.ne.jp/guion/SOFT/RDBC/ \
+MASTER_SITES=	http://homepage3.nifty.com/guion/SOFT/RDBC/ \
 		ftp://ftp.dinoex.de/pub/approved/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}_${PORTVERSION}
