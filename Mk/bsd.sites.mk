@@ -570,7 +570,7 @@ MASTER_SITE_GNUPG+= 	\
 .if !defined(IGNORE_MASTER_SITE_GNUSTEP)
 MASTER_SITE_GNUSTEP+= \
 	ftp://ftp.gnustep.org/pub/gnustep/%SUBDIR%/ \
-	ftp://ftp.easynet.nl/mirror/GNUstep/pub/gnustep/%SUBDIR%/
+	http://ftp.gnustep.org/pub/gnustep/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_GNUSTEP_CH)
