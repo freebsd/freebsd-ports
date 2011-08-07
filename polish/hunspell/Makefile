@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	hunspell
-PORTVERSION=	20110805
+PORTVERSION=	20110807
 CATEGORIES=	polish textproc
-MASTER_SITES=	http://sjp.pl/slownik/ort/
+MASTER_SITES=	http://sjp.pl/slownik/ort/ \
+		LOCAL/sunpoet/${PORTNAME}
 DISTNAME=	sjp-myspell-pl-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
