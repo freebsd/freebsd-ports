@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abi-compliance-checker
-PORTVERSION=	1.23.5
+PORTVERSION=	1.93.3
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://linuxtesting.org/downloads/ \
 		LOCAL/bf
@@ -43,7 +43,6 @@ post-patch:
 		-e "\|get_CmdPath(\"objdump\")|s|\"objdump\"|\"${OBJDUMP}\"|" \
 		-e "\|get_CmdPath(\"readelf\")|s|\"readelf\"|\"${READELF}\"|" \
 		-e "s| -shared|& ${PICFLAG}|g" \
-		-e "s|detailes|details|g" \
 		${WRKSRC}/${PORTNAME}.pl
 
 do-install:
@@ -56,7 +55,8 @@ check regression-test test: build
 .endif
 
 .ifndef(NOPORTDOCS)
-PORTDOCS=	Changes.html Descriptor.html Options.html Readme.html
+PORTDOCS=	Changes.html Descriptor.html OS_Compatibility.html \
+		OS_Compatibility_Examples.html Options.html Readme.html
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
