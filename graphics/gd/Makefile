@@ -10,7 +10,8 @@ PORTVERSION=	2.0.35
 PORTREVISION?=	7
 PORTEPOCH=	1
 CATEGORIES+=	graphics
-MASTER_SITES=	http://www.libgd.org/releases/
+MASTER_SITES=	http://www.libgd.org/releases/ \
+		${MASTER_SITE_RINGSERVER}
 MASTER_SITE_SUBDIR=	graphics/gd
 PKGNAMESUFFIX?=	${NOX11_SUFFIX}${PKGNAMESUFFIX2}
 
