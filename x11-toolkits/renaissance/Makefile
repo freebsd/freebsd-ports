@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	renaissance
-PORTVERSION=	0.8.0
-PORTREVISION=	2
+PORTVERSION=	0.9.0
 CATEGORIES=	x11-toolkits gnustep
-MASTER_SITES=	http://www.gnustep.it/Renaissance/ \
-		${MASTER_SITE_GNUSTEP_CH}
+MASTER_SITES=	http://www.gnustep.it/Renaissance/Download/
 DISTNAME=	Renaissance-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
