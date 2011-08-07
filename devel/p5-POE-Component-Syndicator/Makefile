@@ -15,13 +15,13 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	freebsd@beardz.net
 COMMENT=	A POE component base class which implements the Observer pattern
 
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	p5-POE>=1.311:${PORTSDIR}/devel/p5-POE \
 		p5-Object-Pluggable>=1.29:${PORTSDIR}/devel/p5-Object-Pluggable \
 		p5-Test-Simple>=0:${PORTSDIR}/devel/p5-Test-Simple
 RUN_DEPENDS:=	${BUILD_DEPENDS}
-
-LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
 
 PERL_CONFIGURE=	yes
 
