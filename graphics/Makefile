@@ -780,6 +780,7 @@
     SUBDIR += py-gvgen
     SUBDIR += py-imaging
     SUBDIR += py-ming
+    SUBDIR += py-nwdiag
     SUBDIR += py-openexr
     SUBDIR += py-opengl
     SUBDIR += py-paint

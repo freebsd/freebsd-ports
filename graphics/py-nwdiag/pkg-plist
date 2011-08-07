@@ -1,0 +1,48 @@
+bin/nwdiag
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/entry_points.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/not-zip-safe
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/requires.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/DiagramDraw.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/DiagramDraw.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/DiagramDraw.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/DiagramMetrix.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/DiagramMetrix.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/DiagramMetrix.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/__init__.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/__init__.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/builder.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/builder.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/builder.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/command.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/command.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/command.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/diagparser.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/diagparser.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/diagparser.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/elements.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/elements.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/elements.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_builder.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_builder.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_builder.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_generate_diagram.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_generate_diagram.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_generate_diagram.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_pep8.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_pep8.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests/test_pep8.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag_sphinxhelper.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag_sphinxhelper.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag_sphinxhelper.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinxcontrib_nwdiag.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinxcontrib_nwdiag.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/sphinxcontrib_nwdiag.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag/tests
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/nwdiag
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO
+@dirrm %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%
