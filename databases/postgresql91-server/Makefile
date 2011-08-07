@@ -117,8 +117,11 @@ OPTIONS+=	INTDATE "Builds with 64-bit date/time type (server)" on
 #LIB_DEPENDS+=	icudata.46:${PORTSDIR}/devel/icu
 #EXTRA_PATCHES+=	${FILESDIR}/extra-patch-icu4
 #.  endif
+.endif
 
 .include <bsd.port.pre.mk>
+
+.if !defined(SLAVE_ONLY)
 
 PATCH_DIST_STRIP=-p1
 
