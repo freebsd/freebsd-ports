@@ -7,12 +7,14 @@
 
 PORTNAME=	doinkd
 PORTVERSION=	0.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/idled/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A daemon that logs out idle users and those users hogging resources
+
+CFLAGS+=	-O0
 
 MANCOMPRESSED=	yes
 MAN5=		doinkd.cf.5
