@@ -69,6 +69,7 @@
     SUBDIR += clucene-contrib
     SUBDIR += coco
     SUBDIR += code2html
+    SUBDIR += codespell
     SUBDIR += cole
     SUBDIR += colordiff
     SUBDIR += confget
