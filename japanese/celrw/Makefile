@@ -6,28 +6,31 @@
 #
 
 PORTNAME=	celrw
-PORTVERSION=	0.12
+PORTVERSION=	0.16
 CATEGORIES=	japanese
 MASTER_SITES=	http://www.nurs.or.jp/~kurati/celrw/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cellular phone-number read/write tool (in Japan only)
 
-USE_AUTOTOOLS=	automake:env
 USE_BZIP2=	yes
-HAS_CONFIGURE=	yes
-ALL_TARGET=
+GNU_CONFIGURE=	yes
+MAKE_ARGS=	VERSION="${PORTVERSION}" OPTFLAGS="${CFLAGS}"
+ALL_TARGET=	${PORTNAME}
 
-pre-configure:
-	${RM} -f ${WRKSRC}/install.sh
-	${LN} -sf ${AUTOMAKE_DIR}/install-sh ${WRKSRC}/install-sh
-	${LN} -sf ${AUTOMAKE_DIR}/config.guess ${WRKSRC}/config.guess
-	${LN} -sf ${AUTOMAKE_DIR}/config.sub ${WRKSRC}/config.sub
+PORTDOCS=	README
+PLIST_FILES=	bin/celrw
+
+post-extract:
+.for file in config.guess config.sub install.sh
+	@${RM} -f ${WRKSRC}/${file}
+	@${TOUCH} ${WRKSRC}/${file}
+.endfor
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/celrw ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 

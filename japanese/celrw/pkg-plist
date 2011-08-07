@@ -1,3 +1,0 @@
-bin/celrw
-%%PORTDOCS%%share/doc/celrw/README
-%%PORTDOCS%%@dirrm share/doc/celrw
