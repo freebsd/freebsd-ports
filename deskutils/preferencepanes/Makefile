@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	preferencepanes
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.1.0
 CATEGORIES=	deskutils gnustep
-MASTER_SITES=	http://www.gnustep.it/enrico/system-preferences/
-DISTNAME=	systempreferences-${PORTVERSION}
+MASTER_SITES=	${MASTER_SITE_GNUSTEP}
+MASTER_SITE_SUBDIR=usr-apps
+DISTNAME=	SystemPreferences-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	PreferencePanes framework for GNUstep
@@ -25,5 +25,7 @@ DEFAULT_LIBVERSION=	1.0.0
 USE_GNUSTEP_LDCONFIG=	${GNUSTEP_SYSTEM_LIBRARIES}
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/PreferencePanes
+
+MAKE_ENV+=	GNUSTEP_INSTALLATION_DOMAIN=SYSTEM
 
 .include <bsd.port.mk>
