@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	cenon
-PORTVERSION=	3.83
+PORTVERSION=	3.8.3
 PORTREVISION=	2
 CATEGORIES=	graphics gnustep
-MASTER_SITES=	http://www.vhf-group.com/vhfInterservice/download/source/
+MASTER_SITES=	http://www.vhf-group.com/vhf-interservice/download/source/
 DISTNAME=	Cenon-${PORTVERSION}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 DIST_SUBDIR=	${PORTNAME}
@@ -25,7 +25,7 @@ USE_GNUSTEP_BUILD=	yes
 USE_GNUSTEP_INSTALL=	yes
 
 WRKSRC=		${WRKDIR}/Cenon
-FULLVERSION=	3.82
+FULLVERSION=	3.8.3
 CENON_LIB_DIR=	${GNUSTEP_LOCAL_ROOT}/Library/Cenon
 
 OPTIONS=	FULL_LIBRARY	"Install complete Cenon Library" off
