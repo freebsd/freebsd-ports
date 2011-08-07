@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	WebService-GData
-PORTVERSION=	0.0402
+PORTVERSION=	0.0408
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SHIRIRU
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Google data protocol v2 base object to inherit from
 
 BUILD_DEPENDS=	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
@@ -32,7 +32,12 @@ MAN3=	WebService::GData::Error.3 \
 	WebService::GData::Serialize.3 \
 	WebService::GData::YouTube::Constants.3 \
 	WebService::GData::YouTube::Doc::BrowserBasedUpload.3 \
+	WebService::GData::YouTube::Doc::GeneralOverview.3 \
+	WebService::GData::YouTube::Feed::Complaint.3 \
+	WebService::GData::YouTube::Feed::Friend.3 \
+	WebService::GData::YouTube::Feed::UserProfile.3 \
 	WebService::GData::YouTube::Feed::Video.3 \
+	WebService::GData::YouTube::StagingServer.3 \
 	WebService::GData::Constants.3 \
 	WebService::GData::Query.3 \
 	WebService::GData::YouTube::Query.3 \
