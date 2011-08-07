@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	gmines
-PORTVERSION=	0.1
-PORTREVISION=	2
+PORTVERSION=	0.2
 CATEGORIES=	games gnustep
-MASTER_SITES=	http://www.gnustep.it/marko/GMines/
-DISTNAME=	GMines
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	${MASTER_SITE_SAVANNAH}
+MASTER_SITE_SUBDIR=	gap
+DISTNAME=	GMines-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Well-known minesweeper game for GNUstep
