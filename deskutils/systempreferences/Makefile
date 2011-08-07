@@ -8,7 +8,8 @@
 PORTNAME=	systempreferences
 PORTVERSION=	1.1.0
 CATEGORIES=	deskutils gnustep
-MASTER_SITES=	ftp://ftp.gnustep.org/pub/gnustep/usr-apps/
+MASTER_SITES=	${MASTER_SITE_GNUSTEP}
+MASTER_SITE_SUBDIR=usr-apps
 DISTNAME=	SystemPreferences-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
