@@ -791,6 +791,7 @@
     SUBDIR += py-pyproj
     SUBDIR += py-qt4-svg
     SUBDIR += py-rabbyt
+    SUBDIR += py-seqdiag
     SUBDIR += py-sorl-thumbnail
     SUBDIR += py-soya3d
     SUBDIR += py-visual
