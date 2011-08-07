@@ -9,7 +9,8 @@ PORTNAME=	cartotheque
 PORTVERSION=	0.1
 PORTREVISION=	2
 CATEGORIES=	deskutils gnustep
-MASTER_SITES=	http://stefan.agentfarms.net/Download/GNUstep/Prototypes/
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=dinoex
 DISTNAME=	Cartotheque-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org
