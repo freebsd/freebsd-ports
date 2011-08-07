@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mythes
-PORTVERSION=	2011.08.01
+PORTVERSION=	2011.08.06
 CATEGORIES=	german textproc
 MASTER_SITES=	http://www.openthesaurus.de/export/
 DISTNAME=	Deutscher-Thesaurus
