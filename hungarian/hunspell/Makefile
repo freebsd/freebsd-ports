@@ -8,24 +8,24 @@
 PORTNAME=	hunspell
 PORTVERSION=	1.6.1
 CATEGORIES=	hungarian textproc
-MASTER_SITES=	SF/magyarispell/Magyar%20Ispell/${DICTVERSION}
+MASTER_SITES=	SF/magyarispell/Magyar%20Ispell/${PORTVERSION}
 DISTNAME=	hu_HU-${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
-COMMENT=	Hunspell hungarian dictionnary
+COMMENT=	Hunspell hungarian dictionary
+
+LICENSE=	GPLv2 LGPL21 MPL
+LICENSE_COMB=	dual
 
 NO_BUILD=	yes
-WRKSRC=	${WRKDIR}/hu_HU-${PORTVERSION}
+WRKSRC=		${WRKDIR}/hu_HU-${PORTVERSION}
 
-PLIST_FILES=	share/hunspell/hu_HU.dic \
-		share/hunspell/hu_HU.aff
-
-PLIST_DIRS=	share/hunspell
+PLIST_FILES=	%%DATADIR%%/hu_HU.aff \
+		%%DATADIR%%/hu_HU.dic
+PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
-	${MKDIR} ${PREFIX}/share/hunspell/
-	${INSTALL_DATA} ${WRKSRC}/hu_HU.dic \
-		${WRKSRC}/hu_HU.aff \
-		${PREFIX}/share/hunspell/
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/hu_HU.aff ${WRKSRC}/hu_HU.dic ${DATADIR}/
 
 .include <bsd.port.mk>
