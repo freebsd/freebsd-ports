@@ -9,14 +9,11 @@ PORTNAME=	typespeed
 PORTVERSION=	0.6.5
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	SF \
-		http://tobias.eyedacor.org/typespeed/
-
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Test your typing speed, and get your fingers\' CPS
 
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-highscoredir="/var/games/typespeed"
 
