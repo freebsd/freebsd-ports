@@ -6,11 +6,9 @@
 #
 
 PORTNAME=	grouch
-PORTVERSION=	20060713
-PORTREVISION=	2
+PORTVERSION=	20061120
 CATEGORIES=	net-im gnustep
-MASTER_SITES=	http://mail.rochester.edu/~asveikau/grouch/ \
-		${MASTER_SITE_GNUSTEP_CH}
+MASTER_SITES=	http://asveikau.ath.cx/projects/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org

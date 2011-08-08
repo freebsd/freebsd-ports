@@ -27,6 +27,7 @@ GNUstep/Local/Applications/Grouch.app/Resources/Oscar.bundle/Resources/English.l
 GNUstep/Local/Applications/Grouch.app/Resources/Oscar.bundle/Resources/English.lproj/SnacErrors.strings
 GNUstep/Local/Applications/Grouch.app/Resources/Oscar.bundle/Resources/Info-gnustep.plist
 GNUstep/Local/Applications/Grouch.app/Resources/Oscar.bundle/stamp.make
+GNUstep/Local/Applications/Grouch.app/Resources/PrefsEvents.gsmarkup
 GNUstep/Local/Applications/Grouch.app/Resources/README
 GNUstep/Local/Applications/Grouch.app/Resources/SetAwayMessage.gsmarkup
 GNUstep/Local/Applications/Grouch.app/Resources/SetProfile.gsmarkup
