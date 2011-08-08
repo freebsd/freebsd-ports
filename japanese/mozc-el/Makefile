@@ -1,4 +1,4 @@
-# New ports collection makefile for:	mozc-tool
+# New ports collection makefile for:	mozc-el
 # Date created:				26 June 2010
 # Whom:					TAKANO, Yuji
 #
@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	mozc-el
-PORTVERSION=	0.13.523.102
+PORTVERSION=	1.1.773.102
 CATEGORIES=	japanese textproc
-MASTER_SITES=	http://people.freebsd.org/~daichi/distfiles/
+MASTER_SITES=	http://mozc.googlecode.com/files/
 DISTNAME=	mozc-${PORTVERSION}
 
 MAINTAINER=	maho@FreeBSD.org
@@ -16,7 +16,8 @@ COMMENT=	Mozc for GNU Emacs
 
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed \
 		${LOCALBASE}/bin/grep:${PORTSDIR}/textproc/gnugrep \
-		gyp:${PORTSDIR}/devel/py-gyp-devel
+		gyp:${PORTSDIR}/devel/py-gyp-devel \
+		zinnia:${PORTSDIR}/japanese/zinnia
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		gtest.0:${PORTSDIR}/devel/googletest \
 		protobuf.7:${PORTSDIR}/devel/protobuf
@@ -27,8 +28,6 @@ USE_EMACS=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_PYTHON=	yes
-USE_QT_VER=	4
-QT_COMPONENTS=	gui dbus qmake_build moc_build uic_build rcc_build
 
 PLIST_FILES=	${EMACS_VERSION_SITE_LISPDIR}/mozc.el \
 		${EMACS_VERSION_SITE_LISPDIR}/mozc.elc \
@@ -67,8 +66,10 @@ do-build:
 	@cd ${WRKSRC}/; \
 		export BUILD_COMMAND=${GMAKE}; \
 		${PYTHON_CMD} build_mozc.py gyp --gypdir=${LOCALBASE}/bin; \
+		${PYTHON_CMD} build_mozc.py build_tools \
+			-c ${BUILD_MODE}; \
 		${PYTHON_CMD} build_mozc.py build \
-			-c ${BUILD_MODE} --qtdir=${QT_LIBDIR} \
+			-c ${BUILD_MODE} \
 			unix/emacs/emacs.gyp:mozc_emacs_helper
 	@cd ${WRKSRC}/unix/emacs; \
 		${EMACS_CMD} -batch -q -no-site-file -no-init-file \
