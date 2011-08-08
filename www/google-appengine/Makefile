@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-appengine
-PORTVERSION=	1.5.1
+PORTVERSION=	1.5.2
 PORTREVISION=	0
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -25,8 +25,6 @@ MANUAL_PACKAGE_BUILD=		uses Python 2.5
 
 PROJECTHOST=	googleappengine
 
-NO_BUILD=	yes
-
 USE_PYTHON=	2.5
 USE_ZIP=	yes
 USE_GETTEXT=	yes
@@ -42,16 +40,16 @@ XARGS_ARGS=	-0
 REINPLACE_ARGS=	-i.bak -e 's,/usr/bin/env python,&${PYTHON_VER},'
 
 GAEDATADIR=	google lib new_project_template templates tools
-GAEDOCSREL=	20110620
-GAESCRIPTS=	appcfg.py bulkload_client.py bulkloader.py dev_appserver.py remote_api_shell.py
+GAEDOCSREL=	20110721
+GAESCRIPTS=	appcfg bulkload_client bulkloader dev_appserver gen_protorpc remote_api_shell
 
 post-patch:
 	@${FIND} ${FIND_FILES} | ${XARGS} ${XARGS_ARGS} ${REINPLACE_CMD}
 	@${FIND} ${FIND_FILES_BAK} -delete
-.if !defined(NOPORTDOCS)
-	@cd ${WRKDIR}/google-appengine-docs-${GAEDOCSREL}/appengine/docs && \
-	${RM} -R java]java java\  python\  python\ java
-.endif
+
+do-build:
+	${PYTHON_CMD} -m compileall ${WRKSRC} || true
+	${PYTHON_CMD} -OO -m compileall ${WRKSRC} || true
 
 do-install:
 	${MKDIR} ${DATADIR}
@@ -67,8 +65,11 @@ do-install:
 	cd ${WRKDIR}/google-appengine-docs-${GAEDOCSREL} && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
 .for S in ${GAESCRIPTS}
-	${INSTALL_SCRIPT} ${WRKSRC}/${S} ${DATADIR}
-	${LN} ${LN_OPTS} ${DATADIR}/${S} ${PREFIX}/bin/${S}
+.  for EXT in py pyc pyo
+	${INSTALL_SCRIPT} ${WRKSRC}/${S}.${EXT} ${DATADIR}
+	${LN} ${LN_OPTS} ${DATADIR}/${S}.${EXT} ${PREFIX}/bin/${S}.${EXT}
+.  endfor
+
 .endfor
 	${INSTALL_DATA} ${WRKSRC}/VERSION ${DATADIR}
 
