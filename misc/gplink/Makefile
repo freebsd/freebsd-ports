@@ -14,8 +14,16 @@ MASTER_SITES=	http://gp2x.org/gp32/gplink/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GP32 USB linker tool
 
-USE_GMAKE=	yes
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
+
+USE_GMAKE=	yes
+MAKE_ARGS=	CC="${CC}" \
+		CFLAGS="${CFLAGS} ${USB_CFLAGS}" \
+		LDFLAGS="${USB_LDFLAGS}"
+MAKE_JOBS_SAFE=	yes
 
 PLIST_FILES=	bin/gplink
 
@@ -23,14 +31,11 @@ PLIST_FILES=	bin/gplink
 
 .if ${OSVERSION} < 800069
 LIB_DEPENDS+=	usb-0.1.8:${PORTSDIR}/devel/libusb
-.endif
-
-post-patch:
-	@${REINPLACE_CMD} -e 's/^\(CC[^g]*\)gcc$$/\1${CC}/' ${WRKSRC}/Makefile
-.if ${OSVERSION} >= 800069
-	@${REINPLACE_CMD} -E -e 's,`libusb-config --cflags`,,g' \
-		-e 's,`libusb-config --libs`,-lusb,g' \
-		${WRKSRC}/Makefile
+USB_CFLAGS=	`libusb-config --cflags`
+USB_LDFLAGS=	`libusb-config --libs`
+.else
+USB_CFLAGS=	# none
+USB_LDFLAGS=	-lusb
 .endif
 
 do-install:
