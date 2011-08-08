@@ -233,6 +233,7 @@
     SUBDIR += flasher
     SUBDIR += flashrom
     SUBDIR += flexbackup
+    SUBDIR += flock
     SUBDIR += flog
     SUBDIR += flyback
     SUBDIR += fonteditfs
