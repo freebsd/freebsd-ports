@@ -6,9 +6,7 @@
 #
 
 PORTNAME=	rhino
-DISTVERSION=	1_7R2
-PORTREVISION=	0
-#PORTEPOCH=	0
+DISTVERSION=	1_7R3
 CATEGORIES=	lang java
 MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/js/:rhino \
 		http://java.sun.com/products/jfc/tsc/articles/treetable2/downloads/:swingex \
@@ -16,12 +14,14 @@ MASTER_SITES=	ftp://ftp.mozilla.org/pub/mozilla.org/js/:rhino \
 MASTER_SITE_SUBDIR=	xmlbeans/binaries/:xmlbeans
 DISTFILES=	${PORTNAME}${DISTVERSION}.zip:rhino \
 		src.zip:swingex \
-		xmlbeans-2.2.0.zip:xmlbeans
+		xmlbeans-2.5.0.zip:xmlbeans
 DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${PORTNAME}${DISTVERSION}.zip
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	An implementation of JavaScript written in Java
+
+LICENSE=	MPL
 
 OPTIONS=	LINEDIT	"Enable line editing in the Rhino shell" on
 
@@ -31,7 +31,7 @@ DATADIR=	${JAVASHAREDIR}/${PORTNAME}
 
 JAVA_VERSION=	1.5+
 
-MAKE_ARGS=	-Dxmlbeans.url=file://${DISTDIR}/${DIST_SUBDIR}/xmlbeans-2.2.0.zip \
+MAKE_ARGS=	-Dxmlbeans.url=file://${DISTDIR}/${DIST_SUBDIR}/xmlbeans-2.5.0.zip \
 		-Dswing-ex-url=file://${DISTDIR}/${DIST_SUBDIR}/src.zip
 
 RHINOJAR=	${DATADIR}/${PORTNAME}.jar
