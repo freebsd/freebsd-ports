@@ -1,0 +1,47 @@
+@comment $FreeBSD$
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_1.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_10.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_11.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_12.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_13.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_14.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_15.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_16.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_17.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_18.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_19.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_2.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_3.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_4.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_5.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_6.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_7.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_8.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_9.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_abt.html
+%%PORTDOCS%%%%DOCSDIR%%/libunistring_toc.html
+include/unistring/inline.h
+include/unistring/stdbool.h
+include/unistring/stdint.h
+include/unistring/localcharset.h
+include/unistring/iconveh.h
+include/unistring/version.h
+include/unistring/cdefs.h
+include/unistring/woe32dll.h
+include/unitypes.h
+include/unistr.h
+include/uniconv.h
+include/unistdio.h
+include/uniname.h
+include/unictype.h
+include/uniwidth.h
+include/uniwbrk.h
+include/unilbrk.h
+include/uninorm.h
+include/unicase.h
+lib/libunistring.so.1
+lib/libunistring.so
+lib/libunistring.la
+lib/libunistring.a
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/unistring
