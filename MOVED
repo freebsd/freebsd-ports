@@ -2498,3 +2498,4 @@ www/firefox35||2011-08-03|Has expired: Upstream support dropped. Please consider
 www/firefox35-i18n||2011-08-03|Has expired: Upstream support dropped. Please consider using www/firefox-i18n instead.
 graphics/leptonlib|graphics/leptonica|2011-08-05|Follow upstream name change
 lang/gnustep-libobjc|lang/libobjc2|2011-08-06|Replaced with libobjc2
+sysutils/p5-mogilefs-server|sysutils/p5-MogileFS-Server|2011-08-08|Move to a better place via repocopy
