@@ -1750,6 +1750,7 @@ codeeditor                      ports/editors/codeeditor
 codeigniter                     ports/www/codeigniter
 codeigniter17                   ports/www/codeigniter17
 codelite                        ports/editors/codelite
+codespell                       ports/textproc/codespell
 codeworker                      ports/devel/codeworker
 cog                             ports/sysutils/cog
 coin                            ports/graphics/Coin
@@ -4149,6 +4150,7 @@ gbuffy                          ports/mail/gbuffy
 gcal                            ports/deskutils/gcal
 gcalcli                         ports/deskutils/gcalcli
 gcalctool                       ports/math/gcalctool
+gcap                            ports/multimedia/gcap
 gcb                             ports/x11/gcb
 gcc34                           ports/lang/gcc34
 gcc42                           ports/lang/gcc42
@@ -21444,6 +21446,7 @@ py-WebFlash                     ports/www/py-WebFlash
 py-WebTest                      ports/www/py-WebTest
 py-YABT                         ports/misc/py-YABT
 py-aafigure                     ports/graphics/py-aafigure
+py-actdiag                      ports/graphics/py-actdiag
 py-addons                       ports/devel/py-AddOns
 py-adns                         ports/dns/py-adns
 py-aipy                         ports/astro/py-aipy
@@ -21846,6 +21849,7 @@ py-numarray                     ports/math/py-numarray
 py-numeric                      ports/math/py-numeric
 py-numexpr                      ports/math/py-numexpr
 py-numpy                        ports/math/py-numpy
+py-nwdiag                       ports/graphics/py-nwdiag
 py-nzmath                       ports/math/py-nzmath
 py-oauth                        ports/net/py-oauth
 py-oauth2                       ports/net/py-oauth2
@@ -22066,6 +22070,7 @@ py-scipy                        ports/science/py-scipy
 py-scrapy                       ports/www/py-scrapy
 py-scriptaculous                ports/www/py-scriptaculous
 py-sendfile                     ports/devel/py-sendfile
+py-seqdiag                      ports/graphics/py-seqdiag
 py-serial                       ports/comms/py-serial
 py-setproctitle                 ports/devel/py-setproctitle
 py-setuptools                   ports/devel/py-setuptools
