@@ -1,38 +1,44 @@
+bin/dnsreplay
 bin/pdns_control
+bin/pdnssec
 bin/zone2ldap
 bin/zone2sql
 sbin/pdns_server
 %%WITHPGSQL%%lib/libgpgsqlbackend.a
 %%WITHPGSQL%%lib/libgpgsqlbackend.la
 %%WITHPGSQL%%lib/libgpgsqlbackend.so
+%%WITHPGSQL%%lib/libgpgsqlbackend.so.0
 %%WITHMYSQL%%lib/libgmysqlbackend.a
 %%WITHMYSQL%%lib/libgmysqlbackend.la
 %%WITHMYSQL%%lib/libgmysqlbackend.so
+%%WITHMYSQL%%lib/libgmysqlbackend.so.0
 %%WITHSQLITE%%lib/libgsqlitebackend.a
 %%WITHSQLITE%%lib/libgsqlitebackend.la
 %%WITHSQLITE%%lib/libgsqlitebackend.so
+%%WITHSQLITE%%lib/libgsqlitebackend.so.0
 %%WITHSQLITE3%%lib/libgsqlite3backend.a
 %%WITHSQLITE3%%lib/libgsqlite3backend.la
 %%WITHSQLITE3%%lib/libgsqlite3backend.so
+%%WITHSQLITE3%%lib/libgsqlite3backend.so.0
 %%WITHOPENLDAP%%lib/libldapbackend.a
 %%WITHOPENLDAP%%lib/libldapbackend.la
 %%WITHOPENLDAP%%lib/libldapbackend.so
+%%WITHOPENLDAP%%lib/libldapbackend.so.0
 %%WITHOPENDBX%%lib/libopendbxbackend.a
 %%WITHOPENDBX%%lib/libopendbxbackend.la
 %%WITHOPENDBX%%lib/libopendbxbackend.so
+%%WITHOPENDBX%%lib/libopendbxbackend.so.0
 %%WITHGEO%%lib/libgeobackend.a
 %%WITHGEO%%lib/libgeobackend.la
 %%WITHGEO%%lib/libgeobackend.so
+%%WITHGEO%%lib/libgeobackend.so.0
 lib/libpipebackend.a
 lib/libpipebackend.la
 lib/libpipebackend.so
+lib/libpipebackend.so.0
 @unexec if cmp -s %D/etc/pdns/pdns.conf %D/etc/pdns/pdns.conf-dist; then rm -f %D/etc/pdns/pdns.conf; fi
 etc/pdns/pdns.conf-dist
 @exec [ -f %B/pdns.conf ] || cp %B/%f %B/pdns.conf
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/pdns.conf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tables-mssql_or_sybase.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tables-mysql.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tables-pgsql.sql
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tables-sqlite.sql
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 @dirrmtry etc/pdns
