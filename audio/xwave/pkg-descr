@@ -1,4 +1,6 @@
-note from the original author:
+xwave - an audio player, recorder, editor  for the XWindow System
+
+Note from the original author:
  
 The user interface of xwave is based on Athena and FWF widgets.
 The application defaults are optimized for Xaw3d, so if you don't
