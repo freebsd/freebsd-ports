@@ -44,12 +44,3 @@ $FreeBSD$
       case "$opsys" in
         dnl defined __FreeBSD__ || defined __NetBSD__ || defined __linux__
         gnu-linux|freebsd|netbsd)
-@@ -3547,6 +3547,8 @@ AH_BOTTOM([
-
- #ifdef HAVE_ALLOCA_H
- # include <alloca.h>
-+#elif defined __FreeBSD__
-+#include <stdlib.h>
- #elif defined __GNUC__
- # define alloca __builtin_alloca
- #elif defined _AIX
