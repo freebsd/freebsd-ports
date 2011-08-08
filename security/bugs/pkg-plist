@@ -7,12 +7,21 @@ bugs-%%PORTVERSION%%/blogin
 bugs-%%PORTVERSION%%/bmore
 bugs-%%PORTVERSION%%/bpass
 bugs-%%PORTVERSION%%/bpassdel
-bugs-%%PORTVERSION%%/bunlock
 bugs-%%PORTVERSION%%/bugscrypt.a
+bugs-%%PORTVERSION%%/bunlock
+bugs-%%PORTVERSION%%/include/bstandard.h
+bugs-%%PORTVERSION%%/include/extra.h
+bugs-%%PORTVERSION%%/include/fpos_t.h
+bugs-%%PORTVERSION%%/include/isaac.h
+bugs-%%PORTVERSION%%/include/main.h
+bugs-%%PORTVERSION%%/include/misc.h
+bugs-%%PORTVERSION%%/include/seed.h
+bugs-%%PORTVERSION%%/include/shuffle.h
+bugs-%%PORTVERSION%%/include/utils.h
+bugs-%%PORTVERSION%%/include/wrapper.h
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/HOWTO
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%%%DOCSDIR%%/cv/cv.html
 %%PORTDOCS%%%%DOCSDIR%%/cv/note.html
 %%PORTDOCS%%%%DOCSDIR%%/fulldoc/bssl.txt
@@ -28,8 +37,6 @@ bugs-%%PORTVERSION%%/bugscrypt.a
 %%PORTDOCS%%%%DOCSDIR%%/fulldoc/dev_french.txt
 %%PORTDOCS%%%%DOCSDIR%%/fulldoc/history_unix.txt
 %%PORTDOCS%%%%DOCSDIR%%/fulldoc/history_win.txt
-%%PORTDOCS%%%%DOCSDIR%%/fulldoc/index.html
-%%PORTDOCS%%%%DOCSDIR%%/fulldoc/lib_hist.txt
 %%PORTDOCS%%%%DOCSDIR%%/fulldoc/images/2_1.gif
 %%PORTDOCS%%%%DOCSDIR%%/fulldoc/images/2_2.gif
 %%PORTDOCS%%%%DOCSDIR%%/fulldoc/images/2_3.gif
@@ -44,21 +51,14 @@ bugs-%%PORTVERSION%%/bugscrypt.a
 %%PORTDOCS%%%%DOCSDIR%%/fulldoc/images/3_7.gif
 %%PORTDOCS%%%%DOCSDIR%%/fulldoc/images/3_8.gif
 %%PORTDOCS%%%%DOCSDIR%%/fulldoc/images/3_9.gif
+%%PORTDOCS%%%%DOCSDIR%%/fulldoc/index.html
+%%PORTDOCS%%%%DOCSDIR%%/fulldoc/lib_hist.txt
 %%PORTDOCS%%%%DOCSDIR%%/history/old_french.txt
-bugs-%%PORTVERSION%%/include/bstandard.h
-bugs-%%PORTVERSION%%/include/extra.h
-bugs-%%PORTVERSION%%/include/fpos_t.h
-bugs-%%PORTVERSION%%/include/isaac.h
-bugs-%%PORTVERSION%%/include/main.h
-bugs-%%PORTVERSION%%/include/misc.h
-bugs-%%PORTVERSION%%/include/seed.h
-bugs-%%PORTVERSION%%/include/shuffle.h
-bugs-%%PORTVERSION%%/include/utils.h
-bugs-%%PORTVERSION%%/include/wrapper.h
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fulldoc/images/
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/fulldoc/
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/cv
+%%PORTDOCS%%%%DOCSDIR%%/index.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/history
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fulldoc/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/fulldoc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cv
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm bugs-%%PORTVERSION%%/include
 @dirrm bugs-%%PORTVERSION%%
