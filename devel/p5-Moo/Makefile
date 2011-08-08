@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Moo
-PORTVERSION=	0.009007
+PORTVERSION=	0.009010
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MSTROUT
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Minimalist Object Orientation (with Moose compatiblity)
 
-RUN_DEPENDS=	p5-strictures>=0:${PORTSDIR}/devel/p5-strictures \
+RUN_DEPENDS=	p5-strictures>=1.001001:${PORTSDIR}/devel/p5-strictures \
 		p5-Class-Method-Modifiers>=1.05:${PORTSDIR}/devel/p5-Class-Method-Modifiers
 
 PERL_CONFIGURE=	yes
@@ -23,6 +23,7 @@ PERL_CONFIGURE=	yes
 MAN3=	Moo.3 \
 	Moo::Role.3 \
 	Role::Tiny.3 \
+	Role::Tiny::With.3 \
 	Sub::Defer.3 \
 	Sub::Quote.3
 
