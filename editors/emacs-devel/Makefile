@@ -23,10 +23,8 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]* \
 		emacs-nox11-[0-9]*
 
-INSTALLS_ICONS=	yes
-
 EMACS_VER=	24.0.50
-EMACS_REV=	104609
+EMACS_REV=	105418
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XZ=		yes
@@ -62,6 +60,7 @@ OPTIONS=	DBUS	"DBus support"			ON \
 		GCONF	"GConf support"			ON \
 		GIF	"GIF Images support"		ON \
 		GTK2	"Use GTK+ widgets"		ON \
+		GTK3	"Use GTK+ 3 widgets"		OFF \
 		JPEG	"JPEG images support"		ON \
 		M17N	"M17N support for text-shaping"	ON \
 		MOTIF	"Use Motif widgets"		OFF \
@@ -80,7 +79,8 @@ OPTIONS=	DBUS	"DBus support"			ON \
 		XML	"XML Parser support"		ON \
 		XPM	"XPM images support"		ON \
 		IMAGEMAGICK	"ImageMagick support"	ON \
-		GNUTLS	"GNUTLS support"		ON
+		GNUTLS	"GNUTLS support"		ON \
+		GSETTINGS	"GSettings support"	ON
 
 .include <bsd.port.options.mk>
 
@@ -89,6 +89,7 @@ DBUS_PTHREAD_LIBS=	${CC} -dumpspecs | ${GREP} -m 1 pthread: | ${SED} -e 's|^.*%{
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-x
 .else
+INSTALLS_ICONS=	yes
 USE_XORG=	x11
 USE_GNOME=
 
@@ -98,16 +99,16 @@ CONFIGURE_ARGS+=	--without-rsvg
 USE_GNOME+=	librsvg2
 .endif
 
-.if defined(WITHOUT_GTK2)
+.if defined(WITHOUT_GTK2) && defined(WITHOUT_GTK3)
 .if defined(WITH_XAW)
 .if defined(WITH_XAW3D) || defined(WITH_MOTIF)
-IGNORE=	please choose only one toolkit: GTK+/Motif/Xaw/Xaw3d
+IGNORE=	please choose only one toolkit: GTK+/GTK+3/Motif/Xaw/Xaw3d
 .endif
 USE_XORG=	xaw
 CONFIGURE_ARGS+=	--with-x-toolkit=athena --without-xaw3d
 .elif defined(WITH_XAW3D)
 .if defined(WITH_MOTIF)
-IGNORE=	please choose only one toolkit: GTK+/Motif/Xaw/Xaw3d
+IGNORE=	please choose only one toolkit: GTK+/GTK+3/Motif/Xaw/Xaw3d
 .endif
 LIB_DEPENDS+=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 CONFIGURE_ARGS+=	--with-x-toolkit=athena
@@ -115,14 +116,21 @@ CONFIGURE_ARGS+=	--with-x-toolkit=athena
 USE_MOTIF=	yes
 CONFIGURE_ARGS+=	--with-x-toolkit=motif
 .else
-IGNORE=	please choose a toolkit: GTK+/Motif/Xaw/Xaw3d, or build without X11 support
+IGNORE=	please choose a toolkit: GTK+/GTK+3/Motif/Xaw/Xaw3d, or build without X11 support
 .endif
 .else
 .if defined(WITH_XAW) || defined(WITH_XAW3D) || defined(WITH_MOTIF)
-IGNORE=	please choose only one toolkit: GTK+/Motif/Xaw/Xaw3d
+IGNORE=	please choose only one toolkit: GTK+/GTK+3/Motif/Xaw/Xaw3d
 .endif
+.if defined(WITH_GTK3) && defined(WITHOUT_GTK2)
+USE_GNOME+=	gtk30
+CONFIGURE_ARGS+=	--with-x-toolkit=gtk3
+.elif defined(WITH_GTK2) && defined(WITHOUT_GTK3)
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk
+.else
+IGNORE=	please choose only one toolkit: GTK+/GTK+3/Motif/Xaw/Xaw3d
+.endif
 .endif
 
 .if defined(WITHOUT_SCROLLBARS)
@@ -200,6 +208,12 @@ CONFIGURE_ARGS+=	--without-libotf
 .if !defined(WITHOUT_XFT)
 LIB_DEPENDS+=	otf.0:${PORTSDIR}/print/libotf
 .endif
+.endif
+
+.if defined(WITHOUT_GSETTINGS)
+CONFIGURE_ARGS+=	--without-gsettings
+.else
+USE_GNOME+=	glib20
 .endif
 
 .if defined(WITHOUT_GCONF)
