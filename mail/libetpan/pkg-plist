@@ -115,6 +115,10 @@ include/libetpan/mhdriver_types.h
 include/libetpan/mhstorage.h
 include/libetpan/mime_message_driver.h
 include/libetpan/mmapstring.h
+include/libetpan/namespace.h
+include/libetpan/namespace_parser.h
+include/libetpan/namespace_sender.h
+include/libetpan/namespace_types.h
 include/libetpan/newsfeed.h
 include/libetpan/newsfeed_item.h
 include/libetpan/newsfeed_item_enclosure.h
@@ -141,8 +145,9 @@ include/libetpan/quota_sender.h
 include/libetpan/quota_types.h
 include/libetpan/uidplus.h
 include/libetpan/uidplus_types.h
+include/libetpan/xlist.h
 lib/libetpan.a
 lib/libetpan.la
 lib/libetpan.so
-lib/libetpan.so.15
+lib/libetpan.so.16
 @dirrm include/libetpan

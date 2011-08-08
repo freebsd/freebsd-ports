@@ -7,13 +7,14 @@
 #
 
 PORTNAME=	libetpan
-PORTVERSION=	1.0
-PORTREVISION=	2
+PORTVERSION=	1.1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	A mail library
+
+LICENSE=	BSD
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
 		expat:${PORTSDIR}/textproc/expat2 \
@@ -28,7 +29,7 @@ MAKE_JOBS_SAFE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 
 OPTIONS=	GNUTLS	"Enable gnuTLS support" off \
 		IPV6	"Enable ipv6 support." on
