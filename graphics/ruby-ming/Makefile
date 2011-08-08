@@ -5,8 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	ming
-PORTVERSION=	0.3.0.${RUBY_MING_VERSION}
-PORTREVISION=	2
+PORTVERSION=	0.4.3.${RUBY_MING_VERSION}
 CATEGORIES+=	graphics ruby
 MASTER_SITES=	RF
 MASTER_SITE_SUBDIR=	mingruby
@@ -17,28 +16,26 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	don@na.rim.or.jp
 COMMENT=	Yet another Ming module for Ruby
 
-LIB_DEPENDS?=	ming.4:${PORTSDIR}/graphics/ming
+LIB_DEPENDS?=	ming.5:${PORTSDIR}/graphics/ming
 
-RUBY_MING_VERSION=	0.1.7
+RUBY_MING_VERSION=	0.2.1
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
 CONFIGURE_ARGS=	-- --with-ming-include=${PREFIX}/include/ming --with-ming-lib=${PREFIX}/lib
 
-DOCS=	ChangeLog ChangeLog.0 INSTALL LGPL NEWS README TODO
+WRKSRC=		${WRKDIR}/${PORTNAME}-ruby
+
+DOCS=	ChangeLog INSTALL LGPL NEWS README TODO
 
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/examples/* ${RUBY_MODEXAMPLESDIR}/
+	(cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} \* ${RUBY_MODEXAMPLESDIR})
 	${MKDIR} ${RUBY_MODDOCDIR}
 .for f in ${DOCS}
 	${INSTALL_DATA} ${WRKSRC}/${f} ${RUBY_MODDOCDIR}/
 .endfor
 .endif
 
-.include <bsd.port.pre.mk>
-.if ${RUBY_VER} == 1.9
-BROKEN=	does not build with ruby 1.9
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
