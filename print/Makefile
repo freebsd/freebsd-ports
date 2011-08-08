@@ -193,6 +193,7 @@
     SUBDIR += mup
     SUBDIR += musixtex
     SUBDIR += muttprint
+    SUBDIR += nenscript
     SUBDIR += nl-acroread8
     SUBDIR += no-acroread8
     SUBDIR += openprinting
