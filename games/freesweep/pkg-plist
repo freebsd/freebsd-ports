@@ -1,7 +1,0 @@
-bin/freesweep
-%%PORTDOCS%%%%DOCSDIR%%/CHANGES
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%DATADIR%%/sweeprc
-%%DATADIR%%/sweeptimes
-@dirrm %%DATADIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
