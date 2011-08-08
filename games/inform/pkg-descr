@@ -8,4 +8,4 @@ as TeX, Postscript, or PDF, build the port with NOPORTDOCS=yes
 and obtain the manual from the FTP site.  The FTP site also
 contains example games and other resources.
 
-ftp://ftp.ifarchive.org/if-archive/infocom/compilers/inform6/
+WWW: http://www.ifarchive.org/indexes/if-archiveXinfocomXcompilersXinform6.html
