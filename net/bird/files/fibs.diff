@@ -1,8 +1,8 @@
 Index: sysdep/unix/krt.h
 ===================================================================
---- sysdep/unix/krt.h	(revision 4869)
-+++ sysdep/unix/krt.h	(working copy)
-@@ -67,6 +67,7 @@
+--- sysdep/unix/krt.h	(revision 4963)
++++ sysdep/unix/krt.h	(revision 4965)
+@@ -67,6 +67,7 @@ struct krt_proto {
  #ifdef CONFIG_ALL_TABLES_AT_ONCE
    node instance_node;		/* Node in krt instance list */
  #endif
@@ -12,9 +12,9 @@ Index: sysdep/unix/krt.h
  
 Index: sysdep/bsd/krt-sock.h
 ===================================================================
---- sysdep/bsd/krt-sock.h	(revision 4869)
-+++ sysdep/bsd/krt-sock.h	(working copy)
-@@ -42,5 +42,8 @@
+--- sysdep/bsd/krt-sock.h	(revision 4963)
++++ sysdep/bsd/krt-sock.h	(revision 4965)
+@@ -42,5 +42,8 @@ struct krt_if_status {
  
  static inline int krt_set_params_same(struct krt_set_params *o UNUSED, struct krt_set_params *n UNUSED) { return 1; }
  void krt_read_msg(struct proto *p, struct ks_msg *msg, int scan);
@@ -26,7 +26,7 @@ Index: sysdep/bsd/krt-sock.h
 Index: sysdep/bsd/fib.Y
 ===================================================================
 --- sysdep/bsd/fib.Y	(revision 0)
-+++ sysdep/bsd/fib.Y	(revision 0)
++++ sysdep/bsd/fib.Y	(revision 4965)
 @@ -0,0 +1,29 @@
 +/*
 + *	BIRD -- FreeBSD rtsock configuration
@@ -59,17 +59,17 @@ Index: sysdep/bsd/fib.Y
 +CF_END
 Index: sysdep/bsd/Modules
 ===================================================================
---- sysdep/bsd/Modules	(revision 4869)
-+++ sysdep/bsd/Modules	(working copy)
-@@ -4,3 +4,4 @@
+--- sysdep/bsd/Modules	(revision 4963)
++++ sysdep/bsd/Modules	(revision 4965)
+@@ -4,3 +4,4 @@ sysio.h
  krt-set.h
  krt-sock.c
  krt-sock.h
 +fib.Y
 Index: sysdep/bsd/krt-scan.h
 ===================================================================
---- sysdep/bsd/krt-scan.h	(revision 4869)
-+++ sysdep/bsd/krt-scan.h	(working copy)
+--- sysdep/bsd/krt-scan.h	(revision 4963)
++++ sysdep/bsd/krt-scan.h	(revision 4965)
 @@ -10,6 +10,7 @@
  #define _BIRD_KRT_SCAN_H_
  
@@ -80,8 +80,8 @@ Index: sysdep/bsd/krt-scan.h
  struct krt_scan_status {
 Index: sysdep/bsd/krt-sock.c
 ===================================================================
---- sysdep/bsd/krt-sock.c	(revision 4869)
-+++ sysdep/bsd/krt-sock.c	(working copy)
+--- sysdep/bsd/krt-sock.c	(revision 4963)
++++ sysdep/bsd/krt-sock.c	(revision 4965)
 @@ -33,8 +33,6 @@
  #include "lib/string.h"
  #include "lib/socket.h"
@@ -91,7 +91,7 @@ Index: sysdep/bsd/krt-sock.c
  int
  krt_capable(rte *e)
  {
-@@ -53,6 +51,49 @@
+@@ -53,6 +51,49 @@ krt_capable(rte *e)
       );
  }
  
@@ -106,7 +106,7 @@ Index: sysdep/bsd/krt-sock.c
 +    return 1;
 +  }
 +
-+  //log(L_TRACE "Max fibs: %d", fibs);
++  log(L_TRACE "Max fibs: %d", fibs);
 +  return fibs;
 +}
 +
@@ -141,7 +141,7 @@ Index: sysdep/bsd/krt-sock.c
  #define ROUNDUP(a) \
          ((a) > 0 ? (1 + (((a) - 1) | (sizeof(long) - 1))) : sizeof(long))
  
-@@ -69,7 +110,7 @@
+@@ -69,7 +110,7 @@ krt_capable(rte *e)
      body += l;}
  
  static void
@@ -150,7 +150,7 @@ Index: sysdep/bsd/krt-sock.c
  {
    net *net = e->net;
    rta *a = e->attrs;
-@@ -180,23 +221,23 @@
+@@ -180,23 +221,23 @@ static void
    l = body - (char *)&msg;
    msg.rtm.rtm_msglen = l;
  
@@ -178,7 +178,7 @@ Index: sysdep/bsd/krt-sock.c
      }
  }
  
-@@ -218,25 +259,34 @@
+@@ -218,25 +259,34 @@ void
  krt_set_start(struct krt_proto *x, int first UNUSED)
  {
    sock *sk_rt;
@@ -221,7 +221,7 @@ Index: sysdep/bsd/krt-sock.c
  }
  
  #define SKIP(ARG...) do { DBG("KRT: Ignoring route - " ARG); return; } while(0)
-@@ -624,6 +674,8 @@
+@@ -624,6 +674,8 @@ krt_sysctl_scan(struct proto *p, pool *pool, byte
    size_t obl, needed;
    struct ks_msg *m;
    int retries = 3;
@@ -230,7 +230,7 @@ Index: sysdep/bsd/krt-sock.c
  
    mib[0] = CTL_NET;
    mib[1] = PF_ROUTE;
-@@ -632,6 +684,17 @@
+@@ -632,6 +684,17 @@ krt_sysctl_scan(struct proto *p, pool *pool, byte
    mib[4] = cmd;
    mib[5] = 0;
  
@@ -248,7 +248,7 @@ Index: sysdep/bsd/krt-sock.c
   try:
    if (sysctl(mib, 6 , NULL , &needed, NULL, 0) < 0)
      die("krt_sysctl_scan 1: %m");
-@@ -656,6 +719,7 @@
+@@ -656,6 +719,7 @@ krt_sysctl_scan(struct proto *p, pool *pool, byte
  	goto try;
  
        log(L_ERR "KRT: Route scan failed");
@@ -256,7 +256,7 @@ Index: sysdep/bsd/krt-sock.c
        return;
      }
      die("krt_sysctl_scan 2: %m");
-@@ -666,6 +730,8 @@
+@@ -666,6 +730,8 @@ krt_sysctl_scan(struct proto *p, pool *pool, byte
      m = (struct ks_msg *)next;
      krt_read_msg(p, m, 1);
    }
@@ -265,10 +265,27 @@ Index: sysdep/bsd/krt-sock.c
  }
  
  static byte *krt_buffer = NULL;
+@@ -695,10 +761,13 @@ krt_set_construct(struct krt_config *c UNUSED)
+ }
+ 
+ void
+-krt_set_shutdown(struct krt_proto *x UNUSED, int last UNUSED)
++krt_set_shutdown(struct krt_proto *x UNUSED, int last)
+ {
+-  mb_free(krt_buffer);
+-  krt_buffer = NULL;
++  if (last)
++  {
++    mb_free(krt_buffer);
++    krt_buffer = NULL;
++  }
+ }
+ 
+ void
 Index: sysdep/cf/bsd-v6.h
 ===================================================================
---- sysdep/cf/bsd-v6.h	(revision 4869)
-+++ sysdep/cf/bsd-v6.h	(working copy)
+--- sysdep/cf/bsd-v6.h	(revision 4963)
++++ sysdep/cf/bsd-v6.h	(revision 4965)
 @@ -10,7 +10,7 @@
  
  #define CONFIG_AUTO_ROUTES
@@ -280,8 +297,8 @@ Index: sysdep/cf/bsd-v6.h
  #undef CONFIG_UNIX_SET
 Index: sysdep/cf/bsd.h
 ===================================================================
---- sysdep/cf/bsd.h	(revision 4869)
-+++ sysdep/cf/bsd.h	(working copy)
+--- sysdep/cf/bsd.h	(revision 4963)
++++ sysdep/cf/bsd.h	(revision 4965)
 @@ -8,7 +8,7 @@
  
  #define CONFIG_AUTO_ROUTES
@@ -291,3 +308,42 @@ Index: sysdep/cf/bsd.h
  
  #undef CONFIG_UNIX_IFACE
  #undef CONFIG_UNIX_SET
+Index: sysdep/unix/krt.c
+===================================================================
+--- sysdep/unix/krt.c	(revision 4966)
++++ sysdep/unix/krt.c	(revision 4967)
+@@ -492,9 +492,9 @@
+ 
+ #ifdef CONFIG_ALL_TABLES_AT_ONCE
+ static timer *krt_scan_timer;
+-static int krt_instance_count;
+ static list krt_instance_list;
+ #endif
++static int krt_instance_count;
+ 
+ static void
+ krt_flush_routes(struct krt_proto *p)
+@@ -830,6 +830,7 @@
+   add_tail(&krt_instance_list, &p->instance_node);
+ #else
+   p->krt_pool = P->pool;
++  krt_instance_count++;
+ #endif
+ 
+ #ifdef KRT_ALLOW_LEARN
+@@ -859,11 +860,12 @@
+   struct krt_proto *p = (struct krt_proto *) P;
+   int last = 1;
+ 
++  if (--krt_instance_count)
++    last = 0;
++
+ #ifdef CONFIG_ALL_TABLES_AT_ONCE
+   rem_node(&p->instance_node);
+-  if (--krt_instance_count)
+-    last = 0;
+-  else
++  if (!krt_instance_count)
+ #endif
+     tm_stop(p->scan_timer);
+ 

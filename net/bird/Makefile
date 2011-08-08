@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	bird
-PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTVERSION=	1.3.2
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
 
@@ -46,6 +45,8 @@ post-install:
 	@${ECHO_MSG}
 	@${ECHO_MSG} "        WARNING: Please take a look on kern/134931"
 	@${ECHO_MSG} "        WARNING: before using multiple fibs in production!"
+	@${ECHO_MSG} "        8.2-STABLE kernel patch available here:"
+	@${ECHO_MSG} "        http://static.ipfw.ru/patches/rtsock_82S-20110725.diff"
 	@${ECHO_MSG}
 	@${ECHO_MSG} =====================================================================
 	@${ECHO_MSG}
