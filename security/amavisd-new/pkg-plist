@@ -71,9 +71,6 @@ etc/amavisd.conf-default
 @unexec if cmp -s %D/etc/amavisd.conf %D/etc/amavisd.conf-dist; then rm -f %D/etc/amavisd.conf; fi
 etc/amavisd.conf-dist
 @exec [ ! -f %B/amavisd.conf ] && cp %B/%f %B/amavisd.conf
-etc/amavisd.conf-sample
-%%AMAVIS_NOAMAVIS%%sbin/amavis
-%%AMAVIS_NOMILTER%%sbin/amavis-milter
 %%AMAVIS_NOP0F%%sbin/p0f-analyzer.pl
 sbin/amavisd
 sbin/amavisd-agent
