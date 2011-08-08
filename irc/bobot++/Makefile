@@ -7,43 +7,56 @@
 #
 
 PORTNAME=	bobotpp
-PORTVERSION=	2.0.2
-PORTREVISION=	5
+PORTVERSION=	2.2.3
 CATEGORIES=	irc
-MASTER_SITES=	${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	bobotpp
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IRC bot written in C++
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
+OPTIONS=	GUILE "Use Guile scripts" on
+
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+
+INFO=		bobot++
+PORTDOCS=	*
+PORTEXAMPLES=	*
+PLIST_FILES=	bin/${PORTNAME}
+
+CPPFLAGS=	-I${LOCALBASE}/include ${PTHREAD_CFLAGS}
+LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+
+.include <bsd.port.pre.mk>
 
 .if defined(WITHOUT_GUILE)
 CONFIGURE_ARGS+=	--disable-scripting
 .else
 LIB_DEPENDS+=	guile.21:${PORTSDIR}/lang/guile
 CONFIGURE_ARGS+=	--enable-scripting
+PLIST_FILES+=	share/guile/site/bobotpp/bot.scm \
+		%%DATADIR%%/scripts/bobot-utils.scm
+PLIST_DIRS+=	%%DATADIR%%/scripts \
+		%%DATADIR%% \
+		share/guile/site/bobotpp
+PLIST_DIRSTRY+=	share/guile/site
 .endif
 
-.if defined(WITH_TELNET)
-CONFIGURE_ARGS+=	--enable-telnetserver
-.else
-CONFIGURE_ARGS+=	--disable-telnetserver
-.endif
+post-patch:
+	@${REINPLACE_CMD} -e '/test/s|==|=|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|std::snprintf|snprintf|g' ${WRKSRC}/source/Bot.C
 
-post-extract:
-	@${FIND} ${WRKSRC}/scripts -name "*~" -delete
-
-.if !defined(NOPORTDOCS)
 post-install:
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${CP} ${WRKSRC}/doc/* ${DOCSDIR}
+	@(cd ${WRKSRC}/documentation && ${INSTALL_DATA} *.html ${DOCSDIR})
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
-	${CP} -R ${WRKSRC}/examples/ ${EXAMPLESDIR}
-	@${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/scripts ${DATADIR}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
