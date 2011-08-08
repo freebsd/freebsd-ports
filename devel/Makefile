@@ -901,6 +901,7 @@
     SUBDIR += libukcprog
     SUBDIR += libunicode
     SUBDIR += libuninum
+    SUBDIR += libunistring
     SUBDIR += libunwind
     SUBDIR += libusb
     SUBDIR += libvanessa_adt
