@@ -9,16 +9,18 @@ PORTNAME=	cosmo
 PORTVERSION=	2.0.4
 PORTREVISION=	4
 CATEGORIES=	games
-MASTER_SITES=	ftp://133.25.251.9/pub/linux/Vine/VinePlus/1.1/JG-0.9.1/other-sources/jp/ \
-		ftp://ftp.uni-erlangen.de/.mirrors/ftpbsd/ftp.freebsd.org/pub/FreeBSD/ports/distfiles/cosmo/
+MASTER_SITES=	http://hanzubon.jp/mirrors/Vine/%SUBDIR%/ \
+		http://ftp.jaist.ac.jp/pub/Linux/Vine/%SUBDIR%/ \
+		http://ftp.riken.go.jp/Linux/vine/%SUBDIR%/ \
+		http://ftp.yz.yamagata-u.ac.jp/pub/Linux/Vine/%SUBDIR%/ \
+		http://ftp.nara.wide.ad.jp/pub/Linux/vine/%SUBDIR%/ \
+		http://ftp.vinelinux.org/pub/Vine/%SUBDIR%/
+MASTER_SITE_SUBDIR=	VinePlus/1.1/JG-0.9.1/other-sources/jp
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}  moon.tif.gz
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Clone of Cosmo Gang the Puzzle (Namco)
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
 
 NO_CDROM=	Possible copyright infringement
 
