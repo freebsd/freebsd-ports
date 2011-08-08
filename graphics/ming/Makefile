@@ -7,6 +7,7 @@
 
 PORTNAME=	ming
 PORTVERSION=	0.4.3
+PORTREVISION?=	1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/Releases/Ming%20${PORTVERSION}
 
@@ -20,11 +21,11 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
 CONFLICTS=	ja-ming-[0-9]*
 
 USE_GNOME=	gnomehack
+USE_GMAKE=	yes
 USE_BISON=	build
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--includedir=${PREFIX}/include/ming \
-		ac_cv_path_PYTHON=no
+CONFIGURE_ARGS+=	--includedir=${PREFIX}/include/ming
 USE_LDCONFIG=	yes
 MAKE_JOBS_UNSAFE=	yes
 
@@ -35,7 +36,16 @@ CFLAGS+=	${CPPFLAGS}
 DOCS=		HISTORY NEWS README TODO
 DOCS_UTIL=	README TIPS TODO swftoperl.html
 
+.if defined(SLAVE_PORT)
+LIB_DEPENDS+=	ming.5:${PORTSDIR}/graphics/ming
+.endif
+
+.if defined(SLAVE_PORT) && ${SLAVE_PORT}=="p5"
+MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
+.endif
+
 post-install:
+.if !defined(SLAVE_PORT)
 	${INSTALL_SCRIPT} ${WRKSRC}/util/ming-config ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/util/cws2fws ${PREFIX}/bin
 	@${MKDIR} ${PREFIX}/include/ming
@@ -48,12 +58,29 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/src/blocks/*.h ${PREFIX}/include/ming/blocks
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for file in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.for docs in ${DOCS}
+	${INSTALL_DATA} ${WRKSRC}/${docs} ${DOCSDIR}
 .endfor
 	@${MKDIR} ${DOCSDIR}/util
 .for docs_utils in ${DOCS_UTIL}
 	@${INSTALL_DATA} ${WRKSRC}/util/${docs_utils} ${DOCSDIR}/util
+.endfor
+.endif
+.endif
+
+.if defined(SLAVE_PORT) && ${SLAVE_PORT}=="p5"
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${INSTALL_WRKSRC}/examples/*.* ${EXAMPLESDIR}
+.endif
+.endif
+
+pre-install:
+.if defined(SLAVE_PORT) && ${SLAVE_PORT}=="p5"
+	@${REINPLACE_CMD} 's/3pm/3/g' ${INSTALL_WRKSRC}/Makefile
+	@${REINPLACE_CMD} 's/3pm/3/g' ${INSTALL_WRKSRC}/Makefile.perl
+.for m in ${MAN3}
+	${MV} ${INSTALL_WRKSRC}/blib/man3/${m}pm ${INSTALL_WRKSRC}/blib/man3/${m}
 .endfor
 .endif
 
