@@ -9,16 +9,13 @@ PORTNAME=	fkiss
 PORTVERSION=	0.33a
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://www.oersted.co.jp/~yav/soft/fkiss/
+MASTER_SITES=	http://www2s.biglobe.ne.jp/~yav/soft/fkiss/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/a//}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${PORTNAME}-${PORTVERSION}-patch${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Freely enjoy childlike KISS, French-KISS!
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
 
 RUN_DEPENDS=	lha:${PORTSDIR}/archivers/lha
 
@@ -28,13 +25,14 @@ USE_XORG=	x11 xproto
 WANT_GNOME=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 		AUTOMAKE="${TRUE}"
 
 MAN1=		fkiss.1
-PLIST_FILES=	bin/fkiss %%EXAMPLESDIR%%/frkismi4.lzh
-PLIST_DIRS=	%%EXAMPLESDIR%%
+PORTDOCS=	*
+PORTEXAMPLES=	*
+PLIST_FILES=	bin/fkiss
 
 .include <bsd.port.pre.mk>
 
@@ -42,10 +40,6 @@ PLIST_DIRS=	%%EXAMPLESDIR%%
 USE_GNOME+=	esound
 CPPFLAGS+=	`pkg-config --cflags-only-I esound`
 LDFLAGS+=	`pkg-config --libs-only-L esound `
-.endif
-
-.if !defined(NOPORTDOCS)
-PORTDOCS=	README README.ja_JP.eucJP
 .endif
 
 pre-patch:
@@ -61,12 +55,14 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fkiss ${PREFIX}/bin/fkiss
 	${INSTALL_MAN} ${WRKSRC}/fkiss.man ${MANPREFIX}/man/man1/fkiss.1
-	@${MKDIR} ${EXAMPLESDIR}
-	${INSTALL_DATA} ${WRKSRC}/frkismi4.lzh ${EXAMPLESDIR}/frkismi4.lzh
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}/README
 	${INSTALL_DATA} ${WRKSRC}/README.euc ${DOCSDIR}/README.ja_JP.eucJP
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	${INSTALL_DATA} ${WRKSRC}/frkismi4.lzh ${EXAMPLESDIR}/frkismi4.lzh
 .endif
 
 .include <bsd.port.post.mk>
