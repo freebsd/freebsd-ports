@@ -21,7 +21,7 @@ PATCH_SITES=	http://mathema.tician.de/news.tiker.net/files/
 PATCHFILES=	arpack-arscnd-3.patch.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	stephen@FreeBSD.org
+MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Argand Library: large eigenvalue subroutines (serial version)
 
 LDFLAGS+=	-L${LOCALBASE}/lib
