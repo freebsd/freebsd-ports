@@ -1,5 +1,5 @@
 --- src/tree.c.orig	2004-12-19 08:51:31.000000000 -0500
-+++ src/tree.c	2011-05-12 16:38:50.388298051 -0400
++++ src/tree.c	2011-08-01 12:49:29.176805068 -0400
 @@ -769,11 +769,13 @@
      if (((*name = strstr(whole, "Mosaic")) != NULL && (len = 6)) ||
  	((*name = strstr(whole, "mosaic")) != NULL && (len = 6)) ||
@@ -14,7 +14,26 @@
  	((*name = strstr(whole, "Camino")) != NULL && (len = 6)) ||
  	((*name = strstr(whole, "Safari")) != NULL && (len = 6)) ||
  	((*name = strstr(whole, "WebTV")) != NULL && (len = 5)) ||
-@@ -904,8 +906,16 @@
+@@ -871,7 +873,17 @@
+ 	  else
+ 	    *name = "Windows:Unknown Windows";
+ 	}
+-	else if (*c >= '6' && *c <= '9')
++	else if (*c == '6') {
++	  if (*(c + 1) == '.' && (*(c + 2) == '0'))
++	    *name = "Windows:Windows Vista";
++	  else if (*(c + 1) == '.' && (*(c + 2) == '1'))
++	    *name = "Windows:Windows 7";
++	  else if (*(c + 1) == '.' && (*(c + 2) == '2'))
++	    *name = "Windows:Windows 8";
++	  else
++	    *name = "Windows:Unknown Windows";
++	}
++	else if (*c >= '7' && *c <= '9')
+ 	  *name = "Windows:Unknown Windows";
+ 	else
+ 	  *name = "Windows:Windows NT";
+@@ -904,8 +916,16 @@
  	*name = "Macintosh";
      else if (strstr(whole, "Linux") != NULL || strstr(whole, "linux") != NULL)
        *name = "Unix:Linux";
