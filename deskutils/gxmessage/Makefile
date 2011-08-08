@@ -8,7 +8,7 @@
 PORTNAME=	gxmessage
 PORTVERSION=	2.12.4
 CATEGORIES=	deskutils
-MASTER_SITES=	http://homepages.ihug.co.nz/~trmusson/stuff/ \
+MASTER_SITES=	GNU \
 		LOCAL/martymac
 
 MAINTAINER=	avg@icyb.net.ua
