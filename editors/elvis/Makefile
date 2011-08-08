@@ -9,20 +9,20 @@ PORTNAME=	elvis
 PORTVERSION=	2.2.0
 PORTREVISION=	3
 CATEGORIES=	editors
-MASTER_SITES=	ftp://ftp.cs.pdx.edu/pub/elvis/ \
-		ftp://ftp.false.com/pub/elvis/ \
-		ftp://the.wiretapped.net/pub/elvis/ \
-		ftp://ftp.fh-wedel.de/pub/elvis/
+MASTER_SITES=	http://www.the-little-red-haired-girl.org/pub/elvis/
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}_${PORTVERSION:E}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A clone of the ex/vi text editor
+
+LICENSE=	ART10
 
 EXTRACT_AFTER_ARGS=	| ${TAR} --exclude guiwin32 -xf -
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix="${PREFIX}"
 ALL_TARGET=	all doc/elvtags.man
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		elvfmt.1 elvis.1 elvtags.1 ref.1
 
@@ -63,7 +63,7 @@ post-patch:
 do-install:
 .for file in elvfmt elvis elvtags ref
 	${INSTALL_PROGRAM} ${WRKSRC}/${file} ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/${file}.man ${PREFIX}/man/man1/${file}.1
+	${INSTALL_MAN} ${WRKSRC}/doc/${file}.man ${MANPREFIX}/man/man1/${file}.1
 .endfor
 	@${MKDIR} ${DATADIR}
 	${TAR} -C ${WRKSRC}/data -cf - . | \
