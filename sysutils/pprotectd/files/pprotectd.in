@@ -1,0 +1,33 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: pprotectd
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable pprotectd:
+#
+# pprotectd_enable (bool):	Set to "NO" by default.
+#				Set it to "YES" to enable pprotectd
+# pprotectd_pidfiles (str):	Set to "/var/run/cron.pid,/var/run/syslog.pid" by default.
+#				Set it to "/var/run/sshd.pid" for example
+# pprotectd_flags (str):	Set to "" by default.
+#				See pprotectd(8) for pprotectd_flags
+#
+
+. /etc/rc.subr
+
+name="pprotectd"
+rcvar=`set_rcvar`
+
+load_rc_config "$name"
+
+: ${pprotectd_enable="NO"}
+: ${pprotectd_pidfiles="/var/run/cron.pid,/var/run/syslog.pid"}
+: ${pprotectd_flags=""}
+
+command="/usr/local/sbin/pprotectd"
+command_args="-F ${pprotectd_pidfiles}"
+
+run_rc_command "$1"
