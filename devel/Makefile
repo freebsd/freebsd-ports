@@ -2965,6 +2965,7 @@
     SUBDIR += py-mongoengine
     SUBDIR += py-mongokit
     SUBDIR += py-mox
+    SUBDIR += py-msgpack
     SUBDIR += py-mwlib
     SUBDIR += py-mwlib.ext
     SUBDIR += py-mwlib.rl
