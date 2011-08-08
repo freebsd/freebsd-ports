@@ -11,6 +11,6 @@ slice (and dice):
     * IP version 6
     * CIDR (Classless Inter-Domain Routing)
     * MAC (Media Access Control)
-    * IEEE EUI-48 and EUI-64 
+    * IEEE EUI-48 and EUI-64
 
-WWW:	http://code.google.com/p/netaddr/
+WWW:	https://github.com/drkjam/netaddr

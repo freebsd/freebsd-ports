@@ -6,15 +6,18 @@
 #
 
 PORTNAME=	netaddr
-PORTVERSION=	0.7.4
+PORTVERSION=	0.7.5
 CATEGORIES=	net python
-MASTER_SITES=	GOOGLE_CODE \
+MASTER_SITES=	https://github.com/drkjam/${PORTNAME}/downloads/ \
 		CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	yzlin@FreeBSD.org
 COMMENT=	A python library for the manipulation of network address manipulation
 
+LICENSE=	BSD
+
+FETCH_ARGS=	-pRr
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
