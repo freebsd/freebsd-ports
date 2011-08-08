@@ -153,19 +153,6 @@ bin/yiic
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/es/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/fr/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/he/index.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/error.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/error400.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/error401.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/error404.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/error500.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/error503.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/exception.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/log-firebug.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/log.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/profile-callstack-firebug.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/profile-callstack.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/profile-summary-firebug.php
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/id/profile-summary.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/ja/index.php
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/requirements/views/no/index.php
@@ -189,7 +176,6 @@ bin/yiic
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/pl
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/no
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/ja
-%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/id
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/he
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/fr
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/requirements/views/es
@@ -322,6 +308,7 @@ bin/yiic
 %%DATADIR%%/framework/caching/dependencies/CFileCacheDependency.php
 %%DATADIR%%/framework/caching/dependencies/CGlobalStateCacheDependency.php
 %%DATADIR%%/framework/cli/commands/MessageCommand.php
+%%DATADIR%%/framework/cli/commands/MigrateCommand.php
 %%DATADIR%%/framework/cli/commands/ShellCommand.php
 %%DATADIR%%/framework/cli/commands/WebAppCommand.php
 %%DATADIR%%/framework/cli/commands/shell/ControllerCommand.php
@@ -378,6 +365,7 @@ bin/yiic
 %%DATADIR%%/framework/cli/views/webapp/protected/data/testdrive.db
 %%DATADIR%%/framework/cli/views/webapp/protected/extensions/.yii
 %%DATADIR%%/framework/cli/views/webapp/protected/messages/.yii
+%%DATADIR%%/framework/cli/views/webapp/protected/migrations/.yii
 %%DATADIR%%/framework/cli/views/webapp/protected/models/ContactForm.php
 %%DATADIR%%/framework/cli/views/webapp/protected/models/LoginForm.php
 %%DATADIR%%/framework/cli/views/webapp/protected/runtime/.yii
@@ -423,6 +411,7 @@ bin/yiic
 %%DATADIR%%/framework/db/CDbConnection.php
 %%DATADIR%%/framework/db/CDbDataReader.php
 %%DATADIR%%/framework/db/CDbException.php
+%%DATADIR%%/framework/db/CDbMigration.php
 %%DATADIR%%/framework/db/CDbTransaction.php
 %%DATADIR%%/framework/db/ar/CActiveFinder.php
 %%DATADIR%%/framework/db/ar/CActiveRecord.php
@@ -456,7 +445,6 @@ bin/yiic
 %%DATADIR%%/framework/gii/CCodeGenerator.php
 %%DATADIR%%/framework/gii/CCodeModel.php
 %%DATADIR%%/framework/gii/GiiModule.php
-%%DATADIR%%/framework/gii/assets/css/bg.gif
 %%DATADIR%%/framework/gii/assets/css/ie.css
 %%DATADIR%%/framework/gii/assets/css/main.css
 %%DATADIR%%/framework/gii/assets/css/print.css
@@ -559,7 +547,6 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/aa.php
 %%DATADIR%%/framework/i18n/data/aa_dj.php
 %%DATADIR%%/framework/i18n/data/aa_er.php
-%%DATADIR%%/framework/i18n/data/aa_er_saaho.php
 %%DATADIR%%/framework/i18n/data/aa_et.php
 %%DATADIR%%/framework/i18n/data/af.php
 %%DATADIR%%/framework/i18n/data/af_na.php
@@ -588,22 +575,37 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/ar_ye.php
 %%DATADIR%%/framework/i18n/data/as.php
 %%DATADIR%%/framework/i18n/data/as_in.php
+%%DATADIR%%/framework/i18n/data/asa.php
+%%DATADIR%%/framework/i18n/data/asa_tz.php
 %%DATADIR%%/framework/i18n/data/az.php
+%%DATADIR%%/framework/i18n/data/az_arab.php
+%%DATADIR%%/framework/i18n/data/az_arab_ir.php
 %%DATADIR%%/framework/i18n/data/az_az.php
 %%DATADIR%%/framework/i18n/data/az_cyrl.php
 %%DATADIR%%/framework/i18n/data/az_cyrl_az.php
+%%DATADIR%%/framework/i18n/data/az_ir.php
 %%DATADIR%%/framework/i18n/data/az_latn.php
 %%DATADIR%%/framework/i18n/data/az_latn_az.php
 %%DATADIR%%/framework/i18n/data/be.php
 %%DATADIR%%/framework/i18n/data/be_by.php
+%%DATADIR%%/framework/i18n/data/bem.php
+%%DATADIR%%/framework/i18n/data/bem_zm.php
+%%DATADIR%%/framework/i18n/data/bez.php
+%%DATADIR%%/framework/i18n/data/bez_tz.php
 %%DATADIR%%/framework/i18n/data/bg.php
 %%DATADIR%%/framework/i18n/data/bg_bg.php
+%%DATADIR%%/framework/i18n/data/bm.php
+%%DATADIR%%/framework/i18n/data/bm_ml.php
 %%DATADIR%%/framework/i18n/data/bn.php
 %%DATADIR%%/framework/i18n/data/bn_bd.php
 %%DATADIR%%/framework/i18n/data/bn_in.php
 %%DATADIR%%/framework/i18n/data/bo.php
 %%DATADIR%%/framework/i18n/data/bo_cn.php
 %%DATADIR%%/framework/i18n/data/bo_in.php
+%%DATADIR%%/framework/i18n/data/br.php
+%%DATADIR%%/framework/i18n/data/br_fr.php
+%%DATADIR%%/framework/i18n/data/brx.php
+%%DATADIR%%/framework/i18n/data/brx_in.php
 %%DATADIR%%/framework/i18n/data/bs.php
 %%DATADIR%%/framework/i18n/data/bs_ba.php
 %%DATADIR%%/framework/i18n/data/byn.php
@@ -612,13 +614,18 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/ca_es.php
 %%DATADIR%%/framework/i18n/data/cch.php
 %%DATADIR%%/framework/i18n/data/cch_ng.php
-%%DATADIR%%/framework/i18n/data/cop.php
+%%DATADIR%%/framework/i18n/data/cgg.php
+%%DATADIR%%/framework/i18n/data/cgg_ug.php
+%%DATADIR%%/framework/i18n/data/chr.php
+%%DATADIR%%/framework/i18n/data/chr_us.php
 %%DATADIR%%/framework/i18n/data/cs.php
 %%DATADIR%%/framework/i18n/data/cs_cz.php
 %%DATADIR%%/framework/i18n/data/cy.php
 %%DATADIR%%/framework/i18n/data/cy_gb.php
 %%DATADIR%%/framework/i18n/data/da.php
 %%DATADIR%%/framework/i18n/data/da_dk.php
+%%DATADIR%%/framework/i18n/data/dav.php
+%%DATADIR%%/framework/i18n/data/dav_ke.php
 %%DATADIR%%/framework/i18n/data/de.php
 %%DATADIR%%/framework/i18n/data/de_at.php
 %%DATADIR%%/framework/i18n/data/de_be.php
@@ -630,6 +637,8 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/dv_mv.php
 %%DATADIR%%/framework/i18n/data/dz.php
 %%DATADIR%%/framework/i18n/data/dz_bt.php
+%%DATADIR%%/framework/i18n/data/ebu.php
+%%DATADIR%%/framework/i18n/data/ebu_ke.php
 %%DATADIR%%/framework/i18n/data/ee.php
 %%DATADIR%%/framework/i18n/data/ee_gh.php
 %%DATADIR%%/framework/i18n/data/ee_tg.php
@@ -655,6 +664,7 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/en_mh.php
 %%DATADIR%%/framework/i18n/data/en_mp.php
 %%DATADIR%%/framework/i18n/data/en_mt.php
+%%DATADIR%%/framework/i18n/data/en_mu.php
 %%DATADIR%%/framework/i18n/data/en_na.php
 %%DATADIR%%/framework/i18n/data/en_nz.php
 %%DATADIR%%/framework/i18n/data/en_ph.php
@@ -668,8 +678,10 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/en_vi.php
 %%DATADIR%%/framework/i18n/data/en_za.php
 %%DATADIR%%/framework/i18n/data/en_zw.php
+%%DATADIR%%/framework/i18n/data/en_zz.php
 %%DATADIR%%/framework/i18n/data/eo.php
 %%DATADIR%%/framework/i18n/data/es.php
+%%DATADIR%%/framework/i18n/data/es_419.php
 %%DATADIR%%/framework/i18n/data/es_ar.php
 %%DATADIR%%/framework/i18n/data/es_bo.php
 %%DATADIR%%/framework/i18n/data/es_cl.php
@@ -678,6 +690,7 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/es_do.php
 %%DATADIR%%/framework/i18n/data/es_ec.php
 %%DATADIR%%/framework/i18n/data/es_es.php
+%%DATADIR%%/framework/i18n/data/es_gq.php
 %%DATADIR%%/framework/i18n/data/es_gt.php
 %%DATADIR%%/framework/i18n/data/es_hn.php
 %%DATADIR%%/framework/i18n/data/es_mx.php
@@ -697,6 +710,8 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/fa.php
 %%DATADIR%%/framework/i18n/data/fa_af.php
 %%DATADIR%%/framework/i18n/data/fa_ir.php
+%%DATADIR%%/framework/i18n/data/ff.php
+%%DATADIR%%/framework/i18n/data/ff_sn.php
 %%DATADIR%%/framework/i18n/data/fi.php
 %%DATADIR%%/framework/i18n/data/fi_fi.php
 %%DATADIR%%/framework/i18n/data/fil.php
@@ -705,12 +720,36 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/fo_fo.php
 %%DATADIR%%/framework/i18n/data/fr.php
 %%DATADIR%%/framework/i18n/data/fr_be.php
+%%DATADIR%%/framework/i18n/data/fr_bf.php
+%%DATADIR%%/framework/i18n/data/fr_bi.php
+%%DATADIR%%/framework/i18n/data/fr_bj.php
+%%DATADIR%%/framework/i18n/data/fr_bl.php
 %%DATADIR%%/framework/i18n/data/fr_ca.php
+%%DATADIR%%/framework/i18n/data/fr_cd.php
+%%DATADIR%%/framework/i18n/data/fr_cf.php
+%%DATADIR%%/framework/i18n/data/fr_cg.php
 %%DATADIR%%/framework/i18n/data/fr_ch.php
+%%DATADIR%%/framework/i18n/data/fr_ci.php
+%%DATADIR%%/framework/i18n/data/fr_cm.php
+%%DATADIR%%/framework/i18n/data/fr_dj.php
 %%DATADIR%%/framework/i18n/data/fr_fr.php
+%%DATADIR%%/framework/i18n/data/fr_ga.php
+%%DATADIR%%/framework/i18n/data/fr_gn.php
+%%DATADIR%%/framework/i18n/data/fr_gp.php
+%%DATADIR%%/framework/i18n/data/fr_gq.php
+%%DATADIR%%/framework/i18n/data/fr_km.php
 %%DATADIR%%/framework/i18n/data/fr_lu.php
 %%DATADIR%%/framework/i18n/data/fr_mc.php
+%%DATADIR%%/framework/i18n/data/fr_mf.php
+%%DATADIR%%/framework/i18n/data/fr_mg.php
+%%DATADIR%%/framework/i18n/data/fr_ml.php
+%%DATADIR%%/framework/i18n/data/fr_mq.php
+%%DATADIR%%/framework/i18n/data/fr_ne.php
+%%DATADIR%%/framework/i18n/data/fr_re.php
+%%DATADIR%%/framework/i18n/data/fr_rw.php
 %%DATADIR%%/framework/i18n/data/fr_sn.php
+%%DATADIR%%/framework/i18n/data/fr_td.php
+%%DATADIR%%/framework/i18n/data/fr_tg.php
 %%DATADIR%%/framework/i18n/data/fur.php
 %%DATADIR%%/framework/i18n/data/fur_it.php
 %%DATADIR%%/framework/i18n/data/ga.php
@@ -726,6 +765,8 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/gsw_ch.php
 %%DATADIR%%/framework/i18n/data/gu.php
 %%DATADIR%%/framework/i18n/data/gu_in.php
+%%DATADIR%%/framework/i18n/data/guz.php
+%%DATADIR%%/framework/i18n/data/guz_ke.php
 %%DATADIR%%/framework/i18n/data/gv.php
 %%DATADIR%%/framework/i18n/data/gv_gb.php
 %%DATADIR%%/framework/i18n/data/ha.php
@@ -752,7 +793,6 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/hu_hu.php
 %%DATADIR%%/framework/i18n/data/hy.php
 %%DATADIR%%/framework/i18n/data/hy_am.php
-%%DATADIR%%/framework/i18n/data/hy_am_revised.php
 %%DATADIR%%/framework/i18n/data/ia.php
 %%DATADIR%%/framework/i18n/data/id.php
 %%DATADIR%%/framework/i18n/data/id_id.php
@@ -770,22 +810,36 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/iw.php
 %%DATADIR%%/framework/i18n/data/ja.php
 %%DATADIR%%/framework/i18n/data/ja_jp.php
+%%DATADIR%%/framework/i18n/data/jmc.php
+%%DATADIR%%/framework/i18n/data/jmc_tz.php
 %%DATADIR%%/framework/i18n/data/ka.php
 %%DATADIR%%/framework/i18n/data/ka_ge.php
+%%DATADIR%%/framework/i18n/data/kab.php
+%%DATADIR%%/framework/i18n/data/kab_dz.php
 %%DATADIR%%/framework/i18n/data/kaj.php
 %%DATADIR%%/framework/i18n/data/kaj_ng.php
 %%DATADIR%%/framework/i18n/data/kam.php
 %%DATADIR%%/framework/i18n/data/kam_ke.php
 %%DATADIR%%/framework/i18n/data/kcg.php
 %%DATADIR%%/framework/i18n/data/kcg_ng.php
+%%DATADIR%%/framework/i18n/data/kde.php
+%%DATADIR%%/framework/i18n/data/kde_tz.php
+%%DATADIR%%/framework/i18n/data/kea.php
+%%DATADIR%%/framework/i18n/data/kea_cv.php
 %%DATADIR%%/framework/i18n/data/kfo.php
 %%DATADIR%%/framework/i18n/data/kfo_ci.php
+%%DATADIR%%/framework/i18n/data/khq.php
+%%DATADIR%%/framework/i18n/data/khq_ml.php
+%%DATADIR%%/framework/i18n/data/ki.php
+%%DATADIR%%/framework/i18n/data/ki_ke.php
 %%DATADIR%%/framework/i18n/data/kk.php
 %%DATADIR%%/framework/i18n/data/kk_cyrl.php
 %%DATADIR%%/framework/i18n/data/kk_cyrl_kz.php
 %%DATADIR%%/framework/i18n/data/kk_kz.php
 %%DATADIR%%/framework/i18n/data/kl.php
 %%DATADIR%%/framework/i18n/data/kl_gl.php
+%%DATADIR%%/framework/i18n/data/kln.php
+%%DATADIR%%/framework/i18n/data/kln_ke.php
 %%DATADIR%%/framework/i18n/data/km.php
 %%DATADIR%%/framework/i18n/data/km_kh.php
 %%DATADIR%%/framework/i18n/data/kn.php
@@ -797,14 +851,18 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/kpe.php
 %%DATADIR%%/framework/i18n/data/kpe_gn.php
 %%DATADIR%%/framework/i18n/data/kpe_lr.php
+%%DATADIR%%/framework/i18n/data/ksb.php
+%%DATADIR%%/framework/i18n/data/ksb_tz.php
+%%DATADIR%%/framework/i18n/data/ksh.php
+%%DATADIR%%/framework/i18n/data/ksh_de.php
 %%DATADIR%%/framework/i18n/data/ku.php
 %%DATADIR%%/framework/i18n/data/ku_arab.php
 %%DATADIR%%/framework/i18n/data/ku_arab_iq.php
 %%DATADIR%%/framework/i18n/data/ku_arab_ir.php
-%%DATADIR%%/framework/i18n/data/ku_arab_sy.php
 %%DATADIR%%/framework/i18n/data/ku_iq.php
 %%DATADIR%%/framework/i18n/data/ku_ir.php
 %%DATADIR%%/framework/i18n/data/ku_latn.php
+%%DATADIR%%/framework/i18n/data/ku_latn_sy.php
 %%DATADIR%%/framework/i18n/data/ku_latn_tr.php
 %%DATADIR%%/framework/i18n/data/ku_sy.php
 %%DATADIR%%/framework/i18n/data/ku_tr.php
@@ -812,6 +870,10 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/kw_gb.php
 %%DATADIR%%/framework/i18n/data/ky.php
 %%DATADIR%%/framework/i18n/data/ky_kg.php
+%%DATADIR%%/framework/i18n/data/lag.php
+%%DATADIR%%/framework/i18n/data/lag_tz.php
+%%DATADIR%%/framework/i18n/data/lg.php
+%%DATADIR%%/framework/i18n/data/lg_ug.php
 %%DATADIR%%/framework/i18n/data/ln.php
 %%DATADIR%%/framework/i18n/data/ln_cd.php
 %%DATADIR%%/framework/i18n/data/ln_cg.php
@@ -819,8 +881,23 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/lo_la.php
 %%DATADIR%%/framework/i18n/data/lt.php
 %%DATADIR%%/framework/i18n/data/lt_lt.php
+%%DATADIR%%/framework/i18n/data/luo.php
+%%DATADIR%%/framework/i18n/data/luo_ke.php
+%%DATADIR%%/framework/i18n/data/luy.php
+%%DATADIR%%/framework/i18n/data/luy_ke.php
 %%DATADIR%%/framework/i18n/data/lv.php
 %%DATADIR%%/framework/i18n/data/lv_lv.php
+%%DATADIR%%/framework/i18n/data/mas.php
+%%DATADIR%%/framework/i18n/data/mas_ke.php
+%%DATADIR%%/framework/i18n/data/mas_tz.php
+%%DATADIR%%/framework/i18n/data/mer.php
+%%DATADIR%%/framework/i18n/data/mer_ke.php
+%%DATADIR%%/framework/i18n/data/mfe.php
+%%DATADIR%%/framework/i18n/data/mfe_mu.php
+%%DATADIR%%/framework/i18n/data/mg.php
+%%DATADIR%%/framework/i18n/data/mg_mg.php
+%%DATADIR%%/framework/i18n/data/mi.php
+%%DATADIR%%/framework/i18n/data/mi_nz.php
 %%DATADIR%%/framework/i18n/data/mk.php
 %%DATADIR%%/framework/i18n/data/mk_mk.php
 %%DATADIR%%/framework/i18n/data/ml.php
@@ -842,8 +919,12 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/mt_mt.php
 %%DATADIR%%/framework/i18n/data/my.php
 %%DATADIR%%/framework/i18n/data/my_mm.php
+%%DATADIR%%/framework/i18n/data/naq.php
+%%DATADIR%%/framework/i18n/data/naq_na.php
 %%DATADIR%%/framework/i18n/data/nb.php
 %%DATADIR%%/framework/i18n/data/nb_no.php
+%%DATADIR%%/framework/i18n/data/nd.php
+%%DATADIR%%/framework/i18n/data/nd_zw.php
 %%DATADIR%%/framework/i18n/data/nds.php
 %%DATADIR%%/framework/i18n/data/nds_de.php
 %%DATADIR%%/framework/i18n/data/ne.php
@@ -861,6 +942,8 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/nso_za.php
 %%DATADIR%%/framework/i18n/data/ny.php
 %%DATADIR%%/framework/i18n/data/ny_mw.php
+%%DATADIR%%/framework/i18n/data/nyn.php
+%%DATADIR%%/framework/i18n/data/nyn_ug.php
 %%DATADIR%%/framework/i18n/data/oc.php
 %%DATADIR%%/framework/i18n/data/oc_fr.php
 %%DATADIR%%/framework/i18n/data/om.php
@@ -880,26 +963,50 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/ps.php
 %%DATADIR%%/framework/i18n/data/ps_af.php
 %%DATADIR%%/framework/i18n/data/pt.php
+%%DATADIR%%/framework/i18n/data/pt_ao.php
 %%DATADIR%%/framework/i18n/data/pt_br.php
+%%DATADIR%%/framework/i18n/data/pt_gw.php
+%%DATADIR%%/framework/i18n/data/pt_mz.php
 %%DATADIR%%/framework/i18n/data/pt_pt.php
+%%DATADIR%%/framework/i18n/data/rm.php
+%%DATADIR%%/framework/i18n/data/rm_ch.php
 %%DATADIR%%/framework/i18n/data/ro.php
 %%DATADIR%%/framework/i18n/data/ro_md.php
 %%DATADIR%%/framework/i18n/data/ro_ro.php
+%%DATADIR%%/framework/i18n/data/rof.php
+%%DATADIR%%/framework/i18n/data/rof_tz.php
 %%DATADIR%%/framework/i18n/data/root.php
 %%DATADIR%%/framework/i18n/data/ru.php
+%%DATADIR%%/framework/i18n/data/ru_md.php
 %%DATADIR%%/framework/i18n/data/ru_ru.php
 %%DATADIR%%/framework/i18n/data/ru_ua.php
 %%DATADIR%%/framework/i18n/data/rw.php
 %%DATADIR%%/framework/i18n/data/rw_rw.php
+%%DATADIR%%/framework/i18n/data/rwk.php
+%%DATADIR%%/framework/i18n/data/rwk_tz.php
 %%DATADIR%%/framework/i18n/data/sa.php
 %%DATADIR%%/framework/i18n/data/sa_in.php
+%%DATADIR%%/framework/i18n/data/saq.php
+%%DATADIR%%/framework/i18n/data/saq_ke.php
 %%DATADIR%%/framework/i18n/data/se.php
 %%DATADIR%%/framework/i18n/data/se_fi.php
 %%DATADIR%%/framework/i18n/data/se_no.php
+%%DATADIR%%/framework/i18n/data/seh.php
+%%DATADIR%%/framework/i18n/data/seh_mz.php
+%%DATADIR%%/framework/i18n/data/ses.php
+%%DATADIR%%/framework/i18n/data/ses_ml.php
+%%DATADIR%%/framework/i18n/data/sg.php
+%%DATADIR%%/framework/i18n/data/sg_cf.php
 %%DATADIR%%/framework/i18n/data/sh.php
 %%DATADIR%%/framework/i18n/data/sh_ba.php
 %%DATADIR%%/framework/i18n/data/sh_cs.php
 %%DATADIR%%/framework/i18n/data/sh_yu.php
+%%DATADIR%%/framework/i18n/data/shi.php
+%%DATADIR%%/framework/i18n/data/shi_latn.php
+%%DATADIR%%/framework/i18n/data/shi_latn_ma.php
+%%DATADIR%%/framework/i18n/data/shi_ma.php
+%%DATADIR%%/framework/i18n/data/shi_tfng.php
+%%DATADIR%%/framework/i18n/data/shi_tfng_ma.php
 %%DATADIR%%/framework/i18n/data/si.php
 %%DATADIR%%/framework/i18n/data/si_lk.php
 %%DATADIR%%/framework/i18n/data/sid.php
@@ -908,6 +1015,8 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/sk_sk.php
 %%DATADIR%%/framework/i18n/data/sl.php
 %%DATADIR%%/framework/i18n/data/sl_si.php
+%%DATADIR%%/framework/i18n/data/sn.php
+%%DATADIR%%/framework/i18n/data/sn_zw.php
 %%DATADIR%%/framework/i18n/data/so.php
 %%DATADIR%%/framework/i18n/data/so_dj.php
 %%DATADIR%%/framework/i18n/data/so_et.php
@@ -936,6 +1045,8 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/ss.php
 %%DATADIR%%/framework/i18n/data/ss_sz.php
 %%DATADIR%%/framework/i18n/data/ss_za.php
+%%DATADIR%%/framework/i18n/data/ssy.php
+%%DATADIR%%/framework/i18n/data/ssy_er.php
 %%DATADIR%%/framework/i18n/data/st.php
 %%DATADIR%%/framework/i18n/data/st_ls.php
 %%DATADIR%%/framework/i18n/data/st_za.php
@@ -949,8 +1060,12 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/syr_sy.php
 %%DATADIR%%/framework/i18n/data/ta.php
 %%DATADIR%%/framework/i18n/data/ta_in.php
+%%DATADIR%%/framework/i18n/data/ta_lk.php
 %%DATADIR%%/framework/i18n/data/te.php
 %%DATADIR%%/framework/i18n/data/te_in.php
+%%DATADIR%%/framework/i18n/data/teo.php
+%%DATADIR%%/framework/i18n/data/teo_ke.php
+%%DATADIR%%/framework/i18n/data/teo_ug.php
 %%DATADIR%%/framework/i18n/data/tg.php
 %%DATADIR%%/framework/i18n/data/tg_cyrl.php
 %%DATADIR%%/framework/i18n/data/tg_cyrl_tj.php
@@ -963,6 +1078,7 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/tig.php
 %%DATADIR%%/framework/i18n/data/tig_er.php
 %%DATADIR%%/framework/i18n/data/tl.php
+%%DATADIR%%/framework/i18n/data/tl_ph.php
 %%DATADIR%%/framework/i18n/data/tn.php
 %%DATADIR%%/framework/i18n/data/tn_za.php
 %%DATADIR%%/framework/i18n/data/to.php
@@ -975,6 +1091,10 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/ts_za.php
 %%DATADIR%%/framework/i18n/data/tt.php
 %%DATADIR%%/framework/i18n/data/tt_ru.php
+%%DATADIR%%/framework/i18n/data/tzm.php
+%%DATADIR%%/framework/i18n/data/tzm_latn.php
+%%DATADIR%%/framework/i18n/data/tzm_latn_ma.php
+%%DATADIR%%/framework/i18n/data/tzm_ma.php
 %%DATADIR%%/framework/i18n/data/ug.php
 %%DATADIR%%/framework/i18n/data/ug_arab.php
 %%DATADIR%%/framework/i18n/data/ug_arab_cn.php
@@ -997,6 +1117,8 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/ve_za.php
 %%DATADIR%%/framework/i18n/data/vi.php
 %%DATADIR%%/framework/i18n/data/vi_vn.php
+%%DATADIR%%/framework/i18n/data/vun.php
+%%DATADIR%%/framework/i18n/data/vun_tz.php
 %%DATADIR%%/framework/i18n/data/wal.php
 %%DATADIR%%/framework/i18n/data/wal_et.php
 %%DATADIR%%/framework/i18n/data/wo.php
@@ -1005,6 +1127,8 @@ bin/yiic
 %%DATADIR%%/framework/i18n/data/wo_sn.php
 %%DATADIR%%/framework/i18n/data/xh.php
 %%DATADIR%%/framework/i18n/data/xh_za.php
+%%DATADIR%%/framework/i18n/data/xog.php
+%%DATADIR%%/framework/i18n/data/xog_ug.php
 %%DATADIR%%/framework/i18n/data/yo.php
 %%DATADIR%%/framework/i18n/data/yo_ng.php
 %%DATADIR%%/framework/i18n/data/zh.php
@@ -1040,6 +1164,8 @@ bin/yiic
 %%DATADIR%%/framework/messages/bg/zii.php
 %%DATADIR%%/framework/messages/bs/yii.php
 %%DATADIR%%/framework/messages/config.php
+%%DATADIR%%/framework/messages/cs/yii.php
+%%DATADIR%%/framework/messages/cs/zii.php
 %%DATADIR%%/framework/messages/de/yii.php
 %%DATADIR%%/framework/messages/de/zii.php
 %%DATADIR%%/framework/messages/el/yii.php
@@ -1057,6 +1183,8 @@ bin/yiic
 %%DATADIR%%/framework/messages/it/zii.php
 %%DATADIR%%/framework/messages/ja/yii.php
 %%DATADIR%%/framework/messages/ja/zii.php
+%%DATADIR%%/framework/messages/lt/yii.php
+%%DATADIR%%/framework/messages/lt/zii.php
 %%DATADIR%%/framework/messages/lv/yii.php
 %%DATADIR%%/framework/messages/lv/zii.php
 %%DATADIR%%/framework/messages/nl/yii.php
@@ -1065,6 +1193,7 @@ bin/yiic
 %%DATADIR%%/framework/messages/pl/yii.php
 %%DATADIR%%/framework/messages/pl/zii.php
 %%DATADIR%%/framework/messages/pt/yii.php
+%%DATADIR%%/framework/messages/pt/zii.php
 %%DATADIR%%/framework/messages/ro/yii.php
 %%DATADIR%%/framework/messages/ru/yii.php
 %%DATADIR%%/framework/messages/ru/zii.php
@@ -1077,6 +1206,8 @@ bin/yiic
 %%DATADIR%%/framework/messages/ta_in/yii.php
 %%DATADIR%%/framework/messages/ta_in/zii.php
 %%DATADIR%%/framework/messages/th/yii.php
+%%DATADIR%%/framework/messages/tr/yii.php
+%%DATADIR%%/framework/messages/tr/zii.php
 %%DATADIR%%/framework/messages/uk/yii.php
 %%DATADIR%%/framework/messages/uk/zii.php
 %%DATADIR%%/framework/messages/vi/yii.php
@@ -1099,6 +1230,7 @@ bin/yiic
 %%DATADIR%%/framework/validators/CBooleanValidator.php
 %%DATADIR%%/framework/validators/CCaptchaValidator.php
 %%DATADIR%%/framework/validators/CCompareValidator.php
+%%DATADIR%%/framework/validators/CDateValidator.php
 %%DATADIR%%/framework/validators/CDefaultValueValidator.php
 %%DATADIR%%/framework/validators/CEmailValidator.php
 %%DATADIR%%/framework/validators/CExistValidator.php
@@ -1308,7 +1440,7 @@ bin/yiic
 %%DATADIR%%/framework/vendors/jquery/autocomplete/LICENSE.txt
 %%DATADIR%%/framework/vendors/jquery/maskedinput/LICENSE.txt
 %%DATADIR%%/framework/vendors/jquery/treeview/LICENSE.txt
-%%DATADIR%%/framework/vendors/jqueryui/LICENSE.txt
+%%DATADIR%%/framework/vendors/jqueryui/MIT-LICENSE.txt
 %%DATADIR%%/framework/vendors/json/LICENSE.txt
 %%DATADIR%%/framework/vendors/markdown/LICENSE.txt
 %%DATADIR%%/framework/vendors/markdown/markdown.php
@@ -1318,7 +1450,6 @@ bin/yiic
 %%DATADIR%%/framework/views/bg/error404.php
 %%DATADIR%%/framework/views/bg/error500.php
 %%DATADIR%%/framework/views/bg/error503.php
-%%DATADIR%%/framework/views/bg/exception.php
 %%DATADIR%%/framework/views/bg/log-firebug.php
 %%DATADIR%%/framework/views/bg/log.php
 %%DATADIR%%/framework/views/bg/profile-callstack-firebug.php
@@ -1331,7 +1462,6 @@ bin/yiic
 %%DATADIR%%/framework/views/de/error404.php
 %%DATADIR%%/framework/views/de/error500.php
 %%DATADIR%%/framework/views/de/error503.php
-%%DATADIR%%/framework/views/de/exception.php
 %%DATADIR%%/framework/views/de/log-firebug.php
 %%DATADIR%%/framework/views/de/log.php
 %%DATADIR%%/framework/views/de/profile-callstack-firebug.php
@@ -1344,7 +1474,6 @@ bin/yiic
 %%DATADIR%%/framework/views/el/error404.php
 %%DATADIR%%/framework/views/el/error500.php
 %%DATADIR%%/framework/views/el/error503.php
-%%DATADIR%%/framework/views/el/exception.php
 %%DATADIR%%/framework/views/el/log-firebug.php
 %%DATADIR%%/framework/views/el/log.php
 %%DATADIR%%/framework/views/el/profile-callstack-firebug.php
@@ -1363,7 +1492,6 @@ bin/yiic
 %%DATADIR%%/framework/views/es/error404.php
 %%DATADIR%%/framework/views/es/error500.php
 %%DATADIR%%/framework/views/es/error503.php
-%%DATADIR%%/framework/views/es/exception.php
 %%DATADIR%%/framework/views/es/log-firebug.php
 %%DATADIR%%/framework/views/es/log.php
 %%DATADIR%%/framework/views/es/profile-callstack-firebug.php
@@ -1377,7 +1505,6 @@ bin/yiic
 %%DATADIR%%/framework/views/fr/error404.php
 %%DATADIR%%/framework/views/fr/error500.php
 %%DATADIR%%/framework/views/fr/error503.php
-%%DATADIR%%/framework/views/fr/exception.php
 %%DATADIR%%/framework/views/fr/log-firebug.php
 %%DATADIR%%/framework/views/fr/log.php
 %%DATADIR%%/framework/views/fr/profile-callstack-firebug.php
@@ -1390,7 +1517,6 @@ bin/yiic
 %%DATADIR%%/framework/views/he/error404.php
 %%DATADIR%%/framework/views/he/error500.php
 %%DATADIR%%/framework/views/he/error503.php
-%%DATADIR%%/framework/views/he/exception.php
 %%DATADIR%%/framework/views/he/log-firebug.php
 %%DATADIR%%/framework/views/he/log.php
 %%DATADIR%%/framework/views/he/profile-callstack-firebug.php
@@ -1403,7 +1529,6 @@ bin/yiic
 %%DATADIR%%/framework/views/hr/error404.php
 %%DATADIR%%/framework/views/hr/error500.php
 %%DATADIR%%/framework/views/hr/error503.php
-%%DATADIR%%/framework/views/hr/exception.php
 %%DATADIR%%/framework/views/hr/log-firebug.php
 %%DATADIR%%/framework/views/hr/log.php
 %%DATADIR%%/framework/views/hr/profile-callstack-firebug.php
@@ -1416,7 +1541,6 @@ bin/yiic
 %%DATADIR%%/framework/views/id/error404.php
 %%DATADIR%%/framework/views/id/error500.php
 %%DATADIR%%/framework/views/id/error503.php
-%%DATADIR%%/framework/views/id/exception.php
 %%DATADIR%%/framework/views/id/log-firebug.php
 %%DATADIR%%/framework/views/id/log.php
 %%DATADIR%%/framework/views/id/profile-callstack-firebug.php
@@ -1429,7 +1553,6 @@ bin/yiic
 %%DATADIR%%/framework/views/it/error404.php
 %%DATADIR%%/framework/views/it/error500.php
 %%DATADIR%%/framework/views/it/error503.php
-%%DATADIR%%/framework/views/it/exception.php
 %%DATADIR%%/framework/views/it/log-firebug.php
 %%DATADIR%%/framework/views/it/log.php
 %%DATADIR%%/framework/views/it/profile-callstack-firebug.php
@@ -1442,7 +1565,6 @@ bin/yiic
 %%DATADIR%%/framework/views/ja/error404.php
 %%DATADIR%%/framework/views/ja/error500.php
 %%DATADIR%%/framework/views/ja/error503.php
-%%DATADIR%%/framework/views/ja/exception.php
 %%DATADIR%%/framework/views/ja/log-firebug.php
 %%DATADIR%%/framework/views/ja/log.php
 %%DATADIR%%/framework/views/ja/profile-callstack-firebug.php
@@ -1451,13 +1573,25 @@ bin/yiic
 %%DATADIR%%/framework/views/ja/profile-summary.php
 %%DATADIR%%/framework/views/log-firebug.php
 %%DATADIR%%/framework/views/log.php
+%%DATADIR%%/framework/views/lt/error.php
+%%DATADIR%%/framework/views/lt/error400.php
+%%DATADIR%%/framework/views/lt/error403.php
+%%DATADIR%%/framework/views/lt/error404.php
+%%DATADIR%%/framework/views/lt/error500.php
+%%DATADIR%%/framework/views/lt/error503.php
+%%DATADIR%%/framework/views/lt/exception.php
+%%DATADIR%%/framework/views/lt/log-firebug.php
+%%DATADIR%%/framework/views/lt/log.php
+%%DATADIR%%/framework/views/lt/profile-callstack-firebug.php
+%%DATADIR%%/framework/views/lt/profile-callstack.php
+%%DATADIR%%/framework/views/lt/profile-summary-firebug.php
+%%DATADIR%%/framework/views/lt/profile-summary.php
 %%DATADIR%%/framework/views/lv/error.php
 %%DATADIR%%/framework/views/lv/error400.php
 %%DATADIR%%/framework/views/lv/error403.php
 %%DATADIR%%/framework/views/lv/error404.php
 %%DATADIR%%/framework/views/lv/error500.php
 %%DATADIR%%/framework/views/lv/error503.php
-%%DATADIR%%/framework/views/lv/exception.php
 %%DATADIR%%/framework/views/lv/log-firebug.php
 %%DATADIR%%/framework/views/lv/log.php
 %%DATADIR%%/framework/views/lv/profile-callstack-firebug.php
@@ -1470,7 +1604,6 @@ bin/yiic
 %%DATADIR%%/framework/views/nl/error404.php
 %%DATADIR%%/framework/views/nl/error500.php
 %%DATADIR%%/framework/views/nl/error503.php
-%%DATADIR%%/framework/views/nl/exception.php
 %%DATADIR%%/framework/views/nl/log-firebug.php
 %%DATADIR%%/framework/views/nl/log.php
 %%DATADIR%%/framework/views/nl/profile-callstack-firebug.php
@@ -1483,7 +1616,6 @@ bin/yiic
 %%DATADIR%%/framework/views/no/error404.php
 %%DATADIR%%/framework/views/no/error500.php
 %%DATADIR%%/framework/views/no/error503.php
-%%DATADIR%%/framework/views/no/exception.php
 %%DATADIR%%/framework/views/no/log-firebug.php
 %%DATADIR%%/framework/views/no/log.php
 %%DATADIR%%/framework/views/no/profile-callstack-firebug.php
@@ -1496,7 +1628,6 @@ bin/yiic
 %%DATADIR%%/framework/views/pl/error404.php
 %%DATADIR%%/framework/views/pl/error500.php
 %%DATADIR%%/framework/views/pl/error503.php
-%%DATADIR%%/framework/views/pl/exception.php
 %%DATADIR%%/framework/views/pl/log-firebug.php
 %%DATADIR%%/framework/views/pl/log.php
 %%DATADIR%%/framework/views/pl/profile-callstack-firebug.php
@@ -1513,7 +1644,6 @@ bin/yiic
 %%DATADIR%%/framework/views/pt/error404.php
 %%DATADIR%%/framework/views/pt/error500.php
 %%DATADIR%%/framework/views/pt/error503.php
-%%DATADIR%%/framework/views/pt/exception.php
 %%DATADIR%%/framework/views/pt/log-firebug.php
 %%DATADIR%%/framework/views/pt/log.php
 %%DATADIR%%/framework/views/pt/profile-callstack-firebug.php
@@ -1526,7 +1656,6 @@ bin/yiic
 %%DATADIR%%/framework/views/ro/error404.php
 %%DATADIR%%/framework/views/ro/error500.php
 %%DATADIR%%/framework/views/ro/error503.php
-%%DATADIR%%/framework/views/ro/exception.php
 %%DATADIR%%/framework/views/ro/log-firebug.php
 %%DATADIR%%/framework/views/ro/log.php
 %%DATADIR%%/framework/views/ro/profile-callstack-firebug.php
@@ -1539,7 +1668,6 @@ bin/yiic
 %%DATADIR%%/framework/views/ru/error404.php
 %%DATADIR%%/framework/views/ru/error500.php
 %%DATADIR%%/framework/views/ru/error503.php
-%%DATADIR%%/framework/views/ru/exception.php
 %%DATADIR%%/framework/views/ru/log-firebug.php
 %%DATADIR%%/framework/views/ru/log.php
 %%DATADIR%%/framework/views/ru/profile-callstack-firebug.php
@@ -1552,7 +1680,6 @@ bin/yiic
 %%DATADIR%%/framework/views/sk/error404.php
 %%DATADIR%%/framework/views/sk/error500.php
 %%DATADIR%%/framework/views/sk/error503.php
-%%DATADIR%%/framework/views/sk/exception.php
 %%DATADIR%%/framework/views/sk/log-firebug.php
 %%DATADIR%%/framework/views/sk/log.php
 %%DATADIR%%/framework/views/sk/profile-callstack-firebug.php
@@ -1578,7 +1705,6 @@ bin/yiic
 %%DATADIR%%/framework/views/uk/error404.php
 %%DATADIR%%/framework/views/uk/error500.php
 %%DATADIR%%/framework/views/uk/error503.php
-%%DATADIR%%/framework/views/uk/exception.php
 %%DATADIR%%/framework/views/uk/log-firebug.php
 %%DATADIR%%/framework/views/uk/log.php
 %%DATADIR%%/framework/views/uk/profile-callstack-firebug.php
@@ -1591,7 +1717,6 @@ bin/yiic
 %%DATADIR%%/framework/views/vi/error404.php
 %%DATADIR%%/framework/views/vi/error500.php
 %%DATADIR%%/framework/views/vi/error503.php
-%%DATADIR%%/framework/views/vi/exception.php
 %%DATADIR%%/framework/views/vi/log-firebug.php
 %%DATADIR%%/framework/views/vi/log.php
 %%DATADIR%%/framework/views/vi/profile-callstack-firebug.php
@@ -1604,7 +1729,6 @@ bin/yiic
 %%DATADIR%%/framework/views/zh_cn/error404.php
 %%DATADIR%%/framework/views/zh_cn/error500.php
 %%DATADIR%%/framework/views/zh_cn/error503.php
-%%DATADIR%%/framework/views/zh_cn/exception.php
 %%DATADIR%%/framework/views/zh_cn/log-firebug.php
 %%DATADIR%%/framework/views/zh_cn/log.php
 %%DATADIR%%/framework/views/zh_cn/profile-callstack-firebug.php
@@ -1617,7 +1741,6 @@ bin/yiic
 %%DATADIR%%/framework/views/zh_tw/error404.php
 %%DATADIR%%/framework/views/zh_tw/error500.php
 %%DATADIR%%/framework/views/zh_tw/error503.php
-%%DATADIR%%/framework/views/zh_tw/exception.php
 %%DATADIR%%/framework/views/zh_tw/log-firebug.php
 %%DATADIR%%/framework/views/zh_tw/log.php
 %%DATADIR%%/framework/views/zh_tw/profile-callstack-firebug.php
@@ -1684,7 +1807,6 @@ bin/yiic
 %%DATADIR%%/framework/web/js/source/jquery.ba-bbq.js
 %%DATADIR%%/framework/web/js/source/jquery.bgiframe.js
 %%DATADIR%%/framework/web/js/source/jquery.cookie.js
-%%DATADIR%%/framework/web/js/source/jquery.dimensions.js
 %%DATADIR%%/framework/web/js/source/jquery.js
 %%DATADIR%%/framework/web/js/source/jquery.maskedinput.js
 %%DATADIR%%/framework/web/js/source/jquery.metadata.js
@@ -1877,6 +1999,7 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/views/no
 @dirrm %%DATADIR%%/framework/views/nl
 @dirrm %%DATADIR%%/framework/views/lv
+@dirrm %%DATADIR%%/framework/views/lt
 @dirrm %%DATADIR%%/framework/views/ja
 @dirrm %%DATADIR%%/framework/views/it
 @dirrm %%DATADIR%%/framework/views/id
@@ -1927,6 +2050,7 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/messages/zh_cn
 @dirrm %%DATADIR%%/framework/messages/vi
 @dirrm %%DATADIR%%/framework/messages/uk
+@dirrm %%DATADIR%%/framework/messages/tr
 @dirrm %%DATADIR%%/framework/messages/th
 @dirrm %%DATADIR%%/framework/messages/ta_in
 @dirrm %%DATADIR%%/framework/messages/sv
@@ -1940,6 +2064,7 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/messages/no
 @dirrm %%DATADIR%%/framework/messages/nl
 @dirrm %%DATADIR%%/framework/messages/lv
+@dirrm %%DATADIR%%/framework/messages/lt
 @dirrm %%DATADIR%%/framework/messages/ja
 @dirrm %%DATADIR%%/framework/messages/it
 @dirrm %%DATADIR%%/framework/messages/id
@@ -1949,6 +2074,7 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/messages/es
 @dirrm %%DATADIR%%/framework/messages/el
 @dirrm %%DATADIR%%/framework/messages/de
+@dirrm %%DATADIR%%/framework/messages/cs
 @dirrm %%DATADIR%%/framework/messages/bs
 @dirrm %%DATADIR%%/framework/messages/bg
 @dirrm %%DATADIR%%/framework/messages
@@ -2029,6 +2155,7 @@ bin/yiic
 @dirrm %%DATADIR%%/framework/cli/views/webapp/protected/tests
 @dirrm %%DATADIR%%/framework/cli/views/webapp/protected/runtime
 @dirrm %%DATADIR%%/framework/cli/views/webapp/protected/models
+@dirrm %%DATADIR%%/framework/cli/views/webapp/protected/migrations
 @dirrm %%DATADIR%%/framework/cli/views/webapp/protected/messages
 @dirrm %%DATADIR%%/framework/cli/views/webapp/protected/extensions
 @dirrm %%DATADIR%%/framework/cli/views/webapp/protected/data
