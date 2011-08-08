@@ -4,4 +4,3 @@ connections).  dxpc attempts to exploit patterns in X protocol
 messages to limit the amount of data actually sent over the network.
 
 WWW:	http://www.vigor.nu/dxpc/
-WWW:	http://ccwf.cc.utexas.edu/~zvonler/dxpc/
