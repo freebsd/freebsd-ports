@@ -15,9 +15,13 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}.0
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Check the validity and consistency of PO and POT files
 
-USE_GETTEXT=	run
-USE_PYTHON=	yes
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 NO_BUILD=	yes
+
+USE_GETTEXT=	run
+USE_PYTHON_RUN=	yes
 
 MAN1=		POFileChecker.1 POFileClean.1 POFileConsistency.1 \
 		POFileEquiv.1 POFileFill.1 POFileGlossary.1 \
