@@ -7,6 +7,7 @@
 
 PORTNAME=	phpbb
 PORTVERSION=	3.0.9
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.phpbb.com/files/release/ \
 		http://d10xg45o6p6dbl.cloudfront.net/projects/p/phpbb/
@@ -15,10 +16,13 @@ DISTNAME=	phpBB-${PORTVERSION}
 MAINTAINER=	appleboy.tw@gmail.com
 COMMENT=	A PHP-based bulletin board / discussion forum system
 
+LICENSE=	GPLv2
+
 CONFLICTS=	phpbb-tw-[0-9]* phpbb-devel-[0-9]* \
 		phpbb-[0-2]*
 
 USE_BZIP2=	yes
+USE_PHP=	yes
 
 # The phpBB3 port supports a number of variables that may be tweaked at build
 # time.  Perform a "make options" to see more information on these variables.
