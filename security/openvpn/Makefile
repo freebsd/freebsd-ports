@@ -25,8 +25,13 @@ USE_OPENSSL=	yes
 USE_XZ=		yes
 CONFIGURE_ARGS=	--with-lzo-lib=${LOCALBASE}/lib \
 		--with-lzo-headers=${LOCALBASE}/include
-INSTALL_TARGET=	install mandir=${MANPREFIX}/man
+.if !defined(NOPORTDOCS)
+INSTALL_TARGET=	install
+.else
+INSTALL_TARGET=	install-exec install-man
+.endif
 
+INSTALL_TARGET+=	mandir=${MANPREFIX}/man
 MAN8=		openvpn.8
 
 OPTIONS=	PW_SAVE "Interactive passwords may be read from a file" off \
