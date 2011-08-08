@@ -11,7 +11,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	SF/mcj/mcj_dist_src/3.0/
 DISTNAME=	${PORTNAME}.${PORTVERSION}.full
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	mjl@luckie.org.nz
 COMMENT=	A drawing program for X11
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
