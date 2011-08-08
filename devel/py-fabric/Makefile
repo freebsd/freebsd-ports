@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fabric
-PORTVERSION=	1.0.1
+PORTVERSION=	1.0.2
 PORTEPOCH=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://code.fabfile.org/projects/fabric/files/ \
