@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	pgtune
-PORTVERSION=	0.9.0
+PORTVERSION=	0.9.3
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/2068/ \
-		http://mirror.labs.fr/pub/FreeBSD/distfiles/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/2449/ \
+		http://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
 
-MAINTAINER=	matthieu@labs.fr
+MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	Postgresql.conf tuning tips based on hardware and load type
 
 USE_PYTHON=	yes
