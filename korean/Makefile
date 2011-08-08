@@ -52,6 +52,8 @@
     SUBDIR += scim-tables
     SUBDIR += stardict2-dict-kr
     SUBDIR += texinfo
+    SUBDIR += unfonts-core
+    SUBDIR += unfonts-extra
     SUBDIR += unfonts-ttf
     SUBDIR += uniksc
     SUBDIR += unzip
