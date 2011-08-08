@@ -23,8 +23,6 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-24.* \
 		xemacs-mule-[0-9]* xemacs-devel-mule-[0-9]* \
 		emacs-nox11-[0-9]*
 
-INSTALLS_ICONS=	yes
-
 EMACS_VER=	23.3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -81,6 +79,7 @@ DBUS_PTHREAD_LIBS=	${CC} -dumpspecs | ${GREP} -m 1 pthread: | ${SED} -e 's|^.*%{
 CONFIGURE_ARGS+=	--without-x
 
 .else
+INSTALLS_ICONS=	yes
 USE_XORG=	x11
 USE_GNOME=
 
