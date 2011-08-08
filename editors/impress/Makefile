@@ -7,18 +7,31 @@
 
 PORTNAME=	impress
 PORTVERSION=	1.1b9
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	editors tk
-MASTER_SITES=	TUCOWS http://fresh.t-systems-sfr.com/unix/src/privat2/ \
-		ftp://ftp.plig.net/pub/OpenBSD/distfiles/ \
-		ftp://ftp.openoffice.pl/bsd/FreeBSD/ports/distfiles/
+MASTER_SITES=	TUCOWS \
+		http://www.ntlug.org/~ccox/impress/
 DISTNAME=	imp${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Publishing and presentation tool
 
-USE_TK_RUN=	84
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
+NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+
+USE_TK_WRAPPER=	yes
+
+PORTDOCS=	*
+PLIST_FILES=	bin/impress
+
+do-install:
+	${INSTALL_SCRIPT} ${WRKSRC}/src/impress.tcl ${PREFIX}/bin/impress
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC}/src/doc && ${COPYTREE_SHARE} . ${DOCSDIR})
+.endif
 
 .include <bsd.port.mk>
