@@ -6,16 +6,18 @@
 #
 
 PORTNAME=	creole
-PORTVERSION=	0.2.8
+PORTVERSION=	0.7.2
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	python-${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	count@211.ru
-COMMENT=	Python lib for creole markup
+COMMENT=	Markup converter in pure Python
 
 LICENSE=	GPLv3
+
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/docutils/__init__.py:${PORTSDIR}/textproc/py-docutils
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
