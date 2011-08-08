@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	uarduno
-PORTVERSION=	1.0
+PORTVERSION=	1.02
 CATEGORIES=	comms kld
 MASTER_SITES=	http://mrp3.com/
 
@@ -20,6 +20,9 @@ MAKE_ENV+=	KMODDIR=${KMODDIR}
 LOCALBASE=	${KMODDIR}
 
 SRCPREFIX?=	${SRC_BASE}
+
+# disable mtree or you'll get a /boot/kernel/... directory hierarchy put there
+NO_MTREE= yes
 
 # some test targets need a predictable source directory
 WRKSRC=		${WRKDIR}/uarduno
@@ -50,7 +53,7 @@ BROKEN=		not tested for earlier than 7.x, probably won't build
 IGNORE=	this port will not build without the latest 7.x kernel source
 .endif
 .else
-# 8.x and later kernels (not tested in 9.x yet, mabye add to kernel?)
+# 8.x and later kernels (partially tested in 9.x, mabye add to kernel?)
 # simple check for 8.x and later kernel source (find usb_core.c)
 .if ! exists(${SRCPREFIX}/sys/dev/usb/usb_core.c)
 IGNORE=	this port will not build without the latest kernel source
