@@ -1,8 +1,8 @@
 Index: conf/conf.c
 ===================================================================
---- conf/conf.c	(revision 4873)
-+++ conf/conf.c	(revision 4875)
-@@ -108,7 +108,7 @@
+--- conf/conf.c	(revision 4962)
++++ conf/conf.c	(working copy)
+@@ -108,7 +108,7 @@ config_parse(struct config *c)
    cfg_mem = c->mem;
    if (setjmp(conf_jmpbuf))
      return 0;
@@ -11,7 +11,7 @@ Index: conf/conf.c
    sysdep_preconfig(c);
    protos_preconfig(c);
    rt_preconfig(c);
-@@ -138,7 +138,7 @@
+@@ -138,7 +138,7 @@ cli_parse(struct config *c)
    cfg_mem = c->mem;
    if (setjmp(conf_jmpbuf))
      return 0;
@@ -20,7 +20,7 @@ Index: conf/conf.c
    cf_parse();
    return 1;
  }
-@@ -356,6 +356,7 @@
+@@ -356,6 +356,7 @@ cf_error(char *msg, ...)
      strcpy(buf, "<bug: error message too long>");
    new_config->err_msg = cfg_strdup(buf);
    new_config->err_lino = conf_lino;
@@ -30,8 +30,8 @@ Index: conf/conf.c
  
 Index: conf/cf-lex.l
 ===================================================================
---- conf/cf-lex.l	(revision 4873)
-+++ conf/cf-lex.l	(revision 4875)
+--- conf/cf-lex.l	(revision 4962)
++++ conf/cf-lex.l	(working copy)
 @@ -30,6 +30,9 @@
  #include <errno.h>
  #include <stdlib.h>
@@ -42,7 +42,7 @@ Index: conf/cf-lex.l
  
  #define PARSER 1
  
-@@ -64,18 +67,36 @@
+@@ -64,18 +67,36 @@ struct sym_scope {
  static struct sym_scope *conf_this_scope;
  
  int conf_lino;
@@ -82,7 +82,7 @@ Index: conf/cf-lex.l
  %}
  
  %option noyywrap
-@@ -90,9 +111,12 @@
+@@ -90,9 +111,12 @@ DIGIT [0-9]
  XIGIT [0-9a-fA-F]
  ALNUM [a-zA-Z_0-9]
  WHITE [ \t]
@@ -95,7 +95,7 @@ Index: conf/cf-lex.l
  {DIGIT}+\.{DIGIT}+\.{DIGIT}+\.{DIGIT}+ {
  #ifdef IPV6
    if (ipv4_pton_u32(yytext, &cf_lval.i32))
-@@ -184,7 +208,7 @@
+@@ -188,7 +212,7 @@ else: {
  
  ["][^"\n]*\n	cf_error("Unterminated string");
  
@@ -104,7 +104,7 @@ Index: conf/cf-lex.l
  
  {WHITE}+
  
-@@ -220,7 +244,67 @@
+@@ -224,7 +248,67 @@ else: {
  
  %%
  
@@ -172,7 +172,7 @@ Index: conf/cf-lex.l
  cf_hash(byte *c)
  {
    unsigned int h = 13;
-@@ -363,11 +447,28 @@
+@@ -367,11 +451,28 @@ cf_lex_init_kh(void)
   * parsing of a new input.
   */
  void
@@ -204,9 +204,9 @@ Index: conf/cf-lex.l
      BEGIN(CLI);
 Index: conf/conf.h
 ===================================================================
---- conf/conf.h	(revision 4873)
-+++ conf/conf.h	(revision 4875)
-@@ -38,7 +38,9 @@
+--- conf/conf.h	(revision 4962)
++++ conf/conf.h	(working copy)
+@@ -38,7 +38,9 @@ struct config {
    int cli_debug;			/* Tracing of CLI connections and commands */
    char *err_msg;			/* Parser error message */
    int err_lino;				/* Line containing error */
@@ -216,7 +216,7 @@ Index: conf/conf.h
    struct symbol **sym_hash;		/* Lexer: symbol hash table */
    struct symbol **sym_fallback;		/* Lexer: fallback symbol hash table */
    int obstacle_count;			/* Number of items blocking freeing of this config */
-@@ -83,7 +85,7 @@
+@@ -83,7 +85,7 @@ char *cfg_strdup(char *c);
  
  /* Lexer */
  
@@ -225,7 +225,7 @@ Index: conf/conf.h
  
  struct symbol {
    struct symbol *next;
-@@ -107,9 +109,10 @@
+@@ -107,9 +109,10 @@ struct symbol {
  #define SYM_VARIABLE 0x100	/* 0x100-0x1ff are variable types */
  
  extern int conf_lino;
@@ -239,8 +239,8 @@ Index: conf/conf.h
  struct symbol *cf_define_symbol(struct symbol *symbol, int type, void *def);
 Index: doc/bird.conf.example
 ===================================================================
---- doc/bird.conf.example	(revision 4873)
-+++ doc/bird.conf.example	(revision 4875)
+--- doc/bird.conf.example	(revision 4962)
++++ doc/bird.conf.example	(working copy)
 @@ -22,6 +22,9 @@
  #	else reject;
  #}
@@ -253,9 +253,9 @@ Index: doc/bird.conf.example
  
 Index: sysdep/unix/main.c
 ===================================================================
---- sysdep/unix/main.c	(revision 4873)
-+++ sysdep/unix/main.c	(revision 4875)
-@@ -122,13 +122,12 @@
+--- sysdep/unix/main.c	(revision 4962)
++++ sysdep/unix/main.c	(working copy)
+@@ -149,13 +149,12 @@ read_iproute_table(char *file, char *prefix, int m
  #endif // PATH_IPROUTE_DIR
  
  
@@ -271,7 +271,7 @@ Index: sysdep/unix/main.c
    if (l < 0)
      cf_error("Read error");
    return l;
-@@ -158,15 +157,15 @@
+@@ -185,15 +184,15 @@ static int
  unix_read_config(struct config **cp, char *name)
  {
    struct config *conf = config_alloc(name);
@@ -291,7 +291,7 @@ Index: sysdep/unix/main.c
    return ret;
  }
  
-@@ -178,7 +177,7 @@
+@@ -205,7 +204,7 @@ read_config(void)
    if (!unix_read_config(&conf, config_name))
      {
        if (conf->err_msg)
@@ -300,3 +300,21 @@ Index: sysdep/unix/main.c
        else
  	die("Unable to open configuration file %s: %m", config_name);
      }
+@@ -221,7 +220,7 @@ async_config(void)
+   if (!unix_read_config(&conf, config_name))
+     {
+       if (conf->err_msg)
+-	log(L_ERR "%s, line %d: %s", config_name, conf->err_lino, conf->err_msg);
++	log(L_ERR "%s, line %d: %s", conf->err_fname, conf->err_lino, conf->err_msg);
+       else
+ 	log(L_ERR "Unable to open configuration file %s: %m", config_name);
+       config_free(conf);
+@@ -244,7 +243,7 @@ cmd_reconfig(char *name, int type)
+   if (!unix_read_config(&conf, name))
+     {
+       if (conf->err_msg)
+-	cli_msg(8002, "%s, line %d: %s", name, conf->err_lino, conf->err_msg);
++	cli_msg(8002, "%s, line %d: %s", conf->err_fname, conf->err_lino, conf->err_msg);
+       else
+ 	cli_msg(8002, "%s: %m", name);
+       config_free(conf);
