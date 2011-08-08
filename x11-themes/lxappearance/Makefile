@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lxappearance
-PORTVERSION=	0.5.0
-PORTREVISION=	1
+PORTVERSION=	0.5.1
 CATEGORIES=	x11-themes gnome
 MASTER_SITES=	SF/lxde/LXAppearance
 
@@ -21,6 +20,8 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
+
+MAN1=		lxappearance.1
 
 .include <bsd.port.pre.mk>
 
