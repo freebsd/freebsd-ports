@@ -1,0 +1,23 @@
+lib/locale/ko/LC_MESSAGES/ibus-hangul.mo
+lib/locale/zh_CN/LC_MESSAGES/ibus-hangul.mo
+libexec/ibus-engine-hangul
+libexec/ibus-setup-hangul
+share/ibus/component/hangul.xml
+%%DATADIR%%/data/symbol.txt
+%%DATADIR%%/icons/ibus-hangul.png
+%%DATADIR%%/icons/ibus-hangul.svg
+%%DATADIR%%/setup/config.py
+%%DATADIR%%/setup/config.pyc
+%%DATADIR%%/setup/config.pyo
+%%DATADIR%%/setup/hangul_keyboard_list
+%%DATADIR%%/setup/keycapturedialog.py
+%%DATADIR%%/setup/keycapturedialog.pyc
+%%DATADIR%%/setup/keycapturedialog.pyo
+%%DATADIR%%/setup/main.py
+%%DATADIR%%/setup/main.pyc
+%%DATADIR%%/setup/main.pyo
+%%DATADIR%%/setup/setup.ui
+@dirrm %%DATADIR%%/data
+@dirrm %%DATADIR%%/icons
+@dirrm %%DATADIR%%/setup
+@dirrm %%DATADIR%%

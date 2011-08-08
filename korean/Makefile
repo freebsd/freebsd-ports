@@ -28,6 +28,7 @@
     SUBDIR += hlatexfonts-ocf
     SUBDIR += hmconv
     SUBDIR += hpscat
+    SUBDIR += ibus-hangul
     SUBDIR += imhangul
     SUBDIR += johabfonts
     SUBDIR += kaistfonts
