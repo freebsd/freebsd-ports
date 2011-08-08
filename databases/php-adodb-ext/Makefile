@@ -29,7 +29,13 @@ SUB_FILES=	pkg-message
 PLIST_SUB=	PHP_EXT_DIR=${PHP_EXT_DIR}
 USE_DOS2UNIX=	yes
 
+.include <bsd.port.pre.mk>
+
+.if ${PHP_VER} != "52"
+EXTRA_PATCHES=	${PATCHDIR}/extra-patch-adodb.c
+.endif
+
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
