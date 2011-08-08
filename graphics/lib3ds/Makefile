@@ -9,20 +9,23 @@ PORTNAME=	lib3ds
 PORTVERSION=	1.3.0
 PORTREVISION=	1
 CATEGORIES=	graphics
-MASTER_SITES=	SF
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for handling 3DS (3D Studio) files
 
-BROKEN=	does not fetch
+LICENSE=	LGPLv21 # (or later)
 
 USE_ZIP=	yes
-USE_LDCONFIG=	yes
 USE_GL=		glut
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		3dsdump.1 lib3ds-config.1
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
