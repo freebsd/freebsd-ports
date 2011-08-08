@@ -41,6 +41,7 @@ bin/scanimage
 @unexec if cmp -s %D/etc/sane.d/leo.conf %D/etc/sane.d/dist/leo.conf; then rm -f %D/etc/sane.d/leo.conf; fi
 @unexec if cmp -s %D/etc/sane.d/lexmark.conf %D/etc/sane.d/dist/lexmark.conf; then rm -f %D/etc/sane.d/lexmark.conf; fi
 @unexec if cmp -s %D/etc/sane.d/ma1509.conf %D/etc/sane.d/dist/ma1509.conf; then rm -f %D/etc/sane.d/ma1509.conf; fi
+@unexec if cmp -s %D/etc/sane.d/magicolor.conf %D/etc/sane.d/dist/magicolor.conf; then rm -f %D/etc/sane.d/magicolor.conf; fi
 @unexec if cmp -s %D/etc/sane.d/matsushita.conf %D/etc/sane.d/dist/matsushita.conf; then rm -f %D/etc/sane.d/matsushita.conf; fi
 @unexec if cmp -s %D/etc/sane.d/microtek.conf %D/etc/sane.d/dist/microtek.conf; then rm -f %D/etc/sane.d/microtek.conf; fi
 @unexec if cmp -s %D/etc/sane.d/microtek2.conf %D/etc/sane.d/dist/microtek2.conf; then rm -f %D/etc/sane.d/microtek2.conf; fi
@@ -115,6 +116,7 @@ etc/sane.d/dist/kodak.conf
 etc/sane.d/dist/leo.conf
 etc/sane.d/dist/lexmark.conf
 etc/sane.d/dist/ma1509.conf
+etc/sane.d/dist/magicolor.conf
 etc/sane.d/dist/matsushita.conf
 etc/sane.d/dist/microtek.conf
 etc/sane.d/dist/microtek2.conf
@@ -277,6 +279,9 @@ lib/sane/libsane-kodak.so.1
 lib/sane/libsane-kvs1025.la
 lib/sane/libsane-kvs1025.so
 lib/sane/libsane-kvs1025.so.1
+lib/sane/libsane-kvs20xx.la
+lib/sane/libsane-kvs20xx.so
+lib/sane/libsane-kvs20xx.so.1
 lib/sane/libsane-leo.la
 lib/sane/libsane-leo.so
 lib/sane/libsane-leo.so.1
@@ -286,6 +291,9 @@ lib/sane/libsane-lexmark.so.1
 lib/sane/libsane-ma1509.la
 lib/sane/libsane-ma1509.so
 lib/sane/libsane-ma1509.so.1
+lib/sane/libsane-magicolor.la
+lib/sane/libsane-magicolor.so
+lib/sane/libsane-magicolor.so.1
 lib/sane/libsane-matsushita.la
 lib/sane/libsane-matsushita.so
 lib/sane/libsane-matsushita.so.1

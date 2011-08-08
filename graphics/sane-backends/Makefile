@@ -6,19 +6,17 @@
 #
 
 PORTNAME=	sane-backends
-PORTVERSION=	1.0.21
-PORTREVISION=	3
+PORTVERSION=	1.0.22
 CATEGORIES=	graphics
-MASTER_SITES=	http://alioth.debian.org/frs/download.php/3258/ \
-		ftp://ftp.sane-project.org/pub/sane/%SUBDIR%/ \
-		ftp://ftp2.sane-project.org/pub/sane/%SUBDIR%/ \
-		ftp://ftp3.sane-project.org/pub/sane/%SUBDIR%/ \
-		ftp://gd.tuwien.ac.at/hci/sane/%SUBDIR%/ \
-		http://gd.tuwien.ac.at/hci/sane/%SUBDIR%/
+MASTER_SITES=	http://alioth.debian.org/frs/download.php/3503/ \
+		ftp://ftp2.sane-project.org/pub/sane/%SUBDIR%/
 MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	API for access to scanners, digitals camera, frame grabbers etc
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff
@@ -26,20 +24,20 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 OPTIONS=	USB "USB support" on \
 		NLS "NLS support" on \
 		GPHOTO2 "gPhoto2 support" off \
+		SNMP "SNMP support" off \
 		AVAHI "Avahi support" off \
 		IEEE1284 "libieee1284 support" off \
 		IPV6 "IPV6 support" off
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-docdir=${DOCSDIR} \
 		--disable-latex \
 		--disable-locking \
 		--enable-pthread
-MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 USE_RC_SUBR=	saned
 SUB_FILES+=	pkg-message
@@ -47,11 +45,14 @@ SUB_FILES+=	pkg-message
 USERS=	saned
 GROUPS=	saned
 
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
 .include "Makefile.man"
 .include <bsd.port.pre.mk>
 
 .if defined(NOPORTDOCS)
-MAKE_ENV=	NOPORTDOCS=1
+MAKE_ENV+=	NOPORTDOCS=1
 .endif
 
 .if defined(WITHOUT_USB)
@@ -83,6 +84,12 @@ CONFIGURE_ARGS+=	--with-gphoto2=no
 PLIST_SUB+=		GPHOTO2="@comment "
 .endif
 
+.if defined(WITH_SNMP)
+LIB_DEPENDS=		netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
+.else
+CONFIGURE_ARGS+=	--without-snmp
+.endif
+
 .if defined(WITH_AVAHI)
 LIB_DEPENDS+=		avahi-client.3:${PORTSDIR}/net/avahi-app
 CONFIGURE_ARGS+=	--enable-avahi
@@ -98,9 +105,7 @@ PLIST_SUB+=		IEEE1284="@comment "
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^for ac_header in/s|libc.h||g ; \
-		 s|} -D_REENT|} ${PTHREAD_CFLAGS} -D_REENT|g ; \
 		 s|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
-	@(cd ${WRKSRC}/po; ${BASENAME} -s .po `${LS} *.po` > LINGUAS)
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
