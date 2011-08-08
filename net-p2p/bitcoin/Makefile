@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	bitcoin
-PORTVERSION=	0.3.23
+PORTVERSION=	0.3.24
 CATEGORIES=	net-p2p finance
-MASTER_SITES=	https://download.github.com/		\
+MASTER_SITES=	https://nodeload.github.com/${PORTNAME}/${PORTNAME}/tarball/	\
 		http://mirror.inerd.com/FreeBSD/distfiles/${PORTNAME}/
-DISTFILES=	bitcoin-bitcoin-v${PORTVERSION}-0-gce14894.tar.gz
+DISTFILES=	v${PORTVERSION}
 
 MAINTAINER=	shaun@FreeBSD.org
 COMMENT=	Virtual Peer-to-Peer Currency Client
@@ -30,9 +30,9 @@ CXXFLAGS+=	-I${LOCALBASE}/include -I${BDB_INCLUDE_DIR}
 CXXFLAGS+=	-L${LOCALBASE}/lib -L${BDB_LIB_DIR}
 CXXFLAGS+=	-Wno-invalid-offsetof
 
-WRKSRC=		${WRKDIR}/bitcoin-bitcoin-ebdab6d/src
+WRKSRC=		${WRKDIR}/bitcoin-bitcoin-36aa6bd/src
 
-LOCALES=	cs de eo es fr it lt nl pt ru zh_cn
+LOCALES=	cs de eo es fr it lt nl pt ru sv zh_cn
 
 .include <bsd.port.options.mk>
 
@@ -68,21 +68,13 @@ PLIST_DIRSTRY+=	${LOCALES:C|^|share/locale/|}
 
 .include <bsd.port.pre.mk>
 
-pre-fetch:
-.if ${MASTER_SITES:M*github.com*} != "" && !exists(${DISTDIR}/${DISTFILES})
-	@${ECHO_MSG} "===>  Pinging github to vivify tarball..."
-	@(cd ${DISTDIR} && \
-		${FETCH_BINARY} -Ap https://nodeload.github.com/bitcoin/bitcoin/tarball/v${PORTVERSION} 2>/dev/null \
-		|| ${TRUE} \
-	)
-.endif
-
 post-patch:
 	@cd ${WRKSRC} && ${CP} -p makefile.unix Makefile
 	@${REINPLACE_CMD} \
 		-e 's|wx-config|${WX_CONFIG}|g' \
 		-e 's|^CXXFLAGS=.*$$|CXXFLAGS += $$(DEFS)|' \
 		-e 's|^USE_UPNP.*$$||' \
+		-e 's|-l pthread|${PTHREAD_LIBS}|g' \
 		-e 's:-O3::' -e 's:-\(march=[A-Za-z0-9]*\)::g' \
 		-e 's:-l dl::' \
 		${WRKSRC}/Makefile
