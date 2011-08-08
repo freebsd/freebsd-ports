@@ -6,33 +6,35 @@
 #
 
 PORTNAME=	freesweep
-PORTVERSION=	0.90
-PORTREVISION=	1
+PORTVERSION=	0.92
 CATEGORIES=	games
-MASTER_SITES=	http://www.upl.cs.wisc.edu/~hartmann/sweep/
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Minesweeper-style game for text-mode terminals
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-prefsdir=${DATADIR} \
-		--with-scoresdir=${DATADIR}\
+		--with-scoresdir=${DATADIR} \
 		--disable-debug-log
-CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \
-		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-
-ALL_TARGET=	# empty
+ALL_TARGET=	${PORTNAME}
+MAKE_JOBS_SAFE=	yes
 
 MAN6=		freesweep.6
+PORTDOCS=	CHANGES README
+PLIST_FILES=	bin/freesweep %%DATADIR%%/sweeprc %%DATADIR%%/sweeptimes
+PLIST_DIRS=	%%DATADIR%%
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/CHANGES ${WRKSRC}/README ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
