@@ -6,30 +6,35 @@
 
 PORTNAME=	wordplay
 PORTVERSION=	7.22
+PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	http://hsvmovies.com/static_subpages/personal/wordplay/
+MASTER_SITES=	http://hsvmovies.com/static_subpages/personal_orig/wordplay/
 DISTNAME=	${PORTNAME}${PORTVERSION:S/.//}
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple program to generate anagrams
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
-
 NO_WRKSUBDIR=	yes
-MAKEFILE=	makefile
-ALL_TARGET=	wordplay
+
+PORTDOCS=	readme
+PLIST_FILES=	bin/${PORTNAME} %%DATADIR%%/words721.txt
+PLIST_DIRS=	%%DATADIR%%
 
 post-patch:
-	@${REINPLACE_CMD} -e \
-	  "s#words721.txt#${PREFIX}/share/wordplay/words721.txt#" \
-	  ${WRKSRC}/wordplay.c
+	@${REINPLACE_CMD} -e 's|"words721.txt"|"${DATADIR}/words721.txt"| ; \
+		 s|<ctype.h>|<stdlib.h>|' ${WRKSRC}/wordplay.c
+
+do-build:
+	cd ${WRKSRC} && ${CC} ${CFLAGS} ${PORTNAME}.c -o ${PORTNAME}
 
 do-install:
-	@${MKDIR} ${PREFIX}/share/wordplay
-	${INSTALL_DATA} ${WRKSRC}/words721.txt ${WRKSRC}/readme \
-	  ${PREFIX}/share/wordplay
-	${INSTALL_PROGRAM} ${WRKSRC}/wordplay ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	@${MKDIR} ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/words721.txt ${DATADIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme ${DOCSDIR}
+.endif
 
 .include <bsd.port.mk>
