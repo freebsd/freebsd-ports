@@ -1,0 +1,11 @@
+--- py_ext/Makefile.in.orig	2011-08-08 01:43:02.000000000 +0000
++++ py_ext/Makefile.in	2011-08-08 01:43:09.000000000 +0000
+@@ -372,7 +372,7 @@
+ 	rm -Rf test.swf build
+ 
+ install:
+-	$(PYTHON) setup.py install --prefix $(prefix) --root "$(DESTDIR)"
++	$(PYTHON) setup.py install --prefix $(prefix)
+ 
+ test.swf:
+ 	$(PYTHON) shape.py

@@ -1,7 +1,6 @@
 lib/%%PYTHON_VERSION%%/site-packages/_mingc.so
 lib/%%PYTHON_VERSION%%/site-packages/ming.py
 lib/%%PYTHON_VERSION%%/site-packages/ming.pyc
-lib/%%PYTHON_VERSION%%/site-packages/ming.pyo
 lib/%%PYTHON_VERSION%%/site-packages/mingc.py
 lib/%%PYTHON_VERSION%%/site-packages/mingc.pyc
-lib/%%PYTHON_VERSION%%/site-packages/mingc.pyo
+lib/%%PYTHON_VERSION%%/site-packages/mingc-0.4.3-py2.7.egg-info
