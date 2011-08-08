@@ -5,6 +5,17 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110808:
+  AFFECTS: users of security/amavisd-new
+  AUTHOR: sahil@FreeBSD.org
+
+  Along with new features and bug fixes, amavisd-new 2.7.0 introduces some
+  incompatibilities with previous releases.  Several variable defaults, SQL
+  schemas, and other changes warrant a careful review of the RELEASE_NOTES.
+  Also note that helper programs amavis.c and amavis-milter.c are no longer
+  distributed with this package; for milter functionality, please shift to
+  the dedicated security/amavisd-milter port.
+
 20110731:
   AFFECTS: users of lang/guile
   AUTHOR: jlaffaye@FreeBSD.org
