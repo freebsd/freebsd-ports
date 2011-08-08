@@ -9,7 +9,9 @@ PORTNAME=	ticker
 PORTVERSION=	0.1
 PORTREVISION=	3
 CATEGORIES=	www gnustep
-MASTER_SITES=	http://www.gnustep.it/marko/Ticker/
+MASTER_SITES=	http://www.gnustep.it/marko/Ticker/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dinoex
 PKGNAMEPREFIX=	gnustep-
 DISTNAME=	Ticker
 EXTRACT_SUFX=	.tgz
