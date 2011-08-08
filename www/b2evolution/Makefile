@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	b2evolution
-PORTVERSION=	3.3.3
+PORTVERSION=	4.0.5
 CATEGORIES=	www
 MASTER_SITES=	SF/evocms/${PORTNAME}/b2evo%20${PORTVERSION}-stable
 DISTNAME=	${PORTNAME}-${PORTVERSION}-${B2EVO_DATE}
@@ -19,7 +19,7 @@ PATCH_DEPENDS=	unzip:${PORTSDIR}/archivers/unzip
 USE_ZIP=	YES
 USE_DOS2UNIX=	YES
 
-B2EVO_DATE?=	stable-2009-12-15
+B2EVO_DATE?=	stable-2011-03-23
 USE_PHP=	mysql pcre session xml
 NO_BUILD=	YES
 WANT_PHP_WEB=	YES
@@ -36,8 +36,7 @@ OPTIONS=	LOCAL_DB_SERVER "Want to use local MySQL server?" on
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_LOCAL_DB_SERVER)
-USE_MYSQL=	YES
-RUN_DEPENDS+=	mysql-server>=0:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
+USE_MYSQL=	server
 .endif
 
 pre-everything::
