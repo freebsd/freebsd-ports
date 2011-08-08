@@ -1,0 +1,11 @@
+--- perl_ext/Makefile.in.orig	2011-08-07 21:32:30.000000000 +0000
++++ perl_ext/Makefile.in	2011-08-07 21:32:48.000000000 +0000
+@@ -391,7 +391,7 @@
+ 	$(MAKE) -f Makefile.perl
+ 
+ install: Makefile.perl
+-	$(MAKE) -f Makefile.perl install PREFIX=$(prefix)
++	$(MAKE) -f Makefile.perl pure_install PREFIX=$(prefix)
+ 
+ Makefile.perl: Makefile.PL
+ 	srcdir=$(srcdir) builddir=$(abs_builddir) $(PERL) $< PREFIX=$(prefix) FIRST_MAKEFILE=Makefile.perl

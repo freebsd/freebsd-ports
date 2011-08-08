@@ -1,15 +1,29 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/SWF.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/SWF/.cvsignore
 %%SITE_PERL%%/%%PERL_ARCH%%/SWF/Action.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/BinaryData.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SWF/Bitmap.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Blur.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/BrowserFont.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SWF/Button.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/ButtonRecord.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/CXform.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Character.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SWF/Constants.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SWF/DisplayItem.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SWF/Fill.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Filter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/FilterMatrix.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SWF/Font.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/FontCharacter.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/FontCollection.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SWF/Gradient.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/InitAction.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Matrix.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SWF/Morph.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SWF/Movie.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/MovieClip.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/PrebuiltClip.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/SWF/Shadow.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SWF/Shape.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SWF/Sound.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/SWF/SoundInstance.pm
@@ -21,7 +35,6 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/.packlist
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/SWF.bs
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/SWF.so
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/include/perl_swf.h
 %%PORTDOCS%%%%EXAMPLESDIR%%/action.cgi
 %%PORTDOCS%%%%EXAMPLESDIR%%/alphafill.cgi
 %%PORTDOCS%%%%EXAMPLESDIR%%/animation.cgi
@@ -36,6 +49,5 @@
 %%PORTDOCS%%%%EXAMPLESDIR%%/textfield.cgi
 %%PORTDOCS%%%%EXAMPLESDIR%%/video.cgi
 %%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF/include
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/SWF
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/SWF
