@@ -9,7 +9,9 @@ PORTNAME=	yap
 PORTVERSION=	0.2
 PORTREVISION=	4
 CATEGORIES=	graphics gnustep
-MASTER_SITES=	http://www.gnustep.it/marko/GPSText/
+MASTER_SITES=	http://www.gnustep.it/marko/GPSText/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dinoex
 DISTNAME=	Yap
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	repacked/2007-02-15

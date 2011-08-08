@@ -9,7 +9,9 @@ PORTNAME=	gscommander
 PORTVERSION=	0.1
 PORTREVISION=	3
 CATEGORIES=	shells gnustep
-MASTER_SITES=	http://www.nice.ch/~phip/
+MASTER_SITES=	http://www.nice.ch/~phip/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dinoex
 DISTNAME=	GSCommander-${PORTVERSION}
 
 MAINTAINER=	dinoex@FreeBSD.org

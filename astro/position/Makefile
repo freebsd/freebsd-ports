@@ -9,7 +9,9 @@ PORTNAME=	position
 PORTVERSION=	0.3
 PORTREVISION=	3
 CATEGORIES=	astro gnustep
-MASTER_SITES=	http://www.gnustep.it/enrico/position/
+MASTER_SITES=	http://www.gnustep.it/enrico/position/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dinoex
 
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	GPS and Moving-Map Applikation
