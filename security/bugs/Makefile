@@ -9,23 +9,20 @@ PORTNAME=	bugs
 PORTVERSION=	4.1.1
 PORTREVISION=	2
 CATEGORIES=	security
-MASTER_SITES=	http://www.encryptsolutions.com/english/download/
+MASTER_SITES=	SUNSITE/apps/crypto
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Great cryptography library and sample programs
 
-BROKEN=	Does not fetch
-
-PLIST_SUB+=	PORTVERSION=${PORTVERSION}
-DOCSDIR=	${PREFIX}/${DISTNAME}/doc
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GMAKE=	yes
 
-# No Manual page
+PLIST_SUB=	PORTVERSION="${PORTVERSION}"
 
-post-extract:
-	${FIND} ${WRKSRC} -type d -exec ${CHMOD} +x {} \;
+DOCSDIR=	${PREFIX}/${DISTNAME}/doc
 
 post-configure:
 	(cd ${WRKSRC}; ${MAKE} bsd);
@@ -36,25 +33,19 @@ post-configure:
 	${REINPLACE_CMD} -e 's+\(@cp -rf ./doc/.*\)+# \1+' ${WRKSRC}/Makefile;
 
 post-build:
-	${CP} ${WRKSRC}/lib/unix/*.a ${WRKSRC}/lib/
+	@${LN} -sf ${WRKSRC}/lib/unix/*.a ${WRKSRC}/lib/
 
 pre-install:
 	(cd ${WRKSRC}; ${MAKE} test)
 
 post-install:
+	@${MKDIR} ${PREFIX}/${DISTNAME}/include
+	${INSTALL_DATA} ${WRKSRC}/include/*.h ${PREFIX}/${DISTNAME}/include
+.for file in bchat bcrypt bhide bkey block blogin bmore bpass bpassdel bunlock
+	@${STRIP_CMD} ${PREFIX}/${DISTNAME}/${file}
+.endfor
 .if !defined(NOPORTDOCS)
-	${CP} -R ${WRKSRC}/doc ${DOCSDIR}
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR})
 .endif
-	${CP} -R ${WRKSRC}/include ${PREFIX}/${DISTNAME}
-	${STRIP_CMD} ${PREFIX}/${DISTNAME}/bchat \
-		${PREFIX}/${DISTNAME}/bcrypt \
-		${PREFIX}/${DISTNAME}/bhide \
-		${PREFIX}/${DISTNAME}/bkey \
-		${PREFIX}/${DISTNAME}/block \
-		${PREFIX}/${DISTNAME}/blogin \
-		${PREFIX}/${DISTNAME}/bmore \
-		${PREFIX}/${DISTNAME}/bpass \
-		${PREFIX}/${DISTNAME}/bpassdel \
-		${PREFIX}/${DISTNAME}/bunlock \
 
 .include <bsd.port.mk>
