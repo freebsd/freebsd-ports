@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	libfb
-PORTVERSION=	2.0.0
+PORTVERSION=	2.0.2
 CATEGORIES=	net net-mgmt
 MASTER_SITES=	http://support.red-fone.com/downloads/fonulator/
 
 MAINTAINER=	fjoe@FreeBSD.org
 COMMENT=	A foneBRIDGE configuration library
+
+BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=\
@@ -19,7 +21,6 @@ CONFIGURE_ENV=\
 	LDFLAGS="${LIBNET_LIBS:N-l*}"
 CONFIGURE_ARGS=	--disable-shared
 
-BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 LIBNET_CONFIG=	${LOCALBASE}/bin/libnet11-config
 
 .if 0
