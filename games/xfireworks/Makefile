@@ -9,20 +9,22 @@ PORTNAME=	xfireworks
 PORTVERSION=	1.4
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://hp.vector.co.jp/authors/VA014157/myfreesoft/
+MASTER_SITES=	http://kozos.jp/myfreesoft/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Fireworks on X
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 USE_XORG=	x11
+MAKE_JOBS_SAFE=	yes
+
 MAN1=		xfireworks.1
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xfireworks ${PREFIX}/bin/xfireworks
-	${INSTALL_MAN} ${WRKSRC}/xfireworks.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/xfireworks.1 ${MANPREFIX}/man/man1
 	${INSTALL_DATA} ${WRKSRC}/xfireworks.conf ${PREFIX}/etc/xfireworks.conf.sample
 .if !exists(${PREFIX}/etc/xfireworks.conf)
 	${CP} ${PREFIX}/etc/xfireworks.conf.sample ${PREFIX}/etc/xfireworks.conf
