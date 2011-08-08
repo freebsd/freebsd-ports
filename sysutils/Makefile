@@ -566,6 +566,7 @@
     SUBDIR += p5-Iterator-File
     SUBDIR += p5-Lchown
     SUBDIR += p5-MogileFS-Client
+    SUBDIR += p5-MogileFS-Server
     SUBDIR += p5-MogileFS-Utils
     SUBDIR += p5-Plugtools
     SUBDIR += p5-Plugtools-Plugins-HomeOU
@@ -601,7 +602,6 @@
     SUBDIR += p5-User
     SUBDIR += p5-ZConf-Cron
     SUBDIR += p5-arclog
-    SUBDIR += p5-mogilefs-server
     SUBDIR += p5-reslog
     SUBDIR += paicc
     SUBDIR += pam_mount
