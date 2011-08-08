@@ -6,6 +6,22 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20110808:
+  AFFECTS: users of dns/powerdns
+  AUTHOR: tremere@cainites.net
+
+  The port has been updated to PowerDNS 3.0, which includes support for DNSSEC.
+
+  Before upgrading please read the the following:
+  http://doc.powerdns.com/upgrades.html#from2.9to3.0
+
+  Make sure to read the documentation and wiki on http://powerdnssec.org/ on
+  how to enable DNSSEC mode in the configuration-file and for the necessary
+  database changes.
+
+  Take note that not all backends support DNSSEC.  The ones that do are BIND,
+  SQLite3 and Generic MySQL and PgSQL.
+
+20110808:
   AFFECTS: users of security/amavisd-new
   AUTHOR: sahil@FreeBSD.org
 
