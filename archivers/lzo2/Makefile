@@ -10,7 +10,6 @@ PORTVERSION=	2.05
 CATEGORIES=	archivers devel
 MASTER_SITES=	http://www.oberhumer.com/opensource/lzo/download/ \
 		LOCAL/mandree
-
 DISTNAME=	lzo-${DISTVERSIONPREFIX}${DISTVERSION}${DISTVERSIONSUFFIX}
 
 MAINTAINER=	mandree@FreeBSD.org
@@ -23,10 +22,16 @@ GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--enable-shared --docdir=${DOCSDIR}
 USE_LDCONFIG=	yes
 
+.if defined(NOPORTDOCS)
+INSTALL_TARGET=	install-exec install-pkgincludeHEADERS
+.endif
+
 post-build:
+.if !defined(WITHOUT_CHECKS)
 	@${ECHO_MSG} "===>  Running self-tests for ${PKGNAME} (can take a few minutes)"
 	@#: override MALLOC_OPTIONS, else tests take excessively long
 	cd ${WRKSRC} && ${SETENV} MALLOC_OPTIONS=jz ${MAKE} check test SHELL="${SH} -x"
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
@@ -37,7 +42,6 @@ post-install:
 .endfor
 	${INSTALL_DATA}	${WRKSRC}/doc/* ${DOCSDIR}/
 .endif
-
 .if !defined(NOPORTEXAMPLES)
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA}	${WRKSRC}/examples/[a-z]*.[ch] ${EXAMPLESDIR}/
