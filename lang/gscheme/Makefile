@@ -9,7 +9,9 @@ PORTNAME=	gscheme
 PORTVERSION=	0.6
 PORTREVISION=	1
 CATEGORIES=	lang gnustep
-MASTER_SITES=	http://www.gnustep.it/marko/GScheme/
+MASTER_SITES=	http://www.gnustep.it/marko/GScheme/ \
+		${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	dinoex
 DISTNAME=	GScheme
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	repacked
