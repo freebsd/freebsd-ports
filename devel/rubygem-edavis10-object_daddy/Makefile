@@ -9,8 +9,10 @@ PORTVERSION=	0.4.3
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
-MAINTAINER=	milki@rescomp.berkeley.du
+MAINTAINER=	milki@rescomp.berkeley.edu
 COMMENT=	Object Daddy assists in automating testing
+
+LICENSE=	MIT
 
 USE_RUBY=	yes
 USE_RUBYGEMS=	yes
