@@ -1,34 +1,33 @@
---- Makefile.PL.orig	Wed Feb  1 15:45:17 2006
-+++ Makefile.PL	Mon Apr 17 23:31:32 2006
-@@ -78,25 +78,25 @@
+--- perl_ext/Makefile.PL.orig	2011-08-07 14:41:33.558563705 -0400
++++ perl_ext/Makefile.PL	2011-08-07 14:44:13.341563378 -0400
+@@ -146,11 +146,9 @@
      clean   => {
          FILES   => "@do_clean",
      },
--    'MYEXTLIB'     => $MING_DIR . '/libming.a',
-+#    'MYEXTLIB'     => $MING_DIR . '/libming.a',
+-    'MYEXTLIB'     => $MING_TOP_BUILDDIR . '/src/.libs/libming.a',
      'OBJECT'       => "$XS_OBJECTS",
-     #'LIBS'         => [ "-lz" ],
--		'LIBS'         => [ $libs ],
-+		'LIBS'         => ["-L$ENV{LOCALBASE}/lib -lming"],
- );
+     'LDFROM'       => "$LD_OBJECTS",
+     'INC'          => "-I$MING_TOP_SRCDIR/src -I$BUILDDIR -I$MING_TOP_BUILDDIR/src -I$SRCDIR",
+-    'LIBS'         => [ $libs ],
+     'PM'	   => $PM_HASH,
+     'MAN3PODS'	   => $MAN3_HASH,
+     'TYPEMAPS'     => ["$SRCDIR/typemap"],
+@@ -164,17 +162,7 @@
  
- sub MY::install {
- 	my $self = shift;
- 	write_myconfig_file($self->{INSTALLSITEARCH});
- 
--	for (qw(ming.h libming.a)){
--		$self->{PM}->{"$MING_DIR/$_"} = '$(INST_ARCHLIB)' . "/auto/SWF/include/$_";
+ sub ming_is_compiled
+ {
+-	my $libming = $MING_TOP_BUILDDIR."/src/.libs/libming.a";
+-
+-	if ( -e $libming )
+-	{
+-		return 1;
 -	}
-+#	for (qw(ming.h libming.a)){
-+#		$self->{PM}->{"$MING_DIR/$_"} = '$(INST_ARCHLIB)' . "/auto/SWF/include/$_";
-+#	}
- 	$self->{PM}->{'perl_swf.h'} = '$(INST_ARCHLIB)' . "/auto/SWF/include/perl_swf.h";
- 	return $self->MM::install;
+-	else
+-	{
+-    		print "$libming doesn't exist.\n";
+-		return undef;
+-	}
++	return 1;
  }
  
- sub ming_is_compiled{
--	return undef unless (-e "$MING_DIR/libming.a");
-+#	return undef unless (-e "$MING_DIR/libming.a");
- 	return 1;
- }
- 
+ # unused. At least it should take into account the configure flags by
