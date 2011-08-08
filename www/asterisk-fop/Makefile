@@ -6,6 +6,7 @@
 
 PORTNAME=	op_panel
 PORTVERSION=	0.30
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.asternic.org/files/
 
@@ -18,7 +19,7 @@ USE_PHP=	pcre zlib session xml gd
 WANT_PHP_WEB=	yes
 
 LIB_DEPENDS+=	flash.0:${PORTSDIR}/www/flashplugin-mozilla \
-		ming.4:${PORTSDIR}/graphics/p5-ming
+		ming.5:${PORTSDIR}/graphics/p5-ming
 
 WEBOWN?=	www
 WEBGRP?=	www
