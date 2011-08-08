@@ -6,19 +6,25 @@
 #
 
 PORTNAME=	htop
-PORTVERSION=	0.8.3
-PORTREVISION=	2
+PORTVERSION=	0.9
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 
-MAINTAINER=	yzlin@FreeBSD.org
+MAINTAINER=	gaod@hychen.org
 COMMENT=	A better top(1) - interactive process viewer
+
+LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 
 OPTIONS=	LSOF "Enable lsof support" On
 
 NOT_FOR_ARCHS=	sparc64
 
 GNU_CONFIGURE=	yes
+CFLAGS+=	-I${LOCALBASE}/include
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV=	LIBS="-lexecinfo"
+
 CONFIGURE_ARGS=	--with-proc=/compat/linux/proc --enable-unicode
 USE_AUTOTOOLS=	autoconf aclocal automake libtool
 USE_NCURSES=	yes

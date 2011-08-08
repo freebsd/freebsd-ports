@@ -1,0 +1,11 @@
+--- configure.ac.orig	2010-12-30 03:13:16.000000000 +0800
++++ configure.ac	2010-12-30 03:13:23.000000000 +0800
+@@ -86,7 +86,7 @@
+ AC_ARG_ENABLE(unicode, [AC_HELP_STRING([--enable-unicode], [enable Unicode support])], ,enable_unicode="no")
+ if test "x$enable_unicode" = xyes; then
+    AC_CHECK_LIB([ncursesw], [refresh], [], [missing_libraries="$missing_libraries libncursesw"])
+-   AC_CHECK_HEADERS([ncursesw/curses.h],[:],[missing_headers="$missing_headers $ac_header"])
++   AC_CHECK_HEADERS([curses.h],[:],[missing_headers="$missing_headers $ac_header"])
+ else
+    AC_CHECK_LIB([ncurses], [refresh], [], [missing_libraries="$missing_libraries libncurses"])
+    AC_CHECK_HEADERS([curses.h],[:],[missing_headers="$missing_headers $ac_header"])
