@@ -1,6 +1,6 @@
 --- Configure.orig	2010-07-14 15:28:45.000000000 +0000
 +++ Configure	2010-07-14 15:29:23.000000000 +0000
-@@ -4780,7 +4780,7 @@
+@@ -4798,7 +4798,7 @@
  libpth=''
  for xxx in $dlist
  do
@@ -9,3 +9,13 @@
  		case " $libpth " in
  		*" $xxx "*) ;;
  		*) libpth="$libpth $xxx";;
+@@ -9125,8 +9125,7 @@
+ 
+ : determine where add-on public executable scripts go
+ case "$sitescript" in
+-'')	dflt=$siteprefix/script
+-	$test -d $dflt || dflt=$sitebin ;;
++'')	dflt=$sitebin ;;
+ *)  dflt="$sitescript" ;;
+ esac
+ fn=d~+
