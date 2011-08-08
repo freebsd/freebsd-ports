@@ -1,0 +1,8 @@
+%%PYTHON_SITELIBDIR%%/msgpack/_msgpack.so
+%%PYTHON_SITELIBDIR%%/msgpack/__init__.py
+%%PYTHON_SITELIBDIR%%/msgpack/__init__.pyc
+%%PYTHON_SITELIBDIR%%/msgpack/__init__.pyo
+%%PYTHON_SITELIBDIR%%/msgpack/__version__.py
+%%PYTHON_SITELIBDIR%%/msgpack/__version__.pyo
+%%PYTHON_SITELIBDIR%%/msgpack/__version__.pyc
+@dirrm %%PYTHON_SITELIBDIR%%/msgpack
