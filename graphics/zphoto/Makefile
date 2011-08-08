@@ -7,7 +7,7 @@
 
 PORTNAME=	zphoto
 PORTVERSION=	1.2
-PORTREVISION=	10
+PORTREVISION=	11
 CATEGORIES=	graphics www
 MASTER_SITES=	http://namazu.org/~satoru/zphoto/
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	umeno@rr.iij4u.or.jp
 COMMENT=	Zooming photo album generator
 
-LIB_DEPENDS=	ming.4:${PORTSDIR}/graphics/ming \
+LIB_DEPENDS=	ming.5:${PORTSDIR}/graphics/ming \
 		popt.0:${PORTSDIR}/devel/popt
 .if !defined (WITHOUT_AVIPLAY)
 LIB_DEPENDS+=	aviplay.0:${PORTSDIR}/multimedia/avifile
