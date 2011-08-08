@@ -1,4 +1,4 @@
 A port of the Linux pstree, killall and pidof commands.
 Does not include the 'fuser' command.
 
-WWW: http://psmisc.sourceforge.net
+WWW: http://psmisc.sourceforge.net/
