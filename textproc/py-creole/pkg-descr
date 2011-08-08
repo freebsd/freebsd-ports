@@ -1,6 +1,9 @@
-Python lib for:
+python-creole is an markup converter in pure Python:
 
     * creole markup -> html
     * html -> creole markup
+    * reStructuredText -> html
+    * html -> reStructuredText markup
+    * html -> textile markup
 
-WWW:	http://code.google.com/p/python-creole/
+WWW:	http://pypi.python.org/pypi/python-creole/
