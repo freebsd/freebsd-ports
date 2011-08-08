@@ -1,5 +1,5 @@
---- src/killall.c.orig	2009-12-18 21:45:36.000000000 +0900
-+++ src/killall.c	2010-01-03 00:37:34.818411284 +0900
+--- src/killall.c.orig	2011-06-20 04:43:24.000000000 -0700
++++ src/killall.c	2011-08-06 21:48:35.014330713 -0700
 @@ -36,6 +36,8 @@
  #include <dirent.h>
  #include <signal.h>
@@ -9,7 +9,7 @@
  #include <sys/types.h>
  #include <sys/stat.h>
  #include <getopt.h>
-@@ -83,40 +85,35 @@
+@@ -87,40 +89,35 @@
             ignore_case = 0, pidof;
  static long younger_than = 0, older_than = 0;
  
@@ -34,10 +34,10 @@
 -    else
 -        printf (_("Signal %s(%s%d) ? (y/N) "), name, process_group ? "pgid " : "",
 -	        pid);
+-
+-    fflush (stdout);
 +  int ch, c;
  
--    fflush (stdout);
--
 -    if (getline (&line, &len, stdin) < 0)
 -      return 0;
 -    /* Check for default */
@@ -74,7 +74,16 @@
  }
  
  static double
-@@ -356,7 +353,7 @@
+@@ -197,7 +194,7 @@
+ 	
+ 	while (fgets(buf, sizeof buf, f))
+ 	{
+-		if (sscanf (buf, "Uid:\t%d", &puid))
++		if (sscanf (buf, "%*s %*d %*d %*d %*d %*s %*s %*s %*s %*s %*s %*s %d", &puid))
+ 		{
+ 			re = uid==puid;
+ 			break;
+@@ -360,7 +357,7 @@
          }
  #endif /*WITH_SELINUX*/
        /* load process name */
@@ -83,7 +92,7 @@
  	continue;
        if (!(file = fopen (path, "r"))) 
  	{
-@@ -364,7 +361,7 @@
+@@ -368,7 +365,7 @@
  	  continue;
  	}
        free (path);
@@ -92,7 +101,7 @@
        if (!okay) {
  	fclose(file);
  	continue;
-@@ -386,65 +383,6 @@
+@@ -390,65 +387,6 @@
        got_long = 0;
        command = NULL;		/* make gcc happy */
        length = strlen (comm);
@@ -158,7 +167,7 @@
        /* mach by process name */
        for (j = 0; j < names; j++)
  	{
-@@ -495,7 +433,7 @@
+@@ -499,7 +437,7 @@
  	        {
  		  int ok = 1;
  
@@ -167,12 +176,12 @@
  		    continue;
  
  	          if (stat (path, &st) < 0) 
-@@ -842,7 +780,7 @@
-     fprintf (stderr, _("Maximum number of names is %d\n"), MAX_NAMES);
-     exit (1);
-   }
--  if (stat("/proc/self/stat", &isproc)==-1) {
-+  if (stat("/proc/curproc/status", &isproc)==-1) {
-     fprintf (stderr, _("%s is empty (not mounted ?)\n"), PROC_BASE);
-     exit (1);
-   }
+@@ -693,7 +631,7 @@
+   struct stat isproc;
+   pid_t pid = getpid();
+ 
+-  snprintf(filename, sizeof(filename), PROC_BASE"/%d/stat", (int) pid);
++  snprintf(filename, sizeof(filename), PROC_BASE"/%d/status", (int) pid);
+   return stat(filename, &isproc) == 0;
+ }
+ 

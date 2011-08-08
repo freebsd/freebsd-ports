@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	psmisc
-PORTVERSION=	22.13
+PORTVERSION=	22.14
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/
 
 MAINTAINER=	douglas@douglasthrift.net
 COMMENT=	A port of the Linux pstree, killall and pidof commands
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
 CONFLICTS=	pidof-[0-9]* pstree-2.[0-9]*
-
-LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -34,9 +34,6 @@ PLIST_SUB+=	NLS="@comment "
 .else
 USE_GETTEXT=	yes
 CONFIGURE_ARGS=	--enable-nls
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 PLIST_SUB+=	NLS=""
 .endif
 
