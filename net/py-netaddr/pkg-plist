@@ -1,8 +1,10 @@
-@comment $FreeBSD$
 bin/netaddr
 %%PYTHON_SITELIBDIR%%/netaddr/__init__.py
 %%PYTHON_SITELIBDIR%%/netaddr/__init__.pyc
 %%PYTHON_SITELIBDIR%%/netaddr/__init__.pyo
+%%PYTHON_SITELIBDIR%%/netaddr/compat.py
+%%PYTHON_SITELIBDIR%%/netaddr/compat.pyc
+%%PYTHON_SITELIBDIR%%/netaddr/compat.pyo
 %%PYTHON_SITELIBDIR%%/netaddr/core.py
 %%PYTHON_SITELIBDIR%%/netaddr/core.pyc
 %%PYTHON_SITELIBDIR%%/netaddr/core.pyo
@@ -61,33 +63,6 @@ bin/netaddr
 %%PYTHON_SITELIBDIR%%/netaddr/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/netaddr/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/netaddr/tests/__init__.pyo
-%%PYTHON_SITELIBDIR%%/netaddr/tests/core/pubsub.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/eui/eui.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/eui/eui64.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/eui/pubsub.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/eui/tutorial.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/ip/abbreviated.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/ip/boundaries.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/ip/cidr.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/ip/constructor.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/ip/functions.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/ip/intset.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/ip/ipglob.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/ip/matches.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/ip/multicast.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/ip/nmap.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/ip/rfc1924.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/ip/sets.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/ip/socket_fallback.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/ip/subnet.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/ip/tutorial.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/strategy/eui48.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/strategy/ipv4.txt
-%%PYTHON_SITELIBDIR%%/netaddr/tests/strategy/ipv6.txt
-@dirrm %%PYTHON_SITELIBDIR%%/netaddr/tests/strategy
-@dirrm %%PYTHON_SITELIBDIR%%/netaddr/tests/ip
-@dirrm %%PYTHON_SITELIBDIR%%/netaddr/tests/eui
-@dirrm %%PYTHON_SITELIBDIR%%/netaddr/tests/core
 @dirrm %%PYTHON_SITELIBDIR%%/netaddr/tests
 @dirrm %%PYTHON_SITELIBDIR%%/netaddr/strategy
 @dirrm %%PYTHON_SITELIBDIR%%/netaddr/ip
