@@ -12,7 +12,7 @@ PKGNAMESUFFIX=	-${FONTCAT}
 DISTNAME=	un-fonts${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	jkim@FreeBSD.org
-COMMENT=	GPL'd Korean TrueType Fonts by UN Koaunghi
+COMMENT=	GPL'd Korean TrueType Fonts by UN Koaunghi (${FONTCAT})
 
 LICENSE=	GPLv2
 LICENSE_FILE=	${FILESDIR}/COPYING
