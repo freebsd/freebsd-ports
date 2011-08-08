@@ -660,6 +660,7 @@
     SUBDIR += polkit-qt
     SUBDIR += powerman
     SUBDIR += pp
+    SUBDIR += pprotectd
     SUBDIR += prips
     SUBDIR += procmap
     SUBDIR += progsreiserfs
