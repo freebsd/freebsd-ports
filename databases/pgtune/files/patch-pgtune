@@ -1,16 +1,16 @@
---- pgtune-original 2009-01-26 17:11:05.000000000 +0100
-+++ pgtune 2009-02-18 08:20:59.000000000 +0100
+--- pgtune.orig	2009-10-28 21:16:39.000000000 -0400
++++ pgtune	2011-08-01 15:32:10.000000000 -0400
 @@ -1,4 +1,4 @@
 -#!/usr/bin/python
 +#!/usr/local/bin/python
  """
  pgtune
  
-@@ -248,7 +248,7 @@
+@@ -277,7 +277,7 @@
      if platform.architecture()[0]=="64bit":  platformBits=64
-     # TODO Base this file location on where this script is at
      # TODO Support handling versions other than 8.4
--    settingDumpFile="pg_settings-8.4-"+str(platformBits)
+     # TODO Allow passing in platform bit size
+-    settingDumpFile=os.path.join(settings_dir,"pg_settings-8.4-"+str(platformBits))
 +    settingDumpFile="/usr/local/share/pgtune/settings/pg_settings-8.4-"+str(platformBits)
      settingColumns=["name","setting","unit","category","short_desc",
        "extra_desc","context","vartype","min_val","max_val","enumvals",
