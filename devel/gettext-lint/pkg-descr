@@ -13,3 +13,5 @@ This package includes:
 All tools generate XML to the standard output; just run them with a list of PO
 or POT files to check. Some have extra options, run the command with no
 parameters for a short usage message.
+
+WWW: http://gettext-lint.sourceforge.net/
