@@ -8,7 +8,7 @@
 PORTNAME=	freepats
 PORTVERSION=	20060219
 CATEGORIES=	audio
-MASTER_SITES=	http://freepats.opensrc.org/ GENTOO/distfiles
+MASTER_SITES=	http://freepats.zenvoid.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A free and open set of instrument patches
