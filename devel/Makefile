@@ -3288,6 +3288,7 @@
     SUBDIR += rubygem-gemcutter
     SUBDIR += rubygem-georuby
     SUBDIR += rubygem-getopt
+    SUBDIR += rubygem-getopt-declare
     SUBDIR += rubygem-gettext
     SUBDIR += rubygem-git
     SUBDIR += rubygem-grit
