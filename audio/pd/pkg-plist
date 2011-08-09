@@ -2,24 +2,26 @@ bin/pd
 bin/pdreceive
 bin/pdsend
 include/m_pd.h
+lib/pd/Makefile.am
 lib/pd/README.txt
-lib/pd/bin/pd-gui
 lib/pd/bin/pd-watchdog
-lib/pd/bin/pd.tk
+lib/pd/bonk~/GNUmakefile.am
 lib/pd/bonk~/bonk~-help.pd
 lib/pd/bonk~/bonk~.c
 lib/pd/bonk~/bonk~.pd_linux
 lib/pd/bonk~/makefile
 lib/pd/bonk~/templates.txt
+lib/pd/choice/GNUmakefile.am
 lib/pd/choice/choice-help.pd
 lib/pd/choice/choice.c
 lib/pd/choice/choice.pd_linux
 lib/pd/choice/makefile
 lib/pd/complex-mod~-help.pd
 lib/pd/complex-mod~.pd
-%%PORTDOCS%%lib/pd/doc
+lib/pd/doc
 lib/pd/expr-help.pd
 lib/pd/expr.pd_linux
+lib/pd/expr~/GNUmakefile.am
 lib/pd/expr~/LICENSE.txt
 lib/pd/expr~/README.txt
 lib/pd/expr~/expr.pd_linux
@@ -36,22 +38,26 @@ lib/pd/expr~/vexp_if.c
 lib/pd/expr~/vexp_if.pd_linux_o
 lib/pd/expr~.pd_linux
 lib/pd/fexpr~.pd_linux
+lib/pd/fiddle~/GNUmakefile.am
 lib/pd/fiddle~/fiddle~-help.pd
 lib/pd/fiddle~/fiddle~.c
 lib/pd/fiddle~/fiddle~.pd_linux
 lib/pd/fiddle~/makefile
 lib/pd/hilbert~-help.pd
 lib/pd/hilbert~.pd
+lib/pd/loop~/GNUmakefile.am
 lib/pd/loop~/loop~-help.pd
 lib/pd/loop~/loop~.c
 lib/pd/loop~/loop~.pd_linux
 lib/pd/loop~/makefile
 lib/pd/loop~/test-loop~.pd
+lib/pd/lrshift~/GNUmakefile.am
 lib/pd/lrshift~/lrshift~-help.pd
 lib/pd/lrshift~/lrshift~.c
 lib/pd/lrshift~/lrshift~.pd_linux
 lib/pd/lrshift~/makefile
-lib/pd/makefile
+lib/pd/makefile.subdir
+lib/pd/pd~/GNUmakefile.am
 lib/pd/pd~/makefile
 lib/pd/pd~/notes.txt
 lib/pd/pd~/pdsched.c
@@ -61,6 +67,7 @@ lib/pd/pd~/pd~-subprocess.pd
 lib/pd/pd~/pd~.c
 lib/pd/pd~/pd~.pd_linux
 lib/pd/pd~/z.pd
+lib/pd/pique/GNUmakefile.am
 lib/pd/pique/makefile
 lib/pd/pique/pique-help.pd
 lib/pd/pique/pique.c
@@ -73,14 +80,46 @@ lib/pd/rev2~-help.pd
 lib/pd/rev2~.pd
 lib/pd/rev3~-help.pd
 lib/pd/rev3~.pd
+lib/pd/sigmund~/GNUmakefile.am
 lib/pd/sigmund~/makefile
 lib/pd/sigmund~/sigmund~-help.pd
 lib/pd/sigmund~/sigmund~.c
 lib/pd/sigmund~/sigmund~.pd_linux
+lib/pd/stdout/GNUmakefile.am
 lib/pd/stdout/makefile
 lib/pd/stdout/stdout-help.pd
 lib/pd/stdout/stdout.c
 lib/pd/stdout/stdout.pd_linux
+lib/pd/tcl/AppMain.tcl
+lib/pd/tcl/apple_events.tcl
+lib/pd/tcl/dialog_array.tcl
+lib/pd/tcl/dialog_audio.tcl
+lib/pd/tcl/dialog_canvas.tcl
+lib/pd/tcl/dialog_data.tcl
+lib/pd/tcl/dialog_find.tcl
+lib/pd/tcl/dialog_font.tcl
+lib/pd/tcl/dialog_gatom.tcl
+lib/pd/tcl/dialog_iemgui.tcl
+lib/pd/tcl/dialog_message.tcl
+lib/pd/tcl/dialog_midi.tcl
+lib/pd/tcl/dialog_path.tcl
+lib/pd/tcl/dialog_startup.tcl
+lib/pd/tcl/helpbrowser.tcl
+lib/pd/tcl/opt_parser.tcl
+lib/pd/tcl/pd-gui.tcl
+lib/pd/tcl/pd_bindings.tcl
+lib/pd/tcl/pd_connect.tcl
+lib/pd/tcl/pd_menucommands.tcl
+lib/pd/tcl/pd_menus.tcl
+lib/pd/tcl/pdtk_array.tcl
+lib/pd/tcl/pdtk_canvas.tcl
+lib/pd/tcl/pdtk_text.tcl
+lib/pd/tcl/pdwindow.tcl
+lib/pd/tcl/pkgIndex.tcl
+lib/pd/tcl/pkg_mkIndex.tcl
+lib/pd/tcl/scrollbox.tcl
+lib/pd/tcl/scrollboxwindow.tcl
+lib/pd/tcl/wheredoesthisgo.tcl
 %%PORTDOCS%%%%DOCSDIR%%/1.manual/1.introduction.txt
 %%PORTDOCS%%%%DOCSDIR%%/1.manual/fig1.1.png
 %%PORTDOCS%%%%DOCSDIR%%/1.manual/fig1.2.jpg
@@ -314,10 +353,10 @@ lib/pd/stdout/stdout.pd_linux
 %%PORTDOCS%%%%DOCSDIR%%/4.data.structures/voice.pd
 %%PORTDOCS%%%%DOCSDIR%%/4.data.structures/z.txt
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/0_all_guis-INTRO.txt
+%%PORTDOCS%%%%DOCSDIR%%/5.reference/abs~-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/acoustics-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/acoustics~-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/adc~_dac~-help.pd
-%%PORTDOCS%%%%DOCSDIR%%/5.reference/abs~-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/append-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/bag-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/bang-help.pd
@@ -422,7 +461,9 @@ lib/pd/stdout/stdout.pd_linux
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/tabosc4~-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/tabplay~-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/tabread-help.pd
+%%PORTDOCS%%%%DOCSDIR%%/5.reference/tabread4-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/tabread4~-help.pd
+%%PORTDOCS%%%%DOCSDIR%%/5.reference/tabread~-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/tabreceive~-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/tabsend~-help.pd
 %%PORTDOCS%%%%DOCSDIR%%/5.reference/tabwrite-help.pd
@@ -483,6 +524,7 @@ lib/pd/stdout/stdout.pd_linux
 %%PORTDOCS%%%%DOCSDIR%%/7.stuff/tools/load-meter.pd
 %%PORTDOCS%%%%DOCSDIR%%/7.stuff/tools/testtone.pd
 %%PORTDOCS%%%%DOCSDIR%%/7.stuff/tools/testtone16.pd
+%%PORTDOCS%%%%DOCSDIR%%/7.stuff/tools/z.pd
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/sound/bell.aiff
@@ -500,6 +542,7 @@ lib/pd/stdout/stdout.pd_linux
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/2.control.examples
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/1.manual
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/pd/tcl
 @dirrm lib/pd/stdout
 @dirrm lib/pd/sigmund~
 @dirrm lib/pd/pique
