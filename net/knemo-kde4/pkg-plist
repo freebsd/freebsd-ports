@@ -51,6 +51,8 @@ share/locale/bg/LC_MESSAGES/kcm_knemo.mo
 share/locale/bg/LC_MESSAGES/knemo.mo
 share/locale/br/LC_MESSAGES/kcm_knemo.mo
 share/locale/br/LC_MESSAGES/knemo.mo
+share/locale/bs/LC_MESSAGES/kcm_knemo.mo
+share/locale/bs/LC_MESSAGES/knemo.mo
 share/locale/cs/LC_MESSAGES/kcm_knemo.mo
 share/locale/cs/LC_MESSAGES/knemo.mo
 share/locale/cy/LC_MESSAGES/kcm_knemo.mo
@@ -126,12 +128,16 @@ share/locale/sv/LC_MESSAGES/kcm_knemo.mo
 share/locale/sv/LC_MESSAGES/knemo.mo
 share/locale/tr/LC_MESSAGES/kcm_knemo.mo
 share/locale/tr/LC_MESSAGES/knemo.mo
+share/locale/ug/LC_MESSAGES/kcm_knemo.mo
+share/locale/ug/LC_MESSAGES/knemo.mo
 share/locale/uk/LC_MESSAGES/kcm_knemo.mo
 share/locale/uk/LC_MESSAGES/knemo.mo
 share/locale/zh_CN/LC_MESSAGES/kcm_knemo.mo
 share/locale/zh_CN/LC_MESSAGES/knemo.mo
 share/locale/zh_TW/LC_MESSAGES/kcm_knemo.mo
 share/locale/zh_TW/LC_MESSAGES/knemo.mo
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrm share/apps/knemo/themes
