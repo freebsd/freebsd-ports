@@ -12,7 +12,7 @@ MASTER_SITES=		SF
 PKGNAMEPREFIX=		${RUBY_PKGNAMEPREFIX}
 DIST_SUBDIR=		ruby
 
-MAINTAINER=		mm@FreeBSD.org
+MAINTAINER=		ruby@FreeBSD.org
 COMMENT=		Ruby tool for converting wiki-like markup
 
 LICENSE=		GPLv2
