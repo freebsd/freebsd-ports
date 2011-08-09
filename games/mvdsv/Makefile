@@ -6,21 +6,23 @@
 #
 
 PORTNAME?=	mvdsv
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 PORTEPOCH=	2
 CATEGORIES?=	games
-MASTER_SITES=	http://qw-dev.net/attachments/download/130/
+MASTER_SITES=	http://qw-dev.net/attachments/download/201/
 DISTNAME=	mvdsv_${PORTVERSION}-sources
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT?=	Enhanced QuakeWorld server with multi-view demos capability
+
+LICENSE=	GPLv2
 
 USE_ZIP=	yes
 
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	${OPSYS}
 ALL_TARGET=	${PORTNAME}
-WRKSRC=		${WRKDIR}/mvdsv-${PORTVERSION}
+WRKSRC=		${WRKDIR}/mvdsv
 MAKE_JOBS_UNSAFE=	yes
 
 PLIST_FILES=	bin/${PORTNAME}
@@ -39,10 +41,6 @@ MAKE_ARGS+=	-DNOKQUEUE
 .if defined(WITHOUT_X86_ASM)
 MAKE_ARGS+=	-DWITHOUT_X86_ASM
 .endif
-
-post-extract:
-# Allow execution of configure script (fix permissions)
-	@${CHMOD} +x ${WRKSRC}/configure
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
