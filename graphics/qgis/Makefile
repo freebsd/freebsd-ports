@@ -7,6 +7,7 @@
 
 PORTNAME=	qgis
 PORTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	graphics geography
 MASTER_SITES=	http://qgis.org/downloads/ \
 		http://download.osgeo.org/qgis/src/
@@ -94,6 +95,8 @@ MAN1=		qgis.1
 post-patch:
 		${REINPLACE_CMD} -e 's# dl##g' \
 			${WRKSRC}/src/core/CMakeLists.txt
+		${REINPLACE_CMD} -e 's#%%PREFIX%%#${PREFIX}#g' \
+			${WRKSRC}/cmake/FindGRASS.cmake
 
 .if !defined(WITH_MAPSERVER)
 		${REINPLACE_CMD} -e 's#WITH_MAPSERVER TRUE#WITH_MAPSERVER FALSE#g' \
