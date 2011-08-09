@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pd
-DISTVERSION=	0.42-6
+DISTVERSION=	0.43-0
 DISTVERSIONSUFFIX=	.src
 CATEGORIES=	audio
 MASTER_SITES=	http://www-crca.ucsd.edu/~msp/Software/
@@ -14,26 +14,29 @@ MASTER_SITES=	http://www-crca.ucsd.edu/~msp/Software/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	MIDI-capable real-time audio processor/synthesizer
 
+LICENSE=	BSD
+
 WRKSRC=		${WRKDIR}/${DISTNAME:S;.src;/src;}
 PATCH_WRKSRC=	${WRKSRC}/..
 
-USE_TCL=	yes
-USE_TK=		yes
 USE_TCL_BUILD=	yes
 USE_TK_BUILD=	yes
+USE_TK_WRAPPER=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 MAKEFILE=	makefile
 MAKE_JOBS_UNSAFE=	yes
 
 MAN1=		pd.1 pdreceive.1 pdsend.1
 
-CPPFLAGS=	-I${LOCALBASE}/include -I${TCL_INCLUDEDIR} -I${TK_INCLUDEDIR} \
-		${PTHREAD_CFLAGS}
-LDFLAGS=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CPPFLAGS=	-I${TCL_INCLUDEDIR}
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
+	@${FIND} ${PATCH_WRKSRC} -name "*.[ch]" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|__FreeBSD_kernel__|__FreeBSD__|g ; \
+		 s|<alloca\.h>|<stdlib.h>|g'
 	@${REINPLACE_CMD} -e \
 		's|-lpthread|${PTHREAD_LIBS}|g ; \
 		 s|CPPFLAGS="-D|CPPFLAGS="$$CPPFLAGS -D|g ; \
@@ -48,15 +51,9 @@ post-patch:
 		 s|x_midi.c ||g ; \
 		 s|s_midi.c ||g ; \
 		 s|INCLUDE) -o|INCLUDE) $$(LDFLAGS) -o|g' ${WRKSRC}/makefile.in
-.for file in m_binbuf.c ../extra/bonk~/bonk~.c ../extra/sigmund~/sigmund~.c
 	@${REINPLACE_CMD} -e \
-		's|<alloca\.h>|<stdlib.h>|g' ${WRKSRC}/${file}
-.endfor
-	@${REINPLACE_CMD} -e \
-		's|^#!.*$$|#!${WISH}|g' ${WRKSRC}/u_main.tk
-	@${REINPLACE_CMD} -e \
-		's|PD_BASEDIR/LICENSE|${PREFIX}/share/doc/pd/LICENSE|g ; \
-		 s|PD_BASEDIR/doc/1|${PREFIX}/share/doc/pd/1|g' \
+		's|PD_BASEDIR/LICENSE|${DOCSDIR}/LICENSE|g ; \
+		 s|PD_BASEDIR/doc/1|${DOCSDIR}/1|g' \
 			${WRKSRC}/../doc/1.manual/1.introduction.txt
 
 do-install:
@@ -74,10 +71,9 @@ do-install:
 	@${FIND} ${PREFIX}/lib/pd -type d -exec ${CHMOD} 755 {} \;
 	@${FIND} ${PREFIX}/lib/pd -type f -exec ${CHMOD} ${LIBMODE} {} \;
 	@${MKDIR} ${PREFIX}/lib/pd/bin
-.for file in pd-gui pd-watchdog
-	${INSTALL_PROGRAM} ${WRKSRC}/../bin/${file} ${PREFIX}/lib/pd/bin
-.endfor
-	${INSTALL_SCRIPT} ${WRKSRC}/../bin/pd.tk ${PREFIX}/lib/pd/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/../bin/pd-watchdog ${PREFIX}/lib/pd/bin
+	@${MKDIR} ${PREFIX}/lib/pd/tcl
+	${INSTALL_DATA} ${WRKSRC}/../tcl/*.tcl ${PREFIX}/lib/pd/tcl
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@(${TAR} -C ${WRKSRC}/../doc --exclude "*.bak" --exclude "*.orig" \

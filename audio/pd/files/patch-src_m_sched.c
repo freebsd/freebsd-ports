@@ -1,5 +1,5 @@
---- src/m_sched.c.orig	2008-03-15 09:03:00.000000000 +0900
-+++ src/m_sched.c	2008-08-23 22:07:34.000000000 +0900
+--- src/m_sched.c.orig	2011-03-10 15:02:41.000000000 +0900
++++ src/m_sched.c	2011-04-06 19:40:16.000000000 +0900
 @@ -394,8 +394,10 @@
  the audio I/O system is still busy with previous transfers.
  */
@@ -41,10 +41,10 @@
          if (sys_pollgui())
          {
              if (!didsomething)
-@@ -522,11 +530,15 @@
- 
+@@ -523,11 +531,15 @@
  void sched_audio_callbackfn(void)
  {
+     sys_lock();
 +#if !defined(__FreeBSD__)
      sys_setmiditimediff(0, 1e-6 * sys_schedadvance);
 +#endif
@@ -57,7 +57,7 @@
      sys_addhist(3);
      sys_pollgui();
      sys_addhist(5);
-@@ -536,7 +548,9 @@
+@@ -538,7 +550,9 @@
  
  static void m_callbackscheduler(void)
  {
@@ -66,4 +66,4 @@
 +#endif
      while (!sys_quit)
      {
- #ifdef MSW
+         double timewas = sys_time;
