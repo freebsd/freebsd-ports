@@ -3105,6 +3105,7 @@
     SUBDIR += py-zope.configuration
     SUBDIR += py-zope.deprecation
     SUBDIR += py-zope.exceptions
+    SUBDIR += py-zope.i18n
     SUBDIR += py-zope.schema
     SUBDIR += py-zopeInterface
     SUBDIR += py-zopeevent
