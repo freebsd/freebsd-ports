@@ -7,7 +7,7 @@
 
 PORTNAME=	uhexen2
 PORTVERSION=	1.4.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/HoT%20-%20Other%20content/extra%20data
 PKGNAMESUFFIX=	-extras
@@ -44,20 +44,22 @@ PLIST_SUB+=	HEXEN2_LITS="@comment "
 .endif
 
 .if defined(WITH_HEXEN2_MODS)
-DISTFILES+=	apocbot-0.2.0${EXTRACT_SUFX} \
-		fo4d${EXTRACT_SUFX} \
-		hcbots-1.0.4${EXTRACT_SUFX}
+MASTER_SITES+=	SF/${PORTNAME}/HoT%20-%20Other%20content/hexen2%20mods:mods
+DISTFILES+=	apocbot-0.2.0${EXTRACT_SUFX}:mods \
+		fo4d${EXTRACT_SUFX}:mods \
+		hcbots-1.0.4${EXTRACT_SUFX}:mods
 PLIST_SUB+=	HEXEN2_MODS=""
 .else
 PLIST_SUB+=	HEXEN2_MODS="@comment "
 .endif
 
 .if defined(WITH_HW_MODS)
-DISTFILES+=	dungeonbreak${EXTRACT_SUFX} \
-		hexarena${EXTRACT_SUFX} \
-		hwctf${EXTRACT_SUFX} \
-		rivalkingdoms${EXTRACT_SUFX} \
-		siege${EXTRACT_SUFX}
+MASTER_SITES+=	SF/${PORTNAME}/HoT%20-%20Other%20content/hexenworld%20mods:hw_mods
+DISTFILES+=	dungeonbreak${EXTRACT_SUFX}:hw_mods \
+		hexarena${EXTRACT_SUFX}:hw_mods \
+		hwctf${EXTRACT_SUFX}:hw_mods \
+		rivalkingdoms${EXTRACT_SUFX}:hw_mods \
+		siege${EXTRACT_SUFX}:hw_mods
 PLIST_SUB+=	HW_MODS=""
 .else
 PLIST_SUB+=	HW_MODS="@comment "
@@ -77,12 +79,12 @@ do-install:
 .endif
 .if defined(WITH_HEXEN2_MODS)
 .for f in apocbot fo4d hcbots
-	${CP} -R ${WRKDIR}/${f} ${DATADIR}
+	@(cd ${WRKDIR} && ${COPYTREE_SHARE} ${f} ${DATADIR})
 .endfor
 .endif
 .if defined(WITH_HW_MODS)
 .for f in db hexarena hwctf rk siege
-	${CP} -R ${WRKDIR}/${f} ${DATADIR}
+	@(cd ${WRKDIR} && ${COPYTREE_SHARE} ${f} ${DATADIR})
 .endfor
 .for f in hexarena hwctf rk siege
 	${INSTALL_DATA} ${WRKDIR}/data1/${f}.cfg ${DATADIR}/data1
