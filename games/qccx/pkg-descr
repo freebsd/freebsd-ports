@@ -1,5 +1,7 @@
-QCCX is the world's first optimizing Quake-C compiler with support for string
+QCCX is the world's first optimizing QuakeC compiler with support for string
 manipulation, pointers, integers, arrays, and ``for'' loops.  It is also the
-fastest Quake-C compiler out there (at least at its time).  QCCX is based on
+fastest QuakeC compiler out there (at least at its time).  QCCX is based on
 FastQCC which was, in turn, based on QCCDOS.  Use it the same way you use any
-other Quake-C compiler.
+other QuakeC compiler.
+
+WWW: http://www.quakewiki.net/archives/qccx/
