@@ -6,7 +6,6 @@ bin/gerbview
 bin/kicad
 bin/minizip
 bin/pcbnew
-lib/kicad/plugins/netlist_form_pads-pcb.xsl
 share/applications/eeschema.desktop
 share/applications/kicad.desktop
 share/icons/hicolor/16x16/mimetypes/application-x-kicad-project.png
