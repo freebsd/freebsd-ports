@@ -22,8 +22,8 @@ BUILD_DEPENDS+=	py*-lxml>=0:${PORTSDIR}/devel/py-lxml
 USE_GMAKE=		yes
 USE_PYTHON_BUILD=	yes
 
-PLIST_FILES=	%%DATADIR%%/ko-KR.aff \
-		%%DATADIR%%/ko-KR.dic
+PLIST_FILES=	%%DATADIR%%/ko_KR.aff \
+		%%DATADIR%%/ko_KR.dic
 PLIST_DIRSTRY=	%%DATADIR%%
 
 PROJECTHOST=	spellcheck-ko
@@ -32,7 +32,7 @@ MAKE_ENV+=	PYTHON=${PYTHON_CMD}
 
 do-install:
 	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/ko.aff ${DATADIR}/ko-KR.aff
-	${INSTALL_DATA} ${WRKSRC}/ko.dic ${DATADIR}/ko-KR.dic
+	${INSTALL_DATA} ${WRKSRC}/ko.aff ${DATADIR}/ko_KR.aff
+	${INSTALL_DATA} ${WRKSRC}/ko.dic ${DATADIR}/ko_KR.dic
 
 .include <bsd.port.mk>
