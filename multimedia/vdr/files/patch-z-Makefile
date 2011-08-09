@@ -1,4 +1,22 @@
 Index: Makefile
+@@ -112,7 +112,7 @@ vdr: $(OBJS) $(SILIB)
+ # The libsi library:
+ 
+ $(SILIB):
+-	$(MAKE) -C $(LSIDIR) all
++	$(MAKE) -C $(LSIDIR) all CC=${CC} CXX=${CXX}
+ 
+ # Internationalization (I18N):
+ 
+@@ -167,7 +167,7 @@ plugins: include-dir
+ 	       noapiv="$$noapiv $$i";\
+ 	       continue;\
+ 	       fi;\
+-	    $(MAKE) -C "$(PLUGINDIR)/src/$$i" all || failed="$$failed $$i";\
++	    $(MAKE) -C "$(PLUGINDIR)/src/$$i" all CC=${CC} CXX=${CXX} || failed="$$failed $$i";\
+ 	    done;\
+ 	if [ -n "$$noapiv" ] ; then echo; echo "*** plugins without APIVERSION:$$noapiv"; echo; fi;\
+ 	if [ -n "$$failed" ] ; then echo; echo "*** failed plugins:$$failed"; echo; exit 1; fi
 @@ -176,7 +176,7 @@ clean-plugins:
  
  # Install the files:
