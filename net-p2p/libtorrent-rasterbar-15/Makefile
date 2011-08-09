@@ -7,7 +7,7 @@
 
 PORTNAME=	libtorrent-rasterbar
 PORTVERSION=	0.15.7
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	net-p2p ipv6
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PROJECTHOST=	libtorrent
@@ -55,15 +55,18 @@ CONFIGURE_ARGS+=	--enable-python-binding \
 CONFIGURE_ARGS+=	--disable-python-binding
 .endif
 
-.if defined(SLAVE_PORT) && ${SLAVE_PORT:L}=="yes"
-post-patch: slave-post-patch
-.else
-post-patch:
-	${MV} ${WRKSRC}/include/libtorrent/alloca.hpp \
+pre-patch:
+	@${MV} ${WRKSRC}/include/libtorrent/alloca.hpp \
 	    ${WRKSRC}/include/libtorrent/alloca.hpp.Dist
-	${SED} -e 's#alloca.h#stdlib.h#g' \
+	@${SED} -e 's#alloca.h#stdlib.h#g' \
 	    ${WRKSRC}/include/libtorrent/alloca.hpp.Dist > \
 	    ${WRKSRC}/include/libtorrent/alloca.hpp
+	@${CP} ${WRKSRC}/configure ${WRKSRC}/configure.Dist
+	@${SED} -e 's#COMPILETIME_OPTIONS+="#COMPILETIME_OPTIONS="$$COMPILETIME_OPTIONS #g' \
+	    ${WRKSRC}/configure.Dist > ${WRKSRC}/configure
+
+.if defined(SLAVE_PORT) && ${SLAVE_PORT:L}=="yes"
+post-patch: slave-post-patch
 .endif
 
 .if defined(SLAVE_PORT) && ${SLAVE_PORT:L}=="yes"
