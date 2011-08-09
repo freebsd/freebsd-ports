@@ -1,6 +1,6 @@
---- SABnzbd.py	2011-06-07 18:02:35.000000000 -0400
-+++ SABnzbd-port.py	2011-06-08 07:20:14.948254196 -0400
-@@ -916,7 +916,7 @@
+--- SABnzbd.py	2011-07-26 14:57:12.000000000 -0400
++++ SABnzbd.py.new	2011-08-01 22:47:35.614282615 -0400
+@@ -928,7 +928,7 @@
  
      sabnzbd.MY_FULLNAME = os.path.normpath(os.path.abspath(sabnzbd.MY_FULLNAME))
      sabnzbd.MY_NAME = os.path.basename(sabnzbd.MY_FULLNAME)
