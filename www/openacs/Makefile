@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES?=	http://openacs.org/projects/openacs/download/download/
 EXTRACT_SUFX=	.tgz?revision_id=${DIST_REV_ID}
 
-MAINTAINER?=	mm@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	A modular web application platform for communities
 
 LICENCE=	GPLv2

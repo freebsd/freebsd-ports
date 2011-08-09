@@ -12,7 +12,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://luaforge.net/frs/download.php/${DISTFILE_REV}/
 PKGNAMESUFFIX=	-${LUASQL_DRIVER}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT?=	LuaSQL driver
 
 LICENSE=	MIT

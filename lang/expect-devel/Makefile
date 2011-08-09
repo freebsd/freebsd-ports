@@ -11,7 +11,7 @@ CATEGORIES=	lang tcl tk
 MASTER_SITES=	SF/wintcltk/Sources/Package%20Sources
 DISTNAME=	expect-cvs-20091231
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sophisticated scripter based on tcl/tk
 
 CONFLICTS=	expect-5.43*

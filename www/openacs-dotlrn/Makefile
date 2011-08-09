@@ -9,7 +9,7 @@ PORTNAME=	dotlrn
 DISTVERSION=	2.5.0
 MASTER_SITES=	http://openacs.org/projects/dotlrn/download/download/
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenACS-based e-learning platform
 
 DIST_REV_ID=	2984410

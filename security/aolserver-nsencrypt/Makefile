@@ -13,7 +13,7 @@ MASTER_SITES=	SF/aolserver/nsencrypt/${PORTVERSION}
 DISTFILES=	nsencrypt-${PORTVERSION}-src.tar.gz
 DIST_SUBDIR=	aolserver
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenSSL data encryption module for AOLserver
 
 LICENSE=	GPLv1 MPL

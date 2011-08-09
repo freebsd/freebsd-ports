@@ -13,7 +13,7 @@ MASTER_SITES=	SF/aolserver/nssha1/nssha1-${PORTVERSION}
 DISTFILES=	nssha1-${PORTVERSION}.tar.gz
 DIST_SUBDIR=	aolserver
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	AOLserver module to perform SHA1 hashes
 
 WRKSRC=		${WRKDIR}/nssha1-${PORTVERSION}

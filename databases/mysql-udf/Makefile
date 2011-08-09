@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Set of user-defined functions for the MySQL server
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

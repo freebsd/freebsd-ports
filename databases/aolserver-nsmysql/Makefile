@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	aolserver-
 DISTNAME=	nsmysql_v1
 DIST_SUBDIR=	aolserver
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Internal MySQL database driver for AOLserver
 
 AOLSERVERBASE?=	aolserver

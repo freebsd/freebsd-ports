@@ -11,7 +11,7 @@ CATEGORIES?=	lang tcl
 MASTER_SITES=	SF \
 		http://media.wu-wien.ac.at/download/
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Object-oriented scripting language based on Tcl
 
 LICENSE=	MIT

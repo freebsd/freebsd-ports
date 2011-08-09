@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}2
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	aolserver
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Graphics module for AOLserver
 
 LICENSE=	GPLv2
