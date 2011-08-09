@@ -6,8 +6,7 @@
 #      $Id: Makefile 77 2008-07-27 21:50:37Z buhnux $
 
 PORTNAME=	ffmpeg
-PORTVERSION=	0.7.1
-PORTREVISION=	4
+PORTVERSION=	0.7.2
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
@@ -107,12 +106,7 @@ USE_LDCONFIG=	yes
 
 DOC_FILES=	CREDITS INSTALL LICENSE MAINTAINERS README RELEASE
 # under doc subdirectory
-DOC_DOCFILES=	APIchanges TODO avutil.txt build_system.txt \
-		developer.html faq.html fate.txt ffmpeg-mt-authorship.txt \
-		ffmpeg.html ffprobe.html general.html \
-		git-howto.txt issue_tracker.txt libavfilter.html \
-		multithreading.txt optimization.txt rate_distortion.txt \
-		snow.txt soc.txt swscale.txt tablegen.txt viterbi.txt
+DOC_DOCFILES=	APIchanges RELEASE_NOTES TODO *.txt *.html
 PORTDOCS=	*
 
 .if !defined(WITH_DEBUG)
@@ -149,7 +143,6 @@ BUILD_DEPENDS+=		texi2html:${PORTSDIR}/textproc/texi2html
 MAN1+=		ffmpeg.1 ffprobe.1
 . if !defined(WITHOUT_FFSERVER)
 MAN1+=		ffserver.1
-DOC_DOCFILES+=	ffserver.html
 . endif
 .endif
 
@@ -287,7 +280,6 @@ USE_SDL+=	sdl
 PLIST_FILES+=	bin/ffplay
 .if !defined(NOPORTDOCS)
 MAN1+=	ffplay.1
-DOC_DOCFILES+=	ffplay.html
 .endif
 .else
 CONFIGURE_ARGS+=	--disable-ffplay
