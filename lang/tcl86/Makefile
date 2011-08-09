@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	tcl
-PORTVERSION=	8.6.b.1
-PORTREVISION=	4
+PORTVERSION=	8.6.b.2
 CATEGORIES=	lang
-MASTER_SITES=	SF/tcl/Tcl/8.6b1
+MASTER_SITES=	SF/tcl/Tcl/8.6b2
 PKGNAMESUFFIX?=		${THREADS_SUFFIX}${PKGNAMESUFFIX2}
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.b.1/b1/}-src
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.b.2/b2/}-src
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT?=	Tool Command Language
@@ -81,44 +80,45 @@ CONFIGURE_ENV+=		PTHREAD_LIBS="${PTHREAD_LIBS}" PTHREAD_CFLAGS="${PTHREAD_CFLAGS
 
 CONFIGURE_ARGS+=	--disable-threads
 
-.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL84_DOC)
+.if !defined(NO_INSTALL_MANPAGES) && defined(WITH_TCL86_MAN)
 
 MAN3=	Access.3 AddErrInfo.3 Alloc.3 AllowExc.3 AppInit.3 AssocData.3 \
 	Async.3 BackgdErr.3 Backslash.3 BoolObj.3 ByteArrObj.3 CallDel.3 \
-	ChnlStack.3 Class.3 CmdCmplt.3 Concat.3 CrtChannel.3 CrtChnlHdlr.3 \
-	CrtCloseHdlr.3 	CrtCommand.3 CrtFileHdlr.3 CrtInterp.3 CrtMathFnc.3 \
-	CrtObjCmd.3 CrtSlave.3 CrtTimerHdlr.3 CrtTrace.3 DString.3 \
-	DetachPids.3 DictObj.3 DoOneEvent.3 DoWhenIdle.3 DoubleObj.3 \
-	DumpActiveMemory.3 Encoding.3 Ensemble.3 Eval.3 Environment.3 Exit.3 \
-	ExprLong.3 ExprLongObj.3 FileSystem.3 FindExec.3 GetCwd.3 \
-	GetHostName.3 GetIndex.3 GetInt.3 GetTime.3 GetOpnFl.3 GetStdChan.3 \
-	GetVersion.3 Hash.3 Init.3 InitStubs.3 IntObj.3 Interp.3 Limit.3 \
-	LinkVar.3 ListObj.3 Method.3 Namespace.3 Notifier.3 NRE.3 Object.3 \
-	ObjectType.3 OpenFileChnl.3 OpenTcp.3 Panic.3 ParseArgs.3 ParseCmd.3 \
-	PkgRequire.3 Preserve.3 PrintDbl.3 RecEvalObj.3 RecordEval.3 \
-	RegConfig.3 RegExp.3 SaveResult.3 SetChanErr.3 SetErrno.3 SetRecLmt.3 \
-	SetResult.3 SetVar.3 Signal.3 Sleep.3 SourceRCFile.3 SplitList.3 \
-	SplitPath.3 StdChannels.3 StaticPkg.3 StrMatch.3 StringObj.3 \
-	SubstObj.3 TCL_MEM_DEBUG.3 Tcl_Main.3 TclZlib.3 Thread.3 ToUpper.3 \
-	TraceCmd.3 TraceVar.3 Translate.3 UniCharIsAlpha.3 UpVar.3 Utf.3 \
-	WrongNumArgs.3
+	Cancel.3 ChnlStack.3 Class.3 CmdCmplt.3 Concat.3 CrtChannel.3 \
+	CrtChnlHdlr.3 CrtCloseHdlr.3 CrtCommand.3 CrtFileHdlr.3 CrtInterp.3 \
+	CrtMathFnc.3 CrtObjCmd.3 CrtSlave.3 CrtTimerHdlr.3 CrtTrace.3 \
+	DString.3 DetachPids.3 DictObj.3 DoOneEvent.3 DoWhenIdle.3 \
+	DoubleObj.3 DumpActiveMemory.3 Encoding.3 Ensemble.3 Eval.3 \
+	Environment.3 Exit.3 ExprLong.3 ExprLongObj.3 FileSystem.3 \
+	FindExec.3 GetCwd.3 GetHostName.3 GetIndex.3 GetInt.3 GetTime.3 \
+	GetOpnFl.3 GetStdChan.3 GetVersion.3 Hash.3 Init.3 InitStubs.3 \
+	IntObj.3 Interp.3 Limit.3 LinkVar.3 ListObj.3 Load.3 Method.3 \
+	Namespace.3 Notifier.3 NRE.3 Object.3 ObjectType.3 OpenFileChnl.3 \
+	OpenTcp.3 Panic.3 ParseArgs.3 ParseCmd.3 PkgRequire.3 Preserve.3 \
+	PrintDbl.3 RecEvalObj.3 RecordEval.3 RegConfig.3 RegExp.3 \
+	SaveResult.3 SetChanErr.3 SetErrno.3 SetRecLmt.3 SetResult.3 \
+	SetVar.3 Signal.3 Sleep.3 SourceRCFile.3 SplitList.3 SplitPath.3 \
+	StdChannels.3 StaticPkg.3 StrMatch.3 StringObj.3 SubstObj.3 \
+	TCL_MEM_DEBUG.3 Tcl_Main.3 TclZlib.3 Thread.3 ToUpper.3 TraceCmd.3 \
+	TraceVar.3 Translate.3 UniCharIsAlpha.3 UpVar.3 Utf.3 WrongNumArgs.3
 
 MANN=	Tcl.n after.n append.n apply.n array.n bgerror.n binary.n break.n \
-	case.n catch.n cd.n chan.n class.n clock.n close.n concat.n continue.n \
-	copy.n dde.n define.n dict.n encoding.n eof.n error.n eval.n exec.n \
-	exit.n expr.n fblocked.n fconfigure.n fcopy.n file.n fileevent.n \
-	filename.n flush.n for.n foreach.n format.n gets.n glob.n global.n \
-	history.n http.n if.n incr.n info.n interp.n join.n lappend.n \
-	lassign.n library.n lindex.n linsert.n list.n llength.n load.n \
-	lrange.n lrepeat.n lreplace.n lreverse.n lsearch.n lset.n lsort.n \
-	mathfunc.n mathop.n memory.n msgcat.n my.n namespace.n next.n object.n \
-	open.n package.n packagens.n pid.n pkgMkIndex.n platform.n \
-	platform_shell.n prefix.n proc.n puts.n pwd.n re_syntax.n read.n \
-	refchan.n regexp.n registry.n regsub.n rename.n return.n safe.n scan.n \
-	seek.n self.n set.n socket.n source.n split.n string.n subst.n \
-	switch.n tcltest.n tclvars.n tell.n throw.n time.n tm.n trace.n \
-	transchan.n try.n unknown.n unload.n unset.n update.n uplevel.n \
-	upvar.n variable.n vwait.n while.n zlib.n
+	case.n catch.n cd.n chan.n class.n clock.n close.n concat.n \
+	continue.n copy.n coroutine.n dde.n define.n dict.n encoding.n eof.n \
+	error.n eval.n exec.n exit.n expr.n fblocked.n fconfigure.n fcopy.n \
+	file.n fileevent.n filename.n flush.n for.n foreach.n format.n \
+	gets.n glob.n global.n history.n http.n if.n incr.n info.n interp.n \
+	join.n lappend.n lassign.n library.n lindex.n linsert.n list.n \
+	llength.n load.n lrange.n lrepeat.n lreplace.n lreverse.n lsearch.n \
+	lset.n lsort.n mathfunc.n mathop.n memory.n msgcat.n my.n \
+	namespace.n next.n object.n open.n package.n packagens.n pid.n \
+	pkgMkIndex.n platform.n platform_shell.n prefix.n proc.n puts.n \
+	pwd.n re_syntax.n read.n refchan.n regexp.n registry.n regsub.n \
+	rename.n return.n safe.n scan.n seek.n self.n set.n socket.n \
+	source.n split.n string.n subst.n switch.n tailcall.n tcltest.n \
+	tclvars.n tell.n throw.n time.n tm.n trace.n transchan.n try.n \
+	unknown.n unload.n unset.n update.n uplevel.n upvar.n variable.n \
+	vwait.n while.n zlib.n
 
 # MLINKS generated via  awk '/ln/ {print "\t" $3,$4,"\\"}' unix/mkLinks
 MLINKS=	Access.3 Tcl_Access.3 \
@@ -724,6 +724,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|libtcl$${SHORT_TCL_VER}|libtcl$${SHORT_TCL_VER}${THREADS_SUFFIX}|g' \
 		-e 's|/tclsh$$(VERSION)|/tclsh$$(VERSION)${THREADS_SUFFIX}|g' \
 		-e 's|/tclConfig.sh|/tclConfig${THREADS_SUFFIX}.sh|g' \
+		-e 's|"/tclooConfig.sh|"/tclooConfig${THREADS_SUFFIX}.sh|g' \
 		${WRKSRC}/Makefile.in
 .endif
 
@@ -751,6 +752,7 @@ do-install:
 	@cd ${WRKSRC} && ${MAKE_ENV} ${MAKE} -f Makefile install-binaries
 	@${MKDIR} ${PREFIX}/lib/tcl${TCL_VER}${THREADS_SUFFIX}
 	@${LN} -s ${PREFIX}/lib/tcl${TCL_VER}/tclConfig${THREADS_SUFFIX}.sh ${PREFIX}/lib/tcl${TCL_VER}${THREADS_SUFFIX}/tclConfig.sh
+	@${LN} -s ${PREFIX}/lib/tcl${TCL_VER}/tclooConfig${THREADS_SUFFIX}.sh ${PREFIX}/lib/tcl${TCL_VER}${THREADS_SUFFIX}/tclooConfig.sh
 .endif
 
 post-install:

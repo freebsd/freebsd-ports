@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	tk
-PORTVERSION=	8.6.b.1
-PORTREVISION=	2
+PORTVERSION=	8.6.b.2
 CATEGORIES=	x11-toolkits
-MASTER_SITES=	SF/tcl/Tcl/8.6b1
+MASTER_SITES=	SF/tcl/Tcl/8.6b2
 PKGNAMESUFFIX?=	${THREADS_SUFFIX}
-DISTNAME=	${PORTNAME}${PORTVERSION:S/.b.1/b1/}-src
+DISTNAME=	${PORTNAME}${PORTVERSION:S/.b.2/b2/}-src
 
 MAINTAINER=	mm@FreeBSD.org
 COMMENT?=	Graphical toolkit for Tcl
@@ -113,10 +112,11 @@ MANN=	bell.n bind.n bindtags.n bitmap.n button.n busy.n canvas.n \
 	menu.n menubar.n menubutton.n message.n messageBox.n option.n \
 	optionMenu.n options.n pack-old.n pack.n panedwindow.n palette.n \
 	photo.n place.n popup.n radiobutton.n raise.n scale.n scrollbar.n \
-	selection.n send.n spinbox.n text.n tk.n tkerror.n tkvars.n tkwait.n \
-	toplevel.n winfo.n wm.n ttk_button.n ttk_checkbutton.n ttk_combobox.n \
-	ttk_entry.n ttk_frame.n ttk_image.n ttk_intro.n ttk_label.n \
-	ttk_labelframe.n ttk_menubutton.n ttk_notebook.n ttk_panedwindow.n \
+	selection.n send.n spinbox.n text.n tk.n tk_mac.n tkerror.n \
+	tkvars.n tkwait.n toplevel.n winfo.n wm.n ttk_button.n \
+	ttk_checkbutton.n ttk_combobox.n ttk_entry.n ttk_frame.n \
+	ttk_image.n ttk_intro.n ttk_label.n ttk_labelframe.n \
+	ttk_menubutton.n ttk_notebook.n ttk_panedwindow.n \
 	ttk_progressbar.n ttk_radiobutton.n ttk_scrollbar.n ttk_separator.n \
 	ttk_scale.n ttk_sizegrip.n ttk_spinbox.n ttk_style.n ttk_treeview.n \
 	ttk_vsapi.n ttk_widget.n
