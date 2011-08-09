@@ -1,0 +1,12 @@
+%%SITE_PERL%%/BSON.pm
+%%SITE_PERL%%/BSON/Binary.pm
+%%SITE_PERL%%/BSON/Bool.pm
+%%SITE_PERL%%/BSON/Code.pm
+%%SITE_PERL%%/BSON/MaxKey.pm
+%%SITE_PERL%%/BSON/MinKey.pm
+%%SITE_PERL%%/BSON/ObjectId.pm
+%%SITE_PERL%%/BSON/Time.pm
+%%SITE_PERL%%/BSON/Timestamp.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/BSON/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSON
+@dirrm %%SITE_PERL%%/BSON

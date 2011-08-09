@@ -269,6 +269,7 @@
     SUBDIR += p5-ApacheDBILogger
     SUBDIR += p5-AsciiDB-TagFile
     SUBDIR += p5-BDB
+    SUBDIR += p5-BSON
     SUBDIR += p5-BerkeleyDB
     SUBDIR += p5-CDB_File
     SUBDIR += p5-CDB_File-Generator
