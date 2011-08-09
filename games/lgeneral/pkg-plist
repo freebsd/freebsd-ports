@@ -30,8 +30,153 @@ share/applications/lgeneral.desktop
 %%DATADIR%%/convdata/title.bmp
 %%DATADIR%%/convdata/tracked.wav
 %%DATADIR%%/convdata/wheeled.wav
+%%DATADIR%%/gfx/flags/pg.bmp
 %%DATADIR%%/gfx/font_credit.bmp
+%%DATADIR%%/gfx/terrain/pg/airfield.bmp
+%%DATADIR%%/gfx/terrain/pg/airfield_rain.bmp
+%%DATADIR%%/gfx/terrain/pg/airfield_snow.bmp
+%%DATADIR%%/gfx/terrain/pg/clear.bmp
+%%DATADIR%%/gfx/terrain/pg/clear_rain.bmp
+%%DATADIR%%/gfx/terrain/pg/clear_snow.bmp
+%%DATADIR%%/gfx/terrain/pg/crosshair.bmp
+%%DATADIR%%/gfx/terrain/pg/damage_bars.bmp
+%%DATADIR%%/gfx/terrain/pg/danger.bmp
+%%DATADIR%%/gfx/terrain/pg/desert.bmp
+%%DATADIR%%/gfx/terrain/pg/desert_rain.bmp
+%%DATADIR%%/gfx/terrain/pg/desert_snow.bmp
+%%DATADIR%%/gfx/terrain/pg/explosion.bmp
+%%DATADIR%%/gfx/terrain/pg/fields.bmp
+%%DATADIR%%/gfx/terrain/pg/fields_rain.bmp
+%%DATADIR%%/gfx/terrain/pg/fields_snow.bmp
+%%DATADIR%%/gfx/terrain/pg/fog.bmp
+%%DATADIR%%/gfx/terrain/pg/forest.bmp
+%%DATADIR%%/gfx/terrain/pg/forest_rain.bmp
+%%DATADIR%%/gfx/terrain/pg/forest_snow.bmp
+%%DATADIR%%/gfx/terrain/pg/fort.bmp
+%%DATADIR%%/gfx/terrain/pg/fort_rain.bmp
+%%DATADIR%%/gfx/terrain/pg/fort_snow.bmp
+%%DATADIR%%/gfx/terrain/pg/grid.bmp
+%%DATADIR%%/gfx/terrain/pg/harbor.bmp
+%%DATADIR%%/gfx/terrain/pg/harbor_rain.bmp
+%%DATADIR%%/gfx/terrain/pg/harbor_snow.bmp
+%%DATADIR%%/gfx/terrain/pg/mountain.bmp
+%%DATADIR%%/gfx/terrain/pg/mountain_rain.bmp
+%%DATADIR%%/gfx/terrain/pg/mountain_snow.bmp
+%%DATADIR%%/gfx/terrain/pg/ocean.bmp
+%%DATADIR%%/gfx/terrain/pg/ocean_rain.bmp
+%%DATADIR%%/gfx/terrain/pg/ocean_snow.bmp
+%%DATADIR%%/gfx/terrain/pg/river.bmp
+%%DATADIR%%/gfx/terrain/pg/river_rain.bmp
+%%DATADIR%%/gfx/terrain/pg/river_snow.bmp
+%%DATADIR%%/gfx/terrain/pg/road.bmp
+%%DATADIR%%/gfx/terrain/pg/road_rain.bmp
+%%DATADIR%%/gfx/terrain/pg/road_snow.bmp
+%%DATADIR%%/gfx/terrain/pg/rough.bmp
+%%DATADIR%%/gfx/terrain/pg/rough_desert.bmp
+%%DATADIR%%/gfx/terrain/pg/rough_desert_rain.bmp
+%%DATADIR%%/gfx/terrain/pg/rough_desert_snow.bmp
+%%DATADIR%%/gfx/terrain/pg/rough_rain.bmp
+%%DATADIR%%/gfx/terrain/pg/rough_snow.bmp
+%%DATADIR%%/gfx/terrain/pg/select_frame.bmp
+%%DATADIR%%/gfx/terrain/pg/swamp.bmp
+%%DATADIR%%/gfx/terrain/pg/swamp_rain.bmp
+%%DATADIR%%/gfx/terrain/pg/swamp_snow.bmp
+%%DATADIR%%/gfx/terrain/pg/town.bmp
+%%DATADIR%%/gfx/terrain/pg/town_rain.bmp
+%%DATADIR%%/gfx/terrain/pg/town_snow.bmp
 %%DATADIR%%/gfx/title.bmp
+%%DATADIR%%/gfx/units/pg.bmp
+%%DATADIR%%/gfx/units/pg_attack.bmp
+%%DATADIR%%/gfx/units/pg_guard.bmp
+%%DATADIR%%/gfx/units/pg_move.bmp
+%%DATADIR%%/gfx/units/pg_strength.bmp
+%%DATADIR%%/maps/pg.tdb
+%%DATADIR%%/maps/pg/map01
+%%DATADIR%%/maps/pg/map02
+%%DATADIR%%/maps/pg/map03
+%%DATADIR%%/maps/pg/map04
+%%DATADIR%%/maps/pg/map05
+%%DATADIR%%/maps/pg/map06
+%%DATADIR%%/maps/pg/map07
+%%DATADIR%%/maps/pg/map08
+%%DATADIR%%/maps/pg/map09
+%%DATADIR%%/maps/pg/map10
+%%DATADIR%%/maps/pg/map11
+%%DATADIR%%/maps/pg/map12
+%%DATADIR%%/maps/pg/map13
+%%DATADIR%%/maps/pg/map14
+%%DATADIR%%/maps/pg/map15
+%%DATADIR%%/maps/pg/map16
+%%DATADIR%%/maps/pg/map17
+%%DATADIR%%/maps/pg/map18
+%%DATADIR%%/maps/pg/map19
+%%DATADIR%%/maps/pg/map20
+%%DATADIR%%/maps/pg/map21
+%%DATADIR%%/maps/pg/map22
+%%DATADIR%%/maps/pg/map23
+%%DATADIR%%/maps/pg/map24
+%%DATADIR%%/maps/pg/map25
+%%DATADIR%%/maps/pg/map26
+%%DATADIR%%/maps/pg/map27
+%%DATADIR%%/maps/pg/map28
+%%DATADIR%%/maps/pg/map29
+%%DATADIR%%/maps/pg/map30
+%%DATADIR%%/maps/pg/map31
+%%DATADIR%%/maps/pg/map32
+%%DATADIR%%/maps/pg/map33
+%%DATADIR%%/maps/pg/map34
+%%DATADIR%%/maps/pg/map35
+%%DATADIR%%/maps/pg/map36
+%%DATADIR%%/maps/pg/map37
+%%DATADIR%%/maps/pg/map38
+%%DATADIR%%/nations/pg.ndb
+%%DATADIR%%/scenarios/pg/.order
+%%DATADIR%%/scenarios/pg/Anvil
+%%DATADIR%%/scenarios/pg/Anzio
+%%DATADIR%%/scenarios/pg/Ardennes
+%%DATADIR%%/scenarios/pg/Balkans
+%%DATADIR%%/scenarios/pg/Barbarossa
+%%DATADIR%%/scenarios/pg/Berlin
+%%DATADIR%%/scenarios/pg/BerlinEast
+%%DATADIR%%/scenarios/pg/BerlinWest
+%%DATADIR%%/scenarios/pg/Budapest
+%%DATADIR%%/scenarios/pg/Byelorussia
+%%DATADIR%%/scenarios/pg/Caucasus
+%%DATADIR%%/scenarios/pg/Cobra
+%%DATADIR%%/scenarios/pg/Crete
+%%DATADIR%%/scenarios/pg/D-Day
+%%DATADIR%%/scenarios/pg/EarlyMoscow
+%%DATADIR%%/scenarios/pg/ElAlamein
+%%DATADIR%%/scenarios/pg/France
+%%DATADIR%%/scenarios/pg/Husky
+%%DATADIR%%/scenarios/pg/Kharkov
+%%DATADIR%%/scenarios/pg/Kiev
+%%DATADIR%%/scenarios/pg/Kursk
+%%DATADIR%%/scenarios/pg/LowCountries
+%%DATADIR%%/scenarios/pg/MarketGarden
+%%DATADIR%%/scenarios/pg/MiddleEast
+%%DATADIR%%/scenarios/pg/Moscow41
+%%DATADIR%%/scenarios/pg/Moscow42
+%%DATADIR%%/scenarios/pg/Moscow43
+%%DATADIR%%/scenarios/pg/NorthAfrica
+%%DATADIR%%/scenarios/pg/Norway
+%%DATADIR%%/scenarios/pg/Poland
+%%DATADIR%%/scenarios/pg/Sealion40
+%%DATADIR%%/scenarios/pg/Sealion43
+%%DATADIR%%/scenarios/pg/SealionPlus
+%%DATADIR%%/scenarios/pg/Sevastapol
+%%DATADIR%%/scenarios/pg/Stalingrad
+%%DATADIR%%/scenarios/pg/Torch
+%%DATADIR%%/scenarios/pg/Warsaw
+%%DATADIR%%/scenarios/pg/Washington
+%%DATADIR%%/sounds/pg/air.wav
+%%DATADIR%%/sounds/pg/air2.wav
+%%DATADIR%%/sounds/pg/explosion.wav
+%%DATADIR%%/sounds/pg/leg.wav
+%%DATADIR%%/sounds/pg/sea.wav
+%%DATADIR%%/sounds/pg/select.wav
+%%DATADIR%%/sounds/pg/tracked.wav
+%%DATADIR%%/sounds/pg/wheeled.wav
 %%DATADIR%%/themes/default/bkgnd.bmp
 %%DATADIR%%/themes/default/brief_frame.bmp
 %%DATADIR%%/themes/default/click.wav
@@ -63,38 +208,36 @@ share/applications/lgeneral.desktop
 %%DATADIR%%/themes/default/strength_buttons.bmp
 %%DATADIR%%/themes/default/unit_buttons.bmp
 %%DATADIR%%/themes/default/wallpaper.bmp
+%%DATADIR%%/units/pg.udb
 %%NLS%%share/locale/de/LC_MESSAGES/lgeneral.mo
 %%NLS%%share/locale/de/LC_MESSAGES/pg.mo
 %%NLS%%share/locale/en/LC_MESSAGES/lgeneral.mo
 %%NLS%%share/locale/en/LC_MESSAGES/pg.mo
 share/pixmaps/lgeneral48.png
-@dirrmtry %%DATADIR%%/units
-@dirrmtry %%DATADIR%%/themes/default
-@dirrmtry %%DATADIR%%/themes
-@dirrmtry %%DATADIR%%/terrain
-@dirrmtry %%DATADIR%%/sounds
-@dirrmtry %%DATADIR%%/scenarios
-@dirrmtry %%DATADIR%%/nations
-@dirrmtry %%DATADIR%%/music
-@dirrmtry %%DATADIR%%/maps
-@dirrmtry %%DATADIR%%/gfx/units
-@dirrmtry %%DATADIR%%/gfx/terrain
-@dirrmtry %%DATADIR%%/gfx/flags
-@dirrmtry %%DATADIR%%/gfx
-@dirrmtry %%DATADIR%%/convdata
-@dirrmtry %%DATADIR%%/campaigns
-@dirrmtry %%DATADIR%%/ai_modules
-@dirrmtry %%DATADIR%%
+@dirrm %%DATADIR%%/units
+@dirrm %%DATADIR%%/themes/default
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/terrain
+@dirrm %%DATADIR%%/sounds/pg
+@dirrm %%DATADIR%%/sounds
+@dirrm %%DATADIR%%/scenarios/pg
+@dirrm %%DATADIR%%/scenarios
+@dirrm %%DATADIR%%/nations
+@dirrm %%DATADIR%%/music
+@dirrm %%DATADIR%%/maps/pg
+@dirrm %%DATADIR%%/maps
+@dirrm %%DATADIR%%/gfx/units
+@dirrm %%DATADIR%%/gfx/terrain/pg
+@dirrm %%DATADIR%%/gfx/terrain
+@dirrm %%DATADIR%%/gfx/flags
+@dirrm %%DATADIR%%/gfx
+@dirrm %%DATADIR%%/convdata
+@dirrm %%DATADIR%%/campaigns
+@dirrm %%DATADIR%%/ai_modules
+@dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
-@exec mkdir -p %D/share/lgeneral/ai_modules
-@exec mkdir -p %D/share/lgeneral/gfx/flags
-@exec mkdir -p %D/share/lgeneral/gfx/terrain
-@exec mkdir -p %D/share/lgeneral/gfx/units
-@exec mkdir -p %D/share/lgeneral/maps
-@exec mkdir -p %D/share/lgeneral/music
-@exec mkdir -p %D/share/lgeneral/nations
-@exec mkdir -p %D/share/lgeneral/scenarios
-@exec mkdir -p %D/share/lgeneral/sounds
-@exec mkdir -p %D/share/lgeneral/terrain
-@exec mkdir -p %D/share/lgeneral/units
+@exec mkdir -p %D/share/lgeneral/gfx/terrain/pg
+@exec mkdir -p %D/share/lgeneral/maps/pg
+@exec mkdir -p %D/share/lgeneral/scenarios/pg
+@exec mkdir -p %D/share/lgeneral/sounds/pg
