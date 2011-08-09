@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mime4j
-PORTVERSION=	0.6.1
+PORTVERSION=	0.7
 CATEGORIES=	mail java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	james/${PORTNAME}
@@ -25,20 +25,22 @@ JAVA_VERSION=	1.5+
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/apache-${PORTNAME}-${PORTVERSION}
 
-PLIST_FILES=	%%JAVAJARDIR%%/apache-${PORTNAME}.jar
+PLIST_FILES=	%%JAVAJARDIR%%/apache-${PORTNAME}-core.jar \
+		%%JAVAJARDIR%%/apache-${PORTNAME}-dom.jar \
+		%%JAVAJARDIR%%/apache-${PORTNAME}-storage.jar
 
 PORTDOCS=	*
 
 do-install:
-	@${ECHO_MSG} -n ">> Installing JAR file as ${JAVAJARDIR}/apache-${PORTNAME}.jar..."
-	@${INSTALL_DATA} ${WRKSRC}/apache-${PORTNAME}-${PORTVERSION}.jar \
-		${JAVAJARDIR}/apache-${PORTNAME}.jar
-	@${ECHO_MSG} " [DONE]"
+	${INSTALL_DATA} ${WRKSRC}/apache-${PORTNAME}-core-${PORTVERSION}.jar \
+		${JAVAJARDIR}/apache-${PORTNAME}-core.jar
+	${INSTALL_DATA} ${WRKSRC}/apache-${PORTNAME}-dom-${PORTVERSION}.jar \
+		${JAVAJARDIR}/apache-${PORTNAME}-dom.jar
+	${INSTALL_DATA} ${WRKSRC}/apache-${PORTNAME}-storage-${PORTVERSION}.jar \
+		${JAVAJARDIR}/apache-${PORTNAME}-storage.jar
 .if !defined(NOPORTDOCS)
-	@${ECHO_MSG} -n ">> Installing documentation..."
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/RELEASE_NOTES.txt ${DOCSDIR}
-	@${ECHO_MSG} " [DONE]"
+	${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/RELEASE_NOTES.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
