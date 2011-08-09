@@ -40,7 +40,9 @@ PLIST_FILES+=	%%DATADIR%%/${ALIAS}.aff \
 
 do-install:
 	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKSRC}/hunspell/*.aff ${WRKSRC}/hunspell/*.dic ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/hunspell/de_AT.aff ${WRKSRC}/hunspell/de_AT.dic \
+		${WRKSRC}/hunspell/de_CH.aff ${WRKSRC}/hunspell/de_CH.dic \
+		${WRKSRC}/hunspell/de_DE.aff ${WRKSRC}/hunspell/de_DE.dic ${DATADIR}/
 .for ALIAS in ${CHALIASES}
 	${LN} -s de_CH.aff ${DATADIR}/${ALIAS}.aff
 	${LN} -s de_CH.dic ${DATADIR}/${ALIAS}.dic
