@@ -51,10 +51,10 @@ PLIST_SUB=	JPORTDOCS=""
 
 post-extract:
 	@cd ${WRKSRC}/Doc && ${FIND} -s . -type d -print0 | ${XARGS} -0 ${CHMOD} a+rx
-	@cd ${WRKSRC}/Doc && ${FIND} . -type f -print0 | ${XARGS} -0 ${CHMOD} a-x
+	@cd ${WRKSRC}/Doc && ${FIND} . -type f -print0 | ${XARGS} -0 ${CHMOD} a-x+r
 	@${CHMOD} a+rx ${WRKSRC}/Libraries
 	@cd ${WRKSRC}/Libraries && ${FIND} -s . -type d -print0 | ${XARGS} -0 ${CHMOD} a+rx
-	@cd ${WRKSRC}/Libraries && ${FIND} . -type f -print0 | ${XARGS} -0 ${CHMOD} a-x
+	@cd ${WRKSRC}/Libraries && ${FIND} . -type f -print0 | ${XARGS} -0 ${CHMOD} a-x+r
 	@${CP} ${WRKSRC}/Doc/xfig.man ${WRKSRC}
 
 post-patch:
