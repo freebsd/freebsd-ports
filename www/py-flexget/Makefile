@@ -31,6 +31,8 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0.7:${PORTSDIR}/databases/py-sql
 		${PYTHON_PKGNAMEPREFIX}Flask>=0:${PORTSDIR}/www/py-flask \
 		${PYTHON_PKGNAMEPREFIX}html5lib>=0.11:${PORTSDIR}/www/py-html5lib
 
+BROKEN=		incomplete plist
+
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	all
 PYDISTUTILS_PKGNAME=	FlexGet
