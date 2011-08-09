@@ -12,7 +12,7 @@ CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Auto-compress web files with Gzip
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache.pm:${PORTSDIR}/www/mod_perl
