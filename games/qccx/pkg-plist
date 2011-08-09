@@ -6,6 +6,3 @@ bin/qccx
 %%DATADIR%%/world.qc
 %%DATADIR%%/progs.src
 @dirrm %%DATADIR%%
-%%PORTDOCS%%%%DOCSDIR%%/manual.txt
-%%PORTDOCS%%%%DOCSDIR%%/readme.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
