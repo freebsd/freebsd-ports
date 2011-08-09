@@ -5,18 +5,15 @@
 # $FreeBSD$
 #
 
-DISTVERSION=	1.2a2
-
 COMMENT=	A GnuPG extension for the Seamonkey mail client
+
+EXTRACT_DEPENDS=autoconf-2.13:${PORTSDIR}/devel/autoconf213 \
+		yasm:${PORTSDIR}/devel/yasm
 
 MASTERDIR=	${.CURDIR}/../enigmail
 
 GECKO=		seamonkey
 GECKO_PORTDIR=	www/${GECKO}
-GECKO_EXTDIR=	comm-2.0
-
-PORTSCOUT=	skipv:1.2
-
-IGNORE=		is for seamonkey 2.1, not yet in the ports tree
+GECKO_EXTDIR=	comm-release
 
 .include "${MASTERDIR}/Makefile"

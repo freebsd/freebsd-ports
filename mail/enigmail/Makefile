@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	enigmail
-PORTVERSION?=	1.2
+PORTVERSION?=	1.2.1
 PORTREVISION?=	0
 CATEGORIES=	mail security
 MASTER_SITES=	http://www.mozilla-enigmail.org/download/source/
@@ -30,10 +30,10 @@ GECKO_PORTDIR=	www/${GECKO}
 IGNORE=		is an abstract port: use one of the slave ports
 .endif
 
-.if ${PORTVERSION} == "1.2"
-GECKO_TARGET=	build
-.else
+.if ${PORTVERSION} == "1.0.1" || ${PORTVERSION} == "1.1.2"
 GECKO_TARGET=	configure
+.else
+GECKO_TARGET=	build
 .endif
 
 .if defined(GECKO_EXTDIR)
@@ -85,7 +85,7 @@ do-build:
 
 do-install:
 	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${MOZSRC}/dist/bin/${DISTNAME:C/1.0.[0-9]/1.0/}-freebsd-${ARCH}.xpi ${DATADIR}/${XPI_FILE}
+	${INSTALL_DATA} ${MOZSRC}/dist/bin/${DISTNAME:C/1.([02]).[0-9]/1.\1/}-freebsd-${ARCH}.xpi ${DATADIR}/${XPI_FILE}
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
