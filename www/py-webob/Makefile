@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webob
-DISTVERSION=	1.1beta1
+DISTVERSION=	1.1b2
 CATEGORIES=	www python
 MASTER_SITES=	CHEESESHOP \
 		http://nivi.interfree.it/distfiles/${PORTNAME}/
