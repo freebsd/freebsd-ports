@@ -10,6 +10,4 @@ Abuse-SDL has the following extra features over the original Abuse:
  - Mousewheel support for changing weapons.
  - Stereo sound.
 
-Note that this port does not install any data files.
-
 WWW: http://abuse.zoy.org/
