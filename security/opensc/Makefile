@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	opensc
-PORTVERSION=	0.12.1
+PORTVERSION=	0.12.2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.opensc-project.org/files/${PORTNAME}/ \
 		http://www.opensc-project.org/files/${PORTNAME}/testing/
