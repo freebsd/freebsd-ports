@@ -6,7 +6,7 @@
 
 PORTNAME=	mediaproxy
 PORTVERSION=	1.8.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	net
 MASTER_SITES=	http://mediaproxy.ag-projects.com/ \
 		http://mediaproxy.ag-projects.com/old/
@@ -14,11 +14,11 @@ MASTER_SITES=	http://mediaproxy.ag-projects.com/ \
 MAINTAINER=	steve@energistic.com
 COMMENT=	A far-end NAT traversal solution for SER/OpenSER
 
-USE_RC_SUBR=	mediaproxy.sh
-
-WRKSRC=		${WRKDIR}/${PORTNAME}
+USE_RC_SUBR=	mediaproxy proxydispatcher
 
 USE_PYTHON=	2.5+
+
+SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
 
 OPTIONS=	ACCOUNTING "ACCOUNTING support (Requires MySQL)" off
 
@@ -27,6 +27,9 @@ OPTIONS=	ACCOUNTING "ACCOUNTING support (Requires MySQL)" off
 .if defined(WITH_ACCOUNTING)
 USE_MYSQL=	yes
 .endif
+
+post-extract:
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-install:
 	${CP} -pRP ${WRKSRC}/ ${PREFIX}/mediaproxy
