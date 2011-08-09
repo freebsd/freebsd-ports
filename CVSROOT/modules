@@ -3530,6 +3530,7 @@ flim-xemacs21-mule              ports/editors/flim-xemacs21-mule
 flite                           ports/audio/flite
 floatator                       ports/misc/floatator
 flobopuyo                       ports/games/flobopuyo
+flock                           ports/sysutils/flock
 flog                            ports/sysutils/flog
 flood                           ports/www/flood
 flops                           ports/benchmarks/flops
@@ -7280,6 +7281,8 @@ ko-scim-hangul                  ports/korean/scim-hangul
 ko-scim-tables                  ports/korean/scim-tables
 ko-stardict2-dict-kr            ports/korean/stardict2-dict-kr
 ko-texinfo                      ports/korean/texinfo
+ko-unfonts-core                 ports/korean/unfonts-core
+ko-unfonts-extra                ports/korean/unfonts-extra
 ko-unfonts-ttf                  ports/korean/unfonts-ttf
 ko-uniksc                       ports/korean/uniksc
 ko-unzip                        ports/korean/unzip
@@ -8253,6 +8256,7 @@ libungif                        ports/graphics/libungif
 libunicode                      ports/devel/libunicode
 libuninameslist                 ports/textproc/libuninameslist
 libuninum                       ports/devel/libuninum
+libunistring                    ports/devel/libunistring
 libunp                          ports/net/libunp
 libunrar                        ports/archivers/libunrar
 libunrar4                       ports/archivers/libunrar4
@@ -9905,6 +9909,7 @@ neko                            ports/lang/neko
 nekobee                         ports/audio/nekobee
 nemesis                         ports/net/nemesis
 nemiver                         ports/devel/nemiver
+nenscript                       ports/print/nenscript
 neon29                          ports/www/neon29
 nepenthes                       ports/net/nepenthes
 nepim                           ports/net/nepim
@@ -13102,6 +13107,7 @@ p5-Module-Version               ports/devel/p5-Module-Version
 p5-Module-Versions              ports/devel/p5-Module-Versions
 p5-Module-Versions-Report       ports/devel/p5-Module-Versions-Report
 p5-MogileFS-Client              ports/sysutils/p5-MogileFS-Client
+p5-MogileFS-Server              ports/sysutils/p5-MogileFS-Server
 p5-MogileFS-Utils               ports/sysutils/p5-MogileFS-Utils
 p5-MojoMojo                     ports/www/p5-MojoMojo
 p5-Mojolicious                  ports/www/p5-Mojolicious
@@ -17399,7 +17405,7 @@ p5-module-version               ports/devel/p5-Module-Version
 p5-module-versions              ports/devel/p5-Module-Versions
 p5-module-versions-report       ports/devel/p5-Module-Versions-Report
 p5-mogilefs-client              ports/sysutils/p5-MogileFS-Client
-p5-mogilefs-server              ports/sysutils/p5-mogilefs-server
+p5-mogilefs-server              ports/sysutils/p5-MogileFS-Server
 p5-mogilefs-utils               ports/sysutils/p5-MogileFS-Utils
 p5-mojolicious                  ports/www/p5-Mojolicious
 p5-mojolicious-plugin-database  ports/www/p5-Mojolicious-Plugin-Database
@@ -21187,6 +21193,7 @@ pppd23                          ports/net/pppd23
 pppload                         ports/net/pppload
 pppoa                           ports/net/pppoa
 ppracer                         ports/games/ppracer
+pprotectd                       ports/sysutils/pprotectd
 ppsei                           ports/graphics/ppsei
 pptpclient                      ports/net/pptpclient
 ppunpack                        ports/archivers/ppunpack
@@ -21817,6 +21824,7 @@ py-mox                          ports/devel/py-mox
 py-mp-random                    ports/net/py-mp-random
 py-mpd                          ports/audio/py-mpd
 py-mpmath                       ports/math/py-mpmath
+py-msgpack                      ports/devel/py-msgpack
 py-msnp                         ports/net-im/py-msnp
 py-mssql                        ports/databases/py-mssql
 py-mt                           ports/www/py-mt
@@ -21990,6 +21998,7 @@ py-pysqlite22                   ports/databases/py-pysqlite22
 py-pysqlite23                   ports/databases/py-pysqlite23
 py-pytc                         ports/databases/py-pytc
 py-pytemplate                   ports/devel/py-pytemplate
+py-pytest                       ports/devel/py-pytest
 py-pythonbrew                   ports/devel/py-pythonbrew
 py-pytz                         ports/devel/py-pytz
 py-pyutil                       ports/devel/py-pyutil
@@ -23508,6 +23517,7 @@ rubygem-geoip                   ports/net/rubygem-geoip
 rubygem-geokit                  ports/graphics/rubygem-geokit
 rubygem-georuby                 ports/devel/rubygem-georuby
 rubygem-getopt                  ports/devel/rubygem-getopt
+rubygem-getopt-declare          ports/devel/rubygem-getopt-declare
 rubygem-gettext                 ports/devel/rubygem-gettext
 rubygem-git                     ports/devel/rubygem-git
 rubygem-god                     ports/sysutils/rubygem-god
