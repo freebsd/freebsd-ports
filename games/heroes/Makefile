@@ -9,16 +9,20 @@ PORTNAME=	heroes
 PORTVERSION=	0.21
 PORTREVISION=	13
 CATEGORIES=	games
-MASTER_SITES=	SF
+MASTER_SITES=	SF \
+		SF/${PORTNAME}/${PORTNAME}-data/${DATAVERSION}:data \
+		SF/${PORTNAME}/${PORTNAME}-sound-effects/${SOUNDVERSION}:sound \
+		SF/${PORTNAME}/${PORTNAME}-sound-tracks/${MUSICVERSION}:music
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
-		${DATADISTNAME}${EXTRACT_SUFX} \
-		${SOUNDISTNAME}${EXTRACT_SUFX} \
-		${MUSICDISTNAME}${EXTRACT_SUFX}
-#PATCH_SITES=	ftp://heroes.sourceforge.net/pub/heroes/patches/
-#PATCHFILES=	heroes-0.7-errata.patch
+		${DATADISTNAME}${EXTRACT_SUFX}:data \
+		${SOUNDISTNAME}${EXTRACT_SUFX}:sound \
+		${MUSICDISTNAME}${EXTRACT_SUFX}:music
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game of yore similar to the "Tron" and "Nibbles"
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 DATAVERSION=	1.5
 SOUNDVERSION=	1.0
@@ -35,9 +39,10 @@ USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" \
 		MAKEINFO="makeinfo --no-split"
 CONFIGURE_ARGS=	--with-sdl_mixer=${LOCALBASE} --without-gii --without-ggi
+MAKE_JOBS_SAFE=	yes
 
 .if defined(WITH_OPTIMIZED_CFLAGS)
 CONFIGURE_ARGS+=--enable-optimizations
