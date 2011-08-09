@@ -1,0 +1,7 @@
+zope.i18n implements several APIs related to internationalization
+and localization:
+  * Locale objects for all locales maintained by the ICU project.
+  * Gettext-based message catalogs for message strings.
+  * Locale discovery for Web-based requests.
+
+WWW: http://www.python.org/pypi/zope.i18n
