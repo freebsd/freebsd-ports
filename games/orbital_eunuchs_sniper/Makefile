@@ -9,26 +9,26 @@ PORTNAME=	orbital_eunuchs_sniper
 PORTVERSION=	1.30
 PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	http://filesingularity.timedoctor.org/
+MASTER_SITES=	http://offload2.icculus.org:9090/oes/ \
+		http://offload1.icculus.org:9090/oes/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An overhead shooting game
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
-
 USE_SDL=	sdl image mixer
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="`${SDL_CONFIG} --cflags`" \
-		LDFLAGS="`${SDL_CONFIG} --libs`"
-CONFIGURE_ARGS=	--with-games-dir=${PREFIX}/share \
-		--program-transform-name=
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--with-games-dir=${PREFIX}/share
+MAKE_JOBS_SAFE=	yes
 
 PORTDOCS=	AUTHORS ChangeLog README TODO readme.txt
 
-.if !defined(NOPORTDOCS)
+CPPFLAGS=	`${SDL_CONFIG} --cflags`
+LDFLAGS=	`${SDL_CONFIG} --libs`
+
 post-install:
-	${MKDIR} ${DOCSDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
 .for FILE in ${PORTDOCS}
 	${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
