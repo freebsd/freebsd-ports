@@ -1,2 +1,4 @@
 SHA256 (lgeneral-1.2.1.tar.gz) = 94fabf87a82e99708a858cde3a53824cec1998c5f02b111178a6b6e46e7d97f6
 SIZE (lgeneral-1.2.1.tar.gz) = 1721089
+SHA256 (pg-data.tar.gz) = cc6fa5d263d1d5824d706517958b1bb09b405ba0ed21e63e4a4d38e2727d7a04
+SIZE (pg-data.tar.gz) = 410476

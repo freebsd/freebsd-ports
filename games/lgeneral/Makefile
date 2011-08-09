@@ -7,11 +7,17 @@
 
 PORTNAME=	lgeneral
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME} \
+		SF/${PORTNAME}/${PORTNAME}-data:data
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
+		pg-data${EXTRACT_SUFX}:data
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A turn-based strategy engine inspired by Panzer General
+
+CONFLICTS=	lgeneral-data-[0-9]*
 
 USE_SDL=	sdl
 USE_GMAKE=	yes
@@ -45,6 +51,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|/icons|/pixmaps|' ${WRKSRC}/Makefile.in
 
 post-install:
+	@${PREFIX}/bin/lgc-pg -s ${WRKDIR}/pg-data -d ${DATADIR}
+	@${FIND} ${DATADIR} | ${XARGS} ${CHOWN} ${SHAREOWN}:${SHAREGRP}
+	@${FIND} ${DATADIR} -type d | ${XARGS} ${CHMOD} a+rx
+	@${FIND} ${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README.* ${DOCSDIR}
