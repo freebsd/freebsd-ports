@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sabnzbdplus
-PORTVERSION=	0.6.5
+PORTVERSION=	0.6.6
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/sabnzbd-${PORTVERSION}
 DISTNAME=	SABnzbd-${PORTVERSION}-src
@@ -14,12 +14,12 @@ DISTNAME=	SABnzbd-${PORTVERSION}-src
 MAINTAINER=	dab@rj45.org
 COMMENT=	A web-interface based binary newsgrabber in python, with nzb support
 
+LICENSE=	GPLv2
+
 RUN_DEPENDS=	cheetah:${PORTSDIR}/devel/py-cheetah \
 		${PYTHON_PKGNAMEPREFIX}cherrypy>=3.2.0:${PORTSDIR}/www/py-cherrypy \
 		${PYTHON_SITELIBDIR}/pythonutils/configobj.py:${PORTSDIR}/devel/py-utils \
 		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
-
-LICENSE=	GPLv2
 
 USE_PYTHON=	2.5+
 
