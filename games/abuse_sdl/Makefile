@@ -6,41 +6,29 @@
 #
 
 PORTNAME=	abuse_sdl
-PORTVERSION=	0.7.1
+PORTVERSION=	0.8
 CATEGORIES=	games
-MASTER_SITES=	http://abuse.zoy.org/raw/Downloads/ \
-		http://epix.linux.tucows.com/files/ \
-		http://blueyonder.linux.tucows.com/files/ \
-		http://casemanl.linux.tucows.com/files/
+MASTER_SITES=	GENTOO/distfiles \
+		http://abuse.zoy.org/raw-attachment/wiki/download/
 DISTNAME=	abuse-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An SDL port of the Abuse game engine
 
-BROKEN=	Does not fetch
+CONFLICTS=	abuse-[0-9]*
 
-# Add in the oposite, request games/abuse if being installed directly
-# Instead of games/abuse
-RUN_DEPENS=	abuse:${PORTSDIR}/games/abuse
-
+USE_GNOME=	gnomehack
 USE_GL=		gl
-USE_SDL=	sdl
+USE_SDL=	mixer sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
-WRKSRC=		${WRKDIR}/${DISTNAME}
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--with-assetdir=${DATADIR} --enable-release
+MAKE_JOBS_SAFE=	yes
 
-MAN6=		abuse.6
+MAN6=		abuse.6 abuse-tool.6
 
-PLIST_FILES=	bin/abuse.sdl \
-		share/abuse_sdl/abuse.bmp \
-		share/abuse_sdl/abuse.lsp \
-		share/abuse_sdl/abuse.png
-
-PLIST_DIRS=	share/abuse_sdl
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
