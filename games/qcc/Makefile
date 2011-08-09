@@ -1,6 +1,6 @@
-# New ports collection makefile for:		qcc
-# Date created:					October 25th 1996
-# Whom:						jfitz@FreeBSD.org
+# New ports collection makefile for:	qcc
+# Date created:				October 25th 1996
+# Whom:					James FitzGibbon <jfitz@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME}
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	The QuakeC compiler, for building custom games of Quake
 
+LICENSE=	GPLv2
+
 WRKSRC=		${WRKDIR}/send
 MAKEFILE=	makefile
 
@@ -22,16 +24,15 @@ PLIST_FILES=	bin/qcc
 PORTDOCS=	readme.txt
 
 post-extract:
-		@${REINPLACE_CMD} -E '/^CFLAGS/d; s/cc( -c)? \$$\(C/$$(CC)\1 \$$\(C/' \
-			${WRKSRC}/makefile
+	@${REINPLACE_CMD} -E '/^CFLAGS/d; s/cc( -c)? \$$\(C/$$(CC)\1 \$$\(C/' \
+		${WRKSRC}/${MAKEFILE}
 
 do-install:
-		${INSTALL_PROGRAM} ${WRKSRC}/qcc ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 .if !defined(NOPORTDOCS)
-		${MKDIR} ${DOCSDIR}
-		${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/readme.txt ${DOCSDIR}
 .endif
 
 .include "${.CURDIR}/../quake-source/Makefile.include"
-
 .include <bsd.port.mk>
