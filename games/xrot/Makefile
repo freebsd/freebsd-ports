@@ -9,18 +9,24 @@ PORTNAME=	xrot
 PORTVERSION=	1.3.2
 PORTREVISION=	1
 CATEGORIES=	games
-MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		ftp://ftp.kobe-u.ac.jp/pub/Linux/packages/Vine/VinePlus/1.1/JG-0.9.1/sources/
-MASTER_SITE_SUBDIR=	will
+MASTER_SITES=	http://hanzubon.jp/mirrors/Vine/%SUBDIR%/ \
+		http://ftp.jaist.ac.jp/pub/Linux/Vine/%SUBDIR%/ \
+		http://ftp.riken.go.jp/Linux/vine/%SUBDIR%/ \
+		http://ftp.yz.yamagata-u.ac.jp/pub/Linux/Vine/%SUBDIR%/ \
+		http://ftp.nara.wide.ad.jp/pub/Linux/vine/%SUBDIR%/ \
+		http://ftp.vinelinux.org/pub/Vine/%SUBDIR%/
+MASTER_SITE_SUBDIR=	VinePlus/1.1/JG-0.9.1/sources
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A falling ball puzzle game for X
 
-ALL_TARGET=	xrot
-PLIST_FILES=	bin/xrot
 WRKSRC=		${WRKDIR}/xrot
+
 USE_IMAKE=	yes
 USE_XORG=	xpm
+ALL_TARGET=	xrot
+
+PLIST_FILES=	bin/xrot
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/xrot ${PREFIX}/bin
