@@ -6,7 +6,7 @@
 #
 
 PORTNAME=		${SAMBA_BASENAME}35
-PORTVERSION=		3.5.9
+PORTVERSION=		3.5.11
 PORTREVISION?=		0
 CATEGORIES?=		net
 MASTER_SITES=		${MASTER_SITE_SAMBA}
@@ -16,7 +16,7 @@ DISTNAME=		${SAMBA_BASENAME}-${PORTVERSION:S|.p|pre|:S|.r|rc|:S|.t|tp|:S|.a|alph
 MAINTAINER?=		timur@FreeBSD.org
 COMMENT?=		A free SMB and CIFS client and server for UNIX
 
-CONFLICTS?=		*samba3[2-4]-3.*
+CONFLICTS?=		*samba3[2-46]-3.*
 # Additional patches from Sernet.de
 PATCH_STRIP=		-p1
 EXTRA_PATCHES=		${PATCHDIR}/sernet.patch
@@ -77,7 +77,7 @@ LDFLAGS+=		-L${LOCALBASE}/lib
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}" \
 			PTHREAD_CFLAGS="${PTHREAD_CFLAGS}" \
 			PTHREAD_LDFLAGS="${PTHREAD_LIBS}"
-# pkg-config is used to find talloc
+# pkg-config is used to find talloc, tevent and tdb
 PKGCONFIGDIR?=		${PREFIX}/libdata/pkgconfig
 PKGCONFIGDIR_REL?=	${PKGCONFIGDIR:S|^${PREFIX}/||}
 
@@ -94,6 +94,10 @@ CONFIGURE_ARGS+=	--without-libtdb --enable-external-libtdb
 BUILD_DEPENDS+=		talloc>=2.0.1:${PORTSDIR}/devel/talloc
 RUN_DEPENDS+=		talloc>=2.0.1:${PORTSDIR}/devel/talloc
 CONFIGURE_ARGS+=	--without-libtalloc --enable-external-libtalloc
+# tevent
+#BUILD_DEPENDS+=	tevent>=0.9.13:${PORTSDIR}/devel/tevent
+#RUN_DEPENDS+=		tevent>=0.9.13:${PORTSDIR}/devel/tevent
+#CONFIGURE_ARGS+=	--without-libtevent --enable-external-libtevent
 # These options are common for all (sub)ports
 CONFIGURE_ARGS+=	--with-libiconv="${LOCALBASE}"
 
@@ -238,7 +242,8 @@ WANT_EXP_MODULES=	idmap_tdb2 idmap_ad idmap_adex idmap_hash idmap_rid \
 WANT_EXP_MODULES+=	rpc_echo
 .		endif
 WANT_EXP_MODULES+=	vfs_cacheprime vfs_catia vfs_commit vfs_dirsort \
-			vfs_readahead vfs_streams_depot vfs_syncops
+			vfs_readahead vfs_streams_depot vfs_syncops \
+			vfs_crossrename
 .	endif
 .endif
 
