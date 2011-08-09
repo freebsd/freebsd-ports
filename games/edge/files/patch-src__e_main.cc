@@ -1,11 +1,11 @@
---- ./src/e_main.cc.orig	Thu Jun 21 00:04:22 2007
-+++ ./src/e_main.cc	Wed Dec  5 23:35:20 2007
-@@ -1110,6 +1110,8 @@
+--- src/e_main.cc.orig	2008-08-23 18:00:36.000000000 +0900
++++ src/e_main.cc	2009-04-14 04:42:02.000000000 +0900
+@@ -936,6 +936,8 @@
  
-         if (s && epi::the_filesystem->IsDir(s))
-             iwad_dir.Set(s);
+         if (s && epi::FS_IsDir(s))
+             iwad_dir = std::string(s);
 +        else
-+            iwad_dir.Set("%%DMDIR%%");
++            iwad_dir = std::string("%%DMDIR%%");
      }
  
      // Should the IWAD directory not be set by now, then we
