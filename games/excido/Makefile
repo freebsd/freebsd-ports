@@ -9,27 +9,30 @@ PORTNAME=	excido
 PORTVERSION=	0.1.5c
 PORTREVISION=	11
 CATEGORIES=	games
-MASTER_SITES=	http://offload1.icculus.org/excido/
+MASTER_SITES=	http://offload2.icculus.org:9090/excido/ \
+		http://offload1.icculus.org:9090/excido/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable fast-paced 3d shooter
 
-BROKEN=	does not fetch
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	physfs.1:${PORTSDIR}/devel/physfs
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_BZIP2=	yes
-USE_GMAKE=	yes
 USE_GL=		yes
-USE_OPENAL=	al alut
 USE_SDL=	image sdl ttf
+USE_OPENAL=	al alut
+USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
 post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${DOCSDIR}
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
