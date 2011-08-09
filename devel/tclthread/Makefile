@@ -12,7 +12,7 @@ MASTER_SITES=		SF/tcl/Thread%20Extension/${PORTVERSION}
 PKGNAMEPREFIX=	tcl
 DISTNAME=	${PORTNAME}${PORTVERSION}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Thread extension for Tcl
 
 LICENSE=	BSD

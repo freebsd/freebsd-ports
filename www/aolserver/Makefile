@@ -13,7 +13,7 @@ CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/AOLserver/${PORTVERSION}
 DIST_SUBDIR=	aolserver
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multithreaded web server with embedded TCL interpreter
 
 LICENSE=	MPL

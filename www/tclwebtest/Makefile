@@ -11,7 +11,7 @@ PORTREVISION=	3
 CATEGORIES=	www tcl
 MASTER_SITES=	SF
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool for issuing HTTP requests and dealing with the result
 
 LICENSE=	GPLv2

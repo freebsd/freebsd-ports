@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://platon.sk/upload/_projects/00003/
 DISTNAME=	${PORTNAME}+-${DISTVERSION}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for command line and configuration file parsing
 
 LICENSE=	GPLv2

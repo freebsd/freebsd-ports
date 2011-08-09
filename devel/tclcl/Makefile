@@ -12,7 +12,7 @@ PORTREVISION=	4
 CATEGORIES=	devel tcl tk
 MASTER_SITES=	SF/otcl-${PORTNAME}/TclCL/${PORTVERSION}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tcl/C++ interface used by ns and nam
 
 LIB_DEPENDS=	otcl:${PORTSDIR}/lang/otcl

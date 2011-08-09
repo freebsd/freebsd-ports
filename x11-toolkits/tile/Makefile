@@ -10,7 +10,7 @@ PORTVERSION=	0.8.4.0
 CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF/tktable/${PORTNAME}/${PORTNAME}-0-8-4-0
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Themed widget set for Tk
 
 LICENSE=	MIT

@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.equi4.com/pub/mk/
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ embedded database engine, supports Python and Tcl
 
 LICENSE=	MIT

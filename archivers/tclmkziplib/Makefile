@@ -12,7 +12,7 @@ CATEGORIES=	archivers tcl
 MASTER_SITES=	http://mkextensions.sourceforge.net/
 DISTNAME=	mkZiplib${PORTVERSION:S/.//}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GZIP and ZIP support for TCL; dynamicly loadable
 
 LICENSE=	BSD

@@ -7,8 +7,6 @@
 
 PORTNAME=	luasql
 
-MAINTAINER=	mm@FreeBSD.org
-
 LUASQL_DRIVER=	postgres
 MASTERDIR=      ${.CURDIR}/../luasql-mysql
 

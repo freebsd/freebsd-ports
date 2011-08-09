@@ -12,7 +12,7 @@ CATEGORIES=	x11-toolkits tk
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME:S/tk/Tk/}${PORTVERSION}
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A table/matrix widget extension to Tk
 
 LICENSE=	BSD

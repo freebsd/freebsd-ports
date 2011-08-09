@@ -7,8 +7,6 @@
 
 PORTNAME=	luasql
 
-MAINTAINER=	mm@FreeBSD.org
-
 LUASQL_DRIVER=	sqlite3
 
 MASTERDIR=      ${.CURDIR}/../luasql-mysql

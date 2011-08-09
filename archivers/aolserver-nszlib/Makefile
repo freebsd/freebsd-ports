@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	aolserver-
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	aolserver
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Zlib library interface for AOLserver
 
 LICENSE=	MPL GPLv1
