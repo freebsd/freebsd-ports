@@ -28,6 +28,15 @@
  fi
  
  if netbsd || dragonfly ; then
+@@ -1661,7 +1660,7 @@ else
+       echores "$cc_version"
+       break
+     fi
+-    cc_name_tmp=$($_cc -v 2>&1 | head -n 1 | cut -d ' ' -f 1)
++    cc_name_tmp=$($_cc -v 2>&1 | awk "NR == 1 { if(\$1 == \"$system_name\") print \$2; else print \$1 }")
+     if test "$cc_name_tmp" = "clang"; then
+       echocheck "$_cc version"
+       cc_vendor=clang
 @@ -3577,22 +3576,10 @@
  if linux ; then
    THREAD_CFLAGS=-D_REENTRANT
