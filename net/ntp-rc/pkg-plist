@@ -115,6 +115,7 @@ bin/tickadj
 %%PORTDOCS%%%%DOCSDIR%%/ntpq.html
 %%PORTDOCS%%%%DOCSDIR%%/ntptime.html
 %%PORTDOCS%%%%DOCSDIR%%/ntptrace.html
+%%PORTDOCS%%%%DOCSDIR%%/ntp-wait.html
 %%PORTDOCS%%%%DOCSDIR%%/parsedata.html
 %%PORTDOCS%%%%DOCSDIR%%/parsenew.html
 %%PORTDOCS%%%%DOCSDIR%%/pic/9400n.jpg
