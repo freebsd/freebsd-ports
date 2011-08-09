@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Bio-Phylo
-PORTVERSION=	0.39
+PORTVERSION=	0.40
 CATEGORIES=	biology perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RVOSA
@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Phylogenetic analysis using perl
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD \
 		p5-Math-CDF>=0:${PORTSDIR}/math/p5-Math-CDF \
