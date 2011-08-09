@@ -7,6 +7,7 @@
 
 PORTNAME=	openjdk6
 PORTVERSION=	b23
+PORTREVISION=	1
 CATEGORIES=	java devel
 MASTER_SITES=	http://download.java.net/openjdk/jdk6/promoted/${PORTVERSION}/ \
 		http://download.java.net/jaxp/openjdk/jdk6/:jaxp \
@@ -138,7 +139,8 @@ MAKE_ENV+=	SKIP_FASTDEBUG_BUILD=true
 .endif
 
 .if defined(WITH_ICEDTEA)
-EXTRA_PATCHES+=	${FILESDIR}/icedtea/applet_hole.patch \
+EXTRA_PATCHES+=	${FILESDIR}/icedtea/7032388-work_without_cmov_instruction.patch \
+		${FILESDIR}/icedtea/applet_hole.patch \
 		${FILESDIR}/icedtea/jpegclasses.patch
 .endif
 
