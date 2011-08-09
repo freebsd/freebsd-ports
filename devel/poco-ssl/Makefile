@@ -12,9 +12,9 @@ PORTREVISION=	1
 CATEGORIES=	devel net
 MASTER_SITES=	SF/${PORTNAME}/sources/${PORTNAME}-${PORTVERSION}
 PKGNAMESUFFIX=	-ssl
-DISTNAME=	poco-${PORTVERSION}-all
+DISTNAME=	poco-${PORTVERSION}p1-all
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wes@FreeBSD.org
 COMMENT=	C++ Portable Components library with NetSSL library
 
 LIB_DEPENDS=	odbc:${PORTSDIR}/databases/unixODBC
@@ -27,11 +27,5 @@ USE_LDCONFIG=	yes
 
 USE_MYSQL=	yes
 USE_SQLITE=	yes
-
-post-patch:
-	@${REINPLACE_CMD} -e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/Data/ODBC/Makefile \
-		${WRKSRC}/Data/MySQL/Makefile \
-		${WRKSRC}/Data/ODBC/testsuite/Makefile \
-		${WRKSRC}/Data/MySQL/testsuite/Makefile
 
 .include <bsd.port.mk>
