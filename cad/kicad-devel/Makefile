@@ -7,7 +7,7 @@
 
 PORTNAME=		kicad
 DISTVERSION=    r${BZR_SRC_REV}
-PORTREVISION=	4
+#PORTREVISION=	0
 CATEGORIES=		cad
 DIST_SUBDIR=		${PORTNAME}
 MASTER_SITES=   ${MASTER_SITE_LOCAL}
@@ -44,6 +44,7 @@ EXTRAS2RM=	linux-non_unicode linux wings3d LINUX.README	\
 		contrib_makefiles.txt running_kicad_under_W98.txt
 USE_CMAKE=      yes
 CMAKE_ARGS=	-DLOCALBASE="${LOCALBASE}" \
+		-DKICAD_TESTING_VERSION=ON \
 		-DCMAKE_INCLUDE_PATH="${LOCALBASE}/include" \
 		-DwxWidgets_CONFIG_EXECUTABLE="${WX_CONFIG}"
 CMAKE_USE_PTHREAD=	yes
@@ -78,7 +79,11 @@ BZR_DOC_REV!=        bzr revno lp:~kicad-developers/kicad/doc
 # Updating to new rev:
 # make BOOTSTRAP=YES do-fetch
 # make makesum && make && make install
+# < Check PLIST_FILE_LIST below >
 # make build-plist
+# make deinstall && make install && make package
+# pkg_deinstall /var/db/pkg/kicad-devel*
+# pkg_add /usr/ports/pkg_amd64/All/kicad-devel*
 
 FETCH_DEPENDS+= svn:${PORTSDIR}/devel/subversion
 FETCH_DEPENDS+= bzr:${PORTSDIR}/devel/bazaar-ng
@@ -141,6 +146,7 @@ PLIST_FILE_LIST=	bin/freeroute.jnlp \
 			bin/minizip \
 			bin/pcbnew \
 			bin/bitmap2component \
+			pcb_calculator \
 			share/mimelnk/application/x-kicad-schematic.desktop \
 			share/mimelnk/application/x-kicad-project.desktop \
 			share/icons/hicolor/24x24/mimetypes/application-x-kicad-project.png \
