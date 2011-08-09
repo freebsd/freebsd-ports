@@ -12,7 +12,7 @@ CATEGORIES=	devel net
 MASTER_SITES=	SF/${PORTNAME}/sources/${PORTNAME}-${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	wes@FreeBSD.org
 COMMENT=	C++ Portable Components library
 
 GNU_CONFIGURE=	yes
