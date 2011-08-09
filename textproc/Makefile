@@ -4,6 +4,7 @@
     COMMENT = Text processing utilities (does not include desktop publishing)
 
     SUBDIR += 2bsd-diff
+    SUBDIR += ack
     SUBDIR += add-css-links
     SUBDIR += af-aspell
     SUBDIR += aft
