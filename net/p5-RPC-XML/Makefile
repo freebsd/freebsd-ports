@@ -11,7 +11,7 @@ CATEGORIES=	net www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	XML-RPC client and server library for Perl
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \

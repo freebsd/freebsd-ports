@@ -12,7 +12,7 @@ CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Basic statistics on vectors
 
 LICENSE=	ART10 GPLv1
