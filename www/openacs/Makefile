@@ -6,7 +6,7 @@
 #
 
 PORTNAME?=	openacs
-DISTVERSION?=	5.5.1
+DISTVERSION?=	5.7.0
 CATEGORIES=	www
 MASTER_SITES?=	http://openacs.org/projects/openacs/download/download/
 EXTRACT_SUFX=	.tgz?revision_id=${DIST_REV_ID}
@@ -17,7 +17,7 @@ COMMENT?=	A modular web application platform for communities
 LICENCE=	GPLv2
 LICENCE_FILE=	${WRKDIR}/license.txt
 
-DIST_REV_ID?=	2967507
+DIST_REV_ID?=	3646409
 
 AOLSERVERBASE?=	${LOCALBASE}/aolserver
 RUN_DEPENDS+=	${AOLSERVERBASE}/bin/nsopenssl.so:${PORTSDIR}/security/aolserver-nsopenssl \
@@ -84,7 +84,7 @@ SUB_LIST+=	OPENACS_USER=${OPENACS_USER} OPENACS_UID=${OPENACS_UID} \
 		PW=${PW} CHOWN=${CHOWN} CHMOD=${CHMOD}
 
 .if !defined(WITHOUT_TCLTHREAD)
-TCLTHREAD_VER?=	2.6.6
+TCLTHREAD_VER?=	2.6.7
 RUN_DEPENDS+=	${LOCALBASE}/lib/thread${TCLTHREAD_VER}/libthread.so.1:${PORTSDIR}/devel/tclthread
 .endif
 
