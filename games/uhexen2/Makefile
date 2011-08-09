@@ -18,6 +18,9 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Hexen II source port supporting Linux/FreeBSD/Unix/Windows
 
+LICENSE_=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
 USE_GMAKE=	yes
 USE_GL=		yes
 USE_SDL=	sdl mixer
@@ -47,7 +50,8 @@ PLIST_SUB+=	DEMO="" \
 UH2_DATA=	default.cfg hexen.rc pak0.pak progs.dat
 UH2_DATADIR=	${WRKDIR}/hexen2demo-${PORTVERSION}
 .else
-DISTFILES+=	gamedata-all-1.19a${EXTRACT_SUFX}
+MASTER_SITES+=	SF/${PORTNAME}/Hexen2%20GameData/gamedata-1.19a:data
+DISTFILES+=	gamedata-all-1.19a${EXTRACT_SUFX}:data
 PLIST_SUB+=	DEMO="@comment " \
 		FULL=""
 SUB_FILES+=	pkg-message
@@ -66,7 +70,8 @@ PLIST_SUB+=	HEXEN2="@comment "
 
 .if defined(WITH_HW)
 . if !defined(WITH_DEMO)
-DISTFILES+=	hexenworld-pakfiles-0.15${EXTRACT_SUFX}
+MASTER_SITES+=	SF/${PORTNAME}/Hexen2%20GameData/hexenworld-pakfiles:hw
+DISTFILES+=	hexenworld-pakfiles-0.15${EXTRACT_SUFX}:hw
 . endif
 MAKE_ENV+=	BUILD_HW=yes
 PLIST_SUB+=	HW=""
