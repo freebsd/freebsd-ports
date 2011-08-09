@@ -395,7 +395,6 @@
     SUBDIR += fortran-utils
     SUBDIR += fortytwo-encore
     SUBDIR += fossil
-    SUBDIR += fossology
     SUBDIR += fpc-bfd
     SUBDIR += fpc-dbus
     SUBDIR += fpc-fcl-async
