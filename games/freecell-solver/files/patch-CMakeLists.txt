@@ -1,36 +1,5 @@
 --- CMakeLists.txt.orig	2011-02-01 21:34:27.000000000 +0100
 +++ CMakeLists.txt	2011-02-08 20:56:22.000000000 +0100
-@@ -168,6 +168,8 @@
- SET (FCS_TRACE_MEM "" CACHE BOOL "Enable memory tracing in fc-solve.")
- SET (FCS_MAX_NUM_SCANS_BUCKETS "" CACHE STRING "The number of scan_visited buckets in fc-solve (safe to ignore).")
- 
-+SET (FCS_USE_TCMALLOC "" CACHE BOOL "Use tcmalloc")
-+
- IF (NOT (STATES_TYPE MATCHES "^(INDIRECT_STACK_STATES|COMPACT_STATES|DEBUG_STATES)$"))
-     MESSAGE(FATAL_ERROR "STATES_TYPE should be ('INDIRECT_STACK_STATES', 'COMPACT_STATES' or 'DEBUG_STATES')")
- ENDIF(NOT (STATES_TYPE MATCHES "^(INDIRECT_STACK_STATES|COMPACT_STATES|DEBUG_STATES)$"))
-@@ -362,7 +364,7 @@
- CMAKE_MINIMUM_REQUIRED(VERSION 2.6)
- 
- SET(COMPILER_FLAGS_TO_CHECK
--    "-Wall" "-Werror=implicit-function-declaration" "-fvisibility=hidden"
-+    "-Wall"
- )
- 
- IF (CPU_ARCH)
-@@ -461,7 +463,11 @@
-         # Optionally link against Google's TCMalloc if it's available:
-         # http://goog-perftools.sourceforge.net/
-         # This gives better performance for the threaded programs.
--        FIND_LIBRARY(LIBTCMALLOC_LIB tcmalloc)
-+        IF (FCS_USE_TCMALLOC)
-+ 
-+            FIND_LIBRARY(LIBTCMALLOC_LIB tcmalloc)
-+ 
-+        ENDIF (FCS_USE_TCMALLOC)
- 
-         IF(LIBTCMALLOC_LIB STREQUAL "LIBTCMALLOC_LIB-NOTFOUND")
-             # Do nothing.
 @@ -496,7 +502,6 @@
  
  IF (CMAKE_USE_PTHREADS_INIT)

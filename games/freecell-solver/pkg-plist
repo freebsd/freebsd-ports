@@ -34,8 +34,8 @@ libdata/pkgconfig/libfreecell-solver.pc
 %%DATADIR%%/presets/cool-jives.sh
 %%DATADIR%%/presets/crooked-nose.sh
 %%DATADIR%%/presets/enlightened-ostrich.sh
-%%DATADIR%%/presets/foss-nessy.sh
 %%DATADIR%%/presets/fools-gold.sh
+%%DATADIR%%/presets/foss-nessy.sh
 %%DATADIR%%/presets/gooey-unknown-thing.sh
 %%DATADIR%%/presets/hello-world.sh
 %%DATADIR%%/presets/john_galt_line-500.sh
