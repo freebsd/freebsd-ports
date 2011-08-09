@@ -6,4 +6,3 @@ $ xset fp rehash
 
 or by adding it to you're X-server configuration file (usually
 /etc/XF86Config or /etc/Xaccel.ini) and restarting the X-server.
-
