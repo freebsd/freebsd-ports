@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	POE-Component-Client-Keepalive
-PORTVERSION=	0.2670
+PORTVERSION=	0.2680
 CATEGORIES=	net perl5
-MASTER_SITES=	CPAN/${PORTNAME:C/-.*//}/RCAPUTO
+MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:RCAPUTO
 PKGNAMEPREFIX=	p5-
 DISTNAME=	${PORTNAME}-${PORTVERSION:C/0+$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	POE component for managing connections, with keep-alive
 
-BUILD_DEPENDS=	p5-POE>=1.311:${PORTSDIR}/devel/p5-POE \
-		p5-POE-Component-Resolver>=0.912:${PORTSDIR}/dns/p5-POE-Component-Resolver \
-		p5-Net-IP>=1.25:${PORTSDIR}/net-mgmt/p5-Net-IP
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-POE>=1.311:${PORTSDIR}/devel/p5-POE \
+		p5-POE-Component-Resolver>=0.913:${PORTSDIR}/dns/p5-POE-Component-Resolver \
+		p5-Net-IP>=1.25:${PORTSDIR}/net-mgmt/p5-Net-IP
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
