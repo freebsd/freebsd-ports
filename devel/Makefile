@@ -3383,6 +3383,7 @@
     SUBDIR += rubygem-shoulda
     SUBDIR += rubygem-simple_form
     SUBDIR += rubygem-soap4r
+    SUBDIR += rubygem-sprockets
     SUBDIR += rubygem-spruz
     SUBDIR += rubygem-state_machine
     SUBDIR += rubygem-stemmer
