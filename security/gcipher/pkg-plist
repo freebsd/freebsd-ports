@@ -1,66 +1,85 @@
 bin/gcipher
 share/applications/gcipher.desktop
-share/gcipher/CONTRIB
-share/gcipher/LICENSE
-share/gcipher/README
-share/gcipher/lib/cipher/__init__.pyc
-share/gcipher/lib/cipher/Ceasar.py
-share/gcipher/lib/cipher/CharacterCipher.py
-share/gcipher/lib/cipher/Gie.py
-share/gcipher/lib/cipher/KeyedCipher.py
-share/gcipher/lib/cipher/Rot.py
-share/gcipher/lib/cipher/Tools.py
-share/gcipher/lib/cipher/Vigenere.py
-share/gcipher/lib/cipher/__init__.py
-share/gcipher/lib/cipher/KeyedCipher.pyc
-share/gcipher/lib/cipher/Vigenere.pyc
-share/gcipher/lib/cipher/CharacterCipher.pyc
-share/gcipher/lib/cipher/Tools.pyc
-share/gcipher/lib/cipher/Gie.pyc
-share/gcipher/lib/cipher/Ceasar.pyc
-share/gcipher/lib/cipher/Rot.pyc
-share/gcipher/lib/AutomaticClass.py
-share/gcipher/lib/Const.py
-share/gcipher/lib/GtkAttributesFacade.py
-share/gcipher/lib/LibGladeApplication.py
-share/gcipher/lib/MainCLI.py
-share/gcipher/lib/MainGUI.py
-share/gcipher/lib/Proxy.py
-share/gcipher/lib/gcipher.glade
-share/gcipher/lib/gcipher.gladep
-share/gcipher/lib/ciphergui/__init__.pyc
-share/gcipher/lib/ciphergui/Ceasar.py
-share/gcipher/lib/ciphergui/CipherGUIList.py
-share/gcipher/lib/ciphergui/Gie.py
-share/gcipher/lib/ciphergui/KeyDialog.py
-share/gcipher/lib/ciphergui/Rot.py
-share/gcipher/lib/ciphergui/Vigenere.py
-share/gcipher/lib/ciphergui/__init__.py
-share/gcipher/lib/ciphergui/rot.glade
-share/gcipher/lib/ciphergui/rot.gladep
-share/gcipher/lib/ciphergui/vigenere.glade
-share/gcipher/lib/ciphergui/vigenere.gladep
-share/gcipher/lib/ciphergui/CipherGUIList.pyc
-share/gcipher/lib/ciphergui/Vigenere.pyc
-share/gcipher/lib/ciphergui/KeyDialog.pyc
-share/gcipher/lib/ciphergui/Gie.pyc
-share/gcipher/lib/ciphergui/Ceasar.pyc
-share/gcipher/lib/ciphergui/Rot.pyc
-share/gcipher/lib/Const.pyc
-share/gcipher/lib/MainCLI.pyc
-share/gcipher/lib/AutomaticClass.pyc
-share/gcipher/lib/MainGUI.pyc
-share/gcipher/lib/LibGladeApplication.pyc
-share/gcipher/lib/GtkAttributesFacade.pyc
-share/gcipher/lib/Proxy.pyc
-share/gcipher/plugins/cipher/Identity.py
-share/gcipher/plugins/ciphergui/Identity.py
-share/gcipher/plugins/ciphergui/PluginCipherGUIList.py
-@dirrm share/gcipher/lib/cipher
-@dirrm share/gcipher/lib/ciphergui
-@dirrm share/gcipher/lib
-@dirrm share/gcipher/plugins/cipher
-@dirrm share/gcipher/plugins/ciphergui
-@dirrm share/gcipher/plugins
-@dirrm share/gcipher
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIB
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%DATADIR%%/lib/AutomaticClass.py
+%%DATADIR%%/lib/AutomaticClass.pyc
+%%DATADIR%%/lib/AutomaticClass.pyo
+%%DATADIR%%/lib/Const.py
+%%DATADIR%%/lib/Const.pyc
+%%DATADIR%%/lib/Const.pyo
+%%DATADIR%%/lib/GtkAttributesFacade.py
+%%DATADIR%%/lib/GtkAttributesFacade.pyc
+%%DATADIR%%/lib/GtkAttributesFacade.pyo
+%%DATADIR%%/lib/LibGladeApplication.py
+%%DATADIR%%/lib/LibGladeApplication.pyc
+%%DATADIR%%/lib/LibGladeApplication.pyo
+%%DATADIR%%/lib/MainCLI.py
+%%DATADIR%%/lib/MainCLI.pyc
+%%DATADIR%%/lib/MainCLI.pyo
+%%DATADIR%%/lib/MainGUI.py
+%%DATADIR%%/lib/MainGUI.pyc
+%%DATADIR%%/lib/MainGUI.pyo
+%%DATADIR%%/lib/Proxy.py
+%%DATADIR%%/lib/Proxy.pyc
+%%DATADIR%%/lib/Proxy.pyo
+%%DATADIR%%/lib/cipher/Caesar.py
+%%DATADIR%%/lib/cipher/Caesar.pyc
+%%DATADIR%%/lib/cipher/Caesar.pyo
+%%DATADIR%%/lib/cipher/CharacterCipher.py
+%%DATADIR%%/lib/cipher/CharacterCipher.pyc
+%%DATADIR%%/lib/cipher/CharacterCipher.pyo
+%%DATADIR%%/lib/cipher/Gie.py
+%%DATADIR%%/lib/cipher/Gie.pyc
+%%DATADIR%%/lib/cipher/Gie.pyo
+%%DATADIR%%/lib/cipher/KeyedCipher.py
+%%DATADIR%%/lib/cipher/KeyedCipher.pyc
+%%DATADIR%%/lib/cipher/KeyedCipher.pyo
+%%DATADIR%%/lib/cipher/Rot.py
+%%DATADIR%%/lib/cipher/Rot.pyc
+%%DATADIR%%/lib/cipher/Rot.pyo
+%%DATADIR%%/lib/cipher/Tools.py
+%%DATADIR%%/lib/cipher/Tools.pyc
+%%DATADIR%%/lib/cipher/Tools.pyo
+%%DATADIR%%/lib/cipher/Vigenere.py
+%%DATADIR%%/lib/cipher/Vigenere.pyc
+%%DATADIR%%/lib/cipher/Vigenere.pyo
+%%DATADIR%%/lib/cipher/__init__.py
+%%DATADIR%%/lib/cipher/__init__.pyc
+%%DATADIR%%/lib/cipher/__init__.pyo
+%%DATADIR%%/lib/ciphergui/Caesar.py
+%%DATADIR%%/lib/ciphergui/Caesar.pyc
+%%DATADIR%%/lib/ciphergui/Caesar.pyo
+%%DATADIR%%/lib/ciphergui/CipherGUIList.py
+%%DATADIR%%/lib/ciphergui/CipherGUIList.pyc
+%%DATADIR%%/lib/ciphergui/CipherGUIList.pyo
+%%DATADIR%%/lib/ciphergui/Gie.py
+%%DATADIR%%/lib/ciphergui/Gie.pyc
+%%DATADIR%%/lib/ciphergui/Gie.pyo
+%%DATADIR%%/lib/ciphergui/KeyDialog.py
+%%DATADIR%%/lib/ciphergui/KeyDialog.pyc
+%%DATADIR%%/lib/ciphergui/KeyDialog.pyo
+%%DATADIR%%/lib/ciphergui/Rot.py
+%%DATADIR%%/lib/ciphergui/Rot.pyc
+%%DATADIR%%/lib/ciphergui/Rot.pyo
+%%DATADIR%%/lib/ciphergui/Vigenere.py
+%%DATADIR%%/lib/ciphergui/Vigenere.pyc
+%%DATADIR%%/lib/ciphergui/Vigenere.pyo
+%%DATADIR%%/lib/ciphergui/__init__.py
+%%DATADIR%%/lib/ciphergui/__init__.pyc
+%%DATADIR%%/lib/ciphergui/__init__.pyo
+%%DATADIR%%/lib/ciphergui/rot.glade
+%%DATADIR%%/lib/ciphergui/vigenere.glade
+%%DATADIR%%/lib/gcipher.glade
+%%DATADIR%%/plugins/cipher/Identity.py
+%%DATADIR%%/plugins/ciphergui/Identity.py
+%%DATADIR%%/plugins/ciphergui/PluginCipherGUIList.py
+@dirrm %%DATADIR%%/plugins/ciphergui
+@dirrm %%DATADIR%%/plugins/cipher
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%/lib/ciphergui
+@dirrm %%DATADIR%%/lib/cipher
+@dirrm %%DATADIR%%/lib
+@dirrm %%DATADIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
