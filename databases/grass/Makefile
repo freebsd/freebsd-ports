@@ -88,6 +88,10 @@ BASH_SCRIPTS=	i.spectral r.tileset
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not configure on sparc64
+.endif
+
 .if !defined (GRASS_INST_DIR)
 GRASS_INST_DIR=	${PORTNAME}-${PORTVERSION}
 .endif
