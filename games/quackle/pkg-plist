@@ -3,24 +3,46 @@ bin/quackle
 %%DATADIR%%/alphabets/english_super.quackle_alphabet
 %%DATADIR%%/alphabets/english_wild.quackle_alphabet
 %%DATADIR%%/alphabets/french.quackle_alphabet
+%%DATADIR%%/alphabets/greek.quackle_alphabet
 %%DATADIR%%/alphabets/korean.quackle_alphabet
+%%DATADIR%%/alphabets/mandarin.quackle_alphabet
+%%DATADIR%%/alphabets/mandarin.quackle_alphabet~
+%%DATADIR%%/alphabets/pinyin.quackle_alphabet
 %%DATADIR%%/alphabets/russian.quackle_alphabet
 %%DATADIR%%/alphabets/tuvan.quackle_alphabet
-%%DATADIR%%/lexica/cswfeb07.gaddag
+%%DATADIR%%/alphabets/zhuyin.quackle_alphabet
+%%DATADIR%%/lexica/cswapr07.dawg
+%%DATADIR%%/lexica/cswapr07.gaddag
+%%DATADIR%%/lexica/greek.dawg
 %%DATADIR%%/lexica/korean.dawg
-%%DATADIR%%/lexica/ods4.gaddag
-%%DATADIR%%/lexica/russian.dawg
-%%DATADIR%%/lexica/sowpods.gaddag
-%%DATADIR%%/lexica/tuvan.dawg
+%%DATADIR%%/lexica/ods5.dawg
+%%DATADIR%%/lexica/sowpods.dawg
+%%DATADIR%%/lexica/twl06.dawg
 %%DATADIR%%/lexica/twl06.gaddag
-%%DATADIR%%/lexica/twl06_wild.dawg
 %%DATADIR%%/lexica/twl98.dawg
-%%DATADIR%%/strategy/cswfeb07/superleaves
+%%DATADIR%%/raw_lexica/cswapr07.raw
+%%DATADIR%%/raw_lexica/cswfeb07.raw
+%%DATADIR%%/raw_lexica/faa3.raw
+%%DATADIR%%/raw_lexica/greek.raw
+%%DATADIR%%/raw_lexica/korean.raw
+%%DATADIR%%/raw_lexica/ods4.raw
+%%DATADIR%%/raw_lexica/ods5.raw
+%%DATADIR%%/raw_lexica/sowpods.raw
+%%DATADIR%%/raw_lexica/twl06.raw
+%%DATADIR%%/raw_lexica/twl98.raw
+%%DATADIR%%/strategy/chinese/superleaves
+%%DATADIR%%/strategy/chinese/syn2
+%%DATADIR%%/strategy/chinese/worths
+%%DATADIR%%/strategy/cswapr07/superleaves
+%%DATADIR%%/strategy/greek/superleaves
+%%DATADIR%%/strategy/greek/syn2
+%%DATADIR%%/strategy/greek/worths
 %%DATADIR%%/strategy/korean/superleaves
 %%DATADIR%%/strategy/korean/syn2
 %%DATADIR%%/strategy/korean/worths
-%%DATADIR%%/strategy/ods4/superleaves
-%%DATADIR%%/strategy/ods4/worths
+%%DATADIR%%/strategy/mandarin/superleaves
+%%DATADIR%%/strategy/mandarin/syn2
+%%DATADIR%%/strategy/mandarin/worths
 %%DATADIR%%/strategy/russian/superleaves
 %%DATADIR%%/strategy/russian/syn2
 %%DATADIR%%/strategy/russian/worths
@@ -33,15 +55,20 @@ bin/quackle
 %%DATADIR%%/strategy/twl06/vcplace
 %%DATADIR%%/strategy/twl06/worths
 %%DATADIR%%/strategy/twl98/worths
-@dirrm %%DATADIR%%/alphabets
+@dirrm %%DATADIR%%/strategy/twl98
+@dirrm %%DATADIR%%/strategy/twl06
+@dirrm %%DATADIR%%/strategy/tuvan
+@dirrm %%DATADIR%%/strategy/sowpods
+@dirrm %%DATADIR%%/strategy/russian
+@dirrm %%DATADIR%%/strategy/ods4
+@dirrm %%DATADIR%%/strategy/mandarin
+@dirrm %%DATADIR%%/strategy/korean
+@dirrm %%DATADIR%%/strategy/greek
+@dirrm %%DATADIR%%/strategy/cswfeb07
+@dirrm %%DATADIR%%/strategy/cswapr07
+@dirrm %%DATADIR%%/strategy/chinese
+@dirrm %%DATADIR%%/strategy
+@dirrm %%DATADIR%%/raw_lexica
 @dirrm %%DATADIR%%/lexica
-@dirrm %%DATADIR%%/strategy/cswfeb07/
-@dirrm %%DATADIR%%/strategy/korean/
-@dirrm %%DATADIR%%/strategy/ods4/
-@dirrm %%DATADIR%%/strategy/russian/
-@dirrm %%DATADIR%%/strategy/sowpods/
-@dirrm %%DATADIR%%/strategy/tuvan/
-@dirrm %%DATADIR%%/strategy/twl06/
-@dirrm %%DATADIR%%/strategy/twl98/
-@dirrm %%DATADIR%%/strategy/
+@dirrm %%DATADIR%%/alphabets
 @dirrm %%DATADIR%%

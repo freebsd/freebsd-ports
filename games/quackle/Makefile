@@ -6,30 +6,50 @@
 #
 
 PORTNAME=	quackle
-PORTVERSION=	0.95
-PORTREVISION=	3
+PORTVERSION=	0.96
+DISTVERSIONSUFFIX=	-source
 CATEGORIES=	games
-MASTER_SITES=	http://web.mit.edu/jasonkb/www/quackle/downloads/${PORTNAME}-${PORTVERSION}/
-DISTFILES=	${PORTNAME}-${PORTVERSION}-source.tar.gz
+MASTER_SITES=	http://people.csail.mit.edu/jasonkb/quackle/downloads/%SUBDIR%/
+MASTER_SITE_SUBDIR=	${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A scrabble-like word game utilizing qt4
 
-USE_SCONS=	yes
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+BUILD_WRKSRC=	${WRKSRC}/quacker
+
 USE_QT_VER=	4
-QT_COMPONENTS=	qmake_build moc_build gui
+QT_COMPONENTS=	corelib gui moc_build qmake_build
 USE_GMAKE=	yes
-QMAKE_ARGS=	-unix -spec ${QMAKESPEC}
+MAKE_JOBS_SAFE=	yes
 
-pre-patch:
-	@${REINPLACE_CMD} -e 's|if (QFile::exists("data"))|if (QFile::exists("${DATADIR}"))|' ${WRKSRC}/quacker/settings.cpp
-	@${REINPLACE_CMD} -e 's|QUACKLE_DATAMANAGER->setDataDirectory("data");|QUACKLE_DATAMANAGER->setDataDirectory("${DATADIR}");|' ${WRKSRC}/quacker/settings.cpp
+post-extract:
+	@${FIND} ${WRKSRC} \( -name "*.[ao]" -or -name "moc_*" \) -delete
 
-post-build:
-	@(cd ${WRKSRC}/quackleio && ${QMAKE} ${QMAKE_ARGS} -o Makefile quackleio.pro && ${SETENV} ${MAKE_ENV} ${GMAKE} && cd ${WRKSRC}/quacker && ${QMAKE} ${QMAKE_ARGS} -o Makefile quacker.pro && ${SETENV} ${MAKE_ENV} ${GMAKE})
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/debug/s|^CONFIG|#CONFIG| ; \
+		 /release/s|^#CONFIG|CONFIG|' ${BUILD_WRKSRC}/quacker.pro
+	@${REINPLACE_CMD} -e \
+		'/QFile::exists/s|("data")|("${DATADIR}")| ; \
+		 /setDataDirectory/s|("data")|("${DATADIR}")|' ${BUILD_WRKSRC}/settings.cpp
+
+do-configure:
+.for dir in . quackleio quacker
+	@(cd ${WRKSRC}/${dir} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
+.endfor
+
+pre-build:
+.for dir in . quackleio
+	@(cd ${WRKSRC}/${dir} && ${SETENV} ${MAKE_ENV} ${GMAKE} \
+		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+.endfor
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/quacker/quacker ${PREFIX}/bin/quackle
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/quacker ${PREFIX}/bin/quackle
 	@(cd ${WRKSRC}/data && ${COPYTREE_SHARE} . ${DATADIR})
 
 .include <bsd.port.mk>
