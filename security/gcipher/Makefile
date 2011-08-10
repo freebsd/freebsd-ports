@@ -6,57 +6,58 @@
 #
 
 PORTNAME=	gcipher
-PORTVERSION=	1.0
-PORTREVISION=	14
+PORTVERSION=	1.1
 CATEGORIES=	security gnome
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple encryption tool
 
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gtk-2.0/gnome/__init__.py:${PORTSDIR}/x11-toolkits/py-gnome2
+LICENSE=	BSD
 
+USE_GNOME=	pygnome2
 USE_PYTHON=	yes
-USE_GNOME=	libgnomeui
 
-GCIPHER_PREFIX=	${PREFIX}/share/gcipher
-
-MAN1=	gcipher.1
+MAN1=		gcipher.1
+LICENSE_FILES=	${WRKSRC}/LICENSE
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/src/Const.py ${WRKSRC}/src/gcipher
+	@${REINPLACE_CMD} -e \
+		'/^VERSION/s|=.*|= "${PORTVERSION}"|g ; \
+		 /^GLADEDIR/s|=.*|= "${DATADIR}/lib"|g' ${WRKSRC}/src/Const.py
+	@${REINPLACE_CMD} -e \
+		's|/usr/bin/python|${SETENV} python|g ; \
+		 s|^# sys.path.append|sys.path.append|g ; \
+		 s|/usr/share/gcipher/lib|${DATADIR}/lib|' ${WRKSRC}/src/gcipher
 
 do-build:
-	(cd ${WRKSRC}/src; \
-	 ${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py .)
+	@${PYTHON_CMD} ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/src
+	@${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py ${WRKSRC}/src
 
 do-install:
-	${MKDIR} \
-	    ${GCIPHER_PREFIX}/lib/cipher \
-	    ${GCIPHER_PREFIX}/lib/ciphergui \
-	    ${GCIPHER_PREFIX}/plugins/cipher \
-	    ${GCIPHER_PREFIX}/plugins/ciphergui
-
-	(cd ${WRKSRC}; \
-	 ${INSTALL_MAN} gcipher.1 ${PREFIX}/man/man1; \
-	 ${INSTALL_DATA} CONTRIB LICENSE README "${GCIPHER_PREFIX}")
-
-	(cd ${WRKSRC}/src; \
-	 ${INSTALL_SCRIPT} gcipher ${PREFIX}/bin/gcipher; \
-	 ${INSTALL_DATA} gcipher.desktop ${PREFIX}/share/applications; \
-	 for i in `${FIND} . -name '*.py' \
-		       -o -name '*.pyc' \
-		       -o -name '*.glade' \
-		       -o -name '*.gladep'`; do \
-		${INSTALL_DATA} "$$i" "${GCIPHER_PREFIX}/lib/$$i"; \
-	 done)
-
-	(cd ${WRKSRC}/plugins; \
-	 for i in `${FIND} . -name '*.py' \
-		       -o -name '*.glade' \
-		       -o -name '*.gladep'`; do \
-		${INSTALL_DATA} "$$i" "${GCIPHER_PREFIX}/plugins/$$i"; \
-	 done)
+	${INSTALL_SCRIPT} ${WRKSRC}/src/gcipher ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/gcipher.1 ${MANPREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/src/gcipher.desktop ${PREFIX}/share/applications
+	@${MKDIR} ${DATADIR}/lib
+	@(cd ${WRKSRC}/src && \
+		${FIND} . -name '*.glade' \
+			-o -name '*.gladep' \
+			-o -name '*.py' \
+			-o -name '*.pyc' \
+			-o -name '*.pyo' | \
+		${CPIO} -pdm -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/lib)
+	@${MKDIR} ${DATADIR}/plugins
+	@(cd ${WRKSRC}/plugins && \
+		${FIND} . -name '*.glade' \
+			-o -name '*.gladep' \
+			-o -name '*.py' | \
+		${CPIO} -pdm -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}/plugins)
+	@${FIND} ${DATADIR} -type d | ${XARGS} ${CHMOD} a+rx
+	@${FIND} ${DATADIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@(cd ${WRKSRC} && \
+		${INSTALL_DATA} CONTRIB README ${DOCSDIR})
+.endif
 
 .include <bsd.port.mk>
