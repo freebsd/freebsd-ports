@@ -6,36 +6,28 @@
 #
 
 PORTNAME=	pager
-PORTVERSION=	0.6
-PORTREVISION=	12
+PORTVERSION=	0.90.2
 CATEGORIES=	x11-wm
-MASTER_SITES=	SF
-MASTER_SITE_SUBDIR=	sawfish-pager
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://download.tuxfamily.org/sawfishpager/
+DISTNAME=	sawfish-pager-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pager for sawfish without GNOME
 
-BROKEN=	does not fetch
-
 BUILD_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
 RUN_DEPENDS=	sawfish:${PORTSDIR}/x11-wm/sawfish
 
-BROKEN=		does not build
-
+USE_XZ=		yes
+USE_GNOME=	gtk20
 USE_GMAKE=	yes
-MAKEFILE=	GNUmakefile
-USE_XORG=	x11
+GNU_CONFIGURE=	yes
 
-SAWFISH_VERSION=	`${LOCALBASE}/bin/sawfish --version 2>&1 | \
-			${SED} 's/^.*version[ ]*\([0-9.]*\).*/\1/'`
+PLIST_FILES=	lib/sawfish/sawfishpager \
+		share/sawfish/lisp/sawfish/wm/ext/pager.jl \
+		share/sawfish/lisp/sawfish/wm/ext/pager.jlc
 
-PLIST_SUB+=	SAWFISH_VERSION="${SAWFISH_VERSION}"
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.jl \
-		${PREFIX}/share/sawfish/${SAWFISH_VERSION}/lisp/sawfish/wm/ext
+post-install:
+	@${STRIP_CMD} ${PREFIX}/lib/sawfish/sawfishpager
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
