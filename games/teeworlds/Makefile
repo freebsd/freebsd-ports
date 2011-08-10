@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	teeworlds
-PORTVERSION=	0.6.0
+PORTVERSION=	0.6.1
 CATEGORIES=	games
 MASTER_SITES=	http://www.teeworlds.com/files/ \
 		http://mirror.amdmi3.ru/distfiles/ \
 		http://github.com/downloads/matricks/bam/ \
 		http://files.malikania.fr/distfiles/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-src
+DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} bam-${BAM_VERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	amdmi3@FreeBSD.org
@@ -26,7 +26,7 @@ BAM_VERSION=	0.4.0
 BAM_WRKSRC=	${WRKDIR}/bam-${BAM_VERSION}
 BAM_TARGET=	release
 MAKE_JOBS_SAFE=	yes
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}-source
+WRKSRC=		${WRKDIR}/teeworlds-b177-r50edfd37-source
 
 PORTDOCS=	readme.txt license.txt
 
