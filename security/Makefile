@@ -112,10 +112,6 @@
     SUBDIR += doscan
     SUBDIR += dradis
     SUBDIR += dropbear
-    SUBDIR += drweb
-    SUBDIR += drweb-postfix
-    SUBDIR += drweb-qmail
-    SUBDIR += drweb-sendmail
     SUBDIR += dsniff
     SUBDIR += easypg
     SUBDIR += engine_pkcs11

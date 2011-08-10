@@ -2499,3 +2499,8 @@ graphics/leptonlib|graphics/leptonica|2011-08-05|Follow upstream name change
 lang/gnustep-libobjc|lang/libobjc2|2011-08-06|Replaced with libobjc2
 sysutils/p5-mogilefs-server|sysutils/p5-MogileFS-Server|2011-08-08|Move to a better place via repocopy
 devel/fossology||2011-08-09|Has expired: Broken for four months with no-one caring
+deskutils/alexandria||2011-08-10|Has expired: Upcoming ruby-gnome removes dependencies
+security/drweb||2011-08-10|Has expired: fails to fetch (website rearranged)
+security/drweb-postfix||2011-08-10|Has expired: fails to fetch (website rearranged)
+security/drweb-qmail||2011-08-10|Has expired: fails to fetch (website rearranged)
+security/drweb-sendmail||2011-08-10|Has expired: fails to fetch (website rearranged)
