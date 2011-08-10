@@ -5,29 +5,46 @@ bin/tuxpaint-import
 etc/tuxpaint/tuxpaint.conf.sample
 @exec [ -f %D/etc/tuxpaint/tuxpaint.conf ] || cp %D/etc/tuxpaint/tuxpaint.conf.sample %D/etc/tuxpaint/tuxpaint.conf
 include/tuxpaint/tp_magic_api.h
+lib/tuxpaint/plugins/alien.so
 lib/tuxpaint/plugins/blocks_chalk_drip.so
 lib/tuxpaint/plugins/blur.so
 lib/tuxpaint/plugins/bricks.so
 lib/tuxpaint/plugins/calligraphy.so
 lib/tuxpaint/plugins/cartoon.so
+lib/tuxpaint/plugins/confetti.so
 lib/tuxpaint/plugins/distortion.so
 lib/tuxpaint/plugins/emboss.so
 lib/tuxpaint/plugins/fade_darken.so
 lib/tuxpaint/plugins/fill.so
+lib/tuxpaint/plugins/fisheye.so
 lib/tuxpaint/plugins/flower.so
 lib/tuxpaint/plugins/foam.so
+lib/tuxpaint/plugins/fold.so
 lib/tuxpaint/plugins/glasstile.so
 lib/tuxpaint/plugins/grass.so
 lib/tuxpaint/plugins/kalidescope.so
 lib/tuxpaint/plugins/light.so
 lib/tuxpaint/plugins/metalpaint.so
 lib/tuxpaint/plugins/mirror_flip.so
+lib/tuxpaint/plugins/mosaic.so
 lib/tuxpaint/plugins/negative.so
+lib/tuxpaint/plugins/noise.so
+lib/tuxpaint/plugins/puzzle.so
+lib/tuxpaint/plugins/rails.so
+lib/tuxpaint/plugins/rain.so
 lib/tuxpaint/plugins/rainbow.so
+lib/tuxpaint/plugins/realrainbow.so
 lib/tuxpaint/plugins/ripples.so
+lib/tuxpaint/plugins/rosette.so
+lib/tuxpaint/plugins/sharpen.so
 lib/tuxpaint/plugins/shift.so
 lib/tuxpaint/plugins/smudge.so
+lib/tuxpaint/plugins/snow.so
+lib/tuxpaint/plugins/string.so
 lib/tuxpaint/plugins/tint.so
+lib/tuxpaint/plugins/toothpaste.so
+lib/tuxpaint/plugins/tornado.so
+lib/tuxpaint/plugins/tv.so
 lib/tuxpaint/plugins/waves.so
 %%PORTDOCS%%%%DOCSDIR%%/ADVANCED-STAMPS-HOWTO.txt
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
@@ -330,14 +347,20 @@ lib/tuxpaint/plugins/waves.so
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/calligraphy.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/cartoon.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/chalk.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/colorandwhite.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/colorshift.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/confetti.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/darken.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/distortion.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/drip.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/edges.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/emboss.txt
-%%PORTDOCS%%%%DOCSDIR%%/magic-docs/fade.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/fill.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/fisheye.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/flip.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/flower.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/foam.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/fold.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/glasstile.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/grass.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/blocks.html
@@ -346,37 +369,81 @@ lib/tuxpaint/plugins/waves.so
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/calligraphy.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/cartoon.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/chalk.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/colorandwhite.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/colorshift.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/confetti.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/darken.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/distortion.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/drip.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/edges.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/emboss.html
-%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/fade.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/fill.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/fisheye.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/flip.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/flower.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/foam.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/fold.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/glasstile.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/grass.html
-%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/kalidescope.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/index.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/kaleidoscope.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/light.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/lighten.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/metalpaint.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/mirror.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/negative.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/noise.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/picasso.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/rails.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/rain.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/rainbow.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/realrainbow.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/ripples.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/rosette.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/sharpen.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/shift.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/silhouette.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/smudge.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/snowball.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/snowflake.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/stringcorner.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/stringedges.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/stringv.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/tint.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/toothpaste.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/tv.html
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/wavelets.html
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/html/waves.html
-%%PORTDOCS%%%%DOCSDIR%%/magic-docs/kalidescope.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/index.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/kaleidoscope.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/light.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/lighten.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/metalpaint.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/mirror.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/negative.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/noise.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/picasso.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/rails.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/rain.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/rainbow.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/realrainbow.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/ripples.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/rosette.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/sharpen.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/shift.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/silhouette.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/smudge.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/snowball.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/snowflake.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/src/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/src/magic-docs.php
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/stringcorner.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/stringedges.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/stringv.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/tint.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/toothpaste.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/tv.txt
+%%PORTDOCS%%%%DOCSDIR%%/magic-docs/wavelets.txt
 %%PORTDOCS%%%%DOCSDIR%%/magic-docs/waves.txt
 %%PORTDOCS%%%%DOCSDIR%%/ms/COPYING.txt
 %%PORTDOCS%%%%DOCSDIR%%/nb/AUTHORS.txt
@@ -537,13 +604,15 @@ share/locale/nr/LC_MESSAGES/tuxpaint.mo
 share/locale/oc/LC_MESSAGES/tuxpaint.mo
 share/locale/oj/LC_MESSAGES/tuxpaint.mo
 share/locale/pl/LC_MESSAGES/tuxpaint.mo
+share/locale/pt/LC_MESSAGES/tuxpaint.mo
 share/locale/pt_BR/LC_MESSAGES/tuxpaint.mo
-share/locale/pt_PT/LC_MESSAGES/tuxpaint.mo
 share/locale/ro/LC_MESSAGES/tuxpaint.mo
 share/locale/ru/LC_MESSAGES/tuxpaint.mo
 share/locale/rw/LC_MESSAGES/tuxpaint.mo
+share/locale/shs/LC_MESSAGES/tuxpaint.mo
 share/locale/sk/LC_MESSAGES/tuxpaint.mo
 share/locale/sl/LC_MESSAGES/tuxpaint.mo
+share/locale/son/LC_MESSAGES/tuxpaint.mo
 share/locale/sq/LC_MESSAGES/tuxpaint.mo
 share/locale/sr/LC_MESSAGES/tuxpaint.mo
 share/locale/sv/LC_MESSAGES/tuxpaint.mo
@@ -561,9 +630,9 @@ share/locale/vi/LC_MESSAGES/tuxpaint.mo
 share/locale/wa/LC_MESSAGES/tuxpaint.mo
 share/locale/wo/LC_MESSAGES/tuxpaint.mo
 share/locale/xh/LC_MESSAGES/tuxpaint.mo
+share/locale/zam/LC_MESSAGES/tuxpaint.mo
 share/locale/zh_CN/LC_MESSAGES/tuxpaint.mo
 share/locale/zh_TW/LC_MESSAGES/tuxpaint.mo
-share/locale/zw/LC_MESSAGES/tuxpaint.mo
 share/pixmaps/tuxpaint.png
 share/pixmaps/tuxpaint.xpm
 %%DATADIR%%/brushes/aa_round_03.png
@@ -672,9 +741,7 @@ share/pixmaps/tuxpaint.xpm
 %%DATADIR%%/fonts/locale/th.ttf
 %%DATADIR%%/fonts/locale/th_docs/COPYING.txt
 %%DATADIR%%/fonts/locale/th_docs/README.txt
-%%DATADIR%%/fonts/locale/vi_docs/COPYING.txt
-%%DATADIR%%/fonts/locale/vi_docs/README.txt
-%%DATADIR%%/fonts/locale/zh_tw.ttf
+%%DATADIR%%/fonts/locale/zh_TW.ttf
 %%DATADIR%%/fonts/locale/zh_tw_docs/COPYING.txt
 %%DATADIR%%/fonts/locale/zh_tw_docs/README.txt
 %%DATADIR%%/fonts/locale/zh_tw_docs/do_it.sh
@@ -695,18 +762,25 @@ share/pixmaps/tuxpaint.xpm
 %%DATADIR%%/images/icon48x48.png
 %%DATADIR%%/images/icon64x64.png
 %%DATADIR%%/images/icon96x96.png
+%%DATADIR%%/images/magic/Snow_flake4.png
+%%DATADIR%%/images/magic/Snow_flake5.png
+%%DATADIR%%/images/magic/alien.png
 %%DATADIR%%/images/magic/blocks.png
 %%DATADIR%%/images/magic/blur.png
 %%DATADIR%%/images/magic/calligraphy.png
 %%DATADIR%%/images/magic/calligraphy_brush.png
 %%DATADIR%%/images/magic/cartoon.png
 %%DATADIR%%/images/magic/chalk.png
+%%DATADIR%%/images/magic/colornwhite.png
+%%DATADIR%%/images/magic/confetti.png
 %%DATADIR%%/images/magic/darken.png
 %%DATADIR%%/images/magic/distortion.png
 %%DATADIR%%/images/magic/drip.png
+%%DATADIR%%/images/magic/edges.png
 %%DATADIR%%/images/magic/emboss.png
 %%DATADIR%%/images/magic/fade.png
 %%DATADIR%%/images/magic/fill.png
+%%DATADIR%%/images/magic/fisheye.png
 %%DATADIR%%/images/magic/flip.png
 %%DATADIR%%/images/magic/flower.png
 %%DATADIR%%/images/magic/flower_base.png
@@ -714,6 +788,7 @@ share/pixmaps/tuxpaint.xpm
 %%DATADIR%%/images/magic/flower_petals.png
 %%DATADIR%%/images/magic/foam.png
 %%DATADIR%%/images/magic/foam_data.png
+%%DATADIR%%/images/magic/fold.png
 %%DATADIR%%/images/magic/glasstile.png
 %%DATADIR%%/images/magic/grass.png
 %%DATADIR%%/images/magic/grass_data.png
@@ -722,15 +797,41 @@ share/pixmaps/tuxpaint.xpm
 %%DATADIR%%/images/magic/light.png
 %%DATADIR%%/images/magic/metalpaint.png
 %%DATADIR%%/images/magic/mirror.png
+%%DATADIR%%/images/magic/mosaic.png
 %%DATADIR%%/images/magic/negative.png
+%%DATADIR%%/images/magic/noise.png
+%%DATADIR%%/images/magic/picasso.png
+%%DATADIR%%/images/magic/puzzle.png
+%%DATADIR%%/images/magic/rails.png
+%%DATADIR%%/images/magic/rails_corner.png
+%%DATADIR%%/images/magic/rails_four.png
+%%DATADIR%%/images/magic/rails_one.png
+%%DATADIR%%/images/magic/rails_three.png
+%%DATADIR%%/images/magic/rain.png
 %%DATADIR%%/images/magic/rainbow.png
+%%DATADIR%%/images/magic/realrainbow-colors.png
+%%DATADIR%%/images/magic/realrainbow.png
 %%DATADIR%%/images/magic/ripples.png
+%%DATADIR%%/images/magic/rosette.png
+%%DATADIR%%/images/magic/sharpen.png
 %%DATADIR%%/images/magic/shift.png
+%%DATADIR%%/images/magic/silhouette.png
 %%DATADIR%%/images/magic/smallbrick.png
 %%DATADIR%%/images/magic/smudge.png
+%%DATADIR%%/images/magic/snowball.png
+%%DATADIR%%/images/magic/snowflake.png
+%%DATADIR%%/images/magic/string_art_angles.png
+%%DATADIR%%/images/magic/string_art_full_by_offset.png
+%%DATADIR%%/images/magic/string_art_triangles.png
 %%DATADIR%%/images/magic/thick.png
 %%DATADIR%%/images/magic/thin.png
 %%DATADIR%%/images/magic/tint.png
+%%DATADIR%%/images/magic/toothpaste.png
+%%DATADIR%%/images/magic/tornado.png
+%%DATADIR%%/images/magic/tornado_base.png
+%%DATADIR%%/images/magic/tornado_cloud.png
+%%DATADIR%%/images/magic/tv.png
+%%DATADIR%%/images/magic/wavelet.png
 %%DATADIR%%/images/magic/waves.png
 %%DATADIR%%/images/shapes/circle.png
 %%DATADIR%%/images/shapes/circle_f.png
@@ -801,6 +902,8 @@ share/pixmaps/tuxpaint.xpm
 %%DATADIR%%/images/ui/flip.png
 %%DATADIR%%/images/ui/grow.png
 %%DATADIR%%/images/ui/italic.png
+%%DATADIR%%/images/ui/magic_fullscreen.png
+%%DATADIR%%/images/ui/magic_paint.png
 %%DATADIR%%/images/ui/mirror.png
 %%DATADIR%%/images/ui/mouse.png
 %%DATADIR%%/images/ui/mouse_click.png
@@ -845,20 +948,28 @@ share/pixmaps/tuxpaint.xpm
 %%DATADIR%%/sounds/keyclick.wav
 %%DATADIR%%/sounds/line_end.wav
 %%DATADIR%%/sounds/line_start.wav
+%%DATADIR%%/sounds/magic/alien.ogg
 %%DATADIR%%/sounds/magic/blocks.wav
 %%DATADIR%%/sounds/magic/blur.wav
 %%DATADIR%%/sounds/magic/brick.wav
+%%DATADIR%%/sounds/magic/calligraphy.ogg
 %%DATADIR%%/sounds/magic/cartoon.wav
 %%DATADIR%%/sounds/magic/chalk.wav
+%%DATADIR%%/sounds/magic/confetti.ogg
 %%DATADIR%%/sounds/magic/darken.wav
+%%DATADIR%%/sounds/magic/distortion.ogg
 %%DATADIR%%/sounds/magic/drip.wav
+%%DATADIR%%/sounds/magic/edges.ogg
 %%DATADIR%%/sounds/magic/emboss.ogg
 %%DATADIR%%/sounds/magic/fade.wav
 %%DATADIR%%/sounds/magic/fill.wav
+%%DATADIR%%/sounds/magic/fisheye.ogg
 %%DATADIR%%/sounds/magic/flip.wav
 %%DATADIR%%/sounds/magic/flower_click.ogg
 %%DATADIR%%/sounds/magic/flower_release.ogg
 %%DATADIR%%/sounds/magic/foam.ogg
+%%DATADIR%%/sounds/magic/fold.ogg
+%%DATADIR%%/sounds/magic/fold.wav
 %%DATADIR%%/sounds/magic/glasstile.ogg
 %%DATADIR%%/sounds/magic/grass.wav
 %%DATADIR%%/sounds/magic/kaleidoscope.ogg
@@ -866,15 +977,32 @@ share/pixmaps/tuxpaint.xpm
 %%DATADIR%%/sounds/magic/light2.ogg
 %%DATADIR%%/sounds/magic/metalpaint.wav
 %%DATADIR%%/sounds/magic/mirror.wav
+%%DATADIR%%/sounds/magic/mosaic.ogg
 %%DATADIR%%/sounds/magic/negative.wav
+%%DATADIR%%/sounds/magic/noise.ogg
+%%DATADIR%%/sounds/magic/picasso.ogg
+%%DATADIR%%/sounds/magic/rails.wav
+%%DATADIR%%/sounds/magic/rain.ogg
 %%DATADIR%%/sounds/magic/rainbow.wav
+%%DATADIR%%/sounds/magic/realrainbow.ogg
 %%DATADIR%%/sounds/magic/ripples.ogg
+%%DATADIR%%/sounds/magic/sharpen.ogg
 %%DATADIR%%/sounds/magic/shift.ogg
+%%DATADIR%%/sounds/magic/silhouette.ogg
 %%DATADIR%%/sounds/magic/smudge.wav
+%%DATADIR%%/sounds/magic/snowball.ogg
+%%DATADIR%%/sounds/magic/snowflake.ogg
+%%DATADIR%%/sounds/magic/string.ogg
+%%DATADIR%%/sounds/magic/string2.ogg
+%%DATADIR%%/sounds/magic/string3.ogg
 %%DATADIR%%/sounds/magic/thick.wav
 %%DATADIR%%/sounds/magic/thin.wav
 %%DATADIR%%/sounds/magic/tint.wav
-%%DATADIR%%/sounds/magic/waves.wav
+%%DATADIR%%/sounds/magic/toothpaste.ogg
+%%DATADIR%%/sounds/magic/tornado_release.ogg
+%%DATADIR%%/sounds/magic/tv.ogg
+%%DATADIR%%/sounds/magic/wavelet.ogg
+%%DATADIR%%/sounds/magic/waves.ogg
 %%DATADIR%%/sounds/mirror.wav
 %%DATADIR%%/sounds/paint1.wav
 %%DATADIR%%/sounds/paint2.wav
@@ -903,6 +1031,8 @@ share/pixmaps/tuxpaint.xpm
 %%DATADIR%%/stamps/cartoon/tux/tux-yes1.png
 %%DATADIR%%/stamps/cartoon/tux/tux-yes2.dat
 %%DATADIR%%/stamps/cartoon/tux/tux-yes2.png
+%%DATADIR%%/starters/Jigsaw_3x3.png
+%%DATADIR%%/starters/Jigsaw_5x5.png
 %%DATADIR%%/starters/carcassone.png
 %%DATADIR%%/starters/chessboard-back.png
 %%DATADIR%%/starters/chessboard.png
@@ -919,6 +1049,7 @@ share/pixmaps/tuxpaint.xpm
 %%DATADIR%%/starters/reef.txt
 %%DATADIR%%/starters/rocket.png
 %%DATADIR%%/starters/shipwreck.png
+%%DATADIR%%/starters/silver_frame.png
 %%DATADIR%%/starters/skyline-sf-dusk-back.jpeg
 %%DATADIR%%/starters/skyline-sf-dusk.png
 %%DATADIR%%/starters/skyline-sf-dusk.txt
@@ -952,7 +1083,6 @@ share/pixmaps/tuxpaint.xpm
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%/im
 @dirrm %%DATADIR%%/fonts/locale/zh_tw_docs
-@dirrm %%DATADIR%%/fonts/locale/vi_docs
 @dirrm %%DATADIR%%/fonts/locale/th_docs
 @dirrm %%DATADIR%%/fonts/locale/te_docs
 @dirrm %%DATADIR%%/fonts/locale/ta_docs
@@ -968,6 +1098,40 @@ share/pixmaps/tuxpaint.xpm
 @dirrm %%DATADIR%%/fonts
 @dirrm %%DATADIR%%/brushes
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/zam/LC_MESSAGES
+@dirrmtry share/locale/zam
+@dirrmtry share/locale/wo/LC_MESSAGES
+@dirrmtry share/locale/wo
+@dirrmtry share/locale/ve/LC_MESSAGES
+@dirrmtry share/locale/ve
+@dirrmtry share/locale/twi/LC_MESSAGES
+@dirrmtry share/locale/twi
+@dirrmtry share/locale/tlh/LC_MESSAGES
+@dirrmtry share/locale/tlh
+@dirrmtry share/locale/sw/LC_MESSAGES
+@dirrmtry share/locale/sw
+@dirrmtry share/locale/son/LC_MESSAGES
+@dirrmtry share/locale/son
+@dirrmtry share/locale/shs/LC_MESSAGES
+@dirrmtry share/locale/shs
+@dirrmtry share/locale/oj/LC_MESSAGES
+@dirrmtry share/locale/oj
+@dirrmtry share/locale/nr/LC_MESSAGES
+@dirrmtry share/locale/nr
+@dirrmtry share/locale/km/LC_MESSAGES
+@dirrmtry share/locale/km
+@dirrmtry share/locale/gos/LC_MESSAGES
+@dirrmtry share/locale/gos
+@dirrmtry share/locale/gd/LC_MESSAGES
+@dirrmtry share/locale/gd
+@dirrmtry share/locale/fo/LC_MESSAGES
+@dirrmtry share/locale/fo
+@dirrmtry share/locale/en_ZA/LC_MESSAGES
+@dirrmtry share/locale/en_ZA
+@dirrmtry share/locale/bo/LC_MESSAGES
+@dirrmtry share/locale/bo
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/zh_tw/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/zh_tw
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/zh_cn/html
@@ -990,6 +1154,7 @@ share/pixmaps/tuxpaint.xpm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/nl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/nb
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/ms
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/magic-docs/src
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/magic-docs/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/magic-docs
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/lt
@@ -1032,34 +1197,4 @@ share/pixmaps/tuxpaint.xpm
 @dirrm lib/tuxpaint/plugins
 @dirrm lib/tuxpaint
 @dirrm include/tuxpaint
-@dirrmtry share/locale/zw/LC_MESSAGES
-@dirrmtry share/locale/zw
-@dirrmtry share/locale/wo/LC_MESSAGES
-@dirrmtry share/locale/wo
-@dirrmtry share/locale/ve/LC_MESSAGES
-@dirrmtry share/locale/ve
-@dirrmtry share/locale/twi/LC_MESSAGES
-@dirrmtry share/locale/twi
-@dirrmtry share/locale/tlh/LC_MESSAGES
-@dirrmtry share/locale/tlh
-@dirrmtry share/locale/sw/LC_MESSAGES
-@dirrmtry share/locale/sw
-@dirrmtry share/locale/oj/LC_MESSAGES
-@dirrmtry share/locale/oj
-@dirrmtry share/locale/nr/LC_MESSAGES
-@dirrmtry share/locale/nr
-@dirrmtry share/locale/km/LC_MESSAGES
-@dirrmtry share/locale/km
-@dirrmtry share/locale/gos/LC_MESSAGES
-@dirrmtry share/locale/gos
-@dirrmtry share/locale/gd/LC_MESSAGES
-@dirrmtry share/locale/gd
-@dirrmtry share/locale/fo/LC_MESSAGES
-@dirrmtry share/locale/fo
-@dirrmtry share/locale/en_ZA/LC_MESSAGES
-@dirrmtry share/locale/en_ZA
-@dirrmtry share/locale/bo/LC_MESSAGES
-@dirrmtry share/locale/bo
-@dirrmtry share/locale/ast/LC_MESSAGES
-@dirrmtry share/locale/ast
 @dirrmtry etc/tuxpaint
