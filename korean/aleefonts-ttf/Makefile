@@ -23,7 +23,7 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 
 WRKSRC=		${WRKDIR}/${DISTNAME:S/_/-/}
 FONTSDIR=	lib/X11/fonts/alee${PKGNAMESUFFIX}
-FONTLIST=	Bandal EunjinNakseo Bangwool Eunjin Guseul
+FONTLIST=	Bandal Bangwool Eunjin EunjinNakseo Guseul
 
 PLIST_DIRS=	${FONTSDIR}
 .for f in ${FONTLIST}
