@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	getleft
-PORTVERSION=	1.2b2
-PORTREVISION=	2
+PORTVERSION=	1.2
+PORTEPOCH=	1
 CATEGORIES=	www ftp
-MASTER_SITES=	SF/${PORTNAME}down/${PORTNAME}-devel/${PORTVERSION}
-DISTNAME=	Getleft-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}down/${PORTNAME}-Stable/${PORTVERSION}
+DISTNAME=	Getleft-v${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Web site downloader
@@ -18,21 +18,18 @@ COMMENT=	Web site downloader
 RUN_DEPENDS=	${LOCALBASE}/lib/Tktable2.10/libTktable2.10.so:${PORTSDIR}/x11-toolkits/tktable \
 		${LOCALBASE}/lib/libttkstub.a:${PORTSDIR}/x11-toolkits/tile
 
-USE_TK=		84
-
-# Avoid minus signs in versions.
-PORTSCOUT=	limit:^[[:alnum:]]+(?!-)$
-
-post-extract:
-	@${RM} ${WRKSRC}/install.*
+USE_TK=		84+
 
 do-build:
 	@(${ECHO_CMD} "#!${SH}"; ${ECHO_CMD} "cd ${DATADIR} || exit 1"; \
 	  ${ECHO_CMD} 'exec ${WISH} Getleft.tcl "$$@"') > ${WRKDIR}/${PORTNAME}
 
 do-install:
-	${MKDIR} ${DATADIR}
-	${CP} -R ${WRKSRC}/* ${DATADIR}
 	${INSTALL_SCRIPT} ${WRKDIR}/${PORTNAME} ${PREFIX}/bin
+	@${MKDIR} ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/Getleft.tcl ${DATADIR}
+.for dir in Languages doc scripts images
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} ${dir} ${DATADIR})
+.endfor
 
 .include <bsd.port.mk>
