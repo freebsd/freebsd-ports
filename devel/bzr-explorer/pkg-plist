@@ -231,7 +231,6 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/skin/logos/canonical.png
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/skin/logos/launchpad.png
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/skin/logos/project-hosting-site.png
-%%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/skin/logos/ubuntu.png
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/skin/toolbars.xml
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/explorer/tests/__init__.pyc
