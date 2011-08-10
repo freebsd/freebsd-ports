@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qwt
-PORTVERSION=	5.2.1
+PORTVERSION=	5.2.2
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-designerplugin
@@ -24,6 +24,7 @@ QMAKE_ARGS+=	-unix -recursive CONFIG+=QwtDesigner \
 		PLUGINDIR=${PREFIX}/${QT_PLUGINDIR_REL}
 HAS_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
+PORTSCOUT=	limit:^5\.
 
 STRIP_FILES=	${QT_PLUGINDIR_REL}/designer/libqwt_designer_plugin.so
 
