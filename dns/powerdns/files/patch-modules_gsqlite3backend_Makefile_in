@@ -1,0 +1,16 @@
+--- modules/gsqlite3backend/Makefile.in.orig	2011-07-22 13:26:06.000000000 +0200
++++ modules/gsqlite3backend/Makefile.in	2011-08-08 16:22:15.000000000 +0200
+@@ -255,11 +255,11 @@
+ AM_CPPFLAGS = @THREADFLAGS@
+ lib_LTLIBRARIES = libgsqlite3backend.la
+ EXTRA_DIST = OBJECTFILES OBJECTLIBS
+-INCLUDES = -I@SQLITE3_CFLAGS@
++INCLUDES = @SQLITE3_CFLAGS@
+ libgsqlite3backend_la_SOURCES = gsqlite3backend.cc gsqlite3backend.hh \
+                 ssqlite3.hh ssqlite3.cc
+ 
+-libgsqlite3backend_la_LDFLAGS = -module -avoid-version -lsqlite3
++libgsqlite3backend_la_LDFLAGS = -module -avoid-version @SQLITE3_LIBS@
+ all: all-am
+ 
+ .SUFFIXES:

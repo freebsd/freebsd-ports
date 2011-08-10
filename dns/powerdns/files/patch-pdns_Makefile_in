@@ -1,0 +1,22 @@
+--- pdns/Makefile.in.orig	2011-07-22 13:26:07.000000000 +0200
++++ pdns/Makefile.in	2011-08-09 10:11:41.000000000 +0200
+@@ -51,15 +51,15 @@
+ 	dnslog$(EXEEXT) nproxy$(EXEEXT) notify$(EXEEXT) \
+ 	pdnssec$(EXEEXT) dnsbulktest$(EXEEXT)
+ @BOTAN19_TRUE@am__append_1 = botan19signers.cc botansigners.cc
+-@BOTAN19_TRUE@am__append_2 = -lbotan -lgmp
++@BOTAN19_TRUE@am__append_2 = -lbotan
+ @BOTAN18_TRUE@am__append_3 = botan18signers.cc botansigners.cc
+-@BOTAN18_TRUE@am__append_4 = -lbotan -lgmp
++@BOTAN18_TRUE@am__append_4 = -lbotan
+ @CRYPTOPP_TRUE@am__append_5 = cryptoppsigners.cc
+ @CRYPTOPP_TRUE@am__append_6 = -lcryptopp
+ @BOTAN19_TRUE@am__append_7 = botan19signers.cc botansigners.cc
+-@BOTAN19_TRUE@am__append_8 = -lbotan -lgmp
++@BOTAN19_TRUE@am__append_8 = -lbotan
+ @BOTAN18_TRUE@am__append_9 = botan18signers.cc botansigners.cc
+-@BOTAN18_TRUE@am__append_10 = -lbotan -lgmp
++@BOTAN18_TRUE@am__append_10 = -lbotan
+ @CRYPTOPP_TRUE@am__append_11 = cryptoppsigners.cc
+ @CRYPTOPP_TRUE@am__append_12 = -lcryptopp
+ subdir = pdns
