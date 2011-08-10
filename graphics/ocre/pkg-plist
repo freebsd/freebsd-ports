@@ -1,6 +1,5 @@
 bin/ocre
 share/locale/es/LC_MESSAGES/ocre.mo
-%%DATADIR%%/conv/cod39a2c
 %%DATADIR%%/conv/maymin
 %%DATADIR%%/conv/minmay
 %%DATADIR%%/conv/puntua
@@ -41,6 +40,7 @@ share/locale/es/LC_MESSAGES/ocre.mo
 %%DATADIR%%/decsWoodCur/arbol-u004d.dcw
 %%DATADIR%%/decsWoodCur/arbol-u004e.dcw
 %%DATADIR%%/decsWoodCur/arbol-u0050.dcw
+%%DATADIR%%/decsWoodCur/arbol-u0051.dcw
 %%DATADIR%%/decsWoodCur/arbol-u0052.dcw
 %%DATADIR%%/decsWoodCur/arbol-u0053.dcw
 %%DATADIR%%/decsWoodCur/arbol-u0054.dcw
@@ -67,6 +67,7 @@ share/locale/es/LC_MESSAGES/ocre.mo
 %%DATADIR%%/decsWoodCur/arbol-u0070.dcw
 %%DATADIR%%/decsWoodCur/arbol-u0071.dcw
 %%DATADIR%%/decsWoodCur/arbol-u0072.dcw
+%%DATADIR%%/decsWoodCur/arbol-u0072u0061.dcw
 %%DATADIR%%/decsWoodCur/arbol-u0073.dcw
 %%DATADIR%%/decsWoodCur/arbol-u0074.dcw
 %%DATADIR%%/decsWoodCur/arbol-u0075.dcw
@@ -74,6 +75,7 @@ share/locale/es/LC_MESSAGES/ocre.mo
 %%DATADIR%%/decsWoodCur/arbol-u0078.dcw
 %%DATADIR%%/decsWoodCur/arbol-u0079.dcw
 %%DATADIR%%/decsWoodCur/arbol-u007a.dcw
+%%DATADIR%%/decsWoodCur/arbol-u00ab.dcw
 %%DATADIR%%/decsWoodCur/arbol-u00bb.dcw
 %%DATADIR%%/decsWoodCur/arbol-u00bf.dcw
 %%DATADIR%%/decsWoodCur/arbol-u00e0.dcw
@@ -84,6 +86,8 @@ share/locale/es/LC_MESSAGES/ocre.mo
 %%DATADIR%%/decsWoodCur/arbol-u00ed.dcw
 %%DATADIR%%/decsWoodCur/arbol-u00f1.dcw
 %%DATADIR%%/decsWoodCur/arbol-u00f3.dcw
+%%DATADIR%%/decsWoodCur/arbol-u00fa.dcw
+%%DATADIR%%/decsWoodCur/arbol-u0131.dcw
 %%DATADIR%%/decsWoodCur/arbol-u2019.dcw
 %%DATADIR%%/decsWoodCur/arbol-u201b.dcw
 %%DATADIR%%/decsWoodCyrillic/0.tu2i
@@ -184,7 +188,6 @@ share/locale/es/LC_MESSAGES/ocre.mo
 %%DATADIR%%/decsWoodCyrillic/arbol-u2015.dcw
 %%DATADIR%%/decsWoodLatin/0.tu2i
 %%DATADIR%%/decsWoodLatin/00index
-%%DATADIR%%/decsWoodLatin/00indexw
 %%DATADIR%%/decsWoodLatin/arbol-u0021.dcw
 %%DATADIR%%/decsWoodLatin/arbol-u0023.dcw
 %%DATADIR%%/decsWoodLatin/arbol-u0024.dcw
@@ -474,10 +477,8 @@ share/locale/es/LC_MESSAGES/ocre.mo
 %%DATADIR%%/decsWoodLatin/arbol-u201c.dcw
 %%DATADIR%%/decsWoodLatin/arbol-u201d.dcw
 %%DATADIR%%/decsWoodLatin/arbol-u201e.dcw
-%%DATADIR%%/decsWoodLatin/arbol-w0030.dcw
-%%DATADIR%%/decsWoodLatin/arbol-w0031.dcw
-%%DATADIR%%/decsWoodLatin/arbol-w0043.dcw
 %%DATADIR%%/decsWoodLatinW/00index
+%%DATADIR%%/decsWoodLatinW/00indexw
 %%DATADIR%%/decsWoodLatinW/arbol-w0030.dcw
 %%DATADIR%%/decsWoodLatinW/arbol-w0031.dcw
 %%DATADIR%%/decsWoodLatinW/arbol-w0043.dcw
