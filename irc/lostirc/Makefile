@@ -9,22 +9,26 @@ PORTNAME=	lostirc
 PORTVERSION=	0.4.6
 PORTREVISION=	8
 CATEGORIES=	irc
-MASTER_SITES=	SF \
-		http://demian.dyndns.org/src/
-
+MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simple and minimal IRC client for X
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
-USE_GNOME=	gnomehack gnomeprefix gnometarget
+USE_GNOME=	gnomehack gnomeprefix
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-kde
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		lostirc.1
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-install:
 .if !defined(NOPORTDOCS)
