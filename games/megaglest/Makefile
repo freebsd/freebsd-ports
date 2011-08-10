@@ -64,4 +64,10 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "ia64" || ${ARCH} == "powerpc" || ${ARCH} == "sparc64"
+BROKEN=		Does not compile on ia64, powerpc, or sparc64: unrecognized compiler flags
+.endif
+
+.include <bsd.port.post.mk>
