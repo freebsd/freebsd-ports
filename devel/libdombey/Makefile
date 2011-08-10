@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libdombey
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mammothcheese.ca/
 
@@ -17,5 +17,7 @@ MAN8=		libdombey.8
 MANCOMPRESSED=	yes
 
 USE_LDCONFIG=	yes
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
