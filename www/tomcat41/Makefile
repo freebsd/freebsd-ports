@@ -15,6 +15,9 @@ MASTER_SITE_SUBDIR=	tomcat-4/v${PORTVERSION}/bin
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Open-source Java web server by Apache, stable 4.1.x branch
 
+DEPRECATED=	No more upstream support
+EXPIRATION_DATE=	2011-09-10
+
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 NO_BUILD=	YES
