@@ -494,6 +494,7 @@
     SUBDIR += p5-HTML-CTPP2
     SUBDIR += p5-HTML-Copy
     SUBDIR += p5-HTML-Entities-ImodePictogram
+    SUBDIR += p5-HTML-Entities-Interpolate
     SUBDIR += p5-HTML-Entities-Numbered
     SUBDIR += p5-HTML-EscapeEvil
     SUBDIR += p5-HTML-Format
