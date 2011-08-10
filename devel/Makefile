@@ -1438,6 +1438,7 @@
     SUBDIR += p5-Data-RoundRobin
     SUBDIR += p5-Data-Rx
     SUBDIR += p5-Data-Section
+    SUBDIR += p5-Data-Section-Simple
     SUBDIR += p5-Data-Serializer
     SUBDIR += p5-Data-ShowTable
     SUBDIR += p5-Data-Stag
