@@ -21,27 +21,26 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 ONLY_FOR_ARCHS=	i386
 
-.if defined(WITHOUT_MYSQL)
-CONFIGURE_ARGS+=	--disable-mysql
-.else
-USE_MYSQL=	yes
-.endif
-
-USE_GMAKE=	yes
-USE_GETTEXT=	yes
-USE_AUTOTOOLS=	autoconf213
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
-		DEBUGFLAG="${CFLAGS} -I${LOCALBASE}/include"
-MAKE_ENV+=	LD_LIBRARY_PATH="${WRKSRC}/lib"
-
-USE_LDCONFIG=	yes
 USE_XORG=	x11 xext
+USE_AUTOTOOLS=	autoconf213
+USE_GETTEXT=	yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" DEBUGFLAG="${CFLAGS}"
+MAKE_ENV=	LD_LIBRARY_PATH="${WRKSRC}/lib"
+USE_LDCONFIG=	yes
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 800069
-BROKEN=	does not build
+.if defined(WITHOUT_MYSQL)
+CONFIGURE_ARGS+=--disable-mysql
+PLIST_SUB+=	MYSQL="@comment "
+.else
+USE_MYSQL=	yes
+PLIST_SUB+=	MYSQL=""
 .endif
 
 .include <bsd.port.post.mk>

@@ -215,8 +215,8 @@ lib/libefltk_gl.so
 lib/libefltk_gl.so.2
 lib/libefltk_images.so
 lib/libefltk_images.so.2
-lib/libefltk_mysql.so
-lib/libefltk_mysql.so.2
+%%MYSQL%%lib/libefltk_mysql.so
+%%MYSQL%%lib/libefltk_mysql.so.2
 lib/libefltk_net.so
 lib/libefltk_net.so.2
 lib/libefltk_xml.so
