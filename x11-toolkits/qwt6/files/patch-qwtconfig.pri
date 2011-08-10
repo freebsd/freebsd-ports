@@ -1,10 +1,10 @@
---- ./qwtconfig.pri.orig	2009-03-22 18:41:05.000000000 +0300
-+++ ./qwtconfig.pri	2009-03-25 23:02:54.000000000 +0300
+--- qwtconfig.pri.orig	2011-08-08 08:09:26.000000000 +0000
++++ qwtconfig.pri	2011-08-08 08:11:17.000000000 +0000
 @@ -8,7 +8,7 @@
  VERSION      = $${VER_MAJ}.$${VER_MIN}.$${VER_PAT}
  
  unix {
--    INSTALLBASE    = /usr/local/qwt-5.2.1
+-    INSTALLBASE    = /usr/local/qwt-$$VERSION
 +    INSTALLBASE    = $$PREFIX
  }
  
@@ -19,7 +19,7 @@
  
  ######################################################################
  # qmake internal options
-@@ -97,7 +96,7 @@
+@@ -98,7 +97,7 @@
  # QwtSVGItem.
  ######################################################################
  
@@ -27,8 +27,8 @@
 +CONFIG     += QwtSVGItem
  
  ######################################################################
- # If you have a commercial license you can use the MathML renderer
-@@ -114,7 +113,7 @@
+ # You can use the MathML renderer of the Qt solutions package to 
+@@ -115,7 +114,7 @@
  # Otherwise you have to build it from the designer directory.
  ######################################################################
  
