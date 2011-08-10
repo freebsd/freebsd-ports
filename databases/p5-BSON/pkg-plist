@@ -5,6 +5,7 @@
 %%SITE_PERL%%/BSON/MaxKey.pm
 %%SITE_PERL%%/BSON/MinKey.pm
 %%SITE_PERL%%/BSON/ObjectId.pm
+%%SITE_PERL%%/BSON/String.pm
 %%SITE_PERL%%/BSON/Time.pm
 %%SITE_PERL%%/BSON/Timestamp.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/BSON/.packlist
