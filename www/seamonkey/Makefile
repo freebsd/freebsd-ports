@@ -7,6 +7,7 @@
 
 PORTNAME=	seamonkey
 DISTVERSION=	2.2
+PORTREVISION=	1
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}/source
@@ -15,9 +16,9 @@ DISTNAME=	seamonkey-${DISTVERSION}.source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
-BUILD_DEPENDS=  nspr>=4.8.7:${PORTSDIR}/devel/nspr
-LIB_DEPENDS=    execinfo.1:${PORTSDIR}/devel/libexecinfo \
-                event-1.4:${PORTSDIR}/devel/libevent
+BUILD_DEPENDS=	nspr>=4.8.7:${PORTSDIR}/devel/nspr
+LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
+		event-1.4:${PORTSDIR}/devel/libevent
 
 USE_AUTOTOOLS=	autoconf213
 CONFLICTS_BUILD=	spidermonkey-1.[0-7]*
