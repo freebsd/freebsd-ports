@@ -1,85 +1,6 @@
---- ./Makefile.orig	2008-06-30 21:16:48.000000000 -0300
-+++ ./Makefile	2008-08-10 13:40:38.000000000 -0300
-@@ -34,14 +34,27 @@
- endif
- endif
- 
--# test if a library can be linked
--linktest = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) -o dummy.o dummy.c $(LDFLAGS) $(1) $(2) > /dev/null 2>&1; \
-+# test compiler options
-+comptest = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) $(1) $(2) -o dummy.o dummy.c $(LDFLAGS) > /dev/null 2>&1; \
- 	then \
- 		echo "$(1)"; \
- 	fi ;)
- 
--# test compiler options
--comptest = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) $(1) $(2) -o dummy.o dummy.c $(LDFLAGS) > /dev/null 2>&1; \
-+#-ffast-math
-+OPTFLAGS:=-O2
-+CFLAGS:=$(CFLAGS) -I$(LOCALBASE)/include \
-+	$(CPPFLAGS) $(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
-+	$(call comptest,-fvisibility=hidden,) \
-+	-Wcast-align -Wredundant-decls \
-+	-Wbad-function-cast -Wwrite-strings \
-+	-Waggregate-return \
-+	-Wstrict-prototypes -Wmissing-prototypes \
-+	$(shell src/test-option.sh -Wstrict-aliasing=2)
-+
-+LDFLAGS=-L$(LOCALBASE)/lib
-+
-+# test if a library can be linked
-+linktest = $(shell if $(CC) $(CPPFLAGS) $(CFLAGS) -o dummy.o dummy.c $(LDFLAGS) $(1) $(2) > /dev/null 2>&1; \
- 	then \
- 		echo "$(1)"; \
- 	fi ;)
-@@ -122,9 +135,9 @@
- 
- # Docs and man page:
- DOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint
--DEVDOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint-dev
--MAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
--DEVMAN_PREFIX:=$(DESTDIR)$(PREFIX)/share/man
-+DEVDOC_PREFIX:=$(DESTDIR)$(PREFIX)/share/doc/tuxpaint/dev
-+MAN_PREFIX:=$(DESTDIR)$(PREFIX)/man
-+DEVMAN_PREFIX:=$(DESTDIR)$(PREFIX)/man
- 
- 
- # 'System-wide' Config file:
-@@ -136,7 +149,7 @@
- 
- # Icons and launchers:
- ICON_PREFIX:=$(DESTDIR)$(PREFIX)/share/pixmaps
--X11_ICON_PREFIX:=$(DESTDIR)$(PREFIX)/X11R6/include/X11/pixmaps
-+X11_ICON_PREFIX:=$(DESTDIR)$(PREFIX)/share/pixmaps
- GNOME_PREFIX:=$(shell gnome-config --prefix 2> /dev/null)
- KDE_PREFIX:=$(shell kde-config --install apps --expandvars 2> /dev/null)
- KDE_ICON_PREFIX:=$(shell kde-config --install icon --expandvars 2> /dev/null)
-@@ -191,23 +204,13 @@
- 	@echo 'SDL_LIBS      is' $(SDL_LIBS)
- 	@echo 'SDL_CFLAGS    is' $(SDL_CFLAGS)
- 	@echo 'SVG_CFLAGS    is' $(SVG_CFLAGS)
--	@echo 'LDFLAGS       is' $(LDFLAGS)
-+	@echo '$(CFLAGS) -I$(LOCALBASE)/include \DFLAGS       is' $(LDFLAGS)
- 	@echo 'CFLAGS        is' $(CFLAGS)
- 	@echo 'CPPFLAGS      is' $(CPPFLAGS)
- endif
- 
- # The entire set of CFLAGS:
- 
--#-ffast-math
--OPTFLAGS:=-O2
--CFLAGS:=$(CPPFLAGS) $(OPTFLAGS) -W -Wall -fno-common -ffloat-store \
--	$(call comptest,-fvisibility=hidden,) \
--	-Wcast-align -Wredundant-decls \
--	-Wbad-function-cast -Wwrite-strings \
--	-Waggregate-return \
--	-Wstrict-prototypes -Wmissing-prototypes \
--	$(shell src/test-option.sh -Wstrict-aliasing=2)
--
- DEFS:=-DVER_DATE=\"$(VER_DATE)\" -DVER_VERSION=\"$(VER_VERSION)\" \
- 	-DDATA_PREFIX=\"$(patsubst $(DESTDIR)%,%,$(DATA_PREFIX))/\" \
- 	-DDOC_PREFIX=\"$(patsubst $(DESTDIR)%,%,$(DOC_PREFIX))/\" \
-@@ -300,7 +303,8 @@
+--- Makefile.orig	2009-04-29 14:18:57.000000000 +0900
++++ Makefile	2010-10-19 01:08:15.000000000 +0900
+@@ -303,7 +303,8 @@
  INSTALLED_MOFILES:=$(patsubst trans/%.mo,$(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint.mo,$(MOFILES))
  
  $(INSTALLED_MOFILES): $(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint.mo: trans/%.mo
@@ -89,16 +10,7 @@
  
  .PHONY: uninstall-i18n
  uninstall-i18n:
-@@ -390,7 +394,7 @@
- windows_ARCH_INSTALL:=
- osx_ARCH_INSTALL:=
- beos_ARCH_INSTALL:=
--linux_ARCH_INSTALL:=install-gnome install-kde install-kde-icons
-+linux_ARCH_INSTALL:=
- ARCH_INSTALL:=$($(OS)_ARCH_INSTALL)
- 
- # "make install" installs all of the various parts
-@@ -445,9 +449,6 @@
+@@ -448,9 +449,6 @@
  	@install -d $(INCLUDE_PREFIX)/tuxpaint
  	@cp src/tp_magic_api.h $(INCLUDE_PREFIX)/tuxpaint
  	@chmod a+r,g-w,o-w $(INCLUDE_PREFIX)/tuxpaint/tp_magic_api.h
@@ -108,7 +20,7 @@
  
  # Installs the various parts for the MinGW/MSYS development/testing environment.
  
-@@ -554,8 +555,10 @@
+@@ -557,8 +555,10 @@
  	@echo
  	@echo "...Installing default config file..."
  	@install -d $(CONFDIR)
@@ -121,7 +33,7 @@
  
  
  # Install example stamps
-@@ -572,7 +575,8 @@
+@@ -575,7 +575,8 @@
  INSTALLED_STARTERS:=$(patsubst %,$(DATA_PREFIX)/%,$(STARTERS))
  
  $(INSTALLED_STARTERS): $(DATA_PREFIX)/%: %
@@ -131,17 +43,17 @@
  
  # Install example starters
  .PHONY: install-example-starters
-@@ -790,6 +794,9 @@
+@@ -794,6 +795,9 @@
  	@cp -R docs/* $(DOC_PREFIX)
  	@cp -R magic/magic-docs $(DOC_PREFIX)
- 	@chmod a=rX,g=rX,u=rwX $(DOC_PREFIX)
+ 	@chmod -R a=rX,g=rX,u=rwX $(DOC_PREFIX)
 +	@install -d $(DEVDOC_PREFIX)
 +	@cp -R magic/docs/* $(DEVDOC_PREFIX)
-+	@chmod a=rX,g=rX,u=rwX $(DEVDOC_PREFIX)
++	@chmod -R a=rX,g=rX,u=rwX $(DEVDOC_PREFIX)
  
  
  # Install the man page:
-@@ -803,12 +810,6 @@
+@@ -807,12 +811,6 @@
  	@cp src/manpage/tuxpaint.1 $(MAN_PREFIX)/man1
  	@gzip -f $(MAN_PREFIX)/man1/tuxpaint.1
  	@chmod a+rx,g-w,o-w $(MAN_PREFIX)/man1/tuxpaint.1.gz
