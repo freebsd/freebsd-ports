@@ -25,8 +25,16 @@ BUILD_DEPENDS+=	${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 
 NO_WRKSUBDIR=	yes
 USE_ZIP=	yes
-FONTSDIR=	lib/X11/fonts/nanum-coding-ttf
-PLIST_SUB+=	FONTSDIR=${FONTSDIR}
+FONTSDIR=	lib/X11/fonts/nanum-coding${PKGNAMESUFFIX}
+FONTLIST=	NanumGothicCoding \
+		NanumGothicCoding-Bold
+
+PLIST_DIRS=	${FONTSDIR}
+.for f in ${FONTLIST}
+PLIST_FILES+=	${FONTSDIR}/${f}.ttf
+.endfor
+PLIST_FILES+=	${FONTSDIR}/fonts.dir \
+		${FONTSDIR}/fonts.scale
 
 post-extract:
 	@# XXX File names are encoded in EUC-KR.
@@ -40,11 +48,15 @@ do-build:
 
 do-install:
 	${MKDIR} ${PREFIX}/${FONTSDIR}
-	${INSTALL_DATA} ${WRKSRC}/*.ttf ${PREFIX}/${FONTSDIR}
+.for f in ${FONTLIST}
+	${INSTALL_DATA} ${WRKSRC}/${f}.ttf ${PREFIX}/${FONTSDIR}
+.endfor
 	${INSTALL_DATA} ${WRKSRC}/fonts.dir ${PREFIX}/${FONTSDIR}
 	${INSTALL_DATA} ${WRKSRC}/fonts.scale ${PREFIX}/${FONTSDIR}
 
 post-install:
+	@${ECHO_CMD} "@exec fc-cache -s %D/${FONTSDIR} 2>/dev/null || true" >> ${TMPPLIST}
+	@${ECHO_CMD} "@unexec fc-cache -s %D/${FONTSDIR} 2>/dev/null || true" >> ${TMPPLIST}
 	@-${LOCALBASE}/bin/fc-cache -s ${PREFIX}/${FONTSDIR} 2>/dev/null
 
 .include <bsd.port.mk>
