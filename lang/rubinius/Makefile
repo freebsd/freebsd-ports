@@ -43,6 +43,9 @@ OPTIONS=	GDBM	"Enable GDBM support"	on
 MANUAL_PACKAGE_BUILD=	hangs on pointyhat
 .endif
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
 
 .if !defined(WITHOUT_GDBM) || exists(${LOCALBASE}/include/gdbm.h)
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
