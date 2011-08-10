@@ -1,0 +1,23 @@
+Hash::FieldHash provides the field hash mechanism which supports the inside-out
+technique.
+
+You may know Hash::Util::FieldHash. It's a very useful module, but too complex
+to understand all the functions and only available in 5.10. H::U::F::Compat is
+available for pre-5.10, but it seems too slow to use.
+
+This is an alternative to H::U::F with following features:
+
+Simpler interface
+- Hash::FieldHash provides a few functions: fieldhash() and fieldhashes().
+  That's enough.
+
+Higher performance
+- Hash::FieldHash is faster than Hash::Util::FieldHash, because its internals
+  use simpler structures.
+
+Relic support
+- Although Hash::FieldHash uses a new feature introduced in Perl 5.10, the uvar
+  magic for hashes described in "GUTS" in Hash::Util::Fieldhash, it supports
+  Perl 5.8 using the traditional tie-hash layer.
+
+WWW: http://search.cpan.org/dist/Hash-FieldHash/
