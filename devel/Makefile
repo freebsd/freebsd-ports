@@ -2434,6 +2434,7 @@
     SUBDIR += p5-Tie-File
     SUBDIR += p5-Tie-File-AsHash
     SUBDIR += p5-Tie-FileLRUCache
+    SUBDIR += p5-Tie-Function
     SUBDIR += p5-Tie-Hash-Indexed
     SUBDIR += p5-Tie-Hash-MultiValue
     SUBDIR += p5-Tie-Hash-Regex
