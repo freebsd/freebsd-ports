@@ -32,4 +32,10 @@ post-patch:
 post-install:
 	${STRIP_CMD} ${PREFIX}/lib/libmird.so.1
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not compile on sparc64
+.endif
+
+.include <bsd.port.post.mk>
