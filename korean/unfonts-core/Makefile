@@ -38,6 +38,7 @@ FONTLIST?=	UnBatang \
 		UnPilgi \
 		UnPilgiBold
 
+PLIST_DIRS=	${FONTSDIR}
 .for f in ${FONTLIST}
 PLIST_FILES+=	${FONTSDIR}/${f}.ttf
 .endfor
@@ -57,7 +58,6 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/fonts.scale ${PREFIX}/${FONTSDIR}
 
 post-install:
-	@${ECHO_CMD} "@dirrm ${FONTSDIR}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@exec fc-cache -s %D/${FONTSDIR} 2>/dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec fc-cache -s %D/${FONTSDIR} 2>/dev/null || true" >> ${TMPPLIST}
 	@-${LOCALBASE}/bin/fc-cache -s ${PREFIX}/${FONTSDIR} 2>/dev/null
