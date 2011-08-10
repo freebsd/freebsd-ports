@@ -9,18 +9,23 @@ PORTNAME=	gtktetcolor
 PORTVERSION=	0.6.4
 PORTREVISION=	10
 CATEGORIES=	games gnome
-MASTER_SITES=	${MASTER_SITE_SUNSITE} \
-		http://www.dvgu.ru/ifit/~panov/gtktetcolor/
-MASTER_SITE_SUBDIR=	games
+MASTER_SITES=	SUNSITE/games \
+		http://canopus.iacp.dvo.ru/~panov/gtktetcolor/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A game for GNOME that resembles well-known tetris and columns
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
 USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e \
