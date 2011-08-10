@@ -8,7 +8,6 @@
     SUBDIR += affiche
     SUBDIR += akamaru
     SUBDIR += alacarte
-    SUBDIR += alexandria
     SUBDIR += appwrapper
     SUBDIR += aspostit
     SUBDIR += autocutsel
