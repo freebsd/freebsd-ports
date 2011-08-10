@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	rabbitmq
-PORTVERSION=	2.3.1
-PORTREVISION=	2
+PORTVERSION=	2.5.1
 CATEGORIES=	net
 MASTER_SITES=	http://www.rabbitmq.com/releases/rabbitmq-server/v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-server-${PORTVERSION}
@@ -38,8 +37,8 @@ SUB_LIST=	RABBITMQ_GID=${RABBITMQ_GID} \
 		RABBITMQ_UID=${RABBITMQ_UID} \
 		RABBITMQ_USER=${RABBITMQ_USER}
 
-MAN1=		rabbitmq-multi.1 rabbitmq-server.1 rabbitmqctl.1
-MAN5=		rabbitmq.conf.5
+MAN1=		rabbitmq-server.1 rabbitmqctl.1
+MAN5=		rabbitmq-env.conf.5
 MANCOMPRESSED=	yes
 
 SCRIPTS_DIR=	${WRKSRC}/scripts/
@@ -48,7 +47,7 @@ MAKE_ENV+=	TARGET_DIR="${PREFIX}/lib/erlang/lib/rabbitmq_server-${PORTVERSION}" 
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/etc/rabbitmq|${PREFIX}/etc/rabbitmq|g ; s|/var/lib|/var/db|g ; s|erl|${LOCALBASE}/bin/erl|g' \
-		${SCRIPTS_DIR}/rabbitmq-multi ${SCRIPTS_DIR}/rabbitmq-server ${SCRIPTS_DIR}/rabbitmqctl ${SCRIPTS_DIR}/rabbitmq-env
+		${SCRIPTS_DIR}/rabbitmq-server ${SCRIPTS_DIR}/rabbitmqctl ${SCRIPTS_DIR}/rabbitmq-env
 	@${FIND} ${WRKSRC} -name "*.bak" | ${XARGS} ${RM}
 
 pre-install:

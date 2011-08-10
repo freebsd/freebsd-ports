@@ -1,11 +1,11 @@
---- scripts/rabbitmqctl.orig	2011-01-12 09:22:10.000000000 -0300
-+++ scripts/rabbitmqctl	2011-01-12 09:23:31.000000000 -0300
-@@ -38,7 +38,7 @@
+--- scripts/rabbitmqctl.orig	2011-08-01 15:59:26.057347310 +0100
++++ scripts/rabbitmqctl	2011-08-01 16:00:07.303513263 +0100
+@@ -20,7 +20,7 @@
  [ "x" = "x$RABBITMQ_NODENAME" ] && RABBITMQ_NODENAME=${NODENAME}
  [ "x" = "x$RABBITMQ_CTL_ERL_ARGS" ] && RABBITMQ_CTL_ERL_ARGS=${CTL_ERL_ARGS}
  
 -exec erl \
-+sudo -u rabbitmq HOME=/var/db/rabbitmq erl \
++HOME=/var/db/rabbitmq exec erl \
      -pa "${RABBITMQ_HOME}/ebin" \
      -noinput \
      -hidden \
