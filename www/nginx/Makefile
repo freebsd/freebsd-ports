@@ -464,11 +464,12 @@ CONFIGURE_ARGS+=--with-pcre
 .endif
 
 .if defined(WITH_PASSENGER_MODULE)
-PASSENGER_VERSION=	3.0.7
+PASSENGER_VERSION=	3.0.8
 MASTER_SITES+=	RF/passenger/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger::build::nginx.rb
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger::build::nginx.rb \
+		${PATCHDIR}/extra-patch-passenger::ext::nginx::ContentHandler.c
 .if !defined(WITH_DEBUG)
 CONFIGURE_ENV+=	OPTIMIZE="yes"
 CFLAGS+=	-DNDEBUG
@@ -629,7 +630,8 @@ post-patch:
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/build/config.rb
 	@${REINPLACE_CMD} \
 		's!-I/usr/include/libev!!; \
-		s!-lev!!' \
+		s!-lev!!; \
+		s!-Iext/libev!!' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/build/common_library.rb
 	@${REINPLACE_CMD} 's!-lpthread!${PTHREAD_LIBS}!g' \
 		${WRKDIR}/passenger-${PASSENGER_VERSION}/lib/phusion_passenger/platform_info/compiler.rb
