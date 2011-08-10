@@ -43,7 +43,7 @@
 %%T%%/lib/catalina-ha.jar
 %%T%%/lib/catalina-tribes.jar
 %%T%%/lib/catalina.jar
-%%T%%/lib/ecj-3.6.2.jar
+%%T%%/lib/ecj-3.7.jar
 %%T%%/lib/el-api.jar
 %%T%%/lib/jasper-el.jar
 %%T%%/lib/jasper.jar
@@ -55,6 +55,7 @@
 %%T%%/lib/tomcat-i18n-es.jar
 %%T%%/lib/tomcat-i18n-fr.jar
 %%T%%/lib/tomcat-i18n-ja.jar
+%%T%%/lib/tomcat-jdbc.jar
 %%T%%/lib/tomcat-util.jar
 %%T%%/lib/tools.jar
 %%T%%/temp/safeToDelete.tmp
@@ -172,6 +173,7 @@
 %%T%%/webapps/docs/index.html
 %%T%%/webapps/docs/introduction.html
 %%T%%/webapps/docs/jasper-howto.html
+%%T%%/webapps/docs/jdbc-pool.html
 %%T%%/webapps/docs/jndi-datasource-examples-howto.html
 %%T%%/webapps/docs/jndi-resources-howto.html
 %%T%%/webapps/docs/jspapi/index.html
