@@ -15,8 +15,8 @@ COMMENT=	Hangul input engine for IBus
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	hangul.1:${PORTSDIR}/korean/libhangul
-RUN_DEPENDS=	ibus-daemon:${PORTSDIR}/textproc/ibus
+LIB_DEPENDS=	hangul.1:${PORTSDIR}/korean/libhangul \
+		ibus.2:${PORTSDIR}/textproc/ibus
 
 PROJECTHOST=	ibus
 
@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	intltool
+USE_GNOME=	intltool pkgconfig
 USE_PYTHON=	yes
 
 post-install:
