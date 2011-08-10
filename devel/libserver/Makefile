@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libserver
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	devel
 MASTER_SITES=	http://www.mammothcheese.ca/
 
@@ -17,5 +17,7 @@ MAN8=		libserver.8
 MANCOMPRESSED=	yes
 
 USE_LDCONFIG=	yes
+
+PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 .include <bsd.port.mk>
