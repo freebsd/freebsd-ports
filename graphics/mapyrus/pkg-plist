@@ -24,6 +24,7 @@ bin/mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/streets.EE
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/svg1.js
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/symbols.mapyrus
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/timestamp.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/turtle1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/turtle2.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/turtle3.mapyrus
@@ -31,7 +32,6 @@ bin/mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/turtle5.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/turtle6.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/turtle7.mapyrus
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialanimate1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialattribute1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialattribute2.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialdatasets1.mapyrus
@@ -117,8 +117,11 @@ bin/mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialturnpage1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialvar1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialvar2.mapyrus
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialwms1.html
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialwms1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/tutorialwordwrap1.mapyrus
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/vegetation.dat
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/version.txt
 %%DATADIR%%/mapyrus.jar
 @dirrm %%DATADIR%%
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
