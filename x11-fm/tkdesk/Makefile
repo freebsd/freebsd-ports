@@ -7,7 +7,7 @@
 
 PORTNAME=	tkdesk
 PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11-fm tk
 MASTER_SITES=	SF/${PORTNAME}/TkDesk/2.0
 DISTNAME=	${PORTNAME}-${PORTVERSION:R}
@@ -18,26 +18,33 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A graphical, highly configurable and powerful file manager
 
 LIB_DEPENDS=	BLT24:${PORTSDIR}/x11-toolkits/blt \
-		itcl:${PORTSDIR}/lang/itcl \
-		tk84:${PORTSDIR}/x11-toolkits/tk84
+		itcl:${PORTSDIR}/lang/itcl
 
+EXTRACT_AFTER_ARGS=| ${TAR} -xf - --exclude blt
 PATCH_DIST_STRIP=-p1
+
+USE_TCL_BUILD=	yes
+USE_TCL=	yes
+USE_TK_BUILD=	yes
+USE_TK=		yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-MAKE_ENV+=	LIB_RUNTIME_DIR=${LOCABASE}/lib
-CONFIGURE_ENV=	CPPFLAG="-I${LOCALBASE}/include/itcl3.3" \
-		LDFLAGS="-L${LOCALBASE}/lib -litcl"
-CONFIGURE_ARGS=	--with-tcl=${LOCALBASE}/lib/tcl8.4 \
-		--with-tk=${LOCALBASE}/lib/tk8.4 \
-		  --with-blt=${LOCALBASE} \
-		--with-itcl=${LOCALBASE}/lib/itcl3.3
-EXTRACT_AFTER_ARGS=| ${TAR} -xf - --exclude blt
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} \
+		--with-tk=${TK_LIBDIR} \
+		--with-blt=${LOCALBASE} \
+		--with-itcl=${LOCALBASE}/lib/itcl3.4
+MAKE_ENV=	LIB_RUNTIME_DIR="${LOCABASE}/lib"
 
 MAN1=		tkdesk.1 cd-tkdesk.1 ed-tkdesk.1 od-tkdesk.1
+
+CPPFLAG=	-I${LOCALBASE}/include/itcl3.4
+LDFLAGS=	-L${LOCALBASE}/lib -litcl
 
 post-patch:
 	@${GREP} -lR "<malloc\.h>" ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
 		's|<malloc\.h>|<stdlib.h>|g'
+	@${REINPLACE_CMD} -e 's|%%TCLSH%%|${TCLSH}|g' ${WRKSRC}/Makefile.in
 
 pre-install:
 	@${FIND} ${WRKSRC} -type f -name "*.orig" -delete
