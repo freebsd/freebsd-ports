@@ -1,57 +1,12 @@
---- ./Makefile.orig	2008-02-27 21:06:33.000000000 -0200
-+++ ./Makefile	2008-08-10 13:41:54.000000000 -0300
-@@ -20,7 +20,7 @@
+--- Makefile.orig	2009-05-29 07:08:08.000000000 +0900
++++ Makefile	2010-10-19 01:39:29.000000000 +0900
+@@ -340,7 +340,8 @@
+ INSTALLED_MOFILES:=$(patsubst trans/%.mo,$(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint-config.mo,$(MOFILES))
  
- # Where to install things:
+ $(INSTALLED_MOFILES): $(LOCALE_PREFIX)/%/LC_MESSAGES/tuxpaint-config.mo: trans/%.mo
+-	install -D -m 644 $< $@
++	test -d `dirname $@` || mkdir -p `dirname $@`
++	$(BSD_INSTALL_DATA) $< $@
  
--PREFIX=/usr/local
-+PREFIX?=/usr/local
- 
- 
- # Program:
-@@ -37,7 +37,7 @@
- # Docs and man page:
- 
- DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint-config/
--MAN_PREFIX=$(PREFIX)/share/man/
-+MAN_PREFIX=$(PREFIX)/man/
- 
- 
- # Tux Paint's 'System-wide' Config file:
-@@ -52,7 +52,7 @@
- # Icons and launchers:
- 
- ICON_PREFIX=$(PREFIX)/share/pixmaps/
--X11_ICON_PREFIX=$(PREFIX)/X11R6/include/X11/pixmaps/
-+X11_ICON_PREFIX=$(PREFIX)/share/pixmaps/
- GNOME_PREFIX=`gnome-config --prefix`
- KDE_PREFIX=`kde-config --install apps --expandvars`
- KDE_ICON_PREFIX=`kde-config --install icon --expandvars`
-@@ -77,7 +77,7 @@
- PAPER_LIB=-lpaper
- 
- # Default CFLAGS:
--CFLAGS=-O2 -Wall
-+CFLAGS+=-O2 -Wall
- 
- # The entire set of CFLAGS:
- ALL_CFLAGS=$(CFLAGS) $(FLTK_CFLAGS) -DDATA_PREFIX=\"$(DATA_PREFIX)\" \
-@@ -147,8 +147,7 @@
- # to do this as superuser ("root"))
- 
- install:	install-bin install-data install-man install-doc \
--		install-gnome install-kde install-kde-icons \
--		install-icon install-gettext
-+		install-gettext
- 	@echo
- 	@echo "All done! Now (preferably NOT as 'root' superuser),"
- 	@echo "you can type the command 'tuxpaint-config' to run the"
-@@ -307,7 +306,7 @@
- 	@echo Linking
- 	@$(CXX) $(ALL_CFLAGS) -o tuxpaint-config obj/tuxpaint-config.o 	\
- 			obj/tuxpaint-config2.o obj/defaults.o $(ARCH_LIBS) \
--			$(FLTK_LIBS) $(ARCH_LINKS) $(PAPER_LIB)
-+			$(FLTK_LIBS) $(ARCH_LINKS) $(PAPER_LIB) -lintl
- 
- 
- # Build the object for the program!
+ .PHONY: uninstall-i18n
+ uninstall-i18n:

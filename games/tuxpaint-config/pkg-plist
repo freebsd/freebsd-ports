@@ -5,6 +5,25 @@ bin/tuxpaint-config
 %%PORTDOCS%%%%DOCSDIR%%/README.txt
 %%PORTDOCS%%%%DOCSDIR%%/TODO.txt
 %%PORTDOCS%%%%DOCSDIR%%/html/README.html
+share/locale/ca/LC_MESSAGES/tuxpaint-config.mo
+share/locale/da/LC_MESSAGES/tuxpaint-config.mo
+share/locale/el/LC_MESSAGES/tuxpaint-config.mo
+share/locale/en_GB/LC_MESSAGES/tuxpaint-config.mo
+share/locale/es/LC_MESSAGES/tuxpaint-config.mo
+share/locale/fr/LC_MESSAGES/tuxpaint-config.mo
+share/locale/it/LC_MESSAGES/tuxpaint-config.mo
+share/locale/ja/LC_MESSAGES/tuxpaint-config.mo
+share/locale/nl/LC_MESSAGES/tuxpaint-config.mo
+share/locale/nn/LC_MESSAGES/tuxpaint-config.mo
+share/locale/pt_BR/LC_MESSAGES/tuxpaint-config.mo
+share/locale/pt_PT/LC_MESSAGES/tuxpaint-config.mo
+share/locale/ru/LC_MESSAGES/tuxpaint-config.mo
+share/locale/sk/LC_MESSAGES/tuxpaint-config.mo
+share/locale/sl/LC_MESSAGES/tuxpaint-config.mo
+share/locale/son/LC_MESSAGES/tuxpaint-config.mo
+share/locale/sv/LC_MESSAGES/tuxpaint-config.mo
+share/locale/uk/LC_MESSAGES/tuxpaint-config.mo
+share/locale/zh_TW/LC_MESSAGES/tuxpaint-config.mo
 %%DATADIR%%/images/icon-win32.ico
 %%DATADIR%%/images/icon.png
 %%DATADIR%%/images/icon16x16.png
@@ -18,5 +37,7 @@ bin/tuxpaint-config
 %%DATADIR%%/images/win32-icon48x48x256.png
 @dirrm %%DATADIR%%/images
 @dirrm %%DATADIR%%
+@dirrmtry share/locale/son/LC_MESSAGES
+@dirrmtry share/locale/son
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
