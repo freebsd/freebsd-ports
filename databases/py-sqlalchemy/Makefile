@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sqlalchemy
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -87,5 +87,17 @@ post-install:
 	${MKDIR} ${EXAMPLESDIR}
 	@cd ${WRKSRC}/examples/ && ${COPYTREE_SHARE} . ${EXAMPLESDIR}
 .endif
+
+.if ${PYTHON_REL} < 300
+PLIST_SUB+=	SPEEDUPS=""
+.else
+# C extensions are not supported in py3k
+PLIST_SUB+=	SPEEDUPS="@comment "
+PYEASYINSTALL_OSARCH=
+
+easyinstall-setopt:
+	${DO_NADA}
+.endif
+
 
 .include <bsd.port.post.mk>
