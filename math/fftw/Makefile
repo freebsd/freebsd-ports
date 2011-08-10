@@ -44,8 +44,11 @@ PLIST_SUB+=	DEF=""
 .endif
 
 .if ${ARCH} == "i386"
-BROKEN=		does not build
 CONFIGURE_ARGS+=	--enable-i386-hacks
+.endif
+
+.if ${ARCH} == "i386" || ${ARCH} == "sparc64"
+BROKEN=		does not build
 .endif
 
 post-patch:
