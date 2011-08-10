@@ -7,23 +7,15 @@
 
 PORTNAME=	gmerlin-avdecoder
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	SF/gmerlin/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	General purpose media decoding library
 
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/dvb/frontend.h:${PORTSDIR}/multimedia/v4l_compat
 LIB_DEPENDS=	gavl.1:${PORTSDIR}/multimedia/gavl
-
-GNU_CONFIGURE=	yes
-USE_GETTEXT=	yes
-CONFIGURE_ARGS=	--without-cpuflags --without-doxygen
-USE_GNOME=	gnomehack pkgconfig
-USE_LDCONFIG=	yes
-
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
-
-PORTDOCS=	README
 
 OPTIONS=	GMERLIN	"Enable gmerlin support" on \
 		FFMPEG	"Enable ffmpeg support" on \
@@ -42,17 +34,22 @@ OPTIONS=	GMERLIN	"Enable gmerlin support" on \
 		MAD	"Enable mp3 support" on \
 		A52	"Enable A52 support" on \
 		DCA	"Enable DTS Coherent Acoustics decoder" on \
-		LIBCDIO	"Enable libcdio support" on \
+		CDIO	"Enable libcdio support" on \
 		OPENJPEG "Enable JPEG2000 support" on \
 		SCHROEDINGER "Enable dirac support" on \
 		OPTIMIZED_CFLAGS "Additional optimizations" on
 
-.include <bsd.port.pre.mk>
+USE_GNOME=	gnomehack pkgconfig
+USE_GETTEXT=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--without-cpuflags --without-doxygen
+USE_LDCONFIG=	yes
 
-# Hack for 6.x to properly detect ffmpeg
-.if ${OSVERSION} < 700000
-CONFIGURE_ENV+=	AVCODEC_LIBS="`pkg-config --libs libavcodec` ${PTHREAD_LIBS}"
-.endif
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
+.include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_GMERLIN)
 LIB_DEPENDS+=	gmerlin.0:${PORTSDIR}/multimedia/gmerlin
@@ -71,7 +68,7 @@ CONFIGURE_ARGS+=--disable-libavcodec --disable-libpostproc --disable-libswscale 
 .if !defined(WITHOUT_THEORA)
 LIB_DEPENDS+=	theora.0:${PORTSDIR}/multimedia/libtheora
 .else
-CONFIGURE_ARGS+=--disable-theora
+CONFIGURE_ARGS+=--disable-theoradec
 .endif
 
 .if !defined(WITHOUT_SPEEX)
@@ -89,12 +86,6 @@ CONFIGURE_ARGS+=--disable-mjpegtools
 .if !defined(WITHOUT_VORBIS)
 LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 CONFIGURE_ARGS+=--with-vorbis=${LOCALBASE}
-.else
-CONFIGURE_ARGS+=--disable-vorbis
-.endif
-
-.if !defined(WITHOUT_VORBIS)
-LIB_DEPENDS+=	vorbis.4:${PORTSDIR}/audio/libvorbis
 .else
 CONFIGURE_ARGS+=--disable-vorbis
 .endif
@@ -168,12 +159,12 @@ LIB_DEPENDS+=	dca.0:${PORTSDIR}/multimedia/libdca
 CONFIGURE_ARGS+=--disable-libcda --disable-libdca
 .endif
 
-.if !defined(WITHOUT_LIBCDIO)
+.if !defined(WITHOUT_CDIO)
 LIB_DEPENDS+=	cdio.12:${PORTSDIR}/sysutils/libcdio
-PLIST_SUB+=	LIBCDIO=""
+PLIST_SUB+=	CDIO=""
 .else
 CONFIGURE_ARGS+=--disable-libcdio
-PLIST_SUB+=	LIBCDIO="@comment "
+PLIST_SUB+=	CDIO="@comment "
 .endif
 
 .if !defined(WITHOUT_OPENJPEG)
@@ -195,20 +186,20 @@ CXXFLAGS+=	-O3 -funroll-all-loops -ffast-math
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-O3 -funroll-all-loops -ffast-math||g; \
-		/LIBS/ s|-ldl||g; s|^LDFLAGS="|&$${LDFLAGS} |' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|#if DVDREAD_VERSION < 905|#if DVDREAD_VERSION < 904|' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e '/^LIBS = / s|$$| @LIBINTL@ -lz|' \
-		${WRKSRC}/tests/Makefile.in
-	@${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|' ${WRKSRC}/lib/in_smb.c
-	@${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|' \
-		${WRKSRC}/lib/pngreader.c
+	@${REINPLACE_CMD} -e \
+		's|-O3 -funroll-all-loops -ffast-math||g; \
+		 /LIBS/ s|-ldl||g; \
+		 s|^LDFLAGS="|&$${LDFLAGS} |' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		's|#if DVDREAD_VERSION < 905|#if DVDREAD_VERSION < 904|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/^LIBS = / s|$$| @LIBINTL@ -lz|' ${WRKSRC}/tests/Makefile.in
+	@${REINPLACE_CMD} -e \
+		's|malloc.h|stdlib.h|' ${WRKSRC}/lib/in_smb.c
 
-.if !defined(NOPORTDOCS)
 post-install:
-	${MKDIR} ${DOCSDIR}
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
