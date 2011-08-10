@@ -1,0 +1,5 @@
+%%SITE_PERL%%/HTML/Entities/Interpolate.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Entities/Interpolate/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Entities/Interpolate
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/HTML/Entities
+@dirrmtry %%SITE_PERL%%/HTML/Entities
