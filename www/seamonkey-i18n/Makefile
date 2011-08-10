@@ -16,7 +16,7 @@ DIST_SUBDIR=	xpi/${DISTNAME}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for SeaMonkey 2.2
 
-EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip 
+EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 USE_SEAMONKEY=	yes
 USE_XPI=	*seamonkey
