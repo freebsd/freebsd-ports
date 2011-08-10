@@ -1,8 +1,19 @@
---- About-Linux.cmake.orig	2011-08-07 14:16:30.000000000 -0700
-+++ About-Linux.cmake	2011-08-07 14:19:03.000000000 -0700
-@@ -12,16 +12,8 @@
- endif (HG_CMD STREQUAL HG_CMD-NOTFOUND)
+--- About-Linux.cmake.orig	2011-07-30 14:05:38.000000000 -0700
++++ About-Linux.cmake	2011-08-10 00:47:37.000000000 -0700
+@@ -1,27 +1,8 @@
+ # cmakefile executed within a makefile target
  
+-# we look for the hg command in this paths by order of preference
+-find_file(HG_CMD hg)
+-
+-
+-# the hg command is looked for again, at build time
+-if (HG_CMD STREQUAL HG_CMD-NOTFOUND)
+-  message(FATAL_ERROR "hg command not found!")
+-else (HG_CMD STREQUAL HG_CMD-NOTFOUND)
+-  message(STATUS "hg command found: ${HG_CMD}")
+-endif (HG_CMD STREQUAL HG_CMD-NOTFOUND)
+-
  set (OUT_FILE "${SRC_DIR}/AboutThisBuild.txt")
 -set (SHELL "/bin/bash")
 +set (SHELL "/bin/sh")

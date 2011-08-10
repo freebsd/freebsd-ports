@@ -1,6 +1,24 @@
---- CMakeLists.txt.orig	2011-07-31 19:25:33.000000000 -0700
-+++ CMakeLists.txt	2011-07-31 19:25:45.000000000 -0700
-@@ -322,9 +322,9 @@
+--- CMakeLists.txt.orig	2011-07-30 14:05:38.000000000 -0700
++++ CMakeLists.txt	2011-08-10 00:45:13.000000000 -0700
+@@ -250,17 +250,11 @@
+               -P ${CMAKE_CURRENT_SOURCE_DIR}/About-Linux.cmake
+       COMMENT "Creating the about file"
+     )
+-    find_file(HG_CMD hg)
+ 
+   endif (WIN32)
+  
+   add_dependencies(AboutFile Debug Release MinSizeRel RelWithDebInfo)
+ 
+-  if (HG_CMD STREQUAL HG_CMD-NOTFOUND)
+-    message(FATAL_ERROR "hg command not found!")
+-  else (HG_CMD STREQUAL HG_CMD-NOTFOUND)
+-    message(STATUS "hg command found: ${HG_CMD}")
+-  endif (HG_CMD STREQUAL HG_CMD-NOTFOUND)
+ 
+ endif (AUTOMATED_BUILD_SYSTEM)
+ 
+@@ -322,9 +316,9 @@
      endif (OPENMP_FOUND)
  endif (OPTION_OMP)
  
