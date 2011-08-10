@@ -5,13 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	tuxpaint
-PORTVERSION=	2008.06.30
-PORTREVISION=	2
+PORTNAME=	tuxpaint-stamps
+PORTVERSION=	2009.06.28
 CATEGORIES=	games
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stamps/${PORTVERSION}
-PKGNAMESUFFIX=	-stamps
-DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
+MASTER_SITES=	SF/tuxpaint/${PORTNAME}/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TuxPaint Stamps
@@ -20,6 +17,8 @@ RUN_DEPENDS=	tuxpaint:${PORTSDIR}/games/tuxpaint
 
 NO_BUILD=	yes
 INSTALL_TARGET=	install-all
+
+DATADIR=	${PREFIX}/share/tuxpaint
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|/usr/local|${PREFIX}|' ${WRKSRC}/${MAKEFILE}
