@@ -15,6 +15,9 @@ DISTNAME=	${PORTNAME}2-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An addressbook for the GNOME 2 desktop
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
