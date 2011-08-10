@@ -1,15 +1,17 @@
---- src/Makefile.orig	2011-02-07 11:24:18.000000000 +0300
-+++ src/Makefile	2011-02-08 00:08:10.000000000 +0300
+$FreeBSD$
+
+--- src/Makefile.orig	2011-07-08 00:22:17.000000000 +0400
++++ src/Makefile	2011-07-10 12:19:31.000000000 +0400
 @@ -56,7 +56,7 @@
  USR = /opt/local
  else
- PLUGINDIR=`gimptool-2.0 --gimpplugindir`/plug-ins
+ PLUGINDIR = `gimptool-2.0 --gimpplugindir`/plug-ins
 -USR = /usr
 +USR = /usr/X11R6
  endif
  ifeq ($(OS),MINGW32_NT-5.1)
  EXE = .exe
-@@ -101,7 +101,7 @@
+@@ -112,7 +112,7 @@
  
  # Flags to enable fast display, using XShm.
  XSHM_CFLAGS = -Dcimg_use_xshm
@@ -17,10 +19,10 @@
 +XSHM_LDFLAGS = -L/usr/X11R6/lib -lXext
  
  # Flags to enable image display, using GDI32.
- GDI32_CFLAGS = -Dcimg_display=2
-@@ -222,6 +222,14 @@
- 	$(MAKE) bashcompletion
+ GDI32_CFLAGS = -Dcimg_display=2 -Dcimg_appname=\\\"gmic\\\"
+@@ -236,6 +236,14 @@
  	$(MAKE) gimp
+ 	$(MAKE) lib
  else
 +ifeq ($(OS),FreeBSD)
 +	@echo "**"
@@ -33,25 +35,24 @@
  ifeq ($(OS),Darwin)
  	@echo "**"
  	@echo "** MacOSX configuration"
-@@ -238,9 +246,10 @@
+@@ -252,9 +260,10 @@
  	$(MAKE) gimp
  endif
  endif
 +endif
  
  gimp:
--	$(MAKE) "CFLAGS+=$(STD_GIMP_CFLAGS) $(OPT_CFLAGS)" "LDFLAGS+=$(STD_GIMP_LDFLAGS)" "STRIP_EXE=1" gmic_gimp
+-	$(MAKE) "CFLAGS=$(STD_GIMP_CFLAGS) $(OPT_CFLAGS)" "LDFLAGS+=$(STD_GIMP_LDFLAGS) $(OPT_LDFLAGS)" "STRIP_EXE=1" gmic_gimp
 +	$(MAKE) "CFLAGS+=$(STD_GIMP_CFLAGS)" "LDFLAGS+=$(STD_GIMP_LDFLAGS)" "STRIP_EXE=1" gmic_gimp
  
  lib:
- 	$(MAKE) "CFLAGS+=$(STD_LIB_CFLAGS) $(OPT_CFLAGS)" "LDFLAGS+=$(STD_LIB_LDFLAGS)" gmic_lib
-@@ -255,6 +264,9 @@
+ 	$(MAKE) "CFLAGS=$(STD_LIB_CFLAGS) $(OPT_CFLAGS)" "LDFLAGS+=$(STD_LIB_LDFLAGS)" gmic_lib
+@@ -269,6 +278,9 @@
  linux:
- 	$(MAKE) "CFLAGS+=$(STD_UNIX_CFLAGS) $(OPT_CFLAGS)" "LDFLAGS+=$(STD_UNIX_LDFLAGS)" "STRIP_EXE=1" gmic_gmic
+ 	$(MAKE) "CFLAGS=$(STD_UNIX_CFLAGS) $(OPT_CFLAGS)" "LDFLAGS=$(STD_UNIX_LDFLAGS)" "STRIP_EXE=1" gmic_gmic
  
 +freebsd:
 +	$(MAKE) "CFLAGS+=$(STD_UNIX_CFLAGS)" "LDFLAGS+=$(STD_UNIX_LDFLAGS)" "STRIP_EXE=1" gmic_gmic
 +
  custom:
- 	$(MAKE) "CFLAGS+=$(CUST_UNIX_CFLAGS) $(OPT_CFLAGS)" "LDFLAGS+=$(CUST_UNIX_LDFLAGS)" "STRIP_EXE=1" gmic_gmic
- 
+ 	$(MAKE) "CFLAGS=$(CUST_UNIX_CFLAGS) $(OPT_CFLAGS)" "LDFLAGS=$(CUST_UNIX_LDFLAGS)" "STRIP_EXE=1" gmic_gmic 
