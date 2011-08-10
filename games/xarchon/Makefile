@@ -29,4 +29,10 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|Xarchon_Evolution::||' \
 		${WRKSRC}/src/Xarchon_Genetic.hpp
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64
+.endif
+
+.include <bsd.port.post.mk>
