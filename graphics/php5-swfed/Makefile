@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	swfed
-PORTVERSION=	0.45
+PORTVERSION=	0.46
 CATEGORIES=	graphics www
 MASTER_SITES=	SFJP
-MASTER_SITE_SUBDIR=	${PORTNAME}/52720
+MASTER_SITE_SUBDIR=	${PORTNAME}/52887
 PKGNAMEPREFIX=	php5-
 
 MAINTAINER=	yoya@awm.jp
@@ -46,7 +46,7 @@ post-install:
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 
 x-generate-plist:
-	${FIND} ${WWWDIR} -type f | ${SORT} | ${SED} -e 's,${WWWDIR},%%WWWDIR%%,g' >> pkg-plist.new
+	${FIND} ${WWWDIR} -type f | ${SORT} | ${SED} -e 's,${WWWDIR},%%WWWDIR%%,g' > pkg-plist.new
 	${FIND} ${WWWDIR} -type d -depth | ${SORT} -r | ${SED} -e 's,${WWWDIR},@dirrm %%WWWDIR%%,g' >> pkg-plist.new
 	${ECHO} '@exec chown -R %%WWWOWN%%:%%WWWGRP%% %D/%%WWWDIR%%' >> pkg-plist.new
 
