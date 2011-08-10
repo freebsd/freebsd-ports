@@ -1,22 +1,36 @@
-%%SITE_PERL%%/Locale/Codes/Changes.pod
-%%SITE_PERL%%/Locale/Codes/Country.pm
-%%SITE_PERL%%/Locale/Codes/Currency.pm
-%%SITE_PERL%%/Locale/Codes/Language.pm
-%%SITE_PERL%%/Locale/Codes/Script.pm
 %%SITE_PERL%%/Locale/Codes.pm
 %%SITE_PERL%%/Locale/Codes.pod
+%%SITE_PERL%%/Locale/Codes/API.pod
+%%SITE_PERL%%/Locale/Codes/Changes.pod
+%%SITE_PERL%%/Locale/Codes/Constants.pm
+%%SITE_PERL%%/Locale/Codes/Constants.pod
+%%SITE_PERL%%/Locale/Codes/Country.pm
+%%SITE_PERL%%/Locale/Codes/Country.pod
+%%SITE_PERL%%/Locale/Codes/Country_Codes.pm
+%%SITE_PERL%%/Locale/Codes/Currency.pm
+%%SITE_PERL%%/Locale/Codes/Currency.pod
+%%SITE_PERL%%/Locale/Codes/Currency_Codes.pm
+%%SITE_PERL%%/Locale/Codes/LangExt.pm
+%%SITE_PERL%%/Locale/Codes/LangExt.pod
+%%SITE_PERL%%/Locale/Codes/LangExt_Codes.pm
+%%SITE_PERL%%/Locale/Codes/LangVar.pm
+%%SITE_PERL%%/Locale/Codes/LangVar.pod
+%%SITE_PERL%%/Locale/Codes/LangVar_Codes.pm
+%%SITE_PERL%%/Locale/Codes/Language.pm
+%%SITE_PERL%%/Locale/Codes/Language.pod
+%%SITE_PERL%%/Locale/Codes/Language_Codes.pm
+%%SITE_PERL%%/Locale/Codes/Script.pm
+%%SITE_PERL%%/Locale/Codes/Script.pod
+%%SITE_PERL%%/Locale/Codes/Script_Codes.pm
 %%SITE_PERL%%/Locale/Country.pm
 %%SITE_PERL%%/Locale/Country.pod
-%%SITE_PERL%%/Locale/Language.pm
-%%SITE_PERL%%/Locale/Language.pod
-%%SITE_PERL%%/Locale/Constants.pm
-%%SITE_PERL%%/Locale/Constants.pod
 %%SITE_PERL%%/Locale/Currency.pm
 %%SITE_PERL%%/Locale/Currency.pod
+%%SITE_PERL%%/Locale/Language.pm
+%%SITE_PERL%%/Locale/Language.pod
 %%SITE_PERL%%/Locale/Script.pm
 %%SITE_PERL%%/Locale/Script.pod
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Codes/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale/Codes
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Locale
 @dirrm %%SITE_PERL%%/Locale/Codes
-@dirrm %%SITE_PERL%%/Locale
