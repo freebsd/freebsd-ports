@@ -28,6 +28,9 @@ OPTIONS=	X11	"Build with X11 support"	on \
 
 .include <bsd.port.pre.mk>
 
+ONLY_FOR_ARCHS=		i386 amd64
+ONLY_FOR_ARCHS_REASON=	does not configure except on i386 amd64
+
 .if ${ARCH} == "i386" || ${ARCH} == "amd64"
  LIB_DEPENDS+=	cl:${PORTSDIR}/security/cryptlib
 .else
