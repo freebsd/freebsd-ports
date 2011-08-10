@@ -44,6 +44,10 @@ OPTIONS=	X11 "Build Boinc Manager GUI" on \
 
 .include <bsd.port.pre.mk>
 
+.if ${ARCH} == "sparc64"
+BROKEN=		Does not install on sparc64
+.endif
+
 .if !defined(WITHOUT_X11)
 USE_GL=		glut
 USE_XORG=	x11
