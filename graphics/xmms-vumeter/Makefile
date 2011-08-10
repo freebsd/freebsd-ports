@@ -9,18 +9,20 @@ PORTNAME=	vumeter
 PORTVERSION=	0.9.2
 PORTREVISION=	7
 CATEGORIES=	graphics
-MASTER_SITES=	SF/${PORTNAME}plugin/${PORTNAME}plugin/VU%20meter%20v${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME}plugin/Plugin%20for%20XMMS
 PKGNAMEPREFIX=	xmms-
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analog VUmeter plugin for XMMS
 
-BROKEN=	does not fetch
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_GNOME=	gdkpixbuf
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 DATADIR=	${PREFIX}/share/xmms/VU_Meter_skins
 
