@@ -9,23 +9,28 @@ PORTNAME=	lash
 PORTVERSION=	0.5.4
 PORTREVISION=	6
 CATEGORIES=	audio
-MASTER_SITES=	http://download.savannah.gnu.org/releases/lash/
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Session management system for JACK audio applications
 
-BROKEN=	Does not fetch
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		uuid.1:${PORTSDIR}/misc/e2fsprogs-libuuid \
 		dssialsacompat.0:${PORTSDIR}/audio/libdssialsacompat
 
+USE_GNOME=	gnomehack gtk20 libxml2
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-alsa-midi
-CFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/dssi -L${LOCALBASE}/lib
-USE_GMAKE=	yes
-USE_GNOME=	gtk20 libxml2 gnomehack
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS=	-I${LOCALBASE}/include/dssi -I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
