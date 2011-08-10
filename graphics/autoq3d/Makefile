@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	autoq3d
-DISTVERSION=	1.39
-PORTREVISION=	1
+DISTVERSION=	1.40
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/AutoQ3D%20${PORTVERSION}
 DISTNAME=	AutoQ3DCommunity${PORTVERSION:C/\./-/}qt4source
@@ -15,10 +14,14 @@ DISTNAME=	AutoQ3DCommunity${PORTVERSION:C/\./-/}qt4source
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A complete QT quick 3d model editor program
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
 USE_ZIP=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui opengl \
 		moc_build qmake_build
+MAKE_JOBS_SAFE=	yes
 
 DESKTOP_ENTRIES=	"AutoQ3D" \
 			"A complete QT quick 3d model editor program" \
@@ -34,7 +37,7 @@ post-patch:
 .endfor
 
 do-configure:
-	@cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${QMAKE} -spec ${QMAKESPEC}
+	@(cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKEFLAGS})
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/AutoQ3D ${PREFIX}/bin
