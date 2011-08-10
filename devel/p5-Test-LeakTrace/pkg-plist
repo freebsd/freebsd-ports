@@ -1,0 +1,10 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/Test/LeakTrace.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Test/LeakTrace/JA.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/Test/LeakTrace/Script.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/LeakTrace/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/LeakTrace/LeakTrace.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/LeakTrace/LeakTrace.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/LeakTrace
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/Test/LeakTrace
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/Test
