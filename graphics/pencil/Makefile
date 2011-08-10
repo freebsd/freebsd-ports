@@ -7,13 +7,15 @@
 
 PORTNAME=	pencil
 PORTVERSION=	0.4.4b
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}-planner/Pencil/${PORTVERSION}eta
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src${EXTRACT_SUFFIX}
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	Pencil - a traditional 2D animation software
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS+=	ming:${PORTSDIR}/graphics/ming \
 		png:${PORTSDIR}/graphics/png \
@@ -24,8 +26,6 @@ LIB_DEPENDS+=	ming:${PORTSDIR}/graphics/ming \
 		expat:${PORTSDIR}/textproc/expat2 \
 		pcre:${PORTSDIR}/devel/pcre \
 		drm:${PORTSDIR}/graphics/libdrm
-
-LICENSE=	GPLv2
 
 USE_ZIP=	yes
 USE_GETTEXT=	yes
