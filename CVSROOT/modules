@@ -3666,7 +3666,6 @@ fortytwo                        ports/graphics/fortytwo
 fortytwo-bdb                    ports/databases/fortytwo-bdb
 fortytwo-encore                 ports/devel/fortytwo-encore
 fossil                          ports/devel/fossil
-fossology                       ports/devel/fossology
 foswiki                         ports/www/foswiki
 foswiki-ModPerlEngineContrib    ports/www/foswiki-ModPerlEngineContrib
 foswiki-modperlenginecontrib    ports/www/foswiki-ModPerlEngineContrib
@@ -7254,6 +7253,8 @@ ko-hlatex-psfonts-uhc-extra     ports/korean/hlatex-psfonts-uhc-extra
 ko-hlatexfonts-ocf              ports/korean/hlatexfonts-ocf
 ko-hmconv                       ports/korean/hmconv
 ko-hpscat                       ports/korean/hpscat
+ko-hunspell                     ports/korean/hunspell
+ko-ibus-hangul                  ports/korean/ibus-hangul
 ko-imhangul                     ports/korean/imhangul
 ko-johabfonts                   ports/korean/johabfonts
 ko-kaistfonts                   ports/korean/kaistfonts
@@ -10954,6 +10955,7 @@ p5-BSD-Resource                 ports/devel/p5-BSD-Resource
 p5-BSD-Sysctl                   ports/sysutils/p5-BSD-Sysctl
 p5-BSD-devstat                  ports/devel/p5-BSD-devstat
 p5-BSD-stat                     ports/devel/p5-BSD-stat
+p5-BSON                         ports/databases/p5-BSON
 p5-BZ-Client                    ports/devel/p5-BZ-Client
 p5-Badger                       ports/devel/p5-Badger
 p5-Baseball-Sabermetrics        ports/games/p5-Baseball-Sabermetrics
@@ -10982,6 +10984,7 @@ p5-Bloom-Filter                 ports/textproc/p5-Bloom-Filter
 p5-Bot-BasicBot                 ports/irc/p5-Bot-BasicBot
 p5-Bot-Training                 ports/misc/p5-Bot-Training
 p5-Bot-Training-MegaHAL         ports/misc/p5-Bot-Training-MegaHAL
+p5-Bot-Training-StarCraft       ports/misc/p5-Bot-Training-StarCraft
 p5-Boulder                      ports/converters/p5-Boulder
 p5-Brackup                      ports/sysutils/p5-Brackup
 p5-Bread-Board                  ports/devel/p5-Bread-Board
@@ -15242,6 +15245,7 @@ p5-boolean                      ports/devel/p5-boolean
 p5-bot-basicbot                 ports/irc/p5-Bot-BasicBot
 p5-bot-training                 ports/misc/p5-Bot-Training
 p5-bot-training-megahal         ports/misc/p5-Bot-Training-MegaHAL
+p5-bot-training-starcraft       ports/misc/p5-Bot-Training-StarCraft
 p5-boulder                      ports/converters/p5-Boulder
 p5-brackup                      ports/sysutils/p5-Brackup
 p5-bread-board                  ports/devel/p5-Bread-Board
@@ -15253,6 +15257,7 @@ p5-bsd-resource                 ports/devel/p5-BSD-Resource
 p5-bsd-stat                     ports/devel/p5-BSD-stat
 p5-bsd-sysctl                   ports/sysutils/p5-BSD-Sysctl
 p5-bsdconv                      ports/converters/p5-bsdconv
+p5-bson                         ports/databases/p5-BSON
 p5-bundle-perl6                 ports/devel/p5-Bundle-Perl6
 p5-bundle-slash                 ports/www/p5-Bundle-Slash
 p5-bundle-sledge                ports/www/p5-Bundle-Sledge
@@ -22313,6 +22318,7 @@ py-zope.component               ports/devel/py-zope.component
 py-zope.configuration           ports/devel/py-zope.configuration
 py-zope.deprecation             ports/devel/py-zope.deprecation
 py-zope.exceptions              ports/devel/py-zope.exceptions
+py-zope.i18n                    ports/devel/py-zope.i18n
 py-zope.i18nmessageid           ports/textproc/py-zope.i18nmessageid
 py-zope.schema                  ports/devel/py-zope.schema
 py-zopeInterface                ports/devel/py-zopeInterface
