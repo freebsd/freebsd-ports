@@ -34,6 +34,53 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="2c12ae0c-c38d-11e0-8eb7-001b2134ef46">
+    <topic>linux-flashplugin -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>linux-flashplugin</name>
+	<range><le>9.0r289</le></range>
+      </package>
+      <package>
+	<name>linux-f10-flashplugin</name>
+	<range><lt>10.3r183.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Adobe Product Security Incident Response Team reports:</p>
+	<blockquote cite="https://www.adobe.com/support/security/bulletins/apsb11-21.html">
+	  <p>Critical vulnerabilities have been identified in Adobe Flash
+	    Player 10.3.181.36 and earlier versions for Windows,
+	    Macintosh, Linux and Solaris, and Adobe Flash Player
+	    10.3.185.25 and earlier versions for Android.  These
+	    vulnerabilities could cause a crash and potentially allow
+	    an attacker to take control of the affected system.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-2130</cvename>
+      <cvename>CVE-2011-2134</cvename>
+      <cvename>CVE-2011-2135</cvename>
+      <cvename>CVE-2011-2136</cvename>
+      <cvename>CVE-2011-2137</cvename>
+      <cvename>CVE-2011-2138</cvename>
+      <cvename>CVE-2011-2139</cvename>
+      <cvename>CVE-2011-2140</cvename>
+      <cvename>CVE-2011-2414</cvename>
+      <cvename>CVE-2011-2415</cvename>
+      <cvename>CVE-2011-2416</cvename>
+      <cvename>CVE-2011-2417</cvename>
+      <cvename>CVE-2011-2425</cvename>
+      <url>https://www.adobe.com/support/security/bulletins/apsb11-21.html</url>
+    </references>
+    <dates>
+      <discovery>2011-05-13</discovery>
+      <entry>2011-08-10</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="30cb4522-b94d-11e0-8182-485d60cb5385">
     <topic>libsoup -- unintentionally allow access to entire local filesystem</topic>
     <affects>
