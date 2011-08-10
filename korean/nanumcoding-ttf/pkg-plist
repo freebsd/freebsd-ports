@@ -1,7 +1,0 @@
-%%FONTSDIR%%/NanumGothicCoding-Bold.ttf
-%%FONTSDIR%%/NanumGothicCoding.ttf
-%%FONTSDIR%%/fonts.dir
-%%FONTSDIR%%/fonts.scale
-@dirrm %%FONTSDIR%%
-@exec fc-cache -s %D/%%FONTSDIR%% 2>/dev/null || true
-@unexec fc-cache -s %D/%%FONTSDIR%% 2>/dev/null || true
