@@ -12,6 +12,7 @@ bin/getleft
 %%DATADIR%%/Languages/menus.pl
 %%DATADIR%%/Languages/menus.pt
 %%DATADIR%%/Languages/menus.ru
+%%DATADIR%%/Languages/menus.sk
 %%DATADIR%%/Languages/menus.tr
 %%DATADIR%%/Languages/menus.zht
 %%DATADIR%%/Languages/supported
@@ -78,6 +79,7 @@ bin/getleft
 %%DATADIR%%/images/Crystal/update.png
 %%DATADIR%%/images/Crystal/url.gif
 %%DATADIR%%/images/Crystal/url.png
+%%DATADIR%%/images/Shortcuts/Getleft.desktop
 %%DATADIR%%/images/Shortcuts/Getleft.desktop.tpl
 %%DATADIR%%/images/Shortcuts/Getleft128x128.png
 %%DATADIR%%/images/Shortcuts/Getleft16x16.png
@@ -101,6 +103,7 @@ bin/getleft
 %%DATADIR%%/images/editpaste.gif
 %%DATADIR%%/images/editpaste.png
 %%DATADIR%%/images/get.gif
+%%DATADIR%%/images/get.png
 %%DATADIR%%/images/icon.ico
 %%DATADIR%%/images/pwrdLogo150.gif
 %%DATADIR%%/scripts/Ayuda.tcl
@@ -117,29 +120,40 @@ bin/getleft
 %%DATADIR%%/scripts/Ventana.tcl
 %%DATADIR%%/scripts/balloon.tcl
 %%DATADIR%%/scripts/delay.tcl
+%%DATADIR%%/scripts/dialog/dialog.tcl
+%%DATADIR%%/scripts/dialog/icons.tcl
+%%DATADIR%%/scripts/dialog/pkgIndex.tcl
 %%DATADIR%%/scripts/getLog.tcl
 %%DATADIR%%/scripts/getWizard.tcl
-%%DATADIR%%/scripts/help.tcl
+%%DATADIR%%/scripts/help1.5/help.tcl
+%%DATADIR%%/scripts/help1.5/pkgIndex.tcl
+%%DATADIR%%/scripts/keynav1.0/keynav.tcl
+%%DATADIR%%/scripts/keynav1.0/pkgIndex.tcl
 %%DATADIR%%/scripts/mainWin.tcl
 %%DATADIR%%/scripts/menuEntry.tcl
-%%DATADIR%%/scripts/tablelist4.6/scripts/mwutil.tcl
-%%DATADIR%%/scripts/tablelist4.6/scripts/repair.tcl
-%%DATADIR%%/scripts/tablelist4.6/scripts/tablelistBind.tcl
-%%DATADIR%%/scripts/tablelist4.6/scripts/tablelistBitmaps.tcl
-%%DATADIR%%/scripts/tablelist4.6/scripts/tablelistConfig.tcl
-%%DATADIR%%/scripts/tablelist4.6/scripts/tablelistEdit.tcl
-%%DATADIR%%/scripts/tablelist4.6/scripts/tablelistMove.tcl
-%%DATADIR%%/scripts/tablelist4.6/scripts/tablelistSort.tcl
-%%DATADIR%%/scripts/tablelist4.6/scripts/tablelistThemes.tcl
-%%DATADIR%%/scripts/tablelist4.6/scripts/tablelistUtil.tcl
-%%DATADIR%%/scripts/tablelist4.6/scripts/tablelistWidget.tcl
-%%DATADIR%%/scripts/tablelist4.6/scripts/tclIndex
-%%DATADIR%%/scripts/tablelist4.6/tablelist.tcl
-%%DATADIR%%/scripts/tablelist4.6/tablelistPublic.tcl
-%%DATADIR%%/scripts/tablelist4.6/tablelist_tile.tcl
-%%DATADIR%%/scripts/tkwizard.tcl
-@dirrm %%DATADIR%%/scripts/tablelist4.6/scripts
-@dirrm %%DATADIR%%/scripts/tablelist4.6
+%%DATADIR%%/scripts/tablelist4.8/pkgIndex.tcl
+%%DATADIR%%/scripts/tablelist4.8/scripts/mwutil.tcl
+%%DATADIR%%/scripts/tablelist4.8/scripts/tablelistBind.tcl
+%%DATADIR%%/scripts/tablelist4.8/scripts/tablelistBitmaps.tcl
+%%DATADIR%%/scripts/tablelist4.8/scripts/tablelistConfig.tcl
+%%DATADIR%%/scripts/tablelist4.8/scripts/tablelistEdit.tcl
+%%DATADIR%%/scripts/tablelist4.8/scripts/tablelistMove.tcl
+%%DATADIR%%/scripts/tablelist4.8/scripts/tablelistSort.tcl
+%%DATADIR%%/scripts/tablelist4.8/scripts/tablelistThemes.tcl
+%%DATADIR%%/scripts/tablelist4.8/scripts/tablelistUtil.tcl
+%%DATADIR%%/scripts/tablelist4.8/scripts/tablelistWidget.tcl
+%%DATADIR%%/scripts/tablelist4.8/scripts/tclIndex
+%%DATADIR%%/scripts/tablelist4.8/tablelist.tcl
+%%DATADIR%%/scripts/tablelist4.8/tablelistPublic.tcl
+%%DATADIR%%/scripts/tablelist4.8/tablelist_tile.tcl
+%%DATADIR%%/scripts/tkwizard/pkgIndex.tcl
+%%DATADIR%%/scripts/tkwizard/tkwizard.tcl
+@dirrm %%DATADIR%%/scripts/tkwizard
+@dirrm %%DATADIR%%/scripts/tablelist4.8/scripts
+@dirrm %%DATADIR%%/scripts/tablelist4.8
+@dirrm %%DATADIR%%/scripts/keynav1.0
+@dirrm %%DATADIR%%/scripts/help1.5
+@dirrm %%DATADIR%%/scripts/dialog
 @dirrm %%DATADIR%%/scripts
 @dirrm %%DATADIR%%/images/Shortcuts/xdg
 @dirrm %%DATADIR%%/images/Shortcuts
