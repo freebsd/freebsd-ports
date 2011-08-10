@@ -9,6 +9,7 @@
 
 PORTNAME=	freeradius
 DISTVERSION=	2.1.11
+PORTREVISION=	1
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -20,6 +21,8 @@ DISTNAME=	freeradius-server-${DISTVERSION}
 
 MAINTAINER=	zi@FreeBSD.org
 COMMENT=	A free RADIUS server implementation
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
 
@@ -59,8 +62,6 @@ OPTIONS=	USER		"Run as user freeradius, group freeradius" on \
 		UDPFROMTO	"Compile in UDPFROMTO support" off
 
 .include <bsd.port.options.mk>
-
-LICENSE=	GPLv2
 
 # Default requirements for rc script
 _REQUIRE=	NETWORKING SERVERS
