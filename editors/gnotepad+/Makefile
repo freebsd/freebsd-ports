@@ -23,6 +23,7 @@ LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
 
 USE_XORG=	xpm
+WANT_GNOME=	yes
 USE_GNOME=	gnomeprefix gtk12
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
