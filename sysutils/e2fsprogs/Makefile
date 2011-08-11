@@ -103,9 +103,6 @@ post-build:
 	@${ECHO_CMD} '===>  Running e2fsprogs self-test suite'
 	cd ${WRKSRC}/tests && ${GMAKE} check \
 	    || { head -n30000 ${WRKSRC}/tests/*.failed 2>/dev/null ; exit 1 ; }
-# Now patch mke2fs.conf to default to 128 byte inodes - we need to do this
-# after self tests since they assume 256 byte inodes.
-	${PATCH} -N -d ${WRKSRC} <${FILESDIR}/diff-inode_size
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/fsck_ext2fs ${PREFIX}/sbin/
