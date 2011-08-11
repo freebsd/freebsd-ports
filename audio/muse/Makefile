@@ -21,6 +21,7 @@ LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug --disable-lubrify --disable-rpath
