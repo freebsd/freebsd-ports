@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tortoisehg
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.2
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
 
@@ -68,7 +68,9 @@ post-patch:
 
 post-install:
 	${MKDIR} ${PREFIX}/share/tortoisehg
+	${MKDIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/contrib/mergetools.rc ${PREFIX}/share/tortoisehg/
+	${INSTALL_DATA} ${WRKSRC}/contrib/tortoisehg.desktop ${PREFIX}/share/applications/
 
 	@${ECHO_MSG}
 	@${CAT} pkg-message
