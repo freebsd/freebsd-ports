@@ -1,7 +1,7 @@
 GRAMPS (Genealogical Research and Analysis Management Programming System)
 is an open source genealogy program.
-To put it shortly, it allows you to store, edit, and research genealogical 
-data using your computer. Its functionality is somewhat common to other 
+To put it shortly, it allows you to store, edit, and research genealogical
+data using your computer. Its functionality is somewhat common to other
 genealogical programs. However, GRAMPS offers some unique features.
 
 It is written in Python, using the GTK/GNOME interface.
