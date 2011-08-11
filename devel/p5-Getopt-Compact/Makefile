@@ -12,7 +12,12 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	getopt processing in a compact statement with both long and short options, and usage functionality
+COMMENT=	Getopt processing in a compact statement with long and short options
+
+RUN_DEPENDS=	${SITE_PERL}/Getopt/Long.pm:${PORTSDIR}/devel/p5-Getopt-Long \
+		${SITE_PERL}/Text/Table.pm:${PORTSDIR}/textproc/p5-Text-Table \
+		${SITE_PERL}/Env/Path.pm:${PORTSDIR}/devel/p5-Env-Path
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
