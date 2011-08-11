@@ -18,11 +18,11 @@ fi
 if [ "$TARGET" = POST-INSTALL ]; then
 	for i in /var/db/aox/jail /var/db/aox/messages; do
 		${MKDIR} -m 700 -p ${i}
-		${CHOWN} ${AOXUSER}:${AOXGROUP} ${i}
 	done
+	${CHOWN} root:wheel /var/db/aox/jail
 	${CHMOD} 700 /var/db/aox
 	${MKDIR} /var/run/aox
-	${CHOWN} ${AOXUSER}:${AOXGROUP} /var/db/aox /var/run/aox
+	${CHOWN} ${AOXUSER}:${AOXGROUP} /var/db/aox /var/run/aox /var/db/aox/messages
 fi
 
 exit 0
