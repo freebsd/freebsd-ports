@@ -9,6 +9,7 @@ include/freetype2/freetype/ftadvanc.h
 include/freetype2/freetype/ftbbox.h
 include/freetype2/freetype/ftbdf.h
 include/freetype2/freetype/ftbitmap.h
+include/freetype2/freetype/ftbzip2.h
 include/freetype2/freetype/ftcache.h
 include/freetype2/freetype/ftchapters.h
 include/freetype2/freetype/ftcid.h
