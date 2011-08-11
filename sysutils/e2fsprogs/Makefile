@@ -77,11 +77,12 @@ post-build:
 		LIBINTL=${libintl}
 # Regression check: avoid a port (not upstream!) regression from 1.40.5,
 # check that e2fsck isn't dynalinked against anything but libc.so:
-	@${ECHO_CMD} -n "===>  checking that e2fsck depends on no shared objects beyond libc.so: "
+	@${ECHO_CMD} -n "===>  checking that e2fsck depends on no shared objects beyond libc and libgcc: "
 	@a="$$(ldd ${WRKSRC}/e2fsck/e2fsck 2>/dev/null \
 	    | ${GREP} -v 'not a dynamic executable' \
 	    | ${GREP} '=>' \
 	    | ${AWK}  '{print $$3;}' \
+	    | ${EGREP} -v '^/lib/libgcc(_s)?\.so\.' \
 	    | ${GREP} -v '^/lib/libc\.so\.' || :)"; \
 	if test "x$$a" = "x" ; then echo 'PASS' ; else \
 	    echo 'FAIL' ; echo '===>  e2fsck depends on:' ; echo "$$a" ; exit 1 ; fi
