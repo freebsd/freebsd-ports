@@ -23,6 +23,10 @@ RUN_DEPENDS=	abuse.sdl:${PORTSDIR}/games/abuse_sdl
 
 NO_BUILD=	YES
 
+BROKEN=		conflicts with run dependency
+DEPRECATED=	BROKEN after games/abuse_sdl update
+EXPIRATION_DATE=	2011-09-11
+
 do-configure:
 	${SED} -e 's,%%DATADIR%%,${DATADIR},' \
 		${FILESDIR}/abuse.sh >${WRKDIR}/abuse
