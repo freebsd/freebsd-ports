@@ -36,6 +36,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/readentry.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/readentry.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/readentry.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/sessiontrack.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/sessiontrack.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/sessiontrack.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/simple.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/simple.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ldap/controls/simple.pyo
