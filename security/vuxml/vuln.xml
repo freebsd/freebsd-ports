@@ -34,6 +34,65 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="304409c3-c3ef-11e0-8aa5-485d60cb5385">
+    <topic>libXfont -- possible local privilege escalation</topic>
+    <affects>
+      <package>
+	<name>libXfont</name>
+	<range><lt>1.4.4,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Tomas Hoger reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=725760">
+	  <p>The compress/ LZW decompress implentation does notcorrectly handle
+	     compressed streams that contain code words that were not yet added
+	     to the decompression table. This may lead to arbitrary memory 
+	     corruption. Successfull exploitation may possible lead to a local
+	     privilege escalation.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-2895</cvename>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=725760</url>
+    </references>
+    <dates>
+      <discovery>2011-07-26</discovery>
+      <entry>2011-08-11</entry>
+    </dates>
+  </vuln>
+
+  <vuln vid="5d374b01-c3ee-11e0-8aa5-485d60cb5385">
+    <topic>freetype2 -- execute arbitrary code or cause denial of service</topic>
+    <affects>
+      <package>
+	<name>freetype2</name>
+	<range><lt>2.4.6</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Vincent Danen reports:</p>
+	<blockquote cite="https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2011-0226">
+	  <p>Due to an error within the t1_decoder_parse_charstrings() function
+	     (src/psaux/t1decode.c) and can be exploited to corrupt memory by 
+	     tricking a user into processing a specially-crafted postscript 
+	     type1 font in an application that uses the freetype library.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0226</cvename>
+      <url>https://bugzilla.redhat.com/show_bug.cgi?id=CVE-2011-0226</url>
+    </references>
+    <dates>
+      <discovery>2011-07-19</discovery>
+      <entry>2011-08-11</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2c12ae0c-c38d-11e0-8eb7-001b2134ef46">
     <topic>linux-flashplugin -- multiple vulnerabilities</topic>
     <affects>
