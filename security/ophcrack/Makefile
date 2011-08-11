@@ -13,6 +13,8 @@ MASTER_SITES=	SF
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Windows password cracker based on rainbow tables
 
+LICENSE=	GPLv2
+
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -22,7 +24,7 @@ PLIST_FILES=	bin/ophcrack
 PORTDOCS=	*
 
 OPTIONS=	GUI	"Build GUI frontend (Qt4)"		on \
-		GRAPH	"Enable graph rendering with Qwt"	off \
+		GRAPH	"Enable graph rendering with Qwt"	on \
 		DEBUG	"Make debug build"			off
 
 .include <bsd.port.options.mk>
@@ -34,7 +36,6 @@ QT_COMPONENTS=	moc_build qmake_build rcc_build uic_build corelib gui
 CONFIGURE_ARGS+=	--disable-gui
 .endif
 
-# Enable with care, will pull Qt Designer by default, which is pretty heavy
 .if defined(WITH_GRAPH)
 LIB_DEPENDS=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5
 .else
