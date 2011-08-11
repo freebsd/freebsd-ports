@@ -22,6 +22,7 @@ BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 USE_XORG=	x11 ice xtst xaw xproto xext
+WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include"
