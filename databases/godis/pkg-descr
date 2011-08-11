@@ -1,0 +1,4 @@
+Redis client for Go. It supports all Redis commands and common features such
+as pipelines and pubsub.
+
+WWW: https://github.com/simonz05/godis
