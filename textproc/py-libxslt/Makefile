@@ -17,7 +17,7 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-USE_GNOME=	gnomehack lthack gnometarget libxslt
+USE_GNOME=	gnomehack lthack libxslt
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \

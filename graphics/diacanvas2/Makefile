@@ -16,7 +16,7 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A general drawing canvas from dia dialog editor
 
-USE_GNOME=	gnomehack gnometarget pygnome2
+USE_GNOME=	gnomehack pygnome2
 USE_PYTHON=	2.2+
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

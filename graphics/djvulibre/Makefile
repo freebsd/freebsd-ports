@@ -20,7 +20,7 @@ LIB_DEPENDS+=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		djvulibre.24:${PORTSDIR}/graphics/djvulibre-nox11
 
 USE_ICONV=	yes
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	JPEG_CFLAGS="-I${LOCALBASE}/include" \
 		JPEG_LIBS="-L${LOCALBASE}/lib -ljpeg" \

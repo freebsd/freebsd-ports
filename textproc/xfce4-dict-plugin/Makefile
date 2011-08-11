@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
+USE_GNOME=	gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv panel
 MAN1=		xfce4-dict.1
 

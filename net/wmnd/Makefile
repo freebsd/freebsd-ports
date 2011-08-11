@@ -14,7 +14,6 @@ MASTER_SITE_SUBDIR=	distfiles
 MAINTAINER=	garga@FreeBSD.org
 COMMENT=	Improved network monitoring dock app (with tons of features)
 
-USE_GNOME=	gnometarget
 USE_XORG=	ice sm x11 xext xpm
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

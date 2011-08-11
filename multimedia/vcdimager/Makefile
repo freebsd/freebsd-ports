@@ -23,7 +23,7 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget gnomehack pkgconfig lthack
+USE_GNOME=	gnomehack pkgconfig lthack
 CONFIGURE_ENV=	CPPFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 

@@ -15,7 +15,7 @@ MAINTAINER=	sem@FreeBSD.org
 COMMENT=	Generator Tools for Coding SOAP/XML Web Services in C and C++
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack
 MAKE_JOBS_UNSAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-2.7

@@ -17,7 +17,7 @@ COMMENT=	A graphical frontend to mtools
 
 RUN_DEPENDS=	mtools:${PORTSDIR}/emulators/mtools
 
-USE_GNOME=	gnomehack gnometarget gtk12
+USE_GNOME=	gnomehack gtk12
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

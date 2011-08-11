@@ -14,7 +14,6 @@ MASTER_SITES=	http://icon-theme.freedesktop.org/releases/
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A high-color icon theme shell from the FreeDesktop project
 
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 
 ICON_DIR?=	share/icons/hicolor

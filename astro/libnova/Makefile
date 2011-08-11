@@ -14,7 +14,7 @@ MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Astronomical Calculation Library
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnometarget lthack
+USE_GNOME=	lthack
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

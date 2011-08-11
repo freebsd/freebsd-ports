@@ -16,7 +16,7 @@ COMMENT=	GNU diversion wherein Scheme-coded robots explore a world
 
 LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
 
-USE_GNOME=	gnometarget vte
+USE_GNOME=	vte
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 

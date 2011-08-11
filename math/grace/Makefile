@@ -30,7 +30,6 @@ LIB_DEPENDS=	t1:${PORTSDIR}/devel/t1lib		\
 		Xbae.4:${PORTSDIR}/x11-toolkits/xbae	\
 		XmHTML.1:${PORTSDIR}/x11-toolkits/xmhtml
 
-USE_GNOME=	gnometarget
 USE_MOTIF=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -23,7 +23,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 
 USE_AUTOTOOLS=	libtool
 USE_SDL=	image sdl
-USE_GNOME=	gnometarget lthack
+USE_GNOME=	lthack
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

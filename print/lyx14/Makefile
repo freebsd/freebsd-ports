@@ -29,7 +29,7 @@ OPTIONS=	QT	"Use Qt (instead of XForms)"	${QT_PRESENT}	\
 		ISPELL	"Depend on ISPELL as well"	off
 ALL_TARGET=	all check
 USE_BZIP2=	yes
-USE_GNOME=	gnometarget lthack
+USE_GNOME=	lthack
 USE_PERL5=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes

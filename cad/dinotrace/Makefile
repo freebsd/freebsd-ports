@@ -17,7 +17,6 @@ COMMENT=	A graphical signal trace waveform viewer
 
 OPTIONS=	EMACS "Install Emacs supplimentary files" on
 
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 USE_MOTIF=	yes
 USE_PERL5_BUILD=	yes

@@ -17,7 +17,7 @@ COMMENT=	An OpenGL extension to GTK
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20
+USE_GNOME=	gnomehack gnomeprefix gtk20
 USE_GL=		yes
 USE_XORG=	xt
 USE_GMAKE=	yes

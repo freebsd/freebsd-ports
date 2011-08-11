@@ -19,7 +19,7 @@ COMMENT=	Gettext catalogs (.po files) editor
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 
-USE_GNOME=	gnometarget pkgconfig
+USE_GNOME=	pkgconfig
 USE_WX=		2.8+
 WX_CONF_ARGS=	absolute
 WX_UNICODE=	yes

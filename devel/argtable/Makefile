@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/./-/}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An ANSI C library for parsing GNU style command line arguments
 
-USE_GNOME=	gnometarget
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 

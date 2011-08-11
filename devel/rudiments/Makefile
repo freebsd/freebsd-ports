@@ -13,7 +13,7 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A utility C++ class library for daemons, clients, servers and more
 
-USE_GNOME=	gnometarget pkgconfig
+USE_GNOME=	pkgconfig
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

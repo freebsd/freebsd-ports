@@ -21,7 +21,6 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget
 USE_PERL5_BUILD=yes
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure Watchdog/configure

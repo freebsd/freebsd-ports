@@ -18,7 +18,7 @@ LIB_DEPENDS+=	synce.0:${PORTSDIR}/palm/synce-libsynce
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 USE_ICONV=	yes
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-libiconv="${LOCALBASE}" \
 			--with-libsynce="${LOCALBASE}"

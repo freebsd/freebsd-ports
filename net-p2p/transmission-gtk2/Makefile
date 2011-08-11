@@ -22,7 +22,7 @@ MASTERDIR=	${.CURDIR}/../transmission-cli
 PLIST=		${.CURDIR}/pkg-plist
 SLAVEPORT=	gtk2
 
-USE_GNOME=	gnometarget gnomehack gtk20 desktopfileutils intlhack
+USE_GNOME=	gnomehack gtk20 desktopfileutils intlhack
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 

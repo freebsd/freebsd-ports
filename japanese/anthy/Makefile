@@ -19,7 +19,7 @@ COMMENT=	Another kana-kanji conversion system
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnometarget lthack pkgconfig
+USE_GNOME=	lthack pkgconfig
 
 DOCSDIR=	share/doc/ja/anthy
 ELISPDIR=	share/emacs/site-lisp/anthy

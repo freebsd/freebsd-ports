@@ -21,7 +21,7 @@ CONFLICTS=	gimp-print-[0-9]*
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget gtk20
+USE_GNOME=	gnomehack gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=--with-gimp=no --with-gimp2=no

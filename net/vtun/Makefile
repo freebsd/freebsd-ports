@@ -20,7 +20,6 @@ MAN5=		vtund.conf.5
 MAN8=		vtund.8
 MLINKS=		vtund.8 vtun.8
 
-USE_GNOME=	gnometarget
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--localstatedir=/var \

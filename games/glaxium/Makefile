@@ -17,7 +17,6 @@ COMMENT=	An OpenGL based space-ship "shoot-em-up" game
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 
-USE_GNOME=	gnometarget
 USE_SDL=	sdl mixer
 USE_GL=		glut
 USE_GMAKE=	yes

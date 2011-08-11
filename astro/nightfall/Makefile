@@ -18,7 +18,7 @@ OPTIONS=	GNOMEUI "Enable LibGnomeUI support" off \
 		PGPLOT "Enable PGPLOT support" on \
 		OPENGL "Enable OpenGL support" on
 
-USE_GNOME=	gnomehack gnomehier gnometarget gtk20
+USE_GNOME=	gnomehack gnomehier gtk20
 USE_PERL5=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

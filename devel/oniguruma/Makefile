@@ -23,7 +23,6 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_LATEST_LINK=	yes
 CONFLICTS=	oniguruma-4.*
 
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 DOCS=		HISTORY README doc/*
 

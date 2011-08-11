@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 USE_EFL=	eet evas ecore embryo libtool_hack librt_hack
 USE_EFL_EVAS_LOADERS=	eet jpeg png
 USE_EFL_ECORE=	evas file imf imf_evas
-USE_GNOME=	gnomehack pkgconfig gnometarget
+USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS+=	--without-vim

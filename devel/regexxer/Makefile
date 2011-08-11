@@ -21,7 +21,7 @@ LIB_DEPENDS=		gconfmm-2.6:${PORTSDIR}/devel/gconfmm26 \
 USE_GETTEXT=		yes
 GNU_CONFIGURE=		yes
 USE_GMAKE=		yes
-USE_GNOME=		gnomehack gnomeprefix gnometarget intltool intlhack
+USE_GNOME=		gnomehack gnomeprefix intltool intlhack
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 

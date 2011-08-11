@@ -19,7 +19,7 @@ LIB_DEPENDS=	ogg.7:${PORTSDIR}/audio/libogg
 
 CONFLICTS=	speex-devel-[0-9]*
 
-USE_GNOME=	gnomehack gnometarget ltverhack
+USE_GNOME=	gnomehack ltverhack
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

@@ -19,7 +19,6 @@ COMMENT=	A utility to retrieve information about installed libraries
 USE_CSTD=	gnu89
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget
 
 MAN1=		pkg-config.1
 

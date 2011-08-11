@@ -27,7 +27,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 CONFLICTS=	wesnoth-[0-9]*
 
 USE_SDL=	image mixer net ttf
-USE_GNOME=	gnometarget pango
+USE_GNOME=	pango
 MAKE_JOBS_SAFE=	yes
 USE_BZIP2=	yes
 USE_CMAKE=	yes

@@ -16,7 +16,6 @@ COMMENT=	A set of services for ircu P10 protocol networks
 OPTIONS=	PROTOCOL_BAHAMUT "Enables Bahamut protocol (P10 is default)" "on" \
 		DEBUG "Enables debug mode" "off"
 
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-getopt
 

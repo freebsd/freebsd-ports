@@ -15,7 +15,7 @@ MASTER_SITES=	http://transcalc.sourceforge.net/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A analysis and synthesis tool for RF and microwave transmission lines
 
-USE_GNOME=	gnometarget gtk20
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
 MAN1=	transcalc.1

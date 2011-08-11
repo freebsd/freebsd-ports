@@ -24,7 +24,7 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 CONFLICTS=	gnome-commander-[0-9]*
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomedocutils gnomehack gnomeprefix gnometarget intlhack libgnomeui
+USE_GNOME=	gnomedocutils gnomehack gnomeprefix intlhack libgnomeui
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool autoconf:env aclocal:env automake:env

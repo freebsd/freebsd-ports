@@ -15,7 +15,7 @@ MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - GTK+ Frontend
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnometarget gtk20
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug

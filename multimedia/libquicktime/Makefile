@@ -22,7 +22,7 @@ LICENSE=	LGPL21
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_LDCONFIG=	yes
-USE_GNOME=	gnometarget gnomehack pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes

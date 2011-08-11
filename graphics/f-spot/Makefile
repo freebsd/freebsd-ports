@@ -30,7 +30,7 @@ RUN_DEPENDS=	dbus-daemon:${PORTSDIR}/devel/dbus \
 
 USE_BZIP2=	yes
 USE_SQLITE=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack gnomedesktopsharp20
+USE_GNOME=	gnomehack gnomeprefix intlhack gnomedesktopsharp20
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

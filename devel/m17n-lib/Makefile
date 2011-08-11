@@ -26,7 +26,7 @@ RUN_DEPENDS=	m17n-db>=1.6.2:${PORTSDIR}/devel/m17n-db
 MAKE_JOBS_UNSAFE=	yes
 
 USE_XORG=	ice sm x11 xaw xft xt
-USE_GNOME=	gnometarget libxml2 pkgconfig
+USE_GNOME=	libxml2 pkgconfig
 USE_AUTOTOOLS=	autoconf libtool
 USE_LDCONFIG=	yes
 

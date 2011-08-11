@@ -19,7 +19,7 @@ LIB_DEPENDS=	qalculate.5:${PORTSDIR}/math/libqalculate
 RUN_DEPENDS=	gnuplot:${PORTSDIR}/math/gnuplot \
 		wget:${PORTSDIR}/ftp/wget
 
-USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libglade2 libgnome
+USE_GNOME=	gnomehack gnomeprefix intlhack libglade2 libgnome
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

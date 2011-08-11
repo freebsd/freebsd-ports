@@ -21,7 +21,7 @@ DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	ecore embryo edje libtool_hack librt_hack modarch_hack
-USE_GNOME=	gnomehack pkgconfig gnometarget
+USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 

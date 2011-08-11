@@ -21,7 +21,7 @@ RUN_DEPENDS=	stratagus:${PORTSDIR}/games/stratagus
 LICENSE=	GPLv2
 NOT_FOR_ARCHS=	sparc64
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 gnomehack gnometarget
+USE_GNOME=	gtk20 gnomehack
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 SUB_FILES=	${PORTNAME} pkg-message

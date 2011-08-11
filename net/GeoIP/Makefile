@@ -17,7 +17,6 @@ COMMENT=	Find the country that any IP address or hostname originates from
 CONFIGURE_ARGS=	CC="${CC}" PATH="${PATH}" \
 			CFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 
-USE_GNOME=	gnometarget
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 

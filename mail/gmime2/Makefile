@@ -20,7 +20,7 @@ SLAVEDIRS=	mail/gmime2-sharp
 
 USE_ICONV=	yes
 USE_GMAKE=	yes
-USE_GNOME?=	gnomehack gnometarget glib20
+USE_GNOME?=	gnomehack glib20
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS?=	--with-libiconv=${LOCALBASE} \

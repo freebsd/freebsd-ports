@@ -17,7 +17,7 @@ DISTFILES=	${DISTNAME}.tar.gz \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A simplistic GTK+ 2.x theme engine
 
-USE_GNOME=	gnomehack gnometarget gtk20
+USE_GNOME=	gnomehack gtk20
 USE_AUTOTOOLS=	libtool
 
 THEME=		cleanice-theme-1.2.7

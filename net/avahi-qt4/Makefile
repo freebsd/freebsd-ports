@@ -21,7 +21,7 @@ DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
 AVAHI_SLAVE=	qt4
-USE_GNOME=	gnomehack gnometarget ltverhack intltool
+USE_GNOME=	gnomehack ltverhack intltool
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib moc_build
 AVAHI_PKGCONFIG=	avahi-qt4.pc

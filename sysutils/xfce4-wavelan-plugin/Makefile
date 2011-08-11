@@ -21,7 +21,7 @@ LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig
+USE_GNOME=	gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libutil libgui panel
 
 post-patch:

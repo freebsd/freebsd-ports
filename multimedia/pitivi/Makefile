@@ -19,7 +19,7 @@ RUN_DEPENDS=	py*-zopeInterface>=0:${PORTSDIR}/devel/py-zopeInterface \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget pygtk2 pkgconfig
+USE_GNOME=	pygtk2 pkgconfig
 USE_GSTREAMER=	gnonlin python good
 USE_PYTHON=	yes
 INSTALLS_ICONS=	yes

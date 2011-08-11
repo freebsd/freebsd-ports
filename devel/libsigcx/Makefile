@@ -18,7 +18,7 @@ COMMENT=	An extension of libSigC++
 BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 LIB_DEPENDS=	sigc-1.2.5:${PORTSDIR}/devel/libsigc++12
 
-USE_GNOME=	gnomehack gnometarget gtk20
+USE_GNOME=	gnomehack gtk20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="${PTHREAD_CFLAGS}" LDFLAGS="${PTHREAD_LIBS}" \

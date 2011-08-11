@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	eina libtool_hack
 USE_GETTEXT=	yes
-USE_GNOME=	gnomehack pkgconfig gnometarget
+USE_GNOME=	gnomehack pkgconfig
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 

@@ -18,7 +18,6 @@ COMMENT=	Garbage collection and memory leak detection for C and C++
 RUN_DEPENDS=	${PREFIX}/include/gc/gc.h:${PORTSDIR}/devel/boehm-gc
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-cplusplus --disable-static --disable-threads \
 		--enable-redirect-malloc

@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lines-like simple logic game for X Window System
 
 USE_GETTEXT=	yes
-USE_GNOME=	gnometarget gtk20
+USE_GNOME=	gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

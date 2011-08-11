@@ -28,7 +28,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_tkinter.so:${PORTSDIR}/x11-toolkits/py-tkinte
 
 USE_BZIP2=	yes
 USE_QT_VER=	3
-USE_GNOME=	gnometarget libartlgpl2 libxml2
+USE_GNOME=	libartlgpl2 libxml2
 USE_GHOSTSCRIPT_RUN=	yes
 USE_PYTHON=	yes
 USE_PERL5_BUILD=yes

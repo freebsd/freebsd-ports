@@ -23,7 +23,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
-USE_GNOME=	gnometarget gtk12
+USE_GNOME=	gtk12
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include

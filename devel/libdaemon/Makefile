@@ -15,7 +15,7 @@ COMMENT=	Lightweight C library that eases the writing of UNIX daemons
 
 CONFIGURE_ARGS=	--disable-lynx
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack gnometarget ltverhack
+USE_GNOME=	gnomehack ltverhack
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

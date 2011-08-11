@@ -18,7 +18,7 @@ COMMENT=	A GNOME application for creating GNU gettext translation files
 LIB_DEPENDS=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack intlhack gnomeprefix gnometarget gnomevfs2 libgnomeui
+USE_GNOME=	gnomehack intlhack gnomeprefix gnomevfs2 libgnomeui
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 INSTALLS_OMF=	yes

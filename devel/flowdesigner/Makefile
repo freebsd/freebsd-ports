@@ -19,7 +19,7 @@ COMMENT=	A free (GPL) "data flow oriented" development environment
 LIB_DEPENDS=	speex.1:${PORTSDIR}/audio/speex \
 		fftw.2:${PORTSDIR}/math/fftw
 
-USE_GNOME=	gnomehack gnometarget libgnomeui libxml2
+USE_GNOME=	gnomehack libgnomeui libxml2
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	${CONFIGURE_SCRIPT} FuzzyEngine/configure \

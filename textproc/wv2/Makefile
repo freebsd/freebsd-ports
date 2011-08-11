@@ -14,7 +14,7 @@ MASTER_SITES=	SF/wvware/
 MAINTAINER=	fluffy@FreeBSD.org
 COMMENT=	A library providing routines to access Microsoft Word files
 
-USE_GNOME=	gnometarget libgsf
+USE_GNOME=	libgsf
 USE_ICONV=	yes
 USE_BZIP2=	yes
 USE_CMAKE=	yes

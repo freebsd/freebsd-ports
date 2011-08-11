@@ -20,7 +20,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	eet eina ecore libtool_hack librt_hack
 USE_EFL_ECORE=	file
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

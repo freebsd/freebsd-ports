@@ -24,7 +24,7 @@ OPTIONS=	GNUTLS	"Enable GNUTLS support"	off	\
 		NSS	"Enable Mozilla's NSS support"	off
 
 USE_OPENSSL=	yes
-USE_GNOME=	gnomehack lthack libxslt gnometarget
+USE_GNOME=	gnomehack lthack libxslt
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

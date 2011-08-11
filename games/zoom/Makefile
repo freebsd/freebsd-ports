@@ -21,7 +21,6 @@ LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \
 USE_CSTD=	gnu89
 USE_PERL5=	yes
 USE_XORG=	xft
-USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

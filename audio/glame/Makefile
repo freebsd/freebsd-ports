@@ -21,7 +21,7 @@ LIB_DEPENDS=	mp3lame.0:${PORTSDIR}/audio/lame \
 		guile.21:${PORTSDIR}/lang/guile
 
 USE_XORG=	xbitmaps x11
-USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui
+USE_GNOME=	gnomehack gnomeprefix libgnomeui
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libltdl libtool

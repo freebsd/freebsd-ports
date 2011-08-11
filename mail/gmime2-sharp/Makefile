@@ -23,7 +23,7 @@ INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
-USE_GNOME=	gnomehack gnometarget glib20 gtksharp20
+USE_GNOME=	gnomehack glib20 gtksharp20
 CONFIGURE_ARGS=	--enable-mono=yes
 
 LATEST_LINK=	gmime2-sharp

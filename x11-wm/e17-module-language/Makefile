@@ -22,7 +22,7 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget pkgconfig
+USE_GNOME=	pkgconfig
 USE_XORG=	xkbfile
 USE_EFL=	edje libtool_hack modarch_hack
 

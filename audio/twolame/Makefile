@@ -17,7 +17,7 @@ COMMENT=	MPEG Audio Layer 2 encoder
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 

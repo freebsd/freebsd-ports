@@ -22,7 +22,6 @@ OPTIONS=	WXGTK2 "Install wxWidgets" off
 
 MAKE_JOBS_SAFE=	yes
 
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 
 .if defined(WITH_WXGTK2)

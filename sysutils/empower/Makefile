@@ -21,7 +21,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	evas ecore edje elementary
 USE_EFL_ECORE=	file imf evas
-USE_GNOME=	gnomehack pkgconfig gnometarget
+USE_GNOME=	gnomehack pkgconfig
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 

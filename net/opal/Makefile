@@ -25,7 +25,6 @@ CONFLICTS=	opal-3.*
 ALL_TARGET=	-j`${SYSCTL} -n hw.ncpu` optshared
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_ARGS=	-j`${SYSCTL} -n hw.ncpu`

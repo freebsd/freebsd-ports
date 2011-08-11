@@ -16,7 +16,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program computes with real and complex numbers and matrices
 
-USE_GNOME=	gnometarget gtk20
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>

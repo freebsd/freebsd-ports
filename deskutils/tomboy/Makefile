@@ -24,7 +24,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/mono/gmime-sharp-2.4/gmime-sharp.dll:${PORTSDIR}/m
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomehack gnometarget intlhack gnomeprefix gnomedesktopsharp20
+USE_GNOME=	gnomehack intlhack gnomeprefix gnomedesktopsharp20
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 INSTALLS_ICONS=	yes

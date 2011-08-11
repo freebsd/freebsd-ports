@@ -14,7 +14,7 @@ DISTNAME=	ETL-${PORTVERSION}
 MAINTAINER=	dhn@FreeBSD.org
 COMMENT=	Voria Extended Class and Template Library
 
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

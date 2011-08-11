@@ -16,7 +16,7 @@ COMMENT=	Nice and clean GTK+-2.x based graphical client for musicpd
 LIB_DEPENDS=	mpd.3:${PORTSDIR}/audio/libmpd
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gtk20 glib20 gnometarget libglade2
+USE_GNOME=	gtk20 glib20 libglade2
 MAKE_ARGS+=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -export-dynamic" \
 

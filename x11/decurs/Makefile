@@ -18,7 +18,7 @@ COMMENT=	A program that lets you edit your X11 mouse cursors
 LIB_DEPENDS=	gtkmm-2.0.6:${PORTSDIR}/x11-toolkits/gtkmm20
 
 USE_XORG=	x11
-USE_GNOME=	gnometarget gtk20
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
 .include <bsd.port.pre.mk>

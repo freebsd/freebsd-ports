@@ -21,7 +21,6 @@ LIB_DEPENDS=	jpeg:${PORTSDIR}/graphics/jpeg \
 
 LICENSE=	GPLv2
 
-USE_GNOME=	gnometarget
 USE_XORG=	x11 xdamage xfixes xrandr xinerama xext xtst xau xrender xdmcp recordproto
 
 # Sets LDFLAGS and adds to CONFIGURE_ENV, therefore we set LDFLAGS

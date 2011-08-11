@@ -20,7 +20,7 @@ COMMENT=	MPEG2 GOP-accurate editor
 
 LIB_DEPENDS=	mpeg2.0:${PORTSDIR}/multimedia/libmpeg2
 
-USE_GNOME=	gnometarget gtk12 intlhack
+USE_GNOME=	gtk12 intlhack
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-sdl

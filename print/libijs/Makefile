@@ -17,7 +17,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C library that supports plugin printer driver for Ghostscript
 
 USE_BZIP2=	yes
-USE_GNOME=	gnometarget lthack pkgconfig
+USE_GNOME=	lthack pkgconfig
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

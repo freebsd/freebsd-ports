@@ -20,7 +20,7 @@ LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnomelibs bonobo libglade gal gnometarget
+USE_GNOME=	gnomeprefix gnomehack gnomelibs bonobo libglade gal
 USE_PYTHON=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

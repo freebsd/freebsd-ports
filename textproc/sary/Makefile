@@ -14,7 +14,7 @@ MASTER_SITES=	http://sary.sourceforge.net/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A suffix array library and tools, which provide fast full-text search
 
-USE_GNOME=	glib20 gnomehack gnometarget
+USE_GNOME=	glib20 gnomehack
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 

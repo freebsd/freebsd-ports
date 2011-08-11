@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION:R}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNOME vocabulary builder
 
-USE_GNOME=	gnomehack gnomeprefix gnometarget pygnome2
+USE_GNOME=	gnomehack gnomeprefix pygnome2
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

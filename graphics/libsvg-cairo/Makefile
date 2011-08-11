@@ -21,7 +21,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USE_GNOME=	pkgconfig gnometarget gnomehack
+USE_GNOME=	pkgconfig gnomehack
 USE_LDCONFIG=	yes
 PLIST_FILES=	include/svg-cairo.h \
 		lib/libsvg-cairo.a \

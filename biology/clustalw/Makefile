@@ -20,7 +20,6 @@ RESTRICTED=	No commercial use.
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/clustalw bin/clustalw2

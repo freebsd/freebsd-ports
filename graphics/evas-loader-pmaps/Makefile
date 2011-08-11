@@ -21,7 +21,7 @@ DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	evas librt_hack libtool_hack
-USE_GNOME=	gnomehack pkgconfig gnometarget
+USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 
 MAKEDIRS=	${WRKSRC}/src/modules/loaders/pmaps

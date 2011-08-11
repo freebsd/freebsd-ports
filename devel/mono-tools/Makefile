@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/webkit-sharp-1.0.pc:${PORTSDIR}/ww
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnometarget gnomedesktopsharp20
+USE_GNOME=	gnomehack gnomedesktopsharp20
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

@@ -19,7 +19,7 @@ LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext \
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20
+USE_GNOME=	gnomehack gnomeprefix gtk20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

@@ -26,7 +26,7 @@ MAKE_ARGS=	NOPORTDOCS=yes
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnometarget gnomehack
+USE_GNOME=	gnomehack
 CONFIGURE_ARGS=	--with-cxx=gcc --disable-doxygen
 MAKE_ARGS+=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"

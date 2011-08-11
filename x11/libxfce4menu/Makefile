@@ -19,7 +19,7 @@ USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20 gnomehack gnometarget gtk20 intltool intlhack pkgconfig
+USE_GNOME=	glib20 gnomehack gtk20 intltool intlhack pkgconfig
 USE_LDCONFIG=	yes
 USE_XFCE=	configenv libutil xfconf
 

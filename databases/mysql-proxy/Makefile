@@ -23,7 +23,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib -L${LUA_LIBDIR}" \
 		PKG_CONFIG_PATH="${LUA_PREFIX}/share/doc/${LUA_SUBDIR}/etc"
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget pkgconfig
+USE_GNOME=	pkgconfig
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 USE_LUA=	5.1+

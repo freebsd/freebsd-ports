@@ -17,7 +17,7 @@ MAINTAINER=	stas@FreeBSD.org
 COMMENT=	An C++ networking library and application framework
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 PLIST_SUB=	ASSA_VERSION=${PORTVERSION:R:R}
 

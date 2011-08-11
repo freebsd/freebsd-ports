@@ -21,7 +21,7 @@ LIB_DEPENDS=	fontconfig.1:${PORTSDIR}/x11-fonts/fontconfig \
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USE_GNOME=	libxml2 gnomehack gnometarget
+USE_GNOME=	libxml2 gnomehack
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 

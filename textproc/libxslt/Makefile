@@ -22,7 +22,7 @@ COMMENT?=	The XSLT C library for GNOME
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME?=	gnomehack gnometarget libxml2
+USE_GNOME?=	gnomehack libxml2
 CONFIGURE_ARGS?=--with-html-dir=${PREFIX}/share/doc \
 		--without-python
 CPPFLAGS=	-I${LOCALBASE}/include

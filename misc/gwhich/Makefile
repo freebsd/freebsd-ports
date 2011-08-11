@@ -15,7 +15,6 @@ DISTNAME=	which-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GNU Which - Everything you never wanted in a which
 
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--program-prefix=g
 

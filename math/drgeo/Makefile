@@ -17,7 +17,7 @@ COMMENT=	A GTK interactive geometry sofware
 LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
 
 USE_GETTEXT=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libglade2
+USE_GNOME=	gnomehack gnomeprefix intlhack libglade2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

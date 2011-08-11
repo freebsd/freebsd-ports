@@ -25,7 +25,6 @@ RUN_DEPENDS=	${LOCALBASE}/lib/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/dat
 
 USE_XORG=	x11 xft
 USE_QT_VER=	3
-USE_GNOME=	gnometarget
 USE_MYSQL=	yes
 USE_PERL5_BUILD=yes
 USE_GETTEXT=	yes

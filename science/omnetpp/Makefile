@@ -20,7 +20,7 @@ LIB_DEPENDS=	BLT24:${PORTSDIR}/x11-toolkits/blt
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget libxml libxslt pkgconfig
+USE_GNOME=	libxml libxslt pkgconfig
 USE_PERL5=	yes
 USE_TCL=	yes
 USE_TK=		84+

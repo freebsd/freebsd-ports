@@ -39,7 +39,7 @@ OPTIONS+=	JATETEX "Use pLaTeX (Japanese LaTeX)" OFF
 .endif
 
 ALL_TARGET=	all check
-USE_GNOME=	gnometarget lthack
+USE_GNOME=	lthack
 USE_PERL5=	yes
 USE_PYTHON=	yes
 USE_GETTEXT=	yes

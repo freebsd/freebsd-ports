@@ -16,7 +16,7 @@ COMMENT=	X11 server side resource usage statistics monitor
 
 USE_XORG=	x11 xext xrender xt xres xproto
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget pkgconfig
+USE_GNOME=	pkgconfig
 USE_NCURSES=	yes
 GNU_CONFIGURE=	yes
 

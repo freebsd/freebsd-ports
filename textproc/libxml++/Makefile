@@ -16,7 +16,7 @@ MAINTAINER=	bland@FreeBSD.org
 COMMENT=	XML API for C++
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack gnometarget libxml2 pkgconfig
+USE_GNOME=	gnomehack libxml2 pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

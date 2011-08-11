@@ -19,7 +19,7 @@ BUILD_DEPENDS=	${LOCALBASE}/include/gkrellm2/gkrellm.h:${PORTSDIR}/sysutils/gkre
 RUN_DEPENDS=	gkrellm:${PORTSDIR}/sysutils/gkrellm2
 
 USE_XORG=	x11 xtst
-USE_GNOME=	gnometarget gtk20
+USE_GNOME=	gtk20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

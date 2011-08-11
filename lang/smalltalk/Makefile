@@ -25,7 +25,7 @@ OPTIONS=	TCLTK "Enable Tcl/Tk binding" on \
 		SDL "SDL binding" on
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack gnometarget pkgconfig pango
+USE_GNOME=	gnomehack pkgconfig pango
 USE_ICONV=	yes
 USE_SQLITE=	yes
 USE_GMAKE=	yes

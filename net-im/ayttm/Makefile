@@ -27,7 +27,7 @@ OPTIONS=	ARTS	"Enable aRts support"		off \
 
 USE_BZIP2=	yes
 USE_XORG=	xpm xscrnsaver
-USE_GNOME=	gnometarget gtk20
+USE_GNOME=	gtk20
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libltdl libtool

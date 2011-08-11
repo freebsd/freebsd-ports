@@ -24,7 +24,7 @@ PLIST_SUB+=	NLS=""
 CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
-USE_GNOME=	gnometarget gtk12
+USE_GNOME=	gtk12
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

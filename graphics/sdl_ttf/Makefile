@@ -19,7 +19,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 USE_AUTOTOOLS=	libtool
 USE_SDL=	sdl
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

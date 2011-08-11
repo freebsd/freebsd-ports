@@ -22,7 +22,7 @@ WANT_FAM_SYSTEM=gamin
 
 GAMIN_SLAVE=	yes
 
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack
 USE_PYTHON=	yes
 CONFIGURE_ARGS=	--with-python=${LOCALBASE} \
 		--disable-gtk-doc --with-html-dir=${PREFIX}/share/doc

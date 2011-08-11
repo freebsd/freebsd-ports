@@ -17,7 +17,7 @@ COMMENT=	Emulator for Sun 2/120, 3/150 and SPARCstation 2 machines
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XORG=	x11
-USE_GNOME=	gtk12 gnometarget
+USE_GNOME=	gtk12
 CONFIGURE_ARGS+=	--disable-shared
 MAKE_ENV=	LANG=C
 MAKE_JOBS_UNSAFE=	yes

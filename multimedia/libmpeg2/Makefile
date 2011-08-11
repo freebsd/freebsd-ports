@@ -13,7 +13,7 @@ MASTER_SITES=	http://libmpeg2.sourceforge.net/files/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	A free library for decoding mpeg-2 and mpeg-1 video streams
 
-USE_GNOME=	gnometarget ltverhack
+USE_GNOME=	ltverhack
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes

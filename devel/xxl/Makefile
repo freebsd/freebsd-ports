@@ -16,7 +16,6 @@ COMMENT=	C/C++ library for exception handling and asset management
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget
 USE_LDCONFIG=	yes
 
 .if defined(WITHOUT_THREADS)

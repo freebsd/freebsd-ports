@@ -19,7 +19,7 @@ BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack lthack gnomeprefix gnometarget glib20 libxml2 pkgconfig
+USE_GNOME=	gnomehack lthack gnomeprefix glib20 libxml2 pkgconfig
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

@@ -35,7 +35,7 @@ CONFIGURE_ARGS=	--with-board3d
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
 		ac_cv_path_ARTSC_CONFIG=no ac_cv_path_LIBART_CONFIG=no
 
-USE_GNOME=	gnomehack gnometarget libxml2
+USE_GNOME=	gnomehack libxml2
 USE_GMAKE=	yes
 USE_PYTHON=	2.0+
 USE_AUTOTOOLS=	libtool automake

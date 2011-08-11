@@ -34,7 +34,7 @@ USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_BISON=	build
-USE_GNOME=	gnomehack gnomehier gnometarget libxslt intlhack
+USE_GNOME=	gnomehack gnomehier libxslt intlhack
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--localstatedir=/var --datadir=${PREFIX}/share \
 		--with-omfdirs=${PREFIX}/share/omf \

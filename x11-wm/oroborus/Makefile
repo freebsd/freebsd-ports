@@ -19,7 +19,6 @@ COMMENT=	A small and simple GNOME-compatible window manager
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_XORG=	xpm
-USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

@@ -15,7 +15,7 @@ COMMENT=	Foreign Function Interface
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 PLIST_SUB=	PORTVERSION=${PORTVERSION}
 
 INFO=		libffi

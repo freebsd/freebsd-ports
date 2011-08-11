@@ -18,7 +18,7 @@ GNU_CONFIGURE=	yes
 USE_GETTEXT=	yes
 INSTALLS_ICONS=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget gtk20 intltool intlhack pkgconfig libwnck
+USE_GNOME=	gtk20 intltool intlhack pkgconfig libwnck
 USE_XFCE=	configenv libgui panel
 INSTALLS_ICONS=	yes
 

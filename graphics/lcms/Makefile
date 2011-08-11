@@ -17,7 +17,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/1.19 \
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Light Color Management System -- a color management library
 
-USE_GNOME=	gnomehack gnometarget lthack
+USE_GNOME=	gnomehack lthack
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \

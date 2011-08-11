@@ -16,7 +16,6 @@ COMMENT=	HTTP, FTP and Gopher mirroring tool
 
 USE_BZIP2=	yes
 WANT_GNOME=	yes
-USE_GNOME=	gnometarget
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

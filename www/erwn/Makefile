@@ -15,7 +15,7 @@ DISTNAME=	erwin-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple GTK+-2 HTML editor
 
-USE_GNOME=	gnomehack gnomeprefix gnometarget gtksourceview gtkhtml3
+USE_GNOME=	gnomehack gnomeprefix gtksourceview gtkhtml3
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

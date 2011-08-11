@@ -26,6 +26,6 @@ MAN3=		ukcprog.3
 DIST_SUBDIR=	i-scream
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack gnometarget pkgconfig lthack
+USE_GNOME=	gnomehack pkgconfig lthack
 
 .include <bsd.port.mk>

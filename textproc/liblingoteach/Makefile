@@ -16,7 +16,7 @@ COMMENT=	A library for parsing lesson files based on the LingoTeach DTD
 
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget libxml2
+USE_GNOME=	gnomehack libxml2
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

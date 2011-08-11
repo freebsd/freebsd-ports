@@ -25,7 +25,7 @@ INSTALLS_ICONS=	yes
 
 USE_XFCE=	configenv panel thunar thunarvfs
 USE_XORG=	x11
-USE_GNOME=	gnomehack gnometarget gtk20 glib20 intltool intlhack pkgconfig
+USE_GNOME=	gnomehack gtk20 glib20 intltool intlhack pkgconfig
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

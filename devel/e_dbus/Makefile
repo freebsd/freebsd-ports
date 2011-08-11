@@ -22,7 +22,7 @@ DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	eina ecore libtool_hack librt_hack
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 
 CONFIGURE_ARGS=	--disable-ebluez  # Linux specific ??

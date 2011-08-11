@@ -17,7 +17,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Window manager based on evilwm
 
 USE_XORG=	x11 ice sm xext
-USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

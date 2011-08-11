@@ -25,7 +25,7 @@ LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		execinfo:${PORTSDIR}/devel/libexecinfo \
 		ck-connector.0:${PORTSDIR}/sysutils/consolekit
 
-USE_GNOME=	gnometarget gnomehack glib20 intltool ltverhack
+USE_GNOME=	gnomehack glib20 intltool ltverhack
 USE_XORG=	x11 sm xtst ice
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes

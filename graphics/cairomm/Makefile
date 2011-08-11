@@ -22,7 +22,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget ltverhack
+USE_GNOME=	gnomehack ltverhack
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		AUTOMAKE="${TRUE}" AUTOCONF="${TRUE}" DOXYGEN="${TRUE}"

@@ -15,7 +15,6 @@ DISTNAME=	${PORTNAME}-1.7.2
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A program to link multiple X and VNC servers together
 
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

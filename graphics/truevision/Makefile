@@ -22,7 +22,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:R}
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libgnomeui
+USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui
 USE_GL=		gl
 USE_PYTHON=	yes
 USE_GMAKE=	yes

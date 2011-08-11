@@ -16,7 +16,6 @@ COMMENT=	System monitor that provides XML encoded stats
 
 LIB_DEPENDS=	xml2.5:${PORTSDIR}/textproc/libxml2
 
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-user=_xsi
 

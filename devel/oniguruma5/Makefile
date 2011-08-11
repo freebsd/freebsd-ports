@@ -16,7 +16,6 @@ MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	A BSDL Regular Expressions library compatible with POSIX/GNU/Perl
 
 CONFLICTS=	oniguruma-2.*
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 DOCS=		HISTORY README doc/*

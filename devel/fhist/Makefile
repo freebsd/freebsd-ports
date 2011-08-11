@@ -14,7 +14,6 @@ MASTER_SITES=	SF
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utilities to maintain file history, do file comparisions and merges
 
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 ALL_TARGET=	binaries po

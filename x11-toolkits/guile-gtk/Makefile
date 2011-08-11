@@ -18,7 +18,7 @@ COMMENT=	Guile binding library for GTK+
 LIB_DEPENDS=	guile.21:${PORTSDIR}/lang/guile
 
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget ltverhack gdkpixbuf libglade
+USE_GNOME=	ltverhack gdkpixbuf libglade
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-gtkgl=no

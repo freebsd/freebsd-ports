@@ -16,7 +16,6 @@ COMMENT=	A command-line frontend to libgphoto2
 LIB_DEPENDS=	popt.0:${PORTSDIR}/devel/popt \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2
 
-USE_GNOME=	gnometarget
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

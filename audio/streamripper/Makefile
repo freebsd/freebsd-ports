@@ -26,7 +26,7 @@ OPTIONS=	FAAD "Include FAAD mpeg4 codec support" on \
 
 LICENSE=	GPLv2
 
-USE_GNOME=	glib20 gnometarget
+USE_GNOME=	glib20
 USE_ICONV=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

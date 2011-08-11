@@ -22,7 +22,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_EFL=	ecore edje eet embryo evas libtool_hack modarch_hack
 USE_EFL_EVAS_LOADERS=	png jpeg
-USE_GNOME=	gnomehack pkgconfig gnometarget
+USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 
 OPTIONS=	XINE "Build Xine module" on \

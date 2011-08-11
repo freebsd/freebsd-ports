@@ -19,7 +19,6 @@ COMMENT=	C++ library for reading and generating files in the ELF binary format
 BUILD_DEPENDS=	libtool:${PORTSDIR}/devel/libtool
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	aclocal automake autoconf libtool
 AUTOMAKE_ARGS=	-c -a

@@ -21,7 +21,7 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		xmms.4:${PORTSDIR}/multimedia/xmms
 
 USE_KDELIBS_VER=	3
-USE_GNOME=	gtk12 gnometarget
+USE_GNOME=	gtk12
 USE_SDL=	sdl
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--with-xmms-prefix=${LOCALBASE} \

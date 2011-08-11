@@ -23,7 +23,7 @@ USE_GMAKE=	yes
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget gnomehack gtk20 intltool intlhack pkgconfig
+USE_GNOME=	gnomehack gtk20 intltool intlhack pkgconfig
 USE_XFCE=	configenv libexo thunar thunarvfs
 USE_AUTOTOOLS=	libtool
 

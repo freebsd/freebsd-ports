@@ -22,7 +22,7 @@ USE_GMAKE=	yes
 USE_PERL5_BUILD=yes
 LATEST_LINK=	libsigc++20
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 
 PLIST_SUB=	VERSION="2.0" API_VERSION="2.0"

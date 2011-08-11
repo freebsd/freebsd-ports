@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Gnome panel applet for easy Evolution contact book access
 
 USE_GNOME=	evolutiondataserver gnomehack gnomepanel gnomeprefix \
-		gnometarget libgnomeui
+		libgnomeui
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

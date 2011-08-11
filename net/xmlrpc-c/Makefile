@@ -21,7 +21,6 @@ OPTIONS=	DEBUG "Compile with debugging information" off \
 
 CONFLICTS=	xmlrpc-epi-0.* xmlrpc-c-devel-[0-9]*
 
-USE_GNOME=	gnometarget
 USE_PERL5=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool:env

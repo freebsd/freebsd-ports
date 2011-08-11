@@ -18,7 +18,6 @@ COMMENT=	A tool for visually creating and documenting classes
 
 USE_ZIP=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_GNOME=	gnometarget
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	WXWINDOWS="yes"
 USE_WX=		2.4

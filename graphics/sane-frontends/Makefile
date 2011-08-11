@@ -22,7 +22,6 @@ COMMENT=	Tools for access to scanners, digitals camera, frame grabbers etc
 
 LIB_DEPENDS=	sane.1:${PORTSDIR}/graphics/sane-backends
 
-USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

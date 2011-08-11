@@ -20,7 +20,6 @@ LIB_DEPENDS=	xerces-c.3:${PORTSDIR}/textproc/xerces-c3
 USE_GMAKE=	yes
 USE_PERL5=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include"
 

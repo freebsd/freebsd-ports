@@ -18,7 +18,7 @@ COMMENT=	Robot programming game for UNIX
 BUILD_DEPENDS=	gsed:${PORTSDIR}/textproc/gsed
 
 USE_BZIP2=	yes
-USE_GNOME=	gnometarget gtk20
+USE_GNOME=	gtk20
 USE_PERL5=	yes
 USE_PYTHON=	yes
 USE_GMAKE=	yes

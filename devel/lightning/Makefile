@@ -18,7 +18,6 @@ COMMENT=	Generates assembly language code at run-time
 ONLY_FOR_ARCHS=	i386 sparc64 powerpc
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget
 
 MAN1=		lightningize.1
 INFO=		lightning

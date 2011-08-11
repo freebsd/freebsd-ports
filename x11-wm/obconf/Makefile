@@ -17,7 +17,7 @@ COMMENT=	Preferences manager for the Openbox window manager
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
 		obparser.21:${PORTSDIR}/x11-wm/openbox
 
-USE_GNOME=	gnomehier gnometarget libglade2
+USE_GNOME=	gnomehier libglade2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/openbox

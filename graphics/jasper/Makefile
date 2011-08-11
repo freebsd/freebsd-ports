@@ -22,7 +22,7 @@ LICENSE=	MIT
 
 USE_AUTOTOOLS=	libtool
 USE_ZIP=	yes
-USE_GNOME=	gnometarget lthack
+USE_GNOME=	lthack
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

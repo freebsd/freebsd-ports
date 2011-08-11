@@ -16,7 +16,7 @@ MASTER_SITE_SUBDIR=	${PORTNAME}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A small-scale painting program for GNOME
 
-USE_GNOME=	gnometarget libgnomeprint libgnomeprintui
+USE_GNOME=	libgnomeprint libgnomeprintui
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/gpaint-2 %%DATADIR%%/glade/gpaint.glade
