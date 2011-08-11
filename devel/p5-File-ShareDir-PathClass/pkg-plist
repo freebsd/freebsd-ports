@@ -1,0 +1,3 @@
+%%SITE_PERL%%/File/ShareDir/PathClass.pm
+@dirrmtry %%SITE_PERL%%/File/ShareDir
+@dirrmtry %%SITE_PERL%%/File
