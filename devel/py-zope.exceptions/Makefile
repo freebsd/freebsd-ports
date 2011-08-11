@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zope.exceptions
-PORTVERSION=	3.6.0
+PORTVERSION=	3.6.1
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,10 +14,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	General Zope Exceptions
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zopeInterface>=3.3.0:${PORTSDIR}/devel/py-zopeInterface
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zopeInterface>=3.3.0:${PORTSDIR}/devel/py-zopeInterface
 
-USE_PYTHON=	yes
+USE_ZIP=		yes
+USE_PYTHON=		yes
 USE_PYDISTUTILS=	easy_install
 
 .include <bsd.port.mk>
