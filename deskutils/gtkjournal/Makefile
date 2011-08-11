@@ -27,7 +27,7 @@ USE_AUTOTOOLS=	libtool
 USE_OPENSSL=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack lthack gnometarget
+USE_GNOME=	gnomehack lthack
 CONFIGURE_ARGS=	--enable-gtkspell
 USE_LDCONFIG=	yes
 

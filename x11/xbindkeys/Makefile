@@ -18,7 +18,6 @@ OPTIONS=	GUILE "Guile support" off \
 		TCLTK "Tcl/Tk support" off
 
 USE_XORG=	x11 xi
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

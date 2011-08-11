@@ -16,7 +16,6 @@ COMMENT=	A system tray dockapp similar to the GNOME notification area applet
 
 USE_BZIP2=	yes
 USE_XORG=	x11 ice sm
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/peksystray

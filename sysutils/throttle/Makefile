@@ -13,7 +13,6 @@ MASTER_SITES=	http://klicman.org/throttle/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A pipe bandwidth throttling utility
 
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 
 MAN1=		throttle.1

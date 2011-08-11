@@ -20,7 +20,7 @@ LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget pygtk2
+USE_GNOME=	gnomehack pygtk2
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 

@@ -16,7 +16,7 @@ COMMENT=	Drivers for libdbi
 
 LIB_DEPENDS=	dbi.1:${PORTSDIR}/databases/libdbi
 
-USE_GNOME=	gnometarget lthack
+USE_GNOME=	lthack
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-static \
 		--with-dbi-incdir=${LOCALBASE}/include/dbi

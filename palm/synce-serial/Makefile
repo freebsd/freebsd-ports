@@ -20,6 +20,5 @@ MAN8=		${PORTNAME}-config.8 ${PORTNAME}-start.8 \
 		${PORTNAME}-abort.8 ${PORTNAME}-chat.8
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget
 
 .include <bsd.port.mk>

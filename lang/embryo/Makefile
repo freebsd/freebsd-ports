@@ -20,7 +20,7 @@ DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	libtool_hack librt_hack
-USE_GNOME=	gnomehack pkgconfig gnometarget
+USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

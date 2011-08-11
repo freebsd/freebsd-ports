@@ -38,7 +38,6 @@ USE_WX=		2.6
 WX_COMPS=	python
 NO_BUILD=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget
 USE_PYTHON=	yes
 USE_CDRTOOLS=	yes
 INSTALLS_ICONS=	yes

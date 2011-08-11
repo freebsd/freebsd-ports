@@ -19,7 +19,6 @@ RUN_DEPENDS=	xmessage:${PORTSDIR}/x11/xmessage
 
 USE_XORG=	xextproto xft xpm xrandr
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 

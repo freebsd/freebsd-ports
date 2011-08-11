@@ -25,7 +25,7 @@ OPTIONS=	NLS "Enable gettext support" on \
 
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_GNOME=	pkgconfig gnometarget
+USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--with-included-slang \
 		--with-gettext \

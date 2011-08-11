@@ -20,7 +20,7 @@ LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre \
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget gtk20 intlhack
+USE_GNOME=	gnomehack gtk20 intlhack
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CFLAGS}" \

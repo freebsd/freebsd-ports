@@ -15,7 +15,7 @@ COMMENT=	Message Queuing for C++
 
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack gnometarget pkgconfig ltverhack
+USE_GNOME=	gnomehack pkgconfig ltverhack
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 

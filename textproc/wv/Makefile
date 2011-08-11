@@ -15,7 +15,7 @@ COMMENT=	A library and executables to access Microsoft Word files
 
 LIB_DEPENDS=	wmf.2:${PORTSDIR}/graphics/libwmf
 
-USE_GNOME=	gnometarget libgsf
+USE_GNOME=	libgsf
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CPPFLAGS+=	-I${LOCALBASE}/include

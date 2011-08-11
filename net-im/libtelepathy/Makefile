@@ -24,7 +24,7 @@ RUN_DEPENDS+=	${LIB_PC_DEPENDS:C|^|${LOCALBASE}/libdata/pkgconfig/|g}
 
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack pkgconfig glib20 ltverhack gnometarget
+USE_GNOME=	gnomehack pkgconfig glib20 ltverhack
 USE_AUTOTOOLS=	libtool
 
 .include <bsd.port.mk>

@@ -14,7 +14,7 @@ MASTER_SITES=	http://caca.zoy.org/raw-attachment/wiki/libcaca/
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Graphics library that outputs text instead of pixels
 
-USE_GNOME=	gnomehack gnometarget ltverhack pkgconfig
+USE_GNOME=	gnomehack ltverhack pkgconfig
 USE_LDCONFIG=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--disable-doc \

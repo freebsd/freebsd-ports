@@ -17,7 +17,7 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 
 LICENSE=	BSD
 
-USE_GNOME=	gnomehack gnomeprefix gnometarget intlhack libgnomeui lthack \
+USE_GNOME=	gnomehack gnomeprefix intlhack libgnomeui lthack \
 		pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes

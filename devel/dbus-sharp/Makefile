@@ -21,7 +21,7 @@ LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
 BUILD_WRKSRC=	${WRKSRC}/mono
 INSTALL_WRKSRC=	${BUILD_WRKSRC}
 
-USE_GNOME=	gnomehack gnometarget gtksharp10
+USE_GNOME=	gnomehack gtksharp10
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--enable-mono \

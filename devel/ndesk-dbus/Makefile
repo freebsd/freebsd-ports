@@ -18,7 +18,7 @@ BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 
 DOCS=		AUTHORS COPYING README

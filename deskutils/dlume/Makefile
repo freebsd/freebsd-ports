@@ -14,7 +14,7 @@ MASTER_SITES=	${MASTER_SITE_TUCOWS}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 address book
 
-USE_GNOME=	gnomehack gnomeprefix gnometarget gtk20 libxml2
+USE_GNOME=	gnomehack gnomeprefix gtk20 libxml2
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

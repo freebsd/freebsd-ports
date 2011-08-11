@@ -19,7 +19,7 @@ COMMENT=	Library for high-performance 2D graphics
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 

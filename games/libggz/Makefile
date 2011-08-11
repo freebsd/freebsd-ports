@@ -17,7 +17,7 @@ COMMENT=	The GGZ Gaming Zone - Base Library
 LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug

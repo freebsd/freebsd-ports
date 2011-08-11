@@ -47,7 +47,7 @@ MASTER_SITES=	http://www.cherokee-project.com/download/1.2/${PORTVERSION}/ \
 MAINTAINER=	dschulz@gmail.com
 COMMENT=	Extremely fast and flexible web server
 
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 USE_OPENSSL=	yes
 USE_LDCONFIG=	yes
 USE_GETTEXT=	yes

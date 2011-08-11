@@ -15,7 +15,7 @@ COMMENT=	MikMod Sound Library
 
 USE_AUTOTOOLS=	libtool
 WANT_GNOME=	yes
-USE_GNOME=	gnometarget lthack
+USE_GNOME=	lthack
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	MAKEINFO="makeinfo --no-split"

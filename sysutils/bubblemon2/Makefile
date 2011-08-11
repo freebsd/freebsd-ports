@@ -17,7 +17,7 @@ COMMENT=	A system CPU and memory load monitor for GNOME2
 
 LIB_DEPENDS=	gtop-2.0:${PORTSDIR}/devel/libgtop
 
-USE_GNOME=	gnomehack gnomepanel gnomeprefix gnometarget intlhack libgnomeui
+USE_GNOME=	gnomehack gnomepanel gnomeprefix intlhack libgnomeui
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include `pkg-config --cflags libgnomeui-2.0`" \

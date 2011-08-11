@@ -14,7 +14,7 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Audio codec for lossless, lossy and hybrid compression
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 USE_ICONV=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

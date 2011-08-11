@@ -21,7 +21,7 @@ DIST_SUBDIR=	e17
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget pkgconfig
+USE_GNOME=	pkgconfig
 USE_EFL=	edje libtool_hack modarch_hack
 
 .include <bsd.port.mk>

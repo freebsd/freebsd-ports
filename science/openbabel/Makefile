@@ -16,7 +16,7 @@ COMMENT=	Chemistry file translation program
 
 LIB_DEPENDS=	boost_python.4:${PORTSDIR}/devel/boost-python-libs
 
-USE_GNOME=	gnomehack gnometarget libxml2
+USE_GNOME=	gnomehack libxml2
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 

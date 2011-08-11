@@ -16,7 +16,7 @@ COMMENT?=	XIM server for Anthy input method
 
 LIB_DEPENDS?=	anthy.1:${PORTSDIR}/japanese/anthy
 
-USE_GNOME=	gnometarget gtk12
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

@@ -21,7 +21,7 @@ LIB_DEPENDS=	gsm.1:${PORTSDIR}/audio/gsm \
 
 CONFLICTS=	ortp-[0-9]*
 
-USE_GNOME=	glib20 gnomehack gnometarget intlhack pkgconfig
+USE_GNOME=	glib20 gnomehack intlhack pkgconfig
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 LIBTOOLFILES=	configure oRTP/configure mediastreamer2/configure

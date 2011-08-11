@@ -22,7 +22,6 @@ RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 
 USE_APACHE=	2.0+
 USE_BZIP2=	yes
-USE_GNOME=	gnometarget
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--man=${PREFIX}/man
 

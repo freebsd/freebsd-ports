@@ -16,7 +16,7 @@ COMMENT=	An elegant music organizer
 
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib
 
-USE_GNOME=	gnomehack gnomeprefix gnometarget intltool gtksharp20
+USE_GNOME=	gnomehack gnomeprefix intltool gtksharp20
 INSTALLS_ICONS=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes

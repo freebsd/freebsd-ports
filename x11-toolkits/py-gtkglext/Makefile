@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/OpenGL/__init__.py:${PORTSDIR}/graphics/py-ope
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-USE_GNOME=	gnomehack gnometarget pygtk2
+USE_GNOME=	gnomehack pygtk2
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 

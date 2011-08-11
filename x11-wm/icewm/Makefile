@@ -16,7 +16,7 @@ COMMENT=	Window Manager designed for speed, usability and consistency
 
 WANT_GNOME=	yes
 USE_XORG=	x11 ice xinerama xext xrandr sm
-USE_GNOME=	gnometarget gtk20 # gdkpixbuf really :-)
+USE_GNOME=	gtk20 # gdkpixbuf really :-)
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"

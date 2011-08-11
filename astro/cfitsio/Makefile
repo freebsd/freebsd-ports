@@ -19,7 +19,7 @@ LIB_DEPENDS=	f2c.2:${PORTSDIR}/lang/f2c
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_GNOME=	gnometarget pkgconfig
+USE_GNOME=	pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_prog_FC="f2c"
 ALL_TARGET=	shared

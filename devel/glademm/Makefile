@@ -16,7 +16,7 @@ MAINTAINER=	bland@FreeBSD.org
 COMMENT=	A C++ code generator backend for glade and glade2
 
 USE_GMAKE=	yes
-USE_GNOME=	gnomeprefix gnomehack gnometarget
+USE_GNOME=	gnomeprefix gnomehack
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/glade-- bin/glademm-embed

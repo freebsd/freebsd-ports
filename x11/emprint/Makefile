@@ -18,7 +18,7 @@ USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_EFL=	ecore evas edje imlib2
 USE_EFL_ECORE=	file x11 evas
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

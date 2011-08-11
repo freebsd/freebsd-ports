@@ -17,7 +17,6 @@ COMMENT=	Window manager suitable for low-resolution screens
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
-USE_GNOME=	gnometarget
 USE_XORG=	xfixes xcursor xext
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

@@ -19,7 +19,6 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	ac_cv_prog_XSLTPROC=no \
 		--with-gmp=${LOCALBASE}

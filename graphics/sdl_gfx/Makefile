@@ -17,7 +17,7 @@ MAINTAINER=	mva@FreeBSD.org
 COMMENT=	SDL graphics drawing primitives and other support functions
 
 MAKE_JOBS_SAFE=	yes
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack
 USE_AUTOTOOLS=	libtool
 USE_SDL=	sdl
 USE_GMAKE=	yes

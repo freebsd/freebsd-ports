@@ -19,7 +19,7 @@ OPTIONS+=	CANNA		"Use Canna" on
 OPTIONS+=	WNN		"Use FreeWnn" on
 OPTIONS+=	GNOMEPANEL	"Build GNOME Panel Applet" off
 
-USE_GNOME=	gconf2 gnomehack gnomeprefix gnometarget intlhack libglade2
+USE_GNOME=	gconf2 gnomehack gnomeprefix intlhack libglade2
 USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

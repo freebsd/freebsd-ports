@@ -20,7 +20,7 @@ LIB_DEPENDS=	shishi.1:${PORTSDIR}/security/shishi
 CONFLICTS=	heimdal-[0-9]*
 
 USE_PERL5_BUILD=	yes
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-kerberos5

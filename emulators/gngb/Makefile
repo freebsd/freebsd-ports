@@ -14,7 +14,6 @@ MASTER_SITES=	http://m.peponas.free.fr/gngb/download/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GameBoy(tm) emulator
 
-USE_GNOME=	gnometarget
 USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

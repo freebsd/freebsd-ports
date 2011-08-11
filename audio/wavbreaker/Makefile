@@ -15,7 +15,7 @@ COMMENT=	Tool to split and merge wav files
 
 OPTIONS=	PULSE "Pulseaudio soundserver support" OFF
 
-USE_GNOME=	gnomehack gnometarget gtk20 libxml2
+USE_GNOME=	gnomehack gtk20 libxml2
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

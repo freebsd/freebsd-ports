@@ -27,7 +27,7 @@ LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gtk20 gnomehack gnometarget
+USE_GNOME=	gtk20 gnomehack
 INSTALLS_ICONS=	yes
 
 OPTIONS=	AVAHI "Zeroconf support (Avahi)" Off \

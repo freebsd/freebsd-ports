@@ -17,7 +17,6 @@ COMMENT=	Gstreamer lib for writing non-linear audio and video
 
 CFLAGS:=	${CFLAGS} -O2 -Wno-format
 USE_BZIP2=	yes
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 USE_GSTREAMER=	yes
 

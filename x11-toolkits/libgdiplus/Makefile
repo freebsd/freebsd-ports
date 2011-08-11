@@ -19,7 +19,7 @@ LIB_DEPENDS=	tiff.4:${PORTSDIR}/graphics/tiff \
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnometarget glib20
+USE_GNOME=	gnomehack glib20
 USE_GMAKE=	yes
 USE_XLIB=	yes
 USE_LDCONFIG=	yes

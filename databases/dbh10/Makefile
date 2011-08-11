@@ -18,7 +18,7 @@ COMMENT=	Disk Based Hashtables
 CONFLICTS=	dbh-[2-9]*
 
 USE_AUTOTOOLS=	libtool
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 

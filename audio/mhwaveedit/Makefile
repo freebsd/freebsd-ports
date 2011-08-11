@@ -17,7 +17,7 @@ COMMENT=	A graphical program for editing sound files
 LICENSE=	GPLv2
 
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnometarget gtk20
+USE_GNOME=	gnomehack gtk20
 WANT_GNOME=	yes
 WANT_SDL=	yes
 GNU_CONFIGURE=	yes

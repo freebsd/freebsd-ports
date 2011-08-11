@@ -16,7 +16,6 @@ COMMENT=	An "lcd" dockapp for windowmaker, which displays the current cpuload
 
 USE_BZIP2=	yes
 USE_XORG=	xpm
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 
 MAN1=		wmcpuload.1

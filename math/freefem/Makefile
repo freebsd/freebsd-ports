@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A language for the Finite Element Method
 
 USE_XORG=	ice sm x11 xt
-USE_GNOME=	gnometarget
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 

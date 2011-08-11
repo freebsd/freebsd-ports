@@ -18,7 +18,7 @@ COMMENT=	A 3D tabletennis game
 USE_GETTEXT=	yes
 USE_SDL=	image mixer sdl
 USE_GL=		yes
-USE_GNOME=	gnometarget gtk20
+USE_GNOME=	gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/SDL" \

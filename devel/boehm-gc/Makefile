@@ -16,7 +16,7 @@ MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Garbage collection and memory leak detection for C and C++
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget gnomehack
+USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--enable-cplusplus --disable-static --disable-threads
 MAKE_JOBS_UNSAFE=	yes

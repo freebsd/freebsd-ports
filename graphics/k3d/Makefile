@@ -38,7 +38,7 @@ CONFIGURE_ARGS=	--without-docbook --without-graphviz \
 		--with-python=${PYTHONBASE} --with-tiff --with-openexr \
 		--with-plib --with-png --with-external-boost --with-libxml2
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget libxslt
+USE_GNOME=	libxslt
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 MAN1=		k3d.1

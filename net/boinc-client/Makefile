@@ -18,7 +18,6 @@ COMMENT=	Berkeley Open Infrastructure for Network Computing client
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
 
 USE_BZIP2=	yes
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 MAKE_JOBS_UNSAFE=	yes
 

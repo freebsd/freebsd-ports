@@ -25,7 +25,7 @@ RUN_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CFALGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib

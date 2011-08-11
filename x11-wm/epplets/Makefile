@@ -20,7 +20,7 @@ RUN_DEPENDS=	e16:${PORTSDIR}/x11-wm/e16 \
 		import:${PORTSDIR}/graphics/ImageMagick
 
 USE_XORG=	xext
-USE_GNOME=	esound gnometarget
+USE_GNOME=	esound
 USE_GL=		glut
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool autoconf

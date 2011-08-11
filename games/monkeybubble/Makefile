@@ -15,7 +15,7 @@ DISTNAME=	monkey-bubble-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 Puzzle Bobble clone with monkeys
 
-USE_GNOME=	gnomedocutils gnomehack gnomeprefix gnometarget intlhack \
+USE_GNOME=	gnomedocutils gnomehack gnomeprefix intlhack \
 		librsvg2 libgnomeui
 USE_GSTREAMER=	yes
 USE_GMAKE=	yes

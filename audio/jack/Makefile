@@ -29,7 +29,7 @@ CONFIGURE_ARGS+=--enable-portaudio \
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	pkgconfig gnometarget gnomehack
+USE_GNOME=	pkgconfig gnomehack
 
 MAN1=		jackd.1 jackstart.1
 

@@ -18,7 +18,7 @@ COMMENT=	Image processing tools
 
 USE_XZ=		yes
 USE_PERL5=	yes
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 USE_AUTOTOOLS=	libltdl
 # For some reason, using our libtool breaks the build into pieces:
 #USE_AUTOTOOLS+=	libtool

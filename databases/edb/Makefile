@@ -18,7 +18,7 @@ COMMENT=	Enlightenment Database Library
 
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnomehack pkgconfig gnometarget
+USE_GNOME=	gnomehack pkgconfig
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>

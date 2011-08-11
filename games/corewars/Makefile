@@ -16,7 +16,7 @@ COMMENT=	A simulation game where the goal is to crash each other's programs
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libargp.a:${PORTSDIR}/devel/argp-standalone
 
-USE_GNOME=	gnometarget gtk12
+USE_GNOME=	gtk12
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

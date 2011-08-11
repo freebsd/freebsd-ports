@@ -18,7 +18,7 @@ COMMENT=	A user interface builder for GTK+/GNOME
 INSTALLS_ICONS=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget gtk20 libxml2 gnomeprefix gnomehack \
+USE_GNOME=	gtk20 libxml2 gnomeprefix gnomehack \
 		gnomedocutils desktopfileutils ltverhack:10
 WANT_GNOME=	yes
 USE_GETTEXT=	yes

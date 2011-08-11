@@ -20,7 +20,7 @@ BROKEN=	Does not fetch
 
 CONFLICTS=	libosip-3*
 
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-debug --disable-trace
 USE_LDCONFIG=	yes

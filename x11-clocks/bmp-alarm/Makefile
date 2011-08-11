@@ -18,7 +18,7 @@ LIB_DEPENDS=	beep.2:${PORTSDIR}/multimedia/beep-media-player
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
-USE_GNOME=	gnometarget gtk20
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	lib/bmp/General/libalarm.so

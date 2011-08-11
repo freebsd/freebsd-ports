@@ -20,7 +20,6 @@ COMMENT=	A Verilog simulation and synthesis tool
 GNU_CONFIGURE=	yes
 USE_BISON=	build
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget
 
 CONFIGURE_ARGS=	--disable-suffix
 

@@ -24,7 +24,7 @@ DIST_SUBDIR=	e17
 USE_BZIP2=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	gnomehack pkgconfig gnometarget librsvg2
+USE_GNOME=	gnomehack pkgconfig librsvg2
 USE_EFL=	evas librt_hack libtool_hack
 
 MAKEDIRS=	${WRKSRC}/src/modules/loaders/svg

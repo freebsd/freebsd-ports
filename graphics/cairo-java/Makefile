@@ -26,7 +26,7 @@ GNU_CONFIGURE=	yes
 USE_JAVA=	yes
 JAVA_VERSION=	1.5+
 JAVA_OS=	native
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack
 CONFIGURE_ARGS=	--without-gcj-compile --with-jardir=${JAVAJARDIR}
 CONFIGURE_ENV=	CPPFLAGS="-I${JAVA_HOME}/include -I${JAVA_HOME}/include/freebsd"
 CAIRO_API_VERSION=	1.0

@@ -14,7 +14,7 @@ MASTER_SITES=	http://launchpadlibrarian.net/35014059/
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Library for parsing mms:// and mmsh:// type network streams
 
-USE_GNOME=	gnomehack gnometarget pkgconfig glib20
+USE_GNOME=	gnomehack pkgconfig glib20
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

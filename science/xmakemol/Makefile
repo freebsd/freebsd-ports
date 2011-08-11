@@ -15,7 +15,6 @@ COMMENT=	Molecule Viewer Program Based on Motif Widget
 
 USE_XORG=	xpm
 USE_GL=		glut glw
-USE_GNOME=	gnometarget
 USE_MOTIF=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

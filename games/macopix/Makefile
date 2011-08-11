@@ -33,7 +33,6 @@ RESTRICTED_FILES=	\
 		macopix-mascot-marimite-euc-ja-2.20.tar.gz \
 		macopix-mascot-HxB-euc-ja-0.30.tar.gz
 
-USE_GNOME=	gnometarget
 WANT_GNOME=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes

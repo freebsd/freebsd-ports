@@ -17,7 +17,7 @@ LIB_DEPENDS=	exif.12:${PORTSDIR}/graphics/libexif \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
 USE_BZIP2=	yes
-USE_GNOME=	gnometarget pkgconfig ltverhack
+USE_GNOME=	pkgconfig ltverhack
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool libltdl
 LIBTOOLFILES=	configure libgphoto2_port/configure

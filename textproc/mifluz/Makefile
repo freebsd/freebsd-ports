@@ -13,7 +13,7 @@ MASTER_SITES=	GNU
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ library to build and query a full text inverted index
 
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack
 USE_BISON=	build
 USE_ICONV=	yes
 USE_AUTOTOOLS=	libtool

@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Braitenberg vehicle simulator with pseudo-physics
 
 USE_XORG=	x11 ice sm xext
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/xbraitenberg

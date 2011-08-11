@@ -20,7 +20,6 @@ CFLAGS+=	-Wno-deprecated
 USE_AUTOTOOLS=	aclocal automake autoconf libtool
 AUTOMAKE_ARGS=	-c -a
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget
 USE_LDCONFIG=	yes
 ACLOCAL_ARGS=	-I "${ACLOCAL_DIR}" -I ${LOCALBASE}/share/aclocal
 SUB_FILES=	pkg-message

@@ -18,7 +18,7 @@ COMMENT=	Flexible IRC proxy
 
 LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls
 
-USE_GNOME=	glib20 gnometarget
+USE_GNOME=	glib20
 USE_LDCONFIG=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

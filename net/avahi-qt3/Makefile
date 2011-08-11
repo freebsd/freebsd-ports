@@ -22,7 +22,7 @@ DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
 
 AVAHI_SLAVE=	qt3
-USE_GNOME=	gnomehack gnometarget ltverhack intltool
+USE_GNOME=	gnomehack ltverhack intltool
 USE_QT_VER=	3
 AVAHI_PKGCONFIG=	avahi-qt3.pc
 

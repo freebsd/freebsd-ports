@@ -22,7 +22,7 @@ LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget pkgconfig gnomehack
+USE_GNOME=	pkgconfig gnomehack
 USE_GMAKE=	yes
 USE_ICONV=	yes
 USE_LDCONFIG=	yes

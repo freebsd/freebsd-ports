@@ -15,7 +15,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable library for joystick/sound/OpenGL GUI/3D math
 
 USE_XORG=	xt xi xmu xext x11
-USE_GNOME=	gnometarget
 USE_GL=		glu
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes

@@ -16,7 +16,7 @@ COMMENT=	A version of the popular TetriNET multiplayer tetris clone
 
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
-USE_GNOME=	esound gnomehack gnomeprefix gnometarget libgnomeui
+USE_GNOME=	esound gnomehack gnomeprefix libgnomeui
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

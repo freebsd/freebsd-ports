@@ -19,7 +19,6 @@ LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 CONFLICTS=	open-cobol-1.[1]*
 
-USE_GNOME=	gnometarget
 USE_BDB=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool

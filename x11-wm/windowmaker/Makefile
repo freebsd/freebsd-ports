@@ -26,7 +26,7 @@ MAKE_JOBS_SAFE=	yes
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnometarget pkgconfig
+USE_GNOME=	gnomehack pkgconfig
 USE_XORG=	xpm xft
 USE_PERL5=	yes
 USE_GETTEXT=	yes

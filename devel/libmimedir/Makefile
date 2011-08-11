@@ -12,7 +12,6 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Library for parsing RFC2425 MIME Directory Profile information
 
-USE_GNOME=	gnometarget
 USE_BISON=	build
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes

@@ -14,7 +14,7 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A library of tools for doing computation in game theory
 
-USE_GNOME=	gnometarget gtk20
+USE_GNOME=	gtk20
 WANT_UNICODE=	yes
 USE_WX=		2.6+
 USE_AUTOTOOLS=	libtool

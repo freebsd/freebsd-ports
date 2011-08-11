@@ -16,6 +16,6 @@ COMMENT=	A JSON (Javascript Object Notation) implementation in C
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget pkgconfig gnomehack
+USE_GNOME=	pkgconfig gnomehack
 
 .include <bsd.port.mk>

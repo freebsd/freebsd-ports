@@ -14,7 +14,6 @@ CATEGORIES=	games
 MAINTAINER=	kde@FreeBSD.org
 COMMENT=	The GGZ Gaming Zone - Console (Text) Frontend
 
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-debug

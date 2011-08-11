@@ -30,7 +30,7 @@ CONFLICTS=	scrollkeeper-[0-9]*
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehier gnometarget gnomehack libxslt
+USE_GNOME=	gnomehier gnomehack libxslt
 USE_PYTHON=	yes
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes

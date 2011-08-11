@@ -24,7 +24,7 @@ LIB_DEPENDS=	fluidsynth.4:${PORTSDIR}/audio/fluidsynth \
 		png.6:${PORTSDIR}/graphics/png
 
 USE_BZIP2=	yes
-USE_GNOME=	gnometarget gtk12
+USE_GNOME=	gtk12
 WANT_GNOME=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes

@@ -21,7 +21,6 @@ OPTIONS+=	PAM "Support for PAM (Experimental)" off
 OPTIONS+=	PGSQL "Support for PostgreSQL (Experimental)" off
 
 GNU_CONFIGURE=	yes
-USE_GNOME=	gnometarget
 USE_LDCONFIG=	yes
 
 .include <bsd.port.pre.mk>

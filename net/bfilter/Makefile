@@ -16,7 +16,6 @@ COMMENT=	Smart filtering HTTP proxy
 LIB_DEPENDS=	ACE.5:${PORTSDIR}/devel/ace \
 		sigc-2.0.0:${PORTSDIR}/devel/libsigc++20
 
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

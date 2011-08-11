@@ -28,7 +28,7 @@ PLIST=		${.CURDIR}/pkg-plist
 
 AVAHI_SLAVE=	python
 
-USE_GNOME=	gnomehack gnometarget pygtk2
+USE_GNOME=	gnomehack pygtk2
 USE_PYTHON=	yes
 MAN1=		avahi-bookmarks.1 avahi-discover.1
 

@@ -23,7 +23,7 @@ INSTALLS_ICONS= yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget gtk20 intltool intlhack libxml2 pkgconfig
+USE_GNOME=	gtk20 intltool intlhack libxml2 pkgconfig
 USE_XFCE=	configenv libgui libutil panel xfconf
 USE_XORG=	xproto x11 xrender xext xinerama xrandr xcursor xcomposite \
 		xdamage xfixes xi xau xdmcp

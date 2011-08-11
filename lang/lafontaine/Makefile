@@ -18,7 +18,7 @@ COMMENT=	Graphical logo interpreter
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-0.4
 
-USE_GNOME=	gnomehack gnometarget gtk20
+USE_GNOME=	gnomehack gtk20
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

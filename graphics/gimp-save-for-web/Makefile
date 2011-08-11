@@ -22,7 +22,7 @@ USE_GETTEXT=	yes
 USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnomehack gnometarget intltool
+USE_GNOME=	gnomehack intltool
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|GMSGFMT = @GMSGFMT@|GMSGFMT = @MSGFMT@|g' ${WRKSRC}/po/Makefile.in.in

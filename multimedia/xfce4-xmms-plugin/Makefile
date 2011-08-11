@@ -20,7 +20,7 @@ GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	gnometarget gtk20 intltool intlhack pango pkgconfig
+USE_GNOME=	gtk20 intltool intlhack pango pkgconfig
 USE_XFCE=	configenv libgui libutil panel
 
 OPTIONS=	XMMS		"Enable xmms support"			on \

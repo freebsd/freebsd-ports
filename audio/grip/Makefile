@@ -18,7 +18,7 @@ LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		curl.6:${PORTSDIR}/ftp/curl
 
 USE_XORG=	x11
-USE_GNOME=	gnomehack gnomeprefix gnometarget libgnomeui vte
+USE_GNOME=	gnomehack gnomeprefix libgnomeui vte
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \

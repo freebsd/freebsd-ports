@@ -20,7 +20,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/libgdiplus.a:${PORTSDIR}/x11-toolkits/libgdiplus \
 		exctags:${PORTSDIR}/devel/ctags \
 		mautil:${PORTSDIR}/devel/mono-addins
 
-USE_GNOME=	gnometarget gnomehack gtksharp20 gnomesharp20
+USE_GNOME=	gnomehack gtksharp20 gnomesharp20
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes

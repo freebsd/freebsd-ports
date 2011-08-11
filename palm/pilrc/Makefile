@@ -17,7 +17,7 @@ COMMENT=	Resource compiler for Pilot applications
 WRKSRC=		${WRKDIR}/pilrc-${PORTVERSION}/unix
 CONFIGURE_ARGS+=	--enable-pilrcui
 
-USE_GNOME=	gnometarget gtk12
+USE_GNOME=	gtk12
 GNU_CONFIGURE=	yes
 
 do-install:

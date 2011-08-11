@@ -16,7 +16,6 @@ COMMENT=	A tool intended for Blackbox that checks for new mail
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libbt.pc:${PORTSDIR}/x11-wm/blackbox
 
 USE_XORG=	xext
-USE_GNOME=	gnometarget
 GNU_CONFIGURE=	yes
 
 MAN1=		bbmail.1

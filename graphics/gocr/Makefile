@@ -15,7 +15,6 @@ COMMENT=	An OCR (Optical Character Recognition) program
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm
 
-USE_GNOME=	gnometarget
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-netpbm=${LOCALBASE}

@@ -18,7 +18,7 @@ LIB_DEPENDS=	smpeg.1:${PORTSDIR}/multimedia/smpeg
 
 NO_WRKSUBDIR=	yes
 
-USE_GNOME=	gnomehack gnometarget
+USE_GNOME=	gnomehack
 USE_SDL=	sdl
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"

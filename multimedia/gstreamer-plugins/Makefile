@@ -48,7 +48,7 @@ VERSION=	${GST_VERSION}
 WANT_GSTREAMER=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-USE_GNOME+=	gnomehack gnometarget pkgconfig ltverhack ltasneededhack
+USE_GNOME+=	gnomehack pkgconfig ltverhack ltasneededhack
 USE_AUTOTOOLS=	libtool
 GST_PLUGIN?=	base
 

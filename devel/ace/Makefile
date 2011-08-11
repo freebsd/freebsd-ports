@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--program-transform-name s,^,ace-,
-USE_GNOME=	gnometarget pkgconfig
+USE_GNOME=	pkgconfig
 
 WRKSRC=		${WRKDIR}/ACE_wrappers
 BUILD_WRKSRC=	${WRKSRC}/objdir
