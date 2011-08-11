@@ -354,6 +354,7 @@ bin/thg
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/wconfig.py
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/wconfig.pyc
 %%PYTHON_SITELIBDIR%%/tortoisehg/util/wconfig.pyo
+share/applications/tortoisehg.desktop
 %%NLS%%share/locale/ca/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/tortoisehg.mo
 %%NLS%%share/locale/da/LC_MESSAGES/tortoisehg.mo
