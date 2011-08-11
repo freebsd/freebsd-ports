@@ -25,6 +25,7 @@ OPTIONS=	ESD	"Use Enlightened Sound Daemon"		on  \
 		GTK2	"Make Snd with Gtk+ graphics support"	on \
 		X11	"Make Snd with GUI support"	on
 
+WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-float-samples
