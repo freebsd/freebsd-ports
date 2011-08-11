@@ -18,7 +18,7 @@ LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
     		gmp.10:${PORTSDIR}/math/gmp
 RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar
 
-USE_CSTD=	c89
+USE_CSTD=	gnu89
 
 USE_XZ=		yes
 USE_GNOME=	gnomehack
