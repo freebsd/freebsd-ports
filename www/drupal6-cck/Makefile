@@ -246,9 +246,6 @@ MODULE_FILES=	help/add-existing-field.html \
 DOC_FILES=	CHANGELOG.txt DEVELOPER.txt README.txt UPGRADE.txt \
 		LICENSE.txt
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.drupal.mk"
 .include <bsd.port.post.mk>

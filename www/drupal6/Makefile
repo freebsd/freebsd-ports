@@ -32,9 +32,6 @@ DOCS=		CHANGELOG.txt INSTALL.txt LICENSE.txt MAINTAINERS.txt \
 SUB_FILES+=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_MYSQL)
