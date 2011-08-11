@@ -18,4 +18,6 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2
 XORG_CAT=	lib
 USE_XORG=	xproto:both xtrans fontsproto:both fontenc
 
+CONFIGURE_ARGS=--without-xmlto --disable-devel-docs
+
 .include <bsd.port.mk>
