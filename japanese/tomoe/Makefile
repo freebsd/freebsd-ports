@@ -106,7 +106,9 @@ CONFIGURE_ARGS+=--disable-unihan
 PLIST_SUB+=	UNIHAN="@comment "
 .endif
 
-CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
+CONFIGURE_ENV+=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include \
+		-I${LOCALBASE}/include/ruby-${RUBY_VER} \
+		-I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}" \
 		PYTHON_VERSION=${PYTHON_VERSION:S;python;;} \
 		pyexecdir=${PYTHON_SITELIBDIR} \
 		GMSGFMT="${LOCALBASE}/bin/msgfmt"
@@ -117,7 +119,4 @@ post-extract:
 		${UNZIP_CMD} -qo ${DISTDIR}/Unihan.zip -d ${WRKSRC}/module/dict
 .endif
 
-.if ${RUBY_VER} == 1.9
-BROKEN=	does not work with ruby 1.9
-.endif
 .include <bsd.port.post.mk>
