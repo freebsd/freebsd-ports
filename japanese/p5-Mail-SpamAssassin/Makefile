@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	Mail-SpamAssassin
-PORTVERSION=	3.3.1
-PORTREVISION=	3
+PORTVERSION=	3.3.2
+PORTREVISION=	1
 CATEGORIES=	japanese mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/} \
 		${PATCH_SITES}
@@ -23,19 +23,22 @@ PATCHFILES=	spamassassin-${PORTVERSION}-ja-${PATCHLEVEL}.patch:JA
 PATCHLEVEL=	1
 PATCH_DIST_STRIP=	-p1
 
-RUN_DEPENDS+=
 MAINTAINER=	fmysh@iijmio-mail.jp
 COMMENT=	SpamAssassin with Japanese tokenizer
 
 RUN_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
 		p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
-		p5-HTML-Parser>=3.43:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-HTML-Parser>=3.46:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
-		${SITE_PERL}/${PERL_ARCH}/Encode/Detect.pm:${PORTSDIR}/converters/p5-Encode-Detect \
-		${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools
-RUN_DEPENDS+=	ja-p5-MeCab>=0.98:${PORTSDIR}/japanese/p5-MeCab
-
-BUILD_DEPENDS=	${RUN_DEPENDS}
+		p5-Encode-Detect>=0:${PORTSDIR}/converters/p5-Encode-Detect \
+		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools \
+		ja-p5-MeCab>=0.98:${PORTSDIR}/japanese/p5-MeCab
+BUILD_DEPENDS=	p5-NetAddr-IP>=4.00.7:${PORTSDIR}/net-mgmt/p5-NetAddr-IP \
+		p5-Net-DNS>=0.63:${PORTSDIR}/dns/p5-Net-DNS \
+		p5-HTML-Parser>=3.46:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-libwww>=0:${PORTSDIR}/www/p5-libwww \
+		p5-Encode-Detect>=0:${PORTSDIR}/converters/p5-Encode-Detect \
+		p5-Mail-Tools>=0:${PORTSDIR}/mail/p5-Mail-Tools
 
 CONFLICTS=	p5-Mail-SpamAssassin-[0-9]*
 
@@ -45,6 +48,9 @@ USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	SYSCONFDIR="${PREFIX}/etc" \
 	       	CONTACT_ADDRESS="${CONTACT_ADDRESS}" \
 		LOCALSTATEDIR="/var/db/spamassassin"
+
+USERS=		spamd
+GROUPS=		spamd
 
 # You can override it if you like
 CONTACT_ADDRESS?=	The administrator of that system
@@ -133,7 +139,7 @@ RUN_DEPENDS+=	${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SS
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA.pm:${PORTSDIR}/security/p5-Digest-SHA
 . endif
 RUN_DEPENDS+=	p5-Mail-DKIM>=0.37:${PORTSDIR}/mail/p5-Mail-DKIM
-RUN_DEPENDS+=	p5-Crypt-OpenSSL-RSA>=0.24:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA
+RUN_DEPENDS+=	p5-Crypt-OpenSSL-RSA>=0.26_1:${PORTSDIR}/security/p5-Crypt-OpenSSL-RSA
 .endif
 
 .if defined(WITH_SACOMPILE)
@@ -220,7 +226,7 @@ MAN3=		Mail::SpamAssassin.3 \
 		spamassassin-run.3
 
 MAN1=		spamd.1 spamassassin.1 spamc.1 sa-learn.1 sa-update.1 \
-		spamassassin-run.1 sa-compile.1
+		spamassassin-run.1 sa-compile.1 sa-awl.1
 
 DOCSDIR=	${PREFIX}/share/doc/${PKGNAMEPREFIX}${PORTNAME}
 DATADIR=	${PREFIX}/share/spamassassin
@@ -239,7 +245,7 @@ SUB_LIST+=	SQL_FLAG="-Q"
 SUB_LIST+=	SQL_FLAG=""
 .endif
 .if !defined(WITH_AS_ROOT)
-SUB_LIST+=	RUN_AS_USER="-u spamd -H /var/spool/spamd"
+SUB_LIST+=	RUN_AS_USER="-u ${USERS} -H /var/spool/spamd"
 .else
 SUB_LIST+=	RUN_AS_USER=""
 .endif
@@ -289,7 +295,7 @@ post-build:
 .endif
 
 pre-su-install:
-	@${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
+	@USER=${USERS} GROUP=${GROUPS} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@${INSTALL_PROGRAM} ${WRKSRC}/spamc/libspamc.so ${PREFIX}/lib/libspamc.so.0
 	@${LN} -sf libspamc.so.0 ${PREFIX}/lib/libspamc.so
 .if !defined(WITHOUT_SSL)
@@ -314,7 +320,7 @@ post-install:
 	@[ -f ${PREFIX}/etc/mail/spamassassin/v320.pre ] || \
 		${CP} ${PREFIX}/etc/mail/spamassassin/v320.pre.sample \
 			${PREFIX}/etc/mail/spamassassin/v320.pre
-	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} SU_CMD="${SU_CMD}" ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
+	@PKG_PREFIX=${PREFIX} BATCH=${BATCH} SU_CMD="${SU_CMD}" USER=${USERS} GROUP=${GROUPS} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} POST-INSTALL
 	@[ -f ${PREFIX}/etc/mail/spamassassin/v330.pre ] || \
 		${CP} ${PREFIX}/etc/mail/spamassassin/v330.pre.sample \
 			${PREFIX}/etc/mail/spamassassin/v330.pre
