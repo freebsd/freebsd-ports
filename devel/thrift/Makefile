@@ -6,23 +6,26 @@
 #
 
 PORTNAME=	thrift
-PORTVERSION=	0.4.0
+PORTVERSION=	0.6.1
 PORTEPOCH=	1
 CATEGORIES=	devel
 MASTER_SITES=	APACHE
-MASTER_SITE_SUBDIR=	incubator/thrift/${PORTVERSION}-incubating
+MASTER_SITE_SUBDIR=	/thrift/${PORTVERSION}
 DISTNAME=	thrift-${PORTVERSION}
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Framework for scalable cross-language services development
 
+LICENSE=	ASL
+
 LIB_DEPENDS=	boost_iostreams:${PORTSDIR}/devel/boost-libs \
 		event-1.4:${PORTSDIR}/devel/libevent
 
-USE_AUTOTOOLS=	autoconf:env autoheader:env aclocal:env \
-		automake:env libtool:env
+USE_AUTOTOOLS=	autoconf autoheader:env aclocal automake libtool
+ACLOCAL_ARGS=	-I${WRKSRC}/aclocal
+AUTOMAKE_ARGS=	--foreign --add-missing --copy
+
 USE_GNOME=	pkgconfig
-USE_GCC=	4.2+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
@@ -40,12 +43,16 @@ CONFIGURE_ENV+=	${MAKE_ENV}
 # Other languages are not yet supported, please feel free to contribute
 # using one of the leaf ports as an example.
 CONFIGURE_ARGS+=	\
+		--with-cpp \
+		--without-c_glib \
 		--without-csharp \
 		--without-erlang \
+		--without-haskell \
 		--without-java \
 		--without-perl \
 		--without-php \
-		--without-py \
+		--without-php_extension \
+		--without-python \
 		--without-ruby
 
 .include <bsd.port.pre.mk>
@@ -58,7 +65,7 @@ post-patch:
 	@${REINPLACE_CMD} 's,^pkgconfigdir = .*,pkgconfigdir=$${prefix}/libdata/pkgconfig,' ${WRKSRC}/lib/cpp/Makefile.am
 
 pre-configure:
-	@(cd ${WRKSRC} && ./bootstrap.sh)
+	@${REINPLACE_CMD} '/config.h/d' ${WRKSRC}/lib/cpp/Makefile.am
 
 post-install:
 	@${LN} -sf ${PREFIX}/lib/libthrift.so.0 ${PREFIX}/lib/libthrift.so
@@ -69,7 +76,7 @@ post-install:
 	@${ECHO_MSG} "to compile and link your generated IDL bindings."
 	@${ECHO_MSG}
 	@${ECHO_MSG} "Note: The Thrift white paper may be downloaded from:"
-	@${ECHO_MSG} "http://incubator.apache.org/thrift/static/thrift-20070401.pdf"
+	@${ECHO_MSG} "http://thrift.apache.org/static/thrift-20070401.pdf"
 	@${ECHO_MSG}
 
 .include <bsd.port.post.mk>
