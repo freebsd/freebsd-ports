@@ -403,7 +403,6 @@ alephone                        ports/games/alephone
 alephone-data                   ports/games/alephone-data
 alephone-scenarios              ports/games/alephone-scenarios
 alevt                           ports/misc/alevt
-alexandria                      ports/deskutils/alexandria
 alf                             ports/devel/alf
 algae                           ports/math/algae
 algol68g                        ports/lang/algol68g
@@ -2645,10 +2644,6 @@ drupal6-webform                 ports/www/drupal6-webform
 drupal6-wysiwyg                 ports/www/drupal6-wysiwyg
 drupal6-zeropoint               ports/www/drupal6-zeropoint
 drush                           ports/www/drush
-drweb                           ports/security/drweb
-drweb-postfix                   ports/security/drweb-postfix
-drweb-qmail                     ports/security/drweb-qmail
-drweb-sendmail                  ports/security/drweb-sendmail
 dsbl-testers                    ports/mail/dsbl-testers
 dsnake                          ports/games/dsnake
 dsniff                          ports/security/dsniff
@@ -11790,6 +11785,7 @@ p5-Data-Rmap                    ports/devel/p5-Data-Rmap
 p5-Data-RoundRobin              ports/devel/p5-Data-RoundRobin
 p5-Data-Rx                      ports/devel/p5-Data-Rx
 p5-Data-Section                 ports/devel/p5-Data-Section
+p5-Data-Section-Simple          ports/devel/p5-Data-Section-Simple
 p5-Data-Serializer              ports/devel/p5-Data-Serializer
 p5-Data-ShowTable               ports/devel/p5-Data-ShowTable
 p5-Data-SpreadPagination        ports/textproc/p5-Data-SpreadPagination
@@ -12412,6 +12408,7 @@ p5-HTML-Element-Library         ports/www/p5-HTML-Element-Library
 p5-HTML-Email-Obfuscate         ports/security/p5-HTML-Email-Obfuscate
 p5-HTML-Encoding                ports/www/p5-HTML-Encoding
 p5-HTML-Entities-ImodePictogram  ports/textproc/p5-HTML-Entities-ImodePictogram
+p5-HTML-Entities-Interpolate    ports/textproc/p5-HTML-Entities-Interpolate
 p5-HTML-Entities-Numbered       ports/textproc/p5-HTML-Entities-Numbered
 p5-HTML-EscapeEvil              ports/textproc/p5-HTML-EscapeEvil
 p5-HTML-ExtractContent          ports/www/p5-HTML-ExtractContent
@@ -12570,6 +12567,7 @@ p5-Handel                       ports/www/p5-Handel
 p5-Hash-AsObject                ports/devel/p5-Hash-AsObject
 p5-Hash-AutoHash                ports/devel/p5-Hash-AutoHash
 p5-Hash-Case                    ports/devel/p5-Hash-Case
+p5-Hash-FieldHash               ports/devel/p5-Hash-FieldHash
 p5-Hash-Flatten                 ports/devel/p5-Hash-Flatten
 p5-Hash-Merge                   ports/textproc/p5-Hash-Merge
 p5-Hash-Merge-Simple            ports/devel/p5-Hash-Merge-Simple
@@ -14277,6 +14275,7 @@ p5-Test-Inline                  ports/devel/p5-Test-Inline
 p5-Test-Inter                   ports/devel/p5-Test-Inter
 p5-Test-JSON                    ports/devel/p5-Test-JSON
 p5-Test-Kwalitee                ports/devel/p5-Test-Kwalitee
+p5-Test-LeakTrace               ports/devel/p5-Test-LeakTrace
 p5-Test-LectroTest              ports/devel/p5-Test-LectroTest
 p5-Test-LoadAllModules          ports/devel/p5-Test-LoadAllModules
 p5-Test-Log4perl                ports/devel/p5-Test-Log4perl
@@ -14484,6 +14483,7 @@ p5-Tie-EncryptedHash            ports/security/p5-Tie-EncryptedHash
 p5-Tie-File                     ports/devel/p5-Tie-File
 p5-Tie-File-AsHash              ports/devel/p5-Tie-File-AsHash
 p5-Tie-FileLRUCache             ports/devel/p5-Tie-FileLRUCache
+p5-Tie-Function                 ports/devel/p5-Tie-Function
 p5-Tie-Hash-Indexed             ports/devel/p5-Tie-Hash-Indexed
 p5-Tie-Hash-MultiValue          ports/devel/p5-Tie-Hash-MultiValue
 p5-Tie-Hash-Regex               ports/devel/p5-Tie-Hash-Regex
@@ -15964,6 +15964,7 @@ p5-data-rmap                    ports/devel/p5-Data-Rmap
 p5-data-roundrobin              ports/devel/p5-Data-RoundRobin
 p5-data-rx                      ports/devel/p5-Data-Rx
 p5-data-section                 ports/devel/p5-Data-Section
+p5-data-section-simple          ports/devel/p5-Data-Section-Simple
 p5-data-serializer              ports/devel/p5-Data-Serializer
 p5-data-showtable               ports/devel/p5-Data-ShowTable
 p5-data-spreadpagination        ports/textproc/p5-Data-SpreadPagination
@@ -16686,6 +16687,7 @@ p5-handel                       ports/www/p5-Handel
 p5-hash-asobject                ports/devel/p5-Hash-AsObject
 p5-hash-autohash                ports/devel/p5-Hash-AutoHash
 p5-hash-case                    ports/devel/p5-Hash-Case
+p5-hash-fieldhash               ports/devel/p5-Hash-FieldHash
 p5-hash-flatten                 ports/devel/p5-Hash-Flatten
 p5-hash-merge                   ports/textproc/p5-Hash-Merge
 p5-hash-merge-simple            ports/devel/p5-Hash-Merge-Simple
@@ -16722,6 +16724,7 @@ p5-html-element-library         ports/www/p5-HTML-Element-Library
 p5-html-email-obfuscate         ports/security/p5-HTML-Email-Obfuscate
 p5-html-encoding                ports/www/p5-HTML-Encoding
 p5-html-entities-imodepictogram  ports/textproc/p5-HTML-Entities-ImodePictogram
+p5-html-entities-interpolate    ports/textproc/p5-HTML-Entities-Interpolate
 p5-html-entities-numbered       ports/textproc/p5-HTML-Entities-Numbered
 p5-html-escapeevil              ports/textproc/p5-HTML-EscapeEvil
 p5-html-extractcontent          ports/www/p5-HTML-ExtractContent
@@ -18618,6 +18621,7 @@ p5-test-inline                  ports/devel/p5-Test-Inline
 p5-test-inter                   ports/devel/p5-Test-Inter
 p5-test-json                    ports/devel/p5-Test-JSON
 p5-test-kwalitee                ports/devel/p5-Test-Kwalitee
+p5-test-leaktrace               ports/devel/p5-Test-LeakTrace
 p5-test-lectrotest              ports/devel/p5-Test-LectroTest
 p5-test-loadallmodules          ports/devel/p5-Test-LoadAllModules
 p5-test-log4perl                ports/devel/p5-Test-Log4perl
@@ -18829,6 +18833,7 @@ p5-tie-encryptedhash            ports/security/p5-Tie-EncryptedHash
 p5-tie-file                     ports/devel/p5-Tie-File
 p5-tie-file-ashash              ports/devel/p5-Tie-File-AsHash
 p5-tie-filelrucache             ports/devel/p5-Tie-FileLRUCache
+p5-tie-function                 ports/devel/p5-Tie-Function
 p5-tie-hash-indexed             ports/devel/p5-Tie-Hash-Indexed
 p5-tie-hash-multivalue          ports/devel/p5-Tie-Hash-MultiValue
 p5-tie-hash-regex               ports/devel/p5-Tie-Hash-Regex
@@ -23736,6 +23741,7 @@ rubygem-sinatra-respond_to      ports/www/rubygem-sinatra-respond_to
 rubygem-snmp                    ports/net-mgmt/rubygem-snmp
 rubygem-soap4r                  ports/devel/rubygem-soap4r
 rubygem-spreadsheet             ports/textproc/rubygem-spreadsheet
+rubygem-sprockets               ports/devel/rubygem-sprockets
 rubygem-spruz                   ports/devel/rubygem-spruz
 rubygem-sqlite3                 ports/databases/rubygem-sqlite3
 rubygem-sqlite3-ruby            ports/databases/rubygem-sqlite3-ruby
