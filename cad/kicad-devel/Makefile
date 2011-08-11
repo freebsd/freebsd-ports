@@ -146,7 +146,7 @@ PLIST_FILE_LIST=	bin/freeroute.jnlp \
 			bin/minizip \
 			bin/pcbnew \
 			bin/bitmap2component \
-			pcb_calculator \
+			bin/pcb_calculator \
 			share/mimelnk/application/x-kicad-schematic.desktop \
 			share/mimelnk/application/x-kicad-project.desktop \
 			share/icons/hicolor/24x24/mimetypes/application-x-kicad-project.png \
