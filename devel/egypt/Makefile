@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	egypt
-PORTVERSION=	1.8
+PORTVERSION=	1.9
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://www.gson.org/egypt/download/ CENKES
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	culot@FreeBSD.org
 COMMENT=	Create call graphs of C programs
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 USE_PERL5_RUN=	yes
 PERL_CONFIGURE=	yes
