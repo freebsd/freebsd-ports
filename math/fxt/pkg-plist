@@ -300,7 +300,6 @@ include/fxt/correlation/slowcorr.h
 include/fxt/dctdst-all.h
 include/fxt/dctdst/dctdst.h
 include/fxt/ds-all.h
-include/fxt/ds/priorityqueue1.h
 include/fxt/ds/bitarray.h
 include/fxt/ds/coroutine.h
 include/fxt/ds/deque.h
@@ -1087,6 +1086,10 @@ lib/libfxt.a
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gf2n/primefact-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gf2n/qmatrix-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/gf2n/qmatrix-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph/sta-graph-acgray-demo.cc
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph/sta-graph-macgray-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph/sta-graph-acgray-out.txt
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph/sta-graph-macgray-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph/graph-debruijn-m-demo.cc
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph/graph-perm-pref-rot-out.txt
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/graph/graph-perm-pref-rot-demo.cc
