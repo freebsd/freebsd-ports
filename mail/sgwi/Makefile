@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	lukasz@wasikowski.net
 COMMENT=	PHP web interface to SQLGrey
 
+LICENSE=	GPLv2
+
 NO_BUILD=	yes
 SUB_FILES+=	pkg-message pkg-install
 SUB_LIST=	WWWOWN=${WWWOWN} WWWGRP=${WWWGRP}
