@@ -14,7 +14,7 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A library for handling 3DS (3D Studio) files
 
-LICENSE=	LGPLv21 # (or later)
+LICENSE=	LGPL21 # (or later)
 
 USE_ZIP=	yes
 USE_GL=		glut
