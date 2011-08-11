@@ -39,8 +39,7 @@ OPTIONS=	WEBKIT_IMAGE "Build webkit-image (needed for Yahoo imagery)" on
 PLIST_FILES+=	bin/webkit-image
 
 USE_QT_VER=	4
-QT_COMPONENTS=	corelib gui imageformats moc_build network script \
-		rcc_build uic_build webkit
+QT_COMPONENTS=	corelib gui webkit moc_build
 
 do-build:
 	cd ${WRKSRC} && \
@@ -49,7 +48,9 @@ do-build:
 		${DISTDIR}/${WEBKITIMG_SRC} -o ${WEBKITIMG} -lQtCore -lQtWebKit \
 		-lQtGui
 .else
-NO_BUILD=	yes
+# setting NO_BUILD here won't work
+do-build:
+	@${DO_NADA}
 .endif
 
 do-install:
