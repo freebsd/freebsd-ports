@@ -28,9 +28,6 @@ MODULE_DIRS=	translations
 DOC_FILES=	INSTALL.txt API.txt README.txt i18n-ascii.example.txt \
 		LICENSE.txt
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/LICENSE.txt
-
 .include <bsd.port.pre.mk>
 .include "${PORTSDIR}/Mk/bsd.drupal.mk"
 .include <bsd.port.post.mk>
