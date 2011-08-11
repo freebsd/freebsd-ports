@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Test-Corpus-Audio-MPD
-PORTVERSION=	1.110710
+PORTVERSION=	1.111260
 CATEGORIES=	audio perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:JQUELIN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	wen@FreeBSD.org
@@ -17,7 +16,8 @@ COMMENT=	Automate launching of fake mdp for testing purposes
 
 BUILD_DEPENDS=	p5-File-ShareDir>=0:${PORTSDIR}/devel/p5-File-ShareDir \
 		p5-Path-Class>=0:${PORTSDIR}/devel/p5-Path-Class \
-		devel/p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly
+		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
+		p5-File-ShareDir-PathClass>0:${PORTSDIR}/devel/p5-File-ShareDir-PathClass
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	YES
