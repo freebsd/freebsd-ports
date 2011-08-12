@@ -1,4 +1,7 @@
 bin/termit
+etc/xdg/termit/colormaps.lua
+etc/xdg/termit/rc.lua
+etc/xdg/termit/utils.lua
 share/applications/termit.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/lua_api.txt
@@ -11,3 +14,5 @@ share/locale/zh_TW/LC_MESSAGES/termit.mo
 share/pixmaps/termit.svg
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
+@dirrm etc/xdg/termit
+@dirrmtry etc/xdg
