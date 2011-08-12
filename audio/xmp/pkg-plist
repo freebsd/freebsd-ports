@@ -5,7 +5,6 @@ bin/xmp
 @unexec if cmp -s %D/%%ETCDIR%%/modules.conf.sample %D/%%ETCDIR%%/modules.conf; then rm -f %D/%%ETCDIR%%/modules.conf; fi
 %%ETCDIR%%/modules.conf.sample
 @exec if [ ! -f %D/%%ETCDIR%%/modules.conf ]; then cp -p %D/%F %B/modules.conf; fi
-%%AUDACIOUS%%lib/audacious/Input/xmp-audacious.so
 %%BMP%%lib/bmp/Input/xmp-bmp.so
 %%XMMS%%lib/xmms/Input/xmp-xmms.so
 @dirrmtry %%ETCDIR%%
