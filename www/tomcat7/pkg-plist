@@ -278,8 +278,6 @@
 %%T%%/webapps/examples/WEB-INF/classes/examples/ValuesTag.java
 %%T%%/webapps/examples/WEB-INF/classes/filters/ExampleFilter.class
 %%T%%/webapps/examples/WEB-INF/classes/filters/ExampleFilter.java
-%%T%%/webapps/examples/WEB-INF/classes/filters/SetCharacterEncodingFilter.class
-%%T%%/webapps/examples/WEB-INF/classes/filters/SetCharacterEncodingFilter.java
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/BookBean.class
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/BookBean.java
 %%T%%/webapps/examples/WEB-INF/classes/jsp2/examples/FooBean.class
