@@ -4755,6 +4755,7 @@ gobby                           ports/editors/gobby
 gobject-introspection           ports/devel/gobject-introspection
 goblin                          ports/math/goblin
 gocr                            ports/graphics/gocr
+godis                           ports/databases/godis
 gofer                           ports/lang/Gofer
 goffice                         ports/devel/goffice
 goffice04                       ports/devel/goffice04
@@ -12176,6 +12177,7 @@ p5-File-SearchPath              ports/devel/p5-File-SearchPath
 p5-File-ShareDir                ports/devel/p5-File-ShareDir
 p5-File-ShareDir-Install        ports/devel/p5-File-ShareDir-Install
 p5-File-ShareDir-PAR            ports/devel/p5-File-ShareDir-PAR
+p5-File-ShareDir-PathClass      ports/devel/p5-File-ShareDir-PathClass
 p5-File-Signature               ports/sysutils/p5-File-Signature
 p5-File-Slurp                   ports/devel/p5-File-Slurp
 p5-File-Slurp-Tree              ports/devel/p5-File-Slurp-Tree
@@ -16470,6 +16472,7 @@ p5-file-searchpath              ports/devel/p5-File-SearchPath
 p5-file-sharedir                ports/devel/p5-File-ShareDir
 p5-file-sharedir-install        ports/devel/p5-File-ShareDir-Install
 p5-file-sharedir-par            ports/devel/p5-File-ShareDir-PAR
+p5-file-sharedir-pathclass      ports/devel/p5-File-ShareDir-PathClass
 p5-file-signature               ports/sysutils/p5-File-Signature
 p5-file-slurp                   ports/devel/p5-File-Slurp
 p5-file-slurp-tree              ports/devel/p5-File-Slurp-Tree
