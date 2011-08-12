@@ -29,72 +29,37 @@
 #				  (value: perl5.8)
 # SITE_PERL		- Directory name where site specific perl packages go.
 #				  This value is added to PLIST_SUB.
-# USE_PERL5		- If your port needs a specific version of Perl, you
-#				  can easily specify that with this knob.  If
-#				  you need a certain minimal version, but don't
-#				  care if about the upperversion, just put the
-#				  + sign behind the version.  If you want to
-#				  specify a latest version your port can be used
-#				  with, suffix the version number with a - sign.
-#				  Exact version can also be specified if you just
-#				  set USE_PERL5 to the desired version.  If you
-#				  just set USE_PERL5 to "yes", Perl will be
-#				  pulled in as a dependency but no version check
-#				  is done.
-# USE_PERL5_REASON
-#				- Along with USE_PERL5, you can set a specific reason,
-#				  why a given version is required.
-#
-# Examples:
-# 	USE_PERL5=	yes	# port requires any version of Perl5 to build.
-# 	USE_PERL5=	5.8.0+	# port requires at least Perl 5.8.0 to build.
-#	USE_PERL5=	5.8.2	# port is only usable with Perl 5.8.2.
-#	USE_PERL5=	5.8.6-	# port is only usable with Perl 5.8.6 or prior.
-#
-# This line along with a properly set USE_PERL5 will give the user a reason,
-# why the specific ports cannot be installed into the given environment.
-#
-#	USE_PERL5_REASON=	this module is already part of your Perl version
-#
+# USE_PERL5		- If set, this port uses perl5 in one or more of the extract,
+#				  patch, build, install or run phases.
 # PERL_CONFIGURE
 #				- Configure using Perl's MakeMaker.  Implies USE_PERL5.
-#				  The version requirement can be specified here,
-#				  as well.
 # USE_PERL5_BUILD
 #				- If set, this port uses perl5 in one or more of the
 #				  extract, patch, build or install phases.
-#				  The version requirement can be specified here,
-#				  as well.
-# USE_PERL5_RUN	- If set, this port uses perl5 for running.  The
-#			 	  version requirement can be specified here,
-#				  as well.
-# PERL_MODBUILD	- Use Module::Build to configure, build and install
-#				  port.  The version requirement can be specified
-#				  here, as well.
-#
-# WANT_PERL		- Set this if your port conditionally depends on Perl.
-#				  This MUST appear before the inclusion of bsd.port.pre.mk.
+# USE_PERL5_RUN	- If set, this port uses perl5 for running.
+# PERL_MODBUILD	- Use Module::Build to configure, build and install port.
 
 .if !defined(_POSTMKINCLUDED) && !defined(Perl_Pre_Include)
 
 Perl_Pre_Include=			bsd.perl.mk
 PERL_Include_MAINTAINER=	perl@FreeBSD.org
 
-# XXX to remain undefined until all ports that require Perl are fixed
-# to set one of the conditionals that force the inclusion of bsd.perl.mk
-.if defined(_PERL_REFACTORING_COMPLETE)
-
 PERL_VERSION?=	5.12.4
 
 .if !defined(PERL_LEVEL) && defined(PERL_VERSION)
-perl_major=		${PERL_VERSION:C|\..*||}
-_perl_minor=	${PERL_VERSION:S|^${perl_major}||:S|^.||:C|\..*||}
-_perl_patch=	${PERL_VERSION:S|^${perl_major}||:S|^.${_perl_minor}||:S|^.||:C|\..*||}
-perl_minor=		${_perl_minor:S|^|000|:C|.*(...)|\1|}
-perl_patch=		${_perl_patch:S|^|00|:C|.*(..)|\1|}
-PERL_LEVEL=		${perl_major}${perl_minor}${perl_patch}
+perl_major=		${PERL_VERSION:C|^([1-9]+).*|\1|}
+_perl_minor=	00${PERL_VERSION:C|^([1-9]+)\.([0-9]+).*|\2|}
+perl_minor=		${_perl_minor:C|^.*(...)|\1|}
+.if ${perl_minor} >= 100
+perl_minor=		${PERL_VERSION:C|^([1-9]+)\.([0-9][0-9][0-9]).*|\2|}
+perl_patch=		${PERL_VERSION:C|^.*(..)|\1|}
+.else # ${perl_minor} < 100
+_perl_patch=	0${PERL_VERSION:C|^([1-9]+)\.([0-9]+)\.*|0|}
+perl_patch=		${_perl_patch:C|^.*(..)|\1|}
+.endif # ${perl_minor} < 100
+PERL_LEVEL=	${perl_major}${perl_minor}${perl_patch}
 .else
-PERL_LEVEL=		0
+PERL_LEVEL=0
 .endif # !defined(PERL_LEVEL) && defined(PERL_VERSION)
 
 PERL_ARCH?=		mach
@@ -114,8 +79,6 @@ SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
 
 PERL5=		${LOCALBASE}/bin/perl${PERL_VERSION}
 PERL=		${LOCALBASE}/bin/perl
-
-.endif  # defined(_PERL_REFACTORING_COMPLETE)
 
 # Decide where to look for the version string
 .ifdef USE_PERL5
@@ -177,18 +140,10 @@ IGNORE=	improper use of USE_PERL5
 
 Perl_Post_Include=		bsd.perl.mk
 
-.if defined(_PERL_REFACTORING_COMPLETE)
-
 PLIST_SUB+=	PERL_VERSION=${PERL_VERSION} \
 			PERL_VER=${PERL_VERSION} \
 			PERL_ARCH=${PERL_ARCH} \
 			SITE_PERL=${SITE_PERL_REL}
-
-.endif  # defined(_PERL_REFACTORING_COMPLETE)
-
-.if !defined(PERL) || !defined(PERL5) || !defined(PERL_PORT) || !defined(SITE_PERL)
-IGNORE=		missing define for WANT_PERL, USE_PERL5, or similar before bsd.port.pre.mk inclusion
-.endif
 
 .if defined(PERL_MODBUILD)
 PERL_CONFIGURE=		yes

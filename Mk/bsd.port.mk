@@ -323,32 +323,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #					'yes'		as a library dependency
 #					'run'		as a run-time dependency
 ##
-# USE_PERL5		- If set, this port uses perl5 in one or more of the extract,
-#				  patch, build, install or run phases.
-# USE_PERL5_BUILD
-#				- If set, this port uses perl5 in one or more of the extract,
-#				  patch, build or install phases.
-# USE_PERL5_RUN	- If set, this port uses perl5 for running.
-# PERL5			- Set to full path of perl5, either in the system or
-#				  installed from a port.
-# PERL			- Set to full path of perl5, either in the system or
-#				  installed from a port, but without the version number.
-#				  Use this if you need to replace "#!" lines in scripts.
-# PERL_VERSION	- Full version of perl5 (see below for current value).
-# PERL_LEVEL	- Perl version as an integer of the form MNNNPP, where
-#				  M is major version, N is minor version, and P is
-#				  the patch level. E.g., PERL_VERSION=5.8.1 would give
-#				  a PERL_LEVEL of 500801. This can be used in comparisons
-#				  to determine if the version of perl is high enough,
-#				  whether a particular dependency is needed, etc.
-# PERL_ARCH		- Directory name of architecture dependent libraries
-#				  (value: ${ARCH}-freebsd).
-# PERL_PORT		- Name of the perl port that is installed
-#				  (value: perl5)
-# SITE_PERL		- Directory name where site specific perl packages go.
-#				  This value is added to PLIST_SUB.
-# PERL_MODBUILD	- Use Module::Build to configure, build and install port.
-##
 # USE_GHOSTSCRIPT
 #				- If set, this port needs ghostscript to both
 #				  build and run.  If a number is specified,
@@ -893,8 +867,6 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  configure stage will not do anything if this is not set.
 # GNU_CONFIGURE	- If set, you are using GNU configure (optional).  Implies
 #				  HAS_CONFIGURE.
-# PERL_CONFIGURE
-#				- Configure using Perl's MakeMaker.  Implies USE_PERL5.
 # CONFIGURE_WRKSRC
 #				- Directory to run configure in.
 #				  Default: ${WRKSRC}
@@ -914,7 +886,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				- Pass these args to configure if ${HAS_CONFIGURE} is set.
 #				  Default: "--prefix=${GNU_CONFIGURE_PREFIX} --infodir=${PREFIX}/${INFO_PATH}
 #				  --mandir=${MANPREFIX}/man --build=${CONFIGURE_TARGET}" if
-#				  GNU_CONFIGURE is set, "CC=${CC} CCFLAGS=${CFLAGS}
+#				  GNU_CONFIGURE is set, "CC=${CC} CFLAGS=${CFLAGS}
 #				  PREFIX=${PREFIX} INSTALLPRIVLIB=${PREFIX}/lib
 #				  INSTALLARCHLIB=${PREFIX}/lib" if PERL_CONFIGURE is set,
 #				  empty otherwise.
@@ -1439,48 +1411,6 @@ LDCONFIG_CMD?=			${LINUXBASE}/sbin/ldconfig -r ${LINUXBASE}
 
 PKGCOMPATDIR?=		${LOCALBASE}/lib/compat/pkg
 
-# XXX to remain undefined until all ports that require Perl are fixed
-# to set one of the conditionals that force the inclusion of bsd.perl.mk
-.if !defined(_PERL_REFACTORING_COMPLETE)
-
-PERL_VERSION?=	5.12.4
-
-.if !defined(PERL_LEVEL) && defined(PERL_VERSION)
-perl_major=		${PERL_VERSION:C|^([1-9]+).*|\1|}
-_perl_minor=	00${PERL_VERSION:C|^([1-9]+)\.([0-9]+).*|\2|}
-perl_minor=		${_perl_minor:C|^.*(...)|\1|}
-.if ${perl_minor} >= 100
-perl_minor=		${PERL_VERSION:C|^([1-9]+)\.([0-9][0-9][0-9]).*|\2|}
-perl_patch=		${PERL_VERSION:C|^.*(..)|\1|}
-.else # ${perl_minor} < 100
-_perl_patch=	0${PERL_VERSION:C|^([1-9]+)\.([0-9]+)\.*|0|}
-perl_patch=		${_perl_patch:C|^.*(..)|\1|}
-.endif # ${perl_minor} < 100
-PERL_LEVEL=	${perl_major}${perl_minor}${perl_patch}
-.else
-PERL_LEVEL=0
-.endif # !defined(PERL_LEVEL) && defined(PERL_VERSION)
-
-PERL_ARCH?=		mach
-
-.if    ${PERL_LEVEL} >= 501400
-PERL_PORT?=	perl5.14
-.elif  ${PERL_LEVEL} >= 501200
-PERL_PORT?=	perl5.12
-.elif  ${PERL_LEVEL} >= 501000
-PERL_PORT?=	perl5.10
-.else
-PERL_PORT?=	perl5.8
-.endif
-
-SITE_PERL_REL?=	lib/perl5/site_perl/${PERL_VERSION}
-SITE_PERL?=	${LOCALBASE}/${SITE_PERL_REL}
-
-PERL5=		${LOCALBASE}/bin/perl${PERL_VERSION}
-PERL=		${LOCALBASE}/bin/perl
-
-.endif  # !defined(_PERL_REFACTORING_COMPLETE)
-
 .if defined(USE_LOCAL_MK)
 .include "${PORTSDIR}/Mk/bsd.local.mk"
 .endif
@@ -1497,9 +1427,7 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${PORTSDIR}/Mk/bsd.gnustep.mk"
 .endif
 
-#.if defined(USE_PERL5) || defined(USE_PERL5_BUILD) || defined(USE_PERL5_RUN) || defined(PERL_CONFIGURE) || defined(PERL_MODBUILD)
 .include "${PORTSDIR}/Mk/bsd.perl.mk"
-#.endif
 
 .if defined(USE_PHP)
 .include "${PORTSDIR}/Mk/bsd.php.mk"
@@ -2063,13 +1991,6 @@ IGNORE=	uses unknown USE_BISON construct
 
 .endif
 
-.if !defined(_PERL_REFACTORING_COMPLETE)
-PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
-				PERL_VER=${PERL_VERSION} \
-				PERL_ARCH=${PERL_ARCH} \
-				SITE_PERL=${SITE_PERL_REL}
-.endif  # !defined(_PERL_REFACTORING_COMPLETE)
-
 .if defined(USE_LOCAL_MK)
 .include "${PORTSDIR}/Mk/bsd.local.mk"
 .endif
@@ -2116,9 +2037,7 @@ PLIST_SUB+=		PERL_VERSION=${PERL_VERSION} \
 .include "${PORTSDIR}/Mk/bsd.sdl.mk"
 .endif
 
-#.if defined(USE_PERL5) || defined(USE_PERL5_BUILD) || defined(USE_PERL5_RUN) || defined(PERL_CONFIGURE) || defined(PERL_MODBUILD)
 .include "${PORTSDIR}/Mk/bsd.perl.mk"
-#.endif
 
 .if defined(USE_PHP)
 .include "${PORTSDIR}/Mk/bsd.php.mk"
