@@ -1,5 +1,5 @@
-SHA256 (mcmc-jags/JAGS-3.0.0.tar.gz) = 1cc9a5b1104e2d052a76a8faad2b615a1d9e7f02dd6cd8d514cb6ac9b6b6795e
-SIZE (mcmc-jags/JAGS-3.0.0.tar.gz) = 1610047
+SHA256 (mcmc-jags/JAGS-3.1.0.tar.gz) = 69ece562dbd09ad4b493ec0576e9951faf4e16e0ae78302752ef199dff3c4e0b
+SIZE (mcmc-jags/JAGS-3.1.0.tar.gz) = 1609007
 SHA256 (mcmc-jags/classic-bugs.tar.gz) = ae6f9e25f00a3c2bf2d67c8b3fe040f937551ef75407ae0bd8cad5cbc3a8f768
 SIZE (mcmc-jags/classic-bugs.tar.gz) = 81419
 SHA256 (mcmc-jags/jags_developer_manual.pdf) = 6e7c707b94ffc931807198cc162e8b254859bb774695ae39ef1c1c175560259b
