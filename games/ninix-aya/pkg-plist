@@ -44,6 +44,7 @@ libexec/ninix/ninix/config.py
 libexec/ninix/ninix/dll.py
 libexec/ninix/ninix/entry_db.py
 libexec/ninix/ninix/home.py
+libexec/ninix/ninix/install.py
 libexec/ninix/ninix/keymap.py
 libexec/ninix/ninix/kinoko.py
 libexec/ninix/ninix/makoto.py
@@ -66,6 +67,7 @@ libexec/ninix/ninix/communicate.pyc
 libexec/ninix/ninix/config.pyc
 libexec/ninix/ninix/dll.pyc
 libexec/ninix/ninix/home.pyc
+libexec/ninix/ninix/install.pyc
 libexec/ninix/ninix/keymap.pyc
 libexec/ninix/ninix/kinoko.pyc
 libexec/ninix/ninix/lock.py
@@ -100,6 +102,7 @@ libexec/ninix/sstplib.pyc
 %%PORTDOCS%%%%DOCSDIR%%/TODO.ninix
 %%PORTDOCS%%%%DOCSDIR%%/README.ninix
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/KNOWN_ISSUES
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm libexec/ninix/ninix/dll
 @dirrm libexec/ninix/ninix
