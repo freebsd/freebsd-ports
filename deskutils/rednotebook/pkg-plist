@@ -202,6 +202,7 @@
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/nds/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/nl/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/nn/LC_MESSAGES/rednotebook.mo
+%%PYTHON_SITELIBDIR%%/rednotebook/i18n/oc/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/pl/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/pt/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/pt_BR/LC_MESSAGES/rednotebook.mo
@@ -220,6 +221,7 @@
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/vi/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/wae/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/zh_CN/LC_MESSAGES/rednotebook.mo
+%%PYTHON_SITELIBDIR%%/rednotebook/i18n/zh_HK/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/i18n/zh_TW/LC_MESSAGES/rednotebook.mo
 %%PYTHON_SITELIBDIR%%/rednotebook/images/bulletlist.png
 %%PYTHON_SITELIBDIR%%/rednotebook/images/date.png
@@ -350,6 +352,8 @@
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/nl
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/nn/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/nn
+@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/oc/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/oc
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/pl/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/pl
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/pt/LC_MESSAGES
@@ -386,6 +390,8 @@
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/wae
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/zh_CN/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/zh_CN
+@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/zh_HK/LC_MESSAGES
+@dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/zh_HK
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/zh_TW/LC_MESSAGES
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n/zh_TW
 @dirrm %%PYTHON_SITELIBDIR%%/rednotebook/i18n
