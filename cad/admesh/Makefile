@@ -14,8 +14,7 @@ MASTER_SITES=	http://www.varlog.com/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Program for processing STL triangulated solid meshes
 
-BROKEN=	does not fetch
-
+FETCH_ARGS?=	-Fpr
 GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/admesh
