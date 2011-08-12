@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	termit
-PORTVERSION=	2.8.1
+PORTVERSION=	2.9.1
 CATEGORIES=	x11-toolkits gnome
 MASTER_SITES=	http://cloud.github.com/downloads/nonstop/termit/
 
@@ -14,7 +14,6 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Small terminal emulator
 
 LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_BZIP2=	yes
 USE_GNOME=	vte
@@ -26,7 +25,13 @@ MAKE_JOBS_SAFE=	yes
 MAN1=		${PORTNAME}.1
 
 post-patch:
-	@${REINPLACE_CMD} -e '/doc/s|^|#|' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e \
+		'/doc/s|^|#|' ${WRKSRC}/CMakeLists.txt
+	@${REINPLACE_CMD} -e \
+		's| /etc| etc|' ${WRKSRC}/etc/CMakeLists.txt
+	@${REINPLACE_CMD} -e \
+		's|:/etc|:${PREFIX}/etc| ; \
+		 s|"/etc|"${PREFIX}/etc|' ${WRKSRC}/src/lua_conf.c
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1 ${MANPREFIX}/man/man1
