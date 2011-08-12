@@ -6,31 +6,48 @@
 #
 
 PORTNAME=	raul
-PORTVERSION=	0.5.1
-PORTREVISION=	3
+PORTVERSION=	0.8.0
 CATEGORIES=	audio
 MASTER_SITES=	http://download.drobilla.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	C++ utility library primarily aimed at audio/musical applications
 
-LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \
-		jack.0:${PORTSDIR}/audio/jack \
-		lash.2:${PORTSDIR}/audio/lash \
-		glibmm-2.4.1:${PORTSDIR}/devel/glibmm
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack
+LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs
+
+USE_BZIP2=	yes
+USE_GNOME=	glib20
+USE_PYTHON_BUILD=yes
 USE_LDCONFIG=	yes
-CXXFLAGS+=	${CFLAGS}
-CONFIGURE_ENV=	"-I${LOCALBASE}/include"
-CONFIGURE_ENV=	"CXXFLAGS=${CFLAGS} -I${LOCALBASE}/include"
+
+CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} < 700000
-BROKEN=		Does not compile
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
+WAF_VERBOSE=	--verbose
 .endif
+
+.if defined(MAKE_JOBS_NUMBER)
+WAF_JOBS=	--jobs=${MAKE_JOBS_NUMBER}
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		"s|$$[{]LIBDIRNAME[}]/pkgconfig|libdata/pkgconfig| ; \
+		 s|-fshow-column'|-fshow-column ${CXXFLAGS}'|" \
+			${WRKSRC}/autowaf/autowaf.py
+
+do-configure:
+	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} --prefix=${PREFIX} configure)
+
+do-build:
+	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} ${WAF_JOBS} build)
+
+do-install:
+	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} install)
 
 .include <bsd.port.post.mk>
