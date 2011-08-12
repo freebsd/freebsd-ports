@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-ScanDeps
-PORTVERSION=	1.02
+PORTVERSION=	1.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RSCHUPP
@@ -18,7 +18,7 @@ COMMENT=	Recursively scan Perl code for dependencies
 PERL_CONFIGURE=	yes
 
 MAN1=		scandeps.pl.1
-MAN3=		Module::ScanDeps.3 Module::ScanDeps::DataFeed.3
+MAN3=		Module::ScanDeps.3
 
 post-patch:
 	@${REINPLACE_CMD} -e \
