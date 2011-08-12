@@ -1,12 +1,12 @@
-bin/atari-hd-image.sh
+bin/atari-hd-image
 bin/hatari
-bin/hatari-console.py
 bin/hatariui
 bin/hmsa
-bin/zip2st.sh
+bin/zip2st
 share/applications/hatariui.desktop
 %%PORTDOCS%%%%DOCSDIR%%/authors.txt
 %%PORTDOCS%%%%DOCSDIR%%/changelog.txt
+%%PORTDOCS%%%%DOCSDIR%%/coding.txt
 %%PORTDOCS%%%%DOCSDIR%%/compatibility.html
 %%PORTDOCS%%%%DOCSDIR%%/emutos.txt
 %%PORTDOCS%%%%DOCSDIR%%/fr/clavier-exemple.txt
@@ -43,8 +43,14 @@ share/applications/hatariui.desktop
 %%DATADIR%%/hatariui/hatariui.py
 %%DATADIR%%/hatariui/release-notes.txt
 %%DATADIR%%/hatariui/uihelpers.py
+%%DATADIR%%/hconsole/example-commands
+%%DATADIR%%/hconsole/example-debugger
+%%DATADIR%%/hconsole/example.py
+%%DATADIR%%/hconsole/hconsole.py
+%%DATADIR%%/hconsole/release-notes.txt
 %%DATADIR%%/tos.img
 share/pixmaps/hatari-icon.png
+@dirrm %%DATADIR%%/hconsole
 @dirrm %%DATADIR%%/hatariui
 @dirrm %%DATADIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/images

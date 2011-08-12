@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	hatari
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	emulators
 MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Atari ST emulator
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	portaudio>=19:${PORTSDIR}/audio/portaudio2
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
@@ -23,27 +26,33 @@ USE_SDL=	sdl
 USE_CMAKE=	yes
 CMAKE_ARGS=	-DPORTAUDIO_INCLUDE_DIR:STRING="${PA2_INCLUDE_DIR}" \
 		-DPORTAUDIO_LIBRARY:STRING="${PA2_LIBRARY}" \
-		-DCMAKE_C_FLAGS_RELEASE:STRING="-DNDEBUG"
+		-DCMAKE_C_FLAGS_RELEASE:STRING="-DNDEBUG" \
+		-DETCDIR:STRING="${PREFIX}/etc" \
+		-DMANDIR:STRING="man/man1"
+MAKE_JOBS_SAFE=	yes
 
 MANCOMPRESSED=	yes
 MANLANG=	"" fr
 MAN1=		${PORTNAME}.1
-MAN1_EN=	${PORTNAME}ui.1
+MAN1_EN=	atari-hd-image.1 hatariui.1 hconsole.1 hmsa.1 zip2st.1
 
 CFLAGS+=	-I${LOCALBASE}/include/portaudio2
 PA2_INCLUDE_DIR=-I${LOCALBASE}/include/portaudio2
 PA2_LIBRARY=	${LOCALBASE}/lib/portaudio2/libportaudio.so
 
-post-extract:
-	@cd ${WRKSRC}/doc && ${GZIP_CMD} -c ${PORTNAME}.1 > ${PORTNAME}.1.gz
-	@cd ${WRKSRC}/doc/fr && ${GZIP_CMD} -c ${PORTNAME}.1 > ${PORTNAME}.1.gz
-
 post-patch:
-	@${REINPLACE_CMD} -e '/CONFDIR/s|"/etc|"${PREFIX}/etc| ; \
-		 /MANDIR/s|share/man|man| ; \
-		 /doc/s|^add_|#add_|' ${WRKSRC}/CMakeLists.txt
+	@${FIND} ${WRKSRC} -name "*.1" | ${XARGS} ${REINPLACE_CMD} -e \
+		's|^/etc|${PREFIX}/etc| ; \
+		 s| (or /usr.*|| ; \
+		 s|/usr/share|${PREFIX}/share|'
+	@${REINPLACE_CMD} -e '/doc/s|^add_|#add_|' \
+		${WRKSRC}/CMakeLists.txt
 	@${REINPLACE_CMD} -e '/DESTINATION/s|/icons/.*)|/pixmaps)|' \
 		${WRKSRC}/python-ui/CMakeLists.txt
+
+post-build:
+	@cd ${WRKSRC}/doc && ${GZIP_CMD} -c ${PORTNAME}.1 > ${PORTNAME}.1.gz
+	@cd ${WRKSRC}/doc/fr && ${GZIP_CMD} -c ${PORTNAME}.1 > ${PORTNAME}.1.gz
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/${PORTNAME}.1.gz ${MANPREFIX}/man/man1
