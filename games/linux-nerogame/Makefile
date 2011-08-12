@@ -15,6 +15,8 @@ DISTNAME=	nero2_linux_i386
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	Neuro envolving robotic operatives the game
 
+BROKEN=		unfetchable
+
 USE_LINUX=	yes
 USE_LINUX_APPS=	libvorbis sdl12 libtheora
 NO_BUILD=	yes
