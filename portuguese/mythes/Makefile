@@ -29,7 +29,7 @@ PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKDIR}/th_pt_PT_v2.dat ${WRKSRC}/th_pt_PT_v2.idx ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/th_pt_PT_v2.dat ${WRKSRC}/th_pt_PT_v2.idx ${DATADIR}/
 	${LN} -s th_pt_PT_v2.dat ${DATADIR}/th_pt_BR_v2.dat
 	${LN} -s th_pt_PT_v2.idx ${DATADIR}/th_pt_BR_v2.idx
 
