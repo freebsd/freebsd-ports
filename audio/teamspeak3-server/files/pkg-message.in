@@ -10,3 +10,6 @@ put it into %%PREFIX%%/etc/teamspeak
 
 To see the admin token after the first start, have a look
 into the logs in /var/log/teamspeak
+
+TeamSpeak DNS server can be found in libexec dir but is not
+started automatically.

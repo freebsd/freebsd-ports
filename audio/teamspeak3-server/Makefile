@@ -6,11 +6,12 @@
 #
 
 PORTNAME=	teamspeak3-server
-PORTVERSION=	3.0.0r1
+PORTVERSION=	3.0.0
+PORTEPOCH=	1
 CATEGORIES=	audio net
-MASTER_SITES=	http://teamspeak.gameserver.gamed.de/ts3/releases/rc1/ \
-		http://ftp.4players.de/pub/hosted/ts3/releases/rc1/
-DISTNAME=	${PORTNAME}_freebsd-${TEAMSPEAK_ARCH}-3.0.0-rc1
+MASTER_SITES=	http://teamspeak.gameserver.gamed.de/ts3/releases/3.0.0/ \
+		http://ftp.4players.de/pub/hosted/ts3/releases/3.0.0/
+DISTNAME=	${PORTNAME}_freebsd-${TEAMSPEAK_ARCH}-3.0.0
 
 MAINTAINER=	hirner@bitfire.at
 COMMENT=	Server side of the TeamSpeak group voice chat system
@@ -31,7 +32,7 @@ GROUPS=	teamspeak
 LICENSE=	teamspeak
 LICENSE_NAME=	TeamSpeak 3.x End User License Agreement
 LICENSE_PERMS=	dist-mirror pkg-mirror auto-accept
-LICENSE_FILE=	${FILESDIR}/LICENSE
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 CONFLICTS=	teamspeak_server-[0-9]*
 
@@ -64,6 +65,8 @@ do-install:
 	@${INSTALL_LIB} ${WRKSRC}/*.so ${LIBDIR}
 	@${INSTALL_PROGRAM} ${WRKSRC}/ts3server_freebsd_${TEAMSPEAK_ARCH} \
 		${LIBEXECDIR}/teamspeak_server
+	@${INSTALL_PROGRAM} ${WRKSRC}/tsdns/tsdnsserver_freebsd_${TEAMSPEAK_ARCH} \
+		${LIBEXECDIR}/teamspeak_tsdnsserver
 	@(cd ${WRKSRC} && ${COPYTREE_SHARE} "sql serverquerydocs" ${SHAREDIR})
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
