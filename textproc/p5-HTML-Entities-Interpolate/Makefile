@@ -15,6 +15,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Call HTML::Entities::encode_entities, via a hash, within a string
 
+BUILD_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-Tie-Function>=0:${PORTSDIR}/devel/p5-Tie-Function
 RUN_DEPENDS=	p5-HTML-Parser>=0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-Tie-Function>=0:${PORTSDIR}/devel/p5-Tie-Function
 TEST_DEPENDS=	p5-Test-Pod>=0:${PORTSDIR}/devel/p5-Test-Pod
