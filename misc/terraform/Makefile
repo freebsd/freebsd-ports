@@ -7,32 +7,47 @@
 #
 
 PORTNAME=	terraform
-PORTVERSION=	0.9.0
-PORTREVISION=	11
+PORTVERSION=	0.9.5
+DISTVERSIONPREFIX=	src-
 CATEGORIES=	misc gnome
-MASTER_SITES=	SF
+MASTER_SITES=	GOOGLE_CODE
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive height field generation and manipulation program
 
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
 BUILD_DEPENDS=	${LOCALBASE}/lib/libtrio.a:${PORTSDIR}/devel/trio
 
-USE_XORG=	x11
-USE_BISON=	build
-USE_GNOME=	gnomeprefix gnomehack gnomeprint
+WRKSRC=		${WRKDIR}/${PORTNAME}
+
+USE_GNOME=	gnomehack gnomehier libgnomeprintui libgnomeui
+USE_GETTEXT=	yes
 USE_GMAKE=	yes
+USE_AUTOTOOLS=	automake:env
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+MAKE_JOBS_SAFE=	yes
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|Bison |Bison|g ; \
-		 s|-ltrio  $$LIBS|-ltrio -lm $$LIBS|g ; \
-		 s|#define  1|#define HAVE_LIB_TRIO 1|g ; \
-		 s|(HAVE_LIB_TRIO)||g" ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e "s|malloc\.h|stdlib.h|g" ${WRKSRC}/src/xmlsupport.c
+	@${REINPLACE_CMD} -e '/^SUBDIRS/s| desktop-links docs | |' \
+		 ${WRKSRC}/Makefile.in
+
+pre-configure:
+	@${LN} -sf ${AUTOMAKE_DIR}/depcomp ${WRKSRC}
 
 post-install:
+	@${MKDIR} ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKSRC}/desktop-links/Terraform.desktop \
+		${PREFIX}/share/applications
+	@${MKDIR} ${PREFIX}/share/pixmaps
+	${INSTALL_DATA} ${WRKSRC}/desktop-links/terraform.png \
+		${PREFIX}/share/pixmaps
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for file in FAQ.sgml README.sgml UsersGuide.sgml i18n.txt
