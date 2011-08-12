@@ -1,2 +1,4 @@
-SHA256 (xmms-fc-0.5.4.tar.gz) = 406c362f2f00b5569940bf3ae4e78927cb93eb724016323547fd6f4c36c65c62
-SIZE (xmms-fc-0.5.4.tar.gz) = 326474
+SHA256 (xmms-fc-0.6.tar.bz2) = 75882111045f9443a8d64743aaa5aa06697e80ed0fcd261471ae4a2b72d2f0ca
+SIZE (xmms-fc-0.6.tar.bz2) = 260473
+SHA256 (libfc14audiodecoder-1.0.2.tar.bz2) = 41065b4ec18a2fb453dbc193072b01b9ec6feb64938a5cb63b3ce5ccea92145f
+SIZE (libfc14audiodecoder-1.0.2.tar.bz2) = 271043
