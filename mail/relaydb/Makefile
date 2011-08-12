@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	relaydb
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	mail
 MASTER_SITES=	http://www.benzedrine.cx/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	Spam relay database
 
 MAN8=		relaydb.8
