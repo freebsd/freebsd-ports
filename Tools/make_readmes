@@ -6,16 +6,16 @@ $TEMPLATES=$ENV{TEMPLATES} || "${PORTSDIR}/Templates";
 $README=`cat ${TEMPLATES}/README.port`;
 
 while(<>) {
-	split '\|';
-
-	$PKG=$_[0];
-	$PORT=$_[1];
-	$COMMENT=$_[3];
-	$DESCR=$_[4];
-	$EMAIL=$_[5];
-	$BUILD_DEPENDS=$_[7];
-	$RUN_DEPENDS=$_[8];
-	$WEBSITE=$_[9];
+	(@F)=split(/\|/, $_);
+	$PKG=$F[0];
+	$PORT=$F[1];
+	$COMMENT=$F[3];
+	$DESCR=$F[4];
+	$EMAIL=$F[5];
+	$BUILD_DEPENDS=$F[7];
+	$RUN_DEPENDS=$F[8];
+	$WEBSITE=$F[9];
+	
 
 	$DESCR=~s|^\Q$PORT/\E||;
 	$PORT=~s|`pwd`||;
