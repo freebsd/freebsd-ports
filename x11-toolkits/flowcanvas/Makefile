@@ -6,23 +6,51 @@
 #
 
 PORTNAME=	flowcanvas
-PORTVERSION=	0.5.1
-PORTREVISION=	5
+PORTVERSION=	0.7.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	http://download.drobilla.net/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	FlowCanvas is an interactive Gtkmm/Gnomecanvasmm widget
+COMMENT=	An interactive Gtkmm/Gnomecanvasmm widget
+
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \
-		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
+		gvc.6:${PORTSDIR}/graphics/graphviz \
 		gnomecanvasmm-2.6:${PORTSDIR}/graphics/libgnomecanvasmm26 \
-		gvc:${PORTSDIR}/graphics/graphviz
+		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
 
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gnomehack
+USE_BZIP2=	yes
+USE_PYTHON_BUILD=yes
 USE_LDCONFIG=	yes
-CONFIGURE_ENV=	"CXXFLAGS=${CFLAGS} -I${LOCALBASE}/include"
+MAKE_JOBS_SAFE=	yes
 
-.include <bsd.port.mk>
+CFLAGS+=	-I${LOCALBASE}/include
+
+.include <bsd.port.pre.mk>
+
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
+WAF_VERBOSE=	--verbose
+.endif
+
+.if defined(MAKE_JOBS_NUMBER)
+WAF_JOBS=	--jobs=${MAKE_JOBS_NUMBER}
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		"s|$$[{]LIBDIRNAME[}]/pkgconfig|libdata/pkgconfig| ; \
+		 s|-fshow-column'|-fshow-column ${CXXFLAGS}'|" \
+			${WRKSRC}/autowaf/autowaf.py
+
+do-configure:
+	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} --prefix=${PREFIX} configure)
+
+do-build:
+	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} ${WAF_JOBS} build)
+
+do-install:
+	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} install)
+
+.include <bsd.port.post.mk>

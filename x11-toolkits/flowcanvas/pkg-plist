@@ -7,8 +7,8 @@ include/flowcanvas/Module.hpp
 include/flowcanvas/Port.hpp
 include/flowcanvas/flowcanvas.hpp
 include/flowcanvas/types.hpp
-@dirrm include/flowcanvas
-lib/libflowcanvas.so.2
 lib/libflowcanvas.so
-lib/libflowcanvas.la
+lib/libflowcanvas.so.5
+lib/libflowcanvas.so.5.1.0
 libdata/pkgconfig/flowcanvas.pc
+@dirrm include/flowcanvas
