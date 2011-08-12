@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xnee
-PORTVERSION=	3.09
+PORTVERSION=	3.10
 CATEGORIES=	x11
 MASTER_SITES=	GNU
 
@@ -32,7 +32,7 @@ INFO=		xnee
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GNEE)
-USE_GNOME+=	gtk20
+USE_GNOME+=	gtk20 libgnomeui
 MAN1+=		gnee.1
 PLIST_SUB+=	GNEE=""
 DESKTOP_ENTRIES=	"Gnee" "${COMMENT}" "${PREFIX}/share/pixmaps/xnee.png" \
