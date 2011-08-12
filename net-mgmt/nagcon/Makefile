@@ -8,9 +8,7 @@
 PORTNAME=	nagcon
 PORTVERSION=	0.0.30
 CATEGORIES=	net-mgmt
-MASTER_SITES=	http://www.vanheusden.com/nagcon/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	ehaupt
+MASTER_SITES=	http://www.vanheusden.com/nagcon/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	rand@meridian-enviro.com
