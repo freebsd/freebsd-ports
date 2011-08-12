@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	cparser
-PORTVERSION=	0.9.11
+PORTVERSION=	0.9.12
 CATEGORIES=	lang devel
 MASTER_SITES=	SF
 
 MAINTAINER=	armin@frozen-zone.org
 COMMENT=	A C99 compiler using libFIRM as backend
 
-LIB_DEPENDS=	firm.0:${PORTSDIR}/devel/libfirm
+LIB_DEPENDS=	firm.1:${PORTSDIR}/devel/libfirm
 
 LICENSE=	GPLv2
 

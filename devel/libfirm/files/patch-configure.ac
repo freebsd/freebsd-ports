@@ -1,0 +1,12 @@
+--- configure.ac.orig	2011-08-12 11:46:34.000000000 +0100
++++ configure.ac	2011-08-12 11:46:48.000000000 +0100
+@@ -90,9 +90,6 @@
+ dnl ----------------------
+ AC_PROG_CC
+ 
+-dnl enable visibility hidden (if supported)
+-AX_CFLAGS_GCC_OPTION([-fvisibility=hidden])
+-
+ 
+ AC_PATH_PROGS(PERL, perl perl5)
+ 
