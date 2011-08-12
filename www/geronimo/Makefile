@@ -20,7 +20,7 @@ JAVA_VERSION=	1.5+
 NO_BUILD=	YES
 
 USE_RC_SUBR=	geronimo2.sh
-SUB_FILES=	pkg-install pkg-deinstall
+SUB_FILES=	pkg-deinstall
 
 OPTIONS=	TOMCAT6 "Use Tomcat instead of default Jetty" off
 
@@ -37,6 +37,9 @@ APP_HOME?=	${PREFIX}/${PKGBASE}${MAJOR_VER}
 LOG_DIR=	${APP_HOME}/var/log
 APP_TITLE=	Geronimo
 APP_SHORTNAME=	geronimo${MAJOR_VER}
+.if defined(GERONIMO_USER)
+IGNORE=	no longer allows customisation of GERONIMO_USER or GERONIMO_GROUP
+.endif
 GERONIMO_USER?=	www
 GERONIMO_GROUP?=www
 GERONIMO_OUT=	${LOG_DIR}/geronimo.out
@@ -72,9 +75,6 @@ post-patch:
 	@${ECHO_MSG} -n ">> Removing unneeded files..."
 	@${RM} -f `${FIND} ${WRKSRC} -name '*.bat'` `${FIND} ${WRKSRC} -name '*.orig'` `${FIND} ${WRKSRC} -name '*.exe'`
 	@${ECHO_MSG} " [ DONE ]"
-
-pre-install:
-	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 do-install:
 	${MKDIR} ${APP_HOME} && ${CHOWN} ${GERONIMO_USER}:${GERONIMO_GROUP} ${APP_HOME}
