@@ -1,4 +1,3 @@
-include/libfirm/adt/align.h
 include/libfirm/adt/array.h
 include/libfirm/adt/bipartite.h
 include/libfirm/adt/cpset.h
@@ -9,12 +8,10 @@ include/libfirm/adt/gaussseidel.h
 include/libfirm/adt/hashptr.h
 include/libfirm/adt/hashset.h
 include/libfirm/adt/hungarian.h
-include/libfirm/adt/impl.h
 include/libfirm/adt/iterator.h
 include/libfirm/adt/list.h
 include/libfirm/adt/obst.h
 include/libfirm/adt/obstack.h
-include/libfirm/adt/offset.h
 include/libfirm/adt/pdeq.h
 include/libfirm/adt/plist.h
 include/libfirm/adt/pmap.h
@@ -23,15 +20,16 @@ include/libfirm/adt/pset.h
 include/libfirm/adt/pset_new.h
 include/libfirm/adt/set.h
 include/libfirm/adt/unionfind.h
-include/libfirm/adt/util.h
 include/libfirm/adt/xmalloc.h
 include/libfirm/analyze_irg_args.h
 include/libfirm/be.h
+include/libfirm/begin.h
 include/libfirm/callgraph.h
 include/libfirm/cdep.h
 include/libfirm/cgana.h
 include/libfirm/compound_path.h
 include/libfirm/dbginfo.h
+include/libfirm/end.h
 include/libfirm/execfreq.h
 include/libfirm/execution_frequency.h
 include/libfirm/field_temperature.h
@@ -39,11 +37,10 @@ include/libfirm/firm.h
 include/libfirm/firm_common.h
 include/libfirm/firm_types.h
 include/libfirm/firmstat.h
-include/libfirm/height.h
+include/libfirm/heights.h
 include/libfirm/ident.h
 include/libfirm/interval_analysis.h
 include/libfirm/irarch.h
-include/libfirm/ircgcons.h
 include/libfirm/ircgopt.h
 include/libfirm/ircons.h
 include/libfirm/irconsconfirm.h
@@ -70,14 +67,12 @@ include/libfirm/iroptimize.h
 include/libfirm/irouts.h
 include/libfirm/irprintf.h
 include/libfirm/irprog.h
-include/libfirm/irsimpletype.h
 include/libfirm/irtypeinfo.h
-include/libfirm/irvrfy.h
+include/libfirm/irverify.h
 include/libfirm/lowering.h
-include/libfirm/old_fctnames.h
-include/libfirm/pseudo_irg.h
+include/libfirm/nodeops.h
+include/libfirm/opcodes.h
 include/libfirm/rta.h
-include/libfirm/seqnumbers.h
 include/libfirm/structure.h
 include/libfirm/timing.h
 include/libfirm/trouts.h
@@ -87,7 +82,7 @@ include/libfirm/vrp.h
 lib/libfirm.a
 lib/libfirm.la
 lib/libfirm.so
-lib/libfirm.so.0
+lib/libfirm.so.1
 libdata/pkgconfig/libfirm.pc
 @dirrm include/libfirm/adt
 @dirrm include/libfirm

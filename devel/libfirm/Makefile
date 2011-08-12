@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libfirm
-PORTVERSION=	1.18.1
+PORTVERSION=	1.19.1
 CATEGORIES=	devel lang
 MASTER_SITES=	SF
 
@@ -16,7 +16,7 @@ COMMENT=	A graph-based SSA intermediate representation library for compilers
 LICENSE=	GPLv2 LGPL21
 LICENSE_COMB=	multi
 
-GNU_CONFIGURE=	yes
+USE_AUTOTOOLS=	autoconf
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack pkgconfig
