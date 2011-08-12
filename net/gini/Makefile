@@ -21,12 +21,11 @@ USE_GNOME=	glib12
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
 USE_GMAKE=	yes
+USERS=		${PORTNAME}
+GROUPS=		${USERS}
 
 MAN1=		ginicon.1 ginifeed.1
 MAN8=		gini.8
-
-pre-install:
-	@${SETENV} ${SCRIPTS_ENV} ${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 
 post-install:
 	${INSTALL_SCRIPT} ${FILESDIR}/gini.sh.sample ${PREFIX}/etc/rc.d

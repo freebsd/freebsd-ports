@@ -97,6 +97,7 @@ sympa:*:200:
 dspam:*:202:
 yate:*:204:
 gnugk:*:205:
+gini:*:206:
 shoutcast:*:210:
 git:*:211:
 hg:*:212:
