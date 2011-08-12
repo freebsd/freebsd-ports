@@ -155,6 +155,7 @@
     SUBDIR += cccc
     SUBDIR += ccdoc
     SUBDIR += ccrtp
+    SUBDIR += cdash
     SUBDIR += cdecl
     SUBDIR += cdialog
     SUBDIR += cdk
