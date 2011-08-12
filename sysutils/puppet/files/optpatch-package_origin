@@ -1,5 +1,5 @@
 diff --git lib/puppet/provider/package/freebsd.rb lib/puppet/provider/package/freebsd.rb
-index e10a20b..f36e29e 100755
+index e10a20b..7f50e10 100755
 --- lib/puppet/provider/package/freebsd.rb
 +++ lib/puppet/provider/package/freebsd.rb
 @@ -1,37 +1,165 @@
@@ -11,7 +11,7 @@ index e10a20b..f36e29e 100755
 -    libraries."
 +require 'open-uri'
 +require 'net/ftp'
-+require 'bz2'
++require 'bzip2'
  
 -  commands :pkginfo => "/usr/sbin/pkg_info",
 -    :pkgadd => "/usr/sbin/pkg_add",
@@ -99,7 +99,7 @@ index e10a20b..f36e29e 100755
 +        Puppet.debug "Fetching INDEX: #{uri.inspect}"
 +        begin
 +          open(uri, "r") do |f|
-+            BZ2::Reader.open(f.path) do |f|
++            Bzip2::Reader.open(f.path) do |f|
 +              while (line = f.gets)
 +                fields = line.split("|")
 +                pkg_info = self.class.parse_pkg_string(fields[0])

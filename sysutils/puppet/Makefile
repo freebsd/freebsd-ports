@@ -6,23 +6,23 @@
 #
 
 PORTNAME=	puppet
-PORTVERSION=	2.6.7
+DISTVERSION=	2.7.3rc1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.puppetlabs.com/downloads/puppet/
+MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
 MAINTAINER=	raj@csub.edu
 COMMENT=	A configuration management framework written in Ruby
 
-RUN_DEPENDS=	${RUBY_SITELIBDIR}/facter.rb:${PORTSDIR}/sysutils/facter \
-		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-augeas \
-		${RUBY_ARCHLIBDIR}/iconv.so:${PORTSDIR}/converters/ruby-iconv
+RUN_DEPENDS=	facter>=0:${PORTSDIR}/sysutils/facter \
+		rubygem-ruby-augeas>=0:${PORTSDIR}/textproc/rubygem-augeas
 
 CONFLICTS=	puppet-devel-[0-9]*
 
 NO_BUILD=	yes
 USE_RUBY=	yes
+USE_RUBY_FEATURES=	iconv
 USE_RC_SUBR=	puppet puppetmaster
-PORTDOCS=	CHANGELOG README LICENSE COPYING
+PORTDOCS=	CHANGELOG LICENSE README.md
 PORTEXAMPLES=	*
 PUPPET_USER:=	puppet
 PUPPET_GROUP:=	${PUPPET_USER}
@@ -37,7 +37,16 @@ SUB_LIST+=	PUPPET_USER="${PUPPET_USER}" \
 MANCOMPRESSED=	yes
 MAN5=	puppet.conf.5
 MAN8=	filebucket.8 pi.8 puppet.8 puppetca.8 puppetd.8 \
-	puppetdoc.8 puppetmasterd.8 puppetrun.8 ralsh.8 puppetqd.8
+	puppetdoc.8 puppetmasterd.8 puppetrun.8 ralsh.8 puppetqd.8 \
+	puppet-agent.8 puppet-apply.8 puppet-catalog.8 puppet-cert.8 \
+	puppet-certificate.8 puppet-certificate_request.8 \
+	puppet-certificate_revocation_list.8 puppet-config.8 \
+	puppet-describe.8 puppet-device.8 puppet-doc.8 puppet-facts.8 \
+	puppet-file.8 puppet-filebucket.8 puppet-help.8 puppet-inspect.8 \
+	puppet-key.8 puppet-kick.8 puppet-man.8 puppet-master.8 \
+	puppet-node.8 puppet-parser.8 puppet-plugin.8 puppet-queue.8 \
+	puppet-report.8 puppet-resource.8 puppet-resource_type.8 \
+	puppet-secret_agent.8 puppet-status.8
 
 OPTIONS=	MONGREL		"Run puppet server as a mongrel service"	Off \
 		PACKAGE_ORIGIN	"Use port origin as package name"		On
@@ -50,7 +59,7 @@ RUN_DEPENDS+=	rubygem-mongrel>=0:${PORTSDIR}/www/rubygem-mongrel
 
 .if defined(WITH_PACKAGE_ORIGIN)
 EXTRA_PATCHES+=	${FILESDIR}/optpatch-package_origin
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bz2.so:${PORTSDIR}/archivers/ruby-bz2
+RUN_DEPENDS+=	rubygem-bzip2>=0:${PORTSDIR}/archivers/rubygem-bzip2
 .endif
 
 .include <bsd.port.pre.mk>
@@ -85,6 +94,8 @@ post-install:
 		${SED} -e 's/genconfig = true/# genconfig = false/' \
 		> ${ETCDIR}/puppet.conf-dist
 	@${ECHO} ${RUBY_SITELIBDIR}/puppet.rb | \
+		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
+	@${ECHO} ${RUBY_SITELIBDIR}/semver.rb | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
 	@${FIND} ${RUBY_SITELIBDIR}/${PORTNAME} -type f | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
