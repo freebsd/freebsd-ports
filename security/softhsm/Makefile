@@ -1,12 +1,12 @@
 # New ports collection makefile for:   	softhsm
 # Date created:        15 December 2009
-# Whom:                Jaap Akkerhuis <jaap@NLnetLabs.nl
+# Whom:                Jaap Akkerhuis <jaap@NLnetLabs.nl>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	softhsm
-PORTVERSION=	1.2.1
+PORTVERSION=	1.3.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.opendnssec.org/files/source/
 
@@ -17,6 +17,7 @@ LIB_DEPENDS=	botan:${PORTSDIR}/security/botan
 LIB_DEPENDS+=	sqlite3:${PORTSDIR}/databases/sqlite3
 
 GNU_CONFIGURE=	yes
+CONFIGURE_ARGS=	--with-botan=${LOCALBASE} --with-sqlite3=${LOCALBASE}
 
 USE_LDCONFIG=	yes
 
