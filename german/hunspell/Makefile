@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.j3e.de/ispell/igerman98/dict/
 DISTNAME=	igerman98-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
-COMMENT=	Hunspell german dictionary
+COMMENT=	German hunspell dictionaries
 
 BUILD_DEPENDS=	buildhash:${PORTSDIR}/textproc/ispell \
 		hunspell:${PORTSDIR}/textproc/hunspell

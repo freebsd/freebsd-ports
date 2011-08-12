@@ -20,6 +20,7 @@ LICENSE=	GPLv3
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	%%DATADIR%%/it_IT.aff \
 		%%DATADIR%%/it_IT.dic
@@ -27,6 +28,6 @@ PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKDIR}/it_IT.aff ${WRKDIR}/it_IT.dic ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/it_IT.aff ${WRKSRC}/it_IT.dic ${DATADIR}/
 
 .include <bsd.port.mk>

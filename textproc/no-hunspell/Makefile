@@ -26,8 +26,8 @@ PLIST_FILES=	%%DATADIR%%/nb_NO.aff \
 PLIST_DIRSTRY=	%%DATADIR%%
 
 post-extract:
-	@${EXTRACT_CMD} ${WRKDIR}/nb_NO.zip -d ${WRKSRC}
-	@${EXTRACT_CMD} ${WRKDIR}/nn_NO.zip -d ${WRKSRC}
+	@${EXTRACT_CMD} ${WRKDIR}/nb_NO.zip -d ${WRKSRC}/
+	@${EXTRACT_CMD} ${WRKDIR}/nn_NO.zip -d ${WRKSRC}/
 
 do-install:
 	${MKDIR} ${DATADIR}/
