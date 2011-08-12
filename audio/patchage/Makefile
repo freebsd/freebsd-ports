@@ -6,29 +6,58 @@
 #
 
 PORTNAME=	patchage
-PORTVERSION=	0.4.2
-PORTREVISION=	3
+PORTVERSION=	0.5.0
 CATEGORIES=	audio
-MASTER_SITES=	http://download.drobilla.net/
+MASTER_SITES=	http://download.drobilla.net/ \
+		http://frugalware.mirrors.tds.net/pub/linux/frugalware/frugalware-current/source/xmultimedia-extra/patchage/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Modular patch bay for Jack
 
-LIB_DEPENDS=	boost_date_time.4:${PORTSDIR}/devel/boost-libs \
+LICENSE=	GPLv2 GPLv3
+LICENSE_COMB=	dual
+
+LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
+		raul.10:${PORTSDIR}/audio/raul \
+		boost_date_time.4:${PORTSDIR}/devel/boost-libs \
+		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		glibmm-2.4.1:${PORTSDIR}/devel/glibmm \
 		glademm-2.4:${PORTSDIR}/devel/libglademm24 \
-		raul.2:${PORTSDIR}/audio/raul \
-		flowcanvas.2:${PORTSDIR}/x11-toolkits/flowcanvas
+		flowcanvas.5:${PORTSDIR}/x11-toolkits/flowcanvas
 
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
-CONFIGURE_ENV=	"CXXFLAGS=${CFLAGS} -I${LOCALBASE}/include"
+USE_BZIP2=	yes
+USE_PYTHON_BUILD=yes
 INSTALLS_ICONS=	yes
+MAKE_JOBS_SAFE=	yes
+
+MAN1=		patchage.1
+
+CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900027
-BROKEN=		does not build on 9.X after log2 addition
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
+WAF_VERBOSE=	--verbose
 .endif
+
+.if defined(MAKE_JOBS_NUMBER)
+WAF_JOBS=	--jobs=${MAKE_JOBS_NUMBER}
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		"s|$$[{]LIBDIRNAME[}]/pkgconfig|libdata/pkgconfig| ; \
+		 s|-fshow-column'|-fshow-column ${CXXFLAGS}'|" \
+			${WRKSRC}/autowaf/autowaf.py
+
+do-configure:
+	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} --prefix=${PREFIX} \
+		--mandir=${MANPREFIX}/man --no-alsa --no-lash configure)
+
+do-build:
+	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} ${WAF_JOBS} build)
+
+do-install:
+	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} install)
 
 .include <bsd.port.post.mk>
