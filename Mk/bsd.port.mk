@@ -1549,6 +1549,10 @@ PERL=		${LOCALBASE}/bin/perl
 .include "${PORTSDIR}/Mk/bsd.qt.mk"
 .endif
 
+.if defined(USE_DRUPAL)
+.include "${PORTSDIR}/Mk/bsd.drupal.mk"
+.endif
+
 .if defined(WANT_GECKO) || defined(USE_GECKO) || defined(USE_FIREFOX) || defined(USE_FIREFOX_BUILD) || defined(USE_SEAMONKEY) || defined(USE_SEAMONKEY_BUILD) || defined(USE_THUNDERBIRD) || defined(USE_THUNDERBIRD_BUILD)
 .include "${PORTSDIR}/Mk/bsd.gecko.mk"
 .endif
@@ -2932,19 +2936,6 @@ maintainer:
 
 .if !target(check-makefile)
 check-makefile::
-.if !exists(/usr/share/mk/bsd.port.options.mk)
-	@${ECHO_CMD} "!!! Detected system without bsd.port.options.mk (probably old FreeBSD version)"
-	@${ECHO_CMD} "!!! Dropping bsd.port.options.mk into /usr/share/mk"
-	-@${ECHO_CMD} "USEOPTIONSMK=   yes" > /usr/share/mk/bsd.port.options.mk 2>/dev/null
-	-@${ECHO_CMD} "INOPTIONSMK=    yes" >> /usr/share/mk/bsd.port.options.mk 2>/dev/null
-	-@${ECHO_CMD} ".include <bsd.port.mk>" >> /usr/share/mk/bsd.port.options.mk 2>/dev/null
-	-@${ECHO_CMD} ".undef INOPTIONSMK" >> /usr/share/mk/bsd.port.options.mk 2>/dev/null
-.if exists(/usr/share/mk/bsd.port.options.mk)
-	@${ECHO_CMD} "!!! Done"
-.else
-	@${ECHO_CMD} "!!! Failed"
-.endif
-.endif
 	@${DO_NADA}
 .endif
 
