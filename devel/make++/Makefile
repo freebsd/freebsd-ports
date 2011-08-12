@@ -7,17 +7,35 @@
 #
 
 PORTNAME=	make++
-PORTVERSION=	1.19
-PORTREVISION=	1
+DISTVERSION=	1.40.1a
 CATEGORIES=	devel perl5
-MASTER_SITES=	SF/makepp/makepp/${PORTVERSION}
-DISTNAME=	${PORTNAME:S/+/p/g}-${PORTVERSION}
+MASTER_SITES=	SF/${PORTNAME:S/+/p/g}/${DISTVERSION:S/a//}
+DISTNAME=	${PORTNAME:S/+/p/g}-${DISTVERSION:S/\.a//}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A drop-in replacement for GNU make
 
+LICENSE=	ART10 GPLv1 GPLv2 GPLv3
+LICENSE_COMB=	dual
+
+WRKSRC=		${WRKDIR}/${PORTNAME:S/+/p/g}-${DISTVERSION:R}
+
 USE_PERL5=	yes
-DATADIR=	${PREFIX}/share/makepp
+HAS_CONFIGURE=	yes
+CONFIGURE_ARGS=	--prefix=${PREFIX} --mandir=${MANPREFIX}/man
+
+DATADIR=	${PREFIX}/share/${PORTNAME:S/+/p/g}
+DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/+/p/g}
+
+MAN1=		makepp.1 makepp_build_algorithm.1 \
+		makepp_builtin.1 makepp_command.1 \
+		makepp_cookbook.1 makepp_extending.1 \
+		makepp_functions.1 makepp_incompatibilities.1 \
+		makepp_release_notes.1 makepp_repositories.1 \
+		makepp_rules.1 makepp_scanning.1 \
+		makepp_signatures.1 makepp_statements.1 \
+		makepp_tutorial.1 makepp_tutorial_compilation.1 \
+		makepp_variables.1 makeppclient.1
 
 .include <bsd.port.pre.mk>
 
@@ -25,19 +43,13 @@ DATADIR=	${PREFIX}/share/makepp
 RUN_DEPENDS+=	p5-Digest-MD5>=2.16:${PORTSDIR}/security/p5-Digest-MD5
 .endif
 
-do-build:
-	@${PERL} -pi -e "s|\@htmldir\@|${PREFIX}/share/makepp/html|g ; \
-		s|\@datadir\@|${PREFIX}/share/makepp|g" ${WRKSRC}/makepp
+.if defined(NOPORTDOCS)
+CONFIGURE_ARGS+=--htmldir=none
+.else
+CONFIGURE_ARGS+=--htmldir=${DOCSDIR}/html
+.endif
 
-do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/makepp ${PREFIX}/bin
-	@${MKDIR} ${DATADIR}/Signature
-	${INSTALL_SCRIPT} ${WRKSRC}/recursive_makepp ${DATADIR}
-	@(cd ${WRKSRC} ; \
-	  ${FIND} . -name "*.pm" -maxdepth 1 -exec ${INSTALL_SCRIPT} {} ${DATADIR} \;)
-	@(cd ${WRKSRC}/Signature ; \
-	  ${FIND} . -name "*.pm" -exec ${INSTALL_SCRIPT} {} ${DATADIR}/Signature \;)
-	@(cd ${WRKSRC} ; \
-	  ${FIND} . -name "*.mk" -exec ${INSTALL_SCRIPT} {} ${DATADIR} \;)
+post-patch:
+	@${REINPLACE_CMD} -e '/^all:/s|test||' ${WRKSRC}/config.pl
 
 .include <bsd.port.post.mk>
