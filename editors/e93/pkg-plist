@@ -1,5 +1,7 @@
 bin/e93
-bin/e93r
+lib/e93lib/README.e93
+lib/e93lib/README.regex
+lib/e93lib/README.syntaxmaps
 lib/e93lib/e93rc.tcl
 lib/e93lib/examples/README
 lib/e93lib/examples/sethighlightscheme.tcl
@@ -18,6 +20,7 @@ lib/e93lib/syntaxmaps/asm.tcl
 lib/e93lib/syntaxmaps/c.tcl
 lib/e93lib/syntaxmaps/css.tcl
 lib/e93lib/syntaxmaps/eiffel.tcl
+lib/e93lib/syntaxmaps/email.tcl
 lib/e93lib/syntaxmaps/html.tcl
 lib/e93lib/syntaxmaps/java.tcl
 lib/e93lib/syntaxmaps/javaScript.tcl
@@ -29,12 +32,6 @@ lib/e93lib/syntaxmaps/verilog.tcl
 lib/e93lib/syntaxmaps/vhdl.tcl
 lib/e93lib/syntaxmaps/xml.tcl
 lib/e93lib/syntaxmaps/xsl.tcl
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.e93
-%%PORTDOCS%%%%DOCSDIR%%/README.rants
-%%PORTDOCS%%%%DOCSDIR%%/README.regex
-%%PORTDOCS%%%%DOCSDIR%%/README.syntaxmaps
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/e93lib/syntaxmaps
 @dirrm lib/e93lib/newstuff
 @dirrm lib/e93lib/modules
