@@ -37,11 +37,4 @@ if [ "$2" = "DEINSTALL" ]; then
 	fi
 fi
 
-if [ "$2" = "POST-DEINSTALL" ]; then
-	# If the user exists, then display a message
-	if pw usershow "${USER}" 2>/dev/null 1>&2; then
-		echo "To delete the ${USER} user permanently, use 'pw userdel ${USER}'"
-	fi
-fi
-
 exit 0
