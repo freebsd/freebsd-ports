@@ -13,7 +13,7 @@ MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	vi_VN
 
 MAINTAINER=	office@FreeBSD.org
-COMMENT=	Hunspell vietnamese dictionary
+COMMENT=	Vietnamese hunspell dictionaries
 
 USE_ZIP=	yes
 NO_BUILD=	yes

@@ -20,6 +20,7 @@ COMMENT=	Tsonga hunspell dictionaries
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+WRKSRC=		${WRKDIR}/dictionaries
 
 PLIST_FILES=	%%DATADIR%%/ts_ZA.aff \
 		%%DATADIR%%/ts_ZA.dic
@@ -27,7 +28,7 @@ PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKDIR}/dictionaries/ts-ZA.aff ${DATADIR}/ts_ZA.aff
-	${INSTALL_DATA} ${WRKDIR}/dictionaries/ts-ZA.dic ${DATADIR}/ts_ZA.dic
+	${INSTALL_DATA} ${WRKSRC}/ts-ZA.aff ${DATADIR}/ts_ZA.aff
+	${INSTALL_DATA} ${WRKSRC}/ts-ZA.dic ${DATADIR}/ts_ZA.dic
 
 .include <bsd.port.mk>

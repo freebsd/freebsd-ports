@@ -18,10 +18,11 @@ DISTFILES=	hunspell-en_US-${PORTVERSION}-0${EXTRACT_SUFX} \
 		en_GB.zip:GB
 
 MAINTAINER=	office@FreeBSD.org
-COMMENT=	Hunspell english dictionaries
+COMMENT=	English hunspell dictionaries
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	%%DATADIR%%/en_CA.aff \
 		%%DATADIR%%/en_CA.dic \
@@ -41,7 +42,7 @@ PLIST_FILES+=	%%DATADIR%%/${ALIAS}.aff \
 
 do-install:
 	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKDIR}/*.aff ${WRKDIR}/*.dic ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/*.aff ${WRKSRC}/*.dic ${DATADIR}/
 .for ALIAS in ${GBALIASES}
 	${LN} -s en_GB.aff ${DATADIR}/${ALIAS}.aff
 	${LN} -s en_GB.dic ${DATADIR}/${ALIAS}.dic

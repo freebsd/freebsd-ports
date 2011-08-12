@@ -12,7 +12,7 @@ MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	ru_RU_UTF8
 
 MAINTAINER=	office@FreeBSD.org
-COMMENT=	Hunspell russian dictionary
+COMMENT=	Russian hunspell dictionaries
 
 USE_ZIP=	yes
 NO_BUILD=	yes

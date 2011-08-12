@@ -14,7 +14,7 @@ DISTNAME=	spell-uk-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	office@FreeBSD.org
-COMMENT=	Hunspell ukrainian dictionary
+COMMENT=	Ukrainian hunspell dictionaries
 
 BUILD_DEPENDS=	iconv:${PORTSDIR}/converters/libiconv
 
