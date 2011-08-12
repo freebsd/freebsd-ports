@@ -1,0 +1,6 @@
+This Perl module is a emulation of Spreadsheet::ParseExcel for Excel 2007
+(.xlsx) file format. It supports styles and many of Excel's quirks, but not
+all. It populates the classes from Spreadsheet::ParseExcel for
+interoperability; including Workbook, Worksheet, and Cell.
+
+WWW:	http://search.cpan.org/dist/Spreadsheet-XLSX
