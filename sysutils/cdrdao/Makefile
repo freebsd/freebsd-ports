@@ -62,7 +62,7 @@ CONFIGURE_ARGS+=	--with-mp3-support=no --with-ogg-support=no
 CONFIGURE_ARGS+=	--without-pcctsbin --without-pcctsinc \
 			--with-posix-threads=no --with-scglib
 MAKE_ENV=		CCOM=cc LANG=C
-SCSILIBTARGET=		${ARCH}-freebsd-cc
+SCSILIBTARGET=		${ARCH:S/powerpc64/powerpc/}-freebsd-cc
 
 .include <bsd.port.pre.mk>
 

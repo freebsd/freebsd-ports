@@ -27,7 +27,7 @@ MAN1=		sformat.1
 
 CCOM!=		${BASENAME} ${CC}
 MAKE_ENV=	CCOM=${CCOM} LANG=C
-SFMTTARGET=	${ARCH}-freebsd-${CCOM}
+SFMTTARGET=	${ARCH:S/powerpc64/powerpc/}-freebsd-${CCOM}
 
 post-extract:
 	@cd ${WRKSRC} && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
