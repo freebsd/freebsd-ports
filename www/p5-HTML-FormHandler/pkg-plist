@@ -64,6 +64,7 @@
 %%SITE_PERL%%/HTML/FormHandler/I18N.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/en_us.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/de_de.pm
+%%SITE_PERL%%/HTML/FormHandler/I18N/sv_se.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/tr_tr.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/ua_ua.pm
 %%SITE_PERL%%/HTML/FormHandler/I18N/ru_ru.pm
