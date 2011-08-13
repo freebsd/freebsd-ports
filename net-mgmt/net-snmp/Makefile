@@ -7,7 +7,7 @@
 
 PORTNAME=	snmp
 PORTVERSION=	5.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt ipv6
 MASTER_SITES=	SF/net-${PORTNAME}/net-${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	net-
@@ -40,7 +40,6 @@ CONFIGURE_ARGS+=--enable-shared --enable-internal-md5 \
 		--with-sys-location="${NET_SNMP_SYS_LOCATION}" \
 		--with-logfile="${NET_SNMP_LOGFILE}" \
 		--with-persistent-directory="${NET_SNMP_PERSISTENTDIR}" \
-		--with-mib-modules="host disman/event-mib smux mibII/mta_sendmail mibII/tcpTable ucd-snmp/diskio" \
 		--with-gnu-ld --with-libwrap --with-ldflags="-lm -lkvm -ldevstat"
 
 .if defined(BATCH)
@@ -106,6 +105,7 @@ NET_SNMP_SYS_CONTACT?=	nobody@nowhere.invalid
 NET_SNMP_SYS_LOCATION?=	somewhere
 NET_SNMP_LOGFILE?=	/var/log/snmpd.log
 NET_SNMP_PERSISTENTDIR?=/var/net-snmp
+NET_SNMP_WITH_MIB_MODULE_LIST+=	host disman/event-mib smux mibII/mta_sendmail mibII/tcpTable ucd-snmp/diskio
 
 .if ${OSVERSION} >= 700028
 NET_SNMP_WITH_MIB_MODULE_LIST+=	sctp-mib
@@ -117,7 +117,7 @@ CONFIGURE_ARGS+=	--with-libs="-lssp_nonshared"
 
 .if defined(WITH_MFD_REWRITES)
 CONFIGURE_ARGS+=--enable-mfd-rewrites
-NET_SNMP_WITH_MIB_MODULE_LIST+= if-mib
+NET_SNMP_WITH_MIB_MODULE_LIST+=	if-mib
 .endif
 
 .if defined(NET_SNMP_WITH_MIB_MODULE_LIST) && \

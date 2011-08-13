@@ -1,0 +1,11 @@
+--- include/net-snmp/net-snmp-config.h.in.orig	2011-08-12 21:05:41.000000000 -0300
++++ include/net-snmp/net-snmp-config.h.in	2011-08-12 21:07:03.000000000 -0300
+@@ -2061,7 +2061,7 @@
+ #define UCD_SNMP_LIBRARY 1
+ 
+ /* final conclusion on nlist usage */
+-#if defined(HAVE_NLIST) && defined(HAVE_STRUCT_NLIST_N_VALUE) && !defined(NETSNMP_DONT_USE_NLIST) && defined(HAVE_KMEM) && !defined(NETSNMP_NO_KMEM_USAGE)
++#if defined(HAVE_NLIST) && defined(HAVE_STRUCT_NLIST_N_VALUE) && !defined(NETSNMP_DONT_USE_NLIST) && !defined(NETSNMP_NO_KMEM_USAGE)
+ #define NETSNMP_CAN_USE_NLIST
+ #endif
+ 
