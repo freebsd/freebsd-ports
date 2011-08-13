@@ -43,7 +43,6 @@ MAN3=		Qpsmtpd::Command.3 \
 USE_RC_SUBR=	qpsmtpd
 
 SUB_LIST+=	PERL=${PERL}
-SUB_LIST+=	PORTNAME=${PORTNAME}
 SUB_FILES+=	pkg-message
 
 pre-configure:
