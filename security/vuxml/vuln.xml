@@ -34,6 +34,68 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="dc8741b9-c5d5-11e0-8a8e-00151735203a">
+    <topic>bugzilla -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>bugzilla</name>
+	<range><ge>2.4.*</ge><lt>3.6.6</lt></range>
+	<range><ge>4.0.*</ge><lt>4.0.2</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>A Bugzilla Security Advisory reports:</p>
+	<blockquote cite="http://www.bugzilla.org/security/3.4.11/">
+	  <p>The following security issues have been discovered in Bugzilla:</p>
+	  <ul>
+	    <li>Internet Explorer 8 and older, and Safari before 5.0.6 do
+              content sniffing when viewing a patch in "Raw Unified" mode,
+              which could trigger a cross-site scripting attack due to
+              the execution of malicious code in the attachment.</li>
+	    <li>It is possible to determine whether or not certain group names
+              exist while creating or updating bugs.</li>
+	    <li>Attachment descriptions with a newline in them could lead
+              to the injection of crafted headers in email notifications sent
+              to the requestee or the requester when editing an attachment
+              flag.</li>
+	    <li>If an attacker has access to a user's session, he can modify
+              that user's email address without that user being notified
+              of the change.</li>
+	    <li>Temporary files for uploaded attachments are not deleted
+              on Windows, which could let a user with local access to
+              the server read them.</li>
+	    <li>Up to Bugzilla 3.4.11, if a BUGLIST cookie is compromised,
+              it can be used to inject HTML code when viewing a bug report,
+              leading to a cross-site scripting attack.</li>
+	  </ul>
+	  <p>All affected installations are encouraged to upgrade as soon as
+            possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-2379</cvename>
+      <cvename>CVE-2011-2380</cvename>
+      <cvename>CVE-2011-2979</cvename>
+      <cvename>CVE-2011-2381</cvename>
+      <cvename>CVE-2011-2978</cvename>
+      <cvename>CVE-2011-2977</cvename>
+      <cvename>CVE-2011-2976</cvename>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=637981</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=653477</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=674497</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=657158</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=670868</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=660502</url>
+      <url>https://bugzilla.mozilla.org/show_bug.cgi?id=660053</url>
+    </references>
+    <dates>
+      <discovery>2011-08-04</discovery>
+      <entry>2011-08-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="879b0242-c5b6-11e0-abd1-0017f22d6707">
     <topic>dtc -- multiple vulnerabilities</topic>
     <affects>
