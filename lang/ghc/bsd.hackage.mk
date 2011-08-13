@@ -20,6 +20,7 @@ ansi-wl-pprint_port=		devel/hs-ansi-wl-pprint
 arrows_port=			devel/hs-arrows
 attoparsec_port=		textproc/hs-attoparsec
 attoparsec-enumerator_port=	textproc/hs-attoparsec-enumerator
+attoparsec-text_port=		textproc/hs-attoparsec-text
 binary_port=			devel/hs-binary
 bio_port=			science/hs-bio
 blaze-builder_port=		devel/hs-blaze-builder
