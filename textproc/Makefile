@@ -263,6 +263,7 @@
     SUBDIR += hs-xhtml
     SUBDIR += hs-xhtml-docs
     SUBDIR += hs-xml
+    SUBDIR += hs-xmlhtml
     SUBDIR += hsb-aspell
     SUBDIR += htdig
     SUBDIR += html
