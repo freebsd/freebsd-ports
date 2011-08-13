@@ -86,6 +86,7 @@ heist_port=			www/hs-heist
 HGL_port=			graphics/hs-HGL
 highlighting-kate_port=		textproc/hs-highlighting-kate
 hint_port=			devel/hs-hint
+hlibev_port=			devel/hs-hlibev		# lib_depends
 hoogle_port=			devel/hs-hoogle		# executable
 hostname_port=			net/hs-hostname
 hs-bibutils_port=		textproc/hs-hs-bibutils
