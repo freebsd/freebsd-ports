@@ -591,6 +591,7 @@
     SUBDIR += hs-darcs
     SUBDIR += hs-datetime
     SUBDIR += hs-deepseq
+    SUBDIR += hs-directory-tree
     SUBDIR += hs-dlist
     SUBDIR += hs-drift
     SUBDIR += hs-enumerator
