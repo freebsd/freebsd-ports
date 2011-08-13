@@ -234,6 +234,7 @@
     SUBDIR += hs-HaXml
     SUBDIR += hs-attoparsec
     SUBDIR += hs-attoparsec-enumerator
+    SUBDIR += hs-attoparsec-text
     SUBDIR += hs-bytestring-csv
     SUBDIR += hs-case-insensitive
     SUBDIR += hs-citeproc-hs
