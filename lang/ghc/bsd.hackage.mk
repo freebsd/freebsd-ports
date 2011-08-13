@@ -148,6 +148,7 @@ sendfile_port=			net/hs-sendfile
 SHA_port=			security/hs-SHA
 show_port=			devel/hs-show
 smallcheck_port=		devel/hs-smallcheck
+snap-core_port=			www/hs-snap-core
 soegtk_port=			graphics/hs-soegtk
 split_port=			devel/hs-split
 StateVar_port=			devel/hs-StateVar
