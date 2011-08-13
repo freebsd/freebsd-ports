@@ -627,6 +627,7 @@
     SUBDIR += hs-mtl
     SUBDIR += hs-mtl-docs
     SUBDIR += hs-mueval
+    SUBDIR += hs-murmur-hash
     SUBDIR += hs-parallel
     SUBDIR += hs-pcre-light
     SUBDIR += hs-primitive
