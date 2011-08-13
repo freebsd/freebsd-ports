@@ -16,26 +16,21 @@ COMMENT=	Improved spell-checker for Hungarian and other languages
 LICENSE=	GPLv2 LGPL21 MPL
 LICENSE_COMB=	dual
 
-USE_LDCONFIG=	yes
+CONFIGURE_ARGS=	--disable-nls --with-readline --with-ui
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-ui --with-readline --disable-nls
 MAKE_JOBS_SAFE=	yes
-
-USE_NCURSES=	yes
 USE_GNOME=	gnomehack
+USE_LDCONFIG=	yes
+USE_NCURSES=	yes
 
 MANLANG=	"" hu
-MAN1_EN=	hunspell.1 \
-		hunzip.1 \
-		hzip.1
+MAN1_EN=	hunspell.1 hunzip.1 hzip.1
+MAN1_HU=	hunspell.1
 MAN3_EN=	hunspell.3
 MAN4_EN=	hunspell.4
-
-MAN1_HU=	hunspell.1
 MAN4_HU=	hunspell.4
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
-		${WRKSRC}/src/tools/hunspell.cxx
+	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' ${WRKSRC}/src/tools/hunspell.cxx
 
 .include <bsd.port.mk>

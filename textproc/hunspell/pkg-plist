@@ -1,7 +1,7 @@
-bin/hunspell
 bin/affixcompress
 bin/analyze
 bin/chmorph
+bin/hunspell
 bin/hunzip
 bin/hzip
 bin/ispellaff2myspell
@@ -34,7 +34,7 @@ lib/libhunspell-1.3.so
 lib/libhunspell-1.3.so.0
 lib/libparsers.a
 libdata/pkgconfig/hunspell.pc
-@dirrmtry include/hunspell
+@dirrm include/hunspell
 @dirrmtry man/hu/man4
 @dirrmtry man/hu/man1
 @dirrmtry man/hu
