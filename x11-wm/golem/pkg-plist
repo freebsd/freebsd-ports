@@ -3,268 +3,352 @@ bin/golem.install
 lib/golem/plugins/animations.so
 lib/golem/plugins/box_iconify.so
 lib/golem/plugins/gnome.so
-lib/golem/plugins/mwm_hints.so
+lib/golem/plugins/netwm.so
 lib/golem/plugins/pager.so
 lib/golem/plugins/pier.so
+lib/golem/plugins/session.so
 lib/golem/plugins/setroot.so
 lib/golem/plugins/simple_menus.so
-%%NO_SOUND%%lib/golem/plugins/sound.so
+%%ESOUND%%lib/golem/plugins/sound.so
 lib/golem/plugins/start_slide.so
+lib/golem/plugins/tasklist.so
 lib/golem/plugins/wmclass_defs.so
-share/golem/golemrc
-share/golem/plugins/animations/rc
-share/golem/plugins/box_iconify/rc
-share/golem/plugins/box_iconify/tile.xpm
-share/golem/plugins/gnome/rc
-share/golem/plugins/mwm_hints/rc
-share/golem/plugins/pager/rc
-share/golem/plugins/pier/daemon.xpm
-share/golem/plugins/pier/netscape.xpm
-share/golem/plugins/pier/rc
-share/golem/plugins/setroot/rc
-share/golem/plugins/simple_menus/rc
-%%NO_SOUND%%share/golem/plugins/sound/rc
-share/golem/plugins/start_slide/README
-share/golem/plugins/start_slide/rc
-share/golem/plugins/wmclass_defs/rc
-share/golem/themes/AbsoluteE/bar_focused_far.xpm
-share/golem/themes/AbsoluteE/bar_focused_mid.xpm
-share/golem/themes/AbsoluteE/bar_focused_near.xpm
-share/golem/themes/AbsoluteE/bar_normal_far.xpm
-share/golem/themes/AbsoluteE/bar_normal_mid.xpm
-share/golem/themes/AbsoluteE/bar_normal_near.xpm
-share/golem/themes/AbsoluteE/border_horiz_far.xpm
-share/golem/themes/AbsoluteE/border_horiz_far_foc.xpm
-share/golem/themes/AbsoluteE/border_horiz_mid.xpm
-share/golem/themes/AbsoluteE/border_horiz_mid_foc.xpm
-share/golem/themes/AbsoluteE/border_horiz_near.xpm
-share/golem/themes/AbsoluteE/border_horiz_near_foc.xpm
-share/golem/themes/AbsoluteE/border_vert_far.xpm
-share/golem/themes/AbsoluteE/border_vert_far_foc.xpm
-share/golem/themes/AbsoluteE/border_vert_mid.xpm
-share/golem/themes/AbsoluteE/border_vert_mid_foc.xpm
-share/golem/themes/AbsoluteE/border_vert_near.xpm
-share/golem/themes/AbsoluteE/border_vert_near_foc.xpm
-share/golem/themes/AbsoluteE/forplug/setroot/bg.jpg
-share/golem/themes/AbsoluteE/forplug/setroot/bg_2.jpg
-share/golem/themes/AbsoluteE/forplug/setroot/bg_v.jpg
-share/golem/themes/AbsoluteE/forplug/setroot/rc
-share/golem/themes/AbsoluteE/rc
-share/golem/themes/MudGolem/README
-share/golem/themes/MudGolem/forplug/pager/focpagedwin.xpm
-share/golem/themes/MudGolem/forplug/pager/nonsel.xpm
-share/golem/themes/MudGolem/forplug/pager/sel.xpm
-share/golem/themes/MudGolem/forplug/pager/pagedwin.xpm
-share/golem/themes/MudGolem/forplug/pager/rc
-share/golem/themes/MudGolem/forplug/pier/rc
-share/golem/themes/MudGolem/forplug/pier/tile.xpm
-share/golem/themes/MudGolem/forplug/setroot/Enigmas-Oven-2.jpg
-share/golem/themes/MudGolem/forplug/setroot/rc
-share/golem/themes/MudGolem/forplug/simple_menus/rc
-share/golem/themes/MudGolem/forplug/simple_menus/submenu.xpm
-share/golem/themes/MudGolem/forplug/start_slide/bg.xpm
-share/golem/themes/MudGolem/forplug/start_slide/logo.xpm
-share/golem/themes/MudGolem/forplug/start_slide/rc
-share/golem/themes/MudGolem/forplug/start_slide/trim.xpm
-share/golem/themes/MudGolem/forplug/wmclass_defs/rc
-share/golem/themes/MudGolem/images/foc/bar_bottom.xpm
-share/golem/themes/MudGolem/images/foc/bar_bottom_far.xpm
-share/golem/themes/MudGolem/images/foc/bar_bottom_near.xpm
-share/golem/themes/MudGolem/images/foc/bar_left.xpm
-share/golem/themes/MudGolem/images/foc/bar_right.xpm
-share/golem/themes/MudGolem/images/foc/bar_top.xpm
-share/golem/themes/MudGolem/images/foc/bar_top_far.xpm
-share/golem/themes/MudGolem/images/foc/bar_top_near.xpm
-share/golem/themes/MudGolem/images/foc/button.xpm
-share/golem/themes/MudGolem/images/foc/left_button.xpm
-share/golem/themes/MudGolem/images/foc/title_left.xpm
-share/golem/themes/MudGolem/images/foc/title_left_far.xpm
-share/golem/themes/MudGolem/images/foc/title_left_near.xpm
-share/golem/themes/MudGolem/images/foc/title_top.xpm
-share/golem/themes/MudGolem/images/foc/title_top_far.xpm
-share/golem/themes/MudGolem/images/foc/title_top_near.xpm
-share/golem/themes/MudGolem/images/pressed/button.xpm
-share/golem/themes/MudGolem/images/pressed/left_button.xpm
-share/golem/themes/MudGolem/images/unf/bar_bottom.xpm
-share/golem/themes/MudGolem/images/unf/bar_bottom_far.xpm
-share/golem/themes/MudGolem/images/unf/bar_bottom_near.xpm
-share/golem/themes/MudGolem/images/unf/bar_left.xpm
-share/golem/themes/MudGolem/images/unf/bar_right.xpm
-share/golem/themes/MudGolem/images/unf/bar_top.xpm
-share/golem/themes/MudGolem/images/unf/bar_top_far.xpm
-share/golem/themes/MudGolem/images/unf/bar_top_near.xpm
-share/golem/themes/MudGolem/images/unf/button.xpm
-share/golem/themes/MudGolem/images/unf/left_button.xpm
-share/golem/themes/MudGolem/images/unf/title_left.xpm
-share/golem/themes/MudGolem/images/unf/title_left_far.xpm
-share/golem/themes/MudGolem/images/unf/title_left_near.xpm
-share/golem/themes/MudGolem/images/unf/title_top.xpm
-share/golem/themes/MudGolem/images/unf/title_top_far.xpm
-share/golem/themes/MudGolem/images/unf/title_top_near.xpm
-share/golem/themes/MudGolem/rc
-share/golem/themes/MudGolem/styles/common.rc
-share/golem/themes/MudGolem/styles/default.rc
-share/golem/themes/MudGolem/styles/leftside.rc
-share/golem/themes/MudGolem/styles/small.rc
-share/golem/themes/eBlueSteel/forplug/pier/rc
-share/golem/themes/eBlueSteel/forplug/pier/tile.xpm
-share/golem/themes/eBlueSteel/forplug/setroot/All-Good-People-4.jpg
-share/golem/themes/eBlueSteel/forplug/setroot/Enigmas-Oven-2.jpg
-share/golem/themes/eBlueSteel/forplug/setroot/rc
-share/golem/themes/eBlueSteel/forplug/simple_menus/rc
-share/golem/themes/eBlueSteel/forplug/simple_menus/submenu.xpm
-share/golem/themes/eBlueSteel/forplug/start_slide/black.xpm
-share/golem/themes/eBlueSteel/forplug/start_slide/logo.xpm
-share/golem/themes/eBlueSteel/forplug/start_slide/rc
-share/golem/themes/eBlueSteel/forplug/start_slide/trim.xpm
-share/golem/themes/eBlueSteel/images/foc/border_bottom.xpm
-share/golem/themes/eBlueSteel/images/foc/border_bottom_far.xpm
-share/golem/themes/eBlueSteel/images/foc/border_bottom_near.xpm
-share/golem/themes/eBlueSteel/images/foc/border_left.xpm
-share/golem/themes/eBlueSteel/images/foc/border_left_far.xpm
-share/golem/themes/eBlueSteel/images/foc/border_right.xpm
-share/golem/themes/eBlueSteel/images/foc/border_right_far.xpm
-share/golem/themes/eBlueSteel/images/foc/border_top.xpm
-share/golem/themes/eBlueSteel/images/foc/border_top_far.xpm
-share/golem/themes/eBlueSteel/images/foc/border_top_near.xpm
-share/golem/themes/eBlueSteel/images/foc/delete.xpm
-share/golem/themes/eBlueSteel/images/foc/iconify.xpm
-share/golem/themes/eBlueSteel/images/foc/title.xpm
-share/golem/themes/eBlueSteel/images/foc/title_slant.xpm
-share/golem/themes/eBlueSteel/images/foc/top_far_empty.xpm
-share/golem/themes/eBlueSteel/images/foc/top_steel.xpm
-share/golem/themes/eBlueSteel/images/foc/trim_bottom_far.xpm
-share/golem/themes/eBlueSteel/images/foc/trim_left_near.xpm
-share/golem/themes/eBlueSteel/images/foc/trim_right_far.xpm
-share/golem/themes/eBlueSteel/images/foc/trim_top_mid.xpm
-share/golem/themes/eBlueSteel/images/foc/zoom.xpm
-share/golem/themes/eBlueSteel/images/pressed/delete.xpm
-share/golem/themes/eBlueSteel/images/pressed/iconify.xpm
-share/golem/themes/eBlueSteel/images/pressed/zoom.xpm
-share/golem/themes/eBlueSteel/images/unf/border_bottom.xpm
-share/golem/themes/eBlueSteel/images/unf/border_bottom_far.xpm
-share/golem/themes/eBlueSteel/images/unf/border_bottom_near.xpm
-share/golem/themes/eBlueSteel/images/unf/border_left.xpm
-share/golem/themes/eBlueSteel/images/unf/border_left_far.xpm
-share/golem/themes/eBlueSteel/images/unf/border_right.xpm
-share/golem/themes/eBlueSteel/images/unf/border_right_far.xpm
-share/golem/themes/eBlueSteel/images/unf/border_top.xpm
-share/golem/themes/eBlueSteel/images/unf/border_top_far.xpm
-share/golem/themes/eBlueSteel/images/unf/border_top_near.xpm
-share/golem/themes/eBlueSteel/images/unf/delete.xpm
-share/golem/themes/eBlueSteel/images/unf/iconify.xpm
-share/golem/themes/eBlueSteel/images/unf/title.xpm
-share/golem/themes/eBlueSteel/images/unf/title_slant.xpm
-share/golem/themes/eBlueSteel/images/unf/top_far_empty.xpm
-share/golem/themes/eBlueSteel/images/unf/top_steel.xpm
-share/golem/themes/eBlueSteel/images/unf/trim_bottom_far.xpm
-share/golem/themes/eBlueSteel/images/unf/trim_left_near.xpm
-share/golem/themes/eBlueSteel/images/unf/trim_right_far.xpm
-share/golem/themes/eBlueSteel/images/unf/trim_top_mid.xpm
-share/golem/themes/eBlueSteel/images/unf/zoom.xpm
-share/golem/themes/eBlueSteel/rc
-share/golem/themes/eBlueSteel/styles/common.rc
-share/golem/themes/eBlueSteel/styles/default.rc
-share/golem/themes/eBlueSteel/styles/small.rc
-share/golem/themes/eBlueSteel/styles/transient.rc
-share/golem/themes/eBlueSteel/styles/verysmall.rc
-share/golem/themes/eBlueSteel/vixar.ttf
-share/golem/themes/microGUI/bar_left_top.xpm
-share/golem/themes/microGUI/bar_left_top_unfoc.xpm
-share/golem/themes/microGUI/bar_vert.xpm
-share/golem/themes/microGUI/bottom.xpm
-share/golem/themes/microGUI/bottom_far.xpm
-share/golem/themes/microGUI/bottom_near.xpm
-share/golem/themes/microGUI/close.xpm
-share/golem/themes/microGUI/close_clicked.xpm
-share/golem/themes/microGUI/close_unfoc.xpm
-share/golem/themes/microGUI/forplug/pager/rc
-share/golem/themes/microGUI/forplug/pager/focpagedwin.xpm
-share/golem/themes/microGUI/forplug/pager/pagedwin.xpm
-share/golem/themes/microGUI/forplug/pier/rc
-share/golem/themes/microGUI/forplug/pier/tile.xpm
-share/golem/themes/microGUI/forplug/start_slide/greybg.xpm
-share/golem/themes/microGUI/forplug/start_slide/logo.xpm
-share/golem/themes/microGUI/forplug/start_slide/rc
-share/golem/themes/microGUI/forplug/start_slide/trim.xpm
-share/golem/themes/microGUI/maximize.xpm
-share/golem/themes/microGUI/maximize_clicked.xpm
-share/golem/themes/microGUI/maximize_unfoc.xpm
-share/golem/themes/microGUI/minimize.xpm
-share/golem/themes/microGUI/minimize_clicked.xpm
-share/golem/themes/microGUI/minimize_unfoc.xpm
-share/golem/themes/microGUI/rc
-share/golem/themes/microGUI/top_blue.xpm
-share/golem/themes/microGUI/top_blue_unfoc.xpm
-share/golem/themes/microGUI/top_bluetowhite.xpm
-share/golem/themes/microGUI/top_bluetowhite_unfoc.xpm
-share/golem/themes/microGUI/top_far.xpm
-share/golem/themes/microGUI/top_near.xpm
-share/golem/themes/microGUI/top_near_unfoc.xpm
-share/golem/themes/microGUI/top_white.xpm
-share/golem/themes/microGUI/transient_top.xpm
-share/golem/themes/microGUI/transient_top_far.xpm
-share/golem/themes/microGUI/transient_top_near.xpm
-share/golem/themes/twm/barchecker.xpm
-share/golem/themes/twm/bborder.xpm
-share/golem/themes/twm/bborder_unf.xpm
-share/golem/themes/twm/forplug/simple_menus/rc
-share/golem/themes/twm/iconify.xpm
-share/golem/themes/twm/lborder.xpm
-share/golem/themes/twm/lborder_unf.xpm
-share/golem/themes/twm/rborder.xpm
-share/golem/themes/twm/rborder_unf.xpm
-share/golem/themes/twm/rc
-share/golem/themes/twm/resize.xpm
-share/golem/themes/twm/topbar.xpm
+%%DATADIR%%/golemrc
+%%DATADIR%%/plugins/animations/rc
+%%DATADIR%%/plugins/box_iconify/rc
+%%DATADIR%%/plugins/box_iconify/tile.xpm
+%%DATADIR%%/plugins/gnome/rc
+%%DATADIR%%/plugins/mwm_hints/rc
+%%DATADIR%%/plugins/netwm/rc
+%%DATADIR%%/plugins/pager/rc
+%%DATADIR%%/plugins/pier/daemon.xpm
+%%DATADIR%%/plugins/pier/netscape.xpm
+%%DATADIR%%/plugins/pier/rc
+%%DATADIR%%/plugins/session/rc
+%%DATADIR%%/plugins/setroot/rc
+%%DATADIR%%/plugins/simple_menus/rc
+%%ESOUND%%%%DATADIR%%/plugins/sound/rc
+%%DATADIR%%/plugins/start_slide/README
+%%DATADIR%%/plugins/start_slide/rc
+%%DATADIR%%/plugins/tasklist/rc
+%%DATADIR%%/plugins/wmclass_defs/rc
+%%DATADIR%%/themes/AbsoluteE/bar_focused_far.xpm
+%%DATADIR%%/themes/AbsoluteE/bar_focused_mid.xpm
+%%DATADIR%%/themes/AbsoluteE/bar_focused_near.xpm
+%%DATADIR%%/themes/AbsoluteE/bar_normal_far.xpm
+%%DATADIR%%/themes/AbsoluteE/bar_normal_mid.xpm
+%%DATADIR%%/themes/AbsoluteE/bar_normal_near.xpm
+%%DATADIR%%/themes/AbsoluteE/border_horiz_far.xpm
+%%DATADIR%%/themes/AbsoluteE/border_horiz_far_foc.xpm
+%%DATADIR%%/themes/AbsoluteE/border_horiz_mid.xpm
+%%DATADIR%%/themes/AbsoluteE/border_horiz_mid_foc.xpm
+%%DATADIR%%/themes/AbsoluteE/border_horiz_near.xpm
+%%DATADIR%%/themes/AbsoluteE/border_horiz_near_foc.xpm
+%%DATADIR%%/themes/AbsoluteE/border_vert_far.xpm
+%%DATADIR%%/themes/AbsoluteE/border_vert_far_foc.xpm
+%%DATADIR%%/themes/AbsoluteE/border_vert_mid.xpm
+%%DATADIR%%/themes/AbsoluteE/border_vert_mid_foc.xpm
+%%DATADIR%%/themes/AbsoluteE/border_vert_near.xpm
+%%DATADIR%%/themes/AbsoluteE/border_vert_near_foc.xpm
+%%DATADIR%%/themes/AbsoluteE/forplug/setroot/bg.jpg
+%%DATADIR%%/themes/AbsoluteE/forplug/setroot/bg_2.jpg
+%%DATADIR%%/themes/AbsoluteE/forplug/setroot/bg_v.jpg
+%%DATADIR%%/themes/AbsoluteE/forplug/setroot/rc
+%%DATADIR%%/themes/AbsoluteE/rc
+%%DATADIR%%/themes/MudGolem/README
+%%DATADIR%%/themes/MudGolem/forplug/pager/focpagedwin.xpm
+%%DATADIR%%/themes/MudGolem/forplug/pager/nonsel.xpm
+%%DATADIR%%/themes/MudGolem/forplug/pager/pagedwin.xpm
+%%DATADIR%%/themes/MudGolem/forplug/pager/rc
+%%DATADIR%%/themes/MudGolem/forplug/pager/sel.xpm
+%%DATADIR%%/themes/MudGolem/forplug/pier/rc
+%%DATADIR%%/themes/MudGolem/forplug/pier/tile.xpm
+%%DATADIR%%/themes/MudGolem/forplug/setroot/Enigmas-Oven-2.jpg
+%%DATADIR%%/themes/MudGolem/forplug/setroot/rc
+%%DATADIR%%/themes/MudGolem/forplug/simple_menus/rc
+%%DATADIR%%/themes/MudGolem/forplug/simple_menus/submenu.xpm
+%%DATADIR%%/themes/MudGolem/forplug/start_slide/bg.xpm
+%%DATADIR%%/themes/MudGolem/forplug/start_slide/logo.xpm
+%%DATADIR%%/themes/MudGolem/forplug/start_slide/rc
+%%DATADIR%%/themes/MudGolem/forplug/start_slide/trim.xpm
+%%DATADIR%%/themes/MudGolem/images/foc/bar_bottom.xpm
+%%DATADIR%%/themes/MudGolem/images/foc/bar_bottom_far.xpm
+%%DATADIR%%/themes/MudGolem/images/foc/bar_bottom_near.xpm
+%%DATADIR%%/themes/MudGolem/images/foc/bar_left.xpm
+%%DATADIR%%/themes/MudGolem/images/foc/bar_right.xpm
+%%DATADIR%%/themes/MudGolem/images/foc/bar_top.xpm
+%%DATADIR%%/themes/MudGolem/images/foc/bar_top_far.xpm
+%%DATADIR%%/themes/MudGolem/images/foc/bar_top_near.xpm
+%%DATADIR%%/themes/MudGolem/images/foc/button.xpm
+%%DATADIR%%/themes/MudGolem/images/foc/left_button.xpm
+%%DATADIR%%/themes/MudGolem/images/foc/title_left.xpm
+%%DATADIR%%/themes/MudGolem/images/foc/title_left_far.xpm
+%%DATADIR%%/themes/MudGolem/images/foc/title_left_near.xpm
+%%DATADIR%%/themes/MudGolem/images/foc/title_top.xpm
+%%DATADIR%%/themes/MudGolem/images/foc/title_top_far.xpm
+%%DATADIR%%/themes/MudGolem/images/foc/title_top_near.xpm
+%%DATADIR%%/themes/MudGolem/images/pressed/button.xpm
+%%DATADIR%%/themes/MudGolem/images/pressed/left_button.xpm
+%%DATADIR%%/themes/MudGolem/images/unf/bar_bottom.xpm
+%%DATADIR%%/themes/MudGolem/images/unf/bar_bottom_far.xpm
+%%DATADIR%%/themes/MudGolem/images/unf/bar_bottom_near.xpm
+%%DATADIR%%/themes/MudGolem/images/unf/bar_left.xpm
+%%DATADIR%%/themes/MudGolem/images/unf/bar_right.xpm
+%%DATADIR%%/themes/MudGolem/images/unf/bar_top.xpm
+%%DATADIR%%/themes/MudGolem/images/unf/bar_top_far.xpm
+%%DATADIR%%/themes/MudGolem/images/unf/bar_top_near.xpm
+%%DATADIR%%/themes/MudGolem/images/unf/button.xpm
+%%DATADIR%%/themes/MudGolem/images/unf/left_button.xpm
+%%DATADIR%%/themes/MudGolem/images/unf/title_left.xpm
+%%DATADIR%%/themes/MudGolem/images/unf/title_left_far.xpm
+%%DATADIR%%/themes/MudGolem/images/unf/title_left_near.xpm
+%%DATADIR%%/themes/MudGolem/images/unf/title_top.xpm
+%%DATADIR%%/themes/MudGolem/images/unf/title_top_far.xpm
+%%DATADIR%%/themes/MudGolem/images/unf/title_top_near.xpm
+%%DATADIR%%/themes/MudGolem/rc
+%%DATADIR%%/themes/MudGolem/styles/common.rc
+%%DATADIR%%/themes/MudGolem/styles/default.rc
+%%DATADIR%%/themes/MudGolem/styles/leftside.rc
+%%DATADIR%%/themes/MudGolem/styles/small.rc
+%%DATADIR%%/themes/eBlueSteel/Vera.ttf
+%%DATADIR%%/themes/eBlueSteel/forplug/pier/rc
+%%DATADIR%%/themes/eBlueSteel/forplug/pier/tile.xpm
+%%DATADIR%%/themes/eBlueSteel/forplug/setroot/All-Good-People-4.jpg
+%%DATADIR%%/themes/eBlueSteel/forplug/setroot/Enigmas-Oven-2.jpg
+%%DATADIR%%/themes/eBlueSteel/forplug/setroot/rc
+%%DATADIR%%/themes/eBlueSteel/forplug/simple_menus/rc
+%%DATADIR%%/themes/eBlueSteel/forplug/simple_menus/submenu.xpm
+%%DATADIR%%/themes/eBlueSteel/forplug/start_slide/black.xpm
+%%DATADIR%%/themes/eBlueSteel/forplug/start_slide/logo.xpm
+%%DATADIR%%/themes/eBlueSteel/forplug/start_slide/rc
+%%DATADIR%%/themes/eBlueSteel/forplug/start_slide/trim.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/border_bottom.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/border_bottom_far.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/border_bottom_near.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/border_left.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/border_left_far.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/border_right.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/border_right_far.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/border_top.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/border_top_far.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/border_top_near.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/delete.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/iconify.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/title.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/title_slant.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/top_far_empty.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/top_steel.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/trim_bottom_far.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/trim_left_near.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/trim_right_far.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/trim_top_mid.xpm
+%%DATADIR%%/themes/eBlueSteel/images/foc/zoom.xpm
+%%DATADIR%%/themes/eBlueSteel/images/pressed/delete.xpm
+%%DATADIR%%/themes/eBlueSteel/images/pressed/iconify.xpm
+%%DATADIR%%/themes/eBlueSteel/images/pressed/zoom.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/border_bottom.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/border_bottom_far.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/border_bottom_near.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/border_left.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/border_left_far.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/border_right.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/border_right_far.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/border_top.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/border_top_far.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/border_top_near.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/delete.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/iconify.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/title.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/title_slant.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/top_far_empty.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/top_steel.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/trim_bottom_far.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/trim_left_near.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/trim_right_far.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/trim_top_mid.xpm
+%%DATADIR%%/themes/eBlueSteel/images/unf/zoom.xpm
+%%DATADIR%%/themes/eBlueSteel/rc
+%%DATADIR%%/themes/eBlueSteel/styles/common.rc
+%%DATADIR%%/themes/eBlueSteel/styles/default.rc
+%%DATADIR%%/themes/eBlueSteel/styles/small.rc
+%%DATADIR%%/themes/eBlueSteel/styles/transient.rc
+%%DATADIR%%/themes/eBlueSteel/styles/verysmall.rc
+%%DATADIR%%/themes/microGUI/bar_left_top.xpm
+%%DATADIR%%/themes/microGUI/bar_left_top_unfoc.xpm
+%%DATADIR%%/themes/microGUI/bar_vert.xpm
+%%DATADIR%%/themes/microGUI/bottom.xpm
+%%DATADIR%%/themes/microGUI/bottom_far.xpm
+%%DATADIR%%/themes/microGUI/bottom_near.xpm
+%%DATADIR%%/themes/microGUI/close.xpm
+%%DATADIR%%/themes/microGUI/close_clicked.xpm
+%%DATADIR%%/themes/microGUI/close_unfoc.xpm
+%%DATADIR%%/themes/microGUI/forplug/pager/focpagedwin.xpm
+%%DATADIR%%/themes/microGUI/forplug/pager/pagedwin.xpm
+%%DATADIR%%/themes/microGUI/forplug/pager/rc
+%%DATADIR%%/themes/microGUI/forplug/pier/rc
+%%DATADIR%%/themes/microGUI/forplug/pier/tile.xpm
+%%DATADIR%%/themes/microGUI/forplug/start_slide/greybg.xpm
+%%DATADIR%%/themes/microGUI/forplug/start_slide/logo.xpm
+%%DATADIR%%/themes/microGUI/forplug/start_slide/rc
+%%DATADIR%%/themes/microGUI/forplug/start_slide/trim.xpm
+%%DATADIR%%/themes/microGUI/maximize.xpm
+%%DATADIR%%/themes/microGUI/maximize_clicked.xpm
+%%DATADIR%%/themes/microGUI/maximize_unfoc.xpm
+%%DATADIR%%/themes/microGUI/minimize.xpm
+%%DATADIR%%/themes/microGUI/minimize_clicked.xpm
+%%DATADIR%%/themes/microGUI/minimize_unfoc.xpm
+%%DATADIR%%/themes/microGUI/rc
+%%DATADIR%%/themes/microGUI/top_blue.xpm
+%%DATADIR%%/themes/microGUI/top_blue_unfoc.xpm
+%%DATADIR%%/themes/microGUI/top_bluetowhite.xpm
+%%DATADIR%%/themes/microGUI/top_bluetowhite_unfoc.xpm
+%%DATADIR%%/themes/microGUI/top_far.xpm
+%%DATADIR%%/themes/microGUI/top_near.xpm
+%%DATADIR%%/themes/microGUI/top_near_unfoc.xpm
+%%DATADIR%%/themes/microGUI/top_white.xpm
+%%DATADIR%%/themes/microGUI/transient_top.xpm
+%%DATADIR%%/themes/microGUI/transient_top_far.xpm
+%%DATADIR%%/themes/microGUI/transient_top_near.xpm
+%%DATADIR%%/themes/microGUI-shading/bar_left_top.xpm
+%%DATADIR%%/themes/microGUI-shading/bar_left_top_unfoc.xpm
+%%DATADIR%%/themes/microGUI-shading/bar_vert.xpm
+%%DATADIR%%/themes/microGUI-shading/bottom.xpm
+%%DATADIR%%/themes/microGUI-shading/bottom_far.xpm
+%%DATADIR%%/themes/microGUI-shading/bottom_near.xpm
+%%DATADIR%%/themes/microGUI-shading/close.xpm
+%%DATADIR%%/themes/microGUI-shading/close_clicked.xpm
+%%DATADIR%%/themes/microGUI-shading/close_unfoc.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/pager/focpagedwin.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/pager/pagedwin.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/pager/rc
+%%DATADIR%%/themes/microGUI-shading/forplug/pier/rc
+%%DATADIR%%/themes/microGUI-shading/forplug/pier/tile.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/bar_left_top.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/bar_left_top_unfoc.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/bar_vert.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/bottom.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/bottom_far.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/bottom_near.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/close.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/close_clicked.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/close_unfoc.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/maximize.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/maximize_clicked.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/maximize_unfoc.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/minimize.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/minimize_clicked.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/minimize_unfoc.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/rc
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/submenu.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/top_blue.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/top_blue_unfoc.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/top_bluetowhite.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/top_bluetowhite_unfoc.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/top_far.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/top_near.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/top_near_unfoc.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/top_white.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/transient_top.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/transient_top_far.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/simple_menus/transient_top_near.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/start_slide/greybg.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/start_slide/logo.xpm
+%%DATADIR%%/themes/microGUI-shading/forplug/start_slide/rc
+%%DATADIR%%/themes/microGUI-shading/forplug/start_slide/trim.xpm
+%%DATADIR%%/themes/microGUI-shading/maximize.xpm
+%%DATADIR%%/themes/microGUI-shading/maximize_clicked.xpm
+%%DATADIR%%/themes/microGUI-shading/maximize_unfoc.xpm
+%%DATADIR%%/themes/microGUI-shading/minimize.xpm
+%%DATADIR%%/themes/microGUI-shading/minimize_clicked.xpm
+%%DATADIR%%/themes/microGUI-shading/minimize_unfoc.xpm
+%%DATADIR%%/themes/microGUI-shading/rc
+%%DATADIR%%/themes/microGUI-shading/top_blue.xpm
+%%DATADIR%%/themes/microGUI-shading/top_blue_unfoc.xpm
+%%DATADIR%%/themes/microGUI-shading/top_bluetowhite.xpm
+%%DATADIR%%/themes/microGUI-shading/top_bluetowhite_unfoc.xpm
+%%DATADIR%%/themes/microGUI-shading/top_far.xpm
+%%DATADIR%%/themes/microGUI-shading/top_near.xpm
+%%DATADIR%%/themes/microGUI-shading/top_near_unfoc.xpm
+%%DATADIR%%/themes/microGUI-shading/top_white.xpm
+%%DATADIR%%/themes/microGUI-shading/transient_top.xpm
+%%DATADIR%%/themes/microGUI-shading/transient_top_far.xpm
+%%DATADIR%%/themes/microGUI-shading/transient_top_near.xpm
+%%DATADIR%%/themes/twm/barchecker.xpm
+%%DATADIR%%/themes/twm/bborder.xpm
+%%DATADIR%%/themes/twm/bborder_unf.xpm
+%%DATADIR%%/themes/twm/forplug/simple_menus/rc
+%%DATADIR%%/themes/twm/iconify.xpm
+%%DATADIR%%/themes/twm/lborder.xpm
+%%DATADIR%%/themes/twm/lborder_unf.xpm
+%%DATADIR%%/themes/twm/rborder.xpm
+%%DATADIR%%/themes/twm/rborder_unf.xpm
+%%DATADIR%%/themes/twm/rc
+%%DATADIR%%/themes/twm/resize.xpm
+%%DATADIR%%/themes/twm/topbar.xpm
+@dirrm %%DATADIR%%/themes/xterm
+@dirrm %%DATADIR%%/themes/twm/forplug/simple_menus
+@dirrm %%DATADIR%%/themes/twm/forplug
+@dirrm %%DATADIR%%/themes/twm
+@dirrm %%DATADIR%%/themes/small-e
+@dirrm %%DATADIR%%/themes/microGUI/forplug/start_slide
+@dirrm %%DATADIR%%/themes/microGUI/forplug/simple_menus
+@dirrm %%DATADIR%%/themes/microGUI/forplug/pier
+@dirrm %%DATADIR%%/themes/microGUI/forplug/pager
+@dirrm %%DATADIR%%/themes/microGUI/forplug
+@dirrm %%DATADIR%%/themes/microGUI-shading/forplug/start_slide
+@dirrm %%DATADIR%%/themes/microGUI-shading/forplug/simple_menus
+@dirrm %%DATADIR%%/themes/microGUI-shading/forplug/pier
+@dirrm %%DATADIR%%/themes/microGUI-shading/forplug/pager
+@dirrm %%DATADIR%%/themes/microGUI-shading/forplug
+@dirrm %%DATADIR%%/themes/microGUI-shading
+@dirrm %%DATADIR%%/themes/microGUI
+@dirrm %%DATADIR%%/themes/glass
+@dirrm %%DATADIR%%/themes/eBlueSteel/styles
+@dirrm %%DATADIR%%/themes/eBlueSteel/images/unf
+@dirrm %%DATADIR%%/themes/eBlueSteel/images/pressed
+@dirrm %%DATADIR%%/themes/eBlueSteel/images/foc
+@dirrm %%DATADIR%%/themes/eBlueSteel/images
+@dirrm %%DATADIR%%/themes/eBlueSteel/forplug/start_slide
+@dirrm %%DATADIR%%/themes/eBlueSteel/forplug/simple_menus
+@dirrm %%DATADIR%%/themes/eBlueSteel/forplug/setroot
+@dirrm %%DATADIR%%/themes/eBlueSteel/forplug/pier
+@dirrm %%DATADIR%%/themes/eBlueSteel/forplug
+@dirrm %%DATADIR%%/themes/eBlueSteel
+@dirrm %%DATADIR%%/themes/MudGolem/styles
+@dirrm %%DATADIR%%/themes/MudGolem/images/unf
+@dirrm %%DATADIR%%/themes/MudGolem/images/pressed
+@dirrm %%DATADIR%%/themes/MudGolem/images/foc
+@dirrm %%DATADIR%%/themes/MudGolem/images
+@dirrm %%DATADIR%%/themes/MudGolem/forplug/wmclass_defs
+@dirrm %%DATADIR%%/themes/MudGolem/forplug/start_slide
+@dirrm %%DATADIR%%/themes/MudGolem/forplug/simple_menus
+@dirrm %%DATADIR%%/themes/MudGolem/forplug/setroot
+@dirrm %%DATADIR%%/themes/MudGolem/forplug/pier
+@dirrm %%DATADIR%%/themes/MudGolem/forplug/pager
+@dirrm %%DATADIR%%/themes/MudGolem/forplug
+@dirrm %%DATADIR%%/themes/MudGolem
+@dirrm %%DATADIR%%/themes/BlueSteel
+@dirrm %%DATADIR%%/themes/Aqua
+@dirrm %%DATADIR%%/themes/AbsoluteE/forplug/setroot
+@dirrm %%DATADIR%%/themes/AbsoluteE/forplug
+@dirrm %%DATADIR%%/themes/AbsoluteE/backgrounds
+@dirrm %%DATADIR%%/themes/AbsoluteE
+@dirrm %%DATADIR%%/themes
+@dirrm %%DATADIR%%/plugins/wmclass_defs
+@dirrm %%DATADIR%%/plugins/tasklist
+@dirrm %%DATADIR%%/plugins/start_slide
+%%ESOUND%%@dirrm %%DATADIR%%/plugins/sound
+@dirrm %%DATADIR%%/plugins/simple_menus
+@dirrm %%DATADIR%%/plugins/setroot
+@dirrm %%DATADIR%%/plugins/session
+@dirrm %%DATADIR%%/plugins/pier
+@dirrm %%DATADIR%%/plugins/pager
+@dirrm %%DATADIR%%/plugins/netwm
+@dirrm %%DATADIR%%/plugins/mwm_hints
+@dirrm %%DATADIR%%/plugins/gnome
+@dirrm %%DATADIR%%/plugins/box_iconify
+@dirrm %%DATADIR%%/plugins/animations
+@dirrm %%DATADIR%%/plugins
+@dirrm %%DATADIR%%
 @dirrm lib/golem/plugins
 @dirrm lib/golem
-@dirrm share/golem/plugins/animations
-@dirrm share/golem/plugins/box_iconify
-@dirrm share/golem/plugins/gnome
-@dirrm share/golem/plugins/mwm_hints
-@dirrm share/golem/plugins/pager
-@dirrm share/golem/plugins/pier
-@dirrm share/golem/plugins/setroot
-@dirrm share/golem/plugins/simple_menus
-%%NO_SOUND%%@dirrm share/golem/plugins/sound
-@dirrm share/golem/plugins/start_slide
-@dirrm share/golem/plugins/wmclass_defs
-@dirrm share/golem/plugins
-@dirrm share/golem/themes/AbsoluteE/forplug/setroot
-@dirrm share/golem/themes/AbsoluteE/forplug
-@dirrm share/golem/themes/AbsoluteE
-@dirrm share/golem/themes/MudGolem/forplug/pager
-@dirrm share/golem/themes/MudGolem/forplug/pier
-@dirrm share/golem/themes/MudGolem/forplug/setroot
-@dirrm share/golem/themes/MudGolem/forplug/simple_menus
-@dirrm share/golem/themes/MudGolem/forplug/start_slide
-@dirrm share/golem/themes/MudGolem/forplug/wmclass_defs
-@dirrm share/golem/themes/MudGolem/forplug
-@dirrm share/golem/themes/MudGolem/images/foc
-@dirrm share/golem/themes/MudGolem/images/pressed
-@dirrm share/golem/themes/MudGolem/images/unf
-@dirrm share/golem/themes/MudGolem/images
-@dirrm share/golem/themes/MudGolem/styles
-@dirrm share/golem/themes/MudGolem
-@dirrm share/golem/themes/eBlueSteel/forplug/pier
-@dirrm share/golem/themes/eBlueSteel/forplug/setroot
-@dirrm share/golem/themes/eBlueSteel/forplug/simple_menus
-@dirrm share/golem/themes/eBlueSteel/forplug/start_slide
-@dirrm share/golem/themes/eBlueSteel/forplug
-@dirrm share/golem/themes/eBlueSteel/images/foc
-@dirrm share/golem/themes/eBlueSteel/images/pressed
-@dirrm share/golem/themes/eBlueSteel/images/unf
-@dirrm share/golem/themes/eBlueSteel/images
-@dirrm share/golem/themes/eBlueSteel/styles
-@dirrm share/golem/themes/eBlueSteel
-@dirrm share/golem/themes/microGUI/forplug/pager
-@dirrm share/golem/themes/microGUI/forplug/pier
-@dirrm share/golem/themes/microGUI/forplug/start_slide
-@dirrm share/golem/themes/microGUI/forplug
-@dirrm share/golem/themes/microGUI
-@dirrm share/golem/themes/twm/forplug/simple_menus
-@dirrm share/golem/themes/twm/forplug
-@dirrm share/golem/themes/twm
-@dirrm share/golem/themes
-@dirrm share/golem
