@@ -15,6 +15,7 @@ MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A lava lamp of currently running processes
 
 GNU_CONFIGURE=	yes
+WANT_GNOME=	yes
 USE_PERL5_BUILD=	yes
 USE_XORG=	x11 xext sm ice
 
