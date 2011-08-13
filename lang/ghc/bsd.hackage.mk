@@ -124,6 +124,7 @@ polyparse_port=			textproc/hs-polyparse
 porte_port=			ports-mgmt/hs-porte	# executable
 primitive_port=			devel/hs-primitive
 probability_port=		math/hs-probability
+PSQueue_port=			devel/hs-PSQueue
 QuickCheck_port=		devel/hs-QuickCheck
 reactive_port=			devel/hs-reactive	# BROKEN
 readline_port=			devel/hs-readline

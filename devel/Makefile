@@ -566,6 +566,7 @@
     SUBDIR += hs-MonadCatchIO-mtl
     SUBDIR += hs-MonadCatchIO-transformers
     SUBDIR += hs-ObjectName
+    SUBDIR += hs-PSQueue
     SUBDIR += hs-QuickCheck
     SUBDIR += hs-StateVar
     SUBDIR += hs-Stream
