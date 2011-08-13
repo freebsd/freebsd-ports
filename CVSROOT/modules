@@ -1414,6 +1414,7 @@ cd-console                      ports/audio/cd-console
 cd-discid                       ports/audio/cd-discid
 cd2mp3                          ports/audio/cd2mp3
 cdargs                          ports/sysutils/cdargs
+cdash                           ports/devel/cdash
 cdb                             ports/databases/cdb
 cdbkup                          ports/sysutils/cdbkup
 cdcat                           ports/deskutils/cdcat
@@ -2643,6 +2644,8 @@ drupal6-views                   ports/www/drupal6-views
 drupal6-webform                 ports/www/drupal6-webform
 drupal6-wysiwyg                 ports/www/drupal6-wysiwyg
 drupal6-zeropoint               ports/www/drupal6-zeropoint
+drupal7                         ports/www/drupal7
+drupal7-wysiwyg                 ports/www/drupal7-wysiwyg
 drush                           ports/www/drush
 dsbl-testers                    ports/mail/dsbl-testers
 dsnake                          ports/games/dsnake
@@ -14062,6 +14065,7 @@ p5-Spreadsheet-WriteExcel       ports/textproc/p5-Spreadsheet-WriteExcel
 p5-Spreadsheet-WriteExcel-FromXML  ports/textproc/p5-Spreadsheet-WriteExcel-FromXML
 p5-Spreadsheet-WriteExcel-Styler  ports/textproc/p5-Spreadsheet-WriteExcel-Styler
 p5-Spreadsheet-WriteExcelXML    ports/textproc/p5-Spreadsheet-WriteExcelXML
+p5-Spreadsheet-XLSX             ports/textproc/p5-Spreadsheet-XLSX
 p5-SpringGraph                  ports/graphics/p5-SpringGraph
 p5-Squatting                    ports/www/p5-Squatting
 p5-Squatting-On-PSGI            ports/www/p5-Squatting-On-PSGI
@@ -18365,6 +18369,7 @@ p5-spreadsheet-writeexcel       ports/textproc/p5-Spreadsheet-WriteExcel
 p5-spreadsheet-writeexcel-fromxml  ports/textproc/p5-Spreadsheet-WriteExcel-FromXML
 p5-spreadsheet-writeexcel-styler  ports/textproc/p5-Spreadsheet-WriteExcel-Styler
 p5-spreadsheet-writeexcelxml    ports/textproc/p5-Spreadsheet-WriteExcelXML
+p5-spreadsheet-xlsx             ports/textproc/p5-Spreadsheet-XLSX
 p5-springgraph                  ports/graphics/p5-SpringGraph
 p5-sql-abstract                 ports/databases/p5-SQL-Abstract
 p5-sql-abstract-limit           ports/databases/p5-SQL-Abstract-Limit
