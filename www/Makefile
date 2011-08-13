@@ -311,6 +311,7 @@
     SUBDIR += hs-HTTP
     SUBDIR += hs-cgi
     SUBDIR += hs-hS3
+    SUBDIR += hs-heist
     SUBDIR += hs-fastcgi
     SUBDIR += hs-http-server
     SUBDIR += hs-http-types
