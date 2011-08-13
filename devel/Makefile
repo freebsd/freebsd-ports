@@ -606,6 +606,7 @@
     SUBDIR += hs-haddock
     SUBDIR += hs-haddock-docs
     SUBDIR += hs-happy
+    SUBDIR += hs-hashable
     SUBDIR += hs-hashed-storage
     SUBDIR += hs-haskeline
     SUBDIR += hs-haskell-platform

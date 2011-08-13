@@ -74,6 +74,7 @@ gtkglext_port=			x11-toolkits/hs-gtkglext
 gtksourceview2_port=		x11-toolkits/hs-gtksourceview2
 haddock_port=			devel/hs-haddock	# executable
 happy_port=			devel/hs-happy		# executable
+hashable_port=			devel/hs-hashable
 hashed-storage_port=		devel/hs-hashed-storage
 haskeline_port=			devel/hs-haskeline
 haskell-src_port=		devel/hs-haskell-src
