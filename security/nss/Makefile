@@ -14,13 +14,14 @@ MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Libraries to support development of security-enabled applications
 
-BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip
+BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
+		nspr>=4.8.8:${PORTSDIR}/devel/nspr
 LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
 
 _MAJOR=	3
 _MINOR=	12
-_PATCH=	9
+_PATCH=	10
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/mozilla/security/nss
 
