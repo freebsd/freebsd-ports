@@ -57,8 +57,8 @@ share/mime/application/gnunet-directory.xml
 share/mime/application/illustrator.xml
 share/mime/application/javascript.xml
 share/mime/application/mac-binhex40.xml
-share/mime/application/mathml+xml.xml
 share/mime/application/mathematica.xml
+share/mime/application/mathml+xml.xml
 share/mime/application/mbox.xml
 share/mime/application/metalink+xml.xml
 share/mime/application/msword-template.xml
@@ -128,8 +128,8 @@ share/mime/application/vnd.oasis.opendocument.text-web.xml
 share/mime/application/vnd.oasis.opendocument.text.xml
 share/mime/application/vnd.openofficeorg.extension.xml
 share/mime/application/vnd.openxmlformats-officedocument.presentationml.presentation.xml
-share/mime/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.xml
 share/mime/application/vnd.openxmlformats-officedocument.presentationml.slideshow.xml
+share/mime/application/vnd.openxmlformats-officedocument.spreadsheetml.sheet.xml
 share/mime/application/vnd.openxmlformats-officedocument.wordprocessingml.document.xml
 share/mime/application/vnd.rn-realmedia.xml
 share/mime/application/vnd.stardivision.calc.xml
@@ -244,8 +244,8 @@ share/mime/application/x-hdf.xml
 share/mime/application/x-hwp.xml
 share/mime/application/x-hwt.xml
 share/mime/application/x-ica.xml
-share/mime/application/x-it87.xml
 share/mime/application/x-ipod-firmware.xml
+share/mime/application/x-it87.xml
 share/mime/application/x-java-archive.xml
 share/mime/application/x-java-jce-keystore.xml
 share/mime/application/x-java-jnlp-file.xml
@@ -368,6 +368,7 @@ share/mime/application/x-xliff.xml
 share/mime/application/x-xpinstall.xml
 share/mime/application/x-xz-compressed-tar.xml
 share/mime/application/x-xz.xml
+share/mime/application/x-xzpdf.xml
 share/mime/application/x-yaml.xml
 share/mime/application/x-zerosize.xml
 share/mime/application/x-zoo.xml
@@ -484,6 +485,7 @@ share/mime/image/x-niff.xml
 share/mime/image/x-nikon-nef.xml
 share/mime/image/x-olympus-orf.xml
 share/mime/image/x-panasonic-raw.xml
+share/mime/image/x-panasonic-raw2.xml
 share/mime/image/x-pcx.xml
 share/mime/image/x-pentax-pef.xml
 share/mime/image/x-photo-cd.xml
@@ -564,6 +566,7 @@ share/mime/text/x-c++src.xml
 share/mime/text/x-changelog.xml
 share/mime/text/x-chdr.xml
 share/mime/text/x-cmake.xml
+share/mime/text/x-cobol.xml
 share/mime/text/x-copying.xml
 share/mime/text/x-credits.xml
 share/mime/text/x-csharp.xml
@@ -577,6 +580,7 @@ share/mime/text/x-erlang.xml
 share/mime/text/x-fortran.xml
 share/mime/text/x-gettext-translation-template.xml
 share/mime/text/x-gettext-translation.xml
+share/mime/text/x-go.xml
 share/mime/text/x-google-video-pointer.xml
 share/mime/text/x-haskell.xml
 share/mime/text/x-iMelody.xml
@@ -602,6 +606,7 @@ share/mime/text/x-nfo.xml
 share/mime/text/x-objcsrc.xml
 share/mime/text/x-ocaml.xml
 share/mime/text/x-ocl.xml
+share/mime/text/x-ooc.xml
 share/mime/text/x-opml+xml.xml
 share/mime/text/x-pascal.xml
 share/mime/text/x-patch.xml
