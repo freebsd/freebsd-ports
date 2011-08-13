@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	libmms
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.6.2
 CATEGORIES=	net
-MASTER_SITES=	http://launchpadlibrarian.net/35014059/
+MASTER_SITES=	SF
 
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Library for parsing mms:// and mmsh:// type network streams
 
 USE_GNOME=	gnomehack pkgconfig glib20
 USE_GETTEXT=	yes
+USE_ICONV=	yes
 GNU_CONFIGURE=	yes
+CPPFLAGS+=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
