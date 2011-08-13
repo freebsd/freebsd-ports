@@ -7,7 +7,7 @@
 
 PORTNAME=	criterion
 PORTVERSION=	0.5.0.10
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	benchmarks haskell
 
 MAINTAINER=	haskell@FreeBSD.org
