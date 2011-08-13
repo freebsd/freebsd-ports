@@ -1,139 +1,86 @@
---- Makefile.orig	2010-09-10 17:55:54.000000000 -0500
-+++ Makefile	2010-12-28 16:15:44.000000000 -0600
-@@ -21,6 +21,10 @@
- 	LINUX = 1
- endif
- 
-+ifeq "$(SYSTEM)" "FreeBSD"
-+  FreeBSD = 1
-+endif
+--- Makefile.orig	2011-06-02 12:11:21.000000000 -0700
++++ Makefile	2011-08-12 17:33:51.953748181 -0700
+@@ -264,7 +264,6 @@
+ 	gstreamer-0.10 \
+ 	gstreamer-base-0.10 \
+ 	gtk+-2.0 \
+-	gudev-1.0 \
+ 	libexif \
+ 	libgphoto2 \
+ 	libsoup-2.4 \
+@@ -296,7 +295,6 @@
+ 	gstreamer-0.10 >= 0.10.28 \
+ 	gstreamer-base-0.10 >= 0.10.28 \
+ 	gtk+-2.0 >= 2.18.0 \
+-	gudev-1.0 >= 145 \
+ 	libexif >= 0.6.16 \
+ 	libgphoto2 >= 2.4.2 \
+ 	libsoup-2.4 >= 2.26.0 \
+@@ -375,7 +373,7 @@
+ 	$(EXPANDED_HELP_FILES) $(EXPANDED_HELP_IMAGES) apport/shotwell.py $(UNIT_RESOURCES) $(UNIT_MKS) \
+ 	unitize.mk units.mk $(PC_INPUT) $(PLUGINS_DIST_FILES) \
+ 	$(EXPANDED_THUMBNAILER_SRC_FILES)
+-	
 +
- ifeq "$(SYSTEM)" "MinGW"
- 	WINDOWS = 1
- endif
-@@ -41,6 +45,10 @@
- 	EXPORT_FLAGS = -export-dynamic
- endif
  
-+ifdef FreeBSD
-+    EXPORT_FLAGS = -export-dynamic
-+endif
-+
- ifdef WINDOWS
- 	EXPORT_FLAGS = -export-all-symbols
- endif
-@@ -124,10 +132,13 @@
- 	FSpotDatabaseDriver.vala \
- 	FSpotDatabaseTables.vala
- 
-+# this should be ifndef LINUX && ifndef FreeBSD
- ifndef LINUX
-+ifndef FreeBSD
- SRC_FILES += \
- 	GConf.vala
- endif
-+endif
- 
- VAPI_FILES = \
- 	libexif.vapi \
-@@ -288,6 +299,18 @@
- 	gdk-x11-2.0
- endif
- 
-+ifdef FreeBSD
-+EXT_PKGS += \
-+	gconf-2.0 \
-+	libgphoto2 \
-+	libsoup-2.4 \
-+	libxml-2.0 \
-+	unique-1.0 \
-+	webkit-1.0 \
-+	dbus-glib-1 \
-+	gdk-x11-2.0
-+endif
-+
- # libraw is handled separately (see note below); when libraw-config is no longer needed, the version
- # should be added to this list
- EXT_PKG_VERSIONS = \
-@@ -313,6 +336,18 @@
- 	dbus-glib-1 >= 0.80
- endif
- 
-+ifdef LINUX
-+EXT_PKG_VERSIONS += \
-+	gconf-2.0 >= 2.22.0 \
-+	libgphoto2 >= 2.4.2 \
-+	libsoup-2.4 >= 2.26.0 \
-+	libxml-2.0 >= 2.6.32 \
-+	unique-1.0 >= 1.0.0 \
-+	webkit-1.0 >= 1.1.5 \
-+	dbus-glib-1 >= 0.80
-+endif
-+
-+
- PKGS = $(EXT_PKGS) $(LOCAL_PKGS) $(LIBRAW_PKG)
- 
- ifndef BUILD_DIR
-@@ -357,6 +392,10 @@
- 
- VALA_LDFLAGS = `pkg-config --libs $(EXT_PKGS) gthread-2.0`
- 
-+ifdef FreeBSD
-+  VALA_DEFINES = -D NO_CAMERA
-+endif
-+
- ifdef WINDOWS
-   VALA_DEFINES = -D WINDOWS -D NO_CAMERA -D NO_PRINTING -D NO_PUBLISHING -D NO_LIBUNIQUE -D NO_EXTENDED_POSIX -D NO_SET_BACKGROUND
-   EXPANDED_OBJ_FILES += src/windows.o
-@@ -393,6 +432,11 @@
+ DIST_TAR = $(PROGRAM)-$(VERSION).tar
+ DIST_TAR_BZ2 = $(DIST_TAR).bz2
+@@ -420,7 +418,7 @@
+ # if not available.
  LIBRAW_CONFIG=./libraw-config
- endif
  
-+ifdef FreeBSD
-+LIBRAW_CONFIG=./libraw-config
-+endif
-+
-+
- ifdef WINDOWS
- LIBRAW_CONFIG=./libraw-config --windows
- endif
-@@ -488,9 +532,20 @@
+-define check_valac_version
++define xcheck_valac_version
+ 	@ ./chkver min $(VALAC_VERSION) $(MIN_VALAC_VERSION) || ( echo 'Shotwell requires Vala compiler $(MIN_VALAC_VERSION) or greater.  You are running' $(VALAC_VERSION) '\b.'; exit 1 )
+ 	$(if $(MAX_VALAC_VERSION),\
+ 		@ ./chkver max $(VALAC_VERSION) $(MAX_VALAC_VERSION) || ( echo 'Shotwell cannot be built by Vala compiler $(MAX_VALAC_VERSION) or greater.  You are running' $(VALAC_VERSION) '\b.'; exit 1 ),)
+@@ -561,6 +559,11 @@
+ 	mkdir -p $(DESTDIR)$(PREFIX)/share/gnome/help/shotwell/C/figures
  	$(INSTALL_DATA) $(EXPANDED_HELP_IMAGES) $(DESTDIR)$(PREFIX)/share/gnome/help/shotwell/C/figures
  endif
- endif
-+ifdef FreeBSD
 +ifndef DISABLE_SCHEMAS_INSTALL
-+	GCONF_CONFIG_SOURCE=%%GCONF_CONFIG_SOURCE%% gconftool-2 --makefile-install-rule misc/shotwell.schemas
++	GCONF_CONFIG_SOURCE=xml:merged:/usr/local/etc/gconf/gconf.xml.defaults gconftool-2 --makefile-install-rule misc/shotwell.schemas
 +	mkdir -p $(DESTDIR)$(SCHEMA_FILE_DIR)
 +	$(INSTALL_DATA) misc/shotwell.schemas $(DESTDIR)$(SCHEMA_FILE_DIR)
 +endif
-+ifdef ENABLE_APPORT_HOOK_INSTALL
-+	mkdir -p $(DESTDIR)$(PREFIX)/share/apport/package-hooks
-+	$(INSTALL_DATA) apport/shotwell.py $(DESTDIR)$(PREFIX)/share/apport/package-hooks
-+endif
-+endif
- 	-$(foreach lang,$(SUPPORTED_LANGUAGES),`mkdir -p $(SYSTEM_LANG_DIR)/$(lang)/LC_MESSAGES ; \
--        $(INSTALL_DATA) $(LOCAL_LANG_DIR)/$(lang)/LC_MESSAGES/shotwell.mo \
--            $(SYSTEM_LANG_DIR)/$(lang)/LC_MESSAGES/shotwell.mo`)
-+	$(INSTALL_DATA) $(LOCAL_LANG_DIR)/$(lang)/LC_MESSAGES/shotwell.mo \
-+	    $(SYSTEM_LANG_DIR)/$(lang)/LC_MESSAGES/shotwell.mo`)
+ 	-$(foreach lang,$(CORE_SUPPORTED_LANGUAGES),`mkdir -p $(SYSTEM_LANG_DIR)/$(lang)/LC_MESSAGES ; \
+ 		$(INSTALL_DATA) $(LOCAL_LANG_DIR)/$(lang)/LC_MESSAGES/shotwell.mo \
+ 		$(SYSTEM_LANG_DIR)/$(lang)/LC_MESSAGES/shotwell.mo`)
+@@ -638,7 +641,6 @@
  
- uninstall:
- 	rm -f $(DESTDIR)$(PREFIX)/bin/$(PROGRAM)
-@@ -514,6 +569,16 @@
- 	rm -f $(DESTDIR)$(PREFIX)/share/apport/package-hooks/shotwell.py
- endif
- endif
-+ifdef FreeBSD
-+ifndef DISABLE_SCHEMAS_INSTALL
-+	GCONF_CONFIG_SOURCE=`gconftool-2 --get-default-source` gconftool-2 --makefile-install-rule misc/shotwell.schemas
-+else
-+	rm -f $(DESTDIR)$(SCHEMA_FILE_DIR)/shotwell.schemas
-+endif
-+ifdef ENABLE_APPORT_HOOK_INSTALL
-+	rm -f $(DESTDIR)$(PREFIX)/share/apport/package-hooks/shotwell.py
-+endif
-+endif
- 	$(foreach lang,$(SUPPORTED_LANGUAGES),`rm -f $(SYSTEM_LANG_DIR)/$(lang)/LC_MESSAGES/shotwell.mo`)
+ # EXPANDED_SRC_FILES includes UNITIZE_INITS and UNITIZE_ENTRY
+ $(VALA_STAMP): $(EXPANDED_SRC_FILES) $(EXPANDED_VAPI_FILES) $(EXPANDED_SRC_HEADER_FILES)
+-	$(call check_valac_version)
+ 	@echo Compiling Vala code...
+ 	@mkdir -p $(BUILD_DIR)
+ 	@$(VALAC) --ccode --directory=$(BUILD_DIR) --basedir=src \
+@@ -655,10 +657,10 @@
+ 	@
  
- $(VALA_STAMP): $(EXPANDED_SRC_FILES) $(EXPANDED_VAPI_FILES) $(EXPANDED_SRC_HEADER_FILES) Makefile \
+ $(EXPANDED_OBJ_FILES): %.o: %.c $(CONFIG_IN) Makefile
+-	$(CC) -c $(VALA_CFLAGS) `$(LIBRAW_CONFIG) --cflags` $(CFLAGS) -o $@ $<
++	$(CC) -c $(VALA_CFLAGS) $(CFLAGS) `pkg-config --cflags libraw` -o $@ $<
+ 
+ $(PROGRAM): $(EXPANDED_OBJ_FILES) $(RESOURCES) $(LANG_STAMP) $(THUMBNAILER_BIN)
+-	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(RESOURCES) $(VALA_LDFLAGS) `$(LIBRAW_CONFIG) --libs` $(EXPORT_FLAGS) -o $@
++	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(RESOURCES) $(VALA_LDFLAGS) `pkg-config --libs libraw` $(EXPORT_FLAGS) -o $@
+ 
+ $(THUMBNAILER_BIN): $(EXPANDED_THUMBNAILER_SRC_FILES)
+ 	$(VALAC) $(EXPANDED_THUMBNAILER_SRC_FILES) $(VALAFLAGS) -o $@ $(foreach pkg,$(THUMBNAILER_PKGS),--pkg=$(pkg))
+@@ -668,7 +670,6 @@
+ 
+ .PHONY: $(PLUGINS_DIR)
+ $(PLUGINS_DIR): $(PLUGIN_VAPI) $(PLUGIN_HEADER) $(PLUGIN_DEPS)
+-	$(call check_valac_version)
+ 	@$(MAKE) --directory=$@ PLUGINS_VERSION="$(VERSION)" USER_VALAFLAGS="$(USER_VALAFLAGS)" \
+ 		PLUGIN_CFLAGS="$(PLUGIN_CFLAGS)"
+ 
+@@ -686,7 +687,7 @@
+ glade: lib$(PROGRAM).so
+ 
+ lib$(PROGRAM).so: $(EXPANDED_OBJ_FILES) $(RESOURCES) $(LANG_STAMP)
+-	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(RESOURCES) $(VALA_LDFLAGS) `$(LIBRAW_CONFIG) --libs` $(EXPORT_FLAGS) -shared -o $@
++	$(CC) $(EXPANDED_OBJ_FILES) $(CFLAGS) $(RESOURCES) $(VALA_LDFLAGS) $(LDFLAGS) `pkg-config --libs libraw` $(EXPORT_FLAGS) -shared -o $@
+ 
+ .PHONY: pkgcheck
+ pkgcheck:
