@@ -25,6 +25,7 @@ binary_port=			devel/hs-binary
 bio_port=			science/hs-bio
 blaze-builder_port=		devel/hs-blaze-builder
 blaze-builder-enumerator_port=	devel/hs-blaze-builder-enumerator
+blaze-html_port=		textproc/hs-blaze-html
 BNFC_port=			devel/hs-BNFC		# executable
 Boolean_port=			devel/hs-Boolean
 brainfuck_port=			lang/hs-brainfuck	# executable
