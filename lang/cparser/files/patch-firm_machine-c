@@ -1,0 +1,25 @@
+$FreeBSD$
+
+By rdivacky@, enables cparser to work out of the box on amd64
+
+--- work/cparser-0.9.12/driver/firm_machine.c	2011-04-14 16:51:46.000000000 +0200
++++ /tmp/firm_machine.c	2011-08-12 22:04:40.000000000 +0200
+@@ -77,12 +77,18 @@
+ machine_triple_t *firm_get_host_machine(void)
+ {
+ 	machine_triple_t *machine = XMALLOC(machine_triple_t);
++#ifdef __amd64__
++	machine->cpu_type = xstrdup("x86_64");
++#else
+ 	machine->cpu_type = xstrdup("i386");
++#endif
+ 	machine->manufacturer = xstrdup("unknown");
+ #if defined(_WIN32) || defined(__CYGWIN__)
+ 	machine->operating_system = xstrdup("win32");
+ #elif defined(__APPLE__)
+ 	machine->operating_system = xstrdup("darwin");
++#elif defined(__FreeBSD__)
++	machine->operating_system = xstrdup("bsd");
+ #else
+ 	machine->operating_system = xstrdup("linux");
+ #endif
