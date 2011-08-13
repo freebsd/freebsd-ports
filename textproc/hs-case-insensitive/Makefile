@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	case-insensitive
-PORTVERSION=	0.2.0.1
+PORTVERSION=	0.3.0.1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -15,7 +15,7 @@ COMMENT=	Case insensitive string comparison
 LICENSE=	BSD
 
 CABAL_SETUP=	Setup.hs
-USE_CABAL=	text>=0.3
+USE_CABAL=	hashable>=1.0 text>=0.3
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
