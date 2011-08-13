@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	pgbouncer
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	databases
-MASTER_SITES=	http://pgfoundry.org/frs/download.php/2987/
+MASTER_SITES=	http://pgfoundry.org/frs/download.php/3085/
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	Lightweight connection pooler for PostgreSQL
