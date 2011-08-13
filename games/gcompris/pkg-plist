@@ -92,7 +92,6 @@ lib/gcompris/libwordsgame.la
 lib/gcompris/libwordsgame.so
 share/applications/gcompris-edit.desktop
 share/applications/gcompris.desktop
-%%DATADIR%%/boards/Makefile.in.bak
 %%DATADIR%%/boards/README
 %%DATADIR%%/boards/administration.xml
 %%DATADIR%%/boards/administration/config_boards.svgz
@@ -299,6 +298,22 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/babymatch/windflag5.svg
 %%DATADIR%%/boards/babyshapes.svg
 %%DATADIR%%/boards/babyshapes.xml
+%%DATADIR%%/boards/babyshapes/Bosschaert_04_1.png
+%%DATADIR%%/boards/babyshapes/Bosschaert_04_2.png
+%%DATADIR%%/boards/babyshapes/Bosschaert_04_3.png
+%%DATADIR%%/boards/babyshapes/Bosschaert_04_4.png
+%%DATADIR%%/boards/babyshapes/Bosschaert_04_5.png
+%%DATADIR%%/boards/babyshapes/Bosschaert_04_6.png
+%%DATADIR%%/boards/babyshapes/Bosschaert_04_background.png
+%%DATADIR%%/boards/babyshapes/Paul_Gauguin_006_background.png
+%%DATADIR%%/boards/babyshapes/Paul_Gauguin_006_chien.png
+%%DATADIR%%/boards/babyshapes/Paul_Gauguin_006_jeunes_filles.png
+%%DATADIR%%/boards/babyshapes/Paul_Gauguin_006_statue.png
+%%DATADIR%%/boards/babyshapes/Pieter_Bruegel_background.png
+%%DATADIR%%/boards/babyshapes/Pieter_Bruegel_fillette.png
+%%DATADIR%%/boards/babyshapes/Pieter_Bruegel_mur.png
+%%DATADIR%%/boards/babyshapes/Pieter_Bruegel_musicien.png
+%%DATADIR%%/boards/babyshapes/Pieter_Bruegel_service.png
 %%DATADIR%%/boards/babyshapes/T_baby_bottle.png
 %%DATADIR%%/boards/babyshapes/T_banana.png
 %%DATADIR%%/boards/babyshapes/T_bread_slice.png
@@ -316,6 +331,12 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/babyshapes/T_round_cookie.png
 %%DATADIR%%/boards/babyshapes/T_suggar_box.png
 %%DATADIR%%/boards/babyshapes/T_yahourt.png
+%%DATADIR%%/boards/babyshapes/Van_Gogh_0011_1.png
+%%DATADIR%%/boards/babyshapes/Van_Gogh_0011_2.png
+%%DATADIR%%/boards/babyshapes/Van_Gogh_0011_3.png
+%%DATADIR%%/boards/babyshapes/Van_Gogh_0011_4.png
+%%DATADIR%%/boards/babyshapes/Van_Gogh_0011_5.png
+%%DATADIR%%/boards/babyshapes/Van_Gogh_0011_background.png
 %%DATADIR%%/boards/babyshapes/board1_0.xml
 %%DATADIR%%/boards/babyshapes/board2_0.xml
 %%DATADIR%%/boards/babyshapes/board3_0.xml
@@ -363,15 +384,21 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/babyshapes/food/round_cookie.png
 %%DATADIR%%/boards/babyshapes/food/suggar_box.png
 %%DATADIR%%/boards/babyshapes/food/yahourt.png
+%%DATADIR%%/boards/babyshapes/lady_unicorn_1.png
+%%DATADIR%%/boards/babyshapes/lady_unicorn_2.png
+%%DATADIR%%/boards/babyshapes/lady_unicorn_3.png
+%%DATADIR%%/boards/babyshapes/lady_unicorn_4.png
+%%DATADIR%%/boards/babyshapes/lady_unicorn_5.png
+%%DATADIR%%/boards/babyshapes/lady_unicorn_background.png
 %%DATADIR%%/boards/ballcatch.svg
 %%DATADIR%%/boards/ballcatch.xml
-%%DATADIR%%/boards/ballcatch/beach1.png
-%%DATADIR%%/boards/ballcatch/beach2.png
-%%DATADIR%%/boards/ballcatch/beach3.png
-%%DATADIR%%/boards/ballcatch/beach4.png
-%%DATADIR%%/boards/ballcatch/hand.png
-%%DATADIR%%/boards/ballcatch/shift_key.png
-%%DATADIR%%/boards/ballcatch/tux.png
+%%DATADIR%%/boards/ballcatch/beach1.svgz
+%%DATADIR%%/boards/ballcatch/beach2.svgz
+%%DATADIR%%/boards/ballcatch/beach3.svgz
+%%DATADIR%%/boards/ballcatch/beach4.svgz
+%%DATADIR%%/boards/ballcatch/hand.svg
+%%DATADIR%%/boards/ballcatch/shift_key.svg
+%%DATADIR%%/boards/ballcatch/tux.svg
 %%DATADIR%%/boards/bargame.svg
 %%DATADIR%%/boards/bargame.xml
 %%DATADIR%%/boards/bargame/blue_ball.png
@@ -400,6 +427,8 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/canal_lock/canal_lock.svgz
 %%DATADIR%%/boards/chat.svg
 %%DATADIR%%/boards/chat.xml
+%%DATADIR%%/boards/chat/tool-draw.png
+%%DATADIR%%/boards/chat/tool-line.png
 %%DATADIR%%/boards/chess.svg
 %%DATADIR%%/boards/chess.xml
 %%DATADIR%%/boards/chess/Bb.png
@@ -598,6 +627,156 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/dataset/mrpotato.xml
 %%DATADIR%%/boards/dataset/tuxpaint_pictures.xml
 %%DATADIR%%/boards/dataset/user_pictures.xml
+%%DATADIR%%/boards/details.svg
+%%DATADIR%%/boards/details.xml
+%%DATADIR%%/boards/details/Chenonceau_0.png
+%%DATADIR%%/boards/details/Chenonceau_1.png
+%%DATADIR%%/boards/details/Chenonceau_2.png
+%%DATADIR%%/boards/details/Chenonceau_background.jpg
+%%DATADIR%%/boards/details/EgeskovSlotSpejling_0.png
+%%DATADIR%%/boards/details/EgeskovSlotSpejling_1.png
+%%DATADIR%%/boards/details/EgeskovSlotSpejling_2.png
+%%DATADIR%%/boards/details/EgeskovSlotSpejling_3.png
+%%DATADIR%%/boards/details/EgeskovSlotSpejling_4.png
+%%DATADIR%%/boards/details/EgeskovSlotSpejling_5.png
+%%DATADIR%%/boards/details/EgeskovSlotSpejling_6.png
+%%DATADIR%%/boards/details/EgeskovSlotSpejling_7.png
+%%DATADIR%%/boards/details/EgeskovSlotSpejling_background.jpg
+%%DATADIR%%/boards/details/Eglise_dAuvers-sur-Oise_0.png
+%%DATADIR%%/boards/details/Eglise_dAuvers-sur-Oise_1.png
+%%DATADIR%%/boards/details/Eglise_dAuvers-sur-Oise_2.png
+%%DATADIR%%/boards/details/Eglise_dAuvers-sur-Oise_background.jpg
+%%DATADIR%%/boards/details/EilanDonanCastle_0.png
+%%DATADIR%%/boards/details/EilanDonanCastle_1.png
+%%DATADIR%%/boards/details/EilanDonanCastle_background.jpg
+%%DATADIR%%/boards/details/FanoeWindmill_0.png
+%%DATADIR%%/boards/details/FanoeWindmill_1.png
+%%DATADIR%%/boards/details/FanoeWindmill_2.png
+%%DATADIR%%/boards/details/FanoeWindmill_3.png
+%%DATADIR%%/boards/details/FanoeWindmill_background.jpg
+%%DATADIR%%/boards/details/GizahPyramids_0.png
+%%DATADIR%%/boards/details/GizahPyramids_1.png
+%%DATADIR%%/boards/details/GizahPyramids_2.png
+%%DATADIR%%/boards/details/GizahPyramids_3.png
+%%DATADIR%%/boards/details/GizahPyramids_background.jpg
+%%DATADIR%%/boards/details/Gogh4_0.png
+%%DATADIR%%/boards/details/Gogh4_1.png
+%%DATADIR%%/boards/details/Gogh4_2.png
+%%DATADIR%%/boards/details/Gogh4_3.png
+%%DATADIR%%/boards/details/Gogh4_4.png
+%%DATADIR%%/boards/details/Gogh4_5.png
+%%DATADIR%%/boards/details/Gogh4_6.png
+%%DATADIR%%/boards/details/Gogh4_7.png
+%%DATADIR%%/boards/details/Gogh4_8.png
+%%DATADIR%%/boards/details/Gogh4_background.jpg
+%%DATADIR%%/boards/details/Louvre_2007_02_24_c_0.png
+%%DATADIR%%/boards/details/Louvre_2007_02_24_c_1.png
+%%DATADIR%%/boards/details/Louvre_2007_02_24_c_2.png
+%%DATADIR%%/boards/details/Louvre_2007_02_24_c_background.jpg
+%%DATADIR%%/boards/details/NDP_0.png
+%%DATADIR%%/boards/details/NDP_1.png
+%%DATADIR%%/boards/details/NDP_2.png
+%%DATADIR%%/boards/details/NDP_background.jpg
+%%DATADIR%%/boards/details/Nagoya_0.png
+%%DATADIR%%/boards/details/Nagoya_1.png
+%%DATADIR%%/boards/details/Nagoya_2.png
+%%DATADIR%%/boards/details/Nagoya_3.png
+%%DATADIR%%/boards/details/Nagoya_4.png
+%%DATADIR%%/boards/details/Nagoya_background.jpg
+%%DATADIR%%/boards/details/Neuschwanstein_0.png
+%%DATADIR%%/boards/details/Neuschwanstein_1.png
+%%DATADIR%%/boards/details/Neuschwanstein_2.png
+%%DATADIR%%/boards/details/Neuschwanstein_3.png
+%%DATADIR%%/boards/details/Neuschwanstein_4.png
+%%DATADIR%%/boards/details/Neuschwanstein_5.png
+%%DATADIR%%/boards/details/Neuschwanstein_6.png
+%%DATADIR%%/boards/details/Neuschwanstein_7.png
+%%DATADIR%%/boards/details/Neuschwanstein_8.png
+%%DATADIR%%/boards/details/Neuschwanstein_9.png
+%%DATADIR%%/boards/details/Neuschwanstein_background.jpg
+%%DATADIR%%/boards/details/OperaSidney_0.png
+%%DATADIR%%/boards/details/OperaSidney_1.png
+%%DATADIR%%/boards/details/OperaSidney_2.png
+%%DATADIR%%/boards/details/OperaSidney_3.png
+%%DATADIR%%/boards/details/OperaSidney_background.jpg
+%%DATADIR%%/boards/details/PortraitOfPereTanguy_0.png
+%%DATADIR%%/boards/details/PortraitOfPereTanguy_1.png
+%%DATADIR%%/boards/details/PortraitOfPereTanguy_2.png
+%%DATADIR%%/boards/details/PortraitOfPereTanguy_3.png
+%%DATADIR%%/boards/details/PortraitOfPereTanguy_4.png
+%%DATADIR%%/boards/details/PortraitOfPereTanguy_5.png
+%%DATADIR%%/boards/details/PortraitOfPereTanguy_6.png
+%%DATADIR%%/boards/details/PortraitOfPereTanguy_7.png
+%%DATADIR%%/boards/details/PortraitOfPereTanguy_8.png
+%%DATADIR%%/boards/details/PortraitOfPereTanguy_background.jpg
+%%DATADIR%%/boards/details/TajMahal_0.png
+%%DATADIR%%/boards/details/TajMahal_1.png
+%%DATADIR%%/boards/details/TajMahal_2.png
+%%DATADIR%%/boards/details/TajMahal_3.png
+%%DATADIR%%/boards/details/TajMahal_4.png
+%%DATADIR%%/boards/details/TajMahal_5.png
+%%DATADIR%%/boards/details/TajMahal_background.jpg
+%%DATADIR%%/boards/details/TourEiffel_0.png
+%%DATADIR%%/boards/details/TourEiffel_1.png
+%%DATADIR%%/boards/details/TourEiffel_background.jpg
+%%DATADIR%%/boards/details/TowerBridgeLondon_0.png
+%%DATADIR%%/boards/details/TowerBridgeLondon_1.png
+%%DATADIR%%/boards/details/TowerBridgeLondon_2.png
+%%DATADIR%%/boards/details/TowerBridgeLondon_3.png
+%%DATADIR%%/boards/details/TowerBridgeLondon_4.png
+%%DATADIR%%/boards/details/TowerBridgeLondon_background.jpg
+%%DATADIR%%/boards/details/Van_Gogh_The_Night_Cafe_0.png
+%%DATADIR%%/boards/details/Van_Gogh_The_Night_Cafe_1.png
+%%DATADIR%%/boards/details/Van_Gogh_The_Night_Cafe_2.png
+%%DATADIR%%/boards/details/Van_Gogh_The_Night_Cafe_3.png
+%%DATADIR%%/boards/details/Van_Gogh_The_Night_Cafe_4.png
+%%DATADIR%%/boards/details/Van_Gogh_The_Night_Cafe_5.png
+%%DATADIR%%/boards/details/Van_Gogh_The_Night_Cafe_6.png
+%%DATADIR%%/boards/details/Van_Gogh_The_Night_Cafe_7.png
+%%DATADIR%%/boards/details/Van_Gogh_The_Night_Cafe_background.jpg
+%%DATADIR%%/boards/details/VincentVanGogh0012_0.png
+%%DATADIR%%/boards/details/VincentVanGogh0012_1.png
+%%DATADIR%%/boards/details/VincentVanGogh0012_background.jpg
+%%DATADIR%%/boards/details/VincentVanGogh0013_0.png
+%%DATADIR%%/boards/details/VincentVanGogh0013_1.png
+%%DATADIR%%/boards/details/VincentVanGogh0013_2.png
+%%DATADIR%%/boards/details/VincentVanGogh0013_3.png
+%%DATADIR%%/boards/details/VincentVanGogh0013_4.png
+%%DATADIR%%/boards/details/VincentVanGogh0013_background.jpg
+%%DATADIR%%/boards/details/VincentVanGogh0019_0.png
+%%DATADIR%%/boards/details/VincentVanGogh0019_1.png
+%%DATADIR%%/boards/details/VincentVanGogh0019_2.png
+%%DATADIR%%/boards/details/VincentVanGogh0019_3.png
+%%DATADIR%%/boards/details/VincentVanGogh0019_4.png
+%%DATADIR%%/boards/details/VincentVanGogh0019_5.png
+%%DATADIR%%/boards/details/VincentVanGogh0019_6.png
+%%DATADIR%%/boards/details/VincentVanGogh0019_7.png
+%%DATADIR%%/boards/details/VincentVanGogh0019_8.png
+%%DATADIR%%/boards/details/VincentVanGogh0019_background.jpg
+%%DATADIR%%/boards/details/VincentVanGoghBridge_0.png
+%%DATADIR%%/boards/details/VincentVanGoghBridge_1.png
+%%DATADIR%%/boards/details/VincentVanGoghBridge_background.jpg
+%%DATADIR%%/boards/details/board1_0.xml
+%%DATADIR%%/boards/details/board1_1.xml
+%%DATADIR%%/boards/details/board1_2.xml
+%%DATADIR%%/boards/details/board1_3.xml
+%%DATADIR%%/boards/details/board1_4.xml
+%%DATADIR%%/boards/details/board1_5.xml
+%%DATADIR%%/boards/details/board1_6.xml
+%%DATADIR%%/boards/details/board1_7.xml
+%%DATADIR%%/boards/details/board2_0.xml
+%%DATADIR%%/boards/details/board2_1.xml
+%%DATADIR%%/boards/details/board2_10.xml
+%%DATADIR%%/boards/details/board2_11.xml
+%%DATADIR%%/boards/details/board2_12.xml
+%%DATADIR%%/boards/details/board2_2.xml
+%%DATADIR%%/boards/details/board2_3.xml
+%%DATADIR%%/boards/details/board2_4.xml
+%%DATADIR%%/boards/details/board2_5.xml
+%%DATADIR%%/boards/details/board2_6.xml
+%%DATADIR%%/boards/details/board2_7.xml
+%%DATADIR%%/boards/details/board2_8.xml
+%%DATADIR%%/boards/details/board2_9.xml
 %%DATADIR%%/boards/discovery.svg
 %%DATADIR%%/boards/discovery.xml
 %%DATADIR%%/boards/doubleentry.svg
@@ -634,25 +813,26 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/draw.xml
 %%DATADIR%%/boards/drawnumber.svg
 %%DATADIR%%/boards/drawnumber.xml
-%%DATADIR%%/boards/drawnumber/dn_bear1.png
-%%DATADIR%%/boards/drawnumber/dn_bear2.png
-%%DATADIR%%/boards/drawnumber/dn_de1.png
-%%DATADIR%%/boards/drawnumber/dn_de2.png
-%%DATADIR%%/boards/drawnumber/dn_epouvantail1.png
-%%DATADIR%%/boards/drawnumber/dn_epouvantail2.png
-%%DATADIR%%/boards/drawnumber/dn_fond1.png
-%%DATADIR%%/boards/drawnumber/dn_fou1.png
-%%DATADIR%%/boards/drawnumber/dn_fou2.png
-%%DATADIR%%/boards/drawnumber/dn_hibou1.png
-%%DATADIR%%/boards/drawnumber/dn_hibou2.png
-%%DATADIR%%/boards/drawnumber/dn_house1.png
-%%DATADIR%%/boards/drawnumber/dn_house2.png
-%%DATADIR%%/boards/drawnumber/dn_plane1.png
-%%DATADIR%%/boards/drawnumber/dn_plane2.png
-%%DATADIR%%/boards/drawnumber/dn_poisson1.png
-%%DATADIR%%/boards/drawnumber/dn_poisson2.png
-%%DATADIR%%/boards/drawnumber/dn_sapin1.png
-%%DATADIR%%/boards/drawnumber/dn_sapin2.png
+%%DATADIR%%/boards/drawnumber/activity.txt
+%%DATADIR%%/boards/drawnumber/dn_bear1.jpg
+%%DATADIR%%/boards/drawnumber/dn_bear2.jpg
+%%DATADIR%%/boards/drawnumber/dn_de1.jpg
+%%DATADIR%%/boards/drawnumber/dn_de2.jpg
+%%DATADIR%%/boards/drawnumber/dn_epouvantail1.jpg
+%%DATADIR%%/boards/drawnumber/dn_epouvantail2.jpg
+%%DATADIR%%/boards/drawnumber/dn_fond1.jpg
+%%DATADIR%%/boards/drawnumber/dn_fou1.jpg
+%%DATADIR%%/boards/drawnumber/dn_fou2.jpg
+%%DATADIR%%/boards/drawnumber/dn_hibou1.jpg
+%%DATADIR%%/boards/drawnumber/dn_hibou2.jpg
+%%DATADIR%%/boards/drawnumber/dn_house1.jpg
+%%DATADIR%%/boards/drawnumber/dn_house2.jpg
+%%DATADIR%%/boards/drawnumber/dn_plane1.jpg
+%%DATADIR%%/boards/drawnumber/dn_plane2.jpg
+%%DATADIR%%/boards/drawnumber/dn_poisson1.jpg
+%%DATADIR%%/boards/drawnumber/dn_poisson2.jpg
+%%DATADIR%%/boards/drawnumber/dn_sapin1.jpg
+%%DATADIR%%/boards/drawnumber/dn_sapin2.jpg
 %%DATADIR%%/boards/ear.svg
 %%DATADIR%%/boards/electric.svg
 %%DATADIR%%/boards/electric.xml
@@ -718,6 +898,12 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/enumerate/yahourt.png
 %%DATADIR%%/boards/erase.svg
 %%DATADIR%%/boards/erase.xml
+%%DATADIR%%/boards/erase/Asian_Elephant_and_Baby.jpg
+%%DATADIR%%/boards/erase/Helioconius_sp_Richard_Bartz.jpg
+%%DATADIR%%/boards/erase/Pteroglossus-torquatus-001.jpg
+%%DATADIR%%/boards/erase/README.txt
+%%DATADIR%%/boards/erase/Spider_vdg.jpg
+%%DATADIR%%/boards/erase/White_shark.jpg
 %%DATADIR%%/boards/erase/bear001.jpg
 %%DATADIR%%/boards/erase/black-headed-gull.jpg
 %%DATADIR%%/boards/erase/butterfly.jpg
@@ -727,11 +913,13 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/erase/donkey.jpg
 %%DATADIR%%/boards/erase/elephanteauxgc.jpg
 %%DATADIR%%/boards/erase/flamentrosegc.jpg
+%%DATADIR%%/boards/erase/gazelle.jpg
 %%DATADIR%%/boards/erase/girafegc.jpg
+%%DATADIR%%/boards/erase/golden_toad.jpg
+%%DATADIR%%/boards/erase/honey_bee.jpg
 %%DATADIR%%/boards/erase/horses.jpg
 %%DATADIR%%/boards/erase/horses2.jpg
 %%DATADIR%%/boards/erase/hypogc.jpg
-%%DATADIR%%/boards/erase/joybear001.jpg
 %%DATADIR%%/boards/erase/joybear002.jpg
 %%DATADIR%%/boards/erase/jumentmulassieregc.jpg
 %%DATADIR%%/boards/erase/maki1.jpg
@@ -741,6 +929,7 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/erase/maki5.jpg
 %%DATADIR%%/boards/erase/maki6.jpg
 %%DATADIR%%/boards/erase/malaybear002.jpg
+%%DATADIR%%/boards/erase/papilio_demodocus.jpg
 %%DATADIR%%/boards/erase/pigeon.jpg
 %%DATADIR%%/boards/erase/polabear011.jpg
 %%DATADIR%%/boards/erase/polarbear001.jpg
@@ -771,71 +960,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/fifteen.svg
 %%DATADIR%%/boards/fifteen.xml
 %%DATADIR%%/boards/fifteen/fifteen_frame.png
-%%DATADIR%%/boards/flags/README
-%%DATADIR%%/boards/flags/af.svgz
-%%DATADIR%%/boards/flags/am.svgz
-%%DATADIR%%/boards/flags/ar.svgz
-%%DATADIR%%/boards/flags/az.svgz
-%%DATADIR%%/boards/flags/be.svgz
-%%DATADIR%%/boards/flags/bg.svgz
-%%DATADIR%%/boards/flags/br.svgz
-%%DATADIR%%/boards/flags/ca.svgz
-%%DATADIR%%/boards/flags/ch.svgz
-%%DATADIR%%/boards/flags/cs.svgz
-%%DATADIR%%/boards/flags/da.svgz
-%%DATADIR%%/boards/flags/de.svgz
-%%DATADIR%%/boards/flags/dz.svgz
-%%DATADIR%%/boards/flags/el.svgz
-%%DATADIR%%/boards/flags/en.svgz
-%%DATADIR%%/boards/flags/en_CA.svgz
-%%DATADIR%%/boards/flags/en_GB.svgz
-%%DATADIR%%/boards/flags/es.svgz
-%%DATADIR%%/boards/flags/eu.svgz
-%%DATADIR%%/boards/flags/fa.svgz
-%%DATADIR%%/boards/flags/fi.svgz
-%%DATADIR%%/boards/flags/fr.svgz
-%%DATADIR%%/boards/flags/ga.svgz
-%%DATADIR%%/boards/flags/gu.svgz
-%%DATADIR%%/boards/flags/he.svgz
-%%DATADIR%%/boards/flags/hi.svgz
-%%DATADIR%%/boards/flags/hr.svgz
-%%DATADIR%%/boards/flags/hu.svgz
-%%DATADIR%%/boards/flags/id.svgz
-%%DATADIR%%/boards/flags/it.svgz
-%%DATADIR%%/boards/flags/ja.svgz
-%%DATADIR%%/boards/flags/ka.svgz
-%%DATADIR%%/boards/flags/ko.svgz
-%%DATADIR%%/boards/flags/lt.svgz
-%%DATADIR%%/boards/flags/mk.svgz
-%%DATADIR%%/boards/flags/ml.svgz
-%%DATADIR%%/boards/flags/mr.svgz
-%%DATADIR%%/boards/flags/ms.svgz
-%%DATADIR%%/boards/flags/nb.svgz
-%%DATADIR%%/boards/flags/ne.svgz
-%%DATADIR%%/boards/flags/nl.svgz
-%%DATADIR%%/boards/flags/nn.svgz
-%%DATADIR%%/boards/flags/oc.svgz
-%%DATADIR%%/boards/flags/pa.svgz
-%%DATADIR%%/boards/flags/pl.svgz
-%%DATADIR%%/boards/flags/pt.svgz
-%%DATADIR%%/boards/flags/pt_BR.svgz
-%%DATADIR%%/boards/flags/ro.svgz
-%%DATADIR%%/boards/flags/ru.svgz
-%%DATADIR%%/boards/flags/rw.svgz
-%%DATADIR%%/boards/flags/sk.svgz
-%%DATADIR%%/boards/flags/sl.svgz
-%%DATADIR%%/boards/flags/so.svgz
-%%DATADIR%%/boards/flags/sq.svgz
-%%DATADIR%%/boards/flags/sr.svgz
-%%DATADIR%%/boards/flags/sv.svgz
-%%DATADIR%%/boards/flags/ta.svgz
-%%DATADIR%%/boards/flags/th.svgz
-%%DATADIR%%/boards/flags/tr.svgz
-%%DATADIR%%/boards/flags/uk.svgz
-%%DATADIR%%/boards/flags/ur.svgz
-%%DATADIR%%/boards/flags/vi.svgz
-%%DATADIR%%/boards/flags/wa.svgz
-%%DATADIR%%/boards/flags/zh.svgz
 %%DATADIR%%/boards/followline.svg
 %%DATADIR%%/boards/followline.xml
 %%DATADIR%%/boards/followline/followline.svgz
@@ -1429,6 +1553,9 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/guessnumber.xml
 %%DATADIR%%/boards/guessnumber/cave.png
 %%DATADIR%%/boards/guessnumber/tuxhelico.png
+%%DATADIR%%/boards/hangman.svg
+%%DATADIR%%/boards/hangman.xml
+%%DATADIR%%/boards/hangman/back.svgz
 %%DATADIR%%/boards/hanoi.svg
 %%DATADIR%%/boards/hanoi.xml
 %%DATADIR%%/boards/hanoi_real.svg
@@ -1442,6 +1569,9 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/hexagon.svg
 %%DATADIR%%/boards/hexagon.xml
 %%DATADIR%%/boards/hexagon/strawberry.svg
+%%DATADIR%%/boards/hydroelectric.svg
+%%DATADIR%%/boards/hydroelectric.xml
+%%DATADIR%%/boards/hydroelectric/hydroelectric.svgz
 %%DATADIR%%/boards/imageid.svg
 %%DATADIR%%/boards/imageid.xml
 %%DATADIR%%/boards/imageid/avion.png
@@ -1538,6 +1668,10 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/leftright/poing_gauche_paume_180.png
 %%DATADIR%%/boards/leftright/poing_gauche_paume_270.png
 %%DATADIR%%/boards/leftright/poing_gauche_paume_90.png
+%%DATADIR%%/boards/lightsoff.svg
+%%DATADIR%%/boards/lightsoff.xml
+%%DATADIR%%/boards/lightsoff/back.svgz
+%%DATADIR%%/boards/lightsoff/onoff.svgz
 %%DATADIR%%/boards/login.xml
 %%DATADIR%%/boards/login/scenery2_background.png
 %%DATADIR%%/boards/login/scenery3_background.png
@@ -1793,8 +1927,17 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/money/n5e.svgz
 %%DATADIR%%/boards/money/orange.svgz
 %%DATADIR%%/boards/money/pamplemousse.svgz
+%%DATADIR%%/boards/money/pencil.svgz
+%%DATADIR%%/boards/money/tux_graduate.png
+%%DATADIR%%/boards/money/umbrella.svgz
+%%DATADIR%%/boards/money_back.svg
+%%DATADIR%%/boards/money_back.xml
+%%DATADIR%%/boards/money_back_cents.svg
+%%DATADIR%%/boards/money_back_cents.xml
 %%DATADIR%%/boards/money_cents.svg
 %%DATADIR%%/boards/money_cents.xml
+%%DATADIR%%/boards/money_group.svg
+%%DATADIR%%/boards/money_group.xml
 %%DATADIR%%/boards/mosaic.svg
 %%DATADIR%%/boards/mosaic.xml
 %%DATADIR%%/boards/mosaic/button_checked.png
@@ -1915,6 +2058,22 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/numeration.svg
 %%DATADIR%%/boards/numeration.xml
 %%DATADIR%%/boards/paintings.xml
+%%DATADIR%%/boards/paintings/AlbrechtDurer_a1.png
+%%DATADIR%%/boards/paintings/AlbrechtDurer_a2.png
+%%DATADIR%%/boards/paintings/AlbrechtDurer_a3.png
+%%DATADIR%%/boards/paintings/AlbrechtDurer_a4.png
+%%DATADIR%%/boards/paintings/AlbrechtDurer_b1.png
+%%DATADIR%%/boards/paintings/AlbrechtDurer_b2.png
+%%DATADIR%%/boards/paintings/AlbrechtDurer_b3.png
+%%DATADIR%%/boards/paintings/AlbrechtDurer_b4.png
+%%DATADIR%%/boards/paintings/AlbrechtDurer_c1.png
+%%DATADIR%%/boards/paintings/AlbrechtDurer_c2.png
+%%DATADIR%%/boards/paintings/AlbrechtDurer_c3.png
+%%DATADIR%%/boards/paintings/AlbrechtDurer_c4.png
+%%DATADIR%%/boards/paintings/AlbrechtDurer_d1.png
+%%DATADIR%%/boards/paintings/AlbrechtDurer_d2.png
+%%DATADIR%%/boards/paintings/AlbrechtDurer_d3.png
+%%DATADIR%%/boards/paintings/AlbrechtDurer_d4.png
 %%DATADIR%%/boards/paintings/Arcimboldo_Librarian_a1.png
 %%DATADIR%%/boards/paintings/Arcimboldo_Librarian_a2.png
 %%DATADIR%%/boards/paintings/Arcimboldo_Librarian_a3.png
@@ -1930,38 +2089,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/paintings/Arcimboldo_Spring_b1.png
 %%DATADIR%%/boards/paintings/Arcimboldo_Spring_b2.png
 %%DATADIR%%/boards/paintings/Arcimboldo_Spring_b3.png
-%%DATADIR%%/boards/paintings/Botticelli_Primaver_a1.png
-%%DATADIR%%/boards/paintings/Botticelli_Primaver_a2.png
-%%DATADIR%%/boards/paintings/Botticelli_Primaver_a3.png
-%%DATADIR%%/boards/paintings/Botticelli_Primaver_a4.png
-%%DATADIR%%/boards/paintings/Botticelli_Primaver_b1.png
-%%DATADIR%%/boards/paintings/Botticelli_Primaver_b2.png
-%%DATADIR%%/boards/paintings/Botticelli_Primaver_b3.png
-%%DATADIR%%/boards/paintings/Botticelli_Primaver_b4.png
-%%DATADIR%%/boards/paintings/Botticelli_Primaver_c1.png
-%%DATADIR%%/boards/paintings/Botticelli_Primaver_c2.png
-%%DATADIR%%/boards/paintings/Botticelli_Primaver_c3.png
-%%DATADIR%%/boards/paintings/Botticelli_Primaver_c4.png
-%%DATADIR%%/boards/paintings/Botticelli_Primaver_d1.png
-%%DATADIR%%/boards/paintings/Botticelli_Primaver_d2.png
-%%DATADIR%%/boards/paintings/Botticelli_Primaver_d3.png
-%%DATADIR%%/boards/paintings/Botticelli_Primaver_d4.png
-%%DATADIR%%/boards/paintings/Botticelli_Venus_a1.png
-%%DATADIR%%/boards/paintings/Botticelli_Venus_a2.png
-%%DATADIR%%/boards/paintings/Botticelli_Venus_a3.png
-%%DATADIR%%/boards/paintings/Botticelli_Venus_a4.png
-%%DATADIR%%/boards/paintings/Botticelli_Venus_b1.png
-%%DATADIR%%/boards/paintings/Botticelli_Venus_b2.png
-%%DATADIR%%/boards/paintings/Botticelli_Venus_b3.png
-%%DATADIR%%/boards/paintings/Botticelli_Venus_b4.png
-%%DATADIR%%/boards/paintings/Botticelli_Venus_c1.png
-%%DATADIR%%/boards/paintings/Botticelli_Venus_c2.png
-%%DATADIR%%/boards/paintings/Botticelli_Venus_c3.png
-%%DATADIR%%/boards/paintings/Botticelli_Venus_c4.png
-%%DATADIR%%/boards/paintings/Botticelli_Venus_d1.png
-%%DATADIR%%/boards/paintings/Botticelli_Venus_d2.png
-%%DATADIR%%/boards/paintings/Botticelli_Venus_d3.png
-%%DATADIR%%/boards/paintings/Botticelli_Venus_d4.png
 %%DATADIR%%/boards/paintings/EjiriSuruga_a1.png
 %%DATADIR%%/boards/paintings/EjiriSuruga_a2.png
 %%DATADIR%%/boards/paintings/EjiriSuruga_a3.png
@@ -2103,18 +2230,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/paintings/KazusaSeaRoute_e3.png
 %%DATADIR%%/boards/paintings/KazusaSeaRoute_e4.png
 %%DATADIR%%/boards/paintings/KazusaSeaRoute_e5.png
-%%DATADIR%%/boards/paintings/Le_Caravage_Egypte_a1.png
-%%DATADIR%%/boards/paintings/Le_Caravage_Egypte_a2.png
-%%DATADIR%%/boards/paintings/Le_Caravage_Egypte_a3.png
-%%DATADIR%%/boards/paintings/Le_Caravage_Egypte_a4.png
-%%DATADIR%%/boards/paintings/Le_Caravage_Egypte_b1.png
-%%DATADIR%%/boards/paintings/Le_Caravage_Egypte_b2.png
-%%DATADIR%%/boards/paintings/Le_Caravage_Egypte_b3.png
-%%DATADIR%%/boards/paintings/Le_Caravage_Egypte_b4.png
-%%DATADIR%%/boards/paintings/Le_Caravage_Egypte_c1.png
-%%DATADIR%%/boards/paintings/Le_Caravage_Egypte_c2.png
-%%DATADIR%%/boards/paintings/Le_Caravage_Egypte_c3.png
-%%DATADIR%%/boards/paintings/Le_Caravage_Egypte_c4.png
 %%DATADIR%%/boards/paintings/Michelangelo_Pieta_a1.png
 %%DATADIR%%/boards/paintings/Michelangelo_Pieta_a2.png
 %%DATADIR%%/boards/paintings/Michelangelo_Pieta_a3.png
@@ -2127,6 +2242,43 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/paintings/Michelangelo_Pieta_c2.png
 %%DATADIR%%/boards/paintings/Michelangelo_Pieta_c3.png
 %%DATADIR%%/boards/paintings/Michelangelo_Pieta_c4.png
+%%DATADIR%%/boards/paintings/MonaLisa_a1.png
+%%DATADIR%%/boards/paintings/MonaLisa_a2.png
+%%DATADIR%%/boards/paintings/MonaLisa_a3.png
+%%DATADIR%%/boards/paintings/MonaLisa_b1.png
+%%DATADIR%%/boards/paintings/MonaLisa_b2.png
+%%DATADIR%%/boards/paintings/MonaLisa_b3.png
+%%DATADIR%%/boards/paintings/MonaLisa_c1.png
+%%DATADIR%%/boards/paintings/MonaLisa_c2.png
+%%DATADIR%%/boards/paintings/MonaLisa_c3.png
+%%DATADIR%%/boards/paintings/MonaLisa_d1.png
+%%DATADIR%%/boards/paintings/MonaLisa_d2.png
+%%DATADIR%%/boards/paintings/MonaLisa_d3.png
+%%DATADIR%%/boards/paintings/PalaDiPesaro_a1.png
+%%DATADIR%%/boards/paintings/PalaDiPesaro_a2.png
+%%DATADIR%%/boards/paintings/PalaDiPesaro_a3.png
+%%DATADIR%%/boards/paintings/PalaDiPesaro_b1.png
+%%DATADIR%%/boards/paintings/PalaDiPesaro_b2.png
+%%DATADIR%%/boards/paintings/PalaDiPesaro_b3.png
+%%DATADIR%%/boards/paintings/PalaDiPesaro_c1.png
+%%DATADIR%%/boards/paintings/PalaDiPesaro_c2.png
+%%DATADIR%%/boards/paintings/PalaDiPesaro_c3.png
+%%DATADIR%%/boards/paintings/PieterBruegel_a1.png
+%%DATADIR%%/boards/paintings/PieterBruegel_a2.png
+%%DATADIR%%/boards/paintings/PieterBruegel_a3.png
+%%DATADIR%%/boards/paintings/PieterBruegel_a4.png
+%%DATADIR%%/boards/paintings/PieterBruegel_b1.png
+%%DATADIR%%/boards/paintings/PieterBruegel_b2.png
+%%DATADIR%%/boards/paintings/PieterBruegel_b3.png
+%%DATADIR%%/boards/paintings/PieterBruegel_b4.png
+%%DATADIR%%/boards/paintings/PieterBruegel_c1.png
+%%DATADIR%%/boards/paintings/PieterBruegel_c2.png
+%%DATADIR%%/boards/paintings/PieterBruegel_c3.png
+%%DATADIR%%/boards/paintings/PieterBruegel_c4.png
+%%DATADIR%%/boards/paintings/PieterBruegel_d1.png
+%%DATADIR%%/boards/paintings/PieterBruegel_d2.png
+%%DATADIR%%/boards/paintings/PieterBruegel_d3.png
+%%DATADIR%%/boards/paintings/PieterBruegel_d4.png
 %%DATADIR%%/boards/paintings/bazille_rampart_1.jpg
 %%DATADIR%%/boards/paintings/bazille_rampart_2.jpg
 %%DATADIR%%/boards/paintings/bazille_rampart_3.jpg
@@ -2150,6 +2302,7 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/paintings/board2_1.xml
 %%DATADIR%%/boards/paintings/board2_2.xml
 %%DATADIR%%/boards/paintings/board2_3.xml
+%%DATADIR%%/boards/paintings/board2_4.xml
 %%DATADIR%%/boards/paintings/board3_0.xml
 %%DATADIR%%/boards/paintings/board3_1.xml
 %%DATADIR%%/boards/paintings/board4_0.xml
@@ -2196,11 +2349,11 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/paintings/renoir-moulin_de_la_galette-5.png
 %%DATADIR%%/boards/paintings/renoir-moulin_de_la_galette-6.png
 %%DATADIR%%/boards/paratrooper.xml
+%%DATADIR%%/boards/paratrooper/background.svgz
 %%DATADIR%%/boards/paratrooper/cloud.svgz
 %%DATADIR%%/boards/paratrooper/fishingboat.svgz
 %%DATADIR%%/boards/paratrooper/minitux.svgz
 %%DATADIR%%/boards/paratrooper/parachute.svgz
-%%DATADIR%%/boards/paratrooper/scenery3_background.png
 %%DATADIR%%/boards/paratrooper/tuxplane.svgz
 %%DATADIR%%/boards/penalty.svg
 %%DATADIR%%/boards/penalty.xml
@@ -2223,9 +2376,19 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/photohunter/board1_6b.png
 %%DATADIR%%/boards/photohunter/board2_0a.png
 %%DATADIR%%/boards/photohunter/board2_0b.png
+%%DATADIR%%/boards/photohunter/board3_0a.png
+%%DATADIR%%/boards/photohunter/board3_0b.png
+%%DATADIR%%/boards/photohunter/board3_1a.png
+%%DATADIR%%/boards/photohunter/board3_1b.png
+%%DATADIR%%/boards/photohunter/board3_2a.png
+%%DATADIR%%/boards/photohunter/board3_2b.png
+%%DATADIR%%/boards/photohunter/board3_3a.png
+%%DATADIR%%/boards/photohunter/board3_3b.png
+%%DATADIR%%/boards/photohunter/board3_4a.png
+%%DATADIR%%/boards/photohunter/board3_4b.png
 %%DATADIR%%/boards/planegame.xml
+%%DATADIR%%/boards/planegame/background.svgz
 %%DATADIR%%/boards/planegame/cloud.svgz
-%%DATADIR%%/boards/planegame/scenery3_background.png
 %%DATADIR%%/boards/planegame/tuxhelico.svgz
 %%DATADIR%%/boards/puzzle.xml
 %%DATADIR%%/boards/puzzles.svg
@@ -2352,6 +2515,32 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/shapegame.svg
 %%DATADIR%%/boards/shapegame/hand.svg
 %%DATADIR%%/boards/skins/README
+%%DATADIR%%/boards/skins/babytoy/README
+%%DATADIR%%/boards/skins/babytoy/cursors/default.png
+%%DATADIR%%/boards/skins/babytoy/skin.svg
+%%DATADIR%%/boards/skins/babytoy/skin.xml
+%%DATADIR%%/boards/skins/babytoy/timers/README
+%%DATADIR%%/boards/skins/babytoy/timers/clock1.png
+%%DATADIR%%/boards/skins/babytoy/timers/clock10.png
+%%DATADIR%%/boards/skins/babytoy/timers/clock2.png
+%%DATADIR%%/boards/skins/babytoy/timers/clock3.png
+%%DATADIR%%/boards/skins/babytoy/timers/clock4.png
+%%DATADIR%%/boards/skins/babytoy/timers/clock5.png
+%%DATADIR%%/boards/skins/babytoy/timers/clock6.png
+%%DATADIR%%/boards/skins/babytoy/timers/clock7.png
+%%DATADIR%%/boards/skins/babytoy/timers/clock8.png
+%%DATADIR%%/boards/skins/babytoy/timers/clock9.png
+%%DATADIR%%/boards/skins/babytoy/timers/sablier.gif
+%%DATADIR%%/boards/skins/babytoy/timers/sablier1.png
+%%DATADIR%%/boards/skins/babytoy/timers/sablier10.png
+%%DATADIR%%/boards/skins/babytoy/timers/sablier2.png
+%%DATADIR%%/boards/skins/babytoy/timers/sablier3.png
+%%DATADIR%%/boards/skins/babytoy/timers/sablier4.png
+%%DATADIR%%/boards/skins/babytoy/timers/sablier5.png
+%%DATADIR%%/boards/skins/babytoy/timers/sablier6.png
+%%DATADIR%%/boards/skins/babytoy/timers/sablier7.png
+%%DATADIR%%/boards/skins/babytoy/timers/sablier8.png
+%%DATADIR%%/boards/skins/babytoy/timers/sablier9.png
 %%DATADIR%%/boards/skins/gartoon/README
 %%DATADIR%%/boards/skins/gartoon/bonus/README
 %%DATADIR%%/boards/skins/gartoon/bonus/flower_bad.png
@@ -2373,8 +2562,6 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/skins/gartoon/cursors/line.png
 %%DATADIR%%/boards/skins/gartoon/cursors/rect.png
 %%DATADIR%%/boards/skins/gartoon/cursors/select.png
-%%DATADIR%%/boards/skins/gartoon/fsflogo.png
-%%DATADIR%%/boards/skins/gartoon/gcompris-about.png
 %%DATADIR%%/boards/skins/gartoon/skin.svg
 %%DATADIR%%/boards/skins/gartoon/skin.xml
 %%DATADIR%%/boards/skins/gartoon/timers/README
@@ -2456,12 +2643,12 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/submarine/down.png
 %%DATADIR%%/boards/submarine/manette.png
 %%DATADIR%%/boards/submarine/rudder.png
-%%DATADIR%%/boards/submarine/sub_bg.jpg
-%%DATADIR%%/boards/submarine/sub_schema.png
+%%DATADIR%%/boards/submarine/sub_bg.svgz
+%%DATADIR%%/boards/submarine/sub_schema.svg
 %%DATADIR%%/boards/submarine/submarine-broken.png
 %%DATADIR%%/boards/submarine/submarine.png
 %%DATADIR%%/boards/submarine/up.png
-%%DATADIR%%/boards/submarine/vanne.png
+%%DATADIR%%/boards/submarine/vanne.svg
 %%DATADIR%%/boards/submarine/whale.png
 %%DATADIR%%/boards/submarine/whale_hit.png
 %%DATADIR%%/boards/sudoku.svg
@@ -2500,6 +2687,156 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/tuxpaint.xml
 %%DATADIR%%/boards/tuxpara.svg
 %%DATADIR%%/boards/voices/HOWTO_ENCODE
+%%DATADIR%%/boards/voices/af/alphabet/10.ogg
+%%DATADIR%%/boards/voices/af/alphabet/11.ogg
+%%DATADIR%%/boards/voices/af/alphabet/12.ogg
+%%DATADIR%%/boards/voices/af/alphabet/13.ogg
+%%DATADIR%%/boards/voices/af/alphabet/14.ogg
+%%DATADIR%%/boards/voices/af/alphabet/15.ogg
+%%DATADIR%%/boards/voices/af/alphabet/16.ogg
+%%DATADIR%%/boards/voices/af/alphabet/17.ogg
+%%DATADIR%%/boards/voices/af/alphabet/18.ogg
+%%DATADIR%%/boards/voices/af/alphabet/19.ogg
+%%DATADIR%%/boards/voices/af/alphabet/20.ogg
+%%DATADIR%%/boards/voices/af/alphabet/README
+%%DATADIR%%/boards/voices/af/alphabet/U0030.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0031.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0032.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0033.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0034.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0035.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0036.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0037.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0038.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0039.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0061.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0062.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0063.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0064.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0065.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0066.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0067.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0068.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0069.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U006A.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U006B.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U006C.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U006D.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U006E.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U006F.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0070.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0071.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0072.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0073.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0074.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0075.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0076.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0077.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0078.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U0079.ogg
+%%DATADIR%%/boards/voices/af/alphabet/U007A.ogg
+%%DATADIR%%/boards/voices/af/colors/README
+%%DATADIR%%/boards/voices/af/colors/black.ogg
+%%DATADIR%%/boards/voices/af/colors/blue.ogg
+%%DATADIR%%/boards/voices/af/colors/brown.ogg
+%%DATADIR%%/boards/voices/af/colors/green.ogg
+%%DATADIR%%/boards/voices/af/colors/grey.ogg
+%%DATADIR%%/boards/voices/af/colors/orange.ogg
+%%DATADIR%%/boards/voices/af/colors/pink.ogg
+%%DATADIR%%/boards/voices/af/colors/purple.ogg
+%%DATADIR%%/boards/voices/af/colors/red.ogg
+%%DATADIR%%/boards/voices/af/colors/white.ogg
+%%DATADIR%%/boards/voices/af/colors/yellow.ogg
+%%DATADIR%%/boards/voices/af/geography/README
+%%DATADIR%%/boards/voices/af/geography/alaska.ogg
+%%DATADIR%%/boards/voices/af/geography/albania.ogg
+%%DATADIR%%/boards/voices/af/geography/argentina.ogg
+%%DATADIR%%/boards/voices/af/geography/austria.ogg
+%%DATADIR%%/boards/voices/af/geography/bahamas.ogg
+%%DATADIR%%/boards/voices/af/geography/belarus.ogg
+%%DATADIR%%/boards/voices/af/geography/belgium.ogg
+%%DATADIR%%/boards/voices/af/geography/bolivia.ogg
+%%DATADIR%%/boards/voices/af/geography/bosnia_herzegovina.ogg
+%%DATADIR%%/boards/voices/af/geography/brazil.ogg
+%%DATADIR%%/boards/voices/af/geography/bulgaria.ogg
+%%DATADIR%%/boards/voices/af/geography/canada.ogg
+%%DATADIR%%/boards/voices/af/geography/chile.ogg
+%%DATADIR%%/boards/voices/af/geography/colombia.ogg
+%%DATADIR%%/boards/voices/af/geography/costa_rica.ogg
+%%DATADIR%%/boards/voices/af/geography/croatia.ogg
+%%DATADIR%%/boards/voices/af/geography/cuba.ogg
+%%DATADIR%%/boards/voices/af/geography/cyprus.ogg
+%%DATADIR%%/boards/voices/af/geography/czech.ogg
+%%DATADIR%%/boards/voices/af/geography/denmark.ogg
+%%DATADIR%%/boards/voices/af/geography/dominican_republic.ogg
+%%DATADIR%%/boards/voices/af/geography/ecuador.ogg
+%%DATADIR%%/boards/voices/af/geography/estonia.ogg
+%%DATADIR%%/boards/voices/af/geography/france.ogg
+%%DATADIR%%/boards/voices/af/geography/french_guiana.ogg
+%%DATADIR%%/boards/voices/af/geography/germany.ogg
+%%DATADIR%%/boards/voices/af/geography/greece.ogg
+%%DATADIR%%/boards/voices/af/geography/greenland.ogg
+%%DATADIR%%/boards/voices/af/geography/guatemala.ogg
+%%DATADIR%%/boards/voices/af/geography/guyana.ogg
+%%DATADIR%%/boards/voices/af/geography/haiti.ogg
+%%DATADIR%%/boards/voices/af/geography/honduras.ogg
+%%DATADIR%%/boards/voices/af/geography/hungary.ogg
+%%DATADIR%%/boards/voices/af/geography/iceland.ogg
+%%DATADIR%%/boards/voices/af/geography/ireland.ogg
+%%DATADIR%%/boards/voices/af/geography/italy.ogg
+%%DATADIR%%/boards/voices/af/geography/jamaica.ogg
+%%DATADIR%%/boards/voices/af/geography/latvia.ogg
+%%DATADIR%%/boards/voices/af/geography/lithuania.ogg
+%%DATADIR%%/boards/voices/af/geography/luxembourg.ogg
+%%DATADIR%%/boards/voices/af/geography/macedonia.ogg
+%%DATADIR%%/boards/voices/af/geography/mexico.ogg
+%%DATADIR%%/boards/voices/af/geography/moldova.ogg
+%%DATADIR%%/boards/voices/af/geography/netherland.ogg
+%%DATADIR%%/boards/voices/af/geography/nicaragua.ogg
+%%DATADIR%%/boards/voices/af/geography/norway.ogg
+%%DATADIR%%/boards/voices/af/geography/panama.ogg
+%%DATADIR%%/boards/voices/af/geography/paraguay.ogg
+%%DATADIR%%/boards/voices/af/geography/peru.ogg
+%%DATADIR%%/boards/voices/af/geography/poland.ogg
+%%DATADIR%%/boards/voices/af/geography/portugal.ogg
+%%DATADIR%%/boards/voices/af/geography/romania.ogg
+%%DATADIR%%/boards/voices/af/geography/russia.ogg
+%%DATADIR%%/boards/voices/af/geography/salvador.ogg
+%%DATADIR%%/boards/voices/af/geography/serbia_montenegro.ogg
+%%DATADIR%%/boards/voices/af/geography/slovakia.ogg
+%%DATADIR%%/boards/voices/af/geography/slovenia.ogg
+%%DATADIR%%/boards/voices/af/geography/spain.ogg
+%%DATADIR%%/boards/voices/af/geography/suriname.ogg
+%%DATADIR%%/boards/voices/af/geography/sweden.ogg
+%%DATADIR%%/boards/voices/af/geography/switz.ogg
+%%DATADIR%%/boards/voices/af/geography/turkey.ogg
+%%DATADIR%%/boards/voices/af/geography/ukraine.ogg
+%%DATADIR%%/boards/voices/af/geography/united_kingdom.ogg
+%%DATADIR%%/boards/voices/af/geography/uruguay.ogg
+%%DATADIR%%/boards/voices/af/geography/usa.ogg
+%%DATADIR%%/boards/voices/af/geography/venezuela.ogg
+%%DATADIR%%/boards/voices/af/misc/README
+%%DATADIR%%/boards/voices/af/misc/awsome.ogg
+%%DATADIR%%/boards/voices/af/misc/back.ogg
+%%DATADIR%%/boards/voices/af/misc/by.ogg
+%%DATADIR%%/boards/voices/af/misc/check_answer.ogg
+%%DATADIR%%/boards/voices/af/misc/click_on_letter.ogg
+%%DATADIR%%/boards/voices/af/misc/congratulation.ogg
+%%DATADIR%%/boards/voices/af/misc/equal.ogg
+%%DATADIR%%/boards/voices/af/misc/fantastic.ogg
+%%DATADIR%%/boards/voices/af/misc/good.ogg
+%%DATADIR%%/boards/voices/af/misc/great.ogg
+%%DATADIR%%/boards/voices/af/misc/help.ogg
+%%DATADIR%%/boards/voices/af/misc/level.ogg
+%%DATADIR%%/boards/voices/af/misc/minus.ogg
+%%DATADIR%%/boards/voices/af/misc/ok.ogg
+%%DATADIR%%/boards/voices/af/misc/outof.ogg
+%%DATADIR%%/boards/voices/af/misc/perfect.ogg
+%%DATADIR%%/boards/voices/af/misc/plus.ogg
+%%DATADIR%%/boards/voices/af/misc/quit.ogg
+%%DATADIR%%/boards/voices/af/misc/super.ogg
+%%DATADIR%%/boards/voices/af/misc/waytogo.ogg
+%%DATADIR%%/boards/voices/af/misc/welcome.ogg
 %%DATADIR%%/boards/voices/ar/README
 %%DATADIR%%/boards/voices/ar/alphabet/10.ogg
 %%DATADIR%%/boards/voices/ar/alphabet/11.ogg
@@ -2657,6 +2994,156 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/ar/misc/super.ogg
 %%DATADIR%%/boards/voices/ar/misc/waytogo.ogg
 %%DATADIR%%/boards/voices/ar/misc/welcome.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/10.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/11.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/12.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/13.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/14.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/15.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/16.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/17.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/18.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/19.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/20.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/README
+%%DATADIR%%/boards/voices/ast/alphabet/U0030.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0031.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0032.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0033.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0034.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0035.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0036.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0037.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0038.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0039.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0061.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0062.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0063.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0064.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0065.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0066.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0067.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0068.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0069.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U006A.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U006B.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U006C.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U006D.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U006E.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U006F.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0070.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0071.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0072.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0073.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0074.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0075.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0076.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0077.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0078.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U0079.ogg
+%%DATADIR%%/boards/voices/ast/alphabet/U007A.ogg
+%%DATADIR%%/boards/voices/ast/colors/README
+%%DATADIR%%/boards/voices/ast/colors/black.ogg
+%%DATADIR%%/boards/voices/ast/colors/blue.ogg
+%%DATADIR%%/boards/voices/ast/colors/brown.ogg
+%%DATADIR%%/boards/voices/ast/colors/green.ogg
+%%DATADIR%%/boards/voices/ast/colors/grey.ogg
+%%DATADIR%%/boards/voices/ast/colors/orange.ogg
+%%DATADIR%%/boards/voices/ast/colors/pink.ogg
+%%DATADIR%%/boards/voices/ast/colors/purple.ogg
+%%DATADIR%%/boards/voices/ast/colors/red.ogg
+%%DATADIR%%/boards/voices/ast/colors/white.ogg
+%%DATADIR%%/boards/voices/ast/colors/yellow.ogg
+%%DATADIR%%/boards/voices/ast/geography/README
+%%DATADIR%%/boards/voices/ast/geography/alaska.ogg
+%%DATADIR%%/boards/voices/ast/geography/albania.ogg
+%%DATADIR%%/boards/voices/ast/geography/argentina.ogg
+%%DATADIR%%/boards/voices/ast/geography/austria.ogg
+%%DATADIR%%/boards/voices/ast/geography/bahamas.ogg
+%%DATADIR%%/boards/voices/ast/geography/belarus.ogg
+%%DATADIR%%/boards/voices/ast/geography/belgium.ogg
+%%DATADIR%%/boards/voices/ast/geography/bolivia.ogg
+%%DATADIR%%/boards/voices/ast/geography/bosnia_herzegovina.ogg
+%%DATADIR%%/boards/voices/ast/geography/brazil.ogg
+%%DATADIR%%/boards/voices/ast/geography/bulgaria.ogg
+%%DATADIR%%/boards/voices/ast/geography/canada.ogg
+%%DATADIR%%/boards/voices/ast/geography/chile.ogg
+%%DATADIR%%/boards/voices/ast/geography/colombia.ogg
+%%DATADIR%%/boards/voices/ast/geography/costa_rica.ogg
+%%DATADIR%%/boards/voices/ast/geography/croatia.ogg
+%%DATADIR%%/boards/voices/ast/geography/cuba.ogg
+%%DATADIR%%/boards/voices/ast/geography/cyprus.ogg
+%%DATADIR%%/boards/voices/ast/geography/czech.ogg
+%%DATADIR%%/boards/voices/ast/geography/denmark.ogg
+%%DATADIR%%/boards/voices/ast/geography/dominican_republic.ogg
+%%DATADIR%%/boards/voices/ast/geography/ecuador.ogg
+%%DATADIR%%/boards/voices/ast/geography/estonia.ogg
+%%DATADIR%%/boards/voices/ast/geography/france.ogg
+%%DATADIR%%/boards/voices/ast/geography/french_guiana.ogg
+%%DATADIR%%/boards/voices/ast/geography/germany.ogg
+%%DATADIR%%/boards/voices/ast/geography/greece.ogg
+%%DATADIR%%/boards/voices/ast/geography/greenland.ogg
+%%DATADIR%%/boards/voices/ast/geography/guatemala.ogg
+%%DATADIR%%/boards/voices/ast/geography/guyana.ogg
+%%DATADIR%%/boards/voices/ast/geography/haiti.ogg
+%%DATADIR%%/boards/voices/ast/geography/honduras.ogg
+%%DATADIR%%/boards/voices/ast/geography/hungary.ogg
+%%DATADIR%%/boards/voices/ast/geography/iceland.ogg
+%%DATADIR%%/boards/voices/ast/geography/ireland.ogg
+%%DATADIR%%/boards/voices/ast/geography/italy.ogg
+%%DATADIR%%/boards/voices/ast/geography/jamaica.ogg
+%%DATADIR%%/boards/voices/ast/geography/latvia.ogg
+%%DATADIR%%/boards/voices/ast/geography/lithuania.ogg
+%%DATADIR%%/boards/voices/ast/geography/luxembourg.ogg
+%%DATADIR%%/boards/voices/ast/geography/macedonia.ogg
+%%DATADIR%%/boards/voices/ast/geography/mexico.ogg
+%%DATADIR%%/boards/voices/ast/geography/moldova.ogg
+%%DATADIR%%/boards/voices/ast/geography/netherland.ogg
+%%DATADIR%%/boards/voices/ast/geography/nicaragua.ogg
+%%DATADIR%%/boards/voices/ast/geography/norway.ogg
+%%DATADIR%%/boards/voices/ast/geography/panama.ogg
+%%DATADIR%%/boards/voices/ast/geography/paraguay.ogg
+%%DATADIR%%/boards/voices/ast/geography/peru.ogg
+%%DATADIR%%/boards/voices/ast/geography/poland.ogg
+%%DATADIR%%/boards/voices/ast/geography/portugal.ogg
+%%DATADIR%%/boards/voices/ast/geography/romania.ogg
+%%DATADIR%%/boards/voices/ast/geography/russia.ogg
+%%DATADIR%%/boards/voices/ast/geography/salvador.ogg
+%%DATADIR%%/boards/voices/ast/geography/serbia_montenegro.ogg
+%%DATADIR%%/boards/voices/ast/geography/slovakia.ogg
+%%DATADIR%%/boards/voices/ast/geography/slovenia.ogg
+%%DATADIR%%/boards/voices/ast/geography/spain.ogg
+%%DATADIR%%/boards/voices/ast/geography/suriname.ogg
+%%DATADIR%%/boards/voices/ast/geography/sweden.ogg
+%%DATADIR%%/boards/voices/ast/geography/switz.ogg
+%%DATADIR%%/boards/voices/ast/geography/turkey.ogg
+%%DATADIR%%/boards/voices/ast/geography/ukraine.ogg
+%%DATADIR%%/boards/voices/ast/geography/united_kingdom.ogg
+%%DATADIR%%/boards/voices/ast/geography/uruguay.ogg
+%%DATADIR%%/boards/voices/ast/geography/usa.ogg
+%%DATADIR%%/boards/voices/ast/geography/venezuela.ogg
+%%DATADIR%%/boards/voices/ast/misc/README
+%%DATADIR%%/boards/voices/ast/misc/awesome.ogg
+%%DATADIR%%/boards/voices/ast/misc/back.ogg
+%%DATADIR%%/boards/voices/ast/misc/by.ogg
+%%DATADIR%%/boards/voices/ast/misc/check_answer.ogg
+%%DATADIR%%/boards/voices/ast/misc/click_on_letter.ogg
+%%DATADIR%%/boards/voices/ast/misc/congratulation.ogg
+%%DATADIR%%/boards/voices/ast/misc/equal.ogg
+%%DATADIR%%/boards/voices/ast/misc/fantastic.ogg
+%%DATADIR%%/boards/voices/ast/misc/good.ogg
+%%DATADIR%%/boards/voices/ast/misc/great.ogg
+%%DATADIR%%/boards/voices/ast/misc/help.ogg
+%%DATADIR%%/boards/voices/ast/misc/level.ogg
+%%DATADIR%%/boards/voices/ast/misc/minus.ogg
+%%DATADIR%%/boards/voices/ast/misc/ok.ogg
+%%DATADIR%%/boards/voices/ast/misc/outof.ogg
+%%DATADIR%%/boards/voices/ast/misc/perfect.ogg
+%%DATADIR%%/boards/voices/ast/misc/plus.ogg
+%%DATADIR%%/boards/voices/ast/misc/quit.ogg
+%%DATADIR%%/boards/voices/ast/misc/super.ogg
+%%DATADIR%%/boards/voices/ast/misc/waytogo.ogg
+%%DATADIR%%/boards/voices/ast/misc/welcome.ogg
 %%DATADIR%%/boards/voices/bg/README
 %%DATADIR%%/boards/voices/bg/alphabet/10.ogg
 %%DATADIR%%/boards/voices/bg/alphabet/U0030.ogg
@@ -2964,6 +3451,8 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/br/misc/super.ogg
 %%DATADIR%%/boards/voices/br/misc/waytogo.ogg
 %%DATADIR%%/boards/voices/br/misc/welcome.ogg
+%%DATADIR%%/boards/voices/check_links.sh
+%%DATADIR%%/boards/voices/create_links.sh
 %%DATADIR%%/boards/voices/cs/README
 %%DATADIR%%/boards/voices/cs/alphabet/10.ogg
 %%DATADIR%%/boards/voices/cs/alphabet/11.ogg
@@ -6372,7 +6861,9 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/pt/geography/africa.ogg
 %%DATADIR%%/boards/voices/pt/geography/alaska.ogg
 %%DATADIR%%/boards/voices/pt/geography/albania.ogg
+%%DATADIR%%/boards/voices/pt/geography/algeria.ogg
 %%DATADIR%%/boards/voices/pt/geography/america.ogg
+%%DATADIR%%/boards/voices/pt/geography/angola.ogg
 %%DATADIR%%/boards/voices/pt/geography/antartica.ogg
 %%DATADIR%%/boards/voices/pt/geography/argentina.ogg
 %%DATADIR%%/boards/voices/pt/geography/asia.ogg
@@ -6380,30 +6871,48 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/pt/geography/bahamas.ogg
 %%DATADIR%%/boards/voices/pt/geography/belarus.ogg
 %%DATADIR%%/boards/voices/pt/geography/belgium.ogg
+%%DATADIR%%/boards/voices/pt/geography/benin.ogg
 %%DATADIR%%/boards/voices/pt/geography/bolivia.ogg
 %%DATADIR%%/boards/voices/pt/geography/bosnia_herzegovina.ogg
+%%DATADIR%%/boards/voices/pt/geography/botswana.ogg
 %%DATADIR%%/boards/voices/pt/geography/brazil.ogg
 %%DATADIR%%/boards/voices/pt/geography/bulgaria.ogg
+%%DATADIR%%/boards/voices/pt/geography/burkina.ogg
+%%DATADIR%%/boards/voices/pt/geography/burundi.ogg
+%%DATADIR%%/boards/voices/pt/geography/cameroon.ogg
 %%DATADIR%%/boards/voices/pt/geography/canada.ogg
+%%DATADIR%%/boards/voices/pt/geography/central_african_republic.ogg
+%%DATADIR%%/boards/voices/pt/geography/chad.ogg
 %%DATADIR%%/boards/voices/pt/geography/chile.ogg
 %%DATADIR%%/boards/voices/pt/geography/colombia.ogg
+%%DATADIR%%/boards/voices/pt/geography/congo.ogg
 %%DATADIR%%/boards/voices/pt/geography/costa_rica.ogg
 %%DATADIR%%/boards/voices/pt/geography/croatia.ogg
 %%DATADIR%%/boards/voices/pt/geography/cuba.ogg
 %%DATADIR%%/boards/voices/pt/geography/cyprus.ogg
 %%DATADIR%%/boards/voices/pt/geography/czech.ogg
+%%DATADIR%%/boards/voices/pt/geography/democratic_republic_of_congo.ogg
 %%DATADIR%%/boards/voices/pt/geography/denmark.ogg
+%%DATADIR%%/boards/voices/pt/geography/djibouti.ogg
 %%DATADIR%%/boards/voices/pt/geography/dominican_republic.ogg
 %%DATADIR%%/boards/voices/pt/geography/ecuador.ogg
+%%DATADIR%%/boards/voices/pt/geography/egypt.ogg
+%%DATADIR%%/boards/voices/pt/geography/equatorial_guinea.ogg
+%%DATADIR%%/boards/voices/pt/geography/eritrea.ogg
 %%DATADIR%%/boards/voices/pt/geography/estonia.ogg
+%%DATADIR%%/boards/voices/pt/geography/ethiopia.ogg
 %%DATADIR%%/boards/voices/pt/geography/europe.ogg
 %%DATADIR%%/boards/voices/pt/geography/finland.ogg
 %%DATADIR%%/boards/voices/pt/geography/france.ogg
 %%DATADIR%%/boards/voices/pt/geography/french_guiana.ogg
+%%DATADIR%%/boards/voices/pt/geography/gabon.ogg
 %%DATADIR%%/boards/voices/pt/geography/germany.ogg
+%%DATADIR%%/boards/voices/pt/geography/ghana.ogg
 %%DATADIR%%/boards/voices/pt/geography/greece.ogg
 %%DATADIR%%/boards/voices/pt/geography/greenland.ogg
 %%DATADIR%%/boards/voices/pt/geography/guatemala.ogg
+%%DATADIR%%/boards/voices/pt/geography/guinea.ogg
+%%DATADIR%%/boards/voices/pt/geography/guinea_bissau.ogg
 %%DATADIR%%/boards/voices/pt/geography/guyana.ogg
 %%DATADIR%%/boards/voices/pt/geography/haiti.ogg
 %%DATADIR%%/boards/voices/pt/geography/honduras.ogg
@@ -6411,15 +6920,29 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/pt/geography/iceland.ogg
 %%DATADIR%%/boards/voices/pt/geography/ireland.ogg
 %%DATADIR%%/boards/voices/pt/geography/italy.ogg
+%%DATADIR%%/boards/voices/pt/geography/ivory_coast.ogg
 %%DATADIR%%/boards/voices/pt/geography/jamaica.ogg
+%%DATADIR%%/boards/voices/pt/geography/kenya.ogg
 %%DATADIR%%/boards/voices/pt/geography/latvia.ogg
+%%DATADIR%%/boards/voices/pt/geography/lesotho.ogg
+%%DATADIR%%/boards/voices/pt/geography/liberia.ogg
+%%DATADIR%%/boards/voices/pt/geography/libya.ogg
 %%DATADIR%%/boards/voices/pt/geography/lithuania.ogg
 %%DATADIR%%/boards/voices/pt/geography/luxembourg.ogg
 %%DATADIR%%/boards/voices/pt/geography/macedonia.ogg
+%%DATADIR%%/boards/voices/pt/geography/madagascar.ogg
+%%DATADIR%%/boards/voices/pt/geography/malawi.ogg
+%%DATADIR%%/boards/voices/pt/geography/mali.ogg
+%%DATADIR%%/boards/voices/pt/geography/mauritania.ogg
 %%DATADIR%%/boards/voices/pt/geography/mexico.ogg
 %%DATADIR%%/boards/voices/pt/geography/moldova.ogg
+%%DATADIR%%/boards/voices/pt/geography/moroco.ogg
+%%DATADIR%%/boards/voices/pt/geography/mozambique.ogg
+%%DATADIR%%/boards/voices/pt/geography/namibia.ogg
 %%DATADIR%%/boards/voices/pt/geography/netherland.ogg
 %%DATADIR%%/boards/voices/pt/geography/nicaragua.ogg
+%%DATADIR%%/boards/voices/pt/geography/niger.ogg
+%%DATADIR%%/boards/voices/pt/geography/nigeria.ogg
 %%DATADIR%%/boards/voices/pt/geography/norway.ogg
 %%DATADIR%%/boards/voices/pt/geography/oceania.ogg
 %%DATADIR%%/boards/voices/pt/geography/panama.ogg
@@ -6427,22 +6950,37 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/pt/geography/peru.ogg
 %%DATADIR%%/boards/voices/pt/geography/poland.ogg
 %%DATADIR%%/boards/voices/pt/geography/portugal.ogg
+%%DATADIR%%/boards/voices/pt/geography/republic_of_congo.ogg
 %%DATADIR%%/boards/voices/pt/geography/romania.ogg
 %%DATADIR%%/boards/voices/pt/geography/russia.ogg
+%%DATADIR%%/boards/voices/pt/geography/rwanda.ogg
 %%DATADIR%%/boards/voices/pt/geography/salvador.ogg
+%%DATADIR%%/boards/voices/pt/geography/senegal.ogg
 %%DATADIR%%/boards/voices/pt/geography/serbia_montenegro.ogg
+%%DATADIR%%/boards/voices/pt/geography/sierra_leone.ogg
 %%DATADIR%%/boards/voices/pt/geography/slovakia.ogg
 %%DATADIR%%/boards/voices/pt/geography/slovenia.ogg
+%%DATADIR%%/boards/voices/pt/geography/somalia.ogg
+%%DATADIR%%/boards/voices/pt/geography/soudan.ogg
+%%DATADIR%%/boards/voices/pt/geography/south_africa.ogg
 %%DATADIR%%/boards/voices/pt/geography/spain.ogg
 %%DATADIR%%/boards/voices/pt/geography/suriname.ogg
+%%DATADIR%%/boards/voices/pt/geography/swaziland.ogg
 %%DATADIR%%/boards/voices/pt/geography/sweden.ogg
 %%DATADIR%%/boards/voices/pt/geography/switz.ogg
+%%DATADIR%%/boards/voices/pt/geography/tanzania.ogg
+%%DATADIR%%/boards/voices/pt/geography/togo.ogg
+%%DATADIR%%/boards/voices/pt/geography/tunisia.ogg
 %%DATADIR%%/boards/voices/pt/geography/turkey.ogg
+%%DATADIR%%/boards/voices/pt/geography/uganda.ogg
 %%DATADIR%%/boards/voices/pt/geography/ukraine.ogg
 %%DATADIR%%/boards/voices/pt/geography/united_kingdom.ogg
 %%DATADIR%%/boards/voices/pt/geography/uruguay.ogg
 %%DATADIR%%/boards/voices/pt/geography/usa.ogg
 %%DATADIR%%/boards/voices/pt/geography/venezuela.ogg
+%%DATADIR%%/boards/voices/pt/geography/western_sahara.ogg
+%%DATADIR%%/boards/voices/pt/geography/zambia.ogg
+%%DATADIR%%/boards/voices/pt/geography/zimbabwe.ogg
 %%DATADIR%%/boards/voices/pt/intro/advanced_colors.ogg
 %%DATADIR%%/boards/voices/pt/intro/algorithm.ogg
 %%DATADIR%%/boards/voices/pt/intro/awele.ogg
@@ -6878,6 +7416,234 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/voices/ru/misc/quit.ogg
 %%DATADIR%%/boards/voices/ru/misc/super.ogg
 %%DATADIR%%/boards/voices/ru/misc/welcome.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/10.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/11.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/12.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/13.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/14.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/15.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/16.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/17.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/18.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/19.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/20.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/README
+%%DATADIR%%/boards/voices/sl/alphabet/U0030.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0031.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0032.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0033.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0034.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0035.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0036.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0037.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0038.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0039.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0061.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0062.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0063.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0064.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0065.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0066.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0067.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0068.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0069.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U006A.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U006B.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U006C.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U006D.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U006E.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U006F.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0071.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0072.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0073.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0074.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0075.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0076.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U007A.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U010D.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U0161.ogg
+%%DATADIR%%/boards/voices/sl/alphabet/U017E.ogg
+%%DATADIR%%/boards/voices/sl/colors/README
+%%DATADIR%%/boards/voices/sl/colors/black.ogg
+%%DATADIR%%/boards/voices/sl/colors/blue.ogg
+%%DATADIR%%/boards/voices/sl/colors/brown.ogg
+%%DATADIR%%/boards/voices/sl/colors/green.ogg
+%%DATADIR%%/boards/voices/sl/colors/grey.ogg
+%%DATADIR%%/boards/voices/sl/colors/orange.ogg
+%%DATADIR%%/boards/voices/sl/colors/pink.ogg
+%%DATADIR%%/boards/voices/sl/colors/purple.ogg
+%%DATADIR%%/boards/voices/sl/colors/red.ogg
+%%DATADIR%%/boards/voices/sl/colors/white.ogg
+%%DATADIR%%/boards/voices/sl/colors/yellow.ogg
+%%DATADIR%%/boards/voices/sl/geography/README
+%%DATADIR%%/boards/voices/sl/geography/alaska.ogg
+%%DATADIR%%/boards/voices/sl/geography/albania.ogg
+%%DATADIR%%/boards/voices/sl/geography/argentina.ogg
+%%DATADIR%%/boards/voices/sl/geography/austria.ogg
+%%DATADIR%%/boards/voices/sl/geography/bahamas.ogg
+%%DATADIR%%/boards/voices/sl/geography/belarus.ogg
+%%DATADIR%%/boards/voices/sl/geography/belgium.ogg
+%%DATADIR%%/boards/voices/sl/geography/bolivia.ogg
+%%DATADIR%%/boards/voices/sl/geography/bosna_herzegovina.ogg
+%%DATADIR%%/boards/voices/sl/geography/brazil.ogg
+%%DATADIR%%/boards/voices/sl/geography/bulgaria.ogg
+%%DATADIR%%/boards/voices/sl/geography/canada.ogg
+%%DATADIR%%/boards/voices/sl/geography/chile.ogg
+%%DATADIR%%/boards/voices/sl/geography/colombia.ogg
+%%DATADIR%%/boards/voices/sl/geography/costa_rica.ogg
+%%DATADIR%%/boards/voices/sl/geography/croatia.ogg
+%%DATADIR%%/boards/voices/sl/geography/cuba.ogg
+%%DATADIR%%/boards/voices/sl/geography/cyprus.ogg
+%%DATADIR%%/boards/voices/sl/geography/czech.ogg
+%%DATADIR%%/boards/voices/sl/geography/denmark.ogg
+%%DATADIR%%/boards/voices/sl/geography/dominican_republic.ogg
+%%DATADIR%%/boards/voices/sl/geography/ecuador.ogg
+%%DATADIR%%/boards/voices/sl/geography/estonia.ogg
+%%DATADIR%%/boards/voices/sl/geography/france.ogg
+%%DATADIR%%/boards/voices/sl/geography/french_guiana.ogg
+%%DATADIR%%/boards/voices/sl/geography/germany.ogg
+%%DATADIR%%/boards/voices/sl/geography/greece.ogg
+%%DATADIR%%/boards/voices/sl/geography/greenland.ogg
+%%DATADIR%%/boards/voices/sl/geography/guatemala.ogg
+%%DATADIR%%/boards/voices/sl/geography/guyana.ogg
+%%DATADIR%%/boards/voices/sl/geography/haiti.ogg
+%%DATADIR%%/boards/voices/sl/geography/honduras.ogg
+%%DATADIR%%/boards/voices/sl/geography/hungary.ogg
+%%DATADIR%%/boards/voices/sl/geography/iceland.ogg
+%%DATADIR%%/boards/voices/sl/geography/ireland.ogg
+%%DATADIR%%/boards/voices/sl/geography/italy.ogg
+%%DATADIR%%/boards/voices/sl/geography/jamaica.ogg
+%%DATADIR%%/boards/voices/sl/geography/latvia.ogg
+%%DATADIR%%/boards/voices/sl/geography/lithuania.ogg
+%%DATADIR%%/boards/voices/sl/geography/luxembourg.ogg
+%%DATADIR%%/boards/voices/sl/geography/macedonia.ogg
+%%DATADIR%%/boards/voices/sl/geography/mexico.ogg
+%%DATADIR%%/boards/voices/sl/geography/moldova.ogg
+%%DATADIR%%/boards/voices/sl/geography/netherland.ogg
+%%DATADIR%%/boards/voices/sl/geography/nicaragua.ogg
+%%DATADIR%%/boards/voices/sl/geography/norway.ogg
+%%DATADIR%%/boards/voices/sl/geography/panama.ogg
+%%DATADIR%%/boards/voices/sl/geography/paraguay.ogg
+%%DATADIR%%/boards/voices/sl/geography/peru.ogg
+%%DATADIR%%/boards/voices/sl/geography/poland.ogg
+%%DATADIR%%/boards/voices/sl/geography/portugal.ogg
+%%DATADIR%%/boards/voices/sl/geography/romania.ogg
+%%DATADIR%%/boards/voices/sl/geography/russia.ogg
+%%DATADIR%%/boards/voices/sl/geography/salvador.ogg
+%%DATADIR%%/boards/voices/sl/geography/serbia_montenegro.ogg
+%%DATADIR%%/boards/voices/sl/geography/slovakia.ogg
+%%DATADIR%%/boards/voices/sl/geography/slovenia.ogg
+%%DATADIR%%/boards/voices/sl/geography/spain.ogg
+%%DATADIR%%/boards/voices/sl/geography/suriname.ogg
+%%DATADIR%%/boards/voices/sl/geography/sweden.ogg
+%%DATADIR%%/boards/voices/sl/geography/switz.ogg
+%%DATADIR%%/boards/voices/sl/geography/turkey.ogg
+%%DATADIR%%/boards/voices/sl/geography/ukraine.ogg
+%%DATADIR%%/boards/voices/sl/geography/united_kingdom.ogg
+%%DATADIR%%/boards/voices/sl/geography/uruguay.ogg
+%%DATADIR%%/boards/voices/sl/geography/usa.ogg
+%%DATADIR%%/boards/voices/sl/geography/venezuela.ogg
+%%DATADIR%%/boards/voices/sl/intro/README
+%%DATADIR%%/boards/voices/sl/intro/advanced_colors.ogg
+%%DATADIR%%/boards/voices/sl/intro/algebra_guesscount.ogg
+%%DATADIR%%/boards/voices/sl/intro/algorithm.ogg
+%%DATADIR%%/boards/voices/sl/intro/awele.ogg
+%%DATADIR%%/boards/voices/sl/intro/babymatch.ogg
+%%DATADIR%%/boards/voices/sl/intro/babyshapes.ogg
+%%DATADIR%%/boards/voices/sl/intro/ballcatch.ogg
+%%DATADIR%%/boards/voices/sl/intro/bergame.ogg
+%%DATADIR%%/boards/voices/sl/intro/billard.ogg
+%%DATADIR%%/boards/voices/sl/intro/canal_lock.ogg
+%%DATADIR%%/boards/voices/sl/intro/chat.ogg
+%%DATADIR%%/boards/voices/sl/intro/chess_partyend.ogg
+%%DATADIR%%/boards/voices/sl/intro/chronos.ogg
+%%DATADIR%%/boards/voices/sl/intro/click_on_letter.ogg
+%%DATADIR%%/boards/voices/sl/intro/clickanddraw.ogg
+%%DATADIR%%/boards/voices/sl/intro/clickgame.ogg
+%%DATADIR%%/boards/voices/sl/intro/clockgame.ogg
+%%DATADIR%%/boards/voices/sl/intro/colors.ogg
+%%DATADIR%%/boards/voices/sl/intro/connect4.ogg
+%%DATADIR%%/boards/voices/sl/intro/crane.ogg
+%%DATADIR%%/boards/voices/sl/intro/doubleentry.ogg
+%%DATADIR%%/boards/voices/sl/intro/drawnumber.ogg
+%%DATADIR%%/boards/voices/sl/intro/electric.ogg
+%%DATADIR%%/boards/voices/sl/intro/enumerate.ogg
+%%DATADIR%%/boards/voices/sl/intro/erase.ogg
+%%DATADIR%%/boards/voices/sl/intro/erase_clic.ogg
+%%DATADIR%%/boards/voices/sl/intro/fifteen.ogg
+%%DATADIR%%/boards/voices/sl/intro/followline.ogg
+%%DATADIR%%/boards/voices/sl/intro/geography.ogg
+%%DATADIR%%/boards/voices/sl/intro/gletters.ogg
+%%DATADIR%%/boards/voices/sl/intro/gnumch-equality.ogg
+%%DATADIR%%/boards/voices/sl/intro/gnumch-factors.ogg
+%%DATADIR%%/boards/voices/sl/intro/gnumch-inequality.ogg
+%%DATADIR%%/boards/voices/sl/intro/gnumch-multiples.ogg
+%%DATADIR%%/boards/voices/sl/intro/gnumch-primes.ogg
+%%DATADIR%%/boards/voices/sl/intro/guessnumber.ogg
+%%DATADIR%%/boards/voices/sl/intro/hangman.ogg
+%%DATADIR%%/boards/voices/sl/intro/hanoi.ogg
+%%DATADIR%%/boards/voices/sl/intro/hanoi_real.ogg
+%%DATADIR%%/boards/voices/sl/intro/imageid.ogg
+%%DATADIR%%/boards/voices/sl/intro/imagename.ogg
+%%DATADIR%%/boards/voices/sl/intro/leftright.ogg
+%%DATADIR%%/boards/voices/sl/intro/magic_hat_minus.ogg
+%%DATADIR%%/boards/voices/sl/intro/magic_hat_plus.ogg
+%%DATADIR%%/boards/voices/sl/intro/maze.ogg
+%%DATADIR%%/boards/voices/sl/intro/maze2DRelative.ogg
+%%DATADIR%%/boards/voices/sl/intro/maze3D.ogg
+%%DATADIR%%/boards/voices/sl/intro/mazeInvisible.ogg
+%%DATADIR%%/boards/voices/sl/intro/melody.ogg
+%%DATADIR%%/boards/voices/sl/intro/memory.ogg
+%%DATADIR%%/boards/voices/sl/intro/memory_add_minus_mult_div_tux.ogg
+%%DATADIR%%/boards/voices/sl/intro/memory_sound.ogg
+%%DATADIR%%/boards/voices/sl/intro/memory_sound_tux.ogg
+%%DATADIR%%/boards/voices/sl/intro/memory_tux.ogg
+%%DATADIR%%/boards/voices/sl/intro/missing_letter.ogg
+%%DATADIR%%/boards/voices/sl/intro/money.ogg
+%%DATADIR%%/boards/voices/sl/intro/mosaic.ogg
+%%DATADIR%%/boards/voices/sl/intro/paintings.ogg
+%%DATADIR%%/boards/voices/sl/intro/paratrooper.ogg
+%%DATADIR%%/boards/voices/sl/intro/penalty.ogg
+%%DATADIR%%/boards/voices/sl/intro/planegame.ogg
+%%DATADIR%%/boards/voices/sl/intro/railroad.ogg
+%%DATADIR%%/boards/voices/sl/intro/read_colors.ogg
+%%DATADIR%%/boards/voices/sl/intro/readingv.ogg
+%%DATADIR%%/boards/voices/sl/intro/redraw.ogg
+%%DATADIR%%/boards/voices/sl/intro/redraw_symmetrical.ogg
+%%DATADIR%%/boards/voices/sl/intro/reversecount.ogg
+%%DATADIR%%/boards/voices/sl/intro/scalesboard.ogg
+%%DATADIR%%/boards/voices/sl/intro/smallnumbers.ogg
+%%DATADIR%%/boards/voices/sl/intro/smallnumbers2.ogg
+%%DATADIR%%/boards/voices/sl/intro/sudoku.ogg
+%%DATADIR%%/boards/voices/sl/intro/superbrain.ogg
+%%DATADIR%%/boards/voices/sl/intro/tangram.ogg
+%%DATADIR%%/boards/voices/sl/intro/target.ogg
+%%DATADIR%%/boards/voices/sl/intro/traffic.ogg
+%%DATADIR%%/boards/voices/sl/intro/watercycle.ogg
+%%DATADIR%%/boards/voices/sl/intro/wordprocessor.ogg
+%%DATADIR%%/boards/voices/sl/intro/wordsgame.ogg
+%%DATADIR%%/boards/voices/sl/misc/README
+%%DATADIR%%/boards/voices/sl/misc/awesome.ogg
+%%DATADIR%%/boards/voices/sl/misc/back.ogg
+%%DATADIR%%/boards/voices/sl/misc/by.ogg
+%%DATADIR%%/boards/voices/sl/misc/check_answer.ogg
+%%DATADIR%%/boards/voices/sl/misc/click_on_letter.ogg
+%%DATADIR%%/boards/voices/sl/misc/congratulation.ogg
+%%DATADIR%%/boards/voices/sl/misc/equal.ogg
+%%DATADIR%%/boards/voices/sl/misc/fantastic.ogg
+%%DATADIR%%/boards/voices/sl/misc/good.ogg
+%%DATADIR%%/boards/voices/sl/misc/great.ogg
+%%DATADIR%%/boards/voices/sl/misc/help.ogg
+%%DATADIR%%/boards/voices/sl/misc/level.ogg
+%%DATADIR%%/boards/voices/sl/misc/minus.ogg
+%%DATADIR%%/boards/voices/sl/misc/ok.ogg
+%%DATADIR%%/boards/voices/sl/misc/outof.ogg
+%%DATADIR%%/boards/voices/sl/misc/perfect.ogg
+%%DATADIR%%/boards/voices/sl/misc/plus.ogg
+%%DATADIR%%/boards/voices/sl/misc/quit.ogg
+%%DATADIR%%/boards/voices/sl/misc/super.ogg
+%%DATADIR%%/boards/voices/sl/misc/waytogo.ogg
+%%DATADIR%%/boards/voices/sl/misc/welcome.ogg
 %%DATADIR%%/boards/voices/so/alphabet/10.ogg
 %%DATADIR%%/boards/voices/so/alphabet/11.ogg
 %%DATADIR%%/boards/voices/so/alphabet/12.ogg
@@ -8018,10 +8784,13 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/wordsgame/default-de.xml
 %%DATADIR%%/boards/wordsgame/default-el.xml
 %%DATADIR%%/boards/wordsgame/default-en.xml
+%%DATADIR%%/boards/wordsgame/default-eo.xml
 %%DATADIR%%/boards/wordsgame/default-es.xml
 %%DATADIR%%/boards/wordsgame/default-eu.xml
 %%DATADIR%%/boards/wordsgame/default-fi.xml
 %%DATADIR%%/boards/wordsgame/default-fr.xml
+%%DATADIR%%/boards/wordsgame/default-gl.xml
+%%DATADIR%%/boards/wordsgame/default-he.xml
 %%DATADIR%%/boards/wordsgame/default-hu.xml
 %%DATADIR%%/boards/wordsgame/default-id.xml
 %%DATADIR%%/boards/wordsgame/default-it.xml
@@ -8037,6 +8806,7 @@ share/applications/gcompris.desktop
 %%DATADIR%%/boards/wordsgame/default-sl.xml
 %%DATADIR%%/boards/wordsgame/default-sv.xml
 %%DATADIR%%/boards/wordsgame/default-tr.xml
+%%DATADIR%%/boards/wordsgame/default-uk.xml
 %%DATADIR%%/boards/wordsgame/scenery_background.png
 %%DATADIR%%/python/AnimItem.py
 %%DATADIR%%/python/Color.py
@@ -8090,7 +8860,10 @@ share/applications/gcompris.desktop
 %%DATADIR%%/python/gcompris/utils/__init__.py
 %%DATADIR%%/python/gnumch.py
 %%DATADIR%%/python/guessnumber.py
+%%DATADIR%%/python/hangman.py
 %%DATADIR%%/python/hexagon.py
+%%DATADIR%%/python/hydroelectric.py
+%%DATADIR%%/python/lightsoff.py
 %%DATADIR%%/python/login.py
 %%DATADIR%%/python/melody.py
 %%DATADIR%%/python/mosaic.py
@@ -8108,6 +8881,7 @@ share/gnome/help/gcompris/eu/topic.dat
 share/locale/af/LC_MESSAGES/gcompris.mo
 share/locale/am/LC_MESSAGES/gcompris.mo
 share/locale/ar/LC_MESSAGES/gcompris.mo
+share/locale/ast/LC_MESSAGES/gcompris.mo
 share/locale/az/LC_MESSAGES/gcompris.mo
 share/locale/bg/LC_MESSAGES/gcompris.mo
 share/locale/br/LC_MESSAGES/gcompris.mo
@@ -8161,6 +8935,7 @@ share/locale/so/LC_MESSAGES/gcompris.mo
 share/locale/sq/LC_MESSAGES/gcompris.mo
 share/locale/sr/LC_MESSAGES/gcompris.mo
 share/locale/sr@Latn/LC_MESSAGES/gcompris.mo
+share/locale/sr_ME/LC_MESSAGES/gcompris.mo
 share/locale/sv/LC_MESSAGES/gcompris.mo
 share/locale/ta/LC_MESSAGES/gcompris.mo
 share/locale/th/LC_MESSAGES/gcompris.mo
@@ -8170,9 +8945,19 @@ share/locale/ur/LC_MESSAGES/gcompris.mo
 share/locale/vi/LC_MESSAGES/gcompris.mo
 share/locale/wa/LC_MESSAGES/gcompris.mo
 share/locale/zh_CN/LC_MESSAGES/gcompris.mo
+share/locale/zh_HK/LC_MESSAGES/gcompris.mo
 share/locale/zh_TW/LC_MESSAGES/gcompris.mo
+share/locale/zu/LC_MESSAGES/gcompris.mo
 share/pixmaps/gcompris-edit.png
 share/pixmaps/gcompris.png
+@dirrmtry share/locale/zu/LC_MESSAGES
+@dirrmtry share/locale/zu
+@dirrmtry share/locale/zh_HK/LC_MESSAGES
+@dirrmtry share/locale/zh_HK
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/locale/sr_ME/LC_MESSAGES
+@dirrmtry share/locale/sr_ME
 @dirrmtry share/locale/so/LC_MESSAGES
 @dirrmtry share/locale/so
 @dirrmtry share/locale/rw/LC_MESSAGES
@@ -8183,8 +8968,11 @@ share/pixmaps/gcompris.png
 @dirrmtry share/locale/mr
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrm share/gnome/help/gcompris/eu
 @dirrm share/gnome/help/gcompris
+@dirrmtry share/applications
 @dirrm %%DATADIR%%/python/gcompris/utils
 @dirrm %%DATADIR%%/python/gcompris/timer
 @dirrm %%DATADIR%%/python/gcompris/sound
@@ -8197,9 +8985,9 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/python/connect4p
 @dirrm %%DATADIR%%/python/admin
 @dirrm %%DATADIR%%/python
-@dirrm %%DATADIR%%/boards/watercycle
 @dirrm %%DATADIR%%/boards/wordsgame
 @dirrm %%DATADIR%%/boards/wordprocessor
+@dirrm %%DATADIR%%/boards/watercycle
 @dirrm %%DATADIR%%/boards/voices/zh_CN/misc
 @dirrm %%DATADIR%%/boards/voices/zh_CN/intro
 @dirrm %%DATADIR%%/boards/voices/zh_CN/geography
@@ -8231,6 +9019,12 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/voices/so/colors
 @dirrm %%DATADIR%%/boards/voices/so/alphabet
 @dirrm %%DATADIR%%/boards/voices/so
+@dirrm %%DATADIR%%/boards/voices/sl/misc
+@dirrm %%DATADIR%%/boards/voices/sl/intro
+@dirrm %%DATADIR%%/boards/voices/sl/geography
+@dirrm %%DATADIR%%/boards/voices/sl/colors
+@dirrm %%DATADIR%%/boards/voices/sl/alphabet
+@dirrm %%DATADIR%%/boards/voices/sl
 @dirrm %%DATADIR%%/boards/voices/ru/misc
 @dirrm %%DATADIR%%/boards/voices/ru/geography
 @dirrm %%DATADIR%%/boards/voices/ru/colors
@@ -8359,11 +9153,21 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/voices/bg/colors
 @dirrm %%DATADIR%%/boards/voices/bg/alphabet
 @dirrm %%DATADIR%%/boards/voices/bg
+@dirrm %%DATADIR%%/boards/voices/ast/misc
+@dirrm %%DATADIR%%/boards/voices/ast/geography
+@dirrm %%DATADIR%%/boards/voices/ast/colors
+@dirrm %%DATADIR%%/boards/voices/ast/alphabet
+@dirrm %%DATADIR%%/boards/voices/ast
 @dirrm %%DATADIR%%/boards/voices/ar/misc
 @dirrm %%DATADIR%%/boards/voices/ar/geography
 @dirrm %%DATADIR%%/boards/voices/ar/colors
 @dirrm %%DATADIR%%/boards/voices/ar/alphabet
 @dirrm %%DATADIR%%/boards/voices/ar
+@dirrm %%DATADIR%%/boards/voices/af/misc
+@dirrm %%DATADIR%%/boards/voices/af/geography
+@dirrm %%DATADIR%%/boards/voices/af/colors
+@dirrm %%DATADIR%%/boards/voices/af/alphabet
+@dirrm %%DATADIR%%/boards/voices/af
 @dirrm %%DATADIR%%/boards/voices
 @dirrm %%DATADIR%%/boards/traffic
 @dirrm %%DATADIR%%/boards/target
@@ -8377,6 +9181,9 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/skins/gartoon/cursors
 @dirrm %%DATADIR%%/boards/skins/gartoon/bonus
 @dirrm %%DATADIR%%/boards/skins/gartoon
+@dirrm %%DATADIR%%/boards/skins/babytoy/timers
+@dirrm %%DATADIR%%/boards/skins/babytoy/cursors
+@dirrm %%DATADIR%%/boards/skins/babytoy
 @dirrm %%DATADIR%%/boards/skins
 @dirrm %%DATADIR%%/boards/shapegame
 @dirrm %%DATADIR%%/boards/searace
@@ -8398,19 +9205,24 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/mosaic
 @dirrm %%DATADIR%%/boards/money
 @dirrm %%DATADIR%%/boards/missing_letter
+@dirrm %%DATADIR%%/boards/mimetypes
 @dirrm %%DATADIR%%/boards/memory
 @dirrm %%DATADIR%%/boards/melody
 @dirrm %%DATADIR%%/boards/maze
 @dirrm %%DATADIR%%/boards/magic_hat
 @dirrm %%DATADIR%%/boards/login
+@dirrm %%DATADIR%%/boards/lightsoff
 @dirrm %%DATADIR%%/boards/leftright
 @dirrm %%DATADIR%%/boards/imagename
 @dirrm %%DATADIR%%/boards/imageid
+@dirrm %%DATADIR%%/boards/hydroelectric
 @dirrm %%DATADIR%%/boards/hexagon
 @dirrm %%DATADIR%%/boards/hanoi_real
+@dirrm %%DATADIR%%/boards/hangman
 @dirrm %%DATADIR%%/boards/guessnumber
 @dirrm %%DATADIR%%/boards/gnumch
 @dirrm %%DATADIR%%/boards/gletters
+@dirrm %%DATADIR%%/boards/geography_country
 @dirrm %%DATADIR%%/boards/geography/southamerica
 @dirrm %%DATADIR%%/boards/geography/northamerica
 @dirrm %%DATADIR%%/boards/geography/europe
@@ -8429,14 +9241,16 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/geo_country/brazil
 @dirrm %%DATADIR%%/boards/geo_country/argentina
 @dirrm %%DATADIR%%/boards/geo_country
+@dirrm %%DATADIR%%/boards/gcompris/mimetypes
+@dirrm %%DATADIR%%/boards/gcompris
 @dirrm %%DATADIR%%/boards/followline
-@dirrm %%DATADIR%%/boards/flags
 @dirrm %%DATADIR%%/boards/fifteen
 @dirrm %%DATADIR%%/boards/erase
 @dirrm %%DATADIR%%/boards/enumerate
 @dirrm %%DATADIR%%/boards/electric
 @dirrm %%DATADIR%%/boards/drawnumber
 @dirrm %%DATADIR%%/boards/doubleentry
+@dirrm %%DATADIR%%/boards/details
 @dirrm %%DATADIR%%/boards/dataset
 @dirrm %%DATADIR%%/boards/crane
 @dirrm %%DATADIR%%/boards/connect4
@@ -8446,6 +9260,7 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/click_on_letter
 @dirrm %%DATADIR%%/boards/chronos
 @dirrm %%DATADIR%%/boards/chess
+@dirrm %%DATADIR%%/boards/chat
 @dirrm %%DATADIR%%/boards/canal_lock
 @dirrm %%DATADIR%%/boards/billard
 @dirrm %%DATADIR%%/boards/bargame
@@ -8465,5 +9280,4 @@ share/pixmaps/gcompris.png
 @dirrm %%DATADIR%%/boards/administration
 @dirrm %%DATADIR%%/boards
 @dirrm %%DATADIR%%
-@dirrmtry share/applications
 @dirrm lib/gcompris
