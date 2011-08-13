@@ -318,6 +318,7 @@
     SUBDIR += hs-oeis
     SUBDIR += hs-scgi
     SUBDIR += hs-snap-core
+    SUBDIR += hs-snap-server
     SUBDIR += hs-url
     SUBDIR += hs-wai
     SUBDIR += hs-warp
