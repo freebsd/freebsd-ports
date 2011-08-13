@@ -617,6 +617,7 @@
     SUBDIR += hs-hat
     SUBDIR += hs-hdoc
     SUBDIR += hs-hint
+    SUBDIR += hs-hlibev
     SUBDIR += hs-hmake
     SUBDIR += hs-hoogle
     SUBDIR += hs-hslogger
