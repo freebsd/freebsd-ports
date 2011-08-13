@@ -115,6 +115,7 @@ MonadCatchIO-mtl_port=		devel/hs-MonadCatchIO-mtl
 MonadCatchIO-transformers_port=	devel/hs-MonadCatchIO-transformers
 mtl_port=			devel/hs-mtl
 mueval_port=			devel/hs-mueval		# executable
+murmur-hash_port=		devel/hs-murmur-hash
 mwc-random_port=		math/hs-mwc-random
 mysql_port=			databases/hs-mysql
 network_port=			net/hs-network
