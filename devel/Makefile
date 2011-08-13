@@ -564,6 +564,7 @@
     SUBDIR += hs-MemoTrie
     SUBDIR += hs-MissingH
     SUBDIR += hs-MonadCatchIO-mtl
+    SUBDIR += hs-MonadCatchIO-transformers
     SUBDIR += hs-ObjectName
     SUBDIR += hs-QuickCheck
     SUBDIR += hs-StateVar

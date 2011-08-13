@@ -103,6 +103,7 @@ mime_port=			mail/hs-mime
 MissingH_port=			devel/hs-MissingH
 mmap_port=			devel/hs-mmap
 MonadCatchIO-mtl_port=		devel/hs-MonadCatchIO-mtl
+MonadCatchIO-transformers_port=	devel/hs-MonadCatchIO-transformers
 mtl_port=			devel/hs-mtl
 mueval_port=			devel/hs-mueval		# executable
 mwc-random_port=		math/hs-mwc-random
