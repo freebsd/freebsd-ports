@@ -583,6 +583,7 @@
     SUBDIR += hs-bytestring-nums
     SUBDIR += hs-c2hs
     SUBDIR += hs-cabal-install
+    SUBDIR += hs-cereal
     SUBDIR += hs-checkers
     SUBDIR += hs-cmdargs
     SUBDIR += hs-convertible

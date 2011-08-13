@@ -33,6 +33,7 @@ bsd-sysctl_port=		devel/hs-bsd-sysctl
 bytestring-nums_port=		devel/hs-bytestring-nums	# executable
 c2hs_port=			devel/hs-c2hs		# executable
 cabal-install_port=		devel/hs-cabal-install	# executable
+cereal_port=			devel/hs-cereal
 cairo_port=			graphics/hs-cairo
 case-insensitive_port=		textproc/hs-case-insensitive
 category-extras_port=		math/hs-category-extras # BROKEN
