@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	libdkim
-PORTVERSION=	1.0.17
-PORTREVISION=	1
+PORTVERSION=	1.0.21
 CATEGORIES=	mail
-MASTER_SITES=	http://duncanthrax.net/exim-experimental/
-DISTNAME=	${PORTNAME}-${PORTVERSION}-tk
+MASTER_SITES=	SF
 
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	DKIM (DomainKeys Identified Mail) library
 
+LICENSE=	ASL
+
+USE_ZIP=	YES
 USE_LDCONFIG=	YES
 SHLIB_MAJOR=	1
 PLIST_SUB=	SHLIB_MAJOR="${SHLIB_MAJOR}"
 
 USE_OPENSSL=	YES
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+WRKSRC=		${WRKDIR}/${PORTNAME}/src
 
 .include <bsd.port.options.mk>
 
