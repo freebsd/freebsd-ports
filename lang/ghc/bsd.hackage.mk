@@ -82,6 +82,7 @@ haskeline_port=			devel/hs-haskeline
 haskell-src_port=		devel/hs-haskell-src
 haskell-src-exts_port=		devel/hs-haskell-src-exts
 HaXml_port=			textproc/hs-HaXml	# executable
+heist_port=			www/hs-heist
 HGL_port=			graphics/hs-HGL
 highlighting-kate_port=		textproc/hs-highlighting-kate
 hint_port=			devel/hs-hint
