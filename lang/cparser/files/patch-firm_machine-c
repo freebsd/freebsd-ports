@@ -3,7 +3,7 @@ $FreeBSD$
 By rdivacky@, enables cparser to work out of the box on amd64
 
 --- driver/firm_machine.c	2011-04-14 16:51:46.000000000 +0200
-+++ /tmp/firm_machine.c	2011-08-12 22:04:40.000000000 +0200
++++ driver/firm_machine.c	2011-08-12 22:04:40.000000000 +0200
 @@ -77,12 +77,18 @@
  machine_triple_t *firm_get_host_machine(void)
  {
