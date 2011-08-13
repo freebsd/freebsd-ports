@@ -580,6 +580,7 @@
     SUBDIR += hs-blaze-builder
     SUBDIR += hs-blaze-builder-enumerator
     SUBDIR += hs-bsd-sysctl
+    SUBDIR += hs-bytestring-nums
     SUBDIR += hs-c2hs
     SUBDIR += hs-cabal-install
     SUBDIR += hs-checkers

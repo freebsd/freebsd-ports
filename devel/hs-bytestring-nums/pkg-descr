@@ -1,0 +1,3 @@
+Parse numeric literals from ByteStrings.
+
+WWW: http://github.com/solidsnack/bytestring-nums
