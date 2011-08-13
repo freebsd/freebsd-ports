@@ -19,6 +19,7 @@ LICENSE=	LGPL21
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	%%DATADIR%%/hyph_de_DE.dic
 PLIST_DIRSTRY=	%%DATADIR%%
@@ -30,7 +31,7 @@ PLIST_FILES+=	%%DATADIR%%/hyph_${ALIAS}.dic
 
 do-install:
 	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKDIR}/hyph_de_DE.dic ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/hyph_de_DE.dic ${DATADIR}/
 .for ALIAS in ${DEALIASES}
 	${LN} -s hyph_de_DE.dic ${DATADIR}/hyph_${ALIAS}.dic
 .endfor

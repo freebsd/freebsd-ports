@@ -20,6 +20,7 @@ LICENSE=	LGPL21
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	%%DATADIR%%/hyph_it_CH.dic \
 		%%DATADIR%%/hyph_it_IT.dic
@@ -27,7 +28,7 @@ PLIST_DIRSTRY=	%%DATADIR%%
 
 do-install:
 	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKDIR}/hyph_it_IT.dic ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/hyph_it_IT.dic ${DATADIR}/
 	${LN} -s hyph_it_IT.dic ${DATADIR}/hyph_it_CH.dic
 
 .include <bsd.port.mk>
