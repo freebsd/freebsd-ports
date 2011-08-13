@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="879b0242-c5b6-11e0-abd1-0017f22d6707">
+    <topic>dtc -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>dtc</name>
+	<range><lt>0.32.9</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Ansgar Burchardt reports:</p>
+	<blockquote cite="http://www.debian.org/security/2011/dsa-2179">
+	  <p>Ansgar Burchardt discovered several vulnerabilities in DTC, a
+	     web control panel for admin and accounting hosting services:
+	     The bw_per_moth.php graph contains an SQL injection vulnerability;
+	     Insufficient checks in bw_per_month.php can lead to bandwidth
+	     usage information disclosure; After a registration, passwords are
+	     sent in cleartext email messages and Authenticated users could
+	     delete accounts using an obsolete interface which was incorrectly
+	     included in the package.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-0434</cvename>
+      <cvename>CVE-2011-0435</cvename>
+      <cvename>CVE-2011-0436</cvename>
+      <cvename>CVE-2011-0437</cvename>
+      <url>http://www.debian.org/security/2011/dsa-2179</url>
+    </references>
+    <dates>
+      <discovery>2011-03-02</discovery>
+      <entry>2011-08-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="304409c3-c3ef-11e0-8aa5-485d60cb5385">
     <topic>libXfont -- possible local privilege escalation</topic>
     <affects>
