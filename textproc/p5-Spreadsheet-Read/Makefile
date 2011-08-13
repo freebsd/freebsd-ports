@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Spreadsheet-Read
-PORTVERSION=	0.42
+PORTVERSION=	0.43a
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:HMBRAND
@@ -30,6 +30,7 @@ RUN_DEPENDS=	${SITE_PERL}/IO/Stringy.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		${SITE_PERL}/Spreadsheet/ParseExcel.pm:${PORTSDIR}/textproc/p5-Spreadsheet-ParseExcel
 
 PERL_CONFIGURE=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-0.43
 
 MAN3=	Spreadsheet::Read.3
 
