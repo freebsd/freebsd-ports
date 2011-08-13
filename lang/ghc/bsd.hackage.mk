@@ -54,6 +54,7 @@ DeepArrow_port=			devel/hs-DeepArrow
 deepseq_port=			devel/hs-deepseq
 Diff_port=			textproc/hs-Diff
 digest_port=			security/hs-digest
+directory-tree_port=		devel/hs-directory-tree
 dlist_port=			devel/hs-dlist
 enumerator_port=		devel/hs-enumerator
 erf_port=			math/hs-erf
