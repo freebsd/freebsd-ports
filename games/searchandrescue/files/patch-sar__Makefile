@@ -1,27 +1,39 @@
---- ./sar/Makefile.orig	2011-04-01 15:29:49.000000000 -0300
-+++ ./sar/Makefile	2011-05-02 13:43:50.000000000 -0300
-@@ -1,12 +1,12 @@
+
+$FreeBSD$
+
+--- ./sar/Makefile.orig	2011-08-07 16:06:58.000000000 -0300
++++ ./sar/Makefile	2011-08-11 20:36:24.000000000 -0300
+@@ -1,18 +1,18 @@
  # Platform Configurator generated Makefile
  #
 -PREFIX = $(DESTDIR)/usr/
 +PREFIX = %%PREFIX%%
  
--CFLAGS = -Wall -O6 -funroll-loops -fomit-frame-pointer -ffast-math -finline-functions -fexpensive-optimizations -D__USE_BSD -DHAVE_SDL_MIXER -Wno-write-strings -DUSE_XSHM -DHAVE_MWMUTIL_H -DHAVE_LIBXPM -DHAVE_XF86_VIDMODE -DNEW_GRAPHICS #-DOLD_GRAPHICS 
-+CFLAGS = -Wall -O6 -funroll-loops -fomit-frame-pointer -ffast-math -D__USE_BSD -DUSE_XSHM -DHAVE_MWMUTIL_H -DUSE_LIBXPM -DHAVE_XF86_VIDMOD -DHAVE_SDL_MIXER -DNEW_GRAPHICS -I/usr/local/include #-DOLD_GRAPHICS 
+-CFLAGS = -Wall -O6 -funroll-loops -fomit-frame-pointer -ffast-math -finline-functions -fexpensive-optimizations -D__USE_BSD -DHAVE_SDL_MIXER -Wno-write-strings -DUSE_XSHM -DHAVE_MWMUTIL_H -DHAVE_LIBXPM -DHAVE_XF86_VIDMODE
++CFLAGS = -O2 -pipe -fno-strict-aliasing -O2 -pipe -fno-strict-aliasing -Wall -O6 -funroll-loops -fomit-frame-pointer -ffast-math -D__USE_BSD -DUSE_XSHM -DHAVE_MWMUTIL_H -DUSE_LIBXPM -DHAVE_XF86_VIDMOD -DHAVE_SDL_MIXER -DNEW_GRAPHICS -I/usr/local/include #-DOLD_GRAPHICS 
  
  INC_DIRS =
  
 -LIBS = -lm -lSDL -lSDL_mixer -lSM -lICE -lX11 -lXext -lXmu -lXpm -lXxf86vm -lGL -lGLU -lpthread
 +LIBS = -lm -lSM -lICE -lX11 -lXext -lXmu -lXpm -lXxf86vm -lGL -lGLU -lSDL -lSDL_mixer
  
- LIB_DIRS =  -L/usr/X11R6/lib/ -L/usr/X11R6/lib/ -L/usr/X11R6/lib/
+-LIB_DIRS =  -L/usr/X11R6/lib/ -L/usr/X11R6/lib/ -L/usr/X11R6/lib/
++LIB_DIRS =  -L/usr/local/lib/ -L/usr/local/lib/ -L/usr/local/lib/
  
+-CC = gcc
++CC = cc
+ 
+-CPP = g++
++CPP = c++
+ 
+ # Appended stuff starts here
+ #
 @@ -39,7 +39,7 @@
  
  # Programs
  LS      = ls
 -LSFLAGS = -s -h -c --color=auto
-+LSFLAGS = -s -h -c
++LSFLAGS = -s -h -c 
  RM      = rm
  RMFLAGS = -f
  
