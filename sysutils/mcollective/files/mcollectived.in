@@ -1,21 +1,30 @@
 #!/bin/sh
 
+# $FreeBSD$
+#
 # PROVIDE: mcollectived
-# REQUIRE: DAEMON
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# mcollectived_enable (bool):	Set to NO by default.
+#				Set it to YES to enable mcollectived.
+# mcollectived_flags (str):	Set as needed.  Empty by default.
 
 . /etc/rc.subr
 
 name="mcollectived"
 rcvar="${name}_enable"
 
-command="/usr/local/sbin/${name}"
-pidfile="/var/run/${name}.pid"
-procname="ruby"
-
 load_rc_config "${name}"
 
 : ${mcollectived_enable="NO"}
-: ${mcollectived_flags="-p ${pidfile}"}
+
+pidfile="/var/run/${name}.pid"
+command="%%PREFIX%%/sbin/${name}"
+command_args="-p $pidfile"
+procname="ruby"
 
 run_rc_command "$1"
