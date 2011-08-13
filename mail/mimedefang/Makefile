@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mimedefang
-PORTVERSION=	2.71
+PORTVERSION=	2.72
 CATEGORIES=	mail
 MASTER_SITES=	http://www.mimedefang.org/static/
 
@@ -35,6 +35,7 @@ CONFIGURE_ARGS+=	--sysconfdir=${PREFIX}/etc \
 			--with-user=${MAILUSER} \
 			--with-spooldir=${SPOOLDIR} \
 			--with-quarantinedir=${QUARANTINEDIR} \
+			--with-ipheader \
 			--prefix=${PREFIX}
 
 .if defined (MIMEDEFANG_DISABLE_CLAMAV)
@@ -43,6 +44,7 @@ CONFIGURE_ARGS+=	--disable-antivirus \
 			--disable-clamd
 .endif
 
+MAN1=	mimedefang-util.1
 MAN5=	mimedefang-filter.5
 MAN7=	mimedefang-notify.7 mimedefang-protocol.7
 MAN8=	mimedefang.8 mimedefang.pl.8 mimedefang-multiplexor.8 \
@@ -50,7 +52,7 @@ MAN8=	mimedefang.8 mimedefang.pl.8 mimedefang-multiplexor.8 \
 
 SUB_FILES=	pkg-message
 
-CONFIG_FILES=	mimedefang-filter sa-mimedefang.cf
+CONFIG_FILES=	mimedefang-filter sa-mimedefang.cf mimedefang-ip-key
 
 .include <bsd.port.pre.mk>
 
