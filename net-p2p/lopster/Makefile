@@ -7,16 +7,13 @@
 
 PORTNAME=	lopster
 PORTVERSION=	1.2.2
-PORTREVISION=	7
+PORTREVISION=	8
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF \
 		http://lopster.sourceforge.net/download/
 
-DEPRECATED=	Napser service is not working anymore
-EXPIRATION_DATE=	2011-09-01
-
-MAINTAINER=	ports@FreeBSD.org
-COMMENT=	GTK+ client for Napster
+MAINTAINER=	conrads@cox.net
+COMMENT=	GTK+ client for Napster and free alternatives
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
@@ -50,5 +47,7 @@ pre-everything::
 
 post-patch:
 	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s/www.naplist.com/www.gotnap.com/" \
+		${WRKSRC}/src/lopster.h
 
 .include <bsd.port.post.mk>
