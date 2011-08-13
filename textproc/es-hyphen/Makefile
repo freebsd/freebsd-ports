@@ -18,6 +18,7 @@ COMMENT=	Spanish hyphenation rules
 
 USE_ZIP=	yes
 NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
 
 PLIST_FILES=	%%DATADIR%%/hyph_es_ES.dic
 PLIST_DIRSTRY=	%%DATADIR%%
@@ -30,7 +31,7 @@ PLIST_FILES+=	%%DATADIR%%/hyph_${ALIAS}.dic
 
 do-install:
 	${MKDIR} ${DATADIR}/
-	${INSTALL_DATA} ${WRKDIR}/hyph_es_ES.dic ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/hyph_es_ES.dic ${DATADIR}/
 .for ALIAS in ${ESALIASES}
 	${LN} -s hyph_es_ES.dic ${DATADIR}/hyph_${ALIAS}.dic
 .endfor
