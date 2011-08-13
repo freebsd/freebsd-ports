@@ -1,0 +1,5 @@
+%%SITE_PERL%%/JavaScript/Minifier.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript/Minifier/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript/Minifier
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/JavaScript
+@dirrmtry %%SITE_PERL%%/JavaScript
