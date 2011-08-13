@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	bzrtools
-PORTVERSION=	2.3.1
+PORTVERSION=	2.4.0
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/63332821/
+MASTER_SITES=	https://launchpadlibrarian.net/75136002/
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Extensions to devel/bazaar-ng
@@ -20,7 +20,7 @@ OPTIONS=	GRAPHVIZ "Enable graphviz for graph-ancestry" off \
 		RSYNC    "Enable rsync for rspush" on
 
 WRKSRC=	${WRKDIR}/bzrtools
-USE_PYTHON=	2.5+
+USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	BzrTools
 

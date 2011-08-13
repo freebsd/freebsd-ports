@@ -100,6 +100,9 @@
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_fetch_ghosts.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_fetch_ghosts.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_fetch_ghosts.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_graph.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_graph.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_graph.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_link_tree.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_link_tree.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/bzrtools/tests/test_link_tree.pyo
