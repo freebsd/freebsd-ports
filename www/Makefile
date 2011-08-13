@@ -317,6 +317,7 @@
     SUBDIR += hs-http-types
     SUBDIR += hs-oeis
     SUBDIR += hs-scgi
+    SUBDIR += hs-snap-core
     SUBDIR += hs-url
     SUBDIR += hs-wai
     SUBDIR += hs-warp
