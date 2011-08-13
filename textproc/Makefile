@@ -232,6 +232,7 @@
     SUBDIR += hr-aspell
     SUBDIR += hs-Diff
     SUBDIR += hs-HaXml
+    SUBDIR += hs-attoparsec
     SUBDIR += hs-bytestring-csv
     SUBDIR += hs-case-insensitive
     SUBDIR += hs-citeproc-hs
