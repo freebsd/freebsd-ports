@@ -1,0 +1,21 @@
+#!/bin/sh
+
+# PROVIDE: mcollectived
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
+
+. /etc/rc.subr
+
+name="mcollectived"
+rcvar="${name}_enable"
+
+command="/usr/local/sbin/${name}"
+pidfile="/var/run/${name}.pid"
+procname="ruby"
+
+load_rc_config "${name}"
+
+: ${mcollectived_enable="NO"}
+: ${mcollectived_flags="-p ${pidfile}"}
+
+run_rc_command "$1"
