@@ -472,6 +472,7 @@
     SUBDIR += mapchan
     SUBDIR += massadmin
     SUBDIR += mbmon
+    SUBDIR += mcollective
     SUBDIR += mcron
     SUBDIR += mcweject
     SUBDIR += mdcp

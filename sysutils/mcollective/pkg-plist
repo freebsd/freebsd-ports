@@ -1,0 +1,473 @@
+bin/mc-call-agent
+bin/mc-controller
+bin/mc-facts
+bin/mc-find-hosts
+bin/mc-inventory
+bin/mc-ping
+bin/mc-rpc
+bin/mco
+sbin/mcollectived
+%%DATADIR%%/agent/discovery.rb
+%%DATADIR%%/agent/rpcutil.ddl
+%%DATADIR%%/agent/rpcutil.rb
+%%DATADIR%%/application/controller.rb
+%%DATADIR%%/application/facts.rb
+%%DATADIR%%/application/find.rb
+%%DATADIR%%/application/help.rb
+%%DATADIR%%/application/inventory.rb
+%%DATADIR%%/application/ping.rb
+%%DATADIR%%/application/rpc.rb
+%%DATADIR%%/audit/logfile.rb
+%%DATADIR%%/connector/stomp.rb
+%%DATADIR%%/facts/yaml_facts.rb
+%%DATADIR%%/registration/agentlist.rb
+%%DATADIR%%/security/aes_security.rb
+%%DATADIR%%/security/psk.rb
+%%DATADIR%%/security/sshkey.rb
+%%DATADIR%%/security/ssl.rb
+%%ETCDIR%%/client.cfg.dist
+%%ETCDIR%%/server.cfg.dist
+%%PORTDOCS%%%%DOCSDIR%%/classes/Array.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Agent.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Agent/Discovery.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Agent/Rpcutil.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Agents.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Application.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Application/Controller.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Application/Facts.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Application/Find.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Application/Help.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Application/Inventory.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Application/Ping.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Application/Rpc.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Applications.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Client.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Config.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Connector.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Connector/Base.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Connector/Stomp.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/DDLValidationError.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Facts.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Facts/Bar.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Facts/Base.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Facts/Testfacts.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Facts/Yaml_facts.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Foo.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/InvalidRPCData.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Log.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Logger.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Logger/Base.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Logger/Console_logger.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Logger/File_logger.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Logger/Syslog_logger.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/MissingRPCData.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/MsgDoesNotMatchRequestID.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/NotTargettedAtUs.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Optionparser.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/PluginManager.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/ActionRunner.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/Agent.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/Audit.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/Client.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/DDL.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/Helpers.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/Logfile.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/Progress.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/Reply.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/Request.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/Result.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPC/Stats.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPCAborted.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RPCError.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Registration.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Registration/Agentlist.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Registration/Base.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Request.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Runner.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/RunnerStats.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/SSL.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Security.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Security/Aes_security.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Security/Base.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Security/Psk.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Security/Sshkey.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Security/Ssl.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/SecurityValidationFailed.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Shell.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/UnknownRPCAction.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/UnknownRPCError.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Util.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/MCollective/Vendor.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/Object.html
+%%PORTDOCS%%%%DOCSDIR%%/classes/Symbol.html
+%%PORTDOCS%%%%DOCSDIR%%/created.rid
+%%PORTDOCS%%%%DOCSDIR%%/files/ext/mc-rpc-restserver_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/agents_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/application_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/applications_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/client_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/config_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/connector/base_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/connector_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/facts/base_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/facts_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/log_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/logger/base_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/logger/console_logger_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/logger/file_logger_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/logger/syslog_logger_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/logger_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/monkey_patches_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/optionparser_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/pluginmanager_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/registration/base_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/registration_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/request_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/actionrunner_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/agent_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/audit_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/client_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/ddl_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/helpers_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/progress_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/reply_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/request_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/result_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc/stats_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/rpc_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/runner_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/runnerstats_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/security/base_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/security_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/shell_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/ssl_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/util_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective/vendor_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/lib/mcollective_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/mcollectived_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/plugins/mcollective/agent/discovery_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/plugins/mcollective/agent/rpcutil_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/plugins/mcollective/application/controller_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/plugins/mcollective/application/facts_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/plugins/mcollective/application/find_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/plugins/mcollective/application/help_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/plugins/mcollective/application/inventory_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/plugins/mcollective/application/ping_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/plugins/mcollective/application/rpc_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/plugins/mcollective/audit/logfile_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/plugins/mcollective/connector/stomp_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/plugins/mcollective/facts/yaml_facts_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/plugins/mcollective/registration/agentlist_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/plugins/mcollective/security/aes_security_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/plugins/mcollective/security/psk_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/plugins/mcollective/security/sshkey_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/plugins/mcollective/security/ssl_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/monkey_patches/instance_variable_defined_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/spec_helper_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/application_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/applications_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/config_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/facts/base_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/facts_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/log_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/logger/base_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/optionparser_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/pluginmanager_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/rpc/actionrunner_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/rpc/agent_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/rpc/reply_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/rpc/request_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/rpc/result_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/rpc/stats_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/security/base_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/security/psk_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/shell_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/ssl_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/util_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/files/spec/unit/vendor_spec_rb.html
+%%PORTDOCS%%%%DOCSDIR%%/fr_class_index.html
+%%PORTDOCS%%%%DOCSDIR%%/fr_file_index.html
+%%PORTDOCS%%%%DOCSDIR%%/fr_method_index.html
+%%PORTDOCS%%%%DOCSDIR%%/index.html
+%%PORTDOCS%%%%DOCSDIR%%/rdoc-style.css
+%%RUBY_SITELIBDIR%%/mcollective.rb
+%%RUBY_SITELIBDIR%%/mcollective/agents.rb
+%%RUBY_SITELIBDIR%%/mcollective/application.rb
+%%RUBY_SITELIBDIR%%/mcollective/applications.rb
+%%RUBY_SITELIBDIR%%/mcollective/client.rb
+%%RUBY_SITELIBDIR%%/mcollective/config.rb
+%%RUBY_SITELIBDIR%%/mcollective/connector.rb
+%%RUBY_SITELIBDIR%%/mcollective/connector/base.rb
+%%RUBY_SITELIBDIR%%/mcollective/facts.rb
+%%RUBY_SITELIBDIR%%/mcollective/facts/base.rb
+%%RUBY_SITELIBDIR%%/mcollective/log.rb
+%%RUBY_SITELIBDIR%%/mcollective/logger.rb
+%%RUBY_SITELIBDIR%%/mcollective/logger/base.rb
+%%RUBY_SITELIBDIR%%/mcollective/logger/console_logger.rb
+%%RUBY_SITELIBDIR%%/mcollective/logger/file_logger.rb
+%%RUBY_SITELIBDIR%%/mcollective/logger/syslog_logger.rb
+%%RUBY_SITELIBDIR%%/mcollective/monkey_patches.rb
+%%RUBY_SITELIBDIR%%/mcollective/optionparser.rb
+%%RUBY_SITELIBDIR%%/mcollective/pluginmanager.rb
+%%RUBY_SITELIBDIR%%/mcollective/registration.rb
+%%RUBY_SITELIBDIR%%/mcollective/registration/base.rb
+%%RUBY_SITELIBDIR%%/mcollective/request.rb
+%%RUBY_SITELIBDIR%%/mcollective/rpc.rb
+%%RUBY_SITELIBDIR%%/mcollective/rpc/actionrunner.rb
+%%RUBY_SITELIBDIR%%/mcollective/rpc/agent.rb
+%%RUBY_SITELIBDIR%%/mcollective/rpc/audit.rb
+%%RUBY_SITELIBDIR%%/mcollective/rpc/client.rb
+%%RUBY_SITELIBDIR%%/mcollective/rpc/ddl.rb
+%%RUBY_SITELIBDIR%%/mcollective/rpc/helpers.rb
+%%RUBY_SITELIBDIR%%/mcollective/rpc/progress.rb
+%%RUBY_SITELIBDIR%%/mcollective/rpc/reply.rb
+%%RUBY_SITELIBDIR%%/mcollective/rpc/request.rb
+%%RUBY_SITELIBDIR%%/mcollective/rpc/result.rb
+%%RUBY_SITELIBDIR%%/mcollective/rpc/stats.rb
+%%RUBY_SITELIBDIR%%/mcollective/runner.rb
+%%RUBY_SITELIBDIR%%/mcollective/runnerstats.rb
+%%RUBY_SITELIBDIR%%/mcollective/security.rb
+%%RUBY_SITELIBDIR%%/mcollective/security/base.rb
+%%RUBY_SITELIBDIR%%/mcollective/shell.rb
+%%RUBY_SITELIBDIR%%/mcollective/ssl.rb
+%%RUBY_SITELIBDIR%%/mcollective/util.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/.gitignore
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/CHANGES
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/COPYING
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/COPYING-json-jruby
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/GPL
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/README
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/README-json-jruby.markdown
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/Rakefile
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/TODO
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/VERSION
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/.keep
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkComparison.log
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt#generator_fast-autocorrelation.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt#generator_fast.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt#generator_pretty-autocorrelation.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt#generator_pretty.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt#generator_safe-autocorrelation.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt#generator_safe.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkExt.log
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure#generator_fast-autocorrelation.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure#generator_fast.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure#generator_pretty-autocorrelation.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure#generator_pretty.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure#generator_safe-autocorrelation.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure#generator_safe.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkPure.log
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkRails#generator-autocorrelation.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkRails#generator.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/GeneratorBenchmarkRails.log
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkComparison.log
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkExt#parser-autocorrelation.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkExt#parser.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkExt.log
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkPure#parser-autocorrelation.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkPure#parser.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkPure.log
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkRails#parser-autocorrelation.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkRails#parser.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkRails.log
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkYAML#parser-autocorrelation.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkYAML#parser.dat
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18/ParserBenchmarkYAML.log
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data/.keep
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/generator2_benchmark.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/generator_benchmark.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/ohai.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/ohai.ruby
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/parser2_benchmark.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/parser_benchmark.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/bin/edit_json.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/bin/prettify_json.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/data/example.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/data/index.html
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/data/prototype.js
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/diagrams/.keep
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/ext/json/ext/generator/extconf.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/ext/json/ext/generator/generator.c
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/ext/json/ext/generator/generator.h
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/ext/json/ext/parser/extconf.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/ext/json/ext/parser/parser.c
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/ext/json/ext/parser/parser.h
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/ext/json/ext/parser/parser.rl
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/install.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/java/lib/bytelist-1.0.6.jar
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/java/lib/jcodings.jar
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/java/src/json/ext/ByteListTranscoder.java
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/java/src/json/ext/Generator.java
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/java/src/json/ext/GeneratorMethods.java
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/java/src/json/ext/GeneratorService.java
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/java/src/json/ext/GeneratorState.java
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/java/src/json/ext/OptionsReader.java
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/java/src/json/ext/Parser.java
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/java/src/json/ext/Parser.rl
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/java/src/json/ext/ParserService.java
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/java/src/json/ext/RuntimeInfo.java
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/java/src/json/ext/StringDecoder.java
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/java/src/json/ext/StringEncoder.java
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/java/src/json/ext/Utils.java
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/json-java.gemspec
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/Array.xpm
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/FalseClass.xpm
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/Hash.xpm
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/Key.xpm
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/NilClass.xpm
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/Numeric.xpm
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/String.xpm
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/TrueClass.xpm
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/add/core.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/add/rails.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/common.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/editor.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/ext.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/ext/.keep
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/json.xpm
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/pure.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/pure/generator.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/pure/parser.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/version.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail1.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail10.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail11.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail12.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail13.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail14.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail18.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail19.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail2.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail20.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail21.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail22.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail23.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail24.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail25.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail27.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail28.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail3.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail4.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail5.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail6.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail7.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail8.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/fail9.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/pass1.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/pass15.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/pass16.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/pass17.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/pass2.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/pass26.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures/pass3.json
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/setup_variant.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/test_json.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/test_json_addition.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/test_json_encoding.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/test_json_fixtures.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/test_json_generate.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/test_json_string_matching.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/test_json_unicode.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tools/fuzz.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/json/tools/server.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/load_json.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/load_systemu.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/require_vendored.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/LICENSE
+%%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/README
+%%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/README.erb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/Rakefile
+%%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/lib/systemu.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/samples/a.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/samples/b.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/samples/c.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/samples/d.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/samples/e.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/samples/f.rb
+%%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/systemu.gemspec
+@dirrm %%DATADIR%%/agent
+@dirrm %%DATADIR%%/application
+@dirrm %%DATADIR%%/audit
+@dirrm %%DATADIR%%/connector
+@dirrm %%DATADIR%%/facts
+@dirrm %%DATADIR%%/registration
+@dirrm %%DATADIR%%/security
+@dirrm %%DATADIR%%
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/connector
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/facts
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/logger
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/registration
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/rpc
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/security
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks/data-p4-3GHz-ruby18
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/benchmarks
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/bin
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/data
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/diagrams
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/ext/json/ext/generator
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/ext/json/ext/parser
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/ext/json/ext
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/ext/json
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/ext
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/java/lib
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/java/src/json/ext
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/java/src/json
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/java/src
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/java
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/add
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/ext
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json/pure
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib/json
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/lib
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests/fixtures
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/tests
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json/tools
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/json
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/lib
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/systemu/samples
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor/systemu
+@dirrm %%RUBY_SITELIBDIR%%/mcollective/vendor
+@dirrm %%RUBY_SITELIBDIR%%/mcollective
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Agent
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Application
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Connector
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Facts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Logger
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/RPC
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Registration
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective/Security
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes/MCollective
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/classes
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/ext
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective/connector
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective/facts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective/logger
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective/registration
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective/rpc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective/security
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib/mcollective
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/plugins/mcollective/agent
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/plugins/mcollective/application
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/plugins/mcollective/audit
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/plugins/mcollective/connector
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/plugins/mcollective/facts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/plugins/mcollective/registration
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/plugins/mcollective/security
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/plugins/mcollective
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/plugins
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/spec/monkey_patches
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/spec/unit/facts
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/spec/unit/logger
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/spec/unit/rpc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/spec/unit/security
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/spec/unit
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files/spec
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/files
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrmtry %%ETCDIR%%
