@@ -132,7 +132,7 @@ include/net-snmp/library/snmp_transport.h
 include/net-snmp/library/snmpusm.h
 include/net-snmp/library/snmpv3-security-includes.h
 include/net-snmp/library/snmpv3.h
-include/net-snmp/library/snmpIPv6BaseDomain.h
+%%WITH_IPV6%%include/net-snmp/library/snmpIPv6BaseDomain.h
 include/net-snmp/library/snmpUDPBaseDomain.h
 include/net-snmp/library/snmpUDPIPv4BaseDomain.h
 include/net-snmp/library/snmpTCPBaseDomain.h
@@ -384,6 +384,8 @@ sbin/snmptrapd
 %%DATADIR%%/mibs/IPV6-TC.txt
 %%DATADIR%%/mibs/IPV6-TCP-MIB.txt
 %%DATADIR%%/mibs/IPV6-UDP-MIB.txt
+%%DATADIR%%/mibs/MTA-MIB.txt
+%%DATADIR%%/mibs/NETWORK-SERVICES-MIB.txt
 %%DATADIR%%/mibs/NET-SNMP-AGENT-MIB.txt
 %%DATADIR%%/mibs/NET-SNMP-EXAMPLES-MIB.txt
 %%DATADIR%%/mibs/NET-SNMP-EXTEND-MIB.txt
