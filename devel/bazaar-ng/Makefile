@@ -6,20 +6,20 @@
 #
 
 PORTNAME=	bazaar-ng
-PORTVERSION=	2.3.4
+PORTVERSION=	2.4.0
 CATEGORIES=	devel
-MASTER_SITES=	https://launchpadlibrarian.net/75242790/
+MASTER_SITES=	https://launchpadlibrarian.net/77014662/
 DISTNAME=	bzr-${PORTVERSION}
 
 MAINTAINER=	fullermd@over-yonder.net
 COMMENT=	Distributed version control system by Canonical
 
 # Often not needed, but it's cheap insurance
-BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex
+BUILD_DEPENDS=	cython:${PORTSDIR}/lang/cython
 
 OPTIONS=	SFTP "Enable Paramiko for SFTP support" on
 
-USE_PYTHON=	2.5+
+USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	bzr
 
