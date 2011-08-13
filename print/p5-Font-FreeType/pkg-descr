@@ -1,0 +1,8 @@
+This module allows Perl programs to conveniently read information from
+font files. All the font access is done through the FreeType2 library,
+which supports many formats. It can render images of characters with
+high-quality hinting and antialiasing, extract metrics information,
+and extract the outlines of characters in scalable formats like
+TrueType.
+
+WWW: http://search.cpan.org/dist/Font-FreeType/
