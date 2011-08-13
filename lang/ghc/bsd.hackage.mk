@@ -149,6 +149,7 @@ sendfile_port=			net/hs-sendfile
 SHA_port=			security/hs-SHA
 show_port=			devel/hs-show
 smallcheck_port=		devel/hs-smallcheck
+snap_port=			www/hs-snap
 snap-core_port=			www/hs-snap-core
 snap-server_port=		www/hs-snap-server	# lib_depends
 soegtk_port=			graphics/hs-soegtk
