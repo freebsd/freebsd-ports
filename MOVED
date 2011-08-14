@@ -2504,3 +2504,4 @@ security/drweb||2011-08-10|Has expired: fails to fetch (website rearranged)
 security/drweb-postfix||2011-08-10|Has expired: fails to fetch (website rearranged)
 security/drweb-qmail||2011-08-10|Has expired: fails to fetch (website rearranged)
 security/drweb-sendmail||2011-08-10|Has expired: fails to fetch (website rearranged)
+math/hs-category-extras||2011-08-14|Removed: this package is obsolete.
