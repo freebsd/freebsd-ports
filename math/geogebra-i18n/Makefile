@@ -6,42 +6,50 @@
 #
 
 PORTNAME=	geogebra-i18n
-PORTVERSION=	2.6b
-PORTREVISION=	3
+DISTVERSION=	3-2-47-0
+PORTREVISION=	0
 CATEGORIES=	math java
-MASTER_SITES=	http://www.geogebra.at/download/InstData/Java/ \
-		http://nivi.interfree.it/distfiles/${DIST_SUBDIR}/
-DISTNAME=	geogebra_setup
-EXTRACT_SUFX=	.jar
-DIST_SUBDIR=	${PORTNAME}/${PORTVERSION}
+MASTER_SITES=	http://nivi.interfree.it/distfiles/${PORTNAME}/
+#PKGNAMESUFFIX=	-i18n
+DISTNAME=	GeoGebra-FreeBSD-Installer-${DISTVERSION}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A dynamic software that joins geometry, algebra and calculus
 
-USE_JAVA=	yes
-USE_ZIP=	yes
-
-NO_BUILD=	yes
-NO_WRKSUBDIR=	yes
+RUN_DEPENDS=	${LOCALBASE}/bin/update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 DATADIR=	${JAVASHAREDIR}/${PORTNAME}
+
+INSTALLS_ICONS=	yes
+
 JAVA_VERSION=	1.5+
-SUB_FILES=	${PORTNAME:S/-i18n$//}
 
-FIND_DOCS=	-type f \! \( -name *.txt -or -name *.jar \)
-FIND_ICONS=	-type f -name "*.gif" -maxdepth 1
+NO_BUILD=	yes
 
-SOURCES_DIR=	${WRKSRC}/D_/deploy/source
-JARFILE=	${PORTNAME:S/-i18n$//}.jar
+USE_DOS2UNIX=	geogebra geogebra.desktop
+USE_GNOME=	desktopfileutils
+USE_JAVA=	yes
+
+WRKSRC=	${WRKDIR}/geogebra-${PORTVERSION}
+
+FIND_JARS=	-type f -name "*.jar" -maxdepth 1 -print0
+
+JARFILE=	${PORTNAME:S,-i18n,,}.jar
+
+post-patch:
+	${REINPLACE_CMD} -e 's,%%DATADIR%%,${DATADIR},g' ${WRKSRC}/${PORTNAME:S,-i18n,,}
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/${SUB_FILES} ${PREFIX}/bin/${SUB_FILES}
-	cd ${SOURCES_DIR} && ${MKDIR} ${DATADIR} && ${INSTALL_DATA} ${JARFILE} ${DATADIR};
-.ifndef	NOPORTDOCS
-	${MKDIR} ${DOCSDIR};
-	cd ${SOURCES_DIR} && ${FIND} . -type d -exec ${MKDIR} ${DOCSDIR}/{} \;
-	cd ${SOURCES_DIR} && ${FIND} . ${FIND_DOCS} -exec ${INSTALL_DATA} {} ${DOCSDIR}/{} \;
-.endif
-	cd ${SOURCES_DIR}/.. && ${FIND} . ${FIND_ICONS} -exec ${INSTALL_DATA} {} ${DATADIR}/{} \;
+	${INSTALL_SCRIPT} ${WRKSRC}/geogebra ${PREFIX}/bin/
+	cd ${WRKSRC} && ${MKDIR} ${DATADIR} && \
+	${FIND} . ${FIND_JARS} | ${XARGS} -0 -J % ${INSTALL_DATA} % ${DATADIR} && \
+	${COPYTREE_SHARE} unsigned ${DATADIR} && \
+	${COPYTREE_SHARE} icons ${PREFIX}/share && \
+	${MKDIR} ${PREFIX}/share/mime/packages && \
+	${MKDIR} ${PREFIX}/share/applications && \
+	${INSTALL_DATA} ${WRKSRC}/geogebra.xml ${PREFIX}/share/mime/packages && \
+	${INSTALL_DATA} ${WRKSRC}/geogebra.desktop ${DESKTOPDIR}
+	-${LOCALBASE}/bin/update-desktop-database
+	-${LOCALBASE}/bin/update-mime-database ${LOCALBASE}/share/mime
 
 .include <bsd.port.mk>
