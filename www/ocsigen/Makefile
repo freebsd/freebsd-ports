@@ -6,6 +6,7 @@
 
 PORTNAME=	ocsigen
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.ocsigen.org/download/
 
@@ -28,8 +29,7 @@ USE_OCAML_LDCONFIG=	yes
 
 SA_DIR=		${PREFIX}/${OCAML_SITELIBDIR}
 
-OPTIONS=	OCAMLDUCE "Use OCamlDuce support" ON \
-		SQLITE "Use sqlite as a database backend" OFF \
+OPTIONS=	SQLITE "Use sqlite as a database backend" OFF \
 		CAMLZIP "Use camlzip for compression" ON
 
 USE_GMAKE=	yes
@@ -45,7 +45,8 @@ CONFIGURE_ARGS=	--name ${PORTNAME} \
 		--docdir ${DOCSDIR} \
 		--sysconfdir ${PREFIX}/etc \
 		--staticpagesdir ${PREFIX}/share/ocsigen/www \
-		--uploaddir /tmp
+		--uploaddir /tmp \
+		--disable-ocamlduce
 
 ALL_TARGET=	depend all
 INSTALL_TARGET=	installnodoc
@@ -57,16 +58,6 @@ PORTDOCS=		*
 MAN1=		ocsigen.1
 
 .include <bsd.port.pre.mk>
-
-.if defined(WITHOUT_OCAMLDUCE)
-CONFIGURE_ARGS+=	--disable-ocamlduce
-.else
-BUILD_DEPENDS+=	${SA_DIR}/ocamlduce/ocamlduce.a:${PORTSDIR}/lang/ocamlduce
-RUN_DEPENDS+=	${SA_DIR}/ocamlduce/ocamlduce.a:${PORTSDIR}/lang/ocamlduce
-CONFIGURE_ARGS+=	--enable-ocamlduce
-PLIST_FILES+=	lib/ocsigen/examples/exampleduce.cmo \
-		lib/ocsigen/extensions/eliom_duce.cma
-.endif
 
 .if defined(WITH_SQLITE)
 BUILD_DEPENDS+=	${SA_DIR}/sqlite3/sqlite3.a:${PORTSDIR}/databases/ocaml-sqlite3
