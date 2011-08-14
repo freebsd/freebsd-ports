@@ -146,6 +146,7 @@ regex-posix_port=		textproc/hs-regex-posix
 safe_port=			devel/hs-safe
 scgi_port=			www/hs-scgi
 sendfile_port=			net/hs-sendfile
+semigroups_port=		math/hs-semigroups
 SHA_port=			security/hs-SHA
 show_port=			devel/hs-show
 simple-sendfile_port=		net/hs-simple-sendfile
