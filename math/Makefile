@@ -127,6 +127,7 @@
     SUBDIR += hs-category-extras
     SUBDIR += hs-comonad
     SUBDIR += hs-contravariant
+    SUBDIR += hs-distributive
     SUBDIR += hs-erf
     SUBDIR += hs-mwc-random
     SUBDIR += hs-probability
