@@ -2082,6 +2082,7 @@
     SUBDIR += p5-POE-Component-Daemon
     SUBDIR += p5-POE-Component-DebugShell
     SUBDIR += p5-POE-Component-DirWatch
+    SUBDIR += p5-POE-Component-Hailo
     SUBDIR += p5-POE-Component-IKC
     SUBDIR += p5-POE-Component-JobQueue
     SUBDIR += p5-POE-Component-Logger
