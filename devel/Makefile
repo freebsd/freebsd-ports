@@ -628,6 +628,7 @@
     SUBDIR += hs-language-c
     SUBDIR += hs-lazysmallcheck
     SUBDIR += hs-mmap
+    SUBDIR += hs-monad-par
     SUBDIR += hs-mtl
     SUBDIR += hs-mtl-docs
     SUBDIR += hs-mueval
