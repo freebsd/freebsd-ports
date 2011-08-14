@@ -131,6 +131,7 @@
     SUBDIR += hs-erf
     SUBDIR += hs-mwc-random
     SUBDIR += hs-probability
+    SUBDIR += hs-semigroupoids
     SUBDIR += hs-semigroups
     SUBDIR += hs-statistics
     SUBDIR += hs-vector-space
