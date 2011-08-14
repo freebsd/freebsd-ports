@@ -7,7 +7,7 @@
 
 PORTNAME=	migemo
 PORTVERSION=	0.40
-PORTREVISION=	6
+PORTREVISION=	7
 PORTEPOCH=	1
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://0xcc.net/migemo/ \
@@ -38,7 +38,7 @@ RUN_DEPENDS+=	${RUBY_SITELIBDIR}/romkan.rb:${PORTSDIR}/japanese/ruby-romkan \
 CONFIGURE_ARGS+=--with-rubydir=${RUBY_SITELIBDIR}
 MAKE_JOBS_UNSAFE=	yes
 
-SKKDIC_FILE=	SKK-JISYO.L-20101223
+SKKDIC_FILE=	SKK-JISYO.L-20110813
 
 .include <bsd.port.pre.mk>
 
