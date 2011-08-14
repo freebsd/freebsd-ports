@@ -5461,9 +5461,11 @@ hs-HaXml                        ports/textproc/hs-HaXml
 hs-MemoTrie                     ports/devel/hs-MemoTrie
 hs-MissingH                     ports/devel/hs-MissingH
 hs-MonadCatchIO-mtl             ports/devel/hs-MonadCatchIO-mtl
+hs-MonadCatchIO-transformers    ports/devel/hs-MonadCatchIO-transformers
 hs-ObjectName                   ports/devel/hs-ObjectName
 hs-OpenAL                       ports/audio/hs-OpenAL
 hs-OpenGL                       ports/x11-toolkits/hs-OpenGL
+hs-PSQueue                      ports/devel/hs-PSQueue
 hs-QuickCheck                   ports/devel/hs-QuickCheck
 hs-SHA                          ports/security/hs-SHA
 hs-StateVar                     ports/devel/hs-StateVar
@@ -5479,10 +5481,14 @@ hs-alut                         ports/audio/hs-ALUT
 hs-ansi-terminal                ports/devel/hs-ansi-terminal
 hs-ansi-wl-pprint               ports/devel/hs-ansi-wl-pprint
 hs-arrows                       ports/devel/hs-arrows
+hs-attoparsec                   ports/textproc/hs-attoparsec
+hs-attoparsec-enumerator        ports/textproc/hs-attoparsec-enumerator
+hs-attoparsec-text              ports/textproc/hs-attoparsec-text
 hs-binary                       ports/devel/hs-binary
 hs-bio                          ports/science/hs-bio
 hs-blaze-builder                ports/devel/hs-blaze-builder
 hs-blaze-builder-enumerator     ports/devel/hs-blaze-builder-enumerator
+hs-blaze-html                   ports/textproc/hs-blaze-html
 hs-bnfc                         ports/devel/hs-BNFC
 hs-boolean                      ports/devel/hs-Boolean
 hs-brainfuck                    ports/lang/hs-brainfuck
@@ -5576,6 +5582,7 @@ hs-mime                         ports/mail/hs-mime
 hs-missingh                     ports/devel/hs-MissingH
 hs-mmap                         ports/devel/hs-mmap
 hs-monadcatchio-mtl             ports/devel/hs-MonadCatchIO-mtl
+hs-monadcatchio-transformers    ports/devel/hs-MonadCatchIO-transformers
 hs-mtl                          ports/devel/hs-mtl
 hs-mtl-docs                     ports/devel/hs-mtl-docs
 hs-mueval                       ports/devel/hs-mueval
@@ -5597,6 +5604,7 @@ hs-polyparse                    ports/textproc/hs-polyparse
 hs-porte                        ports/ports-mgmt/hs-porte
 hs-primitive                    ports/devel/hs-primitive
 hs-probability                  ports/math/hs-probability
+hs-psqueue                      ports/devel/hs-PSQueue
 hs-quickcheck                   ports/devel/hs-QuickCheck
 hs-reactive                     ports/devel/hs-reactive
 hs-readline                     ports/devel/hs-readline
@@ -9008,6 +9016,7 @@ mc-light                        ports/misc/mc-light
 mcabber                         ports/net-im/mcabber
 mcal                            ports/deskutils/mcal
 mcast-tools                     ports/net/mcast-tools
+mcollective                     ports/sysutils/mcollective
 mcplay                          ports/audio/mcplay
 mcpp                            ports/devel/mcpp
 mcron                           ports/sysutils/mcron
@@ -9806,6 +9815,7 @@ nagios-check_ports              ports/net-mgmt/nagios-check_ports
 nagios-check_postgres_replication  ports/databases/nagios-check_postgres_replication
 nagios-check_puppet             ports/net-mgmt/nagios-check_puppet
 nagios-check_smartmon           ports/net-mgmt/nagios-check_smartmon
+nagios-check_tftp               ports/net-mgmt/nagios-check_tftp
 nagios-devel                    ports/net-mgmt/nagios-devel
 nagios-geom                     ports/net-mgmt/nagios-geom
 nagios-pf-plugin                ports/net-mgmt/nagios-pf-plugin
@@ -12236,6 +12246,7 @@ p5-Flea                         ports/www/p5-Flea
 p5-Flickr-API                   ports/www/p5-Flickr-API
 p5-Flickr-Upload                ports/www/p5-Flickr-Upload
 p5-Font-AFM                     ports/x11-fonts/p5-Font-AFM
+p5-Font-FreeType                ports/print/p5-Font-FreeType
 p5-Font-TTF                     ports/x11-fonts/p5-Font-TTF
 p5-Font-TTFMetrics              ports/x11-fonts/p5-Font-TTFMetrics
 p5-Forest                       ports/devel/p5-Forest
@@ -13173,6 +13184,7 @@ p5-MooseX-Types-Common          ports/devel/p5-MooseX-Types-Common
 p5-MooseX-Types-DateTime-ButMaintained  ports/devel/p5-MooseX-Types-DateTime-ButMaintained
 p5-MooseX-Types-DateTimeX       ports/devel/p5-MooseX-Types-DateTimeX
 p5-MooseX-Types-JSON            ports/devel/p5-MooseX-Types-JSON
+p5-MooseX-Types-LoadableClass   ports/devel/p5-MooseX-Types-LoadableClass
 p5-MooseX-Types-Path-Class      ports/devel/p5-MooseX-Types-Path-Class
 p5-MooseX-Types-Perl            ports/devel/p5-MooseX-Types-Perl
 p5-MooseX-Types-Set-Object      ports/devel/p5-MooseX-Types-Set-Object
@@ -16530,6 +16542,7 @@ p5-flickr-api                   ports/www/p5-Flickr-API
 p5-flickr-upload                ports/www/p5-Flickr-Upload
 p5-flv-info                     ports/multimedia/p5-FLV-Info
 p5-font-afm                     ports/x11-fonts/p5-Font-AFM
+p5-font-freetype                ports/print/p5-Font-FreeType
 p5-font-ttf                     ports/x11-fonts/p5-Font-TTF
 p5-font-ttfmetrics              ports/x11-fonts/p5-Font-TTFMetrics
 p5-forest                       ports/devel/p5-Forest
@@ -17480,6 +17493,7 @@ p5-moosex-types-common          ports/devel/p5-MooseX-Types-Common
 p5-moosex-types-datetime-butmaintained  ports/devel/p5-MooseX-Types-DateTime-ButMaintained
 p5-moosex-types-datetimex       ports/devel/p5-MooseX-Types-DateTimeX
 p5-moosex-types-json            ports/devel/p5-MooseX-Types-JSON
+p5-moosex-types-loadableclass   ports/devel/p5-MooseX-Types-LoadableClass
 p5-moosex-types-path-class      ports/devel/p5-MooseX-Types-Path-Class
 p5-moosex-types-perl            ports/devel/p5-MooseX-Types-Perl
 p5-moosex-types-set-object      ports/devel/p5-MooseX-Types-Set-Object
