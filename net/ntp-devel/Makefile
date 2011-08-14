@@ -40,7 +40,7 @@ PLIST_SUB+=		SSL=""
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-MAN8=		ntp-keygen.8 ntpd.8 ntpdc.8 ntpq.8 sntp.8 ntpsnmpd.8
+MAN8=		ntp-keygen.8 ntpd.8 ntpdc.8 ntpq.8 sntp.8
 
 pre-everything::
 	@${ECHO}
