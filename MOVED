@@ -2505,3 +2505,4 @@ security/drweb-postfix||2011-08-10|Has expired: fails to fetch (website rearrang
 security/drweb-qmail||2011-08-10|Has expired: fails to fetch (website rearranged)
 security/drweb-sendmail||2011-08-10|Has expired: fails to fetch (website rearranged)
 math/hs-category-extras||2011-08-14|Removed: this package is obsolete.
+lang/p5-POE-Component-Hailo||2011-08-14|Removed
