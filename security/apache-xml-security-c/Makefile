@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xml-security-c
-PORTVERSION=	1.6.0
+PORTVERSION=	1.6.1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=santuario/c-library
@@ -15,13 +15,13 @@ PKGNAMEPREFIX=	apache-
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Apache XML security libraries C version
 
-OPTIONS=	XERCES_DEVEL	"With Xerces vesion 2.8 (shibboleth2 requires)" on
+OPTIONS=	XERCES_3	"With Xerces vesion 3.x (shibboleth2 requires)" on
 
 USE_OPENSSL=	yes
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_XERCES_DEVEL)
-LIB_DEPENDS+=	xerces-c.28:${PORTSDIR}/textproc/xerces-c2-devel
+.if defined(WITH_XERCES_3)
+LIB_DEPENDS+=	xerces-c.3:${PORTSDIR}/textproc/xerces-c3
 .else
 LIB_DEPENDS+=	xerces-c.27:${PORTSDIR}/textproc/xerces-c2
 .endif
