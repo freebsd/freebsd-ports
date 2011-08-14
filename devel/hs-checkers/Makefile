@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	checkers
-PORTVERSION=	0.2.6
-PORTREVISION=	1
+PORTVERSION=	0.2.8
 CATEGORIES=	devel haskell
 
 MAINTAINER=	haskell@FreeBSD.org
 COMMENT=	Check properties on standard Haskell classes and data structures
 
-USE_HACKAGE=	QuickCheck>=2.1.0.2
+LICENSE=	BSD
+FILE_LICENSE=	COPYING
 
-BROKEN=		does not compile
+USE_CABAL=	QuickCheck>=2.3
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
 .include <bsd.port.mk>
