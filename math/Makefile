@@ -126,6 +126,7 @@
     SUBDIR += hs-categories
     SUBDIR += hs-category-extras
     SUBDIR += hs-comonad
+    SUBDIR += hs-comonad-transformers
     SUBDIR += hs-contravariant
     SUBDIR += hs-distributive
     SUBDIR += hs-erf
