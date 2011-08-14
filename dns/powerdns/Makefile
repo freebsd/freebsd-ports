@@ -7,6 +7,7 @@
 
 PORTNAME=	powerdns
 PORTVERSION=	3.0
+PORTREVISION=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://downloads.powerdns.com/releases/ \
 		http://mirrors.evolva.ro/powerdns.com/releases/

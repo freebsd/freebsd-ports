@@ -1,0 +1,109 @@
+--- pdns/Makefile.in.orig	2011-07-22 13:26:07.000000000 +0200
++++ pdns/Makefile.in	2011-08-11 11:21:08.000000000 +0200
+@@ -598,7 +598,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-AM_CXXFLAGS = -DSYSCONFDIR=\"@sysconfdir@\" -DLIBDIR=\"@libdir@\" -DLOCALSTATEDIR=\"@socketdir@\" -Ibackends/bind @THREADFLAGS@ $(LUA_CFLAGS) -Iext/polarssl/include
++AM_CXXFLAGS = -DSYSCONFDIR=\"@sysconfdir@\" -DLIBDIR=\"@libdir@\" -DLOCALSTATEDIR=\"@socketdir@\" -Ibackends/bind @THREADFLAGS@ $(LUA_CFLAGS)
+ AM_CPPFLAGS = -Ibackends/bind $(BOOST_CPPFLAGS) @THREADFLAGS@
+ EXTRA_DIST = dnslabeltext.rl dnslabeltext.cc mtasker.cc inflighter.cc docs/pdns_control.8  docs/pdns_server.8 docs/zone2sql.8
+ SUBDIRS = ext/polarssl backends 
+@@ -634,8 +634,8 @@
+ 	$(am__append_3) $(am__append_5)
+ 
+ #
+-pdns_server_LDFLAGS = @moduleobjects@ @modulelibs@ @DYNLINKFLAGS@ @LIBDL@ @THREADFLAGS@  -Lext/polarssl/library $(BOOST_SERIALIZATION_LDFLAGS)  -rdynamic
+-pdns_server_LDADD = -lpolarssl $(BOOST_SERIALIZATION_LIBS) $(LUA_LIBS) \
++pdns_server_LDFLAGS = @moduleobjects@ @modulelibs@ @DYNLINKFLAGS@ @LIBDL@ @THREADFLAGS@  $(BOOST_SERIALIZATION_LDFLAGS)  -rdynamic
++pdns_server_LDADD = ext/polarssl/library/libpolarssl.a $(BOOST_SERIALIZATION_LIBS) $(LUA_LIBS) \
+ 	$(am__append_2) $(am__append_4) $(am__append_6)
+ pdnssec_SOURCES = pdnssec.cc dbdnsseckeeper.cc sstuff.hh dnsparser.cc \
+ 	dnsparser.hh dnsrecords.cc dnswriter.cc dnswriter.hh misc.cc \
+@@ -650,8 +650,8 @@
+ 	randombackend.cc dnssecsigner.cc polarrsakeyinfra.cc md5.cc \
+ 	signingpipe.cc dnslabeltext.cc ednssubnet.cc $(am__append_7) \
+ 	$(am__append_9) $(am__append_11)
+-pdnssec_LDFLAGS = @moduleobjects@ @modulelibs@ @DYNLINKFLAGS@ @LIBDL@ @THREADFLAGS@ -Lext/polarssl/library/ $(BOOST_PROGRAM_OPTIONS_LDFLAGS) $(BOOST_SERIALIZATION_LDFLAGS)
+-pdnssec_LDADD = -lpolarssl $(BOOST_PROGRAM_OPTIONS_LIBS) \
++pdnssec_LDFLAGS = @moduleobjects@ @modulelibs@ @DYNLINKFLAGS@ @LIBDL@ @THREADFLAGS@ $(BOOST_PROGRAM_OPTIONS_LDFLAGS) $(BOOST_SERIALIZATION_LDFLAGS)
++pdnssec_LDADD = ext/polarssl/library/libpolarssl.a $(BOOST_PROGRAM_OPTIONS_LIBS) \
+ 	$(BOOST_SERIALIZATION_LIBS) $(am__append_8) $(am__append_10) \
+ 	$(am__append_12)
+ sdig_SOURCES = sdig.cc sstuff.hh dnsparser.cc dnsparser.hh dnsrecords.cc dnswriter.cc dnslabeltext.cc dnswriter.hh \
+@@ -675,8 +675,7 @@
+ 	aes/aestab.c aes/aestab.h aes/brg_endian.h aes/brg_types.h aes/dns_random.cc \
+ 	randomhelper.cc dns.cc
+ 
+-tsig_tests_LDFLAGS = -Lext/polarssl/library 	
+-tsig_tests_LDADD = -lpolarssl
++tsig_tests_LDADD = ext/polarssl/library/libpolarssl.a
+ speedtest_SOURCES = speedtest.cc dnsparser.cc dnsparser.hh dnsrecords.cc dnswriter.cc dnslabeltext.cc dnswriter.hh \
+ 	misc.cc misc.hh rcpgenerator.cc rcpgenerator.hh base64.cc base64.hh unix_utility.cc \
+ 	qtype.cc sillyrecords.cc logger.cc statbag.cc nsecrecords.cc base32.cc
+--- pdns/polarrsakeyinfra.cc.orig	2011-07-22 13:23:22.000000000 +0200
++++ pdns/polarrsakeyinfra.cc	2011-08-11 11:24:24.000000000 +0200
+@@ -1,9 +1,9 @@
+-#include <polarssl/rsa.h>
+-#include <polarssl/base64.h>
+-#include <polarssl/sha1.h>
+-#include <polarssl/sha2.h>
+-#include <polarssl/sha4.h>
+-#include <polarssl/havege.h>
++#include "ext/polarssl/include/polarssl/rsa.h"
++#include "ext/polarssl/include/polarssl/base64.h"
++#include "ext/polarssl/include/polarssl/sha1.h"
++#include "ext/polarssl/include/polarssl/sha2.h"
++#include "ext/polarssl/include/polarssl/sha4.h"
++#include "ext/polarssl/include/polarssl/havege.h"
+ #include <boost/assign/std/vector.hpp> // for 'operator+=()'
+ #include <boost/foreach.hpp>
+ #include "dnssecinfra.hh"
+--- pdns/backends/bind/Makefile.in.orig	2011-07-22 13:26:07.000000000 +0200
++++ pdns/backends/bind/Makefile.in	2011-08-11 11:35:05.000000000 +0200
+@@ -276,7 +276,7 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+-INCLUDES = -I../.. -I ../../ext/polarssl/include
++INCLUDES = -I../..
+ noinst_LTLIBRARIES = libbind2backend.la
+ AM_CPPFLAGS = $(BOOST_CPPFLAGS) @THREADFLAGS@
+ libbind2backend_la_SOURCES = bindbackend2.cc bindbackend2.hh bindparser.yy \
+@@ -300,10 +300,10 @@
+ ../../dnswriter.cc dnslabeltext.cc  ../../rcpgenerator.cc ../../dnsparser.cc ../../base64.cc ../../sillyrecords.cc \
+ ../../nsecrecords.cc ../../dnssecinfra.cc  ../../base32.cc ../../md5.cc # ../../dbdnsseckeeper.cc
+ 
+-zone2ldap_LDFLAGS = @THREADFLAGS@  -L../../ext/polarssl/library
+-zone2ldap_LDADD = -lpolarssl
+-zone2sql_LDFLAGS = @THREADFLAGS@  -L../../ext/polarssl/library
+-zone2sql_LDADD = -lpolarssl
++zone2ldap_LDFLAGS = @THREADFLAGS@
++zone2ldap_LDADD = ../../ext/polarssl/library/libpolarssl.a
++zone2sql_LDFLAGS = @THREADFLAGS@
++zone2sql_LDADD = ../../ext/polarssl/library/libpolarssl.a
+ AM_LFLAGS = -s -i
+ AM_YFLAGS = -d --verbose --debug
+ all: all-am
+--- pdns/dnssecinfra.cc.orig	2011-07-22 13:23:22.000000000 +0200
++++ pdns/dnssecinfra.cc	2011-08-11 13:21:53.000000000 +0200
+@@ -9,7 +9,7 @@
+ #include <boost/algorithm/string.hpp>
+ #include "dnssecinfra.hh" 
+ #include "dnsseckeeper.hh"
+-#include "polarssl/sha1.h"
++#include "ext/polarssl/include/polarssl/sha1.h"
+ #include <boost/assign/std/vector.hpp> // for 'operator+=()'
+ #include <boost/assign/list_inserter.hpp>
+ #include "base64.hh"
+--- pdns/ext/polarssl/include/polarssl/rsa.h.orig	2011-07-22 13:26:22.000000000 +0200
++++ pdns/ext/polarssl/include/polarssl/rsa.h	2011-08-11 13:40:15.000000000 +0200
+@@ -21,7 +21,7 @@
+ #ifndef POLARSSL_RSA_H
+ #define POLARSSL_RSA_H
+ 
+-#include "polarssl/bignum.h"
++#include "bignum.h"
+ 
+ /*
+  * RSA Error codes
