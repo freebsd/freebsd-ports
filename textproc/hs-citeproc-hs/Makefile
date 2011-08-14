@@ -7,7 +7,7 @@
 
 PORTNAME=	citeproc-hs
 PORTVERSION=	0.3.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
