@@ -657,6 +657,7 @@
     SUBDIR += hs-uulib
     SUBDIR += hs-vector
     SUBDIR += hs-vector-algorithms
+    SUBDIR += hs-void
     SUBDIR += htable
     SUBDIR += hyena
     SUBDIR += hypersrc

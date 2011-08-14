@@ -187,6 +187,7 @@ uulib_port=			devel/hs-uulib
 vector_port=			devel/hs-vector
 vector-algorithms_port=		devel/hs-vector-algorithms
 vector-space_port=		math/hs-vector-space
+void_port=			devel/hs-void
 vte_port=			x11-toolkits/hs-vte
 wai_port=			www/hs-wai
 warp_port=			www/hs-warp
