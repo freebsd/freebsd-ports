@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	http-types
-PORTVERSION=	0.6.4
-PORTREVISION=	1
+PORTVERSION=	0.6.5.1
 CATEGORIES=	www haskell
 
 MAINTAINER=	haskell@FreeBSD.org
