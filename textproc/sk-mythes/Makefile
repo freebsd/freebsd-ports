@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	mythes
-PORTVERSION=	2011.08.12
+PORTVERSION=	2011.08.13
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.sk-spell.sk.cx/thesaurus/download/
 PKGNAMEPREFIX=	sk-
