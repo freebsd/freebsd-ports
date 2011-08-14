@@ -124,7 +124,6 @@
     SUBDIR += hs-Agda
     SUBDIR += hs-Agda-executable
     SUBDIR += hs-categories
-    SUBDIR += hs-category-extras
     SUBDIR += hs-comonad
     SUBDIR += hs-comonad-transformers
     SUBDIR += hs-contravariant
