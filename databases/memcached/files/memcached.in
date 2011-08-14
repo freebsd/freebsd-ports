@@ -4,6 +4,7 @@
 #
 # PROVIDE: memcached
 # REQUIRE: DAEMON
+# KEYWORD: shutdown
 #
 # Add the following lines to /etc/rc.conf to run memcached:
 #
@@ -41,10 +42,10 @@ else
 		for profile in ${memcached_profiles}; do
 			eval _enable="\${memcached_${profile}_enable}"
 			case "x${_enable:-${memcached_enable}}" in
-			x|x[Nn][Oo]|x[Nn][Oo][Nn][Ee])
+			x[Nn][Oo]|x[Ff][Aa][Ll][Ss][Ee]|x[Oo][Ff][Ff]|x0)
 				continue
 				;;
-			x[Yy][Ee][Ss])
+			x[Yy][Ee][Ss]|x[Tt][Rr][Uu][Ee]|x[Oo][Nn]|x1)
 				;;
 			*)
 				if test -z "$_enable"; then
@@ -77,7 +78,5 @@ fi
 
 command=%%PREFIX%%/bin/memcached
 command_args="-d -u ${memcached_user} -P ${pidfile} "
-
-unset memcached_user
 
 run_rc_command "$1"
