@@ -1,7 +1,30 @@
-@comment $FreeBSD$
 bin/virt-viewer
-%%DATADIR%%/ui/about.glade
-%%DATADIR%%/ui/auth.glade
-%%DATADIR%%/ui/viewer.glade
+%%NLS%%share/locale/as/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/bn_IN/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/de/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/es/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/gu/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/hi/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/hu/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/it/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/ja/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/kn/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/ml/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/mr/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/or/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/ta/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/te/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/virt-viewer.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/virt-viewer.mo
+%%DATADIR%%/ui/virt-viewer-about.xml
+%%DATADIR%%/ui/virt-viewer-auth.xml
+%%DATADIR%%/ui/virt-viewer.xml
 @dirrm %%DATADIR%%/ui
 @dirrm %%DATADIR%%
