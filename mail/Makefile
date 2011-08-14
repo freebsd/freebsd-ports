@@ -621,7 +621,6 @@
     SUBDIR += sastatd
     SUBDIR += scam-backscatter
     SUBDIR += sccmilter
-    SUBDIR += scmail
     SUBDIR += sendmail
     SUBDIR += sendmail-ldap
     SUBDIR += sendmail-sasl
