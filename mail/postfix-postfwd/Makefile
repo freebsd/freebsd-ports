@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	postfwd
-PORTVERSION=	1.20
+PORTVERSION=	1.22
 CATEGORIES=	mail
 MASTER_SITES=	http://www.${PORTNAME}.org/old/
 PKGNAMEPREFIX=	postfix-
@@ -14,12 +14,12 @@ PKGNAMEPREFIX=	postfix-
 MAINTAINER=	sahil@FreeBSD.org
 COMMENT=	A postfix firewall policy daemon
 
+LICENSE=	BSD
+
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS \
 		${SITE_PERL}/Net/Server.pm:${PORTSDIR}/net/p5-Net-Server
 
-LICENSE=	BSD
-
-PORTDOCS=	CHANGELOG ${PORTNAME}.html ${PORTNAME}.txt
+PORTDOCS=	CHANGELOG ${PORTNAME}.html ${PORTNAME}.txt quick.html versions.html
 PORTEXAMPLES=	request.sample
 PLIST_FILES=	bin/${PORTNAME} etc/${PORTNAME}.conf.sample
 
