@@ -188,6 +188,7 @@ unamb_port=			devel/hs-unamb
 uniplate_port=			devel/hs-uniplate
 unix-compat_port=		devel/hs-unix-compat
 unlambda_port=			lang/hs-unlambda	# executable
+unordered-containers_port=	devel/hs-unordered-containers
 url_port=			www/hs-url
 utf8-string_port=		devel/hs-utf8-string
 utility-ht_port=		devel/hs-utility-ht
