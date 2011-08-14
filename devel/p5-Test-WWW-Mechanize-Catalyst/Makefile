@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Test-WWW-Mechanize-Catalyst
-PORTVERSION=	0.53
+PORTVERSION=	0.54
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,9 +22,9 @@ RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7000:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-namespace-clean>=0.09:${PORTSDIR}/devel/p5-namespace-clean
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	5.8.4+
 
-MAN3=	Test::WWW::Mechanize::Catalyst.3
+MAN3=		Test::WWW::Mechanize::Catalyst.3
 
 post-extract:
 	@${PERL} -i -ne 'print unless m,^test_requires,' ${WRKSRC}/Makefile.PL
