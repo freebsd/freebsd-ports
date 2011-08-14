@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	youtube
-PORTVERSION=	2.5.1
+PORTVERSION=	2.5.2
 CATEGORIES=	multimedia
-MASTER_SITES=	http://mirror.4bit.ws/ \
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE:S|youtube|trizen|g} \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dhn
 PKGNAMESUFFIX=	-viewer
@@ -26,9 +26,10 @@ NO_BUILD=	yes
 PLIST_FILES=	bin/youtube-viewer
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|#!/usr/bin/perl|#!${PERL}|g" ${WRKSRC}/youtube-viewer
+	@${REINPLACE_CMD} -e "s|#!/usr/bin/perl|#!${PERL}|g" ${WRKDIR}/youtube-viewer
 
 do-install:
-	@${INSTALL_SCRIPT} ${WRKSRC}/youtube-viewer ${PREFIX}/bin/
+	@${CHMOD} +x ${WRKDIR}/youtube-viewer
+	@${INSTALL_SCRIPT} ${WRKDIR}/youtube-viewer ${PREFIX}/bin/
 
 .include <bsd.port.mk>
