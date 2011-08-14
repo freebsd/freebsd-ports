@@ -151,11 +151,13 @@ share/gtk-doc/html/libvirt/right.png
 share/gtk-doc/html/libvirt/style.css
 share/gtk-doc/html/libvirt/up.png
 %%DATADIR%%/cpu_map.xml
+%%DATADIR%%/schemas/basictypes.rng
 %%DATADIR%%/schemas/capability.rng
 %%DATADIR%%/schemas/domain.rng
 %%DATADIR%%/schemas/domainsnapshot.rng
 %%DATADIR%%/schemas/interface.rng
 %%DATADIR%%/schemas/network.rng
+%%DATADIR%%/schemas/networkcommon.rng
 %%DATADIR%%/schemas/nodedev.rng
 %%DATADIR%%/schemas/nwfilter.rng
 %%DATADIR%%/schemas/secret.rng
