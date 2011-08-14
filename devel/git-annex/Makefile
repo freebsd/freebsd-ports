@@ -7,6 +7,7 @@
 
 PORTNAME=	git-annex
 PORTVERSION=	3.20110702
+PORTREVISION=	1
 CATEGORIES=	devel haskell
 MASTER_SITES=	http://git.kitenet.net/?p=git-annex.git;a=snapshot;sf=tgz;h=refs/tags/
 DISTFILES=	${PORTVERSION}
