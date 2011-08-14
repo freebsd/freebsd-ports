@@ -32,6 +32,9 @@ MAKE_ENV+=	EXTRA_DEFINES="$(EXTRA_DEFINES)"
 PORTDOCS=	*
 .endif
 
+USERS=		mud
+GROUPS=		mud
+
 .include <bsd.port.pre.mk>
 
 EXTRA_DEFINES=
@@ -75,10 +78,5 @@ do-install:
 	${INSTALL_DATA} ${WRKDIR}/dgd/README ${DOCSDIR}
 	cd ${WRKDIR}/dgd/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
 .endif
-
-post-install:
-	@# Run package installation script
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGDIR}/pkg-install ${PKGNAME} \
-		POST-INSTALL
 
 .include <bsd.port.post.mk>
