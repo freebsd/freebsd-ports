@@ -123,6 +123,7 @@
     SUBDIR += guppi
     SUBDIR += hs-Agda
     SUBDIR += hs-Agda-executable
+    SUBDIR += hs-categories
     SUBDIR += hs-category-extras
     SUBDIR += hs-erf
     SUBDIR += hs-mwc-random
