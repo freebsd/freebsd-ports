@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	pandoc
-PORTVERSION=	1.8.1.1
-PORTREVISION=	6
+PORTVERSION=	1.8.2.1
 CATEGORIES=	textproc haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,9 +16,9 @@ LICENSE=	GPLv2
 FILE_LICENSE=	COPYING
 
 CABAL_SETUP=	Setup.hs
-USE_CABAL=	citeproc-hs>=0.3.1 dlist>=0.4 HTTP>=4000.0.5 json>=0.4 \
-		mtl>=1.1 network>=2 pandoc-types>=1.8 parsec>=2.1 \
-		tagsoup>=0.12 texmath>=0.5 utf8-string>=0.3 \
+USE_CABAL=	base64-bytestring>=0.1 citeproc-hs>=0.3.1 dlist>=0.4 \
+		HTTP>=4000.0.5 json>=0.4 mtl>=1.1 network>=2 pandoc-types>=1.8 \
+		parsec>=2.1 tagsoup>=0.12 texmath>=0.5 utf8-string>=0.3 \
 		xhtml>=3000.0 xml>=1.3.5 zip-archive>=0.1.1.7
 
 MAN1=		pandoc.1 markdown2pdf.1
