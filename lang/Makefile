@@ -213,6 +213,7 @@
     SUBDIR += p5-JavaScript-Value-Escape
     SUBDIR += p5-List-MoreUtils
     SUBDIR += p5-Modern-Perl
+    SUBDIR += p5-POE-Component-Hailo
     SUBDIR += p5-Parse-Perl
     SUBDIR += p5-Perl6-Subs
     SUBDIR += p5-Pugs-Compiler-Rule
