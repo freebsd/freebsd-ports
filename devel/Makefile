@@ -576,6 +576,7 @@
     SUBDIR += hs-ansi-terminal
     SUBDIR += hs-ansi-wl-pprint
     SUBDIR += hs-arrows
+    SUBDIR += hs-base64-bytestring
     SUBDIR += hs-binary
     SUBDIR += hs-blaze-builder
     SUBDIR += hs-blaze-builder-enumerator

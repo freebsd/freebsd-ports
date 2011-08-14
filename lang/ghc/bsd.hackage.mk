@@ -21,6 +21,7 @@ arrows_port=			devel/hs-arrows
 attoparsec_port=		textproc/hs-attoparsec
 attoparsec-enumerator_port=	textproc/hs-attoparsec-enumerator
 attoparsec-text_port=		textproc/hs-attoparsec-text
+base64-bytestring_port=		devel/hs-base64-bytestring
 binary_port=			devel/hs-binary
 bio_port=			science/hs-bio
 blaze-builder_port=		devel/hs-blaze-builder
