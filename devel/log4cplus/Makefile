@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	log4cplus
-PORTVERSION=	1.0.2
-PORTREVISION=	1
+PORTVERSION=	1.0.4
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-stable/${PORTVERSION}
-DISTFILES=	log4cplus-${PORTVERSION}.tar.gz log4cplus-${PORTVERSION}-docs.tar.gz
+DISTFILES=	log4cplus-${PORTVERSION}.tar.bz2
 
-MAINTAINER=	petri.totterman@hmv.fi
+MAINTAINER=	reed@reedmedia.net
 COMMENT=	A logging library for C++
 
 USE_AUTOTOOLS=	libtool
@@ -30,16 +29,12 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|g' ${WRKSRC}/configure
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/license.apl ${PREFIX}/include/log4cplus
+	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/include/log4cplus
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/docs/*.config ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/docs/*.html ${DOCSDIR}
-	${MKDIR} ${DOCSDIR}/html
-	${INSTALL_MAN} ${WRKSRC}/docs/html/*.html ${DOCSDIR}/html
-	${INSTALL_MAN} ${WRKSRC}/docs/html/*.png ${DOCSDIR}/html
-	${INSTALL_MAN} ${WRKSRC}/docs/html/doxygen.css ${DOCSDIR}/html
-	${INSTALL_MAN} ${WRKSRC}/docs/html/graph_legend.dot ${DOCSDIR}/html
+	${INSTALL_MAN} ${WRKSRC}/docs/doxygen.css ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
