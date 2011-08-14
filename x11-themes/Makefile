@@ -36,7 +36,6 @@
     SUBDIR += etoile-etoilemenus
     SUBDIR += etoile-iconkit
     SUBDIR += etoile-wildmenus
-    SUBDIR += fluxbox-sid-pack
     SUBDIR += fluxbox-tenr-styles-pack
     SUBDIR += fvwm-themes
     SUBDIR += geramik

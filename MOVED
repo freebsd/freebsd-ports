@@ -2511,3 +2511,4 @@ audio/coverhunter||2011-08-14|Has expired: required Amazon Developer Tokens are 
 databases/gauche-gdbm||2011-08-14|Has expired: has been broken for more than a year
 www/wiliki||2011-08-14|Removed: depends on expired gauche-gdbm
 mail/scmail||2011-08-14|Removed: depends on expired gauche-gdbm
+x11-themes/fluxbox-sid-pack||2011-08-14|Has expired: No longer maintained by upstream
