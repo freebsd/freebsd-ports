@@ -43,6 +43,7 @@ checkers_port=			devel/hs-checkers
 citeproc-hs_port=		textproc/hs-citeproc-hs
 cmdargs_port=			devel/hs-cmdargs
 comonad_port=			math/hs-comonad
+contravariant_port=		math/hs-contravariant
 convertible_port=		devel/hs-convertible
 cpphs_port=			devel/hs-cpphs		# executable
 criterion_port=			benchmarks/hs-criterion
