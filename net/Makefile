@@ -222,6 +222,7 @@
     SUBDIR += hs-network
     SUBDIR += hs-pcap
     SUBDIR += hs-sendfile
+    SUBDIR += hs-simple-sendfile
     SUBDIR += htpdate
     SUBDIR += http_ping
     SUBDIR += httping
