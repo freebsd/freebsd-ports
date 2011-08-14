@@ -7,7 +7,7 @@
 
 PORTNAME=	instant-server
 PORTVERSION=	1.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	misc
 MASTER_SITES=	# Empty
 DISTFILES=	# None
@@ -28,13 +28,10 @@ SAMBA_PORT?=	net/samba34
 # Don't let stupid programs ask for configuration.
 
 BATCH=		YES
-USE_APACHE=	1.3
+USE_APACHE=	13+
 NO_BUILD=	yes
 
 # comms/hylafax irc/ircd-hybrid
-
-postinstall:
-	cd ${PORTSDIR}/mail/postfix; make replace
 
 do-install:
 
