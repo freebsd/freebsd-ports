@@ -580,6 +580,7 @@
     SUBDIR += hs-binary
     SUBDIR += hs-blaze-builder
     SUBDIR += hs-blaze-builder-enumerator
+    SUBDIR += hs-blaze-textual
     SUBDIR += hs-bsd-sysctl
     SUBDIR += hs-bytestring-nums
     SUBDIR += hs-c2hs

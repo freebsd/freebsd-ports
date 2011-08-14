@@ -1,0 +1,4 @@
+blaze-textual is a fast Haskell library for rendering common
+Haskell datatypes in text form using the blaze-builder library.
+
+WWW:	http://github.com/mailrank/blaze-textual
