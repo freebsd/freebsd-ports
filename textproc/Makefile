@@ -516,6 +516,7 @@
     SUBDIR += p5-HTML-Tidy
     SUBDIR += p5-HTML-Tiny
     SUBDIR += p5-HTML-Truncate
+    SUBDIR += p5-Hailo
     SUBDIR += p5-Hash-Merge
     SUBDIR += p5-Hatena-Keyword
     SUBDIR += p5-IDNA-Punycode
