@@ -1,6 +1,0 @@
-#!/bin/sh
-#
-# $FreeBSD$
-
-cd "%%DATADIR%%"
-JAVA_VERSION="%%JAVA_VERSION%%" "%%LOCALBASE%%"/bin/java -jar "%%DATADIR%%"/geogebra.jar
