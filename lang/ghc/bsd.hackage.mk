@@ -11,6 +11,7 @@
 
 # KEEP THE LIST ALPHABETICALLY SORTED!
 
+aeson_port=			converters/hs-aeson
 Agda_port=			math/hs-Agda		# executable
 Agda-executable_port=		math/hs-Agda-executable	# executable
 alex_port=			devel/hs-alex		# executable
