@@ -1,0 +1,14 @@
+--- Makefile.PL	2011-05-06 21:02:43.000000000 -0700
++++ Makefile.PL	2011-07-20 11:35:49.000000000 -0700
+@@ -95,3 +95,11 @@
+ 
+     return $inherited;
+ }
++
++sub init_PM {
++    my $self = shift;
++    $self->SUPER::init_PM(@_);
++    # Do not install the README and README.pod
++    delete $self->{PM}{"README.pod"};
++    delete $self->{PM}{"README"};
++}
