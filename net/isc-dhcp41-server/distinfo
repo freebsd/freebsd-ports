@@ -1,4 +1,2 @@
-SHA256 (dhcp-4.1-ESV-R2.tar.gz) = 49fa6f00ceee536e1e66698cc416279d333f833e41d545185a5b8684638cff03
-SIZE (dhcp-4.1-ESV-R2.tar.gz) = 1094285
-SHA256 (ldap-for-dhcp-4.1.1-2.tar.gz) = 566b7be2ebefdc583d0bf0095c804ba69807b67e5cc29a2b64b1b39202b37d0d
-SIZE (ldap-for-dhcp-4.1.1-2.tar.gz) = 39004
+SHA256 (dhcp-4.1-ESV-R3.tar.gz) = 0bed3380e1daf6f17e3524d5ef282c8f0d2ca1f455479463bf15f0d44b76c615
+SIZE (dhcp-4.1-ESV-R3.tar.gz) = 1103284
