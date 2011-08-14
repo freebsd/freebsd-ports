@@ -92,7 +92,6 @@
     SUBDIR += gambas2-gb-db-postgresql
     SUBDIR += gambas2-gb-db-sqlite2
     SUBDIR += gambas2-gb-db-sqlite3
-    SUBDIR += gauche-gdbm
     SUBDIR += gbib
     SUBDIR += gdbm
     SUBDIR += gdl2

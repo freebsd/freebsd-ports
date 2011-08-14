@@ -1950,7 +1950,6 @@
     SUBDIR += wgetpaste
     SUBDIR += wikicalc
     SUBDIR += wikindx
-    SUBDIR += wiliki
     SUBDIR += wml
     SUBDIR += woof
     SUBDIR += wordpress

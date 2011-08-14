@@ -2508,3 +2508,6 @@ math/hs-category-extras||2011-08-14|Removed: this package is obsolete.
 lang/p5-POE-Component-Hailo||2011-08-14|Removed
 java/jdk14-doc|java/jdk16-doc|2011-08-14|Removed: jdk14 has been removed
 audio/coverhunter||2011-08-14|Has expired: required Amazon Developer Tokens are no longer available
+databases/gauche-gdbm||2011-08-14|Has expired: has been broken for more than a year
+www/wiliki||2011-08-14|Removed: depends on expired gauche-gdbm
+mail/scmail||2011-08-14|Removed: depends on expired gauche-gdbm
