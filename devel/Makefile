@@ -654,6 +654,7 @@
     SUBDIR += hs-unamb
     SUBDIR += hs-uniplate
     SUBDIR += hs-unix-compat
+    SUBDIR += hs-unordered-containers
     SUBDIR += hs-utf8-string
     SUBDIR += hs-utility-ht
     SUBDIR += hs-uuagc
