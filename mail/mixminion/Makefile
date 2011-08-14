@@ -33,6 +33,8 @@ OPTIONS=	SERVER "Also install the server" on
 USE_RC_SUBR+=	mixminiond
 SUB_FILES+=	pkg-message
 PLIST_SUB+=	SERVER=""
+USERS=	_${PORTNAME:L}
+GROUPS=	${USERS}
 .else
 PLIST_SUB+=	SERVER="@comment "
 .endif
@@ -46,8 +48,6 @@ post-install:
 		${PREFIX}/etc/mixminiond.conf.sample
 	@${INSTALL_DATA} ${WRKSRC}/etc/blacklist.conf \
 		${PREFIX}/etc/blacklist.conf.sample
-	@${SETENV} PKG_PREFIX=${PREFIX} ${SH} \
-		${PKGINSTALL} ${PKGNAME} PRE-INSTALL
 	@-${MKDIR} /var/spool/mixminion
 	@${CHOWN} _mixminion:_mixminion /var/spool/mixminion
 	@${CHMOD} 0700 /var/spool/mixminion
