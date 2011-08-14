@@ -14,7 +14,8 @@ MAINTAINER=	swell.k@gmail.com
 COMMENT=	A VDPAU-based backend for VAAPI
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libva.pc:${PORTSDIR}/multimedia/libva \
-		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat \
+		vdpau.1:${PORTSDIR}/multimedia/libvdpau
 LIB_DEPENDS=	vdpau.1:${PORTSDIR}/multimedia/libvdpau
 
 LICENSE=	GPLv2 GPLv3
