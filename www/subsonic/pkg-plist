@@ -1,0 +1,8 @@
+%%WEBAPPS%%/subsonic.war
+@unexec if [ ! -d %%WEBAPPS%%/subsonic ]; then rm -f %%WEBAPPS%%/subsonic; fi
+@unexec test -d %%SUBSONIC_HOME%% && (echo "Configuration information saved.  If you will *NOT* use this package anymore," && echo "please remove %%SUBSONIC_HOME%% and its contents manually.")
+@exec mkdir -p %%SUBSONIC_HOME%%
+%%TRANSCODING%%@exec ln -sf %%PREFIX/bin/ffmpeg %%SUBSONIC_HOME%%/transcode/ffmpeg
+%%TRANSCODING%%@exec ln -sf %%PREFIX%%/bin/lame %%SUBSONIC_HOME%%/transcode/lame
+%%TRANSCODING%%@unexec rm -f %%SUBSONIC_HOME%%/transcode/ffmpeg
+%%TRANSCODING%%@unexec rm -f %%SUBSONIC_HOME%%/transcode/lame
