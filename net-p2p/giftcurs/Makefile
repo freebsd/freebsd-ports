@@ -15,6 +15,8 @@ MASTER_SITE_SUBDIR=	giftcurs
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	A cursed frontend to the giFT daemon
 
+DEPRECATED=	unmaintained upstream for several years
+
 RUN_DEPENDS=	${LOCALBASE}/bin/giftd:${PORTSDIR}/net-p2p/gift
 
 GNU_CONFIGURE=	yes

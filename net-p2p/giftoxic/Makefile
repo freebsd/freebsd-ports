@@ -14,6 +14,8 @@ MASTER_SITES=	SF/${PORTNAME:L}/${PORTNAME:L}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	joeldiaz@bellsouth.net
 COMMENT=	GTK2 client for giFT
 
+DEPRECATED=	unmaintained upstream for several years
+
 LIB_DEPENDS=	gift.0:${PORTSDIR}/net-p2p/gift
 
 USE_GNOME=	gtk20 gnomeprefix gnomehack
