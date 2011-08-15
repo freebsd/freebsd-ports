@@ -6,6 +6,7 @@ share/locale/qjackctl_de.qm
 share/locale/qjackctl_es.qm
 share/locale/qjackctl_fr.qm
 share/locale/qjackctl_it.qm
+share/locale/qjackctl_nl.qm
 share/locale/qjackctl_ru.qm
 @dirrmtry share/applications
 @dirrmtry share/icons/hicolor/32x32/apps
