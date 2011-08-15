@@ -65,8 +65,8 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2011-2749</cvename>
     </references>
     <dates>
-      <discovery>2011-11-10</discovery>
-      <entry>2011-04-13</entry>
+      <discovery>2011-08-10</discovery>
+      <entry>2011-08-13</entry>
     </dates>
   </vuln>
 
