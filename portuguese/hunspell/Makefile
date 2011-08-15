@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	hunspell
-PORTVERSION=	20110608
-PORTREVISION=	1
+PORTVERSION=	20110813
 CATEGORIES=	portuguese textproc
 MASTER_SITES=	http://natura.di.uminho.pt/download/sources/Dictionaries/hunspell/ \
 		http://www.broffice.org/files/:BR
