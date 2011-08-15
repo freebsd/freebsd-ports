@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	qjackctl
-DISTVERSION=	0.3.7
+DISTVERSION=	0.3.8
 CATEGORIES=	audio
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20%28stable%29/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Qt Interface for the JACK Audio Connection Kit
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	asound:${PORTSDIR}/audio/alsa-lib \
 		jack.0:${PORTSDIR}/audio/jack
-
-LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
