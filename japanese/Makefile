@@ -105,7 +105,6 @@
     SUBDIR += ibus-anthy
     SUBDIR += ibus-mozc
     SUBDIR += ibus-skk
-    SUBDIR += ical
     SUBDIR += icanna
     SUBDIR += im-ja
     SUBDIR += ipadic
