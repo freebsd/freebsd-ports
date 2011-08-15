@@ -1793,62 +1793,12 @@ lib/wine/xinput1_3.dll.so
 lib/wine/xinput9_1_0.dll.so
 lib/wine/xmllite.dll.so
 share/applications/wine.desktop
-%%DATADIR%%/generic.ppd
-%%DATADIR%%/l_intl.nls
-%%DATADIR%%/wine.inf
-%%DATADIR%%/fonts/coue1255.fon
-%%DATADIR%%/fonts/coue1256.fon
-%%DATADIR%%/fonts/coue1257.fon
-%%DATADIR%%/fonts/coure.fon
-%%DATADIR%%/fonts/couree.fon
-%%DATADIR%%/fonts/coureg.fon
-%%DATADIR%%/fonts/courer.fon
-%%DATADIR%%/fonts/couret.fon
-%%DATADIR%%/fonts/cvgasys.fon
-%%DATADIR%%/fonts/hvgasys.fon
-%%DATADIR%%/fonts/jsmalle.fon
-%%DATADIR%%/fonts/jvgasys.fon
-%%DATADIR%%/fonts/marlett.ttf
-%%DATADIR%%/fonts/smae1255.fon
-%%DATADIR%%/fonts/smae1256.fon
-%%DATADIR%%/fonts/smae1257.fon
-%%DATADIR%%/fonts/smalle.fon
-%%DATADIR%%/fonts/smallee.fon
-%%DATADIR%%/fonts/smalleg.fon
-%%DATADIR%%/fonts/smaller.fon
-%%DATADIR%%/fonts/smallet.fon
-%%DATADIR%%/fonts/ssee1255.fon
-%%DATADIR%%/fonts/ssee1256.fon
-%%DATADIR%%/fonts/ssee1257.fon
-%%DATADIR%%/fonts/ssee874.fon
-%%DATADIR%%/fonts/sserife.fon
-%%DATADIR%%/fonts/sserifee.fon
-%%DATADIR%%/fonts/sserifeg.fon
-%%DATADIR%%/fonts/sserifer.fon
-%%DATADIR%%/fonts/sserifet.fon
-%%DATADIR%%/fonts/svgasys.fon
-%%DATADIR%%/fonts/symbol.ttf
-%%DATADIR%%/fonts/tahoma.ttf
-%%DATADIR%%/fonts/tahomabd.ttf
-%%DATADIR%%/fonts/vgas1255.fon
-%%DATADIR%%/fonts/vgas1256.fon
-%%DATADIR%%/fonts/vgas1257.fon
-%%DATADIR%%/fonts/vgas874.fon
-%%DATADIR%%/fonts/vgasys.fon
-%%DATADIR%%/fonts/vgasyse.fon
-%%DATADIR%%/fonts/vgasysg.fon
-%%DATADIR%%/fonts/vgasysr.fon
-%%DATADIR%%/fonts/vgasyst.fon
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/README.winedbg
 %%PORTDOCS%%%%DOCSDIR%%/README.winedump
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/fonts
-@dirrmtry %%DATADIR%%
-@dirrmtry %%DATADIR%%/aclocal
-@dirrmtry %%DATADIR%%
 @dirrmtry share/applications
 @dirrm lib/wine/fakedlls
 @dirrm lib/wine
