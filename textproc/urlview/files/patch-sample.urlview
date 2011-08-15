@@ -1,0 +1,25 @@
+--- sample.urlview~
++++ sample.urlview
+@@ -3,7 +3,6 @@
+ # man urlview  <Man page>
+ #
+ # Put this file in: $HOME/.urlview
+-# Put url_handler.sh in: /usr/bin
+ #
+ # You can call 'urlview' while in 'mutt' by pressing the Ctrl b keys.
+ # Put these macros in your $HOME/.muttrc file.
+@@ -19,10 +18,8 @@
+ #REGEXP (((http|https|ftp|gopher)|mailto):(//)?[^ >"\t]*|www\.[-a-z0-9.]+)[^ .,;\t>">\):]
+ REGEXP (((http|https|ftp|gopher)|mailto)[.:][^ >"\t]*|www\.[-a-z0-9.]+)[^ .,;\t>">\):]
+ 
+-# Command to invoke for selected URL.  Use lynx, netscape, or url_handler.sh
+-# shell script.
+-
+-#COMMAND lynx %s
+-#COMMAND netscape -remote 'openURL(%s)'
+-COMMAND url_handler.sh
++# Command to invoke for selected URL.
+ 
++#COMMAND lynx %s                            # :VT
++#COMMAND u=%s; xterm -e lynx $u || lynx $u  # :XT
++#COMMAND firefox %s 2>/dev/null &           # :XW
