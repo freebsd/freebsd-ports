@@ -470,6 +470,7 @@
     SUBDIR += git
     SUBDIR += git-annex
     SUBDIR += git-merge-changelog
+    SUBDIR += git-subversion
     SUBDIR += gitg
     SUBDIR += gitolite
     SUBDIR += gittrac
