@@ -4,9 +4,42 @@
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/__init__.py
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/__init__.pyc
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/__init__.pyo
-%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite.py
-%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite.pyc
-%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite.pyo
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/__init__.py
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/__init__.pyc
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/__init__.pyo
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/basic.py
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/basic.pyc
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/basic.pyo
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/centrality.py
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/centrality.pyc
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/centrality.pyo
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/cluster.py
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/cluster.pyc
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/cluster.pyo
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/projection.py
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/projection.pyc
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/projection.pyo
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/redundancy.py
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/redundancy.pyc
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/redundancy.pyo
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/spectral.py
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/spectral.pyc
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/spectral.pyo
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/tests/test_basic.py
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/tests/test_basic.pyc
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/tests/test_basic.pyo
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/tests/test_centrality.py
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/tests/test_centrality.pyc
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/tests/test_centrality.pyo
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/tests/test_cluster.py
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/tests/test_cluster.pyc
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/tests/test_cluster.pyo
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/tests/test_project.py
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/tests/test_project.pyc
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/tests/test_project.pyo
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/tests/test_spectral_bipartivity.py
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/tests/test_spectral_bipartivity.pyc
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/tests/test_spectral_bipartivity.pyo
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/block.py
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/block.pyc
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/block.pyo
@@ -121,6 +154,9 @@
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/distance_measures.py
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/distance_measures.pyc
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/distance_measures.pyo
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/distance_regular.py
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/distance_regular.pyc
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/distance_regular.pyo
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/euler.py
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/euler.pyc
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/euler.pyo
@@ -188,12 +224,18 @@
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/matching.py
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/matching.pyc
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/matching.pyo
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/mis.py
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/mis.pyc
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/mis.pyo
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/mixing.py
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/mixing.pyc
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/mixing.pyo
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/mst.py
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/mst.pyc
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/mst.pyo
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/neighbor_degree.py
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/neighbor_degree.pyc
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/neighbor_degree.pyo
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/operators.py
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/operators.pyc
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/operators.pyo
@@ -236,9 +278,6 @@
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/smetric.py
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/smetric.pyc
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/smetric.pyo
-%%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_bipartite.py
-%%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_bipartite.pyc
-%%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_bipartite.pyo
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_block.py
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_block.pyc
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_block.pyo
@@ -263,12 +302,18 @@
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_distance_measures.py
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_distance_measures.pyc
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_distance_measures.pyo
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_distance_regular.py
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_distance_regular.pyc
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_distance_regular.pyo
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_euler.py
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_euler.pyc
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_euler.pyo
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_matching.py
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_matching.pyc
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_matching.pyo
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_mis.py
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_mis.pyc
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_mis.pyo
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_mixing_attributes.py
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_mixing_attributes.pyc
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_mixing_attributes.pyo
@@ -278,6 +323,9 @@
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_mst.py
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_mst.pyc
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_mst.pyo
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_neighbor_degree.py
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_neighbor_degree.pyc
+%%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_neighbor_degree.pyo
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_operators.py
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_operators.pyc
 %%PYTHON_SITELIBDIR%%/networkx/algorithms/tests/test_operators.pyo
@@ -410,6 +458,9 @@
 %%PYTHON_SITELIBDIR%%/networkx/generators/hybrid.py
 %%PYTHON_SITELIBDIR%%/networkx/generators/hybrid.pyc
 %%PYTHON_SITELIBDIR%%/networkx/generators/hybrid.pyo
+%%PYTHON_SITELIBDIR%%/networkx/generators/intersection.py
+%%PYTHON_SITELIBDIR%%/networkx/generators/intersection.pyc
+%%PYTHON_SITELIBDIR%%/networkx/generators/intersection.pyo
 %%PYTHON_SITELIBDIR%%/networkx/generators/line.py
 %%PYTHON_SITELIBDIR%%/networkx/generators/line.pyc
 %%PYTHON_SITELIBDIR%%/networkx/generators/line.pyo
@@ -419,6 +470,9 @@
 %%PYTHON_SITELIBDIR%%/networkx/generators/small.py
 %%PYTHON_SITELIBDIR%%/networkx/generators/small.pyc
 %%PYTHON_SITELIBDIR%%/networkx/generators/small.pyo
+%%PYTHON_SITELIBDIR%%/networkx/generators/social.py
+%%PYTHON_SITELIBDIR%%/networkx/generators/social.pyc
+%%PYTHON_SITELIBDIR%%/networkx/generators/social.pyo
 %%PYTHON_SITELIBDIR%%/networkx/generators/stochastic.py
 %%PYTHON_SITELIBDIR%%/networkx/generators/stochastic.pyc
 %%PYTHON_SITELIBDIR%%/networkx/generators/stochastic.pyo
@@ -446,6 +500,9 @@
 %%PYTHON_SITELIBDIR%%/networkx/generators/tests/test_hybrid.py
 %%PYTHON_SITELIBDIR%%/networkx/generators/tests/test_hybrid.pyc
 %%PYTHON_SITELIBDIR%%/networkx/generators/tests/test_hybrid.pyo
+%%PYTHON_SITELIBDIR%%/networkx/generators/tests/test_intersection.py
+%%PYTHON_SITELIBDIR%%/networkx/generators/tests/test_intersection.pyc
+%%PYTHON_SITELIBDIR%%/networkx/generators/tests/test_intersection.pyo
 %%PYTHON_SITELIBDIR%%/networkx/generators/tests/test_line.py
 %%PYTHON_SITELIBDIR%%/networkx/generators/tests/test_line.pyc
 %%PYTHON_SITELIBDIR%%/networkx/generators/tests/test_line.pyo
@@ -551,12 +608,12 @@
 %%PYTHON_SITELIBDIR%%/networkx/readwrite/tests/test_yaml.py
 %%PYTHON_SITELIBDIR%%/networkx/readwrite/tests/test_yaml.pyc
 %%PYTHON_SITELIBDIR%%/networkx/readwrite/tests/test_yaml.pyo
+%%PYTHON_SITELIBDIR%%/networkx/relabel.py
+%%PYTHON_SITELIBDIR%%/networkx/relabel.pyc
+%%PYTHON_SITELIBDIR%%/networkx/relabel.pyo
 %%PYTHON_SITELIBDIR%%/networkx/release.py
 %%PYTHON_SITELIBDIR%%/networkx/release.pyc
 %%PYTHON_SITELIBDIR%%/networkx/release.pyo
-%%PYTHON_SITELIBDIR%%/networkx/sys.py
-%%PYTHON_SITELIBDIR%%/networkx/sys.pyc
-%%PYTHON_SITELIBDIR%%/networkx/sys.pyo
 %%PYTHON_SITELIBDIR%%/networkx/tests/__init__.py
 %%PYTHON_SITELIBDIR%%/networkx/tests/__init__.pyc
 %%PYTHON_SITELIBDIR%%/networkx/tests/__init__.pyo
@@ -578,6 +635,9 @@
 %%PYTHON_SITELIBDIR%%/networkx/tests/test_exceptions.py
 %%PYTHON_SITELIBDIR%%/networkx/tests/test_exceptions.pyc
 %%PYTHON_SITELIBDIR%%/networkx/tests/test_exceptions.pyo
+%%PYTHON_SITELIBDIR%%/networkx/tests/test_relabel.py
+%%PYTHON_SITELIBDIR%%/networkx/tests/test_relabel.pyc
+%%PYTHON_SITELIBDIR%%/networkx/tests/test_relabel.pyo
 %%PYTHON_SITELIBDIR%%/networkx/tests/test_utils.py
 %%PYTHON_SITELIBDIR%%/networkx/tests/test_utils.pyc
 %%PYTHON_SITELIBDIR%%/networkx/tests/test_utils.pyo
@@ -587,65 +647,63 @@
 %%PYTHON_SITELIBDIR%%/networkx/version.py
 %%PYTHON_SITELIBDIR%%/networkx/version.pyc
 %%PYTHON_SITELIBDIR%%/networkx/version.pyo
-%%PORTDOCS%%%%DOCSDIR%%-1.4/INSTALL.txt
-%%PORTDOCS%%%%DOCSDIR%%-1.4/LICENSE.txt
-%%PORTDOCS%%%%DOCSDIR%%-1.4/README.txt
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/advanced/eigenvalues.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/advanced/heavy_metal_umlaut.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/advanced/iterated_dynamical_systems.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/algorithms/blockmodel.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/algorithms/davis_club.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/algorithms/hartford_drug.edgelist
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/algorithms/krackhardt_centrality.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/basic/properties.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/basic/read_write.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/atlas.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/chess_masters.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/chess_masters_WCC.pgn.bz2
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/circular_tree.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/degree_histogram.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/edge_colormap.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/ego_graph.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/four_grids.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/giant_component.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/house_with_colors.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/knuth_miles.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/knuth_miles.txt.gz
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/labels_and_colors.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/lanl_routes.edgelist
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/lanl_routes.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/mayavi2_spring.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/node_colormap.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/random_geometric_graph.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/sampson.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/simple_path.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/unix_email.mbox
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/unix_email.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/drawing/weighted_graph.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/graph/atlas.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/graph/atlas2.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/graph/degree_sequence.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/graph/erdos_renyi.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/graph/expected_degree_sequence.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/graph/football.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/graph/karate_club.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/graph/knuth_miles.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/graph/knuth_miles.txt.gz
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/graph/napoleon_russian_campaign.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/graph/roget.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/graph/roget_dat.txt.gz
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/graph/unix_email.mbox
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/graph/unix_email.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/graph/words.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/graph/words_dat.txt.gz
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/multigraph/chess_masters.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/multigraph/chess_masters_WCC.pgn.bz2
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/pygraphviz/pygraphviz_attributes.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/pygraphviz/pygraphviz_draw.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/pygraphviz/pygraphviz_simple.py
-%%PORTDOCS%%%%DOCSDIR%%-1.4/examples/pygraphviz/write_dotfile.py
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL.txt
-%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%DOCSDIR%%/INSTALL.txt
+%%DOCSDIR%%/LICENSE.txt
+%%DOCSDIR%%/README.txt
+%%DOCSDIR%%/examples/advanced/eigenvalues.py
+%%DOCSDIR%%/examples/advanced/heavy_metal_umlaut.py
+%%DOCSDIR%%/examples/advanced/iterated_dynamical_systems.py
+%%DOCSDIR%%/examples/algorithms/blockmodel.py
+%%DOCSDIR%%/examples/algorithms/davis_club.py
+%%DOCSDIR%%/examples/algorithms/hartford_drug.edgelist
+%%DOCSDIR%%/examples/algorithms/krackhardt_centrality.py
+%%DOCSDIR%%/examples/basic/properties.py
+%%DOCSDIR%%/examples/basic/read_write.py
+%%DOCSDIR%%/examples/drawing/atlas.py
+%%DOCSDIR%%/examples/drawing/chess_masters.py
+%%DOCSDIR%%/examples/drawing/chess_masters_WCC.pgn.bz2
+%%DOCSDIR%%/examples/drawing/circular_tree.py
+%%DOCSDIR%%/examples/drawing/degree_histogram.py
+%%DOCSDIR%%/examples/drawing/edge_colormap.py
+%%DOCSDIR%%/examples/drawing/ego_graph.py
+%%DOCSDIR%%/examples/drawing/four_grids.py
+%%DOCSDIR%%/examples/drawing/giant_component.py
+%%DOCSDIR%%/examples/drawing/house_with_colors.py
+%%DOCSDIR%%/examples/drawing/knuth_miles.py
+%%DOCSDIR%%/examples/drawing/knuth_miles.txt.gz
+%%DOCSDIR%%/examples/drawing/labels_and_colors.py
+%%DOCSDIR%%/examples/drawing/lanl_routes.edgelist
+%%DOCSDIR%%/examples/drawing/lanl_routes.py
+%%DOCSDIR%%/examples/drawing/mayavi2_spring.py
+%%DOCSDIR%%/examples/drawing/node_colormap.py
+%%DOCSDIR%%/examples/drawing/random_geometric_graph.py
+%%DOCSDIR%%/examples/drawing/sampson.py
+%%DOCSDIR%%/examples/drawing/simple_path.py
+%%DOCSDIR%%/examples/drawing/unix_email.mbox
+%%DOCSDIR%%/examples/drawing/unix_email.py
+%%DOCSDIR%%/examples/drawing/weighted_graph.py
+%%DOCSDIR%%/examples/graph/atlas.py
+%%DOCSDIR%%/examples/graph/atlas2.py
+%%DOCSDIR%%/examples/graph/degree_sequence.py
+%%DOCSDIR%%/examples/graph/erdos_renyi.py
+%%DOCSDIR%%/examples/graph/expected_degree_sequence.py
+%%DOCSDIR%%/examples/graph/football.py
+%%DOCSDIR%%/examples/graph/karate_club.py
+%%DOCSDIR%%/examples/graph/knuth_miles.py
+%%DOCSDIR%%/examples/graph/knuth_miles.txt.gz
+%%DOCSDIR%%/examples/graph/napoleon_russian_campaign.py
+%%DOCSDIR%%/examples/graph/roget.py
+%%DOCSDIR%%/examples/graph/roget_dat.txt.gz
+%%DOCSDIR%%/examples/graph/unix_email.mbox
+%%DOCSDIR%%/examples/graph/unix_email.py
+%%DOCSDIR%%/examples/graph/words.py
+%%DOCSDIR%%/examples/graph/words_dat.txt.gz
+%%DOCSDIR%%/examples/multigraph/chess_masters.py
+%%DOCSDIR%%/examples/multigraph/chess_masters_WCC.pgn.bz2
+%%DOCSDIR%%/examples/pygraphviz/pygraphviz_attributes.py
+%%DOCSDIR%%/examples/pygraphviz/pygraphviz_draw.py
+%%DOCSDIR%%/examples/pygraphviz/pygraphviz_simple.py
+%%DOCSDIR%%/examples/pygraphviz/write_dotfile.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/advanced/eigenvalues.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/advanced/heavy_metal_umlaut.py
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/advanced/iterated_dynamical_systems.py
@@ -704,17 +762,16 @@
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/algorithms
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/advanced
 %%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.4/examples/readwrite
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.4/examples/pygraphviz
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.4/examples/multigraph
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.4/examples/graph
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.4/examples/drawing
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.4/examples/basic
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.4/examples/algorithms
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.4/examples/advanced
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.4/examples
-%%PORTDOCS%%@dirrm %%DOCSDIR%%-1.4
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DOCSDIR%%/examples/readwrite
+@dirrm %%DOCSDIR%%/examples/pygraphviz
+@dirrm %%DOCSDIR%%/examples/multigraph
+@dirrm %%DOCSDIR%%/examples/graph
+@dirrm %%DOCSDIR%%/examples/drawing
+@dirrm %%DOCSDIR%%/examples/basic
+@dirrm %%DOCSDIR%%/examples/algorithms
+@dirrm %%DOCSDIR%%/examples/advanced
+@dirrm %%DOCSDIR%%/examples
+@dirrm %%DOCSDIR%%
 @dirrm %%PYTHON_SITELIBDIR%%/networkx/tests
 @dirrm %%PYTHON_SITELIBDIR%%/networkx/readwrite/tests
 @dirrm %%PYTHON_SITELIBDIR%%/networkx/readwrite
@@ -742,8 +799,8 @@
 @dirrm %%PYTHON_SITELIBDIR%%/networkx/algorithms/chordal
 @dirrm %%PYTHON_SITELIBDIR%%/networkx/algorithms/centrality/tests
 @dirrm %%PYTHON_SITELIBDIR%%/networkx/algorithms/centrality
+@dirrm %%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite/tests
+@dirrm %%PYTHON_SITELIBDIR%%/networkx/algorithms/bipartite
 @dirrm %%PYTHON_SITELIBDIR%%/networkx/algorithms
 @dirrm %%PYTHON_SITELIBDIR%%/networkx
-@dirrm %%PYTHON_SITELIBDIR%%
-@dirrm lib/python2.6
-%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%-1.4/examples/readwrite
+@exec mkdir -p %D/%%DOCSDIR%%/examples/readwrite
