@@ -184,8 +184,8 @@ libexec/git-core/git-web--browse
 libexec/git-core/git-whatchanged
 libexec/git-core/git-write-tree
 %%GUI%%bin/gitk
-%%SITE_PERL%%/Git.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/.packlist
+%%PERLSUB%%%%SITE_PERL%%/Git.pm
+%%PERLSUB%%%%SITE_PERL%%/%%PERL_ARCH%%/auto/Git/.packlist
 lib/xemacs/site-lisp/git/git.el
 lib/xemacs/site-lisp/git/git-blame.el
 share/emacs/site-lisp/git/git.el
@@ -916,7 +916,7 @@ share/git-core/templates/info/exclude
 %%GITWEB%%@dirrm %%EXAMPLESDIR%%/gitweb/static
 %%GITWEB%%@dirrm %%EXAMPLESDIR%%/gitweb
 %%GITWEB%%@dirrm %%EXAMPLESDIR%%
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
+%%PERLSUB%%@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Git
 @dirrm lib/xemacs/site-lisp/git
 @dirrmtry lib/xemacs/site-lisp
 @dirrmtry lib/xemacs

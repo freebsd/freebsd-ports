@@ -17,7 +17,7 @@ EXTRACT_ONLY=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX}
 
 MAINTAINER=	wxs@FreeBSD.org
-COMMENT=	Distributed source code management tool
+COMMENT?=	Distributed source code management tool
 
 MAKE_JOBS_SAFE=	yes
 
@@ -171,6 +171,8 @@ MAN7=		gitcli.7 \
 		gitworkflows.7 \
 		gitrevisions.7
 
+CONFLICTS?=	git-subversion-[0-9]*
+
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
@@ -223,9 +225,10 @@ BUILD_DEPENDS+=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error
 RUN_DEPENDS+=	${SITE_PERL}/Error.pm:${PORTSDIR}/lang/p5-Error \
 		${SITE_PERL}/Net/SMTP/SSL.pm:${PORTSDIR}/mail/p5-Net-SMTP-SSL
 MAN3=		Git.3
+PLIST_SUB+=	PERLSUB=""
 .else
 MAKE_ENV+=	NO_PERL=1
-PLIST_SUB+=	SITE_PERL="@comment "
+PLIST_SUB+=	PERLSUB="@comment "
 .endif
 
 .ifdef (WITH_ICONV)
@@ -271,13 +274,14 @@ PLIST_SUB+=	GUI="@comment "
 MAKE_ARGS+=	NO_TCLTK=yes
 .endif
 
-.ifdef (WITH_SVN) || defined(WITH_SVN_FBSD)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey \
-		${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversion
+.ifdef (WITH_SVN) || defined (WITH_SVN_FBSD)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Term/ReadKey.pm:${PORTSDIR}/devel/p5-Term-ReadKey
 .ifdef (WITH_SVN_FBSD)
-RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion-freebsd
+RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion-freebsd \
+		${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversion-freebsd
 .else
-RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion
+RUN_DEPENDS+=	svn:${PORTSDIR}/devel/subversion \
+		${SITE_PERL}/${PERL_ARCH}/SVN/Core.pm:${PORTSDIR}/devel/p5-subversion
 .endif
 PLIST_SUB+=	SVN=""
 MAN1+=		git-svn.1
@@ -292,7 +296,7 @@ PLIST_SUB+=	GITWEB=""
 PLIST_SUB+=	GITWEB="@comment "
 .endif
 
-.ifdef (WITH_GITWEB) && !defined(WITH_PERL)
+.ifdef (WITH_GITWEB) && !defined (WITH_PERL)
 IGNORE=	using GITWEB support requires PERL support
 .endif
 
@@ -326,10 +330,10 @@ PLIST_SUB+=	ETCSHELLS=""
 PLIST_SUB+=	ETCSHELLS="@comment "
 .endif
 
-.if defined(MAINTAINER_MODE)
+.if defined (MAINTAINER_MODE)
 DISTFILES+=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX}.sign \
 		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX}.sign
-.if defined(WITH_HTMLDOCS)
+.if defined (WITH_HTMLDOCS)
 DISTFILES+=	${PORTNAME}-htmldocs-${PORTVERSION}${EXTRACT_SUFX}.sign
 .endif
 verify: fetch
@@ -340,7 +344,7 @@ verify: fetch
 .endif
 
 post-extract:
-.if defined(WITH_HTMLDOCS)
+.if defined (WITH_HTMLDOCS)
 	@${MKDIR} ${WRKDIR}/htmldocs
 	@cd ${WRKDIR}/htmldocs && ${EXTRACT_CMD} ${EXTRACT_BEFORE_ARGS} \
 		${DISTDIR}/${PORTNAME}-htmldocs-${PORTVERSION}${EXTRACT_SUFX} \
@@ -363,7 +367,7 @@ post-patch:
 		s/git-cvsserver//' \
 		${WRKSRC}/Makefile
 .endif
-.ifndef (WITH_SVN)
+.ifndef (WITH_SVN) && !defined (WITH_SVN_FBSD)
 	@${REINPLACE_CMD} -e '/git-svn.perl/d' ${WRKSRC}/Makefile
 .endif
 .ifndef (WITH_GITWEB)
@@ -385,7 +389,7 @@ post-install:
 	(cd ${WRKDIR}/man1/ && ${COPYTREE_SHARE} \* ${MANPREFIX}/man/man1)
 	(cd ${WRKDIR}/man5/ && ${COPYTREE_SHARE} \* ${MANPREFIX}/man/man5)
 	(cd ${WRKDIR}/man7/ && ${COPYTREE_SHARE} \* ${MANPREFIX}/man/man7)
-.if defined(WITH_HTMLDOCS)
+.if defined (WITH_HTMLDOCS)
 	${MKDIR} ${DOCSDIR}
 	(cd ${WRKDIR}/htmldocs/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
