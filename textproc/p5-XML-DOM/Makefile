@@ -14,10 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl module for building DOM Level 1 compliant document structures
 
-RUN_DEPENDS=	${PBASE}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
-		${PBASE}/XML/Parser/PerlSAX.pm:${PORTSDIR}/textproc/p5-libxml \
-		${PBASE}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
-		${PBASE}/XML/RegExp.pm:${PORTSDIR}/textproc/p5-XML-RegExp
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML-Parser \
+		${SITE_PERL}/XML/Parser/PerlSAX.pm:${PORTSDIR}/textproc/p5-libxml \
+		${SITE_PERL}/LWP/UserAgent.pm:${PORTSDIR}/www/p5-libwww \
+		${SITE_PERL}/XML/RegExp.pm:${PORTSDIR}/textproc/p5-XML-RegExp
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
@@ -34,7 +34,5 @@ MAN3=		XML::DOM.3 XML::DOM::AttDef.3 XML::DOM::AttlistDecl.3 \
 		XML::DOM::Parser.3 XML::DOM::PerlSAX.3 \
 		XML::DOM::ProcessingInstruction.3 XML::DOM::Text.3 \
 		XML::DOM::XMLDecl.3 XML::Handler::BuildDOM.3
-
-PBASE=		${SITE_PERL}
 
 .include <bsd.port.mk>
