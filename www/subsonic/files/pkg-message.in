@@ -1,0 +1,10 @@
+
+========================================================================
+
+Access Subsonic at http://localhost:8180/subsonic/ (if using the default
+Tomcat HTTP port).
+
+If you encounter problems with thumbnails, start tomcat with 
+%%TOMCATOPTS%%="-Djava.awt.headless=true"
+
+========================================================================
