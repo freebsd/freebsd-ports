@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110815:
+  AFFECTS: users of sysutils/swapexd
+  AUTHOR: crees
+
+  swapexd used to clobber its config file on deinstall, unfortunately this will
+  not be fixed in installed packages. Back up your config before updating, or
+  you will lose it!
+
+  # cp /usr/local/etc/swapexd/swapexd.conf ~/swapexd.conf.bak
+
 20110808:
   AFFECTS: users of net-mgmt/zenoss
   AUTHOR: pphillips@experts-exchange.com
