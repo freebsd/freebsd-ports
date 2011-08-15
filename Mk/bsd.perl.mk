@@ -116,7 +116,7 @@ masked_PERL_LEVEL=	${PERL_LEVEL}
 
 .if ${want_perl_sign} == "+"
 .if ${USE_PERL5_LEVEL} > ${masked_PERL_LEVEL}
-USE_PERL5_REASON?=	requires Perl ${want_perl_ver} or later, install lang/perl5.8 or lang/perl5.10 or lang/perl5.12 and try again
+USE_PERL5_REASON?=	requires Perl ${want_perl_ver} or later, install lang/perl5.8, lang/perl5.10, lang/perl5.12 or lang/perl5.14 and try again
 IGNORE=	${USE_PERL5_REASON}
 .endif # ${USE_PERL5_LEVEL} > ${masked_PERL_LEVEL}
 .elif ${want_perl_sign} == ""
