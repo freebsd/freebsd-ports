@@ -29,6 +29,8 @@ bin/sbagen
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/ch-schumann-cycle.sbg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/ch-sonic-caffeine.sbg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/cjm-tempus-fugit.sbg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/cy-eye-refresher.sbg
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/cy-prana-energiser.sbg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/ghostlab/bells-1.sbg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/ghostlab/bells-2.sbg
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/contrib/ghostlab/bells-3.sbg
