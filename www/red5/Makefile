@@ -25,8 +25,18 @@ RED5_HOME?=	${PREFIX}/${PORTNAME}
 
 SUB_LIST+=	RED5_USER=${RED5_USER} RED5_HOME=${RED5_HOME}
 
-pre-install:
+post-patch:
 	@${REINPLACE_CMD} -e 's/0.0.0.0/127.0.0.1/' ${WRKSRC}/conf/red5.properties
+	(cd ${WRKSRC}/conf \
+		&& for file in `find . -type f` ; \
+		   do	${MV} $$file $$file.sample ; \
+		done)
+.for webappssubdir in installer root
+	(cd ${WRKSRC}/webapps/${webappssubdir}/WEB-INF \
+		&& for file in * ; \
+		   do	${MV} $$file $$file.sample ; \
+		done)
+.endfor
 
 do-install:
 	${MKDIR} ${RED5_HOME}/conf ${RED5_HOME}/lib ${RED5_HOME}/webapps ${RED5_HOME}/log
@@ -44,5 +54,11 @@ post-install:
 .endif
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${RED5_USER}:${RED5_GRP} ${RED5_HOME}' \
 		>> ${TMPPLIST}
+	for file in `find ${RED5_HOME}/conf -type f -regex '.*\.sample$$'` ; \
+	  do	[ -f $${file%.sample} ] || ${CP} -p $$file $${file%.sample} ; \
+	  done
+	for file in ${RED5_HOME}/webapps/root/WEB-INF/*.sample ${RED5_HOME}/webapps/installer/WEB-INF/*.sample ; \
+	  do	[ -f $${file%.sample} ] || ${CP} -p $$file $${file%.sample} ; \
+	  done
 
 .include <bsd.port.mk>
