@@ -6,11 +6,13 @@
 #
 # NOTE:  The fetchmailconf program (an interactive program for
 # writing .fetchmailrc files) requires Python, Tk, X11, etc..
+#
 # The fetchmail program itself does not need Python, but if you
-# want fetchmailconf to work, define WITH_X11
+# want fetchmailconf to work, define the X11 option.
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.3.20
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	BERLIOS/fetchmail/ \
 		http://mandree.home.pages.de/fetchmail/ \
@@ -21,6 +23,7 @@ COMMENT=	Batch mail retrieval utility for IMAP/POP3/ETRN/ODMR
 
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 
+# Note USERS can only contain a single word as parts below rely on that.
 USERS=		${PORTNAME}
 GROUPS=		${USERS}
 
@@ -45,7 +48,7 @@ MLINKS=		fetchmail.1 fetchmailconf.1
 OPTIONS=	X11	"Python/Tkinter dependencies for fetchmailconf" off \
 		NLS	"National language support (NLS)."		on \
 		NTLM	"Build in support for NTLM/MSN authentication." off \
-		GSSAPI	"Build GSSAPI/Kerberos 5 support" 		off
+		GSSAPI	"Build GSSAPI/Kerberos 5 support" 		on
 
 .include <bsd.port.options.mk>
 
@@ -121,7 +124,9 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKDIR}/fetchmailconf ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/fetchmailconf.py ${PREFIX}/libexec
 
-	${INSTALL} -m 644 -o fetchmail -g fetchmail ${FILESDIR}/fetchmailrc.sample ${PREFIX}/etc/fetchmailrc.sample
+	${MKDIR} -m 0755 "/var/run/${PORTNAME}"
+	${CHOWN} "${USERS}:${GROUPS}" "/var/run/${PORTNAME}"
+	${INSTALL} -m 644 -o ${USERS} -g ${GROUPS} ${FILESDIR}/fetchmailrc.sample ${PREFIX}/etc/fetchmailrc.sample
 	if [ ! -f ${PREFIX}/etc/fetchmailrc ]; then \
 		${CP} -p ${PREFIX}/etc/fetchmailrc.sample ${PREFIX}/etc/fetchmailrc ; \
 		${CHMOD} 600 ${PREFIX}/etc/fetchmailrc ; \
