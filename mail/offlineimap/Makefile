@@ -10,40 +10,71 @@ DISTVERSION=	6.3.3
 PORTREVISION=	1
 CATEGORIES=	mail python
 MASTER_SITES=	http://download.github.com/ \
-		${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	sergei
-DISTNAME=	nicolas33-${PORTNAME}-v${DISTVERSION}-0-g3b09695
+		http://dist.codelabs.ru/fbsd/offlineimap/ \
+		LOCAL/rea/offlineimap
+DISTNAME=	${GITHUB_USER}-${PORTNAME}-v${DISTVERSION}-0-g3b09695
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Powerful IMAP/Maildir synchronization and reader support
 
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
+
 LICENSE_FILE_GPLv2=${WRKSRC}/COPYING
 
-WRKSRC=		${WRKDIR}/nicolas33-${PORTNAME}-cf325d5
+OPTIONS=	HTMLDOCS "Generate HTML documentation" Off
+
+WRKSRC=		${WRKDIR}/${GITHUB_USER}-${PORTNAME}-cf325d5
 SUB_FILES=	pkg-message
+
+GITHUB_USER=	nicolas33
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
-DOCS=		*.rst docs/*.rst
+DOCS=		Changelog.rst README.rst SubmittingPatches.rst \
+		docs/FAQ.rst docs/INSTALL.rst docs/MANUAL.rst docs/UPGRADE.rst
 EXAMPLES=	offlineimap.conf offlineimap.conf.minimal
+PORTDOCS=	${DOCS:T}
+PORTEXAMPLES=	${EXAMPLES}
+
+.include <bsd.port.options.mk>
+
+.if !defined(NOPORTDOCS) && defined(WITH_HTMLDOCS)
+BUILD_DEPENDS+=	rst2html:${PORTSDIR}/textproc/py-docutils
+DOCS:=		${DOCS} ${DOCS:M*.rst:S/.rst$/.html/}
+.endif
+
+# This is needed for pkg-message.in
+.if defined(NOPORTEXAMPLES)
+SUB_LIST+=	PORTEXAMPLES="@comment "
+.else
+SUB_LIST+=	PORTEXAMPLES=""
+.endif
 
 pre-fetch:
 	# get github download ticket
 	if [ ! -f ${DISTDIR}/${DISTFILES} ]; then \
 		${FETCH_BINARY} -s >/dev/null \
-			http://github.com/nicolas33/${PORTNAME}/tarball/v${DISTVERSION}; \
+			http://github.com/${GITHUB_USER}/${PORTNAME}/tarball/v${DISTVERSION}; \
 	fi
+
+post-build:
+.if !defined(NOPORTDOCS) && defined(WITH_HTMLDOCS)
+.for r in ${DOCS:M*.rst}
+	rst2html ${WRKSRC}/${r} ${WRKSRC}/${r:R}.html
+.endfor
+.endif
 
 post-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 	cd ${WRKSRC} && ${INSTALL_DATA} ${EXAMPLES} ${EXAMPLESDIR}
+.endif
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>

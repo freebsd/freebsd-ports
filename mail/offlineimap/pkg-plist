@@ -103,16 +103,3 @@ bin/offlineimap
 %%PYTHON_SITELIBDIR%%/offlineimap/threadutil.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/threadutil.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/offlineimap
-%%PORTDOCS%%%%DOCSDIR%%/Changelog.draft.rst
-%%PORTDOCS%%%%DOCSDIR%%/Changelog.maint.rst
-%%PORTDOCS%%%%DOCSDIR%%/Changelog.rst
-%%PORTDOCS%%%%DOCSDIR%%/FAQ.rst
-%%PORTDOCS%%%%DOCSDIR%%/INSTALL.rst
-%%PORTDOCS%%%%DOCSDIR%%/MANUAL.rst
-%%PORTDOCS%%%%DOCSDIR%%/README.rst
-%%PORTDOCS%%%%DOCSDIR%%/SubmittingPatches.rst
-%%PORTDOCS%%%%DOCSDIR%%/UPGRADE.rst
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%EXAMPLESDIR%%/offlineimap.conf
-%%EXAMPLESDIR%%/offlineimap.conf.minimal
-@dirrm %%EXAMPLESDIR%%
