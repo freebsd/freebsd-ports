@@ -132,6 +132,7 @@
     SUBDIR += enfle
     SUBDIR += eog
     SUBDIR += eog-plugins
+    SUBDIR += eos-movrec
     SUBDIR += epdfview
     SUBDIR += epeg
     SUBDIR += epix
