@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	docbook-xsl
-PORTVERSION=	1.75.2
-PORTREVISION=	1
+PORTVERSION=	1.76.1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/docbook/${PORTNAME}/${PORTVERSION}:src \
 		SF/docbook/${PORTNAME}-doc/${PORTVERSION}:doc
@@ -16,8 +15,9 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:src
 MAINTAINER=	skv@FreeBSD.org
 COMMENT=	XSL DocBook stylesheets
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr
-RUN_DEPENDS=	docbook>=0:${PORTSDIR}/textproc/docbook
+BUILD_DEPENDS=	xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr
+RUN_DEPENDS=	docbook>=0:${PORTSDIR}/textproc/docbook \
+		xmlcatmgr:${PORTSDIR}/textproc/xmlcatmgr
 
 .if !defined(NOPORTDOCS)
 DISTFILES+=	${PORTNAME}-doc-${PORTVERSION}${EXTRACT_SUFX}:doc
