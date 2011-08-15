@@ -8,6 +8,7 @@ share/xsl/docbook/NEWS.html
 share/xsl/docbook/NEWS.xml
 share/xsl/docbook/README
 share/xsl/docbook/RELEASE-NOTES.html
+share/xsl/docbook/RELEASE-NOTES.pdf
 share/xsl/docbook/RELEASE-NOTES.txt
 share/xsl/docbook/RELEASE-NOTES.xml
 share/xsl/docbook/TODO
@@ -17,11 +18,14 @@ share/xsl/docbook/catalog.xml
 share/xsl/docbook/common/af.xml
 share/xsl/docbook/common/am.xml
 share/xsl/docbook/common/ar.xml
+share/xsl/docbook/common/as.xml
+share/xsl/docbook/common/ast.xml
 share/xsl/docbook/common/autoidx-kimber.xsl
 share/xsl/docbook/common/autoidx-kosek.xsl
 share/xsl/docbook/common/az.xml
 share/xsl/docbook/common/bg.xml
 share/xsl/docbook/common/bn.xml
+share/xsl/docbook/common/bn_in.xml
 share/xsl/docbook/common/bs.xml
 share/xsl/docbook/common/ca.xml
 share/xsl/docbook/common/charmap.xml
@@ -55,6 +59,7 @@ share/xsl/docbook/common/insertfile.xsl
 share/xsl/docbook/common/is.xml
 share/xsl/docbook/common/it.xml
 share/xsl/docbook/common/ja.xml
+share/xsl/docbook/common/ka.xml
 share/xsl/docbook/common/kn.xml
 share/xsl/docbook/common/ko.xml
 share/xsl/docbook/common/ky.xml
@@ -65,8 +70,11 @@ share/xsl/docbook/common/la.xml
 share/xsl/docbook/common/labels.xsl
 share/xsl/docbook/common/lt.xml
 share/xsl/docbook/common/lv.xml
+share/xsl/docbook/common/ml.xml
 share/xsl/docbook/common/mn.xml
+share/xsl/docbook/common/mr.xml
 share/xsl/docbook/common/nb.xml
+share/xsl/docbook/common/nds.xml
 share/xsl/docbook/common/nl.xml
 share/xsl/docbook/common/nn.xml
 share/xsl/docbook/common/olink.xsl
@@ -93,6 +101,7 @@ share/xsl/docbook/common/ta.xml
 share/xsl/docbook/common/table.xsl
 share/xsl/docbook/common/targetdatabase.dtd
 share/xsl/docbook/common/targets.xsl
+share/xsl/docbook/common/te.xml
 share/xsl/docbook/common/th.xml
 share/xsl/docbook/common/titles.xsl
 share/xsl/docbook/common/tl.xml
@@ -106,15 +115,24 @@ share/xsl/docbook/common/zh.xml
 share/xsl/docbook/common/zh_cn.xml
 share/xsl/docbook/common/zh_tw.xml
 %%ECLIPSE%%share/xsl/docbook/eclipse/eclipse.xsl
+%%ECLIPSE%%share/xsl/docbook/eclipse/eclipse3.xsl
 %%ECLIPSE%%share/xsl/docbook/eclipse/profile-eclipse.xsl
 %%EPUB%%share/xsl/docbook/epub/README
 %%EPUB%%share/xsl/docbook/epub/bin/dbtoepub
 %%EPUB%%share/xsl/docbook/epub/bin/docbook.rb
 %%EPUB%%share/xsl/docbook/epub/bin/lib/docbook.rb
+%%EPUB%%share/xsl/docbook/epub/bin/obfuscate.xsl
+%%EPUB%%share/xsl/docbook/epub/bin/xslt/obfuscate.xsl
 %%EPUB%%share/xsl/docbook/epub/docbook.xsl
+%%EXTENSIONS%%share/xsl/docbook/extensions/LICENSE.txt
+%%EXTENSIONS%%share/xsl/docbook/extensions/NOTICE.txt
 %%EXTENSIONS%%share/xsl/docbook/extensions/README.LIBXSLT
+%%EXTENSIONS%%share/xsl/docbook/extensions/README.txt
 %%EXTENSIONS%%share/xsl/docbook/extensions/docbook.py
+%%EXTENSIONS%%share/xsl/docbook/extensions/lucene-analyzers-3.0.0.jar
+%%EXTENSIONS%%share/xsl/docbook/extensions/lucene-core-3.0.0.jar
 %%EXTENSIONS%%share/xsl/docbook/extensions/saxon65.jar
+%%EXTENSIONS%%share/xsl/docbook/extensions/webhelpindexer.jar
 %%EXTENSIONS%%share/xsl/docbook/extensions/xalan27.jar
 %%EXTENSIONS%%share/xsl/docbook/extensions/xslt.py
 share/xsl/docbook/fo/admon.xsl
@@ -211,6 +229,7 @@ share/xsl/docbook/html/chunkfast.xsl
 share/xsl/docbook/html/chunktoc.xsl
 share/xsl/docbook/html/component.xsl
 share/xsl/docbook/html/division.xsl
+share/xsl/docbook/html/docbook.css.xml
 share/xsl/docbook/html/docbook.xsl
 share/xsl/docbook/html/ebnf.xsl
 share/xsl/docbook/html/footnote.xsl
@@ -492,6 +511,7 @@ share/xsl/docbook/params/css.stylesheet.dir.xml
 share/xsl/docbook/params/css.stylesheet.xml
 share/xsl/docbook/params/current.docid.xml
 share/xsl/docbook/params/currentpage.marker.xml
+share/xsl/docbook/params/custom.css.source.xml
 share/xsl/docbook/params/default.float.class.xml
 share/xsl/docbook/params/default.image.width.xml
 share/xsl/docbook/params/default.table.frame.xml
@@ -499,6 +519,8 @@ share/xsl/docbook/params/default.table.rules.xml
 share/xsl/docbook/params/default.table.width.xml
 share/xsl/docbook/params/default.units.xml
 share/xsl/docbook/params/dingbat.font.family.xml
+share/xsl/docbook/params/docbook.css.link.xml
+share/xsl/docbook/params/docbook.css.source.xml
 share/xsl/docbook/params/double.sided.xml
 share/xsl/docbook/params/draft.mode.xml
 share/xsl/docbook/params/draft.watermark.image.xml
@@ -518,6 +540,7 @@ share/xsl/docbook/params/email.mailto.enabled.xml
 share/xsl/docbook/params/emphasis.propagates.style.xml
 share/xsl/docbook/params/entry.propagates.style.xml
 share/xsl/docbook/params/epub.autolabel.xml
+share/xsl/docbook/params/equation.number.properties.xml
 share/xsl/docbook/params/equation.properties.xml
 share/xsl/docbook/params/example.properties.xml
 share/xsl/docbook/params/exsl.node.set.available.xml
@@ -555,6 +578,7 @@ share/xsl/docbook/params/formal.title.properties.xml
 share/xsl/docbook/params/funcsynopsis.decoration.xml
 share/xsl/docbook/params/funcsynopsis.style.xml
 share/xsl/docbook/params/function.parens.xml
+share/xsl/docbook/params/generate.css.header.xml
 share/xsl/docbook/params/generate.id.attributes.xml
 share/xsl/docbook/params/generate.index.xml
 share/xsl/docbook/params/generate.legalnotice.link.xml
@@ -703,6 +727,7 @@ share/xsl/docbook/params/link.mailto.url.xml
 share/xsl/docbook/params/list.block.properties.xml
 share/xsl/docbook/params/list.block.spacing.xml
 share/xsl/docbook/params/list.item.spacing.xml
+share/xsl/docbook/params/make.clean.html.xml
 share/xsl/docbook/params/make.graphic.viewport.xml
 share/xsl/docbook/params/make.index.markup.xml
 share/xsl/docbook/params/make.single.year.ranges.xml
@@ -1241,6 +1266,7 @@ share/xsl/docbook/xhtml/chunkfast.xsl
 share/xsl/docbook/xhtml/chunktoc.xsl
 share/xsl/docbook/xhtml/component.xsl
 share/xsl/docbook/xhtml/division.xsl
+share/xsl/docbook/xhtml/docbook.css.xml
 share/xsl/docbook/xhtml/docbook.xsl
 share/xsl/docbook/xhtml/ebnf.xsl
 share/xsl/docbook/xhtml/footnote.xsl
@@ -1299,6 +1325,7 @@ share/xsl/docbook/xhtml/xref.xsl
 %%XHTML11%%share/xsl/docbook/xhtml-1_1/chunktoc.xsl
 %%XHTML11%%share/xsl/docbook/xhtml-1_1/component.xsl
 %%XHTML11%%share/xsl/docbook/xhtml-1_1/division.xsl
+%%XHTML11%%share/xsl/docbook/xhtml-1_1/docbook.css.xml
 %%XHTML11%%share/xsl/docbook/xhtml-1_1/docbook.xsl
 %%XHTML11%%share/xsl/docbook/xhtml-1_1/ebnf.xsl
 %%XHTML11%%share/xsl/docbook/xhtml-1_1/footnote.xsl
@@ -1460,6 +1487,7 @@ share/xsl/docbook/xhtml/xref.xsl
 %%PORTDOCS%%%%DOCSDIR%%/fo/ebnf.statement.terminator.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/email.delimiters.enabled.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/email.mailto.enabled.html
+%%PORTDOCS%%%%DOCSDIR%%/fo/equation.number.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/equation.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/example.properties.html
 %%PORTDOCS%%%%DOCSDIR%%/fo/exsl.node.set.available.html
@@ -1812,11 +1840,14 @@ share/xsl/docbook/xhtml/xref.xsl
 %%PORTDOCS%%%%DOCSDIR%%/html/contrib.inline.enabled.html
 %%PORTDOCS%%%%DOCSDIR%%/html/css.decoration.html
 %%PORTDOCS%%%%DOCSDIR%%/html/current.docid.html
+%%PORTDOCS%%%%DOCSDIR%%/html/custom.css.source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/dbk_ext.html
 %%PORTDOCS%%%%DOCSDIR%%/html/default.float.class.html
 %%PORTDOCS%%%%DOCSDIR%%/html/default.image.width.html
 %%PORTDOCS%%%%DOCSDIR%%/html/default.table.frame.html
 %%PORTDOCS%%%%DOCSDIR%%/html/default.table.width.html
+%%PORTDOCS%%%%DOCSDIR%%/html/docbook.css.link.html
+%%PORTDOCS%%%%DOCSDIR%%/html/docbook.css.source.html
 %%PORTDOCS%%%%DOCSDIR%%/html/draft.mode.html
 %%PORTDOCS%%%%DOCSDIR%%/html/draft.watermark.image.html
 %%PORTDOCS%%%%DOCSDIR%%/html/ebnf.assignment.html
@@ -1843,6 +1874,7 @@ share/xsl/docbook/xhtml/xref.xsl
 %%PORTDOCS%%%%DOCSDIR%%/html/funcsynopsis.decoration.html
 %%PORTDOCS%%%%DOCSDIR%%/html/funcsynopsis.style.html
 %%PORTDOCS%%%%DOCSDIR%%/html/function.parens.html
+%%PORTDOCS%%%%DOCSDIR%%/html/generate.css.header.html
 %%PORTDOCS%%%%DOCSDIR%%/html/generate.id.attributes.html
 %%PORTDOCS%%%%DOCSDIR%%/html/generate.index.html
 %%PORTDOCS%%%%DOCSDIR%%/html/generate.legalnotice.link.html
@@ -1961,6 +1993,7 @@ share/xsl/docbook/xhtml/xref.xsl
 %%PORTDOCS%%%%DOCSDIR%%/html/link.mailto.url.html
 %%PORTDOCS%%%%DOCSDIR%%/html/links.html
 %%PORTDOCS%%%%DOCSDIR%%/html/lists.html
+%%PORTDOCS%%%%DOCSDIR%%/html/make.clean.html.html
 %%PORTDOCS%%%%DOCSDIR%%/html/make.graphic.viewport.html
 %%PORTDOCS%%%%DOCSDIR%%/html/make.single.year.ranges.html
 %%PORTDOCS%%%%DOCSDIR%%/html/make.valid.html.html
@@ -2514,6 +2547,7 @@ share/xsl/docbook/xhtml/xref.xsl
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm share/xsl/docbook/common
 %%ECLIPSE%%@dirrm share/xsl/docbook/eclipse
+%%EPUB%%@dirrm share/xsl/docbook/epub/bin/xslt
 %%EPUB%%@dirrm share/xsl/docbook/epub/bin/lib
 %%EPUB%%@dirrm share/xsl/docbook/epub/bin
 %%EPUB%%@dirrm share/xsl/docbook/epub
