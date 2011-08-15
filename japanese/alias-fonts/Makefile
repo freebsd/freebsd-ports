@@ -7,8 +7,9 @@
 
 PORTNAME=	alias-fonts
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	japanese x11-fonts
+MASTER_SITES=	# empty
 DISTFILES=	# empty
 
 MAINTAINER=	koma2@lovepeers.org
@@ -27,12 +28,11 @@ BUILD_DEPENDS=	bdftopcf:${PORTSDIR}/x11-fonts/bdftopcf \
 		mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
 NO_BUILD=	yes
-USE_PERL5=	yes
 
 FONTSDIR=	${LOCALBASE}/lib/X11/fonts/local
 
 do-install:
 	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${PERL} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+		${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
 
 .include <bsd.port.mk>
