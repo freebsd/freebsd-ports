@@ -1,8 +1,8 @@
 ###########################################################################
-# 
-# Please copy sample configuration file from 
-# %%EXAMPLESDIR%%/offlineimap.conf.minimal 
-# to ~/.offlineimaprc and edit to suit your needs.
+%%PORTEXAMPLES%%# 
+%%PORTEXAMPLES%%# Please copy sample configuration file from 
+%%PORTEXAMPLES%%# %%EXAMPLESDIR%%/offlineimap.conf.minimal 
+%%PORTEXAMPLES%%# to ~/.offlineimaprc and edit to suit your needs.
 #
 # WARNING: if you are upgrading from pre-3.99.12 version, please be sure 
 #          to check the manual for changes in configuration file format 
