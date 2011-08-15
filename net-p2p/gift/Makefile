@@ -15,6 +15,8 @@ DISTNAME=	${PORTNAME:L}-${PORTVERSION}
 MAINTAINER=	shoesoft@gmx.net
 COMMENT=	An OpenFT, Gnutella and FastTrack p2p network client
 
+DEPRECATED=	unmaintained upstream for several years
+
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 
 USE_AUTOTOOLS=	libltdl libtool
