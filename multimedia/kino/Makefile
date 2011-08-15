@@ -11,7 +11,7 @@ PORTREVISION=	9
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
-MAINTAINER=	pb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A DV non-linear video editor
 
 LIB_DEPENDS=	dv.4:${PORTSDIR}/multimedia/libdv	\
