@@ -8,41 +8,27 @@
 
 PORTNAME=	urlview
 PORTVERSION=	0.9
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc www
 MASTER_SITES=	ftp://ftp.mutt.org/mutt/contrib/ \
 		ftp://ftp.sunsite.auc.dk/pub/mail/mutt/contrib/ \
 		ftp://ftp.cs.tu-berlin.de/pub/net/mail/mutt/contrib/
-
-#PATCH_SITES=	http://feeding.frenzy.com/~rainking/
-#PATCHFILES=	urlview.diff
 
 MAINTAINER=	mexas@bristol.ac.uk
 COMMENT=	URL extractor/launcher
 
 GNU_CONFIGURE=	yes
 MAN1=		urlview.1
-SUB_FILES=	gecko.sh
-SUB_LIST=	GECKO=${GECKO}
-
-.if defined(WITH_FIREFOX)
-USE_FIREFOX=	36
-GECKO=		firefox3
-.elif defined(WITH_SEAMONKEY)
-USE_SEAMONKEY=	20
-GECKO=		seamonkey
-.endif
-
-.include <bsd.port.pre.mk>
+PLIST_FILES=	bin/urlview \
+		etc/urlview.conf.sample
 
 post-patch:
-	@${REINPLACE_CMD} -e "s,!!PREFIX!!,${PREFIX},g" \
-		-e "s,/usr/X11R6,${X11BASE},g" ${WRKSRC}/url_handler.sh
-	@${REINPLACE_CMD} -e \
-		"s,/etc/urlview.conf,${PREFIX}/etc/urlview.conf,g" ${WRKSRC}/*
+	@${REINPLACE_CMD} -e 's,/etc,${PREFIX}&,' \
+		-e 's/url_handler.sh/firefox/' \
+		${WRKSRC}/*
 
 post-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/url_handler.sh ${WRKDIR}/gecko.sh	\
-		${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/sample.urlview \
+		${PREFIX}/etc/urlview.conf.sample
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
