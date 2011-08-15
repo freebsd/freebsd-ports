@@ -8,11 +8,10 @@
 PORTNAME=	dvdauthor
 PORTVERSION=	0.6.18
 PORTREVISION=	2
-WRKSRC=		${WRKDIR}/dvdauthor
 CATEGORIES=	multimedia
 MASTER_SITES=	SF
 
-MAINTAINER=	pb@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Makes a DVD file structure from one or more MPEG2 streams
 
 LIB_DEPENDS=	dvdread.4:${PORTSDIR}/multimedia/libdvdread \
@@ -23,6 +22,7 @@ USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+WRKSRC=		${WRKDIR}/dvdauthor
 MAN1=	dvdauthor.1 dvddirdel.1 dvdunauthor.1 mpeg2desc.1 spumux.1 spuunmux.1
 
 .include <bsd.port.pre.mk>
