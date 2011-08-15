@@ -8,7 +8,7 @@
 
 PORTNAME=	gnome2
 PORTVERSION=	2.32.1
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	x11 gnome
 MASTER_SITES=	# empty
 DISTFILES=	# empty
@@ -68,7 +68,7 @@ USE_PYTHON=	yes
 
 .if !defined(GNOME_SLAVE) || ${.CURDIR:T}=="gnome2-lite"
 OPTIONS=	XSCREENSAVER "Use xscreensaver as screen saver app" off \
-		MAPI "Depend on evolution-mapi (pulls in samba4)" on
+		MAPI "Depend on evolution-mapi (pulls in samba4)" off
 .endif
 
 do-install:	# empty
