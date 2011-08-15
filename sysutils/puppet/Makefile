@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	puppet
-DISTVERSION=	2.7.3rc1
+PORTVERSION=	2.7.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://downloads.puppetlabs.com/puppet/
 
@@ -87,11 +87,11 @@ do-install:
 post-install:
 	${INSTALL} -d ${ETCDIR}
 	${INSTALL} -m 0644 ${WRKSRC}/conf/auth.conf ${ETCDIR}/auth.conf-dist
-	${RUBY} -I ${RUBY_SITELIBDIR} ${PREFIX}/sbin/puppetmasterd \
+	${RUBY} -I ${RUBY_SITELIBDIR} ${PREFIX}/bin/puppet --genconfig \
 		--confdir=${ETCDIR} \
-		--rundir=${PUPPET_RUNDIR} \
-		--genconfig | \
-		${SED} -e 's/genconfig = true/# genconfig = false/' \
+		--rundir=${PUPPET_RUNDIR} | \
+		${SED} -e 's/genconfig = true/# genconfig = false/' | \
+		${SED} -e 's/factdest =/# factdest =/' \
 		> ${ETCDIR}/puppet.conf-dist
 	@${ECHO} ${RUBY_SITELIBDIR}/puppet.rb | \
 		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
