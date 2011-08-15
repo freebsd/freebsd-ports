@@ -4,7 +4,6 @@ etc/sockd.conf.example
 etc/socks.conf.example
 include/socks.h
 lib/libdsocks.so
-lib/libdsocks.so.1
 lib/libsocks.a
 lib/libsocks.so
 lib/libsocks.so.1
@@ -13,7 +12,8 @@ sbin/sockd
 %%PORTDOCS%%%%DOCSDIR%%/README.survey
 %%PORTDOCS%%%%DOCSDIR%%/README.usage
 %%PORTDOCS%%%%DOCSDIR%%/SOCKS4.protocol
+%%PORTDOCS%%%%DOCSDIR%%/SOCKS4A.protocol
 %%PORTDOCS%%%%DOCSDIR%%/rfc1928.txt
 %%PORTDOCS%%%%DOCSDIR%%/rfc1929.txt
-%%PORTDOCS%%%%DOCSDIR%%/faq.tex
+%%PORTDOCS%%%%DOCSDIR%%/rfc1961.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
