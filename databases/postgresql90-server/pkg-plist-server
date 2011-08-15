@@ -756,8 +756,9 @@ share/postgresql/tsearch_data/ispell_sample.dict
 share/postgresql/tsearch_data/synonym_sample.syn
 share/postgresql/tsearch_data/thesaurus_sample.ths
 @dirrmtry share/postgresql/tsearch_data
+@unexec echo "Warning: If you will *NOT* use this package anymore, please remove the pgsql user manually."
 @dirrmtry share/postgresql
 @dirrmtry etc/periodic/daily
 @dirrmtry etc/periodic
 @dirrmtry lib/postgresql
-@dirrmtry pgsql
+@dirrmtry %%PG_USER%%

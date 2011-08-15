@@ -35,6 +35,7 @@ GNU_CONFIGURE=	YES
 
 PG_USER?=	pgsql
 PG_GROUP?=	pgsql
+PG_UID?=	70
 
 LDFLAGS+=	-L${LOCALBASE}/lib
 INCLUDES+=	-I${LOCALBASE}/include
@@ -61,8 +62,6 @@ USE_RC_SUBR=	postgresql
 USE_PGSQL=	yes
 WANT_PGSQL_VER=	${PORTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
 SUB_FILES+=	502.pgsql
-USERS=		${PG_USER}
-GROUPS=		${PG_GROUP}
 .endif
 
 .if !defined(SLAVE_ONLY)
@@ -315,8 +314,17 @@ PKGMESSAGE=	${WRKSRC}/pkg-message${PKGNAMESUFFIX}
 .  endif
 .  if exists(${FILESDIR}/pkg-install${PKGNAMESUFFIX}.in)
 SUB_FILES+=     pkg-install${PKGNAMESUFFIX}
+SUB_LIST=       PG_GROUP=$(PG_GROUP) \
+                PG_USER=$(PG_USER) \
+                PG_UID=$(PG_UID)
+PLIST_SUB+=     PG_USER=$(PG_USER)
 PKGINSTALL=     ${WRKDIR}/pkg-install${PKGNAMESUFFIX}
 .  endif
+.endif
+
+.if defined(SERVER_ONLY)
+pre-su-install:
+	@ ${SETENV} PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
 
 .if !defined(NO_BUILD)

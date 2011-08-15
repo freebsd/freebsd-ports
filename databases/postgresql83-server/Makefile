@@ -61,8 +61,6 @@ SERVER_ONLY=	yes
 USE_RC_SUBR=	postgresql
 USE_PGSQL=	yes
 WANT_PGSQL_VER=	${PORTVERSION:C/([0-9][0-9]*)\.([0-9][0-9]*).*/\1\2/g}
-USERS=		${PGUSER}
-GROUPS=		${PGGROUP}
 .endif
 
 .if !defined(SLAVE_ONLY)
@@ -273,6 +271,12 @@ do-build:
 SUB_FILES+=	pkg-message${PKGNAMESUFFIX}
 PKGMESSAGE=	${WRKSRC}/pkg-message${PKGNAMESUFFIX}
 .  endif
+.endif
+
+.if defined(SERVER_ONLY)
+pre-su-install:
+	@ ${SETENV} PKG_PREFIX=${PREFIX} PGUSER=${PGUSER} PGGROUP=${PGGROUP} \
+		${SH} ${PKGINSTALL} ${PORTNAME} PRE-INSTALL
 .endif
 
 .if !defined(NO_BUILD)
