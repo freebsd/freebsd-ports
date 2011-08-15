@@ -4,7 +4,7 @@
 #
 
 # PROVIDE: fetchmail
-# REQUIRE: mail
+# REQUIRE: LOGIN mail
 # KEYWORD: shutdown
 
 #
@@ -18,28 +18,28 @@
 #  * Single system-wide fetchmail daemon:
 #    - It is run as user `fetchmail_user' (default: fetchmail)
 #      Note: The directory /var/run/fetchmail must be writable for
-#            `fetchmail_user'.
+#            'fetchmail_user'.
 #    - All configuration is contained in one global file
-#      `fetchmail_config' (default: %%PREFIX%%/etc/fetchmailrc),
-#      that must be owned by `fetchmail_user' (mode 700)
+#      'fetchmail_config' (default: %%PREFIX%%/etc/fetchmailrc)
+#      that must be owned by 'fetchmail_user' (mode 700)
 #    - The fetchmail daemon awakes to fetch mail every 
-#      `fetchmail_polling_interval' seconds (default: 900).
+#      'fetchmail_polling_interval' seconds (default: 900).
 #
 #  * Per-user daemon
 #    - Users for which a fetchmail daemon is to be started must be
-#      listed in `fetchmail_users', e.g. fetchmail_users="user1 user2"
-#      The `fetchmail_user' (sic!) variable is ignored in this
+#      listed in 'fetchmail_users', e.g. fetchmail_users="user1 user2"
+#      The 'fetchmail_user' (sic!) variable is ignored in this
 #      configuration variant.
 #    - The config files for the individual users must be located at
 #      ${fetchmail_home_prefix}/${user}/${fetchmail_config_name}. The
-#      default for `fetchmail_home_prefix' is "/home", and that for
-#      `fetchmail_config_name' is ".fetchmailrc".
+#      default for 'fetchmail_home_prefix' is "/home", and that for
+#      'fetchmail_config_name' is ".fetchmailrc".
 #    - Note that "${fetchmail_home_prefix}/${user}" must be writable
 #      for ${user} since it is used to store the per-user PID files!
-#    - There are user-specific versions of `fetchmail_config' and
-#      `fetchmail_polling_interval' that can be used to override the
-#      defaults, i.e. for the user `user1' there are variables
-#      `fetchmail_user1_config' and `fetchmail_user1_polling_interval'
+#    - There are user-specific versions of 'fetchmail_config' and
+#      'fetchmail_polling_interval' that can be used to override the
+#      defaults, i.e. for the user 'user1' there are variables
+#      'fetchmail_user1_config' and 'fetchmail_user1_polling_interval'
 #    - All commands (e.g. start, stop, awaken (see below)) can be either
 #      passed to all instances of the daemon (if %%PREFIX%%/etc/rc.d/fetchmail)
 #      is run as root), or just to the instance belonging to the respective
@@ -47,7 +47,7 @@
 #
 # Extra commands:
 #
-#  * `awaken': Sends a signal to the daemon(s) to check for new mail
+#  * 'awaken': Sends a signal to the daemon(s) to check for new mail
 #     immediately
 #
 # Fetchmail configuration:
@@ -66,11 +66,7 @@ pidfile=/var/run/fetchmail/${name}.pid
 extra_commands="awaken"
 awaken_cmd="fetchmail_awaken"
 
-if [ -f %%PREFIX%%/etc/rc.d/fetchmail ]; then
-        fetchmail_script=%%PREFIX%%/etc/rc.d/fetchmail
-elif [ -f %%PREFIX%%/etc/rc.d/fetchmail.sh ]; then
-        fetchmail_script=%%PREFIX%%/etc/rc.d/fetchmail.sh
-fi
+fetchmail_script=%%PREFIX%%/etc/rc.d/$name
 
 # read settings, set default values
 load_rc_config "$name"
@@ -149,4 +145,5 @@ else
 fi
 
 # actually execute the fetchmail program
+export FETCHMAILUSER=$fetchmail_user
 run_rc_command "$1"
