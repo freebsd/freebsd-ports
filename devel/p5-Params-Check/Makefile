@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Params-Check
-PORTVERSION=	0.30
+PORTVERSION=	0.32
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,7 +16,7 @@ COMMENT=	Generic input parsing/checking mechanism for Perl
 
 PERL_CONFIGURE=	yes
 
-MAN3=	Params::Check.3
+MAN3=		Params::Check.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	CHANGES
