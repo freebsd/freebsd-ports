@@ -44,6 +44,8 @@ share/locale/zh_TW/LC_MESSAGES/lxappearance.mo
 %%DATADIR%%/ui/lxappearance.ui
 @dirrmtry share/locale/fo/LC_MESSAGES
 @dirrmtry share/locale/fo
+@dirrmtry share/locale/lg/LC_MESSAGES
+@dirrmtry share/locale/lg
 @dirrmtry share/locale/tt_RU/LC_MESSAGES
 @dirrmtry share/locale/tt_RU
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
