@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lv2core
-PORTVERSION=	3.0
+PORTVERSION=	4.0
 CATEGORIES=	audio
 MASTER_SITES=	http://lv2plug.in/spec/
 
@@ -19,6 +19,7 @@ USE_GNOME=	pkgconfig
 
 do-configure:
 	cd ${WRKSRC} && ${SETENV} DESTDIR=${LOCALBASE} ./waf configure
+	${REINPLACE_CMD} -e '42s|lib|libdata|g' ${WRKSRC}/build/c4che/_cache.py
 
 do-build:
 	cd ${WRKSRC} && ./waf build
