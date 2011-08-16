@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	kid3
-PORTVERSION=	1.5
+PORTVERSION=	1.6
 CATEGORIES=	audio kde
 MASTER_SITES=	SF
 
@@ -26,5 +26,8 @@ USE_AUTOTOOLS=	libtool
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
+
+post-configure:
+	${CHMOD} 755 ${WRKSRC}/admin/install-sh
 
 .include <bsd.port.mk>
