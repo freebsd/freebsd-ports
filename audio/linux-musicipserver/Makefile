@@ -5,38 +5,39 @@
 # $FreeBSD$
 #
 
-PORTNAME=	musicipserver
-PORTVERSION=	1.8
-CATEGORIES=	audio linux
-MASTER_SITES=	http://www.amplifindmusicservices.com/downloads/:musicip \
-		http://spicefly.com/images/file/:spicefly
-PKGNAMEPREFIX=	linux-
-DISTNAME=	MusicMixer_x86_${PORTVERSION}
-DISTFILES=	${DISTNAME}.tgz:musicip
-DIST_SUBDIR=	musicip
-EXTRACT_ONLY=	${DISTNAME}.tgz
+PORTNAME=		musicipserver
+PORTVERSION=		1.8
+CATEGORIES=		audio linux
+MASTER_SITES=		http://www.amplifindmusicservices.com/downloads/:musicip \
+			http://spicefly.com/images/stories/mip/:spicefly
+PKGNAMEPREFIX=		linux-
+DISTNAME=		MusicMixer_x86_${PORTVERSION}
+DISTFILES=		${DISTNAME}.tgz:musicip
+DIST_SUBDIR=		musicip
+EXTRACT_ONLY=		${DISTNAME}.tgz
 
-MAINTAINER=	cjk32@cam.ac.uk
-COMMENT=	Application for generating playlists based upon musical content
+MAINTAINER=		cjk32@cam.ac.uk
+COMMENT=		Application for generating playlists based upon musical content
 
-RUN_DEPENDS=	empty:${PORTSDIR}/net/empty \
-		flog:${PORTSDIR}/sysutils/flog \
-		${LOCALBASE}/libexec/mipcore:${PORTSDIR}/audio/linux-genpuid
+LICENSE=		EULA
+LICENSE_NAME=		END-USER LICENSE AGREEMENT FOR MUSICIP MIXER
+LICENSE_FILE=		${WRKSRC}/notes.txt
+LICENSE_PERMS=		dist-mirror pkg-mirror auto-accept
 
-OPTIONS=	SPICEFLY_SKIN "Install Spicefly skin" on
+RUN_DEPENDS=		empty:${PORTSDIR}/net/empty \
+			flog:${PORTSDIR}/sysutils/flog \
+			${LOCALBASE}/libexec/mipcore:${PORTSDIR}/audio/linux-genpuid
 
-WRKSRC=		${WRKDIR}/MusicIP/MusicMagicMixer/
+LICENSE_DISTFILES=	${DISTNAME}.tgz
+
+OPTIONS=		SPICEFLY_SKIN "Install Spicefly skin" on
+
+WRKSRC=			${WRKDIR}/MusicIP/MusicMagicMixer/
 
 USE_RC_SUBR=		musicipserver
 USE_LINUX=		yes
 NO_BUILD=		yes
 IA32_BINARY_PORT=	yes
-
-LICENSE=		EULA
-LICENSE_PERMS=		dist-mirror pkg-mirror auto-accept
-LICENSE_NAME=		END-USER LICENSE AGREEMENT FOR MUSICIP MIXER
-LICENSE_FILE=		${WRKSRC}/notes.txt
-LICENSE_DISTFILES=	${DISTNAME}.tgz
 
 MUSICIPSERVERDBDIR?=	/var/db/${PORTNAME}
 MUSICIPSERVERLOGDIR?=	/var/log/${PORTNAME}
@@ -45,16 +46,16 @@ MUSICIPSERVERRUNDIR?=	/var/run/${PORTNAME}
 MUSICIPSERVERUSER?=	mipserv
 MUSICIPSERVERGROUP?=	${MUSICIPSERVERUSER}
 
-SUB_FILES=	pkg-install pkg-deinstall
-SUB_LIST=	PORTNAME=${PORTNAME} \
-		MUSICIPSERVERDBDIR=${MUSICIPSERVERDBDIR} \
-		MUSICIPSERVERLOGDIR=${MUSICIPSERVERLOGDIR} \
-		MUSICIPSERVERRUNDIR=${MUSICIPSERVERRUNDIR} \
-		MUSICIPSERVERUSER=${MUSICIPSERVERUSER} \
-		MUSICIPSERVERGROUP=${MUSICIPSERVERGROUP}
-PLIST_SUB=	MUSICIPSERVERDBDIR=${MUSICIPSERVERDBDIR} \
-		MUSICIPSERVERLOGDIR=${MUSICIPSERVERLOGDIR} \
-		MUSICIPSERVERRUNDIR=${MUSICIPSERVERRUNDIR}
+SUB_FILES=		pkg-install pkg-deinstall
+SUB_LIST=		PORTNAME=${PORTNAME} \
+			MUSICIPSERVERDBDIR=${MUSICIPSERVERDBDIR} \
+			MUSICIPSERVERLOGDIR=${MUSICIPSERVERLOGDIR} \
+			MUSICIPSERVERRUNDIR=${MUSICIPSERVERRUNDIR} \
+			MUSICIPSERVERUSER=${MUSICIPSERVERUSER} \
+			MUSICIPSERVERGROUP=${MUSICIPSERVERGROUP}
+PLIST_SUB=		MUSICIPSERVERDBDIR=${MUSICIPSERVERDBDIR} \
+			MUSICIPSERVERLOGDIR=${MUSICIPSERVERLOGDIR} \
+			MUSICIPSERVERRUNDIR=${MUSICIPSERVERRUNDIR}
 
 .include <bsd.port.options.mk>
 
