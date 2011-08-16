@@ -6,9 +6,11 @@ bin/yaz-icu
 bin/yaz-illclient
 bin/yaz-json-parse
 bin/yaz-marcdump
+bin/yaz-url
 bin/yaz-ztest
 bin/zoomsh
 include/yaz/backend.h
+include/yaz/base64.h
 include/yaz/ccl.h
 include/yaz/ccl_xml.h
 include/yaz/charneg.h
@@ -74,6 +76,7 @@ include/yaz/timing.h
 include/yaz/tokenizer.h
 include/yaz/tpath.h
 include/yaz/unix.h
+include/yaz/url.h
 include/yaz/wrbuf.h
 include/yaz/xmalloc.h
 include/yaz/xml_include.h
@@ -189,6 +192,7 @@ share/aclocal/yaz.m4
 %%PORTDOCS%%%%DOCSDIR%%/yaz-json-parse.html
 %%PORTDOCS%%%%DOCSDIR%%/yaz-log.html
 %%PORTDOCS%%%%DOCSDIR%%/yaz-marcdump.html
+%%PORTDOCS%%%%DOCSDIR%%/yaz-url.html
 %%PORTDOCS%%%%DOCSDIR%%/yaz-ztest.html
 %%PORTDOCS%%%%DOCSDIR%%/yaz.html
 %%PORTDOCS%%%%DOCSDIR%%/zoom.events.html

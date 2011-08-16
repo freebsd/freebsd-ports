@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	yaz
-PORTVERSION=	4.2.4
-PORTREVISION=	1
+PORTVERSION=	4.2.8
 CATEGORIES=	net
 MASTER_SITES=	http://ftp.indexdata.dk/pub/yaz/
 
@@ -30,7 +29,7 @@ CONFIGURE_ARGS+=--enable-shared --with-openssl=${OPENSSLBASE} \
 
 MAN1=		yaz-asncomp.1 yaz-client.1 yaz-config.1 yaz-iconv.1 \
 		yaz-json-parse.1 yaz-marcdump.1 \
-		zoomsh.1 yaz-icu.1 yaz-illclient.1
+		zoomsh.1 yaz-icu.1 yaz-illclient.1 yaz-url.1
 MAN7=		bib1-attr.7 yaz-log.7 yaz.7
 MAN8=		yaz-ztest.8
 
