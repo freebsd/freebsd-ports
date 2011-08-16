@@ -74,9 +74,6 @@ CFLAGS+=	-mminimal-toc
 MOZSRC:=	${WRKDIR}/comm-1.9.1/mozilla
 WRKSRC=		${WRKDIR}/comm-1.9.1
 
-GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 '%{\!pg: %{pthread:' | ${SED
-} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
-
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 USE_GNOME+=	libgnomeui
 MOZ_OPTIONS+=	--enable-gnomeui
@@ -125,7 +122,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/mozilla/security/manager/ssl/src/Makefile.in \
 		${WRKSRC}/mozilla/js/src/config/mkdepend/Makefile.in
-	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
+	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
 		${WRKSRC}/mozilla/storage/build/Makefile.in
 	@${REINPLACE_CMD} -e '/accessibility.typeaheadfind.enablesound/s/true/false/' \
 		${WRKSRC}/mozilla/modules/libpref/src/init/all.js
