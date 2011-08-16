@@ -310,6 +310,7 @@
     SUBDIR += ices
     SUBDIR += ices0
     SUBDIR += id3el
+    SUBDIR += id3ed
     SUBDIR += id3lib
     SUBDIR += id3mtag
     SUBDIR += id3ren
