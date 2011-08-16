@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	AnyEvent-HTTP
-PORTVERSION=	2.11
+PORTVERSION=	2.13
 PORTEPOCH=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -22,6 +22,6 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
-MAN3=	AnyEvent::HTTP.3
+MAN3=		AnyEvent::HTTP.3
 
 .include <bsd.port.mk>
