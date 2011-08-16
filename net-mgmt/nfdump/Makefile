@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	nfdump
-PORTVERSION=	1.6.3p1
+PORTVERSION=	1.6.4
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Command-line tools to collect and process NetFlow data
 
-GNU_CONFIGURE=	yes
-MAKE_JOBS_UNSAFE=	yes
-
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/BSD-license.txt
+
+GNU_CONFIGURE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 #flow-tools support
 OPTIONS=	FT2NFDUMP	"With Flow-tools to nfdump converter" off \
