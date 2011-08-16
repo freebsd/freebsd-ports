@@ -11,7 +11,7 @@ PORTVERSION=	1.0.4
 CATEGORIES=	news
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	conrads@cox.net
 COMMENT=	Multi-server/conn news suck
 
 GNU_CONFIGURE=	yes
