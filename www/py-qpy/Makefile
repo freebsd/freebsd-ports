@@ -8,7 +8,8 @@
 PORTNAME=	qpy
 PORTVERSION=	1.8
 CATEGORIES=	www python
-MASTER_SITES=	http://www.mems-exchange.org/software/qpy/
+MASTER_SITES=	http://www.mems-exchange.org/software/qpy/ \
+		LOCAL/sunpoet
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	sunpoet@FreeBSD.org
