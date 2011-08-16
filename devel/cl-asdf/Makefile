@@ -5,11 +5,10 @@
 # $FreeBSD$
 
 # The source tarball was obtained from the project's GIT repository:
-# wget -O asdf-1.374.tar.gz "http://common-lisp.net/gitweb?p=projects/asdf/asdf.git;a=snapshot;h=f6dfe94d2836534a7be050127123cc16fee87c48;sf=tgz"
+# wget -O asdf-2.017.tar.gz "http://common-lisp.net/gitweb?p=projects/asdf/asdf.git;a=snapshot;h=db16d0cc1a15697f831bcacc9429cc578304b6cb;sf=tgz"
 
 PORTNAME=	asdf
-PORTVERSION=	1.374
-PORTREVISION=	5
+PORTVERSION=	2.017
 PORTEPOCH=	1
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
@@ -42,7 +41,6 @@ do-install:
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	@${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	@${INSTALL_DATA} ${FILESDIR}/README.FreeBSD ${DOCSDIR}
 .endif
 
 post-install:
