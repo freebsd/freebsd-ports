@@ -1,11 +1,17 @@
 bin/kwProcessXML
 bin/paraview
+bin/pvbatch
+bin/pvblot
 bin/pvdataserver
+bin/pvpython
 bin/pvrenderserver
 bin/pvserver
 bin/smTestDriver
 bin/vtkEncodeString
 bin/vtkWrapClientServer
+bin/vtkWrapHierarchy
+bin/vtkWrapPython
+bin/vtkWrapPythonInit
 include/paraview-%%VERMAJORMINOR%%/Cosmo/BasicDefinition.h
 include/paraview-%%VERMAJORMINOR%%/Cosmo/ChainingMesh.h
 include/paraview-%%VERMAJORMINOR%%/Cosmo/CosmoDefinition.h
@@ -27,6 +33,10 @@ include/paraview-%%VERMAJORMINOR%%/DICOMFile.h
 include/paraview-%%VERMAJORMINOR%%/DICOMParser.h
 include/paraview-%%VERMAJORMINOR%%/DICOMParserMap.h
 include/paraview-%%VERMAJORMINOR%%/DICOMTypes.h
+include/paraview-%%VERMAJORMINOR%%/PyVTKClass.h
+include/paraview-%%VERMAJORMINOR%%/PyVTKMutableObject.h
+include/paraview-%%VERMAJORMINOR%%/PyVTKObject.h
+include/paraview-%%VERMAJORMINOR%%/PyVTKSpecialObject.h
 include/paraview-%%VERMAJORMINOR%%/QFilterTreeProxyModel.h
 include/paraview-%%VERMAJORMINOR%%/QVTKApplication.h
 include/paraview-%%VERMAJORMINOR%%/QVTKInteractor.h
@@ -379,6 +389,7 @@ include/paraview-%%VERMAJORMINOR%%/Qt/Core/Resources/Icons/pqLinkOut16.png
 include/paraview-%%VERMAJORMINOR%%/Qt/Core/Resources/Icons/pqNetwork16.png
 include/paraview-%%VERMAJORMINOR%%/Qt/Core/Resources/UI/pqFileDialog.ui
 include/paraview-%%VERMAJORMINOR%%/Qt/Core/Resources/UI/pqOutputWindow.ui
+include/paraview-%%VERMAJORMINOR%%/Qt/Python/Resources/pqPythonDialog.ui
 include/paraview-%%VERMAJORMINOR%%/Qt/Widgets/Resources/Icons/pqCollapsedGroup22.png
 include/paraview-%%VERMAJORMINOR%%/Qt/Widgets/Resources/Icons/pqDelete16.png
 include/paraview-%%VERMAJORMINOR%%/Qt/Widgets/Resources/Icons/pqDelete24.png
@@ -387,6 +398,8 @@ include/paraview-%%VERMAJORMINOR%%/Qt/Widgets/Resources/Icons/pqPlus16.png
 include/paraview-%%VERMAJORMINOR%%/Qt/Widgets/Resources/QtWidgets.qrc
 include/paraview-%%VERMAJORMINOR%%/Qt/Widgets/Resources/UI/pqHelpWindow.ui
 include/paraview-%%VERMAJORMINOR%%/Qt/Widgets/Resources/UI/pqQuickLaunchDialog.ui
+include/paraview-%%VERMAJORMINOR%%/QtPythonConfig.h
+include/paraview-%%VERMAJORMINOR%%/QtPythonExport.h
 include/paraview-%%VERMAJORMINOR%%/QtWidgetsExport.h
 include/paraview-%%VERMAJORMINOR%%/QtWidgetsPlugin.h
 include/paraview-%%VERMAJORMINOR%%/VPIC/GridExchange.h
@@ -728,7 +741,12 @@ include/paraview-%%VERMAJORMINOR%%/pqProxySILModel.h
 include/paraview-%%VERMAJORMINOR%%/pqProxySelectionWidget.h
 include/paraview-%%VERMAJORMINOR%%/pqProxyTabWidget.h
 include/paraview-%%VERMAJORMINOR%%/pqProxyUnRegisterUndoElement.h
+include/paraview-%%VERMAJORMINOR%%/pqPythonDialog.h
 include/paraview-%%VERMAJORMINOR%%/pqPythonEventSourceImage.h
+include/paraview-%%VERMAJORMINOR%%/pqPythonMacroSupervisor.h
+include/paraview-%%VERMAJORMINOR%%/pqPythonManager.h
+include/paraview-%%VERMAJORMINOR%%/pqPythonScriptEditor.h
+include/paraview-%%VERMAJORMINOR%%/pqPythonShell.h
 include/paraview-%%VERMAJORMINOR%%/pqPythonShellReaction.h
 include/paraview-%%VERMAJORMINOR%%/pqQVTKWidget.h
 include/paraview-%%VERMAJORMINOR%%/pqQVTKWidgetEventPlayer.h
@@ -896,12 +914,6 @@ include/paraview-%%VERMAJORMINOR%%/vtkAbstractCellLocator.h
 include/paraview-%%VERMAJORMINOR%%/vtkAbstractContextBufferId.h
 include/paraview-%%VERMAJORMINOR%%/vtkAbstractContextItem.h
 include/paraview-%%VERMAJORMINOR%%/vtkAbstractInterpolatedVelocityField.h
-include/paraview-%%VERMAJORMINOR%%/vtkAbstractIterator.h
-include/paraview-%%VERMAJORMINOR%%/vtkAbstractIterator.txx
-include/paraview-%%VERMAJORMINOR%%/vtkAbstractList.h
-include/paraview-%%VERMAJORMINOR%%/vtkAbstractList.txx
-include/paraview-%%VERMAJORMINOR%%/vtkAbstractMap.h
-include/paraview-%%VERMAJORMINOR%%/vtkAbstractMap.txx
 include/paraview-%%VERMAJORMINOR%%/vtkAbstractMapper.h
 include/paraview-%%VERMAJORMINOR%%/vtkAbstractMapper3D.h
 include/paraview-%%VERMAJORMINOR%%/vtkAbstractParticleWriter.h
@@ -967,10 +979,6 @@ include/paraview-%%VERMAJORMINOR%%/vtkArrayIterator.h
 include/paraview-%%VERMAJORMINOR%%/vtkArrayIteratorTemplate.h
 include/paraview-%%VERMAJORMINOR%%/vtkArrayIteratorTemplate.txx
 include/paraview-%%VERMAJORMINOR%%/vtkArrayIteratorTemplateImplicit.txx
-include/paraview-%%VERMAJORMINOR%%/vtkArrayMap.h
-include/paraview-%%VERMAJORMINOR%%/vtkArrayMap.txx
-include/paraview-%%VERMAJORMINOR%%/vtkArrayMapIterator.h
-include/paraview-%%VERMAJORMINOR%%/vtkArrayMapIterator.txx
 include/paraview-%%VERMAJORMINOR%%/vtkArrayNorm.h
 include/paraview-%%VERMAJORMINOR%%/vtkArrayRange.h
 include/paraview-%%VERMAJORMINOR%%/vtkArrayReader.h
@@ -1182,7 +1190,6 @@ include/paraview-%%VERMAJORMINOR%%/vtkConnectionIterator.h
 include/paraview-%%VERMAJORMINOR%%/vtkConnectivityFilter.h
 include/paraview-%%VERMAJORMINOR%%/vtkConstrained2DLayoutStrategy.h
 include/paraview-%%VERMAJORMINOR%%/vtkConstrainedPointHandleRepresentation.h
-include/paraview-%%VERMAJORMINOR%%/vtkContainer.h
 include/paraview-%%VERMAJORMINOR%%/vtkContext2D.h
 include/paraview-%%VERMAJORMINOR%%/vtkContextActor.h
 include/paraview-%%VERMAJORMINOR%%/vtkContextBufferId.h
@@ -1577,10 +1584,6 @@ include/paraview-%%VERMAJORMINOR%%/vtkHandleRepresentation.h
 include/paraview-%%VERMAJORMINOR%%/vtkHandleWidget.h
 include/paraview-%%VERMAJORMINOR%%/vtkHardwareSelectionPolyDataPainter.h
 include/paraview-%%VERMAJORMINOR%%/vtkHardwareSelector.h
-include/paraview-%%VERMAJORMINOR%%/vtkHashMap.h
-include/paraview-%%VERMAJORMINOR%%/vtkHashMap.txx
-include/paraview-%%VERMAJORMINOR%%/vtkHashMapIterator.h
-include/paraview-%%VERMAJORMINOR%%/vtkHashMapIterator.txx
 include/paraview-%%VERMAJORMINOR%%/vtkHeap.h
 include/paraview-%%VERMAJORMINOR%%/vtkHedgeHog.h
 include/paraview-%%VERMAJORMINOR%%/vtkHexagonalPrism.h
@@ -1912,10 +1915,6 @@ include/paraview-%%VERMAJORMINOR%%/vtkLinearSubdivisionFilter.h
 include/paraview-%%VERMAJORMINOR%%/vtkLinearTransform.h
 include/paraview-%%VERMAJORMINOR%%/vtkLinesPainter.h
 include/paraview-%%VERMAJORMINOR%%/vtkLinkEdgels.h
-include/paraview-%%VERMAJORMINOR%%/vtkLinkedList.h
-include/paraview-%%VERMAJORMINOR%%/vtkLinkedList.txx
-include/paraview-%%VERMAJORMINOR%%/vtkLinkedListIterator.h
-include/paraview-%%VERMAJORMINOR%%/vtkLinkedListIterator.txx
 include/paraview-%%VERMAJORMINOR%%/vtkLocator.h
 include/paraview-%%VERMAJORMINOR%%/vtkLogLookupTable.h
 include/paraview-%%VERMAJORMINOR%%/vtkLogoRepresentation.h
@@ -2447,8 +2446,13 @@ include/paraview-%%VERMAJORMINOR%%/vtkProperty.h
 include/paraview-%%VERMAJORMINOR%%/vtkProperty2D.h
 include/paraview-%%VERMAJORMINOR%%/vtkPruneTreeFilter.h
 include/paraview-%%VERMAJORMINOR%%/vtkPyramid.h
+include/paraview-%%VERMAJORMINOR%%/vtkPython.h
+include/paraview-%%VERMAJORMINOR%%/vtkPythonArgs.h
 include/paraview-%%VERMAJORMINOR%%/vtkPythonCalculator.h
+include/paraview-%%VERMAJORMINOR%%/vtkPythonCommand.h
+include/paraview-%%VERMAJORMINOR%%/vtkPythonOverload.h
 include/paraview-%%VERMAJORMINOR%%/vtkPythonProgrammableFilter.h
+include/paraview-%%VERMAJORMINOR%%/vtkPythonUtil.h
 include/paraview-%%VERMAJORMINOR%%/vtkQImageToImageSource.h
 include/paraview-%%VERMAJORMINOR%%/vtkQtAbstractModelAdapter.h
 include/paraview-%%VERMAJORMINOR%%/vtkQtAnnotationLayersModelAdapter.h
@@ -2488,10 +2492,6 @@ include/paraview-%%VERMAJORMINOR%%/vtkQuadricLODActor.h
 include/paraview-%%VERMAJORMINOR%%/vtkQuantizePolyDataPoints.h
 include/paraview-%%VERMAJORMINOR%%/vtkQuaternionInterpolator.h
 include/paraview-%%VERMAJORMINOR%%/vtkQuerySelectionSource.h
-include/paraview-%%VERMAJORMINOR%%/vtkQueue.h
-include/paraview-%%VERMAJORMINOR%%/vtkQueue.txx
-include/paraview-%%VERMAJORMINOR%%/vtkQueueIterator.h
-include/paraview-%%VERMAJORMINOR%%/vtkQueueIterator.txx
 include/paraview-%%VERMAJORMINOR%%/vtkRIBExporter.h
 include/paraview-%%VERMAJORMINOR%%/vtkRIBLight.h
 include/paraview-%%VERMAJORMINOR%%/vtkRIBProperty.h
@@ -3150,10 +3150,7 @@ include/paraview-%%VERMAJORMINOR%%/vtkVariantCast.h
 include/paraview-%%VERMAJORMINOR%%/vtkVariantCreate.h
 include/paraview-%%VERMAJORMINOR%%/vtkVariantInlineOperators.h
 include/paraview-%%VERMAJORMINOR%%/vtkVector.h
-include/paraview-%%VERMAJORMINOR%%/vtkVector.txx
 include/paraview-%%VERMAJORMINOR%%/vtkVectorDot.h
-include/paraview-%%VERMAJORMINOR%%/vtkVectorIterator.h
-include/paraview-%%VERMAJORMINOR%%/vtkVectorIterator.txx
 include/paraview-%%VERMAJORMINOR%%/vtkVectorNorm.h
 include/paraview-%%VERMAJORMINOR%%/vtkVectorText.h
 include/paraview-%%VERMAJORMINOR%%/vtkVersion.h
@@ -3581,6 +3578,8 @@ lib/paraview-%%VERMAJORMINOR%%/CMake/ParaViewBrandingCPack.cmake
 lib/paraview-%%VERMAJORMINOR%%/CMake/ParaViewCPackOptions.cmake.in
 lib/paraview-%%VERMAJORMINOR%%/CMake/ParaViewMacros.cmake
 lib/paraview-%%VERMAJORMINOR%%/CMake/ParaViewPlugins.cmake
+lib/paraview-%%VERMAJORMINOR%%/CMake/ParaViewTargets-%%CMAKE_BUILD_TYPE%%.cmake
+lib/paraview-%%VERMAJORMINOR%%/CMake/ParaViewTargets.cmake
 lib/paraview-%%VERMAJORMINOR%%/CMake/ParaViewUse.cmake
 lib/paraview-%%VERMAJORMINOR%%/CMake/VTKVersionMacros.cmake
 lib/paraview-%%VERMAJORMINOR%%/CMake/branded_paraview_initializer.cxx.in
@@ -3638,6 +3637,7 @@ lib/paraview-%%VERMAJORMINOR%%/ParaViewUse.cmake
 lib/paraview-%%VERMAJORMINOR%%/ServerManager/Resources/3d_widgets.xml
 lib/paraview-%%VERMAJORMINOR%%/ServerManager/Resources/filters.xml
 lib/paraview-%%VERMAJORMINOR%%/ServerManager/Resources/internal_writers.xml
+lib/paraview-%%VERMAJORMINOR%%/ServerManager/Resources/pythonfilter.xml
 lib/paraview-%%VERMAJORMINOR%%/ServerManager/Resources/readers.xml
 lib/paraview-%%VERMAJORMINOR%%/ServerManager/Resources/rendering.xml
 lib/paraview-%%VERMAJORMINOR%%/ServerManager/Resources/sources.xml
@@ -3650,6 +3650,9 @@ lib/paraview-%%VERMAJORMINOR%%/VTKBuildSettings.cmake
 lib/paraview-%%VERMAJORMINOR%%/VTKConfig.cmake
 lib/paraview-%%VERMAJORMINOR%%/VTKConfigQt.cmake
 lib/paraview-%%VERMAJORMINOR%%/VTKConfigVersion.cmake
+lib/paraview-%%VERMAJORMINOR%%/async_io_helper.py
+lib/paraview-%%VERMAJORMINOR%%/blot_common.py
+lib/paraview-%%VERMAJORMINOR%%/blotish.py
 lib/paraview-%%VERMAJORMINOR%%/cmake_install.cmake
 lib/paraview-%%VERMAJORMINOR%%/doc/verdict/1.2.0/README
 lib/paraview-%%VERMAJORMINOR%%/doc/verdict/1.2.0/Verdict.doc
@@ -3674,6 +3677,7 @@ lib/paraview-%%VERMAJORMINOR%%/libPrismClientPlugin.so
 lib/paraview-%%VERMAJORMINOR%%/libPrismServerPlugin.so
 lib/paraview-%%VERMAJORMINOR%%/libQVTK.so
 lib/paraview-%%VERMAJORMINOR%%/libQVTK.so.pv%%VERMAJORMINOR%%
+lib/paraview-%%VERMAJORMINOR%%/libQtPython.so
 lib/paraview-%%VERMAJORMINOR%%/libQtTesting.so
 lib/paraview-%%VERMAJORMINOR%%/libSLACTools.so
 lib/paraview-%%VERMAJORMINOR%%/libSierraPlotTools.so
@@ -3681,6 +3685,7 @@ lib/paraview-%%VERMAJORMINOR%%/libStreamingView.so
 lib/paraview-%%VERMAJORMINOR%%/libSurfaceLIC.so
 lib/paraview-%%VERMAJORMINOR%%/libVPIC.so
 lib/paraview-%%VERMAJORMINOR%%/libVPIC.so.pv%%VERMAJORMINOR%%
+lib/paraview-%%VERMAJORMINOR%%/libVisTrailsPlugin.so
 lib/paraview-%%VERMAJORMINOR%%/libXdmf.so
 lib/paraview-%%VERMAJORMINOR%%/libmpistubs.so
 lib/paraview-%%VERMAJORMINOR%%/libmpistubs.so.pv%%VERMAJORMINOR%%
@@ -3688,66 +3693,105 @@ lib/paraview-%%VERMAJORMINOR%%/libpqApplicationComponents.so
 lib/paraview-%%VERMAJORMINOR%%/libpqComponents.so
 lib/paraview-%%VERMAJORMINOR%%/libpqCore.so
 lib/paraview-%%VERMAJORMINOR%%/libpqWidgets.so
+lib/paraview-%%VERMAJORMINOR%%/libpvblot.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkCharts.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkCharts.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkChartsCS.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkChartsPythonD.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkChartsPythonD.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkClientServer.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkCommon.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkCommon.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkCommonCS.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkCommonPythonD.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkCommonPythonD.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkDICOMParser.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkDICOMParser.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkFiltering.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkFiltering.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkFilteringCS.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkFilteringPythonD.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkFilteringPythonD.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkGenericFiltering.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkGenericFiltering.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkGenericFilteringCS.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkGenericFilteringPythonD.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkGenericFilteringPythonD.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkGeovis.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkGeovis.so.pv%%VERMAJORMINOR%%
+lib/paraview-%%VERMAJORMINOR%%/libvtkGeovisPythonD.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkGeovisPythonD.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkGraphics.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkGraphics.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkGraphicsCS.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkGraphicsPythonD.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkGraphicsPythonD.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkHybrid.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkHybrid.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkHybridCS.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkHybridPythonD.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkHybridPythonD.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkIO.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkIO.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkIOCS.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkIOPythonD.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkIOPythonD.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkImaging.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkImaging.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkImagingCS.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkImagingPythonD.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkImagingPythonD.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkInfovis.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkInfovis.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkInfovisCS.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkInfovisPythonD.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkInfovisPythonD.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkNetCDF.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkNetCDF.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkNetCDF_cxx.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkPVCommandOptions.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkPVFilters.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkPVFiltersCS.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkPVFiltersPythonD.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkPVPython.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkPVPythonInterpretor.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkPVServerCommon.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkPVServerCommonCS.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkPVServerCommonPythonD.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkPVServerManager.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkPVServerManagerPythonD.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkParallel.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkParallel.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkParallelCS.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkParallelPythonD.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkParallelPythonD.so.pv%%VERMAJORMINOR%%
+lib/paraview-%%VERMAJORMINOR%%/libvtkPythonCore.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkPythonCore.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkRendering.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkRendering.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkRenderingCS.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkRenderingPythonD.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkRenderingPythonD.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkStreaming.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkStreamingCS.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkViews.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkViews.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkViewsCS.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkViewsPythonD.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkViewsPythonD.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkVolumeRendering.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkVolumeRendering.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkVolumeRenderingCS.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkVolumeRenderingPythonD.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkVolumeRenderingPythonD.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkWidgets.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkWidgets.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkWidgetsCS.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkWidgetsPythonD.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkWidgetsPythonD.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkXdmf.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkXdmfCS.so
+lib/paraview-%%VERMAJORMINOR%%/libvtkXdmfPython.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkalglib.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkalglib.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkexoIIc.so
@@ -3768,10 +3812,71 @@ lib/paraview-%%VERMAJORMINOR%%/libvtksys.so
 lib/paraview-%%VERMAJORMINOR%%/libvtksys.so.pv%%VERMAJORMINOR%%
 lib/paraview-%%VERMAJORMINOR%%/libvtkverdict.so
 lib/paraview-%%VERMAJORMINOR%%/libvtkverdict.so.pv%%VERMAJORMINOR%%
+lib/paraview-%%VERMAJORMINOR%%/number_list_parser.py
 lib/paraview-%%VERMAJORMINOR%%/paraview
+lib/paraview-%%VERMAJORMINOR%%/pvbatch
+lib/paraview-%%VERMAJORMINOR%%/pvblot.py
 lib/paraview-%%VERMAJORMINOR%%/pvdataserver
+lib/paraview-%%VERMAJORMINOR%%/pvpython
 lib/paraview-%%VERMAJORMINOR%%/pvrenderserver
 lib/paraview-%%VERMAJORMINOR%%/pvserver
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/__init__.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/benchmark.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/benchmark.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/compile_all_pv.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/compile_all_pv.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/demos/demo1.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/demos/demo1.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/demos/show_grid_as_background.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/demos/show_grid_as_background.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/numeric.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/numeric.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/numpy_support.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/numpy_support.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/pv_compile_complete
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/pvfilters.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/pvfilters.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/servermanager.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/servermanager.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/simple.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/simple.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/smstate.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/smstate.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/smtrace.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/smtrace.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/util.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/util.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/variant.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/variant.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/__init__.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/algorithms.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/algorithms.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/dataset_adapter.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/dataset_adapter.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/genericfiltering.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/genericfiltering.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/geovis.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/geovis.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/hybrid.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/hybrid.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/imaging.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/imaging.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/infovis.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/infovis.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/io.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/io.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/parallel.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/parallel.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/views.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/views.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/volumerendering.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/volumerendering.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/widgets.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk/widgets.pyc
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtkConstants.py
+lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtkConstants.pyc
 lib/paraview-%%VERMAJORMINOR%%/smTestDriver
 lib/paraview-%%VERMAJORMINOR%%/testing/FindString.tcl
 lib/paraview-%%VERMAJORMINOR%%/testing/HeaderTesting.py
@@ -3780,30 +3885,816 @@ lib/paraview-%%VERMAJORMINOR%%/testing/TestSetGet.tcl
 lib/paraview-%%VERMAJORMINOR%%/testing/WindowsMangleList.py
 lib/paraview-%%VERMAJORMINOR%%/testing/prtImageTest.tcl
 lib/paraview-%%VERMAJORMINOR%%/testing/rtImageTest.tcl
+lib/paraview-%%VERMAJORMINOR%%/timestep_selection.py
+lib/paraview-%%VERMAJORMINOR%%/tplot.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/api/VisTrails.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/api/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/analogy/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/analogy/eigen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/analogy/pipeline_utils.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/bookmark.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/bundles/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/bundles/checkbundle.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/bundles/installbundle.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/bundles/linux_fedora_install.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/bundles/linux_ubuntu_install.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/bundles/pyimport.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/bundles/utils.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/cache/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/cache/hasher.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/cache/utils.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/command_line.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/common.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/configuration.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/console_mode.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/data_structures/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/data_structures/bijectivedict.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/data_structures/graph.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/data_structures/point.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/data_structures/queue.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/data_structures/rect.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/data_structures/stack.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/db/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/db/action.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/db/io.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/db/locator.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/debug.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/dotty.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/ensemble_pipelines.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/external_connection.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/inspector.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/interpreter/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/interpreter/base.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/interpreter/cached.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/interpreter/default.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/interpreter/noncached.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/interpreter/utils.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/keychain.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/log/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/log/controller.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/log/log.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/log/machine.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/log/module_exec.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/log/workflow_exec.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/modules/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/modules/basic_modules.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/modules/constant_configuration.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/modules/module_configure.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/modules/module_registry.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/modules/module_utils.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/modules/paramexplore.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/modules/port_configure.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/modules/resources/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/modules/resources/colorconfig_rc.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/modules/sub_module.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/modules/tuple_configuration.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/modules/vistrails_module.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/packagemanager.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/param_explore.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/query/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/query/version.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/query/visual.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/requirements.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/resources/default_vistrails_startup
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/resources/default_vistrails_startup_xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/startup.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/system/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/system/linux.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/system/osx.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/system/unix.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/system/windows.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/tree_layout_lw.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/utils/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/utils/color.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/utils/enum.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/utils/expression.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/utils/gcutils.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/utils/lockmethod.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/utils/timemethod.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/utils/tracemethod.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/utils/uxml.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/vistrail/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/vistrail/abstraction.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/vistrail/abstraction_module.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/vistrail/action.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/vistrail/annotation.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/vistrail/connection.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/vistrail/group.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/vistrail/location.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/vistrail/module.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/vistrail/module_function.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/vistrail/module_param.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/vistrail/operation.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/vistrail/pipeline.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/vistrail/plugin_data.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/vistrail/port.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/vistrail/port_spec.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/vistrail/tag.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/vistrail/vistrail.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/core/vistrails_tree_layout_lw.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/bin/README
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/bin/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/bin/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/bin/auto_gen_objects.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/bin/et_auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/bin/generate.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/bin/parser.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/bin/sql_auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/bin/xml_auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/domain/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/persistence/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/services/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/services/abstraction.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/services/action.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/services/action_chain.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/services/io.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/services/locator.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/services/log.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/services/vistrail.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/services/workflow.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/specs/all.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/tests/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/tests/setup_db_tables.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/tests/sql_to_xml.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/tests/xml_to_sql.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/domain/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/domain/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/persistence/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/persistence/xml/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/persistence/xml/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/persistence/xml/io.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/persistence/xml/xml_dao.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/schemas/xml/vistrail.xsd
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/specs/action.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/specs/addConnection.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/specs/addModule.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/specs/addModulePort.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/specs/changeAnnotation.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/specs/changeParameter.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/specs/deleteAnnotation.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/specs/deleteConnection.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/specs/deleteFunction.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/specs/deleteModule.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/specs/deleteModulePort.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/specs/moveModule.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/specs/tag.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/specs/vistrail.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/domain/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/persistence/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/schemas/xml/vistrail.xsd
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/specs/action.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/specs/addConnection.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/specs/addModule.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/specs/addModulePort.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/specs/changeAnnotation.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/specs/changeParameter.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/specs/deleteAnnotation.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/specs/deleteConnection.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/specs/deleteFunction.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/specs/deleteModule.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/specs/deleteModulePort.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/specs/moveModule.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/specs/tag.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/specs/vistrail.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/translate/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/translate/v0_3_0.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/domain/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/domain/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/domain/id_scope.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/domain/vistrail.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/domain/workflow.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/persistence/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/persistence/sql/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/persistence/sql/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/persistence/sql/sql_dao.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/persistence/xml/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/persistence/xml/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/persistence/xml/io.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/persistence/xml/xml_dao.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/schemas/sql/vistrails.sql
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/schemas/sql/vistrails_drop.sql
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/schemas/xml/log.xsd
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/schemas/xml/vistrail.xsd
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/schemas/xml/workflow.xsd
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/action.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/add.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/annotation.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/change.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/connection.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/delete.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/execRec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/function.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/location.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/log.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/machine.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/macro.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/module.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/other.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/parameter.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/port.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/portSpec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/session.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/tag.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/vistrail.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/wfExec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs/workflow.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/translate/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/translate/v0_3_1.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/domain/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/domain/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/domain/id_scope.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/domain/vistrail.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/domain/workflow.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/persistence/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/persistence/sql/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/persistence/sql/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/persistence/sql/sql_dao.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/persistence/xml/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/persistence/xml/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/persistence/xml/io.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/persistence/xml/xml_dao.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/schemas/sql/vistrails.sql
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/schemas/sql/vistrails_drop.sql
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/schemas/xml/vistrail.xsd
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/abstraction.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/abstractionRef.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/action.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/add.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/annotation.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/change.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/connection.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/delete.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/function.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/location.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/log.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/machine.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/module.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/module_exec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/other.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/parameter.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/port.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/portSpec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/tag.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/vistrail.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/workflow.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs/workflow_exec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/translate/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/translate/v0_3_1.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/translate/v0_5_0.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/domain/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/domain/abstraction.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/domain/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/domain/id_scope.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/domain/vistrail.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/domain/workflow.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/persistence/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/persistence/sql/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/persistence/sql/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/persistence/sql/sql_dao.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/persistence/xml/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/persistence/xml/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/persistence/xml/io.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/persistence/xml/xml_dao.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/schemas/sql/vistrails.sql
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/schemas/sql/vistrails_drop.sql
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/schemas/xml/vistrail.xsd
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/abstraction.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/abstractionRef.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/action.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/add.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/annotation.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/change.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/connection.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/delete.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/function.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/location.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/log.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/machine.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/module.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/module_exec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/other.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/parameter.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/port.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/portSpec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/tag.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/vistrail.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/workflow.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs/workflow_exec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/translate/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/translate/v0_6_0.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/domain/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/domain/abstraction.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/domain/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/domain/id_scope.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/domain/vistrail.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/domain/workflow.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/persistence/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/persistence/sql/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/persistence/sql/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/persistence/sql/sql_dao.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/persistence/xml/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/persistence/xml/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/persistence/xml/xml_dao.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/schemas/sql/vistrails.sql
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/schemas/sql/vistrails_drop.sql
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/schemas/xml/vistrail.xsd
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/abstraction.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/abstractionRef.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/action.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/add.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/annotation.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/change.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/connection.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/delete.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/function.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/location.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/log.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/machine.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/module.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/module_exec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/other.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/parameter.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/port.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/portSpec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/tag.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/vistrail.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/workflow.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs/workflow_exec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/translate/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/translate/v0_7_0.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/domain/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/persistence/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/schemas/sql/vistrails.sql
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/schemas/sql/vistrails.sql.bkp
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/schemas/sql/vistrails_drop.sql
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/schemas/xml/vistrail.xsd
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/abstraction.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/abstractionRef.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/action.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/add.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/annotation.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/change.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/connection.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/delete.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/function.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/location.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/log.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/machine.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/module.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/module_exec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/other.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/parameter.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/port.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/portSpec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/tag.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/vistrail.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/workflow.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs/workflow_exec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/translate/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/translate/v0_8_0.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/domain/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/domain/abstraction.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/domain/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/domain/id_scope.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/domain/log.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/domain/vistrail.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/domain/workflow.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/persistence/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/persistence/sql/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/persistence/sql/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/persistence/sql/sql_dao.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/persistence/xml/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/persistence/xml/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/persistence/xml/xml_dao.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/schemas/sql/vistrails.sql
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/schemas/sql/vistrails_drop.sql
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/schemas/xml/vistrail.xsd
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/abstraction.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/abstractionRef.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/action.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/add.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/annotation.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/change.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/connection.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/delete.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/function.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/location.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/log.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/machine.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/module.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/module_exec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/other.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/parameter.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/port.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/portSpec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/tag.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/vistrail.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/workflow.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs/workflow_exec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/translate/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/translate/v0_8_1.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/domain/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/domain/abstraction.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/domain/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/domain/id_scope.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/domain/log.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/domain/vistrail.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/domain/workflow.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/persistence/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/persistence/sql/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/persistence/sql/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/persistence/sql/sql_dao.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/persistence/xml/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/persistence/xml/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/persistence/xml/xml_dao.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/schemas/sql/vistrails.sql
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/schemas/sql/vistrails_drop.sql
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/schemas/xml/vistrail.xsd
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/abstraction.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/abstractionRef.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/action.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/add.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/annotation.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/change.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/connection.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/delete.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/function.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/group.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/location.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/log.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/machine.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/module.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/module_exec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/other.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/parameter.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/port.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/portSpec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/tag.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/vistrail.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/workflow.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs/workflow_exec.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/translate/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/translate/v0_9_0.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_2/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_2/domain/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_2/persistence/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_2/translate/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_2/translate/v0_9_1.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/domain/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/domain/abstraction.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/domain/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/domain/id_scope.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/domain/log.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/domain/vistrail.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/domain/workflow.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/persistence/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/persistence/sql/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/persistence/sql/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/persistence/sql/sql_dao.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/persistence/xml/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/persistence/xml/auto_gen.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/persistence/xml/xml_dao.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/schemas/sql/vistrails.sql
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/schemas/sql/vistrails_drop.sql
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/schemas/xml/vistrail.xsd
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/specs/all.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/translate/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/translate/v0_9_1.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/translate/v0_9_2.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/application.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/bookmark_alias.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/bookmark_explore.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/bookmark_panel.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/bookmark_window.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/builder_window.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/common_widgets.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/configuration.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/extras/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/extras/core/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/extras/core/db/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/extras/core/db/locator.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/graphics_view.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/method_dropbox.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/method_palette.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/module_annotation.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/module_documentation.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/module_methods.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/module_palette.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/open_db_window.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/paramexplore/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/paramexplore/param_view.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/paramexplore/pe_pipeline.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/paramexplore/pe_tab.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/paramexplore/pe_table.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/paramexplore/virtual_cell.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/pipeline_tab.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/pipeline_view.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/port_documentation.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/preferences.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/qt.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/query_tab.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/shell.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/theme.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/utils.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/version_prop.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/version_tab.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/version_view.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/video_player.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/view_manager.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/view_tabbar.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/vis_diff.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/vistrail_controller.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/vistrail_toolbar.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/vistrail_view.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/app/CaptureAPI.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/app/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/app/resources/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/app/resources/images.qrc
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/app/resources/images/app_icon.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/app/resources/images_rc.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/patcher/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/patcher/patch_action.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/patcher/patch_application.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/patcher/patch_core_system.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/patcher/patch_db_io.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/patcher/patch_graphics_view.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/patcher/patch_gui_extra_locator.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/patcher/patch_locator.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/patcher/patch_qbuilderwindow.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/patcher/patch_startup.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/patcher/patch_theme.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/patcher/patch_version_prop.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/patcher/patch_version_tab.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/patcher/patch_version_view.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/patcher/patch_view_manager.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/patcher/patch_vistrail.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/patcher/patch_vistrail_view.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/patcher/patch_vistrailcontroller.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pcore/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pcore/logger.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pcore/patch.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/addon_toolbar.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/application.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/builder_window.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/common_widgets.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/file_references.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/histogram_window.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/license.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/playback_toolbar.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/preferences.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images.qrc
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/README
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/arrow.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/back.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/close.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/empty.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/find.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/find_arrow.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/forward.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/logo.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/mac_close.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/new.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/open.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/pan.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/pause.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/pickversions.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/play.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/playback.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/redo.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/save.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/speed.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/speed_arrow.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/stop.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/undo.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/view_off.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/view_on.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images/zoom.png
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images_rc.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/search_toolbar.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/statistics/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/statistics/datasource.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/statistics/histogram.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/statistics/statistics.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/version_view.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/tests/__init__.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/tests/resources/console_mode_test.py
+lib/paraview-%%VERMAJORMINOR%%/vistrails/tests/resources/dummy.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/tests/resources/dummy_broken.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/tests/resources/dummy_new.vt
+lib/paraview-%%VERMAJORMINOR%%/vistrails/tests/resources/dummy_new.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/tests/resources/dynamic_module_error.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/tests/resources/empty_bookmarks.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/tests/resources/pythonsource.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/tests/resources/test_abstraction.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/tests/resources/test_alias.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/tests/resources/test_change_vistrail.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/tests/resources/test_ticket_73.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/tests/resources/vtk.xml
+lib/paraview-%%VERMAJORMINOR%%/vistrails/tests/resources/vtkfiles/vtk_quadric_writer_test.vtk
+lib/paraview-%%VERMAJORMINOR%%/vistrails/tests/runtestsuite.py
 lib/paraview-%%VERMAJORMINOR%%/vtkChartsKit.cmake
+lib/paraview-%%VERMAJORMINOR%%/vtkChartsPython.so
 lib/paraview-%%VERMAJORMINOR%%/vtkCommonKit.cmake
+lib/paraview-%%VERMAJORMINOR%%/vtkCommonPython.so
 lib/paraview-%%VERMAJORMINOR%%/vtkFilteringKit.cmake
+lib/paraview-%%VERMAJORMINOR%%/vtkFilteringPython.so
 lib/paraview-%%VERMAJORMINOR%%/vtkGenericFilteringKit.cmake
+lib/paraview-%%VERMAJORMINOR%%/vtkGenericFilteringPython.so
 lib/paraview-%%VERMAJORMINOR%%/vtkGeovisKit.cmake
+lib/paraview-%%VERMAJORMINOR%%/vtkGeovisPython.so
 lib/paraview-%%VERMAJORMINOR%%/vtkGraphicsKit.cmake
+lib/paraview-%%VERMAJORMINOR%%/vtkGraphicsPython.so
 lib/paraview-%%VERMAJORMINOR%%/vtkHybridKit.cmake
+lib/paraview-%%VERMAJORMINOR%%/vtkHybridPython.so
 lib/paraview-%%VERMAJORMINOR%%/vtkIOKit.cmake
+lib/paraview-%%VERMAJORMINOR%%/vtkIOPython.so
 lib/paraview-%%VERMAJORMINOR%%/vtkImagingKit.cmake
+lib/paraview-%%VERMAJORMINOR%%/vtkImagingPython.so
 lib/paraview-%%VERMAJORMINOR%%/vtkInfovisKit.cmake
+lib/paraview-%%VERMAJORMINOR%%/vtkInfovisPython.so
 lib/paraview-%%VERMAJORMINOR%%/vtkPVFiltersKit.cmake
+lib/paraview-%%VERMAJORMINOR%%/vtkPVFiltersPython.so
 lib/paraview-%%VERMAJORMINOR%%/vtkPVServerCommonKit.cmake
+lib/paraview-%%VERMAJORMINOR%%/vtkPVServerCommonPython.so
 lib/paraview-%%VERMAJORMINOR%%/vtkPVServerManagerKit.cmake
+lib/paraview-%%VERMAJORMINOR%%/vtkPVServerManagerPython.so
 lib/paraview-%%VERMAJORMINOR%%/vtkParallelKit.cmake
+lib/paraview-%%VERMAJORMINOR%%/vtkParallelPython.so
 lib/paraview-%%VERMAJORMINOR%%/vtkPointSprite_GraphicsKit.cmake
 lib/paraview-%%VERMAJORMINOR%%/vtkPointSprite_RenderingKit.cmake
 lib/paraview-%%VERMAJORMINOR%%/vtkRenderingKit.cmake
+lib/paraview-%%VERMAJORMINOR%%/vtkRenderingPython.so
 lib/paraview-%%VERMAJORMINOR%%/vtkViewsKit.cmake
+lib/paraview-%%VERMAJORMINOR%%/vtkViewsPython.so
 lib/paraview-%%VERMAJORMINOR%%/vtkVolumeRenderingKit.cmake
+lib/paraview-%%VERMAJORMINOR%%/vtkVolumeRenderingPython.so
 lib/paraview-%%VERMAJORMINOR%%/vtkWidgetsKit.cmake
+lib/paraview-%%VERMAJORMINOR%%/vtkWidgetsPython.so
 lib/paraview-%%VERMAJORMINOR%%/vtkXdmfKit.cmake
-%%DOCSDIR%%/paraview.qch
-@dirrm %%DOCSDIR%%
+%%PORTDOCS%%%%DOCSDIR%%/paraview.qch
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/tests/resources/vtkfiles
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/tests/resources
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/tests
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/statistics
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources/images
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui/resources
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pgui
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/pcore
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/patcher
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/app/resources/images
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/app/resources
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin/app
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/plugin
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/paramexplore
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/extras/core/db
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/extras/core
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/gui/extras
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/gui
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/translate
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/specs
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/schemas/xml
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/schemas/sql
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/schemas
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/persistence/xml
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/persistence/sql
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/persistence
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3/domain
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_3
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_2/translate
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_2/persistence
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_2/domain
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_2
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/translate
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/specs
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/schemas/xml
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/schemas/sql
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/schemas
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/persistence/xml
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/persistence/sql
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/persistence
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1/domain
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_1
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/translate
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/specs
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/schemas/xml
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/schemas/sql
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/schemas
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/persistence/xml
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/persistence/sql
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/persistence
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0/domain
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_9_0
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/translate
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/specs
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/schemas/xml
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/schemas/sql
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/schemas
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/persistence
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1/domain
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_1
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/translate
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/specs
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/schemas/xml
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/schemas/sql
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/schemas
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/persistence/xml
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/persistence/sql
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/persistence
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0/domain
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_8_0
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/translate
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/specs
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/schemas/xml
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/schemas/sql
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/schemas
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/persistence/xml
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/persistence/sql
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/persistence
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0/domain
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_7_0
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/translate
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/specs
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/schemas/xml
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/schemas/sql
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/schemas
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/persistence/xml
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/persistence/sql
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/persistence
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0/domain
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_6_0
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/translate
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/specs
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/schemas/xml
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/schemas/sql
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/schemas
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/persistence/xml
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/persistence/sql
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/persistence
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0/domain
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_5_0
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/translate
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/specs
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/schemas/xml
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/schemas
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/persistence
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1/domain
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_1
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/specs
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/schemas/xml
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/schemas
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/persistence/xml
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/persistence
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0/domain
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions/v0_3_0
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/versions
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/tests
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/specs
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/services
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/persistence
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/domain
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db/bin
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/db
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/core/vistrail
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/core/utils
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/core/system
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/core/resources
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/core/query
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/core/modules/resources
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/core/modules
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/core/log
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/core/interpreter
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/core/db
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/core/data_structures
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/core/cache
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/core/bundles
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/core/analogy
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/core
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails/api
+@dirrm lib/paraview-%%VERMAJORMINOR%%/vistrails
 @dirrm lib/paraview-%%VERMAJORMINOR%%/testing
+@dirrm lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/vtk
+@dirrm lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview/demos
+@dirrm lib/paraview-%%VERMAJORMINOR%%/site-packages/paraview
+@dirrm lib/paraview-%%VERMAJORMINOR%%/site-packages
 @dirrm lib/paraview-%%VERMAJORMINOR%%/doc/verdict/1.2.0
 @dirrm lib/paraview-%%VERMAJORMINOR%%/doc/verdict
 @dirrm lib/paraview-%%VERMAJORMINOR%%/doc
@@ -3831,6 +4722,8 @@ lib/paraview-%%VERMAJORMINOR%%/vtkXdmfKit.cmake
 @dirrm include/paraview-%%VERMAJORMINOR%%/Qt/Widgets/Resources/Icons
 @dirrm include/paraview-%%VERMAJORMINOR%%/Qt/Widgets/Resources
 @dirrm include/paraview-%%VERMAJORMINOR%%/Qt/Widgets
+@dirrm include/paraview-%%VERMAJORMINOR%%/Qt/Python/Resources
+@dirrm include/paraview-%%VERMAJORMINOR%%/Qt/Python
 @dirrm include/paraview-%%VERMAJORMINOR%%/Qt/Core/Resources/UI
 @dirrm include/paraview-%%VERMAJORMINOR%%/Qt/Core/Resources/Icons
 @dirrm include/paraview-%%VERMAJORMINOR%%/Qt/Core/Resources

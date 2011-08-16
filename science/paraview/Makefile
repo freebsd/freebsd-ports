@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	paraview
-PORTVERSION=	3.10.0
+PORTVERSION=	3.10.1
 CATEGORIES=	science graphics
 MASTER_SITES=	http://www.paraview.org/files/v${VERMAJORMINOR}/
 DISTNAME=	ParaView-${PORTVERSION}
@@ -14,7 +14,7 @@ DISTNAME=	ParaView-${PORTVERSION}
 MAINTAINER=	devel@stasyan.com
 COMMENT=	Powerful scientific data visualization application
 
-LIB_DEPENDS=	hdf5.0:${PORTSDIR}/science/hdf5 \
+LIB_DEPENDS=	hdf5.7:${PORTSDIR}/science/hdf5-18 \
 		png.6:${PORTSDIR}/graphics/png \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
 		tiff.4:${PORTSDIR}/graphics/tiff \
@@ -30,6 +30,7 @@ USE_GL=		yes
 USE_XORG=	x11 xt
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
+USE_PYTHON=	yes
 USE_CMAKE=	yes
 #CONFLICTS=	vtk-5.*
 CMAKE_ARGS+=	-DPARAVIEW_USE_SYSTEM_HDF5=1 \
@@ -45,8 +46,8 @@ CMAKE_ARGS+=	-DPARAVIEW_USE_SYSTEM_HDF5=1 \
 		-DQT_ASSISTANT_EXECUTABLE="${LOCALBASE}/bin/assistant-qt4" \
 		-DVTK_INSTALL_QT_PLUGIN_DIR="${PREFIX}/${QT_PLUGINDIR_REL}/designer" \
 		-DPARAVIEW_INSTALL_DEVELOPMENT="ON" \
-		-DPV_INSTALL_DOC_DIR=${DOCSDIR} \
-		-DPARAVIEW_INSTALL_THIRD_PARTY_LIBRARIES="OFF"
+		-DPARAVIEW_INSTALL_THIRD_PARTY_LIBRARIES="OFF" \
+		-DPARAVIEW_ENABLE_PYTHON:BOOL="ON"
 #		-DVTK_PYTHON_INCLUDE_PATH=${PYTHON_INCLUDEDIR} \
 #		-DPYTHON_INCLUDE_PATH:FILEPATH=${PYTHON_INCLUDEDIR} \
 #		-DVTK_WRAP_PYTHON:BOOL=ON \
@@ -60,6 +61,13 @@ OPTIONS=	OSMESA	"Use Mesa for off-screen rendering" Off \
 VERMAJORMINOR=	${PORTVERSION:R}
 
 .include <bsd.port.options.mk>
+
+# Simple solution to avoid lots of patching to support NOPORTDOCS
+.if !defined(NOPORTDOCS)
+CMAKE_ARGS+=	-DPV_INSTALL_DOC_DIR=${DOCSDIR}
+.else
+CMAKE_ARGS+=	-DPV_INSTALL_DOC_DIR=${WRKDIR}
+.endif
 
 .if defined(WITH_OSMESA)
 LIB_DEPENDS+=	OSMesa32.7:${PORTSDIR}/graphics/libosmesa
