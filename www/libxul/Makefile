@@ -51,8 +51,6 @@ OPTIONS=	DBUS "Enable D-BUS support" on
 
 .include <bsd.port.pre.mk>
 
-GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 '%{\!pg: %{pthread:' | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
-
 .if ${OSVERSION} < 700000
 LIB_DEPENDS+=	pulse.0:${PORTSDIR}/audio/pulseaudio
 EXTRA_PATCHES=	${FILESDIR}/releng6_pulseaudio
@@ -77,7 +75,7 @@ LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
+	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
 	    	${WRKSRC}/storage/build/Makefile.in \
 		${WRKSRC}/db/sqlite3/src/Makefile.in
 	${REINPLACE_CMD} -e 's|/usr/local/include|${LOCALBASE}/include|' \
