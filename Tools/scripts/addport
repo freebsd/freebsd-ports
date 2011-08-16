@@ -183,8 +183,6 @@ if ($dir eq "") {
 # make sure we're in the right place.
 chdir $currentdir;
 my @dirs = split(/\,/, $dir);
-my $portdir = $dirs[0];
-$portdir =~ s,\/.*,, ;
 foreach my $i (@dirs) { $i = abs_path($i); }
 my $portname; my $wrapat;
 foreach my $thisdir (@dirs) {
@@ -220,10 +218,6 @@ foreach my $thisdir (@dirs) {
 	m/([\w-]+)/;
 	$category = $1;
 	chomp $category;
-	if ($portdir ne $category) {
-		warnx("Port category $category doesn't match dir $portdir !");
-		exit 1;
-	}
 	if ($interactive) {
 		if (prompt("Port $portname will be put in category $category.  OK? " )) {
 			do {
