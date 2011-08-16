@@ -6,30 +6,33 @@
 #
 
 PORTNAME=	pivotx
-PORTVERSION=	2.2.6
+PORTVERSION=	2.3.0
 CATEGORIES=	www
-MASTER_SITES=	SF/pivot-weblog/PivotX http://pivotx.net/files/ http://pivotx.net/files/archived/
-DISTNAME=	pivotx_226
+MASTER_SITES=	SF/pivot-weblog/PivotX \
+		http://pivotx.net/files/ \
+		http://pivotx.net/files/archived/
+DISTNAME=	pivotx_2.3.0
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fumifumi@abacustech.jp
 COMMENT=	Software to help you maintain dynamic sites such as weblogs
 
-DOCS=	LICENSE.txt README.txt example.htaccess
-DOCS_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-${PORTREVISION}-docs
-
 LICENSE=	GPLv2
 LICENSE_FILE=	${DOCS_WRKSRC}/LICENSE.txt
+
+DOCS=		LICENSE.txt README.txt example.htaccess
+DOCS_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}-${PORTREVISION}-docs
 
 # Requirements:
 # http://book.pivotx.net/index.php?page=app-e#anchor-determining-if-your-server-meets-pivotxs-requirements
 
 OPTIONS=	MYSQL	"Use MySQL instead of flat files" off
+
 .include <bsd.port.options.mk>
 
 WANT_PHP_WEB=	yes
 IGNORE_WITH_PHP=4
-USE_PHP=	session gettext xml gd pcre
+USE_PHP=	session gettext xml gd pcre tokenizer
 USE_GETTEXT=	yes
 
 .if exists(${PHPBASE}/lib/php/${PHP_EXT_DIR}/simplexml.so) || !exists(${PHPBASE}/lib/php/${PHP_EXT_DIR}/dom.so)
