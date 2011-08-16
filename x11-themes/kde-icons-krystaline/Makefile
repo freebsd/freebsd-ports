@@ -11,6 +11,8 @@ MASTER_SITES=	http://files.fredemmott.co.uk/
 
 COMMENT=	KDE Krystaline iconset
 
+BROKEN=		does not fetch
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 PLIST_DIR_PATTERN_EXTRA=	-v "random"
