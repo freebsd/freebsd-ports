@@ -6,6 +6,9 @@ bin/cygdb
 %%PYTHON_SITELIBDIR%%/Cython/Build/__init__.py
 %%PYTHON_SITELIBDIR%%/Cython/Build/__init__.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Build/__init__.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Build/BuildExecutable.py
+%%PYTHON_SITELIBDIR%%/Cython/Build/BuildExecutable.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Build/BuildExecutable.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Build/Dependencies.py
 %%PYTHON_SITELIBDIR%%/Cython/Build/Dependencies.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Build/Dependencies.pyo
@@ -50,9 +53,6 @@ bin/cygdb
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/CodeGeneration.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/CodeGeneration.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/CodeGeneration.pyo
-%%PYTHON_SITELIBDIR%%/Cython/Compiler/ControlFlow.py
-%%PYTHON_SITELIBDIR%%/Cython/Compiler/ControlFlow.pyc
-%%PYTHON_SITELIBDIR%%/Cython/Compiler/ControlFlow.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/CythonScope.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/CythonScope.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/CythonScope.pyo
@@ -65,6 +65,11 @@ bin/cygdb
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/ExprNodes.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/ExprNodes.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/ExprNodes.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/FlowControl.py
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/FlowControl.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/FlowControl.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/FlowControl.pxd
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/FlowControl.so
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Future.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Future.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Future.pyo
@@ -102,6 +107,9 @@ bin/cygdb
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Parsing.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Parsing.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Parsing.so
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Pipeline.py
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Pipeline.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/Pipeline.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/PyrexTypes.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/PyrexTypes.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/PyrexTypes.pyo
@@ -149,6 +157,9 @@ bin/cygdb
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/UtilNodes.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/UtilNodes.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/UtilNodes.pyo
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/UtilityCode.py
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/UtilityCode.pyc
+%%PYTHON_SITELIBDIR%%/Cython/Compiler/UtilityCode.pyo
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Version.py
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Version.pyc
 %%PYTHON_SITELIBDIR%%/Cython/Compiler/Version.pyo
@@ -262,6 +273,7 @@ bin/cygdb
 %%PYTHON_SITELIBDIR%%/Cython/Includes/cpython/object.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/cpython/oldbuffer.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/cpython/pycapsule.pxd
+%%PYTHON_SITELIBDIR%%/Cython/Includes/cpython/pystate.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/cpython/pythread.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/cpython/ref.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/cpython/sequence.pxd
@@ -278,6 +290,7 @@ bin/cygdb
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libc/limits.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libc/locale.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libc/math.pxd
+%%PYTHON_SITELIBDIR%%/Cython/Includes/libc/setjmp.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libc/signal.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libc/stddef.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libc/stdint.pxd
@@ -292,11 +305,14 @@ bin/cygdb
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libcpp/queue.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libcpp/set.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libcpp/stack.pxd
+%%PYTHON_SITELIBDIR%%/Cython/Includes/libcpp/string.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libcpp/utility.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/libcpp/vector.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/numpy.pxd
+%%PYTHON_SITELIBDIR%%/Cython/Includes/openmp.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/posix/__init__.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/posix/fcntl.pxd
+%%PYTHON_SITELIBDIR%%/Cython/Includes/posix/ioctl.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Includes/posix/unistd.pxd
 %%PYTHON_SITELIBDIR%%/Cython/Plex/Actions.py
 %%PYTHON_SITELIBDIR%%/Cython/Plex/Actions.pyc
