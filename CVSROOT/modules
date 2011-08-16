@@ -1857,7 +1857,6 @@ couriergraph                    ports/mail/couriergraph
 courierpassd                    ports/security/courierpassd
 courierpasswd                   ports/security/courierpasswd
 courieruserinfo                 ports/security/courieruserinfo
-coverhunter                     ports/audio/coverhunter
 cowbell                         ports/audio/cowbell
 cowpatty                        ports/net-mgmt/cowpatty
 cowsay                          ports/games/cowsay
@@ -3051,6 +3050,7 @@ enygma                          ports/games/enygma
 eo-aspell                       ports/textproc/eo-aspell
 eog                             ports/graphics/eog
 eog-plugins                     ports/graphics/eog-plugins
+eos-movrec                      ports/graphics/eos-movrec
 epdfview                        ports/graphics/epdfview
 epeg                            ports/graphics/epeg
 eperl                           ports/lang/eperl
@@ -3555,7 +3555,6 @@ fluidsynth-dssi                 ports/audio/fluidsynth-dssi
 fluxbb                          ports/www/fluxbb
 fluxbg                          ports/x11/fluxbg
 fluxbox                         ports/x11-wm/fluxbox
-fluxbox-sid-pack                ports/x11-themes/fluxbox-sid-pack
 fluxbox-tenr-styles-pack        ports/x11-themes/fluxbox-tenr-styles-pack
 fluxcms                         ports/www/fluxcms
 fluxconf                        ports/x11-wm/fluxconf
@@ -4128,7 +4127,6 @@ gather                          ports/sysutils/gather
 gatling                         ports/www/gatling
 gauche                          ports/lang/gauche
 gauche-gaunit                   ports/devel/gauche-gaunit
-gauche-gdbm                     ports/databases/gauche-gdbm
 gauche-gl                       ports/graphics/gauche-gl
 gauche-readline                 ports/devel/gauche-readline
 gaul                            ports/devel/gaul
@@ -4381,6 +4379,7 @@ gist                            ports/www/gist
 git                             ports/devel/git
 git-annex                       ports/devel/git-annex
 git-merge-changelog             ports/devel/git-merge-changelog
+git-subversion                  ports/devel/git-subversion
 gitg                            ports/devel/gitg
 gitolite                        ports/devel/gitolite
 gittrac                         ports/devel/gittrac
@@ -6264,7 +6263,6 @@ ja-hns                          ports/japanese/hns
 ja-ibus-anthy                   ports/japanese/ibus-anthy
 ja-ibus-mozc                    ports/japanese/ibus-mozc
 ja-ibus-skk                     ports/japanese/ibus-skk
-ja-ical                         ports/japanese/ical
 ja-icanna                       ports/japanese/icanna
 ja-im-ja                        ports/japanese/im-ja
 ja-ipadic                       ports/japanese/ipadic
@@ -18503,6 +18501,7 @@ p5-sub-wrappackages             ports/devel/p5-Sub-WrapPackages
 p5-subatom                      ports/devel/p5-subatom
 p5-subtitles                    ports/multimedia/p5-Subtitles
 p5-subversion                   ports/devel/p5-subversion
+p5-subversion-freebsd           ports/devel/p5-subversion-freebsd
 p5-sudo                         ports/security/p5-Sudo
 p5-super                        ports/devel/p5-SUPER
 p5-svg                          ports/textproc/p5-SVG
@@ -24021,7 +24020,6 @@ scite                           ports/editors/scite
 scli                            ports/net-mgmt/scli
 scloader                        ports/www/scloader
 scm                             ports/lang/scm
-scmail                          ports/mail/scmail
 scmpc                           ports/audio/scmpc
 scmxx                           ports/comms/scmxx
 scnc                            ports/net/scnc
@@ -24849,6 +24847,7 @@ subclipse                       ports/devel/subclipse
 subcommander                    ports/devel/subcommander
 subcommander2                   ports/devel/subcommander2
 subnetcalc                      ports/net/subnetcalc
+subsonic                        ports/www/subsonic
 subtitlecomposer                ports/multimedia/subtitlecomposer
 subtitlecomposer-kde4           ports/multimedia/subtitlecomposer-kde4
 subtitleeditor                  ports/multimedia/subtitleeditor
@@ -26384,7 +26383,6 @@ wikicalc                        ports/www/wikicalc
 wikindx                         ports/www/wikindx
 wildmagic                       ports/graphics/wildmagic
 wildmidi                        ports/audio/wildmidi
-wiliki                          ports/www/wiliki
 win32-codecs                    ports/multimedia/win32-codecs
 windowlab                       ports/x11-wm/windowlab
 windowmaker                     ports/x11-wm/windowmaker
