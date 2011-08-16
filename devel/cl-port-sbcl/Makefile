@@ -6,7 +6,7 @@
 
 PORTNAME=	port
 PORTVERSION=	2002.10.02.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
@@ -16,8 +16,6 @@ COMMENT=	Cross-Lisp portability package
 
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/port/port.asd:${PORTSDIR}/devel/cl-port
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/port/port.asd:${PORTSDIR}/devel/cl-port
-
-BROKEN=		fails to build
 
 USE_ASDF_FASL=	yes
 FASL_TARGET=	sbcl

@@ -6,7 +6,7 @@
 
 PORTNAME=	md5
 PORTVERSION=	1.8.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
@@ -16,8 +16,6 @@ COMMENT=	A native MD5 implementation in Common Lisp
 
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/md5/md5.asd:${PORTSDIR}/security/cl-md5
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/md5/md5.asd:${PORTSDIR}/security/cl-md5
-
-BROKEN=		fails to build
 
 USE_ASDF_FASL=	yes
 FASL_TARGET=	sbcl
