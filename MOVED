@@ -2513,3 +2513,4 @@ www/wiliki||2011-08-14|Removed: depends on expired gauche-gdbm
 mail/scmail||2011-08-14|Removed: depends on expired gauche-gdbm
 x11-themes/fluxbox-sid-pack||2011-08-14|Has expired: No longer maintained by upstream
 japanese/ical||2011-08-15|Removed
+lang/ocamlduce||2011-08-16|Has expired: has been broken for over a year
