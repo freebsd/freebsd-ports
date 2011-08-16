@@ -1,33 +1,72 @@
---- mozilla/js/src/configure.in.orig	2010-11-04 21:05:48.000000000 +0100
-+++ mozilla/js/src/configure.in	2010-11-22 21:30:24.000000000 +0100
-@@ -2621,7 +2621,7 @@
+--- mozilla/js/src/configure.in.orig	2011-07-06 05:09:22.000000000 +0200
++++ mozilla/js/src/configure.in	2011-07-06 22:19:17.584233430 +0200
+@@ -1473,7 +1473,7 @@
+     CPU_ARCH=sparc
+     ;;
+ 
+-x86_64 | ia64)
++amd64 | x86_64 | ia64)
+     CPU_ARCH="$OS_TEST"
+     ;;
+ 
+@@ -1495,7 +1495,7 @@
+ dnl ===============================================================
+ INTEL_ARCHITECTURE=
+ case "$OS_TEST" in
+-    x86_64|i?86)
++    amd64|x86_64|i?86)
+       INTEL_ARCHITECTURE=1
+ esac
+ 
+@@ -2713,7 +2713,7 @@
      AC_DEFINE(JS_CPU_X86)
      AC_DEFINE(JS_NUNBOX32)
      ;;
 -x86_64*-*)
-+x86_64*-*|amd64*-*)
++amd64*-*)
      ENABLE_TRACEJIT=1
      NANOJIT_ARCH=X64
      ENABLE_METHODJIT=1
-@@ -2638,11 +2638,6 @@
-     AC_DEFINE(JS_CPU_ARM)
-     AC_DEFINE(JS_NUNBOX32)
+@@ -2723,23 +2723,23 @@
+     AC_DEFINE(JS_CPU_X64)
+     AC_DEFINE(JS_PUNBOX64)
+     ;;
+-arm*-*)
++x86_64*-*)
+     ENABLE_TRACEJIT=1
+-    NANOJIT_ARCH=ARM
++    NANOJIT_ARCH=X64
+     ENABLE_METHODJIT=1
+     ENABLE_MONOIC=1
+     ENABLE_POLYIC=1
+-    AC_DEFINE(JS_CPU_ARM)
+-    AC_DEFINE(JS_NUNBOX32)
++    ENABLE_POLYIC_TYPED_ARRAY=1
++    AC_DEFINE(JS_CPU_X64)
++    AC_DEFINE(JS_PUNBOX64)
      ;;
 -sparc*-*)
--    ENABLE_TRACEJIT=1
++arm*-*)
+     ENABLE_TRACEJIT=1
 -    NANOJIT_ARCH=Sparc
++    NANOJIT_ARCH=ARM
+     ENABLE_METHODJIT=1
+     ENABLE_MONOIC=1
+     ENABLE_POLYIC=1
+-    ENABLE_POLYIC_TYPED_ARRAY=1
 -    AC_DEFINE(JS_CPU_SPARC)
--    ;;
++    AC_DEFINE(JS_CPU_ARM)
+     AC_DEFINE(JS_NUNBOX32)
+     ;;
  esac
- 
- MOZ_ARG_DISABLE_BOOL(methodjit,
-@@ -2693,7 +2688,7 @@
+@@ -2796,6 +2796,10 @@
  i?86-*)
      AC_DEFINE(AVMPLUS_IA32)
      ;;
--x86_64*-*)
-+x86_64*-*|amd64*-*)
++amd64*-*)
++    AC_DEFINE(AVMPLUS_AMD64)
++    AC_DEFINE(AVMPLUS_64BIT)
++    ;;
+ x86_64*-*)
      AC_DEFINE(AVMPLUS_AMD64)
      AC_DEFINE(AVMPLUS_64BIT)
-     ;;
-
