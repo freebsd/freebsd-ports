@@ -174,7 +174,6 @@
     SUBDIR += cl-alexandria-clisp
     SUBDIR += cl-alexandria-sbcl
     SUBDIR += cl-asdf
-    SUBDIR += cl-asdf-binary-locations
     SUBDIR += cl-asdf-clisp
     SUBDIR += cl-cffi
     SUBDIR += cl-cffi-clisp
