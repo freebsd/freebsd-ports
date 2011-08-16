@@ -1,5 +1,23 @@
---- lib/SguildLoaderd.tcl.bak	2009-07-06 14:53:16.000000000 -0500
-+++ lib/SguildLoaderd.tcl	2009-07-06 14:53:56.000000000 -0500
+--- lib/SguildLoaderd.tcl.orig	2007-09-25 14:17:13.000000000 +0000
++++ lib/SguildLoaderd.tcl	2011-08-11 20:22:18.000000000 +0000
+@@ -129,7 +129,7 @@
+         INDEX dst_port (dst_port),                         \
+         INDEX src_port (src_port),                         \
+         INDEX start_time (start_time)                      \
+-        )                                                  \
++        ) ENGINE=MyISAM                                    \
+         "
+
+     # Create the table
+@@ -182,7 +182,7 @@
+         INDEX dst_port (dst_port),                         \
+         INDEX src_port (src_port),                         \
+         INDEX start_time (start_time)                      \
+-        ) TYPE=MERGE UNION=([join $tmpTables ,])      \
++        ) ENGINE=MERGE UNION=([join $tmpTables ,])      \
+         "
+     # Create our MERGE sancp table
+     mysqlexec $dbSocketID $createQuery
 @@ -225,7 +225,7 @@
      } else {
          # Make sure its a MERGE table and not the old monster
