@@ -1,6 +1,6 @@
---- configure.in.orig	2011-03-14 14:50:16.000000000 +0100
-+++ configure.in	2011-04-22 12:52:35.061444423 +0200
-@@ -1420,7 +1420,7 @@
+--- configure.in.orig	2011-07-15 07:42:33.000000000 +0200
++++ configure.in	2011-07-22 13:43:44.000000000 +0200
+@@ -1438,7 +1438,7 @@
      CPU_ARCH=sparc
      ;;
  
@@ -9,7 +9,7 @@
      CPU_ARCH="$OS_TEST"
      ;;
  
-@@ -1440,7 +1440,7 @@
+@@ -1458,7 +1458,7 @@
  dnl ===============================================================
  INTEL_ARCHITECTURE=
  case "$OS_TEST" in
@@ -18,7 +18,90 @@
        INTEL_ARCHITECTURE=1
  esac
  
-@@ -4388,7 +4388,7 @@
+@@ -1781,7 +1781,7 @@
+     esac
+ 
+     case "${host_cpu}" in
+-    x86_64)
++    amd64 | x86_64)
+         HOST_CFLAGS="$HOST_CFLAGS -D_AMD64_"
+         ;;
+     esac
+@@ -2437,6 +2437,9 @@
+     x86_64-*)
+     	AC_DEFINE(_AMD64_)
+ 	;;
++    amd64*)
++    	AC_DEFINE(_AMD64_)
++	;;
+     *)
+     	AC_DEFINE(_CPU_ARCH_NOT_DEFINED)
+ 	;;
+@@ -2508,7 +2511,7 @@
+     else
+         DLL_SUFFIX=".so.1.0"
+     fi
+-    MOZ_FIX_LINK_PATHS='-Wl,-rpath-link,$(LIBXUL_DIST)/bin -Wl,-rpath-link,$(prefix)/lib -Wl,-rpath-link,$(if $(X11BASE),$(X11BASE),/usr/X11R6)/lib'
++    MOZ_FIX_LINK_PATHS='-Wl,-rpath-link,$(LIBXUL_DIST)/bin -Wl,-rpath-link,$(prefix)/lib -Wl,-rpath-link,$(if $(X11BASE),$(X11BASE),/usr/local)/lib'
+     DSO_CFLAGS=''
+     DSO_PIC_CFLAGS='-fPIC'
+     DSO_LDOPTS='-shared -fPIC'
+@@ -3326,11 +3329,11 @@
+     ;;
+ *)
+     MOZ_CHECK_PTHREADS(pthreads,
+-        USE_PTHREADS=1 _PTHREAD_LDFLAGS="-lpthreads",
++        USE_PTHREADS=1 _PTHREAD_LDFLAGS="-pthreads",
+         MOZ_CHECK_PTHREADS(pthread,
+-            USE_PTHREADS=1 _PTHREAD_LDFLAGS="-lpthread",
++            USE_PTHREADS=1 _PTHREAD_LDFLAGS="-pthread",
+             MOZ_CHECK_PTHREADS(c_r,
+-                USE_PTHREADS=1 _PTHREAD_LDFLAGS="-lc_r",
++                USE_PTHREADS=1 _PTHREAD_LDFLAGS="-pthread",
+                 MOZ_CHECK_PTHREADS(c,
+                     USE_PTHREADS=1
+                 )
+@@ -3405,18 +3408,18 @@
+ 	    *-*-freebsd*)
+ 			AC_DEFINE(_REENTRANT)
+ 			AC_DEFINE(_THREAD_SAFE)
+-			dnl -pthread links in -lc_r, so don't specify it explicitly.
++			dnl -pthread links in -pthread, so don't specify it explicitly.
+ 			if test "$ac_cv_have_dash_pthread" = "yes"; then
+ 				_PTHREAD_LDFLAGS="-pthread"
+ 			else
+-				_PTHREAD_LDFLAGS="-lc_r"
++				_PTHREAD_LDFLAGS="-pthread"
+ 			fi
+ 			;;
+ 
+ 	    *-*-openbsd*|*-*-bsdi*)
+ 			AC_DEFINE(_REENTRANT)
+ 			AC_DEFINE(_THREAD_SAFE)
+-			dnl -pthread links in -lc_r, so don't specify it explicitly.
++			dnl -pthread links in -pthread, so don't specify it explicitly.
+ 			if test "$ac_cv_have_dash_pthread" = "yes"; then
+                 _PTHREAD_LDFLAGS="-pthread"
+ 			fi
+@@ -3591,7 +3594,7 @@
+     ac_cv_func_iconv,
+     [AC_TRY_LINK([
+         #include <stdlib.h>
+-        #include <iconv.h>
++        #include "/usr/local/include/iconv.h"
+         ],
+         [
+             iconv_t h = iconv_open("", "");
+@@ -3612,7 +3615,7 @@
+         ac_cv_func_const_iconv,
+         [AC_TRY_COMPILE([
+             #include <stdlib.h>
+-            #include <iconv.h>
++            #include "/usr/local/include/iconv.h"
+             ],
+             [
+                 const char *input = "testing";
+@@ -4409,7 +4412,7 @@
  LDFLAGS=$_SAVE_LDFLAGS
  LIBS=$_SAVE_LIBS
  
@@ -27,3 +110,12 @@
      ZLIB_CFLAGS="-I${ZLIB_DIR}/include"
      ZLIB_LIBS="-L${ZLIB_DIR}/lib ${ZLIB_LIBS}"
  fi
+@@ -5966,7 +5969,7 @@
+     i*86)
+       MOZ_CRT_CPU_ARCH=intel
+       ;;
+-    x86_64)
++    amd64 | x86_64)
+       MOZ_CRT_CPU_ARCH=amd64
+       ;;
+     *)

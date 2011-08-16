@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thunderbird
-DISTVERSION=	5.0
+DISTVERSION=	6.0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
@@ -36,7 +36,7 @@ USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GL=		gl
 
-MOZ_PROTOCOLS=	http,ftp,file,viewsource,res,data,wyciwyg
+MOZ_PROTOCOLS=	http,ftp,file,viewsource,res,data,wyciwyg,websocket
 MOZ_GRAPHICS=	default,-xbm
 MOZ_OPTIONS=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
 	--enable-single-profile --disable-profilesharing \
@@ -59,7 +59,7 @@ OPTIONS=	LIGHTNING       "Enable calendar extension" off
 
 .include <bsd.port.pre.mk>
 
-WRKSRC=		${WRKDIR}/comm-miramar
+WRKSRC=		${WRKDIR}/comm-release
 MOZSRC:=	${WRKSRC}/mozilla
 
 .if ${ARCH} == powerpc64
@@ -70,8 +70,6 @@ CONFIGURE_ENV+=	UNAME_m="powerpc64"
 CFLAGS+=	-mminimal-toc
 .endif
 .endif
-
-GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 '%{\!pg: %{pthread:' | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
 
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 USE_GNOME+=	libgnomeui
@@ -101,7 +99,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 MOZ_OPTIONS+=	--disable-calendar
 .endif
 
-post-extract::
+post-extract:
 	${SED} -e 's|@PORTNAME_ICON@|${PORTNAME_ICON}|' \
 		<${FILESDIR}/thunderbird.desktop.in >${WRKDIR}/${MOZILLA_EXEC_NAME}.desktop
 
@@ -109,7 +107,7 @@ post-patch:
 	@${GREP} -Flr \"/proc ${MOZSRC}/ipc/chromium/src/base | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|/proc/self/fd|/dev/fd|' \
 		-e 's|/proc["/]|/compat/linux&|'
-	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
+	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
 		${MOZSRC}/storage/build/Makefile.in \
 		${MOZSRC}/toolkit/library/Makefile.in \
 		${MOZSRC}/db/sqlite3/src/Makefile.in
