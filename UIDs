@@ -146,7 +146,7 @@ uhub:*:411:411::0:0:uHub ADC Daemon:/nonexistent:/usr/sbin/nologin
 drweb:*:426:426::0:0:Dr.Web Mail Scanner:/nonexistent:/usr/sbin/nologin
 callweaver:*:444:444::0:0:Callweaver account:/var/lib/callweaver:/usr/sbin/nologin
 courier:*:465:465::0:0:Courier Mail Server:/nonexistent:/usr/sbin/nologin
-_bbstored:*:505:505::0:0:BoxBackup Store Daemon:/nonexistent:/bin/sh
+_bbstored:*:505:505::0:0:Box Backup Store Daemon:/nonexistent:/usr/sbin/nologin
 radmind:*:506:506::0:0:radmind User:/var/radmind:/usr/sbin/nologin
 skkserv:*:507:507::0:0:skkserv User:/nonexistent:/usr/sbin/nologin
 nullmail:*:522:522::0:0:Nullmailer Mail System:/var/spool/nullmailer:/bin/sh
