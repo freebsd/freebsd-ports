@@ -23,7 +23,7 @@ USE_LDCONFIG=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${SHAPELIB_VER}
 
 OPTIONS=	DEBUG "Debugging" off \
-		PROJ4 "Cartographic Projections library" off
+		PROJ "Cartographic Projections library" off
 
 SHAPELIB_VER=	${PORTVERSION}b2
 
@@ -41,13 +41,13 @@ ENDIAN=		-D_LITTLE_ENDIAN
 ENDIAN=		-D_BIG_ENDIAN
 .endif
 
-.if defined(WITH_PROJ4)
+.if defined(WITH_PROJ)
 LIB_DEPENDS+=	proj:${PORTSDIR}/graphics/proj
-PLIST_SUB+=	PROJ4=""
-PROJ4=		-DPROJ4
+PLIST_SUB+=	PROJ=""
+PROJ=		-DPROJ4
 .else
-PLIST_SUB+=	PROJ4="@comment "
-PROJ4=		-DNO_PROJ4
+PLIST_SUB+=	PROJ="@comment "
+PROJ=		-DNO_PROJ4
 .endif
 
 post-patch:
@@ -58,7 +58,7 @@ post-patch:
 		-e 's#%%LIBTOOL%%#${LIBTOOL}#g' \
 		-e 's#%%PREFIX%%#${PREFIX}#g' \
 		-e 's#%%ENDIAN%%#${ENDIAN}#g' \
-		-e 's#%%PROJ4%%#${PROJ4}#g' \
+		-e 's#%%PROJ%%#${PROJ}#g' \
 			${WRKSRC}/Makefile ${WRKSRC}/contrib/Makefile
 
 post-install:
