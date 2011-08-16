@@ -10,7 +10,6 @@ lib/icon/bin/iconx
 @exec ln -sf %B/%f %D/bin/%f
 @unexec rm -f %D/bin/%f
 %%WITHOUT_X11%%lib/icon/bin/palette
-lib/icon/bin/rtt
 %%WITHOUT_X11%%lib/icon/bin/vib
 %%WITHOUT_X11%%@exec ln -sf %B/%f %D/bin/%f
 %%WITHOUT_X11%%@unexec rm -f %D/bin/%f
@@ -164,6 +163,8 @@ lib/icon/lib/drawlab.u1
 lib/icon/lib/drawlab.u2
 lib/icon/lib/dsetup.u1
 lib/icon/lib/dsetup.u2
+lib/icon/lib/echo.u1
+lib/icon/lib/echo.u2
 lib/icon/lib/ebcdic.u1
 lib/icon/lib/ebcdic.u2
 lib/icon/lib/empgsup.u1
@@ -807,10 +808,12 @@ lib/icon/lib/zipread.u1
 lib/icon/lib/zipread.u2
 %%PORTDOCS%%%%DOCSDIR%%/blubordr.gif
 %%PORTDOCS%%%%DOCSDIR%%/build.htm
+%%PORTDOCS%%%%DOCSDIR%%/cfuncs.htm
 %%PORTDOCS%%%%DOCSDIR%%/clnroff.sed
 %%PORTDOCS%%%%DOCSDIR%%/cube128.gif
 %%PORTDOCS%%%%DOCSDIR%%/cygwin.htm
 %%PORTDOCS%%%%DOCSDIR%%/docguide.htm
+%%PORTDOCS%%%%DOCSDIR%%/extlvals.htm
 %%PORTDOCS%%%%DOCSDIR%%/faq.htm
 %%PORTDOCS%%%%DOCSDIR%%/faq.txt
 %%PORTDOCS%%%%DOCSDIR%%/files.htm

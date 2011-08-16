@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	icon
-PORTVERSION=	9.4.3
-PORTREVISION=	3
+PORTVERSION=	9.5.0
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cs.arizona.edu/icon/ftp/packages/unix/
-DISTNAME=	${PORTNAME}.v${PORTVERSION:S/.//g}src
+DISTNAME=	${PORTNAME}-v${PORTVERSION:S/.//g}src
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
@@ -19,12 +18,16 @@ COMMENT=	The Icon programming language
 ALL_TARGET=	All
 MAKE_JOBS_UNSAFE=	yes
 
+.if ${CC} == "clang" || ${CXX} == "clang++"
+BROKEN=		does not pass all tests when compiled with clang
+.endif
+
 MAN1=		icon.1 icont.1
 
 ARCH_NAME=	bsd
 ICONDIR=	${PREFIX}/lib/${PORTNAME}
 
-BINS=		icont iconx rtt
+BINS=		icont iconx
 BINXS=		colrbook colrpick fontpick palette vib wevents xgamma
 
 .if defined(WITHOUT_X11)
