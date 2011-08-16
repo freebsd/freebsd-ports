@@ -2,17 +2,11 @@
 etc/asdf-init.lisp.default
 @exec [ -f %D/etc/asdf-init.lisp ] || cp %D/etc/asdf-init.lisp.default %D/etc/asdf-init.lisp
 %%LIB32DIR%%/common-lisp/asdf/asdf-ecl.lisp
-%%LIB32DIR%%/common-lisp/asdf/asdf-install.lisp
 %%LIB32DIR%%/common-lisp/asdf/asdf.asd
 %%LIB32DIR%%/common-lisp/asdf/asdf.lisp
-%%LIB32DIR%%/common-lisp/asdf/cclan-package.lisp
-%%LIB32DIR%%/common-lisp/asdf/cclan.asd
-%%LIB32DIR%%/common-lisp/asdf/cclan.lisp
 %%LIB32DIR%%/common-lisp/asdf/wild-modules.lisp
 %%LIB32DIR%%/common-lisp/system-registry/asdf.asd
-%%LIB32DIR%%/common-lisp/system-registry/cclan.asd
 %%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.FreeBSD
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry %%LIB32DIR%%/common-lisp/system-registry
 @dirrmtry %%LIB32DIR%%/common-lisp/asdf
