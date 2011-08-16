@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	zathura
-PORTVERSION=	0.0.8.3
+PORTVERSION=	0.0.8.4
 CATEGORIES=	graphics print
 MASTER_SITES=	http://pwmt.org/download/
 
@@ -21,7 +21,9 @@ FETCH_ARGS=	-Fpr
 
 MAN1=		zathura.1
 MANCOMPRESSED=	no
-PLIST_FILES=	bin/zathura
+PLIST_FILES=	bin/zathura	\
+		share/applications/zathura.desktop
+PLIST_DIRSTRY=	share/applications
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} -e 's|man1|man/man1|g' \
