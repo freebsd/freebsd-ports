@@ -8,7 +8,7 @@
 
 PORTNAME=	mftrace
 PORTVERSION=	1.2.16
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	print
 MASTER_SITES=	http://lilypond.org/download/sources/mftrace/ \
 		LOCAL/nivit/${PORTNAME}/
@@ -20,12 +20,12 @@ RUN_DEPENDS=	mktextfm:${PORTSDIR}/print/teTeX \
 		t1asm:${PORTSDIR}/print/t1utils \
 		fontforge:${PORTSDIR}/print/fontforge
 
-.if defined(WITH_POTRACE)
-BUILD_DEPENDS+=	potrace:${PORTSDIR}/graphics/potrace
-RUN_DEPENDS+=	potrace:${PORTSDIR}/graphics/potrace
-.else
+.if defined(WITH_AUTOTRACE)
 BUILD_DEPENDS+=	autotrace:${PORTSDIR}/graphics/autotrace
 RUN_DEPENDS+=	autotrace:${PORTSDIR}/graphics/autotrace
+.else
+BUILD_DEPENDS+=	potrace:${PORTSDIR}/graphics/potrace
+RUN_DEPENDS+=	potrace:${PORTSDIR}/graphics/potrace
 .endif
 
 USE_PYTHON=	yes
