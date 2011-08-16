@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	seamonkey
-DISTVERSION=	2.2
-PORTREVISION=	1
+DISTVERSION=	2.3
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}/source
@@ -39,7 +38,7 @@ USE_GCC=	4.2+
 
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 
-MOZILLA=	${PORTNAME}-${PORTVERSION}
+MOZILLA=	${PORTNAME}
 MOZILLA_EXEC_NAME=	${PORTNAME}
 MOZ_EXTENSIONS=	default
 MOZ_OPTIONS+=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
@@ -71,8 +70,6 @@ OPTIONS=MAILNEWS "Enable Mail and News modules" on \
 
 MOZSRC:=	${WRKDIR}/comm-release/mozilla
 WRKSRC=		${WRKDIR}/comm-release
-
-GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 '%{\!pg: %{pthread:' | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
 
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 USE_GNOME+=	libgnomeui
@@ -131,7 +128,7 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
 		${WRKSRC}/mozilla/security/manager/ssl/src/Makefile.in \
 		${WRKSRC}/mozilla/js/src/config/mkdepend/Makefile.in
-	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
+	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
 		${MOZSRC}/storage/build/Makefile.in \
 		${MOZSRC}/toolkit/library/Makefile.in \
 		${MOZSRC}/db/sqlite3/src/Makefile.in
