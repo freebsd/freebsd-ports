@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	Net-Dict
-PORTVERSION=	2.07
+PORTVERSION=	2.08
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:NEILB
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A simple client API for the DICT protocol
 
-BUILD_DEPENDS=	${SITE_PERL}/Net/Cmd.pm:${PORTSDIR}/net/p5-Net
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
 PERL_CONFIGURE=	yes
+
 MAN3=		Net::Dict.3
 
 post-patch:
-	${PERL} -pi -e '$$_="" if /(&configure|EXE_FILES)/' \
+	@${REINPLACE_CMD} -e '/&configure_testsuite/d; /EXE_FILES/d' \
 		${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
