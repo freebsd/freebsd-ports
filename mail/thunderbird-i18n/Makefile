@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thunderbird-i18n
-PORTVERSION=	5.0
+PORTVERSION=	6.0
 CATEGORIES=	mail
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -26,10 +26,9 @@ NO_BUILD=	yes
 USE_THUNDERBIRD=	yes
 USE_XPI=	*thunderbird
 
-THUNDERBIRD_I18N_ALL=	ar bg br ca cs da de en-GB en-US es-AR es-ES et eu fi fr \
+THUNDERBIRD_I18N_ALL=	ar br ca cs da de en-GB en-US es-AR es-ES et eu fi fr \
 			fy-NL ga-IE gd gl he hu is it ja ko lt nb-NO nl nn-NO \
-			pa-IN pl pt-BR pt-PT rm ru si sk sl sq sv-SE ta-LK tr uk \
-			zh-TW
+			pl pt-BR pt-PT rm ru si sk sl sq sv-SE ta-LK tr uk zh-TW
 
 .ifdef PACKAGE_BUILDING
 THUNDERBIRD_I18N?=	all
