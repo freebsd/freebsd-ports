@@ -37,7 +37,7 @@ post-patch:
 		src/napi.h
 
 pre-build:
-	@cd ${WRKSRC} && ${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS}
+	@cd ${WRKSRC} && ${QMAKE} -spec ${QMAKESPEC} ${QMAKEFLAGS}
 
 post-install:
 .if !defined(NOPORTDOCS)
