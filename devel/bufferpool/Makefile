@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bufferpool
-PORTVERSION=	0.0.1
+PORTVERSION=	0.0.4
 CATEGORIES=	devel
 MASTER_SITES=	http://lscube.org/files/downloads/bufferpool/
 
