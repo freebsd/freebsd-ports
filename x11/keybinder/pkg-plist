@@ -1,0 +1,13 @@
+include/keybinder.h
+lib/libkeybinder.la
+lib/libkeybinder.so
+lib/libkeybinder.so.0
+%%LUA%%%%LUA_MODLIBDIR%%/keybinder.la
+%%LUA%%%%LUA_MODLIBDIR%%/keybinder.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/keybinder/__init__.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/keybinder/__init__.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/keybinder/__init__.pyo
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/keybinder/_keybinder.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/keybinder/_keybinder.so
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/keybinder
+libdata/pkgconfig/keybinder.pc
