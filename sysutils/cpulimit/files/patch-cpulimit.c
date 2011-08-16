@@ -1,8 +1,8 @@
---- cpulimit.c.orig	2010-08-20 19:35:15.000000000 -0300
-+++ cpulimit.c	2010-08-21 14:17:52.000000000 -0300
-@@ -43,6 +43,15 @@
- #include <errno.h>
- #include <string.h>
+--- ./cpulimit.c.orig	2011-08-12 19:35:36.000000000 -0300
++++ ./cpulimit.c	2011-08-12 21:31:58.000000000 -0300
+@@ -35,6 +35,15 @@
+ #include <limits.h>    // for compatibility
+ 
  
 +#include <limits.h>
 +#include <fcntl.h>
@@ -16,7 +16,7 @@
  //kernel time resolution (inverse of one jiffy interval) in Hertz
  //i don't know how to detect it, then define to the default (not very clean!)
  #define HZ 100
-@@ -235,6 +244,31 @@
+@@ -245,6 +254,31 @@
  }
  
  //get jiffies count from /proc filesystem
@@ -48,9 +48,9 @@
  int getjiffies(int pid) {
  	static char stat[20];
  	static char buffer[1024];
-@@ -255,6 +289,8 @@
- 	int ktime=atoi(p+1);
- 	return utime+ktime;
+@@ -271,6 +305,8 @@
+         // could not read info
+         return -1;
  }
 +*/
 +

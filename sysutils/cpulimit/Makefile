@@ -6,16 +6,23 @@
 #
 
 PORTNAME=	cpulimit
-PORTVERSION=	1.1
+PORTVERSION=	1.4
 CATEGORIES=	sysutils
-MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}/
+MASTER_SITES=	SF/limitcpu/limitcpu/
 
 MAINTAINER=	jessefrgsmith@yahoo.ca
 COMMENT=	A program to limit the CPU usage of a process
 
-PLIST_FILES=	bin/${PORTNAME}
+LICENSE=	GPLv2
 
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+CFLAGS+=	-lkvm -Wall -O2
+MANCOMPRESSED=	yes
+
+PLIST_FILES=	bin/${PORTNAME}
+MAN1=		${PORTNAME}.1
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|share/||g' ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e 's|gcc|${CC}|g' ${WRKSRC}/Makefile
 
 .include <bsd.port.mk>
