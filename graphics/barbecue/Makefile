@@ -7,7 +7,7 @@
 
 PORTNAME=	barbecue
 PORTVERSION=	1.0.6d
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	graphics print java
 MASTER_SITES=	SF
 
@@ -24,18 +24,18 @@ JARFILES=	${PORTNAME}-${PORTVERSION}.jar
 PLIST_FILES+=	%%JAVAJARDIR%%/${JARFILES:S|-${PORTVERSION}||}	\
 		%%JAVAJARDIR%%/LICENSE.barbecue.txt
 
-.if defined(WITH_TOMCAT41)
-RUN_DEPENDS+=	${LOCALBASE}/bin/tomcat41ctl:${PORTSDIR}/www/tomcat41
-JAKARTA_HOME=	${LOCALBASE}/jakarta-tomcat4.1
+.if defined(WITH_TOMCAT55)
+RUN_DEPENDS+=	${LOCALBASE}/tomcat5.5/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
+JAKARTA_HOME=	${LOCALBASE}/tomcat5.5
 PLIST_FILES+=	${JAKARTA_HOME:S|^${LOCALBASE}/||}/webapps/${PORTNAME}.war
 .endif
 
 PORTDOCS=	*
 
 pre-everything::
-.if !defined(WITH_TOMCAT41)
+.if !defined(WITH_TOMCAT55)
 	@${ECHO_MSG} '*********************************************************'
-	@${ECHO_MSG} '* To use Barbecue as a servlet, define WITH_TOMCAT41.   *'
+	@${ECHO_MSG} '* To use Barbecue as a servlet, define WITH_TOMCAT55.   *'
 	@${ECHO_MSG} '*********************************************************'
 .endif
 
@@ -45,7 +45,7 @@ post-extract:
 do-install:
 	${INSTALL_DATA} ${JARFILES:S|-${PORTVERSION}||:S|^|${WRKSRC}/|} ${JAVAJARDIR}
 	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${JAVAJARDIR}/LICENSE.barbecue.txt
-.if defined(WITH_TOMCAT41)
+.if defined(WITH_TOMCAT55)
 	${INSTALL_DATA} ${WRKSRC}/${PORTNAME}.war ${JAKARTA_HOME}/webapps
 .endif
 .if !defined(NOPORTDOCS)
