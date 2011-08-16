@@ -34,6 +34,49 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="56f4b3a6-c82c-11e0-a498-00215c6a37bb">
+    <topic>samba -- cross site scripting and request forgery vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>samba34</name>
+	<range><gt>3.4.*</gt><lt>3.4.14</lt></range>
+      </package>
+      <package>
+	<name>samba35</name>
+	<range><gt>3.5.*</gt><lt>3.5.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Samba security advisory reports:</p>
+	<blockquote cite="http://www.samba.org/samba/security/CVE-2011-2522">
+	  <p>All current released versions of Samba are vulnerable to
+	    a cross-site request forgery in the Samba Web Administration
+	    Tool (SWAT). By tricking a user who is authenticated with SWAT
+	    into clicking a manipulated URL on a different web page, it
+	    is possible to manipulate SWAT.</p>
+	</blockquote>
+	<blockquote cite="http://www.samba.org/samba/security/CVE-2011-2694">
+	  <p>All current released versions of Samba are vulnerable
+	    to a cross-site scripting issue in the Samba Web
+	    Administration Tool (SWAT). On the "Change Password"
+	    field, it is possible to insert arbitrary content
+	    into the "user" field.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>48901</bid>
+      <bid>48899</bid>
+      <cvename>CVE-2011-2522</cvename>
+      <cvename>CVE-2011-2694</cvename>
+    </references>
+    <dates>
+      <discovery>2011-07-27</discovery>
+      <entry>2011-08-16</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="510b630e-c43b-11e0-916c-00e0815b8da8">
     <topic>isc-dhcp-server -- server halt upon processing certain packets</topic>
     <affects>
