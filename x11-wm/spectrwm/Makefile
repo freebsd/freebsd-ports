@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	scrotwm
-PORTVERSION=	0.9.33
+PORTVERSION=	0.9.34
 CATEGORIES=	x11-wm
-MASTER_SITES=	http://opensource.conformal.com/snapshots/scrotwm/
+MASTER_SITES=	https://opensource.conformal.com/snapshots/scrotwm/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	aragon@phat.za.net
 COMMENT=	A small, dynamic tiling window manager for X11
+
+LICENSE=	ISCL
 
 OPTIONS=	DMENU "Depend on x11/dmenu" Off \
 		DMENU_BOTTOM "dmenu at screen bottom (instead of top)" Off
 
 .include <bsd.port.pre.mk>
 
-USE_XORG=	x11 xproto xrandr xt
+USE_XORG=	x11 xproto xrandr xt xtst
 
 MAN1=		scrotwm.1
 USE_LDCONFIG=yes
@@ -36,7 +38,7 @@ post-patch:
 
 do-build:
 	${CC} ${CFLAGS} -I${X11BASE}/include \
-		-I${WRKSRC}/linux -lutil -L${X11BASE}/lib -lX11 -lXrandr \
+		-I${WRKSRC}/linux -lutil -L${X11BASE}/lib -lX11 -lXrandr -lXtst \
 		-o ${WRKSRC}/${PORTNAME} ${WRKSRC}/${PORTNAME}.c
 	${CC} ${CFLAGS} -I${X11BASE}/include -shared -fPIC \
 		-o ${WRKSRC}/libswmhack.so ${WRKSRC}/lib/swm_hack.c
