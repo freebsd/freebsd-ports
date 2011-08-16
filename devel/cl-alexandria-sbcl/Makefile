@@ -6,7 +6,7 @@
 
 PORTNAME=	alexandria
 PORTVERSION=	2010.01.16
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
@@ -16,8 +16,6 @@ COMMENT=	A collection of portable public domain utilities for Common Lisp
 
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/alexandria.asd:${PORTSDIR}/devel/cl-alexandria
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/alexandria/alexandria.asd:${PORTSDIR}/devel/cl-alexandria
-
-BROKEN=		fails to build
 
 USE_ASDF_FASL=	yes
 FASL_TARGET=	sbcl

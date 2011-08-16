@@ -6,7 +6,7 @@
 
 PORTNAME=	infix
 PORTVERSION=	19960628
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	devel lisp
 PKGNAMEPREFIX=	cl-
 DISTFILES=	# none
@@ -16,8 +16,6 @@ COMMENT=	A lisp macro to read math statements in infix notation
 
 BUILD_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/infix/infix.asd:${PORTSDIR}/devel/cl-infix
 RUN_DEPENDS=	${LOCALBASE}/${CL_LIBDIR_REL}/infix/infix.asd:${PORTSDIR}/devel/cl-infix
-
-BROKEN=		fails to build
 
 NO_CDROM=	No fees or compensation can be charged
 
