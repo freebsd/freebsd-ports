@@ -8,7 +8,7 @@
 +#ENDIAN	=	-D_LITTLE_ENDIAN
  
 -CFLAGS	=	-g -I.. -I$(HOME)/bld/include -DPROJ4 $(ENDIAN) -DDEBUG -DDEBUG2 
-+CFLAGS	+=	%%DEBUG%% %%ENDIAN%% %%PROJ4%% -I.. -I%%PREFIX%%/include -L%%PREFIX%%/lib
++CFLAGS	+=	%%DEBUG%% %%ENDIAN%% %%PROJ%% -I.. -I%%PREFIX%%/include -L%%PREFIX%%/lib
  
  SHPOBJ	=	../shpopen.o ../dbfopen.o ../safileio.o
  

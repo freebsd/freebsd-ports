@@ -34,7 +34,7 @@
 +.endfor
 +
 +contrib_tools:
-+	(cd contrib; ${MAKE} %%PROJ4%% all; cd ..)
++	(cd contrib; ${MAKE} %%PROJ%% all; cd ..)
 +
 +tools_install:
 +.for _TOOL in ${TOOLS}
@@ -42,7 +42,7 @@
 +.endfor
 +
 +contrib_install:
-+	(cd contrib; ${MAKE} %%PROJ4%% install; cd ..)
++	(cd contrib; ${MAKE} %%PROJ%% install; cd ..)
  
  shpopen.o:	shpopen.c shapefil.h
  	$(CC) $(CFLAGS) -c shpopen.c
