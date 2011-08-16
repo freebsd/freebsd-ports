@@ -6,7 +6,7 @@
 
 PORTNAME=	split-sequence
 PORTVERSION=	20011114.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel lisp
 MASTER_SITES=	ftp://ftp.linux.org.uk/pub/lisp/experimental/cclan/ \
 		ftp://ftp.ntnu.no/pub/lisp/cclan/ \

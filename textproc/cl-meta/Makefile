@@ -6,7 +6,7 @@
 
 PORTNAME=	meta
 PORTVERSION=	0.1
-PORTREVISION=	2
+PORTREVISION=	3
 PORTEPOCH=	1
 CATEGORIES=	textproc lisp
 MASTER_SITES=	ftp://ftp.linux.org.uk/pub/lisp/experimental/cclan/ \
