@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	thunderbird
-DISTVERSION=	3.1.11
+DISTVERSION=	3.1.12
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
@@ -66,8 +66,6 @@ CFLAGS+=	-mminimal-toc
 .endif
 .endif
 
-GECKO_PTHREAD_LIBS!=${CC} -dumpspecs | ${GREP} -m 1 '%{\!pg: %{pthread:' | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
-
 .if ${HAVE_GNOME:Mlibgnomeui}!=""
 USE_GNOME+=	libgnomeui
 MOZ_OPTIONS+=	--enable-gnomeui
@@ -82,12 +80,12 @@ LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		notify.1:${PORTSDIR}/devel/libnotify
 .endif
 
-post-extract::
+post-extract:
 	${SED} -e 's|@PORTNAME_ICON@|${PORTNAME_ICON}|' \
 		<${FILESDIR}/thunderbird.desktop.in >${WRKDIR}/${MOZILLA_EXEC_NAME}.desktop
 
 post-patch:
-	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS:C/-pthread/${GECKO_PTHREAD_LIBS}/}|' \
+	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
 		${MOZSRC}/storage/build/Makefile.in \
 		${MOZSRC}/db/sqlite3/src/Makefile.in
 	@${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|' \
