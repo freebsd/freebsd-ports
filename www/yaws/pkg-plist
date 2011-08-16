@@ -19,6 +19,8 @@ bin/yaws
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_ctl.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_dav.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_debug.beam
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_dime.beam
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_exhtml.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_generated.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_html.beam
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/ebin/yaws_jsonrpc.beam
@@ -76,6 +78,8 @@ bin/yaws
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_dav.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_debug.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_debug.hrl
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_dime.erl
+%%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_exhtml.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_generated.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_html.erl
 %%LIB32DIR%%/erlang/lib/yaws-%%VERSION%%/src/yaws_jsonrpc.erl
