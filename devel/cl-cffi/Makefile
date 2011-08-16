@@ -6,6 +6,7 @@
 
 PORTNAME=	cffi
 PORTVERSION=	0.10.6
+PORTREVISION=	1
 CATEGORIES=	devel lisp
 MASTER_SITES=	http://common-lisp.net/project/cffi/releases/:src \
 		http://common-lisp.net/project/cffi/manual/:manual \

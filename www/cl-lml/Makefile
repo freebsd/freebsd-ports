@@ -6,7 +6,7 @@
 
 PORTNAME=	lml
 PORTVERSION=	2.5.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www textproc
 MASTER_SITES=	http://files.b9.com/lml/ \
 		http://people.bsdgroup.de/~as/freebsd/distfiles/

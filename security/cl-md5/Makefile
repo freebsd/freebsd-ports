@@ -6,6 +6,7 @@
 
 PORTNAME=	md5
 PORTVERSION=	1.8.5
+PORTREVISION=	1
 CATEGORIES=	security lisp
 MASTER_SITES=	http://ftp.de.debian.org/debian/pool/main/c/cl-md5/
 DISTNAME=	${PKGNAMEPREFIX}${PORTNAME}_${PORTVERSION}.orig

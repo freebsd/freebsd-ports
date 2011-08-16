@@ -6,6 +6,7 @@
 
 PORTNAME=	clx
 PORTVERSION=	0.7.4
+PORTREVISION=	1
 CATEGORIES=	x11 lisp
 MASTER_SITES=	http://common-lisp.net/~abridgewater/dist/clx/
 PKGNAMEPREFIX=	cl-
