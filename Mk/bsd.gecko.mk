@@ -181,9 +181,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         is given by the maintainer via the port or by the
 #                         user via defined variable try to find the highest
 #                         stable installed version.
-#                         Available values: yes 50+ 36+ 50 36
+#                         Available values: yes 60+ 36+ 60 36
 #                         NOTE:
-#                         default value 50 is used in case of USE_FIREFOX=yes
+#                         default value 60 is used in case of USE_FIREFOX=yes
 #
 # USE_FIREFOX_BUILD       Add buildtime dependency on Firefox.
 #                         Available values: see USE_FIREFOX
@@ -192,9 +192,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port 
 #                         or by the user via defined variable try to find
 #                         the highest stable installed version.
-#                         Available values: yes 22+ 20+ 22 20
+#                         Available values: yes 23+ 20+ 23 20
 #                         NOTE:
-#                         default value 22 is used in case of USE_SEAMONKEY=yes
+#                         default value 23 is used in case of USE_SEAMONKEY=yes
 #
 # USE_SEAMONKEY_BUILD     Add buildtime dependency on SeaMonkey.
 #                         Available values: see USE_SEAMONKEY
@@ -203,9 +203,9 @@ Gecko_Pre_Include=			bsd.gecko.mk
 #                         version is given by the maintainer via the port 
 #                         or by the user via defined variable try to find 
 #                         the highest stable installed version.
-#                         Available values: yes 50+ 31+ 50 31
+#                         Available values: yes 60+ 31+ 60 31
 #                         NOTE:
-#                         default value 50 is used in case of USE_THUNDERBIRD=yes
+#                         default value 60 is used in case of USE_THUNDERBIRD=yes
 #
 # USE_THUNDERBIRD_BUILD   Add buildtime dependency on Thunderbird.
 #                         Available values: see USE_THUNDERBIRD
@@ -222,13 +222,13 @@ USE_FIREFOX:=				${USE_FIREFOX_BUILD}
 _FIREFOX_BUILD_DEPENDS=		yes
 .endif
 
-_FIREFOX_DEFAULT_VERSION=	50
-_FIREFOX_VERSIONS=			50 36
-_FIREFOX_RANGE_VERSIONS=	50+ 36+
+_FIREFOX_DEFAULT_VERSION=	60
+_FIREFOX_VERSIONS=			60 36
+_FIREFOX_RANGE_VERSIONS=	60+ 36+
 
 # For specifying [36, ..]+
-_FIREFOX_36P=	36 ${_FIREFOX_50P}
-_FIREFOX_50P=	50
+_FIREFOX_36P=	36 ${_FIREFOX_60P}
+_FIREFOX_60P=	60
 
 # Set the default Firefox version and check if USE_FIREFOX=yes was given
 .if ${USE_FIREFOX} == "yes"
@@ -272,7 +272,7 @@ IGNORE=			cannot install: unknown Firefox version: firefox-${USE_FIREFOX:C/([0-9
 .endif
 
 # Dependence lines for different Firefox versions
-50_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
+60_DEPENDS=		${LOCALBASE}/lib/firefox/firefox:${PORTSDIR}/www/firefox
 36_DEPENDS=		${LOCALBASE}/lib/firefox3/firefox:${PORTSDIR}/www/firefox36
 
 # Add dependencies
@@ -295,12 +295,12 @@ USE_SEAMONKEY:=				${USE_SEAMONKEY_BUILD}
 _SEAMONKEY_BUILD_DEPENDS=	yes
 .endif
 
-_SEAMONKEY_DEFAULT_VERSION=	22
-_SEAMONKEY_VERSIONS=		22 20
-_SEAMONKEY_RANGE_VERSIONS=	22+ 20+
+_SEAMONKEY_DEFAULT_VERSION=	23
+_SEAMONKEY_VERSIONS=		23 20
+_SEAMONKEY_RANGE_VERSIONS=	23+ 20+
 
-# For specifying [22, 20, ..]+
-_SEAMONKEY_22P=	22 ${_SEAMONKEY_20P}
+# For specifying [23, 20, ..]+
+_SEAMONKEY_23P=	23 ${_SEAMONKEY_20P}
 _SEAMONKEY_20P=	20
 
 # Set the default SeaMonkey version and check if USE_SEAMONKEY=yes was given
@@ -366,13 +366,13 @@ USE_THUNDERBIRD:=			${USE_THUNDERBIRD_BUILD}
 _THUNDERBIRD_BUILD_DEPENDS=		yes
 .endif
 
-_THUNDERBIRD_DEFAULT_VERSION=	50
-_THUNDERBIRD_VERSIONS=			50 31
-_THUNDERBIRD_RANGE_VERSIONS=	50+ 31+
+_THUNDERBIRD_DEFAULT_VERSION=	60
+_THUNDERBIRD_VERSIONS=			60 31
+_THUNDERBIRD_RANGE_VERSIONS=	60+ 31+
 
 # For specifying [31, 30, ..]+
 _THUNDERBIRD_31P=	31 ${_THUNDERBIRD_31P}
-_THUNDERBIRD_50P=	50
+_THUNDERBIRD_60P=	60
 
 # Set the default Thunderbird version and check if USE_THUNDERBIRD=yes was given
 .if ${USE_THUNDERBIRD} == "yes"
@@ -414,7 +414,7 @@ IGNORE=			cannot install: unknown Thunderbird version: thunderbird-${USE_THUNDER
 .endif
 
 # Dependence lines for different Thunderbird versions
-50_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
+60_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
 31_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird3
 
 # Add dependencies
@@ -847,11 +847,10 @@ gecko-pre-install:
 .endfor
 	@${REINPLACE_CMD} -e 's|${MOZILLA}-bin|${MOZILLA:S/${MOZILLA_SUFX}//}|; \
 		s|$${progbase}-bin|${MOZILLA:S/${MOZILLA_SUFX}//}-bin|' \
-		${FAKEDIR}/bin/${MOZILLA_EXEC_NAME}*
+		-i '' $$(${REALPATH} ${FAKEDIR}/bin/${MOZILLA_EXEC_NAME}*)
 .endif
 	@${REINPLACE_CMD} -e 's|${FAKEDIR}|${PREFIX}|g' \
-		${FAKEDIR}/bin/${MOZILLA_EXEC_NAME}*
-	${RM} -f ${FAKEDIR}/bin/*.bak
+		-i '' $$(${REALPATH} ${FAKEDIR}/bin/${MOZILLA_EXEC_NAME}*)
 .endif
 
 gecko-create-plist:
@@ -867,7 +866,7 @@ gecko-create-plist:
 	${MV} -f ${FAKEDIR}/lib/pkgconfig ${FAKEDIR}/libdata/ || ${TRUE}
 	${RM} -f ${FAKEDIR}/lib/pkgconfig
 .for dir in ${MOZILLA_PLIST_DIRS}
-	@cd ${FAKEDIR}/${dir} && ${FIND} -H -s * -type f | \
+	@cd ${FAKEDIR}/${dir} && ${FIND} -H -s * ! -type d | \
 		${SED} -e 's|^|${dir}/|' >> ${PLISTF} && \
 		${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm ${dir}/|' >> ${PLISTD}
@@ -892,10 +891,9 @@ gecko-do-install:
 .for dir in ${MOZILLA_PLIST_DIRS}
 .if !exists(${PREFIX}/${dir})
 	${MKDIR} ${PREFIX}/${dir}
-	${CHMOD} 755 ${PREFIX}/${dir}
 .endif
-	cd ${FAKEDIR}/${dir} && ${FIND} . | \
-		${CPIO} -pdm -L -R ${LIBOWN}:${LIBGRP} ${PREFIX}/${dir}
+	${TAR} cf - -C${FAKEDIR}/${dir} -s'|${FAKEDIR}|${PREFIX}|s' . | \
+		${TAR} xof - -C${PREFIX}/${dir}
 .endfor
 .for pcfile in ${MOZ_PKGCONFIG_FILES}
 	${INSTALL_DATA} ${FAKEDIR}/libdata/pkgconfig/${pcfile}.pc \
