@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	addons/46490
 PKGNAMEPREFIX=	zu-
 DISTNAME=	zulu_spell_checker-${PORTVERSION}-tb+fn+fx+sm
 EXTRACT_SUFX=	.xpi
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Zulu hunspell dictionaries

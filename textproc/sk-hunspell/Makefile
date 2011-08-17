@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.sk-spell.sk.cx/files/
 PKGNAMEPREFIX=	sk-
 DISTNAME=	hunspell-sk-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Slovak hunspell dictionaries

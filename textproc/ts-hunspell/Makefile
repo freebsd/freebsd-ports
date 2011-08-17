@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	addons/46611
 PKGNAMEPREFIX=	ts-
 DISTNAME=	tsonga_spell_checker-${PORTVERSION}-tb+sm+fx+fn
 EXTRACT_SUFX=	.xpi
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Tsonga hunspell dictionaries

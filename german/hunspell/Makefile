@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	german textproc
 MASTER_SITES=	http://www.j3e.de/ispell/igerman98/dict/
 DISTNAME=	igerman98-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	German hunspell dictionaries

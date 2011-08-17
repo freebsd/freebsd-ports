@@ -16,6 +16,7 @@ PKGNAMEPREFIX=	en-
 DISTFILES=	hunspell-en_US-${PORTVERSION}-0${EXTRACT_SUFX} \
 		hunspell-en_CA-${PORTVERSION}-0${EXTRACT_SUFX}:CA \
 		en_GB-1.20.zip:GB
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	English hunspell dictionaries

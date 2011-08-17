@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	GNU/aspell/dict/te
 PKGNAMEPREFIX=	te-
 DISTNAME=	aspell6-te-${DISTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Telugu hunspell dictionaries

@@ -10,6 +10,7 @@ PORTVERSION=	20110801
 CATEGORIES=	russian textproc
 MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 DISTNAME=	ru_RU_UTF8-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Russian hunspell dictionaries

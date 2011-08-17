@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/linguistico/Dizionario%20italiano%20per%20OOo/${PORTVERSION:S/./_/g}/
 PKGNAMEPREFIX=	it-
 DISTNAME=	italiano_${PORTVERSION:S/./_/g}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Italian hunspell dictionaries

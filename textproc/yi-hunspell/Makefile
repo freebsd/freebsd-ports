@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	addons/222538
 PKGNAMEPREFIX=	yi-
 DISTNAME=	yiddish_spell_checker__yivo_-${PORTVERSION}-fx+tb+sm+fn
 EXTRACT_SUFX=	.xpi
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Yiddish hunspell dictionaries

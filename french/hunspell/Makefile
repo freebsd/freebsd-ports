@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	french textproc
 MASTER_SITES=	http://www.dicollecte.org/download/fr/
 DISTNAME=	hunspell-fr-moderne-v${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Modern French hunspell dictionaries

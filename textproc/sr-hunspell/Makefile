@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	addons/10894
 PKGNAMEPREFIX=	sr-
 DISTNAME=	serbian_dictionary-${PORTVERSION}-fx+tb+sm
 EXTRACT_SUFX=	.xpi
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Serbian hunspell dictionaries

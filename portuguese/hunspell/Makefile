@@ -12,6 +12,7 @@ MASTER_SITES=	http://natura.di.uminho.pt/download/sources/Dictionaries/hunspell/
 		http://www.broffice.org/files/:BR
 DISTFILES=	hunspell-pt_PT-${PORTVERSION}.tar.gz \
 		pt_BR-2011-05-27AOC.zip:BR
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Portuguese hunspell dictionaries
