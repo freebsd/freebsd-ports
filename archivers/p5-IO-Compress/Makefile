@@ -18,6 +18,8 @@ COMMENT=	Perl5 compression modules (bzip2, deflate, gzip, zlib, zip)
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
+BUILD_DEPENDS=	p5-Compress-Raw-Bzip2>=2.037:${PORTSDIR}/archivers/p5-Compress-Raw-Bzip2 \
+		p5-Compress-Raw-Zlib>=2.037:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
 RUN_DEPENDS=	p5-Compress-Raw-Bzip2>=2.037:${PORTSDIR}/archivers/p5-Compress-Raw-Bzip2 \
 		p5-Compress-Raw-Zlib>=2.037:${PORTSDIR}/archivers/p5-Compress-Raw-Zlib
 
