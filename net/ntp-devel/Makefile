@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.7p202
+PORTVERSION=	4.2.7p203
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ntp-dev/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
@@ -40,7 +40,8 @@ PLIST_SUB+=		SSL=""
 CONFIGURE_ARGS+=	--enable-ipv6
 .endif
 
-MAN8=		ntp-keygen.8 ntpd.8 ntpdc.8 ntpq.8 sntp.8
+MAN8=		ntp-keygen.8 ntpd.8 ntpdc.8 ntpq.8 sntp.8 ntp-wait.8 \
+		ntpsnmpd.8
 
 pre-everything::
 	@${ECHO}
@@ -56,6 +57,9 @@ pre-everything::
 # uses it. If detected, modify dependencies and package list.
 BUILD_DEPENDS=	${LOCALBASE}/bin/net-snmp-config:${PORTSDIR}/net-mgmt/net-snmp
 LIB_DEPENDS=	netsnmp.30:${PORTSDIR}/net-mgmt/net-snmp
+PLIST_SUB+=	NETSNMP=""
+.else
+PLIST_SUB+=	NETSNMP="@comment "
 .endif
 
 post-install:
