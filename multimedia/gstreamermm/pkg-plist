@@ -31,6 +31,8 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/colorbalance.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/colorbalancechannel.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/decodebin.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/decodebin2.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/discoverer.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/discovererinfo.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/element.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/elementfactory.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/enums.h
@@ -45,6 +47,7 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/filesink.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/filesrc.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/filter.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/format.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/funnel.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/gdpdepay.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/gdppay.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/ghostpad.h
@@ -58,6 +61,7 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/identity.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/index.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/indexfactory.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/init.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/inputselector.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/interface.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/iterator.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/message.h
@@ -71,6 +75,7 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/navigation.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/object.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/oggdemux.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/oggmux.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/outputselector.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/pad.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/padtemplate.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/parse.h
@@ -112,6 +117,8 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/colorbalance_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/colorbalancechannel_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/decodebin2_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/decodebin_p.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/discoverer_p.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/discovererinfo_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/element_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/elementfactory_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/enums_p.h
@@ -126,6 +133,7 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/filesink_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/filesrc_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/filter_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/format_p.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/funnel_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/gdpdepay_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/gdppay_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/ghostpad_p.h
@@ -136,6 +144,7 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/giostreamsrc_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/identity_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/index_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/indexfactory_p.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/inputselector_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/interface_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/iterator_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/message_p.h
@@ -149,6 +158,7 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/navigation_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/object_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/oggdemux_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/oggmux_p.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/outputselector_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/pad_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/padtemplate_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/parse_p.h
@@ -194,6 +204,7 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/typefindfactory_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/uridecodebin_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/urihandler_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/value_p.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/valve_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/videoorientation_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/videorate_p.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/private/videoscale_p.h
@@ -244,6 +255,7 @@ include/gstreamermm-%%GST_VERSION%%/gstreamermm/typefindfactory.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/uridecodebin.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/urihandler.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/value.h
+include/gstreamermm-%%GST_VERSION%%/gstreamermm/valve.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/version.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/videoorientation.h
 include/gstreamermm-%%GST_VERSION%%/gstreamermm/videorate.h
