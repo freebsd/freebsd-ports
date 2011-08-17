@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	syslog-ng
-PORTVERSION=	3.3.0b1
+PORTVERSION=	3.3.0b2
 PORTREVISION=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/3.3.0beta1/source/
+MASTER_SITES=	http://www.balabit.com/downloads/files/syslog-ng/sources/3.3.0beta2/source/
 PKGNAMESUFFIX=	3-devel
-DISTFILES=	$(PORTNAME)_3.3.0beta1.tar.gz
+DISTFILES=	$(PORTNAME)_3.3.0beta2.tar.gz
 
 MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A powerful syslogd replacement
 
 CONFLICTS?=	syslog-ng-[0-9]* syslog-ng[0-9]-[0-9]*
-WRKSRC=		$(WRKDIR)/$(PORTNAME)-3.3.0beta1
+WRKSRC=		$(WRKDIR)/$(PORTNAME)-3.3.0beta2
 
 OPTIONS=	SYS_SSL "Build with OpenSSL support (from system)" off \
 		PORTS_SSL "Build with OpenSSL support (from ports)" off \
