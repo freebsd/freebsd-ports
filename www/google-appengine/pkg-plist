@@ -74,6 +74,7 @@ bin/remote_api_shell.pyo
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/aral.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/corner_map.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/fantasm-fsm.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/fantasm-qps.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/generated-classes.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/jesaja.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/more-generated-classes.png
@@ -83,6 +84,16 @@ bin/remote_api_shell.pyo
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/new-wsdl.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/newfbapp.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/omar.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/openid-goog-in.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/openid-goog.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/openid-googaccts.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/openid-mysp-in.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/openid-mysp.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/openid-openid.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/openid-signin.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/openid-ux.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/openid-yhoo-in.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/openid-yhoo.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/select-sdk-version.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/service.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/articles/img/sf_onetile.png
@@ -183,12 +194,15 @@ bin/remote_api_shell.pyo
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/add_to_domain.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/authoptions.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/datastore_admin.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/datastore_admin_enable.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/dev-web-server_download-app.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/img_backends.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/img_logs.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/images/instances_viewer.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/apis.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/appidentity/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/appidentity/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/backends/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/backends/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/blobstore/index.html
@@ -325,6 +339,9 @@ bin/remote_api_shell.pyo
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/IMHandle.Scheme.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/IMHandle.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/ImplicitTransactionManagementPolicy.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/Index.IndexState.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/Index.Property.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/Index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/Key.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/KeyFactory.Builder.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/KeyFactory.html
@@ -348,6 +365,8 @@ bin/remote_api_shell.pyo
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/ShortBlob.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/Text.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/Transaction.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/TransactionOptions.Builder.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/TransactionOptions.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/datastore/package-tree.html
@@ -558,11 +577,15 @@ bin/remote_api_shell.pyo
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/allclasses-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/allclasses-noframe.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/appidentity/dev/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/appidentity/dev/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/appidentity/dev/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev/BlobInfoStorage.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev/BlobStorage.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev/BlobStorageFactory.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev/BlobUploadSessionStorage.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev/LocalBlobstoreService.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev/ReservedKinds.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev/ServeBlobFilter.ResponseWrapper.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev/ServeBlobFilter.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev/UploadBlobServlet.html
@@ -573,10 +596,23 @@ bin/remote_api_shell.pyo
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/capabilities/dev/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/capabilities/dev/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/capabilities/dev/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/datastore/dev/DefaultHighRepJobPolicy.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/datastore/dev/HighRepJobPolicy.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/datastore/dev/LocalDatastoreService.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/datastore/dev/WriteLatencyAdjuster.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/datastore/dev/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/datastore/dev/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/datastore/dev/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/files/dev/BlobstoreFile.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/files/dev/FileMetadata.LockState.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/files/dev/FileMetadata.OpenState.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/files/dev/FileMetadata.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/files/dev/LocalFileService.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/files/dev/ParsedFileName.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/files/dev/Session.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/files/dev/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/files/dev/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/files/dev/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/images/dev/LocalBlobImageServlet.Image.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/images/dev/LocalBlobImageServlet.ParsedUrl.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/images/dev/LocalBlobImageServlet.html
@@ -592,6 +628,7 @@ bin/remote_api_shell.pyo
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/memcache/dev/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/memcache/dev/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/memcache/dev/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/taskqueue/dev/DevPullQueue.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/taskqueue/dev/LocalTaskQueue.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/taskqueue/dev/LocalTaskQueueCallback.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/taskqueue/dev/QueueStateInfo.HeaderWrapper.html
@@ -601,6 +638,7 @@ bin/remote_api_shell.pyo
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/taskqueue/dev/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/taskqueue/dev/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/taskqueue/dev/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/urlfetch/dev/AllMethodsRedirectHandler.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/urlfetch/dev/LocalURLFetchService.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/urlfetch/dev/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/urlfetch/dev/package-summary.html
@@ -620,17 +658,21 @@ bin/remote_api_shell.pyo
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/xmpp/dev/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/xmpp/dev/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/xmpp/dev/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalAppIdentityServiceTestConfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalBlobstoreServiceTestConfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalCapabilitiesServiceTestConfig.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalChannelServiceTestConfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalDatastoreServiceTestConfig.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalFileServiceTestConfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalImagesServiceTestConfig.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalLearningServiceTestConfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalMailServiceTestConfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalMemcacheServiceTestConfig.SizeUnit.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalMemcacheServiceTestConfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalRdbmsServiceTestConfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalServiceTestConfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalServiceTestHelper.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalTaskQueueTestConfig.DeferredTaskCallback.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalTaskQueueTestConfig.TaskCountDownLatch.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalTaskQueueTestConfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalURLFetchServiceTestConfig.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/tools/development/testing/LocalUserServiceTestConfig.html
@@ -648,6 +690,7 @@ bin/remote_api_shell.pyo
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/overview-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/overview-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/resources/inherit.gif
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/serialized-form.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/remoteapi.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/tools/uploadinganapp.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/urlfetch/index.html
@@ -658,8 +701,9 @@ bin/remote_api_shell.pyo
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/xmpp/index.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/java/xmpp/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/apis.html
-%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/appidentity/exceptions.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/appidentity/functions.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/appidentity/index.html
+%%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/appidentity/overview.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/backends/exceptions.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/backends/functions.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/docs/python/backends/index.html
@@ -858,6 +902,7 @@ bin/remote_api_shell.pyo
 %%PORTDOCS%%%%DOCSDIR%%/appengine/forum/java-forum.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/forum/python-forum.html
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/3scale_logo.png
+%%PORTDOCS%%%%DOCSDIR%%/appengine/images/adjustLocalHRDEclipse.png
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/appengine-noborder-120x30.gif
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/appengine-silver-120x30.gif
 %%PORTDOCS%%%%DOCSDIR%%/appengine/images/appengine_lowres.png
@@ -1037,9 +1082,9 @@ bin/remote_api_shell.pyo
 %%DATADIR%%/google/appengine/api/conversion/conversion.py
 %%DATADIR%%/google/appengine/api/conversion/conversion.pyc
 %%DATADIR%%/google/appengine/api/conversion/conversion.pyo
-%%DATADIR%%/google/appengine/api/conversion/conversion_service_pb2.py
-%%DATADIR%%/google/appengine/api/conversion/conversion_service_pb2.pyc
-%%DATADIR%%/google/appengine/api/conversion/conversion_service_pb2.pyo
+%%DATADIR%%/google/appengine/api/conversion/conversion_service_pb.py
+%%DATADIR%%/google/appengine/api/conversion/conversion_service_pb.pyc
+%%DATADIR%%/google/appengine/api/conversion/conversion_service_pb.pyo
 %%DATADIR%%/google/appengine/api/conversion/conversion_stub.py
 %%DATADIR%%/google/appengine/api/conversion/conversion_stub.pyc
 %%DATADIR%%/google/appengine/api/conversion/conversion_stub.pyo
@@ -1208,12 +1253,21 @@ bin/remote_api_shell.pyo
 %%DATADIR%%/google/appengine/api/runtime/runtime.py
 %%DATADIR%%/google/appengine/api/runtime/runtime.pyc
 %%DATADIR%%/google/appengine/api/runtime/runtime.pyo
+%%DATADIR%%/google/appengine/api/search/QueryLexer.py
+%%DATADIR%%/google/appengine/api/search/QueryLexer.pyc
+%%DATADIR%%/google/appengine/api/search/QueryLexer.pyo
+%%DATADIR%%/google/appengine/api/search/QueryParser.py
+%%DATADIR%%/google/appengine/api/search/QueryParser.pyc
+%%DATADIR%%/google/appengine/api/search/QueryParser.pyo
 %%DATADIR%%/google/appengine/api/search/__init__.py
 %%DATADIR%%/google/appengine/api/search/__init__.pyc
 %%DATADIR%%/google/appengine/api/search/__init__.pyo
-%%DATADIR%%/google/appengine/api/search/search_api.py
-%%DATADIR%%/google/appengine/api/search/search_api.pyc
-%%DATADIR%%/google/appengine/api/search/search_api.pyo
+%%DATADIR%%/google/appengine/api/search/query_parser.py
+%%DATADIR%%/google/appengine/api/search/query_parser.pyc
+%%DATADIR%%/google/appengine/api/search/query_parser.pyo
+%%DATADIR%%/google/appengine/api/search/search.py
+%%DATADIR%%/google/appengine/api/search/search.pyc
+%%DATADIR%%/google/appengine/api/search/search.pyo
 %%DATADIR%%/google/appengine/api/search/search_service_pb.py
 %%DATADIR%%/google/appengine/api/search/search_service_pb.pyc
 %%DATADIR%%/google/appengine/api/search/search_service_pb.pyo
@@ -1387,6 +1441,7 @@ bin/remote_api_shell.pyo
 %%DATADIR%%/google/appengine/ext/admin/templates/css/base.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/cron.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/datastore.css
+%%DATADIR%%/google/appengine/ext/admin/templates/css/datastore_indexes.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/form.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/inboundmail.css
 %%DATADIR%%/google/appengine/ext/admin/templates/css/memcache.css
@@ -1397,6 +1452,7 @@ bin/remote_api_shell.pyo
 %%DATADIR%%/google/appengine/ext/admin/templates/css/xmpp.css
 %%DATADIR%%/google/appengine/ext/admin/templates/datastore.html
 %%DATADIR%%/google/appengine/ext/admin/templates/datastore_edit.html
+%%DATADIR%%/google/appengine/ext/admin/templates/datastore_indexes.html
 %%DATADIR%%/google/appengine/ext/admin/templates/datastore_stats.html
 %%DATADIR%%/google/appengine/ext/admin/templates/images/google.gif
 %%DATADIR%%/google/appengine/ext/admin/templates/inboundmail.html
@@ -1672,6 +1728,9 @@ bin/remote_api_shell.pyo
 %%DATADIR%%/google/appengine/ext/webapp/__init__.py
 %%DATADIR%%/google/appengine/ext/webapp/__init__.pyc
 %%DATADIR%%/google/appengine/ext/webapp/__init__.pyo
+%%DATADIR%%/google/appengine/ext/webapp/_webapp25.py
+%%DATADIR%%/google/appengine/ext/webapp/_webapp25.pyc
+%%DATADIR%%/google/appengine/ext/webapp/_webapp25.pyo
 %%DATADIR%%/google/appengine/ext/webapp/blobstore_handlers.py
 %%DATADIR%%/google/appengine/ext/webapp/blobstore_handlers.pyc
 %%DATADIR%%/google/appengine/ext/webapp/blobstore_handlers.pyo
@@ -1749,8 +1808,6 @@ bin/remote_api_shell.pyo
 %%DATADIR%%/google/appengine/tools/dev_appserver_upload.pyc
 %%DATADIR%%/google/appengine/tools/dev_appserver_upload.pyo
 %%DATADIR%%/google/appengine/tools/gen_protorpc.py
-%%DATADIR%%/google/appengine/tools/gen_protorpc.pyc
-%%DATADIR%%/google/appengine/tools/gen_protorpc.pyo
 %%DATADIR%%/google/appengine/tools/os_compat.py
 %%DATADIR%%/google/appengine/tools/os_compat.pyc
 %%DATADIR%%/google/appengine/tools/os_compat.pyo
@@ -8751,6 +8808,185 @@ bin/remote_api_shell.pyo
 %%DATADIR%%/lib/webob/webob/util/stringtemplate.py
 %%DATADIR%%/lib/webob/webob/util/stringtemplate.pyc
 %%DATADIR%%/lib/webob/webob/util/stringtemplate.pyo
+%%DATADIR%%/lib/whoosh/whoosh/LICENSE
+%%DATADIR%%/lib/whoosh/whoosh/OWNERS
+%%DATADIR%%/lib/whoosh/whoosh/__init__.py
+%%DATADIR%%/lib/whoosh/whoosh/__init__.pyc
+%%DATADIR%%/lib/whoosh/whoosh/__init__.pyo
+%%DATADIR%%/lib/whoosh/whoosh/analysis.py
+%%DATADIR%%/lib/whoosh/whoosh/analysis.pyc
+%%DATADIR%%/lib/whoosh/whoosh/analysis.pyo
+%%DATADIR%%/lib/whoosh/whoosh/classify.py
+%%DATADIR%%/lib/whoosh/whoosh/classify.pyc
+%%DATADIR%%/lib/whoosh/whoosh/classify.pyo
+%%DATADIR%%/lib/whoosh/whoosh/fields.py
+%%DATADIR%%/lib/whoosh/whoosh/fields.pyc
+%%DATADIR%%/lib/whoosh/whoosh/fields.pyo
+%%DATADIR%%/lib/whoosh/whoosh/filedb/__init__.py
+%%DATADIR%%/lib/whoosh/whoosh/filedb/__init__.pyc
+%%DATADIR%%/lib/whoosh/whoosh/filedb/__init__.pyo
+%%DATADIR%%/lib/whoosh/whoosh/filedb/fieldcache.py
+%%DATADIR%%/lib/whoosh/whoosh/filedb/fieldcache.pyc
+%%DATADIR%%/lib/whoosh/whoosh/filedb/fieldcache.pyo
+%%DATADIR%%/lib/whoosh/whoosh/filedb/fileindex.py
+%%DATADIR%%/lib/whoosh/whoosh/filedb/fileindex.pyc
+%%DATADIR%%/lib/whoosh/whoosh/filedb/fileindex.pyo
+%%DATADIR%%/lib/whoosh/whoosh/filedb/filepostings.py
+%%DATADIR%%/lib/whoosh/whoosh/filedb/filepostings.pyc
+%%DATADIR%%/lib/whoosh/whoosh/filedb/filepostings.pyo
+%%DATADIR%%/lib/whoosh/whoosh/filedb/filereading.py
+%%DATADIR%%/lib/whoosh/whoosh/filedb/filereading.pyc
+%%DATADIR%%/lib/whoosh/whoosh/filedb/filereading.pyo
+%%DATADIR%%/lib/whoosh/whoosh/filedb/filestore.py
+%%DATADIR%%/lib/whoosh/whoosh/filedb/filestore.pyc
+%%DATADIR%%/lib/whoosh/whoosh/filedb/filestore.pyo
+%%DATADIR%%/lib/whoosh/whoosh/filedb/filetables.py
+%%DATADIR%%/lib/whoosh/whoosh/filedb/filetables.pyc
+%%DATADIR%%/lib/whoosh/whoosh/filedb/filetables.pyo
+%%DATADIR%%/lib/whoosh/whoosh/filedb/filewriting.py
+%%DATADIR%%/lib/whoosh/whoosh/filedb/filewriting.pyc
+%%DATADIR%%/lib/whoosh/whoosh/filedb/filewriting.pyo
+%%DATADIR%%/lib/whoosh/whoosh/filedb/gae.py
+%%DATADIR%%/lib/whoosh/whoosh/filedb/gae.pyc
+%%DATADIR%%/lib/whoosh/whoosh/filedb/gae.pyo
+%%DATADIR%%/lib/whoosh/whoosh/filedb/multiproc.py
+%%DATADIR%%/lib/whoosh/whoosh/filedb/multiproc.pyc
+%%DATADIR%%/lib/whoosh/whoosh/filedb/multiproc.pyo
+%%DATADIR%%/lib/whoosh/whoosh/filedb/pools.py
+%%DATADIR%%/lib/whoosh/whoosh/filedb/pools.pyc
+%%DATADIR%%/lib/whoosh/whoosh/filedb/pools.pyo
+%%DATADIR%%/lib/whoosh/whoosh/filedb/postblocks.py
+%%DATADIR%%/lib/whoosh/whoosh/filedb/postblocks.pyc
+%%DATADIR%%/lib/whoosh/whoosh/filedb/postblocks.pyo
+%%DATADIR%%/lib/whoosh/whoosh/filedb/structfile.py
+%%DATADIR%%/lib/whoosh/whoosh/filedb/structfile.pyc
+%%DATADIR%%/lib/whoosh/whoosh/filedb/structfile.pyo
+%%DATADIR%%/lib/whoosh/whoosh/formats.py
+%%DATADIR%%/lib/whoosh/whoosh/formats.pyc
+%%DATADIR%%/lib/whoosh/whoosh/formats.pyo
+%%DATADIR%%/lib/whoosh/whoosh/highlight.py
+%%DATADIR%%/lib/whoosh/whoosh/highlight.pyc
+%%DATADIR%%/lib/whoosh/whoosh/highlight.pyo
+%%DATADIR%%/lib/whoosh/whoosh/index.py
+%%DATADIR%%/lib/whoosh/whoosh/index.pyc
+%%DATADIR%%/lib/whoosh/whoosh/index.pyo
+%%DATADIR%%/lib/whoosh/whoosh/lang/__init__.py
+%%DATADIR%%/lib/whoosh/whoosh/lang/__init__.pyc
+%%DATADIR%%/lib/whoosh/whoosh/lang/__init__.pyo
+%%DATADIR%%/lib/whoosh/whoosh/lang/dmetaphone.py
+%%DATADIR%%/lib/whoosh/whoosh/lang/dmetaphone.pyc
+%%DATADIR%%/lib/whoosh/whoosh/lang/dmetaphone.pyo
+%%DATADIR%%/lib/whoosh/whoosh/lang/lovins.py
+%%DATADIR%%/lib/whoosh/whoosh/lang/lovins.pyc
+%%DATADIR%%/lib/whoosh/whoosh/lang/lovins.pyo
+%%DATADIR%%/lib/whoosh/whoosh/lang/morph_en.py
+%%DATADIR%%/lib/whoosh/whoosh/lang/morph_en.pyc
+%%DATADIR%%/lib/whoosh/whoosh/lang/morph_en.pyo
+%%DATADIR%%/lib/whoosh/whoosh/lang/paicehusk.py
+%%DATADIR%%/lib/whoosh/whoosh/lang/paicehusk.pyc
+%%DATADIR%%/lib/whoosh/whoosh/lang/paicehusk.pyo
+%%DATADIR%%/lib/whoosh/whoosh/lang/phonetic.py
+%%DATADIR%%/lib/whoosh/whoosh/lang/phonetic.pyc
+%%DATADIR%%/lib/whoosh/whoosh/lang/phonetic.pyo
+%%DATADIR%%/lib/whoosh/whoosh/lang/porter.py
+%%DATADIR%%/lib/whoosh/whoosh/lang/porter.pyc
+%%DATADIR%%/lib/whoosh/whoosh/lang/porter.pyo
+%%DATADIR%%/lib/whoosh/whoosh/lang/porter2.py
+%%DATADIR%%/lib/whoosh/whoosh/lang/porter2.pyc
+%%DATADIR%%/lib/whoosh/whoosh/lang/porter2.pyo
+%%DATADIR%%/lib/whoosh/whoosh/lang/wordnet.py
+%%DATADIR%%/lib/whoosh/whoosh/lang/wordnet.pyc
+%%DATADIR%%/lib/whoosh/whoosh/lang/wordnet.pyo
+%%DATADIR%%/lib/whoosh/whoosh/matching.py
+%%DATADIR%%/lib/whoosh/whoosh/matching.pyc
+%%DATADIR%%/lib/whoosh/whoosh/matching.pyo
+%%DATADIR%%/lib/whoosh/whoosh/qparser/__init__.py
+%%DATADIR%%/lib/whoosh/whoosh/qparser/__init__.pyc
+%%DATADIR%%/lib/whoosh/whoosh/qparser/__init__.pyo
+%%DATADIR%%/lib/whoosh/whoosh/qparser/common.py
+%%DATADIR%%/lib/whoosh/whoosh/qparser/common.pyc
+%%DATADIR%%/lib/whoosh/whoosh/qparser/common.pyo
+%%DATADIR%%/lib/whoosh/whoosh/qparser/dateparse.py
+%%DATADIR%%/lib/whoosh/whoosh/qparser/dateparse.pyc
+%%DATADIR%%/lib/whoosh/whoosh/qparser/dateparse.pyo
+%%DATADIR%%/lib/whoosh/whoosh/qparser/default.py
+%%DATADIR%%/lib/whoosh/whoosh/qparser/default.pyc
+%%DATADIR%%/lib/whoosh/whoosh/qparser/default.pyo
+%%DATADIR%%/lib/whoosh/whoosh/qparser/plugins.py
+%%DATADIR%%/lib/whoosh/whoosh/qparser/plugins.pyc
+%%DATADIR%%/lib/whoosh/whoosh/qparser/plugins.pyo
+%%DATADIR%%/lib/whoosh/whoosh/qparser/syntax.py
+%%DATADIR%%/lib/whoosh/whoosh/qparser/syntax.pyc
+%%DATADIR%%/lib/whoosh/whoosh/qparser/syntax.pyo
+%%DATADIR%%/lib/whoosh/whoosh/query.py
+%%DATADIR%%/lib/whoosh/whoosh/query.pyc
+%%DATADIR%%/lib/whoosh/whoosh/query.pyo
+%%DATADIR%%/lib/whoosh/whoosh/ramindex.py
+%%DATADIR%%/lib/whoosh/whoosh/ramindex.pyc
+%%DATADIR%%/lib/whoosh/whoosh/ramindex.pyo
+%%DATADIR%%/lib/whoosh/whoosh/reading.py
+%%DATADIR%%/lib/whoosh/whoosh/reading.pyc
+%%DATADIR%%/lib/whoosh/whoosh/reading.pyo
+%%DATADIR%%/lib/whoosh/whoosh/scoring.py
+%%DATADIR%%/lib/whoosh/whoosh/scoring.pyc
+%%DATADIR%%/lib/whoosh/whoosh/scoring.pyo
+%%DATADIR%%/lib/whoosh/whoosh/searching.py
+%%DATADIR%%/lib/whoosh/whoosh/searching.pyc
+%%DATADIR%%/lib/whoosh/whoosh/searching.pyo
+%%DATADIR%%/lib/whoosh/whoosh/sorting.py
+%%DATADIR%%/lib/whoosh/whoosh/sorting.pyc
+%%DATADIR%%/lib/whoosh/whoosh/sorting.pyo
+%%DATADIR%%/lib/whoosh/whoosh/spans.py
+%%DATADIR%%/lib/whoosh/whoosh/spans.pyc
+%%DATADIR%%/lib/whoosh/whoosh/spans.pyo
+%%DATADIR%%/lib/whoosh/whoosh/spelling.py
+%%DATADIR%%/lib/whoosh/whoosh/spelling.pyc
+%%DATADIR%%/lib/whoosh/whoosh/spelling.pyo
+%%DATADIR%%/lib/whoosh/whoosh/store.py
+%%DATADIR%%/lib/whoosh/whoosh/store.pyc
+%%DATADIR%%/lib/whoosh/whoosh/store.pyo
+%%DATADIR%%/lib/whoosh/whoosh/support/__init__.py
+%%DATADIR%%/lib/whoosh/whoosh/support/__init__.pyc
+%%DATADIR%%/lib/whoosh/whoosh/support/__init__.pyo
+%%DATADIR%%/lib/whoosh/whoosh/support/bench.py
+%%DATADIR%%/lib/whoosh/whoosh/support/bench.pyc
+%%DATADIR%%/lib/whoosh/whoosh/support/bench.pyo
+%%DATADIR%%/lib/whoosh/whoosh/support/bitvector.py
+%%DATADIR%%/lib/whoosh/whoosh/support/bitvector.pyc
+%%DATADIR%%/lib/whoosh/whoosh/support/bitvector.pyo
+%%DATADIR%%/lib/whoosh/whoosh/support/charset.py
+%%DATADIR%%/lib/whoosh/whoosh/support/charset.pyc
+%%DATADIR%%/lib/whoosh/whoosh/support/charset.pyo
+%%DATADIR%%/lib/whoosh/whoosh/support/filelock.py
+%%DATADIR%%/lib/whoosh/whoosh/support/filelock.pyc
+%%DATADIR%%/lib/whoosh/whoosh/support/filelock.pyo
+%%DATADIR%%/lib/whoosh/whoosh/support/levenshtein.py
+%%DATADIR%%/lib/whoosh/whoosh/support/levenshtein.pyc
+%%DATADIR%%/lib/whoosh/whoosh/support/levenshtein.pyo
+%%DATADIR%%/lib/whoosh/whoosh/support/numeric.py
+%%DATADIR%%/lib/whoosh/whoosh/support/numeric.pyc
+%%DATADIR%%/lib/whoosh/whoosh/support/numeric.pyo
+%%DATADIR%%/lib/whoosh/whoosh/support/relativedelta.py
+%%DATADIR%%/lib/whoosh/whoosh/support/relativedelta.pyc
+%%DATADIR%%/lib/whoosh/whoosh/support/relativedelta.pyo
+%%DATADIR%%/lib/whoosh/whoosh/support/testing.py
+%%DATADIR%%/lib/whoosh/whoosh/support/testing.pyc
+%%DATADIR%%/lib/whoosh/whoosh/support/testing.pyo
+%%DATADIR%%/lib/whoosh/whoosh/support/times.py
+%%DATADIR%%/lib/whoosh/whoosh/support/times.pyc
+%%DATADIR%%/lib/whoosh/whoosh/support/times.pyo
+%%DATADIR%%/lib/whoosh/whoosh/support/unicode.py
+%%DATADIR%%/lib/whoosh/whoosh/support/unicode.pyc
+%%DATADIR%%/lib/whoosh/whoosh/support/unicode.pyo
+%%DATADIR%%/lib/whoosh/whoosh/system.py
+%%DATADIR%%/lib/whoosh/whoosh/system.pyc
+%%DATADIR%%/lib/whoosh/whoosh/system.pyo
+%%DATADIR%%/lib/whoosh/whoosh/util.py
+%%DATADIR%%/lib/whoosh/whoosh/util.pyc
+%%DATADIR%%/lib/whoosh/whoosh/util.pyo
+%%DATADIR%%/lib/whoosh/whoosh/writing.py
+%%DATADIR%%/lib/whoosh/whoosh/writing.pyc
+%%DATADIR%%/lib/whoosh/whoosh/writing.pyo
 %%DATADIR%%/lib/yaml/LICENSE
 %%DATADIR%%/lib/yaml/PKG-INFO
 %%DATADIR%%/lib/yaml/README
@@ -8844,6 +9080,12 @@ bin/remote_api_shell.pyo
 @dirrm %%DATADIR%%/lib/yaml/examples/yaml-highlight
 @dirrm %%DATADIR%%/lib/yaml/examples
 @dirrm %%DATADIR%%/lib/yaml
+@dirrm %%DATADIR%%/lib/whoosh/whoosh/support
+@dirrm %%DATADIR%%/lib/whoosh/whoosh/qparser
+@dirrm %%DATADIR%%/lib/whoosh/whoosh/lang
+@dirrm %%DATADIR%%/lib/whoosh/whoosh/filedb
+@dirrm %%DATADIR%%/lib/whoosh/whoosh
+@dirrm %%DATADIR%%/lib/whoosh
 @dirrm %%DATADIR%%/lib/webob/webob/util
 @dirrm %%DATADIR%%/lib/webob/webob
 @dirrm %%DATADIR%%/lib/webob/tests
@@ -9817,12 +10059,16 @@ bin/remote_api_shell.pyo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/mail
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/images/dev
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/files/dev
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/files
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/datastore/dev
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/datastore
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/capabilities/dev
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/capabilities
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore/dev
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/blobstore
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/appidentity/dev
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api/appidentity
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google/appengine
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/tools/localunittesting/javadoc/com/google
@@ -9855,6 +10101,7 @@ bin/remote_api_shell.pyo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/capabilities
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/blobstore
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/backends
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/appidentity
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/javadoc/com/google
@@ -9874,6 +10121,7 @@ bin/remote_api_shell.pyo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/capabilities
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/blobstore
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/backends
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java/appidentity
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/java
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/images
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine/docs/go/users
@@ -9906,5 +10154,6 @@ bin/remote_api_shell.pyo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/appengine
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/appengine/docs/python/tools/descriptor
+%%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/appengine/docs/java/javadoc/com/google/appengine/api/appidentity
 %%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/appengine/docs/go/config
 %%PORTDOCS%%@exec mkdir -p %D/%%DOCSDIR%%/appengine/docs/config
