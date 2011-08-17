@@ -26,9 +26,14 @@ bin/morbo
 %%SITE_PERL%%/Mojo/HelloWorld.pm
 %%SITE_PERL%%/Mojo/Home.pm
 %%SITE_PERL%%/Mojo/IOLoop.pm
+%%SITE_PERL%%/Mojo/IOLoop/Client.pm
+%%SITE_PERL%%/Mojo/IOLoop/EventEmitter.pm
+%%SITE_PERL%%/Mojo/IOLoop/Resolver.pm
+%%SITE_PERL%%/Mojo/IOLoop/Server.pm
+%%SITE_PERL%%/Mojo/IOLoop/Stream.pm
+%%SITE_PERL%%/Mojo/IOLoop/Trigger.pm
 %%SITE_PERL%%/Mojo/IOWatcher.pm
-%%SITE_PERL%%/Mojo/IOWatcher/Epoll.pm
-%%SITE_PERL%%/Mojo/IOWatcher/KQueue.pm
+%%SITE_PERL%%/Mojo/IOWatcher/EV.pm
 %%SITE_PERL%%/Mojo/JSON.pm
 %%SITE_PERL%%/Mojo/Loader.pm
 %%SITE_PERL%%/Mojo/Log.pm
@@ -37,7 +42,6 @@ bin/morbo
 %%SITE_PERL%%/Mojo/Message/Response.pm
 %%SITE_PERL%%/Mojo/Parameters.pm
 %%SITE_PERL%%/Mojo/Path.pm
-%%SITE_PERL%%/Mojo/Resolver.pm
 %%SITE_PERL%%/Mojo/Server.pm
 %%SITE_PERL%%/Mojo/Server/CGI.pm
 %%SITE_PERL%%/Mojo/Server/Daemon.pm
@@ -146,27 +150,28 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/templates/perldoc.html.ep
 %%SITE_PERL%%/README.pod
 %%SITE_PERL%%/Test/Mojo.pm
-%%SITE_PERL%%/mach/auto/Mojolicious/.packlist
 %%SITE_PERL%%/ojo.pm
-@dirrmtry %%SITE_PERL%%/mach/auto/Mojolicious
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious
 @dirrmtry %%SITE_PERL%%/Test
-@dirrmtry %%SITE_PERL%%/Mojolicious/templates
-@dirrmtry %%SITE_PERL%%/Mojolicious/public/js
-@dirrmtry %%SITE_PERL%%/Mojolicious/public/css
-@dirrmtry %%SITE_PERL%%/Mojolicious/public
-@dirrmtry %%SITE_PERL%%/Mojolicious/Routes
+@dirrm %%SITE_PERL%%/Mojolicious/templates
+@dirrm %%SITE_PERL%%/Mojolicious/public/js
+@dirrm %%SITE_PERL%%/Mojolicious/public/css
+@dirrm %%SITE_PERL%%/Mojolicious/public
+@dirrm %%SITE_PERL%%/Mojolicious/Routes
 @dirrmtry %%SITE_PERL%%/Mojolicious/Plugin
-@dirrmtry %%SITE_PERL%%/Mojolicious/Guides
-@dirrmtry %%SITE_PERL%%/Mojolicious/Command/Generate
-@dirrmtry %%SITE_PERL%%/Mojolicious/Command
+@dirrm %%SITE_PERL%%/Mojolicious/Guides
+@dirrm %%SITE_PERL%%/Mojolicious/Command/Generate
+@dirrm %%SITE_PERL%%/Mojolicious/Command
 @dirrmtry %%SITE_PERL%%/Mojolicious
-@dirrmtry %%SITE_PERL%%/Mojo/UserAgent
-@dirrmtry %%SITE_PERL%%/Mojo/Transaction
-@dirrmtry %%SITE_PERL%%/Mojo/Server
-@dirrmtry %%SITE_PERL%%/Mojo/Message
-@dirrmtry %%SITE_PERL%%/Mojo/IOWatcher
-@dirrmtry %%SITE_PERL%%/Mojo/DOM
-@dirrmtry %%SITE_PERL%%/Mojo/Cookie
-@dirrmtry %%SITE_PERL%%/Mojo/Content
-@dirrmtry %%SITE_PERL%%/Mojo/Asset
-@dirrmtry %%SITE_PERL%%/Mojo
+@dirrm %%SITE_PERL%%/Mojo/UserAgent
+@dirrm %%SITE_PERL%%/Mojo/Transaction
+@dirrm %%SITE_PERL%%/Mojo/Server
+@dirrm %%SITE_PERL%%/Mojo/Message
+@dirrm %%SITE_PERL%%/Mojo/IOWatcher
+@dirrm %%SITE_PERL%%/Mojo/IOLoop
+@dirrm %%SITE_PERL%%/Mojo/DOM
+@dirrm %%SITE_PERL%%/Mojo/Cookie
+@dirrm %%SITE_PERL%%/Mojo/Content
+@dirrm %%SITE_PERL%%/Mojo/Asset
+@dirrm %%SITE_PERL%%/Mojo
