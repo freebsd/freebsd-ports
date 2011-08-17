@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	namazu
-PORTVERSION=	2.0.20
+PORTVERSION=	${NAMAZU_PORTVERSION}
 CATEGORIES=	japanese databases www textproc
 MASTER_SITES=	# empty
 PKGNAMESUFFIX=	2
@@ -29,6 +29,8 @@ RUN_DEPENDS+=	${PM_BASE}/${PERL_ARCH}/Text/Kakasi.pm:${PORTSDIR}/japanese/p5-Tex
 .else
 RUN_DEPENDS+=	${PM_BASE}/${PERL_ARCH}/MeCab.pm:${PORTSDIR}/japanese/p5-MeCab
 .endif
+
+.include "${.CURDIR}/../../databases/namazu2/Makefile.common"
 
 NO_BUILD=	yes
 USE_PERL5=	yes
