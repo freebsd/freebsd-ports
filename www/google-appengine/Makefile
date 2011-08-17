@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-appengine
-PORTVERSION=	1.5.2
+PORTVERSION=	1.5.3
 PORTREVISION=	0
 CATEGORIES=	www devel python
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -40,7 +40,7 @@ XARGS_ARGS=	-0
 REINPLACE_ARGS=	-i.bak -e 's,/usr/bin/env python,&${PYTHON_VER},'
 
 GAEDATADIR=	google lib new_project_template templates tools
-GAEDOCSREL=	20110721
+GAEDOCSREL=	20110817
 GAESCRIPTS=	appcfg bulkload_client bulkloader dev_appserver gen_protorpc remote_api_shell
 
 post-patch:
