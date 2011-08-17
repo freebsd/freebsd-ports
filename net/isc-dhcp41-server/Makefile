@@ -150,6 +150,7 @@ PLIST_SUB+=		IPV6="@comment "
 
 pre-patch:
 .if ${SUBSYS} == server && defined(WITH_DHCP_LDAP)
+	@${PATCH} ${WRKDIR}/${LDAPPATCHDIST}/${LDAPPATCHFILE} ${FILESDIR}/extra-patch-${LDAPPATCHFILE}
 	@cd ${WRKSRC} && ${PATCH} -p1 < ${WRKDIR}/${LDAPPATCHDIST}/${LDAPPATCHFILE}
 .endif
 
