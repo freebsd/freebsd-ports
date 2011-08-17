@@ -8,10 +8,12 @@
 PORTNAME=	lcab
 DISTVERSION=	1.0b12
 CATEGORIES=	archivers
-MASTER_SITES=	http://lcab.move-to-cork.com/sources/
+MASTER_SITES=	ftp://ohnopublishing.net/mirror/
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Microsoft .CABinet file creator
+
+LICENSE=	GPLv2
 
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 PLIST_FILES=	bin/lcab
