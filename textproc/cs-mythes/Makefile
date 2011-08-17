@@ -9,9 +9,9 @@ PORTNAME=	mythes
 PORTVERSION=	2007.09.26
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	cs-
-DISTNAME=	thes_cs_CZ_v2
+DISTNAME=	thes_cs_CZ_v2-${PORTVERSION:C/\.//g}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Czech thesaurus

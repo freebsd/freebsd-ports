@@ -9,8 +9,8 @@ PORTNAME=	mythes
 PORTVERSION=	2003.09.29
 PORTREVISION=	1
 CATEGORIES=	hungarian textproc
-MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
-DISTNAME=	thes_hu_HU
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
+DISTNAME=	thes_hu_HU-${PORTVERSION:C/\.//g}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Hungarian thesaurus

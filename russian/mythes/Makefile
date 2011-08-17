@@ -9,8 +9,8 @@ PORTNAME=	mythes
 PORTVERSION=	2007.06.13
 PORTREVISION=	1
 CATEGORIES=	russian textproc
-MASTER_SITES=	http://download.i-rs.ru/pub/openoffice/dict/
-DISTNAME=	thes_ru_RU_v2
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
+DISTNAME=	thes_ru_RU_v2-${PORTVERSION:C/\.//g}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Russian thesaurus

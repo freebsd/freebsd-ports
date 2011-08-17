@@ -9,9 +9,9 @@ PORTNAME=	hyphen
 PORTVERSION=	2004.04.15
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	sk-
-DISTNAME=	hyph_sk_SK
+DISTNAME=	hyph_sk_SK-${PORTVERSION:C/\.//g}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Slovak hyphenation rules

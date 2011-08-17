@@ -9,8 +9,8 @@ PORTNAME=	hyphen
 PORTVERSION=	2004.04.15
 PORTREVISION=	1
 CATEGORIES=	russian textproc
-MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
-DISTNAME=	hyph_ru_RU
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
+DISTNAME=	hyph_ru_RU-${PORTVERSION:C/\.//g}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Russian hyphenation rules

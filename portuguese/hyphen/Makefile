@@ -9,8 +9,8 @@ PORTNAME=	hyphen
 PORTVERSION=	2004.04.15
 PORTREVISION=	1
 CATEGORIES=	portuguese textproc
-MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
-DISTNAME=	hyph_pt_PT
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
+DISTNAME=	hyph_pt_PT-${PORTVERSION:C/\.//g}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Portuguese hyphenation rules

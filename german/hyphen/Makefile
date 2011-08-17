@@ -9,8 +9,8 @@ PORTNAME=	hyphen
 PORTVERSION=	2007.02.17
 PORTREVISION=	1
 CATEGORIES=	german textproc
-MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
-DISTNAME=	hyph_de_DE
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
+DISTNAME=	hyph_de_DE-${PORTVERSION:C/\.//g}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	German hyphenation rules

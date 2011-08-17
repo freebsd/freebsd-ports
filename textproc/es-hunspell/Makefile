@@ -9,9 +9,9 @@ PORTNAME=	hunspell
 PORTVERSION=	0.5
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://extensions.services.openoffice.org/e-files/1639/2/
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	es-
-DISTNAME=	es_ANY
+DISTNAME=	es_ANY-${PORTVERSION}
 EXTRACT_SUFX=	.oxt
 
 MAINTAINER=	office@FreeBSD.org

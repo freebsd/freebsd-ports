@@ -9,9 +9,9 @@ PORTNAME=	hyphen
 PORTVERSION=	2007.11.26
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	it-
-DISTNAME=	hyph_it_IT
+DISTNAME=	hyph_it_IT-${PORTVERSION:C/\.//g}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Italian hyphenation rules

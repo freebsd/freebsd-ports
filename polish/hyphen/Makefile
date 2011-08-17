@@ -9,8 +9,8 @@ PORTNAME=	hyphen
 PORTVERSION=	2007.04.16
 PORTREVISION=	1
 CATEGORIES=	polish textproc
-MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
-DISTNAME=	hyph_pl_PL
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
+DISTNAME=	hyph_pl_PL-${PORTVERSION:C/\.//g}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Polish hyphenation rules

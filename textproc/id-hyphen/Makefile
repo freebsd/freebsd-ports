@@ -9,9 +9,9 @@ PORTNAME=	hyphen
 PORTVERSION=	2004.08.12
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	id-
-DISTNAME=	hyph_id_ID
+DISTNAME=	hyph_id_ID-${PORTVERSION:C/\.//g}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Indonesian hyphenation rules

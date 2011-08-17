@@ -9,9 +9,9 @@ PORTNAME=	hyphen
 PORTVERSION=	2005.04.15
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	sv-
-DISTNAME=	hyph_sv_SE
+DISTNAME=	hyph_sv_SE-${PORTVERSION:C/\.//g}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Swedish hyphenation rules

@@ -9,9 +9,9 @@ PORTNAME=	hunspell
 PORTVERSION=	20090911
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.cs.ru.nl/~biniam/geez/dict/
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	ti-
-DISTNAME=	ti_ER
+DISTNAME=	ti_ER-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Tigrigna hunspell dictionaries
