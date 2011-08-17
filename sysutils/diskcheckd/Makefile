@@ -17,6 +17,9 @@ EXTRACT_ONLY=	# part of port
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Daemon to check for disk read errors
 
+DEPRECATED=	Unmaintained, broken (ports/143566)
+EXPIRATION_DATE=2011-10-17
+
 MAN8=		diskcheckd.8
 MLINKS=		diskcheckd.8 diskcheckd.conf.5
 
