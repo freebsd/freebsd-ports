@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ccl
-PORTVERSION=	1.6
+PORTVERSION=	1.7
 CATEGORIES=	lang lisp
 MASTER_SITES=	ftp://ftp.clozure.com/pub/release/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsdx86
@@ -14,7 +14,7 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-freebsdx86
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	Clozure CL is a free Common Lisp implementation
 
-WRKSRC=		${WRKDIR}/ccl
+WRKSRC=		${WRKDIR}/ccl-${PORTVERSION}
 
 ONLY_FOR_ARCHS=	i386 amd64
 
@@ -74,7 +74,6 @@ post-install:
 	@cd ${WRKSRC} && ${ECHO_CMD} | ./${FX86CL} --no-init --batch --quiet \
 		--eval "(require 'asdf)" \
 		--eval '(load "/usr/local/etc/asdf-init.lisp")' \
-		--eval "(asdf:operate 'asdf:load-op 'asdf-install)" \
 		--eval "(quit)"
 	@cd ${PREFIX}; ${FIND} lib/ccl/* -type d -empty \
 		| ${SORT} \
