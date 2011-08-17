@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Kolab_Session
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.0
 CATEGORIES=	net www pear
 
 MAINTAINER=	horde@FreeBSD.org
