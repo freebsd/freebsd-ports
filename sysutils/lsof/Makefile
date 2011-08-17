@@ -70,12 +70,6 @@ post-extract:
 #		${DISTDIR}/freebsd_3.0_patch > ${WRKDIR}/p
 #	${PATCH} ${PATCH_DIST_ARGS} < ${WRKDIR}/p
 
-post-patch:
-.if (${OSVERSION} >= 900039)
-	${REINPLACE_CMD} -e 's/cpumask_t/cpuset_t/' \
-		${WRKSRC}/dialects/freebsd/machine.h
-.endif
-
 do-install:
 	${INSTALL} ${COPY} ${STRIP} -o ${BINOWN} -m 2755 -g kmem ${WRKSRC}/lsof ${PREFIX}/sbin
 	${INSTALL_MAN} ${WRKSRC}/lsof.8 ${MAN8PREFIX}/man/man8/lsof.8
