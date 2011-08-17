@@ -1473,6 +1473,7 @@
     SUBDIR += p5-Data-Uniqid
     SUBDIR += p5-Data-Util
     SUBDIR += p5-Data-Validate
+    SUBDIR += p5-Data-Validator
     SUBDIR += p5-Data-Visitor
     SUBDIR += p5-Data-Visitor-Encode
     SUBDIR += p5-Date-Business
