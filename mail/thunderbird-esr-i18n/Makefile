@@ -33,7 +33,7 @@ THUNDERBIRD_I18N_ALL=	ar br ca cs da de en-GB en-US es-AR es-ES et eu fi fr \
 .ifdef PACKAGE_BUILDING
 THUNDERBIRD_I18N?=	all
 .else
-THUNDERBIRD_I18N?=	es-ES pt-BR ru ja de fr pa-IN ko it
+THUNDERBIRD_I18N?=	es-ES pt-BR ru ja de fr ko it
 .endif
 
 .if ${THUNDERBIRD_I18N} == all
