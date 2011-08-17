@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Module/Install/XSUtil.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Install/XSUtil/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Install/XSUtil
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module/Install
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Module
+@dirrmtry %%SITE_PERL%%/Module/Install
+@dirrmtry %%SITE_PERL%%/Module
