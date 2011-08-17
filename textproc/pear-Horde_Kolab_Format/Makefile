@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Kolab_Format
-PORTVERSION=	1.0.0
+PORTVERSION=	1.0.1
 CATEGORIES=	textproc www pear
 
 MAINTAINER=	horde@FreeBSD.org
