@@ -2514,3 +2514,4 @@ x11-themes/fluxbox-sid-pack||2011-08-14|Has expired: No longer maintained by ups
 japanese/ical||2011-08-15|Removed
 lang/ocamlduce||2011-08-16|Has expired: has been broken for over a year
 devel/cl-asdf-binary-locations||2011-08-16|Obsoleted by ASDF 2 capabilities
+devel/py-istring||2011-08-17|Has expired: port is unmaintained and broken
