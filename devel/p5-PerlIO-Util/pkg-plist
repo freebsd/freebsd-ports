@@ -1,0 +1,15 @@
+%%SITE_PERL%%/%%PERL_ARCH%%/PerlIO/Util.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/PerlIO/Util/JA.pod
+%%SITE_PERL%%/%%PERL_ARCH%%/PerlIO/creat.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/PerlIO/dir.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/PerlIO/excl.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/PerlIO/flock.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/PerlIO/reverse.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/PerlIO/tee.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/Util/.packlist
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/Util/Util.bs
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/Util/Util.so
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO/Util
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/PerlIO
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/PerlIO/Util
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/PerlIO
