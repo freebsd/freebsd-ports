@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	portuguese textproc
 MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 DISTNAME=	thes_pt_PT_v2-${PORTVERSION:C/\.//g}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Portuguese thesaurus
