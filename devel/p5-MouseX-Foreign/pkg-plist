@@ -1,0 +1,12 @@
+%%SITE_PERL%%/MouseX/Foreign.pm
+%%SITE_PERL%%/MouseX/Foreign/Meta/Role/Class.pm
+%%SITE_PERL%%/MouseX/Foreign/Meta/Role/Method/Constructor.pm
+%%SITE_PERL%%/MouseX/Foreign/Meta/Role/Method/Destructor.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/Foreign/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX/Foreign
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/MouseX
+@dirrm %%SITE_PERL%%/MouseX/Foreign/Meta/Role/Method
+@dirrm %%SITE_PERL%%/MouseX/Foreign/Meta/Role
+@dirrm %%SITE_PERL%%/MouseX/Foreign/Meta
+@dirrm %%SITE_PERL%%/MouseX/Foreign
+@dirrmtry %%SITE_PERL%%/MouseX
