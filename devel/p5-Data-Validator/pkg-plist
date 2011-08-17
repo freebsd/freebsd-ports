@@ -1,0 +1,12 @@
+%%SITE_PERL%%/Data/Validator.pm
+%%SITE_PERL%%/Data/Validator/Role/AllowExtra.pm
+%%SITE_PERL%%/Data/Validator/Role/Croak.pm
+%%SITE_PERL%%/Data/Validator/Role/Method.pm
+%%SITE_PERL%%/Data/Validator/Role/NoThrow.pm
+%%SITE_PERL%%/Data/Validator/Role/Sequenced.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validator/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data/Validator
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Data
+@dirrm %%SITE_PERL%%/Data/Validator/Role
+@dirrm %%SITE_PERL%%/Data/Validator
+@dirrmtry %%SITE_PERL%%/Data
