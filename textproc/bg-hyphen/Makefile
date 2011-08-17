@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/bgoffice/OpenOffice.org%20Hyphenation%20BG/${PORTVERSION}/
 PKGNAMEPREFIX=	bg-
 DISTNAME=	OOo-hyph-bg-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Bulgarian hyphenation rules

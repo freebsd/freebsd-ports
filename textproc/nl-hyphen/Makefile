@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	nl-
 DISTNAME=	hyph_nl_NL-${PORTVERSION:C/\.//g}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Dutch hyphenation rules

@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	it-
 DISTNAME=	hyph_it_IT-${PORTVERSION:C/\.//g}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Italian hyphenation rules

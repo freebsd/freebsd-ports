@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	sl-
 DISTNAME=	hyph_sl_SI-${PORTVERSION:C/\.//g}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Slovenian hyphenation rules

@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	sk-
 DISTNAME=	hyph_sk_SK-${PORTVERSION:C/\.//g}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Slovak hyphenation rules
