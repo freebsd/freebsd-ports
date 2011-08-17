@@ -1957,6 +1957,7 @@
     SUBDIR += p5-Module-Install-AuthorTests
     SUBDIR += p5-Module-Install-Repository
     SUBDIR += p5-Module-Install-Template
+    SUBDIR += p5-Module-Install-XSUtil
     SUBDIR += p5-Module-List
     SUBDIR += p5-Module-Load
     SUBDIR += p5-Module-Load-Conditional
