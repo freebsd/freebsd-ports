@@ -84,6 +84,7 @@
     SUBDIR += gnome-font-sampler
     SUBDIR += gnu-unifont
     SUBDIR += gnu-unifont-ttf
+    SUBDIR += hanazono-fonts-ttf
     SUBDIR += inconsolata-ttf
     SUBDIR += indic-ttf
     SUBDIR += intlfonts
