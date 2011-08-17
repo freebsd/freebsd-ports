@@ -14,6 +14,9 @@ DISTNAME=	perl-GPS-${PORTVERSION}
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Perl interface to GPS receivers
 
+BUILD_DEPENDS=	p5-Device-SerialPort>=0.07:${PORTSDIR}/comms/p5-Device-SerialPort
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
 PERL_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
