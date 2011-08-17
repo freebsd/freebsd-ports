@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	JSON serialising/deserialising, done correctly and fast
 
-RUN_DEPENDS=	p5-common-sense>0:${PORTSDIR}/devel/p5-common-sense
+BUILD_DEPENDS=	p5-common-sense>0:${PORTSDIR}/devel/p5-common-sense
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
