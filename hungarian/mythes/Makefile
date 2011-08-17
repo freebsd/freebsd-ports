@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	hungarian textproc
 MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 DISTNAME=	thes_hu_HU-${PORTVERSION:C/\.//g}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Hungarian thesaurus

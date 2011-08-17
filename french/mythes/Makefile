@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	french textproc
 MASTER_SITES=	http://www.dicollecte.org/download/fr/
 DISTNAME=	thesaurus-v${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	French thesaurus

@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	SF/bgoffice/OpenOffice.org%20Thesaurus%20BG/${PORTVERSION}/
 PKGNAMEPREFIX=	bg-
 DISTNAME=	OOo-thes-bg-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Bulgarian thesaurus

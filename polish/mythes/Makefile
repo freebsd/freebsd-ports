@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	polish textproc
 MASTER_SITES=	SF/synonimy/synonimy/${PORTVERSION}/
 DISTNAME=	OOo2-Thesaurus-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Polish thesaurus

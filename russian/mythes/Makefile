@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	russian textproc
 MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 DISTNAME=	thes_ru_RU_v2-${PORTVERSION:C/\.//g}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Russian thesaurus
