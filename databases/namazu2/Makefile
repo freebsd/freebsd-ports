@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	namazu
-PORTVERSION=	2.0.21
+PORTVERSION=	${NAMAZU_PORTVERSION}
 CATEGORIES+=	databases www textproc
 MASTER_SITES=	http://www.namazu.org/stable/
 PKGNAMESUFFIX=	2
@@ -27,6 +27,8 @@ CONFIGURE_ARGS=	--with-perl5="${PERL}" \
 		--with-libintl-prefix=${LOCALBASE} \
 		--with-libiconv-prefix=${LOCALBASE}
 USE_LDCONFIG=	yes
+
+.include "${.CURDIR}/Makefile.common"
 
 MAN1=		namazu.1 mknmz.1
 
