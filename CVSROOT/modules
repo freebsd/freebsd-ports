@@ -5862,6 +5862,7 @@ ics                             ports/science/ics
 icu                             ports/devel/icu
 id-aspell                       ports/textproc/id-aspell
 id-hyphen                       ports/textproc/id-hyphen
+id3ed                           ports/audio/id3ed
 id3el                           ports/audio/id3el
 id3lib                          ports/audio/id3lib
 id3mtag                         ports/audio/id3mtag
@@ -7146,6 +7147,7 @@ kevedit                         ports/games/kevedit
 kexchange                       ports/finance/kexchange
 keximdb                         ports/databases/keximdb
 kexis                           ports/audio/kexis
+keybinder                       ports/x11/keybinder
 keyboardcast                    ports/x11/keyboardcast
 keychain                        ports/security/keychain
 keylaunch                       ports/x11/keylaunch
@@ -10304,7 +10306,6 @@ ocaml-ulex                      ports/devel/ocaml-ulex
 ocaml-xstr                      ports/devel/ocaml-xstr
 ocaml-xstrp4                    ports/devel/ocaml-xstrp4
 ocaml-zip                       ports/archivers/ocaml-zip
-ocamlduce                       ports/lang/ocamlduce
 ocamlgsl                        ports/math/ocamlgsl
 ocamlweb                        ports/devel/ocamlweb
 ocfpcsc                         ports/devel/ocfpcsc
@@ -10961,6 +10962,7 @@ p5-B-Deobfuscate                ports/devel/p5-B-Deobfuscate
 p5-B-Generate                   ports/devel/p5-B-Generate
 p5-B-Graph                      ports/devel/p5-B-Graph
 p5-B-Hooks-EndOfScope           ports/devel/p5-B-Hooks-EndOfScope
+p5-B-Hooks-OP-Annotation        ports/devel/p5-B-Hooks-OP-Annotation
 p5-B-Hooks-OP-Check             ports/devel/p5-B-Hooks-OP-Check
 p5-B-Hooks-OP-Check-EntersubForCV  ports/devel/p5-B-Hooks-OP-Check-EntersubForCV
 p5-B-Hooks-OP-PPAddr            ports/devel/p5-B-Hooks-OP-PPAddr
@@ -15239,6 +15241,7 @@ p5-b-deobfuscate                ports/devel/p5-B-Deobfuscate
 p5-b-generate                   ports/devel/p5-B-Generate
 p5-b-graph                      ports/devel/p5-B-Graph
 p5-b-hooks-endofscope           ports/devel/p5-B-Hooks-EndOfScope
+p5-b-hooks-op-annotation        ports/devel/p5-B-Hooks-OP-Annotation
 p5-b-hooks-op-check             ports/devel/p5-B-Hooks-OP-Check
 p5-b-hooks-op-check-entersubforcv  ports/devel/p5-B-Hooks-OP-Check-EntersubForCV
 p5-b-hooks-op-ppaddr            ports/devel/p5-B-Hooks-OP-PPAddr
