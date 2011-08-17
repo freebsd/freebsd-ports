@@ -8,9 +8,9 @@
 PORTNAME=	mythes
 PORTVERSION=	2011.08.16
 CATEGORIES=	textproc
-MASTER_SITES=	http://data.opentaal.org/opentaalbank/thesaurus/download/
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	nl-
-DISTNAME=	thes_nl
+DISTNAME=	thes_nl-${PORTVERSION:C/\.//g}
 EXTRACT_SUFX=	.oxt
 
 MAINTAINER=	office@FreeBSD.org

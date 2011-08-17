@@ -8,8 +8,8 @@
 PORTNAME=	mythes
 PORTVERSION=	2011.08.16
 CATEGORIES=	german textproc
-MASTER_SITES=	http://www.openthesaurus.de/export/
-DISTNAME=	Deutscher-Thesaurus
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
+DISTNAME=	Deutscher-Thesaurus-${PORTVERSION:C/\.//g}
 EXTRACT_SUFX=	.oxt
 
 MAINTAINER=	office@FreeBSD.org

@@ -9,8 +9,8 @@ PORTNAME=	hyphen
 PORTVERSION=	2005.03.08
 PORTREVISION=	1
 CATEGORIES=	ukrainian textproc
-MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
-DISTNAME=	hyph_uk_UA
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
+DISTNAME=	hyph_uk_UA-${PORTVERSION:C/\.//g}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Ukrainian hyphenation rules

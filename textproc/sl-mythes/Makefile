@@ -8,9 +8,9 @@
 PORTNAME=	mythes
 PORTVERSION=	2011.08.17
 CATEGORIES=	textproc
-MASTER_SITES=	http://193.2.66.133:85/download/
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	sl-
-DISTNAME=	thes_sl_SI_v2
+DISTNAME=	thes_sl_SI_v2-${PORTVERSION:C/\.//g}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Slovenian thesaurus

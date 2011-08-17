@@ -8,9 +8,9 @@
 PORTNAME=	mythes
 PORTVERSION=	20110802
 CATEGORIES=	textproc
-MASTER_SITES=	http://openthes-es.berlios.de/download/
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	es-
-DISTNAME=	OOo2-thes_es_ES
+DISTNAME=	OOo2-thes_es_ES-${PORTVERSION}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Spanish thesaurus

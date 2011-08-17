@@ -9,9 +9,9 @@ PORTNAME=	hyphen
 PORTVERSION=	2007.01.27
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	sl-
-DISTNAME=	hyph_sl_SI
+DISTNAME=	hyph_sl_SI-${PORTVERSION:C/\.//g}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Slovenian hyphenation rules

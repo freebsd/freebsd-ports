@@ -9,9 +9,9 @@ PORTNAME=	hyphen
 PORTVERSION=	2005.10.16
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	nl-
-DISTNAME=	hyph_nl_NL
+DISTNAME=	hyph_nl_NL-${PORTVERSION:C/\.//g}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Dutch hyphenation rules

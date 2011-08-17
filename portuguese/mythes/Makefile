@@ -9,8 +9,8 @@ PORTNAME=	mythes
 PORTVERSION=	2006.08.17
 PORTREVISION=	1
 CATEGORIES=	portuguese textproc
-MASTER_SITES=	http://openthesaurus.caixamagica.pt/download/
-DISTNAME=	thes_pt_PT_v2
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
+DISTNAME=	thes_pt_PT_v2-${PORTVERSION:C/\.//g}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Portuguese thesaurus

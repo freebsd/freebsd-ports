@@ -9,9 +9,9 @@ PORTNAME=	hyphen
 PORTVERSION=	2004.04.15
 PORTREVISION=	1
 CATEGORIES=	textproc
-MASTER_SITES=	http://ftp.osuosl.org/pub/openoffice/contrib/dictionaries/
+MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	lt-
-DISTNAME=	hyph_lt_LT
+DISTNAME=	hyph_lt_LT-${PORTVERSION:C/\.//g}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Lithuanian hyphenation rules

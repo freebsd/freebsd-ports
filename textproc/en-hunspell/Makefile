@@ -11,11 +11,11 @@ PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/wordlist/Hunspell%20en_US/${PORTVERSION}-0/ \
 		SF/wordlist/Hunspell%20en_CA/${PORTVERSION}-0/:CA \
-		http://en-gb.pyxidium.co.uk/dictionary/:GB
+		LOCAL/sunpoet/${PORTNAME}/:GB
 PKGNAMEPREFIX=	en-
 DISTFILES=	hunspell-en_US-${PORTVERSION}-0${EXTRACT_SUFX} \
 		hunspell-en_CA-${PORTVERSION}-0${EXTRACT_SUFX}:CA \
-		en_GB.zip:GB
+		en_GB-1.20.zip:GB
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	English hunspell dictionaries
