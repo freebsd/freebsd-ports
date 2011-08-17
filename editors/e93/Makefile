@@ -32,7 +32,8 @@ MAKE_ARGS=	PREFIX="${PREFIX}" \
 		EXTRALIBS="-lm" \
 		CC="${CXX}" \
 		OPTIONS="${CXXFLAGS}"
-MAKE_JOBS_SAFE=	yes
+
+MAKE_JOBS_UNSAFE=	yes
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lstdc++||g ; \
