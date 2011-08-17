@@ -8,7 +8,8 @@
 PORTNAME=	codespell
 PORTVERSION=	1.1
 CATEGORIES=	textproc
-MASTER_SITES=	http://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
+MASTER_SITES=	http://packages.profusion.mobi/${PORTNAME}/ \
+		http://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}/
 
 MAINTAINER=	gjb@FreeBSD.org
 COMMENT=	Source code spelling checker
