@@ -7,7 +7,7 @@
 
 PORTNAME=	Gtk2-Ex-Utils
 PORTVERSION=	0.09
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11-toolkits perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-Glib2>=1.00:${PORTSDIR}/devel/p5-Glib2 \
 		p5-Gtk2>=1.060:${PORTSDIR}/x11-toolkits/p5-Gtk2 \
 		${SITE_PERL}/${PERL_ARCH}/Cairo.pm:${PORTSDIR}/graphics/p5-Cairo
 RUN_DEPENDS=	p5-Glib2>=1.00:${PORTSDIR}/devel/p5-Glib2 \
-		p5-Gtk2>=1.060:${PORTSDIR}/x11-toolkits/p5-Gtk
+		p5-Gtk2>=1.060:${PORTSDIR}/x11-toolkits/p5-Gtk2
 
 PERL_CONFIGURE=	yes
 
