@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	Mojolicious
-PORTVERSION=	1.64
+PORTVERSION=	1.76
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-#MASTER_SITE_SUBDIR=	Mojolicious/KRAIH
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	mopsfelder@gmail.com
@@ -19,7 +18,7 @@ LICENSE=	ART20
 
 LICENSE_FILES=	${WRKSRC}/LICENSE
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.10.0+
 
 MAN1=		hypnotoad.1 \
 		mojo.1 \
@@ -40,8 +39,8 @@ MAN3=		Mojo.3 \
 		Mojo::Cookie::Response.3 \
 		Mojo::CookieJar.3 \
 		Mojo::DOM.3 \
-		Mojo::DOM::Collection.3 \
 		Mojo::DOM::CSS.3 \
+		Mojo::DOM::Collection.3 \
 		Mojo::DOM::HTML.3 \
 		Mojo::Date.3 \
 		Mojo::Exception.3 \
@@ -49,9 +48,14 @@ MAN3=		Mojo.3 \
 		Mojo::HelloWorld.3 \
 		Mojo::Home.3 \
 		Mojo::IOLoop.3 \
+		Mojo::IOLoop::Client.3 \
+		Mojo::IOLoop::EventEmitter.3 \
+		Mojo::IOLoop::Resolver.3 \
+		Mojo::IOLoop::Server.3 \
+		Mojo::IOLoop::Stream.3 \
+		Mojo::IOLoop::Trigger.3 \
 		Mojo::IOWatcher.3 \
-		Mojo::IOWatcher::Epoll.3 \
-		Mojo::IOWatcher::KQueue.3 \
+		Mojo::IOWatcher::EV.3 \
 		Mojo::JSON.3 \
 		Mojo::Loader.3 \
 		Mojo::Log.3 \
@@ -60,7 +64,6 @@ MAN3=		Mojo.3 \
 		Mojo::Message::Response.3 \
 		Mojo::Parameters.3 \
 		Mojo::Path.3 \
-		Mojo::Resolver.3 \
 		Mojo::Server.3 \
 		Mojo::Server::CGI.3 \
 		Mojo::Server::Daemon.3 \
