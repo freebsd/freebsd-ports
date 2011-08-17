@@ -1,0 +1,8 @@
+--- ./source4/min_versions.m4.orig	2010-01-11 06:35:28.000000000 +0100
++++ ./source4/min_versions.m4	2011-08-05 17:15:56.000000000 +0200
+@@ -3,4 +3,4 @@
+ define(TDB_MIN_VERSION,1.2.0)
+ define(TALLOC_MIN_VERSION,2.0.1)
+ define(LDB_REQUIRED_VERSION,0.9.10)
+-define(TEVENT_REQUIRED_VERSION,0.9.8)
++define(TEVENT_REQUIRED_VERSION,0.9.13)
