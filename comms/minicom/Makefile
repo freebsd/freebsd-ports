@@ -16,22 +16,25 @@ COMMENT=	An MS-DOS Telix serial communication program "workalike"
 
 RUN_DEPENDS=	lrz:${PORTSDIR}/comms/lrzsz
 
+USE_ICONV=	yes
+
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .else
-CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
 USE_GETTEXT=	yes
 PLIST_SUB+=	NLS=""
 .endif
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=	--enable-dfl-baud=57600 \
 			--sysconfdir=${PREFIX}/etc/minicom \
 			--enable-lock-dir=/var/spool/lock \
 			--enable-dfl-port=${MINICOM_DEFAULT_PORT} \
-			CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+			LDFLAGS="${LDFLAGS}"
+MAKE_ARGS+=	LIBS+="-liconv -lcurses"
 
 MAN1=		minicom.1 runscript.1 ascii-xfr.1 xminicom.1
 
