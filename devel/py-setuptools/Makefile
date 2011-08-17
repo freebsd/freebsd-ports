@@ -16,7 +16,7 @@ MAINTAINER=	python@FreeBSD.org
 COMMENT=	Download, build, install, upgrade, and uninstall Python packages
 
 DIST_SUBDIR=	python
-USE_PYTHON=	2.5+
+USE_PYTHON=	2.5-2.7
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_NOEGGINFO=	yes # XXX convert easy_install support to bsd.python.mk's
 PLIST_SUB=	VERSION=${PORTVERSION} PYVER=${PYTHON_VERSION:S/python//}
