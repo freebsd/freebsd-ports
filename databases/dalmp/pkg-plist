@@ -7,6 +7,7 @@
 %%DATADIR%%/examples/curl.php
 %%DATADIR%%/examples/query_Execute.php
 %%DATADIR%%/examples/queue.php
+%%DATADIR%%/examples/queueURL.php
 %%DATADIR%%/examples/sessions.php
 %%DATADIR%%/examples/sqliteSessions.php
 %%DATADIR%%/examples/transactions.php
