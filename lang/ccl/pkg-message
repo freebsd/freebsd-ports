@@ -3,10 +3,4 @@ You can permanently enable ASDF package management by using the
 following commands in your .ccl-init.lisp file:
 
   (require 'asdf)
-  (asdf:operate 'asdf:load-op 'asdf-install)
-
-If you wish to disable signature verification (not recommended)
-add:
-
-  (setq asdf-install:*verify-gpg-signatures* nil)
 
