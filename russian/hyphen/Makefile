@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	russian textproc
 MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 DISTNAME=	hyph_ru_RU-${PORTVERSION:C/\.//g}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Russian hyphenation rules

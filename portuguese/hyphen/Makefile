@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	portuguese textproc
 MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 DISTNAME=	hyph_pt_PT-${PORTVERSION:C/\.//g}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Portuguese hyphenation rules

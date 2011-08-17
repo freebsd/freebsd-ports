@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	ukrainian textproc
 MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 DISTNAME=	hyph_uk_UA-${PORTVERSION:C/\.//g}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Ukrainian hyphenation rules
