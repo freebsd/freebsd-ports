@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Any/Moose/Convert.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Any/Moose/Convert/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Any/Moose/Convert
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Any/Moose
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Any
+@dirrmtry %%SITE_PERL%%/Any/Moose
+@dirrmtry %%SITE_PERL%%/Any

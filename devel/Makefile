@@ -1171,6 +1171,7 @@
     SUBDIR += p5-Alzabo
     SUBDIR += p5-Alzabo-GUI-Mason
     SUBDIR += p5-Any-Moose
+    SUBDIR += p5-Any-Moose-Convert
     SUBDIR += p5-AnyData
     SUBDIR += p5-AnyEvent
     SUBDIR += p5-AnyEvent-AIO
