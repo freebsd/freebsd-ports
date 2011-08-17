@@ -2965,7 +2965,6 @@
     SUBDIR += py-instant
     SUBDIR += py-interface
     SUBDIR += py-ipaddr
-    SUBDIR += py-istring
     SUBDIR += py-iterpipes
     SUBDIR += py-itools
     SUBDIR += py-jcc
