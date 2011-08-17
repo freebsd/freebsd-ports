@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	blender
-PORTVERSION=	2.58a
+PORTVERSION=	2.59
 CATEGORIES=	graphics games
 MASTER_SITES=	http://download.blender.org/source/ \
 		http://mirror.cs.umn.edu/blender.org/source/ \
@@ -32,7 +32,7 @@ CMAKE_ARGS+=	-DWITH_BUILTIN_GLEW:BOOL=OFF -DWITH_PYTHON_INSTALL:BOOL=OFF
 SUB_FILES=	blender blenderplayer
 MAN1=		blender.1
 
-OUTDIR=		${INSTALL_WRKSRC}/bin/2.58
+OUTDIR=		${INSTALL_WRKSRC}/bin/2.59
 
 LANG=		ar bg ca cs de el es fi fr hr hr_HR it ja ko nl pl pt_BR ro \
 		ru sr sr@Latn sv uk zh_CN
@@ -44,6 +44,7 @@ OPTIONS=	BULLET		"Enable bullet physics engine" on \
 		FFTW3		"Floating point support using fftw" off \
 		GAMEENGINE	"Enable game engine" on \
 		HDR		"Generic high dynamic-range (HDR) support" on \
+		HEADLESS	"Disable user interface" off \
 		JACK		"Audio support using JackAudio" off \
 		NLS		"Native language support" on \
 		MENU		"Install desktop menu" on \
@@ -103,6 +104,12 @@ CMAKE_ARGS+=	-DWITH_GAMEENGINE:BOOL=ON
 CMAKE_ARGS+=	-DWITH_IMAGE_HDR:BOOL=OFF
 .else
 CMAKE_ARGS+=	-DWITH_IMAGE_HDR:BOOL=ON
+.endif
+
+.if defined(WITH_HEADLESS)
+CMAKE_ARGS+=	-DWITH_HEADLESS:BOOL=ON
+.else
+CMAKE_ARGS+=	-DWITH_HEADLESS:BOOL=OFF
 .endif
 
 .if defined(WITH_JACK)

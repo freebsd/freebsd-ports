@@ -7,6 +7,13 @@ bin/blender-thumbnailer.py
 share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/add_curve_aceous_galore.py
 %%DATADIR%%/scripts/addons/add_curve_torus_knots.py
+%%DATADIR%%/scripts/addons/add_curve_ivygen.py
+%%DATADIR%%/scripts/addons/add_curve_sapling/presets/quaking_aspen.py
+%%DATADIR%%/scripts/addons/add_curve_sapling/presets/ca_black_oak.py
+%%DATADIR%%/scripts/addons/add_curve_sapling/presets/black_tupelo.py
+%%DATADIR%%/scripts/addons/add_curve_sapling/presets/weeping_willow.py
+%%DATADIR%%/scripts/addons/add_curve_sapling/__init__.py
+%%DATADIR%%/scripts/addons/add_curve_sapling/utils.py
 %%DATADIR%%/scripts/addons/add_mesh_BoltFactory/Boltfactory.py
 %%DATADIR%%/scripts/addons/add_mesh_BoltFactory/__init__.py
 %%DATADIR%%/scripts/addons/add_mesh_BoltFactory/createMesh.py
@@ -47,8 +54,6 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/io_curve_svg/__init__.py
 %%DATADIR%%/scripts/addons/io_curve_svg/import_svg.py
 %%DATADIR%%/scripts/addons/io_curve_svg/svg_colors.py
-%%DATADIR%%/scripts/addons/io_export_anim_mesh_xna/__init__.py
-%%DATADIR%%/scripts/addons/io_export_anim_mesh_xna/export_xna.py
 %%DATADIR%%/scripts/addons/io_export_directx_x.py
 %%DATADIR%%/scripts/addons/io_export_pc2.py
 %%DATADIR%%/scripts/addons/io_export_unreal_psk_psa.py
@@ -102,9 +107,8 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/modules/add_utils.py
 %%DATADIR%%/scripts/addons/modules/constants_utils.py
 %%DATADIR%%/scripts/addons/modules/cursor_utils.py
+%%DATADIR%%/scripts/addons/modules/curve_utils.py
 %%DATADIR%%/scripts/addons/modules/geometry_utils.py
-%%DATADIR%%/scripts/addons/modules/misc_utils.py
-%%DATADIR%%/scripts/addons/modules/ui_utils.py
 %%DATADIR%%/scripts/addons/modules/extensions_framework/__init__.py
 %%DATADIR%%/scripts/addons/modules/extensions_framework/ui.py
 %%DATADIR%%/scripts/addons/modules/extensions_framework/util.py
@@ -127,6 +131,7 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/object_add_chain.py
 %%DATADIR%%/scripts/addons/object_animrenderbake.py
 %%DATADIR%%/scripts/addons/object_cloud_gen.py
+%%DATADIR%%/scripts/addons/object_grease_scatter.py
 %%DATADIR%%/scripts/addons/object_fracture/__init__.py
 %%DATADIR%%/scripts/addons/object_fracture/data.blend
 %%DATADIR%%/scripts/addons/object_fracture/fracture_ops.py
@@ -167,7 +172,6 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/addons/rigify/ui.py
 %%DATADIR%%/scripts/addons/rigify/utils.py
 %%DATADIR%%/scripts/addons/space_view3d_3d_navigation.py
-%%DATADIR%%/scripts/addons/space_view3d_align_tools.py
 %%DATADIR%%/scripts/addons/space_view3d_copy_attributes.py
 %%DATADIR%%/scripts/addons/space_view3d_materials_utils.py
 %%DATADIR%%/scripts/addons/space_view3d_math_vis/__init__.py
@@ -322,6 +326,7 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/startup/keyingsets_builtins.py
 %%DATADIR%%/scripts/templates/addon_add_object.py
 %%DATADIR%%/scripts/templates/background_job.py
+%%DATADIR%%/scripts/templates/batch_export.py
 %%DATADIR%%/scripts/templates/builtin_keyingset.py
 %%DATADIR%%/scripts/templates/gamelogic.py
 %%DATADIR%%/scripts/templates/gamelogic_basic.py
@@ -334,7 +339,9 @@ share/pixmaps/blender.svg
 %%DATADIR%%/scripts/templates/operator_modal_view3d.py
 %%DATADIR%%/scripts/templates/operator_simple.py
 %%DATADIR%%/scripts/templates/operator_uv.py
-%%DATADIR%%/scripts/templates/panel_simple.py
+%%DATADIR%%/scripts/templates/ui_menu.py
+%%DATADIR%%/scripts/templates/ui_menu_simple.py
+%%DATADIR%%/scripts/templates/ui_panel_simple.py
 %%NLS%%%%DATADIR%%/datafiles/locale/ar/LC_MESSAGES/blender.mo
 %%NLS%%%%DATADIR%%/datafiles/locale/bg/LC_MESSAGES/blender.mo
 %%NLS%%%%DATADIR%%/datafiles/locale/ca/LC_MESSAGES/blender.mo
@@ -404,7 +411,6 @@ share/pixmaps/blender.svg
 @dirrm %%DATADIR%%/scripts/addons/io_mesh_stl
 @dirrm %%DATADIR%%/scripts/addons/io_mesh_raw
 @dirrm %%DATADIR%%/scripts/addons/io_mesh_ply
-@dirrm %%DATADIR%%/scripts/addons/io_export_anim_mesh_xna
 @dirrm %%DATADIR%%/scripts/addons/io_curve_svg
 @dirrm %%DATADIR%%/scripts/addons/io_convert_image_to_mesh_img
 @dirrm %%DATADIR%%/scripts/addons/io_coat3D
@@ -412,6 +418,8 @@ share/pixmaps/blender.svg
 @dirrm %%DATADIR%%/scripts/addons/add_mesh_extra_objects
 @dirrm %%DATADIR%%/scripts/addons/add_mesh_BoltFactory/presets
 @dirrm %%DATADIR%%/scripts/addons/add_mesh_BoltFactory
+@dirrm %%DATADIR%%/scripts/addons/add_curve_sapling/presets
+@dirrm %%DATADIR%%/scripts/addons/add_curve_sapling
 @dirrm %%DATADIR%%/scripts/addons
 @dirrm %%DATADIR%%/scripts
 %%MENU%%@dirrmtry share/applications
