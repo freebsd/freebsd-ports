@@ -1,7 +1,10 @@
 #!/bin/sh
 
+# $FreeBSD$
+#
 # PROVIDE: daemonlogger
-# REQUIRE: NETWORKING
+# REQUIRE: DAEMON
+# KEYWORD: shutdown
 
 #
 # Add the following lines to /etc/rc.conf.local or /etc/rc.conf to enable daemonlogger:
@@ -14,13 +17,13 @@
 name="daemonlogger"
 rcvar=`set_rcvar`
 
-command_args=" > /dev/null 2>&1"
-
 load_rc_config $name
 
 : ${daemonlogger_enable:="NO"}
 : ${daemonlogger_flags:="-d -l /var/log"}
 
 command=%%PREFIX%%/bin/daemonlogger
+command_args=" > /dev/null 2>&1"
+
 
 run_rc_command "$1"
