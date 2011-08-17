@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	addons/46601
 PKGNAMEPREFIX=	ve-
 DISTNAME=	venda_spell_checker-${PORTVERSION}-tb+fn+fx+sm
 EXTRACT_SUFX=	.xpi
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Venda hunspell dictionaries

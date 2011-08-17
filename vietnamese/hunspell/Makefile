@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	vietnamese textproc
 MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 DISTNAME=	vi_VN-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Vietnamese hunspell dictionaries

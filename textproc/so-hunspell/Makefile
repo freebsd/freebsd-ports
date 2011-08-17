@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	addons/13375
 PKGNAMEPREFIX=	so-
 DISTNAME=	qaamuuska_af_soomaaliga-${PORTVERSION}-tb+fx
 EXTRACT_SUFX=	.xpi
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Somali hunspell dictionaries

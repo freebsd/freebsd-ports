@@ -13,6 +13,7 @@ MASTER_SITES=	LOCAL/sunpoet/${PORTNAME}/
 PKGNAMEPREFIX=	es-
 DISTNAME=	es_ANY-${PORTVERSION}
 EXTRACT_SUFX=	.oxt
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Spanish hunspell dictionaries

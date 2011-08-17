@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://chanae.walon.org/walon/
 PKGNAMEPREFIX=	wa-
 DISTNAME=	aspell-wa-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Wallon hunspell dictionaries

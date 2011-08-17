@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	addons/46617
 PKGNAMEPREFIX=	tn-
 DISTNAME=	tswana_spell_checker-${PORTVERSION}-tb+sm+fx+fn
 EXTRACT_SUFX=	.xpi
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Tswana hunspell dictionaries

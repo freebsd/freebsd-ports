@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	addons/204314
 PKGNAMEPREFIX=	tk-
 DISTNAME=	turkmen_spell_checker-${PORTVERSION}-fx+tb+sm
 EXTRACT_SUFX=	.xpi
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Turkmen hunspell dictionaries

@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www-user.uni-bremen.de/~kmashrab/uzbek-word-list/
 PKGNAMEPREFIX=	uz-
 DISTNAME=	uzbek-wordlist-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Uzbek hunspell dictionaries

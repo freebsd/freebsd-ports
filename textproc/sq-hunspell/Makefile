@@ -12,6 +12,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://www.shkenca.org/shkarkime/
 PKGNAMEPREFIX=	sq-
 DISTNAME=	myspell-sq_AL-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Albanian hunspell dictionaries

@@ -11,6 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	hebrew textproc
 MASTER_SITES=	http://hspell.ivrix.org.il/
 DISTNAME=	hspell-${PORTVERSION}
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Hebrew hunspell dictionaries

@@ -14,6 +14,7 @@ MASTER_SITE_SUBDIR=	addons/46599
 PKGNAMEPREFIX=	xh-
 DISTNAME=	xhosa_spell_checker-${PORTVERSION}-tb+fn+fx+sm
 EXTRACT_SUFX=	.xpi
+DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Xhosa hunspell dictionaries
