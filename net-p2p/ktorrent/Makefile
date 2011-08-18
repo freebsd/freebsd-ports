@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ktorrent
-DISTVERSION=	4.1.1
+DISTVERSION=	4.1.2
 CATEGORIES=	net-p2p kde
 MASTER_SITES=	http://ktorrent.org/downloads/${DISTVERSION}/
 

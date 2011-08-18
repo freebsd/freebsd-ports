@@ -22,7 +22,7 @@ lib/kde4/plasma_applet_ktorrent.so
 lib/kde4/plasma_engine_ktorrent.so
 lib/libktcore.so
 lib/libktcore.so.12
-lib/libktcore.so.12.0.1
+lib/libktcore.so.12.0.2
 share/applications/kde4/ktorrent.desktop
 share/apps/ktorrent/ktbwschedulerpluginui.rc
 share/apps/ktorrent/ktdownloadorderpluginui.rc
@@ -270,9 +270,12 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/ktorrent.mo
 share/locale/sr@latin/LC_MESSAGES/ktorrent.mo
 share/locale/sv/LC_MESSAGES/ktorrent.mo
 share/locale/tr/LC_MESSAGES/ktorrent.mo
+share/locale/ug/LC_MESSAGES/ktorrent.mo
 share/locale/uk/LC_MESSAGES/ktorrent.mo
 share/locale/zh_CN/LC_MESSAGES/ktorrent.mo
 share/locale/zh_TW/LC_MESSAGES/ktorrent.mo
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrm share/doc/HTML/en/ktorrent
