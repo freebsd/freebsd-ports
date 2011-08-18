@@ -34,6 +34,36 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="86baa0d4-c997-11e0-8a8e-00151735203a">
+    <topic>OTRS -- Vulnerabilities in OTRS-Core allows read access to any file on local file system</topic>
+    <affects>
+      <package>
+	<name>otrs</name>
+	<range><gt>2.1.*</gt><lt>3.0.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>OTRS Security Advisory reports:</p>
+	<blockquote cite="http://otrs.org/advisory/OSA-2011-03-en/">
+          <ul>
+	    <li>An attacker with valid session and admin permissions could
+              get read access to any file on the servers local operating system.
+              For this it would be needed minimum one installed OTRS package.</li>
+          </ul>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-2746</cvename>
+      <url>http://otrs.org/advisory/OSA-2011-03-en/</url>
+    </references>
+    <dates>
+      <discovery>2011-08-16</discovery>
+      <entry>2011-08-18</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="834591a9-c82f-11e0-897d-6c626dd55a41">
     <topic>mozilla -- multiple vulnerabilities</topic>
     <affects>
