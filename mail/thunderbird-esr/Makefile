@@ -22,7 +22,6 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 
 USE_AUTOTOOLS=	autoconf213
 USE_GECKO=	gecko
-CONFLICTS_INSTALL=	thunderbird-3.1*
 USE_MOZILLA=	-png -nss -dbm -jpeg -xft
 MOZ_TOOLKIT=	cairo-gtk2
 
@@ -38,18 +37,17 @@ USE_GL=		gl
 
 MOZ_PROTOCOLS=	http,ftp,file,viewsource,res,data,wyciwyg,websocket
 MOZ_GRAPHICS=	default,-xbm
-MOZ_OPTIONS=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
+MOZ_OPTIONS=	--program-transform-name='s/thunderbird/${MOZILLA}/' \
+	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
 	--enable-single-profile --disable-profilesharing \
 	--enable-application=mail --enable-official-branding \
 	--disable-updater --disable-necko-wifi \
 	--with-system-libevent=${LOCALBASE}
 MOZ_MK_OPTIONS=	MOZ_MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
 MOZ_EXPORT=		MOZ_THUNDERBIRD=1 MAIL_PKG_SHARED=1
-GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/bin lib/${MOZILLA}/idl \
-			lib/${MOZILLA}/include lib/${MOZILLA}/lib
 MOZ_PKGCONFIG_FILES=
 
-PORTNAME_ICON=	${PORTNAME}.png
+PORTNAME_ICON=	${MOZILLA}.png
 PORTNAME_ICON_SRC=	${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png
 
 SYSTEM_PREFS=	${FAKEDIR}/lib/${PORTNAME}/defaults/pref/${PORTNAME}.js
@@ -100,14 +98,14 @@ MOZ_OPTIONS+=	--disable-calendar
 .endif
 
 post-extract:
-	${SED} -e 's|@PORTNAME_ICON@|${PORTNAME_ICON}|' \
+	@${SED} -e 's|@PORTNAME_ICON@|${PORTNAME_ICON}|;s|@MOZILLA@|${MOZILLA}|' \
 		<${FILESDIR}/thunderbird.desktop.in >${WRKDIR}/${MOZILLA_EXEC_NAME}.desktop
 
 post-patch:
 	@${GREP} -Flr \"/proc ${MOZSRC}/ipc/chromium/src/base | ${XARGS} ${REINPLACE_CMD} \
 		-e 's|/proc/self/fd|/dev/fd|' \
 		-e 's|/proc["/]|/compat/linux&|'
-	${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
+	@${REINPLACE_CMD} -e 's|%%PTHREAD_LIBS%%|${PTHREAD_LIBS}|' \
 		${MOZSRC}/storage/build/Makefile.in \
 		${MOZSRC}/toolkit/library/Makefile.in \
 		${MOZSRC}/db/sqlite3/src/Makefile.in
