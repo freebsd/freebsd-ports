@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.andreasen.org/LeakTracer/ \
 		http://freebsd.nsu.ru/distfiles/
 DISTNAME=	LeakTracer
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Trace and analyze memory leaks in C++ programs
 
 USE_LDCONFIG=	yes
@@ -24,13 +24,12 @@ PLIST_FILES=	bin/LeakCheck bin/leak-analyze lib/LeakTracer.so
 PORTDOCS=	README README.html
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/LeakCheck ${PREFIX}/bin
-	${INSTALL_SCRIPT} ${WRKSRC}/leak-analyze ${PREFIX}/bin
+	${INSTALL_SCRIPT} ${WRKSRC}/LeakCheck ${WRKSRC}/leak-analyze \
+		${PREFIX}/bin
 	${INSTALL_PROGRAM} ${WRKSRC}/LeakTracer.so ${PREFIX}/lib
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/README ${WRKSRC}/README.html ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
