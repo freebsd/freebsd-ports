@@ -236,10 +236,10 @@ USE_FIREFOX=	${_FIREFOX_DEFAULT_VERSION}
 .endif
 
 # Setting/finding Firefox version we want.
-.if exists(${LOCALBASE}/bin/firefox3)
-_FIREFOX_VER!=	${LOCALBASE}/bin/firefox3 --version | ${SED} -e 's/Mozilla Firefox \([0-9]\)\.\([0-9]*\).*/\1\2/'
-.elif exists(${LOCALBASE}/bin/firefox)
+.if exists(${LOCALBASE}/bin/firefox)
 _FIREFOX_VER!=	${LOCALBASE}/bin/firefox --version | ${SED} -e 's/Mozilla Firefox \([0-9]\)\.\([0-9]*\).*/\1\2/'
+.elif exists(${LOCALBASE}/bin/firefox3)
+_FIREFOX_VER!=	${LOCALBASE}/bin/firefox3 --version | ${SED} -e 's/Mozilla Firefox \([0-9]\)\.\([0-9]*\).*/\1\2/'
 .endif
 
 # Check if installed Firefox version matches the wanted one
@@ -311,6 +311,8 @@ USE_SEAMONKEY=	${_SEAMONKEY_DEFAULT_VERSION}
 # Setting/finding SeaMonkey version we want.
 .if exists(${LOCALBASE}/bin/seamonkey)
 _SEAMONKEY_VER!=	${LOCALBASE}/bin/seamonkey --version | ${SED} -e 's/Mozilla SeaMonkey \([0-9]\)\.\([0-9]*\).*/\1\2/'
+.elif exists(${LOCALBASE}/bin/seamonkey2)
+_SEAMONKEY_VER!=	${LOCALBASE}/bin/seamonkey2 --version | ${SED} -e 's/Mozilla SeaMonkey \([0-9]\)\.\([0-9]*\).*/\1\2/'
 .endif
 
 # Check if installed SeaMonkey version matches the wanted one
@@ -343,8 +345,8 @@ IGNORE=			cannot install: unknown SeaMonkey version: seamonkey-${USE_SEAMONKEY:C
 .endif
 
 # Dependence lines for different SeaMonkey versions
-11_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey-bin:${PORTSDIR}/www/seamonkey
-20_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey2
+23_DEPENDS=		${LOCALBASE}/lib/seamonkey/seamonkey:${PORTSDIR}/www/seamonkey
+20_DEPENDS=		${LOCALBASE}/lib/seamonkey2/seamonkey:${PORTSDIR}/www/seamonkey2
 
 # Add dependencies
 .if defined(USE_SEAMONKEY)
@@ -382,6 +384,8 @@ USE_THUNDERBIRD=	${_THUNDERBIRD_DEFAULT_VERSION}
 # Setting/finding Thunderbird version we want.
 .if exists(${LOCALBASE}/bin/thunderbird)
 _THUNDERBIRD_VER!=	${LOCALBASE}/bin/thunderbird --version | ${SED} -e 's/ Thunderbird \([0-9]\)\.\([0-9]*\).*/\1\2/'
+.elif exists(${LOCALBASE}/bin/thunderbird3)
+_THUNDERBIRD_VER!=	${LOCALBASE}/bin/thunderbird3 --version | ${SED} -e 's/ Thunderbird \([0-9]\)\.\([0-9]*\).*/\1\2/'
 .endif
 
 # Check if installed Thunderbird version matches the wanted one
@@ -415,7 +419,7 @@ IGNORE=			cannot install: unknown Thunderbird version: thunderbird-${USE_THUNDER
 
 # Dependence lines for different Thunderbird versions
 60_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird
-31_DEPENDS=		${LOCALBASE}/lib/thunderbird/thunderbird:${PORTSDIR}/mail/thunderbird3
+31_DEPENDS=		${LOCALBASE}/lib/thunderbird3/thunderbird:${PORTSDIR}/mail/thunderbird3
 
 # Add dependencies
 .if defined(USE_THUNDERBIRD)
