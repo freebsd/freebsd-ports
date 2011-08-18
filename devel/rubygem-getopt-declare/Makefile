@@ -21,4 +21,8 @@ RUBYGEM_AUTOPLIST=	yes
 post-install:
 	@${FIND} ${PREFIX}/${GEM_LIB_DIR} -type f -exec ${CHMOD} 644 '{}' ';'
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+.if ${RUBY_VER} == 1.9
+BROKEN=	does not work with ruby 1.9
+.endif
+.include <bsd.port.post.mk>
