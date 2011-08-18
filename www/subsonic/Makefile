@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	subsonic
-PORTVERSION=	4.4
+PORTVERSION=	4.5
 CATEGORIES=	www java
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-${PORTVERSION}-war
@@ -30,23 +30,18 @@ RUN_DEPENDS+=	ffmpeg:${PORTSDIR}/multimedia/ffmpeg \
 SUB_FILES=	pkg-message
 .if exists(${LOCALBASE}/apache-tomcat-6.0/webapps)
 WEBAPPDIR=	${PREFIX}/apache-tomcat-6.0/webapps
-BUILD_DEPENDS+=	${LOCALBASE}/apache-tomcat-6.0:${PORTSDIR}/www/tomcat6
-RUN_DEPENDS+=	${LOCALBASE}/apache-tomcat-6.0:${PORTSDIR}/www/tomcat6
+BUILD_DEPENDS+=	${LOCALBASE}/apache-tomcat-6.0/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
+RUN_DEPENDS+=	${LOCALBASE}/apache-tomcat-6.0/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
 SUB_LIST=	TOMCATOPTS="tomcat60_java_opts"
 .elif exists(${LOCALBASE}/tomcat5.5/webapps)
 WEBAPPDIR=	${PREFIX}/tomcat5.5/webapps
-BUILD_DEPENDS+=	${LOCALBASE}/tomcat5.5:${PORTSDIR}/www/tomcat55
-RUN_DEPENDS+=	${LOCALBASE}/tomcat5.5:${PORTSDIR}/www/tomcat55
+BUILD_DEPENDS+=	${LOCALBASE}/tomcat5.5/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
+RUN_DEPENDS+=	${LOCALBASE}/tomcat5.5/bin/bootstrap.jar:${PORTSDIR}/www/tomcat55
 SUB_LIST=	TOMCATOPTS="tomcat55_java_opts"
-.elif exists(${LOCALBASE}/apache-tomcat4.1/webapps)
-WEBAPPDIR=	${PREFIX}/apache-tomcat4.1/webapps
-BUILD_DEPENDS+=	${LOCALBASE}/apache-tomcat4.1:${PORTSDIR}/www/tomcat41
-RUN_DEPENDS+=	${LOCALBASE}/apache-tomcat4.1:${PORTSDIR}/www/tomcat41
-SUB_LIST=	TOMCATOPTS="tomcat41_java_opts"
 .else
 WEBAPPDIR=	${PREFIX}/apache-tomcat-6.0/webapps
-BUILD_DEPENDS+=	${LOCALBASE}/apache-tomcat-6.0:${PORTSDIR}/www/tomcat6
-RUN_DEPENDS+=	${LOCALBASE}/apache-tomcat-6.0:${PORTSDIR}/www/tomcat6
+BUILD_DEPENDS+=	${LOCALBASE}/apache-tomcat-6.0/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
+RUN_DEPENDS+=	${LOCALBASE}/apache-tomcat-6.0/bin/bootstrap.jar:${PORTSDIR}/www/tomcat6
 SUB_LIST=	TOMCATOPTS="tomcat60_java_opts"
 .endif
 
