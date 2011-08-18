@@ -7,6 +7,7 @@
 
 PORTNAME=	seamonkey2-i18n
 PORTVERSION=	2.0.14
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	seamonkey/releases/${PORTVERSION}/langpack
 PKGNAMEPREFIX=
@@ -17,11 +18,11 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for SeaMonkey 2
 
 USE_SEAMONKEY=	yes
-USE_XPI=	*seamonkey
+USE_XPI=	seamonkey2 linux-seamonkey
 
 USE_SUBMAKE=	yes
 
-WDIR=	langpack-*@seamonkey.mozilla.org
+WDIR=	langpack2-*@seamonkey.mozilla.org
 
 XPI_DISTNAMES=	${SEAMONKEY_I18N_}
 
@@ -36,7 +37,7 @@ RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-swit
 SEAMONKEY_I18N_?=	${SEAMONKEY_I18N}
 
 .for dist in ${XPI_DISTNAMES}
-XPI_ID_${dist}=		langpack-${dist}@seamonkey.mozilla.org
+XPI_ID_${dist}=		langpack2-${dist}@seamonkey.mozilla.org
 XPI_FILES_${dist}=	chrome.manifest install.rdf chrome/${dist}.jar
 XPI_DIRS_${dist}=	chrome
 .endfor
@@ -49,7 +50,7 @@ pre-everything::
 
 do-extract:
 	@for lang in ${SEAMONKEY_I18N_}; do \
-		if ! (${EXTRACT_CMD} ${_DISTDIR}/seamonkey-${PORTVERSION}.$$lang.langpack.xpi -d ${WRKSRC}/langpack-$$lang@seamonkey.mozilla.org);\
+		if ! (${EXTRACT_CMD} ${_DISTDIR}/seamonkey-${PORTVERSION}.$$lang.langpack.xpi -d ${WRKSRC}/langpack2-$$lang@seamonkey.mozilla.org);\
 		then \
 			exit 1; \
 		fi \
@@ -70,7 +71,8 @@ do-install:
 
 post-patch:
 	${FIND} ${WRKSRC} -name install.rdf -print0 | \
-		${XARGS} -0L1 ${REINPLACE_CMD} -i '' -e '/<?xml/,$$!d'
+		${XARGS} -0L1 ${REINPLACE_CMD} -i '' -e '/<?xml/,$$!d' \
+			-e 's/\(langpack\)/\12/'
 
 List-Langs:
 	@fetch -o- "http://releases.mozilla.org/pub/mozilla.org/seamonkey/releases/${PORTVERSION}/langpack"|\
