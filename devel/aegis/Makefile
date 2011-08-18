@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	aegis
-PORTVERSION=	4.24
-PORTREVISION=	5
+PORTVERSION=	4.24.3
 CATEGORIES=	devel
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	aryeh.friedman@gmail.com
 COMMENT=	Transaction-based software configuration management system
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
@@ -22,13 +21,17 @@ USE_GNOME=	libxml2
 USE_PERL5=	yes
 USE_TK=		yes
 GNU_CONFIGURE=	yes
+CPPFLAGS+=	"-I${LOCALBASE}/include"
 CONFIGURE_ARGS=	--with-nlsdir="${PREFIX}/share/locale"
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
 		WISH="${WISH}"
-REINPLACE_ARGS=	-i ''
 MAKE_JOBS_UNSAFE=	yes
 
-MAN1=	ae-cvs-ci.1 ae-repo-ci.1 ae-sccs-put.1 ae_c.1 ae_p.1 \
+# XXX Manpages are installed into ${DATADIR} too -- there's no easy way to
+#     stop this because we don't have Makefile.am provided.  Maintainer will
+#     sort this with upstream.
+
+MAN1=	ae-cvs-ci.1 ae-repo-ci.1 ae-sccs-put.1 ae_c.1 ae_diff2htm.1 ae_p.1 \
 	aeannotate.1 aeb.1 aebisect.1 aebuffy.1 aeca.1 aecd.1 aechown.1 \
 	aeclean.1 aeclone.1 aecomp.1 aecomplete.1 aecp.1 aecpu.1 aecvsserver.1 \
 	aed.1 aedb.1 aedbu.1 aede.1 aede-policy.1 aedeu.1 aediff.1 \
@@ -43,16 +46,13 @@ MAN1=	ae-cvs-ci.1 ae-repo-ci.1 ae-sccs-put.1 ae_c.1 ae_p.1 \
 	aerpass.1 aerpu.1 aerrv.1 aesub.1 aesubunit.1 aesvt.1 aet.1 \
 	aetar.1 aev.1 aexml.1 aexver.1 tkaeca.1 tkaegis.1 tkaenc.1 \
 	tkaepa.1 tkaer.1
-
 MAN5=	aecattr.5 aecstate.5 aedir.5 aefattr.5 aefstate.5 aegis.5 \
 	aegstate.5 aelock.5 aemetrics.5 aepattr.5 aepconf.5 aepstate.5 \
 	aer.5 aerptidx.5 aesub.5 aetest.5 aeuconf.5 aeustate.5
+PORTDATA=	*
+PORTDOCS=	*
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-EXTRA_PATCHES+=	${FILESDIR}/extra-patch-libaegis__wide_output__header.h
-.endif
 
 post-patch:
 # Avoid "2>/dev/null" redirect in csh (ends up with empty manpath).
@@ -77,6 +77,6 @@ post-install:
 # forget that, by recreating them on each install.
 	@${FIND} ${WRKSRC} -type f -name ".*dir" -delete
 # Information.
-	@${ECHO_CMD}; ${CAT} ${PKGMESSAGE}; ${ECHO_CMD}
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>

@@ -18,8 +18,6 @@ bin/aefinish
 bin/aeget
 bin/aeget.instal
 bin/aegis
-bin/aegis.cgi
-bin/aegis.cgi.i
 bin/aeimport
 bin/aeintegratq
 bin/aelcf
@@ -46,173 +44,18 @@ bin/tkaenc
 bin/tkaepa
 bin/tkaer
 bin/xaegis
-%%DATADIR%%/aedefault.css
-%%DATADIR%%/aegis.icon
-%%DATADIR%%/aegis.mask
-%%DATADIR%%/aegis.pgm
-%%DATADIR%%/config.example/aesvt
-%%DATADIR%%/config.example/architecture
-%%DATADIR%%/config.example/cake
-%%DATADIR%%/config.example/cook
-%%DATADIR%%/config.example/diff
-%%DATADIR%%/config.example/diff3
-%%DATADIR%%/config.example/diff_not
-%%DATADIR%%/config.example/fhist
-%%DATADIR%%/config.example/gnu_diff
-%%DATADIR%%/config.example/make
-%%DATADIR%%/config.example/makefile
-%%DATADIR%%/config.example/merge
-%%DATADIR%%/config.example/rcs
-%%DATADIR%%/config.example/sccs
-%%DATADIR%%/cshrc
-%%DATADIR%%/db_forced.sh
-%%DATADIR%%/de.inews.sh
-%%DATADIR%%/de.sh
-%%DATADIR%%/de/LC_MESSAGES/glossary
-%%DATADIR%%/deu.inews.sh
-%%DATADIR%%/deu.sh
-%%DATADIR%%/en/html/chan_hstry.rpt
-%%DATADIR%%/en/html/chan_menu.rpt
-%%DATADIR%%/en/html/changes.rpt
-%%DATADIR%%/en/html/cp_command.rpt
-%%DATADIR%%/en/html/file_activ.rpt
-%%DATADIR%%/en/html/file_cflct.rpt
-%%DATADIR%%/en/html/file_densi.rpt
-%%DATADIR%%/en/html/file_diff.rpt
-%%DATADIR%%/en/html/file_hstry.rpt
-%%DATADIR%%/en/html/file_list.rpt
-%%DATADIR%%/en/html/file_menu.rpt
-%%DATADIR%%/en/html/proj_cch1.rpt
-%%DATADIR%%/en/html/proj_cch2.rpt
-%%DATADIR%%/en/html/proj_cch3.rpt
-%%DATADIR%%/en/html/proj_filme.rpt
-%%DATADIR%%/en/html/proj_hstg2.rpt
-%%DATADIR%%/en/html/proj_hstg3.rpt
-%%DATADIR%%/en/html/proj_hstgm.rpt
-%%DATADIR%%/en/html/proj_hstry.rpt
-%%DATADIR%%/en/html/proj_list.rpt
-%%DATADIR%%/en/html/proj_menu.rpt
-%%DATADIR%%/en/html/proj_prgr1.rpt
-%%DATADIR%%/en/html/proj_prgr2.rpt
-%%DATADIR%%/en/html/proj_prgr3.rpt
-%%DATADIR%%/en/html/proj_staff.rpt
-%%DATADIR%%/en/html/proj_stats.rpt
-%%DATADIR%%/en/notes/locale.man
-%%DATADIR%%/fr/LC_MESSAGES/glossaire
-%%DATADIR%%/icon/64x64.png
-%%DATADIR%%/icon/aegis.gif
-%%DATADIR%%/icon/bigger.png
-%%DATADIR%%/icon/rss.gif
-%%DATADIR%%/if.inews.sh
-%%DATADIR%%/if.sh
-%%DATADIR%%/ip.inews.sh
-%%DATADIR%%/ip.sh
-%%DATADIR%%/profile
-%%DATADIR%%/remind/awt_dvlp.sh
-%%DATADIR%%/remind/awt_intgrtn.sh
-%%DATADIR%%/remind/bng_dvlpd.sh
-%%DATADIR%%/remind/bng_rvwd.sh
-%%DATADIR%%/report.index
-%%DATADIR%%/report/chan_detai.rpt
-%%DATADIR%%/report/chan_files.rpt
-%%DATADIR%%/report/chan_histo.rpt
-%%DATADIR%%/report/chan_lists.rpt
-%%DATADIR%%/report/chan_log.rpt
-%%DATADIR%%/report/chan_recur.rpt
-%%DATADIR%%/report/chan_so.rpt
-%%DATADIR%%/report/debchanlog.rpt
-%%DATADIR%%/report/file_activ.rpt
-%%DATADIR%%/report/file_cflct.rpt
-%%DATADIR%%/report/file_hstry.rpt
-%%DATADIR%%/report/file_vhist.rpt
-%%DATADIR%%/report/proj_activ.rpt
-%%DATADIR%%/report/proj_admin.rpt
-%%DATADIR%%/report/proj_ances.rpt
-%%DATADIR%%/report/proj_brada.rpt
-%%DATADIR%%/report/proj_bran.rpt
-%%DATADIR%%/report/proj_brana.rpt
-%%DATADIR%%/report/proj_detai.rpt
-%%DATADIR%%/report/proj_devel.rpt
-%%DATADIR%%/report/proj_files.rpt
-%%DATADIR%%/report/proj_gantt.rpt
-%%DATADIR%%/report/proj_integ.rpt
-%%DATADIR%%/report/proj_lists.rpt
-%%DATADIR%%/report/proj_parent.rpt
-%%DATADIR%%/report/proj_recur.rpt
-%%DATADIR%%/report/proj_rvwrs.rpt
-%%DATADIR%%/report/proj_staff.rpt
-%%DATADIR%%/report/proj_stats.rpt
-%%DATADIR%%/report/user_list.rpt
-%%DATADIR%%/report/user_recurs.rpt
-%%DATADIR%%/rf.inews.sh
-%%DATADIR%%/rf.sh
-%%DATADIR%%/rp.inews.sh
-%%DATADIR%%/rp.sh
-%%DATADIR%%/rpu.inews.sh
-%%DATADIR%%/rpu.sh
-%%DATADIR%%/wish/aebuffy.rpt
-%%DATADIR%%/wish/aecomp.rpt
-%%DATADIR%%/wish/chan_attr.rpt
-%%DATADIR%%/wish/chan_list.rpt
-%%DATADIR%%/wish/devs_list.rpt
-%%DATADIR%%/wish/proj_attr.rpt
-%%DATADIR%%/wish/proj_conf.rpt
-%%DATADIR%%/wish/proj_list.rpt
-%%DATADIR%%/wish/tkaer_info.rpt
-%%PORTDOCS%%%%DOCSDIR%%/de/auug97.ps
-%%PORTDOCS%%%%DOCSDIR%%/de/auug97.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/aoss4.ps
-%%PORTDOCS%%%%DOCSDIR%%/en/aoss4.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/auug93.ps
-%%PORTDOCS%%%%DOCSDIR%%/en/auug93.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/auug96.ps
-%%PORTDOCS%%%%DOCSDIR%%/en/auug96.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/auug97.ps
-%%PORTDOCS%%%%DOCSDIR%%/en/auug97.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/building.ps
-%%PORTDOCS%%%%DOCSDIR%%/en/building.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/change_log.ps
-%%PORTDOCS%%%%DOCSDIR%%/en/change_log.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/cvs-comparison.ps
-%%PORTDOCS%%%%DOCSDIR%%/en/cvs-comparison.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/faq.ps
-%%PORTDOCS%%%%DOCSDIR%%/en/faq.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/howto.ps
-%%PORTDOCS%%%%DOCSDIR%%/en/howto.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/lsm.ps
-%%PORTDOCS%%%%DOCSDIR%%/en/lsm.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/readme.ps
-%%PORTDOCS%%%%DOCSDIR%%/en/readme.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/refman.ps
-%%PORTDOCS%%%%DOCSDIR%%/en/refman.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/release.ps
-%%PORTDOCS%%%%DOCSDIR%%/en/release.txt
-%%PORTDOCS%%%%DOCSDIR%%/en/user-guide.ps
-%%PORTDOCS%%%%DOCSDIR%%/en/user-guide.txt
+etc/profile.d/aegis.sh
+etc/profile.d/aegis.csh
 share/locale/de/LC_MESSAGES/aegis.mo
 share/locale/en/LC_MESSAGES/aegis.mo
 share/locale/es/LC_MESSAGES/aegis.mo
 share/locale/fr/LC_MESSAGES/aegis.mo
+share/locale/it/LC_MESSAGES/aegis.mo
 share/locale/nl/LC_MESSAGES/aegis.mo
 share/locale/pt_BR/LC_MESSAGES/aegis.mo
 share/locale/ro/LC_MESSAGES/aegis.mo
 share/locale/ru/LC_MESSAGES/aegis.mo
 share/locale/vi/LC_MESSAGES/aegis.mo
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/en
-%%PORTDOCS%%@dirrm %%DOCSDIR%%/de
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm %%DATADIR%%/wish
-@dirrm %%DATADIR%%/report
-@dirrm %%DATADIR%%/remind
-@dirrm %%DATADIR%%/icon
-@dirrm %%DATADIR%%/fr/LC_MESSAGES
-@dirrm %%DATADIR%%/fr
-@dirrm %%DATADIR%%/en/notes
-@dirrm %%DATADIR%%/en/html
-@dirrm %%DATADIR%%/en
-@dirrm %%DATADIR%%/de/LC_MESSAGES
-@dirrm %%DATADIR%%/de
-@dirrm %%DATADIR%%/config.example
-@dirrm %%DATADIR%%
+@dirrmtry etc/profile.d
 @dirrmtry com/aegis
 @dirrmtry com
