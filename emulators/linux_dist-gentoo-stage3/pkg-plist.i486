@@ -34,7 +34,6 @@
 %%PREFIX_SUBDIR%%bin/findmnt
 %%PREFIX_SUBDIR%%bin/fuser
 %%PREFIX_SUBDIR%%bin/gawk
-%%PREFIX_SUBDIR%%bin/gawk-3.1.6
 %%PREFIX_SUBDIR%%bin/getfacl
 %%PREFIX_SUBDIR%%bin/getfattr
 %%PREFIX_SUBDIR%%bin/grep
@@ -43,7 +42,6 @@
 %%PREFIX_SUBDIR%%bin/gzip
 %%PREFIX_SUBDIR%%bin/head
 %%PREFIX_SUBDIR%%bin/hostname
-%%PREFIX_SUBDIR%%bin/igawk
 %%PREFIX_SUBDIR%%bin/kill
 %%PREFIX_SUBDIR%%bin/ln
 %%PREFIX_SUBDIR%%bin/login
@@ -62,7 +60,6 @@
 %%PREFIX_SUBDIR%%bin/netstat
 %%PREFIX_SUBDIR%%bin/nisdomainname
 %%PREFIX_SUBDIR%%bin/passwd
-%%PREFIX_SUBDIR%%bin/pgawk
 %%PREFIX_SUBDIR%%bin/pidof
 %%PREFIX_SUBDIR%%bin/ping
 %%PREFIX_SUBDIR%%bin/ping6
@@ -289,6 +286,7 @@
 %%PREFIX_SUBDIR%%etc/runlevels/shutdown/savecache
 %%PREFIX_SUBDIR%%etc/runlevels/sysinit/devfs
 %%PREFIX_SUBDIR%%etc/runlevels/sysinit/dmesg
+%%PREFIX_SUBDIR%%etc/runlevels/sysinit/udev
 %%PREFIX_SUBDIR%%etc/sandbox.conf
 %%PREFIX_SUBDIR%%etc/sandbox.d/00default
 %%PREFIX_SUBDIR%%etc/sandbox.d/10openssl
@@ -716,7 +714,7 @@
 %%PREFIX_SUBDIR%%lib/libthread_db-1.0.so
 %%PREFIX_SUBDIR%%lib/libthread_db.so.1
 %%PREFIX_SUBDIR%%lib/libudev.so.0
-%%PREFIX_SUBDIR%%lib/libudev.so.0.6.1
+%%PREFIX_SUBDIR%%lib/libudev.so.0.9.3
 %%PREFIX_SUBDIR%%lib/libutil-2.12.2.so
 %%PREFIX_SUBDIR%%lib/libutil.so.1
 %%PREFIX_SUBDIR%%lib/libuuid.so.1
@@ -821,6 +819,7 @@
 %%PREFIX_SUBDIR%%lib/rc/sh/rc-functions.sh
 %%PREFIX_SUBDIR%%lib/rc/sh/rc-mount.sh
 %%PREFIX_SUBDIR%%lib/rc/sh/runscript.sh
+%%PREFIX_SUBDIR%%lib/rc/sh/udhcpc-hook.sh
 %%PREFIX_SUBDIR%%lib/rc/tmp/.keep_sys-apps_openrc-0
 %%PREFIX_SUBDIR%%lib/rc/version
 %%PREFIX_SUBDIR%%lib/rcscripts/addons/mdev-start.sh
@@ -872,7 +871,9 @@
 %%PREFIX_SUBDIR%%lib/security/pam_warn.so
 %%PREFIX_SUBDIR%%lib/security/pam_wheel.so
 %%PREFIX_SUBDIR%%lib/security/pam_xauth.so
+%%PREFIX_SUBDIR%%media/.keep
 %%PREFIX_SUBDIR%%mnt/.keep
+%%PREFIX_SUBDIR%%opt/.keep
 %%PREFIX_SUBDIR%%root/.keep
 %%PREFIX_SUBDIR%%sbin/agetty
 %%PREFIX_SUBDIR%%sbin/arp
@@ -976,8 +977,6 @@
 %%PREFIX_SUBDIR%%usr/bin/2to3-3.1
 %%PREFIX_SUBDIR%%usr/bin/[
 %%PREFIX_SUBDIR%%usr/bin/a2p
-%%PREFIX_SUBDIR%%usr/bin/aclocal
-%%PREFIX_SUBDIR%%usr/bin/aclocal-1.11
 %%PREFIX_SUBDIR%%usr/bin/addftinfo
 %%PREFIX_SUBDIR%%usr/bin/addr2line
 %%PREFIX_SUBDIR%%usr/bin/afmtodit
@@ -985,28 +984,13 @@
 %%PREFIX_SUBDIR%%usr/bin/ar
 %%PREFIX_SUBDIR%%usr/bin/arch
 %%PREFIX_SUBDIR%%usr/bin/as
-%%PREFIX_SUBDIR%%usr/bin/autoconf
-%%PREFIX_SUBDIR%%usr/bin/autoconf-2.65
-%%PREFIX_SUBDIR%%usr/bin/autoheader
-%%PREFIX_SUBDIR%%usr/bin/autoheader-2.65
-%%PREFIX_SUBDIR%%usr/bin/autom4te
-%%PREFIX_SUBDIR%%usr/bin/autom4te-2.65
-%%PREFIX_SUBDIR%%usr/bin/automake
-%%PREFIX_SUBDIR%%usr/bin/automake-1.11
 %%PREFIX_SUBDIR%%usr/bin/autopoint
-%%PREFIX_SUBDIR%%usr/bin/autoreconf
-%%PREFIX_SUBDIR%%usr/bin/autoreconf-2.65
-%%PREFIX_SUBDIR%%usr/bin/autoscan
-%%PREFIX_SUBDIR%%usr/bin/autoscan-2.65
-%%PREFIX_SUBDIR%%usr/bin/autoupdate
-%%PREFIX_SUBDIR%%usr/bin/autoupdate-2.65
 %%PREFIX_SUBDIR%%usr/bin/awk
 %%PREFIX_SUBDIR%%usr/bin/base64
 %%PREFIX_SUBDIR%%usr/bin/basename
 %%PREFIX_SUBDIR%%usr/bin/bashbug
 %%PREFIX_SUBDIR%%usr/bin/bashcomp-config
 %%PREFIX_SUBDIR%%usr/bin/binutils-config
-%%PREFIX_SUBDIR%%usr/bin/bison
 %%PREFIX_SUBDIR%%usr/bin/bzcmp
 %%PREFIX_SUBDIR%%usr/bin/bzdiff
 %%PREFIX_SUBDIR%%usr/bin/bzegrep
@@ -1108,7 +1092,6 @@
 %%PREFIX_SUBDIR%%usr/bin/file
 %%PREFIX_SUBDIR%%usr/bin/find
 %%PREFIX_SUBDIR%%usr/bin/find2perl
-%%PREFIX_SUBDIR%%usr/bin/flex
 %%PREFIX_SUBDIR%%usr/bin/flock
 %%PREFIX_SUBDIR%%usr/bin/fmt
 %%PREFIX_SUBDIR%%usr/bin/fold
@@ -1192,10 +1175,7 @@
 %%PREFIX_SUBDIR%%usr/bin/i486-pc-linux-gnu-strip
 %%PREFIX_SUBDIR%%usr/bin/iconv
 %%PREFIX_SUBDIR%%usr/bin/id
-%%PREFIX_SUBDIR%%usr/bin/ifnames
-%%PREFIX_SUBDIR%%usr/bin/ifnames-2.65
 %%PREFIX_SUBDIR%%usr/bin/igawk
-%%PREFIX_SUBDIR%%usr/bin/igawk-3.1.6
 %%PREFIX_SUBDIR%%usr/bin/import-tars
 %%PREFIX_SUBDIR%%usr/bin/indxbib
 %%PREFIX_SUBDIR%%usr/bin/info
@@ -1228,10 +1208,7 @@
 %%PREFIX_SUBDIR%%usr/bin/lesskey
 %%PREFIX_SUBDIR%%usr/bin/lesspipe
 %%PREFIX_SUBDIR%%usr/bin/lesspipe.sh
-%%PREFIX_SUBDIR%%usr/bin/lex
 %%PREFIX_SUBDIR%%usr/bin/libnetcfg
-%%PREFIX_SUBDIR%%usr/bin/libtool
-%%PREFIX_SUBDIR%%usr/bin/libtoolize
 %%PREFIX_SUBDIR%%usr/bin/line
 %%PREFIX_SUBDIR%%usr/bin/link
 %%PREFIX_SUBDIR%%usr/bin/linux32
@@ -1258,7 +1235,6 @@
 %%PREFIX_SUBDIR%%usr/bin/lzmadec
 %%PREFIX_SUBDIR%%usr/bin/lzmainfo
 %%PREFIX_SUBDIR%%usr/bin/lzmore
-%%PREFIX_SUBDIR%%usr/bin/m4
 %%PREFIX_SUBDIR%%usr/bin/make
 %%PREFIX_SUBDIR%%usr/bin/makeinfo
 %%PREFIX_SUBDIR%%usr/bin/man
@@ -1327,7 +1303,6 @@
 %%PREFIX_SUBDIR%%usr/bin/pfbtops
 %%PREFIX_SUBDIR%%usr/bin/pg
 %%PREFIX_SUBDIR%%usr/bin/pgawk
-%%PREFIX_SUBDIR%%usr/bin/pgawk-3.1.6
 %%PREFIX_SUBDIR%%usr/bin/pgrep
 %%PREFIX_SUBDIR%%usr/bin/pic
 %%PREFIX_SUBDIR%%usr/bin/pic2graph
@@ -1533,7 +1508,6 @@
 %%PREFIX_SUBDIR%%usr/bin/xzless
 %%PREFIX_SUBDIR%%usr/bin/xzmore
 %%PREFIX_SUBDIR%%usr/bin/yacc
-%%PREFIX_SUBDIR%%usr/bin/yacc.bison
 %%PREFIX_SUBDIR%%usr/bin/yes
 %%PREFIX_SUBDIR%%usr/bin/zcmp
 %%PREFIX_SUBDIR%%usr/bin/zdiff
@@ -1597,7 +1571,6 @@
 %%PREFIX_SUBDIR%%usr/i486-pc-linux-gnu/lib/libopcodes.a
 %%PREFIX_SUBDIR%%usr/i486-pc-linux-gnu/lib/libopcodes.la
 %%PREFIX_SUBDIR%%usr/i486-pc-linux-gnu/lib/libopcodes.so
-%%PREFIX_SUBDIR%%usr/include/FlexLexer.h
 %%PREFIX_SUBDIR%%usr/include/_G_config.h
 %%PREFIX_SUBDIR%%usr/include/a.out.h
 %%PREFIX_SUBDIR%%usr/include/acl/libacl.h
@@ -1714,6 +1687,7 @@
 %%PREFIX_SUBDIR%%usr/include/awk/config.h
 %%PREFIX_SUBDIR%%usr/include/awk/custom.h
 %%PREFIX_SUBDIR%%usr/include/awk/dfa.h
+%%PREFIX_SUBDIR%%usr/include/awk/floatmagic.h
 %%PREFIX_SUBDIR%%usr/include/awk/getopt.h
 %%PREFIX_SUBDIR%%usr/include/awk/getopt_int.h
 %%PREFIX_SUBDIR%%usr/include/awk/gettext.h
@@ -1723,6 +1697,7 @@
 %%PREFIX_SUBDIR%%usr/include/awk/random.h
 %%PREFIX_SUBDIR%%usr/include/awk/regex.h
 %%PREFIX_SUBDIR%%usr/include/awk/regex_internal.h
+%%PREFIX_SUBDIR%%usr/include/awk/xalloc.h
 %%PREFIX_SUBDIR%%usr/include/bfd.h
 %%PREFIX_SUBDIR%%usr/include/bfdlink.h
 %%PREFIX_SUBDIR%%usr/include/bits/a.out.h
@@ -1933,9 +1908,6 @@
 %%PREFIX_SUBDIR%%usr/include/libiberty.h
 %%PREFIX_SUBDIR%%usr/include/libintl.h
 %%PREFIX_SUBDIR%%usr/include/libio.h
-%%PREFIX_SUBDIR%%usr/include/libltdl/lt_dlloader.h
-%%PREFIX_SUBDIR%%usr/include/libltdl/lt_error.h
-%%PREFIX_SUBDIR%%usr/include/libltdl/lt_system.h
 %%PREFIX_SUBDIR%%usr/include/libmount/libmount.h
 %%PREFIX_SUBDIR%%usr/include/libudev.h
 %%PREFIX_SUBDIR%%usr/include/libxml2/libxml/DOCBparser.h
@@ -2503,7 +2475,6 @@
 %%PREFIX_SUBDIR%%usr/include/linux/xattr.h
 %%PREFIX_SUBDIR%%usr/include/linux/xfrm.h
 %%PREFIX_SUBDIR%%usr/include/locale.h
-%%PREFIX_SUBDIR%%usr/include/ltdl.h
 %%PREFIX_SUBDIR%%usr/include/lzma.h
 %%PREFIX_SUBDIR%%usr/include/lzma/base.h
 %%PREFIX_SUBDIR%%usr/include/lzma/bcj.h
@@ -4222,8 +4193,6 @@
 %%PREFIX_SUBDIR%%usr/lib/libffi.so
 %%PREFIX_SUBDIR%%usr/lib/libffi.so.5
 %%PREFIX_SUBDIR%%usr/lib/libffi.so.5.0.10
-%%PREFIX_SUBDIR%%usr/lib/libfl.a
-%%PREFIX_SUBDIR%%usr/lib/libfl_pic.a
 %%PREFIX_SUBDIR%%usr/lib/libform.so
 %%PREFIX_SUBDIR%%usr/lib/libform.so.5
 %%PREFIX_SUBDIR%%usr/lib/libform.so.5.7
@@ -4265,11 +4234,6 @@
 %%PREFIX_SUBDIR%%usr/lib/libhistory.a
 %%PREFIX_SUBDIR%%usr/lib/libhistory.so
 %%PREFIX_SUBDIR%%usr/lib/libieee.a
-%%PREFIX_SUBDIR%%usr/lib/libltdl.a
-%%PREFIX_SUBDIR%%usr/lib/libltdl.la
-%%PREFIX_SUBDIR%%usr/lib/libltdl.so
-%%PREFIX_SUBDIR%%usr/lib/libltdl.so.7
-%%PREFIX_SUBDIR%%usr/lib/libltdl.so.7.2.2
 %%PREFIX_SUBDIR%%usr/lib/liblzma.la
 %%PREFIX_SUBDIR%%usr/lib/liblzma.so
 %%PREFIX_SUBDIR%%usr/lib/liblzma.so.5
@@ -4370,8 +4334,6 @@
 %%PREFIX_SUBDIR%%usr/lib/libz.so
 %%PREFIX_SUBDIR%%usr/lib/locale/.keep_sys-libs_glibc-2.2
 %%PREFIX_SUBDIR%%usr/lib/locale/locale-archive
-%%PREFIX_SUBDIR%%usr/lib/misc/ac-wrapper.sh
-%%PREFIX_SUBDIR%%usr/lib/misc/am-wrapper.sh
 %%PREFIX_SUBDIR%%usr/lib/misc/awk/grcat
 %%PREFIX_SUBDIR%%usr/lib/misc/awk/pwcat
 %%PREFIX_SUBDIR%%usr/lib/misc/gcc-config
@@ -6979,12 +6941,18 @@
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/resolver/__init__.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/resolver/__init__.pyc
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/resolver/__init__.pyo
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/resolver/backtracking.py
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/resolver/backtracking.pyc
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/resolver/backtracking.pyo
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/resolver/circular_dependency.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/resolver/circular_dependency.pyc
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/resolver/circular_dependency.pyo
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/resolver/output.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/resolver/output.pyc
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/resolver/output.pyo
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/resolver/output_helpers.py
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/resolver/output_helpers.pyc
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/resolver/output_helpers.pyo
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/resolver/slot_collision.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/resolver/slot_collision.pyc
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/_emerge/resolver/slot_collision.pyo
@@ -7114,6 +7082,9 @@
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/dbapi/__init__.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/dbapi/__init__.pyc
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/dbapi/__init__.pyo
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/dbapi/_expand_new_virt.py
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/dbapi/_expand_new_virt.pyc
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/dbapi/_expand_new_virt.pyo
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/dbapi/bintree.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/dbapi/bintree.pyc
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/dbapi/bintree.pyo
@@ -7312,283 +7283,12 @@
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/proxy/objectproxy.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/proxy/objectproxy.pyc
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/proxy/objectproxy.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/bin/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/bin/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/bin/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/bin/setup_env.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/bin/setup_env.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/bin/setup_env.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/bin/test_dobin.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/bin/test_dobin.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/bin/test_dobin.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/bin/test_dodir.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/bin/test_dodir.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/bin/test_dodir.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/testAtom.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/testAtom.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/testAtom.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/testCheckRequiredUse.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/testCheckRequiredUse.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/testCheckRequiredUse.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/testExtendedAtomDict.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/testExtendedAtomDict.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/testExtendedAtomDict.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/testExtractAffectingUSE.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/testExtractAffectingUSE.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/testExtractAffectingUSE.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/testStandalone.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/testStandalone.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/testStandalone.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_best_match_to_list.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_best_match_to_list.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_best_match_to_list.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_dep_getcpv.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_dep_getcpv.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_dep_getcpv.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_dep_getrepo.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_dep_getrepo.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_dep_getrepo.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_dep_getslot.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_dep_getslot.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_dep_getslot.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_dep_getusedeps.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_dep_getusedeps.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_dep_getusedeps.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_get_operator.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_get_operator.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_get_operator.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_get_required_use_flags.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_get_required_use_flags.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_get_required_use_flags.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_isjustname.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_isjustname.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_isjustname.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_isvalidatom.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_isvalidatom.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_isvalidatom.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_match_from_list.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_match_from_list.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_match_from_list.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_paren_reduce.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_paren_reduce.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_paren_reduce.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_use_reduce.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_use_reduce.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep/test_use_reduce.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/test_array_fromfile_eof.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/test_array_fromfile_eof.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/test_array_fromfile_eof.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/test_config.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/test_config.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/test_config.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/test_doebuild_spawn.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/test_doebuild_spawn.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/test_doebuild_spawn.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/test_ipc_daemon.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/test_ipc_daemon.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/test_ipc_daemon.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/test_pty_eof.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/test_pty_eof.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/test_pty_eof.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/test_spawn.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/test_spawn.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild/test_spawn.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/env/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/env/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/env/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/env/config/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/env/config/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/env/config/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/env/config/test_PackageKeywordsFile.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/env/config/test_PackageKeywordsFile.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/env/config/test_PackageKeywordsFile.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/env/config/test_PackageMaskFile.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/env/config/test_PackageMaskFile.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/env/config/test_PackageMaskFile.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/env/config/test_PackageUseFile.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/env/config/test_PackageUseFile.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/env/config/test_PackageUseFile.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/env/config/test_PortageModulesFile.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/env/config/test_PortageModulesFile.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/env/config/test_PortageModulesFile.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lafilefixer/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lafilefixer/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lafilefixer/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lafilefixer/test_lafilefixer.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lafilefixer/test_lafilefixer.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lafilefixer/test_lafilefixer.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lazyimport/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lazyimport/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lazyimport/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lazyimport/test_lazy_import_portage_baseline.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lazyimport/test_lazy_import_portage_baseline.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lazyimport/test_lazy_import_portage_baseline.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lazyimport/test_preload_portage_submodules.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lazyimport/test_preload_portage_submodules.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lazyimport/test_preload_portage_submodules.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lint/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lint/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lint/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lint/test_bash_syntax.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lint/test_bash_syntax.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lint/test_bash_syntax.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lint/test_compile_modules.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lint/test_compile_modules.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lint/test_compile_modules.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lint/test_import_modules.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lint/test_import_modules.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lint/test_import_modules.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/locks/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/locks/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/locks/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/locks/test_asynchronous_lock.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/locks/test_asynchronous_lock.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/locks/test_asynchronous_lock.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/news/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/news/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/news/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/news/test_NewsItem.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/news/test_NewsItem.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/news/test_NewsItem.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/process/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/process/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/process/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/process/test_poll.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/process/test_poll.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/process/test_poll.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/ResolverPlayground.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/ResolverPlayground.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/ResolverPlayground.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_autounmask.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_autounmask.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_autounmask.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_backtracking.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_backtracking.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_backtracking.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_circular_dependencies.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_circular_dependencies.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_circular_dependencies.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_depclean.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_depclean.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_depclean.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_depth.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_depth.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_depth.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_eapi.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_eapi.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_eapi.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_missing_iuse_and_evaluated_atoms.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_missing_iuse_and_evaluated_atoms.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_missing_iuse_and_evaluated_atoms.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_multislot.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_multislot.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_multislot.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_old_dep_chain_display.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_old_dep_chain_display.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_old_dep_chain_display.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_output.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_output.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_output.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_required_use.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_required_use.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_required_use.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_simple.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_simple.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_simple.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_slot_collisions.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_slot_collisions.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_slot_collisions.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_use_dep_defaults.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_use_dep_defaults.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver/test_use_dep_defaults.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/runTests
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/base/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/base/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/base/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/base/testInternalPackageSet.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/base/testInternalPackageSet.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/base/testInternalPackageSet.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/files/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/files/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/files/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/files/testConfigFileSet.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/files/testConfigFileSet.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/files/testConfigFileSet.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/files/testStaticFileSet.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/files/testStaticFileSet.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/files/testStaticFileSet.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/shell/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/shell/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/shell/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/shell/testShell.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/shell/testShell.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/shell/testShell.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/unicode/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/unicode/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/unicode/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/unicode/test_string_format.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/unicode/test_string_format.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/unicode/test_string_format.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_digraph.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_digraph.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_digraph.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_getconfig.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_getconfig.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_getconfig.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_grabdict.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_grabdict.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_grabdict.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_normalizedPath.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_normalizedPath.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_normalizedPath.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_stackDictList.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_stackDictList.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_stackDictList.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_stackDicts.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_stackDicts.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_stackDicts.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_stackLists.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_stackLists.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_stackLists.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_uniqueArray.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_uniqueArray.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_uniqueArray.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_varExpand.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_varExpand.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util/test_varExpand.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/versions/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/versions/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/versions/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/versions/test_cpv_sort_key.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/versions/test_cpv_sort_key.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/versions/test_cpv_sort_key.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/versions/test_vercmp.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/versions/test_vercmp.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/versions/test_vercmp.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/xpak/__init__.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/xpak/__init__.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/xpak/__init__.pyo
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/xpak/test_decodeint.py
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/xpak/test_decodeint.pyc
-%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/xpak/test_decodeint.pyo
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/repository/__init__.py
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/repository/__init__.pyc
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/repository/__init__.pyo
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/repository/config.py
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/repository/config.pyc
+%%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/repository/config.pyo
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/update.py
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/update.pyc
 %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/update.pyo
@@ -12848,10 +12548,7 @@
 %%PREFIX_SUBDIR%%usr/libexec/git-core/git-write-tree
 %%PREFIX_SUBDIR%%usr/local/bin/.keep
 %%PREFIX_SUBDIR%%usr/local/lib/.keep
-%%PREFIX_SUBDIR%%usr/local/man
 %%PREFIX_SUBDIR%%usr/local/sbin/.keep
-%%PREFIX_SUBDIR%%usr/local/share/doc/.keep
-%%PREFIX_SUBDIR%%usr/local/share/man/.keep
 %%PREFIX_SUBDIR%%usr/sbin/addpart
 %%PREFIX_SUBDIR%%usr/sbin/archive-conf
 %%PREFIX_SUBDIR%%usr/sbin/backup-tar
@@ -12928,46 +12625,6 @@
 %%PREFIX_SUBDIR%%usr/sbin/vipw
 %%PREFIX_SUBDIR%%usr/sbin/zdump
 %%PREFIX_SUBDIR%%usr/sbin/zic
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/amversion.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/as.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/auxdir.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/ccstdc.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/cond-if.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/cond.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/depend.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/depout.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/dmalloc.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/gcj.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/header.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/init.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/install-sh.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/lead-dot.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/lex.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/lispdir.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/maintainer.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/make.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/minuso.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/missing.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/mkdirp.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/multi.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/obsol-gt.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/obsol-lt.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/obsolete.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/options.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/protos.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/python.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/regex.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/runlog.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/sanity.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/silent.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/strip.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/substnot.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/tar.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/upc.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal-1.11/vala.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal/.keep_sys-devel_automake-wrapper-0
-%%PREFIX_SUBDIR%%usr/share/aclocal/argz.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal/bison-i18n.m4
 %%PREFIX_SUBDIR%%usr/share/aclocal/codeset.m4
 %%PREFIX_SUBDIR%%usr/share/aclocal/fcntl-o.m4
 %%PREFIX_SUBDIR%%usr/share/aclocal/gettext.m4
@@ -12986,15 +12643,9 @@
 %%PREFIX_SUBDIR%%usr/share/aclocal/lib-link.m4
 %%PREFIX_SUBDIR%%usr/share/aclocal/lib-prefix.m4
 %%PREFIX_SUBDIR%%usr/share/aclocal/libcurl.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal/libtool.m4
 %%PREFIX_SUBDIR%%usr/share/aclocal/libxml.m4
 %%PREFIX_SUBDIR%%usr/share/aclocal/lock.m4
 %%PREFIX_SUBDIR%%usr/share/aclocal/longlong.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal/ltdl.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal/ltoptions.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal/ltsugar.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal/ltversion.m4
-%%PREFIX_SUBDIR%%usr/share/aclocal/lt~obsolete.m4
 %%PREFIX_SUBDIR%%usr/share/aclocal/nls.m4
 %%PREFIX_SUBDIR%%usr/share/aclocal/po.m4
 %%PREFIX_SUBDIR%%usr/share/aclocal/printf-posix.m4
@@ -13008,127 +12659,6 @@
 %%PREFIX_SUBDIR%%usr/share/aclocal/wint_t.m4
 %%PREFIX_SUBDIR%%usr/share/aclocal/xsize.m4
 %%PREFIX_SUBDIR%%usr/share/applications/sandbox.desktop
-%%PREFIX_SUBDIR%%usr/share/autoconf/Autom4te/C4che.pm
-%%PREFIX_SUBDIR%%usr/share/autoconf/Autom4te/ChannelDefs.pm
-%%PREFIX_SUBDIR%%usr/share/autoconf/Autom4te/Channels.pm
-%%PREFIX_SUBDIR%%usr/share/autoconf/Autom4te/Configure_ac.pm
-%%PREFIX_SUBDIR%%usr/share/autoconf/Autom4te/FileUtils.pm
-%%PREFIX_SUBDIR%%usr/share/autoconf/Autom4te/General.pm
-%%PREFIX_SUBDIR%%usr/share/autoconf/Autom4te/Request.pm
-%%PREFIX_SUBDIR%%usr/share/autoconf/Autom4te/Struct.pm
-%%PREFIX_SUBDIR%%usr/share/autoconf/Autom4te/XFile.pm
-%%PREFIX_SUBDIR%%usr/share/autoconf/INSTALL
-%%PREFIX_SUBDIR%%usr/share/autoconf/autoconf/autoconf.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/autoconf/autoconf.m4f
-%%PREFIX_SUBDIR%%usr/share/autoconf/autoconf/autoheader.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/autoconf/autoscan.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/autoconf/autotest.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/autoconf/autoupdate.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/autoconf/c.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/autoconf/erlang.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/autoconf/fortran.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/autoconf/functions.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/autoconf/general.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/autoconf/headers.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/autoconf/lang.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/autoconf/libs.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/autoconf/oldnames.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/autoconf/programs.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/autoconf/specific.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/autoconf/status.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/autoconf/types.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/autom4te.cfg
-%%PREFIX_SUBDIR%%usr/share/autoconf/autoscan/autoscan.list
-%%PREFIX_SUBDIR%%usr/share/autoconf/autotest/autotest.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/autotest/autotest.m4f
-%%PREFIX_SUBDIR%%usr/share/autoconf/autotest/general.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/autotest/specific.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/m4sugar/foreach.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/m4sugar/m4sh.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/m4sugar/m4sh.m4f
-%%PREFIX_SUBDIR%%usr/share/autoconf/m4sugar/m4sugar.m4
-%%PREFIX_SUBDIR%%usr/share/autoconf/m4sugar/m4sugar.m4f
-%%PREFIX_SUBDIR%%usr/share/autoconf/m4sugar/version.m4
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake/ChannelDefs.pm
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake/Channels.pm
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake/Condition.pm
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake/Config.pm
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake/Configure_ac.pm
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake/DisjConditions.pm
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake/FileUtils.pm
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake/General.pm
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake/Item.pm
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake/ItemDef.pm
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake/Location.pm
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake/Options.pm
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake/Rule.pm
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake/RuleDef.pm
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake/Struct.pm
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake/VarDef.pm
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake/Variable.pm
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake/Version.pm
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake/Wrap.pm
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake/XFile.pm
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/COPYING
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/INSTALL
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/acinstall
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/ansi2knr.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/check.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/check2.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/clean-hdr.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/clean.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/compile.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/configure.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/data.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/dejagnu.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/depend.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/depend2.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/distdir.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/footer.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/header-vars.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/header.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/inst-vars.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/install.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/java.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/lang-compile.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/lex.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/library.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/libs.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/libtool.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/lisp.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/ltlib.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/ltlibrary.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/mans-vars.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/mans.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/multilib.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/program.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/progs.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/python.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/remake-hdr.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/scripts.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/subdirs.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/tags.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/texi-vers.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/texibuild.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/texinfos.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/vala.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/am/yacc.am
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/ansi2knr.1
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/ansi2knr.c
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/compile
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/config-ml.in
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/config.guess
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/config.sub
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/depcomp
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/elisp-comp
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/install-sh
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/mdate-sh
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/missing
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/mkinstalldirs
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/py-compile
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/symlink-tree
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/texinfo.tex
-%%PREFIX_SUBDIR%%usr/share/automake-1.11/ylwrap
 %%PREFIX_SUBDIR%%usr/share/awk/assert.awk
 %%PREFIX_SUBDIR%%usr/share/awk/bits2str.awk
 %%PREFIX_SUBDIR%%usr/share/awk/cliff_rand.awk
@@ -13251,26 +12781,6 @@
 %%PREFIX_SUBDIR%%usr/share/binutils-data/i486-pc-linux-gnu/2.20.1/man/man1/strip.1
 %%PREFIX_SUBDIR%%usr/share/binutils-data/i486-pc-linux-gnu/2.20.1/man/man1/windmc.1
 %%PREFIX_SUBDIR%%usr/share/binutils-data/i486-pc-linux-gnu/2.20.1/man/man1/windres.1
-%%PREFIX_SUBDIR%%usr/share/bison/README
-%%PREFIX_SUBDIR%%usr/share/bison/bison.m4
-%%PREFIX_SUBDIR%%usr/share/bison/c++-skel.m4
-%%PREFIX_SUBDIR%%usr/share/bison/c++.m4
-%%PREFIX_SUBDIR%%usr/share/bison/c-skel.m4
-%%PREFIX_SUBDIR%%usr/share/bison/c.m4
-%%PREFIX_SUBDIR%%usr/share/bison/glr.c
-%%PREFIX_SUBDIR%%usr/share/bison/glr.cc
-%%PREFIX_SUBDIR%%usr/share/bison/java-skel.m4
-%%PREFIX_SUBDIR%%usr/share/bison/java.m4
-%%PREFIX_SUBDIR%%usr/share/bison/lalr1.cc
-%%PREFIX_SUBDIR%%usr/share/bison/lalr1.java
-%%PREFIX_SUBDIR%%usr/share/bison/location.cc
-%%PREFIX_SUBDIR%%usr/share/bison/m4sugar/foreach.m4
-%%PREFIX_SUBDIR%%usr/share/bison/m4sugar/m4sugar.m4
-%%PREFIX_SUBDIR%%usr/share/bison/xslt/bison.xsl
-%%PREFIX_SUBDIR%%usr/share/bison/xslt/xml2dot.xsl
-%%PREFIX_SUBDIR%%usr/share/bison/xslt/xml2text.xsl
-%%PREFIX_SUBDIR%%usr/share/bison/xslt/xml2xhtml.xsl
-%%PREFIX_SUBDIR%%usr/share/bison/yacc.c
 %%PREFIX_SUBDIR%%usr/share/busybox/busybox-1.17.4.config
 %%PREFIX_SUBDIR%%usr/share/busybox/busybox-links.tar
 %%PREFIX_SUBDIR%%usr/share/ca-certificates/brasil.gov.br/brasil.gov.br.crt
@@ -13728,24 +13238,7 @@
 %%PREFIX_SUBDIR%%usr/share/doc/attr-2.4.44/COPYING.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/attr-2.4.44/PORTING.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/attr-2.4.44/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/autoconf-2.65-r1/AUTHORS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/autoconf-2.65-r1/BUGS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/autoconf-2.65-r1/ChangeLog.0.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/autoconf-2.65-r1/ChangeLog.1.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/autoconf-2.65-r1/ChangeLog.2.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/autoconf-2.65-r1/ChangeLog.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/autoconf-2.65-r1/NEWS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/autoconf-2.65-r1/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/autoconf-2.65-r1/THANKS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/autoconf-2.65-r1/TODO.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/automake-1.11.1/AUTHORS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/automake-1.11.1/ChangeLog.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/automake-1.11.1/NEWS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/automake-1.11.1/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/automake-1.11.1/THANKS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/automake-1.11.1/TODO.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/automake-1.11.1/amhello-1.0.tar.gz
-%%PREFIX_SUBDIR%%usr/share/doc/baselayout-2.0.2/ChangeLog.svn.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/baselayout-2.0.3/ChangeLog.svn.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/bash-4.1_p9/AUTHORS.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/bash-4.1_p9/CHANGES.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/bash-4.1_p9/COMPAT.bz2
@@ -13822,13 +13315,6 @@
 %%PREFIX_SUBDIR%%usr/share/doc/binutils-2.20.1-r1/opcodes/ChangeLog-9297.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/binutils-2.20.1-r1/opcodes/ChangeLog-9899.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/binutils-2.20.1-r1/opcodes/ChangeLog.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/bison-2.4.3/AUTHORS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/bison-2.4.3/ChangeLog.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/bison-2.4.3/NEWS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/bison-2.4.3/OChangeLog.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/bison-2.4.3/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/bison-2.4.3/THANKS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/bison-2.4.3/TODO.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/busybox-1.17.4/AUTHORS.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/busybox-1.17.4/README.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/busybox-1.17.4/TODO.bz2
@@ -13934,50 +13420,49 @@
 %%PREFIX_SUBDIR%%usr/share/doc/expat-2.0.1-r3/html/reference.html
 %%PREFIX_SUBDIR%%usr/share/doc/expat-2.0.1-r3/html/style.css
 %%PREFIX_SUBDIR%%usr/share/doc/expat-2.0.1-r3/html/valid-xhtml10.png
-%%PREFIX_SUBDIR%%usr/share/doc/file-5.05/ChangeLog.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/file-5.05/MAINT.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/file-5.05/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/file-5.05/README.python.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/file-5.07-r3/ChangeLog.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/file-5.07-r3/MAINT.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/file-5.07-r3/README.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/file-5.07-r3/README.python.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/findutils-4.4.2/ChangeLog.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/findutils-4.4.2/NEWS.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/findutils-4.4.2/README.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/findutils-4.4.2/TODO.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/flex-2.5.35/AUTHORS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/flex-2.5.35/ChangeLog.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/flex-2.5.35/NEWS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/flex-2.5.35/ONEWS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/flex-2.5.35/README-alpha.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/flex-2.5.35/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/flex-2.5.35/README.cvs.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/flex-2.5.35/THANKS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/flex-2.5.35/TODO.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/AUTHORS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/ChangeLog.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/FUTURES.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/LIMITATIONS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/NEWS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/POSIX.STD.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/PROBLEMS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/README_d/README.VMS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/README_d/README.aix.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/README_d/README.atari.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/README_d/README.beos.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/README_d/README.cygwin-dynamic.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/README_d/README.hpux.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/README_d/README.ia64.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/README_d/README.macos.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/README_d/README.multibyte.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/README_d/README.pc.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/README_d/README.pcdynamic.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/README_d/README.sgi.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/README_d/README.solaris.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/README_d/README.sunos4.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/README_d/README.tandem.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/README_d/README.tests.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/awklib/ChangeLog.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/pc/ChangeLog.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/posix/ChangeLog.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/AUTHORS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/ChangeLog.awklib.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/ChangeLog.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/ChangeLog.doc.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/ChangeLog.extension.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/ChangeLog.m4.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/ChangeLog.missing_d.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/ChangeLog.pc.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/ChangeLog.po.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/ChangeLog.posix.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/ChangeLog.test.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/ChangeLog.vms.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/FUTURES.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/LIMITATIONS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/NEWS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/POSIX.STD.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/PROBLEMS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/README.VMS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/README.aix.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/README.atari.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/README.beos.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/README.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/README.cygwin-dynamic.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/README.hpux.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/README.ia64.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/README.macos.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/README.multibyte.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/README.pc.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/README.pcdynamic.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/README.sgi.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/README.solaris.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/README.sunos4.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/README.tandem.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/README.tests.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8/README.zos.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/gdbm-1.8.3-r4/ChangeLog.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/gdbm-1.8.3-r4/NEWS.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/gdbm-1.8.3-r4/README.bz2
@@ -14386,41 +13871,15 @@
 %%PREFIX_SUBDIR%%usr/share/doc/libpcre-8.12/pcre.txt
 %%PREFIX_SUBDIR%%usr/share/doc/libpcre-8.12/pcregrep.txt
 %%PREFIX_SUBDIR%%usr/share/doc/libpcre-8.12/pcretest.txt
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/AUTHORS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/ChangeLog.1996.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/ChangeLog.1997.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/ChangeLog.1998.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/ChangeLog.1999.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/ChangeLog.2000.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/ChangeLog.2001.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/ChangeLog.2002.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/ChangeLog.2003.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/ChangeLog.2004.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/ChangeLog.2005.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/ChangeLog.2006.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/ChangeLog.2007.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/ChangeLog.2008.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/ChangeLog.2009.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/ChangeLog.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/NEWS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/PLATFORMS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/THANKS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10/TODO.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8/AUTHORS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8/ChangeLog.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8/Copyright.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8/NEWS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8/README.tests.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8/TODO.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8/TODO_SCHEMAS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/m4-1.4.15/BACKLOG.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/m4-1.4.15/ChangeLog.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/m4-1.4.15/NEWS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/m4-1.4.15/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/m4-1.4.15/THANKS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/m4-1.4.15/TODO.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8-r1/AUTHORS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8-r1/ChangeLog.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8-r1/Copyright.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8-r1/NEWS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8-r1/README.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8-r1/README.tests.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8-r1/TODO.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8-r1/TODO_SCHEMAS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8-r1/python/TODO
 %%PREFIX_SUBDIR%%usr/share/doc/make-3.82/AUTHORS.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/make-3.82/ChangeLog.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/make-3.82/NEWS.bz2
@@ -14444,11 +13903,11 @@
 %%PREFIX_SUBDIR%%usr/share/doc/man-pages-posix-2003a/Changes.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/man-pages-posix-2003a/README.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/man-pages-posix-2003a/man-pages-posix-2003-a.Announce.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/module-init-tools-3.12-r1/AUTHORS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/module-init-tools-3.12-r1/ChangeLog.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/module-init-tools-3.12-r1/NEWS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/module-init-tools-3.12-r1/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/module-init-tools-3.12-r1/TODO.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/module-init-tools-3.16-r1/AUTHORS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/module-init-tools-3.16-r1/ChangeLog.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/module-init-tools-3.16-r1/NEWS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/module-init-tools-3.16-r1/README.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/module-init-tools-3.16-r1/TODO.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/mpfr-3.0.0_p3/AUTHORS.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/mpfr-3.0.0_p3/BUGS.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/mpfr-3.0.0_p3/COPYING.LESSER.bz2
@@ -14482,8 +13941,8 @@
 %%PREFIX_SUBDIR%%usr/share/doc/net-tools-1.60_p20110409135728/README.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/net-tools-1.60_p20110409135728/README.ipv6.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/net-tools-1.60_p20110409135728/TODO.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openrc-0.8.2-r1/README.newnet.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/openrc-0.8.2-r1/net.example
+%%PREFIX_SUBDIR%%usr/share/doc/openrc-0.8.3-r1/README.newnet.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/openrc-0.8.3-r1/net.example.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1-r1/CREDITS.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1-r1/ChangeLog.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1-r1/OVERVIEW.bz2
@@ -14680,9 +14139,9 @@
 %%PREFIX_SUBDIR%%usr/share/doc/perl-5.12.3-r1/README.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/popt-1.16-r1/CHANGES.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/popt-1.16-r1/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/portage-2.1.9.42/ChangeLog.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/portage-2.1.9.42/NEWS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/portage-2.1.9.42/RELEASE-NOTES.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/portage-2.1.10.3/ChangeLog.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/portage-2.1.10.3/NEWS.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/portage-2.1.10.3/RELEASE-NOTES.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/procps-3.2.8-r2/BUGS.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/procps-3.2.8-r2/HACKING.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/procps-3.2.8-r2/NEWS.bz2
@@ -14698,8 +14157,7 @@
 %%PREFIX_SUBDIR%%usr/share/doc/python-3.1.3-r1/ACKS.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/python-3.1.3-r1/HISTORY.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/python-3.1.3-r1/NEWS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/python-updater-0.8-r1/AUTHORS.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/python-updater-0.8-r1/ChangeLog.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/python-updater-0.9/AUTHORS.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/readline-6.1_p2/CHANGELOG.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/readline-6.1_p2/CHANGES.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/readline-6.1_p2/NEWS.bz2
@@ -14781,9 +14239,9 @@
 %%PREFIX_SUBDIR%%usr/share/doc/timezone-data-2011e/html/itca.jpg
 %%PREFIX_SUBDIR%%usr/share/doc/timezone-data-2011e/html/tz-art.htm
 %%PREFIX_SUBDIR%%usr/share/doc/timezone-data-2011e/html/tz-link.htm
-%%PREFIX_SUBDIR%%usr/share/doc/udev-151-r4/ChangeLog.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/udev-151-r4/README.bz2
-%%PREFIX_SUBDIR%%usr/share/doc/udev-151-r4/TODO.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/udev-164-r2/ChangeLog.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/udev-164-r2/README.bz2
+%%PREFIX_SUBDIR%%usr/share/doc/udev-164-r2/TODO.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/util-linux-2.19.1/AUTHORS.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/util-linux-2.19.1/NEWS.bz2
 %%PREFIX_SUBDIR%%usr/share/doc/util-linux-2.19.1/README.bz2
@@ -15921,23 +15379,15 @@
 %%PREFIX_SUBDIR%%usr/share/i18n/locales/zh_SG
 %%PREFIX_SUBDIR%%usr/share/i18n/locales/zh_TW
 %%PREFIX_SUBDIR%%usr/share/i18n/locales/zu_ZA
-%%PREFIX_SUBDIR%%usr/share/info/autoconf.info.bz2
-%%PREFIX_SUBDIR%%usr/share/info/automake1.11.info-1.bz2
-%%PREFIX_SUBDIR%%usr/share/info/automake1.11.info-2.bz2
-%%PREFIX_SUBDIR%%usr/share/info/automake1.11.info.bz2
 %%PREFIX_SUBDIR%%usr/share/info/autosprintf.info.bz2
 %%PREFIX_SUBDIR%%usr/share/info/bash.info.bz2
 %%PREFIX_SUBDIR%%usr/share/info/bashref.info.bz2
-%%PREFIX_SUBDIR%%usr/share/info/bison.info.bz2
 %%PREFIX_SUBDIR%%usr/share/info/coreutils.info.bz2
 %%PREFIX_SUBDIR%%usr/share/info/cpio.info.bz2
 %%PREFIX_SUBDIR%%usr/share/info/diff.info.bz2
 %%PREFIX_SUBDIR%%usr/share/info/dir
 %%PREFIX_SUBDIR%%usr/share/info/find-maint.info.bz2
 %%PREFIX_SUBDIR%%usr/share/info/find.info.bz2
-%%PREFIX_SUBDIR%%usr/share/info/flex.info-1.bz2
-%%PREFIX_SUBDIR%%usr/share/info/flex.info-2.bz2
-%%PREFIX_SUBDIR%%usr/share/info/flex.info.bz2
 %%PREFIX_SUBDIR%%usr/share/info/gawk.info.bz2
 %%PREFIX_SUBDIR%%usr/share/info/gawkinet.info.bz2
 %%PREFIX_SUBDIR%%usr/share/info/gdbm.info.bz2
@@ -15967,12 +15417,6 @@
 %%PREFIX_SUBDIR%%usr/share/info/libc.info-9.bz2
 %%PREFIX_SUBDIR%%usr/share/info/libc.info.bz2
 %%PREFIX_SUBDIR%%usr/share/info/libffi.info.bz2
-%%PREFIX_SUBDIR%%usr/share/info/libtool.info-1.bz2
-%%PREFIX_SUBDIR%%usr/share/info/libtool.info-2.bz2
-%%PREFIX_SUBDIR%%usr/share/info/libtool.info.bz2
-%%PREFIX_SUBDIR%%usr/share/info/m4.info-1.bz2
-%%PREFIX_SUBDIR%%usr/share/info/m4.info-2.bz2
-%%PREFIX_SUBDIR%%usr/share/info/m4.info.bz2
 %%PREFIX_SUBDIR%%usr/share/info/make.info-1.bz2
 %%PREFIX_SUBDIR%%usr/share/info/make.info-2.bz2
 %%PREFIX_SUBDIR%%usr/share/info/make.info.bz2
@@ -15981,7 +15425,6 @@
 %%PREFIX_SUBDIR%%usr/share/info/readline.info.bz2
 %%PREFIX_SUBDIR%%usr/share/info/rluserman.info.bz2
 %%PREFIX_SUBDIR%%usr/share/info/sed.info.bz2
-%%PREFIX_SUBDIR%%usr/share/info/standards.info.bz2
 %%PREFIX_SUBDIR%%usr/share/info/tar.info-1.bz2
 %%PREFIX_SUBDIR%%usr/share/info/tar.info-2.bz2
 %%PREFIX_SUBDIR%%usr/share/info/tar.info.bz2
@@ -16212,48 +15655,6 @@
 %%PREFIX_SUBDIR%%usr/share/keymaps/sun/sunt5-ru.map.gz
 %%PREFIX_SUBDIR%%usr/share/keymaps/sun/sunt5-uk.map.gz
 %%PREFIX_SUBDIR%%usr/share/keymaps/sun/sunt5-us-cz.map.gz
-%%PREFIX_SUBDIR%%usr/share/libtool/config/compile
-%%PREFIX_SUBDIR%%usr/share/libtool/config/config.guess
-%%PREFIX_SUBDIR%%usr/share/libtool/config/config.sub
-%%PREFIX_SUBDIR%%usr/share/libtool/config/depcomp
-%%PREFIX_SUBDIR%%usr/share/libtool/config/install-sh
-%%PREFIX_SUBDIR%%usr/share/libtool/config/ltmain.sh
-%%PREFIX_SUBDIR%%usr/share/libtool/config/missing
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/COPYING.LIB
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/Makefile.am
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/Makefile.in
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/Makefile.inc
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/README
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/aclocal.m4
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/argz.c
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/argz_.h
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/config-h.in
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/configure
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/configure.ac
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/libltdl/lt__alloc.h
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/libltdl/lt__dirent.h
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/libltdl/lt__glibc.h
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/libltdl/lt__private.h
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/libltdl/lt__strl.h
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/libltdl/lt_dlloader.h
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/libltdl/lt_error.h
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/libltdl/lt_system.h
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/libltdl/slist.h
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/loaders/dld_link.c
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/loaders/dlopen.c
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/loaders/dyld.c
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/loaders/load_add_on.c
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/loaders/loadlibrary.c
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/loaders/preopen.c
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/loaders/shl_load.c
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/lt__alloc.c
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/lt__dirent.c
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/lt__strl.c
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/lt_dlloader.c
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/lt_error.c
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/ltdl.c
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/ltdl.h
-%%PREFIX_SUBDIR%%usr/share/libtool/libltdl/slist.c
 %%PREFIX_SUBDIR%%usr/share/locale/af/LC_MESSAGES/bash.mo
 %%PREFIX_SUBDIR%%usr/share/locale/af/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/af/LC_MESSAGES/grep.mo
@@ -16262,7 +15663,7 @@
 %%PREFIX_SUBDIR%%usr/share/locale/ar/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/as/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/as/LC_MESSAGES/cracklib.mo
-%%PREFIX_SUBDIR%%usr/share/locale/ast/LC_MESSAGES/bison-runtime.mo
+%%PREFIX_SUBDIR%%usr/share/locale/ast/LC_MESSAGES/gawk.mo
 %%PREFIX_SUBDIR%%usr/share/locale/be/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/be/LC_MESSAGES/findutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/be/LC_MESSAGES/gettext-runtime.mo
@@ -16294,7 +15695,6 @@
 %%PREFIX_SUBDIR%%usr/share/locale/ca/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ca/LC_MESSAGES/e2fsprogs.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ca/LC_MESSAGES/findutils.mo
-%%PREFIX_SUBDIR%%usr/share/locale/ca/LC_MESSAGES/flex.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ca/LC_MESSAGES/gawk.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ca/LC_MESSAGES/gettext-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ca/LC_MESSAGES/gettext-tools.mo
@@ -16333,14 +15733,11 @@
 %%PREFIX_SUBDIR%%usr/share/locale/cs/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/cs/man
 %%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/Linux-PAM.mo
-%%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/cpio.mo
 %%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/findutils.mo
-%%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/flex.mo
 %%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/gawk.mo
 %%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/gettext-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/da/LC_MESSAGES/gettext-tools.mo
@@ -16360,15 +15757,12 @@
 %%PREFIX_SUBDIR%%usr/share/locale/da/man
 %%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/bash.mo
-%%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/cpio.mo
 %%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/e2fsprogs.mo
 %%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/findutils.mo
-%%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/flex.mo
 %%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/gawk.mo
 %%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/gettext-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/de/LC_MESSAGES/gettext-tools.mo
@@ -16391,8 +15785,6 @@
 %%PREFIX_SUBDIR%%usr/share/locale/de/man
 %%PREFIX_SUBDIR%%usr/share/locale/de_AT/LC_MESSAGES/texinfo.mo
 %%PREFIX_SUBDIR%%usr/share/locale/dz/LC_MESSAGES/shadow.mo
-%%PREFIX_SUBDIR%%usr/share/locale/el/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/el/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/el/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/el/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/el/LC_MESSAGES/diffutils.mo
@@ -16432,15 +15824,12 @@
 %%PREFIX_SUBDIR%%usr/share/locale/eo/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/bash.mo
-%%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/cpio.mo
 %%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/e2fsprogs.mo
 %%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/findutils.mo
-%%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/flex.mo
 %%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/gawk.mo
 %%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/gettext-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/es/LC_MESSAGES/gettext-tools.mo
@@ -16459,8 +15848,6 @@
 %%PREFIX_SUBDIR%%usr/share/locale/es/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/es/man
 %%PREFIX_SUBDIR%%usr/share/locale/et/LC_MESSAGES/bash.mo
-%%PREFIX_SUBDIR%%usr/share/locale/et/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/et/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/et/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/et/LC_MESSAGES/findutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/et/LC_MESSAGES/gettext-runtime.mo
@@ -16485,8 +15872,6 @@
 %%PREFIX_SUBDIR%%usr/share/locale/eu/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fi/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fi/LC_MESSAGES/bash.mo
-%%PREFIX_SUBDIR%%usr/share/locale/fi/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/fi/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fi/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fi/LC_MESSAGES/cpio.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fi/LC_MESSAGES/cracklib.mo
@@ -16509,15 +15894,12 @@
 %%PREFIX_SUBDIR%%usr/share/locale/fi/man
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/bash.mo
-%%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/cpio.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/e2fsprogs.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/findutils.mo
-%%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/flex.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/gawk.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/gettext-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_MESSAGES/gettext-tools.mo
@@ -16538,13 +15920,10 @@
 %%PREFIX_SUBDIR%%usr/share/locale/fr/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/fr/man
 %%PREFIX_SUBDIR%%usr/share/locale/ga/LC_MESSAGES/bash.mo
-%%PREFIX_SUBDIR%%usr/share/locale/ga/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/ga/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ga/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ga/LC_MESSAGES/cpio.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ga/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ga/LC_MESSAGES/findutils.mo
-%%PREFIX_SUBDIR%%usr/share/locale/ga/LC_MESSAGES/flex.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ga/LC_MESSAGES/gawk.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ga/LC_MESSAGES/gettext-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ga/LC_MESSAGES/grep.mo
@@ -16586,8 +15965,6 @@
 %%PREFIX_SUBDIR%%usr/share/locale/he/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/hi/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/hi/LC_MESSAGES/cracklib.mo
-%%PREFIX_SUBDIR%%usr/share/locale/hr/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/hr/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/hr/LC_MESSAGES/findutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/hr/LC_MESSAGES/grep.mo
 %%PREFIX_SUBDIR%%usr/share/locale/hr/LC_MESSAGES/libc.mo
@@ -16617,13 +15994,12 @@
 %%PREFIX_SUBDIR%%usr/share/locale/hu/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/hu/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/id/LC_MESSAGES/bash.mo
-%%PREFIX_SUBDIR%%usr/share/locale/id/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/id/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/id/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/id/LC_MESSAGES/cpio.mo
 %%PREFIX_SUBDIR%%usr/share/locale/id/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/id/LC_MESSAGES/e2fsprogs.mo
 %%PREFIX_SUBDIR%%usr/share/locale/id/LC_MESSAGES/findutils.mo
+%%PREFIX_SUBDIR%%usr/share/locale/id/LC_MESSAGES/gawk.mo
 %%PREFIX_SUBDIR%%usr/share/locale/id/LC_MESSAGES/gettext-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/id/LC_MESSAGES/gettext-tools.mo
 %%PREFIX_SUBDIR%%usr/share/locale/id/LC_MESSAGES/grep.mo
@@ -16640,8 +16016,6 @@
 %%PREFIX_SUBDIR%%usr/share/locale/id/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/is/LC_MESSAGES/popt.mo
 %%PREFIX_SUBDIR%%usr/share/locale/it/LC_MESSAGES/Linux-PAM.mo
-%%PREFIX_SUBDIR%%usr/share/locale/it/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/it/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/it/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/it/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/it/LC_MESSAGES/diffutils.mo
@@ -16666,8 +16040,6 @@
 %%PREFIX_SUBDIR%%usr/share/locale/it/man
 %%PREFIX_SUBDIR%%usr/share/locale/ja/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ja/LC_MESSAGES/bash.mo
-%%PREFIX_SUBDIR%%usr/share/locale/ja/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/ja/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ja/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ja/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ja/LC_MESSAGES/diffutils.mo
@@ -16699,7 +16071,6 @@
 %%PREFIX_SUBDIR%%usr/share/locale/ko/LC_MESSAGES/cpio.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ko/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ko/LC_MESSAGES/findutils.mo
-%%PREFIX_SUBDIR%%usr/share/locale/ko/LC_MESSAGES/flex.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ko/LC_MESSAGES/gettext-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ko/LC_MESSAGES/gettext-tools.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ko/LC_MESSAGES/grep.mo
@@ -16711,7 +16082,6 @@
 %%PREFIX_SUBDIR%%usr/share/locale/ko/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ko/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ko/man
-%%PREFIX_SUBDIR%%usr/share/locale/ky/LC_MESSAGES/bison-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ky/LC_MESSAGES/grep.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ky/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/lg/LC_MESSAGES/coreutils.mo
@@ -16719,7 +16089,6 @@
 %%PREFIX_SUBDIR%%usr/share/locale/lg/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/locale.alias
 %%PREFIX_SUBDIR%%usr/share/locale/lt/LC_MESSAGES/bash.mo
-%%PREFIX_SUBDIR%%usr/share/locale/lt/LC_MESSAGES/bison-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/lt/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/lt/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/lt/LC_MESSAGES/findutils.mo
@@ -16728,7 +16097,6 @@
 %%PREFIX_SUBDIR%%usr/share/locale/lt/LC_MESSAGES/make.mo
 %%PREFIX_SUBDIR%%usr/share/locale/lt/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/lt/LC_TIME/coreutils.mo
-%%PREFIX_SUBDIR%%usr/share/locale/lv/LC_MESSAGES/bison-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/lv/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/lv/LC_MESSAGES/popt.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ml/LC_MESSAGES/Linux-PAM.mo
@@ -16736,8 +16104,6 @@
 %%PREFIX_SUBDIR%%usr/share/locale/mr/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/mr/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ms/LC_MESSAGES/Linux-PAM.mo
-%%PREFIX_SUBDIR%%usr/share/locale/ms/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/ms/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ms/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ms/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ms/LC_MESSAGES/findutils.mo
@@ -16745,8 +16111,6 @@
 %%PREFIX_SUBDIR%%usr/share/locale/ms/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ms/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nb/LC_MESSAGES/Linux-PAM.mo
-%%PREFIX_SUBDIR%%usr/share/locale/nb/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/nb/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nb/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nb/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nb/LC_MESSAGES/gettext-runtime.mo
@@ -16764,15 +16128,12 @@
 %%PREFIX_SUBDIR%%usr/share/locale/ne/LC_MESSAGES/shadow.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/bash.mo
-%%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/cpio.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/e2fsprogs.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/findutils.mo
-%%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/flex.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/gawk.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/gettext-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/nl/LC_MESSAGES/gettext-tools.mo
@@ -16801,15 +16162,12 @@
 %%PREFIX_SUBDIR%%usr/share/locale/pa/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/bash.mo
-%%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/cpio.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/e2fsprogs.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/findutils.mo
-%%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/flex.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/gawk.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/gettext-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_MESSAGES/gettext-tools.mo
@@ -16829,8 +16187,6 @@
 %%PREFIX_SUBDIR%%usr/share/locale/pl/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pl/man
 %%PREFIX_SUBDIR%%usr/share/locale/pt/LC_MESSAGES/Linux-PAM.mo
-%%PREFIX_SUBDIR%%usr/share/locale/pt/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/pt/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt/LC_MESSAGES/findutils.mo
@@ -16847,14 +16203,11 @@
 %%PREFIX_SUBDIR%%usr/share/locale/pt/man
 %%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/bash.mo
-%%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/cpio.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/findutils.mo
-%%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/flex.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/gawk.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/gettext-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/gettext-tools.mo
@@ -16870,13 +16223,10 @@
 %%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/pt_BR/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ro/LC_MESSAGES/bash.mo
-%%PREFIX_SUBDIR%%usr/share/locale/ro/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/ro/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ro/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ro/LC_MESSAGES/cpio.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ro/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ro/LC_MESSAGES/findutils.mo
-%%PREFIX_SUBDIR%%usr/share/locale/ro/LC_MESSAGES/flex.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ro/LC_MESSAGES/gawk.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ro/LC_MESSAGES/gettext-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ro/LC_MESSAGES/gettext-tools.mo
@@ -16894,14 +16244,11 @@
 %%PREFIX_SUBDIR%%usr/share/locale/ro/man
 %%PREFIX_SUBDIR%%usr/share/locale/ru/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ru/LC_MESSAGES/bash.mo
-%%PREFIX_SUBDIR%%usr/share/locale/ru/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/ru/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ru/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ru/LC_MESSAGES/cpio.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ru/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ru/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ru/LC_MESSAGES/findutils.mo
-%%PREFIX_SUBDIR%%usr/share/locale/ru/LC_MESSAGES/flex.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ru/LC_MESSAGES/gettext-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ru/LC_MESSAGES/gettext-tools.mo
 %%PREFIX_SUBDIR%%usr/share/locale/ru/LC_MESSAGES/grep.mo
@@ -16941,7 +16288,6 @@
 %%PREFIX_SUBDIR%%usr/share/locale/sk/LC_MESSAGES/tar.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sk/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sk/LC_TIME/coreutils.mo
-%%PREFIX_SUBDIR%%usr/share/locale/sl/LC_MESSAGES/bison-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sl/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sl/LC_MESSAGES/findutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sl/LC_MESSAGES/gettext-runtime.mo
@@ -16968,14 +16314,11 @@
 %%PREFIX_SUBDIR%%usr/share/locale/sr@latin/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/bash.mo
-%%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/cpio.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/e2fsprogs.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/findutils.mo
-%%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/flex.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/gawk.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/gettext-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/sv/LC_MESSAGES/gettext-tools.mo
@@ -16997,20 +16340,16 @@
 %%PREFIX_SUBDIR%%usr/share/locale/ta/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/te/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/te/LC_MESSAGES/cracklib.mo
-%%PREFIX_SUBDIR%%usr/share/locale/th/LC_MESSAGES/bison-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/th/LC_MESSAGES/popt.mo
 %%PREFIX_SUBDIR%%usr/share/locale/tl/LC_MESSAGES/shadow.mo
 %%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/bash.mo
-%%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/cpio.mo
 %%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/e2fsprogs.mo
 %%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/findutils.mo
-%%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/flex.mo
 %%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/gawk.mo
 %%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/gettext-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/gettext-tools.mo
@@ -17028,8 +16367,6 @@
 %%PREFIX_SUBDIR%%usr/share/locale/tr/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/tr/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/uk/LC_MESSAGES/Linux-PAM.mo
-%%PREFIX_SUBDIR%%usr/share/locale/uk/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/uk/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/uk/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/uk/LC_MESSAGES/cpio.mo
 %%PREFIX_SUBDIR%%usr/share/locale/uk/LC_MESSAGES/diffutils.mo
@@ -17047,14 +16384,11 @@
 %%PREFIX_SUBDIR%%usr/share/locale/uk/LC_MESSAGES/wget.mo
 %%PREFIX_SUBDIR%%usr/share/locale/uk/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/vi/LC_MESSAGES/bash.mo
-%%PREFIX_SUBDIR%%usr/share/locale/vi/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/vi/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/vi/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/vi/LC_MESSAGES/cpio.mo
 %%PREFIX_SUBDIR%%usr/share/locale/vi/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/vi/LC_MESSAGES/e2fsprogs.mo
 %%PREFIX_SUBDIR%%usr/share/locale/vi/LC_MESSAGES/findutils.mo
-%%PREFIX_SUBDIR%%usr/share/locale/vi/LC_MESSAGES/flex.mo
 %%PREFIX_SUBDIR%%usr/share/locale/vi/LC_MESSAGES/gawk.mo
 %%PREFIX_SUBDIR%%usr/share/locale/vi/LC_MESSAGES/gettext-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/vi/LC_MESSAGES/gettext-tools.mo
@@ -17073,14 +16407,12 @@
 %%PREFIX_SUBDIR%%usr/share/locale/vi/LC_TIME/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/wa/LC_MESSAGES/popt.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/Linux-PAM.mo
-%%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/bison-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/cpio.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/cracklib.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/diffutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/e2fsprogs.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/findutils.mo
-%%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/flex.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/gawk.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/gettext-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_CN/LC_MESSAGES/gettext-tools.mo
@@ -17099,8 +16431,6 @@
 %%PREFIX_SUBDIR%%usr/share/locale/zh_HK/LC_MESSAGES/gettext-runtime.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_TW/LC_MESSAGES/Linux-PAM.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_TW/LC_MESSAGES/bash.mo
-%%PREFIX_SUBDIR%%usr/share/locale/zh_TW/LC_MESSAGES/bison-runtime.mo
-%%PREFIX_SUBDIR%%usr/share/locale/zh_TW/LC_MESSAGES/bison.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_TW/LC_MESSAGES/coreutils.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_TW/LC_MESSAGES/cpio.mo
 %%PREFIX_SUBDIR%%usr/share/locale/zh_TW/LC_MESSAGES/cracklib.mo
@@ -17451,27 +16781,18 @@
 %%PREFIX_SUBDIR%%usr/share/man/man0p/wctype.h.0p.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man0p/wordexp.h.0p.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/a2p.1.bz2
-%%PREFIX_SUBDIR%%usr/share/man/man1/aclocal-1.11.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/addftinfo.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/afmtodit.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/apropos.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/arch.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/attr.1.bz2
-%%PREFIX_SUBDIR%%usr/share/man/man1/autoconf-2.65.1.bz2
-%%PREFIX_SUBDIR%%usr/share/man/man1/autoheader-2.65.1.bz2
-%%PREFIX_SUBDIR%%usr/share/man/man1/autom4te-2.65.1.bz2
-%%PREFIX_SUBDIR%%usr/share/man/man1/automake-1.11.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/autopoint.1.bz2
-%%PREFIX_SUBDIR%%usr/share/man/man1/autoreconf-2.65.1.bz2
-%%PREFIX_SUBDIR%%usr/share/man/man1/autoscan-2.65.1.bz2
-%%PREFIX_SUBDIR%%usr/share/man/man1/autoupdate-2.65.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/awk.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/base64.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/basename.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/bash.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/bashbug.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/bashcomp-config.1.bz2
-%%PREFIX_SUBDIR%%usr/share/man/man1/bison.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/builtins.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/bunzip2.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/bzcat.1.bz2
@@ -17511,8 +16832,6 @@
 %%PREFIX_SUBDIR%%usr/share/man/man1/column.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/comm.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/compile_et.1.bz2
-%%PREFIX_SUBDIR%%usr/share/man/man1/config.guess-2.65.1.bz2
-%%PREFIX_SUBDIR%%usr/share/man/man1/config.sub-2.65.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/config_data-0.3603-perl-5.12.3.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/config_data.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/corelist-2.43-perl-5.12.3.1.bz2
@@ -17573,7 +16892,6 @@
 %%PREFIX_SUBDIR%%usr/share/man/man1/file.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/find.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/find2perl.1.bz2
-%%PREFIX_SUBDIR%%usr/share/man/man1/flex.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/flock.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/fmt.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/fold.1.bz2
@@ -17750,7 +17068,6 @@
 %%PREFIX_SUBDIR%%usr/share/man/man1/hostname.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/hpftodit.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/id.1.bz2
-%%PREFIX_SUBDIR%%usr/share/man/man1/ifnames-2.65.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/igawk.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/indxbib.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/info.1.bz2
@@ -17778,8 +17095,6 @@
 %%PREFIX_SUBDIR%%usr/share/man/man1/lessecho.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/lesskey.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/libnetcfg.1.bz2
-%%PREFIX_SUBDIR%%usr/share/man/man1/libtool.1.bz2
-%%PREFIX_SUBDIR%%usr/share/man/man1/libtoolize.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/line.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/link.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/lkbib.1.bz2
@@ -17804,7 +17119,6 @@
 %%PREFIX_SUBDIR%%usr/share/man/man1/lzmadec.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/lzmainfo.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/lzmore.1.bz2
-%%PREFIX_SUBDIR%%usr/share/man/man1/m4.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/make.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/makeinfo.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/man.1.bz2
@@ -18330,7 +17644,6 @@
 %%PREFIX_SUBDIR%%usr/share/man/man1/xzgrep.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/xzless.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/xzmore.1.bz2
-%%PREFIX_SUBDIR%%usr/share/man/man1/yacc.bison.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/yes.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/ypdomainname.1.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man1/zcat.1.bz2
@@ -23691,6 +23004,7 @@
 %%PREFIX_SUBDIR%%usr/share/man/man5/complex.5.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man5/core.5.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man5/depmod.conf.5.bz2
+%%PREFIX_SUBDIR%%usr/share/man/man5/depmod.d.5.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man5/dir_colors.5.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man5/e2fsck.conf.5.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man5/ebuild.5.bz2
@@ -23741,6 +23055,7 @@
 %%PREFIX_SUBDIR%%usr/share/man/man5/modprobe.conf.5.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man5/modprobe.d.5.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man5/modules.dep.5.bz2
+%%PREFIX_SUBDIR%%usr/share/man/man5/modules.dep.bin.5.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man5/moduli.5.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man5/motd.5.bz2
 %%PREFIX_SUBDIR%%usr/share/man/man5/namespace.conf.5.bz2
@@ -28807,7 +28122,9 @@
 %%PREFIX_SUBDIR%%usr/share/zoneinfo/right/WET
 %%PREFIX_SUBDIR%%usr/share/zoneinfo/right/Zulu
 %%PREFIX_SUBDIR%%usr/share/zoneinfo/zone.tab
+%%PREFIX_SUBDIR%%usr/src/.keep
 %%PREFIX_SUBDIR%%usr/tmp
+%%PREFIX_SUBDIR%%var/cache/.keep
 %%PREFIX_SUBDIR%%var/cache/edb/counter
 %%PREFIX_SUBDIR%%var/cache/edb/mtimedb
 %%PREFIX_SUBDIR%%var/cache/edb/vdb_blockers.pickle
@@ -28922,32 +28239,31 @@
 %%PREFIX_SUBDIR%%var/db/pkg/app-admin/perl-cleaner-2.7/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/app-admin/perl-cleaner-2.7/perl-cleaner-2.7.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/app-admin/perl-cleaner-2.7/repository
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/PF
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/USE
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/python-updater-0.8-r1.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1/repository
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/PF
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/USE
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/python-updater-0.9.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9/repository
 %%PREFIX_SUBDIR%%var/db/pkg/app-arch/bzip2-1.0.6/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/app-arch/bzip2-1.0.6/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/app-arch/bzip2-1.0.6/CATEGORY
@@ -29341,6 +28657,7 @@
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/expat-2.0.1-r3/FEATURES
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/expat-2.0.1-r3/HOMEPAGE
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/expat-2.0.1-r3/INHERITED
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/expat-2.0.1-r3/IUSE
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/expat-2.0.1-r3/KEYWORDS
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/expat-2.0.1-r3/LDFLAGS
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/expat-2.0.1-r3/LICENSE
@@ -29364,6 +28681,7 @@
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/gmp-4.3.2/COUNTER
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/gmp-4.3.2/CXXFLAGS
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/gmp-4.3.2/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/gmp-4.3.2/DEPEND
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/gmp-4.3.2/DESCRIPTION
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/gmp-4.3.2/EAPI
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/gmp-4.3.2/FEATURES
@@ -29440,36 +28758,36 @@
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libpcre-8.12/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libpcre-8.12/libpcre-8.12.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libpcre-8.12/repository
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/NEEDED
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/NEEDED.ELF.2
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/PF
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/USE
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/libxml2-2.7.8.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8/repository
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/DEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/INHERITED
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/NEEDED
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/NEEDED.ELF.2
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/PF
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/USE
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/libxml2-2.7.8-r1.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1/repository
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/mpfr-3.0.0_p3/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/mpfr-3.0.0_p3/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/mpfr-3.0.0_p3/CATEGORY
@@ -30027,33 +29345,33 @@
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/attr-2.4.44/attr-2.4.44.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/attr-2.4.44/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/attr-2.4.44/repository
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/PDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/PF
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/USE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/baselayout-2.0.2.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2/repository
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/INHERITED
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/PDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/PF
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/USE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/baselayout-2.0.3.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3/repository
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/busybox-1.17.4/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/busybox-1.17.4/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/busybox-1.17.4/CATEGORY
@@ -30173,36 +29491,36 @@
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/diffutils-3.0/diffutils-3.0.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/diffutils-3.0/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/diffutils-3.0/repository
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/NEEDED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/NEEDED.ELF.2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/PF
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/USE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/file-5.05.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05/repository
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/DEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/INHERITED
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/NEEDED
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/NEEDED.ELF.2
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/PF
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/USE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/file-5.07-r3.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3/repository
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/findutils-4.4.2/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/findutils-4.4.2/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/findutils-4.4.2/CATEGORY
@@ -30233,35 +29551,35 @@
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/findutils-4.4.2/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/findutils-4.4.2/findutils-4.4.2.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/findutils-4.4.2/repository
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/NEEDED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/NEEDED.ELF.2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/PF
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/USE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/gawk-3.1.6.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6/repository
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/DEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/INHERITED
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/NEEDED
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/NEEDED.ELF.2
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/PF
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/USE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/gawk-3.1.8.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8/repository
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/grep-2.5.4-r1/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/grep-2.5.4-r1/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/grep-2.5.4-r1/CATEGORY
@@ -30467,37 +29785,37 @@
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-posix-2003a/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-posix-2003a/man-pages-posix-2003a.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-posix-2003a/repository
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/NEEDED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/NEEDED.ELF.2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/PF
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/RESTRICT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/USE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/module-init-tools-3.12-r1.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1/repository
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/DEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/INHERITED
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/NEEDED
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/NEEDED.ELF.2
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/PF
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/RESTRICT
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/USE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/module-init-tools-3.16-r1.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1/repository
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/CATEGORY
@@ -30528,66 +29846,66 @@
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/net-tools-1.60_p20110409135728.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728/repository
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/CC
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/NEEDED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/NEEDED.ELF.2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/PF
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/USE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/openrc-0.8.2-r1.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1/repository
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/PDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/PF
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/USE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/portage-2.1.9.42.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42/repository
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/CC
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/DEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/INHERITED
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/NEEDED
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/NEEDED.ELF.2
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/PF
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/USE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/openrc-0.8.3-r1.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1/repository
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/DEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/INHERITED
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/PDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/PF
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/USE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/portage-2.1.10.3.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3/repository
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/sandbox-2.4/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/sandbox-2.4/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/sandbox-2.4/CATEGORY
@@ -30851,111 +30169,6 @@
 %%PREFIX_SUBDIR%%var/db/pkg/sys-auth/pambase-20101024/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/sys-auth/pambase-20101024/pambase-20101024.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/sys-auth/pambase-20101024/repository
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/PF
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/USE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/autoconf-2.65-r1.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1/repository
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/PF
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/USE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/autoconf-wrapper-10-r1.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1/repository
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/PF
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/USE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/automake-1.11.1.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1/repository
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/PF
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/USE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/automake-wrapper-4.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4/repository
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/binutils-2.20.1-r1/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/binutils-2.20.1-r1/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/binutils-2.20.1-r1/CATEGORY
@@ -31012,65 +30225,6 @@
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/binutils-config-2-r1/binutils-config-2-r1.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/binutils-config-2-r1/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/binutils-config-2-r1/repository
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/NEEDED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/NEEDED.ELF.2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/PF
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/USE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/bison-2.4.3.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3/repository
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/NEEDED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/NEEDED.ELF.2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/PF
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/USE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/flex-2.5.35.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35/repository
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/gcc-4.4.5/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/gcc-4.4.5/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/gcc-4.4.5/CATEGORY
@@ -31214,65 +30368,6 @@
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libperl-5.10.1/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libperl-5.10.1/libperl-5.10.1.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libperl-5.10.1/repository
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/NEEDED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/NEEDED.ELF.2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/PF
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/USE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/libtool-2.2.10.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10/repository
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/NEEDED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/NEEDED.ELF.2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/PF
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/USE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/m4-1.4.15.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15/repository
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82/CATEGORY
@@ -31388,36 +30483,36 @@
 %%PREFIX_SUBDIR%%var/db/pkg/sys-fs/sysfsutils-2.1.0/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/sys-fs/sysfsutils-2.1.0/repository
 %%PREFIX_SUBDIR%%var/db/pkg/sys-fs/sysfsutils-2.1.0/sysfsutils-2.1.0.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/CBUILD
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/CFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/CHOST
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/CXXFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/DEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/HOMEPAGE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/INHERITED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/IUSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/LDFLAGS
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/LICENSE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/NEEDED
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/NEEDED.ELF.2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/PF
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/USE
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/repository
-%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4/udev-151-r4.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/CBUILD
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/CFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/CHOST
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/CXXFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/DEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/HOMEPAGE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/INHERITED
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/IUSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/LDFLAGS
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/LICENSE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/NEEDED
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/NEEDED.ELF.2
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/PF
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/USE
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/repository
+%%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2/udev-164-r2.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/sys-kernel/linux-headers-2.6.36.1/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/sys-kernel/linux-headers-2.6.36.1/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/sys-kernel/linux-headers-2.6.36.1/CATEGORY
@@ -32059,60 +31154,60 @@
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-MD5-2.39/environment.bz2
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-MD5-2.39/perl-Digest-MD5-2.39.ebuild
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-MD5-2.39/repository
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0/PF
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0/USE
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0/perl-Scalar-List-Utils-1.230.0.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0/repository
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0/PF
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0/USE
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0/perl-digest-base-1.160.0.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0/repository
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0/BINPKGMD5
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0/BUILD_TIME
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0/CATEGORY
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0/CONTENTS
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0/COUNTER
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0/DEFINED_PHASES
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0/DESCRIPTION
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0/EAPI
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0/FEATURES
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0/KEYWORDS
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0/PF
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0/RDEPEND
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0/SIZE
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0/SLOT
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0/USE
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0/environment.bz2
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0/perl-libnet-1.220.0.ebuild
-%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0/repository
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/PF
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/USE
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/perl-Scalar-List-Utils-1.230.0-r1.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1/repository
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0-r1/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0-r1/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0-r1/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0-r1/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0-r1/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0-r1/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0-r1/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0-r1/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0-r1/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0-r1/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0-r1/PF
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0-r1/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0-r1/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0-r1/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0-r1/USE
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0-r1/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0-r1/perl-digest-base-1.160.0-r1.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0-r1/repository
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/BINPKGMD5
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/BUILD_TIME
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/CATEGORY
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/CONTENTS
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/COUNTER
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/DEFINED_PHASES
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/DESCRIPTION
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/EAPI
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/FEATURES
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/KEYWORDS
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/PF
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/RDEPEND
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/SIZE
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/SLOT
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/USE
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/environment.bz2
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/perl-libnet-1.220.0-r1.ebuild
+%%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1/repository
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/ssh-0/BINPKGMD5
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/ssh-0/BUILD_TIME
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/ssh-0/CATEGORY
@@ -32134,16 +31229,21 @@
 %%PREFIX_SUBDIR%%var/db/pkg/virtual/ssh-0/ssh-0.ebuild
 %%PREFIX_SUBDIR%%var/empty/.keep
 %%PREFIX_SUBDIR%%var/empty/.keep_net-misc_openssh-0
+%%PREFIX_SUBDIR%%var/lib/.keep
 %%PREFIX_SUBDIR%%var/lib/gentoo/news/.keep_app-admin_eselect-0
 %%PREFIX_SUBDIR%%var/lib/gentoo/news/news-gentoo.skip
 %%PREFIX_SUBDIR%%var/lib/gentoo/news/news-gentoo.unread
+%%PREFIX_SUBDIR%%var/lib/portage/config
 %%PREFIX_SUBDIR%%var/lib/portage/world
 %%PREFIX_SUBDIR%%var/lock/.keep
+%%PREFIX_SUBDIR%%var/log/.keep
 %%PREFIX_SUBDIR%%var/log/emerge-fetch.log
 %%PREFIX_SUBDIR%%var/log/sandbox/.keep_sys-apps_sandbox-0
 %%PREFIX_SUBDIR%%var/run/.keep
+%%PREFIX_SUBDIR%%var/spool/.keep
 %%PREFIX_SUBDIR%%var/tmp/.keep
 @dirrm %%PREFIX_SUBDIR%%var/tmp
+@dirrm %%PREFIX_SUBDIR%%var/spool
 @dirrm %%PREFIX_SUBDIR%%var/run/sepermit
 @dirrm %%PREFIX_SUBDIR%%var/run
 @dirrm %%PREFIX_SUBDIR%%var/log/sandbox
@@ -32157,9 +31257,9 @@
 @dirrm %%PREFIX_SUBDIR%%var/lib
 @dirrm %%PREFIX_SUBDIR%%var/empty
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/virtual/ssh-0
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-libnet-1.220.0-r1
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-digest-base-1.160.0-r1
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Scalar-List-Utils-1.230.0-r1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/virtual/perl-Digest-MD5-2.39
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/virtual/pam-0
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/virtual/pager-0
@@ -32191,27 +31291,19 @@
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-libs
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-kernel/linux-headers-2.6.36.1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-kernel
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-151-r4
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-fs/udev-164-r2
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-fs/sysfsutils-2.1.0
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-fs/e2fsprogs-1.41.12
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-fs
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/patch-2.5.9
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/make-3.82
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/m4-1.4.15
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libtool-2.2.10
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/libperl-5.10.1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/gnuconfig-20100924
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/gettext-0.18.1.1-r1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/gcc-config-1.4.1-r1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/gcc-4.4.5
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/flex-2.5.35
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/bison-2.4.3
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/binutils-config-2-r1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/binutils-2.20.1-r1
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-wrapper-4
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/automake-1.11.1
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-wrapper-10-r1
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel/autoconf-2.65-r1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-devel
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-auth/pambase-20101024
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-auth
@@ -32223,10 +31315,10 @@
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/shadow-4.1.4.3
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/sed-4.2.1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/sandbox-2.4
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.9.42
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.2-r1
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/portage-2.1.10.3
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/openrc-0.8.3-r1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/net-tools-1.60_p20110409135728
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.12-r1
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/module-init-tools-3.16-r1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-posix-2003a
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-pages-3.28
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/man-1.6f-r4
@@ -32234,14 +31326,14 @@
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/kbd-1.15
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/groff-1.21
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/grep-2.5.4-r1
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.6
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/gawk-3.1.8
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/findutils-4.4.2
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.05
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/file-5.07-r3
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/diffutils-3.0
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/debianutils-3.4.4
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/coreutils-8.7
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/busybox-1.17.4
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.2
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/baselayout-2.0.3
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/attr-2.4.44
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps/acl-2.2.49
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/sys-apps
@@ -32266,7 +31358,7 @@
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/popt-1.16-r1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/openssl-1.0.0d
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/mpfr-3.0.0_p3
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libxml2-2.7.8-r1
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libpcre-8.12
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/libffi-3.0.9-r2
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/dev-libs/gmp-4.3.2
@@ -32290,7 +31382,7 @@
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/app-arch/cpio-2.11
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/app-arch/bzip2-1.0.6
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/app-arch
-@dirrm %%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.8-r1
+@dirrm %%PREFIX_SUBDIR%%var/db/pkg/app-admin/python-updater-0.9
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/app-admin/perl-cleaner-2.7
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/app-admin/eselect-python-20100321
 @dirrm %%PREFIX_SUBDIR%%var/db/pkg/app-admin/eselect-1.2.15
@@ -32330,6 +31422,7 @@
 @dirrm %%PREFIX_SUBDIR%%var/cache/edb
 @dirrm %%PREFIX_SUBDIR%%var/cache
 @dirrm %%PREFIX_SUBDIR%%var
+@dirrm %%PREFIX_SUBDIR%%usr/src
 @dirrm %%PREFIX_SUBDIR%%usr/share/zoneinfo/right/US
 @dirrm %%PREFIX_SUBDIR%%usr/share/zoneinfo/right/Pacific
 @dirrm %%PREFIX_SUBDIR%%usr/share/zoneinfo/right/Mideast
@@ -32785,11 +31878,6 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/locale/af/LC_MESSAGES
 @dirrm %%PREFIX_SUBDIR%%usr/share/locale/af
 @dirrm %%PREFIX_SUBDIR%%usr/share/locale
-@dirrm %%PREFIX_SUBDIR%%usr/share/libtool/libltdl/loaders
-@dirrm %%PREFIX_SUBDIR%%usr/share/libtool/libltdl/libltdl
-@dirrm %%PREFIX_SUBDIR%%usr/share/libtool/libltdl
-@dirrm %%PREFIX_SUBDIR%%usr/share/libtool/config
-@dirrm %%PREFIX_SUBDIR%%usr/share/libtool
 @dirrm %%PREFIX_SUBDIR%%usr/share/keymaps/sun
 @dirrm %%PREFIX_SUBDIR%%usr/share/keymaps/mac/include
 @dirrm %%PREFIX_SUBDIR%%usr/share/keymaps/mac/all
@@ -32920,7 +32008,7 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/which-2.20
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/wget-1.12-r3
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/util-linux-2.19.1
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/udev-151-r4
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/udev-164-r2
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/timezone-data-2011e/html
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/timezone-data-2011e
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/texinfo-4.13
@@ -32936,12 +32024,12 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/readline-6.1_p2/ps/doc
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/readline-6.1_p2/ps
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/readline-6.1_p2
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/python-updater-0.8-r1
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/python-updater-0.9
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/python-3.1.3-r1
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/python-2.7.1-r1
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/psmisc-22.12
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/procps-3.2.8-r2
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/portage-2.1.9.42
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/portage-2.1.10.3
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/popt-1.16-r1
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/perl-5.12.3-r1
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/pax-utils-0.2.2
@@ -32952,7 +32040,7 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0d/html
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/openssl-1.0.0d
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/openssh-5.8_p1-r1
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/openrc-0.8.2-r1
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/openrc-0.8.3-r1
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/net-tools-1.60_p20110409135728
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/ncurses-5.7-r7
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/nano-2.2.5/html
@@ -32960,14 +32048,13 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/mpfr-3.0.0_p3/html
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/mpfr-3.0.0_p3/examples
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/mpfr-3.0.0_p3
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/module-init-tools-3.12-r1
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/module-init-tools-3.16-r1
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/man-pages-posix-2003a
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/man-pages-3.28
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/man-1.6f-r4
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/make-3.82
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/m4-1.4.15
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/libtool-2.2.10
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8-r1/python
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/libxml2-2.7.8-r1
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/libpcre-8.12/html
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/libpcre-8.12
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/libffi-3.0.9-r2
@@ -32991,14 +32078,9 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/git-1.7.3.4-r1
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/gettext-0.18.1.1-r1
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/gdbm-1.8.3-r4
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/posix
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/pc
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/awklib
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6/README_d
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.6
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/flex-2.5.35
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/gawk-3.1.8
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/findutils-4.4.2
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/file-5.05
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/file-5.07-r3
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/expat-2.0.1-r3/html
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/expat-2.0.1-r3
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/eselect-1.2.15
@@ -33016,7 +32098,6 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/busybox-1.17.4/examples
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/busybox-1.17.4/bootfloppy
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/busybox-1.17.4
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/bison-2.4.3
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/binutils-2.20.1-r1/opcodes
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/binutils-2.20.1-r1/libiberty
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/binutils-2.20.1-r1/ld
@@ -33026,9 +32107,7 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/binutils-2.20.1-r1/bfd
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/binutils-2.20.1-r1
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/bash-4.1_p9
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/baselayout-2.0.2
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/automake-1.11.1
-@dirrm %%PREFIX_SUBDIR%%usr/share/doc/autoconf-2.65-r1
+@dirrm %%PREFIX_SUBDIR%%usr/share/doc/baselayout-2.0.3
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/attr-2.4.44
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/acl-2.2.49
 @dirrm %%PREFIX_SUBDIR%%usr/share/doc/Scalar-List-Utils-1.230.0
@@ -33054,9 +32133,6 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/ca-certificates/brasil.gov.br
 @dirrm %%PREFIX_SUBDIR%%usr/share/ca-certificates
 @dirrm %%PREFIX_SUBDIR%%usr/share/busybox
-@dirrm %%PREFIX_SUBDIR%%usr/share/bison/xslt
-@dirrm %%PREFIX_SUBDIR%%usr/share/bison/m4sugar
-@dirrm %%PREFIX_SUBDIR%%usr/share/bison
 @dirrm %%PREFIX_SUBDIR%%usr/share/binutils-data/i486-pc-linux-gnu/2.20.1/man/man1
 @dirrm %%PREFIX_SUBDIR%%usr/share/binutils-data/i486-pc-linux-gnu/2.20.1/man
 @dirrm %%PREFIX_SUBDIR%%usr/share/binutils-data/i486-pc-linux-gnu/2.20.1/locale/zh_TW/LC_MESSAGES
@@ -33108,23 +32184,10 @@
 @dirrm %%PREFIX_SUBDIR%%usr/share/binutils-data
 @dirrm %%PREFIX_SUBDIR%%usr/share/baselayout
 @dirrm %%PREFIX_SUBDIR%%usr/share/awk
-@dirrm %%PREFIX_SUBDIR%%usr/share/automake-1.11/am
-@dirrm %%PREFIX_SUBDIR%%usr/share/automake-1.11/Automake
-@dirrm %%PREFIX_SUBDIR%%usr/share/automake-1.11
-@dirrm %%PREFIX_SUBDIR%%usr/share/autoconf/m4sugar
-@dirrm %%PREFIX_SUBDIR%%usr/share/autoconf/autotest
-@dirrm %%PREFIX_SUBDIR%%usr/share/autoconf/autoscan
-@dirrm %%PREFIX_SUBDIR%%usr/share/autoconf/autoconf
-@dirrm %%PREFIX_SUBDIR%%usr/share/autoconf/Autom4te
-@dirrm %%PREFIX_SUBDIR%%usr/share/autoconf
 @dirrm %%PREFIX_SUBDIR%%usr/share/applications
-@dirrm %%PREFIX_SUBDIR%%usr/share/aclocal-1.11
 @dirrm %%PREFIX_SUBDIR%%usr/share/aclocal
 @dirrm %%PREFIX_SUBDIR%%usr/share
 @dirrm %%PREFIX_SUBDIR%%usr/sbin
-@dirrm %%PREFIX_SUBDIR%%usr/local/share/man
-@dirrm %%PREFIX_SUBDIR%%usr/local/share/doc
-@dirrm %%PREFIX_SUBDIR%%usr/local/share
 @dirrm %%PREFIX_SUBDIR%%usr/local/sbin
 @dirrm %%PREFIX_SUBDIR%%usr/local/lib
 @dirrm %%PREFIX_SUBDIR%%usr/local/bin
@@ -33238,27 +32301,7 @@
 @dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/xml
 @dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util/_dyn_libs
 @dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/util
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/xpak
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/versions
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/util
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/unicode
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/shell
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/files
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets/base
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/sets
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/resolver
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/process
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/news
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/locks
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lint
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lazyimport
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/lafilefixer
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/env/config
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/env
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/ebuild
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/dep
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests/bin
-@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/tests
+@dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/repository
 @dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/proxy
 @dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/package/ebuild/_ipc
 @dirrm %%PREFIX_SUBDIR%%usr/lib/portage/pym/portage/package/ebuild/_config
@@ -33751,7 +32794,6 @@
 @dirrm %%PREFIX_SUBDIR%%usr/include/libxml2/libxml
 @dirrm %%PREFIX_SUBDIR%%usr/include/libxml2
 @dirrm %%PREFIX_SUBDIR%%usr/include/libmount
-@dirrm %%PREFIX_SUBDIR%%usr/include/libltdl
 @dirrm %%PREFIX_SUBDIR%%usr/include/gnu
 @dirrm %%PREFIX_SUBDIR%%usr/include/gdbm
 @dirrm %%PREFIX_SUBDIR%%usr/include/ext2fs
@@ -33781,7 +32823,9 @@
 @dirrm %%PREFIX_SUBDIR%%sys
 @dirrm %%PREFIX_SUBDIR%%sbin
 @dirrm %%PREFIX_SUBDIR%%root
+@dirrm %%PREFIX_SUBDIR%%opt
 @dirrm %%PREFIX_SUBDIR%%mnt
+@dirrm %%PREFIX_SUBDIR%%media
 @dirrm %%PREFIX_SUBDIR%%lib/security/pam_filter
 @dirrm %%PREFIX_SUBDIR%%lib/security
 @dirrm %%PREFIX_SUBDIR%%lib/rcscripts/awk
