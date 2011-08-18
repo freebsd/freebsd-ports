@@ -7,6 +7,7 @@
 
 PORTNAME=	seamonkey
 DISTVERSION=	2.0.14
+PORTREVISION=	1
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}/source
@@ -16,7 +17,6 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
 CONFLICTS_BUILD=	spidermonkey-1.[0-7]*
-CONFLICTS_INSTALL=	seamonkey-1*
 LATEST_LINK=	seamonkey2
 USE_BZIP2=	yes
 USE_GMAKE=	yes
@@ -33,7 +33,10 @@ CONFIGURE_ENV=	LOCALBASE=${LOCALBASE} CPPFLAGS="-I${LOCALBASE}/include/cairo" \
 USE_GCC=	4.2+
 
 MOZ_EXTENSIONS=	default
-MOZ_OPTIONS+=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
+MOZILLA_SUFX=	2
+MOZILLA=	${PORTNAME}${MOZILLA_SUFX}
+MOZ_OPTIONS+=	--program-transform-name='s/seamonkey/${MOZILLA}/' \
+		--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
 		--enable-svg \
 		--enable-application=suite	\
 		--enable-svg-renderer=cairo	\
@@ -141,22 +144,19 @@ post-patch:
 		${WRKSRC}/mozilla/js/src/configure \
 		${WRKSRC}/mozilla/configure \
 		${WRKSRC}/configure
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	@${SED} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
 		< ${FILESDIR}/seamonkey.desktop.in > \
-		${WRKDIR}/seamonkey.desktop
-
-port-pre-install:
-	@${REINPLACE_CMD} -e 's|seamonkey-${PORTVERSION}|seamonkey|' \
-		${FAKEDIR}/bin/seamonkey
-	@${RM} -f ${FAKEDIR}/bin/seamonkey.bak
-	${MV} ${FAKEDIR}/lib/seamonkey-${PORTVERSION} ${FAKEDIR}/lib/seamonkey
+		${WRKDIR}/${MOZILLA}.desktop
 
 pre-install:
-	${ECHO_CMD} share/applications/seamonkey.desktop >> ${PLIST}
+	${ECHO_CMD} share/applications/${MOZILLA}.desktop >> ${PLIST}
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
+	${ECHO_CMD} 'share/pixmaps/${MOZILLA}.png' >> ${PLIST}
 
 do-install:
 	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKDIR}/seamonkey.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKDIR}/${MOZILLA}.desktop ${PREFIX}/share/applications
+	${LN} -sf ${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png \
+		${PREFIX}/share/pixmaps/${MOZILLA}.png
 
 .include <bsd.port.post.mk>
