@@ -7,6 +7,7 @@
 
 PORTNAME=	seamonkey-i18n
 PORTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	seamonkey/releases/${PORTVERSION}/langpack
 PKGNAMEPREFIX=
@@ -19,7 +20,7 @@ COMMENT=	Localized interface for SeaMonkey 2.3
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
 USE_SEAMONKEY=	yes
-USE_XPI=	*seamonkey
+USE_XPI=	seamonkey
 
 USE_SUBMAKE=	yes
 
@@ -55,8 +56,10 @@ do-extract:
 		then \
 			exit 1; \
 		fi; \
-		cd ${WRKSRC}/langpack-$$lang@seamonkey.mozilla.org/chrome; \
-		${LOCALBASE}/bin/zip -r $$lang.jar $$lang; \
+		cd ${WRKSRC}/langpack-$$lang@seamonkey.mozilla.org/chrome/$$lang; \
+		${LOCALBASE}/bin/zip -r ../$$lang.jar locale; \
+		cd ..; ${RM} -rf $$lang; cd ..; \
+		${REINPLACE_CMD} -i "" "s,chrome/$$lang,jar:chrome/$$lang.jar!," chrome.manifest; \
 	done
 
 do-install:
