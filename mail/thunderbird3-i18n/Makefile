@@ -21,8 +21,6 @@ COMMENT=	Localized interface for Thunderbird
 RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-switcher
 .endif
 
-LATEST_LINK=	thunderbird3-i18n
-
 NO_BUILD=	yes
 USE_THUNDERBIRD=	31
 USE_XPI=	thunderbird3 linux-thunderbird
