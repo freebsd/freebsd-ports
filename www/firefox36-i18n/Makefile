@@ -7,6 +7,7 @@
 
 PORTNAME=	firefox36-i18n
 PORTVERSION=	3.6.20
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	firefox/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -17,7 +18,7 @@ MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for Firefox 3.6
 
 USE_FIREFOX=	36
-USE_XPI=	*firefox3
+USE_XPI=	firefox3 linux-firefox
 
 USE_SUBMAKE=	yes
 
