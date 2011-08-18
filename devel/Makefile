@@ -3247,6 +3247,7 @@
     SUBDIR += ruby-intl
     SUBDIR += ruby-io-reactor
     SUBDIR += ruby-jttui
+    SUBDIR += ruby-langscan
     SUBDIR += ruby-libglade2
     SUBDIR += ruby-locale
     SUBDIR += ruby-locale2
