@@ -11,7 +11,7 @@ CATEGORIES=	mail
 MASTER_SITES=	http://archiveopteryx.org/%SUBDIR%/
 MASTER_SITE_SUBDIR=	download
 
-MAINTAINER=	ashish@FreeBSD.org
+MAINTAINER=	feld@feld.me
 COMMENT=	An advanced PostgreSQL-based IMAP/POP server
 
 BUILD_DEPENDS=	jam:${PORTSDIR}/devel/jam
