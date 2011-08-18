@@ -5,8 +5,9 @@
 # $FreeBSD$
 #
 
-PORTNAME=	thunderbird-i18n
+PORTNAME=	thunderbird3-i18n
 PORTVERSION=	3.1.12
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITE_SUBDIR=	thunderbird/releases/${PORTVERSION}/linux-i686/xpi
 PKGNAMEPREFIX=
@@ -24,7 +25,7 @@ LATEST_LINK=	thunderbird3-i18n
 
 NO_BUILD=	yes
 USE_THUNDERBIRD=	31
-USE_XPI=	*thunderbird*
+USE_XPI=	thunderbird3 linux-thunderbird
 
 THUNDERBIRD_I18N_ALL=	af ar be bg bn-BD ca cs da de el en-GB en-US es-AR es-ES \
 			et eu fi fr fy-NL ga-IE he hu id is it ja ko lt nb-NO nl \
@@ -42,11 +43,11 @@ THUNDERBIRD_I18N_=	${THUNDERBIRD_I18N_ALL}
 .endif
 THUNDERBIRD_I18N_?=	${THUNDERBIRD_I18N}
 
-WDIR=	langpack-*@thunderbird.mozilla.org
+WDIR=	langpack3-*@thunderbird.mozilla.org
 
 XPI_DISTNAMES=	${THUNDERBIRD_I18N_}
 .for dist in ${XPI_DISTNAMES}
-XPI_ID_${dist}=		langpack-${dist}@thunderbird.mozilla.org
+XPI_ID_${dist}=		langpack3-${dist}@thunderbird.mozilla.org
 XPI_FILES_${dist}=	chrome.manifest install.rdf chrome/${dist}.jar defaults/pref/all-l10n.js
 XPI_DIRS_${dist}=	chrome defaults/pref defaults
 .endfor
@@ -55,7 +56,7 @@ do-extract:
 	@${RM} -rf ${WRKDIR}
 	@${MKDIR} ${WRKDIR} ${WRKSRC}
 	@for lang in ${THUNDERBIRD_I18N_}; do \
-		if ! (${EXTRACT_CMD} ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack-$$lang@thunderbird.mozilla.org);\
+		if ! (${EXTRACT_CMD} ${_DISTDIR}/$$lang.xpi -d ${WRKSRC}/langpack3-$$lang@thunderbird.mozilla.org);\
 		then \
 			exit 1; \
 		fi \
@@ -75,7 +76,8 @@ do-install:
 
 post-patch:
 	${FIND} ${WRKSRC} -name install.rdf -print0 | \
-		${XARGS} -0L1 ${REINPLACE_CMD} -i '' '/<?xml/,$$!d'
+		${XARGS} -0L1 ${REINPLACE_CMD} -i '' -e '/<?xml/,$$!d' \
+			-e 's/\(langpack\)/\13/'
 
 list-langs:
 	@fetch -o- "http://releases.mozilla.org/pub/mozilla.org/${MASTER_SITE_SUBDIR}"|\
