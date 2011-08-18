@@ -1,0 +1,12 @@
+--- src/gui/curses/gui-curses.h.orig	2011-08-17 14:08:18.000000000 +0100
++++ src/gui/curses/gui-curses.h	2011-08-18 05:02:47.647960373 +0100
+@@ -23,7 +23,8 @@
+ #include <time.h>
+ 
+ #ifdef HAVE_NCURSESW_CURSES_H
+-#include <ncursesw/ncurses.h>
++#define _XOPEN_SOURCE_EXTENDED 1
++#include <ncurses.h>
+ #elif HAVE_NCURSES_H
+ #include <ncurses.h>
+ #else
