@@ -102,6 +102,7 @@ lib/ntop/plugins/sflowPlugin.so
 %%DATADIR%%/html/error.gif
 %%DATADIR%%/html/expanded.gif
 %%DATADIR%%/html/external.png
+%%DATADIR%%/html/facebook.gif
 %%DATADIR%%/html/faq.html
 %%DATADIR%%/html/favicon.ico
 %%DATADIR%%/html/fback.png
@@ -136,6 +137,7 @@ lib/ntop/plugins/sflowPlugin.so
 %%DATADIR%%/html/jscalendar/calendar.js
 %%DATADIR%%/html/jscalendar/lang/calendar-en.js
 %%DATADIR%%/html/json2.js
+%%DATADIR%%/html/linkedin.gif
 %%DATADIR%%/html/line-bottom.png
 %%DATADIR%%/html/lock.png
 %%DATADIR%%/html/mail.gif
@@ -402,10 +404,12 @@ lib/ntop/plugins/sflowPlugin.so
 %%DATADIR%%/html/statsicons/os/os2.gif
 %%DATADIR%%/html/statsicons/os/sun.gif
 %%DATADIR%%/html/statsicons/os/windows.gif
+%%DATADIR%%/html/skype.png
 %%DATADIR%%/html/style.css
 %%DATADIR%%/html/switch.gif
 %%DATADIR%%/html/theme.css
 %%DATADIR%%/html/theme.js
+%%DATADIR%%/html/twitter.png
 %%DATADIR%%/html/upload.gif
 %%DATADIR%%/html/url.gif
 %%DATADIR%%/html/user.gif
@@ -415,6 +419,7 @@ lib/ntop/plugins/sflowPlugin.so
 %%DATADIR%%/html/web.gif
 %%DATADIR%%/html/wheel.gif
 %%DATADIR%%/html/white_bg.gif
+%%DATADIR%%/html/youtube.gif
 %%DATADIR%%/html/zoom.js
 %%DATADIR%%/python/GeoPacketVisualizer.py
 %%DATADIR%%/python/docs/Makefile
