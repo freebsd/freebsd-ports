@@ -1578,7 +1578,6 @@ cl-alexandria                   ports/devel/cl-alexandria
 cl-alexandria-clisp             ports/devel/cl-alexandria-clisp
 cl-alexandria-sbcl              ports/devel/cl-alexandria-sbcl
 cl-asdf                         ports/devel/cl-asdf
-cl-asdf-binary-locations        ports/devel/cl-asdf-binary-locations
 cl-asdf-clisp                   ports/devel/cl-asdf-clisp
 cl-babel                        ports/converters/cl-babel
 cl-babel-clisp                  ports/converters/cl-babel-clisp
@@ -4590,6 +4589,7 @@ gnome-icons-aqua-fusion         ports/x11-themes/gnome-icons-aqua-fusion
 gnome-icons-crystal             ports/x11-themes/gnome-icons-crystal
 gnome-icons-dropline-neu        ports/x11-themes/gnome-icons-dropline-neu
 gnome-icons-dropline-nou        ports/x11-themes/gnome-icons-dropline-nou
+gnome-icons-elementary          ports/x11-themes/gnome-icons-elementary
 gnome-icons-gentoo-test         ports/x11-themes/gnome-icons-gentoo-test
 gnome-icons-gion                ports/x11-themes/gnome-icons-gion
 gnome-icons-iris                ports/x11-themes/gnome-icons-iris
@@ -5270,6 +5270,7 @@ hamlib                          ports/comms/hamlib
 hammerhead                      ports/sysutils/hammerhead
 hamster-applet                  ports/deskutils/hamster-applet
 hamsterdb                       ports/databases/hamsterdb
+hanazono-fonts-ttf              ports/x11-fonts/hanazono-fonts-ttf
 handbrake                       ports/multimedia/handbrake
 hangman                         ports/games/hangman
 happydoc                        ports/devel/happydoc
@@ -10759,6 +10760,7 @@ p5-Alzabo-GUI-Mason             ports/devel/p5-Alzabo-GUI-Mason
 p5-Amazon-SQS-Simple            ports/net/p5-Amazon-SQS-Simple
 p5-Amazon-SimpleDB              ports/databases/p5-Amazon-SimpleDB
 p5-Any-Moose                    ports/devel/p5-Any-Moose
+p5-Any-Moose-Convert            ports/devel/p5-Any-Moose-Convert
 p5-AnyData                      ports/devel/p5-AnyData
 p5-AnyEvent                     ports/devel/p5-AnyEvent
 p5-AnyEvent-AIO                 ports/devel/p5-AnyEvent-AIO
@@ -11850,6 +11852,7 @@ p5-Data-Validate-Domain         ports/dns/p5-Data-Validate-Domain
 p5-Data-Validate-Email          ports/mail/p5-Data-Validate-Email
 p5-Data-Validate-IP             ports/net-mgmt/p5-Data-Validate-IP
 p5-Data-Validate-URI            ports/www/p5-Data-Validate-URI
+p5-Data-Validator               ports/devel/p5-Data-Validator
 p5-Data-Visitor                 ports/devel/p5-Data-Visitor
 p5-Data-Visitor-Encode          ports/devel/p5-Data-Visitor-Encode
 p5-Date-Business                ports/devel/p5-Date-Business
@@ -13123,6 +13126,7 @@ p5-Module-Install-AuthorRequires  ports/devel/p5-Module-Install-AuthorRequires
 p5-Module-Install-AuthorTests   ports/devel/p5-Module-Install-AuthorTests
 p5-Module-Install-Repository    ports/devel/p5-Module-Install-Repository
 p5-Module-Install-Template      ports/devel/p5-Module-Install-Template
+p5-Module-Install-XSUtil        ports/devel/p5-Module-Install-XSUtil
 p5-Module-List                  ports/devel/p5-Module-List
 p5-Module-Load                  ports/devel/p5-Module-Load
 p5-Module-Load-Conditional      ports/devel/p5-Module-Load-Conditional
@@ -13222,6 +13226,7 @@ p5-MooseX-Types-VariantTable    ports/devel/p5-MooseX-Types-VariantTable
 p5-Mouse                        ports/devel/p5-Mouse
 p5-MouseX-AttributeHelpers      ports/devel/p5-MouseX-AttributeHelpers
 p5-MouseX-ConfigFromFile        ports/devel/p5-MouseX-ConfigFromFile
+p5-MouseX-Foreign               ports/devel/p5-MouseX-Foreign
 p5-MouseX-Getopt                ports/devel/p5-MouseX-Getopt
 p5-MouseX-NativeTraits          ports/devel/p5-MouseX-NativeTraits
 p5-MouseX-StrictConstructor     ports/devel/p5-MouseX-StrictConstructor
@@ -13752,6 +13757,7 @@ p5-Perl6-Say                    ports/devel/p5-Perl6-Say
 p5-Perl6-Subs                   ports/lang/p5-Perl6-Subs
 p5-PerlCryptLib                 ports/security/p5-PerlCryptLib
 p5-PerlFM                       ports/x11-fm/p5-PerlFM
+p5-PerlIO-Util                  ports/devel/p5-PerlIO-Util
 p5-PerlIO-eol                   ports/devel/p5-PerlIO-eol
 p5-PerlIO-gzip                  ports/archivers/p5-PerlIO-gzip
 p5-PerlIO-via-Bzip2             ports/archivers/p5-PerlIO-via-Bzip2
@@ -15032,6 +15038,7 @@ p5-amazon-simpledb              ports/databases/p5-Amazon-SimpleDB
 p5-amazon-sqs-simple            ports/net/p5-Amazon-SQS-Simple
 p5-amf-perl                     ports/www/p5-AMF-Perl
 p5-any-moose                    ports/devel/p5-Any-Moose
+p5-any-moose-convert            ports/devel/p5-Any-Moose-Convert
 p5-anydata                      ports/devel/p5-AnyData
 p5-anyevent                     ports/devel/p5-AnyEvent
 p5-anyevent-aio                 ports/devel/p5-AnyEvent-AIO
@@ -16038,6 +16045,7 @@ p5-data-validate-domain         ports/dns/p5-Data-Validate-Domain
 p5-data-validate-email          ports/mail/p5-Data-Validate-Email
 p5-data-validate-ip             ports/net-mgmt/p5-Data-Validate-IP
 p5-data-validate-uri            ports/www/p5-Data-Validate-URI
+p5-data-validator               ports/devel/p5-Data-Validator
 p5-data-visitor                 ports/devel/p5-Data-Visitor
 p5-data-visitor-encode          ports/devel/p5-Data-Visitor-Encode
 p5-date-business                ports/devel/p5-Date-Business
@@ -17437,6 +17445,7 @@ p5-module-install-authorrequires  ports/devel/p5-Module-Install-AuthorRequires
 p5-module-install-authortests   ports/devel/p5-Module-Install-AuthorTests
 p5-module-install-repository    ports/devel/p5-Module-Install-Repository
 p5-module-install-template      ports/devel/p5-Module-Install-Template
+p5-module-install-xsutil        ports/devel/p5-Module-Install-XSUtil
 p5-module-list                  ports/devel/p5-Module-List
 p5-module-load                  ports/devel/p5-Module-Load
 p5-module-load-conditional      ports/devel/p5-Module-Load-Conditional
@@ -17536,6 +17545,7 @@ p5-moosex-types-varianttable    ports/devel/p5-MooseX-Types-VariantTable
 p5-mouse                        ports/devel/p5-Mouse
 p5-mousex-attributehelpers      ports/devel/p5-MouseX-AttributeHelpers
 p5-mousex-configfromfile        ports/devel/p5-MouseX-ConfigFromFile
+p5-mousex-foreign               ports/devel/p5-MouseX-Foreign
 p5-mousex-getopt                ports/devel/p5-MouseX-Getopt
 p5-mousex-nativetraits          ports/devel/p5-MouseX-NativeTraits
 p5-mousex-strictconstructor     ports/devel/p5-MouseX-StrictConstructor
@@ -17985,6 +17995,7 @@ p5-perlcryptlib                 ports/security/p5-PerlCryptLib
 p5-perlfm                       ports/x11-fm/p5-PerlFM
 p5-perlio-eol                   ports/devel/p5-PerlIO-eol
 p5-perlio-gzip                  ports/archivers/p5-PerlIO-gzip
+p5-perlio-util                  ports/devel/p5-PerlIO-Util
 p5-perlio-via-bzip2             ports/archivers/p5-PerlIO-via-Bzip2
 p5-perlio-via-dynamic           ports/devel/p5-PerlIO-via-dynamic
 p5-perlio-via-md5               ports/devel/p5-PerlIO-via-MD5
@@ -21807,7 +21818,6 @@ py-ipaddr                       ports/devel/py-ipaddr
 py-iplib                        ports/net/py-iplib
 py-ipy                          ports/net-mgmt/py-ipy
 py-irclib                       ports/irc/py-irclib
-py-istring                      ports/devel/py-istring
 py-iterpipes                    ports/devel/py-iterpipes
 py-itools                       ports/devel/py-itools
 py-jabber                       ports/net-im/py-jabber
