@@ -20,7 +20,7 @@ PKGNAMESUFFIX=	-devel
 MAINTAINER=	itetcu@FreeBSD.org
 COMMENT=	Bayesian spam filter - development version
 
-PORTVER_MAJ=	3.10.0
+PORTVER_MAJ=	3.10.1
 #SNAP_DATE=	.r1
 
 #MIN_OPTIONS_VER=	${PORTNAME}-${PKGNAMESUFFIX}-3.10.0.
