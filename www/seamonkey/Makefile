@@ -7,6 +7,7 @@
 
 PORTNAME=	seamonkey
 DISTVERSION=	2.3
+PORTREVISION=	1
 CATEGORIES?=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	seamonkey/releases/${DISTVERSION}/source
@@ -21,7 +22,6 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 
 USE_AUTOTOOLS=	autoconf213
 CONFLICTS_BUILD=	spidermonkey-1.[0-7]*
-CONFLICTS_INSTALL=	seamonkey-2.0*
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GECKO=	gecko
@@ -38,10 +38,9 @@ USE_GCC=	4.2+
 
 CONFIGURE_ENV=	LOCALBASE=${LOCALBASE}
 
-MOZILLA=	${PORTNAME}
-MOZILLA_EXEC_NAME=	${PORTNAME}
 MOZ_EXTENSIONS=	default
-MOZ_OPTIONS+=	--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
+MOZ_OPTIONS+=	--program-transform-name='s/seamonkey/${MOZILLA}/' \
+		--with-default-mozilla-five-home=${PREFIX}/lib/${MOZILLA} \
 		--enable-svg \
 		--enable-application=suite	\
 		--enable-svg-renderer=cairo	\
@@ -153,17 +152,18 @@ post-patch:
 		${WRKSRC}/mozilla/js/src/configure.in \
 		${WRKSRC}/mozilla/configure.in \
 		${WRKSRC}/configure.in
-	@${SED} -e 's|%%PREFIX%%|${PREFIX}|g' \
+	@${SED} -e 's|%%MOZILLA%%|${MOZILLA}|g' \
 		< ${FILESDIR}/seamonkey.desktop.in > \
-		${WRKDIR}/seamonkey.desktop
+		${WRKDIR}/${MOZILLA}.desktop
 pre-configure:
 	(cd ${WRKSRC} && ${AUTOCONF})
 	(cd ${MOZSRC} && ${AUTOCONF})
 	(cd ${MOZSRC}/js/src/ && ${AUTOCONF})
 
 pre-install:
-	${ECHO_CMD} share/applications/seamonkey.desktop >> ${PLIST}
+	${ECHO_CMD} share/applications/${MOZILLA}.desktop >> ${PLIST}
 	${ECHO_CMD} "@unexec ${RMDIR} %D/share/applications 2>/dev/null || ${TRUE}" >> ${PLIST}
+	${ECHO_CMD} 'share/pixmaps/${MOZILLA}.png' >> ${PLIST}
 .if defined(WITH_LIGHTNING)
 	@${PRINTF} '%s/lightning-${PORTNAME}.xpi\n@dirrmtry %s\n' \
 		${LIGHTNING_DIR} ${LIGHTNING_DIR} >> ${PLIST}
@@ -171,7 +171,9 @@ pre-install:
 
 do-install:
 	${MKDIR} ${PREFIX}/share/applications
-	${INSTALL_DATA} ${WRKDIR}/seamonkey.desktop ${PREFIX}/share/applications
+	${INSTALL_DATA} ${WRKDIR}/${MOZILLA}.desktop ${PREFIX}/share/applications/
+	${LN} -sf ${PREFIX}/lib/${MOZILLA}/chrome/icons/default/default48.png \
+		${PREFIX}/share/pixmaps/${MOZILLA}.png
 
 post-install:
 .if defined(WITH_LIGHTNING)
