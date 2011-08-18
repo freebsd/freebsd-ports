@@ -943,6 +943,7 @@
     SUBDIR += rtpproxy
     SUBDIR += rtptools
     SUBDIR += ruby-dict
+    SUBDIR += ruby-growl
     SUBDIR += ruby-icmp
     SUBDIR += ruby-ldap
     SUBDIR += ruby-net-geoip
