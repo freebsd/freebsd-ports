@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110818:
+  AFFECTS: users of mail/enigmail-* ports
+  AUTHOR: ale@FreeBSD.org
+
+  Like other XPIs ports, enigmail now registers itself as a global
+  extension and doesn't create the XPI to be installed manually.
+  Upgrading users should remove enigmail from their profile before
+  installing the new port.
+
 20110815:
   AFFECTS: users of sysutils/swapexd
   AUTHOR: crees
