@@ -1,15 +1,14 @@
-LeakTracer is a small tool for checking a C++ program for memory leaks.
+LeakTracer is a small tool for checking C++ programs for memory leaks.  Run
+your program using the provided LeakCheck script.  It uses the LD_PRELOAD
+feature to "overlay" some functions on top of your functions (no recompile
+needed).
 
-To use LeakTracer, run your program using the provided LeakCheck script.  It
-uses the LD_PRELOAD feature to "overlay" some functions on top of your
-functions (no recompile needed).
+LeakTracer uses gdb to print out the exact line where memory was allocated
+but not freed -- this means you have to free all dynamically allocated data.
+LeakTracer also overrides the global operator new and operator delete --
+this will give problems if you override them as well.
 
-LeakTracer uses gdb to print out the exact line where the memory was allocated
-and not freed -- this of course means you have to free all dynamically
-allocated data.  LeakTracer also overrides the global operator new and operator
-delete -- this will give problems if you override them as well.
-
-LeakTracer traces only new/new[] and delete calls -- it does not look at
+LeakTracer traces only new/delete calls; it does not look at traditional
 malloc/free/realloc.
 
 WWW: http://www.andreasen.org/LeakTracer/
