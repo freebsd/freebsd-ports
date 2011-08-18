@@ -40,7 +40,7 @@ you update your ports collection, before attempting any port upgrades.
 
   The port has been updated to PowerDNS 3.0, which includes support for DNSSEC.
 
-  Before upgrading please read the the following:
+  Before upgrading please read the following:
   http://doc.powerdns.com/upgrades.html#from2.9to3.0
 
   Make sure to read the documentation and wiki on http://powerdnssec.org/ on
