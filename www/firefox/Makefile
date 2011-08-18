@@ -27,8 +27,6 @@ MOZ_PKGCONFIG_FILES=	# empty
 USE_MOZILLA=	-png -nss -dbm -jpeg -xft
 MOZILLA_NAME=	Firefox
 MOZ_TOOLKIT=	cairo-gtk2
-GECKO_PLIST_PRE_DIRS=	lib/${MOZILLA}/bin lib/${MOZILLA}/idl \
-			lib/${MOZILLA}/include lib/${MOZILLA}/lib
 
 MAKE_JOBS_SAFE=	yes
 WANT_GNOME=	yes
