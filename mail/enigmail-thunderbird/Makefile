@@ -14,6 +14,6 @@ MASTERDIR=	${.CURDIR}/../enigmail
 
 GECKO=		thunderbird
 GECKO_PORTDIR=	mail/${GECKO}
-GECKO_EXTDIR=	comm-miramar
+GECKO_EXTDIR=	comm-release
 
 .include "${MASTERDIR}/Makefile"
