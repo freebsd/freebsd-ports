@@ -168,7 +168,7 @@ include/libktorrent/utp/utpsocket.h
 include/libktorrent/version.h
 lib/libktorrent.so
 lib/libktorrent.so.3
-lib/libktorrent.so.3.0.1
+lib/libktorrent.so.3.0.2
 share/apps/cmake/modules/FindKTorrent.cmake
 share/locale/ar/LC_MESSAGES/libktorrent.mo
 share/locale/ast/LC_MESSAGES/libktorrent.mo
@@ -221,9 +221,12 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/libktorrent.mo
 share/locale/sr@latin/LC_MESSAGES/libktorrent.mo
 share/locale/sv/LC_MESSAGES/libktorrent.mo
 share/locale/tr/LC_MESSAGES/libktorrent.mo
+share/locale/ug/LC_MESSAGES/libktorrent.mo
 share/locale/uk/LC_MESSAGES/libktorrent.mo
 share/locale/zh_CN/LC_MESSAGES/libktorrent.mo
 share/locale/zh_TW/LC_MESSAGES/libktorrent.mo
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
 @dirrmtry share/locale/si/LC_MESSAGES
 @dirrmtry share/locale/si
 @dirrm include/libktorrent/utp
