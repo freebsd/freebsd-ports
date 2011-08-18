@@ -8,6 +8,7 @@
 
 PORTNAME=	hydra
 PORTVERSION=	6.5
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://freeworld.thc.org/releases/
 EXTRACT_SUFX=	-src.tar.gz
@@ -20,6 +21,10 @@ COMMENT=	Brute force attack utility working on multiple network services
 
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/LICENSE
+
+LIB_DEPENDS=	idn:${PORTSDIR}/dns/libidn \
+		pcre.0:${PORTSDIR}/devel/pcre \
+		sasl2.2:${PORTSDIR}/security/cyrus-sasl2
 
 NO_LATEST_LINK=	yes
 PLIST_FILES=	bin/hydra bin/pw-inspector bin/dpl4hydra.sh

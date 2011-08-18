@@ -1,5 +1,5 @@
---- configure.orig	2011-04-30 22:28:12.000000000 +0400
-+++ configure	2011-05-31 20:22:25.000000000 +0400
+--- configure.orig 2011-07-15 14:17:01.000000000 +0400
++++ configure      2011-08-15 22:22:22.000000000 +0400
 @@ -653,7 +653,7 @@
  XIPATHS=""
  
@@ -9,3 +9,13 @@
  fi
  if [ -n "$SSL_PATH" ]; then
      XDEFINES="$XDEFINES -DLIBOPENSSL"
+@@ -706,6 +706,9 @@
+ if [ -n "$SSL_IPATH" ]; then
+     XIPATHS="-I$SSL_IPATH"
+ fi
++if [ -d $PREFIX/include ];then
++   XIPATHS="$XIPATHS -I$PREFIX/include"
++fi
+ if [ -n "$SAPR3_IPATH" ]; then
+     XIPATHS="$XIPATHS -I$SAPR3_IPATH"
+ fi
