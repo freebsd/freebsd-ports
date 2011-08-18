@@ -36,6 +36,10 @@ EXAMPLES=	examples/*.c examples/*.h
 
 INFO=		nettle
 
+post-patch:
+	@${REINPLACE_CMD} -e 's/[[:<:]]sub[[:>:]]/subl/' \
+		${WRKSRC}/x86/camellia-crypt-internal.asm
+
 post-install:
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
