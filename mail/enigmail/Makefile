@@ -90,7 +90,7 @@ do-build:
 
 do-install:
 	@${MKDIR} ${XPI_LIBDIR}/${XPI_ID} ${XPI_LIBDIR}/symlinks/${GECKO}
-	@(cd ${XPI_LIBDIR}/${XPI_ID}; /usr/bin/tar xf ${XPI_FILE})
+	@(cd ${XPI_LIBDIR}/${XPI_ID}; ${TAR} -xf ${XPI_FILE})
 	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${XPI_LIBDIR}/${XPI_ID}
 	@${REINPLACE_CMD} -i "" "s/${XPI_ORIG_ID}/${XPI_ID}/" ${XPI_LIBDIR}/${XPI_ID}/install.rdf
 	@${CHMOD} -R a+rX,go-w ${XPI_LIBDIR}/${XPI_ID}
