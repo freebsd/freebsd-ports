@@ -6,9 +6,12 @@
 #
 
 PORTNAME=	quick-locale-switcher
-PORTVERSION=	1.7.5
+PORTVERSION=	1.7.5.2
 DISTVERSIONSUFFIX=	-tb+fx+sm
 CATEGORIES=	www
+# XXX temporary master site
+MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITE_SUBDIR=	ale
 
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Quickly change and apply a different locale from the tools menu
@@ -19,9 +22,6 @@ XPI_NUM=	1333
 XPI_FILES=	chrome/qls.jar chrome.manifest defaults/preferences/prefs.js \
 		license.txt install.rdf
 XPI_DIRS=	chrome defaults/preferences defaults
-
-post-patch:
-	@${REINPLACE_CMD} -i "" -e '/maxVersion/s|2.2a1pre|2.2|' ${WRKSRC}/install.rdf
 
 .include "${.CURDIR}/../xpi-adblock/Makefile.xpi"
 .include <bsd.port.mk>
