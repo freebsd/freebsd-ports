@@ -1,38 +1,59 @@
 bin/jirb
 bin/jruby
 share/%%PORTNAME%%-%%PORTVERSION%%/bin/ast
-share/%%PORTNAME%%-%%PORTVERSION%%/bin/autospec
 share/%%PORTNAME%%-%%PORTVERSION%%/bin/gem
-share/%%PORTNAME%%-%%PORTVERSION%%/bin/generate_yaml_index.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/bin/irb
 share/%%PORTNAME%%-%%PORTVERSION%%/bin/jgem
 share/%%PORTNAME%%-%%PORTVERSION%%/bin/jirb
 share/%%PORTNAME%%-%%PORTVERSION%%/bin/jirb_swing
 share/%%PORTNAME%%-%%PORTVERSION%%/bin/jruby
 share/%%PORTNAME%%-%%PORTVERSION%%/bin/jruby.dll
+share/%%PORTNAME%%-%%PORTVERSION%%/bin/jruby.sh
 share/%%PORTNAME%%-%%PORTVERSION%%/bin/jrubyc
 share/%%PORTNAME%%-%%PORTVERSION%%/bin/rake
-share/%%PORTNAME%%-%%PORTVERSION%%/bin/rdebug
 share/%%PORTNAME%%-%%PORTVERSION%%/bin/rdoc
 share/%%PORTNAME%%-%%PORTVERSION%%/bin/ri
-share/%%PORTNAME%%-%%PORTVERSION%%/bin/spec
 share/%%PORTNAME%%-%%PORTVERSION%%/bin/testrb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/jruby.jar
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/Darwin/libjffi-1.0.jnilib
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/Darwin/libjruby-cext.jnilib
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-FreeBSD/libjffi-1.0.so
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-Linux/libjffi-1.0.so
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-Linux/libjruby-cext.so
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-OpenBSD/libjffi-1.0.so
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-OpenBSD/libjruby-cext.so
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-SunOS/libjffi-1.0.so
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-Windows/jffi-1.0.dll
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-Windows/jruby-cext.dll
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/include/config.h
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/include/ruby.h
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/include/ruby/asprintf.h
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/include/ruby/defines.h
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/include/ruby/dl.h
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/include/ruby/intern.h
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/include/ruby/jruby_win32.h
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/include/ruby/re.h
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/include/ruby/ruby.h
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/include/ruby/rubyio.h
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/include/ruby/rubysig.h
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/include/ruby/st.h
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/include/ruby/st_sizes.h
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/include/ruby/version.h
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/ppc-AIX/libjffi-1.0.a
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/ppc-Linux/libjffi-1.0.so
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/sparc-SunOS/libjffi-1.0.so
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/sparcv9-SunOS/libjffi-1.0.so
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/x86_64-FreeBSD/libjffi-1.0.so
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/x86_64-Linux/libjffi-1.0.so
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/x86_64-Linux/libjruby-cext.so
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/x86_64-OpenBSD/libjffi-1.0.so
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/x86_64-OpenBSD/libjruby-cext.so
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/x86_64-SunOS/libjffi-1.0.so
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/x86_64-Windows/jffi-1.0.dll
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/.document
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/English.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/Env.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/README
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/Win32API.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/abbrev.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/base64.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/benchmark.rb
@@ -53,6 +74,7 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/date/format.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/date2.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/debug.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/delegate.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/digest/sha2.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/dl.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/dl/import.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/dl/struct.rb
@@ -131,7 +153,6 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/mailread.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/mathn.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/matrix.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/md5.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/mkmf.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/monitor.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/mutex_m.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/net/ftp.rb
@@ -406,7 +427,6 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/test/unit/ui/tk/testrunner.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/test/unit/util/backtracefilter.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/test/unit/util/observable.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/test/unit/util/procwrapper.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/thread.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/thwait.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/time.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/tmpdir.rb
@@ -554,9 +574,26 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/xsd/xmlparser/parser.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/xsd/xmlparser/rexmlparser.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/xsd/xmlparser/xmlparser.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/xsd/xmlparser/xmlscanner.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/yaml.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/yaml/baseemitter.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/yaml/basenode.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/yaml/compat.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/yaml/constants.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/yaml/dbm.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/yaml/emitter.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/yaml/encoding.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/yaml/error.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/yaml/rubytypes.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/yaml/store.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/yaml/stream.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/yaml/stringio.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/yaml/tag.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/yaml/types.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/yaml/yamlnode.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/yaml/yecht.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/yaml/ypath.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/English.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/README
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/Win32API.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/abbrev.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/base64.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/benchmark.rb
@@ -583,6 +620,19 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/date/delta/parser.ry
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/date/format.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/debug.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/delegate.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/digest.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/digest/hmac.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/digest/sha2.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/dl.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/dl/callback.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/dl/cparser.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/dl/func.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/dl/import.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/dl/pack.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/dl/stack.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/dl/struct.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/dl/types.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/dl/value.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/drb.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/drb/acl.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/drb/drb.rb
@@ -597,6 +647,11 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/drb/timeridconv.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/drb/unix.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/e2mmap.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/erb.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/expect.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/fiddle.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/fiddle/closure.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/fiddle/function.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/fiddle/jruby.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/fileutils.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/find.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/forwardable.rb
@@ -645,6 +700,7 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/irb/version.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/irb/workspace.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/irb/ws-for-case-2.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/irb/xmp.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/kconv.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/logger.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/mathn.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/matrix.rb
@@ -652,7 +708,6 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/minitest/autorun.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/minitest/mock.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/minitest/spec.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/minitest/unit.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/mkmf.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/monitor.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/mutex_m.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/net/.document
@@ -681,10 +736,40 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/prime.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/profile.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/profiler.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/pstore.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/coder.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/core_ext.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/deprecated.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/handler.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/json/tree_builder.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/nodes.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/nodes/alias.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/nodes/document.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/nodes/mapping.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/nodes/node.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/nodes/scalar.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/nodes/sequence.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/nodes/stream.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/omap.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/parser.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/scalar_scanner.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/set.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/tree_builder.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/visitors.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/visitors/emitter.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/visitors/json_tree.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/visitors/to_ruby.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/visitors/visitor.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/visitors/yaml_tree.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/racc/parser.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rake.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rake/classic_namespace.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rake/clean.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rake/contrib/compositepublisher.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rake/contrib/ftptools.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rake/contrib/publisher.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rake/contrib/rubyforgepublisher.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rake/contrib/sshpublisher.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rake/gempackagetask.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rake/loaders/makefile.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rake/packagetask.rb
@@ -698,12 +783,21 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rational.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rbconfig/datadir.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/README
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/alias.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/anon_class.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/any_method.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/attr.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/class_module.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/code_object.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/code_objects.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/constant.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/context.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/diagram.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/dot.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/chm.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/chm/chm.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/darkfish.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/html.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/html/common.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/html/frameless.rb
@@ -712,7 +806,37 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/html/html.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/html/kilmer.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/html/kilmerfactory.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/html/one_page_html.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/markup.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/ri.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/.document
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/classpage.rhtml
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/filepage.rhtml
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images/brick.png
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images/brick_link.png
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images/bug.png
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images/bullet_black.png
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images/bullet_toggle_minus.png
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images/bullet_toggle_plus.png
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images/date.png
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images/find.png
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images/loadingAnimation.gif
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images/macFFBgHack.png
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images/package.png
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images/page_green.png
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images/page_white_text.png
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images/page_white_width.png
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images/plugin.png
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images/ruby.png
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images/tag_green.png
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images/wrench.png
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images/wrench_orange.png
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images/zoom.png
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/index.rhtml
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/js/darkfish.js
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/js/jquery.js
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/js/quicksearch.js
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/js/thickbox-compressed.js
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/rdoc.css
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/texinfo.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/texinfo/class.texinfo.erb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/texinfo/file.texinfo.erb
@@ -721,28 +845,49 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/texinfo/texinfo.e
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/xml.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/xml/rdf.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/xml/xml.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/ghost_method.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/include.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/known_classes.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/attribute_manager.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/blank_line.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/document.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/formatter.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/formatter_test_case.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/fragments.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/heading.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/inline.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/lines.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/list.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/list_item.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/paragraph.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/parser.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/preprocess.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/raw.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/rule.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/to_ansi.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/to_bs.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/to_flow.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/to_html.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/to_html_crossref.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/to_latex.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/to_rdoc.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/to_test.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/to_texinfo.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup/verbatim.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/meta_method.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/normal_class.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/normal_module.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/options.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/parser.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/parser/c.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/parser/f95.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/parser/perl.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/parser/ruby.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/parser/ruby_tools.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/parser/simple.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/rdoc.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/require.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/ri.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/ri/cache.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/ri/descriptions.rb
@@ -752,11 +897,18 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/ri/formatter.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/ri/gemdirs.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/ri/paths.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/ri/reader.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/ri/store.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/ri/util.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/ri/writer.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/ruby_lex.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/ruby_token.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/single_class.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/stats.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/task.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/template.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/text.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/tokenstream.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/top_level.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/resolv-replace.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/resolv.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rexml/attlistdecl.rb
@@ -823,6 +975,11 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rinda/.document
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rinda/rinda.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rinda/ring.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rinda/tuplespace.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/ripper.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/ripper/core.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/ripper/filter.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/ripper/lexer.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/ripper/sexp.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rss.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rss/0.9.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rss/1.0.rb
@@ -879,11 +1036,25 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/shell/system-command.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/shell/version.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/shellwords.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/singleton.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/syck.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/syck/baseemitter.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/syck/basenode.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/syck/constants.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/syck/encoding.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/syck/error.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/syck/loader.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/syck/rubytypes.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/syck/stream.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/syck/stringio.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/syck/syck.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/syck/tag.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/syck/types.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/syck/yamlnode.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/syck/ypath.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/sync.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/test/unit.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/test/unit/assertions.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/test/unit/testcase.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/thread.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/thwait.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/time.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/tmpdir.rb
@@ -938,6 +1109,7 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/webrick/utils.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/webrick/version.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/win32/registry.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/win32/resolv.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/win32/sspi.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/xmlrpc/.document
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/xmlrpc/README.rdoc
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/xmlrpc/README.txt
@@ -952,36 +1124,10 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/xmlrpc/parser.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/xmlrpc/server.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/xmlrpc/utils.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/yaml.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/yaml/baseemitter.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/yaml/basenode.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/yaml/constants.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/yaml/dbm.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/yaml/encoding.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/yaml/error.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/yaml/loader.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/yaml/rubytypes.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/yaml/store.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/yaml/stream.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/yaml/stringio.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/yaml/syck.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/yaml/tag.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/yaml/types.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/yaml/yamlnode.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/yaml/ypath.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/cache/columnize-0.3.1.gem
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/cache/rake-0.8.7.gem
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/cache/rspec-1.3.0.gem
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/cache/ruby-debug-0.10.3.gem
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/cache/ruby-debug-base-0.10.3.2-java.gem
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/columnize-0.3.1/AUTHORS
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/columnize-0.3.1/COPYING
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/columnize-0.3.1/ChangeLog
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/columnize-0.3.1/NEWS
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/columnize-0.3.1/README
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/columnize-0.3.1/Rakefile
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/columnize-0.3.1/VERSION
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/columnize-0.3.1/lib/columnize.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/columnize-0.3.1/test/test-columnize.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rake-0.8.7/CHANGES
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rake-0.8.7/MIT-LICENSE
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rake-0.8.7/README
@@ -1091,587 +1237,10 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rake-0.8.7/test/test_t
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rake-0.8.7/test/test_test_task.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rake-0.8.7/test/test_top_level_functions.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rake-0.8.7/test/test_win32.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/.document
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/History.rdoc
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/License.txt
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/Manifest.txt
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/README.rdoc
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/Rakefile
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/Ruby1.9.rdoc
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/TODO.txt
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/Upgrade.rdoc
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/bin/autospec
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/bin/spec
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/cucumber.yml
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/failing/README.txt
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/failing/diffing_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/failing/failing_implicit_docstrings_example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/failing/failure_in_after.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/failing/failure_in_before.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/failing/mocking_example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/failing/mocking_with_flexmock.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/failing/mocking_with_mocha.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/failing/mocking_with_rr.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/failing/partial_mock_example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/failing/pending_example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/failing/predicate_example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/failing/raising_example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/failing/syntax_error_example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/failing/team_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/failing/timeout_behaviour.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/custom_formatter.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/custom_matchers.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/dynamic_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/file_accessor.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/file_accessor_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/filtered_formatter.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/filtered_formatter_example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/greeter_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/helper_method_example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/implicit_docstrings_example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/io_processor.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/io_processor_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/mocking_example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/multi_threaded_example_group_runner.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/nested_classes_example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/options_example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/options_formatter.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/partial_mock_example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/pending_example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/predicate_example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/shared_example_group_example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/shared_stack_examples.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/simple_matcher_example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/stack.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/stack_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/stack_spec_with_nested_example_groups.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/stubbing_example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing/yielding_example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/ruby1.9.compatibility/access_to_constants_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/before_and_after_blocks/before_and_after_blocks.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/command_line/line_number_option.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/command_line/line_number_option_with_example_with_no_name.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/example_groups/define_example_attribute.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/example_groups/example_group_with_should_methods.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/example_groups/implicit_docstrings.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/example_groups/nested_groups.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/expectations/customized_message.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/expectations/expect_change.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/expectations/expect_error.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/extensions/custom_example_group.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/formatters/custom_formatter.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/formatters/nested_formatter.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/interop/cucumber_stubs_dont_leak.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/interop/examples_and_tests_together.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/interop/rspec_output.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/interop/test_but_not_test_unit.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/interop/test_case_with_should_methods.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/load_paths/add_lib_to_load_path.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/load_paths/add_spec_to_load_path.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/matchers/define_diffable_matcher.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/matchers/define_matcher.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/matchers/define_matcher_outside_rspec.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/matchers/define_matcher_with_fluent_interface.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/matchers/define_wrapped_matcher.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/matchers/match_unless_raises.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/matchers/match_unless_raises_unexpected_error.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/mock_framework_integration/use_flexmock.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/mock_framework_integration/use_mocha.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/mock_framework_integration/use_rr.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/mocks/block_local_expectations.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/mocks/mix_stubs_and_mocks.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/mocks/stub_implementation.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/pending/pending_examples.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/runner/specify_line_number.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/spec_helper/spec_helper.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/step_definitions/running_rspec_steps.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/step_definitions/stubbing_steps.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/subject/explicit_subject.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/subject/implicit_subject.feature
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/support/env.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/support/matchers/smart_match.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/geminstaller.yml
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/init.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/autotest/discover.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/autotest/rspec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/adapters/mock_frameworks/flexmock.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/adapters/mock_frameworks/mocha.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/adapters/mock_frameworks/rr.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/adapters/mock_frameworks/rspec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/autorun.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/deprecation.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/dsl.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/dsl/main.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/example.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/example/args_and_options.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/example/before_and_after_hooks.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/example/errors.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/example/example_group.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/example/example_group_factory.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/example/example_group_hierarchy.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/example/example_group_methods.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/example/example_group_proxy.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/example/example_matcher.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/example/example_methods.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/example/example_proxy.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/example/module_reopening_fix.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/example/pending.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/example/predicate_matchers.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/example/shared_example_group.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/example/subject.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/expectations.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/expectations/errors.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/expectations/extensions.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/expectations/extensions/kernel.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/expectations/fail_with.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/expectations/handler.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/extensions/instance_exec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/interop/test.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/interop/test/unit/autorunner.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/interop/test/unit/testcase.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/interop/test/unit/testresult.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/interop/test/unit/testsuite_adapter.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/interop/test/unit/ui/console/testrunner.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/be.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/be_close.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/be_instance_of.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/be_kind_of.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/change.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/compatibility.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/dsl.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/eql.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/equal.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/errors.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/exist.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/generated_descriptions.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/has.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/have.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/include.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/match.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/match_array.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/matcher.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/method_missing.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/operator_matcher.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/pretty.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/raise_exception.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/respond_to.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/satisfy.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/simple_matcher.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/throw_symbol.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers/wrap_expectation.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/mocks.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/mocks/argument_expectation.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/mocks/argument_matchers.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/mocks/error_generator.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/mocks/errors.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/mocks/example_methods.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/mocks/extensions.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/mocks/extensions/object.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/mocks/framework.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/mocks/message_expectation.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/mocks/methods.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/mocks/mock.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/mocks/order_group.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/mocks/proxy.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/mocks/space.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/rake/spectask.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/rake/verify_rcov.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/ruby.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/backtrace_tweaker.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/class_and_arguments_parser.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/command_line.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/configuration.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/differs/default.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/differs/load-diff-lcs.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/drb_command_line.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/example_group_runner.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/extensions/kernel.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/formatter/base_formatter.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/formatter/base_text_formatter.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/formatter/failing_example_groups_formatter.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/formatter/failing_examples_formatter.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/formatter/html_formatter.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/formatter/nested_text_formatter.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/formatter/no_op_method_missing.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/formatter/profile_formatter.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/formatter/progress_bar_formatter.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/formatter/silent_formatter.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/formatter/snippet_extractor.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/formatter/specdoc_formatter.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/formatter/text_mate_formatter.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/heckle_runner.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/heckle_runner_unsupported.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/line_number_query.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/option_parser.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/options.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/reporter.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/stubs/cucumber.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/test/unit.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/version.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/resources/helpers/cmdline.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/resources/rake/examples.rake
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/resources/rake/examples_with_rcov.rake
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/resources/rake/failing_examples_with_html.rake
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/resources/rake/verify_rcov.rake
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/README.jruby
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/autotest/autotest_helper.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/autotest/autotest_matchers.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/autotest/discover_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/autotest/failed_results_re_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/autotest/rspec_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/ruby_forker.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec.opts
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/dsl/main_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/example/example_group_class_definition_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/example/example_group_factory_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/example/example_group_methods_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/example/example_group_proxy_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/example/example_group_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/example/example_matcher_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/example/example_methods_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/example/example_proxy_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/example/helper_method_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/example/nested_example_group_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/example/pending_module_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/example/predicate_matcher_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/example/shared_example_group_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/example/subclassing_example_group_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/example/subject_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/expectations/differs/default_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/expectations/extensions/kernel_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/expectations/fail_with_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/expectations/handler_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/expectations/wrap_expectation_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/interop/test/unit/resources/spec_that_fails.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/interop/test/unit/resources/spec_that_passes.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/interop/test/unit/resources/spec_with_errors.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/interop/test/unit/resources/spec_with_options_hash.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/interop/test/unit/resources/test_case_that_fails.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/interop/test/unit/resources/test_case_that_passes.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/interop/test/unit/resources/test_case_with_errors.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/interop/test/unit/resources/test_case_with_various_names.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/interop/test/unit/resources/testsuite_adapter_spec_with_test_unit.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/interop/test/unit/spec_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/interop/test/unit/test_unit_spec_helper.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/interop/test/unit/testcase_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/interop/test/unit/testsuite_adapter_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/be_close_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/be_instance_of_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/be_kind_of_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/be_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/change_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/compatibility_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/description_generation_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/dsl_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/eql_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/equal_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/exist_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/has_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/have_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/include_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/match_array_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/match_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/matcher_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/matchers_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/operator_matcher_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/raise_exception_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/respond_to_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/satisfy_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/simple_matcher_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers/throw_symbol_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/and_yield_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/any_number_of_times_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/argument_expectation_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/argument_matchers_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/at_least_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/at_most_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/bug_report_10260_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/bug_report_10263_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/bug_report_11545_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/bug_report_15719_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/bug_report_496_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/bug_report_600_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/bug_report_7611_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/bug_report_7805_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/bug_report_8165_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/bug_report_8302_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/bug_report_830_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/double_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/failing_argument_matchers_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/hash_including_matcher_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/hash_not_including_matcher_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/mock_ordering_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/mock_space_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/mock_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/multiple_return_value_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/nil_expectation_warning_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/null_object_mock_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/once_counts_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/options_hash_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/partial_mock_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/partial_mock_using_mocks_directly_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/passing_argument_matchers_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/precise_counts_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/record_messages_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/stub_chain_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/stub_implementation_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/stub_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/stubbed_message_expectations_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/twice_counts_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks/unstub_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/package/bin_spec_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/rake/spectask_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/class_and_argument_parser_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/command_line_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/configuration_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/drb_command_line_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/empty_file.txt
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/example_group_runner_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/examples.txt
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/failed.txt
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/formatter/base_formatter_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/formatter/base_text_formatter_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/formatter/failing_example_groups_formatter_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/formatter/failing_examples_formatter_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/formatter/html_formatted-1.8.6-jruby.html
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/formatter/html_formatted-1.8.6.html
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/formatter/html_formatted-1.8.7.html
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/formatter/html_formatted-1.9.1.html
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/formatter/html_formatter_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/formatter/nested_text_formatter_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/formatter/profile_formatter_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/formatter/progress_bar_formatter_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/formatter/snippet_extractor_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/formatter/specdoc_formatter_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/formatter/text_mate_formatted-1.8.6-jruby.html
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/formatter/text_mate_formatted-1.8.6.html
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/formatter/text_mate_formatted-1.8.7.html
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/formatter/text_mate_formatted-1.9.1.html
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/formatter/text_mate_formatter_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/heckle_runner_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/heckler_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/line_number_query/line_number_query_fixture.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/line_number_query_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/noisy_backtrace_tweaker_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/option_parser_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/options_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/output_one_time_fixture.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/output_one_time_fixture_runner.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/output_one_time_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/quiet_backtrace_tweaker_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/reporter_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/resources/a_bar.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/resources/a_foo.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/resources/a_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/resources/custom_example_group_runner.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/resources/utf8_encoded.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/spec.opts
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/spec_drb.opts
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/spec_spaced.opts
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner_spec.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec_helper.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/support/macros.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/support/spec_classes.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/.require_paths
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/AUTHORS
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/CHANGES
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/ChangeLog
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/LICENSE
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/README
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/Rakefile
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/bin/rdebug
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/command.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/breakpoints.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/catchpoint.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/condition.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/continue.RB.save
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/continue.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/control.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/disassemble.RB
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/display.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/edit.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/enable.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/eval.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/finish.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/frame.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/help.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/info.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/irb.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/list.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/method.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/quit.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/reload.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/save.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/set.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/show.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/source.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/stepping.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/threads.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/tmate.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/trace.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands/variables.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/debugger.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/helper.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/interface.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/processor.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/doc/rdebug.1
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/rdbg.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/base/base.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/base/binding.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/base/catchpoint.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/base/load.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/bp_loop_issue.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/classes.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/cli/commands/catchpoint_test.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/cli/commands/unit/regexp.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/annotate.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/annotate.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/break_bad.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/break_bad.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/break_loop_bug.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/break_loop_bug.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/breakpoints.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/breakpoints.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/catch.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/catch.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/condition.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/condition.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/ctrl.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/ctrl.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/display.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/display.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/dollar-0.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/dollar-0a.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/dollar-0b.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/edit.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/edit.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/emacs_basic.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/emacs_basic.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/enable.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/enable.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/finish.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/finish.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/frame.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/frame.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/help.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/help.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/history.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/info-thread.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/info-thread.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/info-var-bug2.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/info-var-bug2.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/info-var.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/info-var.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/info.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/info.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/linetrace.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/linetrace.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/linetracep.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/linetracep.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/list.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/list.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/method.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/method.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/methodsig.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/methodsig.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/noquit.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/output.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/output.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/pm-bug.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/pm-bug.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/post-mortem-next.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/post-mortem-next.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/post-mortem-osx.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/post-mortem.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/post-mortem.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/quit.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/quit.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/raise.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/raise.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/save.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/save.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/setshow.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/setshow.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/source.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/source.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/stepping.cmd
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/stepping.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/test-init-cygwin.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/test-init-osx.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/test-init.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data/trace.right
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/dollar-0.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/except-bug2.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/gcd-dbg-nox.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/gcd-dbg.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/gcd.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/helper.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/info-var-bug.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/info-var-bug2.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/null.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/output.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/pm-base.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/pm-bug.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/pm.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/raise.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/scope-test.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/tdebug.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-annotate.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-break-bad.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-breakpoints.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-catch.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-condition.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-ctrl.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-display.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-dollar-0.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-edit.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-emacs-basic.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-enable.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-finish.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-frame.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-help.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-hist.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-info-thread.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-info-var.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-info.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-init.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-list.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-method.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-output.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-pm.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-quit.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-raise.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-save.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-setshow.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-source.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-stepping.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/test-trace.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/thread1.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/trunc-call.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/tvar.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-base-0.10.3.2-java/AUTHORS
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-base-0.10.3.2-java/ChangeLog
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-base-0.10.3.2-java/MIT-LICENSE
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-base-0.10.3.2-java/README
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-base-0.10.3.2-java/Rakefile
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-base-0.10.3.2-java/lib/linecache-ruby.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-base-0.10.3.2-java/lib/linecache.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-base-0.10.3.2-java/lib/ruby-debug-base.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-base-0.10.3.2-java/lib/ruby_debug.jar
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-base-0.10.3.2-java/lib/tracelines.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/sources-0.0.1/lib/sources.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/specifications/columnize-0.3.1.gemspec
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/specifications/rake-0.8.7.gemspec
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/specifications/rspec-1.3.0.gemspec
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/specifications/ruby-debug-0.10.3.gemspec
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/specifications/ruby-debug-base-0.10.3.2-java.gemspec
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/specifications/sources-0.0.1.gemspec
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/gauntlet_rubygems.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/gemconfigure.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rbconfig/datadir.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/builder.rb
@@ -1690,7 +1259,6 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/commands/help
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/commands/install_command.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/commands/list_command.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/commands/lock_command.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/commands/mirror_command.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/commands/outdated_command.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/commands/owner_command.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/commands/pristine_command.rb
@@ -1714,11 +1282,8 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/defaults/jrub
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/dependency.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/dependency_installer.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/dependency_list.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/digest/digest_adapter.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/digest/md5.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/digest/sha1.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/digest/sha2.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/doc_manager.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/errors.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/exceptions.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/ext.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/ext/builder.rb
@@ -1733,7 +1298,10 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/gemcutter_uti
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/indexer.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/install_update_options.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/installer.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/installer_test_case.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/local_remote_options.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/maven_gemify.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/mock_gem_ui.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/old_format.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/package.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/package/f_sync_dir.rb
@@ -1742,29 +1310,28 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/package/tar_i
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/package/tar_output.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/package/tar_reader.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/package/tar_reader/entry.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/package/tar_test_case.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/package/tar_writer.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/package_task.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/platform.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/remote_fetcher.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/require_paths_builder.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/requirement.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/rubygems_version.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/security.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/server.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/source_index.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/source_info_cache.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/source_info_cache_entry.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/spec_fetcher.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/specification.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/test_case.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/test_utilities.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/text.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/timer.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/uninstaller.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/user_interaction.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/validator.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/version.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/version_option.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/ubygems.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/Win32API.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ant.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ant/ant.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ant/element.rb
@@ -1772,9 +1339,9 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ant/project_convert
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ant/rake.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ant/target.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ant/tasks/raketasks.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/core_ext/symbol.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/java/java.io.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/java/java.lang.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/java/java.net.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/java/java.util.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/java/java.util.regex.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/java/org.jruby.ast.rb
@@ -1784,8 +1351,6 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/javasupport
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/javasupport/core_ext/module.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/javasupport/core_ext/object.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/javasupport/java.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/javasupport/proxy/array.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/javasupport/utilities/array.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/javasupport/utilities/base.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/rdoc_jruby.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi.rb
@@ -1822,9 +1387,13 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/i386-l
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/i386-linux/syslog.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/i386-linux/types.conf
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/i386-linux/zlib.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/i386-openbsd/errno.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/i386-openbsd/etc.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/i386-openbsd/fcntl.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/i386-openbsd/platform.conf
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/i386-openbsd/socket.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/i386-openbsd/stat.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/i386-openbsd/sysconf.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/i386-openbsd/syslog.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/i386-openbsd/types.conf
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/i386-openbsd/zlib.rb
@@ -1864,6 +1433,7 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/powerp
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/powerpc-darwin/syslog.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/powerpc-darwin/types.conf
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/powerpc-darwin/zlib.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/ppc-darwin/syslog.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/socket.rb.ffi
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/sparc-solaris/errno.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/sparc-solaris/etc.rb
@@ -1908,6 +1478,16 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64-linux/syslog.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64-linux/types.conf
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64-linux/zlib.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64-openbsd/errno.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64-openbsd/etc.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64-openbsd/fcntl.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64-openbsd/platform.conf
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64-openbsd/socket.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64-openbsd/stat.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64-openbsd/sysconf.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64-openbsd/syslog.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64-openbsd/types.conf
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64-openbsd/zlib.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64-solaris/errno.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64-solaris/etc.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64-solaris/fcntl.rb
@@ -1922,7 +1502,7 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/zlib.r
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/pointer.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/rbx.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/struct.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/times.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/struct_layout_builder.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/tools/Rakefile
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/tools/const_generator.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/tools/generator.rb
@@ -1931,6 +1511,7 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/tools/platform.
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/tools/struct_generator.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/tools/types_generator.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/types.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/union.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/variadic.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/java/inspect.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/jruby/compiler.rb
@@ -1951,12 +1532,17 @@ share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/jruby/openssl/built
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/jruby/openssl/gem.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/jruby/openssl/gem_only.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/jruby/openssl/stub.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/jruby/profiler.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/jruby/profiler/shutdown_hook.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/jruby/vm.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/jruby/win32ole/stub.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/mkmf.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/pty.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/rdoc/ri/jruby_cache.rb
+share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/rdoc/ri/jruby_paths.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/securerandom.rb
 share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/syslog.rb
-share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/yecht.jar
+share/%%PORTNAME%%-%%PORTVERSION%%/share/ri.jar
 share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/ACL/ACLEntry/cdesc-ACLEntry.yaml
 share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/ACL/ACLEntry/dot_pat-i.yaml
 share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/ACL/ACLEntry/dot_pat_str-i.yaml
@@ -11059,6 +10645,7 @@ share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/Zlib/crc_table-c.yaml
 share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/Zlib/zlib_version-c.yaml
 share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/created.rid
 share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/fatal/cdesc-fatal.yaml
+share/%%PORTNAME%%-%%PORTVERSION%%/share/ri_cache.bin.gz
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/fatal
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/Zlib/ZStream
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/Zlib/VersionError
@@ -12431,7 +12018,10 @@ share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/fatal/cdesc-fatal.yaml
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/share/ri
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/share
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/rdoc/ri
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/rdoc
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/jruby/win32ole
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/jruby/profiler
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/jruby/openssl/autoloads
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/jruby/openssl
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/jruby/compiler
@@ -12439,10 +12029,12 @@ share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/fatal/cdesc-fatal.yaml
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/java
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/tools
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64-solaris
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64-openbsd
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64-linux
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/x86_64-darwin
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/sparcv9-solaris
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/sparc-solaris
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/ppc-darwin
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/powerpc-darwin
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/powerpc-aix
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform/i386-windows
@@ -12453,11 +12045,9 @@ share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/fatal/cdesc-fatal.yaml
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi/platform
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ffi
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/javasupport/utilities
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/javasupport/proxy
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/javasupport/core_ext
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/javasupport
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/java
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin/core_ext
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/builtin
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ant/tasks
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/shared/ant
@@ -12465,7 +12055,6 @@ share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/fatal/cdesc-fatal.yaml
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/package/tar_reader
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/package
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/ext
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/digest
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/defaults
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems/commands
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/site_ruby/1.8/rubygems
@@ -12475,94 +12064,6 @@ share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/fatal/cdesc-fatal.yaml
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/specifications
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/sources-0.0.1/lib
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/sources-0.0.1
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-base-0.10.3.2-java/lib
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-base-0.10.3.2-java
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/data
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/cli/commands/unit
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/cli/commands
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/cli
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test/base
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/test
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/doc
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug/commands
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli/ruby-debug
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/cli
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3/bin
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/ruby-debug-0.10.3
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/support
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/resources
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/line_number_query
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner/formatter
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/runner
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/rake
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/package
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/mocks
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/matchers
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/interop/test/unit/resources
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/interop/test/unit
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/interop/test
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/interop
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/expectations/extensions
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/expectations/differs
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/expectations
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/example
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec/dsl
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/spec
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec/autotest
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/spec
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/resources/rake
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/resources/helpers
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/resources
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/test
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/stubs
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/formatter
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/extensions
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner/differs
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/runner
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/rake
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/mocks/extensions
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/mocks
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/matchers
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/interop/test/unit/ui/console
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/interop/test/unit/ui
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/interop/test/unit
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/interop/test
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/interop
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/extensions
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/expectations/extensions
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/expectations
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/example
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/dsl
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/adapters/mock_frameworks
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec/adapters
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/spec
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib/autotest
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/lib
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/support/matchers
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/support
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/subject
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/step_definitions
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/spec_helper
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/runner
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/pending
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/mocks
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/mock_framework_integration
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/matchers
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/load_paths
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/interop
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/formatters
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/extensions
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/expectations
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/example_groups
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/command_line
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features/before_and_after_blocks
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/features
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/ruby1.9.compatibility
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/passing
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples/failing
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/examples
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0/bin
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rspec-1.3.0
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rake-0.8.7/test/data/unittest
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rake-0.8.7/test/data/statusreturn
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rake-0.8.7/test/data/rbext
@@ -12586,9 +12087,6 @@ share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/fatal/cdesc-fatal.yaml
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rake-0.8.7/doc
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rake-0.8.7/bin
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/rake-0.8.7
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/columnize-0.3.1/test
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/columnize-0.3.1/lib
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems/columnize-0.3.1
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/gems
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/doc
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/gems/1.8/cache
@@ -12603,11 +12101,13 @@ share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/fatal/cdesc-fatal.yaml
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/uri
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/test/unit
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/test
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/syck
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/shell
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rss/maker
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rss/dublincore
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rss/content
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rss
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/ripper
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rinda
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rexml/validation
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rexml/parsers
@@ -12621,14 +12121,23 @@ share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/fatal/cdesc-fatal.yaml
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/markup
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/xml
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/texinfo
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/js
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish/images
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template/darkfish
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/template
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/html
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator/chm
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc/generator
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rdoc
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rbconfig
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rake/loaders
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rake/contrib
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/rake
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/racc
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/visitors
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/nodes
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych/json
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/psych
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/optparse
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/net
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/minitest
@@ -12637,13 +12146,17 @@ share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/fatal/cdesc-fatal.yaml
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/irb/ext
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/irb/cmd
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/irb
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/fiddle
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/drb
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/dl
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/digest
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/date/delta
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/date
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/cgi/session
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/cgi
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9/bigdecimal
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.9
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/yaml
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/xsd/xmlparser
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/xsd/codegen
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/xsd
@@ -12710,6 +12223,7 @@ share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/fatal/cdesc-fatal.yaml
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/io
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/drb
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/dl
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/digest
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/date
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/cgi/session
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8/cgi
@@ -12717,20 +12231,25 @@ share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/fatal/cdesc-fatal.yaml
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby/1.8
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/ruby
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/x86_64-Windows
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/x86_64-SunOS
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/x86_64-OpenBSD
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/x86_64-Linux
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/x86_64-FreeBSD
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/sparcv9-SunOS
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/sparc-SunOS
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/ppc-Linux
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/ppc-AIX
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/include/ruby
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/include
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-Windows
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-SunOS
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-OpenBSD
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-Linux
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/i386-FreeBSD
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/native/Darwin
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/native
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/bin
-@dirrm share/%%PORTNAME%%-%%PORTVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CodeConventions.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENCE.bsf
@@ -12743,6 +12262,12 @@ share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/fatal/cdesc-fatal.yaml
 %%PORTDOCS%%%%DOCSDIR%%/jvyaml/CREDITS
 %%PORTDOCS%%%%DOCSDIR%%/jvyaml/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/jvyaml/README
+%%PORTDOCS%%%%DOCSDIR%%/man/pom.xml
+%%PORTDOCS%%%%DOCSDIR%%/man/src/docbkx/jruby.xml
+%%PORTDOCS%%%%DOCSDIR%%/pom.xml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/man/src/docbkx
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/man/src
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/man
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/jvyaml
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/api
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
@@ -12757,7 +12282,6 @@ share/%%PORTNAME%%-%%PORTVERSION%%/share/ri/1.8/system/fatal/cdesc-fatal.yaml
 %%PORTDOCS%%%%EXAMPLESDIR%%/irb-applet.html
 %%PORTDOCS%%%%EXAMPLESDIR%%/java2.rb
 %%PORTDOCS%%%%EXAMPLESDIR%%/jirb.jnlp
-%%PORTDOCS%%%%EXAMPLESDIR%%/jnlp/.gitignore
 %%PORTDOCS%%%%EXAMPLESDIR%%/jnlp/README
 %%PORTDOCS%%%%EXAMPLESDIR%%/jnlp/build.properties
 %%PORTDOCS%%%%EXAMPLESDIR%%/jnlp/build.xml
