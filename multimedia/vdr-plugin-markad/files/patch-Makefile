@@ -1,0 +1,15 @@
+--- a/Makefile
++++ b/Makefile
+@@ -13,10 +13,10 @@ ARCHIVE = markad-$(VERSION)
+ PACKAGE = vdr-$(ARCHIVE)
+ 
+ all:
+-	for i in $(DIRS); do $(MAKE) -C $$i; done
++	for i in $(DIRS); do $(MAKE) -C $$i CC=${CC} CXX=${CXX}; done
+ 
+ install:
+-	for i in $(DIRS); do $(MAKE) -C $$i install; done
++	for i in $(DIRS); do $(MAKE) -C $$i CC=${CC} CXX=${CXX} install; done
+ 
+ dist:	 
+ 	@-rm -rf $(TMPDIR)/$(ARCHIVE)
