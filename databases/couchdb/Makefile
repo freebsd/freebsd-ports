@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	couchdb
-PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTVERSION=	1.1.0
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_APACHE}
@@ -20,14 +19,12 @@ COMMENT=	A document database server, accessible via a RESTful JSON API
 LIB_DEPENDS=	icudata:${PORTSDIR}/devel/icu \
 		js:${PORTSDIR}/lang/spidermonkey \
 		curl.6:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	${LOCALBASE}/lib/erlang/usr/include/erl_driver.h:${PORTSDIR}/lang/erlang-lite
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${LOCALBASE}/lib/erlang/usr/include/erl_driver.h:${PORTSDIR}/lang/erlang-lite \
+		${LOCALBASE}/bin/help2man:${PORTSDIR}/misc/help2man
+RUN_DEPENDS=	${LOCALBASE}/lib/erlang/usr/include/erl_driver.h:${PORTSDIR}/lang/erlang-lite
 
-COUCH_VARDIR?=	/var
-COUCH_DBDIR?=	${COUCH_VARDIR}/db/couchdb
-COUCH_LOGDIR?=	${COUCH_VARDIR}/log/couchdb
-COUCH_LIBDIR?=	${COUCH_VARDIR}/lib/couchdb
-COUCH_USER?=	couchdb
+USERS=		couchdb
+GROUPS=		couchdb
 
 USERS=		${COUCH_USER}
 GROUPS=		${USERS}
@@ -57,10 +54,12 @@ post-patch:
 .endif
 
 post-install:
+.ifndef PACKAGE_BUILDING
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
+.endif
 	@${CAT} ${PKGMESSAGE}
-	${MKDIR} ${COUCH_DBDIR}
-	${CHOWN} ${COUCH_USER} ${COUCH_DBDIR}
-	${CHOWN} ${COUCH_USER} ${COUCH_LOGDIR}
-	${CHOWN} ${COUCH_USER} ${COUCH_LIBDIR}
+
+post-deinstall:
+	@PKG_PREFIX=${PREFIX} ${SH} ${PKGDEINSTALL} ${PKGNAME} POST-DEINSTALL
 
 .include <bsd.port.mk>

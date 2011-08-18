@@ -58,6 +58,10 @@ lib/couchdb/erlang/lib/couch-%%PORTVERSION%%/ebin/couch_view_compactor.beam
 lib/couchdb/erlang/lib/couch-%%PORTVERSION%%/ebin/couch_view_group.beam
 lib/couchdb/erlang/lib/couch-%%PORTVERSION%%/ebin/couch_view_updater.beam
 lib/couchdb/erlang/lib/couch-%%PORTVERSION%%/ebin/couch_work_queue.beam
+lib/couchdb/erlang/lib/couch-%%PORTVERSION%%/ebin/couch_httpd_proxy.beam
+lib/couchdb/erlang/lib/couch-%%PORTVERSION%%/ebin/couch_httpd_vhost.beam
+lib/couchdb/erlang/lib/couch-%%PORTVERSION%%/ebin/couch_os_daemons.beam
+lib/couchdb/erlang/lib/couch-%%PORTVERSION%%/ebin/couch_replication_manager.beam
 lib/couchdb/erlang/lib/couch-%%PORTVERSION%%/include/couch_db.hrl
 lib/couchdb/erlang/lib/couch-%%PORTVERSION%%/include/couch_js_functions.hrl
 lib/couchdb/erlang/lib/couch-%%PORTVERSION%%/priv/couchspawnkillable
@@ -81,38 +85,48 @@ lib/couchdb/erlang/lib/etap/ebin/etap_report.beam
 lib/couchdb/erlang/lib/etap/ebin/etap_request.beam
 lib/couchdb/erlang/lib/etap/ebin/etap_string.beam
 lib/couchdb/erlang/lib/etap/ebin/etap_web.beam
-lib/couchdb/erlang/lib/ibrowse-1.5.2/ebin/ibrowse.app
-lib/couchdb/erlang/lib/ibrowse-1.5.2/ebin/ibrowse.beam
-lib/couchdb/erlang/lib/ibrowse-1.5.2/ebin/ibrowse_app.beam
-lib/couchdb/erlang/lib/ibrowse-1.5.2/ebin/ibrowse_http_client.beam
-lib/couchdb/erlang/lib/ibrowse-1.5.2/ebin/ibrowse_lb.beam
-lib/couchdb/erlang/lib/ibrowse-1.5.2/ebin/ibrowse_lib.beam
-lib/couchdb/erlang/lib/ibrowse-1.5.2/ebin/ibrowse_sup.beam
-lib/couchdb/erlang/lib/ibrowse-1.5.2/ebin/ibrowse_test.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochifmt.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochifmt_records.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochifmt_std.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochihex.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochijson.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochijson2.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochinum.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochiweb.app
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochiweb.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochiweb_app.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochiweb_charref.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochiweb_cookies.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochiweb_echo.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochiweb_headers.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochiweb_html.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochiweb_http.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochiweb_multipart.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochiweb_request.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochiweb_response.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochiweb_skel.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochiweb_socket_server.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochiweb_sup.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/mochiweb_util.beam
-lib/couchdb/erlang/lib/mochiweb-r113/ebin/reloader.beam
+lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse.app
+lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse.beam
+lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse_app.beam
+lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse_http_client.beam
+lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse_lb.beam
+lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse_lib.beam
+lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse_sup.beam
+lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin/ibrowse_test.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochifmt.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochifmt_records.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochifmt_std.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiglobal.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochihex.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochijson.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochijson2.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochilists.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochilogfile2.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochinum.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochitemp.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiutf8.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb.app
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb_acceptor.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb_app.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb_charref.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb_cookies.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb_cover.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb_echo.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb_headers.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb_html.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb_http.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb_io.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb_mime.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb_multipart.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb_request.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb_response.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb_skel.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb_socket.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb_socket_server.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb_sup.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/mochiweb_util.beam
+lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin/reloader.beam
 %%DATADIR%%/server/main.js
 %%DATADIR%%/www/_sidebar.html
 %%DATADIR%%/www/config.html
@@ -120,14 +134,17 @@ lib/couchdb/erlang/lib/mochiweb-r113/ebin/reloader.beam
 %%DATADIR%%/www/custom_test.html
 %%DATADIR%%/www/database.html
 %%DATADIR%%/www/dialog/_admin_party.html
+%%DATADIR%%/www/dialog/_change_password.html
 %%DATADIR%%/www/dialog/_compact_cleanup.html
 %%DATADIR%%/www/dialog/_create_admin.html
+%%DATADIR%%/www/dialog/_create_config.html
 %%DATADIR%%/www/dialog/_create_database.html
 %%DATADIR%%/www/dialog/_database_security.html
 %%DATADIR%%/www/dialog/_delete_database.html
 %%DATADIR%%/www/dialog/_delete_document.html
 %%DATADIR%%/www/dialog/_login.html
 %%DATADIR%%/www/dialog/_save_view_as.html
+%%DATADIR%%/www/dialog/_share_test_reports.html
 %%DATADIR%%/www/dialog/_signup.html
 %%DATADIR%%/www/dialog/_upload_attachment.html
 %%DATADIR%%/www/document.html
@@ -155,6 +172,8 @@ lib/couchdb/erlang/lib/mochiweb-r113/ebin/reloader.beam
 %%DATADIR%%/www/image/save.png
 %%DATADIR%%/www/image/sidebar-toggle.png
 %%DATADIR%%/www/image/spinner.gif
+%%DATADIR%%/www/image/spinner_33.gif
+%%DATADIR%%/www/image/spinner_6b.gif
 %%DATADIR%%/www/image/test_failure.gif
 %%DATADIR%%/www/image/test_success.gif
 %%DATADIR%%/www/image/thead-key.gif
@@ -178,12 +197,19 @@ lib/couchdb/erlang/lib/mochiweb-r113/ebin/reloader.beam
 %%DATADIR%%/www/script/jquery.js
 %%DATADIR%%/www/script/jquery.resizer.js
 %%DATADIR%%/www/script/jquery.suggest.js
+%%DATADIR%%/www/script/jquery-ui-1.8.11.custom.min.js
 %%DATADIR%%/www/script/json2.js
+%%DATADIR%%/www/script/jspec/jspec.css
+%%DATADIR%%/www/script/jspec/jspec.jquery.js
+%%DATADIR%%/www/script/jspec/jspec.js
+%%DATADIR%%/www/script/jspec/jspec.xhr.js
 %%DATADIR%%/www/script/oauth.js
 %%DATADIR%%/www/script/sha1.js
 %%DATADIR%%/www/script/test/all_docs.js
+%%DATADIR%%/www/script/test/attachment_conflicts.js
 %%DATADIR%%/www/script/test/attachment_names.js
 %%DATADIR%%/www/script/test/attachment_paths.js
+%%DATADIR%%/www/script/test/attachment_ranges.js
 %%DATADIR%%/www/script/test/attachment_views.js
 %%DATADIR%%/www/script/test/attachments.js
 %%DATADIR%%/www/script/test/attachments_multipart.js
@@ -226,6 +252,7 @@ lib/couchdb/erlang/lib/mochiweb-r113/ebin/reloader.beam
 %%DATADIR%%/www/script/test/reduce_false.js
 %%DATADIR%%/www/script/test/reduce_false_temp.js
 %%DATADIR%%/www/script/test/replication.js
+%%DATADIR%%/www/script/test/replicator_db.js
 %%DATADIR%%/www/script/test/rev_stemming.js
 %%DATADIR%%/www/script/test/rewrite.js
 %%DATADIR%%/www/script/test/security_validation.js
@@ -249,9 +276,20 @@ lib/couchdb/erlang/lib/mochiweb-r113/ebin/reloader.beam
 %%DATADIR%%/www/script/test/view_sandboxing.js
 %%DATADIR%%/www/script/test/view_update_seq.js
 %%DATADIR%%/www/script/test/view_xml.js
+%%DATADIR%%/www/spec/couch_js_class_methods_spec.js
+%%DATADIR%%/www/spec/couch_js_instance_methods_1_spec.js
+%%DATADIR%%/www/spec/couch_js_instance_methods_2_spec.js
+%%DATADIR%%/www/spec/couch_js_instance_methods_3_spec.js
+%%DATADIR%%/www/spec/custom_helpers.js
+%%DATADIR%%/www/spec/jquery_couch_js_class_methods_spec.js
+%%DATADIR%%/www/spec/jquery_couch_js_instance_methods_1_spec.js
+%%DATADIR%%/www/spec/jquery_couch_js_instance_methods_2_spec.js
+%%DATADIR%%/www/spec/jquery_couch_js_instance_methods_3_spec.js
+%%DATADIR%%/www/spec/run.html
 %%DATADIR%%/www/session.html
 %%DATADIR%%/www/status.html
 %%DATADIR%%/www/style/layout.css
+%%DATADIR%%/www/style/jquery-ui-1.8.11.custom.css
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS.gz
 %%PORTDOCS%%%%DOCSDIR%%/BUGS.gz
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES.gz
@@ -265,10 +303,10 @@ lib/couchdb/erlang/lib/mochiweb-r113/ebin/reloader.beam
 %%PORTDOCS%%%%DOCSDIR%%/README.gz
 %%PORTDOCS%%%%DOCSDIR%%/THANKS.gz
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrm lib/couchdb/erlang/lib/mochiweb-r113/ebin
-@dirrm lib/couchdb/erlang/lib/mochiweb-r113
-@dirrm lib/couchdb/erlang/lib/ibrowse-1.5.2/ebin
-@dirrm lib/couchdb/erlang/lib/ibrowse-1.5.2
+@dirrm lib/couchdb/erlang/lib/mochiweb-7c2bc2/ebin
+@dirrm lib/couchdb/erlang/lib/mochiweb-7c2bc2
+@dirrm lib/couchdb/erlang/lib/ibrowse-2.2.0/ebin
+@dirrm lib/couchdb/erlang/lib/ibrowse-2.2.0
 @dirrm lib/couchdb/erlang/lib/etap/ebin
 @dirrm lib/couchdb/erlang/lib/etap
 @dirrm lib/couchdb/erlang/lib/erlang-oauth/ebin
@@ -289,8 +327,10 @@ lib/couchdb/erlang/lib/mochiweb-r113/ebin/reloader.beam
 @dirrm etc/couchdb/local.d
 @dirrmtry etc/couchdb
 @dirrm %%DATADIR%%/www/style
+@dirrm %%DATADIR%%/www/script/jspec
 @dirrm %%DATADIR%%/www/script/test
 @dirrm %%DATADIR%%/www/script
+@dirrm %%DATADIR%%/www/spec
 @dirrm %%DATADIR%%/www/image
 @dirrm %%DATADIR%%/www/dialog
 @dirrm %%DATADIR%%/www
