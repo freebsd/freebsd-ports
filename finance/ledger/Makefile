@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	ledger
-PORTVERSION=	2.6.1
-PORTREVISION=	2
+PORTVERSION=	2.6.3
 CATEGORIES=	finance
-MASTER_SITES=	SF
+MASTER_SITES=	http://cloud.github.com/downloads/jwiegley/${PORTNAME}/
 
 MAINTAINER=	woodycarey@hotmail.com
 COMMENT=	John Wiegley's command line accounting program
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	gmp:${PORTSDIR}/math/gmp \
 		pcre:${PORTSDIR}/devel/pcre \
@@ -23,7 +25,7 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include -I${LOCALBASE}/include/w3c-libwww
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 NO_INSTALL_MANPAGES=	yes
 INFO=	ledger

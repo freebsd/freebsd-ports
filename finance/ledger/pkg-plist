@@ -33,7 +33,7 @@ lib/libamounts.a
 lib/libamounts.la
 lib/libamounts.so
 lib/libamounts.so.0
-lib/libledger-2.6.1.so
+lib/libledger-2.6.3.so
 lib/libledger.a
 lib/libledger.la
 lib/libledger.so
