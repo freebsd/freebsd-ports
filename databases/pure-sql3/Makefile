@@ -11,7 +11,7 @@ CATEGORIES=	databases
 MASTER_SITES=	http://pure-lang.googlecode.com/files/
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	Pure langauge binding to the SQLite3 library
+COMMENT=	Pure language binding to the SQLite3 library
 
 LIB_DEPENDS+=	pure.7:${PORTSDIR}/lang/pure \
 		sqlite3:${PORTSDIR}/databases/sqlite3

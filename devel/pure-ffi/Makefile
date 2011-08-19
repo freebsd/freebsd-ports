@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://pure-lang.googlecode.com/files/
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	Pure langauge interface to libffi
+COMMENT=	Pure language interface to libffi
 
 LIB_DEPENDS+=	pure.7:${PORTSDIR}/lang/pure \
 		ffi:${PORTSDIR}/devel/libffi
