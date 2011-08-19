@@ -13,52 +13,18 @@
 #				Default: -D
 # barnyard2_conf (str):		Barnyard configuration file
 #				Default: %%PREFIX%%/etc/barnyard2.conf
+# optional, multi-barnyard2:
+# barnyard2_rules="1 2 3"
+# barnyard2_1_flags="-D"
+# barnyard2_1_pidfile=""
+# #$command $flags $args
 #
 # USAGE: barnyard2 [-options]
 #
-# General Options:
-#        -?         Show this information
-#        -c <file>  Use configuration file <file>
-#        -g <gname> Run barnyard gid as <gname> group (or gid) after initialization
-#        -m <umask> Set umask = <umask>
-#        -q         Quiet. Don't show banner and status report
-#        -u <uname> Run barnyard uid as <uname> user (or uid) after initialization
-#        -v         Be verbose
-#        -C <file>  Read the classification map from <file>
-#        -D         Run barnyard in background (daemon) mode
-#        -G <file>  Read the gen-msg map from <file>
-#        -L <dir>   Write output files in <dir>
-#        -R <file>  Read the reference map from <file>
-#        -S <file>  Read the sid-msg map from <file>
-#        -T         Test and report on the current configuration
-#        -U         Use UTC for timestamps
-#        -V         Show version and exit
-#
-# Continual Processing Options:
-#        -a <dir>   Archive processed files to <dir>
-#        -f <base>  Use <base> as the base filename pattern
-#        -d <dir>   Spool files from <dir>
-#        -n         Only process new events
-#        -w <file>  Enable bookmarking using <file>
-#
-# Batch Processing Mode Options:
-#        -o         Enable batch processing mode
-#
-# Longname options and their corresponding single char version
-#   --reference <file>              Same as -R
-#   --classification <file>         Same as -C
-#   --gen-msg <file>                Same as -G
-#   --sid-msg <file>                Same as -S
-#   --pid-path <path>               Specify the path for the barnyard PID file
-#   --create-pidfile                Create PID file, even when not in Daemon mode
-#   --nolock-pidfile                Do not try to lock barnyard PID file
-#   --help                          Same as -?
-#   --version                       Same as -V
 
 . /etc/rc.subr
 
 name="barnyard2"
-load_rc_config $name
 rcvar=`set_rcvar`
 # set some defaults
 : ${barnyard2_enable="NO"}
@@ -66,6 +32,19 @@ rcvar=`set_rcvar`
 : ${barnyard2_flags="-D"}
 
 command="%%PREFIX%%/bin/barnyard2"
-command_args="-c ${barnyard2_conf} ${barnyard2_flags}"
+command_args="-c ${barnyard2_conf} -D"
 
-run_rc_command "$1"
+load_rc_config $name
+
+if [ -n "${barnyard2_rules}" ];then
+  for i in ${barnyard2_rules}; do
+    echo -n "$i:"
+    eval barnyard2_flags=\$barnyard2_${i}_flags
+    eval pidfile=\$barnyard2_${i}_pidfile
+    eval barnyard2_conf=\$barnyard2_${i}_conf
+    command_args="-c $barnyard2_conf -D"
+    run_rc_command "$1"
+  done
+else
+   run_rc_command "$1"
+fi
