@@ -6,18 +6,16 @@
 #
 
 PORTNAME=	flamerobin
-PORTVERSION=	0.7.6
-PORTREVISION=	6
+PORTVERSION=	0.9.2
 CATEGORIES=	databases
-MASTER_SITES=	SF/${PORTNAME}/OldFiles
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
-MAINTAINER=	dindin@FreeBSD.org.ua
+MAINTAINER=	acm@FreeBSD.org
 COMMENT=	The GUI administration tool for firebird database
 
-LIB_DEPENDS=	fbclient.2:${PORTSDIR}/databases/firebird20-client
-
-USE_WX=		2.6+
+USE_FIREBIRD=	yes
+USE_WX=		2.8+
 WX_COMPS=	wx contrib
 WX_CONF_ARGS=	absolute
 WX_PREMK=	yes
@@ -30,11 +28,6 @@ SUB_FILES=	pkg-message
 MAN1=		flamerobin.1
 
 .include <bsd.port.pre.mk>
-
-.if exists(${WX_CONFIG})
-WX_VER_STR!=	${WX_CONFIG} --release
-PLIST_SUB+=	WX_VERSION=${WX_VER_STR}
-.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}

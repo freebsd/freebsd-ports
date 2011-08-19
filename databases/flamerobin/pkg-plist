@@ -7,6 +7,7 @@ bin/flamerobin
 %%DATADIR%%/docs/html.css
 %%DATADIR%%/html-templates/ALLloading.html
 %%DATADIR%%/html-templates/DATABASE.html
+%%DATADIR%%/html-templates/DATABASEtriggers.html
 %%DATADIR%%/html-templates/DDL.html
 %%DATADIR%%/html-templates/DOMAIN.html
 %%DATADIR%%/html-templates/EXCEPTION.html
