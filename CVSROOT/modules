@@ -23335,6 +23335,7 @@ ruby-goocanvas                  ports/x11-toolkits/ruby-goocanvas
 ruby-google                     ports/www/ruby-google
 ruby-gpgme                      ports/security/ruby-gpgme
 ruby-gphys                      ports/science/ruby-gphys
+ruby-growl                      ports/net/ruby-growl
 ruby-gsl                        ports/math/ruby-gsl
 ruby-gstreamer                  ports/x11-toolkits/ruby-gstreamer
 ruby-gtk                        ports/x11-toolkits/ruby-gtk
@@ -23362,6 +23363,7 @@ ruby-io-reactor                 ports/devel/ruby-io-reactor
 ruby-irc                        ports/irc/ruby-irc
 ruby-jttui                      ports/devel/ruby-jttui
 ruby-kyotocabinet               ports/databases/ruby-kyotocabinet
+ruby-langscan                   ports/devel/ruby-langscan
 ruby-ldap                       ports/net/ruby-ldap
 ruby-lha                        ports/archivers/ruby-lha
 ruby-libarchive                 ports/archivers/ruby-libarchive
