@@ -1,0 +1,4 @@
+include/opencsg.h
+lib/libopencsg.so.%%PORTVERSION%%
+lib/libopencsg.so.1
+lib/libopencsg.so

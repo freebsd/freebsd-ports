@@ -564,6 +564,7 @@
     SUBDIR += ocropus
     SUBDIR += ogre3d
     SUBDIR += openclipart
+    SUBDIR += opencsg
     SUBDIR += opencv
     SUBDIR += opencv-core
     SUBDIR += opendis
