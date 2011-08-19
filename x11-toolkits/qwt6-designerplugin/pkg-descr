@@ -4,6 +4,6 @@ Beside a 2D plot widget it provides scales, sliders, dials, compasses,
 thermometers, wheels and knobs to control or display values, arrays,
 or ranges of type double.
 
-This port installs Qt Designer plugin for Qwt library version 5.
+This port installs Qt Designer plugin for Qwt library version 6.
 
 WWW:	http://qwt.sourceforge.net
