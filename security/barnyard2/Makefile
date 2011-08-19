@@ -46,17 +46,17 @@ CONFIGURE_ARGS+=	--with-postgresql
 .endif
 
 .if defined(WITH_SNORT)
-RUN_DEPENDS+=	${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort
+RUN_DEPENDS+=		${LOCALBASE}/bin/snort:${PORTSDIR}/security/snort
 .endif
 
 .if defined(WITH_SURICATA)
-RUN_DEPENDS+=	${LOCALBASE}/bin/suricata:${PORTSDIR}/security/suricata
+RUN_DEPENDS+=		${LOCALBASE}/bin/suricata:${PORTSDIR}/security/suricata
 .endif
 
 .if defined(WITH_TCL)
 USE_TCL=		yes
 CONFIGURE_ARGS+=	--with-tcl=${PREFIX}/lib/tcl8.4
-LIB_DEPENDS+=   	tcl84.1:${PORTSDIR}/lang/tcl84
+LIB_DEPENDS+=		tcl84.1:${PORTSDIR}/lang/tcl84
 .endif
 
 pre-install:
