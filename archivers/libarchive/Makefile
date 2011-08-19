@@ -6,6 +6,7 @@
 
 PORTNAME=	libarchive
 PORTVERSION=	2.8.4
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	archivers
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
@@ -15,7 +16,7 @@ COMMENT=	Library to create and read several streaming archive formats
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-USE_GNOME=	libxml2
+USE_GNOME=	gnomehack libxml2
 
 PLIST_FILES=	bin/bsdcpio \
 		bin/bsdtar \
@@ -25,8 +26,7 @@ PLIST_FILES=	bin/bsdcpio \
 		lib/libarchive.la \
 		lib/libarchive.so \
 		lib/libarchive.so.10 \
-		lib/pkgconfig/libarchive.pc
-PLIST_DIRS=	lib/pkgconfig
+		libdata/pkgconfig/libarchive.pc
 
 MANCOMPRESSED=	no
 MAN1=		bsdcpio.1 \
