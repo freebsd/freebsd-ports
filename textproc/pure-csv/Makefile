@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	http://pure-lang.googlecode.com/files/
 
 MAINTAINER=	lichray@gmail.com
-COMMENT=	A CSV reading and writing module for the Pure langauge
+COMMENT=	A CSV reading and writing module for the Pure language
 
 LIB_DEPENDS+=	pure:${PORTSDIR}/lang/pure
 
