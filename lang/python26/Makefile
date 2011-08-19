@@ -82,6 +82,7 @@ PLIST_SUB+=	IF_DEFAULT="@comment "
 CFLAGS+=	-D__wchar_t=wchar_t
 
 .if !defined(WITHOUT_THREADS)
+PLIST_SUB+=	THREADS=""
 .if defined(WITH_PTH)
 CONFIGURE_ARGS+=	--with-pth
 EXTRA_PATCHES+=		${PATCHDIR}/extra-patch-configure-pth
@@ -101,6 +102,7 @@ CFLAGS+=		-DTHREAD_STACK_SIZE=0x20000
 CFLAGS+=		-DTHREAD_STACK_SIZE=0x100000
 .endif # defined(WITHOUT_HUGE_STACK_SIZE)
 .else # defined(WITHOUT_THREADS)
+PLIST_SUB+=	THREADS="@comment "
 CONFIGURE_ARGS+=	--without-threads
 .if defined(LDFLAGS)
 CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"

@@ -860,7 +860,7 @@ lib/lib%%PYTHON_VERSION%%.so.1
 %%PYTHON_LIBDIR%%/lib-dynload/_locale.so
 %%PYTHON_LIBDIR%%/lib-dynload/_lsprof.so
 %%PYTHON_LIBDIR%%/lib-dynload/_multibytecodec.so
-%%PYTHON_LIBDIR%%/lib-dynload/_multiprocessing.so
+%%THREADS%%%%PYTHON_LIBDIR%%/lib-dynload/_multiprocessing.so
 %%PYTHON_LIBDIR%%/lib-dynload/_random.so
 %%PYTHON_LIBDIR%%/lib-dynload/_sha256.so
 %%PYTHON_LIBDIR%%/lib-dynload/_sha512.so
