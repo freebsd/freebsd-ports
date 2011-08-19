@@ -12250,6 +12250,7 @@ share/%%PORTNAME%%-%%PORTVERSION%%/share/ri_cache.bin.gz
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib/native
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/lib
 @dirrm share/%%PORTNAME%%-%%PORTVERSION%%/bin
+@dirrm share/%%PORTNAME%%-%%PORTVERSION%%
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/CodeConventions.txt
 %%PORTDOCS%%%%DOCSDIR%%/LICENCE.bsf
