@@ -1,39 +1,38 @@
---- qwtconfig.pri.orig	2011-08-08 08:09:26.000000000 +0000
-+++ qwtconfig.pri	2011-08-08 08:11:17.000000000 +0000
-@@ -8,7 +8,7 @@
- VERSION      = $${VER_MAJ}.$${VER_MIN}.$${VER_PAT}
+--- ./qwtconfig.pri.orig	2011-08-01 14:33:53.000000000 +0000
++++ ./qwtconfig.pri	2011-08-19 09:57:08.979331152 +0000
+@@ -19,7 +19,7 @@
+ QWT_INSTALL_PREFIX = $$[QT_INSTALL_PREFIX]
  
  unix {
--    INSTALLBASE    = /usr/local/qwt-$$VERSION
-+    INSTALLBASE    = $$PREFIX
+-    QWT_INSTALL_PREFIX    = /usr/local/qwt-$$QWT_VERSION
++    QWT_INSTALL_PREFIX    = $$PREFIX
  }
  
  win32 {
-@@ -16,8 +16,7 @@
+@@ -27,7 +27,7 @@
  }
  
- target.path    = $$INSTALLBASE/lib
--headers.path   = $$INSTALLBASE/include
--doc.path       = $$INSTALLBASE/doc
-+headers.path   = $$INSTALLBASE/include/qwt
+ QWT_INSTALL_DOCS      = $${QWT_INSTALL_PREFIX}/doc
+-QWT_INSTALL_HEADERS   = $${QWT_INSTALL_PREFIX}/include
++QWT_INSTALL_HEADERS   = $${QWT_INSTALL_PREFIX}/include/qwt6/
+ QWT_INSTALL_LIBS      = $${QWT_INSTALL_PREFIX}/lib
  
  ######################################################################
- # qmake internal options
-@@ -98,7 +97,7 @@
- # QwtSVGItem.
+@@ -49,7 +49,7 @@
+ # with every Qt upgrade. 
  ######################################################################
  
--#CONFIG     += QwtSVGItem
-+CONFIG     += QwtSVGItem
+-QWT_INSTALL_FEATURES  = $${QWT_INSTALL_PREFIX}/features
++QWT_INSTALL_FEATURES  = $${QWT_INSTALL_PREFIX}/share/qt4/mkspecs/features
+ # QWT_INSTALL_FEATURES  = $${QT_INSTALL_PREFIX}/features
  
  ######################################################################
- # You can use the MathML renderer of the Qt solutions package to 
-@@ -115,7 +114,7 @@
+@@ -98,7 +98,7 @@
  # Otherwise you have to build it from the designer directory.
  ######################################################################
  
--CONFIG     += QwtDesigner
-+#CONFIG     += QwtDesigner
+-QWT_CONFIG     += QwtDesigner
++# QWT_CONFIG     += QwtDesigner
  
  ######################################################################
  # If you want to auto build the examples, enable the line below

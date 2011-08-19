@@ -1,0 +1,11 @@
+--- ./qwt.prf.orig	2011-08-01 14:33:51.000000000 +0000
++++ ./qwt.prf	2011-08-19 09:33:42.262331890 +0000
+@@ -35,7 +35,7 @@
+ }   
+ 
+ INCLUDEPATH_QWT = $${INCLUDEPATH}
+-qtAddLibrary(qwt)
++qtAddLibrary(qwt6)
+ 
+ # we don't want qtAddLibrary to expand the 
+ # include path, with directories, that might

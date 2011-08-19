@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qwt
-PORTVERSION=	5.2.2
+PORTVERSION=	6.0.1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF
 
@@ -17,26 +17,28 @@ USE_QT_VER=	4
 QT_COMPONENTS=	gui svg moc_build qmake_build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-QMAKE_ARGS+=	-unix -recursive PREFIX=${PREFIX}
+QMAKE_ARGS+=	-recursive PREFIX=${PREFIX}
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
-PORTSCOUT=	limit:^5\.
+DOCSDIR=	${PREFIX}/share/doc/${LATEST_LINK}
 
-STRIP_FILES=	lib/libqwt.so.${PORTVERSION}
+LATEST_LINK=	qwt6
 
-.include <bsd.port.pre.mk>
-.include <${FILESDIR}/Makefile.man>
+PLIST_SUB=	INCLUDEDIR=include/${LATEST_LINK} \
+		SHLIB_VER=${PORTVERSION} \
+		SHLIB_SHVER=${PORTVERSION:R}
+
+STRIP_FILES=	lib/libqwt6.so.${PORTVERSION} \
+		lib/libqwtmathml.so.${PORTVERSION}
 
 do-configure:
 	(cd ${WRKSRC} && ${SETENV} ${CONFIGURE_ENV} ${QMAKE} ${QMAKEFLAGS} ${QMAKE_ARGS})
 
 post-install:
-	${MKDIR} ${PREFIX}/man/man3
-	${INSTALL_MAN} ${WRKSRC}/doc/man/man3/Qwt* ${PREFIX}/man/man3
 	${STRIP_CMD} ${STRIP_FILES:S,^,${PREFIX}/,}
 .if !defined(NOPORTDOCS)
 	(cd ${WRKSRC}/doc/html/ && ${COPYTREE_SHARE} \* ${DOCSDIR})
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
