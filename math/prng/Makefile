@@ -11,6 +11,8 @@ MASTER_SITES=	http://statistik.wu-wien.ac.at/software/prng/
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Portable, high-performance ANSI-C pseudorandom number generators
 
+LICENSE=	GPLv2
+
 CFLAGS+=	-fgnu89-inline
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
