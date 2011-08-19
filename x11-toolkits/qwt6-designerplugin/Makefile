@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	qwt
-PORTVERSION=	5.2.2
+PORTVERSION=	6.0.1
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	-designerplugin
@@ -14,19 +14,24 @@ PKGNAMESUFFIX=	-designerplugin
 MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt Designer plugin for Qwt
 
-LIB_DEPENDS=	qwt.5:${PORTSDIR}/x11-toolkits/qwt5
+LIB_DEPENDS=	qwt6.6:${PORTSDIR}/x11-toolkits/qwt6
 
 USE_QT_VER=	4
 QT_COMPONENTS=	designer moc_build qmake_build rcc_build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-QMAKE_ARGS+=	-unix -recursive CONFIG+=QwtDesigner \
+QMAKE_ARGS+=	-recursive CONFIG+=QwtDesigner \
 		PLUGINDIR=${PREFIX}/${QT_PLUGINDIR_REL}
 HAS_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
-PORTSCOUT=	limit:^5\.
 
-STRIP_FILES=	${QT_PLUGINDIR_REL}/designer/libqwt_designer_plugin.so
+LATEST_LINK=	qwt6${PKGNAMESUFFIX}
+
+PLIST_FILES=	${QT_PLUGINDIR_REL}/designer/libqwt6_designer_plugin.so
+PLIST_DIRSTRY=	${QT_PLUGINDIR_REL}/designer \
+		${QT_PLUGINDIR_REL}
+
+STRIP_FILES=	${QT_PLUGINDIR_REL}/designer/libqwt6_designer_plugin.so
 
 CONFIGURE_WRKSRC=	${WRKSRC}/designer
 BUILD_WRKSRC=	${CONFIGURE_WRKSRC}
