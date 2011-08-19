@@ -113,6 +113,7 @@
     SUBDIR += dradis
     SUBDIR += dropbear
     SUBDIR += dsniff
+    SUBDIR += duo
     SUBDIR += easypg
     SUBDIR += engine_pkcs11
     SUBDIR += execwrap
