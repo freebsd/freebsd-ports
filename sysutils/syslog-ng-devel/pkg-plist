@@ -83,8 +83,6 @@ lib/syslog-ng/libafprog.la
 lib/syslog-ng/libafprog.so
 lib/syslog-ng/libafsocket-notls.la
 lib/syslog-ng/libafsocket-notls.so
-lib/syslog-ng/libafsocket-tls.la
-lib/syslog-ng/libafsocket-tls.so
 lib/syslog-ng/libafsocket.so
 lib/syslog-ng/libafuser.la
 lib/syslog-ng/libafuser.so
