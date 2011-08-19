@@ -1,12 +1,14 @@
-bin/flarq
+%%FLARQ%%bin/flarq
 bin/fldigi
-share/applications/flarq.desktop
+%%XMLRPC%%bin/fldigi-shell
+%%FLARQ%%share/applications/flarq.desktop
 share/applications/fldigi.desktop
-share/locale/es/LC_MESSAGES/fldigi.mo
-share/locale/fr/LC_MESSAGES/fldigi.mo
-share/locale/it/LC_MESSAGES/fldigi.mo
-share/pixmaps/flarq.xpm
+%%NLS%%share/locale/es/LC_MESSAGES/fldigi.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/fldigi.mo
+%%NLS%%share/locale/it/LC_MESSAGES/fldigi.mo
+%%FLARQ%%share/pixmaps/flarq.xpm
 share/pixmaps/fldigi.xpm
 %%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%ASCIIDOC%%%%DOCSDIR%%/guide.html
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrmtry share/applications
