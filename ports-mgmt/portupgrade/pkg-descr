@@ -21,4 +21,5 @@ pkgdu:		Display a disk usage for installed packages.
 
 Author: Akinori MUSHA <knu@FreeBSD.org> (Not the current maintainer)
 Maintainer: freebsd-ruby mailing list <ruby@FreeBSD.org>
+WWW: https://github.com/stass/pkgtools
 WWW: http://wiki.freebsd.org/portupgrade
