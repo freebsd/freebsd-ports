@@ -6,7 +6,3 @@ lib/X11/app-defaults/X48
 %%DATADIR%%/gxrom-r
 %%DATADIR%%/sxrom-e
 @dirrm %%DATADIR%%
-%%PORTDOCS%%%%DOCSDIR%%/CARDS.doc
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/ROMDump.doc
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
