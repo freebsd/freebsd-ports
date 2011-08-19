@@ -6,13 +6,17 @@
 #
 
 PORTNAME=	mod_gnutls
-PORTVERSION=	0.5.9
+PORTVERSION=	0.5.10
 CATEGORIES=	www security
-MASTER_SITES=	http://www.outoforder.cc/downloads/mod_gnutls/
+MASTER_SITES=	http://modgnutls.sourceforge.net/downloads/ \
+		http://www.outoforder.cc/downloads/mod_gnutls/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
 
 MAINTAINER=	fumifumi@abacustech.jp
 COMMENT=	mod_gnutls uses the GnuTLS library to provide SSL, and TLS encryption for Apache HTTPD
+
+LICENSE=	ASL
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls
 
@@ -21,10 +25,7 @@ USE_AUTOTOOLS=	libtool
 USE_APACHE=	2.0+
 GNU_CONFIGURE=	yes
 
-LICENSE=	ASL
-LICENSE_FILE=	${WRKSRC}/LICENSE
-
-DOCS=	LICENSE NEWS README README.ENV
+DOCS=		LICENSE NEWS README README.ENV
 
 .include <bsd.port.pre.mk>
 
