@@ -34,6 +34,34 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="0b53f5f7-ca8a-11e0-aea3-00215c6a37bb">
+    <topic>dovecot -- denial of service vulnerability</topic>
+    <affects>
+      <package>
+	<name>dovecot</name>
+	<range><lt>1.2.17</lt></range>
+	<range><gt>2.0</gt><lt>2.0.13</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Timo Sirainen reports:</p>
+	<blockquote cite="http://dovecot.org/pipermail/dovecot/2011-May/059086.html">
+	  <p> - Fixed potential crashes and other problems when
+	    parsing header names that contained NUL characters.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>47930</bid>
+      <cvename>CVE-2011-1929</cvename>
+    </references>
+    <dates>
+      <discovery>2011-05-25</discovery>
+      <entry>2011-08-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="86baa0d4-c997-11e0-8a8e-00151735203a">
     <topic>OTRS -- Vulnerabilities in OTRS-Core allows read access to any file on local file system</topic>
     <affects>
