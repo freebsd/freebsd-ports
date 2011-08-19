@@ -898,6 +898,13 @@ gecko-do-install:
 	${TAR} cf - -C${FAKEDIR}/${dir} -s'|${FAKEDIR}|${PREFIX}|s' . | \
 		${TAR} xof - -C${PREFIX}/${dir}
 .endfor
+.if (${OSVERSION} < 800081 )
+	# XXX: make sure bsdtar(1) corrected symlinks
+	${FIND} ${FAKEDIR} -type l -exec \
+		${ECHO} stat -f \'${LN} -hfs \"%Y\" \"%N\"\' {} + | \
+		${SED} s'|${FAKEDIR}|${PREFIX}|g' | ${SH} | \
+		${SED} -n s'|${FAKEDIR}|${PREFIX}|p' | ${SH} -x
+.endif
 .for pcfile in ${MOZ_PKGCONFIG_FILES}
 	${INSTALL_DATA} ${FAKEDIR}/libdata/pkgconfig/${pcfile}.pc \
 		${PREFIX}/libdata/pkgconfig/${pcfile}.pc
