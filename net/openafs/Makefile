@@ -7,17 +7,17 @@
 #
 
 PORTNAME=	openafs
-DISTVERSION=	1.6.0pre7
+DISTVERSION=	${AFS_DISTVERSION}.d${DBVERSION:S/-//g}
 CATEGORIES=	net kld
-MASTER_SITES=	http://dl.central.org/dl/openafs/candidate/${DISTVERSION}/:openafs \
-		http://dl.openafs.org/dl/openafs/candidate/${DISTVERSION}/:openafs \
+MASTER_SITES=	http://dl.central.org/dl/openafs/candidate/${AFS_DISTVERSION}/:openafs \
+		http://dl.openafs.org/dl/openafs/candidate/${AFS_DISTVERSION}/:openafs \
 		http://dl.central.org/dl/cellservdb/:gco \
 		http://grand.central.org/dl/cellservdb/:gco
-DISTFILES=	${PORTNAME}-${DISTVERSION}-src.tar.bz2:openafs \
-		${PORTNAME}-${DISTVERSION}-doc.tar.bz2:openafs \
-		CellServDB:gco
-EXTRACT_ONLY=	${PORTNAME}-${DISTVERSION}-src.tar.bz2 \
-		${PORTNAME}-${DISTVERSION}-doc.tar.bz2
+DISTFILES=	${PORTNAME}-${AFS_DISTVERSION}-src.tar.bz2:openafs \
+		${PORTNAME}-${AFS_DISTVERSION}-doc.tar.bz2:openafs \
+		CellServDB.${DBVERSION}:gco
+EXTRACT_ONLY=	${PORTNAME}-${AFS_DISTVERSION}-src.tar.bz2 \
+		${PORTNAME}-${AFS_DISTVERSION}-doc.tar.bz2
 
 MAINTAINER=	kaduk@mit.edu
 COMMENT=	AFS implementation from openafs.org
@@ -26,6 +26,9 @@ LICENSE=	IPLv1
 LICENSE_NAME=	IBM Public License Version 1.0
 LICENSE_FILE=	${WRKSRC}/doc/LICENSE
 LICENSE_PERMS=	auto-accept
+
+AFS_DISTVERSION=1.6.0pre7
+DBVERSION=	2011-08-14
 
 OPTIONS=	FUSE "Build afsd.fuse (enable fuse support)" off
 
@@ -83,7 +86,7 @@ LIB_DEPENDS+=	fuse.2:${PORTSDIR}/sysutils/fusefs-libs
 PLIST_SUB+=	FUSE=""
 .endif
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
+WRKSRC=		${WRKDIR}/${PORTNAME}-${AFS_DISTVERSION}
 
 CONFLICTS=	coda-server-6.[0-9]* heimdal-[0-9]*
 
@@ -97,7 +100,7 @@ post-extract:
 create-sample-files:
 	@${ECHO_CMD} openafs.org > ${WRKDIR}/ThisCell
 	@${ECHO_CMD} "${AFSMNTDIR}:${AFSCACHEDIR}:150000" > ${WRKDIR}/cacheinfo
-	@${INSTALL_DATA} ${DISTDIR}/CellServDB ${WRKDIR}/CellServDB
+	@${INSTALL_DATA} ${DISTDIR}/CellServDB.${DBVERSION} ${WRKDIR}/CellServDB
 
 post-install: create-sample-files
 	@${MKDIR} ${PREFIX}/etc/openafs

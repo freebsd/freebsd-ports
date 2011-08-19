@@ -2,5 +2,5 @@ SHA256 (openafs-1.6.0pre7-src.tar.bz2) = cad4faea83ab0ab8049930fdc1abf1208f5250c
 SIZE (openafs-1.6.0pre7-src.tar.bz2) = 14305674
 SHA256 (openafs-1.6.0pre7-doc.tar.bz2) = 5f9281aad3f00d589101e28d2b426158aabd2076c5c6d622622f3e86a447b8c7
 SIZE (openafs-1.6.0pre7-doc.tar.bz2) = 3475388
-SHA256 (CellServDB) = 3a1c77b82e714a6e131dfd93397f08bd2ba5f5cede7997494a39b3d61fe31f8b
-SIZE (CellServDB) = 36891
+SHA256 (CellServDB.2011-08-14) = fa547873edda44682440d66b79d2002f7019fac520eb3a6d6d2c7e9e83ad8d89
+SIZE (CellServDB.2011-08-14) = 36836
