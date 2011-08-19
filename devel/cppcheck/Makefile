@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	cppcheck
-PORTVERSION=	1.49
+PORTVERSION=	1.50
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Static analysis of C/C++ code
 
-LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
-
 LICENSE=	GPLv3
+
+LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes
