@@ -1,0 +1,10 @@
+--- openscad.pro.orig	2011-08-19 12:29:45.662036017 +0200
++++ openscad.pro	2011-08-19 12:31:55.374020178 +0200
+@@ -15,4 +15,7 @@
+ }
+ 
++QMAKE_LEX = XXXFLEXXX
++QMAKE_YACC = XXXBISONXXX
++
+ #configure lex / yacc
+ win32 {

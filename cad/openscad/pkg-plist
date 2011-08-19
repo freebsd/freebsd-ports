@@ -1,0 +1,35 @@
+bin/openscad
+%%DATADIR%%/examples/example001.scad
+%%DATADIR%%/examples/example002.scad
+%%DATADIR%%/examples/example003.scad
+%%DATADIR%%/examples/example004.scad
+%%DATADIR%%/examples/example005.scad
+%%DATADIR%%/examples/example006.scad
+%%DATADIR%%/examples/example007.dxf
+%%DATADIR%%/examples/example007.scad
+%%DATADIR%%/examples/example008.dxf
+%%DATADIR%%/examples/example008.scad
+%%DATADIR%%/examples/example009.dxf
+%%DATADIR%%/examples/example009.scad
+%%DATADIR%%/examples/example010.dat
+%%DATADIR%%/examples/example010.scad
+%%DATADIR%%/examples/example011.scad
+%%DATADIR%%/examples/example012.scad
+%%DATADIR%%/examples/example012.stl
+%%DATADIR%%/examples/example013.dxf
+%%DATADIR%%/examples/example013.scad
+%%DATADIR%%/examples/example014.scad
+%%DATADIR%%/examples/example015.scad
+%%DATADIR%%/examples/example016.scad
+%%DATADIR%%/examples/example016.stl
+%%DATADIR%%/examples/example017.scad
+%%DATADIR%%/examples/example018.scad
+%%DATADIR%%/examples/example019.scad
+%%DATADIR%%/examples/example020.scad
+%%DATADIR%%/examples/example021.scad
+%%DATADIR%%/examples/example022.scad
+%%DATADIR%%/libraries/boxes.scad
+%%DATADIR%%/libraries/shapes.scad
+@dirrm %%DATADIR%%/libraries
+@dirrm %%DATADIR%%/examples
+@dirrm %%DATADIR%%
