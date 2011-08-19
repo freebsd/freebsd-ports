@@ -19,6 +19,7 @@ include/dovecot/sieve/sieve-config.h
 include/dovecot/sieve/sieve-dump.h
 include/dovecot/sieve/sieve-error-private.h
 include/dovecot/sieve/sieve-error.h
+include/dovecot/sieve/sieve-ext-copy.h
 include/dovecot/sieve/sieve-ext-enotify.h
 include/dovecot/sieve/sieve-ext-environment.h
 include/dovecot/sieve/sieve-ext-variables.h

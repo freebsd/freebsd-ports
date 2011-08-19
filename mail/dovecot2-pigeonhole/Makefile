@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dovecot-pigeonhole
-PORTVERSION=	0.2.2
-PORTREVISION=	2
+PORTVERSION=	0.2.3
 CATEGORIES=	mail
 MASTER_SITES=	http://www.rename-it.nl/dovecot/${DOVECOTVERSION}/
 DISTNAME=	${PORTNAME:C/-/-${DOVECOTVERSION}-/}-${PORTVERSION}
@@ -35,7 +34,7 @@ MAN7=		pigeonhole.7
 DOCSDIR=	${PREFIX}/share/doc/${PORTNAME:S/-/\//}
 
 .if !defined(NOPORTDOCS)
-PORTDOCS=	AUTHORS COPYING COPYING.LGPL INSTALL NEWS README TODO spamtest-virustest.txt
+PORTDOCS=	AUTHORS COPYING COPYING.LGPL INSTALL NEWS README TODO spamtest-virustest.txt vacation.txt
 .endif
 
 post-patch:
@@ -43,11 +42,8 @@ post-patch:
 		s!/doc/$${PACKAGE_TARNAME}!/doc/${PORTNAME:S/-/\//}!g;\
 		s!$${docdir}/dovecot/sieve!$${docdir}!g;\
 		' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -E -e '\
-		/^docfiles = spamtest-virustest.txt$$/D;\
-		/^[[:space:]]+test -z "\$$\(sieve_docdir\)" \|\| \$$\(MKDIR_P\) "\$$\(DESTDIR\)\$$\(sieve_docdir\)"$$/D;\
-		' ${WRKSRC}/doc/Makefile.in
 	@${LN} -f ${WRKSRC}/doc/spamtest-virustest.txt ${WRKSRC}/
+	@${LN} -f ${WRKSRC}/doc/vacation.txt ${WRKSRC}/
 
 post-install:
 .if !defined(NOPORTDOCS)
