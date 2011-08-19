@@ -11,6 +11,7 @@ MASTER_SITES=	http://statistik.wu-wien.ac.at/software/prng/
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Portable, high-performance ANSI-C pseudorandom number generators
 
+CFLAGS+=	-fgnu89-inline
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 INFO=	prng
@@ -32,8 +33,8 @@ post-install:
 .endfor
 .endif
 
-test: build
+check regression-test test: build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} \
-		${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} check)
+		${MAKE_FLAGS} ${MAKEFILE} ${_MAKE_JOBS} ${MAKE_ARGS} check)
 
 .include <bsd.port.mk>
