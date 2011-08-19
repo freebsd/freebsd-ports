@@ -6,35 +6,38 @@
 #
 
 PORTNAME=	x48
-PORTVERSION=	0.4.3
-PORTREVISION=	3
-CATEGORIES=	emulators
-MASTER_SITES=	${MASTER_SITE_BERLIOS}
+PORTVERSION=	0.6.3
+CATEGORIES=	emulators math
+MASTER_SITES=	BERLIOS
 MASTER_SITE_SUBDIR=	${PORTNAME}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		x48-gxrom-r${EXTRACT_SUFX} x48-sxrom-e${EXTRACT_SUFX}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	An HP48 SX/GX calculator emulator
+COMMENT=	An HP48 SX/GX graphic calculator emulator
 
-USE_IMAKE=	yes
-USE_XORG=	x11 xext
-NO_INSTALL_MANPAGES=	yes
-MAKE_JOBS_UNSAFE=	yes
+LICENSE=	GPLv3
 
-.include <bsd.port.pre.mk>
+GNU_CONFIGURE=	yes
+CPPFLAGS=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	LIBS=-lutil
+USE_GMAKE=	yes
+USE_XORG=	x11 xext xt
+
+PORTDOCS=	ChangeLog README
 
 post-extract: .SILENT
+# Extract official HP ROM images for GX/SX
 	cd ${WRKSRC} && ${TAR} -zxf ${DISTDIR}/x48-gxrom-r${EXTRACT_SUFX}
 	${MV} ${WRKSRC}/.hp48/rom ${WRKSRC}/gxrom-r
 	cd ${WRKSRC} && ${TAR} -zxf ${DISTDIR}/x48-sxrom-e${EXTRACT_SUFX}
 	${MV} ${WRKSRC}/.hp48/rom ${WRKSRC}/sxrom-e
 
 post-patch:
-	@${REINPLACE_CMD} -e 's+rom.dump+${DATADIR}/gxrom-r+' \
+# Prefer GX Revision R ROM by default
+	@${REINPLACE_CMD} -e 's+rom\.dump+${DATADIR}/gxrom-r+' \
 		${WRKSRC}/src/X48.ad
-	@${REINPLACE_CMD} -e 's+cuaa+cuad+' ${WRKSRC}/src/X48.ad
 
 do-install:
 .for p in x48 dump2rom checkrom mkcard
@@ -45,9 +48,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/??rom-? ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-.for f in README doc/CARDS.doc doc/ROMDump.doc
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-.endfor
+	${INSTALL_DATA} ${PORTDOCS:S+^+${WRKSRC}/+} ${DOCSDIR}
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
