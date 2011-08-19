@@ -34,6 +34,39 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="be77eff6-ca91-11e0-aea3-00215c6a37bb">
+    <topic>rubygem-rails -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>rubygem-rails</name>
+	<range><lt>3.0.10</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>SecurityFocus reports:</p>
+	<blockquote cite="http://www.securityfocus.com/bid/49179/discuss">
+	  <p>Ruby on Rails is prone to multiple vulnerabilities
+	    including SQL-injection, information-disclosure,
+	    HTTP-header-injection, security-bypass and cross-site
+	    scripting issues.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>49179</bid>
+      <url>http://groups.google.com/group/rubyonrails-security/browse_thread/thread/6a1e473744bc389b</url>
+      <url>http://groups.google.com/group/rubyonrails-security/browse_thread/thread/3420ac71aed312d6</url>
+      <url>http://groups.google.com/group/rubyonrails-security/browse_thread/thread/6ffc93bde0298768</url>
+      <url>http://groups.google.com/group/rubyonrails-security/browse_thread/thread/2b9130749b74ea12</url>
+      <url>http://groups.google.com/group/rubyonrails-security/browse_thread/thread/56bffb5923ab1195</url>
+    </references>
+    <dates>
+      <discovery>2011-08-16</discovery>
+      <entry>2011-08-19</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="0b53f5f7-ca8a-11e0-aea3-00215c6a37bb">
     <topic>dovecot -- denial of service vulnerability</topic>
     <affects>
