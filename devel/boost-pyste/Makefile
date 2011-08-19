@@ -31,11 +31,9 @@ MAKE_ENV+=	PYTHON_ROOT="${LOCALBASE}"\
 		PYTHON_LIB_PATH="${PYTHON_LIBDIR}"
 
 RUN_DEPENDS+=	${LOCALBASE}/lib/libboost_python.so.${BOOST_SHARED_LIB_VER}:${PORTSDIR}/devel/boost-python-libs
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/py-elementtree
 
 RUN_DEPENDS+=	gccxml:${PORTSDIR}/devel/gccxml
 BUILD_DEPENDS+=	${BJAM}:${PORTSDIR}/devel/boost-jam
-BUILD_DEPENDS+=	${PYTHON_SITELIBDIR}/elementtree/ElementTree.py:${PORTSDIR}/devel/py-elementtree
 
 post-patch: customize-boost-build
 
