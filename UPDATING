@@ -5,6 +5,16 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110820:
+  AFFECTS: users of www/apache* and depending ports
+  AUTHOR: ohauer@FreeBSD.org
+
+  The default apache version changed from www/apache13 to www/apache22.
+  Users who will continue with apache13 should create the following entry
+  in /etc/make.conf
+
+  APACHE_PORT=	www/apache13
+
 20110818:
   AFFECTS: users of mail/enigmail-* ports
   AUTHOR: ale@FreeBSD.org

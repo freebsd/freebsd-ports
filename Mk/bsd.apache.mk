@@ -83,8 +83,8 @@
 
 Apache_Pre_Include=		bsd.apache.mk
 
-DEFAULT_APACHE_VERSION=		13
-APACHE_SUPPORTED_VERSION=	13 20 22 # preferred version first
+DEFAULT_APACHE_VERSION=		22
+APACHE_SUPPORTED_VERSION=	22 13 20 # preferred version first
 
 # Print warnings
 _ERROR_MSG=	: Error from bsd.apache.mk.
