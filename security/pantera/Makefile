@@ -7,6 +7,7 @@
 
 PORTNAME=	pantera
 PORTVERSION=	0.1.1
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	SF/owasp/Pantera/Pantera_Release_${PORTVERSION}
 DISTNAME=	Pantera_Release_${PORTVERSION}
@@ -21,13 +22,14 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 BROKEN=		bad dependency line
 
 .if !defined(WITHOUT_MYSQL_SERVER)
-BUILD_DEPENDS+=	mysql:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
+USE_MYSQL=	server
+.else
+USE_MYSQL=	yes
 .endif
 
 WRKSRC=		${WRKDIR}/Pantera_Release
 USE_ZIP=	yes
 USE_PYTHON=	yes
-USE_MYSQL=	yes
 NO_BUILD=	yes
 SUB_FILES=	pkg-message pantera.sh
 SUB_LIST+=	SCRIPTDIR=${SCRIPTDIR}
