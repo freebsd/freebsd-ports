@@ -28,7 +28,6 @@ COMMENT=	Official AT&T release of KornShell 93
 
 OPTIONS=	STATIC	"Static linking" off
 
-MANUAL_PACKAGE_BUILD=	Does not build in tinderbox environment
 RESTRICTED=	Source recipient must acknowledge license
 
 FETCH_ARGS=	-Rr
