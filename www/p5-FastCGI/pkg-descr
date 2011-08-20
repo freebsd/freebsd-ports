@@ -2,6 +2,7 @@ This the FCGI module for perl5 which enables CGI scripts to take
 advantage of servers that are FastCGI-enabled. This module does not abstract
 the writing of CGIs themselves, for that you should refer to the p5-CGI
 module. For more information about FastCGI, the performance enhancements it
-offers, and how to write scripts using it, visit their web site at:
+offers, and how to write scripts using it, visit their web site at
+http://www.fastcgi.com/
 
-WWW: http://www.fastcgi.com/
+WWW: http://search.cpan.org/dist/FCGI/

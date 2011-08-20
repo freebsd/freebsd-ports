@@ -16,6 +16,8 @@ DISTNAME=	FCGI-${PORTVERSION}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Modules for perl5, for enabling FastCGI support in CGI scripts
 
+OPTIONS=	PURE_PERL "Build pure Perl version (experimental)" off
+
 # XXX: fcgi.0 is missing FCGX_Detach, see ports/149755
 #LIB_DEPENDS=	fcgi.0:${PORTSDIR}/www/fcgi
 #CONFIGURE_ARGS+=	--use-installed=${LOCALBASE}
@@ -23,5 +25,14 @@ COMMENT=	Modules for perl5, for enabling FastCGI support in CGI scripts
 PERL_CONFIGURE=	yes
 
 MAN3=		FCGI.3
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_PURE_PERL)
+CONFIGURE_ARGS+=--pure-perl
+PLIST_SUB=	PURE_PERL="@comment "
+.else
+PLIST_SUB=	PURE_PERL=""
+.endif
 
 .include <bsd.port.mk>
