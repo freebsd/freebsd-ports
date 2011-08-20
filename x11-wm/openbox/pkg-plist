@@ -1,3 +1,23 @@
+include/openbox/%%VERSION%%/obt/link.h
+include/openbox/%%VERSION%%/obt/display.h
+include/openbox/%%VERSION%%/obt/keyboard.h
+include/openbox/%%VERSION%%/obt/xml.h
+include/openbox/%%VERSION%%/obt/paths.h
+include/openbox/%%VERSION%%/obt/prop.h
+include/openbox/%%VERSION%%/obt/signal.h
+include/openbox/%%VERSION%%/obt/util.h
+include/openbox/%%VERSION%%/obt/version.h
+include/openbox/%%VERSION%%/obt/xqueue.h
+include/openbox/%%VERSION%%/obrender/color.h
+include/openbox/%%VERSION%%/obrender/font.h
+include/openbox/%%VERSION%%/obrender/geom.h
+include/openbox/%%VERSION%%/obrender/gradient.h
+include/openbox/%%VERSION%%/obrender/image.h
+include/openbox/%%VERSION%%/obrender/instance.h
+include/openbox/%%VERSION%%/obrender/mask.h
+include/openbox/%%VERSION%%/obrender/render.h
+include/openbox/%%VERSION%%/obrender/theme.h
+include/openbox/%%VERSION%%/obrender/version.h
 bin/gnome-panel-control
 bin/gdm-control
 bin/obxprop
@@ -5,37 +25,29 @@ bin/openbox
 bin/openbox-gnome-session
 bin/openbox-kde-session
 bin/openbox-session
-etc/xdg/openbox/autostart.sh
+etc/xdg/openbox/autostart
+etc/xdg/openbox/environment
 etc/xdg/openbox/menu.xml
 etc/xdg/openbox/rc.xml
-include/openbox/%%VERSION%%/openbox/color.h
-include/openbox/%%VERSION%%/openbox/font.h
-include/openbox/%%VERSION%%/openbox/geom.h
-include/openbox/%%VERSION%%/openbox/gradient.h
-include/openbox/%%VERSION%%/openbox/image.h
-include/openbox/%%VERSION%%/openbox/instance.h
-include/openbox/%%VERSION%%/openbox/mask.h
-include/openbox/%%VERSION%%/openbox/parse.h
-include/openbox/%%VERSION%%/openbox/render.h
-include/openbox/%%VERSION%%/openbox/theme.h
-include/openbox/%%VERSION%%/openbox/version.h
-lib/libobparser.a
-lib/libobparser.la
-lib/libobparser.so
-lib/libobparser.so.21
 lib/libobrender.a
 lib/libobrender.la
 lib/libobrender.so
-lib/libobrender.so.21
-lib/openbox/xdg-autostart
-libdata/pkgconfig/obparser-3.0.pc
-libdata/pkgconfig/obrender-3.0.pc
+lib/libobrender.so.27
+lib/libobt.a
+lib/libobt.la
+lib/libobt.so
+lib/libobt.so.0
+libdata/pkgconfig/obrender-%%VERSION%%.pc
+libdata/pkgconfig/obt-%%VERSION%%.pc
+libexec/openbox-autostart
+libexec/openbox-xdg-autostart
 share/applications/openbox.desktop
 share/gnome/wm-properties/openbox.desktop
 share/pixmaps/openbox.png
 share/themes/Artwiz-boxed/openbox-3/themerc
-share/themes/Clearlooks/openbox-3/themerc
+share/themes/Clearlooks-3.4/openbox-3/themerc
 share/themes/Clearlooks-Olive/openbox-3/themerc
+share/themes/Clearlooks/openbox-3/themerc
 share/themes/Mikachu/openbox-3/bullet.xbm
 share/themes/Mikachu/openbox-3/close.xbm
 share/themes/Mikachu/openbox-3/desk.xbm
@@ -141,6 +153,8 @@ share/xsessions/openbox-kde.desktop
 @dirrm share/themes/Artwiz-boxed
 @dirrm share/themes/Bear2/openbox-3
 @dirrm share/themes/Bear2
+@dirrm share/themes/Clearlooks-3.4/openbox-3
+@dirrm share/themes/Clearlooks-3.4
 @dirrm share/themes/Clearlooks/openbox-3
 @dirrmtry share/themes/Clearlooks
 @dirrm share/themes/Clearlooks-Olive/openbox-3
@@ -162,10 +176,10 @@ share/xsessions/openbox-kde.desktop
 @dirrmtry share/gnome/wm-properties
 @dirrmtry share/gnome
 @dirrmtry libdata/pkgconfig
-@dirrm include/openbox/%%VERSION%%/openbox
+@dirrm include/openbox/%%VERSION%%/obt
+@dirrm include/openbox/%%VERSION%%/obrender
 @dirrm include/openbox/%%VERSION%%
 @dirrm include/openbox
-@dirrm lib/openbox
 @dirrm etc/xdg/openbox
 @dirrmtry etc/xdg
 @dirrmtry share/xsessions
