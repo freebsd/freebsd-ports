@@ -19,6 +19,9 @@ USE_RUBY=	yes
 
 NO_BUILD=	yes
 
+DEPRECATED=	Deprecated upstream, please use www/rubygem-httpclient
+EXPIRATION_DATE=	2011-09-20
+
 do-install:
 	cd ${WRKSRC}; ${RUBY} install.rb
 	${INSTALL_DATA} ${WRKSRC}/lib/http-access2/cacert.p7s ${RUBY_SITELIBDIR}/http-access2/
