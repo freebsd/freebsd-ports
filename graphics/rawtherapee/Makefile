@@ -17,7 +17,7 @@ COMMENT=	A powerful RAW image processing application
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		iptcdata.3:${PORTSDIR}/graphics/libiptcdata \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
-		lcms2.2:${PORTSDIR}/graphics/lcms2 \
+		lcms.1:${PORTSDIR}/graphics/lcms \
 		png:${PORTSDIR}/graphics/png \
 		tiff.4:${PORTSDIR}/graphics/tiff \
 		sigc-2.0:${PORTSDIR}/devel/libsigc++20
@@ -42,7 +42,8 @@ LICENSE=	GPLv3
 
 RTDIR=	${PREFIX}/libdata/${PORTNAME}
 
-OPTIONS=	OPTIMIZED_CFLAGS "Use optimized CFLAGS" on
+OPTIONS=	OPTIMIZED_CFLAGS "Use optimized CFLAGS" on \
+		OPENMP "Enable multicore processing using OpenMP" on
 
 .include <bsd.port.pre.mk>
 
@@ -51,6 +52,12 @@ OPTIONS=	OPTIMIZED_CFLAGS "Use optimized CFLAGS" on
 CFLAGS+=	-O3 -ffast-math -fexpensive-optimizations \
 		-funroll-loops -msse
 .endif
+.endif
+
+.if !defined(WITHOUT_OPENMP)
+CMAKE_ARGS+=	-DOPTION_OMP:BOOL=ON
+.else
+CMAKE_ARGS+=	-DOPTION_OMP:BOOL=OFF
 .endif
 
 .include <bsd.port.post.mk>
