@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bugzilla
-DISTVERSION=	3.6.5-ru-20110510
+DISTVERSION=	3.6.6-ru-20110808
 CATEGORIES=	russian
 MASTER_SITES=	http://ftp.mozilla-russia.org/bugzilla/
 PKGNAMESUFFIX=	-ru
@@ -18,7 +18,7 @@ RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla3
 
 LATEST_LINK=	${PKGNAMEPREFIX}bugzilla3${PKGNAMESUFFIX}
 
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/r.*$/ru/}
 
 .include "${.CURDIR}/../../devel/bugzilla3/Makefile.common"
 

@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bugzilla
-DISTVERSION=	4.0.1-ru-20110510
+DISTVERSION=	4.0.2-ru-20110808
 CATEGORIES=	russian
 MASTER_SITES=	http://ftp.mozilla-russia.org/bugzilla/
 PKGNAMESUFFIX=	-ru
@@ -16,7 +16,7 @@ COMMENT=	Russian localization for Bugzilla
 
 RUN_DEPENDS=	bugzilla>=${PORTVERSION}:${PORTSDIR}/devel/bugzilla
 
-NO_WRKSUBDIR=	yes
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/r.*$/ru/}
 
 .include "${.CURDIR}/../../devel/bugzilla/Makefile.common"
 
