@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	mhonarc
-PORTVERSION=	2.6.16
-PORTREVISION=	1
+PORTVERSION=	2.6.18
 CATEGORIES=	www mail
 MASTER_SITES=	http://www.mhonarc.org/release/MHonArc/tar/ \
 		http://www.oac.uci.edu/indiv/ehood/tar/
