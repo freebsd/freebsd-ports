@@ -1,0 +1,10 @@
+--- bin/rabbirack.orig	2011-08-20 22:42:21.000000000 +0900
++++ bin/rabbirack	2011-08-21 03:44:41.000000000 +0900
+@@ -90,6 +90,6 @@
+ else
+   require "rack"
+   ARGV.shift if rack_runner == "rackup"
+-  ARGV.unshift("--option", "config=#{config_ru_path}")
++  ARGV.unshift(":config", "#{config_ru_path}")
+   Rack::Server.start
+ end

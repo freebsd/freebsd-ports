@@ -1,0 +1,11 @@
+--- bin/rabbit-command.orig	2011-07-13 20:05:07.000000000 +0900
++++ bin/rabbit-command	2011-08-20 19:22:06.000000000 +0900
+@@ -98,7 +98,7 @@
+   if options.druby_uri_specified
+     logger.warning(_("--druby-uri is deprecated. Use --rabbit-uri instead."))
+   end
+-  rabbit = DRbObject.new_with_uri(options.druby_uri)
++  rabbit = DRbObject.new_with_uri(options.rabbit_uri)
+   options.commands.each do |output, method, *args|
+     result = rabbit.send(method, *args)
+     send(output, result) if output

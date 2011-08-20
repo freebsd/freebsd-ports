@@ -1,10 +1,10 @@
+bin/rabbirack
 bin/rabbirc
 bin/rabbit
 bin/rabbit-command
 bin/rabbit-theme-manager
 bin/rabbiter
 bin/rabrick
-bin/rabwii
 %%RUBY_SITELIBDIR%%/rabbit/action.rb
 %%RUBY_SITELIBDIR%%/rabbit/action/basic.rb
 %%RUBY_SITELIBDIR%%/rabbit/action/radio.rb
@@ -50,6 +50,7 @@ bin/rabwii
 %%RUBY_SITELIBDIR%%/rabbit/element/preformatted.rb
 %%RUBY_SITELIBDIR%%/rabbit/element/slide-element.rb
 %%RUBY_SITELIBDIR%%/rabbit/element/slide.rb
+%%RUBY_SITELIBDIR%%/rabbit/element/syntax-highlighting.rb
 %%RUBY_SITELIBDIR%%/rabbit/element/table.rb
 %%RUBY_SITELIBDIR%%/rabbit/element/tag.rb
 %%RUBY_SITELIBDIR%%/rabbit/element/text-block-element.rb
@@ -83,10 +84,17 @@ bin/rabwii
 %%RUBY_SITELIBDIR%%/rabbit/logger/gui.rb
 %%RUBY_SITELIBDIR%%/rabbit/logger/stderr.rb
 %%RUBY_SITELIBDIR%%/rabbit/menu.rb
+%%RUBY_SITELIBDIR%%/rabbit/middleware/config.ru
+%%RUBY_SITELIBDIR%%/rabbit/middleware/controller.rb
+%%RUBY_SITELIBDIR%%/rabbit/middleware/public/stylesheets/rabbirack.css
+%%RUBY_SITELIBDIR%%/rabbit/middleware/views/index.haml
+%%RUBY_SITELIBDIR%%/rabbit/middleware/views/layout.haml
 %%RUBY_SITELIBDIR%%/rabbit/parser.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/base.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/ext/aafigure.rb
-%%RUBY_SITELIBDIR%%/rabbit/parser/ext/anthy.rb
+%%RUBY_SITELIBDIR%%/rabbit/parser/ext/blockdiag.rb
+%%RUBY_SITELIBDIR%%/rabbit/parser/ext/coderay.rb
+%%RUBY_SITELIBDIR%%/rabbit/parser/ext/emacs.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/ext/enscript.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/ext/entity.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/ext/escape.rb
@@ -97,16 +105,12 @@ bin/rabwii
 %%RUBY_SITELIBDIR%%/rabbit/parser/pause-support.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/pdf.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd.rb
-%%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/aafigure.rb
-%%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/anthy.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/base.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/block-verbatim.rb
-%%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/enscript.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/entity.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/image.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/inline-verbatim.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/refer.rb
-%%RUBY_SITELIBDIR%%/rabbit/parser/rd/ext/tex.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd/rd2rabbit-lib.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd/rt/rt2rabbit-lib.rb
 %%RUBY_SITELIBDIR%%/rabbit/parser/rd/visitor.rb
@@ -165,7 +169,6 @@ bin/rabwii
 %%RUBY_SITELIBDIR%%/rabbit/source/file.rb
 %%RUBY_SITELIBDIR%%/rabbit/source/hiki.rb
 %%RUBY_SITELIBDIR%%/rabbit/source/memory.rb
-%%RUBY_SITELIBDIR%%/rabbit/source/rwiki.rb
 %%RUBY_SITELIBDIR%%/rabbit/source/slide-share.rb
 %%RUBY_SITELIBDIR%%/rabbit/source/uri.rb
 %%RUBY_SITELIBDIR%%/rabbit/stock.rb
@@ -232,6 +235,8 @@ bin/rabwii
 %%RUBY_SITELIBDIR%%/rabbit/theme/debian/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/default-block-quote/default-block-quote.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/default-block-quote/property.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/default-comment/default-comment.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/default-comment/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/default-description/default-description.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/default-description/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/default-foot-text/default-foot-text.rb
@@ -295,14 +300,13 @@ bin/rabwii
 %%RUBY_SITELIBDIR%%/rabbit/theme/manager.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/mirror-effect/mirror-effect.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/mirror-effect/property.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/nari/nari.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/newline-in-slides/newline-in-slides.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/newline-in-slides/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/newline-in-title/newline-in-title.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/newline-in-title/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/night-black/night-black.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/night-black/property.rb
-%%RUBY_SITELIBDIR%%/rabbit/theme/pdf-tortoise-and-hare/pdf-tortoise-and-hare.rb
-%%RUBY_SITELIBDIR%%/rabbit/theme/pdf-tortoise-and-hare/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/pdf/pdf.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/pdf/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/per-slide-background-color/per-slide-background-color.rb
@@ -347,6 +351,8 @@ bin/rabwii
 %%RUBY_SITELIBDIR%%/rabbit/theme/ruby-gnome2-slide/ruby-gnome2-slide.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/ruby-gnome2/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/ruby-gnome2/ruby-gnome2.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/rubykaigi2011/property.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/rubykaigi2011/rubykaigi2011.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/scroll-effect/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/scroll-effect/scroll-effect.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/searcher.rb
@@ -370,6 +376,8 @@ bin/rabwii
 %%RUBY_SITELIBDIR%%/rabbit/theme/slide-show/slide-show.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/stream-comment/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/stream-comment/stream-comment.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/syntax-highlighting/property.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/syntax-highlighting/syntax-highlighting.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/table/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/table/table.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/tag/property.rb
@@ -386,6 +394,8 @@ bin/rabwii
 %%RUBY_SITELIBDIR%%/rabbit/theme/title-on-image-toolkit/title-on-image-toolkit.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/title-shadow/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/title-shadow/title-shadow.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/title-slide-background-image/property.rb
+%%RUBY_SITELIBDIR%%/rabbit/theme/title-slide-background-image/title-slide-background-image.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/twitter-comment/property.rb
 %%RUBY_SITELIBDIR%%/rabbit/theme/twitter-comment/twitter-comment.rb
 %%RUBY_SITELIBDIR%%/rabbit/trackball.rb
@@ -399,6 +409,7 @@ bin/rabwii
 %%NLS%%share/locale/ja/LC_MESSAGES/rabbit.mo
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/xmlrpc
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/twitter-comment
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/title-slide-background-image
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/title-shadow
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/title-on-image-toolkit
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/title-logo
@@ -407,6 +418,7 @@ bin/rabwii
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/timer
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/tag
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/table
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/syntax-highlighting
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/stream-comment
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/slide-show
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/slide-number
@@ -418,6 +430,7 @@ bin/rabwii
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/simple-item-mark
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/show-frame
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/scroll-effect
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/rubykaigi2011
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/ruby-gnome2-slide
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/ruby-gnome2-preformatted
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/ruby-gnome2-item-mark
@@ -439,11 +452,11 @@ bin/rabwii
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/powered-by
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/per-slide-background-image
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/per-slide-background-color
-@dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/pdf-tortoise-and-hare
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/pdf
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/night-black
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/newline-in-title
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/newline-in-slides
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/nari
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/mirror-effect
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/lightning-talk-toolkit
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/lightning-talk
@@ -473,6 +486,7 @@ bin/rabwii
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/default-icon
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/default-foot-text
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/default-description
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/default-comment
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/default-block-quote
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/default
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/theme/debian
@@ -518,6 +532,10 @@ bin/rabwii
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/parser/rd
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/parser/ext
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/parser
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/middleware/views
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/middleware/public/stylesheets
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/middleware/public
+@dirrm %%RUBY_SITELIBDIR%%/rabbit/middleware
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/logger
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/image
 @dirrm %%RUBY_SITELIBDIR%%/rabbit/html
