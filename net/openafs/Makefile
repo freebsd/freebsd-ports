@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	openafs
-DISTVERSION=	${AFS_DISTVERSION}.d${DBVERSION:S/-//g}
+DISTVERSION=	${AFS_DISTVERSION}.${DBVERSION:S/-//g}
 CATEGORIES=	net kld
 MASTER_SITES=	http://dl.central.org/dl/openafs/candidate/${AFS_DISTVERSION}/:openafs \
 		http://dl.openafs.org/dl/openafs/candidate/${AFS_DISTVERSION}/:openafs \
