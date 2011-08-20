@@ -20,30 +20,22 @@ LICENSE=	BSD
 USE_OPENSSL=	yes
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
-ALL_TARGET=	krbmit
+ALL_TARGET=	freebsd+ssl
+MAKE_ARGS=	CC2=${CC} SSLINC=-I${OPENSSLINC} SSLLIB=-L${OPENSSLLIB}
+CFLAGS+=	-DHERALD=\\\"\\\\\\\" ${HERALD}\\\\\\\"\\\"
 
 PLIST_FILES=	bin/kermit
 PORTDOCS=	*
 PORTEXAMPLES=	*
 MAN1=		kermit.1
 
-MAKE_ARGS=	KTARGET=freebsd CC="${CC}" CC2="${CC}" \
-		CFLAGS="${CFLAGS} -I${OPENSSLINC} -DBSD44 \
-		-DCK_NCURSES -DCK_NEWTERM -DHERALD=\"\\\" ${HERALD}\\\"\" \
-		-DTCPSOCKET -DNOCOTFMC -DFREEBSD4 -DUSE_UU_LOCK -DFNFLOAT \
-		-funsigned-char -DTPUTSARGTYPE=int -DUSE_STRERROR -DCKHTTP \
-		-DCK_SSL -DCK_AUTHENTICATION -DCK_ENCRYPTION -DCK_DES \
-		-DOPENSSL_DES_LIBDES_COMPATIBILITY -DOPENSSL_097" \
-		LIBS="-L${OPENSSLLIB} \
-		-lssl -lcrypto -lncurses -lcrypt -lutil -lm"
-
 .include <bsd.port.pre.mk>
 
-# Explicitly pass version of our beloved OS; upstream routine is not robust
-# enough to handle all cases correctly
-HERALD!=	${UNAME} -sr | ${CUT} -d - -f 1
+# Explicitly pass version of our beloved OS until upstream code is fixed
+HERALD!=	${UNAME} -sr
 
 post-patch:
+	@${REINPLACE_CMD} -e 's,-O -pipe,${CFLAGS},' ${WRKSRC}/${MAKEFILE}
 # Catch up with recent <utmp.h> replacement by <utmpx.h>
 .if ${OSVERSION} > 900006
 	@${REINPLACE_CMD} -e 's,ut\.ut_name,ut.ut_user,g' \
@@ -51,8 +43,8 @@ post-patch:
 .endif
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/krbmit ${PREFIX}/bin/kermit
-	${INSTALL_MAN} ${WRKSRC}/ckuker.nr ${PREFIX}/man/man1/kermit.1
+	${INSTALL_PROGRAM} ${WRKSRC}/wermit ${PREFIX}/bin/kermit
+	${INSTALL_MAN} ${WRKSRC}/ckuker.nr ${MANPREFIX}/man/man1/kermit.1
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/*.txt ${DOCSDIR}
