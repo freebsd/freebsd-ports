@@ -901,7 +901,7 @@ gecko-do-install:
 .if (${OSVERSION} < 800081 )
 	# XXX: make sure bsdtar(1) corrected symlinks
 	${FIND} ${FAKEDIR} -type l -exec \
-		${ECHO} stat -f \'${LN} -hfs \"%Y\" \"%N\"\' {} + | \
+		${ECHO_CMD} stat -f \'${LN} -hfs \"%Y\" \"%N\"\' {} + | \
 		${SED} s'|${FAKEDIR}|${PREFIX}|g' | ${SH} | \
 		${SED} -n s'|${FAKEDIR}|${PREFIX}|p' | ${SH} -x
 .endif
