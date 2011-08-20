@@ -34,6 +34,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="057bf770-cac4-11e0-aea3-00215c6a37bb">
+    <topic>php -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>php5</name>
+	<name>php5-sockets</name>
+	<range><lt>5.3.7</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>PHP development team reports:</p>
+	<blockquote cite="http://www.php.net/ChangeLog-5.php#5.3.7">
+          <p>Security Enhancements and Fixes in PHP 5.3.7:</p> 
+          <ul> 
+            <li>Updated crypt_blowfish to 1.2. (CVE-2011-2483)</li>
+            <li>Fixed crash in error_log(). Reported by Mateusz Kocielski</li>
+            <li>Fixed buffer overflow on overlog salt in crypt().</li>
+            <li>Fixed bug #54939 (File path injection vulnerability
+	      in RFC1867 File upload filename). Reported by Krzysztof Kotowicz.
+	      (CVE-2011-2202)</li> 
+            <li>Fixed stack buffer overflow in socket_connect().
+	      (CVE-2011-1938)</li> 
+            <li>Fixed bug #54238 (use-after-free in substr_replace()).
+	      (CVE-2011-1148)</li> 
+          </ul> 
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>49241</bid>
+      <cvename>CVE-2011-2483</cvename>
+      <cvename>CVE-2011-2202</cvename>
+      <cvename>CVE-2011-1938</cvename>
+      <cvename>CVE-2011-1148</cvename>
+    </references>
+    <dates>
+      <discovery>2011-08-18</discovery>
+      <entry>2011-08-20</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="be77eff6-ca91-11e0-aea3-00215c6a37bb">
     <topic>rubygem-rails -- multiple vulnerabilities</topic>
     <affects>
