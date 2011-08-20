@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	jupp
-PORTVERSION=	3.1.16
+PORTVERSION=	3.1.17
 CATEGORIES=	editors
 MASTER_SITES=	http://www.mirbsd.org/MirOS/dist/jupp/ \
 		http://pub.allbsd.org/MirOS/dist/jupp/
-DISTNAME=	joe-3.1jupp16
+DISTNAME=	joe-3.1jupp17
 EXTRACT_SUFX=	.cpio.gz
 
 MAINTAINER=	magik@roorback.net
