@@ -16,7 +16,7 @@ COMMENT=	Replaces the client IP address/hostname with that given by a proxy
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	2.2+
+USE_APACHE=	22+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 

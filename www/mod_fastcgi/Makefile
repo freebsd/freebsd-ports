@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_fastcgi
 PORTVERSION=	2.4.6
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://www.fastcgi.com/dist/
 
@@ -17,7 +17,7 @@ COMMENT=	A fast-cgi module for Apache
 MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	apache-contrib-1.*
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 SRC_FILE=	*.c

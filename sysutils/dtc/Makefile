@@ -52,7 +52,7 @@ NO_BUILD=	yes
 USE_PHP=	mysql pcre session
 MAN8=		dtc-chroot-shell.8
 MANCOMPRESSED=	no
-USE_APACHE_RUN=	2.2+
+USE_APACHE_RUN=	22+
 
 .if defined(WITH_PHP5)
 DEFAULT_PHP_VER=5
@@ -119,7 +119,7 @@ RUN_DEPENDS+=	${LOCALBASE}/www/phpMyAdmin/index.php:${PORTSDIR}/databases/phpmya
 .endif
 
 .if defined(WITH_APACHE)
-USE_APACHE=	2.2+
+USE_APACHE=	22+
 .endif
 
 .if defined(WITH_DOVECOT)

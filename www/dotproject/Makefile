@@ -7,7 +7,7 @@
 
 PORTNAME=	dotproject
 PORTVERSION=	2.1.5
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/dotProject%20Version%20${PORTVERSION}
 
@@ -18,7 +18,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 USE_PHP=	gd mysql session zlib
 WANT_PHP_WEB=	yes
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 
 SUB_FILES=	pkg-message
 

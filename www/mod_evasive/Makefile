@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_evasive
 PORTVERSION=	1.10.1
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	http://www.zdziarski.com/blog/wp-content/uploads/2010/02/
 DISTNAME=	mod_evasive_${PORTVERSION}
@@ -19,7 +20,7 @@ MAKE_JOBS_SAFE=  yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 

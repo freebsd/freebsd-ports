@@ -5,32 +5,32 @@
 # $FreeBSD$
 #
 
-PORTNAME=		gnatsweb
-PORTVERSION=		4.00
-PORTREVISION=	1
-CATEGORIES=		databases devel www
-MASTER_SITES=		GNU
+PORTNAME=	gnatsweb
+PORTVERSION=	4.00
+PORTREVISION=	2
+CATEGORIES=	databases devel www
+MASTER_SITES=	GNU
 
-MAINTAINER=		ports@FreeBSD.org
-COMMENT=		Gnatsweb, a GNATS web interface
+MAINTAINER=	ports@FreeBSD.org
+COMMENT=	Gnatsweb, a GNATS web interface
 
-RUN_DEPENDS=		${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
+RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 
-USE_PERL5_RUN=		yes
-NO_BUILD=		yes
+USE_PERL5_RUN=	yes
+NO_BUILD=	yes
 
-CGI_DIR?=		${WWWDIR}/cgi-bin
+CGI_DIR?=	${WWWDIR}/cgi-bin
 
-PLIST_SUB=		CGI_DIR="${CGI_DIR:S,^${PREFIX}/,,}"
+PLIST_SUB=	CGI_DIR="${CGI_DIR:S,^${PREFIX}/,,}"
 
-PORTDOCS=		CUSTOMIZE CUSTOMIZE.cb CUSTOMIZE.vars \
-			ChangeLog INSTALL NEWS README TROUBLESHOOTING
+PORTDOCS=	CUSTOMIZE CUSTOMIZE.cb CUSTOMIZE.vars \
+		ChangeLog INSTALL NEWS README TROUBLESHOOTING
 
-PORTEXAMPLESS=		gnatsweb-site-example.pl
+PORTEXAMPLESS=	gnatsweb-site-example.pl
 
 do-install:
 	@${MKDIR} ${ETCDIR}/

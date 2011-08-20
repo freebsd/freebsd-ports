@@ -7,7 +7,7 @@
 
 PORTNAME=	formication
 PORTVERSION=	1.0.b1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.ranner.eu/stuff/ \
 		http://home.bluelife.at/ports/distfiles/
@@ -15,7 +15,7 @@ MASTER_SITES=	http://www.ranner.eu/stuff/ \
 MAINTAINER=	michael@ranner.eu
 COMMENT=	Formular processing tool written in perl
 
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 USE_PERL5_RUN=	yes
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}

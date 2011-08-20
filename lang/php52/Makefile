@@ -7,7 +7,7 @@
 
 PORTNAME=	php52
 PORTVERSION=	5.2.17
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -134,7 +134,7 @@ CONFIGURE_ARGS+=--disable-cgi
 
 .if defined(WITH_APACHE)
 PHP_SAPI+=	mod
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 .if ${APACHE_VERSION} > 13
 CONFIGURE_ARGS+=--with-apxs2=${APXS}

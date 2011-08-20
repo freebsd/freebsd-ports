@@ -5,32 +5,32 @@
 # $FreeBSD$
 #
 
-PORTNAME=		mod_flickr
+PORTNAME=	mod_flickr
 PORTVERSION=	1.0
-PORTREVISION=	1
-CATEGORIES=		www
+PORTREVISION=	2
+CATEGORIES=	www
 MASTER_SITES=	http://www.vshank.com/modcode/
 
-MAINTAINER=		venkyshankar@yahoo.com
-COMMENT=		Apache module for Flickr API access
+MAINTAINER=	venkyshankar@yahoo.com
+COMMENT=	Apache module for Flickr API access
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
 MAKE_JOBS_SAFE=	yes
 
-XTRA_FLAGS=		-lcurl
+XTRA_FLAGS=	-lcurl
 
-AP_INC=			${LOCALBASE}/include
-AP_LIB=			${LOCALBASE}/lib
+AP_INC=		${LOCALBASE}/include
+AP_LIB=		${LOCALBASE}/lib
 
 .if defined(WITH_DEBUG)
 XTRA_FLAGS+=	-DDEBUG
 .endif
 
-AP_EXTRAS=		${XTRA_FLAGS}
+AP_EXTRAS=	${XTRA_FLAGS}
 USE_LDCONFIG=	yes
 
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 

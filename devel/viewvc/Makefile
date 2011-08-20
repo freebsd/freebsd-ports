@@ -7,6 +7,7 @@
 
 PORTNAME=	viewvc
 PORTVERSION=	1.1.11
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.viewvc.org/ \
 		LOCAL/ohauer
@@ -49,7 +50,7 @@ RUN_DEPENDS+=	${PYTHON_LIBDIR}/site-packages/svn/__init__.py:${PORTSDIR}/devel/p
 .endif
 
 .if defined (WITH_APACHE)
-USE_APACHE_RUN=	2.0+
+USE_APACHE_RUN=	20+
 .endif
 
 .if defined(WITH_LIGHTTPD)

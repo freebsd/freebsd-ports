@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_cplusplus
 PORTVERSION=	1.5.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	SF/modcplusplus/modcplusplus/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -17,7 +17,7 @@ COMMENT=	Apache module for loading C++ objects as handlers
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 USE_AUTOTOOLS=	autoconf autoheader libtool automake aclocal
 CFLAGS+=	-I${LOCALBASE}/include
 

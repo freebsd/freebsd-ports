@@ -66,7 +66,7 @@ SUB_LIST+=	PHPCGI=${WITH_PHP_CGI}
 
 .if defined(WITH_AP)
 SUB_FILES=	pkg-message
-USE_APACHE=	2.2+
+USE_APACHE=	22+
 PKGMESSAGE=	pkg-message
 APDEP=
 .else

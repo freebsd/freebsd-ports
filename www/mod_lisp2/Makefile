@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_lisp2
 PORTVERSION=	1.3.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://freebsd.minira.nl/
 

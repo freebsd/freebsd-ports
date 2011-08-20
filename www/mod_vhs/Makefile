@@ -16,7 +16,7 @@ COMMENT=	Mass virtual hosting using mod_ldap or mod_dbd with Apache 2.2.x
 
 MANUAL_PACKAGE_BUILD=	needs apr with LDAP and DBD options enabled
 
-USE_APACHE=	2.2+
+USE_APACHE=	22+
 USE_PHP=	yes
 USE_PHP_BUILD=	yes
 WANT_PHP_MOD=	yes

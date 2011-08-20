@@ -8,6 +8,7 @@
 
 PORTNAME=	mod_xmlns
 PORTVERSION=	0.97
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://apache.webthing.com/svn/apache/filters/xmlns/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -19,7 +20,7 @@ COMMENT=	Apache module for XML namespaces
 MAKE_JOBS_SAFE=  yes
 
 USE_GNOME=	libxml2
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 
 XML2_INC=	${LOCALBASE}/include/libxml2
 XML2_LIB=	${LOCALBASE}/lib

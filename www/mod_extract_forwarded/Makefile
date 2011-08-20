@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_extract_forwarded
 PORTVERSION=	2.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.openinfo.co.uk/apache/
 DISTNAME=	extract_forwarded-${DISTVERSION}

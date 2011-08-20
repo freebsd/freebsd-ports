@@ -7,7 +7,7 @@
 
 PORTNAME=	openscep
 PORTVERSION=	0.4.2
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	security
 MASTER_SITES=	http://openscep.othello.ch/download/
 
@@ -19,7 +19,7 @@ MAKE_JOBS_SAFE=	yes
 USE_AUTOTOOLS=	libtool
 USE_OPENSSL=	yes
 USE_OPENLDAP=	yes
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes

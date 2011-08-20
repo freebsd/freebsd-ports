@@ -7,6 +7,7 @@
 
 PORTNAME=	thundersnarf
 PORTVERSION=	1.3
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.tracanelli.com.br/l/dev/thunder/ \
@@ -27,7 +28,7 @@ WRKSRC=		${WRKDIR}/${PORTNAME:R}
 .include <bsd.port.pre.mk>
 
 .if defined (WITH_APACHE)
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 .endif
 
 .if defined (WITH_PGSQL)

@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_hosts_access
 PORTVERSION=	1.1.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	LOCAL/pgollucci
 
@@ -15,7 +16,7 @@ COMMENT=	Apache module that makes Apache respect hosts.allow and hosts.deny
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 

@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_antiloris
 PORTVERSION=	0.4
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.monshouwer.eu/pub/linux/mod_antiloris/
 

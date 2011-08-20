@@ -17,7 +17,7 @@ COMMENT=	Look up the AS and network prefix of IP address
 
 LIB_DEPENDS=	apr-1:${PORTSDIR}/devel/apr1
 
-USE_APACHE=	2.2+
+USE_APACHE=	22+
 AP_FAST_BUILD=	YES
 MANUAL_PACKAGE_BUILD=	devel/apr1 with pgsql option required
 

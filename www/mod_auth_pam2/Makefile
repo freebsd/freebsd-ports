@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_auth_pam
 PORTVERSION=	1.1.1
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	http://pam.sourceforge.net/mod_auth_pam/dist/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}

@@ -7,6 +7,7 @@
 
 PORTNAME=	sympa
 PORTVERSION=	6.1.6
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.sympa.org/distribution/ \
 		http://www.sympa.org/distribution/old/
@@ -47,7 +48,7 @@ USERS=		sympa
 GROUPS=		sympa
 GNU_CONFIGURE=	yes
 USE_PERL5=	yes
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 ICONSDIR?=	www/icons
 CONFIGURE_ARGS+=--bindir=${PREFIX}/libexec/${PORTNAME}	\
 		--libexecdir=${PREFIX}/libexec/${PORTNAME} \

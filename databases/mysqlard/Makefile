@@ -7,7 +7,7 @@
 
 PORTNAME=	mysqlard
 PORTVERSION=	1.0.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	databases www
 MASTER_SITES=	http://gert.sos.be/downloads/mysqlar/
 
@@ -17,7 +17,7 @@ COMMENT=	A tool to collect and graph database statistics from mysql
 BUILD_DEPENDS=	rrdtool:${PORTSDIR}/databases/rrdtool
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 USE_MYSQL=	yes
 
 MYSQLARD_DIR?=	${PREFIX}/www/mysqlard

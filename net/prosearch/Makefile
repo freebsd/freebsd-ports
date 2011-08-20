@@ -67,11 +67,11 @@ RUN_DEPENDS+=	rsync:${PORTSDIR}/net/rsync
 .endif
 
 .if defined(WITH_APACH22)
-USE_APACHE=	2.2+
+USE_APACHE=	22+
 .endif
 
 .if defined(WITH_APACH20)
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 .endif
 
 .if defined(WITH_NGINX)

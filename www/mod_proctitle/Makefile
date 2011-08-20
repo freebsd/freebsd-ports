@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_proctitle
 PORTVERSION=	0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.springdaemons.com/soft/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ COMMENT=	Set httpd process titles to reflect currently processed request
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 CFLAGS+=	-I${LOCALBASE}/include

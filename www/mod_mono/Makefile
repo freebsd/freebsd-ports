@@ -8,6 +8,7 @@
 
 PORTNAME=	mod_mono
 PORTVERSION=	2.10
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ftp.novell.com/pub/mono/sources/${PORTNAME}/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -20,7 +21,7 @@ BUILD_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 RUN_DEPENDS=	mono:${PORTSDIR}/lang/mono \
 		xsp:${PORTSDIR}/www/xsp
 
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
 CONFIGURE_ARGS=	--man=${PREFIX}/man

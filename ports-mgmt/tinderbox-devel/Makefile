@@ -6,6 +6,7 @@
 
 PORTNAME=	tinderbox
 DISTVERSION=	3.4-${SNAP}
+PORTREVISION=	1
 CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
 PKGNAMESUFFIX=	-devel
@@ -77,7 +78,7 @@ RUN_DEPENDS+=	cvsup:${PORTSDIR}/net/cvsup-without-gui
 .endif
 
 .if !defined(WITHOUT_APACHE) && defined(WITH_WEBUI)
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 .elif defined(WITH_LIGHTTPD) && defined(WITH_WEBUI)
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .elif defined(WITH_HIAWATHA) && defined(WITH_WEBUI)

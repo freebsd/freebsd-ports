@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	kuriyama
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Lightweight single-sign-on authentication module for apache
 
-USE_APACHE=	2.2+
+USE_APACHE=	22+
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 AP_FAST_BUILD=	YES
 SRC_FILE=	${PORTNAME}.c sha2.c

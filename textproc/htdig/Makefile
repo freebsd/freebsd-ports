@@ -7,7 +7,7 @@
 
 PORTNAME=	htdig
 PORTVERSION=	3.2.0.b6
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	textproc www
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/3.2.0b6
@@ -39,7 +39,7 @@ OPTIONS=	APACHE "Include ${APACHE_PORT} as a dependency" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_APACHE)
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 CONFIGURE_ARGS+=	--with-apache=${LOCALBASE}/sbin
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 .  if ${APACHE_VERSION} > 13

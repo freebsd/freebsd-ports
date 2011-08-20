@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_security21
 PORTVERSION=	2.1.7
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	http://www.modsecurity.org/download/
 DISTNAME=	${PORTNAME:S/_//:S/21//}-apache_${PORTVERSION}
@@ -16,7 +17,7 @@ COMMENT=	An intrusion detection and prevention engine
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 AP_EXTRAS+=	-DWITH_LIBXML2

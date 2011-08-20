@@ -7,6 +7,7 @@
 
 PORTNAME=	Apache-AuthTicket
 PORTVERSION=	0.93
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,7 +28,7 @@ MAN3=		Apache::AuthTicket.3 \
 		Apache::AuthTicket::Base.3 \
 		Apache2::AuthTicket.3
 
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 
 .include <bsd.port.pre.mk>
 

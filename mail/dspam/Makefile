@@ -12,7 +12,7 @@
 
 PORTNAME=	dspam
 PORTVERSION=	3.9.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES=	SF \
 		http://T32.TecNik93.com/FreeBSD/ports/${PORTNAME}/sources/
@@ -398,7 +398,7 @@ CONFIGURE_ARGS+=	--with-dspam-mode=${DSPAM_MODE}
 .	if defined(WITH_LIGHTTPD)
 RUN_DEPENDS+=	${LOCALBASE}/sbin/lighttpd:${PORTSDIR}/www/lighttpd
 .	else
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 .	endif
 LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 RUN_DEPENDS+=	${SITE_PERL}/mach/GD.pm:${PORTSDIR}/graphics/p5-GD

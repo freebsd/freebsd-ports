@@ -7,6 +7,7 @@
 
 PORTNAME=	phpdeadlock
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	security www
 MASTER_SITES=	SF/${PORTNAME}/Deadlock/${PORTVERSION}%20Stable
 DISTNAME=	Deadlock-${PORTVERSION}-Stable
@@ -20,7 +21,7 @@ DLDIR=		www/${DLURL}
 PORTDOCS=	CHANGES.txt COPYING.txt UPGRADE.txt
 
 USE_DOS2UNIX=	yes
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 USE_PHP=	mysql session ctype pcre
 NO_BUILD=	yes
 

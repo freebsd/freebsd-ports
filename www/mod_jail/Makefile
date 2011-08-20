@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_jail
 PORTVERSION=	0.5.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://mod-jail.googlecode.com/files/
 
@@ -16,7 +17,7 @@ COMMENT=	Apache 1.3.x/2.0.xx module to enable an easy alternative to mod_chroot
 MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/mod_jail-0.5.1
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 

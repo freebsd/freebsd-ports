@@ -7,7 +7,7 @@
 
 PORTNAME=	suphp
 PORTVERSION=	0.7.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	www
 MASTER_SITES=	http://www.suphp.org/download/ \
 		${MASTER_SITE_LOCAL:S|%SUBDIR%|koitsu|}
@@ -19,7 +19,7 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	aclocal:env automake:env autoconf:env libtool:env
 
 # Maintainer has not tested suPHP 0.6.x on Apache 1.3.
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 CFLAGS+=	-I${LOCALBASE}/include
 USE_PHP=	yes
 WANT_PHP_CGI=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	mysqldumper
 PORTVERSION=	1.24.2
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	SF/${PORTNAME}/MySQLDumper/
 DISTNAME=	MySQLDumper${PORTVERSION}
@@ -31,7 +32,7 @@ WWWGRP=		${WWWOWN}
 .include <bsd.port.options.mk>
 
 .if defined(WITH_APACHE)
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 .endif
 .if defined(WITH_LIGHTTPD)
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd

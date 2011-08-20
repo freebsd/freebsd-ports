@@ -7,7 +7,7 @@
 
 PORTNAME=	facturier
 PORTVERSION=	2.1.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	french finance
 MASTER_SITES=	http://ignu.ungi.org/download/	\
 		${MASTER_SITE_LOCAL}
@@ -23,7 +23,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/htmldoc:${PORTSDIR}/textproc/htmldoc			\
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 NO_BUILD=	yes
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 USE_PERL5_RUN=	yes
 USE_MYSQL=	yes
 

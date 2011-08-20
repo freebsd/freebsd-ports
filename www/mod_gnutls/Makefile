@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_gnutls
 PORTVERSION=	0.5.10
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	http://modgnutls.sourceforge.net/downloads/ \
 		http://www.outoforder.cc/downloads/mod_gnutls/
@@ -22,7 +23,7 @@ LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 GNU_CONFIGURE=	yes
 
 DOCS=		LICENSE NEWS README README.ENV
