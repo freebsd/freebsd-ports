@@ -37,6 +37,8 @@ post-patch:
 	@${FIND} -X ${WRKSRC} -type f -and -name "*.[1h]" | ${XARGS} \
 		${REINPLACE_CMD} -e \
 		's|/usr/local/lib/unrtf/|${DATADIR}/|g'
+	@${REINPLACE_CMD} -e '/^attr_get_param/,/^}/s/return;/return NULL;/' \
+		${WRKSRC}/src/attr.c
 
 check regression-test test: build
 	@(cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} check)
