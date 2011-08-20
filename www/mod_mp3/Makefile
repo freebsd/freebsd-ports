@@ -17,7 +17,7 @@ COMMENT=	Apache module to allow MP3 streaming
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	1.3
+USE_APACHE=	13
 HAS_CONFIGURE=	yes
 MAKE_ARGS+=	APXS="${APXS}"
 USE_PERL5=	yes

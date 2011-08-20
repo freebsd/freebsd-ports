@@ -19,7 +19,7 @@ COMMENT=	An Apache module for authenticating users with Kerberos v5
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	1.3
+USE_APACHE=	13
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 

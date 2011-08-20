@@ -17,7 +17,7 @@ COMMENT=	An Internet Content Acceleration module for Apache
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	1.3
+USE_APACHE=	13
 
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

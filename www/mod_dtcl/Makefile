@@ -22,7 +22,7 @@ USE_TCL=	83+
 
 WRKSRC=		${WRKDIR}/mod_dtcl
 MAKEFILE=	${FILESDIR}/Makefile.bsd
-USE_APACHE=	1.3
+USE_APACHE=	13
 MAKE_ENV+=	TCL_VERSION=${TCL_VER}
 
 .include <bsd.port.pre.mk>

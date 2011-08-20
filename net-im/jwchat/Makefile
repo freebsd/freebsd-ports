@@ -17,7 +17,7 @@ COMMENT=	Full featured, web-based Jabber client
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	1.3
+USE_APACHE=	13
 
 NO_BUILD=	yes
 

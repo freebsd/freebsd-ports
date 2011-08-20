@@ -18,7 +18,7 @@ COMMENT=	Apache module that provides syntax coloring for various languages
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	1.3
+USE_APACHE=	13
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 

@@ -15,7 +15,7 @@ COMMENT=	An Apache module that can make proxied requests appear with client IP
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	1.3
+USE_APACHE=	13
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 CONFLICTS=	mod_extract_forwarded-2.* mod_extract_forwarded2-0.*

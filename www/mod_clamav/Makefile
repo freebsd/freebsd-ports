@@ -19,7 +19,7 @@ COMMENT=	Scans content delivered by the Apache20 proxy module for viruses
 MAKE_JOBS_SAFE=	yes
 
 USE_AUTOTOOLS=	libtool
-USE_APACHE=	2.2
+USE_APACHE=	22
 GNU_CONFIGURE=	yes
 
 OPTIONS=	CLAMAVDEVEL	"Use development version of CLAMAV" off

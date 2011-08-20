@@ -27,7 +27,7 @@ MAKE_JOBS_SAFE=  yes
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.edu
 
 USE_PERL5=	yes
-USE_APACHE=	1.3
+USE_APACHE=	13
 NO_CDROM=	depends on glimpse
 NO_BUILD=	yes
 

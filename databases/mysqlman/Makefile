@@ -17,7 +17,7 @@ COMMENT=	MySQLMan is a web based MySQL database manager written in perl
 RESTRICTED=	not redistributable, license agreement required
 
 USE_PERL5=	yes
-USE_APACHE=	1.3
+USE_APACHE=	13
 USE_MYSQL=	yes
 
 NO_BUILD=	yes

@@ -16,7 +16,7 @@ COMMENT=	Allows users to use PAM modules for user authentication
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	1.3
+USE_APACHE=	13
 
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

@@ -16,7 +16,7 @@ COMMENT=	An Apache module to make Apache log to MySQL
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	1.3
+USE_APACHE=	13
 USE_MYSQL=	YES
 
 AP_FAST_BUILD=	yes

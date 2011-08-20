@@ -18,7 +18,7 @@ COMMENT=	Apache module that allows seamless redirection and load balancing of HT
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	1.3
+USE_APACHE=	13
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-apxs=${APXS}
