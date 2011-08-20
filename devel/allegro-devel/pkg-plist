@@ -127,11 +127,11 @@ lib/liballeggl.a
 lib/libjpgalleg.a
 lib/libloadpng.a
 lib/liblogg.a
-lib/pkgconfig/allegro.pc
-lib/pkgconfig/allegrogl.pc
-lib/pkgconfig/jpgalleg.pc
-lib/pkgconfig/loadpng.pc
-lib/pkgconfig/logg.pc
+libdata/pkgconfig/allegro.pc
+libdata/pkgconfig/allegrogl.pc
+libdata/pkgconfig/jpgalleg.pc
+libdata/pkgconfig/loadpng.pc
+libdata/pkgconfig/logg.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/CHANGES
 %%PORTDOCS%%%%DOCSDIR%%/THANKS
@@ -154,7 +154,6 @@ lib/pkgconfig/logg.pc
 %%PORTDOCS%%%%DOCSDIR%%/packfile.txt
 %%PORTDOCS%%%%DOCSDIR%%/readme.txt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-@dirrmtry lib/pkgconfig
 @dirrm lib/allegro/%%SHLIB_VER%%
 @dirrm lib/allegro
 @dirrm include/allegrogl/GLext
