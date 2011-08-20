@@ -15,8 +15,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Game server monitor & admin tool
 
 NO_BUILD=	yes
-USE_APACHE=	1.3
+USE_APACHE=	13
 USE_PHP=	yes
+
+BROKEN=		conflicting dependencies
 
 _subs=PHPUADIR=${PHPUADIR} PHPUA_USER=${PHPUA_USER} PHPUA_GROUP=${PHPUA_GROUP} APNAME=${APNAME}
 
