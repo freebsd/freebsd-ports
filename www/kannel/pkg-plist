@@ -1,3 +1,4 @@
+bin/decode_emimsg
 bin/gw-config
 bin/mtbatch
 bin/seewbmp
@@ -16,6 +17,7 @@ include/kannel/gw/dlr_p.h
 include/kannel/gw/heartbeat.h
 include/kannel/gw/html.h
 include/kannel/gw/load.h
+include/kannel/gw/meta_data.h
 include/kannel/gw/mime_decompiler.h
 include/kannel/gw/msg-decl.h
 include/kannel/gw/msg.h
