@@ -2685,6 +2685,7 @@ dumpmpeg                        ports/multimedia/dumpmpeg
 duncan                          ports/textproc/duncan
 dungeon                         ports/games/dungeon
 dungeoncrawl                    ports/games/dungeoncrawl
+duo                             ports/security/duo
 dupfind                         ports/sysutils/dupfind
 duplicity                       ports/sysutils/duplicity
 duplicity-devel                 ports/sysutils/duplicity-devel
@@ -10501,6 +10502,7 @@ openclipart                     ports/graphics/openclipart
 openconnect                     ports/security/openconnect
 opencore-amr                    ports/audio/opencore-amr
 opencryptoki                    ports/security/opencryptoki
+opencsg                         ports/graphics/opencsg
 openct                          ports/security/openct
 opencv                          ports/graphics/opencv
 opencv-core                     ports/graphics/opencv-core
@@ -10575,6 +10577,7 @@ openrm                          ports/graphics/openrm
 opensaml                        ports/security/opensaml
 opensaml2                       ports/security/opensaml2
 opensc                          ports/security/opensc
+openscad                        ports/cad/openscad
 openscep                        ports/security/openscep
 opensched                       ports/textproc/opensched
 openser                         ports/net/openser
@@ -22780,6 +22783,8 @@ qwit-devel                      ports/net-im/qwit-devel
 qwt4                            ports/x11-toolkits/qwt4
 qwt5                            ports/x11-toolkits/qwt5
 qwt5-designerplugin             ports/x11-toolkits/qwt5-designerplugin
+qwt6                            ports/x11-toolkits/qwt6
+qwt6-designerplugin             ports/x11-toolkits/qwt6-designerplugin
 qwtplot3d                       ports/math/qwtplot3d
 qwtplot3d-qt4                   ports/math/qwtplot3d-qt4
 r                               ports/math/R
