@@ -14,9 +14,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Unoffical napiprojekt.pl qt4 client
 
-RUN_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
-
 LICENSE=	GPLv2
+
+RUN_DEPENDS=	7z:${PORTSDIR}/archivers/p7zip
 
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui network qmake_build moc_build uic_build rcc_build
@@ -37,7 +37,7 @@ post-patch:
 		src/napi.h
 
 pre-build:
-	@cd ${WRKSRC} && ${QMAKE} -spec ${QMAKESPEC} ${QMAKEFLAGS}
+	@cd ${WRKSRC} && ${QMAKE} -spec ${QMAKESPEC} ${QMAKEFLAGS} ${QMAKE_ARGS}
 
 post-install:
 .if !defined(NOPORTDOCS)
