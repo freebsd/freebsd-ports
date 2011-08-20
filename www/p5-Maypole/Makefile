@@ -6,7 +6,7 @@
 
 PORTNAME=	Maypole
 PORTVERSION=	2.13
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TEEJAY
@@ -42,8 +42,8 @@ PORTSCOUT=	skipv:2.121
 
 MAKE_JOBS_SAFE=	yes
 
-OPTIONS=	MODPERL "mod_perl support" on \
-		MODPERL2 "mod_perl2 support" off
+OPTIONS=	MODPERL "mod_perl support" off \
+		MODPERL2 "mod_perl2 support" on
 
 PERL_CONFIGURE=	yes
 .include <bsd.port.options.mk>
