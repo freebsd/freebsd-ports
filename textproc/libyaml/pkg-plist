@@ -4,5 +4,4 @@ lib/libyaml-0.so.2
 lib/libyaml.a
 lib/libyaml.so
 lib/libyaml.la
-lib/pkgconfig/yaml-0.1.pc
-@dirrmtry lib/pkgconfig
+libdata/pkgconfig/yaml-0.1.pc

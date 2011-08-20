@@ -8,6 +8,7 @@
 
 PORTNAME=	libyaml
 PORTVERSION=	0.1.4
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://pyyaml.org/download/libyaml/
 DISTNAME=	yaml-${PORTVERSION}
@@ -17,6 +18,7 @@ MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	A YAML 1.1 parser and emitter written in C
 
 GNU_CONFIGURE=	yes
+USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 
 .include <bsd.port.mk>
