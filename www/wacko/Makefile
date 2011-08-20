@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	wacko
-PORTVERSION=	4
+PORTVERSION=	4.1
 CATEGORIES=	www
 MASTER_SITES=	http://wackowiki.com/files/
 DISTNAME=	wacko.r4
