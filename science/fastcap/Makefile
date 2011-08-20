@@ -22,8 +22,17 @@ BINFILES=	busgen capgen cubegen fastcap pipedgen pyragen
 post-patch:
 	@${REINPLACE_CMD} -e 's,TYPE=other,TYPE=4,' \
 		${WRKSRC}/config
-	@${REINPLACE_CMD} -e 's,CFLAGS =,CFLAGS +=,' \
+	@${REINPLACE_CMD} -Ee '/CFLAGS =/{s/=/+=/;s/-O[[:digit:]]*//;}' \
 		${WRKSRC}/src/Makefile.4
+#minimal changes to fix the clang build (there should be a more thorough
+#clean-up, to correct types of functions, remove implicit declarations, fix
+#formatting, add missing returns, etc.)
+	@${REINPLACE_CMD} -E -e 's,^mul(Up|Down),void &,' \
+		${WRKSRC}/src/mulDo.c
+	@${REINPLACE_CMD} -e 's,^mulMatUp,void &,' \
+		${WRKSRC}/src/mulMats.c
+	@${REINPLACE_CMD} -e 's,^static getnbrs,static void getnbrs,' \
+		${WRKSRC}/src/mulSetup.c
 
 do-install:
 .for b in ${BINFILES}
