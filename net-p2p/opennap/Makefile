@@ -11,8 +11,8 @@ PORTREVISION=	1
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF
 
-MAINTAINER=	drogoh@megalomaniacal.net
-COMMENT=	The OpenNAP open-source Napster server
+MAINTAINER=	sam@cassiba.com
+COMMENT=	Open-source Napster server
 
 USE_GMAKE=	YES
 GNU_CONFIGURE=	YES
