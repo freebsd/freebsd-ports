@@ -6,11 +6,11 @@
 #
 
 PORTNAME=	terminus-font
-PORTVERSION=	4.35
+PORTVERSION=	4.36
 CATEGORIES=	x11-fonts
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE:S|%SUBDIR%|${PORTNAME:L}/${PORTNAME}-${PORTVERSION}|}
 
-MAINTAINER=	vlad@vlad.uz.ua
+MAINTAINER=	niclas.zeising@gmail.com
 COMMENT=	Terminus Font - a clean fixed width font
 
 BUILD_DEPENDS=	mkitalic:${PORTSDIR}/x11-fonts/mkbold-mkitalic \
@@ -27,8 +27,8 @@ OPTIONS=	AO2 "Variant of letter 'a'" off \
 		GQ2 "Variant of grave accent and apostrophe" off \
 		IJ1 "Variant of cyrillic letters 'i' and 'short i'" off \
 		KA2 "Variant of cyrillic letter 'ka'" off \
-		CM2 "Variant of letters with circumflex, caron and macron" off \
-		HI2 "Higher uppercase letters, for size 18" off
+		HI2 "Higher uppercase letters, for size 18" off \
+		LL2 "Variant with more distinctive l (ell)" off
 
 SUB_LIST=	FONTDIR="${PREFIX}/${FONTDIR}"
 SUB_FILES=	pkg-message
@@ -43,7 +43,7 @@ post-extract:
 .if defined(WITH_AO2)
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/ao2.diff
 .endif
-.if defined(WITH_DV1)
+.if defined(WITH_DV1) && !defined(WITH_HI2)
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/dv1.diff
 .endif
 .if defined(WITH_GE2)
@@ -55,11 +55,8 @@ post-extract:
 .if defined(WITH_IJ1)
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/ij1.diff
 .endif
-.if defined(WITH_KA2)
+.if defined(WITH_KA2) && !defined(WITH_HI2)
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/ka2.diff
-.endif
-.if defined(WITH_CM2)
-	cd ${WRKSRC} && ${PATCH} -p1 -i alt/cm2.diff
 .endif
 .if defined(WITH_HI2)
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/hi2.diff
@@ -69,6 +66,9 @@ post-extract:
 .if defined(WITH_KA2)
 	cd ${WRKSRC} && ${PATCH} -p1 -i alt/hi2-ka2.diff
 .endif
+.endif
+.if defined(WITH_LL2)
+	cd ${WRKSRC} && ${PATCH} -p1 -i alt/ll2.diff
 .endif
 
 post-build:
