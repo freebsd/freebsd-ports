@@ -50,7 +50,7 @@ RUN_DEPENDS+=	p5-Apache-Htpasswd>=0:${PORTSDIR}/security/p5-Apache-Htpasswd \
 .endif
 
 .if defined(WITH_APACHE)
-USE_APACHE?=	1.3+
+USE_APACHE?=	13+
 PLIST_SUB+=	NOAPACHE=""
 PKGMESSAGE=	pkg-message-apache
 SUB_FILES+=	pkg-message-apache
