@@ -33,6 +33,7 @@ PLIST_SUB=	PORTNAME="${PORTNAME}"
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|echo aout|echo elf|' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|return|& (0)|' ${WRKSRC}/testu01/fftc.c
 .ifdef(NOPORTDOCS)
 	@${REINPLACE_CMD} -e  '/^SUBDIRS \=/s/ doc / /' ${WRKSRC}/Makefile.in
 	@${FIND} -X ${WRKSRC} -name 'Makefile.in' | ${XARGS} ${REINPLACE_CMD} \
@@ -46,5 +47,26 @@ post-patch:
 post-install:
 	@${INSTALL_DATA} ${DISTDIR}/testu01.pdf ${DOCSDIR}
 .endif
+
+check regression-test test: build
+	@cd ${WRKSRC}/examples ; \
+	for f in [mx]*.c ; do \
+	${CC} ${CFLAGS} -c $${f} -I. -I../include ; \
+	done ; \
+	for t in [befs]*.c; do \
+	case $${t} in \
+	ex3.c) x="my16807.o" ;; \
+	ex7.c) x="mrg32k3a.o xorshift.o" ;; \
+	scat.c) continue ;; \
+	*) x="" ;; \
+	esac ; \
+	${CC} ${CFLAGS} ${LDFLAGS} -o $${t%.c} $${t} -I. -I../include \
+	-Wl,--as-needed $${x} ../testu01/.libs/libtestu01.so \
+	../probdist/.libs/libprobdist.so ../mylib/.libs/libmylib.so -lm ; \
+	${ECHO_CMD} "Running $${t%.c}..." ; \
+	${SETENV} \
+	LD_LIBRARY_PATH=../testu01/.libs:../probdist/.libs:../mylib/.libs \
+	./$${t%.c} ; \
+	done
 
 .include <bsd.port.mk>
