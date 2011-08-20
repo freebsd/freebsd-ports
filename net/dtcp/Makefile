@@ -21,6 +21,7 @@ RUN_DEPENDS=	qpopauth:${PORTSDIR}/mail/qpopper
 
 USE_RC_SUBR=	dtcpc.sh dtcps.sh
 USE_RUBY=	yes
+RUBY_VER=	1.8
 MAKE_ENV+=	RUBY=${RUBY}
 
 MAN8=		dtcpauth.8 dtcpc.8 dtcps.8
