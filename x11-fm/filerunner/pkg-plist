@@ -28,6 +28,7 @@ lib/FileRunner/chmod.tcl
 lib/FileRunner/cmd.tcl
 lib/FileRunner/config.tcl
 lib/FileRunner/dialog.tcl
+lib/FileRunner/displays.tcl
 lib/FileRunner/editfont.tcl
 lib/FileRunner/font.tcl
 lib/FileRunner/fr
