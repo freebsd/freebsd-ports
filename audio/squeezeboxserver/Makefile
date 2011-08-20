@@ -7,7 +7,7 @@
 
 PORTNAME=	squeezeboxserver
 PORTVERSION=	7.5.4
-#PORTREVISION=	1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://downloads.slimdevices.com/SqueezeboxServer_v${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-noCPAN
@@ -60,12 +60,8 @@ USE_PERL5=	yes
 RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
 .endif
 
-USE_MYSQL=	yes
+USE_MYSQL=	server
 IGNORE_WITH_MYSQL=	323 40
-
-# We need a dependency on the server because squeezecenter runs the binary
-# directly with a non-standard config.
-RUN_DEPENDS+=	${LOCALBASE}/libexec/mysqld:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
 
 .if !defined(WITHOUT_APE)
 RUN_DEPENDS+=	mac:${PORTSDIR}/audio/mac
