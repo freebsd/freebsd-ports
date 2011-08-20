@@ -19,8 +19,7 @@ LICENSE_FILE=	${WRKSRC}/lgpl-license
 
 LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs \
 		soprano.4:${PORTSDIR}/textproc/soprano
-BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt \
-		${LOCALBASE}/bin/mysqld_safe:${PORTSDIR}/databases/mysql${MYSQL_VER}-server
+BUILD_DEPENDS=	xsltproc:${PORTSDIR}/textproc/libxslt
 RUN_DEPENDS=	${QT_PREFIX}/lib/qt4/plugins/sqldrivers/libqsqlmysql.so:${PORTSDIR}/databases/qt4-mysql-plugin
 
 # Let process generate meaningful backtrace on core dump
