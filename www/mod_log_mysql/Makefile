@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_log_mysql
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 # Original location: http://bitbrook.de/software/mod_log_mysql/mod_log_mysql.c
 # Please handle update requests with care!

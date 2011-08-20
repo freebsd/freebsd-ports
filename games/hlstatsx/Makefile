@@ -7,6 +7,7 @@
 
 PORTNAME=	hlstatsx
 DISTVERSION=	1.20RC2
+PORTREVISION=	1
 CATEGORIES=	games www
 MASTER_SITES=	http://striker.interhact.net/hlstatsx/
 DISTNAME=	HLstatsX_V${DISTVERSION}
@@ -15,7 +16,7 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Real-time player and clan rankings and statistics for HL2 and mods
 
 NO_BUILD=	yes
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 USE_PHP=	gd mysql
 USE_PERL5_RUN=	yes
 USE_ZIP=	yes

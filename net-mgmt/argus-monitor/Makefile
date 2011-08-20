@@ -7,7 +7,7 @@
 
 PORTNAME=	argus-monitor
 PORTVERSION=	20100109
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://www.tcp4me.com/code/argus-archive/
 DISTNAME=	argus-dev-${PORTVERSION}
@@ -27,7 +27,7 @@ WRKSRC=		${WRKDIR}/${DISTNAME}
 USE_PERL5=	yes
 USE_RC_SUBR=	argusd
 HAS_CONFIGURE=	yes
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	--bin_dir=${PREFIX}/bin --sbin_dir=${PREFIX}/sbin \
 		--lib_dir=${PREFIX}/lib/argus-monitor --data_dir=${PREFIX}/etc/argus-monitor \

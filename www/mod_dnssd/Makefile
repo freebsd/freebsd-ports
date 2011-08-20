@@ -20,7 +20,7 @@ LIB_DEPENDS=	avahi-client.3:${PORTSDIR}/net/avahi-app
 MAKE_JOBS_SAFE=	yes
 
 USE_GMAKE=	yes
-USE_APACHE=	2.2+
+USE_APACHE=	22+
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \

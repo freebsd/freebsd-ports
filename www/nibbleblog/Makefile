@@ -7,6 +7,7 @@
 
 PORTNAME=	nibbleblog
 PORTVERSION=	3.0.2
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/v${PORTVERSION}/
 DISTNAME=	nibbleblogv302
@@ -28,7 +29,7 @@ SUB_FILES=	pkg-message
 .include <bsd.port.options.mk>
 
 .if defined(WITH_APACHE)
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 .endif
 .if defined(WITH_LIGHTTPD)
 RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd

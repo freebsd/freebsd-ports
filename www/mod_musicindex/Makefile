@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_musicindex
 PORTVERSION=	1.3.5
+PORTREVISION=	1
 CATEGORIES=	www audio
 MASTER_SITES=	http://www.parisc-linux.org/~varenet/musicindex/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -27,7 +28,7 @@ OPTIONS=	NLS "Native language support" on \
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include LDFLAGS=-L${LOCALBASE}/lib

@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_geoip2
 PORTVERSION=	1.2.5
+PORTREVISION=	1
 CATEGORIES=	www geography
 MASTER_SITES=	http://geolite.maxmind.com/download/geoip/api/mod_geoip2/
 DISTNAME=	${PORTNAME}_${PORTVERSION}
@@ -23,7 +24,7 @@ CONFLICTS=	mod_geoip-[0-9]*
 
 WRKSRC=		${WRKDIR}/${PORTNAME}_${PORTVERSION}
 
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 MODULENAME=	mod_geoip
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

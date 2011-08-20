@@ -6,6 +6,7 @@
 
 PORTNAME=	ocsinventory-ng
 PORTVERSION=	2.0
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://launchpad.net/ocsinventory-server/stable-${PORTVERSION}/${PORTVERSION}/+download/
 DISTNAME=	OCSNG_UNIX_SERVER-${PORTVERSION}
@@ -24,7 +25,7 @@ RUN_DEPENDS=	${SITE_PERL}/XML/Simple.pm:${PORTSDIR}/textproc/p5-XML-Simple \
 
 FETCH_ARGS=
 LICENSE=	GPLv2
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 USE_MYSQL=	41+
 USE_PERL5=	5.8.0+
 WANT_PHP_WEB=	yes

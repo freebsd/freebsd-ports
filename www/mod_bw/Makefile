@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_bw
 PORTVERSION=	0.8
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.ivn.cl/apache/files/source/
 EXTRACT_SUFX=	.tgz

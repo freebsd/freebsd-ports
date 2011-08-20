@@ -7,7 +7,7 @@
 
 PORTNAME=	mimetex
 PORTVERSION=	20080906.1.70
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	www math
 MASTER_SITES=	http://nivi.interfree.it/distfiles/${DIST_SUBDIR}/ \
 		http://www.forkosh.com/
@@ -18,7 +18,7 @@ MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A CGI script that lets you embed LaTeX math in your HTML pages
 
 NO_WRKSUBDIR=	yes
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 USE_ZIP=	yes
 
 .include <bsd.port.pre.mk>

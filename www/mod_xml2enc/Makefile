@@ -17,7 +17,7 @@ COMMENT=	Apache module for converting encoding before and/or after a filter run
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	2.2+
+USE_APACHE=	22+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 SHORTMODNAME=	xml2enc

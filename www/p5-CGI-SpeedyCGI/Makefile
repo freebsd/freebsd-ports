@@ -7,7 +7,7 @@
 
 PORTNAME=	CGI-SpeedyCGI
 PORTVERSION=	2.22
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -23,7 +23,7 @@ OPTIONS=	APACHE "Enable mod_speedycgi" On
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_APACHE)
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 PLIST_SUB+=	APACHE=""
 .else
 PLIST_SUB+=	APACHE="@comment "

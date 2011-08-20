@@ -7,7 +7,7 @@
 
 PORTNAME=	vqregister
 PORTVERSION=	2.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	mail www
 MASTER_SITES=	http://www.inter7.com/vqregister/
 

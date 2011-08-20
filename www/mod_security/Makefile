@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_security
 PORTVERSION=	2.5.13
+PORTREVISION=	1
 CATEGORIES=	www security
 MASTER_SITES=	SF/mod-security/modsecurity-apache/${PORTVERSION}
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -20,7 +21,7 @@ MAKE_JOBS_SAFE=	yes
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre \
 		apr-1:${PORTSDIR}/devel/apr1
 
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 GNU_CONFIGURE=	yes
 CONFIGURE_TARGET=	--build=${MACHINE_ARCH}-portbld-freebsd${OSREL}
 AP_GENPLIST=	yes

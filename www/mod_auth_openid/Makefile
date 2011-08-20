@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_auth_openid
 PORTVERSION=	0.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://butterfat.net/releases/mod_auth_openid/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -21,7 +22,7 @@ MAKE_JOBS_SAFE=  yes
 
 PLIST_FILES=	${APACHEMODDIR}/mod_auth_openid.so
 
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-pcre=${LOCALBASE}

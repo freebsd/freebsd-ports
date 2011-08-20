@@ -57,7 +57,7 @@ COPYTREE=	${SH} -c '(${FIND} -d $$0 $$2 | ${CPIO} -dumpl $$1 >/dev/null \
 	${FIND} $$1 -type d -exec ${CHMOD} 755 {} \;' --
 
 .if defined(WITH_APACHE)
-USE_APACHE?=	1.3+
+USE_APACHE?=	13+
 BUILD_DEPENDS+=	${APACHEMODDIR}/mod_WebObjects.so:../../www/mod_webobjects
 .endif
 

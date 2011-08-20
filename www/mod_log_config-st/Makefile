@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_log_config-st
 PORTVERSION=	1.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 # Original location: http://bitbrook.de/software/mod_log_mysql/mod_log_config.c
 MASTER_SITES=	http://sheepkiller.nerim.net/ports/${PORTNAME}/

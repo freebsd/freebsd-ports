@@ -20,7 +20,7 @@ WRKSRC=			${WRKDIR}/libapache2-mod-rivet-${PORTVERSION}
 MAKE_JOBS_SAFE=	yes
 LICENSE=		ASL
 
-USE_APACHE=	2.2+
+USE_APACHE=	22+
 USE_AUTOTOOLS=	automake autoconf
 USE_TCL=	84+
 GMAKE=		yes

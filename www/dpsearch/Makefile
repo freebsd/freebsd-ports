@@ -7,7 +7,7 @@
 
 PORTNAME=	dpsearch
 PORTVERSION=	4.53
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://dataparksearch.googlecode.com/files/ \
 		http://www.dataparksearch.org/
@@ -100,7 +100,7 @@ CONFIGURE_ARGS+=--enable-idn
 .endif
 
 .if defined(WITH_DPSEARCH_APACHE)
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 PLIST_SUB+=	APACHE=""
 CONFIGURE_ARGS+=--enable-apache-module
 .else

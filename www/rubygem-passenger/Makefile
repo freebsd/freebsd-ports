@@ -31,7 +31,7 @@ IGNORE=		supports only one web-server: apache22 or nginx. \
 .endif
 
 .if !defined(WITHOUT_APACHEPORT)
-USE_APACHE=	2.2+
+USE_APACHE=	22+
 .endif
 
 .if defined(WITH_NGINXPORT)

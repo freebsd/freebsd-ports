@@ -7,7 +7,7 @@
 
 PORTNAME=	Log-Dispatch
 PORTVERSION=	2.29
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -54,7 +54,7 @@ post-install:
 .include <bsd.port.options.mk>
 
 .if defined(WITH_APACHELOG)
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 .endif
 
 .include <bsd.port.pre.mk>

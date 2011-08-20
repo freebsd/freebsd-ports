@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_auth_imap
 PORTVERSION=	2.2.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://ben.brillat.net/files/projects/mod_auth_imap2/
 DISTNAME=	mod_auth_imap2-${PORTVERSION}

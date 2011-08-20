@@ -7,7 +7,7 @@
 
 PORTNAME=	Apache-Gallery
 PORTVERSION=	1.0.2
-PORTEPOCH=	2
+PORTEPOCH=	3
 CATEGORIES=	www perl5
 MASTER_SITES=	http://apachegallery.dk/download/ \
 		CPAN
@@ -26,7 +26,7 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 LICENSE=	ART10
 PERL_CONFIGURE=	yes
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 
 .include <bsd.port.pre.mk>
 .if ${APACHE_VERSION} == 13

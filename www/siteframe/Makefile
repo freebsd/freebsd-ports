@@ -7,7 +7,7 @@
 
 PORTNAME=	siteframe
 PORTVERSION=	5.0.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.broadpool.net/pub/siteframe/
 
@@ -16,7 +16,7 @@ COMMENT=	A web community content management system in PHP5 and MySQL
 
 RUN_DEPENDS=	${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty
 
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 USE_PHP=	mysqli simplexml xml session gd
 DEFAULT_PHP_VER=	5
 IGNORE_WITH_PHP=	4

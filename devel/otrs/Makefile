@@ -7,6 +7,7 @@
 
 PORTNAME=	otrs
 PORTVERSION=	3.0.10
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://ftp.otrs.org/pub/otrs/ \
 		ftp://ftp.samurai.com/pub/otrs/ \
@@ -74,7 +75,7 @@ CLEAN_FILES=	scripts/suse* scripts/redhat* \
 		var/httpd/htdocs/js/thirdparty/ckeditor-3.4.2/_source \
 		var/httpd/htdocs/skins/Agent/*/img/source
 
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 USE_PERL5=	yes
 
 .include <bsd.port.pre.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_log_firstbyte
 PORTVERSION=	1.01
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://mod-log-firstbyte.googlecode.com/svn/trunk/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ COMMENT=	Log the time between request and the first byte of the response served
 
 MAKE_JOBS_SAFE=	yes
 
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 
 PROJECTHOST=	mod-log-firstbyte
 PKGMESSAGE=	${WRKSRC}/readme.txt

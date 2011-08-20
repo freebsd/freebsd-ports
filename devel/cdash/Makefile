@@ -7,6 +7,7 @@
 
 PORTNAME=	cdash
 PORTVERSION=	1.8.2
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.cdash.org/download/
 DISTNAME=	CDash-${PORTVERSION}
@@ -21,7 +22,7 @@ OPTIONS=	MYSQL	"Use MySQL" on \
 
 USE_ZIP=	yes
 USE_PHP=	curl gd xsl
-USE_APACHE_RUN=	2.0+
+USE_APACHE_RUN=	20+
 
 NO_BUILD=	yes
 SUB_FILES=	pkg-message

@@ -48,7 +48,7 @@ USE_PHP+=	ldap
 .endif
 
 .if defined(WITH_APACHE)
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 .endif
 
 .if defined(WITH_INSTALLGD)

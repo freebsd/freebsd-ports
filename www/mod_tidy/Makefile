@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_tidy
 PORTVERSION=	0.5.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://mod-tidy.sourceforge.net/src/
 DIST_SUBDIR=	apache2

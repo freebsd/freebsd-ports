@@ -7,6 +7,7 @@
 
 PORTNAME=	dansguardian
 PORTVERSION=	2.10.1.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	# empty, see below
 
@@ -49,7 +50,7 @@ RESTRICTED=	Redistribution and commercial download is restricted.  Check ${DG_UR
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_APACHE)
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 .endif
 
 .if !defined(WITHOUT_TRICKLE)

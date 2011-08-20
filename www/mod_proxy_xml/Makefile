@@ -8,6 +8,7 @@
 
 PORTNAME=	mod_proxy_xml
 PORTVERSION=	0.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://apache.webthing.com/svn/apache/filters/xmlns/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -21,7 +22,7 @@ MAKE_JOBS_SAFE=	yes
 WRKSRC=	${WRKDIR}
 
 USE_GNOME=	libxml2
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes

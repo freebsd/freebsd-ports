@@ -7,7 +7,7 @@
 
 PORTNAME=	gforge
 PORTVERSION=	4.5.19
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www devel
 MASTER_SITES=	http://gforge.org/gf/download/frsrelease/150/245/
 
@@ -21,7 +21,7 @@ LICENSE=		GPLv2
 USE_BZIP2=		YES
 USE_PERL5=		YES
 HAS_CONFIGURE=		YES
-USE_APACHE=		1.3+
+USE_APACHE=		13+
 USE_AUTOTOOLS=	autoconf
 NO_BUILD=		YES
 USE_PHP=		pgsql session pcre

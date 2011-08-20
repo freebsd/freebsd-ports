@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_domaintree
 PORTVERSION=	1.6
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://dev.iworks.at/mod_domaintree/
 EXTRACT_SUFX=	.tgz
@@ -17,7 +18,7 @@ COMMENT=	Hostname to filesystem mapper for Apache 2
 MAKE_JOBS_SAFE=  yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 AP_FAST_BUILD=	YES
 AP_GENPLIST=	YES
 

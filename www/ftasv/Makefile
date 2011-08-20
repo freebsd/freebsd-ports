@@ -7,7 +7,7 @@
 
 PORTNAME=	ftasv
 PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://fabletech.com/${PORTNAME}-download/
 
@@ -15,7 +15,7 @@ MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Is a commandline scoreboard viewer for the Apache server
 
 GNU_CONFIGURE=	yes
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 
 PLIST_FILES=	sbin/ftasv
 SUB_FILES=	pkg-message

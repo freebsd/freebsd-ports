@@ -7,6 +7,7 @@
 
 PORTNAME=	rt
 PORTVERSION?=	3.6.11
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		http://download.bestpractical.com/pub/rt/devel/ \
@@ -55,7 +56,7 @@ LATEST_LINK=	rt36
 HAS_CONFIGURE=	yes
 NO_BUILD=	yes
 NO_PACKAGE=	Executes scripts in post-install phase
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 USE_PERL5=	5.8.3+
 
 CONFIGURE_ARGS=	--prefix=${RT_PATH} \

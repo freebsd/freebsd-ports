@@ -6,7 +6,7 @@
 
 PORTNAME=	subversion
 PORTVERSION=	1.6.17
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES+=	devel
 MASTER_SITES=	http://subversion.tigris.org/downloads/:main \
 		http://svnbook.red-bean.com/en/1.5/:book
@@ -91,7 +91,7 @@ SVNUSER?=	svn
 .endif
 
 .if defined(WITH_APACHE)
-USE_APACHE=   2.0+
+USE_APACHE=   20+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 .if ${APACHE_VERSION} > 20
 LIB_DEPENDS+= apr-1:${PORTSDIR}/devel/apr1

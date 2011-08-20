@@ -7,7 +7,7 @@
 
 PORTNAME=	php5
 PORTVERSION=	5.3.7
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -105,7 +105,7 @@ PLIST_SUB+=	FPM="@comment "
 
 .if defined(WITH_APACHE)
 PHP_SAPI+=	mod
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 .include "${PORTSDIR}/Mk/bsd.apache.mk"
 .if ${APACHE_VERSION} > 13
 .if defined(WITH_AP2FILTER)

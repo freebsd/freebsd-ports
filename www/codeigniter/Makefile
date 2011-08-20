@@ -7,6 +7,7 @@
 
 PORTNAME=	codeigniter
 PORTVERSION=	2.0.3
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	https://bitbucket.org/ellislab/codeigniter-reactor/get/
 PKGNAMESUFFIX=	-devel
@@ -77,7 +78,7 @@ OPTIONS=	APACHE "Configure for Apache-2.x" off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_APACHE)
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 
 PLIST_SUB+=	NOAPACHE="" CONFDIR=${CONFDIR_REL}
 CONFDIR=	${PREFIX}/${CONFDIR_REL}

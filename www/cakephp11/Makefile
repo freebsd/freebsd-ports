@@ -20,7 +20,7 @@ LATEST_LINK=	cakephp11
 
 USE_BZIP2=	yes
 
-USE_APACHE=	2.2+
+USE_APACHE=	22+
 SLAVE_PORT_MODULES=	rewrite
 
 CONFLICTS=	cakephp-1.[23].*

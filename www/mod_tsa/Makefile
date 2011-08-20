@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_tsa
 PORTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://am.nesiac.org/static/ \
   http://ubique.spb.ru/src/

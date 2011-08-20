@@ -7,7 +7,7 @@
 
 PORTNAME=	sympa
 PORTVERSION=	5.4.7
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 MASTER_SITES?=	http://www.sympa.org/distribution/
 
@@ -31,7 +31,7 @@ BUILD_DEPENDS+=	${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 LATEST_LINK=	sympa5
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 HAS_CONFIGURE=	yes
 USE_PERL5=	5.8.6+
 USE_GMAKE=	yes

@@ -7,7 +7,7 @@
 
 PORTNAME=	thundercache
 PORTVERSION=	6.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.bmsoftware.org/packs/ \
 		http://www8.freebsdbrasil.com.br/~eksffa/thunder/ \
@@ -50,7 +50,7 @@ DISTNAME=	thundercache-6.1.201104260900-32bits-fbsd
 WRKSRC=		${WRKDIR}/thunder
 
 .if defined (WITH_APACHE)
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 .endif
 
 .if defined (WITH_PGSQL)

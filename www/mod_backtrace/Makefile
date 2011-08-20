@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_backtrace
 PORTVERSION=	1.0
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://people.apache.org/~trawick/ \
 		http://dl.moov.de/freebsd/${PORTNAME}/

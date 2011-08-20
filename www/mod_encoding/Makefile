@@ -7,7 +7,7 @@
 
 PORTNAME=	mod_encoding
 PORTVERSION=	20021209
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://webdav.todo.gr.jp/download/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -21,7 +21,7 @@ MAKE_JOBS_SAFE=	yes
 # Mostly because of the dependency of mod_dav.
 #APACHE_VERSION=	1.3.6
 
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 USE_ICONV=	yes
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes

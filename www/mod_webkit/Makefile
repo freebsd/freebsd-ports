@@ -7,6 +7,7 @@
 
 PORTNAME=	mod_webkit
 PORTVERSION=	1.1b1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	SF/webware/Webware/1.1b1
 DISTNAME=	Webware-${PORTVERSION}
@@ -16,7 +17,7 @@ COMMENT=	A apache module for WebWare WebKit AppServer
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	1.3+
+USE_APACHE=	13+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 

@@ -17,7 +17,7 @@ COMMENT=	An Internet Content Acceleration module for Apache2+
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	2.0+
+USE_APACHE=	20+
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 MAKE_ENV+=	"APXS=${APXS}"
