@@ -13,26 +13,26 @@ MASTER_SITES=	http://www.splitted-desktop.com/~gbeauchesne/${PORTNAME}/
 MAINTAINER=	swell.k@gmail.com
 COMMENT=	A VDPAU-based backend for VAAPI
 
-BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libva.pc:${PORTSDIR}/multimedia/libva \
-		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat \
-		vdpau.1:${PORTSDIR}/multimedia/libvdpau
-LIB_DEPENDS=	vdpau.1:${PORTSDIR}/multimedia/libvdpau
-
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
-LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 
+LIB_DEPENDS=	vdpau.1:${PORTSDIR}/multimedia/libvdpau
+BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/libva.pc:${PORTSDIR}/multimedia/libva \
+		${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
 USE_GMAKE=	yes
 USE_GL=		gl
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 
+GNU_CONFIGURE=	yes
 CPPFLAGS+=	-isystem${LOCALBASE}/include
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
 VDPAU_PTHREAD_LIBS!=	${CC} -dumpspecs | ${GREP} -m 1 pthread: | ${SED} -e 's|^.*%{\!pg: %{pthread:|| ; s|}.*$$||' || ${TRUE}
+
 
 .if !defined(WITH_DEBUG)
 CONFIGURE_ARGS+=	--disable-debug
