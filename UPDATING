@@ -686,7 +686,7 @@ you update your ports collection, before attempting any port upgrades.
   advised to rebuild this applications using the new ocaml version.
 
 20110402:
-  AFFECTS: user of net-mgmt/xymon-client and net-mgmt/xymon-server
+  AFFECTS: users of net-mgmt/xymon-client and net-mgmt/xymon-server
   AUTHOR: dinoex@FreeBSD.org
 
   Loginname, path, scripts and config files have been renamed in 4.3.0
