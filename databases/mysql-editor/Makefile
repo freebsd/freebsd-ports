@@ -18,7 +18,7 @@ COMMENT=	CGI scripts in Perl to edit your MySQL tables
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_APACHE=	1.3
+USE_APACHE=	13
 NO_BUILD=	yes
 USE_PERL5=	yes
 

@@ -17,7 +17,7 @@ COMMENT=	Limit the number of simultaneous connections from a single IP address
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	1.3
+USE_APACHE=	13
 PLIST_FILES=	${APACHEMODDIR}/mod_limitipconn.so
 
 OPTIONS=	FIXCOUNT "Patch dangling browser connections counting" Off

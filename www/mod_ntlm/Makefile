@@ -16,7 +16,7 @@ COMMENT=	NTLM authentication module for the Apache webserver
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	1.3
+USE_APACHE=	13
 MAKE_ENV=	APXS=${APXS}
 
 .include <bsd.port.pre.mk>

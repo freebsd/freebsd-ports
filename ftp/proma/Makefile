@@ -32,7 +32,7 @@ SUB_FILES=	pkg-message
 RUN_DEPENDS+=	proftpd:${PORTSDIR}/ftp/proftpd-mysql
 .endif
 .if defined(WITH_APACHE)
-USE_APACHE=	2.2
+USE_APACHE=	22
 .endif
 .if defined(WITH_MYSQL)
 USE_MYSQL=	yes

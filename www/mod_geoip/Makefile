@@ -22,7 +22,7 @@ MAKE_JOBS_SAFE=  yes
 
 CONFLICTS=	mod_geoip2-[0-9]*
 
-USE_APACHE=	1.3
+USE_APACHE=	13
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 AP_INC+=	${LOCALBASE}/include

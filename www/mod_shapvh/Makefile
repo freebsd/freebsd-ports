@@ -18,7 +18,7 @@ COMMENT=	Apache module that provides virtual hosts from a database
 
 MAKE_JOBS_SAFE=  yes
 
-USE_APACHE=	1.3
+USE_APACHE=	13
 USE_MYSQL=	yes
 
 AP_FAST_BUILD=	yes

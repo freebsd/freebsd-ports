@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mrtg:${PORTSDIR}/net-mgmt/mrtg \
 		${LOCALBASE}/lib/MailScanner/MailScanner.pm:${PORTSDIR}/mail/mailscanner
 
 USE_PERL5=	yes
-USE_APACHE=	1.3
+USE_APACHE=	13
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
 

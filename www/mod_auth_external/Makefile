@@ -21,7 +21,7 @@ PORTSCOUT=  limit:^2.1
 
 CONFLICTS=	apache-contrib-1.*
 
-USE_APACHE=	1.3
+USE_APACHE=	13
 AP_FAST_BUILD=	yes
 AP_GENPLIST=	yes
 

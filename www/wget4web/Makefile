@@ -15,7 +15,7 @@ COMMENT=	WWW interface for console wget
 
 RUN_DEPENDS=	${LOCALBASE}/bin/wget:${PORTSDIR}/ftp/wget
 
-USE_APACHE=	1.3
+USE_APACHE=	13
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
