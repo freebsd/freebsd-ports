@@ -11,7 +11,7 @@ PORTVERSION=	2.3.0
 CATEGORIES=	math
 MASTER_SITES=	SF/${PORTNAME}
 
-MAINTAINER=	eadler@freebsd.org
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	A tool for generating number sequences and arithmetic evaluation
 
 LICENSE=	GPLv3

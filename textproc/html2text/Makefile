@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE} \
 		http://www.mbayer.de/html2text/downloads/
 MASTER_SITE_SUBDIR=	apps/www/converters
 
-MAINTAINER=	eadler@freebsd.org
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Converts HTML documents into plain text
 
 HAS_CONFIGURE=	yes

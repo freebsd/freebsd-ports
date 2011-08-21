@@ -10,7 +10,7 @@ PORTVERSION=	1.2
 CATEGORIES=	misc python
 MASTER_SITES=	http://launchpadlibrarian.net/63157878/
 
-MAINTAINER=	eadler@freebsd.org
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	A command line utility for pastebing
 
 RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}configobj>=4.3.2:${PORTSDIR}/devel/py-configobj

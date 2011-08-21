@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.nano-editor.org/dist/v${PORTVERSION:R}/ \
 PKGNAMESUFFIX=	-devel
 #DISTNAME=	nano-${PORTVERSION}pre2
 
-MAINTAINER=	eadler@freebsd.org
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
 
 CONFLICTS=	nano-2*

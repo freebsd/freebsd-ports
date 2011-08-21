@@ -1,6 +1,6 @@
 # New ports collection makefile for:	spass
 # Date created:        			27 October 2010
-# Whom:					Eitan Adler <eadler@freebsd.org>
+# Whom:					Eitan Adler <eadler@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -10,7 +10,7 @@ PORTVERSION=	2.0
 CATEGORIES=	security
 MASTER_SITES=	http://www.guyrutenberg.com/wp-content/uploads/2010/08/
 
-MAINTAINER=	eadler@freebsd.org
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	A secure password generator with a true random number generator
 
 LIB_DEPENDS=	boost_program_options:${PORTSDIR}/devel/boost-libs
