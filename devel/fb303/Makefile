@@ -19,6 +19,8 @@ COMMENT=	The Facebook Bassline
 LIB_DEPENDS=	boost_system:${PORTSDIR}/devel/boost-libs \
 		thrift:${PORTSDIR}/devel/thrift
 
+BROKEN=		does not compile
+
 ACLOCAL_ARGS=	-I ./aclocal
 AUTOMAKE_ARGS=	-a
 CONFIGURE_ARGS=	PY_PREFIX="${PREFIX}"
@@ -31,12 +33,6 @@ USE_PERL5_RUN=	yes
 USE_PYTHON=	yes
 WRKSRC=		${WRKDIR}/${DISTNAME}/contrib/fb303
 
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} < 700000
-BROKEN=		does not compile on 6.X
-.endif
-
 post-build:
 	(cd ${WRKSRC} && ${LOCALBASE}/bin/thrift --gen perl ${WRKSRC}/if/fb303.thrift)
 
@@ -46,4 +42,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/gen-perl/Facebook/FB303/${FILE} ${PREFIX}/${SITE_PERL_REL}/Facebook/FB303
 .endfor
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
