@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	misc
 MASTER_SITES=	http://software.frodo.looijaard.name/getopt/files/
 
-MAINTAINER=	ports@eitanadler.com
+MAINTAINER=	eadler@freebsd.org
 COMMENT=	A getopt(1) replacement that supports GNU-style long options
 
 USE_GETTEXT=		yes

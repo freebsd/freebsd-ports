@@ -12,7 +12,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	nik
 
-MAINTAINER=	ports@eitanadler.com
+MAINTAINER=	eadler@freebsd.org
 COMMENT=	Converts the output of "vidcontrol -p" to PNG
 
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
