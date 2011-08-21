@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	kermit
-PORTVERSION=	9.0.301
+PORTVERSION=	9.0.302
 CATEGORIES=	comms
 MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 		ftp://ftp.icm.edu.pl/pub/kermit/archives/
 DISTNAME=	cku${PORTVERSION:E}
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Combined network and serial communication package
+COMMENT=	Portable scriptable network and serial communication program
 
 LICENSE=	BSD
 
@@ -22,25 +22,14 @@ NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	freebsd+ssl
 MAKE_ARGS=	CC2=${CC} SSLINC=-I${OPENSSLINC} SSLLIB=-L${OPENSSLLIB}
-CFLAGS+=	-DHERALD=\\\"\\\\\\\" ${HERALD}\\\\\\\"\\\"
 
 PLIST_FILES=	bin/kermit
 PORTDOCS=	*
 PORTEXAMPLES=	*
 MAN1=		kermit.1
 
-.include <bsd.port.pre.mk>
-
-# Explicitly pass version of our beloved OS until upstream code is fixed
-HERALD!=	${UNAME} -sr
-
 post-patch:
-	@${REINPLACE_CMD} -e 's,-O -pipe,${CFLAGS},' ${WRKSRC}/${MAKEFILE}
-# Catch up with recent <utmp.h> replacement by <utmpx.h>
-.if ${OSVERSION} > 900006
-	@${REINPLACE_CMD} -e 's,ut\.ut_name,ut.ut_user,g' \
-		-e 's,UNIXWARE,FREEBSD4,' ${WRKSRC}/ckufio.c
-.endif
+	@${REINPLACE_CMD} -e 's,-O2 -pipe,${CFLAGS},' ${WRKSRC}/${MAKEFILE}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/wermit ${PREFIX}/bin/kermit
@@ -56,4 +45,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/ckermod.ini ${EXAMPLESDIR}/dot.mykermrc
 .endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
