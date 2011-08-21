@@ -557,6 +557,7 @@
     SUBDIR += mod_security21
     SUBDIR += mod_sed
     SUBDIR += mod_sequester
+    SUBDIR += mod_setenvifplus
     SUBDIR += mod_shapvh
     SUBDIR += mod_smooth_streaming
     SUBDIR += mod_sqlinclude
