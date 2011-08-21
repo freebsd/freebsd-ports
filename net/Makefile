@@ -1126,6 +1126,7 @@
     SUBDIR += urelay
     SUBDIR += uriparser
     SUBDIR += urlendec
+    SUBDIR += usbredir
     SUBDIR += ushare
     SUBDIR += utftpd
     SUBDIR += v6eval
