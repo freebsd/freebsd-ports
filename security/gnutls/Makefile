@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnutls
-PORTVERSION=	2.12.7
-PORTREVISION=	2
+PORTVERSION=	2.12.9
 CATEGORIES=	security net
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		${MASTER_SITE_GNUPG}
@@ -17,7 +16,8 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	GNU Transport Layer Security library
 
 LIB_DEPENDS=	nettle.4:${PORTSDIR}/security/nettle \
-		gpg-error.0:${PORTSDIR}/security/libgpg-error
+		gpg-error.0:${PORTSDIR}/security/libgpg-error \
+		p11-kit.0:${PORTSDIR}/security/p11-kit
 
 CONFLICTS=	gnutls-devel-[0-9]*
 
