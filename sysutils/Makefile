@@ -823,6 +823,7 @@
     SUBDIR += spassgen
     SUBDIR += spindown
     SUBDIR += spinner
+    SUBDIR += spiped
     SUBDIR += squashfs-tools
     SUBDIR += ssid
     SUBDIR += ssync

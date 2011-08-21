@@ -1,0 +1,78 @@
+#!/bin/sh
+
+# $FreeBSD$
+#
+# PROVIDE: spiped
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf.local or /etc/rc.conf
+# to enable this service:
+#
+# spiped_enable:	Set to YES to enable spiped.
+# spiped_pipes:		List of names of pipes to create.
+# spiped_pipe_X_mode:	"encrypt"/"client" or "decrypt"/"server".
+# spiped_pipe_X_source: Source address of pipe X.
+# spiped_pipe_X_target:	Target address of pipe X.
+# spiped_pipe_X_key:	Key file for pipe X.
+
+. /etc/rc.subr
+
+name="spiped"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${spiped_enable="NO"}
+
+command=%%PREFIX%%/bin/${name}
+start_cmd="${name}_start"
+stop_cmd="${name}_stop"
+
+spiped_start()
+{
+	local P PIDFILE MODE SOURCE TARGET KEY MODEFLAG
+
+	for P in ${spiped_pipes}; do
+		PIDFILE=/var/run/spiped_${P}.pid
+		eval MODE=\$spiped_pipe_${P}_mode
+		eval SOURCE=\$spiped_pipe_${P}_source
+		eval TARGET=\$spiped_pipe_${P}_target
+		eval KEY=\$spiped_pipe_${P}_key
+		case "$MODE" in
+		encrypt | client)
+			MODEFLAG="-e"
+			;;
+		decrypt | server)
+			MODEFLAG="-d"
+			;;
+		*)
+			echo Invalid value for spiped_pipe_${P}_mode: $MODE
+			continue
+		esac
+		${command} $MODEFLAG -s $SOURCE -t $TARGET -k $KEY -p $PIDFILE
+	done
+}
+
+spiped_stop()
+{
+	local P PIDFILE
+
+	for P in ${spiped_pipes}; do
+		PIDFILE=/var/run/spiped_${P}.pid
+		if [ -f $PIDFILE ] ; then
+			rc_pid=$(check_pidfile $PIDFILE $command)
+		fi
+		if [ -z "$rc_pid" ]; then
+			[ -n "$rc_fast" ] && return 0
+			_run_rc_notrunning
+			return 1
+		fi
+		echo "Stopping ${name}."
+		kill $sig_stop $rc_pid
+		wait_for_pids $rc_pid
+		rm $PIDFILE
+	done
+}
+
+run_rc_command "$1"
