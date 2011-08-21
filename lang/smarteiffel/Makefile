@@ -14,6 +14,9 @@ DISTNAME=	SmartEiffel-${DISTVERSION}
 MAINTAINER=	berend@pobox.com
 COMMENT=	SmartEiffel, the GNU compiler for the object-oriented language Eiffel
 
+DEPRECATED=	Dead upstream, broken on amd64 with gcc>4
+EXPIRATION_DATE=2011-10-21
+
 WRKSRC=		${WRKDIR}/SmartEiffel12
 
 # We install in this directory
