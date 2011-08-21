@@ -4,6 +4,8 @@
 # Some of the knobs are not tunable by the OPTIONS framework. These are
 # explained here in detail.
 #
+# $FreeBSD$
+#
 # Feature options:
 # These options influence some general behaviour of mplayer. Most of the featues,
 # for example all the codecs, are selected via the OPTIONS framework.

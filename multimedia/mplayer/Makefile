@@ -83,6 +83,7 @@ BROKEN=		Does not compile on sparc64
 CONFIGURE_ARGS+=	--disable-ssse3 \
 			--disable-directfb \
 			--disable-faac \
+			--disable-faad \
 			--disable-libdca \
 			--disable-twolame \
 			--disable-x264 \
