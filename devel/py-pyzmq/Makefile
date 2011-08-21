@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pyzmq
-PORTVERSION=	2.1.1
+PORTVERSION=	2.1.7
 CATEGORIES=	devel net
 MASTER_SITES=	http://cloud.github.com/downloads/zeromq/pyzmq/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -14,9 +14,10 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Python bindings for ZeroMQ
 
+LICENSE=	LGPL3
+
 LIB_DEPENDS=	zmq.1:${PORTSDIR}/devel/zmq
 
-LICENSE=	LGPL3
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
 
