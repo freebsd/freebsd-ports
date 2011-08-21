@@ -1,16 +1,16 @@
 --- configure.orig	2010-01-29 14:36:00.000000000 -0500
 +++ configure	2010-01-29 14:36:00.000000000 -0500
-@@ -174,6 +174,9 @@ trace_backend="nop"
- trace_file="trace"
- spice=""
- rbd=""
+@@ -180,6 +180,9 @@ smartcard_nss=""
+ usb_redir=""
+ opengl=""
+ guest_agent="yes"
 +pcap="no"
 +pcap_create="no"
 +bpf="no"
  
  # parse CC options first
  for opt do
-@@ -592,6 +595,8 @@ for opt do
+@@ -611,6 +614,8 @@ for opt do
    ;;
    --enable-vnc-thread) vnc_thread="yes"
    ;;
@@ -19,7 +19,7 @@
    --disable-slirp) slirp="no"
    ;;
    --disable-uuid) uuid="no"
-@@ -1269,6 +1274,49 @@ EOF
+@@ -1438,6 +1443,49 @@ EOF
  fi
  
  ##########################################
@@ -67,9 +67,9 @@
 +
 +##########################################
  # VNC TLS detection
- if test "$vnc_tls" != "no" ; then
+ if test "$vnc" = "yes" -a "$vnc_tls" != "no" ; then
    cat > $TMPC <<EOF
-@@ -2565,6 +2613,15 @@ fi
+@@ -2797,6 +2845,15 @@ fi
  if test $profiler = "yes" ; then
    echo "CONFIG_PROFILER=y" >> $config_host_mak
  fi
@@ -87,8 +87,8 @@
    QEMU_INCLUDES="-I\$(SRC_PATH)/slirp $QEMU_INCLUDES"
 Index: net.c
 @@ -37,6 +37,11 @@
- #include "qemu_socket.h"
  #include "hw/qdev.h"
+ #include "iov.h"
  
 +#include <sys/ioctl.h>
 +#ifdef __FreeBSD__
@@ -98,7 +98,7 @@ Index: net.c
  static QTAILQ_HEAD(, VLANState) vlans;
  static QTAILQ_HEAD(, VLANClientState) non_vlan_clients;
  
-@@ -820,6 +825,226 @@ static int net_init_nic(QemuOpts *opts,
+@@ -797,6 +802,226 @@ static int net_init_nic(QemuOpts *opts,
      return idx;
  }
  
@@ -325,12 +325,12 @@ Index: net.c
  #define NET_COMMON_PARAMS_DESC                     \
      {                                              \
          .name = "type",                            \
-@@ -988,6 +1213,20 @@ static const struct {
- #endif /* _WIN32 */
+@@ -973,6 +1198,21 @@ static const struct {
              { /* end of list */ }
          },
+     },
 +#ifdef CONFIG_PCAP
-+    }, {
++    [NET_CLIENT_TYPE_PCAP] = {
 +        .type = "pcap",
 +        .init = net_init_pcap,
 +        .desc = {
@@ -342,11 +342,12 @@ Index: net.c
 +            },
 +            { /* end of list */ }
 +        },
++    },
 +#endif
-     }, {
+     [NET_CLIENT_TYPE_SOCKET] = {
          .type = "socket",
          .init = net_init_socket,
-@@ -1314,6 +1553,7 @@ void net_check_clients(void)
+@@ -1343,6 +1583,7 @@ void net_check_clients(void)
              case NET_CLIENT_TYPE_TAP:
              case NET_CLIENT_TYPE_SOCKET:
              case NET_CLIENT_TYPE_VDE:
