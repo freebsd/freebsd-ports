@@ -85,9 +85,9 @@ MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
 .if ${OSVERSION} < 801000
-EXTRA_PATCHES+=	files/extra-patch-base__base.gypi-stub
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-base__base.gypi-stub
 .else
-EXTRA_PATCHES+=	files/extra-patch-base__base.gypi-freebsd
+EXTRA_PATCHES+=	${FILESDIR}/extra-patch-base__base.gypi-freebsd
 .endif
 
 .if defined(WITH_CODECS)
