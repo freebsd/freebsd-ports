@@ -12,7 +12,7 @@
 
 PORTNAME=	fetchmail
 PORTVERSION=	6.3.20
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	BERLIOS/fetchmail/ \
 		http://mandree.home.pages.de/fetchmail/ \
