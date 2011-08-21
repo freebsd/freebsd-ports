@@ -17,7 +17,7 @@
 # OpenBSD and NetBSD will be accepted.
 #
 # $FreeBSD$
-# $MCom: portlint/portlint.pl,v 1.223 2011/06/26 21:25:51 marcus Exp $
+# $MCom: portlint/portlint.pl,v 1.229 2011/08/21 23:33:05 marcus Exp $
 #
 
 use strict;
@@ -52,7 +52,7 @@ $portdir = '.';
 # version variables
 my $major = 2;
 my $minor = 13;
-my $micro = 6;
+my $micro = 7;
 
 sub l { '[{(]'; }
 sub r { '[)}]'; }
@@ -478,6 +478,12 @@ if ($committer) {
 						unless (eval { /$ENV{'PL_CVS_IGNORE'}/, 1 } &&
 							/$ENV{'PL_CVS_IGNORE'}/);
 				}
+				elsif ($filename =~ /\.core$/ && $entries{$_}) {
+					&perror("FATAL", "", -1, "file $filename ends in ".
+						"\".core\".  This file can be removed by periodic ".
+						"cleanup scripts.  Do not include files that end in ".
+						"\".core\".");
+				}
 				elsif ($entries{$_} eq 'D') {
 					&perror("FATAL", "", -1, "file $filename is a directory in CVS.");
 				}
@@ -630,7 +636,7 @@ sub checkdescr {
 				"returns.  Strip all carriage returns (e.g. run dos2unix) ".
 				"in $file.");
 		}
-		if (/^WWW:\s*(\S*)/) {
+		if (/^WWW:\s+(\S*)/) {
 			my $wwwurl = $1;
 			if ($wwwurl !~ m|^https?://|) {
 				&perror("WARN", $file, -1, "WWW URL, $wwwurl should begin ".
@@ -1195,6 +1201,10 @@ sub check_depends_syntax {
 		foreach my $k (split(/\s+/, $i)) {
 			if ($k =~ /^#/) {
 				last;
+			}
+			if ($k =~ /^\$\{(\w+)\}$/) {
+					$k = `make -V $1`;
+					chomp $k;
 			}
 			my @l = split(':', $k);
 
@@ -2841,7 +2851,7 @@ FETCH_DEPENDS DEPENDS_TARGET
 	&checkearlier($file, $tmp, @varnames);
 
 	#
-	# Makefile 6: check the rest of file
+	# Makefile 7: check the rest of file
 	#
 	print "OK: checking the rest of the $file.\n" if ($verbose);
 	$tmp = join("\n\n", @sections[$idx .. scalar(@sections)-1]);
