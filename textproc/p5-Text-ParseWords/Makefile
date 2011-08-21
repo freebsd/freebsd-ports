@@ -12,9 +12,9 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
-COMMENT=	parse text into an array of tokens or array of arrays
+COMMENT=	Parse text into an array of tokens or array of arrays
 
-MAKE_JOBS_SAFE=  yes
+MAKE_JOBS_SAFE=	yes
 
 USE_ZIP=	yes
 PERL_CONFIGURE=	yes
@@ -22,10 +22,10 @@ PERL_CONFIGURE=	yes
 MAN3=	Text::ParseWords.3
 
 PLIST_FILES=	%%SITE_PERL%%/Text/ParseWords.pm \
-				%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ParseWords/.packlist
+		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ParseWords/.packlist
 
-PLIST_DIRS=	%%SITE_PERL%%/Text \
-			%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ParseWords \
-			%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
+PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text/ParseWords
+PLIST_DIRSTRY=	%%SITE_PERL%%/Text \
+		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Text
 
 .include <bsd.port.mk>
