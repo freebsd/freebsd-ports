@@ -11,7 +11,7 @@ PORTVERSION=	1.8.3
 CATEGORIES=	x11
 MASTER_SITES=	http://hocwp.free.fr/xbindkeys/
 
-MAINTAINER=	eadler@freebsd.org
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Allows you to launch shell commands under X with your keyboard
 
 OPTIONS=	GUILE "Guile support" off \

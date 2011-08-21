@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.nano-editor.org/dist/v2.2/ \
 		${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
 
-MAINTAINER=	eadler@freebsd.org
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Nano's ANOther editor, an enhanced free Pico clone
 
 GNU_CONFIGURE=	yes

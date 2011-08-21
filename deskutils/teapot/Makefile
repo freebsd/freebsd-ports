@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.syntax-k.de/projekte/${PORTNAME}/ \
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 		${DISTNAME:C/^./T/}-Linux-x86${EXTRACT_SUFX}:docs
 
-MAINTAINER=	eadler@freebsd.org
+MAINTAINER=	eadler@FreeBSD.org
 COMMENT=	Full-screen curses based spread sheet program
 
 USE_CMAKE=	yes
