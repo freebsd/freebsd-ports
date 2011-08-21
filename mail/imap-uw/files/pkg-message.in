@@ -19,6 +19,8 @@ pop3	session	required	pam_unix.so
 The pam_unix module does not have session support, so we do not use it for
 session management. Be sure to read up on pam.conf(5).
 
+To configure imap-uw read %%DOCSDIR%%/imaprc.txt.
+
 ===>   NB: IMAP-UW now rejects non-encrypted logins by default. To change this
 ===>   behaviour, recompile and reinstall cclient and imap-uw ports with one of
 ===>   the following make variables defined:

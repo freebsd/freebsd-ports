@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	imap
-PORTVERSION=	2007e
+PORTVERSION=	2007f
 PORTEPOCH=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
@@ -18,6 +18,9 @@ PKGNAMESUFFIX=	-uw
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	University of Washington IMAP4rev1/POP2/POP3 mail servers
+
+LICENSE=	ASL
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 LIB_DEPENDS=	c-client4.9:${PORTSDIR}/mail/cclient
 
@@ -62,6 +65,11 @@ MAKE_ARGS+=	WITH_NETSCAPE_BRAIN_DAMAGE=yes
 # See src/imapd/Makefile for more information about these three options.
 
 .include <bsd.port.pre.mk>
+post-patch:
+	@${REINPLACE_CMD} -e "s:/etc/c-client.cf:${PREFIX}/etc/c-client.cf:" \
+		${WRKSRC}/docs/imaprc.txt
+	@${RM} ${WRKSRC}/docs/imaprc.txt.bak
+
 pre-build:
 	@${SH} ${PKGREQ}.rev ${LOCALBASE}/include/c-client/portrevision.h ${PORTVERSION}
 .if !defined(WITHOUT_SSL)

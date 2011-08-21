@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cclient
-PORTVERSION=	2007e
+PORTVERSION=	2007f
 PORTEPOCH=	1
 CATEGORIES=	mail devel ipv6
 MASTER_SITES=	ftp://ftp.cac.washington.edu/imap/%SUBDIR%/ \
@@ -18,6 +18,9 @@ DISTNAME=	imap-${PORTVERSION}
 
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	Mark Crispin's C-client mail access routines
+
+LICENSE=	ASL
+LICENSE_FILE=	${WRKSRC}/LICENSE.txt
 
 OPTIONS=	SSL "Compile with SSL support" on \
 		SSL_AND_PLAINTEXT "Allow plain text passwords and SSL" off \
@@ -60,6 +63,8 @@ post-patch:
 .endfor
 	@${REINPLACE_CMD} -e "s:/etc/ssl/certs:${PREFIX}/certs:g; \
 		s:/etc/ssl/private:${PREFIX}/certs:g" ${WRKSRC}/Makefile
+	@${REINPLACE_CMD} -e "s:/etc/c-client.cf:${PREFIX}/etc/c-client.cf:" \
+		${WRKSRC}/src/osdep/unix/env_unix.h
 .if ! defined(WITHOUT_SSL)
 	@${REINPLACE_CMD} -e " \
 		s:SSLINCLUDE=/usr/include/openssl SSLLIB=/usr/lib:SSLINCLUDE=${OPENSSLINC} SSLLIB=${OPENSSLLIB}: \
