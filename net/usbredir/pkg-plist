@@ -1,0 +1,10 @@
+include/usbredirhost.h
+include/usbredirproto.h
+include/usbredirparser.h
+lib/libusbredirparser.so
+lib/libusbredirparser.so.0
+lib/libusbredirhost.so
+lib/libusbredirhost.so.0
+libdata/pkgconfig/libusbredirparser.pc
+libdata/pkgconfig/libusbredirhost.pc
+sbin/usbredirserver
