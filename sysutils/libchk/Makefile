@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libchk
-PORTVERSION=	1.10.1
+PORTVERSION=	1.10.2
 CATEGORIES=	sysutils
 MASTER_SITES=	ftp://ftp.iDaemons.org/pub/distfiles/ \
 		${MASTER_SITE_LOCAL}
@@ -14,6 +14,8 @@ MASTER_SITE_SUBDIR=	knu
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A tool to check shared library links
+
+LICENSE=	BSD
 
 USE_BZIP2=	yes
 USE_RUBY=	yes
