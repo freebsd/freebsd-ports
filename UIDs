@@ -176,7 +176,7 @@ bnetd:*:700:700::0:0:Bnetd user:/nonexistent:/usr/sbin/nologin
 bopm:*:717:717::0:0:Blitzed Open Proxy Monitor:/nonexistent:/bin/sh
 openxpki:*:777:777::0:0:OpenXPKI Owner:/nonexistent:/usr/sbin/nologin
 puppet:*:814:814::0:0:Puppet Daemon:/nonexistent:/usr/sbin/nologin
-jenkins:*:818:818::0:0:Jenkins CI:/usr/local/jenkins:/sbin/nologin
+jenkins:*:818:818::0:0:Jenkins CI:/usr/local/jenkins/usr/sbin/nologin
 openacs:*:820:820::0:0:OpenACS Daemon User:/nonexistent:/usr/sbin/nologin
 dotlrn:*:821:821::0:0:.LRN Daemon User:/nonexistent:/usr/sbin/nologin
 netdisco:*:840:840::0:0:netdisco daemon:/nonexistent:/usr/sbin/nologin
@@ -200,24 +200,24 @@ mfs:*:925:925::0:0:MooseFS User:/nonexistent:/usr/sbin/nologin
 minbif:*:926:926::0:0:Minbif Daemon User:/nonexistent:/usr/sbin/nologin
 kumofs:*:927:927::0:0:kumofs daemon:/nonexistent:/usr/sbin/nologin
 nslcd:*:928:928::0:0:nslcd daemon:/nonexistent:/usr/sbin/nologin
-activemq:*:929:929::0:0:ActiveMQ Daemon:/nonexistent:/sbin/nologin
-ifgraph:*:930:930::0:0:ifGraph:/nonexistent:/sbin/nologin
-asterisk:*:931:931::0:0:Asterisk User:/nonexistent:/sbin/nologin
-sancp:*:932:932::0:0:SANCP Daemon:/var/log/sancp:/sbin/nologin
-dlna:*:933:933::0:0:DLNA Daemon:/nonexistent:/sbin/nologin
-torrus:*:934:934::0:0:torrus daemon:/nonexistent:/sbin/nologin
-erlyvideo:*:935:935::0:0:erlyvideo user:/nonexistent:/sbin/nologin
-crtmpserver:*:936:936::0:0:crtmpserver user:/nonexistent:/sbin/nologin
-get_iplayer:*:937:937::0:0:get_iplayer user:/nonexistent:/sbin/nologin
+activemq:*:929:929::0:0:ActiveMQ Daemon:/nonexistent/usr/sbin/nologin
+ifgraph:*:930:930::0:0:ifGraph:/nonexistent/usr/sbin/nologin
+asterisk:*:931:931::0:0:Asterisk User:/nonexistent/usr/sbin/nologin
+sancp:*:932:932::0:0:SANCP Daemon:/var/log/sancp/usr/sbin/nologin
+dlna:*:933:933::0:0:DLNA Daemon:/nonexistent/usr/sbin/nologin
+torrus:*:934:934::0:0:torrus daemon:/nonexistent/usr/sbin/nologin
+erlyvideo:*:935:935::0:0:erlyvideo user:/nonexistent/usr/sbin/nologin
+crtmpserver:*:936:936::0:0:crtmpserver user:/nonexistent/usr/sbin/nologin
+get_iplayer:*:937:937::0:0:get_iplayer user:/nonexistent/usr/sbin/nologin
 vdr:*:938:938::0:0:vdr user:/nonexistent:/usr/sbin/nologin
 noip:*:939:939::0:0:noip user:/nonexistent:/usr/sbin/nologin
 _tcpproxy:*:940:940::0:0:tcpproxy user:/nonexistent:/usr/sbin/nologin
 cego:*:941:941::0:0:cego user:/usr/local/cego:/usr/sbin/nologin
-teamspeak:*:942:942::0:0:TeamSpeak user:/nonexistent:/sbin/nologin
-dnetfold:*:943:943::0:0:& user:/nonexistent:/sbin/nologin
-bbs:*:944:944::0:0:& user:/nonexistent:/sbin/nologin
-dbxml:*:945:945::0:0:& user:/nonexistent:/sbin/nologin
-sybase:*:946:946::0:0:& user:/usr/local/sybase-ase:/sbin/nologin
-dnrd:*:948:948::0:0:& user:/nonexistent:/sbin/nologin
+teamspeak:*:942:942::0:0:TeamSpeak user:/nonexistent/usr/sbin/nologin
+dnetfold:*:943:943::0:0:& user:/nonexistent/usr/sbin/nologin
+bbs:*:944:944::0:0:& user:/nonexistent/usr/sbin/nologin
+dbxml:*:945:945::0:0:& user:/nonexistent/usr/sbin/nologin
+sybase:*:946:946::0:0:& user:/usr/local/sybase-ase/usr/sbin/nologin
+dnrd:*:948:948::0:0:& user:/nonexistent/usr/sbin/nologin
 zenoss:*:949:949::0:0:& user:/usr/local/zenoss:/bin/sh
 nobody:*:65534:65534::0:0:Unprivileged user:/nonexistent:/usr/sbin/nologin
