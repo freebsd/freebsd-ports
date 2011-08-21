@@ -1,6 +1,8 @@
 # Contains the build infrastructural definitions for both
 # mplayer and mencoder....the variables that we need to set
 # before we include bsd.port.pre.mk
+#
+# $FreeBSD$
 
 MPLAYER_SNAPSHOT_DATE=	2011-03-29
 MPLAYER_PORT_VERSION=	1.0.r${MPLAYER_SNAPSHOT_DATE:S/-//g}
