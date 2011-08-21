@@ -136,8 +136,8 @@ Ruby_Include_MAINTAINER=	stas@FreeBSD.org
 # RUBY_ELISPDIR		- Installation path for emacs lisp files.
 #
 
-RUBY_DEFAULT_VER?=	1.8
-RAKE_VER=	0.8.7
+RUBY_DEFAULT_VER?=	1.9
+RAKE_VER=	0.9.2
 
 RUBY_VER?=		${RUBY_DEFAULT_VER}
 
@@ -201,7 +201,7 @@ RUBY19=			"@comment "
 RUBY_RELVERSION=	1.9.2
 RUBY_PORTREVISION=	0
 RUBY_PORTEPOCH=		1
-RUBY_PATCHLEVEL=	136
+RUBY_PATCHLEVEL=	290
 
 RUBY_VERSION?=		${RUBY_RELVERSION}.${RUBY_PATCHLEVEL}
 RUBY_DISTVERSION?=	${RUBY_RELVERSION}-p${RUBY_PATCHLEVEL}
@@ -267,7 +267,11 @@ RUBY_MODNAME?=		${PORTNAME}
 
 # Commands
 RUBY_RD2?=		${LOCALBASE}/bin/rd2
+.if ${RUBY_VER} == 1.8
 RUBY_RDOC?=		${LOCALBASE}/bin/rdoc
+.else
+RUBY_RDOC?=		${LOCALBASE}/bin/rdoc${RUBY_VER:S/.//}
+.endif
 
 # Ports
 RUBY_BASE_PORT?=	lang/ruby${RUBY_VER:S/.//}
@@ -324,6 +328,10 @@ PLIST_SUB+=		${PLIST_RUBY_DIRS:C,DIR="(${LOCALBASE}|${PREFIX})/,DIR=",} \
 			RUBY_DEFAULT_SUFFIX="${RUBY_DEFAULT_SUFFIX}" \
 			RUBY18=${RUBY18} \
 			RUBY19=${RUBY19}
+
+.if defined(USE_RUBY_RDOC)
+MAKE_ENV+=	RUBY_RDOC=${RUBY_RDOC}
+.endif
 
 # require check
 .if defined(RUBY_REQUIRE)
@@ -382,10 +390,8 @@ RUBY_FLAGS+=	-d
 #
 .if defined(USE_RUBYGEMS)
 
-. if ${RUBY_VER} == 1.8
 BUILD_DEPENDS+=	${RUBYGEMBIN}:${PORTSDIR}/devel/ruby-gems
-RUN_DEPENDS+=	${BUILD_DEPENDS}
-. endif
+RUN_DEPENDS+=	${RUBYGEMBIN}:${PORTSDIR}/devel/ruby-gems
 
 PKGNAMEPREFIX?=	rubygem-
 EXTRACT_SUFX=	.gem
@@ -547,12 +553,8 @@ RUN_DEPENDS+=		${DEPEND_RUBY_ICONV}
 .endif
 
 .if defined(USE_RAKE)
-.if ${RUBY_VER} == 1.8
 BUILD_DEPENDS+=		${LOCALBASE}/bin/rake:${PORTSDIR}/devel/rubygem-rake
 RAKE_BIN=	${LOCALBASE}/bin/rake
-.else
-RAKE_BIN=	${LOCALBASE}/bin/rake${RUBY_VER:S/.//}
-.endif
 .endif
 
 .if defined(USE_RUBY_AMSTD)

@@ -86,10 +86,7 @@ PLIST_SUB+=	IF_DEFAULT=""
 PLIST_SUB+=	IF_DEFAULT="@comment "
 .endif
 
-GEMS_DIR=	${PREFIX}/lib/ruby/gems/${RUBY_VER}
-PLIST_SUB+=	GEMS_DIR="lib/ruby/gems/${RUBY_VER}"
-
-INSTALLED_SCRIPTS=	irb erb rdoc ri ruby testrb rake gem
+INSTALLED_SCRIPTS=	irb erb rdoc ri ruby testrb
 
 EXTSAMPLES=	bigdecimal/sample/*.rb	\
 		curses/hello.rb		\
@@ -104,7 +101,7 @@ EXTDOCS=	bigdecimal/bigdecimal_*.html	\
 		syslog/syslog.txt
 
 MAN1=		${RUBY_NAME}.1 erb${RUBY_SUFFIX}.1  irb${RUBY_SUFFIX}.1 \
-		rake${RUBY_SUFFIX}.1 ri${RUBY_SUFFIX}.1
+		ri${RUBY_SUFFIX}.1
 
 # Macros to change variables in rbconfig.rb
 RB_SET_CONF_VAR=${SH} -c '${REINPLACE_CMD} -E -e "s,(CONFIG\[\"$$0\"\][[:space:]]*=[[:space:]]*)(\(?)(.*)(\)?),\1\2$$1\4," ${WRKSRC}/rbconfig.rb' --
@@ -136,6 +133,17 @@ post-patch:
 	${MV} ${BUILD_WRKSRC}/ext/${d} ${WRKDIR}/
 .endfor
 
+# we get ruby-gems from ports
+.for d in bin/gem doc/rubygems lib/rubygems test/rubygems \
+	lib/rubygems.rb lib/ubygems.rb gem_prelude.rb
+	${RM} -rf ${BUILD_WRKSRC}/${d}
+.endfor
+
+# we get rake from ports
+.for d in bin/rake doc/rake lib/rake test/rake man/rake.1 lib/rake.rb
+	${RM} -rf ${BUILD_WRKSRC}/${d}
+.endfor
+
 post-build:
 #
 # Hack to allow modules to be installed into separate PREFIX and/or under user
@@ -161,10 +169,6 @@ pre-su-install:
 	${TOUCH} ${RUBY_DOCDIR}/.keep_me
 	${TOUCH} ${RUBY_SITEARCHLIBDIR}/.keep_me
 	${TOUCH} ${RUBY_VENDORARCHLIBDIR}/.keep_me
-.for D in cache doc gems
-	${MKDIR} ${GEMS_DIR}/${D}
-	${TOUCH} ${GEMS_DIR}/${D}/.keep_me
-.endfor
 
 post-install:
 #
@@ -216,13 +220,6 @@ post-install:
 #
 # Add generated doxygen files to pkg-plist
 #
-.if defined(WITH_RDOC) && !defined(NOPORTDOCS)
-	@${FIND} -ds ${RUBY_DOCDIR}/capi ! -type d | \
-		${SED} 's,^${PREFIX}/,,' >> ${TMPPLIST}
-	@${FIND} -ds ${RUBY_DOCDIR}/capi -type d | \
-		${SED} -E -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
-.endif
-
 	@${ECHO_CMD} "@unexec rmdir %D/${RUBY_SITERIDIR:S,^${PREFIX}/,,} 2>/dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/${RUBY_RIDIR:S,^${PREFIX}/,,} 2>/dev/null || true" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/share/ri/${RUBY_VER} 2>/dev/null || true" >> ${TMPPLIST}
@@ -252,12 +249,10 @@ plist::
 #
 # Vendor and site libs
 #
-	@${FIND} -Eds ${RUBY_DOCDIR}/ ! -type d ! -name .keep_me \
-		! -regex "${RUBY_DOCDIR}/capi/?.*" | \
+	@${FIND} -Eds ${RUBY_DOCDIR}/ ! -type d ! -name .keep_me | \
 		${SED} 's,^${RUBY_DOCDIR},%%PORTDOCS%%%%RUBY_DOCDIR%%,' \
 		 >> pkg-plist
-	@${FIND} -Eds ${RUBY_DOCDIR}/ -type d -mindepth 1 ! \
-		-regex "${RUBY_DOCDIR}/capi/?.*" | ${SORT} -r | \
+	@${FIND} -Eds ${RUBY_DOCDIR}/ -type d -mindepth 1 | ${SORT} -r | \
 		${SED} -E -e \
 		's,^${RUBY_DOCDIR}(.*),%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%\1,' \
 		>> pkg-plist
@@ -290,29 +285,6 @@ plist::
 		${SED} 's,^${RUBY_LIBDIR},%%RUBY_LIBDIR%%,' >> pkg-plist
 	@${FIND} -ds ${RUBY_LIBDIR}/ -type d | ${SORT} -r | \
 		${SED} -E -e 's,^${RUBY_LIBDIR}(.*),@dirrm %%RUBY_LIBDIR%%\1,' >> pkg-plist
-
-#
-# Find all gem files/folders
-#
-	@${FIND} -ds ${GEMS_DIR}/ ! -type d | \
-		${SED} 's,^${GEMS_DIR},%%GEMS_DIR%%,' >> pkg-plist
-	@${FIND} -ds ${GEMS_DIR}/ -type d | ${SORT} -r | \
-		${SED} -E -e 's,^${GEMS_DIR}(.*),@dirrm %%GEMS_DIR%%\1,' >> pkg-plist
-
-	@${ECHO_CMD} "%%RUBY_SITEARCHLIBDIR%%/.keep_me" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry %%RUBY_SITEARCHLIBDIR%%" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry %%RUBY_SITELIBDIR%%" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry lib/ruby/site_ruby" >> pkg-plist
-
-	@${ECHO_CMD} "%%RUBY_VENDORARCHLIBDIR%%/.keep_me" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry %%RUBY_VENDORARCHLIBDIR%%" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry %%RUBY_VENDORLIBDIR%%" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry lib/ruby/vendor_ruby" >> pkg-plist
-	@${ECHO_CMD} "@dirrmtry lib/ruby/gems" >> pkg-plist
-
-	@${ECHO_CMD} "@dirrmtry lib/ruby" >> pkg-plist
-
-	@${SED} -i "" -E -e "s,${RUBY_ARCH},%%RUBY_ARCH%%,g" pkg-plist
 
 test:
 	@(cd ${WRKSRC}; ${MAKE} test)

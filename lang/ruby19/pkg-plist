@@ -10,10 +10,6 @@ bin/ruby%%RUBY_SUFFIX%%
 %%IF_DEFAULT%%bin/ruby
 bin/testrb%%RUBY_SUFFIX%%
 %%IF_DEFAULT%%bin/testrb
-bin/rake%%RUBY_SUFFIX%%
-%%IF_DEFAULT%%bin/rake
-bin/gem%%RUBY_SUFFIX%%
-%%IF_DEFAULT%%bin/gem
 lib/lib%%RUBY_NAME%%-static.a
 lib/lib%%RUBY_NAME%%.so
 lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
@@ -69,40 +65,18 @@ include/ruby-1.9/ruby.h
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.expect
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.expect.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/pty/README.ja
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rake/CHANGES
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rake/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rake/command_line_usage.rdoc
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rake/example/Rakefile1
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rake/example/Rakefile2
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rake/example/a.c
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rake/example/b.c
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rake/example/main.c
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rake/glossary.rdoc
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rake/jamis.rb
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rake/proto_rake.rdoc
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rake/rakefile.rdoc
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rake/rational.rdoc
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rake/release_notes/rake-0.8.7.rdoc
 %%PORTDOCS%%%%RUBY_DOCDIR%%/re.rdoc
 %%PORTDOCS%%%%RUBY_DOCDIR%%/readline/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/readline/README.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/ripper/README
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rubygems/ChangeLog
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rubygems/History.txt
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rubygems/LICENSE.txt
-%%PORTDOCS%%%%RUBY_DOCDIR%%/rubygems/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/shell.rd
 %%PORTDOCS%%%%RUBY_DOCDIR%%/shell.rd.ja
 %%PORTDOCS%%%%RUBY_DOCDIR%%/stringio/README
 %%PORTDOCS%%%%RUBY_DOCDIR%%/syslog/syslog.txt
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/syslog
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/stringio
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rubygems
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/ripper
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/readline
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rake/release_notes
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rake/example
-%%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/rake
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/pty
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/irb
 %%PORTDOCS%%@dirrm %%RUBY_DOCDIR%%/images
@@ -541,23 +515,6 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/psych/visitors.rb
 %%RUBY_LIBDIR%%/psych.rb
 %%RUBY_LIBDIR%%/racc/parser.rb
-%%RUBY_LIBDIR%%/rake/classic_namespace.rb
-%%RUBY_LIBDIR%%/rake/clean.rb
-%%RUBY_LIBDIR%%/rake/contrib/compositepublisher.rb
-%%RUBY_LIBDIR%%/rake/contrib/ftptools.rb
-%%RUBY_LIBDIR%%/rake/contrib/publisher.rb
-%%RUBY_LIBDIR%%/rake/contrib/rubyforgepublisher.rb
-%%RUBY_LIBDIR%%/rake/contrib/sshpublisher.rb
-%%RUBY_LIBDIR%%/rake/gempackagetask.rb
-%%RUBY_LIBDIR%%/rake/loaders/makefile.rb
-%%RUBY_LIBDIR%%/rake/packagetask.rb
-%%RUBY_LIBDIR%%/rake/rake_test_loader.rb
-%%RUBY_LIBDIR%%/rake/rdoctask.rb
-%%RUBY_LIBDIR%%/rake/runtest.rb
-%%RUBY_LIBDIR%%/rake/tasklib.rb
-%%RUBY_LIBDIR%%/rake/testtask.rb
-%%RUBY_LIBDIR%%/rake/win32.rb
-%%RUBY_LIBDIR%%/rake.rb
 %%RUBY_LIBDIR%%/rational.rb
 %%RUBY_LIBDIR%%/rbconfig/datadir.rb
 %%RUBY_LIBDIR%%/rdoc/alias.rb
@@ -765,91 +722,6 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/rss/xmlparser.rb
 %%RUBY_LIBDIR%%/rss/xmlscanner.rb
 %%RUBY_LIBDIR%%/rss.rb
-%%RUBY_LIBDIR%%/rubygems/builder.rb
-%%RUBY_LIBDIR%%/rubygems/command.rb
-%%RUBY_LIBDIR%%/rubygems/command_manager.rb
-%%RUBY_LIBDIR%%/rubygems/commands/build_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/cert_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/check_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/cleanup_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/contents_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/dependency_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/environment_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/fetch_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/generate_index_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/help_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/install_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/list_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/lock_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/mirror_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/outdated_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/owner_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/pristine_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/push_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/query_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/rdoc_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/search_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/server_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/setup_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/sources_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/specification_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/stale_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/uninstall_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/unpack_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/update_command.rb
-%%RUBY_LIBDIR%%/rubygems/commands/which_command.rb
-%%RUBY_LIBDIR%%/rubygems/config_file.rb
-%%RUBY_LIBDIR%%/rubygems/custom_require.rb
-%%RUBY_LIBDIR%%/rubygems/defaults.rb
-%%RUBY_LIBDIR%%/rubygems/dependency.rb
-%%RUBY_LIBDIR%%/rubygems/dependency_installer.rb
-%%RUBY_LIBDIR%%/rubygems/dependency_list.rb
-%%RUBY_LIBDIR%%/rubygems/doc_manager.rb
-%%RUBY_LIBDIR%%/rubygems/errors.rb
-%%RUBY_LIBDIR%%/rubygems/exceptions.rb
-%%RUBY_LIBDIR%%/rubygems/ext/builder.rb
-%%RUBY_LIBDIR%%/rubygems/ext/configure_builder.rb
-%%RUBY_LIBDIR%%/rubygems/ext/ext_conf_builder.rb
-%%RUBY_LIBDIR%%/rubygems/ext/rake_builder.rb
-%%RUBY_LIBDIR%%/rubygems/ext.rb
-%%RUBY_LIBDIR%%/rubygems/format.rb
-%%RUBY_LIBDIR%%/rubygems/gem_openssl.rb
-%%RUBY_LIBDIR%%/rubygems/gem_path_searcher.rb
-%%RUBY_LIBDIR%%/rubygems/gem_runner.rb
-%%RUBY_LIBDIR%%/rubygems/gemcutter_utilities.rb
-%%RUBY_LIBDIR%%/rubygems/indexer.rb
-%%RUBY_LIBDIR%%/rubygems/install_update_options.rb
-%%RUBY_LIBDIR%%/rubygems/installer.rb
-%%RUBY_LIBDIR%%/rubygems/local_remote_options.rb
-%%RUBY_LIBDIR%%/rubygems/old_format.rb
-%%RUBY_LIBDIR%%/rubygems/package/f_sync_dir.rb
-%%RUBY_LIBDIR%%/rubygems/package/tar_header.rb
-%%RUBY_LIBDIR%%/rubygems/package/tar_input.rb
-%%RUBY_LIBDIR%%/rubygems/package/tar_output.rb
-%%RUBY_LIBDIR%%/rubygems/package/tar_reader/entry.rb
-%%RUBY_LIBDIR%%/rubygems/package/tar_reader.rb
-%%RUBY_LIBDIR%%/rubygems/package/tar_writer.rb
-%%RUBY_LIBDIR%%/rubygems/package.rb
-%%RUBY_LIBDIR%%/rubygems/package_task.rb
-%%RUBY_LIBDIR%%/rubygems/platform.rb
-%%RUBY_LIBDIR%%/rubygems/remote_fetcher.rb
-%%RUBY_LIBDIR%%/rubygems/require_paths_builder.rb
-%%RUBY_LIBDIR%%/rubygems/requirement.rb
-%%RUBY_LIBDIR%%/rubygems/security.rb
-%%RUBY_LIBDIR%%/rubygems/server.rb
-%%RUBY_LIBDIR%%/rubygems/source_index.rb
-%%RUBY_LIBDIR%%/rubygems/source_info_cache.rb
-%%RUBY_LIBDIR%%/rubygems/source_info_cache_entry.rb
-%%RUBY_LIBDIR%%/rubygems/spec_fetcher.rb
-%%RUBY_LIBDIR%%/rubygems/specification.rb
-%%RUBY_LIBDIR%%/rubygems/test_utilities.rb
-%%RUBY_LIBDIR%%/rubygems/text.rb
-%%RUBY_LIBDIR%%/rubygems/uninstaller.rb
-%%RUBY_LIBDIR%%/rubygems/user_interaction.rb
-%%RUBY_LIBDIR%%/rubygems/validator.rb
-%%RUBY_LIBDIR%%/rubygems/version.rb
-%%RUBY_LIBDIR%%/rubygems/version_option.rb
-%%RUBY_LIBDIR%%/rubygems.rb
 %%RUBY_LIBDIR%%/scanf.rb
 %%RUBY_LIBDIR%%/securerandom.rb
 %%RUBY_LIBDIR%%/set.rb
@@ -891,7 +763,6 @@ include/ruby-1.9/ruby.h
 %%RUBY_LIBDIR%%/tmpdir.rb
 %%RUBY_LIBDIR%%/tracer.rb
 %%RUBY_LIBDIR%%/tsort.rb
-%%RUBY_LIBDIR%%/ubygems.rb
 %%RUBY_LIBDIR%%/un.rb
 %%RUBY_LIBDIR%%/uri/common.rb
 %%RUBY_LIBDIR%%/uri/ftp.rb
@@ -962,11 +833,6 @@ include/ruby-1.9/ruby.h
 @dirrm %%RUBY_LIBDIR%%/test
 @dirrm %%RUBY_LIBDIR%%/syck
 @dirrm %%RUBY_LIBDIR%%/shell
-@dirrm %%RUBY_LIBDIR%%/rubygems/package/tar_reader
-@dirrm %%RUBY_LIBDIR%%/rubygems/package
-@dirrm %%RUBY_LIBDIR%%/rubygems/ext
-@dirrm %%RUBY_LIBDIR%%/rubygems/commands
-@dirrm %%RUBY_LIBDIR%%/rubygems
 @dirrm %%RUBY_LIBDIR%%/rss/maker
 @dirrm %%RUBY_LIBDIR%%/rss/dublincore
 @dirrm %%RUBY_LIBDIR%%/rss/content
@@ -990,9 +856,6 @@ include/ruby-1.9/ruby.h
 @dirrm %%RUBY_LIBDIR%%/rdoc/generator
 @dirrm %%RUBY_LIBDIR%%/rdoc
 @dirrm %%RUBY_LIBDIR%%/rbconfig
-@dirrm %%RUBY_LIBDIR%%/rake/loaders
-@dirrm %%RUBY_LIBDIR%%/rake/contrib
-@dirrm %%RUBY_LIBDIR%%/rake
 @dirrm %%RUBY_LIBDIR%%/racc
 @dirrm %%RUBY_LIBDIR%%/psych/visitors
 @dirrm %%RUBY_LIBDIR%%/psych/nodes
@@ -1029,20 +892,6 @@ include/ruby-1.9/ruby.h
 @dirrm %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/digest
 @dirrm %%RUBY_LIBDIR%%/%%RUBY_ARCH%%
 @dirrm %%RUBY_LIBDIR%%/
-%%GEMS_DIR%%/cache/.keep_me
-%%GEMS_DIR%%/doc/.keep_me
-%%GEMS_DIR%%/gems/.keep_me
-%%GEMS_DIR%%/specifications/minitest-1.6.0.gemspec
-%%GEMS_DIR%%/specifications/minitest.gemspec
-%%GEMS_DIR%%/specifications/rake-0.8.7.gemspec
-%%GEMS_DIR%%/specifications/rake.gemspec
-%%GEMS_DIR%%/specifications/rdoc-2.5.8.gemspec
-%%GEMS_DIR%%/specifications/rdoc.gemspec
-@dirrm %%GEMS_DIR%%/specifications
-@dirrm %%GEMS_DIR%%/gems
-@dirrm %%GEMS_DIR%%/doc
-@dirrm %%GEMS_DIR%%/cache
-@dirrm %%GEMS_DIR%%/
 %%RUBY_SITEARCHLIBDIR%%/.keep_me
 @dirrm %%RUBY_SITEARCHLIBDIR%%
 @dirrm %%RUBY_SITELIBDIR%%
@@ -1051,5 +900,4 @@ include/ruby-1.9/ruby.h
 @dirrm %%RUBY_VENDORARCHLIBDIR%%
 @dirrm %%RUBY_VENDORLIBDIR%%
 @dirrmtry lib/ruby/vendor_ruby
-@dirrmtry lib/ruby/gems
 @dirrmtry lib/ruby

@@ -20,11 +20,11 @@ COMMENT=	Package management framework for the Ruby language
 
 USE_RUBY=	yes
 RUBY_SETUP=	setup.rb
-RUBY_VER=	1.8
 
 NO_BUILD=	yes
 
-PLIST_SUB+=	DISTNAME="${DISTNAME}"
+PLIST_SUB+=	DISTNAME="${DISTNAME}" \
+		RUBY_SUFFIX="${RUBY_SUFFIX}"
 
 .if !defined(NOPORTDOCS)
 RUBY_SETUP_OPTIONS=
@@ -43,17 +43,13 @@ GEMS_DOC_DIR_P=		${GEMS_DOC_BASE_DIR_P}/%%DISTNAME%%
 
 .include <bsd.port.pre.mk>
 
-.if ${RUBY_VER} == 1.9
-IGNORE=	already included in this ruby distribution
-.endif
-
 do-install:
 	cd ${WRKSRC}; ${RUBY} ${RUBY_SETUP} ${RUBY_SETUP_OPTIONS}
 
 post-install:
 	@${MKDIR} ${PREFIX}/${GEMS_DOC_BASE_DIR}/
 	@${TOUCH} ${PREFIX}/${GEMS_DOC_BASE_DIR}/.keep_this
-	@${LN} -sf ${PREFIX}/bin/gem18 ${PREFIX}/bin/gem
+	@${LN} -sf ${PREFIX}/bin/gem${RUBY_VER:S/.//} ${PREFIX}/bin/gem
 
 .if !defined(NOPORTDOCS)
 	@${FIND} -ds ${PREFIX}/lib/ruby/gems/${RUBY_VER}/doc/${DISTNAME} \
@@ -69,8 +65,8 @@ post-install:
 # This target is only meant to be used by the port maintainer.
 x-generate-plist:
 	${ECHO} bin/gem > pkg-plist.new
-	${ECHO} bin/gem18 >> pkg-plist.new
-	${ECHO} bin/update_rubygems18 >> pkg-plist.new
+	${ECHO} bin/gem${RUBY_VER:S/.//} >> pkg-plist.new
+	${ECHO} bin/update_rubygems${RUBY_VER:S/.//} >> pkg-plist.new
 	${ECHO} ${GEMS_VER_DIR_P}/cache/sources-0.0.2.gem >> pkg-plist.new
 	${FIND} ${PREFIX}/${GEMS_VER_DIR}/gems/sources-0.0.2 -type f | ${SORT} | ${SED} -e 's,${PREFIX}/${GEMS_VER_DIR},${GEMS_VER_DIR_P},' >> pkg-plist.new
 	${ECHO} ${GEMS_VER_DIR_P}/specifications/sources-0.0.2.gemspec >> pkg-plist.new

@@ -1,7 +1,7 @@
 @comment $FreeBSD$
 bin/gem
-bin/gem18
-bin/update_rubygems18
+bin/gem%%RUBY_SUFFIX%%
+bin/update_rubygems%%RUBY_SUFFIX%%
 lib/ruby/gems/%%RUBY_VER%%/cache/sources-0.0.2.gem
 lib/ruby/gems/%%RUBY_VER%%/gems/sources-0.0.2/lib/sources.rb
 lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
