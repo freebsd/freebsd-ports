@@ -27,11 +27,6 @@ include/apr-2/apr_global_mutex.h
 include/apr-2/apr_hash.h
 include/apr-2/apr_hooks.h
 include/apr-2/apr_inherit.h
-include/apr-2/apr_ldap.h
-include/apr-2/apr_ldap_init.h
-include/apr-2/apr_ldap_option.h
-include/apr-2/apr_ldap_rebind.h
-include/apr-2/apr_ldap_url.h
 include/apr-2/apr_lib.h
 include/apr-2/apr_md4.h
 include/apr-2/apr_md5.h
@@ -91,10 +86,6 @@ lib/libapr-2.so.%%SHLIB_MAJOR%%
 %%NDBM%%lib/apr-2/apr_dbm_ndbm.so
 %%NDBM%%lib/apr-2/apr_dbm_ndbm.la
 %%NDBM%%lib/apr-2/apr_dbm_ndbm.a
-%%LDAP%%lib/apr-2/apr_ldap-2.so
-%%LDAP%%lib/apr-2/apr_ldap.so
-%%LDAP%%lib/apr-2/apr_ldap.la
-%%LDAP%%lib/apr-2/apr_ldap.a
 %%MYSQL%%lib/apr-2/apr_dbd_mysql-2.so
 %%MYSQL%%lib/apr-2/apr_dbd_mysql.so
 %%MYSQL%%lib/apr-2/apr_dbd_mysql.la
