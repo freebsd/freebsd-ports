@@ -17,7 +17,7 @@ COMMENT?=	Development SVN snapshots of ioquake3
 PLIST?=		${.CURDIR}/../ioquake3/pkg-plist
 PATCHDIR?=	${WRKDIR}/freebsd-patchset/
 
-SVNREVISION?=	1936
+SVNREVISION?=	2064
 BINSUFFIX?=	-devel
 
 .include "${.CURDIR}/../ioquake3/Makefile"

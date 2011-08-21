@@ -8,9 +8,10 @@
 PORTNAME=	openarena
 PORTVERSION=	${GAMEVERSION}.s${SVNREVISION}
 DISTVERSION=	1.36_SVN${SVNREVISION}+${GAMEVERSION}
+PORTREVISION=	8
 PORTEPOCH=	1
 MASTER_SITES=	http://files.poulsander.com/~poul19/public_files/oa/dev081/
-DISTNAME=	${PORTNAME}-engine-source-0.8.x-20
+DISTNAME=	${PORTNAME}-engine-source-0.8.x-21
 
 MAINTAINER=	kamikaze@bsdforen.de
 COMMENT=	Quake3 total conversion based on the ioquake3 engine
