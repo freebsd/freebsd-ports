@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	qemu
-PORTVERSION=	0.14.1
+PORTVERSION=	0.15.0
 CATEGORIES=	emulators
 MASTER_SITES=	SAVANNAH:release \
+		http://wiki.qemu.org/download/:release \
 		LOCAL:snapshot
 MASTER_SITE_SUBDIR=	qemu/:release nox/:snapshot
 PKGNAMESUFFIX=	-devel
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:release \
+		sgabios-read-only-r8${EXTRACT_SUFX}:snapshot
 DIST_SUBDIR=	qemu/${PORTVERSION}
 
 PATCH_SITES=	http://code.gns3.net/qemu-patches/raw-file/0b69b9be6a8e/
@@ -23,6 +25,8 @@ COMMENT=	QEMU CPU Emulator - development version
 
 HAS_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_PYTHON=	yes
+USE_GNOME=	glib20
 USE_PERL5_BUILD=	yes
 PATCH_STRIP=	-p1
 MAKE_ENV+=	BSD_MAKE="${MAKE}" LDFLAGS="${LDFLAGS}"
@@ -34,15 +38,23 @@ MAKE_JOBS_SAFE=	yes
 
 OPTIONS=	SAMBA "samba dependency (for -smb)" Off \
 		SDL "SDL/X dependency (graphical output)" On \
+		OPENGL "OpenGL dependency" On \
 		GNUTLS "gnutls dependency (vnc encryption)" On \
+		SASL "cyrus-sasl dependency (vnc encryption)" On \
 		CURL "libcurl dependency (remote images)" On \
 		CDROM_DMA "IDE CDROM DMA" On \
 		PCAP "pcap dependency (networking with bpf)" On \
+		USBREDIR "usb device network redirection (experimental!)" Off \
 		GNS3 "gns3 patches (udp, promiscuous multicast)" Off \
 		ADD_AUDIO "Emulate more audio hardware (experimental!)" Off \
 		ALL_TARGETS "Also build bsd-user targets (for testing)" Off
 
 .include <bsd.port.pre.mk>
+
+CONFIGURE_ARGS+=	--extra-ldflags=-L${LOCALBASE}/lib
+PORTDOCS=	docs qemu-doc.html qemu-tech.html
+LIB_DEPENDS+=	jpeg:${PORTSDIR}/graphics/jpeg \
+		png.6:${PORTSDIR}/graphics/png
 
 .if defined(WITHOUT_ALL_TARGETS)
 CONFIGURE_ARGS+=	--disable-bsd-user
@@ -56,8 +68,10 @@ IGNORE=		bsd-user targets not tested on sparc64
 
 .if defined(WITH_GNS3)
 PATCHFILES+=	hw_e1000_c.patch
-PATCHFILES+=	net_c.patch
-PATCHFILES+=	net_h.patch
+#PATCHFILES+=	net_c.patch
+#PATCHFILES+=	net_h.patch
+EXTRA_PATCHES+=	${FILESDIR}/net_c.patch
+EXTRA_PATCHES+=	${FILESDIR}/net_h.patch
 PATCHFILES+=	net_udp_c.patch
 PATCHFILES+=	net_udp_h.patch
 PATCHFILES+=	Makefile_objs.patch
@@ -83,10 +97,28 @@ CONFIGURE_ARGS+=	--disable-vnc-tls
 LIB_DEPENDS+=	gnutls:${PORTSDIR}/security/gnutls
 .endif
 
+.if defined(WITHOUT_SASL)
+CONFIGURE_ARGS+=	--disable-vnc-sasl
+.else
+LIB_DEPENDS+=	sasl2:${PORTSDIR}/security/cyrus-sasl2
+.endif
+
 .if defined(WITHOUT_CURL)
 CONFIGURE_ARGS+=	--disable-curl
 .else
 LIB_DEPENDS+=	curl:${PORTSDIR}/ftp/curl
+.endif
+
+.if defined(WITHOUT_OPENGL)
+CONFIGURE_ARGS+=	--disable-opengl
+.else
+USE_GL=		yes
+.endif
+
+.if defined(WITHOUT_USBREDIR)
+CONFIGURE_ARGS+=	--disable-usb-redir
+.else
+LIB_DEPENDS+=	usbredirparser:${PORTSDIR}/net/usbredir
 .endif
 
 .if defined(WITH_PCAP)
@@ -130,20 +162,6 @@ pre-patch:
 		${MKDIR} ${WRKSRC}/bsd/$$A; \
 	done
 
-post-patch:
-.if (${ARCH} == "powerpc" || ${ARCH} == "sparc64")
-.if ${OSVERSION} < 800030
-# These OSVERSION don't have all the needed long double fns in their
-# libc so just disable 80 bit floats completely.
-	@cd ${WRKSRC} && ${PATCH} --quiet -R ${PATCH_STRIP} < ${FILESDIR}/patch-libmath_FreeBSD-version
-	@cd ${WRKSRC} && ${PATCH} --quiet -R ${PATCH_STRIP} < ${FILESDIR}/patch-fbsd
-.else
-# ...else we only need to disable the libmath build. (since its
-# x86-specific.)
-	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/revert-fbsd-libmath-patch
-.endif
-.endif
-
 .if defined(WITH_PCAP)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/pcap-patch
 	@${REINPLACE_CMD} -f ${FILESDIR}/pcap-client-type.sed ${WRKSRC}/net.h
@@ -172,7 +190,14 @@ post-configure:
 		${WRKSRC}/config-host.mak
 .endif
 
+post-build:
+	@(cd ${WRKDIR}/sgabios-read-only && ${GMAKE})
+
 post-install:
+.if !defined(NOPORTDOCS)
+	@(cd ${WRKSRC} && ${COPYTREE_SHARE} docs ${DOCSDIR}/)
+.endif
+	@${INSTALL_DATA} ${WRKDIR}/sgabios-read-only/sgabios.bin ${DATADIR}
 	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifup.sample ${PREFIX}/etc
 	@${INSTALL_SCRIPT} ${FILESDIR}/qemu-ifdown.sample ${PREFIX}/etc
 	@if [ ! -f ${PREFIX}/etc/qemu-ifup ]; then \

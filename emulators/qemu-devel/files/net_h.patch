@@ -1,0 +1,10 @@
+--- qemu-0.15.0/net.h.orig
++++ qemu-0.15.0/net.h
+@@ -35,6 +35,7 @@ typedef enum {
+     NET_CLIENT_TYPE_TAP,
+     NET_CLIENT_TYPE_SOCKET,
+     NET_CLIENT_TYPE_VDE,
++    NET_CLIENT_TYPE_UDP,
+     NET_CLIENT_TYPE_DUMP,
+ 
+     NET_CLIENT_TYPE_MAX

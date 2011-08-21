@@ -1,11 +1,14 @@
 bin/qemu
+bin/qemu-ga
 bin/qemu-img
 bin/qemu-io
 bin/qemu-nbd
 bin/qemu-system-arm
 bin/qemu-system-cris
+bin/qemu-system-lm32
 bin/qemu-system-m68k
 bin/qemu-system-microblaze
+bin/qemu-system-microblazeel
 bin/qemu-system-mips
 bin/qemu-system-mips64
 bin/qemu-system-mips64el
@@ -13,6 +16,7 @@ bin/qemu-system-mipsel
 bin/qemu-system-ppc
 bin/qemu-system-ppc64
 bin/qemu-system-ppcemb
+bin/qemu-system-s390x
 bin/qemu-system-sh4
 bin/qemu-system-sh4eb
 bin/qemu-system-sparc
@@ -32,9 +36,6 @@ etc/qemu-ifdown.sample
 etc/qemu/target-x86_64.conf.sample
 @exec if [ ! -f %D/etc/qemu/target-x86_64.conf ] ; then cp -p %D/%F %B/etc/qemu/target-x86_64.conf; fi
 @dirrmtry etc/qemu
-%%PORTDOCS%%%%DOCSDIR%%/qemu-doc.html
-%%PORTDOCS%%%%DOCSDIR%%/qemu-tech.html
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 %%DATADIR%%/bios.bin
 %%DATADIR%%/vgabios.bin
 %%DATADIR%%/vgabios-cirrus.bin
@@ -45,15 +46,20 @@ etc/qemu/target-x86_64.conf.sample
 %%DATADIR%%/openbios-ppc
 %%DATADIR%%/openbios-sparc32
 %%DATADIR%%/openbios-sparc64
-%%DATADIR%%/pxe-e1000.bin
-%%DATADIR%%/pxe-ne2k_pci.bin
-%%DATADIR%%/pxe-rtl8139.bin
-%%DATADIR%%/pxe-pcnet.bin
-%%DATADIR%%/pxe-virtio.bin
-%%DATADIR%%/gpxe-eepro100-80861209.rom
+%%DATADIR%%/pxe-e1000.rom
+%%DATADIR%%/pxe-eepro100.rom
+%%DATADIR%%/pxe-ne2k_pci.rom
+%%DATADIR%%/pxe-rtl8139.rom
+%%DATADIR%%/pxe-pcnet.rom
+%%DATADIR%%/pxe-virtio.rom
+%%DATADIR%%/petalogix-ml605.dtb
+%%DATADIR%%/mpc8544ds.dtb
+%%DATADIR%%/spapr-rtas.bin
+%%DATADIR%%/slof.bin
 %%DATADIR%%/s390-zipl.rom
 %%DATADIR%%/linuxboot.bin
 %%DATADIR%%/multiboot.bin
+%%DATADIR%%/sgabios.bin
 %%DATADIR%%/petalogix-s3adsp1800.dtb
 %%DATADIR%%/bamboo.dtb
 %%DATADIR%%/keymaps/ar

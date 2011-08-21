@@ -66,6 +66,35 @@ FreeBSD host notes
 
 	devfs_system_ruleset="ugen_ruleset"
 
+- If you want to test the new (in 0.15.0) usb network redirection (USBREDIR
+  option) see this thread by Hans de Goede <hdegoede <at> redhat.com>:
+
+	http://thread.gmane.org/gmane.comp.emulators.qemu/110176/focus=110183
+
+  Quote:
+
+  Example usage:
+
+  1) Start usbredirserver for a usb device:
+  sudo usbredirserver 045e:0772
+  2) Start qemu with usb2 support + a chardev talking to usbredirserver +
+     a usb-redir device using this chardev:
+  qemu ... \
+    -readconfig docs/ich9-ehci-uhci.cfg \
+    -chardev socket,id=usbredirchardev,host=localhost,port=4000 \
+    -device usb-redir,chardev=usbredirchardev,id=usbredirdev
+
+  [you would replace docs/ich9-ehci-uhci.cfg with e.g.
+  /usr/local/share/doc/qemu/docs/ich9-ehci-uhci.cfg, but turns out
+  ehci seems broken for me here with FreeBSD guests at least, I get:
+
+	FETCHENTRY: entry at 22C5484 is of type 2 which is not supported yet
+processing error - resetting ehci HC
+	Assertion failed: (0), function ehci_advance_state, file /data/ports/emulators/qemu-devel/work/qemu-0.15.0/hw/usb-ehci.c, line 2045.
+
+  Starting the same without ehci (-readconfig) works, tho usbredirserver
+  crashes when qemu exits.]
+
 - Still usb: since the hub is no longer attached to the uchi controller and
   the wakeup mechanism, resume interrupt is not implemented yet linux guests
   will suspend the bus, i.e. they wont see devices usb_add'ed after its
