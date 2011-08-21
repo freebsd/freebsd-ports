@@ -214,8 +214,10 @@
 %%HORDIR%%/scripts/upgrades/2007-06-17_flatten_shares.php
 %%HORDIR%%/scripts/upgrades/2008-09-23_fix_group_uid.sql
 %%HORDIR%%/scripts/upgrades/convert_datatree_shares_to_sql.php
+%%HORDIR%%/scripts/upgrades/convert_sql_shares_to_sqlng.php
 %%HORDIR%%/scripts/upgrades/create_default_histories.php
 %%HORDIR%%/scripts/upgrades/public_to_horde_share.php
+%%HORDIR%%/scripts/upgrades/sharesng.sql
 %%HORDIR%%/search.php
 %%HORDIR%%/templates/.htaccess
 %%HORDIR%%/templates/addressbook_list.php
