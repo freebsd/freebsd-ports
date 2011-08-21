@@ -8,7 +8,7 @@ PORTNAME=	apr
 PORTVERSION=	2.0.${SNAPDATE}
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://svn.apache.org/snapshots/apr/
+MASTER_SITES=	http://svn-master.apache.org/snapshots/apr/
 DISTNAME=	${PORTNAME}_${SNAPDATE}
 
 MAINTAINER=	apache@FreeBSD.org
@@ -18,7 +18,7 @@ LIB_DEPENDS=	expat.6:${PORTSDIR}/textproc/expat2
 
 NO_LATEST_LINK=	yes
 
-SNAPDATE=	20100610211336
+SNAPDATE=	20110821151329
 
 MAKE_JOBS_SAFE=	yes
 
@@ -26,7 +26,6 @@ OPTIONS=	THREADS "Enable Threads in apr"				on  \
 		IPV6	"Enable IPV6 Support in apr"			on  \
 		BDB	"Enable Berkley BDB support in apr-util"	on  \
 		GDBM	"Enable GNU dbm support in apr-util"		on  \
-		LDAP	"Enable LDAP support in apr-util"		off \
 		MYSQL	"Enable MySQL suport in apr-util"		off \
 		NDBM	"Enable NDBM support in apr-util"		off \
 		PGSQL	"Enable Postgresql suport in apr-util"		off \
@@ -134,22 +133,6 @@ PKGNAMESUFFIX=	-ndbm
 .else
 PLIST_SUB+=	NDBM="@comment "
 CONFIGURE_ARGS+=	--without-ndbm
-.endif
-
-.if defined(WITH_LDAP)
-EXTRAS=	yes
-PLIST_SUB+=	LDAP=""
-USE_OPENLDAP=	yes
-CONFIGURE_ARGS+=	--with-ldap-include=${LOCALBASE}/include \
-	--with-ldap-lib=${LOCALBASE}/lib --with-ldap=ldap
-.if defined(PKGNAMESUFFIX)
-PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-ldap${OPENLDAP_VER}
-.else
-PKGNAMESUFFIX=	-ldap
-.endif
-.else
-PLIST_SUB+=	LDAP="@comment "
-CONFIGURE_ARGS+=	--without-ldap
 .endif
 
 .if defined(WITH_MYSQL)

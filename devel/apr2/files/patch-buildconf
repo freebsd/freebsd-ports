@@ -1,18 +1,23 @@
---- ./buildconf.orig	2009-11-13 22:13:59.000000000 -0500
-+++ ./buildconf	2010-05-26 23:19:19.245814435 -0400
-@@ -69,6 +69,7 @@
+--- ./buildconf.orig	2011-08-10 22:03:47.000000000 +0200
++++ ./buildconf	2011-08-10 22:08:22.000000000 +0200
+@@ -81,6 +81,7 @@
    fi
    # Do we need this anymore?
    echo "buildconf: Using libtool.m4 at ${ltfile}."
-+  chmod 644 build/libtool.m4 
-   cat $ltfile | sed -e 's/LIBTOOL=\(.*\)top_build/LIBTOOL=\1apr_build/' > build/libtool.m4
- fi
- if test "$1" = "2"; then
-@@ -76,6 +77,7 @@
-   # Wouldn't it just be better to define top_builddir??
-   mv build/libtool.m4 build/libtool.m4.$$
-   cat build/libtool.m4.$$ | sed -e 's/LIBTOOL=\(.*\)top_build/LIBTOOL=\1apr_build/' > build/libtool.m4
-+  chmod 644 build/libtool.m4.$$
-   rm build/libtool.m4.$$
- fi
++  chmod 644 build/libtool.m4
+   rm -f build/libtool.m4
+   cp -p $ltfile build/libtool.m4
  
+@@ -94,9 +95,12 @@
+ # Not sure, would it interfere with httpd top_builddir when bundled?
+ mv build/libtool.m4 build/libtool.m4.$$
+ sed -e 's/\(LIBTOOL=.*\)top_build/\1apr_build/' < build/libtool.m4.$$ > build/libtool.m4
++chmod 644 build/libtool.m4.$$
+ rm -f build/libtool.m4.$$
+ 
+ # Clean up any leftovers
++chmod 644 aclocal.m4
++chmod 644 libtool.m4
+ rm -f aclocal.m4 libtool.m4
+ 
+ #
