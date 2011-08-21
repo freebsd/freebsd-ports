@@ -11,7 +11,7 @@ CATEGORIES=	ports-mgmt
 MASTER_SITES=	http://isis.poly.edu/~eitan/files/
 DISTNAME=	auto-symlink-virtual-${PORTVERSION}
 
-MAINTAINER=	ports@eitanadler.com
+MAINTAINER=	eadler@freebsd.org
 COMMENT=	Automatically generate symlinks for virtual categories
 
 USE_BZIP2=	yes

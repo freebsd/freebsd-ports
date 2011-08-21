@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.berlios.de/pub/smake/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.a./a/}
 
-MAINTAINER=	ports@eitanadler.com
+MAINTAINER=	eadler@freebsd.org
 COMMENT=	Highly portable make program with automake features
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION:C/.a.*//g}

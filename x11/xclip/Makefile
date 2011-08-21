@@ -12,7 +12,7 @@ PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	SF
 
-MAINTAINER=	ports@eitanadler.com
+MAINTAINER=	eadler@freebsd.org
 COMMENT=	An interface to X selections ("the clipboard") from the command line
 
 USE_AUTOTOOLS=	autoconf:env aclocal:env automake:env

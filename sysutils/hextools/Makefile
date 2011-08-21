@@ -10,7 +10,7 @@ PORTVERSION=	1.1
 CATEGORIES=	sysutils
 MASTER_SITES=	http://avl.enemy.org/utils/hextools/
 
-MAINTAINER=	ports@eitanadler.com
+MAINTAINER=	eadler@freebsd.org
 COMMENT=	Useful tools for dealing with hex files
 
 NO_WRKSUBDIR=yes

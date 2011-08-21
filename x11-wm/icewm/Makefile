@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	x11-wm
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION:R}/${PORTVERSION}/
 
-MAINTAINER=	ports@eitanadler.com
+MAINTAINER=	eadler@freebsd.org
 COMMENT=	Window Manager designed for speed, usability and consistency
 
 WANT_GNOME=	yes

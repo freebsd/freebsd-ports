@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-minimal
 DISTFILES=	# none
 EXTRACT_ONLY=	# none
 
-MAINTAINER=	ports@eitanadler.com
+MAINTAINER=	eadler@freebsd.org
 COMMENT=	X.Org minimal distribution metaport
 
 NO_BUILD=	yes

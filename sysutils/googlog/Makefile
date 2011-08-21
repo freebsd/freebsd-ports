@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.googlog.org/download/
 DISTNAME=	GoogLog-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@eitanadler.com
+MAINTAINER=	eadler@freebsd.org
 COMMENT=	GoogLog is a simple tool to search inside your syslog files
 
 RUN_DEPENDS=	${SITE_PERL}/Config/Tiny.pm:${PORTSDIR}/devel/p5-Config-Tiny \

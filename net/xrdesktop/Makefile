@@ -11,7 +11,7 @@ PORTREVISION=	2
 CATEGORIES=	net
 MASTER_SITES=	http://luggage.linux0wnsyou.com/xrdesktop/
 
-MAINTAINER=	ports@eitanadler.com
+MAINTAINER=	eadler@freebsd.org
 COMMENT=	A p5-Gtk frontend to rdesktop
 
 RUN_DEPENDS=	rdesktop:${PORTSDIR}/net/rdesktop \
