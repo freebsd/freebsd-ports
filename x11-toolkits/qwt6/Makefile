@@ -14,7 +14,7 @@ MAINTAINER=	makc@FreeBSD.org
 COMMENT=	Qt Widgets for Technical Applications
 
 USE_QT_VER=	4
-QT_COMPONENTS=	gui svg moc_build qmake_build
+QT_COMPONENTS=	gui svg xml moc_build qmake_build
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 QMAKE_ARGS+=	-recursive PREFIX=${PREFIX}
