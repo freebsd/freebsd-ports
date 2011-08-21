@@ -105,6 +105,8 @@
 %%HORDIR%%/lib/tests/bug6031.phpt
 %%HORDIR%%/lib/tests/bug7068.ics
 %%HORDIR%%/lib/tests/bug7068.phpt
+%%HORDIR%%/lib/tests/fromicalendar.phpt
+%%HORDIR%%/lib/tests/fromicalendar.ics
 %%HORDIR%%/lib/tests/recurrence.phpt
 %%HORDIR%%/lib/tests/toicalendar.phpt
 %%HORDIR%%/lib/version.php
@@ -217,6 +219,8 @@
 %%HORDIR%%/scripts/upgrades/2006-08-20_fix_recur_int_fields.pgsql.sql
 %%HORDIR%%/scripts/upgrades/2008-09-23_fix_group_uid.sql
 %%HORDIR%%/scripts/upgrades/convert_datatree_shares_to_sql.php
+%%HORDIR%%/scripts/upgrades/convert_sql_shares_to_sqlng.php
+%%HORDIR%%/scripts/upgrades/sharesng.sql
 %%HORDIR%%/search.php
 %%HORDIR%%/templates/attendees/attendees.inc
 %%HORDIR%%/templates/calendar_info.php
