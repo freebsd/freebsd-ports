@@ -17,6 +17,8 @@ COMMENT=	Grand Central Dispatch API support library
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
+# This is needed because PIC support check in autoconf could fail for clang otherwise.
+CONFIGURE_ENV=	lt_cv_prog_compiler_pic_works=yes
 
 OPTIONS=	CLANG "Build with LLVM/Clang (required for blocks support)" on
 
