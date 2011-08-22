@@ -19,7 +19,7 @@ USE_GL=		glew
 WRKSRC=		${WRKDIR}/${DISTNAME}/src
 
 USE_QT_VER=     4
-QT_COMPONENTS=  qmake_build
+QT_COMPONENTS=  qmake_build corelib gui
 PLIST_SUB=      PORTVERSION=${PORTVERSION}
 #MAKE_JOBS_UNSAFE=yes
 
