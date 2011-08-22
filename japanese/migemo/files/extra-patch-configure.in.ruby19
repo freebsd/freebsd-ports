@@ -1,0 +1,11 @@
+--- configure.in.orig	2011-08-22 13:07:45.000000000 +0900
++++ configure.in	2011-08-22 13:08:00.000000000 +0900
+@@ -19,7 +19,7 @@
+ fi
+ 
+ echo -n "checking Ruby/Romkan... "
+-if ruby -rromkan -e 'exit(if Romkan::VERSION >= "0.3" then 0 else 1 end)'; then
++if ruby -Ke -rromkan -e 'exit(if Romkan::VERSION >= "0.3" then 0 else 1 end)'; then
+    echo found
+ else
+    echo not found

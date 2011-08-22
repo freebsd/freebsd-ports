@@ -7,7 +7,7 @@
 
 PORTNAME=	migemo
 PORTVERSION=	0.40
-PORTREVISION=	7
+PORTREVISION=	8
 PORTEPOCH=	1
 CATEGORIES=	japanese elisp
 MASTER_SITES=	http://0xcc.net/migemo/ \
@@ -24,12 +24,13 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 .if !defined(SLAVE_PORT)
-USE_AUTOTOOLS=	automake14 autoconf213
-EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.am ${FILESDIR}/extra-patch-configure.in
+EXTRA_PATCHES=	${FILESDIR}/extra-patch-Makefile.am \
+		${FILESDIR}/extra-patch-configure.in
 PLIST_SUB=	MIGEMO="" ELISP="@comment "
 .endif
 
 USE_RUBY=	yes
+USE_AUTOTOOLS=	automake14 autoconf213
 BUILD_DEPENDS+=	${RUBY_SITELIBDIR}/romkan.rb:${PORTSDIR}/japanese/ruby-romkan \
 		${RUBY_SITELIBDIR}/bsearch.rb:${PORTSDIR}/devel/ruby-bsearch
 RUN_DEPENDS+=	${RUBY_SITELIBDIR}/romkan.rb:${PORTSDIR}/japanese/ruby-romkan \
@@ -38,9 +39,26 @@ RUN_DEPENDS+=	${RUBY_SITELIBDIR}/romkan.rb:${PORTSDIR}/japanese/ruby-romkan \
 CONFIGURE_ARGS+=--with-rubydir=${RUBY_SITELIBDIR}
 MAKE_JOBS_UNSAFE=	yes
 
+SHEBANG_FILES=	migemo migemo-client migemo-grep migemo-server
+
 SKKDIC_FILE=	SKK-JISYO.L-20110813
 
 .include <bsd.port.pre.mk>
+
+.if ${RUBY_VER} == 1.9
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-Makefile.am.ruby19 \
+		${PATCHDIR}/extra-patch-configure.in.ruby19 \
+		${PATCHDIR}/extra-patch-genchars.sh \
+		${PATCHDIR}/extra-patch-migemo \
+		${PATCHDIR}/extra-patch-migemo-cache.rb \
+		${PATCHDIR}/extra-patch-migemo-client \
+		${PATCHDIR}/extra-patch-migemo-convert.rb \
+		${PATCHDIR}/extra-patch-migemo-grep \
+		${PATCHDIR}/extra-patch-migemo-index.rb \
+		${PATCHDIR}/extra-patch-migemo-server \
+		${PATCHDIR}/extra-patch-migemo.rb.in \
+		${PATCHDIR}/extra-patch-tests_Makefile.am
+.endif
 
 .if ${ARCH} == "ia64"
 BROKEN=		Does not compile on ia64
@@ -51,9 +69,21 @@ post-extract:
 	${BZIP2_CMD} -cd ${DISTDIR}/${DIST_SUBDIR}/${SKKDIC_FILE}.bz2 > ${WRKSRC}/SKK-JISYO.L
 .endif
 
+post-patch:
+.if ${RUBY_VER} == 1.9 && ${SLAVE_PORT} == "no"
+	@cd ${WRKSRC} ; \
+	for f in ${SHEBANG_FILES} ; do \
+	${REINPLACE_CMD} -e 's:#!.*:#!${RUBY} -Ke:' $$f ; \
+	done
+.endif
+
 post-configure:
 .if ${SLAVE_PORT} == "no"
+.if ${RUBY_VER} == 1.9
+	(cd ${WRKSRC}; ${CAT} SKK-JISYO.L | ${RUBY} -Ke migemo-convert.rb > migemo-dict)
+.else
 	(cd ${WRKSRC}; ${CAT} SKK-JISYO.L | ${RUBY} migemo-convert.rb > migemo-dict)
+.endif
 	${CP} ${AUTOMAKE_DIR}/config.guess ${WRKSRC}
 	${CP} ${AUTOMAKE_DIR}/config.sub ${WRKSRC}
 .endif
@@ -61,10 +91,6 @@ post-configure:
 post-install:
 .if ${SLAVE_PORT} == "yes"
 	@${CAT} ${PKGMESSAGE}
-.endif
-
-.if ${RUBY_VER} == 1.9
-BROKEN=	does not build with ruby 1.9
 .endif
 
 .include <bsd.port.post.mk>
