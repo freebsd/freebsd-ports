@@ -1,5 +1,3 @@
-lib/locale/ko/LC_MESSAGES/ibus-hangul.mo
-lib/locale/zh_CN/LC_MESSAGES/ibus-hangul.mo
 libexec/ibus-engine-hangul
 libexec/ibus-setup-hangul
 share/ibus/component/hangul.xml
@@ -17,6 +15,8 @@ share/ibus/component/hangul.xml
 %%DATADIR%%/setup/main.pyc
 %%DATADIR%%/setup/main.pyo
 %%DATADIR%%/setup/setup.ui
+share/locale/ko/LC_MESSAGES/ibus-hangul.mo
+share/locale/zh_CN/LC_MESSAGES/ibus-hangul.mo
 @dirrm %%DATADIR%%/data
 @dirrm %%DATADIR%%/icons
 @dirrm %%DATADIR%%/setup
