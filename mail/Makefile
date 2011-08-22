@@ -706,7 +706,6 @@
     SUBDIR += svnmailer
     SUBDIR += swaks
     SUBDIR += sylpheed
-    SUBDIR += sylpheed3
     SUBDIR += sympa
     SUBDIR += sympa5
     SUBDIR += synonym
