@@ -1,0 +1,19 @@
+--- modules/docking/CMakeLists.txt.orig	2011-05-08 20:32:41.000000000 +0200
++++ modules/docking/CMakeLists.txt	2011-08-20 22:58:01.000000000 +0200
+@@ -13,6 +13,16 @@
+ 	SET_SOURCE_FILES_PROPERTIES(mac_docking_helper.cpp PROPERTIES COMPILE_FLAGS "-x objective-c++")
+ endif (APPLE)
+ 
++if (UNIX AND NOT APPLE)
++	include (FindX11)
++	if (X11_FOUND)
++		message (STATUS "Found X11 libraries: ${X11_X11_LIB}")
++	else (X11_FOUND)
++		message (FATAL_ERROR "Could not find X11 libraries")
++	endif (X11_FOUND)
++	include_directories (${X11_INCLUDE_DIR})
++endif (UNIX AND NOT APPLE)
++
+ set (TRANSLATION_SOURCES
+ 	translations/docking_en.ts
+ 	translations/docking_de.ts

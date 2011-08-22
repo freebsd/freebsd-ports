@@ -1,0 +1,12 @@
+--- modules/kde_notify/CMakeLists.txt.orig	2011-08-21 00:46:07.000000000 +0200
++++ modules/kde_notify/CMakeLists.txt	2011-08-21 00:45:20.000000000 +0200
+@@ -19,6 +19,9 @@
+ 	configuration/kde_notify.ui
+ )
+ 
++include_directories (${LIBGADU_INCLUDE_DIRS})
++link_directories (${LIBGADU_LIBRARY_DIRS})
++
+ kadu_module (kde_notify
+ 	MODULE_SOURCES ${SOURCES}
+ 	MODULE_MOC_SOURCES ${MOC_SOURCES}
