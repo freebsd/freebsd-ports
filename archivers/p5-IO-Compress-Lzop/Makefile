@@ -15,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	Write lzop files/buffers
 
+BUILD_DEPENDS=	p5-Compress-LZO>=0:${PORTSDIR}/archivers/p5-Compress-LZO \
+		p5-IO-Compress>=2.037:${PORTSDIR}/archivers/p5-IO-Compress
 RUN_DEPENDS=	p5-Compress-LZO>=0:${PORTSDIR}/archivers/p5-Compress-LZO \
 		p5-IO-Compress>=2.037:${PORTSDIR}/archivers/p5-IO-Compress
 
