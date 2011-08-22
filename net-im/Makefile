@@ -109,6 +109,7 @@
     SUBDIR += p5-Net-XMPP2
     SUBDIR += p5-POE-Component-Client-MSN
     SUBDIR += p5-Protocol-XMPP
+    SUBDIR += p5-SOAP-Transport-JABBER
     SUBDIR += papyon
     SUBDIR += pebrot
     SUBDIR += pecl-stomp
