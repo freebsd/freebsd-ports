@@ -7,6 +7,7 @@
 
 PORTNAME=	openfire
 PORTVERSION=	3.7.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	net-im java
 MASTER_SITES=	http://www.igniterealtime.org/downloadServlet?filename=openfire/
@@ -39,7 +40,8 @@ GROUPS=		${USERS}
 
 do-install:
 
-	(cd ${INSTALL_WRKSRC}/lib && ${INSTALL} -m 744 *.jar ${JAVAJARDIR})
+	(cd ${INSTALL_WRKSRC}/lib && ${INSTALL} -m 744 *.jar  ${JAVAJARDIR})
+	(cd ${INSTALL_WRKSRC}/lib && ${INSTALL} -m 744 log4j.xml  ${JAVAJARDIR})
 
 	${MKDIR} ${DATADIR}
 	${MKDIR} ${VARLOG}
