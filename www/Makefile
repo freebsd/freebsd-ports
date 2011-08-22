@@ -1803,6 +1803,7 @@
     SUBDIR += trac-customfieldadmin
     SUBDIR += trac-customroadmap
     SUBDIR += trac-datefield
+    SUBDIR += trac-defaultcc
     SUBDIR += trac-discussion
     SUBDIR += trac-down
     SUBDIR += trac-downloads
