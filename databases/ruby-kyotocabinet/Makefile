@@ -6,19 +6,21 @@
 #
 
 PORTNAME=	kyotocabinet
-PORTVERSION=	1.11
+PORTVERSION=	1.24
 CATEGORIES=	databases ruby
 MASTER_SITES=	http://fallabs.com/kyotocabinet/rubypkg/
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
 DISTNAME=	${PORTNAME}-ruby-${PORTVERSION}
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Ruby (1.9.1+) binding to Kyoto Cabinet
 
-LIB_DEPENDS=	kyotocabinet.4:${PORTSDIR}/databases/kyotocabinet
+LIB_DEPENDS=	kyotocabinet.9:${PORTSDIR}/databases/kyotocabinet
 
-BROKEN=	does not compile
+LICENSE=	GPLv3
+
+#BROKEN=	does not compile
 
 RUBY_VER=	1.9
 USE_RUBY=	yes
