@@ -1,0 +1,10 @@
+--- modules/idle/CMakeLists.txt.orig	2011-05-08 20:32:41.000000000 +0200
++++ modules/idle/CMakeLists.txt	2011-08-21 00:06:34.000000000 +0200
+@@ -6,6 +6,7 @@
+ 		message (FATAL_ERROR "Could not find X11 Screen Saver extension")
+ 	endif (X11_Xscreensaver_FOUND)
+ 
++	include_directories (${X11_INCLUDE_DIR})
+ 	set (LIBRARIES ${X11_Xscreensaver_LIB})
+ 
+ 	set (SOURCES

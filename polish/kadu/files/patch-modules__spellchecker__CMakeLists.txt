@@ -1,0 +1,10 @@
+--- modules/spellchecker/CMakeLists.txt.orig	2011-05-08 20:32:41.000000000 +0200
++++ modules/spellchecker/CMakeLists.txt	2011-08-21 03:11:41.000000000 +0200
+@@ -68,6 +68,7 @@
+ 
+ 	set (LIBRARIES ${ENCHANT_LIBRARIES})
+ 	include_directories (${ENCHANT_INCLUDE_DIRS})
++	link_directories (${ENCHANT_LIBRARY_DIRS})
+ 	add_definitions (${ENCHANT_DEFINITIONS})
+ 	add_definitions (-DHAVE_ENCHANT)
+ endif (USE_ASPELL)

@@ -1,0 +1,12 @@
+--- modules/screenshot/CMakeLists.txt.orig	2011-05-08 20:32:41.000000000 +0200
++++ modules/screenshot/CMakeLists.txt	2011-08-21 01:51:47.000000000 +0200
+@@ -40,6 +40,9 @@
+ 	data/configuration/screenshot.ui
+ )
+ 
++include (FindX11)
++include_directories (${X11_INCLUDE_DIR})
++
+ kadu_module (screenshot
+ 	MODULE_SOURCES ${SOURCES}
+ 	MODULE_MOC_SOURCES ${MOC_SOURCES}
