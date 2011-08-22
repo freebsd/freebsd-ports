@@ -1,0 +1,3 @@
+%%PYTHON_SITELIBDIR%%/cv2.so
+%%PYTHON_SITELIBDIR%%/cv.py
+@dirrmtry %%PYTHON_SITELIBDIR%%

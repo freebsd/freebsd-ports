@@ -1,6 +1,6 @@
---- modules/CMakeLists.txt.orig	2011-07-04 06:21:57.000000000 +0200
-+++ modules/CMakeLists.txt	2011-07-11 09:33:56.265459094 +0200
-@@ -8,25 +8,25 @@
+--- modules/CMakeLists.txt.orig	2011-08-02 14:48:41.000000000 +0200
++++ modules/CMakeLists.txt	2011-08-22 13:17:48.167347755 +0200
+@@ -10,18 +10,18 @@
  endif()
  
  add_subdirectory(calib3d)
@@ -10,10 +10,12 @@
 -add_subdirectory(flann)
 +#add_subdirectory(flann)
  
- if(BUILD_TESTS)
+-if(BUILD_TESTS)
 -  add_subdirectory(ts)
+-endif()
++#if(BUILD_TESTS)
 +#  add_subdirectory(ts)
- endif()
++#endif()
  add_subdirectory(highgui)
 -add_subdirectory(imgproc)
 +#add_subdirectory(imgproc)
@@ -23,8 +25,9 @@
 +#add_subdirectory(ml)
  add_subdirectory(objdetect)
  
- if(PYTHONLIBS_FOUND AND BUILD_NEW_PYTHON_SUPPORT)
-   add_subdirectory(python)
+ if(PYTHONLIBS_FOUND AND BUILD_NEW_PYTHON_SUPPORT AND PYTHON_USE_NUMPY)
+@@ -32,7 +32,7 @@
+   add_subdirectory(java)
  endif()
  
 -add_subdirectory(video)
