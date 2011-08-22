@@ -1839,6 +1839,7 @@
     SUBDIR += trac-themeengine
     SUBDIR += trac-ticketdelete
     SUBDIR += trac-ticketimport
+    SUBDIR += trac-tickettemplate
     SUBDIR += trac-timingandestimation
     SUBDIR += trac-tocmacro
     SUBDIR += trac-tweakui
