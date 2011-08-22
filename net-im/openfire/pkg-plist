@@ -56,6 +56,7 @@
 %%JAVAJARDIR%%/servlet.jar
 %%JAVAJARDIR%%/startup.jar
 %%JAVAJARDIR%%/slf4j-log4j12.jar
+%%JAVAJARDIR%%/log4j.xml
 %%DATADIR%%/conf
 %%DATADIR%%/embedded-db
 %%DATADIR%%/logs
