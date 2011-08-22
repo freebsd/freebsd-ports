@@ -8,37 +8,50 @@ PORTNAME=	gx2osd
 PORTVERSION=	0.2
 PORTREVISION=	6
 CATEGORIES=	audio
-MASTER_SITES=	http://eclipser.no-ip.org/
+MASTER_SITES=	http://eclipser.xmms2.org/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An OSD client for XMMS2
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
-
-LIB_DEPENDS=	gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24 \
+LIB_DEPENDS=	xmmsclient++.4:${PORTSDIR}/audio/cpp-xmms2 \
 		glademm-2.4.1:${PORTSDIR}/devel/libglademm24 \
-		xerces-c.27:${PORTSDIR}/textproc/xerces-c2
-BUILD_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so.3:${PORTSDIR}/audio/cpp-xmms2
-RUN_DEPENDS=	${LOCALBASE}/lib/libxmmsclient++.so.3:${PORTSDIR}/audio/cpp-xmms2
+		xerces-c.27:${PORTSDIR}/textproc/xerces-c2 \
+		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
 
-BROKEN=		does not configure
-
-USE_BZIP2=	yes
-USE_PYTHON_BUILD=	yes
+DEPRECATED=	No more public distfiles
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
-MAKE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" WAF_HOME=.
+
+USE_BZIP2=	yes
+USE_PYTHON_BUILD=yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		gx2osd.1
 
+.include <bsd.port.pre.mk>
+
+.if defined(BATCH) || defined(PACKAGE_BUILDING)
+WAF_VERBOSE=	--verbose
+.endif
+
+.if defined(MAKE_JOBS_NUMBER)
+WAF_JOBS=	--jobs=${MAKE_JOBS_NUMBER}
+.endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		"/CXXFLAGS/s|= cxxflags|= '${CXXFLAGS}'|" ${WRKSRC}/wscript
+
 do-configure:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf --conf-prefix=${LOCALBASE} --with-mandir=${PREFIX}/man --prefix=${PREFIX} configure
+	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} \
+		--prefix=${PREFIX} \
+		--conf-prefix=${LOCALBASE} \
+		--with-mandir=${MANPREFIX}/man configure)
 
 do-build:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf build
+	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} ${WAF_JOBS} build)
 
 do-install:
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ./waf ${INSTALL_TARGET}
+	@(cd ${WRKSRC} && ./waf ${WAF_VERBOSE} install)
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
