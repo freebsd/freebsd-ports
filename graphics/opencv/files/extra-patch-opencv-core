@@ -1,7 +1,7 @@
---- modules/CMakeLists.txt.orig	2011-07-04 06:21:57.000000000 +0200
-+++ modules/CMakeLists.txt	2011-07-11 09:35:33.207215658 +0200
-@@ -7,30 +7,30 @@
-   add_subdirectory(androidcamera)
+--- modules/CMakeLists.txt.orig	2011-08-02 14:48:41.000000000 +0200
++++ modules/CMakeLists.txt	2011-08-22 12:12:01.825347584 +0200
+@@ -9,34 +9,34 @@
+   endif()
  endif()
  
 -add_subdirectory(calib3d)
@@ -27,10 +27,20 @@
 -add_subdirectory(objdetect)
 +#add_subdirectory(objdetect)
  
- if(PYTHONLIBS_FOUND AND BUILD_NEW_PYTHON_SUPPORT)
+-if(PYTHONLIBS_FOUND AND BUILD_NEW_PYTHON_SUPPORT AND PYTHON_USE_NUMPY)
 -  add_subdirectory(python)
+-endif()
+-
+-if(BUILD_JAVA_SUPPORT)
+-  add_subdirectory(java)
+-endif()
++#if(PYTHONLIBS_FOUND AND BUILD_NEW_PYTHON_SUPPORT AND PYTHON_USE_NUMPY)
 +#  add_subdirectory(python)
- endif()
++#endif()
++
++#if(BUILD_JAVA_SUPPORT)
++#  add_subdirectory(java)
++#endif()
  
  add_subdirectory(video)
 -add_subdirectory(traincascade)
@@ -38,9 +48,11 @@
 +#add_subdirectory(traincascade)
 +#add_subdirectory(haartraining)
  
- if(NOT ANDROID)
+-if(NOT ANDROID)
 -  add_subdirectory(gpu)
 -  add_subdirectory(stitching)
+-endif()
++#if(NOT ANDROID)
 +#  add_subdirectory(gpu)
 +#  add_subdirectory(stitching)
- endif()
++#endif()

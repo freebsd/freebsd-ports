@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 #
-BUILDING_OPENCV_CORE=	yes
+_BUILDING_OPENCV_CORE=	yes
 MASTERDIR=	${.CURDIR}/../opencv
 
 .include "${MASTERDIR}/Makefile"

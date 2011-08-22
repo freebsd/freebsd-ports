@@ -16,11 +16,13 @@ include/opencv/highgui.h
 include/opencv/ml.h
 include/opencv2/calib3d/calib3d.hpp
 include/opencv2/contrib/contrib.hpp
+include/opencv2/contrib/retina.hpp
 include/opencv2/features2d/features2d.hpp
 include/opencv2/gpu/NCV.hpp
 include/opencv2/gpu/NPP_staging.hpp
 include/opencv2/gpu/devmem2d.hpp
 include/opencv2/gpu/gpu.hpp
+include/opencv2/gpu/gpumat.hpp
 include/opencv2/gpu/matrix_operations.hpp
 include/opencv2/gpu/stream_accessor.hpp
 include/opencv2/highgui/highgui.hpp
@@ -33,29 +35,28 @@ include/opencv2/objdetect/objdetect.hpp
 include/opencv2/opencv.hpp
 lib/libopencv_calib3d.so
 lib/libopencv_calib3d.so.2
-lib/libopencv_calib3d.so.2.3.0
+lib/libopencv_calib3d.so.%%VERSION%%
 lib/libopencv_contrib.so
 lib/libopencv_contrib.so.2
-lib/libopencv_contrib.so.2.3.0
+lib/libopencv_contrib.so.%%VERSION%%
 lib/libopencv_features2d.so
 lib/libopencv_features2d.so.2
-lib/libopencv_features2d.so.2.3.0
+lib/libopencv_features2d.so.%%VERSION%%
 lib/libopencv_gpu.so
 lib/libopencv_gpu.so.2
-lib/libopencv_gpu.so.2.3.0
+lib/libopencv_gpu.so.%%VERSION%%
 lib/libopencv_highgui.so
 lib/libopencv_highgui.so.2
-lib/libopencv_highgui.so.2.3.0
+lib/libopencv_highgui.so.%%VERSION%%
 lib/libopencv_legacy.so
 lib/libopencv_legacy.so.2
-lib/libopencv_legacy.so.2.3.0
+lib/libopencv_legacy.so.%%VERSION%%
 lib/libopencv_objdetect.so
 lib/libopencv_objdetect.so.2
-lib/libopencv_objdetect.so.2.3.0
+lib/libopencv_objdetect.so.%%VERSION%%
 libdata/pkgconfig/opencv.pc
-%%PYTHON%%%%PYTHON_SITELIBDIR%%/cv.so
-share/OpenCV
 %%DATADIR%%/OpenCVConfig.cmake
+%%DATADIR%%/OpenCVConfig-version.cmake
 %%DATADIR%%/haarcascades/haarcascade_eye.xml
 %%DATADIR%%/haarcascades/haarcascade_eye_tree_eyeglasses.xml
 %%DATADIR%%/haarcascades/haarcascade_frontalface_alt.xml
@@ -67,9 +68,11 @@ share/OpenCV
 %%DATADIR%%/haarcascades/haarcascade_lowerbody.xml
 %%DATADIR%%/haarcascades/haarcascade_mcs_eyepair_big.xml
 %%DATADIR%%/haarcascades/haarcascade_mcs_eyepair_small.xml
+%%DATADIR%%/haarcascades/haarcascade_mcs_leftear.xml
 %%DATADIR%%/haarcascades/haarcascade_mcs_lefteye.xml
 %%DATADIR%%/haarcascades/haarcascade_mcs_mouth.xml
 %%DATADIR%%/haarcascades/haarcascade_mcs_nose.xml
+%%DATADIR%%/haarcascades/haarcascade_mcs_rightear.xml
 %%DATADIR%%/haarcascades/haarcascade_mcs_righteye.xml
 %%DATADIR%%/haarcascades/haarcascade_mcs_upperbody.xml
 %%DATADIR%%/haarcascades/haarcascade_profileface.xml
@@ -78,7 +81,6 @@ share/OpenCV
 %%DATADIR%%/lbpcascades/lbpcascade_frontalface.xml
 @dirrm %%DATADIR%%/lbpcascades
 @dirrm %%DATADIR%%/haarcascades
-%%PYTHON%%@dirrmtry %%PYTHON_SITELIBDIR%%
 @dirrm include/opencv2/objdetect
 @dirrm include/opencv2/legacy
 @dirrm include/opencv2/highgui
