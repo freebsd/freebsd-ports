@@ -12,11 +12,8 @@ CATEGORIES=	net-p2p
 MASTER_SITES=	http://got.net/~brian/teknap/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.g/g/}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sam@cassiba.com
 COMMENT=	Console napster client
-
-DEPRECATED=	Napster service is not working anymore
-EXPIRATION_DATE=	2011-09-01
 
 .if defined(WITH_MP3)
 BUILD_DEPENDS=	mpg123:${PORTSDIR}/audio/mpg123
