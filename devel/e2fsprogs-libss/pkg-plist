@@ -8,5 +8,5 @@ lib/libss.so.2
 libdata/pkgconfig/ss.pc
 share/ss/ct_c.awk
 share/ss/ct_c.sed
-@dirrm	include/ss
-@dirrm	share/ss
+@dirrm include/ss
+@dirrm share/ss
