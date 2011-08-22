@@ -16,26 +16,23 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Interactive remote control shell for xmms
 
 BUILD_DEPENDS=	xmms:${PORTSDIR}/multimedia/xmms \
-		${site_perl}/MP3/Info.pm:${PORTSDIR}/audio/p5-MP3-Info \
-		${site_perl}/Term/ReadLine/Perl.pm:${PORTSDIR}/devel/p5-ReadLine-Perl
+		p5-MP3-Info>=0:${PORTSDIR}/audio/p5-MP3-Info \
+		p5-ReadLine-Perl>=0:${PORTSDIR}/devel/p5-ReadLine-Perl 
 
-site_perl=	${SITE_PERL}
+PERL_CONFIGURE=	yes
+REINPLACE_ARGS=	-i ''
 
-PERL_CONFIGURE=	YES
-
-MAN3=		Xmms::Remote.3 \
-		Xmms::SongChange.3 \
+MAN3=		Bundle::Xmms.3 \
 		Xmms.3 \
-		Bundle::Xmms.3
-
-.include <bsd.port.pre.mk>
-
-.if ${PERL_LEVEL} >= 500800
-MAN3+=		Xmms::Config.3
-.endif
+		Xmms::Config.3 \
+		Xmms::Remote.3 \
+		Xmms::SongChange.3
 
 post-patch:
+	@${REINPLACE_CMD} -e 's|MPEG::MP3Info|MP3::Info|g' \
+		${WRKSRC}/Makefile.PL ${WRKSRC}/Remote/Remote.pm \
+		${WRKSRC}/lib/Bundle/Xmms.pm ${WRKSRC}/lib/Xmms.pm
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS}|' \
 		${WRKSRC}/SongChange/Makefile.PL
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
