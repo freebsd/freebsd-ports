@@ -91,7 +91,7 @@ lib/libextractor/libextractor_xm.la
 lib/libextractor/libextractor_xm.so
 lib/libextractor/libextractor_zip.la
 lib/libextractor/libextractor_zip.so
-lib/pkgconfig/libextractor.pc
+libdata/pkgconfig/libextractor.pc
 share/locale/de/LC_MESSAGES/libextractor.mo
 share/locale/ga/LC_MESSAGES/libextractor.mo
 share/locale/fr/LC_MESSAGES/libextractor.mo
@@ -101,4 +101,3 @@ share/locale/rw/LC_MESSAGES/libextractor.mo
 share/locale/sv/LC_MESSAGES/libextractor.mo
 share/locale/vi/LC_MESSAGES/libextractor.mo
 @dirrm lib/libextractor
-@dirrmtry lib/pkgconfig
