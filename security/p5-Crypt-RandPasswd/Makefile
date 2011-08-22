@@ -7,7 +7,7 @@
 
 PORTNAME=	Crypt-RandPasswd
 PORTVERSION=	0.02
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,5 +18,9 @@ COMMENT=	An implementation of the Automated Password Generator standard
 PERL_CONFIGURE=	yes
 
 MAN3=		Crypt::RandPasswd.3
+
+post-patch:
+
+	@${RM} ${WRKSRC}/lib/Crypt/RandPasswd.pm.orig
 
 .include <bsd.port.mk>
