@@ -6,16 +6,14 @@
 #
 
 PORTNAME=	sylpheed
-PORTVERSION=	1.0.6
-PORTREVISION=	9
+PORTVERSION=	3.1.1
+PORTREVISION=	2
 CATEGORIES=	mail ipv6
-MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v1.0/
+MASTER_SITES=	http://sylpheed.sraoss.jp/sylpheed/v${PORTVERSION:C/\.[^\.]*$//}/  \
+		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A lightweight, featureful, and fast GTK+ based e-mail client
-
-DEPRECATED=	Use mail/sylpheed3 instead
-EXPIRATION_DATE=	2011-08-27
 
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
@@ -23,47 +21,55 @@ USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_ICONV=	yes
-USE_GNOME=	gtk12
+USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
-NO_LATEST_LINK=	yes
+USE_LDCONFIG=	yes
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+# Sylpheed needs pthread if GnomeVFS is installed (GtkFileChooser uses it)
+CONFIGURE_ENV=	CFLAGS="${CFLAGS} ${PTHREAD_CFLAGS}" \
+		CPPFLAGS="-I${LOCALBASE}/include" \
+		LIBS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 CONFIGURE_ARGS=	--enable-ipv6 \
 		--prefix=${PREFIX} \
 		--with-libintl-prefix=${LOCALBASE} \
 		--program-transform-name=''
 
-.if !defined(WITHOUT_SSL)
-USE_OPENSSL=	yes
-.endif
+CONFLICTS=	sylpheed-1.[0-8]* sylpheed-2.[0-9]* sylpheed-gtk2-[0-9]*
 
-.if defined(WITH_PIXBUF)
-USE_GNOME+=	gdkpixbuf
-.else
-USE_GNOME+=	imlib
-.endif
+OPTIONS=	GPGME		"Enable GnuPG support using GPGME." off \
+		COMPFACE	"Enable X-Face support." off \
+		JPILOT		"Enable JPilot support." off \
+		LDAP		"Enable LDAP support." off \
+		SSL		"Enable OpenSSL support." on \
+		GTKSPELL	"Enable Spell checking support" on \
+		ONIGURUMA	"Enable Oniguruma support" off
 
 .include <bsd.port.pre.mk>
 
-.if defined(WITH_PIXBUF)
-CONFIGURE_ARGS+=--disable-imlib
+.if !defined(WITHOUT_SSL)
+# we can't use USE_OPENSSL=yes after including bsd.port.pre.mk
+.include "${PORTSDIR}/Mk/bsd.openssl.mk"
+CONFIGURE_ARGS+=--enable-ssl
 .else
-CONFIGURE_ARGS+=--disable-gdk-pixbuf
+CONFIGURE_ARGS+=--disable-ssl
 .endif
+
 .if defined(WITH_GPGME)
 LIB_DEPENDS+=	gpgme.19:${PORTSDIR}/security/gpgme
-RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg
+RUN_DEPENDS+=	gpg:${PORTSDIR}/security/gnupg \
+		pinentry-gtk-2:${PORTSDIR}/security/pinentry-gtk2
 CONFIGURE_ARGS+=--enable-gpgme
 .else
 CONFIGURE_ARGS+=--disable-gpgme
 .endif
+
 .if defined(WITH_COMPFACE)
 LIB_DEPENDS+=	compface.1:${PORTSDIR}/mail/faces
 CONFIGURE_ARGS+=--enable-compface
 .else
 CONFIGURE_ARGS+=--disable-compface
 .endif
+
 .if defined(WITH_JPILOT)
 LIB_DEPENDS+=	pisock.9:${PORTSDIR}/palm/pilot-link
 RUN_DEPENDS+=	jpilot:${PORTSDIR}/palm/jpilot
@@ -71,44 +77,48 @@ CONFIGURE_ARGS+=--enable-jpilot
 .else
 CONFIGURE_ARGS+=--disable-jpilot
 .endif
+
 .if defined(WITH_LDAP)
 USE_OPENLDAP=	yes
 CONFIGURE_ARGS+=--enable-ldap
 .else
 CONFIGURE_ARGS+=--disable-ldap
 .endif
-.if !defined(WITHOUT_SSL)
-CONFIGURE_ARGS+=--enable-ssl
+
+.if defined(WITH_GTKSPELL)
+LIB_DEPENDS+=	gtkspell.0:${PORTSDIR}/textproc/gtkspell
+CONFIGURE_ARGS+=--enable-gtkspell
 .else
-CONFIGURE_ARGS+=--disable-ssl
+CONFIGURE_ARGS+=--disable-gtkspell
+.endif
+
+.if defined(WITH_ONIGURUMA)
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libonig.a:${PORTSDIR}/devel/oniguruma5
+CONFIGURE_ARGS+=--enable-oniguruma
+.else
+CONFIGURE_ARGS+=--disable-oniguruma
 .endif
 
 MAKEFILES=	Makefile.in ac/Makefile.in faq/Makefile.in faq/de/Makefile.in \
 		faq/en/Makefile.in faq/es/Makefile.in faq/fr/Makefile.in \
 		faq/it/Makefile.in manual/Makefile.in manual/en/Makefile.in \
-		manual/ja/Makefile.in src/Makefile.in
-
-pre-everything::
-	@${ECHO} ""
-	@${ECHO} "You may use the following build options:"
-	@${ECHO} ""
-	@${ECHO} "      WITH_PIXBUF=yes   Enable GDK Pixbuf support"
-	@${ECHO} "      WITH_GPGME=yes    Enable GnuPG support using GPGME."
-	@${ECHO} "      WITH_COMPFACE=yes Enable X-Face support."
-	@${ECHO} "      WITH_JPILOT=yes   Enable JPilot support."
-	@${ECHO} "      WITH_LDAP=yes     Enable LDAP support."
-	@${ECHO} ""
-	@${ECHO} "      WITHOUT_SSL=yes   Disable OpenSSL support."
-	@${ECHO} ""
+		manual/ja/Makefile.in src/Makefile.in libsylph/Makefile.in \
+		src/icons/Makefile.in
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|-lpthread|${PTHREAD_LIBS:S/"//g}|g; \
-		s|-lresolv||g; s|-lpisock\"|-liconv &|g; ' ${WRKSRC}/configure
+		s|-lresolv||g; s|-lpisock\"|-liconv &|g; \
+		s|libs gtkspell-2\.0`|& -laspell|g;' \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|/etc|${LOCALBASE}&|g' \
-		${WRKSRC}/src/procmime.c
+		${WRKSRC}/libsylph/procmime.c
+
+# to prevent breaking cc of ldif.c because of a base64.h in PREFIX/include
+	@${REINPLACE_CMD} -e 's|^\(DEFS.*\.\.\)$$|\1 -I../libsylph|' \
+		${WRKSRC}/src/Makefile.in
 
 .if defined(NOPORTDOCS)
-	@${REINPLACE_CMD} -e 's|^SUBDIRS = ac m4 po intl src manual faq$$|SUBDIRS = ac m4 po intl src|g' \
+	@${REINPLACE_CMD} -e 's|^SUBDIRS = ac libsylph src plugin po manual faq nsis$$|SUBDIRS = ac libsylph src plugin po nsis|g' \
 		${WRKSRC}/Makefile.in
 .else
 .for i in ${MAKEFILES}
@@ -123,8 +133,12 @@ post-install:
 	@${MKDIR} ${DOCSDIR}
 .for i in ChangeLog INSTALL README TODO
 	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
-	@${INSTALL_DATA} ${WRKSRC}/${i}.jp ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i}.ja ${DOCSDIR}
 .endfor
 .endif
+	@${MKDIR} ${PREFIX}/share/pixmaps
+	@${MKDIR} ${PREFIX}/share/applications
+	@${INSTALL_DATA} ${WRKSRC}/sylpheed.png ${PREFIX}/share/pixmaps/
+	@${INSTALL_DATA} ${WRKSRC}/sylpheed.desktop ${PREFIX}/share/applications/
 
 .include <bsd.port.post.mk>
