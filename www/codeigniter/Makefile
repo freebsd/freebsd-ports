@@ -7,11 +7,11 @@
 
 PORTNAME=	codeigniter
 PORTVERSION=	2.0.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
-MASTER_SITES=	https://bitbucket.org/ellislab/codeigniter-reactor/get/
-PKGNAMESUFFIX=	-devel
-DISTNAME=	13e8f9b4feba
+MASTER_SITES=	http://downloads.codeigniter.com/reactor/ \
+	http://www.codeigniter.org.tw/download_files/
+DISTNAME=	CodeIgniter_${PORTVERSION}
 
 MAINTAINER=	appleboy.tw@gmail.com
 COMMENT=	A framework for developing PHP web applications
@@ -26,7 +26,7 @@ WANT_PHP_WEB=	yes
 
 CI_SYS_DIR=	system
 CI_CONF_DIR=	application/config
-WRKSRC=	${WRKDIR}/ellislab-codeigniter-reactor-${DISTNAME}
+WRKSRC=	${WRKDIR}/${DISTNAME}
 WWWDIR=	${PREFIX}/www/codeigniter
 PORTDOCS=	*
 
