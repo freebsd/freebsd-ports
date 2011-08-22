@@ -1,0 +1,10 @@
+SOAP::Transport::JABBER provides a Jabber-based transport backend for
+SOAP::Lite.
+
+This class uses the Net::Jabber classes to abstract the Jabber protocol away
+from the direct notice of the application. Besides maintaining any needed
+objects internally, the package also uses a separate class as a proxy between
+communication layers, SOAP::Transport::JABBER::Query. The Jabber support
+provides both client and server classes.
+
+WWW: http://search.cpan.org/dist/SOAP-Transport-JABBER/
