@@ -205,6 +205,7 @@ R                               ports/math/R
 R-cran-AMORE                    ports/science/R-cran-AMORE
 R-cran-RSvgDevice               ports/math/R-cran-RSvgDevice
 R-cran-SuppDists                ports/math/R-cran-SuppDists
+R-cran-XML                      ports/textproc/R-cran-XML
 R-cran-Zelig                    ports/math/R-cran-Zelig
 R-cran-bayesm                   ports/science/R-cran-bayesm
 R-cran-car                      ports/math/R-cran-car
@@ -9451,6 +9452,7 @@ mod_security                    ports/www/mod_security
 mod_security21                  ports/www/mod_security21
 mod_sed                         ports/www/mod_sed
 mod_sequester                   ports/www/mod_sequester
+mod_setenvifplus                ports/www/mod_setenvifplus
 mod_shapvh                      ports/www/mod_shapvh
 mod_smooth_streaming            ports/www/mod_smooth_streaming
 mod_sqlinclude                  ports/www/mod_sqlinclude
@@ -22800,6 +22802,7 @@ r-cran-rsvgdevice               ports/math/R-cran-RSvgDevice
 r-cran-sm                       ports/math/R-cran-sm
 r-cran-sp                       ports/math/R-cran-sp
 r-cran-suppdists                ports/math/R-cran-SuppDists
+r-cran-xml                      ports/textproc/R-cran-XML
 r-cran-zelig                    ports/math/R-cran-Zelig
 r1q2                            ports/games/r1q2
 rabbit                          ports/misc/rabbit
@@ -24608,6 +24611,7 @@ spin                            ports/devel/spin
 spindown                        ports/sysutils/spindown
 spinner                         ports/sysutils/spinner
 spip                            ports/www/spip
+spiped                          ports/sysutils/spiped
 spiralloops                     ports/audio/spiralloops
 spiralsynth                     ports/audio/spiralsynth
 spiralsynthmodular              ports/audio/spiralsynthmodular
@@ -25973,6 +25977,7 @@ urwfonts-ttf                    ports/x11-fonts/urwfonts-ttf
 us-zipcodes                     ports/misc/us-zipcodes
 usbhotkey                       ports/sysutils/usbhotkey
 usbmuxd                         ports/comms/usbmuxd
+usbredir                        ports/net/usbredir
 usbrh                           ports/misc/usbrh
 usbrh-libusb                    ports/misc/usbrh-libusb
 usbutils                        ports/sysutils/usbutils
