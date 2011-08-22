@@ -7,6 +7,7 @@
 
 PORTNAME=	redmine
 PORTVERSION=	1.2.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_RUBYFORGE}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -17,6 +18,7 @@ COMMENT=	A flexible project management web application
 RUN_DEPENDS=	rackup:${PORTSDIR}/www/rubygem-rack \
 		rubygem-i18n>=0.4.2:${PORTSDIR}/devel/rubygem-i18n
 
+RUBY_VER=	1.8
 USE_RUBY=	yes
 USE_RUBY_FEATURES=	iconv
 USE_RAKE=	yes
