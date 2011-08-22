@@ -6,7 +6,7 @@
 #      $Id: Makefile 77 2008-07-27 21:50:37Z buhnux $
 
 PORTNAME=	ffmpeg
-PORTVERSION=	0.7.2
+PORTVERSION=	0.7.3
 PORTEPOCH=	1
 CATEGORIES=	multimedia audio ipv6 net
 MASTER_SITES=	http://ffmpeg.org/releases/
