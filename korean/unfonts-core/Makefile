@@ -20,7 +20,7 @@ LICENSE_FILE=	${FILESDIR}/COPYING
 BUILD_DEPENDS+=	${LOCALBASE}/bin/mkfontdir:${PORTSDIR}/x11-fonts/mkfontdir \
 		${LOCALBASE}/bin/mkfontscale:${PORTSDIR}/x11-fonts/mkfontscale
 
-DISTINFO_FILE=	${PKGDIR}/distinfo.${FONTCAT}
+DISTINFO_FILE=	${PKGDIR}/distinfo.${FONTCAT}-ttf
 
 WRKSRC=		${WRKDIR}/un-fonts
 FONTSDIR=	lib/X11/fonts/${PORTNAME}-${FONTCAT}
