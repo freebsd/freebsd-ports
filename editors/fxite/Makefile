@@ -6,22 +6,28 @@
 #
 
 PORTNAME=	fxite
-PORTVERSION=	0.6
-PORTREVISION=	23
+PORTVERSION=	0.7
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	An advanced cross-platform text editor
 
-LIB_DEPENDS=	fxscintilla.22:${PORTSDIR}/x11-toolkits/fxscintilla
-
-BROKEN=		does not compile
+LIB_DEPENDS=	FOX-1.6:${PORTSDIR}/x11-toolkits/fox16
 
 USE_GETTEXT=	yes
+USE_LUA=	yes
+USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
+CXXFLAGS+=	-g -O0 -fPIC
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lintl"
+CONFIGURE_ARGS+=--with-system-lua \
+		--with-lua-pkg=lua-${LUA_VER}
 
 PLIST_FILES=	bin/fxite
+
+post-patch:
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	   ${WRKSRC}/${CONFIGURE_SCRIPT}
 
 .include <bsd.port.mk>
