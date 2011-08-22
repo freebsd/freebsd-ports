@@ -13,7 +13,7 @@ MASTER_SITES=	SF/aolserver/nsopenssl/3.0
 DISTFILES=	nsopenssl-3.0beta26-src.tar.gz
 DIST_SUBDIR=	aolserver
 
-MAINTAINER=	mm@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenSSL socket encryption module for AOLserver
 
 WRKSRC=		${WRKDIR}/nsopenssl-3.0beta26
