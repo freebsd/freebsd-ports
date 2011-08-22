@@ -118,6 +118,11 @@
 %%WWWDIR%%/system/database/drivers/sqlite/sqlite_forge.php
 %%WWWDIR%%/system/database/drivers/sqlite/sqlite_result.php
 %%WWWDIR%%/system/database/drivers/sqlite/sqlite_utility.php
+%%WWWDIR%%/system/database/drivers/sqlsrv/index.html
+%%WWWDIR%%/system/database/drivers/sqlsrv/sqlsrv_driver.php
+%%WWWDIR%%/system/database/drivers/sqlsrv/sqlsrv_forge.php
+%%WWWDIR%%/system/database/drivers/sqlsrv/sqlsrv_result.php
+%%WWWDIR%%/system/database/drivers/sqlsrv/sqlsrv_utility.php
 %%WWWDIR%%/system/database/index.html
 %%WWWDIR%%/system/fonts/index.html
 %%WWWDIR%%/system/fonts/texb.ttf
@@ -195,6 +200,7 @@
 @dirrm %%WWWDIR%%/system/language
 @dirrm %%WWWDIR%%/system/helpers
 @dirrm %%WWWDIR%%/system/fonts
+@dirrm %%WWWDIR%%/system/database/drivers/sqlsrv
 @dirrm %%WWWDIR%%/system/database/drivers/sqlite
 @dirrm %%WWWDIR%%/system/database/drivers/postgre
 @dirrm %%WWWDIR%%/system/database/drivers/odbc
@@ -205,7 +211,7 @@
 @dirrm %%WWWDIR%%/system/database/drivers
 @dirrm %%WWWDIR%%/system/database
 @dirrm %%WWWDIR%%/system/core
-@dirrmtry %%WWWDIR%%/system
+@dirrm %%WWWDIR%%/system
 @dirrm %%WWWDIR%%/application/views
 @dirrm %%WWWDIR%%/application/third_party
 @dirrm %%WWWDIR%%/application/models
