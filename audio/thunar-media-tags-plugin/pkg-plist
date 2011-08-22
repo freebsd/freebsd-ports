@@ -1,6 +1,6 @@
-lib/thunarx-1/thunar-media-tags-plugin.a
-lib/thunarx-1/thunar-media-tags-plugin.la
-lib/thunarx-1/thunar-media-tags-plugin.so
+lib/thunarx-2/thunar-media-tags-plugin.a
+lib/thunarx-2/thunar-media-tags-plugin.la
+lib/thunarx-2/thunar-media-tags-plugin.so
 share/locale/ca/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/cs/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/de/LC_MESSAGES/thunar-media-tags-plugin.mo
@@ -15,4 +15,4 @@ share/locale/pa/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/pl/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/ru/LC_MESSAGES/thunar-media-tags-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/thunar-media-tags-plugin.mo
-@dirrm lib/thunarx-1
+@dirrmtry lib/thunarx-2
