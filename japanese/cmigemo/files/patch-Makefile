@@ -1,0 +1,18 @@
+--- Makefile.orig	2011-02-27 19:45:40.000000000 +0900
++++ Makefile	2011-08-21 14:21:53.000000000 +0900
+@@ -52,8 +52,14 @@
+ 	$(MAKE) -f compile/Make_gcc.mak
+ gcc-dict:
+ 	$(MAKE) -f compile/Make_gcc.mak dictionary
+-gcc-install: gcc-all
++gcc-dat:
++	$(MAKE) -f compile/Make_gcc.mak dat
++gcc-install: gcc-rel gcc-dat
+ 	$(MAKE) -f compile/Make_gcc.mak install
++gcc-install-dict: gcc-dict
++	$(MAKE) -f compile/Make_gcc.mak install-dict
++gcc-install-doc:
++	$(MAKE) -f compile/Make_gcc.mak install-doc
+ gcc-uninstall:
+ 	$(MAKE) -f compile/Make_gcc.mak uninstall
+ gcc-clean:
