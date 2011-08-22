@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/Odamex/${PORTVERSION}
 DISTNAME=	odamex-src-${PORTVERSION}
 
-MAINTAINER=	aldis@bsdroot.lv
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	The Standard in Online Multiplayer Doom
 
 USE_BZIP2=	yes
