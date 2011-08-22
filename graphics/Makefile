@@ -784,6 +784,7 @@
     SUBDIR += py-imaging
     SUBDIR += py-ming
     SUBDIR += py-nwdiag
+    SUBDIR += py-opencv
     SUBDIR += py-openexr
     SUBDIR += py-opengl
     SUBDIR += py-paint
