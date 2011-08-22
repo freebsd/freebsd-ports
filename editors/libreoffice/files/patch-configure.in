@@ -1,0 +1,11 @@
+--- configure.in.orig	2011-07-21 02:57:19.000000000 +0300
++++ configure.in	2011-07-21 02:58:05.000000000 +0300
+@@ -8086,7 +8086,7 @@
+ dnl Number of CPUs to use during the build
+ dnl ===================================================================
+ AC_MSG_CHECKING([for number of processors to use])
+-if test "z`uname -s`" = "zDarwin" -o "z`uname -s`" = "zNetBSD" -o "z`uname -s`" = "zOpenBSD"; then
++if test "z`uname -s`" = "zDarwin" -o "z`uname -s`" = "zNetBSD" -o "z`uname -s`" = "zOpenBSD" -o "z`uname -s`" = "zFreeBSD"; then
+     BUILD_NCPUS=`sysctl -n hw.ncpu`
+ else
+     BUILD_NCPUS=`grep $'^processor\t*:' /proc/cpuinfo | wc -l`
