@@ -1,0 +1,4 @@
+TicketTemplate enable users to create ticket using templates
+which can be customized by Trac administrator and themselves.
+
+WWW: http://trac-hacks.org/wiki/TracTicketTemplatePlugin
