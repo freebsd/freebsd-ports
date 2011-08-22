@@ -10,7 +10,7 @@ PORTVERSION=	1.2.70
 CATEGORIES=	databases
 MASTER_SITES=	http://fallabs.com/kyotocabinet/pkg/
 
-MAINTAINER=	knu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A straightforward implementation of DBM
 
 LICENSE=	GPLv3
