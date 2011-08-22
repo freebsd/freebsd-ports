@@ -6,23 +6,19 @@
 #
 
 PORTNAME=	deluge
-DISTVERSION=	1.3.2
+DISTVERSION=	1.3.3
 PORTEPOCH=	1
 CATEGORIES=	net-p2p python
 MASTER_SITES=	http://download.deluge-torrent.org/source/
 EXTRACT_SUFX=	.tar.lzma
 
-MAINTAINER=	jsa@FreeBSD.org
+MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	Bittorrent client using Python, GTK+2 and libtorrent-rasterbar
 
-BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}setuptools>=0.6:${PORTSDIR}/devel/py-setuptools
-LIB_DEPENDS=	boost_python:${PORTSDIR}/devel/boost-python-libs \
-		GeoIP:${PORTSDIR}/net/GeoIP
-RUN_DEPENDS=	boost-python-libs>=1.41.0:${PORTSDIR}/devel/boost-python-libs \
-		${PYTHON_PKGNAMEPREFIX}gobject>=2.20.0:${PORTSDIR}/devel/py-gobject \
-		${PYTHON_PKGNAMEPREFIX}setuptools>=0.6:${PORTSDIR}/devel/py-setuptools \
-		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.9:${PORTSDIR}/devel/py-simplejson \
-		${PYTHON_PKGNAMEPREFIX}xdg>=0.18:${PORTSDIR}/devel/py-xdg \
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}xdg>=0.18:${PORTSDIR}/devel/py-xdg \
 		${PYTHON_PKGNAMEPREFIX}libtorrent-rasterbar>=0.15.1:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15-python \
 		${PYTHON_PKGNAMEPREFIX}openssl>=0.8:${PORTSDIR}/security/py-openssl \
 		${PYTHON_PKGNAMEPREFIX}chardet>=1.0.1:${PORTSDIR}/textproc/py-chardet \
@@ -30,13 +26,14 @@ RUN_DEPENDS=	boost-python-libs>=1.41.0:${PORTSDIR}/devel/boost-python-libs \
 
 USE_RC_SUBR=	deluged
 SUB_LIST+=	PYTHON_CMD=${PYTHON_CMD}
+PLIST_SUB+=	PYTHON_VER=${PYTHON_VER}
 
 USE_XZ=		yes
 WANT_GNOME=	yes
 USE_GETTEXT=	yes
 USE_OPENSSL=	yes
 USE_PYTHON=	2.5+
-USE_TWISTED=	web
+USE_TWISTED_RUN=	web
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_BUILD_TARGET=	build bdist_egg
 
@@ -47,11 +44,9 @@ MAN1=		deluge.1 deluge-console.1 deluge-gtk.1 deluge-web.1 deluged.1
 
 PORTDOCS=	*
 
-PLIST_SUB+=	PYDOTVER="${PYTHON_VERSION:S/thon//}"
-
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
+.if ${ARCH} != "i386" || ${PYTHON_REL} > 260
 .undef WITH_PSYCO
 WITHOUT_PSYCO=	yes
 .endif
@@ -60,17 +55,20 @@ WITHOUT_PSYCO=	yes
 .if ${PREFIX} != ${LOCALBASE}
 
 # only touch easy-install.pth if we installed it ourselves
-. if !exists(${PYTHONPREFIX_SITELIBDIR}/easy-install.pth)
+.if !exists(${PYTHONPREFIX_SITELIBDIR}/easy-install.pth)
 PLIST_FILES+=	${PYTHON_SITELIBDIR:S;${LOCALBASE}/;;}/easy-install.pth
-. endif
+.endif
 
 # only touch site.py{c,o} if we installed it ourselves
-. for file in site.py site.pyc site.pyo
-.  if !exists(${PYTHONPREFIX_SITELIBDIR}/${file})
+.for file in site.py site.pyc site.pyo
+.if !exists(${PYTHONPREFIX_SITELIBDIR}/${file})
 PLIST_FILES+=	${PYTHON_SITELIBDIR:S;${LOCALBASE}/;;}/${file}
-.  endif
-. endfor
+.endif
+.endfor
+.endif
 
+.if ${PYTHON_REL} < 260
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.9:${PORTSDIR}/devel/py-simplejson
 .endif
 
 .if defined(WITH_PSYCO)
@@ -100,7 +98,7 @@ post-patch:
 		/"show_new_releases":/s|True,|False,|g' \
 			${WRKSRC}/deluge/ui/gtkui/gtkui.py
 	${REINPLACE_CMD} -e 's|GTK|GTK;|' \
-		${WRKSRC}/deluge/data/share/applications/deluge.desktop
+		${WRKSRC}/deluge/data/share/applications/deluge.desktop.in
 
 post-install:
 # do these by hand, else they wind up in the wrong place
@@ -129,11 +127,11 @@ post-install:
 		${PREFIX}/share/pixmaps
 .endfor
 .if !defined(WITHOUT_PYGTK)
-	-update-desktop-database
+	@-update-desktop-database
 .endif
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-.for i in ChangeLog LICENSE README
+.for i in ChangeLog README
 	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif

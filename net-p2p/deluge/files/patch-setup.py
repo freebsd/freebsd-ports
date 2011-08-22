@@ -1,14 +1,15 @@
---- ./setup.py.orig	2011-07-08 18:15:27.000000000 -0400
-+++ ./setup.py	2011-07-08 18:16:21.000000000 -0400
-@@ -213,6 +213,7 @@
-     build_libtorrent = True
+--- setup.py.orig	2011-07-22 22:12:47.000000000 +0400
++++ setup.py	2011-07-24 23:08:20.000000000 +0400
+@@ -210,7 +210,7 @@
+ try:
+     from deluge._libtorrent import lt
+ except ImportError:
+-    build_libtorrent = True
++    build_libtorrent = False
  else:
      build_libtorrent = False
-+build_libtorrent = False
  
- if build_libtorrent:
-     got_libtorrent = False
-@@ -401,27 +402,6 @@
+@@ -474,31 +474,8 @@
  
  # Data files to be installed to the system
  _data_files = [
@@ -25,7 +26,6 @@
 -    ('share/icons/hicolor/64x64/apps', ['deluge/data/icons/hicolor/64x64/apps/deluge.png']),
 -    ('share/icons/hicolor/72x72/apps', ['deluge/data/icons/hicolor/72x72/apps/deluge.png']),
 -    ('share/icons/hicolor/96x96/apps', ['deluge/data/icons/hicolor/96x96/apps/deluge.png']),
--    ('share/applications', ['deluge/data/share/applications/deluge.desktop']),
 -    ('share/pixmaps', ['deluge/data/pixmaps/deluge.png', 'deluge/data/pixmaps/deluge.xpm']),
 -    ('share/man/man1', [
 -        'docs/man/deluge.1',
@@ -35,4 +35,9 @@
 -        'docs/man/deluge-console.1'])
  ]
  
+-if not windows_check():
+-    _data_files.append(('share/applications', ['deluge/data/share/applications/deluge.desktop']))
+-    
  entry_points = {
+     "console_scripts": [
+         "deluge-console = deluge.ui.console:start",
