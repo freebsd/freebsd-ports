@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	kyotocabinet
-PORTVERSION=	1.2.7
+PORTVERSION=	1.2.70
 CATEGORIES=	databases
 MASTER_SITES=	http://fallabs.com/kyotocabinet/pkg/
 
 MAINTAINER=	knu@FreeBSD.org
 COMMENT=	A straightforward implementation of DBM
+
+LICENSE=	GPLv3
 
 MAKE_JOBS_SAFE=	yes
 
@@ -47,9 +49,10 @@ MAN1=		kccachetest.1 \
 		kcpolymgr.1 \
 		kcpolytest.1 \
 		kcprototest.1 \
+		kcstashtest.1 \
 		kctreemgr.1 \
 		kctreetest.1 \
-		kcutilcodec.1 \
+		kcutilmgr.1 \
 		kcutiltest.1
 
 check: build
