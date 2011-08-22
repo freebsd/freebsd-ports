@@ -1,3 +1,8 @@
+bin/deluge
+bin/deluge-console
+bin/deluge-gtk
+bin/deluge-web
+bin/deluged
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/SOURCES.txt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/dependency_links.txt
@@ -370,7 +375,6 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/cy/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/da/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/de/LC_MESSAGES/deluge.mo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/deluge.pot
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/el/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/en_AU/LC_MESSAGES/deluge.mo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/i18n/en_CA/LC_MESSAGES/deluge.mo
@@ -449,14 +453,14 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/pluginmanagerbase.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/pluginmanagerbase.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/pluginmanagerbase.pyo
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/AutoAdd-1.02-%%PYDOTVER%%.egg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Blocklist-1.2-%%PYDOTVER%%.egg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Execute-1.2-%%PYDOTVER%%.egg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Extractor-0.1-%%PYDOTVER%%.egg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Label-0.1-%%PYDOTVER%%.egg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Notifications-0.1-%%PYDOTVER%%.egg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Scheduler-0.2-%%PYDOTVER%%.egg
-%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/WebUi-0.1-%%PYDOTVER%%.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/AutoAdd-1.03-py%%PYTHON_VER%%.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Blocklist-1.2-py%%PYTHON_VER%%.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Execute-1.2-py%%PYTHON_VER%%.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Extractor-0.1-py%%PYTHON_VER%%.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Label-0.1-py%%PYTHON_VER%%.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Notifications-0.1-py%%PYTHON_VER%%.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/Scheduler-0.2-py%%PYTHON_VER%%.egg
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/WebUi-0.1-py%%PYTHON_VER%%.egg
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/deluge/plugins/__init__.pyo
@@ -1406,11 +1410,6 @@ share/icons/hicolor/96x96/apps/deluge.png
 share/icons/hicolor/scalable/apps/deluge.svg
 share/pixmaps/deluge.png
 share/pixmaps/deluge.xpm
-bin/deluge
-bin/deluge-console
-bin/deluge-gtk
-bin/deluge-web
-bin/deluged
 @dirrmtry share/pixmaps
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
