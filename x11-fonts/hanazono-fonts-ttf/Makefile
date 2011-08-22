@@ -8,7 +8,7 @@
 PORTNAME=	hanazono-fonts-ttf
 PORTVERSION=	20110516
 CATEGORIES=	x11-fonts
-MASTER_SITES=	http://fonts.jp/hanazono/
+MASTER_SITES=	http://kage.sourceforge.jp/hanazono/
 DISTNAME=	${PORTNAME:C/-.*//}-${PORTVERSION}
 
 MAINTAINER=	lichray@gmail.com
