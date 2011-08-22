@@ -13,7 +13,7 @@ you update your ports collection, before attempting any port upgrades.
   depends on it.
 
   If you use portmaster:
-  # portmaster -fr ruby18
+  # portmaster -fr ruby-1.8
 
   If you use portupgrade:
   # portupgrade -fr lang/ruby18
