@@ -1,0 +1,19 @@
+--- migemo.rb.in.orig	2003-05-28 21:00:52.000000000 +0900
++++ migemo.rb.in	2011-08-22 02:23:18.000000000 +0900
+@@ -14,7 +14,6 @@
+ require 'migemo-dict'
+ require 'migemo-regex'
+ require 'romkan'
+-require 'jcode'
+ include MigemoRegex
+ 
+ class String
+@@ -24,7 +23,7 @@
+   end
+ 
+   def quotemeta
+-    self.gsub(/([^ \w])/, '\\\\\\1')
++    self.gsub(/([[:punct:]])/, '\\\\\\1')
+   end
+ 
+   def first

@@ -1,0 +1,20 @@
+--- tests/Makefile.am.orig	2001-08-14 02:12:57.000000000 +0900
++++ tests/Makefile.am	2011-08-22 00:54:29.000000000 +0900
+@@ -5,13 +5,13 @@
+ 
+ 
+ test-dict.idx: test-dict ../migemo-index.rb
+-	ruby -I.. ../migemo-index.rb test-dict > test-dict.idx
++	ruby -Ke -I.. ../migemo-index.rb test-dict > test-dict.idx
+ 
+ test-dict.cache: test-dict test-dict.idx ../migemo-cache.rb
+-	ruby -rromkan -ne 'puts $$1.to_roma if /^(.+?)	/' test-dict |\
++	ruby -Ke -rromkan -ne 'puts $$1.to_roma if /^(.+?)	/' test-dict |\
+ 	while read line; do\
+-	    echo $$line | ruby -ne 'chomp!;1.upto($$_.length) do |x| puts $$_[0,x] end';\
+-	done | ruby -I.. ../migemo-cache.rb test-dict
++	    echo $$line | ruby -Ke -ne '$$_.chomp!;1.upto($$_.length) do |x| puts $$_[0,x] end';\
++	done | ruby -Ke -I.. ../migemo-cache.rb test-dict
+ 
+ clean-local:
+ 	rm -f tmp.*
