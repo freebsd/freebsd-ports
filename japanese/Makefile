@@ -35,6 +35,7 @@
     SUBDIR += celrw
     SUBDIR += chasen
     SUBDIR += chasen-base
+    SUBDIR += cmigemo
     SUBDIR += csrd
     SUBDIR += ctags
     SUBDIR += dbskkd-cdb
