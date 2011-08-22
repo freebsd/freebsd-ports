@@ -6,12 +6,16 @@
 #
 
 PORTNAME=	mysqlbackup
-PORTVERSION=	2.4
+PORTVERSION=	2.5
 CATEGORIES=	databases
-MASTER_SITES=	ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
+MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
+		ftp://ftp.renatasystems.org/pub/FreeBSD/ports/distfiles/
 
 MAINTAINER=	alexey@renatasystems.org
 COMMENT=	Program to create everyday MySQL-database servers backup
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 USE_MYSQL=	yes
 NO_BUILD=	yes
