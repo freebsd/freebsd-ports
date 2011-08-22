@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Module-CoreList
-PORTVERSION=	2.54
+PORTVERSION=	2.55
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -24,13 +24,15 @@ SUB_FILES=	pkg-install
 .include <bsd.port.pre.mk>
 
 .if ${PERL_LEVEL} < 500809
-PLIST_FILES+=	bin/corelist
+PLIST_SUB=	BIN_CORELIST=""
+.else
+PLIST_SUB=	BIN_CORELIST="@comment "
 .endif
 
 pre-patch:
 	@${MV} ${WRKSRC}/corelist ${WRKSRC}/p5corelist
-	@${PERL} -pi -e 's,^corelist$$,p5corelist,' ${WRKSRC}/MANIFEST
-	@${PERL} -pi -e 's,corelist,p5corelist,' ${WRKSRC}/Makefile.PL ${WRKSRC}/t/pod.t
+	@${REINPLACE_CMD} -e 's|^corelist$$|p5corelist|' ${WRKSRC}/MANIFEST
+	@${REINPLACE_CMD} -e 's|corelist|p5corelist|' ${WRKSRC}/Makefile.PL ${WRKSRC}/t/pod.t
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
