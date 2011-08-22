@@ -69,6 +69,7 @@
     SUBDIR += p5-Net-FTPSSL
     SUBDIR += p5-Net-FTPServer
     SUBDIR += p5-POE-Component-Client-FTP
+    SUBDIR += p5-SOAP-Transport-FTP
     SUBDIR += paraget
     SUBDIR += pavuk
     SUBDIR += pear-Net_FTP
