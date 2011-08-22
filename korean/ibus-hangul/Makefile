@@ -24,7 +24,7 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
-USE_GNOME=	intltool pkgconfig
+USE_GNOME=	gnomehack intltool pkgconfig
 USE_PYTHON=	yes
 
 post-install:
