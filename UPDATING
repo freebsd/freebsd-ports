@@ -5,6 +5,12 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110822:
+  AFFECTS: users of graphics/opencv
+  AUTHOR: mm@FreeBSD.org
+
+  OpenCV python module was moved to own port: graphics/py-opencv
+
 20110820:
   AFFECTS: users of www/apache* and depending ports
   AUTHOR: ohauer@FreeBSD.org
