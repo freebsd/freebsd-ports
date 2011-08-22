@@ -168,7 +168,7 @@ LATEST_LINK=	${PORTNAME}-core
 EXTRA_PATCHES+=	${FILESDIR}/extra-patch-opencv-core
 
 . elif defined(_BUILDING_OPENCV_PYTHON)
-COMMENT=	OpenCV Python Library
+COMMENT=	OpenCV Python library
 CATEGORIES=	graphics python
 PLIST=		${PKGDIR}/pkg-plist.python
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
