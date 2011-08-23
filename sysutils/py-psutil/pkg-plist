@@ -1,4 +1,5 @@
 %%PYTHON_SITELIBDIR%%/_psutil_bsd.so
+%%PYTHON_SITELIBDIR%%/_psutil_posix.so
 %%PYTHON_SITELIBDIR%%/psutil/__init__.py
 %%PYTHON_SITELIBDIR%%/psutil/__init__.pyc
 %%PYTHON_SITELIBDIR%%/psutil/__init__.pyo
@@ -17,9 +18,12 @@
 %%PYTHON_SITELIBDIR%%/psutil/_psposix.py
 %%PYTHON_SITELIBDIR%%/psutil/_psposix.pyc
 %%PYTHON_SITELIBDIR%%/psutil/_psposix.pyo
-%%PYTHON_SITELIBDIR%%/psutil/compat.py
-%%PYTHON_SITELIBDIR%%/psutil/compat.pyc
-%%PYTHON_SITELIBDIR%%/psutil/compat.pyo
+%%PYTHON_SITELIBDIR%%/psutil/_common.py
+%%PYTHON_SITELIBDIR%%/psutil/_common.pyc
+%%PYTHON_SITELIBDIR%%/psutil/_common.pyo
+%%PYTHON_SITELIBDIR%%/psutil/_compat.py
+%%PYTHON_SITELIBDIR%%/psutil/_compat.pyc
+%%PYTHON_SITELIBDIR%%/psutil/_compat.pyo
 %%PYTHON_SITELIBDIR%%/psutil/error.py
 %%PYTHON_SITELIBDIR%%/psutil/error.pyc
 %%PYTHON_SITELIBDIR%%/psutil/error.pyo
