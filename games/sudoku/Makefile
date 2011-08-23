@@ -7,18 +7,16 @@
 #
 
 PORTNAME=	sudoku
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	games
-MASTER_SITES=	http://www.laurasia.com.au/downloads/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	http://chipstips.com/download/
+EXTRACT_SUFX=	.tbz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sterling@camdensoftware.com
 COMMENT=	Console based sudoku games
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
-
+USE_BZIP2=	yes
+USE_NCURSES=	yes
 PLIST_FILES=	bin/sudoku \
 		share/sudoku/template
 PLIST_DIRS=	share/sudoku
