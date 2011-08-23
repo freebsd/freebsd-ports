@@ -32,14 +32,10 @@ RCS_ID = %q$Idaemons: /home/cvs/sunshar/sunshar.rb,v 1.13 2004/02/28 14:15:47 kn
 RCS_REVISION = RCS_ID.split[2]
 MYNAME = File.basename($0)
 
-require 'parsearg'
+require 'optparse'
 require 'fileutils'
 require 'shellwords'
 require 'stringio'
-
-begin
-  require 'features/ruby18/dir'
-rescue LoadError; end
 
 $USAGE = 'usage'
 
@@ -69,32 +65,32 @@ usage:  #{MYNAME} [-fnq] [-p level] [file]
 end
 
 def main
-  parseArgs(0, nil, 'fhnq', 'd:', 'p:')
+  params = ARGV.getopts("fhnq", "d:", "p:")
 
-  if $OPT_h
+  if params['h']
     usage
     exit 0
   end
 
-  if $OPT_f
+  if params['f']
     $force = true
   end
 
-  if $OPT_n
+  if params['n']
     $dryrun = true
   end
 
-  if $OPT_q
+  if params['q']
     $quiet = true
   end
 
-  $dir = $OPT_d || '.'
+  $dir = params['d'] || '.'
 
-  if $OPT_p
-    $strip_level = $OPT_p.to_i rescue -1
+  if not params['p'].nil?
+    $strip_level = params['p'].to_i rescue -1
 
     if $strip_level < 0
-      STDERR.puts "negative value ignored: #{$OPT_p}"
+      STDERR.puts "negative value ignored: #{params['p']}"
     end
   end
 
