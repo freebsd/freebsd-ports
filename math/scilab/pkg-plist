@@ -81,6 +81,7 @@ share/applications/scilab.desktop
 %%DATADIR%%/contrib/xcos_toolbox_skeleton/help/en_US/tbx_sum.xml
 %%DATADIR%%/contrib/xcos_toolbox_skeleton/help/fr_FR/build_help.sce
 %%DATADIR%%/contrib/xcos_toolbox_skeleton/images/gif/TBX_SUM_c.gif
+%%WITHOUT_GUI%%%%DATADIR%%/contrib/xcos_toolbox_skeleton/images/h5/.keep_me
 %%DATADIR%%/contrib/xcos_toolbox_skeleton/images/svg/TBX_SUM_c.svg
 %%DATADIR%%/contrib/xcos_toolbox_skeleton/license.txt
 %%DATADIR%%/contrib/xcos_toolbox_skeleton/macros/buildmacros.sce
