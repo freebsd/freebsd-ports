@@ -36,7 +36,7 @@ share/zsh/site-functions/_pkgtools
 %%EXAMPLESDIR%%/bash/complete.sample
 %%EXAMPLESDIR%%/tcsh/complete.sample
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
-%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.md
 @dirrm %%EXAMPLESDIR%%/bash
 @dirrm %%EXAMPLESDIR%%/tcsh
 @dirrm %%EXAMPLESDIR%%
