@@ -127,9 +127,9 @@ USAGE_EOF
 	if ARGV.size != 1
 		usage
 	end
-	mtree = params[:m] || '/etc/mtree/BSD.local.dist'
-	pl = Plist.new(!params[:M], Mtree.read(mtree).paths).make(ARGV[0])
-	if params[:d]
+	mtree = params['m'] || '/etc/mtree/BSD.local.dist'
+	pl = Plist.new(!params['M'], Mtree.read(mtree).paths).make(ARGV[0])
+	if params['d']
 		plnotdirrm = []
 		pldirrm = []
 		pl.each {|ent|
