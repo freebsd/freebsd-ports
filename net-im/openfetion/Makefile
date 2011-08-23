@@ -50,7 +50,7 @@ CONFIGURE_ARGS+=--disable-gst
 .endif
 
 .if !defined(WITHOUT_NOTIFY)
-LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--enable-libnotify
 .else
 CONFIGURE_ARGS+=--disable-libnotify

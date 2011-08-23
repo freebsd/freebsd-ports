@@ -7,6 +7,7 @@
 
 PORTNAME=	artha
 PORTVERSION=	1.0.2
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF
 
@@ -35,7 +36,7 @@ OPTIONS=	NOTIFY "Popup word definition as notification" On
 .include <bsd.port.options.mk>
 
 .if defined(WITH_NOTIFY)
-LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
 .endif
 
 .include <bsd.port.mk>

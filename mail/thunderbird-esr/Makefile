@@ -7,6 +7,7 @@
 
 PORTNAME=	thunderbird
 DISTVERSION=	6.0
+PORTREVISION=	1
 CATEGORIES=	mail ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	${PORTNAME}/releases/${DISTVERSION}/source
@@ -80,7 +81,7 @@ MOZ_OPTIONS+=	--disable-gnomeui
 MOZ_OPTIONS+=	--disable-dbus --disable-libnotify
 .else
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		notify.1:${PORTSDIR}/devel/libnotify
+		notify.4:${PORTSDIR}/devel/libnotify
 .endif
 
 .if ${ARCH} == amd64 || ${ARCH} == i386

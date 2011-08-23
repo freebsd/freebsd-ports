@@ -8,7 +8,7 @@
 
 PORTNAME=	gossip
 PORTVERSION=	0.31
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -44,7 +44,7 @@ OPTIONS=	NOTIFY "Enable libnotify support" on \
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_NOTIFY)
-LIB_DEPENDS+=		notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=		notify.4:${PORTSDIR}/devel/libnotify
 .else
 CONFIGURE_ARGS+=	--enable-libnotify=no
 .endif

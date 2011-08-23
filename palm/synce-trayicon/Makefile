@@ -6,7 +6,7 @@
 
 PORTNAME=	synce-trayicon
 PORTVERSION=	0.14
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	palm
 MASTER_SITES=	SF/synce/SynCE-GNOME/${PORTVERSION}
 
@@ -17,7 +17,7 @@ LIB_DEPENDS=	rra.0:${PORTSDIR}/palm/synce-librra \
 		gtop-2.0.7:${PORTSDIR}/devel/libgtop \
 		unshield.0:${PORTSDIR}/archivers/unshield \
 		orange.0:${PORTSDIR}/archivers/liborange \
-		notify.1:${PORTSDIR}/devel/libnotify
+		notify.4:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	${LOCALBASE}/libexec/gvfsd-synce:${PORTSDIR}/palm/synce-gvfs \
 		${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
 

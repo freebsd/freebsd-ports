@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/x11/gnome-applets/Makefile,v 1.216 2010/09/27 10:14:28 kwm Exp $
+#   $MCom: ports/x11/gnome-applets/Makefile,v 1.219 2011/04/10 19:41:38 mezz Exp $
 #
 
 PORTNAME=	gnome-applets
 PORTVERSION=	2.32.1.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -29,7 +29,6 @@ RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/system-tools-backends-2.0.pc:${PORTS
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_GMAKE=	yes
-GNOME_DESKTOP_VERSION=2
 INSTALLS_OMF=	yes
 INSTALLS_ICONS=	yes
 USE_LDCONFIG=	yes
@@ -58,7 +57,7 @@ WITH_GNOME=	yes
 
 .if exists(${LOCALBASE}/libdata/pkgconfig/libnotify.pc) || \
 	!defined(WITHOUT_LIBNOTIFY)
-LIB_DEPENDS+=	notify:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
 .endif
 
 .if ${ARCH} != "i386" && ${ARCH} != "amd64"

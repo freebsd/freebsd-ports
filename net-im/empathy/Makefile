@@ -7,7 +7,7 @@
 
 PORTNAME=	empathy
 PORTVERSION=	2.32.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
 
@@ -23,6 +23,8 @@ LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
 		telepathy-farsight.0:${PORTSDIR}/net-im/telepathy-farsight \
 		telepathy-logger.1:${PORTSDIR}/net-im/telepathy-logger \
 		folks-telepathy.16:${PORTSDIR}/net-im/folks \
+		gcr.0:${PORTSDIR}/security/gnome-keyring \
+		notify.4:${PORTSDIR}/devel/libnotify \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
 		canberra-gtk.0:${PORTSDIR}/audio/libcanberra
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
@@ -81,7 +83,7 @@ RUN_DEPENDS+=	${LOCALBASE}/libexec/telepathy-haze:${PORTSDIR}/net-im/telepathy-h
 .endif
 
 .if defined(WITH_WEBKIT)
-LIB_DEPENDS+=	webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS+=	webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
 CONFIGURE_ARGS+=--enable-webkit
 PLIST_SUB+=	ADIUM=""
 .else

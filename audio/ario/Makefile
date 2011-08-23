@@ -7,6 +7,7 @@
 
 PORTNAME=	ario
 PORTVERSION=	1.5.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/ario-player/ario-player/${PORTVERSION}
 
@@ -17,6 +18,7 @@ LICENSE=	GPLv2
 
 LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
 		gcrypt:${PORTSDIR}/security/libgcrypt \
+		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		curl:${PORTSDIR}/ftp/curl \
 		notify:${PORTSDIR}/devel/libnotify \
 		soup:${PORTSDIR}/devel/libsoup22 \

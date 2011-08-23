@@ -7,7 +7,7 @@
 
 PORTNAME=		twitux
 PORTVERSION=	0.69
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=		net
 MASTER_SITES=	SF
 
@@ -16,7 +16,7 @@ COMMENT=		GNOME client for Twitter
 
 LIB_DEPENDS=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
 	sexy.2:${PORTSDIR}/x11-toolkits/libsexy \
-	notify.1:${PORTSDIR}/devel/libnotify \
+	notify.4:${PORTSDIR}/devel/libnotify \
 	canberra:${PORTSDIR}/audio/libcanberra
 
 USE_XORG=		x11

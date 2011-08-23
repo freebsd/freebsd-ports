@@ -7,6 +7,7 @@
 
 PORTNAME=	vlc
 DISTVERSION=	1.1.11
+PORTREVISION=	1
 PORTEPOCH=	3
 CATEGORIES=	multimedia audio ipv6 net www
 MASTER_SITES=	http://download.videolan.org/pub/videolan/${PORTNAME}/${DISTVERSION}/ \
@@ -21,7 +22,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt \
-		proxy.0:${PORTSDIR}/net/libproxy
+		proxy.1:${PORTSDIR}/net/libproxy
 
 OPTIONS=	A52 "A52 DVD audio decoder" On \
 		AALIB "Aalib Console Graphics Support" Off \
@@ -454,7 +455,7 @@ USE_GETTEXT=	yes
 
 .if defined(WITH_NOTIFY)
 CONFIGURE_ARGS+=--enable-notify
-LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
 .else
 CONFIGURE_ARGS+=--disable-notify
 .endif

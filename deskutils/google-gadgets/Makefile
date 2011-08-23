@@ -7,7 +7,7 @@
 
 PORTNAME=	google-gadgets
 PORTVERSION=	0.11.2
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	http://google-gadgets-for-linux.googlecode.com/files/
 DISTNAME=	${PORTNAME}-for-linux-${PORTVERSION}
@@ -58,7 +58,7 @@ QT_COMPONENTS=	webkit opengl gui corelib script network moc_build
 
 .if defined(WITH_GTKWEBKIT)
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/webkit-1.0.pc:${PORTSDIR}/www/webkit-gtk2
-LIB_DEPENDS+=	webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS+=	webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
 .endif
 
 .if defined(WITH_MOZILLA)

@@ -7,6 +7,7 @@
 
 PORTNAME=	alarm-clock
 PORTVERSION=	1.4
+PORTREVISION=	1
 CATEGORIES=	x11-clocks deskutils
 MASTER_SITES=	http://www.alarm-clock.pl/media/distfiles/
 
@@ -14,7 +15,7 @@ MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Alarm Clock for the GNOME desktop
 
 LIB_DEPENDS=	unique-1:${PORTSDIR}/x11-toolkits/unique \
-		notify.1:${PORTSDIR}/devel/libnotify
+		notify.4:${PORTSDIR}/devel/libnotify
 
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes

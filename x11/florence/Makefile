@@ -7,13 +7,14 @@
 
 PORTNAME=	florence
 PORTVERSION=	0.5.0
+PORTREVISION=	1
 CATEGORIES=	x11
 MASTER_SITES=	SF/florence/florence/${PORTVERSION}
 
 MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	Florence OnScreen Keyboard
 
-LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
+LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify \
 		cspi.10:${PORTSDIR}/accessibility/at-spi
 
 USE_XORG=	xtst

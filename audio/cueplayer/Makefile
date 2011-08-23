@@ -7,13 +7,14 @@
 
 PORTNAME=	cueplayer
 PORTVERSION=	0.28
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	CUE player
 
-LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify
 
 USE_QT_VER=	4
 QT_COMPONENTS=	gui xml qmake_build uic_build moc_build rcc_build network

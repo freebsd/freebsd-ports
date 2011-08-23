@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/epiphany/Makefile,v 1.240 2010/10/10 19:16:00 marcus Exp $
+#   $MCom: ports/www/epiphany/Makefile,v 1.246 2011/04/30 20:43:27 mezz Exp $
 #
 
 PORTNAME=	epiphany
 PORTVERSION=	2.30.6
-PORTREVISION?=	1
+PORTREVISION?=	2
 CATEGORIES=	www gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -19,20 +19,21 @@ COMMENT?=	An extremely lightweight and simple web browser for GNOME 2
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2 \
+		webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2 \
 		soup-gnome-2.4.1:${PORTSDIR}/devel/libsoup-gnome \
-		notify.1:${PORTSDIR}/devel/libnotify \
+		notify.4:${PORTSDIR}/devel/libnotify \
 		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes \
 		${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss \
 		${LOCALBASE}/share/icons/HighContrastLargePrint/index.theme:${PORTSDIR}/x11-themes/gnome-themes
+
+CONFLICTS=	epiphany-3.[0-9]*
 
 USE_LDCONFIG=	yes
 INSTALLS_ICONS=	yes
 USE_GETTEXT=	yes
 USE_BZIP2=	yes
 USE_PYTHON=	yes
-GNOME_DESKTOP_VERSION=2
 USE_GNOME=	gnomeprefix gnomehack intlhack gnomedesktop desktopfileutils
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes

@@ -7,6 +7,7 @@
 
 PORTNAME=	shotwell
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	graphics gnome
 MASTER_SITES=	http://www.yorba.org/download/shotwell/${PORTVERSION:R}/
 
@@ -22,7 +23,7 @@ LIB_DEPENDS=	sqlite3:${PORTSDIR}/databases/sqlite3 \
 		gexiv2.0:${PORTSDIR}/graphics/gexiv2 \
 		exif.12:${PORTSDIR}/graphics/libexif \
 		gphoto2.2:${PORTSDIR}/graphics/libgphoto2 \
-		webkit:${PORTSDIR}/www/webkit-gtk2 \
+		webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2 \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
 		raw.2:${PORTSDIR}/graphics/libraw
 

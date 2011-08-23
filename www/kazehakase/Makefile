@@ -8,7 +8,7 @@
 
 PORTNAME=	kazehakase
 PORTVERSION=	0.5.8
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	www
 MASTER_SITES=	${MASTER_SITE_SOURCEFORGE_JP}
 MASTER_SITE_SUBDIR=	${PORTNAME}/43802
@@ -47,7 +47,7 @@ BROKEN=		does not build on 6.x
 .endif
 
 .if defined(WITH_WEBKIT)
-LIB_DEPENDS+=	webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS+=	webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
 PLIST_SUB+=	WEBKIT=""
 .else
 PLIST_SUB+=	WEBKIT="@comment "

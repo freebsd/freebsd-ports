@@ -3,11 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/www/gnome-user-share/Makefile,v 1.23 2010/09/28 08:52:36 kwm Exp $
+#   $MCom: ports/www/gnome-user-share/Makefile,v 1.26 2011/04/30 20:43:27 mezz Exp $
 #
 
 PORTNAME=	gnome-user-share
 PORTVERSION=	2.30.1
+PORTREVISION=	1
 CATEGORIES=	www deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,7 +18,7 @@ COMMENT=	Personal file-sharing service for the GNOME Desktop
 
 LIB_DEPENDS=	avahi-client:${PORTSDIR}/net/avahi-app \
 		canberra.0:${PORTSDIR}/audio/libcanberra \
-		notify.1:${PORTSDIR}/devel/libnotify \
+		notify.4:${PORTSDIR}/devel/libnotify \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
 RUN_DEPENDS=	${LOCALBASE}/${APACHEMODDIR}/mod_dnssd.so:${PORTSDIR}/www/mod_dnssd \
 		console-kit-daemon:${PORTSDIR}/sysutils/consolekit

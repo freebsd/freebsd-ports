@@ -7,7 +7,7 @@
 
 PORTNAME=	lightning
 DISTVERSION=	1.0
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	deskutils
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	calendar/${PORTNAME}/releases/${DISTVERSION}b2/source
@@ -65,7 +65,7 @@ EXTRA_PATCHES=	${FILESDIR}/liboggplay_oss
 MOZ_OPTIONS+=	--disable-dbus --disable-libnotify
 .else
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		notify.1:${PORTSDIR}/devel/libnotify
+		notify.4:${PORTSDIR}/devel/libnotify
 .endif
 
 post-patch:

@@ -7,7 +7,7 @@
 
 PORTNAME=	rubrica
 PORTVERSION=	2.0.8
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	BERLIOS
 DISTNAME=	${PORTNAME}2-${PORTVERSION}
@@ -18,7 +18,7 @@ COMMENT=	An addressbook for the GNOME 2 desktop
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
 USE_BZIP2=	yes

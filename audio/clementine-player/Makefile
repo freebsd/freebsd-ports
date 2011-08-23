@@ -7,6 +7,7 @@
 
 PORTNAME=	clementine
 PORTVERSION=	0.7.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMESUFFIX=	-player
@@ -16,7 +17,7 @@ COMMENT=	A cross-platform music player based on Amarok 1.4
 
 LIB_DEPENDS=	lastfm.0:${PORTSDIR}/audio/liblastfm \
 		tag.1:${PORTSDIR}/audio/taglib \
-		notify.1:${PORTSDIR}/devel/libnotify \
+		notify.4:${PORTSDIR}/devel/libnotify \
 		xine.1:${PORTSDIR}/multimedia/libxine \
 		mtp:${PORTSDIR}/audio/libmtp
 BUILD_DEPENDS=	${LOCALBASE}/include/boost/shared_ptr.hpp:${PORTSDIR}/devel/boost-libs

@@ -7,7 +7,7 @@
 
 PORTNAME=	pino
 PORTVERSION=	0.2.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net-im
 MASTER_SITES=	GOOGLE_CODE
 
@@ -17,10 +17,10 @@ COMMENT=	A simple and fast Twitter and Identi.ca client
 BUILD_DEPENDS=	${LOCALBASE}/bin/valac:${PORTSDIR}/lang/vala
 LIB_DEPENDS=	gee.2:${PORTSDIR}/devel/libgee \
 		gtkspell.0:${PORTSDIR}/textproc/gtkspell \
-		notify.1:${PORTSDIR}/devel/libnotify \
+		notify.4:${PORTSDIR}/devel/libnotify \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique \
-		webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2
+		webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
 
 BROKEN=		Doesn't build with vala-0.10
 

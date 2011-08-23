@@ -7,13 +7,14 @@
 
 PORTNAME=	surf
 PORTVERSION=	0.4.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/
 
 MAINTAINER=	davide.italiano@gmail.com
 COMMENT=	A simple Web browser based on WebKit/Gtk+
 
-LIB_DEPENDS=	webkit-1.0:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS=	webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
 RUN_DEPENDS=	dmenu:${PORTSDIR}/x11/dmenu
 
 USE_GNOME=	gtk20 pkgconfig

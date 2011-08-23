@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-settings
 PORTVERSION=	4.8.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/${PORTNAME}/${PORTVERSION:R}
@@ -63,7 +63,7 @@ PLIST_SUB+=	XRANDR="@comment "
 .endif
 
 .if defined(WITH_NOTIFY)
-LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--enable-libnotify
 .else
 CONFIGURE_ARGS+=--disable-libnotify

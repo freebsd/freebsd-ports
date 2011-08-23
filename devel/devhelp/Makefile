@@ -7,6 +7,7 @@
 
 PORTNAME=	devhelp
 PORTVERSION=	2.32.0
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
@@ -15,7 +16,7 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Developer help browser for GNOME 2
 
-LIB_DEPENDS=	webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2 \
+LIB_DEPENDS=	webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2 \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
 
 USE_BZIP2=	yes

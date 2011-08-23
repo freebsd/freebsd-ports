@@ -8,6 +8,7 @@
 
 PORTNAME=	midori
 PORTVERSION=	0.3.6
+PORTREVISION=	1
 CATEGORIES=	www xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -16,9 +17,9 @@ DIST_SUBDIR=	xfce4
 MAINTAINER=	kwm@FreeBSD.org
 COMMENT=	Lightweight web browser using WebKit browser engine
 
-LIB_DEPENDS=	webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2 \
+LIB_DEPENDS=	webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2 \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		notify.1:${PORTSDIR}/devel/libnotify
+		notify.4:${PORTSDIR}/devel/libnotify
 BUILD_DEPENDS=	rsvg-convert:${PORTSDIR}/graphics/librsvg2 \
 		valac:${PORTSDIR}/lang/vala
 RUN_DEPENDS=	${LOCALBASE}/share/certs/ca-root-nss.crt:${PORTSDIR}/security/ca_root_nss

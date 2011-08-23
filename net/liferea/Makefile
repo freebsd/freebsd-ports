@@ -14,7 +14,7 @@ MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Simple RSS/RDF feed reader
 
 LIB_DEPENDS=	sqlite3.8:${PORTSDIR}/databases/sqlite3 \
-		webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2
+		webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
 
 USE_GNOME=	gnomeprefix gnomehack libglade2 gconf2
 USE_GMAKE=	yes

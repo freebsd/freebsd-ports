@@ -3,12 +3,12 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnome-mount/Makefile,v 1.24 2008/02/04 23:18:46 mezz Exp $
+#   $MCom: ports/sysutils/gnome-mount/Makefile,v 1.28 2011/03/08 19:25:20 kwm Exp $
 #
 
 PORTNAME=	gnome-mount
 PORTVERSION=	0.8
-PORTREVISION=	7
+PORTREVISION=	9
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	http://hal.freedesktop.org/releases/
 
@@ -16,8 +16,8 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A front-end to mount, umount, and eject using HAL
 
 LIB_DEPENDS=	hal.1:${PORTSDIR}/sysutils/hal \
-		notify.1:${PORTSDIR}/devel/libnotify \
-		gnome-keyring:${PORTSDIR}/security/gnome-keyring
+		notify.4:${PORTSDIR}/devel/libnotify \
+		gnome-keyring:${PORTSDIR}/security/libgnome-keyring
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/polkit-gnome.pc:${PORTSDIR}/sysutils/policykit-gnome
 
 USE_GNOME=	gnomeprefix gnomehack intlhack gconf2 gtk20

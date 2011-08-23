@@ -7,6 +7,7 @@
 
 PORTNAME=	audacious-plugins
 PORTVERSION=	2.5.4
+PORTREVISION=	1
 CATEGORIES=	multimedia audio
 MASTER_SITES=	http://distfiles.atheme.org/
 
@@ -80,7 +81,7 @@ CONFIGURE_ARGS+=--disable-sdlout
 .endif
 
 .if defined(WITH_NOTIFY) || exists(${LOCALBASE}/lib/libnotify.so.1)
-LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--enable-notify
 PLIST_SUB+=     NOTIFY=""
 .else

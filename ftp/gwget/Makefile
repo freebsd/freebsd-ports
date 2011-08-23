@@ -7,7 +7,7 @@
 
 PORTNAME=	gwget
 PORTVERSION=	1.0.4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	ftp gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -36,7 +36,7 @@ GCONF_SCHEMAS=	${PORTNAME}.schemas
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_LIBNOTIFY)
-LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS+=	${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
 .else
 CONFIGURE_ARGS+=	--disable-libnotify

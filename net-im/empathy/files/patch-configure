@@ -1,5 +1,5 @@
---- configure.orig	2010-11-18 17:41:43.000000000 +0100
-+++ configure	2010-11-18 17:41:43.000000000 +0100
+--- configure.orig	2011-08-16 16:19:02.000000000 +0200
++++ configure	2011-08-16 16:19:59.000000000 +0200
 @@ -13390,8 +13390,8 @@
  .SECONDARY: $(gsettings_SCHEMAS)
  
@@ -11,6 +11,62 @@
  
  install-gsettings-schemas: $(gsettings_SCHEMAS:.xml=.valid)
  	@$(NORMAL_INSTALL)
+@@ -14771,14 +14771,14 @@
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libnotify >= \$LIBNOTIFY_REQUIRED
+-    libnotify < 0.7\""; } >&5
++    libnotify < 0.9\""; } >&5
+   ($PKG_CONFIG --exists --print-errors "libnotify >= $LIBNOTIFY_REQUIRED
+-    libnotify < 0.7") 2>&5
++    libnotify < 0.9") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+   pkg_cv_LIBNOTIFY_CFLAGS=`$PKG_CONFIG --cflags "libnotify >= $LIBNOTIFY_REQUIRED
+-    libnotify < 0.7" 2>/dev/null`
++    libnotify < 0.9" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -14790,14 +14790,14 @@
+  elif test -n "$PKG_CONFIG"; then
+     if test -n "$PKG_CONFIG" && \
+     { { $as_echo "$as_me:${as_lineno-$LINENO}: \$PKG_CONFIG --exists --print-errors \"libnotify >= \$LIBNOTIFY_REQUIRED
+-    libnotify < 0.7\""; } >&5
++    libnotify < 0.9\""; } >&5
+   ($PKG_CONFIG --exists --print-errors "libnotify >= $LIBNOTIFY_REQUIRED
+-    libnotify < 0.7") 2>&5
++    libnotify < 0.9") 2>&5
+   ac_status=$?
+   $as_echo "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
+   test $ac_status = 0; }; then
+   pkg_cv_LIBNOTIFY_LIBS=`$PKG_CONFIG --libs "libnotify >= $LIBNOTIFY_REQUIRED
+-    libnotify < 0.7" 2>/dev/null`
++    libnotify < 0.9" 2>/dev/null`
+ else
+   pkg_failed=yes
+ fi
+@@ -14818,16 +14818,16 @@
+ fi
+         if test $_pkg_short_errors_supported = yes; then
+ 	        LIBNOTIFY_PKG_ERRORS=`$PKG_CONFIG --short-errors --print-errors "libnotify >= $LIBNOTIFY_REQUIRED
+-    libnotify < 0.7" 2>&1`
++    libnotify < 0.9" 2>&1`
+         else
+ 	        LIBNOTIFY_PKG_ERRORS=`$PKG_CONFIG --print-errors "libnotify >= $LIBNOTIFY_REQUIRED
+-    libnotify < 0.7" 2>&1`
++    libnotify < 0.9" 2>&1`
+         fi
+ 	# Put the nasty error message in config.log where it belongs
+ 	echo "$LIBNOTIFY_PKG_ERRORS" >&5
+ 
+ 	as_fn_error $? "Package requirements (libnotify >= $LIBNOTIFY_REQUIRED
+-    libnotify < 0.7) were not met:
++    libnotify < 0.9) were not met:
+ 
+ $LIBNOTIFY_PKG_ERRORS
+ 
 @@ -15049,11 +15049,11 @@
  fi
  

@@ -7,6 +7,7 @@
 
 PORTNAME=		webkitgtk
 PORTVERSION=		1.1.8
+PORTREVISION=		1
 CATEGORIES=		www python
 MASTER_SITES=		GOOGLE_CODE
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ COMMENT=		Python bindings for the WebKit GTK+ port
 LICENSE=		GPLv2
 LICENSE_FILE=		${WRKSRC}/COPYING
 
-LIB_DEPENDS=		webkit:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS=		webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
 
 PROJECTHOST=		pywebkitgtk
 

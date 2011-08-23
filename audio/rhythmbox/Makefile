@@ -3,12 +3,12 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/audio/rhythmbox/Makefile,v 1.111 2010/09/28 15:55:46 kwm Exp $
+#   $MCom: ports/audio/rhythmbox/Makefile,v 1.115 2011/05/04 18:44:36 kwm Exp $
 #
 
 PORTNAME=	rhythmbox
 PORTVERSION=	0.12.8
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	audio gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -26,6 +26,8 @@ LIB_DEPENDS=	musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup \
 		gnome-media-profiles.0:${PORTSDIR}/audio/gnome-media \
 		brasero-media.3:${PORTSDIR}/sysutils/brasero
+
+CONFLICTS=	rhythmbox-2.[0-9]* rhythmbox-3.[0-9]*
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -89,7 +91,7 @@ PLIST_SUB+=		MTP="@comment "
 .if defined(WITH_DAAP)
 CONFIGURE_ARGS+=	--enable-daap  --with-mdns=avahi
 LIB_DEPENDS+=		avahi-client:${PORTSDIR}/net/avahi-app \
-    			gnome-keyring:${PORTSDIR}/security/gnome-keyring
+    			gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring
 PLIST_SUB+=		DAAP=""
 .else
 .if exists(${LOCALBASE}/lib/libavahi-client.a)
@@ -100,7 +102,7 @@ PLIST_SUB+=		DAAP="@comment "
 .endif
 
 .if !defined(WITHOUT_NOTIFY)
-LIB_DEPENDS+=		notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=		notify.4:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS+=		${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
 .else
 CONFIGURE_ARGS+=	--disable-libnotify
