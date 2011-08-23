@@ -6195,6 +6195,8 @@ ja-celrw                        ports/japanese/celrw
 ja-cgdic-fpw                    ports/japanese/CGdic-fpw
 ja-chasen                       ports/japanese/chasen
 ja-chasen-base                  ports/japanese/chasen-base
+ja-cmigemo                      ports/japanese/cmigemo
+ja-cmigemo-dict                 ports/japanese/cmigemo-dict
 ja-csrd                         ports/japanese/csrd
 ja-ctags                        ports/japanese/ctags
 ja-dbskkd-cdb                   ports/japanese/dbskkd-cdb
@@ -13978,6 +13980,8 @@ p5-SOAP-Data-Builder            ports/net/p5-SOAP-Data-Builder
 p5-SOAP-Lite                    ports/net/p5-SOAP-Lite
 p5-SOAP-Lite-060                ports/net/p5-SOAP-Lite-060
 p5-SOAP-MySOAP                  ports/net/p5-SOAP-MySOAP
+p5-SOAP-Transport-FTP           ports/ftp/p5-SOAP-Transport-FTP
+p5-SOAP-Transport-JABBER        ports/net-im/p5-SOAP-Transport-JABBER
 p5-SOAP-WSDL                    ports/devel/p5-SOAP-WSDL
 p5-SPOPS                        ports/devel/p5-SPOPS
 p5-SQL-Abstract                 ports/databases/p5-SQL-Abstract
@@ -18400,6 +18404,8 @@ p5-soap-data-builder            ports/net/p5-SOAP-Data-Builder
 p5-soap-lite                    ports/net/p5-SOAP-Lite
 p5-soap-lite-060                ports/net/p5-SOAP-Lite-060
 p5-soap-mysoap                  ports/net/p5-SOAP-MySOAP
+p5-soap-transport-ftp           ports/ftp/p5-SOAP-Transport-FTP
+p5-soap-transport-jabber        ports/net-im/p5-SOAP-Transport-JABBER
 p5-soap-wsdl                    ports/devel/p5-SOAP-WSDL
 p5-socket-class                 ports/net/p5-Socket-Class
 p5-socket-getaddrinfo           ports/net/p5-Socket-GetAddrInfo
@@ -24977,7 +24983,6 @@ sxsame                          ports/games/sxsame
 sybtcl                          ports/databases/sybtcl
 syck                            ports/textproc/syck
 sylpheed                        ports/mail/sylpheed
-sylpheed3                       ports/mail/sylpheed3
 symbion-sslproxy                ports/security/symbion-sslproxy
 symlinks                        ports/sysutils/symlinks
 symon                           ports/sysutils/symon
@@ -25522,6 +25527,7 @@ trac-ctxtnavadd                 ports/www/trac-ctxtnavadd
 trac-customfieldadmin           ports/www/trac-customfieldadmin
 trac-customroadmap              ports/www/trac-customroadmap
 trac-datefield                  ports/www/trac-datefield
+trac-defaultcc                  ports/www/trac-defaultcc
 trac-discussion                 ports/www/trac-discussion
 trac-down                       ports/www/trac-down
 trac-downloads                  ports/www/trac-downloads
@@ -25558,6 +25564,7 @@ trac-tags                       ports/www/trac-tags
 trac-themeengine                ports/www/trac-themeengine
 trac-ticketdelete               ports/www/trac-ticketdelete
 trac-ticketimport               ports/www/trac-ticketimport
+trac-tickettemplate             ports/www/trac-tickettemplate
 trac-timingandestimation        ports/www/trac-timingandestimation
 trac-tocmacro                   ports/www/trac-tocmacro
 trac-tracgoogleanalytics        ports/www/trac-TracGoogleAnalytics
