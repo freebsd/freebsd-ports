@@ -7,6 +7,7 @@
 
 PORTNAME=	virt-manager
 PORTVERSION=	0.9.0
+PORTREVISION=	1
 CATEGORIES=	deskutils net-mgmt
 MASTER_SITES=	http://virt-manager.et.redhat.com/download/sources/${PORTNAME}/
 
@@ -23,7 +24,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}dbus>=0.83.2:${PORTSDIR}/devel/py-dbus \
 		gtk-vnc>=0.3.10:${PORTSDIR}/net/gtk-vnc \
 		librsvg2>=2.32.1:${PORTSDIR}/graphics/librsvg2
 
-USE_GNOME=	pygtk2 pygnome2 libgnome gnomelibs
+USE_GNOME=	pygnome2
 INSTALLS_ICONS=	yes
 GCONF_SCHEMAS=	virt-manager.schemas
 GNU_CONFIGURE=	yes
