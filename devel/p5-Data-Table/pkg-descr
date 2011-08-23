@@ -12,9 +12,6 @@ record matching via keywords or patterns, table merging, and web
 publishing. Data::Table class also provides a straightforward interface to 
 other popular Perl modules such as DBI and GD::Graph.
 
-The current version of Table.pm is available at 
-http://www.geocities.com/easydatabase
-
 WWW: http://search.cpan.org/dist/Data-Table/
 Author: Yingyao Zhou & Guangzhou Zou <easydatabase@yahoo.com>
 

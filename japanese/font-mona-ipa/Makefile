@@ -15,6 +15,9 @@ DISTNAME=	opfc-ModuleHP-1.1.1_withIPAMonaFonts-${PORTVERSION}
 MAINTAINER=	hrs@FreeBSD.org
 COMMENT=	IPA Japanese TrueType fonts with Mona font
 
+BROKEN=	No Master Site
+EXPIRATION_DATE=	2011-09-01
+
 RUN_DEPENDS=	fc-cache:${PORTSDIR}/x11-fonts/fontconfig
 
 NO_BUILD=	yes

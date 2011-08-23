@@ -8,7 +8,7 @@ diff -u --new-file pppload-1.0/README.freebsd ./README.freebsd
 +This is a FreeBSD port of the linux program called pppload, available at
 +http://sunsite.unc.edu/pub/Linux/system/network/serial/ppp/pppload-1.0.tar.gz
 +
-+Original program homepage at:
++Original program homepage formerly at:
 +http://www.geocities.com/SiliconValley/Pines/1029/pppload.html
 +
 +I have modified the FreeBSD port to be able to show the throughput of

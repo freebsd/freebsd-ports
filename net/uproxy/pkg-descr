@@ -4,5 +4,3 @@ connected by a LAN sharing a dial up connection, but
 it could be used to play other games (such as Quake)
 and by every program using a UDP protocol where clients
 don't have to bind a fixed port (not only games!).
-
-WWW: http://www.geocities.com/SiliconValley/Vista/8155/uproxy/

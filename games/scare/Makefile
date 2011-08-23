@@ -8,8 +8,7 @@
 PORTNAME=	scare
 PORTVERSION=	1.3.7
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/programming/adrift/ \
-		http://www.geocities.com/legion_if/
+MASTER_SITES=	ftp://ftp.ifarchive.org/if-archive/programming/adrift/
 
 MAINTAINER=	roam@FreeBSD.org
 COMMENT=	ADRIFT-compatible interactive games interpreter
