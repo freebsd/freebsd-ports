@@ -516,6 +516,7 @@
     SUBDIR += postfix
     SUBDIR += postfix-current
     SUBDIR += postfix-gps
+    SUBDIR += postfix-logwatch
     SUBDIR += postfix-policyd-sf
     SUBDIR += postfix-policyd-spf
     SUBDIR += postfix-policyd-spf-perl
