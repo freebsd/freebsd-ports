@@ -8,7 +8,7 @@
 
 PORTNAME=	evince
 PORTVERSION=	2.32.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	graphics print gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,7 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 multi-format document viewer
 
 BUILD_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
-LIB_DEPENDS=	poppler-glib.5:${PORTSDIR}/graphics/poppler-gtk \
+LIB_DEPENDS=	poppler-glib.6:${PORTSDIR}/graphics/poppler-gtk \
 		spectre.1:${PORTSDIR}/print/libspectre
 RUN_DEPENDS=	${LOCALBASE}/share/icons/gnome/index.theme:${PORTSDIR}/misc/gnome-icon-theme
 
