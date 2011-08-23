@@ -24,7 +24,7 @@ diff -u --new-file pppload-1.0/pppload.1 ./pppload.1
  The name of the color to draw transmit rates in (default: red).
  .SH AUTHOR
  Sean Vyain <svyain@mail.tds.net, smvyain@softart.com>
-+www.geocities.com/SiliconValley/Pines/1029/pppload.html
++
 +
 +.SH FREEBSD PORT
 +Examples of usage for the FreeBSD port:

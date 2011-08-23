@@ -10,7 +10,6 @@ PORTVERSION=	1.51
 PORTREVISION=	3
 CATEGORIES=	emulators
 MASTER_SITES=	http://files.ipherswipsite.com/snes9x/ \
-		http://www.geocities.co.jp/SiliconValley-PaloAlto/2560/release/ \
 		http://www.lysator.liu.se/snes9x/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 

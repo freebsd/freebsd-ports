@@ -8,8 +8,7 @@
 PORTNAME=	oniguruma
 PORTVERSION=	2.5.8
 CATEGORIES=	devel textproc
-MASTER_SITES=	http://www.geocities.jp/kosako3/oniguruma/archive/:onig \
-		http://www.SpringDaemons.com/stas/:ruby
+MASTER_SITES=	http://www.SpringDaemons.com/stas/:ruby
 DISTFILES=	onigd${PORTVERSION:S/./_/g}${EXTRACT_SUFX}:onig \
 		ruby187p248-oniguruma.patch:ruby
 DIST_SUBDIR=	ruby

@@ -17,6 +17,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	A binary data dumper module for Ruby
 
+BROKEN=	No Master Site
+EXPIRATION_DATE=	2011-09-01
+
 USE_RUBY=	yes
 RUBY_NO_BUILD_DEPENDS=	yes
 

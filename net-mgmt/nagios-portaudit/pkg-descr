@@ -6,5 +6,3 @@ appropriate warnings to Nagios.
 
 Portaudit can also be successfully run remotely from nrpe, and does
 not require superuser privileges to operate.
-
-WWW: http://www.geocities.com/ntb4real/proj/portaudit.htm

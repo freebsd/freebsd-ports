@@ -11,6 +11,9 @@ MASTER_SITES=   http://www.geocities.com/jahan.geo/
 MAINTAINER=	jahan@bol-online.com
 COMMENT=	Replaces NULL value of current column with value from top row
 
+BROKEN=	No Master Site
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	mysqlclient.14:${PORTSDIR}/databases/mysql41-client
 
 PLIST_FILES=	bin/mysql_last_value

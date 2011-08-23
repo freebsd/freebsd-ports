@@ -16,6 +16,9 @@ DISTNAME=	sndstretch_xmms-${PORTVERSION}
 MAINTAINER=	ports@edwinm.ik.nu
 COMMENT=	Plugin for xmms to change the pitch and/or speed
 
+BROKEN=	No Master Site
+EXPIRATION_DATE=	2011-09-01
+
 LIB_DEPENDS=	xmms.4:${PORTSDIR}/multimedia/xmms
 
 WRKSRC=		${WRKDIR}/sndstretch_xmms

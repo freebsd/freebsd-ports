@@ -9,8 +9,7 @@ PORTVERSION=	0.5.3
 PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	sysutils
-MASTER_SITES=	http://www.geocities.com/stomljen/ \
-		${MASTER_SITE_LOCAL}
+MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ehaupt
 
 MAINTAINER=	bahamasfranks@gmail.com

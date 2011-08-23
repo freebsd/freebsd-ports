@@ -15,6 +15,9 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	ufo@februality.com
 COMMENT=	An implementation of Red-Black Tree for Ruby
 
+BROKEN=	No Master Site
+EXPIRATION_DATE=	2011-09-01
+
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
 
