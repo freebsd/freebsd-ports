@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	plugger
-PORTVERSION=	5.1.3
-PORTREVISION=	7
+PORTVERSION=	5.1.5
 CATEGORIES=	www audio graphics multimedia
 MASTER_SITES=	http://fredrik.hubbe.net/plugger/
 
