@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.geocities.com/m_evmenkin/
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Bluetooth traffic dumper, similar to tcpdump
 
-BROKEN=	No Master Site
+DEPRECATED=	No Master Site
 EXPIRATION_DATE=	2011-09-01
 
 WRKSRC=		${WRKDIR}/${PORTNAME}

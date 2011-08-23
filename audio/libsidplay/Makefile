@@ -14,7 +14,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	sec@42.org
 COMMENT=	A Commodore SID-chip emulator library to play SID music files
 
-BROKEN=	No Master Site
+DEPRECATED=	No Master Site
 EXPIRATION_DATE=	2011-09-01
 
 USE_AUTOTOOLS=	libtool

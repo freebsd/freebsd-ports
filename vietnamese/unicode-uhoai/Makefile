@@ -16,7 +16,7 @@ DISTNAME=	uhoaiw21
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	Unicode TrueType Font with UHoai Vietnamese encoding
 
-BROKEN=	No Master Site
+DEPRECATED=	No Master Site
 EXPIRATION_DATE=	2011-09-01
 
 USE_ZIP=	yes
