@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	openssn
-PORTVERSION=	0.6
+PORTVERSION=	0.7
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jessefrgsmith@yahoo.ca
 COMMENT=	A modern submarine simulator
 
-USE_SDL=	sdl gfx image
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+USE_SDL=	sdl gfx image mixer
 USE_XORG=	x11 xau xdmcp xext xmu xpm xxf86vm
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
