@@ -17,7 +17,7 @@ DIST_SUBDIR=	xpi/${DISTNAME}
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	Localized interface for SeaMonkey 2
 
-USE_SEAMONKEY=	yes
+USE_SEAMONKEY=	20
 USE_XPI=	seamonkey2 linux-seamonkey
 
 USE_SUBMAKE=	yes

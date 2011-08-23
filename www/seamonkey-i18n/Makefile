@@ -19,7 +19,7 @@ COMMENT=	Localized interface for SeaMonkey 2.3
 
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USE_SEAMONKEY=	yes
+USE_SEAMONKEY=	23
 USE_XPI=	seamonkey
 
 USE_SUBMAKE=	yes

@@ -24,7 +24,7 @@ RUN_DEPENDS+=	xpi-quick-locale-switcher>=0:${PORTSDIR}/www/xpi-quick-locale-swit
 .endif
 
 NO_BUILD=	yes
-USE_THUNDERBIRD=	yes
+USE_THUNDERBIRD=	60
 USE_XPI=	thunderbird
 
 THUNDERBIRD_I18N_ALL=	ar br ca cs da de en-GB en-US es-AR es-ES et eu fi fr \

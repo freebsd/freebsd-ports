@@ -19,7 +19,7 @@ COMMENT=	Localized interface for Firefox 5.0
 
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
-USE_FIREFOX=	yes
+USE_FIREFOX=	60
 USE_XPI=	firefox
 
 USE_SUBMAKE=	yes
