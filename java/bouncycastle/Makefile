@@ -37,7 +37,7 @@ JARS=		bcprov bcmail bctsp bcpg
 
 PORTDOCS=	*
 
-PORTSCOUT=	skipv:1.46
+PORTSCOUT=	skipv:146
 
 post-patch:
 	@${REINPLACE_CMD} s/BERConstructedOctetString/DEROctetString/ \
