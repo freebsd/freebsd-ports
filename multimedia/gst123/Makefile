@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gst123
-PORTVERSION=	0.2.0
+PORTVERSION=	0.2.1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://space.twc.de/~stefan/gst123/
 
