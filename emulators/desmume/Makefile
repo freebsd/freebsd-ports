@@ -6,17 +6,19 @@
 #
 
 PORTNAME=	desmume
-PORTVERSION=	0.9.6
-PORTREVISION=	2
+PORTVERSION=	0.9.7
 CATEGORIES=	emulators
 MASTER_SITES=	SF
-EXTRACT_SUFX=	-1.tar.gz
 
 MAINTAINER=	llc2w@virginia.edu
 COMMENT=	Nintendo DS emulator
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 
+USE_GL=		gl
 USE_SDL=	sdl
 USE_GMAKE=	yes
 USE_GNOME=	gtk20 libglade2
@@ -28,8 +30,9 @@ USE_AUTOTOOLS=	aclocal autoconf
 ACLOCAL_ARGS=
 AUTOCONF_ARGS=
 
-CXXFLAGS+=	-I${LOCALBASE}/include -DGTKGLEXT_AVAILABLE -DHAVE_LIBGDKGLEXT_X11_1_0 \
-		-DHAVE_GL_GL_H -DHAVE_GL_GLU_H
+CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib -DGTKGLEXT_AVAILABLE \
+		-DHAVE_LIBGDKGLEXT_X11_1_0 -DHAVE_GL_GL_H -DHAVE_GL_GLU_H
+CXXFLAGS+=	${CFLAGS}
 
 MAN1=		desmume-cli.1 \
 		desmume-glade.1 \
@@ -40,5 +43,8 @@ MAN1=		desmume-cli.1 \
 .if ${ARCH} == "ia64"
 BROKEN=		Does not compile on ia64
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e 's|mode_t|mode_t_|g' ${WRKSRC}/src/utils/libfat/libfat_pc.h
 
 .include <bsd.port.post.mk>
