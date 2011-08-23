@@ -7,7 +7,7 @@
 
 PORTNAME=	solang
 PORTVERSION=	0.3
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics
 MASTER_SITES=	http://rishi.fedorapeople.org/solang/
 
@@ -22,7 +22,7 @@ LIB_DEPENDS=	gegl-0.1.105:${PORTSDIR}/graphics/gegl \
 		exiv2.10:${PORTSDIR}/graphics/exiv2 \
 		flickcurl.0:${PORTSDIR}/www/flickcurl \
 		gtkimageview.0:${PORTSDIR}/x11-toolkits/gtkimageview \
-		webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2 \
+		webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2 \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup \
 		gdl-1.3:${PORTSDIR}/x11-toolkits/gdl \

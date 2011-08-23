@@ -8,6 +8,7 @@
 
 PORTNAME=	zenity
 PORTVERSION=	2.32.1
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -36,7 +37,7 @@ OPTIONS=	NOTIFY "Enable libnotify support" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_NOTIFY)
-LIB_DEPENDS+=		notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=		notify.4:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=	--enable-libnotify
 .else
 CONFIGURE_ARGS+=	--disable-libnotify

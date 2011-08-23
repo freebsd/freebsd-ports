@@ -7,7 +7,7 @@
 
 PORTNAME=	cairo-dock-plugins
 DISTVERSION=	2.3.0~3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpadlibrarian.net/73753265/
 
@@ -71,7 +71,7 @@ PLIST_SUB+=	TERMINAL="@comment "
 .endif
 
 .if defined(WITH_WEBLETS)
-LIB_DEPENDS+=	webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS+=	webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
 CMAKE_ARGS+=	-Denable_weblets:STRING=yes
 PLIST_SUB+=	WEBLETS=""
 .else

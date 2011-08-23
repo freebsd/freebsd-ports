@@ -11,6 +11,7 @@
 
 PORTNAME=	seed
 PORTVERSION=	2.31.91
+PORTREVISION=	1
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,7 +21,7 @@ COMMENT=	GObject JavaScriptCore bridge
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/gnome-js-common.pc:${PORTSDIR}/devel/gnome-js-common
 LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi \
-		webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2 \
+		webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2 \
 		girepository-1.0.1:${PORTSDIR}/devel/gobject-introspection \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3 \

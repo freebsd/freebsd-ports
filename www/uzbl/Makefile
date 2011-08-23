@@ -7,13 +7,14 @@
 
 PORTNAME=	uzbl
 DISTVERSION=	0.0.0.${GITDATE}
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.linta.de/distfiles/
 
 MAINTAINER=	aehlig@linta.de
 COMMENT=	Web interface tools which adhere to the unix philosophy
 
-LIB_DEPENDS=	webkit:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS=	webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
 RUN_DEPENDS=	socat:${PORTSDIR}/net/socat \
 		${PYTHON_PKGNAMEPREFIX}gtk>=2:${PORTSDIR}/x11-toolkits/py-gtk2
 

@@ -106,7 +106,7 @@ CONFIGURE_ARGS+=--enable-locale-specific-tax
 
 .if defined(WITH_WEBKIT)
 CONFIGURE_ARGS+=--with-html-engine=webkit
-LIB_DEPENDS+=	webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS+=	webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
 .else
 USE_GNOME+=	gtkhtml3
 .endif

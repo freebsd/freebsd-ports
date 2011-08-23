@@ -3,12 +3,12 @@
 # Whom:			Dave McKay <dave@mu.org>
 #
 # $FreeBSD$
-#   $MCom: ports/security/seahorse-plugins/Makefile,v 1.25 2010/04/27 22:22:07 kwm Exp $
+#   $MCom: ports/security/seahorse-plugins/Makefile,v 1.28 2011/07/03 11:57:45 kwm Exp $
 #
 
 PORTNAME=	seahorse-plugins
 PORTVERSION=	2.30.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -83,7 +83,7 @@ PLIST_SUB+=	APPLET="@comment "
 .endif
 
 .if !defined(WITHOUT_NOTIFY)
-LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
 .else
 CONFIGURE_ARGS+=--disable-libnotify
 .endif

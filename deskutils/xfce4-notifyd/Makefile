@@ -7,6 +7,7 @@
 
 PORTNAME=	xfce4-notifyd
 PORTVERSION=	0.2.2
+PORTREVISION=	1
 CATEGORIES=	deskutils xfce
 MASTER_SITES=	XFCE
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -18,7 +19,7 @@ COMMENT=	Visually-appealing notification daemon for Xfce
 LICENSE=	GPLv3
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		notify.1:${PORTSDIR}/devel/libnotify
+		notify.4:${PORTSDIR}/devel/libnotify
 
 USE_AUTOTOOLS=	libtool
 GNU_CONFIGURE=	yes

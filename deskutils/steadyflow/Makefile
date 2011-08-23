@@ -7,6 +7,7 @@
 
 PORTNAME=	steadyflow
 PORTVERSION=	0.1.7
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpad.net/${PORTNAME}/trunk/${PORTVERSION}/+download/ \
 		https://launchpadlibrarian.net/72208624/
@@ -16,7 +17,7 @@ COMMENT=	Simple download manager
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		gee.2:${PORTSDIR}/devel/libgee \
-		notify.1:${PORTSDIR}/devel/libnotify \
+		notify.4:${PORTSDIR}/devel/libnotify \
 		unique-1.0.2:${PORTSDIR}/x11-toolkits/unique
 BUILD_DEPENDS=	valac:${PORTSDIR}/lang/vala
 

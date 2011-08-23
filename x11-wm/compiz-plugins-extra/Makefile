@@ -7,14 +7,15 @@
 
 PORTNAME=	compiz-plugins-extra
 PORTVERSION=	0.8.4
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://releases.compiz.org/${PORTVERSION}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Plugins for Compiz Composite Window Manager
 
-LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo
+LIB_DEPENDS=	cairo.2:${PORTSDIR}/graphics/cairo \
+		notify.4:${PORTSDIR}/devel/libnotify
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/compiz.pc:${PORTSDIR}/x11-wm/compiz \
 		${LOCALBASE}/libdata/pkgconfig/bcop.pc:${PORTSDIR}/devel/compiz-bcop \
 		${LOCALBASE}/libdata/pkgconfig/compiz-text.pc:${PORTSDIR}/x11-wm/compiz-plugins-main

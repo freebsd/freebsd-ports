@@ -7,7 +7,7 @@
 
 PORTNAME=		open-vm-tools
 PORTVERSION=		${BUILD_VER}
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		emulators kld
 MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/${RELEASE_DATE}
 DISTNAME=		open-vm-tools-${RELEASE_DATE}-${BUILD_VER}
@@ -32,7 +32,7 @@ PLIST_SUB+=		X11="@comment "
 CONFLICTS=		open-vm-tools-[0-9]*
 .else
 .if !defined(WITHOUT_LIBNOTIFY)
-LIB_DEPENDS+=		notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=		notify.4:${PORTSDIR}/devel/libnotify
 .endif
 .if defined(WITH_UNITY)
 CONFIGURE_ENV+=		CUSTOM_URIPARSER_CPPFLAGS="-I${LOCALBASE}/include/uriparser"

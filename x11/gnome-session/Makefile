@@ -8,6 +8,7 @@
 
 PORTNAME=	gnome-session
 PORTVERSION=	2.32.1
+PORTREVISION=	1
 CATEGORIES=	x11 gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,7 +21,7 @@ CONFLICTS=	gnome-session-2.31.* gnome-session-2.90.* gnome-session-3.*
 BUILD_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring \
-		notify.1:${PORTSDIR}/devel/libnotify \
+		notify.4:${PORTSDIR}/devel/libnotify \
 		execinfo:${PORTSDIR}/devel/libexecinfo \
 		upower-glib.1:${PORTSDIR}/sysutils/upower
 RUN_DEPENDS=	${LOCALBASE}/libexec/gnome-settings-daemon:${PORTSDIR}/sysutils/gnome-settings-daemon \

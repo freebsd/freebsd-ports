@@ -15,9 +15,13 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	C++ wrappers for libnotify
 
-LIB_DEPENDS=	notify.1:${PORTSDIR}/devel/libnotify \
+LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify \
 		glibmm-2.4.1:${PORTSDIR}/devel/glibmm \
 		gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24
+
+BROKEN=		doesn't build with notify 0.7.
+DEPRECATED=	Doesn't build and isn't used by anything.
+EXPIRATION_DATE=2011-09-23
 
 USE_BZIP2=	yes
 USE_AUTOTOOLS=	libtool

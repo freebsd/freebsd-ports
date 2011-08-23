@@ -9,13 +9,14 @@
 
 PORTNAME=	gnome-web-photo
 PORTVERSION=	0.10.1
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	GNOME
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tool to generate full-size image files and thumbnails
 
-LIB_DEPENDS=	webkit-1.0.13:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS=	webkitgtk-1.0.0:${PORTSDIR}/www/webkit-gtk2
 
 LICENSE=	LGPL21 LGPL3
 LICENSE_COMB=	dual

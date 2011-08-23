@@ -3,12 +3,12 @@
 # Whom:			Dave McKay <dave@mu.org>
 #
 # $FreeBSD$
-#   $MCom: ports/security/seahorse/Makefile,v 1.99 2010/09/28 09:01:33 kwm Exp $
+#   $MCom: ports/security/seahorse/Makefile,v 1.104 2011/07/03 11:57:45 kwm Exp $
 #
 
 PORTNAME=	seahorse
 PORTVERSION=	2.32.0
-PORTREVISION=	4
+PORTREVISION=	6
 CATEGORIES=	security gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -20,9 +20,11 @@ BUILD_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 RUN_DEPENDS=	gpg:${PORTSDIR}/security/gnupg
 LIB_DEPENDS=	gpgme.19:${PORTSDIR}/security/gpgme \
     		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		gnome-keyring:${PORTSDIR}/security/gnome-keyring \
+		gcr.0:${PORTSDIR}/security/gnome-keyring \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt \
 		soup-2.4.1:${PORTSDIR}/devel/libsoup
+
+CONFLICTS=	seahorse-3.[0-9]*
 
 USE_XORG=	sm
 USE_LDCONFIG=	yes
@@ -53,7 +55,7 @@ CONFIGURE_ARGS+=--disable-ldap
 .endif
 
 .if !defined(WITHOUT_NOTIFY)
-LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
 .else
 CONFIGURE_ARGS+=--disable-libnotify
 .endif

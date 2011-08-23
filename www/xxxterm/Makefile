@@ -7,6 +7,7 @@
 
 PORTNAME=	xxxterm
 PORTVERSION=	1.425
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://opensource.conformal.com/snapshots/xxxterm/
 EXTRACT_SUFX=	.tgz
@@ -16,7 +17,7 @@ COMMENT=	Minimalists vi-like web browser based on webkit and GTK+
 
 LIB_DEPENDS=	gnutls.47:${PORTSDIR}/security/gnutls \
 		soup-2.4:${PORTSDIR}/devel/libsoup \
-		webkit-1.0:${PORTSDIR}/www/webkit-gtk2
+		webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
 
 USE_GNOME=	gtk20 pkgconfig
 USE_PERL5_BUILD=YES

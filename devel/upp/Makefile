@@ -7,6 +7,7 @@
 
 PORTNAME=	upp
 PORTVERSION=	3211
+PORTREVISION=	1
 CATEGORIES=	devel x11-toolkits
 MASTER_SITES=	SF
 DISTNAME=	${PORTNAME}-x11-src-${PORTVERSION}
@@ -16,7 +17,7 @@ COMMENT=	Ultimate++, a BSD-licensed, cross-platform, C/C++ RAD suite
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		expat.6:${PORTSDIR}/textproc/expat2 \
-		notify.1:${PORTSDIR}/devel/libnotify
+		notify.4:${PORTSDIR}/devel/libnotify
 
 USE_XORG=	xft
 USE_GNOME=	gtk20

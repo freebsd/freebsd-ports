@@ -7,6 +7,7 @@
 
 PORTNAME=	vagalume
 PORTVERSION=	0.8.5
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://vagalume.igalia.com/files/source/ \
 		${MASTER_SITE_DEBIAN_POOL}
@@ -53,7 +54,7 @@ PLIST_SUB+=	DBUS="@comment "
 .if !defined(WITHOUT_TRAY)
 CONFIGURE_ARGS+=--enable-tray-icon
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/libnotify.pc:${PORTSDIR}/devel/libnotify
-LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
 .else
 CONFIGURE_ARGS+=--disable-tray-icon
 .endif

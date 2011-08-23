@@ -7,12 +7,14 @@
 
 PORTNAME=	tuntun
 PORTVERSION=	0.4.0
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security gnome
 MASTER_SITES=	http://tuntun.googlecode.com/files/
 
 MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	A Gnome applet gui for OpenVPN
+
+LIB_DEPENDS=	notify.4:${PORTSDIR}/devel/libnotify
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="`pkg-config --cflags libgnomeui-2.0`" \

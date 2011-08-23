@@ -7,7 +7,7 @@
 
 PORTNAME=	gnome-mplayer
 PORTVERSION=	1.0.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	multimedia gnome
 MASTER_SITES=	GOOGLE_CODE
 
@@ -56,7 +56,7 @@ CONFIGURE_ARGS+=	--without-gconf --disable-schemas-install
 .endif
 
 .if defined(WITH_NOTIFY)
-LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS+=	${LOCALBASE}/libexec/notification-daemon:${PORTSDIR}/deskutils/notification-daemon
 CONFIGURE_ARGS+=	--with-libnotify
 .else

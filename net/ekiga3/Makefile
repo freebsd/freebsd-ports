@@ -7,7 +7,7 @@
 
 PORTNAME=	ekiga3
 PORTVERSION=	3.2.6
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	net
 MASTER_SITES=	http://www.ekiga.org/admin/downloads/latest/sources/ekiga_${PORTVERSION}/
 DISTNAME=	ekiga-${PORTVERSION}
@@ -88,7 +88,7 @@ CONFIGURE_ARGS+=	--disable-h323
 .endif
 
 .if defined(WITH_NOTIFY)
-LIB_DEPENDS+=		notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=		notify.4:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=	--enable-notify
 .else
 CONFIGURE_ARGS+=	--disable-notify

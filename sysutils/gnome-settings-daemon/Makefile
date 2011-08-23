@@ -3,12 +3,12 @@
 # Whom:					Koop Mast <kwm@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/sysutils/gnome-settings-daemon/Makefile,v 1.72 2010/11/15 13:50:07 kwm Exp $
+#   $MCom: ports/sysutils/gnome-settings-daemon/Makefile,v 1.75 2011/04/25 19:56:57 mezz Exp $
 #
 
 PORTNAME=	gnome-settings-daemon
 PORTVERSION=	2.32.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	sysutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,9 +17,11 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME 2 settings daemon
 
 LIB_DEPENDS=	canberra-gtk.0:${PORTSDIR}/audio/libcanberra \
-		notify.1:${PORTSDIR}/devel/libnotify \
+		notify.4:${PORTSDIR}/devel/libnotify \
 		nss3.1:${PORTSDIR}/security/nss
 RUN_DEPENDS=	xrdb:${PORTSDIR}/x11/xrdb
+
+CONFLICTS=	gnome-settings-daemon-3.[0-9]*
 
 USE_XORG=	xxf86misc
 USE_BZIP2=	yes

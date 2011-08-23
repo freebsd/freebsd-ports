@@ -7,6 +7,7 @@
 
 PORTNAME=	fancy
 PORTVERSION=	0.9.13
+PORTREVISION=	1
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -15,7 +16,7 @@ MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Webkit based HTML renderer plugin for claws-mail
 
 LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl \
-		webkit:${PORTSDIR}/www/webkit-gtk2
+		webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
 BUILD_DEPENDS=	claws-mail>=3.7.9:${PORTSDIR}/mail/claws-mail
 RUN_DEPENDS=	claws-mail>=3.7.9:${PORTSDIR}/mail/claws-mail
 

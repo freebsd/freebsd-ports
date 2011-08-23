@@ -7,6 +7,7 @@
 
 PORTNAME=	notify-osd
 PORTVERSION=	0.9.29
+PORTREVISION=	1
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpadlibrarian.net/43419242/ \
 		CRITICAL
@@ -15,7 +16,7 @@ MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	On-screen-display notification agent using libnotify
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		notify.1:${PORTSDIR}/devel/libnotify
+		notify.4:${PORTSDIR}/devel/libnotify
 RUN_DEPENDS=	dbus-daemon:${PORTSDIR}/devel/dbus
 
 GNU_CONFIGURE=	yes

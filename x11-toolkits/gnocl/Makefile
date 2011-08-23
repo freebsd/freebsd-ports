@@ -7,6 +7,7 @@
 
 PORTNAME=	gnocl
 DISTVERSION=	${BASE_VERSION}-${NIGHTLY_BUILD}
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits devel
 MASTER_SITES=	SF/${PORTNAME}/Gnocl-Nightly-Build/
 
@@ -14,7 +15,7 @@ MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	GTK+ and Gnome extension for Tcl
 
 LIB_DEPENDS=	canberra.0:${PORTSDIR}/audio/libcanberra \
-   		notify.1:${PORTSDIR}/devel/libnotify
+   		notify.4:${PORTSDIR}/devel/libnotify
 
 USE_GMAKE=	yes
 USE_BZIP2=	yes

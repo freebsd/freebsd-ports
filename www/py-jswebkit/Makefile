@@ -7,6 +7,7 @@
 
 PORTNAME=		jswebkit
 PORTVERSION=		0.0.3
+PORTREVISION=		1
 CATEGORIES=		www python
 MASTER_SITES=		GOOGLE_CODE
 PKGNAMEPREFIX=		${PYTHON_PKGNAMEPREFIX}
@@ -16,7 +17,7 @@ MAINTAINER=		jupengfei@gmail.com
 COMMENT=		WebKit/JavaScriptCore Python bindings
 
 BUILD_DEPENDS=		cython:${PORTSDIR}/lang/cython
-LIB_DEPENDS=		webkit:${PORTSDIR}/www/webkit-gtk2
+LIB_DEPENDS=		webkitgtk-1.0:${PORTSDIR}/www/webkit-gtk2
 RUN_DEPENDS=		${BUILD_DEPENDS}
 
 PLIST_FILES=		%%PYTHON_SITELIBDIR%%/jswebkit.so

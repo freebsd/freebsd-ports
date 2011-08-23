@@ -8,7 +8,7 @@
 
 PORTNAME=	balsa
 PORTVERSION=	2.4.8
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail gnome
 MASTER_SITES=	http://pawsa.fedorapeople.org/balsa/
 DISTNAME=	balsa-${PORTVERSION}
@@ -74,7 +74,7 @@ CONFIGURE_ARGS+=--with-gtksourceview=2
 .endif
 
 .if !defined(WITHOUT_NOTIFY)
-LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--with-libnotify=yes
 .else
 CONFIGURE_ARGS+=--with-libnotify=no

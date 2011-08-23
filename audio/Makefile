@@ -360,6 +360,7 @@
     SUBDIR += libbpm
     SUBDIR += libbs2b
     SUBDIR += libcanberra
+    SUBDIR += libcanberra-gtk3
     SUBDIR += libcdaudio
     SUBDIR += libcddb
     SUBDIR += libcddb-doc

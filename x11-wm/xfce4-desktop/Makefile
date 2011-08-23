@@ -7,7 +7,7 @@
 
 PORTNAME=	xfce4-desktop
 PORTVERSION=	4.8.2
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	x11-wm xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/xfce/xfdesktop/${PORTVERSION:R}
@@ -21,7 +21,7 @@ DOCSDIR=	${PREFIX}/share/doc/xfdesktop
 
 LIB_DEPENDS=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		wnck-1.22:${PORTSDIR}/x11-toolkits/libwnck \
-		notify.1:${PORTSDIR}/devel/libnotify
+		notify.4:${PORTSDIR}/devel/libnotify
 
 GNU_CONFIGURE=	yes
 INSTALLS_ICONS=	yes

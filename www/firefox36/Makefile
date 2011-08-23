@@ -7,6 +7,7 @@
 
 PORTNAME=	firefox
 DISTVERSION=	3.6.20
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	www ipv6
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
@@ -82,7 +83,7 @@ MOZ_OPTIONS+=	--disable-gnomeui
 MOZ_OPTIONS+=	--disable-dbus --disable-libnotify
 .else
 LIB_DEPENDS+=	dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
-		notify.1:${PORTSDIR}/devel/libnotify
+		notify.4:${PORTSDIR}/devel/libnotify
 .endif
 
 post-extract:

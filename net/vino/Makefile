@@ -8,7 +8,7 @@
 
 PORTNAME=	vino
 PORTVERSION=	2.32.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -34,7 +34,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 GCONF_SCHEMAS=	vino-server.schemas
 
 .if !defined(WITHOUT_NOTIFY)
-LIB_DEPENDS+=	notify.1:${PORTSDIR}/devel/libnotify
+LIB_DEPENDS+=	notify.4:${PORTSDIR}/devel/libnotify
 CONFIGURE_ARGS+=--enable-libnotify=yes
 .else
 CONFIGURE_ARGS+=--enable-libnotify=no

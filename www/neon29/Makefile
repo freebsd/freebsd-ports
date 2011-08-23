@@ -7,7 +7,7 @@
 
 PORTNAME=	neon29
 PORTVERSION=	0.29.6
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://www.webdav.org/neon/
 DISTNAME=	neon-${PORTVERSION}
@@ -68,7 +68,7 @@ CONFIGURE_ARGS+=--without-gssapi
 
 .if defined(WITH_PROXY)
 CONFIGURE_ARGS+=--with-libproxy
-LIB_DEPENDS+=	proxy.0:${PORTSDIR}/net/libproxy
+LIB_DEPENDS+=	proxy.1:${PORTSDIR}/net/libproxy
 .else
 CONFIGURE_ARGS+=--without-libproxy
 .endif
