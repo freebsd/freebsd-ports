@@ -86,7 +86,10 @@ PLIST_SUB+=	IF_DEFAULT=""
 PLIST_SUB+=	IF_DEFAULT="@comment "
 .endif
 
-INSTALLED_SCRIPTS=	irb erb rdoc ri ruby testrb
+GEMS_DIR=	${PREFIX}/lib/ruby/gems/${RUBY_VER}
+PLIST_SUB+=	GEMS_DIR="lib/ruby/gems/${RUBY_VER}"
+
+INSTALLED_SCRIPTS=	irb erb rdoc ri ruby testrb gem
 
 EXTSAMPLES=	bigdecimal/sample/*.rb	\
 		curses/hello.rb		\
@@ -133,12 +136,6 @@ post-patch:
 	${MV} ${BUILD_WRKSRC}/ext/${d} ${WRKDIR}/
 .endfor
 
-# we get ruby-gems from ports
-.for d in bin/gem doc/rubygems lib/rubygems test/rubygems \
-	lib/rubygems.rb lib/ubygems.rb gem_prelude.rb
-	${RM} -rf ${BUILD_WRKSRC}/${d}
-.endfor
-
 # we get rake from ports
 .for d in bin/rake doc/rake lib/rake test/rake man/rake.1 lib/rake.rb
 	${RM} -rf ${BUILD_WRKSRC}/${d}
@@ -169,6 +166,8 @@ pre-su-install:
 	${TOUCH} ${RUBY_DOCDIR}/.keep_me
 	${TOUCH} ${RUBY_SITEARCHLIBDIR}/.keep_me
 	${TOUCH} ${RUBY_VENDORARCHLIBDIR}/.keep_me
+	${MKDIR} ${GEMS_DIR}/gems
+	${TOUCH} ${GEMS_DIR}/gems/.keep_me
 
 post-install:
 #
@@ -285,6 +284,29 @@ plist::
 		${SED} 's,^${RUBY_LIBDIR},%%RUBY_LIBDIR%%,' >> pkg-plist
 	@${FIND} -ds ${RUBY_LIBDIR}/ -type d | ${SORT} -r | \
 		${SED} -E -e 's,^${RUBY_LIBDIR}(.*),@dirrm %%RUBY_LIBDIR%%\1,' >> pkg-plist
+
+#
+# Find all gem files/folders
+#
+	@${FIND} -ds ${GEMS_DIR}/ ! -type d | \
+		${SED} 's,^${GEMS_DIR},%%GEMS_DIR%%,' >> pkg-plist
+	@${FIND} -ds ${GEMS_DIR}/ -type d | ${SORT} -r | \
+		${SED} -E -e 's,^${GEMS_DIR}(.*),@dirrm %%GEMS_DIR%%\1,' >> pkg-plist
+
+	@${ECHO_CMD} "%%RUBY_SITEARCHLIBDIR%%/.keep_me" >> pkg-plist
+	@${ECHO_CMD} "@dirrmtry %%RUBY_SITEARCHLIBDIR%%" >> pkg-plist
+	@${ECHO_CMD} "@dirrmtry %%RUBY_SITELIBDIR%%" >> pkg-plist
+	@${ECHO_CMD} "@dirrmtry lib/ruby/site_ruby" >> pkg-plist
+
+	@${ECHO_CMD} "%%RUBY_VENDORARCHLIBDIR%%/.keep_me" >> pkg-plist
+	@${ECHO_CMD} "@dirrmtry %%RUBY_VENDORARCHLIBDIR%%" >> pkg-plist
+	@${ECHO_CMD} "@dirrmtry %%RUBY_VENDORLIBDIR%%" >> pkg-plist
+	@${ECHO_CMD} "@dirrmtry lib/ruby/vendor_ruby" >> pkg-plist
+	@${ECHO_CMD} "@dirrmtry lib/ruby/gems" >> pkg-plist
+
+	@${ECHO_CMD} "@dirrmtry lib/ruby" >> pkg-plist
+
+	@${SED} -i "" -E -e "s,${RUBY_ARCH},%%RUBY_ARCH%%,g" pkg-plist
 
 test:
 	@(cd ${WRKSRC}; ${MAKE} test)

@@ -267,11 +267,7 @@ RUBY_MODNAME?=		${PORTNAME}
 
 # Commands
 RUBY_RD2?=		${LOCALBASE}/bin/rd2
-.if ${RUBY_VER} == 1.8
-RUBY_RDOC?=		${LOCALBASE}/bin/rdoc
-.else
 RUBY_RDOC?=		${LOCALBASE}/bin/rdoc${RUBY_VER:S/.//}
-.endif
 
 # Ports
 RUBY_BASE_PORT?=	lang/ruby${RUBY_VER:S/.//}
@@ -390,8 +386,10 @@ RUBY_FLAGS+=	-d
 #
 .if defined(USE_RUBYGEMS)
 
+. if ${RUBY_VER} == 1.8
 BUILD_DEPENDS+=	${RUBYGEMBIN}:${PORTSDIR}/devel/ruby-gems
 RUN_DEPENDS+=	${RUBYGEMBIN}:${PORTSDIR}/devel/ruby-gems
+. endif
 
 PKGNAMEPREFIX?=	rubygem-
 EXTRACT_SUFX=	.gem

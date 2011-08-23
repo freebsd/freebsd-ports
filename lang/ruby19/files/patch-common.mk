@@ -1,14 +1,5 @@
 --- common.mk.orig	2011-05-17 21:19:20.689620679 -0400
 +++ common.mk	2011-05-17 21:19:28.688621223 -0400
-@@ -96,7 +96,7 @@
- 
- GOLFOBJS      = goruby.$(OBJEXT) golf_prelude.$(OBJEXT)
- 
--PRELUDE_SCRIPTS = $(srcdir)/prelude.rb $(srcdir)/enc/prelude.rb $(srcdir)/gem_prelude.rb
-+PRELUDE_SCRIPTS = $(srcdir)/prelude.rb $(srcdir)/enc/prelude.rb
- PRELUDES      = prelude.c miniprelude.c
- GOLFPRELUDES = golf_prelude.c
- 
 @@ -256,7 +256,7 @@
  install-capi: capi pre-install-capi do-install-capi post-install-capi
  pre-install-capi:: install-prereq
