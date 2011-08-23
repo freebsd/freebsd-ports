@@ -5,6 +5,19 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110823:
+  AFFECTS: users of devel/libnotify and net/libproxy
+  AUTHOR: gnome@FreeBSD.org
+
+  libnotify and libproxy are updated with shared library bumps.
+  This requires dependancies to be rebuild.
+
+  # portmaster -r libnotify-0.\* libproxy-0.\*
+  # portmaster -a
+or
+  # portupgrade -rf libnotify-0.\* libproxy-0.\*
+  # portupgrade -aR
+
 20110822:
   AFFECTS: users of lang/ruby
   AUTHOR: stas@FreeBSD.org
