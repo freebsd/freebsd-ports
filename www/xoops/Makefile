@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	xoops
-PORTVERSION=	2.5.0
+PORTVERSION=	2.5.1
 CATEGORIES=	www
 MASTER_SITES=	SF/${PORTNAME}/XOOPS%20Core%20%28stable%20releases%29/XOOPS%20${PORTVERSION}
+DISTNAME=	${PORTNAME}-${PORTVERSION}a
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	A Dynamic Web CMS
 
-USE_ZIP=	yes
 USE_PHP=	mysql
 
 NO_BUILD=	yes
@@ -26,7 +26,7 @@ do-install:
 .for i in checksum.md5 checksum.php
 	@cd ${WRKSRC} && ${CP} ${i} ${WWWDIR}/
 .endfor
-.for d in docs extras htdocs upgrade
+.for d in docs extras htdocs
 	@cd ${WRKSRC} && ${COPYTREE_SHARE} ${d} ${WWWDIR}
 .endfor
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}

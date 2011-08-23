@@ -1,9 +1,11 @@
 %%WWWDIR%%/checksum.md5
 %%WWWDIR%%/checksum.php
+%%WWWDIR%%/docs/README
 %%WWWDIR%%/docs/changelog.250.txt
 %%WWWDIR%%/docs/changelog.txt
 %%WWWDIR%%/docs/install.html
 %%WWWDIR%%/docs/license.txt
+%%WWWDIR%%/docs/release_notes.txt
 %%WWWDIR%%/extras/altsys_functions.php
 %%WWWDIR%%/extras/altsys_functions.txt
 %%WWWDIR%%/extras/login.php
@@ -889,7 +891,7 @@
 %%WWWDIR%%/htdocs/install/img/table-caption-grey.png
 %%WWWDIR%%/htdocs/install/img/warning.png
 %%WWWDIR%%/htdocs/install/img/wizard_bg.png
-%%WWWDIR%%/htdocs/install/img/xoops_2.5.0.png
+%%WWWDIR%%/htdocs/install/img/xoops_2.5.1.png
 %%WWWDIR%%/htdocs/install/img/yes.png
 %%WWWDIR%%/htdocs/install/img/yes_big.png
 %%WWWDIR%%/htdocs/install/include/common.inc.php
@@ -1246,15 +1248,49 @@
 %%WWWDIR%%/htdocs/modules/system/css/ui/base/index.html
 %%WWWDIR%%/htdocs/modules/system/css/ui/base/ui.accordion.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/base/ui.all.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/base/ui.autocomplete.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/base/ui.base.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/base/ui.button.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/base/ui.core.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/base/ui.datepicker.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/base/ui.dialog.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/base/ui.progressbar.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/base/ui.resizable.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/base/ui.selectable.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/base/ui.slider.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/base/ui.tabs.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/base/ui.theme.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/images/index.html
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/images/ui-bg_diagonals-thick_90_eeeeee_40x40.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/images/ui-bg_flat_15_cd0a0a_40x100.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/images/ui-bg_glass_100_e4f1fb_1x400.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/images/ui-bg_glass_50_3baae3_1x400.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/images/ui-bg_glass_80_d7ebf9_1x400.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/images/ui-bg_highlight-hard_100_f2f5f7_1x100.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/images/ui-bg_highlight-hard_70_000000_1x100.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/images/ui-bg_highlight-soft_100_deedf7_1x100.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/images/ui-bg_highlight-soft_25_ffef8f_1x100.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/images/ui-icons_2694e8_256x240.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/images/ui-icons_3d80b3_256x240.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/images/ui-icons_72a7cf_256x240.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/index.html
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/ui.accordion.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/ui.all.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/ui.autocomplete.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/ui.base.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/ui.button.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/ui.core.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/ui.custom.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/ui.datepicker.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/ui.dialog.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/ui.progressbar.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/ui.resizable.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/ui.selectable.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/ui.slider.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/ui.tabs.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/ui.theme.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/index.html
 %%WWWDIR%%/htdocs/modules/system/css/ui/redmond/images/index.html
 %%WWWDIR%%/htdocs/modules/system/css/ui/redmond/images/ui-bg_flat_0_aaaaaa_40x100.png
@@ -1282,15 +1318,111 @@
 %%WWWDIR%%/htdocs/modules/system/css/ui/redmond/index.html
 %%WWWDIR%%/htdocs/modules/system/css/ui/redmond/ui.accordion.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/redmond/ui.all.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/redmond/ui.autocomplete.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/redmond/ui.base.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/redmond/ui.button.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/redmond/ui.core.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/redmond/ui.custom.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/redmond/ui.datepicker.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/redmond/ui.dialog.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/redmond/ui.progressbar.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/redmond/ui.resizable.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/redmond/ui.selectable.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/redmond/ui.slider.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/redmond/ui.tabs.css
 %%WWWDIR%%/htdocs/modules/system/css/ui/redmond/ui.theme.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/images/index.html
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/images/ui-bg_flat_0_aaaaaa_40x100.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/images/ui-bg_flat_75_ffffff_40x100.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/images/ui-bg_glass_55_fbf9ee_1x400.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/images/ui-bg_glass_65_ffffff_1x400.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/images/ui-bg_glass_75_dadada_1x400.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/images/ui-bg_glass_75_e6e6e6_1x400.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/images/ui-bg_glass_95_fef1ec_1x400.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/images/ui-bg_highlight-soft_75_cccccc_1x100.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/images/ui-icons_2e83ff_256x240.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/images/ui-icons_454545_256x240.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/images/ui-icons_888888_256x240.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/images/ui-icons_cd0a0a_256x240.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/index.html
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/ui.accordion.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/ui.all.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/ui.autocomplete.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/ui.base.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/ui.button.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/ui.core.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/ui.custom.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/ui.datepicker.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/ui.dialog.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/ui.progressbar.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/ui.resizable.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/ui.selectable.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/ui.slider.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/ui.tabs.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/ui.theme.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/images/index.html
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/images/ui-bg_flat_30_cccccc_40x100.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/images/ui-bg_flat_50_5c5c5c_40x100.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/images/ui-bg_glass_20_555555_1x400.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/images/ui-bg_glass_40_0078a3_1x400.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/images/ui-bg_glass_40_ffc73d_1x400.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/images/ui-bg_gloss-wave_25_333333_500x100.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/images/ui-bg_highlight-soft_80_eeeeee_1x100.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/images/ui-bg_inset-soft_25_000000_1x100.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/images/ui-bg_inset-soft_30_f58400_1x100.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/images/ui-icons_4b8e0b_256x240.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/images/ui-icons_a83300_256x240.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/images/ui-icons_cccccc_256x240.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/index.html
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/ui.accordion.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/ui.all.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/ui.autocomplete.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/ui.base.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/ui.button.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/ui.core.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/ui.custom.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/ui.datepicker.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/ui.dialog.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/ui.progressbar.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/ui.resizable.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/ui.selectable.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/ui.slider.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/ui.tabs.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/ui.theme.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/images/index.html
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/images/ui-bg_diagonals-thick_18_b81900_40x40.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/images/ui-bg_diagonals-thick_20_666666_40x40.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/images/ui-bg_flat_10_000000_40x100.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/images/ui-bg_glass_100_f6f6f6_1x400.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/images/ui-bg_glass_100_fdf5ce_1x400.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/images/ui-bg_glass_65_ffffff_1x400.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/images/ui-bg_gloss-wave_35_f6a828_500x100.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/images/ui-bg_highlight-soft_100_eeeeee_1x100.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/images/ui-bg_highlight-soft_75_ffe45c_1x100.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/images/ui-icons_222222_256x240.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/images/ui-icons_228ef1_256x240.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/images/ui-icons_ef8c08_256x240.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/images/ui-icons_ffd27a_256x240.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/images/ui-icons_ffffff_256x240.png
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/index.html
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/ui.accordion.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/ui.all.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/ui.autocomplete.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/ui.base.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/ui.button.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/ui.core.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/ui.custom.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/ui.datepicker.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/ui.dialog.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/ui.progressbar.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/ui.resizable.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/ui.selectable.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/ui.slider.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/ui.tabs.css
+%%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/ui.theme.css
 %%WWWDIR%%/htdocs/modules/system/header.php
 %%WWWDIR%%/htdocs/modules/system/help.php
 %%WWWDIR%%/htdocs/modules/system/images/bg_button.gif
@@ -1795,7 +1927,6 @@
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/asc.gif
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/avatar.png
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/avatar_small.png
-%%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/bPacktXoopsVote2010.png
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/banners.png
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/banners_small.png
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/bgmenu.png
@@ -1870,7 +2001,6 @@
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/smilie.png
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/smilies.png
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/smilies_small.png
-%%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/system_slogo.png
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/table-caption3.png
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/tpls.png
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/tpls_small.png
@@ -1886,11 +2016,11 @@
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/users.png
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/users_edit.png
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/warning.png
-%%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/xgiftshopbutton.png
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/xmex.png
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/xo-banner_bg.png
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/xoops-logo.png
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/xoops.png
+%%WWWDIR%%/htdocs/modules/system/themes/zetadigme/img/xoopsengine.png
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/index.html
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/js/index.html
 %%WWWDIR%%/htdocs/modules/system/themes/zetadigme/js/tooltip.js
@@ -2775,49 +2905,6 @@
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/sql/mysql.sql
 %%WWWDIR%%/htdocs/xoops_lib/modules/protector/xoops_version.php
 %%WWWDIR%%/htdocs/xoops_lib/readme.txt
-%%WWWDIR%%/upgrade/abstract.php
-%%WWWDIR%%/upgrade/check_version.php
-%%WWWDIR%%/upgrade/cnt-2.2.x-to-2.3.0/index.php
-%%WWWDIR%%/upgrade/cnt-2.2.x-to-2.3.0/language/english.php
-%%WWWDIR%%/upgrade/cnt-2.2.x-to-2.3.0/language/index.html
-%%WWWDIR%%/upgrade/font/index.html
-%%WWWDIR%%/upgrade/font/stroke.eot
-%%WWWDIR%%/upgrade/font/stroke.otf
-%%WWWDIR%%/upgrade/font/stroke.svg
-%%WWWDIR%%/upgrade/font/stroke.ttf
-%%WWWDIR%%/upgrade/img/index.html
-%%WWWDIR%%/upgrade/img/xoops_logo.png
-%%WWWDIR%%/upgrade/index.php
-%%WWWDIR%%/upgrade/language/english/index.html
-%%WWWDIR%%/upgrade/language/english/style.css
-%%WWWDIR%%/upgrade/language/english/upgrade.php
-%%WWWDIR%%/upgrade/language/index.html
-%%WWWDIR%%/upgrade/language.php
-%%WWWDIR%%/upgrade/licence-upgrade-keygen-2.4.0-to-2.4.1/index.php
-%%WWWDIR%%/upgrade/licence-upgrade-keygen-2.4.0-to-2.4.1/license.dist.php
-%%WWWDIR%%/upgrade/login.php
-%%WWWDIR%%/upgrade/readme.txt
-%%WWWDIR%%/upgrade/style.css
-%%WWWDIR%%/upgrade/upd-2.0.13-to-2.0.14/index.php
-%%WWWDIR%%/upgrade/upd-2.0.15-to-2.0.16/index.php
-%%WWWDIR%%/upgrade/upd-2.0.16-to-2.0.17/index.php
-%%WWWDIR%%/upgrade/upd-2.0.17-to-2.0.18/index.php
-%%WWWDIR%%/upgrade/upd-2.0.18-to-2.3.0/index.php
-%%WWWDIR%%/upgrade/upd-2.0.18-to-2.3.0/language/english.php
-%%WWWDIR%%/upgrade/upd-2.0.18-to-2.3.0/language/index.html
-%%WWWDIR%%/upgrade/upd-2.0.18-to-2.3.0/mainfile.dist.php
-%%WWWDIR%%/upgrade/upd-2.0.18-to-2.3.0/mysql.structure.sql
-%%WWWDIR%%/upgrade/upd-2.0.18-to-2.3.0/pathcontroller.php
-%%WWWDIR%%/upgrade/upd-2.0.18-to-2.3.0/settings_db.php
-%%WWWDIR%%/upgrade/upd-2.0.18-to-2.3.0/settings_path.php
-%%WWWDIR%%/upgrade/upd-2.3.0-to-2.3.1/index.php
-%%WWWDIR%%/upgrade/upd-2.3.0-to-2.3.1/mysql.structure.sql
-%%WWWDIR%%/upgrade/upd-2.3.3-to-2.4.0/index.php
-%%WWWDIR%%/upgrade/upd-2.3.3-to-2.4.0/license.dist.php
-%%WWWDIR%%/upgrade/upd-2.4.0a-to-2.4.0/index.php
-%%WWWDIR%%/upgrade/upd-2.4.x-to-2.5.0/dbmanager.php
-%%WWWDIR%%/upgrade/upd-2.4.x-to-2.5.0/index.php
-%%WWWDIR%%/upgrade/upgrade_tpl.php
 @dirrm %%WWWDIR%%/docs/images
 @dirrm %%WWWDIR%%/docs
 @dirrm %%WWWDIR%%/extras/modules/system/admin/filemanager
@@ -3088,8 +3175,16 @@
 @dirrm %%WWWDIR%%/htdocs/modules/system/css/code_mirror
 @dirrm %%WWWDIR%%/htdocs/modules/system/css/ui/base/images
 @dirrm %%WWWDIR%%/htdocs/modules/system/css/ui/base
+@dirrm %%WWWDIR%%/htdocs/modules/system/css/ui/cupertino/images
+@dirrm %%WWWDIR%%/htdocs/modules/system/css/ui/cupertino
 @dirrm %%WWWDIR%%/htdocs/modules/system/css/ui/redmond/images
 @dirrm %%WWWDIR%%/htdocs/modules/system/css/ui/redmond
+@dirrm %%WWWDIR%%/htdocs/modules/system/css/ui/smoothness/images
+@dirrm %%WWWDIR%%/htdocs/modules/system/css/ui/smoothness
+@dirrm %%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness/images
+@dirrm %%WWWDIR%%/htdocs/modules/system/css/ui/ui-darkness
+@dirrm %%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness/images
+@dirrm %%WWWDIR%%/htdocs/modules/system/css/ui/ui-lightness
 @dirrm %%WWWDIR%%/htdocs/modules/system/css/ui
 @dirrm %%WWWDIR%%/htdocs/modules/system/css
 @dirrm %%WWWDIR%%/htdocs/modules/system/images/breadcrumb/default
@@ -3266,22 +3361,4 @@
 @dirrm %%WWWDIR%%/htdocs/xoops_lib/modules
 @dirrm %%WWWDIR%%/htdocs/xoops_lib
 @dirrm %%WWWDIR%%/htdocs
-@dirrm %%WWWDIR%%/upgrade/cnt-2.2.x-to-2.3.0/language
-@dirrm %%WWWDIR%%/upgrade/cnt-2.2.x-to-2.3.0
-@dirrm %%WWWDIR%%/upgrade/font
-@dirrm %%WWWDIR%%/upgrade/img
-@dirrm %%WWWDIR%%/upgrade/language/english
-@dirrm %%WWWDIR%%/upgrade/language
-@dirrm %%WWWDIR%%/upgrade/licence-upgrade-keygen-2.4.0-to-2.4.1
-@dirrm %%WWWDIR%%/upgrade/upd-2.0.13-to-2.0.14
-@dirrm %%WWWDIR%%/upgrade/upd-2.0.15-to-2.0.16
-@dirrm %%WWWDIR%%/upgrade/upd-2.0.16-to-2.0.17
-@dirrm %%WWWDIR%%/upgrade/upd-2.0.17-to-2.0.18
-@dirrm %%WWWDIR%%/upgrade/upd-2.0.18-to-2.3.0/language
-@dirrm %%WWWDIR%%/upgrade/upd-2.0.18-to-2.3.0
-@dirrm %%WWWDIR%%/upgrade/upd-2.3.0-to-2.3.1
-@dirrm %%WWWDIR%%/upgrade/upd-2.3.3-to-2.4.0
-@dirrm %%WWWDIR%%/upgrade/upd-2.4.0a-to-2.4.0
-@dirrm %%WWWDIR%%/upgrade/upd-2.4.x-to-2.5.0
-@dirrm %%WWWDIR%%/upgrade
 @dirrm %%WWWDIR%%
