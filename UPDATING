@@ -18,11 +18,15 @@ you update your ports collection, before attempting any port upgrades.
 
   If you use portupgrade:
   # portupgrade -f lang/ruby18
+  # portupgrade -f lang/ruby19 # if you have it installed
   # portupgrade -f ports-mgmt/portupgrade
   # portupgrade -x ruby-1.8.\* -fr lang/ruby18
 
+  After these steps are complete, you can pkg_delete ruby 1.8 if you
+  no longer need it.
+
   If you wish to keep the 1.8 version as default, add the following lines
-  to your /etc/make.conf file:
+  to your /etc/make.conf file, and rebuild lang/ruby18 after that.
 
   #
   # Keep ruby 1.8 as default version.
