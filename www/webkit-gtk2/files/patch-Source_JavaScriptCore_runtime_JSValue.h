@@ -1,6 +1,6 @@
---- JavaScriptCore/runtime/JSValue.h.orig	2010-02-05 17:26:52.000000000 +0100
-+++ JavaScriptCore/runtime/JSValue.h	2010-03-25 21:43:11.000000000 +0100
-@@ -491,7 +491,11 @@ namespace JSC {
+--- Source/JavaScriptCore/runtime/JSValue.h.orig	2011-01-03 22:55:02.000000000 +0000
++++ Source/JavaScriptCore/runtime/JSValue.h	2011-01-11 16:34:27.000000000 +0000
+@@ -434,7 +434,11 @@ namespace JSC {
              u.asBits.tag = CellTag;
          else
              u.asBits.tag = EmptyValueTag;

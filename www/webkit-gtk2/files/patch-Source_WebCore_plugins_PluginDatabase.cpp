@@ -1,6 +1,6 @@
---- WebCore/plugins/PluginDatabase.cpp.orig	2008-11-02 03:12:05.000000000 +0800
-+++ WebCore/plugins/PluginDatabase.cpp	2009-05-19 15:09:51.000000000 +0800
-@@ -283,6 +283,7 @@ Vector<String> PluginDatabase::defaultPl
+--- Source/WebCore/plugins/PluginDatabase.cpp.orig	2011-01-11 16:24:29.000000000 +0000
++++ Source/WebCore/plugins/PluginDatabase.cpp	2011-01-11 16:24:54.000000000 +0000
+@@ -375,6 +375,7 @@ Vector<String> PluginDatabase::defaultPl
      userPluginPath.append(String("/.netscape/plugins"));
      paths.append(userPluginPath);
  
