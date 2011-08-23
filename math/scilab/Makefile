@@ -30,8 +30,12 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_LDCONFIG=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include -L${LOCALBASE}/lib ${PTHREAD_LIBS}
-FFLAGS+=	-fPIC
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ARGS =	--with-gfortran
+CONFIGURE_ENV=	ac_cv_search_pthread_join="${PTHREAD_LIBS}" \
+	BLAS_LIBS="${BLAS_LIBS}" LAPACK_LIBS="${LAPACK_LIBS}" \
+	LDFLAGS="${LDFLAGS}"
 
 OPTIONS=	ATLAS "Use Atlas instead of Blas" OFF \
 		FFTW "Use FFTW" ON \
@@ -47,15 +51,15 @@ OPTIONS=	ATLAS "Use Atlas instead of Blas" OFF \
 .include <bsd.port.options.mk>
 
 .if defined(WITH_ATLAS)
-CONFIGURE_ARGS+=	--with-atlas-library=${LOCALBASE}/lib
 LIB_DEPENDS+=	atlas.2:${PORTSDIR}/math/atlas
-BLAS_LIBS=	-lalapack -lcblas -lf77blas -latlas
+BLAS_LIBS=	-lf77blas -latlas
+LAPACK_LIBS=	-lalapack -lcblas
 .else
 LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
-BLAS_LIBS?=	-llapack -lblas
+BLAS_LIBS?=	-lblas
+LAPACK_LIBS?=	-llapack
 .endif
-MAKE_ENV+=	BLAS_LIBS="-L${LOCALBASE}/lib ${BLAS_LIBS}"
 
 .if defined(WITHOUT_NLS)
 CONFIGURE_ARGS+=	--disable-build-localization
@@ -81,6 +85,8 @@ CONFIGURE_ARGS+=	--without-gui \
 			--without-hdf5 \
 			--without-xcos \
 			--disable-build-help
+CONFIGURE_ENV +=	JAVADOC="${TRUE}"
+PLIST_SUB+=		WITHOUT_GUI=""
 .else
 DISTFILES+=	${JGRAPHX_JAR}:jgraphx
 JGRAPHX_VERSION=	1.4.1.0
@@ -131,6 +137,7 @@ USE_XORG=	x11
 CONFIGURE_ARGS+=	--with-jdk=${JAVA_HOME} \
 			--with-docbook=${LOCALBASE}/share/xsl/docbook \
 			--enable-build-help
+PLIST_SUB+=		WITHOUT_GUI="@comment "
 .endif
 
 .if !defined(WITHOUT_HELP)
@@ -186,7 +193,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-NOPORTDOCS
 post-patch:
 	@# Configure fixes
 	@${REINPLACE_CMD} -e 's|-ldl | |' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's|-lumfpack|-lumfpack -lamd -lcholmod -lcolamd $$BLAS_LIBS $$LAPACK_LIBS|g' ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e 's|-lumfpack|-lumfpack -lamd -lcholmod -lcolamd $$LAPACK_LIBS $$BLAS_LIBS|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|TCLTK_LIBS=" -ldl"|TCLTK_LIBS=" "|' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|"x=" ==|"x" =|g' ${WRKSRC}/configure
 	@${REINPLACE_CMD} -e 's|"x" ==|"x" =|g' ${WRKSRC}/configure
@@ -220,7 +227,10 @@ post-patch:
 		${WRKSRC}/bin/scilab-adv-cli ${WRKSRC}/bin/scilab-cli
 	@${REINPLACE_CMD} -e 's|/usr/share/scilab|${DATADIR}|' ${WRKSRC}/desktop/scilab.desktop
 	@${REINPLACE_CMD} -e 's|/usr/share/scilab-cli|${DATADIR}|' \
-		${WRKSRC}/desktop/scilab-adv-cli.desktop ${WRKSRC}/desktop/scilab-cli.desktop 
+		${WRKSRC}/desktop/scilab-adv-cli.desktop ${WRKSRC}/desktop/scilab-cli.desktop
+.else
+	@${REINPLACE_CMD} -e '/^check-local:/,/^$$/s/scilab-adv-cli/scilab-cli/g' \
+		${WRKSRC}/Makefile.in
 .endif
 
 pre-install:
@@ -231,7 +241,7 @@ pre-install:
 .endif
 
 post-install:
-	@# Remove empty dirs in DATDIR/modules - they will be removed by the
+	@# Remove empty dirs in DATADIR/modules - they will be removed by the
 	@# toolbox uninstaller otherwise if 3rd party toolboxes are used
 	@${FIND} ${DATADIR}/modules -type d -empty -delete
 	@# plist for include/scilab
@@ -252,5 +262,12 @@ post-install:
 		-not -path ${DATADIR}/.atoms\* -not -path ${DATADIR} | \
 		${SORT} -r | ${SED} -e 's,^${PREFIX}/,@dirrm ,' >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec rmdir %D/share/scilab 2>/dev/null || true" >> ${TMPPLIST}
+.if defined(WITHOUT_GUI)
+	@${TOUCH} ${DATADIR}/contrib/xcos_toolbox_skeleton/images/h5/.keep_me
+.endif
+
+check test: build
+	@cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} \
+		${MAKE_ARGS} check
 
 .include <bsd.port.mk>
