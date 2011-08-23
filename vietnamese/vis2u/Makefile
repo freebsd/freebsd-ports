@@ -15,7 +15,7 @@ DISTNAME=	${PORTNAME}${PORTVERSION:S/.//g}
 MAINTAINER=	obrien@FreeBSD.org
 COMMENT=	VISCII->Unicode conversion
 
-BROKEN=	No Master Site
+DEPRECATED=	No Master Site
 EXPIRATION_DATE=	2011-09-01
 
 USE_ZIP=	yes
