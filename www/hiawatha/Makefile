@@ -7,6 +7,7 @@
 
 PORTNAME=	hiawatha
 PORTVERSION=	7.5
+PORTREVISION=	1
 CATEGORIES=	www
 MASTER_SITES=	http://www.hiawatha-webserver.org/files/ \
 		http://www.c-s.li/ports/
@@ -21,7 +22,7 @@ PORTEXAMPLES=	hiawatha mkcert newroot php-fcgi
 CONFIG_FILES=	hiawatha.conf mimetype.conf cgi-wrapper.conf php-fcgi.conf
 MAN1=		cgi-wrapper.1 hiawatha.1 newroot.1 php-fcgi.1 ssi-cgi.1 wigwam.1
 
-USE_RC_SUBR=	hiawatha
+USE_RC_SUBR=	hiawatha php-fcgi
 SUB_FILES=	pkg-message
 WANT_GNOME=	yes
 
