@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2011-06-07 22:09:51.000000000 +0200
++++ Makefile.in	2011-06-07 22:10:05.000000000 +0200
+@@ -281,7 +281,7 @@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
+-SUBDIRS = libnotify docs tools tests
++SUBDIRS = libnotify docs tools
+ pcdata_DATA = libnotify.pc
+ pcdatadir = $(prefix)/libdata/pkgconfig
+ EXTRA_DIST = \
