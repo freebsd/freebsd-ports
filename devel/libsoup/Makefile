@@ -3,12 +3,12 @@
 # Whom:					Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/libsoup/Makefile,v 1.90 2010/11/16 02:38:21 avl Exp $
+#   $MCom: ports/devel/libsoup/Makefile,v 1.106 2011/07/28 19:00:08 kwm Exp $
 #
 
 PORTNAME=	libsoup
-PORTVERSION=	2.32.2
-PORTREVISION?=	3
+PORTVERSION=	2.34.3
+PORTREVISION?=	0
 CATEGORIES=	devel gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -16,7 +16,11 @@ DIST_SUBDIR=	gnome2
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	A SOAP (Simple Object Access Protocol) implementation in C
 
-USE_BZIP2=	yes
+USE_XZ=		yes
+
+BUILD_DEPENDS=	glib-networking>=2.28.4:${PORTSDIR}/net/glib-networking
+LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt
+RUN_DEPENDS=	glib-networking>=2.28.4:${PORTSDIR}/net/glib-networking
 
 .if !defined(REFERENCE_PORT)
 
@@ -26,42 +30,25 @@ USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
 CONFIGURE_ARGS=	--with-html-dir=${PREFIX}/share/doc \
 		--disable-gtk-doc
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 
 PLIST_SUB=	VERSION="2.4"
 
 .include <bsd.port.pre.mk>
 
-LIB_DEPENDS+=	gcrypt.18:${PORTSDIR}/security/libgcrypt
-
 .if defined(SOUP_SLAVE)
 LIB_DEPENDS+=	soup-2.4.1:${PORTSDIR}/devel/libsoup \
-		proxy.0:${PORTSDIR}/net/libproxy \
 		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring \
 		sqlite3.8:${PORTSDIR}/databases/sqlite3
 CONFIGURE_ARGS+=--with-gnome
-USE_GNOME+=	gconf2
 .else
 BUILD_DEPENDS+=	g-ir-scanner:${PORTSDIR}/devel/gobject-introspection
 CONFIGURE_ARGS+=--without-gnome
 .endif
 
-.if !defined(WITHOUT_SSL)
-LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
-.else
-CONFIGURE_ARGS+=--disable-ssl
-.endif
-
-pre-everything::
-	@${ECHO_MSG} ""
-	@${ECHO_MSG} "libsoup has the following configurable option(s):"
-	@${ECHO_MSG} "  WITHOUT_SSL     Disable GnuTLS SSL support"
-	@${ECHO_MSG} ""
-
 post-patch:
-	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g ; \
-	    	s|" == "|" = "|g' \
+	@${REINPLACE_CMD} -e 's|-Wmissing-include-dirs||g' \
 		${WRKSRC}/configure
 
 .if defined(SOUP_SLAVE)
@@ -84,7 +71,7 @@ post-install:
 .else
 	@${INSTALL_DATA} ${WRKSRC}/libsoup/soup-connection.h \
 	    	${PREFIX}/include/libsoup-2.4/libsoup/soup-connection.h
-.endif	
+.endif
 
 .include <bsd.port.post.mk>
 
