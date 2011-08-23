@@ -2806,6 +2806,7 @@
     SUBDIR += php52-sysvshm
     SUBDIR += php52-tokenizer
     SUBDIR += phpbt
+    SUBDIR += phpsh
     SUBDIR += phptags
     SUBDIR += physfs
     SUBDIR += physfs-devel
