@@ -33,7 +33,7 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/tdf/libreoffice/src/ \
 		http://download.go-oo.org/extern/:GoOOExtern \
 		http://www.numbertext.org/linux/:OOoDTP
 
-MAINTAINER=	bapt@FreeBSD.org
+MAINTAINER=	office@FreeBSD.org
 COMMENT=	Full integrated office productivity suite
 
 BROKEN=	build is too fragile and break too often
