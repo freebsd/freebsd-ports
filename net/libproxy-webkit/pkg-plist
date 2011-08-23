@@ -1,1 +1,1 @@
-lib/libproxy/%%VERSION%%/plugins/webkit.so
+lib/libproxy/%%VERSION%%/modules/pacrunner_webkit.so
