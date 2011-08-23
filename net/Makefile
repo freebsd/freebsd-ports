@@ -172,6 +172,7 @@
     SUBDIR += gkrellmqst
     SUBDIR += gkrellmwireless2
     SUBDIR += glflow
+    SUBDIR += glib-networking
     SUBDIR += gnet2
     SUBDIR += gnetcat
     SUBDIR += gnome-mud
@@ -335,6 +336,8 @@
     SUBDIR += libproxy-gnome
     SUBDIR += libproxy-kde
     SUBDIR += libproxy-mozjs
+    SUBDIR += libproxy-perl
+    SUBDIR += libproxy-python
     SUBDIR += libproxy-webkit
     SUBDIR += librsync
     SUBDIR += libsocket++
