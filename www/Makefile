@@ -919,6 +919,7 @@
     SUBDIR += p5-Data-Validate-URI
     SUBDIR += p5-Emplacken
     SUBDIR += p5-FAQ-OMatic
+    SUBDIR += p5-FCGI
     SUBDIR += p5-FCGI-Async
     SUBDIR += p5-FCGI-Client
     SUBDIR += p5-FCGI-Engine
@@ -926,7 +927,6 @@
     SUBDIR += p5-FCGI-Spawn
     SUBDIR += p5-FEAR-API
     SUBDIR += p5-Facebook-Graph
-    SUBDIR += p5-FastCGI
     SUBDIR += p5-Feed-Find
     SUBDIR += p5-Feersum
     SUBDIR += p5-File-Mork

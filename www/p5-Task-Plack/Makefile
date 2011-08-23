@@ -7,6 +7,7 @@
 
 PORTNAME=	Task-Plack
 PORTVERSION=	0.25
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -35,7 +36,7 @@ OPTIONS=FASTCGI	"FastCGI daemon and dispatcher" off \
 .include <bsd.port.options.mk>
 
 .if defined(WITH_FASTCGI)
-DEP+=	p5-FastCGI>=0.71:${PORTSDIR}/www/p5-FastCGI \
+DEP+=	p5-FCGI>=0.71:${PORTSDIR}/www/p5-FCGI \
 	p5-FCGI-Client>=0.04:${PORTSDIR}/www/p5-FCGI-Client \
 	p5-FCGI-ProcManager>=0.19:${PORTSDIR}/www/p5-FCGI-ProcManager \
 	p5-Net-FastCGI>=0.11:${PORTSDIR}/www/p5-Net-FastCGI

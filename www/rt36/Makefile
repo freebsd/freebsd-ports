@@ -7,7 +7,7 @@
 
 PORTNAME=	rt
 PORTVERSION?=	3.6.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		http://download.bestpractical.com/pub/rt/devel/ \
@@ -75,7 +75,7 @@ CONFIGURE_ARGS=	--prefix=${RT_PATH} \
 .include <bsd.port.pre.mk>
 .if defined(WITH_FASTCGI)
 PERL_MODULES+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fastcgi
-PERL_MODULES+=		${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FastCGI
+PERL_MODULES+=		${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FCGI
 .else
 .	if ${APACHE_VERSION} == 13
 PERL_MODULES+=	${SITE_PERL}/Apache/DBI.pm:${PORTSDIR}/www/p5-Apache-DBI-mp1
