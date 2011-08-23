@@ -1,6 +1,7 @@
 bin/canberra-gtk-play
 include/canberra-gtk.h
 include/canberra.h
+lib/gnome-settings-daemon-3.0/gtk-modules/canberra-gtk-module.desktop
 lib/gtk-2.0/modules/libcanberra-gtk-module.a
 lib/gtk-2.0/modules/libcanberra-gtk-module.la
 lib/gtk-2.0/modules/libcanberra-gtk-module.so
@@ -52,4 +53,6 @@ share/vala/vapi/libcanberra.vapi
 @dirrmtry share/gdm/autostart
 @dirrmtry share/gdm
 @dirrm %%DOCSDIR%%
+@dirrm lib/gnome-settings-daemon-3.0/gtk-modules
+@dirrm lib/gnome-settings-daemon-3.0
 @dirrm lib/libcanberra-%%VERSION%%
