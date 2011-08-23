@@ -24,6 +24,8 @@ bin/oramerge
 bin/oramerge.py
 bin/ucat
 bin/ucat.py
+bin/uhpp
+bin/uhpp.py
 bin/uls
 bin/uls.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/PKG-INFO
@@ -47,6 +49,7 @@ bin/uls.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/tld2xsc.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/ucat.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/ucp.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/uhpp.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/uls.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/scripts/xml2xsc.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/EGG-INFO/top_level.txt
@@ -275,6 +278,9 @@ bin/uls.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/scripts/tld2xsc.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/scripts/tld2xsc.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/scripts/tld2xsc.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/scripts/uhpp.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/scripts/uhpp.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/scripts/uhpp.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/scripts/xml2xsc.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/scripts/xml2xsc.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/ll/xist/scripts/xml2xsc.pyo
