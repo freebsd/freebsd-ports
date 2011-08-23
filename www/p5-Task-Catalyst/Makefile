@@ -7,7 +7,7 @@
 
 PORTNAME=	Task-Catalyst
 PORTVERSION=	4.01
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -42,7 +42,7 @@ BUILD_DEPENDS=	p5-Catalyst-ActionRole-ACL>=0:${PORTSDIR}/www/p5-Catalyst-ActionR
 		p5-CatalystX-Profile>=0:${PORTSDIR}/www/p5-CatalystX-Profile \
 		p5-CatalystX-REPL>=0:${PORTSDIR}/www/p5-CatalystX-REPL \
 		p5-CatalystX-SimpleLogin>=0:${PORTSDIR}/www/p5-CatalystX-SimpleLogin \
-		p5-FastCGI>=0.71:${PORTSDIR}/www/p5-FastCGI \
+		p5-FCGI>=0.71:${PORTSDIR}/www/p5-FCGI \
 		p5-FCGI-ProcManager>=0:${PORTSDIR}/www/p5-FCGI-ProcManager \
 		p5-Test-WWW-Mechanize-Catalyst>=0.35:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-Catalyst \
 		p5-local-lib>=0:${PORTSDIR}/devel/p5-local-lib

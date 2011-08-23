@@ -1,17 +1,16 @@
-# New ports collection makefile for:	p5-FastCGI
+# New ports collection makefile for:	p5-FCGI
 # Date created:				October 27th 1999
 # Whom:	      				Kelly Yancey <kbyanc@posi.net>
 #
 # $FreeBSD$
 #
 
-PORTNAME=	FastCGI
+PORTNAME=	FCGI
 PORTVERSION=	0.73
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	FCGI
+MASTER_SITE_SUBDIR=	CPAN:FLORA
 PKGNAMEPREFIX=	p5-
-DISTNAME=	FCGI-${PORTVERSION}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Modules for perl5, for enabling FastCGI support in CGI scripts
