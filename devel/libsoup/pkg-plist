@@ -3,6 +3,7 @@ include/libsoup-%%VERSION%%/libsoup/soup-auth-domain-basic.h
 include/libsoup-%%VERSION%%/libsoup/soup-auth-domain-digest.h
 include/libsoup-%%VERSION%%/libsoup/soup-auth-domain.h
 include/libsoup-%%VERSION%%/libsoup/soup-auth.h
+include/libsoup-%%VERSION%%/libsoup/soup-cache.h
 include/libsoup-%%VERSION%%/libsoup/soup-connection.h
 include/libsoup-%%VERSION%%/libsoup/soup-content-decoder.h
 include/libsoup-%%VERSION%%/libsoup/soup-content-sniffer.h
@@ -23,7 +24,13 @@ include/libsoup-%%VERSION%%/libsoup/soup-multipart.h
 include/libsoup-%%VERSION%%/libsoup/soup-password-manager.h
 include/libsoup-%%VERSION%%/libsoup/soup-portability.h
 include/libsoup-%%VERSION%%/libsoup/soup-proxy-resolver.h
+include/libsoup-%%VERSION%%/libsoup/soup-proxy-resolver-default.h
 include/libsoup-%%VERSION%%/libsoup/soup-proxy-uri-resolver.h
+include/libsoup-%%VERSION%%/libsoup/soup-request-data.h
+include/libsoup-%%VERSION%%/libsoup/soup-request-file.h
+include/libsoup-%%VERSION%%/libsoup/soup-request-http.h
+include/libsoup-%%VERSION%%/libsoup/soup-request.h
+include/libsoup-%%VERSION%%/libsoup/soup-requester.h
 include/libsoup-%%VERSION%%/libsoup/soup-server.h
 include/libsoup-%%VERSION%%/libsoup/soup-session-async.h
 include/libsoup-%%VERSION%%/libsoup/soup-session-feature.h
