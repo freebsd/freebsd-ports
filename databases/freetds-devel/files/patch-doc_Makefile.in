@@ -1,78 +1,88 @@
---- doc/Makefile.in.orig	2008-11-11 04:55:16.000000000 -0900
-+++ doc/Makefile.in	2008-12-04 01:16:56.000000000 -0900
-@@ -408,25 +408,25 @@
- 	  echo " rm -f '$(DESTDIR)$(man5dir)/$$inst'"; \
- 	  rm -f "$(DESTDIR)$(man5dir)/$$inst"; \
- 	done
+--- doc/Makefile.in.orig	2011-04-09 08:17:20.000000000 +0000
++++ doc/Makefile.in	2011-08-22 17:21:49.000000000 +0000
+@@ -400,29 +400,29 @@
+ 	test -z "$$files" || { \
+ 	  echo " ( cd '$(DESTDIR)$(man5dir)' && rm -f" $$files ")"; \
+ 	  cd "$(DESTDIR)$(man5dir)" && rm -f $$files; }
 -install-nobase_dataDATA: $(nobase_data_DATA)
 -	@$(NORMAL_INSTALL)
--	test -z "$(datadir)" || $(mkdir_p) "$(DESTDIR)$(datadir)"
--	@$(am__vpath_adj_setup) \
--	list='$(nobase_data_DATA)'; for p in $$list; do \
--	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
--	  $(am__vpath_adj) \
--	  echo " $(nobase_dataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(datadir)/$$f'"; \
--	  $(nobase_dataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(datadir)/$$f"; \
+-	test -z "$(datadir)" || $(MKDIR_P) "$(DESTDIR)$(datadir)"
+-	@list='$(nobase_data_DATA)'; test -n "$(datadir)" || list=; \
+-	$(am__nobase_list) | while read dir files; do \
+-	  xfiles=; for file in $$files; do \
+-	    if test -f "$$file"; then xfiles="$$xfiles $$file"; \
+-	    else xfiles="$$xfiles $(srcdir)/$$file"; fi; done; \
+-	  test -z "$$xfiles" || { \
+-	    test "x$$dir" = x. || { \
+-	      echo "$(MKDIR_P) '$(DESTDIR)$(datadir)/$$dir'"; \
+-	      $(MKDIR_P) "$(DESTDIR)$(datadir)/$$dir"; }; \
+-	    echo " $(INSTALL_DATA) $$xfiles '$(DESTDIR)$(datadir)/$$dir'"; \
+-	    $(INSTALL_DATA) $$xfiles "$(DESTDIR)$(datadir)/$$dir" || exit $$?; }; \
 -	done
 -
 -uninstall-nobase_dataDATA:
 -	@$(NORMAL_UNINSTALL)
--	@$(am__vpath_adj_setup) \
--	list='$(nobase_data_DATA)'; for p in $$list; do \
--	  $(am__vpath_adj) \
--	  echo " rm -f '$(DESTDIR)$(datadir)/$$f'"; \
--	  rm -f "$(DESTDIR)$(datadir)/$$f"; \
--	done
+-	@list='$(nobase_data_DATA)'; test -n "$(datadir)" || list=; \
+-	$(am__nobase_strip_setup); files=`$(am__nobase_strip)`; \
+-	test -n "$$files" || exit 0; \
+-	echo " ( cd '$(DESTDIR)$(datadir)' && rm -f" $$files ")"; \
+-	cd "$(DESTDIR)$(datadir)" && rm -f $$files
 +#install-nobase_dataDATA: $(nobase_data_DATA)
 +#	@$(NORMAL_INSTALL)
-+#	test -z "$(datadir)" || $(mkdir_p) "$(DESTDIR)$(datadir)"
-+#	@$(am__vpath_adj_setup) \
-+#	list='$(nobase_data_DATA)'; for p in $$list; do \
-+#	  if test -f "$$p"; then d=; else d="$(srcdir)/"; fi; \
-+#	  $(am__vpath_adj) \
-+#	  echo " $(nobase_dataDATA_INSTALL) '$$d$$p' '$(DESTDIR)$(datadir)/$$f'"; \
-+#	  $(nobase_dataDATA_INSTALL) "$$d$$p" "$(DESTDIR)$(datadir)/$$f"; \
++#	test -z "$(datadir)" || $(MKDIR_P) "$(DESTDIR)$(datadir)"
++#	@list='$(nobase_data_DATA)'; test -n "$(datadir)" || list=; \
++#	$(am__nobase_list) | while read dir files; do \
++#	  xfiles=; for file in $$files; do \
++#	    if test -f "$$file"; then xfiles="$$xfiles $$file"; \
++#	    else xfiles="$$xfiles $(srcdir)/$$file"; fi; done; \
++#	  test -z "$$xfiles" || { \
++#	    test "x$$dir" = x. || { \
++#	      echo "$(MKDIR_P) '$(DESTDIR)$(datadir)/$$dir'"; \
++#	      $(MKDIR_P) "$(DESTDIR)$(datadir)/$$dir"; }; \
++#	    echo " $(INSTALL_DATA) $$xfiles '$(DESTDIR)$(datadir)/$$dir'"; \
++#	    $(INSTALL_DATA) $$xfiles "$(DESTDIR)$(datadir)/$$dir" || exit $$?; }; \
 +#	done
 +
 +#uninstall-nobase_dataDATA:
 +#	@$(NORMAL_UNINSTALL)
-+#	@$(am__vpath_adj_setup) \
-+#	list='$(nobase_data_DATA)'; for p in $$list; do \
-+#	  $(am__vpath_adj) \
-+#	  echo " rm -f '$(DESTDIR)$(datadir)/$$f'"; \
-+#	  rm -f "$(DESTDIR)$(datadir)/$$f"; \
-+#	done
++#	@list='$(nobase_data_DATA)'; test -n "$(datadir)" || list=; \
++#	$(am__nobase_strip_setup); files=`$(am__nobase_strip)`; \
++#	test -n "$$files" || exit 0; \
++#	echo " ( cd '$(DESTDIR)$(datadir)' && rm -f" $$files ")"; \
++#	cd "$(DESTDIR)$(datadir)" && rm -f $$files
  tags: TAGS
  TAGS:
  
-@@ -508,12 +508,11 @@
+@@ -522,8 +522,7 @@
  
  info-am:
  
 -install-data-am: install-data-local install-man \
 -	install-nobase_dataDATA
-+install-data-am: install-man 
++install-data-am: install-man
  
- install-exec-am:
+ install-dvi: install-dvi-am
+ 
+@@ -535,7 +534,7 @@
+ 
+ install-html-am:
  
 -install-info: install-info-am
 +#install-info: install-info-am
  
- install-man: install-man1 install-man5
+ install-info-am:
  
-@@ -535,8 +534,8 @@
+@@ -567,7 +566,7 @@
  
  ps-am:
  
--uninstall-am: uninstall-info-am uninstall-local uninstall-man \
--	uninstall-nobase_dataDATA
-+#uninstall-am: uninstall-info-am uninstall-local uninstall-man \
-+
+-uninstall-am: uninstall-local uninstall-man uninstall-nobase_dataDATA
++#uninstall-am: uninstall-local uninstall-man uninstall-nobase_dataDATA
  
  uninstall-man: uninstall-man1 uninstall-man5
  
-@@ -554,21 +553,21 @@
- 	uninstall-nobase_dataDATA
+@@ -588,21 +587,21 @@
+ 	uninstall-man1 uninstall-man5 uninstall-nobase_dataDATA
  
  
 -$(DOCDIR)/userguide: $(DOCDIR)/userguide/index.htm
