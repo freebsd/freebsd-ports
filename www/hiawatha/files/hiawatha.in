@@ -3,20 +3,32 @@
 # $FreeBSD$
 #
 
-# PROVIDE: httpd
-# REQUIRE: NETWORKING SERVERS
-# BEFORE: DAEMON
+# PROVIDE: hiawatha
+# REQUIRE: LOGIN cleanvar
+# KEYWORD: shutdown
 
 # Add the following line(s) to /etc/rc.conf:
-# hiawatha_enable (bool): Set to "NO" by default, set it to "YES" to enable hiawatha
+# hiawatha_enable (bool):		Set to "NO" by default, set it
+#					to "YES" to enable hiawatha.
 
 . /etc/rc.subr
 
 name="hiawatha"
 rcvar=`set_rcvar`
-command="%%PREFIX%%/sbin/${name}"
-pidfile="/var/run/${name}.pid"
 
 load_rc_config $name
+
 : ${hiawatha_enable="NO"}
+: ${hiawatha_pidfile="/var/run/hiawatha.pid"}
+
+command="%%PREFIX%%/sbin/${name}"
+pidfile=${hiawatha_pidfile}
+
+stop_postcmd="${name}_stop_postcmd"
+
+hiawatha_stop_postcmd()
+{
+    rm -f ${pidfile}
+}
+
 run_rc_command "$1"
