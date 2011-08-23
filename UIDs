@@ -1,5 +1,6 @@
 # $FreeBSD$
 # Please keep this file sorted by UID!
+operator:*:2:5:System &:/:/usr/sbin/nologin
 smmsp:*:25:25::0:0:Sendmail Submission User:/var/spool/clientmqueue:/usr/sbin/nologin
 bind:*:53:53::0:0:Bind Sandbox:/:/usr/sbin/nologin
 majordom:*:54:54::0:0:Majordomo Pseudo User:/usr/local/majordomo:/nonexistent
