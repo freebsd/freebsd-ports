@@ -40,6 +40,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/RobustLineIntersector.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/SimplePointInRing.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/VectorMath.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/Vector2D.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/distance/DiscreteHausdorffDistance.MaxDensifiedByFractionDistanceFilter.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/distance/DiscreteHausdorffDistance.MaxPointDistanceFilter.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/distance/DiscreteHausdorffDistance.html
@@ -54,6 +55,13 @@
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/locate/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/locate/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/locate/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/math/DD.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/math/DoubleDouble.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/math/Vector2D.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/math/VectorMath.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/math/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/math/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/math/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/match/AreaSimilarityMeasure.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/match/HausdorffSimilarityMeasure.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/match/SimilarityMeasure.html
@@ -64,6 +72,15 @@
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/awt/PointShapeFactory.BasePointShapeFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/awt/PointShapeFactory.Circle.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/awt/PointShapeFactory.Cross.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/awt/PointShapeFactory.Point.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/awt/PointShapeFactory.Square.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/awt/PointShapeFactory.Star.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/awt/PointShapeFactory.Triangle.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/awt/PointShapeFactory.X.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/awt/SquarePointShapeFactory.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/awt/FontGlyphReader.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/awt/GeometryCollectionShape.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/awt/IdentityPointTransformation.html
@@ -135,6 +152,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/geom/prep/AbstractPreparedPolygonContains.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/geom/prep/BasicPreparedGeometry.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/geom/prep/PreparedGeometry.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/geom/prep/PreparedGeometryCollection.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/geom/prep/PreparedGeometryFactory.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/geom/prep/PreparedLineString.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/geom/prep/PreparedLineStringIntersects.html
@@ -158,7 +176,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/geom/util/GeometryEditor.CoordinateOperation.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/geom/util/GeometryEditor.GeometryEditorOperation.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/geom/util/GeometryEditor.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/geom/util/GeometryEditor.NoOpGeometryOperation.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/geom/util/GeometryExtracter.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/geom/util/GeometryMapper.MapOp.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/geom/util/GeometryMapper.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/geom/util/GeometryTransformer.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/geom/util/LineStringExtracter.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/geom/util/LinearComponentExtracter.html
@@ -210,6 +231,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/geomgraph/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/index/ArrayListVisitor.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/index/ItemVisitor.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/index/PreparedGeometryIndex.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/index/SpatialIndex.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/index/bintree/Bintree.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/index/bintree/Interval.html
@@ -257,8 +279,10 @@
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/index/strtree/AbstractSTRtree.IntersectsOp.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/index/strtree/AbstractSTRtree.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/index/strtree/Boundable.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/index/strtree/GeometryItemDistance.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/index/strtree/Interval.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/index/strtree/ItemBoundable.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/index/strtree/ItemDistance.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/index/strtree/SIRtree.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/index/strtree/STRtree.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/index/strtree/package-frame.html
@@ -305,6 +329,14 @@
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/linearref/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/linearref/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/linearref/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/math/DD.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/math/MathUtil.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/math/Matrix.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/math/Vector2D.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/math/VectorMath.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/math/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/math/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/math/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/noding/BasicSegmentString.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/noding/FastNodingValidator.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/noding/FastSegmentSetIntersectionFinder.html
@@ -377,6 +409,11 @@
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/operation/distance/ConnectedElementLocationFilter.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/operation/distance/ConnectedElementPointFilter.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/operation/distance/DistanceOp.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/operation/distance/FacetSequence.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/operation/distance/FacetSequenceTreeBuilder.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/operation/distance/GeometryFacet.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/operation/distance/GeometryFacetSequence.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/operation/distance/IndexedFacetDistance.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/operation/distance/GeometryLocation.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/operation/distance/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/operation/distance/package-summary.html
@@ -483,10 +520,29 @@
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/precision/CommonBitsRemover.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/precision/CoordinatePrecisionReducerFilter.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/precision/EnhancedPrecisionOp.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/precision/GeometryPrecisionReducer.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/precision/MinimumClearance.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/precision/PrecisionReducerCoordinateOperation.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/precision/SimpleGeometryPrecisionReducer.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/precision/SimpleMinimumClearance.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/precision/doc-files/minClearance.png
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/precision/package-frame.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/precision/package-summary.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/precision/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/shape/GeometricShapeBuilder.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/shape/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/shape/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/shape/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/shape/random/RandomPointsBuilder.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/shape/random/RandomPointsInGridBuilder.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/shape/random/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/shape/random/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/shape/random/package-tree.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/shape/fractal/KochSnowflakeBuilder.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/shape/fractal/SierpinskiCarpetBuilder.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/shape/fractal/package-frame.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/shape/fractal/package-summary.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/shape/fractal/package-tree.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/simplify/DouglasPeuckerLineSimplifier.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/simplify/DouglasPeuckerSimplifier.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/simplify/LineSegmentIndex.html
@@ -524,6 +580,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/triangulate/quadedge/QuadEdgeTriangle.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/triangulate/quadedge/QuadEdgeUtil.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/triangulate/quadedge/TraversalVisitor.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/triangulate/quadedge/TrianglePredicate.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/triangulate/quadedge/TriangleVisitor.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/triangulate/quadedge/Vertex.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/triangulate/quadedge/package-frame.html
@@ -538,6 +595,7 @@
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/util/Debug.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/util/GeometricShapeFactory.Dimensions.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/util/GeometricShapeFactory.html
+%%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/util/MathUtil.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/util/Memory.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/util/ObjectCounter.html
 %%PORTDOCS%%%%DOCSDIR%%/javadoc/com/vividsolutions/jts/util/PriorityQueue.html
@@ -562,6 +620,7 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/distance
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/locate
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/match
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm/math
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/algorithm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/awt
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/densify
@@ -582,6 +641,7 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/io/gml2
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/io
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/linearref
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/math
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/noding/snapround
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/noding
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/operation/buffer/validate
@@ -599,7 +659,11 @@
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/operation
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/planargraph/algorithm
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/planargraph
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/precision/doc-files
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/precision
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/shape/random
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/shape/fractal
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/shape
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/simplify
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/triangulate/quadedge
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/javadoc/com/vividsolutions/jts/triangulate
