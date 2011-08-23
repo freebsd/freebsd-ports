@@ -17,7 +17,9 @@ you update your ports collection, before attempting any port upgrades.
   # portmaster -R -r ruby-1.9
 
   If you use portupgrade:
-  # portupgrade -fr lang/ruby18
+  # portupgrade -f lang/ruby18
+  # portupgrade -f ports-mgmt/portupgrade
+  # portupgrade -x ruby-1.8.\* -fr lang/ruby18
 
   If you wish to keep the 1.8 version as default, add the following lines
   to your /etc/make.conf file:
