@@ -8,7 +8,7 @@
 
 PORTNAME=	kdegraphics
 PORTVERSION=	${KDE_VERSION}
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
 MASTER_SITE_SUBDIR=	stable/${PORTVERSION:S/.0//}/src
@@ -24,7 +24,7 @@ LIB_DEPENDS=	art_lgpl_2.5:${PORTSDIR}/graphics/libart_lgpl \
 		fribidi.3:${PORTSDIR}/converters/fribidi \
 		lcms.1:${PORTSDIR}/graphics/lcms \
 		paper.2:${PORTSDIR}/print/libpaper \
-		poppler-qt.2:${PORTSDIR}/graphics/poppler-qt
+		poppler-qt.3:${PORTSDIR}/graphics/poppler-qt
 
 CONFLICTS=	kolourpaint-[0-9]*
 

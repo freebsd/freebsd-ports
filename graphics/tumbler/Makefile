@@ -7,7 +7,7 @@
 
 PORTNAME=	tumbler
 PORTVERSION=	0.1.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	graphics xfce
 MASTER_SITES=	XFCE
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/0.1
@@ -87,7 +87,7 @@ PLIST_SUB+=	FREETYPE="@comment "
 .if defined(WITH_POPPLER)
 BUILD_DEPENDS+=	${LOCALBASE}/libdata/pkgconfig/poppler-glib.pc:${PORTSDIR}/graphics/poppler-gtk \
 		poppler-gtk>=0.12.0:${PORTSDIR}/graphics/poppler-gtk
-LIB_DEPENDS+=	poppler-glib.5:${PORTSDIR}/graphics/poppler-gtk
+LIB_DEPENDS+=	poppler-glib.6:${PORTSDIR}/graphics/poppler-gtk
 PLIST_SUB+=	POPPLER=""
 WITH_PLUGINS=	true
 .elif defined(WITHOUT_POPPLER)
