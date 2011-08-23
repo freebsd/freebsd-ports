@@ -4810,13 +4810,36 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>chromium</name>
-	<range><lt>13.0.782.107</lt></range>
+	<range><lt>13.0.782.215</lt></range>
       </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Google Chrome Releases reports:</p>
 	<blockquote cite="http://googlechromereleases.blogspot.com/search/label/Stable%20updates">
+	  <p>Fixed in 13.0.782.215:<br/>
+	    [89402] High CVE-2011-2821: Double free in libxml XPath handling.
+	      Credit to Yang Dingning from NCNIPC, Graduate University of
+	      Chinese Academy of Sciences.<br/>
+	    [82552] High CVE-2011-2823: Use-after-free in line box handling.
+	      Credit to Google Chrome Security Team (SkyLined) and independent
+	      later discovery by miaubiz.<br/>
+	    [88216] High CVE-2011-2824: Use-after-free with counter nodes.
+	      Credit to miaubiz.<br/>
+	    [88670] High CVE-2011-2825: Use-after-free with custom fonts. Credit
+	      to wushi of team509 reported through ZDI (ZDI-CAN-1283), plus
+	      indepdendent later discovery by miaubiz.<br/>
+	    [87453] High CVE-2011-2826: Cross-origin violation with empty
+	      origins. Credit to Sergey Glazunov.<br/>
+	    [90668] High CVE-2011-2827: Use-after-free in text searching. Credit
+	      to miaubiz.<br/>
+	    [91517] High CVE-2011-2828: Out-of-bounds write in v8. Credit to
+	      Google Chrome Security Team (SkyLined).<br/>
+	    [32-bit only] [91598] High CVE-2011-2829: Integer overflow in
+	      uniform arrays. Credit to Sergey Glazunov.<br/>
+	    [Linux only] [91665] High CVE-2011-2839: Buggy memset() in PDF.
+	      Credit to Aki Helin of OUSPG.</p>
+
 	  <p>Fixed in 13.0.782.107:<br/>
 	    [75821] Medium CVE-2011-2358: Always confirm an extension install
 	      via a browser dialog. Credit to Sergey Glazunov.<br/>
@@ -5370,11 +5393,20 @@ Note:  Please add new entries to the beginning of this file.
       <cvename>CVE-2011-2805</cvename>
       <cvename>CVE-2011-2818</cvename>
       <cvename>CVE-2011-2819</cvename>
+      <cvename>CVE-2011-2821</cvename>
+      <cvename>CVE-2011-2823</cvename>
+      <cvename>CVE-2011-2824</cvename>
+      <cvename>CVE-2011-2825</cvename>
+      <cvename>CVE-2011-2826</cvename>
+      <cvename>CVE-2011-2827</cvename>
+      <cvename>CVE-2011-2828</cvename>
+      <cvename>CVE-2011-2829</cvename>
+      <cvename>CVE-2011-2839</cvename>
     </references>
     <dates>
       <discovery>2010-10-19</discovery>
       <entry>2010-12-07</entry>
-      <modified>2011-08-02</modified>
+      <modified>2011-08-23</modified>
     </dates>
   </vuln>
 
