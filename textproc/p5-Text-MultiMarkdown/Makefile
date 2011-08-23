@@ -6,12 +6,12 @@
 #
 
 PORTNAME=	Text-MultiMarkdown
-PORTVERSION=	1.000033
+PORTVERSION=	1.000034
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	wen@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Convert MultiMarkdown syntax to (X)HTML
 
 BUILD_DEPENDS=	\
