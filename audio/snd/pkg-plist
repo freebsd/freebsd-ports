@@ -426,7 +426,6 @@ bin/sndplay
 %%SCHEME%%%%DATADIR%%/snd-gtk.scm
 %%SCHEME%%%%DATADIR%%/snd-motif.scm
 %%SCHEME%%%%DATADIR%%/snd-test.scm
-%%SCHEME%%%%DATADIR%%/snd9.scm
 %%SCHEME%%%%DATADIR%%/snd10.scm
 %%SCHEME%%%%DATADIR%%/snd11.scm
 %%SCHEME%%%%DATADIR%%/snd12.scm
