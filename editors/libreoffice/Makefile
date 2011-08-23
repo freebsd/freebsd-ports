@@ -36,6 +36,8 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/tdf/libreoffice/src/ \
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Full integrated office productivity suite
 
+BROKEN=	build is too fragile and break too often
+
 LO_COMPONENTS=	artwork base calc components extensions \
 		extras filters help impress libs-core libs-extern \
 		libs-extern-sys libs-gui postprocess sdk testing \
