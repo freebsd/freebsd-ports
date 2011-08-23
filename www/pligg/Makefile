@@ -6,16 +6,16 @@
 #
 
 PORTNAME=	pligg
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 PORTEPOCH=	1
 CATEGORIES=	www
 MASTER_SITES=	http://forums.pligg.com/attachments/current-version/
-DISTNAME=	2966d1300972240-pligg-content-management-system-${PORTVERSION:S/./-/g}-pligg-cms-${PORTVERSION}
+DISTNAME=	3076d1308851225-pligg-content-management-system-${PORTVERSION:S/./-/g}-pligg-cms-${PORTVERSION}
 
 MAINTAINER=	wen@FreeBSD.org
 COMMENT=	An Open Source Web2.0 CMS
 
-PORTSCOUT=	limit:^1\.1\.
+PORTSCOUT=	ignore:1
 
 USE_ZIP=	yes
 USE_PHP=	mysql
