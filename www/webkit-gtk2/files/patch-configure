@@ -1,20 +1,31 @@
---- configure.orig	2009-06-15 17:23:17.000000000 +0200
-+++ configure	2009-06-15 20:19:44.000000000 +0200
-@@ -21204,7 +21204,7 @@ fi
+--- configure.orig	2011-03-22 15:43:40.000000000 +0100
++++ configure	2011-03-22 15:44:04.000000000 +0100
+@@ -18331,8 +18331,8 @@
+ .SECONDARY: $(gsettings_SCHEMAS)
  
- if test "$enable_jit" = "yes"; then
-     case "$host_cpu" in
+ gsettings__base_list = \
+-  sed "$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g" | \
+-  sed "$$!N;$$!N;$$!N;$$!N;s/\n/ /g"
++  sed '\''$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;$$!N;s/\n/ /g'\'' | \
++  sed '\''$$!N;$$!N;$$!N;$$!N;s/\n/ /g'\''
+ 
+ install-gsettings-schemas: $(gsettings_SCHEMAS:.xml=.valid) $(gsettings__enum_file)
+ 	@$(NORMAL_INSTALL)
+@@ -20131,7 +20131,7 @@
+ $as_echo "#define ENABLE_YARR_JIT 1" >>confdefs.h
+ 
+         ;;
 -        i*86|x86_64)
 +        i*86|x86_64|amd64)
  
- cat >>confdefs.h <<\_ACEOF
- #define ENABLE_JIT 1
-@@ -21243,7 +21243,7 @@ cat >>confdefs.h <<\_ACEOF
- _ACEOF
+ $as_echo "#define ENABLE_JIT 1" >>confdefs.h
+ 
+@@ -20156,7 +20156,7 @@
+ $as_echo "#define WTF_USE_JIT_STUB_ARGUMENT_VA_LIST 1" >>confdefs.h
  
                  ;;
 -                x86_64)
 +                x86_64|amd64)
  
- cat >>confdefs.h <<\_ACEOF
- #define WTF_USE_JIT_STUB_ARGUMENT_REGISTER 1
+ $as_echo "#define WTF_USE_JIT_STUB_ARGUMENT_REGISTER 1" >>confdefs.h
+ 
