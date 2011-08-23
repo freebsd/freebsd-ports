@@ -198,6 +198,7 @@ bin/mhonarc
 %%PORTDOCS%%%%DOCSDIR%%/rcfileexs/def-mime.mrc.html
 %%PORTDOCS%%%%DOCSDIR%%/rcfileexs/frames.mrc.html
 %%PORTDOCS%%%%DOCSDIR%%/rcfileexs/icons.mrc.html
+%%PORTDOCS%%%%DOCSDIR%%/rcfileexs/secure.mrc.html
 %%PORTDOCS%%%%DOCSDIR%%/rcfileexs/subject.mrc.html
 %%PORTDOCS%%%%DOCSDIR%%/rcfileexs/utf-8-encode.mrc.html
 %%PORTDOCS%%%%DOCSDIR%%/rcfileexs/utf-8.mrc.html
@@ -251,6 +252,7 @@ bin/mhonarc
 %%PORTDOCS%%%%DOCSDIR%%/resources/folupend.html
 %%PORTDOCS%%%%DOCSDIR%%/resources/foluplitxt.html
 %%PORTDOCS%%%%DOCSDIR%%/resources/force.html
+%%PORTDOCS%%%%DOCSDIR%%/resources/followsymlinks.html
 %%PORTDOCS%%%%DOCSDIR%%/resources/fromfields.html
 %%PORTDOCS%%%%DOCSDIR%%/resources/genidx.html
 %%PORTDOCS%%%%DOCSDIR%%/resources/gmtdatefmt.html
