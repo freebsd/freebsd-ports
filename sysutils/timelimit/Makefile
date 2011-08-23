@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	timelimit
-PORTVERSION=	1.7
+PORTVERSION=	1.8
 CATEGORIES=	sysutils
 MASTER_SITES=	http://devel.ringlet.net/sysutils/timelimit/
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.b/pre/}
