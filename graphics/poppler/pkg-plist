@@ -23,9 +23,11 @@ include/poppler/GfxFont.h
 include/poppler/GfxState.h
 include/poppler/GfxState_helpers.h
 include/poppler/GlobalParams.h
+include/poppler/Hints.h
 include/poppler/JArithmeticDecoder.h
 include/poppler/JBIG2Stream.h
 include/poppler/Lexer.h
+include/poppler/Linearization.h
 include/poppler/Link.h
 include/poppler/LocalPDFDocBuilder.h
 include/poppler/Movie.h
@@ -69,6 +71,8 @@ include/poppler/cpp/poppler-document.h
 include/poppler/cpp/poppler-embedded-file.h
 include/poppler/cpp/poppler-font.h
 include/poppler/cpp/poppler-global.h
+include/poppler/cpp/poppler-image.h
+include/poppler/cpp/poppler-page-renderer.h
 include/poppler/cpp/poppler-page-transition.h
 include/poppler/cpp/poppler-page.h
 include/poppler/cpp/poppler-rectangle.h
@@ -81,11 +85,11 @@ include/poppler/fofi/FoFiType1.h
 include/poppler/fofi/FoFiType1C.h
 include/poppler/goo/FixedPoint.h
 include/poppler/goo/GooHash.h
+include/poppler/goo/GooLikely.h
 include/poppler/goo/GooList.h
 include/poppler/goo/GooMutex.h
 include/poppler/goo/GooString.h
 include/poppler/goo/GooTimer.h
-include/poppler/goo/GooVector.h
 include/poppler/goo/ImgWriter.h
 include/poppler/goo/JpegWriter.h
 include/poppler/goo/PNGWriter.h
@@ -124,7 +128,7 @@ lib/libpoppler-cpp.so.0
 lib/libpoppler.a
 lib/libpoppler.la
 lib/libpoppler.so
-lib/libpoppler.so.6
+lib/libpoppler.so.13
 %%CAIRO%%libdata/pkgconfig/poppler-cairo.pc
 libdata/pkgconfig/poppler-cpp.pc
 libdata/pkgconfig/poppler-splash.pc

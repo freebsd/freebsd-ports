@@ -1,5 +1,5 @@
---- utils/Makefile.in.orig	2009-10-22 20:33:17.000000000 +0200
-+++ utils/Makefile.in	2009-10-22 20:33:49.000000000 +0200
+--- utils/Makefile.in.orig	2011-01-05 13:06:04.000000000 +0100
++++ utils/Makefile.in	2011-01-05 13:06:26.000000000 +0100
 @@ -64,7 +64,7 @@ am_pdffonts_OBJECTS = pdffonts.$(OBJEXT)
  pdffonts_OBJECTS = $(am_pdffonts_OBJECTS)
  pdffonts_LDADD = $(LDADD)
@@ -23,7 +23,7 @@
 -pdfinfo_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la \
 +pdfinfo_DEPENDENCIES = \
  	$(am__DEPENDENCIES_1)
- am__pdftoabw_SOURCES_DIST = pdftoabw.cc parseargs.c parseargs.h
+ am__pdftoabw_SOURCES_DIST = pdftoabw.cc parseargs.cc parseargs.h
  @BUILD_ABIWORD_OUTPUT_TRUE@am_pdftoabw_OBJECTS = pdftoabw.$(OBJEXT) \
  @BUILD_ABIWORD_OUTPUT_TRUE@	$(am__objects_1)
  pdftoabw_OBJECTS = $(am_pdftoabw_OBJECTS)
@@ -39,7 +39,7 @@
 -pdftohtml_DEPENDENCIES = $(top_builddir)/poppler/libpoppler.la \
 +pdftohtml_DEPENDENCIES = \
  	$(am__DEPENDENCIES_1)
- am__pdftoppm_SOURCES_DIST = pdftoppm.cc parseargs.c parseargs.h
+ am__pdftoppm_SOURCES_DIST = pdftoppm.cc parseargs.cc parseargs.h
  @BUILD_SPLASH_OUTPUT_TRUE@am_pdftoppm_OBJECTS = pdftoppm.$(OBJEXT) \
  @BUILD_SPLASH_OUTPUT_TRUE@	$(am__objects_1)
  pdftoppm_OBJECTS = $(am_pdftoppm_OBJECTS)
@@ -62,7 +62,7 @@
  	$(am__DEPENDENCIES_1)
  DEFAULT_INCLUDES = -I.@am__isrc@ -I$(top_builddir) -I$(top_builddir)/poppler
  depcomp = $(SHELL) $(top_srcdir)/depcomp
-@@ -382,7 +382,7 @@ INCLUDES = \
+@@ -405,7 +405,7 @@ INCLUDES = \
  	$(ABIWORD_CFLAGS)
  
  LDADD = \
