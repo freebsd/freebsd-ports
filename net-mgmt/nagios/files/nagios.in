@@ -4,8 +4,7 @@
 #
 
 # PROVIDE: nagios
-# REQUIRE: DAEMON
-# BEFORE: LOGIN
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 
 #
@@ -35,11 +34,11 @@ restart_precmd="nagios_checkconfig"
 reload_precmd="reload_precmd"
 sig_reload=HUP
 
+load_rc_config "${name}"
+
 [ -z "${nagios_enable}" ]       && nagios_enable="NO"
 [ -z "${nagios_configfile}" ]   && nagios_configfile="%%PREFIX%%/etc/nagios/nagios.cfg"
 [ -z "${nagios_precache}" ]     && nagios_precache="NO"
-
-load_rc_config "${name}"
 
 required_files="${nagios_configfile}"
 command_args="${command_args} ${nagios_configfile}"
