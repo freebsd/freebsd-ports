@@ -3,28 +3,29 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/net/libproxy-gnome/Makefile,v 1.1 2011/01/12 13:10:53 kwm Exp $
 
-PORTREVISION=	3
+PORTREVISION=	0
 CATEGORIES=	net devel
 PKGNAMESUFFIX=	-gnome
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	GNOME plug-in for libproxy
 
-LIB_DEPENDS=	proxy.0:${PORTSDIR}/net/libproxy
+LIB_DEPENDS=	proxy.1:${PORTSDIR}/net/libproxy
 
 MASTERDIR=	${.CURDIR}/../libproxy
-BUILD_WRKSRC=	${WRKSRC}/src/plugins
-INSTALL_WRKSRC=	${BUILD_WRKSRC}
 DESCR=		${.CURDIR}/pkg-descr
 PLIST=		${.CURDIR}/pkg-plist
-USE_XORG=	xmu x11
 USE_GNOME=	gconf2
-CONFIGURE_ARGS=--with-gnome --without-kde --without-webkit \
-		--without-mozjs --without-networkmanager --without-python \
-		--without-envvar --without-file
 
-LIBPROXY_SLAVE=	yes
+LIBPROXY_SLAVE=	gnome
+
+do-install:
+	${MKDIR} ${PREFIX}/lib/${PORTNAME}/${PORTVERSION}/modules/
+	${INSTALL_LIB} ${WRKSRC}/libproxy/config_gnome.so \
+		${PREFIX}/lib/${PORTNAME}/${PORTVERSION}/modules/
+	${INSTALL_PROGRAM} ${WRKSRC}/libproxy/pxgconf \
+		${PREFIX}/libexec/
 
 .include "${MASTERDIR}/Makefile"

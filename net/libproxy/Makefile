@@ -3,44 +3,71 @@
 # Whom:			Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#
+#    $MCom: ports/net/libproxy/Makefile,v 1.1 2011/01/12 13:10:52 kwm Exp $
 
 PORTNAME=	libproxy
-PORTVERSION=	0.2.3
-PORTREVISION?=	1
+PORTVERSION=	0.4.6
+PORTREVISION?=	0
 CATEGORIES?=	net devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT?=	Library that provides automatic proxy configuration management
 
-USE_GMAKE=	yes
-USE_GNOME+=	gnomehack
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib" \
-		ac_cv_func_malloc_0_nonnull=yes
-CONFIGURE_ARGS?=--without-gnome --without-kde --without-webkit \
-		--without-mozjs --without-networkmanager --with-python \
-		--with-envvar --with-file
+USE_CMAKE=	yes
 
 PLIST_SUB+=	VERSION=${PORTVERSION}
 
 .if !defined(LIBPROXY_SLAVE)
 USE_LDCONFIG=	yes
-USE_PYTHON=	2.5+
+CMAKE_ARGS+=	-DWITH_PYTHON:BOOL=OFF  -DWITH_PERL:BOOL=OFF \
+		-DWITH_GNOME:BOOL=OFF -DWITH_KDE4:BOOL=OFF \
+		-DWITH_WEBKIT:BOOL=OFF -DWITH_MOZJS:BOOL=OFF \
+		-DWITH_NETWORKMANAGER:BOOL=OFF -DWITH_VALA:BOOL=ON
+.else
 
-post-build:
-	${PYTHON_CMD} -Qold ${PYTHON_LIBDIR}/compileall.py \
-	    	${WRKSRC}/src/bindings/python
-	${PYTHON_CMD} -O ${PYTHON_LIBDIR}/compileall.py \
-	    	${WRKSRC}/src/bindings/python
+# Libproxy is build for the slave ports, since I haven't been able to find
+# out how to only build optional code with cmake.
+# Patches for this problem are welcome.
+
+. if ${LIBPROXY_SLAVE}=="python"
+CMAKE_ARGS+=	-DWITH_PYTHON:BOOL=ON
+. else
+CMAKE_ARGS+=	-DWITH_PYTHON:BOOL=OFF
+. endif
+
+. if ${LIBPROXY_SLAVE}=="perl"
+CMAKE_ARGS+=	-DWITH_PERL:BOOL=ON
+. else
+CMAKE_ARGS+=	-DWITH_PERL:BOOL=OFF
+. endif
+
+. if ${LIBPROXY_SLAVE}=="gnome"
+CMAKE_ARGS+=	-DWITH_GNOME:BOOL=ON
+. else
+CMAKE_ARGS+=	-DWITH_GNOME:BOOL=OFF
+. endif
+
+. if ${LIBPROXY_SLAVE}=="kde"
+CMAKE_ARGS+=	-DWITH_KDE4:BOOL=ON
+. else
+CMAKE_ARGS+=	-DWITH_KDE4:BOOL=OFF
+. endif
+
+. if ${LIBPROXY_SLAVE}=="webkit"
+CMAKE_ARGS+=	-DWITH_WEBKIT:BOOL=ON
+. else
+CMAKE_ARGS+=	-DWITH_WEBKIT:BOOL=OFF
+. endif
+
+. if ${LIBPROXY_SLAVE}=="mozjs"
+CMAKE_ARGS+=	-DWITH_MOZJS:BOOL=ON
+. else
+CMAKE_ARGS+=	-DWITH_MOZJS:BOOL=OFF
+. endif
+.endif
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/src/bindings/python/libproxy.pyc \
-		${PYTHON_SITELIBDIR}
-	${INSTALL_DATA} ${WRKSRC}/src/bindings/python/libproxy.pyo \
-		${PYTHON_SITELIBDIR}
-.endif
+	@${MKDIR} ${PREFIX}/lib/libproxy/${PORTVERSION}/modules/
 
 .include <bsd.port.mk>

@@ -1,15 +1,17 @@
 bin/proxy
 include/proxy.h
-lib/libproxy.a
-lib/libproxy.la
+lib/libmodman.so
+lib/libmodman.so.1
 lib/libproxy.so
-lib/libproxy.so.0
-lib/libproxy/%%VERSION%%/plugins/envvar.so
-lib/libproxy/%%VERSION%%/plugins/file.so
+lib/libproxy.so.1
 libdata/pkgconfig/libproxy-1.0.pc
-%%PYTHON_SITELIBDIR%%/libproxy.py
-%%PYTHON_SITELIBDIR%%/libproxy.pyc
-%%PYTHON_SITELIBDIR%%/libproxy.pyo
-@dirrmtry lib/libproxy/%%VERSION%%/plugins
-@dirrmtry lib/libproxy/%%VERSION%%
-@dirrmtry lib/libproxy
+share/cmake/Modules/Findlibproxy.cmake
+share/vala/vapi/libproxy-1.0.vapi
+@dirrmtry share/vala/vapi
+@dirrmtry share/vala
+@dirrm share/cmake/Modules
+@dirrm share/cmake
+@exec mkdir -p %D/lib/libproxy/%%VERSION%%/modules
+@dirrm lib/libproxy/%%VERSION%%/modules
+@dirrm lib/libproxy/%%VERSION%%
+@dirrm lib/libproxy
