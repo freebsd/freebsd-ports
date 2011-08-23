@@ -6,18 +6,20 @@
 #
 
 PORTNAME=	nagios
-PORTVERSION=	3.2.3
+PORTVERSION=	3.3.1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-3.x/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	jarrod@downtools.com.au
 COMMENT=	Extremely powerful network monitoring system
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	gd.4:${PORTSDIR}/graphics/gd
 RUN_DEPENDS=	${LOCALBASE}/libexec/nagios/check_nagios:${PORTSDIR}/net-mgmt/nagios-plugins
 
 USE_ICONV=	yes
-USE_PERL5_BUILD=	yes
+USE_PERL5_BUILD=yes
 USE_AUTOTOOLS=	autoconf libltdl
 USE_RC_SUBR=	nagios
 
@@ -26,7 +28,7 @@ CONFLICTS=	nagios-[12].* nagios-devel-*
 OPTIONS=	EMBEDDED_PERL "Enable embedded Perl [requires Perl 5.8.0+]" off \
 		NANOSLEEP "Use nanosleep in event timing" off \
 		EVENT_BROKER "Enable event broker functionality" off \
-		UNHANDLED_HACK "Display passive checks in unhandled queries" off \
+		UNHANDLED_HACK "Display passive checks in unhandled queries" off
 
 GNU_CONFIGURE=	yes
 
@@ -40,6 +42,9 @@ NAGIOSGID=	${NAGIOSUID}
 NAGIOSWWWDIR?=	www/nagios
 NAGIOSHTMURL?=	/nagios
 NAGIOSCGIURL?=	${NAGIOSHTMURL}/cgi-bin
+
+USERS=		${NAGIOSUSER}
+GROUPS=		${NAGIOSGROUP}
 
 .include <bsd.port.pre.mk>
 
@@ -62,9 +67,7 @@ CONFIGURE_ARGS=	--with-command-user=${NAGIOSUSER} \
 		--with-checkresult-dir=${NAGIOSDIR}/checkresults \
 		--disable-statuswrl
 
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		CFLAGS="${CFLAGS}" \
-		LDFLAGS="${LDFLAGS}" \
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}" \
 		LIBS="-L${LOCALBASE}/lib" \
 		PERL=${PERL}
 
@@ -82,9 +85,7 @@ PLIST_SUB=	NAGIOSDIR=${NAGIOSDIR} \
 		NAGIOSCGIURL=${NAGIOSCGIURL} \
 		WWWGRP=${WWWGRP}
 
-SUB_FILES=	pkg-install \
-		pkg-deinstall \
-		pkg-message
+SUB_FILES=	pkg-message
 
 # XXX: Don't remove PREFIX from SUB_LIST here.
 SUB_LIST=	PREFIX=${PREFIX} \
@@ -94,7 +95,7 @@ USE_PHP=	yes
 
 .if defined(WITH_EMBEDDED_PERL)
 USE_PERL5=	5.8.0+
-CONFIGURE_ARGS+=	--enable-embedded-perl \
+CONFIGURE_ARGS+=--enable-embedded-perl \
 		--with-perlcache
 PLIST_SUB+=	EMBEDDED_PERL=""
 .else
@@ -102,23 +103,23 @@ PLIST_SUB+=	EMBEDDED_PERL="@comment "
 .endif
 
 .if defined(WITH_NANOSLEEP)
-CONFIGURE_ARGS+=	--enable-nanosleep
+CONFIGURE_ARGS+=--enable-nanosleep
 .endif
 
 .if defined(WITH_EVENT_BROKER)
-CONFIGURE_ARGS+=	--enable-event-broker
+CONFIGURE_ARGS+=--enable-event-broker
 .else
-CONFIGURE_ARGS+=	--disable-event-broker
+CONFIGURE_ARGS+=--disable-event-broker
 .endif
+
+post-extract:
+	@${MV} ${WRKDIR}/${PORTNAME} ${WRKSRC}
 
 post-patch:
 .if defined(WITH_UNHANDLED_HACK)
 	@${REINPLACE_CMD} -e 's#;serviceprops=42\&#;serviceprops=10\&#g' \
 		-e 's#;hostprops=42\"#;hostprops=10\"#g' ${WRKSRC}/html/side.php
 .endif
-
-pre-su-install:
-	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
 
 post-install:
 	@${CHMOD} 775 ${NAGIOSDIR} ${NAGIOSDIR}/archives ${NAGIOSDIR}/checkresults ${NAGIOSDIR}/rw
