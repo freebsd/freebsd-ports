@@ -7,7 +7,7 @@
 
 PORTNAME=	arpack
 PORTVERSION=	96
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	math
 MASTER_SITES=	http://www.caam.rice.edu/software/ARPACK/SRC/
 DISTFILES=	${PORTNAME}${PORTVERSION}.tar.gz patch.tar.gz
@@ -17,10 +17,6 @@ DISTFILES+=	ug.ps.gz
 DIST_SUBDIR=	arpack
 EXTRACT_ONLY=	${PORTNAME}${PORTVERSION}.tar.gz
 
-PATCH_SITES=	http://mathema.tician.de/news.tiker.net/files/
-PATCHFILES=	arpack-arscnd-3.patch.gz
-PATCH_DIST_STRIP=	-p1
-
 MAINTAINER=	bf@FreeBSD.org
 COMMENT=	Argand Library: large eigenvalue subroutines (serial version)
 
@@ -28,6 +24,34 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 WRKSRC =	${WRKDIR}/ARPACK
+
+# The following lapack symbols in arpack are renamed to avoid conflicts with other
+# lapack libraries:
+RENAMED_SYMBOLS=	cgbtf2 cgbtrf cgbtrs cgeqr2 cgttrf cgttrs clacgv \
+			clacon clacpy cladiv clahqr clange clanhs clarf \
+			clarfg clarnv clartg clascl claset classq claswp \
+			clatrs cmach crot ctrevc ctrexc ctrsen ctrsyl cunm2r \
+			dgbtf2 dgbtrf dgbtrs dgeqr2 dgttrf dgttrs dlabad \
+			dlacon dlacpy dladiv dlae2 dlaev2 dlaexc dlagtm \
+			dlahqr dlaln2 dlamc1 dlamc2 dlamc3 dlamc4 dlamc5 \
+			dlamch dlange dlanhs dlanst dlanv2 dlaptm dlapy2 \
+			dlapy3 dlaran dlarf dlarfg dlarfx dlarnd dlarnv \
+			dlartg dlaruv dlascl dlaset dlasr dlasrt dlassq \
+			dlaswp dlasy2 dorm2r dpttrf dpttrs dsteqr dtrevc \
+			dtrexc dtrsen dtrsyl dzsum1 icmax1 ilaenv izmax1 \
+			lsame lsamen scsum1 second sgbtf2 sgbtrf sgbtrs \
+			sgeqr2 sgttrf sgttrs slabad slacon slacpy sladiv \
+			slae2 slaev2 slaexc slagtm slahqr slaln2 slamc1 \
+			slamc2 slamc3 slamc4 slamc5 slamch slange slanhs \
+			slanst slanv2 slaptm slapy2 slapy3 slaran slarf \
+			slarfg slarfx slarnd slarnv slartg slaruv slascl \
+			slaset slasr slasrt slassq slaswp slasy2 sorm2r \
+			spttrf spttrs ssteqr strevc strexc strsen strsyl \
+			xerbla xlaenv zgbtf2 zgbtrf zgbtrs zgeqr2 zgttrf \
+			zgttrs zlacgv zlacon zlacpy zladiv zlahqr zlange \
+			zlanhs zlarf zlarfg zlarnv zlartg zlascl zlaset \
+			zlassq zlaswp zlatrs zmach zrot ztrevc ztrexc ztrsen \
+			ztrsyl zunm2r
 
 BANDTESTS=	ssbdr1 ssbdr2 ssbdr3 ssbdr4 ssbdr5 ssbdr6 \
 		dsbdr1 dsbdr2 dsbdr3 dsbdr4 dsbdr5 dsbdr6 \
@@ -72,13 +96,35 @@ post-extract:
 
 post-patch:
 	@${REINPLACE_CMD} -E \
-		-e '/^(home|AR|FC|LDFLAGS|MAKE|PLAT|RANLIB|SHELL)[[:space:]]+=/d' \
-		-e '/^ARPACKLIB[[:space:]]+=/s/_\$$\(PLAT\)//' \
-		-e '\|^BLASLIB[[:space:]]+=|s|=.*|= ${LDFLAGS} ${BLAS}|' \
-		-e '/^DIRS[[:space:]]+=/s/\$$\(BLASdir\)//' \
-		-e '\|^FFLAGS[[:space:]]+=|s|=.*|= ${FFLAGS} $${PICFLAG}|' \
+		-e '/^(home|AR|FC|LDFLAGS|MAKE|PLAT|RANLIB|SHELL)[[:blank:]]+=/d' \
+		-e '/^ARPACKLIB[[:blank:]]+=/s/_\$$\(PLAT\)//' \
+		-e '\|^BLASLIB[[:blank:]]+=|s|=.*|= ${LDFLAGS} ${BLAS}|' \
+		-e '/^DIRS[[:blank:]]+=/s/\$$\(BLASdir\)//' \
+		-e '\|^FFLAGS[[:blank:]]+=|s|=.*|= ${FFLAGS} $${PICFLAG}|' \
 			${WRKSRC}/ARmake.inc
 	@${CP} -R ${WRKSRC} ${WRKSRC}_SHARED
+	@${ECHO_CMD} ${RENAMED_SYMBOLS} | ${AWK} \
+		'BEGIN { printf "%s\n\n%s\t%s\n%s\t%s\n\n", \
+			"/* arpack symbol renaming preprocessor macros, C interface */", \
+			"#ifndef", "_ARPACK_COMPAT_C_H_", \
+			"#define", "_ARPACK_COMPAT_C_H_" \
+			> "${WRKDIR}/arpack_compat_c.h" ; \
+			printf "%s\n\n%s\t%s\n%s\t%s\n\n", \
+			"/* arpack symbol renaming preprocessor macros, FORTRAN interface */", \
+			"#ifndef", "_ARPACK_COMPAT_F_H_", \
+			"#define", "_ARPACK_COMPAT_F_H_" \
+			> "${WRKDIR}/arpack_compat_f.h" } ; \
+		{ for (i = 1; i <= NF; i++) { \
+			printf  "%s\t%s%s\t%s%s%s\n", "#define", $$i, "_", \
+			"arpack_", $$i, "_" > "${WRKDIR}/arpack_compat_c.h" ; \
+			printf  "%s\t%s\t%s%s\n%s\t%s\t%s%s\n", "#define", \
+			toupper($$i), "ARPACK_", toupper($$i), "#define", $$i, \
+			"ARPACK_", toupper($$i) \
+			> "${WRKDIR}/arpack_compat_f.h" ; \
+			printf "%s%s%s\n", $$i, " arpack_", $$i \
+			> "${WRKDIR}/rename" } } ; \
+		END { print "\n#endif" >  "${WRKDIR}/arpack_compat_c.h" ; \
+		print "\n#endif" >  "${WRKDIR}/arpack_compat_f.h" }' -
 
 do-build:
 	@cd ${WRKSRC} ; ${SETENV} ${MAKE_ENV} \
@@ -87,12 +133,17 @@ do-build:
 	@cd ${WRKSRC}_SHARED ; ${SETENV} ${MAKE_ENV} \
 		PICFLAG=${PICFLAG}  home="${WRKSRC}_SHARED" \
 		${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} ${ALL_TARGET} ; \
-		${LD} -Bshareable -o libarpack.so.1 -x -soname libarpack.so.1 --whole-archive libarpack.a
+		${FC} ${FFLAGS} ${PICFLAG} ${LDFLAGS} -shared \
+		-o libarpack.so.1 -Wl,-x -Wl,-soname,libarpack.so.1 \
+		-Wl,--whole-archive libarpack.a -Wl,--no-whole-archive
 
 do-install:
-	@${INSTALL_DATA} ${FILESDIR}/arpack.h ${PREFIX}/include
-	@${INSTALL_DATA} ${WRKSRC}/libarpack.a ${PREFIX}/lib
-	@${INSTALL_DATA} ${WRKSRC}_SHARED/libarpack.so.1 ${PREFIX}/lib
+	@${INSTALL_DATA} ${FILESDIR}/arpack.h ${WRKDIR}/arpack_compat_c.h \
+		${WRKDIR}/arpack_compat_f.h ${PREFIX}/include
+.for lib in /libarpack.a _SHARED/libarpack.so.1
+	@${OBJCOPY} --redefine-syms ${WRKDIR}/rename ${WRKSRC}${lib}
+	@${INSTALL_DATA} ${WRKSRC}${lib} ${PREFIX}/lib
+.endfor
 	@${LN} -sf libarpack.so.1 ${PREFIX}/lib/libarpack.so
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
@@ -107,10 +158,12 @@ check regression-test test: simpletest
 simpletest: build
 	@cd ${WRKSRC}/EXAMPLES/SIMPLE ; ${SETENV} ${MAKE_ENV} \
 		PICFLAG= home="${WRKSRC}" \
-		${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} simple ; ${SIMPLETESTS:S|^|./|:S|$| ; |}
+		${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} simple ; \
+		${SIMPLETESTS:S|^|./|:S|$| ; |}
 	@cd ${WRKSRC}_SHARED/EXAMPLES/SIMPLE ; ${SETENV} ${MAKE_ENV} \
 		PICFLAG=${PICFLAG}  home="${WRKSRC}_SHARED" \
-		${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} simple ; ${SIMPLETESTS:S|^|./|:S|$| ; |}
+		${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} simple ; \
+		${SIMPLETESTS:S|^|./|:S|$| ; |}
 
 fulltest: fulltest-static fulltest-shared
 
@@ -118,14 +171,16 @@ fulltest-static: lapack-drivers-static
 .for d in BAND COMPLEX NONSYM SVD SYM
 	@cd ${WRKSRC}/EXAMPLES/${d} ; ${SETENV} ${MAKE_ENV} \
 		PICFLAG= home="${WRKSRC}" \
-		${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} ${${d}TESTS} ; ${${d}TESTS:S|^|./|:S|$| ; |}
+		${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} ${${d}TESTS} ; \
+		${${d}TESTS:S|^|./|:S|$| ; |}
 .endfor
 
 fulltest-shared: lapack-drivers-shared
 .for d in BAND COMPLEX NONSYM SIMPLE SVD SYM
 	@cd ${WRKSRC}_SHARED/EXAMPLES/${d} ; ${SETENV} ${MAKE_ENV} \
 		PICFLAG=${PICFLAG}  home="${WRKSRC}_SHARED" \
-		${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} ${${d}TESTS} ; ${${d}TESTS:S|^|./|:S|$| ; |}
+		${MAKE} ${_MAKE_JOBS} ${MAKE_ARGS} ${${d}TESTS} ; \
+		${${d}TESTS:S|^|./|:S|$| ; |}
 .endfor
 
 lapack-drivers-static: build
