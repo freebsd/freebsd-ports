@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	App-Nopaste
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SARTAK
@@ -28,7 +28,7 @@ OPTIONS=	CLIPBOARD "Support X11 Clipboard" On \
 PERL_CONFIGURE=	yes
 
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
+LICENSE=	ART10 GPLv1
 
 CONFLICTS=	p5-WebService-NoPaste-0*
 
@@ -44,7 +44,8 @@ MAN3=		App::Nopaste.3 \
 		App::Nopaste::Service::Codepeek.3 \
 		App::Nopaste::Service::Shadowcat.3 \
 		App::Nopaste::Service::Snitch.3 \
-		App::Nopaste::Service::ssh.3
+		App::Nopaste::Service::ssh.3 \
+		App::Nopaste::Service::Ubuntu.3
 
 .include <bsd.port.pre.mk>
 .if defined(WITH_PASTEBIN)

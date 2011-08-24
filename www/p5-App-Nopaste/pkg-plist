@@ -10,6 +10,7 @@
 %%SITE_PERL%%/App/Nopaste/Service/Shadowcat.pm
 %%SITE_PERL%%/App/Nopaste/Service/Snitch.pm
 %%SITE_PERL%%/App/Nopaste/Service/ssh.pm
+%%SITE_PERL%%/App/Nopaste/Service/Ubuntu.pm
 bin/nopaste
 @dirrm %%SITE_PERL%%/App/Nopaste/Service
 @dirrm %%SITE_PERL%%/App/Nopaste
