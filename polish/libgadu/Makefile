@@ -5,25 +5,25 @@
 # $FreeBSD$
 
 PORTNAME=	libgadu
-DISTVERSION=	1.10.1
+DISTVERSION=	1.11.0
 PORTEPOCH=	1
 CATEGORIES=	polish net
 MASTER_SITES=	http://toxygen.net/libgadu/files/
 
-MAINTAINER=	mwisnicki+freebsd@gmail.com
+MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	This library is used by many IMs with Gadu-Gadu support
 
 LICENSE=	LGPL21
 
 CONFLICTS=	pl-ekg-1.[0-6]*
 
-USE_GNOME=		gnomehack pkgconfig
-GNU_CONFIGURE=		yes
+USE_GNOME=	gnomehack pkgconfig
+GNU_CONFIGURE=	yes
 
-CONFIGURE_ARGS=		--enable-shared --disable-static --with-pthread \
-			--disable-tests --without-gnutls
+CONFIGURE_ARGS=	--enable-shared --disable-static --with-pthread \
+		--disable-tests --without-gnutls
 
-USE_LDCONFIG=		yes
+USE_LDCONFIG=	yes
 
 OPTIONS=	OPENSSL "Build with OpenSSL support" on
 
