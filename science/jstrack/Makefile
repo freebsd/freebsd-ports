@@ -11,7 +11,7 @@ CATEGORIES=	science
 MASTER_SITES=	http://www.jstrack.org/${PORTNAME}/downloads/ \
 		http://www.bayofrum.net/dist/${PORTNAME}/
 
-MAINTAINER=	crees@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A freeware hurricane tracking program
 
 LIB_DEPENDS=	netpbm.1:${PORTSDIR}/graphics/netpbm \
@@ -20,7 +20,7 @@ RUN_DEPENDS=	dtplite:${PORTSDIR}/devel/tcllib
 
 LICENSE=	JStrack
 LICENSE_NAME=	JStrack
-LICENSE_PERMS=	no-dist-sell pkg-mirror no-pkg-sell auto-accept
+LICENSE_PERMS=	dist-sell pkg-sell auto-accept
 LICENSE_TEXT=	It is and always will be free, and [Jim Graham] wrote it...\
 		so don't charge money for it, and don't claim that you wrote it
 
