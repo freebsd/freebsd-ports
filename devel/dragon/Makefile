@@ -18,4 +18,6 @@ LICENSE=	GPLv2
 GNU_CONFIGURE=	yes
 PLIST_FILES=	bin/dragon
 
+MAKE_JOBS_UNSAFE=yes
+
 .include <bsd.port.mk>
