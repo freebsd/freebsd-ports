@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	mod_proctitle
-PORTVERSION=	0.3
-PORTREVISION=	1
+PORTVERSION=	0.4
+PORTREVISION=	0
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.springdaemons.com/soft/
 PKGNAMEPREFIX=	${APACHE_PKGNAMEPREFIX}
@@ -28,10 +28,6 @@ PLIST_FILES=	${APACHEMODDIR}/${PORTNAME}.so
 CFLAGS+=	-I${LOCALBASE}/include/apr-0
 .else
 CFLAGS+=	-I${LOCALBASE}/include/apr-1
-.endif
-
-.if ${OSVERSION} >= 900000
-BROKEN=		does not configure on 9.X
 .endif
 
 do-install:
