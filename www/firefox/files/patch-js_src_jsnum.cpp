@@ -14,7 +14,7 @@
  
  #else
  
-+#if defined(__FreeBSD__) && __FreeBSD_version >= 601000
++#if defined(__FreeBSD__)
 +#if __BSD_VISIBLE == 0
 +#error __BSD_VISIBLE is zero, so fedisableexcept is not defined
 +#endif
