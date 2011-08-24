@@ -6,6 +6,31 @@ You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
 20110823:
+  AFFECTS: users of lang/ruby
+  AUTHOR: swills@FreeBSD.org
+
+  The default ruby version has been reverted from 1.9 to 1.8. If you followed
+  the procedure in the 20110822 entry, you may need to follow these steps:
+
+  If you use portmaster:
+  # portmaster -o lang/ruby18 lang/ruby19
+  # portmaster -R -r ruby-1.8
+
+  If you use portupgrade:
+  # portupgrade -f lang/ruby19
+  # portupgrade -f lang/ruby18 # if you have it installed
+  # portupgrade -f ports-mgmt/portupgrade
+  # portupgrade -x ruby-1.9.\* -fr lang/ruby19
+
+  If you wish to keep the 1.9 version as default, add the following lines
+  to your /etc/make.conf file:
+
+  #
+  # Keep ruby 1.9 as default version.
+  #
+  RUBY_DEFAULT_VER=1.9
+
+20110823:
   AFFECTS: users of devel/libnotify and net/libproxy
   AUTHOR: gnome@FreeBSD.org
 
