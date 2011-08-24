@@ -1,4 +1,6 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/Parser/.packlist
+bin/makesimple
+bin/pgmake-db
+bin/plmake
 %%SITE_PERL%%/Makefile/AST.pm
 %%SITE_PERL%%/Makefile/AST/Command.pm
 %%SITE_PERL%%/Makefile/AST/Evaluator.pm
@@ -9,12 +11,10 @@
 %%SITE_PERL%%/Makefile/AST/Variable.pm
 %%SITE_PERL%%/Makefile/Parser.pm
 %%SITE_PERL%%/Makefile/Parser/GmakeDB.pm
-bin/makesimple
-bin/pgmake-db
-bin/plmake
-@dirrmtry %%SITE_PERL%%/Makefile/Parser
-@dirrmtry %%SITE_PERL%%/Makefile/AST/Rule
-@dirrmtry %%SITE_PERL%%/Makefile/AST
-@dirrmtry %%SITE_PERL%%/Makefile
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/Parser
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/Parser/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile/Parser
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Makefile
+@dirrm %%SITE_PERL%%/Makefile/Parser
+@dirrm %%SITE_PERL%%/Makefile/AST/Rule
+@dirrm %%SITE_PERL%%/Makefile/AST
+@dirrmtry %%SITE_PERL%%/Makefile

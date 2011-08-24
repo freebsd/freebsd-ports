@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Makefile-Parser
-PORTVERSION=	0.211
+PORTVERSION=	0.215
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:AGENT
@@ -15,13 +15,19 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Makefile::Parser - A Simple Parser for Makefiles
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/List/MoreUtils.pm:${PORTSDIR}/lang/p5-List-MoreUtils \
-		${SITE_PERL}/Class/Accessor/Fast.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/File/Slurp.pm:${PORTSDIR}/devel/p5-File-Slurp \
+BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-Trigger>=0.13:${PORTSDIR}/devel/p5-Class-Trigger \
-		p5-Makefile-DOM>=0.003:${PORTSDIR}/textproc/p5-Makefile-DOM
+		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
+		p5-IPC-Run3>=0.036:${PORTSDIR}/devel/p5-IPC-Run3 \
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Makefile-DOM>=0.005:${PORTSDIR}/textproc/p5-Makefile-DOM
+RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Class-Trigger>=0.13:${PORTSDIR}/devel/p5-Class-Trigger \
+		p5-File-Slurp>=0:${PORTSDIR}/devel/p5-File-Slurp \
+		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
+		p5-Makefile-DOM>=0.005:${PORTSDIR}/textproc/p5-Makefile-DOM
 
-PERL_CONFIGURE=	5.6.1+
+PERL_CONFIGURE=	yes
 
 MAN1=		makesimple.1 \
 		pgmake-db.1 \
