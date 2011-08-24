@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	midori
-PORTVERSION=	0.3.6
-PORTREVISION=	1
+PORTVERSION=	0.4.0
 CATEGORIES=	www xfce
 MASTER_SITES=	${MASTER_SITE_XFCE}
 MASTER_SITE_SUBDIR=	src/apps/${PORTNAME}/${PORTVERSION:R}
@@ -29,8 +28,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
-CONFIGURE_ARGS+=--disable-libidn \
-		--enable-libnotify \
+CONFIGURE_ARGS+=--enable-libnotify \
 		--enable-addons \
 		--enable-docs \
 		--jobs=${MAKE_JOBS_NUMBER}
@@ -51,7 +49,7 @@ PLIST_SUB=	VERSION="${PORTVERSION:R}"
 
 OPTIONS=	NLS "Enable Native Language support" on \
 		APIDOCS "Build api documentation" off \
-		UNIQUE "Enable single instance support" off
+		UNIQUE "Enable single instance support" on
 
 .include <bsd.port.pre.mk>
 
