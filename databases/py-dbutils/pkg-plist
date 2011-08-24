@@ -34,45 +34,42 @@
 %%PYTHON_SITELIBDIR%%/DBUtils/SteadyPg.py
 %%PYTHON_SITELIBDIR%%/DBUtils/SteadyPg.pyc
 %%PYTHON_SITELIBDIR%%/DBUtils/SteadyPg.pyo
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestPersistentDB.py
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestPersistentDB.pyc
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestPersistentDB.pyo
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestPersistentPg.py
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestPersistentPg.pyc
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestPersistentPg.pyo
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestPooledDB.py
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestPooledDB.pyc
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestPooledDB.pyo
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestPooledPg.py
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestPooledPg.pyc
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestPooledPg.pyo
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestSimplePooledDB.py
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestSimplePooledDB.pyc
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestSimplePooledDB.pyo
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestSimplePooledPg.py
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestSimplePooledPg.pyc
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestSimplePooledPg.pyo
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestSteadyDB.py
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestSteadyDB.pyc
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestSteadyDB.pyo
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestSteadyPg.py
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestSteadyPg.pyc
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestSteadyPg.pyo
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestThreadingLocal.py
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestThreadingLocal.pyc
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/TestThreadingLocal.pyo
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/__init__.py
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/__init__.pyc
-%%PYTHON_SITELIBDIR%%/DBUtils/Testing/__init__.pyo
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestPersistentDB.py
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestPersistentDB.pyc
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestPersistentDB.pyo
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestPersistentPg.py
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestPersistentPg.pyc
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestPersistentPg.pyo
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestPooledDB.py
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestPooledDB.pyc
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestPooledDB.pyo
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestPooledPg.py
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestPooledPg.pyc
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestPooledPg.pyo
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestSimplePooledDB.py
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestSimplePooledDB.pyc
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestSimplePooledDB.pyo
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestSimplePooledPg.py
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestSimplePooledPg.pyc
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestSimplePooledPg.pyo
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestSteadyDB.py
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestSteadyDB.pyc
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestSteadyDB.pyo
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestSteadyPg.py
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestSteadyPg.pyc
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestSteadyPg.pyo
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestThreadingLocal.py
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestThreadingLocal.pyc
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/TestThreadingLocal.pyo
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/__init__.py
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/__init__.pyc
+%%PYTHON_SITELIBDIR%%/DBUtils/Tests/__init__.pyo
 %%PYTHON_SITELIBDIR%%/DBUtils/ThreadingLocal.py
 %%PYTHON_SITELIBDIR%%/DBUtils/ThreadingLocal.pyc
 %%PYTHON_SITELIBDIR%%/DBUtils/ThreadingLocal.pyo
 %%PYTHON_SITELIBDIR%%/DBUtils/__init__.py
 %%PYTHON_SITELIBDIR%%/DBUtils/__init__.pyc
 %%PYTHON_SITELIBDIR%%/DBUtils/__init__.pyo
-@dirrm %%PYTHON_SITELIBDIR%%/DBUtils/Testing
-@dirrm %%PYTHON_SITELIBDIR%%/DBUtils/Examples
-@dirrm %%PYTHON_SITELIBDIR%%/DBUtils
 %%PORTDOCS%%%%DOCSDIR%%/Doc.css
 %%PORTDOCS%%%%DOCSDIR%%/DocUtils.css
 %%PORTDOCS%%%%DOCSDIR%%/RelNotes-0.8.1.html
@@ -81,14 +78,16 @@
 %%PORTDOCS%%%%DOCSDIR%%/RelNotes-0.9.3.html
 %%PORTDOCS%%%%DOCSDIR%%/RelNotes-0.9.4.html
 %%PORTDOCS%%%%DOCSDIR%%/RelNotes-1.0.html
+%%PORTDOCS%%%%DOCSDIR%%/RelNotes-1.1.html
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide.de.html
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide.de.txt
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide.html
 %%PORTDOCS%%%%DOCSDIR%%/UsersGuide.txt
-%%PORTDOCS%%%%DOCSDIR%%/UsersGuide.zh.html
-%%PORTDOCS%%%%DOCSDIR%%/UsersGuide.zh.txt
 %%PORTDOCS%%%%DOCSDIR%%/dbdep.gif
 %%PORTDOCS%%%%DOCSDIR%%/persist.gif
 %%PORTDOCS%%%%DOCSDIR%%/pgdep.gif
 %%PORTDOCS%%%%DOCSDIR%%/pool.gif
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%PYTHON_SITELIBDIR%%/DBUtils/Tests
+@dirrm %%PYTHON_SITELIBDIR%%/DBUtils/Examples
+@dirrm %%PYTHON_SITELIBDIR%%/DBUtils
