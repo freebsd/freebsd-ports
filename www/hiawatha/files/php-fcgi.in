@@ -19,12 +19,10 @@ rcvar=`set_rcvar`
 load_rc_config $name
 
 : ${php_fcgi_enable="NO"}
-: ${php_fcgi_app="%%LOCALBASE%%/bin/php-cgi"}
-: ${php_fcgi_pidfile="/var/run/php-fcgi.pid"}
 
 command="%%PREFIX%%/sbin/php-fcgi"
-pidfile=${php_fcgi_pidfile}
-procname=${php_fcgi_app}
+pidfile=${php_fcgi_pidfile="/var/run/php-fcgi.pid"}
+procname=${php_fcgi_app="%%LOCALBASE%%/bin/php-cgi"}
 
 stop_postcmd="${name}_stop_postcmd"
 
