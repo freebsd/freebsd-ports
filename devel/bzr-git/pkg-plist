@@ -27,6 +27,9 @@ bin/bzr-upload-pack
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/fetch.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/fetch.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/fetch.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/filegraph.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/filegraph.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/filegraph.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/help.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/help.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/help.pyo
@@ -114,6 +117,9 @@ bin/bzr-upload-pack
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_transportgit.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_transportgit.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_transportgit.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_unpeel_map.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_unpeel_map.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_unpeel_map.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_workingtree.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_workingtree.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tests/test_workingtree.pyo
@@ -123,6 +129,9 @@ bin/bzr-upload-pack
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tree.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tree.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/tree.pyo
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/unpeel_map.py
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/unpeel_map.pyc
+%%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/unpeel_map.pyo
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/workingtree.py
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/workingtree.pyc
 %%PYTHON_SITELIBDIR%%/bzrlib/plugins/git/workingtree.pyo
