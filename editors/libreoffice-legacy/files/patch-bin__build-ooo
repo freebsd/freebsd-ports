@@ -1,0 +1,11 @@
+--- ./bin/build-ooo.orig	2010-11-11 15:41:38.000000000 +0100
++++ ./bin/build-ooo	2010-12-20 12:58:30.590567445 +0100
+@@ -11,7 +11,7 @@
+ 
+ export TARFILE_LOCATION
+ 
+-if test "z$BUILD_WIN32" = "z" -a "z`uname -s`" != "zSunOS" -a "z`uname -s`" != "zDarwin" -a "z`uname -s`" != "zOpenBSD"; then
++if test "z$BUILD_WIN32" = "z" -a "z`uname -s`" != "zSunOS" -a "z`uname -s`" != "zDarwin" -a "z`uname -s`" != "zOpenBSD" -a "z`uname -s`" != "zFreeBSD"; then
+     if ! test -f /proc/cpuinfo; then
+         echo "Looks like proc isn't mounted - this means almost certain"
+         echo "Java related weird build failure: please check /proc"
