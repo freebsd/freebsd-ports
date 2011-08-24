@@ -16,7 +16,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	CPU/memory stress testing utilities
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
+EXPIRATION_DATE=	2011-11-01
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 ONLY_FOR_ARCHS=	i386 amd64
