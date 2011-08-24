@@ -162,6 +162,7 @@
     SUBDIR += leo
     SUBDIR += lfhex
     SUBDIR += libreoffice
+    SUBDIR += libreoffice-legacy
     SUBDIR += madedit
     SUBDIR += manedit
     SUBDIR += mg
