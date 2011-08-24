@@ -72,14 +72,19 @@ include/SFML/Window/WindowListener.hpp
 include/SFML/Window/WindowSettings.hpp
 include/SFML/Window/WindowStyle.hpp
 lib/libsfml-audio.so
+lib/libsfml-audio.so.1
 lib/libsfml-audio.so.1.6
 lib/libsfml-graphics.so
+lib/libsfml-graphics.so.1
 lib/libsfml-graphics.so.1.6
 lib/libsfml-network.so
+lib/libsfml-network.so.1
 lib/libsfml-network.so.1.6
 lib/libsfml-system.so
+lib/libsfml-system.so.1
 lib/libsfml-system.so.1.6
 lib/libsfml-window.so
+lib/libsfml-window.so.1
 lib/libsfml-window.so.1.6
 @dirrm include/SFML/Window
 @dirrm include/SFML/System/Win32
