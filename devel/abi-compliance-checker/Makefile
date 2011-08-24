@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abi-compliance-checker
-PORTVERSION=	1.93.3
+PORTVERSION=	1.93.6
 CATEGORIES=	devel perl5
 MASTER_SITES=	http://linuxtesting.org/downloads/ \
 		LOCAL/bf
@@ -26,6 +26,7 @@ USE_PERL5_RUN=	yes
 
 PLIST_FILES=	bin/${PORTNAME}.pl
 
+CPPFILT?=	/usr/bin/c++filt
 READELF?=	/usr/bin/readelf
 
 .include <bsd.port.pre.mk>
@@ -39,6 +40,7 @@ PICFLAG?=	-fpic
 post-patch:
 	@${REINPLACE_CMD} \
 		-e "\|get_CmdPath(\"ar\")|s|\"ar\"|\"${AR}\"|" \
+		-e "\|get_CmdPath(\"c++filt\")|s|\"c++filt\"|\"${CPPFILT}\"|" \
 		-e "\|get_CmdPath(\"gcc\")|s|\"gcc\"|\"${CC}\"|" \
 		-e "\|get_CmdPath(\"objdump\")|s|\"objdump\"|\"${OBJDUMP}\"|" \
 		-e "\|get_CmdPath(\"readelf\")|s|\"readelf\"|\"${READELF}\"|" \
@@ -55,12 +57,11 @@ check regression-test test: build
 .endif
 
 .ifndef(NOPORTDOCS)
-PORTDOCS=	Changes.html Descriptor.html OS_Compatibility.html \
-		OS_Compatibility_Examples.html Options.html Readme.html
+PORTDOCS=	*
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
-	@(cd ${WRKSRC}/doc; ${INSTALL_MAN} ${PORTDOCS} ${DOCSDIR})
+	@(cd ${WRKSRC}/doc && ${COPYTREE_SHARE} \* ${DOCSDIR})
 
 .endif
 .include <bsd.port.post.mk>
