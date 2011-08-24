@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	abills
-PORTVERSION=	0.51
+PORTVERSION=	0.53
 CATEGORIES=	net
 MASTER_SITES=	SF
 MASTER_SITE_SUBDIR=	${PORTNAME}/${PORTNAME}/${PORTVERSION}
@@ -15,6 +15,8 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	liettneff@bk.ru
 COMMENT=	Billing system for dialup, VPN and VoIP management
+
+LICENSE=	GPLv2
 
 RUN_DEPENDS=	radiusd:${PORTSDIR}/net/freeradius \
 		${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql \
