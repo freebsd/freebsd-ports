@@ -9,19 +9,6 @@
  
  long opt_c_loops = 0;
  long opt_d_loops = 0;
-@@ -380,10 +380,12 @@
-         fprintf(stderr, "%s: out of memory (wanted %lu bytes)\n", progname, (unsigned long)mb->alloc_len);
-         exit(EXIT_MEM);
-     }
-+#if 0
-     if (__lzo_align_gap(mb->alloc_ptr, (lzo_uint) sizeof(lzo_align_t)) != 0) {
-         fprintf(stderr, "%s: C library problem: malloc() returned mis-aligned pointer!\n", progname);
-         exit(EXIT_MEM);
-     }
-+#endif
- 
-     mb->ptr = mb->alloc_ptr + extra_bottom;
-     mb->len = mb->saved_len = len;
 @@ -1929,6 +1931,7 @@
          if ((*s == '/' || *s == '\\') && s[1])
              progname = s + 1;
