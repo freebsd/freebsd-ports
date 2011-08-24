@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	php5
-PORTVERSION=	5.3.7
-PORTREVISION?=	2
+PORTVERSION=	5.3.8
+PORTREVISION?=	0
 CATEGORIES?=	lang devel www
 MASTER_SITES=	${MASTER_SITE_PHP}
 MASTER_SITE_SUBDIR=	distributions
@@ -62,7 +62,7 @@ PATCH_SITES+=	${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR=	ale
 
 .if !defined(WITHOUT_SUHOSIN)
-PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.10.patch.gz:suhosin
+PATCHFILES+=	suhosin-patch-${PORTVERSION}-0.9.10.patch.gz
 PATCH_SITES+=	http://download.suhosin.org/:suhosin
 PLIST_SUB+=	SUHOSIN=""
 .else
