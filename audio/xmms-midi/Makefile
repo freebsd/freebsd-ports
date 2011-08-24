@@ -8,8 +8,7 @@ PORTNAME=	xmms-midi
 PORTVERSION=	0.03
 PORTREVISION=	6
 CATEGORIES=	audio
-MASTER_SITES=	http://dl.fkb.wormulon.net/xmms-midi/ \
-		http://dl.kel.wormulon.net/xmms-midi/
+MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	XMMS input plugin to play midi files
