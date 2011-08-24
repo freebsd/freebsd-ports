@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	trayer
-PORTVERSION=	1.1.1
+PORTVERSION=	1.1.3
 CATEGORIES=	x11
 MASTER_SITES=	http://github.com/sargon/${PORTNAME}${PKGNAMESUFFIX}/tarball/${PORTNAME}-${PORTVERSION}/
 PKGNAMESUFFIX=	-srg
@@ -17,7 +17,7 @@ MAINTAINER=	mad@madpilot.net
 COMMENT=	Lightweight GTK2-based systray for UNIX desktop - sargon fork
 
 CONFLICTS_INSTALL=	trayer-1.0*
-GITVERSION=	0-g82d5d05
+GITVERSION=	0-g2d53335
 FETCH_ARGS=	-pRr
 WRKSRC=		${WRKDIR}/sargon-${PORTNAME}${PKGNAMESUFFIX}-${GITVERSION:S/^0-g//}
 USE_GNOME=	gtk20 glib20 pango atk
@@ -31,10 +31,6 @@ PORTDOCS=	README CREDITS CHANGELOG
 .endif
 
 PLIST_FILES=	bin/trayer
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|-D.*_DISABLE_DEPRECATED||g' \
-		${WRKSRC}/Makefile.common
 
 post-install:
 .if !defined(NOPORTDOCS)
