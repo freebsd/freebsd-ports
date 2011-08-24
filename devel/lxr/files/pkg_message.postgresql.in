@@ -10,3 +10,11 @@ Initialise the database:
            \i %%LXRDIR%%/initdb-postgres
 Just ignore the errors about unimplemented functions.
 
+
+Database upgrade between releases
+=================================
+
+0.9.6 -> 0.9.10:
+           psql -U lxrr lxr
+           \i %%LXRDIR%%/upgrade-0.9.10-postgres
+

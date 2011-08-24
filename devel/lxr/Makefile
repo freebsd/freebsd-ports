@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lxr
-PORTVERSION=	0.9.6
-PORTREVISION=	1
+PORTVERSION=	0.9.10
 CATEGORIES=	devel
 MASTER_SITES=	SF/${PORTNAME}/stable/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -43,6 +42,7 @@ LXRDIR=	${LXRTOPDIR}/lxr
 PLIST_SUB+=	LXRDIR=${LXRDIR:S!^${PREFIX}/!!}
 PLIST_SUB+=	LXRTOPDIR=${LXRTOPDIR:S!^${PREFIX}/!!}
 SUB_LIST+=	LXRDIR=${LXRDIR}
+SUB_FILES+=	upgrade-0.9.10-postgres upgrade-0.9.10-mysql
 
 .include <bsd.port.pre.mk>
 
@@ -67,7 +67,6 @@ MSG_FILES+=	pkg_message
 SUB_FILES+=	${MSG_FILES}
 
 LXR_SCRIPTS=	diff \
-		find \
 		genxref \
 		ident \
 		search \
@@ -83,8 +82,7 @@ LXR_DOCS=	BUGS \
 		HACKING \
 		INSTALL \
 		LICENSE \
-		RELEASING \
-		notes
+		RELEASING
 
 post-patch:
 	@${REINPLACE_CMD} \
@@ -121,9 +119,12 @@ do-install:
 .endif # !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/${SITE_PERL_REL}
 	${INSTALL_DATA} ${WRKSRC}/Local.pm ${PREFIX}/${SITE_PERL_REL}
+	${INSTALL_DATA} ${WRKSRC}/LXRversion.pm ${PREFIX}/${SITE_PERL_REL}
 	${TAR} -C ${WRKSRC}/lib -cf - --exclude '*.orig' LXR | ${TAR} -C ${PREFIX}/${SITE_PERL_REL} -xf -
 	${TAR} -C ${WRKSRC} -cf - --exclude '*.orig' templates | ${TAR} -C ${LXRDIR} -xf -
 	${CHMOD} 640 ${LXRDIR}/templates/lxr.conf
+	${INSTALL_DATA} ${WRKDIR}/upgrade-0.9.10-postgres ${LXRDIR}
+	${INSTALL_DATA} ${WRKDIR}/upgrade-0.9.10-mysql ${LXRDIR}
 
 post-install:
 	@${ECHO}

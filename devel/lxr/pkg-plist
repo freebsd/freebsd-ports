@@ -1,5 +1,4 @@
 %%LXRDIR%%/diff
-%%LXRDIR%%/find
 %%LXRDIR%%/genxref
 %%LXRDIR%%/ident
 %%LXRDIR%%/search
@@ -7,8 +6,13 @@
 %%LXRDIR%%/swish-e.conf
 %%LXRDIR%%/initdb-postgres
 %%LXRDIR%%/initdb-mysql
+%%LXRDIR%%/upgrade-0.9.10-postgres
+%%LXRDIR%%/upgrade-0.9.10-mysql
+%%LXRDIR%%/templates/html-head-btn.html
+%%LXRDIR%%/templates/valid-html401.png
+%%LXRDIR%%/templates/diff-head-btn.html
+%%LXRDIR%%/templates/html-fatal.html
 %%LXRDIR%%/templates/html-dir.html
-%%LXRDIR%%/templates/html-find.html
 %%LXRDIR%%/templates/html-head.html
 %%LXRDIR%%/templates/html-ident-refs.html
 %%LXRDIR%%/templates/html-ident.html
@@ -24,8 +28,8 @@
 %%PORTDOCS%%%%DOCSDIR%%/INSTALL
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
 %%PORTDOCS%%%%DOCSDIR%%/RELEASING
-%%PORTDOCS%%%%DOCSDIR%%/notes
 %%SITE_PERL%%/Local.pm
+%%SITE_PERL%%/LXRversion.pm
 %%SITE_PERL%%/LXR/Files/Plain.pm
 %%SITE_PERL%%/LXR/Files/BK.pm
 %%SITE_PERL%%/LXR/Files/CVS.pm
@@ -38,15 +42,12 @@
 %%SITE_PERL%%/LXR/SimpleParse.pm
 %%SITE_PERL%%/LXR/Tagger.pm
 %%SITE_PERL%%/LXR/Index/Mysql.pm
-%%SITE_PERL%%/LXR/Index/DB.pm
 %%SITE_PERL%%/LXR/Index/DBI.pm
 %%SITE_PERL%%/LXR/Index/Oracle.pm
 %%SITE_PERL%%/LXR/Index/Postgres.pm
 %%SITE_PERL%%/LXR/Lang/Cobol.pm
 %%SITE_PERL%%/LXR/Lang/Generic.pm
 %%SITE_PERL%%/LXR/Lang/Java.pm
-%%SITE_PERL%%/LXR/Lang/Perl.pm
-%%SITE_PERL%%/LXR/Lang/Python.pm
 %%SITE_PERL%%/LXR/Lang/ectags.conf
 %%SITE_PERL%%/LXR/Lang/ectags.conf.documentation
 %%SITE_PERL%%/LXR/Lang/generic.conf
