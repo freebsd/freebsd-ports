@@ -127,7 +127,7 @@ DEFAULT_DVD_DEVICE=/dev/acd0
 
 post-patch:
 .if ${DIST}=="bad"
-	@${REINPLACE_CMD} -e 's|opencv <= 2.2.0|opencv <= 2.3.0|g' \
+	@${REINPLACE_CMD} -e 's|opencv <= 2.2.0|opencv <= 2.3.9|g' \
 	${WRKSRC}/configure
 .endif
 	@${FIND} ${WRKSRC}/ext -name Makefile.in | \
