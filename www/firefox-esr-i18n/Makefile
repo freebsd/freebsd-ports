@@ -15,7 +15,7 @@ DISTFILES=	${FIREFOX_I18N_:S/$/.xpi/}
 DIST_SUBDIR=	xpi/${DISTNAME}
 
 MAINTAINER=	gecko@FreeBSD.org
-COMMENT=	Localized interface for Firefox 5.0
+COMMENT=	Localized interface for Firefox 6.0
 
 EXTRACT_DEPENDS=	zip:${PORTSDIR}/archivers/zip
 
