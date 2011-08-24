@@ -2517,4 +2517,3 @@ devel/cl-asdf-binary-locations||2011-08-16|Obsoleted by ASDF 2 capabilities
 devel/py-istring||2011-08-17|Has expired: port is unmaintained and broken
 mail/sylpheed3|mail/sylpheed|2011-08-22|Removed: please use mail/sylpheed instead
 www/p5-FastCGI|www/p5-FCGI|2011-08-23|Rename to reflect official module name
-
