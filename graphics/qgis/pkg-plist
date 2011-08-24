@@ -648,9 +648,8 @@
 %%DATADIR%%/svg/transport/transport_train_station2.svg
 %%DATADIR%%/svg/transport/transport_train_station.svg
 %%DATADIR%%/svg/transport/transport_tram_stop.svg
-%%PGSQL%%lib/qgis/libpggeoprocessingplugin.so
-%%PGSQL%%lib/qgis/libpostgresprovider.so
-%%PGSQL%%lib/qgis/libspitplugin.so
+%%PGSQL%%lib/qgis/plugins/libpostgresprovider.so
+%%PGSQL%%lib/qgis/plugins/libspitplugin.so
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/GdalTools.py
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/about.png
 %%QGIS_PYTHON%%%%DATADIR%%/python/plugins/GdalTools/icons/contour.png
