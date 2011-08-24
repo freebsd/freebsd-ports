@@ -22,6 +22,8 @@ BUILD_DEPENDS=	nspr>=4.8.8:${PORTSDIR}/devel/nspr \
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		event-1.4:${PORTSDIR}/devel/libevent
 
+CONFLICTS_BUILD=	spidermonkey-*
+
 USE_AUTOTOOLS=	autoconf213
 USE_GECKO=	gecko
 MOZ_PKGCONFIG_FILES=	# empty
