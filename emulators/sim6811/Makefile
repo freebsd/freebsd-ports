@@ -9,19 +9,13 @@ PORTNAME=	sim6811
 PORTVERSION=	1.6
 PORTREVISION=	2
 CATEGORIES=	emulators
-MASTER_SITES=	ftp://crl.nmsu.edu/pub/non-lexical/6811/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 DISTNAME=	sim
 EXTRACT_SUFX=	.tar.Z
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Motorola 6811 simulator
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
-
 NO_WRKSUBDIR=	yes
 
-.include <bsd.port.pre.mk>
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
