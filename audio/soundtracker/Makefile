@@ -17,9 +17,6 @@ COMMENT=	Mod player/tracking tool which supports XM and MOD formats
 
 LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
 
-DEPRECATED=	Abandonware
-EXPIRATION_DATE=	2011-09-01
-
 USE_GNOME=	esound gdkpixbuf gnomehack
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
