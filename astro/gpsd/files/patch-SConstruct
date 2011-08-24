@@ -1,0 +1,58 @@
+--- SConstruct.orig	2011-08-19 09:36:28.000000000 +0400
++++ SConstruct	2011-08-24 14:13:54.000000000 +0400
+@@ -155,7 +155,10 @@
+         j = i
+         if i == "LD":
+             i = "SHLINK"
+-        env[j]=os.getenv(i)
++        if i == "CFLAGS" or i == "CCFLAGS":
++	    env.Replace(**{j: Split(os.getenv(i))})
++        else:
++	    env.Replace(**{j: os.getenv(i)})
+ for flags in ["LDFLAGS", "CPPFLAGS"]:
+     if os.environ.has_key(flags):
+         env.MergeFlags([os.getenv(flags)])
+@@ -173,7 +176,7 @@
+ else:
+     pkg_config = lambda pkg: ['!pkg-config --cflags --libs --static %s' %(pkg, )]
+ 
+-if env['CC'] == 'gcc':
++if env['CC'] == 'gcc' or env['CC'] == 'cc':
+     # Enable all GCC warnings except uninitialized and
+     # missing-field-initializers, which we can't help triggering because
+     # of the way some of the JSON-parsing code is generated.
+@@ -326,22 +329,12 @@
+         confdefs.append("/* #undef HAVE_%s */\n" % f.upper())
+ 
+ if env['ncurses']:
+-    if config.CheckPKG('ncurses'):
+-        ncurseslibs = pkg_config('ncurses')
+-    elif config.CheckExecutable('ncurses5-config --version', 'ncurses5-config'):
+-        ncurseslibs = ['!ncurses5-config --libs --cflags']
+-    else:
+-        ncurseslibs= []
++    ncurseslibs= [ '/usr/lib/libncurses.so' ]
+ else:
+     ncurseslibs= []
+ 
+-if env['usb'] and config.CheckPKG('libusb-1.0'):
+-    confdefs.append("#define HAVE_LIBUSB 1\n")
+-    try:
+-        usblibs = pkg_config('libusb-1.0')
+-    except OSError:
+-        print "pkg_config is confused about the state of libusb-1.0."
+-        usblibs = []
++if env['usb']:
++    usblibs = [ "-lusb" ]
+ else:
+     confdefs.append("/* #undef HAVE_LIBUSB */\n")
+     usblibs = []
+@@ -950,7 +943,7 @@
+                     python_progs_install,
+                     python_egg_info_install]
+ 
+-pkgconfigdir = os.path.join(installdir('libdir'), 'pkgconfig')
++pkgconfigdir = os.path.join(env['prefix'], 'libdata', 'pkgconfig')
+ pc_install = [ env.Install(pkgconfigdir, x) for x in ("libgps.pc", "libgpsd.pc") ]
+ 
+ maninstall = []
