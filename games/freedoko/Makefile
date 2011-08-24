@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	freedoko
-PORTVERSION=	0.7.9
+PORTVERSION=	0.7.10
 CATEGORIES=	games
 MASTER_SITES=	SF/free-doko/FreeDoko%20source
 DISTNAME=	FreeDoko_${PORTVERSION}.src
@@ -46,7 +46,7 @@ do-install:
 .endfor
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@cd ${WRKSRC}/../doc && ${FIND} . ! -name "*Makefile*" | \
+	@cd ${WRKSRC}/../doc/manual && ${FIND} . | \
 		${CPIO} --quiet -pdum -R ${SHAREOWN}:${SHAREGRP} ${DOCSDIR}
 .endif
 
