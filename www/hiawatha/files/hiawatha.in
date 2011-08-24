@@ -21,7 +21,7 @@ load_rc_config $name
 : ${hiawatha_enable="NO"}
 
 command="%%PREFIX%%/sbin/${name}"
-pidfile=${hiawatha_pidfile="/var/run/hiawatha.pid"}
+pidfile=${hiawatha_pidfile:-"/var/run/hiawatha.pid"}
 
 stop_postcmd="${name}_stop_postcmd"
 
