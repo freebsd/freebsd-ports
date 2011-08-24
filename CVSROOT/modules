@@ -4451,6 +4451,7 @@ glflow                          ports/net/glflow
 glfw                            ports/graphics/glfw
 glgraph                         ports/math/glgraph
 glib-java                       ports/devel/glib-java
+glib-networking                 ports/net/glib-networking
 glib12                          ports/devel/glib12
 glib20                          ports/devel/glib20
 glib20-reference                ports/devel/glib20-reference
@@ -7758,6 +7759,7 @@ libburn                         ports/devel/libburn
 libcabinet                      ports/archivers/libcabinet
 libcaca                         ports/graphics/libcaca
 libcanberra                     ports/audio/libcanberra
+libcanberra-gtk3                ports/audio/libcanberra-gtk3
 libccid                         ports/devel/libccid
 libcdaudio                      ports/audio/libcdaudio
 libcddb                         ports/audio/libcddb
@@ -8158,6 +8160,8 @@ libproxy                        ports/net/libproxy
 libproxy-gnome                  ports/net/libproxy-gnome
 libproxy-kde                    ports/net/libproxy-kde
 libproxy-mozjs                  ports/net/libproxy-mozjs
+libproxy-perl                   ports/net/libproxy-perl
+libproxy-python                 ports/net/libproxy-python
 libproxy-webkit                 ports/net/libproxy-webkit
 libpst                          ports/mail/libpst
 libpthread-stubs                ports/devel/libpthread-stubs
@@ -12141,6 +12145,7 @@ p5-ExtUtils-XSBuilder           ports/devel/p5-ExtUtils-XSBuilder
 p5-ExtUtils-XSpp                ports/devel/p5-ExtUtils-XSpp
 p5-F77                          ports/lang/p5-F77
 p5-FAQ-OMatic                   ports/www/p5-FAQ-OMatic
+p5-FCGI                         ports/www/p5-FCGI
 p5-FCGI-Async                   ports/www/p5-FCGI-Async
 p5-FCGI-Client                  ports/www/p5-FCGI-Client
 p5-FCGI-Engine                  ports/www/p5-FCGI-Engine
@@ -12151,7 +12156,6 @@ p5-FFmpeg-Command               ports/multimedia/p5-FFmpeg-Command
 p5-FLV-Info                     ports/multimedia/p5-FLV-Info
 p5-FSA-Rules                    ports/devel/p5-FSA-Rules
 p5-Facebook-Graph               ports/www/p5-Facebook-Graph
-p5-FastCGI                      ports/www/p5-FastCGI
 p5-Fax-Hylafax-Client           ports/comms/p5-Fax-Hylafax-Client
 p5-Feed-Find                    ports/www/p5-Feed-Find
 p5-Feersum                      ports/www/p5-Feersum
@@ -16451,8 +16455,8 @@ p5-extutils-xspp                ports/devel/p5-ExtUtils-XSpp
 p5-f77                          ports/lang/p5-F77
 p5-facebook-graph               ports/www/p5-Facebook-Graph
 p5-faq-omatic                   ports/www/p5-FAQ-OMatic
-p5-fastcgi                      ports/www/p5-FastCGI
 p5-fax-hylafax-client           ports/comms/p5-Fax-Hylafax-Client
+p5-fcgi                         ports/www/p5-FCGI
 p5-fcgi-async                   ports/www/p5-FCGI-Async
 p5-fcgi-client                  ports/www/p5-FCGI-Client
 p5-fcgi-engine                  ports/www/p5-FCGI-Engine
@@ -20754,6 +20758,7 @@ phprojekt                       ports/deskutils/phprojekt
 phproxy                         ports/www/phproxy
 phpscheduleit                   ports/www/phpscheduleit
 phpsecinfo                      ports/security/phpsecinfo
+phpsh                           ports/devel/phpsh
 phpsview                        ports/graphics/phpsview
 phpsysinfo                      ports/www/phpsysinfo
 phpsysinfo-dev                  ports/www/phpsysinfo-dev
@@ -21198,6 +21203,7 @@ postfinger                      ports/mail/postfinger
 postfix                         ports/mail/postfix
 postfix-current                 ports/mail/postfix-current
 postfix-gps                     ports/mail/postfix-gps
+postfix-logwatch                ports/mail/postfix-logwatch
 postfix-policyd-sf              ports/mail/postfix-policyd-sf
 postfix-policyd-spf             ports/mail/postfix-policyd-spf
 postfix-policyd-spf-perl        ports/mail/postfix-policyd-spf-perl
@@ -21966,6 +21972,7 @@ py-omniorb                      ports/devel/py-omniorb
 py-oops                         ports/databases/py-oops
 py-openal                       ports/audio/py-openal
 py-openbabel                    ports/science/py-openbabel
+py-opencv                       ports/graphics/py-opencv
 py-openexr                      ports/graphics/py-openexr
 py-opengl                       ports/graphics/py-opengl
 py-openid                       ports/security/py-openid
