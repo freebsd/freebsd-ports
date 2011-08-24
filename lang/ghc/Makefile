@@ -61,10 +61,6 @@ OPTIONS=	PROFILE "Compile for profiling as well" on \
 .include <bsd.port.options.mk>
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900000
-BROKEN=	does not compile
-.endif
-
 .if defined(WITHOUT_DOCS)
 NOPORTDOCS=
 .endif
