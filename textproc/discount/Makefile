@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	discount
-PORTVERSION=	2.0.8
+PORTVERSION=	2.1.1.3
 CATEGORIES=	textproc devel
-MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/markdown/
+MASTER_SITES=	http://www.pell.portland.or.us/~orc/Code/discount/
 
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	A C implementation of the Markdown markup language
@@ -48,7 +48,8 @@ PLIST_FILES=	bin/markdown \
 		include/mkdio.h
 
 OPTIONS=	EXTRA "Enable all extra features" on \
-		TAB8 "Use a tabstop of 8 (default is 4)" on
+		TAB8 "Use a tabstop of 8 (default is 4)" on \
+		SAMPLES "Install sample programs" off
 .include <bsd.port.pre.mk>
 
 .ifdef (WITH_EXTRA)
@@ -58,6 +59,17 @@ CONFIGURE_ARGS+=--enable-dl-tag \
 
 .ifdef (WITH_TAB8)
 CONFIGURE_ARGS+=--with-tabstops=8
+.endif
+
+.ifdef (WITH_SAMPLES)
+INSTALL_TARGET+=install.samples
+PLIST_FILES+=	bin/makepage \
+		bin/mkd2html \
+		bin/theme
+MAN1+=		makepage.1 \
+		mkd2html.1 \
+		theme.1
+
 .endif
 
 .include <bsd.port.post.mk>
