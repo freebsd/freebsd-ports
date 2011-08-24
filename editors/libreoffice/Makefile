@@ -37,7 +37,8 @@ MASTER_SITES=	http://ftp.osuosl.org/pub/tdf/libreoffice/src/ \
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Full integrated office productivity suite
 
-BROKEN=	build is too fragile and break too often
+CONFLICTS_INSTALL=	libreoffice-legacy-[0-9]*
+BROKEN=	build is too fragile and break too often -- try libreoffice-legacy
 
 LO_COMPONENTS=	artwork base calc components extensions \
 		extras filters help impress libs-core libs-extern \
