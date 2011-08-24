@@ -13,7 +13,7 @@ CATEGORIES=	net-im gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
 
-MAINTAINER=	gnome@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK2 Jabber Instant Messaging client
 
 BUILD_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
@@ -21,6 +21,9 @@ LIB_DEPENDS=	loudmouth-1.0:${PORTSDIR}/net-im/loudmouth \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib \
 		aspell.16:${PORTSDIR}/textproc/aspell
 RUN_DEPENDS=	${LOCALBASE}/libdata/pkgconfig/iso-codes.pc:${PORTSDIR}/misc/iso-codes
+
+DEPRECATED=	No longer maintain by upstream, use net-im/empathy instead
+EXPIRATION_DATE=2011-09-24
 
 USE_XORG=	x11 xext ice xscrnsaver
 USE_BZIP2=	yes
