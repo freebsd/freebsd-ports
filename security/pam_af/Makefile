@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	pam_af
-PORTVERSION=	1.0.1
-PORTREVISION=	2
+PORTVERSION=	1.0.2
+PORTREVISION=	0
 CATEGORIES=	security
 MASTER_SITES=	http://mbsd.msk.ru/dist/
 
@@ -30,10 +30,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
 .endif
 
-.include <bsd.port.pre.mk>
-
-.if ${ARCH} == "powerpc"
-BROKEN=		Does not compile on powerpc
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
