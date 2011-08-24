@@ -13,6 +13,8 @@ MASTER_SITES=	SAVANNAH
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate C parser given a grammar in BNF notation
 
+LICENSE=	GPLv2
+
 GNU_CONFIGURE=	yes
 
 INFO=		bnf
