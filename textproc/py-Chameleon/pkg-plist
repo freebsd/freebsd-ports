@@ -194,9 +194,13 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/inputs/061-fill-one-slot-but-two-defined.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/inputs/061.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/inputs/062.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/inputs/062-comments-and-expressions.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/inputs/063.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/inputs/063-continuation.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/inputs/064.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/inputs/064-tags-and-special-characters.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/inputs/065.xml
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/inputs/065-use-macro-in-fill.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/inputs/066.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/inputs/067.xml
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/inputs/068.xml
@@ -325,6 +329,10 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/outputs/059.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/outputs/060.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/outputs/061.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/outputs/062.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/outputs/063.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/outputs/064.pt
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/outputs/065.pt
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/outputs/101.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/outputs/102.html
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/chameleon/tests/outputs/103.html
