@@ -97,6 +97,7 @@ etc/lynx.lss.default
 %%NLS%%share/locale/da/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/de/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/en/LC_MESSAGES/lynx.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/et/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/lynx.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/lynx.mo
@@ -146,3 +147,5 @@ share/lynx_help/lynx_url_support.html.gz
 @dirrm share/lynx_help
 %%NLS%%@dirrmtry share/locale/fi/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/fi
+%%NLS%%@dirrmtry share/locale/eo/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/eo
