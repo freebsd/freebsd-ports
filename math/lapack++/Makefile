@@ -7,7 +7,7 @@
 
 PORTNAME=	lapack++
 PORTVERSION=	2.5.3
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	math
 MASTER_SITES=   SF/lapackpp/lapackpp/${PORTVERSION} \
 		http://math.nist.gov/lapack++/:doc
