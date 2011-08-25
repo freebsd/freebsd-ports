@@ -8183,6 +8183,7 @@ libreadline-java                ports/devel/libreadline-java
 libredblack                     ports/devel/libredblack
 librelp                         ports/devel/librelp
 libreoffice                     ports/editors/libreoffice
+libreoffice-legacy              ports/editors/libreoffice-legacy
 librep                          ports/lang/librep
 libretto-config                 ports/sysutils/libretto-config
 librfc822                       ports/mail/librfc822
