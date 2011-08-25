@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tarsnap
-PORTVERSION=	1.0.29
+PORTVERSION=	1.0.30
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.tarsnap.com/download-http/
 DISTNAME=	${PORTNAME}-autoconf-${PORTVERSION}
