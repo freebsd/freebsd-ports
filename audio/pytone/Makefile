@@ -7,7 +7,7 @@
 
 PORTNAME=	pytone
 PORTVERSION=	3.0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio python
 MASTER_SITES=	http://www.luga.de/pytone/download/ \
 		http://redundancy.redundancy.org/mirror/
@@ -17,10 +17,10 @@ MAINTAINER=	lx@FreeBSD.org
 COMMENT=	A music jukebox written in Python with a curses GUI
 
 LIB_DEPENDS=	ao.4:${PORTSDIR}/audio/libao
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/_sqlite.so:${PORTSDIR}/databases/py-pysqlite23 \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_SITELIBDIR}/mutagen/__init__.py:${PORTSDIR}/audio/py-mutagen
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.5+
 USE_NCURSES=	yes
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	PyTone
