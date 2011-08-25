@@ -5,9 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	db51
-PORTVERSION=	5.1.25.0
-PORTREVISION=	1
+PORTNAME=	db5
+PORTVERSION=	5.2.28.0
 CATEGORIES=	databases java
 MASTER_SITES=	http://download.oracle.com/berkeley-db/
 PKGNAMEPREFIX?=
@@ -15,10 +14,12 @@ DISTNAME=	db-${PORTVERSION:R}
 DIST_SUBDIR=	bdb
 
 MAINTAINER=	mandree@FreeBSD.org
-COMMENT=	The Oracle Berkeley DB, revision 5.1
+COMMENT=	The Oracle Berkeley DB, revision 5.2
 
 BDBVER=		${PORTVERSION:R:R}
+BDBMAJ=		${BDBVER:R}
 CONFIGURE_ARGS=	--enable-cxx --enable-stl \
+		--disable-tcl \
 		--includedir=${PREFIX}/include/${PORTNAME} \
 		--libdir=${PREFIX}/lib/${PORTNAME} \
 		--bindir=${PREFIX}/bin/${PORTNAME}
@@ -36,7 +37,9 @@ INSTALL_TARGET+=	install_docs docdir=${DOCSDIR}
 PORTDOCS=		*
 .endif
 
-OPTIONS=	SQL "SQL API (EXPERIMENTAL)" OFF \
+OPTIONS=	CRYPTO "Cryptography support" ON \
+		L10N "Localization support" OFF \
+		SQL "SQL API (EXPERIMENTAL)" OFF \
 		JAVA "JAVA API (EXPERIMENTAL)" OFF
 
 .include <bsd.port.pre.mk>
@@ -63,20 +66,37 @@ PLIST_SUB+=	JAVA="@comment "
 libdb_java=
 .endif
 
+.if defined(WITH_CRYPTO)
+CONFIGURE_ARGS+=	--with-cryptography=yes
+.else
+CONFIGURE_ARGS+=	--with-cryptography=no
+.endif
+
+.if defined(WITH_L10N)
+CONFIGURE_ARGS+=	--enable-localization
+.endif
+
+.if defined(WITH_DEBUG)
+CONFIGURE_ARGS+=	--enable-debug --enable-umrw
+.endif
+
 post-patch:
 	${REINPLACE_CMD} -e '/^DOCLIST/{s/csharp//;}' ${WRKSRC}/../dist/Makefile.in
 
 post-install:
 .for i in libdb libdb_cxx libdb_stl ${libdb_sql} ${libdb_java}
 	${LN} -s -f ${PORTNAME}/${i}-${BDBVER}.so.0 ${PREFIX}/lib
+	${LN} -s -f ${PORTNAME}/${i}-${BDBMAJ}.so.0 ${PREFIX}/lib
 	${LN} -s -f ${i}-${BDBVER}.so.0 ${PREFIX}/lib/${i}-${BDBVER}.so
+	${LN} -s -f ${i}-${BDBVER}.so.0 ${PREFIX}/lib/${i}-${BDBMAJ}.so
 	${LN} -s -f ${i}-${BDBVER}.a ${PREFIX}/lib/${PORTNAME}/${i}.a
 	${CHMOD} a-w ${PREFIX}/lib/${PORTNAME}/${i}-${BDBVER}.so.0 \
 		${PREFIX}/lib/${PORTNAME}/${i}-${BDBVER}.a \
 		${PREFIX}/lib/${PORTNAME}/${i}-${BDBVER}.la
 .endfor
 	cd ${PREFIX}/bin/${PORTNAME}; \
-	for i in *; do ${LN} -s -f ${PORTNAME}/$$i ../$$i-${BDBVER}; done
+	for i in *; do ${LN} -s -f ${PORTNAME}/$$i ../$$i-${BDBVER} ; \
+		       ${LN} -s -f ${PORTNAME}/$$i ../$$i-${BDBMAJ} ; done
 .if !defined(NOPORTDOCS)
 .for i in api_reference/TCL
 	${RM} -r -f ${DOCSDIR}/${i}
