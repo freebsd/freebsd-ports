@@ -52,7 +52,7 @@ fi
 : ${couchdb_flags="-b -a ${etcdir}/default.ini -a ${etcdir}/local.ini ${respawn}-o ${logfile} -e ${errfile} -p ${pidfile}"}
 
 start_precmd=pid_touch
-stop_cmd="${command} -d && rm -f ${pidfile}"
+stop_cmd="${command} -d"
 status_cmd="${command} -s"
 
 pid_touch ()
