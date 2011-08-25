@@ -12,7 +12,7 @@ MASTERDIR?=	${.CURDIR}/../cups-base
  
 CUPS_IMAGE=	yes
 
-OPTIONS=	GNUTLS		"Build with GNUTLS library" on
+OPTIONS=	GNUTLS		"Build with GNUTLS library" off
 
 .if exists(${.CURDIR}/Makefile.local)
 .include "${.CURDIR}/Makefile.local"
