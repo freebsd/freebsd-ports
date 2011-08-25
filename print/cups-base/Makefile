@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var			\
 			--with-pam-module="unix"		\
 			--enable-ssl
 
-OPTIONS?=	GNUTLS		"Build with GNUTLS library" off \
+OPTIONS?=	GNUTLS		"Build with GNUTLS instead of OpenSSL" off \
 		PHP		"Build PHP support" off \
 		PYTHON		"Build PYTHON support" off \
 		LIBPAPER	"Build with libpaper support" off \
