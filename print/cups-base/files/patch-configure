@@ -1,6 +1,6 @@
---- configure.orig	2009-04-16 22:02:06.000000000 +0200
-+++ configure	2009-05-05 20:42:19.000000000 +0200
-@@ -6287,6 +6287,7 @@
+--- configure.orig	2011-07-25 22:19:20.000000000 +0200
++++ configure	2011-08-25 06:04:32.000000000 +0200
+@@ -6259,6 +6259,7 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -8,16 +8,16 @@
  #include <sys/ucred.h>
  _ACEOF
  rm -f conftest.$ac_objext
-@@ -7643,7 +7644,7 @@
-   echo $ECHO_N "(cached) $ECHO_C" >&6
- else
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-ldbus-1 `$PKGCONFIG --libs dbus-1` $LIBS"
-+LIBS="-ldbus-1 `$PKGCONFIG --libs dbus-1` $LIBS -pthread"
- cat >conftest.$ac_ext <<_ACEOF
- /* confdefs.h.  */
- _ACEOF
-@@ -11782,6 +11783,7 @@
+@@ -8689,7 +8690,7 @@
+ 		CFLAGS="$CFLAGS `$PKGCONFIG --cflags dbus-1` -DDBUS_API_SUBJECT_TO_CHANGE"
+ 		CUPSDLIBS="$CUPSDLIBS `$PKGCONFIG --libs dbus-1`"
+ 		DBUS_NOTIFIER="dbus"
+-		DBUS_NOTIFIERLIBS="`$PKGCONFIG --libs dbus-1`"
++		DBUS_NOTIFIERLIBS="`$PKGCONFIG --libs dbus-1` -pthread"
+ 		SAVELIBS="$LIBS"
+ 		LIBS="$LIBS $DBUS_NOTIFIERLIBS"
+ 		{ echo "$as_me:$LINENO: checking for dbus_message_iter_init_append" >&5
+@@ -13524,6 +13525,7 @@
  cat >>conftest.$ac_ext <<_ACEOF
  /* end confdefs.h.  */
  $ac_includes_default
@@ -25,7 +25,7 @@
  #include <resolv.h>
  _ACEOF
  rm -f conftest.$ac_objext
-@@ -16791,7 +16793,7 @@
+@@ -17447,7 +17449,7 @@
  
  
  	if test x$ac_cv_header_pthread_h = xyes; then

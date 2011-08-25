@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	cups
-PORTVERSION=	1.4.6
+PORTVERSION=	1.4.8
 DISTVERSIONSUFFIX=	-source
 CATEGORIES=	print
 MASTER_SITES=	EASYSW/${PORTNAME}/${DISTVERSION}
@@ -41,7 +41,7 @@ CONFIGURE_ARGS+=	--localstatedir=/var			\
 			--with-pam-module="unix"		\
 			--enable-ssl
 
-OPTIONS?=	GNUTLS		"Build with GNUTLS library" on \
+OPTIONS?=	GNUTLS		"Build with GNUTLS library" off \
 		PHP		"Build PHP support" off \
 		PYTHON		"Build PYTHON support" off \
 		LIBPAPER	"Build with libpaper support" off \
@@ -76,7 +76,7 @@ CUPS_SUFFIX=	-client
 CUPS_SUFFIX=	-image
 LICENSE=	LGPL21
 .else
-PORTREVISION=	5
+PORTREVISION=	0
 CUPS_SUFFIX=	-base
 CONFLICTS+=	cupsddk-*
 .endif
@@ -123,7 +123,7 @@ PLIST_SUB+=		OVERWRITE="@comment "
 CONFIGURE_ARGS+=	--with-printcap=${PREFIX}/etc/printcap
 .endif
 
-.if !defined(WITHOUT_GNUTLS)
+.if defined(WITH_GNUTLS)
 CONFIGURE_ARGS+=	--disable-openssl --enable-gnutls
 CONFIGURE_ENV+=		PKGCONFIG="${LOCALBASE}/bin/pkg-config"
 LIB_DEPENDS+=		gnutls-openssl.27:${PORTSDIR}/security/gnutls
