@@ -11,3 +11,6 @@ Features:
      text data.
    * Complete isolation from the backend parser due to the private
      implementation (pimpl) idiom.
+
+WWW: http://xmlwrapp.sourceforge.net/
+     https://github.com/vslavik/xmlwrapp
