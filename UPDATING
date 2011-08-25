@@ -37,7 +37,8 @@ you update your ports collection, before attempting any port upgrades.
   libnotify and libproxy are updated with shared library bumps.
   This requires dependancies to be rebuild.
 
-  # portmaster -r libnotify-0.\* libproxy-0.\*
+  # portmaster -r libnotify-0
+  # portmaster -r libproxy-0
   # portmaster -a
 or
   # portupgrade -rf libnotify-0.\* libproxy-0.\*
