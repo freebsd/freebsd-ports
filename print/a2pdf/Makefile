@@ -8,10 +8,13 @@
 PORTNAME=	a2pdf
 PORTVERSION=	1.13
 CATEGORIES=	print
-MASTER_SITES=	http://perl.jonallen.info/pub/Main/Ascii2Pdf/ CENKES
+MASTER_SITES=	http://perl.jonallen.info/attachment/26/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Text to PDF converter
+
+LICENSE=	ART20
+LICENSE_FILE=	${WRKSRC}/artistic-2_0.txt
 
 BUILD_DEPENDS=	p5-PDF-API2>=0:${PORTSDIR}/textproc/p5-PDF-API2 \
 		perltidy>=0:${PORTSDIR}/devel/perltidy \
