@@ -1,5 +1,7 @@
 lib/gtk-2.0/immodules/im-hangul.a
 lib/gtk-2.0/immodules/im-hangul.la
 lib/gtk-2.0/immodules/im-hangul.so
+%%NLS%%share/locale/ko/LC_MESSAGES/im-hangul.mo
+@exec %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
 @unexec %D/bin/gtk-query-immodules-2.0 > %D/etc/gtk-2.0/gtk.immodules
 @dirrmtry lib/gtk-2.0/immodules
