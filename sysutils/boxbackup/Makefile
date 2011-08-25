@@ -6,14 +6,18 @@
 #
 
 PORTNAME=	boxbackup
-PORTVERSION=	0.10
-PORTREVISION=	2
+PORTVERSION=	0.11.1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
+PKGNAMESUFFIX=	${CLIENT_OR_SERVER}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	james@netinertia.co.uk
 COMMENT=	An open source, completely automatic on-line backup system for UNIX
+
+LICENSE=	BSD GPLv2
+LICENSE_COMB=	dual
+LICENSE_FILE=	${WRKSRC}/LICENSE-DUAL.txt
 
 USE_OPENSSL=	yes
 GNU_CONFIGURE=	yes
@@ -21,16 +25,17 @@ USE_PERL5=	yes
 USE_AUTOTOOLS=	autoconf aclocal autoheader
 ACLOCAL_ARGS+=	-I ${WRKSRC}/infrastructure/m4
 
+MAKE_JOBS_UNSAFE=yes
+
+CONFIGURE_ARGS+=--sysconfdir=${PREFIX}/etc
+
 PKGMESSAGE=	${WRKDIR}/pkg-message
 
 OPTIONS=	CLIENT "Install the bbackupd client" On \
 		SERVER "Install the bbstored server" On \
-		GNUREADLINE "Enable the use of GNU readline" Off \
-		TESTS  "Allows use of a 'test' target to run tests" Off
+		GNUREADLINE "Enable the use of GNU readline" Off
 
 .include <bsd.port.pre.mk>
-
-TARGETOS!=	${ECHO_CMD} `${UNAME} -s``${UNAME} -r | ${SED} -e 's/[-(].*//'` | ${TR} A-Z a-z
 
 .if defined(WITH_GNUREADLINE)
 CONFIGURE_ARGS+=--enable-gnu-readline
@@ -41,55 +46,48 @@ IGNORE=		requires at least CLIENT or SERVER to be defined.\
 		Please 'make config' again
 .endif
 
-.if defined(WITHOUT_CLIENT)
-PLIST_SUB+=	CLIENT="@comment "
-.else
-USE_RC_SUBR+=	bbackupd.sh
+MANCOMPRESSED=	yes
+.if defined(WITH_CLIENT)
+USE_RC_SUBR+=	bbackupd
 PLIST_SUB+=	CLIENT=""
-ALL_TARGET+=	parcels/${DISTNAME}-backup-client-${TARGETOS}.tgz
+ALL_TARGET+=	build-backup-client
 INSTALL_TARGET+=install-backup-client
-.endif
-
-.if defined(WITHOUT_SERVER)
-PLIST_SUB+=	SERVER="@comment "
+MAN5+=		bbackupd.conf.5
+MAN8+=		bbackupd.8 bbackupctl.8 bbackupd-config.8 bbackupquery.8
+SUB_FILES+=	999.boxbackup
 .else
-USE_RC_SUBR+=	bbstored.sh
-PLIST_SUB+=	SERVER=""
-ALL_TARGET+=	parcels/${DISTNAME}-backup-server-${TARGETOS}.tgz
-INSTALL_TARGET+=install-backup-server
+PLIST_SUB+=	CLIENT="@comment "
 .endif
 
-CONFLICTS=	boxbackup-server-[0-9]* boxbackup-client-[0-9]*
+.if defined(WITH_SERVER)
+USE_RC_SUBR+=	bbstored
+USERS+=		_bbstored
+GROUPS+=	_bbstored
+PLIST_SUB+=	SERVER=""
+ALL_TARGET+=	build-backup-server
+INSTALL_TARGET+=install-backup-server
+MAN5+=		bbstored.conf.5 raidfile.conf.5
+MAN8+=		bbstored.8 bbstoreaccounts.8 bbstored-certs.8 bbstored-config.8 raidfile-config.8
+.else
+PLIST_SUB+=	SERVER="@comment "
+.endif
+
 .if defined(WITHOUT_CLIENT)
-CONFLICTS=	boxbackup-client-[0-9]*
-PKGNAMESUFFIX=	-server
+# if this is a server-only install, CONFLICT with an install of the CLIENT or both
+CONFLICTS=	boxbackup-client-[0-9]* boxbackup-[0-9]*
+CLIENT_OR_SERVER=-server
 .elif defined(WITHOUT_SERVER)
-CONFLICTS=	boxbackup-server-[0-9]*
-PKGNAMESUFFIX=	-client
+# if this is a client-only install, CONFLICT with an install of the SERVER or both
+CONFLICTS=	boxbackup-server-[0-9]* boxbackup-[0-9]*
+CLIENT_OR_SERVER=-client
+.else
+# if we install boxbackup-[0-9]*, we should CONFLICT with a CLIENT or SERVER only install
+# PKGNAMESUFFIX is empty at this point
+CONFLICTS=	boxbackup-server-[0-9]* boxbackup-client-[0-9]*
 .endif
 
 post-patch:
-# Replace hard-coded /etc/box with $PREFIX/etc/box
-	@${REINPLACE_CMD} -e 's,%%PREFIX%%,${PREFIX},' \
-		${WRKSRC}/lib/common/BoxPortsAndFiles.h
-# Fix path to perl
-	@${FIND} ${WRKSRC} -name "*.pl" -exec \
-		${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},g' {} \;
-	@${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},g' \
-		${WRKSRC}/bin/bbackupd/bbackupd-config \
-		${WRKSRC}/bin/bbstored/bbstored-certs \
-		${WRKSRC}/bin/bbstored/bbstored-config \
-		${WRKSRC}/lib/raidfile/raidfile-config
-	@${FIND} ${WRKSRC} -name "Makefile.extra" -exec \
-		${REINPLACE_CMD} -e 's,perl,${PERL},g' {} \;
-	@${REINPLACE_CMD} -e 's,perl ,${PERL} ,g' \
-		${WRKSRC}/test/bbackupd/testfiles/bbackupd.conf \
-		${WRKSRC}/infrastructure/makebuildenv.pl
-	@${REINPLACE_CMD} -e 's,"perl ,PERL_EXECUTABLE " ,g' \
-		${WRKSRC}/test/backupstorefix/testbackupstorefix.cpp
-# Fix hard-coded g++
-	@${REINPLACE_CMD} -e 's,g++,${CXX},' \
-		 ${WRKSRC}/infrastructure/makebuildenv.pl
+	@${REINPLACE_CMD} -e '/html/d' ${WRKSRC}/parcels.txt
 .if !defined(WITHOUT_CLIENT)
 	@${CAT} ${FILESDIR}/pkg-message.client >> ${PKGMESSAGE}
 .endif
@@ -97,25 +95,22 @@ post-patch:
 	@${CAT} ${FILESDIR}/pkg-message.server >> ${PKGMESSAGE}
 .endif
 
-.if !defined(WITHOUT_SERVER)
-pre-install:
-	@${SETENV} PKG_PREFIX=${PREFIX} \
-		${SH} ${PKGINSTALL} ${PKGNAME} PRE-INSTALL
-.endif
+post-configure:
+	@${REINPLACE_CMD} -e '/share.doc.boxbackup/d' ${WRKSRC}/parcels/scripts/install-backup-*
 
 post-install:
 .if !defined(WITHOUT_CLIENT)
 	@${MKDIR} -m 0700 ${PREFIX}/etc/box/bbackupd
+	@${MKDIR} ${PREFIX}/etc/periodic/monthly
+	${INSTALL_SCRIPT} ${WRKDIR}/999.boxbackup ${PREFIX}/etc/periodic/monthly
 .endif
 .if !defined(WITHOUT_SERVER)
 	@${MKDIR} -m 0700 ${PREFIX}/etc/box/bbstored
 .endif
 	@${CAT} ${PKGMESSAGE}
 
-.if defined(WITH_TESTS)
 test:
 	 @${ECHO_CMD} "===> Running tests"
 	 @${MAKE} -C ${WRKSRC} test
-.endif
 
 .include <bsd.port.post.mk>
