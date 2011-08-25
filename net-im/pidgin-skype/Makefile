@@ -8,8 +8,7 @@
 PORTNAME=	pidgin-skype
 PORTVERSION=	0.0.0.612
 CATEGORIES=	net-im
-MASTER_SITES=	${MASTER_SITE_LOCAL}
-MASTER_SITE_SUBDIR=	mandree
+MASTER_SITES=	LOCAL/mandree
 DISTFILES=	pidgin-skype-svn-r${PORTVERSION:E}.tar.xz
 
 MAINTAINER=	mandree@FreeBSD.org
