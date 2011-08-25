@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	viking
-PORTVERSION=	1.1
-PORTREVISION=	1
+PORTVERSION=	1.2.1
 CATEGORIES=	astro
 MASTER_SITES=	SF
 
@@ -18,18 +17,18 @@ LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		expat.6:${PORTSDIR}/textproc/expat2
 RUN_DEPENDS=	gpsbabel:${PORTSDIR}/astro/gpsbabel
 
-USE_PERL5_RUN=	yes
-USE_GMAKE=	yes
-USE_GNOME=	gtk20 libglade2 gnomedocutils
-INSTALLS_ICONS=	yes
-INSTALLS_OMF=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CPPFLAGS}" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-
 OPTIONS=	GPSD	"Enable realtime GPS tracking"	off
 
-.include <bsd.port.pre.mk>
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include ${PTHREAD_CPPFLAGS}" \
+		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+GNU_CONFIGURE=	yes
+INSTALLS_ICONS=	yes
+INSTALLS_OMF=	yes
+USE_GMAKE=	yes
+USE_GNOME=	gnomedocutils gtk20 libglade2
+USE_PERL5_RUN=	yes
+
+.include <bsd.port.options.mk>
 
 .if defined(WITH_GPSD)
 LIB_DEPENDS+=	gps.20:${PORTSDIR}/astro/gpsd
@@ -45,4 +44,7 @@ CONFIGURE_ARGS+=	--disable-nls
 PLIST_SUB+=	NLS="@comment "
 .endif
 
-.include <bsd.port.post.mk>
+post-patch:	
+	@${REINPLACE_CMD} -e 's|gps_poll|gps_read|g' ${WRKSRC}/configure
+
+.include <bsd.port.mk>

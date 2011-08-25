@@ -7,4 +7,4 @@ tracks and waypoints, see real-time GPS position, etc.
 It is written in C with the GTK+ 2 toolkit, available for Linux, other POSIX
 operating systems, and Windows, and is licensed under the GNU GPL.
 
-WWW: http://viking.sourceforge.net
+WWW: http://viking.sourceforge.net/
