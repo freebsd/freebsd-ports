@@ -7,37 +7,37 @@
 #
 
 PORTNAME=	xmlwrapp
-PORTVERSION=	0.5.0
+PORTVERSION=	0.6.2
 CATEGORIES=	textproc
 MASTER_SITES=	SF
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A modern style C++ library for working with XML data
 
+LIB_DEPENDS=	boost_thread:${PORTSDIR}/devel/boost-libs
+
+OPTIONS=	XSLT "build libxsltwrap library (requires libxslt)" off
+
+CONFIGURE_ARGS=	--prefix ${PREFIX}
+CPPFLAGS+=	-I${LOCALBASE}/include
+USE_AUTOTOOLS=	libtool
+USE_GNOME=	libxml2 pkgconfig gnomehack
 USE_PERL5_BUILD=	yes
-USE_GNOME=	libxml2 pkgconfig
+USE_LDCONFIG=	yes
 WANT_GNOME=	yes
 HAS_CONFIGURE=	yes
-CONFIGURE_SCRIPT=	configure.pl
-CONFIGURE_ARGS=	--prefix ${PREFIX}
-USE_LDCONFIG=	yes
-CFLAGS+=	-fPIC
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if ${HAVE_GNOME:Mlibxslt}!=""
+.if defined(WITH_XSLT)
 USE_GNOME+=	libxslt
 .else
-CONFIGURE_ARGS+=	--disable-xslt
+CONFIGURE_ARGS+=--disable-xslt
 .endif
 
 post-patch:
-	${REINPLACE_CMD} -e 's,/usr/bin/perl,${PERL},' -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/configure.pl
-	${REINPLACE_CMD} -e 's,/usr/local,${PREFIX},g' ${WRKSRC}/tools/mkmf
-# Fix for GCC 4.2
-	@${REINPLACE_CMD} -e 's,^std::ostream,namespace xml { &,' \
-		-e '/^namespace/s,xml::,,g' -e '$$s,^,} ,' \
-		${WRKSRC}/src/libxml/node.cxx
+.if defined(NOPORTDOCS)
+	${REINPLACE_CMD} 's/docs//' ${WRKSRC}/Makefile.in
+.endif
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
