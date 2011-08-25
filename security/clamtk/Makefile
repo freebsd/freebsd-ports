@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	clamtk
-PORTVERSION=	4.33
+PORTVERSION=	4.34
 CATEGORIES=	security
 MASTER_SITES=	SF/${PORTNAME}/ClamTk/${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GTK front-end for Clam Antivirus
+
+LICENSE=	ART10 ART20 GPLv1 GPLv2 GPLv3
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Config-Tiny>=2.12:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-Date-Calc>=5.5.1:${PORTSDIR}/devel/p5-Date-Calc \
@@ -22,9 +25,6 @@ RUN_DEPENDS=	p5-Config-Tiny>=2.12:${PORTSDIR}/devel/p5-Config-Tiny \
 		p5-libwww>=5.822:${PORTSDIR}/www/p5-libwww \
 		zenity:${PORTSDIR}/x11/zenity \
 		p5-Gtk2>=1.144:${PORTSDIR}/x11-toolkits/p5-Gtk2
-
-LICENSE=	ART10 ART20 GPLv1 GPLv2 GPLv3
-LICENSE_COMB=	dual
 
 NO_BUILD=	yes
 USE_PERL5_RUN=	yes
