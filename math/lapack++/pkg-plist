@@ -64,10 +64,9 @@ lib/liblapackpp.a
 lib/liblapackpp.la
 lib/liblapackpp.so
 lib/liblapackpp.so.16
-lib/pkgconfig/lapackpp.pc
+libdata/pkgconfig/lapackpp.pc
 share/aclocal/acx_lapackpp.m4
 @dirrm include/lapackpp
-@dirrm lib/pkgconfig
 %%PORTDOCS%%share/doc/lapack++/lapack++.ps.gz
 %%PORTDOCS%%share/doc/lapack++/lapack++_install.ps.gz
 %%PORTDOCS%%share/doc/lapack++/lapackpp1_1.ps.gz
