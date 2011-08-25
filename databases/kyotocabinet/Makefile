@@ -8,9 +8,10 @@
 PORTNAME=	kyotocabinet
 PORTVERSION=	1.2.70
 CATEGORIES=	databases
-MASTER_SITES=	http://fallabs.com/kyotocabinet/pkg/
+MASTER_SITES=	http://fallabs.com/kyotocabinet/pkg/ \
+		LOCAL/sunpoet
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A straightforward implementation of DBM
 
 LICENSE=	GPLv3
