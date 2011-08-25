@@ -8,15 +8,11 @@
 PORTNAME=	pktsuckers
 PORTVERSION=	1.2
 CATEGORIES=	security
-MASTER_SITES=	http://mirror2.unixfreunde.de/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	ftp://minnie.tuhs.org/pub/NetSecurity/
 DISTNAME=	${PORTNAME}1_2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Log contents of unwanted UDP packets and TCP connections
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/tcpsuck ${PREFIX}/libexec
