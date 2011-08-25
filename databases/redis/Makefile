@@ -7,6 +7,7 @@
 
 PORTNAME=	redis
 PORTVERSION=	2.2.12
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 
@@ -25,6 +26,8 @@ BIN_FILES=	redis-benchmark redis-check-aof redis-check-dump \
 		redis-cli redis-server
 
 PKGMESSAGE=	${WRKDIR}/pkg-message
+
+PORTDOCS=	*
 
 USERS=	redis
 GROUPS=	redis
@@ -53,6 +56,10 @@ post-build:
 do-install:
 	${INSTALL_PROGRAM} ${BIN_FILES:C!^!${WRKSRC}/src/!} ${PREFIX}/bin/
 	${INSTALL_DATA} ${WRKDIR}/redis.conf ${PREFIX}/etc/redis.conf.sample
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} . ${DOCSDIR}
+.endif
 
 post-install:
 .for d in ${REDIS_LOGDIR} ${REDIS_RUNDIR} ${REDIS_DBDIR}
