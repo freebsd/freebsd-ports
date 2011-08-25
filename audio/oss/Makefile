@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	oss
-DISTVERSION=	4.2-build2004
-PORTREVISION=	1
+DISTVERSION=	4.2-build2005
 CATEGORIES=	audio kld
 MASTER_SITES=	http://www.opensound.com/developer/sources/stable/bsd/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}-src-bsd
@@ -71,20 +70,22 @@ CONFIGURE_ENV+=	OGG_SUPPORT=YES
 .endif
 
 pre-patch:
-	${FIND} ${WRKDIR}/${DISTNAME} -type f \
-	    -name '*.[ch]' -or -name '*.man' | \
+	${FIND} ${PATCH_WRKSRC} -name '*.man' -or \
+	    \( -name '*.[ch]' \! -name ossmkdep.c \) | \
 	    ${XARGS} ${REINPLACE_CMD} -e 's|/usr/|${PREFIX}/|g' \
 	    -e 's|/etc/oss|${PREFIX}/etc/oss|g'
 
 post-patch:
-	${FIND} ${WRKDIR} -name configure -or -name make.local -or \
-	    -name soundoff -or -name soundon -or -name srcconf.c | \
+	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+	    ${PATCH_WRKSRC}/setup/srcconf.c
+	${FIND} ${PATCH_WRKSRC} -name configure -or \
+	    -name make.local -or -name soundoff -or -name soundon | \
 	    ${XARGS} ${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g'
 
 do-configure:
 	${MKDIR} ${WRKSRC}
 	(cd ${WRKSRC} && \
-	    ${SETENV} ${CONFIGURE_ENV} ${WRKDIR}/${DISTNAME}/configure)
+	    ${SETENV} ${CONFIGURE_ENV} ${PATCH_WRKSRC}/configure)
 
 do-install:
 	${INSTALL_PROGRAM} ${PROTO_BINDIR}/* ${PREFIX}/bin/

@@ -5,7 +5,7 @@
  	  parms = "";
  	  if (getenv ("OGG_SUPPORT") != NULL)
 -	    parms = "-DOGG_SUPPORT";
-+	    parms = "-DOGG_SUPPORT -I%%PREFIX%%/include";
++	    parms = "-DOGG_SUPPORT -I%%LOCALBASE%%/include";
  	}
  
        if (strcmp (line, "project") == 0)
