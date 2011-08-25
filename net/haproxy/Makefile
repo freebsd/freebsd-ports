@@ -6,17 +6,17 @@
 #
 
 PORTNAME=	haproxy
-PORTVERSION=	1.4.15
+PORTVERSION=	1.4.16
 CATEGORIES=	net www
 MASTER_SITES=	http://haproxy.1wt.eu/download/1.4/src/
 
 MAINTAINER=	freebsd@linepoint.com
 COMMENT=	The Reliable, High Performance TCP/HTTP Load Balancer
 
-CONFLICTS=	haproxy-devel*
-
-LICENSE_COMB=	multi
 LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	multi
+
+CONFLICTS=	haproxy-devel-[0-9]*
 
 USE_RC_SUBR=	haproxy
 USE_GMAKE=	YES
@@ -28,7 +28,7 @@ OPTIONS=	PCRE		"Use PCRE regex library"	On\
 
 .include <bsd.port.options.mk>
 
-MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS
+MAKE_ARGS=	TARGET=freebsd DEFINE=-DFREEBSD_PORTS CC=${CC}
 
 .if defined(WITH_PCRE)
 LIB_DEPENDS+=	pcre.0:${PORTSDIR}/devel/pcre
