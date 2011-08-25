@@ -249,4 +249,3 @@ sbin/sntp
 %%PORTDOCS%%@dirrm %%DOCSDIR%%/drivers
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm %%EXAMPLESDIR%%
-@dirrmtry lib/pkgconfig
