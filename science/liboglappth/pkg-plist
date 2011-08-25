@@ -12,4 +12,4 @@ lib/liboglappth.la
 lib/liboglappth.a
 libdata/pkgconfig/liboglappth.pc
 @dirrm include/oglappth
-@dirrm lib/pkgconfig
+
