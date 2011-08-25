@@ -6,14 +6,10 @@
 #
 
 PORTNAME=	ft2demos
-PORTVERSION=	2.4.4
+PORTVERSION=	2.4.6
 CATEGORIES=	print
 MASTER_SITES=	SF/freetype/freetype-demos/${PORTVERSION} \
-		http://sunsite.cnlab-switch.ch/ftp/mirror/freetype/freetype2/ \
-		http://www.funet.fi/pub/mirrors/ftp.freetype.org/freetype2/ \
-		http://ftp.sunet.se/pub/text-processing/freetype/freetype2/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,graphics/freetype/&,} \
-		ftp://ftp.freetype.org/freetype/freetype2/
+		RINGSERVER/graphics/freetype/freetype2
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Demo programs for FreeType2
