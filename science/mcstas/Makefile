@@ -5,9 +5,10 @@
 # $FreeBSD$
 
 PORTNAME=	mcstas
-PORTVERSION=	1.12b
+PORTVERSION=	1.12c
 CATEGORIES=	science
-MASTER_SITES=	http://www.mcstas.org/download/
+MASTER_SITES=	http://www.mcstas.org/download/ \
+		http://www.c-s.li/ports/
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	c-s@c-s.li
