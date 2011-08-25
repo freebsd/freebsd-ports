@@ -7,25 +7,26 @@
 
 PORTNAME=	mbdyn
 PORTVERSION=	1.3.9
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	science
 MASTER_SITES=	http://www.aero.polimi.it/~masarati/Download/mbdyn/
 
 MAINTAINER=	maho@FreeBSD.org
 COMMENT=	A MultiBody Dynamics analysis system
 
-LIB_DEPENDS=	umfpack:${PORTSDIR}/math/suitesparse
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	arpack:${PORTSDIR}/math/arpack \
+		umfpack:${PORTSDIR}/math/suitesparse
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_FORTRAN=	yes
 MAN1=		mbdyn.1
-CPPFLAGS+=	-I${LOCALBASE}/include/suitesparse
-CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib/${CC} -L${LOCALBASE}/lib" \
-		CPPFLAGS="${CPPFLAGS}"
+CPPFLAGS+=	-fpermissive -I${LOCALBASE}/include/suitesparse
+LDFLAGS+=	-L${LOCALBASE}/lib
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=	--program-prefix=''
-
-LIB_DEPENDS+=	arpack:${PORTSDIR}/math/arpack
 
 OPTIONS=	MPI "Enable mpich-support" off \
 		METIS "Enable metis-support" off \
@@ -38,22 +39,24 @@ OPTIONS=	MPI "Enable mpich-support" off \
 USE_BLAS?=	reference
 
 . if ${USE_BLAS} == reference
-LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas
+LIB_DEPENDS+=	blas.2:${PORTSDIR}/math/blas \
+		lapack.4:${PORTSDIR}/math/lapack
 CONFIGURE_ARGS+=	--with-blas=blas
+LAPACK_LIBS=	-llapack
 .elif ${USE_BLAS} == gotoblas
 LIB_DEPENDS+=	goto:${PORTSDIR}/math/gotoblas
-CONFIGURE_ARGS+=	--with-blas=goto
+CONFIGURE_ARGS+=	--with-blas=goto --with-goto=goto2
+LAPACK_LIBS=	-lgoto2
 .elif ${USE_BLAS} == atlas
 LIB_DEPENDS+=	atlas:${PORTSDIR}/math/atlas
 CONFIGURE_ARGS+=	--with-blas=atlas
+LAPACK_LIBS=	-lalapack
 .endif
-LIB_DEPENDS+=	lapack.4:${PORTSDIR}/math/lapack
 
 .if defined(WITH_MPI)
 LIB_DEPENDS+=	mpich:${PORTSDIR}/net/mpich2
 CONFIGURE_ARGS+=	--with-mpi=yes --enable-schur
 CPPFLAGS+=	-I${LOCALBASE}/include
-LDFLAGS+=	"-L${LOCALBASE}/lib"
 . if !defined(WITH_METIS)
 WITH_CHACO=	yes
 . endif
@@ -77,8 +80,8 @@ CONFIGURE_ARGS+=	--with-chaco=no
 .endif
 
 .if defined(WITH_GINAC)
-LIB_DEPENDS+=	metis:${PORTSDIR}/math/metis
-LIB_DEPENDS+=	ginac:${PORTSDIR}/math/GiNaC
+LIB_DEPENDS+=	metis:${PORTSDIR}/math/metis \
+		ginac:${PORTSDIR}/math/GiNaC
 CONFIGURE_ARGS+=	--with-ginac=yes
 CPPFLAGS+=	-I${LOCALBASE}/include/metis
 .else
@@ -93,5 +96,9 @@ CPPFLAGS+=	-I${LOCALBASE}/include/tcl8.4
 .else
 CONFIGURE_ARGS+=	--with-tcl=no
 .endif
+
+post-patch:
+	${REINPLACE_CMD} -e '/try_lapack_LIBS=/s/-llapack/${LAPACK_LIBS}/' \
+		${WRKSRC}/configure
 
 .include <bsd.port.post.mk>
