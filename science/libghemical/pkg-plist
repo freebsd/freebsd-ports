@@ -41,8 +41,7 @@ lib/libghemical.so.5
 lib/libghemical.so
 lib/libghemical.la
 lib/libghemical.a
-lib/pkgconfig/libghemical.pc
-@dirrm lib/pkgconfig
+libdata/pkgconfig/libghemical.pc
 share/libghemical/%%LIBGHEMICAL_VERSION%%/amber/all_amino94_MOD.in
 share/libghemical/%%LIBGHEMICAL_VERSION%%/amber/all_aminoct94.in
 share/libghemical/%%LIBGHEMICAL_VERSION%%/amber/all_aminont94.in
