@@ -25,6 +25,9 @@
 %%PYTHON_SITELIBDIR%%/kombu/pidbox.py
 %%PYTHON_SITELIBDIR%%/kombu/pidbox.pyc
 %%PYTHON_SITELIBDIR%%/kombu/pidbox.pyo
+%%PYTHON_SITELIBDIR%%/kombu/pools.py
+%%PYTHON_SITELIBDIR%%/kombu/pools.pyc
+%%PYTHON_SITELIBDIR%%/kombu/pools.pyo
 %%PYTHON_SITELIBDIR%%/kombu/serialization.py
 %%PYTHON_SITELIBDIR%%/kombu/serialization.pyc
 %%PYTHON_SITELIBDIR%%/kombu/serialization.pyo
