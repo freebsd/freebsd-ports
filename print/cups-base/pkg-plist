@@ -914,8 +914,10 @@ sbin/reject
 %%DOCSDIR%%/images/cups.png
 %%DOCSDIR%%/images/generic.png
 %%DOCSDIR%%/images/left.gif
+%%DOCSDIR%%/images/raster-organization.png
 %%DOCSDIR%%/images/raster.png
 %%DOCSDIR%%/images/right.gif
+%%DOCSDIR%%/images/sample-image.png
 %%DOCSDIR%%/images/sel.gif
 %%DOCSDIR%%/images/smiley.jpg
 %%DOCSDIR%%/images/unsel.gif
