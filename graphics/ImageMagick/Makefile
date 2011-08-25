@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	ImageMagick
-DISTVERSION=	6.7.0-10
-PORTREVISION=	1
+DISTVERSION=	6.7.1-10
 CATEGORIES=	graphics perl5
 MASTER_SITES=	ftp://ftp.imagemagick.org/pub/ImageMagick/ \
 		ftp://ftp.nluug.nl/pub/ImageMagick/ \
@@ -65,8 +64,7 @@ OPTIONS=\
 	IMAGEMAGICK_TIFF	"TIFF format support" on \
 	IMAGEMAGICK_TTF		"Freetype support" on \
 	IMAGEMAGICK_WMF		"WMF format support" off \
-	THREADS			"Threads support" off \
-	X11			"X11 support" on
+	THREADS			"Threads support" off
 
 .include <bsd.port.pre.mk>
 
