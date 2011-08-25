@@ -124,6 +124,7 @@ CONFIGURE_ARGS+=	--with-printcap=${PREFIX}/etc/printcap
 .endif
 
 .if defined(WITH_GNUTLS)
+BROKEN=			gnutls does not support threads yet
 CONFIGURE_ARGS+=	--disable-openssl --enable-gnutls
 CONFIGURE_ENV+=		PKGCONFIG="${LOCALBASE}/bin/pkg-config"
 LIB_DEPENDS+=		gnutls-openssl.27:${PORTSDIR}/security/gnutls
