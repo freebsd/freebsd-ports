@@ -74,7 +74,7 @@ include/syslog-ng/value-pairs.h
 lib/libsyslog-ng.la
 lib/libsyslog-ng.so
 lib/libsyslog-ng.so.0
-lib/pkgconfig/syslog-ng.pc
+libdata/pkgconfig/syslog-ng.pc
 lib/syslog-ng/libaffile.la
 lib/syslog-ng/libaffile.so
 lib/syslog-ng/libafmongodb.la
@@ -124,7 +124,6 @@ share/xsd/patterndb-3.xsd
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm etc/patterndb.d
 @dirrm include/syslog-ng
-@dirrmtry lib/pkgconfig
 @dirrm lib/syslog-ng
 @dirrm share/include/scl/system
 @dirrm share/include/scl/syslogconf

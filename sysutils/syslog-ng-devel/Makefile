@@ -40,7 +40,7 @@ MAN8=		syslog-ng.8
 USE_RC_SUBR=	syslog-ng.sh
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
-USE_GNOME=	glib20
+USE_GNOME=	glib20 gnomehack
 SUB_FILES=	pkg-message
 
 CONFIGURE_ARGS=	--sysconfdir=${LOCALBASE}/etc --localstatedir=/var/db \
