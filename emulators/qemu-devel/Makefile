@@ -157,11 +157,7 @@ CONFIGURE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 MAKE_ENV+=	COMPILER_PATH=${LOCALBASE}/bin
 .endif
 
-pre-patch:
-	@for A in ${ONLY_FOR_ARCHS}; do \
-		${MKDIR} ${WRKSRC}/bsd/$$A; \
-	done
-
+post-patch:
 .if defined(WITH_PCAP)
 	@cd ${WRKSRC} && ${PATCH} --quiet < ${FILESDIR}/pcap-patch
 	@${REINPLACE_CMD} -f ${FILESDIR}/pcap-client-type.sed ${WRKSRC}/net.h
