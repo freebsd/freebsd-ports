@@ -6,7 +6,7 @@
 
 PORTNAME=	liboglappth
 PORTVERSION=	0.98
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	science
 MASTER_SITES=	http://www.uku.fi/~thassine/projects/download/current/ \
 		http://bioinformatics.org/ghemical/download/
@@ -17,6 +17,8 @@ COMMENT=	Support libraries of science/ghemical port
 GNU_CONFIGURE=  yes
 
 USE_GL=		glut
+USE_GNOME=	gnomehack
+
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include"       \
 		CXXFLAGS="-I${LOCALBASE}/include"       \
 		CFLAGS="-I${LOCALBASE}/include"         \
