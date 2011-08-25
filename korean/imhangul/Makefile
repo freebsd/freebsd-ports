@@ -6,18 +6,30 @@
 #
 
 PORTNAME=	imhangul
-PORTVERSION=	0.9.13
-PORTREVISION=	7
-CATEGORIES=	korean x11-toolkits
-MASTER_SITES=	http://kldp.net/frs/download.php/2808/
+PORTVERSION=	2.0.0
+CATEGORIES=	korean
+MASTER_SITES=	http://kldp.net/frs/download.php/5924/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	jkim@FreeBSD.org
 COMMENT=	GTK+-2.0 hangul input module
+
+LICENSE=	GPLv2
+
+LIB_DEPENDS=	hangul.1:${PORTSDIR}/korean/libhangul
 
 USE_AUTOTOOLS=	libtool
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+PLIST_SUB+=	NLS=""
+.else
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.mk>
