@@ -3,17 +3,6 @@ bin/vah264encode
 bin/vainfo
 bin/vampeg2vldemo
 bin/vaputsurface
-bin/vatest_01
-bin/vatest_02
-bin/vatest_03
-bin/vatest_04
-bin/vatest_05
-bin/vatest_06
-bin/vatest_07
-bin/vatest_08
-bin/vatest_09
-bin/vatest_10
-bin/vatest_11
 include/va/va.h
 include/va/va_backend.h
 include/va/va_backend_egl.h

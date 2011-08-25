@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	libva
-PORTVERSION=	1.0.13
+PORTVERSION=	1.0.14
 CATEGORIES=	multimedia
 MASTER_SITES=	http://cgit.freedesktop.org/${PORTNAME}/snapshot/
 
 MAINTAINER=	swell.k@gmail.com
 COMMENT=	VAAPI wrapper and dummy driver
 
-BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
-LIB_DEPENDS=	drm.2:${PORTSDIR}/graphics/libdrm
-
 LICENSE=	MIT
 LICENSE_FILE=	${WRKSRC}/COPYING
+
+BUILD_DEPENDS=	${LOCALBASE}/include/linux/videodev2.h:${PORTSDIR}/multimedia/v4l_compat
+LIB_DEPENDS=	drm.2:${PORTSDIR}/graphics/libdrm
 
 USE_BZIP2=	yes
 USE_XORG=	pciaccess xext xfixes
@@ -27,7 +27,6 @@ ACLOCAL_ARGS=	-I.
 AUTOMAKE_ARGS=	--add-missing
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--program-prefix=va
-MAKE_ENV=	PTHREAD_LIBS="${PTHREAD_LIBS}"
 USE_LDCONFIG=	yes
 
 CPPFLAGS+=	-isystem${LOCALBASE}/include
@@ -43,7 +42,7 @@ EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-va-va_trace.c
 .endif
 
 .if ${ARCH} == "sparc64"
-BROKEN=		Does not install on sparc64
+BROKEN=		glXCreateContext fails during configure
 .endif
 
 .if !defined(WITH_DEBUG)
@@ -63,5 +62,10 @@ post-patch:	.SILENT
 	${REINPLACE_CMD} 's/va\(info\)/\1/' \
 		${WRKSRC}/test/vainfo/Makefile.am
 	${REINPLACE_CMD} 's/-ldl//' ${WRKSRC}/va/Makefile.am
+
+post-configure:	.SILENT
+	${REINPLACE_CMD} 's/-lpthread/${PTHREAD_LIBS}/' \
+		${WRKSRC}/i965_drv_video/Makefile \
+		${WRKSRC}/test/putsurface/Makefile
 
 .include <bsd.port.post.mk>
