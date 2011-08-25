@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	pystemmer
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	textproc python
 MASTER_SITES=	CHEESESHOP \
 		http://snowball.tartarus.org/wrappers/
