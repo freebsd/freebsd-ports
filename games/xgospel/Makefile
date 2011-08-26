@@ -8,15 +8,12 @@ PORTNAME=	xgospel
 PORTVERSION=	1.12d
 PORTREVISION=	3
 CATEGORIES=	games
-MASTER_SITES=	http://www.teaser.fr/~jlgailly/
+MASTER_SITES=	http://gailly.net/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 Go (weiqi, baduk) client for the Internet Go Server
 
 LIB_DEPENDS=	Xaw3d:${PORTSDIR}/x11-toolkits/Xaw3d
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
 
 USE_XORG=	ice sm x11 xaw xext xmu xpm xt
 GNU_CONFIGURE=	yes
