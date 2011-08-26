@@ -6,20 +6,22 @@
 #
 
 PORTNAME=	Continuity
-PORTVERSION=	1.3
+PORTVERSION=	1.4
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/A/AW/AWWAIID
+MASTER_SITE_SUBDIR=CPAN:AWWAIID
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Stateful Web applications in Perl
 
-BUILD_DEPENDS=	p5-Event>0:${PORTSDIR}/devel/p5-Event \
+COMMON_DEPENDS=	p5-Event>0:${PORTSDIR}/devel/p5-Event \
+		p5-HTTP-Daemon>=1.36:${PORTSDIR}/www/p5-HTTP-Daemon \
 		p5-Coro>=4.37:${PORTSDIR}/devel/p5-Coro \
 		p5-PSGI>=0:${PORTSDIR}/www/p5-PSGI \
 		p5-libwww>0:${PORTSDIR}/www/p5-libwww
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${COMMON_DEPENDS}
+RUN_DEPENDS=	${COMMON_DEPENDS}
 
 PERL_CONFIGURE=	5.8.0+
 
