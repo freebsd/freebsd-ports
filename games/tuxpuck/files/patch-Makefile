@@ -1,5 +1,16 @@
---- Makefile.orig	Fri Nov  8 11:50:29 2002
-+++ Makefile	Wed Dec 25 15:38:45 2002
+--- Makefile.orig	2002-11-08 19:50:29.000000000 +0900
++++ Makefile	2011-08-24 01:44:15.000000000 +0900
+@@ -1,8 +1,8 @@
+ # Makefile for TuxPuck , Copyright Jacob Kroon 2001-2002
+ NAME		= tuxpuck
+ VERSION		= 0.8.2
+-CC		= gcc
+-CFLAGS		+= -D_VERSION=\"$(VERSION)\" -g -Wall
++CC		?= gcc
++CFLAGS		+= -D_VERSION=\"$(VERSION)\" -Wall
+ CSOURCES	= tuxpuck.c video.c audio.c menu.c sprite.c font.c timer.c \
+ 		  board.c entity.c glass.c scoreboard.c player.c zoom.c png.c \
+ 		  jpg.c intro.c tux.c arcana.c 
 @@ -17,11 +17,11 @@
  endif
  
