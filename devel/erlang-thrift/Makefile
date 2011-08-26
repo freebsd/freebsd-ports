@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/devel/thrift:extract \
 		erlc:${PORTSDIR}/lang/erlang
 RUN_DEPENDS=	erlc:${PORTSDIR}/lang/erlang
 
+BROKEN=		does not build
+
 USE_GMAKE=	yes
 
 ERLC?=		erlc
