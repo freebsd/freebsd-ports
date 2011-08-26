@@ -9,10 +9,12 @@ PORTNAME=	libgfx
 DISTVERSION=	1.1.0
 PORTREVISION=	6
 CATEGORIES=	graphics
-MASTER_SITES=	http://graphics.cs.uiuc.edu/~garland/dist/ CENKES
+MASTER_SITES=	http://mgarland.org/files/dist/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	OpenGL/FLTK development
+
+LICENSE=	MIT
 
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		tiff.4:${PORTSDIR}/graphics/tiff \
@@ -20,29 +22,35 @@ LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk \
 		gzstream.0:${PORTSDIR}/devel/gzstream \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
 
-USE_GL=		gl
-USE_GMAKE=	yes
-USE_LDCONFIG=	yes
-GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CFLAGS="${CFLAGS}" CPPFLAGS="${CFLAGS}" LDFLAGS="${LDFLAGS}"
-CONFIGURE_ARGS=	--enable-gzstream --with-libtiff-lzw --with-x
-CFLAGS=		-I${LOCALBASE}/include -fPIC
-LDFLAGS=	-L${LOCALBASE}/lib
 BUILD_WRKSRC=	${WRKSRC}/src
+
+USE_GL=		glu
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--enable-gzstream --with-libtiff-lzw --with-x
 ALL_TARGET=	${PORTNAME}.so
-MAKE_ARGS=	CC="${CC}" CXX="${CXX}"
+USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
+CFLAGS+=	-fPIC
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 post-patch:
-	@${REINPLACE_CMD} -e '/^CC /d;/^CXX /d' ${WRKSRC}/gfx-config.in
-	@${REINPLACE_CMD} -e 's|\.a|.so|g;/RANLIB/d;s|[(]AR[)] cru|{CC} \
-		${CFLAGS} ${LDFLAGS} -shared $${GUI_LIBS} -lgzstream -o|'\
-		${WRKSRC}/src/${MAKEFILE}
-	@${REINPLACE_CMD} -e '6115s|-lfltk|`fltk-config --ldflags`|' \
-	    ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/^CC /d ; \
+		 /^CXX /d' ${WRKSRC}/gfx-config.in
+	@${REINPLACE_CMD} -e \
+		's|\.a|.so|g ; \
+		 /RANLIB/d ; \
+		 s|[(]AR[)] cru|{CC} ${CFLAGS} ${LDFLAGS} -shared $${GUI_LIBS} -lgzstream -o|' ${WRKSRC}/src/${MAKEFILE}
+	@${REINPLACE_CMD} -e \
+		'/^FLTK_LIBS/s|"-lfltk"|"`fltk-config --ldflags`"|' ${WRKSRC}/configure
 
 do-install:
-	@cd ${WRKSRC}/include/gfx/&&${COPYTREE_SHARE} . ${PREFIX}/include/gfx/
-	@${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME}.so ${PREFIX}/lib/
+	@(cd ${WRKSRC}/include/gfx && ${COPYTREE_SHARE} . ${PREFIX}/include/gfx)
+	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME}.so ${PREFIX}/lib
 	@${LN} -sf ${PORTNAME}.so ${PREFIX}/lib/${PORTNAME}.so.0
 
 .include <bsd.port.mk>
