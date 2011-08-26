@@ -31,6 +31,8 @@ bin/gtkpool
 %%DATADIR%%/ball_9_sm.xpm
 %%DATADIR%%/ball_cue_lg.xpm
 %%DATADIR%%/ball_cue_sm.xpm
+%%DATADIR%%/ball_drop.raw
+%%DATADIR%%/ball_hit.raw
 %%DATADIR%%/bllq-icon.xpm
 %%DATADIR%%/blpl-icon.xpm
 %%DATADIR%%/mabl-icon.xpm
@@ -38,9 +40,7 @@ bin/gtkpool
 %%DATADIR%%/pool_table_black-laquer.xpm
 %%DATADIR%%/pool_table_black-pearl.xpm
 %%DATADIR%%/pool_table_mahogany.xpm
-%%DATADIR%%/ball_drop.raw
 %%DATADIR%%/pool_table_maple-burl.xpm
-%%DATADIR%%/ball_hit.raw
-@dirrm %%DATADIR%%
 share/icons/gtkpool.png
 @dirrmtry share/icons
+@dirrm %%DATADIR%%

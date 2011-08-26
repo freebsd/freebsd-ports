@@ -1,5 +1,5 @@
---- gtkpool/application.cpp.orig	Tue Aug  6 11:02:45 2002
-+++ gtkpool/application.cpp	Mon Aug  1 16:01:35 2005
+--- gtkpool/application.cpp.orig	2002-08-06 13:02:45.000000000 +0900
++++ gtkpool/application.cpp	2011-08-19 04:36:56.000000000 +0900
 @@ -67,11 +67,11 @@
  		message_colours[14] = new GdkColor;
  
@@ -22,16 +22,29 @@
   	if(bb != balls.end())
   	{
 -#if _CPP_CSTDLIB == 1
-+#if _CPP_CSTDLIB == 1 || _GLIBCXX_CSTDLIB == 1
++#if 1 // _CPP_CSTDLIB == 1
  		// FIXME: horrible, non-portable, converting a vector iterator
  		// to a pointer using g++ 3.0 private interface :-(
  		// -- Philip Martin <philip_martin@ntlworld.com>
-@@ -815,7 +815,7 @@
+@@ -815,12 +815,18 @@
  		load_sounds();
  }
  
 -void Application::print_message(const char *message, int colour = 0)
 +void Application::print_message(const char *message, int colour)
  {
++	GtkTextBuffer *chat_textbuf;
++	GtkTextIter chat_textiter;
++
  	if (colour > 4)
  		colour = 14;
+ 	if (colour < 0)
+ 		colour = 14;
+-	gtk_text_insert(GTK_TEXT(chat_text), NULL, message_colours[colour], NULL, "\n", -1);
+-	gtk_text_insert(GTK_TEXT(chat_text), NULL, message_colours[colour], NULL, message, -1);
++
++	chat_textbuf = gtk_text_view_get_buffer(GTK_TEXT_VIEW(chat_text));
++	gtk_text_buffer_get_iter_at_offset(chat_textbuf, &chat_textiter, 0);
++	gtk_text_buffer_insert(chat_textbuf, &chat_textiter, "\n", -1);
++	gtk_text_buffer_insert(chat_textbuf, &chat_textiter, message, -1);
+ }
