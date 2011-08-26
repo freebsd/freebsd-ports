@@ -8,7 +8,7 @@
 
 PORTNAME=	gman
 PORTVERSION=	0.9.3
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	misc
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/g/gman
@@ -16,10 +16,10 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}.orig
 
 PATCH_SITES=	${MASTER_SITES}
 PATCH_SITE_SUBDIR=	${MASTER_SITE_SUBDIR}
-PATCHFILES=	${PORTNAME}_${PORTVERSION}-2.diff.gz
+PATCHFILES=	${PORTNAME}_${PORTVERSION}-5.diff.gz
 PATCH_DIST_STRIP=	-p1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cy@FreeBSD.org
 COMMENT=	A user-friendly graphical front end for the man system
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
@@ -33,6 +33,8 @@ USE_GNOME=	gtk12
 USE_GMAKE=	yes
 
 MAN1=	gman.1x
+
+CXXFLAGS+=	-L${LOCALBASE}/lib
 
 post-patch:
 	@${REINPLACE_CMD} -e 's,^CXX =,#CXX =,g' \

@@ -8,11 +8,11 @@
 +	intptr_t display_section_ID;
  
  	pthread_mutex_lock(&context_lock);
--	switch ((int)context->get_value("display_section_policy")) {
+-	switch ((long)context->get_value("display_section_policy")) {
 +	switch ((intptr_t)context->get_value("display_section_policy")) {
  	case 0: display_section_ID = ~0;break;
--	case 1: display_section_ID = ~(int)(context->get_value("display_section"));break;
--	case 2: display_section_ID = (int)context->get_value("display_section"); break;
+-	case 1: display_section_ID = ~(long)(context->get_value("display_section"));break;
+-	case 2: display_section_ID = (long)context->get_value("display_section"); break;
 +	case 1: display_section_ID = ~(intptr_t)(context->get_value("display_section"));break;
 +	case 2: display_section_ID = (intptr_t)context->get_value("display_section"); break;
  	default: fprintf(stderr,"warning: init_man_data: \"display_section_policy\" "
