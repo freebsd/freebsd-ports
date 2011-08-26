@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Lingua-EN-Fathom
-PORTVERSION=	1.12
+PORTVERSION=	1.15
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,8 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Lingua::EN::Fathom - Measure readability of English text
 
-BUILD_DEPENDS=	${SITE_PERL}/Lingua/EN/Syllable.pm:${PORTSDIR}/textproc/p5-Lingua-EN-Syllable
-RUN_DEPENDS=	${BUILD_DEPENDS}
+COMMON_DEPENDS=	p5-Lingua-EN-Syllable>0:${PORTSDIR}/textproc/p5-Lingua-EN-Syllable
+BUILD_DEPENDS=	${COMMON_DEPENDS}
+RUN_DEPENDS=	${COMMON_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
