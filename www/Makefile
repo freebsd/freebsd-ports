@@ -1572,6 +1572,7 @@
     SUBDIR += py-qpy
     SUBDIR += py-qt4-webkit
     SUBDIR += py-recaptcha
+    SUBDIR += py-requests
     SUBDIR += py-restclient
     SUBDIR += py-routes
     SUBDIR += py-rssdler
