@@ -1243,6 +1243,7 @@
     SUBDIR += p5-CPAN-Meta
     SUBDIR += p5-CPAN-Meta-YAML
     SUBDIR += p5-CPAN-Mini
+    SUBDIR += p5-CPAN-Recent-Uploads
     SUBDIR += p5-CPAN-Reporter
     SUBDIR += p5-CPAN-Reporter-Smoker
     SUBDIR += p5-CPAN-SQLite

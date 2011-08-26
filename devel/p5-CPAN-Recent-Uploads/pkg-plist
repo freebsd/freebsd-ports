@@ -1,0 +1,9 @@
+%%SITE_PERL%%/CPAN/Recent/Uploads/Retriever.pm
+%%SITE_PERL%%/CPAN/Recent/Uploads.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Recent/Uploads/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Recent/Uploads
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN/Recent
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CPAN
+@dirrmtry %%SITE_PERL%%/CPAN/Recent/Uploads
+@dirrmtry %%SITE_PERL%%/CPAN/Recent
+@dirrmtry %%SITE_PERL%%/CPAN
