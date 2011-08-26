@@ -222,6 +222,7 @@
     SUBDIR += p5-SNMP_Session
     SUBDIR += p5-Telnet-Cisco
     SUBDIR += p5-Tie-NetAddr-IP
+    SUBDIR += p5-Zenoss
     SUBDIR += packit
     SUBDIR += pads
     SUBDIR += pancho

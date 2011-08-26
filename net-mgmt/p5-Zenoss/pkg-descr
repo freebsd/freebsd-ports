@@ -1,0 +1,8 @@
+This is a PERL interface to the Zenoss Monitoring System
+JSON API.  It allows the ability to execute all available functions
+provided by the Zenoss API programmatically.  Anything you could do from
+the Zenoss interface can be achieved via this module.  This is a
+full service implementation, providing the construction of the call
+to the API and the handling of the response.
+
+WWW:  http://search.cpan.org/dist/Zenoss/
