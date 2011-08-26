@@ -21,6 +21,8 @@ BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}imaging>0:${PORTSDIR}/graphics/py-imaging
 
 CONFLICTS=	py2[0-9]-reportlab-[0-9]*
 
+BROKEN=		does not package
+
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 PYDISTUTILS_PKGNAME=	reportlab
