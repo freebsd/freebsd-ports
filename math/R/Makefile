@@ -31,6 +31,8 @@ DISTNAME=	R-${PORTVERSION}
 MAINTAINER=	bf@FreeBSD.org
 COMMENT?=	A language for statistical computing and graphics
 
+BROKEN=		fails to package
+
 .if defined(LIBRMATH_SLAVEPORT)
 BUILD_WRKSRC=		${WRKSRC}/src/nmath/standalone
 CONFIGURE_ARGS =	--disable-nls --with-ICU=no --with-cairo=no --with-iconv=no \
