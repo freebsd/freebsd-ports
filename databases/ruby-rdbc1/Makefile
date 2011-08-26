@@ -16,10 +16,10 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 DIST_SUBDIR=	ruby
 
-MAINTAINER=	dinoex@FreeBSD.org
+MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Ruby Database Connectivity
 
-RUN_DEPENDS=	rubygem-postgres>=0:${PORTSDIR}/databases/rubygem-postgres
+RUN_DEPENDS=	rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg
 
 USE_RUBY=	yes
 
