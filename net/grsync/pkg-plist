@@ -12,9 +12,11 @@ share/pixmaps/grsync.png
 %%NLS%%share/locale/es_ES/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/fr_FR/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/gl_ES/LC_MESSAGES/grsync.mo
+%%NLS%%share/locale/id_ID/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/it_IT/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/nb_NO/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/nl_NL/LC_MESSAGES/grsync.mo
+%%NLS%%share/locale/pt_BR/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/ru_RU/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/sv_SE/LC_MESSAGES/grsync.mo
 %%NLS%%share/locale/tr_TR/LC_MESSAGES/grsync.mo
@@ -31,6 +33,8 @@ share/pixmaps/grsync.png
 %%NLS%%@dirrmtry share/locale/nb_NO
 %%NLS%%@dirrmtry share/locale/it_IT/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/it_IT
+%%NLS%%@dirrmtry share/locale/id_ID/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/id_ID
 %%NLS%%@dirrmtry share/locale/gl_ES/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/gl_ES
 %%NLS%%@dirrmtry share/locale/de_DE/LC_MESSAGES

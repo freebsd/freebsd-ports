@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	grsync
-PORTVERSION=	1.1.1
-PORTREVISION=	2
+PORTVERSION=	1.2.0
 CATEGORIES=	net ipv6
 MASTER_SITES=	http://www.opbyte.it/release/ \
 		LOCAL/martymac
@@ -15,9 +14,10 @@ MASTER_SITES=	http://www.opbyte.it/release/ \
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	GTK frontend for rsync
 
-RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
-
 LICENSE=	GPLv2
+
+RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
+		bash:${PORTSDIR}/shells/bash
 
 USE_GNOME=	gtk20 desktopfileutils
 GNU_CONFIGURE=	yes
@@ -27,7 +27,7 @@ INSTALLS_ICONS=	yes
 
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -39,6 +39,8 @@ PLIST_SUB+=	NLS="@comment "
 MAN1=		grsync.1 grsync-batch.1
 
 post-patch:
+	@${REINPLACE_CMD} 's|/bin/bash|${LOCALBASE}/bin/bash|' \
+		${WRKSRC}/src/grsync-batch
 .if defined(WITHOUT_NLS)
 	@${REINPLACE_CMD} 's/^ALL_LINGUAS=.*/ALL_LINGUAS=""/' \
 		${WRKSRC}/configure
