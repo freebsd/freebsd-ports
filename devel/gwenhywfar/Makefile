@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	gwenhywfar
-PORTVERSION=	4.2.0
+PORTVERSION=	4.2.1
 CATEGORIES=	devel net security
-MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=01&release=62&file=01&dummy=/
+MASTER_SITES=	http://www.aquamaniac.de/sites/download/download.php?package=01&release=63&file=01&dummy=/
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Multi-platform helper library for networking and security applications
