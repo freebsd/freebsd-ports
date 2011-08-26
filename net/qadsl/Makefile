@@ -7,15 +7,15 @@
 
 PORTNAME=	qadsl
 PORTVERSION=	1.3.3
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	net
-MASTER_SITES=	http://download.savannah.gnu.org/releases/alive/
-DISTNAME=	qadsl-${PORTVERSION}
+MASTER_SITES=	SAVANNAH/alive
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Auto login/Keep-alive for Telia AB ADSL, COMHEM Cable and Tiscali Internet
 
-BROKEN=	does not fetch
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_RC_SUBR=	qadsl.sh
 SUB_FILES=	pkg-message
@@ -24,6 +24,7 @@ PKGMESSAGE=	${WRKDIR}/pkg-message
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-global-cfg=${PREFIX}/etc/qadsl.conf \
 		--with-pidfile=/var/run/qadsl.pid
+MAKE_JOBS_SAFE=	yes
 
 MAN8=		qadsl.8
 MAN5=		qadsl.conf.5
@@ -32,6 +33,12 @@ PLIST_FILES=	sbin/qadsl etc/qadsl.conf.sample
 
 post-extract:
 	@${CP} ${WRKSRC}/etc/qadsl.conf ${WRKSRC}/etc/qadsl.conf.sample
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/echo $${CFLAGS}/s|^|#| ; \
+		 /echo $${CXXFLAGS}/s|^|#| ; \
+		 s|$$OPTIMIZER_CFLAGS||' ${WRKSRC}/configure
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
