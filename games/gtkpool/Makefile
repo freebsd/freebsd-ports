@@ -7,24 +7,26 @@
 
 PORTNAME=	gtkpool
 PORTVERSION=	0.5.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	http://gtkpool.seul.org/
+MASTER_SITES=	ftp://ftp.seul.org/pub/gtkpool/ \
+		http://www.sourcefiles.org/Games/Sports/Pool/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A 2D pool game using the GTK+ toolkit
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
-
-GNU_CONFIGURE=	yes
-USE_GNOME=	gtk12
-USE_PERL5=	yes
-MAKE_JOBS_UNSAFE=	yes
+USE_GNOME=	gtk20
+USE_PERL5_BUILD=yes
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	aclocal automake autoheader autoconf
+ACLOCAL_ARGS=	-I ${LOCALBASE}/share/aclocal
+AUTOMAKE_ARGS=	--add-missing
+MAKE_JOBS_SAFE=	yes
 
 post-patch:
-	@${REINPLACE_CMD} -e 's,-O2 -O0 -Wall `gtk-config --cflags` -lgtk -lgdk -lglib -lm -lX11,${CXXFLAGS} `gtk-config --cflags` `gtk-config --libs`,' ${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's,/usr/local/share/gtkpool,${DATADIR},' \
-		${WRKSRC}/gtkpool/application.cpp ${WRKSRC}/gtkpool/options.cpp
+.for file in application.cpp options.cpp
+	@${REINPLACE_CMD} -e 's|/usr/local/share/gtkpool|${DATADIR}|' \
+		${WRKSRC}/gtkpool/${file}
+.endfor
 
 .include <bsd.port.mk>
