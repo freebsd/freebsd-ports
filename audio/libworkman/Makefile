@@ -16,7 +16,8 @@ DISTNAME=	${PORTNAME}-1999-06-20
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Workman library required by some audio apps
 
-BROKEN=		does not build
+LICENSE=	LGPL20
+LICENSE_FILE=	${WRKSRC}/COPYING.LIB
 
 WRKSRC=		${WRKDIR}/libworkman
 USE_IMAKE=	yes
@@ -24,8 +25,9 @@ USE_LDCONFIG=	yes
 CFLAGS+=	-fPIC
 
 post-patch:
-	@${CP} ${WRKSRC}/Config ${WRKSRC}/Config.orig;
-	@${SED} -e 's^/usr/local/^${PREFIX}/^g' \
-		${WRKSRC}/Config.orig > ${WRKSRC}/Config
+	@${REINPLACE_CMD} -e \
+		's|^DESTDIR|XCOMM DESTDIR| ; \
+		 s|=include/workman|=$$(INCROOT)/workman| ; \
+		 s|^LIBDIR|XCOMM LIBDIR|' ${WRKSRC}/Config
 
 .include <bsd.port.mk>
