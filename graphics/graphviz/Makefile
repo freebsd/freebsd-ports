@@ -395,6 +395,7 @@ PLIST_SUB+=		WITH_GUILE="@comment "
 USE_GHOSTSCRIPT=	yes
 PLIST_SUB+=		WITH_GHOSTSCRIPT=""
 .else
+CONFIGURE_ARGS+=	--with-ghostscript=no
 PLIST_SUB+=		WITH_GHOSTSCRIPT="@comment "
 .endif
 
