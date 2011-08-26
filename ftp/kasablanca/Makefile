@@ -8,7 +8,7 @@ PORTNAME=	kasablanca
 PORTVERSION=	0.4.0.2
 PORTREVISION=	7
 CATEGORIES=	ftp kde
-MASTER_SITES=	http://download.berlios.de/kasablanca/ \
+MASTER_SITES=	BERLIOS \
 		http://www.hitnet.rwth-aachen.de/~brueffer/distfiles/
 
 MAINTAINER=	ports@FreeBSD.org
