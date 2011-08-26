@@ -2151,7 +2151,7 @@ db46                            ports/databases/db46
 db47                            ports/databases/db47
 db48                            ports/databases/db48
 db4o-mono                       ports/databases/db4o-mono
-db51                            ports/databases/db51
+db5                             ports/databases/db5
 dbXML                           ports/databases/dbXML
 dbacl                           ports/textproc/dbacl
 dbconnect                       ports/databases/dbconnect
@@ -22083,6 +22083,7 @@ py-pyproj                       ports/graphics/py-pyproj
 py-pyquery                      ports/www/py-pyquery
 py-pyqwt                        ports/x11-toolkits/py-pyqwt
 py-pyramid                      ports/www/py-pyramid
+py-pyramid_rpc                  ports/www/py-pyramid_rpc
 py-pyro                         ports/devel/py-pyro
 py-pyscript                     ports/print/py-pyscript
 py-pysearch                     ports/www/py-pysearch
