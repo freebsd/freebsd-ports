@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dnsmasq
-PORTVERSION=	2.57
-PORTREVISION=	3
+PORTVERSION=	2.58
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6
 MASTER_SITES=	http://www.thekelleys.org.uk/dnsmasq/ \
@@ -19,7 +18,6 @@ MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Lightweight DNS forwarder, DHCP and TFTP server
 
 LICENSE=	GPLv2
-USE_XZ=		yes
 
 MAN8=		dnsmasq.8
 
@@ -27,6 +25,7 @@ PORTDOCS=	CHANGELOG CHANGELOG.archive FAQ doc.html setup.html
 
 SUB_FILES=	pkg-message
 
+USE_XZ=		yes
 MAKE_JOBS_SAFE=	yes
 MAKE_ENV=	LIBS="${LDFLAGS}" RPM_OPT_FLAGS="${CPPFLAGS}" COPTS="${CFLAGS}"
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}" PREFIX="${PREFIX}"
@@ -37,7 +36,7 @@ OPTIONS+=	NLS  "National Language Support (NLS, enables IDN)" on
 OPTIONS+=	IDN  "International Domain Names (IDN) WITHOUT NLS" off
 # unfortunately, NLS always enables IDN in dnsmasq 2.57
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if defined(WITHOUT_IPV6)
 CFLAGS+=	-DNO_IPV6
@@ -65,6 +64,8 @@ CFLAGS+=	-DHAVE_DBUS
 .endif
 
 USE_RC_SUBR=	dnsmasq.sh
+
+.include <bsd.port.pre.mk>
 
 pre-configure:
 	@:
