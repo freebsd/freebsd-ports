@@ -1,5 +1,5 @@
---- Imakefile.orig	Sun May 30 01:48:17 1999
-+++ Imakefile	Sun Aug  8 21:09:06 1999
+--- Imakefile.orig	1999-05-30 00:48:17.000000000 +0900
++++ Imakefile	2011-08-23 13:40:41.000000000 +0900
 @@ -31,7 +31,7 @@
  
  #include "include/wm_version.h"
@@ -17,3 +17,12 @@
  	include/wm_cdinfo.h \
  	include/wm_cdrom.h \
  	include/wm_config.h \
+@@ -65,7 +66,7 @@
+ 
+ #ifdef SHARED_LIBWORKMAN
+ SharedLibraryTarget(workman,$(WM_LIBVER),$(OBJS),.,.)
+-InstallSharedLibrary(workman,$(WM_LIBVER),$(LIBDIR))
++InstallSharedLibrary(workman,$(WM_LIBVER),$(USRLIBDIR))
+ #else
+ NormalLibraryTarget(workman, $(OBJS))
+ #endif
