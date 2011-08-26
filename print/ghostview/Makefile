@@ -9,15 +9,22 @@ PORTNAME=	ghostview
 PORTVERSION=	1.5
 PORTREVISION=	2
 CATEGORIES=	print
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	ghostview
+MASTER_SITES=	http://ftp.gnu.org/old-gnu/ghostview/ \
+		ftp://mirror.cs.wisc.edu/pub/mirrors/ghost/gnu/ghostview/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X11 front-end for ghostscript, the GNU postscript previewer
 
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 USE_IMAKE=	yes
 USE_XORG=	xbitmaps xaw
+MAKE_JOBS_SAFE=	yes
+
 MAN1=		ghostview.1
+
+CFLAGS+=	-DUSG
 
 post-install:
 	@${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL
