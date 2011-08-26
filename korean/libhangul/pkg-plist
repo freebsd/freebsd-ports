@@ -5,7 +5,7 @@ lib/libhangul.la
 lib/libhangul.so
 lib/libhangul.so.1
 libdata/pkgconfig/libhangul.pc
-share/locale/ko/LC_MESSAGES/libhangul.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/libhangul.mo
 %%DATADIR%%/hanja/hanja.txt
 @dirrm %%DATADIR%%/hanja
 @dirrm %%DATADIR%%
