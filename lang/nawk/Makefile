@@ -16,6 +16,8 @@ DIST_SUBDIR=	${PORTNAME}
 MAINTAINER=	ota@j.email.ne.jp
 COMMENT=	Brian Kernighan's pattern scanning and processing language
 
+BROKEN=		does not fetch
+
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
 ALL_TARGET=	a.out
