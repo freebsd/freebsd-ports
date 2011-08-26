@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CPAN-Mini
-PORTVERSION=	1.111001
+PORTVERSION=	1.111007
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RJBS
@@ -19,6 +19,7 @@ RUN_DEPENDS=	p5-File-HomeDir>=0.57:${PORTSDIR}/devel/p5-File-HomeDir \
 		p5-libwww>=5:${PORTSDIR}/www/p5-libwww \
 		p5-URI>=1:${PORTSDIR}/net/p5-URI
 BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Simple>=0.96:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 
