@@ -6,11 +6,14 @@ bin/gtick
 %%NLS%%share/locale/de/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/en@boldquot/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/en@quot/LC_MESSAGES/gtick.mo
+%%NLS%%share/locale/eo/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/es/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/gtick.mo
+%%NLS%%share/locale/fa/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/fi/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/ga/LC_MESSAGES/gtick.mo
+%%NLS%%share/locale/id/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/it/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/gtick.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/gtick.mo

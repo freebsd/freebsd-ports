@@ -6,22 +6,21 @@
 #
 
 PORTNAME=	gtick
-PORTVERSION=	0.4.2
-PORTREVISION=	6
+PORTVERSION=	0.5.0
 CATEGORIES=	audio
 MASTER_SITES=	http://www.antcom.de/gtick/download/ CENKES
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A metronome application
 
-LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile
-
 LICENSE=	GPLv3
+
+LIB_DEPENDS=	sndfile.1:${PORTSDIR}/audio/libsndfile \
+		pulse-simple.0:${PORTSDIR}/audio/pulseaudio
 
 GNU_CONFIGURE=	yes
 USE_GNOME=	gtk20
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 
 MAN1=	gtick.1
 
