@@ -1,15 +1,22 @@
---- test/Makefile.in.orig	2011-03-29 02:51:55.000000000 +0900
-+++ test/Makefile.in	2011-03-29 02:48:45.000000000 +0900
-@@ -230,10 +230,10 @@
+--- test/Makefile.in.orig	2011-01-02 02:44:52.000000000 -0500
++++ test/Makefile.in	2011-08-26 13:56:01.000000000 -0400
+@@ -228,15 +228,15 @@
+ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
- hangul_CFLAGS = 
+-hangul_CFLAGS = 
++hangul_CFLAGS = -I$(LOCALBASE)/include
  hangul_SOURCES = hangul.c
 -hangul_LDADD = ../hangul/libhangul.la
-+hangul_LDADD = ../hangul/libhangul.la -liconv -lintl
++hangul_LDADD = $(top_builddir)/hangul/libhangul.la $(LIBICONV) $(LIBINTL)
  hanja_CFLAGS = 
  hanja_SOURCES = hanja.c
 -hanja_LDADD = ../hangul/libhangul.la
-+hanja_LDADD = ../hangul/libhangul.la -liconv -lintl
++hanja_LDADD = $(top_builddir)/hangul/libhangul.la $(LIBINTL)
  test_SOURCES = test.c ../hangul/hangul.h
  test_CFLAGS = @CHECK_CFLAGS@
- test_LDADD = @CHECK_LIBS@ $(top_builddir)/hangul/libhangul.la
+-test_LDADD = @CHECK_LIBS@ $(top_builddir)/hangul/libhangul.la
++test_LDADD = @CHECK_LIBS@ $(top_builddir)/hangul/libhangul.la $(LIBINTL)
+ all: all-am
+ 
+ .SUFFIXES:
