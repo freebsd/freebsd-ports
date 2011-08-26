@@ -9,15 +9,12 @@ PORTNAME=	wmnet2
 PORTVERSION=	1.06
 PORTREVISION=	5
 CATEGORIES=	net
-MASTER_SITES=	http://mirror2.unixfreunde.de/ \
-		http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://www.dockapps.org/files/77/115/ \
+		http://www.katharineosborne.com/wmnet/
 DISTNAME=	wmnet-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A nice network monitor for WindowMaker
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
 
 USE_IMAKE=	yes
 USE_XORG=	x11 xext
