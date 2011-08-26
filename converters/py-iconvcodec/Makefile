@@ -7,7 +7,7 @@
 PORTNAME=	iconvcodec
 PORTVERSION=	1.1.2
 CATEGORIES=	converters python
-MASTER_SITES=	http://download.berlios.de/cjkpython/
+MASTER_SITES=	BERLIOS/cjkpython
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
