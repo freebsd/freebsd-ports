@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	pbzip2
-PORTVERSION=	1.1.4
+PORTVERSION=	1.1.5
 CATEGORIES=	archivers
 MASTER_SITES=	http://compression.ca/pbzip2/
 DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
@@ -15,7 +15,8 @@ DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Parallel BZIP2
 
-PLIST_FILES=	bin/pbzip2 bin/pbunzip2
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAN1=		pbzip2.1
 MLINKS=		pbzip2.1 pbunzip2.1
@@ -23,8 +24,7 @@ MLINKS=		pbzip2.1 pbunzip2.1
 USE_GMAKE=	YES
 MAKE_JOBS_SAFE=	yes
 
-LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/COPYING
+PLIST_FILES=	bin/pbzip2 bin/pbunzip2
 
 post-patch:
 	@${REINPLACE_CMD} \
