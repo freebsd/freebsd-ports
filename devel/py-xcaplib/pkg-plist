@@ -1,0 +1,28 @@
+bin/xcapclient
+%%PYTHON_SITELIBDIR%%/xcaplib/__init__.py
+%%PYTHON_SITELIBDIR%%/xcaplib/__init__.pyc
+%%PYTHON_SITELIBDIR%%/xcaplib/__init__.pyo
+%%PYTHON_SITELIBDIR%%/xcaplib/client.py
+%%PYTHON_SITELIBDIR%%/xcaplib/client.pyc
+%%PYTHON_SITELIBDIR%%/xcaplib/client.pyo
+%%PYTHON_SITELIBDIR%%/xcaplib/error.py
+%%PYTHON_SITELIBDIR%%/xcaplib/error.pyc
+%%PYTHON_SITELIBDIR%%/xcaplib/error.pyo
+%%PYTHON_SITELIBDIR%%/xcaplib/green.py
+%%PYTHON_SITELIBDIR%%/xcaplib/green.pyc
+%%PYTHON_SITELIBDIR%%/xcaplib/green.pyo
+%%PYTHON_SITELIBDIR%%/xcaplib/httpclient.py
+%%PYTHON_SITELIBDIR%%/xcaplib/httpclient.pyc
+%%PYTHON_SITELIBDIR%%/xcaplib/httpclient.pyo
+%%PYTHON_SITELIBDIR%%/xcaplib/logsocket.py
+%%PYTHON_SITELIBDIR%%/xcaplib/logsocket.pyc
+%%PYTHON_SITELIBDIR%%/xcaplib/logsocket.pyo
+%%PYTHON_SITELIBDIR%%/xcaplib/xcapclient.py
+%%PYTHON_SITELIBDIR%%/xcaplib/xcapclient.pyc
+%%PYTHON_SITELIBDIR%%/xcaplib/xcapclient.pyo
+%%PYTHON_SITELIBDIR%%/xcaplib/xpath_completion.py
+%%PYTHON_SITELIBDIR%%/xcaplib/xpath_completion.pyc
+%%PYTHON_SITELIBDIR%%/xcaplib/xpath_completion.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/xcaplib
+@dirrmtry %%PYTHON_SITELIBDIR%%
+@dirrmtry lib/%%PYTHON_VERSION%%
