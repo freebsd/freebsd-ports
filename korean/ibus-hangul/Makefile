@@ -22,10 +22,19 @@ PROJECTHOST=	ibus
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
-USE_GETTEXT=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intltool pkgconfig
 USE_PYTHON=	yes
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
