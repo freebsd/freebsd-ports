@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	torbutton
-PORTVERSION=	1.2.5
+PORTVERSION=	1.4.0
 CATEGORIES=	www
-MASTER_SITES=	http://www.torproject.org/torbutton/releases/
+MASTER_SITES=	http://www.torproject.org/dist/torbutton/
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Quickly toggle use of the Tor network
