@@ -15,7 +15,7 @@ COMMENT=	SCIM IMEngine module for Korean(Hangul) input
 
 BUILD_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 LIB_DEPENDS=	hangul.1:${PORTSDIR}/korean/libhangul
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	scim:${PORTSDIR}/textproc/scim
 
 USE_ICONV=	yes
 USE_GMAKE=	yes
@@ -23,8 +23,8 @@ GNU_CONFIGURE=	yes
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
-		CPPFLAGS="-I${LOCALBASE}/include"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	"-I${LOCALBASE}/include"
 PLIST_SUB+=	NLS=""
 .else
 CONFIGURE_ARGS+=--disable-nls
