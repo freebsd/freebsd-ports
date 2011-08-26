@@ -9,8 +9,10 @@ PORTNAME=	prosper
 PORTVERSION=	1.00.4
 PORTREVISION=	9
 CATEGORIES=	textproc
-MASTER_SITES=	SF
-DISTFILES=	${DISTNAME}${EXTRACT_SUFX} contrib-prosper-1.0.0.tar.gz
+MASTER_SITES=	SF \
+		SF/${PORTNAME}/contributed%20styles/1.0.0:contrib
+DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
+		contrib-prosper-1.0.0.tar.gz:contrib
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	LaTeX class for writing transparencies
@@ -40,7 +42,8 @@ DOCS=		AUTHORS ChangeLog FAQ INSTALL NEWS README TODO \
 EXAMPLES_DIR=	doc/doc-examples
 
 post-extract:
-	@${CP} -r ${WRKDIR}/contrib-prosper-1.0.0/* ${WRKSRC}/contrib/
+	@(cd ${WRKDIR}/contrib-prosper-1.0.0 && ${FIND} . | \
+		${CPIO} --quiet -dump ${WRKSRC}/contrib)
 
 do-install:
 	@${MKDIR} ${PROSPERDIR}/contrib/img
@@ -63,6 +66,8 @@ do-install:
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${DOCSDIR}
 .endfor
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 .for FILE in ${EXAMPLES_DIR}/Example*
 	@${INSTALL_DATA} ${WRKSRC}/${FILE} ${EXAMPLESDIR}

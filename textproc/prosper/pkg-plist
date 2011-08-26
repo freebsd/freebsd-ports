@@ -17,25 +17,25 @@
 %%PORTDOCS%%%%DOCSDIR%%/prosper-tour.tex
 %%PORTDOCS%%%%DOCSDIR%%/rotation.ps
 %%PORTDOCS%%%%DOCSDIR%%/rotation.tex
-%%PORTDOCS%%%%EXAMPLESDIR%%/Example.tex
-%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleAlienglow.ps
-%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleAlienglow.tex
-%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleAutumn.ps
-%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleAutumn.tex
-%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleAzure.ps
-%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleAzure.tex
-%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleContemporain.ps
-%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleContemporain.tex
-%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleDarkblue.ps
-%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleDarkblue.tex
-%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleFrames.ps
-%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleFrames.tex
-%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleLignesbleues.ps
-%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleLignesbleues.tex
-%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleNuanceGris.ps
-%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleNuanceGris.tex
-%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleTroisPoints.ps
-%%PORTDOCS%%%%EXAMPLESDIR%%/ExampleTroisPoints.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Example.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleAlienglow.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleAlienglow.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleAutumn.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleAutumn.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleAzure.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleAzure.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleContemporain.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleContemporain.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleDarkblue.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleDarkblue.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleFrames.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleFrames.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleLignesbleues.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleLignesbleues.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleNuanceGris.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleNuanceGris.tex
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleTroisPoints.ps
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/ExampleTroisPoints.tex
 %%PROSPERDIR%%/contrib/img/angleHG.ps
 %%PROSPERDIR%%/contrib/img/barre-rico.ps
 %%PROSPERDIR%%/contrib/img/blue-inverted-arrow.ps
@@ -111,12 +111,12 @@
 %%PROSPERDIR%%/PPRnuancegris.sty
 %%PROSPERDIR%%/PPRtroispoints.sty
 %%PROSPERDIR%%/prosper.cls
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+@dirrm %%PROSPERDIR%%/img
+@dirrm %%PROSPERDIR%%/designer
 @dirrm %%PROSPERDIR%%/contrib/img
 @dirrm %%PROSPERDIR%%/contrib
-@dirrm %%PROSPERDIR%%/designer
-@dirrm %%PROSPERDIR%%/img
 @dirrm %%PROSPERDIR%%
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @exec %%MKTEXLSR%%
 @unexec %%MKTEXLSR%%
