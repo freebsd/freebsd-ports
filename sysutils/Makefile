@@ -764,6 +764,7 @@
     SUBDIR += ruby-quota
     SUBDIR += rubygem-bundler
     SUBDIR += rubygem-capistrano
+    SUBDIR += rubygem-capistrano-ext
     SUBDIR += rubygem-chef
     SUBDIR += rubygem-god
     SUBDIR += rubygem-log4r
