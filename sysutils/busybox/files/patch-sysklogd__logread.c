@@ -1,8 +1,6 @@
-diff --git a/sysklogd/logread.c b/sysklogd/logread.c
-index 52c97aa..93b886f 100644
---- sysklogd/logread.c
-+++ sysklogd/logread.c
-@@ -14,6 +14,20 @@
+--- ./sysklogd/logread.c.orig	2011-08-11 02:23:58.000000000 +0200
++++ ./sysklogd/logread.c	2011-08-26 02:10:16.000000000 +0200
+@@ -20,6 +20,20 @@
  #include <sys/sem.h>
  #include <sys/shm.h>
  
