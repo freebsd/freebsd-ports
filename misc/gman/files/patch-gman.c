@@ -4,7 +4,7 @@
  	pthread_mutex_init(&context_lock,NULL);
  	pthread_mutex_init(&loading_man_path_lock,NULL);
  	init_context();
--	debuging = (int)context->get_value("debuging");
+-	debuging = (long)context->get_value("debuging");
 +	debuging = (intptr_t)context->get_value("debuging");
  	pthread_mutex_lock(&gtk_lock);
      gtk_init (&argc, &argv);
