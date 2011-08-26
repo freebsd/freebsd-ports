@@ -6,22 +6,28 @@
 #
 
 PORTNAME=	fmit
-PORTVERSION=	0.97.7
-PORTREVISION=	6
+PORTVERSION=	0.99.2
 CATEGORIES=	audio
 MASTER_SITES=	http://download.gna.org/fmit/
+DISTNAME=	${PORTNAME}-${PORTVERSION}-Source
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Free Music Instrument Tuner
 
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		fftw3.5:${PORTSDIR}/math/fftw3
 
-GNU_CONFIGURE=	yes
-CONFIGURE_ARGS+=	--disable-alsa bnv_cv_qt_test_result=yes
-CONFIGURE_ENV+=	CPPFLAGS="${PTHREAD_CFLAGS} -I${LOCALBASE}/include" LDFLAGS="${PTHREAD_LIBS} -L${LOCALBASE}/lib"
-USE_GMAKE=	yes
-USE_QT_VER=	3
-USE_GL=		glut glu gl
+USE_BZIP2=	yes
+USE_QT_VER=	4
+QT_COMPONENTS=	corelib gui opengl \
+		linguist_build moc_build rcc_build uic_build
+USE_GL=		glut
+USE_CMAKE=	yes
+CMAKE_ARGS=	-DSOUNDSYSTEM_USE_ALSA:BOOL=false
+INSTALL_ICONS=	yes
+MAKE_JOBS_SAFE=	yes
 
 .include <bsd.port.mk>
