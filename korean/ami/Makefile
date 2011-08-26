@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	ami
-PORTVERSION=	1.2.2
-PORTREVISION=	10
+PORTVERSION=	1.2.3
 CATEGORIES=	korean x11
-MASTER_SITES=	http://download.kldp.net/ami/ \
+MASTER_SITES=	http://kldp.net/frs/download.php/942/ \
 		http://www.kr.freebsd.org/~hwang/ami/:hjdic \
 		ftp://ftp.kr.freebsd.org/pub/FreeBSD-kr/distfiles/:amidic
 DISTFILES=	${DISTNAME}.tar.gz hanja.dic.gz:hjdic ami.dic:amidic
@@ -18,32 +17,38 @@ EXTRACT_ONLY=	${DISTNAME}.tar.gz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Well-known Korean X11 Input Method
 
-USE_GETTEXT=	yes
+LICENSE=	GPLv2
+
 USE_ICONV=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12 gdkpixbuf
 WANT_GNOME=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARGS=	--with-hangul-keyboard=2 --datadir=${PREFIX}/${DATADIR} \
-		--with-libiconv-prefix=${LOCALBASE} \
-		--with-gdk-pixbuf-prefix=${LOCALBASE} \
-		--with-libintl-prefix=${LOCALBASE}
-DATADIR=	share
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	"-I${LOCALBASE}/include"
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
+PORTDOCS=	AUTHORS ChangeLog NEWS README README.en
 
 .include <bsd.port.pre.mk>
 
 post-build:
-	@cd ${WRKSRC}/hanjadic; \
-	${MAKE_ENV} ${MAKE} ${MAKE_ARGS}
+	( cd ${WRKSRC}/hanjadic && ${SETENV} ${MAKE_ENV} ${MAKE} )
+	${GUNZIP_CMD} -cd ${DISTDIR}/hanja.dic.gz > ${WRKDIR}/hanja.dic
+	${CAT} ${DISTDIR}/ami.dic >> ${WRKDIR}/hanja.dic
 
 post-install:
+.if !defined(NOPORTDOCS)
 	${MKDIR} ${PREFIX}/share/doc/ami
-.for NAME in AUTHORS README README.en NEWS ChangeLog
-	${INSTALL_DATA} ${WRKSRC}/${NAME} \
-		${PREFIX}/share/doc/ami
-.endfor
-	${GUNZIP_CMD} -cd ${DISTDIR}/hanja.dic.gz > \
-			${PREFIX}/${DATADIR}/ami/hanja.dic
-	${CAT} ${DISTDIR}/ami.dic >> ${PREFIX}/${DATADIR}/ami/hanja.dic
+	( cd ${WRKSRC} && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR} )
+.endif
+	${INSTALL_DATA} ${WRKDIR}/hanja.dic ${DATADIR}
 
 .include <bsd.port.post.mk>
