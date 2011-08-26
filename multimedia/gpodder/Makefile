@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gpodder
-PORTVERSION=	2.16
+PORTVERSION=	2.18
 CATEGORIES=	multimedia
 MASTER_SITES=	BERLIOS \
 		http://thp.io/2010/mygpoclient/:mygpoclient \
@@ -22,15 +22,13 @@ COMMENT=	A GTK2 podcast aggregrator written in Python
 LICENSE=	GPLv3
 LICENSE_FILE=	${WRKSRC}/COPYING
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pysqlite>=2.3:${PORTSDIR}/databases/py-pysqlite23 \
-		${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}dbus>=0:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_PKGNAMEPREFIX}notify>=0:${PORTSDIR}/devel/py-notify \
 		xdg-open:${PORTSDIR}/devel/xdg-utils \
 		wget:${PORTSDIR}/ftp/wget \
 		gnome-icon-theme>=0:${PORTSDIR}/misc/gnome-icon-theme \
-		${PYTHON_PKGNAMEPREFIX}feedparser>=0:${PORTSDIR}/textproc/py-feedparser \
-		${PYTHON_PKGNAMEPREFIX}simplejson>=0:${PORTSDIR}/devel/py-simplejson
+		${PYTHON_PKGNAMEPREFIX}feedparser>=0:${PORTSDIR}/textproc/py-feedparser
 
 OPTIONS=	COVERART "Cover Art syncing support" off \
 		IPOD "iPod synchronization support" off \
@@ -38,13 +36,13 @@ OPTIONS=	COVERART "Cover Art syncing support" off \
 		OGG2MP3 "Ogg Vorbis conversion to MP3 support" off \
 		SHOWNOTES "HTML episode shownotes support" off
 
-USE_PYTHON=	yes
+USE_PYTHON=	2.5+
 USE_GNOME=	pygtk2
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 ALL_TARGET=	messages
 INSTALLS_ICONS=	yes
-INSTALLS_EGGINFO=yes
+INSTALLS_EGGINFO=	yes
 
 MAN1=		gpo.1 ${PORTNAME}.1 ${PORTNAME}-backup.1
 
@@ -52,6 +50,10 @@ MGC_DISTNAME=	mygpoclient-1.5
 MGC_WRKSRC=	${WRKDIR}/${MGC_DISTNAME}/mygpoclient
 
 .include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 260
+RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.9:${PORTSDIR}/devel/py-simplejson
+.endif
 
 .if defined(WITH_COVERART)
 RUN_DEPENDS+=	${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging
