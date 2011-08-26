@@ -6,10 +6,17 @@
 #
 
 PORTNAME=	busybox
-PORTVERSION=	1.18.5
-PORTREVISION=	1
+PORTVERSION=	1.19.0
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	http://www.busybox.net/downloads/
+
+PATCH_SITES=	http://www.busybox.net/downloads/fixes-${PORTVERSION}/
+PATCHFILES=	busybox-1.19.0-cttyhack.patch \
+		busybox-1.19.0-less.patch \
+		busybox-1.19.0-sed.patch \
+		busybox-1.19.0-swap.patch \
+		busybox-1.19.0-uncompress.patch
+PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	mandree@FreeBSD.org
 COMMENT=	Busybox for FreeBSD
@@ -34,8 +41,8 @@ PORTDOCS=		*
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's/sed/gsed/' ${WRKSRC}/scripts/gen_build_files.sh
-	@${REINPLACE_CMD} -e 's/<malloc.h>/<stdlib.h>/' \
+	${REINPLACE_CMD} -e 's/sed/gsed/' ${WRKSRC}/scripts/gen_build_files.sh
+	${REINPLACE_CMD} -e 's/<malloc.h>/<stdlib.h>/' \
 		${WRKSRC}/libbb/appletlib.c \
 		${WRKSRC}/shell/hush.c
 
