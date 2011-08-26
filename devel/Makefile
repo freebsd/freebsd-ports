@@ -2882,6 +2882,7 @@
     SUBDIR += py-anonfunc
     SUBDIR += py-anyjson
     SUBDIR += py-apipkg
+    SUBDIR += py-application
     SUBDIR += py-argparse
     SUBDIR += py-asn1
     SUBDIR += py-asn1-modules
