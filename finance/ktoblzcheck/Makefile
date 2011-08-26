@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	ktoblzcheck
-PORTVERSION=	1.33
+PORTVERSION=	1.34
 CATEGORIES=	finance german
 MASTER_SITES=	SF/${PORTNAME}
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	Check bank codes of German banks
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_GNOME=	gnomehack pkgconfig
 USE_GMAKE=	yes
@@ -20,9 +23,6 @@ USE_LDCONFIG=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		ktoblzcheck.1
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	PYTHON "Install Python bindings" off
 
