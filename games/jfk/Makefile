@@ -9,16 +9,18 @@ PORTNAME=	jfk
 PORTVERSION=	0.1.1
 PORTREVISION=	8
 CATEGORIES=	games
-MASTER_SITES=	http://relax.ath.cx/jfk/
+MASTER_SITES=	http://hop.at/jfk/
+
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multiplayer 2D shoot'em up game
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
-
-GNU_CONFIGURE=	yes
 USE_SDL=	image sdl
+GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
+
 SUB_FILES=	pkg-message
 
 .include <bsd.port.pre.mk>
