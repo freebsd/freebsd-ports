@@ -6,37 +6,47 @@
 #
 
 PORTNAME=	phalanx
-PORTVERSION=	22
-PORTREVISION=	1
+PORTVERSION=	23.b
 CATEGORIES=	games
-MASTER_SITES=	ftp://ftp.math.muni.cz/pub/math/people/Dobes/ \
-		http://dusan.freeshell.org/phalanx/
+MASTER_SITES=	SF/${PORTNAME}/Version%20XXIII%20Beta
+DISTNAME=	${PORTNAME}-XXIII-beta
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Xboard-compatible chess playing program
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
-WRKSRC=		${WRKDIR}/Phalanx-XXII
+WRKSRC=		${WRKDIR}/${DISTNAME:S/-beta//}
 
 USE_GMAKE=	yes
-MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS} ${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
-ALL_TARGET=	# empty
 MAKEFILE=	makefile
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
+ALL_TARGET=	# empty
+MAKE_JOBS_SAFE=	yes
 
-PORTDOCS=	README
-PLIST_FILES=	bin/phalanx %%DATADIR%%/pbook.phalanx %%DATADIR%%/sbook.phalanx
+CFLAGS+=	-DECO_DIR=\\\"${DATADIR}\\\" \
+		-DLEARN_DIR=\\\"${DATADIR}\\\" \
+		-DPBOOK_DIR=\\\"${DATADIR}\\\" \
+		-DSBOOK_DIR=\\\"${DATADIR}\\\"
+
+PORTDOCS=	HISTORY README README.old
+PLIST_FILES=	bin/phalanx \
+		%%DATADIR%%/eco.phalanx \
+		%%DATADIR%%/pbook.phalanx \
+		%%DATADIR%%/sbook.phalanx
 PLIST_DIRS=	%%DATADIR%%
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/phalanx ${PREFIX}/bin
 	@${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/pbook.phalanx ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/sbook.phalanx ${DATADIR}
+	${INSTALL_DATA} ${WRKSRC}/*.phalanx ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/README ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
+.endfor
 .endif
 
 .include <bsd.port.mk>
