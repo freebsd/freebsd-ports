@@ -7,13 +7,17 @@
 #
 
 PORTNAME=	wordpress
-PORTVERSION=	3.0.5
+PORTVERSION=	3.2.1
 CATEGORIES=	german www
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
-DISTNAME=	wordpress_305-de
+MASTER_SITES=	http://static.wordpress-deutschland.org/de-edition/
+PKGNAMESUFFIX=	-de
+DISTNAME=	${PORTNAME}_${PORTVERSION:S|.||g}${PKGNAMESUFFIX}
 
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	A state-of-the-art semantic personal publishing platform
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/license.txt
 
 USE_ZIP=	yes
 NO_BUILD=	yes
