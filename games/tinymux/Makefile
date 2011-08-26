@@ -7,26 +7,40 @@
 
 PORTNAME=	tinymux
 PORTVERSION=	2.6.5.${PATCHLEVEL}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	games net
-MASTER_SITES=	ftp://ftp.tinymux.org/TinyMUX/tinymux-2.6/${PATCHLEVEL}/ \
-		http://www.tinymux.org/
+MASTER_SITES=	GOOGLE_CODE \
+		ftp://ftp.tinymux.org/TinyMUX/tinymux-2.6/${PATCHLEVEL}/
 DISTNAME=	mux-${PORTVERSION}.unix
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Multi-Player FreeForm adventure Program
 
-USE_GMAKE=	yes
+WRKSRC=		${WRKDIR}/mux2.6/src
+
 USE_GETTEXT=	yes
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+MAKE_JOBS_SAFE=	yes
+
+PORTDOCS=	*
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 PATCHLEVEL=	32
-WRKSRC=		${WRKDIR}/mux2.6/src
-.if !defined(NOPORTDOCS)
-PORTDOCS=	*
+
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900000
+BROKEN=		does not build
 .endif
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^LIBS/s|= @LIBS@|= @LDFLAGS@ @LIBS@|g ; \
+		 /^OPTIM/s|=.*|= @CPPFLAGS@|g' ${WRKSRC}/Makefile.in
 
 do-install:
 # Binaries
@@ -35,10 +49,10 @@ do-install:
 .endfor
 	${INSTALL_PROGRAM} ${WRKSRC}/../game/bin/dbconvert ${PREFIX}/bin
 # Configuration
-	${MKDIR} ${PREFIX}/etc/${PORTNAME}
+	${MKDIR} ${ETCDIR}
 .for file in alias.conf compat.conf mux.config netmux.conf
 	${INSTALL_DATA} ${WRKSRC}/../game/${file} \
-		${PREFIX}/etc/${PORTNAME}/${file}.sample
+		${ETCDIR}/${file}.sample
 .endfor
 # Data
 	${MKDIR} ${DATADIR}/game/netmux
@@ -68,12 +82,6 @@ do-install:
 	LIMITS MEMORY PATCHES REALMS
 	${INSTALL_DATA} ${WRKSRC}/../docs/${file} ${DOCSDIR}
 .endfor
-.endif
-
-.include <bsd.port.pre.mk>
-
-.if ${OSVERSION} >= 900000
-BROKEN=		does not build
 .endif
 
 .include <bsd.port.post.mk>
