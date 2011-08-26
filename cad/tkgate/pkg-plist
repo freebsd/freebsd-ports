@@ -1,11 +1,7 @@
-bin/tkgate
 bin/gmac
-lib/tkgate-%%VERSION%%/libexec/tkgate
-lib/tkgate-%%VERSION%%/libexec/gsim
-lib/tkgate-%%VERSION%%/README
+bin/tkgate
 lib/tkgate-%%VERSION%%/COPYING
-lib/tkgate-%%VERSION%%/sitename.txt
-lib/tkgate-%%VERSION%%/gdf/default.gdf
+lib/tkgate-%%VERSION%%/README
 lib/tkgate-%%VERSION%%/bitmaps/Makefile
 lib/tkgate-%%VERSION%%/bitmaps/Udemuxord1.gif
 lib/tkgate-%%VERSION%%/bitmaps/Udemuxord2.gif
@@ -80,12 +76,12 @@ lib/tkgate-%%VERSION%%/bitmaps/joint.b
 lib/tkgate-%%VERSION%%/bitmaps/lab_curs.b
 lib/tkgate-%%VERSION%%/bitmaps/large-trek.b
 lib/tkgate-%%VERSION%%/bitmaps/led.b
+lib/tkgate-%%VERSION%%/bitmaps/led7seg.b
 lib/tkgate-%%VERSION%%/bitmaps/led_bar.gif
 lib/tkgate-%%VERSION%%/bitmaps/led_bit.gif
 lib/tkgate-%%VERSION%%/bitmaps/led_dec.gif
 lib/tkgate-%%VERSION%%/bitmaps/led_direct.gif
 lib/tkgate-%%VERSION%%/bitmaps/led_hex.gif
-lib/tkgate-%%VERSION%%/bitmaps/led7seg.b
 lib/tkgate-%%VERSION%%/bitmaps/ledinside.b
 lib/tkgate-%%VERSION%%/bitmaps/ledseg1.b
 lib/tkgate-%%VERSION%%/bitmaps/ledseg2.b
@@ -186,48 +182,7 @@ lib/tkgate-%%VERSION%%/bitmaps/zoom_in.gif
 lib/tkgate-%%VERSION%%/bitmaps/zoom_in.xpm
 lib/tkgate-%%VERSION%%/bitmaps/zoom_out.gif
 lib/tkgate-%%VERSION%%/bitmaps/zoom_out.xpm
-lib/tkgate-%%VERSION%%/scripts/action.tcl
-lib/tkgate-%%VERSION%%/scripts/bitedit.tcl
-lib/tkgate-%%VERSION%%/scripts/blocklist.tcl
-lib/tkgate-%%VERSION%%/scripts/circuit.tcl
-lib/tkgate-%%VERSION%%/scripts/commands.tcl
-lib/tkgate-%%VERSION%%/scripts/cpath.tcl
-lib/tkgate-%%VERSION%%/scripts/dip.tcl
-lib/tkgate-%%VERSION%%/scripts/dragger.tcl
-lib/tkgate-%%VERSION%%/scripts/dropbox.tcl
-lib/tkgate-%%VERSION%%/scripts/editgate.tcl
-lib/tkgate-%%VERSION%%/scripts/editnets.tcl
-lib/tkgate-%%VERSION%%/scripts/elistbox.tcl
-lib/tkgate-%%VERSION%%/scripts/errbox.tcl
-lib/tkgate-%%VERSION%%/scripts/frame.tcl
-lib/tkgate-%%VERSION%%/scripts/gcanvas.tcl
-lib/tkgate-%%VERSION%%/scripts/helpon.tcl
-lib/tkgate-%%VERSION%%/scripts/license.tcl
-lib/tkgate-%%VERSION%%/scripts/menu.tcl
-lib/tkgate-%%VERSION%%/scripts/message.tcl
-lib/tkgate-%%VERSION%%/scripts/misc.tcl
-lib/tkgate-%%VERSION%%/scripts/nameframe.tcl
-lib/tkgate-%%VERSION%%/scripts/options.tcl
-lib/tkgate-%%VERSION%%/scripts/parms.tcl
-lib/tkgate-%%VERSION%%/scripts/portlist.tcl
-lib/tkgate-%%VERSION%%/scripts/print.tcl
-lib/tkgate-%%VERSION%%/scripts/scope.tcl
-lib/tkgate-%%VERSION%%/scripts/shortcuts.tcl
-lib/tkgate-%%VERSION%%/scripts/simtty.tcl
-lib/tkgate-%%VERSION%%/scripts/simulator.tcl
-lib/tkgate-%%VERSION%%/scripts/status.tcl
-lib/tkgate-%%VERSION%%/scripts/tkgate.tcl
-lib/tkgate-%%VERSION%%/scripts/toolbar.tcl
-lib/tkgate-%%VERSION%%/scripts/tree.tcl
-lib/tkgate-%%VERSION%%/doc/gateEdit.html
-lib/tkgate-%%VERSION%%/doc/gateGmac.html
-lib/tkgate-%%VERSION%%/doc/gateIntro.html
-lib/tkgate-%%VERSION%%/doc/gateSim.html
-lib/tkgate-%%VERSION%%/doc/index.html
 lib/tkgate-%%VERSION%%/doc/adding_gate_types.txt
-lib/tkgate-%%VERSION%%/doc/license.txt
-lib/tkgate-%%VERSION%%/doc/symbols.txt
-lib/tkgate-%%VERSION%%/doc/menagerie.gm
 lib/tkgate-%%VERSION%%/doc/fig/anallogo.gif
 lib/tkgate-%%VERSION%%/doc/fig/analopts.gif
 lib/tkgate-%%VERSION%%/doc/fig/analyze.gif
@@ -272,12 +227,12 @@ lib/tkgate-%%VERSION%%/doc/fig/ednet.gif
 lib/tkgate-%%VERSION%%/doc/fig/edpnet.gif
 lib/tkgate-%%VERSION%%/doc/fig/edport.gif
 lib/tkgate-%%VERSION%%/doc/fig/file_new.gif
-lib/tkgate-%%VERSION%%/doc/fig/forward.gif
 lib/tkgate-%%VERSION%%/doc/fig/file_open.gif
 lib/tkgate-%%VERSION%%/doc/fig/file_print.gif
 lib/tkgate-%%VERSION%%/doc/fig/file_save.gif
 lib/tkgate-%%VERSION%%/doc/fig/filemenu.gif
 lib/tkgate-%%VERSION%%/doc/fig/fileopen.gif
+lib/tkgate-%%VERSION%%/doc/fig/forward.gif
 lib/tkgate-%%VERSION%%/doc/fig/g_add.gif
 lib/tkgate-%%VERSION%%/doc/fig/g_and.gif
 lib/tkgate-%%VERSION%%/doc/fig/g_arshift.gif
@@ -296,7 +251,6 @@ lib/tkgate-%%VERSION%%/doc/fig/g_led.gif
 lib/tkgate-%%VERSION%%/doc/fig/g_lshift.gif
 lib/tkgate-%%VERSION%%/doc/fig/g_merge.gif
 lib/tkgate-%%VERSION%%/doc/fig/g_mul.gif
-lib/tkgate-%%VERSION%%/doc/fig/ptr.gif
 lib/tkgate-%%VERSION%%/doc/fig/g_mux.gif
 lib/tkgate-%%VERSION%%/doc/fig/g_nmos.gif
 lib/tkgate-%%VERSION%%/doc/fig/g_or.gif
@@ -346,6 +300,7 @@ lib/tkgate-%%VERSION%%/doc/fig/popcreate.gif
 lib/tkgate-%%VERSION%%/doc/fig/powerbsd.gif
 lib/tkgate-%%VERSION%%/doc/fig/printdlg.gif
 lib/tkgate-%%VERSION%%/doc/fig/printopts.gif
+lib/tkgate-%%VERSION%%/doc/fig/ptr.gif
 lib/tkgate-%%VERSION%%/doc/fig/rungate1.gif
 lib/tkgate-%%VERSION%%/doc/fig/rungate2.gif
 lib/tkgate-%%VERSION%%/doc/fig/scope.gif
@@ -375,147 +330,192 @@ lib/tkgate-%%VERSION%%/doc/fig/wsize.gif
 lib/tkgate-%%VERSION%%/doc/fig/xmark.gif
 lib/tkgate-%%VERSION%%/doc/fig/zoom_in.gif
 lib/tkgate-%%VERSION%%/doc/fig/zoom_out.gif
+lib/tkgate-%%VERSION%%/doc/gateEdit.html
+lib/tkgate-%%VERSION%%/doc/gateGmac.html
+lib/tkgate-%%VERSION%%/doc/gateIntro.html
+lib/tkgate-%%VERSION%%/doc/gateSim.html
+lib/tkgate-%%VERSION%%/doc/index.html
+lib/tkgate-%%VERSION%%/doc/license.txt
+lib/tkgate-%%VERSION%%/doc/menagerie.gm
+lib/tkgate-%%VERSION%%/doc/symbols.txt
+lib/tkgate-%%VERSION%%/gdf/default.gdf
+lib/tkgate-%%VERSION%%/libexec/gsim
+lib/tkgate-%%VERSION%%/libexec/tkgate
 lib/tkgate-%%VERSION%%/locale/ca/messages
-lib/tkgate-%%VERSION%%/locale/ja/tutorials/welcome_tut.v.orig
-lib/tkgate-%%VERSION%%/locale/ja/tutorials/edit1_tut.v
-lib/tkgate-%%VERSION%%/locale/ja/tutorials/edit2_tut.v
-lib/tkgate-%%VERSION%%/locale/ja/tutorials/module_tut.v
-lib/tkgate-%%VERSION%%/locale/ja/tutorials/sim_tut.v
-lib/tkgate-%%VERSION%%/locale/ja/tutorials/welcome_tut.v
-lib/tkgate-%%VERSION%%/locale/ja/tutorials/seqsim_tut.v
-lib/tkgate-%%VERSION%%/locale/ja/tutorials/edwire_tut.v
-lib/tkgate-%%VERSION%%/locale/ja/tutorials/create_tut.v.orig
-lib/tkgate-%%VERSION%%/locale/ja/tutorials/edit1_tut.v.orig
-lib/tkgate-%%VERSION%%/locale/ja/tutorials/edit2_tut.v.orig
-lib/tkgate-%%VERSION%%/locale/ja/tutorials/create_tut.v
-lib/tkgate-%%VERSION%%/locale/ja/messages.euc
-lib/tkgate-%%VERSION%%/locale/ja/messages
-lib/tkgate-%%VERSION%%/locale/ja/messages.utf8
+lib/tkgate-%%VERSION%%/locale/cs/examples/ex1/combinational.v
+lib/tkgate-%%VERSION%%/locale/cs/examples/ex2/flipflop.v
+lib/tkgate-%%VERSION%%/locale/cs/examples/ex3/counter.v
+lib/tkgate-%%VERSION%%/locale/cs/examples/ex4/trff.v
+lib/tkgate-%%VERSION%%/locale/cs/examples/ex5/menagerie.gm
+lib/tkgate-%%VERSION%%/locale/cs/examples/ex5/menagerie.gss
+lib/tkgate-%%VERSION%%/locale/cs/examples/ex5/menagerie.map
+lib/tkgate-%%VERSION%%/locale/cs/examples/ex5/menagerie.mem
+lib/tkgate-%%VERSION%%/locale/cs/examples/ex5/menagerie.v
+lib/tkgate-%%VERSION%%/locale/cs/examples/ex5/x-menagerie.mem
+lib/tkgate-%%VERSION%%/locale/cs/messages
+lib/tkgate-%%VERSION%%/locale/cs/tutorials/create_tut.v
+lib/tkgate-%%VERSION%%/locale/cs/tutorials/edit1_tut.v
+lib/tkgate-%%VERSION%%/locale/cs/tutorials/edit2_tut.v
+lib/tkgate-%%VERSION%%/locale/cs/tutorials/edwire_tut.v
+lib/tkgate-%%VERSION%%/locale/cs/tutorials/module_tut.v
+lib/tkgate-%%VERSION%%/locale/cs/tutorials/seqsim_tut.v
+lib/tkgate-%%VERSION%%/locale/cs/tutorials/sim_tut.v
+lib/tkgate-%%VERSION%%/locale/cs/tutorials/welcome_tut.v
+lib/tkgate-%%VERSION%%/locale/cy/messages
 lib/tkgate-%%VERSION%%/locale/de/examples/ex1/combinational.v
 lib/tkgate-%%VERSION%%/locale/de/examples/ex2/flipflop.v
 lib/tkgate-%%VERSION%%/locale/de/examples/ex3/counter.v
 lib/tkgate-%%VERSION%%/locale/de/examples/ex4/trff.v
-lib/tkgate-%%VERSION%%/locale/de/examples/ex5/menagerie.v
-lib/tkgate-%%VERSION%%/locale/de/examples/ex5/menagerie.gss
 lib/tkgate-%%VERSION%%/locale/de/examples/ex5/menagerie.gm
-lib/tkgate-%%VERSION%%/locale/de/examples/ex5/menagerie.mem
+lib/tkgate-%%VERSION%%/locale/de/examples/ex5/menagerie.gss
 lib/tkgate-%%VERSION%%/locale/de/examples/ex5/menagerie.map
+lib/tkgate-%%VERSION%%/locale/de/examples/ex5/menagerie.mem
+lib/tkgate-%%VERSION%%/locale/de/examples/ex5/menagerie.v
 lib/tkgate-%%VERSION%%/locale/de/examples/ex5/x-menagerie.mem
-lib/tkgate-%%VERSION%%/locale/de/tutorials/welcome_tut.v
+lib/tkgate-%%VERSION%%/locale/de/messages
+lib/tkgate-%%VERSION%%/locale/de/tutorials/create_tut.v
+lib/tkgate-%%VERSION%%/locale/de/tutorials/edit1_tut.v
 lib/tkgate-%%VERSION%%/locale/de/tutorials/edit2_tut.v
 lib/tkgate-%%VERSION%%/locale/de/tutorials/edwire_tut.v
 lib/tkgate-%%VERSION%%/locale/de/tutorials/module_tut.v
 lib/tkgate-%%VERSION%%/locale/de/tutorials/seqsim_tut.v
 lib/tkgate-%%VERSION%%/locale/de/tutorials/sim_tut.v
-lib/tkgate-%%VERSION%%/locale/de/tutorials/create_tut.v
-lib/tkgate-%%VERSION%%/locale/de/tutorials/edit1_tut.v
-lib/tkgate-%%VERSION%%/locale/de/messages
-lib/tkgate-%%VERSION%%/locale/fr/messages
-lib/tkgate-%%VERSION%%/locale/cy/messages
+lib/tkgate-%%VERSION%%/locale/de/tutorials/welcome_tut.v
 lib/tkgate-%%VERSION%%/locale/en/examples/ex1/combinational.v
 lib/tkgate-%%VERSION%%/locale/en/examples/ex2/flipflop.v
 lib/tkgate-%%VERSION%%/locale/en/examples/ex3/counter.v
 lib/tkgate-%%VERSION%%/locale/en/examples/ex4/trff.v
-lib/tkgate-%%VERSION%%/locale/en/examples/ex5/menagerie.v
-lib/tkgate-%%VERSION%%/locale/en/examples/ex5/menagerie.gss
 lib/tkgate-%%VERSION%%/locale/en/examples/ex5/menagerie.gm
-lib/tkgate-%%VERSION%%/locale/en/examples/ex5/menagerie.mem
+lib/tkgate-%%VERSION%%/locale/en/examples/ex5/menagerie.gss
 lib/tkgate-%%VERSION%%/locale/en/examples/ex5/menagerie.map
+lib/tkgate-%%VERSION%%/locale/en/examples/ex5/menagerie.mem
+lib/tkgate-%%VERSION%%/locale/en/examples/ex5/menagerie.v
 lib/tkgate-%%VERSION%%/locale/en/examples/ex5/x-menagerie.mem
-lib/tkgate-%%VERSION%%/locale/en/tutorials/edwire_tut.v
-lib/tkgate-%%VERSION%%/locale/en/tutorials/edit2_tut.v
-lib/tkgate-%%VERSION%%/locale/en/tutorials/module_tut.v
-lib/tkgate-%%VERSION%%/locale/en/tutorials/sim_tut.v
-lib/tkgate-%%VERSION%%/locale/en/tutorials/welcome_tut.v
-lib/tkgate-%%VERSION%%/locale/en/tutorials/seqsim_tut.v
+lib/tkgate-%%VERSION%%/locale/en/messages
 lib/tkgate-%%VERSION%%/locale/en/tutorials/create_tut.v
 lib/tkgate-%%VERSION%%/locale/en/tutorials/create_tut.v.orig
 lib/tkgate-%%VERSION%%/locale/en/tutorials/edit1_tut.v
-lib/tkgate-%%VERSION%%/locale/en/messages
+lib/tkgate-%%VERSION%%/locale/en/tutorials/edit2_tut.v
+lib/tkgate-%%VERSION%%/locale/en/tutorials/edwire_tut.v
+lib/tkgate-%%VERSION%%/locale/en/tutorials/module_tut.v
+lib/tkgate-%%VERSION%%/locale/en/tutorials/seqsim_tut.v
+lib/tkgate-%%VERSION%%/locale/en/tutorials/sim_tut.v
+lib/tkgate-%%VERSION%%/locale/en/tutorials/welcome_tut.v
 lib/tkgate-%%VERSION%%/locale/es/messages
-lib/tkgate-%%VERSION%%/locale/it/tutorials/edit2_tut.v
-lib/tkgate-%%VERSION%%/locale/it/tutorials/edwire_tut.v
-lib/tkgate-%%VERSION%%/locale/it/tutorials/create_tut.v
-lib/tkgate-%%VERSION%%/locale/it/tutorials/welcome_tut.v
-lib/tkgate-%%VERSION%%/locale/it/tutorials/sim_tut.v
-lib/tkgate-%%VERSION%%/locale/it/tutorials/edit1_tut.v
-lib/tkgate-%%VERSION%%/locale/it/tutorials/module_tut.v
-lib/tkgate-%%VERSION%%/locale/it/tutorials/seqsim_tut.v
+lib/tkgate-%%VERSION%%/locale/fr/messages
 lib/tkgate-%%VERSION%%/locale/it/examples/ex1/combinational.v
 lib/tkgate-%%VERSION%%/locale/it/examples/ex2/flipflop.v
 lib/tkgate-%%VERSION%%/locale/it/examples/ex3/counter.v
 lib/tkgate-%%VERSION%%/locale/it/examples/ex4/trff.v
-lib/tkgate-%%VERSION%%/locale/it/examples/ex5/x-menagerie.mem
-lib/tkgate-%%VERSION%%/locale/it/examples/ex5/menagerie.v
+lib/tkgate-%%VERSION%%/locale/it/examples/ex5/menagerie.gm
 lib/tkgate-%%VERSION%%/locale/it/examples/ex5/menagerie.gss
 lib/tkgate-%%VERSION%%/locale/it/examples/ex5/menagerie.map
 lib/tkgate-%%VERSION%%/locale/it/examples/ex5/menagerie.mem
-lib/tkgate-%%VERSION%%/locale/it/examples/ex5/menagerie.gm
+lib/tkgate-%%VERSION%%/locale/it/examples/ex5/menagerie.v
+lib/tkgate-%%VERSION%%/locale/it/examples/ex5/x-menagerie.mem
 lib/tkgate-%%VERSION%%/locale/it/messages
-lib/tkgate-%%VERSION%%/locale/cs/examples/ex1/combinational.v
-lib/tkgate-%%VERSION%%/locale/cs/examples/ex2/flipflop.v
-lib/tkgate-%%VERSION%%/locale/cs/examples/ex3/counter.v
-lib/tkgate-%%VERSION%%/locale/cs/examples/ex4/trff.v
-lib/tkgate-%%VERSION%%/locale/cs/examples/ex5/menagerie.v
-lib/tkgate-%%VERSION%%/locale/cs/examples/ex5/menagerie.gss
-lib/tkgate-%%VERSION%%/locale/cs/examples/ex5/menagerie.gm
-lib/tkgate-%%VERSION%%/locale/cs/examples/ex5/menagerie.mem
-lib/tkgate-%%VERSION%%/locale/cs/examples/ex5/menagerie.map
-lib/tkgate-%%VERSION%%/locale/cs/examples/ex5/x-menagerie.mem
-lib/tkgate-%%VERSION%%/locale/cs/tutorials/edwire_tut.v
-lib/tkgate-%%VERSION%%/locale/cs/tutorials/edit2_tut.v
-lib/tkgate-%%VERSION%%/locale/cs/tutorials/module_tut.v
-lib/tkgate-%%VERSION%%/locale/cs/tutorials/sim_tut.v
-lib/tkgate-%%VERSION%%/locale/cs/tutorials/welcome_tut.v
-lib/tkgate-%%VERSION%%/locale/cs/tutorials/seqsim_tut.v
-lib/tkgate-%%VERSION%%/locale/cs/tutorials/create_tut.v
-lib/tkgate-%%VERSION%%/locale/cs/tutorials/edit1_tut.v
-lib/tkgate-%%VERSION%%/locale/cs/messages
+lib/tkgate-%%VERSION%%/locale/it/tutorials/create_tut.v
+lib/tkgate-%%VERSION%%/locale/it/tutorials/edit1_tut.v
+lib/tkgate-%%VERSION%%/locale/it/tutorials/edit2_tut.v
+lib/tkgate-%%VERSION%%/locale/it/tutorials/edwire_tut.v
+lib/tkgate-%%VERSION%%/locale/it/tutorials/module_tut.v
+lib/tkgate-%%VERSION%%/locale/it/tutorials/seqsim_tut.v
+lib/tkgate-%%VERSION%%/locale/it/tutorials/sim_tut.v
+lib/tkgate-%%VERSION%%/locale/it/tutorials/welcome_tut.v
+lib/tkgate-%%VERSION%%/locale/ja/messages
+lib/tkgate-%%VERSION%%/locale/ja/messages.euc
+lib/tkgate-%%VERSION%%/locale/ja/messages.utf8
+lib/tkgate-%%VERSION%%/locale/ja/tutorials/create_tut.v
+lib/tkgate-%%VERSION%%/locale/ja/tutorials/create_tut.v.orig
+lib/tkgate-%%VERSION%%/locale/ja/tutorials/edit1_tut.v
+lib/tkgate-%%VERSION%%/locale/ja/tutorials/edit1_tut.v.orig
+lib/tkgate-%%VERSION%%/locale/ja/tutorials/edit2_tut.v
+lib/tkgate-%%VERSION%%/locale/ja/tutorials/edit2_tut.v.orig
+lib/tkgate-%%VERSION%%/locale/ja/tutorials/edwire_tut.v
+lib/tkgate-%%VERSION%%/locale/ja/tutorials/module_tut.v
+lib/tkgate-%%VERSION%%/locale/ja/tutorials/seqsim_tut.v
+lib/tkgate-%%VERSION%%/locale/ja/tutorials/sim_tut.v
+lib/tkgate-%%VERSION%%/locale/ja/tutorials/welcome_tut.v
+lib/tkgate-%%VERSION%%/locale/ja/tutorials/welcome_tut.v.orig
 lib/tkgate-%%VERSION%%/locale/pl/messages
-@dirrm lib/tkgate-%%VERSION%%/libexec
-@dirrm lib/tkgate-%%VERSION%%/gdf
-@dirrm lib/tkgate-%%VERSION%%/bitmaps
+lib/tkgate-%%VERSION%%/scripts/action.tcl
+lib/tkgate-%%VERSION%%/scripts/bitedit.tcl
+lib/tkgate-%%VERSION%%/scripts/blocklist.tcl
+lib/tkgate-%%VERSION%%/scripts/circuit.tcl
+lib/tkgate-%%VERSION%%/scripts/commands.tcl
+lib/tkgate-%%VERSION%%/scripts/cpath.tcl
+lib/tkgate-%%VERSION%%/scripts/dip.tcl
+lib/tkgate-%%VERSION%%/scripts/dragger.tcl
+lib/tkgate-%%VERSION%%/scripts/dropbox.tcl
+lib/tkgate-%%VERSION%%/scripts/editgate.tcl
+lib/tkgate-%%VERSION%%/scripts/editnets.tcl
+lib/tkgate-%%VERSION%%/scripts/elistbox.tcl
+lib/tkgate-%%VERSION%%/scripts/errbox.tcl
+lib/tkgate-%%VERSION%%/scripts/frame.tcl
+lib/tkgate-%%VERSION%%/scripts/gcanvas.tcl
+lib/tkgate-%%VERSION%%/scripts/helpon.tcl
+lib/tkgate-%%VERSION%%/scripts/license.tcl
+lib/tkgate-%%VERSION%%/scripts/menu.tcl
+lib/tkgate-%%VERSION%%/scripts/message.tcl
+lib/tkgate-%%VERSION%%/scripts/misc.tcl
+lib/tkgate-%%VERSION%%/scripts/nameframe.tcl
+lib/tkgate-%%VERSION%%/scripts/options.tcl
+lib/tkgate-%%VERSION%%/scripts/parms.tcl
+lib/tkgate-%%VERSION%%/scripts/portlist.tcl
+lib/tkgate-%%VERSION%%/scripts/print.tcl
+lib/tkgate-%%VERSION%%/scripts/scope.tcl
+lib/tkgate-%%VERSION%%/scripts/shortcuts.tcl
+lib/tkgate-%%VERSION%%/scripts/simtty.tcl
+lib/tkgate-%%VERSION%%/scripts/simulator.tcl
+lib/tkgate-%%VERSION%%/scripts/status.tcl
+lib/tkgate-%%VERSION%%/scripts/tkgate.tcl
+lib/tkgate-%%VERSION%%/scripts/toolbar.tcl
+lib/tkgate-%%VERSION%%/scripts/tree.tcl
+lib/tkgate-%%VERSION%%/sitename.txt
 @dirrm lib/tkgate-%%VERSION%%/scripts
-@dirrm lib/tkgate-%%VERSION%%/doc/fig
-@dirrm lib/tkgate-%%VERSION%%/doc
-@dirrm lib/tkgate-%%VERSION%%/locale/ca
+@dirrm lib/tkgate-%%VERSION%%/locale/pl
 @dirrm lib/tkgate-%%VERSION%%/locale/ja/tutorials
 @dirrm lib/tkgate-%%VERSION%%/locale/ja
-@dirrm lib/tkgate-%%VERSION%%/locale/de/examples/ex1
-@dirrm lib/tkgate-%%VERSION%%/locale/de/examples/ex2
-@dirrm lib/tkgate-%%VERSION%%/locale/de/examples/ex3
-@dirrm lib/tkgate-%%VERSION%%/locale/de/examples/ex4
-@dirrm lib/tkgate-%%VERSION%%/locale/de/examples/ex5
-@dirrm lib/tkgate-%%VERSION%%/locale/de/examples
-@dirrm lib/tkgate-%%VERSION%%/locale/de/tutorials
-@dirrm lib/tkgate-%%VERSION%%/locale/de
-@dirrm lib/tkgate-%%VERSION%%/locale/fr
-@dirrm lib/tkgate-%%VERSION%%/locale/cy
-@dirrm lib/tkgate-%%VERSION%%/locale/en/examples/ex1
-@dirrm lib/tkgate-%%VERSION%%/locale/en/examples/ex2
-@dirrm lib/tkgate-%%VERSION%%/locale/en/examples/ex3
-@dirrm lib/tkgate-%%VERSION%%/locale/en/examples/ex4
-@dirrm lib/tkgate-%%VERSION%%/locale/en/examples/ex5
-@dirrm lib/tkgate-%%VERSION%%/locale/en/examples
-@dirrm lib/tkgate-%%VERSION%%/locale/en/tutorials
-@dirrm lib/tkgate-%%VERSION%%/locale/en
-@dirrm lib/tkgate-%%VERSION%%/locale/es
 @dirrm lib/tkgate-%%VERSION%%/locale/it/tutorials
-@dirrm lib/tkgate-%%VERSION%%/locale/it/examples/ex1
-@dirrm lib/tkgate-%%VERSION%%/locale/it/examples/ex2
-@dirrm lib/tkgate-%%VERSION%%/locale/it/examples/ex3
-@dirrm lib/tkgate-%%VERSION%%/locale/it/examples/ex4
 @dirrm lib/tkgate-%%VERSION%%/locale/it/examples/ex5
+@dirrm lib/tkgate-%%VERSION%%/locale/it/examples/ex4
+@dirrm lib/tkgate-%%VERSION%%/locale/it/examples/ex3
+@dirrm lib/tkgate-%%VERSION%%/locale/it/examples/ex2
+@dirrm lib/tkgate-%%VERSION%%/locale/it/examples/ex1
 @dirrm lib/tkgate-%%VERSION%%/locale/it/examples
 @dirrm lib/tkgate-%%VERSION%%/locale/it
-@dirrm lib/tkgate-%%VERSION%%/locale/cs/examples/ex1
-@dirrm lib/tkgate-%%VERSION%%/locale/cs/examples/ex2
-@dirrm lib/tkgate-%%VERSION%%/locale/cs/examples/ex3
-@dirrm lib/tkgate-%%VERSION%%/locale/cs/examples/ex4
-@dirrm lib/tkgate-%%VERSION%%/locale/cs/examples/ex5
-@dirrm lib/tkgate-%%VERSION%%/locale/cs/examples
+@dirrm lib/tkgate-%%VERSION%%/locale/fr
+@dirrm lib/tkgate-%%VERSION%%/locale/es
+@dirrm lib/tkgate-%%VERSION%%/locale/en/tutorials
+@dirrm lib/tkgate-%%VERSION%%/locale/en/examples/ex5
+@dirrm lib/tkgate-%%VERSION%%/locale/en/examples/ex4
+@dirrm lib/tkgate-%%VERSION%%/locale/en/examples/ex3
+@dirrm lib/tkgate-%%VERSION%%/locale/en/examples/ex2
+@dirrm lib/tkgate-%%VERSION%%/locale/en/examples/ex1
+@dirrm lib/tkgate-%%VERSION%%/locale/en/examples
+@dirrm lib/tkgate-%%VERSION%%/locale/en
+@dirrm lib/tkgate-%%VERSION%%/locale/de/tutorials
+@dirrm lib/tkgate-%%VERSION%%/locale/de/examples/ex5
+@dirrm lib/tkgate-%%VERSION%%/locale/de/examples/ex4
+@dirrm lib/tkgate-%%VERSION%%/locale/de/examples/ex3
+@dirrm lib/tkgate-%%VERSION%%/locale/de/examples/ex2
+@dirrm lib/tkgate-%%VERSION%%/locale/de/examples/ex1
+@dirrm lib/tkgate-%%VERSION%%/locale/de/examples
+@dirrm lib/tkgate-%%VERSION%%/locale/de
+@dirrm lib/tkgate-%%VERSION%%/locale/cy
 @dirrm lib/tkgate-%%VERSION%%/locale/cs/tutorials
+@dirrm lib/tkgate-%%VERSION%%/locale/cs/examples/ex5
+@dirrm lib/tkgate-%%VERSION%%/locale/cs/examples/ex4
+@dirrm lib/tkgate-%%VERSION%%/locale/cs/examples/ex3
+@dirrm lib/tkgate-%%VERSION%%/locale/cs/examples/ex2
+@dirrm lib/tkgate-%%VERSION%%/locale/cs/examples/ex1
+@dirrm lib/tkgate-%%VERSION%%/locale/cs/examples
 @dirrm lib/tkgate-%%VERSION%%/locale/cs
-@dirrm lib/tkgate-%%VERSION%%/locale/pl
+@dirrm lib/tkgate-%%VERSION%%/locale/ca
 @dirrm lib/tkgate-%%VERSION%%/locale
+@dirrm lib/tkgate-%%VERSION%%/libexec
+@dirrm lib/tkgate-%%VERSION%%/gdf
+@dirrm lib/tkgate-%%VERSION%%/doc/fig
+@dirrm lib/tkgate-%%VERSION%%/doc
+@dirrm lib/tkgate-%%VERSION%%/bitmaps
 @dirrm lib/tkgate-%%VERSION%%
