@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="cdeb34e6-d00d-11e0-987e-00215c6a37bb">
+    <topic>stunnel -- heap corruption vulnerability</topic>
+    <affects>
+      <package>
+	<name>stunnel</name>
+	<range><lt>4.42</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Michal Trojnara reports:</p>
+	<blockquote cite="http://www.stunnel.org/pipermail/stunnel-announce/2011-August/000059.html">
+	  <p>Version 4.42, 2011.08.18, urgency: HIGH:</p>
+	  <p>Fixed a heap corruption vulnerability in versions
+	    4.40 and 4.41.  It may possibly be leveraged to
+	    perform DoS or remote code execution  attacks.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <bid>49254</bid>
+      <cvename>CVE-2011-2940</cvename>
+    </references>
+    <dates>
+      <discovery>2011-08-25</discovery>
+      <entry>2011-08-26</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="75e26236-ce9e-11e0-b26a-00215c6a37bb">
     <topic>phpmyadmin -- multiple XSS vulnerabilities</topic>
     <affects>
