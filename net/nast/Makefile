@@ -9,20 +9,22 @@ PORTNAME=	nast
 PORTVERSION=	0.2.0
 PORTREVISION=	3
 CATEGORIES=	net
-MASTER_SITES=	http://download.berlios.de/${PORTNAME}/ \
-		http://voodoo.bawue.com/download/
+MASTER_SITES=	BERLIOS
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Nast is a packet sniffer
+COMMENT=	A packet sniffer
+
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	${LIBNET_CONFIG}:${PORTSDIR}/net/libnet
 
-MAN8=		nast.8
-
+USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LIBS="${PTHREAD_LIBS}"
-USE_GMAKE=	yes
+MAKE_JOBS_SAFE=	yes
 
+MAN8=		nast.8
 PLIST_FILES=	bin/nast
 
 LIBNET_CONFIG?=	${LOCALBASE}/bin/libnet11-config
@@ -39,8 +41,5 @@ post-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
 	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.8 ${MANPREFIX}/man/man8
-
-post-install:
-	${CHMOD} 0755 ${PREFIX}/bin/${PORTNAME}
 
 .include <bsd.port.post.mk>
