@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	IO-Multiplex
-PORTVERSION=	1.10
+PORTVERSION=	1.13
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -19,11 +19,4 @@ PERL_CONFIGURE=	yes
 MAN3=		IO::Multiplex.3
 # http://search.cpan.org/dist/IO-Multiplex/Changes
 
-.include <bsd.port.pre.mk>
-
-.if ( ${PERL_LEVEL} < 500805 )
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Time/HiRes.pm:${PORTSDIR}/devel/p5-Time-HiRes
-RUN_DEPENDS=	${BUILD_DEPENDS}
-.endif
-
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
