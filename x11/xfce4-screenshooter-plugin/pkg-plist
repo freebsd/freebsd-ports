@@ -1,46 +1,6 @@
 bin/xfce4-screenshooter
 libexec/xfce4/panel-plugins/xfce4-screenshooter-plugin
-%%NLS%%share/applications/xfce4-screenshooter.desktop
-share/icons/hicolor/48x48/apps/applets-screenshooter.png
-share/icons/hicolor/scalable/apps/applets-screenshooter.svg
-%%NLS%%share/locale/ar/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/ast/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/bg/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/ca/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/cs/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/da/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/de/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/el/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/en_GB/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/es/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/et/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/eu/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/fi/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/fr/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/gl/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/hr/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/hu/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/id/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/it/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/ja/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/kk/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/lv/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/nb/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/nl/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/pl/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/pt/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/pt_BR/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/ro/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/ru/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/sq/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/sv/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/tr/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/uk/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/ur/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/ur_PK/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/vi/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/zh_CN/LC_MESSAGES/xfce4-screenshooter.mo
-%%NLS%%share/locale/zh_TW/LC_MESSAGES/xfce4-screenshooter.mo
+share/applications/xfce4-screenshooter.desktop
 %%DOCSDIR%%/C/images/xfce4-screenshooter-dialog1.png
 %%DOCSDIR%%/C/images/xfce4-screenshooter-dialog2.png
 %%DOCSDIR%%/C/images/xfce4-screenshooter-zimagez-login-dialog.png
@@ -106,10 +66,65 @@ share/icons/hicolor/scalable/apps/applets-screenshooter.svg
 %%DOCSDIR%%/zh_CN/images/xfce4-screenshooter-zimagez-login-dialog.png
 %%DOCSDIR%%/zh_CN/images/xfce4-screenshooter-zimagez-result-dialog.png
 %%DOCSDIR%%/zh_CN/xfce4-screenshooter.html
+share/icons/hicolor/48x48/apps/applets-screenshooter.png
+share/icons/hicolor/scalable/apps/applets-screenshooter.svg
+share/locale/ar/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/ast/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/bg/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/ca/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/cs/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/da/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/de/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/el/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/en_GB/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/es/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/et/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/eu/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/fi/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/fr/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/gl/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/hr/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/hu/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/id/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/it/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/ja/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/kk/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/lv/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/nb/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/nl/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/pa/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/pl/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/pt/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/pt_BR/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/ro/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/ru/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/si/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/sk/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/sq/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/sv/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/tr/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/ug/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/uk/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/ur/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/ur_PK/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/vi/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/zh_CN/LC_MESSAGES/xfce4-screenshooter.mo
+share/locale/zh_TW/LC_MESSAGES/xfce4-screenshooter.mo
 share/xfce4/panel-plugins/screenshooter.desktop
-@dirrmtry share/xfce4/panel-plugins
-@dirrmtry libexec/xfce4/panel-plugins
-@dirrmtry libexec/xfce4
+@dirrm share/xfce4/panel-plugins
+@dirrm share/xfce4
+@dirrmtry share/locale/ur_PK/LC_MESSAGES
+@dirrmtry share/locale/ur_PK
+@dirrmtry share/locale/ur/LC_MESSAGES
+@dirrmtry share/locale/ur
+@dirrmtry share/locale/ug/LC_MESSAGES
+@dirrmtry share/locale/ug
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
 @dirrm %%DOCSDIR%%/zh_CN/images
 @dirrm %%DOCSDIR%%/zh_CN
 @dirrm %%DOCSDIR%%/tr/images
@@ -137,7 +152,6 @@ share/xfce4/panel-plugins/screenshooter.desktop
 @dirrm %%DOCSDIR%%/C/images
 @dirrm %%DOCSDIR%%/C
 @dirrm %%DOCSDIR%%
-@dirrmtry share/locale/ur_PK/LC_MESSAGES
-@dirrmtry share/locale/ur_PK
-@dirrmtry share/locale/ur/LC_MESSAGES
-@dirrmtry share/locale/ur
+@dirrmtry share/applications
+@dirrmtry libexec/xfce4/panel-plugins
+@dirrmtry libexec/xfce4
