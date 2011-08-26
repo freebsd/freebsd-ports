@@ -5,34 +5,38 @@
 # $FreeBSD$
 
 PORTNAME=	powerman
-PORTVERSION=	2.3.5
-PORTREVISION=	1
+PORTVERSION=	2.3.9
 CATEGORIES=	sysutils parallel
-MASTER_SITES=	SF
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	PowerMan is a tool for doing remote power control
+COMMENT=	A tool for doing remote power control
 
-BROKEN=	does not fetch
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 
-USE_PERL5_BUILD=	yes
-USE_BZIP2=	yes
+USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-httppower --localstatedir=${DESTDIR}/var \
 		--with-pkgconfig-dir=${PREFIX}/libdata/pkgconfig
-CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 USE_LDCONFIG=	yes
-USE_RC_SUBR=	powerman.sh
+MAKE_JOBS_SAFE=	yes
 
-CFLAGS+=	-I${LOCALBASE}/include -DHAVE_CURL
-LDFLAGS+=	-L${LOCALBASE}/lib
+USE_RC_SUBR=	powerman.sh
 
 MAN1=		pm.1 powerman.1
 MAN3=		libpowerman.3
 MAN5=		powerman.conf.5 powerman.dev.5
-MAN7=		powerman-devices.7
 MAN8=		httppower.8 plmpower.8 powermand.8 vpcd.8
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^install-data-am/s|:.*|:|' ${WRKSRC}/scripts/Makefile.in
 
 .include <bsd.port.mk>
