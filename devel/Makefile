@@ -2532,6 +2532,7 @@
     SUBDIR += p5-XML-Compile-Tester
     SUBDIR += p5-XML-Pastor
     SUBDIR += p5-XSLoader
+    SUBDIR += p5-YAML-AppConfig
     SUBDIR += p5-Yada-Yada-Yada
     SUBDIR += p5-ZConf-GUI
     SUBDIR += p5-ZML
