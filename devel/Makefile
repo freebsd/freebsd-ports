@@ -3123,6 +3123,7 @@
     SUBDIR += py-wsgi_xmlrpc
     SUBDIR += py-wsgiutils
     SUBDIR += py-xattr
+    SUBDIR += py-xcaplib
     SUBDIR += py-xdg
     SUBDIR += py-xoltar-toolkit
     SUBDIR += py-yaml
