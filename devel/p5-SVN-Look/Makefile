@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	SVN-Look
-PORTVERSION=	0.20
+PORTVERSION=	0.25
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,7 +14,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	glarkin@FreeBSD.org
 COMMENT=	A caching wrapper aroung the svnlook command
 
-BUILD_DEPENDS=	${LOCALBASE}/bin/svnlook:${PORTSDIR}/devel/subversion
+BUILD_DEPENDS=	${LOCALBASE}/bin/svnlook:${PORTSDIR}/devel/subversion \
+		${SITE_PERL}/URI/file.pm:${PORTSDIR}/net/p5-URI
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
