@@ -1,0 +1,24 @@
+%%SITE_PERL%%/Zenoss.pm
+%%SITE_PERL%%/Zenoss/Connector.pm
+%%SITE_PERL%%/Zenoss/Error.pm
+%%SITE_PERL%%/Zenoss/Examples.pod
+%%SITE_PERL%%/Zenoss/MetaHelper.pm
+%%SITE_PERL%%/Zenoss/Response.pm
+%%SITE_PERL%%/Zenoss/Router.pm
+%%SITE_PERL%%/Zenoss/Router/DetailNav.pm
+%%SITE_PERL%%/Zenoss/Router/Device.pm
+%%SITE_PERL%%/Zenoss/Router/Events.pm
+%%SITE_PERL%%/Zenoss/Router/Messaging.pm
+%%SITE_PERL%%/Zenoss/Router/Mib.pm
+%%SITE_PERL%%/Zenoss/Router/Network.pm
+%%SITE_PERL%%/Zenoss/Router/Process.pm
+%%SITE_PERL%%/Zenoss/Router/Report.pm
+%%SITE_PERL%%/Zenoss/Router/Search.pm
+%%SITE_PERL%%/Zenoss/Router/Service.pm
+%%SITE_PERL%%/Zenoss/Router/Template.pm
+%%SITE_PERL%%/Zenoss/Router/Tree.pm
+%%SITE_PERL%%/Zenoss/Router/ZenPack.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Zenoss/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Zenoss
+@dirrm %%SITE_PERL%%/Zenoss/Router
+@dirrm %%SITE_PERL%%/Zenoss
