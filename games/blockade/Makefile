@@ -9,22 +9,23 @@ PORTNAME=	blockade
 PORTVERSION=	1.00
 PORTREVISION=	2
 CATEGORIES=	games
-MASTER_SITES=	http://www.geocities.com/TimesSquare/Zone/5267/
-DISTFILES=	blockade-1_00-linux.tar.gz
+MASTER_SITES=	TUCOWS/x11/entertain \
+		http://www.sourcefiles.org/Games/Arcade/
+DISTNAME=	${PORTNAME}-${PORTVERSION:S/./_/}-linux
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X version of the `blockade' Macintosh game
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
 USE_XORG=	x11
+MAKE_JOBS_SAFE=	yes
 
 MAN6=		blockade.6
 PLIST_FILES=	bin/blockade
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/blockade ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/blockade.6 ${PREFIX}/man/man6
+	${INSTALL_MAN} ${WRKSRC}/blockade.6 ${MAN6PREFIX}/man/man6
 
 .include <bsd.port.mk>
