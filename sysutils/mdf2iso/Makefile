@@ -8,15 +8,18 @@
 PORTNAME=	mdf2iso
 PORTVERSION=	0.3.0
 CATEGORIES=	sysutils
-MASTER_SITES=	http://download.berlios.de/${PORTNAME}/
+MASTER_SITES=	BERLIOS
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Alcohol 120% to ISO converter
 
-GNU_CONFIGURE=	yes
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/gpl.txt
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
+
+GNU_CONFIGURE=	yes
 
 PLIST_FILES=	bin/mdf2iso
 
