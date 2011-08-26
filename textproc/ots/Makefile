@@ -26,6 +26,7 @@ LDFLAGS+=	-L${LOCALBASE}/lib
 CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--disable-shared
 MAKE_ARGS=	pkgconfigdir="${PREFIX}/libdata/pkgconfig"
+MAKE_JOBS_UNSAFE=yes
 
 post-patch:
 	@${REINPLACE_CMD} -e '/^SUBDIRS/s|doc||' ${WRKSRC}/Makefile.in
