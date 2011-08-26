@@ -10,11 +10,14 @@ PORTVERSION=	0.5.4
 PORTREVISION=	4
 CATEGORIES=	print
 MASTER_SITES=	SF \
-		${MASTER_SITE_SAVANNAH} \
+		SAVANNAH \
 		http://www.stillhq.com/panda/source/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A PDF generation library
+
+LICENSE=	GPLv2 LGPL21
+LICENSE_COMB=	dual
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png \
@@ -25,9 +28,10 @@ USE_GNOME=	gnomehack pkgconfig
 USE_BDB=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--enable-berkeley-db
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 CPPFLAGS=	-I${BDB_INCLUDE_DIR} -I${LOCALBASE}/include ${PTHREAD_CFLAGS}
 LDFLAGS=	-L${BDB_LIB_DIR} -L${LOCALBASE}/lib ${PTHREAD_LIBS}
@@ -50,6 +54,8 @@ post-install:
 .for f in AUTHORS CONTRIBUTORS ChangeLog DEV-HINTS README TODO UNDERWAY
 	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
 .endfor
+.endif
+.if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
 .for f in IMAGES examples/*.c examples/c++/*.cpp examples/images/*.*
 	${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}
