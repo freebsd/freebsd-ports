@@ -10,19 +10,14 @@ PORTNAME=	getxml
 PORTVERSION=	1.0.4
 PORTREVISION=	1
 CATEGORIES=	devel
-MASTER_SITES=	http://freebsd.unixfreunde.de/sources/
+MASTER_SITES=	http://www.gnu.org/software/toutdoux/source/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An XML internationalization tool
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
+LICENSE=	GPLv2 # (or later)
 
-BROKEN=	Does not fetch
-
-LIB_DEPENDS=	xml.5:${PORTSDIR}/textproc/libxml
-
-USE_GNOME=	glib12
+USE_GNOME=	glib12 libxml
 GNU_CONFIGURE=	yes
 
 post-patch:
