@@ -7,30 +7,28 @@
 
 PORTNAME=	fastdnaml
 PORTVERSION=	1.2.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	biology
-MASTER_SITES=	http://geta.life.uiuc.edu:80/~gary/programs/fastDNAml/
+MASTER_SITES=	http://www.life.illinois.edu/gary/programs/fastDNAml/
 DISTNAME=	fastDNAml_${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Faster DNAML, makes phylogenetic trees using maximum likelihood
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/GNU_GENERAL_PUBLIC_LICENSE
 
-USE_GMAKE=	yes
-do-build:
-	@(cd ${WRKSRC}/source; ${SETENV} ${MAKE_ENV} ${GMAKE} ${MAKE_FLAGS} ${MAKEFILE} ${MAKE_ARGS} ${ALL_TARGET})
+BUILD_WRKSRC=	${WRKSRC}/source
+
+MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/source/fastDNAml ${PREFIX}/bin
-	${MKDIR} ${PREFIX}/bin/${PORTNAME}
+	${INSTALL_PROGRAM} ${BUILD_WRKSRC}/fastDNAml ${PREFIX}/bin
+	@${MKDIR} ${PREFIX}/bin/${PORTNAME}
 	${INSTALL_SCRIPT} ${WRKSRC}/scripts/* ${PREFIX}/bin/${PORTNAME}
-
-post-install:
 .if !defined(NOPORTDOCS)
-	${MKDIR} ${PREFIX}/share/doc/${PORTNAME}
-	${INSTALL_DATA} ${WRKSRC}/docs/*.txt ${PREFIX}/share/doc/${PORTNAME}
+	@${MKDIR} ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/docs/*.txt ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
