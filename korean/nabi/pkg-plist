@@ -42,8 +42,8 @@ bin/nabi
 %%DATADIR%%/themes/ubuntu-mono-light/english.png
 %%DATADIR%%/themes/ubuntu-mono-light/hangul.png
 %%DATADIR%%/themes/ubuntu-mono-light/none.png
-share/locale/de/LC_MESSAGES/nabi.mo
-share/locale/ko/LC_MESSAGES/nabi.mo
+%%NLS%%share/locale/de/LC_MESSAGES/nabi.mo
+%%NLS%%share/locale/ko/LC_MESSAGES/nabi.mo
 @dirrm %%DATADIR%%/themes/ubuntu-mono-light
 @dirrm %%DATADIR%%/themes/ubuntu-mono-dark
 @dirrm %%DATADIR%%/themes/keyboard
