@@ -10,8 +10,12 @@
 %%XPI_XPIDIR%%/install.rdf
 %%XPI_XPIDIR%%/modules/GM_notification.js
 %%XPI_XPIDIR%%/modules/addons4.js
+%%XPI_XPIDIR%%/modules/third-party/MatchPattern.js
+%%XPI_XPIDIR%%/modules/third-party/convert2RegExp.js
+%%XPI_XPIDIR%%/modules/utils.js
 @dirrm %%XPI_XPIDIR%%/chrome
 @dirrm %%XPI_XPIDIR%%/components
 @dirrm %%XPI_XPIDIR%%/defaults/preferences
 @dirrm %%XPI_XPIDIR%%/defaults
+@dirrm %%XPI_XPIDIR%%/modules/third-party
 @dirrm %%XPI_XPIDIR%%/modules
