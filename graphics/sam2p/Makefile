@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	sam2p
-PORTVERSION=	0.48
+PORTVERSION=	0.49
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	GOOGLE_CODE
@@ -15,12 +15,12 @@ MASTER_SITES=	GOOGLE_CODE
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Converts raster (bitmap) image formats into PS or PDF files
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		cjpeg:${PORTSDIR}/graphics/jpeg \
 		tif22pnm:${PORTSDIR}/graphics/tif22pnm
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_PERL5_BUILD=	yes
 USE_GHOSTSCRIPT_RUN=	yes
