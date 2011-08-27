@@ -7,6 +7,7 @@
 
 PORTNAME=	apel
 PORTVERSION=	${APEL_VER}
+PORTREVISION=	1
 CATEGORIES=	editors elisp
 MASTER_SITES=	http://kanji.zinbun.kyoto-u.ac.jp/~tomo/lemi/dist/apel/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
