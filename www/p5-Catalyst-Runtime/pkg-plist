@@ -18,9 +18,7 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/DispatchType/Regex.pm
 %%SITE_PERL%%/Catalyst/Dispatcher.pm
 %%SITE_PERL%%/Catalyst/Engine.pm
-%%SITE_PERL%%/Catalyst/Engine/CGI.pm
-%%SITE_PERL%%/Catalyst/Engine/FastCGI.pm
-%%SITE_PERL%%/Catalyst/Engine/HTTP.pm
+%%SITE_PERL%%/Catalyst/EngineLoader.pm
 %%SITE_PERL%%/Catalyst/Exception.pm
 %%SITE_PERL%%/Catalyst/Exception/Basic.pm
 %%SITE_PERL%%/Catalyst/Exception/Detach.pm
@@ -28,6 +26,7 @@ bin/catalyst.pl
 %%SITE_PERL%%/Catalyst/Exception/Interface.pm
 %%SITE_PERL%%/Catalyst/Log.pm
 %%SITE_PERL%%/Catalyst/Model.pm
+%%SITE_PERL%%/Catalyst/PSGI.pod
 %%SITE_PERL%%/Catalyst/Request.pm
 %%SITE_PERL%%/Catalyst/Request/Upload.pm
 %%SITE_PERL%%/Catalyst/Response.pm
