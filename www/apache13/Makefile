@@ -27,6 +27,10 @@ CONFLICTS=	apache+mod_ssl-1.* apache+mod_ssl+ipv6-1.* apache+mod_ssl+modsnmp-1.*
 		apache+ipv6-1.* apache+ssl-1.* apache-2.* apache_fp-1.* \
 		caudium-devel-1.* caudium10-1.* caudium12-1.* \
 		ru-apache+mod_ssl-1.* ru-apache-1.*
+
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 USE_CSTD=	gnu89
 USE_PERL5=	yes
 USE_RC_SUBR=	apache

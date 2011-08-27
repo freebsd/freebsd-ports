@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-1.3.6
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	An Apache module that provides DAV capabilities
 
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 MAKE_JOBS_SAFE=  yes
 
 OPTIONS=	SYMLINK_PATCH	"Follow Symlinks" off \

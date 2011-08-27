@@ -133,13 +133,13 @@ do-build:
 	@cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcm && ${GMAKE} ${MAKE_ENV}
 
 do-install:
-	# Installing fpc compiler
+# 	Installing fpc compiler
 	@cd ${WRKDIR}/${FPCSRCDIR}/rtl && ${GMAKE} install ${MAKE_ENV}
-      	# Installing fpc runtime
+# 	Installing fpc runtime
 	@cd ${WRKDIR}/${FPCSRCDIR}/compiler && ${GMAKE} install ${MAKE_ENV}
-	# Installng fpcmake
+# 	Installng fpcmake
 	@@cd ${WRKDIR}/${FPCSRCDIR}/utils/fpcm && ${GMAKE} install ${MAKE_ENV}
-	# Installing manpages
+# 	Installing manpages
 	${INSTALL_DATA} ${WRKDIR}/man/man1/* ${MAN1PREFIX}/man/man1
 	${INSTALL_DATA} ${WRKDIR}/man/man5/* ${MAN1PREFIX}/man/man5
 

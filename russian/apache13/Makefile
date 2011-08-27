@@ -19,6 +19,9 @@ PATCHFILES=	patches_${APACHE_VERSION}rusPL${RA_VERSION}.tar.gz
 MAINTAINER=	lev@FreeBSD.org
 COMMENT=	The extremely popular Apache http server.  Very fast, very clean
 
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 USE_PERL5=	yes
 
 # New ports feature: conflicts

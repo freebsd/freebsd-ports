@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Apache-XBEL
-PORTVERSION=	1.3
+PORTVERSION=	13
 PORTREVISION=	2
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
@@ -19,7 +19,10 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache.pm:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
 		${SITE_PERL}/${PERL_ARCH}/XML/LibXSLT.pm:${PORTSDIR}/textproc/p5-XML-LibXSLT \
 		${SITE_PERL}/Memoize.pm:${PORTSDIR}/devel/p5-Memoize
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
 
 MAKE_JOBS_SAFE=  yes
 

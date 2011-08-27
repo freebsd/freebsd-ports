@@ -13,6 +13,9 @@ MASTER_SITES=	ftp://ftp.lexa.ru/pub/apache-rus/contrib/
 MAINTAINER=	leeym@FreeBSD.org
 COMMENT=	A module issuing the "correct" cookies for counting the site visitors
 
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 MAKE_JOBS_SAFE=  yes
 
 # Changed to apache13 exclusive, else apache13 ports

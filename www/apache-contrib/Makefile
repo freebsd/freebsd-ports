@@ -17,6 +17,9 @@ COMMENT=	Third-party modules contributed to the Apache HTTP server project
 
 MAKE_JOBS_SAFE=  yes
 
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 USE_APACHE=	13
 
 .include <bsd.port.pre.mk>

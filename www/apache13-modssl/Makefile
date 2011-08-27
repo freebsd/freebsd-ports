@@ -33,6 +33,9 @@ COMMENT?=	The Apache 1.3 webserver with SSL/TLS functionality
 LIB_DEPENDS=	mm.14:${PORTSDIR}/devel/mm
 PATCH_DEPENDS=	${BUILD_DEPENDS}
 
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 LICENSE_COMB=	multi
 LICENSE=	ASL BSD
 CONFLICTS?=	apache+ipv6-1.* apache+ssl-1.* apache-1.* apache-2.* \

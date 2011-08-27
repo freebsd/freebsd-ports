@@ -17,6 +17,9 @@ COMMENT=	An Unreal Tournament 2003 plugin for phpUA
 BUILD_DEPENDS=	${LOCALBASE}/${PHPUA}/index.php:${PORTSDIR}/games/phpua-engine
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+DEPRECATED=	depends on phpua-engine
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 # Some variables you can change
 PHPUA?=		www/phpua
 PHPUA_USER?=	${WWWOWN}

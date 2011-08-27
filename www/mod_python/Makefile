@@ -17,6 +17,9 @@ DIST_SUBDIR=	python
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache 1.3 module for integrating Python
 
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 MAKE_JOBS_SAFE=	yes
 
 .if defined(PACKAGE_BUILDING)

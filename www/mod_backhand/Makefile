@@ -18,6 +18,9 @@ COMMENT=	Apache module that allows seamless redirection and load balancing of HT
 
 MAKE_JOBS_SAFE=	yes
 
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 USE_APACHE=	13
 
 GNU_CONFIGURE=	yes

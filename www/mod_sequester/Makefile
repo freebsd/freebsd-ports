@@ -14,6 +14,9 @@ DISTNAME=	${PORTNAME}-1.7.0
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module that controls access to the website using secure info
 
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 MAKE_JOBS_SAFE=  yes
 
 USE_APACHE=	13

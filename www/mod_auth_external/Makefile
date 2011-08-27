@@ -15,6 +15,9 @@ MASTER_SITES=	http://www.unixpapa.com/software/ \
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Enables the use of external mechanisms for user authentication
 
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 MAKE_JOBS_SAFE=	yes
 
 PORTSCOUT=  limit:^2.1

@@ -20,6 +20,9 @@ MAKE_JOBS_SAFE=  yes
 OPTIONS=	MYSQL	"Enable MySQL support" on \
 			PGSQL	"Enable PGSQL support" off
 
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 USE_APACHE=	13
 MAKE_ARGS+=	APXS="${APXS}"
 

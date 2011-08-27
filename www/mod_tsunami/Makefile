@@ -14,6 +14,9 @@ MASTER_SITES=	http://bertrand.demiddelaer.org/mod_tsunami/
 MAINTAINER=	ale@FreeBSD.org
 COMMENT=	Apache module which dynamically limits a site's slot usage
 
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 MAKE_JOBS_SAFE=  yes
 
 USE_APACHE=	13

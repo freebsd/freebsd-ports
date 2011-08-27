@@ -25,6 +25,9 @@ EXTRACT_ONLY=
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Bandwidth management module for the Apache webserver
 
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 MAKE_JOBS_SAFE=	yes
 
 CONFLICTS=	apache-contrib-1.*

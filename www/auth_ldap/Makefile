@@ -16,6 +16,9 @@ COMMENT=	Apache module to authenticate against an LDAP directory
 
 MAKE_JOBS_SAFE=  yes
 
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 USE_OPENLDAP=	yes
 USE_APACHE=	13
 GNU_CONFIGURE=	yes

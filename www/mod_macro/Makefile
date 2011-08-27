@@ -14,6 +14,9 @@ MASTER_SITES=	http://www.cri.ensmp.fr/~coelho/mod_macro/
 MAINTAINER=	apache@FreeBSD.org
 COMMENT=	Apache module for use macros in config files
 
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 MAKE_JOBS_SAFE=	yes
 
 PORTSCOUT=	limit:^1.1.2

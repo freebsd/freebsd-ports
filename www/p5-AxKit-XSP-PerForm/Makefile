@@ -19,6 +19,9 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/AxKit.pm:${PORTSDIR}/www/p5-AxKit \
 		${SITE_PERL}/AxKit/XSP/WebUtils.pm:${PORTSDIR}/www/p5-AxKit-XSP-WebUtils
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+DEPRECATED=	depends on p5-AxKit
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 MAN3=		AxKit::XSP::PerForm.3
 
 PERL_CONFIGURE=	yes
