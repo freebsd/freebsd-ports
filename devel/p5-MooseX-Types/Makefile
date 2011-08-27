@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	MooseX-Types
-PORTVERSION=	0.28
+PORTVERSION=	0.29
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,18 +14,18 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Organise your Moose types in libraries
 
-BUILD_DEPENDS=	p5-Moose>=0.61:${PORTSDIR}/devel/p5-Moose \
-		p5-Sub-Install>=0.924:${PORTSDIR}/devel/p5-Sub-Install \
-		p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name \
-		p5-namespace-clean>=0.08:${PORTSDIR}/devel/p5-namespace-clean \
-		p5-Carp-Clan>=6.00:${PORTSDIR}/devel/p5-Carp-Clan \
-		p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils
-RUN_DEPENDS:=	${BUILD_DEPENDS}
-
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
 
-PERL_CONFIGURE=	5.8.0+
+BUILD_DEPENDS=	p5-Carp-Clan>=6.00:${PORTSDIR}/devel/p5-Carp-Clan \
+		p5-Moose>=0.61:${PORTSDIR}/devel/p5-Moose \
+		p5-Scalar-List-Utils>=1.19:${PORTSDIR}/lang/p5-Scalar-List-Utils \
+		p5-Sub-Install>=0.924:${PORTSDIR}/devel/p5-Sub-Install \
+		p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name \
+		p5-namespace-clean>=0.19:${PORTSDIR}/devel/p5-namespace-clean
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
 
 MAN3=	MooseX::Types.3 \
 	MooseX::Types::Base.3 \
