@@ -1,11 +1,12 @@
-# New ports collection makefile for:	p5-Pod-Simple # Date created:	   2 july 2003
+# New ports collection makefile for:	p5-Pod-Simple
+# Date created:	   2 july 2003
 # Whom:		   Mathieu Arnold <m@absolight.net>
 #
 # $FreeBSD$
 #
 
 PORTNAME=	Pod-Simple
-PORTVERSION=	3.18
+PORTVERSION=	3.19
 CATEGORIES=	textproc devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
