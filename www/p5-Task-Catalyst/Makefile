@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	Task-Catalyst
-PORTVERSION=	4.01
-PORTREVISION=	2
+PORTVERSION=	4.02
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -22,8 +21,6 @@ BUILD_DEPENDS=	p5-Catalyst-ActionRole-ACL>=0:${PORTSDIR}/www/p5-Catalyst-ActionR
 		p5-Catalyst-Component-InstancePerContext>=0:${PORTSDIR}/www/p5-Catalyst-Component-InstancePerContext \
 		p5-Catalyst-Controller-ActionRole>=0:${PORTSDIR}/www/p5-Catalyst-Controller-ActionRole \
 		p5-Catalyst-Devel>=1.26:${PORTSDIR}/www/p5-Catalyst-Devel \
-		p5-Catalyst-Engine-HTTP-Prefork>=0:${PORTSDIR}/www/p5-Catalyst-Engine-HTTP-Prefork \
-		p5-Catalyst-Engine-PSGI>=0:${PORTSDIR}/www/p5-Catalyst-Engine-PSGI \
 		p5-Catalyst-Manual>=5.80:${PORTSDIR}/www/p5-Catalyst-Manual \
 		p5-Catalyst-Model-Adaptor>=0:${PORTSDIR}/www/p5-Catalyst-Model-Adaptor \
 		p5-Catalyst-Model-DBIC-Schema>=0.08:${PORTSDIR}/www/p5-Catalyst-Model-DBIC-Schema \
@@ -44,7 +41,7 @@ BUILD_DEPENDS=	p5-Catalyst-ActionRole-ACL>=0:${PORTSDIR}/www/p5-Catalyst-ActionR
 		p5-CatalystX-SimpleLogin>=0:${PORTSDIR}/www/p5-CatalystX-SimpleLogin \
 		p5-FCGI>=0.71:${PORTSDIR}/www/p5-FCGI \
 		p5-FCGI-ProcManager>=0:${PORTSDIR}/www/p5-FCGI-ProcManager \
-		p5-Test-WWW-Mechanize-Catalyst>=0.35:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-Catalyst \
+		p5-Starman>=0:${PORTSDIR}/www/p5-Starman \
 		p5-local-lib>=0:${PORTSDIR}/devel/p5-local-lib
 RUN_DEPENDS=	p5-Catalyst-ActionRole-ACL>=0:${PORTSDIR}/www/p5-Catalyst-ActionRole-ACL \
 		p5-Catalyst-Action-REST>=0:${PORTSDIR}/www/p5-Catalyst-Action-REST \
@@ -53,8 +50,6 @@ RUN_DEPENDS=	p5-Catalyst-ActionRole-ACL>=0:${PORTSDIR}/www/p5-Catalyst-ActionRol
 		p5-Catalyst-Component-InstancePerContext>=0:${PORTSDIR}/www/p5-Catalyst-Component-InstancePerContext \
 		p5-Catalyst-Controller-ActionRole>=0:${PORTSDIR}/www/p5-Catalyst-Controller-ActionRole \
 		p5-Catalyst-Devel>=1.26:${PORTSDIR}/www/p5-Catalyst-Devel \
-		p5-Catalyst-Engine-HTTP-Prefork>=0:${PORTSDIR}/www/p5-Catalyst-Engine-HTTP-Prefork \
-		p5-Catalyst-Engine-PSGI>=0:${PORTSDIR}/www/p5-Catalyst-Engine-PSGI \
 		p5-Catalyst-Manual>=5.80:${PORTSDIR}/www/p5-Catalyst-Manual \
 		p5-Catalyst-Model-Adaptor>=0:${PORTSDIR}/www/p5-Catalyst-Model-Adaptor \
 		p5-Catalyst-Model-DBIC-Schema>=0.08:${PORTSDIR}/www/p5-Catalyst-Model-DBIC-Schema \
@@ -76,12 +71,12 @@ RUN_DEPENDS=	p5-Catalyst-ActionRole-ACL>=0:${PORTSDIR}/www/p5-Catalyst-ActionRol
 		p5-FCGI>=0.71:${PORTSDIR}/www/p5-FCGI \
 		p5-FCGI-ProcManager>=0:${PORTSDIR}/www/p5-FCGI-ProcManager \
 		p5-Module-Install>=0:${PORTSDIR}/devel/p5-Module-Install \
-		p5-Test-WWW-Mechanize-Catalyst>=0.35:${PORTSDIR}/devel/p5-Test-WWW-Mechanize-Catalyst \
+		p5-Starman>=0:${PORTSDIR}/www/p5-Starman \
 		p5-YAML-Tiny>=0:${PORTSDIR}/textproc/p5-YAML-Tiny \
 		p5-local-lib>=0:${PORTSDIR}/devel/p5-local-lib
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
-MAN3=	Task::Catalyst.3
+MAN3=		Task::Catalyst.3
 
 .include <bsd.port.mk>
