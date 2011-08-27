@@ -32,3 +32,12 @@ $FreeBSD$
  
  
    succeeded=no
+@@ -40872,7 +40872,7 @@
+ 
+ 
+ OLDCFLAGS="$CFLAGS"
+-CFLAGS="-I$ruby_includes -Wall"
++CFLAGS+="-I$ruby_includes -Wall"
+ OLDCPPFLAGS="$CPPFLAGS"
+ CPPFLAGS="-I$ruby_includes" #no I don't know why CPPFLAGS is used
+ 
