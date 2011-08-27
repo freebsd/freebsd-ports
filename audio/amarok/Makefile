@@ -43,13 +43,11 @@ OPTIONS=	GPOD "iPod support" on \
 
 .include <bsd.port.pre.mk>
 
-.if ${RUBY_VER} == 1.9
-BROKEN=	does not build with ruby 1.9
-.endif
-
 CONFIGURE_ARGS+=--without-exscalibar \
 		--with-mp4v2 \
 		--with-mp4v2-dir=${PREFIX}
+
+CFLAGS+=	-I${LOCALBASE}/include/ruby-${RUBY_VER} -I${LOCALBASE}/include/ruby-${RUBY_VER}/${RUBY_ARCH}
 
 .if !defined(WITH_GPOD)
 PLIST_SUB+=	GPOD="@comment "
