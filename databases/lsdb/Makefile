@@ -7,7 +7,7 @@
 
 PORTNAME=	lsdb
 PORTVERSION=	0.10
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	databases elisp
 MASTER_SITES=	http://downloads.sourceforge.jp/lsdb/${SFJP_RELEASE_ID}/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}
