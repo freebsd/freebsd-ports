@@ -1,7 +1,7 @@
 bin/rawtherapee
-share/doc/rawtherapee/AUTHORS.txt
-share/doc/rawtherapee/LICENSE.txt
-share/doc/rawtherapee/AboutThisBuild.txt
+%%DOCSDIR%%/AUTHORS.txt
+%%DOCSDIR%%/LICENSE.txt
+%%DOCSDIR%%/AboutThisBuild.txt
 share/applications/rawtherapee.desktop
 share/icons/hicolor/16x16/apps/rawtherapee.png
 share/icons/hicolor/24x24/apps/rawtherapee.png
@@ -206,3 +206,5 @@ share/icons/hicolor/256x256/apps/rawtherapee.png
 @dirrm %%DATADIR%%/themes/gray_textured
 @dirrm %%DATADIR%%/themes
 @dirrm %%DATADIR%%
+@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
