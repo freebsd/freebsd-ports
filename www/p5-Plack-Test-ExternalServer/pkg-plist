@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Plack/Test/ExternalServer.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Test/ExternalServer/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Test/ExternalServer
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack/Test
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Plack
+@dirrmtry %%SITE_PERL%%/Plack/Test
+@dirrmtry %%SITE_PERL%%/Plack
