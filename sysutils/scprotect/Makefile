@@ -16,7 +16,6 @@ COMMENT=	Protect process from killing when the swap space is exhausted
 NO_PACKAGE=	Needs to be compiled for specific kernel
 
 KMODDIR?=	/boot/modules
-SRC_BASE?=	/usr/src
 
 PLIST_SUB=	KMODDIR=${KMODDIR}
 WRKSRC=		${WRKDIR}/${PORTNAME}

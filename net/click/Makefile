@@ -19,7 +19,6 @@ USE_PERL5_BUILD=yes
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 
-SRC_BASE?=	/usr/src
 INC_BASE?=	/usr/include
 
 CONFIGURE_ARGS+=	--disable-linuxmodule
