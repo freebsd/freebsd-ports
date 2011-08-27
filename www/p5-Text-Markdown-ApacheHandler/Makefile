@@ -18,6 +18,9 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/Constants.pm:${PORTSDIR}/www/mod_p
 		${SITE_PERL}/${PERL_ARCH}/Apache/File.pm:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/Text/Markdown.pm:${PORTSDIR}/textproc/p5-Text-Markdown
 
+DEPRECATED=	depends on mod_perl
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Text::Markdown::ApacheHandler.3

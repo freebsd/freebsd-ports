@@ -44,6 +44,9 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/XML/Parser.pm:${PORTSDIR}/textproc/p5-XML
 
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 PERL_CONFIGURE=	yes
 USE_APACHE=	13
 USE_MYSQL=	yes

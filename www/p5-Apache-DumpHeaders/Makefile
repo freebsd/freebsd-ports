@@ -16,6 +16,9 @@ COMMENT=	Watches HTTP transactions under mod_perl, looking at the headers
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl
 
+DEPRECATED=	depends on mod_perl
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::DumpHeaders.3 Apache::ProxyPassThru.3

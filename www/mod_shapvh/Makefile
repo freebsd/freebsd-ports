@@ -16,6 +16,9 @@ EXTRACT_SUFX=	.c
 MAINTAINER=	steven@krx.nl
 COMMENT=	Apache module that provides virtual hosts from a database
 
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 MAKE_JOBS_SAFE=  yes
 
 USE_APACHE=	13

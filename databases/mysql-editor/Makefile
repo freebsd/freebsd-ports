@@ -16,7 +16,10 @@ MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	CGI scripts in Perl to edit your MySQL tables
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
 
 USE_APACHE=	13
 NO_BUILD=	yes

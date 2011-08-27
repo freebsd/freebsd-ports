@@ -19,6 +19,9 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/src.pm:${PORTSDIR}/www/mod_perl 
 		${SITE_PERL}/${PERL_ARCH}/Apache/Language.pm:${PORTSDIR}/www/p5-Apache-Language \
 		${SITE_PERL}/${PERL_ARCH}/HTML/HeadParser.pm:${PORTSDIR}/www/p5-HTML-Parser
 
+DEPRECATED=	depends on mod_perl
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 MAKE_JOBS_SAFE=  yes
 
 PERL_CONFIGURE=	yes

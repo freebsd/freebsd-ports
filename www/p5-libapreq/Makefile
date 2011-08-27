@@ -23,6 +23,9 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${SITE_PERL}/${PERL_ARCH}/Apache/Test.pm:${PORTSDIR}/www/p5-Apache-Test
 .endif
 
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 PERL_CONFIGURE=	yes
 USE_APACHE=	13
 

@@ -18,6 +18,9 @@ COMMENT=	Exceptions taglib for eXtensible Server Pages plugin for AxKit
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/AxKit.pm:${PORTSDIR}/www/p5-AxKit
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+DEPRECATED=	depends on p5-AxKit
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 MAN3=		AxKit::XSP::Exception.3
 
 PERL_CONFIGURE=	yes

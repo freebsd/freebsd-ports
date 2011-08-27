@@ -16,6 +16,9 @@ COMMENT=	A perl module that provides an interface for looking up icon images
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/src.pm:${PORTSDIR}/www/mod_perl
 
+DEPRECATED=	depends on mod_perl
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::Icon.3

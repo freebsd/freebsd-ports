@@ -19,6 +19,9 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/mod_perl.pm:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/Email/Find.pm:${PORTSDIR}/mail/p5-Email-Find
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
+DEPRECATED=	depends on mod_perl
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 PERL_CONFIGURE=	yes
 
 MAN3=		Apache::AntiSpam.3 \

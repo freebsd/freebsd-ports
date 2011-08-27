@@ -18,6 +18,9 @@ RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/AxKit.pm:${PORTSDIR}/www/p5-AxKit \
 		${SITE_PERL}/Mail/Sendmail.pm:${PORTSDIR}/mail/p5-Mail-Sendmail \
 		${SITE_PERL}/Email/Valid.pm:${PORTSDIR}/mail/p5-Email-Valid
 
+DEPRECATED=	depends on p5-AxKit
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 MAN3=		AxKit::XSP::Sendmail.3
 
 PERL_CONFIGURE=	yes

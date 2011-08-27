@@ -50,6 +50,9 @@ CONFLICTS=	apache+ipv6-* \
 		publicfile-* \
 		ru-apache-*
 
+DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 USE_OPENSSL=	yes
 USE_PERL5=	yes
 

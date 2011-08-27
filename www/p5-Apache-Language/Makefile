@@ -17,6 +17,9 @@ COMMENT=	A perl module that provides language-aware object hashes
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/src.pm:${PORTSDIR}/www/mod_perl \
 		${SITE_PERL}/I18N/LangTags.pm:${PORTSDIR}/misc/p5-I18N-LangTags
 
+DEPRECATED=	depends on mod_perl
+EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+
 MAKE_JOBS_SAFE=  yes
 
 PERL_CONFIGURE=	yes
