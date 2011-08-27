@@ -17,6 +17,8 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	GREYC's Magic Image Converter
 
+BROKEN=		Does not compile with OpenCV 2.3.1
+
 LIB_DEPENDS=	GraphicsMagick++.6:${PORTSDIR}/graphics/GraphicsMagick13 \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		Magick++.4:${PORTSDIR}/graphics/ImageMagick \
