@@ -72,7 +72,17 @@
  #define MAX_ENDPOINTS        32
  #define MAX_INTERFACES       32 /* Max 32 endpoints and thus interfaces */
  #define CTRL_TIMEOUT       5000 /* USB specifies a 5 second max timeout */
-@@ -487,6 +552,9 @@ struct usbredirhost *usbredirhost_open(
+@@ -418,7 +483,9 @@ struct usbredirhost *usbredirhost_open(
+     struct usbredirhost *host;
+     struct usb_redir_device_connect_header device_connect;
+     struct libusb_device_descriptor desc;
++#ifndef IGNORE_LIBUSB_GET_DEVICE_SPEED
+     enum libusb_speed speed;
++#endif
+     int r;
+ 
+     host = calloc(1, sizeof(*host));
+@@ -487,6 +554,9 @@ struct usbredirhost *usbredirhost_open(
          return NULL;
      }
  
@@ -82,7 +92,7 @@
      speed = libusb_get_device_speed(host->dev);
      switch (speed) {
      case LIBUSB_SPEED_LOW:
-@@ -500,6 +568,7 @@ struct usbredirhost *usbredirhost_open(
+@@ -500,6 +570,7 @@ struct usbredirhost *usbredirhost_open(
      default:
          device_connect.speed = usb_redir_speed_unknown;
      }
