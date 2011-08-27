@@ -14,6 +14,8 @@ MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A powerful RAW image processing application
 
+LICENSE=	GPLv3
+
 LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 		iptcdata.3:${PORTSDIR}/graphics/libiptcdata \
 		jpeg.11:${PORTSDIR}/graphics/jpeg \
@@ -38,7 +40,6 @@ CMAKE_ARGS+=	-DDOCDIR="${DOCSDIR}" \
 SUB_FILES=	rawtherapee
 SUB_LIST=	RTDIR="${RTDIR}"
 INSTALLS_ICONS=	yes
-LICENSE=	GPLv3
 
 RTDIR=	${PREFIX}/libdata/${PORTNAME}
 
