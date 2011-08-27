@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	WebService-GData
-PORTVERSION=	0.0408
+PORTVERSION=	0.0409
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SHIRIRU
@@ -15,12 +15,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Google data protocol v2 base object to inherit from
 
-BUILD_DEPENDS=	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
-		p5-JSON>=2.0:${PORTSDIR}/converters/p5-JSON \
-		p5-Test-Mock-LWP>=0.05:${PORTSDIR}/devel/p5-Test-Mock-LWP
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	p5-JSON>=2.0:${PORTSDIR}/converters/p5-JSON \
+		p5-Test-Mock-LWP>=0.05:${PORTSDIR}/devel/p5-Test-Mock-LWP \
+		p5-libwww>0:${PORTSDIR}/www/p5-libwww
+RUN_DEPENDS=	p5-JSON>=2.0:${PORTSDIR}/converters/p5-JSON \
+		p5-Test-Mock-LWP>=0.05:${PORTSDIR}/devel/p5-Test-Mock-LWP \
+		p5-libwww>0:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.8+
 
 MAN3=	WebService::GData::Error.3 \
 	WebService::GData::ClientLogin.3 \
@@ -46,6 +48,7 @@ MAN3=	WebService::GData::Error.3 \
 	WebService::GData::Feed.3 \
 	WebService::GData::YouTube.3 \
 	WebService::GData::YouTube::Feed::Comment.3 \
-	WebService::GData::YouTube::Feed::PlaylistLink.3
+	WebService::GData::YouTube::Feed::PlaylistLink.3 \
+	WebService::GData::YouTube::Feed::VideoMessage.3
 
 .include <bsd.port.mk>
