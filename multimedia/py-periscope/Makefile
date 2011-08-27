@@ -6,6 +6,7 @@
 
 PORTNAME=	periscope
 PORTVERSION=	0.2.4
+PORTREVISION=	1
 CATEGORIES=	multimedia python
 MASTER_SITES=	GOOGLE_CODE
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,9 +24,11 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}beautifulsoup>=3.2.0:${PORTSDIR}/www/py-beau
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 USE_GNOME=	desktopfileutils
-USE_PYTHON=	yes
+USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	easy_install
 NO_WRKSUBDIR=	yes
+
+OPTIONS=	UNRAR "Enable support for rar (.rar) compressed subtitles" on
 
 PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR_WITHOUT_PREFIX:Q}
 
@@ -37,4 +40,11 @@ post-install:
 		${DESKTOPDIR}
 	@-${LOCALBASE}/bin/update-desktop-database
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+# unrar (.rar) support
+.if !defined(WITHOUT_UNRAR)
+RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar
+.endif
+
+.include <bsd.port.post.mk>
