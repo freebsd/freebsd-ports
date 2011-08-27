@@ -14,36 +14,53 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	On-link icmpv6 message monitoring and reporting daemon
 
+OPTIONS=	PY4SUITE	"Depend on py-4suite-xml (for generating HTML)"	off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITHOUT_PY4SUITE)
+PLIST_SUB+=	PY="@comment "
+.else
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/Ft/Xml/Domlette.py:${PORTSDIR}/textproc/py-4suite-xml
+USE_PYTHON=	2.6+
+PLIST_SUB+=	PY=""
+.endif
+
 USE_GNOME=	libxml2
 USE_PERL5_RUN=	yes
 USE_RC_SUBR=	ndpmonitor
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	OSTYPE=FreeBSD
-CONFIGURE_ARGS=	--with-var-datadir=${PREFIX}/var --with-confdir=${PREFIX}/etc
+CONFIGURE_ARGS=	--with-var-datadir=${PREFIX}/var --with-confdir=${ETCDIR}
 
 MAN8=		ndpmon.8
 PORTDOCS=	INSTALL README
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 		${WRKSRC}/ndpmon.8 \
 		${WRKSRC}/create_html_table.py \
-		${WRKSRC}/demopipeprogram.pl.sample
+		${WRKSRC}/demopipeprogram.pl.sample \
+		${WRKSRC}/config_ndpmon.xml.in \
+		${WRKSRC}/config_ndpmon.xml
 	(cd ${WRKSRC}; ${MAKE} clean)
 
 do-install:
 	${INSTALL_MAN} ${WRKSRC}/ndpmon.8 ${PREFIX}/man/man8
 	${INSTALL_PROGRAM} ${WRKSRC}/ndpmon ${PREFIX}/sbin
+
 	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/*.dtd \
-		${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/demopipeprogram.pl.sample \
-		${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/create_html_table.py \
-		${DATADIR}
-	${MKDIR} ${PREFIX}/etc/ndpmon
-	${INSTALL_DATA} ${WRKSRC}/config_ndpmon.xml ${PREFIX}/etc/ndpmon/config_ndpmon.xml-dist
+	${INSTALL_DATA} ${WRKSRC}/*.dtd ${DATADIR}
+	${INSTALL_SCRIPT} ${WRKSRC}/demopipeprogram.pl.sample ${DATADIR}
+.if defined(WITH_PY4SUITE)
+	${INSTALL_SCRIPT} ${WRKSRC}/create_html_table.py ${DATADIR}
+.endif
+
+	${MKDIR} ${ETCDIR}
+	${INSTALL_DATA} ${WRKSRC}/config_ndpmon.xml ${ETCDIR}/config_ndpmon.xml-dist
+
 	${MKDIR} ${PREFIX}/var/ndpmon
 	${INSTALL_DATA} ${WRKSRC}/neighbor_list.xml ${PREFIX}/var/ndpmon/neighbor_list.xml
 
