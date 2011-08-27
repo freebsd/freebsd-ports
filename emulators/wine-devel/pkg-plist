@@ -1124,6 +1124,7 @@ lib/wine/fakedlls/pidgen.dll
 lib/wine/fakedlls/ping.exe
 lib/wine/fakedlls/plugplay.exe
 lib/wine/fakedlls/powrprof.dll
+lib/wine/fakedlls/presentationfontcache.exe
 lib/wine/fakedlls/printui.dll
 lib/wine/fakedlls/progman.exe
 lib/wine/fakedlls/propsys.dll
@@ -1620,6 +1621,7 @@ lib/wine/pidgen.dll.so
 lib/wine/ping.exe.so
 lib/wine/plugplay.exe.so
 lib/wine/powrprof.dll.so
+lib/wine/presentationfontcache.exe.so
 lib/wine/printui.dll.so
 lib/wine/progman.exe.so
 lib/wine/propsys.dll.so
