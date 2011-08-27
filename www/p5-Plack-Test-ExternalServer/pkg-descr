@@ -1,0 +1,7 @@
+Plack::Test::ExternalServer allows your to run your Plack::Test tests against an
+external server instead of just against a local application through either
+mocked HTTP or a locally spawned server.
+
+See Plack::Test on how to write tests that can use this module.
+
+WWW: http://search.cpan.org/dist/Plack-Test-ExternalServer/
