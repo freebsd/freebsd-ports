@@ -10784,6 +10784,7 @@ p5-AnyEvent-DBus                ports/devel/p5-AnyEvent-DBus
 p5-AnyEvent-Filesys-Notify      ports/devel/p5-AnyEvent-Filesys-Notify
 p5-AnyEvent-HTTP                ports/www/p5-AnyEvent-HTTP
 p5-AnyEvent-HTTPD               ports/www/p5-AnyEvent-HTTPD
+p5-AnyEvent-I3                  ports/devel/p5-AnyEvent-I3
 p5-AnyEvent-IRC                 ports/irc/p5-AnyEvent-IRC
 p5-AnyEvent-Mojo                ports/www/p5-AnyEvent-Mojo
 p5-AnyEvent-Redis               ports/databases/p5-AnyEvent-Redis
@@ -11163,6 +11164,7 @@ p5-CPAN-Inject                  ports/devel/p5-CPAN-Inject
 p5-CPAN-Meta                    ports/devel/p5-CPAN-Meta
 p5-CPAN-Meta-YAML               ports/devel/p5-CPAN-Meta-YAML
 p5-CPAN-Mini                    ports/devel/p5-CPAN-Mini
+p5-CPAN-Recent-Uploads          ports/devel/p5-CPAN-Recent-Uploads
 p5-CPAN-Reporter                ports/devel/p5-CPAN-Reporter
 p5-CPAN-Reporter-Smoker         ports/devel/p5-CPAN-Reporter-Smoker
 p5-CPAN-SQLite                  ports/devel/p5-CPAN-SQLite
@@ -14969,6 +14971,7 @@ p5-XSLoader                     ports/devel/p5-XSLoader
 p5-Xango                        ports/www/p5-Xango
 p5-Xmms                         ports/audio/p5-Xmms
 p5-YAML                         ports/textproc/p5-YAML
+p5-YAML-AppConfig               ports/devel/p5-YAML-AppConfig
 p5-YAML-LibYAML                 ports/textproc/p5-YAML-LibYAML
 p5-YAML-Shell                   ports/textproc/p5-YAML-Shell
 p5-YAML-Syck                    ports/textproc/p5-YAML-Syck
@@ -14993,6 +14996,7 @@ p5-ZConf-Runner-GUI-GTK         ports/deskutils/p5-ZConf-Runner-GUI-GTK
 p5-ZConf-Weather                ports/astro/p5-ZConf-Weather
 p5-ZML                          ports/devel/p5-ZML
 p5-Zen-Koans                    ports/misc/p5-Zen-Koans
+p5-Zenoss                       ports/net-mgmt/p5-Zenoss
 p5-accessors                    ports/devel/p5-accessors
 p5-aceperl                      ports/biology/p5-AcePerl
 p5-ack                          ports/textproc/p5-ack
@@ -15064,6 +15068,7 @@ p5-anyevent-dbus                ports/devel/p5-AnyEvent-DBus
 p5-anyevent-filesys-notify      ports/devel/p5-AnyEvent-Filesys-Notify
 p5-anyevent-http                ports/www/p5-AnyEvent-HTTP
 p5-anyevent-httpd               ports/www/p5-AnyEvent-HTTPD
+p5-anyevent-i3                  ports/devel/p5-AnyEvent-I3
 p5-anyevent-irc                 ports/irc/p5-AnyEvent-IRC
 p5-anyevent-mojo                ports/www/p5-AnyEvent-Mojo
 p5-anyevent-redis               ports/databases/p5-AnyEvent-Redis
@@ -15847,6 +15852,7 @@ p5-cpan-listchanges             ports/devel/p5-cpan-listchanges
 p5-cpan-meta                    ports/devel/p5-CPAN-Meta
 p5-cpan-meta-yaml               ports/devel/p5-CPAN-Meta-YAML
 p5-cpan-mini                    ports/devel/p5-CPAN-Mini
+p5-cpan-recent-uploads          ports/devel/p5-CPAN-Recent-Uploads
 p5-cpan-reporter                ports/devel/p5-CPAN-Reporter
 p5-cpan-reporter-smoker         ports/devel/p5-CPAN-Reporter-Smoker
 p5-cpan-sqlite                  ports/devel/p5-CPAN-SQLite
@@ -19350,6 +19356,7 @@ p5-yahoo-bbauth                 ports/security/p5-Yahoo-BBAuth
 p5-yahoo-lifestyle              ports/www/p5-Yahoo-Lifestyle
 p5-yahoo-search                 ports/www/p5-Yahoo-Search
 p5-yaml                         ports/textproc/p5-YAML
+p5-yaml-appconfig               ports/devel/p5-YAML-AppConfig
 p5-yaml-libyaml                 ports/textproc/p5-YAML-LibYAML
 p5-yaml-shell                   ports/textproc/p5-YAML-Shell
 p5-yaml-syck                    ports/textproc/p5-YAML-Syck
@@ -19369,6 +19376,7 @@ p5-zconf-runner                 ports/deskutils/p5-ZConf-Runner
 p5-zconf-runner-gui-gtk         ports/deskutils/p5-ZConf-Runner-GUI-GTK
 p5-zconf-weather                ports/astro/p5-ZConf-Weather
 p5-zen-koans                    ports/misc/p5-Zen-Koans
+p5-zenoss                       ports/net-mgmt/p5-Zenoss
 p5-zml                          ports/devel/p5-ZML
 p65                             ports/devel/p65
 p7zip                           ports/archivers/p7zip
@@ -20584,6 +20592,7 @@ php4-yp                         ports/net/php4-yp
 php4-zlib                       ports/archivers/php4-zlib
 php5                            ports/lang/php5
 php5-bcmath                     ports/math/php5-bcmath
+php5-blitz                      ports/devel/php5-blitz
 php5-bsdconv                    ports/converters/php5-bsdconv
 php5-bz2                        ports/archivers/php5-bz2
 php5-calendar                   ports/misc/php5-calendar
@@ -21567,6 +21576,7 @@ py-apetag                       ports/audio/py-apetag
 py-apgl                         ports/math/py-apgl
 py-apipkg                       ports/devel/py-apipkg
 py-apolicy                      ports/mail/py-apolicy
+py-application                  ports/devel/py-application
 py-argparse                     ports/devel/py-argparse
 py-asn1                         ports/devel/py-asn1
 py-asn1-modules                 ports/devel/py-asn1-modules
@@ -22147,6 +22157,7 @@ py-repoze.what                  ports/devel/py-repoze.what
 py-repoze.what-pylons           ports/devel/py-repoze.what-pylons
 py-repoze.who                   ports/devel/py-repoze.who
 py-repoze.who-testutil          ports/devel/py-repoze.who-testutil
+py-requests                     ports/www/py-requests
 py-resourcepackage              ports/devel/py-resourcepackage
 py-restclient                   ports/www/py-restclient
 py-reverend                     ports/textproc/py-reverend
@@ -22375,6 +22386,7 @@ py-wxpython28                   ports/x11-toolkits/py-wxPython28
 py-wxpython28-common            ports/x11-toolkits/py-wxPython28-common
 py-wxpython28-unicode           ports/x11-toolkits/py-wxPython28-unicode
 py-xattr                        ports/devel/py-xattr
+py-xcaplib                      ports/devel/py-xcaplib
 py-xdelta3                      ports/misc/py-xdelta3
 py-xdg                          ports/devel/py-xdg
 py-xlib                         ports/x11-toolkits/py-xlib
