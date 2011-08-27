@@ -6,34 +6,32 @@
 #
 
 PORTNAME=		jd
-PORTVERSION=		2.8.1
-PORTREVISION=		1
+PORTVERSION=		2.8.2
 CATEGORIES=		japanese www
 MASTER_SITES=		SFJP
-MASTER_SITE_SUBDIR=	jd4linux/51244
-DISTNAME=	${PORTNAME}-${PORTVERSION}-110312
+MASTER_SITE_SUBDIR=	jd4linux/52863
+DISTNAME=	${PORTNAME}-${PORTVERSION}-110808
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	townwear@gmail.com
 COMMENT=	A 2ch browser
 
-BROKEN=		does not link
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	gnutls:${PORTSDIR}/security/gnutls \
 		gcrypt:${PORTSDIR}/security/libgcrypt \
 		gtkmm:${PORTSDIR}/x11-toolkits/gtkmm24
 
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
-
 MAKE_JOBS_SAFE=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf automake libtool
-USE_GNOME=	gtk20
+USE_GNOME=	gtk20 libgnomeui
 GNU_CONFIGURE=	yes
 
+CONFIGURE_ARGS+=	--with-sessionlib=gnomeui
+
 OPTIONS=	ONIGURUMA "Build with oniguruma regular expressions lib" off \
-		GNOMEUI "Enable LibGnomeUI support" off \
 		PANGOLAYOUT "Use PANGOLayout instead of PangoGlyphString" off
 
 .include <bsd.port.pre.mk>
@@ -41,11 +39,6 @@ OPTIONS=	ONIGURUMA "Build with oniguruma regular expressions lib" off \
 .if defined(WITH_ONIGURUMA)
 CONFIGURE_ARGS+=	--with-oniguruma
 LIB_DEPENDS+=		onig:${PORTSDIR}/devel/oniguruma5
-.endif
-
-.if defined(WITH_GNOMEUI)
-CONFIGURE_ARGS+=	--with-sessionlib=gnomeui
-USE_GNOME+=		libgnomeui
 .endif
 
 .if defined(WITH_PANGOLAYOUT)
