@@ -7,6 +7,7 @@
 
 PORTNAME=	ultracopier
 PORTVERSION=	0.2.0.16
+PORTREVISION=	1
 CATEGORIES=	x11-fm kde
 MASTER_SITES=	http://files.first-world.info/ultracopier/${PORTVERSION}/
 DISTNAME=	${PORTNAME}-src-${PORTVERSION}
@@ -34,6 +35,12 @@ PLIST_SUB=	DESKTOPDIR=${DESKTOPDIR_WITHOUT_PREFIX:Q} \
 
 DESKTOPDIR_WITHOUT_PREFIX=	${DESKTOPDIR:S,^${PREFIX}/,,}
 ICONS_DIR=	share/icons/hicolor
+
+post-patch:
+	@${REINPLACE_CMD} -E \
+		-e 's|0\.2\.0\.15|0.2.0.16|; \
+		s|0,2,0,15|0,2,0,16|' \
+		${WRKSRC}/src/var.h
 
 post-install:
 # install icons
