@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	Moose
-PORTVERSION=	2.0202
+PORTVERSION=	2.0204
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:DOY
+MASTER_SITE_SUBDIR=	CPAN:FLORA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -19,24 +19,22 @@ LICENSE=	ART20 GPLv1
 LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	\
+	p5-Data-OptList>=0.107:${PORTSDIR}/devel/p5-Data-OptList \
 	p5-Devel-GlobalDestruction>=0:${PORTSDIR}/devel/p5-Devel-GlobalDestruction \
-	p5-MRO-Compat>=0:${PORTSDIR}/devel/p5-MRO-Compat \
-	p5-Package-Stash>=0:${PORTSDIR}/devel/p5-Package-Stash \
-	p5-Package-Stash-XS>=0:${PORTSDIR}/devel/p5-Package-Stash-XS \
 	p5-Eval-Closure>=0.04:${PORTSDIR}/devel/p5-Eval-Closure \
-	p5-Package-DeprecationManager>=0.10:${PORTSDIR}/devel/p5-Package-DeprecationManager \
 	p5-List-MoreUtils>=0.28:${PORTSDIR}/lang/p5-List-MoreUtils \
+	p5-MRO-Compat>=0.05:${PORTSDIR}/devel/p5-MRO-Compat \
+	p5-Package-DeprecationManager>=0.10:${PORTSDIR}/devel/p5-Package-DeprecationManager \
+	p5-Package-Stash>=0.21:${PORTSDIR}/devel/p5-Package-Stash \
+	p5-Package-Stash-XS>=0.18:${PORTSDIR}/devel/p5-Package-Stash-XS \
 	p5-Params-Util>=1.00:${PORTSDIR}/devel/p5-Params-Util \
 	p5-Sub-Exporter>=0.980:${PORTSDIR}/devel/p5-Sub-Exporter \
+	p5-Sub-Name>=0.05:${PORTSDIR}/devel/p5-Sub-Name \
 	p5-Task-Weaken>=0:${PORTSDIR}/devel/p5-Task-Weaken \
-	p5-Try-Tiny>=0.02:${PORTSDIR}/lang/p5-Try-Tiny \
-	p5-Data-OptList>=0:${PORTSDIR}/devel/p5-Data-OptList \
-	p5-Sub-Name>=0:${PORTSDIR}/devel/p5-Sub-Name
-
+	p5-Try-Tiny>=0.02:${PORTSDIR}/lang/p5-Try-Tiny
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 TEST_DEPENDS=	\
-	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple \
 	p5-Test-Fatal>=0.001:${PORTSDIR}/devel/p5-Test-Fatal \
 	p5-Test-Requires>=0.05:${PORTSDIR}/devel/p5-Test-Requires
 
@@ -45,30 +43,29 @@ MAKE_JOBS_UNSAFE=	yes
 PERL_CONFIGURE=	5.8.4+
 CFLAGS+=	-I.	# mop.h
 
-CONFLICTS=	p5-Class-MOP*
+CONFLICTS=	p5-Class-MOP-[0-9]*
 
-MAN3=	Class::MOP::Mixin::HasAttributes.3 \
-	Class::MOP::MiniTrait.3 \
-	Class::MOP::Mixin::AttributeCore.3 \
-	Class::MOP::Method::Generated.3 \
-	Class::MOP::Mixin::HasMethods.3 \
-	Class::MOP::Package.3 \
-	Class::MOP.3 \
-	Class::MOP::Method::Accessor.3 \
-	Class::MOP::Method.3 \
-	Class::MOP::Mixin.3 \
-	Class::MOP::Module.3 \
-	Class::MOP::Method::Meta.3 \
+MAN3=	Class::MOP.3 \
 	Class::MOP::Attribute.3 \
-	Class::MOP::Method::Wrapped.3 \
-	Class::MOP::Deprecated.3 \
-	Class::MOP::Object.3 \
-	Class::MOP::Class::Immutable::Trait.3 \
-	Class::MOP::Method::Inlined.3 \
-	Class::MOP::Method::Constructor.3\
-	Class::MOP::Instance.3 \
 	Class::MOP::Class.3 \
-	metaclass.3 \
+	Class::MOP::Class::Immutable::Trait.3 \
+	Class::MOP::Deprecated.3 \
+	Class::MOP::Instance.3 \
+	Class::MOP::Method.3 \
+	Class::MOP::Method::Accessor.3 \
+	Class::MOP::Method::Constructor.3 \
+	Class::MOP::Method::Generated.3 \
+	Class::MOP::Method::Inlined.3 \
+	Class::MOP::Method::Meta.3 \
+	Class::MOP::Method::Wrapped.3 \
+	Class::MOP::MiniTrait.3 \
+	Class::MOP::Mixin.3 \
+	Class::MOP::Mixin::AttributeCore.3 \
+	Class::MOP::Mixin::HasAttributes.3 \
+	Class::MOP::Mixin::HasMethods.3 \
+	Class::MOP::Module.3 \
+	Class::MOP::Object.3 \
+	Class::MOP::Package.3 \
 	Moose.3 \
 	Moose::Cookbook.3 \
 	Moose::Cookbook::Basics::Recipe1.3 \
@@ -173,10 +170,11 @@ MAN3=	Class::MOP::Mixin::HasAttributes.3 \
 	Moose::Spec::Role.3 \
 	Moose::Unsweetened.3 \
 	Moose::Util.3 \
-	Moose::Util::TypeConstraints::Builtins.3 \
 	Moose::Util::MetaRole.3 \
 	Moose::Util::TypeConstraints.3 \
+	Moose::Util::TypeConstraints::Builtins.3 \
 	Test::Moose.3 \
+	metaclass.3 \
 	oose.3
 
 post-extract:
@@ -185,4 +183,10 @@ post-extract:
 post-install:
 	@${CAT} ${PKGDIR}/pkg-message
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501001
+TEST_DEPENDS+=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
+.endif
+
+.include <bsd.port.post.mk>
