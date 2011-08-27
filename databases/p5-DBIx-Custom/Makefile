@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DBIx-Custom
-PORTVERSION=	0.1718
+PORTVERSION=	0.1721
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -27,7 +27,9 @@ PERL_CONFIGURE=	yes
 MAN3=		DBIx::Custom.3 \
 		DBIx::Custom::Guide.3 \
 		DBIx::Custom::Guide::Ja.3 \
+		DBIx::Custom::Mapper.3 \
 		DBIx::Custom::Model.3 \
+		DBIx::Custom::NotExists.3 \
 		DBIx::Custom::Order.3 \
 		DBIx::Custom::Query.3 \
 		DBIx::Custom::QueryBuilder.3 \
