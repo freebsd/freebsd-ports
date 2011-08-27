@@ -70,7 +70,6 @@ include/libpurple/theme-manager.h
 include/libpurple/theme.h
 include/libpurple/upnp.h
 include/libpurple/util.h
-include/libpurple/valgrind.h
 include/libpurple/value.h
 include/libpurple/version.h
 include/libpurple/whiteboard.h
@@ -185,11 +184,11 @@ lib/purple-2/statenotify.so
 %%DBUS%%lib/libpurple-client.a
 %%DBUS%%lib/libpurple-client.la
 %%DBUS%%lib/libpurple-client.so
-%%DBUS%%lib/libpurple-client.so.9
+%%DBUS%%lib/libpurple-client.so.10
 lib/libpurple.a
 lib/libpurple.la
 lib/libpurple.so
-lib/libpurple.so.9
+lib/libpurple.so.10
 libdata/pkgconfig/purple.pc
 share/aclocal/purple.m4
 share/locale/af/LC_MESSAGES/pidgin.mo

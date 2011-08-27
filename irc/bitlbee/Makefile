@@ -107,7 +107,7 @@ CONFIGURE_ARGS+=--twitter=0
 
 .if defined(WITH_LIBPURPLE)
 CONFIGURE_ARGS+=--purple=1
-LIB_DEPENDS+=	purple.9:${PORTSDIR}/net-im/libpurple
+LIB_DEPENDS+=	purple.10:${PORTSDIR}/net-im/libpurple
 .else
 CONFIGURE_ARGS+=--purple=0
 .endif
