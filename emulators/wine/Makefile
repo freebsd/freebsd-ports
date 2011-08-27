@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	wine
-DISTVERSION=	1.3.26
-PORTREVISION=	1
+DISTVERSION=	1.3.27
 PORTEPOCH=	1
 CATEGORIES=	emulators
 MASTER_SITES=	SF/${PORTNAME}/Source \
@@ -33,8 +32,8 @@ CPPFLAGS=	"-I${LOCALBASE}/include"
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=--verbose --disable-tests \
 		--without-alsa --without-capi --with-glu \
-		--without-gphoto --without-gsm --with-opengl \
-		--without-mpg123 --with-oss --without-sane \
+		--without-gphoto --without-gsm --without-gstreamer \
+		--with-opengl --without-mpg123 --with-oss --without-sane \
 		--without-v4l --without-xcomposite --without-xinerama \
 		--with-xrandr
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib" \
