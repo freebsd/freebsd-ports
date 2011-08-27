@@ -18,7 +18,7 @@ MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	PostgreSQL driver for DBI-for-Ruby
 
 RUN_DEPENDS=	${RUBY_SITELIBDIR}/dbi.rb:${PORTSDIR}/databases/ruby-dbi \
-		${RUBY_SITEARCHLIBDIR}/pg.so:${PORTSDIR}/databases/ruby-pg
+		${RUBY_SITEARCHLIBDIR}/pg_ext.so:${PORTSDIR}/databases/ruby-pg
 
 USE_RUBY=	yes
 USE_RUBY_SETUP=	yes
