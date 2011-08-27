@@ -22,6 +22,8 @@ DISTFILES=	gcc-core-${VERSIONSTRING}${EXTRACT_SUFX} \
 MAINTAINER=	gerald@FreeBSD.org
 COMMENT=	GNU Compiler Collection 3.4
 
+DEPRECATED=	Superseded by GCC 4.5 and later, only kept for the sake of three obsolete ports
+
 SUFFIX=		34
 LATEST_LINK=	gcc${SUFFIX}${PKGNAMESUFFIX}
 USE_BISON=	build
