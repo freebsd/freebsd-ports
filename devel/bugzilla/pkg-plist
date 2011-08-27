@@ -970,7 +970,7 @@
 @dirrmtry %%WWWDIR%%/js/yui/assets
 @dirrmtry %%WWWDIR%%/js/yui/animation
 @dirrmtry %%WWWDIR%%/js/yui
-@dirrm %%WWWDIR%%/js
+@dirrmtry %%WWWDIR%%/js
 @dirrm %%WWWDIR%%/images
 %%CONTRIB%%@dirrm %%WWWDIR%%/contrib/cmdline
 %%CONTRIB%%@dirrm %%WWWDIR%%/contrib/bugzilla-submit
