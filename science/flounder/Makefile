@@ -26,11 +26,6 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS} -lstdc++"
 USE_GMAKE=	yes
 
-.if !defined(WITHOUT_AVIFILE)
-LIB_DEPENDS+=	aviplay:${PORTSDIR}/multimedia/avifile
-CONFIGURE_ARGS+=	--enable-avifile
-.endif
-
 .if !defined(WITHOUT_PLOT)
 BUILD_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
 RUN_DEPENDS+=	gnuplot:${PORTSDIR}/math/gnuplot
