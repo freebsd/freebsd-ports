@@ -43,13 +43,9 @@ BROKEN=		Build fails on powerpc
 # GCC-XML has some constructs that GCC 4.2 does not like. Namely,
 # the use of casted-pointer-dereferences as an lvalue to post-increment
 # operations.
-USE_GCC= 3.4
-CONFIGURE_ENV+=	CC=${LOCALBASE}/bin/gcc34 \
-		CPP="${CC} -E" \
-		CXX=${LOCALBASE}/bin/g++34
-MAKE_ENV+=	CC=${LOCALBASE}/bin/gcc34 \
-		CPP="${CC} -E" \
-		CXX=${LOCALBASE}/bin/g++34
+USE_GCC=	3.4
+CONFIGURE_ENV+= CPP="gcc34 -E"
+MAKE_ENV+=	CPP="gcc34 -E"
 .endif
 
 .if ${OSVERSION} >= 700000
