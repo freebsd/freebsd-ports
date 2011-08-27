@@ -118,6 +118,8 @@ lib/calibre/calibre/db/schema_upgrades.py
 lib/calibre/calibre/db/errors.py
 lib/calibre/calibre/db/tables.py
 lib/calibre/calibre/db/cache.py
+lib/calibre/calibre/db/view.py
+lib/calibre/calibre/db/fields.py
 lib/calibre/calibre/ebooks/BeautifulSoup.py
 lib/calibre/calibre/ebooks/__init__.py
 lib/calibre/calibre/ebooks/chardet/__init__.py
@@ -271,6 +273,7 @@ lib/calibre/calibre/ebooks/metadata/sources/identify.py
 lib/calibre/calibre/ebooks/metadata/sources/isbndb.py
 lib/calibre/calibre/ebooks/metadata/sources/openlibrary.py
 lib/calibre/calibre/ebooks/metadata/sources/overdrive.py
+lib/calibre/calibre/ebooks/metadata/sources/ozon.py
 lib/calibre/calibre/ebooks/metadata/sources/test.py
 lib/calibre/calibre/ebooks/metadata/toc.py
 lib/calibre/calibre/ebooks/metadata/topaz.py
@@ -282,11 +285,17 @@ lib/calibre/calibre/ebooks/mobi/__init__.py
 lib/calibre/calibre/ebooks/mobi/debug.py
 lib/calibre/calibre/ebooks/mobi/huffcdic.py
 lib/calibre/calibre/ebooks/mobi/input.py
+lib/calibre/calibre/ebooks/mobi/kindlegen.py
 lib/calibre/calibre/ebooks/mobi/langcodes.py
 lib/calibre/calibre/ebooks/mobi/mobiml.py
 lib/calibre/calibre/ebooks/mobi/output.py
 lib/calibre/calibre/ebooks/mobi/reader.py
+lib/calibre/calibre/ebooks/mobi/utils.py
 lib/calibre/calibre/ebooks/mobi/writer.py
+lib/calibre/calibre/ebooks/mobi/writer2/__init__.py
+lib/calibre/calibre/ebooks/mobi/writer2/main.py
+lib/calibre/calibre/ebooks/mobi/writer2/indexer.py
+lib/calibre/calibre/ebooks/mobi/writer2/serializer.py
 lib/calibre/calibre/ebooks/odt/__init__.py
 lib/calibre/calibre/ebooks/odt/input.py
 lib/calibre/calibre/ebooks/oeb/__init__.py
@@ -474,6 +483,7 @@ lib/calibre/calibre/gui2/actions/next_match.py
 lib/calibre/calibre/gui2/actions/open.py
 lib/calibre/calibre/gui2/actions/plugin_updates.py
 lib/calibre/calibre/gui2/actions/preferences.py
+lib/calibre/calibre/gui2/actions/random.py
 lib/calibre/calibre/gui2/actions/restart.py
 lib/calibre/calibre/gui2/actions/save_to_disk.py
 lib/calibre/calibre/gui2/actions/show_book_details.py
@@ -592,6 +602,8 @@ lib/calibre/calibre/gui2/dialogs/conversion_error.py
 lib/calibre/calibre/gui2/dialogs/conversion_error_ui.py
 lib/calibre/calibre/gui2/dialogs/delete_matching_from_device.py
 lib/calibre/calibre/gui2/dialogs/delete_matching_from_device_ui.py
+lib/calibre/calibre/gui2/dialogs/device_category_editor.py
+lib/calibre/calibre/gui2/dialogs/device_category_editor_ui.py
 lib/calibre/calibre/gui2/dialogs/drm_error.py
 lib/calibre/calibre/gui2/dialogs/drm_error_ui.py
 lib/calibre/calibre/gui2/dialogs/edit_authors_dialog.py
@@ -639,6 +651,8 @@ lib/calibre/calibre/gui2/filename_pattern_ui.py
 lib/calibre/calibre/gui2/init.py
 lib/calibre/calibre/gui2/jobs.py
 lib/calibre/calibre/gui2/layout.py
+lib/calibre/calibre/gui2/languages.py
+lib/calibre/calibre/gui2/keyboard.py
 lib/calibre/calibre/gui2/library/__init__.py
 lib/calibre/calibre/gui2/library/delegates.py
 lib/calibre/calibre/gui2/library/models.py
@@ -677,6 +691,7 @@ lib/calibre/calibre/gui2/preferences/device_user_defined.py
 lib/calibre/calibre/gui2/preferences/email_ui.py
 lib/calibre/calibre/gui2/preferences/emailp.py
 lib/calibre/calibre/gui2/preferences/history.py
+lib/calibre/calibre/gui2/preferences/keyboard.py
 lib/calibre/calibre/gui2/preferences/look_feel.py
 lib/calibre/calibre/gui2/preferences/look_feel_ui.py
 lib/calibre/calibre/gui2/preferences/main.py
@@ -725,12 +740,10 @@ lib/calibre/calibre/gui2/store/stores/pragmatic_bookshelf_plugin.py
 lib/calibre/calibre/gui2/store/stores/nexto_plugin.py
 lib/calibre/calibre/gui2/store/stores/whsmith_uk_plugin.py
 lib/calibre/calibre/gui2/store/stores/zixo_plugin.py
-lib/calibre/calibre/gui2/store/stores/epubbud_plugin.py
 lib/calibre/calibre/gui2/store/stores/oreilly_plugin.py
 lib/calibre/calibre/gui2/store/stores/woblink_plugin.py
 lib/calibre/calibre/gui2/store/stores/archive_org_plugin.py
 lib/calibre/calibre/gui2/store/stores/weightless_books_plugin.py
-lib/calibre/calibre/gui2/store/stores/epubbuy_de_plugin.py
 lib/calibre/calibre/gui2/store/stores/wizards_tower_books_plugin.py
 lib/calibre/calibre/gui2/store/stores/bewrite_plugin.py
 lib/calibre/calibre/gui2/store/stores/baen_webscription_plugin.py
@@ -755,6 +768,12 @@ lib/calibre/calibre/gui2/store/stores/virtualo_plugin.py
 lib/calibre/calibre/gui2/store/stores/open_books_plugin.py
 lib/calibre/calibre/gui2/store/stores/libri_de_plugin.py
 lib/calibre/calibre/gui2/store/stores/google_books_plugin.py
+lib/calibre/calibre/gui2/store/stores/xinxii_plugin.py
+lib/calibre/calibre/gui2/store/stores/bookoteka_plugin.py
+lib/calibre/calibre/gui2/store/stores/ebook_nl_plugin.py
+lib/calibre/calibre/gui2/store/stores/chitanka_plugin.py
+lib/calibre/calibre/gui2/store/stores/ozon_ru_plugin.py
+lib/calibre/calibre/gui2/store/stores/eknigi_plugin.py
 lib/calibre/calibre/gui2/store/config/__init__.py
 lib/calibre/calibre/gui2/store/config/search_widget_ui.py
 lib/calibre/calibre/gui2/store/config/store.py
@@ -1209,6 +1228,9 @@ share/calibre/images/heuristics.png
 share/calibre/images/hotmail.png
 share/calibre/images/insert-link.png
 share/calibre/images/jobs.png
+share/calibre/images/languages.png
+share/calibre/images/random.png
+share/calibre/images/keyboard-prefs.png
 share/calibre/images/library.png
 share/calibre/images/list_remove.png
 share/calibre/images/lookfeel.png
@@ -1239,6 +1261,8 @@ share/calibre/images/mimetypes/txt.png
 share/calibre/images/mimetypes/unknown.png
 share/calibre/images/mimetypes/zero.png
 share/calibre/images/mimetypes/zip.png
+share/calibre/images/mimetypes/djvu.png
+share/calibre/images/mimetypes/xps.png
 share/calibre/images/minus.png
 share/calibre/images/minusminus.png
 share/calibre/images/network-server.png
@@ -1461,6 +1485,7 @@ share/calibre/viewer/referencing.js
 @dirrm lib/calibre/calibre/ebooks/oeb/transforms
 @dirrm lib/calibre/calibre/ebooks/oeb
 @dirrm lib/calibre/calibre/ebooks/odt
+@dirrm lib/calibre/calibre/ebooks/mobi/writer2
 @dirrm lib/calibre/calibre/ebooks/mobi
 @dirrm lib/calibre/calibre/ebooks/metadata/sources
 @dirrm lib/calibre/calibre/ebooks/metadata/book
