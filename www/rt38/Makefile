@@ -13,7 +13,7 @@
 
 PORTNAME=	rt
 PORTVERSION=	3.8.10
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	www
 MASTER_SITES=	http://download.bestpractical.com/pub/rt/release/ \
 		ftp://ftp.eu.uu.net/pub/unix/ticketing/rt/release/
@@ -78,8 +78,8 @@ RUN_DEPENDS+=	${LOCALBASE}/${APACHEMODDIR}/mod_fastcgi.so:${PORTSDIR}/www/mod_fa
 .endif
 
 .if defined(WITH_GRAPHVIZ)
-BUILD_DEPENDS+=	${GRAPVIZ_DEPS}
-RUN_DEPENDS+=	${GRAPVIZ_DEPS}
+BUILD_DEPENDS+=	${GRAPHVIZ_DEPS}
+RUN_DEPENDS+=	${GRAPHVIZ_DEPS}
 .endif
 
 .if defined(WITH_MODPERL)
