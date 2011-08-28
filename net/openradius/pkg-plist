@@ -3,30 +3,30 @@ bin/genmd5hexpasswd
 bin/radaccttest
 bin/radclient
 bin/radtest
-etc/openradius/dictionary.sample
-etc/openradius/legacy/clients.sample
-etc/openradius/legacy/nases.sample
-etc/openradius/legacy/realms.sample
-etc/openradius/legacy/users.sample
-etc/openradius/modules/radldap.attrmap.sample
-etc/openradius/subdicts/dict.ascend
-etc/openradius/subdicts/dict.cisco
-etc/openradius/subdicts/dict.erx
-etc/openradius/subdicts/dict.garderos
-etc/openradius/subdicts/dict.internal
-etc/openradius/subdicts/dict.memory
-etc/openradius/subdicts/dict.microsoft
-etc/openradius/subdicts/dict.nomadix
-etc/openradius/subdicts/dict.rfc2869
-etc/openradius/subdicts/dict.rfc3580
-etc/openradius/subdicts/dict.stdacct
-etc/openradius/subdicts/dict.stdauth
-etc/openradius/subdicts/dict.str-ldap
-etc/openradius/subdicts/dict.tnova
-etc/openradius/subdicts/dict.tunnel
-etc/openradius/subdicts/dict.usr
-etc/openradius/subdicts/dict.vendors
-etc/openradius/subdicts/dict.wispr
+%%ETCDIR%%/dictionary.sample
+%%ETCDIR%%/legacy/clients.sample
+%%ETCDIR%%/legacy/nases.sample
+%%ETCDIR%%/legacy/realms.sample
+%%ETCDIR%%/legacy/users.sample
+%%ETCDIR%%/modules/radldap.attrmap.sample
+%%ETCDIR%%/subdicts/dict.ascend
+%%ETCDIR%%/subdicts/dict.cisco
+%%ETCDIR%%/subdicts/dict.erx
+%%ETCDIR%%/subdicts/dict.garderos
+%%ETCDIR%%/subdicts/dict.internal
+%%ETCDIR%%/subdicts/dict.memory
+%%ETCDIR%%/subdicts/dict.microsoft
+%%ETCDIR%%/subdicts/dict.nomadix
+%%ETCDIR%%/subdicts/dict.rfc2869
+%%ETCDIR%%/subdicts/dict.rfc3580
+%%ETCDIR%%/subdicts/dict.stdacct
+%%ETCDIR%%/subdicts/dict.stdauth
+%%ETCDIR%%/subdicts/dict.str-ldap
+%%ETCDIR%%/subdicts/dict.tnova
+%%ETCDIR%%/subdicts/dict.tunnel
+%%ETCDIR%%/subdicts/dict.usr
+%%ETCDIR%%/subdicts/dict.vendors
+%%ETCDIR%%/subdicts/dict.wispr
 lib/openradius/ascfile
 lib/openradius/delay
 lib/openradius/radclient
@@ -41,27 +41,27 @@ sbin/radiusd
 %%PORTDOCS%%%%DOCSDIR%%/note-behaviourfile
 %%PORTDOCS%%%%DOCSDIR%%/note-struct-ownership
 %%PORTDOCS%%%%DOCSDIR%%/using-openradius.html
-%%PORTDOCS%%%%EXAMPLESDIR%%/accounts/README
-%%PORTDOCS%%%%EXAMPLESDIR%%/accounts/accounts.mysql
-%%PORTDOCS%%%%EXAMPLESDIR%%/accounts/behaviour
-%%PORTDOCS%%%%EXAMPLESDIR%%/accounts/configuration
-%%PORTDOCS%%%%EXAMPLESDIR%%/behaviour.sample-ldap
-%%PORTDOCS%%%%EXAMPLESDIR%%/behaviour.sample-ldap-authbind
-%%PORTDOCS%%%%EXAMPLESDIR%%/behaviour.sample-mysql
-%%PORTDOCS%%%%EXAMPLESDIR%%/behaviour.sample-postgres
-%%PORTDOCS%%%%EXAMPLESDIR%%/behaviour.sample-unixpass
-%%PORTDOCS%%%%EXAMPLESDIR%%/behaviour.sample-usersfile
-%%PORTDOCS%%%%EXAMPLESDIR%%/configuration.sample-ldap
-%%PORTDOCS%%%%EXAMPLESDIR%%/configuration.sample-ldap-authbind
-%%PORTDOCS%%%%EXAMPLESDIR%%/configuration.sample-mysql
-%%PORTDOCS%%%%EXAMPLESDIR%%/configuration.sample-postgres
-%%PORTDOCS%%%%EXAMPLESDIR%%/configuration.sample-unixpass
-%%PORTDOCS%%%%EXAMPLESDIR%%/configuration.sample-usersfile
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%/accounts
-%%PORTDOCS%%@dirrm %%EXAMPLESDIR%%
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/accounts/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/accounts/accounts.mysql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/accounts/behaviour
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/accounts/configuration
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/behaviour.sample-ldap
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/behaviour.sample-ldap-authbind
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/behaviour.sample-mysql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/behaviour.sample-postgres
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/behaviour.sample-unixpass
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/behaviour.sample-usersfile
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/configuration.sample-ldap
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/configuration.sample-ldap-authbind
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/configuration.sample-mysql
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/configuration.sample-postgres
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/configuration.sample-unixpass
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/configuration.sample-usersfile
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%/accounts
+%%PORTEXAMPLES%%@dirrm %%EXAMPLESDIR%%
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 @dirrm lib/openradius
-@dirrmtry etc/openradius/subdicts
-@dirrmtry etc/openradius/modules
-@dirrmtry etc/openradius/legacy
-@dirrmtry etc/openradius
+@dirrmtry %%ETCDIR%%/subdicts
+@dirrmtry %%ETCDIR%%/modules
+@dirrmtry %%ETCDIR%%/legacy
+@dirrmtry %%ETCDIR%%

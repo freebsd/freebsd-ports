@@ -9,7 +9,7 @@ PORTNAME=	openradius
 PORTVERSION=	0.9.12c
 PORTREVISION=	1
 CATEGORIES=	net
-MASTER_SITES=	http://www.xs4all.nl/~evbergen/openradius/download/ \
+MASTER_SITES=	http://evbergen.home.xs4all.nl/openradius/download/ \
 		http://www.mirrors.wiretapped.net/security/authentication/radius/openradius/
 
 MAINTAINER=	crees@FreeBSD.org
@@ -41,14 +41,16 @@ PLIST_SUB+=	LDAP="@comment "
 post-install:
 .if !defined(NOPORTDOCS)
 	${MKDIR} ${DOCSDIR}
-	${MKDIR} ${EXAMPLESDIR}
-	${MKDIR} ${EXAMPLESDIR}/accounts
 	${INSTALL_MAN} ${WRKSRC}/doc/async-iface-notes ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/language.html ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/module-interface.html ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/note-behaviourfile ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/note-struct-ownership ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/doc/using-openradius.html ${DOCSDIR}
+.endif
+
+.if !defined(NOPORTEXAMPLES)
+	${MKDIR} ${EXAMPLESDIR}/accounts
 	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-ldap ${EXAMPLESDIR}
 	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-ldap-authbind ${EXAMPLESDIR}
 	${INSTALL_MAN} ${WRKSRC}/examples/behaviour.sample-mysql ${EXAMPLESDIR}
@@ -67,28 +69,24 @@ post-install:
 	${INSTALL_MAN} ${WRKSRC}/examples/accounts/configuration ${EXAMPLESDIR}/accounts
 .endif
 # Configuration, copy over to sample files
-	${MKDIR} ${PREFIX}/etc/${PORTNAME}
+	${MKDIR} ${ETCDIR}
 .for FILE in dictionary
-	${INSTALL_DATA} ${WRKSRC}/etc/${FILE} \
-		${PREFIX}/etc/${PORTNAME}/${FILE}.sample
+	${INSTALL_DATA} ${WRKSRC}/etc/${FILE} ${ETCDIR}/${FILE}.sample
 .endfor
 # Copy over legacy config files to sample
-	${MKDIR} ${PREFIX}/etc/${PORTNAME}/legacy
+	${MKDIR} ${ETCDIR}/legacy
 .for FILE in clients nases realms users
-	${INSTALL} -m 0600 ${WRKSRC}/etc/legacy/${FILE} \
-		${PREFIX}/etc/${PORTNAME}/legacy/${FILE}.sample
+	${INSTALL} -m 0600 ${WRKSRC}/etc/legacy/${FILE} ${ETCDIR}/legacy/${FILE}.sample
 .endfor
 
-	${MKDIR} ${PREFIX}/etc/${PORTNAME}/modules
+	${MKDIR} ${ETCDIR}/modules
 .for FILE in radldap.attrmap
-	${INSTALL} -m 0600 ${WRKSRC}/etc/modules/${FILE} \
-		${PREFIX}/etc/${PORTNAME}/modules/${FILE}.sample
+	${INSTALL} -m 0600 ${WRKSRC}/etc/modules/${FILE} ${ETCDIR}/modules/${FILE}.sample
 .endfor
 
-	${MKDIR} ${PREFIX}/etc/${PORTNAME}/subdicts
+	${MKDIR} ${ETCDIR}/subdicts
 .for FILE in dict.*
-	${INSTALL} -m 0600 ${WRKSRC}/etc/subdicts/${FILE} \
-		${PREFIX}/etc/${PORTNAME}/subdicts/
+	${INSTALL} -m 0600 ${WRKSRC}/etc/subdicts/${FILE} ${ETCDIR}/subdicts/
 .endfor
 
 	@${ECHO_CMD}
