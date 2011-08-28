@@ -15,7 +15,7 @@ DISTFILES=	ProggyClean.ttf.zip ProggySquare.ttf.zip \
 		ProggyTinySZ.ttf.zip ProggyCleanSZBP.ttf.zip
 DIST_SUBDIR=	proggy_fonts-ttf
 
-MAINTAINER=	kubito@gmail.com
+MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	The perfect monospaced bitmap programming fonts, TTF version
 
 LICENSE=	MIT

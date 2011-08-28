@@ -16,7 +16,7 @@ MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/${MAJOR_VERSION}.x/ \
 		http://sunsite.icm.edu.pl/pub/unix/editors/lyx/stable/${MAJOR_VERSION}.x/ \
 		ftp://ftp.chg.ru/pub/X11/lyx/stable/${MAJOR_VERSION}.x/
 
-MAINTAINER=	kubito@gmail.com
+MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG) (stable)
 
 LICENSE=	GPLv2
