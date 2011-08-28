@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	piwigo
-PORTVERSION=	2.2.3
+PORTVERSION=	2.2.4
 CATEGORIES=	www
 MASTER_SITES=	http://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/ \
 		SF/${PORTNAME}/Piwigo/${PORTVERSION}
@@ -14,11 +14,10 @@ MASTER_SITES=	http://piwigo.org/download/dlcounter.php?code=${PORTVERSION}&/ \
 MAINTAINER=	glz@hidden-powers.com
 COMMENT=	A PHP based Web Gallery
 
-FETCH_BEFORE_ARGS=	-o ${DISTDIR}/${DISTFILES}
 NO_BUILD=	yes
 USE_PHP=	calendar ctype dom exif filter gd gettext hash iconv json \
-		mbstring mcrypt mhash mysql openssl pcre pdf pdo posix recode \
-		session simplexml sockets spl tokenizer xml xmlreader xmlwriter zlib
+		mbstring mcrypt mhash mysql openssl pcre pdf pdo posix session \
+		simplexml sockets spl tokenizer xml xmlreader xmlwriter zlib
 USE_ZIP=	yes
 WANT_PHP_WEB=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
