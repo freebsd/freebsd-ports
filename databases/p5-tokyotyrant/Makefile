@@ -9,9 +9,9 @@ PORTNAME=	tokyotyrant
 PORTVERSION=	1.16
 PORTREVISION=	1
 CATEGORIES=	databases perl5
-MASTER_SITES=	http://1978th.net/tokyotyrant/perlpkg/
-DISTNAME=	${PORTNAME}-perl-${PORTVERSION}
+MASTER_SITES=	http://fallabs.com/${PORTNAME}/perlpkg/
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-perl-${PORTVERSION}
 
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl5 interface to the TokyoTyrant
