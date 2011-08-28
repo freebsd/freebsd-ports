@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	latex-
 DISTNAME=	${PORTNAME}
 DIST_SUBDIR=	latex
 
-MAINTAINER=	kubito@gmail.com
+MAINTAINER=	rakuco@FreeBSD.org
 COMMENT=	Combines the features of both the tabularx and longtable packages
 
 BUILD_DEPENDS=	mktexlsr:${PORTSDIR}/print/teTeX-base
