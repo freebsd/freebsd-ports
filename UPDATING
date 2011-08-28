@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110828:
+  AFFECTS: users of print/cups-{base,client,image}
+  AUTHOR: sahil@FreeBSD.org
+
+  During the update to 1.4.8, the GNUTLS option was changed from ON to 
+  OFF by default. Because old configuration options are saved, users
+  should re-run 'make config' and explicitly deselect the GNUTLS option
+  before upgrading.
+
 20110823:
   AFFECTS: users of lang/ruby
   AUTHOR: swills@FreeBSD.org
