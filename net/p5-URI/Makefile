@@ -27,9 +27,9 @@ MAN3=		URI.3 \
 		URI::Split.3 \
 		URI::URL.3 \
 		URI::WithBase.3 \
+		URI::_punycode.3 \
 		URI::data.3 \
 		URI::file.3 \
-		URI::ldap.3 \
-		URI::_punycode.3
+		URI::ldap.3
 
 .include <bsd.port.mk>
