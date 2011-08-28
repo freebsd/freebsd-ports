@@ -1,12 +1,7 @@
-@comment $FreeBSD$
 bin/gem
-bin/gem18
-bin/update_rubygems18
-lib/ruby/gems/%%RUBY_VER%%/cache/sources-0.0.2.gem
-lib/ruby/gems/%%RUBY_VER%%/gems/sources-0.0.2/lib/sources.rb
-lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
-%%RUBY_SITELIBDIR%%/rbconfig/datadir.rb
+bin/gem%%RUBY_VER_SHORT%%
 %%RUBY_SITELIBDIR%%/gauntlet_rubygems.rb
+%%RUBY_SITELIBDIR%%/rbconfig/datadir.rb
 %%RUBY_SITELIBDIR%%/rubygems.rb
 %%RUBY_SITELIBDIR%%/rubygems/builder.rb
 %%RUBY_SITELIBDIR%%/rubygems/command.rb
@@ -24,15 +19,15 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/commands/install_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/list_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/lock_command.rb
-%%RUBY_SITELIBDIR%%/rubygems/commands/owner_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/outdated_command.rb
+%%RUBY_SITELIBDIR%%/rubygems/commands/owner_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/pristine_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/push_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/query_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/rdoc_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/search_command.rb
-%%RUBY_SITELIBDIR%%/rubygems/commands/setup_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/server_command.rb
+%%RUBY_SITELIBDIR%%/rubygems/commands/setup_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/sources_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/specification_command.rb
 %%RUBY_SITELIBDIR%%/rubygems/commands/stale_command.rb
@@ -56,19 +51,18 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/ext/ext_conf_builder.rb
 %%RUBY_SITELIBDIR%%/rubygems/ext/rake_builder.rb
 %%RUBY_SITELIBDIR%%/rubygems/format.rb
-%%RUBY_SITELIBDIR%%/rubygems/gemcutter_utilities.rb
 %%RUBY_SITELIBDIR%%/rubygems/gem_openssl.rb
 %%RUBY_SITELIBDIR%%/rubygems/gem_path_searcher.rb
 %%RUBY_SITELIBDIR%%/rubygems/gem_runner.rb
+%%RUBY_SITELIBDIR%%/rubygems/gemcutter_utilities.rb
 %%RUBY_SITELIBDIR%%/rubygems/indexer.rb
 %%RUBY_SITELIBDIR%%/rubygems/install_update_options.rb
-%%RUBY_SITELIBDIR%%/rubygems/installer_test_case.rb
 %%RUBY_SITELIBDIR%%/rubygems/installer.rb
+%%RUBY_SITELIBDIR%%/rubygems/installer_test_case.rb
 %%RUBY_SITELIBDIR%%/rubygems/local_remote_options.rb
 %%RUBY_SITELIBDIR%%/rubygems/mock_gem_ui.rb
 %%RUBY_SITELIBDIR%%/rubygems/old_format.rb
 %%RUBY_SITELIBDIR%%/rubygems/package.rb
-%%RUBY_SITELIBDIR%%/rubygems/package_task.rb
 %%RUBY_SITELIBDIR%%/rubygems/package/f_sync_dir.rb
 %%RUBY_SITELIBDIR%%/rubygems/package/tar_header.rb
 %%RUBY_SITELIBDIR%%/rubygems/package/tar_input.rb
@@ -77,6 +71,8 @@ lib/ruby/gems/%%RUBY_VER%%/specifications/sources-0.0.2.gemspec
 %%RUBY_SITELIBDIR%%/rubygems/package/tar_reader/entry.rb
 %%RUBY_SITELIBDIR%%/rubygems/package/tar_test_case.rb
 %%RUBY_SITELIBDIR%%/rubygems/package/tar_writer.rb
+%%RUBY_SITELIBDIR%%/rubygems/package_task.rb
+%%RUBY_SITELIBDIR%%/rubygems/path_support.rb
 %%RUBY_SITELIBDIR%%/rubygems/platform.rb
 %%RUBY_SITELIBDIR%%/rubygems/remote_fetcher.rb
 %%RUBY_SITELIBDIR%%/rubygems/require_paths_builder.rb
@@ -102,8 +98,9 @@ lib/ruby/gems/%%RUBY_VER%%/doc/.keep_this
 @dirrm %%RUBY_SITELIBDIR%%/rubygems/commands
 @dirrm %%RUBY_SITELIBDIR%%/rubygems
 @dirrm %%RUBY_SITELIBDIR%%/rbconfig
-@dirrmtry lib/ruby/gems/%%RUBY_VER%%/specifications
-@dirrm lib/ruby/gems/%%RUBY_VER%%/gems/sources-0.0.2/lib
-@dirrm lib/ruby/gems/%%RUBY_VER%%/gems/sources-0.0.2
-@dirrmtry lib/ruby/gems/%%RUBY_VER%%/gems
-@dirrmtry lib/ruby/gems/%%RUBY_VER%%/cache
+@dirrmtry %%RUBY_SITELIBDIR%%
+@dirrmtry lib/ruby/site_ruby
+@dirrmtry lib/ruby/gems/%%RUBY_VER%%/doc
+@dirrmtry lib/ruby/gems/%%RUBY_VER%%
+@dirrmtry lib/ruby/gems
+@dirrmtry lib/ruby
