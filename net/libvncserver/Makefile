@@ -22,9 +22,28 @@ LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 CONFIGURE_ARGS=	--without-x
+
+OPTIONS= GNUTLS "Adds GnuTLS support" Off \
+	 GCRYPT "Adds Libgcrypt support" Off
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_GNUTLS)
+LIB_DEPENDS+=	gnutls.0:${PORTSDIR}/security/gnutls
+CONFIGURE_ARGS+=	--with-gnutls
+.else
+CONFIGURE_ARGS+=	--without-gnutls
+.endif
+
+.if defined(WITH_GCRYPT)
+LIB_DEPENDS+=	gcrypt.0:${PORTSDIR}/security/libgcrypt
+CONFIGURE_ARGS+=	--with-gcrypt
+.else
+CONFIGURE_ARGS+=	--without-gcrypt
+.endif
 
 post-patch:
 	@${REINPLACE_CMD} -e \
