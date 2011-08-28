@@ -1,6 +1,6 @@
---- tacpluslib/tac_client.c~	Mon May 10 20:01:48 1999
-+++ tacpluslib/tac_client.c	Mon Mar 12 11:40:00 2001
-@@ -1,14 +1,14 @@
+--- ./tacpluslib/tac_client.c.orig	2009-07-10 00:34:49.000000000 +0200
++++ ./tacpluslib/tac_client.c	2011-08-11 20:22:06.000000000 +0200
+@@ -1,6 +1,8 @@
  
  /* (C) 1997 Mike Shoyher msh@corbina.net, msh@apache.lexa.ru */
  
@@ -9,11 +9,12 @@
  #include<netdb.h>
  #include<stdio.h>
  #include<netinet/in.h>
- #include<sys/socket.h>
+@@ -8,8 +10,6 @@
+ #include<arpa/inet.h>
  #include<string.h>
  #include<stdlib.h>
 -#include <sys/types.h> 
 -#include <sys/time.h>  
- #include <unistd.h>    
+ #include <unistd.h>  
+ #include <time.h>  
  #include"tac_plus.h"
- #include "tacplus_client.h"
