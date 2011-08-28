@@ -18,6 +18,8 @@ COMMENT=	An integrated calendar for Thunderbird and SeaMonkey
 
 RUN_DEPENDS+=	${LOCALBASE}/lib/seamonkey/seamonkey-bin:${PORTSDIR}/www/seamonkey2
 
+BROKEN=		unsatisfiable depobj
+
 CONFLICTS_BUILD=	spidermonkey-1.[0-7]*
 USE_AUTOTOOLS=	autoconf213 libtool
 ALL_TARGET=	default
