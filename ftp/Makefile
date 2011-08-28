@@ -4,6 +4,7 @@
     COMMENT = FTP client and server utilities
 
     SUBDIR += IglooFTP
+    SUBDIR += R-cran-RCurl
     SUBDIR += atftp
     SUBDIR += axel
     SUBDIR += bareftp
