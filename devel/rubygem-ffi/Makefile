@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	ffi
-PORTVERSION=	1.0.3
+PORTVERSION=	1.0.9
 CATEGORIES=	devel rubygems
 MASTER_SITES=	RG
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	Extension for dynamic libraries & binding functions
 
-RUBY_VER=	1.9
+LIB_DEPENDS=	ffi.5:${PORTSDIR}/devel/libffi
+
 USE_RUBY=	yes
 USE_RAKE=	yes
 USE_RUBYGEMS=	yes
