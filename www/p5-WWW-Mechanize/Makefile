@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	WWW-Mechanize
-PORTVERSION=	1.68
-PORTREVISION=	1
+PORTVERSION=	1.70
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,29 +14,38 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	This module is to help you automate interaction with a website
 
+BUILD_DEPENDS=	p5-HTML-Form>=1.038:${PORTSDIR}/www/p5-HTML-Form \
+		p5-HTML-Parser>=3.33:${PORTSDIR}/www/p5-HTML-Parser \
+		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
+		p5-HTTP-Server-Simple>=0.35:${PORTSDIR}/www/p5-HTTP-Server-Simple \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI \
+		p5-libwww>=5.829:${PORTSDIR}/www/p5-libwww
 RUN_DEPENDS=	p5-HTML-Form>=1.038:${PORTSDIR}/www/p5-HTML-Form \
 		p5-HTML-Parser>=3.33:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-Tree>=0:${PORTSDIR}/www/p5-HTML-Tree \
 		p5-HTTP-Server-Simple>=0.35:${PORTSDIR}/www/p5-HTTP-Server-Simple \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI \
 		p5-libwww>=5.829:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS}
+TEST_DEPENDS=	p5-Test-Memory-Cycle>=0:${PORTSDIR}/devel/p5-Test-Memory-Cycle \
+		p5-Test-Pod>=1.14:${PORTSDIR}/devel/p5-Test-Pod \
+		p5-Test-Pod-Coverage>=1.04:${PORTSDIR}/devel/p5-Test-Pod-Coverage \
+		p5-Test-Taint>=0:${PORTSDIR}/devel/p5-Test-Taint \
+		p5-Test-Warn>=0.11:${PORTSDIR}/devel/p5-Test-Warn
 
-PERL_CONFIGURE=	5.8.0+
-CONFIGURE_ARGS+=	--nolive
+PERL_CONFIGURE=	yes
 
+MAN1=		mech-dump.1
 MAN3=		WWW::Mechanize.3 WWW::Mechanize::Cookbook.3 \
 		WWW::Mechanize::Examples.3 WWW::Mechanize::FAQ.3 \
-		WWW::Mechanize::Link.3 WWW::Mechanize::Image.3
-MAN1=		mech-dump.1
+		WWW::Mechanize::Image.3 WWW::Mechanize::Link.3
 
 .if !defined(NOPORTDOCS)
-MYPORTDOCS=	Changes etc/www-mechanize-logo.png
-PORTDOCS=	Changes www-mechanize-logo.png
+DOCS=		Changes etc/www-mechanize-logo.png
+PORTDOCS=	${DOCS:T}
 
 post-install:
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${MYPORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
+	@cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
