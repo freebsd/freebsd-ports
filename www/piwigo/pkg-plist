@@ -551,6 +551,13 @@
 %%WWWDIR%%/language/ar_SA/install.lang.php
 %%WWWDIR%%/language/ar_SA/iso.txt
 %%WWWDIR%%/language/ar_SA/upgrade.lang.php
+%%WWWDIR%%/language/ar_SA/upgrade.lang.php
+%%WWWDIR%%/language/bg_BG/about.html
+%%WWWDIR%%/language/bg_BG/admin.lang.php
+%%WWWDIR%%/language/bg_BG/bg_BG.jpg
+%%WWWDIR%%/language/bg_BG/common.lang.php
+%%WWWDIR%%/language/bg_BG/index.php
+%%WWWDIR%%/language/bg_BG/iso.txt
 %%WWWDIR%%/language/ca_ES/about.html
 %%WWWDIR%%/language/ca_ES/admin.lang.php
 %%WWWDIR%%/language/ca_ES/ca_ES.jpg
@@ -2196,6 +2203,7 @@
 @dirrm %%WWWDIR%%/language/cs_CZ/help
 @dirrm %%WWWDIR%%/language/cs_CZ
 @dirrm %%WWWDIR%%/language/ca_ES
+@dirrm %%WWWDIR%%/language/bg_BG
 @dirrm %%WWWDIR%%/language/ar_SA/help
 @dirrm %%WWWDIR%%/language/ar_SA
 @dirrm %%WWWDIR%%/language
