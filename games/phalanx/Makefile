@@ -24,7 +24,7 @@ USE_GMAKE=	yes
 MAKEFILE=	makefile
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	# empty
-MAKE_JOBS_SAFE=	yes
+MAKE_JOBS_UNSAFE=	yes
 
 CFLAGS+=	-DECO_DIR=\\\"${DATADIR}\\\" \
 		-DLEARN_DIR=\\\"${DATADIR}\\\" \
