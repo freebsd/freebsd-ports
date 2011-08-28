@@ -13,6 +13,9 @@
 %%PYTHON_SITELIBDIR%%/thrift/protocol/TBinaryProtocol.py
 %%PYTHON_SITELIBDIR%%/thrift/protocol/TBinaryProtocol.pyc
 %%PYTHON_SITELIBDIR%%/thrift/protocol/TBinaryProtocol.pyo
+%%PYTHON_SITELIBDIR%%/thrift/protocol/TCompactProtocol.py
+%%PYTHON_SITELIBDIR%%/thrift/protocol/TCompactProtocol.pyc
+%%PYTHON_SITELIBDIR%%/thrift/protocol/TCompactProtocol.pyo
 %%PYTHON_SITELIBDIR%%/thrift/protocol/TProtocol.py
 %%PYTHON_SITELIBDIR%%/thrift/protocol/TProtocol.pyc
 %%PYTHON_SITELIBDIR%%/thrift/protocol/TProtocol.pyo
