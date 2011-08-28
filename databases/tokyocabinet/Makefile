@@ -9,7 +9,7 @@ PORTNAME=	tokyocabinet
 PORTVERSION=	1.4.47
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_LOCAL} \
-		http://1978th.net/tokyocabinet/
+		http://fallabs.com/${PORTNAME}/
 MASTER_SITE_SUBDIR=	kuriyama
 
 MAINTAINER=	kuriyama@FreeBSD.org
