@@ -1,9 +1,9 @@
 %%SITE_PERL%%/URI.pm
 %%SITE_PERL%%/URI/Escape.pm
 %%SITE_PERL%%/URI/Heuristic.pm
+%%SITE_PERL%%/URI/IRI.pm
 %%SITE_PERL%%/URI/QueryParam.pm
 %%SITE_PERL%%/URI/Split.pm
-%%SITE_PERL%%/URI/IRI.pm
 %%SITE_PERL%%/URI/URL.pm
 %%SITE_PERL%%/URI/WithBase.pm
 %%SITE_PERL%%/URI/_foreign.pm
@@ -52,6 +52,6 @@
 %%SITE_PERL%%/URI/urn/oid.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/URI
-@dirrm %%SITE_PERL%%/URI/file
 @dirrm %%SITE_PERL%%/URI/urn
+@dirrm %%SITE_PERL%%/URI/file
 @dirrm %%SITE_PERL%%/URI
