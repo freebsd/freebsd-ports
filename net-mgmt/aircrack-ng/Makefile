@@ -37,8 +37,6 @@ OPTIONS=	SQLITE	"Use SQLite for storing pre-computed key tables" off
 
 .if ${ARCH} == "powerpc"
 BROKEN=		Does not compile on powerpc
-.elif ${ARCH} == "sparc64"
-BROKEN=		Does not compile on sparc64: missing byteorder.h
 .endif
 
 .if defined(WITH_SQLITE)
