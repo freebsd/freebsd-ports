@@ -13771,6 +13771,7 @@ p5-Perl6-Say                    ports/devel/p5-Perl6-Say
 p5-Perl6-Subs                   ports/lang/p5-Perl6-Subs
 p5-PerlCryptLib                 ports/security/p5-PerlCryptLib
 p5-PerlFM                       ports/x11-fm/p5-PerlFM
+p5-PerlIO-Layers                ports/devel/p5-PerlIO-Layers
 p5-PerlIO-Util                  ports/devel/p5-PerlIO-Util
 p5-PerlIO-eol                   ports/devel/p5-PerlIO-eol
 p5-PerlIO-gzip                  ports/archivers/p5-PerlIO-gzip
@@ -13824,6 +13825,7 @@ p5-Plack-Middleware-XForwardedFor  ports/www/p5-Plack-Middleware-XForwardedFor
 p5-Plack-Server-Coro            ports/www/p5-Plack-Server-Coro
 p5-Plack-Server-POE             ports/www/p5-Plack-Server-POE
 p5-Plack-Server-ReverseHTTP     ports/www/p5-Plack-Server-ReverseHTTP
+p5-Plack-Test-ExternalServer    ports/www/p5-Plack-Test-ExternalServer
 p5-Plagger                      ports/textproc/p5-Plagger
 p5-Plucene                      ports/textproc/p5-Plucene
 p5-Plucene-Analysis-CJKAnalyzer  ports/textproc/p5-Plucene-Analysis-CJKAnalyzer
@@ -18015,6 +18017,7 @@ p5-perlcryptlib                 ports/security/p5-PerlCryptLib
 p5-perlfm                       ports/x11-fm/p5-PerlFM
 p5-perlio-eol                   ports/devel/p5-PerlIO-eol
 p5-perlio-gzip                  ports/archivers/p5-PerlIO-gzip
+p5-perlio-layers                ports/devel/p5-PerlIO-Layers
 p5-perlio-util                  ports/devel/p5-PerlIO-Util
 p5-perlio-via-bzip2             ports/archivers/p5-PerlIO-via-Bzip2
 p5-perlio-via-dynamic           ports/devel/p5-PerlIO-via-dynamic
@@ -18070,6 +18073,7 @@ p5-plack-middleware-xforwardedfor  ports/www/p5-Plack-Middleware-XForwardedFor
 p5-plack-server-coro            ports/www/p5-Plack-Server-Coro
 p5-plack-server-poe             ports/www/p5-Plack-Server-POE
 p5-plack-server-reversehttp     ports/www/p5-Plack-Server-ReverseHTTP
+p5-plack-test-externalserver    ports/www/p5-Plack-Test-ExternalServer
 p5-plagger                      ports/textproc/p5-Plagger
 p5-plrpc                        ports/net/p5-PlRPC
 p5-plucene                      ports/textproc/p5-Plucene
@@ -23544,6 +23548,7 @@ rubygem-bunny                   ports/net/rubygem-bunny
 rubygem-bzip2                   ports/archivers/rubygem-bzip2
 rubygem-callsign                ports/comms/rubygem-callsign
 rubygem-capistrano              ports/sysutils/rubygem-capistrano
+rubygem-capistrano-ext          ports/sysutils/rubygem-capistrano-ext
 rubygem-captcha                 ports/graphics/rubygem-captcha
 rubygem-cgi_multipart_eof_fix   ports/www/rubygem-cgi_multipart_eof_fix
 rubygem-chef                    ports/sysutils/rubygem-chef
