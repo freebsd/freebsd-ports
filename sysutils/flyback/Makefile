@@ -7,16 +7,15 @@
 
 PORTNAME=	flyback
 PORTVERSION=	0.4.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
-MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
+MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}_${PORTVERSION}
 
 MAINTAINER=	lme@FreeBSD.org
 COMMENT=	A backup frontend like Apple's Time Machine
 
-RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync \
-		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23
+RUN_DEPENDS=	rsync:${PORTSDIR}/net/rsync
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
