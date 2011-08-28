@@ -41,8 +41,7 @@ OPTIONS=	APPLETALK	"Enable AppleTalk protocol support" on \
 		KRB5		"Enable Kerberos V UAM" off \
 		ZEROCONF	"Enable Zeroconf (Bonjour) support" on
 
-FILES=		AppleVolumes.default AppleVolumes.system afpd.conf \
-		atalkd.conf papd.conf netatalk.conf
+FILES=		AppleVolumes.default AppleVolumes.system afpd.conf netatalk.conf
 LINKS=		unbin unhex unsingle hqx2bin single2bin macbinary \
 		binheader nadheader
 MAN1=		ad.1 afpldaptest.1 afppasswd.1 apple_dump.1 asip-status.pl.1 \
@@ -74,6 +73,7 @@ MAN3+=			atalk_aton.3 nbp_name.3
 MAN4+=			atalk.4
 MAN5+=			atalkd.conf.5 papd.conf.5
 MAN8+=			atalkd.8 papd.8 papstatus.8 psf.8
+FILES+=			atalkd.conf papd.conf
 .else
 PLIST_SUB+=		APPLETALK="@comment "
 .endif
