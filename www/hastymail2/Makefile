@@ -16,10 +16,12 @@ DISTNAME=	hastymail2_${WIKEDVERSION}
 MAINTAINER=	aldis@bsdroot.lv
 COMMENT=	Small, fast and secure yet powerful IMAP webmail
 
+LICENSE=	GPLv2
+
 NO_BUILD=	yes
 SUB_FILES=	pkg-message
 
-LICENSE=	GPLv2
+CONFLICTS=      hastymail2-devel-1.[0-9]*
 
 INSTALL_DIR?=	www/${PORTNAME}
 PLIST=		${WRKDIR}/pkg-plist
