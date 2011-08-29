@@ -3,6 +3,7 @@ bin/tv_check
 bin/tv_extractinfo_ar
 bin/tv_extractinfo_en
 bin/tv_find_grabbers
+bin/tv_grab_ar
 bin/tv_grab_ch_search
 bin/tv_grab_combiner
 bin/tv_grab_dk_dr
@@ -14,6 +15,7 @@ bin/tv_grab_eu_epgdata
 bin/tv_grab_fi
 bin/tv_grab_fi_sv
 bin/tv_grab_fr
+bin/tv_grab_fr_kazer
 bin/tv_grab_hr
 bin/tv_grab_huro
 bin/tv_grab_il
@@ -22,13 +24,11 @@ bin/tv_grab_is
 bin/tv_grab_it
 bin/tv_grab_it_dvb
 bin/tv_grab_na_dd
-bin/tv_grab_na_dtv
 bin/tv_grab_na_icons
 bin/tv_grab_nl
 bin/tv_grab_no_gfeed
 bin/tv_grab_pt
 bin/tv_grab_pt_meo
-bin/tv_grab_re
 bin/tv_grab_se_swedb
 bin/tv_grab_uk_bleb
 bin/tv_grab_uk_rt
