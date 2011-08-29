@@ -1,10 +1,12 @@
---- lib/xmlparse.c.orig	2009-12-08 10:20:08.866482591 +0900
-+++ lib/xmlparse.c	2009-12-08 10:20:23.038667874 +0900
-@@ -3725,7 +3725,6 @@
-         return XML_ERROR_NO_ELEMENTS;
-       default:
-         tok = -tok;
--        next = end;
-         break;
-       }
-     }
+--- lib/xmlparse.c.orig	2007-05-08 11:25:35.000000000 +0900
++++ lib/xmlparse.c	2011-08-29 23:22:09.007745673 +0900
+@@ -3703,6 +3703,9 @@
+         return XML_ERROR_UNCLOSED_TOKEN;
+       case XML_TOK_PARTIAL_CHAR:
+         return XML_ERROR_PARTIAL_CHAR;
++      case -XML_TOK_PROLOG_S:
++        tok = -tok;
++        break;
+       case XML_TOK_NONE:
+ #ifdef XML_DTD
+         /* for internal PE NOT referenced between declarations */
