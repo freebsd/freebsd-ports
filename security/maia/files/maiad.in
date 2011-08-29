@@ -1,0 +1,46 @@
+#!/bin/sh
+#
+# $FreeBSD$
+#
+# PROVIDE: maiad
+# REQUIRE: LOGIN
+# KEYWORD: shutdown
+#
+# Add the following lines to /etc/rc.conf to enable maiad:
+# maiad_enable (bool):		Set it to "YES" to enable maiad.
+#				Default is "NO".
+#
+
+. /etc/rc.subr
+
+name="maiad"
+rcvar=${name}_enable
+
+load_rc_config $name
+
+: ${maiad_enable="NO"}
+: ${maiad_pidfile="%%MAIADIR%%/maiad.pid"}
+
+required_files=%%PREFIX%%/etc/maiad.conf
+
+start_cmd=${name}_start
+stop_cmd=${name}_stop
+
+pidfile=${maiad_pidfile}
+procname=${maiad_procname}
+
+start_precmd=${name}_prestart
+
+maiad_prestart() {
+	rm -rf %%MAIADIR%%/tmp/* %%MAIADIR%%/tmp/.* 2>/dev/null || true
+}
+
+maiad_start() {
+	%%PREFIX%%/sbin/maiad start
+}
+
+maiad_stop() {
+	%%PREFIX%%/sbin/maiad stop
+}
+
+run_rc_command "$1"
