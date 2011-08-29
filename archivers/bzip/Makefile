@@ -14,12 +14,12 @@ MASTER_SITES=	http://custom.lab.unb.br/pub/compression/bzip/ \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A block-sorting file compressor
 
-DEPRECATED=	see full description
 RESTRICTED=	may be covered by patents
 MAN1=		bzip.1 bunzip.1
 
 PLIST_FILES=	bin/bzip bin/bunzip
 
+BROKEN=			unfetchable; use archivers/bzip2 instead
 DEPRECATED=		unfetchable; use archivers/bzip2 instead
 EXPIRATION_DATE=	2011-10-28
 
