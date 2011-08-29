@@ -14,6 +14,10 @@ DISTNAME=	sc_serv_${PORTVERSION}_Linux
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Nullsoft's streaming audio server (Linux binary port)
 
+BROKEN=		unfetchable; website rearranged
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=	2011-10-28
+
 CONFLICTS=	shoutcast-[0-9]*
 
 USE_LINUX=	YES
