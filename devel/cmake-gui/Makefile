@@ -7,6 +7,7 @@
 
 PORTNAME=	cmake
 PORTVERSION=	2.8.4
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://www.${PORTNAME}.org/files/v${PORTVERSION:C/\.[[:digit:]]+$//}/
 PKGNAMESUFFIX=	-gui
@@ -19,7 +20,9 @@ RUN_DEPENDS=	${CMAKE_BIN}:${CMAKE_PORT}
 USE_QT_VER=	4
 QT_COMPONENTS=	gui qmake_build moc_build uic_build rcc_build
 USE_CMAKE=	yes
-CMAKE_ARGS=	-DBUILD_QtDialog:bool=on
+CMAKE_ARGS=	-DBUILD_QtDialog:bool=on \
+		-DCMAKE_DATA_DIR:STRING="/${DATADIR_REL}" \
+		-DCMAKE_DOC_DIR:STRING="/${DOCSDIR_REL}"
 MAN1=		cmake-gui.1
 
 BUILD_WRKSRC=	${WRKSRC}/Source/QtDialog
