@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	claws-mail
-PORTVERSION=	3.7.9
-PORTREVISION=	2
+PORTVERSION=	3.7.10
 CATEGORIES=	mail news ipv6
 MASTER_SITES=	SF/sylpheed-claws/Claws%20Mail/${PORTVERSION}
 
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	A lightweight and very featureful GTK+ based e-mail and news client
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan \
 		cairo:${PORTSDIR}/graphics/cairo \
@@ -25,8 +26,6 @@ LIB_DEPENDS=	etpan:${PORTSDIR}/mail/libetpan \
 RUN_DEPENDS=	${LOCALBASE}/etc/mime.types:${PORTSDIR}/misc/mime-support
 
 CONFLICTS=	sylpheed-claws
-
-LICENSE=	GPLv3
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
