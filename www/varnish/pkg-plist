@@ -8,30 +8,38 @@ bin/varnishstat
 bin/varnishtest
 bin/varnishtop
 etc/varnish/default.vcl
-include/varnish/shmlog.h
-include/varnish/shmlog_tags.h
-include/varnish/stat_field.h
-include/varnish/stats.h
 include/varnish/varnishapi.h
-lib/libvarnish.so.1
-lib/libvarnish.so
-lib/libvarnish.la
-lib/libvarnish.a
+include/varnish/vcli.h
+include/varnish/vsc.h
+include/varnish/vsc_all.h
+include/varnish/vsc_fields.h
+include/varnish/vsl.h
+include/varnish/vsl_tags.h
+include/varnish/vsm.h
+lib/varnish/libvarnish.so
+lib/varnish/libvarnish.la
+lib/varnish/libvarnish.a
+lib/varnish/libvarnishcompat.so
+lib/varnish/libvarnishcompat.la
+lib/varnish/libvarnishcompat.a
+lib/varnish/libvcl.so
+lib/varnish/libvcl.la
+lib/varnish/libvcl.a
+lib/varnish/libvgz.so
+lib/varnish/libvgz.la
+lib/varnish/libvgz.a
+lib/varnish/vmods/libvmod_std.so
+lib/varnish/vmods/libvmod_std.la
+lib/varnish/vmods/libvmod_std.a
 lib/libvarnishapi.so.1
 lib/libvarnishapi.so
 lib/libvarnishapi.la
 lib/libvarnishapi.a
-lib/libvarnishcompat.so.1
-lib/libvarnishcompat.so
-lib/libvarnishcompat.la
-lib/libvarnishcompat.a
-lib/libvcl.so.1
-lib/libvcl.so
-lib/libvcl.la
-lib/libvcl.a
 libdata/pkgconfig/varnishapi.pc
 sbin/varnishd
 @exec [ -d %D/varnish ] || mkdir %D/varnish
+@dirrmtry lib/varnish/vmods
+@dirrmtry lib/varnish
 @dirrmtry varnish
 @dirrm include/varnish
 @dirrmtry etc/varnish
