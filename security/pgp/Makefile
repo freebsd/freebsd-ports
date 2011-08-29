@@ -9,15 +9,11 @@ PORTNAME=	pgp
 PORTVERSION=	2.6.3i
 PORTREVISION=	1
 CATEGORIES=	security
-MASTER_SITES=	ftp://ftp.ifi.uio.no/pub/pgp/2.x/src/ \
-		ftp://ftp.kiarchive.ru/pub/unix/crypto/pgp/
+MASTER_SITES=	PACKETSTORM/crypt/pgp/V5.0
 DISTNAME=	pgp263is
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	PGP International version - Public-Key encryption for the masses
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
 
 WRKSRC=		${WRKDIR}/src
 
