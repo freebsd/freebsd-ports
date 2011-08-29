@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	FreeBSD-Portindex
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	ports-mgmt perl5
 MASTER_SITES=	http://www.infracaninophile.co.uk/portindex/
 PKGNAMEPREFIX=	p5-
@@ -13,10 +13,12 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	m.seaman@infracaninophile.co.uk
 COMMENT=	Incremental FreeBSD ports INDEX file generation
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
-RUN_DEPENDS=	${BUILD_DEPENDS}
+LICENSE=	BSD
 
-USE_BZIP2=	yes
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
+RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+USE_XZ=	yes
 PERL_CONFIGURE=	yes
 
 CACHE_DIR?=	/var/db/portindex
