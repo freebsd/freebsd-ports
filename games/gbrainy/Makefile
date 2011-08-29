@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	gbrainy
-PORTVERSION=	2.00
+PORTVERSION=	2.01
 CATEGORIES=	games
 MASTER_SITES=	http://gent.softcatala.org/jmas/gbrainy/
 
 MAINTAINER=	kevlo@FreeBSD.org
 COMMENT=	A brain teaser game and trainer
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	mautil:${PORTSDIR}/devel/mono-addins \
 		${LOCALBASE}/bin/bash:${PORTSDIR}/shells/bash
