@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110829:
+  AFFECTS: users of security/maia
+  AUTHOR: crees@FreeBSD.org
+
+  There have been many changes to the maia port, including renaming the rc
+  script and variables from maia to maiad.  You will need to replace any
+  instances of maia with maiad in /etc/rc.conf.
+
 20110828:
   AFFECTS: users of print/cups-{base,client,image}
   AUTHOR: sahil@FreeBSD.org
