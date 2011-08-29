@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	usermin
-PORTVERSION=	1.470
+PORTVERSION=	1.480
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.webmin.com/uupdates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
@@ -38,11 +38,16 @@ post-extract:
 	fi
 
 post-patch:
-.for file in	mysql/config-freebsd postgresql/config-freebsd \
-		spam/config-freebsd
-	@${PERL} -pi -e "s|%%PREFIX%%|${PREFIX}|g" ${WRKSRC}/${file}
-.endfor
 	@${REINPLACE_CMD} -e "s=%%PREFIX%%=${PREFIX}=" ${WRKSRC}/setup.sh
+
+.for file in filter/config commands/config htaccess/config
+	@${PERL} -pi -e "s|=/etc/webmin|=${PREFIX}/etc/webmin|g" ${WRKSRC}/${file}
+.endfor
+
+	@${FIND} ${WRKSRC} -name config-freebsd\* \
+		-exec ${REINPLACE_CMD} -e "s@/usr/local@${PREFIX}@g" {} \; \
+		-exec ${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@g" {} \;
+
 	@${FIND} ${WRKSRC} -name "*.cgi" -print \
 		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/local/bin/perl@#!${PERL}@"
 	@${FIND} ${WRKSRC} -name "*.cgi" -print \
@@ -51,6 +56,7 @@ post-patch:
 		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/local/bin/perl@#!${PERL}@"
 	@${FIND} ${WRKSRC} -name "*.pl" -print \
 		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/bin/perl@#!${PERL}@"
+
 	@${FIND} ${WRKSRC} -name "*.orig" -print | ${XARGS} ${RM}
 	@${FIND} ${WRKSRC} -name "*.bak" -print | ${XARGS} ${RM}
 
