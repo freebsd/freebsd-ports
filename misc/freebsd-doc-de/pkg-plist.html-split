@@ -573,6 +573,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-java.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-kde.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-lua.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-mozilla.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-perl.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-php.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-python.html
@@ -585,4 +586,4 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-xfce.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/why-port.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5549.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5605.html

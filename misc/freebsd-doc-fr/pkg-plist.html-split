@@ -547,7 +547,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/crypt.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/ctm.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/current-stable.html
-%%DOCSDIR%%/%%DOCLANG%%/books/handbook/cutting-edge.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/cvs-tags.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/cvsup.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/desktop-browsers.html
@@ -566,6 +565,11 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-naming.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks-virtual.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/disks.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/dtrace-enable.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/dtrace-implementation.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/dtrace-language.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/dtrace-using.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/dtrace.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/editors.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-email.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/eresources-news.html
@@ -738,6 +742,9 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/tcpwrappers.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/term.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/tvcard.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-freebsdupdate.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading-portsnap.html
+%%DOCSDIR%%/%%DOCLANG%%/books/handbook/updating-upgrading.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/usb-disks.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/userppp.html
 %%DOCSDIR%%/%%DOCLANG%%/books/handbook/users-groups.html

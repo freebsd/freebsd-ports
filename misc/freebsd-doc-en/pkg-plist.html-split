@@ -233,7 +233,6 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/ldap-auth/ssl-ca.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/ldap-auth/useful.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/TRADEMARKS.html
-%%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/freebsd-addenda.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/freebsd-advantages.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/freebsd-conclusion.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/linux-comparison/freebsd-features.html
@@ -320,6 +319,7 @@
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-sample-conv.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-sample-module.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/pam/pam-terms.html
+%%DOCSDIR%%/%%DOCLANG%%/articles/port-mentor-guidelines/index.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/TRADEMARKS.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/anatomy.html
 %%DOCSDIR%%/%%DOCLANG%%/articles/portbuild/build-maintenance.html
@@ -1158,4 +1158,4 @@
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-x11.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/using-xfce.html
 %%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/why-port.html
-%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5601.html
+%%DOCSDIR%%/%%DOCLANG%%/books/porters-handbook/x5575.html
