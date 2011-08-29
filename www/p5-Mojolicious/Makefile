@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mojolicious
-PORTVERSION=	1.76
+PORTVERSION=	1.92
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -30,6 +30,7 @@ MAN3=		Mojo.3 \
 		Mojo::Base.3 \
 		Mojo::ByteStream.3 \
 		Mojo::Cache.3 \
+		Mojo::Collection.3 \
 		Mojo::Command.3 \
 		Mojo::Content.3 \
 		Mojo::Content::MultiPart.3 \
@@ -40,7 +41,6 @@ MAN3=		Mojo.3 \
 		Mojo::CookieJar.3 \
 		Mojo::DOM.3 \
 		Mojo::DOM::CSS.3 \
-		Mojo::DOM::Collection.3 \
 		Mojo::DOM::HTML.3 \
 		Mojo::Date.3 \
 		Mojo::Exception.3 \
@@ -81,22 +81,24 @@ MAN3=		Mojo.3 \
 		Mojo::UserAgent::Transactor.3 \
 		Mojo::Util.3 \
 		Mojolicious.3 \
-		Mojolicious::Command::Cgi.3 \
-		Mojolicious::Command::Daemon.3 \
-		Mojolicious::Command::Eval.3 \
-		Mojolicious::Command::Fastcgi.3 \
-		Mojolicious::Command::Generate.3 \
-		Mojolicious::Command::Generate::App.3 \
-		Mojolicious::Command::Generate::Gitignore.3 \
-		Mojolicious::Command::Generate::Hypnotoad.3 \
-		Mojolicious::Command::Generate::LiteApp.3 \
-		Mojolicious::Command::Generate::Makefile.3 \
-		Mojolicious::Command::Get.3 \
-		Mojolicious::Command::Inflate.3 \
-		Mojolicious::Command::Psgi.3 \
-		Mojolicious::Command::Routes.3 \
-		Mojolicious::Command::Test.3 \
-		Mojolicious::Command::Version.3 \
+		Mojolicious::Command::cgi.3 \
+		Mojolicious::Command::cpanify.3 \
+		Mojolicious::Command::daemon.3 \
+		Mojolicious::Command::eval.3 \
+		Mojolicious::Command::fastcgi.3 \
+		Mojolicious::Command::generate.3 \
+		Mojolicious::Command::generate::app.3 \
+		Mojolicious::Command::generate::gitignore.3 \
+		Mojolicious::Command::generate::hypnotoad.3 \
+		Mojolicious::Command::generate::lite_app.3 \
+		Mojolicious::Command::generate::makefile.3 \
+		Mojolicious::Command::generate::plugin.3 \
+		Mojolicious::Command::get.3 \
+		Mojolicious::Command::inflate.3 \
+		Mojolicious::Command::psgi.3 \
+		Mojolicious::Command::routes.3 \
+		Mojolicious::Command::test.3 \
+		Mojolicious::Command::version.3 \
 		Mojolicious::Commands.3 \
 		Mojolicious::Controller.3 \
 		Mojolicious::Guides.3 \
@@ -113,13 +115,13 @@ MAN3=		Mojo.3 \
 		Mojolicious::Plugin::Charset.3 \
 		Mojolicious::Plugin::Config.3 \
 		Mojolicious::Plugin::DefaultHelpers.3 \
-		Mojolicious::Plugin::EpRenderer.3 \
-		Mojolicious::Plugin::EplRenderer.3 \
+		Mojolicious::Plugin::EPLRenderer.3 \
+		Mojolicious::Plugin::EPRenderer.3 \
 		Mojolicious::Plugin::HeaderCondition.3 \
-		Mojolicious::Plugin::I18n.3 \
-		Mojolicious::Plugin::JsonConfig.3 \
+		Mojolicious::Plugin::I18N.3 \
+		Mojolicious::Plugin::JSONConfig.3 \
 		Mojolicious::Plugin::Mount.3 \
-		Mojolicious::Plugin::PodRenderer.3 \
+		Mojolicious::Plugin::PODRenderer.3 \
 		Mojolicious::Plugin::PoweredBy.3 \
 		Mojolicious::Plugin::RequestTimer.3 \
 		Mojolicious::Plugin::TagHelpers.3 \

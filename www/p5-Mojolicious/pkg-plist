@@ -1,6 +1,4 @@
-bin/hypnotoad
-bin/mojo
-bin/morbo
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/.packlist
 %%SITE_PERL%%/Mojo.pm
 %%SITE_PERL%%/Mojo/Asset.pm
 %%SITE_PERL%%/Mojo/Asset/File.pm
@@ -8,6 +6,7 @@ bin/morbo
 %%SITE_PERL%%/Mojo/Base.pm
 %%SITE_PERL%%/Mojo/ByteStream.pm
 %%SITE_PERL%%/Mojo/Cache.pm
+%%SITE_PERL%%/Mojo/Collection.pm
 %%SITE_PERL%%/Mojo/Command.pm
 %%SITE_PERL%%/Mojo/Content.pm
 %%SITE_PERL%%/Mojo/Content/MultiPart.pm
@@ -18,7 +17,6 @@ bin/morbo
 %%SITE_PERL%%/Mojo/CookieJar.pm
 %%SITE_PERL%%/Mojo/DOM.pm
 %%SITE_PERL%%/Mojo/DOM/CSS.pm
-%%SITE_PERL%%/Mojo/DOM/Collection.pm
 %%SITE_PERL%%/Mojo/DOM/HTML.pm
 %%SITE_PERL%%/Mojo/Date.pm
 %%SITE_PERL%%/Mojo/Exception.pm
@@ -59,22 +57,24 @@ bin/morbo
 %%SITE_PERL%%/Mojo/UserAgent/Transactor.pm
 %%SITE_PERL%%/Mojo/Util.pm
 %%SITE_PERL%%/Mojolicious.pm
-%%SITE_PERL%%/Mojolicious/Command/Cgi.pm
-%%SITE_PERL%%/Mojolicious/Command/Daemon.pm
-%%SITE_PERL%%/Mojolicious/Command/Eval.pm
-%%SITE_PERL%%/Mojolicious/Command/Fastcgi.pm
-%%SITE_PERL%%/Mojolicious/Command/Generate.pm
-%%SITE_PERL%%/Mojolicious/Command/Generate/App.pm
-%%SITE_PERL%%/Mojolicious/Command/Generate/Gitignore.pm
-%%SITE_PERL%%/Mojolicious/Command/Generate/Hypnotoad.pm
-%%SITE_PERL%%/Mojolicious/Command/Generate/LiteApp.pm
-%%SITE_PERL%%/Mojolicious/Command/Generate/Makefile.pm
-%%SITE_PERL%%/Mojolicious/Command/Get.pm
-%%SITE_PERL%%/Mojolicious/Command/Inflate.pm
-%%SITE_PERL%%/Mojolicious/Command/Psgi.pm
-%%SITE_PERL%%/Mojolicious/Command/Routes.pm
-%%SITE_PERL%%/Mojolicious/Command/Test.pm
-%%SITE_PERL%%/Mojolicious/Command/Version.pm
+%%SITE_PERL%%/Mojolicious/Command/cgi.pm
+%%SITE_PERL%%/Mojolicious/Command/cpanify.pm
+%%SITE_PERL%%/Mojolicious/Command/daemon.pm
+%%SITE_PERL%%/Mojolicious/Command/eval.pm
+%%SITE_PERL%%/Mojolicious/Command/fastcgi.pm
+%%SITE_PERL%%/Mojolicious/Command/generate.pm
+%%SITE_PERL%%/Mojolicious/Command/generate/app.pm
+%%SITE_PERL%%/Mojolicious/Command/generate/gitignore.pm
+%%SITE_PERL%%/Mojolicious/Command/generate/hypnotoad.pm
+%%SITE_PERL%%/Mojolicious/Command/generate/lite_app.pm
+%%SITE_PERL%%/Mojolicious/Command/generate/makefile.pm
+%%SITE_PERL%%/Mojolicious/Command/generate/plugin.pm
+%%SITE_PERL%%/Mojolicious/Command/get.pm
+%%SITE_PERL%%/Mojolicious/Command/inflate.pm
+%%SITE_PERL%%/Mojolicious/Command/psgi.pm
+%%SITE_PERL%%/Mojolicious/Command/routes.pm
+%%SITE_PERL%%/Mojolicious/Command/test.pm
+%%SITE_PERL%%/Mojolicious/Command/version.pm
 %%SITE_PERL%%/Mojolicious/Commands.pm
 %%SITE_PERL%%/Mojolicious/Controller.pm
 %%SITE_PERL%%/Mojolicious/Guides.pod
@@ -91,13 +91,13 @@ bin/morbo
 %%SITE_PERL%%/Mojolicious/Plugin/Charset.pm
 %%SITE_PERL%%/Mojolicious/Plugin/Config.pm
 %%SITE_PERL%%/Mojolicious/Plugin/DefaultHelpers.pm
-%%SITE_PERL%%/Mojolicious/Plugin/EpRenderer.pm
-%%SITE_PERL%%/Mojolicious/Plugin/EplRenderer.pm
+%%SITE_PERL%%/Mojolicious/Plugin/EPLRenderer.pm
+%%SITE_PERL%%/Mojolicious/Plugin/EPRenderer.pm
 %%SITE_PERL%%/Mojolicious/Plugin/HeaderCondition.pm
-%%SITE_PERL%%/Mojolicious/Plugin/I18n.pm
-%%SITE_PERL%%/Mojolicious/Plugin/JsonConfig.pm
+%%SITE_PERL%%/Mojolicious/Plugin/I18N.pm
+%%SITE_PERL%%/Mojolicious/Plugin/JSONConfig.pm
 %%SITE_PERL%%/Mojolicious/Plugin/Mount.pm
-%%SITE_PERL%%/Mojolicious/Plugin/PodRenderer.pm
+%%SITE_PERL%%/Mojolicious/Plugin/PODRenderer.pm
 %%SITE_PERL%%/Mojolicious/Plugin/PoweredBy.pm
 %%SITE_PERL%%/Mojolicious/Plugin/RequestTimer.pm
 %%SITE_PERL%%/Mojolicious/Plugin/TagHelpers.pm
@@ -151,7 +151,9 @@ bin/morbo
 %%SITE_PERL%%/README.pod
 %%SITE_PERL%%/Test/Mojo.pm
 %%SITE_PERL%%/ojo.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious/.packlist
+bin/hypnotoad
+bin/mojo
+bin/morbo
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Mojolicious
 @dirrmtry %%SITE_PERL%%/Test
 @dirrm %%SITE_PERL%%/Mojolicious/templates
@@ -161,7 +163,7 @@ bin/morbo
 @dirrm %%SITE_PERL%%/Mojolicious/Routes
 @dirrmtry %%SITE_PERL%%/Mojolicious/Plugin
 @dirrm %%SITE_PERL%%/Mojolicious/Guides
-@dirrm %%SITE_PERL%%/Mojolicious/Command/Generate
+@dirrm %%SITE_PERL%%/Mojolicious/Command/generate
 @dirrm %%SITE_PERL%%/Mojolicious/Command
 @dirrmtry %%SITE_PERL%%/Mojolicious
 @dirrm %%SITE_PERL%%/Mojo/UserAgent
