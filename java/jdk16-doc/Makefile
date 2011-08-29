@@ -9,7 +9,7 @@ PORTNAME=	jdk-doc
 PORTVERSION=	${JDK_VERSION}.${JDK_UPDATE_VER}
 CATEGORIES=	java
 MASTER_SITES=	#
-DISTNAME=	jdk-6u22-docs
+DISTNAME=	jdk-6u25-fcs-bin-b04-apidocs-04_Apr_2011
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	Java Development Kit ${JDK_MAJOR_VER} Documentation
@@ -26,7 +26,7 @@ WRKSRC=		${WRKDIR}/docs
 JDK_VERSION=	1.6.0
 JDK_MAJOR_VER=	${JDK_VERSION:R}
 JDK_CONCAT_VER=	${JDK_MAJOR_VER:S/.//g}
-JDK_UPDATE_VER=	22
+JDK_UPDATE_VER=	25
 DOWNLOAD_URL=	http://www.oracle.com/technetwork/java/javase/downloads/index.html
 
 NO_BUILD=	yes
@@ -36,7 +36,7 @@ PORTDOCS=	*
 .include <bsd.port.pre.mk>
 
 .if !exists(${DISTDIR}/${DISTNAME}${EXTRACT_SUFX}) && !defined(PACKAGE_BUILDING)
-IGNORE=You must manually fetch ${DISTNAME}${EXTRACT_SUFX} from ${DOWNLOAD_URL} by selecting the \"Download Zip\" link for the \"Java SE 6 Documentation\", place it in ${DISTDIR} and then run make again
+IGNORE=You must manually fetch ${DISTNAME}${EXTRACT_SUFX} from ${DOWNLOAD_URL} by selecting the \"Download\" link for the \"Java SE 6 Documentation\", place it in ${DISTDIR} and then run make again
 .endif
 
 do-install:
