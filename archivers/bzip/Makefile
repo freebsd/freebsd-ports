@@ -20,6 +20,9 @@ MAN1=		bzip.1 bunzip.1
 
 PLIST_FILES=	bin/bzip bin/bunzip
 
+DEPRECATED=		unfetchable; use archivers/bzip2 instead
+EXPIRATION_DATE=	2011-10-28
+
 pre-install:
 	@${CAT} ${FILESDIR}/COPYRIGHT
 
