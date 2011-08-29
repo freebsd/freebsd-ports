@@ -38,6 +38,10 @@ OPTIONS=	VOODOO3 "Enable this if you have a Voodoo3 or Banshee card" off
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 900035
+BROKEN=		Does not compile on recent FreeBSD-9
+.endif
+
 .if defined(WITH_VOODOO3)
 PKGNAMESUFFIX=	-v3
 CONFIGURE_ARGS+=	--enable-fx-glide-hw=h3
