@@ -56,7 +56,7 @@ sub lastcomment();
 
 my %opts;
 
-getopts('abc:d:fh:il:L:M:mns:tu:', \%opts);
+getopts('abc:d:fh:il:L:M:mns:tu:y', \%opts);
 
 my $autofill_l = $opts{'l'};
 my $autofill_L = $opts{'L'};
@@ -76,6 +76,7 @@ my $interactive = $opts{'i'};
 my $nomkdir = $opts{'m'};
 my $addlchk = $opts{'a'};
 my $nofetch = $opts{'f'};
+my $checkexist = $opts{'y'};
 my $currentdir = abs_path(".");
 my %l10nprefix = (
 	'chinese'	=> 'zh-',
@@ -178,6 +179,38 @@ if ($dir eq "") {
 	warnx("Need to specify a directory with -d argument!");
 	usage();
 	exit 1;
+}
+
+# check the port doesn't exist already
+
+if ($checkexist) {
+	my $found = 0;
+	print ">> Checking out modules file to scan for duplicates...";
+	system("$cvs -q co -p modules > $tmpdir/modules") && errx(1, "Could not checkout CVSROOT/modules.");
+	print " [DONE]\n";
+	my @namepart;
+	foreach (split(/\,/, $dir)) {
+		s/^.*\///;
+		foreach (split(/[-_]/)) {
+			next if length () <=2 or /^rubygem$/;
+			push(@namepart, $_);
+		}
+	}
+	open(MODULES_FILE, "< $tmpdir/modules") or errx(1, "Modules file in $tmpdir unreadable.");
+	while (my $line = <MODULES_FILE>) {
+		next if $line =~ /^#/;
+		foreach my $dpart (@namepart) {
+			if ($line =~ /^[^ ]*\b$dpart\b/i) {
+				$line =~ s/\s+/ /g;
+				print "$dpart matches $line\n";
+				$found = 1;
+			}
+		}
+	}
+	if ($found) {
+		prompt ("Possible duplicates found -- still OK?")
+			and errx(1, "Investigating duplicates");
+	}
 }
 
 # make sure we're in the right place.
@@ -447,6 +480,7 @@ OPTIONS
 			for downloading distfiles.
 	-t		Do more port testing.  Requires -a.
 	-u user		Use a different username (default: $u).
+	-y		Check for similarly named ports.
 
 ENVIRONMENT VARIABLES
 	$0 supports the following environment variables:
