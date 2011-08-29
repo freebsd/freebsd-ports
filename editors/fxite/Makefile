@@ -24,10 +24,16 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lintl"
 CONFIGURE_ARGS+=--with-system-lua \
 		--with-lua-pkg=lua-${LUA_VER}
 
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} < 800067
+BROKEN=	needs getline(3)
+.endif
+
 PLIST_FILES=	bin/fxite
 
 post-patch:
 	${REINPLACE_CMD} -e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
 	   ${WRKSRC}/${CONFIGURE_SCRIPT}
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>
