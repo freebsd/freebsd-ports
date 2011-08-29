@@ -14,6 +14,8 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-src
 MAINTAINER=	acm@FreeBSD.org
 COMMENT=	The GUI administration tool for firebird database
 
+BROKEN=		invalid distinfo
+
 USE_FIREBIRD=	yes
 USE_WX=		2.8+
 WX_COMPS=	wx contrib
