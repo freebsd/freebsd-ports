@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	rssyl
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 PORTEPOCH=	4
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
@@ -15,11 +15,11 @@ PKGNAMEPREFIX=	claws-mail-
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	A RSS/Atom plugin for claws-mail
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	claws-mail>=3.7.9:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.7.9:${PORTSDIR}/mail/claws-mail
-
 LICENSE=	GPLv3
+
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+BUILD_DEPENDS=	claws-mail>=3.7.10:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.7.10:${PORTSDIR}/mail/claws-mail
 
 USE_AUTOTOOLS=	autoconf
 USE_ICONV=	yes

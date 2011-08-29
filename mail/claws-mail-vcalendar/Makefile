@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	vcalendar
-PORTVERSION=	2.0.10
+PORTVERSION=	2.0.11
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/ \
 		${MASTER_SITE_LOCAL}
@@ -16,11 +16,11 @@ PKGNAMEPREFIX=	claws-mail-
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	vCalendar plugin for claws-mail
 
-LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
-BUILD_DEPENDS=	claws-mail>=3.7.9:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.7.9:${PORTSDIR}/mail/claws-mail
-
 LICENSE=	GPLv3
+
+LIB_DEPENDS=	curl:${PORTSDIR}/ftp/curl
+BUILD_DEPENDS=	claws-mail>=3.7.10:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.7.10:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_ICONV=	yes

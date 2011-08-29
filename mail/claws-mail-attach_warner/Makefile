@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	attach_warner
-PORTVERSION=	0.2.21
+PORTVERSION=	0.2.22
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -15,10 +15,10 @@ DISTNAME=	attachwarner-${PORTVERSION}
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Not attached file warning plugin for claws-mail
 
-BUILD_DEPENDS=	claws-mail>=3.7.9:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.7.9:${PORTSDIR}/mail/claws-mail
-
 LICENSE=	GPLv3
+
+BUILD_DEPENDS=	claws-mail>=3.7.10:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.7.10:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_ICONV=	yes

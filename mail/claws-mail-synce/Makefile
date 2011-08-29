@@ -7,7 +7,7 @@
 
 PORTNAME=	synce
 PORTVERSION=	0.7.5
-PORTREVISION=	13
+PORTREVISION=	14
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -16,11 +16,11 @@ DISTNAME=	synce_plugin-${PORTVERSION}
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	Windows CE addressbook plugin for claws-mail
 
-LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2
-BUILD_DEPENDS=	claws-mail>=3.7.9:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.7.9:${PORTSDIR}/mail/claws-mail
-
 LICENSE=	GPLv3
+
+LIB_DEPENDS=	rapi.2:${PORTSDIR}/palm/synce-librapi2
+BUILD_DEPENDS=	claws-mail>=3.7.10:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.7.10:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf

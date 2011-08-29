@@ -10,6 +10,7 @@ lib/claws-mail/plugins/bsfilter.so
 %%NLS%%share/locale/id/LC_MESSAGES/bsfilter_plugin.mo
 %%NLS%%share/locale/it/LC_MESSAGES/bsfilter_plugin.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/bsfilter_plugin.mo
+%%NLS%%share/locale/lt/LC_MESSAGES/bsfilter_plugin.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/bsfilter_plugin.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/bsfilter_plugin.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/bsfilter_plugin.mo

@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	notification
-PORTVERSION=	0.27
-PORTREVISION=	1
+PORTVERSION=	0.28
 CATEGORIES=	mail
 MASTER_SITES=	http://www.claws-mail.org/downloads/plugins/
 PKGNAMEPREFIX=	claws-mail-
@@ -16,11 +15,11 @@ DISTNAME=	notification_plugin-${PORTVERSION}
 MAINTAINER=	pawel@FreeBSD.org
 COMMENT=	New/unread mail notification plugin for claws-mail
 
-LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify
-BUILD_DEPENDS=	claws-mail>=3.7.9:${PORTSDIR}/mail/claws-mail
-RUN_DEPENDS=	claws-mail>=3.7.9:${PORTSDIR}/mail/claws-mail
-
 LICENSE=	GPLv3
+
+LIB_DEPENDS=	notify:${PORTSDIR}/devel/libnotify
+BUILD_DEPENDS=	claws-mail>=3.7.10:${PORTSDIR}/mail/claws-mail
+RUN_DEPENDS=	claws-mail>=3.7.10:${PORTSDIR}/mail/claws-mail
 
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	autoconf
