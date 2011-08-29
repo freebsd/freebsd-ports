@@ -7,7 +7,7 @@
 
 PORTNAME=	kermit
 PORTVERSION=	9.0.302
-CATEGORIES=	comms
+CATEGORIES=	comms ftp net
 MASTER_SITES=	ftp://kermit.columbia.edu/kermit/archives/ \
 		ftp://ftp.icm.edu.pl/pub/kermit/archives/
 DISTNAME=	cku${PORTVERSION:E}
