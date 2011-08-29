@@ -1,48 +1,62 @@
-# New ports collection makefile for:    maia
+# Ports collection Makefile for:    maia
 # Date created:                         03 Jan 2008
 # Whom:                                 Janky Jay <ek@purplehat.org>
 #
 # $FreeBSD$
 #
-# Based on amavisd-new ports makefile.
 
 PORTNAME=	maia
-PORTVERSION=	1.0.2a
-PORTREVISION=	4
+DISTVERSION=	1.0.3-${SVNREVISION}
 CATEGORIES=	security
 MASTER_SITES=	http://www.purplehat.org/downloads/maia/
 
 MAINTAINER=	ek@purplehat.org
 COMMENT=	A web-based management system based on amavisd-new and SpamAssassin
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Unix/Syslog.pm:${PORTSDIR}/sysutils/p5-Unix-Syslog \
-		${SITE_PERL}/MIME/Parser.pm:${PORTSDIR}/mail/p5-MIME-Tools \
-		${SITE_PERL}/Convert/TNEF.pm:${PORTSDIR}/converters/p5-Convert-TNEF \
+RUN_DEPENDS=	p5-Unix-Syslog>=0.94:${PORTSDIR}/sysutils/p5-Unix-Syslog \
+		p5-MIME-Tools>=4.116:${PORTSDIR}/mail/p5-MIME-Tools \
+		p5-Convert-TNEF>=0.08:${PORTSDIR}/converters/p5-Convert-TNEF \
 		p5-Convert-UUlib>=1.08,1:${PORTSDIR}/converters/p5-Convert-UUlib \
-		${SITE_PERL}/Archive/Zip.pm:${PORTSDIR}/archivers/p5-Archive-Zip \
-		${SITE_PERL}/IO/Wrap.pm:${PORTSDIR}/devel/p5-IO-stringy \
-		${SITE_PERL}/IO/Socket/INET6.pm:${PORTSDIR}/net/p5-IO-Socket-INET6 \
-		${SITE_PERL}/${PERL_ARCH}/Data/UUID.pm:${PORTSDIR}/devel/p5-Data-UUID \
-		${SITE_PERL}/${PERL_ARCH}/Template.pm:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-Net-CIDR-Lite>=0.18:${PORTSDIR}/net/p5-Net-CIDR-Lite \
+		p5-Archive-Zip>=0.10:${PORTSDIR}/archivers/p5-Archive-Zip \
+		p5-IO-stringy>=1.203:${PORTSDIR}/devel/p5-IO-stringy \
+		p5-IO-Socket-INET6>=1.27:${PORTSDIR}/net/p5-IO-Socket-INET6 \
+		p5-Text-CSV>=1.02:${PORTSDIR}/textproc/p5-Text-CSV \
+		p5-Data-UUID>=1.148:${PORTSDIR}/devel/p5-Data-UUID \
+		p5-Template-Toolkit>=2.13:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-Net-Server>=0.93:${PORTSDIR}/net/p5-Net-Server
 
+# SVN source: https://www.maiamailguard.com/svn/branches/1.0
+SVNREVISION=	r1575
+WRKSRC=		${WRKDIR}/${PORTNAME}-1.0-${SVNREVISION}
 USE_PERL5_RUN=	5.8.2+
-
 NO_BUILD=	yes
 
-DOCS=	LICENSE README amavisd.conf.dist maia-mysql.sql maia-pgsql.sql maia.conf.dist
+DOCS=	LICENSE README maiad.conf.dist maia-mysql.sql maia-pgsql.sql maia.conf.dist
 
-MAIAUSER?=	vscan
-MAIAGROUP?=	vscan
-MAIADIR?=	/var/amavisd
-MAIAQUARANTINE?=	/var/amavisd/virusmails
+USERS=	vscan
+GROUPS=	vscan
+MAIADIR?=	/var/maiad
+MAIAQUARANTINE?=	/var/maiad/virusmails
+PEAR_DIR?=	${LOCALBASE}/share/pear
 
-OPTIONS=	BDB	"Use BerkeleyDB"	on \
-		MYSQL	"Use MySQL"		on \
-		PGSQL	"Use PgSQL"		off \
+OPTIONS=	APACHE	"Use Apache web server"	off\
+		LIGHTTPD	"Use LighTTPD web server"	off \
+		WEBHOST	"PHP, PEAR, etc... for Maia web interface"	off \
+		MYSQL	"Use MySQL datebase"		on \
+		MYSQLSERVER	"Install MySQL Server"	on \
+		PGSQL	"Use PgSQL database"		off \
+		PGSQLSERVER	"Install PGSQL Server"	off \
+		DOVECOT	"Use Dovecot IMAP/POP3"	on \
+		POSTFIX	"Use Postfix MTA"	on \
+		PFA	"Use Postfixadmin"	off \
+		FUZZYOCR	"Use FuzzyOcr"	off \
+		CLAMAV	"Use ClamAV anti-virus"	on \
 		SPAMASSASSIN	"Use SpamAssassin"	on \
+		GRAPHICS	"Enable pie chart stats"	off \
+		BDB	"Use BerkeleyDB"	on \
 		ALTERMIME	"Use AlterMime"	off \
-		CRYPT	"Encryption support"	on \
+		CRYPT	"Encryption support"	off \
 		IPCOUNTRY	"SpamAssassin IP Country plugin"	on \
 		DOMAINKEYS	"SpamAssassin DomainKey plugin"	on \
 		SPFQUERY	"SpamAssassin SPF Query plugin"	on \
@@ -58,44 +72,115 @@ OPTIONS=	BDB	"Use BerkeleyDB"	on \
 		RPM	"RPM support with archivers/rpm2cpio"	on \
 		ZOO	"ZOO support with archivers/zoo"	on \
 		UNZOO	"ZOO support with archivers/unzoo"	off \
-		LZOP	"LZOP support with archivers/lzop"	on \
+		LZOP	"LZOP support with archivers/lzop"	off \
 		FREEZE	"FREEZE support with archivers/freeze"	on \
 		P7ZIP	"P7ZIP support with archivers/p7zip"	on \
-		TNEF	"Add external tnef decoder converters/tnef"	off
+		TNEF	"Add external tnef decoder"	off
 
 SUB_FILES=	pkg-install pkg-deinstall pkg-message
-
-SUB_LIST+=	MAIAUSER=${MAIAUSER} \
-		MAIAGROUP=${MAIAGROUP} \
+SUB_LIST+=	MAIAUSER=${USERS} \
+		MAIAGROUP=${GROUPS} \
 		MAIADIR=${MAIADIR} \
 		MAIAQUARANTINE=${MAIAQUARANTINE}
+USE_RC_SUBR+=	maiad
+
+.include <bsd.port.options.mk>
+
+# Code is a bit fiddly here; we can't use USE variables after pre.mk so we have
+# to duplicate some WITH_ parts like WEBHOST that use pre.mk vars as well as
+# setting USE_ variables. C'est la vie.
+
+.if defined(WITH_APACHE)
+USE_APACHE=	2.0+
+.endif
+
+.if defined(WITH_WEBHOST)
+USE_PHP=	bcmath ctype dom gettext hash iconv imap json mbstring \
+		mcrypt pdo pdo_sqlite posix session simplexml sockets \
+		sqlite tokenizer xml wddx xmlreader xmlwriter xmlrpc
+.endif
+
+.if defined(WITH_MYSQL)
+USE_MYSQL=	yes
+USE_PHP+=	mysql mysqli
+.endif
+
+.if defined(WITH_PGSQL)
+USE_PGSQL=	yes
+USE_PHP+=	pgsql
+.endif
 
 .include <bsd.port.pre.mk>
 
-.if ${PERL_LEVEL} < 500903
-RUN_DEPENDS+=	p5-IO-Compress>=2.017:${PORTSDIR}/archivers/p5-IO-Compress
+.if defined(WITH_LIGHTTPD)
+RUN_DEPENDS+=	lighttpd:${PORTSDIR}/www/lighttpd
 .endif
 
-USE_RC_SUBR+=	maia.sh
-
-.if defined(WITH_BDB)
-RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
+.if defined(WITH_WEBHOST)
+RUN_DEPENDS+=	${PEAR_DIR}/Mail/mime.php:${PORTSDIR}/mail/pear-Mail_Mime \
+		${PEAR_DIR}/Mail/mimeDecode.php:${PORTSDIR}/mail/pear-Mail_mimeDecode \
+		${PEAR_DIR}/DB.php:${PORTSDIR}/databases/pear-DB \
+		${PEAR_DIR}/Pager/Pager.php:${PORTSDIR}/devel/pear-Pager \
+		${PEAR_DIR}/Net/Socket.php:${PORTSDIR}/net/pear-Net_Socket \
+		${PEAR_DIR}/Net/SMTP.php:${PORTSDIR}/net/pear-Net_SMTP \
+		${PEAR_DIR}/Log.php:${PORTSDIR}/sysutils/pear-Log \
+		${LOCALBASE}/share/smarty/Smarty.class.php:${PORTSDIR}/www/smarty
 .endif
 
 .if defined(WITH_MYSQL)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
 .endif
 
+.if defined(WITH_MYSQLSERVER)
+RUN_DEPENDS+=	${LOCALBASE}/bin/mysqld_safe:${PORTSDIR}/databases/mysql55-server
+.endif
+
 .if defined(WITH_PGSQL)
 RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/DBD/Pg.pm:${PORTSDIR}/databases/p5-DBD-Pg
+.endif
+
+.if defined(WITH_PGSQLSERVER)
+RUN_DEPENDS+=	${LOCALBASE}/bin/pg_ctl:${PORTSDIR}/databases/postgresql84-server
+.endif
+
+.if defined(WITH_DOVECOT)
+RUN_DEPENDS+=	dovecot:${PORTSDIR}/mail/dovecot
+.endif
+
+.if defined(WITH_POSTFIX)
+RUN_DEPENDS+=	postfix:${PORTSDIR}/mail/postfix
+.endif
+
+.if defined(WITH_PFA)
+RUN_DEPENDS+=	${LOCALBASE}/www/postfixadmin/config.inc.php:${PORTSDIR}/mail/postfixadmin
+.endif
+
+.if defined(WITH_FUZZYOCR)
+RUN_DEPENDS+=	${SITE_PERL}/Mail/SpamAssassin/Plugin/FuzzyOcr.pm:${PORTSDIR}/mail/p5-FuzzyOcr-devel
+.endif
+
+.if defined(WITH_CLAMAV)
+RUN_DEPENDS+=	clamd:${PORTSDIR}/security/clamav
 .endif
 
 .if defined(WITH_SPAMASSASSIN)
 RUN_DEPENDS+=	${SITE_PERL}/Mail/SpamAssassin.pm:${PORTSDIR}/mail/p5-Mail-SpamAssassin
 .endif
 
+.if defined(WITH_GRAPHICS)
+RUN_DEPENDS+=	${PEAR_DIR}/Image/Color.php:${PORTSDIR}/graphics/pear-Image_Color \
+		${PEAR_DIR}/Image/Canvas.php:${PORTSDIR}/graphics/pear-Image_Canvas \
+		${PEAR_DIR}/Image/Graph.php:${PORTSDIR}/graphics/pear-Image_Graph \
+		${PEAR_DIR}/Numbers/Roman.php:${PORTSDIR}/textproc/pear-Numbers_Roman \
+		${PEAR_DIR}/Numbers/Words.php:${PORTSDIR}/textproc/pear-Numbers_Words
+.endif
+
+.if defined(WITH_BDB)
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/BerkeleyDB.pm:${PORTSDIR}/databases/p5-BerkeleyDB
+.endif
+
 .if defined(WITH_ALTERMIME)
-RUN_DEPENDS+=	${LOCALBASE}/bin/altermime:${PORTSDIR}/mail/altermime
+RUN_DEPENDS+=	altermime:${PORTSDIR}/mail/altermime
 .endif
 
 .if defined(WITH_CRYPT)
@@ -113,7 +198,7 @@ RUN_DEPENDS+=	${SITE_PERL}/Mail/DomainKeys.pm:${PORTSDIR}/mail/p5-Mail-DomainKey
 .endif
 
 .if defined(WITH_SPFQUERY)
-RUN_DEPENDS+=	${SITE_PERL}/Mail/SPF/Query.pm:${PORTSDIR}/mail/p5-Mail-SPF-Query
+RUN_DEPENDS+=	${SITE_PERL}/Mail/SPF.pm:${PORTSDIR}/mail/p5-Mail-SPF
 .endif
 
 .if defined(WITH_FILE)
@@ -124,42 +209,41 @@ RUN_DEPENDS+=	file>=4.21:${PORTSDIR}/sysutils/file
 # archviers/rar is a 32-bit binary port, we don't want the install to fail
 # at that port, therefore we will block instantly here if the platform does
 # not suit rar.
-
 .if defined(WITH_RAR)
 IA32_BINARY_PORT=	yes
-RUN_DEPENDS+=	${LOCALBASE}/bin/rar:${PORTSDIR}/archivers/rar
+RUN_DEPENDS+=	rar:${PORTSDIR}/archivers/rar
 .endif
 
 .if defined(WITH_UNRAR)
-RUN_DEPENDS+=	${LOCALBASE}/bin/unrar:${PORTSDIR}/archivers/unrar
+RUN_DEPENDS+=	unrar:${PORTSDIR}/archivers/unrar
 .endif
 
 .if defined(WITH_ARJ)
-RUN_DEPENDS+=	${LOCALBASE}/bin/arj:${PORTSDIR}/archivers/arj
+RUN_DEPENDS+=	arj:${PORTSDIR}/archivers/arj
 .endif
 
 .if defined(WITH_UNARJ)
-RUN_DEPENDS+=	${LOCALBASE}/bin/unarj:${PORTSDIR}/archivers/unarj
+RUN_DEPENDS+=	unarj:${PORTSDIR}/archivers/unarj
 .endif
 
 .if defined(WITH_LHA)
-RUN_DEPENDS+=	${LOCALBASE}/bin/lha:${PORTSDIR}/archivers/lha
+RUN_DEPENDS+=	lha:${PORTSDIR}/archivers/lha
 .endif
 
 .if defined(WITH_ARC)
-RUN_DEPENDS+=	${LOCALBASE}/bin/arc:${PORTSDIR}/archivers/arc
+RUN_DEPENDS+=	arc:${PORTSDIR}/archivers/arc
 .endif
 
 .if defined(WITH_NOMARCH)
-RUN_DEPENDS+=	${LOCALBASE}/bin/nomarch:${PORTSDIR}/archivers/nomarch
+RUN_DEPENDS+=	nomarch:${PORTSDIR}/archivers/nomarch
 .endif
 
 .if defined(WITH_CAB)
-RUN_DEPENDS+=	${LOCALBASE}/bin/cabextract:${PORTSDIR}/archivers/cabextract
+RUN_DEPENDS+=	cabextract:${PORTSDIR}/archivers/cabextract
 .endif
 
 .if defined(WITH_RPM)
-RUN_DEPENDS+=	${LOCALBASE}/bin/rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
+RUN_DEPENDS+=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 .endif
 
 .if defined(WITH_ZOO)
@@ -172,82 +256,86 @@ RUN_DEPENDS+=	unzoo>=4.4_1:${PORTSDIR}/archivers/unzoo
 .endif
 
 .if defined(WITH_LZOP)
-RUN_DEPENDS+=	${LOCALBASE}/bin/lzop:${PORTSDIR}/archivers/lzop
+RUN_DEPENDS+=	lzop:${PORTSDIR}/archivers/lzop
 .endif
 
 .if defined(WITH_FREEZE)
-RUN_DEPENDS+=	${LOCALBASE}/bin/unfreeze:${PORTSDIR}/archivers/freeze
+RUN_DEPENDS+=	unfreeze:${PORTSDIR}/archivers/freeze
 .endif
 
 .if defined(WITH_P7ZIP)
-RUN_DEPENDS+=	${LOCALBASE}/bin/7zr:${PORTSDIR}/archivers/p7zip
+RUN_DEPENDS+=	7zr:${PORTSDIR}/archivers/p7zip
 .endif
 
 .if defined(WITH_TNEF)
-RUN_DEPENDS+=	${LOCALBASE}/bin/tnef:${PORTSDIR}/converters/tnef
+RUN_DEPENDS+=	tnef:${PORTSDIR}/converters/tnef
 .endif
 
 post-patch:
-.for f in amavisd.conf.dist amavisd-maia
+.for f in maiad.conf.dist maiad
 	@${REINPLACE_CMD} "s@'zoo'\]@['zoo','unzoo'] ]@" ${WRKSRC}/${f}
 .endfor
-.for i in amavisd.conf.dist amavisd-maia
-	@${REINPLACE_CMD} -e "s|$daemon_user  = \'amavis\';|$daemon_user  = \'${MAIAUSER}\';|" \
-		-e "s|$daemon_group = \'amavis\';|$daemon_group = \'${MAIAGROUP}\';|" \
-		-e 's|$$log_level = 0;|$$log_level = 1;|' \
-		-e 's|/etc/amavisd.conf|${PREFIX}/etc/amavisd.conf|' \
-		-e "s|/var/virusmails|${MAIAQUARANTINE}|" ${WRKSRC}/${i}
+.for i in maiad.conf.dist maiad
+	@${REINPLACE_CMD} -e "s|$daemon_user  = \'amavis\';|$daemon_user  = \'${USERS}\';|" \
+	    -e "s|$daemon_group = \'amavis\';|$daemon_group = \'${GROUPS}\';|" \
+	    -e 's|$$log_level = 0;|$$log_level = 1;|' \
+	    -e 's|/etc/maiad.conf|${PREFIX}/etc/maiad.conf|' \
+	    -e "s|/var/virusmails|${MAIAQUARANTINE}|" ${WRKSRC}/${i}
 .endfor
-.for f in amavisd-maia amavisd.conf.dist maia.conf.dist scripts/send-quarantine-digests.pl \
+.for f in maiad maiad.conf.dist maia.conf.dist scripts/send-quarantine-digests.pl \
 	scripts/process-quarantine.pl scripts/load-sa-rules.pl
-		@${REINPLACE_CMD} "s|/var/amavisd|${MAIADIR}|" ${WRKSRC}/${f}
+		@${REINPLACE_CMD} "s|/var/maiad|${MAIADIR}|" ${WRKSRC}/${f}
 .endfor
 .for i in maia.conf.dist scripts/expire-quarantine-cache.pl scripts/stats-snapshot.pl \
 	scripts/maiadbtool.pl scripts/configtest.pl scripts/send-quarantine-reminders.pl \
 	scripts/send-quarantine-digests.pl scripts/process-quarantine.pl \
-	scripts/load-sa-rules.pl scripts/process-quarantine-sub.pl
+	scripts/load-sa-rules.pl
 		@${REINPLACE_CMD} "s|/etc/maia.conf|${PREFIX}/etc/maia.conf|" ${WRKSRC}/${i}
 .endfor
 
 pre-install:
-	${FIND} ${WRKSRC} -name '*.bak' -delete
+	@${FIND} -E ${WRKSRC} -iregex '.*(bak|~)$$' -delete
 	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
 
 do-install:
 	@${INSTALL} -d ${WWWDIR}
-	cd ${WRKSRC}/php && ${FIND} . | ${CPIO} --quiet -pdm -L ${WWWDIR}
-	cd ${WRKSRC}/scripts && ${FIND} . | ${CPIO} --quiet -pdm -L ${MAIADIR}/maia/scripts
-	cd ${WRKSRC}/templates && ${FIND} . | ${CPIO} --quiet -pdm -L ${MAIADIR}/maia/templates
+	@cd ${WRKSRC}/php && ${FIND} . | ${CPIO} --quiet -pdm -L ${WWWDIR}
+	@cd ${WRKSRC}/scripts && ${FIND} . | ${CPIO} --quiet -pdm -L ${MAIADIR}/maia/scripts
+	@cd ${WRKSRC}/templates && ${FIND} . | ${CPIO} --quiet -pdm -L ${MAIADIR}/maia/templates
 
-.for i in amavisd-maia
-	${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/sbin
+.for i in maiad
+	@${INSTALL_SCRIPT} ${WRKSRC}/${i} ${PREFIX}/sbin
 .endfor
-	${INSTALL_SCRIPT} -m 640 ${WRKSRC}/amavisd.conf.dist ${PREFIX}/etc/amavisd.conf.dist
-	${INSTALL_SCRIPT} -m 640 ${WRKSRC}/maia.conf.dist ${PREFIX}/etc/maia.conf.dist
+	@${INSTALL_SCRIPT} -m 640 ${WRKSRC}/maiad.conf.dist ${PREFIX}/etc/maiad.conf.dist
+	@${INSTALL_SCRIPT} -m 640 ${WRKSRC}/maia.conf.dist ${PREFIX}/etc/maia.conf.dist
 #
 #  This can contain sensitive information, e.g. SQL passwords, so it should be handled
 #  with care.
 #
 .if !exists(${PREFIX}/www/${PORTNAME}/config.php)
-	${INSTALL} -o ${WWWOWN} -g ${WWWGRP} -m 640 ${WRKSRC}/php/config.php.dist \
+	@${INSTALL} -o ${WWWOWN} -g ${WWWGRP} -m 640 \
+		${WRKSRC}/php/config.php.dist \
 		${PREFIX}/www/${PORTNAME}/config.php
 .endif
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
 .for i in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
+	@${INSTALL_DATA} ${WRKSRC}/${i} ${DOCSDIR}
 .endfor
 .endif
+
 post-install:
-	@if [ ! -f ${PREFIX}/etc/amavisd.conf ]; then \
-	${CP} -p ${PREFIX}/etc/amavisd.conf.dist ${PREFIX}/etc/amavisd.conf ; fi
-	@if [ ! -f ${PREFIX}/etc/maia.conf ]; then \
-	${CP} -p ${PREFIX}/etc/maia.conf.dist ${PREFIX}/etc/maia.conf ; fi
+.for maiaconf in maia maiad
+	@if [ ! -f ${PREFIX}/etc/${maiaconf}.conf ]; then \
+		${CP} -p ${PREFIX}/etc/${maiaconf}.conf.dist \
+		${PREFIX}/etc/${maiaconf}.conf ; \
+	fi
+.endfor
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
-	@${CHOWN} -R ${MAIAUSER}:${MAIAGROUP} ${MAIADIR}/
+	@${CHOWN} -R ${USERS}:${GROUPS} ${MAIADIR}/
 	@${ECHO_CMD} '@exec ${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}' >> ${TMPPLIST}
-	@${ECHO_CMD} '@exec ${CHOWN} -R ${MAIAUSER}:${MAIAGROUP} ${MAIADIR}' >> ${TMPPLIST}
-	${LN} -s ${PREFIX}/share/smarty ${PREFIX}/www/${PORTNAME}/libs/Smarty
+	@${ECHO_CMD} '@exec ${CHOWN} -R ${USERS}:${GROUPS} ${MAIADIR}' >> ${TMPPLIST}
+	@${LN} -s ${PREFIX}/share/smarty ${PREFIX}/www/${PORTNAME}/libs/Smarty
 	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
