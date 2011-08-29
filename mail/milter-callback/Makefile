@@ -14,6 +14,8 @@ MASTER_SITES=	http://unix.zhegan.in/distfiles/ \
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Milter to perform a envelope-from sender verification on target MX
 
+LICENSE=	GPLv3
+
 USE_BZIP2=	yes
 USE_RC_SUBR=	milter-callback
 
