@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	telak
-PORTVERSION=	0.5
-PORTREVISION=	14
+PORTVERSION=	0.6
 CATEGORIES=	graphics
 MASTER_SITES=	http://julien.danjou.info/telak/ \
 		CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A tool to draw pictures on your root window
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl \
 		gcrypt.18:${PORTSDIR}/security/libgcrypt
@@ -24,8 +25,6 @@ MAKE_JOBS_SAFE=	yes
 
 ALL_TARGET=	${PORTNAME}
 MAKE_ENV=	LDFLAGS="${LDFLAGS}"
-
-LICENSE=	GPLv2
 
 PLIST_FILES=	bin/telak
 MAN1=		telak.1
