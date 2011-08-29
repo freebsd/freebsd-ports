@@ -9,8 +9,7 @@ PORTNAME=	AquaGatekeeper
 PORTVERSION=	1.22
 PORTREVISION=	4
 CATEGORIES=	net
-MASTER_SITES=	ftp://ftp.svzserv.kemerovo.su/pub/FreeBSD/distfiles.misc/ \
-		ftp://www.kuzbass.ru/pub/FreeBSD/ports/distfiles/
+MASTER_SITES=	ftp://www.kuzbass.ru/pub/FreeBSD/ports/distfiles/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@grosbein.pp.ru
@@ -27,6 +26,10 @@ SUB_FILES=	pkg-message
 STRIP=
 STRIP_CMD=	${TRUE}
 DEPRECATED=	Binary port of software abandoned by the vendor
+
+BROKEN=		unfetchable
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=	2011-10-28
 
 .if !defined(BATCH) && !defined(PACKAGE_BUILDING)
 IS_INTERACTIVE=	yes
