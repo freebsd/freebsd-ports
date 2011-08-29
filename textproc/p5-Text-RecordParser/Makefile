@@ -5,10 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	Text-RecordParser
-PORTVERSION=	1.4.0
+PORTVERSION=	1.5.0
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Read record-oriented files
@@ -19,7 +20,7 @@ BUILD_DEPENDS=	${SITE_PERL}/IO/Scalar.pm:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
 		p5-version>=0:${PORTSDIR}/devel/p5-version
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_MODBUILD=	5.8.0+
 
