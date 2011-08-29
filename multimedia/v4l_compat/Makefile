@@ -9,10 +9,11 @@ PORTNAME=	v4l_compat
 PORTVERSION=	1.0.${DUMMYDATE}
 CATEGORIES=	multimedia
 MASTER_SITES=	LOCAL/kwm
-DUMMYDATE=	20110603
 
 MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Video4Linux IOCTL header files
+
+DUMMYDATE=	20110720
 
 NO_BUILD=	yes
 BASE_HEADERS=	input.h uinput.h videodev.h videodev2.h
