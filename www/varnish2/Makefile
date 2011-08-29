@@ -13,6 +13,7 @@ MASTER_SITES=	http://repo.varnish-cache.org/source/
 MAINTAINER=	anders@FreeBSD.org
 COMMENT=	The Varnish high-performance HTTP accelerator
 
+LATEST_LINK=	varnish2
 LICENSE=	BSD
 
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
