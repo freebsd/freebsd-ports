@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	xmp
-PORTVERSION=	3.4.0
+PORTVERSION=	3.4.1
 PORTEPOCH=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF
@@ -34,6 +34,8 @@ OPTIONS=	ALSA    "ALSA output driver" off \
 		XMMS	"XMMS plugin" off
 
 MAKE_JOBS_SAFE=	yes
+
+CFLAGS+=	-I${LOCALBASE}/include
 
 .include <bsd.port.pre.mk>
 
