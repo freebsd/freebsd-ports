@@ -1,0 +1,85 @@
+--- ./include/platform.h
++++ ./include/platform.h
+@@ -417,6 +417,8 @@ typedef unsigned smalluint;
+ # undef HAVE_STRVERSCMP
+ # undef HAVE_XTABS
+ # undef HAVE_DPRINTF
++# undef HAVE_UNLOCKED_STDIO
++# undef HAVE_UNLOCKED_LINE_OPS
+ #endif
+ 
+ #if defined(__FreeBSD__)
+--- ./libbb/getpty.c
++++ ./libbb/getpty.c
+@@ -19,20 +19,22 @@ int FAST_FUNC xgetpty(char *line)
+ 	if (p > 0) {
+ 		grantpt(p); /* chmod+chown corresponding slave pty */
+ 		unlockpt(p); /* (what does this do?) */
+-#ifndef HAVE_PTSNAME_R
+-		const char *name;
+-		name = ptsname(p); /* find out the name of slave pty */
+-		if (!name) {
+-			bb_perror_msg_and_die("ptsname error (is /dev/pts mounted?)");
++# ifndef HAVE_PTSNAME_R
++		{
++			const char *name;
++			name = ptsname(p); /* find out the name of slave pty */
++			if (!name) {
++				bb_perror_msg_and_die("ptsname error (is /dev/pts mounted?)");
++			}
++			safe_strncpy(line, name, GETPTY_BUFSIZE);
+ 		}
+-		safe_strncpy(line, name, GETPTY_BUFSIZE);
+-#else
++# else
+ 		/* find out the name of slave pty */
+ 		if (ptsname_r(p, line, GETPTY_BUFSIZE-1) != 0) {
+ 			bb_perror_msg_and_die("ptsname error (is /dev/pts mounted?)");
+ 		}
+ 		line[GETPTY_BUFSIZE-1] = '\0';
+-#endif
++# endif
+ 		return p;
+ 	}
+ #else
+--- ./libbb/match_fstype.c
++++ ./libbb/match_fstype.c
+@@ -10,6 +10,8 @@
+  * Licensed under GPLv2 or later, see file LICENSE in this source tree.
+  */
+ 
+ #include "libbb.h"
+ 
++#ifdef HAVE_MNTENT_H
++
+ int FAST_FUNC match_fstype(const struct mntent *mt, const char *t_fstype)
+@@ -40,3 +42,5 @@ int FAST_FUNC match_fstype(const struct 
+ 
+ 	return !match;
+ }
++
++#endif /* HAVE_MNTENT_H */
+--- ./libbb/udp_io.c
++++ ./libbb/udp_io.c
+@@ -13,7 +13,7 @@
+  * We don't check for errors here. Not supported == won't be used
+  */
+ void FAST_FUNC
+-socket_want_pktinfo(int fd)
++socket_want_pktinfo(int fd UNUSED_PARAM)
+ {
+ #ifdef IP_PKTINFO
+ 	setsockopt(fd, IPPROTO_IP, IP_PKTINFO, &const_int_1, sizeof(int));
+--- ./miscutils/less.c
++++ ./miscutils/less.c
+@@ -721,8 +721,8 @@ static void print_found(const char *line
+ 	while (match_status == 0) {
+ 		char *new = xasprintf("%s%.*s"HIGHLIGHT"%.*s"NORMAL,
+ 				growline ? growline : "",
+-				match_structs.rm_so, str,
+-				match_structs.rm_eo - match_structs.rm_so,
++				(int)match_structs.rm_so, str,
++				(int)(match_structs.rm_eo - match_structs.rm_so),
+ 						str + match_structs.rm_so);
+ 		free(growline);
+ 		growline = new;
