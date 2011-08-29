@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	webmin
-PORTVERSION=	1.550
+PORTVERSION=	1.560
 CATEGORIES=	sysutils
 MASTER_SITES=	http://download.webmin.com/updates/:up \
 		SF/webadmin/${PORTNAME}/${PORTVERSION}:sf \
@@ -26,9 +26,11 @@ USE_RC_SUBR=	webmin.sh
 SUB_LIST=	PERL5=${PERL}
 SUB_FILES=	pkg-message
 
-WEBMIN_MODULES=
+WEBMIN_MODULES=	backup-config-1.560-2.wbm.gz \
+		init-1.560-2.wbm.gz
 
 post-extract:
+	@${RM} -f ${WRKSRC}/mount/freebsd-mounts-?
 	@if [ "${WEBMIN_MODULES}" != "" ]; then \
 		for webmin_module in ${WEBMIN_MODULES}; do \
 			${ECHO} "===> Unpacking updated module: $${webmin_module}"; \
@@ -37,32 +39,23 @@ post-extract:
 	fi
 
 post-patch:
-.for file in	config-freebsd apache/config-freebsd \
-		bind8/config-freebsd-2.1-2.2 \
-		dhcpd/config-freebsd frox/config-freebsd \
-		heartbeat/config-freebsd logrotate/config-freebsd \
-		majordomo/config mysql/config-freebsd \
-		postfix/config-freebsd postgresql/config-freebsd \
-		procmail/config-freebsd proftpd/config-freebsd \
-		samba/config-freebsd sentry/config-freebsd-4.10 \
-		sentry/config-freebsd-4.9 sentry/config-freebsd-5.0-\* \
-		spam/config-freebsd squid/config-freebsd \
-		stunnel/config usermin/config webalizer/config-freebsd \
-		wuftpd/config-freebsd xinetd/config-freebsd
-	@${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/${file}
-.endfor
 	@${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@g" ${WRKSRC}/setup.sh
-	@${FIND} ${WRKSRC} -name "*.cgi" -print \
-		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/local/bin/perl@#!${PERL}@"
-	@${FIND} ${WRKSRC} -name "*.cgi" -print \
-		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/bin/perl@#!${PERL}@"
-	@${FIND} ${WRKSRC} -name "*.pl" -print \
-		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/local/bin/perl@#!${PERL}@"
-	@${FIND} ${WRKSRC} -name "*.pl" -print \
-		| ${XARGS} ${REINPLACE_CMD} -e "s@#!/usr/bin/perl@#!${PERL}@"
-	@${FIND} ${WRKSRC} -name "*.orig" -print | ${XARGS} ${RM}
-	@${FIND} ${WRKSRC} -name "*.bak" -print | ${XARGS} ${RM}
-	@${RM} ${WRKSRC}/mount/freebsd-mounts-?
+
+	@${FIND} ${WRKSRC} -name config-freebsd\* \
+		-exec ${REINPLACE_CMD} -e "s@/usr/local@${PREFIX}@g" {} \; \
+		-exec ${REINPLACE_CMD} -e "s@%%PREFIX%%@${PREFIX}@g" {} \;
+
+	@${FIND} ${WRKSRC} -name "*.cgi" -exec \
+		${REINPLACE_CMD} -e "s@#!/usr/local/bin/perl@#!${PERL}@" {} \;
+	@${FIND} ${WRKSRC} -name "*.cgi" -exec \
+		${REINPLACE_CMD} -e "s@#!/usr/bin/perl@#!${PERL}@" {} \;
+	@${FIND} ${WRKSRC} -name "*.pl" -exec \
+		${REINPLACE_CMD} -e "s@#!/usr/local/bin/perl@#!${PERL}@" {} \;
+	@${FIND} ${WRKSRC} -name "*.pl" -exec \
+		${REINPLACE_CMD} -e "s@#!/usr/bin/perl@#!${PERL}@" {} \;
+
+	@${FIND} ${WRKSRC} -name "*.orig" -delete
+	@${FIND} ${WRKSRC} -name "*.bak" -delete
 
 do-build:
 	@${CC} ${CFLAGS} -o ${WRKSRC}/mount/freebsd-mounts-7 ${WRKSRC}/mount/freebsd-mounts-7.c
