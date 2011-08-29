@@ -7,13 +7,14 @@
 #
 
 PORTNAME=	trophy
-PORTVERSION=	1.1.5
-PORTREVISION=	1
+PORTVERSION=	1.1.7
 CATEGORIES=	games
 MASTER_SITES=	SF
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A single player racing game
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	clanCore-0.8:${PORTSDIR}/devel/clanlib
 
