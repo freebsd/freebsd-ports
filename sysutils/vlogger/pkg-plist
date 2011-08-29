@@ -1,0 +1,5 @@
+bin/vlogger
+share/examples/vlogger/vlogger-dbi.conf
+share/vlogger/mysql_create.sql
+@dirrmtry share/examples/vlogger
+@dirrmtry share/vlogger

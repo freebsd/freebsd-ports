@@ -923,6 +923,7 @@
     SUBDIR += vii
     SUBDIR += vils
     SUBDIR += virtualmin
+    SUBDIR += vlogger
     SUBDIR += vobcopy
     SUBDIR += vordog
     SUBDIR += vstrip
