@@ -16,7 +16,10 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A portable BSD-licensed compiler suite
 
 CONFLICTS=	swi-pl* slffea-* tcc-*
-ONLY_FOR_ARCHS=	i386 alpha
+ONLY_FOR_ARCHS=	i386
+
+DEPRECATED=		website disappeared; only the FTP archives remain; last release 2006
+EXPIRATION_DATE=	2011-10-28
 
 DIST_SUBDIR=	${PKGBASE}
 MANCOMPRESSED=	yes
@@ -28,8 +31,8 @@ TENDRA_ARCH=	${ARCH:S/i386/80x86/}
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 700000
-#BROKEN=		does not build
+.if ${OSVERSION} >= 900035
+BROKEN=		Does not compile on recent FreeBSD-9
 .endif
 
 .if ${ARCH} == "i386"
