@@ -608,6 +608,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/autobackup.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/autobackup.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/autobackup.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/autoimporterexporter.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/autoimporterexporter.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/autoimporterexporter.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/autosaver.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/autosaver.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/autosaver.pyo
@@ -650,6 +653,15 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/templatelist.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/templatelist.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/templatelist.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/todotxt/__init__.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/todotxt/__init__.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/todotxt/__init__.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/todotxt/reader.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/todotxt/reader.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/todotxt/reader.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/todotxt/writer.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/todotxt/writer.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/todotxt/writer.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/xml/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/xml/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/xml/__init__.pyo
@@ -662,6 +674,9 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/xml/writer.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/xml/writer.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/xml/writer.pyo
+%%PYTHON_SITELIBDIR%%/taskcoachlib/platform.py
+%%PYTHON_SITELIBDIR%%/taskcoachlib/platform.pyc
+%%PYTHON_SITELIBDIR%%/taskcoachlib/platform.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt/__init__.pyo
@@ -977,9 +992,6 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/calendarwidget.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/calendarwidget.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/calendarwidget.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/colorselect.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/colorselect.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/colorselect.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/conflict.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/conflict.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/conflict.pyo
@@ -1040,9 +1052,6 @@ bin/taskcoach
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/treectrl.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/treectrl.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/treectrl.pyo
-%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/ultimatetreectrl.py
-%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/ultimatetreectrl.pyc
-%%PYTHON_SITELIBDIR%%/taskcoachlib/widgets/ultimatetreectrl.pyo
 %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/__init__.py
 %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/__init__.pyc
 %%PYTHON_SITELIBDIR%%/taskcoachlib/workarounds/__init__.pyo
@@ -1071,6 +1080,7 @@ share/pixmaps/taskcoach.png
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/syncml
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/powermgt
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/xml
+@dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/todotxt
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/icalendar
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/html
 @dirrm %%PYTHON_SITELIBDIR%%/taskcoachlib/persistence/csv
