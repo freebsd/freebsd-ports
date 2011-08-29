@@ -32,6 +32,8 @@ USE_FORTRAN=	g77
 
 .if ${ARCH} == "amd64"
 BROKEN=		Does not compile on amd64
+.elif ${OSVERSION} >= 900035
+BROKEN=		Does not compile on recent FreeBSD-9
 .endif
 
 .include <bsd.port.post.mk>
