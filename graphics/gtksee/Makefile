@@ -28,6 +28,9 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOMAKE="${TRUE}" \
 		AUTOHEADER="${TRUE}"
 
+DEPRECATED=		depends on unfetchable port archivers/bzip; last release 2004
+EXPIRATION_DATE=	2011-10-28
+
 MAN1=		gtksee.1
 
 .if defined(WITHOUT_NLS)
