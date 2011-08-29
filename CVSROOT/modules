@@ -203,11 +203,13 @@ PDL                             ports/math/PDL
 PicMonger                       ports/news/PicMonger
 R                               ports/math/R
 R-cran-AMORE                    ports/science/R-cran-AMORE
+R-cran-RCurl                    ports/ftp/R-cran-RCurl
 R-cran-RSvgDevice               ports/math/R-cran-RSvgDevice
 R-cran-SuppDists                ports/math/R-cran-SuppDists
 R-cran-XML                      ports/textproc/R-cran-XML
 R-cran-Zelig                    ports/math/R-cran-Zelig
 R-cran-bayesm                   ports/science/R-cran-bayesm
+R-cran-bitops                   ports/devel/R-cran-bitops
 R-cran-car                      ports/math/R-cran-car
 R-cran-coda                     ports/math/R-cran-coda
 R-cran-gpclib                   ports/math/R-cran-gpclib
@@ -8729,6 +8731,7 @@ lla                             ports/net/lla
 llgal                           ports/www/llgal
 lll_spect                       ports/math/lll_spect
 llnlxdir                        ports/ftp/llnlxdir
+llnlxftp                        ports/ftp/llnlxftp
 llvm                            ports/devel/llvm
 llvm-devel                      ports/devel/llvm-devel
 llvm-etoile                     ports/devel/llvm-etoile
@@ -21875,6 +21878,7 @@ py-kiwi                         ports/x11-toolkits/py-kiwi
 py-kjbuckets                    ports/devel/py-kjbuckets
 py-kombu                        ports/net/py-kombu
 py-kqueue                       ports/devel/py-kqueue
+py-kyotocabinet                 ports/databases/py-kyotocabinet
 py-ldap2                        ports/net/py-ldap2
 py-levenshtein                  ports/devel/py-levenshtein
 py-libcloud                     ports/net/py-libcloud
@@ -22823,12 +22827,14 @@ qwtplot3d-qt4                   ports/math/qwtplot3d-qt4
 r                               ports/math/R
 r-cran-amore                    ports/science/R-cran-AMORE
 r-cran-bayesm                   ports/science/R-cran-bayesm
+r-cran-bitops                   ports/devel/R-cran-bitops
 r-cran-car                      ports/math/R-cran-car
 r-cran-coda                     ports/math/R-cran-coda
 r-cran-gpclib                   ports/math/R-cran-gpclib
 r-cran-inline                   ports/math/R-cran-inline
 r-cran-mvtnorm                  ports/math/R-cran-mvtnorm
 r-cran-psych                    ports/math/R-cran-psych
+r-cran-rcurl                    ports/ftp/R-cran-RCurl
 r-cran-rsvgdevice               ports/math/R-cran-RSvgDevice
 r-cran-sm                       ports/math/R-cran-sm
 r-cran-sp                       ports/math/R-cran-sp
