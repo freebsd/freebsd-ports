@@ -33,6 +33,9 @@ USE_RC_SUBR=	openxpki.sh
 HAS_CONFIGURE=	yes
 CONFIGURE_ARGS=	--prefix ${PREFIX}
 
+post-patch:
+	@${REINPLACE_CMD} -e 's|>/dev/null 2>&1 | |' ${WRKSRC}/configure
+
 post-install:
 	@${ECHO_MSG} ""
 	@${ECHO_MSG} "================================ A piece of advice ==================================="
