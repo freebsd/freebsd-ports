@@ -46,4 +46,10 @@ pre-configure:
 	@cd ${WRKSRC} && ${ACLOCAL} -I ${LOCALBASE}/share/aclocal
 	@${REINPLACE_CMD} -e '/^_LT_AC_SHELL_INIT/d' ${WRKSRC}/aclocal.m4
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${OSVERSION} >= 900035
+BROKEN=		Does not compile on recent FreeBSD-9
+.endif
+
+.include <bsd.port.post.mk>
