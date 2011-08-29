@@ -15,6 +15,10 @@ COMMENT=	Nullsoft's streaming audio server (binary port)
 
 LIB_DEPENDS=	c.5:${PORTSDIR}/misc/compat5x
 
+BROKEN=		unfetchable; website rearranged
+DEPRECATED=	"${BROKEN}"
+EXPIRATION_DATE=	2011-10-28
+
 IA32_BINARY_PORT=	YES
 NO_BUILD=	YES
 RESTRICTED=	Redistribution of the software is not allowed
