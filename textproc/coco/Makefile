@@ -9,8 +9,7 @@ PORTNAME=       coco
 PORTVERSION=    ${MULE_VERSION}
 PORTREVISION=	1
 CATEGORIES=     textproc
-MASTER_SITES=	ftp://ftp.m17n.org/pub/mule/ \
-		ftp://ftp.jaist.ac.jp/pub/GNU/mule/ \
+MASTER_SITES=	ftp://ftp.jaist.ac.jp/pub/GNU/mule/ \
 		http://www.infonets.hiroshima-u.ac.jp/~taoka/FreeBSD/mule/
 DISTFILES=	mule-${MULE_VERSION}-${EMACS_VERSION}.tar.gz \
 		mule-${MULE_VERSION}-${EMACS_VERSION}.patch-981002.tar.gz
@@ -34,6 +33,8 @@ INSTALL_TARGET=	install-coco install-m2ps
 
 .if ${ARCH} != "i386"
 BROKEN=		Does not compile on !i386
+.elif ${OSVERSION} >= 900035
+BROKEN=		Does not compile on recent FreeBSD-9
 .endif
 
 # extract patches for mule2.3 based on emacs-19.34b
