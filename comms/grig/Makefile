@@ -6,22 +6,23 @@
 #
 
 PORTNAME=	grig
-PORTVERSION=	0.7.2
-PORTREVISION=	5
+PORTVERSION=	0.8.0
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/groundstation/Grig/${PORTVERSION}
 
 MAINTAINER=	matt@chronos.org.uk
 COMMENT=	Amateur Radio control front-end
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	hamlib:${PORTSDIR}/comms/hamlib
 
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+USE_GETTEXT=	yes
 
 MAN1=		grig.1
-LICENSE=	GPLv2
 
 post-patch:
 	@${FIND} ${WRKSRC} -name Makefile.* | ${XARGS} ${REINPLACE_CMD} -e \
