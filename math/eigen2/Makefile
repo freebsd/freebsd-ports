@@ -21,7 +21,7 @@ FETCH_ARGS=	-Fpr
 
 LATEST_LINK=	${PORTNAME}2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-9ca09dbd70ce
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTNAME}-${PORTVERSION}
 
 post-patch:
 	@${REINPLACE_CMD} -e 's|share/pkgconfig|libdata/pkgconfig|g' \
