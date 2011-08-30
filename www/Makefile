@@ -1883,6 +1883,7 @@
     SUBDIR += uzbl
     SUBDIR += validator
     SUBDIR += varnish
+    SUBDIR += varnish-libvmod-header
     SUBDIR += varnish2
     SUBDIR += vdr-plugin-live
     SUBDIR += vdradmin-am
