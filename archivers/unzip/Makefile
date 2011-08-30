@@ -14,7 +14,7 @@ MASTER_SITES=	SF/infozip/UnZip%206.x%20%28latest%29/UnZip%20${PORTVERSION}/:main
 DISTNAME=	${PORTNAME}60
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:main
 
-MAINTAINER?=	ache@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT?=	List, test and extract compressed files in a ZIP archive
 
 LICENSE=	Info-ZIP
