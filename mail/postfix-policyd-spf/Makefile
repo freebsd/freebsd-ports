@@ -16,6 +16,9 @@ PKGNAMESUFFIX=		-spf
 MAINTAINER=		mnag@FreeBSD.org
 COMMENT=		Implements SPF for postfix, as a policy daemon
 
+DEPRECATED=	Relies on libspf2-10 which is vulnerable as of 2008-10-27
+EXPIRATION_DATE=	2011-09-09
+
 LIB_DEPENDS=		spf2.1:${PORTSDIR}/mail/libspf2-10
 
 CONFLICTS=		policyd-1.*
