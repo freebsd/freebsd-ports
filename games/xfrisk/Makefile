@@ -9,14 +9,12 @@ PORTNAME=	xfrisk
 PORTVERSION=	1.2
 PORTREVISION=	5
 CATEGORIES=	games
-MASTER_SITES=	http://tuxick.net/xfrisk/files/
+MASTER_SITES=	http://old.tuxick.net/xfrisk/files/ \
+		http://devel.ringlet.net/games/xfrisk/
 DISTNAME=	XFrisk-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A multi-player networked Risk game for X11
-
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
 
 LIB_DEPENDS=	Xaw3d.${XAWVER}:${PORTSDIR}/x11-toolkits/Xaw3d
 
