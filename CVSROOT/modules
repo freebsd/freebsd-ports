@@ -216,6 +216,7 @@ R-cran-gpclib                   ports/math/R-cran-gpclib
 R-cran-inline                   ports/math/R-cran-inline
 R-cran-mvtnorm                  ports/math/R-cran-mvtnorm
 R-cran-psych                    ports/math/R-cran-psych
+R-cran-scrapeR                  ports/www/R-cran-scrapeR
 R-cran-sm                       ports/math/R-cran-sm
 R-cran-sp                       ports/math/R-cran-sp
 STk                             ports/lang/STk
@@ -5067,6 +5068,7 @@ gtgt                            ports/devel/gtgt
 gthumb                          ports/graphics/gthumb
 gtic                            ports/net/gtic
 gtick                           ports/audio/gtick
+gtimelapse                      ports/graphics/gtimelapse
 gtimer                          ports/deskutils/gtimer
 gtk-aluminumalloy-cryogenic-theme  ports/x11-themes/gtk-aluminumalloy-cryogenic-theme
 gtk-aluminumalloy-smog-theme    ports/x11-themes/gtk-aluminumalloy-smog-theme
@@ -22836,6 +22838,7 @@ r-cran-mvtnorm                  ports/math/R-cran-mvtnorm
 r-cran-psych                    ports/math/R-cran-psych
 r-cran-rcurl                    ports/ftp/R-cran-RCurl
 r-cran-rsvgdevice               ports/math/R-cran-RSvgDevice
+r-cran-scraper                  ports/www/R-cran-scrapeR
 r-cran-sm                       ports/math/R-cran-sm
 r-cran-sp                       ports/math/R-cran-sp
 r-cran-suppdists                ports/math/R-cran-SuppDists
@@ -26227,6 +26230,7 @@ vizone                          ports/dns/vizone
 vlc                             ports/multimedia/vlc
 vlock                           ports/security/vlock
 vlog                            ports/security/vlog
+vlogger                         ports/sysutils/vlogger
 vm                              ports/mail/vm
 vm-pop3d                        ports/mail/vm-pop3d
 vmac                            ports/emulators/vMac
