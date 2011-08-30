@@ -6,16 +6,20 @@
 #
 
 PORTNAME=	kmymoney
-PORTVERSION=	4.5.3
-PORTREVISION=	1
+PORTVERSION=	4.6.0
 CATEGORIES=	finance kde
 MASTER_SITES=	SF/${PORTNAME}2/KMyMoney-KDE4/${PORTVERSION}
+DISTFILES=	${PORTNAME}-${PORTVERSION}-2${EXTRACT_SUFX}
 
 MAINTAINER=	bsdkaffee@gmail.com
 COMMENT=	KDE 4.x-based personal finance manager
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 BUILD_DEPENDS=	${LOCALBASE}/share/xml/docbook/4.2/docbookx.dtd:${PORTSDIR}/textproc/docbook-xml
-LIB_DEPENDS=	boost_graph.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_graph.4:${PORTSDIR}/devel/boost-libs \
+		alkimia.4:${PORTSDIR}/finance/libalkimia
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
@@ -28,9 +32,6 @@ USE_GETTEXT=	yes
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		kmymoney.1
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	CALENDAR "Enable Calendar plugin" on \
 		KBANKING "Enable KBanking plugin" off \
@@ -77,7 +78,7 @@ RUN_DEPENDS+=	${SITE_PERL}/Date/Manip.pm:${PORTSDIR}/devel/p5-Date-Manip \
 .endif
 
 .if !defined(PACKAGE_BUILDING) && defined(WITH_KBANKING) && !exists(${LOCALBASE}/lib/libgwengui-qt4.so)
-IGNORE= Please rebuild devel/gwenhywfar with the WITH_QT4 option set
+IGNORE=		please rebuild devel/gwenhywfar with the WITH_QT4 option set
 .endif
 
 .include <bsd.port.mk>
