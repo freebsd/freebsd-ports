@@ -58,6 +58,7 @@
     SUBDIR += batmon
     SUBDIR += battfink
     SUBDIR += battmond
+    SUBDIR += battray
     SUBDIR += bbapm
     SUBDIR += bchunk
     SUBDIR += be_agent
