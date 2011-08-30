@@ -22,7 +22,7 @@ MASTER_SITES=	ftp://ftp.procmail.org/pub/procmail/ \
 		ftp://sunsite.cnlab-switch.ch/mirror/procmail/ \
 		ftp://ftp.mirrorservice.org/sites/ftp.procmail.org/pub/procmail/
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A local mail delivery agent
 
 MAKE_JOBS_UNSAFE=	yes
