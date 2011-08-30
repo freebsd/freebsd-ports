@@ -10,6 +10,7 @@
     SUBDIR += ORBit2-reference
     SUBDIR += R-cran-bitops
     SUBDIR += R-cran-iterators
+    SUBDIR += R-cran-itertools
     SUBDIR += SpecTcl
     SUBDIR += ZendOptimizer
     SUBDIR += aap
