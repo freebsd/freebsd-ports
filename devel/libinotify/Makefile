@@ -13,6 +13,8 @@ MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Kevent based inotify compatible library
 
+LICENSE=	MIT
+
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
@@ -23,5 +25,8 @@ USE_LDCONFIG=	yes
 post-configure:
 	@${REINPLACE_CMD} -E -e \
 	'/Install the pseudo-library/,/staticlibs=/s,^,#,' ${WRKSRC}/libtool
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.mk>
