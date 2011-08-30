@@ -7,11 +7,11 @@
 
 PORTNAME=	Mail-SpamAssassin
 PORTVERSION=	3.3.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail perl5
 MASTER_SITES=	${MASTER_SITE_APACHE:S/$/:apache/} ${MASTER_SITE_PERL_CPAN:S/$/:cpan/}
 MASTER_SITE_SUBDIR=	spamassassin/source/:apache Mail/:cpan
-PKGNAMEPREFIX=	p5-
+PKGNAMEPREFIX?=	p5-
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:apache,cpan
 
 MAINTAINER=	scheidell@secnap.net
@@ -265,9 +265,6 @@ post-patch:
 .endif
 .if defined(WITH_DCC)
 	${REINPLACE_CMD} -e '/DCC/s/^#loadplugin/loadplugin/' ${WRKSRC}/rules/v310.pre
-.endif
-.if !defined(WITH_AWL)
-	${REINPLACE_CMD} -e '/AWL/s/^loadplugin/#loadplugin/' ${WRKSRC}/rules/v310.pre
 .endif
 .if defined(WITH_SACOMPILE)
 	${REINPLACE_CMD} -e '/Rule2XSBody/s/^# loadplugin/loadplugin/' ${WRKSRC}/rules/v320.pre
