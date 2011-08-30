@@ -5,6 +5,20 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110830:
+  AFFECTS: users of lang/racket
+  AUTHOR: olgeni@FreeBSD.org
+
+  Racket has been upgraded to version 5.1.3. Due to the recent rewrite of
+  the Racket graphics handling code, it is no longer possible to build
+  this port without X11.
+
+  The WITHOUT_X11 switch now controls if X11 is brought in as
+  USE_GNOME/LIB_DEPENDS or BUILD_DEPENDS.
+
+  In the latter case you will be able to build a Racket package that can
+  then be deployed on headless a server.
+
 20110829:
   AFFECTS: users of security/maia
   AUTHOR: crees@FreeBSD.org
