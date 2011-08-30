@@ -1,0 +1,35 @@
+# New ports collection makefile for:	markdown-mode.el
+# Date created:				30 Ago 2011
+# Whom:					olgeni@FreeBSD.org
+#
+# $FreeBSD$
+#
+
+PORTNAME=	markdown-mode.el
+PORTVERSION=	1.8.1
+CATEGORIES=	textproc
+MASTER_SITES=	http://jblevins.org/projects/markdown-mode/
+DISTNAME=	markdown-mode.el
+EXTRACT_SUFX=	# empty
+DIST_SUBDIR=	${PORTNAME}-${PORTVERSION}
+EXTRACT_ONLY=	# empty
+
+MAINTAINER=	olgeni@FreeBSD.org
+COMMENT=	Emacs/XEmacs major mode for editing Markdown-formatted text
+
+NO_BUILD=	yes
+NO_WRKSUBDIR=	yes
+
+EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
+XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
+
+do-install:
+	@${MKDIR} ${EMACSLISPDIR}
+	@${MKDIR} ${XEMACSLISPDIR}
+	@${INSTALL_DATA} ${_DISTDIR}/${DISTNAME} ${EMACSLISPDIR}/markdown-mode.el
+	@${LN} -sf ${EMACSLISPDIR}/markdown-mode.el ${XEMACSLISPDIR}
+
+post-install:
+	@${CAT} ${PKGMESSAGE}
+
+.include <bsd.port.mk>
