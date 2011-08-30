@@ -16,7 +16,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Enhaced OpenGL only Quake II engine
+COMMENT=	Enhanced OpenGL only Quake II engine
 
 USE_BZIP2=	yes
 USE_GMAKE=	yes

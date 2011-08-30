@@ -11,7 +11,7 @@ CATEGORIES=	editors
 MASTER_SITES=	http://ne.dsi.unimi.it/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Nice and powerfull editor
+COMMENT=	Nice and powerful editor
 
 BUILD_WRKSRC=	${WRKSRC}/src
 

@@ -18,7 +18,7 @@ DIST_SUBDIR=	${PORTNAME}
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Enhaced Quake engine based on JoeQuake
+COMMENT=	Enhanced Quake engine based on JoeQuake
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg \
 		png.6:${PORTSDIR}/graphics/png

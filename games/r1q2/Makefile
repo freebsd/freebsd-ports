@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.r1ch.net/stuff/r1q2/src/
 DISTNAME=	${PORTNAME}-b${PORTVERSION}-src
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Enhaced Quake II client/server focusing on stability
+COMMENT=	Enhanced Quake II client/server focusing on stability
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
 

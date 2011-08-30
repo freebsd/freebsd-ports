@@ -12,7 +12,7 @@ CATEGORIES=	misc
 MASTER_SITES=	http://www.bwct.de/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A tool to programm the eeprom on FTDI usb devices
+COMMENT=	A tool to program the eeprom on FTDI usb devices
 
 MAKE_ARGS=	BINDIR="${PREFIX}/sbin" \
 		MANDIR="${PREFIX}/man/man"

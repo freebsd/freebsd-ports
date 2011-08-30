@@ -11,7 +11,7 @@ CATEGORIES=	net
 MASTER_SITES=	http://rbp.chat.ru/pub/nwlib/
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	Utilites to work with Novell NetWare servers
+COMMENT=	Utilities to work with Novell NetWare servers
 
 ONLY_FOR_ARCHS=	i386
 
