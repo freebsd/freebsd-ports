@@ -6,9 +6,12 @@
 #
 
 PORTNAME=	vidalia
-PORTVERSION=	0.2.12
+PORTVERSION=	0.2.14
 CATEGORIES=	net-mgmt security
-MASTER_SITES=	http://www.torproject.org/dist/vidalia/
+MASTER_SITES=	https://www.torproject.org/dist/vidalia/ \
+		http://tor.ccc.de/dist/vidalia/ \
+		http://tor.cyberarmy.at/dist/vidalia/ \
+		http://www.torservers.net/mirrors/torproject.org/dist/vidalia/
 
 MAINTAINER=	fk@fabiankeil.de
 COMMENT=	A graphical Tor controller based on Qt 4.x
