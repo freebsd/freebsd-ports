@@ -7,6 +7,7 @@
 
 PORTNAME=	fxite
 PORTVERSION=	0.7
+PORTREVISION=	1
 CATEGORIES=	editors
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 
@@ -20,14 +21,16 @@ USE_LUA=	yes
 USE_PKGCONFIG=	yes
 GNU_CONFIGURE=	yes
 CXXFLAGS+=	-g -O0 -fPIC
-CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -lintl"
+LDFLAGS+=	-L${LOCALBASE}/lib -lintl
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS+=--with-system-lua \
 		--with-lua-pkg=lua-${LUA_VER}
 
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 800067
-BROKEN=	needs getline(3)
+LIB_DEPENDS+=	getline.1:${PORTSDIR}/devel/libgetline
+LDFLAGS+=	-lgetline
 .endif
 
 PLIST_FILES=	bin/fxite
