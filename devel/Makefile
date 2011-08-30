@@ -11,6 +11,7 @@
     SUBDIR += R-cran-bitops
     SUBDIR += R-cran-iterators
     SUBDIR += R-cran-itertools
+    SUBDIR += R-cran-plyr
     SUBDIR += SpecTcl
     SUBDIR += ZendOptimizer
     SUBDIR += aap
