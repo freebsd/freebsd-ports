@@ -13,7 +13,7 @@ PKGNAMESUFFIX=	-devel
 DISTNAME=	milter-greylist-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Easy-to-use greylist milter for sendmail and postfix (development)
 
 CONFLICTS=	milter-greylist-4.2.*

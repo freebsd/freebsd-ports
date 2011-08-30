@@ -11,7 +11,7 @@ PORTREVISION=	9
 CATEGORIES=	security www
 MASTER_SITES=	http://www.divineinvasion.net/authforce/
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	HTTP authentication brute forcer
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl

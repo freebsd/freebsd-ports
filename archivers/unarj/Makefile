@@ -13,7 +13,7 @@ MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ache
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Allows files to be extracted from ARJ archives
 
 PLIST_FILES=	bin/unarj

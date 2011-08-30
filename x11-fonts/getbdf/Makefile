@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.netsw.org/x11/tools/internal/
 DISTNAME=	${PORTNAME}
 EXTRACT_SUFX=	.tar.gz
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert any X server font to .bdf format
 
 PLIST_FILES=	bin/getbdf

@@ -11,7 +11,7 @@ CATEGORIES=	converters russian
 MASTER_SITES=	http://www.kostis.net/freeware/
 DISTNAME=	trans120
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Character Encoding Converter Generator Package
 
 LIBDIR=		${PREFIX}/lib/trans

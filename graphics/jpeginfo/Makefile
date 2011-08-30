@@ -11,7 +11,7 @@ PORTREVISION=	1
 CATEGORIES=	graphics
 MASTER_SITES=	http://www.kokkonen.net/tjko/src/
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Generate listing and MD5, check jpegs for error, delete broken ones
 
 LIB_DEPENDS=	jpeg.11:${PORTSDIR}/graphics/jpeg

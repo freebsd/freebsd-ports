@@ -11,7 +11,7 @@ CATEGORIES=	russian converters
 MASTER_SITES=	http://koi8.pp.ru/dist/
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Cp866<->koi8-r and cp1251<->koi8-r decoders and font converter acc. to RFC1489
 
 MAKE_ARGS=	PREFIX=${PREFIX}

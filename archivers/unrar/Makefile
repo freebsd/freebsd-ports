@@ -12,7 +12,7 @@ CATEGORIES+=	archivers
 MASTER_SITES=	http://www.rarlab.com/rar/
 DISTNAME=	unrarsrc-4.0.7
 
-MAINTAINER?=	ache@FreeBSD.org
+MAINTAINER?=	ports@FreeBSD.org
 COMMENT=	Extract, view & test RAR archives
 
 WRKSRC=		${WRKDIR}/unrar

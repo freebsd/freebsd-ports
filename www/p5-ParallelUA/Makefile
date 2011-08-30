@@ -14,7 +14,7 @@ MASTER_SITE_SUBDIR=	LWP
 PKGNAMEPREFIX=	p5-
 DISTNAME=	ParallelUserAgent-${PORTVERSION}
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Perl5 Parallel LWP User Agent for WWW access
 
 BUILD_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww \

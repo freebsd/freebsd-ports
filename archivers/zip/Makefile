@@ -12,7 +12,7 @@ MASTER_SITES=	SF/info${PORTNAME}/Zip%203.x%20%28latest%29/${PORTVERSION}
 DISTFILES=	${PORTNAME}30${EXTRACT_SUFX}
 USE_ZIP=	yes
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create/update ZIP files compatible with pkzip
 
 WRKSRC=		${WRKDIR}/${PORTNAME}30

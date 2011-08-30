@@ -12,7 +12,7 @@ CATEGORIES=	archivers
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Create & extract files from DOS .ARC files
 
 PLIST_FILES=	bin/arc bin/marc

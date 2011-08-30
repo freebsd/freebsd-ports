@@ -18,7 +18,7 @@ EXTRACT_ONLY=	ast54unx.shr
 EPHEM=		ephemall.zip
 DISTFILES=	${EXTRACT_ONLY}:dist ${EPHEM}:ephem
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An astrology program for X11 and alpha-numeric terminals
 
 USE_ZIP=	yes
