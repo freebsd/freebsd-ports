@@ -27,5 +27,5 @@ MODULE_DIRS=	translations
 DOC_FILES=	API.txt LICENSE.txt README.txt
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/www/drupal5/bsd.drupal.mk"
+.include "${PORTSDIR}/Mk/bsd.drupal.mk"
 .include <bsd.port.post.mk>
