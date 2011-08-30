@@ -12,7 +12,7 @@ MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A quick and easy implemention of the p5-Penguin module
+COMMENT=	A quick and easy implementation of the p5-Penguin module
 
 BUILD_DEPENDS=	${SITE_PERL}/Penguin.pm:${PORTSDIR}/devel/p5-Penguin
 

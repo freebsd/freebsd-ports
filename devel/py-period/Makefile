@@ -13,7 +13,7 @@ MASTER_SITES=	http://www.biostat.wisc.edu/~annis/creations/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
-COMMENT=	A basic time period checking libary
+COMMENT=	A basic time period checking library
 
 USE_PYTHON=	yes
 NO_BUILD=	yes
