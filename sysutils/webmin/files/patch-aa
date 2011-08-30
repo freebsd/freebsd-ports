@@ -3,7 +3,7 @@ $FreeBSD$
 
 --- setup.sh.orig
 +++ setup.sh
-@@ -15,10 +15,7 @@
+@@ -15,16 +15,8 @@
  srcdir=$wadir
  ver=`cat "$wadir/version"`
  
@@ -11,11 +11,18 @@ $FreeBSD$
 -if [ "$tempdir" = "" ]; then
 -	tempdir=/tmp/.webmin
 -fi
+-
+-if [ $? != "0" ]; then
+-	echo "ERROR: Cannot find the Webmin install directory";
+-	echo "";
+-	exit 1;
+-fi
 +tempdir=/tmp/.webmin
++mkdir -p $tempdir
  
- if [ $? != "0" ]; then
- 	echo "ERROR: Cannot find the Webmin install directory";
-@@ -95,19 +92,7 @@
+ echo "***********************************************************************"
+ echo "*            Welcome to the Webmin setup script, version $ver        *"
+@@ -95,19 +87,7 @@
  echo "Unless you want to run multiple versions of Webmin at the same time"
  echo "you can just accept the defaults."
  echo ""
@@ -36,7 +43,7 @@ $FreeBSD$
  if [ ! -d $config_dir ]; then
  	mkdir $config_dir;
  	if [ $? != 0 ]; then
-@@ -207,12 +192,12 @@
+@@ -207,12 +187,12 @@
  	fi
  
  	# Ask for log directory
@@ -51,7 +58,7 @@ $FreeBSD$
  	fi
  	abspath=`echo $var_dir | grep "^/"`
  	if [ "$abspath" = "" ]; then
-@@ -240,7 +225,9 @@
+@@ -240,7 +220,9 @@
  	echo "Webmin is written entirely in Perl. Please enter the full path to the"
  	echo "Perl 5 interpreter on your system."
  	echo ""
@@ -62,7 +69,7 @@ $FreeBSD$
  		perldef=/usr/bin/perl
  	elif [ -x /usr/local/bin/perl ]; then
  		perldef=/usr/local/bin/perl
-@@ -439,21 +426,6 @@
+@@ -439,21 +421,6 @@
  		fi
  	fi
  
@@ -84,7 +91,7 @@ $FreeBSD$
  	# Copy files to target directory
  	echo "***********************************************************************"
  	if [ "$wadir" != "$srcdir" ]; then
-@@ -575,6 +547,7 @@
+@@ -575,6 +542,7 @@
  	fi
  fi
  
@@ -92,7 +99,7 @@ $FreeBSD$
  if [ "$noperlpath" = "" ]; then
  	echo "Inserting path to perl into scripts.."
  	(find "$wadir" -name '*.cgi' -print ; find "$wadir" -name '*.pl' -print) | $perl "$wadir/perlpath.pl" $perl -
-@@ -585,7 +558,6 @@
+@@ -585,7 +553,6 @@
  echo "Creating start and stop scripts.."
  rm -f $config_dir/stop $config_dir/start $config_dir/restart $config_dir/reload
  echo "#!/bin/sh" >>$config_dir/start
@@ -100,7 +107,7 @@ $FreeBSD$
  echo "trap '' 1" >>$config_dir/start
  echo "LANG=" >>$config_dir/start
  echo "export LANG" >>$config_dir/start
-@@ -733,6 +705,7 @@
+@@ -733,6 +700,7 @@
  	echo passdelay=1 >> $config_dir/miniserv.conf
  fi
  
@@ -108,7 +115,7 @@ $FreeBSD$
  if [ "$nouninstall" = "" ]; then
  	echo "Creating uninstall script $config_dir/uninstall.sh .."
  	cat >$config_dir/uninstall.sh <<EOF
-@@ -822,6 +795,7 @@
+@@ -822,6 +790,7 @@
  	. "$srcdir/setup-post.sh"
  fi
  
