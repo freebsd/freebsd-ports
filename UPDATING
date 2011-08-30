@@ -17,7 +17,7 @@ you update your ports collection, before attempting any port upgrades.
   USE_GNOME/LIB_DEPENDS or BUILD_DEPENDS.
 
   In the latter case you will be able to build a Racket package that can
-  then be deployed on headless a server.
+  then be deployed on a headless server.
 
 20110829:
   AFFECTS: users of security/maia
