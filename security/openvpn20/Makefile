@@ -7,7 +7,7 @@
 
 PORTNAME=	openvpn
 PORTVERSION=	2.0.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	security net
 # MASTER_SITES points to hosts in distinct data centers,
 # so just one MASTER_SITES entry should be OK.
