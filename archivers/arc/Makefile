@@ -6,13 +6,11 @@
 #
 
 PORTNAME=	arc
-PORTVERSION=	5.21o
-PORTREVISION=	1
+PORTVERSION=	5.21p
 CATEGORIES=	archivers
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
-EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	delphij@FreeBSD.org
 COMMENT=	Create & extract files from DOS .ARC files
 
 PLIST_FILES=	bin/arc bin/marc
