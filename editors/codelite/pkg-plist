@@ -27,6 +27,7 @@ bin/codelite_xterm
 %%DATADIR%%/plugins/ContinuousBuild.so
 %%DATADIR%%/plugins/Copyright.so
 %%DATADIR%%/plugins/CppCheck.so
+%%DATADIR%%/plugins/DatabaseExplorer.so
 %%DATADIR%%/plugins/ExternalTools.so
 %%DATADIR%%/plugins/Gizmos.so
 %%DATADIR%%/plugins/QmakePlugin.so
@@ -39,8 +40,10 @@ bin/codelite_xterm
 %%DATADIR%%/plugins/debuggers/Debugger.so
 %%DATADIR%%/plugins/git.so
 %%DATADIR%%/plugins/libcodeliteu.so
+%%DATADIR%%/plugins/libdblayersqliteu.so
 %%DATADIR%%/plugins/libpluginu.so
 %%DATADIR%%/plugins/libwxscintillau.so
+%%DATADIR%%/plugins/libwxshapeframeworku.so
 %%DATADIR%%/plugins/libwxsqlite3u.so
 %%DATADIR%%/plugins/resources/abbrev.png
 %%DATADIR%%/plugins/resources/abbreviation.accelerators
@@ -63,6 +66,15 @@ bin/codelite_xterm
 %%DATADIR%%/rc/menu.xrc
 %%DATADIR%%/src/unittest++1.3.tar.gz
 %%DATADIR%%/svnreport.html
+%%DATADIR%%/templates/codedesigner/CDTemplate.cdp
+%%DATADIR%%/templates/codedesigner/HSCHTemplate.cdp
+%%DATADIR%%/templates/codedesigner/HSCHTemplateWithMain.cdp
+%%DATADIR%%/templates/codedesigner/SCHTemplate.cdp
+%%DATADIR%%/templates/codedesigner/SCHTemplateWithMain.cdp
+%%DATADIR%%/templates/databaselayer/dataClass.ctmp
+%%DATADIR%%/templates/databaselayer/dataClass.htmp
+%%DATADIR%%/templates/databaselayer/viewClass.ctmp
+%%DATADIR%%/templates/databaselayer/viewClass.htmp
 %%DATADIR%%/templates/formbuilder/DialogTemplate.fbp
 %%DATADIR%%/templates/formbuilder/DialogTemplateWithButtons.fbp
 %%DATADIR%%/templates/formbuilder/FrameTemplate.fbp
@@ -101,11 +113,8 @@ bin/codelite_xterm
 %%DATADIR%%/templates/projects/cobra-staticU/cobra-staticU.project
 %%DATADIR%%/templates/projects/custom-makefile/custom-makefile.project
 %%DATADIR%%/templates/projects/custom-makefile/icon.png
-%%DATADIR%%/templates/projects/dynamic-library-wx-enabled/defs.h
 %%DATADIR%%/templates/projects/dynamic-library-wx-enabled/dynamic-library-wx-enabled.project
-%%DATADIR%%/templates/projects/dynamic-library-wx-enabled/dynamic-library-wx-enabled.project~
 %%DATADIR%%/templates/projects/dynamic-library-wx-enabled/icon.png
-%%DATADIR%%/templates/projects/dynamic-library-wx-enabled/main.cpp
 %%DATADIR%%/templates/projects/dynamic-library/dynamic-library.project
 %%DATADIR%%/templates/projects/dynamic-library/icon.png
 %%DATADIR%%/templates/projects/executable-cobra/executable-cobra.project
@@ -144,7 +153,6 @@ bin/codelite_xterm
 %%DATADIR%%/templates/projects/executable/main.cpp
 %%DATADIR%%/templates/projects/non-code-project/icon.png
 %%DATADIR%%/templates/projects/non-code-project/non-code.project
-%%DATADIR%%/templates/projects/static-library-wx-enabled/defs.h
 %%DATADIR%%/templates/projects/static-library-wx-enabled/icon.png
 %%DATADIR%%/templates/projects/static-library-wx-enabled/main.cpp
 %%DATADIR%%/templates/projects/static-library-wx-enabled/static-library-wx-enabled.project
@@ -190,6 +198,8 @@ share/applications/codelite.desktop
 @dirrm %%DATADIR%%/templates/projects
 @dirrm %%DATADIR%%/templates/gizmos
 @dirrm %%DATADIR%%/templates/formbuilder
+@dirrm %%DATADIR%%/templates/databaselayer
+@dirrm %%DATADIR%%/templates/codedesigner
 @dirrm %%DATADIR%%/templates
 @dirrm %%DATADIR%%/src
 @dirrm %%DATADIR%%/rc
