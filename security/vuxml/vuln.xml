@@ -39,7 +39,8 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>apache</name>
-	<range><gt>2.*</gt><le>1.3.*</le></range>
+	<range><le>1.3.*</le></range>
+	<range><gt>2.*</gt></range>
       </package>
     </affects>
     <description>
@@ -59,7 +60,7 @@ Note:  Please add new entries to the beginning of this file.
     </references>
     <dates>
       <discovery>2011-08-24</discovery>
-      <entry>2011-08-29</entry>
+      <entry>2011-08-30</entry>
     </dates>
   </vuln>
 
