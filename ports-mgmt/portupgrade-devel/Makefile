@@ -6,29 +6,25 @@
 #
 
 PORTNAME=	portupgrade
-PORTVERSION=	20110725
+PORTVERSION=	9999
 PORTREVISION=	0
-PORTEPOCH=	1
+PORTEPOCH=	2
 CATEGORIES=	ports-mgmt
-MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
+MASTER_SITES=	https://github.com/stass/pkgtools/tarball
 PKGNAMESUFFIX=	-devel
 DISTNAME=	pkgtools-${DISTVERSION}
 
 MAINTAINER=	ruby@FreeBSD.org
 COMMENT=	FreeBSD ports/packages management tool (devel version)
 
-OPTIONS=	BDB4 "Use Berkeley DB >=2 as backend" on \
-		BDB1 "Use Berkeley DB 1.85 as backend" off
-
 CONFLICTS_INSTALL=	portupgrade-[0-9]*
 
-USE_BZIP2=	yes
+BUILD_DEPENDS=	git:${PORTSDIR}/devel/git
+RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
+
 USE_RUBY=	yes
-
 USE_LDCONFIG=	${PREFIX}/lib/compat/pkg
-
 MAKE_ARGS=	PREFIX="${PREFIX}" RUBY="${RUBY}"
-
 MAN1=		pkg_deinstall.1 \
 		pkg_fetch.1 \
 		pkg_glob.1 \
@@ -45,6 +41,8 @@ MLINKS=		pkgdb.1 pkg_which.1 \
 		portupgrade.1 portinstall.1 \
 		portsdb.1 ports_glob.1
 MANCOMPRESSED=	maybe
+NO_CHECKSUM=	yes
+GIT_REPO_URL=	git@github.com:stass/pkgtools.git
 
 EXAMPLESDIR=	${PREFIX}/share/examples/pkgtools
 DOCSDIR=	${PREFIX}/share/doc/pkgtools
@@ -54,34 +52,19 @@ INSTALL_TARGET=		install
 INSTALL_TARGET+=	install-doc
 .endif
 
-.include <bsd.port.pre.mk>
+do-fetch:
+	@${MKDIR} ${_DISTDIR}/portupgrade
+	@(head=`git ls-remote -h ${GIT_REPO_URL} | \
+	    ${GREP} heads/master | ${AWK} '{print $$1}'`; \
+	    if [ ! -f "${_DISTDIR}/portupgrade/pkgtools-$${head}.tar.gz" ]; then \
+	    ${SETENV} ${FETCH_ENV} ${FETCH_BINARY} -m -o \
+	    "${_DISTDIR}/portupgrade/pkgtools-$${head}.tar.gz" ${MASTER_SITES}/master \
+	    && ln -sf "${_DISTDIR}/portupgrade/pkgtools-$${head}.tar.gz" \
+	    "${_DISTDIR}/portupgrade/latest"; fi)
 
-.if defined(WITH_BDB4)
-# For PKG_DBDRIVER={bdb_btree,bdb_hash}
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
-.endif
-.if defined(WITH_BDB1) && !defined(WITH_BDB4)
-# For PKG_DBDRIVER={bdb1_btree,bdb1_hash}
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/bdb1.so:${PORTSDIR}/databases/ruby-bdb1
-.endif
-
-pre-extract:
-.if !defined(WITH_BDB4) && !defined(WITH_BDB1)
-	@${ECHO_MSG} "================================================================="
-	@${ECHO_MSG} "Neither WITH_BDB4 nor WITH_BDB1 are defined. Will use DBD driver."
-	@${ECHO_MSG} "================================================================="
-.endif
-.if defined(WITH_BDB4) && defined(WITH_BDB1)
-	@${ECHO_MSG} "================================================================="
-	@${ECHO_MSG} "Both WITH_BDB4 and WITH_BDB1 are defined. Will use BDB4 driver."
-	@${ECHO_MSG} "================================================================="
-.elif defined(WITH_BDB1) && exists(${RUBY_SITEARCHLIBDIR}/bdb.so)
-	@${ECHO_MSG} "================================================================="
-	@${ECHO_MSG} "WITH_BDB1 is defined but ruby-bdb port installed."
-	@${ECHO_MSG} "Remove ruby-bdb or redefine options."
-	@${ECHO_MSG} "================================================================="
-	@exit 1
-.endif
+do-extract:
+	${MKDIR} ${WRKSRC}
+	@tar -C ${WRKSRC}/ --strip-components 1 -xf ${_DISTDIR}/portupgrade/latest
 
 post-patch:	.SILENT
 	${REINPLACE_CMD} '/PREFIX/s:\(=[[:space:]]*\)\(.*/usr/local\):\1ENV["LOCALBASE"] || \2:' \
@@ -91,5 +74,6 @@ post-install:
 	if [ ! -f ${PREFIX}/etc/pkgtools.conf ]; then \
 		${CP} -p ${PREFIX}/etc/pkgtools.conf.sample ${PREFIX}/etc/pkgtools.conf; \
 	fi
+	${MKDIR} ${PREFIX}/lib/compat/pkg
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
