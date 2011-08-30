@@ -124,7 +124,7 @@
 @@ -204,16 +163,12 @@
  	echo "ICONPATH=\$(DESTDIR)\$(PREFIX)/share/pixmaps" >> config.make
  	echo "DOCPATH=\$(DESTDIR)\$(PREFIX)/share/doc/instead" >> config.make
- 	echo "LANGPATH=\$(DATAPATH)/languages" >> config.make
+ 	echo "LANGPATH=\$(DATAPATH)/lang" >> config.make
 -	echo "MANPATH=\$(DESTDIR)\$(PREFIX)/share/man/man6" >> config.make
 +	echo "MANPATH=\$(DESTDIR)\$(PREFIX)/man/man6" >> config.make
  
