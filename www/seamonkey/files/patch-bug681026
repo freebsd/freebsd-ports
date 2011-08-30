@@ -1,0 +1,60 @@
+--- mozilla.orig/widget/public/nsIGfxInfo.idl	2011-08-30 11:08:14.000000000 +0200
++++ mozilla/widget/public/nsIGfxInfo.idl	2011-08-30 11:08:18.000000000 +0200
+@@ -131,5 +131,8 @@
+    * underlying GL impl that's used to implement WebGL.
+    */
+   DOMString getWebGLParameter(in DOMString aParam);
++
++  // only useful on X11
++  [notxpcom] void GetData();
+ };
+ 
+diff -ru mozilla.orig/widget/src/xpwidgets/GfxInfoBase.h mozilla/widget/src/xpwidgets/GfxInfoBase.h
+--- mozilla.orig/widget/src/xpwidgets/GfxInfoBase.h	2011-08-30 11:07:31.000000000 +0200
++++ mozilla/widget/src/xpwidgets/GfxInfoBase.h	2011-08-30 11:09:45.000000000 +0200
+@@ -84,6 +84,9 @@
+   // Ideally, Init() would be void-return, but the rules of
+   // NS_GENERIC_FACTORY_CONSTRUCTOR_INIT require it be nsresult return.
+   virtual nsresult Init();
++  
++  // only useful on X11
++  virtual void GetData() {}
+ 
+ protected:
+ 
+diff -ru mozilla.orig/widget/src/xpwidgets/GfxInfoX11.h mozilla/widget/src/xpwidgets/GfxInfoX11.h
+--- mozilla.orig/widget/src/xpwidgets/GfxInfoX11.h	2011-08-30 11:07:31.000000000 +0200
++++ mozilla/widget/src/xpwidgets/GfxInfoX11.h	2011-08-30 11:13:49.000000000 +0200
+@@ -67,6 +67,8 @@
+   using GfxInfoBase::GetWebGLParameter;
+ 
+   virtual nsresult Init();
++  
++  virtual void GetData();
+ 
+ protected:
+ 
+@@ -81,7 +83,6 @@
+   int mMajorVersion, mMinorVersion;
+ 
+   void AddCrashReportAnnotations();
+-  void GetData();
+ };
+ 
+ } // namespace widget
+diff -ru mozilla.orig/widget/src/xpwidgets/nsBaseWidget.cpp mozilla/widget/src/xpwidgets/nsBaseWidget.cpp
+--- mozilla.orig/widget/src/xpwidgets/nsBaseWidget.cpp	2011-08-30 11:07:31.000000000 +0200
++++ mozilla/widget/src/xpwidgets/nsBaseWidget.cpp	2011-08-30 11:11:47.000000000 +0200
+@@ -836,6 +836,12 @@
+ 
+   nsCOMPtr<nsIGfxInfo> gfxInfo = do_GetService("@mozilla.org/gfx/info;1");
+   if (gfxInfo) {
++    // bug 655578: on X11 at least, we must always call GetData (even if we don't need that information)
++    // as that's what causes GfxInfo initialization which kills the zombie 'glxtest' process.
++    // initially we relied on the fact that GetFeatureStatus calls GetData for us, but bug 681026 showed
++    // that assumption to be unsafe.
++    gfxInfo->GetData();
++
+     PRInt32 status;
+     if (NS_SUCCEEDED(gfxInfo->GetFeatureStatus(nsIGfxInfo::FEATURE_OPENGL_LAYERS, &status))) {
+       if (status != nsIGfxInfo::FEATURE_NO_INFO) {
