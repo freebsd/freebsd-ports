@@ -65,7 +65,8 @@ PLIST_SUB+=	V4L="@comment "
 .endif
 
 .if defined(WITH_PYTHON)
-USE_PYTHON=	any
+USE_PYTHON=	2.5-2.7
+USE_GNOME+=	pygtk2
 CONFIGURE_ARGS+=	--with-python=yes
 PLIST_SUB+=	PYTHON=""
 .else
@@ -74,7 +75,7 @@ PLIST_SUB+=	PYTHON="@comment "
 .endif
 
 .if defined(WITH_GTK2)
-USE_GNOME=	gtk20
+USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--with-gtk=yes
 PLIST_SUB+=	GTK2=""
 .else
@@ -84,7 +85,7 @@ PLIST_SUB+=	GTK2="@comment "
 
 .if defined(WITH_QT4)
 USE_QT_VER=	4
-QT_COMPONENTS=	gui
+QT_COMPONENTS=	gui moc_build
 CONFIGURE_ARGS+=	--with-qt=yes
 PLIST_SUB+=	QT4=""
 .else
