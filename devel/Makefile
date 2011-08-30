@@ -833,6 +833,7 @@
     SUBDIR += libhid
     SUBDIR += libhoard
     SUBDIR += libical
+    SUBDIR += libinotify
     SUBDIR += libiqxmlrpc
     SUBDIR += libisofs
     SUBDIR += libixp
