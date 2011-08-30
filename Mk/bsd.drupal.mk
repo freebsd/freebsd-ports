@@ -20,11 +20,6 @@ BROKEN=		cannot define a combination of DRUPAL5_MODULE and DRUPAL6_MODULE
 BROKEN=		cannot define a combination of DRUPAL5_THEME and DRUPAL6_THEME
 .endif
 
-# Make sure DRUPAL_VERSION is defined for old module versions
-.if defined(DRUPAL5_MODULE) || defined(DRUPAL5_PORT)  || defined(DRUPAL5_THEME)
-DRUPAL_VERSION?=	5
-.endif
-
 .if defined(DRUPAL6_MODULE) || defined(DRUPAL6_PORT)  || defined(DRUPAL6_THEME)
 DRUPAL_VERSION?=	6
 .endif
@@ -57,9 +52,6 @@ DRUPAL_MODTYPE=	themes
 DRUPAL_BASE?=   www/drupal7
 .elif ${DRUPAL_VERSION} == "6"
 DRUPAL_BASE?=   www/drupal6
-.elif ${DRUPAL_VERSION} == "5"
-DRUPAL_BASE?=	www/drupal5
-.else
 BROKEN=		Unknown DRUPAL_VERSION (${DRUPAL_VERSION})
 .endif
 
