@@ -15,9 +15,10 @@ MASTER_SITES=	http://erislabs.net/ianb/projects/${PORTNAME}/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A set of tools to ease organising a collection of audio files
 
-BUILD_DEPENDS=	${SITE_PERL}/MP3/Archive.pm:${PORTSDIR}/audio/libmp3-archive-perl \
-		${SITE_PERL}/MP3/Tag.pm:${PORTSDIR}/audio/p5-MP3-Tag
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	libmp3-archive-perl>=0:${PORTSDIR}/audio/libmp3-archive-perl \
+		p5-MP3-Tag>=0:${PORTSDIR}/audio/p5-MP3-Tag
+RUN_DEPENDS=	libmp3-archive-perl>=0:${PORTSDIR}/audio/libmp3-archive-perl \
+		p5-MP3-Tag>=0:${PORTSDIR}/audio/p5-MP3-Tag
 
 PERL_CONFIGURE=	yes
 
