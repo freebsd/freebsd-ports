@@ -11,7 +11,7 @@ CATEGORIES=	textproc
 MASTER_SITES=	ftp://sunsite.unc.edu/pub/linux/utils/text/
 EXTRACT_SUFX=
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Command-line search and replace tool; written in Perl; handles regexps
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Text/CSV_XS.pm:${PORTSDIR}/textproc/p5-Text-CSV_XS

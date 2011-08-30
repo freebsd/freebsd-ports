@@ -12,7 +12,7 @@ MASTER_SITES=	http://www.rdrop.com/users/billmc/
 DISTNAME=	${PORTNAME}.pl
 EXTRACT_SUFX=	.uu
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Complain about inappropriate commercial use (f.e. SPAM) of usenet/e-mail
 
 USE_PERL5=	yes

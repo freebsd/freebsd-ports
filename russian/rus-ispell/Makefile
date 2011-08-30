@@ -10,7 +10,7 @@ PORTVERSION=	0.99g5
 CATEGORIES=	russian textproc
 MASTER_SITES=	ftp://scon155.phys.msu.su/pub/russian/ispell/
 
-MAINTAINER=	ache@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	New Russian dictionaries for ispell
 
 BUILD_DEPENDS=	buildhash:${PORTSDIR}/textproc/ispell
