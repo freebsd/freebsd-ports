@@ -6,28 +6,28 @@
 #
 
 PORTNAME=	vifm
-PORTVERSION=	0.6.2
+PORTVERSION=	0.6.3
 CATEGORIES=	misc
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	kaspars@bankovskis.lv
 COMMENT=	Ncurses based file manager with vi like keybindings
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 OPTIONS=	VIFM_SCREEN "Use vifm with the screen program" off
 
-WRKSRC=		${WRKDIR}/${PORTNAME}
-
 USE_BZIP2=	yes
 USE_NCURSES=	yes
-USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--without-gtk
 MAKE_ARGS=	ACLOCAL="${TRUE}" AUTOCONF="${TRUE}" AUTOHEADER="${TRUE}" \
 		AUTOMAKE="${TRUE}"
 
 MAN1=		vifm.1
-PLIST_FILES=	bin/pauseme \
-		bin/vifm \
+PLIST_FILES=	bin/vifm \
+		bin/vifm-pause \
 		%%DATADIR%%/startup \
 		%%DATADIR%%/vifm-help.txt \
 		%%DATADIR%%/vifm.txt \
