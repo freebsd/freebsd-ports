@@ -14,8 +14,8 @@ MASTER_SITES=	http://erislabs.net/ianb/projects/${PORTNAME}/ \
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A configurable tool to check collections of audio files
 
-BUILD_DEPENDS=	${SITE_PERL}/MP3/Archive.pm:${PORTSDIR}/audio/libmp3-archive-perl
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	libmp3-archive-perl>=0:${PORTSDIR}/audio/libmp3-archive-perl
+RUN_DEPENDS=	libmp3-archive-perl>=0:${PORTSDIR}/audio/libmp3-archive-perl
 
 PERL_CONFIGURE=	yes
 
