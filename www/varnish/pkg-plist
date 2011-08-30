@@ -8,8 +8,25 @@ bin/varnishstat
 bin/varnishtest
 bin/varnishtop
 etc/varnish/default.vcl
+include/varnish/acct_fields.h
+include/varnish/cache.h
+include/varnish/common.h
+include/varnish/heritage.h
+include/varnish/http_headers.h
+include/varnish/libvarnish.h
+include/varnish/locks.h
+include/varnish/miniobj.h
+include/varnish/steps.h
 include/varnish/varnishapi.h
+include/varnish/vas.h
+include/varnish/vav.h
+include/varnish/vcl_returns.h
 include/varnish/vcli.h
+include/varnish/vct.h
+include/varnish/vmod_abi.h
+include/varnish/vqueue.h
+include/varnish/vrt.h
+include/varnish/vsb.h
 include/varnish/vsc.h
 include/varnish/vsc_all.h
 include/varnish/vsc_fields.h
@@ -37,9 +54,11 @@ lib/libvarnishapi.la
 lib/libvarnishapi.a
 libdata/pkgconfig/varnishapi.pc
 sbin/varnishd
+share/varnish/vmod.py
 @exec [ -d %D/varnish ] || mkdir %D/varnish
 @dirrmtry lib/varnish/vmods
 @dirrmtry lib/varnish
 @dirrmtry varnish
 @dirrm include/varnish
+@dirrm share/varnish
 @dirrmtry etc/varnish
