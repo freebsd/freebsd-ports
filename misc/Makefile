@@ -51,6 +51,7 @@
     SUBDIR += compat5x
     SUBDIR += compat6x
     SUBDIR += compat7x
+    SUBDIR += compat8x
     SUBDIR += countrycodes
     SUBDIR += cpuid
     SUBDIR += crosspad

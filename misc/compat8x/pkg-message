@@ -1,6 +1,6 @@
 *******************************************************************************
 *                                                                             *
-* Do not forget to add COMPAT_FREEBSD7 into                                   *
+* Do not forget to add COMPAT_FREEBSD8 into                                   *
 * your kernel configuration (enabled by default).                             *
 *                                                                             *
 * To configure and recompile your kernel see:                                 *

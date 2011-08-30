@@ -1,4 +1,4 @@
-This package allows you to install the compat7x libraries on your
+This package allows you to install the compat8x libraries on your
 system, so you can use legacy binaries that depend on them.
 
 Ports usage example:
@@ -6,7 +6,7 @@ Ports usage example:
 --
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 800105
-LIB_DEPENDS+=	alias.6:${PORTSDIR}/misc/compat7x
+.if ${OSVERSION} >= 900042
+LIB_DEPENDS+=	ufs.5:${PORTSDIR}/misc/compat8x
 .endif
 --
