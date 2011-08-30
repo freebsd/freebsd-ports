@@ -2517,3 +2517,31 @@ devel/py-istring||2011-08-17|Has expired: port is unmaintained and broken
 mail/sylpheed3|mail/sylpheed|2011-08-22|Removed: please use mail/sylpheed instead
 www/p5-FastCGI|www/p5-FCGI|2011-08-23|Rename to reflect official module name
 databases/db51|databases/db5|2011-08-26|Removed: please use the newer databases/db5 instead
+chinese/firebird||2011-08-30|Has expired: Broken, maintainer timed out, untouched for five years
+www/drupal5-securepages||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-xmlsitemap||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-token||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-cck||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-disknode||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-views||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-ubercart||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-taxonomy_access||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-insert-view||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-thickbox||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-taxonomy_ticker||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-tinymce||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-adsense||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-tagadelic||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-imagefield||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-nodewords||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-bluebreeze||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-imagecache||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-nice_menus||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-ubrowser||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-google_analytics||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-bookreview||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-tapir||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-i18n||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-simplenews||2011-08-30|Has expired: Use drupal[67] instead
+www/drupal5-workflow_ng||2011-08-30|Has expired: Use drupal[67] instead

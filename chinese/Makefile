@@ -36,7 +36,6 @@
     SUBDIR += enscript
     SUBDIR += eterm
     SUBDIR += fcitx
-    SUBDIR += firebird
     SUBDIR += fireflyttf
     SUBDIR += font-std
     SUBDIR += fortune
