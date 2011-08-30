@@ -466,11 +466,11 @@ lib/libOgreRTShaderSystem.so
 lib/libOgreRTShaderSystem.so.1.7.3
 lib/libOgreTerrain.so
 lib/libOgreTerrain.so.1.7.3
-lib/pkgconfig/OGRE-PCZ.pc
-lib/pkgconfig/OGRE-Paging.pc
-lib/pkgconfig/OGRE-RTShaderSystem.pc
-lib/pkgconfig/OGRE-Terrain.pc
-lib/pkgconfig/OGRE.pc
+libdata/pkgconfig/OGRE-PCZ.pc
+libdata/pkgconfig/OGRE-Paging.pc
+libdata/pkgconfig/OGRE-RTShaderSystem.pc
+libdata/pkgconfig/OGRE-Terrain.pc
+libdata/pkgconfig/OGRE.pc
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
 %%PORTDOCS%%%%DOCSDIR%%/COPYING
 %%PORTDOCS%%%%DOCSDIR%%/README
@@ -492,5 +492,4 @@ lib/pkgconfig/OGRE.pc
 @dirrm include/OGRE
 @dirrm lib/OGRE/cmake
 @dirrm lib/OGRE
-@dirrm lib/pkgconfig
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
