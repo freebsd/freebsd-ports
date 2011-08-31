@@ -7,6 +7,7 @@
 
 PORTNAME=	libsamplerate
 PORTVERSION=	0.1.8
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://www.mega-nerd.com/SRC/
 
@@ -22,13 +23,6 @@ LIB_DEPENDS+=	sndfile.1:${PORTSDIR}/audio/libsndfile \
 USE_GNOME=	gnomehack pkgconfig
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
-
-post-install:
-.if !defined(NOPORTDOCS)
-	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.css ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/doc/*.png ${DOCSDIR}
-.endif
+MAKE_ARGS=	htmldocdir=${PREFIX}/share/doc/libsamplerate
 
 .include <bsd.port.mk>
