@@ -70,5 +70,6 @@ post-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/vmkfstools ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/vifs ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/bin/vihostupdate ${PREFIX}/bin
+	@${CAT} ${PKGMESSAGE}
 
 .include <bsd.port.post.mk>
