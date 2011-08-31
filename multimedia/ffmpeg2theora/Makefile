@@ -5,13 +5,14 @@
 # $FreeBSD$
 
 PORTNAME=	ffmpeg2theora
-PORTVERSION=	0.27
-PORTREVISION=	1
+PORTVERSION=	0.28
 CATEGORIES=	multimedia
 MASTER_SITES=	http://v2v.cc/~j/ffmpeg2theora/downloads/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Reencode many media file formats to Ogg Theora
+
+LICENSE=	GPLv3
 
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		theora.0:${PORTSDIR}/multimedia/libtheora \
