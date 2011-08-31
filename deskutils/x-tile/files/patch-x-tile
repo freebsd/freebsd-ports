@@ -1,0 +1,15 @@
+$FreeBSD$
+
+Fix ctypes warning, by Ruslan Mahmatkhanov <cvs-src@yandex.ru>
+
+--- x-tile.orig	2011-07-04 01:41:29.000000000 +0400
++++ x-tile	2011-08-22 20:20:30.000000000 +0400
+@@ -56,7 +56,7 @@
+ try:
+    libc = ctypes.cdll.LoadLibrary(ctypes.util.find_library("libc"))
+    libc.prctl(15, cons.APP_NAME, 0, 0, 0)
+-except: print "libc.prctl not available, the process name will be python and not x-tile"
++except: pass
+ 
+ # icons generation
+ factory = gtk.IconFactory()

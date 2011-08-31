@@ -1,48 +1,47 @@
 bin/x-tile
-lib/bonobo/servers/x-tile.server
 share/applications/x-tile.desktop
-share/locale/de/LC_MESSAGES/x-tile.mo
-share/locale/es/LC_MESSAGES/x-tile.mo
-share/locale/fr/LC_MESSAGES/x-tile.mo
-share/locale/it/LC_MESSAGES/x-tile.mo
-share/locale/ja/LC_MESSAGES/x-tile.mo
-share/locale/pt_BR/LC_MESSAGES/x-tile.mo
-share/locale/ru/LC_MESSAGES/x-tile.mo
-share/locale/zh_TW/LC_MESSAGES/x-tile.mo
+%%NLS%%share/locale/cs/LC_MESSAGES/x-tile.mo
+%%NLS%%share/locale/de/LC_MESSAGES/x-tile.mo
+%%NLS%%share/locale/es_AR/LC_MESSAGES/x-tile.mo
+%%NLS%%share/locale/fr/LC_MESSAGES/x-tile.mo
+%%NLS%%share/locale/it/LC_MESSAGES/x-tile.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/x-tile.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/x-tile.mo
+%%NLS%%share/locale/zh_TW/LC_MESSAGES/x-tile.mo
 share/pixmaps/x-tile.svg
-share/x-tile/glade/checkbox_checked.svg
-share/x-tile/glade/checkbox_unchecked.svg
-share/x-tile/glade/close-checked-windows.svg
-share/x-tile/glade/help-contents.svg
-share/x-tile/glade/maximize-checked-windows.svg
-share/x-tile/glade/reload-windows-list.svg
-share/x-tile/glade/tile-custom-1-exe.svg
-share/x-tile/glade/tile-custom-1-set.svg
-share/x-tile/glade/tile-custom-2-exe.svg
-share/x-tile/glade/tile-custom-2-set.svg
-share/x-tile/glade/tile-custom-exe.svg
-share/x-tile/glade/tile-custom-set.svg
-share/x-tile/glade/tile-horizontally.svg
-share/x-tile/glade/tile-quad.svg
-share/x-tile/glade/tile-triangle-down.svg
-share/x-tile/glade/tile-triangle-left.svg
-share/x-tile/glade/tile-triangle-right.svg
-share/x-tile/glade/tile-triangle-up.svg
-share/x-tile/glade/tile-vertically.svg
-share/x-tile/glade/toolbar.png
-share/x-tile/glade/unmaximize-checked-windows.svg
-share/x-tile/glade/vbuttonbox.png
-share/x-tile/glade/x-tile.glade
-share/x-tile/glade/x-tile.glade.h
-share/x-tile/glade/x-tile.svg
-share/x-tile/modules/cons.py
-share/x-tile/modules/core.py
-share/x-tile/modules/globs.py
-share/x-tile/modules/support.py
-share/x-tile/modules/tilings.py
-@dirrm share/x-tile/modules
-@dirrm share/x-tile/glade
-@dirrm share/x-tile
+%%DATADIR%%/glade/checkbox_checked.svg
+%%DATADIR%%/glade/checkbox_unchecked.svg
+%%DATADIR%%/glade/close-checked-windows.svg
+%%DATADIR%%/glade/help-contents.svg
+%%DATADIR%%/glade/invert-tiling.svg
+%%DATADIR%%/glade/maximize-checked-windows.svg
+%%DATADIR%%/glade/quit-app.svg
+%%DATADIR%%/glade/reload-windows-list.svg
+%%DATADIR%%/glade/tile-custom-1-exe.svg
+%%DATADIR%%/glade/tile-custom-1-set.svg
+%%DATADIR%%/glade/tile-custom-2-exe.svg
+%%DATADIR%%/glade/tile-custom-2-set.svg
+%%DATADIR%%/glade/tile-grid.svg
+%%DATADIR%%/glade/tile-horizontally.svg
+%%DATADIR%%/glade/tile-quad.svg
+%%DATADIR%%/glade/tile-triangle-down.svg
+%%DATADIR%%/glade/tile-triangle-left.svg
+%%DATADIR%%/glade/tile-triangle-right.svg
+%%DATADIR%%/glade/tile-triangle-up.svg
+%%DATADIR%%/glade/tile-vertically.svg
+%%DATADIR%%/glade/toolbar.png
+%%DATADIR%%/glade/unmaximize-checked-windows.svg
+%%DATADIR%%/glade/x-tile.glade
+%%DATADIR%%/glade/x-tile.glade.h
+%%DATADIR%%/glade/x-tile.svg
+%%DATADIR%%/modules/cons.py
+%%DATADIR%%/modules/core.py
+%%DATADIR%%/modules/globs.py
+%%DATADIR%%/modules/support.py
+%%DATADIR%%/modules/tilings.py
+@dirrm %%DATADIR%%/modules
+@dirrm %%DATADIR%%/glade
+@dirrm %%DATADIR%%
+%%NLS%%@dirrmtry share/locale/es_AR/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/es_AR
 @dirrmtry share/applications
-@dirrmtry lib/bonobo/servers
-@dirrmtry lib/bonobo
