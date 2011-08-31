@@ -7,12 +7,15 @@
 #
 
 PORTNAME=	epix
-PORTVERSION=	1.2.8
+PORTVERSION=	1.2.9
 CATEGORIES=	graphics
 MASTER_SITES=	http://mathcs.holycross.edu/~ahwang/epix/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates math plots and line figures using easy-to-learn syntax
+
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex \
 		latex-pgf>=0:${PORTSDIR}/print/latex-pgf \
@@ -21,14 +24,12 @@ BUILD_DEPENDS=	dvips:${PORTSDIR}/print/dvipsk-tetex \
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX-base \
 		bash:${PORTSDIR}/shells/bash
 
-LICENSE=	GPLv2 GPLv3
-LICENSE_COMB=	dual
-
 USE_BZIP2=	yes
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-bash=${LOCALBASE}/bin/bash \
 		--with-runtime=${CXX}
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		elaps.1 epix.1 flix.1 laps.1
 INFO=		epix
