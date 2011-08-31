@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	gdick
-PORTVERSION=	0.9.1
-PORTREVISION=	14
+PORTVERSION=	0.9.2
 CATEGORIES=	korean python
-MASTER_SITES=	SF
+MASTER_SITES=	http://kldp.net/frs/download.php/816/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	English-Korean Dictionary Client for GNOME2
+
+IGNORE=		has multiple run-time problems, e. g., using obsolete URLs
+DEPRECATED=	HTMLs from the recent Yahoo! Korea Dictionary cannot be parsed
+EXPIRATION_DATE=2011-11-01
 
 RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/cjkcodecs.pth:${PORTSDIR}/converters/py-cjkcodecs
 
