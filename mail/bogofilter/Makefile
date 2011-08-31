@@ -7,7 +7,7 @@
 
 PORTNAME=	bogofilter
 PORTVERSION=	1.2.2
-PORTREVISION?=	2
+PORTREVISION?=	3
 CATEGORIES?=	mail
 MASTER_SITES=	SF/bogofilter/bogofilter-current/bogofilter-${PORTVERSION}
 
@@ -50,8 +50,9 @@ LIB_DEPENDS+=		gsl.16:${PORTSDIR}/math/gsl
 .else
 CONFIGURE_ARGS+=	--with-included-gsl
 .endif
+CPPFLAGS+=	${BF_CPPFLAGS}
 CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib" LIBS="${BF_LIBS}" \
-		PERL="${PERL}" CPPFLAGS="${BF_CPPFLAGS}"
+		PERL="${PERL}"
 INSTALL_TARGET=	install-strip prefix=${PREFIX} mandir=${MANPREFIX}/man
 
 MAN1=		bogofilter.1 bogoutil.1 bogoupgrade.1 bogolexer.1 bogotune.1 \
