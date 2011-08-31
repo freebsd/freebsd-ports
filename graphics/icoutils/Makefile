@@ -6,29 +6,34 @@
 #
 
 PORTNAME=	icoutils
-PORTVERSION=	0.28.0
-PORTREVISION=	1
+PORTVERSION=	0.29.1
 CATEGORIES=	graphics
 MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Convert/extract images in Microsoft Windows(R) icon/cursor files
 
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png
 RUN_DEPENDS=	${SITE_PERL}/LWP.pm:${PORTSDIR}/www/p5-libwww
 
+USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-nls
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		extresso.1 genresscript.1 icotool.1 wrestool.1
-PLIST_FILES=	\
-		bin/extresso \
+PLIST_FILES=	bin/extresso \
 		bin/genresscript \
 		bin/icotool \
 		bin/wrestool
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
