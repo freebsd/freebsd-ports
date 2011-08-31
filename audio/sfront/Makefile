@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	sfront
-PORTVERSION=	0.98
+PORTVERSION=	0.99
 CATEGORIES=	audio
 MASTER_SITES=	CRITICAL
 
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A translator that converts MP4-SA files into efficient C programs
+
+LICENSE=	BSD
 
 USE_BISON=	build
 MAKE_JOBS_SAFE=	yes
@@ -19,7 +21,7 @@ MAKE_JOBS_SAFE=	yes
 MAKE_ARGS=	CC="${CC}" CFLAGS="${CFLAGS}"
 ALL_TARGET=	${PORTNAME}
 
-WRKSRC=		${WRKDIR}/${PORTNAME}/src
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/src
 
 PLIST_FILES=	bin/sfront
 
