@@ -32,14 +32,14 @@ OPTIONS= GNUTLS "Adds GnuTLS support" Off \
 .include <bsd.port.options.mk>
 
 .if defined(WITH_GNUTLS)
-LIB_DEPENDS+=	gnutls.0:${PORTSDIR}/security/gnutls
+LIB_DEPENDS+=	gnutls.47:${PORTSDIR}/security/gnutls
 CONFIGURE_ARGS+=	--with-gnutls
 .else
 CONFIGURE_ARGS+=	--without-gnutls
 .endif
 
 .if defined(WITH_GCRYPT)
-LIB_DEPENDS+=	gcrypt.0:${PORTSDIR}/security/libgcrypt
+LIB_DEPENDS+=	gcrypt.18:${PORTSDIR}/security/libgcrypt
 CONFIGURE_ARGS+=	--with-gcrypt
 .else
 CONFIGURE_ARGS+=	--without-gcrypt
