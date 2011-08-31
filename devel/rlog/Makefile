@@ -6,20 +6,30 @@
 #
 
 PORTNAME=	rlog
-PORTVERSION=	1.3.7
+PORTVERSION=	1.4
 CATEGORIES=	devel
-MASTER_SITES=	http://arg0.net/users/vgough/download/
-EXTRACT_SUFX=	.tgz
+MASTER_SITES=	GOOGLE_CODE
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A flexible message logging facility for C++
 
-BROKEN=	does not fetch
+LICENSE=	LGPL21 LGPL3
+LICENSE_COMB=	dual
 
-USE_AUTOTOOLS=	libtool
-GNU_CONFIGURE=	yes
-USE_GMAKE=	yes
 USE_GNOME=	gnomehack
+USE_GMAKE=	yes
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
+
+post-patch:
+	@${REINPLACE_CMD} -e \
+		'/^SUBDIRS/s|docs||' ${WRKSRC}/Makefile.in
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}/html
+	@(cd ${WRKSRC}/docs/html && ${COPYTREE_SHARE} . ${DOCSDIR}/html)
+.endif
 
 .include <bsd.port.mk>
