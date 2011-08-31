@@ -7,12 +7,14 @@
 #
 
 PORTNAME=	lfm
-PORTVERSION=	2.2
+PORTVERSION=	2.3
 CATEGORIES=	sysutils
 MASTER_SITES=	http://www.terra.es/personal7/inigoserna/lfm/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Last File Manager, a simple 'commander'-type file manager
+
+LICENSE=	GPLv3
 
 USE_PYTHON=	2.4+
 USE_PYDISTUTILS=	yes
