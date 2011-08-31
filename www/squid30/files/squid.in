@@ -90,4 +90,8 @@ required_dirs=${squid_chdir}
 
 required_files=${squid_conf}
 
+# Now make sure that we invoke squid with "-f ${squid_conf}":
+
+command_args="-f ${squid_conf}"
+
 run_rc_command "$1"
