@@ -6,34 +6,30 @@
 #
 
 PORTNAME=	pyxmpp
-PORTVERSION=	1.1.1
-PORTREVISION=	1
+PORTVERSION=	1.1.2
 CATEGORIES=	net-im python
-MASTER_SITES=	http://pyxmpp.jajcus.net/downloads/ \
-		CENKES http://jabberstudio.2nw.net/pyxmpp/
+MASTER_SITES=	http://cloud.github.com/downloads/Jajcus/pyxmpp/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A Python XMPP library
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
+BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython \
+		${PYTHON_PKGNAMEPREFIX}m2crypto>=0.18.2:${PORTSDIR}/security/py-m2crypto \
+		${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
-BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/libxml2.py:${PORTSDIR}/textproc/py-libxml2 \
-		${PYTHON_SITELIBDIR}/dns/__init__.py:${PORTSDIR}/dns/py-dnspython \
-		${PYTHON_PKGNAMEPREFIX}m2crypto>=0.18.2:${PORTSDIR}/security/py-m2crypto
-RUN_DEPENDS=	${BUILD_DEPENDS}
-
-USE_PYTHON=	2.5+
+USE_PYTHON=	2.6+
 USE_PYDISTUTILS=	yes
 
 post-patch:
-	@${GREP} -lr '/usr/bin/python' ${WRKSRC} | \
-		${XARGS} ${REINPLACE_CMD} -e "s!/usr/bin/python!${PYTHON_CMD}!"
-	@${REINPLACE_CMD} -e '/include_dirs =/s|]|,"${LOCALBASE}/include"]|' \
-		-e '/library_dirs =/s|]|"${LOCALBASE}/lib"]|' \
-		-e 's#/usr/local#${LOCALBASE}#g' ${WRKSRC}/setup.py
+	@${GREP} -lR "/usr/bin/python" ${WRKSRC} | ${XARGS} \
+		${REINPLACE_CMD} -e "s|/usr/bin/python|${PYTHON_CMD}|"
+	@${REINPLACE_CMD} -e \
+		"/include_dirs =/s|\[.*|['${LOCALBASE}/include/libxml2','${LOCALBASE}/include']| ; \
+		 /library_dirs =/s|\[.*|['${LOCALBASE}/lib']|" ${WRKSRC}/setup.py
+
 post-install:
-	@${ECHO} "pyxmpp" > ${PYTHON_SITELIBDIR}/pyxmpp.pth
+	@${ECHO_CMD} "pyxmpp" > ${PYTHON_SITELIBDIR}/pyxmpp.pth
 
 .include <bsd.port.mk>
