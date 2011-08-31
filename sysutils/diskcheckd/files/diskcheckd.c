@@ -63,10 +63,12 @@ struct disk {
 	char *device;
 	off_t size;
 	int secsize;
-	int days, rate, errors, interval, next;
+	int days, rate, errors;
+	long long interval, next;
 };
 
 volatile sig_atomic_t got_sighup = 0, got_sigterm = 0;
+volatile int debug = 0;
 
 char **getdisknames(char **, int);
 off_t dseek(struct disk *, off_t, int);
@@ -85,9 +87,11 @@ int
 main(int argc, char *argv[]) {
 	char *buf;
 	struct disk *disks, *dp;
-	int ch, ok, minwait, nextwait;
+	int ch, ok;
+	long long minwait, nextwait;
 	struct sigaction sa;
-	int counter, debug;
+	long long counter;
+	int initial_debug;
 	const char *conf_file, *save_file;
 
 	conf_file = _PATH_CONF;
@@ -97,7 +101,10 @@ main(int argc, char *argv[]) {
 	while ((ch = getopt(argc, argv, "df:o:")) != -1)
 		switch (ch) {
 		case 'd':
-			debug = 1;
+			if (debug)
+				debug *= 2;
+			else
+				debug = 1;
 			break;
 		case 'f':
 			conf_file = optarg;
@@ -116,7 +123,9 @@ main(int argc, char *argv[]) {
 	if (argc != 0)
 		usage();
 
-	openlog("diskcheckd", LOG_CONS|LOG_PID, LOG_DAEMON);
+	initial_debug = debug;
+
+	openlog("diskcheckd", LOG_CONS|LOG_PID|(debug?LOG_PERROR:0), LOG_DAEMON);
 
 	if (!debug && daemon(0, 0) < 0) {
 		syslog(LOG_NOTICE, "daemon failure: %m");
@@ -150,20 +159,24 @@ main(int argc, char *argv[]) {
 	 * each disk's 'next' field, and when that reaches zero,
 	 * that disk is read again.
 	 */
-	counter = 0;
-	minwait = 0;
+	counter = 0LL;
+	minwait = 0LL;
 	while (!got_sigterm) {
 		ok = 0;
-		nextwait = INT_MAX;
+		nextwait = LLONG_MAX;
 		for (dp = disks; dp->device != NULL; dp++)
 			if (dp->fd != -1) {
+				if (debug > 1)
+					fprintf(stderr,
+						"%s:  next(%qd) -= %qd\n",
+						dp->device, dp->next, minwait);
 				if ((dp->next -= minwait) == 0) {
 					ok = 1;
 					readchunk(dp, buf);
 				}
 
 				/* XXX debugging */
-				if (dp->next < 0) {
+				if (dp->next < 0LL) {
 					syslog(LOG_NOTICE,
 					  "dp->next < 0 for %s", dp->device);
 					abort();
@@ -178,14 +191,33 @@ main(int argc, char *argv[]) {
 			exit(EXIT_FAILURE);
 		}
 
-		if (counter >= 300) {
+		/* 300 seconds => 5 minutes */
+		if (counter >= 300000000LL) {
+			if (debug)
+				fprintf(stderr, "counter rollover %qd => 0\n",
+					counter);
 			updateproctitle(disks);
 			writeoffsets(disks, save_file);
-			counter = 0;
+			counter = 0LL;
 		}
 
 		minwait = nextwait;
-		sleep(minwait);
+		if (debug > 1) {
+			--debug;
+			fprintf(stderr, "sleep %qd, counter %qd\n",
+				minwait, counter);
+		}
+
+		/*
+		 * Handle whole seconds and usec separately to avoid overflow
+		 * when calling usleep -- useconds_t is only 32 bits on at
+		 * least some architectures, and minwait (being long long)
+		 * may exceed INT_MAX.
+		 */
+		if (minwait > 1000000LL)
+			sleep((unsigned int)(minwait / 1000000));
+		if ((minwait % 1000000) > 0)
+			usleep((useconds_t)(minwait % 1000000));
 		counter += minwait;
 
 		if (got_sighup) {
@@ -194,6 +226,11 @@ main(int argc, char *argv[]) {
 			 * memory used for the disk structures, and then
 			 * re-read the config file and the disk offsets.
 			 */
+			if (debug) {
+				fprintf(stderr, "got SIGHUP, counter == %qd\n",
+					counter);
+				debug = initial_debug;
+			}
 			writeoffsets(disks, save_file);
 			for (dp = disks; dp->device != NULL; dp++) {
 				free(dp->device);
@@ -202,10 +239,14 @@ main(int argc, char *argv[]) {
 			free(disks);
 			disks = readconf(conf_file);
 			readoffsets(disks, save_file);
+			minwait = 0LL;
 			got_sighup = 0;
 		}
 	}
 
+	if (debug)
+		fprintf(stderr, "got %s, counter == %qd\n",
+			got_sigterm==SIGTERM?"SIGTERM":"SIGINT", counter);
 	writeoffsets(disks, save_file);
 	return (EXIT_SUCCESS);
 }
@@ -384,6 +425,9 @@ readoffsets(struct disk *disks, const char *save_file) {
 	char *space, buf[1024];
 
 	if ((fp = fopen(save_file, "r")) == NULL) {
+		if (debug > 1 && errno == ENOENT)
+			fprintf(stderr, "open %s failed: %s [continuing]\n",
+				save_file, strerror(errno));
 		if (errno != ENOENT)
 			syslog(LOG_NOTICE, "open %s failed: %m", save_file);
 		return;
@@ -398,10 +442,15 @@ readoffsets(struct disk *disks, const char *save_file) {
 		    dp->device != NULL && strcmp(dp->device, buf) != 0; dp++)
 			; /* nothing */
 
-		if (dp->device != NULL)
+		if (dp->device != NULL) {
+			if (debug)
+				fprintf(stderr, "%s: seek %s", buf, space + 1);
 			dseek(dp, (off_t)strtoq(space + 1, NULL, 0), SEEK_SET);
+		}
 	}
 	fclose(fp);
+	if (debug)
+		fprintf(stderr, "readoffsets: done\n");
 }
 
 /*
@@ -418,10 +467,21 @@ writeoffsets(struct disk *disks, const char *save_file) {
 		return;
 	}
 
+	if (debug)
+		fprintf(stderr,
+			"#\tposition/size\tdays\trate\terrors\tintvl\tnext\n");
 	for (dp = disks; dp->device != NULL; dp++)
-		if (strcmp(dp->device, "*") != 0)
+		if (strcmp(dp->device, "*") != 0) {
 			fprintf(fp, "%s %qd\n", dp->device,
 			    (quad_t)dseek(dp, 0, SEEK_CUR));
+			if (debug) {
+				fprintf(stderr, "%s %qd\n", dp->device,
+					(quad_t)dseek(dp, 0, SEEK_CUR));
+				fprintf(stderr, "#\t%qd\t%d\t%d\t%d\t%qd\t%qd\n",
+					(quad_t)dp->size, dp->days, dp->rate,
+					dp->errors, dp->interval, dp->next);
+			}
+		}
 	fclose(fp);
 }
 
@@ -577,8 +637,8 @@ readconf(const char *conf_file) {
 				dp->fd = -1;
 				dp->rate = -1;
 				dp->size = -1;
-				dp->interval = -1;
-				dp->next = 0;
+				dp->interval = -1LL;
+				dp->next = 0LL;
 				break;
 			case 1:
 				/* size */
@@ -688,7 +748,7 @@ readconf(const char *conf_file) {
 				disks[numdisks].size = dp->size;
 				disks[numdisks].days = dp->days;
 				disks[numdisks].interval = dp->interval;
-				disks[numdisks].next = 0;
+				disks[numdisks].next = 0LL;
 				disks[numdisks].device = *np;
 				numdisks++;
 			}
@@ -727,13 +787,20 @@ readconf(const char *conf_file) {
 		if (dp->size < 0)
 			getdisksize(dp);
 		if (dp->rate < 0)
-			dp->rate = dp->size / (dp->days * 86400);
+			dp->rate = (dp->size + dp->days * 43200)
+				   / (dp->days * 86400);
 
+		/*   * 1000000 => convert seconds to usec   */
 		if (dp->rate == 0)
 			/* paranoia, should never really happen */
-			dp->interval = READ_SIZE;
+			dp->interval = (long long)READ_SIZE * 1000000;
 		else
-			dp->interval = READ_SIZE / dp->rate;
+			dp->interval = ((long long)READ_SIZE * 1000000)
+				       / dp->rate;
+
+		if (debug > 1)
+			fprintf(stderr, "%s:  rate %d  intvl %qd  next %qd\n",
+				dp->device, dp->rate, dp->interval, dp->next);
 	}
 
 	if (numdisks == 0) {
@@ -873,8 +940,7 @@ sighup(int sig) {
 void
 sigterm(int sig) {
 
-	sig = sig;
-	got_sigterm = 1;
+	got_sigterm = sig;
 }
 
 void

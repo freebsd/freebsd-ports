@@ -1,5 +1,4 @@
-# ex:ts=8
-# Ports collection makefile for:  diskcheckd
+# Ports collection Makefile for:  diskcheckd
 # Date created:			  Thu Aug 23, 2001
 # Whom:				  David W. Chapman Jr. (dwcjr@FreeBSD.org)
 #
@@ -7,18 +6,14 @@
 #
 
 PORTNAME=	diskcheckd
-PORTVERSION=	20010823
-PORTREVISION=	5
+PORTVERSION=	20110729
 CATEGORIES=	sysutils
 MASTER_SITES=	# part of port
 DISTFILES=	# part of port
 EXTRACT_ONLY=	# part of port
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perryh@pluto.rain.com
 COMMENT=	Daemon to check for disk read errors
-
-DEPRECATED=	Unmaintained, broken (ports/143566)
-EXPIRATION_DATE=2011-10-17
 
 MAN8=		diskcheckd.8
 MLINKS=		diskcheckd.8 diskcheckd.conf.5
@@ -40,6 +35,11 @@ do-patch:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/diskcheckd ${PREFIX}/sbin
 	${INSTALL_DATA}	${FILESDIR}/diskcheckd.conf ${PREFIX}/etc/diskcheckd.conf.sample
-	${INSTALL_MAN} ${WRKSRC}/diskcheckd.8 ${PREFIX}/man/man8
+	${INSTALL_MAN} ${WRKSRC}/diskcheckd.8 ${MAN8PREFIX}/man/man8
+
+post-install:
+	@[ -f ${PREFIX}/etc/diskcheckd.conf ] \
+		|| ${CP} -p ${PREFIX}/etc/diskcheckd.conf.sample \
+			${PREFIX}/etc/diskcheckd.conf
 
 .include <bsd.port.mk>

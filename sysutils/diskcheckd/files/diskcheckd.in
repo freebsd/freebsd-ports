@@ -2,20 +2,16 @@
 #
 # $FreeBSD$
 #
-
 # PROVIDE: diskcheckd
 # REQUIRE: DAEMON
 # KEYWORD: shutdown
 #
 
-# Define these diskcheckd_* variables in one of these files:
-#	/etc/rc.conf
-#	/etc/rc.conf.local
-#	/etc/rc.conf.d/diskcheckd
+# Add the following line to /etc/rc.conf to enable diskcheckd:
 #
-# DO NOT CHANGE THE DEFAULT VALUES HERE
+# diskcheckd_enable="YES"
 
-diskcheckd_enable=${diskcheckd_enable:-"no"}
+: ${diskcheckd_enable="NO"}
 
 . /etc/rc.subr
 
