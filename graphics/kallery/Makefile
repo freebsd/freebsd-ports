@@ -11,12 +11,14 @@ PORTREVISION=	6
 CATEGORIES=	graphics www kde
 MASTER_SITES=	http://kallery.kdewebdev.org/releases/
 
-MAINTAINER=	metrol@metrol.net
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An image gallery generator for KDE
 
 LIB_DEPENDS=	MagickCore.4:${PORTSDIR}/graphics/ImageMagick
 
 BROKEN=		does not build
+DEPRECATED=		does not build; last release 20010511
+EXPIRATION_DATE=	2011-10-30
 
 USE_KDELIBS_VER=3
 USE_BZIP2=	yes
