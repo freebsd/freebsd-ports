@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	nawk
-PORTVERSION=	20110807
+PORTVERSION=	20110810
 CATEGORIES=	lang
 MASTER_SITES=	http://www.cs.princeton.edu/~bwk/btl.mirror/
 DISTNAME=	awk
@@ -15,8 +15,6 @@ DIST_SUBDIR=	${PORTNAME}
 
 MAINTAINER=	ota@j.email.ne.jp
 COMMENT=	Brian Kernighan's pattern scanning and processing language
-
-BROKEN=		does not fetch
 
 NO_WRKSUBDIR=	yes
 MAKEFILE=	makefile
