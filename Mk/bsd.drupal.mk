@@ -52,6 +52,7 @@ DRUPAL_MODTYPE=	themes
 DRUPAL_BASE?=   www/drupal7
 .elif ${DRUPAL_VERSION} == "6"
 DRUPAL_BASE?=   www/drupal6
+.else
 BROKEN=		Unknown DRUPAL_VERSION (${DRUPAL_VERSION})
 .endif
 
