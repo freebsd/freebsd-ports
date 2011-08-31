@@ -6,14 +6,19 @@
 #
 
 PORTNAME=	atlc
-PORTVERSION=	4.6.0
+PORTVERSION=	4.6.1
 CATEGORIES=	cad
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A tool to calculate the impedance of transmission lines
 
-GNU_CONFIGURE=	YES
+LICENSE=	GPLv2 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+USE_BZIP2=	yes
+GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		atlc.1 coax.1 create_bmp_for_circ_in_circ.1 \
 		create_bmp_for_circ_in_rect.1 \
@@ -27,32 +32,44 @@ MAN1=		atlc.1 coax.1 create_bmp_for_circ_in_circ.1 \
 		design_coupler.1 dualcoax.1 \
 		find_optimal_dimensions_for_microstrip_coupler.1 \
 		readbin.1 sysdata.1
-
-pre-everything::
-	@${ECHO_MSG}
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-	@${ECHO_MSG} "You can enable additional compilation optimizations"
-	@${ECHO_MSG} "by defining WITH_OPTIMIZED_CFLAGS"
-.endif
-	@${ECHO_MSG}
+PORTDOCS=	*
+PORTEXAMPLES=	*
+PLIST_FILES=	bin/atlc bin/coax bin/create_any_bitmap \
+		bin/create_bmp_for_circ_in_circ \
+		bin/create_bmp_for_circ_in_rect \
+		bin/create_bmp_for_microstrip_coupler \
+		bin/create_bmp_for_rect_cen_in_rect \
+		bin/create_bmp_for_rect_cen_in_rect_coupler \
+		bin/create_bmp_for_rect_in_circ \
+		bin/create_bmp_for_rect_in_rect \
+		bin/create_bmp_for_stripline_coupler \
+		bin/create_bmp_for_symmetrical_stripline \
+		bin/design_coupler bin/dualcoax \
+		bin/find_optimal_dimensions_for_microstrip_coupler \
+		bin/locatediff bin/myfilelength bin/mymd5sum bin/readbin
 
 post-patch:
-.if !defined(WITH_OPTIMIZED_CFLAGS)
-		@${REINPLACE_CMD} -E -e 's,-O(2|3),,' \
-			${CONFIGURE_WRKSRC}/${CONFIGURE_SCRIPT}
-.endif
-
-.if !defined(NOPORTDOCS)
-.for file in docs/qex-december-1996/Makefile.in \
-		docs/html-docs/Makefile.in \
-		docs/html-docs/jpgs/Makefile.in
-	@${REINPLACE_CMD} -e 's|atlc/docs|doc/atlc|' ${WRKSRC}/${file}
+.for file in Makefile.in
+	@${REINPLACE_CMD} -e \
+		'/^SUBDIRS/s|docs examples||' ${WRKSRC}/${file}
 .endfor
-	@${REINPLACE_CMD} -e 's|atlc/examples|examples/atlc|' \
-		-e 's|cvsignore||' -e 's|create_for_Makefile.am||' \
-		${WRKSRC}/examples/Makefile.in
-.else
-	@${REINPLACE_CMD} -e 's|docs examples||' ${WRKSRC}/Makefile.in
+
+post-install:
+.if !defined(NOPORTDOCS)
+	@${MKDIR} ${DOCSDIR}
+	@(${TAR} -C ${WRKSRC}/docs --exclude "*Makefile*" -cf - . | \
+		${TAR} -C ${DOCSDIR} --unlink -xf -)
+	@${FIND} ${DOCSDIR} -type d | ${XARGS} ${CHMOD} a+rx
+	@${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@${FIND} ${DOCDIR} | ${XARGS} ${CHOWN} ${SHHAREOWN}:${SHAREGRP}
+.endif
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@(${TAR} -C ${WRKSRC}/examples --exclude "*Makefile*" -cf - . | \
+		${TAR} -C ${EXAMPLESDIR} --unlink -xf -)
+	@${FIND} ${DOCSDIR} -type d | ${XARGS} ${CHMOD} a+rx
+	@${FIND} ${DOCSDIR} -type f | ${XARGS} ${CHMOD} ${SHAREMODE}
+	@${FIND} ${DOCDIR} | ${XARGS} ${CHOWN} ${SHHAREOWN}:${SHAREGRP}
 .endif
 
 .include <bsd.port.mk>
