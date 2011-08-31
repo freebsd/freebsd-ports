@@ -6,43 +6,46 @@
 #
 
 PORTNAME=	feappv
-PORTVERSION=	2.0
-PORTREVISION=	5
+PORTVERSION=	2.2
 CATEGORIES=	cad science
 MASTER_SITES=	http://www.ce.berkeley.edu/projects/feap/feappv/
 MASTER_SITE_SUBDIR=	feap
-DISTFILES=	${PORTNAME}20${EXTRACT_SUFX}
-.ifndef NOPORTDOCS
+DISTFILES=	${PORTNAME}${PORTVERSION:S/.//}${EXTRACT_SUFX}
+.if !defined(NOPORTDOCS)
 DISTFILES+=	manual.pdf
 .endif
 DIST_SUBDIR=	feap
-EXTRACT_ONLY=	${PORTNAME}20${EXTRACT_SUFX}
+EXTRACT_ONLY=	${PORTNAME}${PORTVERSION:S/.//}${EXTRACT_SUFX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Finite Element Analysis Program "personal version"
 
-USE_ZIP=	yes
-EXTRACT_BEFORE_ARGS=	-L
+WRKSRC=		${WRKDIR}/ver${PORTVERSION:S/.//}
 
-WRKSRC=		${WRKDIR}/ver20
+USE_ZIP=	yes
 USE_XORG=	x11
 USE_FORTRAN=	yes
-FFLAGS+=	-O2
+USE_GMAKE=	yes
 MAKEFILE=	makefile
+MAKE_ARGS=	FF="${FC}" CC="${CC}" FFOPTFLAG="${FFLAGS}" \
+		CCOPTFLAG="${CFLAGS} -I{LOCALBASE}/include" \
+		LDOPTIONS="-L${LOCALBASE}/lib -lX11 -lm" \
+		FINCLUDE="${WRKSRC}/include" ARFEAP="${WRKSRC}/libfeappv.a"
 ALL_TARGET=	install
+MAKE_JOBS_SAFE=	yes
+
+PORTDOCS=	*
+PLIST_FILES=	bin/feappv lib/libfeappv.a
 
 post-patch:
-	@${REINPLACE_CMD} -e 's+%%FC%%+${FC}+g; s+%%CC%%+${CC}+g;	\
-	s+%%FFLAGS%%+${FFLAGS}+g; s+%%CFLAGS%%+${CFLAGS}+g;	\
-	s+/usr/X11R6+${LOCALBASE}+g; s+%%WRKSRC%%+${WRKSRC}+;' 	\
-	${WRKSRC}/makefile.in
+	@${REINPLACE_CMD} -e 's| make | $$(MAKE) |g' ${WRKSRC}/makefile
 
 do-install:
-	@${INSTALL_PROGRAM} ${WRKSRC}/main/feappv ${PREFIX}/bin/feappv
-	@${INSTALL_DATA} ${WRKSRC}/libfeappv.a ${PREFIX}/lib/
-.ifndef NOPORTDOCS
+	${INSTALL_PROGRAM} ${WRKSRC}/main/feappv ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKSRC}/libfeappv.a ${PREFIX}/lib
+.if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manual.pdf ${DOCSDIR}
+	${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/manual.pdf ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
