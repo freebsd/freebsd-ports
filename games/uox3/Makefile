@@ -18,7 +18,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A GPL'd server for Origin Systems' Ultima Online multiplayer game
 
 DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
+EXPIRATION_DATE=	2011-11-01
 
 DIST_SUBDIR=	uox3
 USE_ZIP=	YES
