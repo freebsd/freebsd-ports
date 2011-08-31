@@ -2,7 +2,7 @@
 
 PORTNAME=	anki
 PORTVERSION=	1.2.8
-PORTREVISION?=	0
+PORTREVISION?=	1
 CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 EXTRACT_SUFX=	.tgz
@@ -36,7 +36,7 @@ DESKTOP_ENTRIES=	"${PORTNAME}" \
 		false
 .else
 BUILD_DEPENDS=	${PYNUMPY} \
-		py*-pysqlite>=0:${PORTSDIR}/databases/py-pysqlite23 \
+		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		py*-sqlalchemy06>=0:${PORTSDIR}/databases/py-sqlalchemy06 \
 		py*-game>=0:${PORTSDIR}/devel/py-game \
 		py*-simplejson>=0:${PORTSDIR}/devel/py-simplejson \

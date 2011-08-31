@@ -6,7 +6,7 @@
 
 PORTNAME=	pyjama
 PORTVERSION=	0.3.0.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	multimedia python
 MASTER_SITES=	http://launchpadlibrarian.net/26637583/
 DISTNAME=	pyjama-0.3.0.1_all
@@ -14,7 +14,7 @@ DISTNAME=	pyjama-0.3.0.1_all
 MAINTAINER=	ktullavik@gmail.com
 COMMENT=	Frontend to the Jamendo music network
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pysqlite>=2.3:${PORTSDIR}/databases/py-pysqlite23 \
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_PKGNAMEPREFIX}lxml>=2.2:${PORTSDIR}/devel/py-lxml \
 		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson	\
 		${PYTHON_PKGNAMEPREFIX}gstreamer>=0.10:${PORTSDIR}/multimedia/py-gstreamer
@@ -22,7 +22,7 @@ RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}pysqlite>=2.3:${PORTSDIR}/databases/py-pysql
 NO_BUILD=	yes
 
 USE_PYTHON=	2.5+
-USE_GSTREAMER=	core good bad
+USE_GSTREAMER=	core good bad gnomevfs
 USE_GNOME=	pygtk2
 USE_GETTEXT=	yes
 
