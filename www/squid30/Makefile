@@ -61,7 +61,6 @@
 
 PORTNAME=	squid
 PORTVERSION=	3.0.${SQUID_STABLE_VER}
-PORTREVISION=	4
 CATEGORIES=	www
 MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://mirrors.ccs.neu.edu/Squid/ \
@@ -72,13 +71,13 @@ MASTER_SITES=	ftp://ftp.squid-cache.org/pub/%SUBDIR%/ \
 		http://mirror.aarnet.edu.au/pub/squid/squid/ \
 		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/squid,} \
 		http://www.squid-cache.org/Versions/v3/3.0/ \
-		http://www2.us.squid-cache.org/Versions/v3/3.0/ \
+		http://www3.us.squid-cache.org/Versions/v3/3.0/ \
 		http://www1.at.squid-cache.org/Versions/v3/3.0/ \
 		http://www2.de.squid-cache.org/Versions/v3/3.0/ \
 		http://www.eu.squid-cache.org/Versions/v3/3.0/ \
 		http://www1.ie.squid-cache.org/Versions/v3/3.0/ \
 		http://www1.jp.squid-cache.org/Versions/v3/3.0/ \
-		http://www2.tw.squid-cache.org/Versions/v3/3.0/
+		http://www1.za.squid-cache.org/Versions/v3/3.0/
 MASTER_SITE_SUBDIR=	squid
 DISTNAME=	squid-3.0.STABLE${SQUID_STABLE_VER}
 DIST_SUBDIR=	squid3.0
@@ -92,16 +91,20 @@ PATCH_SITES=	http://www.squid-cache.org/%SUBDIR%/ \
 		http://www1.jp.squid-cache.org/%SUBDIR%/ \
 		http://www2.tw.squid-cache.org/%SUBDIR%/
 PATCH_SITE_SUBDIR=	Versions/v3/3.0/changesets
-PATCHFILES=	squid-3.0-9183.patch squid-3.0-9184.patch squid-3.0-9185.patch \
-		squid-3.0-9186.patch squid-3.0-9187.patch squid-3.0-9188.patch \
-		squid-3.0-9189.patch
+PATCHFILES=	#empty
 
 MAINTAINER=	tmseck@web.de
 COMMENT=	HTTP Caching Proxy
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
+DEPRECATED=	This version of Squid is no longer actively maintained upstream
+EXPIRATION_DATE=	2011-12-31
+
 LATEST_LINK=	squid30
 
-SQUID_STABLE_VER=	25
+SQUID_STABLE_VER=	26
 
 CONFLICTS_INSTALL=	squid-2.[0-9].* squid-3.[^0].* cacheboy-[0-9]* lusca-head-[0-9]*
 GNU_CONFIGURE=	yes
@@ -383,7 +386,7 @@ CONFIGURE_ARGS+=	--enable-err-languages="${SQUID_LANGUAGES}" \
 # Finally, add additional user specified configuration options:
 CONFIGURE_ARGS+=	${SQUID_CONFIGURE_ARGS}
 
-CONFIGURE_ENV+=		LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 
 PLIST_DIRS=	%%ETCDIR%%/icons libexec/squid
 PLIST_FILES=	${etc_files:S,^,etc/,} ${icon_files:S,^,%%ETCDIR%%/icons/,} \
