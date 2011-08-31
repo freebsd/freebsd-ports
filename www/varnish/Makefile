@@ -39,13 +39,6 @@ MAN7=		vcl.7 varnish-cli.7
 USE_RC_SUBR=	varnishd varnishlog varnishncsa
 SUB_FILES=	pkg-message
 
-.if defined(WITH_VARNISHNCSA_B)
-# I still find a use for varnishncsa -b, even though Varnish developers does
-# not seem to want to keep this option. - anders@FreeBSD.org 2011-08-31
-PATCH_SITES+=	http://anders.fupp.net/distfiles/:ncsab
-PATCHFILES+=	patch-varnishncsa-3.0.0.diff:ncsab
-.endif
-
 .include <bsd.port.pre.mk>
 
 .if ${OSVERSION} < 601000
