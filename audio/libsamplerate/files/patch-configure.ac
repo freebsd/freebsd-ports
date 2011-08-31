@@ -1,0 +1,33 @@
+--- configure.ac.orig	2011-08-24 08:46:32.000000000 -0300
++++ configure.ac	2011-08-24 08:48:08.000000000 -0300
+@@ -262,12 +262,12 @@
+ 		;;
+ 	esac
+ 
+-htmldocdir=$prefix/share/doc/libsamplerate0-dev/html
++htmldocdir=$prefix/share/doc/libsamplerate/html
+ 
+ if test $prefix = "NONE" ; then
+-	htmldocdir=/usr/local/share/doc/libsamplerate0-dev/html
++	htmldocdir=/usr/local/share/doc/libsamplerate
+ else
+-	htmldocdir=$prefix/share/doc/libsamplerate0-dev/html
++	htmldocdir=$prefix/share/doc/libsamplerate
+ 	fi
+ 
+ #====================================================================================
+@@ -331,12 +331,12 @@
+ 
+     Library directory : ........... ${prefix}/lib
+     Program directory : ........... ${prefix}/bin
+-    Pkgconfig directory : ......... ${prefix}/lib/pkgconfig
++    Pkgconfig directory : ......... ${prefix}/libdata/pkgconfig
+ ])
+ 
+ if test x$prefix != "x/usr" ; then
+ 	echo "Compiling some other packages against ${PACKAGE} may require "
+-	echo -e "the addition of \"${prefix}/lib/pkgconfig\" to the "
++	echo -e "the addition of \"${prefix}/libdata/pkgconfig\" to the "
+ 	echo -e "PKG_CONFIG_PATH environment variable.\n"
+ 	fi
+ 
