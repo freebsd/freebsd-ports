@@ -1,6 +1,6 @@
-# New ports collection makefile for:	qudos
+# New ports collection makefile for:	QuDos
 # Date created:				24 May 2006
-# Whom:					alepulver
+# Whom:					Alejandro Pulver <alepulver@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -15,7 +15,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		QuDos-${PORTVERSION}.pk3
 EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Enhanced OpenGL only Quake II engine
 
 USE_BZIP2=	yes
