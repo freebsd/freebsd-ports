@@ -2,10 +2,11 @@ bin/redshift
 share/icons/hicolor/scalable/apps/redshift.svg
 share/icons/hicolor/scalable/apps/redshift-status-off.svg
 share/icons/hicolor/scalable/apps/redshift-status-on.svg
-share/icons/ubuntu-mono-dark/scalable/apps/redshift-status-off.svg
-share/icons/ubuntu-mono-dark/scalable/apps/redshift-status-on.svg
-share/icons/ubuntu-mono-light/scalable/apps/redshift-status-off.svg
-share/icons/ubuntu-mono-light/scalable/apps/redshift-status-on.svg
+%%NLS%%share/locale/ar/LC_MESSAGES/redshift.mo
+%%NLS%%share/locale/ca/LC_MESSAGES/redshift.mo
+%%NLS%%share/locale/gl/LC_MESSAGES/redshift.mo
+%%NLS%%share/locale/nl/LC_MESSAGES/redshift.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/redshift.mo
 %%NLS%%share/locale/cs/LC_MESSAGES/redshift.mo
 %%NLS%%share/locale/da/LC_MESSAGES/redshift.mo
 %%NLS%%share/locale/de/LC_MESSAGES/redshift.mo
@@ -34,12 +35,6 @@ share/icons/ubuntu-mono-light/scalable/apps/redshift-status-on.svg
 %%GUI%%lib/python2.6/site-packages/gtk_redshift/utils.pyc
 %%GUI%%lib/python2.6/site-packages/gtk_redshift/utils.pyo
 %%GUI%%share/applications/gtk-redshift.desktop
-@dirrmtry share/icons/ubuntu-mono-dark/scalable/apps
-@dirrmtry share/icons/ubuntu-mono-dark/scalable
-@dirrmtry share/icons/ubuntu-mono-dark
-@dirrmtry share/icons/ubuntu-mono-light/scalable/apps
-@dirrmtry share/icons/ubuntu-mono-light/scalable
-@dirrmtry share/icons/ubuntu-mono-light
 @dirrmtry share/icons/hicolor/scalable/apps
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor
