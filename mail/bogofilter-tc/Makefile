@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bogofilter
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	mail
 PKGNAMESUFFIX=	-tc
 
@@ -15,7 +15,7 @@ MAINTAINER=	mandree@FreeBSD.org
 
 LIB_DEPENDS=	tokyocabinet.9:${PORTSDIR}/databases/tokyocabinet
 
-CONFLICTS=	bogofilter-[0-9]* [a-z][a-z]-bogofilter-[1-9]* bogofilter-sqlite-[0-9]* bogofilter-qdbm-[0-9]*
+CONFLICTS_INSTALL=	bogofilter-[0-9]* [a-z][a-z]-bogofilter-[1-9]* bogofilter-sqlite-[0-9]* bogofilter-qdbm-[0-9]*
 
 CONFIGURE_ARGS=	--with-database=tokyocabinet
 BF_CPPFLAGS=	-I${LOCALBASE}/include
