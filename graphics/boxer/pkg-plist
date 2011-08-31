@@ -14,6 +14,9 @@ bin/boxer
 %%PYTHON_SITELIBDIR%%/boxer/boxmode.py
 %%PYTHON_SITELIBDIR%%/boxer/boxmode.pyc
 %%PYTHON_SITELIBDIR%%/boxer/boxmode.pyo
+%%PYTHON_SITELIBDIR%%/boxer/browser.py
+%%PYTHON_SITELIBDIR%%/boxer/browser.pyc
+%%PYTHON_SITELIBDIR%%/boxer/browser.pyo
 %%PYTHON_SITELIBDIR%%/boxer/colortool.py
 %%PYTHON_SITELIBDIR%%/boxer/colortool.pyc
 %%PYTHON_SITELIBDIR%%/boxer/colortool.pyo
@@ -53,7 +56,10 @@ bin/boxer
 %%PYTHON_SITELIBDIR%%/boxer/geom2.py
 %%PYTHON_SITELIBDIR%%/boxer/geom2.pyc
 %%PYTHON_SITELIBDIR%%/boxer/geom2.pyo
+%%PYTHON_SITELIBDIR%%/boxer/glade/boxer-new.glade
 %%PYTHON_SITELIBDIR%%/boxer/glade/boxer.glade
+%%PYTHON_SITELIBDIR%%/boxer/glade/boxer.glade.orig
+%%PYTHON_SITELIBDIR%%/boxer/hl/box.lang
 %%PYTHON_SITELIBDIR%%/boxer/icons/border.png
 %%PYTHON_SITELIBDIR%%/boxer/icons/borderds.png
 %%PYTHON_SITELIBDIR%%/boxer/icons/borderwd.png
@@ -146,6 +152,9 @@ bin/boxer
 %%PYTHON_SITELIBDIR%%/boxer/rotpaned.py
 %%PYTHON_SITELIBDIR%%/boxer/rotpaned.pyc
 %%PYTHON_SITELIBDIR%%/boxer/rotpaned.pyo
+%%PYTHON_SITELIBDIR%%/boxer/sample.py
+%%PYTHON_SITELIBDIR%%/boxer/sample.pyc
+%%PYTHON_SITELIBDIR%%/boxer/sample.pyo
 %%PYTHON_SITELIBDIR%%/boxer/toolbox.py
 %%PYTHON_SITELIBDIR%%/boxer/toolbox.pyc
 %%PYTHON_SITELIBDIR%%/boxer/toolbox.pyo
@@ -154,6 +163,7 @@ bin/boxer
 %%PYTHON_SITELIBDIR%%/boxer/zoomable.pyo
 @dirrm %%PYTHON_SITELIBDIR%%/boxer/icons/fonts
 @dirrm %%PYTHON_SITELIBDIR%%/boxer/icons
+@dirrm %%PYTHON_SITELIBDIR%%/boxer/hl
 @dirrm %%PYTHON_SITELIBDIR%%/boxer/glade
 @dirrm %%PYTHON_SITELIBDIR%%/boxer/examples
 @dirrm %%PYTHON_SITELIBDIR%%/boxer

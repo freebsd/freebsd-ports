@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	boxer
-PORTVERSION=	0.3.0
+PORTVERSION=	0.3.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/boxc/${PORTNAME:C/^b/B/}%20-%20the%20Box%20GUI/${DISTNAME}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI for Box the figure description language
+
+LICENSE=	GPLv3 # (or later)
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 RUN_DEPENDS=	box:${PORTSDIR}/graphics/box
 
