@@ -1,2 +1,4 @@
-SHA256 (squid3.1/squid-3.1.14.tar.bz2) = 8faf16d73ae44029e698160386c45ab853f2fc842601bd550a1c5461815d8a3e
-SIZE (squid3.1/squid-3.1.14.tar.bz2) = 2510694
+SHA256 (squid3.1/squid-3.1.15.tar.bz2) = 1300f44dd4783697bacc262a7a9b32dbc9f550367fe82b70262864fdff715a35
+SIZE (squid3.1/squid-3.1.15.tar.bz2) = 2510536
+SHA256 (squid3.1/squid-3.1-10373.patch) = 42e64e6a4df593fee927f9849d6853dd45d68d449da93afaad523295894c2ebf
+SIZE (squid3.1/squid-3.1-10373.patch) = 1326
