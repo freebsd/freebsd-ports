@@ -5,7 +5,7 @@ Nexuiz is built on the power of the Darkplaces engine, which is a heavily
 modified version of the original Quake.  Darkplaces features realtime
 lighting and stencil shadows, bumpmapping, gloss, bloom, and totally
 rewritten network code that supports up to 64 players on a single server.
-While quality gameplay was our primary goal, it's graphics technology and
+While quality gameplay was our primary goal, its graphics technology and
 artwork allows the game to compete with the current quality of commercial
 games.
 
@@ -18,4 +18,4 @@ includes 35 maps, and a campaign mode for the user to fight through.  The
 map pack includes Quake3 community maps, Nexuiz community maps, and some
 new maps from Nexuiz developers.
 
-WWW: http://www.alientrap.org/nexuiz/
+WWW: http://www.nexuiz.com/classic.php
