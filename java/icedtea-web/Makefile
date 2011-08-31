@@ -12,6 +12,7 @@ MASTER_SITES=	http://icedtea.classpath.org/download/source/
 
 MAINTAINER=	java@FreeBSD.org
 COMMENT=	A free Java plug-in and Java Web Start for OpenJDK
+
 LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
@@ -85,6 +86,13 @@ pre-extract:
 	@${ECHO_MSG}
 	@sleep 10
 
+.if defined(WITH_TEST)
+post-build:
+	@${ECHO_MSG}
+	@${ECHO_MSG} "Run \"make test\" to execute regression test."
+	@${ECHO_MSG}
+.endif
+
 post-install:
 	${MKDIR} ${DESKTOPDIR}
 	${REINPLACE_CMD} -e 's|^Icon=javaws|Icon=itweb-javaws|' \
@@ -94,12 +102,9 @@ post-install:
 	${MKDIR} ${PREFIX}/share/pixmaps
 	${INSTALL_DATA} ${WRKSRC}/javaws.png \
 	    ${PREFIX}/share/pixmaps/itweb-javaws.png
-.if defined(WITH_TEST)
-	@${ECHO_MSG}
-	@${ECHO_MSG} "Run \"make test\" to execute regression test."
-	@${ECHO_MSG}
 
-test:	install
+.if defined(WITH_TEST)
+test:	build
 	@(cd ${WRKSRC}; ${GMAKE} check)
 .if defined(WITH_PLUGIN)
 	@(cd ${WRKSRC}; ${GMAKE} plugin-tests)
