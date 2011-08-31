@@ -13,6 +13,8 @@ bin/cjc
 %%DATADIR%%/cjc/main.pyc
 %%DATADIR%%/cjc/plugin.py
 %%DATADIR%%/cjc/plugin.pyc
+%%DATADIR%%/cjc/plugins.py
+%%DATADIR%%/cjc/plugins.pyc
 %%DATADIR%%/cjc/themes.py
 %%DATADIR%%/cjc/themes.pyc
 %%DATADIR%%/cjc/tls.py
@@ -63,6 +65,8 @@ bin/cjc
 %%DATADIR%%/plugins/disco.pyc
 %%DATADIR%%/plugins/events.py
 %%DATADIR%%/plugins/events.pyc
+%%DATADIR%%/plugins/file_logger.py
+%%DATADIR%%/plugins/file_logger.pyc
 %%DATADIR%%/plugins/jogger_pl.py
 %%DATADIR%%/plugins/jogger_pl.pyc
 %%DATADIR%%/plugins/message.py
@@ -81,6 +85,8 @@ bin/cjc
 %%DATADIR%%/plugins/roster_ei.pyc
 %%DATADIR%%/plugins/shell.py
 %%DATADIR%%/plugins/shell.pyc
+%%DATADIR%%/plugins/sqlite_archive.py
+%%DATADIR%%/plugins/sqlite_archive.pyc
 %%DATADIR%%/plugins/test.py
 %%DATADIR%%/plugins/test.pyc
 %%DATADIR%%/plugins/vcard.py
@@ -89,7 +95,12 @@ bin/cjc
 %%DATADIR%%/plugins/version.pyc
 %%DATADIR%%/plugins/xmlconsole.py
 %%DATADIR%%/plugins/xmlconsole.pyc
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/TODO
+%%PORTDOCS%%%%DOCSDIR%%/manual.html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/cjc/ui
 @dirrm %%DATADIR%%/cjc
-@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%
