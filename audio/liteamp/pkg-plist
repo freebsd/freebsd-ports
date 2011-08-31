@@ -1,32 +1,25 @@
 bin/liteamp
+share/application-registry/liteamp.applications
+share/applications/liteamp.desktop
+%%DATADIR%%/pixmaps/adddir.png
+%%DATADIR%%/pixmaps/addfile.png
+%%DATADIR%%/pixmaps/liteamp-logo.png
+%%DATADIR%%/pixmaps/liteamp.png
+%%DATADIR%%/pixmaps/loop.png
+%%DATADIR%%/pixmaps/next.png
+%%DATADIR%%/pixmaps/pause.png
+%%DATADIR%%/pixmaps/playlist.png
+%%DATADIR%%/pixmaps/prev.png
+%%DATADIR%%/pixmaps/shuffle.png
+%%DATADIR%%/pixmaps/start.png
+%%DATADIR%%/pixmaps/stop.png
+%%DATADIR%%/pixmaps/vol.png
+%%DATADIR%%/pixmaps/vol_down.png
+%%DATADIR%%/pixmaps/vol_mute.png
+%%DATADIR%%/pixmaps/vol_up.png
 share/locale/ko/LC_MESSAGES/liteamp.mo
 share/pixmaps/liteamp.png
-share/pixmaps/liteamp/adddir.png
-share/pixmaps/liteamp/addfile.png
-share/pixmaps/liteamp/icon-view.png
-share/pixmaps/liteamp/ladder-view.png
-share/pixmaps/liteamp/liteamp-logo.png
-share/pixmaps/liteamp/liteamp.png
-share/pixmaps/liteamp/loop.png
-share/pixmaps/liteamp/next.png
-share/pixmaps/liteamp/pause.png
-share/pixmaps/liteamp/play.png
-share/pixmaps/liteamp/playlist-all.png
-share/pixmaps/liteamp/playlist-audiocd.png
-share/pixmaps/liteamp/playlist-favorites.png
-share/pixmaps/liteamp/playlist-radio.png
-share/pixmaps/liteamp/playlist.png
-share/pixmaps/liteamp/pos.png
-share/pixmaps/liteamp/prev.png
-share/pixmaps/liteamp/seek.png
-share/pixmaps/liteamp/shuffle.png
-share/pixmaps/liteamp/start.png
-share/pixmaps/liteamp/stop.png
-share/pixmaps/liteamp/tree-view.png
-share/pixmaps/liteamp/vol.png
-share/pixmaps/liteamp/vol_down.png
-share/pixmaps/liteamp/vol_mute.png
-share/pixmaps/liteamp/vol_up.png
-share/applications/liteamp.desktop
-@dirrm share/pixmaps/liteamp
+@dirrm %%DATADIR%%/pixmaps
+@dirrmtry share/liteamp
 @dirrmtry share/applications
+@dirrmtry share/application-registry
