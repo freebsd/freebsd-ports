@@ -58,7 +58,7 @@ PLIST_SUB+=	EMF=""
 CONFIGURE_ARGS+=	--without-swf
 PLIST_SUB+=	MING="@comment "
 .else
-LIB_DEPENDS+=	ming.4:${PORTSDIR}/graphics/ming
+LIB_DEPENDS+=	ming.5:${PORTSDIR}/graphics/ming
 PLIST_SUB+=	MING=""
 .endif
 

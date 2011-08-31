@@ -64,7 +64,7 @@ CONFIGURE_ARGS+=	--without-tiff
 .endif
 
 .if defined(WITH_MING)
-LIB_DEPENDS+=		ming.4:${PORTSDIR}/graphics/ming
+LIB_DEPENDS+=		ming.5:${PORTSDIR}/graphics/ming
 CONFIGURE_ARGS+=	--with-ming=${LOCALBASE}
 .endif
 

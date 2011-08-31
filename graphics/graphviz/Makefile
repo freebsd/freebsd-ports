@@ -285,7 +285,7 @@ CONFIGURE_ARGS+=	--with-qt=no
 .if defined(WITH_MING)
 CONFIGURE_ARGS+=	--with-ming
 PLIST_SUB+=		WITH_MING=""
-LIB_DEPENDS+=		ming.4:${PORTSDIR}/graphics/ming
+LIB_DEPENDS+=		ming.5:${PORTSDIR}/graphics/ming
 .else
 CONFIGURE_ARGS+=	--without-ming
 PLIST_SUB+=		WITH_MING="@comment "
