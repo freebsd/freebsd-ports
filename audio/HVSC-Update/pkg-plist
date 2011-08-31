@@ -1,4 +1,0 @@
-bin/HVSC-Update
-%%PORTDOCS%%%%DOCSDIR%%/HVSC_Update.txt
-%%PORTDOCS%%%%DOCSDIR%%/SID_file_format.txt
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

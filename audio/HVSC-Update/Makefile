@@ -6,33 +6,33 @@
 #
 
 PORTNAME=	HVSC-Update
-PORTVERSION=	2.8.4
+PORTVERSION=	2.8.5
 CATEGORIES=	audio emulators
-MASTER_SITES=	http://www.hvsc.c64.org/Downloads/ \
-		ftp://ftp.nuug.no/pub/anders/distfiles/
+MASTER_SITES=	http://www.hvsc.c64.org/download/files/tools/
 DISTNAME=	${PORTNAME:S/-/_/}_Tool_source_${PORTVERSION:S/.//g}
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Update program for the HVSC C= 64 SID tune collection
 
-BUILD_DEPENDS=	imake:${PORTSDIR}/devel/imake
+BUILD_DEPENDS=	makedepend:${PORTSDIR}/devel/makedepend
 
-WRKSRC=	${WRKDIR}/${PORTNAME:S/-/_/}_Tool_${PORTVERSION:S/.//g}
+WRKSRC=		${WRKDIR}/${PORTNAME:S/-/_/}_Tool_${PORTVERSION:S/.//g}
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+MAKE_JOBS_SAFE=	yes
 
-DOCS=	HVSC_Update.txt SID_file_format.txt
+PORTDOCS=	HVSC_Update.txt SID_file_format.txt
+PLIST_FILES=	bin/${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/src/Update ${PREFIX}/bin/HVSC-Update
+	${INSTALL_PROGRAM} ${WRKSRC}/src/Update ${PREFIX}/bin/${PORTNAME}
 .if !defined(NOPORTDOCS)
-	@${INSTALL} -d -m 0755 ${DOCSDIR}
-.for f in ${DOCS}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}/
+	@${MKDIR} ${DOCSDIR}
+.for file in ${PORTDOCS}
+	${INSTALL_DATA} ${WRKSRC}/${file} ${DOCSDIR}
 .endfor
 .endif
 
