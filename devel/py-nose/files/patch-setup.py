@@ -1,9 +1,9 @@
---- setup.py.orig	2007-10-14 05:45:45.000000000 +0800
-+++ setup.py	2008-01-14 10:18:17.000000000 +0800
-@@ -57,7 +57,7 @@
-     download_url = \
-     'http://somethingaboutorange.com/mrl/projects/nose/nose-%s.tar.gz' \
-     % VERSION,
+--- ./setup.py.orig	2011-08-31 09:29:19.000000000 +0200
++++ ./setup.py	2011-08-31 09:29:29.000000000 +0200
+@@ -102,7 +102,7 @@
+     license = 'GNU LGPL',
+     keywords = 'test unittest doctest automatic discovery',
+     url = 'http://readthedocs.org/docs/nose/',
 -    data_files = [('man/man1', ['nosetests.1'])],
 +#    data_files = [('man/man1', ['nosetests.1'])],
      package_data = {'': ['*.txt',
