@@ -6,19 +6,34 @@
 #
 
 PORTNAME=	x-tile
-PORTVERSION=	1.8.1
+PORTVERSION=	2.1
 CATEGORIES=	deskutils devel python
-MASTER_SITES=	http://www.sawp.com.br/share/xtile/
+MASTER_SITES=	http://www.giuspen.com/software/ \
+		http://www.sawp.com.br/share/xtile/
 
 MAINTAINER=	sawp@sawp.com.br
 COMMENT=	A GNOME applet to tile the opened windows
 
+LICENSE=	GPLv2
+
 USE_GNOME=	pygtk2
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
-PYDISTUTILS_EGGINFO=	X_Tile-${PYDISTUTILS_PKGVERSION}-${PYTHON_VERSION:S/thon//}.egg-info
+PYDISTUTILS_PKGNAME=	X_Tile
 
 post-patch:
-	@${REINPLACE_CMD} -i "" -e 's|: docfiles|: []|g' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|g' \
+		${WRKSRC}/x-tile ${WRKSRC}/linux/x-tile.desktop \
+		${WRKSRC}/modules/cons.py
+
+
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+PLIST_SUB+=	NLS=""
+.else
+PYDISTUTILS_BUILD_TARGET=	--without-gettext build
+PYDISTUTILS_INSTALL_TARGET=	--without-gettext install
+PLIST_SUB+=	NLS="@comment "
+.endif
 
 .include <bsd.port.mk>
