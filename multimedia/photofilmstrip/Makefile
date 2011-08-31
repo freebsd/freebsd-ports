@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	photofilmstrip
-PORTVERSION=	1.4.3
+PORTVERSION=	1.4.4
 CATEGORIES=	multimedia python
 MASTER_SITES=	SF/photostoryx/${PORTNAME}/${PORTVERSION}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -15,12 +15,12 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Creates movies out of your pictures
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		mencoder:${PORTSDIR}/multimedia/mencoder \
 		mplayer:${PORTSDIR}/multimedia/mplayer
-
-LICENSE=	GPLv2
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 USE_PYTHON=	yes
 USE_WX=		2.8+
