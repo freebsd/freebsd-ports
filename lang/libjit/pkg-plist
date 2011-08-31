@@ -1,5 +1,5 @@
-include/jit/jit-arch.h
 include/jit/jit-apply.h
+include/jit/jit-arch.h
 include/jit/jit-block.h
 include/jit/jit-common.h
 include/jit/jit-context.h
@@ -19,6 +19,7 @@ include/jit/jit-objmodel.h
 include/jit/jit-opcode.h
 include/jit/jit-plus.h
 include/jit/jit-type.h
+include/jit/jit-unwind.h
 include/jit/jit-util.h
 include/jit/jit-value.h
 include/jit/jit-walk.h
