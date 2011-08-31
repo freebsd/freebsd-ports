@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	auto-tw-l10n
-PORTVERSION=	1.11
+PORTVERSION=	1.12
 CATEGORIES=	chinese
 MASTER_SITES=	LOCAL/sunpoet
 
@@ -15,6 +15,7 @@ COMMENT=	The automatic localization for Traditional Chinese zh_TW.UTF-8 locale
 RUN_DEPENDS=	${FASTEST_CVSUP}:${PORTSDIR}/sysutils/fastest_cvsup
 
 NO_BUILD=	yes
+USE_XZ=		yes
 
 PKGINSTALL=	${WRKDIR}/pkg-install
 PKGMESSAGE=	${WRKDIR}/pkg-message
