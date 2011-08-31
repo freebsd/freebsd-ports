@@ -31,7 +31,7 @@ NO_WRKSUBDIR=	yes
 NO_PACKAGE=	package could be up to 661MB; set FORCE_PACKAGE if you really want it
 
 OPTIONS=	MODELS "Install 3D models (17MB)" on \
-		SOUNDTRACKS "Install enhaced soundtracks (482MB)" on \
+		SOUNDTRACKS "Install enhanced soundtracks (482MB)" on \
 		TEXTURES "Install high resolution textures (157MB)" on \
 		DHTP "Prefer Doom Hires Texture Pack (87MB)" off
 
