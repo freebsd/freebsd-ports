@@ -40,7 +40,6 @@ do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/nagiostat ${PREFIX}/libexec/${PORTNAME}/
 	@${LN} -fs ${PREFIX}/libexec/${PORTNAME}/nagiostat ${PREFIX}/${NAGIOSWWWDIR}/cgi-bin/nagiostat.cgi
 	@${INSTALL_DATA} ${WRKSRC}/nagiostat.conf ${PREFIX}/etc/nagiostat.conf-sample
-	@${INSTALL_DATA} ${WRKSRC}/graph.gif ${PREFIX}/${NAGIOSWWWDIR}/images/logos
 	@${MKDIR} ${PREFIX}/libexec/${PORTNAME}/html-templates/
 	@${INSTALL_DATA} ${WRKSRC}/html-templates/default.html ${PREFIX}/libexec/${PORTNAME}/html-templates/
 	@${INSTALL_DATA} ${WRKSRC}/html-templates/graphindex.html ${PREFIX}/libexec/${PORTNAME}/html-templates/
