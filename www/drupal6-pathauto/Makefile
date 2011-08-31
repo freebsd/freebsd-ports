@@ -14,6 +14,7 @@ COMMENT=	Automatically generates URLs for Drupal content
 
 RUN_DEPENDS=	drupal6-token>=0:${PORTSDIR}/www/drupal6-token
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 MODULE_FILES=	pathauto.admin.inc pathauto.inc pathauto.info \
 		pathauto.install pathauto.js pathauto.module \
@@ -28,6 +29,4 @@ MODULE_DIRS=	translations
 DOC_FILES=	INSTALL.txt API.txt README.txt i18n-ascii.example.txt \
 		LICENSE.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

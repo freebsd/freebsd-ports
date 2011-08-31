@@ -13,6 +13,7 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Drupal 6 Content Construction Kit module
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 MODULE_DIRS=	translations/help/de translations/help translations \
 		theme tests \
@@ -246,6 +247,4 @@ MODULE_FILES=	help/add-existing-field.html \
 DOC_FILES=	CHANGELOG.txt DEVELOPER.txt README.txt UPGRADE.txt \
 		LICENSE.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

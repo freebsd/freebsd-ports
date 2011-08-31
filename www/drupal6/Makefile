@@ -15,6 +15,7 @@ DIST_SUBDIR=	drupal
 MAINTAINER=	nick@foobar.org
 COMMENT=	A database driven web content management system (CMS)
 
+USE_DRUPAL=	yes
 DRUPAL6_PORT=	yes
 
 USE_PHP=	gd pcre session xml mbstring
@@ -78,5 +79,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
 .include <bsd.port.post.mk>

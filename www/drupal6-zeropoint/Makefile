@@ -13,6 +13,7 @@ MAINTAINER=	whitekid@gmail.com
 COMMENT=	The zeropoint drupal theme
 
 USE_PHP=	ctype
+USE_DRUPAL=	yes
 DRUPAL6_THEME=	yes
 MODULE_DIRS=	_custom/headerimg _custom css images/all images/ink \
 		images/icons/blocks images/icons images/ivy images/lime \
@@ -144,7 +145,4 @@ MODULE_FILES=	_custom/custom-style.css _custom/headerimg/credits.txt \
 		views-view.tpl.php zeropoint.info
 DOC_FILES=	CHANGELOG.txt LICENSE.txt README.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
-
+.include <bsd.port.mk>

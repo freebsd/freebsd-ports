@@ -12,6 +12,7 @@ CATEGORIES=	www
 MAINTAINER=	whitekid@gmail.com
 COMMENT=	Provide an API for creating drupal web services.
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 MODULE_DIRS=	auth/services_keyauth auth servers/xmlrpc_server servers \
 		services/comment_service services/file_service \
@@ -64,6 +65,4 @@ MODULE_FILES=	auth/services_keyauth/services_keyauth.admin.inc \
 
 DOC_FILES=	LICENSE.txt README.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -13,6 +13,7 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	Drupal 6.x panels module
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 
 MODULE_DIRS=	translations templates plugins/task_handlers \
@@ -192,6 +193,4 @@ DOC_FILES=	README.txt LICENSE.txt \
 		KNOWN_ISSUES.txt INSTALL.txt \
 		D6UPDATE.txt CHANGELOG.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

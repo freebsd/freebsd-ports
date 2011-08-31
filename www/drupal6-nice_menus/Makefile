@@ -13,6 +13,7 @@ CATEGORIES=	www
 MAINTAINER=	nick@foobar.org
 COMMENT=	CSS / Javascript pull-down menus for Drupal
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 
 MODULE_DIRS=	po translations
@@ -25,6 +26,4 @@ MODULE_FILES=	po/ja.po po/nice_menus.pot arrow-down.png arrow-left.png \
 
 DOC_FILES=	CHANGELOG.txt README.txt UPGRADE.txt LICENSE.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

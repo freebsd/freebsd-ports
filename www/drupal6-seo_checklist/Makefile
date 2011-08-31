@@ -13,10 +13,9 @@ CATEGORIES=	www
 MAINTAINER=	nick@foobar.org
 COMMENT=	Drupal module to provide checklist of actions for SEO
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 MODULE_FILES=	seochecklist.info seochecklist.install seochecklist.module
 DOC_FILES=	LICENSE.txt README.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -13,6 +13,7 @@ CATEGORIES=	www
 MAINTAINER=	nick@foobar.org
 COMMENT=	Adds the Google Analytics web stats tracking system to your website
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 
 MODULE_FILES=	tests/googleanalytics_basic.test googleanalytics.admin.inc \
@@ -26,6 +27,4 @@ MODULE_DIRS=	tests translations
 
 DOC_FILES=	LICENSE.txt README.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

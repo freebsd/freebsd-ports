@@ -13,6 +13,7 @@ CATEGORIES=	www
 MAINTAINER=	nick@foobar.org
 COMMENT=	Drupal module to provide configurable menu tree blocks
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 MODULE_FILES=	translations/menu_block.pot menu-block-admin.css \
 		menu-block-wrapper.tpl.php menu-block.js \
@@ -23,6 +24,4 @@ MODULE_DIRS=	translations
 
 DOC_FILES=	CHANGELOG.txt README.txt LICENSE.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

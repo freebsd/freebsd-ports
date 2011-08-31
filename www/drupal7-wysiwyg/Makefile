@@ -14,6 +14,8 @@ COMMENT=	Allows implementation of WYSIWYG editors for editing Drupal content
 
 #LICENSE from bsd.drupal.mk
 
+USE_DRUPAL=	yes
+
 OPTIONS=	TINYMCE3	"Install TinyMCE3 Editor" off \
 		CKEDITOR	"Install CKEditor" off \
 		YUI		"Install Yahoo UI Editor" off
@@ -111,6 +113,4 @@ post-install:
 	${LN} -fs ${PREFIX}/www/yahoo ${PREFIX}/${DRUPAL_MODLIB}/yui
 .endif
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -13,6 +13,7 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	Drupal 6.x Chaos tool suite module
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 
 MODULE_DIRS=	views_content/translations views_content/plugins/views/translations \
@@ -370,6 +371,4 @@ DOC_DIRS=	ctools_plugin_example
 DOC_FILES=	ctools_plugin_example/README.txt LICENSE.txt \
 		CHANGELOG.txt API.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

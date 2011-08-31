@@ -13,6 +13,7 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	Drupal 6.x Content Access module
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 
 MODULE_DIRS=	translations tests
@@ -32,6 +33,4 @@ MODULE_FILES=	tests/content_access.test \
 
 DOC_FILES=	README.txt UPGRADE.txt LICENSE.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

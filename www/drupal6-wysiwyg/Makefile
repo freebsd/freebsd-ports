@@ -20,6 +20,7 @@ RUN_DEPENDS+=	${LOCALBASE}/${TINYMCEDIR}:${PORTSDIR}/www/tinymce3
 
 PLIST_FILES+=	${DRUPAL_MODDIR}/tinymce
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 MODULE_FILES=	editors/css/openwysiwyg.css \
 		editors/css/tinymce-2.css \
@@ -73,6 +74,4 @@ DOC_FILES=	CHANGELOG.txt README.txt LICENSE.txt
 post-install:
 	${LN} -s ${PREFIX}/${TINYMCEDIR} ${PREFIX}/${DRUPAL_MODDIR}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

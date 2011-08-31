@@ -13,6 +13,7 @@ CATEGORIES=	www
 MAINTAINER=	nick@foobar.org
 COMMENT=	Token module for Drupal
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 MODULE_FILES=	translations/token.pot translations/da.po translations/de.po \
 		translations/es.po translations/hu.po translations/ja.po \
@@ -26,6 +27,4 @@ MODULE_DIRS=	translations
 
 DOC_FILES=	API.txt LICENSE.txt README.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -18,6 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/lib/php/geshi/geshi.php:${PORTSDIR}/devel/php5-geshi
 PKGMESSAGE=	${WRKDIR}/pkg-message
 SUB_FILES=	pkg-message
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 MODULE_DIRS=	geshi-extra tests translations
 MODULE_FILES=	geshi-extra/drupal5.php geshi-extra/drupal6.php \
@@ -42,6 +43,4 @@ post-install:
 	@${CAT} ${PKGMESSAGE}
 	@${ECHO}
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
