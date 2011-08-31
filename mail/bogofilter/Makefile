@@ -22,7 +22,7 @@ USE_BDB=	41+
 OPTIONS=	GSL     "Link with system-wide GSL dynamically (recommended)" on
 OPTIONS+=	UNICODE "Normalize tokens to Unicode (UTF-8)" on
 
-CONFLICTS?=	bogofilter-sqlite-[0-9]* bogofilter-qdbm-[0-9]* bogofilter-tc-[0-9]* [a-z][a-z]-bogofilter-[0-9]*
+CONFLICTS_INSTALL?=	bogofilter-sqlite-[0-9]* bogofilter-qdbm-[0-9]* bogofilter-tc-[0-9]* [a-z][a-z]-bogofilter-[0-9]*
 
 USE_BZIP2=	yes
 USE_PERL5_RUN=	yes
