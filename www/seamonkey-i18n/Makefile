@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	seamonkey-i18n
-PORTVERSION=	2.3.1
+PORTVERSION=	2.3.2
 CATEGORIES=	www
 MASTER_SITE_SUBDIR=	seamonkey/releases/${PORTVERSION}/langpack
 PKGNAMEPREFIX=
