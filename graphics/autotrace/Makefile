@@ -31,7 +31,7 @@ OPTIONS=	MING "Enable swf interface" off \
 .include <bsd.port.pre.mk>
 
 .if !defined (WITHOUT_MING)
-LIB_DEPENDS+=	ming.4:${PORTSDIR}/graphics/ming
+LIB_DEPENDS+=	ming.5:${PORTSDIR}/graphics/ming
 CONFIGURE_ENV?=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/ming"
 .endif
 
