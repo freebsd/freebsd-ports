@@ -149,10 +149,14 @@ share/gnome/help/planner/eu/planner.xml
 share/icons/hicolor/48x48/mimetypes/gnome-mime-application-x-planner.png
 share/locale/am/LC_MESSAGES/planner.mo
 share/locale/ar/LC_MESSAGES/planner.mo
+share/locale/as/LC_MESSAGES/planner.mo
+share/locale/ast/LC_MESSAGES/planner.mo
 share/locale/az/LC_MESSAGES/planner.mo
 share/locale/be/LC_MESSAGES/planner.mo
 share/locale/bg/LC_MESSAGES/planner.mo
+share/locale/bn_IN/LC_MESSAGES/planner.mo
 share/locale/ca/LC_MESSAGES/planner.mo
+share/locale/ca@valencia/LC_MESSAGES/planner.mo
 share/locale/cs/LC_MESSAGES/planner.mo
 share/locale/da/LC_MESSAGES/planner.mo
 share/locale/de/LC_MESSAGES/planner.mo
@@ -176,6 +180,7 @@ share/locale/id/LC_MESSAGES/planner.mo
 share/locale/is/LC_MESSAGES/planner.mo
 share/locale/it/LC_MESSAGES/planner.mo
 share/locale/ja/LC_MESSAGES/planner.mo
+share/locale/kk/LC_MESSAGES/planner.mo
 share/locale/kn/LC_MESSAGES/planner.mo
 share/locale/ko/LC_MESSAGES/planner.mo
 share/locale/lt/LC_MESSAGES/planner.mo
@@ -186,14 +191,17 @@ share/locale/mn/LC_MESSAGES/planner.mo
 share/locale/mr/LC_MESSAGES/planner.mo
 share/locale/ms/LC_MESSAGES/planner.mo
 share/locale/nb/LC_MESSAGES/planner.mo
+share/locale/nds/LC_MESSAGES/planner.mo
 share/locale/ne/LC_MESSAGES/planner.mo
 share/locale/nl/LC_MESSAGES/planner.mo
 share/locale/nn/LC_MESSAGES/planner.mo
 share/locale/oc/LC_MESSAGES/planner.mo
+share/locale/or/LC_MESSAGES/planner.mo
 share/locale/pa/LC_MESSAGES/planner.mo
 share/locale/pl/LC_MESSAGES/planner.mo
 share/locale/pt/LC_MESSAGES/planner.mo
 share/locale/pt_BR/LC_MESSAGES/planner.mo
+share/locale/ro/LC_MESSAGES/planner.mo
 share/locale/ru/LC_MESSAGES/planner.mo
 share/locale/rw/LC_MESSAGES/planner.mo
 share/locale/sk/LC_MESSAGES/planner.mo
@@ -299,16 +307,24 @@ share/planner/ui/xml-planner-plugin.ui
 @unexec %%LOCALBASE%%/bin/update-desktop-database > /dev/null || /usr/bin/true
 @dirrmtry share/locale/zh_HK/LC_MESSAGES
 @dirrmtry share/locale/zh_HK
-@dirrmtry share/locale/sl/LC_MESSAGES
-@dirrmtry share/locale/sl
 @dirrmtry share/locale/rw/LC_MESSAGES
 @dirrmtry share/locale/rw
 @dirrmtry share/locale/oc/LC_MESSAGES
 @dirrmtry share/locale/oc
+@dirrmtry share/locale/nds/LC_MESSAGES
+@dirrmtry share/locale/nds
 @dirrmtry share/locale/mr/LC_MESSAGES
 @dirrmtry share/locale/mr
-@dirrmtry share/locale/gl/LC_MESSAGES
-@dirrmtry share/locale/gl
+@dirrmtry share/locale/kk/LC_MESSAGES
+@dirrmtry share/locale/kk
 @dirrmtry share/locale/dz/LC_MESSAGES
 @dirrmtry share/locale/dz
+@dirrmtry share/locale/ca@valencia/LC_MESSAGES
+@dirrmtry share/locale/ca@valencia
+@dirrmtry share/locale/bn_IN/LC_MESSAGES
+@dirrmtry share/locale/bn_IN
+@dirrmtry share/locale/ast/LC_MESSAGES
+@dirrmtry share/locale/ast
+@dirrmtry share/locale/as/LC_MESSAGES
+@dirrmtry share/locale/as
 @dirrmtry share/applications
