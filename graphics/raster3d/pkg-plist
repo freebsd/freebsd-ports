@@ -8,6 +8,8 @@ bin/rods
 bin/normal3d
 %%IMAGEMAGICK%%bin/label3d
 %%IMAGEMAGICK%%bin/stereo3d
+bin/worms
+%%PORTDOCS%%%%DOCSDIR%%/R3D_manual.pdf
 %%PORTDOCS%%%%DOCSDIR%%/html/README
 %%PORTDOCS%%%%DOCSDIR%%/html/avs2ps.html
 %%PORTDOCS%%%%DOCSDIR%%/html/balls.html
@@ -56,11 +58,8 @@ bin/normal3d
 %%PORTDOCS%%%%DOCSDIR%%/html/rings3d.html
 %%PORTDOCS%%%%DOCSDIR%%/html/rods.html
 %%PORTDOCS%%%%DOCSDIR%%/html/stereo3d.html
-%%PORTDOCS%%%%DOCSDIR%%/R3D_manual.pdf
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msms/README
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msms/msms2r3d.c
-%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msms/msms_example.script
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/LT.pdb
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/Makefile
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/README.examples
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/chaincolours.pdb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/clip.r3d
@@ -93,6 +92,9 @@ bin/normal3d
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/header2.r3d
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/header4.r3d
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/header8.r3d
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msms/README
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msms/msms2r3d.c
+%%PORTEXAMPLES%%%%EXAMPLESDIR%%/msms/msms_example.script
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/plane.r3d
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sugarG.pdb
 %%PORTEXAMPLES%%%%EXAMPLESDIR%%/sugarcolours.pdb
