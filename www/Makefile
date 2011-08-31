@@ -269,6 +269,7 @@
     SUBDIR += harvest
     SUBDIR += hastymail
     SUBDIR += hastymail2
+    SUBDIR += hastymail2-devel
     SUBDIR += havp
     SUBDIR += helixplugin
     SUBDIR += helma
