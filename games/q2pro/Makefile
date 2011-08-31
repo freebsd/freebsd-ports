@@ -1,6 +1,6 @@
 # New ports collection makefile for:	q2pro
 # Date created:				2006-12-25
-# Whom:					alepulver
+# Whom:					Alejandro Pulver <alepulver@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	alepulver
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Quake II engine modification compatible with R1Q2
 
 USE_BZIP2=	yes

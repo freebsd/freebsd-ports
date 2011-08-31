@@ -1,6 +1,6 @@
 # New ports collection makefile for:	r1q2
 # Date created:				16 May 2006
-# Whom:					alepulver
+# Whom:					Alejandro Pulver <alepulver@FreeBSD.org>
 #
 # $FreeBSD$
 #
@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	http://www.r1ch.net/stuff/r1q2/src/
 DISTNAME=	${PORTNAME}-b${PORTVERSION}-src
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Enhanced Quake II client/server focusing on stability
 
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo
