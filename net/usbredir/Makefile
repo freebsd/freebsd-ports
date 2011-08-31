@@ -22,8 +22,8 @@ MAKE_ARGS+=	PREFIX=${PREFIX}
 
 .include <bsd.port.options.mk>
 
-.if ${OSVERSION} < 800069
-IGNORE=		needs libusb 1.0
+.if ${OSVERSION} < 800108
+IGNORE=		needs libusb 1.0.4
 .else
 MAKE_ENV+=	PKG_CONFIG_PATH=${FILESDIR}
 .endif
