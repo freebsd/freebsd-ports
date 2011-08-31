@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Const-Fast
-PORTVERSION=	0.007
+PORTVERSION=	0.008
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:LEONT
@@ -15,13 +15,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Facility for creating read-only scalars, arrays, and hashes
 
-RUN_DEPENDS=    p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter 
-
-PERL_CONFIGURE=	YES
-
-LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1
+LICENSE_COMB=	dual
 
-MAN3=	Const::Fast.3
+BUILD_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
+RUN_DEPENDS=	p5-Sub-Exporter>=0:${PORTSDIR}/devel/p5-Sub-Exporter
+
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
+
+PERL_CONFIGURE=	yes
+
+MAN3=		Const::Fast.3
 
 .include <bsd.port.mk>
