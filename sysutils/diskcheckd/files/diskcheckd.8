@@ -58,15 +58,16 @@ should not be included in expansion of wildcards (see below).
 The second format consists of four white space separated
 fields,
 which are the full pathname of the disk device,
-the size of that disk,
-the frequency in days at which to check that disk,
+the size of this disk,
+the frequency in days at which to check this disk,
 and the rate in kilobytes per second at which to check this disk.
-Naturally,
-it would be contradictory to specify both the frequency and the rate,
-so only one of these should be specified.
-Additionally,
-the size of the disk should not be specified if the rate is specified,
-as this information is unnecessary.
+.Pp
+Either the frequency or the rate should be specified, not both,
+since a specified frequency will be internally converted to whatever
+rate will result in the disk being scanned at (approximately) that
+frequency.
+The size of the disk should not be specified if the rate is specified,
+since the size is used only to convert a specified frequency into a rate.
 .Pp
 If the disk is specified as
 .Dq * ,
@@ -89,7 +90,7 @@ character.
 Note that
 .Nm
 always reads data from the disk in 64KB blocks,
-so the rate your specify may not be the exact rate at which the disk is
+so the rate you specify may not be the exact rate at which the disk is
 actually checked.
 Similarly,
 if you specify the third field (days for complete scan) it is unlikely
@@ -132,8 +133,14 @@ accepts the following command line options:
 If this flag is specified,
 .Nm
 will not fork into the background and detach from its controlling terminal
-to become a daemon.
-This flag is primarily used for debugging.
+to become a daemon,
+and it will duplicate its system log messages on its standard error output.
+.Pp
+This flag is primarily used for debugging,
+and may be specified more than once.
+Additional instances will result in additional
+debugging messages on standard error;
+these added messages will not be written to the system log.
 .It Fl f
 Specify the configuration file to use,
 instead of the default
@@ -143,6 +150,13 @@ Specify the file to save disk offsets to,
 instead of the default
 .Pa /var/db/diskcheckd.offsets .
 .El
+.Sh PROGRESS REPORTING
+After every 5 minutes or so of sleep time between reads
+(not including time spent waiting for the reads themselves to complete),
+.Nm
+will update its command parameter space to show its progress
+in scanning each disk.  This report can be viewed using
+.Xr ps 1 .
 .Sh FILES
 .Bl -tag -width /var/db/diskcheckd.offsets -compact
 .It Pa /usr/local/etc/diskcheckd.conf
@@ -188,3 +202,6 @@ with input from
 .Sh BUGS
 .Nm
 assumes all disks have 512 byte sectors.
+.Pp
+The code that attempts to identify and report which slice and partition
+contain a detected error does not understand GPT partitions.
