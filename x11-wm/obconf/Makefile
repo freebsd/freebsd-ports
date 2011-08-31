@@ -15,13 +15,13 @@ MAINTAINER=	novel@FreeBSD.org
 COMMENT=	Preferences manager for the Openbox window manager
 
 LIB_DEPENDS=	startup-notification-1.0:${PORTSDIR}/x11/startup-notification \
-		obparser.21:${PORTSDIR}/x11-wm/openbox
-
-BROKEN=		bad depobj
+		obrender.27:${PORTSDIR}/x11-wm/openbox
 
 USE_GNOME=	gnomehier libglade2
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}" \
+		OPENBOX_CFLAGS="`pkg-config --cflags obrender-3.5 obt-3.5`" \
+		OPENBOX_LIBS="`pkg-config --libs obrender-3.5 obt-3.5`"
 CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc/openbox
 MAKE_ARGS=	mkdir_p='${MKDIR}'
 
