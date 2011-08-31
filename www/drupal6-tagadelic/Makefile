@@ -14,6 +14,7 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Tagadelic module for Drupal 6
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 MODULE_DIRS=	translations
 MODULE_FILES=	tagadelic.css tagadelic.info tagadelic.install \
@@ -26,6 +27,4 @@ MODULE_FILES=	tagadelic.css tagadelic.info tagadelic.install \
 		translations/ru.po translations/tagadelic.pot
 DOC_FILES=	LICENSE.txt README.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

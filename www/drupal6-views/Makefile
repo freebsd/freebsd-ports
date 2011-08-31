@@ -12,6 +12,7 @@ CATEGORIES=	www
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Controls how content lists are generated
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 MODULE_DIRS=	css \
 		docs \
@@ -406,6 +407,4 @@ module-dirs: patch
 module-files: patch
 	@cd ${WRKSRC}; ${FIND} -s . -type f -d | ${SED} -e's|^\./|		|;s|$$| \\|'
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

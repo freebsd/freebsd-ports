@@ -17,6 +17,7 @@ EXTRACT_ONLY=	ckeditor-6.x-1.1.tar.gz
 MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	Drupal 6.x Ckeditor WYSIWYG HTML editor
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 
 MODULE_DIRS=	translations plugins/mediaembed/images \
@@ -317,7 +318,6 @@ DOC_FILES=	ckeditor/LICENSE.html ckeditor/INSTALL.html \
 		LICENSE.txt CHANGELOG.txt
 
 .include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
 
 post-extract:
 	@cd ${WRKSRC} && ${TAR} xf ${DISTDIR}/${DIST_SUBDIR}/ckeditor_3.3.tar.gz

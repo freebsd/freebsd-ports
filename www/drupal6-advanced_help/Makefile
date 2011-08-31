@@ -14,6 +14,7 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Allows to store module help pages outside the module system
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 MODULE_DIRS=	help \
 		help_example/help help_example/translations help_example \
@@ -48,6 +49,4 @@ MODULE_FILES=	help/advanced_help.help.ini help/ini-file.html \
 		translations/fr.po
 DOC_FILES=	LICENSE.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

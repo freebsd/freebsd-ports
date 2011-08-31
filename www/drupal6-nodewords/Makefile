@@ -12,6 +12,7 @@ CATEGORIES=	www
 MAINTAINER=	nick@foobar.org
 COMMENT=	A drupal module which allows the end-user to set meta tags for nodes
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 MODULE_DIRS=	nodewords_basic/translations nodewords_basic \
 		nodewords_extra/translations nodewords_extra includes \
@@ -43,6 +44,4 @@ MODULE_FILES=	includes/forum.inc includes/image.inc includes/node.inc \
 
 DOC_FILES=	README.txt CHANGELOG.txt API.txt LICENSE.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -13,6 +13,7 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	anderson@cnpm.embrapa.br
 COMMENT=	Drupal 6.x image/file uploader module
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 
 MODULE_DIRS=	translations tpl js inc css
@@ -56,6 +57,4 @@ MODULE_FILES=	translations/uk.po \
 
 DOC_FILES=	README.txt LICENSE.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

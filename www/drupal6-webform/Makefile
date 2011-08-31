@@ -13,6 +13,7 @@ CATEGORIES=	www
 MAINTAINER=	nick@foobar.org
 COMMENT=	Drupal module to allow easy creation of forms
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 
 MODULE_FILES=	components/date.inc components/email.inc \
@@ -38,6 +39,4 @@ MODULE_DIRS=	components tests translations
 
 DOC_FILES=	CHANGELOG.txt INSTALL.txt README.txt THEMING.txt LICENSE.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

@@ -15,6 +15,7 @@ DIST_SUBDIR=	drupal
 MAINTAINER=	nick@foobar.org
 COMMENT=	A database driven web content management system (CMS)
 
+USE_DRUPAL=	yes
 DRUPAL_PORT=	yes
 DRUPAL_VERSION=	7
 
@@ -86,5 +87,4 @@ do-install:
 post-install:
 	@${CAT} ${PKGMESSAGE}
 
-.include  "${PORTSDIR}/Mk/bsd.drupal.mk"
 .include <bsd.port.post.mk>

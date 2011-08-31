@@ -12,6 +12,7 @@ CATEGORIES=	www
 MAINTAINER=	nick@foobar.org
 COMMENT=	Drupal module to allow redirects
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 
 MODULE_FILES=	generate/path_redirect_generate.drush.inc \
@@ -25,6 +26,4 @@ MODULE_DIRS=	generate
 
 DOC_FILES=	LICENSE.txt README.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

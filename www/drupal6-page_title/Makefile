@@ -15,6 +15,7 @@ COMMENT=	Drupal module to provide fine-grained control of page titles
 
 RUN_DEPENDS=	drupal6-token>=0:${PORTSDIR}/www/drupal6-token
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 MODULE_FILES=	translations/page_title.pot translations/ru.po \
 		page_title-admin-settings-form.tpl.php page_title.admin.inc \
@@ -23,6 +24,4 @@ MODULE_DIRS=	translations
 
 DOC_FILES=	CHANGELOG.txt README.txt LICENSE.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>

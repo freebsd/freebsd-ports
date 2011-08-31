@@ -13,12 +13,11 @@ MASTER_SITES=	http://ftp.drupal.org/files/projects/
 MAINTAINER=	wenheping@gmail.com
 COMMENT=	An API for Consistent Server Side Mime Detection
 
+USE_DRUPAL=	yes
 DRUPAL6_MODULE=	yes
 
 MODULE_FILES=	magic magic.mgc magic.mime \
 		mimedetect.info mimedetect.install mimedetect.module
 DOC_FILES=	LICENSE.txt README.txt
 
-.include <bsd.port.pre.mk>
-.include "${PORTSDIR}/Mk/bsd.drupal.mk"
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
