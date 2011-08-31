@@ -1,5 +1,0 @@
-bin/fakebo
-etc/fakebo.conf.sample
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/custom.replies
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
