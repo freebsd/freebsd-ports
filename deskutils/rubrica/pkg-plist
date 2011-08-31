@@ -62,6 +62,7 @@ share/applications/rubrica2.desktop
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 share/locale/de/LC_MESSAGES/rubrica2.mo
+share/locale/el/LC_MESSAGES/rubrica2.mo
 share/locale/en_US/LC_MESSAGES/rubrica2.mo
 share/locale/fr/LC_MESSAGES/rubrica2.mo
 share/locale/it/LC_MESSAGES/rubrica2.mo
