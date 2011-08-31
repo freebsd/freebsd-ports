@@ -316,7 +316,7 @@ PLIST_SUB+=		WMF="@comment "
 USE_GNOME+=		libxml2
 LIB_DEPENDS+=		rsvg-2:${PORTSDIR}/graphics/librsvg2
 CONFIGURE_ARGS+=	--with-rsvg --with-xml
-CONFIGURE_ENV+=		RSVG_CFLAGS="-I${LOCALBASE}/include/librsvg-2" \
+CONFIGURE_ENV+=		RSVG_CFLAGS="-I${LOCALBASE}/include/librsvg-2.0" \
 			RSVG_LIBS="-L${LOCALBASE}/lib"
 .else
 CONFIGURE_ARGS+=	--without-rsvg --without-xml
