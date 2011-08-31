@@ -6,21 +6,21 @@
 #
 
 PORTNAME=	libjit
-PORTVERSION=	0.1.0
-PORTREVISION=	1
+PORTVERSION=	0.1.2
 CATEGORIES=	lang
-MASTER_SITES=	http://download.savannah.gnu.org/releases/dotgnu-pnet/
+MASTER_SITES=	SAVANNAH/dotgnu-pnet/libjit-releases
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Libjit implements Just-In-Time compilation functionality
 
-BROKEN=	does not fetch
+LICENSE=	LGPL21 LGPL3
+LICENSE_COMB=	dual
 
-USE_AUTOTOOLS=	libtool
+USE_GNOME=	gnomehack
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
-
+USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
+MAKE_JOBS_SAFE=	yes
 
 INFO=		libjit
 MAN3=		libjit.3
@@ -36,15 +36,7 @@ BROKEN=		Fails to compile: internal gcc error
 .endif
 
 post-patch:
-# fix for amd64, Upstream forgot a header file
-	${CP} ${FILESDIR}/extra-jit-rules-interp.h ${WRKSRC}/jit/jit-rules-interp.h
 	@${REINPLACE_CMD} -e 's|#undef HAVE_TGMATH_H||' \
 		${WRKSRC}/config.h.in
-
-post-configure:
-.if ${ARCH} != "amd64"
-	@${REINPLACE_CMD} -e 's|$$pic_flag -DPIC||' \
-		${WRKSRC}/libtool
-.endif
 
 .include <bsd.port.post.mk>
