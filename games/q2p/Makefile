@@ -13,7 +13,7 @@ MASTER_SITES=	http://qudos.quakedev.com/linux/quake2/engines/Q2P/
 DISTNAME=	Q2P-0.2-2006-12-31
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Ehnaced OpenGL only Quake II engine
+COMMENT=	Enhanced OpenGL only Quake II engine
 
 USE_BZIP2=	yes
 USE_XORG=	xxf86dga xext xxf86vm x11
