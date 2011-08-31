@@ -548,6 +548,7 @@
     SUBDIR += moth
     SUBDIR += mscgen
     SUBDIR += mtpaint
+    SUBDIR += multican
     SUBDIR += multivideo
     SUBDIR += mupdf
     SUBDIR += mxp
