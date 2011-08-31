@@ -6,9 +6,11 @@ bin/darktable-faster
 %%DATADIR%%/kernels/basic.cl
 %%DATADIR%%/kernels/blendop.cl
 %%DATADIR%%/kernels/demosaic_ppg.cl
+%%DATADIR%%/kernels/gaussian.cl
 %%DATADIR%%/kernels/highpass.cl
 %%DATADIR%%/kernels/nlmeans.cl
 %%DATADIR%%/kernels/programs.conf
+%%DATADIR%%/kernels/sharpen.cl
 %%DATADIR%%/pixmaps/plugins/darkroom/anlfyeni.png
 %%DATADIR%%/pixmaps/plugins/darkroom/atrous.png
 %%DATADIR%%/pixmaps/plugins/darkroom/basecurve.png
@@ -31,8 +33,8 @@ bin/darktable-faster
 %%DATADIR%%/pixmaps/plugins/darkroom/highpass.png
 %%DATADIR%%/pixmaps/plugins/darkroom/hotpixels.png
 %%DATADIR%%/pixmaps/plugins/darkroom/lens.png
-%%DATADIR%%/pixmaps/plugins/darkroom/localc.png
 %%DATADIR%%/pixmaps/plugins/darkroom/lowlight.png
+%%DATADIR%%/pixmaps/plugins/darkroom/lowpass.png
 %%DATADIR%%/pixmaps/plugins/darkroom/monochrome.png
 %%DATADIR%%/pixmaps/plugins/darkroom/nlmeans.png
 %%DATADIR%%/pixmaps/plugins/darkroom/overexposed.png
@@ -58,6 +60,7 @@ bin/darktable-faster
 %%DATADIR%%/style/favicon.ico
 %%DATADIR%%/style/style.css
 %%DATADIR%%/watermarks/darktable.svg
+%%DATADIR%%/watermarks/hasselblad.svg
 %%DATADIR%%/watermarks/promo.svg
 lib/darktable/libdarktable.so
 lib/darktable/plugins/imageio/format/libcopy.so
