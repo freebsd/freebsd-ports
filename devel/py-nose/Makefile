@@ -6,15 +6,15 @@
 #
 
 PORTNAME=	nose
-PORTVERSION=	1.0.0
+PORTVERSION=	1.1.2
 CATEGORIES=	devel python
-MASTER_SITES=	http://somethingaboutorange.com/mrl/projects/nose/ \
-		CHEESESHOP
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	nivit@FreeBSD.org
 COMMENT=	A discovery-based unittest extension
 
+# Python3 ready
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	easy_install
 
