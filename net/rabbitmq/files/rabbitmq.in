@@ -1,8 +1,7 @@
 #!/bin/sh
 #
-# rabbitmq for rc.d usage
-# $Id$
-
+# $FreeBSD$
+#
 # PROVIDE: rabbitmq
 # REQUIRE: DAEMON
 # BEFORE: LOGIN
@@ -17,17 +16,33 @@
 name=rabbitmq
 rcvar=`set_rcvar`
 
+load_rc_config $name
+
 # Set some defaults
-rabbitmq_enable=${rabbitmq_enable:-"NO"}
-rabbitmq_user=${rabbitmq_user:-"rabbitmq"}
+: ${rabbitmq_enable="NO"}
+: ${rabbitmq_user="rabbitmq"}
+
 rabbitmq_server="%%PREFIX%%/sbin/rabbitmq-server"
 rabbitmq_ctl="%%PREFIX%%/sbin/rabbitmqctl"
+pidfile="/var/run/rabbitmq.pid"
 
-start_cmd="env HOME=/var/db/rabbitmq su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_server} -detached\"'"
+start_cmd="${name}_start"
 stop_cmd="env HOME=/var/db/rabbitmq su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_ctl} stop\"'"
+stop_postcmd="wait_for_pids $rc_pid"
 rotate_logs_cmd="env HOME=/var/db/rabbitmq su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_ctl} rotate_logs\"'"
 status_cmd="env HOME=/var/db/rabbitmq su -m ${rabbitmq_user} -c 'sh -c \"${rabbitmq_ctl} status\"'"
 extra_commands="rotate_logs status"
 
-load_rc_config $name
+rabbitmq_start()
+{
+	HOME=/var/db/rabbitmq
+	su -m ${rabbitmq_user} \
+		-c "sh -c \"${rabbitmq_server} -detached\""
+# Grab pid (it appears that parsing the output of
+# status is the most reliable method)
+	su -m ${rabbitmq_user} \
+		-c "sh -c \"${rabbitmq_ctl} status\"" \
+		| sed -n 's/[^p]*pid,\([0-9]*\)[^0-9]*/\1/p' > ${pidfile}
+}
+
 run_rc_command "$1"
