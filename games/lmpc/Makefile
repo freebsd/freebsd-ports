@@ -18,15 +18,15 @@ COMMENT=	A tool to manipulate games demo recordings
 
 LICENSE=	GPLv2
 
-GNU_CONFIGURE=		yes
-USE_GMAKE=		yes
+GNU_CONFIGURE=	yes
+USE_GMAKE=	yes
 USE_PERL5_BUILD=	yes
 
 SCRIPTS=	dema dm2cat procdm2.pl
 PROGRAMS=	dbs demcut lmpc
 FETCHED_DOCS=	${PORTNAME}.html ${PORTNAME}.pdf ${PORTNAME}.sgml
 PORTDOCS=	*
-PLIST_FILES=	${SCRIPTS:S/^/bin\//} ${PROGRAMS:S/^/bin\//}
+PLIST_FILES=	${SCRIPTS:S,^,bin/,} ${PROGRAMS:S,^,bin/,}
 
 .include <bsd.port.pre.mk>
 
