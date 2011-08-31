@@ -10,4 +10,12 @@ The proper config file path is:
 
 %%PREFIX%%/etc/hastymail2/hastymail2.conf
 
+after you edit config file run:
+
+  cd %%PREFIX%%/etc/hastymail2/
+  php %%PREFIX%%/www/hastymail2/install_scripts/install_config.php \
+    hastymail2.conf hastymail2.rc
+
+Note: if hastymail2.rc already exists, you must remove it
+
 ******************************************************
