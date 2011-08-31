@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	nvidia-driver
-DISTVERSION?=	270.41.19
+DISTVERSION?=	280.13
 PORTREVISION?=	0			# As a reminder it can be overridden
 CATEGORIES=	x11 kld
 MASTER_SITES=	${MASTER_SITE_NVIDIA}
@@ -111,6 +111,10 @@ post-patch: .SILENT
 # Fix an apparent typo (present in several versions since 260.19.12)
 	${REINPLACE_CMD} -e 's/status != status/status != RM_OK/' \
 		${WRKSRC}/src/nvidia_os.c
+# Fix the build after fget(9) KPI was changed in r224778
+.if ${OSVERSION} > 900040 && ${NVVERSION} >= 1952200
+	${REINPLACE_CMD} -e '/fget/s/&fp/0, &/' ${WRKSRC}/src/nvidia_linux.c
+.endif
 .if defined(WITH_FREEBSD_AGP)
 	${REINPLACE_CMD} -E 's/undef (NV_SUPPORT_OS_AGP)/define \1/' \
 		${WRKSRC}/src/nv-freebsd.h
