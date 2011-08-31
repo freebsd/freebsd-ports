@@ -28,14 +28,12 @@
  
  INCLUDES	+= -I$(srcdir)
  
-
--@@ -793,7 +796,8 @@
-+@@ -793,7 +796,7 @@
-  endif # WINNT
-  
-  ifeq ($(OS_ARCH),FreeBSD)
- -EXTRA_LIBS += -pthread
--+DEFINES           += -DFREEBSD
- +EXTRA_LIBS       += -pthread -lc
-  endif
-  ifeq ($(OS_ARCH),IRIX)
+@@ -793,7 +796,7 @@
+ endif # WINNT
+ 
+ ifeq ($(OS_ARCH),FreeBSD)
+-EXTRA_LIBS	+= -pthread
++EXTRA_LIBS	+= -pthread -lc
+ endif
+ ifeq ($(OS_ARCH),IRIX)
+ ifdef USE_N32
