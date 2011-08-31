@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lgeneral
-PORTVERSION=	1.2.1
-PORTREVISION=	1
+PORTVERSION=	1.2.2
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME} \
 		SF/${PORTNAME}/${PORTNAME}-data:data
@@ -16,6 +15,8 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX}:DEFAULT \
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A turn-based strategy engine inspired by Panzer General
+
+LICENSE=	GPLv2
 
 CONFLICTS=	lgeneral-data-[0-9]*
 
