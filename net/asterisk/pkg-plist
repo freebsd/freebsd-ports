@@ -1116,7 +1116,7 @@ share/asterisk/sounds/en/vm-undeleted.gsm
 share/asterisk/sounds/en/vm-unknown-caller.gsm
 share/asterisk/sounds/en/vm-whichbox.gsm
 share/asterisk/sounds/en/vm-youhave.gsm
-share/asterisk/sounds/.asterisk-core-sounds-en-gsm-1.4.21
+share/asterisk/sounds/en/.asterisk-core-sounds-en-gsm-1.4.21
 share/asterisk/static-http/ajamdemo.html
 share/asterisk/static-http/astman.css
 share/asterisk/static-http/astman.js
