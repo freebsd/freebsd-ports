@@ -7,13 +7,14 @@
 
 PORTNAME=	boxbackup
 PORTVERSION=	0.11.1
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	SF
 PKGNAMESUFFIX=	${CLIENT_OR_SERVER}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	james@netinertia.co.uk
-COMMENT=	An open source, completely automatic on-line backup system for UNIX
+COMMENT=	Open source, completely automatic on-line backup system for Unix
 
 LICENSE=	BSD GPLv2
 LICENSE_COMB=	dual
