@@ -3376,6 +3376,7 @@
     SUBDIR += rubygem-polyglot
     SUBDIR += rubygem-popen4
     SUBDIR += rubygem-ptreloaded
+    SUBDIR += rubygem-railsless-deploy
     SUBDIR += rubygem-rake
     SUBDIR += rubygem-rapt
     SUBDIR += rubygem-rascut
