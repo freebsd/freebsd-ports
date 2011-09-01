@@ -17,7 +17,7 @@ LICENSE=	PSFL
 LICENSE_FILE=	${WRKSRC}/COPYING.txt
 
 USE_GETTEXT=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=yes
 
 OPTIONS=	SQLITE	"Support Sqlite as backend" on
@@ -28,11 +28,7 @@ OPTIONS+=	NLS	"Native Language Support" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_SQLITE)
-.if ${PYTHON_REL} >= 250
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
-.else
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23
-.endif
 .endif
 
 .if defined(WITH_PGSQL)
