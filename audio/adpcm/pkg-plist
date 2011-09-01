@@ -1,7 +1,0 @@
-include/adpcm.h
-lib/libadpcm.a
-lib/libadpcm.so.1
-lib/libadpcm.so
-%%DOCSDIR%%/README
-%%DOCSDIR%%/hello.adpcm
-@dirrm %%DOCSDIR%%

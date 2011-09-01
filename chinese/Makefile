@@ -43,7 +43,6 @@
     SUBDIR += fqterm
     SUBDIR += gb2jis
     SUBDIR += gb2ps
-    SUBDIR += gbscript
     SUBDIR += gcin
     SUBDIR += gimp-help-zh_CN
     SUBDIR += gugod-clean
@@ -73,14 +72,12 @@
     SUBDIR += miniChinput
     SUBDIR += moefonts-cid
     SUBDIR += moettf
-    SUBDIR += mplayer-fonts
     SUBDIR += msttf
     SUBDIR += muni
     SUBDIR += mutt
     SUBDIR += oicq
     SUBDIR += opendesktop-fonts
     SUBDIR += oto
-    SUBDIR += oxford
     SUBDIR += oxim
     SUBDIR += p5-Date-Chinese
     SUBDIR += p5-Encode-CNMap
@@ -129,7 +126,6 @@
     SUBDIR += unrar
     SUBDIR += unzip
     SUBDIR += ve
-    SUBDIR += vflib
     SUBDIR += wangttf
     SUBDIR += wenju
     SUBDIR += wordpress-zh_CN
