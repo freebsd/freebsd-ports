@@ -16,7 +16,7 @@ i586-pc-msdosdjgpp/lib/ldscripts/i386go32.xbn
 i586-pc-msdosdjgpp/lib/ldscripts/i386go32.xn
 i586-pc-msdosdjgpp/lib/ldscripts/i386go32.xr
 i586-pc-msdosdjgpp/lib/ldscripts/i386go32.xu
-i586-pc-msdosdjgpp/info
+i586-pc-msdosdjgpp/info/dir
 bin/i586-pc-msdosdjgpp-addr2line
 bin/i586-pc-msdosdjgpp-ar
 bin/i586-pc-msdosdjgpp-as
