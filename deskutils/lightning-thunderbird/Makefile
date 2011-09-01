@@ -17,7 +17,7 @@ DISTNAME=	${PORTNAME}-${DISTVERSION}b2.source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	An integrated calendar for Thunderbird 3.1
 
-RUN_DEPENDS+=	${LOCALBASE}/lib/thunderbird/thunderbird-bin:${PORTSDIR}/mail/thunderbird3
+RUN_DEPENDS+=	${LOCALBASE}/lib/thunderbird3/thunderbird-bin:${PORTSDIR}/mail/thunderbird3
 
 CONFLICTS_BUILD=	spidermonkey-1.[0-7]*
 USE_AUTOTOOLS=	autoconf213 libtool
