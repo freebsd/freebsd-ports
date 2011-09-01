@@ -1,11 +1,11 @@
---- doc/Makefile.in.bak	Sat May 12 22:37:55 2001
-+++ doc/Makefile.in	Wed May  8 13:15:17 2002
-@@ -101,7 +101,7 @@
- INFO_DEPS = authforce.info
- DVIS = authforce.dvi
- TEXINFOS = authforce.texi
+--- doc/Makefile.in.orig	2007-05-14 06:54:38.000000000 +0800
++++ doc/Makefile.in	2011-08-30 16:43:21.864890601 +0800
+@@ -68,7 +68,7 @@
+ AM_MAKEINFOHTMLFLAGS = $(AM_MAKEINFOFLAGS)
+ DVIPS = dvips
+ am__installdirs = "$(DESTDIR)$(infodir)" "$(DESTDIR)$(mangdir)"
 -mangdir = $(mandir)/mang
 +mangdir = $(mandir)/man1
- MANS = $(man_MANS)
- 
  NROFF = nroff
+ MANS = $(man_MANS)
+ DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
