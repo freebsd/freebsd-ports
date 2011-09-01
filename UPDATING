@@ -5,6 +5,15 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110901:
+  AFFECTS: users of databases/db51
+  AUTHOR: mandree@FreeBSD.org
+
+  The databases/db51 port (Oracle Berkeley DB version 5.1) has been
+  removed.  Version 5.2 of the package is available in databases/db5.
+  Users of ports that depend on the removed 5.1 versions are advised
+  to rebuild the affected ports.
+
 20110830:
   AFFECTS: users of lang/racket
   AUTHOR: olgeni@FreeBSD.org
