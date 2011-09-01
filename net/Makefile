@@ -864,6 +864,7 @@
     SUBDIR += py-medusa
     SUBDIR += py-miniupnpc
     SUBDIR += py-mp-random
+    SUBDIR += py-msrplib
     SUBDIR += py-netaddr
     SUBDIR += py-netifaces
     SUBDIR += py-netstring
