@@ -57,7 +57,6 @@
     SUBDIR += gresolver
     SUBDIR += h2n
     SUBDIR += hesiod
-    SUBDIR += host
     SUBDIR += idnkit
     SUBDIR += inadyn
     SUBDIR += ipcheck

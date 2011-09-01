@@ -25,7 +25,6 @@
     SUBDIR += adacurses
     SUBDIR += adasdl
     SUBDIR += adime
-    SUBDIR += adocman
     SUBDIR += aegis
     SUBDIR += afay
     SUBDIR += aifad
@@ -99,7 +98,6 @@
     SUBDIR += binutils
     SUBDIR += bison
     SUBDIR += bisoncpp
-    SUBDIR += bisongen
     SUBDIR += blame
     SUBDIR += bmake
     SUBDIR += bncsutil-ghost++
@@ -231,7 +229,6 @@
     SUBDIR += cross-gcc
     SUBDIR += cross-gdb
     SUBDIR += crossvc
-    SUBDIR += crow
     SUBDIR += cscope
     SUBDIR += cscout
     SUBDIR += csoap
@@ -1382,7 +1379,6 @@
     SUBDIR += p5-Config-General
     SUBDIR += p5-Config-GitLike
     SUBDIR += p5-Config-INI
-    SUBDIR += p5-Config-INI-MVP
     SUBDIR += p5-Config-INI-Simple
     SUBDIR += p5-Config-IniFiles
     SUBDIR += p5-Config-IniHash
@@ -1499,7 +1495,6 @@
     SUBDIR += p5-Date-Pcalc
     SUBDIR += p5-Date-Range
     SUBDIR += p5-Date-Roman
-    SUBDIR += p5-Date-Set
     SUBDIR += p5-Date-Simple
     SUBDIR += p5-DateConvert
     SUBDIR += p5-DateTime
@@ -1691,7 +1686,6 @@
     SUBDIR += p5-File-Dir-Dumper
     SUBDIR += p5-File-DirSync
     SUBDIR += p5-File-ExtAttr
-    SUBDIR += p5-File-FTS
     SUBDIR += p5-File-Find-Closures
     SUBDIR += p5-File-Find-Object
     SUBDIR += p5-File-Find-Rule
@@ -2178,7 +2172,6 @@
     SUBDIR += p5-PerlIO-via-MD5
     SUBDIR += p5-PerlIO-via-dynamic
     SUBDIR += p5-PerlIO-via-symlink
-    SUBDIR += p5-PerlMenu
     SUBDIR += p5-Pid-File-Flock
     SUBDIR += p5-Pipeline
     SUBDIR += p5-Pod-Coverage
@@ -2189,7 +2182,6 @@
     SUBDIR += p5-Proc-Daemon
     SUBDIR += p5-Proc-Fork
     SUBDIR += p5-Proc-PID-File
-    SUBDIR += p5-Proc-PIDFile
     SUBDIR += p5-Proc-ProcessTable
     SUBDIR += p5-Proc-Queue
     SUBDIR += p5-Proc-Reliable
@@ -2514,7 +2506,6 @@
     SUBDIR += p5-UDCode
     SUBDIR += p5-UI-Dialog
     SUBDIR += p5-UNIVERSAL-can
-    SUBDIR += p5-UNIVERSAL-exports
     SUBDIR += p5-UNIVERSAL-isa
     SUBDIR += p5-UNIVERSAL-moniker
     SUBDIR += p5-UNIVERSAL-require
@@ -3273,7 +3264,6 @@
     SUBDIR += ruby-rbbr
     SUBDIR += ruby-rbison
     SUBDIR += ruby-rbprof
-    SUBDIR += ruby-rbtree
     SUBDIR += ruby-rcov
     SUBDIR += ruby-robjectteam
     SUBDIR += ruby-rreadline
