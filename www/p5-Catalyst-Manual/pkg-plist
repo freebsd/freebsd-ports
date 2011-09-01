@@ -1,10 +1,18 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Manual/.packlist
 %%SITE_PERL%%/Catalyst/Manual.pm
 %%SITE_PERL%%/Catalyst/Manual/About.pod
 %%SITE_PERL%%/Catalyst/Manual/Actions.pod
 %%SITE_PERL%%/Catalyst/Manual/CatalystAndMoose.pod
 %%SITE_PERL%%/Catalyst/Manual/Components.pod
 %%SITE_PERL%%/Catalyst/Manual/Cookbook.pod
+%%SITE_PERL%%/Catalyst/Manual/Deployment.pod
+%%SITE_PERL%%/Catalyst/Manual/Deployment/Apache/FastCGI.pod
+%%SITE_PERL%%/Catalyst/Manual/Deployment/Apache/mod_perl.pod
+%%SITE_PERL%%/Catalyst/Manual/Deployment/DevelopmentServer.pod
+%%SITE_PERL%%/Catalyst/Manual/Deployment/FastCGI.pod
+%%SITE_PERL%%/Catalyst/Manual/Deployment/IIS/FastCGI.pod
+%%SITE_PERL%%/Catalyst/Manual/Deployment/SharedHosting.pod
+%%SITE_PERL%%/Catalyst/Manual/Deployment/lighttpd/FastCGI.pod
+%%SITE_PERL%%/Catalyst/Manual/Deployment/nginx/FastCGI.pod
 %%SITE_PERL%%/Catalyst/Manual/DevelopmentProcess.pod
 %%SITE_PERL%%/Catalyst/Manual/ExtendingCatalyst.pod
 %%SITE_PERL%%/Catalyst/Manual/Internals.pod
@@ -25,9 +33,15 @@
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/09_AdvancedCRUD/09_FormHandler.pod
 %%SITE_PERL%%/Catalyst/Manual/Tutorial/10_Appendices.pod
 %%SITE_PERL%%/Catalyst/Manual/WritingPlugins.pod
-@dirrmtry %%SITE_PERL%%/Catalyst/Manual/Tutorial/09_AdvancedCRUD
-@dirrmtry %%SITE_PERL%%/Catalyst/Manual/Tutorial
-@dirrmtry %%SITE_PERL%%/Catalyst/Manual
-@dirrmtry %%SITE_PERL%%/Catalyst
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Manual
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Manual/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Manual
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst
+@dirrm %%SITE_PERL%%/Catalyst/Manual/Tutorial/09_AdvancedCRUD
+@dirrm %%SITE_PERL%%/Catalyst/Manual/Tutorial
+@dirrm %%SITE_PERL%%/Catalyst/Manual/Deployment/nginx
+@dirrm %%SITE_PERL%%/Catalyst/Manual/Deployment/lighttpd
+@dirrm %%SITE_PERL%%/Catalyst/Manual/Deployment/IIS
+@dirrm %%SITE_PERL%%/Catalyst/Manual/Deployment/Apache
+@dirrm %%SITE_PERL%%/Catalyst/Manual/Deployment
+@dirrm %%SITE_PERL%%/Catalyst/Manual
+@dirrmtry %%SITE_PERL%%/Catalyst
