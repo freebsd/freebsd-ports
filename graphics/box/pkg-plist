@@ -24,6 +24,7 @@ include/box0.2/box/vmsymstuff.h
 lib/box0.2/lib/libg.a
 lib/box0.2/lib/libg.la
 lib/box0.2/lib/libg.so
+lib/box0.2/pkg/_area.bxh
 lib/box0.2/pkg/_arrows.bxh
 lib/box0.2/pkg/_bbox.bxh
 lib/box0.2/pkg/_circle.bxh
@@ -47,6 +48,7 @@ lib/box0.2/pkg/g.bxh
 lib/box0.2/pkg/label.bxh
 lib/box0.2/pkg/math.bxh
 lib/box0.2/pkg/obj.bxh
+lib/box0.2/pkg/raw.bxh
 lib/box0.2/pkg/tools.bxh
 lib/libboxcore0.2.a
 lib/libboxcore0.2.la
