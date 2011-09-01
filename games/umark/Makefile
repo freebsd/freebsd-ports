@@ -12,14 +12,16 @@ CATEGORIES=	games benchmarks
 MASTER_SITES=	SF/ut2k3botbench/UMark%20for%20Linux/2.0.0%20Beta%203
 DISTNAME=	UMark-for-Linux-v${DISTVERSION:S/.//g}
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Unreal Tournament 200x series benchmark utility
+
+LICENSE=	GPLv2
 
 USE_GNOME=	gtk20
 WRKSRC=		${WRKDIR}/UMark/src
 MAKEFILE=	${FILESDIR}/Makefile
-SUB_FILES+=	pkg-message
-PORTDOCS=	*
+SUB_FILES=	pkg-message
+PORTDOCS=	ChangeLog INSTALL README TODO
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
@@ -30,9 +32,7 @@ do-install:
 		${CPIO} -pdu -R ${SHAREOWN}:${SHAREGRP} ${DATADIR}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-. for txt in ChangeLog INSTALL README TODO
-	${INSTALL_DATA} ${WRKDIR}/UMark/${txt} ${DOCSDIR}
-. endfor
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKDIR}/UMark/,} ${DOCSDIR}
 .endif
 
 post-install:
