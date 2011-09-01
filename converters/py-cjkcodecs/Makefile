@@ -13,6 +13,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Python Unicode Codecs for Chinese, Japanese and Korean encodings
 
+DEPRECATED=	Integrated into every python version in the tree
+EXPIRATION_DATE=2011-11-01
+
 USE_PYTHON=	2.1+
 USE_PYDISTUTILS=	yes
 
