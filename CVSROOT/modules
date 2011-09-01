@@ -5274,6 +5274,7 @@ haskell-mode.el                 ports/lang/haskell-mode.el
 hastmon                         ports/net-mgmt/hastmon
 hastymail                       ports/www/hastymail
 hastymail2                      ports/www/hastymail2
+hastymail2-devel                ports/www/hastymail2-devel
 hatari                          ports/emulators/hatari
 hatop                           ports/sysutils/hatop
 havp                            ports/www/havp
@@ -9678,6 +9679,7 @@ mulberry                        ports/mail/mulberry
 mule-ucs                        ports/converters/mule-ucs
 multi-aterm                     ports/x11/multi-aterm
 multi-gnome-terminal            ports/x11/multi-gnome-terminal
+multican                        ports/graphics/multican
 multiget                        ports/ftp/multiget
 multisort                       ports/www/multisort
 multisuck                       ports/news/multisuck
@@ -26064,6 +26066,7 @@ vamps                           ports/multimedia/vamps
 varconf                         ports/devel/varconf
 varkon                          ports/cad/varkon
 varnish                         ports/www/varnish
+varnish-libvmod-header          ports/www/varnish-libvmod-header
 varnish2                        ports/www/varnish2
 vavoom                          ports/games/vavoom
 vavoom-extras                   ports/games/vavoom-extras
