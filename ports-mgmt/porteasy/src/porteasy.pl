@@ -1,6 +1,6 @@
 #!/usr/bin/perl -w
 #-
-# Copyright (c) 2000-2005 Dag-Erling Coïdan Smørgrav
+# Copyright (c) 2000-2011 Dag-Erling Coïdan Smørgrav
 # All rights reserved.
 #
 # Redistribution and use in source and binary forms, with or without
@@ -32,8 +32,8 @@ use strict;
 use Fcntl;
 use Getopt::Long;
 
-my $VERSION	= "2.8.4";
-my $COPYRIGHT	= "Copyright (c) 2000-2005 Dag-Erling Smørgrav. " .
+my $VERSION	= "2.8.5";
+my $COPYRIGHT	= "Copyright (c) 2000-2011 Dag-Erling Smørgrav. " .
 		  "All rights reserved.";
 
 # Constants
@@ -1167,6 +1167,11 @@ MAIN:{
 	foreach (split(' ', $ENV{'PORTEASY_OPTIONS'})) {
 	    unshift(@ARGV, $_);
 	}
+    }
+
+    # Environment overrides default
+    if ($ENV{'PORTSDIR'}) {
+	$portsdir = $ENV{'PORTSDIR'};
     }
 
     # Scan command line options
