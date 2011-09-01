@@ -13,7 +13,9 @@ DISTNAME=	${PORTNAME}${PORTVERSION}
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	danfe@FreeBSD.org
-COMMENT=	Cross-assembler for 680x, 68HC11, 6502, Sunplus, 8051, Z80, PIC, AVR
+COMMENT=	Cross-assembler for variety of microprocessors and controllers
+
+LICENSE=	GPLv2
 
 USE_GMAKE=	yes
 PORTDOCS=	*
@@ -25,7 +27,8 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/include/* ${PREFIX}/libdata/${PORTNAME}
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-	${INSTALL_DATA} ${WRKSRC}/MANUAL.TXT ${WRKSRC}/README*.TXT ${DOCSDIR}
+	${INSTALL_DATA} ${WRKSRC}/CONVERSION_C166.TXT ${WRKSRC}/MANUAL.TXT \
+		${WRKSRC}/README*.TXT ${DOCSDIR}
 .endif
 .if !defined(NOPORTEXAMPLES)
 	@${MKDIR} ${EXAMPLESDIR}
