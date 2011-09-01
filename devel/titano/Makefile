@@ -11,7 +11,7 @@ PORTREVISION=	8
 CATEGORIES=	devel gnome
 MASTER_SITES=	SF
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An IDE for GNOME desktop
 
 LIB_DEPENDS=	unicode.0:${PORTSDIR}/devel/libunicode
