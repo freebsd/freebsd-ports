@@ -5,7 +5,7 @@
  
  known_servers = []
 -for f in glob.glob('known.servers/*'):
-+for f in glob.glob('PREFIX/share/hmap/*'):
++for f in glob.glob('DATADIR/*'):
      ksf = file(f)
      ks = eval(ksf.read())
      known_servers.append(ks)
