@@ -11,7 +11,6 @@
     SUBDIR += abcmidi
     SUBDIR += abcselect
     SUBDIR += abraca
-    SUBDIR += adpcm
     SUBDIR += adplay
     SUBDIR += afsp
     SUBDIR += aften
@@ -48,7 +47,6 @@
     SUBDIR += asmixer
     SUBDIR += asunder
     SUBDIR += atunes
-    SUBDIR += aube
     SUBDIR += aubio
     SUBDIR += audacious-dumb
     SUBDIR += audacity
@@ -166,7 +164,6 @@
     SUBDIR += festlex-oald
     SUBDIR += festlex-ogi
     SUBDIR += festlex-poslex
-    SUBDIR += festvox-aec
     SUBDIR += festvox-czech
     SUBDIR += festvox-don
     SUBDIR += festvox-el11
@@ -289,9 +286,7 @@
     SUBDIR += gstreamer-plugins-vorbis
     SUBDIR += gstreamer-plugins-wavpack
     SUBDIR += gtick
-    SUBDIR += gtkgep
     SUBDIR += gtkguitune
-    SUBDIR += gtkhirad
     SUBDIR += gtkpod
     SUBDIR += guspat
     SUBDIR += gx2osd
@@ -533,7 +528,6 @@
     SUBDIR += openal-soft
     SUBDIR += opencore-amr
     SUBDIR += openspc
-    SUBDIR += opmixer
     SUBDIR += optimfrog
     SUBDIR += orpheus
     SUBDIR += osalp
@@ -722,7 +716,6 @@
     SUBDIR += streamtranscoder
     SUBDIR += streamtuner
     SUBDIR += stymulator
-    SUBDIR += swami
     SUBDIR += sweep
     SUBDIR += swhplugins
     SUBDIR += tagger
@@ -796,7 +789,6 @@
     SUBDIR += wsoundprefs
     SUBDIR += wsoundserver
     SUBDIR += wxguitar
-    SUBDIR += x11amp
     SUBDIR += xanalyser
     SUBDIR += xcd
     SUBDIR += xcdplayer
@@ -851,7 +843,6 @@
     SUBDIR += xmms-shn
     SUBDIR += xmms-sid
     SUBDIR += xmms-sndfile
-    SUBDIR += xmms-sndstretch
     SUBDIR += xmms-tfmx
     SUBDIR += xmms-timidity
     SUBDIR += xmms-volnorm

@@ -1,9 +1,0 @@
-bin/spacechart
-etc/sample-spacechartrc
-etc/spacechartrc
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/coordinates.txt
-share/locale/es/LC_MESSAGES/spacechart.mo
-share/spacechart/gliese.dat
-@dirrm share/spacechart
-%%PORTDOCS%%@dirrm %%DOCSDIR%%

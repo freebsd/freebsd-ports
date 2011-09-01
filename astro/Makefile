@@ -19,7 +19,6 @@
     SUBDIR += ephem
     SUBDIR += fowsr
     SUBDIR += foxtrotgps
-    SUBDIR += gkrellmoon
     SUBDIR += gkrellmoon2
     SUBDIR += gkrellsun
     SUBDIR += glunarclock
@@ -91,7 +90,6 @@
     SUBDIR += saoimage
     SUBDIR += sextractor
     SUBDIR += sky2000
-    SUBDIR += spacechart
     SUBDIR += sscalc
     SUBDIR += stardates
     SUBDIR += starplot

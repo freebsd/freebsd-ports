@@ -205,7 +205,6 @@
     SUBDIR += mydbf2mysql
     SUBDIR += mydumper
     SUBDIR += mylibrary
-    SUBDIR += mysql++
     SUBDIR += mysql++1
     SUBDIR += mysql++3
     SUBDIR += mysql-connector-java
@@ -237,7 +236,6 @@
     SUBDIR += mysql51-server
     SUBDIR += mysql55-client
     SUBDIR += mysql55-server
-    SUBDIR += mysql_last_value
     SUBDIR += mysqlard
     SUBDIR += mysqlbackup
     SUBDIR += mysqlcppapi
@@ -399,7 +397,6 @@
     SUBDIR += p5-DBIx-Skinny-Mixin-DBHResolver
     SUBDIR += p5-DBIx-Skinny-Pager
     SUBDIR += p5-DBIx-Skinny-Schema-Loader
-    SUBDIR += p5-DBIx-Table
     SUBDIR += p5-DBIx-TableHash
     SUBDIR += p5-DBIx-TransactionManager
     SUBDIR += p5-DBIx-Tree
