@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	ntp
-PORTVERSION=	4.2.7p203
+PORTVERSION=	4.2.7p210
 CATEGORIES=	net ipv6
 MASTER_SITES=	ftp://ftp.udel.edu/pub/ntp/ntp4/ntp-dev/ \
 		http://www.eecis.udel.edu/~ntp/ntp_spool/ntp4/ntp-dev/ \
@@ -21,6 +21,7 @@ LATEST_LINK=	${PORTNAME}-dev
 
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake libtool
+USE_GNOME=	gnomehack
 
 .if defined(ENABLE_RAWDCF)
 CONFIGURE_ARGS+=	--enable-RAWDCF
