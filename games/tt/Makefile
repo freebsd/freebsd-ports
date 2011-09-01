@@ -6,15 +6,16 @@
 #
 
 PORTNAME=	tt
-PORTVERSION=	15.0
+PORTVERSION=	15.1
 CATEGORIES=	games
-MASTER_SITES=	http://www.miketaylor.org.uk/tech/tt/ \
-		http://freebsd.nsu.ru/distfiles/
+MASTER_SITES=	http://www.miketaylor.org.uk/tech/tt/
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Tetris for Terminals
 
 ALL_TARGET=	tt
+
+PORTDOCS=	*
 
 do-install:
 	${INSTALL_PROGRAM} -g games -m 2555 ${WRKSRC}/tt ${PREFIX}/bin

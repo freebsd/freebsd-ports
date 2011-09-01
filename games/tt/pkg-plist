@@ -1,4 +1,2 @@
 bin/tt
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
 @unexec if [ -f /var/games/ttscores ]; then rm /var/games/ttscores; fi
