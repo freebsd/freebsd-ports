@@ -1,0 +1,11 @@
+--- zone.tab.orig	2011-09-01 17:57:06.000000000 +1000
++++ zone.tab	2011-09-01 17:57:40.000000000 +1000
+@@ -364,7 +364,7 @@
+ SS	+0451+03136	Africa/Juba
+ ST	+0020+00644	Africa/Sao_Tome
+ SV	+1342-08912	America/El_Salvador
+-SX	+180305-0630250	America/Lower_Princes
++#SX	+180305-0630250	America/Lower_Princes
+ SY	+3330+03618	Asia/Damascus
+ SZ	-2618+03106	Africa/Mbabane
+ TC	+2128-07108	America/Grand_Turk

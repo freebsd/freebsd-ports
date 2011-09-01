@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	zoneinfo
-DISTVERSION=	2011h
+DISTVERSION=	2011i
 CATEGORIES=	misc
 MASTER_SITES=	ftp://elsie.nci.nih.gov/pub/
 DISTNAME=	tzdata${DISTVERSION}
@@ -35,7 +35,7 @@ MASTER_SITES+=	http://people.freebsd.org/~edwin/
 
 # The following country codes can be missing from /usr/share/misc/iso3166 and
 # shouldn't appear in the zoneinfo file.
-MISSING=	ax bl gg im je me mf rs
+MISSING=	ax bl bq cw gg im je me mf rs ss sx
 
 .ifndef NOMISSING
 .for M in ${MISSING}
