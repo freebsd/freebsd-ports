@@ -6,10 +6,9 @@
 #
 
 PORTNAME=	flashrom
-PORTVERSION=	0.9.3
-PORTREVISION=	1
+PORTVERSION=	0.9.4
 CATEGORIES=	sysutils
-MASTER_SITES=	http://qa.coreboot.org/releases/
+MASTER_SITES=	http://download.flashrom.org/releases/
 
 MAINTAINER=	avl@FreeBSD.org
 COMMENT=	A utility for reading, writing, verifying and erasing flash ROM chips
