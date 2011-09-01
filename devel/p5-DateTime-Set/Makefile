@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Set
-DISTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -16,20 +16,23 @@ COMMENT=	Datetime sets and set math
 
 BUILD_DEPENDS=	p5-DateTime>=0.12:${PORTSDIR}/devel/p5-DateTime \
 		p5-Set-Infinite>=0.59:${PORTSDIR}/devel/p5-Set-Infinite
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-DateTime>=0.12:${PORTSDIR}/devel/p5-DateTime \
+		p5-Set-Infinite>=0.59:${PORTSDIR}/devel/p5-Set-Infinite
 
-PERL_MODBUILD=	yes
+PERL_CONFIGURE=	yes
 
-MAN3=		DateTime::Set.3 DateTime::Span.3 \
-		DateTime::SpanSet.3 Set::Infinite::_recurrence.3
+MAN3=		DateTime::Set.3 \
+		DateTime::Span.3 \
+		DateTime::SpanSet.3 \
+		Set::Infinite::_recurrence.3
 
 .if !defined(NOPORTDOCS)
 PORTDOCS=	Changes README TODO
 
 post-install:
-	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_DATA} ${PORTDOCS:S|^|${WRKSRC}/|} ${DOCSDIR}
-	@${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
+	${MKDIR} ${DOCSDIR}/
+	cd ${WRKSRC}/ && ${INSTALL_DATA} ${PORTDOCS} ${DOCSDIR}/
+	${ECHO_MSG} "===> Documentation installed in ${DOCSDIR}."
 .endif
 
 .include <bsd.port.mk>
