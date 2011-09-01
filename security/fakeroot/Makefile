@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fakeroot
-PORTVERSION=	1.17
+PORTVERSION=	1.18
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_DEBIAN}
 MASTER_SITE_SUBDIR=	pool/main/f/fakeroot
@@ -25,11 +25,10 @@ USE_LDCONFIG=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 
-MANLANG=	"" es sv fr nl
 MAN1=		faked.1 fakeroot.1
 
 pre-configure:
-	 @${REINPLACE_CMD} -e 's/-lpthread/${PTHREAD_LIBS}/g' \
+	 @${REINPLACE_CMD} -e '/LIBS=.*-lpthread/s/-lpthread/${PTHREAD_LIBS}/g' \
 	 	${WRKSRC}/${CONFIGURE_SCRIPT}
 
 post-install:
