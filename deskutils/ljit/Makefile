@@ -12,29 +12,34 @@ CATEGORIES=	deskutils
 MASTER_SITES=	http://kir.vtx.ru/ljit/dl/ \
 		http://freebsd.nsu.ru/distfiles/
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI tool to help LiveJournal users post images
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	curl.6:${PORTSDIR}/ftp/curl
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 USE_GETTEXT=	yes
 USE_GNOME=	gtk20
 
+PLIST_FILES=	bin/ljit share/locale/ru/LC_MESSAGES/ljit.mo
+PORTDOCS=	BUGS NEWS README THANKS TODO
+
 post-extract:
-	@${REINPLACE_CMD} -e 's, -DMTRACE$$,,' -e 's,prefix)/$$(DATADIRNAME,datadir,' \
-		${WRKSRC}/src/Makefile.in
+	@${REINPLACE_CMD} -e 's, -DMTRACE$$,, ; \
+		s,prefix)/$$(DATADIRNAME,datadir,' ${WRKSRC}/src/Makefile.in
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/src/${PORTNAME} ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/po/ru_RU.mo ${PREFIX}/share/locale/ru/LC_MESSAGES/${PORTNAME}.mo
+	${INSTALL_DATA} ${WRKSRC}/po/ru_RU.mo \
+		${PREFIX}/share/locale/ru/LC_MESSAGES/${PORTNAME}.mo
 .if !defined(NOPORTDOCS)
 	@${MKDIR} ${DOCSDIR}
-. for f in BUGS NEWS README THANKS TODO
-	${INSTALL_DATA} ${WRKSRC}/${f} ${DOCSDIR}
-. endfor
+	${INSTALL_DATA} ${PORTDOCS:S,^,${WRKSRC}/,} ${DOCSDIR}
 .endif
 
 .include <bsd.port.mk>
