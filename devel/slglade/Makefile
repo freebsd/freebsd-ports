@@ -18,6 +18,9 @@ COMMENT=	S-Lang binding for libglade
 LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 RUN_DEPENDS=	imdisplay:${PORTSDIR}/x11-toolkits/slgtk
 
+DEPRECATED=	Depends on non-functional x11-toolkits/slgtk
+EXPIRATION_DATE=	2011-12-31
+
 USE_GNOME=	libglade2
 GNU_CONFIGURE=	yes
 
