@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	dwm
-PORTVERSION=	5.8.2
-PORTREVISION=	1
+PORTVERSION=	5.9
 CATEGORIES=	x11-wm
 MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/ \
 		http://schot.a-eskwadraat.nl/files/
@@ -15,13 +14,16 @@ MASTER_SITES=	http://dl.suckless.org/${PORTNAME}/ \
 MAINTAINER=	schot@a-eskwadraat.nl
 COMMENT=	A dynamic, small, fast and simple window manager
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 OPTIONS=	XINERAMA	"Enable Xinerama support" On
 
 USE_XORG=	x11
 
 MAN1=		dwm.1
 PLIST_FILES=	bin/dwm
-PORTDOCS=	LICENSE README
+PORTDOCS=	README
 
 .include <bsd.port.options.mk>
 
@@ -54,7 +56,6 @@ post-install:
 .if !defined(NOPORTDOCS)
 	@${ECHO_MSG} "installing additional documentation to ${DOCSDIR}"
 	@${MKDIR} ${DOCSDIR}
-	@${INSTALL_MAN} ${WRKSRC}/LICENSE ${DOCSDIR}
 	@${INSTALL_MAN} ${WRKSRC}/README ${DOCSDIR}
 .endif
 	@${CAT} ${PKGMESSAGE}

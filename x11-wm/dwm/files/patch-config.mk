@@ -1,5 +1,5 @@
---- config.mk.orig	2011-03-25 12:53:06.000000000 +0100
-+++ config.mk	2011-03-25 12:54:25.000000000 +0100
+--- config.mk.orig	2011-07-10 22:24:25.000000000 +0200
++++ config.mk	2011-09-01 14:00:05.000000000 +0200
 @@ -4,11 +4,11 @@
  # Customize below to fit your system
  
@@ -16,21 +16,21 @@
  
  # Xinerama
  XINERAMALIBS = -L${X11LIB} -lXinerama
-@@ -19,10 +19,10 @@
+@@ -19,15 +19,15 @@
  LIBS = -L/usr/lib -lc -L${X11LIB} -lX11 ${XINERAMALIBS}
  
  # flags
 -CPPFLAGS = -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
--CFLAGS = -g -std=c99 -pedantic -Wall -O0 ${INCS} ${CPPFLAGS}
 +CPPFLAGS+= -DVERSION=\"${VERSION}\" ${XINERAMAFLAGS}
+ #CFLAGS = -g -std=c99 -pedantic -Wall -O0 ${INCS} ${CPPFLAGS}
+-CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
 +CFLAGS+= -std=c99 ${INCS} ${CPPFLAGS}
- #CFLAGS = -std=c99 -pedantic -Wall -Os ${INCS} ${CPPFLAGS}
--LDFLAGS = -g ${LIBS}
+ #LDFLAGS = -g ${LIBS}
+-LDFLAGS = -s ${LIBS}
 +LDFLAGS+= ${LIBS}
- #LDFLAGS = -s ${LIBS}
  
  # Solaris
-@@ -30,4 +30,4 @@
+ #CFLAGS = -fast ${INCS} -DVERSION=\"${VERSION}\"
  #LDFLAGS = ${LIBS}
  
  # compiler and linker
