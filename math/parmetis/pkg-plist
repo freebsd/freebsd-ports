@@ -1,8 +1,0 @@
-include/parmetis/parmetis.h
-lib/parmetis/libmetis.a
-lib/parmetis/libparmetis.a
-%%PORTDOCS%%%%DOCSDIR%%/manual.ps
-%%PORTDOCS%%%%DOCSDIR%%/manual.pdf
-@dirrm include/parmetis
-@dirrm lib/parmetis
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
