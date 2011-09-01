@@ -1,0 +1,17 @@
+--- scripts/Makefile.in.orig	2011-08-31 18:39:27.694276219 +0200
++++ scripts/Makefile.in	2011-08-31 18:41:18.339392009 +0200
+@@ -443,12 +443,8 @@
+ 	mostlyclean-generic mostlyclean-libtool pdf pdf-am ps ps-am \
+ 	uninstall uninstall-am uninstall-binSCRIPTS
+ 
+-@MACOSX_TRUE@define macosx_false
+-#
+-@MACOSX_TRUE@endef
+-@MACOSX_FALSE@define macosx_true
+-#
+-@MACOSX_FALSE@endef
++@MACOSX_TRUE@macosx_false = \#
++@MACOSX_FALSE@macosx_true = \#
+ 
+ fakeroot: $(srcdir)/fakeroot.in Makefile
+ 	$(do_subst) < $(srcdir)/fakeroot.in > fakeroot
