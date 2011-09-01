@@ -7,6 +7,7 @@
 
 PORTNAME=	translate-toolkit
 PORTVERSION=	1.9.0
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	SF/translate/Translate%20Toolkit/${PORTVERSION} \
 		http://freebsd.unixfreunde.de/sources/
@@ -14,10 +15,9 @@ MASTER_SITES=	SF/translate/Translate%20Toolkit/${PORTVERSION} \
 MAINTAINER=	jpaetzel@FreeBSD.org
 COMMENT=	Converts between many translation formats
 
-BUILD_DEPENDS=	py*-pysqlite>=2.3:${PORTSDIR}/databases/py-pysqlite23 \
+BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
 		py*-vobject>=0:${PORTSDIR}/deskutils/py-vobject \
 		msghack:${PORTSDIR}/devel/gettext-msghack \
-		py*-elementtree>=0:${PORTSDIR}/devel/py-elementtree \
 		py*-iniparse>=0:${PORTSDIR}/devel/py-iniparse \
 		py*-levenshtein>=0:${PORTSDIR}/devel/py-levenshtein \
 		py*-lxml>=0:${PORTSDIR}/devel/py-lxml \
@@ -29,8 +29,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
+USE_PYTHON=	2.5+
+USE_PYDISTUTILS=	yes
 
 MAN1=		csv2po.1 csv2tbx.1 html2po.1 ical2po.1 ini2po.1 \
 		moz2po.1 odf2xliff.1 oo2po.1 oo2xliff.1 \

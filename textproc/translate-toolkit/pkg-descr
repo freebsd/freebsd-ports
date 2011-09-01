@@ -6,7 +6,7 @@ files.  The documentation includes guides on using the tools, running a
 localization project and how to localize various projects from
 OpenOffice.org to Mozilla.
 
-At its core the software contains a set of classes for handling various 
+At its core the software contains a set of classes for handling various
 localization storage formats: DTD, properties, OpenOffice.org GSI/SDF,
 CSV and of course PO and XLIFF.  It also provides scripts to convert
 between these formats.
