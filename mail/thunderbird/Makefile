@@ -20,6 +20,8 @@ BUILD_DEPENDS=	nspr>=4.8.7:${PORTSDIR}/devel/nspr \
 LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		event-1.4:${PORTSDIR}/devel/libevent
 
+CONFLICTS_BUILD=	spidermonkey-*
+
 USE_AUTOTOOLS=	autoconf213
 USE_GECKO=	gecko
 USE_MOZILLA=	-png -nss -dbm -jpeg -xft
