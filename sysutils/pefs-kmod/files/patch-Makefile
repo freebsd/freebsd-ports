@@ -1,0 +1,17 @@
+--- sys/modules/pefs/Makefile.orig
++++ sys/modules/pefs/Makefile
+@@ -8,12 +8,12 @@
+ 	pefs_dircache.c \
+ 	pefs_xts.c vmac.c
+ 
+-.if ${MACHINE_CPUARCH} == "i386" || ${MACHINE_CPUARCH} == "amd64"
++.if defined(PEFS_AESNI)
+ SRCS+=	pefs_aesni.c
+ CFLAGS+= -DPEFS_AESNI
+ .endif
+ 
+-DEBUG_FLAGS+= -g
++#DEBUG_FLAGS+= -g
+ #DEBUG_FLAGS+= -DPEFS_DEBUG
+ #DEBUG_FLAGS+= -DPEFS_DEBUG_EXTRA
+ 

@@ -634,6 +634,7 @@
     SUBDIR += pecl-fileinfo
     SUBDIR += pecl-mogilefs
     SUBDIR += pecl-proctitle
+    SUBDIR += pefs-kmod
     SUBDIR += penv
     SUBDIR += personality
     SUBDIR += pessulus

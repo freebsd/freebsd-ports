@@ -1,0 +1,5 @@
+sbin/pefs
+@cwd %%KMODDIR%%
+pefs.ko
+@exec kldxref %%KMODDIR%%
+@unexec kldxref %%KMODDIR%%
