@@ -6,12 +6,13 @@
 #
 
 PORTNAME=	Net-SenderBase
-PORTVERSION=	1.01
+PORTVERSION=	1.02
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR= CPAN:JOENIO
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	fbsd@opal.com
+MAINTAINER=	rnejdl@ringofsaturn.com
 COMMENT=	Query the SenderBase service
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Net/DNS.pm:${PORTSDIR}/dns/p5-Net-DNS
