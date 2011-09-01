@@ -23,6 +23,7 @@
 %%DATADIR%%/Africa/Gaborone
 %%DATADIR%%/Africa/Harare
 %%DATADIR%%/Africa/Johannesburg
+%%DATADIR%%/Africa/Juba
 %%DATADIR%%/Africa/Kampala
 %%DATADIR%%/Africa/Khartoum
 %%DATADIR%%/Africa/Kigali
@@ -125,9 +126,11 @@
 %%DATADIR%%/America/Juneau
 %%DATADIR%%/America/Kentucky/Louisville
 %%DATADIR%%/America/Kentucky/Monticello
+%%DATADIR%%/America/Kralendijk
 %%DATADIR%%/America/La_Paz
 %%DATADIR%%/America/Lima
 %%DATADIR%%/America/Los_Angeles
+%%DATADIR%%/America/Lower_Princes
 %%DATADIR%%/America/Maceio
 %%DATADIR%%/America/Managua
 %%DATADIR%%/America/Manaus
@@ -449,12 +452,14 @@
 %%DATADIR%%/Pacific/Palau
 %%DATADIR%%/Pacific/Pitcairn
 %%DATADIR%%/Pacific/Pohnpei
+%%DATADIR%%/Pacific/Ponape
 %%DATADIR%%/Pacific/Port_Moresby
 %%DATADIR%%/Pacific/Rarotonga
 %%DATADIR%%/Pacific/Saipan
 %%DATADIR%%/Pacific/Tahiti
 %%DATADIR%%/Pacific/Tarawa
 %%DATADIR%%/Pacific/Tongatapu
+%%DATADIR%%/Pacific/Truk
 %%DATADIR%%/Pacific/Wake
 %%DATADIR%%/Pacific/Wallis
 %%DATADIR%%/WET

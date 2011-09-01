@@ -1,0 +1,11 @@
+--- zone.tab.orig	2011-09-01 17:55:11.000000000 +1000
++++ zone.tab	2011-09-01 17:55:21.000000000 +1000
+@@ -86,7 +86,7 @@
+ BM	+3217-06446	Atlantic/Bermuda
+ BN	+0456+11455	Asia/Brunei
+ BO	-1630-06809	America/La_Paz
+-BQ	+120903-0681636	America/Kralendijk
++#BQ	+120903-0681636	America/Kralendijk
+ BR	-0351-03225	America/Noronha	Atlantic islands
+ BR	-0127-04829	America/Belem	Amapa, E Para
+ BR	-0343-03830	America/Fortaleza	NE Brazil (MA, PI, CE, RN, PB)
