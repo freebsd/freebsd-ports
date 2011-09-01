@@ -7,7 +7,7 @@
 
 PORTNAME=	miro
 PORTVERSION=	4.0.1
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	multimedia
 MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/ \
 		http://ftp.osuosl.org/pub/pculture.org/miro/src/
@@ -15,14 +15,14 @@ MASTER_SITES=	ftp://ftp.osuosl.org/pub/pculture.org/miro/src/ \
 MAINTAINER=	armin@frozen-zone.org
 COMMENT=	A video player to get internet TV broadcasts
 
+LICENSE=	GPLv2
+
 BUILD_DEPENDS=	pyrexc:${PORTSDIR}/devel/pyrex \
 		${PYTHON_SITELIBDIR}/webkit/__init__.py:${PORTSDIR}/www/py-webkitgtk \
 		update-mime-database:${PORTSDIR}/misc/shared-mime-info
-
 LIB_DEPENDS=	avutil.1:${PORTSDIR}/multimedia/ffmpeg
-
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb \
-		${PYTHON_SITELIBDIR}/pysqlite2/_sqlite.so:${PORTSDIR}/databases/py-pysqlite23 \
+		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		${PYTHON_SITELIBDIR}/dbus/glib.py:${PORTSDIR}/devel/py-dbus \
 		${PYTHON_SITELIBDIR}/gtk-2.0/pynotify/_pynotify.so:${PORTSDIR}/devel/py-notify \
 		${PYTHON_SITELIBDIR}/libtorrent.so:${PORTSDIR}/net-p2p/libtorrent-rasterbar-15-python \
@@ -34,17 +34,12 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_bsddb.so:${PORTSDIR}/databases/py-bsddb \
 BUILD_WRKSRC=	${WRKSRC}/linux
 INSTALL_WRKSRC=	${WRKSRC}/linux
 
-CONFLICTS=	Miro-[0-9]*
-
-LICENSE=	GPLv2
-
 USE_GNOME=	gconf2 gtk20
 USE_GSTREAMER=	python
 USE_GETTEXT=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
 USE_LDCONFIG=	yes
-MAKE_ENV=	CPPFLAGS="${CPPFLAGS}"
 INSTALLS_ICONS=	yes
 INSTALLS_EGGINFO=	yes
 
