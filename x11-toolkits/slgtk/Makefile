@@ -15,6 +15,9 @@ COMMENT=	S-Lang binding for GTK+
 
 LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2
 
+DEPRECATED=	Does not work with newer GTK+, upstream development has ceased
+EXPIRATION_DATE=	2011-12-31
+
 USE_GNOME=	gtk20
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	LDFLAGS=-lncurses

@@ -19,6 +19,9 @@ LIB_DEPENDS=	slang.2:${PORTSDIR}/devel/libslang2 \
 		gtkdatabox-0.9.0.1:${PORTSDIR}/x11-toolkits/gtkdatabox
 RUN_DEPENDS=	imdisplay:${PORTSDIR}/x11-toolkits/slgtk
 
+DEPRECATED=	Depends on non-functional x11-toolkits/slgtk
+EXPIRATION_DATE=	2011-12-31
+
 OPTIONS=	SLGLADE	"Enable slglade support (run-time)" off
 
 .include <bsd.port.pre.mk>
