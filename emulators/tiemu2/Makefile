@@ -13,8 +13,10 @@ MASTER_SITES=	http://www.ticalc.org/pub/unix/ \
 		http://freebsd.nsu.ru/distfiles/tiemu/
 DISTNAME=	tiemu
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	TI89(ti)/92(+)/V200 hand-helds emulator
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	ticalcs.10:${PORTSDIR}/devel/libticalcs \
 		ticables.12:${PORTSDIR}/comms/libticables \
