@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dmenu
-PORTVERSION=	4.3.1
+PORTVERSION=	4.4
 CATEGORIES=	x11
 MASTER_SITES=	http://dl.suckless.org/tools/ \
 		http://schot.a-eskwadraat.nl/files/
@@ -14,15 +14,15 @@ MASTER_SITES=	http://dl.suckless.org/tools/ \
 MAINTAINER=	schot@a-eskwadraat.nl
 COMMENT=	X11 menu application designed for the dwm window manager
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 OPTIONS=	XINERAMA	"Enable Xinerama support" On
 
 USE_XORG=	x11
 
-MAN1=		dmenu.1
-PLIST_FILES=	bin/dmenu bin/dmenu_path bin/dmenu_run
-
-LICENSE=	MIT
-LICENSE_FILE=	${WRKSRC}/LICENSE
+MAN1=		dmenu.1 lsx.1
+PLIST_FILES=	bin/dmenu bin/dmenu_run bin/lsx
 
 .include <bsd.port.options.mk>
 

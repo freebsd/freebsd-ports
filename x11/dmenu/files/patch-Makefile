@@ -1,26 +1,32 @@
---- Makefile.orig	2011-05-18 18:02:16.000000000 +0200
-+++ Makefile	2011-05-20 22:52:15.000000000 +0200
-@@ -43,17 +43,17 @@
+--- Makefile.orig	2011-07-19 22:31:28.000000000 +0200
++++ Makefile	2011-09-01 13:48:57.000000000 +0200
+@@ -47,20 +47,20 @@
  	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu
- 	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu_path
  	@chmod 755 ${DESTDIR}${PREFIX}/bin/dmenu_run
--	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man1
+ 	@chmod 755 ${DESTDIR}${PREFIX}/bin/lsx
+-	@echo installing manual pages to ${DESTDIR}${MANPREFIX}/man1
 -	@mkdir -p ${DESTDIR}${MANPREFIX}/man1
 -	@sed "s/VERSION/${VERSION}/g" < dmenu.1 > ${DESTDIR}${MANPREFIX}/man1/dmenu.1
+-	@sed "s/VERSION/${VERSION}/g" < lsx.1 > ${DESTDIR}${MANPREFIX}/man1/lsx.1
 -	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/dmenu.1
-+	@echo installing manual page to ${DESTDIR}${MANPREFIX}/man/man1
+-	@chmod 644 ${DESTDIR}${MANPREFIX}/man1/lsx.1
++	@echo installing manual pages to ${DESTDIR}${MANPREFIX}/man/man1
 +	@mkdir -p ${DESTDIR}${MANPREFIX}/man/man1
 +	@sed "s/VERSION/${VERSION}/g" < dmenu.1 > ${DESTDIR}${MANPREFIX}/man/man1/dmenu.1
++	@sed "s/VERSION/${VERSION}/g" < lsx.1 > ${DESTDIR}${MANPREFIX}/man/man1/lsx.1
 +	@chmod 644 ${DESTDIR}${MANPREFIX}/man/man1/dmenu.1
++	@chmod 644 ${DESTDIR}${MANPREFIX}/man/man1/lsx.1
  
  uninstall:
  	@echo removing executables from ${DESTDIR}${PREFIX}/bin
  	@rm -f ${DESTDIR}${PREFIX}/bin/dmenu
- 	@rm -f ${DESTDIR}${PREFIX}/bin/dmenu_path
  	@rm -f ${DESTDIR}${PREFIX}/bin/dmenu_run
+ 	@rm -f ${DESTDIR}${PREFIX}/bin/lsx
 -	@echo removing manual page from ${DESTDIR}${MANPREFIX}/man1
 -	@rm -f ${DESTDIR}${MANPREFIX}/man1/dmenu.1
+-	@rm -f ${DESTDIR}${MANPREFIX}/man1/lsx.1
 +	@echo removing manual page from ${DESTDIR}${MANPREFIX}/man/man1
 +	@rm -f ${DESTDIR}${MANPREFIX}/man/man1/dmenu.1
++	@rm -f ${DESTDIR}${MANPREFIX}/man/man1/lsx.1
  
  .PHONY: all options clean dist install uninstall
