@@ -24,6 +24,7 @@ USE_SDL=	sdl
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+MAKE_JOBS_SAFE=	yes
 
 MAN1=		lgc-pg.1
 MAN6=		lgeneral.6
