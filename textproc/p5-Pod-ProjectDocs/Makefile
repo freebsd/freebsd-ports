@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Pod-ProjectDocs
-PORTVERSION=	0.39
+PORTVERSION=	0.40
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,17 +14,29 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Generates CPAN like pod pages
 
-RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+BUILD_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		p5-JSON>=0.991:${PORTSDIR}/converters/p5-JSON \
+		p5-JSON>=2.04:${PORTSDIR}/converters/p5-JSON \
 		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-URI>=0:${PORTSDIR}/net/p5-URI
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Class-Data-Inheritable>=0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		p5-JSON>=2.04:${PORTSDIR}/converters/p5-JSON \
+		p5-Readonly>=0:${PORTSDIR}/devel/p5-Readonly \
+		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
 
 PERL_CONFIGURE=	yes
 
 MAN1=		pod2projdocs.1
 MAN3=		Pod::ProjectDocs.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 500808
+BUILD_DEPENDS+=	p5-Pod-Parser>=1.32:${PORTSDIR}/textproc/p5-Pod-Parser
+RUN_DEPENDS+=	p5-Pod-Parser>=1.32:${PORTSDIR}/textproc/p5-Pod-Parser
+.endif
+
+.include <bsd.port.post.mk>
