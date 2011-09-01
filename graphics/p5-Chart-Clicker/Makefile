@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Chart-Clicker
-PORTVERSION=	2.69
+PORTVERSION=	2.71
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:GPHAT
@@ -15,24 +15,24 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Powerful, extensible charting
 
-RUN_DEPENDS=	p5-Color-Palette>=0.091400:${PORTSDIR}/graphics/p5-Color-Palette \
-		p5-Color-Scheme>=1.02:${PORTSDIR}/graphics/p5-Color-Scheme \
-		p5-Math-Gradient>=0.04:${PORTSDIR}/math/p5-Math-Gradient \
-		p5-Moose>=0.76:${PORTSDIR}/devel/p5-Moose \
-		p5-MooseX-AttributeHelpers>=0.17:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
-		p5-DateTime>=0.47:${PORTSDIR}/devel/p5-DateTime \
-		p5-DateTime-Set>=0.27:${PORTSDIR}/devel/p5-DateTime-Set \
-		p5-Geometry-Primitive>=0.13:${PORTSDIR}/graphics/p5-Geometry-Primitive \
-		p5-Graphics-Color>=0.20:${PORTSDIR}/graphics/p5-Graphics-Color \
-		p5-Graphics-Primitive>=0.42:${PORTSDIR}/graphics/p5-Graphics-Primitive \
-		p5-Graphics-Primitive-Driver-Cairo>=0.39:${PORTSDIR}/graphics/p5-Graphics-Primitive-Driver-Cairo \
-		p5-Layout-Manager>=0.29:${PORTSDIR}/graphics/p5-Layout-Manager
+LICENSE=	ART20 GPLv1
+LICENSE_COMB=	dual
+
+RUN_DEPENDS=	p5-Color-Scheme>=0:${PORTSDIR}/graphics/p5-Color-Scheme \
+		p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
+		p5-MooseX-AttributeHelpers>=0:${PORTSDIR}/devel/p5-MooseX-AttributeHelpers \
+		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
+		p5-DateTime-Set>=0:${PORTSDIR}/devel/p5-DateTime-Set \
+		p5-Geometry-Primitive>=0:${PORTSDIR}/graphics/p5-Geometry-Primitive \
+		p5-Graphics-Color>=0:${PORTSDIR}/graphics/p5-Graphics-Color \
+		p5-Graphics-Primitive>=0:${PORTSDIR}/graphics/p5-Graphics-Primitive \
+		p5-Graphics-Primitive-Driver-Cairo>=0:${PORTSDIR}/graphics/p5-Graphics-Primitive-Driver-Cairo \
+		p5-Layout-Manager>=0:${PORTSDIR}/graphics/p5-Layout-Manager
 BUILD_DEPENDS:=	${RUN_DEPENDS}
 
-LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	YES
+PERL_CONFIGURE=	yes
 
 MAN3=		Chart::Clicker.3 \
 		Chart::Clicker::Axis.3 \
@@ -61,7 +61,6 @@ MAN3=		Chart::Clicker.3 \
 		Chart::Clicker::Renderer::Bar.3 \
 		Chart::Clicker::Renderer::Bubble.3 \
 		Chart::Clicker::Renderer::CandleStick.3 \
-		Chart::Clicker::Renderer::HeatMap.3 \
 		Chart::Clicker::Renderer::Line.3 \
 		Chart::Clicker::Renderer::Pie.3 \
 		Chart::Clicker::Renderer::Point.3 \
