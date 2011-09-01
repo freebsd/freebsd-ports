@@ -1,11 +1,9 @@
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/XML/.packlist
+bin/make_method
 %%SITE_PERL%%/Apache/RPC/Server.pm
 %%SITE_PERL%%/Apache/RPC/Status.pm
 %%SITE_PERL%%/Apache/RPC/status.xpl
 %%SITE_PERL%%/RPC/XML.pm
 %%SITE_PERL%%/RPC/XML/Client.pm
-%%SITE_PERL%%/RPC/XML/Function.pm
-%%SITE_PERL%%/RPC/XML/Method.pm
 %%SITE_PERL%%/RPC/XML/Parser.pm
 %%SITE_PERL%%/RPC/XML/Parser/XMLLibXML.pm
 %%SITE_PERL%%/RPC/XML/Parser/XMLParser.pm
@@ -19,54 +17,11 @@
 %%SITE_PERL%%/RPC/XML/methodSignature.xpl
 %%SITE_PERL%%/RPC/XML/multicall.xpl
 %%SITE_PERL%%/RPC/XML/status.xpl
-%%SITE_PERL%%/auto/RPC/XML/Function/autosplit.ix
-%%SITE_PERL%%/auto/RPC/XML/Function/clone.al
-%%SITE_PERL%%/auto/RPC/XML/Function/is_valid.al
-%%SITE_PERL%%/auto/RPC/XML/Function/match_signature.al
-%%SITE_PERL%%/auto/RPC/XML/Procedure/add_signature.al
-%%SITE_PERL%%/auto/RPC/XML/Procedure/autosplit.ix
-%%SITE_PERL%%/auto/RPC/XML/Procedure/call.al
-%%SITE_PERL%%/auto/RPC/XML/Procedure/clone.al
-%%SITE_PERL%%/auto/RPC/XML/Procedure/delete_signature.al
-%%SITE_PERL%%/auto/RPC/XML/Procedure/is_valid.al
-%%SITE_PERL%%/auto/RPC/XML/Procedure/load_XPL_file.al
-%%SITE_PERL%%/auto/RPC/XML/Procedure/match_signature.al
-%%SITE_PERL%%/auto/RPC/XML/Procedure/reload.al
-%%SITE_PERL%%/auto/RPC/XML/Server/add_default_methods.al
-%%SITE_PERL%%/auto/RPC/XML/Server/add_methods_in_dir.al
-%%SITE_PERL%%/auto/RPC/XML/Server/add_proc.al
-%%SITE_PERL%%/auto/RPC/XML/Server/add_procs_in_dir.al
-%%SITE_PERL%%/auto/RPC/XML/Server/autosplit.ix
-%%SITE_PERL%%/auto/RPC/XML/Server/call.al
-%%SITE_PERL%%/auto/RPC/XML/Server/copy_methods.al
-%%SITE_PERL%%/auto/RPC/XML/Server/copy_procs.al
-%%SITE_PERL%%/auto/RPC/XML/Server/delete_method.al
-%%SITE_PERL%%/auto/RPC/XML/Server/delete_proc.al
-%%SITE_PERL%%/auto/RPC/XML/Server/dispatch.al
-%%SITE_PERL%%/auto/RPC/XML/Server/get_method.al
-%%SITE_PERL%%/auto/RPC/XML/Server/get_proc.al
-%%SITE_PERL%%/auto/RPC/XML/Server/list_methods.al
-%%SITE_PERL%%/auto/RPC/XML/Server/list_procs.al
-%%SITE_PERL%%/auto/RPC/XML/Server/method_from_file.al
-%%SITE_PERL%%/auto/RPC/XML/Server/post_configure_hook.al
-%%SITE_PERL%%/auto/RPC/XML/Server/pre_loop_hook.al
-%%SITE_PERL%%/auto/RPC/XML/Server/proc_from_file.al
-%%SITE_PERL%%/auto/RPC/XML/Server/process_request.al
-%%SITE_PERL%%/auto/RPC/XML/Server/server_fault.al
-%%SITE_PERL%%/auto/RPC/XML/Server/server_loop.al
-%%SITE_PERL%%/auto/RPC/XML/Server/share_methods.al
-%%SITE_PERL%%/auto/RPC/XML/Server/share_procs.al
-%%SITE_PERL%%/auto/RPC/XML/Server/timeout.al
-bin/make_method
-@dirrm %%SITE_PERL%%/auto/RPC/XML/Server
-@dirrm %%SITE_PERL%%/auto/RPC/XML/Procedure
-@dirrm %%SITE_PERL%%/auto/RPC/XML/Function
-@dirrm %%SITE_PERL%%/auto/RPC/XML
-@dirrmtry %%SITE_PERL%%/auto/RPC
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/XML/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/XML
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC
 @dirrm %%SITE_PERL%%/RPC/XML/Parser
 @dirrm %%SITE_PERL%%/RPC/XML
 @dirrmtry %%SITE_PERL%%/RPC
 @dirrmtry %%SITE_PERL%%/Apache/RPC
 @dirrmtry %%SITE_PERL%%/Apache
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC/XML
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/RPC
