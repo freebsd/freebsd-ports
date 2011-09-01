@@ -6,23 +6,26 @@
 #
 
 PORTNAME=	box
-PORTVERSION=	0.2.2
+PORTVERSION=	0.2.3
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME}c/Box%20-%20the%20compiler/${DISTNAME}/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Compiler for box, the figure description language
 
+LICENSE=	GPLv2 LGPL3
+LICENSE_COMB=	multi
+LICENSE_FILE_GPLv2=	${WRKSRC}/COPYING
+LICENSE_FILE_LGPL3=	${WRKSRC}/COPYING.LESSER
+
 BUILD_DEPENDS=	docbook-to-man:${PORTSDIR}/textproc/docbook-to-man
 LIB_DEPENDS=	cairo:${PORTSDIR}/graphics/cairo
 
-LICENSE_COMB=	multi
-LICENSE=	GPLv2 LGPL3
-
 USE_GMAKE=	yes
-USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ARG+=	--with-cairo
+CONFIGURE_ARGS=	--with-cairo
+USE_LDCONFIG=	yes
+MAKE_JOBS_UNSAFE=yes
 
 MAN1=		${PORTNAME}.1
 
@@ -34,8 +37,8 @@ check regression-test: build
 
 post-install:
 .if !defined(NOPORTEXAMPLES)
-	${MKDIR} ${EXAMPLESDIR}
-	(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} \* ${EXAMPLESDIR})
+	@${MKDIR} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/examples && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
 .endif
 
 .include <bsd.port.mk>
