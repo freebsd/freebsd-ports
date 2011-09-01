@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	distribute
-PORTVERSION=	0.6.16
-PORTREVISION=	0
+PORTVERSION=	0.6.21
 CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	A Python packages installer, and Setuptools replacement
+
+CONFLICTS=	${PYTHON_PKGNAMEPREFIX}setuptools-[0-9]*
 
 PLIST_SUB=	PYVER=${PYTHON_VER} VERSION=${PORTVERSION} SETUPTOOLS_VER=0.6c11
 
@@ -32,29 +33,28 @@ PYFILES=	site.py
 .include <bsd.port.pre.mk>
 
 .if ${PYTHON_REL} >= 320
-PYCACHE="__pycache__/%%PYMOD%%.cpython-${PYTHON_VER:S,.,,}"
-PLIST_DIRS=	"${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}/__pycache__"
+PYCACHE=	__pycache__/%%PYMOD%%.cpython-${PYTHON_VER:S,.,,}
+PLIST_DIRS=	${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}/__pycache__
 .else
-PYCACHE="%%PYMOD%%"
+PYCACHE=	%%PYMOD%%
 .endif
 
 .for m in ${PYFILES}
 .for ext in pyc pyo
-PLIST_FILES+=	"${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}/${PYCACHE:S,%%PYMOD%%,${m:R},}.${ext}"
+PLIST_FILES+=	${PYTHONPREFIX_SITELIBDIR:S;${PREFIX}/;;}/${PYCACHE:S,%%PYMOD%%,${m:R},}.${ext}
 .endfor
 .endfor
 
-.if exists(${LOCALBASE}/bin/easy_install-${PYTHON_VER})
-CONFLICTS=	py[2-3][0-9]-setuptools-[0-9]*
-.elif !exists(${LOCALBASE}/bin/easy_install)
+.if ${PYTHON_VERSION} == ${PYTHON_DEFAULT_VERSION} && !exists(${LOCALBASE}/bin/easy_install)
 PLIST_SUB+=	IF_DEFAULT=""
 .else
 PLIST_SUB+=	IF_DEFAULT="@comment "
 SUB_FILES+=	pkg-message
 SUB_LIST+=	PYVER=${PYTHON_VER}
+
 # remove the console script easy_install
 post-patch:
-	${SED} -i.bak -e '/easy_install =/d' ${WRKSRC}/setup.py
+	@${REINPLACE_CMD} -e '/easy_install = / s|".*"||' ${WRKSRC}/setup.py
 .endif
 
 pre-install:
