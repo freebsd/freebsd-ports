@@ -26,14 +26,13 @@
 %%SITE_PERL%%/Chart/Clicker/Renderer/Bar.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/Bubble.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/CandleStick.pm
-%%SITE_PERL%%/Chart/Clicker/Renderer/HeatMap.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/Line.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/Pie.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/Point.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/PolarArea.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/StackedArea.pm
 %%SITE_PERL%%/Chart/Clicker/Renderer/StackedBar.pm
-%%SITE_PERL%%/Chart/Clicker/Tutorial.pod
+%%SITE_PERL%%/Chart/Clicker/Tutorial.pm
 @dirrmtry %%SITE_PERL%%/Chart/Clicker/Shape
 @dirrmtry %%SITE_PERL%%/Chart/Clicker/Renderer
 @dirrmtry %%SITE_PERL%%/Chart/Clicker/Drawing
