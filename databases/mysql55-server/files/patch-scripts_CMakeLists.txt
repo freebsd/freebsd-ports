@@ -1,5 +1,5 @@
---- scripts/CMakeLists.txt.orig	2010-12-03 18:58:26.000000000 +0100
-+++ scripts/CMakeLists.txt	2011-01-11 20:20:02.000000000 +0100
+--- scripts/CMakeLists.txt.orig	2011-07-13 21:09:03.000000000 +0200
++++ scripts/CMakeLists.txt	2011-09-01 09:48:22.000000000 +0200
 @@ -266,6 +266,8 @@
            GET_FILENAME_COMPONENT(lib "${lib}" NAME_WE)
            STRING(REGEX REPLACE "^lib" "" lib "${lib}")
@@ -26,3 +26,12 @@
      mysqlhotcopy
      mysqldumpslow
      mysqld_multi
+@@ -334,7 +331,7 @@
+   FOREACH(file ${BIN_SCRIPTS})
+     IF(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${file}.sh)
+       CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/${file}.sh
+-        ${CMAKE_CURRENT_BINARY_DIR}/${file} ESCAPE_QUOTES @ONLY)
++        ${CMAKE_CURRENT_BINARY_DIR}/${file} @ONLY)
+     ELSEIF(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/${file})
+       CONFIGURE_FILE(${CMAKE_CURRENT_SOURCE_DIR}/${file}
+          ${CMAKE_CURRENT_BINARY_DIR}/${file} COPYONLY)
