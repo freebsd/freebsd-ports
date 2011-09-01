@@ -7,7 +7,7 @@
 
 PORTNAME=		krb5-appl
 PORTVERSION=		1.0.1
-PORTREVISION=		3
+PORTREVISION=		4
 CATEGORIES=		security
 MASTER_SITES=		http://web.mit.edu/kerberos/dist/${PORTNAME}/${PORTVERSION:C/^[0-9]*\.[0-9]*/&X/:C/X\.[0-9]*$//:C/X//}/
 PATCH_SITES=		http://web.mit.edu/kerberos/advisories/
@@ -45,10 +45,6 @@ OPTIONS=		KRB5_RENAME_FTP "Rename ftp to kftp" off \
 			KRB5_RENAME_RCP "Rename rcp to krcp" off
 
 .include <bsd.port.pre.mk>
-
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
 
 .if defined(WITH_KRB5_DOC)
 BUILD_DEPENDS+=		texi2dvi:${PORTSDIR}/print/texinfo \
