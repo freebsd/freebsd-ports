@@ -5,6 +5,7 @@
 
 PORTNAME=	php-libawl
 PORTVERSION=	0.46
+PORTREVISION=	1
 CATEGORIES=	devel
 MASTER_SITES=	http://debian.mcmillan.net.nz/packages/awl/ \
 		SF/rscds/awl/${PORTVERSION}
@@ -25,6 +26,9 @@ PLIST_SUB+=	LIBAWLDIR=${LIBAWLDIR}
 pre-everything::
 	@${ECHO_CMD} "# you can customize the installation directory"
 	@${ECHO_CMD} "# by setting LIBAWLDIR in /etc/make.conf"
+
+post-patch:
+	${RM} -f ${WRKSRC}/inc/*.orig
 
 do-install:
 	${MKDIR} ${PREFIX}/${LIBAWLDIR}/
