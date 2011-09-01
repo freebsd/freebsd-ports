@@ -6,41 +6,45 @@
 #
 
 PORTNAME=	mdtest
-PORTVERSION=	1.7.1
-PORTREVISION=	4
+PORTVERSION=	1.8.3
 CATEGORIES=	benchmarks
-MASTER_SITES=	http://www.llnl.gov/icc/lc/siop/downloads/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20latest/${PORTNAME}-${PORTVERSION}
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A filesystem metadata benchmark utility
 
-DEPRECATED=	No more public distfiles
-EXPIRATION_DATE=	2011-09-01
-
-PLIST_FILES=	bin/mdtest
+LICENSE=	GPLv2
 
 OPTIONS=	OPENMPI "Use openmpi instead of mpich2" off
+
+MAN1=		${PORTNAME}.1
+PORTEXAMPLES=	*
+PLIST_FILES=	bin/${PORTNAME}
+
+CFLAGS+=	-DDarwin
 
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_OPENMPI)
 BUILD_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpicc:${PORTSDIR}/net/openmpi
-RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/lib/libmpi.so:${PORTSDIR}/net/openmpi
+RUN_DEPENDS+=	${LOCALBASE}/mpi/openmpi/bin/mpirun:${PORTSDIR}/net/openmpi
 MPICC=		${LOCALBASE}/mpi/openmpi/bin/mpicc
 .else
 BUILD_DEPENDS+=	${LOCALBASE}/bin/mpicc:${PORTSDIR}/net/mpich2
-RUN_DEPENDS+=	${LOCALBASE}/lib/libmpich.so:${PORTSDIR}/net/mpich2
+RUN_DEPENDS+=	${LOCALBASE}/bin/mpirun:${PORTSDIR}/net/mpich2
 MPICC=		${LOCALBASE}/bin/mpicc
 .endif
 
-USE_GMAKE=	yes
-ALL_TARGET=	mdtest
-
-post-patch:
-	@${REINPLACE_CMD} -e 's|%%MPICC%%|${MPICC}|' ${WRKSRC}/${MAKEFILE}
+do-build:
+	cd ${WRKSRC} && ${MPICC} ${CFLAGS} -o ${PORTNAME} ${PORTNAME}.c
 
 do-install:
-	${STRIP_CMD} ${WRKSRC}/mdtest
-	${INSTALL_PROGRAM} ${WRKSRC}/mdtest ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/${PORTNAME} ${PREFIX}/bin
+	${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${MANPREFIX}/man/man1
+.if !defined(NOPORTEXAMPLES)
+	@${MKDIR} ${EXAMPLESDIR}
+	@(cd ${WRKSRC}/scripts && ${COPYTREE_SHARE} . ${EXAMPLESDIR})
+.endif
 
 .include <bsd.port.post.mk>
