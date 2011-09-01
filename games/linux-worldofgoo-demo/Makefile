@@ -13,7 +13,7 @@ MASTER_SITES=	http://freebsd.nsu.ru/distfiles/
 PKGNAMEPREFIX=	linux-
 DISTNAME=	WorldOfGooDemo.${PORTVERSION}
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Demo version of incredible physics based puzzle/construction game
 
 ONLY_FOR_ARCHS=	i386 amd64
