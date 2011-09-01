@@ -1,0 +1,18 @@
+#!/bin/sh
+#
+# $FreeBSD: /tmp/pcvs/ports/devel/maven3/files/mvn.sh.in,v 1.1 2011-09-01 21:53:01 hq Exp $
+
+if [ -f /etc/mavenrc ] ; then
+	. /etc/mavenrc
+fi
+
+if [ -f "${HOME}/.mavenrc" ] ; then
+	. "${HOME}/.mavenrc"
+fi
+
+M2_HOME=${M2_HOME:-"%%DATADIR%%"}
+
+JAVA_VERSION="%%JAVA_VERSION%%" exec "%%LOCALBASE%%/bin/java" $MAVEN_OPTS \
+	-classpath "${M2_HOME}/boot/%%CLASSWORLDS_JAR%%" \
+	"-Dclassworlds.conf=${M2_HOME}/bin/m2.conf" \
+	"-Dmaven.home=${M2_HOME}" org.codehaus.classworlds.Launcher "$@"

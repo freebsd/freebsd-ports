@@ -1002,6 +1002,7 @@
     SUBDIR += makedepend
     SUBDIR += maven-ant-tasks
     SUBDIR += maven2
+    SUBDIR += maven3
     SUBDIR += mcpp
     SUBDIR += mdds
     SUBDIR += memcheck
