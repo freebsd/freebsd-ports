@@ -17,12 +17,10 @@ IGNORE=		has multiple run-time problems, e. g., using obsolete URLs
 DEPRECATED=	HTMLs from the recent Yahoo! Korea Dictionary cannot be parsed
 EXPIRATION_DATE=2011-11-01
 
-RUN_DEPENDS=	${PYTHONPREFIX_SITELIBDIR}/cjkcodecs.pth:${PORTSDIR}/converters/py-cjkcodecs
-
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 USE_BZIP2=	yes
-USE_GNOME=	gnomehier pygnome2
+USE_GNOME=	gnomehier pygnome2 pygnomedesktop
 
 .include <bsd.port.pre.mk>
 
