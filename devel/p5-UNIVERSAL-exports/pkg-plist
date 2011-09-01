@@ -1,5 +1,0 @@
-%%SITE_PERL%%/UNIVERSAL/exports.pm
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL/exports/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL/exports
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/UNIVERSAL
-@dirrmtry %%SITE_PERL%%/UNIVERSAL

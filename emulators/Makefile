@@ -71,7 +71,6 @@
     SUBDIR += linux-ePSXe
     SUBDIR += linux-geepee32
     SUBDIR += linux-libaio
-    SUBDIR += linux-padjoy
     SUBDIR += linux-peops-softgpu
     SUBDIR += linux-peops-spu
     SUBDIR += linux-pete-mesagpu
@@ -89,7 +88,6 @@
     SUBDIR += loemu
     SUBDIR += m2000
     SUBDIR += mame
-    SUBDIR += mame-extras
     SUBDIR += mastergear
     SUBDIR += mednafen
     SUBDIR += mess
@@ -144,7 +142,6 @@
     SUBDIR += snes9express
     SUBDIR += snes9x
     SUBDIR += snes9x-gtk
-    SUBDIR += snespp
     SUBDIR += spim
     SUBDIR += stella
     SUBDIR += stonx
@@ -186,7 +183,6 @@
     SUBDIR += xbraitenberg
     SUBDIR += xcpc
     SUBDIR += xgngeo
-    SUBDIR += xgs
     SUBDIR += xhomer
     SUBDIR += xmame
     SUBDIR += xmess

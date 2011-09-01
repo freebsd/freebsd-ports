@@ -37,7 +37,6 @@
     SUBDIR += gftp
     SUBDIR += gnusget
     SUBDIR += gnustep-ftp
-    SUBDIR += gproftpd
     SUBDIR += gwget
     SUBDIR += horde-gollem
     SUBDIR += hs-curl
@@ -55,7 +54,6 @@
     SUBDIR += llnlxftp
     SUBDIR += mget
     SUBDIR += mirror
-    SUBDIR += muddleftpd
     SUBDIR += multiget
     SUBDIR += ncftp1
     SUBDIR += ncftp2

@@ -79,7 +79,6 @@
     SUBDIR += gemcal
     SUBDIR += genius
     SUBDIR += gimmie
-    SUBDIR += gkrellm-gtodo
     SUBDIR += gkrellm-reminder2
     SUBDIR += glabels
     SUBDIR += glipper
@@ -303,7 +302,6 @@
     SUBDIR += xmaddressbook
     SUBDIR += xmdiary
     SUBDIR += xneur
-    SUBDIR += xopps
     SUBDIR += xpad
     SUBDIR += xpostit
     SUBDIR += xpostitPlus

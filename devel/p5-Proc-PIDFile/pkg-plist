@@ -1,7 +1,0 @@
-%%SITE_PERL%%/Proc/PID_File.pm
-%%SITE_PERL%%/Proc/simple.pl
-%%SITE_PERL%%/Proc/test-T.pl
-%%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/PID_File/.packlist
-@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc/PID_File
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Proc
-@dirrmtry %%SITE_PERL%%/Proc
