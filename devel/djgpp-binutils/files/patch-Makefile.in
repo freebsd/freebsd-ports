@@ -1,18 +1,18 @@
---- Makefile.in.orig	Sun Jun 12 12:30:54 2005
-+++ Makefile.in	Sat Jan 27 13:15:06 2007
-@@ -13934,12 +13934,12 @@
+--- Makefile.in.orig	2011-01-01 16:15:19.000000000 +0000
++++ Makefile.in	2011-01-01 16:17:27.000000000 +0000
+@@ -19256,12 +19256,12 @@
  maybe-install-libiberty: install-libiberty
  
  install-libiberty: installdirs
+-	@: $(MAKE); $(unstage)
 -	@r=`${PWD_COMMAND}`; export r; \
 -	s=`cd $(srcdir); ${PWD_COMMAND}`; export s; \
--	$(SET_LIB_PATH) \
 -	$(HOST_EXPORTS) \
 -	(cd $(HOST_SUBDIR)/libiberty && \
 -	  $(MAKE) $(FLAGS_TO_PASS)  install)
++#	@: $(MAKE); $(unstage)
 +#	@r=`${PWD_COMMAND}`; export r; \
 +#	s=`cd $(srcdir); ${PWD_COMMAND}`; export s; \
-+#	$(SET_LIB_PATH) \
 +#	$(HOST_EXPORTS) \
 +#	(cd $(HOST_SUBDIR)/libiberty && \
 +#	  $(MAKE) $(FLAGS_TO_PASS)  install)
