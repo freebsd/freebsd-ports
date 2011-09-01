@@ -53,6 +53,7 @@ include/dns/rdatasetiter.h
 include/dns/rdataslab.h
 include/dns/rdatastruct.h
 include/dns/rdatatype.h
+include/dns/rpz.h
 include/dns/sdlz.h
 include/dns/request.h
 include/dns/resolver.h
