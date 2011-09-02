@@ -11,7 +11,7 @@ CATEGORIES=	lang
 MASTER_SITES=	http://www.exit2shell.com/~skreuzer/distfiles/
 DISTNAME=	go-${PORTVERSION}
 
-MAINTAINER=	devon.odell@gmail.com
+MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	An experimental, concurrent, garbage-collected language
 
 BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash	\
