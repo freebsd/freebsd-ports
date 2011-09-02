@@ -1904,6 +1904,7 @@
     SUBDIR += p5-Log-Dispatch-Colorful
     SUBDIR += p5-Log-Dispatch-Config
     SUBDIR += p5-Log-Dispatch-Configurator-YAML
+    SUBDIR += p5-Log-Dispatch-DBI
     SUBDIR += p5-Log-Dispatch-Dir
     SUBDIR += p5-Log-Dispatch-Email-EmailSend
     SUBDIR += p5-Log-Dispatch-File-Stamped
