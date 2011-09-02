@@ -42,6 +42,8 @@ include/libepp_nicbr/BrOrgCheckRsp.H
 include/libepp_nicbr/BrOrgCreate.H
 include/libepp_nicbr/BrOrgCreateCmd.H
 include/libepp_nicbr/BrOrgCreateRsp.H
+include/libepp_nicbr/BrOrgDelete.H
+include/libepp_nicbr/BrOrgDeleteCmd.H
 include/libepp_nicbr/BrOrgInfo.H
 include/libepp_nicbr/BrOrgInfoCmd.H
 include/libepp_nicbr/BrOrgInfoRsp.H
@@ -56,6 +58,8 @@ include/libepp_nicbr/ContactCheckRsp.H
 include/libepp_nicbr/ContactCreate.H
 include/libepp_nicbr/ContactCreateCmd.H
 include/libepp_nicbr/ContactCreateRsp.H
+include/libepp_nicbr/ContactDelete.H
+include/libepp_nicbr/ContactDeleteCmd.H
 include/libepp_nicbr/ContactInfo.H
 include/libepp_nicbr/ContactInfoCmd.H
 include/libepp_nicbr/ContactInfoRsp.H
@@ -122,6 +126,7 @@ include/libepp_nicbr/PollCmd.H
 include/libepp_nicbr/PollRsp.H
 include/libepp_nicbr/RegistrationPeriod.H
 include/libepp_nicbr/Response.H
+include/libepp_nicbr/ReverseDSInfo.H
 include/libepp_nicbr/Session.H
 include/libepp_nicbr/StrUtil.H
 include/libepp_nicbr/StringEncodingException.H
@@ -156,10 +161,12 @@ lib/libepp-nicbr-%%VER%%.a
 %%DATADIR%%/templates/br_domain_update.xml
 %%DATADIR%%/templates/br_org_check.xml
 %%DATADIR%%/templates/br_org_create.xml
+%%DATADIR%%/templates/br_org_delete.xml
 %%DATADIR%%/templates/br_org_info.xml
 %%DATADIR%%/templates/br_org_update.xml
 %%DATADIR%%/templates/contact_check.xml
 %%DATADIR%%/templates/contact_create.xml
+%%DATADIR%%/templates/contact_delete.xml
 %%DATADIR%%/templates/contact_info.xml
 %%DATADIR%%/templates/contact_transfer.xml
 %%DATADIR%%/templates/contact_update.xml
