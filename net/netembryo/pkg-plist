@@ -4,6 +4,6 @@ include/netembryo/wsocket.h
 lib/libnetembryo.a
 lib/libnetembryo.la
 lib/libnetembryo.so
-lib/libnetembryo.so.4
+lib/libnetembryo.so.5
 libdata/pkgconfig/libnetembryo.pc
 @dirrm include/netembryo
