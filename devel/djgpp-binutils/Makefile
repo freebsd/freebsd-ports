@@ -14,7 +14,7 @@ PKGNAMEPREFIX=	djgpp-
 DISTNAME=	${PORTNAME}-${BINUTILVERSION}
 
 MAINTAINER=	johnson.peter@gmail.com
-COMMENT=	FSF binutils-2.16 for DJGPP cross-development
+COMMENT=	FSF binutils for DJGPP cross-development
 
 LICENSE=	GPLv2
 
