@@ -1,4 +1,20 @@
-Luminance HDR is an open source graphical user interface
-application that aims to provide a workflow for HDR imaging.
+Luminance HDR is an open source graphical user interface application that
+aims to provide a workflow for HDR imaging.
 
-WWW:	http://qtpfsgui.sourceforge.net/
+Supported features:
+
+  * Create an HDR file from a set of images (formats: JPEG, TIFF 8bit and
+    16bit, RAW) of the same scene taken at different exposure settings
+  * Rotate, resize, and crop HDR images
+  * Tonemap HDR images
+  * Copy EXIF data between sets of images
+
+Supported HDR formats (with file extensions):
+
+  * OpenEXR (.exr)
+  * Radiance RGBE (.hdr)
+  * TIFF formats: 16bit, 32bit (float) and LogLuv (.tiff)
+  * PFS native format (.pfs)
+  * Raw image formats (various)
+
+WWW: http://qtpfsgui.sourceforge.net/
