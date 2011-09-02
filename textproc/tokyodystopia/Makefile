@@ -6,9 +6,9 @@
 #
 
 PORTNAME=	tokyodystopia
-PORTVERSION=	0.9.14
+PORTVERSION=	0.9.15
 CATEGORIES=	textproc
-MASTER_SITES=	http://1978th.net/tokyodystopia/
+MASTER_SITES=	http://fallabs.com/${PORTNAME}/
 
 MAINTAINER=	lwhsu@FreeBSD.org
 COMMENT=	A full-text search system based on Tokyo Cabinet
@@ -38,15 +38,17 @@ MAN3=	dystopia.3 \
 SHLIB_VER=	1.15.0
 SHLIB_VER_MAJ=	1
 
-PLIST_SUB+=	SHLIB_VER=${SHLIB_VER} SHLIB_VER_MAJ=${SHLIB_VER_MAJ}
+PLIST_SUB=	SHLIB_VER=${SHLIB_VER} SHLIB_VER_MAJ=${SHLIB_VER_MAJ}
+
+post-extract:
+	@${RM} ${WRKSRC}/doc/index.html~
 
 post-patch:
-	${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|@prefix@/libdata/pkgconfig|' \
-		${WRKSRC}/Makefile.in
-	${REINPLACE_CMD} -e 's|DATADIR =.*|DATADIR = ${DOCSDIR}|' \
+	@${REINPLACE_CMD} -e 's|@libdir@/pkgconfig|@prefix@/libdata/pkgconfig|' \
+		-e 's|DATADIR =.*|DATADIR = ${DOCSDIR}|' \
 		${WRKSRC}/Makefile.in
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e 's|mkdir -p $$(DESTDIR)$$(DATADIR)||' \
+	@${REINPLACE_CMD} -e 's|mkdir -p $$(DESTDIR)$$(DATADIR)||' \
 		-e 's|cp -Rf $$(DOCUMENTFILES) $$(DESTDIR)$$(DATADIR)||' \
 		${WRKSRC}/Makefile.in
 .endif
