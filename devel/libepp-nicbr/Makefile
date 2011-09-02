@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libepp-nicbr
-PORTVERSION=	1.10
+PORTVERSION=	1.11
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.registro.br/pub/libepp-nicbr/
 
