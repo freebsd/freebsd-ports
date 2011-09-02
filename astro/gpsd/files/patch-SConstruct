@@ -1,5 +1,5 @@
 --- SConstruct.orig	2011-08-28 15:14:24.000000000 +0400
-+++ SConstruct	2011-08-29 23:47:35.000000000 +0400
++++ SConstruct	2011-09-03 02:00:14.000000000 +0400
 @@ -346,12 +346,7 @@
  # are like FreeBSD.
  ncurseslibs= []
@@ -14,3 +14,12 @@
  
  if env['usb']:
      # In FreeBSD except version 7, USB libraries are in the base system
+@@ -771,7 +766,7 @@
+ env.Depends(gpspipe, compiled_gpslib)
+ 
+ gpxlogger = env.Program('gpxlogger', ['gpxlogger.c'], parse_flags=gpslibs+dbus_recv_libs)
+-env.Depends(gpspipe, compiled_gpslib)
++env.Depends(gpxlogger, compiled_gpslib)
+ 
+ lcdgps = env.Program('lcdgps', ['lcdgps.c'], parse_flags=gpslibs)
+ env.Depends(lcdgps, compiled_gpslib)
