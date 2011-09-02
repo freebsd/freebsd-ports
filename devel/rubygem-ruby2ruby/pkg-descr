@@ -3,4 +3,4 @@ easily from ParseTree's Sexps.
 This makes making dynamic language processors
 much easier in ruby than ever before.
 
-WWW: http://seattlerb.rubyforge.org/
+WWW: https://github.com/seattlerb/ruby2ruby
