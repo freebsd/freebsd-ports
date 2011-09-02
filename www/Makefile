@@ -950,6 +950,7 @@
     SUBDIR += p5-HTML-Location
     SUBDIR += p5-HTML-Macro
     SUBDIR += p5-HTML-Mason
+    SUBDIR += p5-HTML-Mason-PSGIHandler
     SUBDIR += p5-HTML-MobileConverter
     SUBDIR += p5-HTML-Pager
     SUBDIR += p5-HTML-Parser
