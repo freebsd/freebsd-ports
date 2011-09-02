@@ -6,13 +6,18 @@
 #
 
 PORTNAME=	plan9port
-PORTVERSION=	20100223
+PORTVERSION=	20110901
 CATEGORIES=	devel plan9
 MASTER_SITES=	http://swtch.com/plan9port/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	danfe@FreeBSD.org
 COMMENT=	Port of many Plan 9 programs to Unix-like operating systems
+
+LICENSE=	LUCENT
+LICENSE_NAME=	Lucent Public License Version 1.02
+LICENSE_FILE=	${WRKSRC}/LICENSE
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 USE_XORG=	x11 xt xi xaw
 USE_PERL5_BUILD=yes
@@ -25,15 +30,15 @@ PLAN9=		${PREFIX}/plan9
 MANPREFIX=	${PLAN9}
 
 MAN1=		9term.1 acmeevent.1 ascii.1 acme.1 9p.1 basename.1 cal.1 \
-		calendar.1 cat.1 cleanname.1 cmp.1 comm.1 date.1 db.1 \
-		dc.1 deroff.1 dict.1 diff.1 echo.1 ed.1 factor.1 fmt.1 \
+		calendar.1 cat.1 cleanname.1 cmp.1 comm.1 date.1 db.1 dc.1 \
+		dd.1 deroff.1 dict.1 diff.1 echo.1 ed.1 factor.1 fmt.1 \
 		fortune.1 freq.1 grep.1 hoc.1 man.1 idiff.1 join.1 ls.1 \
 		mc.1 mkdir.1 plumb.1 rc.1 rio.1 rm.1 sam.1 seq.1 sleep.1 \
 		sort.1 spell.1 split.1 strings.1 sum.1 tail.1 tcs.1 \
 		tee.1 test.1 time.1 touch.1 tr.1 uniq.1 wc.1 xd.1 yacc.1 \
 		acid.1 stats.1 graph.1 9.1 gview.1 plot.1 scat.1 eqn.1 \
 		grap.1 pic.1 tbl.1 troff.1 0intro.1 9c.1 astro.1 bc.1 \
-		bundle.1 clog.1 colors.1 core.1 crop.1 cvs.1 dial.1 \
+		bundle.1 clog.1 colors.1 core.1 crop.1 dial.1 \
 		doctype.1 fsize.1 gzip.1 install.1 jpg.1 kill.1 label.1 \
 		lex.1 look.1 map.1 mk.1 mk9660.1 namespace.1 news.1 p.1 \
 		page.1 pr.1 proof.1 ps.1 psfonts.1 pwd.1 secstore.1 \
@@ -106,23 +111,20 @@ do-build:
 
 post-build:
 	${RM} -rf `${FIND} ${WRKSRC}/dist -type f ! -regex ".*\.png"`
-	${RM} -rf `${FIND} ${WRKSRC} -name CVS -o -name .cvsignore`
+	${RM} -rf `${FIND} ${WRKSRC} -name .hg -o -name .cvsignore`
 	( cd ${WRKDIR} && \
-	  ${FIND} plan9 -type f \
-	    -a ! -path "plan9/man/man[0-9]/*.[0-9]*"; \
+	  ${FIND} plan9 -type f -a ! -path "plan9/man/man[0-9]/*.[0-9]*"; \
 	  for D in ${EMPTY_DIRS}; do \
 	    ${ECHO_CMD} "@exec ${MKDIR} ${PREFIX}/$${D}"; \
 	  done; \
-	  ${FIND} plan9 -type d | ${SORT} -r \
-		| ${SED} -e 's|^|@dirrm |'; \
+	  ${FIND} plan9 -type d | ${SORT} -r | ${SED} -e 's|^|@dirrm |'; \
 	) > ${PLIST}
 
 do-install:
-	${CP} -rp ${WRKSRC} ${PREFIX}
+	${CP} -Rp ${WRKSRC} ${PREFIX}
 
 post-install:
-	cd ${PLAN9} && \
-		${SETENV} PLAN9=${PLAN9} PATH=${PATH}:${PLAN9}/bin \
+	cd ${PLAN9} && ${SETENV} PLAN9=${PLAN9} PATH=${PATH}:${PLAN9}/bin \
 		${SH} lib/moveplan9.sh ${WRKSRC}
 	${CHGRP} kmem ${PLAN9}/bin/auxstats
 	${CHMOD} +s ${PLAN9}/bin/auxstats
