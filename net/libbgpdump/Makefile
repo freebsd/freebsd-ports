@@ -7,12 +7,14 @@
 #
 
 PORTNAME=	libbgpdump
-PORTVERSION=	1.4.99.11
+PORTVERSION=	1.4.99.12
 CATEGORIES=	net
 MASTER_SITES=	http://www.ris.ripe.net/source/bgpdump/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Analyzing dump files produced by Zebra/Quagga or MRT
+
+LICENSE=	GPLv2
 
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
