@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Template-Declare
-PORTVERSION=	0.44
+PORTVERSION=	0.45
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,15 +14,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perlish declarative templates
 
-BUILD_DEPENDS=	${SITE_PERL}/Test/Warn.pm:${PORTSDIR}/devel/p5-Test-Warn \
-		${SITE_PERL}/Class/Data/Inheritable.pm:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
-		${SITE_PERL}/Class/Accessor.pm:${PORTSDIR}/devel/p5-Class-Accessor \
-		${SITE_PERL}/HTML/Lint.pm:${PORTSDIR}/www/p5-HTML-Lint \
+COMMON_DEPENDS=	p5-Test-Warn>=0.11:${PORTSDIR}/devel/p5-Test-Warn \
+		p5-Class-Accessor>0:${PORTSDIR}/devel/p5-Class-Accessor \
+		p5-Class-Data-Inheritable>0:${PORTSDIR}/devel/p5-Class-Data-Inheritable \
+		p5-HTML-Lint>0:${PORTSDIR}/www/p5-HTML-Lint \
 		p5-Class-ISA>0:${PORTSDIR}/devel/p5-Class-ISA \
-		p5-String-BufferStack>=1.12:${PORTSDIR}/textproc/p5-String-BufferStack
-RUN_DEPENDS=	${BUILD_DEPENDS}
+		p5-String-BufferStack>=1.10:${PORTSDIR}/textproc/p5-String-BufferStack
+BUILD_DEPENDS=	${COMMON_DEPENDS}
+RUN_DEPENDS=	${COMMON_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	Template::Declare.3 \
 	Template::Declare::Buffer.3 \
