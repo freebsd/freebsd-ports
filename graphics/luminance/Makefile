@@ -1,6 +1,6 @@
-# New ports collection makefile for:	qtpfsgui
-# Date created:		28 Jul 2007
-# Whom:                	Yinghong.Liu <relaxbsd@gmail.com>
+# New ports collection makefile for:	Luminance HDR (nee Qtpfsgui)
+# Date created:				28 Jul 2007
+# Whom:					Yinghong Liu <relaxbsd@gmail.com>
 #
 # $FreeBSD$
 #
@@ -13,7 +13,9 @@ MASTER_SITES=	SF/qtpfsgui/luminance/${DISTVERSION:S/-1//}/
 DISTNAME=	${PORTNAME}-v${DISTVERSION}
 
 MAINTAINER=	goffredo@gmail.com
-COMMENT=	A graphical user interface that provides a workflow for HDR imaging
+COMMENT=	An open source workflow for HDR imaging
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/include/fftw3.h:${PORTSDIR}/math/fftw3
 LIB_DEPENDS=	exiv2.10:${PORTSDIR}/graphics/exiv2 \
@@ -34,28 +36,28 @@ LRELEASE=	${QT_PREFIX}/bin/lrelease-qt4
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900000
-BROKEN=		does not compile on 9.X
-.endif
-
 post-patch:
-	cd ${WRKSRC}/src && ${REINPLACE_CMD} \
+# FreeBSD has log2() since recently, remove local #define's which conflict
+# with prototypes in /usr/include/math.h (when applicable)
+.if ${OSVERSION} > 802501
+	@${REINPLACE_CMD} -e '/log2/d' ${WRKSRC}/src/arch/freebsd/math.h
+.endif
+	@cd ${WRKSRC}/src && ${REINPLACE_CMD} \
 		-e 's|/usr/share/luminance|${DOCSDIR}|g' \
 		-e 's|/usr/local/share/luminance|${DATADIR}|g' \
 		MainWindow/MainWindow.cpp \
 		Preferences/PreferencesDialog.cpp \
 		TonemappingWindow/TonemappingWindow.cpp \
 		TransplantExif/TransplantExifDialog.cpp
-	${REINPLACE_CMD} -e 's|%%HELPDIR%%|${DOCSDIR}|g' \
+	@${REINPLACE_CMD} -e 's|%%HELPDIR%%|${DOCSDIR}|g' \
 		${WRKSRC}/src/HelpBrowser/LuminancePaths.cpp
 .if defined(NOPORTDOCS)
-	${REINPLACE_CMD} -e '/INSTALL/s,help,,' \
-		-e '/INSTALL/s,docs,,' \
-		${WRKSRC}/project.pro
+	@${REINPLACE_CMD} -E '/INSTALLS/s,help|docs,,g' ${WRKSRC}/project.pro
 .endif
 
 do-configure:
 	@${LRELEASE} ${WRKSRC}/project.pro
-	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKE_ARGS} ${QMAKEFLAGS}
+	@cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${QMAKE} ${QMAKE_ARGS} ${QMAKEFLAGS}
 
 .include <bsd.port.post.mk>
