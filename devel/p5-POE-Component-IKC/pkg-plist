@@ -5,10 +5,12 @@
 %%SITE_PERL%%/POE/Component/IKC/ClientLite.pm
 %%SITE_PERL%%/POE/Component/IKC/Freezer.pm
 %%SITE_PERL%%/POE/Component/IKC/LocalKernel.pm
+%%SITE_PERL%%/POE/Component/IKC/Protocol.pm
 %%SITE_PERL%%/POE/Component/IKC/Proxy.pm
 %%SITE_PERL%%/POE/Component/IKC/Responder.pm
 %%SITE_PERL%%/POE/Component/IKC/Server.pm
 %%SITE_PERL%%/POE/Component/IKC/Specifier.pm
+%%SITE_PERL%%/POE/Component/IKC/Timing.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IKC/.packlist
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/POE/Component/IKC
 @dirrm %%SITE_PERL%%/POE/Component/IKC
