@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	tellico
-PORTVERSION=	1.3.5
-PORTREVISION=	8
+PORTVERSION=	1.3.6
 CATEGORIES=	misc kde
 MASTER_SITES=	http://tellico-project.org/files/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Collection manager for KDE
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	tag:${PORTSDIR}/audio/taglib \
 		poppler-qt:${PORTSDIR}/graphics/poppler-qt \
@@ -23,6 +24,8 @@ USE_KDELIBS_VER=3
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_PYTHON=	yes
+USE_GETTEXT=	yes
+INSTALLS_ICONS=	yes
 
 CONFIGURE_ARGS+=	--disable-cdtext
 
