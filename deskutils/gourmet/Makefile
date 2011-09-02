@@ -6,27 +6,40 @@
 #
 
 PORTNAME=	gourmet
-PORTVERSION=	0.13.4
-PORTREVISION=	4
+PORTVERSION=	0.15.9
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	SF/grecipe-manager/grecipe-manager/${PORTVERSION}
-DISTNAME=	${PORTNAME}-${PORTVERSION}-2
+MASTER_SITES=	MASTER_SITES=     SF/grecipe-manager/0.15.8
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	GNOME recipe manager
 
-LIB_DEPENDS=	mk4:${PORTSDIR}/databases/metakit
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite21 \
-		${PYTHON_SITELIBDIR}/PyRTF/__init__.py:${PORTSDIR}/print/py-rtf \
-		${PYTHON_SITELIBDIR}/PIL/__init__.py:${PORTSDIR}/graphics/py-imaging \
-		${PYTHON_SITELIBDIR}/reportlab/__init__.py:${PORTSDIR}/print/py-reportlab
+LICENSE=	GPLv2
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy>=0:${PORTSDIR}/databases/py-sqlalchemy \
+		${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}poppler>=0:${PORTSDIR}/graphics/py-poppler \
+		${PYTHON_PKGNAMEPREFIX}rtf>=0:${PORTSDIR}/print/py-rtf \
+		${PYTHON_PKGNAMEPREFIX}reportlab>=0:${PORTSDIR}/print/py-reportlab
 
-USE_PYTHON=	yes
-USE_PYDISTUTILS=yes
-USE_GETTEXT=yes
+MAN1=		${PORTNAME}.1
+USE_PYTHON=	2.5+
+USE_PYDISTUTILS=	yes
+USE_GETTEXT=	yes
+USE_GNOME=	pygnome2 pygnomeextras pygtk2
 
-USE_GNOME=	pygnome2
+post-patch:
+	@${REINPLACE_CMD} -e 's|/usr/share|${PREFIX}/share|' \
+		${WRKSRC}/tools/backup_gourmet_to_xml.py \
+		${WRKSRC}/src/lib/gglobals.py \
+		${WRKSRC}/src/lib/gtk_extras/chooserNotebook.py \
+		${WRKSRC}/src/lib/gtk_extras/mnemonic_manager.py \
+		${WRKSRC}/src/lib/plugins/import_export/pdf_plugin/print_plugin.py \
+		${WRKSRC}/src/lib/plugins/nutritional_information/nutritionDisplay.py \
+		${WRKSRC}/src/lib/plugins/nutritional_information/nutrition.py \
+		${WRKSRC}/src/lib/backends/db.py \
+		${WRKSRC}/src/gourmet
+post-install:
+	@${INSTALL_MAN} ${WRKSRC}/${PORTNAME}.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
