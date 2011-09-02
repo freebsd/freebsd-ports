@@ -437,8 +437,8 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_MODULE_
 BROKEN=		for lua module build devel_kit also should be defined
 .endif
 USE_LUA=	5.1+
-NGINX_LUA_MODULE_VERSION=	0.2.0
-GIT_LUA_MODULE_VERSION=	0-g8e7d37e
+NGINX_LUA_MODULE_VERSION=	0.3.0
+GIT_LUA_MODULE_VERSION=	0-gdd0d4d0
 FETCH_ARGS=	-pRr
 MASTER_SITES+=	https://github.com/chaoslawful/lua-nginx-module/tarball/v${NGINX_LUA_MODULE_VERSION}/:lua
 DISTFILES+=	chaoslawful-lua-nginx-module-v${NGINX_LUA_MODULE_VERSION}-${GIT_LUA_MODULE_VERSION}.tar.gz:lua
