@@ -4,6 +4,9 @@
 %%PYTHON_SITELIBDIR%%/firebirdsql/fbcore.py
 %%PYTHON_SITELIBDIR%%/firebirdsql/fbcore.pyc
 %%PYTHON_SITELIBDIR%%/firebirdsql/fbcore.pyo
+%%PYTHON_SITELIBDIR%%/firebirdsql/consts.py
+%%PYTHON_SITELIBDIR%%/firebirdsql/consts.pyc
+%%PYTHON_SITELIBDIR%%/firebirdsql/consts.pyo
 %%PYTHON_SITELIBDIR%%/firebirdsql/fberrmsgs.py
 %%PYTHON_SITELIBDIR%%/firebirdsql/fberrmsgs.pyc
 %%PYTHON_SITELIBDIR%%/firebirdsql/fberrmsgs.pyo
