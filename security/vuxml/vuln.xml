@@ -25933,15 +25933,10 @@ Note:  Please add new entries to the beginning of this file.
     <topic>tcl/tk -- buffer overflow in ReadImage function</topic>
     <affects>
       <package>
-	<name>tcl</name>
-	<name>tcl-threads</name>
-	<range><lt>8.4.16</lt></range>
-	<range><gt>8.4.*,1</gt><lt>8.4.16,1</lt></range>
-      </package>
-      <package>
 	<name>tk</name>
 	<name>tk-threads</name>
-	<range><lt>8.4.16</lt></range>
+	<range><gt>8.2.*</gt><lt>8.2.3_11</lt></range>
+	<range><gt>8.3.*</gt><lt>8.3.5_10</lt></range>
 	<range><gt>8.4.*,2</gt><lt>8.4.16,2</lt></range>
       </package>
     </affects>
