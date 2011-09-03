@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Catalyst-Manual
-PORTVERSION=	5.9000
+PORTVERSION=	5.9001
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -55,5 +55,8 @@ MAN3=		Catalyst::Manual.3 \
 		Catalyst::Manual::Tutorial::09_AdvancedCRUD::09_FormHandler.3 \
 		Catalyst::Manual::Tutorial::10_Appendices.3 \
 		Catalyst::Manual::WritingPlugins.3
+
+post-extract:
+	@${RM} ${WRKSRC}/lib/Catalyst/Manual/Tutorial/.gitignore
 
 .include <bsd.port.mk>
