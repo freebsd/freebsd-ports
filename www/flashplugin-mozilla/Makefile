@@ -18,6 +18,7 @@ COMMENT=	A GPL standalone Flash (TM) plugin for Mozilla web browser
 DEPRECATED=	gplflash is no longer supported. Please use graphics/gnash, \
 		graphics/lightspark, or www/nspluginwrapper and \
 		www/linux-f10-flashplugin10 instead
+EXPIRATION=	2011-09-30
 
 LIB_DEPENDS=	flash.0:${PORTSDIR}/graphics/libflash
 

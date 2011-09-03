@@ -15,6 +15,9 @@ DISTNAME=	gplflash-${PORTVERSION}
 MAINTAINER=	llwang@infor.org
 COMMENT=	GPL standalone Flash (TM) player
 
+DEPRECATED=	Depends on deprecated ../libflash
+EXPIRATION=	2011-09-30
+
 LIB_DEPENDS=	flash.0:${PORTSDIR}/graphics/libflash
 
 WRKSRC=		${WRKDIR}/${DISTNAME}/player

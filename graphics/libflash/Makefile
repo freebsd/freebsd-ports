@@ -15,7 +15,9 @@ DISTNAME=	gplflash-${PORTVERSION}
 MAINTAINER=	llwang@infor.org
 COMMENT=	GPL Flash (TM) Library
 
+# Depended on by graphics/flashplayer, www/flashplugin-mozilla, also DEPRECATED
 DEPRECATED=	gplflash is no longer supported. Please use gnash instead
+EXPIRATION=	2011-09-30
 
 LIB_DEPENDS=	mad.2:${PORTSDIR}/audio/libmad \
 		jpeg.11:${PORTSDIR}/graphics/jpeg
