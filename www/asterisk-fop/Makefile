@@ -13,6 +13,9 @@ MASTER_SITES=	http://www.asternic.org/files/
 MAINTAINER=	araujo@FreeBSD.org
 COMMENT=	Flash Operator Panel for the Asterisk PBX
 
+DEPRECATED=	Depends on www/flashplugin-mozilla which is DEPRECATED
+EXPIRATION_DATE=	2011-09-30
+
 NO_BUILD=	yes
 USE_PERL5=	yes
 USE_PHP=	pcre zlib session xml gd
