@@ -16,7 +16,7 @@ MAINTAINER=	shoesoft@gmx.net
 COMMENT=	A cursed frontend to the giFT daemon
 
 DEPRECATED=	unmaintained upstream for several years
-EXPIRATION=	2011-09-30
+EXPIRATION_DATE=	2011-09-30
 
 RUN_DEPENDS=	${LOCALBASE}/bin/giftd:${PORTSDIR}/net-p2p/gift
 

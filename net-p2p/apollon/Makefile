@@ -15,7 +15,7 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	KDE client for giFT daemon
 
 DEPRECATED=	Depends on net-p2p/gift, which is deprecated
-EXPIRATION=	2011-09-30
+EXPIRATION_DATE=	2011-09-30
 
 LIB_DEPENDS=	gift.0:${PORTSDIR}/net-p2p/gift
 
