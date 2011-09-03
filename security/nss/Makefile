@@ -9,7 +9,8 @@ PORTNAME=	nss
 PORTVERSION=	${_MAJOR}.${_MINOR}.${_PATCH}
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
-MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
+MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_WITH_CKBI_${CKBI_VER:S/./_/}_RTM/src
+DISTNAME=	nss-${PORTVERSION}.with.ckbi.${CKBI_VER}
 
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Libraries to support development of security-enabled applications
@@ -21,9 +22,11 @@ LIB_DEPENDS=	nspr4.1:${PORTSDIR}/devel/nspr \
 
 _MAJOR=	3
 _MINOR=	12
-_PATCH=	10
+_PATCH=	11
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/mozilla/security/nss
+CKBI_VER=	1.87
+
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}/mozilla/security/nss
 
 MAKE_JOBS_UNSAFE=	yes
 USE_LDCONFIG=	${PREFIX}/lib/nss
