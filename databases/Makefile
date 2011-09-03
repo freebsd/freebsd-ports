@@ -3,6 +3,7 @@
 
     COMMENT = Databases
 
+    SUBDIR += R-cran-DBI
     SUBDIR += WWWdb
     SUBDIR += adminer
     SUBDIR += adodb
