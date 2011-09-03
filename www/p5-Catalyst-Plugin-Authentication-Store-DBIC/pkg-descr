@@ -1,3 +1,0 @@
-This plugin uses a DBIx::Class (or Class::DBI) object to authenticate a user.
-
-WWW: http://search.cpan.org/dist/Catalyst-Plugin-Authentication-Store-DBIC/
