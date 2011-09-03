@@ -15,24 +15,29 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	Terminal emulator for the X Window System
 
-BUILD_DEPENDS=	luit:${PORTSDIR}/x11/luit
-
 USE_XORG=	xaw xft
 USE_GNOME=	desktopfileutils
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LIBS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV+=	LIBS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS+=--with-utempter --enable-narrowproto
 
 OPTIONS=	WIDE_CHARS "enable wide-character support" on \
+		LUIT "use LUIT for locale convertion from/to UTF-8" on \
 		256_COLOR "enable 256-color support" off \
 		DEC_LOCATOR "enable DECterm Locator support" off \
 		PCRE "use PCRE for regular-expressions" off
 
+CPPFLAGS+=	-I${LOCALBASE}/include
+
 .include <bsd.port.options.mk>
 
+.if defined(WITH_LUIT)
+CONFIGURE_ARGS+=	--enable-luit
+BUILD_DEPENDS=	luit:${PORTSDIR}/x11/luit
+.endif
+
 .if defined(WITH_WIDE_CHARS)
-CONFIGURE_ARGS+=	--enable-wide-chars --enable-luit
+CONFIGURE_ARGS+=	--enable-wide-chars
 .endif
 
 .if defined(WITH_256_COLOR)
