@@ -14,8 +14,14 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	XS based CSS minifier
 
-PERL_CONFIGURE=	yes
+PERL_CONFIGURE=	5.8.8+
 
 MAN3=		CSS::Minifier::XS.3
 
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501200
+BUILD_DEPENDS+=	p5-Module-Build>=0.3500:${PORTSDIR}/devel/p5-Module-Build
+.endif
+
+.include <bsd.port.post.mk>
