@@ -1,0 +1,9 @@
+bin/couchdb-view-server.pl
+%%SITE_PERL%%/CouchDB/View.pm
+%%SITE_PERL%%/CouchDB/View/Document.pm
+%%SITE_PERL%%/CouchDB/View/Server.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/CouchDB/View/.packlist
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CouchDB/View
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/CouchDB
+@dirrmtry %%SITE_PERL%%/CouchDB/View
+@dirrmtry %%SITE_PERL%%/CouchDB
