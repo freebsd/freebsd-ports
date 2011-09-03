@@ -2591,3 +2591,5 @@ www/p5-Catalyst-Engine-HTTP-POE||2011-09-03|Use p5-Catalyst-Engine-HTTP-Prefork 
 www/p5-Catalyst-Model-DBIC||2011-09-03|Obsoleted by www/p5-Catalyst-Model-DBIC-Schema
 www/p5-Catalyst-Plugin-Cache-Store-FastMmap||2011-09-03|Deprecated, not depended on
 p5-HTTP-MobileAttribute||2011-09-03|Use www/p5-HTTP-MobileAgent instead
+irc/ptlink-ircd||2011-09-03|Has expired: No upstream source, no distfile and no maintainer
+irc/ptlink-services||2011-09-03|Has expired: No upstream source, no distfile and no maintainer

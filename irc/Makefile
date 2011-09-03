@@ -99,8 +99,6 @@
     SUBDIR += pircbot
     SUBDIR += pisg
     SUBDIR += psybnc
-    SUBDIR += ptlink-ircd
-    SUBDIR += ptlink-services
     SUBDIR += pure-emacs21
     SUBDIR += pure-xemacs21-mule
     SUBDIR += py-gozerbot
