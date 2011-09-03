@@ -6,21 +6,26 @@
 #
 
 PORTNAME=	perl-ldap
-PORTVERSION=	0.4001
+PORTVERSION=	0.4200
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	Net/GBARR
+MASTER_SITE_SUBDIR=	CPAN:GBARR
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/00$//}
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Client interface to LDAP (includes Net::LDAP)
 
-BUILD_DEPENDS=	${SITE_PERL}/Convert/ASN1.pm:${PORTSDIR}/converters/p5-Convert-ASN1 \
-		${SITE_PERL}/URI/ldap.pm:${PORTSDIR}/net/p5-URI \
-		${SITE_PERL}/IO/Socket/SSL.pm:${PORTSDIR}/security/p5-IO-Socket-SSL \
-		${SITE_PERL}/Authen/SASL.pm:${PORTSDIR}/security/p5-Authen-SASL \
-		${SITE_PERL}/XML/SAX/Writer.pm:${PORTSDIR}/textproc/p5-XML-SAX-Writer
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	p5-Authen-SASL>=2.00:${PORTSDIR}/security/p5-Authen-SASL \
+		p5-Convert-ASN1>=0.07:${PORTSDIR}/converters/p5-Convert-ASN1 \
+		p5-IO-Socket-SSL>=1.26:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		p5-URI>=1.10:${PORTSDIR}/net/p5-URI \
+		p5-XML-SAX-Writer>=0:${PORTSDIR}/textproc/p5-XML-SAX-Writer
+BUILD_DEPENDS:=	p5-Authen-SASL>=2.00:${PORTSDIR}/security/p5-Authen-SASL \
+		p5-Convert-ASN1>=0.07:${PORTSDIR}/converters/p5-Convert-ASN1 \
+		p5-IO-Socket-SSL>=1.26:${PORTSDIR}/security/p5-IO-Socket-SSL \
+		p5-URI>=1.10:${PORTSDIR}/net/p5-URI \
+		p5-XML-SAX-Writer>=0:${PORTSDIR}/textproc/p5-XML-SAX-Writer
 
 PERL_CONFIGURE=	yes
 
