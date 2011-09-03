@@ -6,19 +6,13 @@
 #
 
 PORTNAME=	busybox
-PORTVERSION=	1.19.0
-PORTREVISION=	2
+PORTVERSION=	1.19.1
+PORTREVISION=	0
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	http://www.busybox.net/downloads/
 
 PATCH_SITES=	http://www.busybox.net/downloads/fixes-${PORTVERSION}/
-PATCHFILES=	busybox-1.19.0-cttyhack.patch \
-		busybox-1.19.0-find.patch \
-		busybox-1.19.0-less.patch \
-		busybox-1.19.0-sed.patch \
-		busybox-1.19.0-swap.patch \
-		busybox-1.19.0-top.patch \
-		busybox-1.19.0-uncompress.patch
+PATCHFILES=	busybox-1.19.1-patch.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	mandree@FreeBSD.org
