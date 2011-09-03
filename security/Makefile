@@ -76,6 +76,7 @@
     SUBDIR += clamsmtp
     SUBDIR += clamtk
     SUBDIR += clusterssh
+    SUBDIR += cops
     SUBDIR += courier-authlib
     SUBDIR += courier-authlib-base
     SUBDIR += courierpassd
