@@ -16,6 +16,9 @@ DIST_SUBDIR=	mupad
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A sophisticated computer algebra system
 
+FORBIDDEN=	Relies on xpm, vulnerable since 2004-09-15, http://portaudit.freebsd.org/ef253f8b-0727-11d9-b45d-000c41e2cdad.html
+EXPIRATION_DATE=	2011-09-30
+
 EXTRACT_DEPENDS=	rpm2cpio.pl:${PORTSDIR}/archivers/rpm2cpio
 USE_LINUX_APPS+=dri
 

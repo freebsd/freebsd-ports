@@ -23,6 +23,9 @@ DISTNAME=	pgpsrc658unix
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Public-Key encryption for the masses
 
+FORBIDDEN=	Vulnerable since 2005-07-31, http://portaudit.freebsd.org/8375a73f-01bf-11da-bc08-0001020eed82.html
+EXPIRATION_DATE=	2011-09-30
+
 WRKSRC=		${WRKDIR}/pgpsrc
 USE_GMAKE=	yes
 

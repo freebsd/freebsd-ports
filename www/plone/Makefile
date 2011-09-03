@@ -16,6 +16,9 @@ DIST_SUBDIR=	zope
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A user friendly implementation of the CMF written on top of ZOPE
 
+FORBIDDEN=	Vulnerable since 2011-02-10, http://portaudit.freebsd.org/7c492ea2-3566-11e0-8e81-0022190034c0.html
+EXPIRATION_DATE=	2011-09-30
+
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/PIL.pth:${PORTSDIR}/graphics/py-imaging
 
 WRKSRC=	${WRKDIR}/Plone-${PORTVERSION}
