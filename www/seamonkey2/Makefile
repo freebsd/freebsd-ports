@@ -16,6 +16,10 @@ DISTNAME=	seamonkey-${DISTVERSION}.source
 MAINTAINER=	gecko@FreeBSD.org
 COMMENT=	The open source, standards compliant web browser
 
+DEPRECATED=	Upstream support dropped. Please consider using www/seamonkey instead.
+EXPIRATION_DATE=	2011-10-01
+FORBIDDEN=	several security vulnerabilities
+
 CONFLICTS_BUILD=	spidermonkey-1.[0-7]*
 LATEST_LINK=	seamonkey2
 USE_BZIP2=	yes
