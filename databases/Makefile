@@ -4,6 +4,7 @@
     COMMENT = Databases
 
     SUBDIR += R-cran-DBI
+    SUBDIR += R-cran-RMySQL
     SUBDIR += WWWdb
     SUBDIR += adminer
     SUBDIR += adodb
