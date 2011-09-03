@@ -1,0 +1,6 @@
+Devel::Mallinfo is an interface to the C library mallinfo() function
+giving malloc memory allocation statistics.  This is meant for
+development use, to give an idea of how much space your program and
+any libraries are using from malloc().
+
+WWW: http://search.cpan.org/dist/Devel-Leak/
