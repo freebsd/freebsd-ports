@@ -473,6 +473,7 @@
     SUBDIR += p5-CQL-Parser
     SUBDIR += p5-CSS
     SUBDIR += p5-CSS-Croco
+    SUBDIR += p5-CSS-Minifier
     SUBDIR += p5-CSS-Minifier-XS
     SUBDIR += p5-CSS-Packer
     SUBDIR += p5-CSS-SAC
