@@ -5,8 +5,10 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/AnyThing.pm
 %%SITE_PERL%%/Config/Model/AutoRead.pm
 %%SITE_PERL%%/Config/Model/Backend/Any.pm
+%%SITE_PERL%%/Config/Model/Backend/Debian/Dpkg.pm
 %%SITE_PERL%%/Config/Model/Backend/Debian/Dpkg/Control.pm
 %%SITE_PERL%%/Config/Model/Backend/Debian/Dpkg/Copyright.pm
+%%SITE_PERL%%/Config/Model/Backend/Debian/Dpkg/Patch.pm
 %%SITE_PERL%%/Config/Model/Backend/Debian/DpkgSyntax.pm
 %%SITE_PERL%%/Config/Model/Backend/Fstab.pm
 %%SITE_PERL%%/Config/Model/Backend/IniFile.pm
@@ -64,6 +66,8 @@ bin/config-edit
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Copyright/LicenseSpec.pod
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Meta.pl
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Meta.pod
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Patch.pl
+%%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Patch.pod
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Source.pl
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Source.pod
 %%SITE_PERL%%/Config/Model/models/Debian/Dpkg/Source/Options.pl
