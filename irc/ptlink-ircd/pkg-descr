@@ -1,6 +1,0 @@
-Port of the PTLink IRCd
-
-This is the core service for an IRC network, it handles the client 
-connections and keeps the channels/users information.
-
-WWW: http://www.ptlink.net
