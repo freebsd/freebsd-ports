@@ -16,6 +16,9 @@ DISTNAME=	TwistedSNMP-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Twisted Python framework for doing SNMP stuff
 
+DEPRECATED=	Relies on net-mgmt/py-snmp, which is deprecated
+EXPIRATION=	2011-09-30
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted/__init__.py:${PORTSDIR}/devel/py-twistedCore \
 		${PYTHON_SITELIBDIR}/pysnmp/__init__.py:${PORTSDIR}/net-mgmt/py-snmp
 RUN_DEPENDS=	${BUILD_DEPENDS}
