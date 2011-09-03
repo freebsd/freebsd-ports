@@ -16,7 +16,7 @@ MAINTAINER=	jun-g@daemonfreaks.com
 COMMENT=	A lightweight weblog system
 
 FORBIDDEN=	Vulnerable since 2009-02-11 http://portaudit.freebsd.org/b07f3254-f83a-11dd-85a4-ea653f0746ab.html
-EXPIRATION=	2011-09-30
+EXPIRATION_DATE=	2011-09-30
 
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	yes
