@@ -34,6 +34,70 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="aa5bc971-d635-11e0-b3cf-080027ef73ec">
+    <topic>nss/ca_root_nss -- Fraudulent Certificates issued by DigiNotar.nl</topic>
+    <affects>
+      <package>
+        <name>nss</name>
+	<range><le>3.12.11</le></range>
+      </package>
+      <package>
+        <name>ca_root_nss</name>
+	<range><le>3.12.11</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Heather Adkins, Google's Information Security Manager, reported that
+	Google received</p>
+	<blockquote
+	  cite="http://googleonlinesecurity.blogspot.com/2011/08/update-on-attempted-man-in-middle.html">
+	  <p>[...] reports of attempted SSL man-in-the-middle (MITM)
+	    attacks against Google users, whereby someone tried to get between
+	    them and encrypted Google services. The people affected were
+	    primarily located in Iran. The attacker used a fraudulent SSL
+	    certificate issued by DigiNotar, a root certificate authority that
+	    should not issue certificates for Google (and has since revoked
+	    it).[...]</p>
+	</blockquote>
+	<p>VASCO Data Security International Inc., owner of DigiNotar, issued a
+	  press statement confirming this incident:</p>
+	<blockquote
+	  cite="http://www.vasco.com/company/press_room/news_archive/2011/news_diginotar_reports_security_incident.aspx">
+	  <p>On July 19th 2011, DigiNotar detected an intrusion
+	    into its Certificate Authority (CA) infrastructure, which resulted in
+	    the fraudulent issuance of public key certificate requests for a
+	    number of domains, including Google.com. [...] an external security
+	    audit concluded that all fraudulently issued certificates were
+	    revoked. Recently, it was discovered that at least one fraudulent
+	    certificate had not been revoked at the time. [...]</p>
+	</blockquote>
+	<p>Mozilla, author of NSS and the cerived ca_root_nss packages, stated that they</p>
+	<blockquote
+	  cite="https://blog.mozilla.com/security/2011/09/02/diginotar-removal-follow-up/">
+	  <p>revoked our trust in the DigiNotar certificate authority from all
+	    Mozilla software. This is not a temporary suspension, it is a
+	    complete removal from our trusted root program. Complete revocation
+	    of trust is a decision we treat with careful consideration, and
+	    employ as a last resort.
+	  </p><p>Three central issues informed our decision:</p>
+	  <ol><li>Failure to notify. [...]</li>
+	    <li>The scope of the breach remains unknown. [...]</li>
+	    <li>The attack is not theoretical.</li></ol>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.vasco.com/company/press_room/news_archive/2011/news_diginotar_reports_security_incident.aspx</url>
+      <url>http://www.mozilla.org/security/announce/2011/mfsa2011-34.html</url>
+      <url>http://googleonlinesecurity.blogspot.com/2011/08/update-on-attempted-man-in-middle.html</url>
+    </references>
+    <dates>
+      <discovery>2011-07-19</discovery>
+      <entry>2011-09-03</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="7f6108d2-cea8-11e0-9d58-0800279895ea">
     <topic>apache -- Range header DoS vulnerability</topic>
     <affects>
