@@ -1,0 +1,11 @@
+--- makefile.orig	Tue Mar  9 02:19:18 1993
++++ makefile	Tue Jul 11 21:44:29 2000
+@@ -23,7 +23,7 @@
+ # C2         = -DC2
+ 
+ #
+-CFLAGS     = -O $(C2)
++CFLAGS+     = $(C2)
+ # sequents need "-lseq" as well... uncomment this if you're running on one:
+ # SEQFLAGS   = -lseq
+ 
