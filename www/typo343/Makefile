@@ -16,7 +16,7 @@ COMMENT=	The typo3 content management system
 LICENSE=	GPLv2
 
 DEPRECATED=	Support will end in the near future, see http://typo3.org/download/packages/ for details
-IGNORE=		2011-09-30
+EXPIRATION_DATE=	2011-09-30
 
 NO_LATEST_LINK=	yes
 NO_BUILD=	yes
