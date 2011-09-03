@@ -2,6 +2,7 @@ bin/pcmanfm
 etc/xdg/pcmanfm/default/pcmanfm.conf
 share/applications/pcmanfm.desktop
 %%NLS%%share/locale/ar/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/be/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/pcmanfm.mo
@@ -13,6 +14,7 @@ share/applications/pcmanfm.desktop
 %%NLS%%share/locale/es/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/eu/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/fa/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/fo/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/fr/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/gl/LC_MESSAGES/pcmanfm.mo
@@ -22,21 +24,29 @@ share/applications/pcmanfm.desktop
 %%NLS%%share/locale/id/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/it/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/km/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/lg/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/lv/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/nl/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/pa/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/pl/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/pt/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/si/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/te/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/th/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/tt_RU/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/vi/LC_MESSAGES/pcmanfm.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/pcmanfm.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/pcmanfm.mo
 %%DATADIR%%/ui/pref.ui
 %%DATADIR%%/ui/autorun.ui
@@ -54,10 +64,18 @@ share/applications/pcmanfm.desktop
 @dirrmtry share/locale/fo
 @dirrmtry share/locale/km/LC_MESSAGES
 @dirrmtry share/locale/km
+@dirrmtry share/locale/lg/LC_MESSAGES
+@dirrmtry share/locale/lg
+@dirrmtry share/locale/si/LC_MESSAGES
+@dirrmtry share/locale/si
 @dirrmtry share/locale/sr@latin/LC_MESSAGES
 @dirrmtry share/locale/sr@latin
+@dirrmtry share/locale/te/LC_MESSAGES
+@dirrmtry share/locale/te
 @dirrmtry share/locale/th/LC_MESSAGES
 @dirrmtry share/locale/th
+@dirrmtry share/locale/tt_RU/LC_MESSAGES
+@dirrmtry share/locale/tt_RU
 @dirrmtry share/locale/ur_PK/LC_MESSAGES
 @dirrmtry share/locale/ur_PK
 @dirrmtry include/libfm/libfm
