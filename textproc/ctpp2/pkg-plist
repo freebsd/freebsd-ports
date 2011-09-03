@@ -1,20 +1,21 @@
-bin/ctpp2vm
+bin/ctpp2-config
 bin/ctpp2c
 bin/ctpp2i
 bin/ctpp2json
-bin/ctpp2-config
+bin/ctpp2vm
 include/ctpp2/CDT.hpp
 include/ctpp2/CDTSortRoutines.hpp
 include/ctpp2/CTPP2BitIndex.hpp
 include/ctpp2/CTPP2CharIterator.hpp
 include/ctpp2/CTPP2Compiler.hpp
 include/ctpp2/CTPP2DTOA.hpp
-include/ctpp2/CTPP2Exception.hpp
 include/ctpp2/CTPP2Error.hpp
 include/ctpp2/CTPP2ErrorCodes.h
+include/ctpp2/CTPP2Exception.hpp
 include/ctpp2/CTPP2FileLogger.hpp
 include/ctpp2/CTPP2FileOutputCollector.hpp
 include/ctpp2/CTPP2FileSourceLoader.hpp
+include/ctpp2/CTPP2GetText.hpp
 include/ctpp2/CTPP2GlobalDefines.h
 include/ctpp2/CTPP2HashTable.hpp
 include/ctpp2/CTPP2JSONFileParser.hpp
@@ -68,16 +69,4 @@ lib/libctpp2-st.a
 lib/libctpp2.so
 lib/libctpp2.so.2
 lib/libctpp2.so.%%PORTVERSION%%
-share/locale/ru.CP1251/LC_MESSAGES/ctpp2.mo
-share/locale/ru.CP866/LC_MESSAGES/ctpp2.mo
-share/locale/ru.KOI8-R/LC_MESSAGES/ctpp2.mo
-share/locale/ru.UTF-8/LC_MESSAGES/ctpp2.mo
-@dirrmtry share/locale/ru.CP1251/LC_MESSAGES
-@dirrmtry share/locale/ru.CP1251
-@dirrmtry share/locale/ru.CP866/LC_MESSAGES
-@dirrmtry share/locale/ru.CP866
-@dirrmtry share/locale/ru.KOI8-R/LC_MESSAGES
-@dirrmtry share/locale/ru.KOI8-R
-@dirrmtry share/locale/ru.UTF-8/LC_MESSAGES
-@dirrmtry share/locale/ru.UTF-8
 @dirrm include/ctpp2
