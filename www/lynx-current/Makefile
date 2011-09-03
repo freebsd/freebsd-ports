@@ -12,7 +12,7 @@ CATEGORIES=	www ipv6
 MASTER_SITES=	http://lynx.isc.org/current/
 DISTNAME=	${PORTNAME}2.8.8dev.9
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	johans@FreeBSD.org
 COMMENT=	A non-graphical, text-based World-Wide Web client
 
 LIB_DEPENDS=	idn.17:${PORTSDIR}/dns/libidn
