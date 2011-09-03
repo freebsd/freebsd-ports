@@ -7,6 +7,7 @@
 
 PORTNAME=	encfs
 PORTVERSION=	1.7.4
+PORTREVISION=	1
 CATEGORIES=	sysutils
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	fusefs-
@@ -15,8 +16,8 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	olgeni@FreeBSD.org
 COMMENT=	An encrypted pass-through FUSE filesystem
 
-LIB_DEPENDS=	rlog:${PORTSDIR}/devel/rlog \
-		boost_serialization:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	rlog.5:${PORTSDIR}/devel/rlog \
+		boost_serialization.4:${PORTSDIR}/devel/boost-libs
 RUN_DEPENDS=	${LOCALBASE}/modules/fuse.ko:${PORTSDIR}/sysutils/fusefs-kmod
 BUILD_DEPENDS=	${LOCALBASE}/include/fuse.h:${PORTSDIR}/sysutils/fusefs-libs
 
