@@ -1,0 +1,10 @@
+bin/couchdb-push
+%%SITE_PERL%%/AnyEvent/CouchDB.pm
+%%SITE_PERL%%/AnyEvent/CouchDB/Database.pm
+%%SITE_PERL%%/AnyEvent/CouchDB/Exceptions.pm
+%%SITE_PERL%%/AnyEvent/CouchDB/Stream.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/CouchDB/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent/CouchDB
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/AnyEvent
+@dirrm %%SITE_PERL%%/AnyEvent/CouchDB
+@dirrmtry %%SITE_PERL%%/AnyEvent
