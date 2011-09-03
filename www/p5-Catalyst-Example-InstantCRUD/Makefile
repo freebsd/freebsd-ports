@@ -7,6 +7,7 @@
 
 PORTNAME=	Catalyst-Example-InstantCRUD
 PORTVERSION=	0.038
+PORTREVISION=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -18,7 +19,6 @@ BUILD_DEPENDS=	\
 	p5-Catalyst-Devel>=1.00:${PORTSDIR}/www/p5-Catalyst-Devel \
 	p5-Catalyst-Model-DBIC-Schema>=0:${PORTSDIR}/www/p5-Catalyst-Model-DBIC-Schema \
 	p5-Catalyst-Plugin-Authentication>=0.07:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication \
-	p5-Catalyst-Plugin-Authentication-Store-DBIC>=0.07:${PORTSDIR}/www/p5-Catalyst-Plugin-Authentication-Store-DBIC \
 	p5-Catalyst-Plugin-ConfigLoader>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-ConfigLoader \
 	p5-Catalyst-Plugin-HTML-Widget>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-HTML-Widget \
 	p5-Catalyst-Plugin-Session-State-Cookie>=0:${PORTSDIR}/www/p5-Catalyst-Plugin-Session-State-Cookie \
@@ -38,7 +38,7 @@ BUILD_DEPENDS=	\
 	p5-Lingua-EN-Inflect-Phrase>=0:${PORTSDIR}/textproc/p5-Lingua-EN-Inflect-Phrase \
 	p5-Template-Plugin-Class>=0:${PORTSDIR}/www/p5-Template-Plugin-Class \
 	p5-URI>=0:${PORTSDIR}/net/p5-URI
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+
 
