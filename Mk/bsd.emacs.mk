@@ -1,5 +1,5 @@
 #
-#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.86 2011-05-11 11:15:48 ashish Exp $
+#	$FreeBSD: /tmp/pcvs/ports/Mk/bsd.emacs.mk,v 1.87 2011-09-03 15:36:18 nobutaka Exp $
 #
 #	bsd.emacs.mk - 19990829 Shigeyuki Fukushima.
 #
@@ -151,7 +151,7 @@ PLIST?=                 ${PKGDIR}/pkg-plist.${EMACS_PORT_NAME}
 # XEmacs-21.x with Mule
 .elif (${EMACS_PORT_NAME} == "xemacs21-mule")
 EMACS_NAME=		xemacs
-EMACS_VER=		21.4.21
+EMACS_VER=		21.4.22
 EMACS_MAJOR_VER=	21
 EMACS_LIBDIR?=		lib/${EMACS_NAME}
 EMACS_LIBDIR_WITH_VER?=	lib/${EMACS_NAME}-${EMACS_VER}
