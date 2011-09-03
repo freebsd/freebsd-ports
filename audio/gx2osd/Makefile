@@ -19,6 +19,7 @@ LIB_DEPENDS=	xmmsclient++.4:${PORTSDIR}/audio/cpp-xmms2 \
 		gtkmm-2.4:${PORTSDIR}/x11-toolkits/gtkmm24
 
 DEPRECATED=	No more public distfiles
+EXPIRATION=	2011-09-30
 
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
