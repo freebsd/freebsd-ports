@@ -33,6 +33,7 @@ include/nettle/nettle-types.h
 include/nettle/pgp.h
 include/nettle/pkcs1.h
 include/nettle/realloc.h
+include/nettle/ripemd160.h
 include/nettle/rsa-compat.h
 include/nettle/rsa.h
 include/nettle/serpent.h
@@ -47,7 +48,9 @@ lib/libhogweed.so.2.1
 lib/libnettle.a
 lib/libnettle.so
 lib/libnettle.so.4
-lib/libnettle.so.4.1
+lib/libnettle.so.4.2
+libdata/pkgconfig/nettle.pc
+libdata/pkgconfig/hogweed.pc
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
