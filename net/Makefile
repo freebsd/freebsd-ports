@@ -7,7 +7,6 @@
     SUBDIR += 44bsd-rdist
     SUBDIR += 6tunnel
     SUBDIR += AquaGatekeeper
-    SUBDIR += AquaGatekeeper2
     SUBDIR += DarwinStreamingServer
     SUBDIR += GeoIP
     SUBDIR += Sockets
@@ -1191,7 +1190,6 @@
     SUBDIR += xpvm
     SUBDIR += xrdesktop
     SUBDIR += xrdp
-    SUBDIR += xwhois
     SUBDIR += yaph
     SUBDIR += yate
     SUBDIR += yate-devel

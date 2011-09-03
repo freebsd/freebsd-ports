@@ -770,7 +770,6 @@
     SUBDIR += p5-Catalyst-Controller-RequestToken
     SUBDIR += p5-Catalyst-Devel
     SUBDIR += p5-Catalyst-Engine-Apache
-    SUBDIR += p5-Catalyst-Engine-HTTP-POE
     SUBDIR += p5-Catalyst-Engine-HTTP-Prefork
     SUBDIR += p5-Catalyst-Engine-PSGI
     SUBDIR += p5-Catalyst-Enzyme
@@ -782,7 +781,6 @@
     SUBDIR += p5-Catalyst-Model-CDBI
     SUBDIR += p5-Catalyst-Model-CDBI-Plain
     SUBDIR += p5-Catalyst-Model-CDBI-Sweet
-    SUBDIR += p5-Catalyst-Model-DBIC
     SUBDIR += p5-Catalyst-Model-DBIC-Plain
     SUBDIR += p5-Catalyst-Model-DBIC-Schema
     SUBDIR += p5-Catalyst-Model-DynamicAdaptor
@@ -807,7 +805,6 @@
     SUBDIR += p5-Catalyst-Plugin-Cache-FastMmap
     SUBDIR += p5-Catalyst-Plugin-Cache-Memcached
     SUBDIR += p5-Catalyst-Plugin-Cache-Memcached-Fast
-    SUBDIR += p5-Catalyst-Plugin-Cache-Store-FastMmap
     SUBDIR += p5-Catalyst-Plugin-Captcha
     SUBDIR += p5-Catalyst-Plugin-ConfigLoader
     SUBDIR += p5-Catalyst-Plugin-ConfigLoader-Environment
@@ -1044,7 +1041,6 @@
     SUBDIR += p5-HTTP-MobileAgent
     SUBDIR += p5-HTTP-MobileAgent-Plugin-Charset
     SUBDIR += p5-HTTP-MobileAgent-Plugin-Locator
-    SUBDIR += p5-HTTP-MobileAttribute
     SUBDIR += p5-HTTP-Negotiate
     SUBDIR += p5-HTTP-Parser
     SUBDIR += p5-HTTP-Parser-XS
