@@ -8,7 +8,7 @@
 PORTNAME=	gourmet
 PORTVERSION=	0.15.9
 CATEGORIES=	deskutils gnome
-MASTER_SITES=	MASTER_SITES=     SF/grecipe-manager/0.15.8
+MASTER_SITES=	SF/grecipe-manager/0.15.8
 
 MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	GNOME recipe manager
