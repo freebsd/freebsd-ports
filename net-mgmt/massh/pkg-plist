@@ -1,0 +1,11 @@
+bin/massh
+lib/libmassh.sh
+etc/massh.conf.example
+@exec mkdir -p %%MASSHDIR%%/pull
+@exec mkdir -p %%MASSHDIR%%/push
+@exec mkdir -p %%MASSHDIR%%/scripts
+@cwd / 
+@dirrmtry %%MASSHDIR%%/pull
+@dirrmtry %%MASSHDIR%%/push
+@dirrmtry %%MASSHDIR%%/scripts
+@dirrmtry %%MASSHDIR%% 
