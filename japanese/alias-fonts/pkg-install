@@ -1,7 +1,7 @@
 #!/bin/sh
 # $FreeBSD$
 
-if [ $1 != "POST-INSTALL" ]; then
+if [ $2 != "POST-INSTALL" ]; then
   exit 0
 fi
 
@@ -20,9 +20,8 @@ IFS="
 while read line; do
   trimmed=${line# *}
   case $trimmed in
-    !*|"") echo $line;;
-    -alias-*) echo $line;;
-    *) ;;
+    -alias-*) ;;
+    *) echo $line;;
   esac
 done < $from > $to
 

@@ -16,9 +16,8 @@ IFS="
 while read line; do
   trimmed=${line# *}
   case $trimmed in
-    !*|"") echo $line;;
-    -alias-*) echo $line;;
-    *) ;;
+    -alias-*) ;;
+    *) echo $line;;
   esac
 done < $from > $to
 

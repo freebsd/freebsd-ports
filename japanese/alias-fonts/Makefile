@@ -7,7 +7,7 @@
 
 PORTNAME=	alias-fonts
 PORTVERSION=	1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	japanese x11-fonts
 MASTER_SITES=	# empty
 DISTFILES=	# empty
