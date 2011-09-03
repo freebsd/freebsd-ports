@@ -1,3 +1,4 @@
+bin/demandoc
 bin/mandoc
 %%EXAMPLESDIR%%/example.style.css
 @dirrm %%EXAMPLESDIR%%
