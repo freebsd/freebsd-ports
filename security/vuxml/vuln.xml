@@ -39,7 +39,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
         <name>nss</name>
-	<range><le>3.12.11</le></range>
+	<range><lt>3.12.11</lt></range>
       </package>
       <package>
         <name>ca_root_nss</name>
