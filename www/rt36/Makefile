@@ -19,6 +19,9 @@ EXTRACT_ONLY=	${DISTNAME}${EXTRACT_SUFX}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	RT is an industrial-grade ticketing system written in Perl
 
+FORBIDDEN=	Vulnerable since 2009-12-09, http://portaudit.freebsd.org/714c1406-e4cf-11de-883a-003048590f9e.html
+EXPIRATION_DATE=	2011-09-30
+
 CONFLICTS=	rt-2* rt-3.0* rt-3.2* rt-3.4* rt-3.8*
 
 PERL_MODULES =	${SITE_PERL}/Apache/Mason.pm:${PORTSDIR}/www/p5-HTML-Mason \

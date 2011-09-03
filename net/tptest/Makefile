@@ -13,6 +13,9 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}%20source/${PORTNAME}%203.1
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Software suite for testing network throughput and Internet services
 
+FORBIDDEN=	Vulnerable since 2009-12-17, http://portaudit.freebsd.org/5486669e-ea9f-11de-bd9c-00215c6a37bb.html
+EXPIRATION_DATE=	2011-09-30
+
 PLIST_FILES=	bin/tptestclient bin/tptestserver
 
 do-build:

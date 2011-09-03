@@ -13,6 +13,9 @@ MASTER_SITES=		SF/${PORTNAME}/${PORTNAME}/TorrentFlux%202.0%20beta1
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=		A PHP based BitTorrent client that runs on a web server
 
+FORBIDDEN=	Vulnerable since 2006-10-07, http://portaudit.freebsd.org/72f21372-55e4-11db-a5ae-00508d6a62df.html
+EXPIRATION_DATE=	2011-09-30
+
 RUN_DEPENDS=		${LOCALBASE}/share/adodb/adodb.inc.php:${PORTSDIR}/databases/adodb \
 			${LOCALBASE}/bin/sqlite:${PORTSDIR}/databases/sqlite2 \
 			${LOCALBASE}/bin/btshowmetainfo.py:${PORTSDIR}/net-p2p/py-bittornado-core

@@ -14,6 +14,9 @@ DISTNAME=	HLStats-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A real-time statistics generator for Half-Life and its mods
 
+FORBIDDEN=	Vulnerable since 2006-09-02, http://portaudit.freebsd.org/09639ccc-3abb-11db-81e1-000e0c2e438a.html
+EXPIRATION_DATE=	2011-09-30
+
 LICENSE=	CDDL
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/mysql.pm:${PORTSDIR}/databases/p5-DBD-mysql
