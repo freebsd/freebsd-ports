@@ -18,7 +18,7 @@ LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 
 DEPRECATED=	Use audio/firefly instead
-EXPIRATION=	2011-09-30
+EXPIRATION_DATE=	2011-09-30
 
 LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm \
 		id3tag.0:${PORTSDIR}/audio/libid3tag

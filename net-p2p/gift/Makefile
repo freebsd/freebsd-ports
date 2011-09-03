@@ -16,7 +16,7 @@ MAINTAINER=	shoesoft@gmx.net
 COMMENT=	An OpenFT, Gnutella and FastTrack p2p network client
 
 DEPRECATED=	unmaintained upstream for several years
-EXPIRATION=	2011-09-30
+EXPIRATION_DATE=	2011-09-30
 
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis
 

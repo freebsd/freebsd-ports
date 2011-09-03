@@ -18,7 +18,7 @@ COMMENT=	SNMP framework for Python
 CONFLICTS=	py??-snmp2-[0-9]* py??-snmp4-[0-9]*
 
 DEPRECATED=	use net-mgmt/py-snmp4 instead
-EXPIRATION=	2011-09-30
+EXPIRATION_DATE=	2011-09-30
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
