@@ -5,13 +5,11 @@
 # $FreeBSD$
 #
 
-PORTNAME=		mediainfo
-PORTVERSION=		0.7.47
-DISTVERSIONSUFFIX=	_AllInclusive
-CATEGORIES=		multimedia
-MASTER_SITES=		SF/${PORTNAME}/source/${PORTNAME}/${PORTVERSION}
-DISTNAME=		mediainfo_${PORTVERSION}${DISTVERSIONSUFFIX}
-EXTRACT_SUFX=		.7z
+PORTNAME=	mediainfo
+PORTVERSION=	0.7.48
+CATEGORIES=	multimedia
+MASTER_SITES=	SF/${PORTNAME}/binary/${PORTNAME}/${PORTVERSION}
+DISTNAME=	MediaInfo_CLI_${PORTVERSION}_GNU_FromSource
 
 MAINTAINER=	freebsd-ports@evilcode.net
 COMMENT=	Supplies technical and tag information about a video or audio file
@@ -20,19 +18,11 @@ LICENSE=	GPLv3 LGPL3
 LICENSE_COMB=	multi
 LICENSE_FILE=	${WRKSRC}/MediaInfo/License.html
 
-EXTRACT_DEPENDS=	p7zip>=0:${PORTSDIR}/archivers/p7zip
+USE_AUTOTOOLS=	aclocal:env automake:env autoconf:env libtool:env
+USE_BZIP2=	yes
+WRKSRC=		${WRKDIR}/MediaInfo_CLI_GNU_FromSource
 
 PLIST_FILES=	bin/mediainfo
-
-EXTRACT_CMD=	7z
-EXTRACT_BEFORE_ARGS=	x -o${WRKSRC}
-EXTRACT_AFTER_ARGS=	>/dev/null
-USE_AUTOTOOLS=	aclocal:env automake:env autoconf:env libtool:env
-
-WRKSRC=		${WRKDIR}/MediaInfo${DISTVERSIONSUFFIX}
-
-pre-build:
-	@(cd ${WRKSRC} && ${CP} ./MediaInfo/Project/GNU/CLI/AddThisToRoot_CLI_compile.sh ./CLI_Compile.sh)
 
 do-build:
 	@(cd ${WRKSRC}/ZenLib/Project/GNU/Library/ && ${SH} ./autogen)
@@ -41,6 +31,6 @@ do-build:
 	@(cd ${WRKSRC}/ && ${SH} ./CLI_Compile.sh --prefix=${PREFIX})
 
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/MediaInfo/Project/GNU/CLI/mediainfo ${PREFIX}/bin
+	${INSTALL_PROGRAM} ${WRKSRC}/MediaInfo/Project/GNU/CLI/mediainfo ${PREFIX}/bin/
 
 .include <bsd.port.mk>
