@@ -33214,7 +33214,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>hlstats</name>
-	<range><ge>0</ge></range>
+	<range><le>1.35</le></range>
       </package>
     </affects>
     <description>
@@ -33228,10 +33228,14 @@ Note:  Please add new entries to the beginning of this file.
     <references>
       <bid>19745</bid>
       <cvename>CVE-2006-4454</cvename>
+      <cvename>CVE-2006-6780</cvename>
+      <cvename>CVE-2006-6781</cvename>
+      <cvename>CVE-2007-2812</cvename>
     </references>
     <dates>
       <discovery>2006-08-29</discovery>
       <entry>2006-09-02</entry>
+      <modified>2011-09-03</modified>
     </dates>
   </vuln>
 
