@@ -12,6 +12,7 @@
     SUBDIR += R-cran-iterators
     SUBDIR += R-cran-itertools
     SUBDIR += R-cran-plyr
+    SUBDIR += R-cran-reshape
     SUBDIR += SpecTcl
     SUBDIR += ZendOptimizer
     SUBDIR += aap
