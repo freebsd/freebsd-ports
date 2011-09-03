@@ -1,9 +1,0 @@
-bin/xwhois
-%%PORTDATA%%%%DATADIR%%/xwhois.servers
-%%PORTDATA%%%%DATADIR%%/pixmaps/xwhois.xpm
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/TODO
-%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%PORTDATA%%@dirrm %%DATADIR%%/pixmaps
-%%PORTDATA%%@dirrm %%DATADIR%%
