@@ -19,6 +19,7 @@ MAINTAINER=	cy@FreeBSD.org
 COMMENT=	Popular virtual window manager for X
 
 DEPRECATED=	No longer supported by fvwm.org.
+EXPIRATION=	2011-09-30
 
 RUN_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 

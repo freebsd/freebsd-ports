@@ -19,6 +19,7 @@ BUILD_DEPENDS=	gm4:${PORTSDIR}/devel/m4
 
 FORBIDDEN=	Security issues
 DEPRECATED=	${FORBIDDEN}
+EXPIRATION=	2011-09-30
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--with-lispdir=${PREFIX}/share/emacs/site-lisp \

@@ -16,7 +16,7 @@ COMMENT=	Secure IP/Ethernet tunnel daemon
 # ecrist will update the -beta port as soon as there are formal
 # upstream test releases derived from openvpn-devel; in the meanwhile,
 # move users to -devel.
-DEPRECATED=	use openvpn-devel instead for now, there are currently no formal -betas.
+IGNORE=	use openvpn-devel instead for now, there are currently no formal -betas.
 
 CONFLICTS=	openvpn-devel-[0-9]* openvpn-2.0*
 
