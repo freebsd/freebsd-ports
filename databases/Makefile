@@ -411,6 +411,7 @@
     SUBDIR += p5-DWH_File
     SUBDIR += p5-Dancer-Plugin-DBIC
     SUBDIR += p5-Dancer-Plugin-Database
+    SUBDIR += p5-Dancer-Plugin-Redis
     SUBDIR += p5-Dancer-Session-Memcached
     SUBDIR += p5-Data-Page
     SUBDIR += p5-Data-Pageset
