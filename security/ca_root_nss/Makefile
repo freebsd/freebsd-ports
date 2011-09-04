@@ -7,6 +7,7 @@
 
 PORTNAME=	ca_root_nss
 PORTVERSION=	${VERSION_NSS}
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_MOZILLA}
 MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_WITH_CKBI_${CKBI_VER:S/./_/}_RTM/src
@@ -53,7 +54,7 @@ do-extract:
 	@${RM} -rf ${WRKDIR}/nss-${VERSION_NSS}
 
 post-patch:
-	@${PERL} -pi -e 's,%%VERSION_NSS%%,${VERSION_NSS},g;' \
+	@${PERL} -pi -e 's,%%VERSION_NSS%%,${VERSION_NSS}${NSS_SUFFIX},g;' \
 	    ${WRKDIR}/${BUNDLE_PROCESSOR}
 
 do-build:
