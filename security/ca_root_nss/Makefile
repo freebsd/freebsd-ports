@@ -8,10 +8,9 @@
 PORTNAME=	ca_root_nss
 PORTVERSION=	${VERSION_NSS}
 CATEGORIES=	security
-MASTER_SITES=	${MASTER_SITE_MOZILLA} \
-		${MASTER_SITES_MODSSL:S/$/:mod_ssl/}
-MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_RTM/src
-DISTFILES=	${NSS_FILE} ${MODSSL_FILE}:mod_ssl
+MASTER_SITES=	${MASTER_SITE_MOZILLA}
+MASTER_SITE_SUBDIR=	security/nss/releases/NSS_${PORTVERSION:S/./_/g}_WITH_CKBI_${CKBI_VER:S/./_/}_RTM/src
+DISTNAME=	nss-${VERSION_NSS}${NSS_SUFFIX}
 
 MAINTAINER=	brooks@FreeBSD.org
 COMMENT=	The root certificate bundle from the Mozilla Project
@@ -29,18 +28,12 @@ PLIST_SUB+=	CERTDIR=${CERTDIR}
 # !!!  www/apache13-modssl.  Please DO NOT submit patches for    !!!
 # !!!  new versions until they have been committed there first.  !!!
 # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-VERSION_NSS=	3.12.9
+VERSION_NSS=	3.12.11
+CKBI_VER=	1.87
 VERSION_APACHE=	1.3.41
-VERSION_MODSSL=	2.8.31
-MASTER_SITES_MODSSL=	http://www.modssl.org/source/ \
-		ftp://ftp.modssl.org/source/ \
-		ftp://ftp.blatzheim.com/pub/mod_ssl/ \
-		ftp://ftp.fu-berlin.de/unix/security/mod_ssl/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/www/mod_ssl/source,}
-MODSSL_FILE=	mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}${EXTRACT_SUFX}
-NSS_FILE=	nss-${VERSION_NSS}${EXTRACT_SUFX}
+NSS_SUFFIX=	.with.ckbi.${CKBI_VER}
 CERTDATA_TXT_PATH=	nss-${VERSION_NSS}/mozilla/security/nss/lib/ckfw/builtins/certdata.txt
-CA_BUNDLE_PL_PATH=	mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE}/pkg.sslcfg/ca-bundle.pl
+BUNDLE_PROCESSOR=	MAca-bundle.pl
 
 .include <bsd.port.pre.mk>
 
@@ -53,21 +46,19 @@ PLIST_SUB+=	ETCSYMLINK="@comment "
 
 do-extract:
 	@${MKDIR} ${WRKDIR}
-	@${TAR} -C ${WRKDIR} -xf ${DISTDIR}/${MODSSL_FILE} \
-	    ${CA_BUNDLE_PL_PATH}
-	@${TAR} -C ${WRKDIR} -xf ${DISTDIR}/nss-${VERSION_NSS}${EXTRACT_SUFX} \
+	@${TAR} -C ${WRKDIR} -xf ${DISTDIR}/nss-${VERSION_NSS}${NSS_SUFFIX}${EXTRACT_SUFX} \
 	    ${CERTDATA_TXT_PATH}
-	@${CP} ${WRKDIR}/${CA_BUNDLE_PL_PATH} ${WRKDIR}
 	@${CP} ${WRKDIR}/${CERTDATA_TXT_PATH} ${WRKDIR}
-	@${RM} -rf ${WRKDIR}/mod_ssl-${VERSION_MODSSL}-${VERSION_APACHE} \
-	    ${WRKDIR}/nss-${VERSION_NSS}
+	@${CP} ${FILESDIR}/${BUNDLE_PROCESSOR} ${WRKDIR}
+	@${RM} -rf ${WRKDIR}/nss-${VERSION_NSS}
 
 post-patch:
 	@${PERL} -pi -e 's,%%VERSION_NSS%%,${VERSION_NSS},g;' \
-	    ${WRKDIR}/ca-bundle.pl
+	    ${WRKDIR}/${BUNDLE_PROCESSOR}
 
 do-build:
-	@${PERL} ${WRKDIR}/ca-bundle.pl < ${WRKDIR}/certdata.txt > \
+	@${PERL} ${WRKDIR}/${BUNDLE_PROCESSOR} \
+	    < ${WRKDIR}/certdata.txt > \
 	    ${WRKDIR}/ca-root-nss.crt
 
 do-install:
