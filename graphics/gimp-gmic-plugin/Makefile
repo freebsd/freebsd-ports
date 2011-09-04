@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	gmic
-PORTVERSION=	1.5.0.0
+PORTVERSION=	1.5.0.1
 CATEGORIES=	graphics
 MASTER_SITES=	SF/${PORTNAME} \
 		SF/${PORTNAME}/old
@@ -17,13 +17,10 @@ DISTNAME=	${PORTNAME}_${PORTVERSION}
 MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	GREYC's Magic Image Converter
 
-BROKEN=		Does not compile with OpenCV 2.3.1
-
 LIB_DEPENDS=	GraphicsMagick++.6:${PORTSDIR}/graphics/GraphicsMagick13 \
 		IlmImf.6:${PORTSDIR}/graphics/OpenEXR \
 		Magick++.4:${PORTSDIR}/graphics/ImageMagick \
 		avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
-		opencv_legacy.2:${PORTSDIR}/graphics/opencv \
 		fftw3.5:${PORTSDIR}/math/fftw3 \
 		gimp-2.0:${PORTSDIR}/graphics/gimp-app
 
@@ -56,13 +53,14 @@ PLIST_SUB+=	BASH=""
 PLIST_SUB+=	BASH="@comment "
 .endif
 
-post-patch:
-	@${REINPLACE_CMD} -e 's/-lcv/-lopencv_legacy/g' \
-		-e 's/-lhighgui/-lopencv_legacy/g' \
-		${WRKSRC}/configure
-	@${REINPLACE_CMD} -e 's#/usr/X11R6#${PREFIX}#g' \
-		-e 's/-lcv -lhighgui/-lopencv_legacy/g' \
-		${WRKSRC}/src/Makefile
+# GMIC is broken with OpenCV 2.3.1, so disable it for now
+#post-patch:
+#	@${REINPLACE_CMD} -e 's/-lcv/-lopencv_legacy/g' \
+#		-e 's/-lhighgui/-lopencv_legacy/g' \
+#		${WRKSRC}/configure
+#	@${REINPLACE_CMD} -e 's#/usr/X11R6#${PREFIX}#g' \
+#		-e 's/-lcv -lhighgui/-lopencv_legacy/g' \
+#		${WRKSRC}/src/Makefile
 
 do-install:
 	@${MKDIR} ${PREFIX}/${PLUGIN_DIR}
