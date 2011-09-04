@@ -715,6 +715,7 @@
     SUBDIR += p5-Template-Plugin-Autoformat
     SUBDIR += p5-Template-Plugin-Filter-Minify-CSS
     SUBDIR += p5-Template-Plugin-Filter-Minify-CSS-XS
+    SUBDIR += p5-Template-Plugin-Filter-Minify-JavaScript
     SUBDIR += p5-Template-Plugin-HTML-SuperForm
     SUBDIR += p5-Template-Plugin-Lingua-EN-Inflect
     SUBDIR += p5-Template-Plugin-XML-Escape
