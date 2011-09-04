@@ -20,6 +20,7 @@ HAS_CONFIGURE=	yes
 CONFIGURE_SCRIPT=	reconfig
 MAKEFILE=	makefile
 MAKE_ARGS=	EXECUTABLE="${EXECUTABLE}" C_SRC="${C_SRC}"
+MAKE_JOBS_UNSAFE=	yes
 
 EXECUTABLE=	home.chk user.chk is_writable crc crc_check \
 		addto clearfiles filewriters members tilde is_able
