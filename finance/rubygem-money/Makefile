@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	money
-PORTVERSION=	3.7.0
+PORTVERSION=	3.7.1
 CATEGORIES=	finance rubygems
 MASTER_SITES=	RG
 
@@ -19,8 +19,4 @@ USE_RUBY=		yes
 USE_RUBYGEMS=		yes
 RUBYGEM_AUTOPLIST=	yes
 
-.include <bsd.port.pre.mk>
-.if ${RUBY_VER} == 1.9
-BROKEN=	does not work with ruby 1.9
-.endif
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
