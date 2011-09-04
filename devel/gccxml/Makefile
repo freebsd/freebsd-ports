@@ -15,6 +15,9 @@ COMMENT=	XML output extension to GCC
 
 BUILD_DEPENDS=	cmake:${PORTSDIR}/devel/cmake
 
+DEPRECATED=	Unmaintained upstream, still requires GCC 3.4 (strictly), just used by boost-pyste which is of archeological interest only itself
+EXPIRATION_DATE=2011-10-04
+
 PATCH_WRKSRC=	${WRKDIR}/${PORTNAME}-${PORTVERSION}
 WRKSRC=		${WRKDIR}/${PORTNAME}-build
 
@@ -44,7 +47,7 @@ BROKEN=		Build fails on powerpc
 # the use of casted-pointer-dereferences as an lvalue to post-increment
 # operations.
 USE_GCC=	3.4
-CONFIGURE_ENV+= CPP="gcc34 -E"
+CONFIGURE_ENV+=	CPP="gcc34 -E"
 MAKE_ENV+=	CPP="gcc34 -E"
 .endif
 
