@@ -6,16 +6,19 @@
 #
 
 PORTNAME=	DBIx-Abstract
-PORTVERSION=	1.006
+PORTVERSION=	1.010
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
+DISTNAME=	${PORTNAME}-${PORTVERSION:C/0$//}
 
 MAINTAINER=	nistor@snickers.org
 COMMENT=	DBIx::Abstract - DBI SQL abstraction
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBI.pm:${PORTSDIR}/databases/p5-DBI
-RUN_DEPENDS:=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	p5-Check-ISA>=0:${PORTSDIR}/devel/p5-Check-ISA \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
+RUN_DEPENDS=	p5-Check-ISA>=0:${PORTSDIR}/devel/p5-Check-ISA \
+		p5-DBI>=0:${PORTSDIR}/databases/p5-DBI
 
 PERL_CONFIGURE=	yes
 
