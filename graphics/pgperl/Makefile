@@ -18,11 +18,11 @@ COMMENT=	A perl5 extension which makes available the pgplot library
 
 LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot
 BUILD_DEPENDS=	${SITE_PERL}/ExtUtils/F77.pm:${PORTSDIR}/lang/p5-F77
-USE_FORTRAN=	g77
 
 MAN3=	PGPLOT.3
 MAN3PREFIX=	${PREFIX}/lib/perl5/${PERL_VERSION}
 
+USE_FORTRAN=	g77
 USE_PERL5=	yes
 SCRIPTS_ENV=	PERL=${PERL}
 INSTALL_TARGET=	pure_install
