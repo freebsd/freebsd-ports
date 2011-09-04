@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	openmq
-PORTVERSION=	4.5.b.29
-PORTREVISION=	1
+PORTVERSION=	4.5.1.b.3
 PORTEPOCH=	1
 CATEGORIES=	net java
-MASTER_SITES=	http://download.java.net/mq/open-mq/4.5/b29/ \
+MASTER_SITES=	http://download.java.net/mq/open-mq/4.5.1/b03-final/ \
 	 	http://download.java.net/maven/2/javax/javaee-api/6.0/:2 \
 		http://download.java.net/maven/2/com/sun/grizzly/grizzly-nio-framework/1.9.18a/:3 \
 		http://download.java.net/maven/2/com/sun/woodstock/dependlibs/jhall/2.0/:4
@@ -23,7 +22,7 @@ COMMENT=	Open Message Queue - Java Message Service Broker ${CLIENT_COMMENT}
 LICENSE=	GPLv2 CDDL
 LICENSE_COMB=	dual
 
-SRCDIST=	openmq4_5-source.zip
+SRCDIST=	openmq4_5_1-source.zip
 BOOTJARS=	javaee-api-6.0.jar:2 \
 		grizzly-nio-framework-1.9.18a.jar:3 \
 		jhall-2.0.jar:4
