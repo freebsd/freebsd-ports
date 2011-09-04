@@ -137,7 +137,7 @@ IGNORE=		Couldn't find your current GCCVERSION (OSVERSION=${OSVERSION})
 
 #
 # If the GCC package defined in USE_GCC does not exist, but a later
-# version is allowed (for example 3.4+), see if there is a later.
+# version is allowed (for example 4.2+), see if there is a later.
 # First check if the base installed version is good enough, otherwise
 # get the first available version.
 #
