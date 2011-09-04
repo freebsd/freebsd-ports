@@ -16,6 +16,8 @@ DISTNAME=	${DOCFORMAT}-${PORTVERSION}
 MAINTAINER=	python@FreeBSD.org
 COMMENT=	Documentation for the Python programming language
 
+PORTSCOUT=	ignore:1
+
 DIST_SUBDIR=	python
 USE_PYTHON=	yes
 USE_BZIP2=	yes
