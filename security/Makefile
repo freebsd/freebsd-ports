@@ -6,6 +6,7 @@
     SUBDIR += ADMsmb
     SUBDIR += ADMsnmp
     SUBDIR += IMHear
+    SUBDIR += R-cran-digest
     SUBDIR += aescrypt
     SUBDIR += aespipe
     SUBDIR += afterglow
