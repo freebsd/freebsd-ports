@@ -52,7 +52,7 @@ clamav:*:106:106::0:0:Clamav Antivirus:/nonexistent:/usr/sbin/nologin
 cacti:*:107:107::0:0:Cacti Sandbox:/nonexistent:/usr/sbin/nologin
 webkit:*:108:108::0:0:WebKit Default User:/usr/local/www/webkit:/bin/sh
 quickml:*:109:109::0:0:quickml Server:/nonexistent:/usr/sbin/nologin
-vscan:*:110:110::0:0:Scanning Virus Account:/var/amavis:/bin/sh
+vscan:*:110:110::0:0:Scanning Virus Account:/var/maiad:/bin/sh
 fido:*:111:111::0:0:Fido System:/usr/local/fido:/bin/sh
 dcc:*:112:112::0:0:Distributed Checksum Clearinghouse:/nonexistent:/usr/sbin/nologin
 amavis:*:113:113::0:0:Amavis-stats Account:/nonexistent:/usr/sbin/nologin
