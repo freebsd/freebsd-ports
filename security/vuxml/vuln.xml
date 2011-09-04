@@ -3288,11 +3288,11 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>plone</name>
-	<range><ge>2.5</ge></range>
+	<range><ge>2.5</ge><lt>3</lt></range>
       </package>
       <package>
 	<name>plone3</name>
-	<range><ge>3</ge></range>
+	<range><ge>3</ge><le>3.3</le></range>
       </package>
     </affects>
     <description>
