@@ -3,6 +3,7 @@
 
     COMMENT = Character code converters
 
+    SUBDIR += R-cran-RJSONIO
     SUBDIR += aish
     SUBDIR += ascii2binary
     SUBDIR += asr10
