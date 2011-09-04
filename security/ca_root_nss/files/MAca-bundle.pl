@@ -4,6 +4,33 @@
 ##  Rewritten in September 2011 by Matthias Andree to heed untrust
 ##
 
+##  Copyright (c) 2011, Matthias Andree
+##  All rights reserved.
+##
+##  Redistribution and use in source and binary forms, with or without
+##  modification, are permitted provided that the following conditions are
+##  met:
+##
+##  * Redistributions of source code must retain the above copyright
+##  notice, this list of conditions and the following disclaimer.
+##
+##  * Redistributions in binary form must reproduce the above copyright
+##  notice, this list of conditions and the following disclaimer in the
+##  documentation and/or other materials provided with the distribution.
+##
+##  THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+##  "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+##  LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+##  FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+##  COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+##  INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+##  BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;
+##  LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER
+##  CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+##  LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN
+##  ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+##  POSSIBILITY OF SUCH DAMAGE.
+
 use strict;
 use MIME::Base64;
 
@@ -109,7 +136,7 @@ sub grabtrust() {
 	    $serial = graboct();
 	}
 
-	if (/^CKA_TRUST_.*\s.*_UNTRUSTED/) {
+	if (/^CKA_TRUST_.*\s.*_(UN|NOT_)TRUSTED/) {
 	    $trust = 0;
 	}
     }
@@ -123,7 +150,7 @@ while (<>) {
 	    warn "Certificate $label duplicated!\n";
 	}
 	$certs{$serial.$label} = $certdata;
-    } elsif (/^CKA_CLASS .* CKO_NETSCAPE_TRUST/) {
+    } elsif (/^CKA_CLASS .* CKO_(NSS|NETSCAPE)_TRUST/) {
 	my ($serial, $label, $trust) = grabtrust();
 	if (defined $trusts{$serial.$label}) {
 	    warn "Trust for $label duplicated!\n";
@@ -152,8 +179,7 @@ print "##  Untrusted certificates omitted from this bundle: $untrusted\n\n";
 my $certcount = 0;
 foreach my $it (keys %certs) {
     if (!exists($trusts{$it})) {
-	warn "Found certificate without trust block, skipping\n";
-	next;
+	die "Found certificate without trust block,\naborting";
     }
     printcert("", $certs{$it});
     print "\n\n\n";
