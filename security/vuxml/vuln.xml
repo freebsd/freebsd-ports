@@ -34,16 +34,48 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="1b27af46-d6f6-11e0-89a6-080027ef73ec">
+    <topic>ca_root_nss -- Extraction of unsafe certificates into trust bundle.</topic>
+    <affects>
+      <package>
+	<name>ca_root_nss</name>
+	<range><lt>3.12.11</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Matthias Andree reports that the ca-bundle.pl used in older versions
+	  of the ca_root_nss FreeBSD port before 3.12.11 did not take the
+	  Mozilla/NSS/CKBI untrusted markers into account and would add
+	  certificates to the trust bundle that were marked unsafe by
+	  mozilla.</p>
+      </body>
+    </description>
+    <references>
+      <freebsdpr>ports/160455</freebsdpr>
+    </references>
+    <dates>
+      <discovery>2011-09-04</discovery>
+      <entry>2011-09-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="aa5bc971-d635-11e0-b3cf-080027ef73ec">
     <topic>nss/ca_root_nss -- Fraudulent Certificates issued by DigiNotar.nl</topic>
     <affects>
       <package>
         <name>nss</name>
 	<range><lt>3.12.11</lt></range>
+	<!-- this builds on the assumption that 3.12.11 in ports actually
+	     contains the CKBI 1.87 update to the built-in certificates
+	     as commited by kwm@ on September 3rd, 2011 -->
       </package>
       <package>
         <name>ca_root_nss</name>
-	<range><le>3.12.11</le></range>
+	<range><lt>3.12.11</lt></range>
+	<!-- this builds on the assumption that 3.12.11 in ports actually
+	     contains the CKBI 1.87 update to the built-in certificates
+	     as commited by mandree@ on September 4th, 2011 -->
       </package>
     </affects>
     <description>
@@ -72,7 +104,8 @@ Note:  Please add new entries to the beginning of this file.
 	    revoked. Recently, it was discovered that at least one fraudulent
 	    certificate had not been revoked at the time. [...]</p>
 	</blockquote>
-	<p>Mozilla, author of NSS and the cerived ca_root_nss packages, stated that they</p>
+	<p>Mozilla, maintainer of the NSS package, from which FreeBSD derived
+	  ca_root_nss, stated that they</p>
 	<blockquote
 	  cite="https://blog.mozilla.com/security/2011/09/02/diginotar-removal-follow-up/">
 	  <p>revoked our trust in the DigiNotar certificate authority from all
