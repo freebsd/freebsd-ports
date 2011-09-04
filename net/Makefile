@@ -9,6 +9,7 @@
     SUBDIR += AquaGatekeeper
     SUBDIR += DarwinStreamingServer
     SUBDIR += GeoIP
+    SUBDIR += R-cran-twitteR
     SUBDIR += Sockets
     SUBDIR += abills
     SUBDIR += activemq
