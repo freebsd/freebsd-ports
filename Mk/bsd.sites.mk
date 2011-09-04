@@ -1361,7 +1361,6 @@ MASTER_SITE_WINDOWMAKER+= \
 
 .if !defined(IGNORE_MASTER_SITE_XCONTRIB)
 MASTER_SITE_XCONTRIB+=	\
-	ftp://ftp.net.ohio-state.edu/pub/X11/contrib/%SUBDIR%/ \
 	ftp://ftp.gwdg.de/pub/x11/x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.x.org/contrib/%SUBDIR%/ \
 	ftp://ftp.sunet.se/pub/X11/ftp.x.org/contrib/%SUBDIR%/ \
