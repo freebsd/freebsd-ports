@@ -500,6 +500,7 @@
 %%SITE_PERL%%/Date/Manip/Offset/off483.pm
 %%SITE_PERL%%/Date/Manip/Offset/off484.pm
 %%SITE_PERL%%/Date/Manip/Offset/off485.pm
+%%SITE_PERL%%/Date/Manip/Offset/off486.pm
 %%SITE_PERL%%/Date/Manip/TZ/a00.pm
 %%SITE_PERL%%/Date/Manip/TZ/afabid00.pm
 %%SITE_PERL%%/Date/Manip/TZ/afaccr00.pm
@@ -526,6 +527,7 @@
 %%SITE_PERL%%/Date/Manip/TZ/afgabo00.pm
 %%SITE_PERL%%/Date/Manip/TZ/afhara00.pm
 %%SITE_PERL%%/Date/Manip/TZ/afjoha00.pm
+%%SITE_PERL%%/Date/Manip/TZ/afjuba00.pm
 %%SITE_PERL%%/Date/Manip/TZ/afkamp00.pm
 %%SITE_PERL%%/Date/Manip/TZ/afkhar00.pm
 %%SITE_PERL%%/Date/Manip/TZ/afkiga00.pm
