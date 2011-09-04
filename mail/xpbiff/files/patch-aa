@@ -46,11 +46,11 @@
 +#define XPM
 +
 +#ifdef XPM
-+#ifdef FreeBSDArchitecture
++#ifdef __FreeBSD__
 +#undef DepXpmLib
 +#else
 +#define DepXpmLib	/usr/local/lib/libXpm.a
-+#endif /* FreeBSDArchitecture */
++#endif /* __FreeBSD__ */
 +#endif /* XPM */
  
  /*
@@ -59,7 +59,7 @@
 -#undef XI18N
 -/* If you use X11R6, these settings below are not necessary */
 +#ifndef XI18N
-+#ifdef FreeBSDArchitecture
++#ifdef __FreeBSD__
 +#define XI18N
 +#endif
 +#endif
