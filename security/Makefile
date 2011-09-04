@@ -277,6 +277,7 @@
     SUBDIR += mailzu
     SUBDIR += makepasswd
     SUBDIR += manipulate_data
+    SUBDIR += massh
     SUBDIR += matrixssl
     SUBDIR += mcrypt
     SUBDIR += md4coll
