@@ -1,0 +1,13 @@
+%%SITE_PERL%%/Template/Plugin/Filter/Minify/CSS/XS.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Filter/Minify/CSS/XS/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Filter/Minify/CSS/XS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Filter/Minify/CSS
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Filter/Minify
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin/Filter
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template/Plugin
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Template
+@dirrmtry %%SITE_PERL%%/Template/Plugin/Filter/Minify/CSS
+@dirrmtry %%SITE_PERL%%/Template/Plugin/Filter/Minify
+@dirrmtry %%SITE_PERL%%/Template/Plugin/Filter
+@dirrmtry %%SITE_PERL%%/Template/Plugin
+@dirrmtry %%SITE_PERL%%/Template
