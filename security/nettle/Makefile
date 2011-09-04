@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	nettle
-PORTVERSION=	2.3
+PORTVERSION=	2.4
 CATEGORIES=	security
 MASTER_SITES=	${MASTER_SITE_GNU} \
 		http://www.lysator.liu.se/~nisse/archive/:liu \

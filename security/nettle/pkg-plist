@@ -48,7 +48,7 @@ lib/libhogweed.so.2.1
 lib/libnettle.a
 lib/libnettle.so
 lib/libnettle.so.4
-lib/libnettle.so.4.2
+lib/libnettle.so.4.3
 libdata/pkgconfig/nettle.pc
 libdata/pkgconfig/hogweed.pc
 %%PORTDOCS%%%%DOCSDIR%%/NEWS
