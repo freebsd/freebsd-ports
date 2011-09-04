@@ -1,0 +1,5 @@
+Template::Plugin::Filter::Minify::CSS is a Template Toolkit filter, which uses
+CSS::Minifier to minify css code from filtered content during template
+processing.
+
+WWW: http://search.cpan.org/dist/Template-Plugin-Filter-Minify-CSS/
