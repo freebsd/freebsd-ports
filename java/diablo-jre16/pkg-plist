@@ -804,7 +804,7 @@ diablo-jre%%JRE_VERSION%%/plugin/%%ARCH%%/ns7/libjavaplugin_oji.so
 @dirrm diablo-jre%%JRE_VERSION%%/lib/deploy
 @dirrm diablo-jre%%JRE_VERSION%%/lib/cmm
 @dirrm diablo-jre%%JRE_VERSION%%/lib/audio
-@dirrm diablo-jre%%JRE_VERSION%%/lib/applet
+@dirrmtry diablo-jre%%JRE_VERSION%%/lib/applet
 @dirrm diablo-jre%%JRE_VERSION%%/lib
 @dirrm diablo-jre%%JRE_VERSION%%/javaws
 @dirrm diablo-jre%%JRE_VERSION%%/bin
