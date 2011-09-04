@@ -164,7 +164,6 @@ ports_x11_wm                    ports/x11-wm
 ADMsmb                          ports/security/ADMsmb
 ADMsnmp                         ports/security/ADMsnmp
 AquaGatekeeper                  ports/net/AquaGatekeeper
-AquaGatekeeper2                 ports/net/AquaGatekeeper2
 BillardGL                       ports/games/BillardGL
 CaribbeanStud                   ports/games/CaribbeanStud
 Cgraph                          ports/graphics/Cgraph
@@ -203,7 +202,9 @@ PDL                             ports/math/PDL
 PicMonger                       ports/news/PicMonger
 R                               ports/math/R
 R-cran-AMORE                    ports/science/R-cran-AMORE
+R-cran-DBI                      ports/databases/R-cran-DBI
 R-cran-RCurl                    ports/ftp/R-cran-RCurl
+R-cran-RMySQL                   ports/databases/R-cran-RMySQL
 R-cran-RSvgDevice               ports/math/R-cran-RSvgDevice
 R-cran-SuppDists                ports/math/R-cran-SuppDists
 R-cran-XML                      ports/textproc/R-cran-XML
@@ -211,6 +212,7 @@ R-cran-Zelig                    ports/math/R-cran-Zelig
 R-cran-bayesm                   ports/science/R-cran-bayesm
 R-cran-bitops                   ports/devel/R-cran-bitops
 R-cran-car                      ports/math/R-cran-car
+R-cran-caret                    ports/devel/R-cran-caret
 R-cran-coda                     ports/math/R-cran-coda
 R-cran-gpclib                   ports/math/R-cran-gpclib
 R-cran-inline                   ports/math/R-cran-inline
@@ -219,9 +221,11 @@ R-cran-itertools                ports/devel/R-cran-itertools
 R-cran-mvtnorm                  ports/math/R-cran-mvtnorm
 R-cran-plyr                     ports/devel/R-cran-plyr
 R-cran-psych                    ports/math/R-cran-psych
+R-cran-reshape                  ports/devel/R-cran-reshape
 R-cran-scrapeR                  ports/www/R-cran-scrapeR
 R-cran-sm                       ports/math/R-cran-sm
 R-cran-sp                       ports/math/R-cran-sp
+R-cran-xtable                   ports/textproc/R-cran-xtable
 R-cran-xts                      ports/math/R-cran-xts
 R-cran-zoo                      ports/math/R-cran-zoo
 STk                             ports/lang/STk
@@ -573,7 +577,6 @@ aqemu                           ports/emulators/aqemu
 aqmoney                         ports/finance/aqmoney
 aqsis                           ports/graphics/aqsis
 aquagatekeeper                  ports/net/AquaGatekeeper
-aquagatekeeper2                 ports/net/AquaGatekeeper2
 aqualung                        ports/audio/aqualung
 ar-ae_fonts_mono                ports/arabic/ae_fonts_mono
 ar-ae_fonts_ttf                 ports/arabic/ae_fonts_ttf
@@ -1834,6 +1837,7 @@ cooledit                        ports/editors/cooledit
 coolmail                        ports/mail/coolmail
 coovachilli                     ports/net-mgmt/coovachilli
 coppermine                      ports/www/coppermine
+cops                            ports/security/cops
 copytape                        ports/sysutils/copytape
 coq                             ports/math/coq
 coreutils                       ports/sysutils/coreutils
@@ -5211,7 +5215,6 @@ gworkspace-gwmetadata           ports/deskutils/gworkspace-gwmetadata
 gwrite                          ports/editors/gwrite
 gwyddion                        ports/science/gwyddion
 gx                              ports/graphics/gx
-gx2osd                          ports/audio/gx2osd
 gxanim                          ports/multimedia/gxanim
 gxditview                       ports/textproc/gxditview
 gxemul                          ports/emulators/gxemul
@@ -5272,7 +5275,6 @@ hawknl-devel                    ports/net/hawknl-devel
 hawkvoice                       ports/audio/hawkvoice
 hb                              ports/misc/hb
 hbiff                           ports/mail/hbiff
-hcidump                         ports/comms/hcidump
 hcs12mem                        ports/devel/hcs12mem
 hdf                             ports/science/hdf
 hdf-java                        ports/science/hdf-java
@@ -11200,7 +11202,6 @@ p5-Catalyst-Controller-RateLimit  ports/www/p5-Catalyst-Controller-RateLimit
 p5-Catalyst-Controller-RequestToken  ports/www/p5-Catalyst-Controller-RequestToken
 p5-Catalyst-Devel               ports/www/p5-Catalyst-Devel
 p5-Catalyst-Engine-Apache       ports/www/p5-Catalyst-Engine-Apache
-p5-Catalyst-Engine-HTTP-POE     ports/www/p5-Catalyst-Engine-HTTP-POE
 p5-Catalyst-Engine-HTTP-Prefork  ports/www/p5-Catalyst-Engine-HTTP-Prefork
 p5-Catalyst-Engine-PSGI         ports/www/p5-Catalyst-Engine-PSGI
 p5-Catalyst-Enzyme              ports/www/p5-Catalyst-Enzyme
@@ -11212,7 +11213,6 @@ p5-Catalyst-Model-Adaptor       ports/www/p5-Catalyst-Model-Adaptor
 p5-Catalyst-Model-CDBI          ports/www/p5-Catalyst-Model-CDBI
 p5-Catalyst-Model-CDBI-Plain    ports/www/p5-Catalyst-Model-CDBI-Plain
 p5-Catalyst-Model-CDBI-Sweet    ports/www/p5-Catalyst-Model-CDBI-Sweet
-p5-Catalyst-Model-DBIC          ports/www/p5-Catalyst-Model-DBIC
 p5-Catalyst-Model-DBIC-Plain    ports/www/p5-Catalyst-Model-DBIC-Plain
 p5-Catalyst-Model-DBIC-Schema   ports/www/p5-Catalyst-Model-DBIC-Schema
 p5-Catalyst-Model-DynamicAdaptor  ports/www/p5-Catalyst-Model-DynamicAdaptor
@@ -11237,7 +11237,6 @@ p5-Catalyst-Plugin-Cache        ports/www/p5-Catalyst-Plugin-Cache
 p5-Catalyst-Plugin-Cache-FastMmap  ports/www/p5-Catalyst-Plugin-Cache-FastMmap
 p5-Catalyst-Plugin-Cache-Memcached  ports/www/p5-Catalyst-Plugin-Cache-Memcached
 p5-Catalyst-Plugin-Cache-Memcached-Fast  ports/www/p5-Catalyst-Plugin-Cache-Memcached-Fast
-p5-Catalyst-Plugin-Cache-Store-FastMmap  ports/www/p5-Catalyst-Plugin-Cache-Store-FastMmap
 p5-Catalyst-Plugin-Captcha      ports/www/p5-Catalyst-Plugin-Captcha
 p5-Catalyst-Plugin-ConfigLoader  ports/www/p5-Catalyst-Plugin-ConfigLoader
 p5-Catalyst-Plugin-ConfigLoader-Environment  ports/www/p5-Catalyst-Plugin-ConfigLoader-Environment
@@ -11951,6 +11950,7 @@ p5-Devel-LeakGuard-Object       ports/devel/p5-Devel-LeakGuard-Object
 p5-Devel-LeakTrace              ports/devel/p5-Devel-LeakTrace
 p5-Devel-LeakTrace-Fast         ports/devel/p5-Devel-LeakTrace-Fast
 p5-Devel-LexAlias               ports/devel/p5-Devel-LexAlias
+p5-Devel-Mallinfo               ports/devel/p5-Devel-Mallinfo
 p5-Devel-Messenger              ports/devel/p5-Devel-Messenger
 p5-Devel-Modlist                ports/devel/p5-Devel-Modlist
 p5-Devel-NYTProf                ports/devel/p5-Devel-NYTProf
@@ -12360,7 +12360,6 @@ p5-Getopt-GUI-Long              ports/devel/p5-Getopt-GUI-Long
 p5-Getopt-Long                  ports/devel/p5-Getopt-Long
 p5-Getopt-Long-Descriptive      ports/devel/p5-Getopt-Long-Descriptive
 p5-Getopt-Lucid                 ports/textproc/p5-Getopt-Lucid
-p5-Getopt-Mixed                 ports/devel/p5-Getopt-Mixed
 p5-Getopt-Popt                  ports/devel/p5-Getopt-Popt
 p5-Git-PurePerl                 ports/devel/p5-Git-PurePerl
 p5-Git-Repository               ports/devel/p5-Git-Repository
@@ -12570,7 +12569,6 @@ p5-HTTP-Message                 ports/www/p5-HTTP-Message
 p5-HTTP-MobileAgent             ports/www/p5-HTTP-MobileAgent
 p5-HTTP-MobileAgent-Plugin-Charset  ports/www/p5-HTTP-MobileAgent-Plugin-Charset
 p5-HTTP-MobileAgent-Plugin-Locator  ports/www/p5-HTTP-MobileAgent-Plugin-Locator
-p5-HTTP-MobileAttribute         ports/www/p5-HTTP-MobileAttribute
 p5-HTTP-Negotiate               ports/www/p5-HTTP-Negotiate
 p5-HTTP-Parser                  ports/www/p5-HTTP-Parser
 p5-HTTP-Parser-XS               ports/www/p5-HTTP-Parser-XS
@@ -15395,7 +15393,6 @@ p5-catalyst-controller-ratelimit  ports/www/p5-Catalyst-Controller-RateLimit
 p5-catalyst-controller-requesttoken  ports/www/p5-Catalyst-Controller-RequestToken
 p5-catalyst-devel               ports/www/p5-Catalyst-Devel
 p5-catalyst-engine-apache       ports/www/p5-Catalyst-Engine-Apache
-p5-catalyst-engine-http-poe     ports/www/p5-Catalyst-Engine-HTTP-POE
 p5-catalyst-engine-http-prefork  ports/www/p5-Catalyst-Engine-HTTP-Prefork
 p5-catalyst-engine-psgi         ports/www/p5-Catalyst-Engine-PSGI
 p5-catalyst-enzyme              ports/www/p5-Catalyst-Enzyme
@@ -15407,7 +15404,6 @@ p5-catalyst-model-adaptor       ports/www/p5-Catalyst-Model-Adaptor
 p5-catalyst-model-cdbi          ports/www/p5-Catalyst-Model-CDBI
 p5-catalyst-model-cdbi-plain    ports/www/p5-Catalyst-Model-CDBI-Plain
 p5-catalyst-model-cdbi-sweet    ports/www/p5-Catalyst-Model-CDBI-Sweet
-p5-catalyst-model-dbic          ports/www/p5-Catalyst-Model-DBIC
 p5-catalyst-model-dbic-plain    ports/www/p5-Catalyst-Model-DBIC-Plain
 p5-catalyst-model-dbic-schema   ports/www/p5-Catalyst-Model-DBIC-Schema
 p5-catalyst-model-dynamicadaptor  ports/www/p5-Catalyst-Model-DynamicAdaptor
@@ -15432,7 +15428,6 @@ p5-catalyst-plugin-cache        ports/www/p5-Catalyst-Plugin-Cache
 p5-catalyst-plugin-cache-fastmmap  ports/www/p5-Catalyst-Plugin-Cache-FastMmap
 p5-catalyst-plugin-cache-memcached  ports/www/p5-Catalyst-Plugin-Cache-Memcached
 p5-catalyst-plugin-cache-memcached-fast  ports/www/p5-Catalyst-Plugin-Cache-Memcached-Fast
-p5-catalyst-plugin-cache-store-fastmmap  ports/www/p5-Catalyst-Plugin-Cache-Store-FastMmap
 p5-catalyst-plugin-captcha      ports/www/p5-Catalyst-Plugin-Captcha
 p5-catalyst-plugin-configloader  ports/www/p5-Catalyst-Plugin-ConfigLoader
 p5-catalyst-plugin-configloader-environment  ports/www/p5-Catalyst-Plugin-ConfigLoader-Environment
@@ -16252,6 +16247,7 @@ p5-devel-leakguard-object       ports/devel/p5-Devel-LeakGuard-Object
 p5-devel-leaktrace              ports/devel/p5-Devel-LeakTrace
 p5-devel-leaktrace-fast         ports/devel/p5-Devel-LeakTrace-Fast
 p5-devel-lexalias               ports/devel/p5-Devel-LexAlias
+p5-devel-mallinfo               ports/devel/p5-Devel-Mallinfo
 p5-devel-messenger              ports/devel/p5-Devel-Messenger
 p5-devel-modlist                ports/devel/p5-Devel-Modlist
 p5-devel-nytprof                ports/devel/p5-Devel-NYTProf
@@ -16666,7 +16662,6 @@ p5-getopt-gui-long              ports/devel/p5-Getopt-GUI-Long
 p5-getopt-long                  ports/devel/p5-Getopt-Long
 p5-getopt-long-descriptive      ports/devel/p5-Getopt-Long-Descriptive
 p5-getopt-lucid                 ports/textproc/p5-Getopt-Lucid
-p5-getopt-mixed                 ports/devel/p5-Getopt-Mixed
 p5-getopt-popt                  ports/devel/p5-Getopt-Popt
 p5-gis-distance                 ports/math/p5-GIS-Distance
 p5-gis-distance-fast            ports/math/p5-GIS-Distance-Fast
@@ -16908,7 +16903,6 @@ p5-http-mhttp                   ports/www/p5-HTTP-MHTTP
 p5-http-mobileagent             ports/www/p5-HTTP-MobileAgent
 p5-http-mobileagent-plugin-charset  ports/www/p5-HTTP-MobileAgent-Plugin-Charset
 p5-http-mobileagent-plugin-locator  ports/www/p5-HTTP-MobileAgent-Plugin-Locator
-p5-http-mobileattribute         ports/www/p5-HTTP-MobileAttribute
 p5-http-negotiate               ports/www/p5-HTTP-Negotiate
 p5-http-parser                  ports/www/p5-HTTP-Parser
 p5-http-parser-xs               ports/www/p5-HTTP-Parser-XS
@@ -21427,8 +21421,6 @@ ptiger                          ports/astro/ptiger
 ptkei                           ports/games/ptkei
 ptlib                           ports/devel/ptlib
 ptlib26                         ports/devel/ptlib26
-ptlink-ircd                     ports/irc/ptlink-ircd
-ptlink-services                 ports/irc/ptlink-services
 ptmalloc                        ports/devel/ptmalloc
 ptmalloc2                       ports/devel/ptmalloc2
 ptoc                            ports/lang/ptoc
@@ -22798,7 +22790,9 @@ r-cran-amore                    ports/science/R-cran-AMORE
 r-cran-bayesm                   ports/science/R-cran-bayesm
 r-cran-bitops                   ports/devel/R-cran-bitops
 r-cran-car                      ports/math/R-cran-car
+r-cran-caret                    ports/devel/R-cran-caret
 r-cran-coda                     ports/math/R-cran-coda
+r-cran-dbi                      ports/databases/R-cran-DBI
 r-cran-gpclib                   ports/math/R-cran-gpclib
 r-cran-inline                   ports/math/R-cran-inline
 r-cran-iterators                ports/devel/R-cran-iterators
@@ -22807,12 +22801,15 @@ r-cran-mvtnorm                  ports/math/R-cran-mvtnorm
 r-cran-plyr                     ports/devel/R-cran-plyr
 r-cran-psych                    ports/math/R-cran-psych
 r-cran-rcurl                    ports/ftp/R-cran-RCurl
+r-cran-reshape                  ports/devel/R-cran-reshape
+r-cran-rmysql                   ports/databases/R-cran-RMySQL
 r-cran-rsvgdevice               ports/math/R-cran-RSvgDevice
 r-cran-scraper                  ports/www/R-cran-scrapeR
 r-cran-sm                       ports/math/R-cran-sm
 r-cran-sp                       ports/math/R-cran-sp
 r-cran-suppdists                ports/math/R-cran-SuppDists
 r-cran-xml                      ports/textproc/R-cran-XML
+r-cran-xtable                   ports/textproc/R-cran-xtable
 r-cran-xts                      ports/math/R-cran-xts
 r-cran-zelig                    ports/math/R-cran-Zelig
 r-cran-zoo                      ports/math/R-cran-zoo
@@ -27527,7 +27524,6 @@ xwatchwin                       ports/x11/xwatchwin
 xwave                           ports/audio/xwave
 xwd                             ports/x11/xwd
 xwelltris                       ports/games/xwelltris
-xwhois                          ports/net/xwhois
 xwininfo                        ports/x11/xwininfo
 xwinwrap                        ports/x11/xwinwrap
 xwit                            ports/x11/xwit
