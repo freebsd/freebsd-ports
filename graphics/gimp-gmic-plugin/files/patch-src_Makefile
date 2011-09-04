@@ -1,7 +1,7 @@
 $FreeBSD$
 
---- src/Makefile.orig	2011-07-08 00:22:17.000000000 +0400
-+++ src/Makefile	2011-07-10 12:19:31.000000000 +0400
+--- src/Makefile.orig	2011-08-23 18:18:27.000000000 +0400
++++ src/Makefile	2011-08-30 22:32:02.000000000 +0400
 @@ -56,7 +56,7 @@
  USR = /opt/local
  else
@@ -20,7 +20,23 @@ $FreeBSD$
  
  # Flags to enable image display, using GDI32.
  GDI32_CFLAGS = -Dcimg_display=2 -Dcimg_appname=\\\"gmic\\\"
-@@ -236,6 +236,14 @@
+@@ -142,15 +142,6 @@
+ ZLIB_CFLAGS = -Dcimg_use_zlib
+ ZLIB_LDFLAGS = -lz
+ 
+-# Flags to enable native support of webcams, using the OpenCV library.
+-OPENCV_CFLAGS = -Dcimg_use_opencv -I$(USR)/include/opencv
+-ifeq ($(OS),Darwin)
+-OPENCV_LDFLAGS = -lopencv_core -lopencv_highgui   # Use this for OpenCV 2.2.0 !
+-else
+-OPENCV_LDFLAGS = -lcv -lhighgui
+-# OPENCV_LDFLAGS = -lopencv_core -lopencv_highgui   # Use this for OpenCV 2.2.0 !
+-endif
+-
+ # Flags to enable native support of most classical image file formats, using the GraphicsMagick++ library.
+ MAGICK_CFLAGS = -Dcimg_use_magick -I$(USR)/include/GraphicsMagick
+ ifeq ($(OS),Darwin)
+@@ -236,6 +227,14 @@
  	$(MAKE) gimp
  	$(MAKE) lib
  else
@@ -35,7 +51,7 @@ $FreeBSD$
  ifeq ($(OS),Darwin)
  	@echo "**"
  	@echo "** MacOSX configuration"
-@@ -252,9 +260,10 @@
+@@ -252,9 +251,10 @@
  	$(MAKE) gimp
  endif
  endif
@@ -47,7 +63,7 @@ $FreeBSD$
  
  lib:
  	$(MAKE) "CFLAGS=$(STD_LIB_CFLAGS) $(OPT_CFLAGS)" "LDFLAGS+=$(STD_LIB_LDFLAGS)" gmic_lib
-@@ -269,6 +278,9 @@
+@@ -269,6 +269,9 @@
  linux:
  	$(MAKE) "CFLAGS=$(STD_UNIX_CFLAGS) $(OPT_CFLAGS)" "LDFLAGS=$(STD_UNIX_LDFLAGS)" "STRIP_EXE=1" gmic_gmic
  
@@ -55,4 +71,4 @@ $FreeBSD$
 +	$(MAKE) "CFLAGS+=$(STD_UNIX_CFLAGS)" "LDFLAGS+=$(STD_UNIX_LDFLAGS)" "STRIP_EXE=1" gmic_gmic
 +
  custom:
- 	$(MAKE) "CFLAGS=$(CUST_UNIX_CFLAGS) $(OPT_CFLAGS)" "LDFLAGS=$(CUST_UNIX_LDFLAGS)" "STRIP_EXE=1" gmic_gmic 
+ 	$(MAKE) "CFLAGS=$(CUST_UNIX_CFLAGS) $(OPT_CFLAGS)" "LDFLAGS=$(CUST_UNIX_LDFLAGS)" "STRIP_EXE=1" gmic_gmic
