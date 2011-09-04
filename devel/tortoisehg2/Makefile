@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	tortoisehg
-PORTVERSION=	2.1.2
+PORTVERSION=	2.1.3
 CATEGORIES=	devel
 MASTER_SITES=	http://cdn.bitbucket.org/tortoisehg/targz/downloads/
 
@@ -36,6 +36,8 @@ INSTALLS_ICONS=	yes
 USE_PYTHON=	yes
 USE_PYDISTUTILS=yes
 INSTALLS_EGGINFO=yes
+
+SUB_FILES=	pkg-message
 
 .include <bsd.port.options.mk>
 
@@ -73,7 +75,7 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/contrib/tortoisehg.desktop ${PREFIX}/share/applications/
 
 	@${ECHO_MSG}
-	@${CAT} pkg-message
+	@${CAT} ${PKGMESSAGE}
 	@${ECHO_MSG}
 
 .include <bsd.port.mk>
