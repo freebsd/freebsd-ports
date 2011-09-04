@@ -12,7 +12,7 @@ CATEGORIES=	misc kde
 MASTER_SITES=	# none
 DISTFILES=	# none
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility port which installs a hierarchy of shared KDE directories
 
 NO_BUILD=	yes

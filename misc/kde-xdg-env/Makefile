@@ -16,7 +16,7 @@ PKGNAMESUFFIX=	-env
 DISTNAME=	# none
 EXTRACT_SUFX=	# none
 
-MAINTAINER=	kde@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Script which hooks into startkde and helps KDE pick up XDG apps/menus
 
 .if defined(KDE_PREFIX)
