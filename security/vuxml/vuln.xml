@@ -34,6 +34,37 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e55f948f-d729-11e0-abd1-0017f22d6707">
+    <topic>security/cfs -- buffer overflow</topic>
+    <affects>
+      <package>
+	<name>cfs</name>
+	<range><le>1.4.1_6</le></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Debian reports:</p>
+	<blockquote cite="http://www.debian.org/security/2002/dsa-116">
+	  <p>Zorgon found several buffer overflows in cfsd, a daemon that
+	    pushes encryption services into the Unix(tm) file system.
+	    We are not yet sure if these overflows can successfully be
+	    exploited to gain root access to the machine running the CFS daemon.
+	    However, since cfsd can easily be forced to die, a malicious user
+	    can easily perform a denial of service attack to it.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2002-0351</cvename>
+      <url>http://www.debian.org/security/2002/dsa-116</url>
+    </references>
+    <dates>
+      <discovery>2002-03-02</discovery>
+      <entry>2011-09-04</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="1b27af46-d6f6-11e0-89a6-080027ef73ec">
     <topic>ca_root_nss -- Extraction of unsafe certificates into trust bundle.</topic>
     <affects>
@@ -82,8 +113,7 @@ Note:  Please add new entries to the beginning of this file.
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Heather Adkins, Google's Information Security Manager, reported that
 	Google received</p>
-	<blockquote
-	  cite="http://googleonlinesecurity.blogspot.com/2011/08/update-on-attempted-man-in-middle.html">
+	<blockquote cite="http://googleonlinesecurity.blogspot.com/2011/08/update-on-attempted-man-in-middle.html">
 	  <p>[...] reports of attempted SSL man-in-the-middle (MITM)
 	    attacks against Google users, whereby someone tried to get between
 	    them and encrypted Google services. The people affected were
@@ -94,8 +124,7 @@ Note:  Please add new entries to the beginning of this file.
 	</blockquote>
 	<p>VASCO Data Security International Inc., owner of DigiNotar, issued a
 	  press statement confirming this incident:</p>
-	<blockquote
-	  cite="http://www.vasco.com/company/press_room/news_archive/2011/news_diginotar_reports_security_incident.aspx">
+	<blockquote cite="http://www.vasco.com/company/press_room/news_archive/2011/news_diginotar_reports_security_incident.aspx">
 	  <p>On July 19th 2011, DigiNotar detected an intrusion
 	    into its Certificate Authority (CA) infrastructure, which resulted in
 	    the fraudulent issuance of public key certificate requests for a
@@ -106,8 +135,7 @@ Note:  Please add new entries to the beginning of this file.
 	</blockquote>
 	<p>Mozilla, maintainer of the NSS package, from which FreeBSD derived
 	  ca_root_nss, stated that they</p>
-	<blockquote
-	  cite="https://blog.mozilla.com/security/2011/09/02/diginotar-removal-follow-up/">
+	<blockquote cite="https://blog.mozilla.com/security/2011/09/02/diginotar-removal-follow-up/">
 	  <p>revoked our trust in the DigiNotar certificate authority from all
 	    Mozilla software. This is not a temporary suspension, it is a
 	    complete removal from our trusted root program. Complete revocation
@@ -1578,8 +1606,7 @@ Note:  Please add new entries to the beginning of this file.
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
 	<p>Unbound developer reports:</p>
-	<blockquote
-	  cite="http://unbound.nlnetlabs.nl/downloads/CVE-2011-1922.txt">
+	<blockquote cite="http://unbound.nlnetlabs.nl/downloads/CVE-2011-1922.txt">
 	  <p>NLnet Labs was notified of an error in Unbound's code-path
 	    for error replies which is triggered under special conditions.
 	    The error causes the program to abort.</p>
