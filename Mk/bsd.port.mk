@@ -279,7 +279,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 # These variables control options about how a port gets built and/or
 # are shorthand notations for common sets of dependencies.
 # Use these if your port uses some of the common software packages. By
-# convention these should be set to "yes", although they only need to be
+# convention these should be set to 'yes', although they only need to be
 # defined. Defaults: not set, unless explicitly indicated below.
 #
 # Note: the distinction between the USE_* and WANT_* variables, and the
@@ -303,7 +303,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  for compression.
 # USE_MAKESELF		- If set, this port distfile uses makeself, not tar w/[bg]zip
 #				  for compression.
-# USE_DOS2UNIX	- If set to "yes", remove the ^M from all files
+# USE_DOS2UNIX	- If set to "YES", remove the ^M from all files
 #				  under ${WRKSRC}. If set to a string, remove in all
 #				  files under ${WRKSRC} with one of these names the ^Ms.
 # DOS2UNIX_REGEX
@@ -319,15 +319,15 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 ##
 # USE_ICONV		- If set, this port uses libiconv.
 # USE_GETTEXT	- The port uses GNU gettext (libintl).
-#					"build"		as a build-time dependency
-#					"yes"		as a library dependency
-#					"run"		as a run-time dependency
+#					'build'		as a build-time dependency
+#					'yes'		as a library dependency
+#					'run'		as a run-time dependency
 ##
 # USE_GHOSTSCRIPT
 #				- If set, this port needs ghostscript to both
 #				  build and run.  If a number is specified,
 #				  the specified version will be used.
-#				  The valid value is "7", "8", or "9" in that case.
+#				  The valid value is '7', '8', or '9' in that case.
 # USE_GHOSTSCRIPT_BUILD
 #				- If set, this port needs ghostscript to build.
 # USE_GHOSTSCRIPT_RUN
@@ -345,7 +345,7 @@ FreeBSD_MAINTAINER=	portmgr@FreeBSD.org
 #				  should not be used in Makefile.
 ##
 # USE_BISON		- Implies that the port uses bison in one way or another:
-#				  "build", "run", "both", implying build,
+#				  'build', 'run', 'both', implying build,
 #				  runtime, and both build/run dependencies
 ##
 # USE_IMAKE		- If set, this port uses imake.
@@ -1614,7 +1614,7 @@ CONFIGURE_SHELL?=	${SH}
 MAKE_SHELL?=	${SH}
 
 CONFIGURE_ENV+=	SHELL=${SH} CONFIG_SHELL=${SH}
-MAKE_ENV+=		SHELL=${SH} NO_LINT=yes
+MAKE_ENV+=		SHELL=${SH} NO_LINT=YES
 
 .if defined(MANCOMPRESSED)
 .if ${MANCOMPRESSED} != yes && ${MANCOMPRESSED} != no && \
@@ -1641,10 +1641,10 @@ PATCH_DEPENDS+=		${LOCALBASE}/bin/unzip:${PORTSDIR}/archivers/unzip
 
 .if ${ARCH} == "amd64" || ${ARCH} =="ia64"
 .if exists(/usr/lib32)
-HAVE_COMPAT_IA32_LIBS?=  yes
+HAVE_COMPAT_IA32_LIBS?=  YES
 .endif
 .if !defined(HAVE_COMPAT_IA32_KERN)
-HAVE_COMPAT_IA32_KERN!= if ${SYSCTL} -n compat.ia32.maxvmem >/dev/null 2>&1; then echo yes; fi
+HAVE_COMPAT_IA32_KERN!= if ${SYSCTL} -n compat.ia32.maxvmem >/dev/null 2>&1; then echo YES; fi
 .endif
 .endif
 
@@ -1820,7 +1820,7 @@ IGNORE=		cannot be built with unknown FAM system: ${FAM_SYSTEM}
 .endif
 .endif # USE_FAM
 
-.if defined(USE_RC_SUBR) && ${USE_RC_SUBR:L} != "yes"
+.if defined(USE_RC_SUBR) && ${USE_RC_SUBR:U} != "YES"
 SUB_FILES+=	${USE_RC_SUBR}
 .endif
 
@@ -3577,7 +3577,7 @@ do-extract:
 .if !target(patch-dos2unix)
 patch-dos2unix:
 .if defined(USE_DOS2UNIX)
-.if ${USE_DOS2UNIX:L}=="yes"
+.if ${USE_DOS2UNIX:U}=="YES"
 	@${ECHO_MSG} "===>   Converting DOS text files to UNIX text files"
 	@${FIND} -E ${WRKSRC} -type f -iregex '${DOS2UNIX_REGEX}' -print0 | \
 			${XARGS} -0 ${REINPLACE_CMD} -i '' -e 's/$$//'
@@ -5779,7 +5779,7 @@ add-plist-post:
 
 .if !target(install-rc-script)
 install-rc-script:
-.if defined(USE_RCORDER) || defined(USE_RC_SUBR) && ${USE_RC_SUBR:L} != "yes"
+.if defined(USE_RCORDER) || defined(USE_RC_SUBR) && ${USE_RC_SUBR:U} != "YES"
 .if defined(USE_RCORDER)
 	@${ECHO_MSG} "===> Installing early rc.d startup script(s)"
 	@${ECHO_CMD} "@cwd /" >> ${TMPPLIST}
@@ -5789,7 +5789,7 @@ install-rc-script:
 	done
 	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
 .endif
-.if defined(USE_RC_SUBR) && ${USE_RC_SUBR:L} != "yes"
+.if defined(USE_RC_SUBR) && ${USE_RC_SUBR:U} != "YES"
 	@${ECHO_MSG} "===> Installing rc.d startup script(s)"
 	@${ECHO_CMD} "@cwd ${PREFIX}" >> ${TMPPLIST}
 	@for i in ${USE_RC_SUBR}; do \
