@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	iroffer
-PORTVERSION=	3.26
+PORTVERSION=	3.27
 CATEGORIES=	irc
 MASTER_SITES=	http://iroffer.dinoex.net/
 PKGNAMESUFFIX=	-dinoex${PKGNAMESUFFIX2}
@@ -25,14 +25,18 @@ CONFIGURE_ARGS=	CC="${CC}" LDFLAGS="${LDFLAGS}" LOCALBASE="${LOCALBASE}"
 ALL_TARGET=	all-lang doc
 USE_RC_SUBR=	iroffer-dinoex
 
-IROFFER_DOCS=	README-iroffer.txt README.modDinoex LIESMICH.modDinoex \
+IROFFER_DOCS=	README README.modDinoex LIESMICH.modDinoex \
 		LICENSE THANKS TODO \
 		help-admin-de.txt help-admin-en.txt \
 		help-admin-fr.txt help-admin-it.txt \
 		doc/iroffer.1.txt doc/iroffer.1.html doc/iroffer.1.ps \
-		doc/INSTALL-linux-de.html doc/INSTALL-linux-en.html \
-		doc/INSTALL-linux-fr.html doc/INSTALL-linux-it.html \
-		doc/INSTALL-vhost-de.html doc/INSTALL-vhost-fr.html
+		doc/INSTALL-linux-de.html doc/INSTALL-linux-de.txt \
+		doc/INSTALL-linux-en.html doc/INSTALL-linux-en.txt \
+		doc/INSTALL-linux-fr.html doc/INSTALL-linux-fr.txt \
+		doc/INSTALL-linux-it.html doc/INSTALL-linux-it.txt \
+		doc/INSTALL-vhost-de.html doc/INSTALL-vhost-de.txt \
+		doc/INSTALL-vhost-en.html doc/INSTALL-vhost-en.txt \
+		doc/INSTALL-vhost-fr.html doc/INSTALL-vhost-fr.txt
 IROFFER_EXAMPLES= iroffer.cron \
 		sample.config beispiel.config exemple.config \
 		header.html footer.html ruby-sample.rb
