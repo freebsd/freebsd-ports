@@ -30,11 +30,19 @@ you update your ports collection, before attempting any port upgrades.
 
 20110829:
   AFFECTS: users of security/maia
-  AUTHOR: crees@FreeBSD.org
+  AUTHOR: Janky Jay, III <ek@purplehat.org>
 
   There have been many changes to the maia port, including renaming the rc
   script and variables from maia to maiad.  You will need to replace any
-  instances of maia with maiad in /etc/rc.conf.
+  instances of maia with maiad in /etc/rc.conf, as well as renaming /var/amavisd
+  to /var/maiad.  The 'vscan' user's home directory also needs to be changed to
+  /var/maiad.
+
+  These can be done by:
+
+  # mv /var/amavisd /var/maiad
+  # sed -i.bak -e "s/^maia_/maiad_/" /etc/rc.conf
+  # pw usermod vscan -d /var/maiad
 
 20110828:
   AFFECTS: users of print/cups-{base,client,image}
