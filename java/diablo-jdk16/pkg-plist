@@ -2804,7 +2804,7 @@ diablo-jdk%%JDK_VERSION%%/src.zip
 @dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/deploy
 @dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/cmm
 @dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/audio
-@dirrm diablo-jdk%%JDK_VERSION%%/jre/lib/applet
+@dirrmtry diablo-jdk%%JDK_VERSION%%/jre/lib/applet
 @dirrm diablo-jdk%%JDK_VERSION%%/jre/lib
 @dirrm diablo-jdk%%JDK_VERSION%%/jre/javaws
 @dirrm diablo-jdk%%JDK_VERSION%%/jre/bin
