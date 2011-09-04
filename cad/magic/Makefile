@@ -6,69 +6,55 @@
 #
 
 PORTNAME=	magic
-PORTVERSION=	7.1
-PORTREVISION=	4
+PORTVERSION=	7.5.213
 CATEGORIES=	cad
-MASTER_SITES=	http://vlsi.cornell.edu/magic/
+MASTER_SITES=	http://opencircuitdesign.com/magic/archive/ \
+		http://fossies.org/linux/misc/
+EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An interactive editor for VLSI layouts
 
-USE_XORG=	x11
-USE_GMAKE=	yes
-MAKE_ENV=	CADDIR="${PREFIX}"
-ALL_TARGET=	mains
+LIB_DEPENDS+=	BLT24.3:${PORTSDIR}/x11-toolkits/blt
 
-BINS=	XHelper7 ext2sim ext2spice extcheck magic magicusage net2ir
-MAN1=	ext2sim.1 ext2spice.1 extcheck.1 magic.1 magicusage.1
-MAN3=	dqueue.3 extflat.3 geometry.3 hash.3 heap.3 libmalloc.3 list.3 \
-	magicutils.3 malloc.3 path.3 runstats.3 set.3 show.3 stack.3 string.3
-MAN5=	cmap.5 displays.5 dlys.5 dstyle.5 ext.5 glyphs.5 magic.5 net.5 sim.5
-MAN8=	prleak.8
+CONFIGURE_WRKSRC=	${WRKSRC}/scripts
+
+USE_XORG=	ice xext xi xmu
+USE_GL=		gl
+USE_TCL_BUILD=	yes
+USE_TK_BUILD=	yes
+USE_TCL=	yes
+USE_TK=		yes
+USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
+CONFIGURE_ENV=	LDFLAGS="${LDFLAGS}"
+CONFIGURE_ARGS=	--with-tcl=${TCL_LIBDIR} --with-tk=${TK_LIBDIR}
+ALL_TARGET=	tcllibrary
+MAKE_JOBS_UNSAFE=yes
+
+MAN1=		ext2sim.1 ext2spice.1 extcheck.1 magic.1
+MAN5=		cmap.5 displays.5 dlys.5 dstyle.5 ext.5 glyphs.5 mag.5 \
+		net.5 sim.5
+
+CPPFLAGS=	-I${LOCALBASE}/include
+LDFLAGS=	-L${LOCALBASE}/lib
 
 .include <bsd.port.pre.mk>
 
 post-patch:
-	@${EGREP} -lr '^#endif[^$$]' ${WRKSRC} | ${XARGS} ${REINPLACE_CMD} -e \
-		's|\(^#endif\).*|\1|g; \
-		 s|\(^#else\).*|\1|g; \
-		 s|include.*<varargs\.h>|include <stdarg\.h>|'
-	@${FIND} ${WRKSRC} -name "Makefile" | ${XARGS} ${REINPLACE_CMD} -e \
-		's|make |\$$\{MAKE\} |g'
-
-do-configure:
-	@cd ${WRKSRC} && ${WRKSRC}/scripts/makedbh \
-		database/database.h.in database/database.h
-	@${CP} ${FILESDIR}/defs.mak ${WRKSRC}/defs.mak
-
-post-install:
-	@${CHMOD} ${BINMODE} ${PREFIX}/bin/spice2sim
-	@${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/bin/spice2sim
-.for f in ${BINS}
-	@${CHMOD} ${BINMODE} ${PREFIX}/bin/${f}
-	@${CHOWN} ${BINOWN}:${BINGRP} ${PREFIX}/bin/${f}
-	@${STRIP_CMD} ${PREFIX}/bin/${f}
-.endfor
-.for f in ${MAN1}
-	@${CHMOD} ${MANMODE} ${PREFIX}/man/man1/${f}
-	@${CHOWN} ${MANOWN}:${MANGRP} ${PREFIX}/man/man1/${f}
-.endfor
-.for f in ${MAN3}
-	@${CHMOD} ${MANMODE} ${PREFIX}/man/man3/${f}
-	@${CHOWN} ${MANOWN}:${MANGRP} ${PREFIX}/man/man3/${f}
-.endfor
-.for f in ${MAN5}
-	@${CHMOD} ${MANMODE} ${PREFIX}/man/man5/${f}
-	@${CHOWN} ${MANOWN}:${MANGRP} ${PREFIX}/man/man5/${f}
-.endfor
-.for f in ${MAN8}
-	@${CHMOD} ${MANMODE} ${PREFIX}/man/man8/${f}
-	@${CHOWN} ${MANOWN}:${MANGRP} ${PREFIX}/man/man8/${f}
-.endfor
-	@${CHMOD} -R a+rX,go-w ${PREFIX}/lib/magic
-	@${CHOWN} -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/magic
-	@${CHMOD} ${SHAREMODE} ${PREFIX}/lib/mpack.h ${PREFIX}/lib/libmpack.a
-	@${CHOWN} ${SHAREOWN}:${SHAREGRP} ${PREFIX}/lib/mpack.h		\
-	  ${PREFIX}/lib/libmpack.a
+	@${REINPLACE_CMD} -e \
+		's|^#!.*|#!${AWK} -f|' ${WRKSRC}/ext2spice/spice2sim
+	@${REINPLACE_CMD} -e \
+		's|TCL_LIB_NAME=.*|TCL_LIB_NAME="tcl${TCL_VER:S/.//}"|g ; \
+		 s|TK_LIB_NAME=.*|TK_LIB_NAME="tk${TK_VER:S/.//}"|g ; \
+		 s|wish$${TK_VERSION}|${WISH:T}|g ; \
+		 s|tclsh$${TK_VERSION}|${TCLSH:T}|g ; \
+		 s|-l/usr/X11R6/include|-I${LOCALBASE}/include|g' ${CONFIGURE_WRKSRC}/configure
+	@${REINPLACE_CMD} -e \
+		'/CFLAGS/s| -pg | |' ${WRKSRC}/tcltk/Makefile
+	@${REINPLACE_CMD} -e \
+		's|^#!.*|#!${TCLSH}|' ${WRKSRC}/tcltk/strip_reflibs.tcl
+	@${REINPLACE_CMD} -e \
+		's|^#!.*|#!${WISH}|' ${WRKSRC}/tcltk/tkshell.tcl
 
 .include <bsd.port.post.mk>
