@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	GD-SecurityImage
-PORTVERSION=	1.70
-PORTREVISION=	4
+PORTVERSION=	1.71
 PORTEPOCH=	1
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
@@ -16,17 +15,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl5 module for creating CAPTCHA security images
 
-BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/GD.pm:${PORTSDIR}/graphics/p5-GD
+BUILD_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
+RUN_DEPENDS=	p5-GD>=0:${PORTSDIR}/graphics/p5-GD
 
 OPTIONS=	IMAGEMAGICK "Build ImageMagick module" off
-
-.include <bsd.port.options.mk>
-
-.if defined(WITH_IMAGEMAGICK)
-BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick
-.endif
-
-RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PORTSCOUT=	skipv:1.581
 
@@ -37,4 +29,17 @@ MAN3=		GD::SecurityImage.3 \
 		GD::SecurityImage::Magick.3 \
 		GD::SecurityImage::Styles.3
 
-.include <bsd.port.mk>
+.include <bsd.port.options.mk>
+
+.if defined(WITH_IMAGEMAGICK)
+BUILD_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick
+RUN_DEPENDS+=	${SITE_PERL}/${PERL_ARCH}/Image/Magick.pm:${PORTSDIR}/graphics/ImageMagick
+.endif
+
+.include <bsd.port.pre.mk>
+
+.if ${PERL_LEVEL} < 501400
+BUILD_DEPENDS+=	p5-Module-Build>=0.3800:${PORTSDIR}/devel/p5-Module-Build
+.endif
+
+.include <bsd.port.post.mk>
