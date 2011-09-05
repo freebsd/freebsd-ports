@@ -7,7 +7,7 @@
 
 PORTNAME=	mydns
 PORTVERSION=	1.1.0
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	dns databases
 MASTER_SITES=	http://mydns.bboy.net/download/
 
