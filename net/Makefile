@@ -1126,7 +1126,6 @@
     SUBDIR += unison232
     SUBDIR += unix2tcp
     SUBDIR += uplog
-    SUBDIR += uproxy
     SUBDIR += urelay
     SUBDIR += uriparser
     SUBDIR += urlendec
