@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Net_SMTP
-PORTVERSION=	1.5.1
+PORTVERSION=	1.6.1
 CATEGORIES=	net mail www pear
 
 MAINTAINER=	wen@FreeBSD.org
