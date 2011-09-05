@@ -1,5 +1,5 @@
---- bin/distro-install-desktop-integration.orig	2011-09-05 16:57:47.578974736 +0200
-+++ bin/distro-install-desktop-integration	2011-09-05 17:00:00.931583334 +0200
+--- bin/distro-install-desktop-integration.orig	2011-08-15 19:46:21.000000000 +0200
++++ bin/distro-install-desktop-integration	2011-09-05 18:37:11.798849176 +0200
 @@ -74,12 +74,12 @@
      test -n "$oowrapper_name" && create_man_link "$oowrapper_name" "$used_man_page" "$file_list"
      
@@ -9,8 +9,9 @@
  }
  
  # install desktop integration from plain packages
- sysui_temp=`mktemp -d /tmp/distro-pack-desktop-integration-XXXXXX`
+-sysui_temp=`mktemp -t -d distro-pack-desktop-integration-XXXXXX`
 -cp -a sysui/unxlng*/misc/libreoffice/* "$sysui_temp"
++sysui_temp=`mktemp -d /tmp/distro-pack-desktop-integration-XXXXXX`
 +cp -a sysui/unx*/misc/libreoffice/* "$sysui_temp"
  cp -a sysui/desktop/share/create_tree.sh "$sysui_temp"
  builddir=`pwd`
