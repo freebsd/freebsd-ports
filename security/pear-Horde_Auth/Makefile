@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	Horde_Auth
-PORTVERSION=	1.1.0
+PORTVERSION=	1.2.0
 CATEGORIES=	security www pear
 
 MAINTAINER=	horde@FreeBSD.org
