@@ -20,7 +20,7 @@ EXTRACT_AFTER_ARGS=	> ${WRKDIR}/${PORTNAME}
 
 NO_WRKSUBDIR=	yes
 
-USE_PERL5_RUN=	yes
+USE_PERL5=	yes
 
 MAN1=		pxytest.1
 PLIST_FILES=	bin/pxytest
