@@ -1,6 +1,5 @@
 %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Descriptive/.packlist
 %%SITE_PERL%%/Statistics/Descriptive.pm
-%%SITE_PERL%%/Statistics/tag-release.pl
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics/Descriptive
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Statistics
 @dirrmtry %%SITE_PERL%%/Statistics
