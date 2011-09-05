@@ -1,5 +1,5 @@
---- Makefile.orig	Fri Nov 24 16:24:37 2006
-+++ Makefile	Fri Nov 24 16:24:48 2006
+--- Makefile.orig	2001-08-14 20:10:46.000000000 +0800
++++ Makefile	2011-09-05 15:19:26.000000000 +0800
 @@ -11,7 +11,7 @@
  
  ## X11 base directory
@@ -9,3 +9,12 @@
  
  
  ## directory for record files
+@@ -46,7 +46,7 @@ APP_DEFAULTS = $(X11BASE)/lib/X11/app-de
+ ########################################################
+ 
+ ## C compiler
+-CC      = gcc
++#CC      = gcc
+ 
+ ## additional include file directory
+ IDIR    = -I$(X11BASE)/include
