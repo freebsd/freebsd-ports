@@ -7,7 +7,7 @@
 #
 
 PORTNAME=	notification-daemon
-PORTVERSION=	0.7.1
+PORTVERSION=	0.7.2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 
@@ -20,7 +20,7 @@ LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus \
 LICENSE=	GPLv2
 LICENSE_FILE=	${WRKSRC}/COPYING
 USE_BZIP2=	yes
-USE_GNOME=	gnomehack gnomeprefix intlhack gconf2 gtk30
+USE_GNOME=	gnomehack gnomeprefix intlhack gtk30
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 USE_XORG=	x11
