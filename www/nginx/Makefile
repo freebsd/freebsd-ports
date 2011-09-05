@@ -465,12 +465,11 @@ CONFIGURE_ARGS+=--with-pcre
 .endif
 
 .if defined(WITH_PASSENGER_MODULE)
-PASSENGER_VERSION=	3.0.8
+PASSENGER_VERSION=	3.0.9
 MASTER_SITES+=	RF/passenger/:passenger
 DISTFILES+=	passenger-${PASSENGER_VERSION}.tar.gz:passenger
 CONFIGURE_ARGS+=--add-module=${WRKDIR}/passenger-${PASSENGER_VERSION}/ext/nginx
-EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger::build::nginx.rb \
-		${PATCHDIR}/extra-patch-passenger::ext::nginx::ContentHandler.c
+EXTRA_PATCHES+=	${PATCHDIR}/extra-patch-passenger::build::nginx.rb
 .if !defined(WITH_DEBUG)
 CONFIGURE_ENV+=	OPTIMIZE="yes"
 CFLAGS+=	-DNDEBUG
