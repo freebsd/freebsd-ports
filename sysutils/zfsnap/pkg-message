@@ -44,7 +44,7 @@
 	more advanced setup, you need to call zfSnap from crontab directly.
 	This way you can combine all sort of parameter combinations.
 
-	Don't forget to check http://wiki.bsdroot.lv/zfsnap for more info.
+	Don't forget to check https://github.com/graudeejs/zfSnap/wiki for more
+	info.
 
-	Feedback welcomed: zfsnap@bsdroot.lv
-
+	Feedback welcomed: graudeejs@gmail.com
