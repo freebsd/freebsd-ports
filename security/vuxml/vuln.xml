@@ -34,6 +34,30 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="a83f25df-d775-11e0-8bf1-003067b2972c">
+	  <topic>XSS issue in MantisBT</topic>
+	  <affects>
+		  <package>
+			  <name>mantis</name>
+			  <range><ge>1.2.0</ge><lt>1.2.7</lt></range>
+		  </package>
+	  </affects>
+	  <description>
+		  <body xmlns="http://www.w3.org/1999/xhtml">
+			  <blockquote  cite="http://www.mantisbt.org/blog/?p=142">
+			    Net.Edit0r from BlACK Hat Group reported an XSS issue in search.php. All MantisBT users (including anonymous users that are not logged in to public bug trackers) could be impacted by this vulnerability.
+			  </blockquote>
+		  </body>
+	  </description>
+	  <references>
+		  <freebsdpr>ports/160368</freebsdpr>
+		  <cvename>CVE-2011-2938</cvename>
+	  </references>
+	  <dates>
+		  <discovery>2011-08-18</discovery>
+		  <entry>2011-09-05</entry>
+	  </dates>
+  </vuln>
   <vuln vid="e55f948f-d729-11e0-abd1-0017f22d6707">
     <topic>security/cfs -- buffer overflow</topic>
     <affects>

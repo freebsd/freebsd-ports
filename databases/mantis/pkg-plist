@@ -46,6 +46,7 @@
 %%WWWDIR%%/api/soap/mc_issue_attachment_api.php
 %%WWWDIR%%/api/soap/mc_project_api.php
 %%WWWDIR%%/api/soap/mc_project_attachment_api.php
+%%WWWDIR%%/api/soap/mc_user_pref_api.php
 %%WWWDIR%%/billing_inc.php
 %%WWWDIR%%/billing_page.php
 %%WWWDIR%%/browser_search_plugin.php
@@ -894,6 +895,7 @@
 %%WWWDIR%%/news_update.php
 %%WWWDIR%%/news_view_page.php
 %%WWWDIR%%/permalink_page.php
+%%WWWDIR%%/phing/tasks/mantisbt/ExtractMantisBTVersion.php
 %%WWWDIR%%/plugin.php
 %%WWWDIR%%/plugin_file.php
 %%WWWDIR%%/plugins/MantisCoreFormatting/MantisCoreFormatting.php
@@ -903,7 +905,9 @@
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_breton.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_bulgarian.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_catalan.txt
+%%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_czech.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_chinese_simplified.txt
+%%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_chinese_traditional.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_dutch.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_english.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_finnish.txt
@@ -915,6 +919,7 @@
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_interlingua.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_italian.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_japanese.txt
+%%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_lithuanian.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_macedonian.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_norwegian_bokmal.txt
 %%WWWDIR%%/plugins/MantisCoreFormatting/lang/strings_occitan.txt
@@ -937,10 +942,12 @@
 %%WWWDIR%%/plugins/MantisGraph/core/graph_api.php
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_arabic.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_arabicegyptianspoken.txt
+%%WWWDIR%%/plugins/MantisGraph/lang/strings_belarusian_tarask.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_breton.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_bulgarian.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_catalan.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_chinese_simplified.txt
+%%WWWDIR%%/plugins/MantisGraph/lang/strings_chinese_traditional.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_czech.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_dutch.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_english.txt
@@ -969,6 +976,7 @@
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_swedish.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_swissgerman.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_tagalog.txt
+%%WWWDIR%%/plugins/MantisGraph/lang/strings_turkish.txt
 %%WWWDIR%%/plugins/MantisGraph/lang/strings_vietnamese.txt
 %%WWWDIR%%/plugins/MantisGraph/pages/bug_graph_bycategory.php
 %%WWWDIR%%/plugins/MantisGraph/pages/bug_graph_bystatus.php
@@ -1005,9 +1013,12 @@
 %%WWWDIR%%/plugins/XmlImportExport/XmlImportExport.php
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_afrikaans.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_arabic.txt
+%%WWWDIR%%/plugins/XmlImportExport/lang/strings_belarusian_tarask.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_breton.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_catalan.txt
+%%WWWDIR%%/plugins/XmlImportExport/lang/strings_czech.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_chinese_simplified.txt
+%%WWWDIR%%/plugins/XmlImportExport/lang/strings_chinese_traditional.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_dutch.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_english.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_finnish.txt
@@ -1019,6 +1030,7 @@
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_interlingua.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_italian.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_japanese.txt
+%%WWWDIR%%/plugins/XmlImportExport/lang/strings_lithuanian.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_macedonian.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_norwegian_bokmal.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_occitan.txt
@@ -1028,6 +1040,7 @@
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_russian.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_slovak.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_spanish.txt
+%%WWWDIR%%/plugins/XmlImportExport/lang/strings_swedish.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_swissgerman.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_tagalog.txt
 %%WWWDIR%%/plugins/XmlImportExport/lang/strings_turkish.txt
@@ -1092,7 +1105,10 @@
 %%WWWDIR%%/tests/soap/IssueUpdateTest.php
 %%WWWDIR%%/tests/soap/LoginTest.php
 %%WWWDIR%%/tests/soap/ProjectTest.php
+%%WWWDIR%%/tests/soap/RelationshipTest.php
 %%WWWDIR%%/tests/soap/SoapBase.php
+%%WWWDIR%%/tests/soap/UserTest.php
+%%WWWDIR%%/tests/soap/VersionTest.php
 %%WWWDIR%%/tests/test.php
 %%WWWDIR%%/tests/test_config_get_set.php
 %%WWWDIR%%/verify.php
@@ -1120,6 +1136,9 @@
 @dirrm %%WWWDIR%%/plugins/MantisCoreFormatting/lang
 @dirrm %%WWWDIR%%/plugins/MantisCoreFormatting
 @dirrm %%WWWDIR%%/plugins
+@dirrm %%WWWDIR%%/phing/tasks/mantisbt
+@dirrm %%WWWDIR%%/phing/tasks
+@dirrm %%WWWDIR%%/phing
 @dirrm %%WWWDIR%%/library/utf8/utils
 @dirrm %%WWWDIR%%/library/utf8/native
 @dirrm %%WWWDIR%%/library/utf8/mbstring
