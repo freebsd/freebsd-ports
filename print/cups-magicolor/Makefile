@@ -21,6 +21,8 @@ LIB_DEPENDS=	cups.2:${PORTSDIR}/print/cups-client \
 		lcms.1:${PORTSDIR}/graphics/lcms
 RUN_DEPENDS=	espgs:${PORTSDIR}/print/cups-pstoraster
 
+BROKEN=		does not compile
+
 WRKSRC=		${WRKDIR}/magicolor2430DL-${PORTVERSION}
 
 USE_AUTOTOOLS=	automake:env autoconf
