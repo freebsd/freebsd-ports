@@ -26,6 +26,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS} \
 		cdrdao:${PORTSDIR}/sysutils/cdrdao \
 		cd-discid:${PORTSDIR}/audio/cd-discid
 
+BROKEN=		does not build
+
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_RUBY=	yes
