@@ -2595,3 +2595,4 @@ irc/ptlink-ircd||2011-09-03|Has expired: No upstream source, no distfile and no 
 irc/ptlink-services||2011-09-03|Has expired: No upstream source, no distfile and no maintainer
 www/mediawiki115||2011-09-03|unsupported upstream
 www/p5-Catalyst-Plugin-Authentication-Store-DBIC||2011-09-03|Use p5-Catalyst-Authentication-Store-DBIx-Class instead
+net/uproxy||2011-09-04|Master site disappeared, abandonware
