@@ -42,7 +42,6 @@
     SUBDIR += dynamag
     SUBDIR += dzen2
     SUBDIR += eaglemode
-    SUBDIR += ebuttons
     SUBDIR += ecore-imf
     SUBDIR += ecore-imf_evas
     SUBDIR += ecore-input
