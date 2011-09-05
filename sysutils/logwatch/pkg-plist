@@ -4,6 +4,7 @@ etc/logwatch/defaults/logfiles/autorpm.conf
 etc/logwatch/defaults/logfiles/bfd.conf
 etc/logwatch/defaults/logfiles/cisco.conf
 etc/logwatch/defaults/logfiles/clam-update.conf
+etc/logwatch/defaults/logfiles/clamav.conf
 etc/logwatch/defaults/logfiles/cron.conf
 etc/logwatch/defaults/logfiles/daemon.conf
 etc/logwatch/defaults/logfiles/denyhosts.conf
@@ -15,10 +16,12 @@ etc/logwatch/defaults/logfiles/exim.conf
 etc/logwatch/defaults/logfiles/extreme-networks.conf
 etc/logwatch/defaults/logfiles/fail2ban.conf
 etc/logwatch/defaults/logfiles/http.conf
+etc/logwatch/defaults/logfiles/http-error.conf
 etc/logwatch/defaults/logfiles/iptables.conf
 etc/logwatch/defaults/logfiles/kernel.conf
 etc/logwatch/defaults/logfiles/maillog.conf
 etc/logwatch/defaults/logfiles/messages.conf
+etc/logwatch/defaults/logfiles/mysql.conf
 etc/logwatch/defaults/logfiles/netopia.conf
 etc/logwatch/defaults/logfiles/netscreen.conf
 etc/logwatch/defaults/logfiles/php.conf
@@ -33,6 +36,7 @@ etc/logwatch/defaults/logfiles/rt314.conf
 etc/logwatch/defaults/logfiles/samba.conf
 etc/logwatch/defaults/logfiles/secure.conf
 etc/logwatch/defaults/logfiles/sonicwall.conf
+etc/logwatch/defaults/logfiles/spamassassin.conf
 etc/logwatch/defaults/logfiles/syslog.conf
 etc/logwatch/defaults/logfiles/tac_acc.conf
 etc/logwatch/defaults/logfiles/up2date.conf
@@ -46,6 +50,7 @@ etc/logwatch/defaults/services/arpwatch.conf
 etc/logwatch/defaults/services/audit.conf
 etc/logwatch/defaults/services/automount.conf
 etc/logwatch/defaults/services/autorpm.conf
+etc/logwatch/defaults/services/barracuda.conf
 etc/logwatch/defaults/services/bfd.conf
 etc/logwatch/defaults/services/cisco.conf
 etc/logwatch/defaults/services/clam-update.conf
@@ -66,9 +71,11 @@ etc/logwatch/defaults/services/exim.conf
 etc/logwatch/defaults/services/eximstats.conf
 etc/logwatch/defaults/services/extreme-networks.conf
 etc/logwatch/defaults/services/fail2ban.conf
+etc/logwatch/defaults/services/fetchmail.conf
 etc/logwatch/defaults/services/ftpd-messages.conf
 etc/logwatch/defaults/services/ftpd-xferlog.conf
 etc/logwatch/defaults/services/http.conf
+etc/logwatch/defaults/services/http-error.conf
 etc/logwatch/defaults/services/identd.conf
 etc/logwatch/defaults/services/imapd.conf
 etc/logwatch/defaults/services/in.qpopper.conf
@@ -79,6 +86,7 @@ etc/logwatch/defaults/services/kernel.conf
 etc/logwatch/defaults/services/mailscanner.conf
 etc/logwatch/defaults/services/modprobe.conf
 etc/logwatch/defaults/services/mountd.conf
+etc/logwatch/defaults/services/mysql.conf
 etc/logwatch/defaults/services/named.conf
 etc/logwatch/defaults/services/netopia.conf
 etc/logwatch/defaults/services/netscreen.conf
@@ -114,11 +122,13 @@ etc/logwatch/defaults/services/shaperd.conf
 etc/logwatch/defaults/services/slon.conf
 etc/logwatch/defaults/services/smartd.conf
 etc/logwatch/defaults/services/sonicwall.conf
+etc/logwatch/defaults/services/spamassassin.conf
 etc/logwatch/defaults/services/sshd.conf
 etc/logwatch/defaults/services/sshd2.conf
 etc/logwatch/defaults/services/stunnel.conf
 etc/logwatch/defaults/services/sudo.conf
 etc/logwatch/defaults/services/syslogd.conf
+etc/logwatch/defaults/services/syslog-ng.conf
 etc/logwatch/defaults/services/tac_acc.conf
 etc/logwatch/defaults/services/up2date.conf
 etc/logwatch/defaults/services/vpopmail.conf
@@ -131,6 +141,7 @@ etc/logwatch/defaults/services/zz-fortune.conf
 etc/logwatch/defaults/services/zz-network.conf
 etc/logwatch/defaults/services/zz-runtime.conf
 etc/logwatch/defaults/services/zz-sys.conf
+etc/logwatch/defaults/services/zz-zfs.conf
 etc/logwatch/defaults/ignore.conf
 etc/logwatch/defaults/logwatch.conf
 %%PORTDOCS%%%%DOCSDIR%%/HOWTO-Customize-LogWatch
@@ -152,6 +163,7 @@ libexec/logwatch/defaults/services/arpwatch
 libexec/logwatch/defaults/services/audit
 libexec/logwatch/defaults/services/automount
 libexec/logwatch/defaults/services/autorpm
+libexec/logwatch/defaults/services/barracuda
 libexec/logwatch/defaults/services/bfd
 libexec/logwatch/defaults/services/cisco
 libexec/logwatch/defaults/services/clam-update
@@ -172,9 +184,11 @@ libexec/logwatch/defaults/services/exim
 libexec/logwatch/defaults/services/eximstats
 libexec/logwatch/defaults/services/extreme-networks
 libexec/logwatch/defaults/services/fail2ban
+libexec/logwatch/defaults/services/fetchmail
 libexec/logwatch/defaults/services/ftpd-messages
 libexec/logwatch/defaults/services/ftpd-xferlog
 libexec/logwatch/defaults/services/http
+libexec/logwatch/defaults/services/http-error
 libexec/logwatch/defaults/services/identd
 libexec/logwatch/defaults/services/imapd
 libexec/logwatch/defaults/services/in.qpopper
@@ -185,6 +199,7 @@ libexec/logwatch/defaults/services/kernel
 libexec/logwatch/defaults/services/mailscanner
 libexec/logwatch/defaults/services/modprobe
 libexec/logwatch/defaults/services/mountd
+libexec/logwatch/defaults/services/mysql
 libexec/logwatch/defaults/services/named
 libexec/logwatch/defaults/services/netopia
 libexec/logwatch/defaults/services/netscreen
@@ -220,11 +235,13 @@ libexec/logwatch/defaults/services/shaperd
 libexec/logwatch/defaults/services/slon
 libexec/logwatch/defaults/services/smartd
 libexec/logwatch/defaults/services/sonicwall
+libexec/logwatch/defaults/services/spamassassin
 libexec/logwatch/defaults/services/sshd
 libexec/logwatch/defaults/services/sshd2
 libexec/logwatch/defaults/services/stunnel
 libexec/logwatch/defaults/services/sudo
 libexec/logwatch/defaults/services/syslogd
+libexec/logwatch/defaults/services/syslog-ng
 libexec/logwatch/defaults/services/tac_acc
 libexec/logwatch/defaults/services/up2date
 libexec/logwatch/defaults/services/vpopmail
@@ -237,6 +254,7 @@ libexec/logwatch/defaults/services/zz-fortune
 libexec/logwatch/defaults/services/zz-network
 libexec/logwatch/defaults/services/zz-runtime
 libexec/logwatch/defaults/services/zz-sys
+libexec/logwatch/defaults/services/zz-zfs
 libexec/logwatch/defaults/shared/applybinddate
 libexec/logwatch/defaults/shared/applyeurodate
 libexec/logwatch/defaults/shared/applyhttpdate
