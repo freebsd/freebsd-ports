@@ -454,6 +454,8 @@ mingw32/lib/libmingwex.a
 mingw32/lib/libmingwthrd.a
 mingw32/lib/libmingwthrd_old.a
 mingw32/lib/libmoldname.a
+mingw32/lib/libmoldname100.a
+mingw32/lib/libmoldname100d.a
 mingw32/lib/libmoldname70.a
 mingw32/lib/libmoldname70d.a
 mingw32/lib/libmoldname71.a
@@ -471,6 +473,8 @@ mingw32/lib/libmscms.a
 mingw32/lib/libmsdmo.a
 mingw32/lib/libmsimg32.a
 mingw32/lib/libmsvcp60.a
+mingw32/lib/libmsvcr100.a
+mingw32/lib/libmsvcr100d.a
 mingw32/lib/libmsvcr70.a
 mingw32/lib/libmsvcr70d.a
 mingw32/lib/libmsvcr71.a
