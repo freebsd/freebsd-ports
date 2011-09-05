@@ -1028,7 +1028,6 @@ MASTER_SITE_PYTHON+= \
 	http://www.cwi.nl/www.python.org/%SUBDIR%/ \
 	http://gnu.kookel.org/ftp/www.python.org/%SUBDIR%/ \
 	http://python.holywar.net/%SUBDIR%/ \
-	http://python.cdpa.nsysu.edu.tw/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.python.org/pub/www.python.org/%SUBDIR%/ \
 	http://mirrors.ccs.neu.edu/Python/pub/www.python.org/%SUBDIR%/
 .endif
