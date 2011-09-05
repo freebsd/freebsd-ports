@@ -13,7 +13,7 @@ MASTER_SITES=	http://pypi.python.org/packages/source/z/zope.event/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	zope.event-${PORTVERSION}-1
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	Very basic event publishing system
 
 USE_PYTHON=	2.5+
