@@ -25,6 +25,7 @@
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Gaborone.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Harare.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Johannesburg.pm
+%%SITE_PERL%%/DateTime/TimeZone/Africa/Juba.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Kampala.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Khartoum.pm
 %%SITE_PERL%%/DateTime/TimeZone/Africa/Kigali.pm
