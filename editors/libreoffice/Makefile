@@ -412,14 +412,6 @@ post-configure:
 
 post-install:
 	@${RM} -f ${PLISTF} ${PLISTD}
-	@${MKDIR} ${LODESTDIR}/${PREFIX}/share/applications
-.for component in writer printeradmin math javafilter base calc startcenter draw impress
-	@cd ${LODESTDIR}/${PREFIX}/share/applications; ${CP} ../../lib/${PORTNAME}/share/xdg/${component}.desktop ${component}.desktop;
-.endfor
-	@cd ${WRKSRC}/sysui/desktop/; ${PAX} -rw icons/hicolor ${LODESTDIR}/${PREFIX}/share
-	# allow make deinstall/reinstall	
-	@${RM} -f ${LODESTDIR}/${PREFIX}/share/icons/hicolor/*/apps/libreoffice-*.png
-	@for img in ${LODESTDIR}/${PREFIX}/share/icons/hicolor/*/apps/*.png; do ${MV} $$img `dirname $$img`/libreoffice-$${img##*/}; done
 	@for dir in ${EMPTYDIRS}; do ${TOUCH} ${LODESTDIR}/${PREFIX}/lib/$$dir/.keep; done
 
 	@cd ${LODESTDIR}/${PREFIX}/lib && ${FIND} -H -s * -type f -o -type l | \
@@ -427,16 +419,13 @@ post-install:
 	@cd ${LODESTDIR}/${PREFIX}/lib && ${FIND} -d * -type d | \
 		${SED} -e 's|^|@dirrm lib/|' >> ${PLISTD}
 
-.for subdir in share/applications share/icons
+.for subdir in share/application-registry share/applications share/icons share/mime share/mime-info share/mimelnk
 	@cd ${LODESTDIR}/${PREFIX}/${subdir} && ${FIND} -H -s * -type f -o -type l | \
                 ${SED} -e 's|^|${subdir}/|' >> ${PLISTF}
 	@cd ${LODESTDIR}/${PREFIX}/${subdir} && ${FIND} -d * -type d | \
                 ${SED} -e 's|^|@dirrm ${subdir}/|' >> ${PLISTD}
 	@${ECHO_CMD} "@unexec ${RMDIR} %D/${subdir} 2>/dev/null || ${TRUE}" >> ${PLISTD}
 .endfor
-
-	@cd ${LODESTDIR}/${PREFIX}/share/icons && ${FIND} -H -s * -type f -o -type l | \
-		${SED} -e 's|^|share/icons/|' >> ${PLISTF}
 
 	@cd ${LODESTDIR}/${PREFIX}/bin && ${FIND} -H -s * -type f -o -type l | \
 		${SED} -e 's|^|bin/|' >> ${PLISTF}
