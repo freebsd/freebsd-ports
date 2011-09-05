@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	fossil
-PORTVERSION=	20110713230341
+PORTVERSION=	20110901182519
 PORTEPOCH=	1
 CATEGORIES=	devel www
 MASTER_SITES=	http://www.fossil-scm.org/download/
@@ -22,8 +22,10 @@ PLIST_FILES=	bin/fossil
 LICENSE=	BSD
 LICENSE_FILE=	${WRKSRC}/COPYRIGHT-BSD2.txt
 
+HAS_CONFIGURE=	yes
+
 do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/fossil ${PREFIX}/bin/fossil
+	@${INSTALL_PROGRAM} ${WRKSRC}/fossil ${PREFIX}/bin/fossil
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
