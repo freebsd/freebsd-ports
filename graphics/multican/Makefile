@@ -15,6 +15,7 @@ COMMENT=	Remote control utility for Canon DSLR cameras
 
 LICENSE=	GPLv2
 
+CFLAGS+=	-fPIC
 USE_LDCONFIG=	yes
 
 PLIST_FILES=	bin/multican lib/libmultican.so.0 lib/libmultican.so \
@@ -25,7 +26,7 @@ PORTDOCS=	ChangeLog README TODO
 
 .if ${OSVERSION} < 800069
 LIB_DEPENDS=	usb:${PORTSDIR}/devel/libusb
-CFLAGS+=	-I${LOCALBASE}/include -fPIC
+CFLAGS+=	-I${LOCALBASE}/include		# does not uphold CPPFLAGS
 MAKE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
 .endif
 
