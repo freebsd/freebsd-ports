@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	App-Nopaste
-PORTVERSION=	0.30
+PORTVERSION=	0.31
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SARTAK
@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Easy access to any pastebin
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS+=	p5-WWW-Mechanize>=0:${PORTSDIR}/www/p5-WWW-Mechanize \
 		p5-MooseX-Getopt>=0.17:${PORTSDIR}/devel/p5-MooseX-Getopt \
@@ -26,9 +29,6 @@ OPTIONS=	CLIPBOARD "Support X11 Clipboard" On \
 		GITHUB "Support github" On
 
 PERL_CONFIGURE=	yes
-
-LICENSE_COMB=	dual
-LICENSE=	ART10 GPLv1
 
 CONFLICTS=	p5-WebService-NoPaste-0*
 
