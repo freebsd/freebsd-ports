@@ -1,0 +1,20 @@
+%%SITE_PERL%%/Bread/Board/Declare.pm
+%%SITE_PERL%%/Bread/Board/Declare/BlockInjection.pm
+%%SITE_PERL%%/Bread/Board/Declare/ConstructorInjection.pm
+%%SITE_PERL%%/Bread/Board/Declare/Literal.pm
+%%SITE_PERL%%/Bread/Board/Declare/Meta/Role/Accessor.pm
+%%SITE_PERL%%/Bread/Board/Declare/Meta/Role/Attribute.pm
+%%SITE_PERL%%/Bread/Board/Declare/Meta/Role/Class.pm
+%%SITE_PERL%%/Bread/Board/Declare/Meta/Role/Instance.pm
+%%SITE_PERL%%/Bread/Board/Declare/Role/Object.pm
+%%SITE_PERL%%/Bread/Board/Declare/Role/Service.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Bread/Board/Declare/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bread/Board/Declare
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bread/Board
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Bread
+@dirrm %%SITE_PERL%%/Bread/Board/Declare/Role
+@dirrm %%SITE_PERL%%/Bread/Board/Declare/Meta/Role
+@dirrm %%SITE_PERL%%/Bread/Board/Declare/Meta
+@dirrm %%SITE_PERL%%/Bread/Board/Declare
+@dirrmtry %%SITE_PERL%%/Bread/Board
+@dirrmtry %%SITE_PERL%%/Bread
