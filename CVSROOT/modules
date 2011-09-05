@@ -204,7 +204,9 @@ R                               ports/math/R
 R-cran-AMORE                    ports/science/R-cran-AMORE
 R-cran-DBI                      ports/databases/R-cran-DBI
 R-cran-RCurl                    ports/ftp/R-cran-RCurl
+R-cran-RJSONIO                  ports/converters/R-cran-RJSONIO
 R-cran-RMySQL                   ports/databases/R-cran-RMySQL
+R-cran-ROAuth                   ports/security/R-cran-ROAuth
 R-cran-RSvgDevice               ports/math/R-cran-RSvgDevice
 R-cran-SuppDists                ports/math/R-cran-SuppDists
 R-cran-XML                      ports/textproc/R-cran-XML
@@ -214,6 +216,8 @@ R-cran-bitops                   ports/devel/R-cran-bitops
 R-cran-car                      ports/math/R-cran-car
 R-cran-caret                    ports/devel/R-cran-caret
 R-cran-coda                     ports/math/R-cran-coda
+R-cran-digest                   ports/security/R-cran-digest
+R-cran-foreach                  ports/devel/R-cran-foreach
 R-cran-gpclib                   ports/math/R-cran-gpclib
 R-cran-inline                   ports/math/R-cran-inline
 R-cran-iterators                ports/devel/R-cran-iterators
@@ -225,6 +229,7 @@ R-cran-reshape                  ports/devel/R-cran-reshape
 R-cran-scrapeR                  ports/www/R-cran-scrapeR
 R-cran-sm                       ports/math/R-cran-sm
 R-cran-sp                       ports/math/R-cran-sp
+R-cran-twitteR                  ports/net/R-cran-twitteR
 R-cran-xtable                   ports/textproc/R-cran-xtable
 R-cran-xts                      ports/math/R-cran-xts
 R-cran-zoo                      ports/math/R-cran-zoo
@@ -8978,6 +8983,7 @@ mars_nwe                        ports/net/mars_nwe
 marsnomercy                     ports/games/marsnomercy
 masqmail                        ports/mail/masqmail
 massadmin                       ports/sysutils/massadmin
+massh                           ports/security/massh
 massxpert                       ports/science/massxpert
 mastergear                      ports/emulators/mastergear
 masterserver                    ports/games/masterserver
@@ -9062,7 +9068,6 @@ mediainfo                       ports/multimedia/mediainfo
 mediaproxy                      ports/net/mediaproxy
 mediatomb                       ports/net/mediatomb
 mediawiki                       ports/www/mediawiki
-mediawiki115                    ports/www/mediawiki115
 mediawiki116                    ports/www/mediawiki116
 medit                           ports/science/medit
 mednafen                        ports/emulators/mednafen
@@ -10752,6 +10757,7 @@ p5-AnyData                      ports/devel/p5-AnyData
 p5-AnyEvent                     ports/devel/p5-AnyEvent
 p5-AnyEvent-AIO                 ports/devel/p5-AnyEvent-AIO
 p5-AnyEvent-BDB                 ports/databases/p5-AnyEvent-BDB
+p5-AnyEvent-CouchDB             ports/databases/p5-AnyEvent-CouchDB
 p5-AnyEvent-DBD-Pg              ports/databases/p5-AnyEvent-DBD-Pg
 p5-AnyEvent-DBI                 ports/devel/p5-AnyEvent-DBI
 p5-AnyEvent-DBI-Abstract        ports/devel/p5-AnyEvent-DBI-Abstract
@@ -11154,6 +11160,7 @@ p5-CSS                          ports/textproc/p5-CSS
 p5-CSS-Croco                    ports/textproc/p5-CSS-Croco
 p5-CSS-DOM                      ports/www/p5-CSS-DOM
 p5-CSS-Inliner                  ports/www/p5-CSS-Inliner
+p5-CSS-Minifier                 ports/textproc/p5-CSS-Minifier
 p5-CSS-Minifier-XS              ports/textproc/p5-CSS-Minifier-XS
 p5-CSS-Packer                   ports/textproc/p5-CSS-Packer
 p5-CSS-SAC                      ports/textproc/p5-CSS-SAC
@@ -11225,7 +11232,6 @@ p5-Catalyst-Plugin-AtomServer   ports/www/p5-Catalyst-Plugin-AtomServer
 p5-Catalyst-Plugin-Authentication  ports/www/p5-Catalyst-Plugin-Authentication
 p5-Catalyst-Plugin-Authentication-CDBI  ports/www/p5-Catalyst-Plugin-Authentication-CDBI
 p5-Catalyst-Plugin-Authentication-OpenID  ports/www/p5-Catalyst-Plugin-Authentication-OpenID
-p5-Catalyst-Plugin-Authentication-Store-DBIC  ports/www/p5-Catalyst-Plugin-Authentication-Store-DBIC
 p5-Catalyst-Plugin-Authentication-Store-Htpasswd  ports/www/p5-Catalyst-Plugin-Authentication-Store-Htpasswd
 p5-Catalyst-Plugin-Authorization-ACL  ports/www/p5-Catalyst-Plugin-Authorization-ACL
 p5-Catalyst-Plugin-Authorization-Roles  ports/www/p5-Catalyst-Plugin-Authorization-Roles
@@ -11539,6 +11545,7 @@ p5-Convert-UU                   ports/converters/p5-Convert-UU
 p5-Convert-UUlib                ports/converters/p5-Convert-UUlib
 p5-Coro                         ports/devel/p5-Coro
 p5-Corona                       ports/www/p5-Corona
+p5-CouchDB-View                 ports/databases/p5-CouchDB-View
 p5-Crypt-Anubis                 ports/security/p5-Crypt-Anubis
 p5-Crypt-AppleTwoFish           ports/security/p5-Crypt-AppleTwoFish
 p5-Crypt-Blowfish               ports/security/p5-Crypt-Blowfish
@@ -11587,6 +11594,7 @@ p5-Crypt-OTP                    ports/security/p5-Crypt-OTP
 p5-Crypt-OpenPGP                ports/security/p5-Crypt-OpenPGP
 p5-Crypt-OpenSSL-AES            ports/security/p5-Crypt-OpenSSL-AES
 p5-Crypt-OpenSSL-Bignum         ports/security/p5-Crypt-OpenSSL-Bignum
+p5-Crypt-OpenSSL-CA             ports/security/p5-Crypt-OpenSSL-CA
 p5-Crypt-OpenSSL-DSA            ports/security/p5-Crypt-OpenSSL-DSA
 p5-Crypt-OpenSSL-RSA            ports/security/p5-Crypt-OpenSSL-RSA
 p5-Crypt-OpenSSL-Random         ports/security/p5-Crypt-OpenSSL-Random
@@ -11747,6 +11755,7 @@ p5-Dancer-Plugin-DataFu         ports/www/p5-Dancer-Plugin-DataFu
 p5-Dancer-Plugin-Database       ports/databases/p5-Dancer-Plugin-Database
 p5-Dancer-Plugin-Email          ports/mail/p5-Dancer-Plugin-Email
 p5-Dancer-Plugin-Feed           ports/www/p5-Dancer-Plugin-Feed
+p5-Dancer-Plugin-Redis          ports/databases/p5-Dancer-Plugin-Redis
 p5-Dancer-Plugin-ValidationClass  ports/www/p5-Dancer-Plugin-ValidationClass
 p5-Dancer-Session-Memcached     ports/databases/p5-Dancer-Session-Memcached
 p5-Danga-Socket                 ports/devel/p5-Danga-Socket
@@ -14234,6 +14243,10 @@ p5-Template-Plugin-Clickable    ports/www/p5-Template-Plugin-Clickable
 p5-Template-Plugin-Clickable-Email  ports/www/p5-Template-Plugin-Clickable-Email
 p5-Template-Plugin-Comma        ports/www/p5-Template-Plugin-Comma
 p5-Template-Plugin-FillInForm   ports/www/p5-Template-Plugin-FillInForm
+p5-Template-Plugin-Filter-Minify-CSS  ports/textproc/p5-Template-Plugin-Filter-Minify-CSS
+p5-Template-Plugin-Filter-Minify-CSS-XS  ports/textproc/p5-Template-Plugin-Filter-Minify-CSS-XS
+p5-Template-Plugin-Filter-Minify-JavaScript  ports/textproc/p5-Template-Plugin-Filter-Minify-JavaScript
+p5-Template-Plugin-Filter-Minify-JavaScript-XS  ports/textproc/p5-Template-Plugin-Filter-Minify-JavaScript-XS
 p5-Template-Plugin-HTML-SuperForm  ports/textproc/p5-Template-Plugin-HTML-SuperForm
 p5-Template-Plugin-JSON         ports/www/p5-Template-Plugin-JSON
 p5-Template-Plugin-JavaScript   ports/www/p5-Template-Plugin-JavaScript
@@ -15033,6 +15046,7 @@ p5-anydata                      ports/devel/p5-AnyData
 p5-anyevent                     ports/devel/p5-AnyEvent
 p5-anyevent-aio                 ports/devel/p5-AnyEvent-AIO
 p5-anyevent-bdb                 ports/databases/p5-AnyEvent-BDB
+p5-anyevent-couchdb             ports/databases/p5-AnyEvent-CouchDB
 p5-anyevent-dbd-pg              ports/databases/p5-AnyEvent-DBD-Pg
 p5-anyevent-dbi                 ports/devel/p5-AnyEvent-DBI
 p5-anyevent-dbi-abstract        ports/devel/p5-AnyEvent-DBI-Abstract
@@ -15416,7 +15430,6 @@ p5-catalyst-plugin-atomserver   ports/www/p5-Catalyst-Plugin-AtomServer
 p5-catalyst-plugin-authentication  ports/www/p5-Catalyst-Plugin-Authentication
 p5-catalyst-plugin-authentication-cdbi  ports/www/p5-Catalyst-Plugin-Authentication-CDBI
 p5-catalyst-plugin-authentication-openid  ports/www/p5-Catalyst-Plugin-Authentication-OpenID
-p5-catalyst-plugin-authentication-store-dbic  ports/www/p5-Catalyst-Plugin-Authentication-Store-DBIC
 p5-catalyst-plugin-authentication-store-htpasswd  ports/www/p5-Catalyst-Plugin-Authentication-Store-Htpasswd
 p5-catalyst-plugin-authorization-acl  ports/www/p5-Catalyst-Plugin-Authorization-ACL
 p5-catalyst-plugin-authorization-roles  ports/www/p5-Catalyst-Plugin-Authorization-Roles
@@ -15813,6 +15826,7 @@ p5-convert-uu                   ports/converters/p5-Convert-UU
 p5-convert-uulib                ports/converters/p5-Convert-UUlib
 p5-coro                         ports/devel/p5-Coro
 p5-corona                       ports/www/p5-Corona
+p5-couchdb-view                 ports/databases/p5-CouchDB-View
 p5-cpan-checksums               ports/devel/p5-CPAN-Checksums
 p5-cpan-distnameinfo            ports/devel/p5-CPAN-DistnameInfo
 p5-cpan-inject                  ports/devel/p5-CPAN-Inject
@@ -15877,6 +15891,7 @@ p5-crypt-oicq                   ports/security/p5-Crypt-OICQ
 p5-crypt-openpgp                ports/security/p5-Crypt-OpenPGP
 p5-crypt-openssl-aes            ports/security/p5-Crypt-OpenSSL-AES
 p5-crypt-openssl-bignum         ports/security/p5-Crypt-OpenSSL-Bignum
+p5-crypt-openssl-ca             ports/security/p5-Crypt-OpenSSL-CA
 p5-crypt-openssl-dsa            ports/security/p5-Crypt-OpenSSL-DSA
 p5-crypt-openssl-random         ports/security/p5-Crypt-OpenSSL-Random
 p5-crypt-openssl-rsa            ports/security/p5-Crypt-OpenSSL-RSA
@@ -15922,6 +15937,7 @@ p5-css                          ports/textproc/p5-CSS
 p5-css-croco                    ports/textproc/p5-CSS-Croco
 p5-css-dom                      ports/www/p5-CSS-DOM
 p5-css-inliner                  ports/www/p5-CSS-Inliner
+p5-css-minifier                 ports/textproc/p5-CSS-Minifier
 p5-css-minifier-xs              ports/textproc/p5-CSS-Minifier-XS
 p5-css-packer                   ports/textproc/p5-CSS-Packer
 p5-css-sac                      ports/textproc/p5-CSS-SAC
@@ -15944,6 +15960,7 @@ p5-dancer-plugin-datafu         ports/www/p5-Dancer-Plugin-DataFu
 p5-dancer-plugin-dbic           ports/databases/p5-Dancer-Plugin-DBIC
 p5-dancer-plugin-email          ports/mail/p5-Dancer-Plugin-Email
 p5-dancer-plugin-feed           ports/www/p5-Dancer-Plugin-Feed
+p5-dancer-plugin-redis          ports/databases/p5-Dancer-Plugin-Redis
 p5-dancer-plugin-validationclass  ports/www/p5-Dancer-Plugin-ValidationClass
 p5-dancer-session-memcached     ports/databases/p5-Dancer-Session-Memcached
 p5-danga-socket                 ports/devel/p5-Danga-Socket
@@ -18598,6 +18615,10 @@ p5-template-plugin-clickable    ports/www/p5-Template-Plugin-Clickable
 p5-template-plugin-clickable-email  ports/www/p5-Template-Plugin-Clickable-Email
 p5-template-plugin-comma        ports/www/p5-Template-Plugin-Comma
 p5-template-plugin-fillinform   ports/www/p5-Template-Plugin-FillInForm
+p5-template-plugin-filter-minify-css  ports/textproc/p5-Template-Plugin-Filter-Minify-CSS
+p5-template-plugin-filter-minify-css-xs  ports/textproc/p5-Template-Plugin-Filter-Minify-CSS-XS
+p5-template-plugin-filter-minify-javascript  ports/textproc/p5-Template-Plugin-Filter-Minify-JavaScript
+p5-template-plugin-filter-minify-javascript-xs  ports/textproc/p5-Template-Plugin-Filter-Minify-JavaScript-XS
 p5-template-plugin-html-superform  ports/textproc/p5-Template-Plugin-HTML-SuperForm
 p5-template-plugin-javascript   ports/www/p5-Template-Plugin-JavaScript
 p5-template-plugin-json         ports/www/p5-Template-Plugin-JSON
@@ -22793,6 +22814,8 @@ r-cran-car                      ports/math/R-cran-car
 r-cran-caret                    ports/devel/R-cran-caret
 r-cran-coda                     ports/math/R-cran-coda
 r-cran-dbi                      ports/databases/R-cran-DBI
+r-cran-digest                   ports/security/R-cran-digest
+r-cran-foreach                  ports/devel/R-cran-foreach
 r-cran-gpclib                   ports/math/R-cran-gpclib
 r-cran-inline                   ports/math/R-cran-inline
 r-cran-iterators                ports/devel/R-cran-iterators
@@ -22802,12 +22825,15 @@ r-cran-plyr                     ports/devel/R-cran-plyr
 r-cran-psych                    ports/math/R-cran-psych
 r-cran-rcurl                    ports/ftp/R-cran-RCurl
 r-cran-reshape                  ports/devel/R-cran-reshape
+r-cran-rjsonio                  ports/converters/R-cran-RJSONIO
 r-cran-rmysql                   ports/databases/R-cran-RMySQL
+r-cran-roauth                   ports/security/R-cran-ROAuth
 r-cran-rsvgdevice               ports/math/R-cran-RSvgDevice
 r-cran-scraper                  ports/www/R-cran-scrapeR
 r-cran-sm                       ports/math/R-cran-sm
 r-cran-sp                       ports/math/R-cran-sp
 r-cran-suppdists                ports/math/R-cran-SuppDists
+r-cran-twitter                  ports/net/R-cran-twitteR
 r-cran-xml                      ports/textproc/R-cran-XML
 r-cran-xtable                   ports/textproc/R-cran-xtable
 r-cran-xts                      ports/math/R-cran-xts
