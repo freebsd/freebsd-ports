@@ -49,9 +49,10 @@ do-install:
 	${INSTALL_SCRIPT} ${WRKSRC}/usr/bin/massh ${PREFIX}/bin
 	${INSTALL_DATA} ${WRKSRC}/usr/lib/massh/libmassh.sh ${PREFIX}/lib
 	${INSTALL_DATA} ${WRKSRC}/etc/massh/massh.conf ${PREFIX}/etc/massh.conf.example
-	@if [ ! - ${PREFIX}/etc/${PORTNAME}.conf ]; \
+	@if [ ! -f ${PREFIX}/etc/${PORTNAME}.conf ]; \
+	then \
 		${CP} -p ${PREFIX}/etc/${PORTNAME}.conf.example ${PREFIX}/etc/${PORTNAME}.conf; \
 	fi
-	${INSTALL_MAN} ${WRKSRC}/usr/share/man/man1/massh.1.gz ${MAN1PREFIX}
+	${INSTALL_MAN} ${WRKSRC}/usr/share/man/man1/massh.1.gz ${MAN1PREFIX}/man/man1/
 
 .include <bsd.port.mk>
