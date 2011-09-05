@@ -1,25 +1,28 @@
---- solenv/inc/unxfbsd.mk.orig	2011-07-23 08:03:22.000000000 +0300
-+++ solenv/inc/unxfbsd.mk	2011-07-23 08:08:39.000000000 +0300
-@@ -27,178 +27,12 @@
+--- solenv/inc/unxfbsd.mk.orig	2011-05-18 15:51:48.000000000 +0000
++++ solenv/inc/unxfbsd.mk	2011-08-25 20:23:28.830637378 +0000
+@@ -27,178 +27,23 @@
  
  # Makefile for FreeBSD.
  
 -ASM=
 -AFLAGS=
-+.INCLUDE : unxgcc.mk
- 
+-
 -SOLAR_JAVA*=
 -JAVAFLAGSDEBUG=-g
-+DLLPOSTFIX=fb
- 
--# Include arch specific makefile.
--.IF "$(CPUNAME)" == "INTEL"
--.INCLUDE : unxfbsdi.mk
--.ENDIF
--.IF "$(CPUNAME)" == "X86_64"
--.INCLUDE : unxfbsdx.mk
--.ENDIF
 -
+-# Include arch specific makefile.
++# arch specific defines
+ .IF "$(CPUNAME)" == "INTEL"
+-.INCLUDE : unxfbsdi.mk
++CDEFS+=-DX86
+ .ENDIF
++
+ .IF "$(CPUNAME)" == "X86_64"
+-.INCLUDE : unxfbsdx.mk
++CDEFS+=-DX86_64
++BUILD64=1
+ .ENDIF
+ 
 -# filter for supressing verbose messages from linker
 -#not needed at the moment
 -#LINKOUTPUT_FILTER=" |& $(SOLARENV)/bin/msg_filter"
@@ -41,7 +44,8 @@
 -JAVA_RUNTIME=-ljava_g
 -.ENDIF
 -.ENDIF
--
++.INCLUDE : unxgcc.mk
+ 
 -# name of C++ Compiler
 -CXX*=g++
 -# name of C Compiler
@@ -60,7 +64,7 @@
 -CFLAGSCC= -pipe $(ARCH_FLAGS)
 -# Flags for enabling exception handling
 -CFLAGSEXCEPTIONS=-fexceptions -fno-enforce-eh-specs
--# Flags for disabling exception handling
+ # Flags for disabling exception handling
 -CFLAGS_NO_EXCEPTIONS=-fno-exceptions
 -
 -# -fpermissive should be removed as soon as possible
@@ -108,7 +112,6 @@
 -# name of linker
 -LINK*=$(CXX)
 -LINKC*=$(CC)
-+# disable exceptions in boost
 +CFLAGS_NO_EXCEPTIONS+=-DBOOST_NO_EXCEPTIONS
  
  # default linker flags
@@ -179,8 +182,9 @@
 -RCLINK=
 -RCLINKFLAGS=
 -RCSETVERSION=
--
--# platform specific identifier for shared libs
++LINKFLAGSDEFS:=
+ 
+ # platform specific identifier for shared libs
 -DLLPRE=lib
 -DLLPOST=.so
-+LINKFLAGSDEFS:=
++DLLPOSTFIX=fb

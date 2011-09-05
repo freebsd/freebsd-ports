@@ -1,6 +1,6 @@
---- clone/filters/oox/source/token/makefile.mk.orig	2011-07-22 14:33:31.988113939 +0000
-+++ clone/filters/oox/source/token/makefile.mk	2011-07-22 14:34:30.469770138 +0000
-@@ -56,7 +56,7 @@
+--- clone/filters/oox/source/token/makefile.mk.orig	2011-05-20 16:05:36.000000000 +0000
++++ clone/filters/oox/source/token/makefile.mk	2011-08-24 21:15:27.302581359 +0000
+@@ -56,7 +56,7 @@ $(MISC)$/tokenhash.gperf $(INCCOM)$/toke
  $(SLO)$/tokenmap.obj : $(INCCOM)$/tokenhash.inc $(INCCOM)$/tokennames.inc $(GENHEADERPATH)$/tokens.hxx $(MISC)$/do_tokens
  
  $(INCCOM)$/tokenhash.inc : $(MISC)$/tokenhash.gperf $(MISC)$/do_tokens

@@ -1,5 +1,5 @@
---- clone/ure/sal/inc/sal/main.h.orig	2011-07-29 03:42:07.000000000 +0300
-+++ clone/ure/sal/inc/sal/main.h	2011-07-29 03:50:55.000000000 +0300
+--- clone/ure/sal/inc/sal/main.h.orig	2011-05-19 11:22:58.000000000 +0000
++++ clone/ure/sal/inc/sal/main.h	2011-08-24 21:15:27.305581455 +0000
 @@ -30,8 +30,11 @@
  #define _SAL_MAIN_H_
  
@@ -13,7 +13,7 @@
  #endif
  
  #ifdef __cplusplus
-@@ -41,6 +44,16 @@
+@@ -41,6 +44,16 @@ extern "C" {
  void SAL_CALL sal_detail_initialize(int argc, char ** argv);
  void SAL_CALL sal_detail_deinitialize();
  
@@ -30,7 +30,7 @@
  #define SAL_MAIN_WITH_ARGS_IMPL \
  int SAL_CALL main(int argc, char ** argv) \
  { \
-@@ -48,7 +61,7 @@
+@@ -48,7 +61,7 @@ int SAL_CALL main(int argc, char ** argv
      sal_detail_initialize(argc, argv);   \
      ret = sal_main_with_args(argc, argv); \
      sal_detail_deinitialize(); \
@@ -39,7 +39,7 @@
  }
  
  #define SAL_MAIN_IMPL \
-@@ -58,7 +71,7 @@
+@@ -58,7 +71,7 @@ int SAL_CALL main(int argc, char ** argv
      sal_detail_initialize(argc, argv); \
      ret = sal_main(); \
      sal_detail_deinitialize(); \
