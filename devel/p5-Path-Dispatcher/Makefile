@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Path-Dispatcher
-PORTVERSION=	1.02
+PORTVERSION=	1.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:SARTAK
@@ -15,15 +15,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	bapt@FreeBSD.org
 COMMENT=	Perl flexible and extensible dispatch
 
+LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
-
-PERL_CONFIGURE=	yes
 
 BUILD_DEPENDS=	p5-Any-Moose>=0.12:${PORTSDIR}/devel/p5-Any-Moose \
 		p5-Try-Tiny>=0.02:${PORTSDIR}/lang/p5-Try-Tiny
 
 RUN_DEPENDS:=	${BUILD_DEPENDS}
+
+PERL_CONFIGURE=	yes
 
 MAN3=	Path::Dispatcher::Path.3 \
 	Path::Dispatcher::Rule::Tokens.3 \
