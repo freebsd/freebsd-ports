@@ -7,6 +7,7 @@
 
 PORTNAME=	Git-Repository
 PORTVERSION=	1.21
+PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BOOK
@@ -14,6 +15,8 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl interface to Git repositories
+
+RUN_DEPENDS=	p5-System-Command>=0:${PORTSDIR}/devel/p5-System-Command
 
 LICENSE=	ART10 GPLv1
 LICENSE_COMB=	dual
