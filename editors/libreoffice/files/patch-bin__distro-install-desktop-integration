@@ -1,5 +1,5 @@
---- bin/distro-install-desktop-integration.orig	2011-09-04 17:25:30.637120995 +0000
-+++ bin/distro-install-desktop-integration	2011-09-04 17:19:02.078137343 +0000
+--- bin/distro-install-desktop-integration.orig	2011-09-05 16:57:47.578974736 +0200
++++ bin/distro-install-desktop-integration	2011-09-05 17:00:00.931583334 +0200
 @@ -74,12 +74,12 @@
      test -n "$oowrapper_name" && create_man_link "$oowrapper_name" "$used_man_page" "$file_list"
      
@@ -15,7 +15,7 @@
  cp -a sysui/desktop/share/create_tree.sh "$sysui_temp"
  builddir=`pwd`
  cd $sysui_temp
-@@ -98,8 +98,8 @@
+@@ -96,8 +96,8 @@
      export ICON_PREFIX=$INSTALLDIRNAME
      export ICON_SOURCE_DIR=$builddir/sysui/desktop/icons
      export PRODUCTVERSION=
@@ -26,7 +26,7 @@
      export GNOME_MIME_THEME=hicolor
      /bin/bash ./create_tree.sh
  )
-@@ -108,8 +108,8 @@
+@@ -106,8 +106,8 @@
  
  # we do not want some stuff from the plain packages
  rm -f $DESTDIR/$PREFIXDIR/bin/$INSTALLDIRNAME*
@@ -37,7 +37,7 @@
  if test -d $DESTDIR/opt ; then 
      rm -f $DESTDIR/opt/$INSTALLDIRNAME
      rmdir --ignore-fail-on-non-empty $DESTDIR/opt
-@@ -130,12 +130,12 @@
+@@ -126,12 +126,12 @@
  # put the stuff installed by create_tree.sh into the right file lists
  # desktop files will be added by the corresponding add_wrapper command
  if test -f $DESTDIR/gid_Module_Root_Brand ; then

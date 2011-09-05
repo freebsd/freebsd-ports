@@ -1,5 +1,5 @@
---- clone/libs-core/sysui/desktop/share/create_tree.sh.orig	2011-09-04 16:44:43.591133517 +0000
-+++ clone/libs-core/sysui/desktop/share/create_tree.sh	2011-09-04 17:05:55.429128701 +0000
+--- clone/libs-core/sysui/desktop/share/create_tree.sh.orig	2011-08-15 20:34:57.000000000 +0200
++++ clone/libs-core/sysui/desktop/share/create_tree.sh	2011-09-05 16:44:54.715256916 +0200
 @@ -41,31 +41,31 @@
    chmod 0644 ${DESTDIR}/${GNOMEDIR}/share/application-registry/${PREFIX}.*
  fi
@@ -15,7 +15,7 @@
 +ln -sf ${office_root}/program/soffice ${DESTDIR}${PREFIXDIR}/bin/${PREFIX}
  
 -cp printeradmin.sh ${DESTDIR}/usr/bin/${PREFIX}-printeradmin
--chmod 0755 ${DESTDIR}/usr/bin/${PREFIX} ${DESTDIR}/usr/bin/${PREFIX}-printeradmin
+-chmod 0755 ${DESTDIR}/usr/bin/${PREFIX}-printeradmin
 +cp printeradmin.sh ${DESTDIR}${PREFIXDIR}/bin/${PREFIX}-printeradmin
 +chmod 0755 ${DESTDIR}${PREFIXDIR}/bin/${PREFIX} ${DESTDIR}${PREFIXDIR}/bin/${PREFIX}-printeradmin
  
