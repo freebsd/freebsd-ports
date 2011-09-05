@@ -7,6 +7,7 @@
 
 PORTNAME=	supervisor
 PORTVERSION=	3.0a10
+PORTREVISION=	1
 CATEGORIES=	sysutils python
 MASTER_SITES=	http://dist.supervisord.org/ \
 		CHEESESHOP
@@ -15,11 +16,9 @@ PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 MAINTAINER=	hizel@vyborg.ru
 COMMENT=	System to monitor and control a number of processes on UNIX-like OS
 
-RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}elementtree>=1.2.6:${PORTSDIR}/devel/py-elementtree \
-		${PYTHON_PKGNAMEPREFIX}meld3>=0.6.4:${PORTSDIR}/www/py-meld3 \
-		${PYTHON_PKGNAMEPREFIX}cElementTree>=1.0.5:${PORTSDIR}/devel/py-celementtree
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}meld3>=0.6.4:${PORTSDIR}/www/py-meld3
 
-USE_PYTHON=	2.4+
+USE_PYTHON=	2.5-2.7
 USE_PYDISTUTILS=	easy_install
 PIDDIR?=	/var/run/supervisor
 
