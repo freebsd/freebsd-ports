@@ -20,6 +20,8 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 LIB_DEPENDS=	jack.0:${PORTSDIR}/audio/jack \
 		fftw3.5:${PORTSDIR}/math/fftw3
 
+BROKEN=		does not configure
+
 USE_BZIP2=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	corelib gui opengl \
