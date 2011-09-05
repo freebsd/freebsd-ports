@@ -3190,6 +3190,10 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/badsyntax_future9.py
 %%PYTHON_LIBDIR%%/test/badsyntax_pep3120.py
 %%PYTHON_LIBDIR%%/test/buffer_tests.py
+%%PYTHON_LIBDIR%%/test/capath/4e1295a3.0
+%%PYTHON_LIBDIR%%/test/capath/5ed36f99.0
+%%PYTHON_LIBDIR%%/test/capath/6e88d7b8.0
+%%PYTHON_LIBDIR%%/test/capath/99d0fa06.0
 %%PYTHON_LIBDIR%%/test/cfgparser.1
 %%PYTHON_LIBDIR%%/test/cfgparser.2
 %%PYTHON_LIBDIR%%/test/cfgparser.3
@@ -3199,27 +3203,10 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/cjkencodings/big5hkscs-utf8.txt
 %%PYTHON_LIBDIR%%/test/cjkencodings/big5hkscs.txt
 %%PYTHON_LIBDIR%%/test/cjkencodings/cp949-utf8.txt
-%%PYTHON_LIBDIR%%/test/cjkencodings/cp949.txt
-%%PYTHON_LIBDIR%%/test/cjkencodings/euc_jisx0213-utf8.txt
-%%PYTHON_LIBDIR%%/test/cjkencodings/euc_jisx0213.txt
-%%PYTHON_LIBDIR%%/test/cjkencodings/euc_jp-utf8.txt
-%%PYTHON_LIBDIR%%/test/cjkencodings/euc_jp.txt
-%%PYTHON_LIBDIR%%/test/cjkencodings/euc_kr-utf8.txt
-%%PYTHON_LIBDIR%%/test/cjkencodings/euc_kr.txt
-%%PYTHON_LIBDIR%%/test/cjkencodings/gb18030-utf8.txt
-%%PYTHON_LIBDIR%%/test/cjkencodings/gb18030.txt
-%%PYTHON_LIBDIR%%/test/cjkencodings/gb2312-utf8.txt
-%%PYTHON_LIBDIR%%/test/cjkencodings/gb2312.txt
-%%PYTHON_LIBDIR%%/test/cjkencodings/gbk-utf8.txt
-%%PYTHON_LIBDIR%%/test/cjkencodings/gbk.txt
-%%PYTHON_LIBDIR%%/test/cjkencodings/hz-utf8.txt
-%%PYTHON_LIBDIR%%/test/cjkencodings/hz.txt
 %%PYTHON_LIBDIR%%/test/cjkencodings/iso2022_jp-utf8.txt
 %%PYTHON_LIBDIR%%/test/cjkencodings/iso2022_jp.txt
 %%PYTHON_LIBDIR%%/test/cjkencodings/iso2022_kr-utf8.txt
 %%PYTHON_LIBDIR%%/test/cjkencodings/iso2022_kr.txt
-%%PYTHON_LIBDIR%%/test/cjkencodings/johab-utf8.txt
-%%PYTHON_LIBDIR%%/test/cjkencodings/johab.txt
 %%PYTHON_LIBDIR%%/test/cjkencodings/cp949.txt
 %%PYTHON_LIBDIR%%/test/cjkencodings/euc_jisx0213-utf8.txt
 %%PYTHON_LIBDIR%%/test/cjkencodings/euc_jisx0213.txt
@@ -3243,6 +3230,7 @@ libdata/pkgconfig/python-3.2.pc
 %%PYTHON_LIBDIR%%/test/cjkencodings/shift_jisx0213.txt
 %%PYTHON_LIBDIR%%/test/cmath_testcases.txt
 %%PYTHON_LIBDIR%%/test/curses_tests.py
+%%PYTHON_LIBDIR%%/test/data/README
 %%PYTHON_LIBDIR%%/test/datetimetester.py
 %%PYTHON_LIBDIR%%/test/decimaltestdata/abs.decTest
 %%PYTHON_LIBDIR%%/test/decimaltestdata/add.decTest
@@ -4340,7 +4328,9 @@ libdata/pkgconfig/python-3.2.pc
 @dirrm %%PYTHON_LIBDIR%%/sqlite3/test
 @dirrm %%PYTHON_LIBDIR%%/sqlite3
 @dirrm %%PYTHON_LIBDIR%%/test/__pycache__
+@dirrm %%PYTHON_LIBDIR%%/test/capath
 @dirrm %%PYTHON_LIBDIR%%/test/cjkencodings
+@dirrm %%PYTHON_LIBDIR%%/test/data
 @dirrm %%PYTHON_LIBDIR%%/test/decimaltestdata
 @dirrm %%PYTHON_LIBDIR%%/test/encoded_modules/__pycache__
 @dirrm %%PYTHON_LIBDIR%%/test/encoded_modules
