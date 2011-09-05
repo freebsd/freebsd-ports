@@ -47,6 +47,7 @@ install:
 	autorpm \
 	bfd \
 	cisco \
+	clamav \
 	clam-update \
 	cron \
 	daemon \
@@ -59,10 +60,12 @@ install:
 	extreme-networks \
 	fail2ban \
 	http \
+	http-error \
 	iptables \
 	kernel \
 	maillog \
 	messages \
+	mysql \
 	netopia \
 	netscreen \
 	php \
@@ -77,6 +80,7 @@ install:
 	samba \
 	secure \
 	sonicwall \
+	spamassassin \
 	syslog \
 	tac_acc \
 	up2date \
@@ -93,6 +97,7 @@ install:
 	audit \
 	automount \
 	autorpm \
+	barracuda \
 	bfd \
 	cisco \
 	clam-update \
@@ -113,9 +118,11 @@ install:
 	eximstats \
 	extreme-networks \
 	fail2ban \
+	fetchmail \
 	ftpd-messages \
 	ftpd-xferlog \
 	http \
+	http-error \
 	identd \
 	imapd \
 	in.qpopper \
@@ -126,6 +133,7 @@ install:
 	mailscanner \
 	modprobe \
 	mountd \
+	mysql \
 	named \
 	netopia \
 	netscreen \
@@ -161,11 +169,13 @@ install:
 	slon \
 	smartd \
 	sonicwall \
+	spamassassin \
 	sshd \
 	sshd2 \
 	stunnel \
 	sudo \
 	syslogd \
+	syslog-ng \
 	tac_acc \
 	up2date \
 	vpopmail \
@@ -177,7 +187,8 @@ install:
 	zz-fortune \
 	zz-network \
 	zz-runtime \
-	zz-sys 
+	zz-sys \
+	zz-zfs
 	install -m 444 scripts/services/${service} ${LIBEXECDIR}/defaults/services/${service}
 	install -m 444 conf/services/${service}.conf ${ETCDIR}/defaults/services/${service}.conf
 .endfor

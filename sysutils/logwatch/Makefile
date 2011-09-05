@@ -6,12 +6,15 @@
 #
 
 PORTNAME=	logwatch
-PORTVERSION=	7.3.6
+PORTVERSION=	7.4.0
 CATEGORIES=	sysutils
-MASTER_SITES=	ftp://ftp.kaybee.org/pub/linux/
+MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 
 MAINTAINER=	trix@basement.net
 COMMENT=	A log file analysis program
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${SITE_PERL}/mach/MIME/Base64.pm:${PORTSDIR}/converters/p5-MIME-Base64
 
