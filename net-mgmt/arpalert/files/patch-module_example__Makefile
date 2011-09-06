@@ -1,10 +1,12 @@
---- module_example/Makefile.orig	2008-03-31 11:36:42.000000000 -0700
-+++ module_example/Makefile	2008-04-22 11:40:52.000000000 -0700
-@@ -2,7 +2,7 @@
+--- module_example/Makefile.orig	2008-04-01 02:36:42.000000000 +0800
++++ module_example/Makefile	2011-09-05 16:49:33.000000000 +0800
+@@ -1,8 +1,8 @@
+ # Copyright (c) 2005-2010 Thierry FOURNIER
  # $Id: Makefile 690 2008-03-31 18:36:43Z  $
  
- CC = gcc
+-CC = gcc
 -CFLAGS = -Wall -g
++#CC = gcc
 +CFLAGS = -Wall -g -fPIC
  
  all: example.so
