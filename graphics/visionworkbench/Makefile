@@ -15,15 +15,15 @@ MAINTAINER=	swills@FreeBSD.org
 COMMENT=	A general purpose image processing and computer vision library
 
 LICENSE=	NOSA
-LICENSE_NAME=	NASA Open Source Agreement version 1.3
 LICENSE_GROUPS=	OSI
-LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
+LICENSE_NAME=	NASA Open Source Agreement version 1.3
 LICENSE_FILE=	${WRKSRC}/COPYING
+LICENSE_PERMS=	dist-mirror dist-sell pkg-mirror pkg-sell auto-accept
 
 GNU_CONFIGURE=	yes
 USE_QT_VER=	4
 QT_COMPONENTS=	moc_build qmake_build
-USE_GCC=	4.5+
+USE_FORTRAN=	yes
 USE_LDCONFIG=	yes
 USE_PYTHON=	2.4+
 
