@@ -1,0 +1,12 @@
+--- parser/Makefile.orig	Fri Mar 12 23:16:59 2004
++++ parser/Makefile	Fri Dec 10 21:07:28 2004
+@@ -7,8 +7,7 @@
+ MAN=
+ SRCS=		bnep.c cmtp.c hidp.c l2cap.c rfcomm.c hci.c parser.c sdp.c
+ WARNS?=		2
+-DEBUG_FLAGS=	-g
+-CFLAGS=		-O2
++CFLAGS?=	-O2
+ 
+ NOPROFILE=	1
+ 
