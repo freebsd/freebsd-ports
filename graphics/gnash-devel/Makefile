@@ -23,6 +23,9 @@ LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs \
 
 CONFLICTS=	gnash-[0-9]*
 
+DEPRECATED=	Outdated, use graphics/gnash instead
+EXPIRATION_DATE=2011-10-06
+
 REVISION=	11957
 
 USE_BZIP2=	yes
