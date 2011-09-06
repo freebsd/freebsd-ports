@@ -1,6 +1,8 @@
 bin/massh
 lib/libmassh.sh
+@unexec if cmp -s %D/etc/massh.conf.example %D/etc/massh.conf; then rm -f %D/etc/massh.conf; fi
 etc/massh.conf.example
+@exec if [ ! -f $D/etc/massh.conf ] ; then cp -p %D/%F %B/massh.conf; fi
 @exec mkdir -p %%MASSHDIR%%/pull
 @exec mkdir -p %%MASSHDIR%%/push
 @exec mkdir -p %%MASSHDIR%%/scripts
