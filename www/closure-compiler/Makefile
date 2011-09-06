@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	closure-compiler
-PORTVERSION=	20110119
+PORTVERSION=	20110811
 CATEGORIES=	www java
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	compiler-${PORTVERSION}
@@ -22,9 +22,13 @@ SUB_FILES=	closure-compiler
 SUB_LIST=	JAVA="${JAVA}"
 USE_JAVA=	yes
 
+PLIST_DIRSTRY=	%%DATADIR%%
+PLIST_FILES=	bin/closure-compiler \
+		%%DATADIR%%/compiler.jar
+
 do-install:
-	${MKDIR} ${DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/compiler.jar ${DATADIR}
-	${INSTALL_SCRIPT} ${WRKSRC}/closure-compiler ${PREFIX}/bin
+	${MKDIR} ${DATADIR}/
+	${INSTALL_DATA} ${WRKSRC}/compiler.jar ${DATADIR}/
+	${INSTALL_SCRIPT} ${WRKSRC}/closure-compiler ${PREFIX}/bin/
 
 .include <bsd.port.mk>

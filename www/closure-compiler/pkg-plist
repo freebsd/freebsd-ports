@@ -1,4 +1,0 @@
-@comment $FreeBSD$
-%%DATADIR%%/compiler.jar
-bin/closure-compiler
-@dirrmtry %%DATADIR%%
