@@ -241,6 +241,7 @@
     SUBDIR += hs-bytestring-csv
     SUBDIR += hs-case-insensitive
     SUBDIR += hs-citeproc-hs
+    SUBDIR += hs-csv
     SUBDIR += hs-double-conversion
     SUBDIR += hs-feed
     SUBDIR += hs-highlighting-kate
