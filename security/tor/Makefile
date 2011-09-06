@@ -7,6 +7,7 @@
 
 PORTNAME=	tor
 DISTVERSION=	0.2.2.32
+PORTREVISION=	1
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
@@ -97,6 +98,7 @@ CONFIGURE_ARGS+=	--disable-instrument-downloads
 .if defined(WITH_TCMALLOC)
 CONFIGURE_ARGS+=	--with-tcmalloc
 LIB_DEPENDS+=		tcmalloc:${PORTSDIR}/devel/google-perftools
+LDFLAGS+=		-L${LOCALBASE}/lib
 .endif
 
 .if defined(WITH_THREADS)
