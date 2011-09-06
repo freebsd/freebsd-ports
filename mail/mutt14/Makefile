@@ -42,6 +42,7 @@ OPTIONS=	NLS "Native Language Support via gettext utilities" on \
  GSSAPI "GSSAPI (Kerberos) support" on
 
 USE_OPENSSL=	yes
+USE_NCURSES=	yes
 
 .include <bsd.port.pre.mk>
 
@@ -51,10 +52,8 @@ WITH_SLANG=	yes
 BUILD_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
 RUN_DEPENDS+=	ispell:${PORTSDIR}/textproc/ispell \
 		urlview:${PORTSDIR}/textproc/urlview
-USE_GMAKE=	yes
-USE_NCURSES=	yes
-
 .endif
+
 .if defined (MUTT_LITE)
 PKGNAMESUFFIX=	-lite
 WITH_SGML_DOCS:=no
