@@ -2808,7 +2808,6 @@ ebnf2yacc                       ports/devel/ebnf2yacc
 eboard                          ports/games/eboard
 ebook-tools                     ports/textproc/ebook-tools
 ebook2cw                        ports/comms/ebook2cw
-ebuttons                        ports/x11/ebuttons
 ecartis                         ports/mail/ecartis
 ecasound                        ports/audio/ecasound
 ecb                             ports/devel/ecb
@@ -4530,6 +4529,7 @@ gnash                           ports/graphics/gnash
 gnash-devel                     ports/graphics/gnash-devel
 gnat                            ports/lang/gnat
 gnat-aux                        ports/lang/gnat-aux
+gnatdroid-sysroot               ports/lang/gnatdroid-sysroot
 gnatpython                      ports/devel/gnatpython
 gnats                           ports/databases/gnats
 gnats4                          ports/databases/gnats4
@@ -6613,7 +6613,6 @@ jakarta-oro                     ports/java/jakarta-oro
 jakarta-poi                     ports/textproc/jakarta-poi
 jakarta-regexp                  ports/java/jakarta-regexp
 jakarta-struts                  ports/java/jakarta-struts
-jakelib2                        ports/devel/jakelib2
 jalbum                          ports/graphics/jalbum
 jalingo                         ports/textproc/jalingo
 jalview                         ports/biology/jalview
@@ -10631,7 +10630,6 @@ orbit2-reference                ports/devel/ORBit2-reference
 orbital_eunuchs_sniper          ports/games/orbital_eunuchs_sniper
 orbitcpp                        ports/devel/orbitcpp
 orc                             ports/devel/orc
-oregano                         ports/cad/oregano
 org-mode.el                     ports/deskutils/org-mode.el
 org-mode.el6                    ports/deskutils/org-mode.el6
 oroborus                        ports/x11-wm/oroborus
@@ -11019,6 +11017,7 @@ p5-Bot-Training-StarCraft       ports/misc/p5-Bot-Training-StarCraft
 p5-Boulder                      ports/converters/p5-Boulder
 p5-Brackup                      ports/sysutils/p5-Brackup
 p5-Bread-Board                  ports/devel/p5-Bread-Board
+p5-Bread-Board-Declare          ports/devel/p5-Bread-Board-Declare
 p5-Bundle-Perl6                 ports/devel/p5-Bundle-Perl6
 p5-Bundle-Slash                 ports/www/p5-Bundle-Slash
 p5-Bundle-Sledge                ports/www/p5-Bundle-Sledge
@@ -14210,6 +14209,7 @@ p5-Sys-User-UIDhelper           ports/sysutils/p5-Sys-User-UIDhelper
 p5-Sys-Utmp                     ports/sysutils/p5-Sys-Utmp
 p5-Sysadm-Install               ports/sysutils/p5-Sysadm-Install
 p5-SyslogScan                   ports/sysutils/p5-SyslogScan
+p5-System-Command               ports/devel/p5-System-Command
 p5-System2                      ports/devel/p5-System2
 p5-T2                           ports/databases/p5-T2
 p5-TAP-Formatter-JUnit          ports/devel/p5-TAP-Formatter-JUnit
@@ -15310,6 +15310,7 @@ p5-bot-training-starcraft       ports/misc/p5-Bot-Training-StarCraft
 p5-boulder                      ports/converters/p5-Boulder
 p5-brackup                      ports/sysutils/p5-Brackup
 p5-bread-board                  ports/devel/p5-Bread-Board
+p5-bread-board-declare          ports/devel/p5-Bread-Board-Declare
 p5-bs-event                     ports/devel/p5-BS-Event
 p5-bsd-devstat                  ports/devel/p5-BSD-devstat
 p5-bsd-jail-object              ports/sysutils/p5-BSD-Jail-Object
@@ -18583,6 +18584,7 @@ p5-sys-user-uidhelper           ports/sysutils/p5-Sys-User-UIDhelper
 p5-sys-utmp                     ports/sysutils/p5-Sys-Utmp
 p5-sysadm-install               ports/sysutils/p5-Sysadm-Install
 p5-syslogscan                   ports/sysutils/p5-SyslogScan
+p5-system-command               ports/devel/p5-System-Command
 p5-system2                      ports/devel/p5-System2
 p5-t2                           ports/databases/p5-T2
 p5-tagged                       ports/audio/p5-tagged
@@ -25991,7 +25993,6 @@ upnp                            ports/devel/upnp
 upower                          ports/sysutils/upower
 upp                             ports/devel/upp
 uppaal                          ports/devel/uppaal
-uproxy                          ports/net/uproxy
 upsd                            ports/sysutils/upsd
 upsdaemon                       ports/sysutils/upsdaemon
 upslug                          ports/devel/upslug
