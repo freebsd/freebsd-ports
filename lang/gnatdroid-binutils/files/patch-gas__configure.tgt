@@ -1,0 +1,10 @@
+--- gas/configure.tgt.orig	2011-01-29 04:08:15 +0100
++++ gas/configure.tgt	2011-01-29 04:15:35 +0100
+@@ -105,6 +105,7 @@
+ 
+   arc-*-elf*)				fmt=elf ;;
+ 
++  arm-android-eabi*)			fmt=elf em=armlinuxeabi ;;
+   arm-*-aout)				fmt=aout ;;
+   arm-*-coff | thumb-*-coff)		fmt=coff ;;
+   arm-*-rtems* | thumb-*-rtems*)	fmt=elf ;;

@@ -1,0 +1,5 @@
+This package is a dependency of lang/gnatdroid. It provides the cross-tools
+required to build the GNAT FreeBSD->ARM cross-compiler that is gnatdroid,
+as well as any binaries that it produces.
+
+WWW: http://www.dragonlace.net

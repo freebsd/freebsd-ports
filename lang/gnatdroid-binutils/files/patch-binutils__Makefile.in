@@ -1,0 +1,11 @@
+--- binutils/Makefile.in.orig	2011-06-27 09:39:08.000000000 +0200
++++ binutils/Makefile.in	2011-07-21 14:50:20.000000000 +0200
+@@ -401,7 +401,7 @@
+ top_srcdir = @top_srcdir@
+ AUTOMAKE_OPTIONS = dejagnu no-dist foreign
+ ACLOCAL_AMFLAGS = -I .. -I ../config -I ../bfd
+-SUBDIRS = doc po
++SUBDIRS = po
+ tooldir = $(exec_prefix)/$(target_alias)
+ 
+ # Automake 1.10+ disables lex and yacc output file regeneration if

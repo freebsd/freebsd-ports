@@ -1,0 +1,11 @@
+--- libiberty/Makefile.in.orig	2011-07-23 00:35:21.000000000 +0200
++++ libiberty/Makefile.in	2011-07-23 00:35:38.000000000 +0200
+@@ -340,7 +340,7 @@
+ @MAINT@	echo stamp > stamp-functions
+ 
+ INSTALL_DEST = @INSTALL_DEST@
+-install: install_to_$(INSTALL_DEST) install-subdir
++install: 
+ 
+ # This is tricky.  Even though CC in the Makefile contains
+ # multilib-specific flags, it's overridden by FLAGS_TO_PASS from the
