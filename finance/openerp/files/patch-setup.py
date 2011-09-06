@@ -1,25 +1,29 @@
---- setup.py.orig	2009-02-09 20:32:57.000000000 +0800
-+++ setup.py	2009-02-09 20:33:48.000000000 +0800
-@@ -92,14 +92,14 @@
-                             opj('bin', 'server.pkey'), 
-                             opj('bin', 'server.cert')]))
+--- setup.py	2011-08-21 16:34:59.526991138 +0200
++++ setup.diffs	2011-08-21 16:35:49.515560426 +0200
+@@ -145,16 +145,16 @@
+         #    files.append((root, [join(root, name) for name in names]))
+         files.append(('.', [join('bin', 'import_xml.rng'),]))
      else:
--        man_directory = opj('share', 'man')
--        files.append((opj(man_directory, 'man1'), ['man/openerp-server.1']))
--        files.append((opj(man_directory, 'man5'), ['man/openerp_serverrc.5']))
+-        man_directory = join('share', 'man')
+-        files.append((join(man_directory, 'man1'), ['man/openerp-server.1']))
+-        files.append((join(man_directory, 'man5'), ['man/openerp_serverrc.5']))
 -
--        doc_directory = opj('share', 'doc', 'openerp-server-%s' % version)
--        files.append((doc_directory, [f for f in glob.glob('doc/*') if os.path.isfile(f)]))
--        files.append((opj(doc_directory, 'migrate', '3.3.0-3.4.0'), [f for f in glob.glob('doc/migrate/3.3.0-3.4.0/*') if os.path.isfile(f)]))
--        files.append((opj(doc_directory, 'migrate', '3.4.0-4.0.0'), [f for f in glob.glob('doc/migrate/3.4.0-4.0.0/*') if os.path.isfile(f)]))
-+#        man_directory = opj('share', 'man')
-+#        files.append((opj(man_directory, 'man1'), ['man/openerp-server.1']))
-+#        files.append((opj(man_directory, 'man5'), ['man/openerp_serverrc.5']))
-+
-+#        doc_directory = opj('share', 'doc', 'openerp-server-%s' % version)
-+#        files.append((doc_directory, [f for f in glob.glob('doc/*') if os.path.isfile(f)]))
-+#        files.append((opj(doc_directory, 'migrate', '3.3.0-3.4.0'), [f for f in glob.glob('doc/migrate/3.3.0-3.4.0/*') if os.path.isfile(f)]))
-+#        files.append((opj(doc_directory, 'migrate', '3.4.0-4.0.0'), [f for f in glob.glob('doc/migrate/3.4.0-4.0.0/*') if os.path.isfile(f)]))
+-        doc_directory = join('share', 'doc', 'openerp-server-%s' % version)
+-        files.append((doc_directory, filter(isfile, glob.glob('doc/*'))))
+-        files.append((join(doc_directory, 'migrate', '3.3.0-3.4.0'),
+-                      filter(isfile, glob.glob('doc/migrate/3.3.0-3.4.0/*'))))
+-        files.append((join(doc_directory, 'migrate', '3.4.0-4.0.0'),
+-                      filter(isfile, glob.glob('doc/migrate/3.4.0-4.0.0/*'))))
++#        man_directory = join('share', 'man')
++#        files.append((join(man_directory, 'man1'), ['man/openerp-server.1']))
++#        files.append((join(man_directory, 'man5'), ['man/openerp_serverrc.5']))
++#
++#        doc_directory = join('share', 'doc', 'openerp-server-%s' % version)
++#        files.append((doc_directory, filter(isfile, glob.glob('doc/*'))))
++#        files.append((join(doc_directory, 'migrate', '3.3.0-3.4.0'),
++#                      filter(isfile, glob.glob('doc/migrate/3.3.0-3.4.0/*'))))
++#        files.append((join(doc_directory, 'migrate', '3.4.0-4.0.0'),
++#                      filter(isfile, glob.glob('doc/migrate/3.4.0-4.0.0/*'))))
  
-         openerp_site_packages = opj('lib', 'python%s' % py_short_version, 'site-packages', 'openerp-server')
+         openerp_site_packages = join(get_python_lib(prefix=''), 'openerp-server')
  
