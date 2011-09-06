@@ -10,5 +10,5 @@
 @dirrmtry %%SITE_PERL%%/Catalyst/Helper
 @dirrmtry %%SITE_PERL%%/Catalyst
 @dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Engine/PSGI
-@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Engine/PSGI
 @dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Catalyst/Engine
+@dirrm %%SITE_PERL%%/Catalyst/Engine
