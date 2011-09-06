@@ -7,6 +7,7 @@
 
 PORTNAME=	markdown-mode.el
 PORTVERSION=	1.8.1
+PORTREVISION=	1
 CATEGORIES=	textproc
 MASTER_SITES=	http://jblevins.org/projects/markdown-mode/
 DISTNAME=	markdown-mode.el
@@ -20,14 +21,13 @@ COMMENT=	Emacs/XEmacs major mode for editing Markdown-formatted text
 NO_BUILD=	yes
 NO_WRKSUBDIR=	yes
 
-EMACSLISPDIR=	${PREFIX}/share/emacs/site-lisp
-XEMACSLISPDIR=	${PREFIX}/lib/xemacs/site-lisp
+USE_EMACS=	yes
+
+PLIST_FILES=	${EMACS_SITE_LISPDIR}/markdown-mode.el
 
 do-install:
-	@${MKDIR} ${EMACSLISPDIR}
-	@${MKDIR} ${XEMACSLISPDIR}
-	@${INSTALL_DATA} ${_DISTDIR}/${DISTNAME} ${EMACSLISPDIR}/markdown-mode.el
-	@${LN} -sf ${EMACSLISPDIR}/markdown-mode.el ${XEMACSLISPDIR}
+	@${INSTALL_DATA} ${DISTDIR}/${DIST_SUBDIR}/${DISTNAME} \
+		${PREFIX}/${EMACS_SITE_LISPDIR}/markdown-mode.el
 
 post-install:
 	@${CAT} ${PKGMESSAGE}
