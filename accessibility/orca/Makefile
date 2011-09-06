@@ -26,10 +26,6 @@ RUN_DEPENDS=	${PYTHON_SITELIBDIR}/_dbus_bindings.so:${PORTSDIR}/devel/py-dbus \
 
 LATEST_LINK=	gnome-orca
 
-.if defined(PACKAGE_BUILDING)
-BROKEN=	fails to build on pointyhat: runaway process
-.endif
-
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
 USE_PYTHON=	yes
