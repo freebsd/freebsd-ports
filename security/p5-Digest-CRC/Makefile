@@ -1,10 +1,12 @@
 # Ports collection Makefile for:	p5-Digest-CRC
 # Date created:				17 Dec 2005
 # Whom:					Gabor Kovesdan
+#
 # $FreeBSD$
+#
 
 PORTNAME=	Digest-CRC
-PORTVERSION=	0.16
+PORTVERSION=	0.17
 CATEGORIES=	security perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
