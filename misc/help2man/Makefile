@@ -35,7 +35,7 @@ MANLANG=	"" ${LANGS} ${LANGS_MTREE}
 USE_GETTEXT=	yes
 
 LANGS=		de el eo fi fr it pl pt_BR ru sv uk vi
-LANGS_MTREE=	ja	# languages which already exist in BSD.local.dist
+LANGS_MTREE=	ja	# languages that already exist in BSD.local.dist
 
 PLIST_FILES+=	lib/bindtextdomain.so
 .for lang in ${LANGS} ${LANGS_MTREE}
