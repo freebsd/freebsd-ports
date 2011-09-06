@@ -7,6 +7,7 @@
 
 PORTNAME=	tor
 DISTVERSION=	0.2.3.2-alpha
+PORTREVISION=	1
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
@@ -116,6 +117,7 @@ TOR_LIBEVENT_LIBS:=	-levent_openssl-2.0 ${TOR_LIBEVENT_LIBS}
 
 .if defined(WITH_TCMALLOC)
 CONFIGURE_ARGS+=	--with-tcmalloc
+LDFLAGS+=		-L${LOCALBASE}/lib
 .if defined(WITH_STATIC_TOR)
 BUILD_DEPENDS +=	${LOCALBASE}/lib/libtcmalloc.so:${PORTSDIR}/devel/google-perftools
 .else

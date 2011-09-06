@@ -8,6 +8,7 @@
 
 PORTNAME=	freecell-solver
 PORTVERSION=	3.8.0
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	BERLIOS/fc-solve
 
@@ -37,7 +38,7 @@ OPTIONS=	TCMALLOC "Use Google's TCMalloc" off
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_TCMALLOC)
-LIB_DEPENDS+=	tcmalloc.1:${PORTSDIR}/devel/google-perftools
+LIB_DEPENDS+=	tcmalloc.2:${PORTSDIR}/devel/google-perftools
 .else
 CMAKE_ARGS+=	-DFCS_AVOID_TCMALLOC:BOOL=ON
 .endif

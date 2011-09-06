@@ -7,7 +7,7 @@
 
 PORTNAME=	hypertable
 DISTVERSION=	0.9.3.4-alpha
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	databases
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	${PORTNAME}-${DISTVERSION}-src
@@ -57,7 +57,7 @@ DONT_DETECT=	Doxygen Kfs Ceph Ant JNI PHP5Thrift
 .include <bsd.port.options.mk>
 
 .if defined(WITH_TCMALLOC)
-LIB_DEPENDS+=	tcmalloc.1:${PORTSDIR}/devel/google-perftools
+LIB_DEPENDS+=	tcmalloc.2:${PORTSDIR}/devel/google-perftools
 PLIST_SUB+=	TCMALLOC=""
 .else
 DONT_DETECT+=	Tcmalloc
