@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	wine-gecko
-DISTVERSION=	1.2.0
+DISTVERSION=	1.3
 CATEGORIES=	emulators
 MASTER_SITES=	SF/wine/Wine%20Gecko/${DISTVERSION}
 DISTNAME=	wine_gecko-${DISTVERSION}-x86
@@ -26,7 +26,8 @@ LICENSE=	MPL GPLv2 GPLv3 LGPL21 LGPL3
 LICENSE_COMB=	multi
 
 do-install:
-	${MKDIR} ${DATADIR}/gecko
-	${INSTALL_DATA} ${DISTDIR}/wine_gecko-${DISTVERSION}-x86.msi ${DATADIR}/gecko
+	@${MKDIR} ${DATADIR}/gecko
+	${INSTALL_DATA} ${DISTDIR}/wine_gecko-${DISTVERSION}-x86.msi \
+		${DATADIR}/gecko
 
 .include <bsd.port.mk>
