@@ -3156,6 +3156,7 @@
     SUBDIR += pyobfuscate
     SUBDIR += pypersrc
     SUBDIR += pyrex
+    SUBDIR += pyst
     SUBDIR += pysvn
     SUBDIR += pythk
     SUBDIR += pythontidy
