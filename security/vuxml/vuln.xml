@@ -135,6 +135,31 @@ Note:  Please add new entries to the beginning of this file.
 	     contains the CKBI 1.87 update to the built-in certificates
 	     as commited by mandree@ on September 4th, 2011 -->
       </package>
+      <package>
+	<name>firefox</name>
+	<range><gt>3.6.*,1</gt><lt>3.6.22,1</lt></range>
+	<range><gt>4.0.*,1</gt><lt>6.0.2,1</lt></range>
+      </package>
+      <package>
+	<name>seamonkey</name>
+	<range><lt>2.3.2</lt></range>
+      </package>
+      <package>
+	<name>linux-firefox</name>
+	<range><lt>3.6.22,1</lt></range>
+      </package>
+      <package>
+	<name>thunderbird</name>
+	<range><lt>3.1.14</lt></range>
+      </package>
+      <package>
+	<name>linux-thunderbird</name>
+	<range><lt>3.1.14</lt></range>
+      </package>
+      <package>
+	<name>linux-seamonkey</name>
+	<range><lt>2.3.2</lt></range>
+      </package>
     </affects>
     <description>
       <body xmlns="http://www.w3.org/1999/xhtml">
@@ -183,6 +208,7 @@ Note:  Please add new entries to the beginning of this file.
     <dates>
       <discovery>2011-07-19</discovery>
       <entry>2011-09-03</entry>
+      <modified>2011-09-06</modified>
     </dates>
   </vuln>
 
