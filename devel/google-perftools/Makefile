@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	google-perftools
-PORTVERSION=	1.7
+PORTVERSION=	1.8.3
 CATEGORIES=	devel
 MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE} \
 		${MASTER_SITE_LOCAL}
@@ -33,10 +33,8 @@ post-patch:
 
 post-build:
 	@${ECHO}
-	@${ECHO} "Be aware that 6 (tcmalloc_minimal_unittest tcmalloc_minimal_debug_unittest tcmalloc_unittest tcmalloc_both_unittest tcmalloc_debug_unittest tcmalloc_and_profiler_unittest) out of 38 self tests is known to fail on i386 platform (all tests pass on amd64)."
-	@${ECHO} "Perftools developers were notified: http://code.google.com/p/google-perftools/issues/detail?id=212"
-	@${ECHO} "Run 'make check' and try to fix that. Thanks!"
-	@${ECHO} "Be aware that another self test (profiler_unittest) can randomly fail on the loaded system."
+	@${ECHO} "Please run 'make check' and verify there are no failing testcases on your system."
+	@${ECHO} "Report any testcase failures to http://code.google.com/p/google-perftools/issues/list"
 	@${ECHO}
 
 # four of the tests are known to fail on 7.0, uncomment this as soon as this is fixed
