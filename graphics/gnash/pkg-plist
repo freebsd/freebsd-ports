@@ -1,26 +1,29 @@
 bin/gnash
+%%GTK%%bin/gnash-gtk-launcher
 %%GTK%%bin/gtk-gnash
 %%KDE%%bin/kde3-gnash
+%%KDE4%%bin/gnash-qt-launcher
 %%KDE4%%bin/kde4-gnash
 bin/gprocessor
 bin/rtmpget
 %%GSTREAMER%%bin/findmicrophones
 %%GSTREAMER%%bin/findwebcams
 %%CYGNAL%%bin/cygnal
-@comment %%CYGNAL%%bin/dumpshm
 %%CYGNAL%%bin/flvdumper
 %%CYGNAL%%bin/soldumper
 %%NPAPI%%%%WEBPLUGINS_DIR%%/libgnashplugin.so
-@comment Should be //KPARTS//, but it is installed regardless of whether plugin is enabled
-%%KPARTS%%share/apps/klash/pluginsinfo
-%%KPARTS%%share/apps/klash/klashpartui.rc
-@comment Should be //KPARTS//, but it is installed regardless of whether plugin is enabled
-%%KPARTS%%share/services/klash_part.desktop
+%%CYGNAL%%@unexec if cmp -s %D/etc/cygnalrc.dist %D/etc/cygnalrc; then rm -f %D/etc/cygnalrc; fi
+%%CYGNAL%%etc/cygnalrc.dist
+%%CYGNAL%%@exec if [ ! -f %B/cygnalrc ]; then cp -p %D/%F %B/cygnalrc; fi
+@unexec if cmp -s %D/etc/gnashpluginrc.dist %D/etc/gnashpluginrc; then rm -f %D/etc/gnashpluginrc; fi
+etc/gnashpluginrc.dist
+@exec if [ ! -f %B/gnashpluginrc ]; then cp -p %D/%F %B/gnashpluginrc; fi
+@unexec if cmp -s %D/etc/gnashrc.dist %D/etc/gnashrc; then rm -f %D/etc/gnashrc; fi
+etc/gnashrc.dist
+@exec if [ ! -f %B/gnashrc ]; then cp -p %D/%F %B/gnashrc; fi
 include/gnash/AMF.h
 include/gnash/BevelFilter_as.h
 include/gnash/BitmapData_as.h
-include/gnash/BitmapFilterQuality_as.h
-include/gnash/BitmapFilterType_as.h
 include/gnash/BitmapFilter_as.h
 include/gnash/BitsReader.h
 include/gnash/BlurFilter_as.h
@@ -29,14 +32,13 @@ include/gnash/ClockTime.h
 include/gnash/ColorMatrixFilter_as.h
 include/gnash/ColorTransform_as.h
 include/gnash/ConvolutionFilter_as.h
-include/gnash/DisplacementMapFilterMode_as.h
 include/gnash/DisplacementMapFilter_as.h
 include/gnash/DropShadowFilter_as.h
 include/gnash/ExternalInterface_as.h
-include/gnash/FileTypes.h
 include/gnash/GC.h
 include/gnash/GlowFilter_as.h
 include/gnash/GnashAlgorithm.h
+include/gnash/GnashEnums.h
 include/gnash/GnashException.h
 include/gnash/GnashFactory.h
 include/gnash/GnashFileUtilities.h
@@ -50,6 +52,7 @@ include/gnash/GnashSystemNetHeaders.h
 include/gnash/GradientBevelFilter_as.h
 include/gnash/GradientGlowFilter_as.h
 include/gnash/IOChannel.h
+include/gnash/ImageIterators.h
 include/gnash/Matrix_as.h
 include/gnash/NamingPolicy.h
 include/gnash/NetworkAdapter.h
@@ -58,15 +61,22 @@ include/gnash/Point_as.h
 include/gnash/RTMP.h
 include/gnash/Range2d.h
 include/gnash/Rectangle_as.h
+include/gnash/Renderer.h
+include/gnash/SWFCtype.h
 include/gnash/SharedMem.h
 include/gnash/SimpleBuffer.h
 include/gnash/Socket.h
+include/gnash/Stats.h
+include/gnash/StreamProvider.h
 include/gnash/StringPredicates.h
 include/gnash/Transform_as.h
 include/gnash/URL.h
+include/gnash/URLAccessManager.h
 include/gnash/WallClockTimer.h
+include/gnash/accumulator.h
 include/gnash/arg_parser.h
 include/gnash/asobj/AMFConverter.h
+include/gnash/asobj/ASConversions.h
 include/gnash/asobj/Accessibility_as.h
 include/gnash/asobj/Array_as.h
 include/gnash/asobj/AsBroadcaster.h
@@ -77,18 +87,18 @@ include/gnash/asobj/Color_as.h
 include/gnash/asobj/ContextMenuItem_as.h
 include/gnash/asobj/ContextMenu_as.h
 include/gnash/asobj/ControlTag.h
-include/gnash/asobj/CustomActions.h
 include/gnash/asobj/Date_as.h
 include/gnash/asobj/DefinitionTag.h
 include/gnash/asobj/DisplayList.h
 include/gnash/asobj/DisplayObject.h
 include/gnash/asobj/DisplayObjectContainer.h
+include/gnash/asobj/DragState.h
 include/gnash/asobj/DynamicShape.h
 include/gnash/asobj/Error_as.h
 include/gnash/asobj/FillStyle.h
+include/gnash/asobj/Function_as.h
 include/gnash/asobj/Geometry.h
 include/gnash/asobj/Global_as.h
-include/gnash/asobj/Globals.h
 include/gnash/asobj/GnashKey.h
 include/gnash/asobj/InteractiveObject.h
 include/gnash/asobj/Key_as.h
@@ -119,6 +129,7 @@ include/gnash/asobj/RGBA.h
 include/gnash/asobj/Relay.h
 include/gnash/asobj/RunResources.h
 include/gnash/asobj/SWF.h
+include/gnash/asobj/SWFCxForm.h
 include/gnash/asobj/SWFMatrix.h
 include/gnash/asobj/SWFRect.h
 include/gnash/asobj/Selection_as.h
@@ -126,7 +137,6 @@ include/gnash/asobj/ShapeRecord.h
 include/gnash/asobj/SharedObject_as.h
 include/gnash/asobj/Sound_as.h
 include/gnash/asobj/Stage_as.h
-include/gnash/asobj/StreamProvider.h
 include/gnash/asobj/String_as.h
 include/gnash/asobj/System_as.h
 include/gnash/asobj/TagLoadersTable.h
@@ -143,10 +153,7 @@ include/gnash/asobj/as_function.h
 include/gnash/asobj/as_object.h
 include/gnash/asobj/as_value.h
 include/gnash/asobj/builtin_function.h
-include/gnash/asobj/cxform.h
-include/gnash/asobj/drag_state.h
 include/gnash/asobj/event_id.h
-include/gnash/asobj/gnash.h
 include/gnash/asobj/movie_root.h
 include/gnash/asobj/namedStrings.h
 include/gnash/display_pkg.h
@@ -162,7 +169,6 @@ include/gnash/jemtree.h
 include/gnash/log.h
 include/gnash/net_pkg.h
 include/gnash/noseek_fd_adapter.h
-include/gnash/ogl.h
 include/gnash/parser/movie_definition.h
 include/gnash/rc.h
 include/gnash/ref_counted.h
@@ -173,70 +179,55 @@ include/gnash/string_table.h
 include/gnash/text_pkg.h
 include/gnash/tree.hh
 include/gnash/tu_file.h
-include/gnash/tu_opengl_includes.h
 include/gnash/utf8.h
 include/gnash/utility.h
 include/gnash/vm/ASHandlers.h
 include/gnash/vm/ActionExec.h
 include/gnash/vm/CallStack.h
 include/gnash/vm/ExecutableCode.h
-include/gnash/vm/Machine.h
 include/gnash/vm/SafeStack.h
 include/gnash/vm/VM.h
 include/gnash/vm/fn_call.h
 include/gnash/zlib_adapter.h
-%%KPARTS%%lib/kde3/libklashpart.so
+%%KPARTS%%share/apps/klash/pluginsinfo
+%%KPARTS%%share/apps/klash/klashpartui.rc
+%%KPARTS%%share/services/klash_part.desktop
 %%KPARTS%%lib/kde3/libklashpart.la
+%%KPARTS%%lib/kde3/libklashpart.so
 %%KPARTS4%%kde4/share/apps/klash/pluginsinfo
 %%KPARTS4%%kde4/share/apps/klash/klashpartui.rc
 %%KPARTS4%%kde4/share/kde4/services/klash_part.desktop
 %%KPARTS4%%kde4/lib/kde4/libklashpart.so
-%%KPARTS4%%kde4/lib/kde4/libklashpart.la
-%%CYGNAL%%@unexec if cmp -s %D/etc/cygnalrc.dist %D/etc/cygnalrc; then rm -f %D/etc/cygnalrc; fi
-%%CYGNAL%%etc/cygnalrc.dist
-%%CYGNAL%%@exec if [ ! -f %B/cygnalrc ]; then cp -p %D/%F %B/cygnalrc; fi
-@unexec if cmp -s %D/etc/gnashpluginrc.dist %D/etc/gnashpluginrc; then rm -f %D/etc/gnashpluginrc; fi
-etc/gnashpluginrc.dist
-@exec if [ ! -f %B/gnashpluginrc ]; then cp -p %D/%F %B/gnashpluginrc; fi
-@unexec if cmp -s %D/etc/gnashrc.dist %D/etc/gnashrc; then rm -f %D/etc/gnashrc; fi
-etc/gnashrc.dist
-@exec if [ ! -f %B/gnashrc ]; then cp -p %D/%F %B/gnashrc; fi
 %%CYGNAL%%lib/cygnal/plugins/echo.so
 %%CYGNAL%%lib/cygnal/plugins/oflaDemo.so
 %%CYGNAL%%lib/gnash/libgnashamf-%%GNASHVER%%.so
-%%CYGNAL%%lib/gnash/libgnashamf.la
 %%CYGNAL%%lib/gnash/libgnashamf.so
 lib/gnash/libgnashbase-%%GNASHVER%%.so
-lib/gnash/libgnashbase.la
 lib/gnash/libgnashbase.so
 lib/gnash/libgnashcore-%%GNASHVER%%.so
-lib/gnash/libgnashcore.la
 lib/gnash/libgnashcore.so
 lib/gnash/libgnashmedia-%%GNASHVER%%.so
-lib/gnash/libgnashmedia.la
 lib/gnash/libgnashmedia.so
-%%CYGNAL%%lib/gnash/libgnashnet.la
+%%CYGNAL%%lib/gnash/libgnashnet-%%GNASHVER%%.so
 %%CYGNAL%%lib/gnash/libgnashnet.so
-%%CYGNAL%%lib/gnash/libgnashnet.so.0
-lib/gnash/libgnashrender.la
+lib/gnash/libgnashrender-%%GNASHVER%%.so
 lib/gnash/libgnashrender.so
-lib/gnash/libgnashrender.so.0
 lib/gnash/libgnashsound-%%GNASHVER%%.so
-lib/gnash/libgnashsound.la
 lib/gnash/libgnashsound.so
 %%VAAPI%%lib/gnash/libgnashvaapi-%%GNASHVER%%.so
 %%VAAPI%%lib/gnash/libgnashvaapi.la
 %%VAAPI%%lib/gnash/libgnashvaapi.so
-@comment %%NPAPI%%lib/gnash/libmozsdk.la
-@comment %%NPAPI%%lib/gnash/libmozsdk.so
-@comment %%NPAPI%%lib/gnash/libmozsdk.so.0
 libdata/pkgconfig/gnash.pc
-%%DOCSDIR%%/gnashuser.html
-%%DOCSDIR%%/images/car_crash.png
-%%DOCSDIR%%/images/rtmp.png
-%%DOCSDIR%%/gnashref.html
+%%GTK%%share/applications/gnash.desktop
+%%KDE4%%share/applications/klash.desktop
+%%DATADIR%%/doc/gnash/C/gnashref.html
+%%DATADIR%%/doc/gnash/C/gnashuser.html
+%%DATADIR%%/doc/gnash/C/images/rtmp.png
 %%DATADIR%%/GnashG.png
+%%DATADIR%%/gnash-splash.swf
 %%DATADIR%%/gnash_128_96.ico
+%%GTK%%share/icons/hicolor/32x32/apps/gnash.xpm
+%%KDE4%%share/icons/hicolor/32x32/apps/klash.xpm
 share/locale/cs/LC_MESSAGES/gnash.mo
 share/locale/de/LC_MESSAGES/gnash.mo
 share/locale/es/LC_MESSAGES/gnash.mo
@@ -244,17 +235,23 @@ share/locale/fi/LC_MESSAGES/gnash.mo
 share/locale/fr/LC_MESSAGES/gnash.mo
 share/locale/it/LC_MESSAGES/gnash.mo
 share/locale/ja/LC_MESSAGES/gnash.mo
+@dirrmtry share/icons/hicolor/32x32/apps
+@dirrmtry share/icons/hicolor/32x32
+@dirrmtry share/icons/hicolor
+@dirrmtry share/icons
+@dirrm %%DATADIR%%/doc/gnash/C/images
+@dirrm %%DATADIR%%/doc/gnash/C
+@dirrm %%DATADIR%%/doc/gnash
+@dirrm %%DATADIR%%/doc
 @dirrm %%DATADIR%%
-@dirrm %%DOCSDIR%%/images
-@dirrm %%DOCSDIR%%
+@dirrmtry share/applications
 @dirrm lib/gnash
-%%CYGNAL%%@dirrm lib/cygnal/plugins
-%%CYGNAL%%@dirrm lib/cygnal
+%%CYGNAL%%@dirrmtry lib/cygnal/plugins
+%%CYGNAL%%@dirrmtry lib/cygnal
 @dirrm include/gnash/vm
 @dirrm include/gnash/parser
 @dirrm include/gnash/asobj
 @dirrm include/gnash
-@comment Should be //KPARTS//, but it is installed regardless of whether plugin is enabled
 %%KPARTS%%@dirrm share/apps/klash
 %%KPARTS4%%@dirrm kde4/share/apps/klash
 %%NPAPI%%@dirrmtry %%WEBPLUGINS_DIR%%

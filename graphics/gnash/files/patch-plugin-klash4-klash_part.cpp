@@ -1,6 +1,6 @@
---- plugin/klash4/klash_part.cpp.orig	2009-03-02 18:29:50.000000000 +0300
-+++ plugin/klash4/klash_part.cpp	2009-03-06 05:44:08.000000000 +0300
-@@ -147,7 +147,7 @@
+--- plugin/klash4/klash_part.cpp.orig	2011-06-16 18:56:30.869545798 -0400
++++ plugin/klash4/klash_part.cpp	2011-06-16 18:57:04.979892841 -0400
+@@ -148,7 +148,7 @@
          }
      }
      KParts::Part::setWidget (new KlashView (wparent));
