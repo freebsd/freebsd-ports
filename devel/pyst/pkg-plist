@@ -1,0 +1,23 @@
+%%PYTHON_SITELIBDIR%%/asterisk/Version.py
+%%PYTHON_SITELIBDIR%%/asterisk/Version.pyc
+%%PYTHON_SITELIBDIR%%/asterisk/Version.pyo
+%%PYTHON_SITELIBDIR%%/asterisk/__init__.py
+%%PYTHON_SITELIBDIR%%/asterisk/__init__.pyc
+%%PYTHON_SITELIBDIR%%/asterisk/__init__.pyo
+%%PYTHON_SITELIBDIR%%/asterisk/agi.py
+%%PYTHON_SITELIBDIR%%/asterisk/agi.pyc
+%%PYTHON_SITELIBDIR%%/asterisk/agi.pyo
+%%PYTHON_SITELIBDIR%%/asterisk/agitb.py
+%%PYTHON_SITELIBDIR%%/asterisk/agitb.pyc
+%%PYTHON_SITELIBDIR%%/asterisk/agitb.pyo
+%%PYTHON_SITELIBDIR%%/asterisk/config.py
+%%PYTHON_SITELIBDIR%%/asterisk/config.pyc
+%%PYTHON_SITELIBDIR%%/asterisk/config.pyo
+%%PYTHON_SITELIBDIR%%/asterisk/manager.py
+%%PYTHON_SITELIBDIR%%/asterisk/manager.pyc
+%%PYTHON_SITELIBDIR%%/asterisk/manager.pyo
+@dirrm %%PYTHON_SITELIBDIR%%/asterisk
+%%PORTDOCS%%%%DOCSDIR%%/README
+%%PORTDOCS%%%%DOCSDIR%%/README.html
+%%PORTDOCS%%%%DOCSDIR%%/ChangeLog
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
