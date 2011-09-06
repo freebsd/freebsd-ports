@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	sudo
-PORTVERSION=	1.8.1
-PORTREVISION=	5
+DISTVERSION=	1.8.2
 CATEGORIES=	security
 MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		http://ftp.arcane-networks.fr/pub/mirrors/sudo/ \
@@ -21,7 +20,6 @@ MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		ftp://plier.ucar.edu/pub/sudo/ \
 		ftp://obsd.isc.org/pub/sudo/ \
 		ftp://ftp.uwsg.indiana.edu/pub/security/sudo/ \
-		ftp://sudo.xmundo.net/pub/mirrors/sudo/ \
 		ftp://ftp.tuwien.ac.at/utils/admin-tools/sudo/ \
 		ftp://sunsite.ualberta.ca/pub/Mirror/sudo/ \
 		ftp://ftp.csc.cuhk.edu.hk/pub/packages/unix-tools/sudo/ \
@@ -38,7 +36,6 @@ MASTER_SITES=	http://www.sudo.ws/sudo/dist/ \
 		ftp://sunsite.icm.edu.pl/packages/sudo/ \
 		ftp://mirror.cdmon.com/pub/sudo/ \
 		ftp://ftp.twaren.net/Unix/Security/Sudo/
-DISTNAME=	${PORTNAME}-1.8.1p2
 
 MAINTAINER=	wxs@FreeBSD.org
 COMMENT=	Allow others to run commands as root
@@ -66,6 +63,16 @@ CONFIGURE_ARGS+=	--with-logfac=${LOGFAC}
 
 .include <bsd.port.pre.mk>
 
+.if !defined(WITHOUT_NLS)
+USE_GETTEXT=	yes
+CONFIGURE_ENV=	CFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib -lintl"
+PLIST_SUB+=	NLS=""
+.else
+CONFIGURE_ARGS+=	--disable-nls
+PLIST_SUB+=	NLS="@comment "
+.endif
+
 # SUDO_SECURE_PATH is a PATH string that will override the user's PATH.
 # ex: make SUDO_SECURE_PATH="/sbin:/bin:/usr/sbin:/usr/bin:/usr/local/sbin:/usr/local/bin"
 .if defined(SUDO_SECURE_PATH)
@@ -85,7 +92,7 @@ CONFIGURE_ARGS+=	--with-ldap-conf-file=${PREFIX}/etc/${SUDO_LDAP_CONF}
 PLIST_SUB+=	LDAP=""
 MAN5+=	sudoers.ldap.5
 .else
-PLIST_SUB=	LDAP="@comment "
+PLIST_SUB+=	LDAP="@comment "
 .endif
 
 .if defined(WITH_DISABLE_ROOT_SUDO)

@@ -11,6 +11,7 @@ include/sudo_plugin.h
 libexec/sudo_noexec.so
 libexec/sudoers.so
 sbin/visudo
+%%PORTDOCS%%%%DOCSDIR%%/CONTRIBUTORS
 %%PORTDOCS%%%%DOCSDIR%%/ChangeLog
 %%PORTDOCS%%%%DOCSDIR%%/HISTORY
 %%PORTDOCS%%%%DOCSDIR%%/LICENSE
@@ -27,6 +28,19 @@ sbin/visudo
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.iPlanet
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/schema.ActiveDirectory
 %%LDAP%%%%PORTDOCS%%%%DOCSDIR%%/sudoers2ldif
+%%NLS%%share/locale/da/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/da/LC_MESSAGES/sudoers.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/eu/LC_MESSAGES/sudoers.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/fi/LC_MESSAGES/sudoers.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/pl/LC_MESSAGES/sudoers.mo
+%%NLS%%share/locale/ru/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/uk/LC_MESSAGES/sudoers.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/sudo.mo
+%%NLS%%share/locale/zh_CN/LC_MESSAGES/sudoers.mo
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
 etc/sudoers.d/.keep-me
 @dirrmtry etc/sudoers.d
