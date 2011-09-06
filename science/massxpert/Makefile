@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	massxpert
-PORTVERSION=	2.4.3
+PORTVERSION=	3.1.0
 CATEGORIES=	science
 MASTER_SITES=	http://download.tuxfamily.org/massxpert/source/
 
@@ -17,6 +17,7 @@ LICENSE=	GPLv3
 
 USE_QT_VER=	4
 USE_CMAKE=	yes
+USE_LDCONFIG=	yes
 QT_COMPONENTS=	gui xml rcc_build qmake_build uic_build moc_build \
 		svg
 MAN7=		massxpert-data.7
