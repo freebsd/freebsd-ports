@@ -103,6 +103,7 @@
     SUBDIR += gjs
     SUBDIR += gnat
     SUBDIR += gnat-aux
+    SUBDIR += gnatdroid-binutils
     SUBDIR += gnatdroid-sysroot
     SUBDIR += gnustep-base
     SUBDIR += gnustep-guile

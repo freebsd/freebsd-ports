@@ -1,0 +1,114 @@
+%%BRANCH1%%/%%TARGET%%/bin/ar
+%%BRANCH1%%/%%TARGET%%/bin/as
+%%BRANCH1%%/%%TARGET%%/bin/ld
+%%BRANCH1%%/%%TARGET%%/bin/ld.bfd
+%%BRANCH1%%/%%TARGET%%/bin/nm
+%%BRANCH1%%/%%TARGET%%/bin/objcopy
+%%BRANCH1%%/%%TARGET%%/bin/objdump
+%%BRANCH1%%/%%TARGET%%/bin/ranlib
+%%BRANCH1%%/%%TARGET%%/bin/strip
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.x
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xbn
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xc
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xd
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xdc
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xdw
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xn
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xr
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xs
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xsc
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xsw
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xu
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xw
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.x
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xbn
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xc
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xd
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xdc
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xdw
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xn
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xr
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xs
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xsc
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xsw
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xu
+%%BRANCH1%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xw
+%%BRANCH1%%/bin/%%TARGET%%-addr2line
+%%BRANCH1%%/bin/%%TARGET%%-ar
+%%BRANCH1%%/bin/%%TARGET%%-as
+%%BRANCH1%%/bin/%%TARGET%%-c++filt
+%%BRANCH1%%/bin/%%TARGET%%-elfedit
+%%BRANCH1%%/bin/%%TARGET%%-gprof
+%%BRANCH1%%/bin/%%TARGET%%-ld
+%%BRANCH1%%/bin/%%TARGET%%-ld.bfd
+%%BRANCH1%%/bin/%%TARGET%%-nm
+%%BRANCH1%%/bin/%%TARGET%%-objcopy
+%%BRANCH1%%/bin/%%TARGET%%-objdump
+%%BRANCH1%%/bin/%%TARGET%%-ranlib
+%%BRANCH1%%/bin/%%TARGET%%-readelf
+%%BRANCH1%%/bin/%%TARGET%%-size
+%%BRANCH1%%/bin/%%TARGET%%-strings
+%%BRANCH1%%/bin/%%TARGET%%-strip
+@dirrm %%BRANCH1%%/%%TARGET%%/bin
+@dirrm %%BRANCH1%%/%%TARGET%%/lib/ldscripts
+@dirrm %%BRANCH1%%/%%TARGET%%/lib
+@dirrm %%BRANCH1%%/%%TARGET%%
+@dirrm %%BRANCH1%%/bin
+@dirrm %%BRANCH1%%
+%%BRANCH2%%/%%TARGET%%/bin/ar
+%%BRANCH2%%/%%TARGET%%/bin/as
+%%BRANCH2%%/%%TARGET%%/bin/ld
+%%BRANCH2%%/%%TARGET%%/bin/ld.bfd
+%%BRANCH2%%/%%TARGET%%/bin/nm
+%%BRANCH2%%/%%TARGET%%/bin/objcopy
+%%BRANCH2%%/%%TARGET%%/bin/objdump
+%%BRANCH2%%/%%TARGET%%/bin/ranlib
+%%BRANCH2%%/%%TARGET%%/bin/strip
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.x
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xbn
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xc
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xd
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xdc
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xdw
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xn
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xr
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xs
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xsc
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xsw
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xu
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelf_linux_eabi.xw
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.x
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xbn
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xc
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xd
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xdc
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xdw
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xn
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xr
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xs
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xsc
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xsw
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xu
+%%BRANCH2%%/%%TARGET%%/lib/ldscripts/armelfb_linux_eabi.xw
+%%BRANCH2%%/bin/%%TARGET%%-addr2line
+%%BRANCH2%%/bin/%%TARGET%%-ar
+%%BRANCH2%%/bin/%%TARGET%%-as
+%%BRANCH2%%/bin/%%TARGET%%-c++filt
+%%BRANCH2%%/bin/%%TARGET%%-elfedit
+%%BRANCH2%%/bin/%%TARGET%%-gprof
+%%BRANCH2%%/bin/%%TARGET%%-ld
+%%BRANCH2%%/bin/%%TARGET%%-ld.bfd
+%%BRANCH2%%/bin/%%TARGET%%-nm
+%%BRANCH2%%/bin/%%TARGET%%-objcopy
+%%BRANCH2%%/bin/%%TARGET%%-objdump
+%%BRANCH2%%/bin/%%TARGET%%-ranlib
+%%BRANCH2%%/bin/%%TARGET%%-readelf
+%%BRANCH2%%/bin/%%TARGET%%-size
+%%BRANCH2%%/bin/%%TARGET%%-strings
+%%BRANCH2%%/bin/%%TARGET%%-strip
+@dirrm %%BRANCH2%%/%%TARGET%%/bin
+@dirrm %%BRANCH2%%/%%TARGET%%/lib/ldscripts
+@dirrm %%BRANCH2%%/%%TARGET%%/lib
+@dirrm %%BRANCH2%%/%%TARGET%%
+@dirrm %%BRANCH2%%/bin
+@dirrm %%BRANCH2%%
