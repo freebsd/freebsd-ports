@@ -8,13 +8,11 @@
 PORTNAME=	coppermine
 PORTVERSION=	1.4.26
 CATEGORIES=	www
-MASTER_SITES=	SF/${PORTNAME}/Coppermine/${PORTVERSION}%20%28stable%29/
+MASTER_SITES=	SF/${PORTNAME}/Coppermine/1.4.x%20%28outdated%29/
 DISTNAME=	cpg${PORTVERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A web picture gallery script
-
-BROKEN=	does not fetch
 
 USE_PHP=	mysql pcre
 USE_ZIP=	yes
