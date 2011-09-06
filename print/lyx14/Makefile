@@ -19,6 +19,9 @@ MASTER_SITES=	ftp://ftp.lyx.org/pub/lyx/stable/1.4.x/ \
 MAINTAINER=	mi@aldan.algebra.com
 COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 
+DEPRECATED=	last release in 2007, use print/lyx16 or print/lyx instead
+EXPIRATION_DATE=	2011-10-05
+
 BUILD_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 RUN_DEPENDS=	latex:${PORTSDIR}/print/teTeX
 LIB_DEPENDS=	boost_regex:${PORTSDIR}/devel/boost-libs
