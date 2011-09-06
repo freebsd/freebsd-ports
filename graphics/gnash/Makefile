@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	gnash
-PORTVERSION=	0.8.8
-PORTREVISION=	2
+PORTVERSION=	0.8.9
 CATEGORIES=	graphics
 MASTER_SITES=	GNU/${PORTNAME}/${PORTVERSION}/ \
 		http://mirror.amdmi3.ru/distfiles/
@@ -34,13 +33,14 @@ USE_GNOME=	pkgconfig libxml2
 USE_XORG=	x11 xau xdmcp xext xi xinerama ice sm xv
 USE_AUTOTOOLS=	libltdl
 MAKE_JOBS_SAFE=	yes
+INSTALLS_ICONS=	yes
 
 # jemalloc leads to infinite recursion on FreeBSD
 # --enable-avm2 doesn't build (but consider for future)
 CONFIGURE_ARGS=	--with-boost-incl="${LOCALBASE}/include" \
 		--with-boost-lib="${LOCALBASE}/lib" \
 		--disable-testsuite --disable-avm2 \
-		--with-plugins-install=system \
+		--with-plugins-install=prefix \
 		--sysconfdir="${WRKDIR}/etc" \
 		--disable-jemalloc \
 		--disable-silent-rules
@@ -54,7 +54,7 @@ PLIST_SUB+=	GNASHVER="${GNASHVER}"
 USE_LDCONFIG=	${PREFIX}/lib/gnash
 
 MAN1=		cygnal.1 findmicrophones.1 findwebcams.1 \
-		flvdumper.1 gnash.1 gprocessor.1 gtk-gnash.1 kde4-gnash.1 \
+		flvdumper.1 gnash.1 gprocessor.1 \
 		rtmpget.1 soldumper.1
 
 OPTIONS=	PLUGIN		"Enable browser plugin" on \
@@ -65,7 +65,7 @@ OPTIONS=	PLUGIN		"Enable browser plugin" on \
 		AGG		"Renderer: AGG" on \
 		OPENGL		"Renderer: OpenGL (broken)" off \
 		CAIRO		"Renderer: Cairo (experimental)" off \
-		VAAPI		"Enable VAAPI support (requres FFMPEG)" off \
+		VAAPI		"Enable VAAPI support (requires FFMPEG)" off \
 		FFMPEG		"Media handler: ffmpeg (+SDL sound output)" on \
 		GSTREAMER	"Media handler: GStreamer" off
 
@@ -99,6 +99,8 @@ WEBPLUGINS_FILES=	libgnashplugin.so
 .include "${PORTSDIR}/www/firefox/Makefile.webplugins"
 PLIST_SUB+=	NPAPI=""
 CONFIGURE_ARGS+=--with-npapi-plugindir="${WEBPLUGINS_DIR}"
+BUILD_DEPENDS+=	${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul
+RUN_DEPENDS+=	${LOCALBASE}/lib/libxul/xpidl:${PORTSDIR}/www/libxul
 .else
 PLIST_SUB+=	NPAPI="@comment "
 CONFIGURE_ARGS+=	--disable-npapi
@@ -115,6 +117,7 @@ CONFIGURE_ARGS+=	--disable-kparts3
 .if defined(WITH_KDE4) && !defined(WITHOUT_PLUGIN)
 PLIST_SUB+=	KPARTS4=""
 USE_LDCONFIG+=	${KDE4_PREFIX}/lib/kde4
+CONFIGURE_ARGS+=	--with-kde4_prefix=${PREFIX}/kde4
 .else
 PLIST_SUB+=	KPARTS4="@comment "
 CONFIGURE_ARGS+=	--disable-kparts4
@@ -129,6 +132,7 @@ GNASH_GUIS=
 USE_GNOME=	gtk20
 GNASH_GUIS+=	gtk
 PLIST_SUB+=	GTK=""
+MAN1+=		gnash-gtk-launcher.1 gtk-gnash.1
 .else
 PLIST_SUB+=	GTK="@comment "
 .endif
@@ -152,6 +156,7 @@ CONFIGURE_ENV+=	KDE4_CONFIG="${KDE4_PREFIX}/bin/kde4-config"
 .	if exists(${LOCALBASE}/lib/libkdeui.so)
 IGNORE=		KDE4 GUI can't be built when KDE3 is installed. Please rerun 'make config' and disable KDE4 GUI or deinstall kdelibs-3
 .	endif
+MAN1+=		gnash-qt-launcher.1 kde4-gnash.1
 .else
 PLIST_SUB+=	KDE4="@comment "
 .endif
