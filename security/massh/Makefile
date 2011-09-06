@@ -7,6 +7,7 @@
 
 PORTNAME=	massh
 PORTVERSION=	2.0.57
+PORTREVISION=	1
 CATEGORIES=	security sysutils
 MASTER_SITES=	http://m.a.tt/er/
 DISTNAME=	massh
