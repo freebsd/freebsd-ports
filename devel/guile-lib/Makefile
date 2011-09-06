@@ -7,10 +7,9 @@
 #
 
 PORTNAME=	guile-lib
-PORTVERSION=	0.1.6
-PORTREVISION=	4
+PORTVERSION=	0.2.1
 CATEGORIES=	devel scheme
-MASTER_SITES=	http://download.gna.org/guile-lib/
+MASTER_SITES=	SAVANNAH
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A down-scaled, limited-scope CPAN for Guile
@@ -18,8 +17,8 @@ COMMENT=	A down-scaled, limited-scope CPAN for Guile
 BUILD_DEPENDS=	guile:${PORTSDIR}/lang/guile
 RUN_DEPENDS=	guile:${PORTSDIR}/lang/guile
 
-GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
+GNU_CONFIGURE=	yes
 
 INFO=	guile-library
 
