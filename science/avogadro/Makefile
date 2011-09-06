@@ -7,6 +7,7 @@
 
 PORTNAME=	avogadro
 PORTVERSION=	1.0.1
+PORTREVISION=	1
 CATEGORIES=	science
 MASTER_SITES=	SF
 
@@ -22,9 +23,7 @@ USE_QT_VER=	4
 QT_COMPONENTS=	gui opengl network linguist_build \
 		qmake_build moc_build rcc_build uic_build
 USE_CMAKE=	yes
-CMAKE_ARGS=	-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
-		-DLIB_INSTALL_DIR="${LOCALBASE}/lib" \
-		-DENABLE_GLSL=OFF
+CMAKE_ARGS=	-DENABLE_GLSL=OFF
 USE_GCC=	4.4+
 MAKE_JOBS_SAFE=	yes
 
