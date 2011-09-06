@@ -5,9 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	FlightGear
-PORTVERSION=	2.0.0
-PORTREVISION=	3
+PORTNAME=	flightgear
+PORTVERSION=	2.4.0
 CATEGORIES=	games
 # see http://www.flightgear.org/templates.js
 MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Source/ \
@@ -19,14 +18,14 @@ MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/flightgear/ftp/Source/ \
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	The FlightGear flight simulator
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	boost_thread.4:${PORTSDIR}/devel/boost-libs
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib \
 		${LOCALBASE}/lib/libsgmisc.a:${PORTSDIR}/devel/simgear \
-		${LOCALBASE}/share/FlightGear/version:${PORTSDIR}/games/flightgear-data
-
-LICENSE=	GPLv2
+		${LOCALBASE}/share/flightgear/version:${PORTSDIR}/games/flightgear-data
 
 .if defined(WITH_OSG_DEVEL)
 LIB_DEPENDS+=	osg.59:${PORTSDIR}/graphics/osg-devel
@@ -34,21 +33,22 @@ LIB_DEPENDS+=	osg.59:${PORTSDIR}/graphics/osg-devel
 LIB_DEPENDS+=	osg.55:${PORTSDIR}/graphics/osg
 .endif
 
+USE_BZIP2=	yes
 USE_XORG=	ice sm x11 xext xi xt xmu
 USE_GL=		gl glu glut
 USE_OPENAL=	al
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
-# location of flightgear-data
+CPPFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--datadir=${LOCALBASE}/share
 MAKE_JOBS_UNSAFE=yes
 
 MAN1=	est-epsilon.1 js_demo.1 pstest.1 fgjs.1 gl-info.1 fgfs.1
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|-D_REENTRANT|${PTHREAD_CFLAGS}|' \
+	@${REINPLACE_CMD} 's|-D_REENTRANT|${PTHREAD_CFLAGS}|' \
 		${WRKSRC}/configure
 
 post-install:

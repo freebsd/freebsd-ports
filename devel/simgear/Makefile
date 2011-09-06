@@ -5,9 +5,8 @@
 # $FreeBSD$
 #
 
-PORTNAME=	SimGear
-PORTVERSION=	2.0.0
-PORTREVISION=	3
+PORTNAME=	simgear
+PORTVERSION=	2.4.0
 CATEGORIES=	devel games
 MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/simgear/ftp/Source/ \
 		ftp://ftp.de.flightgear.org/pub/simgear/Source/ \
@@ -16,6 +15,8 @@ MASTER_SITES=	http://mirrors.ibiblio.org/pub/mirrors/simgear/ftp/Source/ \
 
 MAINTAINER=	martymac@FreeBSD.org
 COMMENT=	A toolkit for 3D games and simulations
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
 RUN_DEPENDS=	${LOCALBASE}/lib/libplibsl.a:${PORTSDIR}/x11-toolkits/plib
@@ -28,16 +29,14 @@ LIB_DEPENDS+=	osg.59:${PORTSDIR}/graphics/osg-devel
 LIB_DEPENDS+=	osg.55:${PORTSDIR}/graphics/osg
 .endif
 
-LICENSE=	GPLv2
-
+USE_BZIP2=	yes
 USE_XORG=	ice sm x11 xext xi xt xmu
 USE_OPENAL=	al alut
 USE_GL=		gl glu glut
 GNU_CONFIGURE=	yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib ${PTHREAD_LIBS}
-CONFIGURE_ENV=	CPPFLAGS="${CPPFLAGS}" \
-		LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--with-jpeg-factory
 
 post-patch:
