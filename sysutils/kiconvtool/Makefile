@@ -14,6 +14,8 @@ MASTER_SITES=	http://mirror.amdmi3.ru/distfiles/ \
 MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	Tool to preload kernel iconv charset tables
 
+USE_ICONV=	yes	# used by libkiconv, actually
+
 PLIST_FILES=	sbin/kiconvtool etc/rc.d/kiconv
 
 MAN8=		kiconvtool.8
