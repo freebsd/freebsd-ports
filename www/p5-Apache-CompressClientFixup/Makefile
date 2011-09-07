@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/Constants.pm:${PORTSDIR}/www/mod
 RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 DEPRECATED=	depends on mod_perl
-EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+EXPIRATION_DATE=	2011-11-01
 
 MAKE_JOBS_SAFE=  yes
 

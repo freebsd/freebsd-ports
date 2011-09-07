@@ -18,7 +18,7 @@ COMMENT=	Forking and executing subprocesses from mod_perl
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Apache/src.pm:${PORTSDIR}/www/mod_perl
 
 DEPRECATED=	depends on mod_perl
-EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+EXPIRATION_DATE=	2011-11-01
 
 PERL_CONFIGURE=	yes
 

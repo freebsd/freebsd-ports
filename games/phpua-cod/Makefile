@@ -18,7 +18,7 @@ BUILD_DEPENDS=	${LOCALBASE}/${PHPUA}/index.php:${PORTSDIR}/games/phpua-engine
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 DEPRECATED=	depends on phpua-engine
-EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+EXPIRATION_DATE=	2011-11-01
 
 # Some variables you can change
 PHPUA?=		www/phpua
