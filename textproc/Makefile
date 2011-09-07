@@ -53,7 +53,6 @@
     SUBDIR += btparse
     SUBDIR += c2html
     SUBDIR += ca-aspell
-    SUBDIR += carthage
     SUBDIR += catdoc
     SUBDIR += cbedic
     SUBDIR += cdif
@@ -167,7 +166,6 @@
     SUBDIR += etoile-lucenekit
     SUBDIR += etoile-ogrekit
     SUBDIR += etoile-opmlkit
-    SUBDIR += europass-xsl
     SUBDIR += exempi
     SUBDIR += exmpp
     SUBDIR += expat2

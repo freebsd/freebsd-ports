@@ -338,9 +338,6 @@ mindterm-*		security/mindterm-binary Do not sell for profit
 miracl*			math/miracl		Free for non-profit use, but
 						commercial license is required
 						for all other usages
-mMosaic*		www/mmosaic		Do not sell (per NCSA).  Do not
-						distribute binary (GPL/BSD
-						conflict)
 mmv_*			misc/mmv		Restrictive/unclear copyright
 molden*			biology/molden		Free for academic, non-profit
 						usage; do not redistribute
@@ -527,7 +524,6 @@ warsow/*		games/linux-warsow	Redistribution is limited, art
 						is copyrighted
 webcopy-*		www/webcopy		Do not sell for profit
 webfonts/*		x11-fonts/webfonts	Restrictive copyright
-webglimpse-*.src.tar.gz	www/webglimpse		Depends on glimpse
 wgetpro*		ftp/wgetpro		U.S. Patent 6,041,345
 win32/*			multimedia/win32-codecs	Licensing status of the
 						codecs is unknown

@@ -1,8 +1,0 @@
-bin/gfontsampler
-share/applications/gfontsampler.desktop
-share/gfontsampler/glade/gfontsampler-icon.png
-share/gfontsampler/glade/gfontsampler.glade
-share/pixmaps/gfontsampler-icon.png
-@dirrm share/gfontsampler/glade
-@dirrm share/gfontsampler
-@dirrmtry share/applications

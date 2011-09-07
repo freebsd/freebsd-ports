@@ -6,7 +6,6 @@
     SUBDIR += 9libs
     SUBDIR += SoXt
     SUBDIR += Xaw3d
-    SUBDIR += XawPlus
     SUBDIR += attica
     SUBDIR += bakery
     SUBDIR += blt
@@ -143,7 +142,6 @@
     SUBDIR += otk
     SUBDIR += p5-Alien-wxWidgets
     SUBDIR += p5-GdkImlib
-    SUBDIR += p5-GdkPixbuf
     SUBDIR += p5-Glade2
     SUBDIR += p5-Gnome2
     SUBDIR += p5-Gnome2-Canvas
