@@ -51,6 +51,8 @@ USE_RC_SUBR=	collectd collectdmon
 
 USE_LDCONFIG=	yes
 
+CONFLICTS=	collectd-5.[0-9]*
+
 CPPFLAGS=	-I${LOCALBASE}/include
 
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
