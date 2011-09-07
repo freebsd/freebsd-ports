@@ -7,6 +7,7 @@
 
 PORTNAME=	cassandra
 PORTVERSION=	0.8.4
+PORTREVISION=	1
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	cassandra/${PORTVERSION}
@@ -19,22 +20,30 @@ COMMENT=	Open source distributed database management system
 LICENSE=	ASL
 
 JAVA_VERSION=	1.6+
+NO_BUILD=	yes
 USE_JAVA=	yes
 USE_RC_SUBR=	cassandra
+REINPLACE_ARGS=	-i ''
 
 CONFIGS=	cassandra.yaml log4j-server.properties access.properties \
 		log4j-tools.properties passwd.properties \
 		cassandra-topology.properties
 
-do-build:
+post-extract:
+	@${RM} ${WRKSRC}/bin/*.bat ${WRKSRC}/bin/stop-server
 .for i in ${CONFIGS}
 	@${MV} ${WRKSRC}/conf/${i} ${WRKSRC}/conf/${i}.sample
 .endfor
 
+do-patch:
+	@${REINPLACE_CMD} -e 's|/usr/share/cassandra|${DATADIR}/bin|' ${WRKSRC}/bin/cassandra-cli ${WRKSRC}/bin/nodetool
+	@${REINPLACE_CMD} -e 's|\`dirname \$$\0\`/..|${DATADIR}|' ${WRKSRC}/bin/cassandra.in.sh
+
 do-install:
 	@${MKDIR} ${DATADIR}
-	@${CP} -R ${WRKSRC}/* ${DATADIR}
-	@${RM} ${DATADIR}/bin/*.bat
+	@cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${DATADIR}
+	@${LN} -s ${DATADIR}/bin/cassandra-cli ${PREFIX}/bin/cassandra-cli
+	@${LN} -s ${DATADIR}/bin/nodetool ${PREFIX}/bin/nodetool
 
 post-install:
 	@PKG_PREFIX=${PREFIX} ${SH} ${PKGINSTALL} ${PKGNAME} POST-INSTALL

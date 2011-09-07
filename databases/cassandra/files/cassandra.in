@@ -25,6 +25,7 @@
 # DAMAGE. 
 
 # PROVIDE: cassandra
+# REQUIRE: LOGIN
 # KEYWORD: shutdown
 #
 # $FreeBSD$
@@ -32,6 +33,8 @@
 . /etc/rc.subr
 
 name="cassandra"
+rcvar=`set_rcvar`
+load_rc_config $name
 
 cassandra_enable=${cassandra_enable:-"NO"}
 cassandra_vmargs=${cassandra_vmargs:-"-XX:+UseConcMarkSweepGC -XX:+CMSIncrementalMode -XX:+CMSIncrementalPacing -XX:CMSIncrementalDutyCycleMin=0 -XX:+CMSIncrementalDutyCycle=10"}
@@ -42,8 +45,8 @@ command_args="-p /var/run/cassandra.pid >/dev/null"
 procname="java"
 pidfile=/var/run/cassandra.pid
 
-rcvar=`set_rcvar`
-load_rc_config $name
 export MAX_HEAP_SIZE="$cassandra_memory"
 export HEAP_NEWSIZE="$cassandra_newgen"
+export PATH=$PATH:%%LOCALBASE%%/bin
+
 run_rc_command "$1"
