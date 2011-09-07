@@ -15,7 +15,7 @@ MAINTAINER=	skv@FreeBSD.org
 COMMENT=	NTLM authentication module for the Apache webserver
 
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
-EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+EXPIRATION_DATE=	2011-11-01
 
 MAKE_JOBS_SAFE=  yes
 

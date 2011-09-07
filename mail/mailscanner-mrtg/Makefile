@@ -18,7 +18,7 @@ RUN_DEPENDS=	${LOCALBASE}/bin/mrtg:${PORTSDIR}/net-mgmt/mrtg \
 		${LOCALBASE}/lib/MailScanner/MailScanner.pm:${PORTSDIR}/mail/mailscanner
 
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
-EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+EXPIRATION_DATE=	2011-11-01
 
 USE_PERL5=	yes
 USE_APACHE=	13

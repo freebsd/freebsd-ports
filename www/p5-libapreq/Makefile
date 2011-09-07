@@ -24,7 +24,7 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 .endif
 
 DEPRECATED=	apache13 is deprecated, migrate to 2.2.x+ now
-EXPIRATION_DATE=	one week after FreeBSD 9.0-RELEASE-p0
+EXPIRATION_DATE=	2011-11-01
 
 PERL_CONFIGURE=	yes
 USE_APACHE=	13
