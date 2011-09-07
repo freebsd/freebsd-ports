@@ -5,25 +5,27 @@
 # $FreeBSD$
 
 PORTNAME=	mariadb
-PKGNAMESUFFIX?=	-server
-
-UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
-
-PORTVERSION=	5.2.7
+PORTVERSION=	5.2.8
 PORTREVISION?=	0
 CATEGORIES=	databases ipv6
 MASTER_SITES=	http://www.percona.com/downloads/MariaDB/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
 		http://ftp.osuosl.org/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
 		http://mirrors.supportex.net/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
-		http://technocation.org/mirror/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
 		http://mirror.aarnet.edu.au/pub/MariaDB/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
-		http://ftp-stud.hs-esslingen.de/pub/Mirrors/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
+		http://mirror2.hs-esslingen.de/pub/Mirrors/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
 		http://gd.tuwien.ac.at/db/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
 		http://mirrors.fe.up.pt/pub/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
+		http://mirror.de.gsnw.de:56431/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
+		http://mirror.layerjet.com/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/ \
 		http://mirror.switch.ch/mirror/mariadb/${PORTNAME}-${PORTVERSION}/kvm-tarbake-jaunty-x86/
+PKGNAMESUFFIX?=	-server
 
 MAINTAINER=	dgeo@centrale-marseille.fr
 COMMENT?=	Database server - drop-in replacement for MySQL
+
+LICENSE=	GPLv2
+
+UNIQUENAME=	${PORTNAME}${PKGNAMESUFFIX}
 
 CONFLICTS?=	mysql-server-[0-9]*
 
@@ -43,7 +45,7 @@ USE_LDCONFIG=	${PREFIX}/lib/mysql
 USERS=		mysql
 GROUPS=		mysql
 
-OPTIONS+=	STATIC "Build statically linked (not on 9.x)" On \
+OPTIONS+=	STATIC "Build statically linked (not on 9.x)" Off \
 		SSL "Activate SSL support (yassl)" On \
 		OPENSSL "Use OpenSSL instead of bundled yassl" Off
 
@@ -58,8 +60,6 @@ MAN1=	innochecksum.1 my_print_defaults.1 myisam_ftdump.1 myisamchk.1 \
 	mysql_install_db.1 mysql_tzinfo_to_sql.1 mysql_waitpid.1 mysqld_safe.1 \
 	mysqltest_embedded.1 perror.1 replace.1 resolve_stack_dump.1 resolveip.1
 MAN8=	mysqld.8 mysqlmanager.8
-
-LICENSE=	GPLv2
 
 INFO=		mysql
 
