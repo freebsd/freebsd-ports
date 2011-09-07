@@ -7,7 +7,7 @@
 
 PORTNAME=	clojure-mode.el
 PORTVERSION=	20090718
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang elisp
 MASTER_SITES=	http://distfiles.scode.org/ports/
 DISTNAME=	clojure-mode-${PORTVERSION}
