@@ -7,8 +7,8 @@
 
 PORTNAME=	openssl
 PORTVERSION=	1.0.0
-DISTVERSION=	1.0.0d
-PORTREVISION=	5
+DISTVERSION=	1.0.0e
+PORTREVISION=	6
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.openssl.org/%SUBDIR%/ \
 		ftp://ftp.openssl.org/%SUBDIR%/ \
@@ -37,7 +37,6 @@ OPTIONS=	I386	"Use optimized assembler for 80386" off \
 		RFC3779	"Build with RFC3779 support" off \
 	DTLS_RENEGOTIATION	"Build with DTLS Abbr. renegotiations" off \
 	DTLS_HEARTBEAT		"Build with DTLS Heartbeat Extension" off \
-	TLS_EXTRACTOR		"Build with TLS key material extractor" off \
 	SCTP			"Build with SCTP support" off \
 
 MAKE_JOBS_UNSAFE=	yes
@@ -1108,7 +1107,6 @@ EXTRACONFIGURE+=	no-rfc3779
 .endif
 
 .if defined(WITH_SCTP)
-WITH_TLS_EXTRACTOR?=		yes
 EXTRACONFIGURE+=	sctp
 .if defined(WITH_DTLS_HEARTBEAT)
 BROKEN=		Patches do not merge, please change options
@@ -1121,11 +1119,8 @@ BROKEN=		Patches do not merge, please change options
 .if defined(WITH_DTLS_RENEGOTIATION) || make(makesum) || defined(FETCH_ALL)
 PATCHFILES+=    abbreviated-renegotiation.patch
 .endif
-.if defined(WITH_TLS_EXTRACTOR) || make(makesum) || defined(FETCH_ALL)
-PATCHFILES+=	tls-extractor.patch
-.endif
 .if defined(WITH_SCTP) || make(makesum) || defined(FETCH_ALL)
-PATCHFILES+=	dtls-sctp-20.patch
+PATCHFILES+=	dtls-sctp-24.patch
 .endif
 .if defined(WITH_DTLS_HEARTBEAT) || make(makesum) || defined(FETCH_ALL)
 PATCHFILES+=    dtls-heartbeats.patch
