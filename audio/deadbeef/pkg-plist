@@ -1,5 +1,6 @@
 bin/deadbeef
 include/deadbeef/deadbeef.h
+%%GUI%%include/deadbeef/gtkui_api.h
 %%ADP%%lib/deadbeef/adplug.a
 %%ADP%%lib/deadbeef/adplug.la
 %%ADP%%lib/deadbeef/adplug.so
@@ -20,10 +21,6 @@ include/deadbeef/deadbeef.h
 %%FLAC%%lib/deadbeef/flac.la
 %%FLAC%%lib/deadbeef/flac.so
 %%FLAC%%lib/deadbeef/flac.so.0
-%%GUI%%lib/deadbeef/gtkui.a
-%%GUI%%lib/deadbeef/gtkui.la
-%%GUI%%lib/deadbeef/gtkui.so
-%%GUI%%lib/deadbeef/gtkui.so.0
 %%HOTKEYS%%lib/deadbeef/hotkeys.so
 %%HOTKEYS%%lib/deadbeef/hotkeys.la
 %%HOTKEYS%%lib/deadbeef/hotkeys.a
@@ -84,14 +81,6 @@ lib/deadbeef/oss.so.0
 %%MMS%%lib/deadbeef/mms.so
 %%MMS%%lib/deadbeef/mms.la
 %%MMS%%lib/deadbeef/mms.a
-%%SHN%%lib/deadbeef/shn.so.0
-%%SHN%%lib/deadbeef/shn.so
-%%SHN%%lib/deadbeef/shn.la
-%%SHN%%lib/deadbeef/shn.a
-%%AO%%lib/deadbeef/ao.so.0
-%%AO%%lib/deadbeef/ao.so
-%%AO%%lib/deadbeef/ao.la
-%%AO%%lib/deadbeef/ao.a
 %%SHELLEXEC%%lib/deadbeef/shellexec.so.0
 %%SHELLEXEC%%lib/deadbeef/shellexec.so
 %%SHELLEXEC%%lib/deadbeef/shellexec.la
@@ -104,10 +93,6 @@ lib/deadbeef/oss.so.0
 %%SID%%lib/deadbeef/sid.so
 %%SID%%lib/deadbeef/sid.la
 %%SID%%lib/deadbeef/sid.a
-%%ART%%lib/deadbeef/artwork.so.0
-%%ART%%lib/deadbeef/artwork.so
-%%ART%%lib/deadbeef/artwork.la
-%%ART%%lib/deadbeef/artwork.a
 %%EQ%%lib/deadbeef/supereq.so.0
 %%EQ%%lib/deadbeef/supereq.so
 %%EQ%%lib/deadbeef/supereq.la
@@ -116,10 +101,6 @@ lib/deadbeef/oss.so.0
 %%GME%%lib/deadbeef/gme.so
 %%GME%%lib/deadbeef/gme.la
 %%GME%%lib/deadbeef/gme.a
-%%DUMB%%lib/deadbeef/dumb.so.0
-%%DUMB%%lib/deadbeef/dumb.so
-%%DUMB%%lib/deadbeef/dumb.la
-%%DUMB%%lib/deadbeef/dumb.a
 %%NOTIFY%%lib/deadbeef/notify.so.0
 %%NOTIFY%%lib/deadbeef/notify.so
 %%NOTIFY%%lib/deadbeef/notify.la
@@ -137,6 +118,41 @@ share/applications/deadbeef.desktop
 %%DOCSDIR%%/translators.txt
 %%DOCSDIR%%/help.ru.txt
 %%DOCSDIR%%/help.pt_BR.txt
+%%GUI%%lib/deadbeef/ddb_gui_GTK2.so.0
+%%GUI%%lib/deadbeef/ddb_gui_GTK2.so
+%%GUI%%lib/deadbeef/ddb_gui_GTK2.la
+%%GUI%%lib/deadbeef/ddb_gui_GTK2.a
+%%DSP%%lib/deadbeef/dsp_libsrc.so.0
+%%DSP%%lib/deadbeef/dsp_libsrc.so
+%%DSP%%lib/deadbeef/dsp_libsrc.la
+%%DSP%%lib/deadbeef/dsp_libsrc.a
+%%M3U%%lib/deadbeef/m3u.so
+%%M3U%%lib/deadbeef/m3u.so.0
+%%M3U%%lib/deadbeef/m3u.la
+%%M3U%%lib/deadbeef/m3u.a
+%%CONVERTER%%lib/deadbeef/converter.so.0
+%%CONVERTER%%lib/deadbeef/converter.so
+%%CONVERTER%%lib/deadbeef/converter.la
+%%CONVERTER%%lib/deadbeef/converter_gtkui.so.0
+%%CONVERTER%%lib/deadbeef/converter_gtkui.so
+%%CONVERTER%%lib/deadbeef/converter_gtkui.la
+%%CONVERTER%%lib/deadbeef/converter.a
+%%CONVERTER%%lib/deadbeef/converter_gtkui.a
+%%CONVERTER%%lib/deadbeef/convpresets/AAC_(Nero_FAAC).txt
+%%CONVERTER%%lib/deadbeef/convpresets/FLAC_(compression_level_5).txt
+%%CONVERTER%%lib/deadbeef/convpresets/MP3_CBR_320_Kbps_(Lame).txt
+%%CONVERTER%%lib/deadbeef/convpresets/MP3_VBR_192Kbps_(Lame).txt
+%%CONVERTER%%lib/deadbeef/convpresets/MS_RIFF_WAV.txt
+%%CONVERTER%%lib/deadbeef/convpresets/MusePack.txt
+%%CONVERTER%%lib/deadbeef/convpresets/Ogg_Vorbis_(-q_5).txt
+%%CONVERTER%%lib/deadbeef/convpresets/TTA.txt
+%%CONVERTER%%lib/deadbeef/convpresets/WavPack.txt
+%%VFS_ZIP%%lib/deadbeef/vfs_zip.so.0
+%%VFS_ZIP%%lib/deadbeef/vfs_zip.so
+%%VFS_ZIP%%lib/deadbeef/vfs_zip.la
+%%VFS_ZIP%%lib/deadbeef/vfs_zip.a
+%%NLS%%share/locale/be/LC_MESSAGES/deadbeef.mo
+%%NLS%%share/locale/tr/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/deadbeef.mo
 %%NLS%%share/locale/ca/LC_MESSAGES/deadbeef.mo
@@ -211,14 +227,15 @@ share/icons/hicolor/scalable/apps/deadbeef.svg
 @dirrmtry share/icons/hicolor/scalable
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
-@dirrmtry %%NLS%%share/locale/lg/LC_MESSAGES
-@dirrmtry %%NLS%%share/locale/lg
 @dirrmtry %%NLS%%share/locale/km/LC_MESSAGES
 @dirrmtry %%NLS%%share/locale/km
+@dirrmtry %%NLS%%share/locale/lg/LC_MESSAGES
+@dirrmtry %%NLS%%share/locale/lg
 %%DATADIR%%/pixmaps/noartwork.jpg
 @dirrm %%DOCSDIR%%
 @dirrm %%DATADIR%%/pixmaps
 @dirrm %%DATADIR%%
+%%CONVERTER%%@dirrm lib/deadbeef/convpresets
 @dirrm lib/deadbeef
 @dirrm include/deadbeef
 @dirrmtry share/applications
