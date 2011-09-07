@@ -5,10 +5,11 @@
 # $FreeBSD$
 
 PORTNAME=	relayd
-PORTVERSION=	4.9.20110526
-PORTREVISION=	2
+PORTVERSION=	5.0.20110907
 CATEGORIES=	net
-MASTER_SITES=	${MASTER_SITE_LOCAL}
+MASTER_SITES=	https://github.com/downloads/mmatuska/relayd/
+
+FETCH_ARGS=	-pRr
 MASTER_SITE_SUBDIR=	mm
 
 MAINTAINER=	mm@FreeBSD.org
@@ -48,12 +49,6 @@ MAKE_ARGS+=	LIBEVENT=-levent
 BROKEN=		does not build on FreeBSD 7.X
 .endif
 
-post-extract:
-	@${CP} ${FILESDIR}/Makefile.all ${WRKSRC}/Makefile
-	@${CP} ${FILESDIR}/Makefile.relayctl ${WRKSRC}/relayctl/Makefile
-	@${CP} ${FILESDIR}/Makefile.relayd ${WRKSRC}/relayd/Makefile
-	@${CP} ${FILESDIR}/arc4random.c ${WRKSRC}/relayd
-
 post-patch:
 	@${REINPLACE_CMD} -e 's|%%PREFIX%%|${PREFIX}|g' \
 		${WRKSRC}/relayd/relay.c \
@@ -64,5 +59,7 @@ post-patch:
 post-install:
 	@${INSTALL_DATA} ${WRKSRC}/../etc/relayd.conf \
 		${PREFIX}/etc/relayd.conf.sample
+	@${CP} -n ${PREFIX}/etc/relayd.conf.sample \
+		${PREFIX}/etc/relayd.conf
 
 .include <bsd.port.post.mk>

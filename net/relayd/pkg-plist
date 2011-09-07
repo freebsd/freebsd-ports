@@ -1,4 +1,4 @@
+@unexec if cmp -s %D/etc/relayd.conf %D/etc/relayd.conf.sample; then rm -f %D/etc/relayd.conf; fi
 etc/relayd.conf.sample
 sbin/relayctl
 sbin/relayd
-@unexec echo "Warning: If you will *NOT* use this package anymore, please remove the _relayd user manually."
