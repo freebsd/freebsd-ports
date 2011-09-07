@@ -7,7 +7,7 @@
 
 PORTNAME=	rbbr
 PORTVERSION=	0.6.0
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	devel ruby
 MASTER_SITES=	SF/ruby-gnome2/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 PKGNAMEPREFIX=	${RUBY_PKGNAMEPREFIX}
@@ -20,8 +20,6 @@ COMMENT=	A GTK+2-based Ruby module browser
 BUILD_DEPENDS=	rubygem-gettext>0:${PORTSDIR}/devel/rubygem-gettext
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2 \
 		rubygem-gettext>0:${PORTSDIR}/devel/rubygem-gettext
-
-BROKEN=		does not package
 
 USE_GETTEXT=	yes
 USE_RUBY=	yes
@@ -45,9 +43,9 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} == 1.9
-PLIST_SUB+=	CYMO="@comment "
+PLIST_SUB+=	R19=""
 .else
-PLIST_SUB+=	CYMO=""
+PLIST_SUB+=	R19="@comment "
 .endif
 
 .include <bsd.port.post.mk>
