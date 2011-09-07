@@ -81,7 +81,6 @@
     SUBDIR += gentium-basic
     SUBDIR += getbdf
     SUBDIR += gfe
-    SUBDIR += gnome-font-sampler
     SUBDIR += gnu-unifont
     SUBDIR += gnu-unifont-ttf
     SUBDIR += hanazono-fonts-ttf

@@ -86,7 +86,6 @@
     SUBDIR += emerald
     SUBDIR += enlightenment
     SUBDIR += enlightenment-docs
-    SUBDIR += epiwm
     SUBDIR += epplets
     SUBDIR += etoile-azalea
     SUBDIR += etoile-azdock

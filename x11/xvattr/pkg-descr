@@ -1,4 +1,0 @@
-xvattr lets you list the available attributes associated with the Xv
-extension to XFree86. It also allows you to change the values of the
-attributes. This can be used to change brightness and so on for programs
-that use Xv overlays.

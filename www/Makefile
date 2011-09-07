@@ -36,7 +36,6 @@
     SUBDIR += aria2
     SUBDIR += aria2fe
     SUBDIR += arora
-    SUBDIR += ashe
     SUBDIR += asp2php
     SUBDIR += asql
     SUBDIR += asterisk-fop
@@ -387,8 +386,6 @@
     SUBDIR += lionwiki
     SUBDIR += ljdeps
     SUBDIR += ljdump
-    SUBDIR += ljpms
-    SUBDIR += ljsm
     SUBDIR += llgal
     SUBDIR += logtools
     SUBDIR += lusca-head
@@ -413,7 +410,6 @@
     SUBDIR += mini_httpd
     SUBDIR += mkapachepw
     SUBDIR += mknmz-wwwoffle
-    SUBDIR += mmosaic
     SUBDIR += mnogosearch
     SUBDIR += mod_access_identd
     SUBDIR += mod_access_referer
@@ -1509,7 +1505,6 @@
     SUBDIR += py-flask-uploads
     SUBDIR += py-flexget
     SUBDIR += py-flup
-    SUBDIR += py-forgethtml
     SUBDIR += py-formalchemy
     SUBDIR += py-formencode
     SUBDIR += py-funkload
@@ -1721,7 +1716,6 @@
     SUBDIR += squidstats
     SUBDIR += squidview
     SUBDIR += squirm
-    SUBDIR += squishdot
     SUBDIR += srg
     SUBDIR += subsonic
     SUBDIR += suphp
@@ -1906,7 +1900,6 @@
     SUBDIR += webcopy
     SUBDIR += webcrawl
     SUBDIR += webfs
-    SUBDIR += webglimpse
     SUBDIR += webgo
     SUBDIR += webinject
     SUBDIR += webkit-gtk2
@@ -1915,7 +1908,6 @@
     SUBDIR += weblint++
     SUBDIR += webobjects
     SUBDIR += webpy
-    SUBDIR += webredirect
     SUBDIR += webreport
     SUBDIR += webresolve
     SUBDIR += webserver
@@ -1944,7 +1936,6 @@
     SUBDIR += xcache
     SUBDIR += xfce4-smartbookmark-plugin
     SUBDIR += xist
-    SUBDIR += xitami
     SUBDIR += xoops
     SUBDIR += xpi-adblock
     SUBDIR += xpi-adblock_plus

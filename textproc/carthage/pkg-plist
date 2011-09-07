@@ -1,5 +1,0 @@
-bin/carthage
-bin/carthago
-%%PORTDOCS%%%%DOCSDIR%%/README
-%%PORTDOCS%%%%DOCSDIR%%/README.SPQR
-%%PORTDOCS%%@dirrm %%DOCSDIR%%
