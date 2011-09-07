@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	p11-kit
-PORTVERSION=	0.3
+PORTVERSION=	0.5
 CATEGORIES=	security devel
 MASTER_SITES=	http://p11-glue.freedesktop.org/releases/
 
@@ -15,9 +15,15 @@ COMMENT=	Library for loading and enumurating of PKCS\#11 modules
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS=	--disable-gtk-doc --disable-nls
+MAKE_ENV=	exampledir=${EXAMPLESDIR}
 
 USE_AUTOTOOLS=	libtool
 USE_GNOME=	ltverhack gnomehack
 USE_LDCONFIG=	yes
+
+pre-configure:
+	@${REINPLACE_CMD} -e \
+	's|exampledir = $$(p11_system_dir)|exampledir = ${EXAMPLESDIR}|' \
+	${WRKSRC}/${PORTNAME}/Makefile.in
 
 .include <bsd.port.mk>

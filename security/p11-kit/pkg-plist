@@ -10,6 +10,7 @@ lib/libp11-kit.so.0
 lib/p11-kit-proxy.so
 libdata/pkgconfig/p11-kit-1.pc
 share/gtk-doc/html/p11-kit/api-index-full.html
+share/gtk-doc/html/p11-kit/config-example.html
 share/gtk-doc/html/p11-kit/config-format.html
 share/gtk-doc/html/p11-kit/config-global.html
 share/gtk-doc/html/p11-kit/config-locations.html
@@ -34,8 +35,10 @@ share/gtk-doc/html/p11-kit/sharing-initialize.html
 share/gtk-doc/html/p11-kit/sharing-module.html
 share/gtk-doc/html/p11-kit/sharing.html
 share/gtk-doc/html/p11-kit/style.css
+%%EXAMPLESDIR%%/pkcs11.conf.example
 @dirrm share/gtk-doc/html/p11-kit
 @dirrmtry share/gtk-doc/html
 @dirrmtry share/gtk-doc
 @dirrm include/p11-kit-1/p11-kit
 @dirrm include/p11-kit-1
+@dirrm %%EXAMPLESDIR%%
