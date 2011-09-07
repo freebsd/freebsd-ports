@@ -520,6 +520,11 @@
 %%WWWDIR%%/install/upgrade_1.7.0.php
 %%WWWDIR%%/install/upgrade_2.0.0.php
 %%WWWDIR%%/install/upgrade_2.1.0.php
+%%WWWDIR%%/language/af_ZA/about.html
+%%WWWDIR%%/language/af_ZA/af_ZA.jpg
+%%WWWDIR%%/language/af_ZA/common.lang.php
+%%WWWDIR%%/language/af_ZA/index.php
+%%WWWDIR%%/language/af_ZA/iso.txt
 %%WWWDIR%%/language/ar_SA/Translator.txt
 %%WWWDIR%%/language/ar_SA/about.html
 %%WWWDIR%%/language/ar_SA/admin.lang.php
@@ -550,7 +555,6 @@
 %%WWWDIR%%/language/ar_SA/index.php
 %%WWWDIR%%/language/ar_SA/install.lang.php
 %%WWWDIR%%/language/ar_SA/iso.txt
-%%WWWDIR%%/language/ar_SA/upgrade.lang.php
 %%WWWDIR%%/language/ar_SA/upgrade.lang.php
 %%WWWDIR%%/language/bg_BG/about.html
 %%WWWDIR%%/language/bg_BG/admin.lang.php
@@ -2206,6 +2210,7 @@
 @dirrm %%WWWDIR%%/language/bg_BG
 @dirrm %%WWWDIR%%/language/ar_SA/help
 @dirrm %%WWWDIR%%/language/ar_SA
+@dirrm %%WWWDIR%%/language/af_ZA
 @dirrm %%WWWDIR%%/language
 @dirrm %%WWWDIR%%/install/db
 @dirrm %%WWWDIR%%/install
