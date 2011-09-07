@@ -1,5 +1,0 @@
-This is a Tcl/Tk (and supporting C lib) implementation of the
-cardgame President (aka Ass).  You will play against three computer
-players, each with a slightly different playing style (although
-none of these styles are particularly advanced, yet).  Instructions on
-how to play the cardgame are included for the unfamiliar.

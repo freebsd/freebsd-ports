@@ -1,8 +1,0 @@
-bin/gplbp
-%%DATADIR%%/editcopy.xpm
-%%DATADIR%%/editcut.xpm
-%%DATADIR%%/editpaste.xpm
-%%DATADIR%%/filenew.xpm
-%%DATADIR%%/fileopen.xpm
-%%DATADIR%%/fileprint.xpm
-@dirrm %%DATADIR%%
