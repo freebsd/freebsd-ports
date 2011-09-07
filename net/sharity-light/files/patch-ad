@@ -1,7 +1,7 @@
---- Makefile.orig	Tue Nov 24 05:52:13 1998
-+++ Makefile	Sat Jul 24 23:04:14 1999
-@@ -12,11 +12,11 @@
- ##############################################################################
+--- Makefile.orig	2003-12-29 19:11:57.000000000 +0800
++++ Makefile	2011-09-07 09:38:05.000000000 +0800
+@@ -15,11 +15,11 @@ THE_CC	=	gcc
+ # translation.
  
  # For NEXTSTEP/OPENSTEP:
 -CFLAGS = -Wall -O2 -traditional-cpp -g
@@ -16,21 +16,28 @@
  
  # For Linux: (use static linking because of libc5/libc6 troubles)
  #CFLAGS = -Wall -O2 -g
-@@ -24,9 +24,9 @@
+@@ -27,9 +27,9 @@ RPC_WARNFLAGS = -Wno-unused -Wno-switch 
  #RPC_WARNFLAGS = -Wno-unused -Wno-switch -Wno-uninitialized
  
  # For FreeBSD
 -#CFLAGS = -Wall -O2
 -#THE_CC = cc
 -#RPC_WARNFLAGS = -Wno-unused -Wno-switch -Wno-uninitialized
-+CFLAGS += -Wall
++CFLAGS += -Wall -Iinclude -I.
 +THE_CC := $(CC)
 +RPC_WARNFLAGS = -Wno-unused -Wno-switch -Wno-uninitialized
  
- # For NetBsd
- #CFLAGS = -Wall -O2 -DNETBSD
-@@ -66,7 +66,7 @@
- OFILES = proc.o sock.o rumba.o psinode.o kernel.o smb_abstraction.o fo_nfs.o
+ # For MacOSX - essential BSD 4.4 OpenStep [contributed by Pete French]
+ #CFLAGS = -Wall -O4 -traditional-cpp -DBSD4_4_LITE2
+@@ -68,13 +68,13 @@ RPC_WARNFLAGS = -Wno-unused -Wno-switch 
+ ##############################################################################
+ 
+ LD		=	ld
+-CC		=	$(THE_CC) $(INCLUDES)
++#CC		=	$(THE_CC) $(INCLUDES)
+ STRIP	=	strip
+ 
+ OFILES = proc.o recode.o sock.o rumba.o psinode.o kernel.o smb_abstraction.o fo_nfs.o
  
  .c.o:
 -	$(CC) $(CFLAGS) $(ARCH) -c -o $*.o $<
@@ -38,7 +45,7 @@
  
  all: $(NAME)
  
-@@ -74,7 +74,7 @@
+@@ -82,7 +82,7 @@ nfs_dir:
  	(cd nfs; $(MAKE) "CFLAGS=$(CFLAGS)" "CC=$(THE_CC)" "ARCH=$(ARCH)" "RPC_WARNFLAGS=$(RPC_WARNFLAGS)")
  
  $(NAME): $(OFILES) nfs_dir
