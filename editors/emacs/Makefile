@@ -7,7 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	3
+PORTREVISION=	4
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -16,6 +16,9 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}a
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	GNU editing macros
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -28,12 +31,10 @@ EMACS_VER=	23.3
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_BZIP2=	yes
-CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS=	"-I${LOCALBASE}/include"
+CONFIGURE_ENV+=	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--localstatedir=/var
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAN1=		b2m.1 ctags.1 ebrowse.1 emacs.1 emacsclient.1 etags.1 \
 		grep-changelog.1 rcs-checkin.1
@@ -200,7 +201,7 @@ CONFIGURE_ARGS+=	--without-xim
 .endif
 
 .if defined(WITH_CANNA)
-PATCH_SITES+=	http://wahjava.users.sourceforge.net/%SUBDIR%/ ${MASTER_SITE_LOCAL}
+PATCH_SITES+=	http://distfiles.pirateparty.in/%SUBDIR%/ ${MASTER_SITE_LOCAL}
 PATCH_SITE_SUBDIR+=	ashish
 PATCHFILES+=	emacs23.3canna-20110316.diff.gz
 PATCH_DIST_STRIP=	-p1
