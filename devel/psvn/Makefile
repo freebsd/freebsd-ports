@@ -7,7 +7,7 @@
 
 PORTNAME=	psvn
 PORTVERSION=	915036
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	devel elisp
 MASTER_SITES=	http://svn.apache.org/viewvc/subversion/trunk/contrib/client-side/emacs/
 PKGNAMESUFFIX=	-${EMACS_PORT_NAME}

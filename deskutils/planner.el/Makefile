@@ -7,7 +7,7 @@
 
 PORTNAME=	planner.el
 PORTVERSION=	3.42
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils elisp
 MASTER_SITES=	http://download.gna.org/planner-el/ \
 		http://dryice.name/computer/FreeBSD/distfiles/
