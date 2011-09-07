@@ -7,7 +7,7 @@
 
 PORTNAME=	xldlas
 PORTVERSION=	0.85
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	math
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	apps/graphics/visualization
@@ -16,7 +16,7 @@ EXTRACT_SUFX=	-source.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An XForms-based statistics package
 
-LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	forms.2:${PORTSDIR}/x11-toolkits/xforms
 
 WRKSRC=		${WRKDIR}/xldlas
 

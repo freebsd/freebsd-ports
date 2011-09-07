@@ -7,7 +7,7 @@
 
 PORTNAME=	xfmail
 PORTVERSION=	1.5.5
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	mail
 MASTER_SITES=	ftp://xfmail.cfreeze.com/pub/xfmail/release/%SUBDIR%/	\
 		ftp://ftp.welcomes-you.com/pub/xfmail/release/%SUBDIR%/	\
@@ -17,7 +17,7 @@ MASTER_SITE_SUBDIR=	${PORTVERSION}/source/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An X Window System application for receiving electronic mail
 
-LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
+LIB_DEPENDS=	forms.2:${PORTSDIR}/x11-toolkits/xforms \
 		gdbm.3:${PORTSDIR}/databases/gdbm
 
 USE_AUTOTOOLS=	libtool

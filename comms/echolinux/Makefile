@@ -7,7 +7,7 @@
 
 PORTNAME=	echolinux
 PORTVERSION=	0.17a
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	comms hamradio
 MASTER_SITES=	SF/cqinet/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 EXTRACT_SUFX=	.tgz
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	db@FreeBSD.org
 COMMENT=	Amateur Radio Echolink client for UNIX
 
-LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
+LIB_DEPENDS=	forms.2:${PORTSDIR}/x11-toolkits/xforms \
 		gsm.1:${PORTSDIR}/audio/gsm
 
 post-patch:
