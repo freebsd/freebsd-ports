@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	collectd
-PORTVERSION=	4.10.3
-PORTREVISION=	4
+PORTVERSION=	5.0.0
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://collectd.org/files/
 
@@ -43,13 +42,15 @@ OPTIONS=	CGI		"Install collection.cgi (requires RRDTOOL)" 	Off \
 		XMMS		"Input: XMMS" 					Off \
 		RRDTOOL		"Output: RRDTool" 				On
 
-MAN1=		collectd.1 collectd-nagios.1 collectdmon.1
+MAN1=		collectd.1 collectd-nagios.1 collectdmon.1 collectdctl.1
 MAN5=		collectd.conf.5 collectd-email.5 collectd-exec.5 \
 		collectd-snmp.5 collectd-unixsock.5 collectd-perl.5 \
-		collectd-java.5 collectd-python.5 types.db.5
+		collectd-java.5 collectd-python.5 types.db.5 collectd-threshold.5
 USE_RC_SUBR=	collectd collectdmon
 
 USE_LDCONFIG=	yes
+
+CONFLICTS=	collectd-4.[0-9]*
 
 CPPFLAGS=	-I${LOCALBASE}/include
 
