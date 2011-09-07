@@ -15,6 +15,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	kuriyama@FreeBSD.org
 COMMENT=	Perl extension for OAuth framework
 
+DEPRECATED=	Depends on devel/p5-Class-Data-Accessor, which is deprecated
+EXPIRATION_DATE=	2011-09-30
+
 RUN_DEPENDS=	\
 	p5-Class-Accessor>=0.31:${PORTSDIR}/devel/p5-Class-Accessor \
 	p5-Class-Data-Accessor>=0.04001:${PORTSDIR}/devel/p5-Class-Data-Accessor \

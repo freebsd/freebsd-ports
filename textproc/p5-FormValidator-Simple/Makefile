@@ -15,6 +15,9 @@ PKGNAMEPREFIX=		p5-
 MAINTAINER=		perl@FreeBSD.org
 COMMENT=		Validation with simple chains of constraints
 
+DEPRECATED=	Depends on devel/p5-Class-Data-Accessor, which is deprecated
+EXPIRATION_DATE=	2011-09-30
+
 BUILD_DEPENDS=	p5-Class-Accessor>=0.22:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Class-Inspector>=1.13:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-Class-Data-Inheritable>=0.04:${PORTSDIR}/devel/p5-Class-Data-Inheritable \

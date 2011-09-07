@@ -14,6 +14,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	miwi@FreeBSD.org
 COMMENT=	Restart Catalyst when specified memory threshold reached
 
+DEPRECATED=	Depends on devel/p5-Class-Data-Accessor, which is deprecated
+EXPIRATION_DATE=	2011-09-30
+
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.7007:${PORTSDIR}/www/p5-Catalyst-Runtime	\
 		p5-Class-Data-Accessor>=0:${PORTSDIR}/devel/p5-Class-Data-Accessor \
 		p5-MRO-Compat>=0.07:${PORTSDIR}/devel/p5-MRO-Compat \
