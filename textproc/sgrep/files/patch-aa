@@ -1,5 +1,5 @@
---- Makefile--	Wed Apr 29 12:08:55 1998
-+++ Makefile	Wed Apr 29 12:20:29 1998
+--- Makefile.orig	1996-05-02 19:58:24.000000000 +0800
++++ Makefile	2011-09-07 09:33:07.000000000 +0800
 @@ -10,11 +10,11 @@
  #
  
@@ -15,7 +15,16 @@
  # Where the sample rc file goes
  RCFILE = $(LIBDIR)/sgreprc
  # If you can't install as root you might wan't to use this as rc file
-@@ -45,11 +45,7 @@
+@@ -25,7 +25,7 @@ VERSION = 0.99
+ CFLAGS = -O -DVERSION=\"$(VERSION)\" -DLIBDIR=\"$(LIBDIR)\"
+ LDFLAGS =
+ # if cc fails to you use gcc
+-CC = cc
++#CC = cc
+ CPPFLAGS =
+ LIBS =
+ 
+@@ -45,11 +45,7 @@ sgrep: $(OBJECTS)
  clean:
  	-rm -f $(OBJECTS)
  

@@ -1,0 +1,11 @@
+--- Makefile.orig	2011-09-07 09:34:45.000000000 +0800
++++ Makefile	2011-09-07 09:34:52.000000000 +0800
+@@ -15,7 +15,7 @@ MANDIR=$(PREFIX)/man/man$(MANEXT)
+ # Permissions mode to use for man pages.
+ MANMODE=444
+ 
+-CC=cc
++#CC=cc
+ PROFILE=
+ INCLUDE=
+ OPTIMIZE=-O
