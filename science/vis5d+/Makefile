@@ -22,6 +22,12 @@ LIB_DEPENDS=	netcdf.4:${PORTSDIR}/science/netcdf \
 		gtkgl.5:${PORTSDIR}/x11-toolkits/gtkglarea
 RUN_DEPENDS=	convert:${PORTSDIR}/graphics/ImageMagick
 
+# The following scope of brokenness for vis5d+ is approximate.  If you find
+# the following scope is inappropriate for you, please report to maintainer.
+.if OSVERSION<801000
+BROKEN=	Does not build on some FreeBSD versions (libtool error).
+.endif
+
 USE_FORTRAN=	yes
 USE_AUTOTOOLS=	libtool
 USE_GL=		yes
