@@ -7,7 +7,7 @@
 
 PORTNAME=	tycoon
 PORTVERSION=	1.07o
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	x11
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/desktop
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	X11/desktop
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A nifty set of desktop apps, including floating buttons
 
-LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	forms.2:${PORTSDIR}/x11-toolkits/xforms
 
 USE_IMAKE=	yes
 USE_XORG=	xaw

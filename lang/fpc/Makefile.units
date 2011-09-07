@@ -80,7 +80,7 @@ LIB_DEPENDS=	Magick:${PORTSDIR}/graphics/ImageMagick
 
 .if ${PKGNAMESUFFIX} == "-xforms"
 .	if defined(WITH_XFORMS)
-LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	forms.2:${PORTSDIR}/x11-toolkits/xforms
 .	endif
 HAVE_EXAMPLES=	true
 .endif

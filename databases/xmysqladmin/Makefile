@@ -7,7 +7,7 @@
 
 PORTNAME=	xmysqladmin
 PORTVERSION=	1.0
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_MYSQL}
 MASTER_SITE_SUBDIR=	Contrib/Old-Versions
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	Contrib/Old-Versions
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	X11 front end to the mysqladmin command of the MySQL database engine
 
-LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms \
+LIB_DEPENDS=	forms.2:${PORTSDIR}/x11-toolkits/xforms \
 		mysqlclient.10:${PORTSDIR}/databases/mysql323-client
 
 USE_XORG=	xpm

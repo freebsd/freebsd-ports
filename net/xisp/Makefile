@@ -7,7 +7,7 @@
 
 PORTNAME=	xisp
 PORTVERSION=	2.7p4
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	net
 MASTER_SITES=	http://xisp.hellug.gr/release/
 
@@ -16,7 +16,7 @@ PATCH_SITES=	http://www.ml-search.com/xisp/distfiles/
 MAINTAINER=	tm@onepost.net
 COMMENT=	A user-friendly X interface to pppd/chat
 
-LIB_DEPENDS=	forms.1:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=	forms.2:${PORTSDIR}/x11-toolkits/xforms
 
 USE_XORG=	xpm
 

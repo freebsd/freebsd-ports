@@ -7,7 +7,7 @@
 
 PORTNAME=		xmastermind
 PORTVERSION=		0.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=		games
 MASTER_SITES=		${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	games/strategy
@@ -15,7 +15,7 @@ MASTER_SITE_SUBDIR=	games/strategy
 MAINTAINER=		ports@FreeBSD.org
 COMMENT=	Mastermind game for X Window System
 
-LIB_DEPENDS=		forms.1:${PORTSDIR}/x11-toolkits/xforms
+LIB_DEPENDS=		forms.2:${PORTSDIR}/x11-toolkits/xforms
 
 USE_XORG=	x11 xpm
 
