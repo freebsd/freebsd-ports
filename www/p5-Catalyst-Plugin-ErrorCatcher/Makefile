@@ -13,6 +13,9 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	andrey@kostenko.name
 COMMENT=	Catch application errors and emit them somewhere
 
+DEPRECATED=	Depends on devel/p5-Class-Data-Accessor, which is deprecated
+EXPIRATION_DATE=	2011-09-30
+
 RUN_DEPENDS=	p5-Catalyst-Runtime>=5.71001:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Class-Data-Accessor>=0:${PORTSDIR}/devel/p5-Class-Data-Accessor \
 		p5-IO>=0:${PORTSDIR}/devel/p5-IO \
