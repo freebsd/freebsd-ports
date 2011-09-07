@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	shelldap
-PORTVERSION=	0.4
+PORTVERSION=	0.5
 CATEGORIES=	net perl5
 MASTER_SITES=	http://www.martini.nu/misc/
 
