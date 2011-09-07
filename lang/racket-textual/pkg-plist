@@ -42,6 +42,7 @@ include/racket/uconfig.h
 %%LIB32DIR%%/libracket3m-5.1.3.so
 %%LIB32DIR%%/libracket3m.a
 %%LIB32DIR%%/libracket3m.la
+%%LIB32DIR%%/libracket3m.so
 %%LIB32DIR%%/racket/buildinfo
 %%LIB32DIR%%/racket/collects/2htdp/batch-io.rkt
 %%LIB32DIR%%/racket/collects/2htdp/compiled/batch-io_rkt.dep
@@ -17335,6 +17336,7 @@ share/racket/doc/xml/in.sxref
 share/racket/doc/xml/index.html
 share/racket/doc/xml/out.sxref
 share/racket/doc/xml/stamp.sxref
+@dirrm include/racket
 @dirrm %%LIB32DIR%%/racket/collects/xml/private/compiled
 @dirrm %%LIB32DIR%%/racket/collects/xml/private
 @dirrm %%LIB32DIR%%/racket/collects/xml/compiled
