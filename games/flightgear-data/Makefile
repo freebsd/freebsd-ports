@@ -29,6 +29,8 @@ DATADIR=	${PREFIX}/share/flightgear
 PLIST=		${WRKDIR}/pkg-plist
 PLIST_DIRS=	%%DATADIR%%
 
+MANUAL_PACKAGE_BUILD=	very large distfile (>400 MB)
+
 post-patch:
 	@${RM} -f ${WRKSRC}/COPYING
 
