@@ -120,6 +120,7 @@
 %%WWWDIR%%/core/SegmentExpression.php
 %%WWWDIR%%/core/Session.php
 %%WWWDIR%%/core/Session/Namespace.php
+%%WWWDIR%%/core/Session/SaveHandler/DbTable.php
 %%WWWDIR%%/core/Site.php
 %%WWWDIR%%/core/Smarty.php
 %%WWWDIR%%/core/SmartyPlugins/block.purify.php
@@ -1360,7 +1361,6 @@
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.flix.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.gigablast.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.gnadenmeer.de.png
-%%WWWDIR%%/plugins/Referers/images/searchEngines/www.google.com.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.google.interia.pl.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.goyellow.de.png
 %%WWWDIR%%/plugins/Referers/images/searchEngines/www.gulesider.no.png
@@ -1771,6 +1771,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/browsers/AW.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/BB.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/BE.gif
+%%WWWDIR%%/plugins/UserSettings/images/browsers/BP.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/BX.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/CA.gif
 %%WWWDIR%%/plugins/UserSettings/images/browsers/CH.gif
@@ -1834,6 +1835,7 @@
 %%WWWDIR%%/plugins/UserSettings/images/os/POS.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/PS3.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/PSP.gif
+%%WWWDIR%%/plugins/UserSettings/images/os/QNX.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/SBA.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/SOS.gif
 %%WWWDIR%%/plugins/UserSettings/images/os/SYL.gif
@@ -2268,6 +2270,7 @@
 @dirrm %%WWWDIR%%/core/Tracker/Db
 @dirrm %%WWWDIR%%/core/Tracker
 @dirrm %%WWWDIR%%/core/SmartyPlugins
+@dirrm %%WWWDIR%%/core/Session/SaveHandler
 @dirrm %%WWWDIR%%/core/Session
 @dirrm %%WWWDIR%%/core/ScheduledTime
 @dirrm %%WWWDIR%%/core/ReportRenderer
