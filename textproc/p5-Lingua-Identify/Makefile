@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Lingua-Identify
-PORTVERSION=	0.29
+PORTVERSION=	0.30
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,12 +15,13 @@ MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Lingua::Identify - Language identification
 TAGS=		lang detect identify
 
-BUILD_DEPENDS=	${SITE_PERL}/Class/Factory/Util.pm:${PORTSDIR}/devel/p5-Class-Factory-Util \
-		${SITE_PERL}/Text/Affixes.pm:${PORTSDIR}/textproc/p5-Text-Affixes \
-		${SITE_PERL}/${PERL_ARCH}/Text/Ngram.pm:${PORTSDIR}/textproc/p5-Text-Ngram
-RUN_DEPENDS=	${BUILD_DEPENDS}
+COMMON_DEPENDS=	p5-Class-Factory-Util>=1.6:${PORTSDIR}/devel/p5-Class-Factory-Util \
+		p5-Text-Affixes>=0.04:${PORTSDIR}/textproc/p5-Text-Affixes \
+		p5-Text-Ngram>=0.03:${PORTSDIR}/textproc/p5-Text-Ngram
+BUILD_DEPENDS=	${COMMON_DEPENDS}
+RUN_DEPENDS=	${COMMON_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN1=	langident.1 make-lingua-identify-language.1
 MAN3=	Lingua::Identify.3 \
