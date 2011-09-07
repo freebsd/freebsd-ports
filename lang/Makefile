@@ -104,6 +104,7 @@
     SUBDIR += gnat
     SUBDIR += gnat-aux
     SUBDIR += gnatdroid-armv5
+    SUBDIR += gnatdroid-armv7
     SUBDIR += gnatdroid-binutils
     SUBDIR += gnatdroid-sysroot
     SUBDIR += gnustep-base
