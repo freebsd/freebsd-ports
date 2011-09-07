@@ -4529,6 +4529,7 @@ gnash                           ports/graphics/gnash
 gnash-devel                     ports/graphics/gnash-devel
 gnat                            ports/lang/gnat
 gnat-aux                        ports/lang/gnat-aux
+gnatdroid-binutils              ports/lang/gnatdroid-binutils
 gnatdroid-sysroot               ports/lang/gnatdroid-sysroot
 gnatpython                      ports/devel/gnatpython
 gnats                           ports/databases/gnats
@@ -5280,6 +5281,7 @@ hawknl-devel                    ports/net/hawknl-devel
 hawkvoice                       ports/audio/hawkvoice
 hb                              ports/misc/hb
 hbiff                           ports/mail/hbiff
+hcidump                         ports/comms/hcidump
 hcs12mem                        ports/devel/hcs12mem
 hdf                             ports/science/hdf
 hdf-java                        ports/science/hdf-java
@@ -5500,6 +5502,7 @@ hs-convertible                  ports/devel/hs-convertible
 hs-cpphs                        ports/devel/hs-cpphs
 hs-criterion                    ports/benchmarks/hs-criterion
 hs-crypto                       ports/security/hs-Crypto
+hs-csv                          ports/textproc/hs-csv
 hs-curl                         ports/ftp/hs-curl
 hs-darcs                        ports/devel/hs-darcs
 hs-data-default                 ports/devel/hs-data-default
@@ -22479,6 +22482,7 @@ pysol-cardsets                  ports/games/pysol-cardsets
 pysol-music                     ports/games/pysol-music
 pysol-sound-server              ports/audio/pysol-sound-server
 pysolfc                         ports/games/pysolfc
+pyst                            ports/devel/pyst
 pystemmer                       ports/textproc/pystemmer
 pysvg                           ports/graphics/pysvg
 pysvn                           ports/devel/pysvn
