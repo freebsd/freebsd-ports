@@ -53,10 +53,6 @@ libexec/torrus/ttproclist
 %%DOCSDIR%%/devdoc/reqs.0.0.pod
 %%DOCSDIR%%/devdoc/reqs.0.1.pod
 %%DOCSDIR%%/devdoc/torrus_roadmap.pod
-%%DOCSDIR%%/devdoc/wd.distributed.pod
-%%DOCSDIR%%/devdoc/wd.messaging.pod
-%%DOCSDIR%%/devdoc/wd.monitor-escalation.pod
-%%DOCSDIR%%/devdoc/wd.uptime-mon.pod
 %%DOCSDIR%%/install.txt
 %%DOCSDIR%%/nodeid_usage.txt
 %%DOCSDIR%%/reporting_setup.txt
@@ -104,6 +100,7 @@ libexec/torrus/ttproclist
 %%DATADIR%%/templates/expanded-dir.html
 %%DATADIR%%/templates/globalsearch.html
 %%DATADIR%%/templates/html-incblocks.txt
+%%DATADIR%%/templates/iframe-rrd.html
 %%DATADIR%%/templates/overview-subleaves.html
 %%DATADIR%%/templates/report-index.html
 %%DATADIR%%/templates/report-monthly.html
@@ -157,6 +154,7 @@ libexec/torrus/ttproclist
 %%DATADIR%%/xmlconfig/vendor/cisco.ios.xml
 %%DATADIR%%/xmlconfig/vendor/cisco.sce.xml
 %%DATADIR%%/xmlconfig/vendor/cisco.vdsl-line.xml
+%%DATADIR%%/xmlconfig/vendor/cisco.wlc.xml
 %%DATADIR%%/xmlconfig/vendor/compaq.cim.xml
 %%DATADIR%%/xmlconfig/vendor/empire.systemedge.ntregperf.xml
 %%DATADIR%%/xmlconfig/vendor/empire.systemedge.xml
@@ -199,6 +197,7 @@ libexec/torrus/ttproclist
 %%SITE_PERL%%/Torrus/DB.pm
 %%SITE_PERL%%/Torrus/DataAccess.pm
 %%SITE_PERL%%/Torrus/DevDiscover.pm
+%%SITE_PERL%%/Torrus/DevDiscover/Actelis.pm
 %%SITE_PERL%%/Torrus/DevDiscover/ALU_Timetra.pm
 %%SITE_PERL%%/Torrus/DevDiscover/ATMEL.pm
 %%SITE_PERL%%/Torrus/DevDiscover/AlliedTelesyn_PBC18.pm
@@ -210,6 +209,7 @@ libexec/torrus/ttproclist
 %%SITE_PERL%%/Torrus/DevDiscover/AxxessIT.pm
 %%SITE_PERL%%/Torrus/DevDiscover/BetterNetworks.pm
 %%SITE_PERL%%/Torrus/DevDiscover/CasaCMTS.pm
+%%SITE_PERL%%/Torrus/DevDiscover/CCOM.pm
 %%SITE_PERL%%/Torrus/DevDiscover/CiscoCatOS.pm
 %%SITE_PERL%%/Torrus/DevDiscover/CiscoFirewall.pm
 %%SITE_PERL%%/Torrus/DevDiscover/CiscoGeneric.pm
@@ -219,6 +219,7 @@ libexec/torrus/ttproclist
 %%SITE_PERL%%/Torrus/DevDiscover/CiscoIOS_SAA.pm
 %%SITE_PERL%%/Torrus/DevDiscover/CiscoSCE.pm
 %%SITE_PERL%%/Torrus/DevDiscover/CiscoVDSL.pm
+%%SITE_PERL%%/Torrus/DevDiscover/CiscoWLC.pm
 %%SITE_PERL%%/Torrus/DevDiscover/CompaqCIM.pm
 %%SITE_PERL%%/Torrus/DevDiscover/EmpireSystemedge.pm
 %%SITE_PERL%%/Torrus/DevDiscover/F5BigIp.pm
@@ -232,8 +233,10 @@ libexec/torrus/ttproclist
 %%SITE_PERL%%/Torrus/DevDiscover/NetApp.pm
 %%SITE_PERL%%/Torrus/DevDiscover/NetBotz.pm
 %%SITE_PERL%%/Torrus/DevDiscover/NetScreen.pm
+%%SITE_PERL%%/Torrus/DevDiscover/NexComm.pm
 %%SITE_PERL%%/Torrus/DevDiscover/OracleDatabase.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Paradyne.pm
+%%SITE_PERL%%/Torrus/DevDiscover/Patton.pm
 %%SITE_PERL%%/Torrus/DevDiscover/RFC1628_UPS_MIB.pm
 %%SITE_PERL%%/Torrus/DevDiscover/RFC1657_BGP4_MIB.pm
 %%SITE_PERL%%/Torrus/DevDiscover/RFC1697_RDBMS.pm
@@ -244,6 +247,7 @@ libexec/torrus/ttproclist
 %%SITE_PERL%%/Torrus/DevDiscover/RFC2790_HOST_RESOURCES.pm
 %%SITE_PERL%%/Torrus/DevDiscover/RFC2863_IF_MIB.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Symmetricom.pm
+%%SITE_PERL%%/Torrus/DevDiscover/Thomson_xDSL.pm
 %%SITE_PERL%%/Torrus/DevDiscover/UcdSnmp.pm
 %%SITE_PERL%%/Torrus/DevDiscover/Xylan.pm
 %%SITE_PERL%%/Torrus/Log.pm
@@ -253,6 +257,7 @@ libexec/torrus/ttproclist
 %%SITE_PERL%%/Torrus/Renderer/AdmInfo.pm
 %%SITE_PERL%%/Torrus/Renderer/Frontpage.pm
 %%SITE_PERL%%/Torrus/Renderer/HTML.pm
+%%SITE_PERL%%/Torrus/Renderer/RPC.pm
 %%SITE_PERL%%/Torrus/Renderer/RRDtool.pm
 %%SITE_PERL%%/Torrus/ReportGenerator/MonthlySrvUsage.pm
 %%SITE_PERL%%/Torrus/ReportGenerator.pm
