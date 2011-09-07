@@ -19,8 +19,6 @@ LIB_DEPENDS=	vorbisfile:${PORTSDIR}/audio/libvorbis \
 		guile:${PORTSDIR}/lang/guile \
 		asound.2:${PORTSDIR}/audio/alsa-lib
 
-BROKEN=		does not deinstall
-
 USE_XORG=	x11
 USE_GMAKE=	yes
 USE_GNOME=	gnomehack intlhack libgnomecanvas
@@ -36,7 +34,8 @@ MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.pre.mk>
 
-.if ${MACHINE_CPU:Msse}
+HAS_SSE!=	${SYSCTL} -n hw.instruction_sse
+.if ${HAS_SSE} == 1
 PLIST_SUB+=	SSE=""
 .else
 PLIST_SUB+=	SSE="@comment "
