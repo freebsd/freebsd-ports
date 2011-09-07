@@ -7,7 +7,7 @@
 
 PORTNAME=	zenmap
 PORTVERSION=	5.21
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	security ipv6
 MASTER_SITES=	http://nmap.org/dist/ \
 		http://nmap.ucsd.edu/dist/ \
@@ -21,11 +21,11 @@ MAINTAINER=	ports@FreeBSD.org
 COMMENT=	GUI frontend for the nmap scanning utility
 
 RUN_DEPENDS=	${LOCALBASE}/bin/nmap:${PORTSDIR}/security/nmap \
-		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23
+		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 
 PYDISTUTILS_PKGVERSION=	${DISTVERSION}
 USE_BZIP2=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.5+
 USE_GETTEXT=	yes
 USE_GNOME=	pygtk2
 INSTALLS_EGGINFO=	yes
@@ -35,11 +35,11 @@ MLINKS=		zenmap.1 xnmap.1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH} != "i386"
+.if ${ARCH} != "i386" || ${PYTHON_REL} > 260
 WITHOUT_PSYCO=	yes
 .endif
 
-.ifndef(WITHOUT_PSYCO)
+.ifndef(WITHOUT_PSYCO) 
 RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psyco/_psyco.so:${PORTSDIR}/devel/py-psyco
 .endif
 
