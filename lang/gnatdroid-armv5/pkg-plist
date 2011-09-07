@@ -1,0 +1,33 @@
+bin/%%TARGET%%-gnatbind
+bin/%%TARGET%%-gnatchop
+bin/%%TARGET%%-gnat
+bin/%%TARGET%%-gnatkr
+bin/%%TARGET%%-gnatlink
+bin/%%TARGET%%-gnatls
+bin/%%TARGET%%-gnatmake
+bin/%%TARGET%%-gnatname
+bin/%%TARGET%%-gnatprep
+bin/%%TARGET%%-gnatxref
+bin/%%TARGET%%-gnatfind
+bin/%%TARGET%%-gnatclean
+bin/%%TARGET%%-gcov
+bin/%%TARGET%%-cpp
+bin/%%TARGET%%-gnatgcc
+bin/%%TARGET%%-gcc-%%GCCVERS%%
+lib/libiberty.a
+%%TARGET%%/bin/gnatbind
+%%TARGET%%/bin/gnatchop
+%%TARGET%%/bin/gnat
+%%TARGET%%/bin/gnatkr
+%%TARGET%%/bin/gnatlink
+%%TARGET%%/bin/gnatls
+%%TARGET%%/bin/gnatmake
+%%TARGET%%/bin/gnatprep
+%%TARGET%%/bin/gnatgcc
+%%TARGET%%/lib/armv7-a/thumb/libiberty.a
+%%TARGET%%/lib/armv7-a/libiberty.a
+%%TARGET%%/lib/thumb/libiberty.a
+%%TARGET%%/lib/libiberty.a
+@dirrm %%TARGET%%/lib/armv7-a/thumb
+@dirrm %%TARGET%%/lib/armv7-a
+@dirrm %%TARGET%%/lib/thumb
