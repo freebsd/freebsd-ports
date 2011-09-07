@@ -6,13 +6,14 @@
 #
 
 PORTNAME=	torrus
-PORTVERSION=	1.0.9
-PORTREVISION=	1
+PORTVERSION=	2.01
 CATEGORIES=	net-mgmt
 MASTER_SITES=	SF
 
 MAINTAINER=	corsmith@gmail.com
 COMMENT=	The Data Series Processing Framework - think mrtg with xml configs
+
+LICENSE=	GPLv2
 
 BUILD_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool \
 		${SITE_PERL}/${PERL_ARCH}/XML/LibXML.pm:${PORTSDIR}/textproc/p5-XML-LibXML \
@@ -25,7 +26,7 @@ BUILD_DEPENDS=	${SITE_PERL}/RRDp.pm:${PORTSDIR}/databases/rrdtool \
 		${SITE_PERL}/Apache/Session.pm:${PORTSDIR}/www/p5-Apache-Session \
 		${SITE_PERL}/${PERL_ARCH}/FCGI.pm:${PORTSDIR}/www/p5-FCGI \
 		p5-JSON>0:${PORTSDIR}/converters/p5-JSON
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_GNOME=	libxml2
 USE_PERL5_RUN=	5.8.1+
