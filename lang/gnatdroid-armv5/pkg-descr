@@ -1,0 +1,6 @@
+The gnatdroid-armv5 port builds a C/Ada cross-compiler based on GCC 4.6 that
+targets the Android operating system (version 2.3, API level 9) running on
+ARM architecture (version 5).  This produces binaries that run natively on
+Android devices as well as the Android SDK emulator.
+
+WWW: http://www.dragonlace.net
