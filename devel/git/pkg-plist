@@ -521,6 +521,8 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-gitattributes.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-object-access.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-diff.txt
+%%HTMLDOCS%%%%DOCSDIR%%/technical/api-ref-iteration.txt
+%%HTMLDOCS%%%%DOCSDIR%%/technical/api-ref-iteration.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-remote.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/api-allocation-growing.html
 %%HTMLDOCS%%%%DOCSDIR%%/technical/pack-format.txt
@@ -827,6 +829,7 @@ share/git-core/templates/info/exclude
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.5.3.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.5.4.txt
 %%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.6.txt
+%%HTMLDOCS%%%%DOCSDIR%%/RelNotes/1.7.6.1.txt
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/gitweb.cgi
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.js
 %%GITWEB%%%%EXAMPLESDIR%%/gitweb/static/gitweb.css
