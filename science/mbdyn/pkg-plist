@@ -9,7 +9,6 @@ bin/cl
 bin/crypt
 bin/dae-intg
 bin/deriv
-bin/env
 bin/eu2phi
 bin/eu2rot
 bin/femgen
@@ -17,6 +16,7 @@ bin/intg
 bin/mbdyn
 bin/mbdyn2easyanim.sh
 bin/posrel
+bin/printenv
 bin/rot2eu
 bin/rot2eup
 bin/rot2phi
@@ -26,6 +26,12 @@ bin/socket2stream
 bin/stream2socket
 bin/trim
 bin/vec2rot
+include/mbc.h
+include/mbcxx.h
+lib/libmbc.a
+lib/libmbc.la
+lib/libmbc.so
+lib/libmbc.so.0
 share/Aster/cms.py
 share/awk/abs2rel.awk
 share/awk/mbdyn2easyanim.awk

@@ -1,6 +1,6 @@
---- mbdyn/base/solver.cc.orig	2009-06-24 16:13:44.000000000 +0200
-+++ mbdyn/base/solver.cc	2010-10-31 23:38:30.000000000 +0100
-@@ -109,10 +109,17 @@
+--- mbdyn/base/solver.cc.orig	2011-06-20 14:55:12.000000000 -0400
++++ mbdyn/base/solver.cc	2011-08-26 05:08:45.000000000 -0400
+@@ -111,10 +111,17 @@
  };
  
  volatile sig_atomic_t mbdyn_keep_going = MBDYN_KEEP_GOING;
@@ -18,7 +18,19 @@
  
  extern "C" void
  mbdyn_really_exit_handler(int signum)
-@@ -456,8 +463,8 @@
+@@ -202,7 +209,11 @@
+ mbdyn_signal_init(int pre)
+ {
+ #ifdef HAVE_SIGNAL
++#if defined(__FreeBSD__)
++	__sighandler_t *hdl;
++#else
+ 	__sighandler_t hdl;
++#endif
+ 	if (pre) {
+ 		hdl = mbdyn_really_exit_handler;
+ 
+@@ -464,8 +475,8 @@
  		}
  	}
  
