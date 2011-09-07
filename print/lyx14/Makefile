@@ -93,6 +93,7 @@ CFLAGS+=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV+=	LDFLAGS=${PTHREAD_LIBS}
 RUN_DEPENDS+=	${LOCALBASE}/lib/X11/fonts/texcm-ttf/cmex10.ttf:${PORTSDIR}/x11-fonts/texcm-ttf
 .else
+BROKEN=		Does not work with the latest xforms version
 LIB_DEPENDS+=	forms:${PORTSDIR}/x11-toolkits/xforms
 CONFIGURE_ARGS+=--with-frontend=xforms
 USE_XORG=	x11

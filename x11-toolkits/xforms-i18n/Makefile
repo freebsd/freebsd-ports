@@ -14,4 +14,6 @@ CONFLICTS=	xforms-[0-9]*
 
 MASTERDIR=	${.CURDIR}/../xforms
 
+BROKEN=		Does not work with latest xforms version
+
 .include "${MASTERDIR}/Makefile"
