@@ -7,27 +7,27 @@
 
 PORTNAME=	griffith
 PORTVERSION=	0.12.1
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://launchpadlibrarian.net/58153655/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Lightweight film collection manager
 
-RUN_DEPENDS=	py*-pysqlite>=2.0:${PORTSDIR}/databases/py-pysqlite23 \
-		py*-sqlalchemy06>=0.5:${PORTSDIR}/databases/py-sqlalchemy06 \
-		py*-imaging>=0:${PORTSDIR}/graphics/py-imaging \
-		py*-reportlab>=1.19:${PORTSDIR}/print/py-reportlab \
-		py*-chardet>=0:${PORTSDIR}/textproc/py-chardet \
-		${PYXML}
-
 LICENSE=	GPLv2 GPLv3
 LICENSE_COMB=	dual
+
+RUN_DEPENDS=	${PYTHON_PKGNAMEPREFIX}sqlite3>=0:${PORTSDIR}/databases/py-sqlite3 \
+		${PYTHON_PKGNAMEPREFIX}sqlalchemy06>=0.5:${PORTSDIR}/databases/py-sqlalchemy06 \
+		${PYTHON_PKGNAMEPREFIX}imaging>=0:${PORTSDIR}/graphics/py-imaging \
+		${PYTHON_PKGNAMEPREFIX}reportlab>=1.19:${PORTSDIR}/print/py-reportlab \
+		${PYTHON_PKGNAMEPREFIX}chardet>=0:${PORTSDIR}/textproc/py-chardet \
+		${PYXML}
 
 USE_XZ=		yes
 USE_GNOME=	pygtk2
 WANT_GNOME=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.5+
 USE_GETTEXT=	yes
 USE_GMAKE=	yes
 NO_BUILD=	yes
