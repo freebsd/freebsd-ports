@@ -1,4 +1,6 @@
 @comment $FreeBSD$
+bin/cassandra-cli
+bin/nodetool
 %%DATADIR%%/CHANGES.txt
 %%DATADIR%%/LICENSE.txt
 %%DATADIR%%/NEWS.txt
@@ -12,7 +14,6 @@
 %%DATADIR%%/bin/sstable2json
 %%DATADIR%%/bin/sstablekeys
 %%DATADIR%%/bin/sstableloader
-%%DATADIR%%/bin/stop-server
 %%DATADIR%%/conf/README.txt
 %%DATADIR%%/conf/access.properties.sample
 %%DATADIR%%/conf/cassandra-env.sh
