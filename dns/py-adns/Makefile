@@ -12,7 +12,7 @@ MASTER_SITES=	${MASTER_SITE_GOOGLE_CODE}
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	adns-python-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	A Python Interface to adns, the asynchronous DNS library
 
 LIB_DEPENDS=	adns.1:${PORTSDIR}/dns/adns
