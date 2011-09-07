@@ -7,7 +7,7 @@
 
 PORTNAME=	xmonad-contrib
 PORTVERSION=	0.9.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	x11-wm haskell
 
 MAINTAINER=	haskell@FreeBSD.org
@@ -17,6 +17,8 @@ LICENSE=	BSD
 
 USE_CABAL=	mtl xmonad>=0.9.1 X11>=1.5 utf8-string
 USE_XORG=	x11
+
+RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash
 
 OPTIONS=	XFT "Enable Xft support for fonts" On
 
