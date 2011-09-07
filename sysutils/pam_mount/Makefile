@@ -7,14 +7,14 @@
 #
 
 PORTNAME=	pam_mount
-PORTVERSION=	2.10
+PORTVERSION=	2.11
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME:S/_/-/}/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	gahr@FreeBSD.org
 COMMENT=	A PAM that can mount volumes for a user session
 
-LIB_DEPENDS=	HX.25:${PORTSDIR}/lang/libhx
+LIB_DEPENDS=	HX.27:${PORTSDIR}/lang/libhx
 
 USE_GNOME=	pkgconfig libxml2
 USE_PERL5=	yes
@@ -23,7 +23,9 @@ USE_XZ=		yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	libcrypto_LIBS="-L/usr/lib -lcrypto" \
 		libcrypto_CFLAGS="-I/usr/include"
-CONFIGURE_ARGS+=--localstatedir=/var --with-ssbindir=${PREFIX}/sbin
+CONFIGURE_ARGS+=--localstatedir=/var \
+		--without-cryptsetup \
+		--with-ssbindir=${PREFIX}/sbin
 
 post-patch:
 	${REINPLACE_CMD} -e '11172s|yes|no|' ${WRKSRC}/${CONFIGURE_SCRIPT}
