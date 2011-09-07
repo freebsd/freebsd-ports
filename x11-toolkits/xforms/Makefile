@@ -34,13 +34,14 @@ MAN5=		xforms.5
 #
 # This patchset does not apply to this version
 #
-#.if defined(WITH_I18N)
-#PKGNAMESUFFIX=	-i18n
+.if defined(WITH_I18N)
+PKGNAMESUFFIX=	-i18n
+BROKEN=		Does not work with latest xforms version
 #PATCH_SITES=	ftp://cellular.phys.pusan.ac.kr/CJK-LyX/xforms/ \
 #		http://www.otaru-uc.ac.jp/~yokota/comp/
 #PATCHFILES=	xforms-1.0-i18n_7.patch
 #PATCH_DIST_STRIP=	-p1
-#.endif
+.endif
 
 .include <bsd.port.pre.mk>
 
