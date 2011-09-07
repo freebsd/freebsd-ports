@@ -61,7 +61,7 @@ OPTIONS=	LDAP "With LDAP support" off \
 LOGFAC?=	local2
 CONFIGURE_ARGS+=	--with-logfac=${LOGFAC}
 
-.include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
 .if !defined(WITHOUT_NLS)
 USE_GETTEXT=	yes
@@ -137,4 +137,4 @@ post-install:
 	fi
 	${TOUCH} ${PREFIX}/etc/sudoers.d/.keep-me
 
-.include <bsd.port.post.mk>
+.include <bsd.port.mk>
