@@ -27,6 +27,8 @@ RUN_DEPENDS+=	${LOCALBASE}/bin/Xorg:${PORTSDIR}/x11-servers/xorg-server \
 		${LOCALBASE}/bin/xauth:${PORTSDIR}/x11/xauth
 .if ${VIDEO_DRIVER} == "nvidia"
 RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/drivers/nvidia_drv.so:${PORTSDIR}/x11/nvidia-driver
+.elif ${VIDEO_DRIVER} == "intel29"
+RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/drivers/intel_drv.so:${PORTSDIR}/x11-drivers/xf86-video-${VIDEO_DRIVER}
 .else
 RUN_DEPENDS+=	${LOCALBASE}/lib/xorg/modules/drivers/${VIDEO_DRIVER}_drv.so:${PORTSDIR}/x11-drivers/xf86-video-${VIDEO_DRIVER}
 .endif
