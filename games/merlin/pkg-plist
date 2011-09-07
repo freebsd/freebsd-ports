@@ -1,3 +1,0 @@
-bin/merlin
-%%PORTDOCS%%share/doc/merlin/README
-%%PORTDOCS%%@dirrm share/doc/merlin

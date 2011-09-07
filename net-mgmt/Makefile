@@ -37,7 +37,6 @@
     SUBDIR += cacti-spine
     SUBDIR += cdpd
     SUBDIR += cdpr
-    SUBDIR += cfgstoragemk
     SUBDIR += cflowd
     SUBDIR += check_logfiles
     SUBDIR += check_multi

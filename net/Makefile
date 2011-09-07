@@ -1111,7 +1111,6 @@
     SUBDIR += tsocks
     SUBDIR += ttbudget
     SUBDIR += ttlscan
-    SUBDIR += ttt
     SUBDIR += tucan
     SUBDIR += twinkle
     SUBDIR += twitux
@@ -1145,7 +1144,6 @@
     SUBDIR += vnstat
     SUBDIR += vserver
     SUBDIR += vtun
-    SUBDIR += vyqchat
     SUBDIR += wackamole
     SUBDIR += wackford-squeers
     SUBDIR += wakeonlan

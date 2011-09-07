@@ -95,7 +95,6 @@
     SUBDIR += trn
     SUBDIR += trn4
     SUBDIR += ubh
-    SUBDIR += xmitbin
     SUBDIR += xpn
     SUBDIR += xrn
     SUBDIR += yencode

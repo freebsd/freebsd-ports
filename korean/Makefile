@@ -16,16 +16,12 @@
     SUBDIR += gimp-help
     SUBDIR += gtkcomm
     SUBDIR += h2ps
-    SUBDIR += hanIM
-    SUBDIR += hanmiscutils
     SUBDIR += hanterm
     SUBDIR += hanterm-xf86
     SUBDIR += hanyangfonts
     SUBDIR += hcode
-    SUBDIR += helvis
     SUBDIR += hlatex
     SUBDIR += hlatex-psfonts-uhc-extra
-    SUBDIR += hlatexfonts-ocf
     SUBDIR += hmconv
     SUBDIR += hpscat
     SUBDIR += hunspell
@@ -47,7 +43,6 @@
     SUBDIR += nanumfonts-otf
     SUBDIR += nanumfonts-ttf
     SUBDIR += nhpf
-    SUBDIR += pgp.language
     SUBDIR += php_doc
     SUBDIR += qt4-codecs-kr
     SUBDIR += scim-hangul

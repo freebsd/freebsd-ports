@@ -158,7 +158,6 @@
     SUBDIR += libjcode
     SUBDIR += libslang
     SUBDIR += libtomoe-gtk
-    SUBDIR += linux-JM
     SUBDIR += lipsf
     SUBDIR += lookup
     SUBDIR += lookup-emacs21
