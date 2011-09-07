@@ -13,7 +13,7 @@ MASTER_SITES=	http://lscube.org/files/downloads/netembryo/
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A network abstraction library used by for feng, libnemesi, felix
 
-LICENSE=	LGPLv2
+LICENSE=	LGPL21
 
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
