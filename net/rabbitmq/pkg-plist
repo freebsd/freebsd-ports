@@ -14,7 +14,10 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/gm.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/gm_soak_test.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/gm_speed_test.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/gm_tests.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/mirrored_supervisor.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/mirrored_supervisor_tests.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/pg_local.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/pg2_fixed.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/priority_queue.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit.app
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit.beam
@@ -31,6 +34,7 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_auth_mechanism_amqplain.b
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_auth_mechanism_cr_demo.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_auth_mechanism_plain.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_backing_queue.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_backing_queue_qc.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_basic.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_binary_generator.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_binary_parser.beam
@@ -61,6 +65,11 @@ lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_heartbeat.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_limiter.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_log.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_memory_monitor.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_mirror_queue_coordinator.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_mirror_queue_master.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_mirror_queue_misc.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_mirror_queue_slave.beam
+lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_mirror_queue_slave_sup.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_misc.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_mnesia.beam
 lib/erlang/lib/rabbitmq_server-%%VERSION%%/ebin/rabbit_msg_file.beam
