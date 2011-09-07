@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	twistedConch
-PORTVERSION=	10.1.0
+PORTVERSION=	11.0.0
 CATEGORIES=	security devel python
-MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Conch/${PORTVERSION:R}/
+MASTER_SITES=	http://twistedmatrix.com/Releases/Conch/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedConch-${PORTVERSION}
 
 MAINTAINER=	neal@nelson.name
 COMMENT=	An SSH and SFTP protocol implementation with clients and servers
+
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore \

@@ -6,17 +6,20 @@
 #
 
 PORTNAME=	twistedWords
-PORTVERSION=	10.1.0
+PORTVERSION=	11.0.0
 CATEGORIES=	net-im devel python
-MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Words/${PORTVERSION:R}/
+MASTER_SITES=	http://twistedmatrix.com/Releases/Words/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedWords-${PORTVERSION}
 
 MAINTAINER=	neal@nelson.name
 COMMENT=	Twisted Words has more chat than you can handle
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes

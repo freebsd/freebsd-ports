@@ -6,17 +6,20 @@
 #
 
 PORTNAME=	twistedCore
-PORTVERSION=	10.1.0
+PORTVERSION=	11.0.0
 CATEGORIES=	devel net python
-MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Core/${PORTVERSION:R}/
+MASTER_SITES=	http://twistedmatrix.com/Releases/Core/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedCore-${PORTVERSION}
 
 MAINTAINER=	neal@nelson.name
 COMMENT=	An asynchronous networking framework for Python - Core module
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zopeInterface>=3.3.0_1:${PORTSDIR}/devel/py-zopeInterface
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 # - Note that Twisted ships with some graphical examples and clients that
 #   require PyGNOME to run.  These are not central to the funcitoning of
@@ -35,7 +38,7 @@ post-install:
 	@${CHMOD} -R ${SHAREMODE} ${PYTHONPREFIX_SITELIBDIR}/twisted/
 	@${CHMOD} -R a+X ${PYTHONPREFIX_SITELIBDIR}/twisted/
 .for i in ${MAN1}
-	${INSTALL_MAN} ${WRKSRC}/doc/man/${i} ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKSRC}/doc/man/${i} ${MANPREFIX}/man/man1/
 .endfor
 
 .include <bsd.port.mk>

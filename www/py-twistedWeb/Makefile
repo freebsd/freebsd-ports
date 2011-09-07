@@ -6,17 +6,20 @@
 #
 
 PORTNAME=	twistedWeb
-PORTVERSION=	10.1.0
+PORTVERSION=	11.0.0
 CATEGORIES=	www devel python
-MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Web/${PORTVERSION:R}/
+MASTER_SITES=	http://twistedmatrix.com/Releases/Web/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedWeb-${PORTVERSION}
 
 MAINTAINER=	neal@nelson.name
 COMMENT=	An HTTP protocol implementation together with clients and servers
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
