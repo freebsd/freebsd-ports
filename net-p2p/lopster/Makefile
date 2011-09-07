@@ -7,7 +7,7 @@
 
 PORTNAME=	lopster
 PORTVERSION=	1.2.2
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	net-p2p
 MASTER_SITES=	SF \
 		http://lopster.sourceforge.net/download/
@@ -19,34 +19,38 @@ GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_GNOME=	gtk12
 CONFIGURE_ARGS=	--with-pthread=yes
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib"
+CPPFLAGS+=	"-I${LOCALBASE}/include"
+
+OPTIONS=	FLAC	"Include FLAC support"		On	\
+		OGG	"Include OGG support"		On	\
+		ZLIB	"Enable ZLIB compression"	On
 
 .include <bsd.port.pre.mk>
+.include <bsd.port.options.mk>
 
-.if exists(${LOCALBASE}/lib/libogg.so.7)
-WITH_OGG=	yes
-.endif
-
-.if defined(WITH_OGG)
-LIB_DEPENDS+=	ogg.7:${PORTSDIR}/audio/libogg
-.endif
-
-.if !defined(WITHOUT_ZLIB)
-CONFIGURE_ARGS+=	--with-zlib=yes
+# --with-flac is on by default
+.if defined(WITH_FLAC)
+LIB_DEPENDS+=		FLAC.10:${PORTSDIR}/audio/flac
 .else
-CONFIGURE_ARGS+=	--with-zlib=no
+CONFIGURE_ARGS+=	--without-flac
 .endif
 
-pre-everything::
-.ifndef WITH_OGG
-	@${ECHO_MSG} "You can specify WITH_OGG to include Ogg support"
+# --with-ogg is on by default
+.if defined(WITH_OGG)
+LIB_DEPENDS+=		ogg.7:${PORTSDIR}/audio/libogg
+.else
+CONFIGURE_ARGS+=	--without-ogg
 .endif
-.ifndef WITHOUT_ZLIB
-	@${ECHO_MSG} "You can specify WITHOUT_ZLIB to disable compression for old servers"
+
+# --with-zlib is on by default
+.if defined(WITHOUT_ZLIB)
+CONFIGURE_ARGS+=	--without-zlib
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" ${WRKSRC}/configure
+	@${REINPLACE_CMD} -e "s|-lpthread|${PTHREAD_LIBS}|g" \
+		${WRKSRC}/configure
 	@${REINPLACE_CMD} -e "s/www.naplist.com/www.gotnap.com/" \
 		${WRKSRC}/src/lopster.h
 

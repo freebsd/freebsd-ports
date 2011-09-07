@@ -1,3 +1,8 @@
+$FreeBSD$
+
+This used to be patch-src::global.c, but has been moved to stop using
+colons in patch names.
+
 --- src/global.c.orig	Sat Jul  3 19:19:19 2004
 +++ src/global.c	Thu Jul 22 14:03:01 2004
 @@ -3588,7 +3588,7 @@
