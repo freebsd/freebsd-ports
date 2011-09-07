@@ -19,6 +19,9 @@
 %%PYTHON_SITELIBDIR%%/twisted/news/test/__init__.py
 %%PYTHON_SITELIBDIR%%/twisted/news/test/__init__.pyc
 %%PYTHON_SITELIBDIR%%/twisted/news/test/__init__.pyo
+%%PYTHON_SITELIBDIR%%/twisted/news/test/test_database.py
+%%PYTHON_SITELIBDIR%%/twisted/news/test/test_database.pyc
+%%PYTHON_SITELIBDIR%%/twisted/news/test/test_database.pyo
 %%PYTHON_SITELIBDIR%%/twisted/news/test/test_news.py
 %%PYTHON_SITELIBDIR%%/twisted/news/test/test_news.pyc
 %%PYTHON_SITELIBDIR%%/twisted/news/test/test_news.pyo

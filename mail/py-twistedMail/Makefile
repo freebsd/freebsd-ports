@@ -6,18 +6,21 @@
 #
 
 PORTNAME=	twistedMail
-PORTVERSION=	10.1.0
+PORTVERSION=	11.0.0
 CATEGORIES=	mail devel python
-MASTER_SITES=	http://tmrc.mit.edu/mirror/twisted/Mail/${PORTVERSION:R}/
+MASTER_SITES=	http://twistedmatrix.com/Releases/Mail/${PORTVERSION:R}/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 DISTNAME=	TwistedMail-${PORTVERSION}
 
 MAINTAINER=	neal@nelson.name
 COMMENT=	An SMTP, IMAP and POP protocol implementation with clients and servers
 
+LICENSE=	MIT
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/twisted:${PORTSDIR}/devel/py-twistedCore \
 		${PYTHON_SITELIBDIR}/twisted/names:${PORTSDIR}/dns/py-twistedNames
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 USE_BZIP2=	yes
 USE_PYTHON=	yes
