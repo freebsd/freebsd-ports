@@ -26,4 +26,10 @@ EXECUTABLE=	hoogle
 PORTDATA=	*
 
 .include "${.CURDIR}/../../lang/ghc/bsd.cabal.mk"
-.include <bsd.port.mk>
+.include <bsd.port.pre.mk>
+
+.if ${ARCH} == "amd64" && ${OSVERSION} >= 900000
+BROKEN=		does not link on FreeBSD 9.X amd64
+.endif
+
+.include <bsd.port.post.mk>
