@@ -11,12 +11,14 @@ PORTREVISION=	5
 CATEGORIES=	deskutils biology python
 MASTER_SITES=	SF
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A calendar program for women
+
+LICENSE=	GPLv2
 
 USE_BZIP2=	yes
 USE_PYTHON_RUN=	yes
-USE_WX=		2.6
+USE_WX=		2.6+
 WX_COMPS=	python
 NO_BUILD=	yes
 
@@ -32,13 +34,15 @@ do-install:
 	@${MKDIR} ${PREFIX}/lib/${PORTNAME}
 	${INSTALL_DATA} ${WRKSRC}/cal_year.py ${WRKSRC}/dialogs.py \
 		${WRKSRC}/p_rotor.py ${WRKSRC}/save_load.py \
-		${WRKSRC}/set_dir.py ${WRKSRC}/setup.py ${PREFIX}/lib/${PORTNAME}
-	@${MKDIR} ${DATADIR}/bitmaps ${DATADIR}/icons/mini ${DATADIR}/icons/large
+		${WRKSRC}/set_dir.py ${WRKSRC}/setup.py \
+			${PREFIX}/lib/${PORTNAME}
+	@${MKDIR} ${DATADIR}/bitmaps ${DATADIR}/icons/mini \
+		${DATADIR}/icons/large
 	${INSTALL_DATA} ${WRKSRC}/bitmaps/*.[pb]* ${DATADIR}/bitmaps
 	${INSTALL_DATA} ${WRKSRC}/icons/*.xpm ${DATADIR}/icons
 	${INSTALL_DATA} ${WRKSRC}/icons/mini/*.xpm ${DATADIR}/icons/mini
 	${INSTALL_DATA} ${WRKSRC}/icons/large/*.xpm ${DATADIR}/icons/large
-	# These locales are not in mtree yet
+# These locale directories are not part of mtree(8) template yet
 .for l in ca cs gl sk
 	@${MKDIR} ${PREFIX}/share/locale/${l}/LC_MESSAGES
 .endfor
@@ -46,7 +50,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/msg/${l}/LC_MESSAGES/${PORTNAME}.mo \
 		${PREFIX}/share/locale/${l}/LC_MESSAGES
 .endfor
-	# Docs are kinda mandatory here since being used as internal help
+# Docs are kind of mandatory here since they are used as internal help
 	@${MKDIR} ${DOCSDIR}
 	${INSTALL_DATA} ${WRKSRC}/README*.html ${DOCSDIR}
 	${INSTALL_MAN} ${WRKSRC}/${MAN1} ${MANPREFIX}/man/man1
