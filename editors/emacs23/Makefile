@@ -7,7 +7,7 @@
 
 PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}
-PORTREVISION=	4
+PORTREVISION=	5
 PORTEPOCH=	2
 CATEGORIES=	editors ipv6
 MASTER_SITES=	${MASTER_SITE_GNU}
@@ -82,7 +82,6 @@ DBUS_PTHREAD_LIBS=	${CC} -dumpspecs | ${GREP} -m 1 pthread: | ${SED} -e 's|^.*%{
 CONFIGURE_ARGS+=	--without-x
 
 .else
-INSTALLS_ICONS=	yes
 USE_XORG=	x11
 USE_GNOME=
 
@@ -115,6 +114,7 @@ IGNORE=	please choose a toolkit: GTK+/Motif/Xaw/Xaw3d, or build without X11 supp
 .if defined(WITH_XAW) || defined(WITH_XAW3D) || defined(WITH_MOTIF)
 IGNORE=	please choose only one toolkit: GTK+/Motif/Xaw/Xaw3d
 .endif
+INSTALLS_ICONS=	yes
 USE_GNOME+=	gtk20
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk
 .endif
