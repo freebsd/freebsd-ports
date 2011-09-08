@@ -6,13 +6,15 @@
 #
 
 PORTNAME=	daq
-PORTVERSION=	0.5
-PORTREVISION=	1
+PORTVERSION=	0.6.1
 CATEGORIES=	net
 MASTER_SITES=	SF/snort/snort
 
 MAINTAINER=	wfreeman@sourcefire.com
 COMMENT=	Data Acquisition abstraction library for snort 2.9+
+
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 LIB_DEPENDS=	dnet.1:${PORTSDIR}/net/libdnet \
 		pcap.1:${PORTSDIR}/net/libpcap
