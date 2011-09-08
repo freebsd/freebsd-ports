@@ -1,6 +1,22 @@
---- CMakeLists.txt.orig	2011-07-30 14:05:38.000000000 -0700
-+++ CMakeLists.txt	2011-08-10 00:45:13.000000000 -0700
-@@ -250,17 +250,11 @@
+--- CMakeLists.txt.orig	2011-09-06 23:56:26.000000000 -0700
++++ CMakeLists.txt	2011-09-07 01:05:07.000000000 -0700
+@@ -224,7 +224,6 @@
+               -P ${CMAKE_CURRENT_SOURCE_DIR}/About-Windows.cmake
+       COMMENT "Creating the about file"
+     )
+-    find_file(HG_CMD hg.exe HINTS ENV Path PATH_SUFFIXES ../)
+ 
+   elseif (APPLE)
+  
+@@ -244,7 +243,6 @@
+               -P ${CMAKE_CURRENT_SOURCE_DIR}/About-Apple.cmake
+       COMMENT "Creating the about file"
+     )
+-    find_file(HG_CMD hg PATHS "/opt/local/bin" "/usr/local/bin" "/usr/bin")
+     find_file(HG_CMD hg)
+ 
+   else (WIN32)
+@@ -265,18 +263,11 @@
                -P ${CMAKE_CURRENT_SOURCE_DIR}/About-Linux.cmake
        COMMENT "Creating the about file"
      )
@@ -15,19 +31,7 @@
 -  else (HG_CMD STREQUAL HG_CMD-NOTFOUND)
 -    message(STATUS "hg command found: ${HG_CMD}")
 -  endif (HG_CMD STREQUAL HG_CMD-NOTFOUND)
- 
+-
  endif (AUTOMATED_BUILD_SYSTEM)
  
-@@ -322,9 +316,9 @@
-     endif (OPENMP_FOUND)
- endif (OPTION_OMP)
  
--if (UNIX)
--    install (PROGRAMS rtstart DESTINATION ${BINDIR})
--endif (UNIX)
-+#if (UNIX)
-+#    install (PROGRAMS rtstart DESTINATION ${BINDIR})
-+#endif (UNIX)
- 
- install (FILES AUTHORS.txt DESTINATION ${CREDITSDIR})
- install (FILES LICENSE.txt DESTINATION ${LICENCEDIR})
