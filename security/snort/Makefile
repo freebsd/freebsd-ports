@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	snort
-PORTVERSION=	2.9.0.5
+PORTVERSION=	2.9.1
 CATEGORIES=	security
 MASTER_SITES=	SF/snort/snort
 
@@ -15,10 +15,13 @@ PATCH_DIST_STRIP=	-p1
 MAINTAINER=	wfreeman@sourcefire.com
 COMMENT=	Lightweight network intrusion detection system
 
+LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
 LIB_DEPENDS=	pcre.0:${PORTSDIR}/devel/pcre
-BUILD_DEPENDS=	daq>=0.5_1:${PORTSDIR}/net/daq \
+BUILD_DEPENDS=	daq>=0.6.1:${PORTSDIR}/net/daq \
 		${LOCALBASE}/lib/libnet11/libnet.a:${PORTSDIR}/net/libnet
-RUN_DEPENDS=	daq>=0.5_1:${PORTSDIR}/net/daq \
+RUN_DEPENDS=	daq>=0.6.1:${PORTSDIR}/net/daq \
 		${LOCALBASE}/lib/libnet11/libnet.a:${PORTSDIR}/net/libnet
 
 OPTIONS=	IPV6 "Enable IPv6 support" on \
@@ -35,6 +38,7 @@ OPTIONS=	IPV6 "Enable IPv6 support" on \
 		ODBC "Enable ODBC support" off \
 		POSTGRESQL "Enable PostgreSQL support" off \
 		PRELUDE "Enable Prelude NIDS integration" off \
+		LRGPCAP "Enable pcaps larger than 2GB" off \
 		SNORTSAM "Unofficial Snortsam Patch" off
 
 .include <bsd.port.options.mk>
@@ -71,7 +75,7 @@ LIBNET_INCDIR=	${LIBNET_CFLAGS:M-I*:S/-I//}
 LIBNET_LIBDIR=	${LIBNET_LIBS:M-L*:S/-L//}
 
 CONFIGURE_ARGS=	--enable-dynamicplugin --enable-build-dynamic-examples \
-		--enable-reload --enable-reload-restart \
+		--enable-reload --enable-reload-error-restart \
 		--disable-corefiles \
 		--with-dnet-includes=${LIBNET_INCDIR} \
 		--with-dnet-libraries=${LIBNET_LIBDIR}
@@ -117,6 +121,10 @@ CONFIGURE_ARGS+=	--disable-prelude
 PLIST_SUB+=		PRELUDE="@comment "
 .endif
 
+.if defined(WITH_LRGPCAP)
+CONFIGURE_ARGS+=	--enable-large-pcap
+.endif
+
 .if defined(WITH_PERFPROFILE)
 CONFIGURE_ARGS+=	--enable-perfprofiling --enable-ppm
 .endif
@@ -154,9 +162,10 @@ CONFIGURE_ARGS+=	--enable-react
 .endif
 
 .if defined(WITH_SNORTSAM)
+BROKEN=		snortsam patches not available for 2.9.1 yet
 USE_AUTOTOOLS+=	automake
 PATCH_SITES+=	http://www.snortsam.net/files/snort-plugin/:snortsam
-PATCHFILES+=	snortsam-2.9.0.3.diff.gz:snortsam
+PATCHFILES+=	snortsam-2.9.1.diff.gz:snortsam
 .endif
 
 post-patch:
@@ -171,6 +180,8 @@ pre-configure:
 	${REINPLACE_CMD} -e 's|^dynamicdetection|#dynamicdetection|' ${WRKSRC}/etc/snort.conf
 	${REINPLACE_CMD} -e '/var HOME_NET/s/any/[YOU_NEED_TO_SET_HOME_NET_IN_snort.conf]/' ${WRKSRC}/etc/snort.conf
 	${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' ${WRKSRC}/Makefile.in
+	${REINPLACE_CMD} -e 's|libdir)/pkgconfig|prefix)/libdata/pkgconfig|' \
+		${WRKSRC}/src/dynamic-preprocessors/libs/Makefile.in
 	${REINPLACE_CMD} -e 's|libnet-config|${LIBNET_CONFIG}|g' ${WRKSRC}/configure
 .if !defined(WITH_IPV6)
 	${REINPLACE_CMD} -e 's|^ipvar |var |' ${WRKSRC}/etc/snort.conf
