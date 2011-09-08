@@ -7,7 +7,7 @@
 
 PORTNAME=	fldiff
 PORTVERSION=	1.1
-PORTREVISION=	6
+PORTREVISION=	7
 CATEGORIES=	textproc
 MASTER_SITES=	http://www.easysw.com/~mike/fldiff/ \
 		CRITICAL
@@ -16,14 +16,14 @@ DISTNAME=	${PORTNAME}-${PORTVERSION}-source
 MAINTAINER=	ehaupt@FreeBSD.org
 COMMENT=	A graphical diff program using FLTK
 
+LICENSE=	GPLv2
+
 LIB_DEPENDS=	fltk.1:${PORTSDIR}/x11-toolkits/fltk
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes
 
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
-
-LICENSE=	GPLv2
 
 MAN1=		fldiff.1
 PORTDOCS=	index.html fldiff.jpg
