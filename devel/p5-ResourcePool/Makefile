@@ -11,7 +11,7 @@ PORTVERSION=	1.0106
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN \
 		http://www.fatalmind.com/projects/ResourcePool/
-MASTER_SITE_SUBDIR=	../by-authors/id/M/MW/MWS
+MASTER_SITE_SUBDIR=	CPAN:MWS
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org

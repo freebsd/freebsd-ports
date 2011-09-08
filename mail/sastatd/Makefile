@@ -9,7 +9,7 @@ PORTNAME=		sastatd
 PORTVERSION=		0.05
 CATEGORIES=		mail perl5
 MASTER_SITES=		CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/L/LO/LONERR
+MASTER_SITE_SUBDIR=	CPAN:LONERR
 
 MAINTAINER=		oleg@mamontov.net
 COMMENT=		SpamAssassin statistic collecting server

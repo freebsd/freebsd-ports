@@ -9,9 +9,9 @@ PORTNAME=	btparse
 PORTVERSION=	0.35
 CATEGORIES=	textproc
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/A/AM/AMBS/${PORTNAME}
+MASTER_SITE_SUBDIR=	CPAN:AMBS/${PORTNAME}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	C library for parsing and processing BibTeX data files
 
 GNU_CONFIGURE=	yes
