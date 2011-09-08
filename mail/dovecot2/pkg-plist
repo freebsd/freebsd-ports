@@ -130,6 +130,8 @@ include/dovecot/ioloop-iolist.h
 include/dovecot/ioloop-notify-fd.h
 include/dovecot/ioloop.h
 include/dovecot/iostream-internal.h
+include/dovecot/ipc-client.h
+include/dovecot/ipc-server.h
 include/dovecot/ipwd.h
 include/dovecot/istream-attachment.h
 include/dovecot/istream-base64-encoder.h
@@ -418,6 +420,7 @@ libexec/dovecot/dovecot-lda
 libexec/dovecot/gdbhelper
 libexec/dovecot/imap
 libexec/dovecot/imap-login
+libexec/dovecot/ipc
 libexec/dovecot/listview
 libexec/dovecot/lmtp
 libexec/dovecot/log
