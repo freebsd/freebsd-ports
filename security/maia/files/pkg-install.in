@@ -9,7 +9,6 @@ DIR=%%MAIADIR%%
 QUARANTINE=%%MAIAQUARANTINE%%
 
 if [ "$2" = "PRE-INSTALL" ]; then
-
     /usr/bin/install -o ${USER} -g ${GROUP} -m 750 -d ${DIR}
     echo "Created \"${DIR}\" directory."
     /usr/bin/install -o ${USER} -g ${GROUP} -m 750 -d ${DIR}/db
