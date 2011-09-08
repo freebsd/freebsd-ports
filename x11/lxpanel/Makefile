@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	lxpanel
-PORTVERSION=	0.5.6
-PORTREVISION=	3
+PORTVERSION=	0.5.8
 CATEGORIES=	x11
 MASTER_SITES=	SF/lxde/LXPanel%20%28desktop%20panel%29/LXPanel%20${PORTVERSION}
 
@@ -15,7 +14,7 @@ MAINTAINER=	kmoore@FreeBSD.org
 COMMENT=	LXPanel is a lightweight X11 desktop panel
 
 LIB_DEPENDS=	menu-cache.1:${PORTSDIR}/x11/menu-cache
-BUILD_DEPENDS=	${LOCALBASE}/share/desktop-directories/lxde-audio-video.directory:${PORTSDIR}/x11/lxmenu-data
+RUN_DEPENDS=	${LOCALBASE}/share/desktop-directories/lxde-audio-video.directory:${PORTSDIR}/x11/lxmenu-data
 
 OPTIONS=	ALSA "enable ALSA audio architecture support" Off \
 		NLS "NLS support" On
@@ -25,6 +24,7 @@ USE_GNOME=	gnomehack gtk20 pkgconfig
 GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	automake:env
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
+		--with-plugins=volume,deskno,kbled,xkb\
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 CFLAGS+=	-I${WRKSRC}
