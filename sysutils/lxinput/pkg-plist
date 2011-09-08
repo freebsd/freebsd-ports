@@ -2,6 +2,7 @@ bin/lxinput
 %%NLS%%share/locale/af/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/ar/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/ast/LC_MESSAGES/lxinput.mo
+%%NLS%%share/locale/be/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/bg/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/bn/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/bn_IN/LC_MESSAGES/lxinput.mo
@@ -28,6 +29,7 @@ bin/lxinput
 %%NLS%%share/locale/it/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/ja/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/ko/LC_MESSAGES/lxinput.mo
+%%NLS%%share/locale/lg/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/lt/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/ml/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/ms/LC_MESSAGES/lxinput.mo
@@ -40,13 +42,16 @@ bin/lxinput
 %%NLS%%share/locale/pt_BR/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/ro/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/ru/LC_MESSAGES/lxinput.mo
+%%NLS%%share/locale/si/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/sk/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/sl/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/sr@latin/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/sr/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/sv/LC_MESSAGES/lxinput.mo
+%%NLS%%share/locale/te/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/th/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/tr/LC_MESSAGES/lxinput.mo
+%%NLS%%share/locale/tt_RU/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/uk/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/ur/LC_MESSAGES/lxinput.mo
 %%NLS%%share/locale/ur_PK/LC_MESSAGES/lxinput.mo
@@ -67,9 +72,17 @@ share/lxinput/input-keyboard.png
 %%NLS%%@dirrmtry share/locale/fo
 %%NLS%%@dirrmtry share/locale/frp/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/frp
+%%NLS%%@dirrmtry share/locale/lg/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/lg
 %%NLS%%@dirrmtry share/locale/nb_NO/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/nb_NO
+%%NLS%%@dirrmtry share/locale/si/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/si
 %%NLS%%@dirrmtry share/locale/sr@latin/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/sr@latin
+%%NLS%%@dirrmtry share/locale/te/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/te
+%%NLS%%@dirrmtry share/locale/tt_RU/LC_MESSAGES
+%%NLS%%@dirrmtry share/locale/tt_RU
 %%NLS%%@dirrmtry share/locale/ur_PK/LC_MESSAGES
 %%NLS%%@dirrmtry share/locale/ur_PK
