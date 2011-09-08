@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bibletime
-PORTVERSION=	2.8.1
+PORTVERSION=	2.8.2
 CATEGORIES=	misc kde
 MASTER_SITES=	SF/${PORTNAME}/BibleTime%202/BibleTime%202%20source%20code
 
@@ -14,6 +14,7 @@ MAINTAINER=	tabthorpe@FreeBSD.org
 COMMENT=	An opensource Bible study tool
 
 LICENSE=	GPLv2
+LICENSE_FILE=	${WRKSRC}/LICENSE
 
 RUN_DEPENDS=	${LOCALBASE}/lib/libsword-1.6.2.so:${PORTSDIR}/misc/sword
 BUILD_DEPENDS=	${RUN_DEPENDS}
