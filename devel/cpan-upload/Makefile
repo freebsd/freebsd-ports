@@ -10,7 +10,7 @@ PORTVERSION=	2.2
 PORTREVISION=	1
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/N/NE/NEILB/scripts
+MASTER_SITE_SUBDIR=	CPAN:NEILB/scripts
 
 MAINTAINER=	lth@FreeBSD.org
 COMMENT=	Script for uploading distributions to CPAN

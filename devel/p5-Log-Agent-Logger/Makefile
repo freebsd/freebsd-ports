@@ -9,10 +9,10 @@ PORTNAME=	Log-Agent-Logger
 PORTVERSION=	0.2
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/T/TB/TBONE
+MASTER_SITE_SUBDIR=	CPAN:TBONE
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Log::Agent::Logger - a logging interface for perl
 
 BUILD_DEPENDS=	${SITE_PERL}/Log/Agent.pm:${PORTSDIR}/devel/p5-Log-Agent \

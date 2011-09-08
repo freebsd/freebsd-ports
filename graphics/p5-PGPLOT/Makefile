@@ -10,10 +10,10 @@ PORTVERSION=	2.20
 PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/K/KG/KGB
+MASTER_SITE_SUBDIR=	CPAN:KGB
 DISTNAME=	PGPLOT-${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A perl5 extension which makes available the pgplot library
 
 LIB_DEPENDS=	pgplot.5:${PORTSDIR}/graphics/pgplot

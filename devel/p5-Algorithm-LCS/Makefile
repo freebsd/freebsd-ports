@@ -9,13 +9,14 @@ PORTNAME=	Algorithm-LCS
 PORTVERSION=	1.04
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/J/JO/JOESUF
+MASTER_SITE_SUBDIR=	CPAN:JOESUF
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Fast (XS) implementation of the Longest Common Subsequence Algorithm
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
+
 MAN3=		Algorithm::LCS.3
 
 .include <bsd.port.mk>

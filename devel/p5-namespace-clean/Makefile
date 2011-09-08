@@ -9,7 +9,7 @@ PORTNAME=	namespace-clean
 PORTVERSION=	0.20
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/F/FL/FLORA
+MASTER_SITE_SUBDIR=	CPAN:FLORA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-B-Hooks-EndOfScope>=0.07:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope
 		p5-Package-Stash>=0.22:${PORTSDIR}/devel/p5-Package-Stash
 TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=	namespace::clean.3
 

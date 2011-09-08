@@ -9,7 +9,7 @@ PORTNAME=		FormValidator-Simple
 PORTVERSION=	0.28
 CATEGORIES=		textproc perl5
 MASTER_SITES=		CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/L/LY/LYOKATO
+MASTER_SITE_SUBDIR=	CPAN:LYOKATO
 PKGNAMEPREFIX=		p5-
 
 MAINTAINER=		perl@FreeBSD.org
@@ -33,7 +33,7 @@ BUILD_DEPENDS=	p5-Class-Accessor>=0.22:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-DateTime-Format-Strptime>=1.07:${PORTSDIR}/devel/p5-DateTime-Format-Strptime
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 
 MAN3=		FormValidator::Simple.3 \
 		FormValidator::Simple::Results.3

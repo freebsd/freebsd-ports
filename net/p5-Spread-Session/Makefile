@@ -9,10 +9,10 @@ PORTNAME=	Spread-Session
 PORTVERSION=	0.4
 CATEGORIES=	net perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/J/JM/JMAY
+MASTER_SITE_SUBDIR=	CPAN:JMAY
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Perl OO wrapper for Spread messaging toolkit
 
 BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Spread.pm:${PORTSDIR}/net/spread
