@@ -36,6 +36,7 @@ PREFIX_RELDEST=	${PREFIX:S,^${DESTDIR},,}
 LIB_DEPENDS+=	v8.1:${PORTSDIR}/lang/v8
 CONFIGURE_ARGS+=	--shared-v8-includes=${LOCALBASE}/include --shared-v8-libpath=${LOCALBASE}/lib
 PLIST_SUB+=	SHAREDV8="@comment "
+BROKEN=		does not build with new v8
 .else
 PLIST_SUB+=	SHAREDV8=""
 .endif
