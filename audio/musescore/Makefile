@@ -7,6 +7,7 @@
 
 PORTNAME=	musescore
 PORTVERSION=	1.1
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	SF/mscore/mscore/MuseScore-${PORTVERSION}
 DISTNAME=	mscore-${PORTVERSION}
@@ -16,8 +17,8 @@ COMMENT=	Free music composition & notation software
 
 LIB_DEPENDS=	asound.2:${PORTSDIR}/audio/alsa-lib \
 		sndfile.1:${PORTSDIR}/audio/libsndfile
-
-CONFLICTS=	qtscriptgenerator-[0-9]*
+BUILD_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so:${PORTSDIR}/devel/qtscriptgenerator
+RUN_DEPENDS=	${LOCALBASE}/lib/qt4/plugins/script/libqtscript_core.so:${PORTSDIR}/devel/qtscriptgenerator
 
 USE_BZIP2=	yes
 USE_CMAKE=	yes
@@ -31,8 +32,11 @@ CMAKE_OUTSOURCE=	yes
 
 ALL_TARGET=	lrelease all
 
+DATADIR=	${PREFIX}/share/mscore-${PORTVERSION}
+
+# Couldn't get portaudio to work, so disable it by default
 OPTIONS=	JACK "Jack support" on \
-		PORTAUDIO "Portaudio support" on
+		PORTAUDIO "Portaudio support" off
 
 .include <bsd.port.options.mk>
 
