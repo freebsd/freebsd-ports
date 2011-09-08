@@ -6,12 +6,11 @@
 #
 
 PORTNAME=	zopeevent
-PORTVERSION=	3.5.0
-PORTREVISION=	1
+PORTVERSION=	3.5.1
 CATEGORIES=	devel python
-MASTER_SITES=	http://pypi.python.org/packages/source/z/zope.event/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
-DISTNAME=	zope.event-${PORTVERSION}-1
+DISTNAME=	zope.event-${PORTVERSION}
 
 MAINTAINER=	cvs-src@yandex.ru
 COMMENT=	Very basic event publishing system
@@ -19,6 +18,5 @@ COMMENT=	Very basic event publishing system
 USE_PYTHON=	2.5+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	zope.event
-PYDISTUTILS_PKGVERSION=	3.5.0_1
 
 .include <bsd.port.mk>
