@@ -8,7 +8,7 @@
 PORTNAME=	phpsh
 PORTVERSION=	20110513
 CATEGORIES=	devel
-MASTER_SITES=	http://wahjava.users.sourceforge.net/%SUBDIR%/ \
+MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ashish
 
