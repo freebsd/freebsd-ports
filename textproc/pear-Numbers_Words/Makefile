@@ -6,25 +6,29 @@
 #
 
 PORTNAME=	Numbers_Words
-PORTVERSION=	0.16.0
-PORTREVISION=	1
+PORTVERSION=	0.16.2
 CATEGORIES=	textproc pear
 
 MAINTAINER=	meritus@innervision.pl
 COMMENT=	PEAR package provides methods for spelling numerals in words
 
-BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
+BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear \
+		${PEARDIR}/Math/BigInteger.php:${PORTSDIR}/math/pear-Math_BigInteger
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 CATEGORY=	Numbers
-FILES=		Words.php Words/lang.bg.php Words/lang.cs.php \
-		Words/lang.de.php Words/lang.dk.php Words/lang.en_100.php \
-		Words/lang.en_GB.php Words/lang.en_US.php Words/lang.es.php \
-		Words/lang.es_AR.php Words/lang.et.php Words/lang.fr.php \
-		Words/lang.fr_BE.php Words/lang.he.php Words/lang.hu_HU.php \
-		Words/lang.id.php Words/lang.it_IT.php Words/lang.lt.php \
-		Words/lang.nl.php Words/lang.pl.php Words/lang.pt_BR.php \
-		Words/lang.ru.php Words/lang.sv.php
+FILES=		Numbers/Words.php Numbers/Words/lang.bg.php \
+		Numbers/Words/lang.cs.php Numbers/Words/lang.de.php \
+		Numbers/Words/lang.dk.php Numbers/Words/lang.en_100.php \
+		Numbers/Words/lang.en_GB.php Numbers/Words/lang.en_US.php \
+		Numbers/Words/lang.es.php Numbers/Words/lang.es_AR.php \
+		Numbers/Words/lang.et.php Numbers/Words/lang.fr.php \
+		Numbers/Words/lang.fr_BE.php Numbers/Words/lang.he.php \
+		Numbers/Words/lang.hu_HU.php Numbers/Words/lang.id.php \
+		Numbers/Words/lang.it_IT.php Numbers/Words/lang.lt.php \
+		Numbers/Words/lang.nl.php Numbers/Words/lang.pl.php \
+		Numbers/Words/lang.pt_BR.php Numbers/Words/lang.ru.php \
+		Numbers/Words/lang.sv.php
 TESTS=		AllTests.php BulgarianTest.php \
 		English100Test.php EnglishGbTest.php \
 		EnglishUsTest.php FrenchBeTest.php \
