@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libssh2
-PORTVERSION=	1.2.9
+PORTVERSION=	1.3.0
 PORTEPOCH=	2
 CATEGORIES=	security devel
 MASTER_SITES=	http://www.libssh2.org/download/ \
@@ -22,7 +22,6 @@ USE_OPENSSL=	yes
 USE_AUTOTOOLS=	autoconf
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
-PATCH_STRIP=	-p1
 
 OPTIONS=	GCRYPT "Use libgcrypt instead of OpenSSL" off \
 		TRACE "Enable debug packet traces" off \
