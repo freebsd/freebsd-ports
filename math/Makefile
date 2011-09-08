@@ -443,6 +443,7 @@
     SUBDIR += pari
     SUBDIR += parmetis
     SUBDIR += parmgridgen
+    SUBDIR += pear-Math_BigInteger
     SUBDIR += pear-Math_Combinatorics
     SUBDIR += pecl-big_int
     SUBDIR += pecl-bitset
