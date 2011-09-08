@@ -10,7 +10,7 @@ PORTVERSION=	0.02
 PORTREVISION=	1
 CATEGORIES=	www devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/T/TO/TOMYHERO/
+MASTER_SITE_SUBDIR=	CPAN:TOMYHERO
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -20,7 +20,8 @@ RUN_DEPENDS=	${SITE_PERL}/Catalyst/Runtime.pm:${PORTSDIR}/www/p5-Catalyst-Runtim
 		${SITE_PERL}/Module/Recursive/Require.pm:${PORTSDIR}/devel/p5-Module-Recursive-Require \
 		${SITE_PERL}/Test/Spelling.pm:${PORTSDIR}/devel/p5-Test-Spelling
 
-PERL_CONFIGURE=	Yes
+PERL_CONFIGURE=	yes
+
 MAN3=	Catalyst::Model::DynamicAdaptor.3
 
 .include <bsd.port.mk>
