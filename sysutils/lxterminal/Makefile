@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	lxterminal
-PORTVERSION=	0.1.9
+PORTVERSION=	0.1.11
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/lxde/LXTerminal%20%28terminal%20emulator%29/LXTerminal%20${PORTVERSION}
 
