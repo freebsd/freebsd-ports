@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	Text-Format
-PORTVERSION=	0.52
+PORTVERSION=	0.53
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
-DISTNAME=	${PORTNAME}${PORTVERSION}
 
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Various subroutines to format text
