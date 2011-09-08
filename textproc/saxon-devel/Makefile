@@ -56,7 +56,7 @@ RUN_DEPENDS+=	${JAVALIBDIR}/xom.jar:${PORTSDIR}/textproc/xom
 .endif
 
 SUB_FILES=	saxon.sh
-SUB_LIST=	SAXON_JARS="${JARFILES:S,^,${JAVAJARDIR}/,}"
+SUB_LIST=	SAXON_JARS="${JARFILES:S,^,${JAVAJARDIR}/,}" JAVA_VERSION="${JAVA_VERSION}"
 
 do-install:
 	@${ECHO_MSG} -n ">> Installing JARs in ${JAVAJARDIR}/..."
