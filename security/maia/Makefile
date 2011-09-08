@@ -7,6 +7,7 @@
 
 PORTNAME=	maia
 DISTVERSION=	1.0.3-${SVNREVISION}
+PORTREVISION=	1
 CATEGORIES=	security
 MASTER_SITES=	http://www.purplehat.org/downloads/maia/
 
@@ -18,6 +19,7 @@ RUN_DEPENDS=	p5-Unix-Syslog>=0.94:${PORTSDIR}/sysutils/p5-Unix-Syslog \
 		p5-Convert-TNEF>=0.08:${PORTSDIR}/converters/p5-Convert-TNEF \
 		p5-Convert-UUlib>=1.08,1:${PORTSDIR}/converters/p5-Convert-UUlib \
 		p5-Net-CIDR-Lite>=0.18:${PORTSDIR}/net/p5-Net-CIDR-Lite \
+		p5-forks>=0.34:${PORTSDIR}/devel/p5-forks \
 		p5-Archive-Zip>=0.10:${PORTSDIR}/archivers/p5-Archive-Zip \
 		p5-IO-stringy>=1.203:${PORTSDIR}/devel/p5-IO-stringy \
 		p5-IO-Socket-INET6>=1.27:${PORTSDIR}/net/p5-IO-Socket-INET6 \
@@ -59,7 +61,8 @@ OPTIONS=	APACHE	"Use Apache web server"	off\
 		CRYPT	"Encryption support"	off \
 		IPCOUNTRY	"SpamAssassin IP Country plugin"	on \
 		DOMAINKEYS	"SpamAssassin DomainKey plugin"	on \
-		SPFQUERY	"SpamAssassin SPF Query plugin"	on \
+		SPF	"SpamAssassin SPF plugin"	on \
+		DKIM	"SpamAssassin DKIM plugin"	on \
 		FILE	"Use newer file(1) utility from ports"	on \
 		RAR	"RAR support with archivers/rar"	off \
 		UNRAR	"RAR support with archivers/unrar"	on \
@@ -197,8 +200,12 @@ RUN_DEPENDS+=	${SITE_PERL}/IP/Country.pm:${PORTSDIR}/net/p5-IP-Country
 RUN_DEPENDS+=	${SITE_PERL}/Mail/DomainKeys.pm:${PORTSDIR}/mail/p5-Mail-DomainKeys
 .endif
 
-.if defined(WITH_SPFQUERY)
+.if defined(WITH_SPF)
 RUN_DEPENDS+=	${SITE_PERL}/Mail/SPF.pm:${PORTSDIR}/mail/p5-Mail-SPF
+.endif
+
+.if defined(WITH_DKIM)
+RUN_DEPENDS+=	${SITE_PERL}/Mail/DKIM.pm:${PORTSDIR}/mail/p5-Mail-DKIM
 .endif
 
 .if defined(WITH_FILE)
@@ -272,29 +279,41 @@ RUN_DEPENDS+=	tnef:${PORTSDIR}/converters/tnef
 .endif
 
 post-patch:
-.for f in maiad.conf.dist maiad
-	@${REINPLACE_CMD} "s@'zoo'\]@['zoo','unzoo'] ]@" ${WRKSRC}/${f}
+.for m in scripts/configtest.pl scripts/expire-quarantine-cache.pl \
+	scripts/generate-key.pl scripts/load-sa-rules.pl scripts/maiadbtool.pl \
+	scripts/process-quarantine.pl scripts/resend.pl scripts/send-quarantine-digests.pl \
+	scripts/send-quarantine-reminders.pl scripts/stats-snapshot.pl
+		@${REINPLACE_CMD} -e "s|/etc/maia/maia.conf|${PREFIX}/etc/maia.conf|" \
+			${WRKSRC}/${m}
+
 .endfor
-.for i in maiad.conf.dist maiad
-	@${REINPLACE_CMD} -e "s|$daemon_user  = \'amavis\';|$daemon_user  = \'${USERS}\';|" \
-	    -e "s|$daemon_group = \'amavis\';|$daemon_group = \'${GROUPS}\';|" \
-	    -e 's|$$log_level = 0;|$$log_level = 1;|' \
-	    -e 's|/etc/maiad.conf|${PREFIX}/etc/maiad.conf|' \
-	    -e "s|/var/virusmails|${MAIAQUARANTINE}|" ${WRKSRC}/${i}
+.for a in maiad.conf.dist
+	@${REINPLACE_CMD} -e "s|daemon_user  = 'maia'|daemon_user  = '${USERS}'|" \
+		-e "s|daemon_group = 'maia'|daemon_group = '${GROUPS}'|" \
+		-e "s|/var/lib/maia|${MAIADIR}|" \
+		-e "s|/var/log/maia|${MAIADIR}|" ${WRKSRC}/${a}
 .endfor
-.for f in maiad maiad.conf.dist maia.conf.dist scripts/send-quarantine-digests.pl \
-	scripts/process-quarantine.pl scripts/load-sa-rules.pl
-		@${REINPLACE_CMD} "s|/var/maiad|${MAIADIR}|" ${WRKSRC}/${f}
+.for i in maia.conf.dist
+	@${REINPLACE_CMD} -e "s|/etc/maia.conf|${PREFIX}/etc/maia.conf|" \
+		-e "s|username = 'maia'|username = '${USERS}'|" \
+		-e "s|/var/lib/maia|${MAIADIR}/maia|" \
+		-e "s|/usr/bin/sa-learn|/usr/local/bin/sa-learn|" \
+		-e "s|local_cf_dir = undef|local_cf_dir = '${PREFIX}/etc/mail/spamassassin'|" \
+		-e "s|system_rules_dir = undef|system_rules_dir = '/var/db/spamassassin'|" \
+		-e "s|user_rules_dir = undef|user_rules_dir = '${MAIADIR}/.spamassassin'|" \
+		-e "s|pid_dir = '/var/run/maia/'|pid_dir = '${MAIADIR}/'|" \
+		-e "s|log_dir = '/var/log/maia'|log_dir = '${MAIADIR}'|" \
+		-e "s|template_dir = '/etc/maia/templates/'|template_dir = '${MAIADIR}/maia/templates/'|" \
+			${WRKSRC}/${i}
 .endfor
-.for i in maia.conf.dist scripts/expire-quarantine-cache.pl scripts/stats-snapshot.pl \
-	scripts/maiadbtool.pl scripts/configtest.pl scripts/send-quarantine-reminders.pl \
-	scripts/send-quarantine-digests.pl scripts/process-quarantine.pl \
-	scripts/load-sa-rules.pl
-		@${REINPLACE_CMD} "s|/etc/maia.conf|${PREFIX}/etc/maia.conf|" ${WRKSRC}/${i}
+.for a in maiad
+	@${REINPLACE_CMD} -e "s|/etc/maia/maiad.conf|${PREFIX}/etc/maiad.conf|" \
+		-e "s|/var/lib/maia|${MAIADIR}|" \
+		-e "s@'zoo'\]@['zoo','unzoo'] ]@" ${WRKSRC}/${a}
 .endfor
+	@${FIND} -E ${WRKSRC} -iregex '.*(bak|~)$$' -delete
 
 pre-install:
-	@${FIND} -E ${WRKSRC} -iregex '.*(bak|~)$$' -delete
 	@${SH} ${PKGINSTALL} ${DISTNAME} PRE-INSTALL
 
 do-install:
@@ -330,6 +349,8 @@ post-install:
 		${CP} -p ${PREFIX}/etc/${maiaconf}.conf.dist \
 		${PREFIX}/etc/${maiaconf}.conf ; \
 	fi
+	@${CHOWN} ${USERS}:${GROUPS} ${PREFIX}/etc/${maiaconf}.conf \
+		${PREFIX}/etc/${maiaconf}.conf.dist
 .endfor
 	@${CHOWN} -R ${WWWOWN}:${WWWGRP} ${WWWDIR}
 	@${CHOWN} -R ${USERS}:${GROUPS} ${MAIADIR}/
