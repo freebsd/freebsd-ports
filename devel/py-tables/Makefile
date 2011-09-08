@@ -8,6 +8,7 @@
 
 PORTNAME=	tables
 PORTVERSION=	2.2.1
+PORTREVISION=	1
 CATEGORIES=	devel python
 MASTER_SITES=	http://www.pytables.org/download/stable/ \
 		http://www.pytables.org/download/py${PORTNAME}-${PORTVERSION}/
@@ -28,8 +29,6 @@ RUN_DEPENDS=	${BUILD_DEPENDS}
 
 USE_PYTHON=		yes
 USE_PYDISTUTILS=	yes
-
-BROKEN=		needs to be upgraded to lzo2 according to ports/156954
 
 PLIST_FILES=	bin/nctoh5 bin/ptdump bin/ptrepack
 
