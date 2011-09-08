@@ -17,5 +17,4 @@ lib/libHX.la
 lib/libHX.so
 lib/libHX.so.27
 libdata/pkgconfig/libHX.pc
-@dirrm lib/pkgconfig
 @dirrm include/libHX
