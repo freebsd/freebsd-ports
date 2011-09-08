@@ -9,12 +9,15 @@ PORTNAME=	emacs
 PORTVERSION=	${EMACS_VER}.${EMACS_REV}
 PORTEPOCH=	1
 CATEGORIES=	editors ipv6
-MASTER_SITES=	http://wahjava.users.sourceforge.net/%SUBDIR%/ \
+MASTER_SITES=	http://distfiles.pirateparty.in/%SUBDIR%/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	ashish
 
 MAINTAINER=	ashish@FreeBSD.org
 COMMENT=	GNU editing macros
+
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -24,22 +27,19 @@ CONFLICTS=	emacs-19.* emacs-21.* emacs-22.* emacs-23.* \
 		emacs-nox11-[0-9]*
 
 EMACS_VER=	24.0.50
-EMACS_REV=	105418
+EMACS_REV=	105651
 GNU_CONFIGURE=	yes
 USE_GMAKE=	yes
 USE_XZ=		yes
 CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS}" LDFLAGS="${LDFLAGS}"
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS}"
 CONFIGURE_ARGS=	--localstatedir=/var
 WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 USE_AUTOTOOLS=	autoconf:env automake:env aclocal:env autoheader:env
 
 EMACS_DIRS=	${DATADIR}/${EMACS_VER}/leim ${DATADIR}/${EMACS_VER}/lisp ${DATADIR}/${EMACS_VER}/src \
 		${PREFIX}/libexec/${PORTNAME}
-
-LICENSE=	GPLv3
-LICENSE_FILE=	${WRKSRC}/COPYING
 
 MAN1=		ctags.1 ebrowse.1 emacs.1 emacsclient.1 etags.1 \
 		grep-changelog.1 rcs-checkin.1
@@ -89,7 +89,6 @@ DBUS_PTHREAD_LIBS=	${CC} -dumpspecs | ${GREP} -m 1 pthread: | ${SED} -e 's|^.*%{
 .if defined(WITHOUT_X11)
 CONFIGURE_ARGS+=	--without-x
 .else
-INSTALLS_ICONS=	yes
 USE_XORG=	x11
 USE_GNOME=
 
@@ -122,6 +121,7 @@ IGNORE=	please choose a toolkit: GTK+/GTK+3/Motif/Xaw/Xaw3d, or build without X1
 .if defined(WITH_XAW) || defined(WITH_XAW3D) || defined(WITH_MOTIF)
 IGNORE=	please choose only one toolkit: GTK+/GTK+3/Motif/Xaw/Xaw3d
 .endif
+INSTALLS_ICONS=	yes
 .if defined(WITH_GTK3) && defined(WITHOUT_GTK2)
 USE_GNOME+=	gtk30
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk3
