@@ -9,11 +9,14 @@ PORTNAME=	Web-Scraper
 PORTVERSION=	0.34
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/M/MI/MIYAGAWA
+MASTER_SITE_SUBDIR=	CPAN:MIYAGAWA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Web Scraping Toolkit inspired by Scrapi
+
+LICENSE=	ART20 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-HTML-Selector-XPath>=0.03:${PORTSDIR}/www/p5-HTML-Selector-XPath \
@@ -27,10 +30,7 @@ RUN_DEPENDS=	p5-HTML-Parser>0:${PORTSDIR}/www/p5-HTML-Parser \
 		p5-YAML>0:${PORTSDIR}/textproc/p5-YAML \
 		p5-libwww>=5.827:${PORTSDIR}/www/p5-libwww
 
-PERL_CONFIGURE=	5.8.1+
-
-LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
+PERL_CONFIGURE=	yes
 
 MAN3=		Web::Scraper.3 Web::Scraper::Filter.3 Web::Scraper::LibXML.3
 

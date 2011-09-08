@@ -8,10 +8,10 @@ PORTNAME=	Maypole-Component
 PORTVERSION=	0.03
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/S/SI/SIMON/
+MASTER_SITE_SUBDIR=	CPAN:SIMON
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Run Maypole sub-requests as components
 
 PERL_CONFIGURE=	yes

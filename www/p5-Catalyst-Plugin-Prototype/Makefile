@@ -9,7 +9,7 @@ PORTNAME=	Catalyst-Plugin-Prototype
 PORTVERSION=	1.33
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/M/MR/MRAMBERG
+MASTER_SITE_SUBDIR=	CPAN:MRAMBERG
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.7006:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-HTML-Prototype>=1.48:${PORTSDIR}/www/p5-HTML-Prototype
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-PERL_CONFIGURE=	5.8.1+
+PERL_CONFIGURE=	yes
 
 MAN3=	Catalyst::Helper::Prototype.3 \
 	Catalyst::Plugin::Prototype.3

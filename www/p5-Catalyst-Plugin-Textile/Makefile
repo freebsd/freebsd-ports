@@ -10,14 +10,14 @@ PORTNAME=	Catalyst-Plugin-Textile
 PORTVERSION=	0.01
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	../by-authors/id/S/SR/SRI
+MASTER_SITE_SUBDIR=	CPAN:SRI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	hcoyote@ghostar.org
 COMMENT=	Textile for Catalyst
 
 BUILD_DEPENDS=	${SITE_PERL}/Catalyst.pm:${PORTSDIR}/www/p5-Catalyst-Runtime \
-	${SITE_PERL}/Text/Textile.pm:${PORTSDIR}/textproc/p5-Text-Textile
+		${SITE_PERL}/Text/Textile.pm:${PORTSDIR}/textproc/p5-Text-Textile
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
