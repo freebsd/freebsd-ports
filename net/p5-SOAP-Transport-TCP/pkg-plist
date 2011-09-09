@@ -1,0 +1,3 @@
+%%SITE_PERL%%/SOAP/Transport/TCP.pm
+@dirrmtry %%SITE_PERL%%/SOAP/Transport
+@dirrmtry %%SITE_PERL%%/SOAP
