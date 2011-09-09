@@ -98,7 +98,6 @@ CONFIGURE_ARGS+=	--disable-instrument-downloads
 .if defined(WITH_TCMALLOC)
 CONFIGURE_ARGS+=	--with-tcmalloc
 LIB_DEPENDS+=		tcmalloc:${PORTSDIR}/devel/google-perftools
-LDFLAGS+=		-L${LOCALBASE}/lib
 .endif
 
 .if defined(WITH_THREADS)
@@ -121,6 +120,8 @@ post-patch:
 		${WRKSRC}/contrib/Makefile.in
 	@${REINPLACE_CMD} -e '\|^install-data-am:|s|install-docDATA||' \
 		${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e "s|-ltcmalloc|${LOCALBASE}/lib/libtcmalloc.so|" \
+		${WRKSRC}/configure
 
 post-configure:
 	@${FIND} -X ${WRKSRC} -type f -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
