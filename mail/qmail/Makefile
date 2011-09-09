@@ -178,7 +178,9 @@ OPTIONS+=	TLS		"SMTP TLS support" on \
 		XF_QUITASAP	"Close SMTP session ASAP (SMTPEXTFORK)" off \
 		SENDERCHECK4	"LOOSE checks exclusively for RELAY clients" off \
 		ENHACELOGS	"Enhace qmail-smtpd logs (spamcontrol-like)" off \
-		GRTDELAY	"Add jms1's Greet Delay feature" off
+		GRTDELAY	"Add jms1's Greet Delay feature" off \
+		SMTPAUTHUSER	"create env SMTPAUTHUSER containing authuser" off\
+		SRS	"Sender Rewriting Scheme support" off
 
 LDAP_PARAMS=	ALTQUEUE BIGBROTHER BIGTODO BIND_8_COMPAT\
 		CLEARTEXTPASSWD DASH_EXT DATA_COMPRESS\
@@ -305,15 +307,15 @@ BOOTFILES=	home home+df proc proc+df binm1 binm1+df \
 CONFIGUREPROGRAMS=	install dnsfq hostname dnsip ipmeprint dnsptr
 CONFIGURESCRIPTS=	config config-fast
 
-.include "${.CURDIR}/../../Mk/bsd.mail.mk"
+WANT_QMAIL=	yes
 
-.if (${PREFIX} != ${LOCALBASE})
+.include <bsd.port.pre.mk>
+
+.if ${PREFIX} != ${LOCALBASE}
 DOCSDIR=	${PREFIX}/doc
 .endif
 
 NO_MTREE=	yes
-
-.include <bsd.port.pre.mk>
 
 .if ${OSVERSION} >= 900007
 . if defined(SLAVE_LDAP)
@@ -347,6 +349,13 @@ LDAPFLAGS+=	-D${param}
 PLIST_SUB+=	EXTERNAL_TODO=""
 . else
 PLIST_SUB+=	EXTERNAL_TODO="@comment "
+. endif
+
+. if defined(WITH_SRS)
+BUILD_DEPENDS= srs:${PORTSDIR}/mail/libsrs2
+MASTER_SITES+=	http://qmail-ldap-smtpauthuser.googlecode.com/svn/trunk/:srs_ldap
+SRS_LDAP_PATCH =	qmail-ldap-1.03-20060201-SRS.patch
+DISTFILES+=	${SRS_LDAP_PATCH}:srs_ldap
 . endif
 
 .endif
@@ -513,6 +522,17 @@ PATCH_SITES+=	http://www6.freebsdbrasil.com.br/~eksffa/l/dev/qmail/:ldapenhacelo
 		${MASTER_SITE_LOCAL:S/$/:ldapenhacelog/}
 PATCH_SITE_SUBDIR+=	garga/qmail/:ldapenhacelog
 PATCHFILES+=	enhacelogging-ldap-${LDAP_PATCH_DATE}_4.patch:ldapenhacelog
+.endif
+
+.if defined(SLAVE_LDAP) && defined(WITH_SMTPAUTHUSER) 
+PATCH_SITES+=	http://qmail-ldap-smtpauthuser.googlecode.com/svn/trunk/:smtpauthuser \
+		${MASTER_SITE_LOCAL:S/$/:smtpauthuser/}
+PATCH_SITE_SUBDIR+= garga/qmail/:smtpauthuser
+. if defined(WITH_ENHACELOGS)
+PATCHFILES+=	qmail-1.03-enhaceloggingSMTPAUTHUSER:smtpauthuser
+. else 
+PATCHFILES+=	SMTPAUTHUSER.patch:smtpauthuser
+. endif
 .endif
 
 .if defined(SLAVE_SPAMCONTROL)
@@ -707,6 +727,9 @@ post-patch:
 . if defined(LDAPFLAGS)
 	@${REINPLACE_CMD} "s|^#LDAPFLAGS=.*$$|LDAPFLAGS=${LDAPFLAGS}|" \
 		${WRKSRC}/Makefile
+. endif
+. if defined(WITH_SRS)
+	@${PATCH} -d ${WRKSRC} < ${DISTDIR}/${DIST_SUBDIR}/${SRS_LDAP_PATCH}
 . endif
 .endif
 .if defined(EXT_BIG_TODO_PATCH)
