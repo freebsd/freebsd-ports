@@ -16,3 +16,5 @@ share/mime/packages/edje.xml
 @dirrm include/edje-1
 @dirrm %%DATADIR%%/include
 @dirrm %%DATADIR%%
+@exec %%LOCALBASE%%/bin/update-mime-database %D/share/mime
+@unexec %%LOCALBASE%%/bin/update-mime-database %D/share/mime

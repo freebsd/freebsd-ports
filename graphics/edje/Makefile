@@ -16,6 +16,7 @@ MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Edje is a complex graphical design and layout engine
 
 LIB_DEPENDS=	lua-5.1:${PORTSDIR}/lang/lua
+RUN_DEPENDS=	update-mime-database:${PORTSDIR}/misc/shared-mime-info
 
 LICENSE=	BSD
 DIST_SUBDIR=	e17
@@ -32,5 +33,8 @@ CONFIGURE_ARGS+=	--without-vim
 post-patch:
 	@${REINPLACE_CMD} -E -e "/^SUBDIRS[[:space:]]+=/s/utils//" \
 	    ${WRKSRC}/Makefile.in
+
+post-install:
+	-update-mime-database ${PREFIX}/share/mime
 
 .include <bsd.port.mk>
