@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	CatalystX-SimpleLogin
-PORTVERSION=	0.14
+PORTVERSION=	0.15
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:BOBTFISH
@@ -60,7 +60,6 @@ RUN_DEPENDS=	p5-Catalyst-Action-REST>=0.74:${PORTSDIR}/www/p5-Catalyst-Action-RE
 		p5-SQL-Translator>=0:${PORTSDIR}/databases/p5-SQL-Translator \
 		p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean
 
-USE_PERL=	yes
 PERL_CONFIGURE=	yes
 
 MAN3=		Catalyst::ActionRole::NeedsLogin.3 \
