@@ -6,13 +6,16 @@
 #
 
 PORTNAME=	MooseX-Types-Common
-PORTVERSION=	0.001002
+PORTVERSION=	0.001003
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A set of commonly-used type constraints that do not ship with p5-Moose
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 RUN_DEPENDS=	p5-Moose>=0.39:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Types>=0.04:${PORTSDIR}/devel/p5-MooseX-Types
