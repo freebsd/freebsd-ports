@@ -4147,14 +4147,13 @@ create-users-groups:
 		IFS=","; for _login in $$members; do \
 			for _user in ${USERS}; do \
 				if [ "x$${_user}" = "x$${_login}" ]; then \
-					list=`${PW} usershow $${_login} -P | ${SED} -ne 's/.*Groups: //p'`; \
-					${ECHO_MSG} "Setting \`$${_login}' groups to \`$$list$${list:+,}${_group}'."; \
-					${PW} usermod $${_login} -G $$list$${list:+,}${_group}; \
-					${ECHO_CMD} "@exec list=\`${PW} usershow $${_login} -P | ${SED} -ne 's/.*Groups: //p'\`; \
-					echo \"Setting '$${_login}' groups to '$$list$${list:+,}${_group}'.\";  \
-					${PW} usermod $${_login} -G $${list},${_group}" >> ${TMPPLIST}; \
-				else \
-					${ECHO_MSG} "==> DEBUG skip login $${_login} =>  not defined in USERS \"( ${USERS} )\""; \
+					if ! ${PW} groupshow ${_group} | ${GREP} -qw $${_login}; then \
+						${ECHO_MSG} "Adding user \`$${_login}' to group \`${_group}'."; \
+						${PW} groupmod ${_group} -m $${_login}; \
+					fi; \
+					${ECHO_CMD} "@exec if ! ${PW} groupshow ${_group} | ${GREP} -qw $${_login}; then \
+						echo \"Adding user '$${_login}' to group '${_group}'.\"; \
+						${PW} groupmod ${_group} -m $${_login}; fi" >> ${TMPPLIST}; \
 				fi; \
 			done; \
 		done; \
