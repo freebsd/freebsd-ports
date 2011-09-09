@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	Business-OnlinePayment-Beanstream
-PORTVERSION=	0.01
-PORTREVISION=	2
+PORTVERSION=	0.02
 CATEGORIES=	finance perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:ILYALIT
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Business::OnlinePayment backend module for Beanstream
 
-BUILD_DEPENDS=	${SITE_PERL}/Business/CreditCard.pm:${PORTSDIR}/finance/p5-Business-CreditCard \
-		${SITE_PERL}/Business/OnlinePayment.pm:${PORTSDIR}/finance/p5-Business-OnlinePayment
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	p5-Business-OnlinePayment>=0:${PORTSDIR}/finance/p5-Business-OnlinePayment \
+		p5-URI>=0:${PORTSDIR}/net/p5-URI
+BUILD_DEPENDS:=	${RUN_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
