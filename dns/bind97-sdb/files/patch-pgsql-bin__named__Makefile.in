@@ -1,0 +1,17 @@
+--- bin/named/Makefile.in.orig	2011-06-10 10:18:29.000000000 -0700
++++ bin/named/Makefile.in	2011-06-10 10:01:43.000000000 -0700
+@@ -28,10 +28,10 @@
+ #
+ # Add database drivers here.
+ #
+-DBDRIVER_OBJS =
+-DBDRIVER_SRCS =
+-DBDRIVER_INCLUDES =
+-DBDRIVER_LIBS =
++DBDRIVER_OBJS = pgsqldb.@O@
++DBDRIVER_SRCS = pgsqldb.c
++DBDRIVER_INCLUDES = -I../../contrib/sdb/pgsql -I${LOCALBASE}/include
++DBDRIVER_LIBS = -L${LOCALBASE}/lib -lpq
+ 
+ DLZ_DRIVER_DIR =	${top_srcdir}/contrib/dlz/drivers
+ 

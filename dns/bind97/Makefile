@@ -31,7 +31,7 @@ CONFIGURE_ARGS=	--localstatedir=/var --disable-linux-caps \
 
 CONFLICTS=	bind9*-9.[45689].* bind9-sdb-* host-*
 
-OPTIONS=	SSL "Building without OpenSSL removes DNSSEC" on \
+OPTIONS+=	SSL "Building without OpenSSL removes DNSSEC" on \
 		IDN "Add IDN support to dig, host, etc." off \
 		REPLACE_BASE "Replace base BIND with this version" off \
 		LARGE_FILE "64-bit file support" off \

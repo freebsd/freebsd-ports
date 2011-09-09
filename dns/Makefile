@@ -12,6 +12,7 @@
     SUBDIR += bind9-sdb-postgresql
     SUBDIR += bind96
     SUBDIR += bind97
+    SUBDIR += bind97-sdb
     SUBDIR += bind98
     SUBDIR += bindgraph
     SUBDIR += c-ares
