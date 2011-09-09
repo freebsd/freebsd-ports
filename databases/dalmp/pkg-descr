@@ -7,7 +7,7 @@ Details:
  memcache support.
  apc support.
  Group caching, cache by groups and flush by groups or individual keys.
- Disck cache support.
+ Disk cache support.
  Prepared statements ready.
  Secure connections with SSL.
  Ability to use different cache types at the same time.
