@@ -1,0 +1,10 @@
+The classes provided by this module implement direct TCP/IP communications
+methods for both clients and servers.  The connections don't use HTTP or any
+other higher-level protocol. These classes are selected when the client or
+server object being created uses an endpoint URI that starts with tcp://. Both
+client and server classes support using Secure Socket Layer if it is available.
+If any of the parameters to a new method from either of the classes begins with
+SSL_ (such as SSL_server in place of Server), the class attempts to load the
+IO::Socket::SSL package and use it to create socket objects.
+
+WWW:	http://search.cpan.org/dist/SOAP-Transport-TCP/
