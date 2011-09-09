@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	libdispatch
-PORTVERSION=	174
+PORTVERSION=	210
 CATEGORIES=	devel
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/
-DISTNAME=	${PORTNAME}-r${PORTVERSION}
 
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Grand Central Dispatch API support library
 
+USE_AUTOTOOLS=	aclocal autoconf
+ACLOCAL_ARGS=	-Im4
 GNU_CONFIGURE=	yes
 USE_BZIP2=	yes
 USE_LDCONFIG=	yes
@@ -83,13 +84,17 @@ IGNORE=	is not supported on this OS version
 .endif
 
 .if !defined(WITHOUT_CLANG)
+. if ${OSVERSION} < 900024
 BUILD_DEPENDS+=	clang:${PORTSDIR}/devel/llvm-devel \
 		${LOCALBASE}/lib/libBlocksRuntime.so:${PORTSDIR}/devel/compiler-rt
 RUN_DEPENDS+=	clang:${PORTSDIR}/devel/llvm-devel \
 		${LOCALBASE}/lib/libBlocksRuntime.so:${PORTSDIR}/devel/compiler-rt
-CONFIGURE_ARGS+=	--with-blocks-runtime=/usr/local/lib
-CONFIGURE_ENV+=	CC="clang"
-MAKE_ENV+=	CC="clang"
+CONFIGURE_ARGS+=	--with-blocks-runtime=${LOCALBASE}/lib
+CONFIGURE_ENV+=	CC="${LOCALBASE}/clang"
+. else
+CONFIGURE_ARGS+=	--with-blocks-runtime=/usr/lib
+CONFIGURE_ENV+=	CC="/usr/bin/clang"
+. endif
 .endif
 
 .include <bsd.port.post.mk>
