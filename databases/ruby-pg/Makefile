@@ -15,6 +15,10 @@ DIST_SUBDIR=	ruby
 MAINTAINER=	dinoex@FreeBSD.org
 COMMENT=	Ruby interface to PostgreSQL library
 
+IGNORE=		is replaced by rubygem-pg
+DEPRECATED=	is replaced by rubygem-pg
+EXPIRATION_DATE=	2011-10-01
+
 USE_PGSQL=	yes
 USE_RUBY=	yes
 USE_RUBY_EXTCONF=	yes
