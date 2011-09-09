@@ -1424,6 +1424,7 @@
     SUBDIR += p5-Data-Bind
     SUBDIR += p5-Data-ClearSilver-HDF
     SUBDIR += p5-Data-Compare
+    SUBDIR += p5-Data-Domain
     SUBDIR += p5-Data-Dump
     SUBDIR += p5-Data-Dump-Streamer
     SUBDIR += p5-Data-DumpXML
