@@ -7,6 +7,7 @@
 
 PORTNAME=	check_ports
 PORTVERSION=	0.6.1
+PORTREVISION=	1
 CATEGORIES=	net-mgmt
 MASTER_SITES=	http://code.adminlife.net/check_ports/files/
 PKGNAMEPREFIX=	nagios-
