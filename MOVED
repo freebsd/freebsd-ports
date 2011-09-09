@@ -2639,3 +2639,5 @@ games/xshisen||2011-09-07|Has expired: No more public distfiles
 games/slige||2011-09-07|Has expired: No more public distfiles
 games/wmtimebomb||2011-09-07|Has expired: No more public distfiles
 net-mgmt/cfgstoragemk||2011-09-07|Has expired: No more public distfiles
+mail/libspf2-10||2011-09-09|Vulnerable, use mail/libspf2 instead
+mail/postfix-policyd-spf||2011-09-09|Relies on vulnerable mail/libspf2-10
