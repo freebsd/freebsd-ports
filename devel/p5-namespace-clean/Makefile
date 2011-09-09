@@ -6,29 +6,23 @@
 #
 
 PORTNAME=	namespace-clean
-PORTVERSION=	0.20
+PORTVERSION=	0.21
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
-MASTER_SITE_SUBDIR=	CPAN:FLORA
+MASTER_SITE_SUBDIR=	CPAN:RIBASUSHI
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Keep imports and functions out of your namespace
 
-BUILD_DEPENDS=	p5-B-Hooks-EndOfScope>=0.07:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
-		p5-Sub-Identify>=0.04:${PORTSDIR}/devel/p5-Sub-Identify \
-		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name
-RUN_DEPENDS=	p5-B-Hooks-EndOfScope>=0.07:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
-		p5-Sub-Identify>=0.04:${PORTSDIR}/devel/p5-Sub-Identify \
-		p5-Sub-Name>=0.04:${PORTSDIR}/devel/p5-Sub-Name \
-		p5-Package-Stash>=0.22:${PORTSDIR}/devel/p5-Package-Stash
+COMMON_DEPENDS=	p5-B-Hooks-EndOfScope>=0.07:${PORTSDIR}/devel/p5-B-Hooks-EndOfScope \
+		p5-Package-Stash>=0.23:${PORTSDIR}/devel/p5-Package-Stash
+BUILD_DEPENDS=	${COMMON_DEPENDS}
+RUN_DEPENDS=	${COMMON_DEPENDS}
 TEST_DEPENDS=	p5-Test-Simple>=0.88:${PORTSDIR}/devel/p5-Test-Simple
 
 PERL_CONFIGURE=	yes
 
 MAN3=	namespace::clean.3
-
-post-extract:
-	@${PERL} -i -ne 'print unless m,build_requires,' ${WRKSRC}/Makefile.PL
 
 .include <bsd.port.mk>
