@@ -1,6 +1,6 @@
 --- bin/distro-install-desktop-integration.orig	2011-08-15 19:46:21.000000000 +0200
-+++ bin/distro-install-desktop-integration	2011-09-05 18:37:11.798849176 +0200
-@@ -74,12 +74,12 @@
++++ bin/distro-install-desktop-integration	2011-09-09 16:00:15.645182583 +0200
+@@ -74,21 +74,21 @@
      test -n "$oowrapper_name" && create_man_link "$oowrapper_name" "$used_man_page" "$file_list"
      
      # add desktop file to the right file list
@@ -16,6 +16,20 @@
  cp -a sysui/desktop/share/create_tree.sh "$sysui_temp"
  builddir=`pwd`
  cd $sysui_temp
+ # we want non-versioned stuff in the distro packages
+-sed -i \
+-    -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION_NODOT/\1/" \
+-    -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION/\1/" \
+-    -e "s/\($PRODUCTNAME\) $PRODUCTVERSION/\1/" \
+-    *
++#sed -i \
++#    -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION_NODOT/\1/" \
++#    -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION/\1/" \
++#    -e "s/\($PRODUCTNAME\) $PRODUCTVERSION/\1/" \
++#    *
+ # call in subshell to do not malfrom PRODUCTVERSION, ...
+ (
+     export OFFICE_PREFIX=$LIBDIR
 @@ -96,8 +96,8 @@
      export ICON_PREFIX=$INSTALLDIRNAME
      export ICON_SOURCE_DIR=$builddir/sysui/desktop/icons
@@ -27,7 +41,7 @@
      export GNOME_MIME_THEME=hicolor
      /bin/bash ./create_tree.sh
  )
-@@ -106,8 +106,8 @@
+@@ -106,32 +106,32 @@
  
  # we do not want some stuff from the plain packages
  rm -f $DESTDIR/$PREFIXDIR/bin/$INSTALLDIRNAME*
@@ -38,7 +52,25 @@
  if test -d $DESTDIR/opt ; then 
      rm -f $DESTDIR/opt/$INSTALLDIRNAME
      rmdir --ignore-fail-on-non-empty $DESTDIR/opt
-@@ -126,12 +126,12 @@
+ fi
+ 
+ # we want non-versioned desktop files
+-cd $DESTDIR/$INSTALLDIR/share/xdg
++#cd $DESTDIR/$INSTALLDIR/share/xdg
+ # we want non-versioned stuff in the distro packages
+-sed -i \
+-    -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION_NODOT/\1/" \
+-    -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION/\1/" \
+-    -e "s/\($PRODUCTNAME\) $PRODUCTVERSION/\1/" \
+-    *.desktop
+-cd -
++#sed -i \
++#    -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION_NODOT/\1/" \
++#    -e "s/\($INSTALLDIRNAME\)$PRODUCTVERSION/\1/" \
++#    -e "s/\($PRODUCTNAME\) $PRODUCTVERSION/\1/" \
++#    *.desktop
++#cd -
+ 
  # put the stuff installed by create_tree.sh into the right file lists
  # desktop files will be added by the corresponding add_wrapper command
  if test -f $DESTDIR/gid_Module_Root_Brand ; then

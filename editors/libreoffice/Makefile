@@ -7,6 +7,7 @@
 
 PORTNAME=	libreoffice
 PORTVERSION=	3.4.3
+PORTREVISION=	1
 LOVERSION=	${PORTVERSION}.2
 CATEGORIES=	editors
 MASTER_SITES=	http://ftp.osuosl.org/pub/tdf/libreoffice/src/${PORTVERSION}/ \
@@ -414,33 +415,29 @@ post-install:
 	@${RM} -f ${PLISTF} ${PLISTD}
 	@for dir in ${EMPTYDIRS}; do ${TOUCH} ${LODESTDIR}/${PREFIX}/lib/$$dir/.keep; done
 
-	@cd ${LODESTDIR}/${PREFIX}/lib && ${FIND} -H -s * -type f -o -type l | \
-		${SED} -e 's|^|lib/|' >> ${PLISTF}
-	@cd ${LODESTDIR}/${PREFIX}/lib && ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm lib/|' >> ${PLISTD}
+	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s lib \( -type f -o -type l \) -print >> ${PLISTF}
+	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -d lib/libreoffice -type d -exec ${ECHO_CMD} "@dirrm {}" \; >> ${PLISTD}
 
-.for subdir in share/application-registry share/applications share/icons share/mime share/mime-info share/mimelnk
-	@cd ${LODESTDIR}/${PREFIX}/${subdir} && ${FIND} -H -s * -type f -o -type l | \
-                ${SED} -e 's|^|${subdir}/|' >> ${PLISTF}
-	@cd ${LODESTDIR}/${PREFIX}/${subdir} && ${FIND} -d * -type d | \
-                ${SED} -e 's|^|@dirrm ${subdir}/|' >> ${PLISTD}
-	@${ECHO_CMD} "@unexec ${RMDIR} %D/${subdir} 2>/dev/null || ${TRUE}" >> ${PLISTD}
+.for subdir in application-registry applications icons mime mime-info mimelnk
+	@cd ${LODESTDIR}/${PREFIX} && ${FIND}  -H -s share/${subdir} \( -type f -o -type l \) -print >> ${PLISTF}
+	@cd ${LODESTDIR}/${PREFIX}/ && ${FIND} -d share/${subdir} -type d \
+		-exec ${ECHO_CMD} "@exec ${RMDIR} %D/{}  2>/dev/null || ${TRUE}" \; >> ${PLISTD}
 .endfor
 
-	@cd ${LODESTDIR}/${PREFIX}/bin && ${FIND} -H -s * -type f -o -type l | \
-		${SED} -e 's|^|bin/|' >> ${PLISTF}
+	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s bin \( -type f -o -type l \) -print >> ${PLISTF}
 
-.if defined(WITHOUT_GTK) && defined(WITHOUT_GNOME)
+#Fix .desktop files
+	@${FIND} ${LODESTDIR}/${PREFIX} -name *.desktop -type f -exec ${SED} -i"" -e 's|office34|office|g; s|office3.4|office|g' {} \;
+
+.if defined(WITH_GTK) || defined(WITH_GNOME)
 	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${TMPPLIST}
 	@${ECHO_CMD} "@unexec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${TMPPLIST}
 .endif
 
 .if defined(WITH_SDK)
 .for subdir in include share/idl share/libreoffice share/doc
-	@cd ${LODESTDIR}/${PREFIX}/${subdir} && ${FIND} -H -s * -type f -o -type l | \
-		${SED} -e 's|^|${subdir}/|' >> ${PLISTF}
-	@cd ${LODESTDIR}/${PREFIX}/${subdir} && ${FIND} -d * -type d | \
-		${SED} -e 's|^|@dirrm ${subdir}/|' >> ${PLISTD}
+	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s ${subdir} \( -type f -o -type l \) -print >> ${PLISTF}
+	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -d ${subdir} -type d -exec echo "@dirrm {}" \; >> ${PLISTD}
 .endfor
 .endif
 
@@ -454,7 +451,7 @@ post-install:
 .endif
 
 	@cd ${LODESTDIR}/${PREFIX} ; ${PAX} -rw . ${PREFIX}
-.if defined(WITHOUT_GTK) && defined(WITHOUT_GNOME)
+.if defined(WITH_GTK) || defined(WITH_GNOME)
 	@${LOCALBASE}/bin/update-desktop-database 2>/dev/null || ${TRUE}
 .endif
 
