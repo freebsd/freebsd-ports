@@ -3,3 +3,4 @@ processed, so they will be visible in top(1) or ps(1). Useful for
 debugging purposes.
 
 Author:	Stanislav Sedov <stas@FreeBSD.org>
+WWW:	https://github.com/stass/mod_proctitle
