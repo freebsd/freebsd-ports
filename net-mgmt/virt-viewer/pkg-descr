@@ -1,7 +1,7 @@
 Virt Viewer provides a graphical viewer for the guest OS
 display. At this time is supports guest OS using the VNC
 protocol. Further protocols may be supported in the future
-as user demand dicatates. The viewer can connect directly
+as user demand dictates. The viewer can connect directly
 to both local and remotely hosted guest OS, optionally 
 using SSL/TLS encryption.
 
