@@ -28,7 +28,6 @@ bin/XMLRPCsh.pl
 %%SITE_PERL%%/SOAP/Transport/MAILTO.pm
 %%SITE_PERL%%/SOAP/Transport/POP3.pm
 %%SITE_PERL%%/SOAP/Transport/IO.pm
-%%SITE_PERL%%/SOAP/Transport/TCP.pm
 %%SITE_PERL%%/SOAP/Transport/HTTP.pm
 %%SITE_PERL%%/SOAP/Transport/LOCAL.pm
 %%SITE_PERL%%/XML/Parser/Lite.pm
