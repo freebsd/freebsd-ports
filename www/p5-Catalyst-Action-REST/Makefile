@@ -6,16 +6,17 @@
 #
 
 PORTNAME=	Catalyst-Action-REST
-PORTVERSION=	0.90
+PORTVERSION=	0.91
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
+MASTER_SITE_SUBDIR=	CPAN:FLORA
 PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Automated REST Method Dispatching for Catalyst
 
-LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Params-Validate>=0.76:${PORTSDIR}/devel/p5-Params-Validate \
@@ -25,7 +26,7 @@ BUILD_DEPENDS=	p5-Catalyst-Runtime>=5.80:${PORTSDIR}/www/p5-Catalyst-Runtime \
 		p5-Class-Inspector>=1.13:${PORTSDIR}/devel/p5-Class-Inspector \
 		p5-MRO-Compat>=0.10:${PORTSDIR}/devel/p5-MRO-Compat \
 		p5-URI-Find>=0:${PORTSDIR}/textproc/p5-URI-Find
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	--default
