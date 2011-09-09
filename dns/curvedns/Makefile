@@ -32,10 +32,6 @@ SUB_FILES=		pkg-message
 
 .include <bsd.port.pre.mk>
 
-.if ${OSVERSION} >= 900000
-BROKEN=		does not configure on 9.X
-.endif
-
 .if ${ARCH} == "sparc64"
 BROKEN=		Does not compile on sparc64
 .endif
@@ -47,7 +43,11 @@ pre-configure:
 	@${ECHO_MSG} "===>   configuring may take a couple of minutes"
 
 post-configure:
+.if ${ARCH} == "amd64"
+	@cd ${WRKSRC} && ./configure.curvedns amd64
+.else
 	@cd ${WRKSRC} && ./configure.curvedns
+.endif
 
 post-install:
 	${CP} ${WRKSRC}/curvedns ${WRKSRC}/curvedns-keygen ${PREFIX}/bin/
