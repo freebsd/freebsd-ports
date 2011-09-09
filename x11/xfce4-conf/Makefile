@@ -70,10 +70,4 @@ post-patch:
 	@${REINPLACE_CMD} -e 's|--module-dir|--module=xfconf &|' \
 		${WRKSRC}/docs/reference/Makefile.in
 
-post-build:
-.if defined(WITH_PERL)
-	@${REINPLACE_CMD} -E -e 's! doc_(perl|site|\$$\(INSTALLDIRS\))_install$$!!' \
-		${WRKSRC}/xfconf-perl/Makefile.perl
-.endif
-
 .include <bsd.port.post.mk>
