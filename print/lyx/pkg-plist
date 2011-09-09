@@ -32,6 +32,7 @@ bin/tex2lyx
 %%NLS%%share/locale/uk/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/zh_CN/LC_MESSAGES/lyx.mo
 %%NLS%%share/locale/zh_TW/LC_MESSAGES/lyx.mo
+%%DATADIR%%/autocorrect
 %%DATADIR%%/CREDITS
 %%DATADIR%%/bind/aqua.bind
 %%DATADIR%%/bind/broadway.bind
@@ -287,7 +288,6 @@ bin/tex2lyx
 %%DATADIR%%/examples/de/tufte-handout.lyx
 %%DATADIR%%/examples/docbook_article.lyx
 %%DATADIR%%/examples/el/splash.lyx
-%%DATADIR%%/examples/enumitem.lyx
 %%DATADIR%%/examples/es/Braille.lyx
 %%DATADIR%%/examples/es/ItemizeBullets.lyx
 %%DATADIR%%/examples/es/ejemplo_con_lyx.lyx
@@ -1139,6 +1139,7 @@ bin/tex2lyx
 %%DATADIR%%/images/math/underrightarrow.png
 %%DATADIR%%/images/math/underscore.png
 %%DATADIR%%/images/math/underset.png
+%%DATADIR%%/images/math/undertilde.png
 %%DATADIR%%/images/math/uparrow.png
 %%DATADIR%%/images/math/uparrow2.png
 %%DATADIR%%/images/math/updownarrow.png
@@ -1150,6 +1151,7 @@ bin/tex2lyx
 %%DATADIR%%/images/math/upsilon2.png
 %%DATADIR%%/images/math/upuparrows.png
 %%DATADIR%%/images/math/urcorner.png
+%%DATADIR%%/images/math/utilde.png
 %%DATADIR%%/images/math/varepsilon.png
 %%DATADIR%%/images/math/varkappa.png
 %%DATADIR%%/images/math/varnothing.png
@@ -1734,10 +1736,8 @@ bin/tex2lyx
 %%DATADIR%%/templates/iop-article.lyx
 %%DATADIR%%/templates/kluwer.lyx
 %%DATADIR%%/templates/koma-letter2.lyx
-%%DATADIR%%/templates/latex8.lyx
 %%DATADIR%%/templates/letter.lyx
 %%DATADIR%%/templates/lettre.lyx
-%%DATADIR%%/templates/revtex.lyx
 %%DATADIR%%/templates/revtex4.lyx
 %%DATADIR%%/templates/slides.lyx
 %%DATADIR%%/templates/svjour3.lyx

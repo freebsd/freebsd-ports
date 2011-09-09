@@ -20,49 +20,53 @@ COMMENT=	Document processor interfaced with LaTeX (nearly WYSIWYG)
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs
+LIB_DEPENDS=	boost_regex.4:${PORTSDIR}/devel/boost-libs \
+		mythes-1.2.0:${PORTSDIR}/textproc/mythes
 
 CONFLICTS=	lyx-1.[0-9]*
 MAJOR_VERSION=	2.0
-MINOR_VERSION=	0
+MINOR_VERSION=	1
 
 USE_XZ=		yes
 USE_GMAKE=	yes
 USE_QT_VER=	4
-QT_COMPONENTS=	gui moc_build uic_build rcc_build
+QT_COMPONENTS=	corelib gui moc_build uic_build rcc_build
 USE_PYTHON=	yes
 USE_PERL=	yes
 GNU_CONFIGURE=	yes
 CPPFLAGS=	${PTHREAD_CFLAGS}
 CONFIGURE_ENV=	LDFLAGS="${PTHREAD_LIBS}"
-CONFIGURE_ARGS=	--with-frontend=qt4 \
-		--without-included-boost \
-		--without-included-gettext \
+CONFIGURE_ARGS=	--without-included-boost \
+		--without-included-mythes \
 		--with-libiconv-prefix=${LOCALBASE} \
 		--with-extra-prefix=${LOCALBASE}
 MAKE_JOBS_SAFE=	yes
 
 MAN1=		lyx.1 lyxclient.1 tex2lyx.1
 
-OPTIONS=	ASPELL	"Use Aspell library"	on \
-		AIKSAUR	"Build Aiksaurus support (English thesaurus)"	on \
-		NLS	"Native language support"	on
+OPTIONS=	ASPELL	 "Use Aspell for spell checking" off \
+		ENCHANT  "Use Enchant for spell checking" off \
+		HUNSPELL "Use Hunspell for spell checking" on \
+		NLS	 "Native language support"	on
 
 .include <bsd.port.options.mk>
 
-.if !defined(WITHOUT_AIKSAUR)
-LIB_DEPENDS+=	Aiksaurus:${PORTSDIR}/textproc/aiksaurus
+.if !defined(WITHOUT_ASPELL)
+LIB_DEPENDS+=	aspell.16:${PORTSDIR}/textproc/aspell
 .else
-CONFIGURE_ARGS+=	--without-aiksaurus
+CONFIGURE_ARGS+=	--without-aspell
 .endif
 
-.if !defined(WITHOUT_ASPELL)
-LIB_DEPENDS+=	aspell:${PORTSDIR}/textproc/aspell
-CONFIGURE_ARGS+=	--with-pspell \
-			--with-pspell-lib="${LOCALBASE}/lib" \
-			--with-pspell-include="${LOCALBASE}/include"
+.if !defined(WITHOUT_ENCHANT)
+LIB_DEPENDS+=	enchant.1:${PORTSDIR}/textproc/enchant
 .else
-CONFIGURE_ARGS+=	--without-aspell --without-pspell
+CONFIGURE_ARGS+=	--without-enchant
+.endif
+
+.if !defined(WITHOUT_HUNSPELL)
+LIB_DEPENDS+=	hunspell-1.3.0:${PORTSDIR}/textproc/hunspell
+.else
+CONFIGURE_ARGS+=	--without-hunspell
 .endif
 
 .if defined(WITHOUT_NLS)
