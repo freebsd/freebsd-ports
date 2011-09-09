@@ -4,7 +4,7 @@
 # $FreeBSD$
 
 PORTNAME=	HTML-FormHandler
-PORTVERSION=	0.35002
+PORTVERSION=	0.35003
 PORTEPOCH=	1
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
@@ -13,6 +13,9 @@ PKGNAMEPREFIX=	p5-
 
 MAINTAINER=	az@FreeBSD.org
 COMMENT=	Form handler written in Moose
+
+LICENSE=	ART10 GPLv1
+LICENSE_COMB=	dual
 
 BUILD_DEPENDS=	p5-Class-Load>=0.06:${PORTSDIR}/devel/p5-Class-Load \
 		p5-DateTime>=0:${PORTSDIR}/devel/p5-DateTime \
@@ -35,7 +38,8 @@ RUN_DEPENDS:=	${BUILD_DEPENDS}
 TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception \
 		p5-Test-Differences>=0:${PORTSDIR}/devel/p5-Test-Differences
 
-PERL_CONFIGURE=	5.8.9+
+PERL_CONFIGURE=	yes
+
 MAN3=	HTML::FormHandler.3 \
 	HTML::FormHandler::Field.3 HTML::FormHandler::TraitFor::I18N.3 \
 	HTML::FormHandler::Render::WithTT.3 HTML::FormHandler::Field::NoValue.3 \
