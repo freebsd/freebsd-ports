@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	DateTime-Format-Pg
-PORTVERSION=	0.16.005
+PORTVERSION=	0.16.006
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,10 +15,11 @@ DISTNAME=	${PORTNAME}-${PORTVERSION:C/.(...)$/\1/}
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Parse and format PostgreSQL dates and times
 
-RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DateTime.pm:${PORTSDIR}/devel/p5-DateTime \
-		${SITE_PERL}/DateTime/TimeZone.pm:${PORTSDIR}/devel/p5-DateTime-TimeZone \
-		${SITE_PERL}/DateTime/Format/Builder.pm:${PORTSDIR}/devel/p5-DateTime-Format-Builder
-BUILD_DEPENDS=	${RUN_DEPENDS}
+COMMON_DEPENDS=	p5-DateTime>=0.10:${PORTSDIR}/devel/p5-DateTime \
+		p5-DateTime-TimeZone>=0.05:${PORTSDIR}/devel/p5-DateTime-TimeZone \
+		p5-DateTime-Format-Builder>=0.72:${PORTSDIR}/devel/p5-DateTime-Format-Builder
+BUILD_DEPENDS=	${COMMON_DEPENDS}
+RUN_DEPENDS=	${COMMON_DEPENDS}
 
 PERL_CONFIGURE=	yes
 
