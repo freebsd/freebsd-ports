@@ -727,6 +727,7 @@
     SUBDIR += p5-Test-URI
     SUBDIR += p5-URI
     SUBDIR += p5-URI-FromHash
+    SUBDIR += p5-URI-Match
     SUBDIR += p5-URI-OpenURL
     SUBDIR += p5-URI-SmartURI
     SUBDIR += p5-URI-Template
