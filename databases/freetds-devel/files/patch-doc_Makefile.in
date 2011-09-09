@@ -1,113 +1,47 @@
---- doc/Makefile.in.orig	2011-04-09 08:17:20.000000000 +0000
-+++ doc/Makefile.in	2011-08-22 17:21:49.000000000 +0000
-@@ -400,29 +400,29 @@
- 	test -z "$$files" || { \
- 	  echo " ( cd '$(DESTDIR)$(man5dir)' && rm -f" $$files ")"; \
- 	  cd "$(DESTDIR)$(man5dir)" && rm -f $$files; }
--install-nobase_dataDATA: $(nobase_data_DATA)
--	@$(NORMAL_INSTALL)
--	test -z "$(datadir)" || $(MKDIR_P) "$(DESTDIR)$(datadir)"
--	@list='$(nobase_data_DATA)'; test -n "$(datadir)" || list=; \
--	$(am__nobase_list) | while read dir files; do \
--	  xfiles=; for file in $$files; do \
--	    if test -f "$$file"; then xfiles="$$xfiles $$file"; \
--	    else xfiles="$$xfiles $(srcdir)/$$file"; fi; done; \
--	  test -z "$$xfiles" || { \
--	    test "x$$dir" = x. || { \
--	      echo "$(MKDIR_P) '$(DESTDIR)$(datadir)/$$dir'"; \
--	      $(MKDIR_P) "$(DESTDIR)$(datadir)/$$dir"; }; \
--	    echo " $(INSTALL_DATA) $$xfiles '$(DESTDIR)$(datadir)/$$dir'"; \
--	    $(INSTALL_DATA) $$xfiles "$(DESTDIR)$(datadir)/$$dir" || exit $$?; }; \
--	done
--
--uninstall-nobase_dataDATA:
--	@$(NORMAL_UNINSTALL)
--	@list='$(nobase_data_DATA)'; test -n "$(datadir)" || list=; \
--	$(am__nobase_strip_setup); files=`$(am__nobase_strip)`; \
--	test -n "$$files" || exit 0; \
--	echo " ( cd '$(DESTDIR)$(datadir)' && rm -f" $$files ")"; \
--	cd "$(DESTDIR)$(datadir)" && rm -f $$files
-+#install-nobase_dataDATA: $(nobase_data_DATA)
-+#	@$(NORMAL_INSTALL)
-+#	test -z "$(datadir)" || $(MKDIR_P) "$(DESTDIR)$(datadir)"
-+#	@list='$(nobase_data_DATA)'; test -n "$(datadir)" || list=; \
-+#	$(am__nobase_list) | while read dir files; do \
-+#	  xfiles=; for file in $$files; do \
-+#	    if test -f "$$file"; then xfiles="$$xfiles $$file"; \
-+#	    else xfiles="$$xfiles $(srcdir)/$$file"; fi; done; \
-+#	  test -z "$$xfiles" || { \
-+#	    test "x$$dir" = x. || { \
-+#	      echo "$(MKDIR_P) '$(DESTDIR)$(datadir)/$$dir'"; \
-+#	      $(MKDIR_P) "$(DESTDIR)$(datadir)/$$dir"; }; \
-+#	    echo " $(INSTALL_DATA) $$xfiles '$(DESTDIR)$(datadir)/$$dir'"; \
-+#	    $(INSTALL_DATA) $$xfiles "$(DESTDIR)$(datadir)/$$dir" || exit $$?; }; \
-+#	done
-+
-+#uninstall-nobase_dataDATA:
-+#	@$(NORMAL_UNINSTALL)
-+#	@list='$(nobase_data_DATA)'; test -n "$(datadir)" || list=; \
-+#	$(am__nobase_strip_setup); files=`$(am__nobase_strip)`; \
-+#	test -n "$$files" || exit 0; \
-+#	echo " ( cd '$(DESTDIR)$(datadir)' && rm -f" $$files ")"; \
-+#	cd "$(DESTDIR)$(datadir)" && rm -f $$files
- tags: TAGS
- TAGS:
- 
-@@ -522,8 +522,7 @@
+--- doc/Makefile.in.orig	2011-09-06 20:44:07.000000000 +0200
++++ doc/Makefile.in	2011-09-06 20:54:10.000000000 +0200
+@@ -507,7 +507,7 @@
  
  info-am:
  
--install-data-am: install-data-local install-man \
--	install-nobase_dataDATA
+-install-data-am: install-data-local install-man
 +install-data-am: install-man
  
  install-dvi: install-dvi-am
  
-@@ -535,7 +534,7 @@
+@@ -561,7 +561,7 @@
+ 	clean-local dist-hook distclean distclean-generic \
+ 	distclean-libtool distdir dvi dvi-am html html-am info info-am \
+ 	install install-am install-data install-data-am \
+-	install-data-local install-dvi install-dvi-am install-exec \
++	install-dvi install-dvi-am install-exec \
+ 	install-exec-am install-html install-html-am install-info \
+ 	install-info-am install-man install-man1 install-man5 \
+ 	install-pdf install-pdf-am install-ps install-ps-am \
+@@ -641,16 +641,16 @@
  
- install-html-am:
+ # If we built the documentation ourselves, install that, 
+ # else if we have access to distributed documentation, install that.  
+-install-data-local: installdirs $(noinst_DATA)
+-	$(mkinstalldirs) $(DOCDIR) 2>&1
+-	if test -r $(DOCDIR)/userguide ; then d=.; else d="$(srcdir)"; fi; \
+-	find $$d/$(DOCDIR)/userguide \( -type f -o -type l \) -exec \
+-		$(INSTALL_DATA) {} $(TARGET_DOCDIR)/userguide ';'
+-	if test -r $(DOCDIR)/reference ; then d=.; else d="$(srcdir)"; fi; \
+-	find $$d/$(DOCDIR)/reference \( -type f -o -type l \) -exec \
+-		$(INSTALL_DATA) {} $(TARGET_DOCDIR)/reference ';'
+-	cd $(srcdir) && find images -name \*.gif -exec \
+-		$(INSTALL_DATA) {} $(TARGET_DOCDIR)/{} ';'
++#install-data-local: installdirs $(noinst_DATA)
++#	$(mkinstalldirs) $(DOCDIR) 2>&1
++#	if test -r $(DOCDIR)/userguide ; then d=.; else d="$(srcdir)"; fi; \
++#	find $$d/$(DOCDIR)/userguide \( -type f -o -type l \) -exec \
++#		$(INSTALL_DATA) {} $(TARGET_DOCDIR)/userguide ';'
++#	if test -r $(DOCDIR)/reference ; then d=.; else d="$(srcdir)"; fi; \
++#	find $$d/$(DOCDIR)/reference \( -type f -o -type l \) -exec \
++#		$(INSTALL_DATA) {} $(TARGET_DOCDIR)/reference ';'
++#	cd $(srcdir) && find images -name \*.gif -exec \
++#		$(INSTALL_DATA) {} $(TARGET_DOCDIR)/{} ';'
  
--install-info: install-info-am
-+#install-info: install-info-am
- 
- install-info-am:
- 
-@@ -567,7 +566,7 @@
- 
- ps-am:
- 
--uninstall-am: uninstall-local uninstall-man uninstall-nobase_dataDATA
-+#uninstall-am: uninstall-local uninstall-man uninstall-nobase_dataDATA
- 
- uninstall-man: uninstall-man1 uninstall-man5
- 
-@@ -588,21 +587,21 @@
- 	uninstall-man1 uninstall-man5 uninstall-nobase_dataDATA
- 
- 
--$(DOCDIR)/userguide: $(DOCDIR)/userguide/index.htm
-+#$(DOCDIR)/userguide: $(DOCDIR)/userguide/index.htm
- 
--$(DOCDIR)/reference: $(DOCDIR)/reference/index.html
-+#$(DOCDIR)/reference: $(DOCDIR)/reference/index.html
- 
--doc:  $(DOCDIR)/userguide $(DOCDIR)/reference
-+#doc:  $(DOCDIR)/userguide $(DOCDIR)/reference
- 
- dist:	man
- 
- man:	$(man_MANS)
- 
--installdirs: 
--	$(mkinstalldirs)	$(TARGET_DOCDIR)/userguide    \
--				$(TARGET_DOCDIR)/reference    \
--				$(TARGET_DOCDIR)/images       \
--				$(TARGET_DOCDIR)/images/callouts 2>&1
-+#installdirs: 
-+#	$(mkinstalldirs)	$(TARGET_DOCDIR)/userguide    \
-+#				$(TARGET_DOCDIR)/reference    \
-+#				$(TARGET_DOCDIR)/images       \
-+#				$(TARGET_DOCDIR)/images/callouts 2>&1
- 
- freebcp.1: freebcp.txt
- 	$(TXT2MAN) $(MANOPTS) $(srcdir)/freebcp.txt >.$@
+ uninstall-local:
+ 	rm -rf $(TARGET_DOCDIR)

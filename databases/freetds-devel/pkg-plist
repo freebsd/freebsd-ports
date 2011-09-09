@@ -20,6 +20,7 @@ include/sybdb.h
 include/syberror.h
 include/sybfront.h
 include/tds_sysdep_public.h
+include/odbcss.h
 lib/libct.a
 lib/libct.la
 lib/libct.so
@@ -32,4 +33,5 @@ lib/libsybdb.so.5
 %%ODBC%%lib/libtdsodbc.so
 %%ODBC%%lib/libtdsodbc.la
 %%ODBC%%lib/libtdsodbc.a
+%%ODBC%%bin/bsqlodbc
 @dirrm etc/freetds

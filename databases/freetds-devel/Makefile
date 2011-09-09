@@ -5,20 +5,17 @@
 # $FreeBSD$
 
 PORTNAME=	freetds
-PORTVERSION=	0.82.1
-PORTREVISION=	6
+PORTVERSION=	0.91
 PORTEPOCH=	1
 CATEGORIES=	databases
 MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	ALPHA/${PORTNAME}/stable
 PKGNAMESUFFIX=	-devel
-DISTNAME=	freetds-patched
-EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	fbsd-ports@opsec.eu
 COMMENT=	Sybase/Microsoft TDS protocol library
 
-WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}.dev.20110409
+WRKSRC=		${WRKDIR}/${PORTNAME}-${PORTVERSION}
 TDS_VER?=	5.0
 USE_ICONV=	yes
 USE_GMAKE=	yes
@@ -79,7 +76,7 @@ PLIST_SUB+=	ODBC="@comment "
 # relies on sybase-style dblib
 .if defined(WITH_MSDBLIB)
 CONFIGURE_ARGS+=	--enable-msdblib
-TDS_VER=	7.0
+TDS_VER=	7.2
 .endif
 
 post-extract:
@@ -100,7 +97,8 @@ post-patch:
 post-install:
 .if !defined(NOPORTDOCS)
 	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} images ${DOCSDIR}
-	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} doc ${DOCSDIR}
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} doc/${PORTNAME}-${PORTVERSION}/reference ${DOCSDIR}
+	@cd ${WRKSRC}/doc && ${COPYTREE_SHARE} doc/${PORTNAME}-${PORTVERSION}/userguide ${DOCSDIR}
 .endif
 	@${MKDIR} ${PREFIX}/etc/freetds
 	@${INSTALL_DATA} ${WRKSRC}/interfaces ${PREFIX}/etc/freetds/interfaces.dist
