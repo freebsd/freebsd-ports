@@ -26,7 +26,6 @@ LIB_DEPENDS=	gtkmm-2.4.1:${PORTSDIR}/x11-toolkits/gtkmm24 \
 
 USE_CMAKE=	yes
 USE_BZIP2=	yes
-USE_GCC=	4.4+
 USE_GNOME=	gtk20 glib20 pkgconfig
 USE_LDCONFIG=	yes
 CFLAGS+=	-I${LOCALBASE}/include -fPIC ${PTHREAD_CFLAGS}
