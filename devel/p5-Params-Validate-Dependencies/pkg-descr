@@ -1,0 +1,7 @@
+Params::Validate::Dependencies extends Params::Validate's validate() function to
+support an arbitrary number of callbacks which are not associated with any one
+parameter. All of those callbacks are run after Params::Validate's normal
+validate() function. If any of them return false, then validate() will die as
+normal.
+
+WWW: http://search.cpan.org/dist/Params-Validate-Dependencies/
