@@ -54,6 +54,7 @@
 %%WWWDIR%%/designs/brade/adminer.css
 %%WWWDIR%%/designs/bueltge/adminer.css
 %%WWWDIR%%/designs/cvicebni-ubor/adminer.css
+%%WWWDIR%%/designs/haeckel/adminer.css
 %%WWWDIR%%/designs/hever/adminer.css
 %%WWWDIR%%/designs/jukin/adminer.css
 %%WWWDIR%%/designs/kahi/adminer.css
@@ -129,10 +130,12 @@
 %%WWWDIR%%/plugins/frames.php
 %%WWWDIR%%/plugins/login-servers.php
 %%WWWDIR%%/plugins/login-table.php
+%%WWWDIR%%/plugins/password-sha1.php
 %%WWWDIR%%/plugins/plugin.php
 %%WWWDIR%%/plugins/readme.txt
 %%WWWDIR%%/plugins/tables-filter.php
 %%WWWDIR%%/plugins/slugify.php
+%%WWWDIR%%/plugins/sql-log.php
 %%WWWDIR%%/plugins/tinymce.php
 %%WWWDIR%%/plugins/translation.php
 %%WWWDIR%%/plugins/version-noverify.php
@@ -174,6 +177,7 @@
 @dirrm %%WWWDIR%%/designs/brade
 @dirrm %%WWWDIR%%/designs/bueltge
 @dirrm %%WWWDIR%%/designs/cvicebni-ubor
+@dirrm %%WWWDIR%%/designs/haeckel
 @dirrm %%WWWDIR%%/designs/hever
 @dirrm %%WWWDIR%%/designs/jukin
 @dirrm %%WWWDIR%%/designs/kahi
