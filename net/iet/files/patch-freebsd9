@@ -43,3 +43,28 @@ index 611f839..1c3c391 100644
  int iet_ioctl(struct cdev *dev, unsigned long cmd, caddr_t arg, int fflag, struct thread *td);
  #endif
  
+--- ./kernel/conn.c.orig	2010-04-11 08:13:42.000000000 -0700
++++ ./kernel/conn.c	2011-09-09 13:16:38.386740084 -0700
+@@ -250,14 +250,22 @@ static int iet_conn_alloc(struct iscsi_s
+ #ifdef LINUX
+ 	conn->file = fget(info->fd);
+ #else
++#if __FreeBSD_version < 900041
+ 	error = fget(curthread, info->fd, &conn->file);
++#else
++	error = fget(curthread, info->fd, 0, &conn->file);
++#endif
+ 	if (error != 0) {
+ 		eprintk("failed to get fd %d\n", error);
+ 		kfree(conn);
+ 		return error;
+ 	}
+ 
++#if __FreeBSD_version < 900041
+ 	error = fgetsock(curthread, info->fd, &conn->sock, 0);
++#else
++	error = fgetsock(curthread, info->fd, 0, &conn->sock, 0);
++#endif
+ 	if (error != 0) {
+ 		eprintk("failed to get sock %d\n", error);
+ 		fdrop(conn->file, curthread);
