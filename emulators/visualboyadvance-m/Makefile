@@ -7,16 +7,16 @@
 
 PORTNAME=	visualboyadvance-m
 PORTVERSION=	1.8.0r${SVN_REV}
-PORTREVISION=	0
+PORTREVISION=	1
 CATEGORIES=	emulators
 MASTER_SITES=	http://update.cooltrainer.org/emulators/visualboyadvance-m/
 
 MAINTAINER=	root@cooltrainer.org
 COMMENT=	Game Boy Advance emulator with GTK frontend
 
-BUILD_DEPENDS=	${LOCALBASE}/lib/libsfml-system.so:${PORTSDIR}/devel/sfml
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \
-		cairomm-1.0.1:${PORTSDIR}/graphics/cairomm
+		cairomm-1.0.1:${PORTSDIR}/graphics/cairomm \
+		sfml-system.1:${PORTSDIR}/devel/sfml
 
 OPTIONS=	GVBAM "Build gvbam (GTK2 frontend)" on \
 		ASM "Enable ASM core and filters (i386 only)" off
