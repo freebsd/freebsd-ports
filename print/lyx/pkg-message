@@ -1,4 +1,13 @@
-For lyx to work you need to install some kind of TeX software.
-The easiest way is probably to install print/teTeX port which is quite old.
-A newer alternative could be TeXLive:
-	http://code.google.com/p/freebsd-texlive/
+For LyX to work you need to install some kind of TeX distribution.
+
+  - The print/teTeX port in the ports tree.
+  - The TexLive ports in https://code.google.com/p/freebsd-texlive.
+
+Either one should work fine.
+
+***
+
+As of version 2.0.0, LyX depends on the textproc/mythes ports for
+thesaurus support. Even though the LyX port depends on textproc/mythes,
+it is up to the user to install the thesaurus ports for her languages
+of preference.
