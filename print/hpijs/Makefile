@@ -31,6 +31,10 @@ OPTIONS=	CUPS		"install support for cups" on \
 
 .include <bsd.port.pre.mk>
 
+.if defined(WITH_CUPS) || defined(WITH_FOOMATIC)
+CONFLICTS+=	foomatic-filters-*
+.endif
+
 .if !defined(WITHOUT_CUPS)
 LIB_DEPENDS+=		cups.2:${PORTSDIR}/print/cups-base
 CONFIGURE_ARGS+=	--enable-cups-install
