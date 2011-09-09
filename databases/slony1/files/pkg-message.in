@@ -1,7 +1,7 @@
 **********************************************************************
 
 
-Please read the docs on configuring and runing slony-1.  Unless you specified
+Please read the docs on configuring and running slony-1.  Unless you specified
 NOPORTDOCS, they are in the %%LOCALBASE%%/share/doc/slony1 directory.
 
 If you are upgrading from a prior version of slony, please read the UPGRADING
