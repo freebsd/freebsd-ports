@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	tor
-DISTVERSION=	0.2.3.2-alpha
-PORTREVISION=	1
+DISTVERSION=	0.2.3.3-alpha
 CATEGORIES=	security net ipv6
 MASTER_SITES=	https://www.torproject.org/dist/ \
 		ftp://ftp.bit.nl/mirror/tor/ \
@@ -72,6 +71,12 @@ MAN1=		tor.1 tor-resolve.1 torify.1 tor-gencert.1
 
 .include <bsd.port.pre.mk>
 
+.if ( (${OSVERSION} >= 703100 && ${OSVERSION} < 800000) || \
+(${OSVERSION} >= 800500 && ${OSVERSION} < 900000) || \
+(${OSVERSION} >= 900003) ) && !defined(USE_GCC)
+CONFIGURE_ARGS+=	--enable-gcc-hardening
+.endif
+
 .if  ( ${OSVERSION} < 704000 || \
 (${OSVERSION} >= 800000 && ${OSVERSION} < 802000) || \
 (${OSVERSION} >= 900000 && ${OSVERSION} < 900027) )
@@ -80,7 +85,6 @@ WITH_OPENSSL_PORT=	yes
 .include "${PORTSDIR}/Mk/bsd.openssl.mk"
 
 .if defined(WITH_BUFFEREVENTS)
-BROKEN =	there are unresolved problems with BUFFEREVENTS; please disable this option
 CONFIGURE_ARGS+=	--enable-bufferevents
 .else
 CONFIGURE_ARGS+=	--disable-bufferevents
@@ -117,7 +121,6 @@ TOR_LIBEVENT_LIBS:=	-levent_openssl-2.0 ${TOR_LIBEVENT_LIBS}
 
 .if defined(WITH_TCMALLOC)
 CONFIGURE_ARGS+=	--with-tcmalloc
-LDFLAGS+=		-L${LOCALBASE}/lib
 .if defined(WITH_STATIC_TOR)
 BUILD_DEPENDS +=	${LOCALBASE}/lib/libtcmalloc.so:${PORTSDIR}/devel/google-perftools
 .else
@@ -145,6 +148,8 @@ post-patch:
 		${WRKSRC}/contrib/Makefile.in
 	@${REINPLACE_CMD} -e '\|^install-data-am:|s|install-docDATA||' \
 		${WRKSRC}/doc/Makefile.in
+	@${REINPLACE_CMD} -e "s|-ltcmalloc|${LOCALBASE}/lib/libtcmalloc.so|" \
+		${WRKSRC}/configure
 
 post-configure:
 	@${FIND} -X ${WRKSRC} -type f -name Makefile | ${XARGS} ${REINPLACE_CMD} -e \
