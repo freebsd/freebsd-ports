@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	OpenLP
-PORTVERSION=	1.9.5
-PORTREVISION=	2
+PORTVERSION=	1.9.6
 CATEGORIES=	multimedia python
 MASTER_SITES=	SF/openlp/openlp/${PORTVERSION}
 DISTNAME=	${PORTNAME}-${PORTVERSION}-src
@@ -21,15 +20,18 @@ LICENSE=	GPLv2
 BUILD_DEPENDS=	py*-sip>=0:${PORTSDIR}/devel/py-sip \
 		py*-qt4-core>=0:${PORTSDIR}/devel/py-qt4-core \
 		py*-qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
+		py*-mako>0:${PORTSDIR}/textproc/py-mako \
 		py*-sqlalchemy06>=0.5:${PORTSDIR}/databases/py-sqlalchemy06
 RUN_DEPENDS=	py*-beautifulsoup<3.1:${PORTSDIR}/www/py-beautifulsoup30 \
 		py*-lxml>=0:${PORTSDIR}/devel/py-lxml \
 		py*-phonon>=${PYQT4_VERSION}:${PORTSDIR}/multimedia/py-qt4-phonon \
 		py*-sqlalchemy>=0.5:${PORTSDIR}/databases/py-sqlalchemy \
+		py*-migrate>=0:${PORTSDIR}/databases/py-migrate \
 		py*-qt4-gui>=0:${PORTSDIR}/x11-toolkits/py-qt4-gui \
 		py*-qt4-webkit>=0:${PORTSDIR}/www/py-qt4-webkit \
 		py*-qt4-network>=0:${PORTSDIR}/net/py-qt4-network \
 		py*-chardet>=0:${PORTSDIR}/textproc/py-chardet \
+		py*-mako>0:${PORTSDIR}/textproc/py-mako \
 		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite21
 
 PLIST_SUB+=	VERSION="${PORTVERSION}" PYTHON_VER="${PYTHON_VER}"
@@ -40,7 +42,7 @@ USE_GSTREAMER=		good
 NO_BUILD=		yes
 
 do-install:
-	cd ${BUILD_WRKSRC}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py install
+	cd ${WRKDIR}/${PORTNAME}-${PORTVERSION}; ${SETENV} ${MAKE_ENV} ${PYTHON_CMD} setup.py install
 
 post-install:
 	@${MV} ${PREFIX}/bin/openlp.pyw ${PREFIX}/bin/openlp
