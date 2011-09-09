@@ -8,7 +8,7 @@
 PORTNAME=	vitunes
 PORTVERSION=	2.2
 CATEGORIES=	audio
-MASTER_SITES=	http://www.vitunes.org/files/ \
+MASTER_SITES=	http://vitunes.org/files/ \
 		http://mirror.4bit.ws/ \
 		${MASTER_SITE_LOCAL}
 MASTER_SITE_SUBDIR=	dhn
