@@ -7,6 +7,7 @@
 
 PORTNAME=	sqlobject
 PORTVERSION=	1.1.3
+PORTREVISION=	1
 CATEGORIES=	databases python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -18,7 +19,7 @@ COMMENT=	A python object for manipulation with SQL table row
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}formencode>=1.2.2:${PORTSDIR}/www/py-formencode
 RUN_DEPENDS=	${BUILD_DEPENDS}
 
-USE_PYTHON=		yes
+USE_PYTHON=		2.5+
 USE_PYDISTUTILS=	easy_install
 PYDISTUTILS_PKGNAME=	SQLObject
 PYDISTUTILS_NOEGGINFO=	yes
@@ -45,7 +46,7 @@ RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/psycopg2/__init__.py:${PORTSDIR}/databases/py
 .endif
 
 .if defined(WITH_SQLITE)
-RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20
+RUN_DEPENDS+=	${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 .endif
 
 .if defined(WITH_MSSQL)
