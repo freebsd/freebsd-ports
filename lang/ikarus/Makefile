@@ -9,7 +9,9 @@ PORTNAME=	ikarus
 PORTVERSION=	0.0.3
 PORTREVISION=	3
 CATEGORIES=	lang scheme
-MASTER_SITES=	http://www.ikarus-scheme.org/ \
+MASTER_SITES=	http://launchpad.net/ikarus/0.0/${PORTVERSION}/+download/ \
+		http://www.ikarus-scheme.org/ \
+		http://tx97.net/pub/distfiles/ \
 		LOCAL/glarkin
 
 MAINTAINER=	vmagerya@gmail.com
@@ -17,6 +19,7 @@ COMMENT=	Optimizing incremental native-code compiler for R6RS Scheme
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
+FETCH_ARGS=	-Fpr
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 CONFIGURE_ARGS+=\
