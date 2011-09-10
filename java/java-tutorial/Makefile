@@ -13,10 +13,12 @@ PKGNAMEPREFIX=	jdk-
 DISTNAME=	tutorial.zip tut-examples.zip tut-swing.zip tut-bookstore-21.zip \
 		tut-bookstore-tomcat.zip tut-bingo
 
-MAINTAINER=	itetcu@FreeBSD.org
+MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Official Java 2 SDK tutorial
 
 BROKEN=		unfetchable
+DEPRECATED=	disappeared from vendor a long time ago
+EXPIRATION_DATE=	2001-10-11
 
 NO_WRKSUBDIR=	yes
 RESTRICTED=	This software is under license and export control.
