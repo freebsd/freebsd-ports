@@ -1298,6 +1298,7 @@
     SUBDIR += p5-WWW-Shorten
     SUBDIR += p5-WWW-Shorten-0rz
     SUBDIR += p5-WWW-Shorten-Bitly
+    SUBDIR += p5-WWW-Shorten-Googl
     SUBDIR += p5-WWW-Shorten-KUSO
     SUBDIR += p5-WWW-Shorten-NotLong
     SUBDIR += p5-WWW-Shorten-isgd
