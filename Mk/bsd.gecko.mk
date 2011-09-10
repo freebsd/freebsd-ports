@@ -237,9 +237,9 @@ USE_FIREFOX=	${_FIREFOX_DEFAULT_VERSION}
 
 # Setting/finding Firefox version we want.
 .if exists(${LOCALBASE}/bin/firefox)
-_FIREFOX_VER!=	${LOCALBASE}/bin/firefox --version | ${SED} -e 's/Mozilla Firefox \([0-9]\)\.\([0-9]*\).*/\1\2/'
+_FIREFOX_VER!=	${LOCALBASE}/bin/firefox --version 2>/dev/null | ${HEAD} -1 | ${SED} -e 's/Mozilla Firefox \([0-9]\)\.\([0-9]*\).*/\1\2/'
 .elif exists(${LOCALBASE}/bin/firefox3)
-_FIREFOX_VER!=	${LOCALBASE}/bin/firefox3 --version | ${SED} -e 's/Mozilla Firefox \([0-9]\)\.\([0-9]*\).*/\1\2/'
+_FIREFOX_VER!=	${LOCALBASE}/bin/firefox3 --version 2>/dev/null | ${HEAD} -1 | ${SED} -e 's/Mozilla Firefox \([0-9]\)\.\([0-9]*\).*/\1\2/'
 .endif
 
 # Check if installed Firefox version matches the wanted one
@@ -310,9 +310,9 @@ USE_SEAMONKEY=	${_SEAMONKEY_DEFAULT_VERSION}
 
 # Setting/finding SeaMonkey version we want.
 .if exists(${LOCALBASE}/bin/seamonkey)
-_SEAMONKEY_VER!=	${LOCALBASE}/bin/seamonkey --version | ${SED} -e 's/Mozilla SeaMonkey \([0-9]\)\.\([0-9]*\).*/\1\2/'
+_SEAMONKEY_VER!=	${LOCALBASE}/bin/seamonkey --version 2>/dev/null | ${HEAD} -1 | ${SED} -e 's/Mozilla SeaMonkey \([0-9]\)\.\([0-9]*\).*/\1\2/'
 .elif exists(${LOCALBASE}/bin/seamonkey2)
-_SEAMONKEY_VER!=	${LOCALBASE}/bin/seamonkey2 --version | ${SED} -e 's/Mozilla SeaMonkey \([0-9]\)\.\([0-9]*\).*/\1\2/'
+_SEAMONKEY_VER!=	${LOCALBASE}/bin/seamonkey2 --version 2>/dev/null | ${HEAD} -1 | ${SED} -e 's/Mozilla SeaMonkey \([0-9]\)\.\([0-9]*\).*/\1\2/'
 .endif
 
 # Check if installed SeaMonkey version matches the wanted one
@@ -383,9 +383,9 @@ USE_THUNDERBIRD=	${_THUNDERBIRD_DEFAULT_VERSION}
 
 # Setting/finding Thunderbird version we want.
 .if exists(${LOCALBASE}/bin/thunderbird)
-_THUNDERBIRD_VER!=	${LOCALBASE}/bin/thunderbird --version | ${SED} -e 's/ Thunderbird \([0-9]\)\.\([0-9]*\).*/\1\2/'
+_THUNDERBIRD_VER!=	${LOCALBASE}/bin/thunderbird --version 2>/dev/null | ${HEAD} -1 | ${SED} -e 's/ Thunderbird \([0-9]\)\.\([0-9]*\).*/\1\2/'
 .elif exists(${LOCALBASE}/bin/thunderbird3)
-_THUNDERBIRD_VER!=	${LOCALBASE}/bin/thunderbird3 --version | ${SED} -e 's/ Thunderbird \([0-9]\)\.\([0-9]*\).*/\1\2/'
+_THUNDERBIRD_VER!=	${LOCALBASE}/bin/thunderbird3 --version 2>/dev/null | ${HEAD} -1 | ${SED} -e 's/ Thunderbird \([0-9]\)\.\([0-9]*\).*/\1\2/'
 .endif
 
 # Check if installed Thunderbird version matches the wanted one
