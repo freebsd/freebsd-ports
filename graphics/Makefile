@@ -17,6 +17,7 @@
     SUBDIR += O2-tools
     SUBDIR += OpenEXR
     SUBDIR += R-cran-RColorBrewer
+    SUBDIR += R-cran-colorspace
     SUBDIR += R-cran-diagram
     SUBDIR += R-cran-shape
     SUBDIR += SciPlot
