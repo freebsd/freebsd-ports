@@ -47,4 +47,6 @@ share/gcc-%%GCC_VER%%/python/libstdcxx/v6/printers.py
 %%JAVA%%share/java/ecj.jar
 %%JAVA%%share/java/libgcj-%%GCC_VER%%.jar
 %%JAVA%%share/java/libgcj-tools-%%GCC_VER%%.jar
+@exec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi
+@unexec if type ccache-update-links >/dev/null 2>&1; then ccache-update-links -v; fi
 @comment Insert PLIST.lib here
