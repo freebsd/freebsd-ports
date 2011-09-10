@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Method-Signatures-Simple
-PORTVERSION=	0.06
+PORTVERSION=	1.02
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:RHESA
@@ -15,16 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Basic method declarations with signatures, without source filters
 
-PLIST_FILES=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Method/Signatures/Simple/.packlist \
-		%%SITE_PERL%%/Method/Signatures/Simple.pm
-PLIST_DIRS=	%%SITE_PERL%%/%%PERL_ARCH%%/auto/Method/Signatures/Simple \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Method/Signatures \
-		%%SITE_PERL%%/%%PERL_ARCH%%/auto/Method \
-		%%SITE_PERL%%/Method/Signatures \
-		%%SITE_PERL%%/Method
+PERL_CONFIGURE=	yes
 
-PERL_CONFIGURE=	YES
-
-MAN3=	Method::Signatures::Simple.3
+MAN3=		Method::Signatures::Simple.3
 
 .include <bsd.port.mk>
