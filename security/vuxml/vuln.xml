@@ -19036,7 +19036,7 @@ Note:  Please add new entries to the beginning of this file.
     <affects>
       <package>
 	<name>emacs</name>
-	<range><gt>21.*</gt><le>22.2_1</le></range>
+	<range><ge>22</ge><le>22.2_1</le></range>
       </package>
     </affects>
     <description>
