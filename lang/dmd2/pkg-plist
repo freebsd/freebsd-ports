@@ -8,11 +8,11 @@ lib/libphobos2.a
 %%EXAMPLESDIR%%/samples/d/chello.d
 %%EXAMPLESDIR%%/samples/d/clean.bat
 %%EXAMPLESDIR%%/samples/d/d2html.d
-%%EXAMPLESDIR%%/samples/d/d2html.d.htm
 %%EXAMPLESDIR%%/samples/d/d2html.kwd
 %%EXAMPLESDIR%%/samples/d/dclient.d
 %%EXAMPLESDIR%%/samples/d/dhry.d
 %%EXAMPLESDIR%%/samples/d/dserver.d
+%%EXAMPLESDIR%%/samples/d/dserver.def
 %%EXAMPLESDIR%%/samples/d/hello.d
 %%EXAMPLESDIR%%/samples/d/htmlget.d
 %%EXAMPLESDIR%%/samples/d/listener.d
@@ -96,6 +96,7 @@ include/d/druntime/import/core/sys/posix/sys/stat.di
 include/d/druntime/import/core/sys/posix/sys/time.di
 include/d/druntime/import/core/sys/posix/sys/types.di
 include/d/druntime/import/core/sys/posix/sys/uio.di
+include/d/druntime/import/core/sys/posix/sys/un.di
 include/d/druntime/import/core/sys/posix/sys/wait.di
 include/d/druntime/import/core/sys/posix/termios.di
 include/d/druntime/import/core/sys/posix/time.di
