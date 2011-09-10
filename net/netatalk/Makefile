@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	netatalk
-PORTVERSION=	2.2.0
-PORTREVISION=	3
+PORTVERSION=	2.2.1
 PORTEPOCH=	1
 CATEGORIES=	net print
-MASTER_SITES=	SF/netatalk/netatalk/2.2
+MASTER_SITES=	SF
 
 MAINTAINER=	marcus@FreeBSD.org
 COMMENT=	File server for Mac OS X
@@ -45,7 +44,7 @@ FILES=		AppleVolumes.default AppleVolumes.system afpd.conf netatalk.conf
 LINKS=		unbin unhex unsingle hqx2bin single2bin macbinary \
 		binheader nadheader
 MAN1=		ad.1 afpldaptest.1 afppasswd.1 apple_dump.1 asip-status.pl.1 \
-		dbd.1 hqx2bin.1 macbinary.1 megatron.1 \
+		dbd.1 hqx2bin.1 macbinary.1 macusers.1 megatron.1 \
 		netatalk-config.1 single2bin.1 unbin.1 unhex.1 uniconv.1 \
 		unsingle.1
 MAN5=		AppleVolumes.5 AppleVolumes.default.5 \
@@ -103,6 +102,7 @@ PLIST_SUB+=		TIMELORD="@comment "
 
 .if defined (WITH_ZEROCONF)
 CONFIGURE_ARGS+=	--enable-zeroconf=${LOCALBASE}
+CFLAGS+=		-I${LOCALBASE}/include -L${LOCALBASE}/lib
 LIB_DEPENDS+=		avahi-client.3:${PORTSDIR}/net/avahi-app
 USE_GNOME+=		pkgconfig
 SUB_LIST+=		ZEROCONF="avahi_daemon"
