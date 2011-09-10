@@ -632,6 +632,7 @@
     SUBDIR += p5-Image-Caa
     SUBDIR += p5-Image-Compare
     SUBDIR += p5-Image-ExifTool
+    SUBDIR += p5-Image-ExifTool-devel
     SUBDIR += p5-Image-Grab
     SUBDIR += p5-Image-Heatmap
     SUBDIR += p5-Image-IPTCInfo
