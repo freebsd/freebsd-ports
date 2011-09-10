@@ -13,6 +13,7 @@
 
 PORTNAME=	Image-ExifTool
 PORTVERSION=	8.60
+PORTREVISION=	1
 CATEGORIES=	graphics perl5
 MASTER_SITES=	http://www.sno.phy.queensu.ca/~phil/exiftool/ \
 		CPAN
@@ -24,6 +25,8 @@ COMMENT=	Perl module for getting EXIF data from image files
 
 LICENSE_COMB=	dual
 LICENSE=	ART10 GPLv1
+
+CONFLICTS=	p5-Image-ExifTool-devel-[0-9]*
 
 PERL_CONFIGURE=	yes
 
