@@ -86,6 +86,8 @@ post-patch:
 	@${FIND} ${WRKSRC}/doc/man/man5 -name '*.5' -maxdepth 1 | \
 		${XARGS} ${REINPLACE_CMD} -e 's|special file|5| ; \
 		 s|file formats|5|'
+	@${REINPLACE_CMD} -e 's|/usr/local|${LOCALBASE}|' \
+		${WRKSRC}/configure
 
 post-install:
 .if defined(WITH_OPENMOTIF_DEMOS)
