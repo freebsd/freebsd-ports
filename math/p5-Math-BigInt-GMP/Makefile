@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Math-BigInt-GMP
-PORTVERSION=	1.36
+PORTVERSION=	1.37
 CATEGORIES=	math perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,13 +14,15 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	Math::BigInt::GMP - Use the GMP library for Math::BigInt routines
 
-LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
-
-LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Math-BigInt>=1.997:${PORTSDIR}/math/p5-Math-BigInt
+LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
+RUN_DEPENDS=	p5-Math-BigInt>=1.997:${PORTSDIR}/math/p5-Math-BigInt
 
 PERL_CONFIGURE=	yes
-CONFIGURE_ARGS+=	INC="-I${LOCALBASE}/include"
+CONFIGURE_ARGS=	INC="-I${LOCALBASE}/include"
 
 MAN3=		Math::BigInt::GMP.3
 
