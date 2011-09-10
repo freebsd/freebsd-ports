@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	closure-linter
-PORTVERSION=	2.2.7
+PORTVERSION=	2.3.1
 CATEGORIES=	www devel
 MASTER_SITES=	GOOGLE_CODE
 DISTNAME=	closure_linter-${PORTVERSION}
@@ -14,10 +14,10 @@ DISTNAME=	closure_linter-${PORTVERSION}
 MAINTAINER=	jlaffaye@FreeBSD.org
 COMMENT=	JavaScript linter
 
+LICENSE=	ASL
+
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/gflags:${PORTSDIR}/devel/py-gflags
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/gflags:${PORTSDIR}/devel/py-gflags
-
-LICENSE=	ASL
 
 USE_PYTHON=	-2.7
 USE_PYDISTUTILS=easy_install
