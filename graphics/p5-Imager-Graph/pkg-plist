@@ -1,4 +1,5 @@
 %%SITE_PERL%%/Imager/Graph.pm
+%%SITE_PERL%%/Imager/Graph/Area.pm
 %%SITE_PERL%%/Imager/Graph/Bar.pm
 %%SITE_PERL%%/Imager/Graph/Column.pm
 %%SITE_PERL%%/Imager/Graph/Horizontal.pm
