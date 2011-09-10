@@ -1,0 +1,7 @@
+%%SITE_PERL%%/Method/Signatures/Simple.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Method/Signatures/Simple/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Method/Signatures/Simple
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Method/Signatures
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Method
+@dirrmtry %%SITE_PERL%%/Method/Signatures
+@dirrmtry %%SITE_PERL%%/Method
