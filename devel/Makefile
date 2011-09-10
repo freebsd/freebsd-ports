@@ -3640,6 +3640,7 @@
     SUBDIR += z80ex
     SUBDIR += zeroinstall-injector
     SUBDIR += zmq
+    SUBDIR += zmq-devel
     SUBDIR += ztcl
     SUBDIR += zthread
     SUBDIR += zziplib
