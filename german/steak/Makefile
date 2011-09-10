@@ -13,13 +13,10 @@ MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Steak%20${PORTVERSION} \
 		http://www.tm.informatik.uni-frankfurt.de/%7Erazi/steak/program/
 DISTNAME=	Steak.${PORTVERSION}
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	conrads@cox.net
 COMMENT=	An english <-> german dictionary under the GPL
 
 RUN_DEPENDS=	ispell:${PORTSDIR}/textproc/ispell
-
-DEPRECATED=	Development has ceased.
-EXPIRATION_DATE=	2011-09-01
 
 USE_XORG=	xt
 MAKE_JOBS_UNSAFE=	yes

@@ -12,13 +12,10 @@ CATEGORIES=	german kde
 MASTER_SITES=	http://www.der-fritz.de/ksteak/
 DISTNAME=	ksteak-1.0.0pre2
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	conrads@cox.net
 COMMENT=	KDE frontend for steak, an english - german dictionary
 
 RUN_DEPENDS=	steak:${PORTSDIR}/german/steak
-
-DEPRECATED=	Development has ceased.
-EXPIRATION_DATE=	2011-09-01
 
 USE_BZIP2=	yes
 USE_KDELIBS_VER=3
