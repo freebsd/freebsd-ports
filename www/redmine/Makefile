@@ -38,7 +38,7 @@ RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/mysql.so:${PORTSDIR}/databases/ruby-mysql
 .endif
 
 .if defined(WITH_POSTGRESQL)
-RUN_DEPENDS+=	${RUBY_SITEARCHLIBDIR}/pg.so:${PORTSDIR}/databases/ruby-pg
+RUN_DEPENDS+=	rubygem-pg>=0:${PORTSDIR}/databases/rubygem-pg
 .endif
 
 .if defined(WITH_RMAGIC)
