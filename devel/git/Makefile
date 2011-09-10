@@ -8,8 +8,11 @@
 PORTNAME=	git
 PORTVERSION=	1.7.6.1
 CATEGORIES=	devel
-MASTER_SITES=	${MASTER_SITE_KERNEL_ORG}
-MASTER_SITE_SUBDIR=	software/scm/${PORTNAME}
+MASTER_SITES=	${MASTER_SITE_GENTOO} \
+		http://www.glenbarber.us/ports/${CATEGORIES}/${PORTNAME}
+		
+MASTER_SITE_SUBDIR=	software/scm/${PORTNAME} \
+			distfiles
 DISTFILES=	${PORTNAME}-${PORTVERSION}${EXTRACT_SUFX} \
 		${PORTNAME}-manpages-${PORTVERSION}${EXTRACT_SUFX}
 # We manually extract the htmldocs.
