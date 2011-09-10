@@ -24,7 +24,6 @@ CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--share-prefix=${PREFIX}/share \
 		--with-gmp=${LOCALBASE}
-#MAKE_ARGS=	gp
 HAS_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
