@@ -8,7 +8,7 @@ Details:
  apc support.
  Group caching, cache by groups and flush by groups or individual keys.
  Disk cache support.
- Prepared statements ready.
+ Prepared statements ready, support dynamic building queries.
  Secure connections with SSL.
  Ability to use different cache types at the same time.
  Store sessions on database(mysql/sqlite) or a cache like redis/memcache/apc.
