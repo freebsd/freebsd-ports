@@ -7,6 +7,7 @@
 
 PORTNAME=	armv5
 PORTVERSION=	20110627
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/ \
 		http://dragonlace.mirrors.ada.cx/src/
