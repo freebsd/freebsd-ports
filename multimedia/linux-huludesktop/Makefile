@@ -36,6 +36,10 @@ SUB_FILES=	${PORTNAME}
 
 .include <bsd.port.pre.mk>
 
+.if ${OSVERSION} >= 90000
+IGNORE=	has known issues under 9.x. Define NO_IGNORE to install without support
+.endif
+
 do-extract:
 	${MKDIR} ${WRKSRC}
 	${RPM2CPIO} ${DISTDIR}/${DISTNAME}${EXTRACT_SUFX} | \
