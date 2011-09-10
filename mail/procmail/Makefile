@@ -33,14 +33,6 @@ MAKE_JOBS_UNSAFE=	yes
 #PATCH_DIST_STRIP=-p
 #.endif
 
-# It asks for list of directories to do test for file locking
-# (defaults to /tmp and ".", so return should suffice in most cases).
-.if defined(BATCH) # handled in patch-aa
-MAKE_ARGS+=	-DBATCH
-.else
-IS_INTERACTIVE=	yes
-.endif
-
 INSTALL_TARGET=	install-suid install.man
 
 MAN1=		procmail.1 formail.1 lockfile.1
