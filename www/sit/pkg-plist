@@ -205,6 +205,7 @@
 %%WWWDIR%%/help/de-DE/UserStartdate.txt
 %%WWWDIR%%/help/de-DE/VisibleToCustomer.txt
 %%WWWDIR%%/help/de-DE/WorkAroundsAttemptedEngineer.txt
+%%WWWDIR%%/help/de-DE/help.html
 %%WWWDIR%%/help/de-DE/portal_help.html
 %%WWWDIR%%/help/en-GB/AddressDataProtection.txt
 %%WWWDIR%%/help/en-GB/AutoAssignIncidents.txt
@@ -400,12 +401,14 @@
 %%WWWDIR%%/holiday_approve.php
 %%WWWDIR%%/holiday_request.php
 %%WWWDIR%%/holidays.php
+%%WWWDIR%%/i18n/af.inc.php
 %%WWWDIR%%/i18n/ar.inc.php
 %%WWWDIR%%/i18n/bg-BG.inc.php
 %%WWWDIR%%/i18n/ca-ES.inc.php
 %%WWWDIR%%/i18n/cy-GB.inc.php
 %%WWWDIR%%/i18n/da-DK.inc.php
 %%WWWDIR%%/i18n/de-DE.inc.php
+%%WWWDIR%%/i18n/el-GR.inc.php
 %%WWWDIR%%/i18n/en-GB.inc.php
 %%WWWDIR%%/i18n/en-US.inc.php
 %%WWWDIR%%/i18n/es-CO.inc.php
@@ -413,7 +416,6 @@
 %%WWWDIR%%/i18n/es-MX.inc.php
 %%WWWDIR%%/i18n/fa-IR.inc.php
 %%WWWDIR%%/i18n/fr-FR.inc.php
-%%WWWDIR%%/i18n/gr-GR.inc.php
 %%WWWDIR%%/i18n/it-IT.inc.php
 %%WWWDIR%%/i18n/ja-JP.inc.php
 %%WWWDIR%%/i18n/lt-LT.inc.php
