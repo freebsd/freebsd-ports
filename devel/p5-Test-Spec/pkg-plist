@@ -1,0 +1,9 @@
+%%SITE_PERL%%/Test/Spec.pm
+%%SITE_PERL%%/Test/Spec/Context.pm
+%%SITE_PERL%%/Test/Spec/Mocks.pm
+%%SITE_PERL%%/Test/Spec/SharedHash.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Spec/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test/Spec
+@dirrmtry %%SITE_PERL%%/%%PERL_ARCH%%/auto/Test
+@dirrm %%SITE_PERL%%/Test/Spec
+@dirrmtry %%SITE_PERL%%/Test
