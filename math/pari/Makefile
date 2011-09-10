@@ -6,37 +6,34 @@
 #
 
 PORTNAME=	pari
-PORTVERSION=	${MAJOR_VERSION}.${MINOR_VERSION}.${REV_VERSION}
+PORTVERSION=	2.5.0
 CATEGORIES=	math
 MASTER_SITES=	http://pari.math.u-bordeaux.fr/pub/pari/unix/
-DISTNAME=	pari-${MAJOR_VERSION}.${MINOR_VERSION}.${REV_VERSION}
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Mathematics library and advanced calculator package
+
+LICENSE=	GPLv2
 
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp
 
 MAKE_JOBS_UNSAFE=	yes
 
-USE_LDCONFIG=	yes
-HAS_CONFIGURE=	yes
+ALL_TARGET=	gp
 CONFIGURE_SCRIPT=	Configure
 CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--share-prefix=${PREFIX}/share \
 		--with-gmp=${LOCALBASE}
+#MAKE_ARGS=	gp
+HAS_CONFIGURE=	yes
+USE_LDCONFIG=	yes
 
-MAKE_ARGS=	gp
-
-PORTDOCS=	*
-PLIST_SUB=	MAJOR_VERSION=${MAJOR_VERSION} MINOR_VERSION=${MINOR_VERSION} \
-		REV_VERSION=${REV_VERSION}
-
-MAJOR_VERSION=	2
-MINOR_VERSION=	5
-REV_VERSION=	0
-
-MAN1=		gp.1 gphelp.1 gp-${MAJOR_VERSION}.${MINOR_VERSION}.1 tex2mail.1
+MAN1=		gp.1 gp-${GP_VERSION}.1 gphelp.1 tex2mail.1
 MLINKS=		gp.1 pari.1
+PORTDOCS=	*
+PLIST_SUB=	GP_VERSION=${GP_VERSION} PORTVERSION=${PORTVERSION}
+
+GP_VERSION=	${PORTVERSION:R}
 
 post-install:
 	@if [ -L ${MAN1PREFIX}/man/man1/pari.1 ]; then \
