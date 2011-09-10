@@ -6,13 +6,13 @@
 #
 
 PORTNAME=	busybox
-PORTVERSION=	1.19.1
+PORTVERSION=	1.19.2
 PORTREVISION=	0
 CATEGORIES=	sysutils misc shells
 MASTER_SITES=	http://www.busybox.net/downloads/
 
 PATCH_SITES=	http://www.busybox.net/downloads/fixes-${PORTVERSION}/
-PATCHFILES=	busybox-1.19.1-patch.patch
+PATCHFILES=	busybox-1.19.2-crond.patch
 PATCH_DIST_STRIP=	-p1
 
 MAINTAINER=	mandree@FreeBSD.org
