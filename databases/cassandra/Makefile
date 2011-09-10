@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	cassandra
-PORTVERSION=	0.8.4
-PORTREVISION=	1
+PORTVERSION=	0.8.5
 CATEGORIES=	databases java
 MASTER_SITES=	${MASTER_SITE_APACHE}
 MASTER_SITE_SUBDIR=	cassandra/${PORTVERSION}
@@ -25,9 +24,10 @@ USE_JAVA=	yes
 USE_RC_SUBR=	cassandra
 REINPLACE_ARGS=	-i ''
 
-CONFIGS=	cassandra.yaml log4j-server.properties access.properties \
-		log4j-tools.properties passwd.properties \
-		cassandra-topology.properties
+CONFIGS=	access.properties cassandra-topology.properties cassandra.yaml \
+		log4j-server.properties log4j-tools.properties passwd.properties
+SCRIPTS=	cassandra cassandra-cli json2sstable nodetool sstable2json \
+		sstablekeys sstableloader
 
 post-extract:
 	@${RM} ${WRKSRC}/bin/*.bat ${WRKSRC}/bin/stop-server
@@ -42,6 +42,7 @@ do-patch:
 do-install:
 	@${MKDIR} ${DATADIR}
 	@cd ${WRKSRC}/ && ${COPYTREE_SHARE} . ${DATADIR}
+	@cd ${DATADIR}/bin/ && ${CHMOD} u+x ${SCRIPTS}
 	@${LN} -s ${DATADIR}/bin/cassandra-cli ${PREFIX}/bin/cassandra-cli
 	@${LN} -s ${DATADIR}/bin/nodetool ${PREFIX}/bin/nodetool
 
