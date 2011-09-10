@@ -845,6 +845,7 @@ bin/nodetool
 %%DATADIR%%/javadoc/org/apache/cassandra/service/AbstractCassandraDaemon.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/AbstractRowResolver.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/AbstractWriteResponseHandler.html
+%%DATADIR%%/javadoc/org/apache/cassandra/service/AntiEntropyService.RepairFuture.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/AntiEntropyService.TreeRequest.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/AntiEntropyService.TreeRequestVerbHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/AntiEntropyService.TreeResponseVerbHandler.html
@@ -883,6 +884,7 @@ bin/nodetool
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/AbstractCassandraDaemon.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/AbstractRowResolver.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/AbstractWriteResponseHandler.html
+%%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/AntiEntropyService.RepairFuture.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/AntiEntropyService.TreeRequest.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/AntiEntropyService.TreeRequestVerbHandler.html
 %%DATADIR%%/javadoc/org/apache/cassandra/service/class-use/AntiEntropyService.TreeResponseVerbHandler.html
@@ -1553,8 +1555,8 @@ bin/nodetool
 %%DATADIR%%/javadoc/serialized-form.html
 %%DATADIR%%/javadoc/stylesheet.css
 %%DATADIR%%/lib/antlr-3.2.jar
-%%DATADIR%%/lib/apache-cassandra-0.8.4.jar
-%%DATADIR%%/lib/apache-cassandra-thrift-0.8.4.jar
+%%DATADIR%%/lib/apache-cassandra-0.8.5.jar
+%%DATADIR%%/lib/apache-cassandra-thrift-0.8.5.jar
 %%DATADIR%%/lib/avro-1.4.0-fixes.jar
 %%DATADIR%%/lib/avro-1.4.0-sources-fixes.jar
 %%DATADIR%%/lib/commons-cli-1.1.jar
