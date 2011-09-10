@@ -5,6 +5,7 @@
 %%DATADIR%%/examples/cache.php
 %%DATADIR%%/examples/cache-group.php
 %%DATADIR%%/examples/curl.php
+%%DATADIR%%/examples/preparedStatements.php
 %%DATADIR%%/examples/query_Execute.php
 %%DATADIR%%/examples/queue.php
 %%DATADIR%%/examples/queueURL.php
