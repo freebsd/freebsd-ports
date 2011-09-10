@@ -9,7 +9,7 @@ PORTNAME=	kiconedit
 PORTVERSION=	${EXTRA_VER}
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${EXTRA_VER}/src/extragear
+MASTER_SITE_SUBDIR=	stable/extragear
 DIST_SUBDIR=	KDE/extragear
 
 MAINTAINER=	kde@FreeBSD.org

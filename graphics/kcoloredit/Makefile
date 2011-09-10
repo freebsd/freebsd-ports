@@ -9,7 +9,7 @@ PORTNAME=	kcoloredit
 PORTVERSION=	${APP_VER}.${EXTRA_VER}
 CATEGORIES=	graphics kde
 MASTER_SITES=	${MASTER_SITE_KDE}
-MASTER_SITE_SUBDIR=	stable/${EXTRA_VER}/src/extragear
+MASTER_SITE_SUBDIR=	stable/extragear
 DISTNAME=	${PORTNAME}-${APP_VER}-kde${EXTRA_VER}
 DIST_SUBDIR=	KDE/extragear
 
