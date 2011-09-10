@@ -1,4 +1,3 @@
-# ex:ts=8
 # New ports collection makefile for:	p5-Imager
 # Date created:			Jul 24, 2001
 # Whom:				ijliao
@@ -7,7 +6,7 @@
 #
 
 PORTNAME=	Imager
-PORTVERSION=	0.84
+PORTVERSION=	0.85
 CATEGORIES=	graphics perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:TONYC
@@ -16,8 +15,8 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	A Perl module for manipulating gray, color and rgba format images
 
-LICENSE_COMB=	dual
 LICENSE=	ART20 GPLv1
+LICENSE_COMB=	dual
 
 LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		jpeg:${PORTSDIR}/graphics/jpeg \
@@ -26,7 +25,7 @@ LIB_DEPENDS=	freetype.9:${PORTSDIR}/print/freetype2 \
 		tiff:${PORTSDIR}/graphics/tiff \
 		gif.5:${PORTSDIR}/graphics/giflib
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 CONFIGURE_ENV=	IM_LIBPATH="${LOCALBASE}/lib" \
 		IM_CFLAGS="-I${LOCALBASE}/include ${CFLAGS}"
 
