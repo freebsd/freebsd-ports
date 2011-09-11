@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# create a slon service directory for use with svscan from deamontools
+# create a slon service directory for use with svscan from daemontools
 
 echo -n 'specify directory for "slon" service like "/var/slon-master": '
 read DIR
