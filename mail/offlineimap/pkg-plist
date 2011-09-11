@@ -15,6 +15,9 @@ bin/offlineimap
 %%PYTHON_SITELIBDIR%%/offlineimap/folder/LocalStatus.py
 %%PYTHON_SITELIBDIR%%/offlineimap/folder/LocalStatus.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/folder/LocalStatus.pyo
+%%PYTHON_SITELIBDIR%%/offlineimap/folder/LocalStatusSQLite.py
+%%PYTHON_SITELIBDIR%%/offlineimap/folder/LocalStatusSQLite.pyc
+%%PYTHON_SITELIBDIR%%/offlineimap/folder/LocalStatusSQLite.pyo
 %%PYTHON_SITELIBDIR%%/offlineimap/folder/Maildir.py
 %%PYTHON_SITELIBDIR%%/offlineimap/folder/Maildir.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/folder/Maildir.pyo
@@ -75,6 +78,9 @@ bin/offlineimap
 %%PYTHON_SITELIBDIR%%/offlineimap/accounts.py
 %%PYTHON_SITELIBDIR%%/offlineimap/accounts.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/accounts.pyo
+%%PYTHON_SITELIBDIR%%/offlineimap/error.py
+%%PYTHON_SITELIBDIR%%/offlineimap/error.pyc
+%%PYTHON_SITELIBDIR%%/offlineimap/error.pyo
 %%PYTHON_SITELIBDIR%%/offlineimap/imaplib2.py
 %%PYTHON_SITELIBDIR%%/offlineimap/imaplib2.pyc
 %%PYTHON_SITELIBDIR%%/offlineimap/imaplib2.pyo
