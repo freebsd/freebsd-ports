@@ -8,7 +8,7 @@
 PORTNAME=	icu
 PORTVERSION=	4.8.1
 CATEGORIES=	devel
-MASTER_SITES=	http://download.icu-project.org/files/icu4c/${PORTVERSION}/
+MASTER_SITES=	SF/${PORTNAME}/ICU4C/${PORTVERSION}/
 DISTNAME=	icu4c-${PORTVERSION:S/./_/g}
 EXTRACT_SUFX=	-src.tgz
 
