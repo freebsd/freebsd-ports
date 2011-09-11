@@ -6,17 +6,21 @@
 #
 
 PORTNAME=	Array-Iterator
-PORTVERSION=	0.06
+PORTVERSION=	0.07
 CATEGORIES=	devel perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	sunpoet@FreeBSD.org
 COMMENT=	A set of array iterators
 
-MAN3=		Array::Iterator.3 Array::Iterator::Circular.3 \
-       		Array::Iterator::BiDirectional.3 Array::Iterator::Reusable.3
+TEST_DEPENDS=	p5-Test-Exception>=0:${PORTSDIR}/devel/p5-Test-Exception
 
-PERL_CONFIGURE=	yes
+PERL_MODBUILD=	yes
+
+MAN3=		Array::Iterator.3 \
+		Array::Iterator::BiDirectional.3 \
+		Array::Iterator::Circular.3 \
+		Array::Iterator::Reusable.3
 
 .include <bsd.port.mk>
