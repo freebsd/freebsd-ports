@@ -16,7 +16,7 @@ MAINTAINER=	wen@FreeBSD.org
 COMMENT=	Perl Interface to Google Charts API
 
 RUN_DEPENDS=	p5-libwww>0:${PORTSDIR}/www/p5-libwww \
-		p5-Moose>=0.54:${PORTSDIR}/devel/p5-Moose \
+		p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
 		p5-URI>0:${PORTSDIR}/net/p5-URI
 
 MAN3=		Google::Chart.3 Google::Chart::Axis.3 \
