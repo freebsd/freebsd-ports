@@ -445,13 +445,13 @@ MASTER_SITE_GCC+=	\
 	ftp://ftp.uvsq.fr/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.gwdg.de/pub/misc/gcc/%SUBDIR%/ \
 	ftp://ftp.mpi-sb.mpg.de/pub/gnu/mirror/gcc.gnu.org/pub/gcc/%SUBDIR%/ \
-	ftp://ftp.iij.ad.jp/pub/gcc/%SUBDIR%/ \
+	ftp://ftp.iij.ad.jp/pub/gnu/gnu/gcc/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/lang/gcc/%SUBDIR%/ \
 	ftp://ftp.nluug.nl/mirror/languages/gcc/%SUBDIR%/ \
 	ftp://ftp.nctu.edu.tw/computer-languages/C/gcc/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/sources.redhat.com/pub/gcc/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/gnu/gcc/%SUBDIR%/ \
-	ftp://mirror.aarnet.edu.au/pub/gcc/%SUBDIR%/
+	ftp://mirror.aarnet.edu.au/pub/gnu/gcc/%SUBDIR%/
 .endif
 
 .if !defined(IGNORE_MASTER_SITE_GENTOO)
@@ -514,7 +514,6 @@ MASTER_SITE_GET_E+=	\
 .if !defined(IGNORE_MASTER_SITE_GNOME)
 MASTER_SITE_GNOME+=	\
 	ftp://ftp.belnet.be/mirror/ftp.gnome.org/%SUBDIR%/ \
-	ftp://ftp.dit.upm.es/linux/gnome/%SUBDIR%/ \
 	http://ftp.acc.umu.se/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.cse.buffalo.edu/pub/Gnome/%SUBDIR%/ \
 	http://ftp.unina.it/pub/linux/GNOME/%SUBDIR%/ \
@@ -522,7 +521,7 @@ MASTER_SITE_GNOME+=	\
 	http://www.gtlib.cc.gatech.edu/pub/gnome/%SUBDIR%/ \
 	ftp://ftp.dti.ad.jp/pub/X/gnome/%SUBDIR%/ \
 	http://linorg.usp.br/gnome/%SUBDIR%/ \
-	http://mirror.aarnet.edu.au/pub/GNOME/%SUBDIR%/ \
+	http://mirror.aarnet.edu.au/pub/gnome/%SUBDIR%/ \
 	${MASTER_SITE_RINGSERVER:S,%SUBDIR%,X/gnome/&,} \
 	ftp://ftp.kddlabs.co.jp/pub/GNOME/%SUBDIR%/ \
 	ftp://ftp.mirrorservice.org/sites/ftp.gnome.org/pub/GNOME/%SUBDIR%/ \
@@ -658,20 +657,17 @@ MASTER_SITE_KDE+=	\
 	ftp://ftp.rz.uni-wuerzburg.de/pub/unix/kde/%SUBDIR%/ \
 	http://mirrors.dotsrc.org/kde/%SUBDIR%/ \
 	ftp://mirrors.dotsrc.org/kde/%SUBDIR%/ \
-	ftp://ibiblio.org/pub/mirrors/kde/%SUBDIR%/ \
-	http://ibiblio.org/pub/mirrors/kde/%SUBDIR%/ \
 	http://kambing.vlsm.org/kde/%SUBDIR%/ \
 	http://mirrors.evolva.ro/kdeftp/%SUBDIR%/ \
 	ftp://ftp.iasi.roedu.net/pub/mirrors/ftp.kde.org/%SUBDIR%/ \
 	ftp://ftp.fi.muni.cz/pub/kde/%SUBDIR%/ \
 	http://ftp.fi.muni.cz/pub/kde/%SUBDIR%/ \
-	ftp://ftp.tu-chemnitz.de/pub/X11/kde/%SUBDIR%/ \
 	ftp://ftp.tuniv.szczecin.pl/pub/kde/%SUBDIR%/ \
 	http://ftp.tuniv.szczecin.pl/pub/kde/%SUBDIR%/ \
 	ftp://sunsite.icm.edu.pl/pub/unix/kde/%SUBDIR%/ \
 	http://sunsite.icm.edu.pl/pub/unix/kde/%SUBDIR%/ \
-	ftp://ftp.sunet.se/pub/kde/%SUBDIR%/ \
-	http://ftp.sunet.se/pub/kde/%SUBDIR%/ \
+	ftp://ftp.sunet.se/pub/X11/kde/%SUBDIR%/ \
+	http://ftp.sunet.se/pub/X11/kde/%SUBDIR%/ \
 	ftp://ftp.kde.org/pub/kde/%SUBDIR%/ \
 	http://ftp.scarlet.be/pub/kde/%SUBDIR%/ \
 	ftp://ftp.unina.it/pub/Linux/kde/%SUBDIR%/ \
@@ -686,26 +682,19 @@ MASTER_SITE_KDE+=	\
 	http://ftp-stud.fht-esslingen.de/Mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.esat.net/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
 	http://ftp.esat.net/mirrors/ftp.kde.org/pub/kde/%SUBDIR%/ \
-	ftp://kde.paralax.org/kde/%SUBDIR%/ \
+	ftp://kde.paralax.org/%SUBDIR%/ \
 	ftp://ftp.cronyx.ru/pub/mirror/kde/%SUBDIR%/ \
-	http://kde.cs.nctu.edu.tw/KDE/%SUBDIR%/ \
+	http://kde.cs.nctu.edu.tw/%SUBDIR%/ \
 	http://ftp.twaren.net/Unix/X/KDE/%SUBDIR%/ \
 	ftp://ftp.na.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.fu-berlin.de/pub/unix/X11/gui/kde/%SUBDIR%/ \
-	ftp://ftp.estpak.ee/pub/kde/%SUBDIR%/ \
 	ftp://sunsite.informatik.rwth-aachen.de/pub/Linux/kde/%SUBDIR%/ \
 	ftp://ftp.ntua.gr/pub/X11/kde/%SUBDIR%/ \
 	http://ftp.ntua.gr/pub/X11/kde/%SUBDIR%/ \
-	ftp://ftp.hol.gr/pub/mirror/kde/%SUBDIR%/ \
-	http://ftp.hol.gr/mirror/kde/%SUBDIR%/ \
 	ftp://ftp.heanet.ie/mirrors/ftp.kde.org/%SUBDIR%/ \
 	http://ftp.heanet.ie/mirrors/ftp.kde.org/%SUBDIR%/ \
-	ftp://mi.mirror.garr.it/pub/mirrors/KDE/%SUBDIR%/ \
-	http://mi.mirror.garr.it/mirrors/KDE/%SUBDIR%/ \
 	ftp://ftp.kddlabs.co.jp/pub/X11/kde/%SUBDIR%/ \
 	http://ftp.kddlabs.co.jp/pub/X11/kde/%SUBDIR%/ \
-	ftp://ftp.informatik.uni-hamburg.de/pub/soft/X/contrib/kde/%SUBDIR%/ \
-	ftp://ftp.no.kde.org/pub/kde/%SUBDIR%/ \
 	ftp://ftp.yz.yamagata-u.ac.jp/pub/X11/wm/kde/%SUBDIR%/ \
 	http://ftp.yz.yamagata-u.ac.jp/pub/X11/wm/kde/%SUBDIR%/ \
 	ftp://ftp.ussg.iu.edu/pub/kde/%SUBDIR%/ \
@@ -839,7 +828,6 @@ MASTER_SITE_NETLIB+=	\
 	http://artfiles.org/netlib.org/%SUBDIR%/ \
 	http://netlib.amss.ac.cn/%SUBDIR%/ \
 	http://netlib.caspur.it/%SUBDIR%/ \
-	http://netlib.ccp14.ac.uk/%SUBDIR%/ \
 	http://netlib.linux-mirror.org/%SUBDIR%/ \
 	http://phase.hpcc.jp/mirrors/netlib/%SUBDIR%/
 .endif
@@ -1008,7 +996,7 @@ MASTER_SITE_PHP+= \
 	http://it.php.net/%SUBDIR%/ \
 	http://jp.php.net/%SUBDIR%/ \
 	http://se.php.net/%SUBDIR%/ \
-	http://uk.php.net/%SUBDIR%/ \
+	http://uk3.php.net/%SUBDIR%/ \
 	http://us2.php.net/%SUBDIR%/ \
 	http://br.php.net/%SUBDIR%/ \
 	http://cn.php.net/%SUBDIR%/ \
