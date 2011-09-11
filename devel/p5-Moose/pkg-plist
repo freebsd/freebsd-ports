@@ -112,6 +112,7 @@ bin/moose-outdated
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/push.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/reduce.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/set.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/shallow_clone.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/shift.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/shuffle.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Array/sort.pm
@@ -145,6 +146,7 @@ bin/moose-outdated
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash/keys.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash/kv.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash/set.pm
+%%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash/shallow_clone.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Hash/values.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Number/abs.pm
 %%SITE_PERL%%/%%PERL_ARCH%%/Moose/Meta/Method/Accessor/Native/Number/add.pm
