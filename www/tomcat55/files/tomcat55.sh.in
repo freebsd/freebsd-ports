@@ -58,6 +58,10 @@
 #   Set to "" by default.
 #   Java VM args to use.
 #
+# tomcat%%TOMCAT_VERSION%%_java_start_opts (str):
+#   Set to "" by default.
+#   Additional Java VM args to use when starting tomcat.
+#
 
 tomcat%%TOMCAT_VERSION%%_enable="${tomcat%%TOMCAT_VERSION%%_enable:-"NO"}"
 tomcat%%TOMCAT_VERSION%%_java_version="${tomcat%%TOMCAT_VERSION%%_java_version:-"%%JAVA_VERSION%%"}"
@@ -93,14 +97,21 @@ if [ -n "${tomcat%%TOMCAT_VERSION%%_java_os}" ] ; then
 	export JAVA_OS="${tomcat%%TOMCAT_VERSION%%_java_os}"
 fi
 
-java_command="%%LOCALBASE%%/bin/java \
-	${tomcat%%TOMCAT_VERSION%%_java_opts} \
-	-Djava.endorsed.dirs=$JAVA_ENDORSED_DIRS \
+java_args="-Djava.endorsed.dirs=$JAVA_ENDORSED_DIRS \
 	-classpath %%TOMCAT_HOME%%/%%JAR_FILE%%:%%TOMCAT_HOME%%/bin/commons-logging-api.jar:${tomcat%%TOMCAT_VERSION%%_classpath} \
 	-Dcatalina.base=${tomcat%%TOMCAT_VERSION%%_catalina_base} \
 	-Dcatalina.home=${tomcat%%TOMCAT_VERSION%%_catalina_home} \
 	-Djava.io.tmpdir=${tomcat%%TOMCAT_VERSION%%_catalina_tmpdir} \
 	org.apache.catalina.startup.Bootstrap"
+
+java_start_command="%%LOCALBASE%%/bin/java \
+	${tomcat%%TOMCAT_VERSION%%_java_opts} \
+	${tomcat%%TOMCAT_VERSION%%_java_start_opts} \
+	${java_args}"
+
+java_stop_command="%%LOCALBASE%%/bin/java \
+	${tomcat%%TOMCAT_VERSION%%_java_opts} \
+	${java_args}"
 
 log_args="%%LOG_ARGS%%"
 
@@ -118,7 +129,7 @@ fi
 required_files="${tomcat%%TOMCAT_VERSION%%_catalina_home}/conf/server.xml"
 
 command="/usr/sbin/daemon"
-flags="-p ${pidfile} ${java_command} start ${tomcat%%TOMCAT_VERSION%%_flags} ${log_args}"
+flags="-p ${pidfile} ${java_start_command} start ${tomcat%%TOMCAT_VERSION%%_flags} ${log_args}"
 
 start_precmd=pid_touch
 stop_cmd="tomcat%%TOMCAT_VERSION%%_stop"
@@ -137,7 +148,7 @@ tomcat%%TOMCAT_VERSION%%_stop() {
 	fi
 	
 	echo "Stopping ${name}."
-	${java_command} stop
+	${java_stop_command} stop
 	tomcat_wait_max_for_pid ${tomcat%%TOMCAT_VERSION%%_stop_timeout} `cat $pidfile`
 	kill -KILL `cat $pidfile` 2> /dev/null && echo "Killed."
 	rm -f ${pidfile}
