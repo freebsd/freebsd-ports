@@ -24,7 +24,7 @@ RUN_DEPENDS=	p5-Class-Accessor>=0:${PORTSDIR}/devel/p5-Class-Accessor \
 		p5-Digest-HMAC>=0:${PORTSDIR}/security/p5-Digest-HMAC \
 		p5-Digest-MD5-File>=0:${PORTSDIR}/security/p5-Digest-MD5-File \
 		p5-LWP-UserAgent-Determined>=0:${PORTSDIR}/www/p5-LWP-UserAgent-Determined \
-		p5-Moose>=0.85:${PORTSDIR}/devel/p5-Moose \
+		p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-StrictConstructor>=0.08:${PORTSDIR}/devel/p5-MooseX-StrictConstructor \
 		p5-MooseX-Types-DateTimeX>=0:${PORTSDIR}/devel/p5-MooseX-Types-DateTimeX \
 		p5-Regexp-Common>=0:${PORTSDIR}/textproc/p5-Regexp-Common \

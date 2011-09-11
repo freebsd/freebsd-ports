@@ -16,7 +16,7 @@ MAINTAINER=	bill.brinzer@gmail.com
 COMMENT=	An extension to MooseX::Traits
 
 BUILD_DEPENDS=	\
-	p5-Moose>=0:${PORTSDIR}/devel/p5-Moose \
+	p5-Moose>=2:${PORTSDIR}/devel/p5-Moose \
 	p5-namespace-autoclean>=0:${PORTSDIR}/devel/p5-namespace-autoclean \
 	p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils
 RUN_DEPENDS=	${BUILD_DEPENDS}
