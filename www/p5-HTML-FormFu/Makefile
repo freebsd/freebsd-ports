@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	HTML-FormFu
-PORTVERSION=	0.09003
-PORTREVISION=	1
+PORTVERSION=	0.09005
 CATEGORIES=	www perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -15,7 +14,10 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	HTML Form Creation, Rendering and Validation Framework
 
-RUN_DEPENDS=	p5-Captcha-reCAPTCHA>=0.93:${PORTSDIR}/graphics/p5-Captcha-reCAPTCHA \
+LICENSE=	ART20 GPLv1
+LICENSE_COMB=	dual
+
+BUILD_DEPENDS=	p5-Captcha-reCAPTCHA>=0.93:${PORTSDIR}/graphics/p5-Captcha-reCAPTCHA \
 		p5-Class-Accessor-Chained>=0:${PORTSDIR}/devel/p5-Class-Accessor-Chained \
 		p5-Clone>=0.31:${PORTSDIR}/devel/p5-Clone \
 		p5-Config-Any>=0.18:${PORTSDIR}/devel/p5-Config-Any \
@@ -34,7 +36,7 @@ RUN_DEPENDS=	p5-Captcha-reCAPTCHA>=0.93:${PORTSDIR}/graphics/p5-Captcha-reCAPTCH
 		p5-HTML-TokeParser-Simple>=3.14:${PORTSDIR}/www/p5-HTML-TokeParser-Simple \
 		p5-Hash-Flatten>=0:${PORTSDIR}/devel/p5-Hash-Flatten \
 		p5-List-MoreUtils>=0:${PORTSDIR}/lang/p5-List-MoreUtils \
-		p5-Moose>=1.00:${PORTSDIR}/devel/p5-Moose \
+		p5-Moose>=2.00:${PORTSDIR}/devel/p5-Moose \
 		p5-MooseX-Aliases>=0:${PORTSDIR}/devel/p5-MooseX-Aliases \
 		p5-MooseX-ChainedAccessors>=0.02:${PORTSDIR}/devel/p5-MooseX-ChainedAccessors \
 		p5-MooseX-SetOnce>=0:${PORTSDIR}/devel/p5-MooseX-SetOnce \
@@ -46,11 +48,7 @@ RUN_DEPENDS=	p5-Captcha-reCAPTCHA>=0.93:${PORTSDIR}/graphics/p5-Captcha-reCAPTCH
 		p5-Template-Toolkit>=0:${PORTSDIR}/www/p5-Template-Toolkit \
 		p5-YAML-LibYAML>=0.32:${PORTSDIR}/textproc/p5-YAML-LibYAML \
 		p5-libwww>=1.64:${PORTSDIR}/www/p5-libwww
-BUILD_DEPENDS=	${RUN_DEPENDS}
-BUILD_DEPENDS+=	p5-Test-NoWarnings>=0:${PORTSDIR}/devel/p5-Test-NoWarnings
-
-LICENSE_COMB=	dual
-LICENSE=	ART20 GPLv1
+RUN_DEPENDS:=	${BUILD_DEPENDS}
 
 PERL_CONFIGURE=	5.8.1+
 
