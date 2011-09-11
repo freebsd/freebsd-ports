@@ -216,6 +216,7 @@ R-cran-bitops                   ports/devel/R-cran-bitops
 R-cran-car                      ports/math/R-cran-car
 R-cran-caret                    ports/devel/R-cran-caret
 R-cran-coda                     ports/math/R-cran-coda
+R-cran-diagram                  ports/graphics/R-cran-diagram
 R-cran-digest                   ports/security/R-cran-digest
 R-cran-foreach                  ports/devel/R-cran-foreach
 R-cran-gpclib                   ports/math/R-cran-gpclib
@@ -224,9 +225,11 @@ R-cran-iterators                ports/devel/R-cran-iterators
 R-cran-itertools                ports/devel/R-cran-itertools
 R-cran-mvtnorm                  ports/math/R-cran-mvtnorm
 R-cran-plyr                     ports/devel/R-cran-plyr
+R-cran-proto                    ports/devel/R-cran-proto
 R-cran-psych                    ports/math/R-cran-psych
 R-cran-reshape                  ports/devel/R-cran-reshape
 R-cran-scrapeR                  ports/www/R-cran-scrapeR
+R-cran-shape                    ports/graphics/R-cran-shape
 R-cran-sm                       ports/math/R-cran-sm
 R-cran-sp                       ports/math/R-cran-sp
 R-cran-twitteR                  ports/net/R-cran-twitteR
@@ -1029,6 +1032,7 @@ bind9-sdb-ldap                  ports/dns/bind9-sdb-ldap
 bind9-sdb-postgresql            ports/dns/bind9-sdb-postgresql
 bind96                          ports/dns/bind96
 bind97                          ports/dns/bind97
+bind97-sdb                      ports/dns/bind97-sdb
 bind98                          ports/dns/bind98
 bindgraph                       ports/dns/bindgraph
 bindtest                        ports/net/bindtest
@@ -11746,6 +11750,7 @@ p5-Data-Buffer                  ports/misc/p5-Data-Buffer
 p5-Data-ClearSilver-HDF         ports/devel/p5-Data-ClearSilver-HDF
 p5-Data-Compare                 ports/devel/p5-Data-Compare
 p5-Data-Currency                ports/finance/p5-Data-Currency
+p5-Data-Domain                  ports/devel/p5-Data-Domain
 p5-Data-Dump                    ports/devel/p5-Data-Dump
 p5-Data-Dump-Streamer           ports/devel/p5-Data-Dump-Streamer
 p5-Data-DumpXML                 ports/devel/p5-Data-DumpXML
@@ -12677,6 +12682,7 @@ p5-Image-Caa                    ports/graphics/p5-Image-Caa
 p5-Image-Compare                ports/graphics/p5-Image-Compare
 p5-Image-Delivery               ports/www/p5-Image-Delivery
 p5-Image-ExifTool               ports/graphics/p5-Image-ExifTool
+p5-Image-ExifTool-devel         ports/graphics/p5-Image-ExifTool-devel
 p5-Image-Grab                   ports/graphics/p5-Image-Grab
 p5-Image-Heatmap                ports/graphics/p5-Image-Heatmap
 p5-Image-IPTCInfo               ports/graphics/p5-Image-IPTCInfo
@@ -13675,6 +13681,7 @@ p5-Params-Classify              ports/devel/p5-Params-Classify
 p5-Params-Coerce                ports/devel/p5-Params-Coerce
 p5-Params-Util                  ports/devel/p5-Params-Util
 p5-Params-Validate              ports/devel/p5-Params-Validate
+p5-Params-Validate-Dependencies  ports/devel/p5-Params-Validate-Dependencies
 p5-Paranoid                     ports/devel/p5-Paranoid
 p5-Parse-BooleanLogic           ports/textproc/p5-Parse-BooleanLogic
 p5-Parse-CPAN-Meta              ports/devel/p5-Parse-CPAN-Meta
@@ -14348,6 +14355,7 @@ p5-Test-Script-Run              ports/devel/p5-Test-Script-Run
 p5-Test-SharedFork              ports/devel/p5-Test-SharedFork
 p5-Test-Simple                  ports/devel/p5-Test-Simple
 p5-Test-Singleton               ports/devel/p5-Test-Singleton
+p5-Test-Spec                    ports/devel/p5-Test-Spec
 p5-Test-Spelling                ports/devel/p5-Test-Spelling
 p5-Test-Strict                  ports/devel/p5-Test-Strict
 p5-Test-SubCalls                ports/devel/p5-Test-SubCalls
@@ -14359,6 +14367,7 @@ p5-Test-TableDriven             ports/devel/p5-Test-TableDriven
 p5-Test-Taint                   ports/devel/p5-Test-Taint
 p5-Test-TempDir                 ports/devel/p5-Test-TempDir
 p5-Test-Tester                  ports/devel/p5-Test-Tester
+p5-Test-Trap                    ports/devel/p5-Test-Trap
 p5-Test-URI                     ports/net/p5-Test-URI
 p5-Test-Unit                    ports/devel/p5-Test-Unit
 p5-Test-UseAllModules           ports/devel/p5-Test-UseAllModules
@@ -14740,6 +14749,7 @@ p5-WWW-Search-MSN               ports/www/p5-WWW-Search-MSN
 p5-WWW-Shorten                  ports/www/p5-WWW-Shorten
 p5-WWW-Shorten-0rz              ports/www/p5-WWW-Shorten-0rz
 p5-WWW-Shorten-Bitly            ports/www/p5-WWW-Shorten-Bitly
+p5-WWW-Shorten-Googl            ports/www/p5-WWW-Shorten-Googl
 p5-WWW-Shorten-KUSO             ports/www/p5-WWW-Shorten-KUSO
 p5-WWW-Shorten-NotLong          ports/www/p5-WWW-Shorten-NotLong
 p5-WWW-Shorten-isgd             ports/www/p5-WWW-Shorten-isgd
@@ -15954,6 +15964,7 @@ p5-data-buffer                  ports/misc/p5-Data-Buffer
 p5-data-clearsilver-hdf         ports/devel/p5-Data-ClearSilver-HDF
 p5-data-compare                 ports/devel/p5-Data-Compare
 p5-data-currency                ports/finance/p5-Data-Currency
+p5-data-domain                  ports/devel/p5-Data-Domain
 p5-data-dump                    ports/devel/p5-Data-Dump
 p5-data-dump-streamer           ports/devel/p5-Data-Dump-Streamer
 p5-data-dumper                  ports/devel/p5-Data-Dumper
@@ -16933,6 +16944,7 @@ p5-image-caa                    ports/graphics/p5-Image-Caa
 p5-image-compare                ports/graphics/p5-Image-Compare
 p5-image-delivery               ports/www/p5-Image-Delivery
 p5-image-exiftool               ports/graphics/p5-Image-ExifTool
+p5-image-exiftool-devel         ports/graphics/p5-Image-ExifTool-devel
 p5-image-grab                   ports/graphics/p5-Image-Grab
 p5-image-heatmap                ports/graphics/p5-Image-Heatmap
 p5-image-imgur                  ports/graphics/p5-Image-Imgur
@@ -17910,6 +17922,7 @@ p5-params-classify              ports/devel/p5-Params-Classify
 p5-params-coerce                ports/devel/p5-Params-Coerce
 p5-params-util                  ports/devel/p5-Params-Util
 p5-params-validate              ports/devel/p5-Params-Validate
+p5-params-validate-dependencies  ports/devel/p5-Params-Validate-Dependencies
 p5-paranoid                     ports/devel/p5-Paranoid
 p5-parent                       ports/devel/p5-parent
 p5-parse-booleanlogic           ports/textproc/p5-Parse-BooleanLogic
@@ -18724,6 +18737,7 @@ p5-test-script-run              ports/devel/p5-Test-Script-Run
 p5-test-sharedfork              ports/devel/p5-Test-SharedFork
 p5-test-simple                  ports/devel/p5-Test-Simple
 p5-test-singleton               ports/devel/p5-Test-Singleton
+p5-test-spec                    ports/devel/p5-Test-Spec
 p5-test-spelling                ports/devel/p5-Test-Spelling
 p5-test-strict                  ports/devel/p5-Test-Strict
 p5-test-subcalls                ports/devel/p5-Test-SubCalls
@@ -18735,6 +18749,7 @@ p5-test-tap-model               ports/devel/p5-Test-TAP-Model
 p5-test-tcp                     ports/devel/p5-Test-TCP
 p5-test-tempdir                 ports/devel/p5-Test-TempDir
 p5-test-tester                  ports/devel/p5-Test-Tester
+p5-test-trap                    ports/devel/p5-Test-Trap
 p5-test-unit                    ports/devel/p5-Test-Unit
 p5-test-uri                     ports/net/p5-Test-URI
 p5-test-use-ok                  ports/devel/p5-Test-use-ok
@@ -19156,6 +19171,7 @@ p5-www-search-msn               ports/www/p5-WWW-Search-MSN
 p5-www-shorten                  ports/www/p5-WWW-Shorten
 p5-www-shorten-0rz              ports/www/p5-WWW-Shorten-0rz
 p5-www-shorten-bitly            ports/www/p5-WWW-Shorten-Bitly
+p5-www-shorten-googl            ports/www/p5-WWW-Shorten-Googl
 p5-www-shorten-isgd             ports/www/p5-WWW-Shorten-isgd
 p5-www-shorten-kuso             ports/www/p5-WWW-Shorten-KUSO
 p5-www-shorten-notlong          ports/www/p5-WWW-Shorten-NotLong
@@ -22797,6 +22813,7 @@ r-cran-car                      ports/math/R-cran-car
 r-cran-caret                    ports/devel/R-cran-caret
 r-cran-coda                     ports/math/R-cran-coda
 r-cran-dbi                      ports/databases/R-cran-DBI
+r-cran-diagram                  ports/graphics/R-cran-diagram
 r-cran-digest                   ports/security/R-cran-digest
 r-cran-foreach                  ports/devel/R-cran-foreach
 r-cran-gpclib                   ports/math/R-cran-gpclib
@@ -22805,6 +22822,7 @@ r-cran-iterators                ports/devel/R-cran-iterators
 r-cran-itertools                ports/devel/R-cran-itertools
 r-cran-mvtnorm                  ports/math/R-cran-mvtnorm
 r-cran-plyr                     ports/devel/R-cran-plyr
+r-cran-proto                    ports/devel/R-cran-proto
 r-cran-psych                    ports/math/R-cran-psych
 r-cran-rcurl                    ports/ftp/R-cran-RCurl
 r-cran-reshape                  ports/devel/R-cran-reshape
@@ -22813,6 +22831,7 @@ r-cran-rmysql                   ports/databases/R-cran-RMySQL
 r-cran-roauth                   ports/security/R-cran-ROAuth
 r-cran-rsvgdevice               ports/math/R-cran-RSvgDevice
 r-cran-scraper                  ports/www/R-cran-scrapeR
+r-cran-shape                    ports/graphics/R-cran-shape
 r-cran-sm                       ports/math/R-cran-sm
 r-cran-sp                       ports/math/R-cran-sp
 r-cran-suppdists                ports/math/R-cran-SuppDists
@@ -27849,6 +27868,7 @@ zisofs-tools                    ports/sysutils/zisofs-tools
 zkt                             ports/dns/zkt
 zmailer                         ports/mail/zmailer
 zmq                             ports/devel/zmq
+zmq-devel                       ports/devel/zmq-devel
 zms                             ports/mail/zms
 zmtx-zmrx                       ports/comms/zmtx-zmrx
 znavigator                      ports/www/znavigator
