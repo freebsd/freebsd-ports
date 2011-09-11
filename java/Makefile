@@ -140,6 +140,7 @@
     SUBDIR += phpeclipse
     SUBDIR += poseidon
     SUBDIR += proguard
+    SUBDIR += rubygem-rjb
     SUBDIR += sablevm
     SUBDIR += sablevm-classpath
     SUBDIR += servingxml
