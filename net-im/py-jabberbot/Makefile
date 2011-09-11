@@ -6,14 +6,15 @@
 #
 
 PORTNAME=	jabberbot
-PORTVERSION=	0.9
-PORTREVISION=	1
+PORTVERSION=	0.14
 CATEGORIES=	net-im python
-MASTER_SITES=	http://thpinfo.com/2007/python-jabberbot/
+MASTER_SITES=	SF/pythonjabberbot/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	A simple Jabber Bot for Python
+
+LICENSE=	GPLv3
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/xmpp/auth.py:${PORTSDIR}/net-im/py-xmpppy
 
