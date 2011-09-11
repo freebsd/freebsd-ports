@@ -6,13 +6,12 @@
 #
 
 PORTNAME=	offlineimap
-DISTVERSION=	6.3.3
-PORTREVISION=	1
+DISTVERSION=	6.3.4
 CATEGORIES=	mail python
 MASTER_SITES=	http://download.github.com/ \
 		http://dist.codelabs.ru/fbsd/offlineimap/ \
 		LOCAL/rea/offlineimap
-DISTNAME=	${GITHUB_USER}-${PORTNAME}-v${DISTVERSION}-0-g3b09695
+DISTNAME=	${GITHUB_USER}-${PORTNAME}-v${DISTVERSION}-${GITHUB_VER_SUFX}
 
 MAINTAINER=	sergei@FreeBSD.org
 COMMENT=	Powerful IMAP/Maildir synchronization and reader support
@@ -24,10 +23,12 @@ LICENSE_FILE_GPLv2=${WRKSRC}/COPYING
 
 OPTIONS=	HTMLDOCS "Generate HTML documentation" Off
 
-WRKSRC=		${WRKDIR}/${GITHUB_USER}-${PORTNAME}-cf325d5
+WRKSRC=		${WRKDIR}/${GITHUB_USER}-${PORTNAME}-${GITHUB_SRC_SUFX}
 SUB_FILES=	pkg-message
 
 GITHUB_USER=	nicolas33
+GITHUB_VER_SUFX=	0-g61e50b3
+GITHUB_SRC_SUFX=	94450e9
 
 USE_PYTHON=	yes
 USE_PYDISTUTILS=	yes
