@@ -18,6 +18,8 @@ GNU_CONFIGURE=	yes
 USE_GNOME=	gnomehack
 USE_LDCONFIG=	yes
 
+CONFLICTS=	zmq-devel-[0-9]*
+
 MAN3=		zmq_bind.3 \
 		zmq_close.3 \
 		zmq_connect.3 \
