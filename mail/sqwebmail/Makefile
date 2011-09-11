@@ -56,7 +56,6 @@ CACHEOWNER?=	bin
 #
 # End of user variables
 
-#USE_GCC=	3.4
 USE_PERL5=	YES
 HAS_CONFIGURE=	YES
 USE_BZIP2=	YES
