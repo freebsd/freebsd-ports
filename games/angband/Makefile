@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	angband
-PORTVERSION=	3.2.0
+PORTVERSION=	3.3.0
 CATEGORIES=	games
-MASTER_SITES=	http://rephial.org/downloads/3.2/
+MASTER_SITES=	http://rephial.org/downloads/3.3/
+DISTNAME=	${PORTNAME}-v${PORTVERSION}
 
 MAINTAINER=	pav@FreeBSD.org
 COMMENT=	Rogue-like game with color, X11 support
@@ -23,7 +24,6 @@ CONFIGURE_ARGS+=	--with-x
 .else
 CONFIGURE_ARGS+=	--with-x=no
 .endif
-WRKSRC=		${WRKDIR}/${PORTNAME}-${DISTVERSION}
 CONFIGURE_ENV=	ac_cv_path_mkdir=mkdir
 CPP=		cc -E
 
