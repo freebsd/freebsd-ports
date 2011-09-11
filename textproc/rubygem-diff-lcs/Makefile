@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	diff-lcs
-PORTVERSION=	1.1.2
+PORTVERSION=	1.1.3
 CATEGORIES=	textproc rubygems
 MASTER_SITES=	RG
 
