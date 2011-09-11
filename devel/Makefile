@@ -807,6 +807,7 @@
     SUBDIR += libevent
     SUBDIR += libevent2
     SUBDIR += libexecinfo
+    SUBDIR += libexplain
     SUBDIR += libffi
     SUBDIR += libfirm
     SUBDIR += libfreefare
