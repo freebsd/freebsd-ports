@@ -668,6 +668,8 @@ include/wine/windows/xmldso.idl
 include/wine/windows/xmldsodid.h
 include/wine/windows/xmllite.h
 include/wine/windows/xmllite.idl
+include/wine/windows/xmlparser.h
+include/wine/windows/xmlparser.idl
 include/wine/windows/zmouse.h
 include/wine/windows/ddk/compstui.h
 include/wine/windows/ddk/hidsdi.h
@@ -1141,6 +1143,7 @@ lib/wine/fakedlls/rasapi32.dll
 lib/wine/fakedlls/rasdlg.dll
 lib/wine/fakedlls/reg.exe
 lib/wine/fakedlls/regapi.dll
+lib/wine/fakedlls/regasm.exe
 lib/wine/fakedlls/regedit.exe
 lib/wine/fakedlls/regsvcs.exe
 lib/wine/fakedlls/regsvr32.exe
@@ -1223,6 +1226,7 @@ lib/wine/fakedlls/vdhcp.vxd
 lib/wine/fakedlls/vdmdbg.dll
 lib/wine/fakedlls/ver.dll16
 lib/wine/fakedlls/version.dll
+lib/wine/fakedlls/view.exe
 lib/wine/fakedlls/vmm.vxd
 lib/wine/fakedlls/vnbt.vxd
 lib/wine/fakedlls/vnetbios.vxd
@@ -1297,6 +1301,7 @@ lib/wine/fakedlls/xinput1_2.dll
 lib/wine/fakedlls/xinput1_3.dll
 lib/wine/fakedlls/xinput9_1_0.dll
 lib/wine/fakedlls/xmllite.dll
+lib/wine/fakedlls/xolehlp.dll
 lib/wine/faultrep.dll.so
 lib/wine/fltlib.dll.so
 lib/wine/fusion.dll.so
@@ -1638,6 +1643,7 @@ lib/wine/rasapi32.dll.so
 lib/wine/rasdlg.dll.so
 lib/wine/reg.exe.so
 lib/wine/regapi.dll.so
+lib/wine/regasm.exe.so
 lib/wine/regedit.exe.so
 lib/wine/regsvcs.exe.so
 lib/wine/regsvr32.exe.so
@@ -1720,6 +1726,7 @@ lib/wine/vdhcp.vxd.so
 lib/wine/vdmdbg.dll.so
 lib/wine/ver.dll16.so
 lib/wine/version.dll.so
+lib/wine/view.exe.so
 lib/wine/vmm.vxd.so
 lib/wine/vnbt.vxd.so
 lib/wine/vnetbios.vxd.so
@@ -1794,6 +1801,7 @@ lib/wine/xinput1_2.dll.so
 lib/wine/xinput1_3.dll.so
 lib/wine/xinput9_1_0.dll.so
 lib/wine/xmllite.dll.so
+lib/wine/xolehlp.dll.so
 share/applications/wine.desktop
 %%PORTDOCS%%%%DOCSDIR%%/ANNOUNCE
 %%PORTDOCS%%%%DOCSDIR%%/AUTHORS
