@@ -1,0 +1,9 @@
+Rpad is an interactive, web-based analysis program. Rpad pages are
+interactive workbook-type sheets based on R, an open-source
+implementation of the S language. Rpad is an analysis package, a
+web-page designer, and a gui designer all wrapped in one. Rpad makes
+it easy to develop powerful data analysis applications that can be
+shared with others (most likely on an intranet). The user doesn't
+have to install anything--everything's done through a browser.
+
+WWW:	http://cran.r-project.org/web/packages/Rpad/
