@@ -82,10 +82,6 @@ PORTDOCS=	*
 MAKE_ENV+=	CCACHE_DISABLE=yes
 .endif
 
-.if ${OSVERSION} > 900007
-BROKEN=		fails to build with new utmpx
-.endif
-
 post-install:
 	@${STRIP_CMD} ${PREFIX}/bin/fwbuilder
 	@${ECHO} If you are upgrading from a previous version of fwbuilder,
