@@ -6,12 +6,14 @@
 #
 
 PORTNAME=	tt-rss
-PORTVERSION=	1.5.4
+PORTVERSION=	1.5.5
 CATEGORIES=	www
 MASTER_SITES=	http://tt-rss.org/download/
 
 MAINTAINER=	thierry@FreeBSD.org
 COMMENT=	Tiny Tiny RSS: web-based news feed (RSS/Atom) aggregator
+
+LICENSE=	GPLv2
 
 NO_BUILD=	yes
 
@@ -33,8 +35,6 @@ DB=		mysql
 .if !defined(WITHOUT_CURL)
 USE_PHP+=	curl
 .endif
-
-LICENSE=	GPLv2
 
 SUB_FILES=	httpd-tt-rss.conf pkg-message
 SUB_LIST=	DB=${DB}
