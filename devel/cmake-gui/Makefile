@@ -34,9 +34,6 @@ post-patch:
 		${XARGS} -0 -n 100 ${REINPLACE_CMD} -e 's,/usr/local,${LOCALBASE},g; \
 			s,/usr/X11R6,${LOCALBASE},g'
 
-post-configure:
-	${ECHO} "cmake:" >> ${BUILD_WRKSRC}/Makefile
-
 pre-install:
 	${LN} -sf ${CMAKE_BIN} ${WRKSRC}/bin
 	${WRKSRC}/bin/cmake-gui --help-man > ${WRKSRC}/cmake-gui.1
