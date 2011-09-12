@@ -41,7 +41,7 @@ CONFIGURE_ARGS=		--with-pg-config="${LOCALBASE}/bin/pg_config" \
 #CONFIGURE_ARGS+=	--with-timeout=30
 INSTALL_TARGET=	site-install
 
-DOCS=		Changes README.en plruby.html plruby.rd docs/doc
+DOCS=		Changes plruby.html plruby.rd
 
 PKGMESSAGE=	${WRKDIR}/createlang.sql
 
@@ -62,8 +62,7 @@ post-install:
 	${MKDIR} ${RUBY_MODEXAMPLESDIR}/
 	${INSTALL_DATA} ${WRKDIR}/createlang.sql ${RUBY_MODEXAMPLESDIR}/
 	${MKDIR} ${RUBY_MODDOCDIR}
-	@(cd ${WRKSRC}/ && ${COPYTREE_SHARE} ${DOCS} ${RUBY_MODDOCDIR}/)
-
+	(cd ${WRKSRC}/ && ${COPYTREE_SHARE} docs/doc ${RUBY_MODDOCDIR}/ README.en && ${INSTALL_DATA} ${DOCS} ${RUBY_MODDOCDIR}/)
 	@${FIND} -ds ${RUBY_MODDOCDIR} -type f -print | ${SED} -E -e \
 		's,^${PREFIX}/?,,' >> ${TMPPLIST}
 	@${FIND} -ds ${RUBY_MODDOCDIR} -type d -print | ${SED} -E -e \
