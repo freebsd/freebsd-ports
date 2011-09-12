@@ -35,7 +35,8 @@ LIB_DEPENDS=	execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		freetype.9:${PORTSDIR}/print/freetype2 \
 		nss3.1:${PORTSDIR}/security/nss \
 		gnome-keyring.0:${PORTSDIR}/security/libgnome-keyring \
-		cups.2:${PORTSDIR}/print/cups-client
+		cups.2:${PORTSDIR}/print/cups-client \
+		icudata.48:${PORTSDIR}/devel/icu
 
 RUN_DEPENDS=	${LOCALBASE}/lib/alsa-lib/libasound_module_pcm_oss.so:${PORTSDIR}/audio/alsa-plugins \
 		${LOCALBASE}/lib/X11/fonts/Droid/fonts.dir:${PORTSDIR}/x11-fonts/droid-fonts-ttf \
@@ -66,6 +67,7 @@ GYP_DEFINES+=	use_system_ffmpeg=0
 #GYP_DEFINES+=	use_system_sqlite=0
 GYP_DEFINES+=	use_system_yasm=1
 #GYP_DEFINES+=	use_system_zlib=1
+GYP_DEFINES+=	use_system_icu=1
 GYP_DEFINES+=	python_ver=${PYTHON_VER}
 GYP_DEFINES+=	disable_nacl=1
 GYP_DEFINES+=	linux_use_heapchecker=1
