@@ -5,7 +5,7 @@
 # $FreeBSD$
 
 PORTNAME=	calcurse
-PORTVERSION=	2.9.1
+PORTVERSION=	2.9.2
 CATEGORIES=	deskutils
 MASTER_SITES=	http://calcurse.org/files/ \
 		ftp://ftp2.culot.org/culot/
@@ -17,6 +17,8 @@ LICENSE=	BSD
 
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
+
+CONFIGURE_ARGS+=	--without-asciidoc
 
 MAN1=		calcurse.1
 
@@ -34,9 +36,14 @@ post-patch:
 		's|^docdir = .*|docdir = ${DOCSDIR}|' \
 		${WRKSRC}/doc/Makefile.in
 .else
-	${REINPLACE_CMD} -e \
-		'/install-data-am/ s|install-dist_docDATA||' \
-		${WRKSRC}/doc/Makefile.in
+CONFIGURE_ARGS+=	--disable-docs
+.endif
+
+post-install:
+.if defined(NOPORTDOCS)
+.for file in ${MAN1}
+	@${INSTALL_MAN} ${WRKSRC}/doc/${file} ${MANPREFIX}/man/man1
+.endfor
 .endif
 
 .include <bsd.port.mk>
