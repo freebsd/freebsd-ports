@@ -5,9 +5,9 @@
 # $FreeBSD$
 
 PORTNAME=	ros-documentation
-PORTVERSION=	1.4.1
+PORTVERSION=	1.4.2
 CATEGORIES=	devel
-MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/documentation/documentation-${PORTVERSION}/
+MASTER_SITES=	https://code.ros.org/svn/release/download/stacks/${STACKNAME}/${STACKNAME}-${PORTVERSION}/
 DISTNAME=	documentation-${PORTVERSION}
 DIST_SUBDIR=	ros
 
@@ -42,6 +42,8 @@ MAKE_ARGS=	-i --no-rosdep --status-rate=0 --disable-logging
 
 post-patch:
 	# fix path to bash
+	${GREP} -l -r "^#\! /bin/bash" ${WRKSRC} | ${XARGS} \
+	    ${REINPLACE_CMD} -E -e "s|#! /bin/bash|#!${LOCALBASE}/bin/bash|"
 	${GREP} -l -r "^#\!/bin/bash" ${WRKSRC} | ${XARGS} \
 	    ${REINPLACE_CMD} -E -e "s|#!/bin/bash|#!${LOCALBASE}/bin/bash|"
 

@@ -52,6 +52,7 @@ ros/stacks/documentation/rosdoc/templates/license-index.html
 ros/stacks/documentation/rosdoc/templates/mainpage.dox.template
 ros/stacks/documentation/rosdoc/templates/manifest.html
 ros/stacks/documentation/rosdoc/templates/msg-index.template
+ros/stacks/documentation/rosdoc/templates/msg-styles.css
 ros/stacks/documentation/rosdoc/templates/msg.template
 ros/stacks/documentation/rosdoc/templates/styles.css
 ros/stacks/documentation/rosdoc/templates/wiki-header.html
