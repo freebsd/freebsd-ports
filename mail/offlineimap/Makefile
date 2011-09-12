@@ -13,7 +13,7 @@ MASTER_SITES=	http://download.github.com/ \
 		LOCAL/rea/offlineimap
 DISTNAME=	${GITHUB_USER}-${PORTNAME}-v${DISTVERSION}-${GITHUB_VER_SUFX}
 
-MAINTAINER=	sergei@FreeBSD.org
+MAINTAINER=	rea@FreeBSD.org
 COMMENT=	Powerful IMAP/Maildir synchronization and reader support
 
 LICENSE=	GPLv2 GPLv3
