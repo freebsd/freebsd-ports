@@ -12,6 +12,7 @@
 
 PORTNAME=	pulseaudio
 PORTVERSION=	0.9.22
+PORTREVISION=	1
 CATEGORIES=	audio
 MASTER_SITES=	http://0pointer.de/lennart/projects/${PORTNAME}/
 
@@ -21,7 +22,7 @@ COMMENT=	Sound server for UNIX
 LIB_DEPENDS=	samplerate.1:${PORTSDIR}/audio/libsamplerate \
 		speexdsp.1:${PORTSDIR}/audio/speex \
 		dbus-1.3:${PORTSDIR}/devel/dbus \
-		gdbm.3:${PORTSDIR}/databases/gdbm \
+		gdbm.4:${PORTSDIR}/databases/gdbm \
 		execinfo:${PORTSDIR}/devel/libexecinfo \
 		ck-connector.0:${PORTSDIR}/sysutils/consolekit
 

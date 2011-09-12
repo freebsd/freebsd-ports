@@ -7,7 +7,7 @@
 
 PORTNAME=	q
 PORTVERSION=	7.11
-PORTREVISION=	8
+PORTREVISION=	9
 CATEGORIES=	lang
 MASTER_SITES=	SF/${PORTNAME}-lang/${PORTNAME}/${PORTVERSION}
 
@@ -17,7 +17,7 @@ COMMENT=	Q -- equational programming language
 LIB_DEPENDS=	MagickWand.4:${PORTSDIR}/graphics/ImageMagick \
     		curl.6:${PORTSDIR}/ftp/curl \
 		freetype.9:${PORTSDIR}/print/freetype2 \
-		gdbm.3:${PORTSDIR}/databases/gdbm \
+		gdbm.4:${PORTSDIR}/databases/gdbm \
 		gmp.10:${PORTSDIR}/math/gmp \
 		iodbc.3:${PORTSDIR}/databases/libiodbc \
     		xml2.5:${PORTSDIR}/textproc/libxml2 \

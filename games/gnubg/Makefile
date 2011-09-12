@@ -7,7 +7,7 @@
 
 PORTNAME=	gnubg
 PORTVERSION=	0.15
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	games
 MASTER_SITES=	http://www.gnubg.org/media/sources/:src \
 		${MASTER_SITE_GNU_ALPHA:S/$/:ts/}
@@ -21,7 +21,7 @@ COMMENT=	GNU Backgammon
 
 BUILD_DEPENDS=	bison:${PORTSDIR}/devel/bison
 LIB_DEPENDS=	gmp.10:${PORTSDIR}/math/gmp \
-		gdbm.3:${PORTSDIR}/databases/gdbm \
+		gdbm.4:${PORTSDIR}/databases/gdbm \
 		gtkextra-x11-2.0.1:${PORTSDIR}/x11-toolkits/gtkextra2 \
 		gtkglext-x11-1.0.0:${PORTSDIR}/x11-toolkits/gtkglext
 

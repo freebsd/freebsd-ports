@@ -7,7 +7,7 @@
 
 PORTNAME=	zinf
 PORTVERSION=	2.2.5
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	audio ipv6
 MASTER_SITES=	SF
 
@@ -16,7 +16,7 @@ COMMENT=	GTK-based MP3 player
 
 LIB_DEPENDS=	id3-3.8.3:${PORTSDIR}/audio/id3lib \
 		musicbrainz.4:${PORTSDIR}/audio/libmusicbrainz \
-		gdbm.3:${PORTSDIR}/databases/gdbm
+		gdbm.4:${PORTSDIR}/databases/gdbm
 
 USE_GNOME=	gnomehack gtk20 lthack
 WANT_GNOME=	yes
