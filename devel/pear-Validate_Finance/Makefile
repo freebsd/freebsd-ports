@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Validate_Finance
-PORTVERSION=	0.5.4
+PORTVERSION=	0.5.5
 CATEGORIES=	devel www pear
 
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	PEAR Finance Validation class
 
 BUILD_DEPENDS=	pear-Validate>=0.5.0:${PORTSDIR}/devel/pear-Validate
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	pear-Validate>=0.5.0:${PORTSDIR}/devel/pear-Validate
 
 FILES=		Validate/Finance.php \
 		Validate/Finance/IBAN.php \
