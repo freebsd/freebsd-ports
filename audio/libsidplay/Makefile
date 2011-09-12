@@ -15,7 +15,7 @@ MAINTAINER=	sec@42.org
 COMMENT=	A Commodore SID-chip emulator library to play SID music files
 
 DEPRECATED=	No Master Site
-EXPIRATION_DATE=	2011-09-01
+EXPIRATION_DATE=	2011-09-30
 
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
