@@ -6,18 +6,18 @@
 #
 
 PORTNAME=	znotes
-PORTVERSION=	0.4.4
+PORTVERSION=	0.4.5
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Simple notes based on QT4
 
+LICENSE=	GPLv3
+
 USE_QT_VER=	4
 QT_COMPONENTS=	gui network xml qmake_build uic_build moc_build rcc_build \
 		linguist_build
-
-LICENSE=	GPLv3
 
 DESKTOP_ENTRIES="zNotes" "Simple notes" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" "${PORTNAME}" \
@@ -47,9 +47,13 @@ do-install:
 	${MKDIR} ${DATADIR}/translations
 	${INSTALL_DATA} ${WRKSRC}/translations/*.qm ${DATADIR}/translations
 PLIST_FILES+=	%%DATADIR%%/translations/${PORTNAME}_cs.qm \
+		%%DATADIR%%/translations/${PORTNAME}_es.qm \
+		%%DATADIR%%/translations/${PORTNAME}_en.qm \
 		%%DATADIR%%/translations/${PORTNAME}_ru.qm \
+		%%DATADIR%%/translations/${PORTNAME}_sk.qm \
 		%%DATADIR%%/translations/${PORTNAME}_pt_BR.qm \
 		%%DATADIR%%/translations/${PORTNAME}_uk.qm
+
 PLIST_DIRS+=	%%DATADIR%%/translations \
 		%%DATADIR%%
 .else
