@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Validate
-PORTVERSION=	0.8.2
+PORTVERSION=	0.8.4
 CATEGORIES=	devel www pear
 
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	PEAR Validation class
 
 BUILD_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/PEAR.php:${PORTSDIR}/devel/pear
 
 FILES=		Validate.php
 
