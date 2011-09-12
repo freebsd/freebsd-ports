@@ -172,6 +172,7 @@
 %%LIB32DIR%%/webmin/virtual-server/feature-web.pl
 %%LIB32DIR%%/webmin/virtual-server/feature-webalizer.pl
 %%LIB32DIR%%/webmin/virtual-server/feature-webmin.pl
+%%LIB32DIR%%/webmin/virtual-server/fixperms.cgi
 %%LIB32DIR%%/webmin/virtual-server/frame_form.cgi
 %%LIB32DIR%%/webmin/virtual-server/framefwd-template
 %%LIB32DIR%%/webmin/virtual-server/ftp-lib.pl
@@ -233,6 +234,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/balancers.html
 %%LIB32DIR%%/webmin/virtual-server/help/bandwidth.html
 %%LIB32DIR%%/webmin/virtual-server/help/bandwidth_bw_active.html
+%%LIB32DIR%%/webmin/virtual-server/help/bandwidth_bw_backup.html
 %%LIB32DIR%%/webmin/virtual-server/help/bandwidth_bw_disable.html
 %%LIB32DIR%%/webmin/virtual-server/help/bandwidth_bw_email.html
 %%LIB32DIR%%/webmin/virtual-server/help/bandwidth_bw_enable.html
@@ -486,6 +488,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/fwdto.html
 %%LIB32DIR%%/webmin/virtual-server/help/htmldir.html
 %%LIB32DIR%%/webmin/virtual-server/help/iface.html
+%%LIB32DIR%%/webmin/virtual-server/help/iface6.html
 %%LIB32DIR%%/webmin/virtual-server/help/index.de.html
 %%LIB32DIR%%/webmin/virtual-server/help/index.html
 %%LIB32DIR%%/webmin/virtual-server/help/ipaddress.de.html
@@ -561,6 +564,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/postgres.html
 %%LIB32DIR%%/webmin/virtual-server/help/postgrey.html
 %%LIB32DIR%%/webmin/virtual-server/help/prefixname.html
+%%LIB32DIR%%/webmin/virtual-server/help/provision.html
 %%LIB32DIR%%/webmin/virtual-server/help/proxypass.html
 %%LIB32DIR%%/webmin/virtual-server/help/qmailfiles.html
 %%LIB32DIR%%/webmin/virtual-server/help/qmailquota.html
@@ -720,6 +724,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/template_sgroup.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_skel.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_skel_nosubs.html
+%%LIB32DIR%%/webmin/virtual-server/help/template_skel_onlysubs.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_skel_subs.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_spam.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_spam_host.html
@@ -737,6 +742,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/template_subject.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_suexec.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_ugroup_mode.html
+%%LIB32DIR%%/webmin/virtual-server/help/template_uplainpass.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_uquota.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_user_def.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_ushell.html
@@ -749,6 +755,7 @@
 %%LIB32DIR%%/webmin/virtual-server/help/template_webalizer.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_webmail.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_webmaildom.html
+%%LIB32DIR%%/webmin/virtual-server/help/template_webmin_group.html
 %%LIB32DIR%%/webmin/virtual-server/help/template_writelogs.html
 %%LIB32DIR%%/webmin/virtual-server/help/tmpls.html
 %%LIB32DIR%%/webmin/virtual-server/help/tscripts.html
@@ -1037,6 +1044,8 @@
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.85/0-whmcs
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.85/1-spamvirus
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.85/2-dnsmanual
+%%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.88/1-hashpass
+%%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.88/2-newscripts
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.52/8-webowner
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55/8-move
 %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55/9-preload
@@ -1202,6 +1211,7 @@
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.55
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl/3.52
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-gpl
+@dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.88
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.85
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.84
 @dirrm %%LIB32DIR%%/webmin/virtual-server/newfeatures-all/3.82
@@ -1238,7 +1248,6 @@
 @dirrm %%LIB32DIR%%/webmin/virtual-server/PHP
 @dirrm %%LIB32DIR%%/webmin/virtual-server/IDNA
 @dirrm %%LIB32DIR%%/webmin/virtual-server
-
 @dirrmtry etc/webmin/virtual-server
 @dirrmtry etc/webmin
 @exec [ -e %D/etc/webmin/virtual-server ] || mkdir %D/etc/webmin/virtual-server
