@@ -7,7 +7,7 @@
 
 PORTNAME=	conduit
 PORTVERSION=	0.3.17
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	deskutils
 MASTER_SITES=	GNOME
 
@@ -15,15 +15,15 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Synchronization application for GNOME
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas \
-		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23 \
+		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		xmlproc_parse:${PORTSDIR}/textproc/py-xml \
-		py*-vobject>=0.4.8:${PORTSDIR}/deskutils/py-vobject \
+		${PYTHON_PKGNAMEPREFIX}vobject>=0.4.8:${PORTSDIR}/deskutils/py-vobject \
 		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus
 LIB_DEPENDS=	dbus-1.3:${PORTSDIR}/devel/dbus
 RUN_DEPENDS=	${PYTHON_SITELIBDIR}/goocanvasmodule.so:${PORTSDIR}/graphics/py-goocanvas \
-		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite23 \
+		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		xmlproc_parse:${PORTSDIR}/textproc/py-xml \
-		py*-vobject>=0.4.8:${PORTSDIR}/deskutils/py-vobject \
+		${PYTHON_PKGNAMEPREFIX}vobject>=0.4.8:${PORTSDIR}/deskutils/py-vobject \
 		${LOCALBASE}/libdata/pkgconfig/dbus-python.pc:${PORTSDIR}/devel/py-dbus \
 		xdg-open:${PORTSDIR}/devel/xdg-utils
 
