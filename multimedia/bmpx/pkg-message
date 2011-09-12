@@ -1,3 +1,0 @@
-After installation BMPx will be able to playback mp3 and ogg
-files only. If you need support for additional formats, you
-should install appropriate GStreamer plugin.
