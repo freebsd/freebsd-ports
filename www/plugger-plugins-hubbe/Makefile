@@ -16,6 +16,9 @@ EXTRACT_ONLY=	# empty
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Meta package installing all author-recommended Plugger plugins
 
+DEPRECATED=	Relies on audio/libsidplay, which is deprecated
+EXPIRATION_DATE=	2011-09-30
+
 RUN_DEPENDS=	sidplay:${PORTSDIR}/audio/sidplay \
 		acroread8:${PORTSDIR}/print/acroread8 \
 		mpg123:${PORTSDIR}/audio/mpg123 \
