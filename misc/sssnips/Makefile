@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	sssnips
-PORTVERSION=	0.03
+PORTVERSION=	0.04
 CATEGORIES=	misc
 MASTER_SITES=	http://devel.ringlet.net/misc/sssnips/
 
@@ -14,8 +14,9 @@ MAINTAINER=	roam@FreeBSD.org
 COMMENT=	Shell script snippets written by Peter Pentchev
 
 LICENSE=	BSD
-PROGRAMS=	bigfile declean getkey hostsearch mkv noagent qpr \
-		signfiles stun switch-link syspower vcr ws
+
+PROGRAMS=	bigfile declean getkey hostsearch mkv noagent qidiff qpr \
+		signfiles stun switch-link syspower vcr vcrtty ws
 PLIST_FILES=	${PROGRAMS:S@^@bin/@}
 MAN1=		${PROGRAMS:S/$/.1/}
 MANCOMPRESSED=	yes

@@ -1,11 +1,11 @@
 Description: Use /usr/local/etc/vcr on FreeBSD.
 Forwarded: not-needed
 Author: Peter Pentchev <roam@FreeBSD.org>
-Last-Update: 2010-10-24
+Last-Update: 2011-09-12
 
 --- vcr.sh.orig
 +++ vcr.sh
-@@ -90,8 +90,8 @@
+@@ -111,8 +111,8 @@
  fi
  
  # Look for a definition file if not specified
