@@ -286,6 +286,7 @@
     SUBDIR += octave-forge-quaternion
     SUBDIR += octave-forge-secs1d
     SUBDIR += octave-forge-secs2d
+    SUBDIR += octave-forge-secs3d
     SUBDIR += octave-forge-signal
     SUBDIR += octave-forge-simp
     SUBDIR += octave-forge-sockets
