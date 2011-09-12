@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	dmd
-PORTVERSION=	1.069
+PORTVERSION=	1.070
 CATEGORIES=	lang
 MASTER_SITES=	http://ftp.digitalmars.com/
 DISTNAME=	${PORTNAME}.${PORTVERSION}
@@ -16,6 +16,7 @@ COMMENT=	Official compiler for the D 1.0 programming language
 
 NO_PACKAGE=	Packages are not validation-tested by the developer
 USE_ZIP=	yes
+USE_GMAKE=	yes
 MAN1=		dmd.1
 MAN5=		dmd.conf.5
 PORTDOCS=	*.txt html/ phobos/
@@ -36,10 +37,9 @@ OPTIONS=	SOURCE		"Compile dmd and phobos from source" off
 MODULEDIR=	${PREFIX}/include/d/phobos
 
 .if defined(WITH_SOURCE)
-MAKEFILE=	freebsd.mak
+MAKEFILE=	posix.mak
 .else
 NO_BUILD=	yes
-PLIST_FILES=	bin/dmd.conf
 .endif
 
 post-patch:
@@ -47,11 +47,9 @@ post-patch:
 	@${REINPLACE_CMD} -e "s|gcc|${CC}|"			\
 		${WRKSRC}/../phobos/freebsd.mak			\
 		${WRKSRC}/../phobos/etc/c/zlib/freebsd.mak	\
-		${WRKSRC}/../phobos/internal/gc/freebsd.mak	\
-		${WRKSRC}/freebsd.mak
+		${WRKSRC}/../phobos/internal/gc/freebsd.mak
 	@${REINPLACE_CMD} -e "s|g++|${CXX}|"			\
-		${WRKSRC}/../phobos/freebsd.mak			\
-		${WRKSRC}/freebsd.mak
+		${WRKSRC}/../phobos/freebsd.mak
 	@${REINPLACE_CMD} -e "s|/etc|${PREFIX}/etc|"	\
 		${WRKDIR}/dmd/man/man1/dmd.1		\
 		${WRKDIR}/dmd/man/man1/dmd.conf.5
@@ -67,8 +65,6 @@ post-patch:
 
 post-build:
 	@${REINPLACE_CMD} -e "s| etc/c/zlib/gzio.o||" ${WRKSRC}/../phobos/freebsd.mak
-	cd ${WRKSRC}/../phobos && \
-		${SETENV} PATH=${PATH}:${WRKSRC} ${MAKE} ${MAKE_FLAGS} freebsd.mak
 
 do-install:
 	${INSTALL_MAN} ${WRKDIR}/dmd/man/man1/dmd.1 ${MANPREFIX}/man/man1
@@ -76,14 +72,8 @@ do-install:
 .if !exists(${PREFIX}/etc/dmd.conf)
 	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/bin32/dmd.conf ${PREFIX}/etc
 .endif
-.if defined(WITH_SOURCE)
-	${INSTALL_PROGRAM} ${WRKSRC}/dmd ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKSRC}/../phobos/libphobos.a ${PREFIX}/lib
-.else
-	${INSTALL_PROGRAM} ${WRKDIR}/dmd/freebsd/bin/dmd ${PREFIX}/bin
-	${LN} -sf ${PREFIX}/etc/dmd.conf ${PREFIX}/bin
-	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/lib/libphobos.a ${PREFIX}/lib
-.endif
+	${INSTALL_PROGRAM} ${WRKDIR}/dmd/freebsd/bin32/dmd ${PREFIX}/bin
+	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/lib32/libphobos.a ${PREFIX}/lib
 	${MKDIR} ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/bin32/dmd.conf ${EXAMPLESDIR}
 	${INSTALL_DATA} ${WRKDIR}/dmd/freebsd/bin32/dmd.conf.tango ${EXAMPLESDIR}
