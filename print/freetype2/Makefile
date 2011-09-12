@@ -29,7 +29,6 @@ USE_LDCONFIG=	yes
 GNU_CONFIGURE=	yes
 USE_GNOME=	pkgconfig ltverhack:9
 LIBTOOLFILES=	builds/unix/configure
-CONFIGURE_ARGS=	--disable-nls
 CONFIGURE_WRKSRC=	${WRKSRC}/builds/unix
 
 .if defined(WITH_LCD_FILTERING)
