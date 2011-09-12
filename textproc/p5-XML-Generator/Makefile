@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	XML-Generator
-PORTVERSION=	1.03
+PORTVERSION=	1.04
 CATEGORIES=	textproc perl5
 MASTER_SITES=	CPAN
 PKGNAMEPREFIX=	p5-
@@ -14,15 +14,16 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	ah@linux-hq.de
 COMMENT=	A simple Perl module for generating XML documents
 
-RUN_DEPENDS=	${SITE_PERL}/XML/DOM.pm:${PORTSDIR}/textproc/p5-XML-DOM \
-		${SITE_PERL}/Tie/IxHash.pm:${PORTSDIR}/devel/p5-Tie-IxHash
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM
+RUN_DEPENDS=	p5-XML-DOM>=0:${PORTSDIR}/textproc/p5-XML-DOM
+
+TEST_DEPENDS=	p5-Tie-IxHash>=0:${PORTSDIR}/devel/p5-Tie-IxHash
 
 PERL_CONFIGURE=	yes
 
 MAN3=		XML::Generator.3 XML::Generator::DOM.3
 
-test:
-	@(cd ${WRKSRC} && make test)
+regression-test test:
+	@(cd ${WRKSRC}/ && ${SETENV} ${MAKE_ENV} ${MAKE} test)
 
 .include <bsd.port.mk>
