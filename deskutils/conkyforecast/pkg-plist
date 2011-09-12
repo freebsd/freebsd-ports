@@ -1,9 +1,7 @@
 bin/conkyForecast
+bin/conkyForecast-SunsetSunriseCountdown
 %%DATADIR%%/conkyForecast.config
-%%DATADIR%%/conkyForecast.pot
 %%DATADIR%%/conkyForecast.py
-%%DATADIR%%/example/conkyForecast.template
-%%DATADIR%%/example/conkyrc
 %%FONTSDIR%%/Arrows.sfd.tar.gz
 %%FONTSDIR%%/Arrows.ttf
 %%FONTSDIR%%/ConkyWeather.otf
@@ -168,15 +166,43 @@ bin/conkyForecast
 %%DATADIR%%/locale/fr/LC_MESSAGES/conkyForecast.po
 %%DATADIR%%/locale/it/LC_MESSAGES/conkyForecast.mo
 %%DATADIR%%/locale/it/LC_MESSAGES/conkyForecast.po
+%%DATADIR%%/locale/lt/LC_MESSAGES/conkyForecast.mo
+%%DATADIR%%/locale/lt/LC_MESSAGES/conkyForecast.po
+%%DATADIR%%/locale/locale_codes.txt
 %%DATADIR%%/locale/nl/LC_MESSAGES/conkyForecast.mo
 %%DATADIR%%/locale/nl/LC_MESSAGES/conkyForecast.po
 %%DATADIR%%/locale/pl/LC_MESSAGES/conkyForecast.mo
 %%DATADIR%%/locale/pl/LC_MESSAGES/conkyForecast.po
 %%DATADIR%%/locale/ro/LC_MESSAGES/conkyForecast.mo
 %%DATADIR%%/locale/ro/LC_MESSAGES/conkyForecast.po
-%%DATADIR%%/test/conkyForecast.template
-%%DATADIR%%/test/conkyrc
+%%DATADIR%%/locale/sk/LC_MESSAGES/conkyForecast.po
+%%DATADIR%%/locale/sk/LC_MESSAGES/conkyForecast.mo
+%%DATADIR%%/locale/conkyForecast.pot
+%%DATADIR%%/locale/sv/LC_MESSAGES/conkyForecast.po
+%%DATADIR%%/locale/sv/LC_MESSAGES/conkyForecast.mo
+%%DATADIR%%/locale/zh/LC_MESSAGES/conkyForecast.mo
+%%DATADIR%%/locale/zh/LC_MESSAGES/conkyForecast.po
+%%DATADIR%%/test/conkyForecast.test.sh
+%%DATADIR%%/test/conkyForecast.test.template
+%%DATADIR%%/test/conkyForecast.test.conkyrc
+%%DATADIR%%/example/conkyForecast.fontbased.sh
+%%DATADIR%%/example/conkyForecast.imagebasedtemplate.template
+%%DATADIR%%/example/conkyForecast.imagebasedtemplate.conkyrc
+%%DATADIR%%/example/conkyForecast.fontbased.conkyrc
+%%DATADIR%%/example/conkyForecast.imagebasedtemplate.sh
+%%DATADIR%%/example/conkyForecast.fontbasedtemplate.template
+%%DATADIR%%/example/conkyForecast.fontbasedtemplate.sh
+%%DATADIR%%/example/conkyForecast.fontbasedtemplate.conkyrc
+%%DATADIR%%/conkyForecast-SunsetSunriseCountdown.py
 @dirrm %%DATADIR%%/test
+@dirrm %%DATADIR%%/locale/zh/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/zh
+@dirrm %%DATADIR%%/locale/sv/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/sv
+@dirrm %%DATADIR%%/locale/sk/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/sk
+@dirrm %%DATADIR%%/locale/lt/LC_MESSAGES
+@dirrm %%DATADIR%%/locale/lt
 @dirrm %%DATADIR%%/locale/ro/LC_MESSAGES
 @dirrm %%DATADIR%%/locale/ro
 @dirrm %%DATADIR%%/locale/pl/LC_MESSAGES
