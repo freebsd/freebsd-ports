@@ -50,7 +50,6 @@ post-install:
 		-C ${GNUSTEP_LOCAL_ROOT}/Library/ --exclude COPYING
 	@${CHOWN} -R root:wheel ${CENON_LIB_DIR}
 	@${CHMOD} -R u=rwX,go=rX ${CENON_LIB_DIR}
-	@${CHMOD} 444 ${CENON_LIB_DIR}/INSTALL
 	${INSTALL_DATA} ${WRKSRC}/Library/Cenon/README ${CENON_LIB_DIR}/
 .else
 	${CP} -R ${WRKSRC}/Library/Cenon ${GNUSTEP_LOCAL_ROOT}/Library/
