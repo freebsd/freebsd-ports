@@ -7,6 +7,7 @@
 
 PORTNAME=	gcompris
 PORTVERSION=	9.6.1
+PORTREVISION=	1
 CATEGORIES=	games gnome
 MASTER_SITES=	SF/${PORTNAME}/${PORTVERSION}/
 
@@ -18,7 +19,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 
 BUILD_DEPENDS=	texi2html:${PORTSDIR}/textproc/texi2html \
 		gnuchess:${PORTSDIR}/games/gnuchess \
-		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20
+		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3
 LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		ao.4:${PORTSDIR}/audio/libao \
 		assetml.0:${PORTSDIR}/devel/libassetml \
@@ -26,14 +27,14 @@ LIB_DEPENDS=	vorbis.4:${PORTSDIR}/audio/libvorbis \
 		gnet-2.0.0:${PORTSDIR}/net/gnet2 \
 		dbus-glib-1.2:${PORTSDIR}/devel/dbus-glib
 RUN_DEPENDS=	gnuchess:${PORTSDIR}/games/gnuchess \
-		${PYTHON_SITELIBDIR}/pysqlite2/__init__.py:${PORTSDIR}/databases/py-pysqlite20 \
+		${PYTHON_SITELIBDIR}/_sqlite3.so:${PORTSDIR}/databases/py-sqlite3 \
 		gnucap:${PORTSDIR}/cad/gnucap
 
 USE_GMAKE=	yes
 USE_GETTEXT=	yes
 GNU_CONFIGURE=	yes
 USE_GSTREAMER=	yes
-USE_PYTHON=	yes
+USE_PYTHON=	2.5+
 USE_SDL=	mixer
 USE_DISPLAY=	yes
 USE_GNOME=	gnomehack intlhack gnomeprefix gtk20 pygtk2 libxml2 librsvg2
