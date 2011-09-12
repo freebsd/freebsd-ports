@@ -6,10 +6,10 @@
 #
 
 PORTNAME=	epoch
-PORTVERSION=	1.4
+PORTVERSION=	1.6
 CATEGORIES=	deskutils
 MASTER_SITES=	GOOGLE_CODE
-DISTNAME=	Epoch${PORTVERSION}
+DISTNAME=	${PORTNAME}${PORTVERSION}src
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Epoch is small and handy timeline application
@@ -23,7 +23,7 @@ QT_COMPONENTS=	gui qmake_build moc_build rcc_build
 
 PLIST_FILES=	bin/${PORTNAME} share/pixmaps/${PORTNAME}.png
 
-WRKSRC=		${WRKDIR}/${DISTNAME}/src
+WRKSRC=		${WRKDIR}
 
 DESKTOP_ENTRIES="Epoch" "Timeline application" \
 		"${PREFIX}/share/pixmaps/${PORTNAME}.png" "${PORTNAME}" \
