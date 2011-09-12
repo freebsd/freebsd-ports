@@ -4,7 +4,7 @@
 #
 # $FreeBSD$
 
-PORTREVISION?=	3
+PORTREVISION?=	4
 PKGNAMESUFFIX=	-freebsd
 
 COMMENT=	Version control system with FreeBSD Project repo customizations
