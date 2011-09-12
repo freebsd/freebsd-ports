@@ -51,6 +51,10 @@ share/postgresql/extension/plpgsql--unpackaged--1.0.sql
 share/postgresql/extension/plpgsql.control
 @dirrmtry share/postgresql/extension
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/initdb-9.1.mo
+%%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_controldata-9.1.mo
+%%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_ctl-9.1.mo
+%%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_resetxlog-9.1.mo
+%%GETTEXT%%share/locale/cs/LC_MESSAGES/plpgsql-9.1.mo
 %%GETTEXT%%share/locale/de/LC_MESSAGES/initdb-9.1.mo
 %%GETTEXT%%share/locale/de/LC_MESSAGES/pg_controldata-9.1.mo
 %%GETTEXT%%share/locale/de/LC_MESSAGES/pg_ctl-9.1.mo
@@ -71,7 +75,6 @@ share/postgresql/extension/plpgsql.control
 %%GETTEXT%%share/locale/fr/LC_MESSAGES/postgres-9.1.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/initdb-9.1.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/pg_controldata-9.1.mo
-%%GETTEXT%%share/locale/it/LC_MESSAGES/pg_ctl-9.1.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/pg_resetxlog-9.1.mo
 %%GETTEXT%%share/locale/it/LC_MESSAGES/plpgsql-9.1.mo
 %%GETTEXT%%share/locale/ja/LC_MESSAGES/initdb-9.1.mo
@@ -82,9 +85,13 @@ share/postgresql/extension/plpgsql.control
 %%GETTEXT%%share/locale/ja/LC_MESSAGES/postgres-9.1.mo
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/initdb-9.1.mo
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_controldata-9.1.mo
-%%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_ctl-9.1.mo
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_resetxlog-9.1.mo
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/plpgsql-9.1.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/initdb-9.1.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_controldata-9.1.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_ctl-9.1.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_resetxlog-9.1.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/plpgsql-9.1.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/initdb-9.1.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_controldata-9.1.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/pg_ctl-9.1.mo
@@ -100,21 +107,15 @@ share/postgresql/extension/plpgsql.control
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_ctl-9.1.mo
 %%GETTEXT%%share/locale/ru/LC_MESSAGES/pg_resetxlog-9.1.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/initdb-9.1.mo
-%%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_controldata-9.1.mo
-%%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_ctl-9.1.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_resetxlog-9.1.mo
-%%GETTEXT%%share/locale/ta/LC_MESSAGES/initdb-9.1.mo
-%%GETTEXT%%share/locale/ta/LC_MESSAGES/pg_controldata-9.1.mo
-%%GETTEXT%%share/locale/ta/LC_MESSAGES/pg_ctl-9.1.mo
 %%GETTEXT%%share/locale/ta/LC_MESSAGES/pg_resetxlog-9.1.mo
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/initdb-9.1.mo
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_controldata-9.1.mo
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_ctl-9.1.mo
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/pg_resetxlog-9.1.mo
-%%GETTEXT%%share/locale/tr/LC_MESSAGES/postgres-9.1.mo
+%%GETTEXT%%share/locale/tr/LC_MESSAGES/plpgsql-9.1.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/initdb-9.1.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_controldata-9.1.mo
-%%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_ctl-9.1.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/pg_resetxlog-9.1.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/plpgsql-9.1.mo
 %%GETTEXT%%share/locale/zh_CN/LC_MESSAGES/postgres-9.1.mo
@@ -152,6 +153,7 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/Africa/Gaborone
 %%TZDATA%%share/postgresql/timezone/Africa/Harare
 %%TZDATA%%share/postgresql/timezone/Africa/Johannesburg
+%%TZDATA%%share/postgresql/timezone/Africa/Juba
 %%TZDATA%%share/postgresql/timezone/Africa/Kampala
 %%TZDATA%%share/postgresql/timezone/Africa/Khartoum
 %%TZDATA%%share/postgresql/timezone/Africa/Kigali
@@ -266,10 +268,12 @@ share/postgresql/snowball_create.sql
 %%TZDATA%%share/postgresql/timezone/America/Kentucky/Louisville
 %%TZDATA%%share/postgresql/timezone/America/Kentucky/Monticello
 %%TZDATA%%share/postgresql/timezone/America/Knox_IN
+%%TZDATA%%share/postgresql/timezone/America/Kralendijk
 %%TZDATA%%share/postgresql/timezone/America/La_Paz
 %%TZDATA%%share/postgresql/timezone/America/Lima
 %%TZDATA%%share/postgresql/timezone/America/Los_Angeles
 %%TZDATA%%share/postgresql/timezone/America/Louisville
+%%TZDATA%%share/postgresql/timezone/America/Lower_Princes
 %%TZDATA%%share/postgresql/timezone/America/Maceio
 %%TZDATA%%share/postgresql/timezone/America/Managua
 %%TZDATA%%share/postgresql/timezone/America/Manaus
