@@ -7,22 +7,20 @@
 
 PORTNAME=	noip
 PORTVERSION=	2.1.9
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	dns
 MASTER_SITES=	http://www.no-ip.com/client/linux/ \
 		CRITICAL
 
-MAINTAINER=	ehaupt@FreeBSD.org
+MAINTAINER=	sthalik@tehran.lain.pl
 COMMENT=	No-IP.com's dynamic DNS update client
+
+LICENSE=	GPLv2
 
 ALL_TARGET=	noip2
 SUB_FILES=	pkg-message
 PKGMESSAGE=	${WRKDIR}/pkg-message
 USE_RC_SUBR=	noip
-
-LICENSE=	GPLv2
-
-CFLAGS+=	-Dbsd_with_getifaddrs
 
 USERS=		noip
 GROUPS=		noip
