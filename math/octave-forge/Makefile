@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	octave-forge
-PORTVERSION=	20110205
-PORTREVISION=	6
+PORTVERSION=	20110912
 CATEGORIES=	math
 MASTER_SITES=	#none
 DISTFILES=	#none
@@ -78,6 +77,7 @@ OPTIONS=	\
 	QUATERNION "Install package: quaternion" On \
 	SECS1D "Install package: secs1d" On \
 	SECS2D "Install package: secs2d" On \
+	SECS3D "Install package: secs3d" On \
 	SIGNAL "Install package: signal" On \
 	SIMP "Install package: simp" On \
 	SOCKETS "Install package: sockets" On \
@@ -281,6 +281,9 @@ RUN_DEPENDS+=	${TARBALLS_DIR}/secs1d.tar.gz:${PORTSDIR}/math/octave-forge-secs1d
 .endif
 .if defined(WITH_SECS2D)
 RUN_DEPENDS+=	${TARBALLS_DIR}/secs2d.tar.gz:${PORTSDIR}/math/octave-forge-secs2d
+.endif
+.if defined(WITH_SECS3D)
+RUN_DEPENDS+=	${TARBALLS_DIR}/secs3d.tar.gz:${PORTSDIR}/math/octave-forge-secs3d
 .endif
 .if defined(WITH_SIGNAL)
 RUN_DEPENDS+=	${TARBALLS_DIR}/signal.tar.gz:${PORTSDIR}/math/octave-forge-signal
