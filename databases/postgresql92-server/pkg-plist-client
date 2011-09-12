@@ -218,6 +218,7 @@ include/postgresql/server/nodes/bitmapset.h
 include/postgresql/server/nodes/execnodes.h
 include/postgresql/server/nodes/makefuncs.h
 include/postgresql/server/nodes/memnodes.h
+include/postgresql/server/nodes/replnodes.h
 include/postgresql/server/nodes/nodeFuncs.h
 include/postgresql/server/nodes/nodes.h
 include/postgresql/server/nodes/params.h
@@ -335,7 +336,6 @@ include/postgresql/server/regex/regerrs.h
 include/postgresql/server/regex/regex.h
 include/postgresql/server/regex/regguts.h
 include/postgresql/server/replication/basebackup.h
-include/postgresql/server/replication/replnodes.h
 include/postgresql/server/replication/syncrep.h
 include/postgresql/server/replication/walprotocol.h
 include/postgresql/server/replication/walreceiver.h
@@ -591,7 +591,11 @@ lib/postgresql/pgxs/src/nls-global.mk
 share/postgresql/pg_service.conf.sample
 share/postgresql/psqlrc.sample
 @dirrmtry share/postgresql
+%%GETTEXT%%share/locale/cs/LC_MESSAGES/ecpg-9.1.mo
+%%GETTEXT%%share/locale/cs/LC_MESSAGES/ecpglib6-9.1.mo
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/libpq5-9.1.mo
+%%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_config-9.1.mo
+%%GETTEXT%%share/locale/cs/LC_MESSAGES/pg_dump-9.1.mo
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/pgscripts-9.1.mo
 %%GETTEXT%%share/locale/cs/LC_MESSAGES/psql-9.1.mo
 %%GETTEXT%%share/locale/de/LC_MESSAGES/ecpg-9.1.mo
@@ -634,6 +638,13 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/pg_dump-9.1.mo
 %%GETTEXT%%share/locale/ko/LC_MESSAGES/pgscripts-9.1.mo
 %%GETTEXT%%share/locale/nb/LC_MESSAGES/pg_config-9.1.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/ecpg-9.1.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/ecpglib6-9.1.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/libpq5-9.1.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_config-9.1.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/pg_dump-9.1.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/pgscripts-9.1.mo
+%%GETTEXT%%share/locale/pl/LC_MESSAGES/psql-9.1.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/ecpg-9.1.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/ecpglib6-9.1.mo
 %%GETTEXT%%share/locale/pt_BR/LC_MESSAGES/libpq5-9.1.mo
@@ -649,8 +660,6 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_config-9.1.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/pg_dump-9.1.mo
 %%GETTEXT%%share/locale/sv/LC_MESSAGES/pgscripts-9.1.mo
-%%GETTEXT%%share/locale/sv/LC_MESSAGES/psql-9.1.mo
-%%GETTEXT%%share/locale/ta/LC_MESSAGES/libpq5-9.1.mo
 %%GETTEXT%%share/locale/ta/LC_MESSAGES/pg_config-9.1.mo
 %%GETTEXT%%share/locale/ta/LC_MESSAGES/pgscripts-9.1.mo
 %%GETTEXT%%share/locale/tr/LC_MESSAGES/ecpg-9.1.mo
@@ -675,3 +684,4 @@ share/postgresql/psqlrc.sample
 %%GETTEXT%%share/locale/zh_TW/LC_MESSAGES/psql-9.1.mo
 @dirrm share/doc/postgresql/html
 @dirrm share/doc/postgresql
+
