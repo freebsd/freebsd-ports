@@ -7,7 +7,7 @@
 
 PORTNAME=	freeradius
 PORTVERSION?=	1.1.8
-PORTREVISION?=	3
+PORTREVISION?=	4
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -24,7 +24,7 @@ PKGNAMESUFFIX=	-mysql
 MAINTAINER?=	zi@FreeBSD.org
 COMMENT?=	A free RADIUS server implementation
 
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 
 CONFLICTS=	gnu-radius-[0-9].* openradius-[0-9].* radiusd-cistron-[0-9].*
 # If FREERADIUS_SLAVE_MYSQL is defined, we want to build the

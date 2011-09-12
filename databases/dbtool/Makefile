@@ -8,6 +8,7 @@
 
 PORTNAME=	dbtool
 PORTVERSION=	1.7
+PORTREVISION=	1
 CATEGORIES=	databases
 MASTER_SITES=	http://www.daemon.de/idisk/Apps/dbtool/
 
@@ -21,7 +22,7 @@ LIB_DEPENDS+=	db3.3:${PORTSDIR}/databases/db3
 DB_INC=		-I${LOCALBASE}/include/db3
 CONFIGURE_ARGS=	--with-berkeley
 .else
-LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
 .endif
 .if !defined(NOPORTDOCS)
 RUN_DEPENDS+=	bash:${PORTSDIR}/shells/bash

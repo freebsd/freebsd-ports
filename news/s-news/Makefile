@@ -7,14 +7,14 @@
 
 PORTNAME=	s-news
 PORTVERSION=	0.1.11
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	news
 MASTER_SITES=	http://www.lost.org.uk/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Simple news server for hosts with one or two users
 
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 
 CONFLICTS=	nntp-[0-9]*
 

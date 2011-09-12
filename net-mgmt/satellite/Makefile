@@ -7,6 +7,7 @@
 
 PORTNAME=       satellite
 PORTVERSION=    1.0.2
+PORTREVISION=	1
 CATEGORIES=     net-mgmt
 MASTER_SITES=   ${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR= system/network
@@ -14,7 +15,7 @@ MASTER_SITE_SUBDIR= system/network
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	A system for tracking machines with dynamic IP addresses
 
-LIB_DEPENDS=    gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=    gdbm.4:${PORTSDIR}/databases/gdbm
 
 GNU_CONFIGURE=  yes
 CONFIGURE_ENV=  CPPFLAGS='-I${LOCALBASE}/include' \

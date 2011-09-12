@@ -9,6 +9,7 @@
 
 PORTNAME=	GDBM
 PORTVERSION=	1.14
+PORTREVISION=	1
 CATEGORIES=	databases perl5
 MASTER_SITES=	CPAN/../../src
 PKGNAMEPREFIX=	p5-
@@ -18,7 +19,7 @@ DIST_SUBDIR=	perl
 MAINTAINER=	perl@FreeBSD.org
 COMMENT=	GNU Data Base Manager (gdbm) interface
 
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 
 EXTRACT_AFTER_ARGS=	| ${TAR} -xf - ${DISTNAME}/ext/GDBM_File
 

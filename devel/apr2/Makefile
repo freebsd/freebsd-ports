@@ -6,7 +6,7 @@
 
 PORTNAME=	apr
 PORTVERSION=	2.0.${SNAPDATE}
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	devel
 MASTER_SITES=	http://svn-master.apache.org/snapshots/apr/
 DISTNAME=	${PORTNAME}_${SNAPDATE}
@@ -97,7 +97,7 @@ CONFIGURE_ARGS+=	--without-gdbm
 .else
 PLIST_SUB+=	GDBM=""
 EXTRAS=	yes
-LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	--with-gdbm=${LOCALBASE}
 .if defined(PKGNAMESUFFIX)
 PKGNAMESUFFIX:=	${PKGNAMESUFFIX}-gdbm

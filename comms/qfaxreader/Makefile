@@ -9,7 +9,7 @@
 
 PORTNAME=	qfaxreader
 DISTVERSION=	0.3.1
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	comms graphics print
 MASTER_SITES=	SF
 
@@ -34,7 +34,7 @@ OPTIONS=	GDBM "For sender-id look-up (recomended)" on
 .include <bsd.port.pre.mk>
 
 .if !defined(WITHOUT_GDBM) || exists(${LOCALBASE}/include/gdbm.h)
-LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
 .endif
 
 .include  <bsd.port.post.mk>

@@ -7,6 +7,7 @@
 
 PORTNAME=	smalltalk
 PORTVERSION=	3.2.4
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_GNU}
 MASTER_SITE_SUBDIR=	${PORTNAME}
@@ -16,7 +17,7 @@ COMMENT=	GNU Smalltalk
 
 BUILD_DEPENDS=	zip:${PORTSDIR}/archivers/zip \
 		gawk:${PORTSDIR}/lang/gawk
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
+LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm \
 		execinfo.1:${PORTSDIR}/devel/libexecinfo \
 		cairo.2:${PORTSDIR}/graphics/cairo
 

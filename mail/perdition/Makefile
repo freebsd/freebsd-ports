@@ -7,7 +7,7 @@
 
 PORTNAME=	perdition
 PORTVERSION=	1.17.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	mail net security
 MASTER_SITES=	http://www.vergenet.net/linux/perdition/download/${PORTVERSION}/
 
@@ -95,7 +95,7 @@ PLIST_SUB+=		NIS="@comment "
 
 .if defined(WITH_GDBM)
 CONFIGURE_ARGS+=	--enable-gdbm
-LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm
 PLIST_SUB+=		GDBM=""
 MAN1+=			makegdbm.1
 .else

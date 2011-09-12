@@ -7,6 +7,7 @@
 
 PORTNAME=	thread
 PORTVERSION=	2.6.7
+PORTREVISION=	1
 CATEGORIES=	devel tcl
 MASTER_SITES=		SF/tcl/Thread%20Extension/${PORTVERSION}
 PKGNAMEPREFIX=	tcl
@@ -40,7 +41,7 @@ OPTIONS=		GDBM	"include GDBM support"	on
 CONFIGURE_ARGS+=	--with-tcl="${TCL_LIBDIR}"
 
 .if defined(WITH_GDBM)
-LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	--with-gdbm
 CONFIGURE_ENV+=		gincdir="${LOCALBASE}/include" glibdir="${LOCALBASE}/lib"
 .endif

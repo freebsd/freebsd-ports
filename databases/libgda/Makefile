@@ -8,7 +8,7 @@
 
 PORTNAME=	libgda
 PORTVERSION=	0.2.96
-PORTREVISION=	14
+PORTREVISION=	15
 CATEGORIES=	databases gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome
@@ -16,7 +16,7 @@ DIST_SUBDIR=	gnome
 MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Provides uniform access to different kinds of data sources
 
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 
 CONFLICTS=	libgda2*-[0-9]*
 

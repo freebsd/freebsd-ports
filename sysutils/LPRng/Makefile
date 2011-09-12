@@ -7,7 +7,7 @@
 
 PORTNAME=	LPRng
 PORTVERSION=	3.8.32
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	sysutils print
 MASTER_SITES=	ftp://ftp.lprng.com/pub/%SUBDIR%/ \
 		ftp://ftp.cise.ufl.edu/pub/mirrors/%SUBDIR%/ \
@@ -20,7 +20,7 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Enhanced Printer Spooler
 
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 
 CONFLICTS=	cups-base-1.[2-9]*
 

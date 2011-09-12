@@ -7,7 +7,7 @@
 
 PORTNAME=	picsnvideos
 PORTVERSION=	0.2
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	palm comms graphics
 MASTER_SITES=	SF/${PORTNAME}/source%20code/${PORTVERSION}
 PKGNAMEPREFIX=	jpilot-
@@ -17,7 +17,7 @@ COMMENT=	JPilot plugin to to download photos and videos
 
 RUN_DEPENDS=	jpilot:${PORTSDIR}/palm/jpilot
 BUILD_DEPENDS=	jpilot:${PORTSDIR}/palm/jpilot
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 
 GNU_CONFIGURE=	yes
 MAKE_JOBS_SAFE=	yes

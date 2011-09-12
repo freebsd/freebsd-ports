@@ -7,6 +7,7 @@
 
 PORTNAME=	sjeng
 PORTVERSION=	11.2
+PORTREVISION=	1
 CATEGORIES=	games
 MASTER_SITES=	http://sjeng.org/ftp/
 DISTNAME=	Sjeng-Free-${PORTVERSION}
@@ -14,7 +15,7 @@ DISTNAME=	Sjeng-Free-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Chess engine supporting chess variations
 
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 
 GNU_CONFIGURE=	yes
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" \

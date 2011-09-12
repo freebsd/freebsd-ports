@@ -7,6 +7,7 @@
 
 PORTNAME=	zsh
 PORTVERSION=	4.3.12
+PORTREVISION=	1
 CATEGORIES=	shells
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}-dev/${PORTVERSION}:src \
 		SF/${PORTNAME}/${PORTNAME}-doc-dev/${PORTVERSION}:doc
@@ -65,7 +66,7 @@ SHELLS=		/etc/shells
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_ZSH_GDBM)
-LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm
 PLIST_SUB+=		GDBM=""
 .else
 CONFIGURE_ARGS+=	--disable-gdbm
