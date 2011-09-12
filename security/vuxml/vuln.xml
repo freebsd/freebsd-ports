@@ -34,6 +34,41 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="b9f3ffa3-dd6c-11e0-b7fc-000a5e1e33c6">
+    <topic>libsndfile -- PAF file processing integer overflow</topic>
+    <affects>
+      <package>
+	<name>libsndfile</name>
+	<range><lt>1.0.25</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>Secunia reports:</p>
+	<blockquote cite="http://secunia.com/advisories/45125/">
+	  <p>Hossein Lotfi has discovered a vulnerability in
+	   libsndfile, which can be exploited by malicious people
+	   to potentially compromise an application using the
+	   library. The vulnerability is caused due to an integer
+	   overflow error in the "paf24_init()" function (src/paf.c)
+	   when processing Paris Audio (PAF) files. This can be
+	   exploited to cause a heap-based buffer overflow via a
+	   specially crafted file. Successful exploitation may allow
+	   execution of arbitrary code. The vulnerability is confirmed
+	   in version 1.0.24. Other versions may also be affected.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <cvename>CVE-2011-2696</cvename>
+      <url>http://secunia.com/advisories/45125/</url>
+    </references>
+    <dates>
+      <discovery>2011-07-12</discovery>
+      <entry>2011-09-12</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="2ecb7b20-d97e-11e0-b2e2-00215c6a37bb">
     <topic>openssl -- multiple vulnerabilities</topic>
     <affects>
