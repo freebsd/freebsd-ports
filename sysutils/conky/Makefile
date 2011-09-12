@@ -26,9 +26,10 @@ USE_ICONV=	yes
 USE_GMAKE=	yes
 CONFIGURE_ARGS+=	--disable-portmon \
 			--disable-hddtemp \
-			--disable-alsa
-CONFIGURE_ENV+=	CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include" \
-		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+			--disable-alsa \
+			--disable-bmpx
+CONFIGURE_ENV+=	LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
+CPPFLAGS+=	-I${LOCALBASE}/include
 
 MAN1=		conky.1
 PLIST_FILES=	bin/conky
@@ -38,7 +39,6 @@ PORTDOCS=	README AUTHORS ChangeLog TODO NEWS \
 
 OPTIONS+=	APCUPSD "Enable APCUPSD support" Off \
 		AUDACIOUS "Enable Audacious support" Off \
-		BMPX "Enable BMPX support" Off \
 		MPD "Enable MPD support" Off \
 		NCURSES "Enable ncurses support" Off \
 		RSS "Enable RSS support" Off \
@@ -80,15 +80,6 @@ LIB_DEPENDS+=		audclient.2:${PORTSDIR}/multimedia/audacious
 CONFIGURE_ARGS+=	--enable-audacious
 .else
 CONFIGURE_ARGS+=	--disable-audacious
-.endif
-
-.if defined(WITH_BMPX)
-BUILD_DEPENDS+=		beep-media-player-2:${PORTSDIR}/multimedia/bmpx
-RUN_DEPENDS+=		beep-media-player-2:${PORTSDIR}/multimedia/bmpx
-LIB_DEPENDS+=		dbus-1.3:${PORTSDIR}/devel/dbus
-CONFIGURE_ARGS+=	--enable-bmpx
-.else
-CONFIGURE_ARGS+=	--disable-bmpx
 .endif
 
 .if defined(WITH_LUA) || defined(WITH_LUA_CAIRO) || defined(WITH_LUA_IMLIB2)
