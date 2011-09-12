@@ -6,14 +6,14 @@
 #
 
 PORTNAME=	Auth_SASL
-PORTVERSION=	1.0.4
+PORTVERSION=	1.0.5
 CATEGORIES=	security www pear
 
 MAINTAINER=	amistry@am-productions.biz
 COMMENT=	PEAR abstraction of various SASL mechanism responses
 
 BUILD_DEPENDS=	${PEARDIR}/Auth/Auth.php:${PORTSDIR}/security/pear-Auth
-RUN_DEPENDS=	${BUILD_DEPENDS}
+RUN_DEPENDS=	${PEARDIR}/Auth/Auth.php:${PORTSDIR}/security/pear-Auth
 
 FILES=		Auth/SASL.php Auth/SASL/Anonymous.php \
 		Auth/SASL/Common.php Auth/SASL/CramMD5.php \
