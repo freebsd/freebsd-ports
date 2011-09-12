@@ -8,7 +8,7 @@
 
 PORTNAME=	deskbar-applet
 PORTVERSION=	2.32.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	deskutils gnome
 MASTER_SITES=	GNOME
 DIST_SUBDIR=	gnome2
@@ -17,8 +17,7 @@ MAINTAINER=	gnome@FreeBSD.org
 COMMENT=	Omnipresent versatile search interface
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
-RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus \
-		${PYTHON_PKGNAMEPREFIX}simplejson>=2.0:${PORTSDIR}/devel/py-simplejson
+RUN_DEPENDS=	${PYTHON_SITELIBDIR}/dbus/__init__.py:${PORTSDIR}/devel/py-dbus
 
 USE_BZIP2=	yes
 USE_GETTEXT=	yes
@@ -37,6 +36,10 @@ GCONF_SCHEMAS=	deskbar-applet.schemas
 OPTIONS=	EVO "Enable evolution support" on
 
 .include <bsd.port.pre.mk>
+
+.if ${PYTHON_REL} < 260
+RUN_DEPENDS+=  ${PYTHON_PKGNAMEPREFIX}simplejson>=2.0.9:${PORTSDIR}/devel/py-simplejson
+.endif
 
 _OSRELEASE!=	${UNAME} -r
 
