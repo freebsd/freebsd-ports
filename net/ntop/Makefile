@@ -7,6 +7,7 @@
 
 PORTNAME=	ntop
 PORTVERSION=	4.1.0
+PORTREVISION=	1
 CATEGORIES=	net
 #MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/${PORTNAME}-${PORTVERSION}
 MASTER_SITES=	SF/${PORTNAME}/${PORTNAME}/Stable
@@ -15,7 +16,7 @@ DISTFILES=	${PORTNAME}-${PORTVERSION}.tar.gz
 MAINTAINER=	sylvio@FreeBSD.org
 COMMENT=	Network monitoring tool with command line and web interfaces
 
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
+LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm \
 		event-1.4:${PORTSDIR}/devel/libevent
 BUILD_DEPENDS=	rrdtool>=1.2:${PORTSDIR}/databases/rrdtool \
 		dot:${PORTSDIR}/graphics/graphviz \

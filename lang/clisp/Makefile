@@ -7,7 +7,7 @@
 
 PORTNAME=	clisp
 PORTVERSION=	2.49
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang lisp
 MASTER_SITES=	GNU/${PORTNAME}/release/${PORTVERSION}
 
@@ -123,7 +123,7 @@ CONFIGURE_ARGS+=--with-module=fastcgi
 .endif
 
 .if defined(WITH_GDBM)
-LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=--with-module=gdbm
 .endif
 

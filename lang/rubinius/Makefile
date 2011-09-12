@@ -7,6 +7,7 @@
 
 PORTNAME=	rubinius
 PORTVERSION=	1.2.4
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
 		http://asset.rubini.us/prebuilt/:llvm
@@ -48,7 +49,7 @@ BROKEN=		Does not compile on sparc64
 .endif
 
 .if !defined(WITHOUT_GDBM) || exists(${LOCALBASE}/include/gdbm.h)
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 PLIST_SUB+=	GDBM=""
 .else
 PLIST_SUB+=	GDBM="@comment "

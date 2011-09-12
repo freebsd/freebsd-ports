@@ -7,7 +7,7 @@
 
 PORTNAME=	${SQLRELAY_PORTNAME}
 PORTVERSION=	${SQLRELAY_PORTVERSION}
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	databases
 MASTER_SITES=	SF
 
@@ -47,7 +47,7 @@ OPTIONS=	MSQL "Build MSQL connection" off \
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_SQLITE) && ${WITH_SQLITE:L} != no
-LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm \
+LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm \
 			sqlite.2:${PORTSDIR}/databases/sqlite2
 CONFIGURE_ARGS+=	--with-gdbm-prefix="${LOCALBASE}" \
 			--with-sqlite-prefix="${LOCALBASE}"

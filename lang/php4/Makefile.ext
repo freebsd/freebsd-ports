@@ -401,7 +401,7 @@ LIB_DEPENDS+=	db-4.4.0:${PORTSDIR}/databases/db44
 CONFIGURE_ARGS+=--with-db4=${LOCALBASE}
 .	endif
 .	if defined(WITH_GDBM)
-LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
 
 CONFIGURE_ARGS+=--with-gdbm=${LOCALBASE}
 .	endif

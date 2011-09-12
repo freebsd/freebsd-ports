@@ -9,7 +9,7 @@
 
 PORTNAME=	freeradius
 DISTVERSION=	2.1.11
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	net
 MASTER_SITES=	ftp://ftp.freeradius.org/pub/freeradius/%SUBDIR%/ \
 		ftp://ftp.ntua.gr/pub/net/radius/freeradius/%SUBDIR%/ \
@@ -24,7 +24,7 @@ COMMENT=	A free RADIUS server implementation
 
 LICENSE=	GPLv2
 
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 
 USE_GMAKE=	yes
 

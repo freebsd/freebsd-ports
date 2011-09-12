@@ -7,7 +7,7 @@
 
 PORTNAME=	perl
 PORTVERSION=	${PERL_VERSION}
-PORTREVISION=	5
+PORTREVISION=	6
 CATEGORIES=	lang devel perl5
 MASTER_SITES=	CPAN \
 		${MASTER_SITE_LOCAL:S/$/:local/} \
@@ -106,7 +106,7 @@ PLIST_SUB+=		SUIDPERL="@comment "
 
 .if defined(WITH_GDBM)
 CONFIGURE_ARGS+=	-Di_gdbm
-LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm
 PLIST_SUB+=		GDBM=""
 .else
 CONFIGURE_ARGS+=	-Ui_gdbm

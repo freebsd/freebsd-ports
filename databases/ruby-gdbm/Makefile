@@ -18,7 +18,7 @@ MAINTAINER=	stas@FreeBSD.org
 COMMENT=	A Ruby extension to GDBM library
 
 BUILD_DEPENDS=	${NONEXISTENT}:${PORTSDIR}/${RUBY_PORT}:patch
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 
 PLIST_FILES=	%%RUBY_ARCHLIBDIR%%/gdbm.so
 USE_RUBY=	yes

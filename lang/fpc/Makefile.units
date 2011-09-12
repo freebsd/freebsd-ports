@@ -113,7 +113,7 @@ HAVE_EXAMPLES=	true
 
 .if ${PKGNAMESUFFIX} == "-gdbm"
 .	if defined(WITH_GDBM)
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 .	endif
 .endif
 

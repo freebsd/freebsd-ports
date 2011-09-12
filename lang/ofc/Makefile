@@ -7,7 +7,7 @@
 
 PORTNAME=	ofc
 PORTVERSION=	0.8.1
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	lang
 MASTER_SITES=	http://ofc.dvoudheusden.net/download/
 
@@ -31,7 +31,7 @@ OPTIONS=	GDBM "Add gdbm support" off \
 		GMP "Add gmp support" off
 
 .if defined (WITH_GDBM)
-LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
 .endif
 
 .if defined (WITH_GMP)

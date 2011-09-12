@@ -7,6 +7,7 @@
 
 PORTNAME=	sqwebmail
 PORTVERSION=	5.5.2
+PORTREVISION=	1
 CATEGORIES=	mail www
 MASTER_SITES=	SF/courier/webmail/${PORTVERSION}
 
@@ -169,7 +170,7 @@ CONFIGURE_ARGS+=        --enable-maxpurge=${WITH_MAXPURGE}
 
 .if defined(WITH_GDBM)
 CONFIGURE_ARGS+=--with-db=gdbm
-LIB_DEPENDS+=   gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=   gdbm.4:${PORTSDIR}/databases/gdbm
 .else
 CONFIGURE_ARGS+=--with-db=db
 .endif

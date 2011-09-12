@@ -7,14 +7,14 @@
 
 PORTNAME=	fdmf
 DISTVERSION=	0.0.9s
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	audio
 MASTER_SITES=	http://w140.com/audio/ CENKES
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Find similar music by perceptual hashing
 
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
+LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm \
 		plot.4:${PORTSDIR}/graphics/plotutils \
 		fftw3.5:${PORTSDIR}/math/fftw3
 RUN_DEPENDS=	mplayer:${PORTSDIR}/multimedia/mplayer \

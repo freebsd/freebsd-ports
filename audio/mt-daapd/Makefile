@@ -7,7 +7,7 @@
 
 PORTNAME=	mt-daapd
 PORTVERSION=	0.2.4.2
-PORTREVISION=	2
+PORTREVISION=	3
 CATEGORIES=	audio japanese
 MASTER_SITES=	SF
 
@@ -20,7 +20,7 @@ LICENSE_FILE=	${WRKSRC}/COPYING
 DEPRECATED=	Use audio/firefly instead
 EXPIRATION_DATE=	2011-09-30
 
-LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm \
+LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm \
 		id3tag.0:${PORTSDIR}/audio/libid3tag
 
 CONFLICTS=	firefly-[0-9]*

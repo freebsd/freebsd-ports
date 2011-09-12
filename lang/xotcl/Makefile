@@ -7,6 +7,7 @@
 
 PORTNAME=	xotcl
 PORTVERSION=	1.6.6
+PORTREVISION=	1
 CATEGORIES?=	lang tcl
 MASTER_SITES=	SF \
 		http://media.wu-wien.ac.at/download/
@@ -53,7 +54,7 @@ NO_BUILD=		yes
 
 .if defined(WITH_ACTIWEB)
 CONFIGURE_ARGS+=	--with-actiweb --with-gdbm=${LOCALBASE}/include,${LOCALBASE}/lib
-LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm
 PLIST_SUB+=	ACTIWEB=""
 .else
 PLIST_SUB+=	ACTIWEB="@comment "

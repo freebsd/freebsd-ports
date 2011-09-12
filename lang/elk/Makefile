@@ -7,14 +7,14 @@
 
 PORTNAME=	elk
 PORTVERSION=	3.99.7
-PORTREVISION=	3
+PORTREVISION=	4
 CATEGORIES=	lang scheme
 MASTER_SITES=	http://sam.zoy.org/elk/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An embeddable Scheme interpreter
 
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
+LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm \
 		elf.0:${PORTSDIR}/devel/libelf
 
 USE_BZIP2=	yes

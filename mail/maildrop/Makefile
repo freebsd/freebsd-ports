@@ -54,7 +54,7 @@ MAILDROP_LOG_COLUMNS?=	72	# lenght of 'File:' line in log
 .include <bsd.port.pre.mk>
 
 .if defined(WITH_GDBM)
-LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm
 CONFIGURE_ARGS+=	--with-db=gdbm
 .else
 CONFIGURE_ARGS+=	--with-db=db

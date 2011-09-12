@@ -7,6 +7,7 @@
 
 PORTNAME=	courier-imap
 PORTVERSION=	4.9.3
+PORTREVISION=	1
 PORTEPOCH=	2
 CATEGORIES=	mail ipv6
 MASTER_SITES=	SF/courier/imap/${PORTVERSION}
@@ -84,7 +85,7 @@ CONFIGURE_ARGS+=--with-syslog=${WITH_SYSLOG_FACILITY}
 .if defined(WITH_AUTH_USERDB)
 .if defined(WITH_GDBM)
 CONFIGURE_ARGS+=--with-db=gdbm --with-userdb=${USERDB}
-LIB_DEPENDS+=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=	gdbm.4:${PORTSDIR}/databases/gdbm
 .else
 CONFIGURE_ARGS+=--with-db=db  --with-userdb=${USERDB}
 .endif

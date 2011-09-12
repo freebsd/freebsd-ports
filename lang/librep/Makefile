@@ -7,13 +7,14 @@
 
 PORTNAME=	librep
 PORTVERSION=	0.92.0
+PORTREVISION=	1
 CATEGORIES=	lang elisp gnome
 MASTER_SITES=	http://download.tuxfamily.org/librep/
 
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	An Emacs Lisp like runtime library
 
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm \
+LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm \
 		ffi.5:${PORTSDIR}/devel/libffi \
     		gmp.10:${PORTSDIR}/math/gmp
 RUN_DEPENDS=	gtar:${PORTSDIR}/archivers/gtar

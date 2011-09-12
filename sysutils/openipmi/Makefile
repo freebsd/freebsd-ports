@@ -7,7 +7,7 @@
 
 PORTNAME=	openipmi
 PORTVERSION=	2.0.18
-PORTREVISION=	4
+PORTREVISION=	5
 CATEGORIES=	sysutils
 MASTER_SITES=	SF/${PORTNAME}/OpenIPMI%202.0%20Library/${PORTVERSION}
 DISTNAME=	OpenIPMI-${PORTVERSION}
@@ -118,7 +118,7 @@ PLIST_SUB+=		TCL="@comment "
 .endif
 
 .if defined(WITH_GDBM)
-LIB_DEPENDS+=		gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS+=		gdbm.4:${PORTSDIR}/databases/gdbm
 .endif
 
 .if defined(WITH_GLIB12)

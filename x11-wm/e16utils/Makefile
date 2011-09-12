@@ -7,7 +7,7 @@
 
 PORTNAME=	e16utils
 PORTVERSION=	0.16
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	x11-wm enlightenment
 MASTER_SITES=	SF/enlightenment/e16menuedit/e16menuedit:src1 \
 		SF/enlightenment/e16keyedit/0.2:src2
@@ -18,7 +18,7 @@ DISTFILES=	e16menuedit-0.1.tar.gz:src1 \
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Standalone menu and keybinding editors for enlightment 0.16
 
-LIB_DEPENDS=	gdbm.3:${PORTSDIR}/databases/gdbm
+LIB_DEPENDS=	gdbm.4:${PORTSDIR}/databases/gdbm
 
 USE_GNOME=	imlib
 
