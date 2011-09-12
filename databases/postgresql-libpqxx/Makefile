@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	libpqxx
-PORTVERSION=	2.6.9
-PORTREVISION=	2
+PORTVERSION=	3.1
 CATEGORIES=	databases
 MASTER_SITES=	http://pqxx.org/download/software/libpqxx/
 PKGNAMEPREFIX=	postgresql-
