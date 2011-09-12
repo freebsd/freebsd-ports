@@ -7,6 +7,7 @@
 
 PORTNAME=	gnat-aux
 PORTVERSION=	${SNAPSHOT}
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	http://downloads.dragonlace.net/src/ \
 		http://dragonlace.mirrors.ada.cx/src/
@@ -64,12 +65,12 @@ BOOTSTRAP_COMPILER=	gnat-bootstrap.i386.freebsd.tar.bz2
 PLIST_SUB=		GNU_HOST=${BLD_TARGET}
 PLIST_SUB+=		GCC_VER=${GCC_BRANCH}.${GCC_POINT}
 
-WRKSRC=			${WRKDIR}/build
-GCC_WRKSRC=		${WRKDIR}/gcc-${GCC_BRANCH}-${SNAPSHOT}
+WRKSRC=			${WRKDIR}/gcc-${GCC_BRANCH}-${SNAPSHOT}
+BUILDDIR=		${WRKDIR}/build
+CFG_SCRIPT=		${WRKSRC}/configure
+REVFILE=		${WRKSRC}/gcc/REVISION
 BOOTSTRAP_PREFIX=	${WRKDIR}/bootstrap
 PKG_PREFIX=		${PREFIX}
-CONFIGURE_SCRIPT=	${GCC_WRKSRC}/configure
-REVFILE=		${GCC_WRKSRC}/gcc/REVISION
 LPATH=			lib/gcc/${BLD_TARGET}/${GCC_BRANCH}.${GCC_POINT}
 LEPATH=			libexec/gcc/${BLD_TARGET}/${GCC_BRANCH}.${GCC_POINT}
 MAN1=			gnatcpp.1 gnatgcc.1 gnatgcov.1
@@ -141,7 +142,7 @@ ADA_CONFIGURE_ENV=	CC=${FULL_GNATGCC}
 ADA_CONFIGURE_ENV+=	PATH=${FULL_PATH}
 ADA_CONFIGURE_ENV+=	CONFIG_SHELL=${SH}
 ADA_MAKE_ENV=		PATH=${FULL_PATH}
-ADA_MAKE_ENV+=		LD_LIBRARY_PATH=${WRKSRC}/gcc
+ADA_MAKE_ENV+=		LD_LIBRARY_PATH=${BUILDDIR}/gcc
 
 # The standard configuration options
 CONFIGURE_ARGS=		--enable-languages=${LANGS:Q}
@@ -186,32 +187,32 @@ post-extract:
 
 do-configure:
 	#reset timestamps
-	cd ${GCC_WRKSRC}; contrib/gcc_update --touch
-	${RM} -f ${GCC_WRKSRC}/gcc/*/*.info*
-	${TOUCH} ${GCC_WRKSRC}/gcc/cstamp-h.in
+	cd ${WRKSRC}; contrib/gcc_update --touch
+	${RM} -f ${WRKSRC}/gcc/*/*.info*
+	${TOUCH} ${WRKSRC}/gcc/cstamp-h.in
 
-	${MKDIR} ${WRKSRC}
-	cd ${WRKSRC} && ${SETENV} ${ADA_CONFIGURE_ENV} \
-	${SH} ${CONFIGURE_SCRIPT} ${CONFIGURE_ARGS}
+	${MKDIR} ${BUILDDIR}
+	cd ${BUILDDIR} && ${SETENV} ${ADA_CONFIGURE_ENV} \
+	${CFG_SCRIPT} ${CONFIGURE_ARGS}
 
 do-build:
-	cd ${WRKSRC} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} all
+	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} ${_MAKE_JOBS} all
 
 test: build
 .if defined(WITH_TS_ADA)
-	cd ${WRKSRC} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} -sk check-ada
+	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} -sk check-ada
 .endif
 .if defined(WITH_TS_CXX)
-	cd ${WRKSRC} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} -sk check-c++
-	cd ${WRKSRC} && ${SETENV} ${ADA_MAKE_ENV} \
+	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} -sk check-c++
+	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} \
 	   ${GMAKE} -sk check-target-libstdc++-v3
 .endif
 .if defined(WITH_TS_GCC)
-	cd ${WRKSRC} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} -sk check-c
+	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} -sk check-c
 .endif
 
 do-install:
-	cd ${WRKSRC} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} install-strip DESTDIR=${DESTDIR}
+	cd ${BUILDDIR} && ${SETENV} ${ADA_MAKE_ENV} ${GMAKE} install-strip DESTDIR=${DESTDIR}
 
 post-install:
 	${RM} -f ${WRKDIR}/PLIST.lib
