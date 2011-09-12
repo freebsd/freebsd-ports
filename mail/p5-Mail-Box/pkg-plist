@@ -74,10 +74,10 @@
 %%SITE_PERL%%/Mail/Box/Net/Message.pod
 %%SITE_PERL%%/Mail/Box/POP3.pm
 %%SITE_PERL%%/Mail/Box/POP3.pod
-%%SITE_PERL%%/Mail/Box/POP3s.pm
-%%SITE_PERL%%/Mail/Box/POP3s.pod
 %%SITE_PERL%%/Mail/Box/POP3/Message.pm
 %%SITE_PERL%%/Mail/Box/POP3/Message.pod
+%%SITE_PERL%%/Mail/Box/POP3s.pm
+%%SITE_PERL%%/Mail/Box/POP3s.pod
 %%SITE_PERL%%/Mail/Box/Parser.pm
 %%SITE_PERL%%/Mail/Box/Parser.pod
 %%SITE_PERL%%/Mail/Box/Parser/Perl.pm
@@ -162,6 +162,8 @@
 %%SITE_PERL%%/Mail/Message/Field/Addresses.pod
 %%SITE_PERL%%/Mail/Message/Field/Attribute.pm
 %%SITE_PERL%%/Mail/Message/Field/Attribute.pod
+%%SITE_PERL%%/Mail/Message/Field/Date.pm
+%%SITE_PERL%%/Mail/Message/Field/Date.pod
 %%SITE_PERL%%/Mail/Message/Field/Fast.pm
 %%SITE_PERL%%/Mail/Message/Field/Fast.pod
 %%SITE_PERL%%/Mail/Message/Field/Flex.pm
