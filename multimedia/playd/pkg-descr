@@ -1,10 +1,7 @@
-playd is an easy to use command line wrapper for mplayer.
+Easy-to-use command-line wrapper for mplayer.
 
-With playd you don't need the mplayer gui to use it as a audio/video
-player because playd supports playlists. It is easy to integrate
-playd into a window manager menu (e.g. FVWM).
+With playd you don't need mplayer GUI to listen to music, watch videos, stream
+video/audio. It is easy to integrate playd into a window manager menu (e.g.
+FVWM).
 
 WWW: http://hg.bsdroot.lv/aldis/playd.sh/
-
--- Aldis Berjoza
-<aldis@bsdroot.lv>
