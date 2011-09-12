@@ -1,5 +1,5 @@
---- conkyForecast.orig	2011-09-12 18:05:15.686489911 +0400
-+++ conkyForecast	2011-09-12 18:05:39.133432190 +0400
+--- conkyForecast-SunsetSunriseCountdown.orig	2011-09-12 18:04:11.318676684 +0400
++++ conkyForecast-SunsetSunriseCountdown	2011-09-12 18:04:42.204794053 +0400
 @@ -1,17 +1,6 @@
  #! /bin/sh
  cd /usr/share/conkyforecast/
@@ -15,7 +15,7 @@
 -	pythoncmd="/usr/bin/python"
 -fi
 -
- pythonfile="/usr/share/conkyforecast/conkyForecast.py"
+ pythonfile="/usr/share/conkyforecast/conkyForecast-SunsetSunriseCountdown.py"
  
 -exec $pythoncmd $pythonfile "$@"
 +/usr/bin/env python $pythonfile "$@"
