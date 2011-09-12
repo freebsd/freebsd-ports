@@ -60,18 +60,18 @@ my $release   = undef;		# OS release
 
 # Global flags
 my $anoncvs   = 0;		# Use anoncvs1.FreeBSD.org
+my $build     = 0;		# Build ports
 my $clean     = 0;		# Clean ports
 my $cvsroot   = 0;		# CVS root directory
+my $dontclean = 0;		# Don't clean after build
 my $exclude   = 0;		# Do not list installed ports
 my $fetch     = 0;		# Fetch ports
 my $force     = 0;		# Force package registration
-my $installed = 0;		# Select installed ports
 my $info      = 0;		# Show port info
-my $dontclean = 0;		# Don't clean after build
-my $packages  = 0;		# Build packages
+my $installed = 0;		# Select installed ports
 my $list      = 0;		# List ports
+my $packages  = 0;		# Build packages
 my $plist     = 0;		# Print packing list
-my $build     = 0;		# Build ports
 my $status    = 0;		# List installed ports and their status
 my $update    = 0;		# Update ports tree from CVS
 my $verbose   = 0;		# Verbose mode
@@ -186,7 +186,6 @@ sub capture($@) {
 # Print an info message
 #
 sub info(@) {
-
     my $msg;			# Message
 
     if ($verbose) {
@@ -308,7 +307,6 @@ sub make($@) {
 # The undocumented command.
 #
 sub ecks() {
-
     local *FILE;		# File handle
 
     sysopen(FILE, "/var/db/port.mkversion", O_RDWR|O_CREAT|O_TRUNC, 0644)
@@ -321,7 +319,6 @@ sub ecks() {
 # Update the root of the ports tree
 #
 sub update_root() {
-
     my $parent;		# Parent directory
 
     $parent = $portsdir;
@@ -349,7 +346,6 @@ sub update_root() {
 # Update the index
 #
 sub update_index() {
-
     my $ifn;			# Index file name
 
     cd($portsdir);
@@ -378,7 +374,6 @@ sub update_index() {
 # Read the ports index
 #
 sub read_index() {
-
     local *INDEX;		# File handle
     my $line;			# Line from file
 
@@ -404,7 +399,6 @@ sub read_index() {
 # Read the list of moved ports
 #
 sub read_moved() {
-
     local *MOVED;		# File handle
     my $line;			# Line from file
 
@@ -536,7 +530,6 @@ sub get_origin($) {
 # Get list of installed ports
 #
 sub get_installed() {
-
     local *DIR;			# Directory handle
     my $port;			# Installed port
     my $origin;			# Port's origin
@@ -1033,7 +1026,6 @@ sub clean_port($) {
 # Clean the tree
 #
 sub clean_tree() {
-
     my $port;			# Port name
 
     # We could just cd to $portsdir and 'make clean', but it'd
@@ -1091,7 +1083,6 @@ sub build_port($) {
 # Print usage message and exit
 #
 sub usage() {
-
     stderr("Usage: porteasy [-abCceFfhIikLlsuVvw] [-D date] [-d dir]\n" .
 	   "    [-p dir] [-r dir] [-t tag] [port ...]\n");
     exit(1);
@@ -1101,7 +1092,6 @@ sub usage() {
 # Print version
 #
 sub version() {
-
     stderr("This is porteasy $VERSION.
 $COPYRIGHT
 ");
@@ -1112,7 +1102,6 @@ $COPYRIGHT
 # Print help text
 #
 sub help() {
-
     stderr("This is porteasy $VERSION.
 $COPYRIGHT
 
