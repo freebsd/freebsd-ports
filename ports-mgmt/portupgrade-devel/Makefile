@@ -19,7 +19,7 @@ COMMENT=	FreeBSD ports/packages management tool (devel version)
 
 CONFLICTS_INSTALL=	portupgrade-[0-9]*
 
-BUILD_DEPENDS=	git:${PORTSDIR}/devel/git
+FETCH_DEPENDS=	git:${PORTSDIR}/devel/git
 RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/bdb.so:${PORTSDIR}/databases/ruby-bdb
 
 USE_RUBY=	yes
