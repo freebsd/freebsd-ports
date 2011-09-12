@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	Mail-Box
-PORTVERSION=	2.097
+PORTVERSION=	2.101
 CATEGORIES=	mail perl5
 MASTER_SITES=	CPAN
 MASTER_SITE_SUBDIR=	CPAN:MARKOV
@@ -15,7 +15,7 @@ PKGNAMEPREFIX=	p5-
 MAINTAINER=	tobez@FreeBSD.org
 COMMENT=	Perl module implementing a modern mail folder management
 
-BUILD_DEPENDS=	\
+COMMON_DEPENDS=	\
 	${SITE_PERL}/MIME/Entity.pm:${PORTSDIR}/mail/p5-MIME-Tools \
 	${SITE_PERL}/MIME/Types.pm:${PORTSDIR}/mail/p5-MIME-Types \
 	${SITE_PERL}/Mail/Internet.pm:${PORTSDIR}/mail/p5-Mail-Tools \
@@ -30,9 +30,10 @@ BUILD_DEPENDS=	\
 	p5-TimeDate>=0:${PORTSDIR}/devel/p5-TimeDate \
 	p5-URI>=1.23:${PORTSDIR}/net/p5-URI \
 	p5-User-Identity>=0.90:${PORTSDIR}/devel/p5-User-Identity
-RUN_DEPENDS=	${BUILD_DEPENDS}
+BUILD_DEPENDS=	${COMMON_DEPENDS}
+RUN_DEPENDS=	${COMMON_DEPENDS}
 
-PERL_CONFIGURE=	5.8.0+
+PERL_CONFIGURE=	yes
 CONFIGURE_ARGS=	</dev/null
 CONFIGURE_ENV+=	MAILBOX_INSTALL_OPTIONALS=n
 
