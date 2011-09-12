@@ -16,6 +16,8 @@ MAINTAINER=	multimedia@FreeBSD.org
 COMMENT=	Podcast client for the command line
 
 USE_RUBY=	yes
+RUBY_VER=	1.8
+
 WRKSRC=		${WRKDIR}/${PORTNAME}
 NO_BUILD=	yes
 
@@ -26,6 +28,9 @@ PLIST_FILES=	bin/podcatcher \
 		${EXAMPLESDIR_REL}/subscriptions.opml
 
 PLIST_DIRS=	${EXAMPLESDIR_REL}
+
+pre-install:
+	@${SED} -i.bak 's,#!/usr/bin/env ruby,#!${RUBY},' ${WRKSRC}/bin/${PORTNAME}
 
 do-install:
 	@${INSTALL_SCRIPT} ${WRKSRC}/bin/${PORTNAME} ${PREFIX}/bin
