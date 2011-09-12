@@ -6,29 +6,31 @@
 #
 
 PORTNAME=	gdbm
-PORTVERSION=	1.8.3
-PORTREVISION=	3
+PORTVERSION=	1.9.1
 CATEGORIES=	databases
-MASTER_SITES=	${MASTER_SITE_GNU}
-MASTER_SITE_SUBDIR=	${PORTNAME}
+MASTER_SITES=	GNU
 
 MAINTAINER=	gabor@FreeBSD.org
 COMMENT=	The GNU database manager
 
+OPTIONS=	COMPAT	"dbm/ndbm compatibility" off
+
+GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libtool
 USE_GMAKE=	yes
-GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 
+INFO=		gdbm
+MAN3=		gdbm.3
+
+.include <bsd.port.options.mk>
+
 .if defined(WITH_COMPAT)
-INSTALL_TARGET=	install install-compat
+CONFIGURE_ARGS+=--enable-libgdbm-compat
 PLIST_SUB=	GDBM_COMPAT=""
 .else
 PLIST_SUB=	GDBM_COMPAT="@comment "
 .endif
-
-MAN3=		gdbm.3
-INFO=		gdbm
 
 pre-everything::
 .if !defined(WITH_COMPAT)
