@@ -13,6 +13,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/builtin_evolutions/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/builtin_evolutions/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/builtin_evolutions/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/builtin_evolutions/auth_delete_message.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/builtin_evolutions/auth_delete_message.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/builtin_evolutions/auth_delete_message.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/builtin_evolutions/session_expire_date_db_index.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/builtin_evolutions/session_expire_date_db_index.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/django_evolution/builtin_evolutions/session_expire_date_db_index.pyo
