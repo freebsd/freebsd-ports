@@ -18,6 +18,8 @@ GNU_CONFIGURE=	yes
 USE_AUTOTOOLS=	libltdl
 WANT_GNOME=	yes
 
+LATEST_LINK=	collectd5
+
 OPTIONS=	CGI		"Install collection.cgi (requires RRDTOOL)" 	Off \
 		BIND		"Enable BIND 9.5+ statistics"			On  \
 		DEBUG		"Enable debugging" 				Off \
