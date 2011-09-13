@@ -86,10 +86,7 @@ PLIST_SUB+=	IF_DEFAULT=""
 PLIST_SUB+=	IF_DEFAULT="@comment "
 .endif
 
-GEMS_DIR=	${PREFIX}/lib/ruby/gems/${RUBY_VER}
-PLIST_SUB+=	GEMS_DIR="lib/ruby/gems/${RUBY_VER}"
-
-INSTALLED_SCRIPTS=	irb erb rdoc ri ruby testrb gem
+INSTALLED_SCRIPTS=	irb erb rdoc ri ruby testrb
 
 EXTSAMPLES=	bigdecimal/sample/*.rb	\
 		curses/hello.rb		\
@@ -128,17 +125,18 @@ post-patch:
 .for d in win32ole
 	${RM} -rf ${BUILD_WRKSRC}/ext/${d}
 .endfor
+# We get rake from ports.
+.for d in bin/rake doc/rake lib/rake test/rake man/rake.1 lib/rake.rb
+	${RM} -rf ${BUILD_WRKSRC}/${d}
+.endfor
+# We get the gem executable from ports.
+	${RM} ${BUILD_WRKSRC}/bin/gem
 
 #
 # Prepare modules we are wanting to build via external ports
 #
 .for d in gdbm iconv tk
 	${MV} ${BUILD_WRKSRC}/ext/${d} ${WRKDIR}/
-.endfor
-
-# we get rake from ports
-.for d in bin/rake doc/rake lib/rake test/rake man/rake.1 lib/rake.rb
-	${RM} -rf ${BUILD_WRKSRC}/${d}
 .endfor
 
 post-build:
@@ -166,8 +164,6 @@ pre-su-install:
 	${TOUCH} ${RUBY_DOCDIR}/.keep_me
 	${TOUCH} ${RUBY_SITEARCHLIBDIR}/.keep_me
 	${TOUCH} ${RUBY_VENDORARCHLIBDIR}/.keep_me
-	${MKDIR} ${GEMS_DIR}/gems
-	${TOUCH} ${GEMS_DIR}/gems/.keep_me
 
 post-install:
 #
@@ -288,11 +284,6 @@ plist::
 #
 # Find all gem files/folders
 #
-	@${FIND} -ds ${GEMS_DIR}/ ! -type d | \
-		${SED} 's,^${GEMS_DIR},%%GEMS_DIR%%,' >> pkg-plist
-	@${FIND} -ds ${GEMS_DIR}/ -type d | ${SORT} -r | \
-		${SED} -E -e 's,^${GEMS_DIR}(.*),@dirrm %%GEMS_DIR%%\1,' >> pkg-plist
-
 	@${ECHO_CMD} "%%RUBY_SITEARCHLIBDIR%%/.keep_me" >> pkg-plist
 	@${ECHO_CMD} "@dirrmtry %%RUBY_SITEARCHLIBDIR%%" >> pkg-plist
 	@${ECHO_CMD} "@dirrmtry %%RUBY_SITELIBDIR%%" >> pkg-plist
