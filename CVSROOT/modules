@@ -1131,7 +1131,6 @@ bmp-scrobbler                   ports/audio/bmp-scrobbler
 bmp-songchange                  ports/audio/bmp-songchange
 bmp-wma                         ports/audio/bmp-wma
 bmp2html                        ports/graphics/bmp2html
-bmpx                            ports/multimedia/bmpx
 bn-aspell                       ports/textproc/bn-aspell
 bnbt                            ports/net-p2p/bnbt
 bnc                             ports/irc/bnc
@@ -10361,6 +10360,7 @@ octave-forge-pt_br              ports/math/octave-forge-pt_br
 octave-forge-quaternion         ports/math/octave-forge-quaternion
 octave-forge-secs1d             ports/math/octave-forge-secs1d
 octave-forge-secs2d             ports/math/octave-forge-secs2d
+octave-forge-secs3d             ports/math/octave-forge-secs3d
 octave-forge-signal             ports/math/octave-forge-signal
 octave-forge-simp               ports/math/octave-forge-simp
 octave-forge-sockets            ports/math/octave-forge-sockets
@@ -23550,6 +23550,7 @@ rubygem-archive-tar-minitar     ports/archivers/rubygem-archive-tar-minitar
 rubygem-archive-zip             ports/archivers/rubygem-archive-zip
 rubygem-arel                    ports/databases/rubygem-arel
 rubygem-arrayfields             ports/devel/rubygem-arrayfields
+rubygem-atoulme-antwrap         ports/devel/rubygem-atoulme-antwrap
 rubygem-augeas                  ports/textproc/rubygem-augeas
 rubygem-authlogic               ports/devel/rubygem-authlogic
 rubygem-bcrypt-ruby             ports/security/rubygem-bcrypt-ruby
@@ -23818,6 +23819,7 @@ rubygem-rightflexiscale         ports/net/rubygem-rightflexiscale
 rubygem-rightgogrid             ports/net/rubygem-rightgogrid
 rubygem-righthttpconnection     ports/net/rubygem-righthttpconnection
 rubygem-rightslicehost          ports/net/rubygem-rightslicehost
+rubygem-rjb                     ports/java/rubygem-rjb
 rubygem-rmail                   ports/mail/rubygem-rmail
 rubygem-roauth                  ports/security/rubygem-roauth
 rubygem-robots                  ports/www/rubygem-robots
