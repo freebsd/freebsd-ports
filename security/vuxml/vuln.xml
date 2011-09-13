@@ -34,6 +34,42 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="4ae68e7c-dda4-11e0-a906-00215c6a37bb">
+    <topic>roundcube -- XSS vulnerability</topic>
+    <affects>
+      <package>
+	<name>roundcube</name>
+	<range><lt>0.5.4,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>RoundCube development Team reports:</p>
+	<blockquote cite="http://sourceforge.net/news/?group_id=139281&amp;id=302769">
+	  <p>We just published a new release which fixes a recently
+	    reported XSS vulnerability as an update to the stable
+	    0.5 branch. Please update your installations with this
+	    new version or patch them with the fix which is also
+	    published in the downloads section or our sourceforge.net
+	    page.</p>
+	</blockquote>
+	<p>and:</p>
+	<blockquote cite="http://trac.roundcube.net/ticket/1488030">
+	  <p>During one of pen-tests I found that _mbox parameter
+	    is not properly sanitized and reflected XSS attack is
+	    possible.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+       <cvename>CVE-2011-2937</cvename>
+    </references>
+    <dates>
+      <discovery>2011-08-09</discovery>
+      <entry>2011-09-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="b9f3ffa3-dd6c-11e0-b7fc-000a5e1e33c6">
     <topic>libsndfile -- PAF file processing integer overflow</topic>
     <affects>
