@@ -157,8 +157,12 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/conf/locale/es_AR/formats.pyo
 %%PYTHON_SITELIBDIR%%/django/conf/locale/es_MX/LC_MESSAGES/django.mo
 %%PYTHON_SITELIBDIR%%/django/conf/locale/es_MX/LC_MESSAGES/django.po
-%%PYTHON_SITELIBDIR%%/django/conf/locale/es_MX/__init__py
+%%PYTHON_SITELIBDIR%%/django/conf/locale/es_MX/__init__.py
+%%PYTHON_SITELIBDIR%%/django/conf/locale/es_MX/__init__.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/locale/es_MX/__init__.pyo
 %%PYTHON_SITELIBDIR%%/django/conf/locale/es_MX/formats.py
+%%PYTHON_SITELIBDIR%%/django/conf/locale/es_MX/formats.pyc
+%%PYTHON_SITELIBDIR%%/django/conf/locale/es_MX/formats.pyo
 %%PYTHON_SITELIBDIR%%/django/conf/locale/es_NI/__init__.py
 %%PYTHON_SITELIBDIR%%/django/conf/locale/es_NI/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/conf/locale/es_NI/__init__.pyo
@@ -2237,6 +2241,9 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/client.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/client.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/client.pyo
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/compiler.py
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/compiler.pyc
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/compiler.pyo
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/creation.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/creation.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/db/backends/spatialite/creation.pyo
@@ -2699,6 +2706,7 @@ bin/django-admin.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/data/test_poly/test_poly.shx
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/data/test_vrt/test_vrt.csv
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/data/test_vrt/test_vrt.vrt
+%%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/data/texas.dbf
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/distapp/__init__.py
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/distapp/__init__.pyc
 %%PYTHON_SITELIBDIR%%/django/contrib/gis/tests/distapp/__init__.pyo
