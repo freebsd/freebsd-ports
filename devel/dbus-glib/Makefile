@@ -5,11 +5,10 @@
 # $FreeBSD$
 #
 
-PORTNAME=	dbus
-PORTVERSION=	0.88
+PORTNAME=	dbus-glib
+PORTVERSION=	0.94
 CATEGORIES=	devel gnome
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-glib/
-PKGNAMESUFFIX=	-glib
 DISTNAME=	${PORTNAME}${PKGNAMESUFFIX}-${PORTVERSION}
 
 MAINTAINER=	gnome@FreeBSD.org
@@ -23,12 +22,10 @@ USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
 USE_LDCONFIG=	yes
 CONFIGURE_ARGS=	--with-test-socket-dir=${WRKDIR} \
-		--disable-doxygen-docs \
-		--disable-xml-docs \
 		--disable-gtk-doc \
 		--with-html-dir=${PREFIX}/share/doc
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
+CPPFLAGS=	-I${LOCALBASE}/include
+CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib ${PTHREAD_LIBS}"
 
 PLIST_SUB=	VERSION="1.0"
 

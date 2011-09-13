@@ -1,10 +1,10 @@
 bin/dbus-binding-tool
 etc/bash_completion.d/dbus-bash-completion.sh
 include/dbus-%%VERSION%%/dbus/dbus-glib-bindings.h
-include/dbus-%%VERSION%%/dbus/dbus-glib-error-enum.h
 include/dbus-%%VERSION%%/dbus/dbus-glib-lowlevel.h
 include/dbus-%%VERSION%%/dbus/dbus-glib.h
 include/dbus-%%VERSION%%/dbus/dbus-gtype-specialized.h
+include/dbus-%%VERSION%%/dbus/dbus-gvalue-parse-variant.h
 lib/libdbus-glib-1.a
 lib/libdbus-glib-1.la
 lib/libdbus-glib-1.so
@@ -16,13 +16,13 @@ libexec/dbus-bash-completion-helper
 %%DOCSDIR%%/ch03.html
 %%DOCSDIR%%/dbus-binding-tool.html
 %%DOCSDIR%%/dbus-glib-DBus-GLib-low-level.html
+%%DOCSDIR%%/dbus-glib-DBus-GObject-related-functions.html
 %%DOCSDIR%%/dbus-glib-DBusGConnection.html
 %%DOCSDIR%%/dbus-glib-DBusGError.html
 %%DOCSDIR%%/dbus-glib-DBusGMessage.html
 %%DOCSDIR%%/dbus-glib-DBusGMethod.html
 %%DOCSDIR%%/dbus-glib-DBusGProxy.html
 %%DOCSDIR%%/dbus-glib-Specializable-GType-System.html
-%%DOCSDIR%%/dbus-glib-dbus-gobject.html
 %%DOCSDIR%%/dbus-glib.devhelp
 %%DOCSDIR%%/dbus-glib.devhelp2
 %%DOCSDIR%%/home.png
