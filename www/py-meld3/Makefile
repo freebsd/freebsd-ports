@@ -6,18 +6,15 @@
 #
 
 PORTNAME=	meld3
-PORTVERSION=	0.6.5
+PORTVERSION=	0.6.7
 CATEGORIES=	www python
-MASTER_SITES=	http://www.plope.com/software/meld3/ \
-				http://0x746e.org.ua/distfiles/
+MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
 MAINTAINER=	tn@0x746e.org.ua
-COMMENT=	HTML/XML templating system for Python 2.3+
+COMMENT=	HTML/XML templating system for Python
 
-RUN_DEPENDS=	py*-elementtree>=1.2:${PORTSDIR}/devel/py-elementtree
-
-USE_PYTHON=	yes
+USE_PYTHON=	2.5-2.7
 USE_PYDISTUTILS=	yes
 
 .include <bsd.port.mk>
