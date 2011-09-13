@@ -6,6 +6,7 @@
 
 PORTNAME=	ffmpeg2theora
 PORTVERSION=	0.28
+PORTREVISION=	1
 CATEGORIES=	multimedia
 MASTER_SITES=	http://v2v.cc/~j/ffmpeg2theora/downloads/
 
@@ -16,7 +17,7 @@ LICENSE=	GPLv3
 
 LIB_DEPENDS=	avcodec.1:${PORTSDIR}/multimedia/ffmpeg \
 		theora.0:${PORTSDIR}/multimedia/libtheora \
-		kate.3:${PORTSDIR}/multimedia/libkate
+		kate.4:${PORTSDIR}/multimedia/libkate
 
 USE_BZIP2=	yes
 USE_SCONS=	yes
