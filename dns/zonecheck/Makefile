@@ -6,31 +6,33 @@
 #
 
 PORTNAME=	zonecheck
-PORTVERSION=	2.1.1
+PORTVERSION=	3.0.5
 PORTEPOCH=	1
 CATEGORIES=	dns ipv6 ruby
-MASTER_SITES=	ftp://ftp.nic.fr/pub/mirror/zonecheck/src/ \
-		${MASTER_SITE_SAVANNAH}
-MASTER_SITE_SUBDIR=	${PORTNAME}/src
+MASTER_SITES=	http://www.zonecheck.fr/download/ \
+		ftp://ftp.nic.fr/pub/mirror/zonecheck/src/
 EXTRACT_SUFX=	.tgz
 
 MAINTAINER=	janos.mohacsi@bsd.hu
 COMMENT=	Perform consistency checks on DNS zones
 
-.if defined(WITH_X11)
-RUN_DEPENDS=	${RUBY_SITEARCHLIBDIR}/gtk2.so:${PORTSDIR}/x11-toolkits/ruby-gtk2
-.endif
+LICENSE=	GPLv3
+LICENSE_FILE=	${WRKSRC}/GPL
+
+RUN_DEPENDS=	rubygem-dnsruby>=1.47:${PORTSDIR}/dns/rubygem-dnsruby
 
 USE_GMAKE=	yes
 USE_RUBY=	yes
-RUBY_VER=	1.8
-USE_RUBY_FEATURES=	ruby18
 
 NO_BUILD=	yes
 WRKSRC=		${WRKDIR}/${PORTNAME}
 
 MAN1=		zonecheck.1
 DOCS=		BUGS INSTALL README TODO
+
+OPTIONS=	ZONECHECK_CGI	"Install with CGI support" off
+
+.include <bsd.port.pre.mk>
 
 ZONECHECK_TARGET=	common cli
 
@@ -39,9 +41,6 @@ ZONECHECK_TARGET+=	cgi
 PLIST_SUB+=	ZONECHECK_CGI=""
 .else
 PLIST_SUB+=	ZONECHECK_CGI="@comment "
-
-pre-everything::
-	@${ECHO_MSG} "Use WITH_ZONECHECK_CGI=yes to install with CGI support"
 .endif
 
 do-install:
@@ -56,4 +55,4 @@ post-install:
 	cd ${WRKSRC} && ${INSTALL_DATA} ${DOCS} ${DOCSDIR}
 .endif
 
-.include <bsd.port.mk>
+.include <bsd.port.post.mk>

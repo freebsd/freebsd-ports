@@ -9,38 +9,17 @@ etc/zonecheck-dist/zc.conf
 @dirrm etc/zonecheck-dist
 %%ZONECHECK_CGI%%libexec/zonecheck/cgi-bin/zc.cgi
 %%ZONECHECK_CGI%%@dirrm libexec/zonecheck/cgi-bin
-libexec/zonecheck/lib/address.rb
-libexec/zonecheck/lib/address/common.rb
-libexec/zonecheck/lib/address/ipv4.rb
-libexec/zonecheck/lib/address/ipv6.rb
-libexec/zonecheck/lib/nresolv.rb
-libexec/zonecheck/lib/nresolv/compatibility.rb
-libexec/zonecheck/lib/nresolv/config.rb
-libexec/zonecheck/lib/nresolv/constants.rb
-libexec/zonecheck/lib/nresolv/dbg.rb
-libexec/zonecheck/lib/nresolv/dig_output.rb
-libexec/zonecheck/lib/nresolv/dns.rb
-libexec/zonecheck/lib/nresolv/dns_message.rb
-libexec/zonecheck/lib/nresolv/dns_name.rb
-libexec/zonecheck/lib/nresolv/dns_resource.rb
-libexec/zonecheck/lib/nresolv/host.rb
-libexec/zonecheck/lib/nresolv/resolver.rb
-libexec/zonecheck/lib/nresolv/transport.rb
-libexec/zonecheck/lib/nresolv/wire.rb
 libexec/zonecheck/lib/textfmt.rb
-libexec/zonecheck/lib/whois.rb
 libexec/zonecheck/locale/cgi.en
 libexec/zonecheck/locale/cgi.fr
 libexec/zonecheck/locale/cli.en
 libexec/zonecheck/locale/cli.fr
-libexec/zonecheck/locale/gtk.en
-libexec/zonecheck/locale/gtk.fr
-libexec/zonecheck/locale/inetd.en
-libexec/zonecheck/locale/inetd.fr
 libexec/zonecheck/locale/test/axfr.en
 libexec/zonecheck/locale/test/axfr.fr
 libexec/zonecheck/locale/test/connectivity.en
 libexec/zonecheck/locale/test/connectivity.fr
+libexec/zonecheck/locale/test/dnssec.en
+libexec/zonecheck/locale/test/dnssec.fr
 libexec/zonecheck/locale/test/generic.en
 libexec/zonecheck/locale/test/generic.fr
 libexec/zonecheck/locale/test/interop.en
@@ -65,6 +44,7 @@ libexec/zonecheck/locale/zc.en
 libexec/zonecheck/locale/zc.fr
 libexec/zonecheck/test/axfr.rb
 libexec/zonecheck/test/connectivity.rb
+libexec/zonecheck/test/dnssec.rb
 libexec/zonecheck/test/generic.rb
 libexec/zonecheck/test/interop.rb
 libexec/zonecheck/test/loopback.rb
@@ -89,12 +69,10 @@ libexec/zonecheck/zc/data/logo.png
 libexec/zonecheck/zc/dbg.rb
 libexec/zonecheck/zc/ext/array.rb
 libexec/zonecheck/zc/ext/file.rb
-libexec/zonecheck/zc/ext/gtk.rb
 libexec/zonecheck/zc/ext/myxml.rb
 libexec/zonecheck/zc/framework.rb
 libexec/zonecheck/zc/input/cgi.rb
 libexec/zonecheck/zc/input/cli.rb
-libexec/zonecheck/zc/input/gtk.rb
 libexec/zonecheck/zc/input/inetd.rb
 libexec/zonecheck/zc/instructions.rb
 libexec/zonecheck/zc/locale.rb
@@ -102,7 +80,6 @@ libexec/zonecheck/zc/mail.rb
 libexec/zonecheck/zc/msgcat.rb
 libexec/zonecheck/zc/param.rb
 libexec/zonecheck/zc/publisher.rb
-libexec/zonecheck/zc/publisher/gtk.rb
 libexec/zonecheck/zc/publisher/html.rb
 libexec/zonecheck/zc/publisher/text.rb
 libexec/zonecheck/zc/publisher/xml.rb
@@ -112,8 +89,6 @@ libexec/zonecheck/zc/report/byseverity.rb
 libexec/zonecheck/zc/testmanager.rb
 libexec/zonecheck/zc/zc.rb
 libexec/zonecheck/zc/zonecheck.rb
-@dirrm libexec/zonecheck/lib/address
-@dirrm libexec/zonecheck/lib/nresolv
 @dirrm libexec/zonecheck/lib
 @dirrm libexec/zonecheck/locale/test
 @dirrm libexec/zonecheck/locale
@@ -130,8 +105,6 @@ libexec/zonecheck/zc/zonecheck.rb
 %%PORTDOCS%%%%DOCSDIR%%/README
 %%PORTDOCS%%%%DOCSDIR%%/TODO
 %%PORTDOCS%%@dirrm %%DOCSDIR%%
-%%ZONECHECK_CGI%%www/zonecheck/html/batch.html.en
-%%ZONECHECK_CGI%%www/zonecheck/html/batch.html.fr
 %%ZONECHECK_CGI%%www/zonecheck/html/form.html.en
 %%ZONECHECK_CGI%%www/zonecheck/html/form.html.fr
 %%ZONECHECK_CGI%%www/zonecheck/zonecheck.conf.in
