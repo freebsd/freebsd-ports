@@ -421,13 +421,14 @@ post-install:
 .for subdir in application-registry applications icons mime mime-info mimelnk
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND}  -H -s share/${subdir} \( -type f -o -type l \) -print >> ${PLISTF}
 	@cd ${LODESTDIR}/${PREFIX}/ && ${FIND} -d share/${subdir} -type d \
-		-exec ${ECHO_CMD} "@exec ${RMDIR} %D/{}  2>/dev/null || ${TRUE}" \; >> ${PLISTD}
+		-exec ${ECHO_CMD} "@unexec ${RMDIR} %D/{}  2>/dev/null || ${TRUE}" \; >> ${PLISTD}
 .endfor
 
 	@cd ${LODESTDIR}/${PREFIX} && ${FIND} -H -s bin \( -type f -o -type l \) -print >> ${PLISTF}
 
 #Fix .desktop files
-	@${FIND} ${LODESTDIR}/${PREFIX} -name *.desktop -type f -exec ${SED} -i"" -e 's|office34|office|g; s|office3.4|office|g' {} \;
+	@${FIND} ${LODESTDIR}/${PREFIX} -name *.desktop -type f -exec ${SED} -i .bak -e 's|office34|office|g; s|office3.4|office|g' {} \;
+	@${FIND} ${LODESTDIR}/${PREFIX} -name *.desktop.bak -delete
 
 .if defined(WITH_GTK) || defined(WITH_GNOME)
 	@${ECHO_CMD} "@exec ${LOCALBASE}/bin/update-desktop-database > /dev/null || ${TRUE}" >> ${TMPPLIST}
