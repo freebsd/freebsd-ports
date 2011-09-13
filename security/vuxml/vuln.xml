@@ -34,6 +34,136 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="d01d10c7-de2d-11e0-b215-00215c6a37bb">
+    <topic>django -- multiple vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>py23-django</name>
+	<name>py24-django</name>
+	<name>py25-django</name>
+	<name>py26-django</name>
+	<name>py27-django</name>
+	<name>py30-django</name>
+	<name>py31-django</name>
+	<range><gt>1.3</gt><lt>1.3.1</lt></range>
+	<range><gt>1.2</gt><lt>1.2.7</lt></range>
+      </package>
+      <package>
+	<name>py23-django-devel</name>
+	<name>py24-django-devel</name>
+	<name>py25-django-devel</name>
+	<name>py26-django-devel</name>
+	<name>py27-django-devel</name>
+	<name>py30-django-devel</name>
+	<name>py31-django-devel</name>
+	<range><lt>16758,1</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>The Django project reports:</p>
+	<blockquote cite="https://www.djangoproject.com/weblog/2011/sep/09/security-releases-issued/">
+	  <p>Today the Django team is issuing multiple releases --
+	    Django 1.2.6 and Django 1.3.1 -- to remedy security issues
+	    reported to us. Additionally, this announcement contains
+	    advisories for several other issues which, while not
+	    requiring changes to Django itself, will be of concern
+	    to users of Django.</p>
+	  <p>All users are encouraged to upgrade Django, and to
+	    implement the recommendations in these advisories,
+	    immediately.</p>
+	  <h3>Session manipulation</h3>
+	  <p>Django's session framework, django.contrib.sessions, is
+	    configurable to use any of multiple backends for storage
+	    of session data. One such backend, provided with Django
+	    itself, integrates with Django's cache framework to use
+	    the cache as storage for session data.</p>
+	  <p>When configured in this fashion using memory-based
+	    sessions and caching, Django sessions are stored
+	    directly in the root namespace of the cache, using
+	    session identifiers as keys.</p>
+	  <p>This results in a potential attack when coupled with
+	    an application storing user-supplied data in the cache;
+	    if an attacker can cause data to be cached using a key
+	    which is also a valid session identifier, Django's
+	    session framework will treat that data -- so long as
+	    it is a dictionary-like object -- as the session,
+	    thus allowing arbitrary data to be inserted into a
+	    session so long as the attacker knows the session
+	    key.</p>
+	  <h3>Denial of service attack via URLField</h3>
+	  <p>Django's model system includes a field type --
+	    URLField -- which validates that the supplied value
+	    is a valid URL, and if the boolean keyword argument
+	    verify_exists is true, attempts to validate that the
+	    supplied URL also resolves, by issuing a request to
+	    it.</p>
+	  <p>By default, the underlying socket libraries in
+	    Python do not have a timeout. This can manifest as
+	    a security problem in three different ways:</p>
+	  <ol>
+	    <li>An attacker can supply a slow-to-respond URL. Each
+	      request will tie up a server process for a period of
+	      time; if the attacker is able to make enough
+	      requests, they can tie up all available server
+	      processes.</li>
+	    <li>An attacker can supply a URL under his or her
+	      control, and which will simply hold an open
+	      connection indefinitely. Due to the lack of
+	      timeout, the Django process attempting to verify
+	      the URL will similarly spin indefinitely.
+	      Repeating this can easily tie up all available
+	      server processes.</li>
+	    <li>An attacker can supply a URL under his or her
+	      control which not only keeps the connection open,
+	      but also sends an unending stream of random garbage
+	      data. This data will cause the memory usage of
+	      the Django process (which will hold the response
+	      in memory) to grow without bound, thus consuming
+	      not only server processes but also server memory.</li>
+	  </ol>
+	  <h3>URLField redirection</h3>
+	  <p>The regular expression which validates URLs is used
+	    to check the supplied URL before issuing a check to
+	    verify that it exists, but if that URL issues a
+	    redirect in response to the request, no validation
+	    of the resulting redirected URL is performed,
+	    including basic checks for supported protocols
+	    (HTTP, HTTPS and FTP).</p>
+	  <p>This creates a small window for an attacker to gain
+	    knowledge of, for example, server layout; a redirect
+	    to a file:// URL, for example, will tell an attacker
+	    whether a given file exists locally on the server.</p>
+	  <p>Additionally, although the initial request issued
+	    by Django uses the HEAD method for HTTP/HTTPS, the
+	    request to the target of the redirect is issued using
+	    GET. This may create further issues for systems which
+	    implicitly trust GET requests from the local
+	    machine/network.</p>
+	  <h3>Host header cache poisoning</h3>
+	  <p>In several places, Django itself -- independent of
+	    the developer -- generates full URLs (for example,
+	    when issuing HTTP redirects). Currently this uses
+	    the value of the HTTP Host header from the request
+	    to construct the URL, which opens a potential
+	    cache-poisoning vector: an attacker can submit
+	    a request with a Host header of his or her choice,
+	    receive a response which constructs URLs using that
+	    Host header, and -- if that response is cached --
+	    further requests will be served out of cache using
+	    URLs containing the attacker's host of choice.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>https://www.djangoproject.com/weblog/2011/sep/09/security-releases-issued/</url>
+    </references>
+    <dates>
+      <discovery>2011-09-09</discovery>
+      <entry>2011-09-13</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="4ae68e7c-dda4-11e0-a906-00215c6a37bb">
     <topic>roundcube -- XSS vulnerability</topic>
     <affects>
