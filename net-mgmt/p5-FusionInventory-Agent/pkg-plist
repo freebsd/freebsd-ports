@@ -1,0 +1,265 @@
+bin/fusioninventory-agent
+bin/fusioninventory-agent-config
+bin/fusioninventory-injector
+%%SITE_PERL%%/FusionInventory/Agent.pm
+%%SITE_PERL%%/FusionInventory/Agent/AccountInfo.pm
+%%SITE_PERL%%/FusionInventory/Agent/Config.pm
+%%SITE_PERL%%/FusionInventory/Agent/Network.pm
+%%SITE_PERL%%/FusionInventory/Agent/REST.pm
+%%SITE_PERL%%/FusionInventory/Agent/RPC.pm
+%%SITE_PERL%%/FusionInventory/Agent/SNMP.pm
+%%SITE_PERL%%/FusionInventory/Agent/Storage.pm
+%%SITE_PERL%%/FusionInventory/Agent/Target.pm
+%%SITE_PERL%%/FusionInventory/Agent/Targets.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Base.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/AccessLog.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/DeviceID.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/IpDiscover.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/IpDiscover/IpDiscover.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/IpDiscover/Nmap.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/AIX.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/AIX/CPU.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/AIX/Controller.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/AIX/Domains.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/AIX/Drives.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/AIX/Hardware.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/AIX/IPv4.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/AIX/LVM.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/AIX/Mem.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/AIX/Memory.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/AIX/Modems.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/AIX/Networks.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/AIX/Slots.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/AIX/Software.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/AIX/Sounds.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/AIX/Storages.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/AIX/Users.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/AIX/Videos.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/BSD.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/BSD/Archs/Alpha.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/BSD/Archs/Sgimips.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/BSD/Archs/Sparc.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/BSD/Archs/i386.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/BSD/CPU.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/BSD/Domains.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/BSD/Drives.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/BSD/IPv4.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/BSD/Mem.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/BSD/Networks.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/BSD/Storages.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/BSD/Sys.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/BSD/Uptime.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Dmidecode.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Dmidecode/Battery.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Dmidecode/Bios.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Dmidecode/Memory.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Dmidecode/Ports.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Dmidecode/Slots.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Dmidecode/UUID.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Environement.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Hostname.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Ipmi.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Lspci.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Lspci/Controllers.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Lspci/Modems.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Lspci/Sounds.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Lspci/Videos.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Packaging.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Packaging/BSDpkg.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Packaging/ByHand.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Packaging/Deb.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Packaging/Gentoo.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Packaging/Pacman.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Packaging/RPM.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Packaging/Slackware.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Printers/Cups.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Processes.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Screen.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Storages/HP.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/USB.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Users.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/HPUX.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/HPUX/Bios.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/HPUX/CPU.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/HPUX/Controller.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/HPUX/Domains.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/HPUX/Drives.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/HPUX/MP.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/HPUX/Memory.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/HPUX/Networks.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/HPUX/Slots.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/HPUX/Software.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/HPUX/Storages.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/HPUX/Uptime.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/ARM.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/ARM/CPU.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/Alpha.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/Alpha/CPU.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/MIPS.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/MIPS/CPU.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/PowerPC.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/PowerPC/CPU.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/PowerPC/Various.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/SPARC.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/SPARC/CPU.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/i386.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/i386/CPU.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/m68k.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/m68k/CPU.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Distro/LSB.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Distro/NonLSB.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Distro/SuSE.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Domains.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Drives.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Inputs.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/LVM.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Mem.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Network/IPv4.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Network/Networks.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Network/iLO.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Sounds.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Storages.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Storages/3ware.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Storages/Adaptec.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Storages/Lsilogic.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Storages/ServeRaid.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Sys.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Uptime.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Video.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/MacOS.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/MacOS/Bios.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/MacOS/CPU.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/MacOS/Domains.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/MacOS/Drives.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/MacOS/Hostname.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/MacOS/IPv4.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/MacOS/Mem.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/MacOS/Networks.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/MacOS/Packages.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/MacOS/Printers.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/MacOS/Sound.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/MacOS/Storages.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/MacOS/USB.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/MacOS/Uptime.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/MacOS/Videos.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Solaris.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Solaris/Bios.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Solaris/CPU.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Solaris/Controllers.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Solaris/Domains.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Solaris/Drives.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Solaris/IPv4.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Solaris/Mem.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Solaris/Memory.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Solaris/Networks.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Solaris/Packages.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Solaris/Slots.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Solaris/Storages.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/AntiVirus.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/Bios.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/CPU.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/Chassis.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/Controller.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/Drives.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/Env.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/Inputs.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/Memory.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/Modem.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/Networks.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/OS.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/Ports.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/Printers.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/Slots.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/Software.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/Sounds.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/Storages.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/USB.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/User.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32/Video.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OcsDeploy.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/Virtualization/Hpvm.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/Virtualization/Libvirt.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/Virtualization/Parallels.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/Virtualization/Qemu.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/Virtualization/SolarisZones.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/Virtualization/VirtualBox.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/Virtualization/Virtuozzo.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/Virtualization/VmWareDesktop.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/Virtualization/VmWareESX.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/Virtualization/Vmsystem.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/Virtualization/Vserver.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/Virtualization/Xen.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/Virtualization/Xen/XM.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/WinRegistry.pm
+%%SITE_PERL%%/FusionInventory/Agent/Task/WakeOnLan.pm
+%%SITE_PERL%%/FusionInventory/Agent/Tools.pm
+%%SITE_PERL%%/FusionInventory/Agent/Tools/MacOS.pm
+%%SITE_PERL%%/FusionInventory/Agent/Tools/Win32.pm
+%%SITE_PERL%%/FusionInventory/Agent/XML/Query.pm
+%%SITE_PERL%%/FusionInventory/Agent/XML/Query/Inventory.pm
+%%SITE_PERL%%/FusionInventory/Agent/XML/Query/Prolog.pm
+%%SITE_PERL%%/FusionInventory/Agent/XML/Query/SimpleMessage.pm
+%%SITE_PERL%%/FusionInventory/Agent/XML/Response.pm
+%%SITE_PERL%%/FusionInventory/Agent/XML/Response/Inventory.pm
+%%SITE_PERL%%/FusionInventory/Agent/XML/Response/Prolog.pm
+%%SITE_PERL%%/FusionInventory/Agent/XML/Response/SimpleMessage.pm
+%%SITE_PERL%%/FusionInventory/Compress.pm
+%%SITE_PERL%%/FusionInventory/Logger.pm
+%%SITE_PERL%%/FusionInventory/LoggerBackend/File.pm
+%%SITE_PERL%%/FusionInventory/LoggerBackend/Stderr.pm
+%%SITE_PERL%%/FusionInventory/LoggerBackend/Syslog.pm
+%%SITE_PERL%%/auto/share/dist/FusionInventory-Agent/html/favicon.ico
+%%SITE_PERL%%/auto/share/dist/FusionInventory-Agent/html/index.tpl
+%%SITE_PERL%%/auto/share/dist/FusionInventory-Agent/html/logo.png
+%%SITE_PERL%%/auto/share/dist/FusionInventory-Agent/html/site.css
+%%SITE_PERL%%/auto/share/dist/FusionInventory-Agent/pci.ids
+%%SITE_PERL%%/%%PERL_ARCH%%/auto/FusionInventory/Agent/.packlist
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FusionInventory/Agent
+@dirrm %%SITE_PERL%%/%%PERL_ARCH%%/auto/FusionInventory
+@dirrm %%SITE_PERL%%/auto/share/dist/FusionInventory-Agent/html
+@dirrm %%SITE_PERL%%/auto/share/dist/FusionInventory-Agent
+@dirrmtry %%SITE_PERL%%/auto/share/dist
+@dirrmtry %%SITE_PERL%%/auto/share
+@dirrm %%SITE_PERL%%/FusionInventory/LoggerBackend
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/XML/Response
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/XML/Query
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/XML
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Tools
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/Virtualization/Xen
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/Virtualization
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Win32
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Solaris
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/MacOS
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Storages
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Network
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Distro
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/m68k
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/i386
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/SPARC
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/PowerPC
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/MIPS
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/Alpha
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs/ARM
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux/Archs
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Linux
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/HPUX
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Storages
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Printers
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Packaging
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Lspci
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic/Dmidecode
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/Generic
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/BSD/Archs
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/BSD
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS/AIX
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/OS
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory/IpDiscover
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task/Inventory
+@dirrm %%SITE_PERL%%/FusionInventory/Agent/Task
+@dirrm %%SITE_PERL%%/FusionInventory/Agent
+@dirrm %%SITE_PERL%%/FusionInventory

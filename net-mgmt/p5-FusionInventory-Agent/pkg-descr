@@ -1,0 +1,9 @@
+fusioninventory-agent is an agent for OCS Inventory server and
+FusionInventory for GLPI servers. It creates local inventory of the
+machines (hardware and software) and send it to the server. It can also
+write it in a local XML file. This agent is the successor of the former
+linux_agent which was released with OCS 1.01 and prior. It also replaces
+the Solaris/AIX/BSD unofficial agents.
+
+WWW: http://search.cpan.org/dist/FusionInventory-Agent/
+WWW: http://fusioninventory.org/
