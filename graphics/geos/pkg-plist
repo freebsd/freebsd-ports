@@ -357,14 +357,23 @@ include/geos/util/math.h
 include/geos/version.h
 include/geos_c.h
 lib/libgeos-3.3.0.so
-lib/libgeos.so.0
 lib/libgeos.a
 lib/libgeos.la
 lib/libgeos.so
+lib/libgeos.so.0
 lib/libgeos_c.a
 lib/libgeos_c.la
 lib/libgeos_c.so
 lib/libgeos_c.so.8
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/geos.pth
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.a
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.la
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/_geos.so
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/geos.py
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/geos.pyc
+%%PYTHON%%%%PYTHON_SITELIBDIR%%/geos/geos.pyo
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%/geos
+%%PYTHON%%@dirrm %%PYTHON_SITELIBDIR%%
 @dirrm lib/geos
 @dirrm include/geos/util
 @dirrm include/geos/simplify
