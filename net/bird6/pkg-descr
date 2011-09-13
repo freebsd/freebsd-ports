@@ -6,6 +6,7 @@ The BIRD project aims to develop a fully functional dynamic IP routing daemon.
 - RIP
 - OSPF
 - Static routes
+- IPv6 Router Advertisements
 - Inter-table protocol
 - Command-line interface
 - Soft reconfiguration
