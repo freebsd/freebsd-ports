@@ -6,11 +6,10 @@
 #
 
 PORTNAME=	ndisc6
-PORTVERSION=	1.0.1
-PORTREVISION=	1
+PORTVERSION=	1.0.2
 CATEGORIES=	net ipv6
-MASTER_SITES=	http://www.remlab.net/files/ndisc6/archive/ \
-		http://people.via.ecp.fr/~rem/www.remlab.net/files/ndisc6/archive/
+MASTER_SITES=	http://www.remlab.net/files/ndisc6/ \
+		http://people.via.ecp.fr/~rem/www.remlab.net/files/ndisc6/
 
 MAINTAINER=	m.tsatsenko@gmail.com
 COMMENT=	IPv6 network diagnostic tools
