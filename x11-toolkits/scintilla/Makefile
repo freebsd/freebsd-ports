@@ -7,6 +7,7 @@
 
 PORTNAME=	scintilla
 PORTVERSION=	2.28
+PORTREVISION=	1
 CATEGORIES=	x11-toolkits
 MASTER_SITES=	SF/scintilla/SciTE/${PORTVERSION}
 DISTNAME=	scite${PORTVERSION:S/.//g}
@@ -22,20 +23,21 @@ USE_ICONV=	yes
 MAKEFILE=	makefile
 USE_LDCONFIG=	yes
 USE_GNOME=	gtk20
-USE_GCC=	4.2+
 MAKE_JOBS_SAFE=	yes
+MAKE_ENV+=	LDFLAGS="${LDFLAGS}"
+CFLAGS+=	-DPIC ${PICFLAG}
 
 .include <bsd.port.pre.mk>
 
 .if ${ARCH} == "sparc64"
-MAKE_ARGS+=	PICFLAGS=-DPIC
+PICFLAG?=	-fPIC
 .else
-MAKE_ARGS+=	PICFLAGS="-DPIC -fPIC -fpic"
+PICFLAG?=	-fpic
 .endif
 
 post-patch:
-	@${REINPLACE_CMD} -e 's|[(]CC[)]|(CXX)|g ; s|[(]CCOMP[)]|(CC)|g ; \
-		s| -Os||g' ${WRKSRC}/makefile
+	@${REINPLACE_CMD} -e 's|[(]CC[)]|(CXX)|g ; s|[(]CCOMP[)]|(CC)|g' \
+		${WRKSRC}/makefile
 
 do-install:
 	${MKDIR} ${PREFIX}/include/scintilla
