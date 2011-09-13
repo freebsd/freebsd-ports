@@ -1,4 +1,5 @@
-QT Gadu-Gadu / Jabber client for Unix-like systems.
+Qt based internet communicator supporting Gadu-Gadu and Jabber/XMPP
+protocols for Unix-like and Windows systems.
 Gadu-Gadu is an ICQ-like messenger for polish language users.
 
-WWW: http://kadu.net
+WWW: http://kadu.im

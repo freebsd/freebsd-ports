@@ -1,46 +1,616 @@
 bin/kadu
-lib/kadu/modules/libamarok2_mediaplayer.so
-lib/kadu/modules/libantistring.so
-lib/kadu/modules/libauto_hide.so
-lib/kadu/modules/libautoaway.so
-lib/kadu/modules/libautoresponder.so
-lib/kadu/modules/libautostatus.so
-lib/kadu/modules/libcenzor.so
-lib/kadu/modules/libconfig_wizard.so
-lib/kadu/modules/libdesktop_docking.so
-lib/kadu/modules/libdocking.so
-lib/kadu/modules/libencryption_ng.so
-lib/kadu/modules/libencryption_ng_simlite.so
-lib/kadu/modules/libexec_notify.so
-lib/kadu/modules/libext_sound.so
-lib/kadu/modules/libfiledesc.so
-lib/kadu/modules/libfirewall.so
-lib/kadu/modules/libgadu_protocol.so
-lib/kadu/modules/libhints.so
-lib/kadu/modules/libhistory.so
-lib/kadu/modules/libhistory_migration.so
-lib/kadu/modules/libidle.so
-lib/kadu/modules/libimagelink.so
-lib/kadu/modules/libjabber_protocol.so
-lib/kadu/modules/libkde_notify.so
-lib/kadu/modules/liblast_seen.so
-lib/kadu/modules/libparser_extender.so
-lib/kadu/modules/libphonon_sound.so
-lib/kadu/modules/libprofiles_import.so
-lib/kadu/modules/libqt4_docking.so
-lib/kadu/modules/libqt4_docking_notify.so
-lib/kadu/modules/libqt4_sound.so
-lib/kadu/modules/libscreenshot.so
-lib/kadu/modules/libsimpleview.so
-lib/kadu/modules/libsingle_window.so
-lib/kadu/modules/libsms.so
-lib/kadu/modules/libsound.so
-lib/kadu/modules/libspeech.so
-lib/kadu/modules/libspellchecker.so
-lib/kadu/modules/libsql_history.so
-lib/kadu/modules/libtabs.so
-lib/kadu/modules/libword_fix.so
+include/kadu/kadu-core/accounts/filter/writeable-contacts-list-filter.h
+include/kadu/kadu-core/accounts/filter/abstract-account-filter.h
+include/kadu/kadu-core/accounts/filter/have-multilogon-filter.h
+include/kadu/kadu-core/accounts/filter/id-validity-filter.h
+include/kadu/kadu-core/accounts/filter/protocol-filter.h
+include/kadu/kadu-core/accounts/model/accounts-model.h
+include/kadu/kadu-core/accounts/model/accounts-proxy-model.h
+include/kadu/kadu-core/accounts/accounts-aware-object.h
+include/kadu/kadu-core/accounts/account-details.h
+include/kadu/kadu-core/accounts/account.h
+include/kadu/kadu-core/accounts/account-shared.h
+include/kadu/kadu-core/accounts/account-proxy-settings.h
+include/kadu/kadu-core/accounts/account-manager.h
+include/kadu/kadu-core/avatars/avatar.h
+include/kadu/kadu-core/avatars/avatar-job-runner.h
+include/kadu/kadu-core/avatars/avatar-job-manager.h
+include/kadu/kadu-core/avatars/avatar-manager.h
+include/kadu/kadu-core/avatars/avatar-shared.h
+include/kadu/kadu-core/buddies/filter/mobile-buddy-filter.h
+include/kadu/kadu-core/buddies/filter/anonymous-buddy-filter.h
+include/kadu/kadu-core/buddies/filter/buddy-name-filter.h
+include/kadu/kadu-core/buddies/filter/online-and-description-buddy-filter.h
+include/kadu/kadu-core/buddies/filter/non-buddy-filter.h
+include/kadu/kadu-core/buddies/filter/anonymous-without-messages-buddy-filter.h
+include/kadu/kadu-core/buddies/filter/has-description-buddy-filter.h
+include/kadu/kadu-core/buddies/filter/pending-messages-filter.h
+include/kadu/kadu-core/buddies/filter/blocked-buddy-filter.h
+include/kadu/kadu-core/buddies/filter/offline-buddy-filter.h
+include/kadu/kadu-core/buddies/filter/group-buddy-filter.h
+include/kadu/kadu-core/buddies/filter/account-buddy-filter.h
+include/kadu/kadu-core/buddies/filter/abstract-buddy-filter.h
+include/kadu/kadu-core/buddies/model/groups-model.h
+include/kadu/kadu-core/buddies/model/buddy-list-model.h
+include/kadu/kadu-core/buddies/model/buddies-model-base.h
+include/kadu/kadu-core/buddies/model/buddy-data-extractor.h
+include/kadu/kadu-core/buddies/model/buddies-model.h
+include/kadu/kadu-core/buddies/model/abstract-buddies-model.h
+include/kadu/kadu-core/buddies/model/buddies-model-proxy.h
+include/kadu/kadu-core/buddies/buddy-list.h
+include/kadu/kadu-core/buddies/buddy-shared.h
+include/kadu/kadu-core/buddies/buddy-kadu-data.h
+include/kadu/kadu-core/buddies/buddy-gender.h
+include/kadu/kadu-core/buddies/group-shared.h
+include/kadu/kadu-core/buddies/group.h
+include/kadu/kadu-core/buddies/buddy.h
+include/kadu/kadu-core/buddies/buddy-additional-data-delete-handler-manager.h
+include/kadu/kadu-core/buddies/buddy-or-contact.h
+include/kadu/kadu-core/buddies/buddy-remove-predicate-object.h
+include/kadu/kadu-core/buddies/buddy-list-mime-data-helper.h
+include/kadu/kadu-core/buddies/buddy-additional-data-delete-handler.h
+include/kadu/kadu-core/buddies/buddy-search-criteria.h
+include/kadu/kadu-core/buddies/buddy-manager.h
+include/kadu/kadu-core/buddies/group-manager.h
+include/kadu/kadu-core/buddies/buddy-set.h
+include/kadu/kadu-core/buddies/buddy-preferred-manager.h
+include/kadu/kadu-core/chat/filter/chat-filter.h
+include/kadu/kadu-core/chat/filter/chat-name-filter.h
+include/kadu/kadu-core/chat/message/formatted-message.h
+include/kadu/kadu-core/chat/message/message-render-info.h
+include/kadu/kadu-core/chat/message/formatted-message-part.h
+include/kadu/kadu-core/chat/message/message-shared.h
+include/kadu/kadu-core/chat/message/message.h
+include/kadu/kadu-core/chat/message/message-common.h
+include/kadu/kadu-core/chat/message/pending-messages-manager.h
+include/kadu/kadu-core/chat/style-engines/chat-style-engine.h
+include/kadu/kadu-core/chat/type/chat-type-aware-object.h
+include/kadu/kadu-core/chat/type/chat-type.h
+include/kadu/kadu-core/chat/type/chat-type-conference.h
+include/kadu/kadu-core/chat/type/chat-type-simple.h
+include/kadu/kadu-core/chat/type/chat-type-manager.h
+include/kadu/kadu-core/chat/chat-details-aggregate.h
+include/kadu/kadu-core/chat/aggregate-chat-manager.h
+include/kadu/kadu-core/chat/chat.h
+include/kadu/kadu-core/chat/chat-styles-manager.h
+include/kadu/kadu-core/chat/html-messages-renderer.h
+include/kadu/kadu-core/chat/chat-shared.h
+include/kadu/kadu-core/chat/chat-manager.h
+include/kadu/kadu-core/chat/chat-details.h
+include/kadu/kadu-core/chat/chat-geometry-data.h
+include/kadu/kadu-core/chat/chat-details-conference.h
+include/kadu/kadu-core/chat/recent-chat-manager.h
+include/kadu/kadu-core/chat/chat-details-simple.h
+include/kadu/kadu-core/configuration/configuration-holder.h
+include/kadu/kadu-core/configuration/configuration-manager.h
+include/kadu/kadu-core/configuration/config-file-data-manager.h
+include/kadu/kadu-core/configuration/notifier-configuration-data-manager.h
+include/kadu/kadu-core/configuration/chat-configuration-holder.h
+include/kadu/kadu-core/configuration/toolbar-configuration-manager.h
+include/kadu/kadu-core/configuration/xml-configuration-file.h
+include/kadu/kadu-core/configuration/configuration-window-data-manager.h
+include/kadu/kadu-core/configuration/main-configuration-holder.h
+include/kadu/kadu-core/configuration/configuration-aware-object.h
+include/kadu/kadu-core/configuration/configuration-file.h
+include/kadu/kadu-core/contacts/filter/abstract-contact-filter.h
+include/kadu/kadu-core/contacts/filter/contact-no-unloaded-account-filter.h
+include/kadu/kadu-core/contacts/model/buddy-contact-model.h
+include/kadu/kadu-core/contacts/model/contact-data-extractor.h
+include/kadu/kadu-core/contacts/model/contact-list-model.h
+include/kadu/kadu-core/contacts/contact.h
+include/kadu/kadu-core/contacts/contact-manager.h
+include/kadu/kadu-core/contacts/contact-shared.h
+include/kadu/kadu-core/contacts/contact-parser-tags.h
+include/kadu/kadu-core/contacts/contact-set-configuration-helper.h
+include/kadu/kadu-core/contacts/contact-set.h
+include/kadu/kadu-core/contacts/contact-details.h
+include/kadu/kadu-core/core/core-actions.h
+include/kadu/kadu-core/core/crash-aware-object.h
+include/kadu/kadu-core/core/core.h
+include/kadu/kadu-core/emoticons/emoticon-selector.h
+include/kadu/kadu-core/emoticons/emoticon-selector-button.h
+include/kadu/kadu-core/emoticons/emoticons-manager.h
+include/kadu/kadu-core/emoticons/prefix-node.h
+include/kadu/kadu-core/emoticons/emoticons.h
+include/kadu/kadu-core/emoticons/emots-walker.h
+include/kadu/kadu-core/file-transfer/file-transfer-handler.h
+include/kadu/kadu-core/file-transfer/file-transfer-shared.h
+include/kadu/kadu-core/file-transfer/file-transfer.h
+include/kadu/kadu-core/file-transfer/file-transfer-enums.h
+include/kadu/kadu-core/file-transfer/file-transfer-actions.h
+include/kadu/kadu-core/file-transfer/file-transfer-notifications.h
+include/kadu/kadu-core/file-transfer/file-transfer-manager.h
+include/kadu/kadu-core/gui/actions/action.h
+include/kadu/kadu-core/gui/actions/action-data-source.h
+include/kadu/kadu-core/gui/actions/action-description.h
+include/kadu/kadu-core/gui/actions/actions.h
+include/kadu/kadu-core/gui/widgets/configuration/config-spin-box.h
+include/kadu/kadu-core/gui/widgets/configuration/config-preview.h
+include/kadu/kadu-core/gui/widgets/configuration/config-label.h
+include/kadu/kadu-core/gui/widgets/configuration/config-action-button.h
+include/kadu/kadu-core/gui/widgets/configuration/config-hot-key-edit.h
+include/kadu/kadu-core/gui/widgets/configuration/kadu-tab-widget.h
+include/kadu/kadu-core/gui/widgets/configuration/config-color-button.h
+include/kadu/kadu-core/gui/widgets/configuration/config-widget.h
+include/kadu/kadu-core/gui/widgets/configuration/config-group-box.h
+include/kadu/kadu-core/gui/widgets/configuration/configuration-widget.h
+include/kadu/kadu-core/gui/widgets/configuration/config-select-file.h
+include/kadu/kadu-core/gui/widgets/configuration/config-line-edit.h
+include/kadu/kadu-core/gui/widgets/configuration/config-section.h
+include/kadu/kadu-core/gui/widgets/configuration/notify-group-box.h
+include/kadu/kadu-core/gui/widgets/configuration/config-combo-box.h
+include/kadu/kadu-core/gui/widgets/configuration/config-widget-value.h
+include/kadu/kadu-core/gui/widgets/configuration/config-slider.h
+include/kadu/kadu-core/gui/widgets/configuration/kadu-scroll-area.h
+include/kadu/kadu-core/gui/widgets/configuration/config-gg-password-edit.h
+include/kadu/kadu-core/gui/widgets/configuration/config-line-separator.h
+include/kadu/kadu-core/gui/widgets/configuration/buddy-list-background-colors-widget.h
+include/kadu/kadu-core/gui/widgets/configuration/notify-tree-widget.h
+include/kadu/kadu-core/gui/widgets/configuration/config-select-font.h
+include/kadu/kadu-core/gui/widgets/configuration/config-syntax-editor.h
+include/kadu/kadu-core/gui/widgets/configuration/notifier-configuration-widget.h
+include/kadu/kadu-core/gui/widgets/configuration/config-radio-button.h
+include/kadu/kadu-core/gui/widgets/configuration/config-tab.h
+include/kadu/kadu-core/gui/widgets/configuration/config-path-list-edit.h
+include/kadu/kadu-core/gui/widgets/configuration/config-list-widget.h
+include/kadu/kadu-core/gui/widgets/configuration/config-check-box.h
+include/kadu/kadu-core/gui/widgets/proxy-group-box.h
+include/kadu/kadu-core/gui/widgets/syntax-editor.h
+include/kadu/kadu-core/gui/widgets/buddy-contacts-table-model-proxy.h
+include/kadu/kadu-core/gui/widgets/chat-edit-box.h
+include/kadu/kadu-core/gui/widgets/group-tab-bar.h
+include/kadu/kadu-core/gui/widgets/progress-icon.h
+include/kadu/kadu-core/gui/widgets/buddy-avatar-widget.h
+include/kadu/kadu-core/gui/widgets/path-edit.h
+include/kadu/kadu-core/gui/widgets/buddies-list-view-item-painter.h
+include/kadu/kadu-core/gui/widgets/buddy-groups-configuration-widget.h
+include/kadu/kadu-core/gui/widgets/buddy-contacts-table-delegate.h
+include/kadu/kadu-core/gui/widgets/account-add-widget.h
+include/kadu/kadu-core/gui/widgets/kadu-web-view.h
+include/kadu/kadu-core/gui/widgets/toolbar.h
+include/kadu/kadu-core/gui/widgets/buddies-list-view-delegate.h
+include/kadu/kadu-core/gui/widgets/chat-widget-container.h
+include/kadu/kadu-core/gui/widgets/protocols-combo-box.h
+include/kadu/kadu-core/gui/widgets/buddies-list-view-menu-item.h
+include/kadu/kadu-core/gui/widgets/custom-input.h
+include/kadu/kadu-core/gui/widgets/status-buttons.h
+include/kadu/kadu-core/gui/widgets/buddy-options-configuration-widget.h
+include/kadu/kadu-core/gui/widgets/filter-widget.h
+include/kadu/kadu-core/gui/widgets/line-edit-with-clear-button.h
+include/kadu/kadu-core/gui/widgets/chat-view-network-access-manager.h
+include/kadu/kadu-core/gui/widgets/status-menu.h
+include/kadu/kadu-core/gui/widgets/select-buddy-combo-box.h
+include/kadu/kadu-core/gui/widgets/line-edit-clear-button.h
+include/kadu/kadu-core/gui/widgets/progress-label.h
+include/kadu/kadu-core/gui/widgets/account-avatar-widget.h
+include/kadu/kadu-core/gui/widgets/chat-messages-view.h
+include/kadu/kadu-core/gui/widgets/select-file.h
+include/kadu/kadu-core/gui/widgets/abstract-tool-tip.h
+include/kadu/kadu-core/gui/widgets/account-edit-widget.h
+include/kadu/kadu-core/gui/widgets/buddy-general-configuration-widget.h
+include/kadu/kadu-core/gui/widgets/path-list-edit.h
+include/kadu/kadu-core/gui/widgets/accounts-combo-box.h
+include/kadu/kadu-core/gui/widgets/kadu-combo-box.h
+include/kadu/kadu-core/gui/widgets/choose-identity-widget.h
+include/kadu/kadu-core/gui/widgets/custom-input-menu-manager.h
+include/kadu/kadu-core/gui/widgets/chat-edit-box-size-manager.h
+include/kadu/kadu-core/gui/widgets/buddies-list-view.h
+include/kadu/kadu-core/gui/widgets/identities-combo-box.h
+include/kadu/kadu-core/gui/widgets/select-buddy-popup.h
+include/kadu/kadu-core/gui/widgets/delayed-line-edit.h
+include/kadu/kadu-core/gui/widgets/tool-tip-class-manager.h
+include/kadu/kadu-core/gui/widgets/preview.h
+include/kadu/kadu-core/gui/widgets/groups-combo-box.h
+include/kadu/kadu-core/gui/widgets/modal-configuration-widget.h
+include/kadu/kadu-core/gui/widgets/buddies-list-view-delegate-configuration.h
+include/kadu/kadu-core/gui/widgets/account-buddy-list-widget.h
+include/kadu/kadu-core/gui/widgets/buddy-contacts-table-item.h
+include/kadu/kadu-core/gui/widgets/custom-input-menu-item.h
+include/kadu/kadu-core/gui/widgets/status-button.h
+include/kadu/kadu-core/gui/widgets/select-font.h
+include/kadu/kadu-core/gui/widgets/buddy-contacts-table.h
+include/kadu/kadu-core/gui/widgets/chat-widget-manager.h
+include/kadu/kadu-core/gui/widgets/chat-widget-actions.h
+include/kadu/kadu-core/gui/widgets/buddy-contacts-table-model.h
+include/kadu/kadu-core/gui/widgets/color-selector.h
+include/kadu/kadu-core/gui/widgets/buddies-list-view-avatar-painter.h
+include/kadu/kadu-core/gui/widgets/chat-widget.h
+include/kadu/kadu-core/gui/widgets/account-create-widget.h
+include/kadu/kadu-core/gui/widgets/buddies-list-view-menu-manager.h
+include/kadu/kadu-core/gui/widgets/buddies-list-widget.h
+include/kadu/kadu-core/gui/widgets/buddy-personal-info-configuration-widget.h
+include/kadu/kadu-core/gui/widgets/buddy-info-panel.h
+include/kadu/kadu-core/gui/widgets/color-button.h
+include/kadu/kadu-core/gui/widgets/file-transfer-widget.h
+include/kadu/kadu-core/gui/windows/open-chat-with/open-chat-with-runner-manager.h
+include/kadu/kadu-core/gui/windows/open-chat-with/open-chat-with-contact-list-runner.h
+include/kadu/kadu-core/gui/windows/open-chat-with/open-chat-with-runner.h
+include/kadu/kadu-core/gui/windows/open-chat-with/open-chat-with.h
+include/kadu/kadu-core/gui/windows/search-window.h
+include/kadu/kadu-core/gui/windows/multilogon-window.h
+include/kadu/kadu-core/gui/windows/updates-dialog.h
+include/kadu/kadu-core/gui/windows/main-window.h
+include/kadu/kadu-core/gui/windows/syntax-editor-window.h
+include/kadu/kadu-core/gui/windows/progress-window.h
+include/kadu/kadu-core/gui/windows/search-window-actions.h
+include/kadu/kadu-core/gui/windows/kadu-window.h
+include/kadu/kadu-core/gui/windows/about.h
+include/kadu/kadu-core/gui/windows/modules-window.h
+include/kadu/kadu-core/gui/windows/password-window.h
+include/kadu/kadu-core/gui/windows/your-accounts.h
+include/kadu/kadu-core/gui/windows/chat-window.h
+include/kadu/kadu-core/gui/windows/kadu-window-actions.h
+include/kadu/kadu-core/gui/windows/subscription-window.h
+include/kadu/kadu-core/gui/windows/buddy-data-window.h
+include/kadu/kadu-core/gui/windows/add-buddy-window.h
+include/kadu/kadu-core/gui/windows/message-dialog.h
+include/kadu/kadu-core/gui/windows/buddy-delete-window.h
+include/kadu/kadu-core/gui/windows/merge-buddies-window.h
+include/kadu/kadu-core/gui/windows/buddy-data-window-aware-object.h
+include/kadu/kadu-core/gui/windows/configuration-window.h
+include/kadu/kadu-core/gui/windows/group-properties-window.h
+include/kadu/kadu-core/gui/windows/window-notifier-window.h
+include/kadu/kadu-core/gui/windows/choose-description.h
+include/kadu/kadu-core/gui/windows/file-transfer-window.h
+include/kadu/kadu-core/gui/windows/main-configuration-window.h
+include/kadu/kadu-core/gui/hot-key.h
+include/kadu/kadu-core/gui/status-icon.h
+include/kadu/kadu-core/icons/kadu-icon.h
+include/kadu/kadu-core/icons/icons-manager.h
+include/kadu/kadu-core/identities/model/identity-model.h
+include/kadu/kadu-core/identities/identity-manager.h
+include/kadu/kadu-core/identities/identity-shared.h
+include/kadu/kadu-core/identities/identity.h
+include/kadu/kadu-core/identities/identities-aware-object.h
+include/kadu/kadu-core/misc/token-reader.h
+include/kadu/kadu-core/misc/date-time-parser-tags.h
+include/kadu/kadu-core/misc/path-conversion.h
+include/kadu/kadu-core/misc/date-time.h
+include/kadu/kadu-core/misc/coding-conversion.h
+include/kadu/kadu-core/misc/syntax-list.h
+include/kadu/kadu-core/misc/token-acceptor.h
+include/kadu/kadu-core/misc/misc.h
+include/kadu/kadu-core/model/roles.h
+include/kadu/kadu-core/model/actions-proxy-model.h
+include/kadu/kadu-core/model/kadu-abstract-model.h
+include/kadu/kadu-core/multilogon/model/multilogon-model.h
+include/kadu/kadu-core/multilogon/multilogon-session.h
+include/kadu/kadu-core/network/network-manager-dummy.h
+include/kadu/kadu-core/network/network-aware-object.h
+include/kadu/kadu-core/network/network-manager-qt.h
+include/kadu/kadu-core/network/network-manager-ntrack.h
+include/kadu/kadu-core/network/network-manager.h
+include/kadu/kadu-core/network/kadu-network-config.h
+include/kadu/kadu-core/notify/notifier.h
+include/kadu/kadu-core/notify/window-notifier.h
+include/kadu/kadu-core/notify/new-message-notification.h
+include/kadu/kadu-core/notify/notification.h
+include/kadu/kadu-core/notify/chat-notification.h
+include/kadu/kadu-core/notify/notification-manager.h
+include/kadu/kadu-core/notify/account-notification.h
+include/kadu/kadu-core/notify/status-changed-notification.h
+include/kadu/kadu-core/notify/buddy-notify-data.h
+include/kadu/kadu-core/notify/multilogon-notification.h
+include/kadu/kadu-core/notify/notify-event.h
+include/kadu/kadu-core/notify/notify-configuration-ui-handler.h
+include/kadu/kadu-core/os/generic/desktop-aware-object-helper.h
+include/kadu/kadu-core/os/generic/compositing-aware-object.h
+include/kadu/kadu-core/os/generic/desktop-aware-object.h
+include/kadu/kadu-core/os/generic/url-opener.h
+include/kadu/kadu-core/os/generic/system-info.h
+include/kadu/kadu-core/os/qtsingleapplication/qtlockedfile.h
+include/kadu/kadu-core/os/qtsingleapplication/qtlocalpeer.h
+include/kadu/kadu-core/os/x11tools.h
+include/kadu/kadu-core/parser/parser-token.h
+include/kadu/kadu-core/parser/parser.h
+include/kadu/kadu-core/parser/parser-token-type.h
+include/kadu/kadu-core/plugins/plugin.h
+include/kadu/kadu-core/plugins/plugins-manager.h
+include/kadu/kadu-core/plugins/plugin-info.h
+include/kadu/kadu-core/plugins/generic-plugin.h
+include/kadu/kadu-core/protocols/filter/abstract-protocol-filter.h
+include/kadu/kadu-core/protocols/filter/can-register-protocol-filter.h
+include/kadu/kadu-core/protocols/model/protocols-model-proxy.h
+include/kadu/kadu-core/protocols/model/protocols-model.h
+include/kadu/kadu-core/protocols/services/multilogon-service.h
+include/kadu/kadu-core/protocols/services/chat-state-service.h
+include/kadu/kadu-core/protocols/services/chat-image-service.h
+include/kadu/kadu-core/protocols/services/avatar-service.h
+include/kadu/kadu-core/protocols/services/chat-service.h
+include/kadu/kadu-core/protocols/services/search-service.h
+include/kadu/kadu-core/protocols/services/personal-info-service.h
+include/kadu/kadu-core/protocols/services/contact-list-service.h
+include/kadu/kadu-core/protocols/services/file-transfer-service.h
+include/kadu/kadu-core/protocols/services/contact-personal-info-service.h
+include/kadu/kadu-core/protocols/services/roster-service.h
+include/kadu/kadu-core/protocols/protocols-aware-object.h
+include/kadu/kadu-core/protocols/protocols-manager.h
+include/kadu/kadu-core/protocols/protocol-state-machine.h
+include/kadu/kadu-core/protocols/connection-error-notification.h
+include/kadu/kadu-core/protocols/protocol-menu-manager.h
+include/kadu/kadu-core/protocols/protocol.h
+include/kadu/kadu-core/protocols/protocol-factory.h
+include/kadu/kadu-core/qt/long-validator.h
+include/kadu/kadu-core/status/description-model.h
+include/kadu/kadu-core/status/status-container-aware-object.h
+include/kadu/kadu-core/status/description-manager.h
+include/kadu/kadu-core/status/base-status-container.h
+include/kadu/kadu-core/status/status-container.h
+include/kadu/kadu-core/status/status-group.h
+include/kadu/kadu-core/status/all-accounts-status-container.h
+include/kadu/kadu-core/status/status-changer-manager.h
+include/kadu/kadu-core/status/status-changer.h
+include/kadu/kadu-core/status/status.h
+include/kadu/kadu-core/status/status-type-manager.h
+include/kadu/kadu-core/status/status-actions.h
+include/kadu/kadu-core/status/status-group-manager.h
+include/kadu/kadu-core/status/status-type.h
+include/kadu/kadu-core/status/status-container-manager.h
+include/kadu/kadu-core/storage/named-storable-object.h
+include/kadu/kadu-core/storage/shared-base.h
+include/kadu/kadu-core/storage/details.h
+include/kadu/kadu-core/storage/storage-point.h
+include/kadu/kadu-core/storage/shared.h
+include/kadu/kadu-core/storage/details-holder.h
+include/kadu/kadu-core/storage/module-data.h
+include/kadu/kadu-core/storage/storable-string-list.h
+include/kadu/kadu-core/storage/manager-common.h
+include/kadu/kadu-core/storage/storable-object.h
+include/kadu/kadu-core/storage/manager.h
+include/kadu/kadu-core/storage/simple-manager.h
+include/kadu/kadu-core/storage/uuid-storable-object.h
+include/kadu/kadu-core/themes/theme.h
+include/kadu/kadu-core/themes/emoticon-theme-manager.h
+include/kadu/kadu-core/themes/theme-manager.h
+include/kadu/kadu-core/themes/icon-theme-manager.h
+include/kadu/kadu-core/url-handlers/standard-url-handler.h
+include/kadu/kadu-core/url-handlers/url-handler.h
+include/kadu/kadu-core/url-handlers/mail-url-handler.h
+include/kadu/kadu-core/url-handlers/url-handler-manager.h
+include/kadu/kadu-core/themes.h
+include/kadu/kadu-core/debug.h
+include/kadu/kadu-core/languages-manager.h
+include/kadu/kadu-core/kadu-application.h
+include/kadu/kadu-core/updates.h
+include/kadu/kadu-core/exports.h
+include/kadu/kadu-core/activate.h
+include/kadu/kadu-core/html_document.h
+include/kadu/kadu-core/aware-object.h
+include/kadu/kadu-core/predicate-object.h
+include/kadu/plugins/docking/docking_exports.h
+include/kadu/plugins/docking/docker.h
+include/kadu/plugins/docking/docking-plugin.h
+include/kadu/plugins/docking/mac_docking_helper.h
+include/kadu/plugins/docking/docking.h
+include/kadu/plugins/encryption_ng/configuration/encryption-ng-configuration.h
+include/kadu/plugins/encryption_ng/keys/key-shared.h
+include/kadu/plugins/encryption_ng/keys/keys-manager.h
+include/kadu/plugins/encryption_ng/keys/key.h
+include/kadu/plugins/encryption_ng/notify/encryption-ng-notification.h
+include/kadu/plugins/encryption_ng/key-generator.h
+include/kadu/plugins/encryption_ng/encryptor.h
+include/kadu/plugins/encryption_ng/encryption-actions.h
+include/kadu/plugins/encryption_ng/encryption-ng-plugin.h
+include/kadu/plugins/encryption_ng/encryption-provider-manager.h
+include/kadu/plugins/encryption_ng/encryption-chat-data.h
+include/kadu/plugins/encryption_ng/decryptor-wrapper.h
+include/kadu/plugins/encryption_ng/encryption-ng-configuration-ui-handler.h
+include/kadu/plugins/encryption_ng/encryption_exports.h
+include/kadu/plugins/encryption_ng/encryption-provider.h
+include/kadu/plugins/encryption_ng/decryptor.h
+include/kadu/plugins/encryption_ng/encryption-manager.h
+include/kadu/plugins/gadu_protocol/dcc/dcc-socket-notifiers.h
+include/kadu/plugins/gadu_protocol/gui/widgets/gadu-edit-account-widget.h
+include/kadu/plugins/gadu_protocol/gui/widgets/token-widget.h
+include/kadu/plugins/gadu_protocol/gui/widgets/gadu-contact-personal-info-widget.h
+include/kadu/plugins/gadu_protocol/gui/widgets/gadu-create-account-widget.h
+include/kadu/plugins/gadu_protocol/gui/widgets/gadu-personal-info-widget.h
+include/kadu/plugins/gadu_protocol/gui/widgets/gadu-add-account-widget.h
+include/kadu/plugins/gadu_protocol/gui/windows/gadu-change-password-window.h
+include/kadu/plugins/gadu_protocol/gui/windows/gadu-wait-for-account-register-window.h
+include/kadu/plugins/gadu_protocol/gui/windows/gadu-remind-password-window.h
+include/kadu/plugins/gadu_protocol/gui/windows/gadu-unregister-account-window.h
+include/kadu/plugins/gadu_protocol/helpers/gadu-protocol-helper.h
+include/kadu/plugins/gadu_protocol/helpers/gadu-importer.h
+include/kadu/plugins/gadu_protocol/helpers/gadu-proxy-helper.h
+include/kadu/plugins/gadu_protocol/helpers/gadu-formatter.h
+include/kadu/plugins/gadu_protocol/helpers/gadu-list-helper.h
+include/kadu/plugins/gadu_protocol/helpers/gadu-imported-contact-xml-receiver.h
+include/kadu/plugins/gadu_protocol/oauth/oauth-token.h
+include/kadu/plugins/gadu_protocol/oauth/oauth-authorization.h
+include/kadu/plugins/gadu_protocol/oauth/oauth-manager.h
+include/kadu/plugins/gadu_protocol/oauth/oauth-token-fetcher.h
+include/kadu/plugins/gadu_protocol/oauth/oauth-consumer.h
+include/kadu/plugins/gadu_protocol/oauth/oauth-authorization-chain.h
+include/kadu/plugins/gadu_protocol/oauth/oauth-parameters.h
+include/kadu/plugins/gadu_protocol/open-chat-with/gadu-open-chat-with-runner.h
+include/kadu/plugins/gadu_protocol/server/gadu-avatar-fetcher.h
+include/kadu/plugins/gadu_protocol/server/gadu-contact-list-handler.h
+include/kadu/plugins/gadu_protocol/server/gadu-avatar-data-parser.h
+include/kadu/plugins/gadu_protocol/server/gadu-avatar-uploader.h
+include/kadu/plugins/gadu_protocol/server/gadu-server-remind-password.h
+include/kadu/plugins/gadu_protocol/server/gadu-server-unregister-account.h
+include/kadu/plugins/gadu_protocol/server/gadu-servers-manager.h
+include/kadu/plugins/gadu_protocol/server/gadu-server-register-account.h
+include/kadu/plugins/gadu_protocol/server/gadu-token-fetcher.h
+include/kadu/plugins/gadu_protocol/server/gadu-server-change-password.h
+include/kadu/plugins/gadu_protocol/services/multilogon/gadu-multilogon-session.h
+include/kadu/plugins/gadu_protocol/services/gadu-chat-service.h
+include/kadu/plugins/gadu_protocol/services/gadu-contact-personal-info-service.h
+include/kadu/plugins/gadu_protocol/services/gadu-avatar-service.h
+include/kadu/plugins/gadu_protocol/services/gadu-chat-image-service.h
+include/kadu/plugins/gadu_protocol/services/gadu-chat-state-service.h
+include/kadu/plugins/gadu_protocol/services/gadu-multilogon-service.h
+include/kadu/plugins/gadu_protocol/services/gadu-contact-list-service.h
+include/kadu/plugins/gadu_protocol/services/gadu-contact-list-state-machine.h
+include/kadu/plugins/gadu_protocol/services/gadu-file-transfer-service.h
+include/kadu/plugins/gadu_protocol/services/gadu-personal-info-service.h
+include/kadu/plugins/gadu_protocol/services/gadu-search-service.h
+include/kadu/plugins/gadu_protocol/socket-notifiers/gadu-pubdir-socket-notifiers.h
+include/kadu/plugins/gadu_protocol/socket-notifiers/gadu-socket-notifiers.h
+include/kadu/plugins/gadu_protocol/socket-notifiers/gadu-token-socket-notifiers.h
+include/kadu/plugins/gadu_protocol/socket-notifiers/gadu-protocol-socket-notifiers.h
+include/kadu/plugins/gadu_protocol/gadu-search-record.h
+include/kadu/plugins/gadu_protocol/gadu-search-result.h
+include/kadu/plugins/gadu_protocol/gadu-url-handler.h
+include/kadu/plugins/gadu_protocol/gadu-account-details.h
+include/kadu/plugins/gadu_protocol/gadu-protocol-factory.h
+include/kadu/plugins/gadu_protocol/gadu-resolver.h
+include/kadu/plugins/gadu_protocol/gadu-protocol-plugin.h
+include/kadu/plugins/gadu_protocol/gadu-exports.h
+include/kadu/plugins/gadu_protocol/gadu-protocol.h
+include/kadu/plugins/gadu_protocol/gadu-id-validator.h
+include/kadu/plugins/gadu_protocol/gadu-contact-details.h
+include/kadu/plugins/history/gui/windows/history-window.h
+include/kadu/plugins/history/model/sms-dates-model.h
+include/kadu/plugins/history/model/history-chats-model.h
+include/kadu/plugins/history/model/buddy-status-dates-model.h
+include/kadu/plugins/history/model/dates-model-item.h
+include/kadu/plugins/history/model/history-type.h
+include/kadu/plugins/history/model/chat-dates-model.h
+include/kadu/plugins/history/model/history-chats-model-proxy.h
+include/kadu/plugins/history/search/history-search-parameters.h
+include/kadu/plugins/history/storage/history-storage.h
+include/kadu/plugins/history/history-tree-item.h
+include/kadu/plugins/history/timed-status.h
+include/kadu/plugins/history/buddy-history-delete-handler.h
+include/kadu/plugins/history/history.h
+include/kadu/plugins/history/history-plugin.h
+include/kadu/plugins/history/history_exports.h
+include/kadu/plugins/history/history-save-thread.h
+include/kadu/plugins/history_migration/gui/windows/history-import-window.h
+include/kadu/plugins/history_migration/history_migration_exports.h
+include/kadu/plugins/history_migration/history-migration-actions.h
+include/kadu/plugins/history_migration/history-importer-chat-data.h
+include/kadu/plugins/history_migration/history-migration-plugin.h
+include/kadu/plugins/history_migration/history-migration-helper.h
+include/kadu/plugins/history_migration/history-importer-manager.h
+include/kadu/plugins/history_migration/history-import-thread.h
+include/kadu/plugins/history_migration/history-importer.h
+include/kadu/plugins/idle/idle_exports.h
+include/kadu/plugins/idle/idle-plugin.h
+include/kadu/plugins/idle/idle.h
+include/kadu/plugins/jabber_protocol/actions/jabber-protocol-menu-manager.h
+include/kadu/plugins/jabber_protocol/actions/jabber-actions.h
+include/kadu/plugins/jabber_protocol/certificates/certificate-error-dialog.h
+include/kadu/plugins/jabber_protocol/certificates/certificate-display-dialog.h
+include/kadu/plugins/jabber_protocol/certificates/trusted-certificates-manager.h
+include/kadu/plugins/jabber_protocol/certificates/certificate-helpers.h
+include/kadu/plugins/jabber_protocol/client/mini-client.h
+include/kadu/plugins/jabber_protocol/client/jabber-client.h
+include/kadu/plugins/jabber_protocol/file-transfer/jabber-file-transfer-handler.h
+include/kadu/plugins/jabber_protocol/file-transfer/s5b-server-manager.h
+include/kadu/plugins/jabber_protocol/gui/widgets/jabber-create-account-widget.h
+include/kadu/plugins/jabber_protocol/gui/widgets/jabber-edit-account-widget.h
+include/kadu/plugins/jabber_protocol/gui/widgets/jabber-contact-personal-info-widget.h
+include/kadu/plugins/jabber_protocol/gui/widgets/jabber-personal-info-widget.h
+include/kadu/plugins/jabber_protocol/gui/widgets/jabber-add-account-widget.h
+include/kadu/plugins/jabber_protocol/gui/windows/jabber-wait-for-account-register-window.h
+include/kadu/plugins/jabber_protocol/gui/windows/xml-console.h
+include/kadu/plugins/jabber_protocol/gui/windows/jabber-change-password-window.h
+include/kadu/plugins/jabber_protocol/open-chat-with/jabber-open-chat-with-runner.h
+include/kadu/plugins/jabber_protocol/resource/jabber-resource-pool.h
+include/kadu/plugins/jabber_protocol/resource/jabber-resource.h
+include/kadu/plugins/jabber_protocol/server/jabber-avatar-fetcher.h
+include/kadu/plugins/jabber_protocol/server/jabber-avatar-uploader.h
+include/kadu/plugins/jabber_protocol/server/jabber-avatar-pep-fetcher.h
+include/kadu/plugins/jabber_protocol/server/jabber-server-register-account.h
+include/kadu/plugins/jabber_protocol/server/jabber-server-change-password.h
+include/kadu/plugins/jabber_protocol/server/jabber-avatar-vcard-uploader.h
+include/kadu/plugins/jabber_protocol/server/jabber-avatar-vcard-fetcher.h
+include/kadu/plugins/jabber_protocol/server/jabber-avatar-pep-uploader.h
+include/kadu/plugins/jabber_protocol/services/jabber-avatar-service.h
+include/kadu/plugins/jabber_protocol/services/jabber-roster-service.h
+include/kadu/plugins/jabber_protocol/services/jabber-contact-personal-info-service.h
+include/kadu/plugins/jabber_protocol/services/jabber-personal-info-service.h
+include/kadu/plugins/jabber_protocol/services/jabber-chat-service.h
+include/kadu/plugins/jabber_protocol/services/jabber-chat-state-service.h
+include/kadu/plugins/jabber_protocol/services/jabber-file-transfer-service.h
+include/kadu/plugins/jabber_protocol/services/jabber-subscription-service.h
+include/kadu/plugins/jabber_protocol/tasks/pep-publish-task.h
+include/kadu/plugins/jabber_protocol/tasks/pep-get-task.h
+include/kadu/plugins/jabber_protocol/tasks/pep-retract-task.h
+include/kadu/plugins/jabber_protocol/utils/vcard-factory.h
+include/kadu/plugins/jabber_protocol/utils/jid-util.h
+include/kadu/plugins/jabber_protocol/utils/server-info-manager.h
+include/kadu/plugins/jabber_protocol/utils/pep-manager.h
+include/kadu/plugins/jabber_protocol/jabber-protocol.h
+include/kadu/plugins/jabber_protocol/jabber-protocol-factory.h
+include/kadu/plugins/jabber_protocol/gtalk-protocol-factory.h
+include/kadu/plugins/jabber_protocol/facebook-protocol-factory.h
+include/kadu/plugins/jabber_protocol/jabber-url-handler.h
+include/kadu/plugins/jabber_protocol/jabber-account-details.h
+include/kadu/plugins/jabber_protocol/jabber-protocol-plugin.h
+include/kadu/plugins/jabber_protocol/jabber-id-validator.h
+include/kadu/plugins/jabber_protocol/iris-status-adapter.h
+include/kadu/plugins/jabber_protocol/jabber-contact-details.h
+include/kadu/plugins/mediaplayer/mediaplayer.h
+include/kadu/plugins/mediaplayer/mediaplayer-plugin.h
+include/kadu/plugins/mediaplayer/mp_status_changer.h
+include/kadu/plugins/mediaplayer/player_commands.h
+include/kadu/plugins/mediaplayer/player_info.h
+include/kadu/plugins/mediaplayer/mpris_mediaplayer.h
+include/kadu/plugins/mediaplayer/mpris_controller.h
+include/kadu/plugins/mediaplayer/mediaplayer_exports.h
+include/kadu/plugins/qt4_docking/qt4-docking-plugin.h
+include/kadu/plugins/qt4_docking/qt4_docking.h
+include/kadu/plugins/qt4_docking/qt4_docking_exports.h
+include/kadu/plugins/sound/configuration/gui/sound-configuration-ui-handler.h
+include/kadu/plugins/sound/sound-theme-manager.h
+include/kadu/plugins/sound/sound-play-thread.h
+include/kadu/plugins/sound/sound-plugin.h
+include/kadu/plugins/sound/sound-exports.h
+include/kadu/plugins/sound/sound-player.h
+include/kadu/plugins/sound/sound-manager.h
+include/kadu/plugins/sound/sound-file.h
+include/kadu/plugins/sound/sound-actions.h
+lib/kadu/plugins/libantistring.so
+lib/kadu/plugins/libamarok1_mediaplayer.so
+lib/kadu/plugins/libauto_hide.so
+lib/kadu/plugins/libautoaway.so
+lib/kadu/plugins/libautoresponder.so
+lib/kadu/plugins/libautostatus.so
+lib/kadu/plugins/libcenzor.so
+lib/kadu/plugins/libchat_notify.so
+lib/kadu/plugins/libconfig_wizard.so
+lib/kadu/plugins/libdesktop_docking.so
+lib/kadu/plugins/libdocking.so
+lib/kadu/plugins/libencryption_ng.so
+lib/kadu/plugins/libencryption_ng_simlite.so
+lib/kadu/plugins/libexec_notify.so
+lib/kadu/plugins/libext_sound.so
+lib/kadu/plugins/libfalf_mediaplayer.so
+lib/kadu/plugins/libfiledesc.so
+lib/kadu/plugins/libfirewall.so
+lib/kadu/plugins/libfreedesktop_notify.so
+lib/kadu/plugins/libgadu_protocol.so
+lib/kadu/plugins/libhints.so
+lib/kadu/plugins/libhistory.so
+lib/kadu/plugins/libhistory_migration.so
+lib/kadu/plugins/libidle.so
+lib/kadu/plugins/libimagelink.so
+lib/kadu/plugins/libjabber_protocol.so
+lib/kadu/plugins/liblast_seen.so
+lib/kadu/plugins/libmediaplayer.so
+lib/kadu/plugins/libmprisplayer_mediaplayer.so
+lib/kadu/plugins/libpcspeaker.so
+lib/kadu/plugins/libphonon_sound.so
+lib/kadu/plugins/libprofiles_import.so
+lib/kadu/plugins/libqt4_docking.so
+lib/kadu/plugins/libqt4_docking_notify.so
+lib/kadu/plugins/libqt4_sound.so
+lib/kadu/plugins/libscreenshot.so
+lib/kadu/plugins/libsimpleview.so
+lib/kadu/plugins/libsingle_window.so
+lib/kadu/plugins/libsms.so
+lib/kadu/plugins/libsound.so
+lib/kadu/plugins/libspeech.so
+lib/kadu/plugins/libspellchecker.so
+lib/kadu/plugins/libsql_history.so
+lib/kadu/plugins/libtabs.so
+lib/kadu/plugins/libword_fix.so
 share/applications/kadu.desktop
+share/cmake/Modules/FindKadu.cmake
 %%DATADIR%%/AUTHORS
 %%DATADIR%%/COPYING
 %%DATADIR%%/HISTORY
@@ -52,270 +622,264 @@ share/applications/kadu.desktop
 %%DATADIR%%/configuration/contact-data.ui
 %%DATADIR%%/configuration/dialog.ui
 %%DATADIR%%/configuration/dialog-look-chat-advanced.ui
-%%DATADIR%%/modules/amarok2_mediaplayer.desc
-%%DATADIR%%/modules/antistring.desc
-%%DATADIR%%/modules/auto_hide.desc
-%%DATADIR%%/modules/autoaway.desc
-%%DATADIR%%/modules/autoresponder.desc
-%%DATADIR%%/modules/autostatus.desc
-%%DATADIR%%/modules/cenzor.desc
-%%DATADIR%%/modules/config_wizard.desc
-%%DATADIR%%/modules/desktop_docking.desc
-%%DATADIR%%/modules/docking.desc
-%%DATADIR%%/modules/encryption_ng.desc
-%%DATADIR%%/modules/encryption_ng_simlite.desc
-%%DATADIR%%/modules/exec_notify.desc
-%%DATADIR%%/modules/ext_sound.desc
-%%DATADIR%%/modules/filedesc.desc
-%%DATADIR%%/modules/firewall.desc
-%%DATADIR%%/modules/gadu_protocol.desc
-%%DATADIR%%/modules/hints.desc
-%%DATADIR%%/modules/history.desc
-%%DATADIR%%/modules/history_migration.desc
-%%DATADIR%%/modules/idle.desc
-%%DATADIR%%/modules/imagelink.desc
-%%DATADIR%%/modules/jabber_protocol.desc
-%%DATADIR%%/modules/kde_notify.desc
-%%DATADIR%%/modules/last_seen.desc
-%%DATADIR%%/modules/parser_extender.desc
-%%DATADIR%%/modules/phonon_sound.desc
-%%DATADIR%%/modules/profiles_import.desc
-%%DATADIR%%/modules/qt4_docking.desc
-%%DATADIR%%/modules/qt4_docking_notify.desc
-%%DATADIR%%/modules/qt4_sound.desc
-%%DATADIR%%/modules/screenshot.desc
-%%DATADIR%%/modules/simpleview.desc
-%%DATADIR%%/modules/single_window.desc
-%%DATADIR%%/modules/sms.desc
-%%DATADIR%%/modules/sound.desc
-%%DATADIR%%/modules/speech.desc
-%%DATADIR%%/modules/spellchecker.desc
-%%DATADIR%%/modules/sql_history.desc
-%%DATADIR%%/modules/tabs.desc
-%%DATADIR%%/modules/word_fix.desc
-%%DATADIR%%/modules/configuration/antistring.ui
-%%DATADIR%%/modules/configuration/auto_hide.ui
-%%DATADIR%%/modules/configuration/autoaway.ui
-%%DATADIR%%/modules/configuration/autoresponder.ui
-%%DATADIR%%/modules/configuration/autostatus.ui
-%%DATADIR%%/modules/configuration/cenzor.ui
-%%DATADIR%%/modules/configuration/desktop_docking.ui
-%%DATADIR%%/modules/configuration/docking.ui
-%%DATADIR%%/modules/configuration/encryption-ng.ui
-%%DATADIR%%/modules/configuration/ext_sound.ui
-%%DATADIR%%/modules/configuration/filedesc.ui
-%%DATADIR%%/modules/configuration/firewall.ui
-%%DATADIR%%/modules/configuration/hint-over-user.ui
-%%DATADIR%%/modules/configuration/hints-advanced.ui
-%%DATADIR%%/modules/configuration/hints-notifier.ui
-%%DATADIR%%/modules/configuration/hints.ui
-%%DATADIR%%/modules/configuration/history.ui
-%%DATADIR%%/modules/configuration/image-link.ui
-%%DATADIR%%/modules/configuration/kde_notify.ui
-%%DATADIR%%/modules/configuration/parser_extender.ui
-%%DATADIR%%/modules/configuration/qt4-docking-notify.ui
-%%DATADIR%%/modules/configuration/screenshot.ui
-%%DATADIR%%/modules/configuration/simpleview.ui
-%%DATADIR%%/modules/configuration/single_window.ui
-%%DATADIR%%/modules/configuration/sms.ui
-%%DATADIR%%/modules/configuration/sound.ui
-%%DATADIR%%/modules/configuration/speech.ui
-%%DATADIR%%/modules/configuration/spellchecker.ui
-%%DATADIR%%/modules/configuration/tabs.ui
-%%DATADIR%%/modules/configuration/word_fix.ui
-%%DATADIR%%/modules/data/antistring/ant_conditions.conf
-%%DATADIR%%/modules/data/cenzor/cenzor_words.conf
-%%DATADIR%%/modules/data/cenzor/cenzor_words_ok.conf
-%%DATADIR%%/modules/data/gadu_protocol/servers.txt
-%%DATADIR%%/modules/data/jabber_protocol/away.png
-%%DATADIR%%/modules/data/jabber_protocol/ffc.png
-%%DATADIR%%/modules/data/jabber_protocol/dnd.png
-%%DATADIR%%/modules/data/jabber_protocol/invisible.png
-%%DATADIR%%/modules/data/jabber_protocol/offline.png
-%%DATADIR%%/modules/data/jabber_protocol/online.png
-%%DATADIR%%/modules/data/jabber_protocol/xa.png
-%%DATADIR%%/modules/data/sms/scripts/gateway-plus.js
-%%DATADIR%%/modules/data/sms/scripts/gateway.js
-%%DATADIR%%/modules/data/sms/scripts/gateway-orange.js
-%%DATADIR%%/modules/data/sms/scripts/gateway-era.js
-%%DATADIR%%/modules/data/word_fix/wf_default_list.data
-%%DATADIR%%/modules/translations/antistring_en.qm
-%%DATADIR%%/modules/translations/antistring_de.qm
-%%DATADIR%%/modules/translations/antistring_fr.qm
-%%DATADIR%%/modules/translations/antistring_it.qm
-%%DATADIR%%/modules/translations/antistring_pl.qm
-%%DATADIR%%/modules/translations/auto_hide_en.qm
-%%DATADIR%%/modules/translations/auto_hide_de.qm
-%%DATADIR%%/modules/translations/auto_hide_fr.qm
-%%DATADIR%%/modules/translations/auto_hide_it.qm
-%%DATADIR%%/modules/translations/auto_hide_pl.qm
-%%DATADIR%%/modules/translations/autoaway_de.qm
-%%DATADIR%%/modules/translations/autoaway_en.qm
-%%DATADIR%%/modules/translations/autoaway_fr.qm
-%%DATADIR%%/modules/translations/autoaway_it.qm
-%%DATADIR%%/modules/translations/autoaway_pl.qm
-%%DATADIR%%/modules/translations/autoresponder_de.qm
-%%DATADIR%%/modules/translations/autoresponder_en.qm
-%%DATADIR%%/modules/translations/autoresponder_fr.qm
-%%DATADIR%%/modules/translations/autoresponder_it.qm
-%%DATADIR%%/modules/translations/autoresponder_pl.qm
-%%DATADIR%%/modules/translations/autostatus_en.qm
-%%DATADIR%%/modules/translations/autostatus_de.qm
-%%DATADIR%%/modules/translations/autostatus_fr.qm
-%%DATADIR%%/modules/translations/autostatus_it.qm
-%%DATADIR%%/modules/translations/autostatus_pl.qm
-%%DATADIR%%/modules/translations/cenzor_de.qm
-%%DATADIR%%/modules/translations/cenzor_en.qm
-%%DATADIR%%/modules/translations/cenzor_fr.qm
-%%DATADIR%%/modules/translations/cenzor_it.qm
-%%DATADIR%%/modules/translations/cenzor_pl.qm
-%%DATADIR%%/modules/translations/config_wizard_de.qm
-%%DATADIR%%/modules/translations/config_wizard_en.qm
-%%DATADIR%%/modules/translations/config_wizard_fr.qm
-%%DATADIR%%/modules/translations/config_wizard_it.qm
-%%DATADIR%%/modules/translations/config_wizard_pl.qm
-%%DATADIR%%/modules/translations/desktop_docking_en.qm
-%%DATADIR%%/modules/translations/desktop_docking_cs.qm
-%%DATADIR%%/modules/translations/desktop_docking_de.qm
-%%DATADIR%%/modules/translations/desktop_docking_fr.qm
-%%DATADIR%%/modules/translations/desktop_docking_it.qm
-%%DATADIR%%/modules/translations/desktop_docking_pl.qm
-%%DATADIR%%/modules/translations/docking_de.qm
-%%DATADIR%%/modules/translations/docking_en.qm
-%%DATADIR%%/modules/translations/docking_fr.qm
-%%DATADIR%%/modules/translations/docking_it.qm
-%%DATADIR%%/modules/translations/docking_pl.qm
-%%DATADIR%%/modules/translations/encryption_ng_en.qm
-%%DATADIR%%/modules/translations/encryption_ng_de.qm
-%%DATADIR%%/modules/translations/encryption_ng_fr.qm
-%%DATADIR%%/modules/translations/encryption_ng_it.qm
-%%DATADIR%%/modules/translations/encryption_ng_pl.qm
-%%DATADIR%%/modules/translations/encryption_ng_simlite_en.qm
-%%DATADIR%%/modules/translations/encryption_ng_simlite_de.qm
-%%DATADIR%%/modules/translations/encryption_ng_simlite_fr.qm
-%%DATADIR%%/modules/translations/encryption_ng_simlite_it.qm
-%%DATADIR%%/modules/translations/encryption_ng_simlite_pl.qm
-%%DATADIR%%/modules/translations/exec_notify_en.qm
-%%DATADIR%%/modules/translations/exec_notify_de.qm
-%%DATADIR%%/modules/translations/exec_notify_fr.qm
-%%DATADIR%%/modules/translations/exec_notify_it.qm
-%%DATADIR%%/modules/translations/exec_notify_pl.qm
-%%DATADIR%%/modules/translations/ext_sound_en.qm
-%%DATADIR%%/modules/translations/ext_sound_de.qm
-%%DATADIR%%/modules/translations/ext_sound_fr.qm
-%%DATADIR%%/modules/translations/ext_sound_it.qm
-%%DATADIR%%/modules/translations/ext_sound_pl.qm
-%%DATADIR%%/modules/translations/filedesc_en.qm
-%%DATADIR%%/modules/translations/filedesc_de.qm
-%%DATADIR%%/modules/translations/filedesc_fr.qm
-%%DATADIR%%/modules/translations/filedesc_it.qm
-%%DATADIR%%/modules/translations/filedesc_pl.qm
-%%DATADIR%%/modules/translations/firewall_en.qm
-%%DATADIR%%/modules/translations/firewall_de.qm
-%%DATADIR%%/modules/translations/firewall_fr.qm
-%%DATADIR%%/modules/translations/firewall_it.qm
-%%DATADIR%%/modules/translations/firewall_pl.qm
-%%DATADIR%%/modules/translations/gadu_protocol_en.qm
-%%DATADIR%%/modules/translations/gadu_protocol_de.qm
-%%DATADIR%%/modules/translations/gadu_protocol_fr.qm
-%%DATADIR%%/modules/translations/gadu_protocol_it.qm
-%%DATADIR%%/modules/translations/gadu_protocol_pl.qm
-%%DATADIR%%/modules/translations/hints_de.qm
-%%DATADIR%%/modules/translations/hints_en.qm
-%%DATADIR%%/modules/translations/hints_fr.qm
-%%DATADIR%%/modules/translations/hints_it.qm
-%%DATADIR%%/modules/translations/hints_pl.qm
-%%DATADIR%%/modules/translations/history_de.qm
-%%DATADIR%%/modules/translations/history_en.qm
-%%DATADIR%%/modules/translations/history_fr.qm
-%%DATADIR%%/modules/translations/history_it.qm
-%%DATADIR%%/modules/translations/history_pl.qm
-%%DATADIR%%/modules/translations/history_migration_en.qm
-%%DATADIR%%/modules/translations/history_migration_de.qm
-%%DATADIR%%/modules/translations/history_migration_fr.qm
-%%DATADIR%%/modules/translations/history_migration_it.qm
-%%DATADIR%%/modules/translations/history_migration_pl.qm
-%%DATADIR%%/modules/translations/imagelink_en.qm
-%%DATADIR%%/modules/translations/imagelink_de.qm
-%%DATADIR%%/modules/translations/imagelink_fr.qm
-%%DATADIR%%/modules/translations/imagelink_it.qm
-%%DATADIR%%/modules/translations/imagelink_pl.qm
-%%DATADIR%%/modules/translations/jabber_protocol_en.qm
-%%DATADIR%%/modules/translations/jabber_protocol_de.qm
-%%DATADIR%%/modules/translations/jabber_protocol_fr.qm
-%%DATADIR%%/modules/translations/jabber_protocol_it.qm
-%%DATADIR%%/modules/translations/jabber_protocol_pl.qm
-%%DATADIR%%/modules/translations/kde_notify_de.qm
-%%DATADIR%%/modules/translations/kde_notify_fr.qm
-%%DATADIR%%/modules/translations/kde_notify_it.qm
-%%DATADIR%%/modules/translations/kde_notify_pl.qm
-%%DATADIR%%/modules/translations/last_seen_en.qm
-%%DATADIR%%/modules/translations/last_seen_de.qm
-%%DATADIR%%/modules/translations/last_seen_fr.qm
-%%DATADIR%%/modules/translations/last_seen_it.qm
-%%DATADIR%%/modules/translations/last_seen_pl.qm
-%%DATADIR%%/modules/translations/parser_extender_en.qm
-%%DATADIR%%/modules/translations/parser_extender_de.qm
-%%DATADIR%%/modules/translations/parser_extender_fr.qm
-%%DATADIR%%/modules/translations/parser_extender_it.qm
-%%DATADIR%%/modules/translations/parser_extender_pl.qm
-%%DATADIR%%/modules/translations/profiles_import_en.qm
-%%DATADIR%%/modules/translations/profiles_import_de.qm
-%%DATADIR%%/modules/translations/profiles_import_fr.qm
-%%DATADIR%%/modules/translations/profiles_import_it.qm
-%%DATADIR%%/modules/translations/profiles_import_pl.qm
-%%DATADIR%%/modules/translations/qt4_docking_notify_en.qm
-%%DATADIR%%/modules/translations/qt4_docking_notify_de.qm
-%%DATADIR%%/modules/translations/qt4_docking_notify_fr.qm
-%%DATADIR%%/modules/translations/qt4_docking_notify_it.qm
-%%DATADIR%%/modules/translations/qt4_docking_notify_pl.qm
-%%DATADIR%%/modules/translations/screenshot_en.qm
-%%DATADIR%%/modules/translations/screenshot_de.qm
-%%DATADIR%%/modules/translations/sms_de.qm
-%%DATADIR%%/modules/translations/sms_en.qm
-%%DATADIR%%/modules/translations/sms_fr.qm
-%%DATADIR%%/modules/translations/sms_it.qm
-%%DATADIR%%/modules/translations/sms_pl.qm
-%%DATADIR%%/modules/translations/screenshot_fr.qm
-%%DATADIR%%/modules/translations/screenshot_it.qm
-%%DATADIR%%/modules/translations/screenshot_pl.qm
-%%DATADIR%%/modules/translations/simpleview_en.qm
-%%DATADIR%%/modules/translations/simpleview_de.qm
-%%DATADIR%%/modules/translations/simpleview_fr.qm
-%%DATADIR%%/modules/translations/simpleview_it.qm
-%%DATADIR%%/modules/translations/simpleview_pl.qm
-%%DATADIR%%/modules/translations/single_window_en.qm
-%%DATADIR%%/modules/translations/single_window_de.qm
-%%DATADIR%%/modules/translations/single_window_fr.qm
-%%DATADIR%%/modules/translations/single_window_it.qm
-%%DATADIR%%/modules/translations/single_window_pl.qm
-%%DATADIR%%/modules/translations/sound_de.qm
-%%DATADIR%%/modules/translations/sound_en.qm
-%%DATADIR%%/modules/translations/sound_fr.qm
-%%DATADIR%%/modules/translations/sound_it.qm
-%%DATADIR%%/modules/translations/sound_pl.qm
-%%DATADIR%%/modules/translations/speech_en.qm
-%%DATADIR%%/modules/translations/speech_de.qm
-%%DATADIR%%/modules/translations/speech_fr.qm
-%%DATADIR%%/modules/translations/speech_it.qm
-%%DATADIR%%/modules/translations/speech_pl.qm
-%%DATADIR%%/modules/translations/spellchecker_en.qm
-%%DATADIR%%/modules/translations/spellchecker_de.qm
-%%DATADIR%%/modules/translations/spellchecker_fr.qm
-%%DATADIR%%/modules/translations/spellchecker_it.qm
-%%DATADIR%%/modules/translations/spellchecker_pl.qm
-%%DATADIR%%/modules/translations/sql_history_en.qm
-%%DATADIR%%/modules/translations/sql_history_de.qm
-%%DATADIR%%/modules/translations/sql_history_fr.qm
-%%DATADIR%%/modules/translations/sql_history_it.qm
-%%DATADIR%%/modules/translations/sql_history_pl.qm
-%%DATADIR%%/modules/translations/tabs_en.qm
-%%DATADIR%%/modules/translations/tabs_de.qm
-%%DATADIR%%/modules/translations/tabs_fr.qm
-%%DATADIR%%/modules/translations/tabs_it.qm
-%%DATADIR%%/modules/translations/tabs_pl.qm
-%%DATADIR%%/modules/translations/word_fix_en.qm
-%%DATADIR%%/modules/translations/word_fix_pl.qm
+%%DATADIR%%/plugins/antistring.desc
+%%DATADIR%%/plugins/amarok1_mediaplayer.desc
+%%DATADIR%%/plugins/auto_hide.desc
+%%DATADIR%%/plugins/autoaway.desc
+%%DATADIR%%/plugins/autoresponder.desc
+%%DATADIR%%/plugins/autostatus.desc
+%%DATADIR%%/plugins/cenzor.desc
+%%DATADIR%%/plugins/chat_notify.desc
+%%DATADIR%%/plugins/config_wizard.desc
+%%DATADIR%%/plugins/desktop_docking.desc
+%%DATADIR%%/plugins/docking.desc
+%%DATADIR%%/plugins/encryption_ng.desc
+%%DATADIR%%/plugins/encryption_ng_simlite.desc
+%%DATADIR%%/plugins/exec_notify.desc
+%%DATADIR%%/plugins/ext_sound.desc
+%%DATADIR%%/plugins/falf_mediaplayer.desc
+%%DATADIR%%/plugins/filedesc.desc
+%%DATADIR%%/plugins/firewall.desc
+%%DATADIR%%/plugins/freedesktop_notify.desc
+%%DATADIR%%/plugins/gadu_protocol.desc
+%%DATADIR%%/plugins/hints.desc
+%%DATADIR%%/plugins/history.desc
+%%DATADIR%%/plugins/history_migration.desc
+%%DATADIR%%/plugins/idle.desc
+%%DATADIR%%/plugins/imagelink.desc
+%%DATADIR%%/plugins/jabber_protocol.desc
+%%DATADIR%%/plugins/last_seen.desc
+%%DATADIR%%/plugins/mediaplayer.desc
+%%DATADIR%%/plugins/mprisplayer_mediaplayer.desc
+%%DATADIR%%/plugins/pcspeaker.desc
+%%DATADIR%%/plugins/phonon_sound.desc
+%%DATADIR%%/plugins/profiles_import.desc
+%%DATADIR%%/plugins/qt4_docking.desc
+%%DATADIR%%/plugins/qt4_docking_notify.desc
+%%DATADIR%%/plugins/qt4_sound.desc
+%%DATADIR%%/plugins/screenshot.desc
+%%DATADIR%%/plugins/simpleview.desc
+%%DATADIR%%/plugins/single_window.desc
+%%DATADIR%%/plugins/sms.desc
+%%DATADIR%%/plugins/sound.desc
+%%DATADIR%%/plugins/speech.desc
+%%DATADIR%%/plugins/spellchecker.desc
+%%DATADIR%%/plugins/sql_history.desc
+%%DATADIR%%/plugins/tabs.desc
+%%DATADIR%%/plugins/word_fix.desc
+%%DATADIR%%/plugins/configuration/antistring.ui
+%%DATADIR%%/plugins/configuration/auto_hide.ui
+%%DATADIR%%/plugins/configuration/autoaway.ui
+%%DATADIR%%/plugins/configuration/autoresponder.ui
+%%DATADIR%%/plugins/configuration/autostatus.ui
+%%DATADIR%%/plugins/configuration/cenzor.ui
+%%DATADIR%%/plugins/configuration/desktop_docking.ui
+%%DATADIR%%/plugins/configuration/docking.ui
+%%DATADIR%%/plugins/configuration/encryption-ng.ui
+%%DATADIR%%/plugins/configuration/ext_sound.ui
+%%DATADIR%%/plugins/configuration/filedesc.ui
+%%DATADIR%%/plugins/configuration/firewall.ui
+%%DATADIR%%/plugins/configuration/freedesktop_notify.ui
+%%DATADIR%%/plugins/configuration/hint-over-user.ui
+%%DATADIR%%/plugins/configuration/hints-advanced.ui
+%%DATADIR%%/plugins/configuration/hints-notifier.ui
+%%DATADIR%%/plugins/configuration/hints.ui
+%%DATADIR%%/plugins/configuration/history.ui
+%%DATADIR%%/plugins/configuration/image-link.ui
+%%DATADIR%%/plugins/configuration/jabber_protocol.ui
+%%DATADIR%%/plugins/configuration/mediaplayer.ui
+%%DATADIR%%/plugins/configuration/mprisplayer_mediaplayer.ui
+%%DATADIR%%/plugins/configuration/qt4-docking-notify.ui
+%%DATADIR%%/plugins/configuration/screenshot.ui
+%%DATADIR%%/plugins/configuration/simpleview.ui
+%%DATADIR%%/plugins/configuration/single_window.ui
+%%DATADIR%%/plugins/configuration/sms.ui
+%%DATADIR%%/plugins/configuration/sound.ui
+%%DATADIR%%/plugins/configuration/speech.ui
+%%DATADIR%%/plugins/configuration/spellchecker.ui
+%%DATADIR%%/plugins/configuration/tabs.ui
+%%DATADIR%%/plugins/configuration/word_fix.ui
+%%DATADIR%%/plugins/data/antistring/ant_conditions.conf
+%%DATADIR%%/plugins/data/cenzor/cenzor_words.conf
+%%DATADIR%%/plugins/data/cenzor/cenzor_words_ok.conf
+%%DATADIR%%/plugins/data/gadu_protocol/servers.txt
+%%DATADIR%%/plugins/data/mediaplayer/mediaplayer.png
+%%DATADIR%%/plugins/data/mprisplayer_mediaplayer/mprisplayer-players.data
+%%DATADIR%%/plugins/data/sms/scripts/gateway.js
+%%DATADIR%%/plugins/data/sms/scripts/gateway-era.js
+%%DATADIR%%/plugins/data/sms/scripts/gateway-orange.js
+%%DATADIR%%/plugins/data/sms/scripts/gateway-orange-multibox.js
+%%DATADIR%%/plugins/data/sms/scripts/gateway-plus.js
+%%DATADIR%%/plugins/data/word_fix/wf_default_list.data
+%%DATADIR%%/plugins/sdk/configuration-ui.xsl
+%%DATADIR%%/plugins/sdk/plugintsupdate.sh
+%%DATADIR%%/plugins/translations/antistring_cs.qm
+%%DATADIR%%/plugins/translations/antistring_de.qm
+%%DATADIR%%/plugins/translations/antistring_en.qm
+%%DATADIR%%/plugins/translations/antistring_pl.qm
+%%DATADIR%%/plugins/translations/auto_hide_cs.qm
+%%DATADIR%%/plugins/translations/auto_hide_de.qm
+%%DATADIR%%/plugins/translations/auto_hide_en.qm
+%%DATADIR%%/plugins/translations/auto_hide_es_ES.qm
+%%DATADIR%%/plugins/translations/auto_hide_it.qm
+%%DATADIR%%/plugins/translations/auto_hide_pl.qm
+%%DATADIR%%/plugins/translations/autoaway_cs.qm
+%%DATADIR%%/plugins/translations/autoaway_de.qm
+%%DATADIR%%/plugins/translations/autoaway_en.qm
+%%DATADIR%%/plugins/translations/autoaway_es_ES.qm
+%%DATADIR%%/plugins/translations/autoaway_it.qm
+%%DATADIR%%/plugins/translations/autoaway_pl.qm
+%%DATADIR%%/plugins/translations/autoresponder_cs.qm
+%%DATADIR%%/plugins/translations/autoresponder_de.qm
+%%DATADIR%%/plugins/translations/autoresponder_en.qm
+%%DATADIR%%/plugins/translations/autoresponder_it.qm
+%%DATADIR%%/plugins/translations/autoresponder_pl.qm
+%%DATADIR%%/plugins/translations/autostatus_cs.qm
+%%DATADIR%%/plugins/translations/autostatus_en.qm
+%%DATADIR%%/plugins/translations/autostatus_it.qm
+%%DATADIR%%/plugins/translations/autostatus_pl.qm
+%%DATADIR%%/plugins/translations/cenzor_cs.qm
+%%DATADIR%%/plugins/translations/cenzor_de.qm
+%%DATADIR%%/plugins/translations/cenzor_en.qm
+%%DATADIR%%/plugins/translations/cenzor_pl.qm
+%%DATADIR%%/plugins/translations/cenzor_tr.qm
+%%DATADIR%%/plugins/translations/chat_notify_de.qm
+%%DATADIR%%/plugins/translations/chat_notify_en.qm
+%%DATADIR%%/plugins/translations/chat_notify_pl.qm
+%%DATADIR%%/plugins/translations/config_wizard_cs.qm
+%%DATADIR%%/plugins/translations/config_wizard_en.qm
+%%DATADIR%%/plugins/translations/config_wizard_it.qm
+%%DATADIR%%/plugins/translations/config_wizard_pl.qm
+%%DATADIR%%/plugins/translations/desktop_docking_cs.qm
+%%DATADIR%%/plugins/translations/desktop_docking_de.qm
+%%DATADIR%%/plugins/translations/desktop_docking_en.qm
+%%DATADIR%%/plugins/translations/desktop_docking_es_ES.qm
+%%DATADIR%%/plugins/translations/desktop_docking_it.qm
+%%DATADIR%%/plugins/translations/desktop_docking_pl.qm
+%%DATADIR%%/plugins/translations/docking_de.qm
+%%DATADIR%%/plugins/translations/docking_en.qm
+%%DATADIR%%/plugins/translations/docking_it.qm
+%%DATADIR%%/plugins/translations/docking_pl.qm
+%%DATADIR%%/plugins/translations/encryption_ng_cs.qm
+%%DATADIR%%/plugins/translations/encryption_ng_en.qm
+%%DATADIR%%/plugins/translations/encryption_ng_it.qm
+%%DATADIR%%/plugins/translations/encryption_ng_pl.qm
+%%DATADIR%%/plugins/translations/encryption_ng_simlite_cs.qm
+%%DATADIR%%/plugins/translations/encryption_ng_simlite_en.qm
+%%DATADIR%%/plugins/translations/encryption_ng_simlite_de.qm
+%%DATADIR%%/plugins/translations/encryption_ng_simlite_it.qm
+%%DATADIR%%/plugins/translations/encryption_ng_simlite_pl.qm
+%%DATADIR%%/plugins/translations/exec_notify_en.qm
+%%DATADIR%%/plugins/translations/exec_notify_pl.qm
+%%DATADIR%%/plugins/translations/ext_sound_cs.qm
+%%DATADIR%%/plugins/translations/ext_sound_en.qm
+%%DATADIR%%/plugins/translations/ext_sound_de.qm
+%%DATADIR%%/plugins/translations/ext_sound_it.qm
+%%DATADIR%%/plugins/translations/ext_sound_pl.qm
+%%DATADIR%%/plugins/translations/filedesc_cs.qm
+%%DATADIR%%/plugins/translations/filedesc_en.qm
+%%DATADIR%%/plugins/translations/filedesc_de.qm
+%%DATADIR%%/plugins/translations/filedesc_pl.qm
+%%DATADIR%%/plugins/translations/firewall_cs.qm
+%%DATADIR%%/plugins/translations/firewall_en.qm
+%%DATADIR%%/plugins/translations/firewall_de.qm
+%%DATADIR%%/plugins/translations/firewall_pl.qm
+%%DATADIR%%/plugins/translations/freedesktop_notify_cs.qm
+%%DATADIR%%/plugins/translations/freedesktop_notify_de.qm
+%%DATADIR%%/plugins/translations/freedesktop_notify_en.qm
+%%DATADIR%%/plugins/translations/freedesktop_notify_pl.qm
+%%DATADIR%%/plugins/translations/gadu_protocol_cs.qm
+%%DATADIR%%/plugins/translations/gadu_protocol_en.qm
+%%DATADIR%%/plugins/translations/gadu_protocol_pl.qm
+%%DATADIR%%/plugins/translations/hints_cs.qm
+%%DATADIR%%/plugins/translations/hints_de.qm
+%%DATADIR%%/plugins/translations/hints_en.qm
+%%DATADIR%%/plugins/translations/hints_it.qm
+%%DATADIR%%/plugins/translations/hints_pl.qm
+%%DATADIR%%/plugins/translations/history_cs.qm
+%%DATADIR%%/plugins/translations/history_de.qm
+%%DATADIR%%/plugins/translations/history_en.qm
+%%DATADIR%%/plugins/translations/history_pl.qm
+%%DATADIR%%/plugins/translations/history_migration_cs.qm
+%%DATADIR%%/plugins/translations/history_migration_en.qm
+%%DATADIR%%/plugins/translations/history_migration_pl.qm
+%%DATADIR%%/plugins/translations/imagelink_cs.qm
+%%DATADIR%%/plugins/translations/imagelink_en.qm
+%%DATADIR%%/plugins/translations/imagelink_it.qm
+%%DATADIR%%/plugins/translations/imagelink_pl.qm
+%%DATADIR%%/plugins/translations/jabber_protocol_cs.qm
+%%DATADIR%%/plugins/translations/jabber_protocol_en.qm
+%%DATADIR%%/plugins/translations/jabber_protocol_de.qm
+%%DATADIR%%/plugins/translations/jabber_protocol_pl.qm
+%%DATADIR%%/plugins/translations/last_seen_cs.qm
+%%DATADIR%%/plugins/translations/last_seen_en.qm
+%%DATADIR%%/plugins/translations/last_seen_de.qm
+%%DATADIR%%/plugins/translations/last_seen_pl.qm
+%%DATADIR%%/plugins/translations/last_seen_tr.qm
+%%DATADIR%%/plugins/translations/mediaplayer_cs.qm
+%%DATADIR%%/plugins/translations/mediaplayer_de.qm
+%%DATADIR%%/plugins/translations/mediaplayer_en.qm
+%%DATADIR%%/plugins/translations/mediaplayer_pl.qm
+%%DATADIR%%/plugins/translations/mprisplayer_mediaplayer_en.qm
+%%DATADIR%%/plugins/translations/mprisplayer_mediaplayer_pl.qm
+%%DATADIR%%/plugins/translations/pcspeaker_cs.qm
+%%DATADIR%%/plugins/translations/pcspeaker_de.qm
+%%DATADIR%%/plugins/translations/pcspeaker_en.qm
+%%DATADIR%%/plugins/translations/pcspeaker_it.qm
+%%DATADIR%%/plugins/translations/pcspeaker_pl.qm
+%%DATADIR%%/plugins/translations/profiles_import_cs.qm
+%%DATADIR%%/plugins/translations/profiles_import_en.qm
+%%DATADIR%%/plugins/translations/profiles_import_pl.qm
+%%DATADIR%%/plugins/translations/qt4_docking_notify_cs.qm
+%%DATADIR%%/plugins/translations/qt4_docking_notify_en.qm
+%%DATADIR%%/plugins/translations/qt4_docking_notify_de.qm
+%%DATADIR%%/plugins/translations/qt4_docking_notify_pl.qm
+%%DATADIR%%/plugins/translations/qt4_sound_cs.qm
+%%DATADIR%%/plugins/translations/qt4_sound_en.qm
+%%DATADIR%%/plugins/translations/qt4_sound_pl.qm
+%%DATADIR%%/plugins/translations/screenshot_cs.qm
+%%DATADIR%%/plugins/translations/screenshot_en.qm
+%%DATADIR%%/plugins/translations/screenshot_pl.qm
+%%DATADIR%%/plugins/translations/simpleview_cs.qm
+%%DATADIR%%/plugins/translations/simpleview_en.qm
+%%DATADIR%%/plugins/translations/simpleview_pl.qm
+%%DATADIR%%/plugins/translations/single_window_cs.qm
+%%DATADIR%%/plugins/translations/single_window_en.qm
+%%DATADIR%%/plugins/translations/single_window_es_ES.qm
+%%DATADIR%%/plugins/translations/single_window_pl.qm
+%%DATADIR%%/plugins/translations/sms_cs.qm
+%%DATADIR%%/plugins/translations/sms_de.qm
+%%DATADIR%%/plugins/translations/sms_en.qm
+%%DATADIR%%/plugins/translations/sms_it.qm
+%%DATADIR%%/plugins/translations/sms_pl.qm
+%%DATADIR%%/plugins/translations/sound_cs.qm
+%%DATADIR%%/plugins/translations/sound_de.qm
+%%DATADIR%%/plugins/translations/sound_en.qm
+%%DATADIR%%/plugins/translations/sound_it.qm
+%%DATADIR%%/plugins/translations/sound_pl.qm
+%%DATADIR%%/plugins/translations/speech_cs.qm
+%%DATADIR%%/plugins/translations/speech_en.qm
+%%DATADIR%%/plugins/translations/speech_de.qm
+%%DATADIR%%/plugins/translations/speech_it.qm
+%%DATADIR%%/plugins/translations/speech_pl.qm
+%%DATADIR%%/plugins/translations/spellchecker_cs.qm
+%%DATADIR%%/plugins/translations/spellchecker_en.qm
+%%DATADIR%%/plugins/translations/spellchecker_de.qm
+%%DATADIR%%/plugins/translations/spellchecker_pl.qm
+%%DATADIR%%/plugins/translations/sql_history_cs.qm
+%%DATADIR%%/plugins/translations/sql_history_en.qm
+%%DATADIR%%/plugins/translations/sql_history_de.qm
+%%DATADIR%%/plugins/translations/sql_history_pl.qm
+%%DATADIR%%/plugins/translations/tabs_cs.qm
+%%DATADIR%%/plugins/translations/tabs_en.qm
+%%DATADIR%%/plugins/translations/tabs_de.qm
+%%DATADIR%%/plugins/translations/tabs_pl.qm
+%%DATADIR%%/plugins/translations/word_fix_cs.qm
+%%DATADIR%%/plugins/translations/word_fix_de.qm
+%%DATADIR%%/plugins/translations/word_fix_en.qm
+%%DATADIR%%/plugins/translations/word_fix_es_ES.qm
+%%DATADIR%%/plugins/translations/word_fix_pl.qm
+%%DATADIR%%/plugins/translations/word_fix_ru.qm
 %%DATADIR%%/scripts/chat-scripts.js
 %%DATADIR%%/syntax/infopanel/Arvenil.syntax
 %%DATADIR%%/syntax/infopanel/default.syntax
@@ -326,58 +890,15 @@ share/applications/kadu.desktop
 %%DATADIR%%/syntax/chat/cheester.syntax
 %%DATADIR%%/syntax/chat/filozof.syntax
 %%DATADIR%%/syntax/chat/fuku.syntax
+%%DATADIR%%/syntax/chat/gg.syntax
 %%DATADIR%%/syntax/chat/hapi.syntax
 %%DATADIR%%/syntax/chat/irc.syntax
 %%DATADIR%%/syntax/chat/kadu.syntax
 %%DATADIR%%/syntax/chat/skp_by_dam.syntax
 %%DATADIR%%/syntax/chat/skype_by_dorr.syntax
+%%DATADIR%%/syntax/chat/ultr.syntax
 %%DATADIR%%/syntax/chat/Default/Template.html
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Variants/1 Big Header.css
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Variants/1.1 Big Header with User Icons.css
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Variants/2.2 Small Header with Hover-Times.css
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Variants/1.3 Big Header with Hover-Time.css
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Variants/2 Small Header.css
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Variants/2.3 Small Header with User Icons and Hover-Time.css
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Variants/1.2 Big Header with User Icons and Hover-Time.css
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Variants/2.1 Small Header with User Icons.css
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/usericons.css
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/small_header.css
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Outgoing/NextContext.html
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Outgoing/buddy_icon.png
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Outgoing/Content.html
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Outgoing/Context.html
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Outgoing/NextContent.html
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Status.html
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Footer.html
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/main.css
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/hovertime.css
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/images/incoming_icon.png
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/images/stopclickingme.png
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/images/in.bottom.png
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/images/status.bottom.png
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/images/header.birdy.png
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/images/status.png
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/images/header.bg.png
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/images/outgoing_icon.png
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/images/out.png
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/images/header.top.png
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/images/out.bottom.png
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/images/in.top.png
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/images/header.ornament.png
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/images/url.png
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/images/url.click.png
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/images/tool-tip.png
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Incoming/NextContext.html
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Incoming/buddy_icon.png
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Incoming/Content.html
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Incoming/Context.html
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Incoming/NextContent.html
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Javascript/main.js
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Javascript/mootools.js
-%%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Header.html
-%%DATADIR%%/syntax/chat/Gaia/Contents/Info.plist
-%%DATADIR%%/syntax/chat/Gaia/License.txt
-%%DATADIR%%/syntax/chat/Gaia/Readme.txt
+%%DATADIR%%/syntax/chat/Default/Resources/images/composing.svgz
 %%DATADIR%%/syntax/chat/Modern Bubbling (Compact)/Contents/Resources/Variants/Glass (Blue & Lime).css
 %%DATADIR%%/syntax/chat/Modern Bubbling (Compact)/Contents/Resources/Variants/Glass (Blue & Orange).css
 %%DATADIR%%/syntax/chat/Modern Bubbling (Compact)/Contents/Resources/Variants/Glass (Green & Aqua).css
@@ -990,50 +1511,6 @@ share/applications/kadu.desktop
 %%DATADIR%%/syntax/chat/Modern Bubbling (Compact)/Contents/Info.plist
 %%DATADIR%%/syntax/chat/Modern Bubbling (Compact)/License.txt
 %%DATADIR%%/syntax/chat/Modern Bubbling (Compact)/Readme.txt
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/incoming_icon.png
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/Red Compact.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/Tan Compact.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/Tan.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/Clear Compact.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/Grey.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/Purple Compact.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/Green Compact.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/Green.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/Brown.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/_Images/pin.png
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/_Images/paper-mid.png
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/_Images/header-alt.png
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/_Images/paper-bot.png
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/_Images/board2g.png
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/_Images/star.png
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/_Images/clip.png
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/_Images/paper-top.png
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/_Images/header.png
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/Purple.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/Red.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/_Themes/BrownAlternating.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/_Themes/_Base.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/_Themes/BrownCompactAlternating.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/_Themes/_Compact.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/_Themes/_CompactAlternating.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/_Themes/_Alternating.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/Clear.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/Blue Compact.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/Brown Compact.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/Blue.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/Grey Compact.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Mockup.html
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/license.txt
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Status.html
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Header.css
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Footer.html
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/todo.txt
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/outgoing_icon.png
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Incoming/Content.html
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/alignchat_.js
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Header.html
-%%DATADIR%%/syntax/chat/Pushpin/Contents/Info.plist
-%%DATADIR%%/syntax/chat/Pushpin/license.txt
 %%DATADIR%%/syntax/chat/renkooNaked/Contents/Resources/incoming_icon.png
 %%DATADIR%%/syntax/chat/renkooNaked/Contents/Resources/Variants/Yellow on Blue No Names Alt.css
 %%DATADIR%%/syntax/chat/renkooNaked/Contents/Resources/Variants/Yellow on Green No Names.css
@@ -1294,18 +1771,6 @@ share/applications/kadu.desktop
 %%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/message/message_top_left.png
 %%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/message/message_context_top_left.png
 %%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/message/message_context_top_right.png
-%%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/status/black/status_left.png
-%%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/status/black/status_fill.png
-%%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/status/black/status_right.png
-%%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/status/orange/status_left.png
-%%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/status/orange/status_fill.png
-%%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/status/orange/status_right.png
-%%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/status/gray/status_left.png
-%%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/status/gray/status_fill.png
-%%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/status/gray/status_right.png
-%%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/status/purple/status_left.png
-%%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/status/purple/status_fill.png
-%%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/status/purple/status_right.png
 %%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/background.png
 %%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/arrow.png
 %%DATADIR%%/syntax/chat/Satin/Contents/Resources/Incoming/NextContext.html
@@ -2275,64 +2740,64 @@ share/applications/kadu.desktop
 %%DATADIR%%/themes/icons/default/protocols/common/16x16/message_anim.gif
 %%DATADIR%%/themes/icons/default/protocols/common/16x16/message.png
 %%DATADIR%%/themes/icons/default/protocols/gadu-gadu/32x32/gadu-gadu.png
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/away_d_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/away_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/do_not_disturb_d_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/do_not_disturb.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/free_for_chat_d_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/online_d_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/offline_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/online.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/invisible_d_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/invisible.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/away.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/away_d.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/not_available_d_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/not_available_d.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/do_not_disturb_d.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/free_for_chat_d.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/do_not_disturb_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/invisible_d.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/invisible_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/offline.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/free_for_chat.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/not_available.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/offline_d.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/online_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/online_d.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/not_available_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/offline_d_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/free_for_chat_m.svgz
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/away_d_m.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/away_m.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/do_not_disturb_d_m.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/do_not_disturb.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/free_for_chat_d_m.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/online_d_m.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/offline_m.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/online.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/invisible_d_m.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/invisible.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/away.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/away_d.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/not_available_d_m.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/not_available_d.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/do_not_disturb_d.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/free_for_chat_d.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/do_not_disturb_m.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/invisible_d.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/invisible_m.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/offline.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/free_for_chat.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/not_available.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/offline_d.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/online_m.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/online_d.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/not_available_m.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/offline_d_m.svg
+%%DATADIR%%/themes/icons/default/protocols/gadu-gadu/svg/free_for_chat_m.svg
 %%DATADIR%%/themes/icons/default/protocols/gadu-gadu/16x16/.directory
 %%DATADIR%%/themes/icons/default/protocols/xmpp/32x32/xmpp.png
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/away_d_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/away_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/do_not_disturb_d_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/do_not_disturb.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/free_for_chat_d_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/online_d_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/offline_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/online.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/invisible_d_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/invisible.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/away.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/away_d.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/not_available_d_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/not_available_d.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/do_not_disturb_d.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/free_for_chat_d.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/do_not_disturb_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/invisible_d.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/invisible_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/offline.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/free_for_chat.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/not_available.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/offline_d.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/online_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/online_d.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/not_available_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/offline_d_m.svgz
-%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/free_for_chat_m.svgz
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/away_d_m.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/away_m.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/do_not_disturb_d_m.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/do_not_disturb.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/free_for_chat_d_m.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/online_d_m.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/offline_m.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/online.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/invisible_d_m.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/invisible.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/away.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/away_d.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/not_available_d_m.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/not_available_d.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/do_not_disturb_d.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/free_for_chat_d.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/do_not_disturb_m.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/invisible_d.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/invisible_m.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/offline.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/free_for_chat.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/not_available.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/offline_d.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/online_m.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/online_d.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/not_available_m.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/offline_d_m.svg
+%%DATADIR%%/themes/icons/default/protocols/xmpp/svg/free_for_chat_m.svg
 %%DATADIR%%/themes/icons/default/protocols/xmpp/brand_name/16x16/GmailGoogleTalk.png
 %%DATADIR%%/themes/icons/default/protocols/xmpp/brand_name/16x16/facebook.png
 %%DATADIR%%/themes/icons/default/external_modules/32x32/execnotify.png
@@ -2364,7 +2829,8 @@ share/applications/kadu.desktop
 %%DATADIR%%/themes/icons/default/kadu_icons/32x32/multilogon.png
 %%DATADIR%%/themes/icons/default/kadu_icons/32x32/section-notifications.png
 %%DATADIR%%/themes/icons/default/kadu_icons/32x32/0.png
-%%DATADIR%%/themes/icons/default/kadu_icons/svg/0.svgz
+%%DATADIR%%/themes/icons/default/kadu_icons/svg/0.svg
+%%DATADIR%%/themes/icons/default/kadu_icons/svg/composing.svg
 %%DATADIR%%/themes/icons/default/kadu_icons/22x22/0.png
 %%DATADIR%%/themes/icons/default/kadu_icons/64x64/0.png
 %%DATADIR%%/themes/icons/default/kadu_icons/64x64/kadu.png
@@ -2375,6 +2841,9 @@ share/applications/kadu.desktop
 %%DATADIR%%/themes/icons/default/kadu_icons/96x96/buddy1.png
 %%DATADIR%%/themes/icons/default/kadu_icons/96x96/buddy0.png
 %%DATADIR%%/themes/icons/default/kadu_icons/48x48/0.png
+%%DATADIR%%/themes/icons/default/kadu_icons/16x16/gender0.png
+%%DATADIR%%/themes/icons/default/kadu_icons/16x16/gender1.png
+%%DATADIR%%/themes/icons/default/kadu_icons/16x16/gender2.png
 %%DATADIR%%/themes/icons/default/kadu_icons/16x16/merge-buddies.png
 %%DATADIR%%/themes/icons/default/kadu_icons/16x16/notify-hints.png
 %%DATADIR%%/themes/icons/default/kadu_icons/16x16/support-us.png
@@ -2557,34 +3026,34 @@ share/applications/kadu.desktop
 %%DATADIR%%/themes/icons/glass/protocols/gadu-gadu/16x16/free_for_chat.png
 %%DATADIR%%/themes/icons/glass/protocols/xmpp/xmpp.png
 %%DATADIR%%/themes/icons/glass/protocols/xmpp/32x32/xmpp.png
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/away_d_m.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/away_m.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/do_not_disturb_d_m.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/do_not_disturb.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/free_for_chat_d_m.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/online_d_m.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/offline_m.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/online.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/invisible_d_m.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/invisible.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/away.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/away_d.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/not_available_d_m.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/not_available_d.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/do_not_disturb_d.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/free_for_chat_d.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/do_not_disturb_m.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/invisible_d.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/invisible_m.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/offline.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/free_for_chat.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/not_available.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/offline_d.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/online_m.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/online_d.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/not_available_m.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/offline_d_m.svgz
-%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/free_for_chat_m.svgz
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/away_d_m.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/away_m.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/do_not_disturb_d_m.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/do_not_disturb.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/free_for_chat_d_m.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/online_d_m.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/offline_m.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/online.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/invisible_d_m.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/invisible.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/away.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/away_d.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/not_available_d_m.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/not_available_d.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/do_not_disturb_d.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/free_for_chat_d.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/do_not_disturb_m.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/invisible_d.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/invisible_m.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/offline.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/free_for_chat.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/not_available.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/offline_d.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/online_m.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/online_d.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/not_available_m.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/offline_d_m.svg
+%%DATADIR%%/themes/icons/glass/protocols/xmpp/svg/free_for_chat_m.svg
 %%DATADIR%%/themes/icons/glass/protocols/xmpp/brand_name/16x16/GmailGoogleTalk.png
 %%DATADIR%%/themes/icons/glass/protocols/xmpp/brand_name/16x16/facebook.png
 %%DATADIR%%/themes/icons/glass/external_modules/32x32/mail.png
@@ -2630,6 +3099,9 @@ share/applications/kadu.desktop
 %%DATADIR%%/themes/icons/glass/kadu_icons/96x96/buddy1.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/96x96/buddy0.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/48x48/0.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/gender0.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/gender1.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/16x16/gender2.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/merge-buddies.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/notify-hints.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/support-us.png
@@ -2665,6 +3137,7 @@ share/applications/kadu.desktop
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/enable-notifications.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/show-information-panel.png
 %%DATADIR%%/themes/icons/glass/kadu_icons/16x16/only-show-with-description.png
+%%DATADIR%%/themes/icons/glass/kadu_icons/svg/composing.svg
 %%DATADIR%%/themes/icons/glass/32x32/phone.png
 %%DATADIR%%/themes/icons/glass/32x32/contact-new.png
 %%DATADIR%%/themes/icons/glass/32x32/preferences-desktop-peripherals.png
@@ -2748,7 +3221,7 @@ share/applications/kadu.desktop
 %%DATADIR%%/themes/icons/oxygen/protocols/common/32x32/away_m.png
 %%DATADIR%%/themes/icons/oxygen/protocols/common/32x32/do_not_disturb_d.png
 %%DATADIR%%/themes/icons/oxygen/protocols/common/32x32/free_for_chat.png
-%%DATADIR%%/themes/icons/oxygen/protocols/common/svg/message.svgz
+%%DATADIR%%/themes/icons/oxygen/protocols/common/svg/message.svg
 %%DATADIR%%/themes/icons/oxygen/protocols/common/22x22/free_for_chat_d.png
 %%DATADIR%%/themes/icons/oxygen/protocols/common/22x22/invisible_d.png
 %%DATADIR%%/themes/icons/oxygen/protocols/common/22x22/free_for_chat_d_m.png
@@ -2890,7 +3363,7 @@ share/applications/kadu.desktop
 %%DATADIR%%/themes/icons/oxygen/protocols/gadu-gadu/32x32/away_m.png
 %%DATADIR%%/themes/icons/oxygen/protocols/gadu-gadu/32x32/do_not_disturb_d.png
 %%DATADIR%%/themes/icons/oxygen/protocols/gadu-gadu/32x32/free_for_chat.png
-%%DATADIR%%/themes/icons/oxygen/protocols/gadu-gadu/svg/gadu-gadu.svgz
+%%DATADIR%%/themes/icons/oxygen/protocols/gadu-gadu/svg/gadu-gadu.svg
 %%DATADIR%%/themes/icons/oxygen/protocols/gadu-gadu/22x22/free_for_chat_d.png
 %%DATADIR%%/themes/icons/oxygen/protocols/gadu-gadu/22x22/invisible_d.png
 %%DATADIR%%/themes/icons/oxygen/protocols/gadu-gadu/22x22/free_for_chat_d_m.png
@@ -3146,21 +3619,21 @@ share/applications/kadu.desktop
 %%DATADIR%%/themes/icons/oxygen/protocols/xmpp/16x16/free_for_chat.png
 %%DATADIR%%/themes/icons/oxygen/protocols/xmpp/brand_name/16x16/GmailGoogleTalk.png
 %%DATADIR%%/themes/icons/oxygen/protocols/xmpp/brand_name/16x16/facebook.png
-%%DATADIR%%/themes/icons/oxygen/external_modules/svg/nextinfo-nameday.svgz
-%%DATADIR%%/themes/icons/oxygen/external_modules/svg/mediaplayer-media-skip-forward.svgz
-%%DATADIR%%/themes/icons/oxygen/external_modules/svg/profiles.svgz
-%%DATADIR%%/themes/icons/oxygen/external_modules/svg/profiles-configure.svgz
-%%DATADIR%%/themes/icons/oxygen/external_modules/svg/nextinfo-birthday.svgz
-%%DATADIR%%/themes/icons/oxygen/external_modules/svg/execnotify.svgz
-%%DATADIR%%/themes/icons/oxygen/external_modules/svg/mediaplayer.svgz
-%%DATADIR%%/themes/icons/oxygen/external_modules/svg/mediaplayer-media-skip-backward.svgz
-%%DATADIR%%/themes/icons/oxygen/external_modules/svg/mediaplayer-media-playback-play.svgz
-%%DATADIR%%/themes/icons/oxygen/external_modules/svg/qt4notify.svgz
-%%DATADIR%%/themes/icons/oxygen/external_modules/svg/profiles-user.svgz
-%%DATADIR%%/themes/icons/oxygen/external_modules/svg/mail-internet-mail.svgz
-%%DATADIR%%/themes/icons/oxygen/external_modules/svg/screenshot-camera-photo.svgz
-%%DATADIR%%/themes/icons/oxygen/external_modules/svg/mediaplayer-media-playback-pause.svgz
-%%DATADIR%%/themes/icons/oxygen/external_modules/svg/mediaplayer-media-playback-stop.svgz
+%%DATADIR%%/themes/icons/oxygen/external_modules/svg/nextinfo-nameday.svg
+%%DATADIR%%/themes/icons/oxygen/external_modules/svg/mediaplayer-media-skip-forward.svg
+%%DATADIR%%/themes/icons/oxygen/external_modules/svg/profiles.svg
+%%DATADIR%%/themes/icons/oxygen/external_modules/svg/profiles-configure.svg
+%%DATADIR%%/themes/icons/oxygen/external_modules/svg/nextinfo-birthday.svg
+%%DATADIR%%/themes/icons/oxygen/external_modules/svg/execnotify.svg
+%%DATADIR%%/themes/icons/oxygen/external_modules/svg/mediaplayer.svg
+%%DATADIR%%/themes/icons/oxygen/external_modules/svg/mediaplayer-media-skip-backward.svg
+%%DATADIR%%/themes/icons/oxygen/external_modules/svg/mediaplayer-media-playback-play.svg
+%%DATADIR%%/themes/icons/oxygen/external_modules/svg/qt4notify.svg
+%%DATADIR%%/themes/icons/oxygen/external_modules/svg/profiles-user.svg
+%%DATADIR%%/themes/icons/oxygen/external_modules/svg/mail-internet-mail.svg
+%%DATADIR%%/themes/icons/oxygen/external_modules/svg/screenshot-camera-photo.svg
+%%DATADIR%%/themes/icons/oxygen/external_modules/svg/mediaplayer-media-playback-pause.svg
+%%DATADIR%%/themes/icons/oxygen/external_modules/svg/mediaplayer-media-playback-stop.svg
 %%DATADIR%%/themes/icons/oxygen/external_modules/128x128/weather-show-weather-few-clouds.png
 %%DATADIR%%/themes/icons/oxygen/src/rebuild-statuses.sh
 %%DATADIR%%/themes/icons/oxygen/src/statuses.xcf
@@ -3176,28 +3649,29 @@ share/applications/kadu.desktop
 %%DATADIR%%/themes/icons/oxygen/kadu_icons/32x32/show-blocked-buddies.png
 %%DATADIR%%/themes/icons/oxygen/kadu_icons/32x32/blocked.png
 %%DATADIR%%/themes/icons/oxygen/kadu_icons/32x32/only-show-with-description.png
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/history.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/tab-remove.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/translate-kadu.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/notify-about-buddy.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/notify-led.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/support-us.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/clear-history.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/tab-detach.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/notify-hints.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/conference.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/report-a-bug.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/use-proxy.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/multilogon.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/merge-buddies.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/get-involved.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/enter.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/enable-notifications.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/show-information-panel.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/copy-personal-info.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/block-buddy.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/section-notifications.svgz
-%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/0.svgz
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/composing.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/history.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/tab-remove.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/translate-kadu.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/notify-about-buddy.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/notify-led.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/support-us.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/clear-history.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/tab-detach.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/notify-hints.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/conference.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/report-a-bug.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/use-proxy.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/multilogon.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/merge-buddies.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/get-involved.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/enter.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/enable-notifications.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/show-information-panel.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/copy-personal-info.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/block-buddy.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/section-notifications.svg
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/svg/0.svg
 %%DATADIR%%/themes/icons/oxygen/kadu_icons/22x22/show-offline-buddies.png
 %%DATADIR%%/themes/icons/oxygen/kadu_icons/22x22/section-status.png
 %%DATADIR%%/themes/icons/oxygen/kadu_icons/22x22/change-status.png
@@ -3232,6 +3706,9 @@ share/applications/kadu.desktop
 %%DATADIR%%/themes/icons/oxygen/kadu_icons/48x48/show-blocked-buddies.png
 %%DATADIR%%/themes/icons/oxygen/kadu_icons/48x48/blocked.png
 %%DATADIR%%/themes/icons/oxygen/kadu_icons/48x48/only-show-with-description.png
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/16x16/gender0.png
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/16x16/gender1.png
+%%DATADIR%%/themes/icons/oxygen/kadu_icons/16x16/gender2.png
 %%DATADIR%%/themes/icons/oxygen/kadu_icons/16x16/stylesheet-branch-open.png
 %%DATADIR%%/themes/icons/oxygen/kadu_icons/16x16/show-offline-buddies.png
 %%DATADIR%%/themes/icons/oxygen/kadu_icons/16x16/change-color.png
@@ -3248,61 +3725,68 @@ share/applications/kadu.desktop
 %%DATADIR%%/themes/icons/oxygen/kadu_icons/16x16/stylesheet-branch-closed.png
 %%DATADIR%%/themes/icons/oxygen/kadu_icons/16x16/show-descriptions.png
 %%DATADIR%%/themes/icons/oxygen/kadu_icons/16x16/only-show-with-description.png
-%%DATADIR%%/themes/icons/oxygen/svg/system-users.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/phone.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/application-exit.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/edit-clear-locationbar-ltr.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/edit-clear.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/audio-input-microphone.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/audio-volume-high.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/go-next.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/document-send.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/contact-new.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/preferences-desktop-peripherals.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/group-new.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/x-office-address-book.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/audio-volume-low.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/dialog-question.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/edit-copy.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/document-open.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/format-text-italic.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/security-high.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/dialog-password.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/edit-clear-locationbar-rtl.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/help-contents.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/dialog-apply.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/mail-message-new.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/internet-group-chat.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/dialog-information.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/insert-image.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/edit-delete.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/dialog-error.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/security-low.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/list-remove.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/go-jump.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/dialog-warning.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/format-text-underline.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/mail-attachment.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/face-smile.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/preferences-other.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/view-refresh.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/dialog-cancel.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/dialog-ok.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/list-add.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/audio-volume-muted.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/go-previous.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/preferences-desktop-theme.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/format-text-bold.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/image-loading.svgz
-%%DATADIR%%/themes/icons/oxygen/svg/edit-find.svgz
+%%DATADIR%%/themes/icons/oxygen/svg/system-users.svg
+%%DATADIR%%/themes/icons/oxygen/svg/phone.svg
+%%DATADIR%%/themes/icons/oxygen/svg/application-exit.svg
+%%DATADIR%%/themes/icons/oxygen/svg/edit-clear-locationbar-ltr.svg
+%%DATADIR%%/themes/icons/oxygen/svg/edit-clear.svg
+%%DATADIR%%/themes/icons/oxygen/svg/audio-input-microphone.svg
+%%DATADIR%%/themes/icons/oxygen/svg/audio-volume-high.svg
+%%DATADIR%%/themes/icons/oxygen/svg/go-next.svg
+%%DATADIR%%/themes/icons/oxygen/svg/document-send.svg
+%%DATADIR%%/themes/icons/oxygen/svg/contact-new.svg
+%%DATADIR%%/themes/icons/oxygen/svg/preferences-desktop-peripherals.svg
+%%DATADIR%%/themes/icons/oxygen/svg/group-new.svg
+%%DATADIR%%/themes/icons/oxygen/svg/x-office-address-book.svg
+%%DATADIR%%/themes/icons/oxygen/svg/audio-volume-low.svg
+%%DATADIR%%/themes/icons/oxygen/svg/dialog-question.svg
+%%DATADIR%%/themes/icons/oxygen/svg/edit-copy.svg
+%%DATADIR%%/themes/icons/oxygen/svg/document-open.svg
+%%DATADIR%%/themes/icons/oxygen/svg/format-text-italic.svg
+%%DATADIR%%/themes/icons/oxygen/svg/security-high.svg
+%%DATADIR%%/themes/icons/oxygen/svg/dialog-password.svg
+%%DATADIR%%/themes/icons/oxygen/svg/edit-clear-locationbar-rtl.svg
+%%DATADIR%%/themes/icons/oxygen/svg/help-contents.svg
+%%DATADIR%%/themes/icons/oxygen/svg/dialog-apply.svg
+%%DATADIR%%/themes/icons/oxygen/svg/mail-message-new.svg
+%%DATADIR%%/themes/icons/oxygen/svg/internet-group-chat.svg
+%%DATADIR%%/themes/icons/oxygen/svg/dialog-information.svg
+%%DATADIR%%/themes/icons/oxygen/svg/insert-image.svg
+%%DATADIR%%/themes/icons/oxygen/svg/edit-delete.svg
+%%DATADIR%%/themes/icons/oxygen/svg/dialog-error.svg
+%%DATADIR%%/themes/icons/oxygen/svg/security-low.svg
+%%DATADIR%%/themes/icons/oxygen/svg/list-remove.svg
+%%DATADIR%%/themes/icons/oxygen/svg/go-jump.svg
+%%DATADIR%%/themes/icons/oxygen/svg/dialog-warning.svg
+%%DATADIR%%/themes/icons/oxygen/svg/format-text-underline.svg
+%%DATADIR%%/themes/icons/oxygen/svg/mail-attachment.svg
+%%DATADIR%%/themes/icons/oxygen/svg/face-smile.svg
+%%DATADIR%%/themes/icons/oxygen/svg/preferences-other.svg
+%%DATADIR%%/themes/icons/oxygen/svg/view-refresh.svg
+%%DATADIR%%/themes/icons/oxygen/svg/dialog-cancel.svg
+%%DATADIR%%/themes/icons/oxygen/svg/dialog-ok.svg
+%%DATADIR%%/themes/icons/oxygen/svg/list-add.svg
+%%DATADIR%%/themes/icons/oxygen/svg/audio-volume-muted.svg
+%%DATADIR%%/themes/icons/oxygen/svg/go-previous.svg
+%%DATADIR%%/themes/icons/oxygen/svg/preferences-desktop-theme.svg
+%%DATADIR%%/themes/icons/oxygen/svg/format-text-bold.svg
+%%DATADIR%%/themes/icons/oxygen/svg/image-loading.svg
+%%DATADIR%%/themes/icons/oxygen/svg/edit-find.svg
 %%DATADIR%%/themes/sounds/default/sound.conf
 %%DATADIR%%/themes/sounds/default/msg.wav
+%%DATADIR%%/translations/cs.language
+%%DATADIR%%/translations/de.language
+%%DATADIR%%/translations/en.language
+%%DATADIR%%/translations/pl.language
 %%DATADIR%%/translations/kadu_cs.qm
 %%DATADIR%%/translations/kadu_en.qm
+%%DATADIR%%/translations/kadu_es_ES.qm
 %%DATADIR%%/translations/kadu_de.qm
 %%DATADIR%%/translations/kadu_fr.qm
 %%DATADIR%%/translations/kadu_it.qm
 %%DATADIR%%/translations/kadu_pl.qm
+%%DATADIR%%/translations/kadu_ru.qm
+%%DATADIR%%/translations/kadu_sk.qm
 share/icons/hicolor/16x16/apps/kadu.png
 share/icons/hicolor/22x22/apps/kadu.png
 share/icons/hicolor/24x24/apps/kadu.png
@@ -3326,6 +3810,8 @@ share/icons/hicolor/128x128/apps/kadu.png
 @dirrmtry share/icons/hicolor/128x128
 @dirrmtry share/icons/hicolor
 @dirrmtry share/icons
+@dirrmtry share/cmake/Modules
+@dirrmtry share/cmake
 @dirrmtry share/applications
 @dirrm %%DATADIR%%/translations
 @dirrm %%DATADIR%%/themes/sounds/default
@@ -3385,6 +3871,7 @@ share/icons/hicolor/128x128/apps/kadu.png
 @dirrm %%DATADIR%%/themes/icons/glass/protocols/common/128x128
 @dirrm %%DATADIR%%/themes/icons/glass/protocols/common
 @dirrm %%DATADIR%%/themes/icons/glass/protocols
+@dirrm %%DATADIR%%/themes/icons/glass/kadu_icons/svg
 @dirrm %%DATADIR%%/themes/icons/glass/kadu_icons/96x96
 @dirrm %%DATADIR%%/themes/icons/glass/kadu_icons/64x64
 @dirrm %%DATADIR%%/themes/icons/glass/kadu_icons/48x48
@@ -3461,11 +3948,6 @@ share/icons/hicolor/128x128/apps/kadu.png
 @dirrm %%DATADIR%%/syntax/chat/SimpleStuff/Contents
 @dirrm %%DATADIR%%/syntax/chat/SimpleStuff
 @dirrm %%DATADIR%%/syntax/chat/Satin/Contents/Resources/styles
-@dirrm %%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/status/purple
-@dirrm %%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/status/orange
-@dirrm %%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/status/gray
-@dirrm %%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/status/black
-@dirrm %%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/status
 @dirrm %%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/sender/standard/red
 @dirrm %%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/sender/standard/mono
 @dirrm %%DATADIR%%/syntax/chat/Satin/Contents/Resources/images/sender/standard/green
@@ -3488,13 +3970,6 @@ share/icons/hicolor/128x128/apps/kadu.png
 @dirrm %%DATADIR%%/syntax/chat/Satin/Contents/Resources
 @dirrm %%DATADIR%%/syntax/chat/Satin/Contents
 @dirrm %%DATADIR%%/syntax/chat/Satin
-@dirrm %%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/_Themes
-@dirrm %%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants/_Images
-@dirrm %%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Variants
-@dirrm %%DATADIR%%/syntax/chat/Pushpin/Contents/Resources/Incoming
-@dirrm %%DATADIR%%/syntax/chat/Pushpin/Contents/Resources
-@dirrm %%DATADIR%%/syntax/chat/Pushpin/Contents
-@dirrm %%DATADIR%%/syntax/chat/Pushpin
 @dirrm %%DATADIR%%/syntax/chat/Modern Bubbling (Compact)/Contents/Resources/styles/normal
 @dirrm %%DATADIR%%/syntax/chat/Modern Bubbling (Compact)/Contents/Resources/styles/alternative
 @dirrm %%DATADIR%%/syntax/chat/Modern Bubbling (Compact)/Contents/Resources/styles/_headers/header-styles
@@ -3525,30 +4000,123 @@ share/icons/hicolor/128x128/apps/kadu.png
 @dirrm %%DATADIR%%/syntax/chat/Modern Bubbling (Compact)/Contents/Resources
 @dirrm %%DATADIR%%/syntax/chat/Modern Bubbling (Compact)/Contents
 @dirrm %%DATADIR%%/syntax/chat/Modern Bubbling (Compact)
-@dirrm %%DATADIR%%/syntax/chat/Gaia/Contents/Resources/images
-@dirrm %%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Variants
-@dirrm %%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Outgoing
-@dirrm %%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Javascript
-@dirrm %%DATADIR%%/syntax/chat/Gaia/Contents/Resources/Incoming
-@dirrm %%DATADIR%%/syntax/chat/Gaia/Contents/Resources
-@dirrm %%DATADIR%%/syntax/chat/Gaia/Contents
-@dirrm %%DATADIR%%/syntax/chat/Gaia
+@dirrm %%DATADIR%%/syntax/chat/Default/Resources/images
+@dirrm %%DATADIR%%/syntax/chat/Default/Resources
 @dirrm %%DATADIR%%/syntax/chat/Default
 @dirrm %%DATADIR%%/syntax/chat
 @dirrm %%DATADIR%%/syntax
 @dirrm %%DATADIR%%/scripts
-@dirrm %%DATADIR%%/modules/translations
-@dirrm %%DATADIR%%/modules/data/word_fix
-@dirrm %%DATADIR%%/modules/data/sms/scripts
-@dirrm %%DATADIR%%/modules/data/sms
-@dirrm %%DATADIR%%/modules/data/jabber_protocol
-@dirrm %%DATADIR%%/modules/data/gadu_protocol
-@dirrm %%DATADIR%%/modules/data/cenzor
-@dirrm %%DATADIR%%/modules/data/antistring
-@dirrm %%DATADIR%%/modules/data
-@dirrm %%DATADIR%%/modules/configuration
-@dirrm %%DATADIR%%/modules
+@dirrm %%DATADIR%%/plugins/translations
+@dirrm %%DATADIR%%/plugins/sdk
+@dirrm %%DATADIR%%/plugins/data/word_fix
+@dirrm %%DATADIR%%/plugins/data/sms/scripts
+@dirrm %%DATADIR%%/plugins/data/sms
+@dirrm %%DATADIR%%/plugins/data/mprisplayer_mediaplayer
+@dirrm %%DATADIR%%/plugins/data/mediaplayer
+@dirrm %%DATADIR%%/plugins/data/gadu_protocol
+@dirrm %%DATADIR%%/plugins/data/cenzor
+@dirrm %%DATADIR%%/plugins/data/antistring
+@dirrm %%DATADIR%%/plugins/data
+@dirrm %%DATADIR%%/plugins/configuration
+@dirrm %%DATADIR%%/plugins
 @dirrm %%DATADIR%%/configuration
 @dirrm %%DATADIR%%
-@dirrm lib/kadu/modules
+@dirrm lib/kadu/plugins
 @dirrm lib/kadu
+@dirrm include/kadu/plugins/sound/configuration/gui
+@dirrm include/kadu/plugins/sound/configuration
+@dirrm include/kadu/plugins/sound
+@dirrm include/kadu/plugins/qt4_docking
+@dirrm include/kadu/plugins/mediaplayer
+@dirrm include/kadu/plugins/jabber_protocol/utils
+@dirrm include/kadu/plugins/jabber_protocol/tasks
+@dirrm include/kadu/plugins/jabber_protocol/services
+@dirrm include/kadu/plugins/jabber_protocol/server
+@dirrm include/kadu/plugins/jabber_protocol/resource
+@dirrm include/kadu/plugins/jabber_protocol/open-chat-with
+@dirrm include/kadu/plugins/jabber_protocol/gui/windows
+@dirrm include/kadu/plugins/jabber_protocol/gui/widgets
+@dirrm include/kadu/plugins/jabber_protocol/gui
+@dirrm include/kadu/plugins/jabber_protocol/file-transfer
+@dirrm include/kadu/plugins/jabber_protocol/client
+@dirrm include/kadu/plugins/jabber_protocol/certificates
+@dirrm include/kadu/plugins/jabber_protocol/actions
+@dirrm include/kadu/plugins/jabber_protocol
+@dirrm include/kadu/plugins/idle
+@dirrm include/kadu/plugins/history_migration/gui/windows
+@dirrm include/kadu/plugins/history_migration/gui
+@dirrm include/kadu/plugins/history_migration
+@dirrm include/kadu/plugins/history/storage
+@dirrm include/kadu/plugins/history/search
+@dirrm include/kadu/plugins/history/model
+@dirrm include/kadu/plugins/history/gui/windows
+@dirrm include/kadu/plugins/history/gui
+@dirrm include/kadu/plugins/history
+@dirrm include/kadu/plugins/gadu_protocol/socket-notifiers
+@dirrm include/kadu/plugins/gadu_protocol/services/multilogon
+@dirrm include/kadu/plugins/gadu_protocol/services
+@dirrm include/kadu/plugins/gadu_protocol/server
+@dirrm include/kadu/plugins/gadu_protocol/open-chat-with
+@dirrm include/kadu/plugins/gadu_protocol/oauth
+@dirrm include/kadu/plugins/gadu_protocol/helpers
+@dirrm include/kadu/plugins/gadu_protocol/gui/windows
+@dirrm include/kadu/plugins/gadu_protocol/gui/widgets
+@dirrm include/kadu/plugins/gadu_protocol/gui
+@dirrm include/kadu/plugins/gadu_protocol/dcc
+@dirrm include/kadu/plugins/gadu_protocol
+@dirrm include/kadu/plugins/encryption_ng/notify
+@dirrm include/kadu/plugins/encryption_ng/keys
+@dirrm include/kadu/plugins/encryption_ng/configuration
+@dirrm include/kadu/plugins/encryption_ng
+@dirrm include/kadu/plugins/docking
+@dirrm include/kadu/plugins
+@dirrm include/kadu/kadu-core/url-handlers
+@dirrm include/kadu/kadu-core/themes
+@dirrm include/kadu/kadu-core/storage
+@dirrm include/kadu/kadu-core/status
+@dirrm include/kadu/kadu-core/qt
+@dirrm include/kadu/kadu-core/protocols/services
+@dirrm include/kadu/kadu-core/protocols/model
+@dirrm include/kadu/kadu-core/protocols/filter
+@dirrm include/kadu/kadu-core/protocols
+@dirrm include/kadu/kadu-core/plugins
+@dirrm include/kadu/kadu-core/parser
+@dirrm include/kadu/kadu-core/os/qtsingleapplication
+@dirrm include/kadu/kadu-core/os/generic
+@dirrm include/kadu/kadu-core/os
+@dirrm include/kadu/kadu-core/notify
+@dirrm include/kadu/kadu-core/network
+@dirrm include/kadu/kadu-core/multilogon/model
+@dirrm include/kadu/kadu-core/multilogon
+@dirrm include/kadu/kadu-core/model
+@dirrm include/kadu/kadu-core/misc
+@dirrm include/kadu/kadu-core/identities/model
+@dirrm include/kadu/kadu-core/identities
+@dirrm include/kadu/kadu-core/icons
+@dirrm include/kadu/kadu-core/gui/windows/open-chat-with
+@dirrm include/kadu/kadu-core/gui/windows
+@dirrm include/kadu/kadu-core/gui/widgets/configuration
+@dirrm include/kadu/kadu-core/gui/widgets
+@dirrm include/kadu/kadu-core/gui/actions
+@dirrm include/kadu/kadu-core/gui
+@dirrm include/kadu/kadu-core/file-transfer
+@dirrm include/kadu/kadu-core/emoticons
+@dirrm include/kadu/kadu-core/core
+@dirrm include/kadu/kadu-core/contacts/model
+@dirrm include/kadu/kadu-core/contacts/filter
+@dirrm include/kadu/kadu-core/contacts
+@dirrm include/kadu/kadu-core/configuration
+@dirrm include/kadu/kadu-core/chat/type
+@dirrm include/kadu/kadu-core/chat/style-engines
+@dirrm include/kadu/kadu-core/chat/message
+@dirrm include/kadu/kadu-core/chat/filter
+@dirrm include/kadu/kadu-core/chat
+@dirrm include/kadu/kadu-core/buddies/model
+@dirrm include/kadu/kadu-core/buddies/filter
+@dirrm include/kadu/kadu-core/buddies
+@dirrm include/kadu/kadu-core/avatars
+@dirrm include/kadu/kadu-core/accounts/model
+@dirrm include/kadu/kadu-core/accounts/filter
+@dirrm include/kadu/kadu-core/accounts
+@dirrm include/kadu/kadu-core
+@dirrm include/kadu
