@@ -60,10 +60,6 @@ PLIST_SUB+=	NLS=""
 MAKE_ENV+=	WITHOUT_GNU_COMPAT=yes
 .endif
 
-# XXX: fix upstream
-post-patch:
-	${REINPLACE_CMD} 's/xzefgrep/xzegrep/g' ${WRKSRC}/Makefile
-
 pre-install:
 .if defined(WITH_NLS)
 	${MKDIR} ${LOCALBASE}/share/nls/gl_ES.ISO8859-1
