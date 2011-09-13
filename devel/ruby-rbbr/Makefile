@@ -43,9 +43,9 @@ post-install:
 .include <bsd.port.pre.mk>
 
 .if ${RUBY_VER} == 1.9
-PLIST_SUB+=	R19=""
-.else
 PLIST_SUB+=	R19="@comment "
+.else
+PLIST_SUB+=	R19=""
 .endif
 
 .include <bsd.port.post.mk>
