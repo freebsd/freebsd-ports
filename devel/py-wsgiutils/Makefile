@@ -16,7 +16,7 @@ DISTNAME=	WSGIUtils-${PORTVERSION}
 MAINTAINER=	ports@FreeBSD.org
 COMMENT=	Utility libraries for development of simple WSGI programs
 
-USE_PYTHON=	yes
+USE_PYTHON=	-2.7
 USE_PYDISTUTILS=easy_install
 PYDISTUTILS_PKGNAME=	WSGIUtils
 
