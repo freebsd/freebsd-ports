@@ -144,6 +144,9 @@
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/__init__.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/__init__.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/__init__.pyo
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/decorators.py
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/decorators.pyc
+%%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/decorators.pyo
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/selenium.py
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/selenium.pyc
 %%PYTHON_SITELIBDIR%%/%%PYEASYINSTALL_EGG%%/djblets/testing/selenium.pyo
