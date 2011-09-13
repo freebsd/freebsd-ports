@@ -7,7 +7,7 @@
 
 PORTNAME=	rubinius
 PORTVERSION=	1.2.4
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	lang
 MASTER_SITES=	ftp://ftp.SpringDaemons.com/soft/ \
 		http://asset.rubini.us/prebuilt/:llvm
@@ -31,6 +31,7 @@ CONFIGURE_ARGS=	--without-execinfo \
 
 LLVMDIST=	llvm-2.8.tgz
 USE_RUBY=	yes
+RUBY_NO_RUN_DEPENDS=	yes
 USE_RAKE=	yes
 USE_PERL5_BUILD=	yes
 USE_GMAKE=	yes
