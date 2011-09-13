@@ -265,13 +265,16 @@ Index: sysdep/bsd/krt-sock.c
  }
  
  static byte *krt_buffer = NULL;
-@@ -695,10 +761,13 @@ krt_set_construct(struct krt_config *c UNUSED)
+@@ -695,13 +761,16 @@ krt_set_construct(struct krt_config *c U
  }
  
  void
 -krt_set_shutdown(struct krt_proto *x UNUSED, int last UNUSED)
 +krt_set_shutdown(struct krt_proto *x UNUSED, int last)
  {
+   if (!krt_buffer)
+     return;
+ 
 -  mb_free(krt_buffer);
 -  krt_buffer = NULL;
 +  if (last)

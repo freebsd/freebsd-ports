@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	bird
-PORTVERSION=	1.3.2
+PORTVERSION=	1.3.3
 CATEGORIES=	net
 MASTER_SITES=	ftp://bird.network.cz/pub/bird/
 
@@ -17,8 +17,7 @@ USE_BISON=	build
 USE_GMAKE=	yes
 GNU_CONFIGURE=	yes
 
-OPTIONS=	FIBS		"Enable multiple fib support" Off \
-		CONFIG_INCLUDES	"Permit config 'include' keyword" Off
+OPTIONS=	FIBS		"Enable multiple fib support" Off
 
 MAKE_JOBS_UNSAFE=	yes
 
@@ -28,10 +27,6 @@ USE_RC_SUBR=	bird
 
 .if defined(WITH_FIBS)
 EXTRA_PATCHES+=	${FILESDIR}/fibs.diff
-.endif
-
-.if defined(WITH_CONFIG_INCLUDES)
-EXTRA_PATCHES+=	${FILESDIR}/extra-config_includes.diff
 .endif
 
 post-install:
