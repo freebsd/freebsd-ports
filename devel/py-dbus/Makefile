@@ -3,11 +3,11 @@
 # Whom:				Joe Marcus Clarke <marcus@FreeBSD.org>
 #
 # $FreeBSD$
-#   $MCom: ports/devel/py-dbus/Makefile,v 1.10 2010/03/14 12:28:57 kwm Exp $
+#   $MCom: ports/devel/py-dbus/Makefile,v 1.14 2011/08/11 19:48:46 kwm Exp $
 #
 
 PORTNAME=	dbus
-PORTVERSION=	0.83.2
+PORTVERSION=	0.84.0
 CATEGORIES=	devel gnome python
 MASTER_SITES=	http://dbus.freedesktop.org/releases/dbus-python/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
@@ -23,7 +23,7 @@ USE_GNOME=	gnomehack
 USE_PYTHON=	yes
 USE_GMAKE=	yes
 USE_AUTOTOOLS=	libtool
-CONFIGURE_ENV=	CPPFLAGS="-I${PYTHON_INCLUDEDIR}"
+CPPFLAGS+=	-I${PYTHON_INCLUDEDIR}
 CONFIGURE_ARGS=	--docdir=${DOCSDIR} \
 		--disable-api-docs
 
