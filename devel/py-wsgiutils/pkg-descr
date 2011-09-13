@@ -9,5 +9,4 @@ wsgiServer is a multi-threaded WSGI web server based on SimpleHTTPServer.
 wsgiAdaptor is a simple WSGI application that provides basic authentication,
 signed cookies and persistent sessions.
 
-
 WWW: http://www.owlfish.com/software/wsgiutils/
