@@ -31,7 +31,7 @@ dbus_prestart()
         mkdir -p /var/db/dbus
     fi
     if [ ! -f /var/db/dbus/machine-id ]; then
-        dbus-uuidgen > /var/db/dbus/machine-id
+        %%PREFIX%%/bin/dbus-uuidgen > /var/db/dbus/machine-id
     fi
 
     mkdir -p $(dirname $pidfile)
