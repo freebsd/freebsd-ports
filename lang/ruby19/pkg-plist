@@ -10,8 +10,6 @@ bin/ruby%%RUBY_SUFFIX%%
 %%IF_DEFAULT%%bin/ruby
 bin/testrb%%RUBY_SUFFIX%%
 %%IF_DEFAULT%%bin/testrb
-bin/gem%%RUBY_SUFFIX%%
-%%IF_DEFAULT%%bin/gem
 lib/lib%%RUBY_NAME%%-static.a
 lib/lib%%RUBY_NAME%%.so
 lib/lib%%RUBY_NAME%%.so.%%RUBY_SHLIBVER%%
@@ -989,9 +987,6 @@ include/ruby-1.9/ruby.h
 @dirrm %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/dl
 @dirrm %%RUBY_LIBDIR%%/%%RUBY_ARCH%%/digest
 @dirrm %%RUBY_LIBDIR%%/%%RUBY_ARCH%%
-%%GEMS_DIR%%/gems/.keep_me
-@dirrm %%GEMS_DIR%%/gems
-@dirrm %%GEMS_DIR%%
 @dirrm %%RUBY_LIBDIR%%/
 %%RUBY_SITEARCHLIBDIR%%/.keep_me
 @dirrm %%RUBY_SITEARCHLIBDIR%%

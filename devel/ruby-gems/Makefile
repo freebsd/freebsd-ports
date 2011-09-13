@@ -44,10 +44,6 @@ RUBY_VER_SHORT=		${RUBY_VER:S/.//}
 
 .include <bsd.port.pre.mk>
 
-.if ${RUBY_VER} == 1.9
-IGNORE=	already included in this ruby distribution
-.endif
-
 do-install:
 	@${MKDIR} ${PREFIX}/${GEMS_DOC_BASE_DIR}/
 	@${TOUCH} ${PREFIX}/${GEMS_DOC_BASE_DIR}/.keep_this
