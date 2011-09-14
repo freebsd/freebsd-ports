@@ -6,8 +6,7 @@
 #
 
 PORTNAME=	nginx
-PORTVERSION=	1.1.2
-PORTREVISION=	1
+PORTVERSION=	1.1.3
 CATEGORIES=	www
 MASTER_SITES=	http://nginx.org/download/
 MASTER_SITES+=	${MASTER_SITE_LOCAL}
@@ -33,6 +32,7 @@ OPTIONS=	DEBUG			"Enable nginx debugging" off \
 		HTTP_GEOIP_MODULE	"Enable http_geoip module" off \
 		HTTP_GZIP_STATIC_MODULE "Enable http_gzip_static module" off \
 		HTTP_IMAGE_FILTER_MODULE "Enable http_image_filter module" off \
+		HTTP_MP4_MODULE		"Enable http_mp4 module" off \
 		HTTP_PERL_MODULE	"Enable http_perl module" off \
 		HTTP_RANDOM_INDEX_MODULE "Enable http_random_index module" off \
 		HTTP_REALIP_MODULE	"Enable http_realip module" off \
@@ -268,6 +268,14 @@ LIB_DEPENDS+=	gd.4:${PORTSDIR}/graphics/gd
 CONFIGURE_ARGS+=--with-http_image_filter_module
 .endif
 
+.if defined(WITH_HTTP_MP4_MODULE) && defined(WITH_HTTP_MP4_H264_MODULE)
+IGNORE=	http_mp4 and third-party http_mp4_h264 modules are incompatible. Please select one
+.endif
+
+.if defined(WITH_HTTP_MP4_MODULE)
+CONFIUGURE_ARGS+=--with-http_mp4_module
+.endif
+
 .if defined(WITH_HTTP_MOGILEFS_MODULE)
 NGINX_MOGILEFS_MODULE_VERSION=	1.0.4
 MASTER_SITES+=	http://www.grid.net.ru/nginx/download/:mogilefs
@@ -435,7 +443,7 @@ CONFIGURE_ARGS+=--add-module=${WRKDIR}/mdirolf-nginx-gridfs-${GIT_GRIDFS_MODULE_
 
 .if defined(WITH_LUA_MODULE)
 .if !defined(WITH_DEVEL_KIT_MODULE)
-BROKEN=		for lua module build devel_kit also should be defined
+IGNORE=	for lua module build devel_kit also should be defined
 .endif
 USE_LUA=	5.1+
 NGINX_LUA_MODULE_VERSION=	0.3.0
