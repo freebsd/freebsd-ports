@@ -11,11 +11,10 @@ PORTREVISION=	7
 CATEGORIES=	games
 MASTER_SITES=	SF/${PORTNAME}/NexuizRelease/Nexuiz%20${PORTVERSION} \
 		SF/${PORTNAME}/mappack/nexmappack_r2:mappack
-
 DISTNAME=	${PORTNAME}-${PORTVERSION:S/.//g}
 DISTFILES=	${DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	danfe@FreeBSD.org
+MAINTAINER=	amdmi3@FreeBSD.org
 COMMENT=	A fast-paced, chaotic, and intense multiplayer first person shooter
 
 LICENSE=	GPLv2
