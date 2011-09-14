@@ -13,10 +13,16 @@ MASTER_SITES=	${MASTER_SITE_SUNSITE}
 MASTER_SITE_SUBDIR=	X11/screensavers
 EXTRACT_SUFX=	.tgz
 
-MAINTAINER=	ports@FreeBSD.org
+MAINTAINER=	romain@FreeBSD.org
 COMMENT=	Used to activate xlock after a user defined time of inactivity
 
-RUN_DEPENDS=	xlock:${PORTSDIR}/x11/xlockmore
+OPTIONS=	XLOCK "Force dependency on x11/xlockmore" on
+
+.include <bsd.port.options.mk>
+
+.if defined(WITH_XLOCK)
+RUN_DEPENDS+=	xlock:${PORTSDIR}/x11/xlockmore
+.endif
 
 USE_IMAKE=	yes
 USE_XORG=	x11 xext xscrnsaver
