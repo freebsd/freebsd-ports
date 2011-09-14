@@ -20,7 +20,8 @@ COMMENT=	Internet communicator supporting Gadu-Gadu and Jabber/XMPP
 
 LICENSE=	GPLv2
 
-BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash
+BUILD_DEPENDS=	bash:${PORTSDIR}/shells/bash \
+		pl-libgadu>=1.11.0:${PORTSDIR}/polish/libgadu
 LIB_DEPENDS=	enchant.1:${PORTSDIR}/textproc/enchant \
 		gadu.3:${PORTSDIR}/polish/libgadu \
 		idn.17:${PORTSDIR}/dns/libidn \
@@ -40,6 +41,7 @@ USE_XORG=	xscrnsaver
 CMAKE_ARGS=	-DKADU_VERSION:STRING="${DISTVERSION}" -DWITH_ENCHANT=ON
 # Setting KADU_VERSION disables git invocation
 CMAKE_USE_PTHREAD=yes
+MAKE_JOBS_SAFE=	yes
 
 USE_QT_VER=	4
 QT_COMPONENTS=	gui dbus network script webkit xml qmake_build \
