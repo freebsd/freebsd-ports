@@ -22,8 +22,6 @@ LIB_DEPENDS=	gcrypt.18:${PORTSDIR}/security/libgcrypt \
 		openvas_hg.2:${PORTSDIR}/security/openvas-libraries \
 		tasn1.4:${PORTSDIR}/security/libtasn1
 
-BROKEN=		does not compile
-
 GNU_CONFIGURE=	yes
 USE_LDCONFIG=	yes
 USE_ICONV=	yes
@@ -32,5 +30,7 @@ USE_BISON=	build
 MAN1=		openvas-libnasl-config.1 openvas-nasl.1
 
 .include "${.CURDIR}/../../security/openvas-libraries/Makefile.common"
+
+LDFLAGS+=	-lgcrypt
 
 .include <bsd.port.mk>
