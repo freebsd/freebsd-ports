@@ -1,0 +1,9 @@
+Zorba is a general purpose XQuery processor implementing in C++ the W3C family
+of specifications. The query processor has been designed to be embeddable in a
+variety of environments such as other programming languages extended with XML
+processing capabilities, browsers, database servers, XML message dispatchers,
+or smartphones. Zorba can be accessed through APIs from C, C++, Ruby, Python,
+Java, and PHP. Zorba runs on most platforms and is available under the Apache
+license v2.
+
+WWW: http://www.zorba-xquery.com/
