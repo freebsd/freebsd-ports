@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	libsigsegv
-PORTVERSION=	2.9
+PORTVERSION=	2.10
 CATEGORIES=	devel
 MASTER_SITES=	GNU/libsigsegv
 
