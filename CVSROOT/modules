@@ -12272,6 +12272,7 @@ p5-Frontier-RPC                 ports/net/p5-Frontier-RPC
 p5-Furl                         ports/www/p5-Furl
 p5-Fuse                         ports/sysutils/p5-Fuse
 p5-Fuse-Simple                  ports/sysutils/p5-Fuse-Simple
+p5-FusionInventory-Agent        ports/net-mgmt/p5-FusionInventory-Agent
 p5-FuzzyOcr                     ports/mail/p5-FuzzyOcr
 p5-FuzzyOcr-devel               ports/mail/p5-FuzzyOcr-devel
 p5-GD                           ports/graphics/p5-GD
@@ -12574,6 +12575,7 @@ p5-HTTP-Request-Params          ports/www/p5-HTTP-Request-Params
 p5-HTTP-Response-Encoding       ports/www/p5-HTTP-Response-Encoding
 p5-HTTP-Router                  ports/www/p5-HTTP-Router
 p5-HTTP-Server-Simple           ports/www/p5-HTTP-Server-Simple
+p5-HTTP-Server-Simple-Authen    ports/www/p5-HTTP-Server-Simple-Authen
 p5-HTTP-Server-Simple-Mason     ports/www/p5-HTTP-Server-Simple-Mason
 p5-HTTP-Server-Simple-PSGI      ports/www/p5-HTTP-Server-Simple-PSGI
 p5-HTTP-Server-Simple-Recorder  ports/www/p5-HTTP-Server-Simple-Recorder
@@ -13263,6 +13265,7 @@ p5-Net-CIDR                     ports/net-mgmt/p5-Net-CIDR
 p5-Net-CIDR-Lite                ports/net/p5-Net-CIDR-Lite
 p5-Net-CIDR-MobileJP            ports/net/p5-Net-CIDR-MobileJP
 p5-Net-CSTA                     ports/net/p5-Net-CSTA
+p5-Net-CUPS                     ports/print/p5-Net-CUPS
 p5-Net-CascadeCopy              ports/net/p5-Net-CascadeCopy
 p5-Net-Cassandra                ports/net/p5-Net-Cassandra
 p5-Net-Cassandra-Easy           ports/net/p5-Net-Cassandra-Easy
@@ -16600,6 +16603,7 @@ p5-fsa-rules                    ports/devel/p5-FSA-Rules
 p5-furl                         ports/www/p5-Furl
 p5-fuse                         ports/sysutils/p5-Fuse
 p5-fuse-simple                  ports/sysutils/p5-Fuse-Simple
+p5-fusioninventory-agent        ports/net-mgmt/p5-FusionInventory-Agent
 p5-fuzzyocr                     ports/mail/p5-FuzzyOcr
 p5-fuzzyocr-devel               ports/mail/p5-FuzzyOcr-devel
 p5-games-alak                   ports/games/p5-Games-Alak
@@ -16925,6 +16929,7 @@ p5-http-request-params          ports/www/p5-HTTP-Request-Params
 p5-http-response-encoding       ports/www/p5-HTTP-Response-Encoding
 p5-http-router                  ports/www/p5-HTTP-Router
 p5-http-server-simple           ports/www/p5-HTTP-Server-Simple
+p5-http-server-simple-authen    ports/www/p5-HTTP-Server-Simple-Authen
 p5-http-server-simple-mason     ports/www/p5-HTTP-Server-Simple-Mason
 p5-http-server-simple-psgi      ports/www/p5-HTTP-Server-Simple-PSGI
 p5-http-server-simple-recorder  ports/www/p5-HTTP-Server-Simple-Recorder
@@ -17612,6 +17617,7 @@ p5-net-cidr                     ports/net-mgmt/p5-Net-CIDR
 p5-net-cidr-lite                ports/net/p5-Net-CIDR-Lite
 p5-net-cidr-mobilejp            ports/net/p5-Net-CIDR-MobileJP
 p5-net-csta                     ports/net/p5-Net-CSTA
+p5-net-cups                     ports/print/p5-Net-CUPS
 p5-net-daap-client              ports/audio/p5-Net-DAAP-Client
 p5-net-daap-dmap                ports/audio/p5-Net-DAAP-DMAP
 p5-net-daemon                   ports/net/p5-Net-Daemon
