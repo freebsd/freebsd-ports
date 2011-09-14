@@ -6,9 +6,10 @@
 #
 
 PORTNAME=	clipgrab
-PORTVERSION=	3.1.0.1
+PORTVERSION=	3.1.0.2
 CATEGORIES=	multimedia
-MASTER_SITES=	http://clipgrab.de/download/
+MASTER_SITES=	http://clipgrab.de/download/ \
+		http://vanbittern.org/
 
 MAINTAINER=	g.veniamin@googlemail.com
 COMMENT=	Program to download videos from YouTube and etc
