@@ -6,12 +6,16 @@
 #
 
 PORTNAME=	resourceproto
-PORTVERSION=	1.0.2
+PORTVERSION=	1.2.0
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	Resource extension headers
 
 XORG_CAT=	proto
+
+post-patch:
+	@${REINPLACE_CMD} '/^install-data-am:/,/^$$/ \
+		s/install-dist_docDATA//' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

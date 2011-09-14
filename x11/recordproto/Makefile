@@ -6,12 +6,18 @@
 #
 
 PORTNAME=	recordproto
-PORTVERSION=	1.14
+PORTVERSION=	1.14.1
 CATEGORIES=	x11
 
 MAINTAINER=	x11@FreeBSD.org
 COMMENT=	RECORD extension headers
 
 XORG_CAT=	proto
+
+CONFIGURE_ARGS+=--disable-specs --without-xmlto
+
+post-patch:
+	@${REINPLACE_CMD} '/^SUBDIRS/,/&$$/ \
+		s/specs//' ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>
