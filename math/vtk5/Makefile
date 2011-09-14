@@ -7,8 +7,7 @@
 #
 
 PORTNAME=	vtk
-PORTVERSION=	5.6.1
-PORTREVISION=	3
+PORTVERSION=	5.8.0
 CATEGORIES=	math graphics
 MASTER_SITES=	http://www.vtk.org/files/release/${PORTVERSION:R}/ \
 		http://www.neuro.mcw.edu/Ports/distfiles/VTK5/
@@ -54,8 +53,6 @@ PORTDOCS=	README.html
 CMAKE_USE_PTHREAD=	yes
 CMAKE_OUTSOURCE=	yes
 
-# Set this when testing port changes
-#-DCMAKE_VERBOSE_MAKEFILE:BOOL=ON
 CMAKE_ARGS+=	-DBUILD_DOCUMENTATION:BOOL=ON \
 		-DBUILD_TESTING:BOOL=OFF \
 		-DKWSYS_LFS_DISABLE:BOOL=ON \
@@ -94,7 +91,7 @@ LIB_DEPENDS+=	vtkMPEG2Encode.5:${PORTSDIR}/multimedia/vtkmpeg2encode
 PLIST_SUB+=	MPEG=""
 CMAKE_ARGS+=	-DVTK_USE_PATENTED:BOOL=ON \
 		-DVTK_USE_MPEG2_ENCODER:BOOL=ON \
-		-DvtkMPEG2Encode_INCLUDE_PATH=${LOCALBASE}/include/vtk-5.6 \
+		-DvtkMPEG2Encode_INCLUDE_PATH=${LOCALBASE}/include/vtk-5.8 \
 		-DvtkMPEG2Encode_LIBRARIES=${LOCALBASE}/lib/libvtkMPEG2Encode.so
 .else
 PLIST_SUB+=	MPEG="@comment "
@@ -178,7 +175,7 @@ IGNORE=		java wrapping requires shared libraries.\
 CXXFLAGS+=	-fPIC
 .endif
 USE_JAVA=	yes
-JAVA_VENDOR=	freebsd
+JAVA_VENDOR=	freebsd openjdk
 JAVA_VERSION=	1.5+
 CMAKE_ARGS+=	-DVTK_WRAP_JAVA:BOOL=ON \
     		-DJAVA_AWT_INCLUDE_PATH:FILEPATH=${JAVA_HOME}/include \
@@ -201,8 +198,8 @@ PLIST_SUB+=	WRAPPING="@comment "
 post-patch:
 	${REINPLACE_CMD} -e 's|malloc.h|stdlib.h|g' \
 	    ${WRKSRC}/Hybrid/vtkVRMLImporter.cxx
-	${REINPLACE_CMD} -e '222s|)|) \&\& !defined(__FreeBSD__)|' \
-	    ${WRKSRC}/Utilities/kwsys/SharedForward.h.in
+#	${REINPLACE_CMD} -e '222s|)|) \&\& !defined(__FreeBSD__)|' \
+#	    ${WRKSRC}/Utilities/kwsys/SharedForward.h.in
 	${REINPLACE_CMD} -e '25,30d' ${WRKSRC}/Wrapping/Python/setup.py.in
 .if defined(WITH_SHARED)
 	${REINPLACE_CMD} -e 's|png_set_gray_1_2_4_to_8|png_set_expand_gray_1_2_4_to_8|g' \
@@ -226,7 +223,7 @@ pre-install:
 	${INSTALL_DATA} ${WRKSRC}/README.html ${DOCSDIR}
 .endif
 
-LIBS_TOFIX=	vtkNetCDF_cxx Cosmo VPIC
+LIBS_TOFIX=	vtkNetCDF_cxx vtkhdf5
 LIBDIR=		${PREFIX}/lib/vtk-${PORTVERSION:R}/
 
 post-install:
