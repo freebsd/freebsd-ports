@@ -6,6 +6,7 @@
 
 PORTNAME=	spidermonkey
 DISTVERSION=	1.7.0
+PORTREVISION=	1
 CATEGORIES=	lang
 MASTER_SITES=	${MASTER_SITE_MOZILLA_EXTENDED}
 MASTER_SITE_SUBDIR=	js
@@ -34,10 +35,10 @@ JSH=		jsapi.h jsarena.h jsarray.h jsatom.h jsautocfg.h jsbool.h \
 		jsclist.h jscntxt.h jscompat.h jsconfig.h jsdate.h jsdhash.h \
 		jsdtoa.h jsemit.h jsexn.h jsfun.h jsgc.h jshash.h jsinterp.h \
 		jsiter.h jslibmath.h jslock.h jslong.h jsmath.h jsnum.h jsobj.h \
-		jsopcode.h jsosdep.h jsotypes.h jsparse.h jsprvtd.h jspubtd.h \
-		jsregexp.h jsscan.h jsscope.h jsscript.h jsstr.h jstypes.h \
-		jsxdrapi.h jsxml.h \
-		jsproto.tbl
+		jsopcode.h jsosdep.h jsotypes.h jsparse.h jsprf.h jsprvtd.h \
+		jspubtd.h jsutil.h jsregexp.h jsscan.h jsscope.h jsscript.h \
+		jsstr.h jstypes.h jsxdrapi.h jsxml.h \
+		js.msg jsproto.tbl
 
 PLIST_FILES=	bin/js lib/libjs.so lib/libjs.so.1 ${JSH:S,^,include/,}
 WRKSRC=		${WRKDIR}/${SRC_DIR}
