@@ -42,26 +42,27 @@
  C++OPTDYN=	-fpic
  C++OPTGPROF=	-pg
  
-@@ -54,15 +53,15 @@
+@@ -54,16 +53,15 @@
  
  FLOAT_OPTIONS=	
  
--CC=		@echo "	==> COMPILING \"$@\""; gcc
+-CC_COM=		gcc
+-CC=		@echo "	==> COMPILING \"$@\""; $(CC_COM)
 -CC++ =		@echo "	==> COMPILING \"$@\""; g++
--LDCC=		@echo "	==> LINKING \"$@\""; gcc
+-LDCC=		@echo "	==> LINKING \"$@\""; $(CC_COM)
 -LDCC++ =	@echo "	==> LINKING \"$@\""; g++
--DYNLD=		@echo "	==> LINKING dynamic library \"$@\""; gcc
+-DYNLD=		@echo "	==> LINKING dynamic library \"$@\""; $(CC_COM)
 -DYNLDC++ =	@echo "	==> LINKING dynamic library \"$@\""; g++
 +CC_COM=		$(CC)
 +CC++ =		$(CXX)
-+LDCC=		$(CC)
++LDCC=		$(CC_COM)
 +LDCC++ =	$(CXX)
-+DYNLD=		$(CC)
++DYNLD=		$(CC_COM)
 +DYNLDC++ =	$(CXX)
  
  RMDEP=		:
--MKDEP=		@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); gcc -M
-+MKDEP=		$(CC) -M
+-MKDEP=		@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); $(CC_COM) -M
++MKDEP=		$(CC_COM) -M
  MKDEP_OUT=
 -MKC++DEP=	@echo "	==> MAKING DEPENDENCIES \"$@\""; $(RMDEP); g++ -M
 +MKC++DEP=	$(CXX) -M
