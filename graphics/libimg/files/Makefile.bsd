@@ -2,7 +2,9 @@ SHLIB_NAME?=	libimg.so.1
 
 PORTVERSION?=	1.2.4
 LOCALBASE?=	/usr/local
-TCL_VER?=	8.4
+.if !defined(TCL_VER)
+TCL_VER=	8.4
+.endif
 
 .if exists(${LOCALBASE}/lib/tk${TCL_VER}/tkConfig.sh)
 # If for some reason  the file does not exist -- make the best guess. In
@@ -28,6 +30,7 @@ CFLAGS+=	-I${LOCALBASE}/include/tk${TCL_VER}
 CFLAGS+=	-DNDEBUG -Wall -I. -DUSE_TCL_STUBS -DUSE_TK_STUBS
 CFLAGS+=	-DVERSION=\"${PORTVERSION}\" -I${LOCALBASE}/include
 CFLAGS+=	-DHAVE_JPEGLIB_H -DHAVE_TIFF_H -DHAVE_DLFCN_H -DHAVE_IMG_H
+CFLAGS+=	-DHAVE_INTTYPES_H -DHAVE_STDINT_H -DHAVE_UNISTD_H
 
 all: pkgIndex.tcl
 
