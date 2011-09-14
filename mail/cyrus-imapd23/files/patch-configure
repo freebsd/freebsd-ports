@@ -1,8 +1,8 @@
 Index: configure
 diff -u configure.orig configure
---- configure.orig	2010-11-26 14:08:32.950506060 +0900
-+++ configure	2010-11-26 14:10:19.298911330 +0900
-@@ -642,6 +642,7 @@
+--- configure.orig	2011-09-14 13:19:05.073252913 +0900
++++ configure	2011-09-14 13:21:19.010068209 +0900
+@@ -606,6 +606,7 @@
  IMAP_COM_ERR_LIBS
  LIB_RT
  LIB_UCDSNMP
@@ -10,7 +10,7 @@ diff -u configure.orig configure
  SNMP_CONFIG
  LIB_WRAP
  SNMP_SUBDIRS
-@@ -12402,7 +12403,7 @@
+@@ -7171,7 +7172,7 @@
  
  done
  
@@ -18,17 +18,8 @@ diff -u configure.orig configure
 +	if test "$ac_cv_header_pcreposix_h" = "yes"; then
  		LIBS="$LIBS -lpcre -lpcreposix";
  
- cat >>confdefs.h <<\_ACEOF
-@@ -20173,7 +20174,7 @@
-     PERL_SUBDIRS="imap"
-     PERL="${with_perl}"
-     case "${target_os}" in
--        linux*|netbsd*)
-+        linux*|netbsd*|freebsd*)
-             { $as_echo "$as_me:$LINENO: checking for perl cccdlflags needed on \"${target_os}\"" >&5
- $as_echo_n "checking for perl cccdlflags needed on \"${target_os}\"... " >&6; }
-             eval `${PERL} -V:cccdlflags`
-@@ -20749,7 +20750,9 @@
+ $as_echo "#define ENABLE_REGEX /**/" >>confdefs.h
+@@ -10688,7 +10689,9 @@
  
      if test -n "$SNMP_LIBS" && test -n "$SNMP_PREFIX"; then
        CPPFLAGS="$CPPFLAGS -I${SNMP_PREFIX}/include"
@@ -37,14 +28,14 @@ diff -u configure.orig configure
 +      PERLLIBDIR=`$PERL -e 'use Config; print "$Config{archlibexp}/CORE";'`
 +      LDFLAGS_UCDSNMP="-L${PERLLIBDIR} -R${PERLLIBDIR}"
  
- cat >>confdefs.h <<\_ACEOF
- #define HAVE_NETSNMP 1
-@@ -21135,7 +21138,7 @@
- #define HAVE_UCDSNMP 1
- _ACEOF
+ $as_echo "#define HAVE_NETSNMP 1" >>confdefs.h
+ 
+@@ -10781,7 +10784,7 @@
+ 
+ $as_echo "#define HAVE_UCDSNMP 1" >>confdefs.h
  
 -      LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp"
 +      LIB_UCDSNMP="-lucdagent -lucdmibs -lsnmp -lkvm -ldevstat -lwrap"
-       { $as_echo "$as_me:$LINENO: checking for rpmdbOpen in -lrpm" >&5
+       { $as_echo "$as_me:${as_lineno-$LINENO}: checking for rpmdbOpen in -lrpm" >&5
  $as_echo_n "checking for rpmdbOpen in -lrpm... " >&6; }
- if test "${ac_cv_lib_rpm_rpmdbOpen+set}" = set; then
+ if ${ac_cv_lib_rpm_rpmdbOpen+:} false; then :
