@@ -34,6 +34,35 @@ Note:  Please add new entries to the beginning of this file.
 
 -->
 <vuxml xmlns="http://www.vuxml.org/apps/vuxml-1">
+  <vuln vid="e44fe906-df27-11e0-a333-001cc0a36e12">
+    <topic>phpmyadmin -- multiple XSS vulnerabilities</topic>
+    <affects>
+      <package>
+	<name>phpMyAdmin</name>
+	<range><lt>3.4.5</lt></range>
+      </package>
+    </affects>
+    <description>
+      <body xmlns="http://www.w3.org/1999/xhtml">
+	<p>phpMyAdmin development team reports:</p>
+	<blockquote cite="http://www.phpmyadmin.net/home_page/security/PMASA-2011-14.php">
+	  <p>Firstly, if a row contains javascript code, after inline
+	    editing this row and saving, the code is executed. Secondly,
+	    missing sanitization on the db, table and column names leads
+	    to XSS vulnerabilities.</p>
+	  <p>Versions 3.4.0 to 3.4.4 were found vulnerable.</p>
+	</blockquote>
+      </body>
+    </description>
+    <references>
+      <url>http://www.phpmyadmin.net/home_page/security/PMASA-2011-14.php</url>
+    </references>
+    <dates>
+      <discovery>2011-09-11</discovery>
+      <entry>2011-09-14</entry>
+    </dates>
+  </vuln>
+
   <vuln vid="d01d10c7-de2d-11e0-b215-00215c6a37bb">
     <topic>django -- multiple vulnerabilities</topic>
     <affects>
