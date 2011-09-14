@@ -5,6 +5,24 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110914:
+  AFFECTS: users of www/asterisk-stat
+  AUTHOR: flo@FreeBSD.org
+
+  asterisk-stat depends on asterisk16 now, you willl need to update asterisk
+  and asterisk-addons to 1.6. Instructions on upgrading your configuration
+  files are here:
+
+  http://svnview.digium.com/svn/asterisk/branches/1.6.2/UPGRADE-1.6.txt
+
+  If you use portmaster run:
+  # portmaster -o net/asterisk16 net/asterisk14
+  # portmaster -o net/asterisk16-addons net/asterisk14-addons
+
+  If you use portupgrade run:
+  # portupgrade -o net/asterisk16 net/asterisk14
+  # portupgrade -o net/asterisk16-addons net/asterisk14-addons
+
 20110909:
   AFFECTS: users of net/p5-SOAP-Lite
   AUTHOR: az@FreeBSD.org

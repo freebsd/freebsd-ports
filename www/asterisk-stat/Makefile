@@ -7,7 +7,7 @@
 
 PORTNAME=	asterisk-stat
 PORTVERSION=	2.0.1
-PORTREVISION=	9
+PORTREVISION=	10
 CATEGORIES=	www
 MASTER_SITES=	http://www.areski.net/${SITE_SUBDIR}/
 DISTNAME=	${PORTNAME}-v${PORTVERSION:S/./_/g}
@@ -34,7 +34,7 @@ OPTIONS=	PGSQL "Use PostgreSQL instead of MySQL" off
 ASTERISKSTATDB=	pgsql
 .else
 ASTERISKSTATDB=	mysql
-RUN_DEPENDS+=	${LOCALBASE}/lib/asterisk/modules/cdr_addon_mysql.so:${PORTSDIR}/net/asterisk14-addons
+RUN_DEPENDS+=	${LOCALBASE}/lib/asterisk/modules/cdr_addon_mysql.so:${PORTSDIR}/net/asterisk16-addons
 .endif
 
 USE_PHP+=	${ASTERISKSTATDB}
