@@ -1441,6 +1441,7 @@
     SUBDIR += yi-hunspell
     SUBDIR += yodl
     SUBDIR += yould
+    SUBDIR += zorba
     SUBDIR += zu-aspell
     SUBDIR += zu-hunspell
 

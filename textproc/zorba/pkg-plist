@@ -1,0 +1,216 @@
+include/zorba/modules/org/w3/www/2005/Atom.xsd
+include/zorba/modules/org/w3/www/2005/xml.xsd
+include/zorba/modules/org/w3/www/2005/xpath_functions.xq
+include/zorba/modules/org/expath/ns/http-client.xsd
+include/zorba/modules/org/expath/ns/http-client.xq
+include/zorba/modules/org/expath/ns/httpclientimpl.xq
+include/zorba/modules/org/expath/ns/error.xq
+include/zorba/modules/com/zorba-xquery/www/modules/excel/errors.xq
+include/zorba/modules/com/zorba-xquery/www/modules/excel/information.xq
+include/zorba/modules/com/zorba-xquery/www/modules/excel/statistical.xq
+include/zorba/modules/com/zorba-xquery/www/modules/excel/math.xq
+include/zorba/modules/com/zorba-xquery/www/modules/excel/lookup.xq
+include/zorba/modules/com/zorba-xquery/www/modules/excel/datetime.xq
+include/zorba/modules/com/zorba-xquery/www/modules/excel/engineering.xq
+include/zorba/modules/com/zorba-xquery/www/modules/excel/logical.xq
+include/zorba/modules/com/zorba-xquery/www/modules/excel/math-sumproduct.xq
+include/zorba/modules/com/zorba-xquery/www/modules/excel/text.xq
+include/zorba/modules/com/zorba-xquery/www/modules/serialize.xq
+include/zorba/modules/com/zorba-xquery/www/modules/tidy.xq
+include/zorba/modules/com/zorba-xquery/www/modules/xqdoc.xq
+include/zorba/modules/com/zorba-xquery/www/modules/math.xq
+include/zorba/modules/com/zorba-xquery/www/modules/file.xq
+include/zorba/modules/com/zorba-xquery/www/modules/node-reference.xq
+include/zorba/modules/com/zorba-xquery/www/modules/random.xq
+include/zorba/modules/com/zorba-xquery/www/modules/schema.xq
+include/zorba/modules/com/zorba-xquery/www/modules/datetime.xq
+include/zorba/modules/com/zorba-xquery/www/modules/csv2xml.xq
+include/zorba/modules/com/zorba-xquery/www/modules/json.xq
+include/zorba/modules/com/zorba-xquery/www/modules/base64.xq
+include/zorba/modules/com/zorba-xquery/www/modules/email/smtp.xq
+include/zorba/modules/com/zorba-xquery/www/modules/security/hmac.xq
+include/zorba/modules/com/zorba-xquery/www/modules/process.xq
+include/zorba/modules/com/zorba-xquery/www/modules/introspection/dctx.xq
+include/zorba/modules/com/zorba-xquery/www/modules/introspection/sctx.xq
+include/zorba/modules/com/zorba-xquery/www/modules/xqddf.xq
+include/zorba/modules/com/zorba-xquery/www/modules/libfile.so.1.4.0
+include/zorba/modules/com/zorba-xquery/www/modules/libfile.so
+include/zorba/modules/com/zorba-xquery/www/modules/libprocess.so.1.4.0
+include/zorba/modules/com/zorba-xquery/www/modules/libprocess.so
+include/zorba/modules/com/zorba-xquery/www/modules/libserialize.so.1.4.0
+include/zorba/modules/com/zorba-xquery/www/modules/libserialize.so
+include/zorba/modules/com/zorba-xquery/www/modules/libdatetime.so.1.4.0
+include/zorba/modules/com/zorba-xquery/www/modules/libdatetime.so
+include/zorba/modules/com/zorba-xquery/www/modules/security/libhmac.so.1.4.0
+include/zorba/modules/com/zorba-xquery/www/modules/security/libhmac.so
+include/zorba/modules/org/expath/ns/libhttpclientimpl.so.1.4.0
+include/zorba/modules/org/expath/ns/libhttpclientimpl.so
+include/zorba/zorba/debugger_exception.h
+include/zorba/zorba/util/file.h
+include/zorba/zorba/util/path.h
+include/zorba/zorba/store_consts.h
+include/zorba/zorba/debugger_event_handler.h
+include/zorba/zorba/pure_stateless_function.h
+include/zorba/zorba/base64.h
+include/zorba/zorba/debugger_client.h
+include/zorba/zorba/store_manager_c.h
+include/zorba/zorba/item_factory.h
+include/zorba/zorba/uri_resolvers.h
+include/zorba/zorba/zorbac.h
+include/zorba/zorba/error_handler.h
+include/zorba/zorba/external_module.h
+include/zorba/zorba/printer_error_handler.h
+include/zorba/zorba/item_sequence.h
+include/zorba/zorba/exception.h
+include/zorba/zorba/static_context_consts.h
+include/zorba/zorba/vector_item_sequence.h
+include/zorba/zorba/item.h
+include/zorba/zorba/file.h
+include/zorba/zorba/properties_base.h
+include/zorba/zorba/empty_sequence.h
+include/zorba/zorba/xquery.h
+include/zorba/zorba/static_context.h
+include/zorba/zorba/declared_collection.h
+include/zorba/zorba/xmldatamanager.h
+include/zorba/zorba/default_content_handler.h
+include/zorba/zorba/nonepure_stateless_function.h
+include/zorba/zorba/zorba.h
+include/zorba/zorba/function.h
+include/zorba/zorba/default_error_handler.h
+include/zorba/zorba/version.h
+include/zorba/zorba/identtypes.h
+include/zorba/zorba/iterator.h
+include/zorba/zorba/api_shared_types.h
+include/zorba/zorba/serializable.h
+include/zorba/zorba/singleton_item_sequence.h
+include/zorba/zorba/options.h
+include/zorba/zorba/collection.h
+include/zorba/zorba/zorbastring.h
+include/zorba/zorba/external_function_data.h
+include/zorba/zorba/smart_ptr.h
+include/zorba/zorba/serialization_callback.h
+include/zorba/zorba/sax2.h
+include/zorba/zorba/typeident.h
+include/zorba/zorba/debugger_default_event_handler.h
+include/zorba/zorba/declared_index.h
+include/zorba/zorba/external_function.h
+include/zorba/zorba/stateless_function.h
+include/zorba/zorba/error.h
+include/zorba/zorba/serializer.h
+include/zorba/zorba/store_manager.h
+include/zorba/zorba/dynamic_context.h
+include/zorba/simplestore/msdom/import.h
+include/xqc.h
+include/zorba/zorba/config.h
+lib/libzorba_simplestore.so.1.4.0
+lib/libzorba_simplestore.so
+bin/zorba
+%%WITH_PHP%%%%PHP_EXTLIBDIR%%/zorba_api_wrapper.php
+%%WITH_PHP%%%%PHP_EXTLIBDIR%%/zorba_api.so
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/zorba_api.py
+%%WITH_PYTHON%%%%PYTHON_SITELIBDIR%%/_zorba_api.so
+%%WITH_RUBY%%%%RUBY_SITEARCHLIBDIR%%/zorba_api.so
+%%PORTDOCS%%%%DOCSDIR%%/cxx/html/rtab_b.gif
+%%PORTDOCS%%%%DOCSDIR%%/cxx/html/rtab_r.gif
+%%PORTDOCS%%%%DOCSDIR%%/cxx/html/rtab_l.gif
+%%PORTDOCS%%%%DOCSDIR%%/c/html/rtab_b.gif
+%%PORTDOCS%%%%DOCSDIR%%/c/html/rtab_r.gif
+%%PORTDOCS%%%%DOCSDIR%%/c/html/rtab_l.gif
+%%PORTDOCS%%%%DOCSDIR%%/zorba/html/rtab_b.gif
+%%PORTDOCS%%%%DOCSDIR%%/zorba/html/rtab_r.gif
+%%PORTDOCS%%%%DOCSDIR%%/zorba/html/rtab_l.gif
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/CMakeFiles/xqdoc.dir/progress.make
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/CMakeFiles/xqdoc.dir/cmake_clean.cmake
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/CMakeFiles/xqdoc.dir/build.make
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/CMakeFiles/xqdoc.dir/DependInfo.cmake
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/CMakeFiles/CMakeDirectoryInformation.cmake
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/CMakeFiles/progress.marks
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/templates/index.html
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/xhtml/css/jquery.treeview.css
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/xhtml/css/main.css
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/xhtml/css/screen.css
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/xhtml/images/S.gif
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/xhtml/images/U.gif
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/xhtml/images/N.gif
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/xhtml/images/treeview-default.gif
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/xhtml/images/treeview-default-line.gif
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/xhtml/lib/jquery.cookie.js
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/xhtml/lib/jquery.js
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/xhtml/lib/jquery.treeview.js
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/cmake_install.cmake
+%%PORTDOCS%%%%DOCSDIR%%/zorba/xqdoc/CTestTestfile.cmake
+%%PORTDOCS%%%%DOCSDIR%%/LICENSE.txt
+%%PORTDOCS%%%%DOCSDIR%%/README.txt
+%%PORTDOCS%%%%DOCSDIR%%/NOTICE.txt
+%%PORTDOCS%%%%DOCSDIR%%/AUTHORS.txt
+%%PORTDOCS%%%%DOCSDIR%%/cxx/examples/simple.cpp
+%%PORTDOCS%%%%DOCSDIR%%/cxx/examples/sax2.cpp
+%%PORTDOCS%%%%DOCSDIR%%/cxx/examples/errors.cpp
+%%PORTDOCS%%%%DOCSDIR%%/cxx/examples/context.cpp
+%%PORTDOCS%%%%DOCSDIR%%/cxx/examples/serialization.cpp
+%%PORTDOCS%%%%DOCSDIR%%/cxx/examples/chaining.cpp
+%%PORTDOCS%%%%DOCSDIR%%/cxx/examples/external_functions.cpp
+%%PORTDOCS%%%%DOCSDIR%%/cxx/examples/datamanager.cpp
+%%PORTDOCS%%%%DOCSDIR%%/cxx/examples/uri_resolvers.cpp
+%%PORTDOCS%%%%DOCSDIR%%/cxx/examples/execution_plans.cpp
+%%PORTDOCS%%%%DOCSDIR%%/cxx/examples/item_handler.cpp
+%%PORTDOCS%%%%DOCSDIR%%/cxx/examples/callback.cpp
+%%PORTDOCS%%%%DOCSDIR%%/cxx/examples/debugger.cpp
+%%PORTDOCS%%%%DOCSDIR%%/cxx/examples/examples.cpp
+%%PORTDOCS%%%%DOCSDIR%%/cxx/examples/Makefile
+%%PORTDOCS%%%%DOCSDIR%%/c/examples/csimple.c
+%%PORTDOCS%%%%DOCSDIR%%/c/examples/ccontext.c
+%%PORTDOCS%%%%DOCSDIR%%/c/examples/cerror.c
+%%PORTDOCS%%%%DOCSDIR%%/c/examples/cparsing.c
+%%PORTDOCS%%%%DOCSDIR%%/c/examples/cexternal_functions.c
+%%PORTDOCS%%%%DOCSDIR%%/c/examples/cserialization.c
+%%PORTDOCS%%%%DOCSDIR%%/c/examples/csequences.c
+%%PORTDOCS%%%%DOCSDIR%%/c/examples/cexamples.c
+%%PORTDOCS%%%%DOCSDIR%%/c/examples/cparsing.xml
+%%WITH_PHP%%%%PORTDOCS%%%%DOCSDIR%%/php/examples/simple.php
+%%WITH_PYTHON%%%%PORTDOCS%%%%DOCSDIR%%/python/examples/python_test.py
+%%WITH_RUBY%%%%PORTDOCS%%%%DOCSDIR%%/ruby/examples/ruby_test.rb
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/zorba/xqdoc/xhtml/lib
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/zorba/xqdoc/xhtml/images
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/zorba/xqdoc/xhtml/css
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/zorba/xqdoc/xhtml
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/zorba/xqdoc/templates
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/zorba/xqdoc/CMakeFiles/xqdoc.dir
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/zorba/xqdoc/CMakeFiles
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/zorba/xqdoc
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/zorba/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/zorba
+%%WITH_RUBY%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/ruby/examples
+%%WITH_RUBY%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/ruby
+%%WITH_PYTHON%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/python/examples
+%%WITH_PYTHON%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/python
+%%WITH_PHP%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/php/examples
+%%WITH_PHP%%%%PORTDOCS%%@dirrm %%DOCSDIR%%/php
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/cxx
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/c/html
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/c/examples
+%%PORTDOCS%%@dirrm %%DOCSDIR%%/c
+%%PORTDOCS%%@dirrm %%DOCSDIR%%
+@dirrm include/zorba/zorba/util
+@dirrm include/zorba/zorba
+@dirrm include/zorba/simplestore/msdom
+@dirrm include/zorba/simplestore
+@dirrm include/zorba/modules/org/w3/www/2005
+@dirrm include/zorba/modules/org/w3/www
+@dirrm include/zorba/modules/org/w3
+@dirrm include/zorba/modules/org/expath/ns
+@dirrm include/zorba/modules/org/expath
+@dirrm include/zorba/modules/org
+@dirrm include/zorba/modules/com/zorba-xquery/www/modules/security
+@dirrm include/zorba/modules/com/zorba-xquery/www/modules/introspection
+@dirrm include/zorba/modules/com/zorba-xquery/www/modules/excel
+@dirrm include/zorba/modules/com/zorba-xquery/www/modules/email
+@dirrm include/zorba/modules/com/zorba-xquery/www/modules
+@dirrm include/zorba/modules/com/zorba-xquery/www
+@dirrm include/zorba/modules/com/zorba-xquery
+@dirrm include/zorba/modules/com
+@dirrm include/zorba/modules
+@dirrm include/zorba/
