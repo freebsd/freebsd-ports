@@ -20,12 +20,3 @@ diff -u configure.orig configure
  		LIBS="$LIBS -lpcre -lpcreposix";
  
  $as_echo "#define ENABLE_REGEX /**/" >>confdefs.h
-@@ -10493,7 +10493,7 @@
-     PERL_SUBDIRS="imap"
-     PERL="${with_perl}"
-     case "${target_os}" in
--        linux*|netbsd*)
-+        linux*|netbsd*|freebsd*)
-             { $as_echo "$as_me:${as_lineno-$LINENO}: checking for perl cccdlflags needed on \"${target_os}\"" >&5
- $as_echo_n "checking for perl cccdlflags needed on \"${target_os}\"... " >&6; }
-             eval `${PERL} -V:cccdlflags`

@@ -6,14 +6,17 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.4.10
-PORTREVISION=	1
+PORTVERSION=	2.4.11
+#PORTREVISION=	0
 CATEGORIES=	mail ipv6
 MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/
 #MASTER_SITES=	http://www.cyrusimap.org/releases/snapshots/
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
+
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2 \
 		pcre.0:${PORTSDIR}/devel/pcre
@@ -37,9 +40,6 @@ CONFIGURE_ARGS=	--sysconfdir=${PREFIX}/etc \
 		--with-perl=${PERL5}
 CONFIGURE_ENV+=	CPPFLAGS="-I${LOCALBASE}/include" LIBS="-L${LOCALBASE}/lib"
 MAKE_JOBS_UNSAFE=	yes
-
-LICENSE=	BSD
-LICENSE_FILE=	${WRKSRC}/COPYRIGHT
 
 OPTIONS=	AUTOCREATE	"Use autocreate INBOX patch (UoA)"	off \
 		AUTOSIEVE	"Use autosievefolder patch (UoA)"	off \
