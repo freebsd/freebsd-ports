@@ -6,19 +6,20 @@
 #
 
 PORTNAME=	cyrus-imapd
-PORTVERSION=	2.3.16
-PORTREVISION=	4
+PORTVERSION=	2.3.17
+#PORTREVISION=	0
 CATEGORIES=	mail ipv6
-MASTER_SITES=	ftp://ftp.andrew.cmu.edu/pub/cyrus/ \
-		http://ftp.andrew.cmu.edu/pub/cyrus/ \
-		http://www.transit.hanse.de/mirror/ftp.andrew.cmu.edu/pub/cyrus-mail/ \
-		${MASTER_SITE_RINGSERVER:S,%SUBDIR%,net/mail/cyrus-mail/&,}
+MASTER_SITES=	ftp://ftp.cyrusimap.org/cyrus-imapd/
 
 MAINTAINER=	ume@FreeBSD.org
 COMMENT=	The cyrus mail server, supporting POP3 and IMAP4 protocols
 
+LICENSE=	BSD
+LICENSE_FILE=	${WRKSRC}/COPYRIGHT
+
 LIB_DEPENDS=	sasl2.2:${PORTSDIR}/security/cyrus-sasl2 \
 		pcre.0:${PORTSDIR}/devel/pcre
+BUILD_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/Digest/SHA1.pm:${PORTSDIR}/security/p5-Digest-SHA1
 
 CONFLICTS=	cyrus-1.* cyrus-imapd-2.[^3].*
 

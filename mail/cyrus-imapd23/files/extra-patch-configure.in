@@ -11,12 +11,3 @@ diff -u configure.in.orig configure.in
  		LIBS="$LIBS -lpcre -lpcreposix";
  		AC_DEFINE(ENABLE_REGEX, [], [Do we have a regex library?])
  	else 
-@@ -1145,7 +1145,7 @@
- dnl libraries will be compiled as PIC if perl requires PIC objects
- dnl -- this is needed on NetBSD and Linux, but seems to cause problems on atleast Solaris --
-     case "${target_os}" in
--        linux*|netbsd*)
-+        linux*|netbsd*|freebsd*)
-             AC_MSG_CHECKING(for perl cccdlflags needed on "${target_os}")
-             eval `${PERL} -V:cccdlflags`
-             PERL_CCCDLFLAGS="$cccdlflags"
