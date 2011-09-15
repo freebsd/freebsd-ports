@@ -5,6 +5,14 @@ they are unavoidable.
 You should get into the habit of checking this file for changes each time
 you update your ports collection, before attempting any port upgrades.
 
+20110915:
+  AFFECTS: users of dns/unbound
+  AUTHOR: sem@FreeBSD.org
+
+  unbound supports GOST from version 1.4.12 but only if dns/ldns was build
+  with GOST support too. There is no way to check the option when unbound
+  builds, so you should make sure the option is on in both unbound and lds.
+
 20110914:
   AFFECTS: users of www/asterisk-stat
   AUTHOR: flo@FreeBSD.org

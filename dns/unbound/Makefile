@@ -6,7 +6,7 @@
 #
 
 PORTNAME=	unbound
-PORTVERSION=	1.4.12
+PORTVERSION=	1.4.13
 CATEGORIES=	dns
 MASTER_SITES=	http://unbound.net/downloads/
 
