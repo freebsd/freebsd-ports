@@ -46,7 +46,7 @@ PREFIX=${REALVNC_BASE}
 
 .if !defined(WITHOUT_SERVER)
 # This is a placeholder MASTER_SITES entry -- see the pre-fetch target.
-MASTER_SITES+=	${MASTER_SITE_XFREE:S/$/:x/}
+MASTER_SITES+=	${MASTER_SITE_XORG:S/$/:x/}
 MASTER_SITE_SUBDIR+=	4.3.0/:x
 DISTFILES+=	X430src-1.tgz:x \
 		X430src-2.tgz:x \
