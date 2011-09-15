@@ -1,18 +1,34 @@
---- x86info.h.orig	2008-12-30 22:20:56.000000000 +0300
-+++ x86info.h	2008-12-30 22:21:20.000000000 +0300
-@@ -183,6 +183,7 @@
- #include <unistd.h>
- static inline void bind_cpu(struct cpudata *cpu)
- {
-+#if defined(__linux__)
- 	cpu_set_t set;
+--- x86info.h.orig	2011-09-15 15:37:57.000000000 -0700
++++ x86info.h	2011-09-15 15:38:09.000000000 -0700
+@@ -220,6 +220,7 @@
  
- 	if (sched_getaffinity(getpid(), sizeof(set), &set) == 0) {
-@@ -190,6 +191,7 @@
- 		CPU_SET(cpu->number, &set);
+ #define _GNU_SOURCE
+ #define __USE_GNU
++#ifdef __linux__
+ #include <sched.h>
+ #include <sys/types.h>
+ #include <unistd.h>
+@@ -233,5 +234,23 @@
  		sched_setaffinity(getpid(), sizeof(set), &set);
  	}
-+#endif
  }
++#elif defined(__FreeBSD__)
++#include <sys/types.h>
++#include <sys/param.h>
++#include <sys/cpuset.h>
++static inline void bind_cpu(struct cpudata *cpu)
++{
++	cpuset_t set;
  
++	if (cpuset_getaffinity(CPU_LEVEL_WHICH, CPU_WHICH_PID, -1,
++	    sizeof(set), &set) == 0) {
++		CPU_ZERO(&set);
++		CPU_SET(cpu->number, &set);
++		cpuset_setaffinity(CPU_LEVEL_WHICH, CPU_WHICH_PID, -1,
++		    sizeof(set), &set);
++	}
++}
++#else
++# error "bind_cpu() is not implemented for this platform!"
++#endif
  #endif /* _X86INFO_H */

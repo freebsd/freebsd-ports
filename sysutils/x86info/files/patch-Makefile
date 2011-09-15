@@ -1,11 +1,22 @@
---- Makefile.orig	2008-12-30 22:24:01.000000000 +0300
-+++ Makefile	2008-12-30 22:24:09.000000000 +0300
-@@ -15,7 +15,7 @@
- 	$(CC) $(CFLAGS) -o $@ -c $<
+--- Makefile.orig	2011-09-15 15:43:52.000000000 -0700
++++ Makefile	2011-09-15 15:44:01.000000000 -0700
+@@ -1,8 +1,9 @@
+ VERSION=1.29
+ 
+ CFLAGS = -g -O2 -Werror -Wall -Wshadow -Wextra -Wmissing-declarations -Wdeclaration-after-statement -Wredundant-decls
++CFLAGS+= `pkg-config --cflags libpci`
+ LDFLAGS = -Wl,-z,relro,-z,now
+-CC = gcc
++CC ?= gcc
+ 
+ SHELL = /bin/sh
+ 
+@@ -88,7 +89,7 @@
+ X86INFO_OBJS = $(X86INFO_SRC:%.c=%.o)
+ 
+ x86info: $(X86INFO_OBJS)
+-	$(CC) $(CFLAGS) $(LDFLAGS) -o x86info $(X86INFO_OBJS) -lpci
++	$(CC) $(CFLAGS) $(LDFLAGS) -o x86info $(X86INFO_OBJS) `pkg-config --libs libpci` -lpci
  
  
--all: x86info test lsmsr
-+all: x86info lsmsr
  
- 
- LSMSR_TMP_HEADERS=AMD/k8.h AMD/fam10h.h generic_msr.h

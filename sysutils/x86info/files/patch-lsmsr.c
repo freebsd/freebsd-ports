@@ -1,7 +1,7 @@
---- lsmsr.c.orig	2009-02-06 20:10:58.000000000 +0300
-+++ lsmsr.c	2009-02-09 01:51:49.000000000 +0300
+--- lsmsr.c.orig	2011-04-05 15:54:04.000000000 -0700
++++ lsmsr.c	2011-09-15 16:44:15.000000000 -0700
 @@ -31,6 +31,18 @@
- #include "AMD/fam10h.h"
+ #include "AMD/fam11h.h"
  #include "generic_msr.h"
  
 +#if defined(__FreeBSD__)
@@ -19,13 +19,13 @@
  /* Todos:
   * - add (list and eventually write) support for write-only MSR
   * - add decoding support for bit fields
-@@ -117,6 +129,29 @@
+@@ -116,6 +128,33 @@
  	fprintf(stdout, "%s version %s\n", g.prog, VERSION);
  }
  
 +#if defined(__FreeBSD__)
 +
-+int get_msr_val(unsigned int msr, unsigned long long *val)
++static int get_msr_val(unsigned int msr, unsigned long long *val)
 +{
 +#if __FreeBSD_version < 701102
 +	cpu_msr_args_t args;
@@ -39,6 +39,10 @@
 +#else
 +	if (ioctl(g.fd, CPUCTL_RDMSR, &args) != 0) {
 +#endif
++		fflush(stdout);
++		fprintf(stderr,
++			"could not read MSR 0x%8.8x (%s): %s\n",
++			msr, get_reg_name(msr, g.msr_table), strerror(errno));
 +		return 0;
 +	}
 +	*val = args.data;
@@ -49,7 +53,7 @@
  static int get_msr_val(unsigned int msr, unsigned long long *val)
  {
  	off64_t off;
-@@ -142,11 +177,17 @@
+@@ -141,11 +180,17 @@
  	return 0;
  }
  
@@ -67,3 +71,12 @@
  	g.fd = open(s, O_RDONLY);
  	if (g.fd < 0)
  		fprintf(stderr, "could not open device %s: %s\n", s,
+@@ -161,7 +206,7 @@
+ 
+ static int _show_msr(struct reg_spec *reg)
+ {
+-	unsigned long long val;
++	unsigned long long val = 0;
+ 	if (!g.list)
+ 		if (get_msr_val(reg->address, &val))
+ 			return 1;

@@ -6,8 +6,8 @@
 #
 
 PORTNAME=	x86info
-PORTVERSION=	1.27
-PORTREVISION=	1
+PORTVERSION=	1.29
+PORTREVISION=	0
 CATEGORIES=	sysutils
 MASTER_SITES=	http://codemonkey.org.uk/projects/x86info/ \
 		http://codemonkey.org.uk/projects/x86info/old/
@@ -16,13 +16,19 @@ EXTRACT_SUFX=	.tgz
 MAINTAINER=	stas@FreeBSD.org
 COMMENT=	Utility to display information about the systems x86 processor(s)
 
+LIB_DEPENDS=	pci.3:${PORTSDIR}/devel/libpci
+
 USE_GMAKE=	yes
 USE_PYTHON_BUILD=	yes
+LICENSE=	GPLv2
+ALL_TARGET=	x86info lsmsr
 ONLY_FOR_ARCHS=	i386 amd64
 PLIST_FILES=	bin/x86info bin/lsmsr
 MAN1=	x86info.1
 MAN8=	lsmsr.8
-MAKE_ARGS=	CFLAGS="${CFLAGS}"
+
+post-patch:
+	${REINPLACE_CMD} -E -e 's,-g -O2,${CFLAGS},g' ${WRKSRC}/Makefile
 
 .include <bsd.port.pre.mk>
 .if ${OSVERSION} < 701102

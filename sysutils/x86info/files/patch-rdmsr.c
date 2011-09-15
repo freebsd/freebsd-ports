@@ -1,6 +1,6 @@
---- rdmsr.c.orig	2008-12-16 22:09:47.000000000 +0300
-+++ rdmsr.c	2008-12-30 22:11:46.000000000 +0300
-@@ -17,8 +17,15 @@
+--- rdmsr.c.orig	2011-09-15 15:39:28.000000000 -0700
++++ rdmsr.c	2011-09-15 15:39:37.000000000 -0700
+@@ -18,8 +18,15 @@
  #include "x86info.h"
  
  #if defined(__FreeBSD__)
@@ -17,8 +17,12 @@
  #endif
  
  #if defined(__FreeBSD__)
-@@ -30,12 +37,16 @@
- 	unsigned long lo, hi;
+@@ -27,16 +34,18 @@
+ int read_msr(int cpu, unsigned int idx, unsigned long long *val)
+ {
+ 	char cpuname[16];
+-	unsigned char buffer[8];
+-	unsigned long lo, hi;
  	int fh;
  	static int nodriver=0;
 +#if __FreeBSD_version < 701102
@@ -35,7 +39,7 @@
  
  	fh = open(cpuname, O_RDONLY);
  	if (fh==-1) {
-@@ -46,7 +57,11 @@
+@@ -46,7 +55,11 @@
  	}
  
  	args.msr = idx;
