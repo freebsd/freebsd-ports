@@ -3,6 +3,7 @@
 
     COMMENT = Monetary, financial and related applications
 
+    SUBDIR += R-cran-RFinanceYJ
     SUBDIR += aqbanking
     SUBDIR += aqmoney
     SUBDIR += beanie
