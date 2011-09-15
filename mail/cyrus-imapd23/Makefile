@@ -64,12 +64,12 @@ OPTIONS=	AUTOCREATE	"Use autocreate INBOX patch (UoA)"	off \
 
 .if defined(WITH_AUTOCREATE) || defined(WITH_AUTOSIEVE)
 PATCH_DIST_STRIP=	-p1
-PATCH_SITES+=	http://email.uoa.gr/download/cyrus/${PORTNAME}-${PORTVERSION}/ 
+PATCH_SITES+=	http://email.uoa.gr/download/cyrus/${PORTNAME}-2.3.16/
 .endif
 
 .if defined(WITH_AUTOCREATE)
 AUTOCREATE_VERSION=	0.10-0
-PATCHFILES+=	${PORTNAME}-${PORTVERSION}-autocreate-${AUTOCREATE_VERSION}.diff
+PATCHFILES+=	${PORTNAME}-2.3.16-autocreate-${AUTOCREATE_VERSION}.diff
 PLIST_SUB+=	AUTOCREATE=""
 .else
 PLIST_SUB+=	AUTOCREATE="@comment "
@@ -77,7 +77,7 @@ PLIST_SUB+=	AUTOCREATE="@comment "
 
 .if defined(WITH_AUTOSIEVE)
 AUTOSIEVE_VERSION=	0.6.0
-PATCHFILES+=	${PORTNAME}-${PORTVERSION}-autosieve-${AUTOSIEVE_VERSION}.diff
+PATCHFILES+=	${PORTNAME}-2.3.16-autosieve-${AUTOSIEVE_VERSION}.diff
 .endif
 
 .if defined(WITHOUT_BDB)
