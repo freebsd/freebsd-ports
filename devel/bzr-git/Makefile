@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/76814124/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Plugin for bzr to work with git trees
 
 LICENSE=	GPLv2

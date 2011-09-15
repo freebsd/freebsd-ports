@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/60433187/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Bzr plugin to incrementally upload changes to a dumb server
 
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng

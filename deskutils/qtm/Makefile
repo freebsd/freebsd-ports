@@ -10,7 +10,7 @@ PORTVERSION=	1.3.1
 CATEGORIES=	deskutils
 MASTER_SITES=	SF/catkin/${PORTNAME}-1.3
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Blog management application based on Qt 4
 
 LICENSE=	GPLv2

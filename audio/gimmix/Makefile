@@ -12,7 +12,7 @@ CATEGORIES=	audio
 MASTER_SITES=	${MASTER_SITE_BERLIOS}
 MASTER_SITE_SUBDIR=	gimmix
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Gimmix is a graphical MPD client written in C using GTK+2
 
 LIB_DEPENDS=	mpd.3:${PORTSDIR}/audio/libmpd \

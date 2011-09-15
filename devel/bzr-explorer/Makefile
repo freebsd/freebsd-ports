@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/76564477/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Desktop application for using bzr
 
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng

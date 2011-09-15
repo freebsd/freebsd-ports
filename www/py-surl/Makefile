@@ -12,7 +12,7 @@ MASTER_SITES=	http://launchpadlibrarian.net/37026875/ \
 		http://www.c-s.li/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	URL shortening command line application
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}simplejson>=0:${PORTSDIR}/devel/py-simplejson

@@ -13,7 +13,7 @@ CATEGORIES=	graphics
 MASTER_SITES=	http://www.swftools.org/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	SWF manipulation and generation utilities
 
 LIB_DEPENDS=	t1.5:${PORTSDIR}/devel/t1lib \

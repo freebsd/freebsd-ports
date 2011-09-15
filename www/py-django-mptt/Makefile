@@ -11,7 +11,7 @@ CATEGORIES=	www python
 MASTER_SITES=	http://www.c-s.li/ports/
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Utilities for implementing a pre-order traversal tree in django
 
 BUILD_DEPENDS=	${PYTHON_SITELIBDIR}/django/bin/django-admin.py:${PORTSDIR}/www/py-django

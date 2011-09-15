@@ -14,7 +14,7 @@ DISTFILES=	${DISTNAME}${EXTRACT_SUFX} \
 		${TCD_DISTNAME}${EXTRACT_SUFX} \
 		${HARM_DISTNAME}${EXTRACT_SUFX}
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Harmonic tide clock and tide predictor
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png

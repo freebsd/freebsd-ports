@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/65470418/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	A bzr plugin that provides rewriting existing revisions
 
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng

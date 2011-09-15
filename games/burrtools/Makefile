@@ -12,7 +12,7 @@ CATEGORIES=	games
 MASTER_SITES=	SF \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	A puzzle solver
 
 LIB_DEPENDS=	png.6:${PORTSDIR}/graphics/png \

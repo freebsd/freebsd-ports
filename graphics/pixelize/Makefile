@@ -14,7 +14,7 @@ MASTER_SITES=	ftp://lashwhip.com/pub/ \
 		http://lashwhip.com/pixelize/
 MASTER_SITE_SUBDIR=	apps/graphics/misc
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Use many scaled down images to try to duplicate another image
 
 LICENSE=	GPLv2

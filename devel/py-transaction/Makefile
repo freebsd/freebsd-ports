@@ -11,7 +11,7 @@ CATEGORIES=	devel python
 MASTER_SITES=	CHEESESHOP
 PKGNAMEPREFIX=	${PYTHON_PKGNAMEPREFIX}
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Transaction management for Python
 
 BUILD_DEPENDS=	${PYTHON_PKGNAMEPREFIX}zopeInterface>=3.5.2:${PORTSDIR}/devel/py-zopeInterface

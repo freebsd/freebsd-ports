@@ -11,7 +11,7 @@ CATEGORIES=	multimedia python
 MASTER_SITES=	http://download.gna.org/gaupol/${PORTVERSION}/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Subtitle editor
 
 RUN_DEPENDS=	iso-codes>=0:${PORTSDIR}/misc/iso-codes \

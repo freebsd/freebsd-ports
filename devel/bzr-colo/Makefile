@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/74164744/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Plugin for bzr to support colocated branches
 
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng

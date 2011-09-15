@@ -11,7 +11,7 @@ CATEGORIES=	www
 MASTER_SITES=	http://www.steve.org.uk/Software/asql/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Query Apache logfiles via SQL
 
 RUN_DEPENDS=	${SITE_PERL}/${PERL_ARCH}/DBD/SQLite.pm:${PORTSDIR}/databases/p5-DBD-SQLite \

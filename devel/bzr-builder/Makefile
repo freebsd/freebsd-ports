@@ -11,7 +11,7 @@ CATEGORIES=	devel
 MASTER_SITES=	http://launchpadlibrarian.net/56937826/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	A bzr plugin to construct a bzr branch based on a "recipe"
 
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng

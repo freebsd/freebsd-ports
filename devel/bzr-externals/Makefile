@@ -12,7 +12,7 @@ MASTER_SITES=	http://launchpadlibrarian.net/54615635/ \
 		http://www.c-s.li/ports/
 DISTNAME=	externals-${PORTVERSION}
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Support external branches like svn:externals
 
 BUILD_DEPENDS=	bzr:${PORTSDIR}/devel/bazaar-ng

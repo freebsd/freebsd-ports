@@ -12,7 +12,7 @@ CATEGORIES=	devel
 MASTER_SITES=	https://launchpadlibrarian.net/54612267/ \
 		http://www.c-s.li/ports/
 
-MAINTAINER=	c-s@c-s.li
+MAINTAINER=	cs@FreeBSD.org
 COMMENT=	Plugin for bzr to work with svn
 
 BUILD_DEPENDS+=	bzr:${PORTSDIR}/devel/bazaar-ng
